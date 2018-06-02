@@ -1,12 +1,10 @@
-
-#define CART_SECURITY			(1<<0)
-#define CART_ENGINE				(1<<1)
-#define CART_ATMOS				(1<<2)
-#define CART_MEDICAL			(1<<3)
-#define CART_MANIFEST			(1<<4)
-#define CART_CLOWN				(1<<5)
-#define CART_MIME				(1<<6)
-#define CART_JANITOR			(1<<7)
+#define CART_SECURITY	(1<<0)
+#define CART_ENGINE	(1<<1)
+#define CART_ATMOS	(1<<2)
+#define CART_MEDICAL	(1<<3)
+#define CART_CLOWN	(1<<5)
+#define CART_MIME	(1<<6)
+#define CART_JANITOR	(1<<7)
 #define CART_REAGENT_SCANNER	(1<<8)
 #define CART_NEWSCASTER			(1<<9)
 #define CART_REMOTE_DOOR		(1<<10)
@@ -89,7 +87,7 @@
 /obj/item/cartridge/detective
 	name = "\improper D.E.T.E.C.T. cartridge"
 	icon_state = "cart-s"
-	access = CART_SECURITY | CART_MEDICAL | CART_MANIFEST
+	access = CART_SECURITY | CART_MEDICAL
 	bot_access_flags = SEC_BOT
 
 /obj/item/cartridge/janitor
@@ -142,37 +140,37 @@
 /obj/item/cartridge/head
 	name = "\improper Easy-Record DELUXE cartridge"
 	icon_state = "cart-h"
-	access = CART_MANIFEST | CART_STATUS_DISPLAY
+	access = CART_STATUS_DISPLAY
 
 /obj/item/cartridge/hop
 	name = "\improper HumanResources9001 cartridge"
 	icon_state = "cart-h"
-	access = CART_MANIFEST | CART_STATUS_DISPLAY | CART_JANITOR | CART_SECURITY | CART_NEWSCASTER | CART_QUARTERMASTER | CART_DRONEPHONE
+	access = CART_STATUS_DISPLAY | CART_JANITOR | CART_SECURITY | CART_NEWSCASTER | CART_QUARTERMASTER | CART_DRONEPHONE
 	bot_access_flags = MULE_BOT | CLEAN_BOT
 
 /obj/item/cartridge/hos
 	name = "\improper R.O.B.U.S.T. DELUXE cartridge"
 	icon_state = "cart-hos"
-	access = CART_MANIFEST | CART_STATUS_DISPLAY | CART_SECURITY
+	access = CART_STATUS_DISPLAY | CART_SECURITY
 	bot_access_flags = SEC_BOT
 
 
 /obj/item/cartridge/ce
 	name = "\improper Power-On DELUXE cartridge"
 	icon_state = "cart-ce"
-	access = CART_MANIFEST | CART_STATUS_DISPLAY | CART_ENGINE | CART_ATMOS | CART_DRONEPHONE
+	access = CART_STATUS_DISPLAY | CART_ENGINE | CART_ATMOS | CART_DRONEPHONE
 	bot_access_flags = FLOOR_BOT | FIRE_BOT
 
 /obj/item/cartridge/cmo
 	name = "\improper Med-U DELUXE cartridge"
 	icon_state = "cart-cmo"
-	access = CART_MANIFEST | CART_STATUS_DISPLAY | CART_REAGENT_SCANNER | CART_MEDICAL
+	access = CART_STATUS_DISPLAY | CART_REAGENT_SCANNER | CART_MEDICAL
 	bot_access_flags = MED_BOT
 
 /obj/item/cartridge/rd
 	name = "\improper Signal Ace DELUXE cartridge"
 	icon_state = "cart-rd"
-	access = CART_MANIFEST | CART_STATUS_DISPLAY | CART_REAGENT_SCANNER | CART_ATMOS | CART_DRONEPHONE
+	access = CART_STATUS_DISPLAY | CART_REAGENT_SCANNER | CART_ATMOS | CART_DRONEPHONE
 	bot_access_flags = FLOOR_BOT | CLEAN_BOT | MED_BOT | FIRE_BOT
 
 /obj/item/cartridge/rd/Initialize()

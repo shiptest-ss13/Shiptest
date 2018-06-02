@@ -214,12 +214,12 @@ GLOBAL_LIST_EMPTY(PDAs)
 	dat += assets.css_tag()
 	dat += emoji_s.css_tag()
 
-	dat += "<img src=pda_refresh.png class=pda_icon>   <a href='byond://?src=[REF(src)];choice=Refresh'>Refresh</a>"
+	dat += "[PDAIMG(refresh)]   <a href='byond://?src=[REF(src)];choice=Refresh'>Refresh</a>"
 
 	if((!isnull(cartridge)) && (mode == 0))
-		dat += " | <img src=pda_eject.png class=pda_icon>   <a href='byond://?src=[REF(src)];choice=Eject'>Eject [cartridge]</a>"
+		dat += " | [PDAIMG(eject)]   <a href='byond://?src=[REF(src)];choice=Eject'>Eject [cartridge]</a>"
 	if(mode)
-		dat += " | <img src=pda_menu.png class=pda_icon>   <a href='byond://?src=[REF(src)];choice=Return'>Return</a>"
+		dat += " | [PDAIMG(menu)]   <a href='byond://?src=[REF(src)];choice=Return'>Return</a>"
 
 	if (mode == 0)
 		dat += "<div align=\"center\">"
@@ -247,26 +247,27 @@ GLOBAL_LIST_EMPTY(PDAs)
 				dat += "[time2text(world.realtime, "MMM DD")] [GLOB.year_integer+540]"
 				dat += "<br><br>"
 				dat += "<h4>General Functions</h4>"
-				dat += "<li><img src=pda_notes.png class=pda_icon class=pda_icon>   <a href='byond://?src=[REF(src)];choice=1'>Notekeeper</a></li>"
-				dat += "<li><img src=pda_mail.png class=pda_icon>   <a href='byond://?src=[REF(src)];choice=2'>Messenger</a></li>"
-				dat += "<li><img src=pda_notes.png class=pda_icon>   <a href='byond://?src=[REF(src)];choice=41'>View Crew Manifest</a></li>"
+				dat += "<ul>"
+				dat += "<li><a href='byond://?src=[REF(src)];choice=1'>[PDAIMG(notes)] Notekeeper</a></li>"
+				dat += "<li><a href='byond://?src=[REF(src)];choice=2'>[PDAIMG(mail)] Messenger</a></li>"
+				dat += "<li><a href='byond://?src=[REF(src)];choice=41'>[PDAIMG(notes)] View Crew Manifest</a></li>"
 
 				if(cartridge)
 					if(cartridge.access)
 						dat += "<h4>Job Specific Functions</h4>"
 						if(cartridge.access & CART_CLOWN)
-							dat += "<li><img src=pda_honk.png class=pda_icon>   <a href='byond://?src=[REF(src)];choice=Honk'>Honk Synthesizer</a></li>"
-							dat += "<li><img src=pda_honk.png class=pda_icon>   <a href='byond://?src=[REF(src)];choice=Trombone'>Sad Trombone</a></li>"
+							dat += "<li>[PDAIMG(honk)]   <a href='byond://?src=[REF(src)];choice=Honk'>Honk Synthesizer</a></li>"
+							dat += "<li>[PDAIMG(honk)]   <a href='byond://?src=[REF(src)];choice=Trombone'>Sad Trombone</a></li>"
 						if(cartridge.access & CART_STATUS_DISPLAY)
-							dat += "<li><img src=pda_status.png class=pda_icon>   <a href='byond://?src=[REF(src)];choice=42'>Set Status Display</a></li>"
+							dat += "<li>[PDAIMG(status)]   <a href='byond://?src=[REF(src)];choice=42'>Set Status Display</a></li>"
 						if(cartridge.access & CART_ENGINE)
-							dat += "<li><img src=pda_power.png class=pda_icon>   <a href='byond://?src=[REF(src)];choice=43'>Power Monitor</a></li>"
+							dat += "<li>[PDAIMG(power)]   <a href='byond://?src=[REF(src)];choice=43'>Power Monitor</a></li>"
 						if(cartridge.access & CART_MEDICAL)
-							dat += "<li><img src=pda_medical.png class=pda_icon>   <a href='byond://?src=[REF(src)];choice=44'>Medical Records</a></li>"
+							dat += "<li>[PDAIMG(medical)]   <a href='byond://?src=[REF(src)];choice=44'>Medical Records</a></li>"
 						if(cartridge.access & CART_SECURITY)
-							dat += "<li><img src=pda_cuffs.png class=pda_icon>   <a href='byond://?src=[REF(src)];choice=45'>Security Records</A></li>"
+							dat += "<li>[PDAIMG(cuffs)]   <a href='byond://?src=[REF(src)];choice=45'>Security Records</A></li>"
 						if(cartridge.access & CART_QUARTERMASTER)
-							dat += "<li><img src=pda_crate.png class=pda_icon>   <a href='byond://?src=[REF(src)];choice=47'>Supply Records</A></li>"
+							dat += "<li>[PDAIMG(crate)]   <a href='byond://?src=[REF(src)];choice=47'>Supply Records</A></li>"
 
 				dat += "<h4>Utilities</h4>"
 				if(cartridge)
