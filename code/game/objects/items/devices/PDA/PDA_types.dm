@@ -188,7 +188,7 @@
 	name = "curator PDA"
 	icon_state = "pda-library"
 	icon_alert = "pda-r-library"
-	default_cartridge = /obj/item/cartridge/curator
+	// default_cartridge = /obj/item/cartridge/curator
 	inserted_item = /obj/item/pen/fountain
 	desc = "A portable microcomputer by Thinktronic Systems, LTD. This model is a WGW-11 series e-reader."
 	note = "Congratulations, your station has chosen the Thinktronic 5290 WGW-11 Series E-reader and Personal Data Assistant!"

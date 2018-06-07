@@ -233,7 +233,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 
 	if(!owner)
 		dat += "Warning: No owner information entered.  Please swipe card.<br><br>"
-		dat += "<img src=pda_refresh.png class=pda_icon>   <a href='byond://?src=[REF(src)];choice=Refresh'>Retry</a>"
+		dat += "[PDAIMG(refresh)]   <a href='byond://?src=[REF(src)];choice=Refresh'>Retry</a>"
 	else
 		switch (mode)
 			if(0)
@@ -298,27 +298,27 @@ GLOBAL_LIST_EMPTY(PDAs)
 						pai = null
 						update_icon()
 					else
-						dat += "<li><img src=pda_status.png class=pda_icon>   <a href='byond://?src=[REF(src)];choice=pai;option=1'>pAI Device Configuration</a></li>"
-						dat += "<li><img src=pda_status.png class=pda_icon>   <a href='byond://?src=[REF(src)];choice=pai;option=2'>Eject pAI Device</a></li>"
+						dat += "<li>[PDAIMG(status)]   <a href='byond://?src=[REF(src)];choice=pai;option=1'>pAI Device Configuration</a></li>"
+						dat += "<li>[PDAIMG(status)]   <a href='byond://?src=[REF(src)];choice=pai;option=2'>Eject pAI Device</a></li>"
 
 			if(1)
-				dat += "<h4><img src=pda_notes.png class=pda_icon> Notekeeper V2.2</h4>"
+				dat += "<h4>[PDAIMG(notes)] Notekeeper V2.2</h4>"
 				dat += "<a href='byond://?src=[REF(src)];choice=Edit'>Edit</a><br>"
 				if(notescanned)
 					dat += "(This is a scanned image, editing it may cause some text formatting to change.)<br>"
 				dat += "<HR><font face=\"[PEN_FONT]\">[(!notehtml ? note : notehtml)]</font>"
 
 			if(2)
-				dat += "<h4><img src=pda_mail.png class=pda_icon> SpaceMessenger V3.9.6</h4>"
-				dat += "<img src=pda_bell.png class=pda_icon>   <a href='byond://?src=[REF(src)];choice=Toggle Ringer'>Ringer: [silent == 1 ? "Off" : "On"]</a><br>"
-				dat += "<img src=pda_mail.png class=pda_icon>   <a href='byond://?src=[REF(src)];choice=Toggle Messenger'>Send / Receive: [toff == 1 ? "Off" : "On"]</a><br>"
-				dat += "<img src=pda_bell.png class=pda_icon>   <a href='byond://?src=[REF(src)];choice=Ringtone'>Set Ringtone</a><br>"
-				dat += "<img src=pda_mail.png class=pda_icon>   <a href='byond://?src=[REF(src)];choice=21'>Clear Messages</a><br>"
+				dat += "<h4>[PDAIMG(mail)] SpaceMessenger V3.9.6</h4>"
+				dat += "[PDAIMG(bell)]   <a href='byond://?src=[REF(src)];choice=Toggle Ringer'>Ringer: [silent == 1 ? "Off" : "On"]</a><br>"
+				dat += "[PDAIMG(mail)]   <a href='byond://?src=[REF(src)];choice=Toggle Messenger'>Send / Receive: [toff == 1 ? "Off" : "On"]</a><br>"
+				dat += "[PDAIMG(bell)]   <a href='byond://?src=[REF(src)];choice=Ringtone'>Set Ringtone</a><br>"
+				dat += "[PDAIMG(mail)]   <a href='byond://?src=[REF(src)];choice=21'>View Message Log</a><br>"
 
 				if(cartridge)
 					dat += cartridge.message_header()
 
-				dat += "<h4><img src=pda_mail.png class=pda_icon>   Detected PDAs</h4>"
+				dat += "<h4>[PDAIMG(mail)]   Detected PDAs</h4>"
 
 				dat += "<ul>"
 				var/count = 0
@@ -336,13 +336,13 @@ GLOBAL_LIST_EMPTY(PDAs)
 				if(count == 0)
 					dat += "None detected.<br>"
 				else if(cartridge && cartridge.spam_enabled)
-					dat += "<img src=pda_mail.png class=pda_icon>   <a href='byond://?src=[REF(src)];choice=MessageAll'>Send To All</a>"
+					dat += "[PDAIMG(mail)]   <a href='byond://?src=[REF(src)];choice=MessageAll'>Send To All</a>"
 
 			if(21)
-				dat += "<h4><img src=pda_mail.png class=pda_icon>   SpaceMessenger V3.9.6</h4>"
-				dat += "<img src=pda_blank.png class=pda_icon>   <a href='byond://?src=[REF(src)];choice=Clear'> Clear Messages</a>"
+				dat += "<h4>[PDAIMG(mail)]   SpaceMessenger V3.9.6</h4>"
+				dat += "[PDAIMG(blank)]   <a href='byond://?src=[REF(src)];choice=Clear'> Clear Messages</a>"
 
-				dat += "<h4><img src=pda_mail.png class=pda_icon>   Messages</h4>"
+				dat += "[PDAIMG(mail)]   Messages</h4>"
 
 				dat += tnote
 				dat += "<br>"
@@ -354,7 +354,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 				dat += "</center>"
 
 			if(3)
-				dat += "<h4><img src=pda_atmos.png class=pda_icon>   Atmospheric Readings</h4>"
+				dat += "<h4>[PDAIMG(atmos)]   Atmospheric Readings</h4>"
 
 				var/turf/T = user.loc
 				if(isnull(T))

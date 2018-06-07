@@ -103,10 +103,13 @@
 	access = CART_SECURITY
 	spam_enabled = 1
 
-/obj/item/cartridge/curator
-	name = "\improper Lib-Tweet cartridge"
-	icon_state = "cart-s"
-	access = CART_NEWSCASTER
+// DISABLED BECAUSE IT DONT FUCKIN' WORK
+/*
+///obj/item/cartridge/curator
+//	name = "\improper Lib-Tweet cartridge"
+//	icon_state = "cart-s"
+//	access = CART_NEWSCASTER
+*/
 
 /obj/item/cartridge/roboticist
 	name = "\improper B.O.O.P. Remote Control cartridge"
@@ -181,7 +184,7 @@
 	name = "\improper Value-PAK cartridge"
 	desc = "Now with 350% more value!" //Give the Captain...EVERYTHING! (Except Mime, Clown, and Syndie)
 	icon_state = "cart-c"
-	access = ~(CART_CLOWN | CART_MIME | CART_REMOTE_DOOR)
+	access = ~(CART_CLOWN | CART_MIME | CART_REMOTE_DOOR | CART_NEWSCASTER)
 	bot_access_flags = SEC_BOT | MULE_BOT | FLOOR_BOT | CLEAN_BOT | MED_BOT | FIRE_BOT
 	spam_enabled = 1
 
@@ -214,7 +217,6 @@
 			menu = "<h4>[PDAIMG(signaler)] Remote Signaling System</h4>"
 
 			menu += {"
-<a href='byond://?src=[REF(src)];choice=Send Signal'>Send Signal</A><BR>
 Frequency:
 <a href='byond://?src=[REF(src)];choice=Signal Frequency;sfreq=-10'>-</a>
 <a href='byond://?src=[REF(src)];choice=Signal Frequency;sfreq=-2'>-</a>
@@ -227,15 +229,16 @@ Code:
 <a href='byond://?src=[REF(src)];choice=Signal Code;scode=-1'>-</a>
 [radio.code]
 <a href='byond://?src=[REF(src)];choice=Signal Code;scode=1'>+</a>
-<a href='byond://?src=[REF(src)];choice=Signal Code;scode=5'>+</a><br>"}
+<a href='byond://?src=[REF(src)];choice=Signal Code;scode=5'>+</a><br><br>
+<a href='byond://?src=[REF(src)];choice=Send Signal'>Send Signal</A><BR>"}
 		if (42) //status displays
 			menu = "<h4>[PDAIMG(status)] Station Status Display Interlink</h4>"
 
 			menu += "\[ <A HREF='?src=[REF(src)];choice=Status;statdisp=blank'>Clear</A> \]<BR>"
 			menu += "\[ <A HREF='?src=[REF(src)];choice=Status;statdisp=shuttle'>Shuttle ETA</A> \]<BR>"
 			menu += "\[ <A HREF='?src=[REF(src)];choice=Status;statdisp=message'>Message</A> \]"
-			menu += "<ul><li> Line 1: <A HREF='?src=[REF(src)];choice=Status;statdisp=setmsg1'>[ message1 ? message1 : "(none)"]</A>"
-			menu += "<li> Line 2: <A HREF='?src=[REF(src)];choice=Status;statdisp=setmsg2'>[ message2 ? message2 : "(none)"]</A></ul><br>"
+			menu += "<ul><li> Line 1: <A HREF='?src=[REF(src)];choice=Status;statdisp=setmsg1'>[ message1 ? message1 : "(None)"]</A>"
+			menu += "<li> Line 2: <A HREF='?src=[REF(src)];choice=Status;statdisp=setmsg2'>[ message2 ? message2 : "(None)"]</A></ul><br>"
 			menu += "\[ Alert: <A HREF='?src=[REF(src)];choice=Status;statdisp=alert;alert=default'>None</A> |"
 			menu += " <A HREF='?src=[REF(src)];choice=Status;statdisp=alert;alert=redalert'>Red Alert</A> |"
 			menu += " <A HREF='?src=[REF(src)];choice=Status;statdisp=alert;alert=lockdown'>Lockdown</A> |"
@@ -305,7 +308,7 @@ Code:
 			menu = "<h4>[PDAIMG(medical)] Medical Record List</h4>"
 			if(GLOB.data_core.general)
 				for(var/datum/data/record/R in sortRecord(GLOB.data_core.general))
-					menu += "<a href='byond://?src=[REF(src)];choice=Medical Records;target=[R.fields["id"]]'>[R.fields["id"]]: [R.fields["name"]]<br>"
+					menu += "[PDAIMG(medical)]   <a href='byond://?src=[REF(src)];choice=Medical Records;target=[R.fields["id"]]'>[R.fields["id"]]: [R.fields["name"]]</a><br>"
 			menu += "<br>"
 		if(441)
 			menu = "<h4>[PDAIMG(medical)] Medical Record</h4>"
@@ -348,7 +351,7 @@ Code:
 			menu = "<h4>[PDAIMG(cuffs)] Security Record List</h4>"
 			if(GLOB.data_core.general)
 				for (var/datum/data/record/R in sortRecord(GLOB.data_core.general))
-					menu += "<a href='byond://?src=[REF(src)];choice=Security Records;target=[R.fields["id"]]'>[R.fields["id"]]: [R.fields["name"]]<br>"
+					menu += "[PDAIMG(cuffs)]  <a href='byond://?src=[REF(src)];choice=Security Records;target=[R.fields["id"]]'>[R.fields["id"]]: [R.fields["name"]]</a><br>"
 
 			menu += "<br>"
 		if(451)
@@ -441,7 +444,7 @@ Code:
 			for(var/S in SSshuttle.requestlist)
 				var/datum/supply_order/SO = S
 				menu += "<li>#[SO.id] - [SO.pack.name] requested by [SO.orderer]</li>"
-			menu += "</ol><font size=\"-3\">Upgrade NOW to Space Parts & Space Vendors PLUS for full remote order control and inventory management."
+			// menu += "</ol><font size=\"-3\">Upgrade NOW to Space Parts & Space Vendors PLUS for full remote order control and inventory management." DOESNT EXIST, SO COMMENTED OUT
 
 		if (48) // quartermaster ore logs
 			menu = list("<h4>[PDAIMG(crate)] Ore Silo Logs</h4>")
@@ -692,31 +695,31 @@ Code:
 			if(active_bot.paicard && active_bot.paicard.pai)
 				menu += "[active_bot.paicard.pai.name]"
 				if(active_bot.bot_core.allowed(usr))
-					menu += " (<A href='byond://?src=[REF(src)];op=ejectpai'><i>eject</i></A>)"
+					menu += " (<A href='byond://?src=[REF(src)];op=ejectpai'><i>Eject</i></A>)"
 			else
-				menu += "<i>none</i>"
+				menu += "<i>None</i>"
 
 		//MULEs!
 		if(active_bot.bot_type == MULE_BOT)
 			var/mob/living/simple_animal/bot/mulebot/MULE = active_bot
 			var/atom/Load = MULE.load
-			menu += "<BR>Current Load: [ !Load ? "<i>none</i>" : "[Load.name] (<A href='byond://?src=[REF(src)];mule=unload'><i>unload</i></A>)" ]<BR>"
-			menu += "Destination: [MULE.destination ? MULE.destination : "<i>None</i>"] (<A href='byond://?src=[REF(src)];mule=destination'><i>set</i></A>)<BR>"
+			menu += "<BR>Current Load: [ !Load ? "<i>None</i>" : "[Load.name] (<A href='byond://?src=[REF(src)];mule=unload'><i>Unload</i></A>)" ]<BR>"
+			menu += "Destination: [MULE.destination ? MULE.destination : "<i>None</i>"] <A href='byond://?src=[REF(src)];mule=destination'><i>Set</i></A><BR>"
 			menu += "Set ID: [MULE.suffix] <A href='byond://?src=[REF(src)];mule=setid'><i> Modify</i></A><BR>"
 			menu += "Power: [MULE.cell ? MULE.cell.percent() : 0]%<BR>"
-			menu += "Home: [!MULE.home_destination ? "<i>none</i>" : MULE.home_destination ]<BR>"
-			menu += "Delivery Reporting: <A href='byond://?src=[REF(src)];mule=report'>[MULE.report_delivery ? "(<B>On</B>)": "(<B>Off</B>)"]</A><BR>"
-			menu += "Auto Return Home: <A href='byond://?src=[REF(src)];mule=autoret'>[MULE.auto_return ? "(<B>On</B>)": "(<B>Off</B>)"]</A><BR>"
-			menu += "Auto Pickup Crate: <A href='byond://?src=[REF(src)];mule=autopick'>[MULE.auto_pickup ? "(<B>On</B>)": "(<B>Off</B>)"]</A><BR><BR>" //Hue.
+			menu += "Home: [!MULE.home_destination ? "<i>None</i>" : MULE.home_destination ]<BR>"
+			menu += "Delivery Reporting: <A href='byond://?src=[REF(src)];mule=report'>[MULE.report_delivery ? "<B>On</B>": "<B>Off</B>"]</A><BR>"
+			menu += "Auto Return Home: <A href='byond://?src=[REF(src)];mule=autoret'>[MULE.auto_return ? "<B>On</B>": "<B>Off</B>"]</A><BR>"
+			menu += "Auto Pickup Crate: <A href='byond://?src=[REF(src)];mule=autopick'>[MULE.auto_pickup ? "<B>On</B>": "<B>Off</B>"]</A><BR><BR>" //Hue.
 
-			menu += "\[<A href='byond://?src=[REF(src)];mule=stop'>Stop</A>\] "
-			menu += "\[<A href='byond://?src=[REF(src)];mule=go'>Proceed</A>\] "
-			menu += "\[<A href='byond://?src=[REF(src)];mule=home'>Return Home</A>\]<BR>"
+			menu += "<A href='byond://?src=[REF(src)];mule=stop'>Stop</A> "
+			menu += "<A href='byond://?src=[REF(src)];mule=go'>Proceed</A> "
+			menu += "<A href='byond://?src=[REF(src)];mule=home'>Return Home</A><BR>"
 
 		else
-			menu += "<BR>\[<A href='byond://?src=[REF(src)];op=patroloff'>Stop Patrol</A>\] "	//patrolon
-			menu += "\[<A href='byond://?src=[REF(src)];op=patrolon'>Start Patrol</A>\] "	//patroloff
-			menu += "\[<A href='byond://?src=[REF(src)];op=summon'>Summon Bot</A>\]<BR>"		//summon
+			menu += "<BR><A href='byond://?src=[REF(src)];op=patroloff'>Stop Patrol</A>"	//patrolon
+			menu += "<A href='byond://?src=[REF(src)];op=patrolon'>Start Patrol</A>"	//patroloff
+			menu += "<A href='byond://?src=[REF(src)];op=summon'>Summon Bot</A><BR>"		//summon
 			menu += "Keep an ID inserted to upload access codes upon summoning."
 
 		menu += "<HR><A href='byond://?src=[REF(src)];op=botlist'>[PDAIMG(back)]Return to bot list</A>"
@@ -729,7 +732,7 @@ Code:
 			var/mob/living/simple_animal/bot/Bot = B
 			if(!Bot.on || Bot.z != zlevel || Bot.remote_disabled || !(bot_access_flags & Bot.bot_type)) //Only non-emagged bots on the same Z-level are detected!
 				continue //Also, the PDA must have access to the bot type.
-			menu += "<A href='byond://?src=[REF(src)];op=control;bot=[REF(Bot)]'><b>[Bot.name]</b> ([Bot.get_mode()])<BR>"
+			menu += "[PDAIMG(medbot)]   <A href='byond://?src=[REF(src)];op=control;bot=[REF(Bot)]'><b>[Bot.name]</b> ([Bot.get_mode()])</a><BR>"
 			botcount++
 		if(!botcount) //No bots at all? Lame.
 			menu += "No bots found.<BR>"
