@@ -493,7 +493,7 @@
 
 /obj/item/toy/plush/lizardplushie
 	name = "lizard plushie"
-	desc = "An adorable stuffed toy that resembles a lizardperson."
+	desc = "An adorable stuffed toy that resembles a lizard."
 	icon_state = "plushie_lizard"
 	item_state = "plushie_lizard"
 	attack_verb = list("clawed", "hissed", "tail slapped")

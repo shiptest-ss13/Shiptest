@@ -22,6 +22,8 @@
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_PRIDE | MIRROR_MAGIC
 	outfit_important_for_life = /datum/outfit/plasmaman
 	species_language_holder = /datum/language_holder/skeleton
+	loreblurb = "The product of plasma experimentation on a human colony, these strange abominations lead a difficult life of breathing plasma and bursting into flames when exposed to oxygen. \
+	Logically speaking, they make for bad crewmembers. However, they don't have a choice but to work for the only corporation that can supply them with plasma."
 
 /datum/species/plasmaman/spec_life(mob/living/carbon/human/H)
 	var/datum/gas_mixture/environment = H.loc.return_air()

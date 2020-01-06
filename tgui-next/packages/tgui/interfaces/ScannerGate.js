@@ -19,7 +19,7 @@ const TARGET_SPECIES_LIST = [
     value: 'human',
   },
   {
-    name: 'Lizardperson',
+    name: 'lizard',
     value: 'lizard',
   },
   {

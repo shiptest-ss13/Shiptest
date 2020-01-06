@@ -4,7 +4,7 @@
 ///////////////// Booze & Bottles ///////////////////
 
 /datum/crafting_recipe/lizardwine
-	name = "Lizard Wine"
+	name = "lizard Wine"
 	time = 40
 	reqs = list(
 		/obj/item/organ/tail/lizard = 1,

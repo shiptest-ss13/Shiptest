@@ -507,7 +507,7 @@
 	taste_description = "something nyat good"
 
 /datum/reagent/mutationtoxin/lizard
-	name = "Lizard Mutation Toxin"
+	name = "lizard Mutation Toxin"
 	description = "A lizarding toxin."
 	color = "#5EFF3B" //RGB: 94, 255, 59
 	race = /datum/species/lizard

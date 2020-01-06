@@ -30,7 +30,7 @@
 	subcategory = CAT_MEAT
 
 /datum/crafting_recipe/food/tailkebab
-	name = "Lizard tail kebab"
+	name = "lizard tail kebab"
 	reqs = list(
 		/obj/item/stack/rods = 1,
 		/obj/item/organ/tail/lizard = 1

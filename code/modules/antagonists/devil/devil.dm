@@ -3,7 +3,7 @@
 #define ARCH_THRESHOLD 12
 
 #define BASIC_DEVIL 0
-#define BLOOD_LIZARD 1
+#define BLOOD_lizard 1
 #define TRUE_DEVIL 2
 #define ARCH_DEVIL 3
 
@@ -36,7 +36,7 @@ GLOBAL_LIST_INIT(lawlorify, list (
 			BAN_HURTPRIEST = "The annointed clergy appear to be immune to his powers.",
 			BAN_AVOIDWATER = "The devil seems to have some sort of aversion to water, though it does not appear to harm him.",
 			BAN_STRIKEUNCONSCIOUS = "This devil only shows interest in those who are awake.",
-			BAN_HURTLIZARD = "This devil will not strike a lizardman first.",
+			BAN_HURTlizard = "This devil will not strike a lizardman first.",
 			BAN_HURTANIMAL = "This devil avoids hurting animals.",
 			BANISH_WATER = "To banish the devil, you must infuse its body with holy water.",
 			BANISH_COFFIN = "This devil will return to life if its remains are not placed within a coffin.",
@@ -60,7 +60,7 @@ GLOBAL_LIST_INIT(lawlorify, list (
 			BAN_HURTPRIEST = "You must never attack a priest.",
 			BAN_AVOIDWATER = "You must never willingly touch a wet surface.",
 			BAN_STRIKEUNCONSCIOUS = "You must never strike an unconscious person.",
-			BAN_HURTLIZARD = "You must never harm a lizardman outside of self defense.",
+			BAN_HURTlizard = "You must never harm a lizardman outside of self defense.",
 			BAN_HURTANIMAL = "You must never harm a non-sentient creature or robot outside of self defense.",
 			BANE_SILVER = "Silver, in all of its forms shall be your downfall.",
 			BANE_SALT = "Salt will disrupt your magical abilities.",
@@ -168,7 +168,7 @@ GLOBAL_LIST_INIT(devil_suffix, list(" the Red", " the Soulless", " the Master", 
 	return pick(OBLIGATION_FOOD, OBLIGATION_FIDDLE, OBLIGATION_DANCEOFF, OBLIGATION_GREET, OBLIGATION_PRESENCEKNOWN, OBLIGATION_SAYNAME, OBLIGATION_ANNOUNCEKILL, OBLIGATION_ANSWERTONAME)
 
 /proc/randomdevilban()
-	return pick(BAN_HURTWOMAN, BAN_CHAPEL, BAN_HURTPRIEST, BAN_AVOIDWATER, BAN_STRIKEUNCONSCIOUS, BAN_HURTLIZARD, BAN_HURTANIMAL)
+	return pick(BAN_HURTWOMAN, BAN_CHAPEL, BAN_HURTPRIEST, BAN_AVOIDWATER, BAN_STRIKEUNCONSCIOUS, BAN_HURTlizard, BAN_HURTANIMAL)
 
 /proc/randomdevilbane()
 	return pick(BANE_SALT, BANE_LIGHT, BANE_IRON, BANE_WHITECLOTHES, BANE_SILVER, BANE_HARVEST, BANE_TOOLBOX)
@@ -206,7 +206,7 @@ GLOBAL_LIST_INIT(devil_suffix, list(" the Red", " the Soulless", " the Master", 
 	//Yes, fallthrough behavior is intended, so I can't use a switch statement.
 	if(form == TRUE_DEVIL && SOULVALUE < TRUE_THRESHOLD)
 		regress_blood_lizard()
-	if(form == BLOOD_LIZARD && SOULVALUE < BLOOD_THRESHOLD)
+	if(form == BLOOD_lizard && SOULVALUE < BLOOD_THRESHOLD)
 		regress_humanoid()
 	if(SOULVALUE < 0)
 		give_appropriate_spells()
@@ -230,7 +230,7 @@ GLOBAL_LIST_INIT(devil_suffix, list(" the Red", " the Soulless", " the Master", 
 	owner.transfer_to(D.oldform)
 	give_appropriate_spells()
 	qdel(D)
-	form = BLOOD_LIZARD
+	form = BLOOD_lizard
 	update_hud()
 
 
@@ -248,7 +248,7 @@ GLOBAL_LIST_INIT(devil_suffix, list(" the Red", " the Soulless", " the Master", 
 	else //Did the devil get hit by a staff of transmutation?
 		owner.current.color = "#501010"
 	give_appropriate_spells()
-	form = BLOOD_LIZARD
+	form = BLOOD_lizard
 
 
 

@@ -8,7 +8,7 @@
 #define SCANGATE_NUTRITION		"Nutrition"
 
 #define SCANGATE_HUMAN			"human"
-#define SCANGATE_LIZARD			"lizard"
+#define SCANGATE_lizard			"lizard"
 #define SCANGATE_FELINID		"felinid"
 #define SCANGATE_FLY			"fly"
 #define SCANGATE_PLASMAMAN		"plasma"
@@ -121,7 +121,7 @@
 				var/mob/living/carbon/human/H = M
 				var/datum/species/scan_species = /datum/species/human
 				switch(detect_species)
-					if(SCANGATE_LIZARD)
+					if(SCANGATE_lizard)
 						scan_species = /datum/species/lizard
 					if(SCANGATE_FLY)
 						scan_species = /datum/species/fly
@@ -247,7 +247,7 @@
 #undef SCANGATE_NUTRITION
 
 #undef SCANGATE_HUMAN
-#undef SCANGATE_LIZARD
+#undef SCANGATE_lizard
 #undef SCANGATE_FELINID
 #undef SCANGATE_FLY
 #undef SCANGATE_PLASMAMAN

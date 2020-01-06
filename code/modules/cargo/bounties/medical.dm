@@ -47,7 +47,7 @@
 	wanted_types = list(/obj/item/organ/tongue)
 
 /datum/bounty/item/medical/lizard_tail
-	name = "Lizard Tail"
+	name = "lizard Tail"
 	description = "The Wizard Federation has made off with Nanotrasen's supply of lizard tails. While CentCom is dealing with the wizards, can the station spare a tail of their own?"
 	reward = 3000
 	wanted_types = list(/obj/item/organ/tail/lizard)

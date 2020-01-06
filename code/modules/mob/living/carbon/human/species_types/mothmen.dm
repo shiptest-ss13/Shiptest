@@ -17,6 +17,10 @@
 	mutanteyes = /obj/item/organ/eyes/moth
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | ERT_SPAWN | RACE_SWAP | SLIME_EXTRACT
 	species_language_holder = /datum/language_holder/moth
+	loreblurb = "### ERROR: REMOTE INTERCEPT - INFORMATION MAY HAVE BEEN REDACTED FROM THIS DOCUMENT FOR YOUR SAFETY ### \
+	Mutations into a moth-like organism have been acknowledged on Space Station 13, mothpeople are distant cousins of the flypeople. Mothpeople seem to originate fro- R̶̵̨͟E̕D҉̀͜A͜͢҉͠C̶̨͘͜͜T̸̴̵̶̕Ȩ̛̀͢D̷͡҉̕҉ \
+	### REMOTE INTERCEPT ENDS - HAVE A SECURE DAY ###"
+
 
 /datum/species/moth/regenerate_organs(mob/living/carbon/C,datum/species/old_species,replace_current=TRUE)
 	. = ..()

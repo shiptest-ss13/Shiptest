@@ -52,7 +52,7 @@
 
 	// Keybindings
 	init_keybindings()
-		
+
 	GLOB.emote_list = init_emote_list()
 
 	init_subtypes(/datum/crafting_recipe, GLOB.crafting_recipes)

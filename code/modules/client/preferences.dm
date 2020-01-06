@@ -69,6 +69,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/skin_tone = "caucasian1"		//Skin color
 	var/eye_color = "000"				//Eye color
 	var/datum/species/pref_species = new /datum/species/human()	//Mutant race
+	var/species_looking_at = "human" //used as a helper to keep track of in the species select thingy
 	var/list/features = list("mcolor" = "FFF", "ethcolor" = "9c3030", "tail_lizard" = "Smooth", "tail_human" = "None", "snout" = "Round", "horns" = "None", "ears" = "None", "wings" = "None", "frills" = "None", "spines" = "None", "body_markings" = "None", "legs" = "Normal Legs", "moth_wings" = "Plain", "moth_markings" = "None")
 	var/list/randomise = list(RANDOM_UNDERWEAR = TRUE, RANDOM_UNDERWEAR_COLOR = TRUE, RANDOM_UNDERSHIRT = TRUE, RANDOM_SOCKS = TRUE, RANDOM_BACKPACK = TRUE, RANDOM_JUMPSUIT_STYLE = TRUE, RANDOM_HAIRSTYLE = TRUE, RANDOM_HAIR_COLOR = TRUE, RANDOM_FACIAL_HAIRSTYLE = TRUE, RANDOM_FACIAL_HAIR_COLOR = TRUE, RANDOM_SKIN_TONE = TRUE, RANDOM_EYE_COLOR = TRUE)
 	var/list/friendlyGenders = list("Male" = "male", "Female" = "female", "Other" = "plural")
@@ -125,6 +126,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/loaded_preferences_successfully = load_preferences()
 	if(loaded_preferences_successfully)
 		if(load_character())
+			species_looking_at = pref_species.id
 			return
 	//we couldn't load character data so just randomize the character appearance + name
 	random_character()		//let's create a random character then - rather than a fat, bald and naked man.
@@ -953,6 +955,38 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 /datum/preferences/proc/ResetJobs()
 	job_preferences = list()
 
+/datum/preferences/proc/ShowSpeciesChoices(mob/user)
+	var/list/dat = list()
+	dat += "<div><table style='width:100%'><tr><th>"
+	dat += "<div style='overflow-y:auto;height=180px;width=75px'>"
+	for(var/speciesid in GLOB.roundstart_races)
+		var/speciespath = GLOB.species_list[speciesid]
+		if(!speciespath)
+			continue
+		var/datum/species/S = new speciespath()
+		if(species_looking_at == speciesid)
+			dat += "<b>[S.name]</b><BR><BR>"
+		else
+			dat += "<a href='?_src_=prefs;lookatspecies=[speciesid];task=species'>[S.name]</a><BR><BR>"
+		QDEL_NULL(S)
+
+	dat += "</div></th><th><div style='overflow-y:auto;height=180px;width=420px'>"
+	var/sppath = GLOB.species_list[species_looking_at]
+	var/datum/species/S = new sppath()
+
+	dat += "<center><font size=3 style='font-weight:bold'>[S.name]</font><BR><BR>[S.loreblurb]</center></div></th><th>"
+	if(pref_species.id == species_looking_at)
+		dat += "Set Species "
+	else
+		dat += "<a href='?_src_=prefs;setspecies=[species_looking_at];task=species'>Set Species</a> "
+	dat += "<a href='?_src_=prefs;preference=job;task=close'>Done</a><BR>"
+	user << browse(null, "window=preferences")
+	var/datum/browser/popup = new(user, "mob_occupation", "<div align='center'>Species Pick</div>", 700, 350) //no reason not to reuse the occupation window, as it's cleaner that way
+	popup.set_window_options("can_close=0")
+	popup.set_content(dat.Join())
+	popup.open(FALSE)
+	QDEL_NULL(S)
+
 /datum/preferences/proc/SetQuirks(mob/user)
 	if(!SSquirks)
 		to_chat(user, "<span class='danger'>The quirk subsystem is still initializing! Try again in a minute.</span>")
@@ -1150,6 +1184,25 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				if("all")
 					random_character(gender)
 
+		if("species")
+			if(href_list["setspecies"])
+				var/sid = href_list["setspecies"]
+				var/newtype = GLOB.species_list[sid]
+				pref_species = new newtype()
+				//Now that we changed our species, we must verify that the mutant colour is still allowed.
+				var/temp_hsv = RGBtoHSV(features["mcolor"])
+				if(features["mcolor"] == "#000" || (!(MUTCOLORS_PARTSONLY in pref_species.species_traits) && ReadHSV(temp_hsv)[3] < ReadHSV("#7F7F7F")[3]))
+					features["mcolor"] = pref_species.default_color
+				user << browse(null, "window=speciespick")
+				ShowChoices(user)
+				return 1
+
+			if(href_list["lookatspecies"])
+				species_looking_at = href_list["lookatspecies"]
+
+			ShowSpeciesChoices(user)
+			return 1
+
 		if("input")
 
 			if(href_list["preference"] in GLOB.preferences_custom_names)
@@ -1305,18 +1358,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						eye_color = sanitize_hexcolor(new_eyes)
 
 				if("species")
-
-					var/result = input(user, "Select a species", "Species Selection") as null|anything in GLOB.roundstart_races
-
-					if(result)
-						var/newtype = GLOB.species_list[result]
-						pref_species = new newtype()
-						//Now that we changed our species, we must verify that the mutant colour is still allowed.
-						var/temp_hsv = RGBtoHSV(features["mcolor"])
-						if(features["mcolor"] == "#000" || (!(MUTCOLORS_PARTSONLY in pref_species.species_traits) && ReadHSV(temp_hsv)[3] < ReadHSV("#7F7F7F")[3]))
-							features["mcolor"] = pref_species.default_color
-						if(randomise[RANDOM_NAME])
-							real_name = pref_species.random_name(gender)
+					ShowSpeciesChoices(user)
+					return TRUE
 
 				if("mutant_color")
 					var/new_mutantcolor = input(user, "Choose your character's alien/mutant color:", "Character Preference","#"+features["mcolor"]) as color|null

@@ -63,7 +63,7 @@
 	required_container = /obj/item/slime_extract/green
 
 /datum/chemical_reaction/slime/slimelizard
-	name = "Lizard Mutation Toxin"
+	name = "lizard Mutation Toxin"
 	id = "lizardmuttoxin"
 	results = list(/datum/reagent/mutationtoxin/lizard = 1)
 	required_reagents = list(/datum/reagent/uranium/radium = 1)

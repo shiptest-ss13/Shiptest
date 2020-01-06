@@ -11,7 +11,7 @@
 	instability = 40
 	var/scream_delay = 50
 	var/last_scream = 0
-	
+
 
 /datum/mutation/human/hulk/on_acquiring(mob/living/carbon/human/owner)
 	if(..())

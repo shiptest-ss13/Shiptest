@@ -288,7 +288,7 @@
 		C = source
 		if(!original_owner)
 			original_owner = source
-	else 
+	else
 		C = owner
 		if(original_owner && owner != original_owner) //Foreign limb
 			no_update = TRUE

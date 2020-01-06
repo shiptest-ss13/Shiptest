@@ -66,7 +66,7 @@
 		original_name = name // can't use initial because of random posters
 		name = "poster - [name]"
 		desc = "A large piece of space-resistant printed paper. [desc]"
-	
+
 	addtimer(CALLBACK(src, /datum.proc/AddComponent, /datum/component/beauty, 300), 0)
 
 /obj/structure/sign/poster/proc/randomise(base_type)
@@ -356,7 +356,7 @@
 	icon_state = "poster33"
 
 /obj/structure/sign/poster/contraband/lizard
-	name = "Lizard"
+	name = "lizard"
 	desc = "This lewd poster depicts a lizard preparing to mate."
 	icon_state = "poster34"
 
