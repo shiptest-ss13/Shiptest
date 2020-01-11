@@ -22,7 +22,7 @@
 	name = "Oculine"
 	id = /datum/reagent/medicine/oculine
 	results = list(/datum/reagent/medicine/oculine = 3)
-	required_reagents = list(/datum/reagent/medicine/C2/multiver = 1, /datum/reagent/carbon = 1, /datum/reagent/hydrogen = 1)
+	required_reagents = list(/datum/reagent/medicine/charcoal = 1, /datum/reagent/carbon = 1, /datum/reagent/hydrogen = 1)
 	mix_message = "The mixture bubbles noticeably and becomes a dark grey color!"
 
 /datum/chemical_reaction/inacusiate
@@ -124,7 +124,7 @@
 	name = "Perfluorodecalin"
 	id = /datum/reagent/medicine/perfluorodecalin
 	results = list(/datum/reagent/medicine/perfluorodecalin = 3)
-	required_reagents = list(/datum/reagent/hydrogen = 1, /datum/reagent/fluorine = 1, /datum/reagent/oil = 1)
+	required_reagents = list(/datum/reagent/hydrogen = 1, /datum/reagent/fluorine = 1, /datum/reagent/fuel/oil = 1)
 	required_temp = 370
 	mix_message = "The mixture rapidly turns into a dense pink liquid."
 
@@ -217,6 +217,24 @@
 	results = list(/datum/reagent/medicine/haloperidol = 5)
 	required_reagents = list(/datum/reagent/chlorine = 1, /datum/reagent/fluorine = 1, /datum/reagent/aluminium = 1, /datum/reagent/medicine/potass_iodide = 1, /datum/reagent/fuel/oil = 1)
 
+/datum/chemical_reaction/bicaridine
+	name = "Bicaridine"
+	id = /datum/reagent/medicine/bicaridine
+	results = list(/datum/reagent/medicine/bicaridine = 3)
+	required_reagents = list(/datum/reagent/carbon = 1, /datum/reagent/oxygen = 1, /datum/reagent/consumable/sugar = 1)
+
+/datum/chemical_reaction/kelotane
+	name = "Kelotane"
+	id = /datum/reagent/medicine/kelotane
+	results = list(/datum/reagent/medicine/kelotane = 2)
+	required_reagents = list(/datum/reagent/carbon = 1, /datum/reagent/silicon = 1)
+
+/datum/chemical_reaction/antitoxin
+	name = "Antitoxin"
+	id = /datum/reagent/medicine/antitoxin
+	results = list(/datum/reagent/medicine/antitoxin = 3)
+	required_reagents = list(/datum/reagent/nitrogen = 1, /datum/reagent/silicon = 1, /datum/reagent/potassium = 1)
+
 /datum/chemical_reaction/tricordrazine
 	name = "Tricordrazine"
 	id = /datum/reagent/medicine/tricordrazine
@@ -229,10 +247,10 @@
 	results = list(/datum/reagent/medicine/regen_jelly = 2)
 	required_reagents = list(/datum/reagent/medicine/tricordrazine = 1, /datum/reagent/toxin/slimejelly = 1)
 
-/datum/chemical_reaction/higadrite
-	name = "Higadrite"
-	id = /datum/reagent/medicine/higadrite
-	results = list(/datum/reagent/medicine/higadrite = 3)
+/datum/chemical_reaction/corazone
+	name = "corazone"
+	id = /datum/reagent/medicine/corazone
+	results = list(/datum/reagent/medicine/corazone = 3)
 	required_reagents = list(/datum/reagent/phenol = 2, /datum/reagent/lithium = 1)
 
 /datum/chemical_reaction/morphine
@@ -280,7 +298,7 @@
 	id = /datum/reagent/medicine/sanguiose
 	results = list(/datum/reagent/medicine/sanguiose= 4)
 	required_reagents = list(/datum/reagent/phosphorus = 1, /datum/reagent/hydrogen = 1,/datum/reagent/phenol=1, /datum/reagent/acetone=1,)
-	
+
 /datum/chemical_reaction/frogenite
 	name = "Frogenite"
 	id = /datum/reagent/medicine/frogenite
