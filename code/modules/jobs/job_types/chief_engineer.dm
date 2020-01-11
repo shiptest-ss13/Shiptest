@@ -48,6 +48,7 @@
 	backpack = /obj/item/storage/backpack/industrial
 	satchel = /obj/item/storage/backpack/satchel/eng
 	duffelbag = /obj/item/storage/backpack/duffelbag/engineering
+	courierbag = /obj/item/storage/backpack/messenger/engi
 	box = /obj/item/storage/box/survival/engineer
 	pda_slot = ITEM_SLOT_LPOCKET
 	chameleon_extras = /obj/item/stamp/ce

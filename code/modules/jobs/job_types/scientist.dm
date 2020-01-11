@@ -33,6 +33,7 @@
 
 	backpack = /obj/item/storage/backpack/science
 	satchel = /obj/item/storage/backpack/satchel/tox
+	courierbag = /obj/item/storage/backpack/messenger/tox
 
 /datum/outfit/job/scientist/pre_equip(mob/living/carbon/human/H)
 	..()

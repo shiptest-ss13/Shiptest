@@ -50,6 +50,11 @@
 	backpack_contents = list(/obj/item/storage/box/ids=1,\
 		/obj/item/melee/classic_baton/telescopic=1, /obj/item/modular_computer/tablet/preset/advanced = 1)
 
+	backpack = /obj/item/storage/backpack/captain
+	satchel = /obj/item/storage/backpack/satchel/cap
+	duffelbag = /obj/item/storage/backpack/duffelbag/captain
+	courierbag = /obj/item/storage/backpack/messenger/com
+
 	chameleon_extras = list(/obj/item/gun/energy/e_gun, /obj/item/stamp/hop)
 
 /datum/outfit/job/hop/pre_equip(mob/living/carbon/human/H)

@@ -6,10 +6,12 @@
 
 /obj/structure/closet/secure_closet/personal/PopulateContents()
 	..()
-	if(prob(50))
+	if(prob(40))
 		new /obj/item/storage/backpack/duffelbag(src)
-	if(prob(50))
+	if(prob(40))
 		new /obj/item/storage/backpack(src)
+	if(prob(40))
+		new /obj/item/storage/backpack/messenger(src)
 	else
 		new /obj/item/storage/backpack/satchel(src)
 	new /obj/item/radio/headset( src )

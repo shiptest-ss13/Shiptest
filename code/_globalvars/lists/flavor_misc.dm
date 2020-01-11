@@ -126,11 +126,13 @@ GLOBAL_LIST_INIT(security_depts_prefs, sortList(list(SEC_DEPT_RANDOM, SEC_DEPT_N
 #define GBACKPACK "Grey Backpack"
 #define GSATCHEL "Grey Satchel"
 #define GDUFFELBAG "Grey Duffel Bag"
+#define GCOURIERBAG "Grey Messenger Bag"
 #define LSATCHEL "Leather Satchel"
 #define DBACKPACK "Department Backpack"
 #define DSATCHEL "Department Satchel"
 #define DDUFFELBAG "Department Duffel Bag"
-GLOBAL_LIST_INIT(backpacklist, list(DBACKPACK, DSATCHEL, DDUFFELBAG, GBACKPACK, GSATCHEL, GDUFFELBAG, LSATCHEL))
+#define DCOURIERBAG "Department Messenger Bag"
+GLOBAL_LIST_INIT(backpacklist, list(DBACKPACK, DSATCHEL, DCOURIERBAG, DDUFFELBAG, GBACKPACK, GSATCHEL, GCOURIERBAG, GDUFFELBAG, LSATCHEL))
 
 	//Suit/Skirt
 #define PREF_SUIT "Jumpsuit"

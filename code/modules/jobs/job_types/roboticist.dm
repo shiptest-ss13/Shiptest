@@ -32,5 +32,6 @@
 
 	backpack = /obj/item/storage/backpack/science
 	satchel = /obj/item/storage/backpack/satchel/tox
+	courierbag = /obj/item/storage/backpack/messenger/tox
 
 	pda_slot = ITEM_SLOT_LPOCKET

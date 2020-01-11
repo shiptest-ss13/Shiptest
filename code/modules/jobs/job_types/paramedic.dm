@@ -38,5 +38,6 @@
 	backpack = /obj/item/storage/backpack/medic
 	satchel = /obj/item/storage/backpack/satchel/med
 	duffelbag = /obj/item/storage/backpack/duffelbag/med
+	courierbag = /obj/item/storage/backpack/messenger/med
 
 	chameleon_extras = /obj/item/gun/syringe
