@@ -1,4 +1,3 @@
-#define C2NAMEREAGENT	"[initial(reagent.name)] (Has Side-Effects)"
 /*
 Contains:
 Borg Hypospray
@@ -27,7 +26,7 @@ Borg Hypospray
 	var/bypass_protection = 0 //If the hypospray can go through armor or thick material
 
 	var/list/datum/reagents/reagent_list = list()
-	var/list/reagent_ids = list(/datum/reagent/medicine/C2/convermol, /datum/reagent/medicine/C2/libital, /datum/reagent/medicine/C2/multiver, /datum/reagent/medicine/C2/aiuri, /datum/reagent/medicine/epinephrine, /datum/reagent/medicine/spaceacillin, /datum/reagent/medicine/salglu_solution)
+	var/list/reagent_ids = list(/datum/reagent/medicine/dexalin, /datum/reagent/medicine/kelotane, /datum/reagent/medicine/bicaridine, /datum/reagent/medicine/antitoxin, /datum/reagent/medicine/epinephrine, /datum/reagent/medicine/spaceacillin, /datum/reagent/medicine/salglu_solution)
 	var/accepts_reagent_upgrades = TRUE //If upgrades can increase number of reagents dispensed.
 	var/list/modes = list() //Basically the inverse of reagent_ids. Instead of having numbers as "keys" and strings as values it has strings as keys and numbers as values.
 								//Used as list for input() in shakers.
@@ -68,18 +67,11 @@ Borg Hypospray
 	R.add_reagent(reagent, 30)
 
 	modes[reagent] = modes.len + 1
-
-	if(initial(reagent.harmful))
-		reagent_names[C2NAMEREAGENT] = reagent
-	else
-		reagent_names[initial(reagent.name)] = reagent
+	reagent_names[initial(reagent.name)] = reagent
 
 /obj/item/reagent_containers/borghypo/proc/del_reagent(datum/reagent/reagent)
 	reagent_ids -= reagent
-	if(istype(reagent, /datum/reagent/medicine/C2))
-		reagent_names -= C2NAMEREAGENT
-	else
-		reagent_names -= initial(reagent.name)
+	reagent_names -= initial(reagent.name)
 	var/datum/reagents/RG
 	var/datum/reagents/TRG
 	for(var/i in 1 to reagent_ids.len)
@@ -137,7 +129,6 @@ Borg Hypospray
 	. += DescribeContents()	//Because using the standardized reagents datum was just too cool for whatever fuckwit wrote this
 	var/datum/reagent/loaded = modes[mode]
 	. += "Currently loaded: [initial(loaded.name)]. [initial(loaded.description)]"
-	. += "<span class='notice'><i>Alt+Click</i> to change transfer amount. Currently set to [amount_per_transfer_from_this == 5 ? "dose normally (5u)" : "microdose (2u)"].</span>"
 
 /obj/item/reagent_containers/borghypo/proc/DescribeContents()
 	. = list()
@@ -151,16 +142,6 @@ Borg Hypospray
 
 	if(empty)
 		. += "<span class='warning'>It is currently empty! Allow some time for the internal synthesizer to produce more.</span>"
-
-/obj/item/reagent_containers/borghypo/AltClick(mob/living/user)
-	. = ..()
-	if(user.stat == DEAD || user != loc)
-		return //IF YOU CAN HEAR ME SET MY TRANSFER AMOUNT TO 1
-	if(amount_per_transfer_from_this == 5)
-		amount_per_transfer_from_this = 2
-	else
-		amount_per_transfer_from_this = 5
-	to_chat(user,"<span class='notice'>[src] is now set to [amount_per_transfer_from_this == 5 ? "dose normally" : "microdose"].</span>")
 
 /obj/item/reagent_containers/borghypo/hacked
 	icon_state = "borghypo_s"
@@ -202,20 +183,20 @@ Borg Shaker
 	recharge_time = 3
 	accepts_reagent_upgrades = FALSE
 
-	reagent_ids = list(/datum/reagent/consumable/applejuice, /datum/reagent/consumable/banana, /datum/reagent/consumable/coffee, 
-	/datum/reagent/consumable/cream, /datum/reagent/consumable/dr_gibb, /datum/reagent/consumable/grenadine, 
-	/datum/reagent/consumable/ice, /datum/reagent/consumable/lemonjuice, /datum/reagent/consumable/lemon_lime, 
-	/datum/reagent/consumable/limejuice, /datum/reagent/consumable/menthol, /datum/reagent/consumable/milk, 
-	/datum/reagent/consumable/nothing, /datum/reagent/consumable/orangejuice, /datum/reagent/consumable/peachjuice, 
-	/datum/reagent/consumable/sodawater, /datum/reagent/consumable/space_cola, /datum/reagent/consumable/spacemountainwind, 
-	/datum/reagent/consumable/pwr_game, /datum/reagent/consumable/shamblers, /datum/reagent/consumable/soymilk, 
-	/datum/reagent/consumable/space_up, /datum/reagent/consumable/tea, /datum/reagent/consumable/tomatojuice, 
-	/datum/reagent/consumable/tonic, /datum/reagent/water, 
-	/datum/reagent/consumable/ethanol/ale, /datum/reagent/consumable/ethanol/applejack, /datum/reagent/consumable/ethanol/beer, 
-	/datum/reagent/consumable/ethanol/cognac, /datum/reagent/consumable/ethanol/creme_de_menthe, 
-	/datum/reagent/consumable/ethanol/creme_de_cacao, /datum/reagent/consumable/ethanol/gin, /datum/reagent/consumable/ethanol/kahlua, 
-	/datum/reagent/consumable/ethanol/rum, /datum/reagent/consumable/ethanol/sake, /datum/reagent/consumable/ethanol/tequila, 
-	/datum/reagent/consumable/ethanol/triple_sec, /datum/reagent/consumable/ethanol/vermouth, 
+	reagent_ids = list(/datum/reagent/consumable/applejuice, /datum/reagent/consumable/banana, /datum/reagent/consumable/coffee,
+	/datum/reagent/consumable/cream, /datum/reagent/consumable/dr_gibb, /datum/reagent/consumable/grenadine,
+	/datum/reagent/consumable/ice, /datum/reagent/consumable/lemonjuice, /datum/reagent/consumable/lemon_lime,
+	/datum/reagent/consumable/limejuice, /datum/reagent/consumable/menthol, /datum/reagent/consumable/milk,
+	/datum/reagent/consumable/nothing, /datum/reagent/consumable/orangejuice, /datum/reagent/consumable/peachjuice,
+	/datum/reagent/consumable/sodawater, /datum/reagent/consumable/space_cola, /datum/reagent/consumable/spacemountainwind,
+	/datum/reagent/consumable/pwr_game, /datum/reagent/consumable/shamblers, /datum/reagent/consumable/soymilk,
+	/datum/reagent/consumable/space_up, /datum/reagent/consumable/sugar, /datum/reagent/consumable/tea,
+	/datum/reagent/consumable/tomatojuice, /datum/reagent/consumable/tonic, /datum/reagent/water,
+	/datum/reagent/consumable/ethanol/ale, /datum/reagent/consumable/ethanol/applejack, /datum/reagent/consumable/ethanol/beer,
+	/datum/reagent/consumable/ethanol/champagne, /datum/reagent/consumable/ethanol/cognac, /datum/reagent/consumable/ethanol/creme_de_menthe,
+	/datum/reagent/consumable/ethanol/creme_de_cacao, /datum/reagent/consumable/ethanol/gin, /datum/reagent/consumable/ethanol/kahlua,
+	/datum/reagent/consumable/ethanol/rum, /datum/reagent/consumable/ethanol/sake, /datum/reagent/consumable/ethanol/tequila,
+	/datum/reagent/consumable/ethanol/triple_sec, /datum/reagent/consumable/ethanol/vermouth, /datum/reagent/consumable/ethanol/vodka,
 	/datum/reagent/consumable/ethanol/whiskey, /datum/reagent/consumable/ethanol/wine)
 
 /obj/item/reagent_containers/borghypo/borgshaker/attack(mob/M, mob/user)

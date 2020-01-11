@@ -45,7 +45,7 @@
 										/datum/reagent/consumable/sodiumchloride, /datum/reagent/consumable/sugar, /datum/reagent/consumable/orangejuice, /datum/reagent/consumable/tomatojuice, /datum/reagent/consumable/milk
 									),
 									list(	//level 4
-										/datum/reagent/medicine/spaceacillin, /datum/reagent/medicine/salglu_solution, /datum/reagent/medicine/epinephrine, /datum/reagent/medicine/C2/multiver
+										/datum/reagent/medicine/spaceacillin, /datum/reagent/medicine/salglu_solution, /datum/reagent/medicine/epinephrine, /datum/reagent/medicine/charcoal
 									),
 									list(	//level 5
 										/datum/reagent/fuel/oil, /datum/reagent/medicine/synaptizine, /datum/reagent/medicine/mannitol, /datum/reagent/drug/space_drugs, /datum/reagent/cryptobiolin
@@ -54,7 +54,7 @@
 										/datum/reagent/phenol, /datum/reagent/medicine/inacusiate, /datum/reagent/medicine/oculine, /datum/reagent/medicine/antihol
 									),
 									list(	// level 7
-										/datum/reagent/medicine/leporazine, /datum/reagent/toxin/mindbreaker, /datum/reagent/medicine/higadrite
+										/datum/reagent/medicine/leporazine, /datum/reagent/toxin/mindbreaker, /datum/reagent/medicine/corazone
 									),
 									list(	// level 8
 										/datum/reagent/pax, /datum/reagent/drug/happiness, /datum/reagent/medicine/ephedrine
@@ -248,7 +248,7 @@
 			SetSpread(DISEASE_SPREAD_CONTACT_FLUIDS)
 		else
 			SetSpread(DISEASE_SPREAD_BLOOD)
-		
+
 		permeability_mod = max(CEILING(0.4 * properties["transmittable"], 1), 1)
 		cure_chance = 15 - CLAMP(properties["resistance"], -5, 5) // can be between 10 and 20
 		stage_prob = max(properties["stage_rate"], 2)
@@ -419,7 +419,7 @@
 
 	 // Should be only 1 entry left, but if not let's only return a single entry
 	var/datum/disease/advance/to_return = pick(diseases)
-	to_return.Refresh(1)
+	to_return.Refresh(TRUE)
 	return to_return
 
 /proc/SetViruses(datum/reagent/R, list/data)
@@ -464,8 +464,9 @@
 		var/new_name = stripped_input(user, "Name your new disease.", "New Name")
 		if(!new_name)
 			return
-		D.AssignName(new_name)
 		D.Refresh()
+		D.AssignName(new_name)	//Updates the master copy
+		D.name = new_name //Updates our copy
 
 		var/list/targets = list("Random")
 		targets += sortNames(GLOB.human_list)

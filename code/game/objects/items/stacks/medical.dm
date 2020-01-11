@@ -58,10 +58,10 @@
 		user.visible_message("<span class='green'>[user] applies \the [src] on [C]'s [affecting.name].</span>", "<span class='green'>You apply \the [src] on [C]'s [affecting.name].</span>")
 		var/brute2heal = brute
 		var/burn2heal = burn
-		if(user?.mind?.get_skill_speed_modifier(/datum/skill/medical))
-			var/skillmods = user.mind.get_skill_speed_modifier(/datum/skill/medical)
-			brute2heal *= (2-skillmods)
-			burn2heal *= (2-skillmods)
+		var/skill_mod = user?.mind?.get_skill_modifier(/datum/skill/medical, SKILL_SPEED_MODIFIER)
+		if(skill_mod)
+			brute2heal *= (2-skill_mod)
+			burn2heal *= (2-skill_mod)
 		if(affecting.heal_damage(brute2heal, burn2heal))
 			C.update_damage_overlays()
 		return TRUE
@@ -77,7 +77,7 @@
 	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
 	var/heal_brute = 40
 	self_delay = 20
-	grind_results = list(/datum/reagent/medicine/C2/libital = 10)
+	grind_results = list(/datum/reagent/medicine/styptic_powder = 10)
 
 /obj/item/stack/medical/bruise_pack/heal(mob/living/M, mob/user)
 	if(M.stat == DEAD)
@@ -164,7 +164,7 @@
 	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
 	var/heal_burn = 40
 	self_delay = 20
-	grind_results = list(/datum/reagent/medicine/C2/lenturi = 10)
+	grind_results = list(/datum/reagent/medicine/silver_sulfadiazine = 10)
 
 /obj/item/stack/medical/ointment/heal(mob/living/M, mob/user)
 	if(M.stat == DEAD)
