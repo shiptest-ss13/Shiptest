@@ -292,3 +292,4 @@
 	id = /datum/reagent/medicine/ferveatium
 	results = list(/datum/reagent/medicine/ferveatium = 4)
 	required_reagents = list( /datum/reagent/ammonia = 1, /datum/reagent/hydrogen = 1,/datum/reagent/phenol=1, /datum/reagent/toxin/acid=1,)
+
