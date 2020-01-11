@@ -57,16 +57,6 @@
 	desc = "A small bottle of multiver, which removes toxins and other chemicals from the bloodstream but causes shortness of breath. All effects scale with the amount of reagents in the patient."
 	list_reagents = list(/datum/reagent/medicine/C2/multiver = 30)
 
-/obj/item/reagent_containers/glass/bottle/calomel
-	name = "calomel bottle"
-	desc = "A small bottle of calomel, which quickly purges all chemicals from the patient. Causes toxin damage if the patient is not heavily injured."
-	list_reagents = list(/datum/reagent/medicine/calomel = 30)
-
-/obj/item/reagent_containers/glass/bottle/syriniver
-	name = "syriniver bottle"
-	desc = "A small bottle of syriniver."
-	list_reagents = list(/datum/reagent/medicine/C2/syriniver = 30)
-
 /obj/item/reagent_containers/glass/bottle/mutagen
 	name = "unstable mutagen bottle"
 	desc = "A small bottle of unstable mutagen. Randomly changes the DNA structure of whoever comes in contact."
