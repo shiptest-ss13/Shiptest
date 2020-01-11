@@ -3,7 +3,7 @@
 	name = "Sterilizine"
 	id = /datum/reagent/space_cleaner/sterilizine
 	results = list(/datum/reagent/space_cleaner/sterilizine = 3)
-	required_reagents = list(/datum/reagent/consumable/ethanol = 1, /datum/reagent/medicine/C2/multiver = 1, /datum/reagent/chlorine = 1)
+	required_reagents = list(/datum/reagent/consumable/ethanol = 1, /datum/reagent/medicine/charcoal = 1, /datum/reagent/chlorine = 1)
 
 /datum/chemical_reaction/lube
 	name = "Space Lube"
@@ -471,7 +471,7 @@
 	name = /datum/reagent/carpet/cyan
 	id = /datum/reagent/carpet/cyan
 	results = list(/datum/reagent/carpet/cyan = 2)
-	required_reagents = list(/datum/reagent/carpet = 1, /datum/reagent/toxin/cyanide = 1)
+	required_reagents = list(/datum/reagent/carpet = 1, /datum/reagent/toxin/cyanide = 1) 
 	//cyan = cyanide get it huehueuhuehuehheuhe
 
 /datum/chemical_reaction/carpet/green
@@ -541,7 +541,7 @@
 /datum/chemical_reaction/life
 	name = "Life"
 	id = "life"
-	required_reagents = list(/datum/reagent/medicine/strange_reagent = 1, /datum/reagent/medicine/C2/instabitaluri = 1, /datum/reagent/blood = 1)
+	required_reagents = list(/datum/reagent/medicine/strange_reagent = 1, /datum/reagent/medicine/synthflesh = 1, /datum/reagent/blood = 1)
 	required_temp = 374
 
 /datum/chemical_reaction/life/on_reaction(datum/reagents/holder, created_volume)
@@ -550,7 +550,7 @@
 /datum/chemical_reaction/life_friendly
 	name = "Life (Friendly)"
 	id = "life_friendly"
-	required_reagents = list(/datum/reagent/medicine/strange_reagent = 1, /datum/reagent/medicine/C2/instabitaluri = 1, /datum/reagent/consumable/sugar = 1)
+	required_reagents = list(/datum/reagent/medicine/strange_reagent = 1, /datum/reagent/medicine/synthflesh = 1, /datum/reagent/consumable/sugar = 1)
 	required_temp = 374
 
 /datum/chemical_reaction/life_friendly/on_reaction(datum/reagents/holder, created_volume)
@@ -714,29 +714,3 @@
 	results = list(/datum/reagent/carbon = 1)
 	required_reagents = list(/datum/reagent/cellulose = 1)
 	required_temp = 512
-
-/datum/chemical_reaction/hydrogen_peroxide
-	name = "Hydrogen peroxide"
-	id = /datum/reagent/hydrogen_peroxide
-	results = list(/datum/reagent/hydrogen_peroxide = 3)
-	required_reagents = list(/datum/reagent/water = 1, /datum/reagent/oxygen = 1, /datum/reagent/chlorine = 1)
-
-/datum/chemical_reaction/acetone_oxide
-	name = "Acetone peroxide"
-	id = /datum/reagent/acetone_oxide
-	results = list(/datum/reagent/acetone_oxide = 2)
-	required_reagents = list(/datum/reagent/acetone = 2, /datum/reagent/oxygen = 1, /datum/reagent/hydrogen_peroxide = 1)
-
-/datum/chemical_reaction/pentaerythritol
-	name = "Pentaerythritol"
-	id = /datum/reagent/pentaerythritol
-	results = list(/datum/reagent/pentaerythritol = 2)
-	required_reagents = list(/datum/reagent/acetaldehyde = 1, /datum/reagent/toxin/formaldehyde = 3, /datum/reagent/water = 1 )
-
-/datum/chemical_reaction/acetaldehyde
-	name = "Acetaldehyde"
-	id = /datum/reagent/acetaldehyde
-	results = list(/datum/reagent/acetaldehyde = 3)
-	required_reagents = list(/datum/reagent/acetone = 1, /datum/reagent/toxin/formaldehyde = 1, /datum/reagent/water = 1)
-	required_temp = 450
-
