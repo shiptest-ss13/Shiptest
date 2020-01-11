@@ -182,13 +182,13 @@
 
 /obj/item/reagent_containers/syringe/multiver
 	name = "syringe (multiver)"
-	desc = "Contains multiver. Diluted with granibitaluri."
-	list_reagents = list(/datum/reagent/medicine/C2/multiver = 6, /datum/reagent/medicine/granibitaluri = 9)
+	desc = "Contains multiver."
+	list_reagents = list(/datum/reagent/medicine/C2/multiver = 15)
 
 /obj/item/reagent_containers/syringe/convermol
 	name = "syringe (convermol)"
-	desc = "Contains convermol. Diluted with granibitaluri."
-	list_reagents = list(/datum/reagent/medicine/C2/convermol = 6, /datum/reagent/medicine/granibitaluri = 9)
+	desc = "Contains convermol."
+	list_reagents = list(/datum/reagent/medicine/C2/convermol = 15)
 
 /obj/item/reagent_containers/syringe/antiviral
 	name = "syringe (spaceacillin)"

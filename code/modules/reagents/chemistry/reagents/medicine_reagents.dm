@@ -1354,14 +1354,7 @@
 	M.adjustFireLoss(3*REM, 0.)
 	M.adjust_bodytemperature(-35 * TEMPERATURE_DAMAGE_COEFFICIENT, 50)
 	..()
-
-/datum/reagent/medicine/silibinin
-	name = "Silibinin"
-	description = "A thistle derrived hepatoprotective flavolignan mixture that help reverse damage to the liver."
-	reagent_state = SOLID
-	color = "#FFFFD0"
-	metabolization_rate = 1.5 * REAGENTS_METABOLISM
-
+  
 /datum/reagent/medicine/silibinin/on_mob_life(mob/living/carbon/M)
 	M.adjustOrganLoss(ORGAN_SLOT_LIVER, -2)//Add a chance to cure liver trauma once implemented.
 	..()
@@ -1398,5 +1391,3 @@
 	M.adjustOrganLoss(ORGAN_SLOT_LUNGS, 0.5)
 	..()
 	. = 1
-
-#undef PERF_BASE_DAMAGE
