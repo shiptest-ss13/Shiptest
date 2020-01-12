@@ -1,5 +1,12 @@
 #define TGS_STATUS_THROTTLE 5
 
+/datum/tgs_chat_command/join
+	name = "join"
+	help_text = "Sends a join link."
+
+/datum/tgs_chat_command/join/Run(datum/tgs_chat_user/sender, params)
+	return "<[world.internet_address]:[world.port]>"
+
 /datum/tgs_chat_command/tgsstatus
 	name = "status"
 	help_text = "Gets the admincount, playercount, gamemode, and true game mode of the server"
@@ -28,7 +35,7 @@
 		return
 	last_tgs_check = rtod
 	var/server = CONFIG_GET(string/server)
-	return "[GLOB.round_id ? "Round #[GLOB.round_id]: " : ""][GLOB.clients.len] players on [SSmapping.config.map_name], Mode: [GLOB.master_mode]; Round [SSticker.HasRoundStarted() ? (SSticker.IsRoundInProgress() ? "Active" : "Finishing") : "Starting"] -- [server ? server : "[world.internet_address]:[world.port]"]" 
+	return "[GLOB.round_id ? "Round #[GLOB.round_id]: " : ""][GLOB.clients.len] players on [SSmapping.config.map_name], Mode: [GLOB.master_mode]; Round [SSticker.HasRoundStarted() ? (SSticker.IsRoundInProgress() ? "Active" : "Finishing") : "Starting"] -- [server ? server : "[world.internet_address]:[world.port]"]"
 
 /datum/tgs_chat_command/ahelp
 	name = "ahelp"
@@ -103,7 +110,7 @@ GLOBAL_LIST(round_end_notifiees)
 	var/list/text_res = results.Copy(1, 3)
 	var/list/refs = results.len > 3 ? results.Copy(4) : null
 	. = "[text_res.Join("\n")][refs ? "\nRefs: [refs.Join(" ")]" : ""]"
-	
+
 /datum/tgs_chat_command/reload_admins
 	name = "reload_admins"
 	help_text = "Forces the server to reload admins."
