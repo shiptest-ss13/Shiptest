@@ -180,6 +180,7 @@
 	var/backpack = /obj/item/storage/backpack
 	var/satchel  = /obj/item/storage/backpack/satchel
 	var/duffelbag = /obj/item/storage/backpack/duffelbag
+	var/courierbag = /obj/item/storage/backpack/messenger
 
 	var/pda_slot = ITEM_SLOT_BELT
 
