@@ -58,7 +58,6 @@
 	. = ""
 	var/i = start
 	while(i <= len)
-	for(var/i = start, i <= len, i += length(char))
 		char = color[i]
 		switch(text2ascii(char))
 			if(48 to 57)		//numbers 0 to 9
