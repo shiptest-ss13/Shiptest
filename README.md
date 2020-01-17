@@ -1,4 +1,4 @@
-## WaspStation 13 COdebase
+## WaspStation 13 Codebase
 
 [![Build Status](https://api.travis-ci.com/WaspStation/WaspStation-1.0.svg?branch=master)](https://travis-ci.com/WaspStation/WaspStation-1.0) [![Krihelimeter](http://www.krihelinator.xyz/badge/WaspStation/WaspStation-1.0)](https://www.krihelinator.xyz)  
 [![Percentage of issues still open](http://isitmaintained.com/badge/open/waspstation/waspstation-1.0.svg)](https://isitmaintained.com/project/tgstation/tgstation "Percentage of issues still open") [![Average time to resolve an issue](http://isitmaintained.com/badge/resolution/waspstation/waspstation-1.0.svg)](https://isitmaintained.com/project/tgstation/tgstation "Average time to resolve an issue") ![Coverage](https://img.shields.io/badge/coverage---2%25-red.svg)  
