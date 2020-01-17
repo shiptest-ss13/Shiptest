@@ -268,5 +268,3 @@ Borg Shaker
 	desc = "An advanced chemical synthesizer and injection system, designed to stabilize patients."
 	reagent_ids = list(/datum/reagent/medicine/epinephrine)
 	accepts_reagent_upgrades = FALSE
-
-#undef C2NAMEREAGENT
