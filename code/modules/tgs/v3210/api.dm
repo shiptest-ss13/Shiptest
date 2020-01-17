@@ -64,13 +64,13 @@
 	if(!instance_name)
 		instance_name = "TG Station Server"	//maybe just upgraded
 
-	var/list/logs = file2list(".git/logs/HEAD")
+/*	var/list/logs = file2list(".git/logs/HEAD")
 	if(logs.len)
 		logs = splittext(logs[logs.len - 1], " ")
 		commit = logs[2]
 	logs = file2list(".git/logs/refs/remotes/origin/master")
 	if(logs.len)
-		originmastercommit = splittext(logs[logs.len - 1], " ")[2]
+		originmastercommit = splittext(logs[logs.len - 1], " ")[2] */
 
 	if(world.system_type != MS_WINDOWS)
 		TGS_ERROR_LOG("This API version is only supported on Windows. Not running on Windows. Aborting initialization!")
