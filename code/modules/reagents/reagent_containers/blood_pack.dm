@@ -37,7 +37,7 @@
 
 /obj/item/reagent_containers/blood/random/Initialize()
 	icon_state = "bloodpack"
-	blood_type = pick("A+", "A-", "B+", "B-", "O+", "O-", "L")
+	blood_type = pick("A+", "A-", "B+", "B-", "O+", "O-", "L", "S")
 	return ..()
 
 /obj/item/reagent_containers/blood/APlus
@@ -60,6 +60,9 @@
 
 /obj/item/reagent_containers/blood/lizard
 	blood_type = "L"
+
+/obj/item/reagent_containers/blood/squid
+	blood_type = "S"
 
 /obj/item/reagent_containers/blood/ethereal
 	blood_type = "LE"

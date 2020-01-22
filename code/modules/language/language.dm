@@ -19,6 +19,7 @@
 	var/sentence_chance = 5      // Likelihood of making a new sentence after each syllable.
 	var/space_chance = 55        // Likelihood of getting a space in the random scramble string
 	var/list/spans = list()
+	var/list/scramble_spans = list() //For wingding fonts
 	var/list/scramble_cache = list()
 	var/default_priority = 0          // the language that an atom knows with the highest "default_priority" is selected by default.
 

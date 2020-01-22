@@ -28,6 +28,7 @@
 							"lizard",
 							"moth",
 							"plasmaman",
+							"squid",
 							"ethereal",
 							"other"
 							)

@@ -556,6 +556,12 @@ GLOBAL_LIST_EMPTY(asset_datums)
 		"v4shim.css"          = 'html/font-awesome/css/v4-shims.min.css'
 	)
 
+/datum/asset/simple/fonts
+	verify = FALSE
+	assets = list(
+		"sga.ttf" = 'html/sga.ttf'
+	)
+
 /datum/asset/spritesheet/goonchat
 	name = "chat"
 

@@ -103,6 +103,8 @@ GLOBAL_LIST_INIT(freqtospan, list(
 	else if(language)
 		var/atom/movable/AM = speaker.GetSource()
 		var/datum/language/D = GLOB.language_datum_instances[language]
+		if (D.scramble_spans)
+			spans |= D.scramble_spans
 		raw_message = D.scramble(raw_message)
 		if(AM)
 			return AM.say_quote(raw_message, spans, message_mode)

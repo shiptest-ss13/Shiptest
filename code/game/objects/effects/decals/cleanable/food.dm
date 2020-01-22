@@ -41,6 +41,13 @@
 	if(is_species(AM, /datum/species/snail))
 		to_chat(AM, "<span class='danger'>Your path is obstructed by <span class='phobia'>salt</span>.</span>")
 
+/obj/effect/decal/cleanable/food/salt/Crossed(mob/living/L)
+	if (issquidperson(L))
+		while(L.loc == src.loc)
+			L.adjustFireLoss(2, TRUE)
+			to_chat(L, "<span class='danger'>The salt! It burns!</span>")
+			sleep(20)
+
 /obj/effect/decal/cleanable/food/flour
 	name = "flour"
 	desc = "It's still good. Four second rule!"
