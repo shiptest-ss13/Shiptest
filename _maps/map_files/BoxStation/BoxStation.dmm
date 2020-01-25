@@ -3394,7 +3394,6 @@
 /obj/effect/turf_decal/tile/red{
 	dir = 1
 	},
-/obj/effect/turf_decal/tile/red,
 /obj/effect/turf_decal/tile/red{
 	dir = 8
 	},
@@ -3653,12 +3652,19 @@
 /turf/open/floor/plasteel/dark,
 /area/security/prison)
 "ahW" = (
-/obj/structure/bodycontainer/morgue,
 /obj/machinery/camera{
 	c_tag = "Brig Infirmary";
 	dir = 4
 	},
-/turf/open/floor/plasteel/dark,
+/obj/effect/turf_decal/tile/red{
+	dir = 8
+	},
+/obj/effect/turf_decal/tile/red{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/red,
+/obj/structure/closet/secure_closet/brig_phys,
+/turf/open/floor/plasteel/white,
 /area/security/brig)
 "ahX" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
@@ -3836,15 +3842,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/security/main)
-"ain" = (
-/obj/effect/turf_decal/tile/red{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/red{
-	dir = 8
-	},
-/turf/open/floor/plasteel/white,
-/area/security/brig)
 "aio" = (
 /obj/structure/table,
 /obj/item/stack/sheet/metal/fifty,
@@ -51706,6 +51703,10 @@
 /obj/structure/disposalpipe/segment,
 /turf/closed/wall,
 /area/maintenance/port)
+"rTZ" = (
+/obj/effect/landmark/start/brig_phys,
+/turf/open/floor/plasteel/white,
+/area/security/brig)
 "rYJ" = (
 /obj/machinery/portable_atmospherics/canister,
 /obj/effect/turf_decal/bot,
@@ -79721,8 +79722,8 @@ aeO
 afH
 agj
 agN
+rTZ
 aht
-ain
 aid
 agj
 aiZ

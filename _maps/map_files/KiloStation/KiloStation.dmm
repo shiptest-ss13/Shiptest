@@ -3656,13 +3656,13 @@
 /turf/open/floor/plasteel/dark,
 /area/security/prison)
 "agd" = (
-/obj/structure/bodycontainer/morgue,
 /obj/effect/turf_decal/tile/neutral,
 /obj/effect/turf_decal/tile/neutral{
 	dir = 4
 	},
 /obj/effect/turf_decal/delivery,
-/turf/open/floor/plasteel/dark,
+/obj/structure/closet/secure_closet/brig_phys,
+/turf/open/floor/plasteel/showroomfloor,
 /area/security/warden)
 "age" = (
 /obj/effect/turf_decal/stripes/corner{
@@ -93855,6 +93855,11 @@
 /obj/machinery/holopad/secure,
 /turf/open/floor/wood,
 /area/crew_quarters/heads/captain)
+"hkq" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/obj/effect/landmark/start/brig_phys,
+/turf/open/floor/plasteel/showroomfloor,
+/area/security/warden)
 "llk" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 8
@@ -113115,7 +113120,7 @@ adz
 aCv
 cdp
 cnB
-cnB
+hkq
 crz
 aFu
 aLi

@@ -30286,12 +30286,6 @@
 /turf/open/floor/plating,
 /area/security/brig)
 "biz" = (
-/obj/structure/table/glass,
-/obj/machinery/computer/med_data/laptop{
-	dir = 4;
-	pixel_x = 3;
-	pixel_y = 2
-	},
 /obj/structure/sign/poster/official/cleanliness{
 	pixel_y = 32
 	},
@@ -30304,6 +30298,7 @@
 /obj/effect/turf_decal/tile/red{
 	dir = 8
 	},
+/obj/structure/closet/secure_closet/brig_phys,
 /turf/open/floor/plasteel/white,
 /area/security/brig)
 "biA" = (
@@ -31388,6 +31383,7 @@
 /area/security/brig)
 "bkl" = (
 /obj/structure/cable,
+/obj/effect/landmark/start/brig_phys,
 /turf/open/floor/plasteel/white,
 /area/security/brig)
 "bkm" = (

@@ -91,6 +91,9 @@
 		if("Security Officer")
 			O = new /datum/outfit/plasmaman/security
 
+		if("Brig Physician")
+			O = new /datum/outfit/plasmaman/security
+
 		if("Detective")
 			O = new /datum/outfit/plasmaman/detective
 

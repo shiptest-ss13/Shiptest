@@ -12,6 +12,7 @@
 #define ROBOTICIST		(1<<8)
 #define AI_JF			(1<<9)
 #define CYBORG			(1<<10)
+#define BRIG_PHYS		(1<<11)
 
 
 #define MEDSCI			(1<<1)
@@ -88,3 +89,4 @@
 #define JOB_DISPLAY_ORDER_WARDEN 31
 #define JOB_DISPLAY_ORDER_DETECTIVE 32
 #define JOB_DISPLAY_ORDER_SECURITY_OFFICER 33
+#define JOB_DISPLAY_ORDER_BRIG_PHYS 34
