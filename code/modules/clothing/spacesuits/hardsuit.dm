@@ -105,6 +105,7 @@
 	var/helmettype = /obj/item/clothing/head/helmet/space/hardsuit
 	var/obj/item/tank/jetpack/suit/jetpack = null
 	var/hardsuit_type
+	pocket_storage_component_path = FALSE
 
 
 /obj/item/clothing/suit/space/hardsuit/Initialize()
