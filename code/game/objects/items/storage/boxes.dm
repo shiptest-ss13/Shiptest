@@ -255,6 +255,28 @@
 	new /obj/item/reagent_containers/glass/beaker/noreact(src)
 	new /obj/item/reagent_containers/glass/beaker/bluespace(src)
 
+/obj/item/storage/box/hypospray
+	name = "hypospray mk. II kit"
+	icon_state = "medbriefcase"
+	illustration = null
+
+/obj/item/storage/box/hypospray/PopulateContents()
+	new /obj/item/hypospray/mkii(src)
+	new /obj/item/reagent_containers/glass/bottle/vial/small/preloaded/bicaridine(src)
+	new /obj/item/reagent_containers/glass/bottle/vial/small/preloaded/antitoxin(src)
+	new /obj/item/reagent_containers/glass/bottle/vial/small/preloaded/kelotane(src)
+	new /obj/item/reagent_containers/glass/bottle/vial/small/preloaded/dexalin(src)
+
+/obj/item/storage/box/hypospray/CMO
+	name = "advanced hypospray mk. II kit"
+
+/obj/item/storage/box/hypospray/CMO/PopulateContents()
+	new /obj/item/hypospray/mkii/CMO(src)
+	new /obj/item/reagent_containers/glass/bottle/vial/large/preloaded/bicaridine(src)
+	new /obj/item/reagent_containers/glass/bottle/vial/large/preloaded/antitoxin(src)
+	new /obj/item/reagent_containers/glass/bottle/vial/large/preloaded/kelotane(src)
+	new /obj/item/reagent_containers/glass/bottle/vial/large/preloaded/dexalin(src)
+
 /obj/item/storage/box/medigels
 	name = "box of medical gels"
 	desc = "A box full of medical gel applicators, with unscrewable caps and precision spray heads."

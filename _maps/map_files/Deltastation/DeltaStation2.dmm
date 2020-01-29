@@ -65352,12 +65352,6 @@
 /obj/effect/turf_decal/delivery,
 /turf/open/floor/plasteel,
 /area/maintenance/starboard)
-"crA" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating{
-	icon_state = "platingdmg2"
-	},
-/area/maintenance/starboard)
 "crB" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/structure/cable,
@@ -66239,15 +66233,6 @@
 	},
 /turf/open/floor/plating,
 /area/maintenance/starboard)
-"cte" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/blood/old,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden{
-	dir = 4
-	},
-/obj/structure/cable,
-/turf/open/floor/plating,
-/area/maintenance/starboard)
 "ctf" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/components/unary/vent_pump/on{
@@ -67022,23 +67007,6 @@
 	},
 /obj/structure/cable,
 /turf/open/floor/plating,
-/area/maintenance/starboard)
-"cuH" = (
-/obj/structure/closet/crate{
-	icon_state = "crateopen"
-	},
-/obj/item/clothing/shoes/jackboots,
-/obj/item/radio,
-/obj/item/storage/secure/briefcase,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/spawner/lootdrop/maintenance/two,
-/turf/open/floor/plating,
-/area/maintenance/starboard)
-"cuI" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/tile/red,
-/turf/open/floor/plasteel,
 /area/maintenance/starboard)
 "cuK" = (
 /obj/structure/reagent_dispensers/peppertank{
@@ -68522,38 +68490,19 @@
 	heat_capacity = 1e+006
 	},
 /area/maintenance/starboard)
-"cxu" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden{
-	dir = 4
-	},
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
-/obj/effect/turf_decal/delivery,
-/obj/structure/cable,
-/turf/open/floor/plasteel,
-/area/maintenance/starboard)
 "cxv" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/door/airlock/maintenance_hatch{
-	name = "Maintenance Hatch";
-	req_access_txt = "12"
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden{
-	dir = 4
-	},
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/obj/effect/turf_decal/stripes/line{
-	dir = 8
-	},
-/obj/effect/turf_decal/stripes/line{
+/obj/structure/cable,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
 	},
-/obj/structure/cable,
+/obj/machinery/door/airlock/public/glass{
+	name = "Cryogenic Lounge"
+	},
 /turf/open/floor/plasteel,
-/area/maintenance/starboard)
+/area/crew_quarters/fitness/recreation)
 "cxw" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 10
@@ -69438,35 +69387,18 @@
 /area/maintenance/starboard)
 "czd" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/light/small,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
-	dir = 4
-	},
-/obj/effect/turf_decal/tile/neutral,
-/obj/effect/turf_decal/tile/neutral{
-	dir = 8
-	},
-/turf/open/floor/plasteel,
-/area/maintenance/starboard)
-"cze" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
-	dir = 4
-	},
-/obj/effect/turf_decal/tile/neutral,
-/obj/effect/turf_decal/tile/neutral{
-	dir = 4
-	},
-/obj/effect/turf_decal/tile/neutral{
-	dir = 8
-	},
-/turf/open/floor/plasteel,
-/area/maintenance/starboard)
-"czf" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
 	},
 /turf/closed/wall,
+/area/crew_quarters/fitness/recreation)
+"cze" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 4
+	},
+/obj/structure/table,
+/obj/item/storage/fancy/donut_box,
+/turf/open/floor/plasteel,
 /area/crew_quarters/fitness/recreation)
 "czg" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
@@ -113971,6 +113903,13 @@
 /obj/structure/cable,
 /turf/open/floor/plasteel,
 /area/maintenance/department/science)
+"erR" = (
+/obj/machinery/cryopod{
+	dir = 4
+	},
+/obj/effect/turf_decal/stripes/line,
+/turf/open/floor/plasteel/freezer,
+/area/crew_quarters/fitness/recreation)
 "exE" = (
 /obj/machinery/air_sensor/atmos/toxins_mixing_tank,
 /turf/open/floor/engine/vacuum,
@@ -115179,6 +115118,21 @@
 /obj/structure/cable,
 /turf/open/floor/plasteel,
 /area/maintenance/port)
+"lFy" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 4
+	},
+/obj/machinery/cryopod{
+	dir = 4
+	},
+/obj/effect/turf_decal/stripes/line{
+	dir = 1
+	},
+/turf/open/floor/plasteel/freezer,
+/area/crew_quarters/fitness/recreation)
+"lHS" = (
+/turf/open/space/basic,
+/area/maintenance/starboard)
 "lKR" = (
 /obj/structure/lattice/catwalk,
 /obj/structure/disposalpipe/segment{
@@ -115327,6 +115281,20 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /turf/open/floor/circuit/green,
 /area/science/research/abandoned)
+"myS" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/structure/cable,
+/obj/machinery/door/airlock/maintenance_hatch{
+	name = "Maintenance Hatch";
+	req_access_txt = "12"
+	},
+/turf/open/floor/plating,
+/area/maintenance/starboard)
 "mAW" = (
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden{
 	dir = 1
@@ -115759,6 +115727,16 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/science/mixing)
+"oUS" = (
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/structure/cable,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
+/turf/open/floor/plasteel,
+/area/crew_quarters/fitness/recreation)
 "oUW" = (
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden,
 /obj/structure/disposalpipe/segment{
@@ -115998,6 +115976,18 @@
 /obj/machinery/atmospherics/components/unary/outlet_injector/atmos/toxins_mixing_input,
 /turf/open/floor/engine/vacuum,
 /area/science/mixing/chamber)
+"qpg" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/structure/cable,
+/obj/effect/landmark/blobstart,
+/turf/open/floor/plating,
+/area/maintenance/starboard)
 "qpq" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel,
@@ -116096,6 +116086,13 @@
 /obj/effect/turf_decal/bot,
 /turf/open/floor/plasteel,
 /area/engine/storage_shared)
+"qWr" = (
+/obj/item/twohanded/required/kirbyplants/random,
+/obj/machinery/camera{
+	c_tag = "Cryogenics Lounge"
+	},
+/turf/open/floor/plasteel,
+/area/crew_quarters/fitness/recreation)
 "qYo" = (
 /obj/structure/lattice,
 /turf/open/space/basic,
@@ -116791,6 +116788,16 @@
 /obj/structure/cable,
 /turf/open/floor/plasteel/white,
 /area/medical/medbay/central)
+"vHa" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 4
+	},
+/obj/machinery/light,
+/obj/effect/turf_decal/stripes/line{
+	dir = 5
+	},
+/turf/open/floor/plasteel/freezer,
+/area/crew_quarters/fitness/recreation)
 "vJu" = (
 /obj/machinery/door/airlock/maintenance_hatch{
 	name = "Nanite Lab Maintenance";
@@ -117039,6 +117046,15 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /turf/open/floor/plasteel/white,
 /area/medical/medbay/central)
+"xtr" = (
+/obj/machinery/computer/cryopod{
+	pixel_y = 25
+	},
+/obj/effect/turf_decal/stripes/line{
+	dir = 6
+	},
+/turf/open/floor/plasteel/freezer,
+/area/crew_quarters/fitness/recreation)
 "xxD" = (
 /obj/machinery/smartfridge/organ,
 /turf/open/floor/plasteel/white,
@@ -168462,10 +168478,10 @@ cnm
 coO
 cqh
 bJc
-cte
+ctf
 cuG
 bHq
-cni
+qpg
 cza
 cAw
 cCe
@@ -168718,9 +168734,9 @@ clD
 cnn
 coP
 clA
-crA
-ctf
-cuH
+crB
+ctg
+crB
 bHq
 cxt
 czb
@@ -168975,9 +168991,9 @@ clE
 cno
 coQ
 clA
-clz
-bJe
-cuI
+crC
+cth
+cuK
 bHq
 cxt
 czc
@@ -169232,11 +169248,11 @@ clF
 cnp
 coR
 clA
-crB
-ctg
-crB
 bHq
-cnf
+cti
+cuL
+cuL
+myS
 czd
 cAw
 cAw
@@ -169489,12 +169505,12 @@ clG
 cnp
 coS
 clA
-crC
-cth
-cuK
-bHq
-cni
-coF
+lHS
+lHS
+cuL
+erR
+oUS
+lFy
 cAw
 cCh
 cDH
@@ -169746,12 +169762,12 @@ clH
 cnp
 coT
 clA
-bHq
-cti
-bHq
-bHq
-cxt
-coI
+lHS
+lHS
+cuL
+xtr
+oUS
+vHa
 cAw
 cCi
 cDI
@@ -170005,9 +170021,9 @@ clK
 clA
 aaa
 aaa
-aad
-cti
-cxu
+cuL
+qWr
+oUS
 cze
 cAw
 cCj
@@ -170263,9 +170279,9 @@ clA
 aad
 aad
 cuL
-cuL
+cuM
 cxv
-czf
+cuM
 cAw
 cAw
 cAw

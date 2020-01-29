@@ -191,13 +191,17 @@
 		if(GSATCHEL)
 			back = /obj/item/storage/backpack/satchel //Grey satchel
 		if(GDUFFELBAG)
-			back = /obj/item/storage/backpack/duffelbag //Grey Duffel bag
+			back = /obj/item/storage/backpack/duffelbag //Grey duffel bag
+		if(GCOURIERBAG)
+			back = /obj/item/storage/backpack/messenger //Grey messenger bag
 		if(LSATCHEL)
 			back = /obj/item/storage/backpack/satchel/leather //Leather Satchel
 		if(DSATCHEL)
 			back = satchel //Department satchel
 		if(DDUFFELBAG)
 			back = duffelbag //Department duffel bag
+		if(DCOURIERBAG)
+			back = courierbag //Department messenger bag
 		else
 			back = backpack //Department backpack
 
@@ -246,6 +250,7 @@
 	types += backpack
 	types += satchel
 	types += duffelbag
+	types += courierbag
 	return types
 
 //Warden and regular officers add this result to their get_access()

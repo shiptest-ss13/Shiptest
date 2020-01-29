@@ -43,6 +43,7 @@
 	new /obj/item/clothing/gloves/color/latex/nitrile(src)
 	new /obj/item/storage/belt/medical(src)
 	new /obj/item/clothing/glasses/hud/health(src)
+	new /obj/item/storage/box/hypospray(src)
 	return
 
 /obj/structure/closet/secure_closet/CMO
@@ -76,6 +77,7 @@
 	new /obj/item/circuitboard/machine/techfab/department/medical(src)
 	new /obj/item/storage/photo_album/CMO(src)
 	new /obj/item/card/id/departmental_budget/med(src)
+	new /obj/item/storage/box/hypospray/CMO(src)
 
 /obj/structure/closet/secure_closet/animal
 	name = "animal control"

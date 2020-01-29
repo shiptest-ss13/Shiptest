@@ -3507,10 +3507,6 @@
 /obj/effect/decal/cleanable/cobweb/cobweb2,
 /turf/open/floor/plating,
 /area/maintenance/fore)
-"ahR" = (
-/obj/item/cigbutt,
-/turf/open/floor/plating,
-/area/maintenance/fore)
 "ahS" = (
 /turf/open/floor/plating{
 	icon_state = "platingdmg1"
@@ -3521,12 +3517,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel,
 /area/maintenance/disposal/incinerator)
-"ahU" = (
-/obj/effect/decal/cleanable/cobweb/cobweb2,
-/obj/structure/table,
-/obj/effect/spawner/lootdrop/maintenance/two,
-/turf/open/floor/plating,
-/area/maintenance/fore)
 "ahV" = (
 /obj/machinery/firealarm{
 	dir = 4;
@@ -3916,27 +3906,6 @@
 /obj/effect/turf_decal/bot,
 /turf/open/floor/plasteel,
 /area/engine/atmos)
-"aiO" = (
-/obj/structure/chair/stool{
-	pixel_y = 8
-	},
-/turf/open/floor/plating,
-/area/maintenance/fore)
-"aiP" = (
-/obj/structure/table,
-/obj/item/folder,
-/turf/open/floor/plating,
-/area/maintenance/fore)
-"aiQ" = (
-/obj/structure/extinguisher_cabinet{
-	pixel_x = -27
-	},
-/obj/effect/turf_decal/tile/neutral{
-	dir = 1
-	},
-/obj/structure/cable,
-/turf/open/floor/plasteel,
-/area/crew_quarters/fitness/recreation)
 "aiR" = (
 /obj/structure/table,
 /obj/item/clothing/under/suit/sl,
@@ -68509,12 +68478,6 @@
 	},
 /turf/open/space,
 /area/space/nearstation)
-"dhn" = (
-/obj/structure/table,
-/obj/item/poster/random_contraband,
-/obj/effect/spawner/lootdrop/maintenance,
-/turf/open/floor/plating,
-/area/maintenance/fore)
 "dho" = (
 /obj/item/stack/sheet/cardboard,
 /obj/structure/light_construct/small{
@@ -71198,6 +71161,12 @@
 	},
 /turf/open/floor/plasteel,
 /area/science/mixing)
+"fgo" = (
+/obj/machinery/computer/cryopod{
+	pixel_y = 25
+	},
+/turf/open/floor/plasteel,
+/area/crew_quarters/fitness/recreation)
 "fht" = (
 /obj/structure/sink/kitchen{
 	desc = "A sink used for washing one's hands and face. It looks rusty and home-made";
@@ -72649,6 +72618,15 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/medical/chemistry)
+"kqn" = (
+/obj/machinery/cryopod{
+	dir = 4
+	},
+/obj/effect/turf_decal/stripes/line{
+	dir = 6
+	},
+/turf/open/floor/plasteel/freezer,
+/area/crew_quarters/fitness/recreation)
 "kqz" = (
 /obj/structure/sign/warning/docking,
 /turf/closed/wall,
@@ -75186,6 +75164,12 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/medical/chemistry)
+"rLZ" = (
+/obj/machinery/door/airlock/public/glass{
+	name = "Cryogenic Lounge"
+	},
+/turf/open/floor/plasteel,
+/area/crew_quarters/fitness/recreation)
 "rMv" = (
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden{
@@ -75644,6 +75628,10 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/medical/medbay/central)
+"sZE" = (
+/obj/structure/lattice,
+/turf/closed/wall,
+/area/crew_quarters/fitness/recreation)
 "tay" = (
 /turf/closed/wall,
 /area/medical/medbay/central)
@@ -76140,6 +76128,16 @@
 	},
 /turf/open/floor/plasteel,
 /area/maintenance/department/science)
+"uKV" = (
+/obj/effect/turf_decal/tile/neutral{
+	dir = 1
+	},
+/obj/structure/cable,
+/obj/structure/extinguisher_cabinet{
+	pixel_x = -27
+	},
+/turf/open/floor/plasteel,
+/area/crew_quarters/fitness/recreation)
 "uLY" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /obj/effect/turf_decal/stripes/line{
@@ -77125,6 +77123,19 @@
 /obj/item/hand_labeler,
 /turf/open/floor/plasteel/white,
 /area/medical/chemistry)
+"xUu" = (
+/obj/machinery/cryopod{
+	dir = 4
+	},
+/obj/effect/turf_decal/stripes/line{
+	dir = 5
+	},
+/obj/machinery/camera{
+	c_tag = "Cryogenics Lounge";
+	dir = 4
+	},
+/turf/open/floor/plasteel/freezer,
+/area/crew_quarters/fitness/recreation)
 "xVl" = (
 /turf/closed/wall,
 /area/hallway/secondary/service)
@@ -77232,6 +77243,10 @@
 	},
 /turf/open/floor/plasteel,
 /area/science/misc_lab/range)
+"yib" = (
+/obj/machinery/light/small,
+/turf/open/floor/plasteel,
+/area/crew_quarters/fitness/recreation)
 "yih" = (
 /obj/machinery/door/airlock/medical/glass{
 	name = "Chemistry Lab";
@@ -110729,7 +110744,7 @@ aaf
 aaf
 aaf
 aaa
-agq
+aaa
 agq
 agq
 agq
@@ -110986,9 +111001,9 @@ aaf
 aaa
 aaf
 aaa
+aaa
 agq
 ahd
-ahR
 aje
 aje
 alc
@@ -111241,11 +111256,11 @@ aaa
 aaa
 aaf
 aaa
-aaf
-aaf
-agq
+sZE
+sZE
+sZE
+acP
 ahe
-ahS
 aje
 ajP
 ald
@@ -111499,12 +111514,12 @@ aaa
 aaf
 aaa
 acP
+xUu
+kqn
 acP
 acP
 acP
-dhn
-aiO
-aje
+acP
 ale
 ahS
 agq
@@ -111755,12 +111770,12 @@ aaf
 aaf
 aaf
 aaf
-acQ
+acP
+fgo
+yib
+acP
 afs
 agr
-acP
-ahU
-aiP
 acP
 acP
 acP
@@ -112013,11 +112028,11 @@ aaa
 aaf
 aaa
 acP
+acQ
+rLZ
+acP
 acP
 ags
-acP
-acP
-acP
 acP
 alf
 amv
@@ -112272,9 +112287,9 @@ aaa
 acQ
 aft
 agt
-agt
+uKV
 ahV
-aiQ
+agt
 dhp
 alg
 alg

@@ -307,9 +307,6 @@
 /obj/item/hypospray/mkii/tricord
 	start_vial = /obj/item/reagent_containers/glass/bottle/vial/small/preloaded/tricord
 
-/obj/item/hypospray/mkii/enlarge
-	spawnwithvial = FALSE
-
 /obj/item/hypospray/mkii/CMO
 	name = "hypospray mk.II deluxe"
 	allowed_containers = list(/obj/item/reagent_containers/glass/bottle/vial/tiny, /obj/item/reagent_containers/glass/bottle/vial/small, /obj/item/reagent_containers/glass/bottle/vial/large)
