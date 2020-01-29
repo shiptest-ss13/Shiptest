@@ -65,21 +65,25 @@
 /turf/open/floor/plasteel/grimy,
 /area/crew_quarters/heads/hop)
 "aaj" = (
-/obj/effect/turf_decal/tile/blue{
-	dir = 4
-	},
 /obj/machinery/light{
 	dir = 4
 	},
 /obj/machinery/stasis,
-/turf/open/floor/plasteel/white,
+/obj/effect/turf_decal/stripes/end{
+	dir = 8
+	},
+/obj/machinery/camera{
+	c_tag = "Medbay - Sleepers";
+	name = "medbay camera";
+	network = list("ss13","medbay")
+	},
+/turf/open/floor/plasteel,
 /area/medical/medbay/central)
 "aak" = (
 /obj/effect/turf_decal/stripes/end{
 	dir = 4
 	},
 /obj/machinery/sleeper{
-	icon_state = "sleeper";
 	dir = 4
 	},
 /turf/open/floor/plasteel,
@@ -92,7 +96,6 @@
 	dir = 4
 	},
 /obj/machinery/sleeper{
-	icon_state = "sleeper";
 	dir = 8
 	},
 /turf/open/floor/plasteel,
@@ -83124,9 +83127,6 @@
 	req_access_txt = "5"
 	},
 /obj/effect/turf_decal/stripes/line,
-/obj/structure/sign/poster/official/cleanliness{
-	pixel_x = -32
-	},
 /obj/effect/turf_decal/stripes/line{
 	dir = 1
 	},
@@ -84090,20 +84090,16 @@
 /turf/open/floor/plasteel,
 /area/medical/medbay/central)
 "cZH" = (
-/obj/structure/table/glass,
-/obj/machinery/camera{
-	c_tag = "Medbay - Sleepers";
-	name = "medbay camera";
-	network = list("ss13","medbay")
+/obj/machinery/cryopod{
+	dir = 4
 	},
-/obj/item/book/manual/wiki/medicine,
-/obj/item/stack/medical/gauze,
-/obj/item/stack/medical/suture,
-/obj/item/stack/medical/mesh,
-/obj/effect/turf_decal/tile/blue{
-	dir = 1
+/obj/effect/turf_decal/stripes/end{
+	dir = 4
 	},
-/turf/open/floor/plasteel/white,
+/obj/machinery/computer/cryopod{
+	pixel_y = 25
+	},
+/turf/open/floor/plasteel,
 /area/medical/medbay/central)
 "cZI" = (
 /obj/effect/turf_decal/tile/blue{

@@ -4225,19 +4225,6 @@
 /obj/structure/table/wood,
 /turf/open/floor/wood,
 /area/crew_quarters/bar)
-"akM" = (
-/obj/effect/turf_decal/tile/neutral{
-	dir = 4
-	},
-/obj/structure/rack,
-/obj/item/clothing/gloves/boxing,
-/obj/item/clothing/mask/luchador/rudos,
-/obj/item/clothing/gloves/boxing/yellow,
-/obj/item/clothing/mask/luchador/tecnicos,
-/obj/item/clothing/gloves/boxing/green,
-/obj/item/clothing/mask/luchador,
-/turf/open/floor/plasteel,
-/area/crew_quarters/fitness)
 "akN" = (
 /obj/structure/rack,
 /obj/item/clothing/suit/armor/bulletproof{
@@ -15265,7 +15252,9 @@
 	dir = 1;
 	network = list("ss13","Medical")
 	},
-/obj/machinery/sleeper,
+/obj/machinery/cryopod{
+	dir = 4
+	},
 /turf/open/floor/plasteel,
 /area/medical/sleeper)
 "aQi" = (
@@ -16345,7 +16334,7 @@
 /turf/open/floor/plating,
 /area/maintenance/starboard)
 "aTD" = (
-/obj/machinery/sleeper,
+/obj/machinery/stasis,
 /turf/open/floor/plasteel,
 /area/medical/sleeper)
 "aTE" = (
@@ -20285,6 +20274,10 @@
 "bdI" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer3{
 	dir = 4
+	},
+/obj/machinery/airalarm{
+	dir = 4;
+	pixel_x = -23
 	},
 /turf/open/floor/plasteel/white/side,
 /area/medical/sleeper)
@@ -45757,6 +45750,12 @@
 /obj/structure/cable,
 /turf/open/floor/plasteel,
 /area/engine/engineering)
+"nbB" = (
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/turf/open/floor/plasteel,
+/area/maintenance/fore)
 "nem" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -47460,6 +47459,16 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/medical/virology)
+"qpG" = (
+/obj/effect/turf_decal/stripes/end{
+	dir = 8
+	},
+/obj/machinery/cryopod,
+/obj/machinery/computer/cryopod{
+	pixel_y = 25
+	},
+/turf/open/floor/plasteel/showroomfloor,
+/area/crew_quarters/fitness)
 "qqo" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/bot,
@@ -50617,7 +50626,7 @@
 /area/engine/engineering)
 "wMM" = (
 /obj/machinery/sleeper,
-/obj/machinery/airalarm{
+/obj/machinery/computer/cryopod{
 	pixel_y = 25
 	},
 /turf/open/floor/plasteel,
@@ -78619,7 +78628,7 @@ aaT
 bVq
 aQq
 adO
-akM
+aej
 aIE
 beq
 ber
@@ -78876,8 +78885,8 @@ asF
 bQr
 bSb
 adO
-adO
-aIW
+qpG
+nbB
 asG
 asG
 asG
@@ -79132,9 +79141,9 @@ bQr
 aaT
 bXd
 bQh
-aaT
-nPi
-bfS
+adO
+adO
+aIW
 asG
 wtu
 aoT
@@ -79390,7 +79399,7 @@ aaT
 bQf
 bQi
 aaT
-bQr
+nPi
 hjz
 asG
 afr

@@ -925,15 +925,25 @@
 /turf/open/space,
 /area/space/nearstation)
 "acl" = (
-/obj/effect/turf_decal/tile/blue{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/blue{
-	dir = 8
+/obj/item/radio/intercom{
+	pixel_x = -30
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 5
 	},
+/obj/machinery/camera{
+	c_tag = "Medbay Sleepers";
+	dir = 4;
+	network = list("ss13","medbay")
+	},
+/obj/effect/turf_decal/tile/blue{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/blue,
+/obj/effect/turf_decal/tile/blue{
+	dir = 8
+	},
+/obj/machinery/stasis,
 /turf/open/floor/plasteel/white,
 /area/medical/sleeper)
 "acm" = (
@@ -1282,7 +1292,6 @@
 	dir = 8
 	},
 /obj/machinery/sleeper{
-	icon_state = "sleeper";
 	dir = 4
 	},
 /turf/open/floor/plasteel/white,
@@ -1302,7 +1311,6 @@
 	dir = 8
 	},
 /obj/machinery/sleeper{
-	icon_state = "sleeper";
 	dir = 8
 	},
 /turf/open/floor/plasteel/white,
@@ -49734,6 +49742,9 @@
 "cjF" = (
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden{
 	dir = 4
+	},
+/obj/effect/turf_decal/tile/blue{
+	dir = 8
 	},
 /turf/open/floor/plasteel/white,
 /area/medical/sleeper)
@@ -101558,7 +101569,7 @@ coR
 cqo
 crB
 csA
-sPw
+cCe
 sPw
 sPw
 sPw
@@ -101815,7 +101826,7 @@ coS
 cqn
 crC
 csB
-sPw
+cCe
 oqw
 utT
 urb
