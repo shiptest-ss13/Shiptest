@@ -3591,6 +3591,9 @@
 	dir = 4
 	},
 /obj/structure/cable,
+/obj/machinery/computer/cargo/request{
+	dir = 8
+	},
 /turf/open/floor/plasteel,
 /area/security/main)
 "ahO" = (
@@ -26150,6 +26153,9 @@
 /area/science/research)
 "bpq" = (
 /obj/structure/cable,
+/obj/machinery/computer/cargo/request{
+	dir = 8
+	},
 /turf/open/floor/plasteel/white/side{
 	dir = 8
 	},
@@ -27418,6 +27424,9 @@
 	pixel_x = -30
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
+/obj/machinery/computer/cargo/request{
+	dir = 4
+	},
 /turf/open/floor/plasteel/white,
 /area/medical/medbay/central)
 "btg" = (
@@ -43935,6 +43944,9 @@
 	c_tag = "Engineering Storage";
 	dir = 4
 	},
+/obj/machinery/computer/cargo/request{
+	dir = 4
+	},
 /turf/open/floor/plasteel,
 /area/engine/engineering)
 "cpW" = (
@@ -52600,8 +52612,9 @@
 /turf/open/floor/plasteel/grimy,
 /area/security/detectives_office)
 "wUY" = (
-/obj/structure/table,
-/obj/item/reagent_containers/glass/bucket,
+/obj/machinery/computer/cargo/request{
+	dir = 8
+	},
 /turf/open/floor/plasteel,
 /area/hallway/secondary/service)
 "wXs" = (

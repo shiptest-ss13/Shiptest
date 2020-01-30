@@ -60963,6 +60963,9 @@
 /obj/effect/turf_decal/tile/red{
 	dir = 8
 	},
+/obj/machinery/computer/cargo/request{
+	dir = 8
+	},
 /turf/open/floor/plasteel,
 /area/security/brig)
 "ciI" = (
@@ -78306,12 +78309,14 @@
 	name = "medbay camera";
 	network = list("ss13","medbay")
 	},
-/obj/item/twohanded/required/kirbyplants/random,
 /obj/effect/turf_decal/tile/neutral,
 /obj/effect/turf_decal/tile/neutral{
 	dir = 4
 	},
 /obj/structure/cable,
+/obj/machinery/computer/cargo/request{
+	dir = 4
+	},
 /turf/open/floor/plasteel,
 /area/medical/storage)
 "cPE" = (
@@ -84776,13 +84781,13 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/obj/item/twohanded/required/kirbyplants/random,
 /obj/machinery/status_display/evac{
 	pixel_y = 32
 	},
 /obj/effect/turf_decal/tile/purple{
 	dir = 1
 	},
+/obj/machinery/computer/cargo/request,
 /turf/open/floor/plasteel/white,
 /area/science/lab)
 "daT" = (
@@ -113916,18 +113921,11 @@
 /turf/open/floor/plasteel,
 /area/hallway/secondary/service)
 "ehI" = (
-/obj/structure/extinguisher_cabinet{
-	pixel_x = -26
-	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
 	},
-/obj/structure/table,
-/obj/item/clipboard,
-/obj/item/stack/packageWrap,
-/obj/item/hand_labeler,
-/obj/effect/turf_decal/tile/neutral{
-	dir = 1
+/obj/machinery/computer/cargo/request{
+	dir = 4
 	},
 /turf/open/floor/plasteel,
 /area/hallway/secondary/service)
@@ -115082,6 +115080,9 @@
 "ljP" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 6
+	},
+/obj/machinery/computer/cargo/request{
+	dir = 1
 	},
 /turf/open/floor/plasteel,
 /area/engine/engineering)

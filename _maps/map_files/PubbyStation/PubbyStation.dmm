@@ -27000,15 +27000,6 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/medical/medbay/central)
-"brg" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden,
-/obj/effect/turf_decal/tile/blue,
-/obj/effect/turf_decal/tile/blue{
-	dir = 4
-	},
-/obj/machinery/computer/crew,
-/turf/open/floor/plasteel/white,
-/area/medical/medbay/central)
 "brh" = (
 /obj/effect/turf_decal/tile/blue{
 	dir = 1
@@ -50212,6 +50203,13 @@
 "fRs" = (
 /turf/closed/wall,
 /area/crew_quarters/heads/hor)
+"fTu" = (
+/obj/structure/cable,
+/obj/machinery/computer/cargo/request{
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark,
+/area/security/processing/cremation)
 "fTY" = (
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
 	dir = 8
@@ -54071,9 +54069,8 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 4
 	},
-/obj/structure/sink{
-	dir = 8;
-	pixel_x = 11
+/obj/machinery/computer/cargo/request{
+	dir = 8
 	},
 /turf/open/floor/plasteel,
 /area/engine/engineering)
@@ -54095,6 +54092,9 @@
 /obj/effect/turf_decal/tile/blue,
 /obj/effect/turf_decal/tile/blue{
 	dir = 4
+	},
+/obj/machinery/computer/crew{
+	dir = 8
 	},
 /turf/open/floor/plasteel/white,
 /area/medical/medbay/central)
@@ -54712,8 +54712,8 @@
 /turf/open/floor/wood,
 /area/lawoffice)
 "pYw" = (
-/obj/item/twohanded/required/kirbyplants{
-	icon_state = "plant-03"
+/obj/machinery/computer/crew{
+	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
 /area/science/lab)
@@ -56747,6 +56747,16 @@
 	},
 /turf/open/floor/engine,
 /area/engine/engineering)
+"uWX" = (
+/obj/effect/turf_decal/tile/blue,
+/obj/effect/turf_decal/tile/blue{
+	dir = 4
+	},
+/obj/machinery/computer/cargo/request{
+	dir = 8
+	},
+/turf/open/floor/plasteel/white,
+/area/medical/medbay/central)
 "uXG" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -76917,7 +76927,7 @@ aja
 ajI
 aky
 aky
-aky
+fTu
 amJ
 anv
 aoh
@@ -86739,9 +86749,9 @@ blj
 bmt
 bnC
 boG
-brg
+bpP
 bKA
-cqd
+uWX
 oCk
 bvn
 bwM

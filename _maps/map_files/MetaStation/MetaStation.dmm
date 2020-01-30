@@ -7398,6 +7398,9 @@
 /obj/effect/turf_decal/tile/red{
 	dir = 4
 	},
+/obj/machinery/computer/cargo/request{
+	dir = 8
+	},
 /turf/open/floor/plasteel,
 /area/security/main)
 "aqa" = (
@@ -44713,8 +44716,9 @@
 /obj/structure/disposalpipe/junction/flip{
 	dir = 2
 	},
-/obj/structure/table,
-/obj/item/kitchen/rollingpin,
+/obj/machinery/computer/cargo/request{
+	dir = 4
+	},
 /turf/open/floor/plasteel,
 /area/hallway/secondary/service)
 "bYp" = (
@@ -47075,10 +47079,12 @@
 	dir = 1;
 	pixel_y = -24
 	},
-/obj/structure/closet/l3closet,
 /obj/effect/turf_decal/tile/blue,
 /obj/effect/turf_decal/tile/blue{
 	dir = 8
+	},
+/obj/machinery/computer/cargo/request{
+	dir = 1
 	},
 /turf/open/floor/plasteel/white,
 /area/medical/storage)
@@ -51767,6 +51773,7 @@
 /obj/machinery/light{
 	dir = 1
 	},
+/obj/machinery/computer/cargo/request,
 /turf/open/floor/plasteel/white,
 /area/science/research)
 "cod" = (
@@ -76444,6 +76451,7 @@
 /obj/machinery/light{
 	dir = 1
 	},
+/obj/machinery/computer/cargo/request,
 /turf/open/floor/plasteel,
 /area/engine/engineering)
 "vKB" = (

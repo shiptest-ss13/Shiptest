@@ -1743,6 +1743,9 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/tile/red,
+/obj/machinery/computer/cargo/request{
+	dir = 8
+	},
 /turf/open/floor/plasteel,
 /area/security/main)
 "aen" = (
@@ -12678,6 +12681,10 @@
 /obj/effect/turf_decal/tile/blue{
 	dir = 8
 	},
+/obj/vehicle/ridden/wheelchair{
+	dir = 1
+	},
+/obj/effect/turf_decal/bot,
 /turf/open/floor/plasteel/white,
 /area/medical/medbay/central)
 "aII" = (
@@ -42000,6 +42007,12 @@
 /obj/effect/turf_decal/delivery,
 /turf/open/floor/plasteel,
 /area/engine/engine_room)
+"eRH" = (
+/obj/machinery/computer/cargo/request,
+/turf/open/floor/plasteel/white/side{
+	dir = 10
+	},
+/area/science/research)
 "eSa" = (
 /obj/machinery/power/apc{
 	areastring = "/area/quartermaster/office";
@@ -43235,6 +43248,12 @@
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
 /area/security/brig)
+"hxM" = (
+/obj/machinery/computer/cargo/request{
+	dir = 4
+	},
+/turf/open/floor/plasteel,
+/area/engine/engineering)
 "hxO" = (
 /obj/structure/cable,
 /obj/structure/disposalpipe/segment{
@@ -43460,6 +43479,12 @@
 /obj/effect/turf_decal/bot,
 /turf/open/floor/plasteel,
 /area/engine/engine_room)
+"hUI" = (
+/obj/machinery/computer/cargo/request{
+	dir = 8
+	},
+/turf/open/floor/plating,
+/area/maintenance/port/aft)
 "hVt" = (
 /obj/structure/cable,
 /turf/open/floor/engine,
@@ -50177,6 +50202,15 @@
 /obj/structure/cable,
 /turf/open/floor/plasteel,
 /area/engine/engine_room)
+"vWC" = (
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/machinery/computer/cargo/request{
+	dir = 1
+	},
+/turf/open/floor/plasteel/white,
+/area/medical/medbay/central)
 "vXg" = (
 /obj/machinery/dna_scannernew,
 /obj/machinery/light{
@@ -77653,7 +77687,7 @@ aXk
 aGT
 aGT
 aYa
-jdH
+vWC
 aJp
 aJp
 aJp
@@ -78905,7 +78939,7 @@ adc
 adb
 alA
 aek
-aeB
+eRH
 aeB
 agN
 ajo
@@ -82814,7 +82848,7 @@ amD
 aql
 bHe
 ahT
-aBx
+hUI
 aBx
 aBx
 bba
@@ -89220,7 +89254,7 @@ aor
 aor
 hrD
 aor
-aor
+hxM
 aor
 aTJ
 ofx
