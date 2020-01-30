@@ -148,6 +148,14 @@
 		return FALSE
 	return !held_items[hand_index]
 
+// Can put in any hand?
+/mob/proc/can_put_in_hands(obj/item/I)
+	if(can_put_in_hand(I, active_hand_index))
+		return TRUE
+	if(can_put_in_hand(I, get_inactive_hand_index()))
+		return TRUE
+	return FALSE
+
 /mob/proc/put_in_hand(obj/item/I, hand_index, forced = FALSE, ignore_anim = TRUE)
 	if(forced || can_put_in_hand(I, hand_index))
 		if(isturf(I.loc) && !ignore_anim)
