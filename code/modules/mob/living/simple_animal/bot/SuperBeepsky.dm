@@ -9,6 +9,7 @@
 	base_speed = 4 //he's a fast fucker
 	var/block_chance = 50
 	weapon_force = 30
+	var/noloot = FALSE
 
 
 /mob/living/simple_animal/bot/secbot/grievous/toy //A toy version of general beepsky!
@@ -18,11 +19,17 @@
 	maxHealth = 50
 	baton_type = /obj/item/toy/sword
 	weapon_force = 0
-
+	
 /mob/living/simple_animal/bot/secbot/grievous/bullet_act(obj/projectile/P)
 	visible_message("<span class='warning'>[src] deflects [P] with its energy swords!</span>")
 	playsound(src, 'sound/weapons/blade1.ogg', 50, TRUE)
 	return BULLET_ACT_BLOCK
+
+/mob/living/simple_animal/bot/secbot/grievous/nullcrate
+	name = "General Griefsky"
+	desc = "The Syndicate sends their regards."
+	emagged = 2
+	noloot = TRUE
 
 /mob/living/simple_animal/bot/secbot/grievous/Crossed(atom/movable/AM)
 	..()
@@ -33,6 +40,7 @@
 
 /mob/living/simple_animal/bot/secbot/grievous/Initialize()
 	. = ..()
+	weapon = new baton_type(src)
 	weapon.attack_self(src)
 
 /mob/living/simple_animal/bot/secbot/grievous/Destroy()
@@ -43,7 +51,7 @@
 	if(mode != BOT_HUNT)
 		return
 	if(prob(block_chance))
-		visible_message("<span class='warning'>[src] deflects [user]'s attack with his energy swords!</span>")
+		visible_message("[src] deflects [user]'s attack with his energy swords!")
 		playsound(src, 'sound/weapons/blade1.ogg', 50, TRUE, -1)
 		return TRUE
 
@@ -144,7 +152,8 @@
 		drop_part(robot_arm, Tsec)
 
 	do_sparks(3, TRUE, src)
-	for(var/IS = 0 to 4)
-		drop_part(baton_type, Tsec)
+	if(!noloot)
+		for(var/IS = 0 to 4)
+			drop_part(baton_type, Tsec)
 	new /obj/effect/decal/cleanable/oil(Tsec)
 	qdel(src)
