@@ -235,6 +235,19 @@
 	results = list(/datum/reagent/medicine/antitoxin = 3)
 	required_reagents = list(/datum/reagent/nitrogen = 1, /datum/reagent/silicon = 1, /datum/reagent/potassium = 1)
 
+/datum/chemical_reaction/dexalin
+	name = "Dexalin"
+	id = "dexalin"
+	results = list(/datum/reagent/medicine/dexalin = 5)
+	required_reagents = list(/datum/reagent/oxygen = 5)
+	required_catalysts = list(/datum/reagent/toxin/plasma = 5)
+
+/datum/chemical_reaction/dexalinp
+	name = "Dexalin Plus"
+	id = "dexalinp"
+	results = list(/datum/reagent/medicine/dexalinp = 3)
+	required_reagents = list(/datum/reagent/medicine/dexalin = 1, /datum/reagent/carbon = 1, /datum/reagent/iron = 1)
+
 /datum/chemical_reaction/tricordrazine
 	name = "Tricordrazine"
 	id = /datum/reagent/medicine/tricordrazine
@@ -293,21 +306,16 @@
 	results = list(/datum/reagent/medicine/thializid = 5)
 	required_reagents = list(/datum/reagent/sulfur = 1, /datum/reagent/fluorine = 1, /datum/reagent/toxin = 1, /datum/reagent/nitrous_oxide = 2)
 
-/datum/chemical_reaction/sanguiose
-	name = "Sanguiose"
-	id = /datum/reagent/medicine/sanguiose
-	results = list(/datum/reagent/medicine/sanguiose= 4)
-	required_reagents = list(/datum/reagent/phosphorus = 1, /datum/reagent/hydrogen = 1,/datum/reagent/phenol=1, /datum/reagent/acetone=1,)
+/datum/chemical_reaction/carthatoline
+	name = "Carthatoline"
+	id = "carthatoline"
+	results = list(/datum/reagent/medicine/carthatoline = 3)
+	required_reagents = list(/datum/reagent/medicine/antitoxin = 1, /datum/reagent/carbon = 2)
+	required_catalysts = list(/datum/reagent/toxin/plasma = 1)
 
-/datum/chemical_reaction/frogenite
-	name = "Frogenite"
-	id = /datum/reagent/medicine/frogenite
-	results = list(/datum/reagent/medicine/frogenite = 4)
-	required_reagents = list( /datum/reagent/lye = 1, /datum/reagent/hydrogen = 1,/datum/reagent/phenol=1, /datum/reagent/bromine=1,)
-
-/datum/chemical_reaction/ferveatium
-	name = "Ferveatium"
-	id = /datum/reagent/medicine/ferveatium
-	results = list(/datum/reagent/medicine/ferveatium = 4)
-	required_reagents = list( /datum/reagent/ammonia = 1, /datum/reagent/hydrogen = 1,/datum/reagent/phenol=1, /datum/reagent/toxin/acid=1,)
-
+/datum/chemical_reaction/hepanephrodaxon
+	name = "Hepanephrodaxon"
+	id = "hepanephrodaxon"
+	results = list(/datum/reagent/medicine/hepanephrodaxon = 5)
+	required_reagents = list(/datum/reagent/medicine/carthatoline = 2, /datum/reagent/carbon = 2, /datum/reagent/lithium = 1)
+	required_catalysts = list(/datum/reagent/toxin/plasma = 5)
