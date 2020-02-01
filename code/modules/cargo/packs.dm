@@ -577,6 +577,14 @@
 	crate_type = /obj/structure/closet/crate/secure/plasma
 	dangerous = TRUE
 
+/datum/supply_pack/security/armory/energy
+	name = "Ion Rifle Crate"
+	desc = "Contains a single Mk.I Ion Projector, a special anti-tank rifle designed to disable electronic threats at range. Requires Armory level access to open."
+	cost = 5500
+	contains = list(/obj/item/gun/energy/ionrifle)
+	crate_name = "ion rifle crate"
+	crate_type = /obj/structure/closet/crate/secure/plasma
+
 /datum/supply_pack/security/armory/mindshield
 	name = "Mindshield Implants Crate"
 	desc = "Prevent against radical thoughts with three Mindshield implants. Requires Armory access to open."
