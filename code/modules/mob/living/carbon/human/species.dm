@@ -49,6 +49,9 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	var/list/special_step_sounds //Sounds to override barefeet walkng
 	var/grab_sound //Special sound for grabbing
 	var/datum/outfit/outfit_important_for_life /// A path to an outfit that is important for species life e.g. plasmaman outfit
+	var/reagent_tag = PROCESS_ORGANIC //Used for metabolizing reagents. We're going to assume you're a meatbag unless you say otherwise.
+	var/species_gibs = "human"
+	var/allow_numbers_in_name // Can this species use numbers in its name?
 
 	var/flying_species = FALSE //is a flying species, just a check for some things
 	var/datum/action/innate/flight/fly //the actual flying ability given to flying species
@@ -305,6 +308,15 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 			else	//Entries in the list should only ever be items or null, so if it's not an item, we can assume it's an empty hand
 				C.put_in_hands(new mutanthands())
 
+	if(ROBOTIC_LIMBS in species_traits)
+		for(var/obj/item/bodypart/B in C.bodyparts)
+			B.change_bodypart_status(BODYPART_ROBOTIC) // Makes all Bodyparts robotic.
+			B.render_like_organic = TRUE
+
+	if(NOMOUTH in species_traits)
+		for(var/obj/item/bodypart/head/head in C.bodyparts)
+			head.mouth = FALSE
+
 	for(var/X in inherent_traits)
 		ADD_TRAIT(C, X, SPECIES_TRAIT)
 
@@ -339,6 +351,13 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		C.dna.blood_type = random_blood_type()
 	if(DIGITIGRADE in species_traits)
 		C.Digitigrade_Leg_Swap(TRUE)
+	if(ROBOTIC_LIMBS in species_traits)
+		for(var/obj/item/bodypart/B in C.bodyparts)
+			B.change_bodypart_status(BODYPART_ORGANIC, FALSE, TRUE)
+			B.render_like_organic = FALSE
+	if(NOMOUTH in species_traits)
+		for(var/obj/item/bodypart/head/head in C.bodyparts)
+			head.mouth = TRUE
 	for(var/X in inherent_traits)
 		REMOVE_TRAIT(C, X, SPECIES_TRAIT)
 
@@ -645,6 +664,14 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		else if ("wings" in mutant_bodyparts)
 			bodyparts_to_add -= "wings_open"
 
+	if("ipc_screen" in mutant_bodyparts)
+		if(!H.dna.features["ipc_screen"] || H.dna.features["ipc_screen"] == "None" || (H.wear_mask && (H.wear_mask.flags_inv & HIDEEYES)) || !HD)
+			bodyparts_to_add -= "ipc_screen"
+
+	if("ipc_antenna" in mutant_bodyparts)
+		if(!H.dna.features["ipc_antenna"] || H.dna.features["ipc_antenna"] == "None" || H.head && (H.head.flags_inv & HIDEHAIR) || (H.wear_mask && (H.wear_mask.flags_inv & HIDEHAIR)) || !HD)
+			bodyparts_to_add -= "ipc_antenna"
+
 	//Digitigrade legs are stuck in the phantom zone between true limbs and mutant bodyparts. Mainly it just needs more agressive updating than most limbs.
 	var/update_needed = FALSE
 	var/not_digitigrade = TRUE
@@ -716,6 +743,12 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 					S = GLOB.squid_face_list[H.dna.features["squid_face"]]
 				if("caps")
 					S = GLOB.caps_list[H.dna.features["caps"]]
+				if("ipc_screen")
+					S = GLOB.ipc_screens_list[H.dna.features["ipc_screen"]]
+				if("ipc_antenna")
+					S = GLOB.ipc_antennas_list[H.dna.features["ipc_antenna"]]
+				if("ipc_chassis")
+					S = GLOB.ipc_chassis_list[H.dna.features["ipc_chassis"]]
 			if(!S || S.icon_state == "none")
 				continue
 
@@ -1014,6 +1047,21 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		return TRUE
 	if(chem.overdose_threshold && chem.volume >= chem.overdose_threshold)
 		chem.overdosed = TRUE
+
+// Do species-specific reagent handling here
+// Return 1 if it should do normal processing too
+// Return 0 if it shouldn't deplete and do its normal effect
+// Other return values will cause weird badness
+/datum/species/proc/handle_reagents(mob/living/carbon/human/H, datum/reagent/R)
+	if(R.type == exotic_blood)
+		H.blood_volume = min(H.blood_volume + round(R.volume, 0.1), BLOOD_VOLUME_NORMAL)
+		H.reagents.del_reagent(R.type)
+		return FALSE
+	return TRUE
+
+//return a list of spans or an empty list
+/datum/species/proc/get_spans()
+	return list()
 
 /datum/species/proc/check_species_weakness(obj/item, mob/living/attacker)
 	return 0 //This is not a boolean, it's the multiplier for the damage that the user takes from the item.It is added onto the check_weakness value of the mob, and then the force of the item is multiplied by this value
@@ -1883,6 +1931,9 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	return TRUE
 
 /datum/species/proc/ExtinguishMob(mob/living/carbon/human/H)
+	return
+
+/datum/species/proc/spec_revival(mob/living/carbon/human/H)
 	return
 
 

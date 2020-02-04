@@ -70,7 +70,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/eye_color = "000"				//Eye color
 	var/datum/species/pref_species = new /datum/species/human()	//Mutant race
 	var/species_looking_at = "human" //used as a helper to keep track of in the species select thingy
-	var/list/features = list("mcolor" = "FFF", "ethcolor" = "9c3030", "tail_lizard" = "Smooth", "tail_human" = "None", "snout" = "Round", "horns" = "None", "ears" = "None", "wings" = "None", "frills" = "None", "spines" = "None", "body_markings" = "None", "legs" = "Normal Legs", "moth_wings" = "Plain", "moth_markings" = "None", "squid_face" = "Squidward")
+	var/list/features = list("mcolor" = "FFF", "ethcolor" = "9c3030", "tail_lizard" = "Smooth", "tail_human" = "None", "snout" = "Round", "horns" = "None", "ears" = "None", "wings" = "None", "frills" = "None", "spines" = "None", "body_markings" = "None", "legs" = "Normal Legs", "moth_wings" = "Plain", "moth_markings" = "None", "squid_face" = "Squidward", "ipc_screen" = "Blue", "ipc_antenna" = "None", "ipc_chassis" = "Morpheus Cyberkinetics(Greyscale)")
 	var/list/randomise = list(RANDOM_UNDERWEAR = TRUE, RANDOM_UNDERWEAR_COLOR = TRUE, RANDOM_UNDERSHIRT = TRUE, RANDOM_SOCKS = TRUE, RANDOM_BACKPACK = TRUE, RANDOM_JUMPSUIT_STYLE = TRUE, RANDOM_HAIRSTYLE = TRUE, RANDOM_HAIR_COLOR = TRUE, RANDOM_FACIAL_HAIRSTYLE = TRUE, RANDOM_FACIAL_HAIR_COLOR = TRUE, RANDOM_SKIN_TONE = TRUE, RANDOM_EYE_COLOR = TRUE)
 	var/list/friendlyGenders = list("Male" = "male", "Female" = "female", "Other" = "plural")
 	var/phobia = "spiders"
@@ -466,6 +466,49 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				dat += "<h3>Face Type</h3>"
 
 				dat += "<a href='?_src_=prefs;preference=squid_face;task=input'>[features["squid_face"]]</a><BR>"
+
+				mutant_category++
+				if(mutant_category >= MAX_MUTANT_ROWS)
+					dat += "</td>"
+					mutant_category = 0
+
+			if("ipc_screen" in pref_species.mutant_bodyparts)
+				if(!mutant_category)
+					dat += APPEARANCE_CATEGORY_COLUMN
+
+				dat += "<h3>Screen Style</h3>"
+
+				dat += "<a href='?_src_=prefs;preference=ipc_screen;task=input'>[features["ipc_screen"]]</a><BR>"
+
+				dat += "<span style='border: 1px solid #161616; background-color: #[eye_color];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=eyes;task=input'>Change</a><BR>"
+
+				mutant_category++
+				if(mutant_category >= MAX_MUTANT_ROWS)
+					dat += "</td>"
+					mutant_category = 0
+
+			if("ipc_antenna" in pref_species.mutant_bodyparts)
+				if(!mutant_category)
+					dat += APPEARANCE_CATEGORY_COLUMN
+
+				dat += "<h3>Antenna Style</h3>"
+
+				dat += "<a href='?_src_=prefs;preference=ipc_antenna;task=input'>[features["ipc_antenna"]]</a><BR>"
+
+				dat += "<span style='border:1px solid #161616; background-color: #[hair_color];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=hair;task=input'>Change</a><BR>"
+
+				mutant_category++
+				if(mutant_category >= MAX_MUTANT_ROWS)
+					dat += "</td>"
+					mutant_category = 0
+
+			if("ipc_chassis" in pref_species.mutant_bodyparts)
+				if(!mutant_category)
+					dat += APPEARANCE_CATEGORY_COLUMN
+
+				dat += "<h3>Chassis Style</h3>"
+
+				dat += "<a href='?_src_=prefs;preference=ipc_chassis;task=input'>[features["ipc_chassis"]]</a><BR>"
 
 				mutant_category++
 				if(mutant_category >= MAX_MUTANT_ROWS)
@@ -1255,13 +1298,11 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 							ghost_others = GHOST_OTHERS_SIMPLE
 
 				if("name")
-					var/new_name = input(user, "Choose your character's name:", "Character Preference")  as text|null
+					var/new_name =  reject_bad_name( input(user, "Choose your character's name:", "Character Preference")  as text|null , pref_species.allow_numbers_in_name)
 					if(new_name)
-						new_name = reject_bad_name(new_name)
-						if(new_name)
-							real_name = new_name
-						else
-							to_chat(user, "<font color='red'>Invalid name. Your name should be at least 2 and at most [MAX_NAME_LEN] characters long. It may only contain the characters A-Z, a-z, -, ' and .</font>")
+						real_name = new_name
+					else
+						to_chat(user, "<font color='red'>Invalid name. Your name should be at least 2 and at most [MAX_NAME_LEN] characters long. It may only contain the characters A-Z, a-z, -, ' and .</font>")
 
 				if("age")
 					var/new_age = input(user, "Choose your character's age:\n([AGE_MIN]-[AGE_MAX])", "Character Preference") as num|null
@@ -1468,6 +1509,30 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					new_squid_face = input(user, "Choose your character's face type:", "Character Preference") as null|anything in GLOB.squid_face_list
 					if (new_squid_face)
 						features["squid_face"] = new_squid_face
+
+				if("ipc_screen")
+					var/new_ipc_screen
+
+					new_ipc_screen = input(user, "Choose your character's screen:", "Character Preference") as null|anything in GLOB.ipc_screens_list
+
+					if(new_ipc_screen)
+						features["ipc_screen"] = new_ipc_screen
+
+				if("ipc_antenna")
+					var/new_ipc_antenna
+
+					new_ipc_antenna = input(user, "Choose your character's antenna:", "Character Preference") as null|anything in GLOB.ipc_antennas_list
+
+					if(new_ipc_antenna)
+						features["ipc_antenna"] = new_ipc_antenna
+
+				if("ipc_chassis")
+					var/new_ipc_chassis
+
+					new_ipc_chassis = input(user, "Choose your character's chassis:", "Character Preference") as null|anything in GLOB.ipc_chassis_list
+
+					if(new_ipc_chassis)
+						features["ipc_chassis"] = new_ipc_chassis
 
 				if("s_tone")
 					var/new_s_tone = input(user, "Choose your character's skin-tone:", "Character Preference")  as null|anything in GLOB.skin_tones

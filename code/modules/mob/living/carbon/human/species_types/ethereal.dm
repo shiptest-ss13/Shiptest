@@ -35,6 +35,8 @@
 	var/static/g2 = 164
 	var/static/b2 = 149
 	//this is shit but how do i fix it? no clue.
+	loreblurb = "Ethereals are organic humanoid beings with a blood that has strange luminiscent and electrical properties. \
+				Ethereals are barred from most authority roles on Nanotrasen stations and are not protected by the AI's default Asimov laws."
 
 /datum/species/ethereal/on_species_gain(mob/living/carbon/C, datum/species/old_species, pref_load)
 	.=..()

@@ -60,6 +60,7 @@
 	taste_mult = 1.5
 	color = "#8228A0"
 	toxpwr = 3
+	process_flags = ORGANIC | SYNTHETIC
 
 /datum/reagent/toxin/plasma/on_mob_life(mob/living/carbon/C)
 	if(holder.has_reagent(/datum/reagent/medicine/epinephrine))
@@ -380,6 +381,7 @@
 	color = "#787878"
 	metabolization_rate = 0.125 * REAGENTS_METABOLISM
 	toxpwr = 0
+	process_flags = ORGANIC | SYNTHETIC
 
 /datum/reagent/toxin/polonium/on_mob_life(mob/living/carbon/M)
 	M.radiation += 4
@@ -720,6 +722,7 @@
 	metabolization_rate = 0.6 * REAGENTS_METABOLISM
 	toxpwr = 0.5
 	taste_description = "spinning"
+	process_flags = ORGANIC | SYNTHETIC
 
 /datum/reagent/toxin/rotatium/on_mob_life(mob/living/carbon/M)
 	if(M.hud_used)
@@ -737,6 +740,43 @@
 		for(var/whole_screen in screens)
 			animate(whole_screen, transform = matrix(), time = 5, easing = QUAD_EASING)
 	..()
+
+/datum/reagent/toxin/skewium
+	name = "Skewium"
+	description = "A strange, dull coloured liquid that appears to warp back and forth inside its container. Causes any consumer to experience a visual phenomena similar to said warping."
+	silent_toxin = TRUE
+	reagent_state = LIQUID
+	color = "#ADBDCD"
+	metabolization_rate = 0.8 * REAGENTS_METABOLISM
+	toxpwr = 0.25
+	taste_description = "skewing"
+	process_flags = ORGANIC | SYNTHETIC
+
+/datum/reagent/toxin/skewium/on_mob_life(mob/living/carbon/M)
+	if(M.hud_used)
+		if(current_cycle >= 5 && current_cycle % 3 == 0)
+			var/list/screens = list(M.hud_used.plane_masters["[FLOOR_PLANE]"], M.hud_used.plane_masters["[GAME_PLANE]"], M.hud_used.plane_masters["[LIGHTING_PLANE]"])
+			var/matrix/skew = matrix()
+			var/intensity = 8
+			skew.set_skew(rand(-intensity,intensity), rand(-intensity,intensity))
+			var/matrix/newmatrix = skew
+
+			if(prob(33)) // 1/3rd of the time, let's make it stack with the previous matrix! Mwhahahaha!
+				var/obj/screen/plane_master/PM = M.hud_used.plane_masters["[GAME_PLANE]"]
+				newmatrix = skew * PM.transform
+
+			for(var/whole_screen in screens)
+				animate(whole_screen, transform = newmatrix, time = 5, easing = QUAD_EASING, loop = -1)
+				animate(transform = -newmatrix, time = 5, easing = QUAD_EASING)
+	return ..()
+
+/datum/reagent/toxin/skewium/on_mob_end_metabolize(mob/living/M)
+	if(M?.hud_used)
+		var/list/screens = list(M.hud_used.plane_masters["[FLOOR_PLANE]"], M.hud_used.plane_masters["[GAME_PLANE]"], M.hud_used.plane_masters["[LIGHTING_PLANE]"])
+		for(var/whole_screen in screens)
+			animate(whole_screen, transform = matrix(), time = 5, easing = QUAD_EASING)
+	..()
+
 
 /datum/reagent/toxin/anacea
 	name = "Anacea"
@@ -765,6 +805,7 @@
 	var/acidpwr = 10 //the amount of protection removed from the armour
 	taste_description = "acid"
 	self_consuming = TRUE
+	process_flags = ORGANIC | SYNTHETIC
 
 /datum/reagent/toxin/acid/reaction_mob(mob/living/carbon/C, method=TOUCH, reac_volume)
 	if(!istype(C))

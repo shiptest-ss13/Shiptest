@@ -117,14 +117,19 @@
 /// Uses weird leg sprites. Optional for lizards, required for ashwalkers. Don't give it to other races unless you make sprites for this (see human_parts_greyscale.dmi)
 #define DIGITIGRADE		10
 #define NO_UNDERWEAR	11
-#define NOSTOMACH		12
-#define NO_DNA_COPY     13
-#define DRINKSBLOOD		14
-/// Use this if you want to change the race's color without the player being able to pick their own color. AKA special color shifting
-#define DYNCOLORS		15
-#define AGENDER			16
-/// Do not draw eyes or eyeless overlay
-#define NOEYESPRITES	17
+#define NOLIVER			12
+#define NOSTOMACH		13
+#define NO_DNA_COPY     14
+#define DRINKSBLOOD		15
+#define NOFLASH			16
+#define DYNCOLORS		17 //! Use this if you want to change the race's color without the player being able to pick their own color. AKA special color shifting
+#define AGENDER			18
+#define NOEYESPRITES	19 //! Do not draw eyes or eyeless overlay
+#define NOREAGENTS     20 //! DO NOT PROCESS REAGENTS
+#define REVIVESBYHEALING 21 // Will revive on heal when healing and total HP > 0.
+#define NOHUSK			22 // Can't be husked.
+#define ROBOTIC_LIMBS	23 //limbs start out as robotic; but also use organic icons. If you want to use the default ones, you'll have to use on_species_gain
+#define NOMOUTH			24
 
 //organ slots
 #define ORGAN_SLOT_BRAIN "brain"

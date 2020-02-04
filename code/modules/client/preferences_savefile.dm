@@ -342,6 +342,9 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["feature_moth_wings"]				>> features["moth_wings"]
 	S["feature_moth_markings"]			>> features["moth_markings"]
 	S["feature_squid_face"]				>> features["squid_face"]
+	S["feature_ipc_screen"]			>> features["ipc_screen"]
+	S["feature_ipc_antenna"]				>> features["ipc_antenna"]
+	S["feature_ipc_chassis"]				>> features["ipc_chassis"]
 	if(!CONFIG_GET(flag/join_with_mutant_humans))
 		features["tail_human"] = "none"
 		features["ears"] = "none"
@@ -371,7 +374,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 
 	//Sanitize
 
-	real_name = reject_bad_name(real_name)
+	real_name = reject_bad_name(real_name, pref_species.allow_numbers_in_name)
 	gender = sanitize_gender(gender)
 	if(!real_name)
 		real_name = random_unique_name(gender)
@@ -430,6 +433,9 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	features["moth_wings"] 	= sanitize_inlist(features["moth_wings"], GLOB.moth_wings_list, "Plain")
 	features["moth_markings"] 	= sanitize_inlist(features["moth_markings"], GLOB.moth_markings_list, "None")
 	features["squid_face"]	= sanitize_inlist(features["squid_face"], GLOB.squid_face_list, "Squidward")
+	features["ipc_screen"]	= sanitize_inlist(features["ipc_screen"], GLOB.ipc_screens_list)
+	features["ipc_antenna"]	 = sanitize_inlist(features["ipc_antenna"], GLOB.ipc_antennas_list)
+	features["ipc_chassis"]	 = sanitize_inlist(features["ipc_chassis"], GLOB.ipc_chassis_list)
 
 	joblessrole	= sanitize_integer(joblessrole, 1, 3, initial(joblessrole))
 	//Validate job prefs
@@ -484,6 +490,9 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["feature_moth_wings"]			, features["moth_wings"])
 	WRITE_FILE(S["feature_moth_markings"]		, features["moth_markings"])
 	WRITE_FILE(S["feature_squid_face"]			, features["squid_face"])
+	WRITE_FILE(S["feature_ipc_screen"]			, features["ipc_screen"])
+	WRITE_FILE(S["feature_ipc_antenna"]			, features["ipc_antenna"])
+	WRITE_FILE(S["feature_ipc_chassis"]			, features["ipc_chassis"])
 
 
 	//Custom names

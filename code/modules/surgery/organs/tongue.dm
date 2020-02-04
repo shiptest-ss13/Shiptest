@@ -256,6 +256,11 @@
 
 /obj/item/organ/tongue/robot/can_speak_language(language)
 	return TRUE // THE MAGIC OF ELECTRONICS
+	
+/obj/item/organ/tongue/robot/emp_act(severity)
+	owner.apply_effect(EFFECT_STUTTER, 120)
+	owner.emote("scream")
+	to_chat(owner, "<span class='warning'>Alert: Vocal cords are malfunctioning.</span>")
 
 /obj/item/organ/tongue/robot/handle_speech(datum/source, list/speech_args)
 	speech_args[SPEECH_SPANS] |= SPAN_ROBOT

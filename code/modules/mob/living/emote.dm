@@ -78,6 +78,7 @@
 	message_alien = "lets out a waning guttural screech, and collapses onto the floor..."
 	message_larva = "lets out a sickly hiss of air and falls limply to the floor..."
 	message_monkey = "lets out a faint chimper as it collapses and stops moving..."
+	message_ipc = "gives one shrill beep before falling limp, their monitor flashing blue before completely shutting off..."
 	message_simple =  "stops moving..."
 	cooldown = (15 SECONDS)
 	stat_allowed = UNCONSCIOUS
