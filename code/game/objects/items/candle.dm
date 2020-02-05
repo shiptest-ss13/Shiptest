@@ -42,7 +42,7 @@
 		lit = TRUE
 		if(show_message)
 			usr.visible_message(show_message)
-		set_light(CANDLE_LUMINOSITY)
+		set_light(CANDLE_LUMINOSITY, 0.8)
 		START_PROCESSING(SSobj, src)
 		update_icon()
 

@@ -126,10 +126,10 @@
 	. = ..()
 	if(!proximity)
 		return
-	
+
 	if(isOn())
 		handle_fuel_and_temps(1, user)
-		
+
 		if(!QDELETED(O) && isliving(O)) // can't ignite something that doesn't exist
 			var/mob/living/L = O
 			if(L.IgniteMob())
@@ -145,10 +145,10 @@
 	. = ..()
 	if(!proximity)
 		return
-	
+
 	if(isOn())
 		handle_fuel_and_temps(1, user)
-		
+
 		if(!QDELETED(O) && isliving(O)) // can't ignite something that doesn't exist
 			var/mob/living/L = O
 			if(L.IgniteMob())
@@ -161,7 +161,7 @@
 		explode()
 	switched_on(user)
 	if(welding)
-		set_light(light_intensity)
+		set_light(light_intensity, 0.75, LIGHT_COLOR_FIRE)
 
 	update_icon()
 

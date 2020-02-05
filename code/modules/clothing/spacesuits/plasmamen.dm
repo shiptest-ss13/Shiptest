@@ -138,7 +138,7 @@
 			to_chat(user, "<span class='notice'>Your helmet's torch can't pass through your welding visor!</span>")
 			set_light(0)
 		else
-			set_light(brightness_on)
+			set_light(brightness_on, 0.8, "#FFCC66")
 	else
 		set_light(0)
 

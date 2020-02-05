@@ -3,6 +3,8 @@
 	desc = "A piece of headgear used in dangerous working conditions to protect the head. Comes with a built-in flashlight."
 	icon_state = "hardhat0_yellow"
 	item_state = "hardhat0_yellow"
+	light_color = "#FFCC66"
+	var/power_on = 0.8
 	var/brightness_on = 4 //luminosity when on
 	var/on = FALSE
 	var/hat_type = "yellow" //Determines used sprites: hardhat[on]_[hat_type] and hardhat[on]_[hat_type]2 (lying down sprite)
@@ -38,7 +40,7 @@
 	..()
 
 /obj/item/clothing/head/hardhat/proc/turn_on(mob/user)
-	set_light(brightness_on)
+	set_light(brightness_on, power_on)
 
 /obj/item/clothing/head/hardhat/proc/turn_off(mob/user)
 	set_light(0)

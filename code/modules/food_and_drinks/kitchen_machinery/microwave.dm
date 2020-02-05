@@ -13,7 +13,7 @@
 	circuit = /obj/item/circuitboard/machine/microwave
 	pass_flags = PASSTABLE
 	light_color = LIGHT_COLOR_YELLOW
-	light_power = 3
+	light_power = 0.9
 	var/wire_disabled = FALSE // is its internal wire cut?
 	var/operating = FALSE
 	var/dirty = 0 // 0 to 100 // Does it need cleaning?

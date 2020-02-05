@@ -5,6 +5,8 @@
 	gender = NEUTER
 	mob_biotypes = MOB_ROBOTIC
 	light_range = 3
+	light_power = 0.9
+	light_color = "#CDDDFF"
 	stop_automated_movement = 1
 	wander = 0
 	healable = 0

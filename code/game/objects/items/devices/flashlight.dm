@@ -12,9 +12,10 @@
 	slot_flags = ITEM_SLOT_BELT
 	custom_materials = list(/datum/material/iron=50, /datum/material/glass=20)
 	actions_types = list(/datum/action/item_action/toggle_light)
+	light_color = "#FFCC66"  //Cit lighting
 	var/on = FALSE
 	var/brightness_on = 4 //range of light when on
-	var/flashlight_power = 1 //strength of the light when on
+	var/flashlight_power = 0.8 //strength of the light when on
 
 /obj/item/flashlight/Initialize()
 	. = ..()
@@ -168,6 +169,8 @@
 	item_state = ""
 	flags_1 = CONDUCT_1
 	brightness_on = 2
+	light_color = "#FFDDCC"
+	flashlight_power = 0.3
 	var/holo_cooldown = 0
 
 /obj/item/flashlight/pen/afterattack(atom/target, mob/user, proximity_flag)
@@ -205,6 +208,8 @@
 	force = 9 // Not as good as a stun baton.
 	brightness_on = 5 // A little better than the standard flashlight.
 	hitsound = 'sound/weapons/genhit1.ogg'
+	light_color = "#CDDDFF" //Cit lighting
+	flashlight_power = 0.9 //Cit lighting
 
 // the desk lamps are a bit special
 /obj/item/flashlight/lamp
@@ -220,6 +225,8 @@
 	flags_1 = CONDUCT_1
 	custom_materials = null
 	on = TRUE
+	light_color = "#FFDDBB" //Cit lighting
+	flashlight_power = 0.8 //Cit lighting
 
 
 // green-shaded desk lamp
@@ -261,6 +268,8 @@
 	heat = 1000
 	light_color = LIGHT_COLOR_FLARE
 	grind_results = list(/datum/reagent/sulfur = 15)
+	light_color = "#FA421A" //Cit lighting
+	flashlight_power = 0.8 //Cit lighting
 
 /obj/item/flashlight/flare/Initialize()
 	. = ..()
@@ -332,6 +341,8 @@
 	light_color = LIGHT_COLOR_ORANGE
 	on_damage = 10
 	slot_flags = null
+	light_color = "#FAA44B" //Cit lighting
+	flashlight_power = 0.8 //Cit lighting
 
 /obj/item/flashlight/lantern
 	name = "lantern"
@@ -341,6 +352,8 @@
 	righthand_file = 'icons/mob/inhands/equipment/mining_righthand.dmi'
 	desc = "A mining lantern."
 	brightness_on = 6			// luminosity when on
+	light_color = "#FFAA44" //Cit lighting
+	flashlight_power = 0.75 //Cit lighting
 
 /obj/item/flashlight/lantern/heirloom_moth
 	name = "old lantern"
@@ -365,6 +378,8 @@
 	slot_flags = ITEM_SLOT_BELT
 	custom_materials = null
 	brightness_on = 6 //luminosity when on
+	light_color = "#FFEEAA" //Cit lighting
+	flashlight_power = 0.6 //Cit lighting
 
 /obj/item/flashlight/emp
 	var/emp_max_charges = 4

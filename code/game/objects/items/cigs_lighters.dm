@@ -625,7 +625,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 		damtype = "fire"
 		hitsound = 'sound/items/welder.ogg'
 		attack_verb = list("burnt", "singed")
-		set_light(1)
+		set_light(2, 0.6, LIGHT_COLOR_FIRE)
 		START_PROCESSING(SSobj, src)
 	else
 		hitsound = "swing_hit"
