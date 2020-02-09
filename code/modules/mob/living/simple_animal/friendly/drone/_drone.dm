@@ -27,11 +27,11 @@
 	maxHealth = 30
 	unsuitable_atmos_damage = 0
 	wander = 0
-	speed = 0
+	speed = -1
 	ventcrawler = VENTCRAWLER_ALWAYS
 	healable = 0
 	density = FALSE
-	pass_flags = PASSTABLE | PASSMOB
+	pass_flags = PASSTABLE | PASSMOB | PASSDOORHATCH
 	sight = (SEE_TURFS | SEE_OBJS)
 	status_flags = (CANPUSH | CANSTUN | CANKNOCKDOWN)
 	gender = NEUTER
@@ -69,6 +69,7 @@
 	var/obj/item/default_hatmask //If this exists, it will spawn in the hat/mask slot if it can fit
 	var/visualAppearence = MAINTDRONE //What we appear as
 	var/hacked = FALSE //If we have laws to destroy the station
+	var/underdoor = FALSE
 	var/flavortext = \
 	"\n<big><span class='warning'>DO NOT INTERFERE WITH THE ROUND AS A DRONE OR YOU WILL BE DRONE BANNED</span></big>\n"+\
 	"<span class='notice'>Drones are a ghost role that are allowed to fix the station and build things. Interfering with the round as a drone is against the rules.</span>\n"+\
@@ -100,6 +101,27 @@
 	for(var/datum/atom_hud/data/diagnostic/diag_hud in GLOB.huds)
 		diag_hud.add_to_hud(src)
 
+/mob/living/simple_animal/drone/Move(newloc, direct)
+	..(newloc,direct)
+	if(underdoor)
+		underdoor = FALSE
+		if(layer == UNDERDOOR)//if this is false, then we must have had our layer changed by something else. We wont do anymore checks for this move proc
+			for(var/obj/machinery/door/airlock/A in loc)
+				if(A.has_hatch)
+					underdoor = TRUE
+					break
+
+			if(!underdoor)
+				addtimer(CALLBACK(src, .proc/initial_layer), 3)
+
+/mob/living/simple_animal/drone/proc/initial_layer()
+	layer = initial(layer)
+
+/mob/living/simple_animal/drone/proc/under_door()
+	//This function puts a drone on a layer that makes it draw under doors, then periodically checks if its still standing on a door
+	if (layer > UNDERDOOR)//Don't toggle it if we're hiding
+		layer = UNDERDOOR
+		underdoor = TRUE
 
 /mob/living/simple_animal/drone/med_hud_set_health()
 	var/image/holder = hud_list[DIAG_HUD]
