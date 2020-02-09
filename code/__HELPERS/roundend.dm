@@ -242,6 +242,19 @@
 		log_game("[antag_name]s :[L.Join(", ")].")
 
 	CHECK_TICK
+
+	if(CONFIG_GET(flag/allow_crew_objectives))
+		for(var/datum/mind/crewMind in minds)
+			if(!crewMind.current || !length(crewMind.crew_objectives))
+				continue
+			for(var/datum/objective/crew/CO in crewMind.crew_objectives)
+				if(CO.check_completion())
+					to_chat(crewMind.current, "<br><B>Your optional objective</B>: [CO.explanation_text] <span class='green'><B>Success!</B></span>")
+					SSticker.successfulCrew += "<B>[crewMind.current.real_name]</B> (Played by: <B>[crewMind.key]</B>)<BR><B>Optional Objective</B>: [CO.explanation_text] <span class='green'><B>Success!</B></span>"
+				else
+					to_chat(crewMind.current, "<br><B>Your optional objective</B>: [CO.explanation_text] <span class='warning'><B>Failed.</B></span>")
+
+	CHECK_TICK
 	SSdbcore.SetRoundEnd()
 	//Collects persistence features
 	if(mode.allow_persistence_save)

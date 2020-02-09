@@ -73,6 +73,8 @@
 	///Assoc list of skills - exp
 	var/list/skill_experience = list()
 
+	var/list/crew_objectives
+
 /datum/mind/New(key)
 	src.key = key
 	soulOwner = src
