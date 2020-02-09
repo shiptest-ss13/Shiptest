@@ -3695,6 +3695,9 @@
 	pixel_x = 3;
 	pixel_y = -2
 	},
+/obj/machinery/photocopier/faxmachine{
+	department = "Research Director"
+	},
 /turf/open/floor/plasteel/cafeteria,
 /area/crew_quarters/heads/hor)
 "ajf" = (
@@ -5448,12 +5451,11 @@
 	dir = 4
 	},
 /obj/structure/table/glass,
-/obj/item/paper_bin{
-	pixel_x = 1;
-	pixel_y = 9
-	},
 /obj/effect/turf_decal/tile/blue{
 	dir = 8
+	},
+/obj/machinery/photocopier/faxmachine{
+	department = "Chief Medical Officer"
 	},
 /turf/open/floor/plasteel/cafeteria,
 /area/crew_quarters/heads/cmo)
@@ -5513,6 +5515,7 @@
 	dir = 4
 	},
 /obj/structure/table/glass,
+/obj/item/paper_bin,
 /obj/item/folder/white,
 /obj/item/stamp/cmo,
 /obj/effect/turf_decal/tile/blue{
@@ -21529,6 +21532,9 @@
 /obj/structure/reagent_dispensers/peppertank{
 	pixel_x = 30
 	},
+/obj/machinery/photocopier/faxmachine/longrange{
+	department = "Head of Security"
+	},
 /turf/open/floor/wood,
 /area/crew_quarters/heads/hos)
 "bgI" = (
@@ -33739,6 +33745,9 @@
 	},
 /obj/structure/disposalpipe/segment,
 /obj/structure/table,
+/obj/machinery/photocopier/faxmachine/longrange{
+	department = "Bridge"
+	},
 /turf/open/floor/plasteel/dark,
 /area/bridge)
 "bKg" = (
@@ -39211,6 +39220,9 @@
 /obj/structure/table/wood,
 /obj/item/book/manual/wiki/security_space_law,
 /obj/effect/landmark/event_spawn,
+/obj/machinery/recharger{
+	pixel_y = 3
+	},
 /turf/open/floor/carpet,
 /area/crew_quarters/heads/hos)
 "caU" = (

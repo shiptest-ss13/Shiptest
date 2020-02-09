@@ -2874,8 +2874,12 @@
 /area/crew_quarters/heads/hos)
 "agi" = (
 /obj/structure/table/wood,
-/obj/item/stamp/hos,
 /obj/structure/cable,
+/obj/item/paper_bin{
+	pixel_x = -3;
+	pixel_y = 7
+	},
+/obj/item/stamp/hos,
 /turf/open/floor/carpet,
 /area/crew_quarters/heads/hos)
 "agj" = (
@@ -2894,9 +2898,8 @@
 /area/crew_quarters/heads/hos)
 "agl" = (
 /obj/structure/table/wood,
-/obj/item/paper_bin{
-	pixel_x = -3;
-	pixel_y = 7
+/obj/machinery/photocopier/faxmachine/longrange{
+	department = "Head of Security"
 	},
 /turf/open/floor/plasteel/dark,
 /area/crew_quarters/heads/hos)
@@ -22373,11 +22376,13 @@
 /area/crew_quarters/heads/chief)
 "aZF" = (
 /obj/structure/table/reinforced,
-/obj/item/clipboard,
 /obj/item/paper/monitorkey,
 /obj/effect/turf_decal/tile/neutral,
 /obj/effect/turf_decal/tile/neutral{
 	dir = 8
+	},
+/obj/machinery/photocopier/faxmachine{
+	department = "Chief Engineer"
 	},
 /turf/open/floor/plasteel,
 /area/crew_quarters/heads/chief)
@@ -24573,8 +24578,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /obj/structure/table/wood,
-/obj/item/pinpointer/nuke,
-/obj/item/disk/nuclear,
+/obj/machinery/photocopier/faxmachine/longrange{
+	department = "Captain"
+	},
 /turf/open/floor/carpet,
 /area/crew_quarters/heads/captain/private)
 "bdJ" = (
@@ -25314,6 +25320,8 @@
 	pixel_x = -30;
 	pixel_y = 1
 	},
+/obj/item/pinpointer/nuke,
+/obj/item/disk/nuclear,
 /turf/open/floor/carpet,
 /area/crew_quarters/heads/captain/private)
 "bfz" = (
@@ -32939,9 +32947,11 @@
 /area/bridge)
 "bww" = (
 /obj/structure/table/wood,
-/obj/item/folder/yellow,
 /obj/machinery/firealarm{
 	pixel_y = 28
+	},
+/obj/machinery/photocopier/faxmachine/longrange{
+	department = "Bridge"
 	},
 /turf/open/floor/plasteel/dark,
 /area/bridge)
@@ -53404,12 +53414,14 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
 	},
-/obj/item/storage/secure/briefcase,
 /obj/effect/turf_decal/tile/blue{
 	dir = 4
 	},
 /obj/effect/turf_decal/tile/blue{
 	dir = 8
+	},
+/obj/machinery/photocopier/faxmachine{
+	department = "Chief Medical Officer"
 	},
 /turf/open/floor/plasteel/cafeteria,
 /area/crew_quarters/heads/cmo)
@@ -55593,12 +55605,15 @@
 	},
 /area/crew_quarters/heads/hor)
 "cwQ" = (
-/obj/item/paper_bin{
-	pixel_y = 7
-	},
 /obj/structure/table,
 /obj/machinery/newscaster{
 	pixel_y = -30
+	},
+/obj/item/paper_bin{
+	pixel_y = 7
+	},
+/obj/machinery/photocopier/faxmachine{
+	department = "Research Director"
 	},
 /obj/item/stamp/rd{
 	pixel_x = 3;
@@ -76150,10 +76165,6 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /turf/open/floor/plating,
 /area/maintenance/port/aft)
-"uPK" = (
-/obj/machinery/rnd/bepis,
-/turf/open/floor/plasteel/white,
-/area/science/misc_lab/range)
 "uRM" = (
 /obj/structure/disposalpipe/segment{
 	dir = 9
@@ -114689,7 +114700,7 @@ krD
 krD
 krD
 krD
-uPK
+krD
 ocT
 aaf
 aaa
