@@ -8,6 +8,7 @@
 			<B>General Secrets</B><BR>
 			<BR>
 			<A href='?src=[REF(src)];[HrefToken()];secrets=admin_log'>Admin Log</A><BR>
+			<A href='?src=[REF(src)];[HrefToken()];secrets=mentor_log'>Mentor Log</A><BR>
 			<A href='?src=[REF(src)];[HrefToken()];secrets=show_admins'>Show Admin List</A><BR>
 			<BR>
 			"}
@@ -103,6 +104,14 @@
 			if(!GLOB.admin_log.len)
 				dat += "No-one has done anything this round!"
 			usr << browse(dat, "window=admin_log")
+
+		if("mentor_log")
+			var/dat = "<B>Mentor Log<HR></B>"
+			for(var/l in GLOB.mentorlog)
+				dat += "<li>[l]</li>"
+			if(!GLOB.mentorlog.len)
+				dat += "No mentors have done anything this round!"
+			usr << browse(dat, "window=mentor_log")
 
 		if("show_admins")
 			var/dat = "<B>Current admins:</B><HR>"

@@ -562,3 +562,18 @@ CREATE TABLE `SS13_ticket` (
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+DROP TABLE IF EXISTS `SS13_mentor`;
+CREATE TABLE `SS13_mentor` (
+  `ckey` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+DROP TABLE IF EXISTS `SS13_mentor_memo`;
+CREATE TABLE `SS13_mentor_memo` (
+  `ckey` varchar(32) NOT NULL,
+  `memotext` text NOT NULL,
+  `timestamp` datetime NOT NULL,
+  `last_editor` varchar(32) DEFAULT NULL,
+  `edits` text,
+  PRIMARY KEY (`ckey`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;

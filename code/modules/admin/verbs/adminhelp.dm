@@ -520,6 +520,13 @@ GLOBAL_DATUM_INIT(ahelp_tickets, /datum/admin_help_tickets, new)
 			current_ticket.AddInteraction("[key_name_admin(usr)] opened a new ticket.")
 			current_ticket.Close()
 
+	//Extremely simple system of suggesting mentorhelp instead of adminhelp
+	var/msg_lower = lowertext(msg)
+	if((findtext(msg_lower, "how to") == 1 || findtext(msg_lower, "how do") == 1) && GLOB.mentors.len)
+		if(alert("\"[msg]\" looks like a game mechanics question, would you like to ask in mentorhelp instead?", "Adminhelp?", "Yes, mentorhelp", "No, adminhelp") == "Yes, mentorhelp")
+			mentorhelp(msg)
+			return
+
 	new /datum/admin_help(msg, src, FALSE)
 
 //

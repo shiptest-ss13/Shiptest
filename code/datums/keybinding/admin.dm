@@ -13,6 +13,16 @@
 	user.get_admin_say()
 	return TRUE
 
+/datum/keybinding/admin/mentor_say
+	hotkey_keys = list("F4")
+	name = "mentor_say"
+	full_name = "Mentor say"
+	description = "Talk with other mentors."
+
+/datum/keybinding/admin/mentor_say/down(client/user)
+	user.get_mentor_say()
+	return TRUE
+
 /datum/keybinding/admin/admin_ghost
 	hotkey_keys = list("F5")
 	name = "admin_ghost"
