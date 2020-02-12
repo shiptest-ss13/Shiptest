@@ -13,8 +13,10 @@
 	req_admin_notify = 1
 	minimal_player_age = 10
 	exp_requirements = 180
+	wiki_page = "Head_of_Personnel"
 	exp_type = EXP_TYPE_CREW
 	exp_type_department = EXP_TYPE_SUPPLY
+	special_notice = "You are NOT security, and should NEVER UNDER ANY CIRCUMSTANCES act like them."
 
 	outfit = /datum/outfit/job/hop
 

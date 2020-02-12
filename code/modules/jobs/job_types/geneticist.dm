@@ -10,6 +10,7 @@
 	selection_color = "#ffeef0"
 	exp_type = EXP_TYPE_CREW
 	exp_requirements = 60
+	wiki_page = "Guide_to_Genetics"
 
 	outfit = /datum/outfit/job/geneticist
 

@@ -8,6 +8,8 @@
 	spawn_positions = 1
 	supervisors = "the head of personnel"
 	selection_color = "#d7b088"
+	wiki_page = "Quartermaster"
+	special_notice = "You are not a head of staff. You answer to the Head of Personnel."
 
 	outfit = /datum/outfit/job/quartermaster
 

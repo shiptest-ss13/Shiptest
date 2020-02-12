@@ -13,6 +13,7 @@
 	req_admin_notify = 1
 	minimal_player_age = 14
 	exp_requirements = 300
+	wiki_page = "Head_of_Security"
 	exp_type = EXP_TYPE_CREW
 	exp_type_department = EXP_TYPE_SECURITY
 

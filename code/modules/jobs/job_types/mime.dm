@@ -8,6 +8,7 @@
 	spawn_positions = 1
 	supervisors = "the head of personnel"
 	selection_color = "#dddddd"
+	wiki_page = "Mime"
 
 	outfit = /datum/outfit/job/mime
 

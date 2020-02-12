@@ -8,6 +8,7 @@
 	spawn_positions = 3
 	supervisors = "the chief medical officer"
 	selection_color = "#ffeef0"
+	wiki_page = "Guide_to_Medicine"
 
 	outfit = /datum/outfit/job/doctor
 

@@ -15,6 +15,8 @@
 	exp_type_department = EXP_TYPE_SILICON
 	display_order = JOB_DISPLAY_ORDER_AI
 	var/do_special_check = TRUE
+	wiki_page = "AI"
+	special_notice = "Your laws take precedence over everything, including space law and past objectives. Do NOT break them."
 
 /datum/job/ai/equip(mob/living/carbon/human/H, visualsOnly, announce, latejoin, datum/outfit/outfit_override, client/preference_source = null)
 	if(visualsOnly)

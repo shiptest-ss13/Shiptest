@@ -12,6 +12,8 @@
 	minimal_player_age = 7
 	exp_requirements = 300
 	exp_type = EXP_TYPE_CREW
+	wiki_page = "Space_Law"
+	special_notice = "You're the Warden, not a Security Officer. Your job is in the brig processing criminals, not patrolling the station."
 
 	outfit = /datum/outfit/job/warden
 

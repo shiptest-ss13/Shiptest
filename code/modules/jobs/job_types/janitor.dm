@@ -8,6 +8,7 @@
 	spawn_positions = 1
 	supervisors = "the head of personnel"
 	selection_color = "#bbe291"
+	wiki_page = "Janitor"
 
 	outfit = /datum/outfit/job/janitor
 

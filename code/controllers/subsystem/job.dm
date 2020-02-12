@@ -468,10 +468,15 @@ SUBSYSTEM_DEF(job)
 			else
 				handle_auto_deadmin_roles(M.client, rank)
 
+		to_chat(M, "<b>You are the [rank].</b>")
 		to_chat(M, "<b>As the [rank] you answer directly to [job.supervisors]. Special circumstances may change this.</b>")
 		job.radio_help_message(M)
 		if(job.req_admin_notify)
 			to_chat(M, "<b>You are playing a job that is important for Game Progression. If you have to disconnect, please notify the admins via adminhelp.</b>")
+		if(job.special_notice)
+			to_chat(M, "<span class='userdanger'>[job.special_notice]</span>")
+		if(job.wiki_page)
+			to_chat(M, "<span class='notice'><a href=[CONFIG_GET(string/wikiurl)]/[job.wiki_page]>Wiki Page</a></span>")
 		if(CONFIG_GET(number/minimal_access_threshold))
 			to_chat(M, "<span class='notice'><B>As this station was initially staffed with a [CONFIG_GET(flag/jobs_have_minimal_access) ? "full crew, only your job's necessities" : "skeleton crew, additional access may"] have been added to your ID card.</B></span>")
 

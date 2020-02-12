@@ -8,6 +8,7 @@
 	spawn_positions = 3
 	supervisors = "the quartermaster and the head of personnel"
 	selection_color = "#dcba97"
+	wiki_page = "Shaft_Miner"
 
 	outfit = /datum/outfit/job/miner
 

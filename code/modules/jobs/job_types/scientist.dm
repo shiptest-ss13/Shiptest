@@ -10,7 +10,7 @@
 	selection_color = "#ffeeff"
 	exp_requirements = 60
 	exp_type = EXP_TYPE_CREW
-
+	wiki_page = "Scientist"
 
 	outfit = /datum/outfit/job/scientist
 
