@@ -4,8 +4,8 @@
 	desc = "A basic energy-based gun."
 	icon = 'icons/obj/guns/energy.dmi'
 
-	var/obj/item/stock_parts/cell/cell //What type of power cell this uses
-	var/cell_type = /obj/item/stock_parts/cell/high
+	var/obj/item/stock_parts/cell/gun/cell //What type of power cell this uses
+	var/cell_type = /obj/item/stock_parts/cell/gun
 	var/modifystate = 0
 	var/list/ammo_type = list(/obj/item/ammo_casing/energy)
 	var/select = 1 //The state of the select fire switch. Determines from the ammo_type list what kind of shot is fired next.
@@ -96,14 +96,14 @@
 	. = ..()
 	if (.)
 		return
-	if (!internal_cell && istype(A, /obj/item/stock_parts/cell))
-		var/obj/item/stock_parts/cell/C = A
+	if (!internal_cell && istype(A, /obj/item/stock_parts/cell/gun))
+		var/obj/item/stock_parts/cell/gun/C = A
 		if (!cell)
 			insert_cell(user, C)
 		else
 			eject_cell(user, C)
 
-/obj/item/gun/energy/proc/insert_cell(mob/user, obj/item/stock_parts/cell/C)
+/obj/item/gun/energy/proc/insert_cell(mob/user, obj/item/stock_parts/cell/gun/C)
 	if(small_gun && C.maxcharge > max_charge)
 		to_chat(user, "<span class='warning'>\The [C] doesn't seem to fit into \the [src]...</span>")
 		return FALSE
@@ -117,10 +117,10 @@
 		to_chat(user, "<span class='warning'>You cannot seem to get \the [src] out of your hands!</span>")
 		return FALSE
 
-/obj/item/gun/energy/proc/eject_cell(mob/user, obj/item/stock_parts/cell/tac_load = null)
+/obj/item/gun/energy/proc/eject_cell(mob/user, obj/item/stock_parts/cell/gun/tac_load = null)
 	playsound(src, load_sound, sound_volume, load_sound_vary)
 	cell.forceMove(drop_location())
-	var/obj/item/stock_parts/cell/old_cell = cell
+	var/obj/item/stock_parts/cell/gun/old_cell = cell
 	if (insert_cell(user, tac_load))
 		to_chat(user, "<span class='notice'>You perform a tactical reload on \the [src].</span>")
 	else

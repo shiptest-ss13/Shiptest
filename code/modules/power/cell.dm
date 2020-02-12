@@ -65,6 +65,17 @@
 	else
 		add_overlay("cell-o1")
 
+/obj/item/stock_parts/cell/gun/update_icon()
+	cut_overlays()
+	if(grown_battery)
+		add_overlay(image('icons/obj/power.dmi',"grown_wires"))
+	if(charge < 0.01)
+		return
+	else if(charge/maxcharge >=0.995)
+		add_overlay("g-cell-o2")
+	else
+		add_overlay("g-cell-o1")
+
 /obj/item/stock_parts/cell/proc/percent()		// return % charge of cell
 	return 100*charge/maxcharge
 
@@ -221,6 +232,29 @@
 	charge = 0
 	update_icon()
 
+/obj/item/stock_parts/cell/gun
+	name = "weapon power cell"
+	icon_state = "g-cell"
+	maxcharge = 10000
+	custom_materials = list(/datum/material/glass=60)
+	chargerate = 1500
+
+/obj/item/stock_parts/cell/gun/empty/Initialize()
+	. = ..()
+	charge = 0
+	update_icon()
+
+/obj/item/stock_parts/cell/gun/upgraded
+	name = "upgraded weapon power cell"
+	icon_state = "ug-cell"
+	maxcharge = 20000
+	custom_materials = list(/datum/material/glass=300)
+	chargerate = 2000
+
+/obj/item/stock_parts/cell/gun/upgraded/empty/Initialize()
+	. = ..()
+	charge = 0
+	update_icon()
 /obj/item/stock_parts/cell/pulse //200 pulse shots
 	name = "pulse rifle power cell"
 	maxcharge = 400000
