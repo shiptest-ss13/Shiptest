@@ -244,7 +244,7 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 	message = compose_message(speaker, message_language, raw_message, radio_freq, spans, message_mode)
 
 	show_message(message, MSG_AUDIBLE, deaf_message, deaf_type)
-	if(radio_freq)
+	if(radio_freq && (usr.client.prefs.toggles & SOUND_RADIO))
 		playsound(loc, 'sound/effects/radiohiss.ogg', 15, 0, -1)
 	return message
 

@@ -223,6 +223,16 @@ TOGGLE_CHECKBOX(/datum/verbs/menu/Settings/Sound, toggle_announcement_sound)()
 /datum/verbs/menu/Settings/Sound/toggle_announcement_sound/Get_checked(client/C)
 	return C.prefs.toggles & SOUND_ANNOUNCEMENTS
 
+TOGGLE_CHECKBOX(/datum/verbs/menu/Settings/Sound, toggle_radio_sound)()
+	set name = "Hear/Silence Radio Chatter"
+	set category = "Preferences"
+	set desc = "Hear Radio Sound"
+	usr.client.prefs.toggles ^= SOUND_RADIO
+	to_chat(usr, "You will now [(usr.client.prefs.toggles & SOUND_RADIO) ? "hear radio chatter sounds" : "no longer hear radio chatter sounds"].")
+	usr.client.prefs.save_preferences()
+	SSblackbox.record_feedback("nested tally", "preferences_verb", 1, list("Toggle Radio Sound", "[usr.client.prefs.toggles & SOUND_RADIO ? "Enabled" : "Disabled"]")) //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc, just like EVERY other comment says.
+/datum/verbs/menu/Settings/Sound/toggle_announcement_sound/Get_checked(client/C)
+	return C.prefs.toggles & SOUND_ANNOUNCEMENTS
 
 /datum/verbs/menu/Settings/Sound/verb/stop_client_sounds()
 	set name = "Stop Sounds"
