@@ -26614,15 +26614,12 @@
 	pixel_y = -35
 	},
 /obj/structure/cable,
-/obj/structure/cable,
 /turf/open/floor/plasteel,
 /area/engine/gravity_generator)
 "bqG" = (
 /obj/machinery/power/smes{
 	charge = 5e+006
 	},
-/obj/structure/cable,
-/obj/structure/cable,
 /obj/structure/cable,
 /turf/open/floor/plasteel,
 /area/engine/gravity_generator)
@@ -30400,8 +30397,12 @@
 /area/storage/tech)
 "bAN" = (
 /obj/machinery/door/firedoor,
+/obj/machinery/door/airlock/public/glass{
+	name = "Central Access"
+	},
+/obj/structure/cable,
 /turf/open/floor/plasteel,
-/area/hallway/primary/aft)
+/area/hallway/primary/central)
 "bAO" = (
 /obj/structure/disposalpipe/segment,
 /obj/machinery/door/firedoor,
@@ -30616,6 +30617,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
 	},
+/obj/structure/cable,
 /turf/open/floor/plasteel,
 /area/hallway/primary/central)
 "bBq" = (
@@ -42058,10 +42060,13 @@
 	dir = 1
 	},
 /obj/structure/cable,
-/obj/machinery/airalarm{
+/obj/structure/reagent_dispensers/fueltank,
+/obj/machinery/power/apc{
+	areastring = "/area/engine/engine_smes";
+	dir = 1;
+	name = "SMES room APC";
 	pixel_y = 23
 	},
-/obj/structure/reagent_dispensers/fueltank,
 /turf/open/floor/plasteel/dark,
 /area/engine/engine_smes)
 "cic" = (
@@ -51309,10 +51314,7 @@
 	brightness = 3;
 	dir = 8
 	},
-/obj/machinery/power/apc{
-	areastring = "/area/engine/engine_smes";
-	dir = 1;
-	name = "SMES room APC";
+/obj/machinery/airalarm{
 	pixel_y = 23
 	},
 /turf/open/floor/plasteel/dark,
@@ -81828,10 +81830,10 @@ knx
 bvW
 bAf
 bBp
-aHP
 bAN
-bQg
-bQg
+bQQ
+bMG
+bMG
 bFh
 bGN
 bHj
