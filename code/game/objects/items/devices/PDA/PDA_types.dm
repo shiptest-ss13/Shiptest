@@ -104,12 +104,12 @@
 
 /obj/item/pda/heads
 	default_cartridge = /obj/item/cartridge/head
-	icon_state = "pda-hop"
+	icon_state = "pda-first_officer"
 
-/obj/item/pda/heads/hop
-	name = "head of personnel PDA"
-	default_cartridge = /obj/item/cartridge/hop
-	icon_state = "pda-hop"
+/obj/item/pda/heads/first_officer
+	name = "first officer PDA"
+	default_cartridge = /obj/item/cartridge/first_officer
+	icon_state = "pda-first_officer"
 
 /obj/item/pda/heads/hos
 	name = "head of security PDA"
@@ -196,6 +196,11 @@
 	note = "Congratulations, your station has chosen the Thinktronic 5290 WGW-11 Series E-reader and Personal Data Assistant!"
 	silent = TRUE //Quiet in the library!
 	overlays_x_offset = -3
+
+/obj/item/pda/second_officer
+	name = "second officer PDA"
+	default_cartridge = /obj/item/cartridge/hos
+	icon_state = "pda-h"
 
 /obj/item/pda/clear
 	name = "clear PDA"

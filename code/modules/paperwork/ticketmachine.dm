@@ -12,7 +12,7 @@
 	maptext_x = 7
 	maptext_y = 10
 	layer = HIGH_OBJ_LAYER
-	var/ticket_number = 0 //Increment the ticket number whenever the HOP presses his button
+	var/ticket_number = 0 //Increment the ticket number whenever the FO presses his button
 	var/current_number = 0 //What ticket number are we currently serving?
 	var/max_number = 100 //At this point, you need to refill it.
 	var/cooldown = 50
@@ -184,7 +184,7 @@
 	user.put_in_hands(theirticket)
 	ticket_holders += user
 	tickets += theirticket
-	if(obj_flags & EMAGGED) //Emag the machine to destroy the HOP's life.
+	if(obj_flags & EMAGGED) //Emag the machine to destroy the FO's life.
 		ready = FALSE
 		addtimer(CALLBACK(src, .proc/reset_cooldown), cooldown)//Small cooldown to prevent piles of flaming tickets
 		theirticket.fire_act()
@@ -195,7 +195,7 @@
 
 /obj/item/ticket_machine_ticket
 	name = "Ticket"
-	desc = "A ticket which shows your place in the Head of Personnel's line. Made from Nanotrasen patented NanoPaper®. Though solid, its form seems to shimmer slightly. Feels (and burns) just like the real thing."
+	desc = "A ticket which shows your place in the First Officer's line. Made from Nanotrasen patented NanoPaper®. Though solid, its form seems to shimmer slightly. Feels (and burns) just like the real thing."
 	icon = 'icons/obj/bureaucracy.dmi'
 	icon_state = "ticket"
 	maptext_x = 7

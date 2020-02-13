@@ -30,12 +30,13 @@ GLOBAL_VAR_INIT(time_last_changed_position, 0)
 		"Assistant",
 		"Cyborg",
 		"Captain",
-		"Head of Personnel",
+		"First Officer",
 		"Head of Security",
 		"Chief Engineer",
 		"Research Director",
 		"Chief Medical Officer",
-		"Brig Physician")
+		"Brig Physician",
+		"Second Officer")
 
 	//The scaling factor of max total positions in relation to the total amount of people on board the station in %
 	var/max_relative_positions = 30 //30%: Seems reasonable, limit of 6 @ 20 players
@@ -406,10 +407,10 @@ GLOBAL_VAR_INIT(time_last_changed_position, 0)
 						playsound(src, 'sound/machines/terminal_on.ogg', 50, FALSE)
 
 					else
-						if((ACCESS_HOP in inserted_scan_id.access) && ((target_dept==1) || !target_dept))
+						if((ACCESS_FO in inserted_scan_id.access) && ((target_dept==1) || !target_dept))
 							region_access |= 1
 							region_access |= 6
-							get_subordinates("Head of Personnel")
+							get_subordinates("First Officer")
 						if((ACCESS_HOS in inserted_scan_id.access) && ((target_dept==2) || !target_dept))
 							region_access |= 2
 							get_subordinates("Head of Security")

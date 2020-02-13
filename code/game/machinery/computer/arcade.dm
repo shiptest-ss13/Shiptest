@@ -805,21 +805,21 @@ GLOBAL_LIST_INIT(arcade_prize_pool, list(
 				spaceport_raided = 1
 
 				var/FU = 0
-				var/FO = 0
+				var/FOO = 0
 				if(prob(success))
 					FU = rand(5,15)
-					FO = rand(5,15)
-					last_spaceport_action = "You successfully raided the spaceport! You gained [FU] Fuel and [FO] Food! (+[FU]FU,+[FO]FO)"
+					FOO = rand(5,15)
+					last_spaceport_action = "You successfully raided the spaceport! You gained [FU] Fuel and [FOO] Food! (+[FU]FU,+[FOO]FOO)"
 				else
 					FU = rand(-5,-15)
-					FO = rand(-5,-15)
-					last_spaceport_action = "You failed to raid the spaceport! You lost [FU*-1] Fuel and [FO*-1] Food in your scramble to escape! ([FU]FU,[FO]FO)"
+					FOO = rand(-5,-15)
+					last_spaceport_action = "You failed to raid the spaceport! You lost [FU*-1] Fuel and [FOO*-1] Food in your scramble to escape! ([FU]FU,[FOO]FOO)"
 
 					//your chance of lose a crewmember is 1/2 your chance of success
 					//this makes higher % failures hurt more, don't get cocky space cowboy!
 					if(prob(success*5))
 						var/lost_crew = remove_crewmember()
-						last_spaceport_action = "You failed to raid the spaceport! You lost [FU*-1] Fuel and [FO*-1] Food, AND [lost_crew] in your scramble to escape! ([FU]FI,[FO]FO,-Crew)"
+						last_spaceport_action = "You failed to raid the spaceport! You lost [FU*-1] Fuel and [FOO*-1] Food, AND [lost_crew] in your scramble to escape! ([FU]FI,[FOO]FOO,-Crew)"
 						if(obj_flags & EMAGGED)
 							say("WEEWOO! WEEWOO! Spaceport security en route!")
 							playsound(src, 'sound/items/weeoo1.ogg', 100, FALSE)
@@ -829,7 +829,7 @@ GLOBAL_LIST_INIT(arcade_prize_pool, list(
 
 
 				fuel += FU
-				food += FO
+				food += FOO
 				event()
 
 	else if(href_list["buyparts"])
@@ -1059,7 +1059,7 @@ GLOBAL_LIST_INIT(arcade_prize_pool, list(
 			else
 				eventdat += "Your jump into the sector yields a spaceport - a lucky find!"
 				eventdat += "<br>This spaceport is home to travellers who failed to reach Orion, but managed to find a different home..."
-				eventdat += "<br>Trading terms: FU = Fuel, FO = Food"
+				eventdat += "<br>Trading terms: FU = Fuel, FOO = Food"
 				if(last_spaceport_action)
 					eventdat += "<br><b>Last action:</b> [last_spaceport_action]"
 				eventdat += "<h3><b>Crew:</b></h3>"
@@ -1072,22 +1072,22 @@ GLOBAL_LIST_INIT(arcade_prize_pool, list(
 				if(!spaceport_freebie && (fuel < 20 || food < 20))
 					spaceport_freebie++
 					var/FU = 10
-					var/FO = 10
+					var/FOO = 10
 					var/freecrew = 0
 					if(prob(30))
 						FU = 25
-						FO = 25
+						FOO = 25
 
 					if(prob(10))
 						add_crewmember()
 						freecrew++
 
-					eventdat += "<br>The traders of the spaceport take pity on you, and generously give you some free supplies! (+[FU]FU, +[FO]FO)"
+					eventdat += "<br>The traders of the spaceport take pity on you, and generously give you some free supplies! (+[FU]FU, +[FOO]FOO)"
 					if(freecrew)
 						eventdat += "<br>You also gain a new crewmember!"
 
 					fuel += FU
-					food += FO
+					food += FOO
 
 				//CREW INTERACTIONS
 				eventdat += "<P ALIGN=Right>Crew Management:</P>"

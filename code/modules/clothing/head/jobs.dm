@@ -44,13 +44,13 @@
 	dog_fashion = null
 
 
-//Head of Personnel
+//First Officer
 /obj/item/clothing/head/hopcap
-	name = "head of personnel's cap"
+	name = "first officer's cap"
 	icon_state = "hopcap"
 	desc = "The symbol of true bureaucratic micromanagement."
 	armor = list("melee" = 25, "bullet" = 15, "laser" = 25, "energy" = 35, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
-	dog_fashion = /datum/dog_fashion/head/hop
+	dog_fashion = /datum/dog_fashion/head/first_officer
 
 //Chaplain
 /obj/item/clothing/head/nun_hood
@@ -344,7 +344,7 @@
 	armor = list(melee = 80, bullet = 80, laser = 80, energy = 80, bomb = 80, bio = 80, rad = 80, fire = 80, acid = 80)
 	strip_delay = 120
 
-//For blueshields, but those aren't in so I renamed them to centcom guards
+//For second_officers, but those aren't in so I renamed them to centcom guards
 /obj/item/clothing/head/beret/ccguard
 	name = "officer beret"
 	desc = "A black Centcom guard's beret."

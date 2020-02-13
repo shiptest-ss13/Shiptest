@@ -235,7 +235,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/mapping_helpers/no_lava)
 	qdel(src)
 
 
-//On Ian's birthday, the hop's office is decorated.
+//On Ian's birthday, the first officer's office is decorated.
 /obj/effect/mapping_helpers/ianbirthday
 	name = "Ian's Bday Helper"
 	late = TRUE

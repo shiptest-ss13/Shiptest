@@ -21,7 +21,7 @@
 #define DYE_QM "qm"
 #define DYE_LAW "law"
 #define DYE_CAPTAIN "captain"
-#define DYE_HOP "hop"
+#define DYE_FO "first_officer"
 #define DYE_HOS "hos"
 #define DYE_CE "ce"
 #define DYE_RD "rd"

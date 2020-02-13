@@ -1346,8 +1346,8 @@
 	icon_state = "geneticist"
 	toysay = "Smash!"
 
-/obj/item/toy/figure/hop
-	name = "Head of Personnel action figure"
+/obj/item/toy/figure/first_officer
+	name = "First Officer action figure"
 	icon_state = "hop"
 	toysay = "Giving out all access!"
 

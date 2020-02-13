@@ -1479,7 +1479,7 @@
 	if(!M.mind?.assigned_role)
 		return
 	switch(M.mind.assigned_role)
-		if("Chief Medical Officer", "Captain", "Chief Engineer", "Research Director", "Head of Personnel")
+		if("Chief Medical Officer", "Captain", "Chief Engineer", "Research Director", "First Officer")
 			if(prob(10))
 				to_chat(M, "You feel like royalty.")
 			if(prob(5))

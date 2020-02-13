@@ -36,8 +36,8 @@
 	if(M.mind == target && !M.owns_soul())
 		if(user.mind && (user.mind.assigned_role == "Lawyer"))
 			deconvert = TRUE
-		else if (user.mind && (user.mind.assigned_role =="Head of Personnel") || (user.mind.assigned_role == "CentCom Commander"))
-			deconvert = prob (25) // the HoP doesn't have AS much legal training
+		else if (user.mind && (user.mind.assigned_role =="First Officer") || (user.mind.assigned_role == "CentCom Commander"))
+			deconvert = prob (25) // the First Officer doesn't have AS much legal training
 		else
 			deconvert = prob (5)
 	if(deconvert)

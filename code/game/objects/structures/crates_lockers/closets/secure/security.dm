@@ -40,20 +40,20 @@
 	new /obj/item/storage/photo_album/Captain(src)
 	new /obj/item/card/id/departmental_budget/civ(src)
 
-/obj/structure/closet/secure_closet/hop
-	name = "\proper head of personnel's locker"
-	req_access = list(ACCESS_HOP)
+/obj/structure/closet/secure_closet/first_officer
+	name = "\proper first officer's locker"
+	req_access = list(ACCESS_FO)
 	icon_state = "hop"
 
-/obj/structure/closet/secure_closet/hop/PopulateContents()
+/obj/structure/closet/secure_closet/first_officer/PopulateContents()
 	..()
-	new /obj/item/clothing/neck/cloak/hop(src)
+	new /obj/item/clothing/neck/cloak/first_officer(src)
 	new /obj/item/storage/lockbox/medal/service(src)
-	new /obj/item/clothing/under/rank/civilian/head_of_personnel(src)
-	new /obj/item/clothing/under/rank/civilian/head_of_personnel/skirt(src)
+	new /obj/item/clothing/under/rank/civilian/first_officer(src)
+	new /obj/item/clothing/under/rank/civilian/first_officer/skirt(src)
 	new /obj/item/clothing/head/hopcap(src)
-	new /obj/item/cartridge/hop(src)
-	new /obj/item/radio/headset/heads/hop(src)
+	new /obj/item/cartridge/first_officer(src)
+	new /obj/item/radio/headset/heads/first_officer(src)
 	new /obj/item/clothing/shoes/sneakers/brown(src)
 	new /obj/item/storage/box/ids(src)
 	new /obj/item/storage/box/ids(src)
@@ -87,6 +87,26 @@
 	new /obj/item/assembly/flash/handheld(src)
 	new /obj/item/restraints/handcuffs(src)
 	new /obj/item/clothing/gloves/color/latex/nitrile(src)
+
+/obj/structure/closet/secure_closet/second_officer
+	name = "\proper second officer's locker"
+	req_access = list(ACCESS_SECOND_OFFICER)
+	icon_state = "blueshield"
+
+/obj/structure/closet/secure_closet/second_officer/PopulateContents()
+	..()
+	new /obj/item/storage/briefcase(src)
+	new	/obj/item/storage/firstaid/regular(src)
+	new /obj/item/storage/belt/security(src)
+	new /obj/item/grenade/flashbang(src)
+	new /obj/item/assembly/flash/handheld(src)
+	new /obj/item/restraints/handcuffs(src)
+	new /obj/item/melee/baton/loaded(src)
+	new /obj/item/clothing/glasses/sunglasses(src)
+	new /obj/item/clothing/suit/armor/vest/second_officer(src)
+	new /obj/item/clothing/suit/storage/second_officer(src)
+	new /obj/item/clothing/accessory/holster(src)
+	new /obj/item/clothing/shoes/jackboots(src)
 
 /obj/structure/closet/secure_closet/hos
 	name = "\proper head of security's locker"

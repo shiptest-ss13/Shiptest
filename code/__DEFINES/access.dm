@@ -59,7 +59,7 @@
 #define ACCESS_MINING_STATION 54
 #define ACCESS_XENOBIOLOGY 55
 #define ACCESS_CE 56
-#define ACCESS_HOP 57
+#define ACCESS_FO 57
 #define ACCESS_HOS 58
 /// Request console announcements
 #define ACCESS_RC_ANNOUNCE 59
@@ -81,6 +81,8 @@
 #define ACCESS_CLONING 68
 /// Pharmacy access (Chemistry room in Medbay)
 #define ACCESS_PHARMACY 69 ///Nice.
+// Second Officer's Office
+#define ACCESS_SECOND_OFFICER 70
 
 	//BEGIN CENTCOM ACCESS
 	/*Should leave plenty of room if we need to add more access levels.
