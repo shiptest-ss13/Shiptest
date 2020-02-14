@@ -6,6 +6,11 @@
 	name = "Disposal trunk that goes up"
 	icon_state = "pipe-up"
 	var/multiz_dir = MULTIZ_PIPE_UP ///Set the multiz direction of your trunk. 1 = up, 2 = down
+	FASTDMM_PROP(\
+		pipe_interference_group = list("disposal"),\
+		pipe_group = null,\
+		pipe_type = null\
+	)
 
 /obj/structure/disposalpipe/trunk/multiz/down
 	name = "Disposal trunk that goes down"

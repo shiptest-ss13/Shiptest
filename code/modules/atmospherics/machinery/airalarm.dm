@@ -73,6 +73,14 @@
 	resistance_flags = FIRE_PROOF
 	ui_x = 440
 	ui_y = 650
+	
+	FASTDMM_PROP(\
+		set_instance_vars(\
+			pixel_x = (dir & 3)? INSTANCE_VAR_DEFAULT : (dir == 4 ? -24 : 24),\
+			pixel_y = (dir & 3)? (dir == 1 ? -24 : 24) : INSTANCE_VAR_DEFAULT\
+        ),\
+		dir_amount = 4\
+    )
 
 	var/danger_level = 0
 	var/mode = AALARM_MODE_SCRUBBING

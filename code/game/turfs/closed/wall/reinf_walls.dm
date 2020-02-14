@@ -6,6 +6,10 @@
 	opacity = 1
 	density = TRUE
 
+	FASTDMM_PROP(\
+		pipe_astar_cost = 75 /* THOSE WHO PLACE PIPES AND WIRES UNDER WALLS SHOULD BE BURNED AT THE STAKE especially if they're reinforced */\
+	)
+
 	var/d_state = INTACT
 	hardness = 10
 	sheet_type = /obj/item/stack/sheet/plasteel

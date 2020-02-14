@@ -16,6 +16,9 @@
 	var/grille_type = null
 	var/broken_type = /obj/structure/grille/broken
 	rad_flags = RAD_PROTECT_CONTENTS | RAD_NO_CONTAMINATE
+	FASTDMM_PROP(\
+		pipe_astar_cost = 1\
+	)
 
 /obj/structure/grille/Destroy()
 	update_cable_icons_on_turf(get_turf(src))
