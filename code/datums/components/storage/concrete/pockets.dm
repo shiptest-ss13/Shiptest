@@ -25,17 +25,18 @@
 /datum/component/storage/concrete/pockets/exo
 	max_items = 2
 	max_w_class = WEIGHT_CLASS_SMALL
-	attack_hand_interact = TRUE
+	attack_hand_interact = FALSE
 	quickdraw = FALSE
 	silent = FALSE
 
 /datum/component/storage/concrete/pockets/exo/cloak
 	max_items = 1
+	max_w_class = WEIGHT_CLASS_NORMAL
 	quickdraw = TRUE
 
 /datum/component/storage/concrete/pockets/exo/large
 	max_items = 3
-	
+
 /datum/component/storage/concrete/pockets/small/fedora/Initialize()
 	. = ..()
 	var/static/list/exception_cache = typecacheof(list(
