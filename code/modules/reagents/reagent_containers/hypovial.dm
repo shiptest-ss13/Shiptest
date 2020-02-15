@@ -140,12 +140,12 @@
 /obj/item/reagent_containers/glass/bottle/vial/large/preloaded/CMO
 	name = "deluxe hypovial"
 	icon_state = "hypoviallarge-cmos"
-	comes_with = list("omnizine" = 20, "leporazine" = 20, "atropine" = 20)
+	comes_with = list(/datum/reagent/medicine/omnizine = 20, /datum/reagent/medicine/leporazine = 20, /datum/reagent/medicine/atropine = 20)
 
 /obj/item/reagent_containers/glass/bottle/vial/large/preloaded/bicaridine
 	name = "large red hypovial (bicaridine)"
 	icon_state = "hypoviallarge-b"
-	comes_with = list("bicaridine" = 60)
+	comes_with = list(/datum/reagent/medicine/bicaridine = 60)
 
 /obj/item/reagent_containers/glass/bottle/vial/large/preloaded/antitoxin
 	name = "large green hypovial (anti-tox)"
