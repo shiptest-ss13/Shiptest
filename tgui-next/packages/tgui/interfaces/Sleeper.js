@@ -9,6 +9,7 @@ export const Sleeper = props => {
     open,
     occupant = {},
     occupied,
+    cell = {},
   } = data;
 
   const preSortChems = data.chems || [];
@@ -108,13 +109,30 @@ export const Sleeper = props => {
             key={chem.name}
             icon="flask"
             content={chem.name}
-            disabled={!(occupied && chem.allowed)}
+            disabled={!(occupied && chem.allowed
+              && (cell.charge > cell.poweruse))}
             width="110px"
             onClick={() => act('inject', {
               chem: chem.id,
             })}
           />
         ))}
+      </Section>
+      <Section
+        title="Status"
+        minHeight="50px" >
+        {!!cell && (
+          <LabeledList>
+            <LabeledList.Item label="Charge">
+              <ProgressBar
+                value={cell.charge}
+                content={cell.charge/10 + ' units'}
+                minValue={0}
+                maxValue={cell.maxCharge}
+              />
+            </LabeledList.Item>
+          </LabeledList>
+        )}
       </Section>
     </Fragment>
   );
