@@ -49425,6 +49425,14 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/science/mixing)
+"fxa" = (
+/obj/structure/window/reinforced{
+	dir = 4;
+	layer = 2.9
+	},
+/obj/machinery/clonepod/mapped,
+/turf/open/floor/plasteel/dark,
+/area/medical/genetics)
 "fxH" = (
 /obj/effect/spawner/structure/window,
 /obj/machinery/pinpointer_dispenser,
@@ -52200,14 +52208,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/vacant_room/commissary)
-"uTM" = (
-/obj/machinery/clonepod,
-/obj/structure/window/reinforced{
-	dir = 4;
-	layer = 2.9
-	},
-/turf/open/floor/plasteel/dark,
-/area/medical/genetics)
 "uUy" = (
 /turf/open/floor/plasteel,
 /area/science/mixing)
@@ -91808,7 +91808,7 @@ bua
 bvn
 bwL
 bxX
-uTM
+fxa
 bua
 bBJ
 bhh

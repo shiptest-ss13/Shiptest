@@ -55093,26 +55093,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/medical/genetics/cloning)
-"cvw" = (
-/obj/machinery/clonepod{
-	pixel_y = 2
-	},
-/obj/item/radio/intercom{
-	pixel_x = 29
-	},
-/obj/structure/window/reinforced,
-/obj/effect/turf_decal/tile/neutral{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/neutral,
-/obj/effect/turf_decal/tile/neutral{
-	dir = 4
-	},
-/obj/effect/turf_decal/tile/neutral{
-	dir = 8
-	},
-/turf/open/floor/plasteel/dark,
-/area/medical/genetics/cloning)
 "cvE" = (
 /obj/structure/table/reinforced,
 /obj/item/folder/white{
@@ -76951,6 +76931,24 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/security/warden)
+"xcP" = (
+/obj/item/radio/intercom{
+	pixel_x = 29
+	},
+/obj/structure/window/reinforced,
+/obj/effect/turf_decal/tile/neutral{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/neutral,
+/obj/effect/turf_decal/tile/neutral{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/neutral{
+	dir = 8
+	},
+/obj/machinery/clonepod/mapped,
+/turf/open/floor/plasteel/dark,
+/area/medical/genetics/cloning)
 "xdW" = (
 /obj/machinery/vending/wardrobe/jani_wardrobe,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
@@ -101339,7 +101337,7 @@ crA
 csz
 ctz
 cmu
-cvw
+xcP
 cwx
 cxo
 cyb

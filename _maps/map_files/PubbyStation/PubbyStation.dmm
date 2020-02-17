@@ -26203,25 +26203,6 @@
 /obj/structure/flora/junglebush/large,
 /turf/open/floor/grass,
 /area/medical/genetics)
-"bpy" = (
-/obj/machinery/clonepod,
-/obj/item/radio/intercom{
-	frequency = 1485;
-	name = "Station Intercom (Medbay)";
-	pixel_x = -30
-	},
-/obj/effect/turf_decal/tile/blue{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/blue,
-/obj/effect/turf_decal/tile/blue{
-	dir = 4
-	},
-/obj/effect/turf_decal/tile/blue{
-	dir = 8
-	},
-/turf/open/floor/plasteel,
-/area/medical/genetics)
 "bpz" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 8
@@ -56723,6 +56704,25 @@
 /obj/effect/turf_decal/plaque,
 /turf/open/floor/plating,
 /area/maintenance/department/engine)
+"uNL" = (
+/obj/item/radio/intercom{
+	frequency = 1485;
+	name = "Station Intercom (Medbay)";
+	pixel_x = -30
+	},
+/obj/effect/turf_decal/tile/blue{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/blue,
+/obj/effect/turf_decal/tile/blue{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/blue{
+	dir = 8
+	},
+/obj/machinery/clonepod/mapped,
+/turf/open/floor/plasteel,
+/area/medical/genetics)
 "uNW" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden{
 	dir = 4
@@ -82182,7 +82182,7 @@ bkX
 bmh
 bjL
 bov
-bpy
+uNL
 bqW
 bsr
 btU
