@@ -1,4 +1,4 @@
-## WaspStation 13 Codebase
+<h1 align="center">WaspStation 13 Codebase</h1>
 
 [![Build Status](https://api.travis-ci.com/WaspStation/WaspStation-1.0.svg?branch=master)](https://travis-ci.com/WaspStation/WaspStation-1.0) [![Krihelimeter](http://www.krihelinator.xyz/badge/WaspStation/WaspStation-1.0)](https://www.krihelinator.xyz)  
 [![Percentage of issues still open](http://isitmaintained.com/badge/open/waspstation/waspstation-1.0.svg)](https://isitmaintained.com/project/tgstation/tgstation "Percentage of issues still open") [![Average time to resolve an issue](http://isitmaintained.com/badge/resolution/waspstation/waspstation-1.0.svg)](https://isitmaintained.com/project/tgstation/tgstation "Average time to resolve an issue") ![Coverage](https://img.shields.io/badge/coverage---2%25-red.svg)  
@@ -6,9 +6,10 @@
 
 * **Website:** TBA
 * **Code:** https://github.com/WaspStation/WaspStation-1.0
-* **Discord:** https://discord.gg/husVWe8
+* **Mantis Discord:** https://discord.gg/husVWe8
+* **Boomer Discord:** https://discord.gg/BUM8uRc
 * **Wiki** TBA
- 
+
 ## DOWNLOADING
 
 There are a number of ways to download the source code. Some are described here, an alternative all-inclusive guide is also located at https://www.tgstation13.org/wiki/Downloading_the_source_code
@@ -138,15 +139,21 @@ Web delivery of game resources makes it quicker for players to join and reduces 
 1. Add a url to config/external_rsc_urls pointing to a .zip file containing the .rsc.
     * If you keep up to date with /tg/ you could reuse /tg/'s rsc cdn at http://tgstation13.download/byond/tgstation.zip. Otherwise you can use cdn services like CDN77 or cloudflare (requires adding a page rule to enable caching of the zip), or roll your own cdn using route 53 and vps providers.
 	* Regardless even offloading the rsc to a website without a CDN will be a massive improvement over the in game system for transferring files.
-
-## IRC BOT SETUP
-
-Included in the repository is a python3 compatible IRC bot capable of relaying adminhelps to a specified
-IRC channel/server, see the /tools/minibot folder for more
-
+	
 ## CONTRIBUTING
 
 Please see [CONTRIBUTING.md](.github/CONTRIBUTING.md)
+
+## CODEBASE CREDITS
+- /tg/, for the codebase
+- BeeStation, for the many QoL changes
+- Oracle, for the inspiration and wonderful features and sprites
+- Interstation for bridging the gap between Oracle and Modern /tg/
+- YogStation for multiple different features
+- CEV Eris, for the PDA sprites
+- Citadel, for their beautiful lighting
+
+And thank you to any other codebase not mentioned here that has been used in the code. Your wonderful contributions are known.
 
 ## LICENSE
 
