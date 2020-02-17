@@ -50,6 +50,10 @@
 
 	msg = replace_pronoun(user, msg)
 
+	var/end = copytext(msg, length(message))
+	if(!(end in list("!", ".", "?", ":", "\"", "-")))
+		msg += "."
+
 	if(isliving(user))
 		var/mob/living/L = user
 		for(var/obj/item/implant/I in L.implants)
