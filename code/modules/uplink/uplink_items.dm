@@ -1480,6 +1480,12 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	restricted = TRUE
 	cost = 7
 	limited_stock = 1
+	
+/datum/uplink_item/device_tools/telecrystal/bonemedipen
+	name = "C4L-Z1UM medipen"
+	desc = "A medipen stocked with an agent that will help regenerate bones and organs. A single-use pocket Medbay visit."
+	item = /obj/item/reagent_containers/hypospray/medipen/bonefixingjuice
+	cost = 3
 
 // Implants
 /datum/uplink_item/implants

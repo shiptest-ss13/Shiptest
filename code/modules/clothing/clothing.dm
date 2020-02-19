@@ -22,6 +22,9 @@
 	var/toggle_cooldown = null
 	var/cooldown = 0
 
+	var/cuttable = FALSE //If you can cut the clothing with anything sharp
+	var/clothamnt = 0 //How much cloth
+
 	var/clothing_flags = NONE
 
 	//Var modification - PLEASE be careful with this I know who you are and where you live
@@ -75,6 +78,15 @@
 		return ..()
 
 /obj/item/clothing/attackby(obj/item/W, mob/user, params)
+	if(W.get_sharpness() && cuttable)
+		if (alert(user, "Are you sure you want to cut the [src] into strips?", "Cut clothing:", "Yes", "No") != "Yes")
+			return
+		playsound(src.loc, 'sound/items/poster_ripped.ogg', 100, TRUE)
+		to_chat(user, "<span class='notice'>You cut the [src] into strips with [W].</span>")
+		var/obj/item/stack/sheet/cloth/C = new (get_turf(src), clothamnt)
+		user.put_in_hands(C)
+		qdel(src)
+
 	if(damaged_clothes && istype(W, /obj/item/stack/sheet/cloth))
 		var/obj/item/stack/sheet/cloth/C = W
 		C.use(1)

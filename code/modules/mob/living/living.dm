@@ -1148,6 +1148,7 @@
 	var/restrained = restrained()
 	var/has_legs = get_num_legs()
 	var/has_arms = get_num_arms()
+	var/broken_legs = get_broken_legs()
 	var/paralyzed = IsParalyzed()
 	var/stun = IsStun()
 	var/knockdown = IsKnockdown()
@@ -1219,6 +1220,13 @@
 			add_movespeed_modifier(MOVESPEED_ID_LIVING_LIMBLESS, update=TRUE, priority=100, override=TRUE, multiplicative_slowdown=limbless_slowdown, movetypes=GROUND)
 		else
 			remove_movespeed_modifier(MOVESPEED_ID_LIVING_LIMBLESS, update=TRUE)
+
+		var/broken_slowdown = 0
+		if(broken_legs > 0)
+			broken_slowdown += 0 + (broken_legs * 2)
+			add_movespeed_modifier(MOVESPEED_ID_LIVING_BROKEN_BONES, update=TRUE, priority=100, override=TRUE, multiplicative_slowdown=broken_slowdown, movetypes=GROUND) //can't move fast with a broken leg
+		else
+			remove_movespeed_modifier(MOVESPEED_ID_LIVING_BROKEN_BONES, update=TRUE)
 
 /mob/living/proc/fall(forced)
 	if(!(mobility_flags & MOBILITY_USE))

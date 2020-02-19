@@ -10,6 +10,8 @@
 	var/transfer_prints = FALSE
 	strip_delay = 20
 	equip_delay_other = 40
+	cuttable = TRUE
+	clothamnt = 2
 
 /obj/item/clothing/gloves/ComponentInitialize()
 	. = ..()

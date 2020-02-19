@@ -255,6 +255,15 @@
 	icon_state = "maintenance"
 
 
+/obj/item/reagent_containers/hypospray/medipen/bonefixingjuice
+	name = "rejuvenating agent injector"
+	desc = "The C4L-Z1UM agent will induce a short stasis that will heal any organ damage and bone fractures effectively. \
+	Has a menacing red S on it."
+	volume = 10
+	amount_per_transfer_from_this = 10
+	list_reagents = list("bonefixingjuice" = 10)
+	icon_state = "syndipen"
+
 #define HYPO_SPRAY 0
 #define HYPO_INJECT 1
 

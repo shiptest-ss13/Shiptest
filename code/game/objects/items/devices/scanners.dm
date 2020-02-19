@@ -298,6 +298,13 @@ GENE SCANNER
 		if(advanced && H.has_dna())
 			render_list += "<span class='info ml-1'>Genetic Stability: [H.dna.stability]%.</span>\n"
 
+		var/list/broken_stuff = list()
+		for(var/obj/item/bodypart/B in H.bodyparts)
+			if(B.bone_status == BONE_FLAG_BROKEN)
+				broken_stuff += B
+		if(broken_stuff.len)
+			render_list += "\t<span class='alert'>Bone fractures detected. Advanced scanner required for location.</span>\n"
+
 		// Species and body temperature
 		var/datum/species/S = H.dna.species
 		var/mutant = H.dna.check_mutation(HULK) \

@@ -775,6 +775,8 @@
 					hud_used.healthdoll.add_overlay(mutable_appearance('icons/mob/screen_gen.dmi', "[t]6"))
 				for(var/t in get_disabled_limbs()) //Disabled limbs
 					hud_used.healthdoll.add_overlay(mutable_appearance('icons/mob/screen_gen.dmi', "[t]7"))
+				for(var/t in get_broken_limbs()) //Disabled limbs
+					hud_used.healthdoll.add_overlay(mutable_appearance('icons/mob/screen_gen.dmi', "[t]_fract"))
 			else
 				hud_used.healthdoll.icon_state = "healthdoll_DEAD"
 

@@ -827,6 +827,7 @@
 		if(reagents)
 			reagents.addiction_list = list()
 	cure_all_traumas(TRAUMA_RESILIENCE_MAGIC)
+	mend_fractures()
 	..()
 	// heal ears after healing traits, since ears check TRAIT_DEAF trait
 	// when healing.
@@ -1024,7 +1025,7 @@
 /mob/living/carbon/has_mouth()
 	for(var/obj/item/bodypart/head/head in bodyparts)
 		if(head.mouth)
-			return TRUE 
+			return TRUE
 
 /mob/living/carbon/can_resist()
 	return bodyparts.len > 2 && ..()

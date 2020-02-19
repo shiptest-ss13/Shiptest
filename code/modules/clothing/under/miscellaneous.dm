@@ -57,6 +57,7 @@
 	max_heat_protection_temperature = SPACE_SUIT_MAX_TEMP_PROTECT
 	can_adjust = FALSE
 	resistance_flags = FIRE_PROOF | ACID_PROOF
+	cuttable = FALSE
 
 /obj/item/clothing/under/misc/burial
 	name = "burial garments"
@@ -95,6 +96,7 @@
 	var/next_extinguish = 0
 	var/extinguish_cooldown = 100
 	var/extinguishes_left = 5
+	cuttable = FALSE
 
 
 /obj/item/clothing/under/plasmaman/examine(mob/user)
@@ -139,6 +141,7 @@
 	item_state = "durathread"
 	can_adjust = FALSE
 	armor = list("melee" = 10, "laser" = 10, "fire" = 40, "acid" = 10, "bomb" = 5)
+	cuttable = FALSE
 
 /obj/item/clothing/under/misc/bouncer
 	name = "bouncer uniform"

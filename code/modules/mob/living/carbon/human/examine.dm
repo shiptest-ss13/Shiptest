@@ -121,6 +121,15 @@
 		else
 			. += "<span class='deadsay'>[t_He] [t_is] limp and unresponsive; there are no signs of life...</span>"
 
+	var/list/splinted_stuff = list()
+	for(var/obj/item/bodypart/B in bodyparts)
+		if(B.bone_status == BONE_FLAG_SPLINTED)
+			splinted_stuff += B.name
+	if(splinted_stuff.len)
+		. += "<span class='warning'><B>[t_His] [english_list(splinted_stuff)] [splinted_stuff.len > 1 ? "are" : "is"] splinted!</B></span>\n"
+
+
+
 	if(get_bodypart(BODY_ZONE_HEAD) && !getorgan(/obj/item/organ/brain))
 		. += "<span class='deadsay'>It appears that [t_his] brain is missing...</span>"
 

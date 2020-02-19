@@ -11,6 +11,7 @@
 	min_cold_protection_temperature = GLOVES_MIN_TEMP_PROTECT
 	custom_price = 75
 	undyeable = TRUE
+	clothamnt = 1
 
 /obj/item/clothing/gloves/botanic_leather
 	name = "botanist's leather gloves"
@@ -61,6 +62,7 @@
 	icon_state = "rapid"
 	item_state = "rapid"
 	transfer_prints = TRUE
+	cuttable = FALSE
 
 /obj/item/clothing/gloves/rapid/ComponentInitialize()
 	. = ..()
