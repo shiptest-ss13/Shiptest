@@ -14410,6 +14410,14 @@
 /obj/machinery/light_switch{
 	pixel_x = 24
 	},
+/obj/item/stock_parts/cell/emproof{
+	pixel_x = 3;
+	pixel_y = 7
+	},
+/obj/item/stock_parts/cell/emproof{
+	pixel_x = -6;
+	pixel_y = 5
+	},
 /turf/open/floor/plasteel/dark,
 /area/engine/engineering)
 "awD" = (
@@ -15171,6 +15179,10 @@
 	},
 /obj/item/grenade/chem_grenade/smart_metal_foam{
 	pixel_x = -2
+	},
+/obj/item/stock_parts/cell/emproof{
+	pixel_x = 6;
+	pixel_y = -6
 	},
 /turf/open/floor/plasteel/dark,
 /area/engine/engineering)
@@ -25838,6 +25850,10 @@
 /obj/effect/turf_decal/stripes/corner{
 	dir = 1
 	},
+/obj/item/clothing/glasses/hud/health,
+/obj/item/clothing/glasses/hud/health,
+/obj/item/clothing/glasses/hud/health,
+/obj/item/clothing/glasses/hud/health,
 /turf/open/floor/plasteel/dark,
 /area/medical/storage)
 "aOA" = (
@@ -33445,6 +33461,7 @@
 	dir = 8
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1,
+/obj/structure/cable,
 /mob/living/simple_animal/bot/secbot/pingsky,
 /turf/open/floor/engine,
 /area/ai_monitored/turret_protected/aisat_interior)
@@ -89580,9 +89597,10 @@
 	},
 /area/engine/engineering)
 "cGO" = (
-/obj/machinery/power/emitter/anchored{
+/obj/machinery/power/emitter/welded{
+	icon_state = "emitter";
 	dir = 4;
-	state = 2
+	
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable,
@@ -89591,9 +89609,10 @@
 	},
 /area/engine/engineering)
 "cGP" = (
-/obj/machinery/power/emitter/anchored{
+/obj/machinery/power/emitter/welded{
+	icon_state = "emitter";
 	dir = 8;
-	state = 2
+	
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable,
@@ -89705,9 +89724,10 @@
 /obj/machinery/light{
 	dir = 8
 	},
-/obj/machinery/power/emitter/anchored{
+/obj/machinery/power/emitter/welded{
+	icon_state = "emitter";
 	dir = 4;
-	state = 2
+	
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable,

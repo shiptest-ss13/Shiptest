@@ -23,6 +23,9 @@
 	START_PROCESSING(SSobj, src)
 	impact_area = get_area(src)
 
+	if (!impact_area)
+		return INITIALIZE_HINT_QDEL
+
 	aSignal = new(src)
 	aSignal.name = "[name] core"
 	aSignal.code = rand(1,100)
@@ -103,10 +106,10 @@
 			if(target && !target.stat)
 				O.throw_at(target, 5, 10)
 
-/obj/effect/anomaly/grav/Crossed(mob/A)
-	gravShock(A)
+/obj/effect/anomaly/grav/Crossed(atom/movable/AM)
+	gravShock(AM)
 
-/obj/effect/anomaly/grav/Bump(mob/A)
+/obj/effect/anomaly/grav/Bump(atom/A)
 	gravShock(A)
 
 /obj/effect/anomaly/grav/Bumped(atom/movable/AM)
@@ -149,11 +152,11 @@
 	for(var/mob/living/M in range(0, src))
 		mobShock(M)
 
-/obj/effect/anomaly/flux/Crossed(mob/living/M)
-	mobShock(M)
+/obj/effect/anomaly/flux/Crossed(atom/movable/AM)
+	mobShock(AM)
 
-/obj/effect/anomaly/flux/Bump(mob/living/M)
-	mobShock(M)
+/obj/effect/anomaly/flux/Bump(atom/A)
+	mobShock(A)
 
 /obj/effect/anomaly/flux/Bumped(atom/movable/AM)
 	mobShock(AM)
@@ -188,7 +191,7 @@
 		do_teleport(AM, locate(AM.x, AM.y, AM.z), 8, channel = TELEPORT_CHANNEL_BLUESPACE)
 
 /obj/effect/anomaly/bluespace/detonate()
-	var/turf/T = safepick(get_area_turfs(impact_area))
+	var/turf/T = pick(get_area_turfs(impact_area))
 	if(T)
 			// Calculate new position (searches through beacons in world)
 		var/obj/item/beacon/chosen
@@ -273,11 +276,17 @@
 	S.rabid = TRUE
 	S.amount_grown = SLIME_EVOLUTION_THRESHOLD
 	S.Evolve()
+	var/datum/action/innate/slime/reproduce/A = new
+	A.Grant(S)
 
-	var/list/mob/dead/observer/candidates = pollCandidatesForMob("Do you want to play as a pyroclastic anomaly slime?", ROLE_PAI, null, null, 100, S, POLL_IGNORE_PYROSLIME)
+	var/list/mob/dead/observer/candidates = pollCandidatesForMob("Do you want to play as a pyroclastic anomaly slime?", ROLE_SENTIENCE, null, null, 100, S, POLL_IGNORE_PYROSLIME)
 	if(LAZYLEN(candidates))
 		var/mob/dead/observer/chosen = pick(candidates)
 		S.key = chosen.key
+		S.mind.special_role = ROLE_PYROCLASTIC_SLIME
+		var/policy = get_policy(ROLE_PYROCLASTIC_SLIME)
+		if (policy)
+			to_chat(S, policy)
 		log_game("[key_name(S.key)] was made into a slime by pyroclastic anomaly at [AREACOORD(T)].")
 
 /////////////////////

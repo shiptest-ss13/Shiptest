@@ -95,7 +95,7 @@ the new version.
 ## HOSTING
 
 If you'd like a more robust server hosting option for tgstation and its
-derivatives. Check out our server tools suite at 
+derivatives. Check out our server tools suite at
 https://github.com/tgstation/tgstation-server
 
 ## MAPS
@@ -131,7 +131,7 @@ The SQL backend requires a Mariadb server running 10.2 or later. Mysql is not su
 
 If you are hosting a testing server on windows you can use a standalone version of MariaDB pre load with a blank (but initialized) tgdb database. Find them here: https://tgstation13.download/database/ Just unzip and run for a working (but insecure) database server. Includes a zipped copy of the data folder for easy resetting back to square one.
 
-## WEB/CDN RESOURCE DELIVERY 
+## WEB/CDN RESOURCE DELIVERY
 
 Web delivery of game resources makes it quicker for players to join and reduces some of the stress on the game server.
 
@@ -169,8 +169,6 @@ Font Awesome font files, used by tgui, are licensed under the SIL Open Font Lice
 tgui assets are licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/).
 The TGS3 API is licensed as a subproject under the MIT license.
 
-See tgui/LICENSE.md for the MIT license.
-See tgui/assets/fonts/SIL-OFL-1.1-LICENSE.md for the SIL Open Font License.
 See the footers of code/\_\_DEFINES/server\_tools.dm, code/modules/server\_tools/st\_commands.dm, and code/modules/server\_tools/st\_inteface.dm for the MIT license.
 
 All assets including icons and sound are under a [Creative Commons 3.0 BY-SA license](https://creativecommons.org/licenses/by-sa/3.0/) unless otherwise indicated.

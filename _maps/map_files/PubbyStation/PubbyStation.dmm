@@ -2890,9 +2890,9 @@
 /turf/open/floor/plasteel/white,
 /area/security/execution/transfer)
 "aiw" = (
-/obj/machinery/power/emitter/anchored{
+/obj/machinery/power/emitter/welded{
 	dir = 1;
-	state = 2
+	
 	},
 /obj/effect/turf_decal/stripes/line{
 	dir = 4
@@ -18975,8 +18975,8 @@
 /area/hydroponics)
 "aWT" = (
 /obj/machinery/light_switch{
-	pixel_x = -4;
-	pixel_y = 30
+	pixel_x = -6;
+	pixel_y = 38
 	},
 /obj/structure/sink/kitchen{
 	name = "utility sink";
@@ -27962,7 +27962,7 @@
 	},
 /obj/machinery/door/airlock/research{
 	name = "Xenobiology Lab";
-	req_one_access_txt = "55, 9"
+	req_one_access_txt = "9;55"
 	},
 /turf/open/floor/plasteel/dark,
 /area/science/xenobiology)
@@ -34638,7 +34638,6 @@
 /obj/item/clothing/glasses/hud/health,
 /obj/item/clothing/glasses/hud/health,
 /obj/item/clothing/glasses/hud/health,
-/obj/item/reagent_containers/spray/cleaner,
 /obj/machinery/light_switch{
 	pixel_y = -24
 	},
@@ -34646,6 +34645,11 @@
 /obj/effect/turf_decal/tile/blue{
 	dir = 8
 	},
+/obj/item/clothing/glasses/hud/health,
+/obj/item/clothing/glasses/hud/health,
+/obj/item/clothing/glasses/hud/health,
+/obj/item/clothing/glasses/hud/health,
+/obj/item/reagent_containers/spray/cleaner,
 /turf/open/floor/plasteel/white,
 /area/medical/medbay/central)
 "bIh" = (
@@ -40849,6 +40853,14 @@
 	dir = 4
 	},
 /obj/structure/cable,
+/obj/item/stock_parts/cell/emproof{
+	pixel_x = -4;
+	pixel_y = -2
+	},
+/obj/item/stock_parts/cell/emproof{
+	pixel_x = 4;
+	pixel_y = 6
+	},
 /turf/open/floor/plasteel/dark,
 /area/engine/engine_smes)
 "bWA" = (
@@ -42712,9 +42724,9 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 9
 	},
-/obj/machinery/power/emitter/anchored{
+/obj/machinery/power/emitter/welded{
 	dir = 4;
-	state = 2
+	
 	},
 /obj/structure/cable,
 /turf/open/floor/plating,
@@ -43482,9 +43494,9 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 8
 	},
-/obj/machinery/power/emitter/anchored{
+/obj/machinery/power/emitter/welded{
 	dir = 4;
-	state = 2
+	
 	},
 /obj/structure/cable,
 /turf/open/floor/plating,
@@ -52093,9 +52105,9 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 4
 	},
-/obj/machinery/power/emitter/anchored{
+/obj/machinery/power/emitter/welded{
 	dir = 8;
-	state = 2
+	
 	},
 /obj/structure/cable,
 /turf/open/floor/plating,

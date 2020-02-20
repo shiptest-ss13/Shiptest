@@ -32,6 +32,7 @@ Difficulty: Very Hard
 	icon_state = "eva"
 	icon_living = "eva"
 	icon_dead = ""
+	health_doll_icon = "eva"
 	friendly_verb_continuous = "stares down"
 	friendly_verb_simple = "stare down"
 	icon = 'icons/mob/lavaland/96x96megafauna.dmi'
@@ -281,8 +282,9 @@ Difficulty: Very Hard
 	var/list/stored_items = list()
 	var/list/blacklist = list()
 
-/obj/machinery/smartfridge/black_box/update_icon()
-	return
+/obj/machinery/smartfridge/black_box/ComponentInitialize()
+	. = ..()
+	AddElement(/datum/element/update_icon_blocker)
 
 /obj/machinery/smartfridge/black_box/accept_check(obj/item/O)
 	if(!istype(O))
@@ -731,7 +733,7 @@ Difficulty: Very Hard
 				mobcheck = TRUE
 				break
 			if(!mobcheck)
-				new /mob/living/simple_animal/cockroach(get_step(src,dir)) //Just in case there aren't any animals on the station, this will leave you with a terrible option to possess if you feel like it
+				new /mob/living/simple_animal/hostile/cockroach(get_step(src,dir)) //Just in case there aren't any animals on the station, this will leave you with a terrible option to possess if you feel like it //i found it funny that in the file for a giant angel beast theres a cockroach
 
 /obj/structure/closet/stasis
 	name = "quantum entanglement stasis warp field"

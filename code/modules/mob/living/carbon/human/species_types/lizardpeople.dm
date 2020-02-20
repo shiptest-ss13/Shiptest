@@ -33,8 +33,8 @@
 	Confusing them with Ash Walkers (the similarly lizard-like natives of the Lavaland Wastes) might lead to having a spear lodged in your skull."
 
 /// Lizards are cold blooded and do not stabilize body temperature naturally
-/datum/species/lizard/natural_bodytemperature_stabilization(mob/living/carbon/human/H)
-	return 0
+/datum/species/lizard/natural_bodytemperature_stabilization(datum/gas_mixture/environment, mob/living/carbon/human/H)
+	return
 
 /datum/species/lizard/random_name(gender,unique,lastname)
 	if(unique)

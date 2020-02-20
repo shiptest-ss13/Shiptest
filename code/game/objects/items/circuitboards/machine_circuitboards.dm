@@ -751,6 +751,10 @@
 		/obj/item/stock_parts/cell = 1)
 	def_components = list(/obj/item/stock_parts/cell = /obj/item/stock_parts/cell/high)
 
+/obj/item/circuitboard/machine/sleeper/party
+	name = "Party Pod (Machine Board)"
+	build_path = /obj/machinery/sleeper/party
+
 /obj/item/circuitboard/machine/smoke_machine
 	name = "Smoke Machine (Machine Board)"
 	icon_state = "medical"
@@ -771,6 +775,13 @@
 		/obj/item/stack/cable_coil = 3,
 		/obj/item/stock_parts/manipulator = 1,
 		/obj/item/stock_parts/capacitor = 1)
+
+/obj/item/circuitboard/machine/medipen_refiller
+	name = "Medipen Refiller (Machine Board)"
+	icon_state = "medical"
+	build_path = /obj/machinery/medipen_refiller
+	req_components = list(
+		/obj/item/stock_parts/matter_bin = 1)
 
 /obj/item/circuitboard/machine/techfab/department/medical
 	name = "\improper Departmental Techfab (Machine Board) - Medical"
@@ -1190,15 +1201,6 @@
 	icon_state = "supply"
 	build_path = /obj/machinery/rnd/production/techfab/department/cargo
 
-/obj/item/circuitboard/machine/pump
-	name = "Portable Liquid Pump (Machine Board)"
-	icon_state = "supply"
-	build_path = /obj/machinery/power/liquid_pump
-	needs_anchored = FALSE
-	req_components = list(
-		/obj/item/stock_parts/manipulator = 2,
-		/obj/item/stock_parts/matter_bin = 2)
-
 //Misc
 
 
@@ -1236,3 +1238,12 @@
 		/obj/item/stock_parts/micro_laser = 3,
 		/obj/item/stock_parts/matter_bin = 1)
 		
+
+/obj/item/circuitboard/machine/hypnochair
+	name = "Enhanced Interrogation Chamber (Machine Board)"
+	icon_state = "security"
+	build_path = /obj/machinery/hypnochair
+	req_components = list(
+		/obj/item/stock_parts/micro_laser = 2,
+		/obj/item/stock_parts/scanning_module = 2
+	)

@@ -107,7 +107,7 @@
 			if("Mime")
 				heirloom_type = /obj/item/reagent_containers/food/snacks/baguette
 			if("Janitor")
-				heirloom_type = pick(/obj/item/mop, /obj/item/clothing/suit/caution, /obj/item/reagent_containers/glass/bucket)
+				heirloom_type = pick(/obj/item/mop, /obj/item/clothing/suit/caution, /obj/item/reagent_containers/glass/bucket, /obj/item/paper/fluff/stations/soap)
 			if("Cook")
 				heirloom_type = pick(/obj/item/reagent_containers/food/condiment/saltshaker, /obj/item/kitchen/rollingpin, /obj/item/clothing/head/chefhat)
 			if("Botanist")
@@ -135,6 +135,8 @@
 				heirloom_type = pick(/obj/item/gavelhammer, /obj/item/book/manual/wiki/security_space_law)
 			if("Brig Physician")
 				heirloom_type = pick(/obj/item/clothing/neck/stethoscope, /obj/item/roller, /obj/item/book/manual/wiki/security_space_law)
+			if("Prisoner")
+				heirloom_type = /obj/item/pen/blue
 			//RnD
 			if("Research Director")
 				heirloom_type = /obj/item/toy/plush/slimeplushie
@@ -503,7 +505,7 @@
 	if(world.time > next_process)
 		next_process = world.time + process_interval
 		if(!H.reagents.addiction_list.Find(reagent_instance))
-			if(!reagent_instance)
+			if(QDELETED(reagent_instance))
 				reagent_instance = new reagent_type()
 			else
 				reagent_instance.addiction_stage = 0

@@ -26,7 +26,7 @@
 		if(LAZYLEN(diseases_to_add))
 			AddComponent(/datum/component/infective, diseases_to_add)
 
-	addtimer(CALLBACK(src, /datum.proc/AddComponent, /datum/component/beauty, beauty), 0)
+	addtimer(CALLBACK(src, /datum.proc/_AddComponent, list(/datum/component/beauty, beauty)), 0)
 
 	var/turf/T = get_turf(src)
 	if(T && is_station_level(T.z))
@@ -85,7 +85,7 @@
 	..()
 	if(ishuman(O))
 		var/mob/living/carbon/human/H = O
-		if(H.shoes && blood_state && bloodiness && !HAS_TRAIT(H, TRAIT_LIGHT_STEP))
+		if(H.shoes && blood_state && bloodiness)
 			var/obj/item/clothing/shoes/S = H.shoes
 			if(!S.can_be_bloody)
 				return

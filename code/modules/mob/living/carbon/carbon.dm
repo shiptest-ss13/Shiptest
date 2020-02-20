@@ -75,11 +75,7 @@
 	. = ..()
 	var/hurt = TRUE
 	if(istype(throwingdatum, /datum/thrownthing))
-		var/datum/thrownthing/D = throwingdatum
-		if(iscyborg(D.thrower))
-			var/mob/living/silicon/robot/R = D.thrower
-			if(!R.emagged)
-				hurt = FALSE
+		hurt = !throwingdatum.gentle
 	if(hit_atom.density && isturf(hit_atom))
 		if(hurt)
 			Paralyze(20)
@@ -148,7 +144,7 @@
 				if(start_T && end_T)
 					log_combat(src, throwable_mob, "thrown", addition="grab from tile in [AREACOORD(start_T)] towards tile at [AREACOORD(end_T)]")
 
-	else if(!CHECK_BITFIELD(I.item_flags, ABSTRACT) && !HAS_TRAIT(I, TRAIT_NODROP))
+	else if(!(I.item_flags & ABSTRACT) && !HAS_TRAIT(I, TRAIT_NODROP))
 		thrown_thing = I
 		dropItemToGround(I, silent = TRUE)
 
@@ -526,7 +522,7 @@
 	staminaloss = round(total_stamina, DAMAGE_PRECISION)
 	update_stat()
 	update_mobility()
-	if(((maxHealth - total_burn) < HEALTH_THRESHOLD_DEAD) && stat == DEAD )
+	if(((maxHealth - total_burn) < HEALTH_THRESHOLD_DEAD*2) && stat == DEAD )
 		become_husk("burn")
 
 	med_hud_set_health()
@@ -759,6 +755,10 @@
 	if(hud_used && hud_used.internals)
 		hud_used.internals.icon_state = "internal[internal_state]"
 
+/mob/living/carbon/proc/update_spacesuit_hud_icon(cell_state = "empty")
+	if(hud_used && hud_used.spacesuit)
+		hud_used.spacesuit.icon_state = "spacesuit_[cell_state]"
+
 /mob/living/carbon/update_stat()
 	if(status_flags & GODMODE)
 		return
@@ -809,9 +809,6 @@
 	for(var/O in internal_organs)
 		var/obj/item/organ/organ = O
 		organ.setOrganDamage(0)
-	var/obj/item/organ/brain/B = getorgan(/obj/item/organ/brain)
-	if(B)
-		B.brain_death = FALSE
 	for(var/thing in diseases)
 		var/datum/disease/D = thing
 		if(D.severity != DISEASE_SEVERITY_POSITIVE)
@@ -837,6 +834,19 @@
 	. = ..()
 	if(!getorgan(/obj/item/organ/brain) && (!mind || !mind.has_antag_datum(/datum/antagonist/changeling)))
 		return 0
+
+/mob/living/carbon/proc/can_defib()
+	var/obj/item/organ/heart = getorgan(/obj/item/organ/heart)
+	if(suiciding || hellbound || HAS_TRAIT(src, TRAIT_HUSK))
+		return
+	if((getBruteLoss() >= MAX_REVIVE_BRUTE_DAMAGE) || (getFireLoss() >= MAX_REVIVE_FIRE_DAMAGE))
+		return
+	if(!heart || (heart.organ_flags & ORGAN_FAILING))
+		return
+	var/obj/item/organ/brain/BR = getorgan(/obj/item/organ/brain)
+	if(QDELETED(BR) || (BR.organ_flags & ORGAN_FAILING) || BR.suicided)
+		return
+	return TRUE
 
 /mob/living/carbon/harvest(mob/living/user)
 	if(QDELETED(src))

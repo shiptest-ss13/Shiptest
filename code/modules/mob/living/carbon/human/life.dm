@@ -215,7 +215,7 @@
 		if(thermal_protection_flags & HAND_RIGHT)
 			thermal_protection += THERMAL_PROTECTION_HAND_RIGHT
 
-	return min(1,thermal_protection)
+	return min(1, thermal_protection)
 
 //See proc/get_heat_protection_flags(temperature) for the description of this proc.
 /mob/living/carbon/human/proc/get_cold_protection_flags(temperature)
@@ -276,7 +276,7 @@
 		if(thermal_protection_flags & HAND_RIGHT)
 			thermal_protection += THERMAL_PROTECTION_HAND_RIGHT
 
-	return min(1,thermal_protection)
+	return min(1, thermal_protection)
 
 /mob/living/carbon/human/handle_random_events()
 	//Puke if toxloss is too high
@@ -314,6 +314,7 @@
 				BP.receive_damage(I.w_class*I.embedding.embedded_fall_pain_multiplier)
 				BP.embedded_objects -= I
 				I.forceMove(drop_location())
+				I.unembedded()
 				visible_message("<span class='danger'>[I] falls out of [name]'s [BP.name]!</span>","<span class='userdanger'>[I] falls out of your [BP.name]!</span>")
 				if(!has_embedded_objects())
 					clear_alert("embeddedobject")

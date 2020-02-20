@@ -1533,6 +1533,10 @@
 	name = "Thigh-high (Bee)"
 	icon_state = "bee_thigh"
 
+/datum/sprite_accessory/socks/thocks
+	name = "Thocks"
+	icon_state = "thocks"
+
 //////////.//////////////////
 // MutantParts Definitions //
 /////////////////////////////

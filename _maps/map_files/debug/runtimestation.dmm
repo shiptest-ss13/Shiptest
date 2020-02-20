@@ -2356,15 +2356,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/science)
-"BB" = (
-/obj/machinery/computer/cloning{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/blue{
-	dir = 8
-	},
-/turf/open/floor/plasteel/white/corner,
-/area/medical/medbay)
 "BD" = (
 /obj/structure/closet/secure_closet/CMO{
 	locked = 0
@@ -2580,6 +2571,15 @@
 	},
 /obj/item/healthanalyzer/advanced,
 /turf/open/floor/plasteel,
+/area/medical/medbay)
+"Vc" = (
+/obj/machinery/computer/cloning{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/blue{
+	dir = 8
+	},
+/turf/open/floor/plasteel/white/corner,
 /area/medical/medbay)
 "Vg" = (
 /obj/machinery/light,
@@ -8404,7 +8404,7 @@ by
 Qt
 by
 cm
-BB
+Vc
 by
 cS
 cS

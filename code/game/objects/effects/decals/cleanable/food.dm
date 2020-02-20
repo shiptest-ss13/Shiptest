@@ -30,6 +30,7 @@
 	name = "salt pile"
 	desc = "A sizable pile of table salt. Someone must be upset."
 	icon_state = "salt_pile"
+	var/safepasses = 3 //how many times can this salt pile be passed before dissipating
 
 /obj/effect/decal/cleanable/food/salt/CanAllowThrough(atom/movable/AM, turf/target)
 	. = ..()
@@ -42,11 +43,22 @@
 		to_chat(AM, "<span class='danger'>Your path is obstructed by <span class='phobia'>salt</span>.</span>")
 
 /obj/effect/decal/cleanable/food/salt/Crossed(mob/living/L)
+	..()
 	if (issquidperson(L))
 		while(L.loc == src.loc)
 			L.adjustFireLoss(2, TRUE)
 			to_chat(L, "<span class='danger'>The salt! It burns!</span>")
 			sleep(20)
+	if(!isliving(L))
+		return
+	if(iscarbon(L))
+		var/mob/living/carbon/C = L
+		if(C.m_intent == MOVE_INTENT_WALK)
+			return
+	safepasses--
+	if(safepasses <= 0 && !QDELETED(src))
+		qdel(src)
+
 
 /obj/effect/decal/cleanable/food/flour
 	name = "flour"
