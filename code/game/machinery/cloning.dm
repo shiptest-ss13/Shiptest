@@ -24,6 +24,7 @@
 	var/attempting = FALSE //One clone attempt at a time thanks
 	var/speed_coeff
 	var/efficiency
+	var/obj/item/reagent_containers/glass/beaker = null //Beaker full of what SHOULD be synthflesh
 
 	var/fleshamnt = 1 //Amount of synthflesh needed per cloning cycle, is divided by efficiency
 
@@ -42,6 +43,10 @@
 	var/datum/bank_account/current_insurance
 	fair_market_price = 5 // He nodded, because he knew I was right. Then he swiped his credit card to pay me for arresting him.
 	payment_department = ACCOUNT_MED
+	ui_x = 200
+	ui_y = 300
+
+
 /obj/machinery/clonepod/Initialize()
 	create_reagents(100, OPENCONTAINER)
 
@@ -71,11 +76,7 @@
 /obj/machinery/clonepod/RefreshParts()
 	speed_coeff = 0
 	efficiency = 0
-	reagents.maximum_volume = 0
 	fleshamnt = 1
-	for(var/obj/item/reagent_containers/glass/G in component_parts)
-		reagents.maximum_volume += G.volume
-		G.reagents.trans_to(src, G.reagents.total_volume)
 	for(var/obj/item/stock_parts/scanning_module/S in component_parts)
 		efficiency += S.rating
 		fleshamnt = 1/max(efficiency-1, 1)
@@ -87,19 +88,47 @@
 	if(heal_level > 100)
 		heal_level = 100
 
-/obj/machinery/clonepod/attack_hand(mob/user)
-	. = ..()
-	if(.)
-		return
-	user.examinate(src)
+/obj/machinery/clonepod/proc/replace_beaker(mob/living/user, obj/item/reagent_containers/new_beaker)
+	if(beaker)
+		beaker.forceMove(drop_location())
+		if(user && Adjacent(user) && !issiliconoradminghost(user))
+			user.put_in_hands(beaker)
+	if(new_beaker)
+		beaker = new_beaker
+	else
+		beaker = null
+	update_icon()
+	return TRUE
 
-/obj/machinery/clonepod/AltClick(mob/user)
-	. = ..()
-	if (alert(user, "Are you sure you want to empty the cloning pod?", "Empty Reagent Storage:", "Yes", "No") != "Yes")
+/obj/machinery/clonepod/ui_interact(mob/user, ui_key = "main", datum/tgui/ui = null, force_open = FALSE, \
+									datum/tgui/master_ui = null, datum/ui_state/state = GLOB.notcontained_state)
+	ui = SStgui.try_update_ui(user, src, ui_key, ui, force_open)
+	if(!ui)
+		ui = new(user, src, ui_key, "cloner", name, ui_x, ui_y, master_ui, state)
+		ui.open()
+
+/obj/machinery/clonepod/ui_data()
+	var/list/data = list()
+	data["isBeakerLoaded"] = beaker ? TRUE : FALSE
+	var/beakerContents = list()
+	if(beaker && beaker.reagents && beaker.reagents.reagent_list.len)
+		for(var/datum/reagent/R in beaker.reagents.reagent_list)
+			beakerContents += list(list("name" = R.name, "volume" = R.volume))
+	data["beakerContents"] = beakerContents
+	data["progress"] = round(get_completion())
+	return data
+
+/obj/machinery/clonepod/ui_act(action, params)
+	if(..())
 		return
-	to_chat(user, "<span class='notice'>You empty \the [src]'s release valve onto the floor.</span>")
-	reagents.reaction(user.loc)
-	src.reagents.clear_reagents()
+	else if("ejectbeaker")
+		replace_beaker(usr)
+		. = TRUE
+
+/obj/machinery/chem_dispenser/AltClick(mob/living/user)
+	..()
+	if(istype(user) && user.canUseTopic(src, BE_CLOSE, FALSE, NO_TK))
+		replace_beaker(user)
 
 /obj/machinery/clonepod/attack_ai(mob/user)
 	return attack_hand(user)
@@ -108,9 +137,9 @@
 	. = ..()
 	. += "<span class='notice'>The <i>linking</i> device can be <i>scanned<i> with a multitool. It can be emptied by Alt-Clicking it.</span>"
 	if(in_range(user, src) || isobserver(user))
-		. += "<span class='notice'>The status display reads: Cloning speed at <b>[speed_coeff*50]%</b>.<br>Predicted amount of cellular damage: <b>[100-heal_level]%</b><br> Storing up to <b>[reagents.maximum_volume]cm<sup>3</sup></b> of synthflesh.<br>"
+		. += "<span class='notice'>The status display reads: Cloning speed at <b>[speed_coeff*50]%</b>.<br>Predicted amount of cellular damage: <b>[100-heal_level]%</b><br>"
 		. += "Synthflesh consumption at <b>[round(fleshamnt*90, 1)]cm<sup>3</sup></b> per clone.</span><br>"
-		. += "<span class='notice'>The reagent display reads: [round(reagents.total_volume, 1)] / [reagents.maximum_volume] cm<sup>3</sup></span>"
+
 		if(efficiency > 5)
 			. += "<span class='notice'>Pod has been upgraded to support autoprocessing and apply beneficial mutations.</span>"
 
@@ -170,7 +199,7 @@
 
 //Start growing a human clone in the pod!
 /obj/machinery/clonepod/proc/growclone(clonename, ui, mutation_index, mindref, last_death, blood_type, datum/species/mrace, list/features, factions, list/quirks, datum/bank_account/insurance, list/traumas, empty)
-	if(!reagents.has_reagent(/datum/reagent/medicine/synthflesh, fleshamnt))
+	if(!beaker.reagents.has_reagent(/datum/reagent/medicine/synthflesh, fleshamnt))
 		connected_message("Cannot start cloning: Not enough synthflesh.")
 		return NONE
 	if(panel_open)
@@ -281,7 +310,7 @@
 			connected_message("Clone Ejected: Loss of power.")
 
 	else if(mob_occupant && (mob_occupant.loc == src))
-		if(!reagents.has_reagent(/datum/reagent/medicine/synthflesh, fleshamnt))
+		if(!beaker.reagents.has_reagent(/datum/reagent/medicine/synthflesh, fleshamnt))
 			go_out()
 			log_cloning("[key_name(mob_occupant)] ejected from [src] at [AREACOORD(src)] due to insufficient material.")
 			connected_message("Clone Ejected: Not enough material.")
@@ -317,10 +346,10 @@
 			var/dmg_mult = CONFIG_GET(number/damage_multiplier)
 			 //Slowly get that clone healed and finished.
 			mob_occupant.adjustCloneLoss(-((speed_coeff / 2) * dmg_mult))
-			if(reagents.has_reagent(/datum/reagent/medicine/synthflesh, fleshamnt))
-				reagents.remove_reagent(/datum/reagent/medicine/synthflesh, fleshamnt)
-			else if(reagents.has_reagent(/datum/reagent/blood, fleshamnt*3))
-				reagents.remove_reagent(/datum/reagent/blood, fleshamnt*3)
+			if(beaker.reagents.has_reagent(/datum/reagent/medicine/synthflesh, fleshamnt))
+				beaker.reagents.remove_reagent(/datum/reagent/medicine/synthflesh, fleshamnt)
+			else if(beaker.reagents.has_reagent(/datum/reagent/blood, fleshamnt*3))
+				beaker.reagents.remove_reagent(/datum/reagent/blood, fleshamnt*3)
 			var/progress = CLONE_INITIAL_DAMAGE - mob_occupant.getCloneLoss()
 			// To avoid the default cloner making incomplete clones
 			progress += (100 - MINIMUM_HEAL_LEVEL)
@@ -365,8 +394,17 @@
 			icon_state = "pod_0"
 		use_power(200)
 
-//Let's unlock this early I guess.  Might be too early, needs tweaking.
+//Let's unlock this early I guess.  Might be too early, needs tweaking. Mark says: Jesus, even I'm not that indecisive.
 /obj/machinery/clonepod/attackby(obj/item/W, mob/user, params)
+	if(istype(W, /obj/item/reagent_containers) && !(W.item_flags & ABSTRACT) && W.is_open_container())
+		var/obj/item/reagent_containers/B = W
+		. = TRUE //no afterattack
+		if(!user.transferItemToLoc(B, src))
+			return
+		var/reagentlist = pretty_string_from_reagent_list(W.reagents.reagent_list)
+		replace_beaker(user, B)
+		to_chat(user, "<span class='notice'>You add [B] to [src].</span>")
+		log_game("[key_name(user)] added an [W] to the [src] at [src.loc] containing [reagentlist]")
 	if(!(occupant || mess))
 		if(default_deconstruction_screwdriver(user, "[icon_state]_maintenance", "[initial(icon_state)]",W))
 			return
@@ -533,8 +571,9 @@
 	playsound(src,'sound/hallucinations/wail.ogg', 100, TRUE)
 
 /obj/machinery/clonepod/deconstruct(disassembled = TRUE)
-	for(var/obj/item/reagent_containers/glass/G in component_parts)
-		reagents.trans_to(G, G.reagents.maximum_volume)
+	if(beaker)
+		beaker.forceMove(drop_location())
+		beaker = null
 	if(occupant)
 		var/mob/living/mob_occupant = occupant
 		go_out()
@@ -578,7 +617,8 @@
 
 /obj/machinery/clonepod/mapped/Initialize()
 	. = ..()
-	reagents.add_reagent(/datum/reagent/medicine/synthflesh, 100)
+	beaker = new /obj/item/reagent_containers/glass/beaker/large(src)
+	beaker.reagents.add_reagent(/datum/reagent/medicine/synthflesh, 100)
 
 /*
  *	Manual -- A big ol' manual.
