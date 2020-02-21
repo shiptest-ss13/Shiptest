@@ -65,7 +65,7 @@
 	persistence_id = "RD"
 
 /obj/item/storage/photo_album/HoP
-	name = "photo album (First Officer)"
+	name = "photo album (Head of Personnel)"
 	persistence_id = "HoP"
 
 /obj/item/storage/photo_album/Captain

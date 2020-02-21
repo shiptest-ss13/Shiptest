@@ -157,7 +157,7 @@
 	..()
 	desc = "You must respect Elder [M.real_name]."
 
-/datum/dog_fashion/head/first_officer
+/datum/dog_fashion/head/head_of_personnel
 	name = "Lieutenant REAL_NAME"
 	desc = "Can actually be trusted to not run off on his own."
 

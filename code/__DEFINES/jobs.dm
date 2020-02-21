@@ -28,7 +28,7 @@
 
 #define CIVILIAN		(1<<2)
 
-#define FO				(1<<0)
+#define HOP				(1<<0)
 #define BARTENDER		(1<<1)
 #define BOTANIST		(1<<2)
 #define COOK			(1<<3)
@@ -42,7 +42,7 @@
 #define CLOWN			(1<<11)
 #define MIME			(1<<12)
 #define ASSISTANT		(1<<13)
-#define SECOND_OFFICER	(1<<14)
+#define LT				(1<<14)
 #define PRISONER		(1<<14)
 
 #define JOB_AVAILABLE 0

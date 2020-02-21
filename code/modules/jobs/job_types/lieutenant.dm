@@ -1,19 +1,20 @@
 /*
-Second Officer
+Lieutenant
 */
 
-/datum/job/second_officer
-  title = "Second Officer"
-  flag = SECOND_OFFICER
+/datum/job/lieutenant
+  title = "Lieutenant"
+  flag = LT
   department_flag = ENGSEC
   faction = "Station"
   total_positions = 1
   spawn_positions = 1
-  supervisors = "captain, first officer, and command personnel"
+  supervisors = "captain, head of personnel, and command personnel"
   selection_color = "#ddddff"
   req_admin_notify = 1
+  special_notice = "You are NOT security. Your job is to protect the Captain and Heads of Staff."
 
-  outfit = /datum/outfit/job/second_officer
+  outfit = /datum/outfit/job/lieutenant
 
   access = list(ACCESS_SECURITY, ACCESS_SEC_DOORS, ACCESS_COURT, ACCESS_WEAPONS, ACCESS_FO,
 			            ACCESS_MEDICAL, ACCESS_ENGINE, ACCESS_EVA, ACCESS_HEADS,
@@ -24,17 +25,17 @@ Second Officer
 
   display_order = JOB_DISPLAY_ORDER_SECOND_OFFICER
 
-/datum/outfit/job/second_officer
-  name = "Second Officer"
-  jobtype = /datum/job/second_officer
+/datum/outfit/job/lieutenant
+  name = "Lieutenant"
+  jobtype = /datum/job/lieutenant
 
   id = /obj/item/card/id/silver
-  uniform = /obj/item/clothing/under/rank/civilian/second_officer
+  uniform = /obj/item/clothing/under/rank/civilian/lieutenant
   gloves = /obj/item/clothing/gloves/combat
   shoes = /obj/item/clothing/shoes/jackboots
-  ears = /obj/item/radio/headset/heads/second_officer/alt
+  ears = /obj/item/radio/headset/heads/lieutenant/alt
   glasses = /obj/item/clothing/glasses/hud/health/sunglasses
-  belt = /obj/item/pda/second_officer
+  belt = /obj/item/pda/lieutenant
 
   implants = list(/obj/item/implant/mindshield)
 
@@ -44,5 +45,5 @@ Second Officer
   courierbag = /obj/item/storage/backpack/messenger/sec
 
   backpack_contents = list(
-    /obj/item/gun/energy/e_gun/second_officer = 1
+    /obj/item/gun/energy/e_gun/lieutenant = 1
   )

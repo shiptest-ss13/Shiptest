@@ -110,9 +110,9 @@
 	icon_state = "capformal"
 	item_state = "capspacesuit"
 
-/obj/item/clothing/suit/armor/vest/second_officer
-	name = "second officer's armor"
-	desc = "An armored vest with the second officer's insignia imprinted on it."
+/obj/item/clothing/suit/armor/vest/lieutenant
+	name = "lieutenant's armor"
+	desc = "An armored vest with the lieutenant's insignia imprinted on it."
 	icon_state = "blueshield"
 	item_state = "blueshield"
 

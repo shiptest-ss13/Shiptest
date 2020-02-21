@@ -236,7 +236,7 @@
 	if(visualsOnly)
 		return
 	var/obj/item/radio/R = H.ears
-	R.keyslot = new /obj/item/encryptionkey/heads/first_officer
+	R.keyslot = new /obj/item/encryptionkey/heads/head_of_personnel
 	R.recalculateChannels()
 
 /datum/outfit/centcom/ert/chaplain/inquisitor

@@ -35,7 +35,7 @@
 		"[ACCESS_FO]" = list(
 			"department" = list(CARDCON_DEPARTMENT_SERVICE, CARDCON_DEPARTMENT_COMMAND),
 			"region" = 1,
-			"head" = "First Officer"
+			"head" = "Head of Personnel"
 		),
 		"[ACCESS_HOS]" = list(
 			"department" = CARDCON_DEPARTMENT_SECURITY,

@@ -1,12 +1,12 @@
 /datum/job/hydro
 	title = "Botanist"
 	flag = BOTANIST
-	department_head = list("First Officer")
+	department_head = list("Head of Personnel")
 	department_flag = CIVILIAN
 	faction = "Station"
 	total_positions = 3
 	spawn_positions = 2
-	supervisors = "the first officer"
+	supervisors = "the head of personnel"
 	selection_color = "#bbe291"
 	wiki_page = "Guide_to_Botany"
 

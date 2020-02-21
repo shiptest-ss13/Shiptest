@@ -135,9 +135,9 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 	name = "Chief Engineer"
 	icon_state = "Chief Engineer"
 
-/obj/effect/landmark/start/first_officer
-	name = "First Officer"
-	icon_state = "First Officer"
+/obj/effect/landmark/start/head_of_personnel
+	name = "Head of Personnel"
+	icon_state = "Head of Personnel"
 
 /obj/effect/landmark/start/librarian
 	name = "Curator"
@@ -217,9 +217,9 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 	name = "Brig Physician"
 	icon_state = "Brig Physician"
 
-/obj/effect/landmark/start/second_officer
-	name = "Second Officer"
-	icon_state = "Second Officer"
+/obj/effect/landmark/start/lieutenant
+	name = "Lieutenant"
+	icon_state = "Lieutenant"
 
 //Department Security spawns
 

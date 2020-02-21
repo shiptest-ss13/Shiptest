@@ -1,12 +1,12 @@
 /datum/job/cargo_tech
 	title = "Cargo Technician"
 	flag = CARGOTECH
-	department_head = list("First Officer")
+	department_head = list("Head of Personnel")
 	department_flag = CIVILIAN
 	faction = "Station"
 	total_positions = 3
 	spawn_positions = 2
-	supervisors = "the quartermaster and the first officer"
+	supervisors = "the quartermaster and the head of personnel"
 	selection_color = "#dcba97"
 	wiki_page = "Cargo_technician"
 

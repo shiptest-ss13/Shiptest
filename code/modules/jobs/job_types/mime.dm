@@ -1,12 +1,12 @@
 /datum/job/mime
 	title = "Mime"
 	flag = MIME
-	department_head = list("First Officer")
+	department_head = list("Head of Personnel")
 	department_flag = CIVILIAN
 	faction = "Station"
 	total_positions = 1
 	spawn_positions = 1
-	supervisors = "the first officer"
+	supervisors = "the head of personnel"
 	selection_color = "#dddddd"
 	wiki_page = "Mime"
 

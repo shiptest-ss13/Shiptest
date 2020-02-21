@@ -104,12 +104,12 @@
 
 /obj/item/pda/heads
 	default_cartridge = /obj/item/cartridge/head
-	icon_state = "pda-first_officer"
+	icon_state = "pda-head_of_personnel"
 
-/obj/item/pda/heads/first_officer
-	name = "first officer PDA"
-	default_cartridge = /obj/item/cartridge/first_officer
-	icon_state = "pda-first_officer"
+/obj/item/pda/heads/head_of_personnel
+	name = "head of personnel PDA"
+	default_cartridge = /obj/item/cartridge/head_of_personnel
+	icon_state = "pda-head_of_personnel"
 
 /obj/item/pda/heads/hos
 	name = "head of security PDA"
@@ -197,8 +197,8 @@
 	silent = TRUE //Quiet in the library!
 	overlays_x_offset = -3
 
-/obj/item/pda/second_officer
-	name = "second officer PDA"
+/obj/item/pda/lieutenant
+	name = "lieutenant PDA"
 	default_cartridge = /obj/item/cartridge/hos
 	icon_state = "pda-h"
 

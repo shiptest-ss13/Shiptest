@@ -1,6 +1,6 @@
-/datum/job/first_officer
-	title = "First Officer"
-	flag = FO
+/datum/job/head_of_personnel
+	title = "Head of Personnel"
+	flag = HOP
 	auto_deadmin_role_flags = DEADMIN_POSITION_HEAD
 	department_head = list("Captain")
 	department_flag = CIVILIAN
@@ -18,7 +18,7 @@
 	exp_type_department = EXP_TYPE_SUPPLY
 	special_notice = "You are NOT security, and should NEVER UNDER ANY CIRCUMSTANCES act like them."
 
-	outfit = /datum/outfit/job/first_officer
+	outfit = /datum/outfit/job/head_of_personnel
 
 	access = list(ACCESS_SECURITY, ACCESS_SEC_DOORS, ACCESS_COURT, ACCESS_WEAPONS,
 			            ACCESS_MEDICAL, ACCESS_ENGINE, ACCESS_CHANGE_IDS, ACCESS_AI_UPLOAD, ACCESS_EVA, ACCESS_HEADS,
@@ -39,14 +39,14 @@
 
 	display_order = JOB_DISPLAY_ORDER_HEAD_OF_PERSONNEL
 
-/datum/outfit/job/first_officer
-	name = "First Officer"
-	jobtype = /datum/job/first_officer
+/datum/outfit/job/head_of_personnel
+	name = "Head of Personnel"
+	jobtype = /datum/job/head_of_personnel
 
 	id = /obj/item/card/id/silver
-	belt = /obj/item/pda/heads/first_officer
-	ears = /obj/item/radio/headset/heads/first_officer
-	uniform = /obj/item/clothing/under/rank/civilian/first_officer
+	belt = /obj/item/pda/heads/head_of_personnel
+	ears = /obj/item/radio/headset/heads/head_of_personnel
+	uniform = /obj/item/clothing/under/rank/civilian/head_of_personnel
 	shoes = /obj/item/clothing/shoes/sneakers/brown
 	head = /obj/item/clothing/head/hopcap
 	backpack_contents = list(/obj/item/storage/box/ids=1,\
@@ -57,9 +57,9 @@
 	duffelbag = /obj/item/storage/backpack/duffelbag/captain
 	courierbag = /obj/item/storage/backpack/messenger/com
 
-	chameleon_extras = list(/obj/item/gun/energy/e_gun, /obj/item/stamp/first_officer)
+	chameleon_extras = list(/obj/item/gun/energy/e_gun, /obj/item/stamp/head_of_personnel)
 
-/datum/outfit/job/first_officer/pre_equip(mob/living/carbon/human/H)
+/datum/outfit/job/head_of_personnel/pre_equip(mob/living/carbon/human/H)
 	..()
 	if(locate(/datum/holiday/ianbirthday) in SSevents.holidays)
 		undershirt = /datum/sprite_accessory/undershirt/ian

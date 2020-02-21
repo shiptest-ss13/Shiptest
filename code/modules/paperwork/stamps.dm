@@ -31,8 +31,8 @@
 	icon_state = "stamp-cap"
 	dye_color = DYE_CAPTAIN
 
-/obj/item/stamp/first_officer
-	name = "first officer's rubber stamp"
+/obj/item/stamp/head_of_personnel
+	name = "head of personnel's rubber stamp"
 	icon_state = "stamp-hop"
 	dye_color = DYE_FO
 

@@ -975,7 +975,7 @@
 /obj/effect/turf_decal/tile/blue{
 	dir = 8
 	},
-/obj/structure/closet/secure_closet/second_officer,
+/obj/structure/closet/secure_closet/lieutenant,
 /turf/open/floor/plasteel/dark,
 /area/bridge)
 "acy" = (
@@ -3343,7 +3343,7 @@
 /obj/structure/cable,
 /obj/effect/mapping_helpers/iannewyear,
 /turf/open/floor/carpet,
-/area/crew_quarters/heads/first_officer)
+/area/crew_quarters/heads/head_of_personnel)
 "aib" = (
 /obj/structure/plasticflaps,
 /obj/machinery/conveyor{
@@ -3568,11 +3568,11 @@
 /area/security/prison)
 "aiO" = (
 /turf/closed/wall/r_wall,
-/area/crew_quarters/heads/first_officer)
+/area/crew_quarters/heads/head_of_personnel)
 "aiP" = (
 /obj/effect/mapping_helpers/ianbirthday,
 /turf/open/floor/carpet,
-/area/crew_quarters/heads/first_officer)
+/area/crew_quarters/heads/head_of_personnel)
 "aiQ" = (
 /obj/structure/reagent_dispensers/fueltank,
 /obj/effect/turf_decal/tile/brown{
@@ -3824,11 +3824,11 @@
 "ajx" = (
 /obj/effect/turf_decal/bot,
 /turf/open/floor/plasteel,
-/area/crew_quarters/heads/first_officer)
+/area/crew_quarters/heads/head_of_personnel)
 "ajy" = (
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
-/area/crew_quarters/heads/first_officer)
+/area/crew_quarters/heads/head_of_personnel)
 "ajA" = (
 /obj/structure/cable,
 /obj/effect/spawner/structure/window/reinforced,
@@ -4022,7 +4022,7 @@
 /area/security/prison)
 "akj" = (
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "first_officer";
+	id = "head_of_personnel";
 	name = "Privacy Shutters"
 	},
 /obj/structure/cable,
@@ -4671,7 +4671,7 @@
 "amg" = (
 /obj/machinery/pdapainter,
 /turf/open/floor/wood,
-/area/crew_quarters/heads/first_officer)
+/area/crew_quarters/heads/head_of_personnel)
 "amh" = (
 /obj/effect/landmark/event_spawn,
 /turf/open/floor/plasteel,
@@ -4984,9 +4984,9 @@
 /obj/structure/chair/office{
 	dir = 8
 	},
-/obj/effect/landmark/start/first_officer,
+/obj/effect/landmark/start/head_of_personnel,
 /turf/open/floor/carpet,
-/area/crew_quarters/heads/first_officer)
+/area/crew_quarters/heads/head_of_personnel)
 "ann" = (
 /obj/machinery/computer/communications{
 	dir = 8
@@ -6815,7 +6815,7 @@
 /area/maintenance/solars/starboard/fore)
 "asO" = (
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "first_officer";
+	id = "head_of_personnel";
 	name = "Privacy Shutters"
 	},
 /obj/structure/cable,
@@ -9768,7 +9768,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
 /obj/structure/disposalpipe/sorting/mail{
 	dir = 1;
-	name = "sorting disposal pipe (First Officer)";
+	name = "sorting disposal pipe (Head of Personnel)";
 	sortType = 15
 	},
 /obj/structure/cable,
@@ -9780,10 +9780,10 @@
 	},
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "foqueue";
-	name = "First Officer's Queue Shutters"
+	name = "Head of Personnel's Queue Shutters"
 	},
 /turf/open/floor/plasteel,
-/area/crew_quarters/heads/first_officer)
+/area/crew_quarters/heads/head_of_personnel)
 "aAC" = (
 /obj/effect/turf_decal/tile/neutral,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
@@ -9803,13 +9803,13 @@
 /area/crew_quarters/fitness/recreation)
 "aAD" = (
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "first_officer";
+	id = "head_of_personnel";
 	name = "Privacy Shutters"
 	},
 /obj/structure/cable,
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
-/area/crew_quarters/heads/first_officer)
+/area/crew_quarters/heads/head_of_personnel)
 "aAE" = (
 /obj/machinery/modular_computer/console/preset/command{
 	dir = 8
@@ -11420,13 +11420,13 @@
 	},
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "foqueue";
-	name = "First Officer's Queue Shutters"
+	name = "Head of Personnel's Queue Shutters"
 	},
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
 /turf/open/floor/plasteel,
-/area/crew_quarters/heads/first_officer)
+/area/crew_quarters/heads/head_of_personnel)
 "aFe" = (
 /obj/machinery/atmospherics/pipe/simple{
 	dir = 5
@@ -11679,7 +11679,7 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel,
-/area/crew_quarters/heads/first_officer)
+/area/crew_quarters/heads/head_of_personnel)
 "aFG" = (
 /obj/structure/table/wood,
 /obj/machinery/light{
@@ -12249,7 +12249,7 @@
 	dir = 8
 	},
 /turf/open/floor/carpet,
-/area/crew_quarters/heads/first_officer)
+/area/crew_quarters/heads/head_of_personnel)
 "aHB" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
@@ -13242,12 +13242,12 @@
 /obj/machinery/airalarm{
 	pixel_y = 24
 	},
-/obj/item/toy/figure/first_officer,
+/obj/item/toy/figure/head_of_personnel,
 /obj/item/toy/figure/ian{
 	pixel_x = 5
 	},
 /turf/open/floor/carpet,
-/area/crew_quarters/heads/first_officer)
+/area/crew_quarters/heads/head_of_personnel)
 "aKr" = (
 /obj/structure/table/wood,
 /obj/item/instrument/violin,
@@ -13284,7 +13284,7 @@
 	pixel_y = 32
 	},
 /turf/open/floor/carpet,
-/area/crew_quarters/heads/first_officer)
+/area/crew_quarters/heads/head_of_personnel)
 "aKw" = (
 /obj/machinery/vending/wallmed{
 	pixel_y = 28
@@ -13306,14 +13306,14 @@
 	pixel_x = -24
 	},
 /turf/open/floor/carpet,
-/area/crew_quarters/heads/first_officer)
+/area/crew_quarters/heads/head_of_personnel)
 "aKy" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on{
 	dir = 4
 	},
 /obj/effect/landmark/event_spawn,
 /turf/open/floor/carpet,
-/area/crew_quarters/heads/first_officer)
+/area/crew_quarters/heads/head_of_personnel)
 "aKz" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
 	dir = 9
@@ -13330,16 +13330,16 @@
 /obj/structure/cable,
 /obj/machinery/photocopier,
 /turf/open/floor/carpet,
-/area/crew_quarters/heads/first_officer)
+/area/crew_quarters/heads/head_of_personnel)
 "aKB" = (
 /obj/structure/bed,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
 	dir = 5
 	},
-/obj/effect/landmark/start/first_officer,
-/obj/item/bedsheet/first_officer,
+/obj/effect/landmark/start/head_of_personnel,
+/obj/item/bedsheet/head_of_personnel,
 /turf/open/floor/carpet,
-/area/crew_quarters/heads/first_officer)
+/area/crew_quarters/heads/head_of_personnel)
 "aKC" = (
 /obj/structure/table/wood,
 /obj/item/toy/figure/curator,
@@ -13354,7 +13354,7 @@
 	pixel_y = -27
 	},
 /turf/open/floor/carpet,
-/area/crew_quarters/heads/first_officer)
+/area/crew_quarters/heads/head_of_personnel)
 "aKE" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
@@ -13362,7 +13362,7 @@
 	},
 /obj/structure/cable,
 /turf/open/floor/carpet,
-/area/crew_quarters/heads/first_officer)
+/area/crew_quarters/heads/head_of_personnel)
 "aKF" = (
 /obj/structure/table,
 /obj/machinery/microwave{
@@ -17502,7 +17502,7 @@
 /area/crew_quarters/heads/hos)
 "aXb" = (
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "first_officer";
+	id = "head_of_personnel";
 	name = "Privacy Shutters"
 	},
 /obj/structure/disposalpipe/segment{
@@ -17511,7 +17511,7 @@
 /obj/structure/cable,
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
-/area/crew_quarters/heads/first_officer)
+/area/crew_quarters/heads/head_of_personnel)
 "aXc" = (
 /obj/machinery/computer/card{
 	dir = 1
@@ -17522,7 +17522,7 @@
 	pixel_y = -36
 	},
 /obj/machinery/button/door{
-	id = "first_officer";
+	id = "head_of_personnel";
 	name = "Privacy Shutters Control";
 	pixel_x = 6;
 	pixel_y = -25;
@@ -17543,7 +17543,7 @@
 	dir = 4
 	},
 /turf/open/floor/carpet,
-/area/crew_quarters/heads/first_officer)
+/area/crew_quarters/heads/head_of_personnel)
 "aXd" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer3{
 	dir = 8
@@ -27189,7 +27189,7 @@
 	},
 /obj/structure/cable,
 /turf/open/floor/wood,
-/area/crew_quarters/heads/first_officer)
+/area/crew_quarters/heads/head_of_personnel)
 "buN" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 10
@@ -27199,7 +27199,7 @@
 	},
 /obj/structure/cable,
 /turf/open/floor/wood,
-/area/crew_quarters/heads/first_officer)
+/area/crew_quarters/heads/head_of_personnel)
 "buO" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
 	dir = 4
@@ -27214,20 +27214,20 @@
 /obj/effect/landmark/event_spawn,
 /obj/structure/cable,
 /turf/open/floor/carpet,
-/area/crew_quarters/heads/first_officer)
+/area/crew_quarters/heads/head_of_personnel)
 "buR" = (
 /obj/effect/turf_decal/bot,
 /obj/machinery/light{
 	dir = 1
 	},
 /turf/open/floor/plasteel,
-/area/crew_quarters/heads/first_officer)
+/area/crew_quarters/heads/head_of_personnel)
 "buS" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
 /obj/structure/cable,
 /turf/open/floor/wood,
-/area/crew_quarters/heads/first_officer)
+/area/crew_quarters/heads/head_of_personnel)
 "buT" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 5
@@ -27237,7 +27237,7 @@
 	},
 /obj/structure/cable,
 /turf/open/floor/wood,
-/area/crew_quarters/heads/first_officer)
+/area/crew_quarters/heads/head_of_personnel)
 "buU" = (
 /obj/effect/turf_decal/tile/blue{
 	dir = 4
@@ -30228,9 +30228,9 @@
 	pixel_x = -3;
 	pixel_y = 7
 	},
-/obj/item/stamp/first_officer,
+/obj/item/stamp/head_of_personnel,
 /turf/open/floor/carpet,
-/area/crew_quarters/heads/first_officer)
+/area/crew_quarters/heads/head_of_personnel)
 "bCl" = (
 /obj/machinery/vending/cart,
 /obj/machinery/airalarm{
@@ -30238,21 +30238,21 @@
 	pixel_x = 24
 	},
 /obj/machinery/camera{
-	c_tag = "Bridge - First Officer's Office";
+	c_tag = "Bridge - Head of Personnel's Office";
 	dir = 8
 	},
 /turf/open/floor/wood,
-/area/crew_quarters/heads/first_officer)
+/area/crew_quarters/heads/head_of_personnel)
 "bCm" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
 /obj/machinery/door/airlock/command{
-	name = "First Officer's Private Quarters";
+	name = "Head of Personnel's Private Quarters";
 	req_access_txt = "57"
 	},
 /obj/structure/cable,
 /turf/open/floor/wood,
-/area/crew_quarters/heads/first_officer)
+/area/crew_quarters/heads/head_of_personnel)
 "bCn" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -30266,7 +30266,7 @@
 /obj/effect/turf_decal/bot,
 /obj/machinery/door/firedoor,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "first_officer";
+	id = "head_of_personnel";
 	name = "Privacy Shutters"
 	},
 /obj/machinery/door/window/eastleft{
@@ -30278,7 +30278,7 @@
 	},
 /obj/structure/cable,
 /turf/open/floor/plating,
-/area/crew_quarters/heads/first_officer)
+/area/crew_quarters/heads/head_of_personnel)
 "bCp" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on{
 	dir = 1
@@ -30309,13 +30309,13 @@
 	},
 /obj/machinery/requests_console{
 	announcementConsole = 1;
-	department = "First Officer's Desk";
+	department = "Head of Personnel's Desk";
 	departmentType = 5;
-	name = "First Officer RC";
+	name = "Head of Personnel RC";
 	pixel_y = -30
 	},
 /turf/open/floor/carpet,
-/area/crew_quarters/heads/first_officer)
+/area/crew_quarters/heads/head_of_personnel)
 "bCv" = (
 /obj/structure/table/reinforced,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
@@ -31733,7 +31733,7 @@
 	dir = 8
 	},
 /turf/open/floor/wood,
-/area/crew_quarters/heads/first_officer)
+/area/crew_quarters/heads/head_of_personnel)
 "bFz" = (
 /obj/effect/turf_decal/tile/blue,
 /obj/structure/disposalpipe/segment,
@@ -33623,7 +33623,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
 /obj/structure/cable,
 /turf/open/floor/wood,
-/area/crew_quarters/heads/first_officer)
+/area/crew_quarters/heads/head_of_personnel)
 "bKo" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
@@ -33756,14 +33756,14 @@
 /area/bridge)
 "bKO" = (
 /obj/machinery/door/airlock/command{
-	name = "First Officer";
+	name = "Head of Personnel";
 	req_access_txt = "57"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
 /obj/structure/cable,
 /turf/open/floor/plasteel/dark,
-/area/crew_quarters/heads/first_officer)
+/area/crew_quarters/heads/head_of_personnel)
 "bKQ" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
@@ -41925,23 +41925,23 @@
 /turf/open/floor/plasteel/white,
 /area/medical/chemistry)
 "eXD" = (
-/obj/effect/landmark/start/second_officer,
+/obj/effect/landmark/start/lieutenant,
 /turf/open/floor/plasteel/dark,
 /area/bridge)
 "eXR" = (
-/obj/structure/closet/secure_closet/first_officer,
+/obj/structure/closet/secure_closet/head_of_personnel,
 /obj/machinery/light/small{
 	dir = 1
 	},
 /obj/machinery/camera{
-	c_tag = "Bridge - First Officer's Private Quarters";
+	c_tag = "Bridge - Head of Personnel's Private Quarters";
 	dir = 4
 	},
 /obj/item/radio/intercom{
 	pixel_y = 25
 	},
 /turf/open/floor/carpet,
-/area/crew_quarters/heads/first_officer)
+/area/crew_quarters/heads/head_of_personnel)
 "eZi" = (
 /obj/machinery/power/apc{
 	areastring = "/area/security/warden";
@@ -43649,11 +43649,11 @@
 "iGu" = (
 /obj/effect/turf_decal/bot,
 /obj/machinery/navbeacon/wayfinding{
-	location = "First Officer's Office";
-	name = "navigation beacon (First Officer's Office)"
+	location = "Head of Personnel's Office";
+	name = "navigation beacon (Head of Personnel's Office)"
 	},
 /turf/open/floor/plasteel,
-/area/crew_quarters/heads/first_officer)
+/area/crew_quarters/heads/head_of_personnel)
 "iGD" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
@@ -44598,7 +44598,7 @@
 "kAU" = (
 /obj/machinery/power/emitter/welded{
 	dir = 8;
-	
+
 	},
 /obj/machinery/camera{
 	c_tag = "Engine -Emitters Right";
@@ -44731,7 +44731,7 @@
 /area/crew_quarters/heads/chief)
 "kVl" = (
 /obj/structure/cable,
-/obj/effect/landmark/start/second_officer,
+/obj/effect/landmark/start/lieutenant,
 /turf/open/floor/plasteel/dark,
 /area/bridge)
 "kVx" = (
@@ -45425,7 +45425,7 @@
 "mHo" = (
 /obj/machinery/power/emitter/welded{
 	dir = 8;
-	
+
 	},
 /obj/structure/cable,
 /turf/open/floor/plating,
@@ -46425,14 +46425,14 @@
 "oBZ" = (
 /obj/machinery/computer/bounty,
 /obj/machinery/power/apc{
-	areastring = "/area/crew_quarters/heads/first_officer";
+	areastring = "/area/crew_quarters/heads/head_of_personnel";
 	dir = 1;
-	name = "First Officer's Office APC";
+	name = "Head of Personnel's Office APC";
 	pixel_y = 24
 	},
 /obj/structure/cable,
 /turf/open/floor/wood,
-/area/crew_quarters/heads/first_officer)
+/area/crew_quarters/heads/head_of_personnel)
 "oCk" = (
 /obj/effect/turf_decal/tile/neutral{
 	dir = 1
@@ -47043,7 +47043,7 @@
 "pLI" = (
 /obj/machinery/power/emitter/welded{
 	dir = 4;
-	
+
 	},
 /obj/structure/cable,
 /turf/open/floor/plating,
@@ -49601,7 +49601,7 @@
 "vbr" = (
 /obj/machinery/power/emitter/welded{
 	dir = 4;
-	
+
 	},
 /obj/machinery/camera{
 	c_tag = "Engine - Emitters Left";
@@ -50295,7 +50295,7 @@
 	pixel_y = 25
 	},
 /turf/open/floor/wood,
-/area/crew_quarters/heads/first_officer)
+/area/crew_quarters/heads/head_of_personnel)
 "wxB" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/bot,
@@ -50819,7 +50819,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
 /obj/structure/cable,
 /turf/open/floor/carpet,
-/area/crew_quarters/heads/first_officer)
+/area/crew_quarters/heads/head_of_personnel)
 "xyk" = (
 /obj/structure/table/glass,
 /obj/item/hemostat,
@@ -51079,7 +51079,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
-/obj/effect/landmark/start/second_officer,
+/obj/effect/landmark/start/lieutenant,
 /turf/open/floor/carpet,
 /area/bridge)
 "ybh" = (

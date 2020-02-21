@@ -186,10 +186,10 @@
 	body_parts_covered = HEAD
 	flags_inv = HIDEHAIR|HIDEEARS
 
-//Second Officer
+//Lieutenant
 
-/obj/item/clothing/suit/storage/second_officer
-	name = "second officer's coat"
+/obj/item/clothing/suit/storage/lieutenant
+	name = "lieutenant's coat"
 	desc = "NT deluxe ripoff. You finally have your own coat."
 	icon_state = "blueshieldcoat"
 	item_state = "blueshieldcoat"

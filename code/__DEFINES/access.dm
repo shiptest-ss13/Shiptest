@@ -81,7 +81,7 @@
 #define ACCESS_CLONING 68
 /// Pharmacy access (Chemistry room in Medbay)
 #define ACCESS_PHARMACY 69 ///Nice.
-// Second Officer's Office
+// Lieutenant's Office
 #define ACCESS_SECOND_OFFICER 70
 
 	//BEGIN CENTCOM ACCESS

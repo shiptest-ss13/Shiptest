@@ -222,25 +222,25 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 	icon_state = "com_headset"
 	keyslot = new /obj/item/encryptionkey/heads/cmo
 
-/obj/item/radio/headset/heads/first_officer
-	name = "\proper the first officer's headset"
+/obj/item/radio/headset/heads/head_of_personnel
+	name = "\proper the head of personnel's headset"
 	desc = "The headset of the guy who will one day be captain."
 	icon_state = "com_headset"
-	keyslot = new /obj/item/encryptionkey/heads/first_officer
+	keyslot = new /obj/item/encryptionkey/heads/head_of_personnel
 
-/obj/item/radio/headset/heads/second_officer
-	name = "\proper the second officer's headset"
-	desc = "The headset of the Second Officer."
+/obj/item/radio/headset/heads/lieutenant
+	name = "\proper the lieutenant's headset"
+	desc = "The headset of the Lieutenant."
 	icon_state = "com_headset"
-	keyslot = new /obj/item/encryptionkey/heads/second_officer
+	keyslot = new /obj/item/encryptionkey/heads/lieutenant
 
-/obj/item/radio/headset/heads/second_officer/alt
-	name = "\proper the second officer's bowman headset"
-	desc = "The headset of the Second Officer. Protects ears from flashbangs."
+/obj/item/radio/headset/heads/lieutenant/alt
+	name = "\proper the lieutenant's bowman headset"
+	desc = "The headset of the Lieutenant. Protects ears from flashbangs."
 	icon_state = "com_headset_alt"
-	keyslot = new /obj/item/encryptionkey/heads/second_officer
+	keyslot = new /obj/item/encryptionkey/heads/lieutenant
 
-/obj/item/radio/headset/heads/second_officer/alt/ComponentInitialize()
+/obj/item/radio/headset/heads/lieutenant/alt/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/wearertargeting/earprotection, list(ITEM_SLOT_EARS))
 
