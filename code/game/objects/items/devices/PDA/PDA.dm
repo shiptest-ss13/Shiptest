@@ -352,7 +352,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 			if(41) //crew manifest
 				dat += "<h4>Crew Manifest</h4>"
 				dat += "<center>"
-				dat += GLOB.data_core.get_manifest()
+				dat += GLOB.data_core.get_manifest_html()
 				dat += "</center>"
 
 			if(3)
