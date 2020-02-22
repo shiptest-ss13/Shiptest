@@ -232,6 +232,7 @@
 	slot = "brain"
 	zone = "chest"
 	status = ORGAN_ROBOTIC
+	organ_flags = ORGAN_SYNTHETIC
 	remove_on_qdel = FALSE
 	var/obj/item/mmi/stored_mmi
 
