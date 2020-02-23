@@ -215,7 +215,7 @@
 		if(thermal_protection_flags & HAND_RIGHT)
 			thermal_protection += THERMAL_PROTECTION_HAND_RIGHT
 
-	return min(1, thermal_protection)
+	return min(1,thermal_protection)
 
 //See proc/get_heat_protection_flags(temperature) for the description of this proc.
 /mob/living/carbon/human/proc/get_cold_protection_flags(temperature)
@@ -276,7 +276,7 @@
 		if(thermal_protection_flags & HAND_RIGHT)
 			thermal_protection += THERMAL_PROTECTION_HAND_RIGHT
 
-	return min(1, thermal_protection)
+	return min(1,thermal_protection)
 
 /mob/living/carbon/human/handle_random_events()
 	//Puke if toxloss is too high

@@ -166,7 +166,6 @@
 		finish_chronowalk(user, to_turf)
 
 /obj/item/clothing/suit/space/chronos/process()
-	. = ..()
 	if(activated)
 		var/mob/living/carbon/human/user = src.loc
 		if(user && ishuman(user) && (user.wear_suit == src))
@@ -179,6 +178,8 @@
 						camera.remove_target_ui()
 			else
 				new_camera(user)
+	else
+		STOP_PROCESSING(SSobj, src)
 
 /obj/item/clothing/suit/space/chronos/proc/activate()
 	if(!activating && !activated && !teleporting)
@@ -198,6 +199,7 @@
 				to_chat(user, "\[ <span style='color: #00ff00;'>ok</span> \] Starting ui display driver")
 				to_chat(user, "\[ <span style='color: #00ff00;'>ok</span> \] Initializing chronowalk4-view")
 				new_camera(user)
+				START_PROCESSING(SSobj, src)
 				activated = 1
 			else
 				to_chat(user, "\[ <span style='color: #ff0000;'>fail</span> \] Mounting /dev/helm")
