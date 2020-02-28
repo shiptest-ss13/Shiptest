@@ -8,7 +8,7 @@
 	spawn_positions = 1
 	supervisors = "the head of personnel"
 	selection_color = "#bbe291"
-	wiki_page = "Janitor"
+	wiki_page = "Janitor" //WaspStation Edit - Wikilinks/Warning
 
 	outfit = /datum/outfit/job/janitor
 

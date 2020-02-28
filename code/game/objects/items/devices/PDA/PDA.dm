@@ -14,7 +14,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 /obj/item/pda
 	name = "\improper PDA"
 	desc = "A portable microcomputer by Thinktronic Systems, LTD. Functionality determined by a preprogrammed ROM cartridge."
-	icon = 'icons/obj/pda.dmi'
+	icon = 'waspstation/icons/obj/pda.dmi' //WaspStation Edit - Better PDAs from Eris(?)
 	icon_state = "pda"
 	item_state = "electronic"
 	lefthand_file = 'icons/mob/inhands/misc/devices_lefthand.dmi'
@@ -212,7 +212,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 
 	user.set_machine(src)
 
-	var/dat = ""
+	var/dat = "" // WaspStation Edit - PDA Redesign
 	dat += assets.css_tag()
 	dat += emoji_s.css_tag()
 
@@ -222,14 +222,6 @@ GLOBAL_LIST_EMPTY(PDAs)
 		dat += " | [PDAIMG(eject)]   <a href='byond://?src=[REF(src)];choice=Eject'>Eject [cartridge]</a>"
 	if(mode)
 		dat += " | [PDAIMG(menu)]   <a href='byond://?src=[REF(src)];choice=Return'>Return</a>"
-
-	if (mode == 0)
-		dat += "<div align=\"center\">"
-		dat += "<br><a href='byond://?src=[REF(src)];choice=Toggle_Font'>Toggle Font</a>"
-		dat += " | <a href='byond://?src=[REF(src)];choice=Change_Color'>Change Color</a>"
-		dat += " | <a href='byond://?src=[REF(src)];choice=Toggle_Underline'>Toggle Underline</a>" //underline button
-
-		dat += "</div>"
 
 	dat += "<br>"
 
@@ -399,26 +391,6 @@ GLOBAL_LIST_EMPTY(PDAs)
 //BASIC FUNCTIONS===================================
 
 			if("Refresh")//Refresh, goes to the end of the proc.
-
-			if ("Toggle_Font")
-				//CODE REVISION 2
-				font_index = (font_index + 1) % 4
-
-				switch(font_index)
-					if (MODE_MONO)
-						font_mode = FONT_MONO
-					if (MODE_SHARE)
-						font_mode = FONT_SHARE
-					if (MODE_ORBITRON)
-						font_mode = FONT_ORBITRON
-					if (MODE_VT)
-						font_mode = FONT_VT
-			if ("Change_Color")
-				var/new_color = input("Please enter a color name or hex value (Default is \'#808000\').",background_color)as color
-				background_color = new_color
-
-			if ("Toggle_Underline")
-				underline_flag = !underline_flag
 
 			if("Return")//Return
 				if(mode<=9)

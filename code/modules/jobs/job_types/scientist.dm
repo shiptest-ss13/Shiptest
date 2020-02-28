@@ -10,11 +10,11 @@
 	selection_color = "#ffeeff"
 	exp_requirements = 60
 	exp_type = EXP_TYPE_CREW
-	wiki_page = "Scientist"
+	wiki_page = "Scientist" //WaspStation Edit - Wikilinks/Warning
 
 	outfit = /datum/outfit/job/scientist
 
-	access = list(ACCESS_ROBOTICS, ACCESS_TOX, ACCESS_TOX_STORAGE, ACCESS_RESEARCH, ACCESS_XENOBIOLOGY, ACCESS_MECH_SCIENCE, ACCESS_MINERAL_STOREROOM, ACCESS_TECH_STORAGE)
+	access = list(ACCESS_ROBOTICS, ACCESS_TOX, ACCESS_TOX_STORAGE, ACCESS_RESEARCH, ACCESS_XENOBIOLOGY, ACCESS_MECH_SCIENCE, ACCESS_MINERAL_STOREROOM, ACCESS_TECH_STORAGE) //WaspStation edit - Gen/Sci Split
 	minimal_access = list(ACCESS_TOX, ACCESS_TOX_STORAGE, ACCESS_RESEARCH, ACCESS_XENOBIOLOGY, ACCESS_MECH_SCIENCE, ACCESS_MINERAL_STOREROOM)
 	paycheck = PAYCHECK_MEDIUM
 	paycheck_department = ACCOUNT_SCI

@@ -102,6 +102,8 @@
 			"<span class='notice'>[user] begins to insert [tool] into [target]'s [parse_zone(target_zone)].</span>",
 			"<span class='notice'>[user] begins to insert something into [target]'s [parse_zone(target_zone)].</span>")
 
+	//WaspStation Begin - IPCs
+
 	if(istype(tool, /obj/item/mmi))//this whole thing is only used for robotic surgery in organ_mani_robotic.dm :*
 		current_type = "posibrain"
 		var/obj/item/bodypart/affected = target.get_bodypart(check_zone(target_zone))
@@ -129,9 +131,8 @@
 		if(!meatslab.useable)
 			to_chat(user, "<span class='warning'>[I] seems to have been chewed on, you can't use this!</span>")
 			return -1
-		display_results(user, target, "<span class='notice'>You begin to insert [tool] into [target]'s [parse_zone(target_zone)]...</span>",
-			"<span class='notice'>[user] begins to insert [tool] into [target]'s [parse_zone(target_zone)].</span>",
-			"<span class='notice'>[user] begins to insert something into [target]'s [parse_zone(target_zone)].</span>")
+
+	//WaspStation End
 
 	else if(implement_type in implements_extract)
 		current_type = "extract"

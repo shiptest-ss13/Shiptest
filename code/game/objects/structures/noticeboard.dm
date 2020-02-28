@@ -99,7 +99,7 @@
 /obj/structure/noticeboard/head_of_personnel
 	name = "Head of Personnel's Notice Board"
 	desc = "Important notices from the Head of Personnel."
-	req_access = list(ACCESS_FO)
+	req_access = list(ACCESS_HOP)
 
 /obj/structure/noticeboard/ce
 	name = "Chief Engineer's Notice Board"

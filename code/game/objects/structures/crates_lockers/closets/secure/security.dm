@@ -5,24 +5,26 @@
 
 /obj/structure/closet/secure_closet/captains/PopulateContents()
 	..()
-	new /obj/item/clothing/head/beret/captain(src)
+	//WaspStation Begin
+	new /obj/item/clothing/head/beret/captain(src) //Berets
+	new /obj/item/card/id/departmental_budget/civ(src) //Budget Cards
+	new /obj/item/storage/backpack/messenger/com(src) //Messenger Bags
+	//WaspStation End
 	new /obj/item/clothing/suit/hooded/wintercoat/captain(src)
 	if(prob(33))
 		new /obj/item/storage/backpack/captain(src)
 	else if(prob(50))
 		new /obj/item/storage/backpack/satchel/cap(src)
-	else
-		new /obj/item/storage/backpack/messenger/com(src)
 	new /obj/item/storage/backpack/duffelbag/captain(src)
 	new /obj/item/clothing/neck/cloak/cap(src)
 	new /obj/item/clothing/neck/petcollar(src)
 	new /obj/item/pet_carrier(src)
 	new /obj/item/clothing/shoes/sneakers/brown(src)
-	new /obj/item/clothing/under/rank/captain(src)
-	new /obj/item/clothing/under/rank/captain/skirt(src)
+	new /obj/item/clothing/under/rank/command/captain(src)
+	new /obj/item/clothing/under/rank/command/captain/skirt(src)
 	new /obj/item/clothing/suit/armor/vest/capcarapace(src)
 	new /obj/item/clothing/head/caphat(src)
-	new /obj/item/clothing/under/rank/captain/parade(src)
+	new /obj/item/clothing/under/rank/command/captain/parade(src)
 	new /obj/item/clothing/suit/armor/vest/capcarapace/alt(src)
 	new /obj/item/clothing/head/caphat/parade(src)
 	new /obj/item/clothing/suit/captunic(src)
@@ -38,19 +40,19 @@
 	new /obj/item/door_remote/captain(src)
 	new /obj/item/card/id/captains_spare(src)
 	new /obj/item/storage/photo_album/Captain(src)
-	new /obj/item/card/id/departmental_budget/civ(src)
 
 /obj/structure/closet/secure_closet/head_of_personnel
 	name = "\proper head of personnel's locker"
-	req_access = list(ACCESS_FO)
+	req_access = list(ACCESS_HOP)
 	icon_state = "hop"
 
 /obj/structure/closet/secure_closet/head_of_personnel/PopulateContents()
 	..()
+	new /obj/item/card/id/departmental_budget/srv(src) //WaspStation Edit - Budget Cards
 	new /obj/item/clothing/neck/cloak/head_of_personnel(src)
 	new /obj/item/storage/lockbox/medal/service(src)
-	new /obj/item/clothing/under/rank/civilian/head_of_personnel(src)
-	new /obj/item/clothing/under/rank/civilian/head_of_personnel/skirt(src)
+	new /obj/item/clothing/under/rank/command/head_of_personnel(src) //WaspStation Edit - Better Command Uniforms
+	new /obj/item/clothing/under/rank/command/head_of_personnel/skirt(src) //WaspStation Edit - Better Command Uniforms
 	new /obj/item/clothing/head/hopcap(src)
 	new /obj/item/cartridge/head_of_personnel(src)
 	new /obj/item/radio/headset/heads/head_of_personnel(src)
@@ -61,52 +63,12 @@
 	new /obj/item/clothing/suit/armor/vest/alt(src)
 	new /obj/item/assembly/flash/handheld(src)
 	new /obj/item/clothing/glasses/sunglasses(src)
-	new /obj/item/gun/energy/e_gun/mini(src)
+	new /obj/item/gun/energy/e_gun/mini(src) //WaspStation Edit - Gives HoP a mini egun
 	new /obj/item/clothing/neck/petcollar(src)
 	new /obj/item/pet_carrier(src)
 	new /obj/item/door_remote/civillian(src)
 	new /obj/item/circuitboard/machine/techfab/department/service(src)
 	new /obj/item/storage/photo_album/HoP(src)
-	new /obj/item/card/id/departmental_budget/srv(src)
-
-/obj/structure/closet/secure_closet/brig_phys
-	name = "\proper brig physician's locker"
-	req_access = list(ACCESS_BRIG)
-	icon_state = "brig_phys"
-
-/obj/structure/closet/secure_closet/brig_phys/PopulateContents()
-	..()
-	new /obj/item/radio/headset/headset_medsec(src)
-	new	/obj/item/storage/firstaid/regular(src)
-	new	/obj/item/storage/firstaid/fire(src)
-	new	/obj/item/storage/firstaid/toxin(src)
-	new	/obj/item/storage/firstaid/o2(src)
-	new	/obj/item/storage/firstaid/brute(src)
-	new /obj/item/storage/belt/medical(src)
-	new /obj/item/reagent_containers/spray/pepper(src)
-	new /obj/item/assembly/flash/handheld(src)
-	new /obj/item/restraints/handcuffs(src)
-	new /obj/item/clothing/gloves/color/latex/nitrile(src)
-
-/obj/structure/closet/secure_closet/lieutenant
-	name = "\proper lieutenant's locker"
-	req_access = list(ACCESS_SECOND_OFFICER)
-	icon_state = "blueshield"
-
-/obj/structure/closet/secure_closet/lieutenant/PopulateContents()
-	..()
-	new /obj/item/storage/briefcase(src)
-	new	/obj/item/storage/firstaid/regular(src)
-	new /obj/item/storage/belt/security(src)
-	new /obj/item/grenade/flashbang(src)
-	new /obj/item/assembly/flash/handheld(src)
-	new /obj/item/restraints/handcuffs(src)
-	new /obj/item/melee/baton/loaded(src)
-	new /obj/item/clothing/glasses/sunglasses(src)
-	new /obj/item/clothing/suit/armor/vest/lieutenant(src)
-	new /obj/item/clothing/suit/storage/lieutenant(src)
-	new /obj/item/clothing/accessory/holster(src)
-	new /obj/item/clothing/shoes/jackboots(src)
 
 /obj/structure/closet/secure_closet/hos
 	name = "\proper head of security's locker"
@@ -115,7 +77,9 @@
 
 /obj/structure/closet/secure_closet/hos/PopulateContents()
 	..()
+	new /obj/item/card/id/departmental_budget/sec(src) //WaspStation edit - budget card
 	new /obj/item/clothing/neck/cloak/hos(src)
+	new /obj/item/clothing/under/rank/command(src) // WaspStation edit - better command uniforms
 	new /obj/item/cartridge/hos(src)
 	new /obj/item/radio/headset/heads/hos(src)
 	new /obj/item/clothing/under/rank/security/head_of_security/parade/female(src)
@@ -141,7 +105,6 @@
 	new /obj/item/pinpointer/nuke(src)
 	new /obj/item/circuitboard/machine/techfab/department/security(src)
 	new /obj/item/storage/photo_album/HoS(src)
-	new /obj/item/card/id/departmental_budget/sec(src)
 
 /obj/structure/closet/secure_closet/warden
 	name = "\proper warden's locker"
@@ -155,7 +118,7 @@
 	new /obj/item/clothing/head/warden(src)
 	new /obj/item/clothing/head/warden/drill(src)
 	new /obj/item/clothing/head/beret/sec/navywarden(src)
-	new /obj/item/clothing/head/beret/corpwarden(src)
+	new /obj/item/clothing/head/beret/corpwarden(src) // Waspstation edit - Berets
 	new /obj/item/clothing/suit/armor/vest/warden/alt(src)
 	new /obj/item/clothing/under/rank/security/warden/formal(src)
 	new /obj/item/clothing/under/rank/security/warden/skirt(src)
@@ -248,7 +211,7 @@
 	new /obj/item/holosign_creator/security(src)
 	new /obj/item/reagent_containers/spray/pepper(src)
 	new /obj/item/clothing/suit/armor/vest/det_suit(src)
-	new /obj/item/clothing/accessory/holster/detective(src)
+	new /obj/item/clothing/accessory/holster/detective(src) //WaspStation Edit - Made Holsters Accessories
 	new /obj/item/pinpointer/crew(src)
 	new /obj/item/twohanded/binoculars(src)
 	new /obj/item/storage/box/rxglasses/spyglasskit(src)

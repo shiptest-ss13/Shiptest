@@ -13,7 +13,8 @@
 	req_admin_notify = 1
 	minimal_player_age = 14
 	exp_requirements = 300
-	wiki_page = "Head_of_Security"
+	wiki_page = "Head_of_Security" //WaspStation Edit - Wikilinks/Warning
+	special_notice = "Remember, Space Law is THE law. Follow it." //WaspStation Edit - Wikilinks/Warning
 	exp_type = EXP_TYPE_CREW
 	exp_type_department = EXP_TYPE_SECURITY
 

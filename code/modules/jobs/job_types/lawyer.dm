@@ -8,7 +8,7 @@
 	spawn_positions = 2
 	supervisors = "the head of personnel"
 	selection_color = "#dddddd"
-	wiki_page = "Lawyer"
+	wiki_page = "Lawyer" //WaspStation Edit - Wikilinks/Warning
 	var/lawyers = 0 //Counts lawyer amount
 
 	outfit = /datum/outfit/job/lawyer

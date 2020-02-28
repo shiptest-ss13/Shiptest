@@ -3,10 +3,12 @@
 #define COLOR_INPUT_DISABLED "#F0F0F0"
 #define COLOR_INPUT_ENABLED "#D3B5B5"
 
+//Begin WaspStation
 #define COLOR_DARKMODE_DARKBACKGROUND "#383838"
 #define COLOR_DARKMODE_BACKGROUND "#272727"
 #define COLOR_DARKMODE_HEADER "#ffffff"
 #define COLOR_DARKMODE_TEXT "#000000"
+//End WaspStation
 
 #define COLOR_WHITE            "#EEEEEE"
 #define COLOR_SILVER           "#C0C0C0"

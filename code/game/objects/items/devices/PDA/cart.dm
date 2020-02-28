@@ -229,8 +229,12 @@ Code:
 <a href='byond://?src=[REF(src)];choice=Signal Code;scode=-1'>-</a>
 [radio.code]
 <a href='byond://?src=[REF(src)];choice=Signal Code;scode=1'>+</a>
-<a href='byond://?src=[REF(src)];choice=Signal Code;scode=5'>+</a><br><br>
-<a href='byond://?src=[REF(src)];choice=Send Signal'>Send Signal</A><BR>"}
+<a href='byond://?src=[REF(src)];choice=Signal Code;scode=5'>+</a><br>"}
+		if (41) //crew manifest
+			menu = "<h4>[PDAIMG(notes)] Crew Manifest</h4>"
+			menu += "<center>[GLOB.data_core.get_manifest_html(monochrome=TRUE)]</center>"
+
+
 		if (42) //status displays
 			menu = "<h4>[PDAIMG(status)] Station Status Display Interlink</h4>"
 

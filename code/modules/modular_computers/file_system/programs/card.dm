@@ -32,7 +32,7 @@
 /datum/computer_file/program/card_mod/New(obj/item/modular_computer/comp)
 	. = ..()
 	sub_managers = list(
-		"[ACCESS_FO]" = list(
+		"[ACCESS_HOP]" = list(
 			"department" = list(CARDCON_DEPARTMENT_SERVICE, CARDCON_DEPARTMENT_COMMAND),
 			"region" = 1,
 			"head" = "Head of Personnel"
@@ -272,7 +272,7 @@
 
 	var/list/departments = target_dept
 	if(is_centcom)
-		departments = list("Centcom" = get_all_centcom_jobs())
+		departments = list("CentCom" = get_all_centcom_jobs())
 	else if(isnull(departments))
 		departments = list(
 			CARDCON_DEPARTMENT_COMMAND = list("Captain"),//lol

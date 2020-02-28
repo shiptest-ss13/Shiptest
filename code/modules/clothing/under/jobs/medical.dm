@@ -22,6 +22,8 @@
 /obj/item/clothing/under/rank/medical/geneticist
 	desc = "It's made of a special fiber that gives special protection against biohazards. It has a genetics rank stripe on it."
 	name = "geneticist's jumpsuit"
+	icon = 'icons/obj/clothing/under/rnd.dmi' //WaspStation Edit - Gen/Sci Split
+	mob_overlay_icon = 'icons/mob/clothing/under/rnd.dmi' //WaspStation Edit - Gen/Sci Split
 	icon_state = "genetics"
 	item_state = "w_suit"
 	permeability_coefficient = 0.5

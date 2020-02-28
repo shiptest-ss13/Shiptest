@@ -12,8 +12,8 @@
 	minimal_player_age = 7
 	exp_requirements = 300
 	exp_type = EXP_TYPE_CREW
-	special_notice = "You are not a security officer, do not do their job for them. However, you can help them if they need immediate assistance."
-	wiki_page = "Space_Law"
+	special_notice = "You are not a security officer, do not do their job for them. However, you can help them if they need immediate assistance." //WaspStation Edit - Wikilinks/Warning
+	wiki_page = "Space_Law" //WaspStation Edit - Wikilinks/Warning
 
 	outfit = /datum/outfit/job/detective
 

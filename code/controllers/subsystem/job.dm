@@ -98,14 +98,6 @@ SUBSYSTEM_DEF(job)
 	JobDebug("AR has failed, Player: [player], Rank: [rank]")
 	return FALSE
 
-/datum/controller/subsystem/job/proc/FreeRole(rank)
-	if(!rank)
-		return
-	JobDebug("Freeing role: [rank]")
-	var/datum/job/job = GetJob(rank)
-	if(!job)
-		return FALSE
-	job.current_positions = max(0, job.current_positions - 1)
 
 /datum/controller/subsystem/job/proc/FindOccupationCandidates(datum/job/job, level, flag)
 	JobDebug("Running FOC, Job: [job], Level: [level], Flag: [flag]")
@@ -474,12 +466,15 @@ SUBSYSTEM_DEF(job)
 		job.radio_help_message(M)
 		if(job.req_admin_notify)
 			to_chat(M, "<b>You are playing a job that is important for Game Progression. If you have to disconnect, please notify the admins via adminhelp.</b>")
+		if(CONFIG_GET(number/minimal_access_threshold))
+			to_chat(M, "<span class='notice'><B>As this station was initially staffed with a [CONFIG_GET(flag/jobs_have_minimal_access) ? "full crew, only your job's necessities" : "skeleton crew, additional access may"] have been added to your ID card.</B></span>")
+
+		//WaspStation Begin - Wikilinks and Special notice
 		if(job.special_notice)
 			to_chat(M, "<span class='userdanger'>[job.special_notice]</span>")
 		if(job.wiki_page)
 			to_chat(M, "<span class='notice'><a href=[CONFIG_GET(string/wikiurl)]/[job.wiki_page]>Wiki Page</a></span>")
-		if(CONFIG_GET(number/minimal_access_threshold))
-			to_chat(M, "<span class='notice'><B>As this station was initially staffed with a [CONFIG_GET(flag/jobs_have_minimal_access) ? "full crew, only your job's necessities" : "skeleton crew, additional access may"] have been added to your ID card.</B></span>")
+		//WaspStation End
 
 	var/related_policy = get_policy(rank)
 	if(related_policy)

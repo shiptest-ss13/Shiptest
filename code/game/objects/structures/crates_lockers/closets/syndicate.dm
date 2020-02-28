@@ -16,6 +16,7 @@
 	new /obj/item/storage/belt/military(src)
 	new /obj/item/crowbar/syndie(src)
 	new /obj/item/clothing/glasses/night(src)
+	new /obj/item/clothing/accessory/holster/nukie(src) //WASPSTATION EDIT - HOLSTERS AS ACCESSORIES
 
 /obj/structure/closet/syndicate/nuclear
 	desc = "It's a storage unit for a Syndicate boarding party."

@@ -10,12 +10,12 @@
 	selection_color = "#ffeef0"
 	exp_type = EXP_TYPE_CREW
 	exp_requirements = 60
-	wiki_page = "Infections"
-	special_notice = "Don't release viruses, harmful or not, without the CMO's permission."
+	wiki_page = "Infections" //WaspStation Edit - Wikilinks/Warning
+	special_notice = "Don't release viruses, harmful or not, without the CMO's permission." //WaspStation Edit - Wikilinks/Warning
 
 	outfit = /datum/outfit/job/virologist
 
-	access = list(ACCESS_MEDICAL, ACCESS_MORGUE, ACCESS_SURGERY, ACCESS_CHEMISTRY, ACCESS_VIROLOGY, ACCESS_MECH_MEDICAL, ACCESS_GENETICS, ACCESS_CLONING, ACCESS_MINERAL_STOREROOM)
+	access = list(ACCESS_MEDICAL, ACCESS_MORGUE, ACCESS_SURGERY, ACCESS_CHEMISTRY, ACCESS_VIROLOGY, ACCESS_MECH_MEDICAL, ACCESS_GENETICS, ACCESS_CLONING, ACCESS_MINERAL_STOREROOM) //WaspStation edit - Gen/Sci Split
 	minimal_access = list(ACCESS_MEDICAL, ACCESS_VIROLOGY, ACCESS_MECH_MEDICAL, ACCESS_MINERAL_STOREROOM)
 	paycheck = PAYCHECK_MEDIUM
 	paycheck_department = ACCOUNT_MED

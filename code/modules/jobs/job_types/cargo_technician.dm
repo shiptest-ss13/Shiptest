@@ -8,7 +8,7 @@
 	spawn_positions = 2
 	supervisors = "the quartermaster and the head of personnel"
 	selection_color = "#dcba97"
-	wiki_page = "Cargo_technician"
+	wiki_page = "Cargo_technician" //WaspStation Edit - Wikilinks/Warning
 
 	outfit = /datum/outfit/job/cargo_tech
 

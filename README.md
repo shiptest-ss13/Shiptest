@@ -1,7 +1,7 @@
 <h1 align="center">WaspStation 13 Codebase</h1>
 
-[![Build Status](https://api.travis-ci.com/WaspStation/WaspStation-1.0.svg?branch=master)](https://travis-ci.com/WaspStation/WaspStation-1.0) [![Krihelimeter](http://www.krihelinator.xyz/badge/WaspStation/WaspStation-1.0)](https://www.krihelinator.xyz)  
-[![Percentage of issues still open](http://isitmaintained.com/badge/open/waspstation/waspstation-1.0.svg)](https://isitmaintained.com/project/tgstation/tgstation "Percentage of issues still open") [![Average time to resolve an issue](http://isitmaintained.com/badge/resolution/waspstation/waspstation-1.0.svg)](https://isitmaintained.com/project/tgstation/tgstation "Average time to resolve an issue") ![Coverage](https://img.shields.io/badge/coverage---2%25-red.svg)  
+[![Build Status](https://api.travis-ci.com/WaspStation/WaspStation-1.0.svg?branch=master)](https://travis-ci.com/WaspStation/WaspStation-1.0) [![Krihelimeter](http://www.krihelinator.xyz/badge/WaspStation/WaspStation-1.0)](https://www.krihelinator.xyz)
+[![Percentage of issues still open](http://isitmaintained.com/badge/open/waspstation/waspstation-1.0.svg)](https://isitmaintained.com/project/tgstation/tgstation "Percentage of issues still open") [![Average time to resolve an issue](http://isitmaintained.com/badge/resolution/waspstation/waspstation-1.0.svg)](https://isitmaintained.com/project/tgstation/tgstation "Average time to resolve an issue") ![Coverage](https://img.shields.io/badge/coverage---2%25-red.svg)
 [![forthebadge](https://forthebadge.com/images/badges/built-with-resentment.svg)](https://forthebadge.com) [![forthebadge](https://forthebadge.com/images/badges/contains-technical-debt.svg)](https://user-images.githubusercontent.com/8171642/50290880-ffef5500-043a-11e9-8270-a2e5b697c86c.png)[![forthebadge](https://forthebadge.com/images/badges/60-percent-of-the-time-works-every-time.svg)](https://forthebadge.com) [![forinfinityandbyond](https://user-images.githubusercontent.com/5211576/29499758-4efff304-85e6-11e7-8267-62919c3688a9.gif)](https://www.reddit.com/r/SS13/comments/5oplxp/what_is_the_main_problem_with_byond_as_an_engine/dclbu1a)
 
 * **Website:** TBA
@@ -83,14 +83,9 @@ you set up the SQL backend (see below).
 
 ## UPDATING
 
-To update an existing installation, first back up your /config and /data folders
-as these store your server configuration, player preferences and banlist.
+This is the codebase for the /tg/station flavoured fork of SpaceStation 13.
 
-Then, extract the new files (preferably into a clean directory, but updating in
-place should work fine), copy your /config and /data folders back into the new
-install, overwriting when prompted except if we've specified otherwise, and
-recompile the game.  Once you start the server up again, you should be running
-the new version.
+Space Station 13 is a paranoia-laden round-based roleplaying game set against the backdrop of a nonsensical, metal death trap masquerading as a space station, with charming spritework designed to represent the sci-fi setting and its dangerous undertones. Have fun, and survive!
 
 ## HOSTING
 
@@ -139,10 +134,10 @@ Web delivery of game resources makes it quicker for players to join and reduces 
 1. Add a url to config/external_rsc_urls pointing to a .zip file containing the .rsc.
     * If you keep up to date with /tg/ you could reuse /tg/'s rsc cdn at http://tgstation13.download/byond/tgstation.zip. Otherwise you can use cdn services like CDN77 or cloudflare (requires adding a page rule to enable caching of the zip), or roll your own cdn using route 53 and vps providers.
 	* Regardless even offloading the rsc to a website without a CDN will be a massive improvement over the in game system for transferring files.
-	
+
 ## CONTRIBUTING
 
-Please see [CONTRIBUTING.md](.github/CONTRIBUTING.md)
+[Documenting your code](.github/AUTODOC_GUIDE.md)
 
 ## CODEBASE CREDITS
 - /tg/, for the codebase

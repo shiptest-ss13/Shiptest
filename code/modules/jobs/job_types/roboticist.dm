@@ -10,11 +10,11 @@
 	selection_color = "#ffeeff"
 	exp_requirements = 60
 	exp_type = EXP_TYPE_CREW
-	wiki_page = "Guide_to_Robotics"
+	wiki_page = "Guide_to_Robotics" //WaspStation Edit - Wikilinks/Warning
 
 	outfit = /datum/outfit/job/roboticist
 
-	access = list(ACCESS_ROBOTICS, ACCESS_TOX, ACCESS_TOX_STORAGE, ACCESS_TECH_STORAGE, ACCESS_MORGUE, ACCESS_MECH_SCIENCE, ACCESS_RESEARCH, ACCESS_MINERAL_STOREROOM, ACCESS_XENOBIOLOGY)
+	access = list(ACCESS_ROBOTICS, ACCESS_TOX, ACCESS_TOX_STORAGE, ACCESS_TECH_STORAGE, ACCESS_MORGUE, ACCESS_MECH_SCIENCE, ACCESS_RESEARCH, ACCESS_MINERAL_STOREROOM, ACCESS_XENOBIOLOGY) //WaspStation edit - Gen/Sci Split
 	minimal_access = list(ACCESS_ROBOTICS, ACCESS_TECH_STORAGE, ACCESS_MORGUE, ACCESS_RESEARCH, ACCESS_MECH_SCIENCE, ACCESS_MINERAL_STOREROOM)
 	paycheck = PAYCHECK_MEDIUM
 	paycheck_department = ACCOUNT_SCI

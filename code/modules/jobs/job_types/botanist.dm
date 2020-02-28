@@ -8,7 +8,7 @@
 	spawn_positions = 2
 	supervisors = "the head of personnel"
 	selection_color = "#bbe291"
-	wiki_page = "Guide_to_Botany"
+	wiki_page = "Guide_to_Botany" //WaspStation Edit - Wikilinks/Warning
 
 	outfit = /datum/outfit/job/botanist
 

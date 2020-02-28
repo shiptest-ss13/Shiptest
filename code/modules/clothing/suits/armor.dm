@@ -110,12 +110,6 @@
 	icon_state = "capformal"
 	item_state = "capspacesuit"
 
-/obj/item/clothing/suit/armor/vest/lieutenant
-	name = "lieutenant's armor"
-	desc = "An armored vest with the lieutenant's insignia imprinted on it."
-	icon_state = "blueshield"
-	item_state = "blueshield"
-
 /obj/item/clothing/suit/armor/riot
 	name = "riot suit"
 	desc = "A suit of semi-flexible polycarbonate body armor with heavy padding to protect against melee attacks. Helps the wearer resist shoving in close quarters."

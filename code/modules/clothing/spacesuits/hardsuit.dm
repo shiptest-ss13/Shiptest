@@ -101,11 +101,11 @@
 	allowed = list(/obj/item/flashlight, /obj/item/tank/internals, /obj/item/t_scanner, /obj/item/construction/rcd, /obj/item/pipe_dispenser)
 	siemens_coefficient = 0
 	var/obj/item/clothing/head/helmet/space/hardsuit/helmet
-	actions_types = list(/datum/action/item_action/toggle_helmet)
+	actions_types = list(/datum/action/item_action/toggle_helmet) //WaspStation Edit - No Cells in EVA suits
 	var/helmettype = /obj/item/clothing/head/helmet/space/hardsuit
 	var/obj/item/tank/jetpack/suit/jetpack = null
 	var/hardsuit_type
-	pocket_storage_component_path = FALSE
+	pocket_storage_component_path = FALSE // WaspStation Edit - Exowear Pockets
 
 
 /obj/item/clothing/suit/space/hardsuit/Initialize()
@@ -743,7 +743,7 @@
 
 /obj/item/clothing/suit/space/hardsuit/shielded/process()
 	if(world.time > recharge_cooldown && current_charges < max_charges)
-		current_charges = CLAMP((current_charges + recharge_rate), 0, max_charges)
+		current_charges = clamp((current_charges + recharge_rate), 0, max_charges)
 		playsound(loc, 'sound/magic/charge.ogg', 50, TRUE)
 		if(current_charges == max_charges)
 			playsound(loc, 'sound/machines/ding.ogg', 50, TRUE)

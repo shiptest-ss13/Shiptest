@@ -8,8 +8,8 @@
 	spawn_positions = 1
 	supervisors = "the head of personnel"
 	selection_color = "#dddddd"
-	wiki_page = "Clown"
-	special_notice = "There is a difference between funny pranks and griefing. Know it."
+	wiki_page = "Clown" //WaspStation Edit - Wikilinks/Warning
+	special_notice = "There is a difference between funny pranks and griefing. Know it." //WaspStation Edit - Wikilinks/Warning
 
 	outfit = /datum/outfit/job/clown
 

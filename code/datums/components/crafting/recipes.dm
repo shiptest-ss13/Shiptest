@@ -217,6 +217,16 @@
 	time = 40
 	category = CAT_ROBOT
 
+/datum/crafting_recipe/Vibebot
+	name = "Vibebot"
+	result = /mob/living/simple_animal/bot/vibebot
+	reqs = list(/obj/item/light/bulb = 2,
+				/obj/item/bodypart/head/robot = 1,
+				/obj/item/assembly/prox_sensor = 1,
+				/obj/item/toy/crayon = 1)
+	time = 40
+	category = CAT_ROBOT
+
 /datum/crafting_recipe/improvised_pneumatic_cannon //Pretty easy to obtain but
 	name = "Pneumatic Cannon"
 	result = /obj/item/pneumatic_cannon/ghetto
@@ -794,11 +804,3 @@
             /obj/item/stack/sheet/sinew = 5)
 	result = /obj/item/key/lasso
 	category = CAT_PRIMAL
-	
-/datum/crafting_recipe/splint
-	name = "Makeshift Splint"
-	reqs = list(
-			/obj/item/stack/rods = 2,
-			/obj/item/stack/sheet/cloth = 4)
-	result = /obj/item/stack/medical/splint/ghetto
-	category = CAT_MISC

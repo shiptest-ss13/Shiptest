@@ -124,10 +124,13 @@
 	to_chat(owner, "<span class='notice'>You absorb some of the shock into your body!</span>")
 
 /obj/item/organ/stomach/ethereal/proc/adjust_charge(amount)
-	crystal_charge = CLAMP(crystal_charge + amount, ETHEREAL_CHARGE_NONE, ETHEREAL_CHARGE_DANGEROUS)
+	crystal_charge = clamp(crystal_charge + amount, ETHEREAL_CHARGE_NONE, ETHEREAL_CHARGE_DANGEROUS)
+
+// WaspStation Begin - IPCs
 
 /obj/item/organ/stomach/cell
 	name = "micro-cell"
+	icon = 'waspstation/icons/obj/surgery.dmi'
 	icon_state = "microcell"
 	w_class = WEIGHT_CLASS_NORMAL
 	zone = "chest"
@@ -143,4 +146,6 @@
 			to_chat(owner, "<span class='warning'>Alert: Heavy EMP Detected. Rebooting power cell to prevent damage.</span>")
 		if(2)
 			owner.nutrition = 250
-			to_chat(owner, "<span class='warning'>Alert: EMP Detected. Cycling battery.</span>") 
+			to_chat(owner, "<span class='warning'>Alert: EMP Detected. Cycling battery.</span>")
+
+// WaspStation End

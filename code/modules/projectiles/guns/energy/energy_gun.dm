@@ -61,15 +61,6 @@
 	ammo_x_offset = 4
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | ACID_PROOF
 
-/obj/item/gun/energy/e_gun/lieutenant
-	name = "advanced stun revolver"
-	desc = "An advanced stun revolver with the capacity to shoot both disabler and lethal lasers."
-	icon_state = "bsgun"
-	item_state = "gun"
-	force = 7
-	ammo_type = list(/obj/item/ammo_casing/energy/disabler/hos, /obj/item/ammo_casing/energy/laser/hos)
-	ammo_x_offset = 1
-
 /obj/item/gun/energy/e_gun/dragnet
 	name = "\improper DRAGnet"
 	desc = "The \"Dynamic Rapid-Apprehension of the Guilty\" net is a revolution in law enforcement technology."

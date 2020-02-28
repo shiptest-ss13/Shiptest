@@ -57,8 +57,11 @@
 #define SPAN_REALLYBIG "reallybig"
 #define SPAN_COMMAND "command_headset"
 #define SPAN_CLOWN "clown"
-#define SPAN_SGA "sga"
 #define SPAN_SINGING "singing"
+
+//WaspStation Spans - Begin
+#define SPAN_SGA "sga"
+//WaspStation Spans - End
 
 //bitflag #defines for return value of the radio() proc.
 #define ITALICS 1

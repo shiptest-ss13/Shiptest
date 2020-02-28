@@ -39,6 +39,7 @@ import { DecalPainter } from './interfaces/DecalPainter';
 import { DisposalUnit } from './interfaces/DisposalUnit';
 import { DnaVault } from './interfaces/DnaVault';
 import { EightBallVote } from './interfaces/EightBallVote';
+import { Electropack } from './interfaces/Electropack';
 import { EmergencyShuttleConsole } from './interfaces/EmergencyShuttleConsole';
 import { EngravedMessage } from './interfaces/EngravedMessage';
 import { FaxMachine } from './interfaces/FaxMachine';
@@ -93,6 +94,7 @@ import { PortablePump, PortableScrubber } from './interfaces/PortableAtmos';
 import { PowerMonitor } from './interfaces/PowerMonitor';
 import { ProximitySensor } from './interfaces/ProximitySensor';
 import { Radio } from './interfaces/Radio';
+import { RadioactiveMicrolaser } from './interfaces/RadioactiveMicrolaser';
 import { RapidPipeDispenser } from './interfaces/RapidPipeDispenser';
 import { Roulette } from './interfaces/Roulette';
 import { SatelliteControl } from './interfaces/SatelliteControl';
@@ -114,6 +116,7 @@ import { TankDispenser } from './interfaces/TankDispenser';
 import { Teleporter } from './interfaces/Teleporter';
 import { ThermoMachine } from './interfaces/ThermoMachine';
 import { Timer } from './interfaces/Timer';
+import { TransferValve } from './interfaces/TransferValve';
 import { TurbineComputer } from './interfaces/TurbineComputer';
 import { TurboLift } from './interfaces/TurboLift';
 import { Uplink } from './interfaces/Uplink';
@@ -290,6 +293,10 @@ const ROUTES = {
   },
   eightball: {
     component: () => EightBallVote,
+    scrollable: false,
+  },
+  electropack: {
+    component: () => Electropack,
     scrollable: false,
   },
   emergency_shuttle_console: {
@@ -554,6 +561,10 @@ const ROUTES = {
     component: () => Radio,
     scrollable: false,
   },
+  radioactive_microlaser: {
+    component: () => RadioactiveMicrolaser,
+    scrollable: false,
+  },
   roulette: {
     component: () => Roulette,
     scrollable: false,
@@ -643,6 +654,10 @@ const ROUTES = {
   },
   timer: {
     component: () => Timer,
+    scrollable: false,
+  },
+  transfer_valve: {
+    component: () => TransferValve,
     scrollable: false,
   },
   turbine_computer: {

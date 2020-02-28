@@ -24,7 +24,7 @@
 #define GLOVES_LAYER			19
 #define SHOES_LAYER				18
 #define EARS_LAYER				17
-#define SPLINT_LAYER			16
+#define SPLINT_LAYER			16		//WaspStation Edit - breakable bones
 #define SUIT_LAYER				15
 #define GLASSES_LAYER			14
 #define BELT_LAYER				13		//Possible make this an overlay of somethign required to wear a belt?
@@ -263,14 +263,11 @@ GLOBAL_LIST_INIT(pda_styles, sortList(list(MONO, VT, ORBITRON, SHARE)))
 #define MAP_MAXY 5
 #define MAP_MAXZ 6
 
-// Defib stats
-#define DEFIB_TIME_LIMIT 900 //15 Minutes
-#define DEFIB_TIME_LOSS 60
-
 // Diagonal movement
 #define FIRST_DIAG_STEP 1
 #define SECOND_DIAG_STEP 2
 
+#define DEADCHAT_ANNOUNCEMENT "announcement"
 #define DEADCHAT_ARRIVALRATTLE "arrivalrattle"
 #define DEADCHAT_DEATHRATTLE "deathrattle"
 #define DEADCHAT_LAWCHANGE "lawchange"
@@ -476,8 +473,10 @@ GLOBAL_LIST_INIT(pda_styles, sortList(list(MONO, VT, ORBITRON, SHARE)))
 #define FALL_NO_MESSAGE			(1<<1) //Used to suppress the "[A] falls through [old_turf]" messages where it'd make little sense at all, like going downstairs.
 #define FALL_STOP_INTERCEPTING	(1<<2) //Used in situations where halting the whole "intercept" loop would be better, like supermatter dusting (and thus deleting) the atom.
 
-// Bone flags
+// WaspStation Begin - Bone flags
 #define BONE_FLAG_NO_BONES 		0
 #define BONE_FLAG_NORMAL		1
 #define BONE_FLAG_BROKEN		2
 #define BONE_FLAG_SPLINTED		3
+// WaspStation End
+

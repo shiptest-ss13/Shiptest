@@ -65,17 +65,6 @@
 	else
 		. += "cell-o1"
 
-/obj/item/stock_parts/cell/gun/update_icon()
-	cut_overlays()
-	if(grown_battery)
-		. += mutable_appearance('icons/obj/power.dmi', "grown_wires")
-	if(charge < 0.01)
-		return
-	else if(charge/maxcharge >=0.995)
-		add_overlay("g-cell-o2")
-	else
-		add_overlay("g-cell-o1")
-
 /obj/item/stock_parts/cell/proc/percent()		// return % charge of cell
 	return 100*charge/maxcharge
 
@@ -187,7 +176,7 @@
 
 /obj/item/stock_parts/cell/proc/get_electrocute_damage()
 	if(charge >= 1000)
-		return CLAMP(20 + round(charge/25000), 20, 195) + rand(-5,5)
+		return clamp(20 + round(charge/25000), 20, 195) + rand(-5,5)
 	else
 		return 0
 
@@ -234,6 +223,7 @@
 
 /obj/item/stock_parts/cell/gun
 	name = "weapon power cell"
+	icon = 'waspstation/icons/obj/power.dmi'
 	icon_state = "g-cell"
 	maxcharge = 10000
 	custom_materials = list(/datum/material/glass=60)
@@ -404,7 +394,7 @@
 	. = ..()
 	if(. & EMP_PROTECT_SELF)
 		return
-	charge = CLAMP((charge-(10000/severity)),0,maxcharge)
+	charge = clamp((charge-(10000/severity)),0,maxcharge)
 
 /obj/item/stock_parts/cell/emergency_light
 	name = "miniature power cell"

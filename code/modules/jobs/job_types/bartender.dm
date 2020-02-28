@@ -9,7 +9,7 @@
 	supervisors = "the head of personnel"
 	selection_color = "#bbe291"
 	exp_type_department = EXP_TYPE_SERVICE // This is so the jobs menu can work properly
-	wiki_page = "Drinks"
+	wiki_page = "Drinks" //WaspStation Edit - Wikilinks/Warning
 
 	outfit = /datum/outfit/job/bartender
 

@@ -103,10 +103,6 @@
 #define TR_KEEPSTUNS	(1<<9)
 #define TR_KEEPREAGENTS	(1<<10)
 
-
-#define CLONER_FRESH_CLONE "fresh"
-#define CLONER_MATURE_CLONE "mature"
-
 //species traits for mutantraces
 #define MUTCOLORS		1
 #define HAIR			2
@@ -134,7 +130,7 @@
 #define NOHUSK			22 // Can't be husked.
 #define ROBOTIC_LIMBS	23 //limbs start out as robotic; but also use organic icons. If you want to use the default ones, you'll have to use on_species_gain
 #define NOMOUTH			24
-#define NO_BONES		25
+#define NO_BONES		25 //WaspStation Edit - Breakable Bones
 
 //organ slots
 #define ORGAN_SLOT_BRAIN "brain"

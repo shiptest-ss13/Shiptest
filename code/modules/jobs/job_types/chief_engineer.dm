@@ -15,7 +15,7 @@
 	exp_requirements = 180
 	exp_type = EXP_TYPE_CREW
 	exp_type_department = EXP_TYPE_ENGINEERING
-	wiki_page = "Chief_Engineer"
+	wiki_page = "Chief_Engineer" //WaspStation Edit - Wikilinks/Warning
 
 	outfit = /datum/outfit/job/ce
 

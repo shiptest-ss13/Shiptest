@@ -68,8 +68,8 @@
 		            /obj/item/clothing/under/dress/skirt/red = 2,
 		            /obj/item/clothing/under/dress/skirt/purple = 2,
 		            /obj/item/clothing/under/suit/white/skirt = 2,
-		            /obj/item/clothing/under/rank/captain/suit/skirt = 2,
-		            /obj/item/clothing/under/rank/civilian/head_of_personnel/suit/skirt = 2,
+		            /obj/item/clothing/under/rank/command/captain/suit/skirt = 2,
+		            /obj/item/clothing/under/rank/command/head_of_personnel/suit/skirt = 2,
 		            /obj/item/clothing/suit/jacket = 2,
 		            /obj/item/clothing/suit/jacket/puffer/vest = 2,
 		            /obj/item/clothing/suit/jacket/puffer = 2,
@@ -126,7 +126,7 @@
 		           /obj/item/clothing/under/pants/mustangjeans = 1,
 		           /obj/item/clothing/neck/necklace/dope = 3,
 		           /obj/item/clothing/suit/jacket/letterman_nanotrasen = 1,
-		           /obj/item/clothing/ears/earmuffs/spacepods = 1)
+		           /obj/item/instrument/piano_synth/headphones/spacepods = 1)
 	refill_canister = /obj/item/vending_refill/clothing
 	default_price = 60
 	extra_price = 120

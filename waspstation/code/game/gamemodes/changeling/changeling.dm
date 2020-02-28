@@ -1,0 +1,6 @@
+
+//////////////////////////////////////////
+//Checks to see if someone is changeling//
+//////////////////////////////////////////
+/proc/is_changeling(mob/M)
+	return M.mind?.has_antag_datum(/datum/antagonist/changeling)

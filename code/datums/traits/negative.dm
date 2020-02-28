@@ -133,8 +133,8 @@
 				heirloom_type = /obj/item/reagent_containers/food/drinks/bottle/whiskey
 			if("Lawyer")
 				heirloom_type = pick(/obj/item/gavelhammer, /obj/item/book/manual/wiki/security_space_law)
-			if("Brig Physician")
-				heirloom_type = pick(/obj/item/clothing/neck/stethoscope, /obj/item/roller, /obj/item/book/manual/wiki/security_space_law)
+			if("Brig Physician") // Waspstation edit - Brig Physicians
+				heirloom_type = pick(/obj/item/clothing/neck/stethoscope, /obj/item/roller, /obj/item/book/manual/wiki/security_space_law) // Waspstation edit - Brig Physicians
 			if("Prisoner")
 				heirloom_type = /obj/item/pen/blue
 			//RnD
@@ -204,12 +204,6 @@
 	else
 		SEND_SIGNAL(quirk_holder, COMSIG_CLEAR_MOOD_EVENT, "family_heirloom")
 		SEND_SIGNAL(quirk_holder, COMSIG_ADD_MOOD_EVENT, "family_heirloom_missing", /datum/mood_event/family_heirloom_missing)
-
-/datum/quirk/family_heirloom/clone_data()
-	return heirloom
-
-/datum/quirk/family_heirloom/on_clone(data)
-	heirloom = data
 
 /datum/quirk/frail
 	name = "Frail"

@@ -15,7 +15,7 @@
 /obj/item/card
 	name = "card"
 	desc = "Does card things."
-	icon = 'icons/obj/card.dmi'
+	icon = 'waspstation/icons/obj/card.dmi' //WaspStation Edit - Actually good-looking IDs >:)
 	w_class = WEIGHT_CLASS_TINY
 
 	var/list/files = list()

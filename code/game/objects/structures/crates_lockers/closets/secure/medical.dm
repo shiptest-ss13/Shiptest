@@ -37,13 +37,16 @@
 
 /obj/structure/closet/secure_closet/medical3/PopulateContents()
 	..()
-	new /obj/item/clothing/head/beret/med(src)
+	//WaspStation Begin
+	new /obj/item/storage/box/hypospray(src) //Hypo Mk. 2s
+	new /obj/item/storage/bag/medical(src) //Medibags
+	new /obj/item/clothing/head/beret/med(src) //Berets
+	//WaspStation End
 	new /obj/item/radio/headset/headset_med(src)
 	new /obj/item/defibrillator/loaded(src)
 	new /obj/item/clothing/gloves/color/latex/nitrile(src)
 	new /obj/item/storage/belt/medical(src)
 	new /obj/item/clothing/glasses/hud/health(src)
-	new /obj/item/storage/box/hypospray(src)
 	return
 
 /obj/structure/closet/secure_closet/CMO
@@ -53,7 +56,14 @@
 
 /obj/structure/closet/secure_closet/CMO/PopulateContents()
 	..()
-	new /obj/item/clothing/head/beret/cmo(src)
+	//WaspStation Begin
+	new /obj/item/storage/belt/medical(src) //Gives the CMO a belt
+	new /obj/item/storage/bag/medical(src) //Medibags
+	new /obj/item/clothing/head/beret/cmo(src) //Berets
+	new /obj/item/clothing/under/rank/command(src) //Better command uniforms
+	new /obj/item/storage/box/hypospray/CMO(src) //Hypo mk. 2s
+	new /obj/item/card/id/departmental_budget/med(src) //Budget cards
+	//WaspStation End
 	new /obj/item/clothing/neck/cloak/cmo(src)
 	new /obj/item/clothing/suit/bio_suit/cmo(src)
 	new /obj/item/clothing/head/bio_hood/cmo(src)
@@ -76,8 +86,6 @@
 	new /obj/item/wallframe/defib_mount(src)
 	new /obj/item/circuitboard/machine/techfab/department/medical(src)
 	new /obj/item/storage/photo_album/CMO(src)
-	new /obj/item/card/id/departmental_budget/med(src)
-	new /obj/item/storage/box/hypospray/CMO(src)
 
 /obj/structure/closet/secure_closet/animal
 	name = "animal control"

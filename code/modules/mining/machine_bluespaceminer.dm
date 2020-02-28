@@ -17,12 +17,6 @@
 	materials = null
 	return ..()
 
-/obj/machinery/mineral/bluespace_miner/multitool_act(mob/living/user, obj/item/multitool/M)
-	if(istype(M))
-		if(!M.buffer || !istype(M.buffer, /obj/machinery/ore_silo))
-			to_chat(user, "<span class='warning'>You need to multitool the ore silo first.</span>")
-			return FALSE
-
 /obj/machinery/mineral/bluespace_miner/examine(mob/user)
 	. = ..()
 	if(!materials?.silo)
@@ -38,4 +32,4 @@
 		return
 	var/datum/material/ore = pick(ore_rates)
 	mat_container.insert_amount_mat((ore_rates[ore] * 1000), ore)
-	
+

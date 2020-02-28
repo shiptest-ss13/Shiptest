@@ -8,7 +8,7 @@
 	spawn_positions = 1
 	supervisors = "the head of personnel"
 	selection_color = "#bbe291"
-	wiki_page = "Food"
+	wiki_page = "Food" //WaspStation Edit - Wikilinks/Warning
 	var/cooks = 0 //Counts cooks amount
 
 	outfit = /datum/outfit/job/cook

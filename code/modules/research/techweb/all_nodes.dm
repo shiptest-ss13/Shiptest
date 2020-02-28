@@ -47,9 +47,9 @@
 	id = "basic_tools"
 	starting_node = TRUE
 	display_name = "Basic Tools"
-	description = "Basic mechanical, electronic, and botanical tools."
-	design_ids = list("screwdriver", "wrench", "wirecutters", "crowbar", "multitool", "welding_tool", "tscanner", "analyzer", "cable_coil", "pipe_painter", "airlock_painter", "floor_painter",
-					"cultivator", "plant_analyzer", "shovel", "spade", "hatchet", "mop", "plunger")
+	description = "Basic mechanical, electronic, surgical and botanical tools."
+	design_ids = list("screwdriver", "wrench", "wirecutters", "crowbar", "multitool", "welding_tool", "tscanner", "analyzer", "cable_coil", "pipe_painter", "airlock_painter",
+					"cultivator", "plant_analyzer", "shovel", "spade", "hatchet", "mop", "floor_painter", "plunger") //WaspStation Edit - Floor Painters
 
 /datum/techweb_node/basic_medical
 	id = "basic_medical"
@@ -57,7 +57,7 @@
 	display_name = "Basic Medical Equipment"
 	description = "Basic medical tools and equipment."
 	design_ids = list("cybernetic_liver", "cybernetic_heart", "cybernetic_lungs", "scalpel", "circular_saw", "surgicaldrill", "retractor", "cautery", "hemostat",
-					"syringe", "plumbing_rcd", "beaker", "large_beaker", "xlarge_beaker", "dropper")
+					"syringe", "plumbing_rcd", "beaker", "large_beaker", "xlarge_beaker", "dropper") //WaspStation Edit - Surgical Drape Removal
 
 /////////////////////////Biotech/////////////////////////
 /datum/techweb_node/biotech
@@ -65,7 +65,7 @@
 	display_name = "Biological Technology"
 	description = "What makes us tick."	//the MC, silly!
 	prereq_ids = list("base")
-	design_ids = list("chem_heater", "chem_master", "chem_dispenser", "pandemic", "sleeper", "defibrillator", "defibmount", "operating", "soda_dispenser", "beer_dispenser", "healthanalyzer", "medigel","genescanner", "med_spray_bottle", "chem_pack", "blood_pack", "medical_kiosk", "crewpinpointerprox", "medipen_refiller")
+	design_ids = list("sleeper", "chem_heater", "chem_master", "chem_dispenser", "pandemic", "defibrillator", "defibmount", "operating", "soda_dispenser", "beer_dispenser", "healthanalyzer", "medigel","genescanner", "med_spray_bottle", "chem_pack", "blood_pack", "medical_kiosk", "crewpinpointerprox", "medipen_refiller")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 	export_price = 5000
 
@@ -153,7 +153,7 @@
 	display_name = "Advanced Engineering"
 	description = "Pushing the boundaries of physics, one chainsaw-fist at a time."
 	prereq_ids = list("engineering", "emp_basic")
-	design_ids = list("engine_goggles", "magboots", "forcefield_projector", "weldingmask", "rcd_loaded")
+	design_ids = list("engine_goggles", "magboots", "forcefield_projector", "weldingmask", "rcd_loaded", "rpd_loaded")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 	export_price = 5000
 
@@ -467,12 +467,12 @@
 	export_price = 5000
 
 ////////////////////////Medical////////////////////////
-/datum/techweb_node/cloning
-	id = "cloning"
+/datum/techweb_node/genetics
+	id = "genetics"
 	display_name = "Genetic Engineering"
-	description = "We have the technology to make him."
+	description = "We have the technology to change him."
 	prereq_ids = list("biotech")
-	design_ids = list("clonecontrol", "clonepod", "clonescanner", "scan_console", "cloning_disk")
+	design_ids = list("dnascanner", "scan_console", "dna_disk")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 	export_price = 5000
 
@@ -1153,6 +1153,30 @@
 	export_price = 3500
 	hidden = TRUE
 	experimental = TRUE
+
+/datum/techweb_node/sticky_basic
+	id = "sticky_basic"
+	display_name = "Basic Sticky Technology"
+	description = "The only thing left to do after researching this tech is to start printing out a bunch of 'kick me' signs."
+	prereq_ids = list("base")
+	design_ids = list("sticky_tape")
+
+	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
+	export_price = 2500
+	hidden = TRUE
+	experimental = TRUE
+
+// Can be researched after getting the basic sticky technology from the BEPIS major reward
+/datum/techweb_node/sticky_advanced
+	id = "sticky_advanced"
+	display_name = "Advanced Sticky Technology"
+	description = "Taking a good joke too far? Nonsense!"
+	prereq_ids = list("sticky_basic")
+	design_ids = list("super_sticky_tape", "pointy_tape")
+
+	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 5000)
+	export_price = 2500
+	hidden = TRUE
 
 //Helpers for debugging/balancing the techweb in its entirety!
 /proc/total_techweb_exports()

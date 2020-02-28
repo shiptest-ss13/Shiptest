@@ -26,7 +26,7 @@
 #define ACCESS_AI_UPLOAD 16
 #define ACCESS_TELEPORTER 17
 #define ACCESS_EVA 18
-/// Bridge, EVA storage windoors, gateway shutters, AI integrity restorer, clone record deletion, comms console
+/// Bridge, EVA storage windoors, gateway shutters, AI integrity restorer, comms console
 #define ACCESS_HEADS 19
 #define ACCESS_CAPTAIN 20
 #define ACCESS_ALL_PERSONAL_LOCKERS 21
@@ -59,7 +59,7 @@
 #define ACCESS_MINING_STATION 54
 #define ACCESS_XENOBIOLOGY 55
 #define ACCESS_CE 56
-#define ACCESS_FO 57
+#define ACCESS_HOP 57
 #define ACCESS_HOS 58
 /// Request console announcements
 #define ACCESS_RC_ANNOUNCE 59
@@ -77,12 +77,17 @@
 #define ACCESS_WEAPONS 66
 /// NTnet diagnostics/monitoring software
 #define ACCESS_NETWORK 67
-/// Cloning room and clone pod ejection
-#define ACCESS_CLONING 68
 /// Pharmacy access (Chemistry room in Medbay)
 #define ACCESS_PHARMACY 69 ///Nice.
-// Lieutenant's Office
-#define ACCESS_SECOND_OFFICER 70
+
+//WaspStation Begin
+
+/// Cloning room and clone pod ejection
+#define ACCESS_CLONING 68
+/// Lieutenant's Office
+#define ACCESS_LIEUTENANT 90 //Let's give em plenty of room, now
+
+
 
 	//BEGIN CENTCOM ACCESS
 	/*Should leave plenty of room if we need to add more access levels.

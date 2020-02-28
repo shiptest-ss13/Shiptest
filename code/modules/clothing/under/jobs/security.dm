@@ -176,15 +176,6 @@
 	body_parts_covered = CHEST|GROIN|ARMS
 	can_adjust = FALSE
 	fitted = FEMALE_UNIFORM_TOP
-/*
- * Brig Physician
-*/
-
-/obj/item/clothing/under/rank/security/brig_phys
-	name = "brig physician's uniform"
-	desc = "A lightly armored uniform worn by Nanotrasen's Asset Protection Medical Corps."
-	icon_state = "brig_phys"
-	item_state = "labcoat_sec"
 
 /obj/item/clothing/under/rank/security/head_of_security/parade
 	name = "head of security's parade uniform"

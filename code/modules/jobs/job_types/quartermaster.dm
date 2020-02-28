@@ -8,8 +8,8 @@
 	spawn_positions = 1
 	supervisors = "the head of personnel"
 	selection_color = "#d7b088"
-	wiki_page = "Quartermaster"
-	special_notice = "You are not a head of staff. You answer to the Head of Personnel."
+	wiki_page = "Quartermaster" //WaspStation Edit - Wikilinks/Warning
+	special_notice = "You are not a head of staff. You answer to the Head of Personnel." //WaspStation Edit - Wikilinks/Warning
 
 	outfit = /datum/outfit/job/quartermaster
 

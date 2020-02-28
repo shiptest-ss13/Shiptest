@@ -246,15 +246,6 @@
 	category = list("initial","Tools","Tool Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING
 
-/datum/design/floor_painter
-	name = "Floor Painter"
-	id = "floor_painter"
-	build_type = AUTOLATHE | PROTOLATHE
-	materials = list(/datum/material/iron = 300, /datum/material/glass = 100)
-	build_path = /obj/item/airlock_painter/floor_painter
-	category = list("initial","Tools","Tool Designs")
-	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING
-
 /datum/design/emergency_oxygen
 	name = "Emergency Oxygen Tank"
 	id = "emergency_oxygen"
@@ -736,14 +727,6 @@
 	materials = list(/datum/material/iron = 500)
 	build_path = /obj/item/flamethrower/full
 	category = list("hacked", "Security")
-
-/datum/design/rpd
-	name = "Rapid Pipe Dispenser (RPD)"
-	id = "rpd"
-	build_type = AUTOLATHE
-	materials = list(/datum/material/iron = 75000, /datum/material/glass = 37500)
-	build_path = /obj/item/pipe_dispenser
-	category = list("hacked", "Construction")
 
 /datum/design/electropack
 	name = "Electropack"

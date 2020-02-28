@@ -5,7 +5,9 @@
 
 /obj/structure/closet/secure_closet/RD/PopulateContents()
 	..()
-	new /obj/item/clothing/head/beret/sci(src)
+	new /obj/item/clothing/head/beret/sci(src) // Waspstation edit - Berets
+	new /obj/item/card/id/departmental_budget/sci(src) // WaspStation Edit - Budget Cards
+	new /obj/item/clothing/under/rank/command(src) // WaspStation edit - better command uniforms
 	new /obj/item/clothing/neck/cloak/rd(src)
 	new /obj/item/clothing/suit/bio_suit/scientist(src)
 	new /obj/item/clothing/head/bio_hood/scientist(src)
@@ -27,4 +29,4 @@
 	new /obj/item/door_remote/research_director(src)
 	new /obj/item/circuitboard/machine/techfab/department/science(src)
 	new /obj/item/storage/photo_album/RD(src)
-	new /obj/item/card/id/departmental_budget/sci(src)
+

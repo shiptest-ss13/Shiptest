@@ -9,12 +9,6 @@
 	var/slot
 	// DO NOT add slots with matching names to different zones - it will break internal_organs_slot list!
 	var/organ_flags = ORGAN_EDIBLE
-	var/vital = 0
-	//Was this organ implanted/inserted/etc, if true will not be removed during species change.
-	var/external = FALSE
-	//whether to call Remove() when qdeling the organ.
-	var/remove_on_qdel = TRUE
-	var/synthetic = FALSE // To distinguish between organic and synthetic organs
 	var/maxHealth = STANDARD_ORGAN_THRESHOLD
 	var/damage = 0		//total damage this organ has sustained
 	///Healing factor and decay factor function on % of maxhealth, and do not work by applying a static number per tick
@@ -35,6 +29,15 @@
 	///When you take a bite you cant jam it in for surgery anymore.
 	var/useable = TRUE
 	var/list/food_reagents = list(/datum/reagent/consumable/nutriment = 5)
+
+	//WaspStation Begin - IPCS
+	var/vital = 0
+	//Was this organ implanted/inserted/etc, if true will not be removed during species change.
+	var/external = FALSE
+	//whether to call Remove() when qdeling the organ.
+	var/remove_on_qdel = TRUE
+	var/synthetic = FALSE // To distinguish between organic and synthetic organs
+	//WaspStation End
 
 /obj/item/organ/Initialize()
 	. = ..()
@@ -141,7 +144,7 @@
 		return
 	if(maximum < damage)
 		return
-	damage = CLAMP(damage + d, 0, maximum)
+	damage = clamp(damage + d, 0, maximum)
 	var/mess = check_damage_thresholds(owner)
 	prev_damage = damage
 	if(mess && owner)

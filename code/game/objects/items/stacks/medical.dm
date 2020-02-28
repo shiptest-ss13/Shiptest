@@ -12,12 +12,12 @@
 	max_integrity = 40
 	novariants = FALSE
 	item_flags = NOBLUDGEON
+	var/splint_fracture = FALSE //WaspStation Edit- Splints
+	var/failure_chance //Waspstation Edit - Failure chance
 	var/self_delay = 50
 	var/other_delay = 0
 	var/repeating = FALSE
 	var/experience_given = 1
-	var/splint_fracture = FALSE
-	var/failure_chance
 
 /obj/item/stack/medical/attack(mob/living/M, mob/user)
 	. = ..()
@@ -55,9 +55,13 @@
 	if(affecting.status != BODYPART_ORGANIC) //Limb must be organic to be healed - RR
 		to_chat(user, "<span class='warning'>\The [src] won't work on a robotic limb!</span>")
 		return
+
+	//Waspstation begin - failure chance
 	if(prob(failure_chance))
 		user.visible_message("<span class='warning'>[user] tries to apply \the [src] on [C]'s [affecting.name], but fails!</span>", "<span class='warning'>You try to apply \the [src] on  on [C]'s [affecting.name], but fail!")
 		return
+	//Waspstation end
+
 	if(affecting.brute_dam && brute || affecting.burn_dam && burn)
 		user.visible_message("<span class='green'>[user] applies \the [src] on [C]'s [affecting.name].</span>", "<span class='green'>You apply \the [src] on [C]'s [affecting.name].</span>")
 		var/brute2heal = brute
@@ -69,6 +73,9 @@
 		if(affecting.heal_damage(brute2heal, burn2heal))
 			C.update_damage_overlays()
 		return TRUE
+
+
+	//WaspStation Begin - Splints
 	if(splint_fracture) //Check if it's a splint and the bone is broken
 		if(affecting.body_part in list(CHEST, HEAD)) // Check if it isn't the head or chest
 			to_chat(user, "<span class='warning'>You can't splint that bodypart!</span>")
@@ -83,6 +90,9 @@
 		C.update_inv_splints()
 		user.visible_message("<span class='green'>[user] applies [src] on [C].</span>", "<span class='green'>You apply [src] on [C]'s [affecting.name].</span>")
 		return TRUE
+	//WaspStation End
+
+
 	to_chat(user, "<span class='warning'>[C]'s [affecting.name] can not be healed with \the [src]!</span>")
 
 
@@ -310,31 +320,3 @@
 
 	The interesting limb targeting mechanic is retained and i still believe they will be a viable choice, especially when healing others in the field.
 	 */
-
-// SPLINTS
-/obj/item/stack/medical/splint
-	amount = 4
-	name = "splints"
-	desc = "Used to secure limbs following a fracture."
-	gender = PLURAL
-	singular_name = "splint"
-	icon = 'icons/obj/items_and_weapons.dmi'
-	icon_state = "splint"
-	self_delay = 40
-	other_delay = 15
-	splint_fracture = TRUE
-
-/obj/item/stack/medical/splint/heal(mob/living/M, mob/user)
-	. = ..()
-	if(iscarbon(M))
-		return heal_carbon(M, user)
-	to_chat(user, "<span class='warning'>You can't splint [M]'s limb' with the \the [src]!</span>")
-
-/obj/item/stack/medical/splint/ghetto //slightly shittier, but gets the job done
-	name = "makeshift splints"
-	desc = "Used to secure limbs following a fracture. This one is made out of simple materials."
-	amount = 2
-	self_delay = 50
-	other_delay = 20
-	failure_chance = 20
-

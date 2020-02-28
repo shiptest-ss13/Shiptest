@@ -128,6 +128,8 @@
 			else
 				. += "<span class='deadsay'>[t_He] [t_is] limp and unresponsive; there are no signs of life...</span>"
 
+//WaspStaion Begin - Broken Bones
+
 	var/list/splinted_stuff = list()
 	for(var/obj/item/bodypart/B in bodyparts)
 		if(B.bone_status == BONE_FLAG_SPLINTED)
@@ -135,6 +137,7 @@
 	if(splinted_stuff.len)
 		. += "<span class='warning'><B>[t_His] [english_list(splinted_stuff)] [splinted_stuff.len > 1 ? "are" : "is"] splinted!</B></span>\n"
 
+//WaspStation End
 
 
 	if(get_bodypart(BODY_ZONE_HEAD) && !getorgan(/obj/item/organ/brain))
@@ -152,7 +155,10 @@
 			disabled += BP
 		missing -= BP.body_zone
 		for(var/obj/item/I in BP.embedded_objects)
-			msg += "<B>[t_He] [t_has] \a [icon2html(I, user)] [I] embedded in [t_his] [BP.name]!</B>\n"
+			if(I.is_embed_harmless())
+				msg += "<B>[t_He] [t_has] \a [icon2html(I, user)] [I] stuck to [t_his] [BP.name]!</B>\n"
+			else
+				msg += "<B>[t_He] [t_has] \a [icon2html(I, user)] [I] embedded in [t_his] [BP.name]!</B>\n"
 
 	for(var/X in disabled)
 		var/obj/item/bodypart/BP = X
