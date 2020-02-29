@@ -12,10 +12,6 @@
 
 	baseturfs = /turf/open/floor/plating
 
-	//WaspStation Begin - FastDMM Support
-	FASTDMM_PROP(\
-		pipe_astar_cost = 50 /* THOSE WHO PLACE PIPES AND WIRES UNDER WALLS SHOULD BE BURNED AT THE STAKE */\
-	)
 	//WaspStation End
 
 	///lower numbers are harder. Used to determine the probability of a hulk smashing through. Also, (hardness - 40) is used as a modifier for objects trying to embed in this (hardness of 30 results in a -10% chance)

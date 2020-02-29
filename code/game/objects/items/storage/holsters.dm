@@ -1,6 +1,7 @@
 
 /* WaspStation Begin - Holsters are Accessories
 
+
 /obj/item/storage/belt/holster
 	name = "shoulder holster"
 	desc = "A rather plain but still badass looking holster with a single pouch that can hold a small firearm."
@@ -119,5 +120,6 @@
 		/obj/item/gun/ballistic/shotgun,
 		/obj/item/gun/ballistic/rocketlauncher
 		))
+
 
 WaspStation End */

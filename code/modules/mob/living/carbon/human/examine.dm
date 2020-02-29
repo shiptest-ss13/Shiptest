@@ -137,9 +137,6 @@
 	if(splinted_stuff.len)
 		. += "<span class='warning'><B>[t_His] [english_list(splinted_stuff)] [splinted_stuff.len > 1 ? "are" : "is"] splinted!</B></span>\n"
 
-//WaspStation End
-
-
 	if(get_bodypart(BODY_ZONE_HEAD) && !getorgan(/obj/item/organ/brain))
 		. += "<span class='deadsay'>It appears that [t_his] brain is missing...</span>"
 
@@ -292,7 +289,7 @@
 				if(mood.sanity <= SANITY_DISTURBED)
 					msg += "[t_He] seem[p_s()] distressed.\n"
 					SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT, "empath", /datum/mood_event/sad_empath, src)
-				if (HAS_TRAIT(src, TRAIT_BLIND))
+				if (is_blind())
 					msg += "[t_He] appear[p_s()] to be staring off into space.\n"
 				if (HAS_TRAIT(src, TRAIT_DEAF))
 					msg += "[t_He] appear[p_s()] to not be responding to noises.\n"

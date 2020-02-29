@@ -26,7 +26,6 @@ Contents:
 
 		//Important parts of the suit.
 	var/mob/living/carbon/human/affecting = null
-	var/obj/item/stock_parts/cell/cell
 	var/datum/effect_system/spark_spread/spark_system
 	var/datum/techweb/stored_research
 	var/obj/item/disk/tech_disk/t_disk//To copy design onto disk.
@@ -75,6 +74,17 @@ Contents:
 	cell.charge = 9000
 	cell.name = "black power cell"
 	cell.icon_state = "bscell"
+
+// seal the cell in the ninja outfit
+/obj/item/clothing/suit/space/space_ninja/toggle_spacesuit_cell(mob/user)
+	return
+
+// Space Suit temperature regulation and power usage
+/obj/item/clothing/suit/space/space_ninja/process()
+	var/mob/living/carbon/human/user = src.loc
+	if(!user || !ishuman(user) || !(user.wear_suit == src))
+		return
+	user.adjust_bodytemperature(BODYTEMP_NORMAL - user.bodytemperature)
 
 //Simply deletes all the attachments and self, killing all related procs.
 /obj/item/clothing/suit/space/space_ninja/proc/terminate()

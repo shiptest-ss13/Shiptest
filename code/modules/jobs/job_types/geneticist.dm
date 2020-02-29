@@ -6,18 +6,18 @@
 	faction = "Station"
 	total_positions = 2
 	spawn_positions = 2
-	supervisors = "the chief medical officer"
+	supervisors = "the chief medical officer" //WaspStation Edit - Gen/Sci Split
 	selection_color = "#ffeef0"
 	exp_type = EXP_TYPE_CREW
 	exp_requirements = 60
-	wiki_page = "Guide_to_Genetics"
+	wiki_page = "Guide_to_Genetics" //WaspStation Edit - Wikilinks
 
 	outfit = /datum/outfit/job/geneticist
 
 	access = list(ACCESS_MEDICAL, ACCESS_MORGUE, ACCESS_CHEMISTRY, ACCESS_GENETICS, ACCESS_CLONING, ACCESS_MECH_MEDICAL, ACCESS_RESEARCH, ACCESS_XENOBIOLOGY, ACCESS_ROBOTICS, ACCESS_MINERAL_STOREROOM, ACCESS_TECH_STORAGE) //WaspStation edit - Gen/Sci Split
 	minimal_access = list(ACCESS_MEDICAL, ACCESS_MORGUE, ACCESS_GENETICS, ACCESS_CLONING, ACCESS_MECH_MEDICAL, ACCESS_MINERAL_STOREROOM, ACCESS_PHARMACY) //WaspStation edit - Gen/Sci Split
 	paycheck = PAYCHECK_MEDIUM
-	paycheck_department = ACCOUNT_MED
+	paycheck_department = ACCOUNT_SCI
 
 	display_order = JOB_DISPLAY_ORDER_GENETICIST
 

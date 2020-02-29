@@ -273,7 +273,6 @@
 		H.toggle_welding_screen(owner)
 
 /* WaspStation Begin - No more cells in EVA suits
-
 /datum/action/item_action/toggle_spacesuit
 	name = "Toggle Suit Thermal Regulator"
 	icon_icon = 'icons/mob/actions/actions_spacesuit.dmi'
@@ -299,7 +298,6 @@
 	UpdateButtonIcon()
 
 WaspStation End */
-
 /datum/action/item_action/toggle_unfriendly_fire
 	name = "Toggle Friendly Fire \[ON\]"
 	desc = "Toggles if the club's blasts cause friendly fire."
@@ -338,6 +336,11 @@ WaspStation End */
 	button_icon_state = "vortex_recall"
 
 /datum/action/item_action/vortex_recall/IsAvailable()
+	var/turf/current_location = get_turf(target)
+	var/area/current_area = current_location.loc
+	if(current_area.noteleport)
+		to_chat(target, "[src] fizzles uselessly.")
+		return
 	if(istype(target, /obj/item/hierophant_club))
 		var/obj/item/hierophant_club/H = target
 		if(H.teleporting)

@@ -160,11 +160,11 @@
 
 /obj/item/storage/toolbox/syndicate/PopulateContents()
 	new /obj/item/screwdriver/nuke(src)
-	new /obj/item/wrench/syndie(src)
+	new /obj/item/wrench/syndie(src) //WaspStation Edit - Cool Syndie Tools
 	new /obj/item/weldingtool/largetank(src)
-	new /obj/item/crowbar/syndie(src)
+	new /obj/item/crowbar/syndie(src) //WaspStation Begin - Cool Syndie Tools
 	new /obj/item/wirecutters/syndie(src)
-	new /obj/item/multitool/syndie(src)
+	new /obj/item/multitool/syndie(src) //WaspStation End
 	new /obj/item/clothing/gloves/combat(src)
 
 /obj/item/storage/toolbox/drone
