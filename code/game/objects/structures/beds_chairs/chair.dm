@@ -1,7 +1,7 @@
 /obj/structure/chair
 	name = "chair"
 	desc = "You sit in this. Either by will or force."
-	icon = 'icons/obj/chairs.dmi'
+	icon = 'waspstation/icons/obj/chairs.dmi' //WaspStation Edit - Better Icons
 	icon_state = "chair"
 	anchored = TRUE
 	can_buckle = 1
@@ -163,7 +163,7 @@
 	return ..()
 
 /obj/structure/chair/comfy/proc/GetArmrest()
-	return mutable_appearance('icons/obj/chairs.dmi', "comfychair_armrest")
+	return mutable_appearance('waspstation/icons/obj/chairs.dmi', "comfychair_armrest") //WaspStation Edit - Better Icons
 
 /obj/structure/chair/comfy/Destroy()
 	QDEL_NULL(armrest)
@@ -257,7 +257,7 @@
 /obj/item/chair
 	name = "chair"
 	desc = "Bar brawl essential."
-	icon = 'icons/obj/chairs.dmi'
+	icon = 'waspstation/icons/obj/chairs.dmi' //WaspStation Edit - Better Icons
 	icon_state = "chair_toppled"
 	item_state = "chair"
 	lefthand_file = 'icons/mob/inhands/misc/chairs_lefthand.dmi'

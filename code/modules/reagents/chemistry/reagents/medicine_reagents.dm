@@ -1586,8 +1586,8 @@
 	L.damage = max(L.damage + 4, 0)
 	M.confused = (2)
 	..()
-	ADD_TRAIT(M, TRAIT_SLEEPIMMUNE, type)
-	ADD_TRAIT(M, TRAIT_STUNRESISTANCE, type)
+	ADD_TRAIT(L, TRAIT_SLEEPIMMUNE, type)
+	ADD_TRAIT(L, TRAIT_STUNRESISTANCE, type)
 	M.add_movespeed_modifier(type, update=TRUE, priority=100, multiplicative_slowdown=-0.45, blacklisted_movetypes=(FLYING|FLOATING))
 	M.ignore_slowdown(type)
 
