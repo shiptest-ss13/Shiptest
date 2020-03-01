@@ -6000,6 +6000,7 @@
 "anc" = (
 /obj/structure/disposalpipe/segment,
 /obj/structure/cable,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /turf/open/floor/plating,
 /area/maintenance/fore/secondary)
 "and" = (
@@ -6180,7 +6181,7 @@
 "anD" = (
 /obj/structure/disposalpipe/segment,
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden{
-	dir = 1
+	dir = 4
 	},
 /obj/structure/cable,
 /turf/open/floor/plating,
@@ -24309,10 +24310,8 @@
 /area/medical/morgue)
 "bkV" = (
 /obj/structure/disposalpipe/segment,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden{
-	dir = 5
-	},
 /obj/structure/cable,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /turf/open/floor/plating,
 /area/maintenance/fore/secondary)
 "bkW" = (
@@ -47732,6 +47731,11 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /turf/open/floor/plasteel/white,
 /area/science/mixing)
+"dSr" = (
+/obj/structure/disposalpipe/segment,
+/obj/structure/cable,
+/turf/open/floor/plating,
+/area/maintenance/fore/secondary)
 "dSP" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 8
@@ -49599,6 +49603,14 @@
 	dir = 4
 	},
 /area/science/explab)
+"lIX" = (
+/obj/structure/disposalpipe/segment,
+/obj/structure/cable,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 6
+	},
+/turf/open/floor/plating,
+/area/maintenance/fore/secondary)
 "lJC" = (
 /obj/structure/table,
 /obj/item/stack/sheet/glass/fifty{
@@ -50048,6 +50060,14 @@
 /obj/structure/girder,
 /turf/open/floor/plasteel/dark,
 /area/engine/engineering)
+"nrb" = (
+/obj/structure/disposalpipe/segment,
+/obj/structure/cable,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 5
+	},
+/turf/open/floor/plating,
+/area/maintenance/fore/secondary)
 "nro" = (
 /obj/effect/turf_decal/loading_area{
 	dir = 4
@@ -87415,12 +87435,12 @@ aif
 aif
 aif
 aif
-aif
-aif
-aif
-aif
+nrb
+dSr
+lIX
 bkV
-anc
+bkV
+bkV
 anD
 aoI
 apX
