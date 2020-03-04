@@ -1,3 +1,21 @@
+/**
+Uplink Items
+**/
+
+//Stealthy Weapons
+/datum/uplink_item/stealthy_weapons/derringerpack
+	name = "Compact Derringer"
+	desc = "An easily concealable handgun capable of firing .357 rounds. Comes in an inconspicuious packet of cigarettes with additional munitions."
+	item = /obj/item/storage/fancy/cigarettes/derringer
+	cost = 8
+	surplus = 30
+	surplus_nullcrates = 40
+
+/datum/uplink_item/stealthy_weapons/derringerpack/purchase(mob/user, datum/component/uplink/U)
+	if(prob(1)) //For the 1%
+		item = /obj/item/storage/fancy/cigarettes/derringer/gold
+	..()
+
 /*Botany*/
 /datum/uplink_item/role_restricted/lawnmower
 	name = "Gas powered lawn mower"

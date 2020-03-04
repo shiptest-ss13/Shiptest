@@ -245,7 +245,8 @@ GLOBAL_LIST_INIT(oddity_loot, list(//oddity: strange or crazy items
 		/obj/item/dice/d20/fate/stealth/cursed = 1, 	//Only rolls 1
 		/obj/item/clothing/shoes/jackboots/fast = 1,
 		/obj/item/clothing/suit/armor/reactive/table = 1,
-		/obj/item/storage/box/donkpockets/donkpocketgondola = 1
+		/obj/item/storage/box/donkpockets/donkpocketgondola = 1,
+		/obj/item/gun/ballistic/derringer = 1 //Waspstation - Derringer
 	))
 
 //Maintenance loot spawner pools
