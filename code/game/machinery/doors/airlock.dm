@@ -581,6 +581,8 @@
 					panel_overlay = get_airlock_overlay("panel_closing", overlays_file)
 			if(note)
 				note_overlay = get_airlock_overlay("[notetype]_closing", note_overlay_file)
+			if(has_hatch)
+				hatch_overlay = get_airlock_overlay("hatch_closing", overlays_file)
 
 		if(AIRLOCK_OPEN)
 			frame_overlay = get_airlock_overlay("open", icon)
@@ -613,6 +615,8 @@
 					panel_overlay = get_airlock_overlay("panel_opening", overlays_file)
 			if(note)
 				note_overlay = get_airlock_overlay("[notetype]_opening", note_overlay_file)
+			if(has_hatch)
+				hatch_overlay = get_airlock_overlay("hatch_opening", overlays_file)
 
 	cut_overlays()
 	add_overlay(frame_overlay)
