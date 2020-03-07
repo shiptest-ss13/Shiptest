@@ -71,6 +71,24 @@ SUBSYSTEM_DEF(vote)
 					choices[GLOB.master_mode] += non_voters.len
 					if(choices[GLOB.master_mode] >= greatest_votes)
 						greatest_votes = choices[GLOB.master_mode]
+						
+			//WaspStation Begin - Autotransfer
+			else if(mode == "transfer")
+				var/factor = 1
+				switch(world.time / (1 MINUTES ))
+					if(0 to 60)
+						factor = 0.5
+					if(61 to 120)
+						factor = 0.8
+					if(121 to 240)
+						factor = 1
+					if(241 to 300)
+						factor = 1.2
+					else
+						factor = 1.4
+				choices["Initiate Crew Transfer"] += round(non_voters.len * factor)
+			//WaspStation End	
+				
 			else if(mode == "map")
 				for (var/non_voter_ckey in non_voters)
 					var/client/C = non_voters[non_voter_ckey]
@@ -136,6 +154,17 @@ SUBSYSTEM_DEF(vote)
 						restart = TRUE
 					else
 						GLOB.master_mode = .
+
+			//WS Begin - Autotransfer
+			if("transfer")
+				if(. == "Initiate Crew Transfer")
+					//TODO find a cleaner way to do this
+					SSshuttle.requestEvac(null,"Crew transfer requested.")
+					var/obj/machinery/computer/communications/C = locate() in GLOB.machines
+					if(C)
+						C.post_status("shuttle")
+			//WS End
+
 			if("map")
 				SSmapping.changemap(global.config.maplist[.])
 				SSmapping.map_voted = TRUE
@@ -185,12 +214,19 @@ SUBSYSTEM_DEF(vote)
 				to_chat(usr, "<span class='warning'>A vote was initiated recently, you must wait [DisplayTimeText(next_allowed_time-world.time)] before a new vote can be started!</span>")
 				return FALSE
 
+		SEND_SOUND(world, sound('sound/misc/notice2.ogg'))//WS Edit - Autotransfer
 		reset()
 		switch(vote_type)
 			if("restart")
 				choices.Add("Restart Round","Continue Playing")
 			if("gamemode")
 				choices.Add(config.votable_modes)
+
+			//WS Begin - Autotransfer
+			if("transfer")
+				choices.Add("Initiate Crew Transfer","Continue Playing")
+			//WS End
+
 			if("map")
 				if(!admin && SSmapping.map_voted)
 					to_chat(usr, "<span class='warning'>The next map has already been selected.</span>")
@@ -212,7 +248,7 @@ SUBSYSTEM_DEF(vote)
 			else
 				return FALSE
 		mode = vote_type
-		initiator = initiator_key
+		initiator = initiator_key ? initiator_key : "the Server" //WS Edit - Autotransfer
 		started_time = world.time
 		var/text = "[capitalize(mode)] vote started by [initiator]."
 		if(mode == "custom")

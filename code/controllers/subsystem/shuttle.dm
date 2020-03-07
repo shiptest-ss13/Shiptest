@@ -185,7 +185,7 @@ SUBSYSTEM_DEF(shuttle)
 			Good luck.")
 		emergency = backup_shuttle
 	var/srd = CONFIG_GET(number/shuttle_refuel_delay)
-	if(world.time - SSticker.round_start_time < srd)
+	if(world.time - SSticker.round_start_time < srd && user != null) //WaspStation Edit - Autotransfer
 		to_chat(user, "<span class='alert'>The emergency shuttle is refueling. Please wait [DisplayTimeText(srd - (world.time - SSticker.round_start_time))] before trying again.</span>")
 		return
 
