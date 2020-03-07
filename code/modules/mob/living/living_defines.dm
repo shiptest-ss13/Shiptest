@@ -127,3 +127,5 @@
 
 	var/list/ownedSoullinks ///soullinks we are the owner of
 	var/list/sharedSoullinks ///soullinks we are a/the sharer of
+
+	var/is_busy = FALSE //Waspstation Edit - Curbstomping - Used for random actions that take time. ex: curbstomping. We need to make sure we can only do one of these at a time.
