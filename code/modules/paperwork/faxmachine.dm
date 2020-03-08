@@ -5,7 +5,7 @@ GLOBAL_LIST_EMPTY(alldepartments)
 
 /obj/machinery/photocopier/faxmachine
 	name = "fax machine"
-	icon = 'icons/obj/library.dmi'
+	icon = 'waspstation/icons/obj/library.dmi'
 	icon_state = "fax"
 	insert_anim = "faxsend"
 	density = FALSE

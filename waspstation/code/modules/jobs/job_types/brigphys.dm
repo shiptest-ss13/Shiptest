@@ -29,7 +29,7 @@
 	jobtype = /datum/job/brig_phys
 
 	belt = /obj/item/pda/security
-	ears = /obj/item/radio/headset/headset_medsec
+	ears = /obj/item/radio/headset/headset_medsec/alt
 	uniform = /obj/item/clothing/under/rank/security/brig_phys
 	shoes = /obj/item/clothing/shoes/sneakers/white
 	glasses = /obj/item/clothing/glasses/hud/health/sunglasses
