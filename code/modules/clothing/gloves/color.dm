@@ -211,8 +211,10 @@
 	icon = 'icons/obj/clothing/clockwork_garb.dmi'
 	icon_state = "clockwork_gauntlets"
 	item_state = "clockwork_gauntlets"
-	siemens_coefficient = 0.8
-	permeability_coefficient = 0.3
+	siemens_coefficient = 0				//Wasp Station eddit 	"Tinkers Gloves Insuls"
+	permeability_coefficient = 0.05		//Wasp Station eddit 	"Tinkers Gloves Insuls"
+	//siemens_coefficient = 0.8			Wasp Station eddit	"Tinkers Gloves Insuls"
+	//permeability_coefficient = 0.3	Wasp Station eddit 	"Tinkers Gloves Insuls"
 	carrytrait = TRAIT_QUICK_BUILD
 	custom_materials = list(/datum/material/iron=2000, /datum/material/silver=1500, /datum/material/gold = 1000)
 
