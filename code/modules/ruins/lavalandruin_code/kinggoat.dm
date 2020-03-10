@@ -35,11 +35,12 @@
 
 /obj/item/gun/energy/goatgun
 	name = "goat gun"
-	desc = "Whoever you fire this at is gonna be in for a baaaaaaad surprise." //ha ha I am funny man please laugh HAHAHAHAHAHAHAHA
+	desc = "Whoever you fire this at is gonna be in for a baaaaaaad surprise." //ha ha I am funny man please laugh HAHAHAHAHAHAHAHA no fuck you
 	icon_state = "goat_gun"
 	item_state = "c20r"
 	w_class = WEIGHT_CLASS_BULKY
 	ammo_type = list(/obj/item/ammo_casing/energy/goat)
+	internal_cell = TRUE //prevents you from giving it an OP cell - WaspStation Edit
 	cell_type = /obj/item/stock_parts/cell
 	clumsy_check = 0
 	selfcharge = 1

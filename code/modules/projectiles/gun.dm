@@ -426,6 +426,7 @@
 	else if(bayonet && can_bayonet) //if it has a bayonet, and the bayonet can be removed
 		return remove_gun_attachment(user, I, bayonet, "unfix")
 
+	/* WaspStation Edit - Fixes Pin Removal
 	else if(pin && user.is_holding(src))
 		user.visible_message("<span class='warning'>[user] attempts to remove [pin] from [src] with [I].</span>",
 		"<span class='notice'>You attempt to remove [pin] from [src]. (It will take [DisplayTimeText(FIRING_PIN_REMOVAL_DELAY)].)</span>", null, 3)
@@ -436,6 +437,7 @@
 								"<span class='warning'>You pried [pin] out with [I], destroying the pin in the process.</span>", null, 3)
 			QDEL_NULL(pin)
 			return TRUE
+	WaspStation End */
 
 
 /obj/item/gun/welder_act(mob/living/user, obj/item/I)

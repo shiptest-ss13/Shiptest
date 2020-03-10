@@ -19,14 +19,18 @@
 	var/charge_delay = 4
 	var/use_cyborg_cell = FALSE //whether the gun's cell drains the cyborg user's cell to recharge
 	var/dead_cell = FALSE //set to true so the gun is given an empty cell
-	var/internal_cell = FALSE //if the gun's cell cannot be replaced
-	var/small_gun = FALSE //if the gun is small and can only fit batteries that have less than a certain max charge
-	var/max_charge = 10000 //if the gun is small, this is the highest amount of charge can be in a battery for it
+
+	//WaspStation Begin - Gun Cells
+	var/internal_cell = FALSE ///if the gun's cell cannot be replaced
+	var/small_gun = FALSE ///if the gun is small and can only fit batteries that have less than a certain max charge
+	var/max_charge = 10000 ///if the gun is small, this is the highest amount of charge can be in a battery for it
+	var/unscrewing_time = 20 ///Time it takes to unscrew the internal cell
 
 	var/load_sound = 'sound/weapons/gun/general/magazine_insert_full.ogg' //Sound when inserting magazine. UPDATE PLEASE
 	var/eject_sound = 'sound/weapons/gun/general/magazine_remove_full.ogg' //Sound of ejecting a cell. UPDATE PLEASE
 	var/sound_volume = 40 //Volume of loading/unloading sounds
 	var/load_sound_vary = TRUE //Should the load/unload sounds vary?
+	//WaspStation End
 
 /obj/item/gun/energy/emp_act(severity)
 	. = ..()
@@ -103,11 +107,12 @@
 		var/obj/item/stock_parts/cell/gun/C = A
 		if (!cell)
 			insert_cell(user, C)
-		else
-			eject_cell(user, C)
 
 /obj/item/gun/energy/proc/insert_cell(mob/user, obj/item/stock_parts/cell/gun/C)
-	if(small_gun && C.maxcharge > max_charge)
+	if(small_gun && !istype(C, /obj/item/stock_parts/cell/gun/mini))
+		to_chat(user, "<span class='warning'>\The [C] doesn't seem to fit into \the [src]...</span>")
+		return FALSE
+	if(!small_gun && istype(C, /obj/item/stock_parts/cell/gun/mini))
 		to_chat(user, "<span class='warning'>\The [C] doesn't seem to fit into \the [src]...</span>")
 		return FALSE
 	if(user.transferItemToLoc(C, src))
@@ -134,10 +139,13 @@
 	to_chat(user, "<span class='notice'>You pull the cell out of \the [src].</span>")
 	update_icon()
 
-/obj/item/gun/energy/attack_hand(mob/user)
-	if(!internal_cell && loc == user && user.is_holding(src) && cell)
-		eject_cell(user)
-		return
+/obj/item/gun/energy/screwdriver_act(mob/living/user, obj/item/I)
+	. = ..()
+	if(!internal_cell)
+		to_chat(user, "<span class='notice'>You begin unscrewing and pulling out the cell...</span>")
+		if(I.use_tool(src, user, unscrewing_time, volume=100))
+			to_chat(user, "<span class='notice'>You remove the power cell.</span>")
+			eject_cell(user)
 	return ..()
 
 /obj/item/gun/energy/can_shoot()
