@@ -37,7 +37,7 @@
 /obj/item/stock_parts/cell/gun/mini
 	name = "miniature weapon power cell"
 	icon_state = "mg-cell"
-	maxcharge = 50000
+	maxcharge = 5000
 	custom_materials = list(/datum/material/glass=300)
 	chargerate = 1000
 
