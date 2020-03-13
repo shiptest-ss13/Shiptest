@@ -91,6 +91,8 @@
 	..()
 	return TRUE
 
+/* WaspStation Begin - Medicine Fixes
+
 /datum/reagent/medicine/C2/probital
 	name = "Probital"
 	description = "Originally developed as a prototype-gym supliment for those looking for quick workout turnover, this oral medication quickly repairs broken muscle tissue but causes lactic acid buildup, tiring the patient. Overdosing can cause extreme drowsiness. An Influx of nutrients promotes the muscle repair even further."
@@ -132,6 +134,8 @@
 
 	..()
 
+WaspStation End */
+
 /******BURN******/
 /*Suffix: -uri*/
 /datum/reagent/medicine/C2/lenturi
@@ -168,6 +172,8 @@
 	..()
 	return TRUE
 
+/* WaspStation Begin - Fixes Medicines
+
 /datum/reagent/medicine/C2/hercuri
 	name = "Hercuri"
 	description = "Not to be confused with element Mercury, this medicine excels in reverting effects of dangerous high-temperature environments. Prolonged exposure can cause hypothermia."
@@ -202,6 +208,7 @@
 	M.adjust_bodytemperature(-10*TEMPERATURE_DAMAGE_COEFFICIENT*REM,50) //chilly chilly
 	..()
 
+WaspStation End*/
 
 /******OXY******/
 /*Suffix: -mol*/
@@ -322,6 +329,8 @@
 
 #define issyrinormusc(A)	(istype(A,/datum/reagent/medicine/C2/syriniver) || istype(A,/datum/reagent/medicine/C2/musiver)) //musc is metab of syrin so let's make sure we're not purging either
 
+/* WaspStation Begin - Medicine Fixes
+
 /datum/reagent/medicine/C2/syriniver //Inject >> SYRINge
 	name = "Syriniver"
 	description = "A potent antidote for intravenous use with a narrow therapeutic index, it is considered an active prodrug of musiver."
@@ -399,6 +408,9 @@
 	. = 1
 
 #undef issyrinormusc
+
+WaspStation End*/
+
 /******COMBOS******/
 /*Suffix: Combo of healing, prob gonna get wack REAL fast*/
 /datum/reagent/medicine/C2/instabitaluri

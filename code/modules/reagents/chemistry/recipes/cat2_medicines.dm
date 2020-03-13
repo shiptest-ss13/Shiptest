@@ -11,9 +11,14 @@
 	results = list(/datum/reagent/medicine/C2/libital = 3)
 	required_reagents = list(/datum/reagent/phenol = 1, /datum/reagent/oxygen = 1, /datum/reagent/nitrogen = 1)
 
+
+/* WaspStation Begin - Fixes medicines
+
 /datum/chemical_reaction/probital
 	results = list(/datum/reagent/medicine/C2/probital = 4)
 	required_reagents = list(/datum/reagent/copper = 1, /datum/reagent/acetone = 2,  /datum/reagent/phosphorus = 1)
+
+WaspStation End */
 
 /*****BURN*****/
 
@@ -29,11 +34,15 @@
 	results = list(/datum/reagent/medicine/C2/aiuri = 4)
 	required_reagents = list(/datum/reagent/ammonia = 1, /datum/reagent/toxin/acid = 1, /datum/reagent/hydrogen = 2)
 
+/* WaspStation Begin - Fixes medicines
+
 /datum/chemical_reaction/hercuri
 	results = list(/datum/reagent/medicine/C2/hercuri = 5)
 	required_reagents = list(/datum/reagent/cryostylane = 3, /datum/reagent/bromine = 1, /datum/reagent/lye = 1)
 	required_temp = 47
 	is_cold_recipe = TRUE
+
+WaspStation End */
 
 /*****OXY*****/
 
@@ -66,11 +75,11 @@
 	mix_message = "The mixture yields a fine black powder."
 	required_temp = 380
 
-*/
-
 /datum/chemical_reaction/syriniver
 	results = list(/datum/reagent/medicine/C2/syriniver = 5)
 	required_reagents = list(/datum/reagent/sulfur = 1, /datum/reagent/fluorine = 1, /datum/reagent/toxin = 1, /datum/reagent/nitrous_oxide = 2)
+
+*/
 
 /datum/chemical_reaction/penthrite
 	results = list(/datum/reagent/medicine/C2/penthrite = 4)

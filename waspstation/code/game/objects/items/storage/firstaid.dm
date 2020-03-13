@@ -148,6 +148,7 @@
 	var/static/items_inside = list(
 		/obj/item/healthanalyzer = 1,
 		/obj/item/reagent_containers/pill/patch/silver_sulf = 4,
+		/obj/item/reagent_containers/spray/rhigoxane = 1,
 		/obj/item/reagent_containers/hypospray/medipen/oxandrolone = 1,
 		/obj/item/reagent_containers/hypospray/medipen = 1)
 	generate_items_inside(items_inside,src)
@@ -172,9 +173,10 @@
 		return
 	var/static/items_inside = list(
 		/obj/item/healthanalyzer = 1,
-	    /obj/item/storage/pill_bottle/charcoal/less = 1,
-		/obj/item/reagent_containers/glass/bottle/charcoal = 2,
-		/obj/item/storage/pill_bottle/potassiodide = 1
+    	/obj/item/storage/pill_bottle/charcoal/less = 1,
+		/obj/item/reagent_containers/syringe/thializid = 3,
+		/obj/item/storage/pill_bottle/potassiodide = 1,
+		/obj/item/reagent_containers/hypospray/medipen/penacid = 1,
 		)
 	generate_items_inside(items_inside,src)
 
@@ -224,8 +226,10 @@
 		return
 	var/static/items_inside = list(
 		/obj/item/healthanalyzer = 1,
-		/obj/item/reagent_containers/pill/patch/styptic = 3,
+		/obj/item/reagent_containers/pill/patch/styptic = 2,
+		/obj/item/storage/pill_bottle/trophazole = 1,
 		/obj/item/stack/medical/gauze = 1,
+		/obj/item/stack/medical/splint = 1,
 		/obj/item/reagent_containers/hypospray/medipen/salacid = 1)
 	generate_items_inside(items_inside,src)
 
@@ -465,3 +469,11 @@
 /obj/item/storage/pill_bottle/floorpill/full/PopulateContents()
 	for(var/i in 1 to 7)
 		new /obj/item/reagent_containers/pill/floorpill(src)
+
+/obj/item/storage/pill_bottle/trophazole
+	name = "bottle of trophazole pills"
+	desc = "Contains pills used to treat brute damage.The tag in the bottle states 'Eat before ingesting'."
+
+/obj/item/storage/pill_bottle/trophazole/PopulateContents()
+	for(var/i in 1 to 4)
+		new /obj/item/reagent_containers/pill/trophazole(src)

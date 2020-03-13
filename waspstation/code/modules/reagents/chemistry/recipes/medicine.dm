@@ -60,3 +60,15 @@
 	required_reagents = list(/datum/reagent/hydrogen = 1, /datum/reagent/fluorine = 1, /datum/reagent/fuel/oil = 1)
 	required_temp = 370
 	mix_message = "The mixture rapidly turns into a dense pink liquid."
+
+/datum/chemical_reaction/trophazole
+	results = list(/datum/reagent/medicine/trophazole = 4)
+	required_reagents = list(/datum/reagent/copper = 1, /datum/reagent/acetone = 2,  /datum/reagent/phosphorus = 1)
+
+/datum/chemical_reaction/rhigoxane
+	results = list(/datum/reagent/medicine/rhigoxane/ = 5)
+	required_reagents = list(/datum/reagent/cryostylane = 3, /datum/reagent/bromine = 1, /datum/reagent/lye = 1)
+
+/datum/chemical_reaction/thializid
+	results = list(/datum/reagent/medicine/thializid = 5)
+	required_reagents = list(/datum/reagent/sulfur = 1, /datum/reagent/fluorine = 1, /datum/reagent/toxin = 1, /datum/reagent/nitrous_oxide = 2)
