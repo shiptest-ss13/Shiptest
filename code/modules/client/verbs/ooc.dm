@@ -93,6 +93,17 @@ GLOBAL_VAR_INIT(normal_ooc_colour, "#002eb8")
 		GLOB.ooc_allowed = !GLOB.ooc_allowed
 	to_chat(world, "<B>The OOC channel has been globally [GLOB.ooc_allowed ? "enabled" : "disabled"].</B>")
 
+//Begin Wasp Edit
+/proc/toggle_looc(toggle = null)
+	if(toggle != null)
+		if(toggle != GLOB.looc_allowed)
+			GLOB.looc_allowed = toggle
+		else
+			return
+	else
+		GLOB.looc_allowed = !GLOB.looc_allowed
+//End Wasp Edit
+
 /proc/toggle_dooc(toggle = null)
 	if(toggle != null)
 		if(toggle != GLOB.dooc_allowed)

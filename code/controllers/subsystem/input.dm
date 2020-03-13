@@ -23,6 +23,7 @@ SUBSYSTEM_DEF(input)
 	"Any" = "\"KeyDown \[\[*\]\]\"",
 	"Any+UP" = "\"KeyUp \[\[*\]\]\"",
 	"O" = "ooc",
+	"Ctrl+O" = "looc", //Wasp Edit
 	"T" = "say",
 	"M" = "me",
 	"Back" = "\".winset \\\"input.text=\\\"\\\"\\\"\"",
