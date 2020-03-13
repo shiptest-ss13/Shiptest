@@ -671,12 +671,6 @@
 /obj/structure/cable,
 /turf/open/floor/plasteel,
 /area/security/prison)
-"abH" = (
-/obj/structure/chair/stool,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel,
-/area/security/prison)
 "abI" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /obj/structure/extinguisher_cabinet{
@@ -68040,16 +68034,14 @@
 /area/engine/engineering)
 "dfB" = (
 /obj/machinery/power/emitter/welded{
-	dir = 1;
-
+	dir = 1
 	},
 /obj/structure/cable,
 /turf/open/floor/plating,
 /area/engine/engineering)
 "dfC" = (
 /obj/machinery/power/emitter/welded{
-	dir = 1;
-
+	dir = 1
 	},
 /obj/machinery/light{
 	dir = 4
@@ -71729,6 +71721,18 @@
 /obj/structure/cable,
 /turf/open/floor/plasteel,
 /area/security/brig)
+"hrb" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
+/obj/machinery/grill,
+/obj/item/stack/sheet/mineral/coal/ten,
+/obj/item/reagent_containers/food/drinks/soda_cans/monkey_energy,
+/turf/open/floor/plasteel/cafeteria{
+	dir = 5
+	},
+/area/crew_quarters/kitchen)
 "hvf" = (
 /obj/effect/turf_decal/tile/yellow,
 /obj/effect/turf_decal/tile/yellow{
@@ -74452,6 +74456,13 @@
 	dir = 5
 	},
 /area/crew_quarters/kitchen)
+"pVx" = (
+/obj/structure/chair/stool,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/landmark/start/prisoner,
+/turf/open/floor/plasteel,
+/area/security/prison)
 "pYC" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
@@ -76295,16 +76306,6 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/medical/chemistry)
-"vuY" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden{
-	dir = 4
-	},
-/obj/machinery/deepfryer,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
-/turf/open/floor/plasteel/cafeteria{
-	dir = 5
-	},
-/area/crew_quarters/kitchen)
 "vvJ" = (
 /obj/effect/turf_decal/tile/red{
 	dir = 1
@@ -100983,7 +100984,7 @@ aaJ
 aaS
 abc
 aaS
-abH
+pVx
 acc
 acv
 acK
@@ -111845,7 +111846,7 @@ bwO
 woI
 bKj
 wzm
-vuY
+hrb
 bRS
 bQF
 grA

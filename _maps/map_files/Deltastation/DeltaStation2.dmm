@@ -6417,8 +6417,7 @@
 /area/solar/port/fore)
 "ark" = (
 /obj/machinery/power/emitter/welded{
-	dir = 1;
-
+	dir = 1
 	},
 /obj/structure/cable,
 /turf/open/floor/circuit/green,
@@ -6485,8 +6484,7 @@
 	dir = 10
 	},
 /obj/machinery/power/emitter/welded{
-	dir = 1;
-
+	dir = 1
 	},
 /obj/structure/cable,
 /turf/open/floor/circuit/green,
@@ -18040,22 +18038,6 @@
 /obj/structure/cable,
 /turf/open/floor/plasteel,
 /area/security/prison)
-"aNF" = (
-/obj/structure/chair/stool,
-/obj/machinery/atmospherics/pipe/manifold/supply/hidden,
-/obj/effect/turf_decal/tile/neutral{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/neutral,
-/obj/effect/turf_decal/tile/neutral{
-	dir = 4
-	},
-/obj/effect/turf_decal/tile/neutral{
-	dir = 8
-	},
-/obj/structure/cable,
-/turf/open/floor/plasteel,
-/area/security/prison)
 "aNG" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
@@ -28388,20 +28370,6 @@
 /obj/machinery/holopad,
 /obj/effect/landmark/start/cook,
 /obj/effect/turf_decal/bot,
-/turf/open/floor/plasteel,
-/area/crew_quarters/kitchen)
-"bfg" = (
-/obj/machinery/deepfryer,
-/obj/effect/turf_decal/tile/red{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/red,
-/obj/effect/turf_decal/tile/red{
-	dir = 4
-	},
-/obj/effect/turf_decal/tile/red{
-	dir = 8
-	},
 /turf/open/floor/plasteel,
 /area/crew_quarters/kitchen)
 "bfh" = (
@@ -115513,6 +115481,22 @@
 /obj/structure/cable,
 /turf/open/floor/plasteel/white,
 /area/science/mixing)
+"nKO" = (
+/obj/effect/turf_decal/tile/red{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/red,
+/obj/effect/turf_decal/tile/red{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/red{
+	dir = 8
+	},
+/obj/machinery/grill,
+/obj/item/stack/sheet/mineral/coal/ten,
+/obj/item/reagent_containers/food/drinks/soda_cans/monkey_energy,
+/turf/open/floor/plasteel,
+/area/crew_quarters/kitchen)
 "nLd" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /obj/structure/cable,
@@ -117059,6 +117043,23 @@
 	},
 /turf/open/floor/plasteel,
 /area/science/mixing)
+"xoe" = (
+/obj/structure/chair/stool,
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden,
+/obj/effect/turf_decal/tile/neutral{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/neutral,
+/obj/effect/turf_decal/tile/neutral{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/neutral{
+	dir = 8
+	},
+/obj/structure/cable,
+/obj/effect/landmark/start/prisoner,
+/turf/open/floor/plasteel,
+/area/security/prison)
 "xsF" = (
 /obj/effect/turf_decal/tile/blue,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
@@ -154837,7 +154838,7 @@ aLL
 aKA
 bcj
 bdJ
-bfg
+nKO
 bgu
 bhS
 bjF
@@ -170760,7 +170761,7 @@ aIg
 aJB
 aKY
 aMj
-aNF
+xoe
 aPn
 aRe
 aKV

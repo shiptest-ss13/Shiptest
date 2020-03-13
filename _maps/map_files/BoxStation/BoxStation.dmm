@@ -24308,12 +24308,6 @@
 /obj/structure/cable,
 /turf/open/floor/plasteel/dark,
 /area/medical/morgue)
-"bkV" = (
-/obj/structure/disposalpipe/segment,
-/obj/structure/cable,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden,
-/turf/open/floor/plating,
-/area/maintenance/fore/secondary)
 "bkW" = (
 /obj/structure/cable,
 /turf/open/floor/plating,
@@ -48934,6 +48928,12 @@
 	},
 /turf/open/floor/plasteel,
 /area/storage/tools)
+"jiX" = (
+/obj/machinery/grill,
+/obj/item/stack/sheet/mineral/coal/ten,
+/obj/item/reagent_containers/food/drinks/soda_cans/monkey_energy,
+/turf/open/floor/plasteel/cafeteria,
+/area/crew_quarters/kitchen)
 "jjr" = (
 /obj/effect/turf_decal/tile/yellow{
 	dir = 1
@@ -50045,6 +50045,12 @@
 	},
 /turf/open/floor/plasteel,
 /area/science/misc_lab)
+"nmq" = (
+/obj/structure/chair/stool,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/landmark/start/prisoner,
+/turf/open/floor/plasteel,
+/area/security/prison)
 "nnC" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
@@ -79190,7 +79196,7 @@ aai
 aaq
 aay
 aaE
-aaJ
+nmq
 aaN
 aaV
 aat
@@ -87438,9 +87444,9 @@ aif
 nrb
 dSr
 lIX
-bkV
-bkV
-bkV
+anc
+anc
+anc
 anD
 aoI
 apX
@@ -91579,7 +91585,7 @@ aQj
 aRB
 aSL
 aTN
-cCq
+jiX
 aVz
 cAg
 bak
