@@ -517,3 +517,8 @@
 /datum/config_entry/string/discord_guildid
 
 /datum/config_entry/string/discord_roleid
+
+//Begin Wasp Edit 
+/datum/config_entry/flag/minimaps_enabled
+	config_entry_value = TRUE
+//End Wasp Edit
