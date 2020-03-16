@@ -1,34 +1,7 @@
-/obj/item/airlock_painter/AltClick(mob/user)
-	if(ink)
-		if((ink) && (ink.charges >= 1))
-			to_chat(user, "<span class='notice'>[src] beeps to prevent you from removing the toner until out of charges.</span>")
-			return
-		else
-			playsound(src.loc, 'sound/machines/click.ogg', 50, TRUE)
-			ink.forceMove(user.drop_location())
-			user.put_in_hands(ink)
-			to_chat(user, "<span class='notice'>You remove [ink] from [src].</span>")
-			ink = null
-
-/obj/item/airlock_painter/decal/attack_self(mob/user)
-	. = ..()
-	ui_interact(user)
-
-/obj/item/airlock_painter/decal/CtrlClick(mob/user)
-	. = ..()
-	toggle_mode(user)
-
-/obj/item/airlock_painter/decal/proc/toggle_mode(mob/user)
-	playsound(get_turf(user),'sound/items/change_drill.ogg',50,1)
-	var/obj/item/airlock_painter/floor_painter/fp = new /obj/item/airlock_painter/floor_painter(drop_location())
-	fp.ink = src.ink
-	to_chat(user, "<span class='notice'>You switch the [src]'s mode.</span>")
-	qdel(src)
-	user.put_in_active_hand(fp)
 
 // Floor painter
 
-/obj/item/airlock_painter/floor_painter
+/obj/item/floor_painter
 	name = "floor painter"
 	icon = 'waspstation/icons/obj/device.dmi'
 	icon_state = "floor_sprayer"
@@ -39,7 +12,6 @@
 	var/floor_dir = SOUTH
 
 	item_state = "electronic"
-	var/charge_per_use = 0.1
 
 	var/static/list/star_directions = list("north", "northeast", "east", "southeast", "south", "southwest", "west", "northwest")
 	var/static/list/cardinal_directions = list("north", "east", "south", "west")
@@ -53,51 +25,9 @@
 		"recharge_floor", "sepia"
 		)
 
-/obj/item/airlock_painter/floor_painter/Initialize()
-	..()
-	ink = new /obj/item/toner(src)
-
-/obj/item/airlock_painter/floor_painter/CtrlClick(mob/user)
-	. = ..()
-	toggle_mode(user)
-
-/obj/item/airlock_painter/floor_painter/attackby(obj/item/W, mob/user, params)
-	if(istype(W, /obj/item/toner))
-		if(ink)
-			to_chat(user, "<span class='notice'>[src] already contains \a [ink].</span>")
-			return
-		if(!user.transferItemToLoc(W, src))
-			return
-		to_chat(user, "<span class='notice'>You install [W] into [src].</span>")
-		ink = W
-		playsound(src.loc, 'sound/machines/click.ogg', 50, 1)
-	else
-		return ..()
-
-/obj/item/airlock_painter/floor_painter/examine(mob/user)
-	..()
-	if(!ink)
-		to_chat(user, "<span class='notice'>It doesn't have a toner cartridge installed.</span>")
-		return
-	var/ink_level = "high"
-	if(ink.charges <= charge_per_use)
-		ink_level = "empty"
-	else if((ink.charges/ink.max_charges) <= 0.25) //25%
-		ink_level = "low"
-	else if((ink.charges/ink.max_charges) > 1) //Over 100% (admin var edit)
-		ink_level = "dangerously high"
-	to_chat(user, "<span class='notice'>Its ink levels look [ink_level].</span>")
-
-/obj/item/airlock_painter/floor_painter/afterattack(var/atom/A, var/mob/user, proximity, params)
+/obj/item/floor_painter/afterattack(var/atom/A, var/mob/user, proximity, params)
 	if(!proximity)
 		return
-
-	if(!ink)
-		to_chat(user, "<span class='notice'>There is no toner cartridge installed in [src]!</span>")
-		return FALSE
-	else if(ink.charges <= charge_per_use)
-		to_chat(user, "<span class='notice'>[src] is out of ink!</span>")
-		return FALSE
 
 	var/turf/open/floor/plasteel/F = A
 	if(!istype(F))
@@ -110,23 +40,16 @@
 	F.icon_state = floor_state
 	F.icon_regular_floor = floor_state
 	F.dir = floor_dir
+	playsound(src.loc, 'sound/effects/spray2.ogg', 50, TRUE)
 
-	if(ink.charges > charge_per_use)
-		playsound(src, 'sound/effects/spray2.ogg', 50, 1)
-	else
-		playsound(src, 'sound/effects/spray3.ogg', 50, 1)
-		ink.name = "empty " + ink.name
-
-	ink.charges -= charge_per_use
-
-/obj/item/airlock_painter/floor_painter/attack_self(var/mob/user)
+/obj/item/floor_painter/attack_self(var/mob/user)
 	if(!user)
 		return FALSE
 	user.set_machine(src)
 	interact(user)
 	return TRUE
 
-/obj/item/airlock_painter/floor_painter/interact(mob/user as mob) //TODO: Make TGUI for this because ouch
+/obj/item/floor_painter/interact(mob/user as mob) //TODO: Make TGUI for this because ouch
 	if(!floor_icon)
 		floor_icon = icon('icons/turf/floors.dmi', floor_state, floor_dir)
 	user << browse_rsc(floor_icon, "floor.png")
@@ -152,7 +75,7 @@
 	popup.set_content(dat)
 	popup.open()
 
-/obj/item/airlock_painter/floor_painter/Topic(href, href_list)
+/obj/item/floor_painter/Topic(href, href_list)
 	if(..())
 		return
 
@@ -196,7 +119,7 @@
 	if(usr)
 		attack_self(usr)
 
-/obj/item/airlock_painter/floor_painter/proc/check_directional_tile()
+/obj/item/floor_painter/proc/check_directional_tile()
 	var/icon/current = icon('icons/turf/floors.dmi', floor_state, NORTHWEST)
 	if(current.GetPixel(1,1) != null)
 		allowed_directions = star_directions
@@ -210,10 +133,95 @@
 	if(!(dir2text(floor_dir) in allowed_directions))
 		floor_dir = SOUTH
 
-/obj/item/airlock_painter/floor_painter/proc/toggle_mode(mob/user)
-	playsound(get_turf(user),'sound/items/change_drill.ogg',50,1)
-	var/obj/item/airlock_painter/decal/dp = new /obj/item/airlock_painter/decal(drop_location())
-	dp.ink = src.ink
-	to_chat(user, "<span class='notice'>You switch the [src]'s mode.</span>")
-	qdel(src)
-	user.put_in_active_hand(dp)
+// Decal painter
+
+/obj/item/decal_painter
+	name = "decal painter"
+	desc = "An airlock painter, reprogramed to use a different style of paint in order to apply decals for floor tiles as well, in addition to repainting doors. Decals break when the floor tiles are removed. Alt-Click to change design." //WaspStation Edit - Floor Painters
+	icon = 'icons/obj/objects.dmi'
+	icon_state = "decal_sprayer"
+	item_state = "decalsprayer"
+	custom_materials = list(/datum/material/iron=2000, /datum/material/glass=500)
+	var/stored_dir = 2
+	var/stored_color = ""
+	var/stored_decal = "warningline"
+	var/stored_decal_total = "warningline"
+	var/color_list = list("","red","white")
+	var/dir_list = list(1,2,4,8)
+	var/decal_list = list(list("Warning Line","warningline"),
+			list("Warning Line Corner","warninglinecorner"),
+			list("Caution Label","caution"),
+			list("Directional Arrows","arrows"),
+			list("Stand Clear Label","stand_clear"),
+			list("Box","box"),
+			list("Box Corner","box_corners"),
+			list("Delivery Marker","delivery"),
+			list("Warning Box","warn_full"))
+
+/obj/item/decal_painter/afterattack(atom/target, mob/user, proximity)
+	. = ..()
+	var/turf/open/floor/F = target
+	if(!proximity)
+		to_chat(user, "<span class='notice'>You need to get closer!</span>")
+		return
+	if(isturf(F))
+		F.AddComponent(/datum/component/decal, 'icons/turf/decals.dmi', stored_decal_total, stored_dir, CLEAN_STRONG, color, null, null, alpha)
+		playsound(src.loc, 'sound/effects/spray2.ogg', 50, TRUE)
+
+/obj/item/decal_painter/AltClick(mob/user)
+	. = ..()
+	ui_interact(user)
+
+/obj/item/decal_painter/proc/update_decal_path()
+	var/yellow_fix = "" //This will have to do until someone refactors markings.dm
+	if (stored_color)
+		yellow_fix = "_"
+	stored_decal_total = "[stored_decal][yellow_fix][stored_color]"
+	return
+
+/obj/item/decal_painter/ui_interact(mob/user, ui_key = "main", datum/tgui/ui = null, force_open = 0, datum/tgui/master_ui = null, datum/ui_state/state = GLOB.default_state)
+	ui = SStgui.try_update_ui(user, src, ui_key, ui, force_open)
+	if(!ui)
+		ui = new(user, src, ui_key, "decal_painter", name, 500, 400, master_ui, state)
+		ui.open()
+
+/obj/item/decal_painter/ui_data(mob/user)
+	var/list/data = list()
+	data["decal_direction"] = stored_dir
+	data["decal_color"] = stored_color
+	data["decal_style"] = stored_decal
+	data["decal_list"] = list()
+	data["color_list"] = list()
+	data["dir_list"] = list()
+
+	for(var/i in decal_list)
+		data["decal_list"] += list(list(
+			"name" = i[1],
+			"decal" = i[2]
+		))
+	for(var/j in color_list)
+		data["color_list"] += list(list(
+			"colors" = j
+		))
+	for(var/k in dir_list)
+		data["dir_list"] += list(list(
+			"dirs" = k
+		))
+	return data
+
+/obj/item/decal_painter/ui_act(action,list/params)
+	if(..())
+		return
+	switch(action)
+		//Lists of decals and designs
+		if("select decal")
+			var/selected_decal = params["decals"]
+			stored_decal = selected_decal
+		if("select color")
+			var/selected_color = params["colors"]
+			stored_color = selected_color
+		if("selected direction")
+			var/selected_direction = text2num(params["dirs"])
+			stored_dir = selected_direction
+	update_decal_path()
+	. = TRUE

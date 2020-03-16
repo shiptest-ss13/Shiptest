@@ -137,13 +137,13 @@
 
 //Sleeper
 /obj/machinery/sleeper/survival_pod
-	icon = 'icons/obj/lavaland/survival_pod.dmi'
-	icon_state = "sleeper"
+	icon = 'waspstation/icons/obj/machines/sleeper.dmi'
+	icon_state = "lavaland_sleeper"
 
 /obj/machinery/sleeper/survival_pod/update_overlays()
 	. = ..()
 	if(!state_open)
-		. += "sleeper_cover"
+		. += "lavaland_sleeper_cover"
 
 //Lifeform Stasis Unit
 /obj/machinery/stasis/survival_pod

@@ -59,7 +59,7 @@
 	interaction_flags_machine = INTERACT_MACHINE_WIRES_IF_OPEN | INTERACT_MACHINE_ALLOW_SILICON | INTERACT_MACHINE_OPEN_SILICON
 	ui_x = 450
 	ui_y = 460
-	
+
 	FASTDMM_PROP(\
 		set_instance_vars(\
 			pixel_x = dir == EAST ? 24 : (dir == WEST ? -24 : INSTANCE_VAR_DEFAULT),\
@@ -671,7 +671,6 @@
 	else if(istype(W, /obj/item/apc_powercord))
 		return //because we put our fancy code in the right places, and this is all in the powercord's afterattack()
 
-		return
 	else if(panel_open && !opened && is_wire_tool(W))
 		wires.interact(user)
 	else

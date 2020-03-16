@@ -118,8 +118,6 @@
 	else
 		return ..()
 
-/* WaspStation Begin - Floor Painters
-
 /obj/item/airlock_painter/attack_self(mob/user)
 	if(ink)
 		playsound(src.loc, 'sound/machines/click.ogg', 50, TRUE)
@@ -128,7 +126,7 @@
 		to_chat(user, "<span class='notice'>You remove [ink] from [src].</span>")
 		ink = null
 
-WaspStation End */
+/* Waspstation edit - no toner
 
 /obj/item/airlock_painter/decal
 	name = "decal painter"
@@ -162,8 +160,6 @@ WaspStation End */
 	if(use_paint(user) && isturf(F))
 		F.AddComponent(/datum/component/decal, 'icons/turf/decals.dmi', stored_decal_total, stored_dir, CLEAN_STRONG, color, null, null, alpha)
 
-/* WaspStation Begin - Floor Painters
-
 /obj/item/airlock_painter/decal/attack_self(mob/user)
 	if((ink) && (ink.charges >= 1))
 		to_chat(user, "<span class='notice'>[src] beeps to prevent you from removing the toner until out of charges.</span>")
@@ -173,8 +169,6 @@ WaspStation End */
 /obj/item/airlock_painter/decal/AltClick(mob/user)
 	. = ..()
 	ui_interact(user)
-
-WaspStation End */
 
 /obj/item/airlock_painter/decal/Initialize()
 	. = ..()
@@ -241,3 +235,5 @@ WaspStation End */
 /obj/item/airlock_painter/decal/debug/Initialize()
 	. = ..()
 	ink = new /obj/item/toner/extreme(src)
+
+Waspstation end */

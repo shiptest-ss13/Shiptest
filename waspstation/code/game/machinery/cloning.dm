@@ -121,9 +121,10 @@
 /obj/machinery/clonepod/ui_act(action, params)
 	if(..())
 		return
-	else if("ejectbeaker")
-		replace_beaker(usr)
-		. = TRUE
+	switch(action)
+		if("ejectbeaker")
+			replace_beaker(usr)
+			. = TRUE
 
 /obj/machinery/chem_dispenser/AltClick(mob/living/user)
 	..()

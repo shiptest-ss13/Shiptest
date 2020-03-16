@@ -44,14 +44,6 @@
 	var/mob/dead/observer/G = usr
 	G.register_pai()
 
-/obj/screen/ghost/spawner_menu
-	name = "Spawner Menu"
-	icon_state = "spawner_menu"
-
-/obj/screen/ghost/spawner_menu/Click()
-	var/mob/dead/observer/G = usr
-	G.open_spawners_menu()
-
 /datum/hud/ghost/New(mob/owner)
 	..()
 	var/obj/screen/using
@@ -84,10 +76,6 @@
 	using = new /obj/screen/language_menu
 	using.icon = ui_style
 	using.hud = src
-	static_inventory += using
-
-	using = new /obj/screen/ghost/spawner_menu()
-	using.screen_loc = ui_ghost_spawner_menu
 	static_inventory += using
 
 /datum/hud/ghost/show_hud(version = 0, mob/viewmob)

@@ -115,7 +115,6 @@
 	else
 		to_chat(user, "<span class='notice'>This doesn't fit in [src].</span>")
 		return FALSE
-	return FALSE
 
 /obj/item/hypospray/mkii/AltClick(mob/user)
 	if(vial)
