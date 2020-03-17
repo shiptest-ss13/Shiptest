@@ -16,10 +16,7 @@
 	name = "set bone"
 
 	time = 64
-	implements = list(
-	/obj/item/hemostat = 100,	\
-	/obj/item/wrench = 35,	\
-	/obj/item/crowbar = 25)
+	implements = list(TOOL_HEMOSTAT = 100, TOOL_CROWBAR = 25, TOOL_WRENCH = 35)
 
 /datum/surgery_step/set_bone/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
 	if(target_zone == BODY_ZONE_HEAD)
