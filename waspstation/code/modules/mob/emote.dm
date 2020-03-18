@@ -11,7 +11,7 @@
 	. = ..()
 	if(.)
 		user.spin(20, 1)
-
+		playsound(user, 'waspstation/sound/voice/speen.ogg', 50, 1, -1)
 		if((iscyborg(user) || isanimal(user)) && user.has_buckled_mobs())
 			var/mob/living/L = user
 			var/datum/component/riding/riding_datum = L.GetComponent(/datum/component/riding)
@@ -24,9 +24,3 @@
 						riding_datum.force_dismount(M)
 			else
 				L.unbuckle_all_mobs()
-
-
-/datum/emote/speen/run_emote(mob/living/user, params)
-	if(ishuman(user))
-		playsound(user, 'waspstation/sound/voice/speen.ogg', 50, 1, -1)
-	. = ..()
