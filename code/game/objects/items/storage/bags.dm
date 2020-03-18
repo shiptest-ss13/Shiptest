@@ -191,8 +191,10 @@
 
 /obj/item/storage/bag/plants
 	name = "plant bag"
-	icon = 'icons/obj/hydroponics/equipment.dmi'
+	//WaspStation Begin - Better bag sprites
+	icon = 'waspstation/icons/obj/bags.dmi'
 	icon_state = "plantbag"
+	//WaspStation end
 	w_class = WEIGHT_CLASS_TINY
 	resistance_flags = FLAMMABLE
 

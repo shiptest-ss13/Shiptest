@@ -89,7 +89,7 @@
 		if(charge_tick < charge_delay)
 			return
 		charge_tick = 0
-		cell.give(100)
+		cell.give(1000) // WaspStation Edit - Egun energy cells
 		if(!chambered) //if empty chamber we try to charge a new shot
 			recharge_newshot(TRUE)
 		update_icon()
