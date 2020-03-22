@@ -13,7 +13,7 @@
 /obj/item/multitool
 	name = "multitool"
 	desc = "Used for pulsing wires to test which to cut. Not recommended by doctors."
-	icon = 'icons/obj/device.dmi'
+	icon = 'waspstation/icons/obj/tools.dmi' //WaspStation Edit - Better Tool Sprites
 	icon_state = "multitool"
 	item_state = "multitool"
 	lefthand_file = 'icons/mob/inhands/equipment/tools_lefthand.dmi'

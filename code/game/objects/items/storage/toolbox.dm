@@ -71,8 +71,13 @@
 	material_flags = NONE
 
 /obj/item/storage/toolbox/mechanical/PopulateContents()
+	//WaspStation Edit - Better Tool sprites
+	if(prob(50))
+		new /obj/item/wrench(src)
+	else
+		new /obj/item/wrench/crescent(src)
+	//WaspStation End
 	new /obj/item/screwdriver(src)
-	new /obj/item/wrench(src)
 	new /obj/item/weldingtool(src)
 	new /obj/item/crowbar(src)
 	new /obj/item/analyzer(src)
@@ -118,11 +123,11 @@
 	..()
 
 /obj/item/storage/toolbox/mechanical/old/clean/PopulateContents()
-	new /obj/item/screwdriver(src)
-	new /obj/item/wrench(src)
-	new /obj/item/weldingtool(src)
-	new /obj/item/crowbar(src)
-	new /obj/item/wirecutters(src)
+	new /obj/item/screwdriver/old(src)
+	new /obj/item/wrench/old(src)
+	new /obj/item/weldingtool/old(src)
+	new /obj/item/crowbar/old(src)
+	new /obj/item/wirecutters/old(src)
 	new /obj/item/multitool(src)
 	new /obj/item/clothing/gloves/color/yellow(src)
 

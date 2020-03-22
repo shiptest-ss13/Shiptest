@@ -1,7 +1,7 @@
 /obj/item/crowbar
 	name = "pocket crowbar"
 	desc = "A small crowbar. This handy tool is useful for lots of things, such as prying floor tiles or opening unpowered doors."
-	icon = 'icons/obj/tools.dmi'
+	icon = 'waspstation/icons/obj/tools.dmi' //WaspStation Edit - Better Tool Sprites
 	icon_state = "crowbar"
 	lefthand_file = 'icons/mob/inhands/equipment/tools_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/tools_righthand.dmi'

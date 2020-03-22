@@ -1,7 +1,7 @@
 /obj/item/screwdriver
 	name = "screwdriver"
 	desc = "You can be totally screwy with this."
-	icon = 'icons/obj/tools.dmi'
+	icon = 'waspstation/icons/obj/tools.dmi' //WaspStation Edit - Better Tool Sprites
 	icon_state = "screwdriver_map"
 	item_state = "screwdriver"
 	lefthand_file = 'icons/mob/inhands/equipment/tools_lefthand.dmi'

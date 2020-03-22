@@ -1,7 +1,7 @@
 /obj/item/wrench
 	name = "wrench"
 	desc = "A wrench with common uses. Can be found in your hand."
-	icon = 'icons/obj/tools.dmi'
+	icon = 'waspstation/icons/obj/tools.dmi'
 	icon_state = "wrench"
 	lefthand_file = 'icons/mob/inhands/equipment/tools_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/tools_righthand.dmi'
