@@ -1,20 +1,18 @@
-/datum/language/moffic
-	name = "Moffic"
-	desc = "The language of the Mothpeople borders on complete unintelligibility."
+/datum/language/moffic 
+	name = "Moffic" 
+	desc = "The common language of moths. Its origin is unknown, and defies the moths as easily as it does as historians."
 	speech_verb = "flutters"
-	ask_verb = "flits"
-	exclaim_verb = "flaps"
-	sing_verb = "hums"
+	ask_verb = "fluffs"
+	exclaim_verb = "floofs"
 	key = "m"
-	space_chance = 10
+	space_chance = 55
 	syllables = list(
-		"år", "i", "går", "sek", "mo", "ff", "ok", "gj", "ø", "gå", "la", "le",
-		"lit", "ygg", "van", "dår", "næ", "møt", "idd", "hvo", "ja", "på", "han",
-		"så", "ån", "det", "att", "nå", "gö", "bra", "int", "tyc", "om", "när", 
-		"två", "må", "dag", "sjä", "vii", "vuo", "eil", "tun", "käyt", "teh", "vä",
-		"hei", "huo", "suo", "ää", "ten", "ja", "heu", "stu", "uhr", "kön", "we", "hön"
+		"to", "pe", "chu", "mar", "mark", "chur", "ro", "no", "pa", "du", "bli", "bop", "nad", "lah", "vehy", "nu", "ni", "do", "vey",
+			"rey", "rehy", "ba", "bah", "bap", "sha", "shaw", "ha", "ad", "i", "a", "o", "do", "hun", "da", "dah", "ge", "dro", "dros",
+			"cal", "cah", "li", "mo", "gar", "ga", "ma", "mah", "ra", "he", "le", "gek", "gekh", "tu", "too", "hak", "am", "as", "sag", "an",
+			"ne", "ned", "ros", "me", "men", "nob", "bis", "co", "bas", "su", "pap", "de", "ti", "bo", "len", "lin", "mas", "nas",
+			"zu", "za", "kun", "kan", "oh", "ko", "nah", "nya", "pu", "po", "mun", "ta", "fu", "waa"
 	)
 	icon_state = "moth"
 	default_priority = 90
 
-// Fuck guest accounts, and fuck language testing.
