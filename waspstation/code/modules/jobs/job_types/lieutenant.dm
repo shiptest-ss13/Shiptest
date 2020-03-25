@@ -13,6 +13,10 @@ Lieutenant
   selection_color = "#ddddff"
   req_admin_notify = 1
   special_notice = "You are NOT security. Your job is to protect the Captain and Heads of Staff."
+  minimal_player_age = 7
+  exp_requirements = 180
+  exp_type = EXP_TYPE_CREW
+  exp_type_department = EXP_TYPE_SECURITY
 
   outfit = /datum/outfit/job/lieutenant
 
