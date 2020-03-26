@@ -67,6 +67,7 @@
 
 #define MOVESPEED_ID_SLAUGHTER                          "SLAUGHTER"
 #define MOVESPEED_ID_DIE_OF_FATE                        "DIE_OF_FATE"
+#define MOVESPEED_ID_MOUSE_CHEESE						"MOUSE_CHEESE" //Wasp Edit - Yog Mice Port
 
 #define MOVESPEED_ID_SHOVE                              "SHOVE"
 #define MOVESPEED_ID_BULKY_DRAGGING                     "BULKY_DRAG"
