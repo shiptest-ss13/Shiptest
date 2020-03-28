@@ -14,7 +14,7 @@ its mentors, not actual dangerous perms
         to_chat(src, "<span class='danger'>Failed to establish database connection.</span>")
         return
 
-    var/html = "<h1>Mentor Panel</h1>\n"
+    var/html = ""
     html += "<A HREF='?mentor_edit=add'>Add a Mentor</A>\n"
     html += "<table style='width: 100%' border=1>\n"
     html += "<tr><th>Mentor Ckey</th><th>Remove</th></tr>\n"
@@ -26,7 +26,9 @@ its mentors, not actual dangerous perms
 
     html += "</table>"
 
-    usr << browse("<!DOCTYPE html><html>[html]</html>","window=editmentors;size=1000x650")
+    var/datum/browser/popup = new(usr, "mentoredit", "<div align='center'>Mentor Panel</div>", 1000, 650)
+    popup.set_content(html)
+    popup.open(0)
 
 /client/Topic(href, href_list)
     ..()
@@ -41,7 +43,7 @@ its mentors, not actual dangerous perms
 
         if(href_list["mentor_edit"] == "add")
             var/newguy = input("Enter the key of the mentor you wish to add.", "")
-            var/datum/DBQuery/query_add_mentor = SSdbcore.NewQuery("INSERT INTO [format_table_name("mentor")] (ckey) VALUES ('[newguy]')")
+            var/datum/DBQuery/query_add_mentor = SSdbcore.NewQuery("INSERT INTO [format_table_name("mentor")] (`ckey`) VALUES ('[newguy]')")
             query_add_mentor.Execute()
             message_admins("[key_name(usr)] made [newguy] a mentor.")
             log_admin("[key_name(usr)] made [newguy] a mentor.")
