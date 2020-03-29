@@ -29,9 +29,12 @@
 	belt = /obj/item/pda/viro
 	ears = /obj/item/radio/headset/headset_med
 	uniform = /obj/item/clothing/under/rank/medical/virologist
+	alt_uniform = /obj/item/clothing/under/rank/medical/doctor/green //Wasp Edit - Alt Uniforms
 	mask = /obj/item/clothing/mask/surgical
 	shoes = /obj/item/clothing/shoes/sneakers/white
 	suit =  /obj/item/clothing/suit/toggle/labcoat/virologist
+	alt_suit = /obj/item/clothing/suit/toggle/labcoat/mad
+	dcoat = /obj/item/clothing/suit/hooded/wintercoat/medical //Wasp Edit - Alt Uniforms
 	suit_store =  /obj/item/flashlight/pen
 
 	backpack = /obj/item/storage/backpack/virology

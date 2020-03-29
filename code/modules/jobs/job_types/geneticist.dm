@@ -28,6 +28,8 @@
 	belt = /obj/item/pda/geneticist
 	ears = /obj/item/radio/headset/headset_medsci
 	uniform = /obj/item/clothing/under/rank/medical/geneticist
+	alt_uniform = /obj/item/clothing/under/rank/medical/doctor/green //Wasp Edit - Alt Uniforms
+	dcoat = /obj/item/clothing/suit/hooded/wintercoat/medical //Wasp Edit - Alt Uniforms
 	shoes = /obj/item/clothing/shoes/sneakers/white
 	suit =  /obj/item/clothing/suit/toggle/labcoat/genetics
 	suit_store =  /obj/item/flashlight/pen

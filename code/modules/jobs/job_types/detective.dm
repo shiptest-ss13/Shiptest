@@ -32,9 +32,11 @@
 	belt = /obj/item/pda/detective
 	ears = /obj/item/radio/headset/headset_sec/alt
 	uniform = /obj/item/clothing/under/rank/security/detective
+	alt_uniform = /obj/item/clothing/under/rank/security/detective/grey //Wasp Edit - Alt Uniforms
 	neck = /obj/item/clothing/neck/tie/detective
 	shoes = /obj/item/clothing/shoes/sneakers/brown
 	suit = /obj/item/clothing/suit/det_suit
+	alt_suit = /obj/item/clothing/suit/det_suit/grey
 	gloves = /obj/item/clothing/gloves/color/black
 	head = /obj/item/clothing/head/fedora/det_hat
 	l_pocket = /obj/item/toy/crayon/white

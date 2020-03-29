@@ -25,7 +25,10 @@
 	belt = /obj/item/pda/botanist
 	ears = /obj/item/radio/headset/headset_srv
 	uniform = /obj/item/clothing/under/rank/civilian/hydroponics
+	alt_uniform = /obj/item/clothing/under/color/green //Wasp Edit - Alt Uniforms
+	dcoat = /obj/item/clothing/suit/hooded/wintercoat/hydro //Wasp Edit - Alt Uniforms
 	suit = /obj/item/clothing/suit/apron
+	alt_suit = /obj/item/clothing/suit/apron/overalls
 	gloves  =/obj/item/clothing/gloves/botanic_leather
 	suit_store = /obj/item/plant_analyzer
 

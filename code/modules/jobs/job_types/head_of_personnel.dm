@@ -47,6 +47,9 @@
 	belt = /obj/item/pda/heads/head_of_personnel
 	ears = /obj/item/radio/headset/heads/head_of_personnel
 	uniform = /obj/item/clothing/under/rank/command/head_of_personnel
+	alt_uniform = /obj/item/clothing/under/rank/command/head_of_personnel/suit //Wasp Edit - Alt Uniforms
+	alt_suit = /obj/item/clothing/suit/ianshirt
+	dcoat = /obj/item/clothing/suit/hooded/wintercoat/captain //Wasp Edit - Alt Uniforms
 	shoes = /obj/item/clothing/shoes/sneakers/brown
 	head = /obj/item/clothing/head/hopcap
 	backpack_contents = list(/obj/item/storage/box/ids=1,\

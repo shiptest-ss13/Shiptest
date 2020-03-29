@@ -28,6 +28,9 @@
 	shoes = /obj/item/clothing/shoes/workboots/mining
 	gloves = /obj/item/clothing/gloves/color/black
 	uniform = /obj/item/clothing/under/rank/cargo/miner/lavaland
+	alt_uniform = /obj/item/clothing/under/rank/cargo/miner //Wasp Edit - Alt Uniforms
+	alt_suit = /obj/item/clothing/suit/hazardvest
+	dcoat = /obj/item/clothing/suit/hooded/wintercoat/miner //Wasp Edit - Alt Uniforms
 	l_pocket = /obj/item/reagent_containers/hypospray/medipen/survival
 	r_pocket = /obj/item/storage/bag/ore	//causes issues if spawned in backpack
 	backpack_contents = list(

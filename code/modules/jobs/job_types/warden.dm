@@ -37,8 +37,11 @@
 	belt = /obj/item/pda/warden
 	ears = /obj/item/radio/headset/headset_sec/alt
 	uniform = /obj/item/clothing/under/rank/security/warden
+	alt_uniform = /obj/item/clothing/under/rank/security/warden/grey //Wasp Edit - Alt Uniforms
 	shoes = /obj/item/clothing/shoes/jackboots
+	alt_suit = /obj/item/clothing/suit/armor/vest/warden
 	suit = /obj/item/clothing/suit/armor/vest/warden/alt
+	dcoat = /obj/item/clothing/suit/hooded/wintercoat/security //Wasp Edit - Alt Uniforms
 	gloves = /obj/item/clothing/gloves/color/black
 	head = /obj/item/clothing/head/warden
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses

@@ -26,5 +26,8 @@
 	belt = /obj/item/pda/cargo
 	ears = /obj/item/radio/headset/headset_cargo
 	uniform = /obj/item/clothing/under/rank/cargo/tech
+	alt_uniform = /obj/item/clothing/under/shorts/grey //Wasp Edit - Alt Uniforms
+	alt_suit = /obj/item/clothing/suit/hazardvest
+	dcoat = /obj/item/clothing/suit/hooded/wintercoat/cargo //Wasp Edit - Alt Uniforms
 	l_hand = /obj/item/export_scanner
 

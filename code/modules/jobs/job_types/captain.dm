@@ -45,7 +45,11 @@
 	ears = /obj/item/radio/headset/heads/captain/alt
 	gloves = /obj/item/clothing/gloves/color/captain
 	uniform =  /obj/item/clothing/under/rank/command/captain
+	alt_uniform = /obj/item/clothing/under/rank/command/captain/parade //Wasp Edit - Alt Uniforms
+	dcoat = /obj/item/clothing/under/rank/command/captain/suit //Wasp Edit - Alt Uniforms
 	suit = /obj/item/clothing/suit/armor/vest/capcarapace
+	alt_suit = /obj/item/clothing/suit/armor/vest/capcarapace/alt
+	dcoat = /obj/item/clothing/suit/hooded/wintercoat/captain //Wasp Edit - Alt Uniforms
 	shoes = /obj/item/clothing/shoes/sneakers/brown
 	head = /obj/item/clothing/head/caphat
 	backpack_contents = list(/obj/item/melee/classic_baton/telescopic=1, /obj/item/station_charter=1)

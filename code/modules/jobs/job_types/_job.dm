@@ -188,6 +188,11 @@
 	var/duffelbag = /obj/item/storage/backpack/duffelbag
 	var/courierbag = /obj/item/storage/backpack/messenger
 
+	var/alt_uniform = /obj/item/clothing/under
+
+	var/alt_suit = null
+	var/dcoat = /obj/item/clothing/suit/hooded/wintercoat
+
 	var/pda_slot = ITEM_SLOT_BELT
 
 /datum/outfit/job/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
@@ -211,15 +216,28 @@
 		else
 			back = backpack //Department backpack
 
-	//converts the uniform string into the path we'll wear, whether it's the skirt or regular variant
-	var/holder
-	if(H.jumpsuit_style == PREF_SKIRT)
-		holder = "[uniform]/skirt"
-		if(!text2path(holder))
-			holder = "[uniform]"
-	else
-		holder = "[uniform]"
-	uniform = text2path(holder)
+	switch(H.jumpsuit_style)
+		if(PREF_SKIRT)
+			uniform = "[uniform]/skirt"
+		if(PREF_ALTSUIT)
+			uniform = alt_uniform
+		if(PREF_GREYSUIT)
+			uniform = /obj/item/clothing/under/color/grey
+		else
+			uniform = uniform
+
+	switch(H.exowear)
+		if(PREF_ALTEXOWEAR)
+			if(alt_suit)
+				suit = alt_suit
+			else
+				suit = suit
+		if(PREF_NOEXOWEAR)
+			suit = null
+		if(PREF_COATEXOWEAR)
+			suit = dcoat
+		else
+			suit = suit
 
 /datum/outfit/job/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	if(visualsOnly)

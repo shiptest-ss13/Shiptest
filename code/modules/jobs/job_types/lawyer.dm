@@ -28,6 +28,7 @@
 	belt = /obj/item/pda/lawyer
 	ears = /obj/item/radio/headset/headset_srvsec
 	uniform = /obj/item/clothing/under/rank/civilian/lawyer/bluesuit
+	alt_uniform = /obj/item/clothing/under/rank/civilian/lawyer/red //Wasp Edit - Alt Uniforms
 	suit = /obj/item/clothing/suit/toggle/lawyer
 	shoes = /obj/item/clothing/shoes/laceup
 	l_hand = /obj/item/storage/briefcase/lawyer

@@ -117,9 +117,12 @@ GLOBAL_LIST_INIT(available_depts, list(SEC_DEPT_ENGINEERING, SEC_DEPT_MEDICAL, S
 	belt = /obj/item/pda/security
 	ears = /obj/item/radio/headset/headset_sec/alt
 	uniform = /obj/item/clothing/under/rank/security/officer
+	alt_uniform = /obj/item/clothing/under/rank/security/officer/grey //Wasp Edit - Alt Uniforms
 	gloves = /obj/item/clothing/gloves/color/black
 	head = /obj/item/clothing/head/helmet/sec
 	suit = /obj/item/clothing/suit/armor/vest/alt
+	alt_suit = /obj/item/clothing/suit/armor/vest
+	dcoat = /obj/item/clothing/suit/hooded/wintercoat/security //Wasp Edit - Alt Uniforms
 	shoes = /obj/item/clothing/shoes/jackboots
 	l_pocket = /obj/item/restraints/handcuffs
 	r_pocket = /obj/item/assembly/flash/handheld

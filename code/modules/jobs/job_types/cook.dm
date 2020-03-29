@@ -27,7 +27,9 @@
 	belt = /obj/item/pda/cook
 	ears = /obj/item/radio/headset/headset_srv
 	uniform = /obj/item/clothing/under/rank/civilian/chef
+	alt_uniform = /obj/item/clothing/under/rank/civilian/cookjorts //Wasp Edit - Alt Uniforms
 	suit = /obj/item/clothing/suit/toggle/chef
+	alt_suit = /obj/item/clothing/suit/apron/chef
 	head = /obj/item/clothing/head/chefhat
 	mask = /obj/item/clothing/mask/fakemoustache/italian
 	backpack_contents = list(/obj/item/sharpener = 1)

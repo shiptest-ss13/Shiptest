@@ -63,6 +63,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/socks = "Nude"					//socks type
 	var/backpack = DBACKPACK				//backpack type
 	var/jumpsuit_style = PREF_SUIT		//suit/skirt
+	var/exowear = PREF_EXOWEAR			//exowear
 	var/hairstyle = "Bald"				//Hair type
 	var/hair_color = "000"				//Hair color
 	var/facial_hairstyle = "Shaved"	//Face hair type
@@ -72,7 +73,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/datum/species/pref_species = new /datum/species/human()	//Mutant race
 	var/species_looking_at = "human" //used as a helper to keep track of in the species select thingy
 	var/list/features = list("mcolor" = "FFF", "ethcolor" = "9c3030", "tail_lizard" = "Smooth", "tail_human" = "None", "snout" = "Round", "horns" = "None", "ears" = "None", "wings" = "None", "frills" = "None", "spines" = "None", "body_markings" = "None", "legs" = "Normal Legs", "moth_wings" = "Plain", "moth_markings" = "None", "squid_face" = "Squidward", "ipc_screen" = "Blue", "ipc_antenna" = "None", "ipc_chassis" = "Morpheus Cyberkinetics(Greyscale)")
-	var/list/randomise = list(RANDOM_UNDERWEAR = TRUE, RANDOM_UNDERWEAR_COLOR = TRUE, RANDOM_UNDERSHIRT = TRUE, RANDOM_SOCKS = TRUE, RANDOM_BACKPACK = TRUE, RANDOM_JUMPSUIT_STYLE = TRUE, RANDOM_HAIRSTYLE = TRUE, RANDOM_HAIR_COLOR = TRUE, RANDOM_FACIAL_HAIRSTYLE = TRUE, RANDOM_FACIAL_HAIR_COLOR = TRUE, RANDOM_SKIN_TONE = TRUE, RANDOM_EYE_COLOR = TRUE)
+	var/list/randomise = list(RANDOM_UNDERWEAR = TRUE, RANDOM_UNDERWEAR_COLOR = TRUE, RANDOM_UNDERSHIRT = TRUE, RANDOM_SOCKS = TRUE, RANDOM_BACKPACK = TRUE, RANDOM_JUMPSUIT_STYLE = TRUE, RANDOM_EXOWEAR_STYLE = TRUE, RANDOM_HAIRSTYLE = TRUE, RANDOM_HAIR_COLOR = TRUE, RANDOM_FACIAL_HAIRSTYLE = TRUE, RANDOM_FACIAL_HAIR_COLOR = TRUE, RANDOM_SKIN_TONE = TRUE, RANDOM_EYE_COLOR = TRUE)
 	var/list/friendlyGenders = list("Male" = "male", "Female" = "female", "Other" = "plural")
 	var/phobia = "spiders"
 
@@ -268,6 +269,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			dat += "<br><b>Jumpsuit Style:</b><BR><a href ='?_src_=prefs;preference=suit;task=input'>[jumpsuit_style]</a>"
 			dat += "<a href='?_src_=prefs;preference=toggle_random;random_type=[RANDOM_JUMPSUIT_STYLE]'>[(randomise[RANDOM_JUMPSUIT_STYLE]) ? "Lock" : "Unlock"]</A>"
 
+			dat += "<br><b>Outerwear Style:</b><BR><a href ='?_src_=prefs;preference=exo;task=input'>[exowear]</a>"
+			dat += "<a href='?_src_=prefs;preference=toggle_random;random_type=[RANDOM_EXOWEAR_STYLE]'>[(randomise[RANDOM_EXOWEAR_STYLE]) ? "Lock" : "Unlock"]</A>"
 
 			dat += "<br><b>Uplink Spawn Location:</b><BR><a href ='?_src_=prefs;preference=uplink_loc;task=input'>[uplink_spawn_loc]</a><BR></td>"
 
@@ -1241,6 +1244,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					backpack = pick(GLOB.backpacklist)
 				if("suit")
 					jumpsuit_style = pick(GLOB.jumpsuitlist)
+				if("exo")
+					exowear = pick(GLOB.exowearlist)
 				if("all")
 					random_character(gender)
 
@@ -1559,10 +1564,14 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						backpack = new_backpack
 
 				if("suit")
-					if(jumpsuit_style == PREF_SUIT)
-						jumpsuit_style = PREF_SKIRT
-					else
-						jumpsuit_style = PREF_SUIT
+					var/new_suit = input(user, "Choose your character's style of uniform:", "Character Preference")  as null|anything in GLOB.jumpsuitlist
+					if(new_suit)
+						jumpsuit_style = new_suit
+
+				if("exo")
+					var/new_exo = input(user, "Choose your character's style of outerwear:", "Character Preference")  as null|anything in GLOB.exowearlist
+					if(new_exo)
+						exowear = new_exo
 
 				if("uplink_loc")
 					var/new_loc = input(user, "Choose your character's traitor uplink spawn location:", "Character Preference") as null|anything in GLOB.uplink_spawn_loc_list
@@ -1895,6 +1904,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	character.backpack = backpack
 
 	character.jumpsuit_style = jumpsuit_style
+
+	character.exowear = exowear
 
 	var/datum/species/chosen_species
 	chosen_species = pref_species.type

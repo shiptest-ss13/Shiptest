@@ -28,8 +28,11 @@
 	belt = /obj/item/pda/toxins
 	ears = /obj/item/radio/headset/headset_sci
 	uniform = /obj/item/clothing/under/rank/rnd/scientist
+	alt_uniform = /obj/item/clothing/under/rank/rnd/roboticist //Wasp Edit - Alt Uniforms
 	shoes = /obj/item/clothing/shoes/sneakers/white
 	suit = /obj/item/clothing/suit/toggle/labcoat/science
+	alt_suit = /obj/item/clothing/suit/toggle/suspenders/blue
+	dcoat = /obj/item/clothing/suit/hooded/wintercoat/science //Wasp Edit - Alt Uniforms
 
 	backpack = /obj/item/storage/backpack/science
 	satchel = /obj/item/storage/backpack/satchel/tox

@@ -157,10 +157,19 @@ GLOBAL_LIST_INIT(security_depts_prefs, sortList(list(SEC_DEPT_RANDOM, SEC_DEPT_N
 #define DCOURIERBAG "Department Messenger Bag"
 GLOBAL_LIST_INIT(backpacklist, list(DBACKPACK, DSATCHEL, DCOURIERBAG, DDUFFELBAG, GBACKPACK, GSATCHEL, GCOURIERBAG, GDUFFELBAG, LSATCHEL))
 
-	//Suit/Skirt
-#define PREF_SUIT "Jumpsuit"
-#define PREF_SKIRT "Jumpskirt"
-GLOBAL_LIST_INIT(jumpsuitlist, list(PREF_SUIT, PREF_SKIRT))
+	//Uniform
+#define PREF_SUIT "Standard Jumpsuit"
+#define PREF_SKIRT "Standard Jumpskirt"
+#define PREF_ALTSUIT "Alternate Jumpsuit"
+#define PREF_GREYSUIT "Grey Jumpsuit"
+GLOBAL_LIST_INIT(jumpsuitlist, list(PREF_SUIT, PREF_SKIRT, PREF_ALTSUIT, PREF_GREYSUIT))
+
+	//Exowear
+#define PREF_NOEXOWEAR "No Exowear"
+#define PREF_EXOWEAR "Standard Exowear"
+#define PREF_ALTEXOWEAR "Alternate Exowear"
+#define PREF_COATEXOWEAR "Departmental Winter Coat"
+GLOBAL_LIST_INIT(exowearlist, list(PREF_NOEXOWEAR, PREF_EXOWEAR, PREF_ALTEXOWEAR, PREF_COATEXOWEAR))
 
 //Uplink spawn loc
 #define UPLINK_PDA		"PDA"

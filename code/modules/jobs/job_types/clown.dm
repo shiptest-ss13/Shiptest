@@ -32,6 +32,7 @@
 	belt = /obj/item/pda/clown
 	ears = /obj/item/radio/headset/headset_srv
 	uniform = /obj/item/clothing/under/rank/civilian/clown
+	alt_uniform = /obj/item/clothing/under/rank/civilian/clown/green //Wasp Edit - Alt Uniforms
 	shoes = /obj/item/clothing/shoes/clown_shoes
 	mask = /obj/item/clothing/mask/gas/clown_hat
 	l_pocket = /obj/item/bikehorn
