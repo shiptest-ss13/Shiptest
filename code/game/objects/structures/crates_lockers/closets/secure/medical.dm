@@ -41,6 +41,7 @@
 	new /obj/item/storage/box/hypospray(src) //Hypo Mk. 2s
 	new /obj/item/storage/bag/medical(src) //Medibags
 	new /obj/item/clothing/head/beret/med(src) //Berets
+	new /obj/item/clothing/glasses/hud/health/prescription(src) //Prescription HUDs
 	//WaspStation End
 	new /obj/item/radio/headset/headset_med(src)
 	new /obj/item/defibrillator/loaded(src)
@@ -119,4 +120,5 @@
 	new /obj/item/reagent_containers/dropper(src)
 	new /obj/item/storage/box/syringes/variety(src)
 	new /obj/item/storage/box/beakers/variety(src)
+	new /obj/item/clothing/glasses/science/prescription(src) // Wasp Edit - Prescription HUDs
 	new /obj/item/clothing/glasses/science(src)

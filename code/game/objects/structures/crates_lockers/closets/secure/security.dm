@@ -144,7 +144,12 @@
 	new /obj/item/clothing/head/helmet/sec(src)
 	new /obj/item/radio/headset/headset_sec(src)
 	new /obj/item/radio/headset/headset_sec/alt(src)
-	new /obj/item/clothing/glasses/hud/security/sunglasses(src)
+ 	//Waspstation begin - Prescription HUDs
+	if(prob(75))
+		new /obj/item/clothing/glasses/hud/security/sunglasses(src)
+	else
+		new /obj/item/clothing/glasses/hud/security/prescription(src)
+	//Waspstation end
 	new /obj/item/flashlight/seclite(src)
 
 /obj/structure/closet/secure_closet/security/sec

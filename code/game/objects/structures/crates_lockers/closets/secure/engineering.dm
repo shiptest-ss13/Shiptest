@@ -68,6 +68,7 @@
 /obj/structure/closet/secure_closet/engineering_personal/PopulateContents()
 	..()
 	new /obj/item/clothing/head/beret/eng(src) // Waspstation edit - Berets
+	new /obj/item/clothing/glasses/meson/prescription(src) //Waspstation edit - Prescription HUDs
 	new /obj/item/radio/headset/headset_eng(src)
 	new /obj/item/storage/toolbox/mechanical(src)
 	new /obj/item/tank/internals/emergency_oxygen/engi(src)
