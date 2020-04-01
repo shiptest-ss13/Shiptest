@@ -4,7 +4,7 @@
 	spread_text = "Contact"
 	spread_flags = DISEASE_SPREAD_BLOOD | DISEASE_SPREAD_CONTACT_FLUIDS | DISEASE_SPREAD_CONTACT_SKIN
 	agent = "SARS-CoV-2"
-	viable_mobtypes = list(/mob/living/carbon/human, /mob/living/simple_animal/hostile/retaliate/bat)
+	viable_mobtypes = list(/mob/living/carbon/human, /mob/living/carbon/monkey, /mob/living/simple_animal/hostile/retaliate/bat)
 	permeability_mod = 0.5
 	desc = "An infectious respiratory disease spread by close contact. Common symptoms include fever, cough, and shortness of breath."
 	disease_flags = CAN_CARRY
