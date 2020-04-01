@@ -6,8 +6,8 @@
 	icon = 'icons/mob/nest.dmi'
 	icon_state = "ash_walker_nest"
 
-	move_resist=INFINITY // just killing it tears a massive hole in the ground, let's not move it
-	anchored = TRUE
+	move_resist=1000 // can be pulled if you displace it from the lava pool and have 1000 pull force, can be pushed if you have 1000 push force, takes damage if you somehow have more
+	anchored = FALSE
 	density = TRUE
 
 	resistance_flags = FIRE_PROOF | LAVA_PROOF
