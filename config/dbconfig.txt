@@ -7,7 +7,7 @@
 
 ## Server the MySQL database can be found at.
 ## Examples: localhost, 200.135.5.43, www.mysqldb.com, etc.
-ADDRESS localhost
+ADDRESS 127.0.0.1
 
 ## MySQL server port (default is 3306).
 PORT 3306
@@ -33,7 +33,7 @@ FEEDBACK_PASSWORD password
 ## Set to 0 for infinite
 ASYNC_QUERY_TIMEOUT 10
 
-## Time in seconds for blocking queries to execute before slow query timeout 
+## Time in seconds for blocking queries to execute before slow query timeout
 ## Set to 0 for infinite
 ## Must be less than or equal to ASYNC_QUERY_TIMEOUT
 BLOCKING_QUERY_TIMEOUT 5

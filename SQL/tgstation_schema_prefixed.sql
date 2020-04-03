@@ -322,6 +322,8 @@ CREATE TABLE `SS13_player` (
   `accountjoindate` DATE DEFAULT NULL,
   `flags` smallint(5) unsigned DEFAULT '0' NOT NULL,
   `discord_id` BIGINT(20) NULL DEFAULT NULL,
+  `antag_tokens` tinyint(4) unsigned DEFAULT '0',
+  `metacoins` int(10) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`ckey`),
   KEY `idx_player_cid_ckey` (`computerid`,`ckey`),
   KEY `idx_player_ip_ckey` (`ip`,`ckey`)
