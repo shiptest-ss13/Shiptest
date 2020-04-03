@@ -6,7 +6,7 @@
 	agent = "SARS-CoV-2"
 	viable_mobtypes = list(/mob/living/carbon/human, /mob/living/carbon/monkey, /mob/living/simple_animal/hostile/retaliate/bat)
 	permeability_mod = 0.5
-	desc = "An infectious respiratory disease spread by close contact. Common symptoms include fever, cough, and shortness of breath."
+	desc = "An infectious respiratory disease spread by close contact. Early detection and rest can result in recovery, but later stages of the disease are terminal."
 	disease_flags = CAN_CARRY
 	severity = DISEASE_SEVERITY_DANGEROUS
 	
