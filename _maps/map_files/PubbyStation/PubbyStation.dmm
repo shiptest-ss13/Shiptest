@@ -5290,10 +5290,10 @@
 /obj/effect/turf_decal/tile/red{
 	dir = 4
 	},
-/obj/machinery/photocopier/faxmachine/longrange{
+/obj/structure/table/wood,
+/obj/machinery/photocopier/faxmachine{
 	department = "Head of Security"
 	},
-/obj/structure/table/wood,
 /turf/open/floor/plasteel/dark,
 /area/crew_quarters/heads/hos)
 "anU" = (
@@ -6698,7 +6698,7 @@
 /obj/effect/turf_decal/tile/blue{
 	dir = 4
 	},
-/obj/machinery/photocopier/faxmachine/longrange{
+/obj/machinery/photocopier/faxmachine{
 	department = "Bridge"
 	},
 /turf/open/floor/plasteel/dark,
@@ -55668,6 +55668,9 @@
 /obj/item/folder/blue,
 /obj/item/folder/blue,
 /obj/item/clothing/glasses/sunglasses,
+/obj/machinery/photocopier/faxmachine/longrange{
+	department = "Internal Affairs"
+	},
 /turf/open/floor/carpet,
 /area/lawoffice)
 "uBN" = (

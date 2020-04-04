@@ -8,6 +8,7 @@
 	spawn_positions = 2
 	supervisors = "the head of personnel"
 	selection_color = "#dddddd"
+	special_notice = "You are not a security officer. However, you represent the law and can defend those who are mishandled by security in court." //WaspStation Edit - Wikilinks/Warning
 	wiki_page = "Lawyer" //WaspStation Edit - Wikilinks/Warning
 	var/lawyers = 0 //Counts lawyer amount
 
