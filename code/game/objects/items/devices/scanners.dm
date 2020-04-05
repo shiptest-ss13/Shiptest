@@ -301,9 +301,9 @@ GENE SCANNER
 		var/list/broken_stuff = list()
 		for(var/obj/item/bodypart/B in H.bodyparts)
 			if(B.bone_status == BONE_FLAG_BROKEN)
-				broken_stuff += B
+				broken_stuff += B.name
 		if(broken_stuff.len)
-			render_list += "\t<span class='alert'>Bone fractures detected. Advanced scanner required for location.</span>\n"
+			render_list += "\t<span class='alert'>Bone fractures detected. Subject's [english_list(broken_stuff)] [broken_stuff.len > 1 ? "require" : "requires"] surgical treatment!</span>\n"
 
 		// Species and body temperature
 		var/datum/species/S = H.dna.species
