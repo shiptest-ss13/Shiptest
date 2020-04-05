@@ -229,10 +229,10 @@
 			var/obj/projectile/P = M
 			P.ignore_source_check = TRUE
 		return TRUE
-	return FALSE
 	// try to search for a new one if something was var edited etc
 	set_linked()
 	. = ..()
+	return FALSE
 
 /obj/effect/portal/permanent/one_way // doesn't have a return portal
 	name = "one-way portal"
