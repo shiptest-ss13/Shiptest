@@ -123,6 +123,8 @@
 	var/list/diseases = list() /// list of all diseases in a mob
 	var/list/disease_resistances = list()
 
+	var/player_logged = FALSE //keep track at login and logout; used for SSD
+
 	var/slowed_by_drag = TRUE ///Whether the mob is slowed down when dragging another prone mob
 
 	var/list/ownedSoullinks ///soullinks we are the owner of

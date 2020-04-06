@@ -21,6 +21,10 @@
 		if(.) //not dead
 			handle_blood()
 
+		if(isLivingSSD())//if you're disconnected, you're going to sleep
+			if(AmountSleeping() < 20)
+				AdjustSleeping(20)//adjust every 10 seconds
+
 		if(stat != DEAD)
 			var/bprv = handle_bodyparts()
 			if(bprv & BODYPART_LIFE_UPDATE_HEALTH)
@@ -673,7 +677,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	// apply insulation to the amount of change
 	if(use_insulation)
 		amount *= (1 - get_insulation_protection(bodytemperature + amount))
-	
+
 	// Extra calculation for hardsuits to bleed off heat
 	if(hardsuit_fix)
 		amount += hardsuit_fix
