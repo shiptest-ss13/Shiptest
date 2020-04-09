@@ -125,6 +125,21 @@
 	else
 		airlock.cyclelinkeddir = dir
 
+/obj/effect/mapping_helpers/airlock/cyclelink_helper_target	//Wasp start
+	name = "airlock cyclelink helper target"
+	icon_state = "airlock_cyclelink_helper_target"
+	var/dirx
+	var/diry
+
+/obj/effect/mapping_helpers/airlock/cyclelink_helper_target/payload(obj/machinery/door/airlock/airlock)
+	if(airlock.cyclelinkedx || airlock.cyclelinkedy)
+		log_mapping("[src] at [AREACOORD(src)] tried to set [airlock] cyclelinkedx and y, but they're already set")
+	else
+		if(!dirx && !diry)
+			log_mapping("[src] at [AREACOORD(src)] tried to set [airlock] cyclelinkedx and y, but has dirx and diry are uninitialized")
+			return
+		airlock.cyclelinkedx = dirx
+		airlock.cyclelinkedy = diry//Wasp end
 
 /obj/effect/mapping_helpers/airlock/locked
 	name = "airlock lock helper"
