@@ -187,6 +187,10 @@
 	///List of progress bars this mob is currently seeing for actions
 	var/list/progressbars = null	//for stacking do_after bars
 
+	//Wasp Begin - Holy fuck work for spacepods
+	var/list/mousemove_intercept_objects
+	//Wasp End
+
 	///Allows a datum to intercept all click calls this mob is the source of
 	var/datum/click_intercept
 
