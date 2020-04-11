@@ -424,6 +424,7 @@
 		for(var/obj/item/pinpointer/nuke/syndicate/S in GLOB.pinpointer_list)
 			S.switch_mode_to(TRACK_INFILTRATOR)
 		countdown.start()
+		SSredbot.send_discord_message("admin","A nuclear device has been set to explode in [timing] seconds!","round ending event")
 		set_security_level("delta")
 	else
 		detonation_timer = null
@@ -490,6 +491,8 @@
 	if(off_station < 2)
 		SSshuttle.registerHostileEnvironment(src)
 		SSshuttle.lockdown = TRUE
+
+	SSredbot.send_discord_message("admin","A nuclear device has destroyed the station.","round ending event")
 
 	//Cinematic
 	SSticker.mode.OnNukeExplosion(off_station)

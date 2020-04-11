@@ -254,6 +254,7 @@
 				return
 			qdel(query_add_rank_log)
 			sync_lastadminrank(admin_ckey, admin_key)
+		SSredbot.send_discord_message("admin","[m2]","admin")
 		message_admins(m1)
 		log_admin(m2)
 
@@ -350,6 +351,7 @@
 		D.associate(C)
 	else
 		D = new(R, admin_ckey, TRUE) //new admin
+	SSredbot.send_discord_message("admin","[m2]","admin")
 	message_admins(m1)
 	log_admin(m2)
 
@@ -419,6 +421,7 @@
 			D.rank.can_edit_rights = new_can_edit_flags
 		var/client/C = GLOB.directory[admin_ckey] //find the client with the specified ckey (if they are logged in)
 		D.associate(C) //link up with the client and add verbs
+	SSredbot.send_discord_message("admin","[m2]","admin")
 	message_admins(m1)
 	log_admin(m2)
 

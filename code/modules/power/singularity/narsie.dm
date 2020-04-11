@@ -66,6 +66,7 @@
 		if(player.stat != DEAD && player.loc && is_station_level(player.loc.z) && !iscultist(player) && !isanimal(player))
 			souls_needed[player] = TRUE
 	soul_goal = round(1 + LAZYLEN(souls_needed) * 0.75)
+	SSredbot.send_discord_message("admin","Nar'sie has been summoned.","round ending event")
 	INVOKE_ASYNC(GLOBAL_PROC, .proc/begin_the_end)
 
 /proc/begin_the_end()
