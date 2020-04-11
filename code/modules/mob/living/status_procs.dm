@@ -310,7 +310,7 @@
 			S = apply_status_effect(STATUS_EFFECT_SLEEPING, amount, updating)
 		return S
 
-/mob/living/proc/SetSleeping(amount, updating = TRUE, ignore_canstun = FALSE) //Sets remaining duration
+/mob/living/proc/SetSleeping(amount, updating = TRUE, ignore_canstun = FALSE, healing = FALSE) //Sets remaining duration waspstation edit
 	if(SEND_SIGNAL(src, COMSIG_LIVING_STATUS_SLEEP, amount, updating, ignore_canstun) & COMPONENT_NO_STUN)
 		return
 	if((!HAS_TRAIT(src, TRAIT_SLEEPIMMUNE)) || ignore_canstun)
@@ -321,7 +321,7 @@
 		else if(S)
 			S.duration = world.time + amount
 		else
-			S = apply_status_effect(STATUS_EFFECT_SLEEPING, amount, updating)
+			S = apply_status_effect(STATUS_EFFECT_SLEEPING, amount, updating, healing)
 		return S
 
 /mob/living/proc/AdjustSleeping(amount, updating = TRUE, ignore_canstun = FALSE) //Adds to remaining duration

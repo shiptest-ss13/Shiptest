@@ -433,7 +433,7 @@
 		return
 	else
 		if(alert(src, "You sure you want to sleep for a while?", "Sleep", "Yes", "No") == "Yes")
-			SetSleeping(400) //Short nap
+			SetSleeping(400, TRUE, FALSE, TRUE) //Short nap
 	update_mobility()
 
 /mob/proc/get_contents()
