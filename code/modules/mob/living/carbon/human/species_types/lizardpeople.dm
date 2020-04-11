@@ -1,6 +1,6 @@
 /datum/species/lizard
 	// Reptilian humanoids with scaled skin and tails.
-	name = "Unathi" //oops I'm lazy and this is all I'm going to change to lizard
+	name = "Lizardperson"
 	id = "lizard"
 	say_mod = "hisses"
 	default_color = "00FF00"
@@ -8,7 +8,7 @@
 	inherent_biotypes = MOB_ORGANIC|MOB_HUMANOID|MOB_REPTILE
 	mutant_bodyparts = list("tail_lizard", "snout", "spines", "horns", "frills", "body_markings", "legs")
 	mutanttongue = /obj/item/organ/tongue/lizard
-	mutanttail = /obj/item/organ/tail/lizard
+	mutant_organs = list(/obj/item/organ/tail/lizard)
 	coldmod = 1.5
 	heatmod = 0.67
 	default_features = list("mcolor" = "0F0", "tail_lizard" = "Smooth", "snout" = "Round", "horns" = "None", "frills" = "None", "spines" = "None", "body_markings" = "None", "legs" = "Normal Legs")
@@ -28,7 +28,7 @@
 	// Lizards are coldblooded and can stand a greater temperature range than humans
 	bodytemp_heat_damage_limit = (BODYTEMP_HEAT_DAMAGE_LIMIT + 20) // This puts lizards 10 above lavaland max heat for ash lizards.
 	bodytemp_cold_damage_limit = (BODYTEMP_COLD_DAMAGE_LIMIT - 10)
-	loreblurb = "Cold-blooded and covered in scales, lizard may seem like a vicious predator put in a fancy jumpsuit, \
+	loreblurb = "Cold-blooded and covered in scales, lizards may seem like a vicious predator put in a fancy jumpsuit, \
 	but due to some recent pressure from HR they're generally well-behaved. Most of them don't even fight all that well. \
 	Confusing them with Ash Walkers (the similarly lizard-like natives of the Lavaland Wastes) might lead to having a spear lodged in your skull."
 

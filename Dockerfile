@@ -40,7 +40,7 @@ RUN apt-get install -y --no-install-recommends software-properties-common \
     g++-7 \
     libmariadb-client-lgpl-dev \
     && git init \
-    && git remote add origin https://github.com/tgstation/BSQL 
+    && git remote add origin https://github.com/tgstation/BSQL
 
 COPY dependencies.sh .
 

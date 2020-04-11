@@ -218,7 +218,7 @@
 	new /obj/item/clothing/suit/armor/vest/det_suit(src)
 	new /obj/item/clothing/accessory/holster/detective(src) //WaspStation Edit - Made Holsters Accessories
 	new /obj/item/pinpointer/crew(src)
-	new /obj/item/twohanded/binoculars(src)
+	new /obj/item/binoculars(src)
 	new /obj/item/storage/box/rxglasses/spyglasskit(src)
 /obj/structure/closet/secure_closet/injection
 	name = "lethal injections"

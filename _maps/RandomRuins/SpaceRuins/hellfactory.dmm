@@ -75,7 +75,9 @@
 /area/ruin/space/has_grav/hellfactoryoffice)
 "ak" = (
 /obj/machinery/atmospherics/components/unary/tank/oxygen{
-	gas_type = /datum/gas/water_vapor
+	dir = 8;
+	gas_type = /datum/gas/water_vapor;
+	initialize_directions = 8
 	},
 /turf/open/floor/plasteel/grimy,
 /area/ruin/space/has_grav/hellfactoryoffice)
@@ -161,7 +163,7 @@
 /obj/machinery/atmospherics/pipe/heat_exchanging/simple{
 	dir = 4
 	},
-/turf/closed/wall,
+/turf/open/floor/plastic,
 /area/ruin/space/has_grav/hellfactory)
 "ax" = (
 /obj/machinery/atmospherics/pipe/heat_exchanging/manifold{
@@ -834,6 +836,7 @@
 /obj/effect/turf_decal{
 	dir = 5
 	},
+/obj/structure/fluff/broken_flooring,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/hellfactory)
 "cz" = (
@@ -849,10 +852,6 @@
 /area/ruin/space/has_grav/hellfactory)
 "cB" = (
 /obj/item/stack/tile/plasteel,
-/turf/open/floor/plating,
-/area/ruin/space/has_grav/hellfactory)
-"cC" = (
-/obj/structure/sign/warning/vacuum,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/hellfactory)
 "cD" = (
@@ -978,7 +977,7 @@
 "lR" = (
 /obj/machinery/light/floor,
 /obj/effect/turf_decal/bot_white/right,
-/turf/open/floor/plating,
+/turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/hellfactory)
 "nT" = (
 /obj/structure/rack,
@@ -1005,17 +1004,24 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/light/floor,
 /obj/effect/turf_decal/bot_white/left,
-/turf/open/floor/plating,
+/turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/hellfactory)
 "rC" = (
 /obj/structure/sign/poster/random,
 /turf/closed/wall/rust,
 /area/ruin/space/has_grav/hellfactory)
+"tt" = (
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/hellfactory)
+"tN" = (
+/obj/machinery/light/small,
+/turf/open/floor/plasteel/grimy,
+/area/ruin/space/has_grav/hellfactoryoffice)
 "uL" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/light/floor,
 /obj/effect/turf_decal/bot_white/right,
-/turf/open/floor/plating,
+/turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/hellfactory)
 "wv" = (
 /obj/machinery/power/apc/highcap/ten_k{
@@ -1030,6 +1036,11 @@
 /obj/effect/decal/cleanable/cobweb/cobweb2,
 /turf/open/floor/holofloor/wood,
 /area/ruin/space/has_grav/hellfactory)
+"yM" = (
+/obj/structure/closet/crate/trashcart,
+/obj/item/stack/sheet/mineral/plasma,
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/hellfactory)
 "zI" = (
 /obj/structure/cable,
 /turf/closed/wall/r_wall/rust,
@@ -1037,7 +1048,7 @@
 "BC" = (
 /obj/machinery/light/floor,
 /obj/effect/turf_decal/bot_white/left,
-/turf/open/floor/plating,
+/turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/hellfactory)
 "EP" = (
 /obj/structure/cable,
@@ -1057,6 +1068,10 @@
 "GE" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/checker,
+/area/ruin/space/has_grav/hellfactory)
+"Ld" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/hellfactory)
 "Mv" = (
 /obj/structure/sign/poster/random,
@@ -1094,6 +1109,10 @@
 "Wh" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
+/area/ruin/space/has_grav/hellfactory)
+"WZ" = (
+/obj/structure/sign/warning/vacuum,
+/turf/closed/wall,
 /area/ruin/space/has_grav/hellfactory)
 
 (1,1,1) = {"
@@ -1355,8 +1374,8 @@ cV
 by
 Wh
 BC
-by
-Wh
+tt
+Ld
 ry
 by
 by
@@ -1373,7 +1392,7 @@ ah
 al
 ao
 aG
-ao
+tN
 ah
 bg
 aA
@@ -1381,10 +1400,10 @@ bL
 aA
 Wh
 Wh
+tt
 by
 by
-by
-by
+tt
 Wh
 by
 cw
@@ -1409,8 +1428,8 @@ by
 by
 by
 lR
-by
-by
+tt
+tt
 uL
 by
 Wh
@@ -1481,7 +1500,7 @@ ah
 ap
 ao
 aK
-ao
+tN
 ah
 aA
 bn
@@ -1548,9 +1567,9 @@ zI
 EP
 zI
 lv
-cr
+yM
 cA
-cC
+by
 ab
 aa
 aa
@@ -1578,7 +1597,7 @@ aL
 cr
 cB
 cL
-ab
+WZ
 aa
 aa
 "}

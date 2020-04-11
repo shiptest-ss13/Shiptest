@@ -398,8 +398,8 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	name = "Double-Bladed Energy Sword"
 	desc = "The double-bladed energy sword does slightly more damage than a standard energy sword and will deflect \
 			all energy projectiles, but requires two hands to wield."
-	item = /obj/item/twohanded/dualsaber
-	player_minimum = 20
+	item = /obj/item/dualsaber
+	player_minimum = 25
 	cost = 16
 	exclude_modes = list(/datum/game_mode/nuclear/clown_ops)
 
@@ -576,7 +576,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 /datum/uplink_item/stealthy_weapons/martialarts
 	name = "Martial Arts Scroll"
 	desc = "This scroll contains the secrets of an ancient martial arts technique. You will master unarmed combat, \
-			swatting bullets out of the air, and gain skin as hard as a rock, but you also refuse to use dishonorable ranged weaponry."
+			gain skin as hard as steel and swat bullets from the air, but you also refuse to use dishonorable ranged weaponry."
 	item = /obj/item/book/granter/martial/carp
 	player_minimum = 20
 	cost = 17
@@ -1212,6 +1212,16 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	category = "Space Suits"
 	surplus = 40
 
+/datum/uplink_item/suits/infiltrator_bundle
+	name = "Infiltrator Case"
+	desc = "Developed by Roseus Galactic in conjunction with the Gorlex Marauders to produce a functional suit for urban operations, \
+			this suit proves to be cheaper than your standard issue hardsuit, with none of the movement restrictions of the outdated spacesuits employed by the company. \
+			Comes with a armor vest, helmet, sneaksuit, sneakboots, specialized combat gloves and a high-tech balaclava. The case is also rather useful as a storage container."
+	item = /obj/item/storage/toolbox/infiltrator
+	cost = 6
+	limited_stock = 1 //you only get one so you don't end up with too many gun cases
+	exclude_modes = list(/datum/game_mode/nuclear)
+
 /datum/uplink_item/suits/space_suit
 	name = "Syndicate Space Suit"
 	desc = "This red and black Syndicate space suit is less encumbering than Nanotrasen variants, \
@@ -1495,11 +1505,12 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	cost = 7
 	limited_stock = 1
 
-/datum/uplink_item/device_tools/telecrystal/bonemedipen
-	name = "C4L-Z1UM medipen"
-	desc = "A medipen stocked with an agent that will help regenerate bones and organs. A single-use pocket Medbay visit."
-	item = /obj/item/reagent_containers/hypospray/medipen/bonefixingjuice
-	cost = 3
+/datum/uplink_item/device_tools/guerillagloves
+	name = "Guerilla Gloves"
+	desc = "A pair of highly robust combat gripper gloves that excels at performing takedowns at close range, with an added lining of insulation. Careful not to hit a wall!"
+	item = /obj/item/clothing/gloves/tackler/combat/insulated
+	include_modes = list(/datum/game_mode/nuclear, /datum/game_mode/nuclear/clown_ops)
+	cost = 2
 
 // Implants
 /datum/uplink_item/implants
@@ -1889,3 +1900,13 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	item = /obj/item/storage/fancy/cigarettes/cigpack_syndicate
 	cost = 2
 	illegal_tech = FALSE
+
+/datum/uplink_item/badass/tactical_naptime
+	name = "Sleepy Time Pajama Bundle"
+	desc = "Even soldiers need to get a good nights rest. Comes with blood-red pajamas, a blankie, a hot mug of cocoa and a fuzzy friend."
+	item = /obj/item/storage/box/syndie_kit/sleepytime
+	cost = 4
+	limited_stock = 1
+	cant_discount = TRUE
+	include_modes = list(/datum/game_mode/nuclear)
+

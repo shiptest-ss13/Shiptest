@@ -54,6 +54,8 @@ GLOBAL_VAR_INIT(mouse_killed, 0)
 	var/full = FALSE // Wasp Edit
 	var/eating = FALSE // Wasp Edit
 	var/cheesed = FALSE // Wasp Edit
+	can_be_held = TRUE
+	held_state = "mouse_gray"
 
 /mob/living/simple_animal/mouse/Initialize()
 	. = ..()
@@ -136,9 +138,9 @@ GLOBAL_VAR_INIT(mouse_killed, 0)
 		qdel(CW)
 		full = TRUE
 		addtimer(VARSET_CALLBACK(src, full, FALSE), 3 MINUTES)
-		
+
 /mob/living/simple_animal/mouse/attackby(obj/item/O, mob/user, params)
-	if(istype(O, /obj/item/reagent_containers/food/snacks/cheesewedge)) 
+	if(istype(O, /obj/item/reagent_containers/food/snacks/cheesewedge))
 		to_chat(user, "<span class='notice'>You feed [O] to [src].</span>")
 		visible_message("[src] squeaks happily!")
 		qdel(O)
@@ -204,7 +206,7 @@ GLOBAL_VAR_INIT(mouse_killed, 0)
 	regen_health(15)
 	resize = 2
 	update_transform()
-	add_movespeed_modifier(MOVESPEED_ID_MOUSE_CHEESE, TRUE, 100, multiplicative_slowdown = -1)
+	add_movespeed_modifier(/datum/movespeed_modifier/mouse_cheese)
 	maxHealth = 30
 	health = maxHealth
 	to_chat(src, "<span class='userdanger'>You ate cheese! You are now stronger, bigger and faster!</span>")
@@ -216,7 +218,7 @@ GLOBAL_VAR_INIT(mouse_killed, 0)
 	health = maxHealth
 	resize = 0.5
 	update_transform()
-	remove_movespeed_modifier(MOVESPEED_ID_MOUSE_CHEESE, TRUE)
+	remove_movespeed_modifier(/datum/movespeed_modifier/mouse_cheese)
 	to_chat(src, "<span class='userdanger'>A feeling of sadness comes over you as the effects of the cheese wears off. You. Must. Get. More.</span>")
 
 /atom/proc/mouse_eat(mob/living/simple_animal/mouse/M)
@@ -253,6 +255,7 @@ GLOBAL_VAR_INIT(mouse_killed, 0)
 /mob/living/simple_animal/mouse/white
 	body_color = "white"
 	icon_state = "mouse_white"
+	held_state = "mouse_white"
 
 /mob/living/simple_animal/mouse/gray
 	body_color = "gray"
@@ -261,6 +264,7 @@ GLOBAL_VAR_INIT(mouse_killed, 0)
 /mob/living/simple_animal/mouse/brown
 	body_color = "brown"
 	icon_state = "mouse_brown"
+	held_state = "mouse_brown"
 
 //TOM IS ALIVE! SQUEEEEEEEE~K :)
 /mob/living/simple_animal/mouse/brown/Tom

@@ -2,7 +2,7 @@
 Uplink Items
 **/
 
-//Stealthy Weapons
+/*Stealthy Weapons*/
 /datum/uplink_item/stealthy_weapons/derringerpack
 	name = "Compact Derringer"
 	desc = "An easily concealable handgun capable of firing .357 rounds. Comes in an inconspicuious packet of cigarettes with additional munitions."
@@ -24,3 +24,9 @@ Uplink Items
 	cost = 14
 	item = /obj/vehicle/ridden/lawnmower/emagged
 
+/*General Combat*/
+/datum/uplink_item/device_tools/telecrystal/bonemedipen
+	name = "C4L-Z1UM medipen"
+	desc = "A medipen stocked with an agent that will help regenerate bones and organs. A single-use pocket Medbay visit."
+	item = /obj/item/reagent_containers/hypospray/medipen/bonefixingjuice
+	cost = 3

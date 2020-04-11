@@ -30,7 +30,7 @@
 				var/obj/item/bodypart/BP = T.get_bodypart(BODY_ZONE_HEAD)
 				if(BP)
 					BP.receive_damage(36) //so 3 toolbox hits
-				
+
 				T.visible_message("<span class='warning'>[src] curbstomps [T]!</span>", "<span class='warning'>[src] curbstomps you!</span>")
 
 				log_combat(src, T, "curbstomped")
@@ -69,5 +69,11 @@
 
 			src.pixel_x = 0
 			src.pixel_y = 0 //position reset
-		
+
 			src.is_busy = FALSE
+
+/mob/living/carbon/human/species/ipc
+	race = /datum/species/ipc
+
+/mob/living/carbon/human/species/squid
+	race = /datum/species/squid

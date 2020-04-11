@@ -1,28 +1,33 @@
-<h1 align="center">WaspStation 13 Codebase</h1>
+# WaspStation 13 Codebase
 
 [![Build Status](https://api.travis-ci.com/WaspStation/WaspStation-1.0.svg?branch=master)](https://travis-ci.com/WaspStation/WaspStation-1.0) [![Krihelimeter](http://www.krihelinator.xyz/badge/WaspStation/WaspStation-1.0)](https://www.krihelinator.xyz)
-[![Percentage of issues still open](http://isitmaintained.com/badge/open/waspstation/waspstation-1.0.svg)](https://isitmaintained.com/project/tgstation/tgstation "Percentage of issues still open") [![Average time to resolve an issue](http://isitmaintained.com/badge/resolution/waspstation/waspstation-1.0.svg)](https://isitmaintained.com/project/tgstation/tgstation "Average time to resolve an issue") ![Coverage](https://img.shields.io/badge/coverage---2%25-red.svg)
-[![forthebadge](https://forthebadge.com/images/badges/built-with-resentment.svg)](https://forthebadge.com) [![forthebadge](https://forthebadge.com/images/badges/contains-technical-debt.svg)](https://user-images.githubusercontent.com/8171642/50290880-ffef5500-043a-11e9-8270-a2e5b697c86c.png)[![forthebadge](https://forthebadge.com/images/badges/60-percent-of-the-time-works-every-time.svg)](https://forthebadge.com) [![forinfinityandbyond](https://user-images.githubusercontent.com/5211576/29499758-4efff304-85e6-11e7-8267-62919c3688a9.gif)](https://www.reddit.com/r/SS13/comments/5oplxp/what_is_the_main_problem_with_byond_as_an_engine/dclbu1a)
+[![Percentage of issues still open](http://isitmaintained.com/badge/open/waspstation/waspstation-1.0.svg)](https://isitmaintained.com/project/waspstation/waspstation-1.0 "Percentage of issues still open") [![Average time to resolve an issue](http://isitmaintained.com/badge/resolution/waspstation/waspstation-1.0.svg)](https://isitmaintained.com/project/waspstation/waspstation-1.0 "Average time to resolve an issue") [![GitHub issues](https://img.shields.io/github/issues/waspstation/waspstation-1.0)](https://github.com/waspstation/waspstation-1.0/issues) ![GitHub top language](https://img.shields.io/github/languages/top/waspstation/waspstation-1.0)
+
+[![forthebadge](https://forthebadge.com/images/badges/built-with-resentment.svg)](https://forthebadge.com) [![forthebadge](https://forthebadge.com/images/badges/contains-technical-debt.svg)](https://user-images.githubusercontent.com/8171642/50290880-ffef5500-043a-11e9-8270-a2e5b697c86c.png) [![forinfinityandbyond](https://user-images.githubusercontent.com/5211576/29499758-4efff304-85e6-11e7-8267-62919c3688a9.gif)](https://www.reddit.com/r/SS13/comments/5oplxp/what_is_the_main_problem_with_byond_as_an_engine/dclbu1a)
 
 * **Website:** TBA
-* **Code:** https://github.com/WaspStation/WaspStation-1.0
-* **Mantis Discord:** https://discord.gg/husVWe8
-* **Boomer Discord:** https://discord.gg/BUM8uRc
+* **Code:** <https://github.com/WaspStation/WaspStation-1.0>
+* **Mantis Discord:** <https://discord.gg/husVWe8>
+* **Boomer Discord:** <https://discord.gg/BUM8uRc>
+* **Coderbus Discord:** <https://discord.gg/Vh8TJp9>
 * **Wiki** TBA
 
 ## DOWNLOADING
 
-There are a number of ways to download the source code. Some are described here, an alternative all-inclusive guide is also located at https://www.tgstation13.org/wiki/Downloading_the_source_code
+There are a number of ways to download the source code. Some are described here, an alternative all-inclusive guide is also located at <https://www.tgstation13.org/wiki/Downloading_the_source_code>
 
 Option 1:
-Follow this: https://www.tgstation13.org/wiki/Setting_up_git
+Follow one of these:
+
+* <https://www.tgstation13.org/wiki/Setting_up_git>
+* <https://thooloo.tk/babbypr.html>
 
 Option 2: Download the source code as a zip by clicking the ZIP button in the
-code tab of https://github.com/tgstation/tgstation
+code tab of <https://github.com/tgstation/tgstation>
 (note: this will use a lot of bandwidth if you wish to update and is a lot of
 hassle if you want to make any changes at all, so it's not recommended.)
 
-Option 3: Download a pre-compiled nightly at https://tgstation13.download/nightlies/ (same caveats as option 2)
+Option 3: Download a pre-compiled nightly at <https://tgstation13.download/nightlies/> (same caveats as option 2)
 
 Option 4: Use our docker image that tracks the master branch (See commits for build status. Again, same caveats as option 2)
 
@@ -33,7 +38,7 @@ docker run -d -p <your port>:1337 -v /path/to/your/config:/tgstation/config -v /
 ## INSTALLATION
 
 First-time installation should be fairly straightforward. First, you'll need
-BYOND installed. You can get it from https://www.byond.com/download. Once you've done
+BYOND installed. You can get it from <https://www.byond.com/download.> Once you've done
 that, extract the game files to wherever you want to keep them. This is a
 sourcecode-only release, so the next step is to compile the server files.
 Open tgstation.dme by double-clicking it, open the Build menu, and click
@@ -47,7 +52,7 @@ tgstation.dmb - 0 errors, 0 warnings
 
 If you see any errors or warnings, something has gone wrong - possibly a corrupt
 download or the files extracted wrong. If problems persist, ask for assistance
-in https://discord.gg/Vh8TJp9
+in <https://discord.gg/Vh8TJp9>
 
 Once that's done, open up the config folder. You'll want to edit config.txt to
 set the probabilities for different gamemodes in Secret and to set your server
@@ -83,26 +88,26 @@ you set up the SQL backend (see below).
 
 ## UPDATING
 
-This is the codebase for the /tg/station flavoured fork of SpaceStation 13.
+This is the codebase for the WaspStation flavoured fork of SpaceStation 13.
 
 Space Station 13 is a paranoia-laden round-based roleplaying game set against the backdrop of a nonsensical, metal death trap masquerading as a space station, with charming spritework designed to represent the sci-fi setting and its dangerous undertones. Have fun, and survive!
 
 ## HOSTING
 
-If you'd like a more robust server hosting option for tgstation and its
-derivatives. Check out our server tools suite at
-https://github.com/tgstation/tgstation-server
+If you'd like a more robust server hosting option for tgcode and its
+derivatives. Check out the server tools suite at
+<https://github.com/tgstation/tgstation-server>.
+otherwise, use DreamDaemon, which is included with your BYOND installation.
 
 ## MAPS
 
-/tg/station currently comes equipped with five maps.
+Waspstation currently comes equipped with five maps, with more on the way!
 
 * [BoxStation (default)](https://tgstation13.org/wiki/Boxstation)
 * [MetaStation](https://tgstation13.org/wiki/MetaStation)
 * [DeltaStation](https://tgstation13.org/wiki/DeltaStation)
 * [PubbyStation](https://tgstation13.org/wiki/PubbyStation)
 * [DonutStation](https://tgstation13.org/wiki/Donutstation)
-
 
 All maps have their own code file that is in the base of the _maps directory. Maps are loaded dynamically when the game starts. Follow this guideline when adding your own map, to your fork, for easy compatibility.
 
@@ -122,9 +127,9 @@ To enable an away mission open `config/awaymissionconfig.txt` and uncomment one 
 
 ## SQL SETUP
 
-The SQL backend requires a Mariadb server running 10.2 or later. Mysql is not supported but Mariadb is a drop in replacement for mysql. SQL is required for the library, stats tracking, admin notes, and job-only bans, among other features, mostly related to server administration. Your server details go in /config/dbconfig.txt, and the SQL schema is in /SQL/tgstation_schema.sql and /SQL/tgstation_schema_prefix.sql depending on if you want table prefixes.  More detailed setup instructions are located here: https://www.tgstation13.org/wiki/Downloading_the_source_code#Setting_up_the_database
+The SQL backend requires a Mariadb server running 10.2 or later. Mysql is not supported but Mariadb is a drop in replacement for mysql. SQL is required for the library, stats tracking, admin notes, and job-only bans, among other features, mostly related to server administration. Your server details go in /config/dbconfig.txt, and the SQL schema is in /SQL/tgstation_schema.sql and /SQL/tgstation_schema_prefix.sql depending on if you want table prefixes.  More detailed setup instructions are located here: <https://www.tgstation13.org/wiki/Downloading_the_source_code#Setting_up_the_database>
 
-If you are hosting a testing server on windows you can use a standalone version of MariaDB pre load with a blank (but initialized) tgdb database. Find them here: https://tgstation13.download/database/ Just unzip and run for a working (but insecure) database server. Includes a zipped copy of the data folder for easy resetting back to square one.
+If you are hosting a testing server on windows you can use a standalone version of MariaDB pre load with a blank (but initialized) tgdb database. Find them here: <https://tgstation13.download/database/> Just unzip and run for a working (but insecure) database server. Includes a zipped copy of the data folder for easy resetting back to square one.
 
 ## WEB/CDN RESOURCE DELIVERY
 
@@ -132,21 +137,22 @@ Web delivery of game resources makes it quicker for players to join and reduces 
 
 1. Edit compile_options.dm to set the `PRELOAD_RSC` define to `0`
 1. Add a url to config/external_rsc_urls pointing to a .zip file containing the .rsc.
-    * If you keep up to date with /tg/ you could reuse /tg/'s rsc cdn at http://tgstation13.download/byond/tgstation.zip. Otherwise you can use cdn services like CDN77 or cloudflare (requires adding a page rule to enable caching of the zip), or roll your own cdn using route 53 and vps providers.
-	* Regardless even offloading the rsc to a website without a CDN will be a massive improvement over the in game system for transferring files.
+    * If you keep up to date with /tg/ you could reuse /tg/'s rsc cdn at <http://tgstation13.download/byond/tgstation.zip.> Otherwise you can use cdn services like CDN77 or cloudflare (requires adding a page rule to enable caching of the zip), or roll your own cdn using route 53 and vps providers.
+    * Regardless even offloading the rsc to a website without a CDN will be a massive improvement over the in game system for transferring files.
 
 ## CONTRIBUTING
 
 [Documenting your code](.github/AUTODOC_GUIDE.md)
 
 ## CODEBASE CREDITS
-- /tg/, for the codebase
-- BeeStation, for the many QoL changes
-- Oracle, for the inspiration and wonderful features and sprites
-- Interstation for bridging the gap between Oracle and Modern /tg/
-- YogStation for multiple different features
-- CEV Eris, for the PDA sprites
-- Citadel, for their beautiful lighting
+
+* /tg/, for the codebase
+* BeeStation, for the many QoL changes
+* Oracle, for the inspiration and wonderful features and sprites
+* Interstation for bridging the gap between Oracle and Modern /tg/
+* YogStation for multiple different features
+* CEV Eris, for the PDA sprites
+* Citadel, for their beautiful lighting
 
 And thank you to any other codebase not mentioned here that has been used in the code. Your wonderful contributions are known.
 

@@ -567,3 +567,8 @@ WaspStation End */
 	results = list(/datum/reagent/water/holywater = 1)
 	required_reagents = list(/datum/reagent/water/hollowwater = 1)
 	required_catalysts = list(/datum/reagent/water/holywater = 1)
+
+/datum/chemical_reaction/gravy
+	results = list(/datum/reagent/consumable/gravy = 3)
+	required_reagents = list(/datum/reagent/consumable/milk = 1, /datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/flour = 1)
+

@@ -244,7 +244,10 @@
 	loc = null
 	//the above bits are copypaste from organ/proc/Insert, because I couldn't go through the parent here.
 
-	if(stored_mmi.brainmob)
+	if(!stored_mmi)
+		qdel(src)
+
+	if(istype(stored_mmi, /obj/item/mmi/posibrain) && stored_mmi.brainmob)
 		if(C.key)
 			C.ghostize()
 		var/mob/living/brain/B = stored_mmi.brainmob
@@ -289,7 +292,7 @@
 
 /obj/item/organ/brain/mmi_holder/posibrain/Initialize(var/obj/item/mmi/MMI)
 	. = ..()
-	if(MMI)
+	if(MMI && istype(MMI, /obj/item/mmi/posibrain))
 		stored_mmi = MMI
 		MMI.forceMove(src)
 	else

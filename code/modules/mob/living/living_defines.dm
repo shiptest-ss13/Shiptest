@@ -28,7 +28,7 @@
 
 	var/resting = FALSE
 
-	var/lying = 0			///number of degrees. DO NOT USE THIS IN CHECKS. CHECK FOR MOBILITY FLAGS INSTEAD!!
+	VAR_PROTECTED/lying = 0			///number of degrees. DO NOT USE THIS IN CHECKS. CHECK FOR MOBILITY FLAGS INSTEAD!!
 	var/lying_prev = 0		///last value of lying on update_mobility
 
 	var/confused = 0	///Makes the mob move in random directions.
@@ -59,10 +59,9 @@
 	var/on_fire = 0 ///The "Are we on fire?" var
 	var/fire_stacks = 0 ///Tracks how many stacks of fire we have on, max is usually 20
 
-	var/bloodcrawl = 0 ///0 No blood crawling, [BLOODCRAWL] for bloodcrawling, [BLOODCRAWL_EAT] for crawling+mob devour
-	var/holder = null ///The holder for blood crawling
-	var/ventcrawler = 0 ///0 No vent crawling, 1 vent crawling in the nude, 2 vent crawling always
-	var/limb_destroyer = 0 ///1 Sets AI behavior that allows mobs to target and dismember limbs with their basic attack.
+	var/holder = null //The holder for blood crawling
+	var/ventcrawler = 0 //0 No vent crawling, 1 vent crawling in the nude, 2 vent crawling always
+	var/limb_destroyer = 0 //1 Sets AI behavior that allows mobs to target and dismember limbs with their basic attack.
 
 	var/mob_size = MOB_SIZE_HUMAN
 	var/mob_biotypes = MOB_ORGANIC
@@ -113,7 +112,8 @@
 
 	var/list/obj/effect/proc_holder/abilities = list()
 
-	var/can_be_held = FALSE	///whether this can be picked up and held.
+	var/can_be_held = FALSE	//whether this can be picked up and held.
+	var/worn_slot_flags = NONE //if it can be held, can it be equipped to any slots? (think pAI's on head)
 
 	var/radiation = 0 ///If the mob is irradiated.
 	var/ventcrawl_layer = PIPING_LAYER_DEFAULT
@@ -127,7 +127,16 @@
 
 	var/slowed_by_drag = TRUE ///Whether the mob is slowed down when dragging another prone mob
 
-	var/list/ownedSoullinks ///soullinks we are the owner of
-	var/list/sharedSoullinks ///soullinks we are a/the sharer of
+	var/list/ownedSoullinks //soullinks we are the owner of
+	var/list/sharedSoullinks //soullinks we are a/the sharer of
 
 	var/is_busy = FALSE //Waspstation Edit - Curbstomping - Used for random actions that take time. ex: curbstomping. We need to make sure we can only do one of these at a time.
+
+	/// List of changes to body temperature, used by desease symtoms like fever
+	var/list/body_temp_changes = list()
+
+	//this stuff is here to make it simple for admins to mess with custom held sprites
+	var/icon/held_lh = 'icons/mob/pets_held_lh.dmi'//icons for holding mobs
+	var/icon/held_rh = 'icons/mob/pets_held_rh.dmi'
+	var/icon/head_icon = 'icons/mob/pets_held.dmi'//what it looks like on your head
+	var/held_state = ""//icon state for the above

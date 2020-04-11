@@ -5,7 +5,12 @@
 ///////////////////
 //Drone shells
 
-//DRONE SHELL
+/** Drone Shell: Ghost role item for drones
+  *
+  * A simple mob spawner item that transforms into a maintenance drone
+  * Resepcts drone minimum age
+  */
+
 /obj/effect/mob_spawn/drone
 	name = "drone shell"
 	desc = "A shell of a maintenance drone, an expendable robot built to perform station repairs."
@@ -15,8 +20,9 @@
 	density = FALSE
 	death = FALSE
 	roundstart = FALSE
+	///Type of drone that will be spawned
+	mob_type = /mob/living/simple_animal/drone
 	short_desc = "You are a repair drone. Follow your laws and do not interfere with others."		// Waspstation Edit - Adding missing var
-	mob_type = /mob/living/simple_animal/drone //Type of drone that will be spawned
 
 /obj/effect/mob_spawn/drone/Initialize()
 	. = ..()

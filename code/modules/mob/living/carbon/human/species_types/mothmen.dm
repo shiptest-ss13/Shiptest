@@ -17,12 +17,12 @@
 	mutanteyes = /obj/item/organ/eyes/moth
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | ERT_SPAWN | RACE_SWAP | SLIME_EXTRACT
 	species_language_holder = /datum/language_holder/moth
-	loreblurb = "### ERROR: REMOTE INTERCEPT - INFORMATION MAY HAVE BEEN REDACTED FROM THIS DOCUMENT FOR YOUR SAFETY ### \
-	Mutations into a moth-like organism have been acknowledged on Space Station 13, mothpeople are distant cousins of the flypeople. Mothpeople seem to originate fro- R̶̵̨͟E̕D҉̀͜A͜͢҉͠C̶̨͘͜͜T̸̴̵̶̕Ȩ̛̀͢D̷͡҉̕҉ \
-	### REMOTE INTERCEPT ENDS - HAVE A SECURE DAY ###"
+	loreblurb = "Originating from the ruins of an unknown company's abandoned bluespace research facility, mothpeople are the mutated forms \
+				of the pests that were quick to set into the facility after it was abandoned, not a human teleporter malfunction as many believe. \
+				Their initial limited intelligence led to moffic, their \"native\" language. Generations later, most mothpeople still speak this language. \
+				After finally being discovered by an unknown craft, mothpeople were quick to spread out across the galaxy and are now as commonplace as their natural counterparts."
 
-
-/datum/species/moth/regenerate_organs(mob/living/carbon/C,datum/species/old_species,replace_current=TRUE)
+/datum/species/moth/regenerate_organs(mob/living/carbon/C,datum/species/old_species,replace_current=TRUE,list/excluded_zones)
 	. = ..()
 	if(ishuman(C))
 		var/mob/living/carbon/human/H = C

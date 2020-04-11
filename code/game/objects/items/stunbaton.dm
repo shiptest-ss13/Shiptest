@@ -198,8 +198,8 @@
 			else
 				to_chat(user, "<span class='danger'>The baton is still charging!</span>")
 		else
-			M.visible_message("<span class='warning'>[user] has prodded [M] with [src]. Luckily it was off.</span>", \
-							"<span class='warning'>[user] has prodded you with [src]. Luckily it was off</span>")
+			M.visible_message("<span class='warning'>[user] prods [M] with [src]. Luckily it was off.</span>", \
+							"<span class='warning'>[user] prods you with [src]. Luckily it was off.</span>")
 	else
 		if(turned_on)
 			if(attack_cooldown_check <= world.time)
@@ -210,6 +210,9 @@
 /obj/item/melee/baton/proc/baton_effect(mob/living/L, mob/user)
 	if(shields_blocked(L, user))
 		return FALSE
+	if(HAS_TRAIT_FROM(L, TRAIT_IWASBATONED, user)) //no doublebaton abuse anon!
+		to_chat(user, "<span class='danger'>[L] manages to avoid the attack!</span>")
+		return FALSE
 	if(iscyborg(loc))
 		var/mob/living/silicon/robot/R = loc
 		if(!R || !R.cell || !R.cell.use(cell_hit_cost))
@@ -217,13 +220,12 @@
 	else
 		if(!deductcharge(cell_hit_cost))
 			return FALSE
-
 	/// After a target is hit, we do a chunk of stamina damage, along with other effects.
 	/// After a period of time, we then check to see what stun duration we give.
 	L.Jitter(20)
 	L.confused = max(confusion_amt, L.confused)
 	L.stuttering = max(8, L.stuttering)
-	L.apply_damage(stamina_loss_amt, STAMINA)
+	L.apply_damage(stamina_loss_amt, STAMINA, BODY_ZONE_CHEST)
 
 	SEND_SIGNAL(L, COMSIG_LIVING_MINOR_SHOCK)
 	addtimer(CALLBACK(src, .proc/apply_stun_effect_end, L), apply_stun_delay)
@@ -231,8 +233,8 @@
 	if(user)
 		L.lastattacker = user.real_name
 		L.lastattackerckey = user.ckey
-		L.visible_message("<span class='danger'>[user] has stunned [L] with [src]!</span>", \
-								"<span class='userdanger'>[user] has stunned you with [src]!</span>")
+		L.visible_message("<span class='danger'>[user] stuns [L] with [src]!</span>", \
+								"<span class='userdanger'>[user] stuns you with [src]!</span>")
 		log_combat(user, L, "stunned")
 
 	playsound(src, stun_sound, 50, TRUE, -1)
@@ -242,6 +244,9 @@
 		H.forcesay(GLOB.hit_appends)
 
 	attack_cooldown_check = world.time + attack_cooldown
+
+	ADD_TRAIT(L, TRAIT_IWASBATONED, user)
+	addtimer(TRAIT_CALLBACK_REMOVE(L, TRAIT_IWASBATONED, user), attack_cooldown)
 
 	return 1
 

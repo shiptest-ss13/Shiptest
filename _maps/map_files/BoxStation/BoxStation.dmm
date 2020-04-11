@@ -302,7 +302,7 @@
 /turf/open/floor/plasteel/cafeteria,
 /area/security/prison)
 "aaM" = (
-/obj/machinery/computer/libraryconsole/bookmanagement,
+/obj/machinery/computer/bookmanagement,
 /obj/structure/table,
 /obj/machinery/newscaster{
 	pixel_x = -32
@@ -16131,9 +16131,6 @@
 /obj/machinery/gibber,
 /turf/open/floor/plasteel/showroomfloor,
 /area/crew_quarters/kitchen)
-"aOU" = (
-/turf/closed/wall,
-/area/hallway/secondary/exit)
 "aOV" = (
 /obj/structure/sink{
 	dir = 4;
@@ -16790,7 +16787,7 @@
 /area/crew_quarters/locker)
 "aQY" = (
 /obj/structure/table,
-/obj/item/twohanded/rcl/pre_loaded,
+/obj/item/rcl/pre_loaded,
 /obj/item/stack/pipe_cleaner_coil/random,
 /obj/item/stack/pipe_cleaner_coil/random,
 /obj/item/stack/pipe_cleaner_coil/random,
@@ -17612,7 +17609,7 @@
 /area/library)
 "aTd" = (
 /obj/structure/table/wood,
-/obj/machinery/computer/libraryconsole/bookmanagement,
+/obj/machinery/computer/bookmanagement,
 /obj/machinery/light_switch{
 	pixel_y = 28
 	},
@@ -21134,12 +21131,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/hallway/secondary/exit)
-"bcC" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden{
-	dir = 4
-	},
-/turf/open/floor/plasteel,
-/area/hallway/secondary/exit)
 "bcD" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /turf/open/floor/plasteel,
@@ -22457,12 +22448,6 @@
 /turf/open/floor/plasteel/cafeteria,
 /area/hallway/secondary/exit)
 "bgf" = (
-/obj/effect/turf_decal/tile/red{
-	dir = 8
-	},
-/turf/open/floor/plasteel/white/corner,
-/area/hallway/secondary/exit)
-"bgg" = (
 /obj/effect/turf_decal/tile/red{
 	dir = 8
 	},
@@ -38620,7 +38605,7 @@
 /turf/open/floor/engine,
 /area/science/xenobiology)
 "cbc" = (
-/obj/item/twohanded/required/kirbyplants/random,
+/obj/item/kirbyplants/random,
 /turf/open/floor/plasteel/white,
 /area/science/lab)
 "cbf" = (
@@ -45494,7 +45479,7 @@
 /obj/structure/table/reinforced,
 /obj/machinery/cell_charger,
 /obj/item/stock_parts/cell/high/plus,
-/obj/item/twohanded/rcl/pre_loaded,
+/obj/item/rcl/pre_loaded,
 /turf/open/floor/plasteel,
 /area/crew_quarters/heads/chief)
 "cBN" = (
@@ -48557,7 +48542,7 @@
 /turf/open/floor/plating,
 /area/maintenance/starboard/aft)
 "hDH" = (
-/obj/item/twohanded/required/kirbyplants/random,
+/obj/item/kirbyplants/random,
 /obj/machinery/firealarm{
 	dir = 1;
 	pixel_y = -26
@@ -48932,7 +48917,7 @@
 /turf/open/floor/plasteel,
 /area/hallway/secondary/service)
 "jcu" = (
-/obj/item/twohanded/required/kirbyplants/dead,
+/obj/item/kirbyplants/dead,
 /obj/machinery/airalarm{
 	dir = 8;
 	pixel_x = 24
@@ -50461,7 +50446,7 @@
 /turf/open/floor/plating,
 /area/maintenance/starboard/aft)
 "nZF" = (
-/obj/item/twohanded/required/kirbyplants/random,
+/obj/item/kirbyplants/random,
 /obj/item/radio/intercom{
 	pixel_y = 24
 	},
@@ -102364,22 +102349,22 @@ aQF
 cBl
 cBl
 fjH
-aOU
-aOU
-aOU
-aOU
+aOd
+aOd
+aOd
+aOd
 aNa
-bcC
+bcB
 aPq
 oqa
 teP
 gXa
 aPq
 aPq
-bcC
+bcB
 aPq
 aPq
-bgg
+bgf
 aNa
 aaa
 bky
@@ -102621,7 +102606,7 @@ aRL
 mvb
 mvb
 hcb
-aOU
+aOd
 aOc
 aPs
 wzU
@@ -102633,10 +102618,10 @@ aXG
 aPq
 aPq
 aPq
-bcC
+bcB
 aPq
 aPq
-bgg
+bgf
 aNa
 aaf
 bky
@@ -102878,7 +102863,7 @@ aRU
 aTo
 aTo
 urd
-aOU
+aOd
 vzZ
 jNS
 aTm
@@ -103135,7 +103120,7 @@ aRW
 aTo
 aTo
 aTo
-aOU
+aOd
 uuK
 iVT
 aPq
@@ -103392,7 +103377,7 @@ aTn
 aTo
 aTo
 aTo
-aOU
+aOd
 aNa
 aNa
 saM
