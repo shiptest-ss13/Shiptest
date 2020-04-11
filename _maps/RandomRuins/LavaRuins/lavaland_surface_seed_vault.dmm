@@ -644,6 +644,13 @@
 	},
 /turf/open/floor/plasteel/freezer,
 /area/ruin/powered/seedvault)
+"nX" = (
+/obj/machinery/light{
+	dir = 4
+	},
+/obj/structure/fans/tiny,
+/turf/open/floor/plasteel/dark,
+/area/ruin/powered/seedvault)
 "oR" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 10
@@ -657,6 +664,10 @@
 "qQ" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden,
 /turf/open/floor/plasteel/freezer,
+/area/ruin/powered/seedvault)
+"rs" = (
+/obj/structure/fans/tiny,
+/turf/open/floor/plasteel/dark,
 /area/ruin/powered/seedvault)
 "sv" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
@@ -797,7 +808,7 @@ as
 PH
 aQ
 av
-al
+rs
 aR
 ab
 ab
@@ -819,7 +830,7 @@ Bb
 qQ
 ah
 av
-am
+nX
 aR
 ab
 ab
