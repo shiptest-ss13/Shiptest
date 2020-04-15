@@ -8,7 +8,7 @@
 	var/end_x = input("End X?", "Map Exporter", world.maxx-1) as num
 	var/end_y = input("End Y?", "Map Exporter", world.maxy-1) as num
 	var/date = time2text(world.timeofday, "YYYY-MM-DD_hh-mm-ss")
-	var/file_name = input("Filename?", "Map Exporter", "exportedmap_[date]") as text
+	var/file_name = sanitize_filename(input("Filename?", "Map Exporter", "exportedmap_[date]") as text)
 	var/confirm = alert("Are you sure you want to do this? This will cause extreme lag!", "Map Exporter", "Yes", "No")
 
 	if(confirm != "Yes")

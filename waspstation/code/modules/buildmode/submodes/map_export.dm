@@ -19,7 +19,7 @@
 		if(confirm != "Yes")
 			return
 
-		var/file_name = input("File name to export:", "Map Exporter", "exportedmap") as text
+		var/file_name = sanitize_filename(input("File name to export:", "Map Exporter", "exportedmap") as text)
 
 		log_admin("Build Mode: [key_name(c)] exported the map area from [AREACOORD(cornerA)] through [AREACOORD(cornerB)]") //I put this before the actual saving of the map because it likely won't log if it crashes the fucking server
 
