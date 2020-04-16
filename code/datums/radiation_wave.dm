@@ -58,7 +58,10 @@
 	if(strength<RAD_BACKGROUND_RADIATION)
 		qdel(src)
 		return
-	radiate(atoms, strength)
+
+	if(radiate(atoms, FLOOR(min(strength,remaining_contam), 1)))
+		//oof ow ouch
+		remaining_contam = max(0,remaining_contam-((min(strength,remaining_contam)-RAD_MINIMUM_CONTAMINATION) * RAD_CONTAMINATION_STR_COEFFICIENT))
 	check_obstructions(atoms) // reduce our overall strength if there are radiation insulators
 
 /datum/radiation_wave/proc/get_rad_atoms()
@@ -103,11 +106,10 @@
 	var/can_contam = strength >= RAD_MINIMUM_CONTAMINATION
 	var/contamination_strength = (strength-RAD_MINIMUM_CONTAMINATION) * RAD_CONTAMINATION_STR_COEFFICIENT
 	contamination_strength = max(contamination_strength, RAD_BACKGROUND_RADIATION)
-	// It'll never reach 100% chance but the further out it gets the more likely it'll contaminate
-	var/contamination_chance = 100 - (90 / (1 + steps * 0.1))
-	for(var/k in atoms)
-		var/atom/thing = k
-		if(QDELETED(thing))
+	var/list/contam_atoms = list()
+	for(var/k in 1 to atoms.len)
+		var/atom/thing = atoms[k]
+		if(!thing)
 			continue
 		thing.rad_act(strength)
 
@@ -130,11 +132,16 @@
 
 		if(contamination_strength > remaining_contam)
 			contamination_strength = remaining_contam
-		if(!prob(contamination_chance))
-			continue
 		if(SEND_SIGNAL(thing, COMSIG_ATOM_RAD_CONTAMINATING, strength) & COMPONENT_BLOCK_CONTAMINATION)
 			continue
-		remaining_contam -= contamination_strength
-		if(remaining_contam < RAD_BACKGROUND_RADIATION)
-			can_contaminate = FALSE
-		thing.AddComponent(/datum/component/radioactive, contamination_strength, source)
+		if((thing.rad_flags & RAD_NO_CONTAMINATE) || SEND_SIGNAL(thing, COMSIG_ATOM_RAD_CONTAMINATING, strength) & COMPONENT_BLOCK_CONTAMINATION)
+			continue
+		contam_atoms += thing
+	var/did_contam = 0
+	if(can_contam)
+		var/rad_strength = ((strength-RAD_MINIMUM_CONTAMINATION) * RAD_CONTAMINATION_STR_COEFFICIENT)/contam_atoms.len
+		for(var/k in 1 to contam_atoms.len)
+			var/atom/thing = contam_atoms[k]
+			thing.AddComponent(/datum/component/radioactive, rad_strength, source)
+			did_contam = 1
+	return did_contam
