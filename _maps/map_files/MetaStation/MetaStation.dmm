@@ -38504,60 +38504,6 @@
 	dir = 1
 	},
 /area/gateway)
-"bJY" = (
-/obj/machinery/gateway{
-	dir = 9
-	},
-/obj/effect/turf_decal/bot_white/right,
-/obj/effect/turf_decal/tile/neutral{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/neutral,
-/obj/effect/turf_decal/tile/neutral{
-	dir = 4
-	},
-/obj/effect/turf_decal/tile/neutral{
-	dir = 8
-	},
-/turf/open/floor/plasteel/dark,
-/area/gateway)
-"bJZ" = (
-/obj/machinery/gateway{
-	dir = 1
-	},
-/obj/machinery/status_display/evac{
-	pixel_y = 32
-	},
-/obj/effect/turf_decal/bot_white,
-/obj/effect/turf_decal/tile/neutral{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/neutral,
-/obj/effect/turf_decal/tile/neutral{
-	dir = 4
-	},
-/obj/effect/turf_decal/tile/neutral{
-	dir = 8
-	},
-/turf/open/floor/plasteel/dark,
-/area/gateway)
-"bKa" = (
-/obj/machinery/gateway{
-	dir = 5
-	},
-/obj/effect/turf_decal/bot_white/left,
-/obj/effect/turf_decal/tile/neutral{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/neutral,
-/obj/effect/turf_decal/tile/neutral{
-	dir = 4
-	},
-/obj/effect/turf_decal/tile/neutral{
-	dir = 8
-	},
-/turf/open/floor/plasteel/dark,
-/area/gateway)
 "bKb" = (
 /obj/structure/cable,
 /turf/open/floor/plating{
@@ -39184,42 +39130,8 @@
 	dir = 1
 	},
 /area/gateway)
-"bLD" = (
-/obj/machinery/gateway{
-	dir = 8
-	},
-/obj/effect/turf_decal/bot_white,
-/obj/effect/turf_decal/tile/neutral{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/neutral,
-/obj/effect/turf_decal/tile/neutral{
-	dir = 4
-	},
-/obj/effect/turf_decal/tile/neutral{
-	dir = 8
-	},
-/turf/open/floor/plasteel/dark,
-/area/gateway)
 "bLE" = (
 /obj/machinery/gateway/centerstation,
-/turf/open/floor/plasteel/dark,
-/area/gateway)
-"bLF" = (
-/obj/machinery/gateway{
-	dir = 4
-	},
-/obj/effect/turf_decal/bot_white,
-/obj/effect/turf_decal/tile/neutral{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/neutral,
-/obj/effect/turf_decal/tile/neutral{
-	dir = 4
-	},
-/obj/effect/turf_decal/tile/neutral{
-	dir = 8
-	},
 /turf/open/floor/plasteel/dark,
 /area/gateway)
 "bLG" = (
@@ -40008,56 +39920,6 @@
 /turf/open/floor/plasteel{
 	dir = 1
 	},
-/area/gateway)
-"bNp" = (
-/obj/machinery/gateway{
-	dir = 10
-	},
-/obj/effect/turf_decal/bot_white/left,
-/obj/effect/turf_decal/tile/neutral{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/neutral,
-/obj/effect/turf_decal/tile/neutral{
-	dir = 4
-	},
-/obj/effect/turf_decal/tile/neutral{
-	dir = 8
-	},
-/turf/open/floor/plasteel/dark,
-/area/gateway)
-"bNq" = (
-/obj/machinery/gateway,
-/obj/effect/turf_decal/bot_white,
-/obj/effect/turf_decal/tile/neutral{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/neutral,
-/obj/effect/turf_decal/tile/neutral{
-	dir = 4
-	},
-/obj/effect/turf_decal/tile/neutral{
-	dir = 8
-	},
-/obj/structure/cable,
-/turf/open/floor/plasteel/dark,
-/area/gateway)
-"bNr" = (
-/obj/machinery/gateway{
-	dir = 6
-	},
-/obj/effect/turf_decal/bot_white/right,
-/obj/effect/turf_decal/tile/neutral{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/neutral,
-/obj/effect/turf_decal/tile/neutral{
-	dir = 4
-	},
-/obj/effect/turf_decal/tile/neutral{
-	dir = 8
-	},
-/turf/open/floor/plasteel/dark,
 /area/gateway)
 "bNs" = (
 /obj/structure/cable,
@@ -55939,7 +55801,9 @@
 /turf/open/floor/circuit/green,
 /area/science/robotics/mechbay)
 "cxH" = (
-/obj/machinery/airalarm/directional/west,
+/obj/machinery/airalarm/directional/west{
+	pixel_x = -24
+	},
 /obj/effect/turf_decal/stripes/line{
 	dir = 1
 	},
@@ -70711,6 +70575,20 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/medical/chemistry)
+"dYm" = (
+/obj/effect/turf_decal/bot_white/right,
+/obj/effect/turf_decal/tile/neutral{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/neutral,
+/obj/effect/turf_decal/tile/neutral{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/neutral{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark,
+/area/gateway)
 "dYu" = (
 /obj/machinery/door/airlock/external{
 	name = "Auxiliary Airlock"
@@ -70800,6 +70678,20 @@
 /obj/item/reagent_containers/food/drinks/bottle/whiskey,
 /turf/open/floor/wood,
 /area/maintenance/port/aft)
+"eff" = (
+/obj/effect/turf_decal/bot_white,
+/obj/effect/turf_decal/tile/neutral{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/neutral,
+/obj/effect/turf_decal/tile/neutral{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/neutral{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark,
+/area/gateway)
 "elp" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
@@ -72224,6 +72116,23 @@
 	},
 /turf/open/floor/plasteel/showroomfloor,
 /area/security/warden)
+"iXH" = (
+/obj/machinery/status_display/evac{
+	pixel_y = 32
+	},
+/obj/effect/turf_decal/bot_white,
+/obj/effect/turf_decal/tile/neutral{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/neutral,
+/obj/effect/turf_decal/tile/neutral{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/neutral{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark,
+/area/gateway)
 "jah" = (
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
@@ -74166,6 +74075,17 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ai_monitored/security/armory)
+"oWk" = (
+/obj/effect/turf_decal/bot_white/right,
+/obj/effect/turf_decal/tile/neutral,
+/obj/effect/turf_decal/tile/neutral{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/neutral{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark,
+/area/gateway)
 "oXP" = (
 /obj/structure/closet/crate,
 /obj/item/flashlight/pen{
@@ -74427,6 +74347,21 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /turf/open/floor/plasteel,
 /area/engine/break_room)
+"pOw" = (
+/obj/effect/turf_decal/bot_white,
+/obj/effect/turf_decal/tile/neutral{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/neutral,
+/obj/effect/turf_decal/tile/neutral{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/neutral{
+	dir = 8
+	},
+/obj/structure/cable,
+/turf/open/floor/plasteel/dark,
+/area/gateway)
 "pOP" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /turf/closed/wall/r_wall,
@@ -75241,6 +75176,20 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/medical/pharmacy)
+"rTV" = (
+/obj/effect/turf_decal/bot_white/left,
+/obj/effect/turf_decal/tile/neutral{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/neutral,
+/obj/effect/turf_decal/tile/neutral{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/neutral{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark,
+/area/gateway)
 "rUK" = (
 /turf/closed/wall,
 /area/crew_quarters/kitchen/coldroom)
@@ -107733,9 +107682,9 @@ bDj
 bES
 bGQ
 bGM
-bJY
-bLD
-bNp
+oWk
+eff
+rTV
 bOK
 bQu
 bRL
@@ -107990,9 +107939,9 @@ bDv
 bFc
 bGR
 bGM
-bJZ
+iXH
 bLE
-bNq
+pOw
 bOL
 bQv
 bRL
@@ -108247,9 +108196,9 @@ bDw
 bFd
 bGS
 bGM
-bKa
-bLF
-bNr
+rTV
+eff
+dYm
 bOM
 bQw
 bRM
