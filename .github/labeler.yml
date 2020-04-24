@@ -1,5 +1,6 @@
 Admin:
   - 'code/modules/admin/**'
+  - 'waspstation/code/modules/admin/**'
 
 # Any file within the config subfolder
 Config:
@@ -23,9 +24,15 @@ Sprites:
 Javascript:
   - '**/*.js'
 
-# Changes to a .dmm
+# Changes to a .dmm or anything in the _map subfolder
 Map Change:
   - '**/*.dmm'
+  - '_maps/**'
+
+# Non-modular changes
+Non-Modular:
+  - 'code/**'
+  - 'icons/**'
 
 # Any changes to .ogg files are marked as sound
 Sound:
