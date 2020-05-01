@@ -296,12 +296,12 @@ GENE SCANNER
 		if(advanced && H.has_dna())
 			render_list += "<span class='info ml-1'>Genetic Stability: [H.dna.stability]%.</span>\n"
 
-		var/list/broken_stuff = list()
+		var/list/broken_stuff = list()		// Wasp Edit Begin - Adds bone breakage
 		for(var/obj/item/bodypart/B in H.bodyparts)
-			if(B.bone_status == BONE_FLAG_BROKEN)
+			if(B.bone_status >= BONE_FLAG_BROKEN)		// Checks if bone is broken or splinted
 				broken_stuff += B.name
 		if(broken_stuff.len)
-			render_list += "\t<span class='alert'>Bone fractures detected. Subject's [english_list(broken_stuff)] [broken_stuff.len > 1 ? "require" : "requires"] surgical treatment!</span>\n"
+			render_list += "\t<span class='alert'>Bone fractures detected. Subject's [english_list(broken_stuff)] [broken_stuff.len > 1 ? "require" : "requires"] surgical treatment!</span>\n"		// Wasp Edit End
 
 		// Species and body temperature
 		var/datum/species/S = H.dna.species

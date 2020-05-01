@@ -8,7 +8,7 @@
 	if(istype(target,/mob/living/carbon/human))
 		var/mob/living/carbon/human/H = target
 		var/obj/item/bodypart/affected = H.get_bodypart(user.zone_selected)
-		if(affected && affected.bone_status == BONE_FLAG_BROKEN)
+		if(affected && affected.bone_status >= BONE_FLAG_BROKEN)		// Checks if the bone is broken or splinted
 			return TRUE
 		return FALSE
 
