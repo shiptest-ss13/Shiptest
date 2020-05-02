@@ -3,7 +3,7 @@ name: Compile changelogs
 on:
   push:
     branches:
-      - master
+      - changelog-test
 
 jobs:
   compile:
