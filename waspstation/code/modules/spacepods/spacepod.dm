@@ -23,7 +23,7 @@ GLOBAL_LIST_INIT(spacepods_list, list())
 	resistance_flags = LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF // it floats above lava or something, I dunno
 
 	max_integrity = 50
-	integrity_failure = 50
+	integrity_failure = 0.2
 
 	var/list/equipment = list()
 	var/list/equipment_slot_limits = list(
@@ -233,14 +233,14 @@ GLOBAL_LIST_INIT(spacepods_list, list())
 /obj/spacepod/proc/add_armor(obj/item/pod_parts/armor/armor)
 	desc = armor.pod_desc
 	max_integrity = armor.pod_integrity
-	obj_integrity = max_integrity - integrity_failure + obj_integrity
+	obj_integrity = max_integrity
 	pod_armor = armor
 	update_icon()
 
 /obj/spacepod/proc/remove_armor()
 	if(!pod_armor)
-		obj_integrity = min(integrity_failure, obj_integrity)
-		max_integrity = integrity_failure
+		max_integrity = initial(max_integrity)
+		obj_integrity = max_integrity
 		desc = initial(desc)
 		pod_armor = null
 		update_icon()
@@ -322,8 +322,8 @@ GLOBAL_LIST_INIT(spacepods_list, list())
 		return
 	if(pod_armor)
 		var/obj/A = pod_armor
-		remove_armor()
 		qdel(A)
+		remove_armor()
 		if(prob(40))
 			new /obj/item/stack/sheet/metal/five(loc)
 	if(prob(40))
