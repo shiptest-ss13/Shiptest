@@ -653,7 +653,7 @@
 /obj/item/slimepotion
 	name = "slime potion"
 	desc = "A hard yet gelatinous capsule excreted by a slime, containing mysterious substances."
-	w_class = WEIGHT_CLASS_TINY
+	w_class = WEIGHT_CLASS_BULKY
 
 /obj/item/slimepotion/afterattack(obj/item/reagent_containers/target, mob/user , proximity)
 	. = ..()
