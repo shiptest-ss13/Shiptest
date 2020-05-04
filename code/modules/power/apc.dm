@@ -816,7 +816,8 @@
 				return
 			E.drain_time = world.time + 75
 			to_chat(H, "<span class='notice'>You start channeling some power through the APC into your body.</span>")
-			if(do_after(user, 75, target = src))
+			while(do_after(user, 75, target = src)) //Wasp edit
+				E.drain_time = world.time + 75 //Wasp edit
 				if(cell.charge <= (cell.maxcharge / 2) || (stomach.crystal_charge > 145))
 					return
 				if(istype(stomach))
@@ -836,7 +837,8 @@
 				return
 			E.drain_time = world.time + 75
 			to_chat(H, "<span class='notice'>You start channeling power through your body into the APC.</span>")
-			if(do_after(user, 75, target = src))
+			while(do_after(user, 75, target = src)) //Wasp edit
+				E.drain_time = world.time + 75 //Wasp edit
 				if(cell.charge == cell.maxcharge || (stomach.crystal_charge < 10))
 					return
 				if(istype(stomach))
