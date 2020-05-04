@@ -56,6 +56,8 @@
 			else
 				H.visible_message("<span class='danger'>[H] slides on [A]!</span>", \
 						"<span class='userdanger'>You slide on [A]!</span>")
+			if(H.pulledby)								// Waspstation Edit Begin - Being pulled over caltrops is logged
+				log_combat(H.pulledby, H, "pulled", A)		// Waspstation Edit End
 
 			cooldown = world.time
 		H.apply_damage(damage, BRUTE, picked_def_zone)
