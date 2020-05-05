@@ -11,6 +11,7 @@ import { AtmosAlertConsole } from './interfaces/AtmosAlertConsole';
 import { AtmosControlConsole } from './interfaces/AtmosControlConsole';
 import { AtmosFilter } from './interfaces/AtmosFilter';
 import { AtmosMixer } from './interfaces/AtmosMixer';
+import { AtmosRelief } from './interfaces/AtmosRelief';
 import { AtmosPump } from './interfaces/AtmosPump';
 import { BankMachine } from './interfaces/BankMachine';
 import { Bepis } from './interfaces/Bepis';
@@ -175,6 +176,10 @@ const ROUTES = {
   },
   atmos_mixer: {
     component: () => AtmosMixer,
+    scrollable: false,
+  },
+  atmos_relief: {
+    component: () => AtmosRelief,
     scrollable: false,
   },
   atmos_pump: {
