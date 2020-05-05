@@ -56,3 +56,11 @@
 		add_overlay("mg-cell-o2")
 	else
 		add_overlay("mg-cell-o1")
+
+/obj/item/stock_parts/cell/gun/terragov
+	name = "terragov power cell"
+	icon = 'waspstation/icons/obj/power.dmi'
+	icon_state = "g-cell"
+	maxcharge = 8000
+	custom_materials = list(/datum/material/glass=60)
+	chargerate = 2000

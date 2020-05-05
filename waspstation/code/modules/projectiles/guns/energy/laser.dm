@@ -6,7 +6,7 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	flags_1 =  CONDUCT_1
 	selfcharge = 1
-	cell_type = /obj/item/stock_parts/cell/gun/terragovlow
+	cell_type = /obj/item/stock_parts/cell/gun/mini
 	internal_cell = TRUE
 	charge_delay = 1 //50 seconds to recharge the clip
-	
+
