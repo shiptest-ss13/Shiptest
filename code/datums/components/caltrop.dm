@@ -20,6 +20,8 @@
 
 	if(ishuman(AM))
 		var/mob/living/carbon/human/H = AM
+		var/atom/A = parent		// Wasp Edit
+
 		if(HAS_TRAIT(H, TRAIT_PIERCEIMMUNE))
 			return
 
@@ -49,16 +51,18 @@
 			damage *= 0.75
 
 		if(cooldown < world.time - 10) //cooldown to avoid message spam.
-			var/atom/A = parent
+			//var/atom/A = parent		Wasp edit
 			if(!H.incapacitated(ignore_restraints = TRUE))
 				H.visible_message("<span class='danger'>[H] steps on [A].</span>", \
 						"<span class='userdanger'>You step on [A]!</span>")
 			else
 				H.visible_message("<span class='danger'>[H] slides on [A]!</span>", \
 						"<span class='userdanger'>You slide on [A]!</span>")
-			if(H.pulledby)								// Waspstation Edit Begin - Being pulled over caltrops is logged
-				log_combat(H.pulledby, H, "pulled", A)		// Waspstation Edit End
 
 			cooldown = world.time
 		H.apply_damage(damage, BRUTE, picked_def_zone)
 		H.Paralyze(60)
+		if(H.pulledby)								// Waspstation Edit Begin - Being pulled over caltrops is logged
+			log_combat(H.pulledby, H, "pulled", A)
+		else
+			H.log_message("has stepped on [A]", LOG_ATTACK, color="orange")		// Waspstation Edit End
