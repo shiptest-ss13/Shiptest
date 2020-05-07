@@ -117,7 +117,7 @@
 			new /obj/item/card/emag(src) // 6 tc
 
 /obj/item/storage/box/syndicate/bundle_B/PopulateContents()
-	switch (pickweight(list( "bond" = 2, "ninja" = 1, "darklord" = 1, "white_whale_holy_grail" = 2, "mad_scientist" = 2, "bee" = 1, "mr_freeze" = 2)))
+	switch (pickweight(list( "bond" = 2, "ninja" = 1, "darklord" = 1, "white_whale_holy_grail" = 2, "mad_scientist" = 2, "bee" = 1, "mr_freeze" = 2, "made_man"= 1)))
 		if("bond")
 			new /obj/item/gun/ballistic/automatic/pistol(src)
 			new /obj/item/suppressor(src)
@@ -192,6 +192,27 @@
 			new /obj/item/dnainjector/cryokinesis(src)
 			new /obj/item/gun/energy/temperature/security(src)
 			new /obj/item/melee/transforming/energy/sword/saber/blue(src) //see see it fits the theme bc its blue and ice is blue
+
+		if("made_man")
+			new /obj/effect/spawner/lootdrop/mafia_outfit(src) // 0 TC, just an outfit for the new 'don of this family
+			new /obj/item/gun/ballistic/automatic/tommygun(src) // 20 TC, a gun with 50 .45 bullets on a three round burst is kinda outstanding
+			new /obj/item/switchblade(src) // 3 TC? It's nice, but it's really a stealth/oh fuck I'm out of ammo weapon
+			new /obj/item/reagent_containers/food/drinks/bottle/vodka (src) // 5 TC, free molotov assemblies
+			new /obj/item/reagent_containers/food/drinks/bottle/vodka (src)
+			new /obj/item/reagent_containers/food/drinks/bottle/vodka (src)
+			new /obj/item/reagent_containers/glass/rag (src)
+			new /obj/item/reagent_containers/glass/rag (src)
+			new /obj/item/reagent_containers/glass/rag (src)
+			new /obj/item/storage/fancy/cigarettes/cigars/havana (src) // 0TC, The don deserves the best.
+			new /obj/item/clothing/suit/det_suit/noir (src) // 5 TC, a spot of armor, and silent storage.
+			new /obj/item/lighter (src) // 0 TC, how else would you light your smokes?
+			new /obj/item/card/id/syndicate (src) // 2 TC, Gotta be named the part, boss.
+			new /obj/item/reagent_containers/food/drinks/flask (src) // 1 TC, I can't believe I forgot about the booze flask AAAAAAA
+			new /obj/item/storage/secure/briefcase/syndie (src) // 1TC, for bribing the bartender to let you set up shop... amongst other actions.
+
+
+
+
 
 /obj/item/storage/box/syndicate/contract_kit
 	name = "Contract Kit"

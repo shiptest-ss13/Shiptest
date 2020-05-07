@@ -186,8 +186,8 @@
 	slot_flags = 0
 	mag_type = /obj/item/ammo_box/magazine/tommygunm45
 	can_suppress = FALSE
-	burst_size = 4
-	fire_delay = 1
+	burst_size = 3 // If you raise this, increase the fire delay.
+	fire_delay = 2 //Lowering this is a bad idea, unless you wanna basically give players the ability to vaporize with even less effort.
 	bolt_type = BOLT_TYPE_OPEN
 
 /obj/item/gun/ballistic/automatic/ar
