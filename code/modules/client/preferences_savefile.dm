@@ -375,6 +375,9 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	//Quirks
 	S["all_quirks"]			>> all_quirks
 
+	//Flavor Text
+	S["feature_flavor_text"]		>> features["flavor_text"]
+
 	//try to fix any outdated data if necessary
 	if(needs_update >= 0)
 		update_character(needs_update, S)		//needs_update == savefile_version if we need an update (positive integer)
