@@ -39015,9 +39015,7 @@
 	pixel_y = -32
 	},
 /obj/effect/turf_decal/tile/yellow,
-/obj/machinery/power/apc/auto_name/east{
-	pixel_x = 24
-	},
+/obj/machinery/power/apc/auto_name/east,
 /obj/structure/cable,
 /turf/open/floor/plasteel,
 /area/engine/lobby)
@@ -44128,7 +44126,9 @@
 /turf/open/floor/plasteel/dark,
 /area/library/lounge)
 "ckU" = (
-/obj/machinery/bookbinder,
+/obj/structure/table/wood,
+/obj/item/paper_bin,
+/obj/item/pen,
 /turf/open/floor/plasteel/dark,
 /area/library/lounge)
 "ckV" = (
@@ -44194,7 +44194,8 @@
 /obj/machinery/light/small{
 	dir = 8
 	},
-/obj/machinery/libraryscanner,
+/obj/structure/table/wood,
+/obj/item/instrument/saxophone,
 /turf/open/floor/plasteel/dark,
 /area/library/lounge)
 "clm" = (
@@ -47622,13 +47623,7 @@
 /turf/open/floor/plasteel/dark,
 /area/library)
 "cyT" = (
-/obj/structure/table/wood,
-/obj/item/paper_bin{
-	layer = 2.9;
-	pixel_x = -2;
-	pixel_y = 4
-	},
-/obj/item/pen,
+/obj/machinery/bookbinder,
 /turf/open/floor/plasteel/dark,
 /area/library)
 "cyU" = (
@@ -47658,9 +47653,7 @@
 /turf/open/floor/plasteel/dark,
 /area/library)
 "czp" = (
-/obj/structure/table/wood,
-/obj/item/disk/nuclear/fake,
-/obj/item/barcodescanner,
+/obj/machinery/libraryscanner,
 /turf/open/floor/plasteel/dark,
 /area/library)
 "czq" = (
@@ -47686,6 +47679,7 @@
 	pixel_x = -2;
 	pixel_y = 4
 	},
+/obj/item/pen,
 /turf/open/floor/plasteel/dark,
 /area/library)
 "czv" = (
@@ -47751,7 +47745,8 @@
 /area/library)
 "czO" = (
 /obj/structure/table/wood,
-/obj/item/instrument/saxophone,
+/obj/item/barcodescanner,
+/obj/item/disk/nuclear/fake,
 /turf/open/floor/plasteel/dark,
 /area/library)
 "czP" = (
