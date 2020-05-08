@@ -216,28 +216,35 @@
 		else
 			back = backpack //Department backpack
 
+	var/holder
 	switch(H.jumpsuit_style)
 		if(PREF_SKIRT)
-			uniform = "[uniform]/skirt"
+			holder = "[uniform]/skirt"
 		if(PREF_ALTSUIT)
-			uniform = alt_uniform
+			holder = "[alt_uniform]"
 		if(PREF_GREYSUIT)
-			uniform = /obj/item/clothing/under/color/grey
+			holder = "/obj/item/clothing/under/color/grey"
 		else
-			uniform = uniform
+			holder = "[uniform]"
+
+	if(text2path(holder))
+		uniform = text2path(holder)
 
 	switch(H.exowear)
 		if(PREF_ALTEXOWEAR)
 			if(alt_suit)
-				suit = alt_suit
+				holder = "[alt_suit]"
 			else
-				suit = suit
+				holder = "[suit]"
 		if(PREF_NOEXOWEAR)
-			suit = null
+			holder = null
 		if(PREF_COATEXOWEAR)
-			suit = dcoat
+			holder = "[dcoat]"
 		else
-			suit = suit
+			holder = "[suit]"
+
+	if(text2path(holder) || !holder)
+		suit = text2path(holder)
 
 /datum/outfit/job/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	if(visualsOnly)
