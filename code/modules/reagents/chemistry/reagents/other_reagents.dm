@@ -486,6 +486,13 @@
 		return
 	if(!(H.dna?.species) || !(H.mob_biotypes & MOB_ORGANIC))
 		return
+	var/datum/species/mutation = pick(race)			//I honestly feel extremely uncomfortable. I do not like the fact that this works.
+	var/current_species = H.dna.species.type
+	if(mutation && mutation != current_species)
+		H.set_species(mutation)
+	else
+		to_chat(H, "<span class='danger'>The pain vanishes suddenly. You feel no different.</span>")
+	H.reagents.del_reagent(type)
 
 	if(prob(10))
 		var/list/pick_ur_fav = list()
@@ -515,6 +522,22 @@
 	color = "#13BC5E" // rgb: 19, 188, 94
 	race = /datum/species/jelly/slime
 	process_flags = ORGANIC | SYNTHETIC //WaspStation Edit - IPCs
+
+/datum/reagent/mutationtoxin/unstable
+	name = "Unstable Mutation Toxin"
+	description = "A mostly safe mutation toxin."
+	color = "#13BC5E" // rgb: 19, 188, 94
+	race = list(/datum/species/jelly/slime,
+						/datum/species/human,
+						/datum/species/human/felinid,
+						/datum/species/lizard,
+						/datum/species/fly,
+						/datum/species/moth,
+						/datum/species/pod,
+						/datum/species/jelly,
+						/datum/species/abductor,
+						/datum/species/squid)
+	process_flags = ORGANIC | SYNTHETIC
 
 /datum/reagent/mutationtoxin/felinid
 	name = "Felinid Mutation Toxin"
@@ -602,6 +625,20 @@
 	process_flags = ORGANIC | SYNTHETIC //WaspStation Edit - IPCs
 	taste_description = "circuitry and steel"
 
+/datum/reagent/mutationtoxin/ipc
+	name = "IPC Mutation Toxin"
+	description = "An integrated positronic toxin."
+	color = "#5EFF3B" //RGB: 94, 255, 59
+	race = /datum/species/ipc
+	process_flags = ORGANIC | SYNTHETIC
+
+/datum/reagent/mutationtoxin/squid
+	name = "Squid Mutation Toxin"
+	description = "A salty toxin."
+	color = "#5EFF3B" //RGB: 94, 255, 59
+	race = /datum/species/squid
+	process_flags = ORGANIC | SYNTHETIC
+
 //BLACKLISTED RACES
 /datum/reagent/mutationtoxin/skeleton
 	name = "Skeleton Mutation Toxin"
@@ -618,6 +655,13 @@
 	race = /datum/species/zombie //Not the infectious kind. The days of xenobio zombie outbreaks are long past.
 	process_flags = ORGANIC | SYNTHETIC //WaspStation Edit - IPCs
 	taste_description = "brai...nothing in particular"
+
+/datum/reagent/mutationtoxin/goofzombie
+	name = "Zombie Mutation Toxin"
+	description = "An undead toxin... kinda..."
+	color = "#5EFF3B" //RGB: 94, 255, 59
+	race = /datum/species/krokodil_addict //Not the infectious kind. The days of xenobio zombie outbreaks are long past.
+	process_flags = ORGANIC | SYNTHETIC
 
 /datum/reagent/mutationtoxin/ash
 	name = "Ash Mutation Toxin"
@@ -2156,3 +2200,10 @@
 	color = "#623301"
 	taste_mult = 1.2
 
+
+/datum/reagent/liquidadamantine
+	name = "Liquid Adamantine"
+	description = "A legengary lifegiving metal liquified."
+	color = "#10cca6" //RGB: 16, 204, 166
+	taste_description = "lifegiiving metal"
+	can_synth = FALSE
