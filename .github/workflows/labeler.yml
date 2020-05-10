@@ -1,8 +1,7 @@
 name: PR Labeler
 on:
-  pull_request:
-    branches: [master]
-    types: [opened]
+  schedule:
+    - cron: '*/10 * * * *'
 jobs:
   labeler:
     runs-on: ubuntu-latest
