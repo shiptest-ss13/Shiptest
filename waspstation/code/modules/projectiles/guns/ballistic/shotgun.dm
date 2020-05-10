@@ -44,3 +44,66 @@
 			user.dropItemToGround(src)
 		return 0
 	..()
+
+//////////////
+//QUADVOLGUE//
+//////////////
+/obj/item/gun/ballistic/shotgun/doublebarrel/quad
+	name = "quadvolgue shotgun"
+	desc = "I've got my quad damage right here!"
+	icon_state = "qshotgun"
+	icon = 'waspstation/icons/obj/guns/projectile.dmi'
+	lefthand_file = 'waspstation/icons/mob/inhands/weapons/64x_guns_left.dmi'
+	righthand_file = 'waspstation/icons/mob/inhands/weapons/64x_guns_right.dmi'
+	item_state = "shotgun_qb"
+	w_class = WEIGHT_CLASS_BULKY
+	force = 14 //blunt edge and really heavy
+	attack_verb = list("bludgeoned", "smashed")
+	mag_type = /obj/item/ammo_box/magazine/internal/shot/quad
+	burst_size = 4
+	pb_knockback = 6
+	unique_reskin = null
+	recoil = 1
+	weapon_weight = WEAPON_LIGHT
+	fire_sound = 'waspstation/sound/weapons/gun/shotgun/quadfire.ogg'
+	rack_sound = "waspstation/sound/weapons/gun/shotgun/quadrack.ogg"
+	load_sound = "waspstation/sound/weapons/gun/shotgun/quadinsert.ogg"
+	fire_sound_volume = 35
+	rack_sound_volume = 50
+
+/obj/item/gun/ballistic/shotgun/doublebarrel/quad/sawn
+	name = "sawn-off quadvolgue shotgun"
+	desc = "I've got my quad damage right here! Now with backpacks!"
+	icon_state = "qshotgun_sawn"
+	item_state = "shotgun_qb_sawn"
+	w_class = WEIGHT_CLASS_NORMAL
+	sawn_off = TRUE
+	slot_flags = ITEM_SLOT_BELT
+
+/obj/item/gun/ballistic/shotgun/doublebarrel/quad/sawoff(mob/user)
+	update_icon()
+
+/obj/item/gun/ballistic/shotgun/doublebarrel/quad/gold
+	name = "golden quadvolgue shotgun"
+	desc = "It looks heavily worn-down, as if it has been used extensively for many years."
+	icon_state = "qshotgungold"
+	item_state = "shotgun_qbgold"
+	burst_size = 2
+	pb_knockback = 4
+	fire_sound_volume = 45
+
+/obj/item/gun/ballistic/shotgun/doublebarrel/quad/gold/sawn
+	icon_state = "qshotgungold_sawn"
+	item_state = "shotgun_qbgold_sawn"
+	desc = "All miracles require sacrifices."
+
+/obj/item/gun/ballistic/shotgun/doublebarrel/quad/dual
+	name = "dual quadvolgue shotgun"
+	desc = "You think God stays in heaven, because he too, lives in fear of what he's created here on Earth?"
+	icon_state = "qshotgun_dual"
+	item_state = "shotgun_qb_dual"
+	mag_type = /obj/item/ammo_box/magazine/internal/shot/quad/dual
+	burst_size = 8
+	pb_knockback = 12
+	recoil = 2
+	fire_sound_volume = 50
