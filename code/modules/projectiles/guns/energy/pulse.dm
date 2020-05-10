@@ -1,6 +1,7 @@
 /obj/item/gun/energy/pulse
 	name = "pulse rifle"
 	desc = "A heavy-duty, multifaceted energy rifle with three modes. Preferred by front-line combat personnel."
+	icon = 'waspstation/icons/obj/guns/energy.dmi' //waspstation edit
 	icon_state = "pulse"
 	item_state = null
 	w_class = WEIGHT_CLASS_BULKY
