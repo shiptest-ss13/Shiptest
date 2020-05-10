@@ -46,7 +46,7 @@ pr_list = commit.get_pulls()
 
 if not pr_list.totalCount:
     print("Direct commit detected")
-    exit(1) # Change to '0' if you do not want the action to count this is a failure
+    exit(0) # Change to '0' if you do not want the action to count this is a failure
 
 pr = pr_list[0]
 
