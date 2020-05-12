@@ -394,6 +394,9 @@
 			if(show_message)
 				to_chat(M, "<span class='danger'>You feel your burns and bruises healing! It stings like hell!</span>")
 			SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "painful_medicine", /datum/mood_event/painful_medicine)
+			if(HAS_TRAIT_FROM(M, TRAIT_HUSK, "burn") && M.getFireLoss() < THRESHOLD_UNHUSK && (M.reagents.get_reagent_amount(/datum/reagent/medicine/synthflesh) + reac_volume >= 100))
+				M.cure_husk("burn")
+				M.visible_message("<span class='nicegreen'>A rubbery liquid coats [M]'s burns. [M] looks a lot healthier!")
 	..()
 
 /datum/reagent/medicine/charcoal
