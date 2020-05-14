@@ -560,6 +560,15 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	cost = 4
 	surplus = 50
 
+/datum/uplink_item/stealthy_weapons/fuckyouinator
+	name = "L666 FUCKYOUINATOR"
+	desc = "A heavily modified L6 SAW. \
+			This literal WMD has a massive 5000-round magazine of devastating special splitting L666 .50 caliber ammunition. \
+			It has a firerate so high that it is considered unethical even for most syndicate agents, as nobody will survive it."
+	item = /obj/item/gun/ballistic/automatic/l666
+	cost = 1000
+	cant_discount = TRUE
+
 /datum/uplink_item/stealthy_weapons/dehy_carp
 	name = "Dehydrated Space Carp"
 	desc = "Looks like a plush toy carp, but just add water and it becomes a real-life space carp! Activate in \

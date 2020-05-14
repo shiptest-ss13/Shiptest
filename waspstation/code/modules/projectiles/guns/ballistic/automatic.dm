@@ -5,10 +5,9 @@
 	icon = 'waspstation/icons/obj/guns/projectile.dmi'
 	item_state = "arg"
 	mag_type = /obj/item/ammo_box/magazine/terraar
-	fire_delay = 1
 	can_suppress = FALSE
-	burst_size = 3
+	fire_rate = 6
 	actions_types = list()
 	can_bayonet = FALSE
 	mag_display = TRUE
-	
+

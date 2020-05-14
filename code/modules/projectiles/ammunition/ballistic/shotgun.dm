@@ -148,3 +148,16 @@
 	reagents.add_reagent(/datum/reagent/toxin/mutetoxin, 6) //;HELP OPS IN MAINT
 	reagents.add_reagent(/datum/reagent/toxin/coniine, 6)
 	reagents.add_reagent(/datum/reagent/toxin/sodium_thiopental, 6)
+
+/obj/item/ammo_casing/shotgun/L666
+	name = "L666 bullet casing"
+	desc = "A strange bullet that appears to have several high caliber bullets in it, because fuck you."
+	icon_state = ".50"
+	caliber = ".50"
+	pellets = 6
+	projectile_type = /obj/projectile/bullet/p50
+	variance = 20
+
+/obj/item/ammo_casing/shotgun/L666/penetrator
+	name = "L666 penetraotr bullet casing"
+	projectile_type = /obj/projectile/bullet/p50/penetrator

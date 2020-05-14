@@ -14,6 +14,7 @@
 	rack_sound = 'sound/weapons/gun/rifle/bolt_out.ogg'
 	bolt_drop_sound = 'sound/weapons/gun/rifle/bolt_in.ogg'
 	tac_reloads = FALSE
+	weapon_weight = WEAPON_MEDIUM
 
 obj/item/gun/ballistic/rifle/update_overlays()
 	. = ..()

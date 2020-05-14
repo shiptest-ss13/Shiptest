@@ -2,8 +2,6 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	var/select = 1
 	can_suppress = TRUE
-	burst_size = 3
-	fire_delay = 2
 	actions_types = list(/datum/action/item_action/toggle_firemode)
 	semi_auto = TRUE
 	fire_sound = 'sound/weapons/gun/smg/shot.ogg'
@@ -11,15 +9,19 @@
 	vary_fire_sound = FALSE
 	rack_sound = 'sound/weapons/gun/smg/smgrack.ogg'
 	suppressed_sound = 'sound/weapons/gun/smg/shot_suppressed.ogg'
+	automatic = 1
+	weapon_weight = WEAPON_MEDIUM
 
 /obj/item/gun/ballistic/automatic/proto
 	name = "\improper Nanotrasen Saber SMG"
-	desc = "A prototype three-round burst 9mm submachine gun, designated 'SABR'. Has a threaded barrel for suppressors."
+	desc = "A prototype full auto 9mm submachine gun, designated 'SABR'. Has a threaded barrel for suppressors."
 	icon_state = "saber"
 	mag_type = /obj/item/ammo_box/magazine/smgm9mm
 	pin = null
+	fire_rate = 5
 	bolt_type = BOLT_TYPE_LOCKING
 	mag_display = TRUE
+	weapon_weight = WEAPON_LIGHT
 
 /obj/item/gun/ballistic/automatic/proto/unrestricted
 	pin = /obj/item/firing_pin
@@ -84,9 +86,7 @@
 	icon_state = "WT-5502"
 	item_state = "arg"
 	mag_type = /obj/item/ammo_box/magazine/wt550m9
-	fire_delay = 2
 	can_suppress = FALSE
-	burst_size = 0
 	actions_types = list()
 	can_bayonet = TRUE
 	knife_x_offset = 25
@@ -94,15 +94,16 @@
 	mag_display = TRUE
 	mag_display_ammo = TRUE
 	empty_indicator = TRUE
+	fire_rate = 3
 
 /obj/item/gun/ballistic/automatic/mini_uzi
 	name = "\improper Type U3 Uzi"
-	desc = "A lightweight, burst-fire submachine gun, for when you really want someone dead. Uses 9mm rounds."
+	desc = "A lightweight submachine gun, for when you really want someone dead. Uses 9mm rounds."
 	icon_state = "miniuzi"
 	mag_type = /obj/item/ammo_box/magazine/uzim9mm
-	burst_size = 2
 	bolt_type = BOLT_TYPE_OPEN
 	mag_display = TRUE
+	fire_rate = 4
 	rack_sound = 'sound/weapons/gun/pistol/slide_lock.ogg'
 
 /obj/item/gun/ballistic/automatic/m90
@@ -185,9 +186,8 @@
 	w_class = WEIGHT_CLASS_HUGE
 	slot_flags = 0
 	mag_type = /obj/item/ammo_box/magazine/tommygunm45
+	fire_rate = 5
 	can_suppress = FALSE
-	burst_size = 3 // If you raise this, increase the fire delay.
-	fire_delay = 2 //Lowering this is a bad idea, unless you wanna basically give players the ability to vaporize with even less effort.
 	bolt_type = BOLT_TYPE_OPEN
 
 /obj/item/gun/ballistic/automatic/ar
@@ -198,11 +198,37 @@
 	slot_flags = 0
 	mag_type = /obj/item/ammo_box/magazine/m556
 	can_suppress = FALSE
-	burst_size = 3
-	fire_delay = 1
+	fire_rate = 5
 
 
 // L6 SAW //
+/obj/item/gun/ballistic/automatic/l666
+	name = "\improper L666 FUCKYOUINATOR"
+	desc = "A heavily modified L6 Saw, this thing is the last thing you will ever see if you are not the wielder. Chambered in special L666 .50 caliber rounds."
+	icon_state = "l6"
+	item_state = "l6closedmag"
+	w_class = WEIGHT_CLASS_HUGE
+	slot_flags = 0
+	mag_type = /obj/item/ammo_box/magazine/l666ammo
+	weapon_weight = WEAPON_HEAVY
+	can_suppress = TRUE
+	fire_rate = 100
+	spread = 7
+	recoil = 0.75
+	pin = /obj/item/firing_pin
+	bolt_type = BOLT_TYPE_OPEN
+	mag_display = TRUE
+	mag_display_ammo = TRUE
+	tac_reloads = TRUE
+	fire_sound = 'sound/weapons/gun/l6/shot.ogg'
+	rack_sound = 'sound/weapons/gun/l6/l6_rack.ogg'
+	suppressed_sound = 'sound/weapons/gun/general/heavy_shot_suppressed.ogg'
+
+
+/obj/item/gun/ballistic/automatic/l666/BWOINK
+	name = "\improper L666 BWOINKINATOR"
+	desc = "The true gods are dead. All that is left is the bwoink. Repent."
+	fire_sound = 'sound/effects/adminhelp.ogg'
 
 /obj/item/gun/ballistic/automatic/l6_saw
 	name = "\improper L6 SAW"
@@ -215,8 +241,7 @@
 	weapon_weight = WEAPON_HEAVY
 	var/cover_open = FALSE
 	can_suppress = FALSE
-	burst_size = 3
-	fire_delay = 1
+	fire_rate = 6
 	spread = 7
 	pin = /obj/item/firing_pin/implant/pindicate
 	bolt_type = BOLT_TYPE_OPEN
@@ -318,14 +343,14 @@
 	item_state = "moistnugget"
 	weapon_weight = WEAPON_HEAVY
 	mag_type = /obj/item/ammo_box/magazine/m10mm/rifle
-	fire_delay = 30
-	burst_size = 1
 	can_unsuppress = TRUE
 	can_suppress = TRUE
 	w_class = WEIGHT_CLASS_HUGE
 	slot_flags = ITEM_SLOT_BACK
 	actions_types = list()
 	mag_display = TRUE
+	automatic = 0
+	fire_rate = 1.5
 
 // Laser rifle (rechargeable magazine) //
 
@@ -335,9 +360,8 @@
 	icon_state = "oldrifle"
 	item_state = "arg"
 	mag_type = /obj/item/ammo_box/magazine/recharge
-	fire_delay = 2
 	can_suppress = FALSE
-	burst_size = 0
 	actions_types = list()
 	fire_sound = 'sound/weapons/laser.ogg'
 	casing_ejector = FALSE
+	fire_rate = 2
