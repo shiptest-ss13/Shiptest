@@ -543,6 +543,7 @@
 			message = adminscrub(message,500)
 		to_chat(world, "<span class='adminnotice'><b>[usr.client.holder.fakekey ? "Administrator" : usr.key] Announces:</b></span>\n \t [message]")
 		log_admin("Announce: [key_name(usr)] : [message]")
+	SSredbot.send_discord_message("ooc", "**[usr.client.holder.fakekey ? "Administrator" : usr.key] Announces:** [message]")
 	SSblackbox.record_feedback("tally", "admin_verb", 1, "Announce") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 /datum/admins/proc/set_admin_notice()
@@ -575,6 +576,7 @@
 	toggle_ooc()
 	log_admin("[key_name(usr)] toggled OOC.")
 	message_admins("[key_name_admin(usr)] toggled OOC.")
+	SSredbot.send_discord_message("ooc", "**OOC has been [GLOB.ooc_allowed ? "enabled" : "disabled"] on the server.**")
 	SSblackbox.record_feedback("nested tally", "admin_toggle", 1, list("Toggle OOC", "[GLOB.ooc_allowed ? "Enabled" : "Disabled"]")) //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 //Begin Wasp Edit

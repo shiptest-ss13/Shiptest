@@ -199,6 +199,7 @@
 	set waitfor = FALSE
 
 	to_chat(world, "<BR><BR><BR><span class='big bold'>The round has ended.</span>")
+	SSredbot.send_discord_message("ooc", "**The round has ended.**")
 	log_game("The round has ended.")
 
 	for(var/I in round_end_events)
@@ -324,7 +325,7 @@
 	CHECK_TICK
 
 	//Mouse
-	parts += mouse_report() 
+	parts += mouse_report()
 
 	CHECK_TICK
 	//Wasp End

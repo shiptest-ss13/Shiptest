@@ -5,6 +5,8 @@
 	if(!check_rights(0))
 		return
 
+	SSredbot.send_discord_message("asay", msg)
+
 	msg = emoji_parse(copytext_char(sanitize(msg), 1, MAX_MESSAGE_LEN))
 	if(!msg)
 		return
