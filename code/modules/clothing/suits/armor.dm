@@ -19,15 +19,15 @@
 /obj/item/clothing/suit/armor/vest
 	name = "armor vest"
 	desc = "A slim Type I armored vest that provides decent protection against most types of damage."
-	icon_state = "armoralt"
-	item_state = "armoralt"
+	icon_state = "armor"
+	item_state = "armor"
 	blood_overlay_type = "armor"
 	dog_fashion = /datum/dog_fashion/back
 
 /obj/item/clothing/suit/armor/vest/alt
 	desc = "A Type I armored vest that provides decent protection against most types of damage."
-	icon_state = "armor"
-	item_state = "armor"
+	icon_state = "armoralt"
+	item_state = "armoralt"
 
 /obj/item/clothing/suit/armor/vest/old
 	name = "degrading armor vest"

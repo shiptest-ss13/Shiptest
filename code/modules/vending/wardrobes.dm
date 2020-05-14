@@ -28,13 +28,15 @@
 					/obj/item/clothing/mask/bandana/red = 3,
 					/obj/item/clothing/gloves/color/black = 3,
 					/obj/item/clothing/under/rank/security/officer/skirt = 3,
-					/obj/item/clothing/under/rank/security/officer/grey = 3,
+					///obj/item/clothing/under/rank/security/officer/grey = 3,
+					/obj/item/clothing/under/rank/security/officer/white = 3,//WaspStation edit - Better security jumpsuit sprites
 					/obj/item/clothing/under/pants/khaki = 3,
 					/obj/item/clothing/under/rank/security/officer/blueshirt = 3,
+					/obj/item/clothing/under/rank/security/officer/mallcop = 3,
 					/obj/item/clothing/head/beret/corpsec = 3, // Waspstation edit - Berets
 					/obj/item/clothing/neck/tie/red = 6,
 					/obj/item/clothing/neck/tie/black = 6)
-	premium = list(/obj/item/clothing/under/rank/security/officer/formal = 3,
+	premium = list(/obj/item/clothing/under/rank/security/officer/formal = 3,//WaspStation edit - Better security jumpsuit sprites
 					/obj/item/clothing/suit/security/officer = 3,
 					/obj/item/clothing/head/beret/sec/navyofficer = 3)
 	refill_canister = /obj/item/vending_refill/wardrobe/sec_wardrobe
@@ -259,7 +261,9 @@
 					/obj/item/clothing/neck/petcollar = 1,
 					/obj/item/storage/belt/bandolier = 1,
 					/obj/item/storage/pill_bottle/dice/hazard = 1,
-					/obj/item/storage/bag/money = 2)
+					/obj/item/storage/bag/money = 2,
+					/obj/item/clothing/neck/tie/black = 2,
+					/obj/item/clothing/neck/tie/blue = 2)
 	premium = list(/obj/item/storage/box/dishdrive = 1)
 	refill_canister = /obj/item/vending_refill/wardrobe/bar_wardrobe
 	payment_department = ACCOUNT_SRV
@@ -282,6 +286,9 @@
 					/obj/item/clothing/suit/toggle/chef = 1,
 					/obj/item/clothing/under/rank/civilian/chef = 1,
 					/obj/item/clothing/under/rank/civilian/chef/skirt = 2,
+					///obj/item/clothing/under/rank/chef = 3,//WaspStation edit - Better security jumpsuit sprites
+					/obj/item/clothing/under/plasmaman/chef = 1,
+					/obj/item/clothing/head/helmet/space/plasmaman/white = 1,
 					/obj/item/clothing/head/chefhat = 1,
 					/obj/item/clothing/under/rank/civilian/cookjorts = 2,
 					/obj/item/clothing/shoes/cookflops = 2,
@@ -348,6 +355,8 @@
 					/obj/item/clothing/under/rank/civilian/lawyer/black = 1,
 					/obj/item/clothing/under/rank/civilian/lawyer/black/skirt = 1,
 					/obj/item/clothing/shoes/laceup = 2,
+					/obj/item/clothing/neck/tie/red = 6,
+					/obj/item/clothing/neck/tie/black = 6,
 					/obj/item/clothing/accessory/lawyers_badge = 2)
 	refill_canister = /obj/item/vending_refill/wardrobe/law_wardrobe
 	payment_department = ACCOUNT_CIV

@@ -92,7 +92,8 @@
 	new /obj/item/clothing/head/HoS(src)
 	new /obj/item/clothing/glasses/hud/security/sunglasses/eyepatch(src)
 	new /obj/item/clothing/glasses/hud/security/sunglasses/gars/supergars(src)
-	new /obj/item/clothing/under/rank/security/head_of_security/grey(src)
+	//new /obj/item/clothing/under/rank/security/head_of_security/grey(src)
+	new /obj/item/clothing/under/rank/security/head_of_security/white(src)//WaspStation Edit - Better security jumpsuit sprites
 	new /obj/item/storage/lockbox/medal/sec(src)
 	new /obj/item/megaphone/sec(src)
 	new /obj/item/holosign_creator/security(src)
@@ -219,6 +220,9 @@
 	new /obj/item/clothing/accessory/holster/detective(src) //WaspStation Edit - Made Holsters Accessories
 	new /obj/item/pinpointer/crew(src)
 	new /obj/item/binoculars(src)
+	new /obj/item/clothing/neck/tie/red(src)
+	new	/obj/item/clothing/neck/tie/black(src)
+	new /obj/item/clothing/neck/tie/detective(src)
 	new /obj/item/storage/box/rxglasses/spyglasskit(src)
 /obj/structure/closet/secure_closet/injection
 	name = "lethal injections"

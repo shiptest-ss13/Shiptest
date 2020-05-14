@@ -24,8 +24,10 @@
 	sensor_mode = SENSOR_COORDS
 	random_sensor = FALSE
 
-/obj/item/clothing/under/rank/security/officer/grey
-	name = "grey security jumpsuit"
+///obj/item/clothing/under/rank/security/officer/grey
+//name = "grey security jumpsuit"
+/obj/item/clothing/under/rank/security/officer/white //WaspStation edit - Better security jumpsuit sprites
+	name = "white security jumpsuit"
 	desc = "A tactical relic of years past before Nanotrasen decided it was cheaper to dye the suits red instead of washing out the blood."
 	icon_state = "security"
 	item_state = "gy_suit"
@@ -72,8 +74,10 @@
 	sensor_mode = 3
 	random_sensor = FALSE
 
-/obj/item/clothing/under/rank/security/warden/grey
-	name = "grey security suit"
+///obj/item/clothing/under/rank/security/warden/grey
+//	name = "grey security suit"
+/obj/item/clothing/under/rank/security/warden/white //WaspStation edit - Better security jumpsuit sprites
+	name = "white security suit"
 	desc = "A formal relic of years past before Nanotrasen decided it was cheaper to dye the suits red instead of washing out the blood."
 	icon_state = "warden"
 	item_state = "gy_suit"
@@ -156,8 +160,10 @@
 	can_adjust = FALSE
 	fitted = FEMALE_UNIFORM_TOP
 
-/obj/item/clothing/under/rank/security/head_of_security/grey
-	name = "head of security's grey jumpsuit"
+///obj/item/clothing/under/rank/security/head_of_security/grey
+//	name = "head of security's grey jumpsuit"
+/obj/item/clothing/under/rank/security/head_of_security/white //WaspStation edit - Better security jumpsuit sprites
+	name = "head of security's white jumpsuit"
 	desc = "There are old men, and there are bold men, but there are very few old, bold men."
 	icon_state = "hos"
 	item_state = "gy_suit"
@@ -198,6 +204,20 @@
 	icon_state = "hosblueclothes"
 	item_state = "hosblueclothes"
 	alt_covers_chest = TRUE
+
+/*
+  WaspStation edit - Better security jumpsuit sprites
+*/
+
+/*
+*Blart Uniform
+*/
+/obj/item/clothing/under/rank/security/officer/mallcop
+	name = "NT mall cop uniform"
+	desc = "The radio and badge are sewn on, what a crappy knock off. Secway not included."
+	icon_state = "mallcop"
+	item_state = "gy_suit"
+	can_adjust = FALSE
 
 /*
  *Spacepol
