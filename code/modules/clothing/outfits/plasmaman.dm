@@ -46,6 +46,13 @@
 	head = /obj/item/clothing/head/helmet/space/plasmaman/security
 	uniform = /obj/item/clothing/under/plasmaman/security
 	gloves = /obj/item/clothing/gloves/color/plasmaman/black
+	
+/datum/outfit/plasmaman/secmed
+	name = "Brig Physician Plasmaman"
+
+	head = /obj/item/clothing/head/helmet/space/plasmaman/security/secmed
+	uniform = /obj/item/clothing/under/plasmaman/security/secmed
+	gloves = /obj/item/clothing/gloves/color/plasmaman/black
 
 /datum/outfit/plasmaman/detective
 	name = "Detective Plasmaman"
@@ -69,12 +76,6 @@
 	uniform = /obj/item/clothing/under/plasmaman/prisoner
 	shoes = /obj/item/clothing/shoes/sneakers/black
 	gloves = /obj/item/clothing/gloves/color/plasmaman/black
-
-/datum/outfit/plasmaman/prisoner
-	name = "Prisoner Plasmaman"
-
-	head = /obj/item/clothing/head/helmet/space/plasmaman/prisoner
-	uniform = /obj/item/clothing/under/plasmaman/prisoner
 
 /datum/outfit/plasmaman/cargo
 	name = "Cargo Plasmaman"
@@ -152,6 +153,48 @@
 	head = /obj/item/clothing/head/helmet/space/plasmaman/atmospherics
 	uniform = /obj/item/clothing/under/plasmaman/atmospherics
 	gloves = /obj/item/clothing/gloves/color/plasmaman/atmos
+	
+/datum/outfit/plasmaman/command
+	name = "Captain Plasma"
+	
+	head = /obj/item/clothing/head/helmet/space/plasmaman/command
+	uniform = /obj/item/clothing/under/plasmaman/command
+	gloves = /obj/item/clothing/gloves/color/captain
+
+/datum/outfit/plasmaman/ce
+	name = "Plasma CE"
+	
+	head = /obj/item/clothing/head/helmet/space/plasmaman/engineering/ce
+	uniform = /obj/item/clothing/under/plasmaman/engineering/ce
+	gloves = /obj/item/clothing/gloves/color/plasmaman/engineer
+	
+/datum/outfit/plasmaman/cmo
+	name = "Plasmaman CMO"
+	
+	head = /obj/item/clothing/head/helmet/space/plasmaman/cmo
+	uniform = /obj/item/clothing/under/plasmaman/cmo
+	gloves = /obj/item/clothing/gloves/color/plasmaman/white
+	
+/datum/outfit/plasmaman/hos
+	name = "PlasmaHoS"
+
+	head = /obj/item/clothing/head/helmet/space/plasmaman/security/hos
+	uniform =/obj/item/clothing/under/plasmaman/security/hos
+	gloves = /obj/item/clothing/gloves/combat
+
+/datum/outfit/plasmaman/rd
+	name = "Plasmaman RD"
+
+	head = /obj/item/clothing/head/helmet/space/plasmaman/rd
+	uniform = /obj/item/clothing/under/plasmaman/rd
+	gloves = /obj/item/clothing/gloves/color/plasmaman/white
+	
+/datum/outfit/plasmaman/hop
+	name = "PlasmaHoP"
+
+	head = /obj/item/clothing/head/helmet/space/plasmaman/hop
+	uniform = /obj/item/clothing/under/plasmaman/hop
+	gloves = /obj/item/clothing/gloves/color/plasmaman/black
 
 /datum/outfit/plasmaman/mime
 	name = "Plasmamime"

@@ -11,3 +11,8 @@
 	icon_state = "atmos_envirosuit"
 	item_state = "atmos_envirosuit"
 
+/obj/item/clothing/under/plasmaman/engineering/ce
+	name = "chief engineers envirosuit"
+	desc = "An airtight envirosuit designed to be used by plasmamen selected to be engine overseers."
+	icon_state = "ce_envirosuit"
+	item_state = "ce_envirosuit"

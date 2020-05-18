@@ -95,7 +95,7 @@
 			O = new /datum/outfit/plasmaman/security
 
 		if("Brig Physician")
-			O = new /datum/outfit/plasmaman/security
+			O = new /datum/outfit/plasmaman/secmed
 
 		if("Detective")
 			O = new /datum/outfit/plasmaman/detective
@@ -135,6 +135,24 @@
 
 		if("Atmospheric Technician")
 			O = new /datum/outfit/plasmaman/atmospherics
+
+		if("Captain")
+			O = new /datum/outfit/plasmaman/command
+
+		if("Chief Engineer")
+			O = new /datum/outfit/plasmaman/ce
+
+		if("Chief Medical Officer")
+			O = new /datum/outfit/plasmaman/cmo
+
+		if("Head of Security")
+			O = new /datum/outfit/plasmaman/hos
+
+		if("Research Director")
+			O = new /datum/outfit/plasmaman/rd
+
+		if("Head of Personnel")
+			O = new /datum/outfit/plasmaman/hop
 
 		if("Mime")
 			O = new /datum/outfit/plasmaman/mime

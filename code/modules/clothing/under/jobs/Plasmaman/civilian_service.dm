@@ -10,7 +10,6 @@
 	icon_state = "explorer_envirosuit"
 	item_state = "explorer_envirosuit"
 
-
 /obj/item/clothing/under/plasmaman/chef
 	name = "chef's plasma envirosuit"
 	desc = "A white plasmaman envirosuit designed for cullinary practices. One might question why a member of a species that doesn't need to eat would become a chef."
@@ -80,3 +79,15 @@
 			H.ExtinguishMob()
 			new /obj/effect/particle_effect/foam(loc) //Truely terrifying.
 	return 0
+
+/obj/item/clothing/under/plasmaman/command
+	name = "captains plasma envirosuit"
+	desc = "A navy blue envirosuit with Tartrazine gold trimmings."
+	icon_state = "command_envirosuit"
+	item_state = "command_envirosuit"
+	
+/obj/item/clothing/under/plasmaman/hop
+	name = "head of personnel plasma envirosuit"
+	desc = "A navy blue envirosuit with Allura red trimmings."
+	icon_state = "hop_envirosuit"
+	item_state = "hop_envirosuit"
