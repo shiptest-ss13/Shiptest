@@ -78,13 +78,16 @@
 /obj/structure/closet/secure_closet/hos/PopulateContents()
 	..()
 	new /obj/item/card/id/departmental_budget/sec(src) //WaspStation edit - budget card
+	new /obj/item/storage/box/deputy(src) // WaspStation edit - Small QoL Brig additions
 	new /obj/item/clothing/neck/cloak/hos(src)
 	new /obj/item/clothing/under/rank/command(src) // WaspStation edit - better command uniforms
 	new /obj/item/cartridge/hos(src)
+	new /obj/item/radio/headset/heads/hos/alt(src) // WaspStation edit - Small QoL Brig additions
 	new /obj/item/radio/headset/heads/hos(src)
 	new /obj/item/clothing/under/rank/security/head_of_security/parade/female(src)
 	new /obj/item/clothing/under/rank/security/head_of_security/parade(src)
 	new /obj/item/clothing/suit/armor/vest/leather(src)
+	new /obj/item/clothing/suit/armor/hos/trenchcoat(src) // WaspStation edit - Small QoL Brig additions
 	new /obj/item/clothing/suit/armor/hos(src)
 	new /obj/item/clothing/under/rank/security/head_of_security/skirt(src)
 	new /obj/item/clothing/under/rank/security/head_of_security/alt(src)
@@ -130,6 +133,7 @@
 	new /obj/item/storage/box/flashbangs(src)
 	new /obj/item/storage/belt/security/full(src)
 	new /obj/item/flashlight/seclite(src)
+	new /obj/item/megaphone/sec(src) // WaspStation edit - Small QoL Brig additions
 	new /obj/item/clothing/gloves/krav_maga/sec(src)
 	new /obj/item/door_remote/head_of_security(src)
 	new /obj/item/gun/ballistic/shotgun/automatic/combat/compact(src)
