@@ -51,6 +51,7 @@
 	new /obj/item/card/id/departmental_budget/srv(src) //WaspStation Edit - Budget Cards
 	new /obj/item/clothing/neck/cloak/head_of_personnel(src)
 	new /obj/item/storage/lockbox/medal/service(src)
+	new /obj/item/clothing/head/beret/hop(src) //Waspstation edit - More Berets
 	new /obj/item/clothing/under/rank/command/head_of_personnel(src) //WaspStation Edit - Better Command Uniforms
 	new /obj/item/clothing/under/rank/command/head_of_personnel/skirt(src) //WaspStation Edit - Better Command Uniforms
 	new /obj/item/clothing/head/hopcap(src)
@@ -122,7 +123,7 @@
 	new /obj/item/clothing/head/warden(src)
 	new /obj/item/clothing/head/warden/drill(src)
 	new /obj/item/clothing/head/beret/sec/navywarden(src)
-	new /obj/item/clothing/head/beret/corpwarden(src) // Waspstation edit - Berets
+	new /obj/item/clothing/head/beret/sec/navywarden/black(src)
 	new /obj/item/clothing/suit/armor/vest/warden/alt(src)
 	new /obj/item/clothing/under/rank/security/warden/formal(src)
 	new /obj/item/clothing/under/rank/security/warden/skirt(src)

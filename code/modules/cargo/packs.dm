@@ -328,12 +328,15 @@
 					/obj/item/clothing/suit/security/officer,
 					/obj/item/clothing/head/beret/sec/navyofficer,
 					/obj/item/clothing/head/beret/sec/navyofficer,
+					/obj/item/clothing/head/beret/sec/navyofficer/black,
 					/obj/item/clothing/under/rank/security/warden/formal,
 					/obj/item/clothing/suit/security/warden,
 					/obj/item/clothing/head/beret/sec/navywarden,
+					/obj/item/clothing/head/beret/sec/navywarden/black,
 					/obj/item/clothing/under/rank/security/head_of_security/formal,
 					/obj/item/clothing/suit/security/hos,
-					/obj/item/clothing/head/beret/sec/navyhos)
+					/obj/item/clothing/head/beret/sec/navyhos,
+					/obj/item/clothing/head/beret/sec/navyhos/black)
 	crate_name = "security clothing crate"
 
 /datum/supply_pack/security/supplies
