@@ -91,3 +91,63 @@
 	desc = "A navy blue envirosuit with Allura red trimmings."
 	icon_state = "hop_envirosuit"
 	item_state = "hop_envirosuit"
+
+/obj/item/clothing/under/plasmaman/cargo/skirt
+	name = "cargo plasma enviroskirt"
+	desc = "A postmodern envirosuit modification used by plasmawomen quartermasters and cargo techs alike, made as a solution to the logistical problems of differenciating the two with the length of their pant legs."
+	icon_state = "cargo_enviroskirt"
+	item_state = "cargo_enviroskirt"
+
+/obj/item/clothing/under/plasmaman/chef/skirt
+	name = "chef's plasma enviroskirt"
+	desc = "A white plasmaman envirosuit modified with spatter shielding for culinary practices. One might question why a member of a species that doesn't need to eat would become a cook."
+	icon_state = "chef_enviroskirt"
+	item_state = "chef_enviroskirt"
+
+/obj/item/clothing/under/plasmaman/enviroslacks/skirt
+	name = "casual enviroskirt"
+	desc = "The pet project of a particularly unusual plasmaman, this custom suit was appropriated by Nano-Trasen for casual usage."
+	icon_state = "enviroskirt"
+	item_state = "enviroskirt"
+
+/obj/item/clothing/under/plasmaman/chaplain/skirt
+	name = "chaplain's plasma enviroskirt"
+	desc = "An envirosuit specially designed for only the least pious of the plasma people."
+	icon_state = "chap_enviroskirt"
+	item_state = "chap_enviroskirt"
+
+/obj/item/clothing/under/plasmaman/janitor/skirt
+	name = "janitor's plasma enviroskirt"
+	desc = "A grey and purple spatter-shielded envirosuit designated for plasmawomen janitors."
+	icon_state = "janitor_enviroskirt"
+	item_state = "janitor_enviroskirt"
+
+/obj/item/clothing/under/plasmaman/botany/skirt
+	name = "botany enviroskirt"
+	desc = "A green and blue envirosuit designed to protect plasmawomen from minor dirt-related spatter."
+	icon_state = "botany_enviroskirt"
+	item_state = "botany_enviroskirt"
+
+/obj/item/clothing/under/plasmaman/prisoner/skirt
+	name = "prisoner enviroskirt"
+	desc = "An orange envirosuit identifying and protecting a criminal plasmawoman."
+	icon_state = "prisoner_enviroskirt"
+	item_state = "prisoner_enviroskirt"
+
+/obj/item/clothing/under/plasmaman/command/skirt
+	name = "captains plasma enviroskirt"
+	desc = "A navy blue envirosuit with Tartrazine gold trimmings and a frilled brass kilt."
+	icon_state = "command_enviroskirt"
+	item_state = "command_enviroskirt"
+
+/obj/item/clothing/under/plasmaman/hop/skirt
+	name = "head of personnel plasma enviroskirt"
+	desc = "A navy blue envirosuit with Allura red trimmings and a poofy skirt, just as blue to match."
+	icon_state = "hop_enviroskirt"
+	item_state = "hop_enviroskirt"
+
+/obj/item/clothing/under/plasmaman/mime/skirt
+	name = "mime enviroskirt"
+	desc = "It's very colourful on the inside."
+	icon_state = "mime_enviroskirt"
+	item_state = "mime_enviroskirt"
