@@ -16,3 +16,21 @@
 	desc = "An airtight envirosuit designed to be used by plasmamen selected to be engine overseers."
 	icon_state = "ce_envirosuit"
 	item_state = "ce_envirosuit"
+
+/obj/item/clothing/under/plasmaman/engineering/skirt
+	name = "engineering plasma enviroskirt"
+	desc = "An air-tight suit designed to be used by the feminine plasmamen exployed as engineers, the usual purple stripes being replaced by orange, protecting the user from fire and acid damage."
+	icon_state = "engineer_enviroskirt"
+	item_state = "engineer_enviroskirt"
+
+/obj/item/clothing/under/plasmaman/atmospherics/skirt
+	name = "atmospherics plasma enviroskirt"
+	desc = "An air-tight suit designed to be used by the feminine plasmamen exployed as atmos technicians, the usual purple stripes being replaced by atmos's blue."
+	icon_state = "atmos_enviroskirt"
+	item_state = "atmos_enviroskirt"
+
+/obj/item/clothing/under/plasmaman/engineering/ce/skirt
+	name = "chief engineers enviroskirt"
+	desc = "An airtight envirosuit designed to be used by the more feminine plasmamen selected to be engine overseers."
+	icon_state = "ce_enviroskirt"
+	item_state = "ce_enviroskirt"
