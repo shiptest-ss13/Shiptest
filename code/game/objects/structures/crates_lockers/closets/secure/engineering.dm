@@ -13,6 +13,9 @@
 	new /obj/item/clothing/neck/cloak/ce(src)
 	new /obj/item/clothing/under/rank/engineering/chief_engineer(src)
 	new /obj/item/clothing/under/rank/engineering/chief_engineer/skirt(src)
+	new /obj/item/clothing/under/plasmaman/engineering/ce(src) //WS edit begin
+	new /obj/item/clothing/under/plasmaman/engineering/ce/skirt(src)
+	new /obj/item/clothing/head/helmet/space/plasmaman/engineering/ce(src) //WS edit end
 	new /obj/item/clothing/head/hardhat/white(src)
 	new /obj/item/clothing/head/hardhat/weldhat/white(src)
 	new /obj/item/clothing/gloves/color/yellow(src)
