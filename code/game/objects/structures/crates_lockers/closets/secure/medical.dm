@@ -93,6 +93,9 @@
 	new /obj/item/clothing/suit/toggle/labcoat/cmo(src)
 	new /obj/item/clothing/under/rank/medical/chief_medical_officer(src)
 	new /obj/item/clothing/under/rank/medical/chief_medical_officer/skirt(src)
+	new /obj/item/clothing/under/plasmaman/cmo(src) //WS edit begin
+	new /obj/item/clothing/under/plasmaman/cmo/skirt(src)
+	new /obj/item/clothing/head/helmet/space/plasmaman/cmo(src) //WS edit end
 	new /obj/item/clothing/shoes/sneakers/brown	(src)
 	new /obj/item/cartridge/cmo(src)
 	new /obj/item/radio/headset/heads/cmo(src)
