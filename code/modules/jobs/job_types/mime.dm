@@ -20,6 +20,7 @@
 	display_order = JOB_DISPLAY_ORDER_MIME
 
 /datum/job/mime/after_spawn(mob/living/carbon/human/H, mob/M)
+	. = ..()
 	H.apply_pref_name("mime", M.client)
 
 /datum/outfit/job/mime

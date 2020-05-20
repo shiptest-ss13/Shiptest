@@ -142,5 +142,6 @@
 	new /obj/item/reagent_containers/dropper(src)
 	new /obj/item/storage/box/syringes/variety(src)
 	new /obj/item/storage/box/beakers/variety(src)
+	new /obj/item/clothing/head/beret/chem(src) // Wasp edit - Berets
 	new /obj/item/clothing/glasses/science/prescription(src) // Wasp Edit - Prescription HUDs
 	new /obj/item/clothing/glasses/science(src)

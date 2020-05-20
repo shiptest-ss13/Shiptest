@@ -143,7 +143,7 @@ WaspStation End*/
 	name = "treasure hunter's fedora"
 	desc = "You got red text today kid, but it doesn't mean you have to like it."
 	icon_state = "curator"
-	
+
 //Security
 
 /obj/item/clothing/head/HoS
@@ -158,14 +158,17 @@ WaspStation End*/
 	name = "syndicate cap"
 	desc = "A black cap fit for a high ranking syndicate officer."
 
+/* Wasp edit - Better Berets
 /obj/item/clothing/head/HoS/beret
 	name = "head of security beret"
 	desc = "A robust beret for the Head of Security, for looking stylish while not sacrificing protection."
 	icon_state = "hosberetblack"
+Wasp End */
 
 /obj/item/clothing/head/HoS/beret/syndicate
 	name = "syndicate beret"
 	desc = "A black beret with thick armor padding inside. Stylish and robust."
+	icon_state = "hosberetblack"
 
 /obj/item/clothing/head/warden
 	name = "warden's police hat"
