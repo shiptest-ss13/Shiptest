@@ -101,7 +101,7 @@
 /obj/item/clothing/under/plasmaman/skirt
 	name = "plasma enviroskirt"
 	icon_state = "plasmaskirt"
-	item_state = "plasmaman"
+	item_state = "plasmaskirt"
 
 
 /obj/item/clothing/under/plasmaman/examine(mob/user)
