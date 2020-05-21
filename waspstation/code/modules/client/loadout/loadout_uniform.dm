@@ -65,6 +65,13 @@
 	path = /obj/item/clothing/under/rank/civilian/lawyer/galaxy
 	cost = 7500
 
+/datum/gear/uniform/suit/white/skirt
+	display_name = "suitskirt, white shirt"
+	path = /obj/item/clothing/under/suit/black/skirt
+
+/datum/gear/uniform/suit/white
+	display_name = "suit, white shirt"
+	path = /obj/item/clothing/under/suit/black
 //Premium
 /datum/gear/uniform/tacticool
 	display_name = "tacticool turtleneck"
