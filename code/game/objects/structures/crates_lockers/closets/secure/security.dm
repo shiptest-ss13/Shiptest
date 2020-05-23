@@ -22,9 +22,9 @@
 	new /obj/item/clothing/shoes/sneakers/brown(src)
 	new /obj/item/clothing/under/rank/command/captain(src)
 	new /obj/item/clothing/under/rank/command/captain/skirt(src)
-	new /obj/item/clothing/under/plasmaman/command(src) //WS edit begin
+	new /obj/item/clothing/under/plasmaman/command(src) //WS edit plasmaman customization begin
 	new /obj/item/clothing/under/plasmaman/command/skirt(src)
-	new /obj/item/clothing/head/helmet/space/plasmaman/command(src) //WS edit end
+	new /obj/item/clothing/head/helmet/space/plasmaman/command(src) //WS edit plasmaman customization end
 	new /obj/item/clothing/suit/armor/vest/capcarapace(src)
 	new /obj/item/clothing/head/caphat(src)
 	new /obj/item/clothing/under/rank/command/captain/parade(src)
