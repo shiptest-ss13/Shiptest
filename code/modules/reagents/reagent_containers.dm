@@ -25,6 +25,8 @@
 
 /obj/item/reagent_containers/Initialize(mapload, vol)
 	. = ..()
+	if(can_have_cap && cap_icon_state)
+		cap_overlay = mutable_appearance(icon, cap_icon_state)
 	if(isnum(vol) && vol > 0)
 		volume = vol
 	create_reagents(volume, reagent_flags)
@@ -53,14 +55,9 @@
 	if(value_to_set)
 		cap_on = TRUE
 		spillable = FALSE
-		if(!cap_overlay)
-			cap_overlay = mutable_appearance(icon, cap_icon_state)
-		add_overlay(cap_overlay, TRUE)
 	else
 		cap_on = FALSE
 		spillable = TRUE
-		if(cap_overlay)
-			cut_overlay(cap_overlay, TRUE)
 
 	update_icon()
 
@@ -209,6 +206,8 @@
 
 /obj/item/reagent_containers/update_overlays()
 	. = ..()
+	if(cap_on)
+		. += cap_overlay
 	if(!fill_icon_thresholds)
 		return
 	if(reagents.total_volume)
