@@ -22,6 +22,9 @@
 	new /obj/item/clothing/shoes/sneakers/brown(src)
 	new /obj/item/clothing/under/rank/command/captain(src)
 	new /obj/item/clothing/under/rank/command/captain/skirt(src)
+	new /obj/item/clothing/under/plasmaman/command(src) //WS edit plasmaman customization begin
+	new /obj/item/clothing/under/plasmaman/command/skirt(src)
+	new /obj/item/clothing/head/helmet/space/plasmaman/command(src) //WS edit plasmaman customization end
 	new /obj/item/clothing/suit/armor/vest/capcarapace(src)
 	new /obj/item/clothing/head/caphat(src)
 	new /obj/item/clothing/under/rank/command/captain/parade(src)
@@ -54,6 +57,9 @@
 	new /obj/item/clothing/head/beret/hop(src) //Waspstation edit - More Berets
 	new /obj/item/clothing/under/rank/command/head_of_personnel(src) //WaspStation Edit - Better Command Uniforms
 	new /obj/item/clothing/under/rank/command/head_of_personnel/skirt(src) //WaspStation Edit - Better Command Uniforms
+	new /obj/item/clothing/under/plasmaman/hop(src) //WS edit begin
+	new /obj/item/clothing/under/plasmaman/hop/skirt(src)
+	new /obj/item/clothing/head/helmet/space/plasmaman/hop(src) //WS edit end
 	new /obj/item/clothing/head/hopcap(src)
 	new /obj/item/cartridge/head_of_personnel(src)
 	new /obj/item/radio/headset/heads/head_of_personnel(src)
@@ -93,6 +99,9 @@
 	new /obj/item/clothing/under/rank/security/head_of_security/skirt(src)
 	new /obj/item/clothing/under/rank/security/head_of_security/alt(src)
 	new /obj/item/clothing/under/rank/security/head_of_security/alt/skirt(src)
+	new /obj/item/clothing/under/plasmaman/security/hos(src) //WS edit begin
+	new /obj/item/clothing/under/plasmaman/security/hos/skirt(src)
+	new /obj/item/clothing/head/helmet/space/plasmaman/security/hos(src) //WS edit end
 	new /obj/item/clothing/head/HoS(src)
 	new /obj/item/clothing/glasses/hud/security/sunglasses/eyepatch(src)
 	new /obj/item/clothing/glasses/hud/security/sunglasses/gars/supergars(src)
