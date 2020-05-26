@@ -429,7 +429,10 @@
 /mob/living/simple_animal/pet/dog/corgi/Ian/death()
 	if(!memory_saved)
 		Write_Memory(TRUE)
-	SSredbot.send_discord_message("admin","Ian has been killed: Last touched by [fingerprintslast] in [get_area_name(src)].","round ending event")
+	if(lastattacker)
+		SSredbot.send_discord_message("admin","Ian has been killed: Last attacked by [lastattacker]([lastattackerckey]) in [get_area_name(src)].")
+	else
+		SSredbot.send_discord_message("admin","Ian has been killed in [get_area_name(src)].")
 	..()
 
 /mob/living/simple_animal/pet/dog/corgi/Ian/proc/Read_Memory()
