@@ -10,6 +10,8 @@
 
 	SSredbot.send_discord_message("ooc", "**[input["sender"]]:** [message]")
 
+	message = copytext_char(sanitize(message), 1, MAX_MESSAGE_LEN)
+
 	message = emoji_parse(message)
 
 	for(var/client/C in GLOB.clients)
