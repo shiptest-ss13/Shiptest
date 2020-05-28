@@ -69,7 +69,7 @@
 	},
 /obj/effect/turf_decal/bot_white,
 /turf/open/floor/plasteel/dark,
-/area/shuttle/mining/large)
+/area/shuttle/mining)
 "h" = (
 /obj/effect/turf_decal/tile/neutral,
 /obj/effect/turf_decal/tile/neutral{
@@ -360,32 +360,15 @@
 /obj/effect/turf_decal/box/white/corners,
 /turf/open/floor/plasteel/dark,
 /area/shuttle/mining/large)
-"z" = (
-/obj/effect/turf_decal/tile/neutral,
-/obj/effect/turf_decal/tile/neutral{
-	dir = 8
-	},
-/obj/effect/turf_decal/tile/neutral{
-	dir = 4
-	},
-/obj/effect/turf_decal/tile/neutral{
-	dir = 1
-	},
-/obj/effect/turf_decal/stripes/white/line,
-/obj/structure/cable,
-/turf/open/floor/plasteel/dark,
-/area/shuttle/mining/large)
 "A" = (
 /obj/machinery/light/small,
 /obj/effect/turf_decal/box/white/corners{
 	dir = 8
 	},
-/obj/structure/cable,
 /turf/open/floor/plasteel/dark,
 /area/shuttle/mining/large)
 "B" = (
 /obj/effect/turf_decal/box/white/corners,
-/obj/structure/cable,
 /turf/open/floor/plasteel/dark,
 /area/shuttle/mining/large)
 "C" = (
@@ -403,21 +386,13 @@
 	name = "Mining Shuttle External Airlock"
 	},
 /obj/effect/mapping_helpers/airlock/cyclelink_helper,
-/obj/structure/cable,
 /turf/open/floor/plating,
 /area/shuttle/mining/large)
 "E" = (
-/obj/machinery/power/apc/highcap{
-	dir = 4;
-	locked = 0;
-	name = "Mining Shuttle APC";
-	pixel_x = 24
-	},
 /obj/effect/turf_decal/stripes/white/line{
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/cable,
 /turf/open/floor/plating,
 /area/shuttle/mining/large)
 "F" = (
@@ -435,7 +410,6 @@
 /obj/structure/sign/warning/vacuum/external{
 	pixel_x = 32
 	},
-/obj/structure/cable,
 /turf/open/floor/plating,
 /area/shuttle/mining/large)
 "I" = (
@@ -457,7 +431,6 @@
 	port_direction = 2;
 	width = 7
 	},
-/obj/structure/cable,
 /turf/open/floor/plating,
 /area/shuttle/mining/large)
 
@@ -504,7 +477,7 @@ h
 n
 r
 u
-z
+n
 D
 H
 J

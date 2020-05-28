@@ -200,6 +200,9 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	// Custom hotkeys
 	S["key_bindings"]		>> key_bindings
 
+	S["purchased_gear"]					>> purchased_gear
+	S["equipped_gear"]					>> equipped_gear
+
 	//try to fix any outdated data if necessary
 	if(needs_update >= 0)
 		update_preferences(needs_update, S)		//needs_update = savefile_version if we need an update (positive integer)
@@ -232,6 +235,11 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	pda_color		= sanitize_hexcolor(pda_color, 6, 1, initial(pda_color))
 	key_bindings 	= sanitize_islist(key_bindings, list())
 
+
+	if(!purchased_gear)
+		purchased_gear = list()
+	if(!equipped_gear)
+		equipped_gear = list()
 
 	return TRUE
 
@@ -279,6 +287,8 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["tip_delay"], tip_delay)
 	WRITE_FILE(S["pda_style"], pda_style)
 	WRITE_FILE(S["pda_color"], pda_color)
+	WRITE_FILE(S["purchased_gear"], purchased_gear)
+	WRITE_FILE(S["equipped_gear"], equipped_gear)
 	WRITE_FILE(S["key_bindings"], key_bindings)
 	return TRUE
 

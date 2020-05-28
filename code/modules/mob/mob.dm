@@ -353,6 +353,32 @@
 			return 1
 
 	return 0
+
+// Convinience proc.  Collects crap that fails to equip either onto the mob's back, or drops it.
+// Used in job equipping so shit doesn't pile up at the start loc.
+/mob/living/carbon/human/proc/equip_or_collect(var/obj/item/W, var/slot)
+	if(W.mob_can_equip(src, null, slot, TRUE, TRUE))
+		//Mob can equip.  Equip it.
+		equip_to_slot_or_del(W, slot)
+	else
+		//Mob can't equip it.  Put it in a bag B.
+		// Do I have a backpack?
+		var/obj/item/storage/B
+		if(istype(back,/obj/item/storage))
+			//Mob is wearing backpack
+			B = back
+		else
+			//not wearing backpack.  Check if player holding box
+			if(!is_holding_item_of_type(/obj/item/storage/box)) //If not holding box, give box
+				B = new /obj/item/storage/box(null) // Null in case of failed equip.
+				if(!put_in_hands(B))
+					return // box could not be placed in players hands.  I don't know what to do here...
+			//Now, B represents a container we can insert W into.
+			var/datum/component/storage/STR = B.GetComponent(/datum/component/storage)
+			if(STR.can_be_inserted(W, stop_messages=TRUE))
+				STR.handle_item_insertion(W,1)
+			return B
+
 /**
   * Reset the attached clients perspective (viewpoint)
   *

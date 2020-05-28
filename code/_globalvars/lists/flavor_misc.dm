@@ -162,10 +162,12 @@ GLOBAL_LIST_INIT(backpacklist, list(DBACKPACK, DSATCHEL, DCOURIERBAG, DDUFFELBAG
 #define PREF_SKIRT "Standard Jumpskirt"
 #define PREF_ALTSUIT "Alternate Jumpsuit"
 #define PREF_GREYSUIT "Grey Jumpsuit"
-GLOBAL_LIST_INIT(jumpsuitlist, list(PREF_SUIT, PREF_SKIRT, PREF_ALTSUIT, PREF_GREYSUIT))
+#define PREF_LOADOUT "Loadout uniform"
+GLOBAL_LIST_INIT(jumpsuitlist, list(PREF_SUIT, PREF_SKIRT, PREF_ALTSUIT, PREF_GREYSUIT, PREF_LOADOUT))
+GLOBAL_LIST_INIT(jumpsuitlistrandom, list(PREF_SUIT, PREF_SKIRT, PREF_ALTSUIT, PREF_GREYSUIT))
 
 	//Exowear
-#define PREF_NOEXOWEAR "No Exowear"
+#define PREF_NOEXOWEAR "No Exowear/Loadout Exowear"
 #define PREF_EXOWEAR "Standard Exowear"
 #define PREF_ALTEXOWEAR "Alternate Exowear"
 #define PREF_COATEXOWEAR "Departmental Winter Coat"

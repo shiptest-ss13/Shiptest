@@ -26,7 +26,6 @@
 /obj/structure/closet/secure_closet/lieutenant/PopulateContents()
 	..()
 	new /obj/item/clothing/head/beret/lt(src)
-	new /obj/item/clothing/head/beret/lt/navy(src)
 	new /obj/item/storage/briefcase(src)
 	new	/obj/item/storage/firstaid/regular(src)
 	new /obj/item/storage/belt/security(src)

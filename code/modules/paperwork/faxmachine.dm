@@ -327,5 +327,9 @@ GLOBAL_LIST_EMPTY(alldepartments)
 
 /obj/machinery/photocopier/faxmachine/proc/message_admins(var/mob/sender, var/faxname, var/faxtype, var/obj/item/sent, font_colour="#9A04D1")
 	var/msg = "<span class='boldnotice'><font color='[font_colour]'>[faxname]: </font> [ADMIN_LOOKUP(sender)] | REPLY: [ADMIN_CENTCOM_REPLY(sender)] [ADMIN_FAX(sender, src, faxtype, sent)] [ADMIN_SM(sender)] | REJECT: (<A HREF='?_src_=holder;[HrefToken(TRUE)];FaxReplyTemplate=[REF(sender)];originfax=[REF(src)]'>TEMPLATE</A>) [ADMIN_SMITE(sender)] (<A HREF='?_src_=holder;[HrefToken(TRUE)];EvilFax=[REF(sender)];originfax=[REF(src)]'>EVILFAX</A>) </span>: Receiving '[sent.name]' via secure connection... <a href='?_src_=holder;[HrefToken(TRUE)];AdminFaxView=[REF(sent)]'>view message</a>"
-	SSredbot.send_discord_message("admin", "New [faxname] Sent by [sender]: ")
+	if(istype(sent, /obj/item/paper))
+		var/obj/item/paper/paper = sent
+		SSredbot.send_discord_message("admin", "New [faxname]  ([paper.name]) Sent by [sender]: [paper.info]")
+	else
+		SSredbot.send_discord_message("admin", "New [faxname] ([sent.name]) Sent by [sender].")
 	to_chat(GLOB.admins, msg)

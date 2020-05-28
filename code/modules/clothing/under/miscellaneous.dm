@@ -98,6 +98,11 @@
 	var/extinguishes_left = 5
 	cuttable = FALSE
 
+/obj/item/clothing/under/plasmaman/skirt //WS edit plasmaman customization
+	name = "plasma enviroskirt"
+	icon_state = "plasmaskirt"
+	item_state = "plasmaskirt"
+
 
 /obj/item/clothing/under/plasmaman/examine(mob/user)
 	. = ..()

@@ -93,6 +93,9 @@
 	new /obj/item/clothing/suit/toggle/labcoat/cmo(src)
 	new /obj/item/clothing/under/rank/medical/chief_medical_officer(src)
 	new /obj/item/clothing/under/rank/medical/chief_medical_officer/skirt(src)
+	new /obj/item/clothing/under/plasmaman/cmo(src) //WS edit plasmaman customization begin
+	new /obj/item/clothing/under/plasmaman/cmo/skirt(src)
+	new /obj/item/clothing/head/helmet/space/plasmaman/cmo(src) //WS edit plasmaman customization end
 	new /obj/item/clothing/shoes/sneakers/brown	(src)
 	new /obj/item/cartridge/cmo(src)
 	new /obj/item/radio/headset/heads/cmo(src)
@@ -142,5 +145,6 @@
 	new /obj/item/reagent_containers/dropper(src)
 	new /obj/item/storage/box/syringes/variety(src)
 	new /obj/item/storage/box/beakers/variety(src)
+	new /obj/item/clothing/head/beret/chem(src) // Wasp edit - Berets
 	new /obj/item/clothing/glasses/science/prescription(src) // Wasp Edit - Prescription HUDs
 	new /obj/item/clothing/glasses/science(src)
