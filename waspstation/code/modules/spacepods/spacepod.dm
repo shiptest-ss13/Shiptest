@@ -238,12 +238,11 @@ GLOBAL_LIST_INIT(spacepods_list, list())
 	update_icon()
 
 /obj/spacepod/proc/remove_armor()
-	if(!pod_armor)
-		max_integrity = initial(max_integrity)
-		obj_integrity = max_integrity
-		desc = initial(desc)
-		pod_armor = null
-		update_icon()
+	max_integrity = initial(max_integrity)
+	obj_integrity = max_integrity
+	desc = initial(desc)
+	pod_armor = null
+	update_icon()
 
 
 /obj/spacepod/proc/InterceptClickOn(mob/user, params, atom/target)
