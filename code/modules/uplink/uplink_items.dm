@@ -1772,6 +1772,12 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	restricted_roles = list("Chaplain")
 	surplus = 5 //Very low chance to get it in a surplus crate even without being the chaplain
 
+/datum/uplink_item/role_restricted/cultconstructkit
+	name = "Cult Construct Kit"
+	desc = "Recovered from an abandoned Nar'sie cult lair two construct shells and a stash of empty soulstones was found. These were purified to prevent occult contamination and have been put in a belt so they may be used as an accessible source of disposable minions. The construct shells have been packaged into two beacons for rapid and portable deployment."
+	item = /obj/item/storage/box/syndie_kit/cultconstructkit
+	cost = 20
+	restricted_roles = list("Chaplain")
 /datum/uplink_item/role_restricted/explosive_hot_potato
 	name = "Exploding Hot Potato"
 	desc = "A potato rigged with explosives. On activation, a special mechanism is activated that prevents it from being dropped. \
