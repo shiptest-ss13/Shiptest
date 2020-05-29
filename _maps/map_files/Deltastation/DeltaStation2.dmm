@@ -22608,7 +22608,7 @@
 /turf/open/floor/engine/air,
 /area/engine/atmos)
 "aVa" = (
-/obj/machinery/portable_atmospherics/canister/air,
+/obj/effect/turf_decal/atmos/air,
 /turf/open/floor/engine/air,
 /area/engine/atmos)
 "aVb" = (
@@ -24539,7 +24539,7 @@
 /turf/open/floor/engine/co2,
 /area/engine/atmos)
 "aXW" = (
-/obj/machinery/portable_atmospherics/canister/carbon_dioxide,
+/obj/effect/turf_decal/atmos/carbon_dioxide,
 /turf/open/floor/engine/co2,
 /area/engine/atmos)
 "aXX" = (
@@ -26661,7 +26661,7 @@
 /turf/open/floor/engine/o2,
 /area/engine/atmos)
 "bbO" = (
-/obj/machinery/portable_atmospherics/canister/oxygen,
+/obj/effect/turf_decal/atmos/oxygen,
 /turf/open/floor/engine/o2,
 /area/engine/atmos)
 "bbP" = (
@@ -27988,7 +27988,7 @@
 /turf/open/floor/engine/plasma,
 /area/engine/atmos)
 "bev" = (
-/obj/machinery/portable_atmospherics/canister/toxins,
+/obj/effect/turf_decal/atmos/plasma,
 /turf/open/floor/engine/plasma,
 /area/engine/atmos)
 "bew" = (
@@ -29662,7 +29662,7 @@
 /turf/open/floor/engine/n2,
 /area/engine/atmos)
 "bhw" = (
-/obj/machinery/portable_atmospherics/canister/nitrogen,
+/obj/effect/turf_decal/atmos/nitrogen,
 /turf/open/floor/engine/n2,
 /area/engine/atmos)
 "bhx" = (
@@ -31590,9 +31590,7 @@
 /turf/open/floor/engine/n2o,
 /area/engine/atmos)
 "bkH" = (
-/obj/machinery/portable_atmospherics/canister/nitrous_oxide{
-	valve_open = 1
-	},
+/obj/effect/turf_decal/atmos/nitrous_oxide,
 /turf/open/floor/engine/n2o,
 /area/engine/atmos)
 "bkI" = (
@@ -115149,6 +115147,10 @@
 	},
 /turf/open/floor/plating,
 /area/maintenance/starboard)
+"mzR" = (
+/obj/effect/turf_decal/atmos/mix,
+/turf/open/floor/engine/vacuum,
+/area/engine/atmos)
 "mAW" = (
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden{
 	dir = 1
@@ -138358,7 +138360,7 @@ bkH
 biT
 aRF
 bpO
-bpO
+mzR
 btK
 aRF
 qYo
