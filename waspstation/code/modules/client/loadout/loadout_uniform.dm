@@ -7,6 +7,7 @@
 //Colored jumpsuits
 
 /datum/gear/uniform/color
+	subtype_path = /datum/gear/uniform/color
 	cost = 1000
 
 /datum/gear/uniform/color/red
@@ -46,6 +47,7 @@
 //JUMPSUIT "SUITS"
 
 /datum/gear/uniform/suit
+	subtype_path = /datum/gear/uniform/suit
 	cost = 1000
 
 /datum/gear/uniform/suit/amish

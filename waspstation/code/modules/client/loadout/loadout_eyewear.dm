@@ -19,6 +19,7 @@
 
 //Probably overpowerd but honestly idc
 /datum/gear/eyewear/glasses/hud
+	subtype_path = /datum/gear/eyewear/glasses/hud
 	cost = 2000
 
 /datum/gear/eyewear/glasses/hud/pmed

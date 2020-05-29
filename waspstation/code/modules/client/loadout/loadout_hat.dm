@@ -27,6 +27,7 @@
 
 /datum/gear/hat/beret
 	display_name = "beret, red"
+	path = /obj/item/clothing/head/beret
 	cost = 2000
 
 /datum/gear/hat/beret/service

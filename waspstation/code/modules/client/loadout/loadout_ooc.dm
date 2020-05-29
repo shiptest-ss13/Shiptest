@@ -1,6 +1,9 @@
+/datum/gear/ooc
+	subtype_path = /datum/gear/ooc
+	sort_category = "OOC"
+
 /datum/gear/ooc/char_slot
 	display_name = "extra character slot"
-	sort_category = "OOC"
 	description = "An extra charslot. Pretty self-explanatory."
 	cost = 7500
 

@@ -6,6 +6,7 @@
 //Scarves
 
 /datum/gear/accessory/scarf
+	subtype_path = /datum/gear/accessory/scarf
 	cost = 500
 
 /datum/gear/accessory/scarf/red
@@ -23,6 +24,7 @@
 //(The actually good scarves)
 
 /datum/gear/accessory/scarf/striped
+	subtype_path = /datum/gear/accessory/scarf/striped
 	cost = 750
 
 /datum/gear/accessory/scarf/striped/red
@@ -40,6 +42,7 @@
 //Ties
 
 /datum/gear/accessory/tie
+	subtype_path = /datum/gear/accessory/tie
 	cost = 500
 
 /datum/gear/accessory/tie/black
