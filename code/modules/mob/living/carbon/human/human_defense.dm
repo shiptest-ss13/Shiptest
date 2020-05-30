@@ -32,7 +32,7 @@
 			var/obj/item/clothing/C = bp
 			if(C.body_parts_covered & def_zone.body_part)
 				protection += C.armor.getRating(d_type)
-	protection += physiology.armor.getRating(d_type)
+	protection += physiology.armor.getRating(d_type) * (100 - protection) / 100		// Wasp Edit - Makes armor multiplicative
 	return protection
 
 /mob/living/carbon/human/on_hit(obj/projectile/P)
