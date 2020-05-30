@@ -36,7 +36,7 @@
 /datum/nanite_program/hardening
 	name = "Dermal Hardening"
 	desc = "The nanites form a mesh under the host's skin, protecting them from melee and bullet impacts."
-	use_rate = 0.5
+	use_rate = 1.0			// Waspstation Edit - Increases nanite armor power use
 	rogue_types = list(/datum/nanite_program/skin_decay)
 
 //TODO on_hit effect that turns skin grey for a moment
@@ -58,7 +58,7 @@
 /datum/nanite_program/refractive
 	name = "Dermal Refractive Surface"
 	desc = "The nanites form a membrane above the host's skin, reducing the effect of laser and energy impacts."
-	use_rate = 0.50
+	use_rate = 1.0			// Waspstation Edit - Increases nanite armor power use
 	rogue_types = list(/datum/nanite_program/skin_decay)
 
 /datum/nanite_program/refractive/enable_passive_effect()
