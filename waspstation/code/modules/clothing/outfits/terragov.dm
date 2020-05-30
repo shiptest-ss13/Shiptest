@@ -46,8 +46,7 @@
 	mask = /obj/item/clothing/mask/gas
 	head = null
 	backpack_contents = list(/obj/item/crowbar/power,\
-		/obj/item/melee/baton/loaded=1,\
 		/obj/item/card/emag=1,\
 		/obj/item/ammo_box/magazine/terraar=3,\
-		/obj/item/gun/ballistic/automatic/terraar=1)
-
+		/obj/item/gun/ballistic/automatic/terraar=1,\
+		/obj/item/melee/transforming/energy/ctf/terragov=1)
