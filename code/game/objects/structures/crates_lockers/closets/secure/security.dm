@@ -116,6 +116,7 @@
 	new /obj/item/shield/riot/tele(src)
 	new /obj/item/storage/belt/security/full(src)
 	new /obj/item/gun/energy/e_gun/hos(src)
+	new /obj/item/gun/ballistic/automatic/pistol/commander(src) // Waspstation edit - free lethals
 	new /obj/item/pinpointer/nuke(src)
 	new /obj/item/circuitboard/machine/techfab/department/security(src)
 	new /obj/item/storage/photo_album/HoS(src)
@@ -147,6 +148,7 @@
 	new /obj/item/clothing/gloves/krav_maga/sec(src)
 	new /obj/item/door_remote/head_of_security(src)
 	new /obj/item/gun/ballistic/shotgun/automatic/combat/compact(src)
+	new /obj/item/gun/ballistic/automatic/pistol/commander(src) // Waspstation edit - free lethals
 
 /obj/structure/closet/secure_closet/security
 	name = "security officer's locker"
@@ -172,6 +174,7 @@
 /obj/structure/closet/secure_closet/security/sec/PopulateContents()
 	..()
 	new /obj/item/storage/belt/security/full(src)
+	new /obj/item/gun/ballistic/automatic/pistol/commander/no_mag(src) // Waspstation edit - free lethals
 
 /obj/structure/closet/secure_closet/security/cargo
 
@@ -344,7 +347,7 @@
 	new /obj/item/clothing/suit/armor/bulletproof(src)
 
 /obj/structure/closet/secure_closet/lethalshots
-	name = "shotgun lethal rounds"
+	name = "lethal ammunition"
 	req_access = list(ACCESS_ARMORY)
 	icon_state = "tac"
 
@@ -352,6 +355,10 @@
 	..()
 	for(var/i in 1 to 3)
 		new /obj/item/storage/box/lethalshot(src)
+		new /obj/item/ammo_box/magazine/co9mm(src) // Waspstation edit - begin - better safe than sorry
+		new /obj/item/ammo_box/magazine/co9mm(src)
+		new /obj/item/ammo_box/magazine/co9mm(src)
+		new /obj/item/ammo_box/magazine/co9mm(src) // Waspstation edit - end
 
 /obj/structure/closet/secure_closet/labor_camp_security
 	name = "labor camp security locker"
