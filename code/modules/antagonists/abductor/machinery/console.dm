@@ -47,11 +47,11 @@
 		dat += "<a href='?src=[REF(src)];dispense=mind_device'>Mental Interface Device (2 Credits)</A><br>"
 		dat += "<a href='?src=[REF(src)];dispense=chem_dispenser'>Reagent Synthesizer (2 Credits)</A><br>"
 		dat += "<a href='?src=[REF(src)];dispense=shrink_ray'>Shrink Ray Blaster (2 Credits)</a><br>"
-		dat += "<a href='?src=[REF(src)];dispense=helmet'>Agent Helmet</A><br>"
-		dat += "<a href='?src=[REF(src)];dispense=vest'>Agent Vest</A><br>"
-		dat += "<a href='?src=[REF(src)];dispense=silencer'>Radio Silencer</A><br>"
-		dat += "<a href='?src=[REF(src)];dispense=tool'>Science Tool</A><br>"
-		dat += "<a href='?src=[REF(src)];dispense=tongue'>Superlingual Matrix</a><br>"
+		dat += "<a href='?src=[REF(src)];dispense=helmet'>Agent Helmet (1 Credit)</A><br>"		// Waspstation Edit Begin - Clarifies cost
+		dat += "<a href='?src=[REF(src)];dispense=vest'>Agent Vest (1 Credit)</A><br>"
+		dat += "<a href='?src=[REF(src)];dispense=silencer'>Radio Silencer (1 Credit)</A><br>"
+		dat += "<a href='?src=[REF(src)];dispense=tool'>Science Tool (1 Credit)</A><br>"
+		dat += "<a href='?src=[REF(src)];dispense=tongue'>Superlingual Matrix (1 Credit)</a><br>"		// Waspstation Edit End
 	else
 		dat += "<span class='bad'>NO EXPERIMENT MACHINE DETECTED</span> <br>"
 
