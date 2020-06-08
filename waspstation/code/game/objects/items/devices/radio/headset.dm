@@ -33,14 +33,3 @@
 /obj/item/radio/headset/headset_medsec/alt/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/wearertargeting/earprotection, list(ITEM_SLOT_EARS))
-
-//Paramedic
-/obj/item/radio/headset/headset_med/alt
-	name = "medical bowman headset"
-	desc = "A headset for the trained staff of the medbay. Protects ears from flashbangs."
-	icon_state = "med_headset_alt"
-	keyslot = new /obj/item/encryptionkey/headset_med
-
-/obj/item/radio/headset/headset_med/alt/ComponentInitialize()
-	. = ..()
-	AddComponent(/datum/component/wearertargeting/earprotection, list(ITEM_SLOT_EARS))

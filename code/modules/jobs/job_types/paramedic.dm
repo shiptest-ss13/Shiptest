@@ -23,7 +23,7 @@
 	name = "Paramedic"
 	jobtype = /datum/job/paramedic
 
-	ears = /obj/item/radio/headset/headset_med/alt //Waspstation Edit - Paramedic Bling
+	ears = /obj/item/radio/headset/headset_med
 	uniform = /obj/item/clothing/under/rank/medical/paramedic
 	alt_uniform = /obj/item/clothing/under/rank/medical/doctor/blue //Wasp Edit - Alt Uniforms
 	head = /obj/item/clothing/head/soft/paramedic
