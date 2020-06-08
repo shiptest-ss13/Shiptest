@@ -276,7 +276,8 @@
 		"Pod" = /datum/species/pod,
 		"Fly" = /datum/species/fly,
 		"Felinid" = /datum/species/human/felinid,
-		"Jelly" = /datum/species/jelly
+		"Jelly" = /datum/species/jelly,
+		"Arachnid" = /datum/species/spider
 	)
 
 /datum/nanite_program/sensor/species/register_extra_settings()

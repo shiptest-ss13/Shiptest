@@ -30,6 +30,7 @@
 							"plasmaman",
 							"squid",
 							"ethereal",
+							"rachnid",
 							"other"
 							)
 

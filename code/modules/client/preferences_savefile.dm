@@ -358,6 +358,9 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["feature_lizard_legs"]			>> features["legs"]
 	S["feature_moth_wings"]				>> features["moth_wings"]
 	S["feature_moth_markings"]			>> features["moth_markings"]
+	S["feature_spider_legs"]			>> features["spider_legs"]
+	S["feature_spider_spinneret"]		>> features["spider_spinneret"]
+	S["feature_spider_mandibles"]		>> features["spider_mandibles"]
 	S["feature_squid_face"]				>> features["squid_face"]
 	S["feature_ipc_screen"]			>> features["ipc_screen"]
 	S["feature_ipc_antenna"]				>> features["ipc_antenna"]
@@ -452,6 +455,9 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	features["body_markings"] 	= sanitize_inlist(features["body_markings"], GLOB.body_markings_list)
 	features["feature_lizard_legs"]	= sanitize_inlist(features["legs"], GLOB.legs_list, "Normal Legs")
 	features["moth_wings"] 	= sanitize_inlist(features["moth_wings"], GLOB.moth_wings_list, "Plain")
+	features["spider_legs"] = sanitize_inlist(features["spider_legs"], GLOB.spider_legs_list, "Plain")
+	features["spider_spinneret"] = sanitize_inlist(features["spider_spinneret"], GLOB.spider_spinneret_list, "Plain")
+	features["spider_mandibles"]	= sanitize_inlist(features["spider_mandibles"], GLOB.spider_mandibles_list, "Plain")
 	features["moth_markings"] 	= sanitize_inlist(features["moth_markings"], GLOB.moth_markings_list, "None")
 	features["squid_face"]	= sanitize_inlist(features["squid_face"], GLOB.squid_face_list, "Squidward")
 	features["ipc_screen"]	= sanitize_inlist(features["ipc_screen"], GLOB.ipc_screens_list)
@@ -513,6 +519,9 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["feature_lizard_legs"]			, features["legs"])
 	WRITE_FILE(S["feature_moth_wings"]			, features["moth_wings"])
 	WRITE_FILE(S["feature_moth_markings"]		, features["moth_markings"])
+	WRITE_FILE(S["feature_spider_legs"]			, features["spider_legs"])
+	WRITE_FILE(S["feature_spider_spinneret"]	, features["spider_spinneret"])
+	WRITE_FILE(S["feature_spider_mandibles"]	, features["spider_mandibles"])
 	WRITE_FILE(S["feature_squid_face"]			, features["squid_face"])
 	WRITE_FILE(S["feature_ipc_screen"]			, features["ipc_screen"])
 	WRITE_FILE(S["feature_ipc_antenna"]			, features["ipc_antenna"])

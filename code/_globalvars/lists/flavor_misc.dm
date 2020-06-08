@@ -41,6 +41,9 @@ GLOBAL_LIST_EMPTY(squid_face_list)
 GLOBAL_LIST_EMPTY(ipc_screens_list)
 GLOBAL_LIST_EMPTY(ipc_antennas_list)
 GLOBAL_LIST_EMPTY(ipc_chassis_list)
+GLOBAL_LIST_EMPTY(spider_legs_list)
+GLOBAL_LIST_EMPTY(spider_spinneret_list)
+GLOBAL_LIST_EMPTY(spider_mandibles_list)
 
 GLOBAL_LIST_INIT(color_list_ethereal, list(
 	"Red" = "ff4d4d",

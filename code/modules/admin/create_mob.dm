@@ -34,6 +34,9 @@
 	H.dna.features["spines"] = pick(GLOB.spines_list)
 	H.dna.features["body_markings"] = pick(GLOB.body_markings_list)
 	H.dna.features["moth_wings"] = pick(GLOB.moth_wings_list)
+	H.dna.features["spider_legs"] = pick(GLOB.spider_legs_list)
+	H.dna.features["spider_spinneret"] = pick(GLOB.spider_spinneret_list)
+	H.dna.features["spider_mandibles"] = pick(GLOB.spider_mandibles_list)
 	H.dna.features["squid_face"] = pick(GLOB.squid_face_list)
 
 	H.update_body()
