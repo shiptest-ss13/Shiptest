@@ -139,9 +139,11 @@
 		contam_atoms += thing
 	var/did_contam = 0
 	if(can_contam)
-		var/rad_strength = ((strength-RAD_MINIMUM_CONTAMINATION) * RAD_CONTAMINATION_STR_COEFFICIENT)/contam_atoms.len
-		for(var/k in 1 to contam_atoms.len)
-			var/atom/thing = contam_atoms[k]
-			thing.AddComponent(/datum/component/radioactive, rad_strength, source)
-			did_contam = 1
+		var/num_targets = contam_atoms.len		// Waspstation Edit Begin - Fix radiation runtime
+		if(num_targets)			// Check that theres something to contaminate
+			var/rad_strength = ((strength-RAD_MINIMUM_CONTAMINATION) * RAD_CONTAMINATION_STR_COEFFICIENT)/ num_targets
+			for(var/k in 1 to num_targets)
+				var/atom/thing = contam_atoms[k]
+				thing.AddComponent(/datum/component/radioactive, rad_strength, source)
+				did_contam = 1			// Waspstation Edit End
 	return did_contam
