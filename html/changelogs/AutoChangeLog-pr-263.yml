@@ -1,0 +1,7 @@
+author: Chayse
+delete-after: true
+changes:
+  - rscadd: Assorted space-worthy helmets can now act as masks for internals.
+  - refactor: Internals code can now check any item with the ALLOWSINTERNALS flag
+      through the GET_INTERNAL_SLOTS define. For now this only checks head and mask
+      slots, since those are the most realistically speaking usable ones.
