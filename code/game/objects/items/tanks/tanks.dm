@@ -23,7 +23,7 @@
 	toggle_internals(user)
 
 /obj/item/tank/proc/toggle_internals(mob/user)
-	var/mob/living/carbon/human/H = user
+	var/mob/living/carbon/H = user //Wasp Port - Citadel Internals
 	if(!istype(H))
 		return
 
@@ -33,15 +33,22 @@
 		H.update_internals_hud_icon(0)
 	else
 		if(!H.getorganslot(ORGAN_SLOT_BREATHING_TUBE))
-			if(!H.wear_mask)
-				to_chat(H, "<span class='warning'>You need a mask!</span>")
+			//Wasp Port Begin - Citadel Internals
+			var/obj/item/clothing/check
+			var/internals = FALSE
+
+			for(check in GET_INTERNAL_SLOTS(H))
+				if(istype(check, /obj/item/clothing/mask))
+					var/obj/item/clothing/mask/M = check
+					if(M.mask_adjusted)
+						M.adjustmask(H)
+				if(check.clothing_flags & ALLOWINTERNALS)
+					internals = TRUE
+
+			if(!internals)
+				to_chat(H, "<span class='warning'>You are not wearing an internals mask!</span>")
 				return
-			var/is_clothing = isclothing(H.wear_mask)
-			if(is_clothing && H.wear_mask.mask_adjusted)
-				H.wear_mask.adjustmask(H)
-			if(!is_clothing || !(H.wear_mask.clothing_flags & MASKINTERNALS))
-				to_chat(H, "<span class='warning'>[H.wear_mask] can't use [src]!</span>")
-				return
+			//Wasp Port End - Citadel Internals
 
 		if(H.internal)
 			to_chat(H, "<span class='notice'>You switch your internals to [src].</span>")

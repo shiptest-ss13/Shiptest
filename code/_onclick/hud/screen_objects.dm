@@ -300,16 +300,22 @@
 		icon_state = "internal0"
 	else
 		if(!C.getorganslot(ORGAN_SLOT_BREATHING_TUBE))
-			if(!istype(C.wear_mask, /obj/item/clothing/mask))
+		//Wasp Port Begin - Citadel Internals
+			var/obj/item/clothing/check
+			var/internals = FALSE
+
+			for(check in GET_INTERNAL_SLOTS(C))
+				if(istype(check, /obj/item/clothing/mask))
+					var/obj/item/clothing/mask/M = check
+					if(M.mask_adjusted)
+						M.adjustmask(C)
+				if(check.clothing_flags & ALLOWINTERNALS)
+
+					internals = TRUE
+			if(!internals)
 				to_chat(C, "<span class='warning'>You are not wearing an internals mask!</span>")
-				return 1
-			else
-				var/obj/item/clothing/mask/M = C.wear_mask
-				if(M.mask_adjusted) // if mask on face but pushed down
-					M.adjustmask(C) // adjust it back
-				if( !(M.clothing_flags & MASKINTERNALS) )
-					to_chat(C, "<span class='warning'>You are not wearing an internals mask!</span>")
-					return
+				return
+		//Wasp Port End - Citadel Internals
 
 		var/obj/item/I = C.is_holding_item_of_type(/obj/item/tank)
 		if(I)
