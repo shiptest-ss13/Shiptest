@@ -95,7 +95,6 @@
 /obj/screen/pai/crew_manifest
 	name = "Crew Manifest"
 	icon_state = "manifest"
-	required_software = "crew manifest"
 
 /obj/screen/pai/crew_manifest/Click()
 	if(!..())
@@ -116,7 +115,6 @@
 /obj/screen/pai/pda_msg_send
 	name = "PDA - Send Message"
 	icon_state = "pda_send"
-	required_software = "digital messenger"
 
 /obj/screen/pai/pda_msg_send/Click()
 	if(!..())
@@ -127,7 +125,6 @@
 /obj/screen/pai/pda_msg_show
 	name = "PDA - Show Message Log"
 	icon_state = "pda_receive"
-	required_software = "digital messenger"
 
 /obj/screen/pai/pda_msg_show/Click()
 	if(!..())
