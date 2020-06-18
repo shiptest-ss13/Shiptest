@@ -21,6 +21,7 @@
 /datum/nanite_program/adrenaline
 	name = "Adrenaline Burst"
 	desc = "The nanites cause a burst of adrenaline when triggered, waking the host from stuns and temporarily increasing their speed."
+	can_trigger = TRUE
 	trigger_cost = 25
 	trigger_cooldown = 1200
 	rogue_types = list(/datum/nanite_program/toxic, /datum/nanite_program/nerve_decay)
