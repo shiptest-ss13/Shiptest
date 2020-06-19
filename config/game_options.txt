@@ -218,6 +218,12 @@ SECURITY_SCALING_COEFF 8
 TRAITOR_OBJECTIVES_AMOUNT 2
 BROTHER_OBJECTIVES_AMOUNT 2
 
+## Whether or not Dept heads are valid for traitor selection.
+
+NO_TRAITOR_HEAD CHIEF_MEDICAL_OFFICER
+NO_TRAITOR_HEAD RESEARCH_DIRECTOR
+NO_TRAITOR_HEAD CHIEF_ENGINEER
+
 ## Uncomment to prohibit jobs that start with loyalty
 ## implants from being most antagonists.
 PROTECT_ROLES_FROM_ANTAGONIST
