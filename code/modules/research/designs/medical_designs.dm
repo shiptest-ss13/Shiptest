@@ -193,8 +193,8 @@
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
 
 /datum/design/genescanner
-	name = "Genetic Sequence Analyzer"
-	desc = "A handy hand-held analyzers for quickly determining mutations and collecting the full sequence."
+	name = "Genetic Sequence Scanner"
+	desc = "A convenient hand-held scanner for quickly determining mutations and collecting the target's full genetic sequence."
 	id = "genescanner"
 	build_path = /obj/item/sequence_scanner
 	build_type = PROTOLATHE
