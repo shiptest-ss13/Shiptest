@@ -35,7 +35,7 @@
 #define DISPOSAL_PIPE_LAYER 2.3
 #define GAS_PIPE_HIDDEN_LAYER 2.35
 #define WIRE_LAYER 2.4
-#define WIRE_BRIDGE_LAYER 2.44
+//#define WIRE_BRIDGE_LAYER 2.44 // Wasp - Smartwire Revert - I went slightly insane adding all these comments
 #define WIRE_TERMINAL_LAYER 2.45
 #define GAS_SCRUBBER_LAYER 2.46
 #define GAS_PIPE_VISIBLE_LAYER 2.47

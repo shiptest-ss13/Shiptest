@@ -158,7 +158,9 @@
 /turf/open/floor/plasteel/airless,
 /area/awaymission/challenge/main)
 "aI" = (
-/obj/machinery/power/emitter/ctf,
+/obj/machinery/power/emitter/ctf{
+	dir = 2
+	},
 /turf/open/floor/plating/airless,
 /area/awaymission/challenge/main)
 "aJ" = (
@@ -187,7 +189,9 @@
 /area/awaymission/challenge/main)
 "aO" = (
 /obj/structure/window/reinforced,
-/obj/machinery/power/emitter/ctf,
+/obj/machinery/power/emitter/ctf{
+	dir = 2
+	},
 /turf/open/floor/plating/airless,
 /area/awaymission/challenge/main)
 "aP" = (
@@ -236,8 +240,8 @@
 "aX" = (
 /obj/machinery/porta_turret{
 	dir = 8;
-	installation = /obj/item/gun/energy/lasercannon;
-	set_obj_flags = "EMAGGED"
+	set_obj_flags = "EMAGGED";
+	installation = /obj/item/gun/energy/lasercannon
 	},
 /turf/open/floor/plating/airless,
 /area/awaymission/challenge/main)
@@ -358,7 +362,9 @@
 /turf/closed/wall/mineral/plastitanium,
 /area/awaymission/challenge/main)
 "bo" = (
-/obj/machinery/power/emitter/ctf,
+/obj/machinery/power/emitter/ctf{
+	dir = 2
+	},
 /obj/structure/window/reinforced{
 	dir = 8
 	},
@@ -376,8 +382,8 @@
 "bq" = (
 /obj/machinery/porta_turret{
 	dir = 8;
-	installation = /obj/item/gun/energy/lasercannon;
-	set_obj_flags = "EMAGGED"
+	set_obj_flags = "EMAGGED";
+	installation = /obj/item/gun/energy/lasercannon
 	},
 /turf/open/floor/plating,
 /area/awaymission/challenge/main)
@@ -413,7 +419,9 @@
 /area/awaymission/challenge/main)
 "bv" = (
 /obj/structure/window/reinforced,
-/obj/effect/turf_decal/stripes/line,
+/obj/effect/turf_decal/stripes/line{
+	dir = 2
+	},
 /turf/open/floor/plating,
 /area/awaymission/challenge/main)
 "bw" = (
@@ -483,10 +491,14 @@
 /turf/open/floor/plasteel/airless,
 /area/awaymission/challenge/main)
 "bF" = (
-/turf/open/floor/plasteel/white/corner,
+/turf/open/floor/plasteel/white/corner{
+	dir = 2
+	},
 /area/awaymission/challenge/main)
 "bG" = (
-/turf/open/floor/plasteel/white/side,
+/turf/open/floor/plasteel/white/side{
+	dir = 2
+	},
 /area/awaymission/challenge/main)
 "bH" = (
 /turf/open/floor/plasteel/white/corner{
@@ -557,7 +569,9 @@
 /area/awaymission/challenge/end)
 "bQ" = (
 /obj/item/gun/ballistic/revolver/russian,
-/turf/open/floor/plasteel/white/side,
+/turf/open/floor/plasteel/white/side{
+	dir = 2
+	},
 /area/awaymission/challenge/main)
 "bR" = (
 /obj/structure/table/reinforced,
@@ -587,7 +601,9 @@
 /turf/open/floor/plating/airless,
 /area/awaymission/challenge/main)
 "bU" = (
-/obj/effect/turf_decal/stripes/line,
+/obj/effect/turf_decal/stripes/line{
+	dir = 2
+	},
 /turf/open/floor/plasteel/white,
 /area/awaymission/challenge/main)
 "bV" = (
@@ -653,6 +669,7 @@
 "cf" = (
 /obj/machinery/door/airlock/centcom{
 	name = "Airlock";
+	opacity = 1;
 	req_access_txt = "109"
 	},
 /turf/open/floor/plating,
@@ -761,6 +778,7 @@
 "cx" = (
 /obj/machinery/door/airlock/centcom{
 	name = "Security";
+	opacity = 1;
 	req_access_txt = "109"
 	},
 /turf/open/floor/plasteel/dark,
@@ -788,6 +806,7 @@
 "cB" = (
 /obj/machinery/door/airlock/centcom{
 	name = "Administrator";
+	opacity = 1;
 	req_access_txt = "109"
 	},
 /turf/open/floor/plasteel/dark,
@@ -882,13 +901,10 @@
 	},
 /turf/open/floor/plating,
 /area/awaymission/challenge/end)
-"cW" = (
-/obj/machinery/gateway/away{
-	calibrated = 0
+"cR" = (
+/obj/machinery/gateway{
+	dir = 9
 	},
-/turf/open/floor/plasteel/dark,
-/area/awaymission/challenge/end)
-"cZ" = (
 /obj/effect/turf_decal/tile/neutral{
 	dir = 1
 	},
@@ -899,7 +915,125 @@
 /obj/effect/turf_decal/tile/neutral{
 	dir = 8
 	},
-/obj/structure/cable,
+/turf/open/floor/plasteel/dark,
+/area/awaymission/challenge/end)
+"cS" = (
+/obj/machinery/gateway{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/neutral{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/neutral,
+/obj/effect/turf_decal/tile/neutral{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/neutral{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark,
+/area/awaymission/challenge/end)
+"cT" = (
+/obj/machinery/gateway{
+	dir = 5
+	},
+/obj/effect/turf_decal/tile/neutral{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/neutral,
+/obj/effect/turf_decal/tile/neutral{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/neutral{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark,
+/area/awaymission/challenge/end)
+"cV" = (
+/obj/machinery/gateway{
+	dir = 8
+	},
+/obj/effect/turf_decal/tile/neutral{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/neutral,
+/obj/effect/turf_decal/tile/neutral{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/neutral{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark,
+/area/awaymission/challenge/end)
+"cW" = (
+/obj/machinery/gateway/centerstation{
+	calibrated = 0
+	},
+/turf/open/floor/plasteel/dark,
+/area/awaymission/challenge/end)
+"cX" = (
+/obj/machinery/gateway{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/neutral{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/neutral,
+/obj/effect/turf_decal/tile/neutral{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/neutral{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark,
+/area/awaymission/challenge/end)
+"cY" = (
+/obj/machinery/gateway{
+	dir = 10
+	},
+/obj/effect/turf_decal/tile/neutral{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/neutral,
+/obj/effect/turf_decal/tile/neutral{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/neutral{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark,
+/area/awaymission/challenge/end)
+"cZ" = (
+/obj/machinery/gateway,
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/effect/turf_decal/tile/neutral{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/neutral,
+/obj/effect/turf_decal/tile/neutral{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/neutral{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark,
+/area/awaymission/challenge/end)
+"da" = (
+/obj/machinery/gateway{
+	dir = 6
+	},
+/obj/effect/turf_decal/tile/neutral{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/neutral,
+/obj/effect/turf_decal/tile/neutral{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/neutral{
+	dir = 8
+	},
 /turf/open/floor/plasteel/dark,
 /area/awaymission/challenge/end)
 "db" = (
@@ -907,7 +1041,9 @@
 /turf/open/floor/circuit,
 /area/awaymission/challenge/end)
 "dc" = (
-/obj/structure/cable,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plasteel/dark,
 /area/awaymission/challenge/end)
 "dd" = (
@@ -962,6 +1098,7 @@
 "dk" = (
 /obj/machinery/door/airlock/centcom{
 	name = "Gateway Access";
+	opacity = 1;
 	req_access_txt = "109"
 	},
 /turf/open/floor/plasteel/dark,
@@ -973,9 +1110,20 @@
 /turf/open/floor/plating,
 /area/awaymission/challenge/end)
 "dm" = (
-/obj/structure/cable,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
 /mob/living/simple_animal/hostile/syndicate{
 	name = "Syndicate Technician"
+	},
+/turf/open/floor/plasteel/dark,
+/area/awaymission/challenge/end)
+"dn" = (
+/obj/structure/cable{
+	icon_state = "2-8"
 	},
 /turf/open/floor/plasteel/dark,
 /area/awaymission/challenge/end)
@@ -988,14 +1136,15 @@
 /turf/open/floor/circuit,
 /area/awaymission/challenge/end)
 "dq" = (
-/obj/machinery/power/smes/magical,
 /obj/structure/cable,
+/obj/machinery/power/smes/magical,
 /turf/open/floor/circuit,
 /area/awaymission/challenge/end)
 "dr" = (
 /obj/machinery/power/terminal{
 	dir = 8
 	},
+/obj/structure/cable,
 /turf/open/floor/circuit,
 /area/awaymission/challenge/end)
 "ds" = (
@@ -28922,9 +29071,9 @@ cd
 cn
 cH
 cN
-co
-co
-co
+cR
+cV
+cY
 db
 dg
 cd
@@ -29179,7 +29328,7 @@ cd
 cn
 cH
 cN
-co
+cS
 cW
 cZ
 dc
@@ -29436,13 +29585,13 @@ cd
 cn
 cH
 cN
-co
-co
-co
+cT
+cX
+da
 db
 dh
 cd
-cd
+dn
 dr
 bP
 aa

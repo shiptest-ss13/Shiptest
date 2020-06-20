@@ -77,8 +77,10 @@
 	if(!initial(charge) && !charge)
 		charge = C / 15000 * 1e6
 
+/* Wasp Edit - Smartwire Revert
 /obj/machinery/power/smes/should_have_node()
 	return TRUE
+*/
 
 /obj/machinery/power/smes/attackby(obj/item/I, mob/user, params)
 	//opening using screwdriver

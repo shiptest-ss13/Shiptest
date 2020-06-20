@@ -95,13 +95,6 @@
 "aq" = (
 /turf/open/floor/wood,
 /area/awaymission/cabin)
-"ar" = (
-/obj/structure/cable,
-/obj/machinery/door/airlock/command{
-	name = "Manager's Office"
-	},
-/turf/open/floor/wood,
-/area/awaymission/cabin)
 "as" = (
 /obj/structure/sink{
 	dir = 8;
@@ -126,17 +119,6 @@
 "au" = (
 /obj/structure/dresser,
 /turf/open/floor/wood,
-/area/awaymission/cabin)
-"av" = (
-/obj/machinery/telecomms/relay/preset/mining,
-/obj/structure/cable,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating,
-/area/awaymission/cabin)
-"aw" = (
-/obj/structure/cable,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating,
 /area/awaymission/cabin)
 "ax" = (
 /obj/effect/light_emitter{
@@ -185,15 +167,6 @@
 	},
 /turf/open/floor/plasteel/freezer,
 /area/awaymission/cabin)
-"aD" = (
-/obj/structure/cable,
-/obj/machinery/power/smes/magical{
-	desc = "A high-capacity superconducting magnetic energy storage (SMES) unit. It seems to be powered just fine without our intervention.";
-	name = "\improper Nanotrasen power storage unit"
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating,
-/area/awaymission/cabin)
 "aE" = (
 /obj/effect/decal/cleanable/cobweb/cobweb2,
 /obj/effect/baseturf_helper/asteroid/snow,
@@ -201,16 +174,6 @@
 /turf/open/floor/plating{
 	icon_state = "panelscorched"
 	},
-/area/awaymission/cabin)
-"aF" = (
-/obj/machinery/power/apc{
-	dir = 1;
-	name = "cabin APC";
-	pixel_y = 23
-	},
-/obj/structure/cable,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating,
 /area/awaymission/cabin)
 "aG" = (
 /obj/effect/turf_decal/weather/snow/corner{
@@ -250,16 +213,6 @@
 /area/awaymission/cabin)
 "aL" = (
 /turf/open/floor/plating,
-/area/awaymission/cabin)
-"aM" = (
-/obj/machinery/power/terminal{
-	dir = 1
-	},
-/obj/structure/cable,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating{
-	icon_state = "panelscorched"
-	},
 /area/awaymission/cabin)
 "aN" = (
 /obj/structure/chair/wood{
@@ -366,10 +319,6 @@
 	},
 /turf/open/floor/wood,
 /area/awaymission/cabin)
-"bb" = (
-/obj/structure/cable,
-/turf/open/floor/carpet,
-/area/awaymission/cabin)
 "bc" = (
 /obj/structure/table/wood,
 /obj/item/reagent_containers/food/drinks/britcup,
@@ -383,13 +332,6 @@
 /obj/machinery/computer/crew{
 	dir = 8
 	},
-/turf/open/floor/carpet,
-/area/awaymission/cabin)
-"bf" = (
-/obj/machinery/light{
-	dir = 8
-	},
-/obj/structure/cable,
 /turf/open/floor/carpet,
 /area/awaymission/cabin)
 "bg" = (
@@ -429,14 +371,6 @@
 /obj/machinery/vending/autodrobe{
 	req_access_txt = "0"
 	},
-/turf/open/floor/wood,
-/area/awaymission/cabin)
-"bm" = (
-/obj/machinery/door/airlock/wood{
-	id_tag = "snowdinbutworse5";
-	name = "Cabin 5"
-	},
-/obj/structure/cable,
 /turf/open/floor/wood,
 /area/awaymission/cabin)
 "bn" = (
@@ -745,13 +679,6 @@
 /obj/item/soap,
 /turf/open/floor/wood,
 /area/awaymission/cabin)
-"ct" = (
-/obj/structure/sign/poster/official/soft_cap_pop_art{
-	pixel_y = 32
-	},
-/obj/structure/cable,
-/turf/open/floor/wood,
-/area/awaymission/cabin)
 "cu" = (
 /obj/machinery/atmospherics/components/unary/thermomachine/freezer/on{
 	dir = 1
@@ -766,25 +693,6 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/white,
-/area/awaymission/cabin)
-"cz" = (
-/obj/machinery/light{
-	dir = 1
-	},
-/obj/structure/cable,
-/obj/structure/piano{
-	desc = "Very theatrical.";
-	icon_state = "piano";
-	name = "theatre piano"
-	},
-/turf/open/floor/wood,
-/area/awaymission/cabin)
-"cA" = (
-/obj/structure/cable,
-/obj/machinery/door/airlock/wood{
-	name = "Stage Left"
-	},
-/turf/open/floor/wood,
 /area/awaymission/cabin)
 "cB" = (
 /obj/machinery/door/window/eastleft,
@@ -806,18 +714,6 @@
 	},
 /turf/open/floor/wood,
 /area/awaymission/cabin)
-"cE" = (
-/obj/machinery/light{
-	dir = 1
-	},
-/obj/structure/cable,
-/turf/open/floor/wood,
-/area/awaymission/cabin)
-"cF" = (
-/obj/structure/table,
-/obj/structure/cable,
-/turf/open/floor/plasteel/cafeteria,
-/area/awaymission/cabin)
 "cG" = (
 /obj/structure/closet/secure_closet/freezer/meat/open,
 /obj/item/reagent_containers/food/snacks/meat/slab/synthmeat,
@@ -826,49 +722,12 @@
 /obj/item/reagent_containers/food/snacks/meat/slab/synthmeat,
 /turf/open/floor/plasteel/freezer,
 /area/awaymission/cabin)
-"cH" = (
-/obj/effect/landmark/awaystart,
-/obj/structure/cable,
-/turf/open/floor/wood,
-/area/awaymission/cabin)
-"cI" = (
-/obj/structure/cable,
-/obj/structure/chair/office/light,
-/turf/open/floor/plasteel/white,
-/area/awaymission/cabin)
-"cJ" = (
-/obj/structure/table,
-/obj/item/reagent_containers/food/condiment/peppermill{
-	pixel_x = 8;
-	pixel_y = 10
-	},
-/obj/item/reagent_containers/food/condiment/peppermill{
-	pixel_x = 8
-	},
-/obj/item/reagent_containers/food/condiment/saltshaker{
-	pixel_x = -8;
-	pixel_y = 10
-	},
-/obj/item/reagent_containers/food/condiment/saltshaker{
-	pixel_x = -8
-	},
-/obj/structure/cable,
-/turf/open/floor/plasteel/cafeteria,
-/area/awaymission/cabin)
 "cK" = (
 /obj/structure/table/wood/fancy,
 /obj/item/reagent_containers/food/drinks/sillycup/smallcarton{
 	pixel_y = 4
 	},
 /turf/open/floor/wood,
-/area/awaymission/cabin)
-"cL" = (
-/obj/machinery/light/small{
-	dir = 8
-	},
-/obj/structure/cable,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating,
 /area/awaymission/cabin)
 "cM" = (
 /obj/machinery/door/airlock/wood{
@@ -884,15 +743,6 @@
 /obj/structure/chair/wood{
 	dir = 4
 	},
-/turf/open/floor/carpet,
-/area/awaymission/cabin)
-"cP" = (
-/obj/structure/cable,
-/turf/open/floor/plasteel/white,
-/area/awaymission/cabin)
-"cQ" = (
-/obj/effect/landmark/awaystart,
-/obj/structure/cable,
 /turf/open/floor/carpet,
 /area/awaymission/cabin)
 "cR" = (
@@ -1065,29 +915,6 @@
 /obj/structure/closet/secure_closet/freezer/fridge/open,
 /obj/item/reagent_containers/food/condiment/mayonnaise,
 /turf/open/floor/plasteel/freezer,
-/area/awaymission/cabin)
-"du" = (
-/obj/structure/cable,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating{
-	icon_state = "panelscorched"
-	},
-/area/awaymission/cabin)
-"dv" = (
-/obj/structure{
-	anchored = 1;
-	density = 1;
-	desc = "Generates power from lava!";
-	dir = 2;
-	icon = 'icons/obj/atmospherics/pipes/simple.dmi';
-	icon_state = "turbine";
-	name = "geothermal generator"
-	},
-/obj/structure/cable,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating{
-	icon_state = "panelscorched"
-	},
 /area/awaymission/cabin)
 "dw" = (
 /mob/living/simple_animal/hostile/bear/snow{
@@ -1301,19 +1128,9 @@
 	},
 /turf/open/floor/wood/cold,
 /area/awaymission/cabin/snowforest)
-"eg" = (
-/obj/structure/cable,
-/turf/open/floor/wood,
-/area/awaymission/cabin)
 "eh" = (
 /obj/machinery/door/airlock/wood/glass,
 /turf/open/floor/wood,
-/area/awaymission/cabin)
-"ei" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/decal/cleanable/glass,
-/obj/structure/cable,
-/turf/open/floor/plating,
 /area/awaymission/cabin)
 "ej" = (
 /obj/structure/chair/wood,
@@ -1348,13 +1165,6 @@
 	},
 /turf/open/floor/wood/cold,
 /area/awaymission/cabin)
-"eo" = (
-/obj/structure/cable,
-/obj/machinery/door/airlock{
-	name = "Kitchen"
-	},
-/turf/open/floor/wood,
-/area/awaymission/cabin)
 "ep" = (
 /obj/effect/light_emitter{
 	set_cap = 1;
@@ -1382,11 +1192,6 @@
 /obj/structure/fluff/fokoff_sign,
 /turf/open/floor/plating/asteroid/snow,
 /area/awaymission/cabin/snowforest)
-"et" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/cable,
-/turf/open/floor/plating,
-/area/awaymission/cabin)
 "eu" = (
 /obj/structure/table/wood/fancy,
 /turf/open/floor/wood,
@@ -2729,21 +2534,6 @@
 	},
 /turf/open/floor/carpet,
 /area/awaymission/cabin)
-"he" = (
-/obj/structure/table/wood,
-/obj/structure/cable,
-/obj/item/reagent_containers/food/drinks/mug/coco{
-	desc = "Still hot!";
-	pixel_x = 0;
-	pixel_y = -2
-	},
-/obj/item/reagent_containers/food/drinks/mug/coco{
-	desc = "Still hot!";
-	pixel_x = 8;
-	pixel_y = 8
-	},
-/turf/open/floor/carpet,
-/area/awaymission/cabin)
 "hf" = (
 /obj/machinery/space_heater,
 /obj/effect/decal/remains/robot,
@@ -2767,18 +2557,6 @@
 	},
 /turf/open/floor/wood,
 /area/awaymission/cabin)
-"hi" = (
-/obj/structure/cable,
-/turf/open/floor/plasteel/freezer,
-/area/awaymission/cabin)
-"hj" = (
-/obj/machinery/light{
-	dir = 8
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/cable,
-/turf/open/floor/plating,
-/area/awaymission/cabin)
 "hk" = (
 /obj/structure/sign/poster/official/nanotrasen_logo{
 	pixel_x = 32
@@ -2790,13 +2568,6 @@
 	pixel_y = 32
 	},
 /turf/open/floor/carpet,
-/area/awaymission/cabin)
-"hm" = (
-/obj/structure/cable,
-/obj/machinery/door/airlock/wood{
-	name = "Gateway"
-	},
-/turf/open/floor/wood,
 /area/awaymission/cabin)
 "hn" = (
 /obj/structure/sign/poster/official/high_class_martini{
@@ -2816,26 +2587,6 @@
 "hq" = (
 /obj/machinery/vending/medical,
 /turf/open/floor/plasteel/white,
-/area/awaymission/cabin)
-"hr" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/decal/cleanable/oil,
-/obj/effect/decal/cleanable/generic,
-/obj/structure/cable,
-/turf/open/floor/plating,
-/area/awaymission/cabin)
-"hs" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/sign/poster/contraband/missing_gloves{
-	pixel_x = 32
-	},
-/obj/structure/cable,
-/turf/open/floor/plating,
-/area/awaymission/cabin)
-"ht" = (
-/obj/machinery/light,
-/obj/structure/cable,
-/turf/open/floor/wood,
 /area/awaymission/cabin)
 "hu" = (
 /obj/structure/table/reinforced,
@@ -2865,13 +2616,6 @@
 	icon_state = "panelscorched"
 	},
 /area/awaymission/cabin)
-"hx" = (
-/obj/structure/cable,
-/obj/machinery/door/airlock/wood{
-	name = "Stage Right"
-	},
-/turf/open/floor/wood,
-/area/awaymission/cabin)
 "hy" = (
 /obj/machinery/door/airlock/maintenance{
 	name = "heater storage"
@@ -2880,40 +2624,11 @@
 /turf/open/floor/plating,
 /area/awaymission/cabin)
 "hz" = (
-/obj/structure/cable,
-/turf/open/floor/plasteel/cafeteria,
-/area/awaymission/cabin)
-"hA" = (
-/obj/structure/cable,
-/obj/machinery/door/airlock/freezer{
-	name = "Freezer"
+/obj/machinery/door/airlock/engineering{
+	name = "Generator Room"
 	},
-/turf/open/floor/plasteel/freezer,
-/area/awaymission/cabin)
-"hB" = (
-/obj/structure/cable,
-/obj/machinery/door/airlock{
-	name = "Backstage"
-	},
-/turf/open/floor/wood,
-/area/awaymission/cabin)
-"hC" = (
-/obj/structure/cable,
-/obj/structure/chair/wood{
-	dir = 4
-	},
-/turf/open/floor/carpet,
-/area/awaymission/cabin)
-"hD" = (
-/obj/structure/cable,
-/obj/structure/table/reinforced,
-/obj/item/folder/white,
-/turf/open/floor/plasteel/white,
-/area/awaymission/cabin)
-"hE" = (
-/obj/structure/cable,
-/obj/structure/chair/wood,
-/turf/open/floor/wood,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating,
 /area/awaymission/cabin)
 "hF" = (
 /obj/structure/table/wood,
@@ -2922,26 +2637,6 @@
 	pixel_x = 0;
 	pixel_y = 2
 	},
-/turf/open/floor/carpet,
-/area/awaymission/cabin)
-"hG" = (
-/obj/structure/chair/wood{
-	dir = 1
-	},
-/obj/structure/cable,
-/turf/open/floor/wood,
-/area/awaymission/cabin)
-"hH" = (
-/obj/machinery/light,
-/obj/structure/cable,
-/turf/open/floor/carpet,
-/area/awaymission/cabin)
-"hI" = (
-/obj/effect/landmark/awaystart,
-/obj/structure/sign/poster/official/report_crimes{
-	pixel_y = -32
-	},
-/obj/structure/cable,
 /turf/open/floor/carpet,
 /area/awaymission/cabin)
 "hJ" = (
@@ -3163,13 +2858,6 @@
 	name = "soviet floor"
 	},
 /area/awaymission/cabin/caves/sovietcave)
-"in" = (
-/obj/structure/cable,
-/obj/structure/extinguisher_cabinet{
-	pixel_y = 32
-	},
-/turf/open/floor/wood,
-/area/awaymission/cabin)
 "io" = (
 /obj/structure/extinguisher_cabinet{
 	pixel_x = -24;
@@ -3358,38 +3046,6 @@
 	pixel_x = 7;
 	pixel_y = -2
 	},
-/turf/open/floor/wood,
-/area/awaymission/cabin)
-"iV" = (
-/obj/machinery/door/airlock/wood{
-	id_tag = "snowdinbutworse1";
-	name = "Cabin 1"
-	},
-/obj/structure/cable,
-/turf/open/floor/wood,
-/area/awaymission/cabin)
-"iW" = (
-/obj/machinery/door/airlock/wood{
-	id_tag = "snowdinbutworse2";
-	name = "Cabin 2"
-	},
-/obj/structure/cable,
-/turf/open/floor/wood,
-/area/awaymission/cabin)
-"iX" = (
-/obj/machinery/door/airlock/wood{
-	id_tag = "snowdinbutworse3";
-	name = "Cabin 3"
-	},
-/obj/structure/cable,
-/turf/open/floor/wood,
-/area/awaymission/cabin)
-"iY" = (
-/obj/machinery/door/airlock/wood{
-	id_tag = "snowdinbutworse4";
-	name = "Cabin 4"
-	},
-/obj/structure/cable,
 /turf/open/floor/wood,
 /area/awaymission/cabin)
 "iZ" = (
@@ -3679,14 +3335,6 @@
 /obj/effect/baseturf_helper/asteroid/snow,
 /turf/open/floor/wood/cold,
 /area/awaymission/cabin/lumbermill)
-"jC" = (
-/obj/structure/cable,
-/obj/machinery/door/airlock/engineering{
-	name = "Generator Room"
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating,
-/area/awaymission/cabin)
 "jD" = (
 /obj/structure/table/wood,
 /obj/item/clothing/mask/gas/explorer,
@@ -5485,13 +5133,6 @@
 	name = "soviet floor"
 	},
 /area/awaymission/cabin/caves/sovietcave)
-"nM" = (
-/obj/machinery/door/airlock/glass_large{
-	name = "Medical Bay"
-	},
-/obj/structure/cable,
-/turf/open/floor/plasteel/white,
-/area/awaymission/cabin)
 "nN" = (
 /obj/machinery/light/small{
 	dir = 2
@@ -5505,13 +5146,6 @@
 /obj/structure/table/wood,
 /obj/machinery/chem_dispenser/drinks{
 	dir = 8
-	},
-/turf/open/floor/wood,
-/area/awaymission/cabin)
-"nR" = (
-/obj/structure/cable,
-/obj/machinery/newscaster{
-	pixel_y = -32
 	},
 /turf/open/floor/wood,
 /area/awaymission/cabin)
@@ -5534,8 +5168,291 @@
 	},
 /turf/open/floor/plasteel/freezer,
 /area/awaymission/cabin)
-"nV" = (
-/obj/structure/cable,
+"oB" = (
+/obj/structure/chair/office/light,
+/turf/open/floor/plasteel/white,
+/area/awaymission/cabin)
+"oM" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/turf/open/floor/plating{
+	icon_state = "panelscorched"
+	},
+/area/awaymission/cabin)
+"qN" = (
+/obj/machinery/door/airlock/wood{
+	id_tag = "snowdinbutworse5";
+	name = "Cabin 5"
+	},
+/turf/open/floor/wood,
+/area/awaymission/cabin)
+"rj" = (
+/obj/structure{
+	anchored = 1;
+	density = 1;
+	desc = "Generates power from lava!";
+	dir = 2;
+	icon = 'icons/obj/atmospherics/pipes/simple.dmi';
+	icon_state = "turbine";
+	name = "geothermal generator"
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/turf/open/floor/plating{
+	icon_state = "panelscorched"
+	},
+/area/awaymission/cabin)
+"rw" = (
+/obj/structure/sign/poster/official/soft_cap_pop_art{
+	pixel_y = 32
+	},
+/turf/open/floor/wood,
+/area/awaymission/cabin)
+"sg" = (
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/open/floor/carpet,
+/area/awaymission/cabin)
+"sp" = (
+/obj/machinery/door/airlock/freezer{
+	name = "Freezer"
+	},
+/turf/open/floor/plasteel/freezer,
+/area/awaymission/cabin)
+"xg" = (
+/obj/machinery/door/airlock/glass_large{
+	name = "Medical Bay"
+	},
+/turf/open/floor/plasteel/white,
+/area/awaymission/cabin)
+"xo" = (
+/obj/machinery/door/airlock/wood{
+	name = "Stage Left"
+	},
+/turf/open/floor/wood,
+/area/awaymission/cabin)
+"yf" = (
+/obj/machinery/door/airlock/wood{
+	id_tag = "snowdinbutworse4";
+	name = "Cabin 4"
+	},
+/turf/open/floor/wood,
+/area/awaymission/cabin)
+"yk" = (
+/obj/machinery/light{
+	dir = 1
+	},
+/obj/structure/piano{
+	desc = "Very theatrical.";
+	icon_state = "piano";
+	name = "theatre piano"
+	},
+/turf/open/floor/wood,
+/area/awaymission/cabin)
+"yp" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/turf/open/floor/plating,
+/area/awaymission/cabin)
+"Bf" = (
+/obj/machinery/power/apc{
+	dir = 1;
+	name = "cabin APC";
+	pixel_y = 24
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/turf/open/floor/plating,
+/area/awaymission/cabin)
+"Cb" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/sign/poster/contraband/missing_gloves{
+	pixel_x = 32
+	},
+/turf/open/floor/plating,
+/area/awaymission/cabin)
+"CP" = (
+/obj/machinery/light{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating,
+/area/awaymission/cabin)
+"DX" = (
+/obj/structure/table/reinforced,
+/obj/item/folder/white,
+/turf/open/floor/plasteel/white,
+/area/awaymission/cabin)
+"EA" = (
+/obj/machinery/door/airlock{
+	name = "Kitchen"
+	},
+/turf/open/floor/wood,
+/area/awaymission/cabin)
+"EQ" = (
+/obj/machinery/telecomms/relay/preset/mining,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating,
+/area/awaymission/cabin)
+"FI" = (
+/obj/machinery/door/airlock/wood{
+	name = "Stage Right"
+	},
+/turf/open/floor/wood,
+/area/awaymission/cabin)
+"GT" = (
+/obj/machinery/light/small{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating,
+/area/awaymission/cabin)
+"Hi" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plating,
+/area/awaymission/cabin)
+"Hn" = (
+/obj/machinery/power/smes/magical{
+	desc = "A high-capacity superconducting magnetic energy storage (SMES) unit. It seems to be powered just fine without our intervention.";
+	name = "\improper Nanotrasen power storage unit"
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/turf/open/floor/plating,
+/area/awaymission/cabin)
+"HK" = (
+/obj/machinery/door/airlock{
+	name = "Backstage"
+	},
+/turf/open/floor/wood,
+/area/awaymission/cabin)
+"JN" = (
+/obj/effect/landmark/awaystart,
+/obj/structure/sign/poster/official/report_crimes{
+	pixel_y = -32
+	},
+/turf/open/floor/carpet,
+/area/awaymission/cabin)
+"LR" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating,
+/area/awaymission/cabin)
+"Mk" = (
+/obj/effect/landmark/awaystart,
+/turf/open/floor/wood,
+/area/awaymission/cabin)
+"NN" = (
+/obj/structure/table,
+/obj/item/reagent_containers/food/condiment/peppermill{
+	pixel_x = 8;
+	pixel_y = 10
+	},
+/obj/item/reagent_containers/food/condiment/peppermill{
+	pixel_x = 8
+	},
+/obj/item/reagent_containers/food/condiment/saltshaker{
+	pixel_x = -8;
+	pixel_y = 10
+	},
+/obj/item/reagent_containers/food/condiment/saltshaker{
+	pixel_x = -8
+	},
+/turf/open/floor/plasteel/cafeteria,
+/area/awaymission/cabin)
+"Pj" = (
+/obj/machinery/door/airlock/wood{
+	id_tag = "snowdinbutworse3";
+	name = "Cabin 3"
+	},
+/turf/open/floor/wood,
+/area/awaymission/cabin)
+"Qg" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/oil,
+/obj/effect/decal/cleanable/generic,
+/turf/open/floor/plating,
+/area/awaymission/cabin)
+"Qi" = (
+/obj/machinery/power/terminal{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/turf/open/floor/plating{
+	icon_state = "panelscorched"
+	},
+/area/awaymission/cabin)
+"Ru" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/glass,
+/turf/open/floor/plating,
+/area/awaymission/cabin)
+"RO" = (
+/obj/machinery/door/airlock/wood{
+	id_tag = "snowdinbutworse1";
+	name = "Cabin 1"
+	},
+/turf/open/floor/wood,
+/area/awaymission/cabin)
+"RQ" = (
+/obj/structure/table,
+/turf/open/floor/plasteel/cafeteria,
+/area/awaymission/cabin)
+"RV" = (
+/obj/machinery/door/airlock/command{
+	name = "Manager's Office"
+	},
+/turf/open/floor/wood,
+/area/awaymission/cabin)
+"Vn" = (
+/obj/machinery/door/airlock/wood{
+	id_tag = "snowdinbutworse2";
+	name = "Cabin 2"
+	},
+/turf/open/floor/wood,
+/area/awaymission/cabin)
+"Vy" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/turf/open/floor/plating,
+/area/awaymission/cabin)
+"Wc" = (
+/obj/structure/table/wood,
+/obj/item/reagent_containers/food/drinks/mug/coco{
+	desc = "Still hot!";
+	pixel_x = 0;
+	pixel_y = -2
+	},
+/obj/item/reagent_containers/food/drinks/mug/coco{
+	desc = "Still hot!";
+	pixel_x = 8;
+	pixel_y = 8
+	},
+/turf/open/floor/carpet,
+/area/awaymission/cabin)
+"WK" = (
+/obj/effect/landmark/awaystart,
+/turf/open/floor/carpet,
+/area/awaymission/cabin)
+"WT" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/door/airlock/maintenance{
 	name = "Maintenance"
@@ -25743,22 +25660,22 @@ iZ
 aN
 jl
 az
-bb
-bb
-eg
-bm
-eg
-nR
+az
+az
+aq
+qN
+aq
+nS
 an
-eg
-eg
-eg
-eg
-eg
-eg
-hB
-eg
-eg
+aq
+aq
+aq
+aq
+aq
+aq
+HK
+aq
+aq
 an
 cT
 cV
@@ -26000,22 +25917,22 @@ iZ
 jy
 jG
 az
-bb
+az
 az
 aq
 an
 aq
-ht
+bh
 an
-cA
-an
-an
+xo
 an
 an
-hx
+an
+an
+FI
 an
 aq
-eg
+aq
 an
 cU
 aL
@@ -26262,17 +26179,17 @@ az
 aq
 an
 aq
-eg
-an
-eg
 aq
-aq
-aq
-aq
-eg
 an
 aq
-eg
+aq
+aq
+aq
+aq
+aq
+an
+aq
+aq
 an
 cV
 gL
@@ -26519,17 +26436,17 @@ aA
 aq
 an
 br
-eg
+aq
 an
-cE
+bn
 aq
 aq
 aq
 aq
-ht
+bh
 an
 aq
-ht
+bh
 an
 aL
 aL
@@ -26776,17 +26693,17 @@ an
 aR
 an
 aq
-eg
-an
-eg
 aq
-aq
-aq
-aq
-eg
 an
 aq
-eg
+aq
+aq
+aq
+aq
+aq
+an
+aq
+aq
 an
 cU
 cW
@@ -27033,17 +26950,17 @@ an
 an
 an
 aq
-eg
+aq
 an
-cz
-eg
-eg
-eg
-eg
-ht
+yk
+aq
+aq
+aq
+aq
+bh
 an
 aq
-eg
+aq
 an
 ed
 aL
@@ -27290,7 +27207,7 @@ an
 aS
 hg
 aq
-ht
+bh
 an
 nT
 bo
@@ -27300,7 +27217,7 @@ bo
 cB
 an
 aq
-eg
+aq
 bV
 ed
 ed
@@ -27547,7 +27464,7 @@ an
 an
 an
 aq
-eg
+aq
 an
 aO
 aO
@@ -27557,7 +27474,7 @@ aO
 az
 az
 aq
-eg
+aq
 an
 eb
 cX
@@ -27804,7 +27721,7 @@ an
 aT
 an
 aq
-eg
+aq
 an
 az
 aq
@@ -27814,7 +27731,7 @@ aq
 aq
 cO
 aq
-ht
+bh
 an
 an
 an
@@ -28061,17 +27978,17 @@ aV
 aq
 an
 bs
-eg
+aq
 eh
-bb
-eg
-bb
-hC
-bb
-hE
-he
-hG
-eg
+az
+aq
+az
+cO
+az
+ci
+Wc
+cC
+aq
 eN
 an
 dB
@@ -28318,7 +28235,7 @@ az
 aq
 an
 aq
-eg
+aq
 an
 aP
 az
@@ -28328,7 +28245,7 @@ hd
 az
 aO
 aq
-eg
+aq
 aq
 an
 an
@@ -28570,12 +28487,12 @@ ja
 jy
 jF
 az
-bb
-bb
+az
+az
 aq
 an
 aq
-ht
+bh
 an
 bq
 az
@@ -28585,7 +28502,7 @@ hd
 az
 az
 aq
-eg
+aq
 aq
 aN
 ao
@@ -28828,11 +28745,11 @@ bp
 jm
 az
 az
-bb
-eg
-iY
-eg
-eg
+az
+aq
+yf
+aq
+aq
 an
 bt
 az
@@ -28842,7 +28759,7 @@ hd
 az
 cO
 aq
-eg
+aq
 aq
 iR
 ao
@@ -29088,7 +29005,7 @@ aI
 aA
 jj
 an
-eg
+aq
 aq
 an
 cN
@@ -29099,7 +29016,7 @@ az
 ci
 hF
 cC
-eg
+aq
 aq
 bp
 ao
@@ -29345,7 +29262,7 @@ an
 an
 an
 an
-ct
+rw
 aq
 an
 jE
@@ -29356,7 +29273,7 @@ aq
 aq
 aO
 aq
-eg
+aq
 aq
 an
 an
@@ -29602,7 +29519,7 @@ ju
 au
 ji
 an
-eg
+aq
 aq
 an
 cO
@@ -29613,7 +29530,7 @@ cO
 az
 az
 aq
-ht
+bh
 an
 an
 dB
@@ -29855,12 +29772,12 @@ jb
 aN
 jn
 az
-bb
-bb
-eg
-iX
-eg
-ht
+az
+az
+aq
+Pj
+aq
+bh
 an
 hb
 bU
@@ -29870,7 +29787,7 @@ cK
 cD
 an
 aq
-eg
+aq
 aq
 an
 an
@@ -30112,22 +30029,22 @@ jb
 jy
 jH
 az
-bb
+az
 az
 aq
 an
 aq
-eg
+aq
 an
 hn
 aq
-eg
-eg
-eg
-eg
+aq
+aq
+aq
+aq
 an
 aq
-eg
+aq
 aq
 aN
 ao
@@ -30374,17 +30291,17 @@ az
 aq
 an
 aq
-eg
+aq
 an
 bv
 bN
 nO
 aq
 ap
-eg
+aq
 an
 aq
-eg
+aq
 aq
 iU
 ao
@@ -30631,17 +30548,17 @@ aA
 aq
 an
 br
-eg
+aq
 an
 an
 an
 an
 bu
 an
-eo
+EA
 an
 aq
-eg
+aq
 aq
 bp
 ao
@@ -30888,17 +30805,17 @@ an
 aU
 an
 aq
-eg
+aq
 an
 bw
 bO
 bO
 bO
 bO
-hz
-eo
-eg
-eg
+bO
+EA
+aq
+aq
 aq
 an
 an
@@ -31145,17 +31062,17 @@ an
 an
 an
 aq
-eg
+aq
 an
 bx
 bO
-cJ
-cF
-cJ
-hz
+NN
+RQ
+NN
+bO
 an
 aq
-ht
+bh
 an
 an
 dB
@@ -31402,17 +31319,17 @@ an
 hf
 hy
 aq
-eg
+aq
 an
 by
 bO
 bO
 bO
 bO
-hz
+bO
 an
 aq
-eg
+aq
 aq
 an
 an
@@ -31659,17 +31576,17 @@ an
 an
 an
 aq
-ht
+bh
 an
 bz
 bO
 bW
 ck
 cj
-hz
+bO
 an
 aq
-eg
+aq
 aq
 aN
 ao
@@ -31916,17 +31833,17 @@ an
 aW
 an
 aq
-eg
+aq
 an
 an
 an
 an
 an
 an
-hA
+sp
 an
 aq
-eg
+aq
 aq
 iS
 ao
@@ -32173,17 +32090,17 @@ aV
 aq
 an
 bs
-eg
+aq
 an
 bA
 bB
 bX
 cl
 cl
-hi
+bB
 an
 aq
-eg
+aq
 aq
 bp
 ao
@@ -32430,17 +32347,17 @@ az
 aq
 an
 aq
-eg
+aq
 an
 bB
 bB
 bB
 bB
-hi
-hi
+bB
+bB
 an
 hh
-eg
+aq
 aq
 an
 an
@@ -32682,12 +32599,12 @@ jc
 jy
 jI
 az
-bb
+az
 az
 aq
 an
 aq
-eg
+aq
 an
 bC
 bB
@@ -32697,7 +32614,7 @@ dt
 cG
 an
 aq
-ht
+bh
 an
 an
 dB
@@ -32939,12 +32856,12 @@ jc
 bp
 jo
 az
-bb
-bb
-eg
-iW
-eg
-eg
+az
+az
+aq
+Vn
+aq
+aq
 an
 an
 an
@@ -32954,7 +32871,7 @@ an
 an
 an
 aq
-eg
+aq
 aq
 an
 an
@@ -33200,7 +33117,7 @@ aI
 aA
 jg
 an
-eg
+aq
 aq
 an
 aJ
@@ -33211,7 +33128,7 @@ hq
 cv
 an
 aq
-eg
+aq
 aq
 aN
 ao
@@ -33457,7 +33374,7 @@ an
 an
 an
 an
-ct
+rw
 bh
 an
 aK
@@ -33468,7 +33385,7 @@ bE
 lz
 an
 aq
-eg
+aq
 aq
 iT
 ao
@@ -33714,18 +33631,18 @@ jw
 au
 jh
 an
-eg
+aq
 aq
 an
 bD
 bE
 bE
-cI
-hD
-cP
-nM
-eg
-eg
+oB
+DX
+bE
+xg
+aq
+aq
 aq
 bp
 ao
@@ -33967,22 +33884,22 @@ jd
 aN
 jp
 az
-bb
-bb
-eg
-iV
-eg
+az
+az
+aq
+RO
+aq
 aq
 an
 bE
 bE
 bE
-cP
+bE
 jq
 bE
 bE
 aq
-eg
+aq
 aq
 an
 an
@@ -34224,11 +34141,11 @@ jd
 jy
 jJ
 az
-bb
+az
 az
 aq
 an
-eg
+aq
 aq
 an
 bF
@@ -34239,7 +34156,7 @@ bE
 lz
 an
 aq
-eg
+aq
 an
 an
 dB
@@ -34485,7 +34402,7 @@ az
 az
 aq
 an
-eg
+aq
 nS
 an
 bF
@@ -34496,7 +34413,7 @@ js
 hp
 an
 aq
-eg
+aq
 an
 dB
 dB
@@ -34742,7 +34659,7 @@ aI
 aA
 aq
 an
-in
+br
 nN
 an
 an
@@ -34753,7 +34670,7 @@ an
 an
 an
 aq
-ht
+bh
 an
 dB
 ac
@@ -34999,18 +34916,18 @@ an
 an
 aU
 an
-eg
-eg
-nV
-ei
-et
-hj
-hr
-hs
-et
-nV
-eg
-eg
+aq
+aq
+WT
+Ru
+LR
+CP
+Qg
+Cb
+LR
+WT
+aq
+aq
 an
 dB
 ac
@@ -35256,7 +35173,7 @@ aH
 an
 an
 an
-ar
+RV
 an
 an
 an
@@ -35267,7 +35184,7 @@ an
 an
 an
 cM
-hm
+cM
 an
 dB
 ac
@@ -35512,8 +35429,8 @@ an
 an
 an
 aX
-bf
-bb
+sg
+az
 an
 bj
 bH
@@ -35524,7 +35441,7 @@ aq
 aq
 io
 az
-bb
+az
 an
 dB
 ac
@@ -35764,12 +35681,12 @@ ac
 dB
 ax
 an
-aF
-cL
-aw
-jC
-bb
-bb
+Bf
+GT
+ed
+hz
+az
+az
 az
 an
 bk
@@ -35778,10 +35695,10 @@ an
 aq
 aq
 aq
-eg
-cH
-cQ
-hH
+aq
+Mk
+WK
+ee
 an
 dB
 ac
@@ -36020,8 +35937,8 @@ ac
 ac
 dB
 ax
-av
-aw
+EQ
+Hi
 ed
 hu
 an
@@ -36034,11 +35951,11 @@ an
 an
 aq
 cp
-eg
-eg
 aq
-cQ
-hI
+aq
+aq
+WK
+JN
 an
 dB
 ac
@@ -36277,8 +36194,8 @@ ac
 ac
 dB
 ax
-aw
-ed
+Vy
+yp
 ed
 hv
 an
@@ -36292,9 +36209,9 @@ an
 aq
 aq
 aq
-eg
-cH
-cQ
+aq
+Mk
+WK
 ee
 an
 dB
@@ -36534,9 +36451,9 @@ ac
 ac
 dB
 ax
-aD
-aM
-du
+Hn
+Qi
+oM
 hw
 an
 aZ
@@ -36793,7 +36710,7 @@ dB
 ax
 aE
 aQ
-dv
+rj
 an
 an
 ao

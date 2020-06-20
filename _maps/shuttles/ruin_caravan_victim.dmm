@@ -25,6 +25,12 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
 /turf/open/floor/plasteel/airless,
 /area/shuttle/caravan/freighter1)
 "bg" = (
@@ -45,6 +51,12 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
 /turf/open/floor/plasteel/airless,
 /area/shuttle/caravan/freighter1)
 "bI" = (
@@ -105,6 +117,9 @@
 	},
 /area/shuttle/caravan/freighter1)
 "ec" = (
+/obj/structure/cable/yellow{
+	icon_state = "2-8"
+	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /turf/open/floor/plating/airless,
@@ -115,6 +130,10 @@
 	name = "Cargo Blast Door"
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/obj/machinery/door/firedoor/border_only,
 /turf/open/floor/plating/airless,
 /area/shuttle/caravan/freighter1)
 "fk" = (
@@ -189,24 +208,35 @@
 /mob/living/simple_animal/hostile/syndicate/ranged/smg/space,
 /turf/open/floor/plasteel/airless,
 /area/shuttle/caravan/freighter1)
+"ig" = (
+/obj/effect/spawner/structure/window/shuttle,
+/obj/machinery/door/poddoor{
+	id = "caravantrade1_bridge"
+	},
+/obj/machinery/door/firedoor/border_only,
+/turf/open/floor/plating,
+/area/shuttle/caravan/freighter1)
 "jg" = (
 /obj/machinery/door/airlock{
 	name = "Restroom"
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
 /turf/open/floor/plasteel/showroomfloor{
 	initial_gas_mix = "TEMP=2.7"
 	},
 /area/shuttle/caravan/freighter1)
 "lt" = (
-/obj/structure/closet/crate,
-/obj/item/stack/sheet/metal/twenty,
-/obj/item/stack/sheet/glass{
-	amount = 10
+/obj/structure/cable,
+/obj/machinery/power/port_gen/pacman{
+	anchored = 1
 	},
-/obj/item/stack/rods/ten,
-/obj/item/storage/box/lights/bulbs,
-/obj/effect/decal/cleanable/dirt,
+/obj/item/wrench,
 /obj/effect/turf_decal/stripes/line{
 	dir = 6
 	},
@@ -221,16 +251,17 @@
 	},
 /area/shuttle/caravan/freighter1)
 "lC" = (
-/obj/machinery/power/port_gen/pacman{
-	anchored = 1
+/obj/machinery/power/smes{
+	charge = 0
 	},
-/obj/item/wrench,
-/obj/machinery/power/terminal,
+/obj/structure/cable/yellow{
+	icon_state = "0-4"
+	},
 /obj/effect/turf_decal/stripes/line{
 	dir = 5
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/cable,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating/airless,
 /area/shuttle/caravan/freighter1)
 "lM" = (
@@ -379,6 +410,10 @@
 /obj/machinery/door/airlock/external{
 	id_tag = "caravantrade1_bolt"
 	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/obj/machinery/door/firedoor/border_only,
 /turf/open/floor/plating,
 /area/shuttle/caravan/freighter1)
 "ss" = (
@@ -397,6 +432,19 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/airless/dark,
+/area/shuttle/caravan/freighter1)
+"tj" = (
+/obj/effect/spawner/structure/window/shuttle,
+/obj/machinery/door/poddoor{
+	id = "caravantrade1_bridge"
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/turf/open/floor/plating,
 /area/shuttle/caravan/freighter1)
 "ur" = (
 /obj/effect/decal/cleanable/dirt,
@@ -437,6 +485,7 @@
 /turf/open/floor/plasteel/dark/airless,
 /area/shuttle/caravan/freighter1)
 "uS" = (
+/mob/living/simple_animal/hostile/syndicate/ranged/smg/space,
 /obj/effect/turf_decal/tile/neutral{
 	dir = 1
 	},
@@ -447,12 +496,25 @@
 /obj/effect/turf_decal/tile/neutral{
 	dir = 8
 	},
-/mob/living/simple_animal/hostile/syndicate/ranged/smg/space,
 /turf/open/floor/plasteel/dark/airless,
 /area/shuttle/caravan/freighter1)
 "vt" = (
 /obj/structure/shuttle/engine/propulsion/burst{
 	dir = 8
+	},
+/turf/open/floor/plating/airless,
+/area/shuttle/caravan/freighter1)
+"vO" = (
+/obj/machinery/door/poddoor{
+	id = "caravantrade1_cargo";
+	name = "Cargo Blast Door"
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
 	},
 /turf/open/floor/plating/airless,
 /area/shuttle/caravan/freighter1)
@@ -527,6 +589,12 @@
 /obj/machinery/door/airlock/command{
 	name = "Bridge"
 	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
 /turf/open/floor/plasteel/airless/dark,
 /area/shuttle/caravan/freighter1)
 "AX" = (
@@ -576,6 +644,12 @@
 	},
 /obj/machinery/door/airlock/engineering{
 	name = "Engine Room"
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
 	},
 /turf/open/floor/plating/airless,
 /area/shuttle/caravan/freighter1)
@@ -642,10 +716,10 @@
 /area/shuttle/caravan/freighter1)
 "EI" = (
 /obj/effect/decal/cleanable/blood,
+/mob/living/simple_animal/hostile/syndicate/melee/sword/space/stormtrooper,
 /obj/effect/turf_decal/tile/blue{
 	dir = 4
 	},
-/mob/living/simple_animal/hostile/syndicate/melee/sword/space/stormtrooper,
 /turf/open/floor/plasteel/dark{
 	initial_gas_mix = "TEMP=2.7"
 	},
@@ -662,10 +736,10 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on{
 	dir = 8
 	},
+/mob/living/simple_animal/hostile/syndicate/ranged/smg/space,
 /obj/effect/turf_decal/tile/yellow{
 	dir = 4
 	},
-/mob/living/simple_animal/hostile/syndicate/ranged/smg/space,
 /turf/open/floor/plasteel{
 	initial_gas_mix = "TEMP=2.7"
 	},
@@ -712,6 +786,7 @@
 /area/shuttle/caravan/freighter1)
 "GJ" = (
 /obj/machinery/firealarm{
+	dir = 2;
 	pixel_y = 24
 	},
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden{
@@ -758,6 +833,16 @@
 "Jv" = (
 /turf/template_noop,
 /area/template_noop)
+"Kc" = (
+/obj/effect/spawner/structure/window/shuttle,
+/obj/machinery/door/poddoor{
+	id = "caravantrade1_bridge"
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/shuttle/caravan/freighter1)
 "Ko" = (
 /obj/structure/rack,
 /obj/item/tank/internals/oxygen,
@@ -782,6 +867,16 @@
 	},
 /turf/open/floor/plating/airless,
 /area/shuttle/caravan/freighter1)
+"Lr" = (
+/obj/effect/spawner/structure/window/shuttle,
+/obj/machinery/door/poddoor{
+	id = "caravantrade1_bridge"
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/turf/open/floor/plating,
+/area/shuttle/caravan/freighter1)
 "LK" = (
 /obj/machinery/suit_storage_unit/standard_unit,
 /obj/effect/decal/cleanable/dirt,
@@ -803,6 +898,10 @@
 	name = "broken airlock"
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/obj/machinery/door/firedoor/border_only,
 /turf/open/floor/plasteel/airless,
 /area/shuttle/caravan/freighter1)
 "Mb" = (
@@ -836,6 +935,10 @@
 	name = "Cargo Blast Door"
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/obj/machinery/door/firedoor/border_only,
 /turf/open/floor/plating/airless{
 	icon_state = "platingdmg3"
 	},
@@ -853,6 +956,9 @@
 	},
 /obj/item/folder/yellow{
 	pixel_x = -6
+	},
+/obj/item/gps{
+	gpstag = "Distress Signal"
 	},
 /obj/effect/turf_decal/tile/blue,
 /obj/effect/turf_decal/tile/blue{
@@ -944,24 +1050,37 @@
 /obj/machinery/light/small{
 	dir = 4
 	},
+/obj/structure/cable/yellow,
 /obj/machinery/power/apc{
 	dir = 4;
 	name = "Small Freighter APC";
 	pixel_x = 24;
+	req_access = null;
 	start_charge = 0
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
-/obj/structure/cable,
 /turf/open/floor/plating/airless,
+/area/shuttle/caravan/freighter1)
+"QU" = (
+/obj/effect/spawner/structure/window/shuttle,
+/obj/machinery/door/poddoor{
+	id = "caravantrade1_bridge"
+	},
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/turf/open/floor/plating,
 /area/shuttle/caravan/freighter1)
 "QY" = (
 /obj/structure/table,
 /obj/machinery/cell_charger,
 /obj/machinery/firealarm{
+	dir = 2;
 	pixel_y = 24
 	},
-/obj/item/stack/cable_coil{
+/obj/item/stack/cable_coil/yellow{
 	pixel_x = 12;
 	pixel_y = 4
 	},
@@ -983,6 +1102,10 @@
 /obj/effect/turf_decal/tile/neutral{
 	dir = 8
 	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/obj/machinery/door/firedoor/border_only,
 /turf/open/floor/plasteel/dark/airless,
 /area/shuttle/caravan/freighter1)
 "RI" = (
@@ -1034,7 +1157,9 @@
 	},
 /area/shuttle/caravan/freighter1)
 "VD" = (
-/obj/effect/mapping_helpers/airlock/cyclelink_helper,
+/obj/effect/mapping_helpers/airlock/cyclelink_helper{
+	dir = 2
+	},
 /obj/effect/mapping_helpers/airlock/locked,
 /obj/machinery/door/airlock/external{
 	id_tag = "caravantrade1_bolt"
@@ -1051,6 +1176,10 @@
 	preferred_direction = 4;
 	width = 21
 	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/obj/machinery/door/firedoor/border_only,
 /turf/open/floor/plating,
 /area/shuttle/caravan/freighter1)
 "VN" = (
@@ -1085,7 +1214,22 @@
 /obj/effect/turf_decal/tile/neutral{
 	dir = 8
 	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/obj/machinery/door/firedoor/border_only,
 /turf/open/floor/plasteel/dark/airless,
+/area/shuttle/caravan/freighter1)
+"Wr" = (
+/obj/effect/spawner/structure/window/shuttle,
+/obj/machinery/door/poddoor{
+	id = "caravantrade1_bridge"
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/obj/machinery/door/firedoor/border_only,
+/turf/open/floor/plating,
 /area/shuttle/caravan/freighter1)
 "WU" = (
 /obj/machinery/airalarm/all_access{
@@ -1111,11 +1255,22 @@
 	},
 /area/shuttle/caravan/freighter1)
 "WZ" = (
-/obj/machinery/power/smes,
+/obj/machinery/power/terminal{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/structure/closet/crate,
+/obj/item/stack/sheet/metal/twenty,
+/obj/item/stack/sheet/glass{
+	amount = 10
+	},
+/obj/item/stack/rods/ten,
+/obj/item/storage/box/lights/bulbs,
 /obj/effect/turf_decal/stripes/line{
 	dir = 4
 	},
-/obj/structure/cable,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating/airless,
 /area/shuttle/caravan/freighter1)
@@ -1124,6 +1279,10 @@
 	id = "caravantrade1_cargo";
 	name = "Cargo Blast Door"
 	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/obj/machinery/door/firedoor/border_only,
 /turf/open/floor/plating/airless,
 /area/shuttle/caravan/freighter1)
 "Xt" = (
@@ -1146,6 +1305,19 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark/airless,
+/area/shuttle/caravan/freighter1)
+"YR" = (
+/obj/effect/spawner/structure/window/shuttle,
+/obj/machinery/door/poddoor{
+	id = "caravantrade1_bridge"
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/turf/open/floor/plating,
 /area/shuttle/caravan/freighter1)
 "Zk" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on{
@@ -1256,7 +1428,7 @@ EZ
 eP
 "}
 (7,1,1) = {"
-LM
+Wr
 Mb
 El
 El
@@ -1305,10 +1477,10 @@ VN
 lx
 TP
 WX
-Xh
+vO
 "}
 (11,1,1) = {"
-LM
+Wr
 pR
 El
 jg
@@ -1321,7 +1493,7 @@ Td
 ur
 "}
 (12,1,1) = {"
-LM
+Wr
 Dt
 WU
 Hv
@@ -1334,7 +1506,7 @@ fD
 Eo
 "}
 (13,1,1) = {"
-LM
+Wr
 gs
 cX
 EQ
@@ -1379,7 +1551,7 @@ si
 yC
 qp
 Ko
-LM
+Lr
 Jv
 Jv
 Jv
@@ -1413,12 +1585,12 @@ Jv
 "}
 (19,1,1) = {"
 Jv
-LM
+ig
 Od
 EI
 gw
 EW
-LM
+Lr
 Jv
 Jv
 Jv
@@ -1427,10 +1599,10 @@ Jv
 (20,1,1) = {"
 Jv
 LM
-LM
+QU
 mZ
 Ow
-LM
+tj
 LM
 Jv
 Jv
@@ -1440,10 +1612,10 @@ Jv
 (21,1,1) = {"
 Jv
 Jv
-LM
-LM
-LM
-LM
+Kc
+YR
+YR
+Kc
 Jv
 Jv
 Jv

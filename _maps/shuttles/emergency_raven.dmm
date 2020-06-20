@@ -1872,30 +1872,6 @@
 /obj/structure/sign/departments/engineering,
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/shuttle/escape)
-"dC" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/power/smes/engineering,
-/obj/effect/turf_decal/bot,
-/obj/structure/cable,
-/turf/open/floor/plating,
-/area/shuttle/escape)
-"dD" = (
-/obj/structure/cable,
-/turf/open/floor/plating,
-/area/shuttle/escape)
-"dE" = (
-/obj/item/radio/intercom{
-	name = "Station Intercom (General)";
-	pixel_y = 22
-	},
-/obj/structure/cable,
-/turf/open/floor/plating,
-/area/shuttle/escape)
-"dF" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/cable,
-/turf/open/floor/plating,
-/area/shuttle/escape)
 "dH" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/bot,
@@ -1925,23 +1901,8 @@
 	},
 /turf/open/floor/plating,
 /area/shuttle/escape)
-"dM" = (
-/obj/machinery/power/terminal{
-	dir = 1
-	},
-/obj/structure/cable,
-/turf/open/floor/plating,
-/area/shuttle/escape)
 "dN" = (
 /obj/item/cigbutt,
-/turf/open/floor/plating,
-/area/shuttle/escape)
-"dP" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/power/terminal{
-	dir = 1
-	},
-/obj/structure/cable,
 /turf/open/floor/plating,
 /area/shuttle/escape)
 "dQ" = (
@@ -2042,14 +2003,6 @@
 /obj/structure/cable,
 /turf/open/floor/plating,
 /area/shuttle/escape)
-"ed" = (
-/obj/effect/turf_decal/bot,
-/obj/machinery/computer/monitor{
-	dir = 1
-	},
-/obj/structure/cable,
-/turf/open/floor/plating,
-/area/shuttle/escape)
 "ee" = (
 /obj/structure/window/reinforced,
 /obj/effect/turf_decal/bot,
@@ -2144,6 +2097,79 @@
 	req_access_txt = "19"
 	},
 /turf/open/floor/plasteel/dark,
+/area/shuttle/escape)
+"jq" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plating,
+/area/shuttle/escape)
+"kP" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plating,
+/area/shuttle/escape)
+"uU" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plating,
+/area/shuttle/escape)
+"xJ" = (
+/obj/item/radio/intercom{
+	name = "Station Intercom (General)";
+	pixel_y = 22
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plating,
+/area/shuttle/escape)
+"xM" = (
+/obj/machinery/power/terminal{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/turf/open/floor/plating,
+/area/shuttle/escape)
+"Kc" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/power/smes/engineering,
+/obj/effect/turf_decal/bot,
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/turf/open/floor/plating,
+/area/shuttle/escape)
+"Lk" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/power/smes/engineering,
+/obj/effect/turf_decal/bot,
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/turf/open/floor/plating,
+/area/shuttle/escape)
+"Uf" = (
+/obj/effect/turf_decal/bot,
+/obj/machinery/computer/monitor{
+	dir = 1
+	},
+/turf/open/floor/plating,
+/area/shuttle/escape)
+"ZG" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/power/terminal{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/turf/open/floor/plating,
 /area/shuttle/escape)
 
 (1,1,1) = {"
@@ -2444,9 +2470,9 @@ db
 dj
 bP
 ax
-dC
-dM
-dD
+Kc
+xM
+uU
 ec
 ek
 el
@@ -2478,7 +2504,7 @@ dc
 dk
 bP
 ax
-dD
+kP
 dN
 dJ
 ax
@@ -2512,10 +2538,10 @@ bP
 bP
 ds
 ax
-dE
-dD
-dD
-ed
+xJ
+dJ
+dJ
+Uf
 ax
 ax
 aa
@@ -2546,7 +2572,7 @@ ar
 cX
 bP
 ax
-dF
+jq
 dJ
 dJ
 ax
@@ -2580,9 +2606,9 @@ dd
 dm
 bQ
 ax
-dC
-dP
-dD
+Lk
+ZG
+uU
 ec
 ek
 el

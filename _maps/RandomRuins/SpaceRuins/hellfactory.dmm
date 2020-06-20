@@ -223,12 +223,6 @@
 /obj/structure/table/reinforced,
 /turf/open/floor/plasteel/grimy,
 /area/ruin/space/has_grav/hellfactoryoffice)
-"aJ" = (
-/obj/structure/table/reinforced,
-/obj/item/trash/candle,
-/obj/structure/cable,
-/turf/open/floor/plasteel/grimy,
-/area/ruin/space/has_grav/hellfactoryoffice)
 "aK" = (
 /obj/structure/table/reinforced,
 /obj/item/rsf,
@@ -316,15 +310,6 @@
 "aW" = (
 /turf/closed/wall/r_wall/rust,
 /area/ruin/space/has_grav/hellfactory)
-"aX" = (
-/obj/item/ammo_casing/spent{
-	pixel_x = -10;
-	pixel_y = -4
-	},
-/obj/item/ammo_casing/spent,
-/obj/structure/cable,
-/turf/open/floor/plasteel/grimy,
-/area/ruin/space/has_grav/hellfactoryoffice)
 "aY" = (
 /obj/structure/extinguisher_cabinet,
 /turf/closed/wall,
@@ -435,11 +420,6 @@
 "bq" = (
 /obj/structure/extinguisher_cabinet,
 /turf/closed/wall/r_wall/rust,
-/area/ruin/space/has_grav/hellfactory)
-"br" = (
-/obj/machinery/door/keycard/stockroom,
-/obj/structure/cable,
-/turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/hellfactory)
 "bs" = (
 /obj/machinery/conveyor/auto,
@@ -755,13 +735,6 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/hellfactory)
-"cm" = (
-/obj/structure/cable,
-/obj/machinery/power/apc/highcap/ten_k{
-	dir = 1
-	},
-/turf/open/floor/plating,
-/area/ruin/space/has_grav/hellfactory)
 "cn" = (
 /obj/machinery/plumbing/output{
 	dir = 8
@@ -777,10 +750,6 @@
 "cp" = (
 /obj/effect/turf_decal/box/white/corners,
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plating,
-/area/ruin/space/has_grav/hellfactory)
-"cq" = (
-/obj/structure/cable,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/hellfactory)
 "cr" = (
@@ -958,26 +927,33 @@
 /obj/structure/window,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/hellfactory)
-"fj" = (
-/obj/structure/cable,
-/turf/closed/indestructible{
-	icon = 'icons/turf/walls/reinforced_wall.dmi';
-	icon_state = "r_wall"
-	},
-/area/ruin/space/has_grav/hellfactoryoffice)
 "hv" = (
 /obj/effect/decal/cleanable/blood/old,
 /turf/open/floor/plastic,
 /area/ruin/space/has_grav/hellfactory)
-"lv" = (
-/obj/structure/cable,
-/obj/structure/cable,
-/turf/closed/wall/r_wall,
+"kf" = (
+/obj/machinery/power/apc/highcap/ten_k{
+	dir = 1;
+	pixel_y = 24
+	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/turf/open/floor/plating,
 /area/ruin/space/has_grav/hellfactory)
 "lR" = (
 /obj/machinery/light/floor,
 /obj/effect/turf_decal/bot_white/right,
 /turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/hellfactory)
+"ng" = (
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/turf/closed/wall/r_wall/rust,
 /area/ruin/space/has_grav/hellfactory)
 "nT" = (
 /obj/structure/rack,
@@ -993,6 +969,12 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/checker,
+/area/ruin/space/has_grav/hellfactory)
+"pb" = (
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/turf/closed/wall/r_wall,
 /area/ruin/space/has_grav/hellfactory)
 "qB" = (
 /obj/item/pressure_plate/hologrid{
@@ -1013,6 +995,12 @@
 "tt" = (
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/hellfactory)
+"tE" = (
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/turf/closed/wall/r_wall,
+/area/ruin/space/has_grav/hellfactory)
 "tN" = (
 /obj/machinery/light/small,
 /turf/open/floor/plasteel/grimy,
@@ -1023,12 +1011,14 @@
 /obj/effect/turf_decal/bot_white/right,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/hellfactory)
-"wv" = (
-/obj/machinery/power/apc/highcap/ten_k{
-	dir = 1
+"xJ" = (
+/obj/structure/cable{
+	icon_state = "1-2"
 	},
-/obj/structure/cable,
-/turf/open/floor/plasteel/grimy,
+/turf/closed/indestructible{
+	icon = 'icons/turf/walls/reinforced_wall.dmi';
+	icon_state = "r_wall"
+	},
 /area/ruin/space/has_grav/hellfactoryoffice)
 "xK" = (
 /obj/structure/bed,
@@ -1041,18 +1031,38 @@
 /obj/item/stack/sheet/mineral/plasma,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/hellfactory)
-"zI" = (
-/obj/structure/cable,
+"yY" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/closed/wall/r_wall/rust,
 /area/ruin/space/has_grav/hellfactory)
+"AY" = (
+/obj/machinery/power/apc/highcap/ten_k{
+	dir = 1;
+	pixel_y = 24
+	},
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/turf/open/floor/plasteel/grimy,
+/area/ruin/space/has_grav/hellfactoryoffice)
 "BC" = (
 /obj/machinery/light/floor,
 /obj/effect/turf_decal/bot_white/left,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/hellfactory)
-"EP" = (
-/obj/structure/cable,
-/turf/closed/wall/r_wall,
+"Ct" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/hellfactory)
+"Do" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/closed/wall/r_wall/rust,
 /area/ruin/space/has_grav/hellfactory)
 "Fs" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -1060,26 +1070,52 @@
 /obj/machinery/microwave,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/hellfactory)
-"Gs" = (
-/obj/structure/cable,
-/obj/structure/cable,
-/turf/closed/wall/r_wall/rust,
-/area/ruin/space/has_grav/hellfactory)
 "GE" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/checker,
 /area/ruin/space/has_grav/hellfactory)
+"Jv" = (
+/obj/structure/table/reinforced,
+/obj/item/trash/candle,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plasteel/grimy,
+/area/ruin/space/has_grav/hellfactoryoffice)
 "Ld" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/hellfactory)
+"Mi" = (
+/obj/item/ammo_casing/spent{
+	pixel_x = -10;
+	pixel_y = -4
+	},
+/obj/item/ammo_casing/spent,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plasteel/grimy,
+/area/ruin/space/has_grav/hellfactoryoffice)
 "Mv" = (
 /obj/structure/sign/poster/random,
 /turf/closed/wall,
 /area/ruin/space/has_grav/hellfactory)
+"Mx" = (
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/turf/closed/wall/r_wall/rust,
+/area/ruin/space/has_grav/hellfactory)
 "MR" = (
 /obj/item/pressure_plate/hologrid,
 /turf/open/floor/plating,
+/area/ruin/space/has_grav/hellfactory)
+"NY" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/closed/wall/r_wall,
 /area/ruin/space/has_grav/hellfactory)
 "OJ" = (
 /obj/machinery/atmospherics/pipe/heat_exchanging/simple,
@@ -1102,10 +1138,13 @@
 /obj/effect/decal/cleanable/oil/streak,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/hellfactory)
-"UN" = (
-/obj/structure/cable,
-/turf/open/floor/plasteel/grimy,
-/area/ruin/space/has_grav/hellfactoryoffice)
+"VZ" = (
+/obj/machinery/door/keycard/stockroom,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/hellfactory)
 "Wh" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
@@ -1114,6 +1153,12 @@
 /obj/structure/sign/warning/vacuum,
 /turf/closed/wall,
 /area/ruin/space/has_grav/hellfactory)
+"XS" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plasteel/grimy,
+/area/ruin/space/has_grav/hellfactoryoffice)
 
 (1,1,1) = {"
 aa
@@ -1470,14 +1515,14 @@ aa
 aa
 aa
 ah
-wv
-UN
-aJ
-aX
-fj
-EP
-zI
-lv
+AY
+XS
+Jv
+Mi
+xJ
+NY
+yY
+pb
 by
 by
 bK
@@ -1504,7 +1549,7 @@ tN
 ah
 aA
 bn
-zI
+Do
 by
 Wh
 Fs
@@ -1513,8 +1558,8 @@ cb
 bQ
 ci
 aL
-cm
-cq
+kf
+Ct
 cK
 aW
 cS
@@ -1531,7 +1576,7 @@ ao
 ah
 aB
 bL
-br
+VZ
 by
 by
 nT
@@ -1539,8 +1584,8 @@ aL
 cc
 aL
 xK
-Gs
-EP
+Mx
+tE
 aW
 ac
 aW
@@ -1558,15 +1603,15 @@ aP
 ah
 bi
 aB
-Gs
-EP
-EP
-zI
-EP
-zI
-EP
-zI
-lv
+ng
+NY
+NY
+yY
+NY
+yY
+NY
+yY
+tE
 yM
 cA
 by

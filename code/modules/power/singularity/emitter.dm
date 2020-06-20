@@ -120,8 +120,10 @@
 		return FALSE
 	return TRUE
 
+/* Wasp Edit - Smartwire Revert
 /obj/machinery/power/emitter/should_have_node()
 	return welded
+*/
 
 /obj/machinery/power/emitter/Destroy()
 	if(SSticker.IsRoundInProgress())
@@ -273,7 +275,7 @@
 			welded = FALSE
 			to_chat(user, "<span class='notice'>You cut [src] free from the floor.</span>")
 			disconnect_from_network()
-			update_cable_icons_on_turf(get_turf(src))
+//			update_cable_icons_on_turf(get_turf(src)) - Wasp Edit - Smartwire Revert
 
 	else if(anchored)
 		if(!I.tool_start_check(user, amount=0))
@@ -285,7 +287,7 @@
 			welded = TRUE
 			to_chat(user, "<span class='notice'>You weld [src] to the floor.</span>")
 			connect_to_network()
-			update_cable_icons_on_turf(get_turf(src))
+//			update_cable_icons_on_turf(get_turf(src)) - Wasp Edit - Smartwire Revert
 
 	else
 		to_chat(user, "<span class='warning'>[src] needs to be wrenched to the floor!</span>")

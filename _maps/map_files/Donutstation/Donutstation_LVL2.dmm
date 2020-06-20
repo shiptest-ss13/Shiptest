@@ -6752,40 +6752,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/engine/gravity_generator)
-"oF" = (
-/obj/effect/turf_decal/trimline/yellow/filled/line{
-	dir = 4
-	},
-/obj/structure/cable/layer1,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden{
-	dir = 4
-	},
-/turf/open/floor/plasteel,
-/area/engine/gravity_generator)
-"oG" = (
-/obj/machinery/door/airlock/engineering/glass{
-	name = "Power Strut Access";
-	req_access_txt = "11"
-	},
-/obj/structure/cable/layer1,
-/obj/machinery/atmospherics/pipe/layer_manifold{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden{
-	dir = 10
-	},
-/turf/open/floor/plating,
-/area/engine/gravity_generator)
-"oH" = (
-/obj/structure/cable/layer1,
-/obj/machinery/atmospherics/pipe/simple/general/hidden{
-	dir = 9
-	},
-/turf/open/floor/plating,
-/area/engine/gravity_generator)
 "oI" = (
 /turf/closed/wall/r_wall,
 /area/engine/gravity_generator)
@@ -7055,13 +7021,6 @@
 /obj/structure/cable,
 /turf/open/floor/plasteel,
 /area/engine/gravity_generator)
-"pt" = (
-/obj/effect/turf_decal/trimline/yellow/filled/line{
-	dir = 4
-	},
-/obj/structure/cable/layer1,
-/turf/open/floor/plasteel,
-/area/engine/gravity_generator)
 "pu" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 10
@@ -7078,16 +7037,6 @@
 	dir = 6
 	},
 /turf/open/floor/plasteel,
-/area/engine/gravity_generator)
-"pw" = (
-/obj/structure/ladder,
-/obj/structure/cable/layer1,
-/turf/open/floor/plating,
-/area/engine/gravity_generator)
-"px" = (
-/obj/machinery/power/deck_relay,
-/obj/structure/cable/layer1,
-/turf/open/floor/plating,
 /area/engine/gravity_generator)
 "py" = (
 /obj/effect/turf_decal/stripes/line{
@@ -7135,16 +7084,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/engine/gravity_generator)
-"pD" = (
-/obj/effect/turf_decal/trimline/yellow/filled/line{
-	dir = 4
-	},
-/obj/machinery/light{
-	dir = 4
-	},
-/obj/structure/cable/layer1,
-/turf/open/floor/plasteel,
-/area/engine/gravity_generator)
 "pE" = (
 /obj/effect/turf_decal/trimline/yellow/filled/line{
 	dir = 10
@@ -7167,27 +7106,6 @@
 /obj/structure/cable,
 /turf/open/floor/plasteel,
 /area/engine/gravity_generator)
-"pH" = (
-/obj/effect/turf_decal/stripes/line{
-	dir = 1
-	},
-/obj/machinery/power/terminal,
-/obj/structure/cable/layer1,
-/obj/machinery/atmospherics/pipe/manifold/supply/hidden,
-/turf/open/floor/plasteel,
-/area/engine/gravity_generator)
-"pI" = (
-/obj/effect/turf_decal/trimline/yellow/filled/corner,
-/obj/structure/cable/layer1,
-/turf/open/floor/plasteel,
-/area/engine/gravity_generator)
-"pJ" = (
-/obj/effect/turf_decal/trimline/yellow/filled/line{
-	dir = 6
-	},
-/obj/structure/cable/layer1,
-/turf/open/floor/plasteel,
-/area/engine/gravity_generator)
 "pK" = (
 /obj/effect/turf_decal/trimline/yellow/filled/line,
 /obj/structure/cable,
@@ -7207,39 +7125,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/hydroponics/upper)
-"pN" = (
-/obj/effect/turf_decal/stripes/line{
-	dir = 1
-	},
-/obj/structure/cable/layer1,
-/obj/structure/sign/warning/radiation/rad_area{
-	pixel_y = 32
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden{
-	dir = 4
-	},
-/turf/open/floor/plasteel,
-/area/engine/gravity_generator)
-"pO" = (
-/obj/effect/turf_decal/stripes/line{
-	dir = 1
-	},
-/obj/structure/cable/layer1,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden{
-	dir = 4
-	},
-/turf/open/floor/plasteel,
-/area/engine/gravity_generator)
-"pP" = (
-/obj/effect/turf_decal/stripes/corner{
-	dir = 1
-	},
-/obj/structure/cable/layer1,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden{
-	dir = 9
-	},
-/turf/open/floor/plasteel,
-/area/engine/gravity_generator)
 "pQ" = (
 /obj/effect/turf_decal/trimline/yellow/filled/line,
 /obj/machinery/light,
@@ -7329,14 +7214,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/engine/gravity_generator)
-"qb" = (
-/obj/effect/turf_decal/trimline/yellow/filled/corner,
-/obj/structure/cable/layer1,
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer3{
-	dir = 1
-	},
-/turf/open/floor/plasteel,
-/area/engine/gravity_generator)
 "qc" = (
 /obj/effect/turf_decal/trimline/white/filled/line{
 	dir = 4
@@ -7355,18 +7232,6 @@
 	},
 /obj/machinery/camera{
 	c_tag = "Engineering - Gravity Generator Southwest";
-	dir = 1;
-	network = list("ss13","Engineering")
-	},
-/turf/open/floor/plasteel,
-/area/engine/gravity_generator)
-"qe" = (
-/obj/effect/turf_decal/trimline/yellow/filled/line{
-	dir = 6
-	},
-/obj/structure/cable/layer1,
-/obj/machinery/camera{
-	c_tag = "Engineering - Gravity Generator Southeast";
 	dir = 1;
 	network = list("ss13","Engineering")
 	},
@@ -8757,17 +8622,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/maintenance/external/aft)
-"sL" = (
-/obj/structure/rack,
-/obj/item/clothing/mask/gas,
-/obj/item/multitool,
-/obj/item/stack/cable_coil/five,
-/obj/machinery/camera{
-	c_tag = "External - Port Bow Solars Exterior Access";
-	dir = 1
-	},
-/turf/open/floor/plating,
-/area/maintenance/solars/port/fore)
 "sM" = (
 /obj/machinery/atmospherics/pipe/simple/multiz,
 /obj/structure/cable,
@@ -13929,13 +13783,6 @@
 	},
 /turf/open/floor/engine/hull,
 /area/space/nearstation)
-"CA" = (
-/obj/structure/rack,
-/obj/effect/spawner/lootdrop/maintenance/two,
-/obj/item/stack/cable_coil/five,
-/obj/item/stack/cable_coil/five,
-/turf/open/floor/plating,
-/area/maintenance/central)
 "CB" = (
 /obj/structure/grille,
 /obj/effect/decal/cleanable/dirt,
@@ -20804,6 +20651,46 @@
 /obj/structure/lattice/catwalk,
 /turf/open/floor/plating/airless,
 /area/space/nearstation)
+"Rn" = (
+/obj/structure/ladder,
+/obj/structure/cable,
+/turf/open/floor/plating,
+/area/engine/gravity_generator)
+"Ro" = (
+/obj/effect/turf_decal/trimline/yellow/filled/line{
+	dir = 6
+	},
+/obj/machinery/camera{
+	c_tag = "Engineering - Gravity Generator Southeast";
+	dir = 1;
+	network = list("ss13","Engineering")
+	},
+/obj/structure/cable,
+/turf/open/floor/plasteel,
+/area/engine/gravity_generator)
+"RA" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 1
+	},
+/obj/structure/sign/warning/radiation/rad_area{
+	pixel_y = 32
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
+/obj/structure/cable,
+/turf/open/floor/plasteel,
+/area/engine/gravity_generator)
+"RX" = (
+/obj/effect/turf_decal/stripes/corner{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 9
+	},
+/obj/structure/cable,
+/turf/open/floor/plasteel,
+/area/engine/gravity_generator)
 "SP" = (
 /obj/effect/turf_decal/tile/neutral{
 	dir = 1
@@ -20813,22 +20700,80 @@
 	},
 /turf/open/floor/plasteel,
 /area/crew_quarters/dorms)
+"TW" = (
+/obj/structure/rack,
+/obj/effect/spawner/lootdrop/maintenance/two,
+/obj/item/stack/cable_coil/random/five,
+/obj/item/stack/cable_coil/random/five,
+/turf/open/floor/plating,
+/area/maintenance/central)
 "Ug" = (
 /obj/machinery/door/firedoor,
 /obj/structure/lattice/catwalk,
 /turf/open/openspace/airless,
 /area/hallway/primary/upper)
+"Ur" = (
+/obj/effect/turf_decal/trimline/yellow/filled/line{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
+/obj/structure/cable,
+/turf/open/floor/plasteel,
+/area/engine/gravity_generator)
 "UI" = (
 /obj/machinery/atmospherics/pipe/simple/multiz,
 /obj/structure/cable,
 /turf/open/floor/plasteel/dark,
 /area/ai_monitored/turret_protected/ai)
+"UT" = (
+/obj/effect/turf_decal/trimline/yellow/filled/line{
+	dir = 4
+	},
+/obj/structure/cable,
+/turf/open/floor/plasteel,
+/area/engine/gravity_generator)
 "Vy" = (
 /obj/machinery/light{
 	dir = 8
 	},
 /turf/open/openspace/airless,
 /area/hallway/primary/upper)
+"VF" = (
+/obj/effect/turf_decal/trimline/yellow/filled/line{
+	dir = 4
+	},
+/obj/machinery/light{
+	dir = 4
+	},
+/obj/structure/cable,
+/turf/open/floor/plasteel,
+/area/engine/gravity_generator)
+"VK" = (
+/obj/machinery/power/deck_relay,
+/obj/structure/cable,
+/turf/open/floor/plating,
+/area/engine/gravity_generator)
+"Wz" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 1
+	},
+/obj/machinery/power/terminal,
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden,
+/obj/structure/cable,
+/turf/open/floor/plasteel,
+/area/engine/gravity_generator)
+"WD" = (
+/obj/machinery/atmospherics/pipe/simple/general/hidden{
+	dir = 9
+	},
+/obj/structure/cable,
+/turf/open/floor/plating,
+/area/engine/gravity_generator)
 "Ya" = (
 /obj/effect/turf_decal/bot,
 /obj/effect/turf_decal/tile/neutral{
@@ -20840,9 +20785,54 @@
 /obj/structure/closet/secure_closet/exile,
 /turf/open/floor/plasteel,
 /area/gateway)
+"Yi" = (
+/obj/effect/turf_decal/trimline/yellow/filled/corner,
+/obj/structure/cable,
+/turf/open/floor/plasteel,
+/area/engine/gravity_generator)
+"Yx" = (
+/obj/effect/turf_decal/trimline/yellow/filled/line{
+	dir = 6
+	},
+/obj/structure/cable,
+/turf/open/floor/plasteel,
+/area/engine/gravity_generator)
+"YB" = (
+/obj/machinery/door/airlock/engineering/glass{
+	name = "Power Strut Access";
+	req_access_txt = "11"
+	},
+/obj/machinery/atmospherics/pipe/layer_manifold{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 10
+	},
+/obj/structure/cable,
+/turf/open/floor/plating,
+/area/engine/gravity_generator)
 "YH" = (
 /turf/open/openspace/airless,
 /area/hallway/primary/upper)
+"Zy" = (
+/obj/effect/turf_decal/trimline/yellow/filled/corner,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer3{
+	dir = 1
+	},
+/obj/structure/cable,
+/turf/open/floor/plasteel,
+/area/engine/gravity_generator)
+"ZN" = (
+/obj/structure/rack,
+/obj/item/clothing/mask/gas,
+/obj/item/multitool,
+/obj/machinery/camera{
+	c_tag = "External - Port Bow Solars Exterior Access";
+	dir = 1
+	},
+/obj/item/stack/cable_coil/random/five,
+/turf/open/floor/plating,
+/area/maintenance/solars/port/fore)
 "ZS" = (
 /obj/machinery/recharge_station,
 /turf/open/floor/plasteel/dark,
@@ -41506,7 +41496,7 @@ CL
 CL
 BQ
 CT
-sL
+ZN
 CQ
 bd
 bd
@@ -48736,7 +48726,7 @@ GR
 eu
 BY
 es
-CA
+TW
 CW
 CB
 CN
@@ -57732,7 +57722,7 @@ pk
 pc
 pu
 pz
-pH
+Wz
 pS
 oI
 lK
@@ -57989,7 +57979,7 @@ pl
 pc
 pc
 oX
-pN
+RA
 pR
 oI
 lK
@@ -58246,7 +58236,7 @@ pc
 pc
 oW
 oW
-pO
+pG
 pR
 oI
 lL
@@ -58503,7 +58493,7 @@ pc
 oW
 oW
 pv
-pP
+RX
 pQ
 oI
 be
@@ -58760,7 +58750,7 @@ oX
 oW
 pi
 pB
-qb
+Zy
 pT
 oI
 be
@@ -59016,8 +59006,8 @@ oE
 oB
 oB
 po
-pI
-qe
+Yi
+Ro
 oI
 oI
 be
@@ -59269,11 +59259,11 @@ oN
 pf
 pj
 rw
-oF
-pt
-pt
-pD
-pJ
+Ur
+UT
+UT
+VF
+Yx
 oI
 oI
 be
@@ -59526,7 +59516,7 @@ oI
 oI
 oI
 oI
-oG
+YB
 oK
 oM
 oI
@@ -59783,7 +59773,7 @@ lC
 lE
 oX
 oD
-oH
+WD
 oD
 oT
 lP
@@ -60040,7 +60030,7 @@ ac
 lz
 oX
 pp
-pw
+Rn
 pZ
 oX
 lK
@@ -60297,7 +60287,7 @@ ac
 lz
 oX
 pp
-px
+VK
 pp
 oX
 lK

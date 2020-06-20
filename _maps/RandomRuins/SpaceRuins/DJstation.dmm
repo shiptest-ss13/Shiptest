@@ -53,34 +53,6 @@
 /obj/item/extinguisher,
 /turf/open/floor/plating,
 /area/ruin/space/djstation)
-"an" = (
-/obj/machinery/power/smes/magical{
-	desc = "A high-capacity superconducting magnetic energy storage (SMES) unit.";
-	name = "power storage unit"
-	},
-/obj/structure/cable,
-/turf/open/floor/plating,
-/area/ruin/space/djstation)
-"ao" = (
-/obj/structure/cable,
-/turf/open/floor/plating,
-/area/ruin/space/djstation)
-"ap" = (
-/obj/machinery/power/apc{
-	name = "Worn-out APC";
-	pixel_y = -23
-	},
-/obj/structure/cable,
-/turf/open/floor/plating,
-/area/ruin/space/djstation)
-"aq" = (
-/obj/item/storage/box/lights/mixed,
-/obj/structure/sign/warning/electricshock{
-	pixel_y = -32
-	},
-/obj/structure/cable,
-/turf/open/floor/plating,
-/area/ruin/space/djstation)
 "as" = (
 /obj/structure/rack,
 /obj/item/clothing/suit/space/syndicate/orange,
@@ -356,12 +328,54 @@
 /obj/structure/disposaloutlet,
 /turf/open/floor/plating/airless,
 /area/space/nearstation)
+"hc" = (
+/obj/machinery/power/smes/magical{
+	desc = "A high-capacity superconducting magnetic energy storage (SMES) unit.";
+	name = "power storage unit"
+	},
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/turf/open/floor/plating,
+/area/ruin/space/djstation)
+"nM" = (
+/obj/item/storage/box/lights/mixed,
+/obj/structure/sign/warning/electricshock{
+	pixel_y = -32
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plating,
+/area/ruin/space/djstation)
+"uK" = (
+/obj/machinery/power/apc{
+	name = "Worn-out APC";
+	pixel_y = -24
+	},
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/turf/open/floor/plating,
+/area/ruin/space/djstation)
+"zO" = (
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/turf/open/floor/plating,
+/area/ruin/space/djstation)
 "Co" = (
 /obj/machinery/door/airlock/external{
 	name = "Ruskie DJ Station"
 	},
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
 	dir = 1
+	},
+/turf/open/floor/plating,
+/area/ruin/space/djstation)
+"Gg" = (
+/obj/structure/cable{
+	icon_state = "1-2"
 	},
 /turf/open/floor/plating,
 /area/ruin/space/djstation)
@@ -528,7 +542,7 @@ ah
 ah
 am
 ah
-ap
+uK
 af
 au
 aw
@@ -553,7 +567,7 @@ ah
 ah
 ah
 ah
-aq
+nM
 af
 av
 aw
@@ -576,9 +590,9 @@ af
 ai
 ah
 aj
-an
-ao
-ao
+hc
+Gg
+zO
 at
 aw
 aw

@@ -108,11 +108,11 @@
 	if(prob(20))
 		new /obj/item/storage/belt/utility(src)
 	if(prob(30))
-		new /obj/item/stack/cable_coil(src)
+		new /obj/item/stack/cable_coil/random(src) //Random from Wasp Smartwire Revert
 	if(prob(30))
-		new /obj/item/stack/cable_coil(src)
+		new /obj/item/stack/cable_coil/random(src) //Random from Wasp Smartwire Revert
 	if(prob(30))
-		new /obj/item/stack/cable_coil(src)
+		new /obj/item/stack/cable_coil/random(src) //Random from Wasp Smartwire Revert
 	if(prob(20))
 		new /obj/item/multitool(src)
 	if(prob(5))

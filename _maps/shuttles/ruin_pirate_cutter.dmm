@@ -117,7 +117,9 @@
 /area/shuttle/caravan/pirate)
 "hI" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
-/obj/structure/cable,
+/obj/structure/cable/yellow{
+	icon_state = "1-8"
+	},
 /turf/open/floor/plating,
 /area/shuttle/caravan/pirate)
 "hT" = (
@@ -718,7 +720,9 @@
 	dir = 8;
 	pixel_x = 24
 	},
-/obj/structure/cable,
+/obj/structure/cable/yellow{
+	icon_state = "0-2"
+	},
 /turf/open/floor/plating,
 /area/shuttle/caravan/pirate)
 "DY" = (
@@ -780,7 +784,9 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 4
 	},
-/obj/structure/cable,
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
 /turf/open/floor/plating,
 /area/shuttle/caravan/pirate)
 "Gh" = (
@@ -955,7 +961,9 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 5
 	},
-/obj/structure/cable,
+/obj/structure/cable/yellow{
+	icon_state = "0-4"
+	},
 /turf/open/floor/plating,
 /area/shuttle/caravan/pirate)
 "Sd" = (

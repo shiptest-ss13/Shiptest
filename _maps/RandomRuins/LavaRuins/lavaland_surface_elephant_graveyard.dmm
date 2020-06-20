@@ -50,7 +50,11 @@
 	},
 /area/ruin/unpowered/elephant_graveyard)
 "al" = (
-/obj/structure/cable,
+/obj/structure/table,
+/obj/item/clipboard,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plating/asteroid/basalt/wasteland,
 /area/ruin/unpowered/elephant_graveyard)
 "an" = (
@@ -70,45 +74,17 @@
 	},
 /turf/open/floor/plating/asteroid/basalt/wasteland,
 /area/ruin/unpowered/elephant_graveyard)
-"aq" = (
-/obj/structure/flora/rock,
-/obj/structure/cable,
-/obj/item/pickaxe{
-	layer = 2.5;
-	pixel_x = -8;
-	pixel_y = 5
-	},
-/turf/open/floor/plating/asteroid/basalt/wasteland,
-/area/ruin/unpowered/elephant_graveyard)
 "ar" = (
 /obj/structure/flora/rock,
-/turf/open/floor/plating/asteroid/basalt/wasteland,
-/area/ruin/unpowered/elephant_graveyard)
-"as" = (
-/obj/structure/table,
-/obj/structure/cable,
-/obj/item/t_scanner/adv_mining_scanner/lesser,
 /turf/open/floor/plating/asteroid/basalt/wasteland,
 /area/ruin/unpowered/elephant_graveyard)
 "at" = (
 /turf/closed/mineral/strong/wasteland,
 /area/lavaland/surface)
-"au" = (
-/obj/structure/table,
-/obj/structure/cable,
-/obj/item/paper/crumpled/muddy/fluff/elephant_graveyard/rnd_notes,
-/turf/open/floor/plating/asteroid/basalt/wasteland,
-/area/ruin/unpowered/elephant_graveyard)
 "av" = (
 /obj/structure/barricade/wooden/crude,
 /obj/structure/barricade/wooden,
 /obj/effect/decal/cleanable/blood/splatter,
-/turf/open/floor/plating/asteroid/basalt/wasteland,
-/area/ruin/unpowered/elephant_graveyard)
-"aw" = (
-/obj/structure/table,
-/obj/machinery/power/floodlight,
-/obj/structure/cable,
 /turf/open/floor/plating/asteroid/basalt/wasteland,
 /area/ruin/unpowered/elephant_graveyard)
 "ax" = (
@@ -139,22 +115,8 @@
 /obj/effect/decal/remains/human,
 /turf/open/floor/plating/asteroid/basalt/wasteland,
 /area/ruin/unpowered/elephant_graveyard)
-"aD" = (
-/obj/structure/table,
-/obj/structure/cable,
-/obj/item/clipboard,
-/turf/open/floor/plating/asteroid/basalt/wasteland,
-/area/ruin/unpowered/elephant_graveyard)
 "aE" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plating/asteroid/basalt/wasteland,
-/area/ruin/unpowered/elephant_graveyard)
-"aF" = (
-/obj/structure/table,
-/obj/structure/cable,
-/obj/item/reagent_containers/glass/bottle/plasma{
-	volume = 25
-	},
 /turf/open/floor/plating/asteroid/basalt/wasteland,
 /area/ruin/unpowered/elephant_graveyard)
 "aG" = (
@@ -170,12 +132,6 @@
 /obj/structure/grille,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
 /area/ruin/powered/graveyard_shuttle)
-"aJ" = (
-/obj/structure/table,
-/obj/structure/cable,
-/obj/item/paper_bin,
-/turf/open/floor/plating/asteroid/basalt/wasteland,
-/area/ruin/unpowered/elephant_graveyard)
 "aK" = (
 /obj/item/cigbutt,
 /turf/open/floor/plating/asteroid/basalt/wasteland,
@@ -201,11 +157,6 @@
 "aP" = (
 /obj/structure/bed,
 /obj/item/flashlight/lantern,
-/turf/open/floor/plating/asteroid/basalt/wasteland,
-/area/ruin/unpowered/elephant_graveyard)
-"aQ" = (
-/obj/structure/cable,
-/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating/asteroid/basalt/wasteland,
 /area/ruin/unpowered/elephant_graveyard)
 "aR" = (
@@ -359,11 +310,6 @@
 /obj/item/clothing/mask/bandana/green,
 /turf/open/floor/plating/asteroid/basalt/wasteland,
 /area/ruin/unpowered/elephant_graveyard)
-"bw" = (
-/obj/structure/cable,
-/obj/machinery/power/floodlight,
-/turf/open/floor/plating/asteroid/basalt/wasteland,
-/area/ruin/unpowered/elephant_graveyard)
 "bx" = (
 /obj/machinery/power/port_gen/pacman,
 /obj/structure/cable,
@@ -514,14 +460,6 @@
 /obj/item/storage/firstaid/o2,
 /turf/open/floor/plating/asteroid/basalt/wasteland,
 /area/ruin/unpowered/elephant_graveyard)
-"cb" = (
-/obj/structure/cable,
-/obj/item/reagent_containers/glass/bottle/frostoil{
-	desc = "A small bottle. Contains cold sauce. There's a label on here: APPLY ON SEVERE BURNS.";
-	volume = 10
-	},
-/turf/open/floor/plating/asteroid/basalt/wasteland,
-/area/ruin/unpowered/elephant_graveyard)
 "cc" = (
 /obj/effect/decal/remains/human,
 /obj/effect/decal/cleanable/blood/old,
@@ -588,13 +526,6 @@
 /obj/structure/stone_tile/cracked,
 /turf/open/floor/plating/asteroid/basalt/wasteland,
 /area/ruin/unpowered/elephant_graveyard)
-"cp" = (
-/obj/structure/rack,
-/obj/item/shovel,
-/obj/structure/cable,
-/obj/item/wrench,
-/turf/open/floor/plating/asteroid/basalt/wasteland,
-/area/ruin/unpowered/elephant_graveyard)
 "cq" = (
 /obj/structure/stone_tile/block/cracked{
 	dir = 4
@@ -644,10 +575,144 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating/asteroid/basalt/wasteland,
 /area/ruin/unpowered/elephant_graveyard)
-"cA" = (
-/obj/structure/cable,
+"fy" = (
+/obj/structure/table,
+/obj/item/paper_bin,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plating/asteroid/basalt/wasteland,
+/area/ruin/unpowered/elephant_graveyard)
+"lO" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plating/asteroid/basalt/wasteland,
+/area/ruin/unpowered/elephant_graveyard)
+"oR" = (
+/obj/item/reagent_containers/glass/bottle/frostoil{
+	desc = "A small bottle. Contains cold sauce. There's a label on here: APPLY ON SEVERE BURNS.";
+	volume = 10
+	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/turf/open/floor/plating/asteroid/basalt/wasteland,
+/area/ruin/unpowered/elephant_graveyard)
+"rb" = (
+/obj/structure/rack,
+/obj/item/shovel,
+/obj/item/wrench,
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/turf/open/floor/plating/asteroid/basalt/wasteland,
+/area/ruin/unpowered/elephant_graveyard)
+"vS" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plating/asteroid/basalt/wasteland,
+/area/ruin/unpowered/elephant_graveyard)
+"Bi" = (
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/turf/open/floor/plating/asteroid/basalt/wasteland,
+/area/ruin/unpowered/elephant_graveyard)
+"BF" = (
+/obj/structure/flora/rock,
+/obj/item/pickaxe{
+	layer = 2.5;
+	pixel_x = -8;
+	pixel_y = 5
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plating/asteroid/basalt/wasteland,
+/area/ruin/unpowered/elephant_graveyard)
+"Gb" = (
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/turf/open/floor/plating/asteroid/basalt/wasteland,
+/area/ruin/unpowered/elephant_graveyard)
+"GT" = (
 /obj/item/reagent_containers/food/snacks/deadmouse,
 /obj/item/assembly/mousetrap,
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/turf/open/floor/plating/asteroid/basalt/wasteland,
+/area/ruin/unpowered/elephant_graveyard)
+"GY" = (
+/obj/machinery/power/floodlight,
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/turf/open/floor/plating/asteroid/basalt/wasteland,
+/area/ruin/unpowered/elephant_graveyard)
+"Hq" = (
+/obj/structure/table,
+/obj/item/reagent_containers/glass/bottle/plasma{
+	volume = 25
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plating/asteroid/basalt/wasteland,
+/area/ruin/unpowered/elephant_graveyard)
+"MV" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/turf/open/floor/plating/asteroid/basalt/wasteland,
+/area/ruin/unpowered/elephant_graveyard)
+"NJ" = (
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plating/asteroid/basalt/wasteland,
+/area/ruin/unpowered/elephant_graveyard)
+"Qk" = (
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/turf/open/floor/plating/asteroid/basalt/wasteland,
+/area/ruin/unpowered/elephant_graveyard)
+"QG" = (
+/obj/structure/table,
+/obj/item/paper/crumpled/muddy/fluff/elephant_graveyard/rnd_notes,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plating/asteroid/basalt/wasteland,
+/area/ruin/unpowered/elephant_graveyard)
+"QZ" = (
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/turf/open/floor/plating/asteroid/basalt/wasteland,
+/area/ruin/unpowered/elephant_graveyard)
+"WG" = (
+/obj/structure/table,
+/obj/machinery/power/floodlight,
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/turf/open/floor/plating/asteroid/basalt/wasteland,
+/area/ruin/unpowered/elephant_graveyard)
+"XX" = (
+/obj/structure/table,
+/obj/item/t_scanner/adv_mining_scanner/lesser,
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
 /turf/open/floor/plating/asteroid/basalt/wasteland,
 /area/ruin/unpowered/elephant_graveyard)
 
@@ -882,10 +947,10 @@ ab
 bf
 bf
 bf
-cb
-al
-al
-al
+oR
+vS
+vS
+vS
 aL
 ae
 ae
@@ -918,8 +983,8 @@ ab
 ab
 bf
 bf
-al
-al
+Gb
+Bi
 ar
 ae
 ae
@@ -954,8 +1019,8 @@ ab
 bf
 bf
 bf
-al
-al
+Gb
+Bi
 ak
 ae
 aE
@@ -990,8 +1055,8 @@ ab
 bf
 bf
 bf
-al
-aQ
+Gb
+MV
 ae
 ae
 ae
@@ -1027,7 +1092,7 @@ bf
 bf
 bf
 bf
-al
+lO
 ae
 ae
 ao
@@ -1064,7 +1129,7 @@ bf
 bf
 bf
 bf
-al
+lO
 cl
 ae
 ae
@@ -1101,7 +1166,7 @@ ad
 ae
 bf
 cl
-al
+lO
 ae
 ae
 ae
@@ -1138,7 +1203,7 @@ aj
 ae
 bf
 ae
-al
+lO
 aE
 ae
 ap
@@ -1156,7 +1221,7 @@ bn
 ae
 ae
 aE
-bw
+GY
 bf
 cl
 bB
@@ -1175,7 +1240,7 @@ ai
 ag
 bf
 an
-al
+lO
 ae
 ae
 ae
@@ -1193,7 +1258,7 @@ ae
 ae
 ae
 ae
-al
+lO
 bf
 ac
 ae
@@ -1212,9 +1277,9 @@ ai
 bf
 bf
 bf
-al
-al
-al
+Qk
+vS
+QZ
 ae
 ae
 aE
@@ -1230,7 +1295,7 @@ ae
 ba
 ae
 ae
-al
+lO
 bf
 ac
 ac
@@ -1251,9 +1316,9 @@ bf
 bf
 aE
 bf
-al
-aq
-as
+Qk
+BF
+XX
 az
 aG
 aM
@@ -1267,7 +1332,7 @@ ae
 ae
 aE
 cl
-al
+lO
 bf
 bf
 ac
@@ -1290,7 +1355,7 @@ af
 bf
 ae
 ae
-au
+QG
 aB
 ae
 ae
@@ -1304,7 +1369,7 @@ ae
 ae
 ae
 ae
-al
+NJ
 bx
 bf
 ac
@@ -1327,21 +1392,21 @@ ae
 bf
 ae
 bt
-aF
+Hq
 ch
 ae
 ae
 ca
 ae
-al
-al
-al
-al
-al
-al
-al
-al
-cA
+Gb
+vS
+vS
+vS
+vS
+vS
+vS
+vS
+GT
 bf
 bf
 ac
@@ -1364,13 +1429,13 @@ bf
 bf
 bj
 bf
-aw
-aD
-aJ
+WG
 al
-al
-al
-cp
+fy
+vS
+vS
+vS
+rb
 bf
 ac
 bm

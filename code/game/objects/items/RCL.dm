@@ -1,14 +1,14 @@
 /obj/item/rcl
-	name = "rapid pipe cleaner layer"
-	desc = "A device used to rapidly deploy pipe cleaners. It has screws on the side which can be removed to slide off the pipe cleaners. Do not use without insulation!"
+	name = "rapid cable layer"
+	desc = "A device used to rapidly deploy cables. It has screws on the side which can be removed to slide off the cables. Do not use without insulation!"
 	icon = 'icons/obj/tools.dmi'
 	icon_state = "rcl-0"
 	item_state = "rcl-0"
-	var/obj/structure/pipe_cleaner/last
-	var/obj/item/stack/pipe_cleaner_coil/loaded
+	var/obj/structure/cable/last
+	var/obj/item/stack/cable_coil/loaded
 	opacity = FALSE
 	force = 5 //Plastic is soft
-	throwforce =5
+	throwforce = 5
 	throw_speed = 1
 	throw_range = 7
 	w_class = WEIGHT_CLASS_NORMAL
@@ -42,8 +42,8 @@
 	active = FALSE
 
 /obj/item/rcl/attackby(obj/item/W, mob/user)
-	if(istype(W, /obj/item/stack/pipe_cleaner_coil))
-		var/obj/item/stack/pipe_cleaner_coil/C = W
+	if(istype(W, /obj/item/stack/cable_coil))
+		var/obj/item/stack/cable_coil/C = W
 
 		if(!loaded)
 			if(!user.transferItemToLoc(W, src))
@@ -61,7 +61,7 @@
 		else
 			return
 		update_icon()
-		to_chat(user, "<span class='notice'>You add the pipe cleaners to [src]. It now contains [loaded.amount].</span>")
+		to_chat(user, "<span class='notice'>You add the cables to [src]. It now contains [loaded.amount].</span>")
 	else if(W.tool_behaviour == TOOL_SCREWDRIVER)
 		if(!loaded)
 			return
@@ -71,10 +71,10 @@
 				var/diff = loaded.amount % 30
 				if(diff)
 					loaded.use(diff)
-					new /obj/item/stack/pipe_cleaner_coil(get_turf(user), diff)
+					new /obj/item/stack/cable_coil(get_turf(user), diff)
 				else
 					loaded.use(30)
-					new /obj/item/stack/pipe_cleaner_coil(get_turf(user), 30)
+					new /obj/item/stack/cable_coil(get_turf(user), 30)
 			qdel(src)
 			return
 
@@ -83,10 +83,10 @@
 			var/diff = loaded.amount % 30
 			if(diff)
 				loaded.use(diff)
-				new /obj/item/stack/pipe_cleaner_coil(get_turf(user), diff)
+				new /obj/item/stack/cable_coil(get_turf(user), diff)
 			else
 				loaded.use(30)
-				new /obj/item/stack/pipe_cleaner_coil(get_turf(user), 30)
+				new /obj/item/stack/cable_coil(get_turf(user), 30)
 		loaded.max_amount = initial(loaded.max_amount)
 		if(!user.put_in_hands(loaded))
 			loaded.forceMove(get_turf(user))
@@ -99,7 +99,7 @@
 /obj/item/rcl/examine(mob/user)
 	. = ..()
 	if(loaded)
-		. += "<span class='info'>It contains [loaded.amount]/[max_amount] pipe cleaners.</span>"
+		. += "<span class='info'>It contains [loaded.amount]/[max_amount] cables.</span>"
 
 /obj/item/rcl/Destroy()
 	QDEL_NULL(loaded)
@@ -131,7 +131,7 @@
 	update_icon()
 	if(!loaded || !loaded.amount)
 		if(loud)
-			to_chat(user, "<span class='notice'>The last of the pipe cleaners unreel from [src].</span>")
+			to_chat(user, "<span class='notice'>The last of the cables unreel from [src].</span>")
 		if(loaded)
 			QDEL_NULL(loaded)
 			loaded = null
@@ -156,7 +156,7 @@
 	if(!active)
 		last = null
 	else if(!last)
-		for(var/obj/structure/pipe_cleaner/C in get_turf(user))
+		for(var/obj/structure/cable/C in get_turf(user))
 			if(C.d1 == FALSE || C.d2 == FALSE)
 				last = C
 				break
@@ -176,7 +176,7 @@
 		wiringGuiUpdate(user)
 
 
-//previous contents of trigger(), lays pipe_cleaner each time the player moves
+//previous contents of trigger(), lays cable each time the player moves
 /obj/item/rcl/proc/layCable(mob/user)
 	if(!isturf(user.loc))
 		return
@@ -199,18 +199,18 @@
 					//Did we just walk backwards? Well, that's the one direction we CAN'T complete a stub.
 					last = null
 					return
-				loaded.pipe_cleaner_join(last, user, FALSE)
+				loaded.cable_join(last, user, FALSE)
 				if(is_empty(user))
 					return //If we've run out, display message and exit
 			else
 				last = null
-		loaded.pipe_cleaner_color = colors[current_color_index]
+		loaded.cable_color = colors[current_color_index]
 		last = loaded.place_turf(get_turf(src), user, turn(user.dir, 180))
 		is_empty(user) //If we've run out, display message
 	update_icon()
 
 
-//searches the current tile for a stub pipe_cleaner of the same colour
+//searches the current tile for a stub cable of the same colour
 /obj/item/rcl/proc/findLinkingCable(mob/user)
 	var/turf/T
 	if(!isturf(user.loc))
@@ -220,28 +220,28 @@
 	if(T.intact || !T.can_have_cabling())
 		return
 
-	for(var/obj/structure/pipe_cleaner/C in T)
+	for(var/obj/structure/cable/C in T)
 		if(!C)
 			continue
-		if(C.pipe_cleaner_color != GLOB.pipe_cleaner_colors[colors[current_color_index]])
+		if(C.cable_color != GLOB.cable_colors[colors[current_color_index]])
 			continue
 		if(C.d1 == 0)
 			return C
 
 /obj/item/rcl/proc/wiringGuiGenerateChoices(mob/user)
 	var/fromdir = 0
-	var/obj/structure/pipe_cleaner/linkingCable = findLinkingCable(user)
+	var/obj/structure/cable/linkingCable = findLinkingCable(user)
 	if(linkingCable)
 		fromdir = linkingCable.d2
 
 	var/list/wiredirs = list("1","5","4","6","2","10","8","9")
 	for(var/icondir in wiredirs)
 		var/dirnum = text2num(icondir)
-		var/pipe_cleanersuffix = "[min(fromdir,dirnum)]-[max(fromdir,dirnum)]"
-		if(fromdir == dirnum) //pipe_cleaners can't loop back on themselves
-			pipe_cleanersuffix = "invalid"
-		var/image/img = image(icon = 'icons/mob/radial.dmi', icon_state = "cable_[pipe_cleanersuffix]")
-		img.color = GLOB.pipe_cleaner_colors[colors[current_color_index]]
+		var/cablesuffix = "[min(fromdir,dirnum)]-[max(fromdir,dirnum)]"
+		if(fromdir == dirnum) //cables can't loop back on themselves
+			cablesuffix = "invalid"
+		var/image/img = image(icon = 'icons/mob/radial.dmi', icon_state = "cable_[cablesuffix]")
+		img.color = GLOB.cable_colors[colors[current_color_index]]
 		wiredirs[icondir] = img
 	return wiredirs
 
@@ -277,12 +277,12 @@
 	if(T.intact || !T.can_have_cabling())
 		return
 
-	loaded.pipe_cleaner_color = colors[current_color_index]
+	loaded.cable_color = colors[current_color_index]
 
-	var/obj/structure/pipe_cleaner/linkingCable = findLinkingCable(user)
+	var/obj/structure/cable/linkingCable = findLinkingCable(user)
 	if(linkingCable)
 		if(choice != linkingCable.d2)
-			loaded.pipe_cleaner_join(linkingCable, user, FALSE, choice)
+			loaded.cable_join(linkingCable, user, FALSE, choice)
 			last = null
 	else
 		last = loaded.place_turf(get_turf(src), user, choice)
@@ -291,7 +291,7 @@
 
 	wiringGuiUpdate(user)
 
-/obj/item/rcl/pre_loaded/Initialize() //Comes preloaded with pipe_cleaner, for testing stuff
+/obj/item/rcl/pre_loaded/Initialize() //Comes preloaded with cables, for testing stuff
 	. = ..()
 	loaded = new()
 	loaded.max_amount = max_amount
@@ -310,7 +310,7 @@
 		var/cwname = colors[current_color_index]
 		to_chat(user, "Color changed to [cwname]!")
 		if(loaded)
-			loaded.pipe_cleaner_color = colors[current_color_index]
+			loaded.cable_color = colors[current_color_index]
 		if(wiring_gui_menu)
 			wiringGuiUpdate(user)
 	else if(istype(action, /datum/action/item_action/rcl_gui))
@@ -322,7 +322,7 @@
 /obj/item/rcl/ghetto
 	actions_types = list()
 	max_amount = 30
-	name = "makeshift rapid pipe cleaner layer"
+	name = "makeshift rapid cable layer"
 	ghetto = TRUE
 
 /obj/item/rcl/ghetto/update_icon_state()

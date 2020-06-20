@@ -521,6 +521,17 @@
 	construction_time = 100
 	category = list("Exosuit Equipment")
 
+//Wasp Edit Begin - Smartwire Revert - Donut TG Marge this
+/datum/design/mech_cable_layer
+	name = "Exosuit Engineering Equipment (Cable Layer)"
+	id = "mech_cable_layer"
+	build_type = MECHFAB
+	build_path = /obj/item/mecha_parts/mecha_equipment/cable_layer
+	materials = list(/datum/material/iron=10000)
+	construction_time = 100
+	category = list("Exosuit Equipment")
+//Wasp Edit End - Smartwire Revert - Donut TG Marge this
+
 /datum/design/mech_generator
 	name = "Exosuit Equipment (Plasma Generator)"
 	id = "mech_generator"

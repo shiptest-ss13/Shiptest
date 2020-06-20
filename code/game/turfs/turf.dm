@@ -191,7 +191,7 @@
 
 /turf/proc/handleRCL(obj/item/rcl/C, mob/user)
 	if(C.loaded)
-		for(var/obj/structure/pipe_cleaner/LC in src)
+		for(var/obj/structure/cable/LC in src)
 			if(!LC.d1 || !LC.d2)
 				LC.handlecable(C, user)
 				return
@@ -205,13 +205,9 @@
 		return TRUE
 	if(can_lay_cable() && istype(C, /obj/item/stack/cable_coil))
 		var/obj/item/stack/cable_coil/coil = C
-		coil.place_turf(src, user)
-		return TRUE
-	else if(can_have_cabling() && istype(C, /obj/item/stack/pipe_cleaner_coil))
-		var/obj/item/stack/pipe_cleaner_coil/coil = C
-		for(var/obj/structure/pipe_cleaner/LC in src)
+		for(var/obj/structure/cable/LC in src)
 			if(!LC.d1 || !LC.d2)
-				LC.attackby(C, user)
+				LC.attackby(C,user)
 				return
 		coil.place_turf(src, user)
 		return TRUE
@@ -219,6 +215,15 @@
 	else if(istype(C, /obj/item/rcl))
 		handleRCL(C, user)
 
+	return FALSE
+
+/turf/CanAllowThrough(atom/movable/mover, turf/target)
+	. = ..()
+	if(!target)
+		return FALSE
+	if(istype(mover)) // turf/Enter(...) will perform more advanced checks
+		return !density
+	stack_trace("Non movable passed to turf CanPass : [mover]")
 	return FALSE
 
 //There's a lot of QDELETED() calls here if someone can figure out how to optimize this but not runtime when something gets deleted by a Bump/CanPass/Cross call, lemme know or go ahead and fix this mess - kevinz000

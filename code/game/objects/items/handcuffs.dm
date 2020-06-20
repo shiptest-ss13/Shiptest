@@ -118,6 +118,21 @@
 	breakouttime = 30 SECONDS
 	cuffsound = 'sound/weapons/cablecuff.ogg'
 
+/*Wasp - Smartwire Revert
+/obj/item/restraints/handcuffs/cable/Initialize(mapload, param_color)
+	. = ..()
+
+	var/list/cable_colors = GLOB.cable_colors
+	cable_color = param_color || cable_color || pick(cable_colors)
+	if(cable_colors[cable_color])
+		cable_color = cable_colors[cable_color]
+	update_icon()
+
+/obj/item/restraints/handcuffs/cable/update_icon()
+	color = null
+	add_atom_colour(cable_color, FIXED_COLOUR_PRIORITY)
+*/
+
 /obj/item/restraints/handcuffs/cable/red
 	color = "#ff0000"
 

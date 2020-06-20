@@ -110,10 +110,6 @@
 			S.cost = 1
 			S.source = get_or_create_estorage(/datum/robot_energy_storage/beacon)
 
-		else if(istype(S, /obj/item/stack/pipe_cleaner_coil))
-			S.cost = 1
-			S.source = get_or_create_estorage(/datum/robot_energy_storage/pipe_cleaner)
-
 		if(S && S.source)
 			S.custom_materials = null
 			S.is_cyborg = 1
@@ -723,7 +719,7 @@
 		/obj/item/storage/bag/tray,
 		/obj/item/reagent_containers/borghypo/borgshaker,
 		/obj/item/borg/lollipop,
-		/obj/item/stack/pipe_cleaner_coil/cyborg,
+		/obj/item/stack/cable_coil/cyborg,
 		/obj/item/borg/apparatus/beaker/service)
 	emag_modules = list(/obj/item/reagent_containers/borghypo/borgshaker/hacked)
 	moduleselect_icon = "service"
@@ -1001,8 +997,3 @@
 	max_energy = 30
 	recharge_rate = 1
 	name = "Marker Beacon Storage"
-
-/datum/robot_energy_storage/pipe_cleaner
-	max_energy = 50
-	recharge_rate = 2
-	name = "Pipe Cleaner Synthesizer"
