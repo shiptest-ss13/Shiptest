@@ -1,3 +1,12 @@
+/datum/supply_pack/security/taser
+	name = "Hybrid Taser Crate"
+	desc = "Two disabler-taser hybrid weapons. Requires Security access to open."
+	cost = 4000
+	contains = list(/obj/item/gun/energy/e_gun/advtaser,
+					/obj/item/gun/energy/e_gun/advtaser)
+	crate_name = "hybrid taser crate"
+	dangerous = TRUE
+
 /datum/supply_pack/security/armory/riot_shotgun_single
 	name = "Riot Shotgun Single-Pack"
 	desc = "When you simply just want Butch to step aside. Requires Armory level access to open."
