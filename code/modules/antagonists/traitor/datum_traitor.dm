@@ -132,23 +132,24 @@
 
 /datum/antagonist/traitor/proc/forge_single_human_objective() //Returns how many objectives are added
 	.=1
-	if(prob(50))
+	if(prob(40)) // WaspStation Edit - Less Murderbone, more Theft
 		var/list/active_ais = active_ais()
 		if(active_ais.len && prob(100/GLOB.joined_player_list.len))
 			var/datum/objective/destroy/destroy_objective = new
 			destroy_objective.owner = owner
 			destroy_objective.find_target()
 			add_objective(destroy_objective)
-		else if(prob(30))
-			var/datum/objective/maroon/maroon_objective = new
-			maroon_objective.owner = owner
-			maroon_objective.find_target()
-			add_objective(maroon_objective)
-		else
+		else if(prob(25))
 			var/datum/objective/assassinate/kill_objective = new
 			kill_objective.owner = owner
 			kill_objective.find_target()
 			add_objective(kill_objective)
+		else
+			var/datum/objective/maroon/maroon_objective = new
+			maroon_objective.owner = owner
+			maroon_objective.find_target()
+			add_objective(maroon_objective)
+		// End WaspStation Edit - Less Murderbone, more Theft
 	else
 		if(prob(15) && !(locate(/datum/objective/download) in objectives) && !(owner.assigned_role in list("Research Director", "Scientist", "Roboticist")))
 			var/datum/objective/download/download_objective = new
