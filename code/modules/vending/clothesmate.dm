@@ -76,6 +76,7 @@
 		            /obj/item/clothing/suit/jacket/letterman = 2,
 		            /obj/item/clothing/suit/jacket/letterman_red = 2,
 		            /obj/item/clothing/glasses/regular = 2,
+					/obj/item/clothing/glasses/cheapsuns = 2, // Wasp Edit - Cheap sunglasses
 		            /obj/item/clothing/glasses/regular/jamjar = 1,
 		            /obj/item/clothing/glasses/orange = 1,
 		            /obj/item/clothing/glasses/red = 1,

@@ -51,6 +51,10 @@
 	display_name = "monocle"
 	path = /obj/item/clothing/glasses/monocle
 
+/datum/gear/eyewear/cheapsuns
+	display_name = "cheap sunglasses"
+	path = /obj/item/clothing/glasses/cheapsuns
+
 /datum/gear/eyewear/blindfold
 	display_name = "blindfold"
 	path = /obj/item/clothing/glasses/blindfold
