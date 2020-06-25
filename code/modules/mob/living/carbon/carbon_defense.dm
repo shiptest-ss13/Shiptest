@@ -264,7 +264,7 @@
 			return
 		M.visible_message("<span class='notice'>[M] shakes [src] trying to get [p_them()] up!</span>", \
 						"<span class='notice'>You shake [src] trying to get [p_them()] up!</span>")
-	else
+	else if(M.zone_selected == BODY_ZONE_CHEST || M.zone_selected == BODY_ZONE_PRECISE_GROIN)			// Wasp Edit - Adds more help emotes
 		M.visible_message("<span class='notice'>[M] hugs [src] to make [p_them()] feel better!</span>", \
 					"<span class='notice'>You hug [src] to make [p_them()] feel better!</span>")
 
@@ -295,6 +295,21 @@
 				SEND_SIGNAL(src, COMSIG_ADD_MOOD_EVENT, "friendly_hug", /datum/mood_event/betterhug, M)
 		for(var/datum/brain_trauma/trauma in M.get_traumas())
 			trauma.on_hug(M, src)
+	else if(M.zone_selected == BODY_ZONE_HEAD || M.zone_selected == BODY_ZONE_PRECISE_EYES || M.zone_selected == BODY_ZONE_PRECISE_MOUTH)		// Wasp Edit Begin - Adds more help emotes
+		M.visible_message("<span class='notice'>[M] pats [src] on the head.</span>", \
+					"<span class='notice'>You pat [src] on the head.</span>")
+	else if((M.zone_selected == BODY_ZONE_L_ARM) || (M.zone_selected == BODY_ZONE_R_ARM))
+		if(!get_bodypart(check_zone(M.zone_selected)))
+			to_chat(M, "<span class='warning'>[src] does not have a [M.zone_selected == BODY_ZONE_L_ARM ? "left" : "right"] arm!</span>")
+		else
+			M.visible_message("<span class='notice'>[M] shakes [src]'s hand.</span>", \
+						"<span class='notice'>You shake [src]'s hand.</span>")
+	else if((M.zone_selected == BODY_ZONE_L_LEG) || (M.zone_selected == BODY_ZONE_R_LEG))
+		if(!get_bodypart(check_zone(M.zone_selected)))
+			to_chat(M, "<span class='warning'>[src] does not have a [M.zone_selected == BODY_ZONE_L_LEG ? "left" : "right"] leg!</span>")
+		else
+			M.visible_message("<span class='notice'>[M] pokes [src]'s leg.</span>", \
+						"<span class='notice'>You poke [src]'s leg.</span>")		// Wasp Edit End
 	AdjustStun(-60)
 	AdjustKnockdown(-60)
 	AdjustUnconscious(-60)
