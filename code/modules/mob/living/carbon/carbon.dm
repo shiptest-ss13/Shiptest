@@ -415,6 +415,9 @@
 		var/obj/item/organ/alien/plasmavessel/vessel = getorgan(/obj/item/organ/alien/plasmavessel)
 		if(vessel)
 			stat(null, "Plasma Stored: [vessel.storedPlasma]/[vessel.max_plasma]")
+		var/obj/item/organ/dwarfgland/dwarfgland = getorgan(/obj/item/organ/dwarfgland)		// Begin Wasp Edit - Dwarf Alcohol Gland
+		if(dwarfgland)
+			stat(null, "Alcohol Stored: [dwarfgland.stored_alcohol]/[dwarfgland.max_alcohol]")		// End Wasp Edit
 		if(locate(/obj/item/assembly/health) in src)
 			stat(null, "Health: [health]")
 
