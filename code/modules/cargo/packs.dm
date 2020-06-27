@@ -210,13 +210,12 @@
 
 /datum/supply_pack/emergency/spacesuit
 	name = "Space Suit Crate"
-	desc = "Contains one aging suit from Space-Goodwill and a jetpack. Requires EVA access to open."
+	desc = "Contains one aging suit from Space-Goodwill. Requires EVA access to open."
 	cost = 2500
 	access = ACCESS_EVA
 	contains = list(/obj/item/clothing/suit/space,
 					/obj/item/clothing/head/helmet/space,
-					/obj/item/clothing/mask/breath,
-					/obj/item/tank/jetpack/carbondioxide)
+					/obj/item/clothing/mask/breath)
 	crate_name = "space suit crate"
 	crate_type = /obj/structure/closet/crate/secure
 
@@ -443,7 +442,7 @@
 /datum/supply_pack/security/armory/chemimp
 	name = "Chemical Implants Crate"
 	desc = "Contains five Remote Chemical implants. Requires Armory access to open."
-	cost = 2000
+	cost = 1000
 	contains = list(/obj/item/storage/box/chemimp)
 	crate_name = "chemical implant crate"
 
@@ -1104,6 +1103,7 @@
 	contains = list(/obj/machinery/portable_atmospherics/canister/bz)
 	crate_name = "BZ canister crate"
 	crate_type = /obj/structure/closet/crate/secure/science
+	dangerous = TRUE
 
 /datum/supply_pack/materials/carbon_dio
 	name = "Carbon Dioxide Canister"
@@ -1140,7 +1140,7 @@
 /datum/supply_pack/materials/nitrogen
 	name = "Nitrogen Canister"
 	desc = "Contains a canister of Nitrogen."
-	cost = 2000
+	cost = 1000
 	contains = list(/obj/machinery/portable_atmospherics/canister/nitrogen)
 	crate_name = "nitrogen canister crate"
 	crate_type = /obj/structure/closet/crate/large
@@ -1153,11 +1153,12 @@
 	contains = list(/obj/machinery/portable_atmospherics/canister/nitrous_oxide)
 	crate_name = "nitrous oxide canister crate"
 	crate_type = /obj/structure/closet/crate/secure
+	dangerous = TRUE
 
 /datum/supply_pack/materials/oxygen
 	name = "Oxygen Canister"
 	desc = "Contains a canister of Oxygen. Canned in Druidia."
-	cost = 1500
+	cost = 1000
 	contains = list(/obj/machinery/portable_atmospherics/canister/oxygen)
 	crate_name = "oxygen canister crate"
 	crate_type = /obj/structure/closet/crate/large
@@ -1189,7 +1190,7 @@
 /datum/supply_pack/medical/bloodpacks
 	name = "Blood Pack Variety Crate"
 	desc = "Contains eight different blood packs for reintroducing blood to patients."
-	cost = 3500
+	cost = 1000
 	contains = list(/obj/item/reagent_containers/blood,
 					/obj/item/reagent_containers/blood,
 					/obj/item/reagent_containers/blood/APlus,
@@ -1242,7 +1243,7 @@
 /datum/supply_pack/medical/defibs
 	name = "Defibrillator Crate"
 	desc = "Contains two defibrillators for bringing the recently deceased back to life."
-	cost = 2500
+	cost = 1500
 	contains = list(/obj/item/defibrillator/loaded,
 					/obj/item/defibrillator/loaded)
 	crate_name = "defibrillator crate"
@@ -1409,7 +1410,7 @@
 /datum/supply_pack/science/rped
 	name = "RPED crate"
 	desc = "Need to rebuild the ORM but science got annihialted after a bomb test? Buy this for the most advanced parts NT can give you."
-	cost = 1500
+	cost = 1000
 	contains = list(/obj/item/storage/part_replacer/cargo)
 	crate_name = "\improper RPED crate"
 
@@ -1453,7 +1454,7 @@
 /datum/supply_pack/service/cargo_supples
 	name = "Cargo Supplies Crate"
 	desc = "Sold everything that wasn't bolted down? You can get right back to work with this crate containing stamps, an export scanner, destination tagger, hand labeler and some package wrapping."
-	cost = 1000
+	cost = 800
 	contains = list(/obj/item/stamp,
 					/obj/item/stamp/denied,
 					/obj/item/export_scanner,
@@ -1549,7 +1550,7 @@
 /datum/supply_pack/service/carpet_exotic
 	name = "Exotic Carpet Crate"
 	desc = "Exotic carpets straight from Space Russia, for all your decorating needs. Contains 100 tiles each of 8 different flooring patterns."
-	cost = 4000
+	cost = 3000
 	contains = list(/obj/item/stack/tile/carpet/blue/fifty,
 					/obj/item/stack/tile/carpet/blue/fifty,
 					/obj/item/stack/tile/carpet/cyan/fifty,

@@ -117,6 +117,15 @@ GLOBAL_LIST_INIT(diamond_recipes, list ( \
 /obj/item/stack/sheet/mineral/diamond/get_main_recipes()
 	. = ..()
 	. += GLOB.diamond_recipes
+	
+/obj/item/stack/sheet/mineral/diamond/fifty
+	amount = 50
+
+/obj/item/stack/sheet/mineral/diamond/twenty
+	amount = 20
+
+/obj/item/stack/sheet/mineral/diamond/five
+	amount = 5
 
 /*
  * Uranium
@@ -145,6 +154,15 @@ GLOBAL_LIST_INIT(uranium_recipes, list ( \
 /obj/item/stack/sheet/mineral/uranium/get_main_recipes()
 	. = ..()
 	. += GLOB.uranium_recipes
+	
+/obj/item/stack/sheet/mineral/uranium/fifty
+	amount = 50
+
+/obj/item/stack/sheet/mineral/uranium/twenty
+	amount = 20
+
+/obj/item/stack/sheet/mineral/uranium/five
+	amount = 5
 
 /*
  * Plasma
@@ -190,6 +208,15 @@ GLOBAL_LIST_INIT(plasma_recipes, list ( \
 /obj/item/stack/sheet/mineral/plasma/fire_act(exposed_temperature, exposed_volume)
 	atmos_spawn_air("plasma=[amount*10];TEMP=[exposed_temperature]")
 	qdel(src)
+	
+/obj/item/stack/sheet/mineral/plasma/fifty
+	amount = 50
+
+/obj/item/stack/sheet/mineral/plasma/twenty
+	amount = 20
+
+/obj/item/stack/sheet/mineral/plasma/five
+	amount = 5
 
 /*
  * Gold
@@ -222,6 +249,15 @@ GLOBAL_LIST_INIT(gold_recipes, list ( \
 	. = ..()
 	. += GLOB.gold_recipes
 
+/obj/item/stack/sheet/mineral/gold/fifty
+	amount = 50
+
+/obj/item/stack/sheet/mineral/gold/twenty
+	amount = 20
+
+/obj/item/stack/sheet/mineral/gold/five
+	amount = 5
+
 /*
  * Silver
  */
@@ -252,6 +288,15 @@ GLOBAL_LIST_INIT(silver_recipes, list ( \
 /obj/item/stack/sheet/mineral/silver/get_main_recipes()
 	. = ..()
 	. += GLOB.silver_recipes
+	
+/obj/item/stack/sheet/mineral/silver/fifty
+	amount = 50
+
+/obj/item/stack/sheet/mineral/silver/twenty
+	amount = 20
+
+/obj/item/stack/sheet/mineral/silver/five
+	amount = 5
 
 /*
  * Clown
@@ -309,6 +354,12 @@ GLOBAL_LIST_INIT(titanium_recipes, list ( \
 
 /obj/item/stack/sheet/mineral/titanium/fifty
 	amount = 50
+	
+/obj/item/stack/sheet/mineral/titanium/twenty
+	amount = 20
+
+/obj/item/stack/sheet/mineral/titanium/five
+	amount = 5
 
 /*
  * Plastitanium

@@ -459,12 +459,9 @@
 	item_state = "duffel-syndiemed"
 
 /obj/item/storage/backpack/duffelbag/syndie/surgery/PopulateContents()
-	new /obj/item/scalpel(src)
-	new /obj/item/hemostat(src)
-	new /obj/item/retractor(src)
-	new /obj/item/circular_saw(src)
-	new /obj/item/surgicaldrill(src)
-	new /obj/item/cautery(src)
+	new /obj/item/surgicaldrill/advanced(src)
+	new /obj/item/scalpel/advanced(src)
+	new /obj/item/retractor/advanced(src)
 	new /obj/item/clothing/suit/straight_jacket(src)
 	new /obj/item/clothing/mask/muzzle(src)
 	new /obj/item/mmi/syndie(src)
