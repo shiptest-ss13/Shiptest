@@ -18,9 +18,6 @@
 	new /obj/item/clothing/under/rank/rnd/research_director/alt/skirt(src)
 	new /obj/item/clothing/under/rank/rnd/research_director/turtleneck(src)
 	new /obj/item/clothing/under/rank/rnd/research_director/turtleneck/skirt(src)
-	new /obj/item/clothing/under/plasmaman/rd(src) //WS edit plasmaman customization begin
-	new /obj/item/clothing/under/plasmaman/rd/skirt(src)
-	new /obj/item/clothing/head/helmet/space/plasmaman/rd(src) //WS edit plasmaman customization end
 	new /obj/item/clothing/shoes/sneakers/brown(src)
 	new /obj/item/cartridge/rd(src)
 	new /obj/item/radio/headset/heads/rd(src)
