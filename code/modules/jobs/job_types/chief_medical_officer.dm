@@ -42,7 +42,7 @@
 	alt_uniform = /obj/item/clothing/under/rank/medical/doctor/blue //Wasp Edit - Alt Uniforms
 	shoes = /obj/item/clothing/shoes/sneakers/brown
 	suit = /obj/item/clothing/suit/toggle/labcoat/cmo
-	alt_suit = /obj/item/clothing/suit/apron/surgical
+	alt_suit = /obj/item/clothing/suit/toggle/labcoat/mad // Wasp Edit - Alt-Job Titles
 	dcoat = /obj/item/clothing/suit/hooded/wintercoat/medical //Wasp Edit - Alt Uniforms
 	l_hand = /obj/item/storage/firstaid/medical
 	suit_store = /obj/item/flashlight/pen

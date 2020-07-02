@@ -524,8 +524,13 @@
 	if((character.mind.assigned_role == "Cyborg") || (character.mind.assigned_role == character.mind.special_role))
 		return
 
+	//Wasp begin - Alternate job titles
+	var/displayed_rank = rank
+	if(character.client && character.client.prefs && character.client.prefs.alt_titles_preferences[rank])
+		displayed_rank = character.client.prefs.alt_titles_preferences[rank]
 	var/obj/machinery/announcement_system/announcer = pick(GLOB.announcement_systems)
-	announcer.announce("ARRIVAL", character.real_name, rank, list()) //make the list empty to make it announce it in common
+	announcer.announce("ARRIVAL", character.real_name, displayed_rank, list()) //make the list empty to make it announce it in common
+	//Wasp end
 
 /proc/GetRedPart(const/hexa)
 	return hex2num(copytext(hexa, 2, 4))

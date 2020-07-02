@@ -55,3 +55,12 @@
 	var/datum/martial_art/cqc/under_siege/justacook = new
 	justacook.teach(H)
 
+// Wasp Edit Start - Alt-Job Titles
+/datum/outfit/job/cook/grillmaster
+	uniform = /obj/item/clothing/under/rank/civilian/cookjorts
+	suit = null
+	head = null
+	mask = null
+	r_hand = /obj/item/reagent_containers/food/drinks/soda_cans/monkey_energy
+	l_pocket = /obj/item/stack/sheet/mineral/coal
+// Wasp Edit End - Alt-Job Titles

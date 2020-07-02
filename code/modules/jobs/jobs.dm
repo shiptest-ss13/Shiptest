@@ -1,7 +1,7 @@
 GLOBAL_LIST_INIT(command_positions, list(
 	"Captain",
 	"Head of Personnel",
-	"Lieutenant",
+	"Lieutenant", //Wasp edit - Lieutenant
 	"Head of Security",
 	"Chief Engineer",
 	"Research Director",
@@ -37,7 +37,6 @@ GLOBAL_LIST_INIT(supply_positions, list(
 
 
 GLOBAL_LIST_INIT(civilian_positions, list(
-	"Lieutenant",
 	"Bartender",
 	"Botanist",
 	"Cook",
@@ -57,7 +56,7 @@ GLOBAL_LIST_INIT(security_positions, list(
 	"Warden",
 	"Detective",
 	"Security Officer",
-	"Brig Physician"))
+	"Brig Physician")) //Wasp edit - Brig Physicians
 
 
 GLOBAL_LIST_INIT(nonhuman_positions, list(

@@ -183,8 +183,13 @@
 	//Equip the rest of the gear
 	H.dna.species.before_equip_job(src, H, visualsOnly)
 
+	if(outfit && preference_source && preference_source.prefs && preference_source.prefs.alt_titles_preferences[title])
+		var/outfitholder = "[outfit]/[lowertext(preference_source.prefs.alt_titles_preferences[title])]"
+		if(text2path(outfitholder) || !outfitholder)
+			outfit_override = text2path(outfitholder)
+
 	if(outfit_override || outfit)
-		H.equipOutfit(outfit_override ? outfit_override : outfit, visualsOnly)
+		H.equipOutfit(outfit_override ? outfit_override : outfit, visualsOnly, preference_source)
 
 	H.dna.species.after_equip_job(src, H, visualsOnly)
 
@@ -321,7 +326,7 @@
 	if(text2path(holder) || !holder)
 		suit = text2path(holder)
 
-/datum/outfit/job/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+/datum/outfit/job/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE, client/preference_source = null)
 	if(visualsOnly)
 		return
 
@@ -334,7 +339,12 @@
 		C.access = J.get_access()
 		shuffle_inplace(C.access) // Shuffle access list to make NTNet passkeys less predictable
 		C.registered_name = H.real_name
-		C.assignment = J.title
+		//Wasp begin - Alt job titles
+		if(preference_source && preference_source.prefs && preference_source.prefs.alt_titles_preferences[J.title])
+			C.assignment = preference_source.prefs.alt_titles_preferences[J.title]
+		else
+			C.assignment = J.title
+		//Wasp end
 		C.update_label()
 		for(var/A in SSeconomy.bank_accounts)
 			var/datum/bank_account/B = A
@@ -347,7 +357,12 @@
 	var/obj/item/pda/PDA = H.get_item_by_slot(pda_slot)
 	if(istype(PDA))
 		PDA.owner = H.real_name
-		PDA.ownjob = J.title
+		//Wasp begin - Alt job titles
+		if(preference_source && preference_source.prefs && preference_source.prefs.alt_titles_preferences[J.title])
+			PDA.ownjob = preference_source.prefs.alt_titles_preferences[J.title]
+		else
+			PDA.ownjob = J.title
+		//Wasp end
 		PDA.update_label()
 
 /datum/outfit/job/get_chameleon_disguise_info()

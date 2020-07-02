@@ -40,3 +40,28 @@
 	courierbag = /obj/item/storage/backpack/messenger/med
 
 	chameleon_extras = /obj/item/gun/syringe
+
+// Wasp Edit Start - Alt-Job Titles
+/datum/outfit/job/doctor/surgeon
+	name = "Medical Doctor (Surgeon)"
+	uniform = /obj/item/clothing/under/rank/medical/doctor/blue
+	suit = /obj/item/clothing/suit/apron/surgical
+	mask = /obj/item/clothing/mask/surgical
+
+/datum/outfit/job/doctor/nurse
+	name = "Medical Doctor (Nurse)"
+	head = /obj/item/clothing/head/nursehat
+	suit = null
+	alt_uniform = /obj/item/clothing/under/rank/medical/doctor/nurse
+	accessory = /obj/item/clothing/accessory/armband/medblue
+
+/datum/outfit/job/doctor/psychiatrist
+	name = "Medical Doctor (Psychiatrist)"
+	uniform = /obj/item/clothing/under/suit/black
+	suit = null
+	shoes = /obj/item/clothing/shoes/laceup
+	id = /obj/item/card/id
+	belt = /obj/item/pda/medical
+	l_hand = /obj/item/clipboard
+	backpack_contents = list(/obj/item/storage/pill_bottle/psicodine=1, /obj/item/storage/pill_bottle/happy=1, /obj/item/storage/pill_bottle/lsd=1)
+// Wasp Edit End - Alt-Job Titles

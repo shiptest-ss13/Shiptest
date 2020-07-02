@@ -544,14 +544,19 @@
 			var/color = categorizedJobs[jobcat]["color"]
 			dat += "<fieldset style='border: 2px solid [color]; display: inline'>"
 			dat += "<legend align='center' style='color: [color]'>[jobcat]</legend>"
+			// Wasp Edit Start - Alt-Job Titles
 			for(var/datum/job/job in categorizedJobs[jobcat]["jobs"])
+				var/altjobline = ""
 				var/position_class = "otherPosition"
+				if(client && client.prefs && client.prefs.alt_titles_preferences[job.title])
+					altjobline = "(as [client.prefs.alt_titles_preferences[job.title]])"
 				if(job.title in GLOB.command_positions)
 					position_class = "commandPosition"
 				if(job in SSjob.prioritized_jobs)
-					dat += "<a class='[position_class]' style='display:block;width:170px' href='byond://?src=[REF(src)];SelectedJob=[job.title]'><font color='lime'><b>[job.title] ([job.current_positions])</b></font></a>"
+					dat += "<a class='[position_class]' style='display:block;width:170px' href='byond://?src=[REF(src)];SelectedJob=[job.title]'><font color='lime'><b>[job.title] [altjobline] ([job.current_positions])</b></font></a>"
 				else
-					dat += "<a class='[position_class]' style='display:block;width:170px' href='byond://?src=[REF(src)];SelectedJob=[job.title]'>[job.title] ([job.current_positions])</a>"
+					dat += "<a class='[position_class]' style='display:block;width:170px' href='byond://?src=[REF(src)];SelectedJob=[job.title]'>[job.title] [altjobline] ([job.current_positions])</a>"
+			// Wasp Edit End - Alt-Job Titles
 			dat += "</fieldset><br>"
 
 

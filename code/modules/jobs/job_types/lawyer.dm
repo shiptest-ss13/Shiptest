@@ -49,3 +49,11 @@
 	if(J.lawyers>1)
 		uniform = /obj/item/clothing/under/rank/civilian/lawyer/purpsuit
 		suit = /obj/item/clothing/suit/toggle/lawyer/purple
+
+
+/datum/outfit/job/lawyer/corporaterepresentative
+	uniform = /obj/item/clothing/under/suit/black
+	suit = /obj/item/clothing/suit/toggle/lawyer/black
+	neck = /obj/item/clothing/neck/tie/blue
+	l_hand = /obj/item/clipboard
+	r_pocket = /obj/item/pen/fountain

@@ -255,7 +255,7 @@
 	sec_hud_set_security_status()
 	..()
 
-/mob/living/carbon/human/proc/equipOutfit(outfit, visualsOnly = FALSE)
+/mob/living/carbon/human/proc/equipOutfit(outfit, visualsOnly = FALSE, client/preference_source = null)
 	var/datum/outfit/O = null
 
 	if(ispath(outfit))
@@ -267,7 +267,7 @@
 	if(!O)
 		return 0
 
-	return O.equip(src, visualsOnly)
+	return O.equip(src, visualsOnly, preference_source)
 
 
 //delete all equipment without dropping anything
@@ -307,7 +307,7 @@
 		return
 	stored.attack_hand(src) // take out thing from backpack
 	return
-	
+
 /mob/living/carbon/human/proc/smart_equipbelt() // put held thing in belt or take most recent item out of belt
 	if(incapacitated())
 		return

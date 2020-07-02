@@ -32,6 +32,8 @@ Assistant
 
 /datum/outfit/job/assistant/pre_equip(mob/living/carbon/human/H)
 	..()
+	if(uniform != /obj/item/clothing/under/color/grey)
+		return
 	if (CONFIG_GET(flag/grey_assistants))
 		if(H.jumpsuit_style == PREF_SUIT)
 			uniform = /obj/item/clothing/under/color/grey
@@ -46,3 +48,22 @@ Assistant
 			uniform = /obj/item/clothing/under/misc/assistantformal
 		else
 			uniform = /obj/item/clothing/under/color/jumpskirt/random
+
+/datum/outfit/job/assistant/businessman
+	name = "Assistant (Businessman)"
+	uniform = /obj/item/clothing/under/suit/black_really
+	l_hand = /obj/item/storage/briefcase
+
+/datum/outfit/job/assistant/visitor
+	name = "Assistant (Visitor)"
+	uniform = /obj/item/clothing/under/misc/assistantformal
+	neck = /obj/item/camera
+
+/datum/outfit/job/assistant/trader
+	name = "Assistant (Trader)"
+	r_pocket = /obj/item/coin/gold
+	backpack_contents = list(/obj/item/export_scanner=1)
+
+/datum/outfit/job/assistant/entertainer
+	name = "Assistant (Entertainer)"
+	r_hand = /obj/item/bikehorn //comedy
