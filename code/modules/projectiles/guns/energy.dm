@@ -233,6 +233,9 @@
 				. += new /mutable_appearance(charge_overlay)
 		else
 			. += "[icon_state]_charge[ratio]"
+			if(modifystate)
+				var/obj/item/ammo_casing/energy/shot = ammo_type[select]
+				. += "[icon_state]_charge[ratio]_[shot.select_name]" //:drooling_face:
 
 ///Used by update_icon_state() and update_overlays()
 /obj/item/gun/energy/proc/get_charge_ratio()
