@@ -131,6 +131,7 @@
 	var/tc = 25
 	var/command_radio = FALSE
 	var/uplink_type = /obj/item/uplink/nuclear
+	var/uplink_slot = ITEM_SLOT_BACKPACK //Wasp Edit - Syndicate Interns
 
 
 /datum/outfit/syndicate/leader
@@ -152,7 +153,7 @@
 
 	if(ispath(uplink_type, /obj/item/uplink/nuclear) || tc) // /obj/item/uplink/nuclear understands 0 tc
 		var/obj/item/U = new uplink_type(H, H.key, tc)
-		H.equip_to_slot_or_del(U, ITEM_SLOT_BACKPACK)
+		H.equip_to_slot_or_del(U, uplink_slot) //Wasp Edit - Sydi Interns
 
 	var/obj/item/implant/explosive/E = new/obj/item/implant/explosive(H)
 	E.implant(H)
