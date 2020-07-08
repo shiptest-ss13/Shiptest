@@ -30,3 +30,11 @@ Uplink Items
 	desc = "A medipen stocked with an agent that will help regenerate bones and organs. A single-use pocket Medbay visit."
 	item = /obj/item/reagent_containers/hypospray/medipen/bonefixingjuice
 	cost = 3
+
+/*Role Restricted*/
+/datum/uplink_item/role_restricted/greykingsword
+	name = "Blade of The Grey Tide"
+	desc = "A weapon of legend, forged by the greatest crackheads of our generation."
+	item = /obj/item/melee/greykingsword
+	cost = 2
+	restricted_roles = list("Assistant", "Chemist")

@@ -247,7 +247,8 @@ GLOBAL_LIST_INIT(oddity_loot, list(//oddity: strange or crazy items
 		/obj/item/clothing/shoes/jackboots/fast = 1,
 		/obj/item/clothing/suit/armor/reactive/table = 1,
 		/obj/item/storage/box/donkpockets/donkpocketgondola = 1,
-		/obj/item/gun/ballistic/derringer = 1 //Waspstation - Derringer
+		/obj/item/gun/ballistic/derringer = 1, //Waspstation - Derringer
+		/obj/item/melee/greykingsword = 1 //Waspstation - Meth Sword
 	))
 
 //Maintenance loot spawner pools
