@@ -6,7 +6,11 @@
 	min_players = 10
 
 /datum/round_event/spacevine
-	fakeable = FALSE
+	fakeable = TRUE
+	announceWhen = 1
+
+/datum/round_event/spacevine/announce(fake)
+	priority_announce("Unidentified plant based lifeform detected aboard the station, contact your local botanist.")
 
 /datum/round_event/spacevine/start()
 	var/list/turfs = list() //list of all the empty floor turfs in the hallway areas
