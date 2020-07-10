@@ -13508,12 +13508,6 @@
 	},
 /turf/open/floor/plasteel/white/corner,
 /area/hallway/secondary/exit/departure_lounge)
-"aWL" = (
-/obj/machinery/camera/emp_proof{
-	dir = 1
-	},
-/turf/open/floor/plating/airless,
-/area/engine/engineering)
 "aWM" = (
 /obj/machinery/washing_machine,
 /obj/structure/sign/plaques/deempisi{
@@ -20066,6 +20060,19 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/science/explab)
+"bqy" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 1
+	},
+/obj/machinery/camera/emp_proof{
+	c_tag = "Engine - North West";
+	network = list("ss13","engine")
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/turf/open/floor/plating/airless,
+/area/engine/engineering)
 "bqA" = (
 /obj/machinery/door/airlock/maintenance{
 	req_access_txt = "12"
@@ -38378,6 +38385,14 @@
 	icon_state = "platingdmg1"
 	},
 /area/maintenance/department/engine)
+"dAU" = (
+/obj/machinery/camera/emp_proof{
+	c_tag = "Engine - South West";
+	dir = 1;
+	network = list("ss13","engine")
+	},
+/turf/open/floor/plating/airless,
+/area/engine/engineering)
 "dAX" = (
 /obj/structure/disposalpipe/segment{
 	dir = 10
@@ -40360,6 +40375,20 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/medical/genetics)
+"fqv" = (
+/obj/machinery/light{
+	dir = 1
+	},
+/obj/effect/turf_decal/stripes/line{
+	dir = 1
+	},
+/obj/machinery/camera/emp_proof{
+	c_tag = "Engine - Particle Accelerator";
+	dir = 6;
+	network = list("ss13","engine")
+	},
+/turf/open/floor/plating,
+/area/engine/engineering)
 "fqX" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 9
@@ -49403,7 +49432,9 @@
 	pixel_y = -32
 	},
 /obj/effect/turf_decal/tile/yellow,
-/obj/machinery/power/apc/auto_name/east,
+/obj/machinery/power/apc/auto_name/east{
+	pixel_x = 24
+	},
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
@@ -50000,6 +50031,22 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/maintenance/disposal/incinerator)
+"odd" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 1
+	},
+/obj/machinery/camera/emp_proof{
+	c_tag = "Engine - North East";
+	network = list("ss13","engine")
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/turf/open/floor/plating/airless,
+/area/engine/engineering)
 "odH" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -53080,16 +53127,6 @@
 	icon_state = "platingdmg1"
 	},
 /area/maintenance/department/cargo)
-"rcV" = (
-/obj/effect/turf_decal/stripes/line{
-	dir = 1
-	},
-/obj/machinery/camera/emp_proof,
-/obj/structure/cable{
-	icon_state = "2-8"
-	},
-/turf/open/floor/plating/airless,
-/area/engine/engineering)
 "req" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -54283,20 +54320,6 @@
 	},
 /turf/open/floor/plating,
 /area/maintenance/department/cargo)
-"shg" = (
-/obj/machinery/camera{
-	c_tag = "Engineering Center";
-	network = list("ss13","engine");
-	pixel_x = 23
-	},
-/obj/machinery/light{
-	dir = 1
-	},
-/obj/effect/turf_decal/stripes/line{
-	dir = 1
-	},
-/turf/open/floor/plating,
-/area/engine/engineering)
 "sij" = (
 /obj/structure/closet,
 /obj/item/reagent_containers/food/snacks/meat/slab/monkey,
@@ -54902,19 +54925,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/library/lounge)
-"sMg" = (
-/obj/effect/turf_decal/stripes/line{
-	dir = 1
-	},
-/obj/machinery/camera/emp_proof,
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
-/obj/structure/cable{
-	icon_state = "2-4"
-	},
-/turf/open/floor/plating/airless,
-/area/engine/engineering)
 "sMn" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on{
 	dir = 1
@@ -54934,6 +54944,14 @@
 	},
 /turf/open/floor/plasteel,
 /area/science/robotics/lab)
+"sMN" = (
+/obj/machinery/camera/emp_proof{
+	c_tag = "Engine - South East";
+	dir = 1;
+	network = list("ss13","engine")
+	},
+/turf/open/floor/plating/airless,
+/area/engine/engineering)
 "sNa" = (
 /obj/structure/grille/broken,
 /obj/item/crowbar,
@@ -91032,7 +91050,7 @@ cdQ
 bXk
 bXk
 bXk
-rcV
+bqy
 tEy
 tEy
 kXB
@@ -91043,7 +91061,7 @@ dNh
 dNh
 wsY
 hum
-aWL
+dAU
 bXk
 aaa
 aaa
@@ -92568,7 +92586,7 @@ qwN
 qzw
 pXQ
 bXk
-shg
+fqv
 jKi
 kwB
 lGC
@@ -94116,7 +94134,7 @@ ogX
 bXk
 bXk
 bXk
-sMg
+odd
 tEy
 tEy
 wzp
@@ -94127,7 +94145,7 @@ nLD
 nLD
 jqP
 hum
-aWL
+sMN
 bXk
 aht
 aaa
