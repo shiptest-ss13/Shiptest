@@ -152,7 +152,7 @@
   * If visualsOnly is true, you can omit any work that doesn't visually appear on the character sprite
   */
 /datum/outfit/proc/equip(mob/living/carbon/human/H, visualsOnly = FALSE, client/preference_source = null) //WaspStation Edit - Alt-Job Titles
-	pre_equip(H, visualsOnly)
+	pre_equip(H, visualsOnly, preference_source)
 
 	//Start with uniform,suit,backpack for additional slots
 	if(uniform)
