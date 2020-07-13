@@ -626,7 +626,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 			bodyparts_to_add -= "spider_spinneret"
 
 	if("spider_mandibles" in mutant_bodyparts)
-		if(!H.dna.features["spider_mandibles"] || H.dna.features["spider_mandibles"] == "None" || H.head && (H.head.flags_inv & HIDEHAIR) || (H.wear_mask && (H.wear_mask.flags_inv & HIDEHAIR)) || !HD || HD.status == BODYPART_ROBOTIC)
+		if(!H.dna.features["spider_mandibles"] || H.dna.features["spider_mandibles"] == "None" || H.head && (H.head.flags_inv & HIDEFACE) || (H.wear_mask && (H.wear_mask.flags_inv & HIDEFACE)) || !HD || HD.status == BODYPART_ROBOTIC)
 			bodyparts_to_add -= "spider_mandibles"
 
 	//Digitigrade legs are stuck in the phantom zone between true limbs and mutant bodyparts. Mainly it just needs more agressive updating than most limbs.
