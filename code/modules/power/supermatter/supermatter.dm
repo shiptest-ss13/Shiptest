@@ -588,7 +588,7 @@ GLOBAL_DATUM(main_supermatter_engine, /obj/machinery/power/supermatter_crystal)
 		if(zap_count >= 1)
 			playsound(src.loc, 'sound/weapons/emitter2.ogg', 100, TRUE, extrarange = 10)
 			for(var/i in 1 to zap_count)
-				supermatter_zap(src, range, clamp(power*2, 4000, 20000), list(), flags)
+				supermatter_zap(src, range, clamp(power*2, 4000, 20000), flags)
 
 		if(prob(15) && power > POWER_PENALTY_THRESHOLD)
 			supermatter_pull(src, power/750)
@@ -914,15 +914,15 @@ GLOBAL_DATUM(main_supermatter_engine, /obj/machinery/power/supermatter_crystal)
 			if(PYRO_ANOMALY)
 				new /obj/effect/anomaly/pyro(L, 200)
 
-/obj/machinery/power/supermatter_crystal/proc/supermatter_zap(atom/zapstart = src, range = 5, zap_str = 4000, list/targets_hit = list(), zap_flags = ZAP_SUPERMATTER_FLAGS)
+/obj/machinery/power/supermatter_crystal/proc/supermatter_zap(atom/zapstart = src, range = 5, zap_str = 4000, zap_flags = ZAP_SUPERMATTER_FLAGS, list/targets_hit = list())
 	if(QDELETED(zapstart))
 		return
 	. = zapstart.dir
 	//If the strength of the zap decays past the cutoff, we stop
 	if(zap_str < zap_cutoff)
 		return
-	var/datum/target
-	var/target_type = (LOWEST)
+	var/atom/target
+	var/target_type = LOWEST
 	var/list/arctargets = list()
 	//Making a new copy so additons further down the recursion do not mess with other arcs
 	//Lets put this ourself into the do not hit list, so we don't curve back to hit the same thing twice with one arc
@@ -1009,8 +1009,7 @@ GLOBAL_DATUM(main_supermatter_engine, /obj/machinery/power/supermatter_crystal)
 		//Going boom should be rareish
 		if(prob(80))
 			zap_flags &= ~ZAP_MACHINE_EXPLOSIVE
-		if(istype(target, /obj/machinery/power/tesla_coil))
-			var/obj/machinery/power/tesla_coil/coil = target
+		if(target_type == COIL)
 			//In the best situation we can expect this to grow up to 2120kw before a delam/IT'S GONE TOO FAR FRED SHUT IT DOWN
 			//The formula for power gen is zap_str * zap_mod / 2 * capacitor rating, between 1 and 4
 			var/multi = 10
@@ -1019,33 +1018,29 @@ GLOBAL_DATUM(main_supermatter_engine, /obj/machinery/power/supermatter_crystal)
 					multi = 20
 				if(CRITICAL_POWER_PENALTY_THRESHOLD to INFINITY)
 					multi = 40
-			coil.zap_act(zap_str * multi, zap_flags, list())
+			target.zap_act(zap_str * multi, zap_flags, list())
 			zap_str /= 3 //Coils should take a lot out of the power of the zap
 
-		else if(istype(target, /obj/machinery/power/grounding_rod))
-			var/obj/machinery/power/grounding_rod/rod = target
+		else if(target_type == ROD)
 			//We can expect this to do very little, maybe shock the poor soul buckled to it, but that's all.
 			//This is one of our endpoints, if the bolt hits a grounding rod, it stops jumping
-			rod.zap_act(zap_str, zap_flags, list())
+			target.zap_act(zap_str, zap_flags, list())
 			return
 
 		else if(isliving(target))//If we got a fleshbag on our hands
-			var/mob/living/mob = target
-			mob.set_shocked()
-			addtimer(CALLBACK(mob, /mob/living/proc/reset_shocked), 10)
+			var/mob/living/creature = target
+			creature.set_shocked()
+			addtimer(CALLBACK(creature, /mob/living/proc/reset_shocked), 10)
 			//3 shots a human with no resistance. 2 to crit, one to death. This is at at least 10000 power.
 			//There's no increase after that because the input power is effectivly capped at 10k
 			//Does 1.5 damage at the least
 			var/shock_damage = ((zap_flags & ZAP_MOB_DAMAGE) ? (power / 200) - 10 : rand(5,10))
-			mob.electrocute_act(shock_damage, "Supermatter Discharge Bolt", 1,  ((zap_flags & ZAP_MOB_STUN) ? SHOCK_TESLA : SHOCK_NOSTUN))
+			creature.electrocute_act(shock_damage, "Supermatter Discharge Bolt", 1,  ((zap_flags & ZAP_MOB_STUN) ? SHOCK_TESLA : SHOCK_NOSTUN))
 			zap_str /= 1.5 //Meatsacks are conductive, makes working in pairs more destructive
 
-		else if(isobj(target))
-			var/obj/junk = target
-			junk.zap_act(zap_str, zap_flags, list())
-			zap_str /= 2 // worse then living things, better then coils
 		else
-			zap_str = 0
+			target.zap_act(zap_str, zap_flags, list())
+			zap_str /= 2 // worse then living things, better then coils
 		//This gotdamn variable is a boomer and keeps giving me problems
 		var/turf/T = get_turf(target)
 		var/pressure = max(1,T.return_air().return_pressure())
@@ -1056,7 +1051,9 @@ GLOBAL_DATUM(main_supermatter_engine, /obj/machinery/power/supermatter_crystal)
 			zap_str -= (zap_str/10)
 			zap_count += 1
 		for(var/j in 1 to zap_count)
-			supermatter_zap(target, new_range, zap_str, targets_hit, zap_flags)
+			if(zap_count > 1)
+				targets_hit = targets_hit.Copy() //Pass by ref begone
+			supermatter_zap(target, new_range, zap_str, zap_flags, targets_hit)
 
 #undef HALLUCINATION_RANGE
 #undef GRAVITATIONAL_ANOMALY
