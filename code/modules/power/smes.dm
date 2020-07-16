@@ -2,6 +2,7 @@
 // stores power
 
 #define SMESRATE 0.05			// rate of internal charge to external power
+#define SMESCHARGE 70			// ratio of battery storage to SMES storage		// Wasp Edit - Removes magic number
 
 //Cache defines
 #define SMES_CLEVEL_1		1
@@ -73,9 +74,9 @@
 	for(var/obj/item/stock_parts/cell/PC in component_parts)
 		MC += PC.maxcharge
 		C += PC.charge
-	capacity = MC / (15000) * 1e6
+	capacity = MC * SMESCHARGE			// Wasp Edit - Removes magic number
 	if(!initial(charge) && !charge)
-		charge = C / 15000 * 1e6
+		charge = C						// Wasp Edit - Prevents power duping
 
 /* Wasp Edit - Smartwire Revert
 /obj/machinery/power/smes/should_have_node()
