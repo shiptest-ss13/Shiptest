@@ -36,3 +36,9 @@
 /area/ruin/space/has_grav/storage/power3
 	name = "storage Crates"
 	icon_state = "green"
+
+//Space Gym
+
+/area/ruin/space/has_grav/spacegym
+	name = "Space Gym"
+	icon_state = "firingrange"

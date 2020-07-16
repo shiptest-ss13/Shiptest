@@ -16,3 +16,9 @@
 	name = "Power Puzzle"
 	description = "an abandoned secure storage location. there is no power left in the batteries and the former ocupants locked it pretty tight before leaving.\
 	You will have to power areas to raise the bolts on the doors. look out for secrets."
+
+/datum/map_template/ruin/space/spacegym
+	id = "Space_Gym"
+	suffix = "spacegym.dmm"
+	name = "Space Gym"
+	description = "A gym, lost in space, where many grunts and moaning could be heard."
