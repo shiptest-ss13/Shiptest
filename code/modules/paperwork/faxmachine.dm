@@ -160,7 +160,7 @@ GLOBAL_LIST_EMPTY(alldepartments)
 /obj/machinery/photocopier/faxmachine/proc/is_authenticated(mob/user)
 	if(authenticated)
 		return TRUE
-	else if(IsAdminGhost(user))
+	else if(isAdminGhostAI(user))
 		return TRUE
 	return FALSE
 

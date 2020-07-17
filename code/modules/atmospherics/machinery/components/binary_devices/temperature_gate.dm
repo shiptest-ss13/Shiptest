@@ -44,9 +44,9 @@
 		. += "The sensor's settings can be changed by using a multitool on the device."
 
 /obj/machinery/atmospherics/components/binary/temperature_gate/update_icon_nopipes()
-	if(on && is_operational && is_gas_flowing)
+	if(on && is_operational() && is_gas_flowing)
 		icon_state = "tgate_flow-[set_overlay_offset(piping_layer)]"
-	else if(on && is_operational && !is_gas_flowing)
+	else if(on && is_operational() && !is_gas_flowing)
 		icon_state = "tgate_on-[set_overlay_offset(piping_layer)]"
 	else
 		icon_state = "tgate_off-[set_overlay_offset(piping_layer)]"
@@ -54,21 +54,21 @@
 
 /obj/machinery/atmospherics/components/binary/temperature_gate/process_atmos()
 
-	if(!on || !is_operational)
+	if(!on || !is_operational())
 		return
 
 	var/datum/gas_mixture/air1 = airs[1]
 	var/datum/gas_mixture/air2 = airs[2]
 
 	if(!inverted)
-		if(air1.temperature < target_temperature)
+		if(air1.return_temperature() < target_temperature)
 			if(air1.release_gas_to(air2, air1.return_pressure()))
 				update_parents()
 				is_gas_flowing = TRUE
 		else
 			is_gas_flowing = FALSE
 	else
-		if(air1.temperature > target_temperature)
+		if(air1.return_temperature() > target_temperature)
 			if(air1.release_gas_to(air2, air1.return_pressure()))
 				update_parents()
 				is_gas_flowing = TRUE
@@ -112,7 +112,7 @@
 
 /obj/machinery/atmospherics/components/binary/temperature_gate/can_unwrench(mob/user)
 	. = ..()
-	if(. && on && is_operational)
+	if(. && on && is_operational())
 		to_chat(user, "<span class='warning'>You cannot unwrench [src], turn it off first!</span>")
 		return FALSE
 

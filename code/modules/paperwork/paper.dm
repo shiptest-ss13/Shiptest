@@ -111,7 +111,7 @@
 	set category = "Object"
 	set src in usr
 
-	if(!usr.can_read(src) || usr.incapacitated(TRUE, TRUE) || (isobserver(usr) && !check_rights_for(usr, R_ADMIN)))
+	if(!usr.can_read(src) || usr.incapacitated(TRUE, TRUE) || isAdminObserver(usr))
 		return
 	if(ishuman(usr))
 		var/mob/living/carbon/human/H = usr
