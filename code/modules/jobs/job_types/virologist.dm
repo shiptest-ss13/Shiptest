@@ -41,3 +41,4 @@
 	satchel = /obj/item/storage/backpack/satchel/vir
 	duffelbag = /obj/item/storage/backpack/duffelbag/med
 	courierbag = /obj/item/storage/backpack/messenger/viro
+	box = /obj/item/storage/box/survival/medical

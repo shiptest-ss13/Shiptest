@@ -1,9 +1,10 @@
 import { useBackend } from '../backend';
 import { Box, Section, LabeledList, Button, ProgressBar } from '../components';
 import { Fragment } from 'inferno';
+import { Window } from '../layouts';
 
-export const Sleeper = props => {
-  const { act, data } = useBackend(props);
+export const Sleeper = (props, context) => {
+  const { act, data } = useBackend(context);
 
   const {
     open,
@@ -45,95 +46,80 @@ export const Sleeper = props => {
   ];
 
   return (
-    <Fragment>
-      <Section
-        title={occupant.name ? occupant.name : 'No Occupant'}
-        minHeight="210px"
-        buttons={!!occupant.stat && (
-          <Box
-            inline
-            bold
-            color={occupant.statstate}>
-            {occupant.stat}
-          </Box>
-        )}>
-        {!!occupied && (
-          <Fragment>
-            <ProgressBar
-              value={occupant.health}
-              minValue={occupant.minHealth}
-              maxValue={occupant.maxHealth}
-              ranges={{
-                good: [50, Infinity],
-                average: [0, 50],
-                bad: [-Infinity, 0],
-              }} />
-            <Box mt={1} />
-            <LabeledList>
-              {damageTypes.map(type => (
-                <LabeledList.Item
-                  key={type.type}
-                  label={type.label}>
-                  <ProgressBar
-                    value={occupant[type.type]}
-                    minValue={0}
-                    maxValue={occupant.maxHealth}
-                    color="bad" />
-                </LabeledList.Item>
-              ))}
-              <LabeledList.Item
-                label="Cells"
-                color={occupant.cloneLoss ? 'bad' : 'good'}>
-                {occupant.cloneLoss ? 'Damaged' : 'Healthy'}
-              </LabeledList.Item>
-              <LabeledList.Item
-                label="Brain"
-                color={occupant.brainLoss ? 'bad' : 'good'}>
-                {occupant.brainLoss ? 'Abnormal' : 'Healthy'}
-              </LabeledList.Item>
-            </LabeledList>
-          </Fragment>
-        )}
-      </Section>
-      <Section
-        title="Medicines"
-        minHeight="205px"
-        buttons={(
-          <Button
-            icon={open ? 'door-open' : 'door-closed'}
-            content={open ? 'Open' : 'Closed'}
-            onClick={() => act('door')} />
-        )}>
-        {chems.map(chem => (
-          <Button
-            key={chem.name}
-            icon="flask"
-            content={chem.name}
-            disabled={!(occupied && chem.allowed
-              && (cell.charge > cell.poweruse))}
-            width="110px"
-            onClick={() => act('inject', {
-              chem: chem.id,
-            })}
-          />
-        ))}
-      </Section>
-      <Section
-        title="Status"
-        minHeight="50px" >
-        {!!cell && (
-          <LabeledList>
-            <LabeledList.Item label="Charge">
+    <Window>
+      <Window.Content>
+        <Section
+          title={occupant.name ? occupant.name : 'No Occupant'}
+          minHeight="210px"
+          buttons={!!occupant.stat && (
+            <Box
+              inline
+              bold
+              color={occupant.statstate}>
+              {occupant.stat}
+            </Box>
+          )}>
+          {!!occupied && (
+            <Fragment>
               <ProgressBar
-                value={cell.charge}
-                content={cell.charge/10 + ' units'}
-                minValue={0}
-                maxValue={cell.maxCharge}
-              />
-            </LabeledList.Item>
-          </LabeledList>
-        )}
-      </Section>
-    </Fragment>
+                value={occupant.health}
+                minValue={occupant.minHealth}
+                maxValue={occupant.maxHealth}
+                ranges={{
+                  good: [50, Infinity],
+                  average: [0, 50],
+                  bad: [-Infinity, 0],
+                }} />
+              <Box mt={1} />
+              <LabeledList>
+                {damageTypes.map(type => (
+                  <LabeledList.Item
+                    key={type.type}
+                    label={type.label}>
+                    <ProgressBar
+                      value={occupant[type.type]}
+                      minValue={0}
+                      maxValue={occupant.maxHealth}
+                      color="bad" />
+                  </LabeledList.Item>
+                ))}
+                <LabeledList.Item
+                  label="Cells"
+                  color={occupant.cloneLoss ? 'bad' : 'good'}>
+                  {occupant.cloneLoss ? 'Damaged' : 'Healthy'}
+                </LabeledList.Item>
+                <LabeledList.Item
+                  label="Brain"
+                  color={occupant.brainLoss ? 'bad' : 'good'}>
+                  {occupant.brainLoss ? 'Abnormal' : 'Healthy'}
+                </LabeledList.Item>
+              </LabeledList>
+            </Fragment>
+          )}
+        </Section>
+        <Section
+          title="Medicines"
+          minHeight="205px"
+          buttons={(
+            <Button
+              icon={open ? 'door-open' : 'door-closed'}
+              content={open ? 'Open' : 'Closed'}
+              onClick={() => act('door')} />
+          )}>
+          {chems.map(chem => (
+            <Button
+              key={chem.name}
+              icon="flask"
+              content={chem.name}
+              disabled={!(occupied && chem.allowed)}
+              width="140px"
+              onClick={() => act('inject', {
+                chem: chem.id,
+              })}
+            />
+          ))}
+        </Section>
+      </Window.Content>
+    </Window>
   );
 };

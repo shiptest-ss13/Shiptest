@@ -18,7 +18,7 @@
 	use_power = IDLE_POWER_USE
 	idle_power_usage = 30
 	active_power_usage = 200
-	power_channel = EQUIP
+	power_channel = AREA_USAGE_EQUIP
 	max_integrity = 300
 	integrity_failure = 0.33
 	var/obj/item/paper/copy = null	//what's in the copier!
@@ -31,16 +31,9 @@
 	var/mob/living/ass //i can't believe i didn't write a stupid-ass comment about this var when i first coded asscopy.
 	var/busy = FALSE
 
-/obj/machinery/photocopier/attack_ai(mob/user)
-	return attack_hand(user)
-
-/obj/machinery/photocopier/attack_paw(mob/user)
-	return attack_hand(user)
-
-/obj/machinery/photocopier/attack_hand(mob/user)
-	user.set_machine(src)
-
-	var/dat = "Photocopier<BR><BR>"
+/obj/machinery/photocopier/ui_interact(mob/user)
+	. = ..()
+	var/list/dat = list("Photocopier<BR><BR>")
 	if(copy || photocopy || doccopy || (ass && (ass.loc == src.loc)))
 		dat += "<a href='byond://?src=[REF(src)];remove=1'>Remove Paper</a><BR>"
 		if(toner)
@@ -55,13 +48,14 @@
 	dat += "Current toner level: [toner]"
 	if(!toner)
 		dat +="<BR>Please insert a new toner cartridge!"
-	user << browse(dat, "window=copier")
+	user << browse(dat.Join(""), "window=copier")
 	onclose(user, "copier")
 
 /obj/machinery/photocopier/proc/copy(var/obj/item/paper/copy)
-	var/obj/item/paper/c
 	for(var/i = 0, i < copies, i++)
 		if(toner > 0 && !busy && copy)
+			busy = TRUE
+			addtimer(CALLBACK(src, .proc/reset_busy), 1.5 SECONDS)
 			var/copy_as_paper = 1
 			if(istype(copy, /obj/item/paper/contract/employment))
 				var/obj/item/paper/contract/employment/E = copy
@@ -69,7 +63,7 @@
 				if(C)
 					copy_as_paper = 0
 			if(copy_as_paper)
-				c = new /obj/item/paper (loc)
+				var/obj/item/paper/c = new /obj/item/paper (loc)
 				if(length(copy.info) > 0)	//Only print and add content if the copied doc has words on it
 					if(toner > 10)	//lots of toner, make it dark
 						c.info = "<font color = #101010>"
@@ -81,20 +75,16 @@
 					c.info += copied
 					c.info += "</font>"
 					c.name = copy.name
-					c.fields = copy.fields
 					c.update_icon()
-					c.updateinfolinks()
 					c.stamps = copy.stamps
 					if(copy.stamped)
 						c.stamped = copy.stamped.Copy()
 					c.copy_overlays(copy, TRUE)
 					toner--
-			busy = TRUE
-			addtimer(CALLBACK(src, .proc/disable_busy,), 15)
+					return c
 		else
 			break
 	updateUsrDialog()
-	return c
 
 /obj/machinery/photocopier/proc/disable_busy()
 	busy = FALSE

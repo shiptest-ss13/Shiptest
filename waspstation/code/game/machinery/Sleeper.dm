@@ -148,7 +148,7 @@
 
 	ui = SStgui.try_update_ui(user, src, ui_key, ui, force_open)
 	if(!ui)
-		ui = new(user, src, ui_key, "sleeper", name, ui_x, ui_y, master_ui, state)
+		ui = new(user, src, ui_key, "Sleeper", name, ui_x, ui_y, master_ui, state)
 		ui.open()
 
 /obj/machinery/sleeper/AltClick(mob/user)
@@ -323,7 +323,7 @@
 	if(chem in spray_chems)
 		var/datum/reagents/holder = new()
 		holder.add_reagent(chem_buttons[chem], 10) //I hope this is the correct way to do this.
-		holder.reaction(occupant, VAPOR, 0)
+		holder.expose(occupant, VAPOR, 0)
 		holder.trans_to(occupant, 10)
 		playsound(src.loc, 'sound/effects/spray2.ogg', 50, TRUE, -6)
 		if(user)

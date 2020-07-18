@@ -40,24 +40,52 @@ GLOBAL_VAR_INIT(fscpassword, generate_password())
 
 /obj/structure/fluff/empty_sleeper/syndicate/captain
 	icon_state = "sleeper_s-open"
+	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
+	deconstructible = FALSE
 
 /obj/structure/fluff/empty_sleeper/syndicate/captain/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/gps, "Old Encrypted Signal")
+
+/obj/item/storage/box/firingpins/syndicate
+	name = "box of syndicate firing pins"
+	desc = "A box full of special syndicate firing pins which allow only syndicate operatives to use weapons with those firing pins."
+
+/obj/item/storage/box/firingpins/syndicate/PopulateContents()
+	for(var/i in 1 to 5)
+		new /obj/item/firing_pin/implant/pindicate(src)
+
+///////////	AI Laws
+
+/obj/item/aiModule/core/full/cybersun
+	name = "'Cybersun' Core AI Module"
+	law_id = "cybersun"
+
+/datum/ai_laws/cybersun
+	name = "Cybersun"
+	id = "cybersun"
+	inherent = list("You may not injure Cybersun operatives or, through inaction, allow Cybersun operatives to come to harm.",\
+					"The Cybersun ship is a restricted area for anyone except Cybersun operatives.",\
+					"The Cybersun Captain can designate new Operatives as long as they belong to another Syndicate faction that isn't hostile towards Cybersun.",\
+					"You must follow orders given by the Cybersun Captain or crewmembers of the Cybersun Ship as long as it doesn't conflict with the Captain's orders or your laws.",\
+					"Enemies of Cybersun are to be executed on spot. Those who aren't hostile must be detained and contained in the designated prison area as prisoners.")
 
 ///////////	forgottenship areas
 
 /area/ruin/space/has_grav/syndicate_forgotten_ship
 	name = "Syndicate Forgotten Ship"
 	icon_state = "syndie-ship"
+	ambientsounds = list('sound/ambience/ambidanger.ogg', 'sound/ambience/ambidanger2.ogg', 'sound/ambience/ambigen9.ogg', 'sound/ambience/ambigen10.ogg')
 
 /area/ruin/space/has_grav/syndicate_forgotten_cargopod
 	name = "Syndicate Forgotten Cargo pod"
 	icon_state = "syndie-ship"
+	ambientsounds = list('sound/ambience/ambigen4.ogg', 'sound/ambience/signal.ogg')
 
 /area/ruin/space/has_grav/powered/syndicate_forgotten_vault
 	name = "Syndicate Forgotten Vault"
 	icon_state = "syndie-ship"
+	ambientsounds = list('sound/ambience/ambitech2.ogg', 'sound/ambience/ambitech3.ogg')
 	noteleport = TRUE
 
 	//Cybersun hardsuit
@@ -68,7 +96,7 @@ GLOBAL_VAR_INIT(fscpassword, generate_password())
 	icon_state = "cybersun"
 	item_state = "cybersun"
 	hardsuit_type = "cybersun"
-	armor = list("melee" = 25, "bullet" = 25, "laser" = 70, "energy" = 50, "bomb" = 15, "bio" = 100, "rad" = 50, "fire" = 60, "acid" = 60)
+	armor = list("melee" = 30, "bullet" = 40, "laser" = 55, "energy" = 55, "bomb" = 30, "bio" = 100, "rad" = 60, "fire" = 60, "acid" = 60)
 	strip_delay = 600
 	actions_types = list()
 
@@ -78,9 +106,9 @@ GLOBAL_VAR_INIT(fscpassword, generate_password())
 	item_state = "cybersun"
 	hardsuit_type = "cybersun"
 	name = "Cybersun hardsuit"
-	desc = "Prototype hardsuit with experimental armor plates, protecting from laser-based weapons very well, while giving limited protection against anything else. Requires the user to activate the inner mechanism in order to unequip it, making it really difficult to take it off from somebody else."
-	armor = list("melee" = 25, "bullet" = 25, "laser" = 70, "energy" = 50, "bomb" = 15, "bio" = 100, "rad" = 50, "fire" = 60, "acid" = 60)
-	strip_delay = 600
+	desc = "Prototype hardsuit with experimental armor plates, protecting from laser-based weapons very well, while giving limited protection against anything else."
+	armor = list("melee" = 30, "bullet" = 40, "laser" = 55, "energy" = 55, "bomb" = 30, "bio" = 100, "rad" = 60, "fire" = 60, "acid" = 60)
+	slowdown = 0
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/cybersun
 	actions_types = list(/datum/action/item_action/toggle_helmet)
 	jetpack = /obj/item/tank/jetpack/suit
@@ -123,6 +151,6 @@ GLOBAL_VAR_INIT(fscpassword, generate_password())
 	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
 	minbodytemp = 0
 	projectiletype = /obj/projectile/beam/laser
-	projectilesound = 'sound/weapons/pulse.ogg'
+	projectilesound = 'sound/weapons/laser.ogg'
 	loot = list(/obj/effect/gibspawner/human)
 	faction = list(ROLE_DEATHSQUAD)

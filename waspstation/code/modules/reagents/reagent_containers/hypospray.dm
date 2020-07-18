@@ -207,7 +207,7 @@
 						L.log_message("<font color='orange'>applied [src] to  themselves ([contained]).</font>", INDIVIDUAL_ATTACK_LOG)
 
 				var/fraction = min(vial.amount_per_transfer_from_this/vial.reagents.total_volume, 1)
-				vial.reagents.reaction(L, INJECT, fraction)
+				vial.reagents.expose(L, INJECT, fraction)
 				vial.reagents.trans_to(target, vial.amount_per_transfer_from_this)
 				if(vial.amount_per_transfer_from_this >= 15)
 					playsound(loc,'sound/items/hypospray_long.ogg',50, 1, -1)
@@ -242,7 +242,7 @@
 						log_attack("<font color='red'>[user.name] ([user.ckey]) applied [src] to [L.name] ([L.ckey]), which had [contained] (INTENT: [uppertext(user.a_intent)]) (MODE: [src.mode])</font>")
 						L.log_message("<font color='orange'>applied [src] to  themselves ([contained]).</font>", INDIVIDUAL_ATTACK_LOG)
 				var/fraction = min(vial.amount_per_transfer_from_this/vial.reagents.total_volume, 1)
-				vial.reagents.reaction(L, PATCH, fraction)
+				vial.reagents.expose(L, PATCH, fraction)
 				vial.reagents.trans_to(target, vial.amount_per_transfer_from_this)
 				if(vial.amount_per_transfer_from_this >= 15)
 					playsound(loc,'sound/items/hypospray_long.ogg',50, 1, -1)

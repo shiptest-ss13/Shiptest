@@ -14,7 +14,7 @@
 
 	if(left_click) //rectangular
 
-		var/confirm = alert("Are you sure you want to do this? This will cause extreme lag!", "Map Exporter", "Yes", "No")
+		var/confirm = alert("Are you sure you want to do this? This may cause extreme lag!", "Map Exporter", "Yes", "No")
 
 		if(confirm != "Yes")
 			return
@@ -23,6 +23,19 @@
 
 		log_admin("Build Mode: [key_name(c)] exported the map area from [AREACOORD(cornerA)] through [AREACOORD(cornerB)]") //I put this before the actual saving of the map because it likely won't log if it crashes the fucking server
 
-		var map_text = write_map(cornerA.x, cornerA.y, cornerA.z, cornerB.x, cornerB.y, cornerB.z, 24)
-		text2file(map_text, "data/[file_name].dmm")
-		usr << ftp("data/[file_name].dmm", "[file_name].dmm")
+		//oversimplified for readability and understandibility
+
+		var/minx = min(cornerA.x, cornerB.x)
+		var/miny = min(cornerA.y, cornerB.y)
+		var/minz = min(cornerA.z, cornerB.z)
+
+		var/maxx = max(cornerA.x, cornerB.x)
+		var/maxy = max(cornerA.y, cornerB.y)
+		var/maxz = max(cornerA.z, cornerB.z)
+
+		var/map_text = write_map(minx, miny, minz, maxx, maxy, maxz, 24)
+		if(map_text)
+			text2file(map_text, "data/[file_name].dmm")
+			usr << ftp("data/[file_name].dmm", "[file_name].dmm")
+		else
+			to_chat(usr, "<span class='warning'>Map export failed!</span>")

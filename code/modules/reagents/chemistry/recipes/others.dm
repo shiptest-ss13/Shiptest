@@ -437,8 +437,13 @@ WaspStation End */
 	required_reagents = list(/datum/reagent/monkey_powder = 30, /datum/reagent/water = 1)
 
 /datum/chemical_reaction/monkey/on_reaction(datum/reagents/holder, created_volume)
-	var/location = get_turf(holder.my_atom)
-	new /mob/living/carbon/monkey(location)
+	var/obj/item/reagent_containers/food/snacks/monkeycube/cube = holder.my_atom
+	if(istype(cube))
+		cube.Expand()
+	else
+		var/location = get_turf(holder.my_atom)
+		new /mob/living/carbon/monkey(location)
+
 //water electrolysis
 /datum/chemical_reaction/electrolysis
 	results = list(/datum/reagent/oxygen = 10, /datum/reagent/hydrogen = 20)
@@ -533,10 +538,6 @@ WaspStation End */
 /datum/chemical_reaction/slime_extractification/on_reaction(datum/reagents/holder, created_volume)
 	var/location = get_turf(holder.my_atom)
 	new /obj/item/slime_extract/grey(location)
-
-/datum/chemical_reaction/metalgen
-	required_reagents = list(/datum/reagent/wittel = 1, /datum/reagent/bluespace = 1, /datum/reagent/toxin/mutagen = 1)
-	results = list(/datum/reagent/metalgen = 1)
 
 /datum/chemical_reaction/metalgen_imprint
 	required_reagents = list(/datum/reagent/metalgen = 1, /datum/reagent/liquid_dark_matter = 1)

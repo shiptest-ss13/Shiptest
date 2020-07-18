@@ -4,7 +4,7 @@
 	id = "spacepod_main"
 	build_path = /obj/item/circuitboard/mecha/pod
 	category = list("Exosuit Modules")
-	departmental_flags = DEPARTMENTAL_FLAG_ALL
+	departmental_flags = DEPARTMENTAL_FLAG_CARGO | DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE | DEPARTMENTAL_FLAG_SECURITY
 
 /datum/design/pod_core
 	name = "Spacepod Core"
@@ -14,7 +14,7 @@
 	materials = list(/datum/material/iron = 5000, /datum/material/uranium = 1000, /datum/material/plasma = 5000)
 	build_path = /obj/item/pod_parts/core
 	category = list("Spacepod Designs")
-	departmental_flags = DEPARTMENTAL_FLAG_ALL
+	departmental_flags = DEPARTMENTAL_FLAG_CARGO | DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE | DEPARTMENTAL_FLAG_SECURITY
 
 /datum/design/pod_armor_civ
 	name = "Spacepod Armor (civilian)"
@@ -24,7 +24,7 @@
 	materials = list(/datum/material/iron = 15000, /datum/material/glass = 5000, /datum/material/plasma = 10000)
 	build_path = /obj/item/pod_parts/armor
 	category = list("Spacepod Designs")
-	departmental_flags = DEPARTMENTAL_FLAG_ALL
+	departmental_flags = DEPARTMENTAL_FLAG_CARGO | DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE | DEPARTMENTAL_FLAG_SECURITY
 
 /datum/design/pod_armor_black
 	name = "Spacepod Armor (dark)"
@@ -64,7 +64,7 @@
 	build_path = /obj/item/pod_parts/armor/gold
 	category = list("Spacepod Designs")
 	materials = list(/datum/material/iron = 5000, /datum/material/glass = 2500, /datum/material/plasma = 7500, /datum/material/gold = 10000)
-	departmental_flags = DEPARTMENTAL_FLAG_ALL
+	departmental_flags = DEPARTMENTAL_FLAG_CARGO | DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE | DEPARTMENTAL_FLAG_SECURITY
 
 //////////////////////////////////////////
 //////SPACEPOD GUNS///////////////////////
@@ -153,7 +153,7 @@
 	materials = list(/datum/material/iron = 5000)
 	build_path = /obj/item/spacepod_equipment/tracker
 	category = list("Spacepod Designs")
-	departmental_flags = DEPARTMENTAL_FLAG_ALL
+	departmental_flags = DEPARTMENTAL_FLAG_CARGO | DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE | DEPARTMENTAL_FLAG_SECURITY
 
 //////////////////////////////////////////
 //////SPACEPOD CARGO ITEMS////////////////
@@ -177,7 +177,7 @@
 	materials = list(/datum/material/iron = 25000)
 	build_path = /obj/item/spacepod_equipment/cargo/large
 	category = list("Spacepod Designs")
-	departmental_flags = DEPARTMENTAL_FLAG_ALL
+	departmental_flags = DEPARTMENTAL_FLAG_CARGO | DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE | DEPARTMENTAL_FLAG_SECURITY
 
 //////////////////////////////////////////
 //////SPACEPOD SEC CARGO ITEMS////////////
@@ -191,7 +191,7 @@
 	materials = list(/datum/material/iron = 7500, /datum/material/glass = 2500)
 	build_path = /obj/item/spacepod_equipment/cargo/chair
 	category = list("Spacepod Designs")
-	departmental_flags = DEPARTMENTAL_FLAG_ALL
+	departmental_flags = DEPARTMENTAL_FLAG_CARGO | DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE | DEPARTMENTAL_FLAG_SECURITY
 
 /*/datum/design/loot_box
 	name = "Spacepod Loot Storage Module"
@@ -214,7 +214,7 @@
 	materials = list(/datum/material/iron = 4500)
 	build_path = /obj/item/spacepod_equipment/lock/keyed
 	category = list("Spacepod Designs")
-	departmental_flags = DEPARTMENTAL_FLAG_ALL
+	departmental_flags = DEPARTMENTAL_FLAG_CARGO | DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE | DEPARTMENTAL_FLAG_SECURITY
 
 /datum/design/pod_key
 	name = "Spacepod Tumbler Lock Key"
@@ -224,7 +224,7 @@
 	materials = list(/datum/material/iron = 500)
 	build_path = /obj/item/spacepod_key
 	category = list("Spacepod Designs")
-	departmental_flags = DEPARTMENTAL_FLAG_ALL
+	departmental_flags = DEPARTMENTAL_FLAG_CARGO | DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE | DEPARTMENTAL_FLAG_SECURITY
 
 /datum/design/lockbuster
 	name = "Spacepod Lock Buster"

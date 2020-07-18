@@ -7,9 +7,9 @@
 	total_positions = 1
 	spawn_positions = 1
 	supervisors = "the head of personnel"
-	selection_color = "#dddddd"
 	wiki_page = "Clown" //WaspStation Edit - Wikilinks/Warning
 	special_notice = "There is a difference between funny pranks and griefing. Know it." //WaspStation Edit - Wikilinks/Warning
+	selection_color = "#bbe291"
 
 	outfit = /datum/outfit/job/clown
 
@@ -63,3 +63,5 @@
 	H.dna.add_mutation(CLOWNMUT)
 	for(var/datum/mutation/human/clumsy/M in H.dna.mutations)
 		M.mutadone_proof = TRUE
+	var/datum/atom_hud/fan = GLOB.huds[DATA_HUD_FAN]
+	fan.add_hud_to(H)

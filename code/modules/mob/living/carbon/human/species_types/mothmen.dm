@@ -21,6 +21,8 @@
 				of the pests that were quick to set into the facility after it was abandoned, not a human teleporter malfunction as many believe. \
 				Their initial limited intelligence led to moffic, their \"native\" language. Generations later, most mothpeople still speak this language. \
 				After finally being discovered by an unknown craft, mothpeople were quick to spread out across the galaxy and are now as commonplace as their natural counterparts."
+	wings_icon = "Megamoth"
+	has_innate_wings = TRUE
 
 /datum/species/moth/regenerate_organs(mob/living/carbon/C,datum/species/old_species,replace_current=TRUE,list/excluded_zones)
 	. = ..()
@@ -46,6 +48,13 @@
 	if(H.dna.features["moth_wings"] != "Burnt Off" && H.bodytemperature >= 800 && H.fire_stacks > 0) //do not go into the extremely hot light. you will not survive
 		to_chat(H, "<span class='danger'>Your precious wings burn to a crisp!</span>")
 		H.dna.features["moth_wings"] = "Burnt Off"
+		if(flying_species) //This is all exclusive to if the person has the effects of a potion of flight
+			if(H.movement_type & FLYING)
+				ToggleFlight(H)
+				H.Knockdown(1.5 SECONDS)
+			fly.Remove(H)
+			QDEL_NULL(fly)
+			H.dna.features["wings"] = "None"
 		handle_mutant_bodyparts(H)
 
 /datum/species/moth/handle_chemicals(datum/reagent/chem, mob/living/carbon/human/H)
@@ -61,7 +70,7 @@
 
 /datum/species/moth/space_move(mob/living/carbon/human/H)
 	. = ..()
-	if(H.loc && !isspaceturf(H.loc) && H.dna.features["moth_wings"] != "Burnt Off")
+	if(H.loc && !isspaceturf(H.loc) && H.dna.features["moth_wings"] != "Burnt Off" && !flying_species) //"flying_species" is exclusive to the potion of flight, which has its flying mechanics. If they want to fly they can use that instead
 		var/datum/gas_mixture/current = H.loc.return_air()
 		if(current && (current.return_pressure() >= ONE_ATMOSPHERE*0.85)) //as long as there's reasonable pressure and no gravity, flight is possible
 			return TRUE

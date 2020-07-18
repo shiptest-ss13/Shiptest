@@ -1,5 +1,6 @@
 
 /obj/effect/gibspawner
+	icon_state = "gibspawner"// For the map editor
 	var/sparks = 0 //whether sparks spread
 	var/virusProb = 20 //the chance for viruses to spread on the gibs
 	var/gib_mob_type  //generate a fake mob to transfer DNA from if we weren't passed a mob.
@@ -31,7 +32,7 @@
 
 
 	var/list/dna_to_add //find the dna to pass to the spawned gibs. do note this can be null if the mob doesn't have blood. add_blood_DNA() has built in null handling.
-	if(source_mob)
+	if(source_mob && istype(source_mob))
 		dna_to_add = source_mob.get_blood_dna_list() //ez pz
 	else if(gib_mob_type)
 		var/mob/living/temp_mob = new gib_mob_type(src) //generate a fake mob so that we pull the right type of DNA for the gibs.

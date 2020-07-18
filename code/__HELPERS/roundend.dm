@@ -244,6 +244,10 @@
 
 	CHECK_TICK
 
+	set_observer_default_invisibility(0, "<span class='warning'>The round is over! You are now visible to the living.</span>")
+
+	CHECK_TICK
+
 	//These need update to actually reflect the real antagonists
 	//Print a list of antagonists to the server log
 	var/list/total_antagonists = list()

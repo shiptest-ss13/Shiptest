@@ -66,7 +66,6 @@
 /obj/item/reagent_containers/food/snacks/grown/attackby(obj/item/O, mob/user, params)
 	..()
 	if (istype(O, /obj/item/plant_analyzer))
-		flick("[icon_state]-scan", O)	//makes it so that it plays the scan animation upon scanning, waspstation edit
 		var/msg = "<span class='info'>*---------*\n This is \a <span class='name'>[src]</span>.\n"
 		if(seed)
 			msg += seed.get_analyzer_text()
@@ -120,9 +119,9 @@
 		for(var/datum/plant_gene/trait/trait in seed.genes)
 			trait.on_squash(src, target)
 
-	reagents.reaction(T)
+	reagents.expose(T)
 	for(var/A in T)
-		reagents.reaction(A)
+		reagents.expose(A)
 
 	qdel(src)
 

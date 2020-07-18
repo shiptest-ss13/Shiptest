@@ -16,6 +16,7 @@
 	var/part_set
 	var/datum/design/being_built
 	var/list/queue = list()
+	var/list/datum/design/matching_designs
 	var/processing_queue = 0
 	var/screen = "main"
 	var/link_on_init = TRUE
@@ -39,6 +40,7 @@
 
 /obj/machinery/mecha_part_fabricator/Initialize(mapload)
 	stored_research = new
+	matching_designs = list()
 	rmat = AddComponent(/datum/component/remote_materials, "mechfab", mapload && link_on_init)
 	RefreshParts() //Recalculating local material sizes if the fab isn't linked
 	return ..()
@@ -88,10 +90,10 @@
 		if(D.build_type & MECHFAB)
 			if(!(set_name in D.category))
 				continue
-			output += "<div class='part'>[output_part_info(D)]<br>\["
+			output += "<div class='part'>[output_part_info(D)]<br>"
 			if(check_resources(D))
 				output += "<a href='?src=[REF(src)];part=[D.id]'>Build</a> | "
-			output += "<a href='?src=[REF(src)];add_to_queue=[D.id]'>Add to queue</a>\]\[<a href='?src=[REF(src)];part_desc=[D.id]'>?</a>\]</div>"
+			output += "<a href='?src=[REF(src)];add_to_queue=[D.id]'>Add to queue</a><a href='?src=[REF(src)];part_desc=[D.id]'>?</a></div>"
 	return output
 
 /obj/machinery/mecha_part_fabricator/proc/output_part_info(datum/design/D)
@@ -107,24 +109,23 @@
 		i++
 	return output
 
-/obj/machinery/mecha_part_fabricator/proc/output_available_resources()
+/obj/machinery/mecha_part_fabricator/proc/output_ui_header()
 	var/output
-	var/datum/component/material_container/materials = rmat.mat_container
-
-	if(materials)
-		for(var/mat_id in materials.materials)
-			var/datum/material/M = mat_id
-			var/amount = materials.materials[mat_id]
-			var/ref = REF(M)
-			output += "<span class=\"res_name\">[M.name]: </span>[amount] cm&sup3;"
-			if(amount >= MINERAL_MATERIAL_AMOUNT)
-				output += "<span style='font-size:80%;'>- Remove \[<a href='?src=[REF(src)];remove_mat=1;material=[ref]'>1</a>\]"
-				if(amount >= (MINERAL_MATERIAL_AMOUNT * 10))
-					output += " | \[<a href='?src=[REF(src)];remove_mat=10;material=[ref]'>10</a>\]"
-				output += " | \[<a href='?src=[REF(src)];remove_mat=50;material=[ref]'>50</a>\]</span>"
-			output += "<br>"
+	output += "<div class='statusDisplay'><b>Mecha Fabricator</b><br>"
+	output += "Security protocols: [(obj_flags & EMAGGED)? "<font color='red'>Disabled</font>" : "<font color='green'>Enabled</font>"]<br>"
+	if (rmat.mat_container)
+		output += "<a href='?src=[REF(src)];screen=resources'><B>Material Amount:</B> [rmat.format_amount()]</A>"
 	else
-		output += "<font color='red'>No material storage connected, please contact the quartermaster.</font><br>"
+		output += "<font color='red'>No material storage connected, please contact the quartermaster.</font>"
+	output += "<br><a href='?src=[REF(src)];sync=1'>Sync with R&D servers</a><br>"
+	output += "<a href='?src=[REF(src)];screen=main'>Main Screen</a>"
+	output += "</div>"
+	output += "<form name='search' action='?src=[REF(src)]'>\
+	<input type='hidden' name='src' value='[REF(src)]'>\
+	<input type='hidden' name='search' value='to_search'>\
+	<input type='text' name='to_search'>\
+	<input type='submit' value='Search'>\
+	</form><HR>"
 	return output
 
 /obj/machinery/mecha_part_fabricator/proc/get_resources_w_coeff(datum/design/D)
@@ -141,6 +142,40 @@
 	if(materials.has_materials(get_resources_w_coeff(D)))
 		return TRUE
 	return FALSE
+
+/obj/machinery/mecha_part_fabricator/proc/output_ui_materials()
+	var/output
+	output += "<div class='statusDisplay'><h3>Material Storage:</h3>"
+	for(var/mat_id in rmat.mat_container.materials)
+		var/datum/material/M = mat_id
+		var/amount = rmat.mat_container.materials[mat_id]
+		var/ref = REF(M)
+		output += "* [amount] of [M.name]: "
+		if(amount >= MINERAL_MATERIAL_AMOUNT) output += "<A href='?src=[REF(src)];remove_mat=1;material=[ref]'>Eject</A>"
+		if(amount >= MINERAL_MATERIAL_AMOUNT*5) output += "<A href='?src=[REF(src)];remove_mat=5;material=[ref]'>5x</A>"
+		if(amount >= MINERAL_MATERIAL_AMOUNT) output += "<A href='?src=[REF(src)];remove_mat=50;material=[ref]'>All</A>"
+		output += "<br>"
+	output += "</div>"
+	return output
+
+/obj/machinery/mecha_part_fabricator/proc/search(string)
+	matching_designs.Cut()
+	for(var/v in stored_research.researched_designs)
+		var/datum/design/D = SSresearch.techweb_design_by_id(v)
+		if(!(D.build_type & MECHFAB))
+			continue
+		if(findtext(D.name,string))
+			matching_designs.Add(D)
+
+/obj/machinery/mecha_part_fabricator/proc/output_ui_search()
+	var/output
+	output += "<h2>Search Results:</h2>"
+	for(var/datum/design/D in matching_designs)
+		output += "<div class='part'>[output_part_info(D)]<br>"
+		if(check_resources(D))
+			output += "<a href='?src=[REF(src)];part=[D.id]'>Build</a> | "
+		output += "<a href='?src=[REF(src)];add_to_queue=[D.id]'>Add to queue</a><a href='?src=[REF(src)];part_desc=[D.id]'>?</a></div>"
+	return output
 
 /obj/machinery/mecha_part_fabricator/proc/build_part(datum/design/D)
 	var/list/res_coef = get_resources_w_coeff(D)
@@ -239,7 +274,7 @@
 			output += "<a href='?src=[REF(src)];remove_from_queue=[i]'>Remove</a></li>"
 
 		output += "</ol>"
-		output += "\[<a href='?src=[REF(src)];process_queue=1'>Process queue</a> | <a href='?src=[REF(src)];clear_queue=1'>Clear queue</a>\]"
+		output += "<a href='?src=[REF(src)];process_queue=1'>Process queue</a> | <a href='?src=[REF(src)];clear_queue=1'>Clear queue</a>"
 	return output
 
 /obj/machinery/mecha_part_fabricator/proc/sync()
@@ -271,18 +306,20 @@
 		left_part = temp
 	else if(being_built)
 		var/obj/I = being_built.build_path
-		left_part = {"<TT>Building [initial(I.name)].<BR>
-							Please wait until completion...</TT>"}
+		left_part = {"<div class='statusDisplay'>Building [initial(I.name)].<BR>
+							Please wait until completion...</div>"}
 	else
+		left_part = output_ui_header()
 		switch(screen)
 			if("main")
-				left_part = output_available_resources()+"<hr>"
-				left_part += "<a href='?src=[REF(src)];sync=1'>Sync with R&D servers</a><hr>"
 				for(var/part_set in part_sets)
-					left_part += "<a href='?src=[REF(src)];part_set=[part_set]'>[part_set]</a> - \[<a href='?src=[REF(src)];partset_to_queue=[part_set]'>Add all parts to queue</a>\]<br>"
+					left_part += "<a href='?src=[REF(src)];part_set=[part_set]'>[part_set]</a> - <a href='?src=[REF(src)];partset_to_queue=[part_set]'>Add all parts to queue</a><br>"
 			if("parts")
 				left_part += output_parts_list(part_set)
-				left_part += "<hr><a href='?src=[REF(src)];screen=main'>Return</a>"
+			if("resources")
+				left_part += output_ui_materials()
+			if("search")
+				left_part += output_ui_search()
 	dat = {"<html>
 			<head>
 			<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
@@ -304,18 +341,22 @@
 				<body>
 				<table style='width: 100%;'>
 				<tr>
-				<td style='width: 65%; padding-right: 10px;'>
+				<td style='width: 65%; padding-right: 10px; margin: 3px 0;'>
 				[left_part]
 				</td>
-				<td style='width: 35%; background: #ccc;' id='queue'>
+				<td style='width: 35%; background: #000000; border: 1px solid #40628a;	padding: 4px; margin: 3px 0;' id='queue'>
 				[list_queue()]
 				</td>
 				<tr>
 				</table>
 				</body>
 				</html>"}
-	user << browse(dat, "window=mecha_fabricator;size=1000x430")
-	onclose(user, "mecha_fabricator")
+
+	var/datum/browser/popup = new(user, "mecha_fabricator", name, 1000, 430)
+	popup.set_content(dat)
+	popup.open()
+	//user << browse(dat, "window=mecha_fabricator;size=1000x430")
+	//onclose(user, "mecha_fabricator")
 	return
 
 /obj/machinery/mecha_part_fabricator/Topic(href, href_list)
@@ -385,6 +426,9 @@
 								<a href='?src=[REF(src)];clear_temp=1'>Return</a>
 								"}
 					break
+	if(href_list["search"]) //Search for designs with name matching pattern
+		search(href_list["to_search"])
+		screen = "search"
 
 	if(href_list["remove_mat"] && href_list["material"])
 		var/datum/material/Mat = locate(href_list["material"])

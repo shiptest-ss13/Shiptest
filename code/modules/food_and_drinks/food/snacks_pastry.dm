@@ -37,6 +37,10 @@
 	filling_color = "#FF69B4"
 	return TRUE
 
+/// Returns the sprite of the donut while in a donut box
+/obj/item/reagent_containers/food/snacks/donut/proc/in_box_sprite()
+	return "[icon_state]_inbox"
+
 /obj/item/reagent_containers/food/snacks/donut/checkLiked(fraction, mob/M)	//Sec officers always love donuts
 	if(last_check_time + 50 < world.time)
 		if(ishuman(M))
@@ -157,6 +161,10 @@
 	extra_reagent = /datum/reagent/consumable/berryjuice
 	tastes = list("jelly" = 1, "donut" = 3)
 	foodtype = JUNKFOOD | GRAIN | FRIED | FRUIT | SUGAR | BREAKFAST
+
+// Jelly donuts don't have holes, but look the same on the outside
+/obj/item/reagent_containers/food/snacks/donut/jelly/in_box_sprite()
+	return "[replacetext(icon_state, "jelly", "donut")]_inbox"
 
 /obj/item/reagent_containers/food/snacks/donut/jelly/Initialize()
 	. = ..()
@@ -559,6 +567,9 @@
 /obj/item/reagent_containers/food/snacks/cookie/Initialize()
 	. = ..()
 	AddElement(/datum/element/dunkable, 10)
+
+/obj/item/reagent_containers/food/snacks/cookie/sleepy
+	list_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/toxin/chloralhydrate = 10)
 
 /obj/item/reagent_containers/food/snacks/fortunecookie
 	name = "fortune cookie"

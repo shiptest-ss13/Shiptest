@@ -104,7 +104,7 @@
 									datum/tgui/master_ui = null, datum/ui_state/state = GLOB.notcontained_state)
 	ui = SStgui.try_update_ui(user, src, ui_key, ui, force_open)
 	if(!ui)
-		ui = new(user, src, ui_key, "cloner", name, ui_x, ui_y, master_ui, state)
+		ui = new(user, src, ui_key, "Cloner", name, ui_x, ui_y, master_ui, state)
 		ui.open()
 
 /obj/machinery/clonepod/ui_data()
@@ -147,27 +147,7 @@
 //The return of data disks?? Just for transferring between genetics machine/cloning machine.
 //TO-DO: Make the genetics machine accept them.
 /obj/item/disk/data
-	name = "cloning data disk"
-	icon_state = "datadisk0" //Gosh I hope syndies don't mistake them for the nuke disk.
 	var/list/fields = list()
-	var/list/mutations = list()
-	var/max_mutations = 6
-	var/read_only = FALSE //Well,it's still a floppy disk
-
-//Disk stuff.
-/obj/item/disk/data/Initialize()
-	. = ..()
-	icon_state = "datadisk[rand(0,6)]"
-	add_overlay("datadisk_gene")
-
-/obj/item/disk/data/attack_self(mob/user)
-	read_only = !read_only
-	to_chat(user, "<span class='notice'>You flip the write-protect tab to [read_only ? "protected" : "unprotected"].</span>")
-
-/obj/item/disk/data/examine(mob/user)
-	. = ..()
-	. += "The write-protect tab is set to [read_only ? "protected" : "unprotected"]."
-
 
 //Clonepod
 
@@ -242,7 +222,7 @@
 		clonename = "clone ([rand(1,999)])"
 	H.real_name = clonename
 
-	H.hardset_dna(ui, mutation_index, H.real_name, blood_type, mrace, features)
+	H.hardset_dna(ui, mutation_index, null, H.real_name, blood_type, mrace, features)
 
 	if(!HAS_TRAIT(H, TRAIT_RADIMMUNE))//dont apply mutations if the species is Mutation proof.
 		if(efficiency > 2)

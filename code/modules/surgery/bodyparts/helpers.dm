@@ -140,52 +140,46 @@
 /mob/proc/get_broken_limbs()
 	return 0
 
-//Gets a list of broken bodyparts
+///Gets a list of broken bodyparts
 /mob/living/carbon/get_broken_limbs()
 	var/list/full = list(BODY_ZONE_HEAD, BODY_ZONE_CHEST, BODY_ZONE_R_ARM, BODY_ZONE_L_ARM, BODY_ZONE_R_LEG, BODY_ZONE_L_LEG)
 	var/list/broken = list()
 	for(var/zone in full)
 		var/obj/item/bodypart/affecting = get_bodypart(zone)
-		if(affecting.bone_status == BONE_FLAG_BROKEN)
+		if(affecting && affecting.bone_status == BONE_FLAG_BROKEN)
 			broken += zone
 	return broken
 
-//Gets how many legs are broken (of the two possible.) Used for slowdown calculation.
+///Gets how many legs are broken (of the two possible.) Used for slowdown calculation.
 /mob/proc/get_broken_legs()
 	return 0
 
 /mob/living/carbon/get_broken_legs()
 	var/brokenlegs = 0
 	for(var/obj/item/bodypart/X in bodyparts)
-		if(X.bone_status == BONE_FLAG_BROKEN || X.bone_status == BONE_FLAG_SPLINTED)
+		if(X && X.bone_status == BONE_FLAG_BROKEN || X.bone_status == BONE_FLAG_SPLINTED)
 			if(X.body_part == LEG_RIGHT || X.body_part == LEG_LEFT)
 				brokenlegs++
 	return brokenlegs
 
+///Remove a specific embedded item from the carbon mob
+/mob/living/carbon/proc/remove_embedded_object(obj/item/I)
+	SEND_SIGNAL(src, COMSIG_CARBON_EMBED_REMOVAL, I)
 
-//Remove all embedded objects from all limbs on the carbon mob
+///Remove all embedded objects from all limbs on the carbon mob
 /mob/living/carbon/proc/remove_all_embedded_objects()
-	var/turf/T = get_turf(src)
-
 	for(var/X in bodyparts)
 		var/obj/item/bodypart/L = X
 		for(var/obj/item/I in L.embedded_objects)
-			L.embedded_objects -= I
-			I.forceMove(T)
-			I.unembedded()
-
-	clear_alert("embeddedobject")
-	SEND_SIGNAL(src, COMSIG_CLEAR_MOOD_EVENT, "embedded")
+			remove_embedded_object(I)
 
 /mob/living/carbon/proc/has_embedded_objects(include_harmless=FALSE)
-	. = 0
 	for(var/X in bodyparts)
 		var/obj/item/bodypart/L = X
 		for(var/obj/item/I in L.embedded_objects)
-			if(!include_harmless && I.is_embed_harmless())
+			if(!include_harmless && I.isEmbedHarmless())
 				continue
-			return 1
-
+			return TRUE
 
 //Helper for quickly creating a new limb - used by augment code in species.dm spec_attacked_by
 /mob/living/carbon/proc/newBodyPart(zone, robotic, fixed_icon)

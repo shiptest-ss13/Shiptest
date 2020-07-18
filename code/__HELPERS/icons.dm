@@ -712,9 +712,9 @@ world
 /// appearance system (overlays/underlays, etc.) is not available.
 ///
 /// Only the first argument is required.
-/proc/getFlatIcon(image/A, defdir, deficon, defstate, defblend, start = TRUE, no_anim = FALSE)
+/proc/getFlatIcon(image/A, defdir, deficon, defstate, defblend, start = TRUE, no_anim = TRUE)
 	//Define... defines.
-	var/static/icon/flat_template = icon('icons/effects/effects.dmi', "nothing")
+	var/static/icon/flat_template = icon('icons/blanks/32x32.dmi', "nothing")
 
 	#define BLANK icon(flat_template)
 	#define SET_SELF(SETVAR) do { \
@@ -1134,7 +1134,7 @@ GLOBAL_LIST_INIT(freon_color_matrix, list("#2E5E69", "#60A2A8", "#A1AFB1", rgb(0
 			var/name = sanitize_filename("[generate_asset_name(thing)].png")
 			register_asset(name, thing)
 			for (var/thing2 in targets)
-				send_asset(thing2, key, FALSE)
+				send_asset(thing2, key)
 			return "<img class='icon icon-misc' src=\"[url_encode(name)]\">"
 		var/atom/A = thing
 		if (isnull(dir))
@@ -1158,7 +1158,7 @@ GLOBAL_LIST_INIT(freon_color_matrix, list("#2E5E69", "#60A2A8", "#A1AFB1", rgb(0
 	key = "[generate_asset_name(I)].png"
 	register_asset(key, I)
 	for (var/thing2 in targets)
-		send_asset(thing2, key, FALSE)
+		send_asset(thing2, key)
 
 	return "<img class='icon icon-[icon_state]' src=\"[url_encode(key)]\">"
 

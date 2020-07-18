@@ -64,7 +64,7 @@
 /datum/minimap/proc/send(mob/user)
 	register_asset("minimap-[id].png", map_icon)
 	register_asset("minimap-[id]-meta.png", meta_icon)
-	send_asset_list(user, list("minimap-[id].png" = map_icon, "minimap-[id]-meta.png" = meta_icon), verify=FALSE)
+	send_asset_list(user, list("minimap-[id].png" = map_icon, "minimap-[id]-meta.png" = meta_icon))
 
 /datum/minimap_group
 	var/list/minimaps

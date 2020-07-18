@@ -39,7 +39,7 @@
 	..()
 	. = 1
 
-/datum/reagent/medicine/rhigoxane/reaction_mob(mob/living/carbon/M, method=VAPOR, reac_volume)
+/datum/reagent/medicine/rhigoxane/expose_mob(mob/living/carbon/M, method=VAPOR, reac_volume)
 	if(method != VAPOR)
 		return
 

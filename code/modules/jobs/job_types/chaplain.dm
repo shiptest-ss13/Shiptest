@@ -7,15 +7,15 @@
 	total_positions = 1
 	spawn_positions = 1
 	supervisors = "the head of personnel"
-	selection_color = "#dddddd"
 	wiki_page = "Chaplain" //WaspStation Edit - Wikilinks/Warning
+	selection_color = "#bbe291"
 
 	outfit = /datum/outfit/job/chaplain
 
 	access = list(ACCESS_MORGUE, ACCESS_CHAPEL_OFFICE, ACCESS_CREMATORIUM, ACCESS_THEATRE)
 	minimal_access = list(ACCESS_MORGUE, ACCESS_CHAPEL_OFFICE, ACCESS_CREMATORIUM, ACCESS_THEATRE)
 	paycheck = PAYCHECK_EASY
-	paycheck_department = ACCOUNT_CIV
+	paycheck_department = ACCOUNT_SRV
 
 	display_order = JOB_DISPLAY_ORDER_CHAPLAIN
 
@@ -53,7 +53,6 @@
 
 	B.deity_name = new_deity
 
-
 	switch(lowertext(new_religion))
 		if("christianity") // DEFAULT_RELIGION
 			B.name = pick("The Holy Bible","The Dead Sea Scrolls")
@@ -79,7 +78,7 @@
 			B.name = "Fluorescent Incandescence"
 		if("lol", "wtf", "gay", "penis", "ass", "poo", "badmin", "shitmin", "deadmin", "cock", "cocks", "meme", "memes")
 			B.name = pick("Woodys Got Wood: The Aftermath", "War of the Cocks", "Sweet Bro and Hella Jef: Expanded Edition","F.A.T.A.L. Rulebook")
-			H.adjustOrganLoss(ORGAN_SLOT_BRAIN, 100) // starts off retarded as fuck
+			H.adjustOrganLoss(ORGAN_SLOT_BRAIN, 100) // starts off brain damaged as fuck
 		if("monkeyism","apism","gorillism","primatism")
 			B.name = pick("Going Bananas", "Bananas Out For Harambe")
 		if("mormonism")
@@ -90,6 +89,8 @@
 			B.name = "The Holy Piby"
 		if("satanism")
 			B.name = "The Unholy Bible"
+		if("sikhism")
+			B.name = "Guru Granth Sahib"
 		if("science")
 			B.name = pick("Principle of Relativity", "Quantum Enigma: Physics Encounters Consciousness", "Programming the Universe", "Quantum Physics and Theology", "String Theory for Dummies", "How To: Build Your Own Warp Drive", "The Mysteries of Bluespace", "Playing God: Collector's Edition")
 		if("scientology")
@@ -124,6 +125,12 @@
 	ears = /obj/item/radio/headset/headset_srv
 	uniform = /obj/item/clothing/under/rank/civilian/chaplain
 	alt_uniform = /obj/item/clothing/under/pants/youngfolksjeans //Wasp Edit - Alt Uniforms
-	backpack_contents = list(/obj/item/camera/spooky = 1)
+	backpack_contents = list(
+		/obj/item/stamp/chap = 1,
+		/obj/item/camera/spooky = 1
+		)
+
 	backpack = /obj/item/storage/backpack/cultpack
 	satchel = /obj/item/storage/backpack/cultpack
+
+	chameleon_extras = /obj/item/stamp/chap

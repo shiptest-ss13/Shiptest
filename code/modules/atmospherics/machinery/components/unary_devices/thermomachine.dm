@@ -115,7 +115,7 @@
 	if(node)
 		node.atmosinit()
 		node.addMember(src)
-	build_network()
+	SSair.add_to_rebuild_queue(src)
 	return TRUE
 
 /obj/machinery/atmospherics/components/unary/thermomachine/ui_status(mob/user)
@@ -127,7 +127,7 @@
 																	datum/tgui/master_ui = null, datum/ui_state/state = GLOB.default_state)
 	ui = SStgui.try_update_ui(user, src, ui_key, ui, force_open)
 	if(!ui)
-		ui = new(user, src, ui_key, "thermomachine", name, ui_x, ui_y, master_ui, state)
+		ui = new(user, src, ui_key, "ThermoMachine", name, ui_x, ui_y, master_ui, state)
 		ui.open()
 
 /obj/machinery/atmospherics/components/unary/thermomachine/ui_data(mob/user)
@@ -182,6 +182,7 @@
 	if(!istype(user) || !user.canUseTopic(src, BE_CLOSE))
 		return
 	on = !on
+	investigate_log("was turned [on ? "on" : "off"] by [key_name(user)]", INVESTIGATE_ATMOS)
 	update_icon()
 	investigate_log("was turned [on ? "on" : "off"] by [key_name(usr)]", INVESTIGATE_ATMOS)
 	message_admins("[src.name] was turned [on ? "on" : "off"] [ADMIN_LOOKUPFLW(usr)] at [ADMIN_COORDJMP(T)], [A]")
@@ -226,8 +227,8 @@
 	if(!istype(user) || !user.canUseTopic(src, BE_CLOSE))
 		return
 	target_temperature = min_temperature
-	investigate_log("was set to [target_temperature] K by [key_name(usr)]", INVESTIGATE_ATMOS)
-	message_admins("[src.name] was minimized by [ADMIN_LOOKUPFLW(usr)] at [ADMIN_COORDJMP(T)], [A]")
+	investigate_log("was set to [target_temperature] K by [key_name(user)]", INVESTIGATE_ATMOS)
+	message_admins("[src.name] was minimized by [ADMIN_LOOKUPFLW(user)] at [ADMIN_COORDJMP(T)], [A]")
 	return TRUE
 
 /obj/machinery/atmospherics/components/unary/thermomachine/heater
@@ -258,6 +259,6 @@
 	if(!istype(user) || !user.canUseTopic(src, BE_CLOSE))
 		return
 	target_temperature = max_temperature
-	investigate_log("was set to [target_temperature] K by [key_name(usr)]", INVESTIGATE_ATMOS)
-	message_admins("[src.name] was maximized by [ADMIN_LOOKUPFLW(usr)] at [ADMIN_COORDJMP(T)], [A]")
+	investigate_log("was set to [target_temperature] K by [key_name(user)]", INVESTIGATE_ATMOS)
+	message_admins("[src.name] was maximized by [ADMIN_LOOKUPFLW(user)] at [ADMIN_COORDJMP(T)], [A]")
 	return TRUE

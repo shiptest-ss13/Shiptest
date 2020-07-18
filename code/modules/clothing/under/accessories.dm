@@ -187,7 +187,7 @@
 	desc = "An award for distinguished combat and sacrifice in defence of Nanotrasen's commercial interests. Often awarded to security staff."
 
 /obj/item/clothing/accessory/medal/silver/excellence
-	name = "the head of personnel award for outstanding achievement in the field of excellence"
+	name = "\proper the head of personnel award for outstanding achievement in the field of excellence"
 	desc = "Nanotrasen's dictionary defines excellence as \"the quality or condition of being excellent\". This is awarded to those rare crewmembers who fit that definition."
 
 /obj/item/clothing/accessory/medal/gold
@@ -322,7 +322,7 @@
 	name = "Clown Pin"
 	desc = "A pin to show off your appreciation for clowns and clowning"
 	icon_state = "fan_clown_pin"
-	above_suit = TRUE
+	above_suit = FALSE
 	minimize_when_attached = TRUE
 	attachment_slot = CHEST
 
@@ -340,7 +340,7 @@
 	name = "Mime Pin"
 	desc = "A pin to show off your appreciation for mimes and miming"
 	icon_state = "fan_mime_pin"
-	above_suit = TRUE
+	above_suit = FALSE
 	minimize_when_attached = TRUE
 	attachment_slot = CHEST
 

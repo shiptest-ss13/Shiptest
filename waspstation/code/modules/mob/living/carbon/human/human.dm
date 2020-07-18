@@ -13,7 +13,7 @@
 
 			if(src.zone_selected == BODY_ZONE_HEAD) //curbstomp specific code
 
-				var/increment = (T.lying/90)-2
+				var/increment = (T.lying_angle/90)-2
 				setDir(increment > 0 ? WEST : EAST)
 				for(var/i in 1 to 5)
 					src.pixel_y += 8-i
@@ -37,7 +37,7 @@
 
 			else if(src.zone_selected == BODY_ZONE_PRECISE_GROIN) //groinkick specific code
 
-				var/increment = (T.lying/90)-2
+				var/increment = (T.lying_angle/90)-2
 				setDir(increment > 0 ? WEST : EAST)
 				for(var/i in 1 to 5)
 					src.pixel_y += 2-i
@@ -62,7 +62,7 @@
 
 				log_combat(src, T, "groinkicked")
 
-			var/increment = (T.lying/90)-2
+			var/increment = (T.lying_angle/90)-2
 			for(var/i in 1 to 10)
 				src.pixel_x = src.pixel_x + increment
 				sleep(0.1)

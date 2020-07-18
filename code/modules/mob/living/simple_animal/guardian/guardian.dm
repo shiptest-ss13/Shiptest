@@ -128,7 +128,9 @@ GLOBAL_LIST_EMPTY(parasites) //all currently existing/living guardians
 		add_overlay(cooloverlay)
 
 /mob/living/simple_animal/hostile/guardian/Login() //if we have a mind, set its name to ours when it logs in
-	..()
+	. = ..()
+	if(!. || !client)
+		return FALSE
 	if(mind)
 		mind.name = "[real_name]"
 	if(!summoner)
@@ -497,10 +499,10 @@ GLOBAL_LIST_EMPTY(parasites) //all currently existing/living guardians
 ////////Creation
 
 /obj/item/guardiancreator
-	name = "deck of tarot cards"
+	name = "enchanted deck of tarot cards"
 	desc = "An enchanted deck of tarot cards, rumored to be a source of unimaginable power."
 	icon = 'icons/obj/toy.dmi'
-	icon_state = "deck_syndicate_full"
+	icon_state = "deck_tarot_full"
 	var/used = FALSE
 	var/theme = "magic"
 	var/mob_name = "Guardian Spirit"
@@ -648,7 +650,6 @@ GLOBAL_LIST_EMPTY(parasites) //all currently existing/living guardians
 
 /obj/item/paper/guides/antag/guardian
 	name = "Holoparasite Guide"
-	icon_state = "paper_words"
 	info = {"<b>A list of Holoparasite Types</b><br>
 
  <br>
@@ -673,10 +674,6 @@ GLOBAL_LIST_EMPTY(parasites) //all currently existing/living guardians
  <b>Gravitokinetic</b>: Attacks will apply crushing gravity to the target. Can target the ground as well to slow targets advancing on you, but this will affect the user.<br>
  <br>
 "}
-
-/obj/item/paper/guides/antag/guardian/ComponentInitialize()
-	. = ..()
-	AddElement(/datum/element/update_icon_blocker)
 
 /obj/item/paper/guides/antag/guardian/wizard
 	name = "Guardian Guide"

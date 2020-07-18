@@ -82,5 +82,5 @@ WaspStation End */
 */
 
 /datum/chemical_reaction/penthrite
-	results = list(/datum/reagent/medicine/C2/penthrite = 4)
-	required_reagents = list(/datum/reagent/pentaerythritol = 4, /datum/reagent/acetone = 1,  /datum/reagent/toxin/acid/nitracid = 1)
+	results = list(/datum/reagent/medicine/C2/penthrite = 3)
+	required_reagents = list(/datum/reagent/pentaerythritol = 1, /datum/reagent/acetone = 1,  /datum/reagent/toxin/acid/nitracid = 1 , /datum/reagent/wittel = 1)

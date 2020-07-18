@@ -36,7 +36,17 @@
 	require_comms_key = TRUE //not really needed, but I don't think any bot besides ours would need it
 
 /datum/world_topic/manifest/Run(list/input)
-	return GLOB.data_core.get_manifest()
+	. = list()
+	var/list/manifest = GLOB.data_core.get_manifest()
+	for(var/department in manifest)
+		var/list/entries = manifest[department]
+		var/list/dept_entries = list()
+		for(var/entry in entries)
+			var/list/entry_list = entry
+			dept_entries += "[entry_list["name"]]: [entry_list["rank"]]"
+		.[department] = dept_entries
+
+	return list2params(.)
 
 /datum/world_topic/reload_admins
 	keyword = "reload_admins"

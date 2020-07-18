@@ -12,12 +12,13 @@
 #define WATER_VAPOR_FREEZE					200
 //freon reaction
 #define FREON_BURN_RATE_DELTA				4
-#define FIRE_FREON_ENERGY_RELEASED			-200000 //amount of heat absorbed per mole of burnt freon in the tile
+#define FIRE_FREON_ENERGY_RELEASED			-300000 //amount of heat absorbed per mole of burnt freon in the tile
 
 #define N2O_DECOMPOSITION_MIN_ENERGY		1400
 #define N2O_DECOMPOSITION_ENERGY_RELEASED	200000
 
 #define NITRYL_FORMATION_ENERGY				100000
+#define NITROUS_FORMATION_ENERGY			10000
 #define TRITIUM_BURN_OXY_FACTOR				100
 #define TRITIUM_BURN_TRIT_FACTOR			10
 #define TRITIUM_BURN_RADIOACTIVITY_FACTOR	50000 	//The neutrons gotta go somewhere. Completely arbitrary number.

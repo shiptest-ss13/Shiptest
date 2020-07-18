@@ -148,16 +148,17 @@
 		"Medical" = GLOB.medical_positions,
 		"Science" = GLOB.science_positions,
 		"Supply" = GLOB.supply_positions,
-		"Civilian" = GLOB.civilian_positions,
+		"Service" = GLOB.service_positions,
 		"Silicon" = GLOB.nonhuman_positions
 	)
 	for(var/datum/data/record/t in GLOB.data_core.general)
 		var/name = t.fields["name"]
 		var/rank = t.fields["rank"]
+		var/truerank = t.fields["truerank"]
 		var/has_department = FALSE
 		for(var/department in departments)
 			var/list/jobs = departments[department]
-			if(rank in jobs || (t.fields["truerank"] && (t.fields["truerank"] in jobs))) //Wasp edit - alt titles ((((((fun))) with (parenthesis) and (AND/OR/in))))
+			if((rank in jobs) || (truerank in jobs)) //Wasp edit - alt titles
 				if(!manifest_out[department])
 					manifest_out[department] = list()
 				manifest_out[department] += list(list(
@@ -209,7 +210,6 @@
 	var/static/list/show_directions = list(SOUTH, WEST)
 	if(H.mind && (H.mind.assigned_role != H.mind.special_role))
 		var/assignment
-		var/trueassignment //wasp edit - alt titles
 		if(H.mind.assigned_role)
 			assignment = H.mind.assigned_role
 		else if(H.job)
@@ -218,6 +218,7 @@
 			assignment = "Unassigned"
 
 		//Wasp begin - Alt job titles
+		var/trueassignment = assignment
 		if(C && C.prefs && C.prefs.alt_titles_preferences[assignment])
 			trueassignment = assignment
 			assignment = C.prefs.alt_titles_preferences[assignment]

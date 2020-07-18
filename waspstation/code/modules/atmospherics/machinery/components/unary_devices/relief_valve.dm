@@ -64,7 +64,7 @@
 /obj/machinery/atmospherics/components/unary/relief_valve/ui_interact(mob/user, ui_key = "main", datum/tgui/ui = null, force_open = FALSE, datum/tgui/master_ui = null, datum/ui_state/state = GLOB.default_state)
 	ui = SStgui.try_update_ui(user, src, ui_key, ui, force_open)
 	if(!ui)
-		ui = new(user, src, ui_key, "atmos_relief", name, 335, 115, master_ui, state)
+		ui = new(user, src, ui_key, "AtmosRelief", name, 335, 115, master_ui, state)
 		ui.open()
 
 /obj/machinery/atmospherics/components/unary/relief_valve/ui_data()

@@ -109,17 +109,6 @@
 	toxLethality = 0.008 //20% less damage than a normal liver
 	emp_vulnerability = 20
 
-/obj/item/organ/liver/cybernetic/upgraded/ipc
-	icon = 'waspstation/icons/obj/surgery.dmi'
-	name = "substance processor"
-	icon_state = "substance_processor"
-	attack_verb = list("processed")
-	desc = "A machine component, installed in the chest. This grants the Machine the ability to process chemicals that enter its systems."
-	alcohol_tolerance = 0
-	toxTolerance = -1
-	toxLethality = 0
-	status = ORGAN_ROBOTIC
-
 /obj/item/organ/liver/cybernetic/emp_act(severity)
 	. = ..()
 	if(. & EMP_PROTECT_SELF)

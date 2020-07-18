@@ -25,14 +25,7 @@
 
 
 /client
-	var/list/atom/selected_target[2]
-	var/obj/item/active_mousedown_item = null
-	var/mouseParams = ""
-	var/mouseLocation = null
-	var/mouseObject = null
 	var/mouseControlObject = null
-	var/middragtime = 0
-	var/atom/middragatom
 
 /client/MouseDown(object, location, control, params)
 	if (mouse_down_icon)

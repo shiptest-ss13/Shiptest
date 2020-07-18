@@ -15,8 +15,7 @@
 	exp_requirements = 180
 	wiki_page = "Head_of_Personnel" //WaspStation Edit - Wikilinks/Warning
 	exp_type = EXP_TYPE_CREW
-	exp_type_department = EXP_TYPE_SUPPLY
-	special_notice = "You are NOT security, and should NEVER UNDER ANY CIRCUMSTANCES act like them." //WaspStation Edit - Wikilinks/Warning
+	exp_type_department = EXP_TYPE_SERVICE
 
 	outfit = /datum/outfit/job/head_of_personnel
 

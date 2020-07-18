@@ -6,7 +6,7 @@
 	requires_ntnet = FALSE
 	network_destination = "arcade network"
 	size = 6
-	tgui_id = "ntos_arcade"
+	tgui_id = "NtosArcade"
 	ui_x = 450
 	ui_y = 350
 
@@ -83,7 +83,6 @@
 
 /datum/computer_file/program/arcade/ui_data(mob/user)
 	var/list/data = get_header_data()
-
 	data["Hitpoints"] = boss_hp
 	data["PlayerHitpoints"] = player_hp
 	data["PlayerMP"] = player_mp

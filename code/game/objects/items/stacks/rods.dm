@@ -9,7 +9,9 @@ GLOBAL_LIST_INIT(rod_recipes, list ( \
 	new/datum/stack_recipe("fore starboard spacepod frame", /obj/item/pod_parts/pod_frame/fore_starboard, 15, time = 30, one_per_turf = 0), \
 	new/datum/stack_recipe("aft port spacepod frame", /obj/item/pod_parts/pod_frame/aft_port, 15, time = 30, one_per_turf = 0), \
 	new/datum/stack_recipe("aft starboard spacepod frame", /obj/item/pod_parts/pod_frame/aft_starboard, 15, time = 30, one_per_turf = 0), \
+	null, \
 	// Wasp end
+	new/datum/stack_recipe("railing", /obj/structure/railing, 3, time = 18, window_checks = TRUE), \
 	))
 
 /obj/item/stack/rods

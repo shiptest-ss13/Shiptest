@@ -9,8 +9,8 @@
 			new	/obj/item/binoculars(src) // 2 tc?
 			new /obj/item/encryptionkey/syndicate(src) // 2 tc
 			new /obj/item/storage/box/syndie_kit/space(src) //4 tc
-			new /obj/item/grenade/syndieminibomb/concussion/frag(src) // ~2 tc each?
-			new /obj/item/grenade/syndieminibomb/concussion/frag(src)
+			new /obj/item/grenade/frag(src) // ~2 tc each?
+			new /obj/item/grenade/frag(src)
 			new /obj/item/flashlight/emp(src)
 
 		if("bloodyspai")
@@ -165,7 +165,7 @@
 			new /obj/item/assembly/signaler(src) // 0 tc
 			new /obj/item/storage/toolbox/syndicate(src) // 1 tc
 			new /obj/item/pen/edagger(src)
-			new /obj/item/gun/energy/wormhole_projector(src)
+			new /obj/item/gun/energy/wormhole_projector/core_inserted(src)
 			new /obj/item/gun/energy/decloner/unrestricted(src)
 
 		if("bee")
@@ -366,6 +366,13 @@
 /obj/item/storage/box/syndie_kit/bioterror/PopulateContents()
 	for(var/i in 1 to 7)
 		new /obj/item/reagent_containers/syringe/bioterror(src)
+
+/obj/item/storage/box/syndie_kit/clownpins
+	name = "ultra hilarious firing pin box"
+
+/obj/item/storage/box/syndie_kit/clownpins/PopulateContents()
+	for(var/i in 1 to 7)
+		new /obj/item/firing_pin/clown/ultra(src)
 
 /obj/item/storage/box/syndie_kit/imp_adrenal
 	name = "adrenal implant box"
