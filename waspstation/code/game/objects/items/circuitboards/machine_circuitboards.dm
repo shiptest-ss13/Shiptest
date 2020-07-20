@@ -27,7 +27,7 @@
 
 /obj/item/circuitboard/machine/bluespace_miner
 	name = "Bluespace Miner (Machine Board)"
-	build_path = /obj/machinery/mineral/bluespace_miner
+	build_path = /obj/machinery/power/bluespace_miner
 	req_components = list(
 		/obj/item/stock_parts/matter_bin = 3,
 		/obj/item/stock_parts/micro_laser = 1,
