@@ -20,7 +20,8 @@ GLOBAL_LIST_INIT(spider_last, world.file2list("strings/names/spider_last.txt"))
 		/datum/language/aphasia,
 		/datum/language/piratespeak,
 		/datum/language/moffic,
-		/datum/language/spider
+		/datum/language/spider,
+		/datum/language/buzzwords
 	))
 
 /obj/item/organ/tongue/spider/Initialize(mapload)

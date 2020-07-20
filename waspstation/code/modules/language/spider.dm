@@ -5,7 +5,7 @@
 	speech_verb = "chitter"
 	ask_verb = "chitter"
 	exclaim_verb = "chitter"
-	key = "m"
+	key = "r"
 	flags = NO_STUTTER | LANGUAGE_HIDE_ICON_IF_NOT_UNDERSTOOD
 
 /datum/language/spider/scramble(input)
