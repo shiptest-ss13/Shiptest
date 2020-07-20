@@ -482,9 +482,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/storage/central)
-"cG" = (
-/turf/open/floor/plating/asteroid,
-/area/ruin/space/has_grav)
 "cH" = (
 /obj/item/inducer,
 /obj/effect/decal/cleanable/dirt,
@@ -915,6 +912,9 @@
 	},
 /turf/closed/wall/r_wall,
 /area/ruin/space/has_grav/storage/central)
+"VV" = (
+/turf/open/floor/plating/asteroid/airless,
+/area/ruin/space/has_grav)
 "VX" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -945,7 +945,7 @@ aa
 ah
 ah
 ah
-cG
+VV
 ah
 ah
 ah
@@ -977,7 +977,7 @@ ah
 ah
 ah
 ah
-cG
+VV
 ah
 ah
 ah
