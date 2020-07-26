@@ -390,7 +390,6 @@
 	for(var/obj/structure/cable/C in src)
 		if(C.d1 == 0)
 			return C
-		return C
 	return null
 
 
