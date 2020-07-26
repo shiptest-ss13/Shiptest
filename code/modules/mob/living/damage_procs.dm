@@ -89,7 +89,7 @@
 
 
 /// applies various common status effects or common hardcoded mob effects
-/mob/living/proc/apply_effect(effect = 0,effecttype = EFFECT_STUN, blocked = FALSE)
+/mob/living/proc/apply_effect(effect = 0,effecttype = EFFECT_STUN, blocked = 0)
 	var/hit_percent = (100-blocked)/100
 	if(!effect || (hit_percent <= 0))
 		return 0
@@ -121,9 +121,9 @@
 	return 1
 
 /// applies multiple effects at once via [/mob/living/proc/apply_effect]
-/mob/living/proc/apply_effects(stun = 0, knockdown = 0, unconscious = 0, irradiate = 0, slur = 0, stutter = 0, eyeblur = 0, drowsy = 0, blocked = FALSE, stamina = 0, jitter = 0, paralyze = 0, immobilize = 0)
+/mob/living/proc/apply_effects(stun = 0, knockdown = 0, unconscious = 0, irradiate = 0, slur = 0, stutter = 0, eyeblur = 0, drowsy = 0, blocked = 0, stamina = 0, jitter = 0, paralyze = 0, immobilize = 0)
 	if(blocked >= 100)
-		return BULLET_ACT_BLOCK
+		return FALSE
 	if(stun)
 		apply_effect(stun, EFFECT_STUN, blocked)
 	if(knockdown)
@@ -148,7 +148,7 @@
 		apply_damage(stamina, STAMINA, null, blocked)
 	if(jitter)
 		apply_effect(jitter, EFFECT_JITTER, blocked)
-	return BULLET_ACT_HIT
+	return TRUE
 
 
 /mob/living/proc/getBruteLoss()
