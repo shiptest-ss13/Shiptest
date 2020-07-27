@@ -57,7 +57,7 @@
 	damage_deflection = 10
 	resistance_flags = FIRE_PROOF
 	interaction_flags_machine = INTERACT_MACHINE_WIRES_IF_OPEN | INTERACT_MACHINE_ALLOW_SILICON | INTERACT_MACHINE_OPEN_SILICON
-	ui_x = 450
+	ui_x = 550
 	ui_y = 460
 
 	FASTDMM_PROP(\
@@ -95,6 +95,8 @@
 	var/main_status = 0
 	powernet = 0		// set so that APCs aren't found as powernet nodes //Hackish, Horrible, was like this before I changed it :(
 	var/malfhack = 0 //New var for my changes to AI malf. --NeoFite
+	var/malfhackhide = 0 // WaspStation Edit - Malf AI Rework
+	var/malfhackhidecooldown = 0 // WaspStation Edit - Malf AI Rework
 	var/mob/living/silicon/ai/malfai = null //See above --NeoFite
 	var/has_electronics = APC_ELECTRONICS_MISSING // 0 - none, 1 - plugged in, 2 - secured by screwdriver
 	var/overload = 1 //used for the Blackout malf module
@@ -373,8 +375,15 @@
 			update_state |= UPSTATE_OPENED1
 		if(opened==APC_COVER_REMOVED)
 			update_state |= UPSTATE_OPENED2
-	else if((obj_flags & EMAGGED) || malfai)
+	// WaspStation Edit - Malf AI Rework
+	else if((obj_flags & EMAGGED))
 		update_state |= UPSTATE_BLUESCREEN
+	else if(malfai)
+		if(malfhackhide)
+			update_state |= UPSTATE_ALLGOOD
+		else
+			update_state |= UPSTATE_BLUESCREEN
+	// End WaspStation Edit - Malf AI Rework
 	else if(panel_open)
 		update_state |= UPSTATE_WIREEXP
 	if(update_state <= 1)
@@ -882,6 +891,7 @@
 		"coverLocked" = coverlocked,
 		"siliconUser" = user.has_unlimited_silicon_privilege || user.using_power_flow_console(),
 		"malfStatus" = get_malf_status(user),
+		"malfMaskHackStatus" = malfhackhide,
 		"emergencyLights" = !emergency_lights,
 		"nightshiftLights" = nightshift_lights,
 
@@ -1032,6 +1042,9 @@
 		if("deoccupy")
 			if(get_malf_status(usr))
 				malfvacate()
+		if("hide_hack") // WaspStation Edit - Malf AI Rework
+			if(get_malf_status(usr))
+				malfhidehack(usr) //End WaspStation Edit - Malf AI Rework
 		if("reboot")
 			failure_timer = 0
 			update_icon()
@@ -1060,7 +1073,7 @@
 	if(get_malf_status(malf) != 1)
 		return
 	if(malf.malfhacking)
-		to_chat(malf, "<span class='warning'>You are already hacking an APC!</span>")
+		to_chat(malf, "<span class='warning'>You are already hacking or masking an APC!</span>") // WaspStation Edit - Malf AI Rework
 		return
 	to_chat(malf, "<span class='notice'>Beginning override of APC systems. This takes some time, and you cannot perform other actions during the process.</span>")
 	malf.malfhack = src
@@ -1069,6 +1082,51 @@
 	var/obj/screen/alert/hackingapc/A
 	A = malf.throw_alert("hackingapc", /obj/screen/alert/hackingapc)
 	A.target = src
+
+// WaspStation Edit - Malf AI Rework
+/obj/machinery/power/apc/proc/malfhidehack(mob/living/silicon/ai/malf)
+	if(!istype(malf))
+		return
+	if(get_malf_status(malf) <= 1)
+		return
+	if(malf.malfhacking)
+		to_chat(malf, "<span class='warning'>You cannot mask your presence in this APC while hacking another!</span>")
+		return
+	if(malfhackhide == -1 || malfhackhidecooldown != 0)
+		to_chat(malf, "<span class='warning'>You've already masked your presence in this APC recently. You cannot do so again without causing permanent damage. Please wait a minute for the system to recover.</span>")
+		return
+
+	var/duration = rand(300,600)
+	to_chat(malf, "<span class='notice'>Temporarily masking AI subroutines in APC. Expected duration: [duration] seconds</span>")
+
+	malf.malfhack = src
+	malf.malfhacking = addtimer(CALLBACK(src, /obj/machinery/power/apc/proc/malfunhidehack, malf), duration, TIMER_STOPPABLE)
+
+	var/obj/screen/alert/hackingapc/A
+	A = malf.throw_alert("hackingapc", /obj/screen/alert/hackingapc)
+	A.target = src
+
+	malfhackhide = 1
+	update_icon()
+
+/obj/machinery/power/apc/proc/malfunhidehack(mob/living/silicon/ai/malf)
+	if(src.machine_stat & BROKEN)
+		return
+	malf.malfhack = null
+	malf.malfhacking = 0
+	malf.clear_alert("hackingapc")
+
+	malfhackhide = -1
+	malfhackhidecooldown = addtimer(CALLBACK(src, /obj/machinery/power/apc/proc/malfhiderestore, malf), 600, TIMER_STOPPABLE)
+
+/obj/machinery/power/apc/proc/malfhiderestore(mob/living/silicon/ai/malf)
+	if(src.machine_stat & BROKEN)
+		return
+	malfhackhide = 0
+	malfhackhidecooldown = 0
+	to_chat(malf, "<span class='notice'>The [src.area.name] APC has recovered from your masking and has returned to normal operating status.</span>" )
+
+// End WaspStation Edit - Malf AI Rework
 
 /obj/machinery/power/apc/proc/malfoccupy(mob/living/silicon/ai/malf)
 	if(!istype(malf))
