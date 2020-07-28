@@ -191,7 +191,41 @@
 
 #define RUNLEVELS_DEFAULT (RUNLEVEL_SETUP | RUNLEVEL_GAME | RUNLEVEL_POSTGAME)
 
-// SSair run section
+//! ## Overlays subsystem
+
+///Compile all the overlays for an atom from the cache lists
+// |= on overlays is not actually guaranteed to not add same appearances but we're optimistically using it anyway.
+#define COMPILE_OVERLAYS(A)\
+	if (TRUE) {\
+		var/list/ad = A.add_overlays;\
+		var/list/rm = A.remove_overlays;\
+		if(LAZYLEN(rm)){\
+			A.overlays -= rm;\
+			rm.Cut();\
+		}\
+		if(LAZYLEN(ad)){\
+			A.overlays |= ad;\
+			ad.Cut();\
+		}\
+		for(var/I in A.alternate_appearances){\
+			var/datum/atom_hud/alternate_appearance/AA = A.alternate_appearances[I];\
+			if(AA.transfer_overlays){\
+				AA.copy_overlays(A, TRUE);\
+			}\
+		}\
+		A.flags_1 &= ~OVERLAY_QUEUED_1;\
+	}
+
+/**
+	Create a new timer and add it to the queue.
+	* Arguments:
+	* * callback the callback to call on timer finish
+	* * wait deciseconds to run the timer for
+	* * flags flags for this timer, see: code\__DEFINES\subsystems.dm
+*/
+#define addtimer(args...) _addtimer(args, file = __FILE__, line = __LINE__)
+
+// Air subsystem subtasks
 #define SSAIR_PIPENETS 1
 #define SSAIR_ATMOSMACHINERY 2
 #define SSAIR_EXCITEDGROUPS 3
