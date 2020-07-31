@@ -1,0 +1,9 @@
+author: MarkSuckerberg
+delete-after: true
+changes:
+  - bugfix: No more undeleted mentor queries annoying admins.
+  - tweak: Mentor PMs now show when people start and stop responding to them to other
+      mentors, preventing dog piling on one mhelp.
+  - rscadd: Mentors can now de-mentor (in the mentor panel or using the command bar)
+      so that they don't get accidentally told IC information if they are, for example,
+      an antag or sec.
