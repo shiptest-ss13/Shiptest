@@ -96,9 +96,6 @@
 
 /datum/config_entry/flag/log_shuttle // log shuttle related actions, ie shuttle computers, shuttle manipulator, emergency console
 
-/// Whether demos are written, if not set demo SS never initializes
-/datum/config_entry/flag/demos_enabled
-
 /datum/config_entry/flag/allow_admin_ooccolor	// Allows admins with relevant permissions to have their own ooc colour
 
 /datum/config_entry/flag/allow_admin_asaycolor //Allows admins with relevant permissions to have a personalized asay color
@@ -248,6 +245,8 @@
 
 /datum/config_entry/string/discordurl
 	config_entry_value = "https://discord.gg/husVWe8"
+
+/datum/config_entry/string/centcom_ban_db	// URL for the CentCom Galactic Ban DB API
 
 /datum/config_entry/string/roundstatsurl
 
@@ -535,7 +534,7 @@
 
 /datum/config_entry/string/discord_roleid
 
-//Begin Wasp Edit 
+//Begin Wasp Edit
 /datum/config_entry/flag/minimaps_enabled
 	config_entry_value = TRUE
 //End Wasp Edit
