@@ -146,7 +146,7 @@ GLOBAL_DATUM_INIT(crewmonitor, /datum/crewmonitor, new)
 				if (I)
 					name = I.registered_name
 					assignment = I.assignment
-					ijob = jobs[I.assignment]
+					ijob = jobs[I.GetJobName()] //Why didn't it do this already - Wasp Edit - Alt Titles
 				else
 					name = "Unknown"
 					assignment = ""
