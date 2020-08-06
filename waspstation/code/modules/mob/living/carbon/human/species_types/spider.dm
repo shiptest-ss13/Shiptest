@@ -4,6 +4,7 @@ GLOBAL_LIST_INIT(spider_last, world.file2list("strings/names/spider_last.txt"))
 /obj/item/organ/eyes/night_vision/spider
 	name = "spider eyes"
 	desc = "These eyes seem to have increased sensitivity to bright light, offset by basic night vision."
+	see_in_dark = 4
 	flash_protect = FLASH_PROTECTION_SENSITIVE
 
 /obj/item/organ/tongue/spider
@@ -30,7 +31,7 @@ GLOBAL_LIST_INIT(spider_last, world.file2list("strings/names/spider_last.txt"))
 
 
 /obj/item/reagent_containers/food/snacks/meat/slab/human/mutant/spider
-	icon_state = "mothmeat"
+	icon_state = "spidermeat"
 	desc = "The stringy meat jokes have been done to death, just like this Arachnid."
 	list_reagents = list(/datum/reagent/consumable/nutriment = 3)
 	filling_color = "#00FFFF"
@@ -51,8 +52,8 @@ GLOBAL_LIST_INIT(spider_last, world.file2list("strings/names/spider_last.txt"))
 	attack_sound = 'sound/weapons/slash.ogg'
 	miss_sound = 'sound/weapons/slashmiss.ogg'
 	meat = /obj/item/reagent_containers/food/snacks/meat/slab/human/mutant/spider
-	liked_food = MEAT | RAW | GROSS
-	disliked_food = FRUIT
+	liked_food = MEAT | RAW
+	disliked_food = FRUIT | GROSS
 	toxic_food = VEGETABLES | DAIRY | CLOTH
 	mutanteyes = /obj/item/organ/eyes/night_vision/spider
 	mutanttongue = /obj/item/organ/tongue/spider
@@ -180,7 +181,7 @@ GLOBAL_LIST_INIT(spider_last, world.file2list("strings/names/spider_last.txt"))
 	if (H.nutrition >= nutrition_threshold)
 		to_chat(H, "<span class='warning'>You pull out a strand from your spinneret, ready to wrap a target. <BR>\
 		 (Press ALT+CLICK or MMB on the target to start wrapping.)</span>")
-		H.adjust_nutrition(E.spinner_rate * -3)
+		H.adjust_nutrition(E.spinner_rate * -0.5)
 		addtimer(VARSET_CALLBACK(E, web_ready, TRUE), E.web_cooldown)
 		RegisterSignal(H, list(COMSIG_MOB_MIDDLECLICKON, COMSIG_MOB_ALTCLICKON), .proc/cocoonAtom)
 		return
@@ -200,6 +201,7 @@ GLOBAL_LIST_INIT(spider_last, world.file2list("strings/names/spider_last.txt"))
 		if(!do_after(H, 10 SECONDS, 1, A))
 			to_chat(H, "<span class='warning'>Your web spinning was interrupted!</span>")
 			return
+		H.adjust_nutrition(E.spinner_rate * -3)
 		var/obj/structure/spider_player/cocoon/C = new(A.loc)
 		if(isliving(A))
 			C.icon_state = pick("cocoon_large1","cocoon_large2","cocoon_large3")
@@ -218,3 +220,10 @@ GLOBAL_LIST_INIT(spider_last, world.file2list("strings/names/spider_last.txt"))
 	race = /datum/species/spider
 	process_flags = ORGANIC | SYNTHETIC //WaspStation Edit - IPCs
 	taste_description = "silk"
+
+/datum/chemical_reaction/mutationtoxin/arachnid
+	results = list(/datum/reagent/mutationtoxin/arachnid = 1)
+	required_reagents = list(
+		/datum/reagent/mutationtoxin/unstable = 1,
+		/datum/reagent/toxin/heparin = 10
+	)
