@@ -5,8 +5,9 @@
 	default_color = "00FF00"
 	species_traits = list(LIPS, NOEYESPRITES)
 	inherent_biotypes = MOB_ORGANIC|MOB_HUMANOID|MOB_BUG
-	mutant_bodyparts = list("moth_wings", "moth_markings")
-	default_features = list("moth_wings" = "Plain", "moth_markings" = "None")
+	mutant_bodyparts = list("moth_wings", "moth_fluff", "moth_markings")
+	default_features = list("moth_wings" = "Plain", "moth_fluff" = "Plain", "moth_markings" = "None")
+	mutant_organs = list(/obj/item/organ/moth_wings)
 	attack_verb = "slash"
 	attack_sound = 'sound/weapons/slash.ogg'
 	miss_sound = 'sound/weapons/slashmiss.ogg'
@@ -42,13 +43,28 @@
 
 	return randname
 
-/datum/species/moth/handle_fire(mob/living/carbon/human/H, no_protection = FALSE)
+/datum/species/handle_fire(mob/living/carbon/human/H, no_protection = FALSE)
 	. = ..()
 	if(.) //if the mob is immune to fire, don't burn wings off.
 		return
-	if(H.dna.features["moth_wings"] != "Burnt Off" && H.bodytemperature >= 800 && H.fire_stacks > 0) //do not go into the extremely hot light. you will not survive
-		to_chat(H, "<span class='danger'>Your precious wings burn to a crisp!</span>")
+	if(!("moth_wings" in H.dna.species.mutant_bodyparts)) //if they don't have wings, you can't burn em, can ye
+		return
+	if(H.dna.features["moth_wings"] != "Burnt Off" && H.bodytemperature >= 500 && H.fire_stacks > 0) //do not go into the extremely hot light. you will not survive
+		to_chat(H, "<span class='danger'>Your precious wings start to char!</span>")
 		H.dna.features["moth_wings"] = "Burnt Off"
+		if(flying_species) //This is all exclusive to if the person has the effects of a potion of flight
+			if(H.movement_type & FLYING)
+				ToggleFlight(H)
+				H.Knockdown(1.5 SECONDS)
+			fly.Remove(H)
+			QDEL_NULL(fly)
+			H.dna.features["wings"] = "None"
+		handle_mutant_bodyparts(H)
+
+	else if(H.dna.features["moth_wings"] == "Burnt Off" && H.bodytemperature >= 800 && H.fire_stacks > 0) //do not go into the extremely hot light. you will not survive
+		to_chat(H, "<span class='danger'>Your precious wings disintigrate into nothing!</span>")
+		if(/obj/item/organ/moth_wings in H.internal_organs)
+			qdel(H.getorganslot(ORGAN_SLOT_WINGS))
 		if(flying_species) //This is all exclusive to if the person has the effects of a potion of flight
 			if(H.movement_type & FLYING)
 				ToggleFlight(H)
@@ -69,9 +85,9 @@
 		return 9 //flyswatters deal 10x damage to moths
 	return 0
 
-/datum/species/moth/space_move(mob/living/carbon/human/H)
+/datum/species/space_move(mob/living/carbon/human/H)
 	. = ..()
-	if(H.loc && !isspaceturf(H.loc) && H.dna.features["moth_wings"] != "Burnt Off" && !flying_species) //"flying_species" is exclusive to the potion of flight, which has its flying mechanics. If they want to fly they can use that instead
+	if(H.loc && !isspaceturf(H.loc) && H.getorganslot(ORGAN_SLOT_WINGS) && !flying_species) //"flying_species" is exclusive to the potion of flight, which has its flying mechanics. If they want to fly they can use that instead
 		var/datum/gas_mixture/current = H.loc.return_air()
 		if(current && (current.return_pressure() >= ONE_ATMOSPHERE*0.85)) //as long as there's reasonable pressure and no gravity, flight is possible
 			return TRUE

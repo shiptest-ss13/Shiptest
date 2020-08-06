@@ -1824,7 +1824,7 @@
 	icon_state = "round"
 
 /datum/sprite_accessory/moth_wings
-	icon = 'icons/mob/moth_wings.dmi'
+	icon = 'waspstation/icons/mob/moth_wings.dmi'
 	color_src = null
 
 /datum/sprite_accessory/moth_wings/plain
@@ -1968,6 +1968,82 @@
 	name = "Witch Wing"
 	icon_state = "witchwing"
 
+//Waspstation begin - Moth wing additions / Squids / IPCs
+
+//Moth fluff
+/datum/sprite_accessory/moth_fluff
+	icon = 'waspstation/icons/mob/moth_wings.dmi'
+	color_src = null
+
+/datum/sprite_accessory/moth_fluff/plain
+	name = "Plain"
+	icon_state = "plain"
+
+/datum/sprite_accessory/moth_fluff/bent
+	name = "Bent"
+	icon_state = "bent"
+
+/datum/sprite_accessory/moth_fluff/reddish
+	name = "Reddish"
+	icon_state = "redish"
+
+/datum/sprite_accessory/moth_fluff/royal
+	name = "Royal"
+	icon_state = "royal"
+
+/datum/sprite_accessory/moth_fluff/gothic
+	name = "Gothic"
+	icon_state = "gothic"
+
+/datum/sprite_accessory/moth_fluff/lovers
+	name = "Lovers"
+	icon_state = "lovers"
+
+/datum/sprite_accessory/moth_fluff/whitefly
+	name = "White Fly"
+	icon_state = "whitefly"
+
+/datum/sprite_accessory/moth_fluff/punished
+	name = "Burnt"
+	icon_state = "burnt"
+
+/datum/sprite_accessory/moth_fluff/firewatch
+	name = "Firewatch"
+	icon_state = "firewatch"
+
+/datum/sprite_accessory/moth_fluff/deathhead
+	name = "Deathshead"
+	icon_state = "deathhead"
+
+/datum/sprite_accessory/moth_fluff/poison
+	name = "Poison"
+	icon_state = "poison"
+
+/datum/sprite_accessory/moth_fluff/moonfly
+	name = "Moon Fly"
+	icon_state = "moonfly"
+
+/datum/sprite_accessory/moth_fluff/snow
+	name = "Snow"
+	icon_state = "snow"
+
+/datum/sprite_accessory/moth_fluff/oakworm
+	name = "Oak Worm"
+	icon_state = "oakworm"
+
+/datum/sprite_accessory/moth_fluff/jungle
+	name = "Jungle"
+	icon_state = "jungle"
+
+/datum/sprite_accessory/moth_fluff/witchwing
+	name = "Witch Wing"
+	icon_state = "witchwing"
+
+/datum/sprite_accessory/moth_fluff/shaved
+	name = "Shaved"
+	icon_state = "shaved"
+
+//Squids
 /datum/sprite_accessory/squid_face
 	icon = 'icons/mob/mutant_bodyparts.dmi'
 
@@ -2216,7 +2292,6 @@
 	name = "Zeng-Hu Pharmaceuticals"
 	limbs_id = "zhpipc"
 
-//START WaspStation
 /datum/sprite_accessory/spider_legs
 	icon = 'waspstation/icons/mob/spider_legs.dmi'
 	color_src = MUTCOLORS
@@ -2264,4 +2339,5 @@
 /datum/sprite_accessory/spider_mandibles/spiky
 	name = "Spiky"
 	icon_state = "spiky"
+
 //END WaspStation
