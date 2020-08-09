@@ -38,6 +38,7 @@
 	SHOULD_CALL_PARENT(FALSE)
 	icon_state = SPACE_ICON_STATE
 	air = space_gas
+	update_air_ref()
 	vis_contents.Cut() //removes inherited overlays
 	visibilityChanged()
 

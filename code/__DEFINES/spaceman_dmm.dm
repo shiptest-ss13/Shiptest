@@ -29,6 +29,6 @@
 #endif
 
 /world/proc/enable_debugger()
-    var/dll = world.GetConfig("env", "EXTOOLS_DLL")
+    var/dll = world.GetConfig("env", "EXTOOLS_DLL") || (world.system_type == MS_WINDOWS ? "./byond-extools.dll" : "./libbyond-extools.so")
     if (dll)
         call(dll, "debug_initialize")()

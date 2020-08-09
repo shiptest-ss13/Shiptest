@@ -24011,7 +24011,8 @@
 "bnl" = (
 /obj/machinery/atmospherics/components/binary/pump/on{
 	dir = 8;
-	name = "Air to Distro"
+	name = "Air to Distro";
+	target_pressure = 500
 	},
 /obj/machinery/airalarm{
 	pixel_y = 24

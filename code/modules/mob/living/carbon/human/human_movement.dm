@@ -21,11 +21,14 @@
 				return 0
 	return ..()
 
-/mob/living/carbon/human/experience_pressure_difference()
-	playsound(src, 'sound/effects/space_wind.ogg', 50, TRUE)
+/mob/living/carbon/human/experience_pressure_difference(pressure_difference)
+	if(pressure_difference > 100)
+		playsound_local(null, 'sound/effects/space_wind_big.ogg', clamp(pressure_difference / 50, 10, 100), 1)
+	else
+		playsound_local(null, 'sound/effects/space_wind.ogg', clamp(pressure_difference, 10, 100), 1)
 	if(shoes && istype(shoes, /obj/item/clothing))
 		var/obj/item/clothing/S = shoes
-		if (S.clothing_flags & NOSLIP)
+		if((S.clothing_flags & NOSLIP))
 			return 0
 	return ..()
 
@@ -68,7 +71,7 @@
 				S.step_action()
 	// Limb crap
 	for(var/obj/item/bodypart/B in bodyparts)
-		B.on_mob_move()	
+		B.on_mob_move()
 
 /mob/living/carbon/human/Process_Spacemove(movement_dir = 0) //Temporary laziness thing. Will change to handles by species reee.
 	if(dna.species.space_move(src))

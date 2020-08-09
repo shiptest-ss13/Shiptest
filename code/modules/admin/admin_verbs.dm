@@ -725,3 +725,28 @@ GLOBAL_PROTECT(admin_verbs_hideable)
 
 	log_admin("[key_name(usr)] has [AI_Interact ? "activated" : "deactivated"] Admin AI Interact")
 	message_admins("[key_name_admin(usr)] has [AI_Interact ? "activated" : "deactivated"] their AI interaction")
+
+/client/proc/stabilize_atmos()
+	set name = "Stabilize Atmos"
+	set category = "Admin"
+	set desc = "Resets the air contents of every turf in view to normal. Closes all canisters in view."
+
+	if(!check_rights(R_ADMIN))
+		return
+
+	var/turf/T = get_turf(usr.loc)
+	message_admins("[key_name_admin(usr)] stabilized atmos at [AREACOORD(T)]")
+	log_game("[key_name_admin(usr)] stabilized atmos at [AREACOORD(T)]")
+
+	var/datum/gas_mixture/GM = new
+	for(var/turf/open/F in view())
+		if(F.blocks_air)
+		//skip walls
+			continue
+		GM.parse_gas_string(F.initial_gas_mix)
+		F.copy_air(GM)
+		F.update_visuals()
+
+	for(var/obj/machinery/portable_atmospherics/canister/can in view())
+		can.valve_open = FALSE
+		can.update_icon()

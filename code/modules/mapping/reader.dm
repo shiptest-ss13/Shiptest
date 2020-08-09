@@ -21,6 +21,7 @@
 	var/list/parsed_bounds
 	/// Offset bounds. Same as parsed_bounds until load().
 	var/list/bounds
+	var/did_expand = FALSE
 
 	// raw strings used to represent regexes more accurately
 	// '' used to avoid confusing syntax highlighting
@@ -151,6 +152,7 @@
 		var/zcrd = gset.zcrd + z_offset - 1
 		if(!cropMap && ycrd > world.maxy)
 			world.maxy = ycrd // Expand Y here.  X is expanded in the loop below
+			did_expand = TRUE
 		var/zexpansion = zcrd > world.maxz
 		if(zexpansion)
 			if(cropMap)
@@ -158,6 +160,7 @@
 			else
 				while (zcrd > world.maxz) //create a new z_level if needed
 					world.incrementMaxZ()
+					did_expand = FALSE
 			if(!no_changeturf)
 				WARNING("Z-level expansion occurred without no_changeturf set, this may cause problems when /turf/AfterChange is called")
 
@@ -176,6 +179,7 @@
 							break
 						else
 							world.maxx = xcrd
+							did_expand = TRUE
 
 					if(xcrd >= 1)
 						var/model_key = copytext(line, tpos, tpos + key_len)
@@ -213,6 +217,9 @@
 	if(turfsSkipped)
 		testing("Skipped loading [turfsSkipped] default turfs")
 	#endif
+
+	if(did_expand)
+		world.refresh_atmos_grid()
 
 	return TRUE
 

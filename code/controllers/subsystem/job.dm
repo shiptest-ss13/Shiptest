@@ -477,7 +477,7 @@ SUBSYSTEM_DEF(job)
 
 		//WaspStation Begin - Wikilinks and Special notice
 		if(job.special_notice)
-			to_chat(M, "<span class='userdanger'>[job.special_notice]</span>")
+			to_chat(M, "<span class='danger'>[job.special_notice]</span>")
 		if(job.wiki_page)
 			to_chat(M, "<span class='notice'><a href=[CONFIG_GET(string/wikiurl)]/[job.wiki_page]>Wiki Page</a></span>")
 		//WaspStation End
