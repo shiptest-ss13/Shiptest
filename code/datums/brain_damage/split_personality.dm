@@ -75,19 +75,31 @@
 	to_chat(owner, "<span class='userdanger'>You feel your control being taken away... your other personality is in charge now!</span>")
 	to_chat(current_backseat, "<span class='userdanger'>You manage to take control of your body!</span>")
 
+	//Wasp begin - Cortical Borers
+
+	var/mob/to_swap = owner
+
+	if(owner.has_brain_worms()) //If the owner has a borer. If this check isn't here, causes severe fuckiness.
+		var/mob/living/simple_animal/borer/B = owner.has_brain_worms()
+		if(B.controlling && B.host_brain)
+			to_swap = B.host_brain
+		else
+			to_swap = B.victim //Probably not needed, but may be slightly better
+
+
 	//Body to backseat
 
-	var/h2b_id = owner.computer_id
-	var/h2b_ip= owner.lastKnownIP
-	owner.computer_id = null
-	owner.lastKnownIP = null
+	var/h2b_id = to_swap.computer_id
+	var/h2b_ip= to_swap.lastKnownIP
+	to_swap.computer_id = null
+	to_swap.lastKnownIP = null
 
-	free_backseat.ckey = owner.ckey
+	free_backseat.ckey = to_swap.ckey
 
-	free_backseat.name = owner.name
+	free_backseat.name = to_swap.name
 
-	if(owner.mind)
-		free_backseat.mind = owner.mind
+	if(to_swap.mind)
+		free_backseat.mind = to_swap.mind
 
 	if(!free_backseat.computer_id)
 		free_backseat.computer_id = h2b_id
@@ -102,18 +114,18 @@
 	current_backseat.computer_id = null
 	current_backseat.lastKnownIP = null
 
-	owner.ckey = current_backseat.ckey
-	owner.mind = current_backseat.mind
+	to_swap.ckey = current_backseat.ckey
+	to_swap.mind = current_backseat.mind
 
-	if(!owner.computer_id)
-		owner.computer_id = s2h_id
+	if(!to_swap.computer_id)
+		to_swap.computer_id = s2h_id
 
-	if(!owner.lastKnownIP)
-		owner.lastKnownIP = s2h_ip
+	if(!to_swap.lastKnownIP)
+		to_swap.lastKnownIP = s2h_ip
 
 	current_controller = !current_controller
 
-
+	//Wasp End
 /mob/living/split_personality
 	name = "split personality"
 	real_name = "unknown conscience"

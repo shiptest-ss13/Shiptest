@@ -70,7 +70,16 @@
 	if(user.hivecheck())
 		user.alien_talk(message)
 	return FALSE
+//Wasp begin - Borers
+/datum/saymode/borer
+	key = MODE_KEY_BORER
+	mode = MODE_BORER
 
+/datum/saymode/borer/handle_message(mob/living/user, message, datum/language/language)
+	if(user.borercheck())
+		user.borer_talk(message)
+	return FALSE
+//Wasp end
 
 /datum/saymode/vocalcords
 	key = MODE_KEY_VOCALCORDS

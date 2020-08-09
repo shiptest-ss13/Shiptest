@@ -41,6 +41,12 @@
 #define MODE_KEY_CHANGELING "g"
 #define MODE_TOKEN_CHANGELING ":g"
 
+//Wasp begin - Borers
+#define MODE_BORER "borer"
+#define MODE_KEY_BORER "o"
+#define MODE_TOKEN_BORER ":o"
+//Wasp end
+
 #define MODE_VOCALCORDS "cords"
 #define MODE_KEY_VOCALCORDS "x"
 

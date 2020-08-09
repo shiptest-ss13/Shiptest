@@ -58,6 +58,14 @@
 	C.update_hair()
 
 /obj/item/organ/brain/Remove(mob/living/carbon/C, special = 0, no_id_transfer = FALSE)
+	if(!special)		//Wasp Begin - Borers
+		if(C.has_brain_worms())
+			var/mob/living/simple_animal/borer/B = C.has_brain_worms()
+			if(B.controlling)
+				B.victim.release_control()
+				to_chat(B, "<span class='userdanger'>Your probiscis is ripped out as your host's brain is removed!</span>")
+				B.apply_damage(15)
+			B.leave_victim()		//Wasp End
 	..()
 	for(var/X in traumas)
 		var/datum/brain_trauma/BT = X

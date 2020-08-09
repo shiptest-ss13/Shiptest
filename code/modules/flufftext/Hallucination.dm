@@ -1308,3 +1308,37 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 	H.preparePixelProjectile(target, start)
 	H.fire()
 	qdel(src)
+
+//Wasp Begin - Borers
+/obj/effect/hallucination/simple/borer
+	image_icon = 'waspstation/icons/mob/borer.dmi'
+	image_state = "brainslug"
+
+/datum/hallucination/borer
+	var/obj/effect/hallucination/simple/borer/borer
+	var/obj/machinery/atmospherics/components/unary/vent_pump/pump
+
+/datum/hallucination/borer/New(mob/living/carbon/C, forced = TRUE)
+	set waitfor = FALSE
+	. = ..()
+	for(var/obj/machinery/atmospherics/components/unary/vent_pump/U in orange(7,target))
+		if(!U.welded)
+			pump = U
+			break
+	if(pump)
+		borer = new(pump.loc, C)
+		for(var/i=0, i<11, i++)
+			walk_to(borer, get_step(borer, get_cardinal_dir(borer, C)))
+			if(borer.Adjacent(C))
+				target.visible_message("<span class='warning'>Shivers slightly.","<span class='userdanger'>You feel a creeping, horrible sense of dread come over you, freezing your limbs and setting your heart racing.</span>")
+				C.Paralyze(60)
+				QDEL_IN(50, borer)
+				sleep(rand(60, 90))
+				to_chat(C, "<span class='changeling'><i>Primary [rand(1000,9999)] states:</i> [pick("Hello","Hi","You're my slave now!","Don't try to get rid of me...")]</span>")
+				break
+			sleep(4)
+		if(!QDELETED(borer))
+			qdel(borer)
+	qdel(src)
+
+//Wasp end

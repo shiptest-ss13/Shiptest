@@ -26,6 +26,16 @@
 			C.vomit(0, toxic = TRUE)
 		O.forceMove(get_turf(user))
 
+	var/mob/living/simple_animal/borer/B = user.has_brain_worms()		//Wasp Begin - Borers
+	if(B)
+		if(B.controlling)
+			B.detatch()
+		B.leave_victim()
+		if(iscarbon(user))
+			var/mob/living/carbon/C = user
+			C.vomit(0, toxic = TRUE)
+			to_chat(user, "<span class='notice'>A parasite exits our form.</span>")		//Wasp End
+
 	user.reagents.add_reagent(/datum/reagent/medicine/mutadone, 10)
 	user.reagents.add_reagent(/datum/reagent/medicine/pen_acid, 20)
 	user.reagents.add_reagent(/datum/reagent/medicine/antihol, 10)

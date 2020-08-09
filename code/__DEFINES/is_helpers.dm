@@ -141,6 +141,11 @@ GLOBAL_LIST_INIT(turfs_without_ground, typecacheof(list(
 
 #define isclown(A) (istype(A, /mob/living/simple_animal/hostile/retaliate/clown))
 
+//Waspstation Begin - Custom Simplemobs
+
+#define isborer(A) (istype(A, /mob/living/simple_animal/borer))
+
+//Wasp end
 
 //Misc mobs
 #define isobserver(A) (istype(A, /mob/dead/observer))

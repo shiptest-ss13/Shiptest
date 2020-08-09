@@ -258,4 +258,7 @@
 	if(!(mobility_flags & MOBILITY_USE))	//just while I finish up the new 'fun' suiciding verb. This is to prevent metagaming via suicide
 		to_chat(src, "<span class='warning'>You can't commit suicide whilst immobile! ((You can type Ghost instead however.))</span>")
 		return
+	if(has_brain_worms())		//Wasp Begin - Borers
+		to_chat(src, "You can't bring yourself to commit suicide!")
+		return		//Wasp End
 	return TRUE
