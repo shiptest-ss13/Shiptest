@@ -20,19 +20,10 @@ DME Edit:
 Sprites:
   - '**/*.dmi'
 
-# Javascript changes
-Javascript:
-  - '**/*.js'
-
 # Changes to a .dmm or anything in the _map subfolder
 Map Change:
   - '**/*.dmm'
   - '_maps/**'
-
-# Non-modular changes
-Non-Modular:
-  - 'code/**'
-  - 'icons/**'
 
 # Any changes to .ogg files are marked as sound
 Sound:
@@ -42,11 +33,10 @@ Sound:
 SQL:
   - 'SQL/**'
 
-# Encompasses both the tgui and the tgui-next folder
+# Changes to the tgui subfolder
 tgui:
   - 'tgui/**'
-  - 'tgui-next/**'
 
-# Changes to the .Github folder
+# Changes to the .Github subfolder
 Github:
   - '.github/**'
