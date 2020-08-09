@@ -1,13 +1,13 @@
-## MAPS
+# MAPS
 
-/tg/station currently comes equipped with five maps.
+Waspstation currently comes equipped with five maps.
 
-* [BoxStation (default)](https://tgstation13.org/wiki/Boxstation)
-* [MetaStation](https://tgstation13.org/wiki/MetaStation)
-* [DeltaStation](https://tgstation13.org/wiki/DeltaStation)
-* [PubbyStation](https://tgstation13.org/wiki/PubbyStation)
-* [DonutStation](https://tgstation13.org/wiki/Donutstation)
-
+* [BoxStation (default)](https://wiki.boomerstation.space/Boxstation)
+* [MetaStation](https://wiki.boomerstation.space/MetaStation)
+* [DeltaStation](https://wiki.boomerstation.space/DeltaStation)
+* [PubbyStation](https://wiki.boomerstation.space/PubbyStation)
+* [DonutStation](https://wiki.boomerstation.space/Donutstation)
+* [Kilostation](https://wiki.boomerstation.space/KiloStation)
 
 All maps have their own code file that is in the base of the _maps directory. Maps are loaded dynamically when the game starts. Follow this guideline when adding your own map, to your fork, for easy compatibility.
 
@@ -19,10 +19,8 @@ Anytime you want to make changes to a map it's imperative you use the [Map Mergi
 
 ## AWAY MISSIONS
 
-/tg/station supports loading away missions however they are disabled by default.
+Waspstation supports loading away missions however they are disabled by default.
 
 Map files for away missions are located in the _maps/RandomZLevels directory. Each away mission includes it's own code definitions located in /code/modules/awaymissions/mission_code. These files must be included and compiled with the server beforehand otherwise the server will crash upon trying to load away missions that lack their code.
 
 To enable an away mission open `config/awaymissionconfig.txt` and uncomment one of the .dmm lines by removing the #. If more than one away mission is uncommented then the away mission loader will randomly select one the enabled ones to load.
-
-

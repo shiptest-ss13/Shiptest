@@ -1,5 +1,5 @@
 # dmdoc
-[DOCUMENTATION]: http://codedocs.tgstation13.org
+[DOCUMENTATION]: https://waspstation.github.io/WaspStation-1.0/
 
 [BYOND]: https://secure.byond.com/
 
@@ -13,9 +13,9 @@ We use **dmdoc** to generate [DOCUMENTATION] for our code, and that documentatio
 is automatically generated and built on every new commit to the master branch
 
 This gives new developers a clickable reference [DOCUMENTATION] they can browse to better help
-gain understanding of the /tg/station codebase structure and api reference.
+gain understanding of the /tg/code codebase structure and api reference.
 
-## Documenting code on /tg/station
+## Documenting code on /tg/code
 We use block comments to document procs and classes, and we use `///` line comments
 when documenting individual variables.
 
@@ -84,12 +84,12 @@ var/suit = null
 Modules are the best way to describe the structure/intent of a package of code
 where you don't want to be tied to the formal layout of the class structure.
 
-On /tg/station we do this by adding markdown files inside the `code` directory
+On /tg/code we do this by adding markdown files inside the `code` directory
 that will also be rendered and added to the modules tree. The structure for
 these is deliberately not defined, so you can be as freeform and as wheeling as
 you would like.
 
-[Here is a representative example of what you might write](http://codedocs.tgstation13.org/code/modules/keybindings/readme.html)
+[Here is a representative example of what you might write](https://waspstation.github.io/WaspStation-1.0/code/modules/keybindings/readme.html)
 
 ## Special variables
 You can use certain special template variables in DM DOC comments and they will be expanded
