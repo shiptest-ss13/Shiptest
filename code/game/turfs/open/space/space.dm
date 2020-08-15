@@ -7,6 +7,7 @@
 	temperature = TCMB
 	thermal_conductivity = OPEN_HEAT_TRANSFER_COEFFICIENT
 	heat_capacity = 700000
+	initial_gas_mix = AIRLESS_ATMOS
 
 	FASTDMM_PROP(\
 		pipe_astar_cost = 5\

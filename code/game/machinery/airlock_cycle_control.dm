@@ -553,7 +553,7 @@
 					if(assume_roles)
 						for(var/adir in GLOB.cardinals)
 							var/turf/check_turf = get_step(T2, adir)
-							if(check_turf.loc != T2.loc)
+							if(check_turf.initial_gas_mix != OPENTURF_DEFAULT_ATMOS)
 								airlocks[A] = 1
 								break
 		for(var/obj/machinery/atmospherics/components/unary/vent_pump/vent in T)
