@@ -72,6 +72,8 @@
 	var/muzzle_type
 	var/impact_type
 
+	var/turf/last_angle_set_hitscan_store		//Wasp Edit - last turf we stored a hitscan segment while changing angles. without this you'll have potentially hundreds of segments from a homing projectile or something.
+
 	//Fancy hitscan lighting effects!
 	var/hitscan_light_intensity = 1.5
 	var/hitscan_light_range = 0.75
@@ -458,12 +460,18 @@
 		START_PROCESSING(SSprojectiles, src)
 	pixel_move(1, FALSE)	//move it now!
 
-/obj/projectile/proc/setAngle(new_angle)	//wrapper for overrides.
+/obj/projectile/proc/setAngle(new_angle, hitscan_store_segment = TRUE)	//wrapper for overrides.
 	Angle = new_angle
 	if(!nondirectional_sprite)
 		var/matrix/M = new
 		M.Turn(Angle)
 		transform = M
+	//Wasp Edit - Hitscan Emitters
+	if(fired && hitscan && trajectory && isloc(loc) && (loc != last_angle_set_hitscan_store))
+		last_angle_set_hitscan_store = loc
+		var/datum/point/pcache = trajectory.copy_to()
+		store_hitscan_collision(pcache)
+	//Wasp End
 	if(trajectory)
 		trajectory.set_angle(new_angle)
 	return TRUE
@@ -510,7 +518,7 @@
 		beam_segments[beam_index] = null	//record start.
 
 /obj/projectile/proc/process_hitscan()
-	var/safety = range * 3
+	var/safety = range * 10 //Wasp Edit - 3 to 10 - Hitscan Emitters
 	record_hitscan_start(RETURN_POINT_VECTOR_INCREMENT(src, Angle, MUZZLE_EFFECT_PIXEL_INCREMENT, 1))
 	while(loc && !QDELETED(src))
 		if(paused)
@@ -699,7 +707,7 @@
 /obj/projectile/proc/cleanup_beam_segments()
 	QDEL_LIST_ASSOC(beam_segments)
 	beam_segments = list()
-	qdel(beam_index)
+	QDEL_NULL(beam_index) //Wasp edit - Hitscan emitters
 
 /obj/projectile/proc/finalize_hitscan_and_generate_tracers(impacting = TRUE)
 	if(trajectory && beam_index)
