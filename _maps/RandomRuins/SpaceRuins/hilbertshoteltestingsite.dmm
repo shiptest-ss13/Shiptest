@@ -186,13 +186,6 @@
 /obj/item/paper/crumpled/robertsworkjournal,
 /turf/open/floor/plasteel/grimy,
 /area/ruin/space/has_grav/hilbertresearchfacility)
-"I" = (
-/obj/machinery/door/airlock/highsecurity{
-	req_access = 207
-	},
-/obj/effect/mapping_helpers/airlock/locked,
-/turf/open/floor/plasteel/grimy,
-/area/ruin/space/has_grav/hilbertresearchfacility)
 "J" = (
 /turf/closed/mineral/random/no_caves,
 /area/ruin/unpowered/no_grav)
@@ -201,6 +194,14 @@
 	initial_gas_mix = "TEMP=2.7"
 	},
 /area/ruin/unpowered/no_grav)
+"R" = (
+/obj/machinery/door/airlock/highsecurity{
+	req_access = 207
+	},
+/obj/effect/mapping_helpers/airlock/locked,
+/obj/structure/fans/tiny,
+/turf/open/floor/plasteel/grimy,
+/area/ruin/space/has_grav/hilbertresearchfacility)
 "U" = (
 /turf/open/floor/plasteel/stairs/medium{
 	initial_gas_mix = "TEMP=2.7"
@@ -821,7 +822,7 @@ B
 B
 B
 B
-I
+R
 U
 b
 b

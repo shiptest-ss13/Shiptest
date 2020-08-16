@@ -86,17 +86,6 @@
 /obj/item/pen,
 /turf/open/floor/mineral/titanium/purple,
 /area/ruin/space/has_grav/powered/authorship)
-"s" = (
-/obj/machinery/door/poddoor{
-	id = "goonwizship1"
-	},
-/obj/machinery/button/door{
-	id = "goonwizship1";
-	name = "Strange Ship Door Button";
-	pixel_y = 32
-	},
-/turf/open/floor/mineral/titanium/purple,
-/area/ruin/space/has_grav/powered/authorship)
 "t" = (
 /obj/machinery/door/airlock/external,
 /turf/open/floor/mineral/titanium/purple,
@@ -145,6 +134,18 @@
 /obj/structure/bed,
 /turf/open/floor/mineral/titanium/purple,
 /area/ruin/space/has_grav/powered/authorship)
+"G" = (
+/obj/machinery/door/poddoor{
+	id = "goonwizship1"
+	},
+/obj/machinery/button/door{
+	id = "goonwizship1";
+	name = "Strange Ship Door Button";
+	pixel_y = 32
+	},
+/obj/structure/fans/tiny,
+/turf/open/floor/mineral/titanium/purple,
+/area/ruin/space/has_grav/powered/authorship)
 
 (1,1,1) = {"
 a
@@ -152,7 +153,7 @@ a
 a
 b
 c
-s
+G
 c
 z
 a

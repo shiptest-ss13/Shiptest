@@ -843,10 +843,6 @@
 /obj/structure/sign/poster/contraband/eat,
 /turf/closed/wall,
 /area/ruin/space/has_grav/powered/macspace)
-"dc" = (
-/obj/machinery/door/airlock/silver,
-/turf/open/floor/mineral/gold,
-/area/ruin/space/has_grav/powered/macspace)
 "dd" = (
 /obj/structure/sign/poster/contraband/eat,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
@@ -912,10 +908,6 @@
 	dir = 5
 	},
 /turf/closed/wall,
-/area/ruin/space/has_grav/powered/macspace)
-"dr" = (
-/obj/machinery/door/airlock/silver,
-/turf/open/floor/mineral/titanium,
 /area/ruin/space/has_grav/powered/macspace)
 "dx" = (
 /obj/structure/chair/wood/wings{
@@ -992,6 +984,14 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/carpet,
 /area/ruin/space/has_grav/powered/macspace)
+"gO" = (
+/obj/machinery/door/airlock/silver,
+/obj/structure/fans/tiny,
+/obj/effect/mapping_helpers/airlock/cyclelink_helper{
+	dir = 1
+	},
+/turf/open/floor/mineral/titanium,
+/area/ruin/space/has_grav/powered/macspace)
 "jH" = (
 /obj/structure/table,
 /obj/structure/table/wood/fancy/blue,
@@ -1008,6 +1008,11 @@
 /obj/machinery/atmospherics/components/unary/tank/oxygen,
 /obj/machinery/atmospherics/components/unary/tank/oxygen,
 /turf/open/floor/mineral/titanium,
+/area/ruin/space/has_grav/powered/macspace)
+"Im" = (
+/obj/machinery/door/airlock/silver,
+/obj/effect/mapping_helpers/airlock/cyclelink_helper,
+/turf/open/floor/mineral/gold,
 /area/ruin/space/has_grav/powered/macspace)
 "JK" = (
 /obj/vehicle/ridden/atv,
@@ -1410,11 +1415,11 @@ cl
 bM
 ao
 ag
-dc
+Im
 dg
 de
 de
-dr
+gO
 VM
 VM
 aa
@@ -1438,11 +1443,11 @@ cx
 bM
 cM
 ao
-dc
+Im
 dg
 de
 de
-dr
+gO
 VM
 VM
 aa

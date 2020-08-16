@@ -892,11 +892,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/hellfactory)
-"cN" = (
-/obj/machinery/door/keycard/entry,
-/obj/machinery/door/airlock/public,
-/turf/open/floor/plating,
-/area/ruin/space/has_grav/hellfactory)
 "cO" = (
 /obj/structure/holobox,
 /turf/open/floor/plating,
@@ -926,6 +921,12 @@
 /obj/item/stack/ducts/fifty,
 /obj/structure/window,
 /turf/open/floor/plasteel,
+/area/ruin/space/has_grav/hellfactory)
+"gV" = (
+/obj/machinery/door/keycard/entry,
+/obj/machinery/door/airlock/public,
+/obj/structure/fans/tiny,
+/turf/open/floor/plating,
 /area/ruin/space/has_grav/hellfactory)
 "hv" = (
 /obj/effect/decal/cleanable/blood/old,
@@ -1669,7 +1670,7 @@ by
 Sz
 by
 cM
-cN
+gV
 aa
 aa
 "}

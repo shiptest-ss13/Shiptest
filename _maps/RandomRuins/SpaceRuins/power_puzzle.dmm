@@ -341,10 +341,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/storage/materials1)
-"bW" = (
-/obj/machinery/door/airlock/hatch,
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/storage/central)
 "bX" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel,
@@ -670,6 +666,11 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/storage/power1)
+"oT" = (
+/obj/machinery/door/airlock/hatch,
+/obj/structure/fans/tiny,
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/storage/central)
 "rc" = (
 /obj/effect/decal/cleanable/blood/tracks,
 /obj/structure/cable{
@@ -1009,7 +1010,7 @@ bl
 bl
 bl
 bl
-bW
+oT
 bl
 bl
 bl

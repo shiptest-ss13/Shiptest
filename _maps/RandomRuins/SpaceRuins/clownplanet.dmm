@@ -105,10 +105,6 @@
 "av" = (
 /turf/open/floor/mineral/bananium,
 /area/ruin/powered/clownplanet)
-"aw" = (
-/obj/machinery/door/airlock/bananium,
-/turf/open/floor/grass,
-/area/ruin/powered/clownplanet)
 "ax" = (
 /obj/item/assembly/mousetrap/armed,
 /turf/open/floor/plasteel/bluespace,
@@ -375,6 +371,11 @@
 /obj/structure/barricade/wooden/crude,
 /turf/open/floor/plating/asteroid,
 /area/ruin/powered/clownplanet)
+"Ke" = (
+/obj/machinery/door/airlock/bananium,
+/obj/structure/fans/tiny,
+/turf/open/floor/grass,
+/area/ruin/powered/clownplanet)
 
 (1,1,1) = {"
 aa
@@ -388,8 +389,8 @@ aa
 aa
 ae
 ae
-aw
-aw
+Ke
+Ke
 ae
 ae
 aa
@@ -986,8 +987,8 @@ aa
 aa
 ae
 ae
-aw
-aw
+Ke
+Ke
 ae
 ae
 aa
