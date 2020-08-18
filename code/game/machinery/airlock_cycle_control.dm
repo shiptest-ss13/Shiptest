@@ -1,9 +1,11 @@
+// The ballad of monster
+
 // Embedded controller is great and all, but it is really unwieldy to map with. In addition, you can't build it in-game.
 // This serves to make it really easy to make it really easy to make cycling airlocks both in-game and in the map editor.
 // Instead of editing vars, this involves placing a couple of mapping helpers.
 
-// also can I say how much I hate the whole radio control thing in this game. It's not even exposed to the player at all.
-// All it does is making coding a massive pain in the rear end.
+// also can I say how much I hate the whole radio control thing in this game. It's not even exposed to the player at all.		// hmm
+// All it does is making coding a massive pain in the rear end.		// hmm
 
 // Anyways for a functioning airlock, you need an interior and an exterior door. Vents are optional.
 // If setup right, you can even make an airlock that cycles between two rooms of different atmospheres!
@@ -28,6 +30,23 @@
 #define AIRLOCK_CYCLEROLE_INT_DEPRESSURIZE 2
 #define AIRLOCK_CYCLEROLE_EXT_PRESSURIZE 4
 #define AIRLOCK_CYCLEROLE_EXT_DEPRESSURIZE 8
+
+#define AIRLOCK_MAXSIZE 16		// Maximum number of open turfs in the airlock
+#define AIRLOCK_MAXDIST 5		// Maximum distance of open turfs from the AAC
+
+#define EXTERIOR_AIRLOCK 1		// Keeps out cold space
+#define INTERIOR_AIRLOCK 0		// Keeps in the life giving air
+
+#define VENT_SIPHONING 0		// Removes air from the airlock
+#define VENT_RELEASE 1			// Adds air back in
+
+#define VENT_EXT_BOUND	1		// Only this one is used, but I'm leaving the others in
+#define VENT_INT_BOUND	2
+#define VENT_NO_BOUND	3
+
+#define BUILD_NO_CIRCUIT 0		// See var/buildstage declaration
+#define BUILD_NO_WIRES 1
+#define BUILD_COMPLETE 2
 
 /obj/item/electronics/advanced_airlock_controller
 	name = "airlock controller electronics"
@@ -69,9 +88,9 @@
 	var/exterior_pressure = 0
 
 	var/locked = TRUE
-	var/aidisabled = 0
-	var/shorted = 0
-	var/buildstage = 2 // 2 = complete, 1 = no wires,  0 = circuit gone
+	var/aidisabled = FALSE
+	var/shorted = FALSE
+	var/buildstage = BUILD_COMPLETE // 2 = complete, 1 = no wires,  0 = circuit gone
 	var/config_error_str = "Needs Scan"
 	var/scan_on_late_init = FALSE
 	var/depressurization_margin = 10 // use a lower value to reduce cross-contamination
@@ -99,7 +118,7 @@
 		setDir(ndir)
 
 	if(nbuild)
-		buildstage = 0
+		buildstage = BUILD_NO_CIRCUIT
 		panel_open = TRUE
 		pixel_x = (dir & 3)? 0 : (dir == 4 ? -24 : 24)
 		pixel_y = (dir & 3)? (dir == 1 ? -24 : 24) : 0
@@ -128,7 +147,7 @@
 		update_docked_status(FALSE)
 		for(var/A in airlocks)
 			var/obj/machinery/door/airlock/airlock = A
-			if(airlock.density && (cyclestate == AIRLOCK_CYCLESTATE_CLOSED || (airlocks[A] && cyclestate == AIRLOCK_CYCLESTATE_INOPEN) || (!airlocks[A] && cyclestate == AIRLOCK_CYCLESTATE_OUTOPEN)))
+			if(airlock.density && (cyclestate == AIRLOCK_CYCLESTATE_CLOSED || (airlocks[A] == EXTERIOR_AIRLOCK && cyclestate == AIRLOCK_CYCLESTATE_INOPEN) || (airlocks[A] == INTERIOR_AIRLOCK && cyclestate == AIRLOCK_CYCLESTATE_OUTOPEN)))
 				airlock.bolt()
 
 /obj/machinery/advanced_airlock_controller/update_icon(use_hash = FALSE)
@@ -151,11 +170,11 @@
 	cut_overlays()
 	if(panel_open)
 		switch(buildstage)
-			if(2)
+			if(BUILD_COMPLETE)
 				icon_state = "aac_b3"
-			if(1)
+			if(BUILD_NO_WIRES)
 				icon_state = "aac_b2"
-			if(0)
+			if(BUILD_NO_CIRCUIT)
 				icon_state = "aac_b1"
 		return
 
@@ -201,12 +220,14 @@
 	if(!prob(prb))
 		return 0 //you lucked out, no shock for you
 	var/datum/effect_system/spark_spread/s = new /datum/effect_system/spark_spread
-	s.set_up(5, 1, src)
+	s.set_up(5, TRUE, src)		
 	s.start() //sparks always.
 	if (electrocute_mob(user, get_area(src), src, 1, TRUE))
 		return 1
 	else
 		return 0
+
+//Checks whether the airlock is docked by checking exterior airlocks for adjacent airlocks
 
 /obj/machinery/advanced_airlock_controller/proc/update_docked_status(process_on_changed = FALSE)
 	if(cyclestate == AIRLOCK_CYCLESTATE_ERROR)
@@ -214,25 +235,25 @@
 	var/is_docked = FALSE
 	for(var/A in airlocks)
 		var/obj/machinery/door/airlock/airlock = A
-		if(!airlocks[A]) // only exterior airlocks are checked for docks
+		if(airlocks[A] == INTERIOR_AIRLOCK) // only exterior airlocks are checked for docks
 			continue
 		var/turf/T = get_turf(airlock)
 		if(!T)
 			continue
-		for(var/cdir in GLOB.cardinals)
+		for(var/cdir in GLOB.cardinals)		// Check each adjacent space
 			var/turf/T2 = get_step(T, cdir)
 			if(!T2)
 				continue
-			if(T2.loc != T.loc && (locate(/obj/machinery/door/airlock) in T2))
+			if(T2.loc != T.loc && (locate(/obj/machinery/door/airlock) in T2))		// If we're in a different area and we find an airlock, we're golden
 				is_docked = TRUE
 				break
 		if(is_docked)
 			break
-	if(is_docked && cyclestate != AIRLOCK_CYCLESTATE_DOCKED)
+	if(is_docked && cyclestate != AIRLOCK_CYCLESTATE_DOCKED)		// We've just docked
 		cyclestate = AIRLOCK_CYCLESTATE_DOCKED
 		if(process_on_changed)
 			process_atmos()
-	if(!is_docked && cyclestate == AIRLOCK_CYCLESTATE_DOCKED)
+	if(!is_docked && cyclestate == AIRLOCK_CYCLESTATE_DOCKED)		// We've just undocked
 		cyclestate = AIRLOCK_CYCLESTATE_INOPENING
 		reset_skip()
 		for(var/airlock in airlocks)
@@ -247,9 +268,9 @@
 	var/has_interior = FALSE
 	var/has_exterior = FALSE
 	for(var/A in airlocks)
-		if(airlocks[A] == 1)
+		if(airlocks[A] == EXTERIOR_AIRLOCK)
 			has_exterior = TRUE
-		if(airlocks[A] == 0)
+		if(airlocks[A] == INTERIOR_AIRLOCK)
 			has_interior = TRUE
 	if(!has_interior || !has_exterior)
 		if(!has_interior)
@@ -262,7 +283,9 @@
 		cyclestate = AIRLOCK_CYCLESTATE_CLOSED
 		update_docked_status()
 
-/obj/machinery/advanced_airlock_controller/proc/coerce_door(obj/machinery/door/airlock/door, target_density = 0)
+// Handles the airlocks connected to the controller
+
+/obj/machinery/advanced_airlock_controller/proc/coerce_door(obj/machinery/door/airlock/door, target_density = 0) 
 	if(door.density == target_density && !door.operating)
 		door.bolt()
 		return TRUE
@@ -270,11 +293,11 @@
 		return FALSE
 	door.unbolt()
 	if(door.density != target_density)
-		if(target_density)
-			spawn(0)
+		if(target_density)		// Door should be closed but is not
+			spawn(0)		// I have no idea what this does
 				door.close()
 				door.bolt()
-		else
+		else		// Door should be open but is not
 			spawn(0)
 				door.open()
 				door.bolt()
@@ -283,6 +306,8 @@
 /obj/machinery/advanced_airlock_controller/proc/unbolt_door(obj/machinery/door/airlock/door)
 	if(!door.wires.is_cut(WIRE_BOLTS))
 		door.unbolt()
+
+// Handles the vents and pressurization/depressurization
 
 /obj/machinery/advanced_airlock_controller/process_atmos()
 	if((machine_stat & (NOPOWER|BROKEN)) || shorted)
@@ -308,13 +333,13 @@
 		if(AIRLOCK_CYCLESTATE_CLOSED)
 			return
 		if(AIRLOCK_CYCLESTATE_DOCKED)
-			for(var/airlock in airlocks)
+			for(var/airlock in airlocks)		// If we're docked, we can unbolt the airlocks
 				unbolt_door(airlock)
 			for(var/V in vents)
 				var/obj/machinery/atmospherics/components/unary/vent_pump/vent = V
-				if(vents[vent] & AIRLOCK_CYCLEROLE_INT_PRESSURIZE)
-					vent.pump_direction = 1
-					vent.pressure_checks = 1
+				if(vents[vent] & AIRLOCK_CYCLEROLE_INT_PRESSURIZE)		// If we're already pressurizing, keep doing it
+					vent.pump_direction = VENT_RELEASE
+					vent.pressure_checks = VENT_EXT_BOUND
 					vent.external_pressure_bound = interior_pressure
 					vent.on = TRUE
 					vent.update_icon()
@@ -329,8 +354,8 @@
 				for(var/V in vents)
 					var/obj/machinery/atmospherics/components/unary/vent_pump/vent = V
 					if(vents[vent] & AIRLOCK_CYCLEROLE_INT_DEPRESSURIZE)
-						vent.pump_direction = 0
-						vent.pressure_checks = 1
+						vent.pump_direction = VENT_SIPHONING
+						vent.pressure_checks = VENT_EXT_BOUND
 						vent.external_pressure_bound = 0
 						vents_valid = FALSE
 						vent.on = TRUE
@@ -350,8 +375,8 @@
 				for(var/V in vents)
 					var/obj/machinery/atmospherics/components/unary/vent_pump/vent = V
 					if(vents[vent] & AIRLOCK_CYCLEROLE_EXT_DEPRESSURIZE)
-						vent.pump_direction = 0
-						vent.pressure_checks = 1
+						vent.pump_direction = VENT_SIPHONING
+						vent.pressure_checks = VENT_EXT_BOUND
 						vent.external_pressure_bound = 0
 						vents_valid = FALSE
 						vent.on = TRUE
@@ -366,13 +391,13 @@
 					reset_skip()
 		if(AIRLOCK_CYCLESTATE_INOPENING)
 			for(var/airlock in airlocks)
-				if(airlocks[airlock])
+				if(airlocks[airlock] == EXTERIOR_AIRLOCK)
 					doors_valid = doors_valid && coerce_door(airlock, 1)
 			for(var/V in vents)
 				var/obj/machinery/atmospherics/components/unary/vent_pump/vent = V
 				if(vents[vent] & AIRLOCK_CYCLEROLE_INT_PRESSURIZE)
-					vent.pump_direction = 1
-					vent.pressure_checks = 1
+					vent.pump_direction = VENT_RELEASE
+					vent.pressure_checks = VENT_EXT_BOUND
 					vent.external_pressure_bound = interior_pressure
 					vents_valid = FALSE
 					vent.on = TRUE
@@ -384,20 +409,20 @@
 				vents_valid = TRUE
 			if(vents_valid || is_skipping)
 				for(var/airlock in airlocks)
-					if(!airlocks[airlock])
+					if(airlocks[airlock] == INTERIOR_AIRLOCK)
 						doors_valid = doors_valid && coerce_door(airlock, 0)
 				if(doors_valid || is_skipping)
 					cyclestate = AIRLOCK_CYCLESTATE_INOPEN
 					reset_skip()
 		if(AIRLOCK_CYCLESTATE_OUTOPENING)
 			for(var/airlock in airlocks)
-				if(!airlocks[airlock])
+				if(airlocks[airlock] == INTERIOR_AIRLOCK)
 					doors_valid = doors_valid && coerce_door(airlock, 1)
 			for(var/V in vents)
 				var/obj/machinery/atmospherics/components/unary/vent_pump/vent = V
 				if(vents[vent] & AIRLOCK_CYCLEROLE_EXT_PRESSURIZE)
-					vent.pump_direction = 1
-					vent.pressure_checks = 1
+					vent.pump_direction = VENT_RELEASE
+					vent.pressure_checks = VENT_EXT_BOUND
 					vent.external_pressure_bound = exterior_pressure
 					vents_valid = FALSE
 					vent.on = TRUE
@@ -409,7 +434,7 @@
 				vents_valid = TRUE
 			if(vents_valid || is_skipping)
 				for(var/airlock in airlocks)
-					if(airlocks[airlock])
+					if(airlocks[airlock] == EXTERIOR_AIRLOCK)
 						doors_valid = doors_valid && coerce_door(airlock, 0)
 				if(doors_valid || is_skipping)
 					cyclestate = AIRLOCK_CYCLESTATE_OUTOPEN
@@ -428,12 +453,12 @@
 
 /obj/machinery/advanced_airlock_controller/attackby(obj/item/W, mob/user, params)
 	switch(buildstage)
-		if(2)
+		if(BUILD_COMPLETE)
 			if(W.tool_behaviour == TOOL_WIRECUTTER && panel_open && wires.is_all_cut())
 				W.play_tool_sound(src)
 				to_chat(user, "<span class='notice'>You cut the final wires.</span>")
 				new /obj/item/stack/cable_coil(loc, 5)
-				buildstage = 1
+				buildstage = BUILD_NO_WIRES
 				update_icon()
 				return
 			else if(W.tool_behaviour == TOOL_SCREWDRIVER)  // Opening that up.
@@ -448,17 +473,17 @@
 			else if(panel_open && is_wire_tool(W))
 				wires.interact(user)
 				return
-		if(1)
+		if(BUILD_NO_WIRES)
 			if(W.tool_behaviour == TOOL_CROWBAR)
 				user.visible_message("[user.name] removes the electronics from [src.name].",\
 									"<span class='notice'>You start prying out the circuit...</span>")
 				W.play_tool_sound(src)
 				if (W.use_tool(src, user, 20))
-					if (buildstage == 1)
+					if (buildstage == BUILD_NO_WIRES)
 						to_chat(user, "<span class='notice'>You remove the airlock controller electronics.</span>")
 						new /obj/item/electronics/advanced_airlock_controller( src.loc )
 						playsound(src.loc, 'sound/items/deconstruct.ogg', 50, 1)
-						buildstage = 0
+						buildstage = BUILD_NO_CIRCUIT
 						update_icon()
 				return
 
@@ -470,23 +495,23 @@
 				user.visible_message("[user.name] wires the airlock controller.", \
 									"<span class='notice'>You start wiring the airlock controller...</span>")
 				if (do_after(user, 20, target = src))
-					if (cable.get_amount() >= 5 && buildstage == 1)
+					if (cable.get_amount() >= 5 && buildstage == BUILD_NO_WIRES)
 						cable.use(5)
 						to_chat(user, "<span class='notice'>You wire the airlock controller.</span>")
 						wires.repair()
-						aidisabled = 0
+						aidisabled = FALSE
 						locked = FALSE
 						cyclestate = AIRLOCK_CYCLESTATE_ERROR
 						cut_links()
-						shorted = 0
-						buildstage = 2
+						shorted = FALSE
+						buildstage = BUILD_COMPLETE
 						update_icon()
 				return
-		if(0)
+		if(BUILD_NO_CIRCUIT)
 			if(istype(W, /obj/item/electronics/advanced_airlock_controller))
 				if(user.temporarilyRemoveItemFromInventory(W))
 					to_chat(user, "<span class='notice'>You insert the circuit.</span>")
-					buildstage = 1
+					buildstage = BUILD_NO_WIRES
 					update_icon()
 					qdel(W)
 				return
@@ -497,7 +522,7 @@
 					return
 				user.visible_message("<span class='notice'>[user] fabricates a circuit and places it into [src].</span>", \
 				"<span class='notice'>You adapt an airlock controller circuit and slot it into the assembly.</span>")
-				buildstage = 1
+				buildstage = BUILD_NO_WIRES
 				update_icon()
 				return
 
@@ -521,6 +546,9 @@
 	airlocks.Cut()
 	vents.Cut()
 
+// Determines the area taken up by the airlock and connects to vents and airlocks
+// assume_roles - Whether the aac is being initialized
+
 /obj/machinery/advanced_airlock_controller/proc/scan(assume_roles = FALSE)
 	cut_links()
 	config_error_str = "Unknown error (bug coders)"
@@ -531,30 +559,30 @@
 		return
 	var/list/turfs = list()
 	turfs[initial_turf] = 1
-	for(var/I = 1; I <= turfs.len; I++)
+	for(var/I = 1; I <= turfs.len; I++)		// Checking all open turfs in the room
 		var/turf/open/T = turfs[I]
 		if(assume_roles)
 			T.ImmediateCalculateAdjacentTurfs()
-		for(var/turf/open/T2 in T.atmos_adjacent_turfs)
-			if(get_dist(initial_turf, T2) > 5)
+		for(var/turf/open/T2 in T.atmos_adjacent_turfs)		// Add each adjacent open turf to the list
+			if(get_dist(initial_turf, T2) > AIRLOCK_MAXDIST)		// We're too far away from the AAC
 				config_error_str = "Airlock too big"
 				return
-			if(locate(/obj/machinery/door/airlock) in T2)
+			if(locate(/obj/machinery/door/airlock) in T2)		// Don't count airlocks
 				continue
 			turfs[T2] = 1
-		if(turfs.len > 16) // I will allow a 4x4 airlock for a shitty poor-man's spacepod bay.
+		if(turfs.len > AIRLOCK_MAXSIZE) // I will allow a 4x4 airlock for a shitty poor-man's spacepod bay.
 			config_error_str = "Airlock too big"
-		for(var/cdir in GLOB.cardinals)
+		for(var/cdir in GLOB.cardinals)		// Check for airlocks adjacent to the current turf
 			var/turf/T2 = get_step(T, cdir)
 			for(var/obj/machinery/door/airlock/A in T2)
 				if(!A.aac || A.aac == src)
 					A.aac = src
-					airlocks[A] = 0
+					airlocks[A] = INTERIOR_AIRLOCK
 					if(assume_roles)
-						for(var/adir in GLOB.cardinals)
+						for(var/adir in GLOB.cardinals)					// Checking all the turfs around the airlock
 							var/turf/check_turf = get_step(T2, adir)
 							if(check_turf.initial_gas_mix != OPENTURF_DEFAULT_ATMOS)
-								airlocks[A] = 1
+								airlocks[A] = EXTERIOR_AIRLOCK
 								break
 		for(var/obj/machinery/atmospherics/components/unary/vent_pump/vent in T)
 			if(!vent.aac || vent.aac == src)
@@ -657,7 +685,7 @@
 	vis_target = null
 
 /obj/machinery/advanced_airlock_controller/ui_act(action, params)
-	if(..() || buildstage != 2)
+	if(..() || buildstage != BUILD_COMPLETE)
 		return
 	// these actions can be done by anyone
 	switch(action)
@@ -823,3 +851,20 @@
 		for(var/obj/machinery/door/airlock/A in T)
 			if(A.aac)
 				A.aac.update_docked_status(TRUE)
+
+#undef AIRLOCK_MAXSIZE
+#undef AIRLOCK_MAXDIST
+
+#undef EXTERIOR_AIRLOCK
+#undef INTERIOR_AIRLOCK
+
+#undef VENT_SIPHONING
+#undef VENT_RELEASE
+
+#undef VENT_EXT_BOUND
+#undef VENT_INT_BOUND
+#undef VENT_NO_BOUND
+
+#undef BUILD_NO_CIRCUIT
+#undef BUILD_NO_WIRES
+#undef BUILD_COMPLETE
