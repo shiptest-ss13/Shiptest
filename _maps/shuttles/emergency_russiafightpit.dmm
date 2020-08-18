@@ -230,13 +230,6 @@
 /mob/living/simple_animal/hostile/bear/fightpit,
 /turf/open/floor/engine,
 /area/shuttle/escape)
-"aO" = (
-/obj/machinery/door/airlock/security/glass{
-	name = "Emergency Shuttle Airlock";
-	req_access_txt = "2"
-	},
-/turf/open/floor/plating,
-/area/shuttle/escape)
 "aP" = (
 /obj/structure/chair/comfy/shuttle{
 	dir = 1
@@ -273,16 +266,6 @@
 /obj/item/kitchen/fork,
 /mob/living/simple_animal/hostile/bear/fightpit,
 /turf/open/floor/engine,
-/area/shuttle/escape)
-"aW" = (
-/obj/docking_port/mobile/emergency{
-	height = 15;
-	name = "Box emergency shuttle"
-	},
-/obj/machinery/door/airlock/security/glass{
-	name = "Emergency Shuttle Airlock"
-	},
-/turf/open/floor/plating,
 /area/shuttle/escape)
 "aX" = (
 /obj/structure/extinguisher_cabinet{
@@ -415,12 +398,6 @@
 /obj/item/broken_bottle,
 /obj/effect/decal/cleanable/blood/old,
 /turf/open/floor/mineral/plastitanium/red,
-/area/shuttle/escape)
-"br" = (
-/obj/machinery/door/airlock/security/glass{
-	name = "Emergency Shuttle Airlock"
-	},
-/turf/open/floor/plating,
 /area/shuttle/escape)
 "bs" = (
 /obj/structure/extinguisher_cabinet{
@@ -587,6 +564,32 @@
 /obj/structure/table/optable,
 /turf/open/floor/plasteel,
 /area/shuttle/escape)
+"Ev" = (
+/obj/machinery/door/airlock/security/glass{
+	name = "Emergency Shuttle Airlock";
+	req_access_txt = "2"
+	},
+/obj/structure/fans/tiny,
+/turf/open/floor/plating,
+/area/shuttle/escape)
+"NW" = (
+/obj/docking_port/mobile/emergency{
+	height = 15;
+	name = "Box emergency shuttle"
+	},
+/obj/machinery/door/airlock/security/glass{
+	name = "Emergency Shuttle Airlock"
+	},
+/obj/structure/fans/tiny,
+/turf/open/floor/plating,
+/area/shuttle/escape)
+"Ys" = (
+/obj/machinery/door/airlock/security/glass{
+	name = "Emergency Shuttle Airlock"
+	},
+/obj/structure/fans/tiny,
+/turf/open/floor/plating,
+/area/shuttle/escape)
 
 (1,1,1) = {"
 aa
@@ -596,17 +599,17 @@ aa
 ad
 ab
 ad
-aO
+Ev
 ab
-aW
+NW
 ad
 ac
 ac
 ac
 ad
-br
+Ys
 ad
-br
+Ys
 ad
 aa
 aa

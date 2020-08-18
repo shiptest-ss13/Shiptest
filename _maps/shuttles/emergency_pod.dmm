@@ -16,12 +16,6 @@
 "d" = (
 /turf/open/space/basic,
 /area/space)
-"e" = (
-/obj/machinery/door/airlock/titanium{
-	name = "Shuttle Airlock"
-	},
-/turf/open/floor/mineral/titanium/blue,
-/area/shuttle/escape)
 "f" = (
 /obj/structure/chair/comfy/shuttle,
 /turf/open/floor/mineral/titanium/blue,
@@ -50,7 +44,14 @@
 	},
 /turf/open/floor/mineral/titanium/blue,
 /area/shuttle/escape)
-"m" = (
+"s" = (
+/obj/machinery/door/airlock/titanium{
+	name = "Shuttle Airlock"
+	},
+/obj/structure/fans/tiny,
+/turf/open/floor/mineral/titanium/blue,
+/area/shuttle/escape)
+"E" = (
 /obj/machinery/door/airlock/titanium{
 	name = "Shuttle Airlock"
 	},
@@ -58,22 +59,23 @@
 	port_direction = 2;
 	preferred_direction = 4
 	},
+/obj/structure/fans/tiny,
 /turf/open/floor/mineral/titanium/blue,
 /area/shuttle/escape)
 
 (1,1,1) = {"
 a
-e
+s
 b
-m
+E
 a
 d
 d
 d
 a
-e
+s
 b
-e
+s
 a
 "}
 (2,1,1) = {"

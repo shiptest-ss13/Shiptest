@@ -30,28 +30,8 @@
 "f" = (
 /turf/open/floor/plating,
 /area/shuttle/escape)
-"g" = (
-/obj/machinery/door/airlock/titanium{
-	name = "Emergency Shuttle Airlock"
-	},
-/turf/open/floor/plating,
-/area/shuttle/escape)
 "h" = (
 /obj/effect/spawner/structure/window/shuttle,
-/turf/open/floor/plating,
-/area/shuttle/escape)
-"i" = (
-/obj/machinery/door/airlock/titanium{
-	name = "Emergency Shuttle Airlock"
-	},
-/obj/docking_port/mobile/emergency/shuttle_build{
-	dwidth = 9;
-	height = 15;
-	name = "Shuttle Under Construction";
-	port_direction = 4;
-	preferred_direction = 2;
-	width = 26
-	},
 /turf/open/floor/plating,
 /area/shuttle/escape)
 "j" = (
@@ -175,6 +155,28 @@
 "p" = (
 /turf/closed/wall/mineral/titanium,
 /area/shuttle/escape)
+"x" = (
+/obj/machinery/door/airlock/titanium{
+	name = "Emergency Shuttle Airlock"
+	},
+/obj/structure/fans/tiny,
+/turf/open/floor/plating,
+/area/shuttle/escape)
+"G" = (
+/obj/machinery/door/airlock/titanium{
+	name = "Emergency Shuttle Airlock"
+	},
+/obj/docking_port/mobile/emergency/shuttle_build{
+	dwidth = 9;
+	height = 15;
+	name = "Shuttle Under Construction";
+	port_direction = 4;
+	preferred_direction = 2;
+	width = 26
+	},
+/obj/structure/fans/tiny,
+/turf/open/floor/plating,
+/area/shuttle/escape)
 
 (1,1,1) = {"
 a
@@ -184,17 +186,17 @@ e
 h
 e
 e
-g
+x
 e
-i
+G
 e
 e
 h
 e
 e
-g
+x
 e
-g
+x
 e
 p
 a

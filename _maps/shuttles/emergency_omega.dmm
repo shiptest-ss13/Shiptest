@@ -174,19 +174,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/shuttle/escape)
-"aq" = (
-/obj/machinery/door/airlock/shuttle{
-	name = "Emergency Shuttle Airlock";
-	req_access_txt = "2"
-	},
-/obj/effect/turf_decal/stripes/line{
-	dir = 8
-	},
-/obj/effect/turf_decal/stripes/line{
-	dir = 4
-	},
-/turf/open/floor/plasteel/white,
-/area/shuttle/escape)
 "ar" = (
 /obj/structure/table/reinforced,
 /obj/machinery/recharger,
@@ -267,23 +254,6 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel,
-/area/shuttle/escape)
-"ay" = (
-/obj/machinery/door/airlock/shuttle{
-	name = "Emergency Shuttle Airlock"
-	},
-/obj/docking_port/mobile/emergency{
-	dwidth = 5;
-	name = "Omega emergency shuttle";
-	width = 19
-	},
-/obj/effect/turf_decal/stripes/line{
-	dir = 4
-	},
-/obj/effect/turf_decal/stripes/line{
-	dir = 8
-	},
-/turf/open/floor/plasteel/white,
 /area/shuttle/escape)
 "az" = (
 /obj/effect/turf_decal/delivery,
@@ -494,18 +464,6 @@
 /obj/structure/flora/ausbushes/grassybush,
 /obj/structure/flora/ausbushes/pointybush,
 /turf/open/floor/grass,
-/area/shuttle/escape)
-"aP" = (
-/obj/machinery/door/airlock/shuttle{
-	name = "Emergency Shuttle Airlock"
-	},
-/obj/effect/turf_decal/stripes/line{
-	dir = 8
-	},
-/obj/effect/turf_decal/stripes/line{
-	dir = 4
-	},
-/turf/open/floor/plasteel/white,
 /area/shuttle/escape)
 "aQ" = (
 /obj/effect/turf_decal/tile/neutral,
@@ -856,22 +814,67 @@
 /obj/effect/turf_decal/stripes/line,
 /turf/open/floor/plating/airless,
 /area/shuttle/escape)
+"ga" = (
+/obj/machinery/door/airlock/shuttle{
+	name = "Emergency Shuttle Airlock"
+	},
+/obj/effect/turf_decal/stripes/line{
+	dir = 8
+	},
+/obj/effect/turf_decal/stripes/line{
+	dir = 4
+	},
+/obj/structure/fans/tiny,
+/turf/open/floor/plasteel/white,
+/area/shuttle/escape)
+"Na" = (
+/obj/machinery/door/airlock/shuttle{
+	name = "Emergency Shuttle Airlock"
+	},
+/obj/docking_port/mobile/emergency{
+	dwidth = 5;
+	name = "Omega emergency shuttle";
+	width = 19
+	},
+/obj/effect/turf_decal/stripes/line{
+	dir = 4
+	},
+/obj/effect/turf_decal/stripes/line{
+	dir = 8
+	},
+/obj/structure/fans/tiny,
+/turf/open/floor/plasteel/white,
+/area/shuttle/escape)
+"PD" = (
+/obj/machinery/door/airlock/shuttle{
+	name = "Emergency Shuttle Airlock";
+	req_access_txt = "2"
+	},
+/obj/effect/turf_decal/stripes/line{
+	dir = 8
+	},
+/obj/effect/turf_decal/stripes/line{
+	dir = 4
+	},
+/obj/structure/fans/tiny,
+/turf/open/floor/plasteel/white,
+/area/shuttle/escape)
 
 (1,1,1) = {"
 aa
 aa
 aa
-aq
+PD
 ac
-ay
+Na
 aa
 ab
 ab
 ab
 aa
-aP
+ga
 ac
-aP
+ga
 aa
 aa
 aZ

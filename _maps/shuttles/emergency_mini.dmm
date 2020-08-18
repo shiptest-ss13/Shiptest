@@ -107,12 +107,6 @@
 	},
 /turf/open/floor/mineral/titanium,
 /area/shuttle/escape)
-"u" = (
-/obj/machinery/door/airlock/titanium{
-	name = "Emergency Shuttle Airlock"
-	},
-/turf/open/floor/mineral/titanium/blue,
-/area/shuttle/escape)
 "x" = (
 /obj/structure/chair/comfy/shuttle{
 	dir = 1
@@ -154,6 +148,7 @@
 	name = "Mini emergency shuttle";
 	width = 21
 	},
+/obj/structure/fans/tiny,
 /turf/open/floor/mineral/titanium/blue,
 /area/shuttle/escape)
 "D" = (
@@ -252,6 +247,13 @@
 	pixel_y = 3
 	},
 /obj/item/crowbar,
+/turf/open/floor/mineral/titanium/blue,
+/area/shuttle/escape)
+"U" = (
+/obj/machinery/door/airlock/titanium{
+	name = "Emergency Shuttle Airlock"
+	},
+/obj/structure/fans/tiny,
 /turf/open/floor/mineral/titanium/blue,
 /area/shuttle/escape)
 "W" = (
@@ -455,7 +457,7 @@ b
 b
 b
 b
-u
+U
 b
 b
 n

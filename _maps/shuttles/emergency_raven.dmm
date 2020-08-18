@@ -1054,10 +1054,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating,
 /area/shuttle/escape)
-"cn" = (
-/obj/machinery/door/airlock/external,
-/turf/open/floor/plating,
-/area/shuttle/escape)
 "co" = (
 /obj/machinery/porta_turret/syndicate/energy/raven{
 	dir = 8
@@ -2068,18 +2064,6 @@
 /obj/structure/shuttle/engine/large,
 /turf/open/floor/plating/airless,
 /area/shuttle/escape)
-"eo" = (
-/obj/machinery/door/airlock/external{
-	name = "Emegency Shuttle External Airlock"
-	},
-/obj/docking_port/mobile/emergency{
-	dwidth = 14;
-	height = 21;
-	name = "CentCom Raven Cruiser";
-	width = 32
-	},
-/turf/open/floor/plating,
-/area/shuttle/escape)
 "ep" = (
 /obj/effect/turf_decal/tile/blue{
 	dir = 1
@@ -2098,6 +2082,13 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/shuttle/escape)
+"gA" = (
+/obj/machinery/door/airlock/external{
+	name = "Emegency Shuttle External Airlock"
+	},
+/obj/structure/fans/tiny,
+/turf/open/floor/plating,
+/area/shuttle/escape)
 "jq" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable{
@@ -2115,6 +2106,11 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/turf/open/floor/plating,
+/area/shuttle/escape)
+"wn" = (
+/obj/machinery/door/airlock/external,
+/obj/structure/fans/tiny,
 /turf/open/floor/plating,
 /area/shuttle/escape)
 "xJ" = (
@@ -2161,6 +2157,19 @@
 	},
 /turf/open/floor/plating,
 /area/shuttle/escape)
+"Vj" = (
+/obj/machinery/door/airlock/external{
+	name = "Emegency Shuttle External Airlock"
+	},
+/obj/docking_port/mobile/emergency{
+	dwidth = 14;
+	height = 21;
+	name = "CentCom Raven Cruiser";
+	width = 32
+	},
+/obj/structure/fans/tiny,
+/turf/open/floor/plating,
+/area/shuttle/escape)
 "ZG" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/power/terminal{
@@ -2186,17 +2195,17 @@ aa
 aa
 aO
 ax
-cd
+gA
 co
-eo
+Vj
 ax
 aO
 aa
 aO
 ax
-cd
+gA
 co
-cd
+gA
 ax
 aO
 aa
@@ -2866,17 +2875,17 @@ aa
 aa
 aO
 ax
-cn
+wn
 cw
-cn
+wn
 ax
 aO
 aa
 aO
 ax
-cd
+gA
 cw
-cd
+gA
 ax
 aO
 aa

@@ -101,13 +101,6 @@
 	},
 /turf/open/floor/carpet,
 /area/shuttle/escape)
-"as" = (
-/obj/machinery/door/airlock/titanium{
-	name = "Emergency Shuttle Airlock";
-	req_access_txt = "2"
-	},
-/turf/open/floor/mineral/titanium,
-/area/shuttle/escape)
 "at" = (
 /obj/structure/chair/comfy/shuttle,
 /turf/open/floor/mineral/plastitanium/red/brig,
@@ -169,13 +162,6 @@
 "aB" = (
 /turf/closed/wall/mineral/titanium/interior,
 /area/shuttle/escape)
-"aC" = (
-/obj/machinery/door/airlock/titanium{
-	name = "Emergency Shuttle Airlock";
-	req_access_txt = "2"
-	},
-/turf/open/floor/plating,
-/area/shuttle/escape)
 "aD" = (
 /obj/structure/extinguisher_cabinet{
 	pixel_y = -30
@@ -219,15 +205,6 @@
 	dir = 4
 	},
 /turf/open/floor/mineral/titanium,
-/area/shuttle/escape)
-"aK" = (
-/obj/machinery/door/airlock/titanium{
-	name = "Emergency Shuttle Airlock"
-	},
-/obj/docking_port/mobile/emergency{
-	name = "Scrapheap Challenge"
-	},
-/turf/open/floor/plating,
 /area/shuttle/escape)
 "aL" = (
 /obj/structure/chair/comfy/shuttle{
@@ -304,12 +281,6 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/grimy,
-/area/shuttle/escape)
-"aZ" = (
-/obj/machinery/door/airlock/titanium{
-	name = "Emergency Shuttle Airlock"
-	},
-/turf/open/floor/plating,
 /area/shuttle/escape)
 "ba" = (
 /obj/structure/extinguisher_cabinet{
@@ -426,6 +397,43 @@
 	},
 /turf/open/floor/mineral/titanium/blue,
 /area/shuttle/escape)
+"fH" = (
+/obj/machinery/door/airlock/titanium{
+	name = "Emergency Shuttle Airlock";
+	req_access_txt = "2"
+	},
+/obj/structure/fans/tiny,
+/turf/open/floor/plating,
+/area/shuttle/escape)
+"mu" = (
+/obj/machinery/door/airlock/titanium{
+	name = "Emergency Shuttle Airlock"
+	},
+/obj/structure/fans/tiny,
+/turf/open/floor/plating,
+/area/shuttle/escape)
+"rY" = (
+/obj/structure/fans/tiny,
+/turf/closed/wall/mineral/titanium,
+/area/shuttle/escape)
+"Bm" = (
+/obj/machinery/door/airlock/titanium{
+	name = "Emergency Shuttle Airlock";
+	req_access_txt = "2"
+	},
+/obj/structure/fans/tiny,
+/turf/open/floor/mineral/titanium,
+/area/shuttle/escape)
+"UW" = (
+/obj/machinery/door/airlock/titanium{
+	name = "Emergency Shuttle Airlock"
+	},
+/obj/docking_port/mobile/emergency{
+	name = "Scrapheap Challenge"
+	},
+/obj/structure/fans/tiny,
+/turf/open/floor/plating,
+/area/shuttle/escape)
 
 (1,1,1) = {"
 aa
@@ -435,17 +443,17 @@ aa
 ab
 ab
 ab
-aC
+fH
 ab
-aK
+UW
 ab
 ac
 ac
 ac
 ab
-aZ
-ab
-aZ
+mu
+rY
+mu
 ab
 ab
 ab
@@ -624,7 +632,7 @@ aa
 aa
 aa
 aa
-as
+Bm
 aw
 aw
 aw

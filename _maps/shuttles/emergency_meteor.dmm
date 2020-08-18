@@ -26,10 +26,6 @@
 /mob/living/simple_animal/hostile/asteroid/goliath,
 /turf/open/floor/plating/asteroid,
 /area/shuttle/escape/meteor)
-"g" = (
-/obj/structure/mineral_door/iron,
-/turf/open/floor/plating/asteroid,
-/area/shuttle/escape/meteor)
 "h" = (
 /obj/item/pickaxe,
 /turf/open/floor/plating/asteroid,
@@ -61,6 +57,11 @@
 /obj/machinery/power/terminal{
 	dir = 1
 	},
+/turf/open/floor/plating/asteroid,
+/area/shuttle/escape/meteor)
+"y" = (
+/obj/structure/mineral_door/iron,
+/obj/structure/fans/tiny,
 /turf/open/floor/plating/asteroid,
 /area/shuttle/escape/meteor)
 "L" = (
@@ -424,8 +425,8 @@ b
 b
 b
 b
-g
-g
+y
+y
 b
 b
 b

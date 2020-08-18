@@ -133,12 +133,6 @@
 "ax" = (
 /turf/open/floor/mineral/plastitanium/red/brig,
 /area/shuttle/escape)
-"ay" = (
-/obj/machinery/door/airlock/titanium{
-	name = "Emergency Shuttle Airlock"
-	},
-/turf/open/floor/plating,
-/area/shuttle/escape)
 "az" = (
 /obj/structure/chair/comfy{
 	dir = 1
@@ -678,20 +672,6 @@
 	},
 /turf/open/floor/plating,
 /area/shuttle/escape)
-"bL" = (
-/obj/machinery/door/airlock/titanium{
-	name = "Emergency Shuttle Airlock"
-	},
-/obj/docking_port/mobile/emergency{
-	dir = 8;
-	dwidth = 27;
-	height = 8;
-	name = "PubbyStation emergency shuttle";
-	port_direction = 4;
-	width = 46
-	},
-/turf/open/floor/plating,
-/area/shuttle/escape)
 "bO" = (
 /obj/machinery/door/airlock/public/glass{
 	name = "Cockpit";
@@ -712,11 +692,33 @@
 	},
 /turf/open/floor/plating,
 /area/shuttle/escape)
+"pZ" = (
+/obj/machinery/door/airlock/titanium{
+	name = "Emergency Shuttle Airlock"
+	},
+/obj/docking_port/mobile/emergency{
+	dir = 8;
+	dwidth = 27;
+	height = 8;
+	name = "PubbyStation emergency shuttle";
+	port_direction = 4;
+	width = 46
+	},
+/obj/structure/fans/tiny,
+/turf/open/floor/plating,
+/area/shuttle/escape)
 "xt" = (
 /obj/structure/window/reinforced{
 	dir = 8;
 	layer = 2.9
 	},
+/turf/open/floor/plating,
+/area/shuttle/escape)
+"Tz" = (
+/obj/machinery/door/airlock/titanium{
+	name = "Emergency Shuttle Airlock"
+	},
+/obj/structure/fans/tiny,
 /turf/open/floor/plating,
 /area/shuttle/escape)
 "Uu" = (
@@ -1073,17 +1075,17 @@ ab
 ab
 ab
 ab
-ay
+Tz
 ab
-ay
+Tz
 ab
 ab
 aa
 ab
 ab
-bL
+pZ
 ab
-ay
+Tz
 ab
 ac
 ab

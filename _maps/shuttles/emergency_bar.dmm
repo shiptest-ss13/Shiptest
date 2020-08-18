@@ -219,13 +219,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/shuttle/escape)
-"aK" = (
-/obj/machinery/door/airlock/titanium{
-	name = "Emergency Shuttle Airlock";
-	req_access_txt = "2"
-	},
-/turf/open/floor/mineral/plastitanium/red/brig,
-/area/shuttle/escape)
 "aL" = (
 /obj/structure/extinguisher_cabinet{
 	pixel_y = -30
@@ -284,19 +277,6 @@
 /obj/structure/table,
 /obj/item/storage/box/drinkingglasses,
 /obj/item/reagent_containers/food/drinks/bottle/lizardwine,
-/obj/effect/turf_decal/tile/bar,
-/obj/effect/turf_decal/tile/bar{
-	dir = 1
-	},
-/turf/open/floor/plasteel,
-/area/shuttle/escape)
-"aT" = (
-/obj/machinery/door/airlock/titanium{
-	name = "Emergency Shuttle Airlock"
-	},
-/obj/docking_port/mobile/emergency{
-	name = "The Emergency Escape Bar"
-	},
 /obj/effect/turf_decal/tile/bar,
 /obj/effect/turf_decal/tile/bar{
 	dir = 1
@@ -369,16 +349,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/shuttle/escape)
-"bg" = (
-/obj/machinery/door/airlock/titanium{
-	name = "Emergency Shuttle Airlock"
-	},
-/obj/effect/turf_decal/tile/bar,
-/obj/effect/turf_decal/tile/bar{
-	dir = 1
-	},
-/turf/open/floor/plasteel,
-/area/shuttle/escape)
 "bi" = (
 /turf/open/floor/mineral/titanium,
 /area/shuttle/escape)
@@ -388,6 +358,20 @@
 /obj/effect/turf_decal/tile/bar{
 	dir = 1
 	},
+/turf/open/floor/plasteel,
+/area/shuttle/escape)
+"bl" = (
+/obj/machinery/door/airlock/titanium{
+	name = "Emergency Shuttle Airlock"
+	},
+/obj/docking_port/mobile/emergency{
+	name = "The Emergency Escape Bar"
+	},
+/obj/effect/turf_decal/tile/bar,
+/obj/effect/turf_decal/tile/bar{
+	dir = 1
+	},
+/obj/structure/fans/tiny,
 /turf/open/floor/plasteel,
 /area/shuttle/escape)
 "bm" = (
@@ -400,12 +384,6 @@
 /obj/effect/spawner/structure/window/shuttle,
 /obj/structure/sign/departments/medbay/alt,
 /turf/closed/wall/mineral/titanium,
-/area/shuttle/escape)
-"bo" = (
-/obj/machinery/door/airlock/titanium{
-	name = "Emergency Shuttle Airlock"
-	},
-/turf/open/floor/plasteel/freezer,
 /area/shuttle/escape)
 "bp" = (
 /turf/open/floor/plasteel/freezer,
@@ -662,6 +640,32 @@
 /obj/machinery/sleeper,
 /turf/open/floor/mineral/titanium,
 /area/shuttle/escape)
+"jm" = (
+/obj/machinery/door/airlock/titanium{
+	name = "Emergency Shuttle Airlock"
+	},
+/obj/effect/turf_decal/tile/bar,
+/obj/effect/turf_decal/tile/bar{
+	dir = 1
+	},
+/obj/structure/fans/tiny,
+/turf/open/floor/plasteel,
+/area/shuttle/escape)
+"sS" = (
+/obj/machinery/door/airlock/titanium{
+	name = "Emergency Shuttle Airlock"
+	},
+/obj/structure/fans/tiny,
+/turf/open/floor/plasteel/freezer,
+/area/shuttle/escape)
+"Cg" = (
+/obj/machinery/door/airlock/titanium{
+	name = "Emergency Shuttle Airlock";
+	req_access_txt = "2"
+	},
+/obj/structure/fans/tiny,
+/turf/open/floor/mineral/plastitanium/red/brig,
+/area/shuttle/escape)
 "Yn" = (
 /obj/machinery/vending/wallmed{
 	name = "Emergency NanoMed";
@@ -678,17 +682,17 @@ aa
 ab
 ab
 ab
-aK
+Cg
 ab
-aT
+bl
 ab
 ac
 ac
 ac
 ab
-bg
+jm
 ab
-bo
+sS
 ab
 ab
 ab

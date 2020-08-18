@@ -235,34 +235,11 @@
 	},
 /turf/open/floor/mineral/titanium/blue,
 /area/shuttle/escape)
-"aP" = (
-/obj/machinery/door/airlock/titanium{
-	name = "Emergency Shuttle Airlock";
-	req_access_txt = "2"
-	},
-/turf/open/floor/plating,
-/area/shuttle/escape)
 "aQ" = (
 /obj/structure/chair/comfy/shuttle{
 	dir = 1
 	},
 /turf/open/floor/mineral/plastitanium/red/brig,
-/area/shuttle/escape)
-"aR" = (
-/obj/machinery/door/airlock/titanium{
-	name = "Emergency Shuttle Airlock"
-	},
-/turf/open/floor/plating,
-/area/shuttle/escape)
-"aS" = (
-/obj/machinery/door/airlock/titanium{
-	name = "Emergency Shuttle Airlock"
-	},
-/obj/docking_port/mobile/emergency{
-	name = "Donut emergency shuttle";
-	width = 34
-	},
-/turf/open/floor/plating,
 /area/shuttle/escape)
 "aT" = (
 /obj/structure/extinguisher_cabinet,
@@ -491,6 +468,32 @@
 /obj/structure/table/optable,
 /turf/open/floor/mineral/titanium,
 /area/shuttle/escape)
+"mi" = (
+/obj/machinery/door/airlock/titanium{
+	name = "Emergency Shuttle Airlock";
+	req_access_txt = "2"
+	},
+/obj/structure/fans/tiny,
+/turf/open/floor/plating,
+/area/shuttle/escape)
+"JE" = (
+/obj/machinery/door/airlock/titanium{
+	name = "Emergency Shuttle Airlock"
+	},
+/obj/structure/fans/tiny,
+/turf/open/floor/plating,
+/area/shuttle/escape)
+"RH" = (
+/obj/machinery/door/airlock/titanium{
+	name = "Emergency Shuttle Airlock"
+	},
+/obj/docking_port/mobile/emergency{
+	name = "Donut emergency shuttle";
+	width = 34
+	},
+/obj/structure/fans/tiny,
+/turf/open/floor/plating,
+/area/shuttle/escape)
 
 (1,1,1) = {"
 aa
@@ -506,17 +509,17 @@ aa
 aa
 ab
 ab
-aP
+mi
 ab
-aS
+RH
 ab
 aa
 aa
 aa
 ab
-aR
+JE
 ac
-aR
+JE
 ab
 aa
 ab
@@ -974,17 +977,17 @@ aa
 aa
 ab
 ab
-aR
+JE
 ac
-aR
+JE
 ab
 aa
 aa
 aa
 ab
-aR
+JE
 ac
-aR
+JE
 ab
 aa
 ab

@@ -5,12 +5,6 @@
 "b" = (
 /turf/closed/wall/mineral/titanium,
 /area/shuttle/arrival)
-"c" = (
-/obj/machinery/door/airlock/titanium{
-	name = "Arrivals Shuttle Airlock"
-	},
-/turf/open/floor/plating,
-/area/shuttle/arrival)
 "d" = (
 /obj/effect/spawner/structure/window/shuttle,
 /turf/open/floor/plating,
@@ -142,6 +136,13 @@
 "C" = (
 /turf/open/floor/mineral/titanium,
 /area/shuttle/arrival)
+"K" = (
+/obj/machinery/door/airlock/titanium{
+	name = "Arrivals Shuttle Airlock"
+	},
+/obj/structure/fans/tiny,
+/turf/open/floor/plating,
+/area/shuttle/arrival)
 
 (1,1,1) = {"
 a
@@ -176,12 +177,12 @@ s
 b
 "}
 (5,1,1) = {"
-c
+K
 f
 o
 o
 f
-c
+K
 "}
 (6,1,1) = {"
 b
@@ -224,12 +225,12 @@ u
 b
 "}
 (11,1,1) = {"
-c
+K
 f
 C
 C
 f
-c
+K
 "}
 (12,1,1) = {"
 b

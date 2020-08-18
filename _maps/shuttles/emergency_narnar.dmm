@@ -125,6 +125,7 @@
 /area/shuttle/escape)
 "x" = (
 /obj/machinery/door/airlock/cult/friendly,
+/obj/structure/fans/tiny,
 /turf/open/floor/plating,
 /area/shuttle/escape)
 "y" = (
@@ -155,13 +156,6 @@
 /obj/effect/rune/convert,
 /obj/effect/decal/remains/human,
 /turf/open/floor/plasteel/cult,
-/area/shuttle/escape)
-"E" = (
-/obj/machinery/door/airlock/cult/friendly,
-/obj/docking_port/mobile/emergency{
-	name = "shuttle 667"
-	},
-/turf/open/floor/plating,
 /area/shuttle/escape)
 "F" = (
 /obj/effect/decal/cleanable/blood/gibs/down,
@@ -262,6 +256,14 @@
 /obj/structure/shuttle/engine/propulsion,
 /turf/open/floor/plating/airless,
 /area/shuttle/escape)
+"X" = (
+/obj/machinery/door/airlock/cult/friendly,
+/obj/docking_port/mobile/emergency{
+	name = "shuttle 667"
+	},
+/obj/structure/fans/tiny,
+/turf/open/floor/plating,
+/area/shuttle/escape)
 
 (1,1,1) = {"
 a
@@ -273,7 +275,7 @@ b
 b
 x
 b
-E
+X
 b
 c
 c

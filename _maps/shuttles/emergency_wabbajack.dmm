@@ -161,13 +161,6 @@
 	},
 /turf/open/floor/mineral/titanium,
 /area/shuttle/escape)
-"ax" = (
-/obj/machinery/door/airlock/titanium{
-	name = "Emergency Shuttle Airlock";
-	req_access_txt = "2"
-	},
-/turf/open/floor/plating,
-/area/shuttle/escape)
 "ay" = (
 /obj/structure/table,
 /obj/item/paper_bin,
@@ -198,15 +191,6 @@
 "aC" = (
 /obj/machinery/door/airlock/titanium,
 /turf/open/floor/mineral/titanium,
-/area/shuttle/escape)
-"aD" = (
-/obj/machinery/door/airlock/titanium{
-	name = "Emergency Shuttle Airlock"
-	},
-/obj/docking_port/mobile/emergency{
-	name = "NT Lepton Violet"
-	},
-/turf/open/floor/plating,
 /area/shuttle/escape)
 "aF" = (
 /obj/machinery/door/window/eastleft,
@@ -301,12 +285,6 @@
 "aU" = (
 /obj/machinery/door/airlock/public/glass,
 /turf/open/floor/mineral/titanium,
-/area/shuttle/escape)
-"aV" = (
-/obj/machinery/door/airlock/titanium{
-	name = "Emergency Shuttle Airlock"
-	},
-/turf/open/floor/plating,
 /area/shuttle/escape)
 "aW" = (
 /obj/effect/turf_decal/stripes/line{
@@ -515,6 +493,14 @@
 	},
 /turf/open/floor/mineral/titanium,
 /area/shuttle/escape)
+"co" = (
+/obj/machinery/door/airlock/titanium{
+	name = "Emergency Shuttle Airlock";
+	req_access_txt = "2"
+	},
+/obj/structure/fans/tiny,
+/turf/open/floor/plating,
+/area/shuttle/escape)
 "ji" = (
 /obj/structure/chair/comfy/shuttle{
 	dir = 8
@@ -530,9 +516,26 @@
 	},
 /turf/open/floor/mineral/titanium/white,
 /area/shuttle/escape)
+"HF" = (
+/obj/machinery/door/airlock/titanium{
+	name = "Emergency Shuttle Airlock"
+	},
+/obj/docking_port/mobile/emergency{
+	name = "NT Lepton Violet"
+	},
+/obj/structure/fans/tiny,
+/turf/open/floor/plating,
+/area/shuttle/escape)
 "MK" = (
 /obj/structure/chair/comfy/shuttle,
 /turf/open/floor/mineral/titanium/blue,
+/area/shuttle/escape)
+"Qc" = (
+/obj/machinery/door/airlock/titanium{
+	name = "Emergency Shuttle Airlock"
+	},
+/obj/structure/fans/tiny,
+/turf/open/floor/plating,
 /area/shuttle/escape)
 
 (1,1,1) = {"
@@ -543,17 +546,17 @@ aa
 ab
 ab
 ab
-ax
+co
 ab
-aD
+HF
 ab
 as
 as
 as
 ab
-aV
+Qc
 ab
-aV
+Qc
 ab
 ab
 ab

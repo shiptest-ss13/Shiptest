@@ -639,13 +639,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/shuttle/escape)
-"bv" = (
-/obj/machinery/door/airlock/shuttle{
-	name = "Emergency Shuttle Airlock";
-	req_access_txt = "2"
-	},
-/turf/open/floor/plating,
-/area/shuttle/escape)
 "bw" = (
 /obj/structure/chair/comfy/shuttle{
 	dir = 1
@@ -695,18 +688,6 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel,
-/area/shuttle/escape)
-"bE" = (
-/obj/machinery/door/airlock/shuttle{
-	name = "Emergency Shuttle Airlock"
-	},
-/obj/docking_port/mobile/emergency{
-	dwidth = 15;
-	height = 20;
-	name = "Cere emergency shuttle";
-	width = 42
-	},
-/turf/open/floor/plating,
 /area/shuttle/escape)
 "bF" = (
 /obj/structure/closet/crate/bin,
@@ -934,12 +915,6 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel,
-/area/shuttle/escape)
-"bY" = (
-/obj/machinery/door/airlock/shuttle{
-	name = "Emergency Shuttle Airlock"
-	},
-/turf/open/floor/plating,
 /area/shuttle/escape)
 "bZ" = (
 /obj/structure/extinguisher_cabinet{
@@ -1729,12 +1704,40 @@
 	},
 /turf/open/floor/plasteel,
 /area/shuttle/escape)
+"ip" = (
+/obj/machinery/door/airlock/shuttle{
+	name = "Emergency Shuttle Airlock"
+	},
+/obj/docking_port/mobile/emergency{
+	dwidth = 15;
+	height = 20;
+	name = "Cere emergency shuttle";
+	width = 42
+	},
+/obj/structure/fans/tiny,
+/turf/open/floor/plating,
+/area/shuttle/escape)
 "pf" = (
 /obj/machinery/vending/wallmed{
 	name = "Emergency NanoMed";
 	use_power = 0
 	},
 /turf/closed/wall/mineral/titanium/nodiagonal,
+/area/shuttle/escape)
+"uE" = (
+/obj/machinery/door/airlock/shuttle{
+	name = "Emergency Shuttle Airlock"
+	},
+/obj/structure/fans/tiny,
+/turf/open/floor/plating,
+/area/shuttle/escape)
+"xN" = (
+/obj/machinery/door/airlock/shuttle{
+	name = "Emergency Shuttle Airlock";
+	req_access_txt = "2"
+	},
+/obj/structure/fans/tiny,
+/turf/open/floor/plating,
 /area/shuttle/escape)
 
 (1,1,1) = {"
@@ -1751,17 +1754,17 @@ ab
 ab
 ab
 ab
-bv
+xN
 ab
-bE
+ip
 ab
 aa
 aa
 aa
 ab
-bY
+uE
 ab
-bY
+uE
 ab
 aa
 aa

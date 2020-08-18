@@ -174,15 +174,6 @@
 /obj/item/toy/sword,
 /turf/open/floor/mineral/bananium,
 /area/shuttle/escape)
-"aI" = (
-/obj/machinery/door/airlock/bananium{
-	name = "Emergency Shuttle Airlock"
-	},
-/obj/docking_port/mobile/emergency{
-	name = "Snappop(tm)!"
-	},
-/turf/open/floor/plating,
-/area/shuttle/escape)
 "aJ" = (
 /obj/item/toy/snappop/phoenix,
 /obj/machinery/light/small{
@@ -236,12 +227,6 @@
 	dir = 8
 	},
 /turf/open/floor/mineral/bananium,
-/area/shuttle/escape)
-"aQ" = (
-/obj/machinery/door/airlock/bananium{
-	name = "Emergency Shuttle Airlock"
-	},
-/turf/open/floor/plating,
 /area/shuttle/escape)
 "aR" = (
 /obj/item/toy/snappop/phoenix,
@@ -340,6 +325,23 @@
 /obj/structure/shuttle/engine/propulsion,
 /turf/open/floor/plating/airless,
 /area/shuttle/escape)
+"tt" = (
+/obj/machinery/door/airlock/bananium{
+	name = "Emergency Shuttle Airlock"
+	},
+/obj/structure/fans/tiny,
+/turf/open/floor/plating,
+/area/shuttle/escape)
+"Jq" = (
+/obj/machinery/door/airlock/bananium{
+	name = "Emergency Shuttle Airlock"
+	},
+/obj/docking_port/mobile/emergency{
+	name = "Snappop(tm)!"
+	},
+/obj/structure/fans/tiny,
+/turf/open/floor/plating,
+/area/shuttle/escape)
 "Zf" = (
 /obj/structure/closet/emcloset,
 /obj/item/toy/sword,
@@ -356,15 +358,15 @@ ab
 ab
 ab
 ab
-aI
+Jq
 ab
 ac
 ac
 ac
 ab
-aQ
+tt
 ab
-aQ
+tt
 ab
 ab
 ab

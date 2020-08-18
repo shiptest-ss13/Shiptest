@@ -9,28 +9,9 @@
 "ad" = (
 /turf/closed/wall/mineral/titanium,
 /area/shuttle/escape)
-"af" = (
-/obj/machinery/door/airlock/titanium{
-	name = "Emergency Shuttle Airlock"
-	},
-/turf/open/floor/mineral/titanium/blue,
-/area/shuttle/escape)
 "ag" = (
 /obj/structure/sign/warning/nosmoking,
 /turf/closed/wall/mineral/titanium,
-/area/shuttle/escape)
-"ah" = (
-/obj/machinery/door/airlock/titanium{
-	name = "Emergency Shuttle Airlock"
-	},
-/obj/docking_port/mobile/emergency{
-	dir = 2;
-	dwidth = 5;
-	height = 14;
-	name = "Meta emergency shuttle";
-	width = 25
-	},
-/turf/open/floor/mineral/titanium/blue,
 /area/shuttle/escape)
 "al" = (
 /obj/structure/table,
@@ -844,8 +825,37 @@
 	},
 /turf/open/floor/mineral/plastitanium/red/brig,
 /area/shuttle/escape)
+"Af" = (
+/obj/machinery/door/airlock/titanium{
+	name = "Emergency Shuttle Airlock"
+	},
+/obj/docking_port/mobile/emergency{
+	dir = 2;
+	dwidth = 5;
+	height = 14;
+	name = "Meta emergency shuttle";
+	width = 25
+	},
+/obj/structure/fans/tiny,
+/turf/open/floor/mineral/titanium/blue,
+/area/shuttle/escape)
+"Ew" = (
+/obj/machinery/door/airlock/titanium{
+	name = "Emergency Shuttle Airlock"
+	},
+/obj/structure/fans/tiny,
+/turf/open/floor/mineral/titanium/blue,
+/area/shuttle/escape)
 "LY" = (
 /turf/open/floor/mineral/titanium,
+/area/shuttle/escape)
+"Qo" = (
+/obj/machinery/door/airlock/external{
+	name = "Emergency Recovery Airlock"
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/fans/tiny,
+/turf/open/floor/plasteel,
 /area/shuttle/escape)
 "Vs" = (
 /turf/open/floor/mineral/titanium/white,
@@ -929,7 +939,7 @@ be
 cc
 be
 be
-bf
+Qo
 "}
 (6,1,1) = {"
 ac
@@ -945,7 +955,7 @@ bf
 bT
 be
 be
-bf
+Qo
 "}
 (7,1,1) = {"
 ac
@@ -1028,7 +1038,7 @@ bF
 ac
 "}
 (12,1,1) = {"
-af
+Ew
 LY
 LY
 aE
@@ -1060,7 +1070,7 @@ ad
 ad
 "}
 (14,1,1) = {"
-af
+Ew
 LY
 LY
 aE
@@ -1156,7 +1166,7 @@ bM
 ad
 "}
 (20,1,1) = {"
-ah
+Af
 LY
 LY
 aE
@@ -1188,7 +1198,7 @@ bO
 ac
 "}
 (22,1,1) = {"
-af
+Ew
 LY
 LY
 LY

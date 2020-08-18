@@ -6,16 +6,6 @@
 /obj/machinery/light_switch,
 /turf/closed/wall/mineral/wood,
 /area/shuttle/escape)
-"c" = (
-/obj/docking_port/mobile/emergency{
-	dwidth = 1;
-	height = 10;
-	name = "Oh Hi Marg";
-	width = 12
-	},
-/obj/machinery/door/airlock/wood,
-/turf/open/floor/wood,
-/area/shuttle/escape)
 "d" = (
 /turf/open/floor/wood,
 /area/shuttle/escape)
@@ -187,10 +177,21 @@
 /obj/machinery/status_display/evac,
 /turf/closed/wall/mineral/wood,
 /area/shuttle/escape)
+"Q" = (
+/obj/docking_port/mobile/emergency{
+	dwidth = 1;
+	height = 10;
+	name = "Oh Hi Marg";
+	width = 12
+	},
+/obj/machinery/door/airlock/wood,
+/obj/structure/fans/tiny,
+/turf/open/floor/wood,
+/area/shuttle/escape)
 
 (1,1,1) = {"
 a
-c
+Q
 a
 a
 a

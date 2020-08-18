@@ -97,12 +97,6 @@
 "aw" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/shuttle/escape)
-"aA" = (
-/obj/machinery/door/airlock/titanium{
-	name = "Emergency Shuttle Airlock"
-	},
-/turf/open/floor/plating,
-/area/shuttle/escape)
 "aB" = (
 /obj/machinery/power/supermatter_crystal/shard/hugbox/fakecrystal,
 /turf/open/floor/plating,
@@ -120,15 +114,6 @@
 "aE" = (
 /obj/structure/reagent_dispensers/fueltank,
 /turf/open/floor/mineral/titanium/yellow,
-/area/shuttle/escape)
-"aF" = (
-/obj/machinery/door/airlock/titanium{
-	name = "Emergency Shuttle Airlock"
-	},
-/obj/docking_port/mobile/emergency{
-	name = "Hyperfractal Gigashuttle"
-	},
-/turf/open/floor/plating,
 /area/shuttle/escape)
 "aI" = (
 /obj/structure/sign/warning/radiation,
@@ -325,6 +310,23 @@
 	},
 /turf/open/floor/mineral/titanium/yellow,
 /area/shuttle/escape)
+"Hw" = (
+/obj/machinery/door/airlock/titanium{
+	name = "Emergency Shuttle Airlock"
+	},
+/obj/docking_port/mobile/emergency{
+	name = "Hyperfractal Gigashuttle"
+	},
+/obj/structure/fans/tiny,
+/turf/open/floor/plating,
+/area/shuttle/escape)
+"NI" = (
+/obj/machinery/door/airlock/titanium{
+	name = "Emergency Shuttle Airlock"
+	},
+/obj/structure/fans/tiny,
+/turf/open/floor/plating,
+/area/shuttle/escape)
 "UA" = (
 /obj/machinery/status_display/evac{
 	pixel_y = -32
@@ -340,9 +342,9 @@ aa
 aa
 aa
 aw
-aA
+NI
 ac
-aF
+Hw
 aw
 aa
 aa
@@ -580,9 +582,9 @@ aa
 aa
 aa
 aw
-aA
+NI
 ac
-aA
+NI
 aw
 aa
 aa

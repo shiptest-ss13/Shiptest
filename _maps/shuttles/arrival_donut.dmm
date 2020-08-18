@@ -36,10 +36,6 @@
 /obj/structure/chair/comfy/shuttle,
 /turf/open/floor/mineral/titanium/blue,
 /area/shuttle/arrival)
-"k" = (
-/obj/machinery/door/airlock/titanium,
-/turf/open/floor/plating,
-/area/shuttle/arrival)
 "l" = (
 /obj/machinery/light{
 	dir = 8
@@ -73,6 +69,11 @@
 	name = "donut arrivals shuttle"
 	},
 /turf/open/floor/plating/airless,
+/area/shuttle/arrival)
+"H" = (
+/obj/machinery/door/airlock/titanium,
+/obj/structure/fans/tiny,
+/turf/open/floor/plating,
 /area/shuttle/arrival)
 
 (1,1,1) = {"
@@ -170,12 +171,12 @@ a
 b
 b
 b
-k
+H
 b
 o
 o
 b
-k
+H
 b
 b
 a

@@ -194,14 +194,7 @@
 /area/shuttle/escape)
 "K" = (
 /obj/machinery/door/airlock/titanium,
-/obj/docking_port/mobile/emergency{
-	dir = 8;
-	dwidth = 6;
-	height = 18;
-	name = "Birdboat emergency escape shuttle";
-	port_direction = 4;
-	width = 14
-	},
+/obj/structure/fans/tiny,
 /turf/open/floor/mineral/titanium,
 /area/shuttle/escape)
 "L" = (
@@ -296,6 +289,19 @@
 /obj/structure/table/glass,
 /obj/item/defibrillator/loaded,
 /turf/open/floor/mineral/titanium/white,
+/area/shuttle/escape)
+"Z" = (
+/obj/machinery/door/airlock/titanium,
+/obj/docking_port/mobile/emergency{
+	dir = 8;
+	dwidth = 6;
+	height = 18;
+	name = "Birdboat emergency escape shuttle";
+	port_direction = 4;
+	width = 14
+	},
+/obj/structure/fans/tiny,
+/turf/open/floor/mineral/titanium,
 /area/shuttle/escape)
 
 (1,1,1) = {"
@@ -577,8 +583,8 @@ p
 u
 b
 b
-G
 K
+Z
 b
 b
 g

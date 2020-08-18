@@ -155,18 +155,6 @@
 /obj/effect/turf_decal/bot,
 /turf/open/floor/plasteel,
 /area/shuttle/arrival)
-"n" = (
-/obj/machinery/door/airlock/shuttle{
-	name = "Arrival Shuttle Airlock"
-	},
-/obj/effect/turf_decal/stripes/line{
-	dir = 8
-	},
-/obj/effect/turf_decal/stripes/line{
-	dir = 4
-	},
-/turf/open/floor/plasteel/white,
-/area/shuttle/arrival)
 "o" = (
 /obj/effect/turf_decal/tile/neutral{
 	dir = 1
@@ -475,20 +463,33 @@
 	},
 /turf/open/floor/plasteel,
 /area/shuttle/arrival)
+"X" = (
+/obj/machinery/door/airlock/shuttle{
+	name = "Arrival Shuttle Airlock"
+	},
+/obj/effect/turf_decal/stripes/line{
+	dir = 8
+	},
+/obj/effect/turf_decal/stripes/line{
+	dir = 4
+	},
+/obj/structure/fans/tiny,
+/turf/open/floor/plasteel/white,
+/area/shuttle/arrival)
 
 (1,1,1) = {"
 a
 d
 f
 g
-n
+X
 g
 h
 h
 h
 h
 z
-n
+X
 g
 g
 a
@@ -633,14 +634,14 @@ a
 d
 f
 g
-n
+X
 g
 h
 h
 h
 h
 z
-n
+X
 g
 g
 a

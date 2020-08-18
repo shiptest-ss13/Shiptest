@@ -32,6 +32,19 @@
 	},
 /turf/open/floor/wood,
 /area/shuttle/escape)
+"bJ" = (
+/obj/machinery/door/airlock/shuttle,
+/obj/effect/mapping_helpers/airlock/cyclelink_helper{
+	dir = 4
+	},
+/obj/docking_port/mobile/emergency{
+	height = 22;
+	name = "The NTSS Independence";
+	width = 44
+	},
+/obj/structure/fans/tiny,
+/turf/open/floor/wood,
+/area/shuttle/escape)
 "ca" = (
 /obj/machinery/vending/cola,
 /turf/open/floor/wood,
@@ -456,6 +469,14 @@
 /obj/machinery/computer/warrant,
 /turf/open/floor/plasteel/white,
 /area/shuttle/escape)
+"qe" = (
+/obj/machinery/door/airlock/shuttle,
+/obj/effect/mapping_helpers/airlock/cyclelink_helper{
+	dir = 4
+	},
+/obj/structure/fans/tiny,
+/turf/open/floor/wood,
+/area/shuttle/escape)
 "qr" = (
 /obj/effect/turf_decal/tile/yellow,
 /obj/effect/turf_decal/tile/yellow{
@@ -769,6 +790,14 @@
 "xj" = (
 /turf/open/floor/plating/airless,
 /area/shuttle/escape)
+"xJ" = (
+/obj/machinery/door/airlock/shuttle,
+/obj/effect/mapping_helpers/airlock/cyclelink_helper{
+	dir = 8
+	},
+/obj/structure/fans/tiny,
+/turf/open/floor/wood,
+/area/shuttle/escape)
 "yn" = (
 /obj/effect/turf_decal/tile/blue{
 	dir = 4
@@ -858,18 +887,6 @@
 /obj/item/kirbyplants/photosynthetic,
 /obj/machinery/light,
 /turf/open/floor/plasteel/white,
-/area/shuttle/escape)
-"CR" = (
-/obj/machinery/door/airlock/shuttle,
-/obj/effect/mapping_helpers/airlock/cyclelink_helper{
-	dir = 4
-	},
-/obj/docking_port/mobile/emergency{
-	height = 22;
-	name = "The NTSS Independence";
-	width = 44
-	},
-/turf/open/floor/wood,
 /area/shuttle/escape)
 "Do" = (
 /obj/effect/turf_decal/tile/blue{
@@ -1663,8 +1680,8 @@ kd
 kd
 kd
 jt
-qE
-CR
+qe
+bJ
 jt
 kd
 kd
@@ -1680,8 +1697,8 @@ kd
 kd
 kd
 jt
-qE
-qE
+qe
+qe
 jt
 kd
 kd
@@ -2629,8 +2646,8 @@ kd
 kd
 kd
 jt
-aY
-aY
+xJ
+xJ
 jt
 kd
 kd
@@ -2646,8 +2663,8 @@ kd
 kd
 kd
 jt
-aY
-aY
+xJ
+xJ
 jt
 kd
 kd
