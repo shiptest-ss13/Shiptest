@@ -5,7 +5,7 @@ PROCESSING_SUBSYSTEM_DEF(radiation)
 	var/list/warned_atoms = list()
 
 /datum/controller/subsystem/processing/radiation/proc/warn(datum/component/radioactive/contamination)
-	if(!contamination || QDELETED(contamination))
+	if(!contamination || !contamination.parent || QDELETED(contamination))
 		return
 	var/ref = REF(contamination.parent)
 	if(warned_atoms[ref])

@@ -7,7 +7,9 @@ export const Cloner = (props, context) => {
   const { act, data } = useBackend(context);
 
   return (
-    <Window>
+    <Window
+      width={200}
+      height={100}>
       <Window.Content>
         <Section
           title="Beaker"

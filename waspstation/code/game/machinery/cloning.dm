@@ -45,8 +45,6 @@
 	var/datum/bank_account/current_insurance
 	fair_market_price = 5 // He nodded, because he knew I was right. Then he swiped his credit card to pay me for arresting him.
 	payment_department = ACCOUNT_MED
-	ui_x = 200
-	ui_y = 300
 
 
 /obj/machinery/clonepod/Initialize()
@@ -100,11 +98,10 @@
 	update_icon()
 	return TRUE
 
-/obj/machinery/clonepod/ui_interact(mob/user, ui_key = "main", datum/tgui/ui = null, force_open = FALSE, \
-									datum/tgui/master_ui = null, datum/ui_state/state = GLOB.notcontained_state)
-	ui = SStgui.try_update_ui(user, src, ui_key, ui, force_open)
+/obj/machinery/clonepod/ui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
 	if(!ui)
-		ui = new(user, src, ui_key, "Cloner", name, ui_x, ui_y, master_ui, state)
+		ui = new(user, src, "Cloner", name)
 		ui.open()
 
 /obj/machinery/clonepod/ui_data()
@@ -180,6 +177,9 @@
 
 //Start growing a human clone in the pod!
 /obj/machinery/clonepod/proc/growclone(clonename, ui, mutation_index, mindref, last_death, blood_type, datum/species/mrace, list/features, factions, list/quirks, datum/bank_account/insurance, list/traumas, empty)
+	if(!beaker)
+		connected_message("Cannot start cloning: No beaker found.")
+		return NONE
 	if(!beaker.reagents.has_reagent(/datum/reagent/medicine/synthflesh, fleshamnt))
 		connected_message("Cannot start cloning: Not enough synthflesh.")
 		return NONE

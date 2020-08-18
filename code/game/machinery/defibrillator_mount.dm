@@ -169,7 +169,7 @@
 
 /obj/machinery/defibrillator_mount/charging/process()
 	var/obj/item/stock_parts/cell/C = get_cell()
-	if(C.charge < C.maxcharge && is_operational())
+	if(C && C.charge < C.maxcharge && is_operational())
 		use_power(100)
 		C.give(80)
 		update_icon()

@@ -6,7 +6,11 @@ import { Window } from '../layouts';
 
 export const CentcomPodLauncher = () => {
   return (
-    <Window resizable>
+    <Window
+      title="Config/Launch Supply Pod"
+      width={700}
+      height={700}
+      resizable>
       <Window.Content scrollable>
         <CentcomPodLauncherContent />
       </Window.Content>
@@ -66,7 +70,7 @@ export const CentcomPodLauncherContent = (props, context) => {
               disabled={!data.oldArea}
               onClick={() => act('teleportBack')} />
           </LabeledList.Item>
-          <LabeledList.Item label="Item Mode" >
+          <LabeledList.Item label="Item Mode">
             <Button
               content="Clone Items"
               selected={data.launchClone}

@@ -32,6 +32,7 @@
 	var/planetary_atmos = FALSE //air will revert to initial_gas_mix over time
 
 	var/list/atmos_overlay_types //gas IDs of current active gas overlays
+
 	is_openturf = TRUE
 
 /turf/open/Initialize()
@@ -216,7 +217,7 @@
 /atom/movable/var/last_high_pressure_movement_air_cycle = 0
 
 /atom/movable/proc/experience_pressure_difference(pressure_difference, direction, pressure_resistance_prob_delta = 0, throw_target)
-	var/const/PROBABILITY_OFFSET = 25
+	var/const/PROBABILITY_OFFSET = 40
 	var/const/PROBABILITY_BASE_PRECENT = 10
 	var/max_force = sqrt(pressure_difference)*(MOVE_FORCE_DEFAULT / 5)
 	set waitfor = 0
@@ -226,14 +227,18 @@
 	move_prob += pressure_resistance_prob_delta
 	if (move_prob > PROBABILITY_OFFSET && prob(move_prob) && (move_resist != INFINITY) && (!anchored && (max_force >= (move_resist * MOVE_FORCE_PUSH_RATIO))) || (anchored && (max_force >= (move_resist * MOVE_FORCE_FORCEPUSH_RATIO))))
 		var/move_force = max_force * clamp(move_prob, 0, 100) / 100
-		if(move_force > 4000)
+		if(ismob(src))
+			var/mob/M = src
+			if(M.mob_negates_gravity())
+				move_force = 0
+		if(move_force > 6000)
 			// WALLSLAM HELL TIME OH BOY
 			var/turf/throw_turf = get_ranged_target_turf(get_turf(src), direction, round(move_force / 2000))
 			if(throw_target && (get_dir(src, throw_target) & direction))
 				throw_turf = get_turf(throw_target)
-			var/throw_speed = clamp(round(move_force / 2000), 1, 10)
-			throw_at(throw_turf, move_force / 2000, throw_speed)
-		else
+			var/throw_speed = clamp(round(move_force / 3000), 1, 10)
+			throw_at(throw_turf, move_force / 3000, throw_speed)
+		else if(move_force > 0)
 			step(src, direction)
 		last_high_pressure_movement_air_cycle = SSair.times_fired
 

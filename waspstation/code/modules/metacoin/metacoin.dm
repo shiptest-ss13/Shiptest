@@ -62,7 +62,11 @@
 	inc_metabalance(METACOIN_TENMINUTELIVING_REWARD, FALSE)
 
 /client/proc/get_metabalance()
-	var/datum/DBQuery/query_get_metacoins = SSdbcore.NewQuery("SELECT metacoins FROM [format_table_name("player")] WHERE ckey = '[ckey]'")
+	if(!SSdbcore.IsConnected())
+		return
+	var/datum/DBQuery/query_get_metacoins = SSdbcore.NewQuery(
+		"SELECT metacoins FROM [format_table_name("player")] WHERE ckey = :ckey",
+		list("ckey" = ckey))
 	var/mc_count = 0
 	if(query_get_metacoins.warn_execute())
 		if(query_get_metacoins.NextRow())
@@ -72,14 +76,22 @@
 	return text2num(mc_count)
 
 /client/proc/set_metacoin_count(mc_count, ann=TRUE)
-	var/datum/DBQuery/query_set_metacoins = SSdbcore.NewQuery("UPDATE [format_table_name("player")] SET metacoins = '[mc_count]' WHERE ckey = '[ckey]'")
+	if(!SSdbcore.IsConnected())
+		return
+	var/datum/DBQuery/query_set_metacoins = SSdbcore.NewQuery(
+		"UPDATE [format_table_name("player")] SET metacoins = :mc_count WHERE ckey = :ckey",
+		list("ckey" = ckey, "mc_count" = mc_count))
 	query_set_metacoins.warn_execute()
 	qdel(query_set_metacoins)
 	if(ann)
 		to_chat(src, "<span class='rose bold'>Your new metacoin balance is [mc_count]!</span>")
 
 /client/proc/inc_metabalance(mc_count, ann=TRUE, reason=null)
-	var/datum/DBQuery/query_inc_metacoins = SSdbcore.NewQuery("UPDATE [format_table_name("player")] SET metacoins = metacoins + '[mc_count]' WHERE ckey = '[ckey]'")
+	if(!SSdbcore.IsConnected())
+		return
+	var/datum/DBQuery/query_inc_metacoins = SSdbcore.NewQuery(
+		"UPDATE [format_table_name("player")] SET metacoins = metacoins + :mc_count WHERE ckey = :ckey",
+		list("ckey" = ckey, "mc_count" = mc_count))
 	query_inc_metacoins.warn_execute()
 	qdel(query_inc_metacoins)
 	if(ann)

@@ -27,10 +27,11 @@
 	if(!SSdbcore.IsConnected())
 		to_chat(src, "<span class='danger'>Failed to establish database connection.</span>")
 		return
-	var/sql_ckey = sanitizeSQL(src.ckey)
 	switch(task)
 		if("Write")
-			var/datum/DBQuery/query_memocheck = SSdbcore.NewQuery("SELECT ckey FROM [format_table_name("mentor_memo")] WHERE ckey = '[sql_ckey]'")
+			var/datum/DBQuery/query_memocheck = SSdbcore.NewQuery(
+				"SELECT ckey FROM [format_table_name("mentor_memo")] WHERE ckey = :ckey",
+				list("ckey" = src.ckey))
 			if(!query_memocheck.Execute())
 				var/err = query_memocheck.ErrorMsg()
 				log_game("SQL ERROR obtaining ckey from memo table. Error : \[[err]\]\n")
@@ -41,9 +42,9 @@
 			var/memotext = input(src,"Write your Memo","Memo") as message
 			if(!memotext)
 				return
-			memotext = sanitizeSQL(memotext)
-			var/timestamp = SQLtime()
-			var/datum/DBQuery/query_memoadd = SSdbcore.NewQuery("INSERT INTO [format_table_name("mentor_memo")] (ckey, memotext, timestamp) VALUES ('[sql_ckey]', '[memotext]', '[timestamp]')")
+			var/datum/DBQuery/query_memoadd = SSdbcore.NewQuery(
+				"INSERT INTO [format_table_name("mentor_memo")] (ckey, memotext, timestamp) VALUES (:ckey, :memotext, :timestamp)",
+				list("ckey" = src.ckey, "memotext" = memotext, "timestamp" = SQLtime()))
 			if(!query_memoadd.Execute())
 				var/err = query_memoadd.ErrorMsg()
 				log_game("SQL ERROR adding new memo. Error : \[[err]\]\n")
@@ -68,8 +69,9 @@
 			var/target_ckey = input(src, "Select whose memo to edit", "Select memo") as null|anything in memolist
 			if(!target_ckey)
 				return
-			var/target_sql_ckey = sanitizeSQL(target_ckey)
-			var/datum/DBQuery/query_memofind = SSdbcore.NewQuery("SELECT memotext FROM [format_table_name("mentor_memo")] WHERE ckey = '[target_sql_ckey]'")
+			var/datum/DBQuery/query_memofind = SSdbcore.NewQuery(
+				"SELECT memotext FROM [format_table_name("mentor_memo")] WHERE ckey = :target_ckey",
+				list("target_ckey" = target_ckey))
 			if(!query_memofind.Execute())
 				var/err = query_memofind.ErrorMsg()
 				log_game("SQL ERROR obtaining memotext from memo table. Error : \[[err]\]\n")
@@ -79,20 +81,16 @@
 				var/new_memo = input("Input new memo", "New Memo", "[old_memo]", null) as message
 				if(!new_memo)
 					return
-				new_memo = sanitizeSQL(new_memo)
-				var/edit_text = "Edited by [sql_ckey] on [SQLtime()] from<br>[old_memo]<br>to<br>[new_memo]<hr>"
-				edit_text = sanitizeSQL(edit_text)
-				var/datum/DBQuery/update_query = SSdbcore.NewQuery("UPDATE [format_table_name("mentor_memo")] SET memotext = '[new_memo]', last_editor = '[sql_ckey]', edits = CONCAT(IFNULL(edits,''),'[edit_text]') WHERE ckey = '[target_sql_ckey]'")
+				var/edit_text = "Edited by [src.ckey] on [SQLtime()] from<br>[old_memo]<br>to<br>[new_memo]<hr>"
+				var/datum/DBQuery/update_query = SSdbcore.NewQuery(
+					"UPDATE [format_table_name("mentor_memo")] SET memotext = :new_memo, last_editor = :ckey, edits = CONCAT(IFNULL(edits,''),:edit_text) WHERE ckey = :target_ckey",
+					list("ckey" = src.ckey, "target_ckey" = target_ckey, "new_memo" = new_memo, "edit_text" = edit_text))
 				if(!update_query.Execute())
 					var/err = update_query.ErrorMsg()
 					log_game("SQL ERROR editing memo. Error : \[[err]\]\n")
 					return
-				if(target_sql_ckey == sql_ckey)
-					log_admin("[key_name(src)] has edited their mentor memo from [old_memo] to [new_memo]")
-					message_admins("[key_name_admin(src)] has edited their mentor memo from<br>[old_memo]<br>to<br>[new_memo]")
-				else
-					log_admin("[key_name(src)] has edited [target_sql_ckey]'s mentor memo from [old_memo] to [new_memo]")
-					message_admins("[key_name_admin(src)] has edited [target_sql_ckey]'s mentor memo from<br>[old_memo]<br>to<br>[new_memo]")
+				log_admin("[key_name(src)] has edited [target_ckey == src.ckey ? "their" : "[target_ckey]'s'"] mentor memo from [old_memo] to [new_memo]")
+				message_admins("[key_name_admin(src)] has edited [target_ckey == src.ckey ? "their" : "[target_ckey]'s'"] mentor memo from<br>[old_memo]<br>to<br>[new_memo]")
 				qdel(update_query)
 			qdel(query_memolist)
 			qdel(query_memofind)
@@ -116,6 +114,7 @@
 				to_chat(src, "No memos found in database.")
 				return
 			to_chat(src, output)
+			qdel(query_memoshow)
 		if("Remove")
 			var/datum/DBQuery/query_memodellist = SSdbcore.NewQuery("SELECT ckey FROM [format_table_name("mentor_memo")]")
 			if(!query_memodellist.Execute())
@@ -132,17 +131,14 @@
 			var/target_ckey = input(src, "Select whose mentor memo to delete", "Select mentor memo") as null|anything in memolist
 			if(!target_ckey)
 				return
-			var/target_sql_ckey = sanitizeSQL(target_ckey)
-			var/datum/DBQuery/query_memodel = SSdbcore.NewQuery("DELETE FROM [format_table_name("memo")] WHERE ckey = '[target_sql_ckey]'")
+			var/datum/DBQuery/query_memodel = SSdbcore.NewQuery(
+				"DELETE FROM [format_table_name("memo")] WHERE ckey = ':target_ckey'",
+				list("target_ckey" = target_ckey))
 			if(!query_memodel.Execute())
 				var/err = query_memodel.ErrorMsg()
 				log_game("SQL ERROR removing memo. Error : \[[err]\]\n")
 				return
-			if(target_sql_ckey == sql_ckey)
-				log_admin("[key_name(src)] has removed their mentor memo.")
-				message_admins("[key_name_admin(src)] has removed their mentor memo.")
-			else
-				log_admin("[key_name(src)] has removed [target_sql_ckey]'s mentor memo.")
-				message_admins("[key_name_admin(src)] has removed [target_sql_ckey]'s mentor memo.")
+			log_admin("[key_name(src)] has removed [target_ckey == src.ckey ? "their" : "[target_ckey]'s'"] mentor memo.")
+			message_admins("[key_name_admin(src)] has removed [target_ckey == src.ckey ? "their" : "[target_ckey]'s'"]'s mentor memo.")
 			qdel(query_memodellist)
 			qdel(query_memodel)

@@ -33,13 +33,9 @@
 			SEND_SIGNAL(C, COMSIG_LIVING_MINOR_SHOCK)
 			addtimer(CALLBACK(src, .proc/apply_stun_effect_end, C), apply_stun_delay)
 
-			if(ishuman(C))
-				var/mob/living/carbon/human/H = C
-				H.forcesay(GLOB.hit_appends)
-
 			attack_cooldown_check = world.time + attack_cooldown
 
-		
+
 
 /obj/projectile/energy/electrode/proc/apply_stun_effect_end(mob/living/target)
 	var/trait_check = HAS_TRAIT(target, TRAIT_STUNRESISTANCE) //var since we check it in out to_chat as well as determine stun duration

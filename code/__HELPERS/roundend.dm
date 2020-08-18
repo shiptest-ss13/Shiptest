@@ -212,14 +212,13 @@
 		speed_round = TRUE
 
 	for(var/client/C in GLOB.clients)
-		if(!C.credits)
-			C.RollCredits()
 		C.playtitlemusic(40)
-
 		C.process_endround_metacoin()
 
 		if(speed_round)
 			C.give_award(/datum/award/achievement/misc/speed_round, C.mob)
+
+	RollCredits()
 
 	var/popcount = gather_roundend_feedback()
 	display_report(popcount)
@@ -266,21 +265,6 @@
 	for(var/antag_name in total_antagonists)
 		var/list/L = total_antagonists[antag_name]
 		log_game("[antag_name]s :[L.Join(", ")].")
-
-	CHECK_TICK
-
-	if(CONFIG_GET(flag/allow_crew_objectives))
-		for(var/datum/mind/crewMind in minds)
-			if(!crewMind.current || !length(crewMind.crew_objectives))
-				continue
-			for(var/datum/objective/crew/CO in crewMind.crew_objectives)
-				var/client/C = CO.owner
-				if(CO.check_completion())
-					C.inc_metabalance(METACOIN_CO_REWARD, reason="Completed your crew objective!") //Waspstation Edit - Metacoin
-					to_chat(crewMind.current, "<br><B>Your optional objective</B>: [CO.explanation_text] <span class='green'><B>Success!</B></span>")
-					SSticker.successfulCrew += "<B>[crewMind.current.real_name]</B> (Played by: <B>[crewMind.key]</B>)<BR><B>Optional Objective</B>: [CO.explanation_text] <span class='green'><B>Success!</B></span>"
-				else
-					to_chat(crewMind.current, "<br><B>Your optional objective</B>: [CO.explanation_text] <span class='warning'><B>Failed.</B></span>")
 
 	CHECK_TICK
 	SSdbcore.SetRoundEnd()
@@ -415,6 +399,16 @@
 		else
 			parts += "<div class='panel redborder'>"
 			parts += "<span class='redtext'>You did not survive the events on [station_name()]...</span>"
+
+		if(CONFIG_GET(flag/allow_crew_objectives))
+			if(M.mind.current && LAZYLEN(M.mind.crew_objectives))
+				for(var/datum/objective/crew/CO in M.mind.crew_objectives)
+					if(CO.check_completion())
+						parts += "<br><br><B>Your optional objective</B>: [CO.explanation_text] <span class='greentext'><B>Success!</B></span><br>"
+						C.inc_metabalance(METACOIN_CO_REWARD, reason="Completed your crew objective!")
+					else
+						parts += "<br><br><B>Your optional objective</B>: [CO.explanation_text] <span class='redtext'><B>Failed.</B></span><br>"
+
 	else
 		parts += "<div class='panel stationborder'>"
 	parts += "<br>"
@@ -629,9 +623,7 @@
 	var/list/sql_admins = list()
 	for(var/i in GLOB.protected_admins)
 		var/datum/admins/A = GLOB.protected_admins[i]
-		var/sql_ckey = sanitizeSQL(A.target)
-		var/sql_rank = sanitizeSQL(A.rank.name)
-		sql_admins += list(list("ckey" = "'[sql_ckey]'", "rank" = "'[sql_rank]'"))
+		sql_admins += list(list("ckey" = A.target, "rank" = A.rank.name))
 	SSdbcore.MassInsert(format_table_name("admin"), sql_admins, duplicate_key = TRUE)
 	var/datum/DBQuery/query_admin_rank_update = SSdbcore.NewQuery("UPDATE [format_table_name("player")] p INNER JOIN [format_table_name("admin")] a ON p.ckey = a.ckey SET p.lastadminrank = a.rank")
 	query_admin_rank_update.Execute()
@@ -666,15 +658,20 @@
 			flags += "can_edit_flags"
 		if(!flags.len)
 			continue
-		var/sql_rank = sanitizeSQL(R.name)
 		var/flags_to_check = flags.Join(" != [R_EVERYTHING] AND ") + " != [R_EVERYTHING]"
-		var/datum/DBQuery/query_check_everything_ranks = SSdbcore.NewQuery("SELECT flags, exclude_flags, can_edit_flags FROM [format_table_name("admin_ranks")] WHERE rank = '[sql_rank]' AND ([flags_to_check])")
+		var/datum/DBQuery/query_check_everything_ranks = SSdbcore.NewQuery(
+			"SELECT flags, exclude_flags, can_edit_flags FROM [format_table_name("admin_ranks")] WHERE rank = :rank AND ([flags_to_check])",
+			list("rank" = R.name)
+		)
 		if(!query_check_everything_ranks.Execute())
 			qdel(query_check_everything_ranks)
 			return
 		if(query_check_everything_ranks.NextRow()) //no row is returned if the rank already has the correct flag value
 			var/flags_to_update = flags.Join(" = [R_EVERYTHING], ") + " = [R_EVERYTHING]"
-			var/datum/DBQuery/query_update_everything_ranks = SSdbcore.NewQuery("UPDATE [format_table_name("admin_ranks")] SET [flags_to_update] WHERE rank = '[sql_rank]'")
+			var/datum/DBQuery/query_update_everything_ranks = SSdbcore.NewQuery(
+				"UPDATE [format_table_name("admin_ranks")] SET [flags_to_update] WHERE rank = :rank",
+				list("rank" = R.name)
+			)
 			if(!query_update_everything_ranks.Execute())
 				qdel(query_update_everything_ranks)
 				return

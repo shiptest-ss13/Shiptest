@@ -1,9 +1,7 @@
 /* Wasp Edit - Fuck Psychologists.
 /datum/job/psychologist
 	title = "Psychologist"
-	flag = PSYCHOLOGIST
 	department_head = list("Head of Personnel","Chief Medical Officer")
-	department_flag = CIVILIAN
 	faction = "Station"
 	total_positions = 1
 	spawn_positions = 1

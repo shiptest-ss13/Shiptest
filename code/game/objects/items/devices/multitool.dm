@@ -128,7 +128,7 @@
 			detect_state = PROXIMITY_ON_SCREEN
 			break
 
-	if(detect_state)
+	if(detect_state || !our_turf)
 		return
 	var/datum/camerachunk/chunk = GLOB.cameranet.chunkGenerated(our_turf.x, our_turf.y, our_turf.z)
 	if(chunk && chunk.seenby.len)

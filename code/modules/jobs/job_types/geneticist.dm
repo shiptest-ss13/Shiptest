@@ -1,8 +1,6 @@
 /datum/job/geneticist
 	title = "Geneticist"
-	flag = GENETICIST
 	department_head = list("Chief Medical Officer")		// Wasp Edit - More Gen/Sci Split
-	department_flag = MEDSCI
 	faction = "Station"
 	total_positions = 2
 	spawn_positions = 2

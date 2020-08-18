@@ -12,8 +12,6 @@
 	density = FALSE
 	state_open = TRUE
 	circuit = /obj/item/circuitboard/machine/sleeper
-	ui_x = 250
-	ui_y = 550
 
 	var/obj/item/stock_parts/cell/cell //The sleeper's power cell.
 	var/efficiency = 1
@@ -140,15 +138,15 @@
 		visible_message("<span class='notice'>[usr] pries open [src].</span>", "<span class='notice'>You pry open [src].</span>")
 		open_machine()
 
-/obj/machinery/sleeper/ui_interact(mob/user, ui_key = "main", datum/tgui/ui = null, force_open = FALSE, \
-									datum/tgui/master_ui = null, datum/ui_state/state = GLOB.notcontained_state)
+/obj/machinery/sleeper/ui_state(mob/user)
+	if(controls_inside)
+		return GLOB.notcontained_state
+	return GLOB.default_state
 
-	if(controls_inside && state == GLOB.notcontained_state)
-		state = GLOB.default_state // If it has a set of controls on the inside, make it actually controllable by the mob in it.
-
-	ui = SStgui.try_update_ui(user, src, ui_key, ui, force_open)
+/obj/machinery/sleeper/ui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
 	if(!ui)
-		ui = new(user, src, ui_key, "Sleeper", name, ui_x, ui_y, master_ui, state)
+		ui = new(user, src, "Sleeper", name)
 		ui.open()
 
 /obj/machinery/sleeper/AltClick(mob/user)
@@ -300,8 +298,6 @@
 	idle_power_usage = 3000
 	circuit = /obj/item/circuitboard/machine/sleeper/party
 	var/leddit = FALSE //Get it like reddit and lead alright fine
-	ui_x = 310
-	ui_y = 400
 
 	controls_inside = TRUE
 	possible_chems = list(

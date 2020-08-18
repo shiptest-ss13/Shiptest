@@ -50,6 +50,6 @@
 /obj/item/melee/greykingsword/suicide_act(mob/user)
 	if (istype(user, /mob/living/carbon/human/))
 		var/mob/living/carbon/human/H = user
-		H.forcesay("Master forgive me, but I will have to go all out... Just this once")
+		H.say("Master forgive me, but I will have to go all out... Just this once")
 	user.visible_message("<span class='suicide'>[user] is cutting [user.p_them()]self on [user.p_their()] own edge!")
 	return (BRUTELOSS) //appropriate
