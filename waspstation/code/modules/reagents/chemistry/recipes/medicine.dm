@@ -2,9 +2,18 @@
 	results = list(/datum/reagent/medicine/bicaridine = 3)
 	required_reagents = list(/datum/reagent/carbon = 1, /datum/reagent/oxygen = 1, /datum/reagent/consumable/sugar = 1)
 
+/datum/chemical_reaction/bicaridinep
+	results = list(/datum/reagent/medicine/bicaridinep = 3)
+	required_reagents = list(/datum/reagent/medicine/bicaridine = 1, /datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/sodiumchloride = 1)
+	required_catalysts = list(/datum/reagent/toxin/plasma = 1)
+
 /datum/chemical_reaction/kelotane
 	results = list(/datum/reagent/medicine/kelotane = 2)
 	required_reagents = list(/datum/reagent/carbon = 1, /datum/reagent/silicon = 1)
+
+/datum/chemical_reaction/dermaline
+	results = list(/datum/reagent/medicine/dermaline = 3)
+	required_reagents = list(/datum/reagent/medicine/kelotane = 1, /datum/reagent/acetone = 1, /datum/reagent/phosphorus = 1)
 
 /datum/chemical_reaction/antitoxin
 	results = list(/datum/reagent/medicine/antitoxin = 3)
@@ -13,7 +22,7 @@
 /datum/chemical_reaction/dexalin
 	results = list(/datum/reagent/medicine/dexalin = 5)
 	required_reagents = list(/datum/reagent/oxygen = 5)
-	required_catalysts = list(/datum/reagent/toxin/plasma = 5)
+	required_catalysts = list(/datum/reagent/toxin/plasma = 1)
 
 /datum/chemical_reaction/dexalinp
 	results = list(/datum/reagent/medicine/dexalinp = 3)
@@ -23,6 +32,9 @@
 	results = list(/datum/reagent/medicine/tricordrazine = 3)
 	required_reagents = list(/datum/reagent/medicine/bicaridine = 1, /datum/reagent/medicine/kelotane = 1, /datum/reagent/medicine/antitoxin = 1)
 
+/datum/chemical_reaction/tetracordrazine
+	results = list(/datum/reagent/medicine/tetracordrazine = 4)
+	required_reagents = list(/datum/reagent/medicine/tricordrazine = 3, /datum/reagent/medicine/dexalin = 1)
 /datum/chemical_reaction/synthflesh
 	results = list(/datum/reagent/medicine/synthflesh = 3)
 	required_reagents = list(/datum/reagent/blood = 1, /datum/reagent/carbon = 1, /datum/reagent/medicine/styptic_powder = 1)
@@ -34,16 +46,17 @@
 
 /datum/chemical_reaction/corazone
 	results = list(/datum/reagent/medicine/corazone = 3)
+	required_reagents = list(/datum/reagent/phenol = 2, /datum/reagent/lithium = 1)
 
 /datum/chemical_reaction/carthatoline
 	results = list(/datum/reagent/medicine/carthatoline = 3)
 	required_reagents = list(/datum/reagent/medicine/antitoxin = 1, /datum/reagent/carbon = 2)
 	required_catalysts = list(/datum/reagent/toxin/plasma = 1)
 
-/datum/chemical_reaction/hepanephrodaxon
+/*/datum/chemical_reaction/hepanephrodaxon //waspstation edit: temporary removal of an overloaded chem
 	results = list(/datum/reagent/medicine/hepanephrodaxon = 5)
 	required_reagents = list(/datum/reagent/medicine/carthatoline = 2, /datum/reagent/carbon = 2, /datum/reagent/lithium = 1)
-	required_catalysts = list(/datum/reagent/toxin/plasma = 5)
+	required_catalysts = list(/datum/reagent/toxin/plasma = 5)*/
 
 /datum/chemical_reaction/system_cleaner
 	results = list(/datum/reagent/medicine/system_cleaner = 4)
