@@ -1,16 +1,14 @@
 /obj/machinery/power/bluespace_miner
 	name = "bluespace mining machine"
 	desc = "A machine that uses the magic of Bluespace to slowly generate materials and add them to a linked ore silo."
-	icon = 'icons/obj/machines/mining_machines.dmi'
-	icon_state = "stacker_off"
+	icon = 'waspstation/icons/obj/machines/bsm.dmi'
+	icon_state = "bsm_off"
 	density = TRUE
 	circuit = /obj/item/circuitboard/machine/bluespace_miner
 	layer = BELOW_OBJ_LAYER
 	use_power = NO_POWER_USE
 	idle_power_usage = 50000
 
-	var/icon_state_on = "stacker"
-	var/icon_state_off = "stacker_off"
 	var/powered = FALSE
 	var/active = FALSE
 	//Variables affected by parts
@@ -36,7 +34,13 @@
 	return ..()
 
 /obj/machinery/power/bluespace_miner/update_icon_state()
-	icon_state = (powered && active) ? icon_state_on : icon_state_off
+	if (panel_open)
+		icon_state = "bsm_t"
+		return
+	if (powered)
+		icon_state = (active) ? "bsm_on" : "bsm_idle"
+	else
+		icon_state = "bsm_off"
 
 /obj/machinery/power/bluespace_miner/RefreshParts()
 	var/M_C = 0 //mining_chance
@@ -58,7 +62,7 @@
 			P_C -= MB.rating*0.1
 		power_coeff = P_C
 /obj/machinery/power/bluespace_miner/examine(mob/user)
-	. = ..()
+	. += ..()
 	if(anchored)
 		. += "<span class='info'>It's currently anchored to the floor, you can unsecure it with a <b>wrench</b>.</span>"
 	else
@@ -91,6 +95,9 @@
 			active = FALSE
 			to_chat(user, "<span class='notice'>You turn off the [src].</span>")
 		else
+			if(!materials?.silo || materials?.on_hold())
+				to_chat(user, "<span class='warning'>ERROR CONNECTING TO ORE SILO! Please check your connection, and try again.</span>")
+				return TRUE
 			active = TRUE
 			to_chat(user, "<span class='notice'>You turn on the [src].</span>")
 		update_icon()
@@ -100,10 +107,13 @@
 
 /obj/machinery/power/bluespace_miner/process()
 	if(!materials?.silo || materials?.on_hold())
+		active = FALSE
 		return
 	if(!materials.mat_container || panel_open)
+		active = FALSE
 		return
 	if(!anchored || (!powernet && idle_power_usage))
+		powered = FALSE
 		active = FALSE
 		update_icon()
 		return
@@ -143,7 +153,8 @@
 	if(active)
 		to_chat(user, "<span class='warning'>Turn \the [src] off first!</span>")
 		return TRUE
-	default_deconstruction_screwdriver(user, icon_state, icon_state_off, I)
+	default_deconstruction_screwdriver(user, "bsm_t", "bsm_off", I)
+	update_icon_state()
 	return TRUE
 
 /obj/machinery/power/bluespace_miner/crowbar_act(mob/living/user, obj/item/I)
