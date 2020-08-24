@@ -1,0 +1,1811 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"aI" = (
+/obj/structure/lattice,
+/turf/open/space/basic,
+/area/space/nearstation)
+"cq" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel,
+/area/engine/engineering)
+"cu" = (
+/obj/effect/mapping_helpers/airlock/cyclelink_helper,
+/obj/machinery/door/airlock/external{
+	name = "Engineering External Access";
+	req_access_txt = "10;13"
+	},
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/turf/open/floor/plating,
+/area/engine/engineering)
+"cC" = (
+/obj/machinery/light/small{
+	dir = 4
+	},
+/obj/structure/closet/emcloset/anchored,
+/obj/structure/sign/warning/vacuum/external{
+	pixel_x = 32
+	},
+/turf/open/floor/plating,
+/area/engine/engineering)
+"dO" = (
+/obj/machinery/atmospherics/pipe/simple/orange/visible{
+	dir = 4
+	},
+/obj/machinery/door/airlock/external{
+	name = "Engineering External Access";
+	req_access_txt = "10;13"
+	},
+/obj/effect/mapping_helpers/airlock/cyclelink_helper,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/obj/machinery/door/firedoor/border_only,
+/turf/open/floor/plating,
+/area/engine/engineering)
+"el" = (
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/structure/cable/yellow,
+/obj/machinery/power/rad_collector/anchored,
+/turf/open/floor/plating/airless,
+/area/space/nearstation)
+"eD" = (
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/effect/turf_decal/stripes/line,
+/turf/open/floor/engine,
+/area/engine/engineering)
+"fm" = (
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden{
+	dir = 1
+	},
+/obj/structure/table,
+/obj/item/book/manual/wiki/engineering_singulo_tesla,
+/obj/item/geiger_counter,
+/turf/open/floor/plasteel,
+/area/engine/engineering)
+"gp" = (
+/obj/machinery/light/small{
+	dir = 8
+	},
+/obj/structure/closet/emcloset/anchored,
+/obj/structure/sign/warning/vacuum/external{
+	pixel_x = -32
+	},
+/turf/open/floor/plating,
+/area/engine/engineering)
+"gB" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/obj/structure/closet/radiation,
+/turf/open/floor/plasteel,
+/area/engine/engineering)
+"gN" = (
+/obj/machinery/door/airlock/external{
+	name = "Engineering External Access";
+	req_access_txt = "10;13"
+	},
+/turf/open/floor/plating/airless,
+/area/engine/engineering)
+"hg" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/turf/open/floor/plasteel,
+/area/engine/engineering)
+"ho" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/turf/open/floor/plasteel,
+/area/engine/engineering)
+"hu" = (
+/obj/machinery/field/generator,
+/turf/open/floor/plating/airless,
+/area/space/nearstation)
+"hO" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
+/turf/open/floor/plasteel,
+/area/engine/engineering)
+"in" = (
+/obj/effect/spawner/structure/window/plasma/reinforced,
+/turf/open/floor/plating,
+/area/engine/engineering)
+"iP" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/engine/engineering)
+"ky" = (
+/turf/open/space/basic,
+/area/space)
+"kR" = (
+/obj/machinery/camera/emp_proof{
+	c_tag = "Engine - South West";
+	dir = 1;
+	network = list("ss13","engine")
+	},
+/turf/open/floor/plating/airless,
+/area/engine/engineering)
+"lz" = (
+/turf/open/floor/plating/airless,
+/area/engine/engineering)
+"lM" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 10
+	},
+/turf/open/floor/plating,
+/area/engine/engineering)
+"lP" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 4
+	},
+/turf/open/floor/engine,
+/area/engine/engineering)
+"mh" = (
+/obj/machinery/atmospherics/components/unary/outlet_injector/atmos/engine_waste{
+	dir = 1
+	},
+/turf/open/floor/plating/airless,
+/area/engine/engineering)
+"mA" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "SupermatterExternal";
+	name = "radiation shutters"
+	},
+/turf/open/floor/plasteel,
+/area/engine/engineering)
+"mW" = (
+/obj/machinery/atmospherics/pipe/simple/orange/visible,
+/obj/machinery/camera/emp_proof{
+	c_tag = "Engine - North East";
+	network = list("ss13","engine")
+	},
+/turf/open/floor/plating/airless,
+/area/engine/engineering)
+"nc" = (
+/obj/effect/turf_decal/stripes/line,
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plating,
+/area/engine/engineering)
+"nn" = (
+/obj/effect/turf_decal/stripes/line,
+/obj/machinery/power/emitter/welded,
+/obj/structure/cable,
+/turf/open/floor/engine,
+/area/engine/engineering)
+"nH" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 6
+	},
+/turf/open/floor/plasteel,
+/area/engine/engineering)
+"pK" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 6
+	},
+/obj/structure/reagent_dispensers/watertank,
+/turf/open/floor/engine,
+/area/engine/engineering)
+"rz" = (
+/turf/open/space,
+/area/space)
+"sp" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/turf/closed/wall/r_wall,
+/area/engine/engineering)
+"sq" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 9
+	},
+/turf/open/floor/plasteel,
+/area/engine/engineering)
+"sx" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plasteel,
+/area/engine/engineering)
+"sE" = (
+/obj/structure/reflector/single/anchored{
+	dir = 9
+	},
+/turf/open/floor/plating/airless,
+/area/space)
+"sP" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 8
+	},
+/obj/machinery/button/door{
+	id = "SupermatterExternal";
+	name = "Shutters Control";
+	pixel_x = -25;
+	req_access_txt = "11"
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plating,
+/area/engine/engineering)
+"tj" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plating,
+/area/engine/engineering)
+"tw" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 4
+	},
+/obj/machinery/button/door{
+	id = "SupermatterExternal";
+	name = "Shutters Control";
+	pixel_x = 25;
+	req_access_txt = "11"
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plating,
+/area/engine/engineering)
+"tZ" = (
+/obj/machinery/atmospherics/components/unary/vent_pump{
+	dir = 1
+	},
+/obj/machinery/advanced_airlock_controller{
+	dir = 8;
+	pixel_x = 24
+	},
+/turf/open/floor/plating,
+/area/engine/engineering)
+"uh" = (
+/obj/structure/cable/yellow{
+	icon_state = "2-8"
+	},
+/turf/open/floor/plating/airless,
+/area/space/nearstation)
+"uI" = (
+/obj/machinery/camera/emp_proof{
+	c_tag = "Engine - East";
+	dir = 8;
+	network = list("ss13","engine")
+	},
+/turf/open/floor/plating/airless,
+/area/engine/engineering)
+"uU" = (
+/obj/structure/sign/warning/radiation/rad_area,
+/obj/machinery/atmospherics/pipe/simple/orange/visible{
+	dir = 6
+	},
+/turf/closed/wall/r_wall,
+/area/engine/engineering)
+"vd" = (
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden{
+	dir = 1
+	},
+/obj/structure/closet/radiation,
+/turf/open/floor/plasteel,
+/area/engine/engineering)
+"vy" = (
+/turf/open/floor/plasteel,
+/area/engine/engineering)
+"vN" = (
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/effect/spawner/structure/window/plasma/reinforced/shutters,
+/turf/open/floor/plating,
+/area/engine/engineering)
+"wf" = (
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/engine,
+/area/engine/engineering)
+"wH" = (
+/obj/machinery/light{
+	dir = 1
+	},
+/obj/effect/turf_decal/stripes/line{
+	dir = 1
+	},
+/obj/machinery/camera/emp_proof{
+	c_tag = "Engine - Particle Accelerator";
+	dir = 6;
+	network = list("ss13","engine")
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
+/obj/structure/cable/yellow{
+	icon_state = "2-8"
+	},
+/obj/machinery/button/door{
+	id = "SupermatterExternal";
+	name = "Shutters Control";
+	pixel_y = 30;
+	req_access_txt = "11"
+	},
+/obj/machinery/the_singularitygen,
+/turf/open/floor/plating,
+/area/engine/engineering)
+"xe" = (
+/obj/structure/cable/yellow{
+	icon_state = "2-4"
+	},
+/turf/open/floor/plating/airless,
+/area/space/nearstation)
+"xs" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
+/turf/open/floor/plasteel,
+/area/engine/engineering)
+"xB" = (
+/obj/structure/reflector/single/anchored{
+	dir = 5
+	},
+/turf/open/floor/plating/airless,
+/area/space/nearstation)
+"yh" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 5
+	},
+/obj/effect/turf_decal/stripes/corner,
+/turf/open/floor/plasteel,
+/area/engine/engineering)
+"ym" = (
+/obj/machinery/light,
+/obj/effect/turf_decal/stripes/line,
+/obj/structure/closet/radiation,
+/turf/open/floor/plasteel,
+/area/engine/engineering)
+"yE" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "SupermatterExternal";
+	name = "radiation shutters"
+	},
+/turf/open/floor/plasteel,
+/area/engine/engineering)
+"zz" = (
+/obj/effect/mapping_helpers/airlock/cyclelink_helper{
+	dir = 1
+	},
+/obj/machinery/door/airlock/external{
+	name = "Engineering External Access";
+	req_access_txt = "10;13"
+	},
+/turf/open/floor/plating,
+/area/engine/engineering)
+"zF" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel,
+/area/engine/engineering)
+"Ab" = (
+/obj/structure/sign/warning/radiation/rad_area,
+/turf/closed/wall/r_wall,
+/area/engine/engineering)
+"Aw" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 6
+	},
+/turf/open/floor/plating,
+/area/engine/engineering)
+"Az" = (
+/obj/structure/cable/yellow{
+	icon_state = "1-4"
+	},
+/turf/open/floor/plating/airless,
+/area/space/nearstation)
+"Bg" = (
+/obj/machinery/atmospherics/pipe/simple/orange/visible,
+/turf/closed/wall/r_wall,
+/area/engine/engineering)
+"Bp" = (
+/turf/template_noop,
+/area/template_noop)
+"BO" = (
+/obj/structure/cable/yellow{
+	icon_state = "1-8"
+	},
+/turf/open/floor/plating/airless,
+/area/space/nearstation)
+"Cj" = (
+/obj/structure/sign/warning/radiation/rad_area,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/closed/wall/r_wall,
+/area/engine/engineering)
+"CB" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 10
+	},
+/turf/open/floor/engine,
+/area/engine/engineering)
+"CO" = (
+/obj/structure/sign/warning/electricshock,
+/turf/closed/wall/r_wall,
+/area/engine/engineering)
+"CS" = (
+/obj/machinery/atmospherics/components/unary/vent_pump{
+	dir = 1
+	},
+/obj/machinery/advanced_airlock_controller{
+	dir = 4;
+	pixel_x = -24
+	},
+/turf/open/floor/plating,
+/area/engine/engineering)
+"CT" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/structure/table,
+/obj/item/storage/toolbox/mechanical,
+/obj/item/flashlight,
+/obj/item/pipe_dispenser,
+/turf/open/floor/plasteel,
+/area/engine/engineering)
+"El" = (
+/obj/effect/turf_decal/stripes/line,
+/obj/structure/cable,
+/obj/machinery/power/emitter/welded,
+/turf/open/floor/engine,
+/area/engine/engineering)
+"ET" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "SupermatterExternal";
+	name = "radiation shutters"
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/turf/open/floor/plasteel,
+/area/engine/engineering)
+"EU" = (
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "0-2"
+	},
+/obj/machinery/power/rad_collector/anchored,
+/turf/open/floor/plating/airless,
+/area/space/nearstation)
+"Fh" = (
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-8"
+	},
+/turf/open/floor/engine,
+/area/engine/engineering)
+"Fk" = (
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/effect/turf_decal/stripes/line{
+	dir = 1
+	},
+/turf/open/floor/engine,
+/area/engine/engineering)
+"Fq" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/closed/wall/r_wall,
+/area/engine/engineering)
+"Fy" = (
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/obj/effect/turf_decal/bot,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "SupermatterExternal";
+	name = "radiation shutters"
+	},
+/turf/open/floor/plasteel/dark,
+/area/engine/engineering)
+"Gm" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 4
+	},
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "SupermatterExternal";
+	name = "radiation shutters"
+	},
+/turf/open/floor/plasteel,
+/area/engine/engineering)
+"Hk" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 6
+	},
+/turf/open/floor/engine,
+/area/engine/engineering)
+"Hr" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 5
+	},
+/turf/open/floor/engine,
+/area/engine/engineering)
+"Hu" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 9
+	},
+/turf/open/floor/engine,
+/area/engine/engineering)
+"HG" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 9
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/item/crowbar,
+/obj/item/screwdriver,
+/obj/item/wirecutters,
+/obj/item/stack/cable_coil{
+	pixel_x = 3;
+	pixel_y = -7
+	},
+/obj/item/wrench,
+/turf/open/floor/plating,
+/area/engine/engineering)
+"HM" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
+/obj/machinery/light,
+/obj/effect/turf_decal/stripes/line,
+/obj/structure/closet/radiation,
+/turf/open/floor/plasteel,
+/area/engine/engineering)
+"Ix" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
+/turf/closed/wall/r_wall,
+/area/engine/engineering)
+"Jl" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 4
+	},
+/obj/machinery/light{
+	dir = 4;
+	light_color = "#e8eaff"
+	},
+/turf/open/floor/plating,
+/area/engine/engineering)
+"JS" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/obj/machinery/button/door{
+	id = "SupermatterExternal";
+	name = "Shutters Control";
+	pixel_x = -25;
+	req_access_txt = "11"
+	},
+/obj/structure/closet/radiation,
+/turf/open/floor/plasteel,
+/area/engine/engineering)
+"JV" = (
+/obj/effect/turf_decal/stripes/line,
+/turf/open/floor/plating,
+/area/engine/engineering)
+"Ka" = (
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plating/airless,
+/area/space/nearstation)
+"Kp" = (
+/obj/structure/reflector/single/anchored{
+	dir = 9
+	},
+/turf/open/floor/plating/airless,
+/area/space/nearstation)
+"KX" = (
+/obj/structure/grille,
+/turf/open/floor/plating/airless,
+/area/engine/engineering)
+"Lp" = (
+/obj/structure/table,
+/obj/item/storage/toolbox/mechanical{
+	pixel_y = 5
+	},
+/obj/item/flashlight{
+	pixel_x = 1;
+	pixel_y = 5
+	},
+/obj/item/flashlight{
+	pixel_x = 1;
+	pixel_y = 5
+	},
+/obj/effect/turf_decal/stripes/line,
+/turf/open/floor/plasteel,
+/area/engine/engineering)
+"LL" = (
+/obj/structure/lattice,
+/obj/structure/sign/warning/radiation/rad_area{
+	pixel_x = 32
+	},
+/turf/open/space/basic,
+/area/space/nearstation)
+"Ma" = (
+/obj/structure/lattice,
+/turf/open/space,
+/area/space/nearstation)
+"MQ" = (
+/obj/structure/cable/yellow{
+	icon_state = "0-4"
+	},
+/obj/effect/turf_decal/stripes/line{
+	dir = 8
+	},
+/obj/effect/turf_decal/box,
+/turf/open/floor/engine,
+/area/engine/engineering)
+"MU" = (
+/obj/structure/cable/yellow{
+	icon_state = "1-4"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-8"
+	},
+/turf/open/floor/plating/airless,
+/area/space/nearstation)
+"Oo" = (
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plating/airless,
+/area/space/nearstation)
+"Oq" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "SupermatterExternal";
+	name = "radiation shutters"
+	},
+/turf/open/floor/plasteel,
+/area/engine/engineering)
+"OO" = (
+/obj/machinery/camera/emp_proof{
+	c_tag = "Engine - North West";
+	network = list("ss13","engine")
+	},
+/turf/open/floor/plating/airless,
+/area/engine/engineering)
+"OV" = (
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "0-4"
+	},
+/obj/machinery/power/rad_collector/anchored,
+/turf/open/floor/plating/airless,
+/area/space/nearstation)
+"Po" = (
+/obj/effect/spawner/structure/window/plasma/reinforced/shutters,
+/turf/open/floor/plating,
+/area/engine/engineering)
+"Pt" = (
+/turf/closed/wall/r_wall,
+/area/engine/engineering)
+"PE" = (
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden{
+	dir = 1
+	},
+/turf/open/floor/plasteel,
+/area/engine/engineering)
+"PW" = (
+/obj/effect/turf_decal/stripes/line,
+/turf/open/floor/engine,
+/area/engine/engineering)
+"PZ" = (
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "SupermatterExternal";
+	name = "radiation shutters"
+	},
+/obj/effect/turf_decal/bot,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/obj/machinery/door/firedoor/border_only,
+/turf/open/floor/plasteel/dark,
+/area/engine/engineering)
+"QC" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 10
+	},
+/obj/structure/reagent_dispensers/fueltank,
+/turf/open/floor/engine,
+/area/engine/engineering)
+"QG" = (
+/obj/machinery/atmospherics/pipe/simple/orange/visible{
+	dir = 4
+	},
+/turf/closed/wall,
+/area/engine/engineering)
+"QO" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 5
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
+/obj/structure/closet/crate/engineering{
+	name = "Particle Accelerator Crate"
+	},
+/obj/structure/particle_accelerator/end_cap,
+/obj/structure/particle_accelerator/fuel_chamber,
+/obj/structure/particle_accelerator/power_box,
+/obj/structure/particle_accelerator/particle_emitter/center,
+/obj/structure/particle_accelerator/particle_emitter/right,
+/obj/structure/particle_accelerator/particle_emitter/left,
+/obj/machinery/particle_accelerator/control_box,
+/turf/open/floor/plating,
+/area/engine/engineering)
+"QU" = (
+/turf/closed/wall,
+/area/engine/engineering)
+"Sa" = (
+/turf/open/floor/plating/airless,
+/area/space/nearstation)
+"Ss" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 10
+	},
+/turf/open/floor/plasteel,
+/area/engine/engineering)
+"SB" = (
+/obj/machinery/light,
+/turf/open/floor/plating/airless,
+/area/engine/engineering)
+"SQ" = (
+/obj/machinery/light{
+	dir = 8
+	},
+/obj/effect/turf_decal/stripes/line{
+	dir = 8
+	},
+/turf/open/floor/plating,
+/area/engine/engineering)
+"Tn" = (
+/obj/structure/sign/warning/securearea,
+/turf/closed/wall/r_wall,
+/area/engine/engineering)
+"TG" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 4
+	},
+/obj/structure/table,
+/obj/item/tank/internals/emergency_oxygen/engi,
+/obj/item/clothing/gloves/color/black,
+/obj/item/clothing/glasses/meson/engine,
+/turf/open/floor/plasteel,
+/area/engine/engineering)
+"Ux" = (
+/obj/structure/table,
+/obj/item/clothing/gloves/color/yellow,
+/obj/item/storage/toolbox/electrical{
+	pixel_y = 5
+	},
+/turf/open/floor/plasteel,
+/area/engine/engineering)
+"Vb" = (
+/obj/structure/reflector/single/anchored{
+	dir = 5
+	},
+/turf/open/floor/plating/airless,
+/area/space)
+"Vn" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "SupermatterExternal";
+	name = "radiation shutters"
+	},
+/turf/open/floor/plasteel,
+/area/engine/engineering)
+"VI" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/effect/turf_decal/stripes/line{
+	dir = 8
+	},
+/turf/open/floor/engine,
+/area/engine/engineering)
+"VL" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
+/turf/open/floor/plasteel,
+/area/engine/engineering)
+"VR" = (
+/obj/machinery/light,
+/obj/machinery/camera/emp_proof{
+	c_tag = "Engine - South";
+	dir = 1;
+	network = list("ss13","engine")
+	},
+/turf/open/floor/plating/airless,
+/area/engine/engineering)
+"Wg" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/engine/engineering)
+"Wk" = (
+/obj/structure/lattice/catwalk,
+/turf/open/space/basic,
+/area/space/nearstation)
+"WX" = (
+/obj/structure/closet/radiation,
+/turf/open/floor/plasteel,
+/area/engine/engineering)
+"WY" = (
+/obj/structure/table,
+/obj/item/clothing/suit/radiation,
+/obj/item/clothing/head/radiation,
+/obj/item/clothing/glasses/meson,
+/turf/open/floor/plasteel,
+/area/engine/engineering)
+"Xu" = (
+/obj/machinery/camera/emp_proof{
+	c_tag = "Engine - South East";
+	dir = 1;
+	network = list("ss13","engine")
+	},
+/turf/open/floor/plating/airless,
+/area/engine/engineering)
+"XF" = (
+/obj/effect/turf_decal/stripes/corner{
+	dir = 8
+	},
+/turf/open/floor/plasteel,
+/area/engine/engineering)
+"XY" = (
+/obj/machinery/camera/emp_proof{
+	c_tag = "Engine - West";
+	dir = 4;
+	network = list("ss13","engine")
+	},
+/turf/open/floor/plating/airless,
+/area/engine/engineering)
+"Yg" = (
+/obj/machinery/door/airlock/external{
+	name = "Engineering External Access";
+	req_access_txt = "10;13"
+	},
+/obj/effect/mapping_helpers/airlock/cyclelink_helper{
+	dir = 1
+	},
+/turf/open/floor/plating,
+/area/engine/engineering)
+"Yh" = (
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden,
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/structure/closet/radiation,
+/turf/open/floor/plasteel,
+/area/engine/engineering)
+"Yz" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/obj/machinery/button/door{
+	id = "SupermatterExternal";
+	name = "Shutters Control";
+	pixel_x = 25;
+	req_access_txt = "11"
+	},
+/obj/structure/closet/radiation,
+/turf/open/floor/plasteel,
+/area/engine/engineering)
+"YV" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/effect/turf_decal/stripes/line{
+	dir = 4
+	},
+/turf/open/floor/engine,
+/area/engine/engineering)
+"Zk" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 8
+	},
+/turf/open/floor/plating,
+/area/engine/engineering)
+
+(1,1,1) = {"
+Bp
+Bp
+Bp
+Bp
+Bp
+Bp
+Bp
+ky
+ky
+ky
+ky
+ky
+ky
+ky
+ky
+ky
+ky
+ky
+ky
+ky
+ky
+Bp
+Bp
+Bp
+Bp
+Bp
+"}
+(2,1,1) = {"
+Bp
+Bp
+Bp
+Bp
+Bp
+Bp
+Bp
+ky
+ky
+ky
+ky
+ky
+ky
+ky
+ky
+ky
+ky
+ky
+ky
+ky
+ky
+Bp
+Bp
+Bp
+Bp
+Bp
+"}
+(3,1,1) = {"
+Bp
+Bp
+Bp
+Bp
+Bp
+Bp
+Bp
+ky
+ky
+ky
+ky
+ky
+ky
+ky
+ky
+ky
+ky
+ky
+ky
+ky
+ky
+Bp
+Bp
+Bp
+Bp
+Bp
+"}
+(4,1,1) = {"
+Bp
+Bp
+Bp
+Bp
+Bp
+Bp
+Bp
+ky
+ky
+ky
+ky
+ky
+ky
+ky
+ky
+ky
+ky
+ky
+ky
+ky
+ky
+Bp
+Bp
+Bp
+Bp
+Bp
+"}
+(5,1,1) = {"
+Bp
+Bp
+Bp
+Bp
+Bp
+Bp
+Bp
+aI
+ky
+ky
+ky
+ky
+ky
+ky
+ky
+ky
+ky
+ky
+ky
+ky
+ky
+Bp
+Bp
+Bp
+Bp
+Bp
+"}
+(6,1,1) = {"
+Bp
+Bp
+Bp
+Bp
+Bp
+Bp
+Bp
+Sa
+aI
+ky
+ky
+ky
+ky
+LL
+ky
+ky
+ky
+ky
+ky
+ky
+ky
+ky
+Bp
+Bp
+Bp
+Bp
+"}
+(7,1,1) = {"
+Bp
+Bp
+Bp
+Bp
+QU
+QU
+Pt
+Pt
+Pt
+Pt
+Pt
+Pt
+Pt
+Pt
+Pt
+Pt
+Pt
+Pt
+CO
+Pt
+Tn
+ky
+ky
+ky
+ky
+ky
+"}
+(8,1,1) = {"
+Bp
+Bp
+Ux
+Lp
+QU
+gp
+Pt
+KX
+KX
+KX
+KX
+KX
+Pt
+Pt
+Pt
+KX
+KX
+KX
+KX
+KX
+Pt
+ky
+ky
+ky
+ky
+ky
+"}
+(9,1,1) = {"
+Bp
+Bp
+sx
+sx
+cu
+tZ
+zz
+lz
+lz
+lz
+lz
+lz
+lz
+XY
+lz
+lz
+lz
+lz
+lz
+lz
+gN
+lz
+ky
+ky
+ky
+ky
+"}
+(10,1,1) = {"
+Bp
+cq
+vy
+ym
+Cj
+Pt
+Pt
+OO
+ky
+aI
+ky
+ky
+Wk
+ky
+Wk
+ky
+ky
+aI
+ky
+lz
+Pt
+Pt
+KX
+ky
+ky
+ky
+"}
+(11,1,1) = {"
+TG
+CT
+vy
+XF
+mA
+QC
+Pt
+lz
+ky
+aI
+ky
+ky
+Wk
+ky
+Wk
+ky
+ky
+aI
+ky
+lz
+kR
+Pt
+KX
+ky
+ky
+ky
+"}
+(12,1,1) = {"
+PE
+zF
+xs
+xs
+Oq
+El
+Po
+lz
+ky
+aI
+Vb
+ky
+Wk
+ky
+Wk
+ky
+ky
+aI
+ky
+aI
+lz
+Pt
+KX
+ky
+ky
+ky
+"}
+(13,1,1) = {"
+sq
+cq
+vy
+vy
+yE
+PW
+Po
+lz
+xe
+Oo
+Oo
+EU
+Oo
+EU
+Oo
+EU
+Oo
+Oo
+Az
+aI
+SB
+Pt
+KX
+aI
+ky
+ky
+"}
+(14,1,1) = {"
+gB
+Yh
+Yz
+ho
+ET
+nn
+Po
+Po
+Ka
+ky
+Wk
+ky
+ky
+Sa
+ky
+ky
+xB
+ky
+Ka
+aI
+lz
+Pt
+Ab
+aI
+ky
+ky
+"}
+(15,1,1) = {"
+Ab
+sp
+Pt
+Fy
+Fq
+in
+in
+Po
+Ka
+Wk
+hu
+Wk
+Wk
+Sa
+Wk
+Wk
+hu
+Wk
+Ka
+ky
+lz
+Pt
+KX
+aI
+ky
+ky
+"}
+(16,1,1) = {"
+Pt
+HG
+Zk
+SQ
+sP
+Zk
+lM
+Po
+Ka
+ky
+Wk
+ky
+ky
+Sa
+ky
+ky
+Wk
+ky
+OV
+ky
+lz
+Pt
+KX
+ky
+ky
+ky
+"}
+(17,1,1) = {"
+PZ
+tj
+Hu
+MQ
+VI
+CB
+JV
+Po
+Ka
+ky
+Wk
+ky
+ky
+Sa
+ky
+ky
+Wk
+ky
+Ka
+aI
+lz
+Pt
+KX
+ky
+ky
+ky
+"}
+(18,1,1) = {"
+Pt
+wH
+Fk
+Fh
+wf
+eD
+nc
+vN
+MU
+Sa
+Sa
+Sa
+Sa
+Sa
+Sa
+Sa
+Sa
+Sa
+OV
+aI
+VR
+Pt
+KX
+ky
+ky
+ky
+"}
+(19,1,1) = {"
+PZ
+Wg
+Hr
+lP
+YV
+Hk
+JV
+Po
+Ka
+ky
+Wk
+ky
+ky
+Sa
+ky
+ky
+Wk
+ky
+Ka
+aI
+lz
+Pt
+KX
+ky
+ky
+ky
+"}
+(20,1,1) = {"
+Pt
+QO
+iP
+Jl
+tw
+iP
+Aw
+Po
+Ka
+ky
+Wk
+ky
+ky
+Sa
+ky
+ky
+Wk
+ky
+OV
+ky
+lz
+Pt
+KX
+ky
+ky
+ky
+"}
+(21,1,1) = {"
+Ab
+Ix
+Pt
+Fy
+Fq
+in
+in
+Po
+Ka
+Wk
+hu
+Wk
+Wk
+Sa
+Wk
+Wk
+hu
+Wk
+Ka
+ky
+lz
+Pt
+KX
+aI
+ky
+ky
+"}
+(22,1,1) = {"
+WX
+vd
+JS
+ho
+ET
+nn
+Po
+Po
+Ka
+ky
+Wk
+ky
+ky
+Sa
+ky
+ky
+Kp
+ky
+Ka
+aI
+lz
+Pt
+Ab
+aI
+ky
+ky
+"}
+(23,1,1) = {"
+vy
+VL
+vy
+vy
+yE
+PW
+Po
+lz
+uh
+Oo
+Oo
+el
+Oo
+el
+Oo
+el
+Oo
+Oo
+BO
+aI
+SB
+Pt
+KX
+aI
+ky
+ky
+"}
+(24,1,1) = {"
+vy
+VL
+nH
+xs
+Vn
+El
+Po
+lz
+ky
+aI
+sE
+ky
+Wk
+ky
+Wk
+ky
+ky
+aI
+ky
+aI
+lz
+Pt
+KX
+ky
+ky
+ky
+"}
+(25,1,1) = {"
+WY
+fm
+hg
+yh
+Gm
+pK
+Pt
+lz
+ky
+aI
+ky
+ky
+Wk
+ky
+Wk
+ky
+ky
+aI
+ky
+lz
+Xu
+Pt
+KX
+ky
+ky
+ky
+"}
+(26,1,1) = {"
+xs
+hO
+sq
+HM
+uU
+Bg
+Bg
+mW
+mh
+aI
+ky
+ky
+Wk
+ky
+Wk
+ky
+ky
+aI
+ky
+lz
+Pt
+Pt
+KX
+ky
+ky
+ky
+"}
+(27,1,1) = {"
+Bp
+Bp
+Bp
+Ss
+dO
+CS
+Yg
+lz
+lz
+lz
+lz
+lz
+lz
+uI
+lz
+lz
+lz
+lz
+lz
+lz
+gN
+lz
+ky
+ky
+ky
+ky
+"}
+(28,1,1) = {"
+Bp
+Bp
+Bp
+vy
+QG
+cC
+Pt
+KX
+KX
+KX
+KX
+KX
+Pt
+Pt
+Pt
+KX
+KX
+KX
+KX
+KX
+Pt
+aI
+ky
+rz
+ky
+ky
+"}
+(29,1,1) = {"
+Bp
+Bp
+Bp
+vy
+QG
+QU
+Pt
+Pt
+Pt
+Pt
+Pt
+Pt
+Pt
+Ab
+Pt
+Pt
+Pt
+Pt
+CO
+Pt
+Tn
+aI
+aI
+Ma
+ky
+ky
+"}

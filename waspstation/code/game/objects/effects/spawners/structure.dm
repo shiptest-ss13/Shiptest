@@ -9,16 +9,19 @@
 	)
 
 /obj/effect/spawner/structure/window/reinforced/shutters
+	icon = 'waspstation/icons/obj/structures_spawners.dmi'
 	name = "reinforced shutter window spawner"
 	icon_state = "shrwindow_spawner"
 	spawn_list = list(/obj/structure/grille, /obj/structure/window/reinforced/fulltile, /obj/machinery/door/firedoor/window)
 
 /obj/effect/spawner/structure/window/reinforced/tinted/shutters
+	icon = 'waspstation/icons/obj/structures_spawners.dmi'
 	name = "tinted reinforced shutter window spawner"
 	icon_state = "shtwindow_spawner"
 	spawn_list = list(/obj/structure/grille, /obj/structure/window/reinforced/tinted/fulltile, /obj/machinery/door/firedoor/window)
 
 /obj/effect/spawner/structure/window/plasma/reinforced/shutters
+	icon = 'waspstation/icons/obj/structures_spawners.dmi'
 	name = "reinforced plasma shutter window spawner"
 	icon_state = "shprwindow_spawner"
 	spawn_list = list(/obj/structure/grille, /obj/structure/window/plasma/reinforced/fulltile, /obj/machinery/door/firedoor/window)

@@ -94,6 +94,7 @@ SUBSYSTEM_DEF(mapping)
 	var/list/space_ruins = levels_by_trait(ZTRAIT_SPACE_RUINS)
 	if (space_ruins.len)
 		seedRuins(space_ruins, CONFIG_GET(number/space_budget), /area/space, space_ruins_templates)
+	SSmapping.seedStation() //Wasp - Random Engine Framework
 	loading_ruins = FALSE
 #endif
 	// Add the transit level
@@ -390,6 +391,8 @@ GLOBAL_LIST_EMPTY(the_station_areas)
 			lava_ruins_templates[R.name] = R
 		else if(istype(R, /datum/map_template/ruin/space))
 			space_ruins_templates[R.name] = R
+		else if(istype(R, /datum/map_template/ruin/station)) //Wasp - Random Engine Framework
+			station_room_templates[R.name] = R
 
 /datum/controller/subsystem/mapping/proc/preloadShuttleTemplates()
 	var/list/unbuyable = generateMapList("[global.config.directory]/unbuyableshuttles.txt")
@@ -541,3 +544,14 @@ GLOBAL_LIST_EMPTY(the_station_areas)
 		isolated_ruins_z = add_new_zlevel("Isolated Ruins/Reserved", list(ZTRAIT_RESERVED = TRUE, ZTRAIT_ISOLATED_RUINS = TRUE))
 		initialize_reserved_level(isolated_ruins_z.z_value)
 	return isolated_ruins_z.z_value
+
+	// Station Ruins - Wasp Port
+/datum/controller/subsystem/mapping
+	var/list/station_room_templates = list()
+
+/datum/controller/subsystem/mapping/proc/seedStation()
+	for(var/V in GLOB.stationroom_landmarks)
+		var/obj/effect/landmark/stationroom/LM = V
+		LM.load()
+	if(GLOB.stationroom_landmarks.len)
+		seedStation() //I'm sure we can trust everyone not to insert a 1x1 rooms which loads a landmark which loads a landmark which loads a la...
