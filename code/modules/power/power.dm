@@ -122,12 +122,12 @@
 		if(machine_stat & NOPOWER)
 			SEND_SIGNAL(src, COMSIG_MACHINERY_POWER_RESTORED)
 			. = TRUE
-		machine_stat &= ~NOPOWER
+		set_machine_stat(machine_stat & ~NOPOWER)
 	else
 		if(!(machine_stat & NOPOWER))
 			SEND_SIGNAL(src, COMSIG_MACHINERY_POWER_LOST)
 			. = TRUE
-		machine_stat |= NOPOWER
+		set_machine_stat(machine_stat | NOPOWER)
 	update_icon()
 
 // connect the machine to a powernet if a node cable is present on the turf
