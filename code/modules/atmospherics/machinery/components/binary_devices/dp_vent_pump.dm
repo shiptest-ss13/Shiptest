@@ -70,7 +70,7 @@
 		icon_state = "vent_welded"
 		return
 
-	if(!on || !is_operational())
+	if(!on || !is_operational)
 		icon_state = "vent_off"
 	else
 		icon_state = pump_direction ? "vent_out" : "vent_in"
