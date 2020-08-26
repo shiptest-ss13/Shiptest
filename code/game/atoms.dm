@@ -160,7 +160,7 @@
   * * [/turf/open/space/Initialize]
   */
 /atom/proc/Initialize(mapload, ...)
-	SHOULD_NOT_SLEEP(TRUE)
+	//SHOULD_NOT_SLEEP(TRUE)
 	SHOULD_CALL_PARENT(TRUE)
 	if(flags_1 & INITIALIZED_1)
 		stack_trace("Warning: [src]([type]) initialized multiple times!")
@@ -274,7 +274,7 @@
 /// Returns true or false to allow the mover to move through src
 /atom/proc/CanAllowThrough(atom/movable/mover, turf/target)
 	SHOULD_CALL_PARENT(TRUE)
-	SHOULD_BE_PURE(TRUE)
+	//SHOULD_BE_PURE(TRUE)
 	return !density
 
 /**
