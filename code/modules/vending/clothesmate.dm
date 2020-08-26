@@ -98,9 +98,6 @@
 		            /obj/item/clothing/under/dress/sailor = 1,
 		            /obj/item/clothing/under/dress/redeveninggown = 1,
 		            /obj/item/clothing/under/dress/blacktango = 1,
-					/obj/item/clothing/under/plasmaman = 1, //WS edit start
-					/obj/item/clothing/under/plasmaman/skirt = 1,
-					/obj/item/clothing/head/helmet/space/plasmaman = 1, //WS edit end
 		            /obj/item/clothing/suit/ianshirt = 1,
 		            /obj/item/clothing/shoes/laceup = 2,
 		            /obj/item/clothing/shoes/sandal = 2,

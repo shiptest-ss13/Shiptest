@@ -30,9 +30,6 @@
 					/obj/item/clothing/head/cowboy = 1, //Waspstation - Yee Haw
 					/obj/item/clothing/accessory/waistcoat = 1,
 					/obj/item/clothing/under/suit/black = 1,
-					/obj/item/clothing/under/plasmaman/mime = 1, //WS edit start
-					/obj/item/clothing/under/plasmaman/mime/skirt = 1,
-					/obj/item/clothing/head/helmet/space/plasmaman/mime = 1, //WS edit end
 					/obj/item/clothing/head/that = 1,
 					/obj/item/clothing/under/costume/kilt = 1,
 					/obj/item/clothing/head/beret = 1,
