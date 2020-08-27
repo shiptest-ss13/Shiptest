@@ -46,6 +46,7 @@ GLOBAL_LIST_EMPTY(conveyors_by_id)
 	if(.)
 		operating = TRUE
 		update_icon()
+		begin_processing()                                              // Waspstation Edit - Auto Conveyor Fix (Issue #331)
 
 // create a conveyor
 /obj/machinery/conveyor/Initialize(mapload, newdir, newid)
