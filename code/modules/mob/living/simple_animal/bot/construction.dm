@@ -470,9 +470,8 @@
 					build_step++
 					return
 
+		// WaspStation Start -- hygienebot construction fix (Issue #301)
 		if(ASSEMBLY_SECOND_STEP)
-			if(!can_finish_build(I, user))
-				return
 			if(istype(I, /obj/item/stack/ducts))
 				var/obj/item/stack/ducts/D = I
 				if(D.get_amount() < 1)
@@ -484,9 +483,8 @@
 						D.use(1)
 						to_chat(user, "<span class='notice'>You pipe up [src].</span>")
 						build_step++
-					else
-						return
-				var/mob/living/simple_animal/bot/hygienebot/H = new(drop_location())
-				H.name = created_name
-				qdel(src)
-				return TRUE
+						var/mob/living/simple_animal/bot/hygienebot/H = new(drop_location())
+						H.name = created_name
+						qdel(src)
+						return TRUE
+		// WaspStation end
