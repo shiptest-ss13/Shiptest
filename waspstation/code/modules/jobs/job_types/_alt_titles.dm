@@ -13,7 +13,7 @@
 
 /datum/job/atmos
 	alt_titles = list("Firefighter", "Life Support Specialist")
-	senior_title = "Senior Atmospheric Technician"
+	senior_title = "Chadmos"
 
 //Service
 /datum/job/assistant
