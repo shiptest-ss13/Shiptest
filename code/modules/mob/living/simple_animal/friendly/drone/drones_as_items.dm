@@ -13,6 +13,7 @@
 
 /obj/effect/mob_spawn/drone
 	name = "drone shell"
+	mob_name = "drone"                                                                              // Waspstation Edit - Adding missing var
 	desc = "A shell of a maintenance drone, an expendable robot built to perform station repairs."
 	icon = 'icons/mob/drone.dmi'
 	icon_state = "drone_maint_hat" //yes reuse the _hat state.
