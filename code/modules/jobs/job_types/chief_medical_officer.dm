@@ -62,3 +62,15 @@
 	suit_store = /obj/item/tank/internals/oxygen
 	r_pocket = /obj/item/flashlight/pen
 
+/datum/outfit/job/cmo/medicaldirector
+	name = "Chief Medical Officer (Medical Director)"
+
+	uniform = /obj/item/clothing/under/suit/cmo
+	alt_uniform = null
+	shoes = /obj/item/clothing/shoes/laceup
+	suit = /obj/item/clothing/suit/toggle/lawyer/cmo
+	alt_suit = /obj/item/clothing/suit/toggle/labcoat/cmo
+	neck = /obj/item/clothing/neck/tie/blue
+	l_hand = null
+	suit_store = null
+	backpack_contents = list(/obj/item/melee/classic_baton/telescopic=1, /obj/item/storage/firstaid/medical=1, /obj/item/flashlight/pen=1)

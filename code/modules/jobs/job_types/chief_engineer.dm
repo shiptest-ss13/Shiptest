@@ -66,3 +66,17 @@
 	gloves = /obj/item/clothing/gloves/color/yellow
 	head = null
 	internals_slot = ITEM_SLOT_SUITSTORE
+
+	/datum/outfit/job/ce/engineeringcoordinator
+	name = "Chief Engineer (Engineering Coordinator)"
+
+	belt = null
+	uniform = /obj/item/clothing/under/rank/engineering/chief_engineer
+	alt_uniform = null
+	alt_suit = /obj/item/clothing/suit/hazardvest
+	dcoat = null
+	shoes = /obj/item/clothing/shoes/laceup
+	head = /obj/item/clothing/head/hardhat/white
+	gloves = null
+	neck = /obj/item/clothing/neck/tie/green
+	backpack_contents = list(/obj/item/melee/classic_baton/telescopic=1, /obj/item/modular_computer/tablet/preset/advanced=1, /obj/item/storage/belt/utility/chief/full=1, /obj/item/clothing/gloves/color/black=1)

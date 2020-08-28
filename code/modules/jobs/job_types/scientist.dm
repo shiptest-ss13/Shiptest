@@ -40,3 +40,41 @@
 	..()
 	if(prob(0.4))
 		neck = /obj/item/clothing/neck/tie/horrible
+
+//Alt Jobs
+
+/datum/outfit/job/scientist/xenobiologist
+	name = "Scientist (Xenobiologist)"
+
+	uniform = /obj/item/clothing/under/rank/rnd/scientist/xenobiologist
+	alt_uniform = null
+	shoes = /obj/item/clothing/shoes/sneakers/green
+
+/datum/outfit/job/scientist/naniteresearcher
+	name = "Scientist (Nanite Researcher)"
+
+	uniform = /obj/item/clothing/under/rank/rnd/scientist/nanite
+	alt_uniform = null
+	shoes = /obj/item/clothing/shoes/sneakers/black
+	suit = null
+	alt_suit = null
+
+/datum/outfit/job/scientist/juniorscientist
+	name = "Scientist (Junior Scientist)"
+
+	uniform = /obj/item/clothing/under/rank/rnd/scientist/junior
+	alt_uniform = null
+	shoes = /obj/item/clothing/shoes/sneakers/white
+	suit = null
+	alt_suit = null
+
+/datum/outfit/job/scientist/seniorscientist
+	name = "Scientist (Senior Scientist)"
+
+	uniform = /obj/item/clothing/under/suit/senior_scientist
+	alt_uniform = null
+	shoes = /obj/item/clothing/shoes/laceup
+	suit = /obj/item/clothing/suit/toggle/lawyer/science
+	alt_suit = /obj/item/clothing/suit/toggle/labcoat/science
+	dcoat = null
+	neck = /obj/item/clothing/neck/tie/purple

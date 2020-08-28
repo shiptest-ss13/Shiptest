@@ -58,3 +58,15 @@
 /datum/outfit/job/atmos/lifesupportspecialist
 	name = "Atmospheric Technician (Life Support Specialist)"
 	backpack_contents = list(/obj/item/modular_computer/tablet/preset/advanced=1, /obj/item/storage/box/survival=2)
+
+/datum/outfit/job/atmos/senioratmospherics
+	name = "Atmospheric Technician (Senior Atmospheric Technician)"
+
+	belt = null
+	uniform = /obj/item/clothing/under/suit/senior_atmos
+	alt_uniform = null
+	suit = /obj/item/clothing/suit/toggle/lawyer/atmos
+	alt_suit = /obj/item/clothing/suit/hazardvest
+	neck = /obj/item/clothing/neck/tie/light_blue
+
+	backpack_contents = list(/obj/item/modular_computer/tablet/preset/advanced=1, /obj/item/storage/belt/utility/atmostech=1)

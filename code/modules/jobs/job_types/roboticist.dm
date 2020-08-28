@@ -37,3 +37,37 @@
 	courierbag = /obj/item/storage/backpack/messenger/tox
 
 	pda_slot = ITEM_SLOT_LPOCKET
+
+//Alt jobs
+
+/datum/outfit/job/roboticist/biomechanicalengineer
+	name = "Roboticist (Biomechanical Engineer)"
+
+	uniform = /obj/item/clothing/under/rank/rnd/roboticist/biomech_engineer
+	alt_uniform = null
+	suit = null
+	alt_suit = null
+
+	pda_slot = ITEM_SLOT_LPOCKET
+
+/datum/outfit/job/roboticist/mechatronicengineer
+	name = "Roboticist (Mechatronic Engineer)"
+
+	uniform = /obj/item/clothing/under/rank/rnd/roboticist/mech_engineer
+	alt_uniform = null
+	suit = /obj/item/clothing/suit/toggle/labcoat
+	alt_suit = null
+	dcoat = /obj/item/clothing/suit/hooded/wintercoat/science
+
+/datum/outfit/job/roboticist/seniorroboticist
+	name = "Roboticist (Senior Roboticist)"
+
+	uniform = /obj/item/clothing/under/suit/senior_roboticist
+	alt_uniform = null
+	shoes = /obj/item/clothing/shoes/laceup
+	suit = null
+	alt_suit = /obj/item/clothing/suit/toggle/labcoat
+	dcoat = null
+	neck = /obj/item/clothing/neck/tie/black
+
+	backpack_contents = list(/obj/item/storage/belt/utility/full=1)

@@ -39,3 +39,52 @@
 
 	chameleon_extras = /obj/item/gun/syringe
 
+//Alt jobs
+
+/datum/outfit/job/chemist/pharmacist
+	name = "Chemist (Pharmacist)"
+	jobtype = /datum/job/chemist
+
+	glasses = null
+
+	uniform = /obj/item/clothing/under/rank/medical/chemist/pharmacist
+	alt_uniform = null
+
+	backpack_contents = list(/obj/item/clothing/glasses/science=1)
+
+/datum/outfit/job/chemist/pharmacologist
+	name = "Chemist (Pharmacologist)"
+
+	glasses = null
+	uniform = /obj/item/clothing/under/rank/medical/chemist/pharmacologist
+	alt_uniform = null
+	suit = /obj/item/clothing/suit/toggle/labcoat/chemist/side
+
+	backpack_contents = list(/obj/item/clothing/glasses/science=1)
+
+/datum/outfit/job/chemist/juniorchemist
+	name = "Chemist (Junior Chemist)"
+
+	glasses = null
+	uniform = /obj/item/clothing/under/rank/medical/chemist/junior_chemist
+	alt_uniform = null
+	suit = null
+	alt_suit = null
+
+	backpack_contents = list(/obj/item/clothing/glasses/science=1)
+
+/datum/outfit/job/chemist/seniorchemist
+	name = "Chemist (Senior Chemist)"
+
+	glasses = null
+	uniform = /obj/item/clothing/under/suit/senior_chemist
+	alt_uniform = null
+	shoes = /obj/item/clothing/shoes/laceup
+	suit = /obj/item/clothing/suit/toggle/lawyer/orange
+	alt_suit = /obj/item/clothing/suit/toggle/labcoat/chemist
+	dcoat = null
+	l_hand = null
+	suit_store = null
+	neck = /obj/item/clothing/neck/tie/orange
+
+	backpack_contents = list(/obj/item/clothing/glasses/science=1)
