@@ -57,6 +57,11 @@
 	path = /obj/item/lighter
 	cost = 500
 
+/datum/gear/clockworkzippo
+	display_name = "Clockwork Zippo"
+	path = /obj/item/lighter/clockwork
+	cost = 750
+
 /datum/gear/cards
 	display_name = "toy, deck of cards"
 	path = /obj/item/toy/cards/deck

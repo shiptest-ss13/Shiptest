@@ -763,6 +763,15 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	overlay_state = "slime"
 	grind_results = list(/datum/reagent/iron = 1, /datum/reagent/fuel = 5, /datum/reagent/medicine/pyroxadone = 5)
 
+/obj/item/lighter/clockwork //Wasp edit: Clockwork Zippo, by Tergius. PR #395
+	name = "bronze zippo"
+	desc = "A zippo plated with brass. I mean bronze. Has a neat red flame!"
+	icon = 'waspstation/icons/obj/cigarettes.dmi'
+	icon_state = "clockworklighter"
+	heat = 2000 //??????????????????
+	light_color = LIGHT_COLOR_RED
+	overlay_state = "clockwork"
+	grind_results = list(/datum/reagent/iron = 1, /datum/reagent/fuel = 5, /datum/reagent/copper = 1)
 
 ///////////
 //ROLLING//
