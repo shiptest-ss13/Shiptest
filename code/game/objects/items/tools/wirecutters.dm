@@ -24,13 +24,13 @@
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 30)
 	var/random_color = TRUE
 	var/static/list/wirecutter_colors = list(
-		"blue" = "#1861d5",
-		"red" = "#951710",
-		"pink" = "#d5188d",
-		"brown" = "#a05212",
-		"green" = "#0e7f1b",
-		"cyan" = "#18a2d5",
-		"yellow" = "#d58c18"
+		"blue" = "#8080ff",
+		"red" = "#ff666e",
+		"pink" = "#fd99ff",
+		"brown" = "#b38459",
+		"green" = "#9fe3a9",
+		"cyan" = "#96ffef",
+		"yellow" = "#ffe366"
 	)
 
 
@@ -49,6 +49,16 @@
 	var/mutable_appearance/base_overlay = mutable_appearance(icon, "cutters_cutty_thingy")
 	base_overlay.appearance_flags = RESET_COLOR
 	. += base_overlay
+
+/obj/item/screwdriver/get_belt_overlay()
+	if(random_color)
+		var/mutable_appearance/body = mutable_appearance('waspstation/icons/obj/clothing/belt_overlays.dmi', "cutters")
+		var/mutable_appearance/head = mutable_appearance('waspstation/icons/obj/clothing/belt_overlays.dmi', "cutters_head")
+		body.color = color
+		head.add_overlay(body)
+		return head
+	else
+		return mutable_appearance('waspstation/icons/obj/clothing/belt_overlays.dmi', icon_state)
 
 /obj/item/wirecutters/attack(mob/living/carbon/C, mob/user)
 	if(istype(C) && C.handcuffed && istype(C.handcuffed, /obj/item/restraints/handcuffs/cable))

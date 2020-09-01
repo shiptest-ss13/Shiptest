@@ -32,6 +32,7 @@
 /obj/item/t_scanner/adv_mining_scanner
 	desc = "A scanner that automatically checks surrounding rock for useful minerals; it can also be used to stop gibtonite detonations. This one has an extended range."
 	name = "advanced automatic mining scanner"
+	icon = 'icons/obj/device.dmi'
 	icon_state = "mining0"
 	item_state = "analyzer"
 	lefthand_file = 'icons/mob/inhands/equipment/tools_lefthand.dmi'

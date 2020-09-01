@@ -21,7 +21,7 @@ GENE SCANNER
 	name = "\improper T-ray scanner"
 	desc = "A terahertz-ray emitter and scanner used to detect underfloor objects such as cables and pipes."
 	custom_price = 150
-	icon = 'icons/obj/device.dmi'
+	icon = 'waspstation/icons/obj/tools.dmi'
 	icon_state = "t-ray0"
 	var/on = FALSE
 	slot_flags = ITEM_SLOT_BELT
@@ -411,7 +411,7 @@ GENE SCANNER
 	desc = "A hand-held environmental scanner which reports current gas levels. Alt-Click to use the built in barometer function."
 	name = "analyzer"
 	custom_price = 100
-	icon = 'icons/obj/device.dmi'
+	icon = 'waspstation/icons/obj/tools.dmi' //Wasp edit - Better tools
 	icon_state = "analyzer"
 	item_state = "analyzer"
 	lefthand_file = 'icons/mob/inhands/equipment/tools_lefthand.dmi'

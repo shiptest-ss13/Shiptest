@@ -25,13 +25,13 @@
 	item_flags = EYE_STAB
 	var/random_color = TRUE //if the screwdriver uses random coloring
 	var/static/list/screwdriver_colors = list(
-		"blue" = rgb(24, 97, 213),
-		"red" = rgb(255, 0, 0),
-		"pink" = rgb(213, 24, 141),
-		"brown" = rgb(160, 82, 18),
-		"green" = rgb(14, 127, 27),
-		"cyan" = rgb(24, 162, 213),
-		"yellow" = rgb(255, 165, 0)
+		"blue" = "#8080ff",
+		"red" = "#ff666e",
+		"pink" = "#fd99ff",
+		"brown" = "#b38459",
+		"green" = "#9fe3a9",
+		"cyan" = "#96ffef",
+		"yellow" = "#ffe366"
 	)
 
 /obj/item/screwdriver/suicide_act(mob/user)
@@ -65,13 +65,13 @@
 
 /obj/item/screwdriver/get_belt_overlay()
 	if(random_color)
-		var/mutable_appearance/body = mutable_appearance('icons/obj/clothing/belt_overlays.dmi', "screwdriver")
-		var/mutable_appearance/head = mutable_appearance('icons/obj/clothing/belt_overlays.dmi', "screwdriver_head")
+		var/mutable_appearance/body = mutable_appearance('waspstation/icons/obj/clothing/belt_overlays.dmi', "screwdriver")
+		var/mutable_appearance/head = mutable_appearance('waspstation/icons/obj/clothing/belt_overlays.dmi', "screwdriver_head")
 		body.color = color
 		head.add_overlay(body)
 		return head
 	else
-		return mutable_appearance('icons/obj/clothing/belt_overlays.dmi', icon_state)
+		return mutable_appearance('waspstation/icons/obj/clothing/belt_overlays.dmi', icon_state)
 
 /obj/item/screwdriver/abductor
 	name = "alien screwdriver"
@@ -84,7 +84,7 @@
 	random_color = FALSE
 
 /obj/item/screwdriver/abductor/get_belt_overlay()
-	return mutable_appearance('icons/obj/clothing/belt_overlays.dmi', "screwdriver_nuke")
+	return mutable_appearance('waspstation/icons/obj/clothing/belt_overlays.dmi', "screwdriver_nuke")
 
 /obj/item/screwdriver/power
 	name = "hand drill"
