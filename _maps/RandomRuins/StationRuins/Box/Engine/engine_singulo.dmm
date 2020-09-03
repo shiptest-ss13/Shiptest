@@ -158,12 +158,6 @@
 	},
 /turf/open/floor/engine,
 /area/engine/engineering)
-"mh" = (
-/obj/machinery/atmospherics/components/unary/outlet_injector/atmos/engine_waste{
-	dir = 1
-	},
-/turf/open/floor/plating/airless,
-/area/engine/engineering)
 "mA" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 8
@@ -176,14 +170,6 @@
 	name = "radiation shutters"
 	},
 /turf/open/floor/plasteel,
-/area/engine/engineering)
-"mW" = (
-/obj/machinery/atmospherics/pipe/simple/orange/visible,
-/obj/machinery/camera/emp_proof{
-	c_tag = "Engine - North East";
-	network = list("ss13","engine")
-	},
-/turf/open/floor/plating/airless,
 /area/engine/engineering)
 "nc" = (
 /obj/effect/turf_decal/stripes/line,
@@ -407,16 +393,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/engine/engineering)
-"zz" = (
-/obj/effect/mapping_helpers/airlock/cyclelink_helper{
-	dir = 1
-	},
-/obj/machinery/door/airlock/external{
-	name = "Engineering External Access";
-	req_access_txt = "10;13"
-	},
-/turf/open/floor/plating,
-/area/engine/engineering)
 "zF" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
@@ -639,6 +615,16 @@
 	},
 /turf/open/floor/plating,
 /area/engine/engineering)
+"Jp" = (
+/obj/machinery/atmospherics/components/unary/outlet_injector/atmos/engine_waste{
+	dir = 1
+	},
+/obj/machinery/camera/emp_proof{
+	c_tag = "Engine - North East";
+	network = list("ss13","engine")
+	},
+/turf/open/floor/plating/airless,
+/area/engine/engineering)
 "JS" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /obj/machinery/button/door{
@@ -755,6 +741,9 @@
 /obj/machinery/power/rad_collector/anchored,
 /turf/open/floor/plating/airless,
 /area/space/nearstation)
+"Pa" = (
+/turf/open/floor/plating,
+/area/engine/engineering)
 "Po" = (
 /obj/effect/spawner/structure/window/plasma/reinforced/shutters,
 /turf/open/floor/plating,
@@ -1200,8 +1189,8 @@ Ux
 Lp
 QU
 gp
+Pa
 Pt
-KX
 KX
 KX
 KX
@@ -1228,8 +1217,8 @@ sx
 sx
 cu
 tZ
-zz
-lz
+Pa
+Yg
 lz
 lz
 lz
@@ -1257,8 +1246,8 @@ ym
 Cj
 Pt
 Pt
+Pt
 OO
-ky
 aI
 ky
 ky
@@ -1286,7 +1275,7 @@ mA
 QC
 Pt
 lz
-ky
+lz
 aI
 ky
 ky
@@ -1705,8 +1694,8 @@ HM
 uU
 Bg
 Bg
-mW
-mh
+Bg
+Jp
 aI
 ky
 ky
@@ -1732,8 +1721,8 @@ Bp
 Ss
 dO
 CS
+Pa
 Yg
-lz
 lz
 lz
 lz
@@ -1760,8 +1749,8 @@ Bp
 vy
 QG
 cC
+Pa
 Pt
-KX
 KX
 KX
 KX

@@ -309,6 +309,16 @@
 	},
 /turf/open/space/basic,
 /area/space/nearstation)
+"nB" = (
+/obj/machinery/atmospherics/components/unary/outlet_injector/atmos/engine_waste{
+	dir = 1
+	},
+/obj/machinery/camera/emp_proof{
+	c_tag = "Engine - North East";
+	network = list("ss13","engine")
+	},
+/turf/open/floor/plating/airless,
+/area/engine/engineering)
 "nQ" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 10
@@ -424,9 +434,29 @@
 	},
 /turf/open/floor/plasteel,
 /area/engine/engineering)
+"qu" = (
+/obj/machinery/light/small{
+	dir = 8
+	},
+/obj/structure/closet/emcloset/anchored,
+/obj/structure/sign/warning/vacuum/external{
+	pixel_x = -32
+	},
+/turf/open/floor/plating,
+/area/engine/engineering)
 "rk" = (
 /turf/open/space/basic,
 /area/space)
+"rS" = (
+/obj/machinery/atmospherics/components/unary/vent_pump{
+	dir = 1
+	},
+/obj/machinery/advanced_airlock_controller{
+	dir = 8;
+	pixel_x = 24
+	},
+/turf/open/floor/plating,
+/area/engine/engineering)
 "rW" = (
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden{
 	dir = 1
@@ -468,17 +498,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/engine/engineering)
-"tr" = (
-/obj/machinery/light/small{
-	dir = 8
-	},
-/obj/structure/closet/emcloset/anchored,
-/obj/machinery/advanced_airlock_controller{
-	dir = 1;
-	pixel_y = -24
-	},
-/turf/open/floor/plating,
-/area/engine/engineering)
 "tI" = (
 /obj/structure/lattice/catwalk,
 /obj/structure/cable/yellow{
@@ -492,6 +511,23 @@
 	},
 /turf/open/space/basic,
 /area/space/nearstation)
+"tK" = (
+/obj/machinery/atmospherics/components/unary/vent_pump{
+	dir = 1
+	},
+/obj/machinery/advanced_airlock_controller{
+	dir = 4;
+	pixel_x = -24
+	},
+/turf/open/floor/plating,
+/area/engine/engineering)
+"tL" = (
+/obj/machinery/atmospherics/pipe/simple/orange/visible{
+	dir = 6
+	},
+/obj/structure/sign/warning/electricshock,
+/turf/closed/wall/r_wall,
+/area/engine/engineering)
 "tU" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 1
@@ -513,6 +549,9 @@
 	dir = 10
 	},
 /turf/open/floor/plasteel,
+/area/engine/engineering)
+"vg" = (
+/turf/open/floor/plating,
 /area/engine/engineering)
 "vD" = (
 /obj/structure/grille,
@@ -623,29 +662,10 @@
 	},
 /turf/open/floor/plating/airless,
 /area/engine/engineering)
-"Bw" = (
-/obj/effect/mapping_helpers/airlock/cyclelink_helper{
-	dir = 1
-	},
-/obj/machinery/door/airlock/external{
-	name = "Engineering External Access";
-	req_access_txt = "10;13"
-	},
-/turf/open/floor/plating,
-/area/engine/engineering)
 "Bz" = (
 /obj/structure/lattice,
 /turf/open/space,
 /area/space/nearstation)
-"Co" = (
-/obj/machinery/atmospherics/components/unary/vent_pump{
-	dir = 1
-	},
-/obj/structure/sign/warning/vacuum/external{
-	pixel_x = -32
-	},
-/turf/open/floor/plating,
-/area/engine/engineering)
 "Cw" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 4
@@ -770,17 +790,6 @@
 	},
 /turf/open/floor/plating,
 /area/engine/engineering)
-"IL" = (
-/obj/machinery/light/small{
-	dir = 4
-	},
-/obj/structure/closet/emcloset/anchored,
-/obj/machinery/advanced_airlock_controller{
-	dir = 1;
-	pixel_y = -24
-	},
-/turf/open/floor/plating,
-/area/engine/engineering)
 "Jp" = (
 /obj/structure/lattice/catwalk,
 /obj/structure/cable/yellow{
@@ -862,6 +871,13 @@
 "Lw" = (
 /turf/open/floor/plating/airless,
 /area/space/nearstation)
+"Lx" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/sign/warning/electricshock,
+/turf/closed/wall/r_wall,
+/area/engine/engineering)
 "Me" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 5
@@ -891,13 +907,6 @@
 /obj/structure/lattice/catwalk,
 /turf/open/space/basic,
 /area/space/nearstation)
-"Og" = (
-/obj/structure/sign/warning/radiation/rad_area,
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/turf/closed/wall/r_wall,
-/area/engine/engineering)
 "OA" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
@@ -937,12 +946,6 @@
 /obj/item/clothing/glasses/meson/engine,
 /turf/open/floor/plasteel,
 /area/engine/engineering)
-"PX" = (
-/obj/machinery/atmospherics/components/unary/outlet_injector/atmos/engine_waste{
-	dir = 1
-	},
-/turf/open/floor/plating/airless,
-/area/engine/engineering)
 "Qg" = (
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
@@ -955,14 +958,6 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel,
-/area/engine/engineering)
-"QY" = (
-/obj/machinery/atmospherics/pipe/simple/orange/visible,
-/obj/machinery/camera/emp_proof{
-	c_tag = "Engine - North East";
-	network = list("ss13","engine")
-	},
-/turf/open/floor/plating/airless,
 /area/engine/engineering)
 "Rp" = (
 /obj/machinery/atmospherics/pipe/manifold4w/supply/hidden,
@@ -1043,13 +1038,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/engine/engineering)
-"Vl" = (
-/obj/structure/sign/warning/radiation/rad_area,
-/obj/machinery/atmospherics/pipe/simple/orange/visible{
-	dir = 6
-	},
-/turf/closed/wall/r_wall,
-/area/engine/engineering)
 "VU" = (
 /obj/effect/turf_decal/stripes/line,
 /obj/structure/cable/yellow{
@@ -1097,6 +1085,16 @@
 	},
 /turf/open/space/basic,
 /area/space/nearstation)
+"Yl" = (
+/obj/machinery/light/small{
+	dir = 4
+	},
+/obj/structure/closet/emcloset/anchored,
+/obj/structure/sign/warning/vacuum/external{
+	pixel_x = 32
+	},
+/turf/open/floor/plating,
+/area/engine/engineering)
 "YC" = (
 /obj/structure/lattice/catwalk,
 /obj/structure/cable/yellow{
@@ -1110,15 +1108,6 @@
 	},
 /turf/open/space/basic,
 /area/space/nearstation)
-"YG" = (
-/obj/machinery/atmospherics/components/unary/vent_pump{
-	dir = 1
-	},
-/obj/structure/sign/warning/vacuum/external{
-	pixel_x = 32
-	},
-/turf/open/floor/plating,
-/area/engine/engineering)
 "YX" = (
 /obj/machinery/door/airlock/external{
 	name = "Engineering External Access";
@@ -1342,9 +1331,9 @@ aS
 od
 pV
 Fd
-tr
+qu
+vg
 eN
-vD
 vD
 vD
 vD
@@ -1370,9 +1359,9 @@ aS
 Vk
 Vk
 jR
-YG
-Bw
-zi
+rS
+vg
+YX
 zi
 zi
 zi
@@ -1397,11 +1386,11 @@ aS
 iD
 GI
 Us
-Og
+Lx
+eN
 eN
 eN
 zC
-rk
 CB
 rk
 rk
@@ -1429,7 +1418,7 @@ ok
 gE
 eN
 zi
-rk
+zi
 CB
 rk
 rk
@@ -1533,7 +1522,7 @@ rk
 rk
 "}
 (15,1,1) = {"
-oe
+oG
 wC
 eN
 tm
@@ -1701,7 +1690,7 @@ rk
 rk
 "}
 (21,1,1) = {"
-oe
+oG
 OR
 eN
 tm
@@ -1821,7 +1810,7 @@ Cw
 fD
 eN
 zi
-rk
+zi
 CB
 rk
 rk
@@ -1845,11 +1834,11 @@ Pu
 cu
 zf
 OA
-Vl
+tL
 Wy
 Wy
-QY
-PX
+Wy
+nB
 CB
 rk
 rk
@@ -1874,9 +1863,9 @@ aS
 aS
 ul
 ca
-Co
+tK
+vg
 YX
-zi
 zi
 zi
 zi
@@ -1902,9 +1891,9 @@ aS
 aS
 GI
 lP
-IL
+Yl
+vg
 eN
-vD
 vD
 vD
 vD
