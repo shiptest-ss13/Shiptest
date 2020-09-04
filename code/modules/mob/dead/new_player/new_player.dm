@@ -424,7 +424,12 @@
 */
 
 /mob/dead/new_player/proc/LateChoices()
-	var/dat = "<div class='notice'>Round Duration: [DisplayTimeText(world.time - SSticker.round_start_time)]</div>"
+	// Waspstation Start - Added selected character name to job selection window
+	var/name = client.prefs.real_name
+
+	var/dat = "<div class='notice'>Welcome, [name].</div>"
+	dat += "<div class='notice'>Round Duration: [DisplayTimeText(world.time - SSticker.round_start_time)]</div>"
+	// Waspstation End
 
 	if(SSshuttle.emergency)
 		switch(SSshuttle.emergency.mode)
