@@ -9,6 +9,7 @@
 	use_power = NO_POWER_USE
 	layer = GAS_FILTER_LAYER
 	hide = TRUE
+	shift_underlay_only = FALSE
 
 	pipe_flags = PIPING_ONE_PER_TURF
 	pipe_state = "connector"
@@ -29,7 +30,7 @@
 	icon_state = "connector"
 	if(showpipe)
 		cut_overlays()
-		var/image/cap = getpipeimage(icon, "connector_cap", initialize_directions, piping_layer = piping_layer)
+		var/image/cap = getpipeimage(icon, "connector_cap", initialize_directions)
 		add_overlay(cap)
 
 /obj/machinery/atmospherics/components/unary/portables_connector/process_atmos()

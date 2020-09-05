@@ -9,6 +9,7 @@
 	var/open_pressure = ONE_ATMOSPHERE * 3
 	var/close_pressure = ONE_ATMOSPHERE
 	pipe_state = "relief_valve-e"
+	shift_underlay_only = FALSE
 
 /obj/machinery/atmospherics/components/unary/relief_valve/layer1
 	piping_layer = PIPING_LAYER_MIN

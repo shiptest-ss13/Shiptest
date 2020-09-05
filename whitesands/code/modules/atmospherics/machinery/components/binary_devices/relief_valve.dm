@@ -10,6 +10,7 @@
 	var/open_pressure = ONE_ATMOSPHERE * 3
 	var/close_pressure = ONE_ATMOSPHERE
 	pipe_state = "relief_valve-t"
+	shift_underlay_only = FALSE
 
 /obj/machinery/atmospherics/components/binary/relief_valve/layer1
 	piping_layer = PIPING_LAYER_MIN
@@ -29,10 +30,10 @@
 	cut_overlays()
 
 	if(!nodes[1] || !opened || !is_operational())
-		icon_state = "relief_valve-t"
+		icon_state = "relief_valve-t-[set_overlay_offset(piping_layer)]"
 		return
 
-	icon_state = "relief_valve-t-blown"
+	icon_state = "relief_valve-t-blown-[set_overlay_offset(piping_layer)]"
 
 /obj/machinery/atmospherics/components/binary/relief_valve/proc/open()
 	opened = TRUE
