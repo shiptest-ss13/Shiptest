@@ -18,6 +18,7 @@
 	var/frequency = FREQ_COMMON
 	var/canhear_range = 3  // The range around the radio in which mobs can hear what it receives.
 	var/emped = 0  // Tracks the number of EMPs currently stacked.
+	var/last_chatter_time // The time since we last played a radio chatter sound. (Waspstation edit - Radio Chatter #434)
 
 	var/broadcasting = FALSE  // Whether the radio will transmit dialogue it hears nearby.
 	var/listening = TRUE  // Whether the radio is currently receiving.
@@ -247,6 +248,9 @@
 
 	// All radios make an attempt to use the subspace system first
 	signal.send_to_receivers()
+
+	//At this point the signal was transmitted so play a sound			// Wasp Edit - Radio chatter
+	playsound(src, "sound/effects/walkietalkie.ogg", 20, FALSE)			// Wasp Edit - Radio chatter
 
 	// If the radio is subspace-only, that's all it can do
 	if (subspace_transmission)

@@ -166,6 +166,14 @@
 				if(R.independent && R.can_receive(frequency, levels))
 					radios += R
 
+	// Waspstation edit begin - Radio chatter #434
+	// Next, we'll have each radio play a small sound effect except for the one that broadcasted it.
+	for(var/obj/item/radio/radio in radios)
+		if(radio.last_chatter_time + 1 SECONDS < world.time && source != radio)
+			playsound(radio, "sound/effects/radio_chatter.ogg", 20, FALSE)
+			radio.last_chatter_time = world.time
+	// Waspstation edit end
+
 	// From the list of radios, find all mobs who can hear those.
 	var/list/receive = get_mobs_in_radio_ranges(radios)
 
@@ -185,6 +193,7 @@
 	var/rendered = virt.compose_message(virt, language, message, frequency, spans)
 	for(var/atom/movable/hearer in receive)
 		hearer.Hear(rendered, virt, language, message, frequency, spans)
+
 
 	// This following recording is intended for research and feedback in the use of department radio channels
 	if(length(receive))
