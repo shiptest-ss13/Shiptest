@@ -128,10 +128,7 @@
 				if(world.time - mecha.occupant.last_bumped <= 10)
 					return
 				mecha.occupant.last_bumped = world.time
-			if(mecha.occupant && (src.allowed(mecha.occupant) || src.check_access_list(mecha.operation_req_access)))
-				open()
-			else
-				do_animate("deny")
+				bumpopen(mecha.occupant) //there was likely a reason for this being snowflaked, but we can worry about that if/when it causes issues
 		return
 
 	if(isitem(AM))
