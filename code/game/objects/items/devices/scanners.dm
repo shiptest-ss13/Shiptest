@@ -461,6 +461,12 @@ GENE SCANNER
 		var/co2_concentration = environment.get_moles(/datum/gas/carbon_dioxide)/total_moles
 		var/plasma_concentration = environment.get_moles(/datum/gas/plasma)/total_moles
 
+		// WaspStation Start -- Atmos Analyzer Reformat (Issue #419)
+		to_chat(user, "<span class='boldnotice'>Results of analysis.</span>")
+		to_chat(user, "<span class='info'>Pressure: [round(pressure,0.01)] kPa</span>")
+		to_chat(user, "<span class='info'>Temperature: [round(environment.return_temperature()-T0C, 0.01)] &deg;C ([round(environment.return_temperature(), 0.01)] K)</span>")
+		// WaspStation End
+
 		if(abs(n2_concentration - N2STANDARD) < 20)
 			to_chat(user, "<span class='info'>Nitrogen: [round(n2_concentration*100, 0.01)] % ([round(environment.get_moles(/datum/gas/nitrogen), 0.01)] mol)</span>")
 		else
@@ -486,7 +492,6 @@ GENE SCANNER
 				continue
 			var/gas_concentration = environment.get_moles(id)/total_moles
 			to_chat(user, "<span class='alert'>[GLOB.meta_gas_info[id][META_GAS_NAME]]: [round(gas_concentration*100, 0.01)] % ([round(environment.get_moles(id), 0.01)] mol)</span>")
-		to_chat(user, "<span class='info'>Temperature: [round(environment.return_temperature()-T0C, 0.01)] &deg;C ([round(environment.return_temperature(), 0.01)] K)</span>")
 
 /obj/item/analyzer/AltClick(mob/user) //Barometer output for measuring when the next storm happens
 	..()
@@ -574,14 +579,16 @@ GENE SCANNER
 		var/cached_scan_results = air_contents.analyzer_results
 
 		if(total_moles > 0)
+			// WaspStation Start -- Atmos Analyzer Reformat (Issue #419)
 			render_list += "<span class='notice'>Moles: [round(total_moles, 0.01)] mol</span>\
-						 \n<span class='notice'>Volume: [volume] L</span>\
-						 \n<span class='notice'>Pressure: [round(pressure,0.01)] kPa</span>"
+							\n<span class='notice'>Volume: [volume] L</span>\
+							\n<span class='notice'>Pressure: [round(pressure,0.01)] kPa</span>\
+							\n<span class='notice'>Temperature: [round(temperature - T0C,0.01)] &deg;C ([round(temperature, 0.01)] K)</span>"
+			// WaspStation End
 
 			for(var/id in air_contents.get_gases())
 				var/gas_concentration = air_contents.get_moles(id)/total_moles
-				to_chat(user, "<span class='notice'>[GLOB.meta_gas_info[id][META_GAS_NAME]]: [round(gas_concentration*100, 0.01)] % ([round(air_contents.get_moles(id), 0.01)] mol)</span>")
-			to_chat(user, "<span class='notice'>Temperature: [round(temperature - T0C,0.01)] &deg;C ([round(temperature, 0.01)] K)</span>")
+				render_list += "<span class='notice'>[GLOB.meta_gas_info[id][META_GAS_NAME]]: [round(gas_concentration*100, 0.01)] % ([round(air_contents.get_moles(id), 0.01)] mol)</span>"  // WaspStation Edit -- Atmos Analyzer Reformat (Issue #419)
 
 		else
 			render_list += airs.len > 1 ? "<span class='notice'>This node is empty!</span>" : "<span class='notice'>[target] is empty!</span>"
