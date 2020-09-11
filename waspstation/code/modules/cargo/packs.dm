@@ -335,3 +335,14 @@
 					/obj/machinery/grill/cat,
 					/obj/item/reagent_containers/food/snacks/meat/slab/mouse)
 	crate_name = "catgrill crate"
+
+//////////////////////////////////////////////////////////////////////////////
+//////////////////////////// Miscellaneous ///////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////
+
+/datum/supply_pack/misc/jukebox
+	name = "Jukebox"
+	desc = "Things a bit dull in the workplace? How about jamming out to some tunes!"
+	cost = 35000
+	contains = list(/obj/machinery/jukebox)
+	crate_name = "Jukebox"

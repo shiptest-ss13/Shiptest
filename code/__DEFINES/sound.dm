@@ -3,11 +3,12 @@
 #define CHANNEL_ADMIN 1023
 #define CHANNEL_VOX 1022
 #define CHANNEL_JUKEBOX 1021
-#define CHANNEL_JUSTICAR_ARK 1020
-#define CHANNEL_HEARTBEAT 1019 //sound channel for heartbeats
-#define CHANNEL_AMBIENCE 1018
-#define CHANNEL_BUZZ 1017
-#define CHANNEL_BICYCLE 1016
+#define CHANNEL_JUKEBOX_START 1016 //The gap between this and CHANNEL_JUKEBOX determines the amount of free jukebox channels. This currently allows 6 jukebox channels to exist. Wasp Edit Cit #7367
+#define CHANNEL_JUSTICAR_ARK 1015
+#define CHANNEL_HEARTBEAT 1014 //sound channel for heartbeats
+#define CHANNEL_AMBIENCE 1013
+#define CHANNEL_BUZZ 1012
+#define CHANNEL_BICYCLE 1011
 
 //THIS SHOULD ALWAYS BE THE LOWEST ONE!
 //KEEP IT UPDATED
@@ -78,5 +79,5 @@
 #define INTERACTION_SOUND_RANGE_MODIFIER -3
 #define EQUIP_SOUND_VOLUME 30
 #define PICKUP_SOUND_VOLUME 15
-#define DROP_SOUND_VOLUME 20 
+#define DROP_SOUND_VOLUME 20
 #define YEET_SOUND_VOLUME 90
