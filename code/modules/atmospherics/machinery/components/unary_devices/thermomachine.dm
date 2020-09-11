@@ -227,7 +227,7 @@
 	target_temperature = min_temperature
 	investigate_log("was set to [target_temperature] K by [key_name(user)]", INVESTIGATE_ATMOS)
 	message_admins("[src.name] was minimized by [ADMIN_LOOKUPFLW(user)] at [ADMIN_COORDJMP(T)], [A]")
-	return TRUE
+	to_chat(user, "<span class='notice'>You minimize the target temperature on [src] to [target_temperature] K.</span>")
 
 /obj/machinery/atmospherics/components/unary/thermomachine/heater
 	name = "heater"
@@ -259,4 +259,4 @@
 	target_temperature = max_temperature
 	investigate_log("was set to [target_temperature] K by [key_name(user)]", INVESTIGATE_ATMOS)
 	message_admins("[src.name] was maximized by [ADMIN_LOOKUPFLW(user)] at [ADMIN_COORDJMP(T)], [A]")
-	return TRUE
+	to_chat(user, "<span class='notice'>You maximize the target temperature on [src] to [target_temperature] K.</span>")
