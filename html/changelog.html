@@ -50,6 +50,29 @@
 		-->
 		<div class="commit sansserif">
 
+			<h2 class="date">11 September 2020</h2>
+			<h3 class="author">SynnGraffkin updated:</h3>
+			<ul class="changes bgimages16">
+				<li class="rscadd">EVA access has been added to Security, Engineering, and Medical jobs during skeleton shifts.</li>
+				<li class="tweak">Boxstation EVA has been completely redesigned.</li>
+			</ul>
+			<h3 class="author">deathride58 updated:</h3>
+			<ul class="changes bgimages16">
+				<li class="rscadd">Jukeboxes now have realtime directional audio, complete with occlusion when you're far away or behind a wall.</li>
+				<li class="rscadd">More than one jukebox can play a song at a time now. Have up to 5 jukeboxes playing at once!</li>
+				<li class="rscadd">Devs can now control the wet and dry channels of sounds played via playsound_local. The new envwet and envdry arguments will control the volume of the wet and dry track, respectively.</li>
+				<li class="code_imp">Jukeboxes have been turned into a subsystem. Track initialization, audio playing, etc, are now handled via SSJukeboxes instead of via the jukebox object procs.</li>
+				<li class="config">Jukebox tracks now require an additional ID field at the end of their name. This will make it easier to add jukebox-style objects that are only capable of playing specific songs, without worrying about copyright issues.</li>
+				<li class="balance">The jukebox now falls off over a greater distance. You can now actually hear the jukebox while sitting in a far corner of the bar, or while passing through the main hallways.</li>
+				<li class="bugfix">Jukeboxes now properly remove themselves from the active jukebox list when destroyed</li>
+				<li class="tweak">Jukeboxes now have 6 audio channels available to them, up from the previous accidental 2 and previously intended 5 channels.</li>
+				<li class="bugfix">Jukeboxes now work again on clients running versions higher than 512.1459.</li>
+				<li class="bugfix">People will no longer have their ears consumed by an eldritch god if multiple jukeboxes are active and the first jukebox in the jukebox list stops playing, then tries to play again</li>
+				<li class="tweak">Instead of the debug text for invalid jukebox behavior being printed to world, the debug text is now restricted to the runtime panel.</li>
+				<li class="rscadd">Jukeboxes can be purchased from Cargo for $35,000. By Ignari-Coldstorm</li>
+				<li class="balance">More jobs can now interact with the Jukebox's playlist! Kitchen, Botany, Cargo, Engineering, and Theater access can now modify the jukebox instead of just bartender access. By Ignari-Coldstorm</li>
+			</ul>
+
 			<h2 class="date">08 September 2020</h2>
 			<h3 class="author">untrius updated:</h3>
 			<ul class="changes bgimages16">
@@ -424,24 +447,6 @@
 			<h3 class="author">Maldaris updated:</h3>
 			<ul class="changes bgimages16">
 				<li class="bugfix">PDA/ID now properly spawn when a Uniform is selected in loadout preferences</li>
-			</ul>
-
-			<h2 class="date">10 July 2020</h2>
-			<h3 class="author">BigFatAnimeTiddies updated:</h3>
-			<ul class="changes bgimages16">
-				<li class="bugfix">The cameras that monitor Pubbystation's engine have been properly reconnected to the right networks.</li>
-			</ul>
-			<h3 class="author">CRITAWAKETS updated:</h3>
-			<ul class="changes bgimages16">
-				<li class="balance">Nanotrasen has figured out that simple application of [REDACTED] removed the harmful Tachyite Particles inside of stimulum, making it non-toxic and safe to breathe.</li>
-			</ul>
-			<h3 class="author">Quantum-M updated:</h3>
-			<ul class="changes bgimages16">
-				<li class="tweak">Updates the plumbing sprites.</li>
-			</ul>
-			<h3 class="author">TheNeoGamer42 updated:</h3>
-			<ul class="changes bgimages16">
-				<li class="rscadd">Spacevines now have an announcement when they spawn</li>
 			</ul>
 		</div>
 
