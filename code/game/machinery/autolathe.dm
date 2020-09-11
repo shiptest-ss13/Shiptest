@@ -417,11 +417,21 @@
 	hacked = state
 	for(var/id in SSresearch.techweb_designs)
 		var/datum/design/D = SSresearch.techweb_design_by_id(id)
-		if((D.build_type & AUTOLATHE) && ("hacked" in D.category))
-			if(hacked)
+		if(D.build_type & AUTOLATHE)
+			if("hacked" in D.category)
+				if(hacked || obj_flags & EMAGGED) // Waspstation - Emag the lathe
+					stored_research.add_design(D)
+				else
+					stored_research.remove_design(D)
+			if(("emagged" in D.category) && (obj_flags & EMAGGED))
 				stored_research.add_design(D)
-			else
-				stored_research.remove_design(D)
+
+/obj/machinery/autolathe/emag_act(mob/user) // Waspstation - Emag the lathe
+	if(obj_flags & EMAGGED)
+		return
+	obj_flags |= EMAGGED
+	adjust_hacked(TRUE) // im in
+	to_chat(user, "<span class='warning'>You load the [src] with a series of specialized designs.</span>")
 
 /obj/machinery/autolathe/hacked/Initialize()
 	. = ..()
