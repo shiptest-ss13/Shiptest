@@ -6,7 +6,6 @@ Waspstation currently comes equipped with five maps.
 * [MetaStation](https://wiki.boomerstation.space/MetaStation)
 * [DeltaStation](https://wiki.boomerstation.space/DeltaStation)
 * [PubbyStation](https://wiki.boomerstation.space/PubbyStation)
-* [DonutStation](https://wiki.boomerstation.space/Donutstation)
 * [Kilostation](https://wiki.boomerstation.space/KiloStation)
 
 All maps have their own code file that is in the base of the _maps directory. Maps are loaded dynamically when the game starts. Follow this guideline when adding your own map, to your fork, for easy compatibility.
