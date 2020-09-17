@@ -24682,13 +24682,6 @@
 /obj/machinery/libraryscanner,
 /turf/open/floor/wood,
 /area/library)
-"bMO" = (
-/obj/machinery/newscaster{
-	pixel_x = -1;
-	pixel_y = -29
-	},
-/turf/open/floor/wood,
-/area/library)
 "bMP" = (
 /obj/structure/chair/stool/bar,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
@@ -58469,6 +58462,14 @@
 /obj/machinery/atmospherics/components/unary/vent_pump,
 /turf/open/floor/plating,
 /area/engine/atmos)
+"kiK" = (
+/obj/machinery/newscaster{
+	pixel_x = -1;
+	pixel_y = -29
+	},
+/mob/living/simple_animal/hostile/retaliate/poison/snake/bookworm,
+/turf/open/floor/wood,
+/area/library)
 "kiM" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /obj/structure/disposalpipe/segment,
@@ -108964,7 +108965,7 @@ bHU
 bHV
 bJB
 bzE
-bMO
+kiK
 bue
 bPV
 qLf
