@@ -39,9 +39,8 @@
 /obj/item/clothing/head/hardhat/cakehat
 	name = "cakehat"
 	desc = "You put the cake on your head. Brilliant."
-	icon_state = "hardhat0_cakehat"
-	item_state = "hardhat0_cakehat"
-	hat_type = "cakehat"
+	icon_state = "hardhat_cakehat"
+	item_state = "hardhat_cakehat"
 	lefthand_file = 'icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/clothing_righthand.dmi'
 	hitsound = 'sound/weapons/tap.ogg'
@@ -90,9 +89,8 @@
 /obj/item/clothing/head/hardhat/cakehat/energycake
 	name = "energy cake"
 	desc = "You put the energy sword on your cake. Brilliant."
-	icon_state = "hardhat0_energycake"
-	item_state = "hardhat0_energycake"
-	hat_type = "energycake"
+	icon_state = "hardhat_energycake"
+	item_state = "hardhat_energycake"
 	hitsound = 'sound/weapons/tap.ogg'
 	hitsound_on = 'sound/weapons/blade1.ogg'
 	hitsound_off = 'sound/weapons/tap.ogg'
@@ -144,9 +142,9 @@
 /obj/item/clothing/head/hardhat/pumpkinhead
 	name = "carved pumpkin"
 	desc = "A jack o' lantern! Believed to ward off evil spirits."
-	icon_state = "hardhat0_pumpkin"
-	item_state = "hardhat0_pumpkin"
-	hat_type = "pumpkin"
+	icon_state = "hardhat_pumpkin"
+	item_state = "hardhat_pumpkin"
+
 	clothing_flags = SNUG_FIT
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
@@ -181,9 +179,8 @@
 /obj/item/clothing/head/hardhat/reindeer
 	name = "novelty reindeer hat"
 	desc = "Some fake antlers and a very fake red nose."
-	icon_state = "hardhat0_reindeer"
-	item_state = "hardhat0_reindeer"
-	hat_type = "reindeer"
+	icon_state = "hardhat_reindeer"
+	item_state = "hardhat_reindeer"
 	flags_inv = 0
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	brightness_on = 1 //luminosity when on

@@ -117,10 +117,10 @@
 
 /obj/item/clothing/head/collectable/hardhat
 	name = "collectable hard hat"
-	desc = "WARNING! Offers no real protection, or luminosity, but damn, is it fancy!"
+	desc = "WARNING! Offers no real protection, but damn, is it fancy!"
 	clothing_flags = SNUG_FIT
-	icon_state = "hardhat0_yellow"
-	item_state = "hardhat0_yellow"
+	icon_state = "hardhat_standard"
+	item_state = "hardhat_standard"
 
 	dog_fashion = /datum/dog_fashion/head
 

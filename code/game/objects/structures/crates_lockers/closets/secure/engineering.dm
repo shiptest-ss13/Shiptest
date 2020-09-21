@@ -44,7 +44,8 @@
 		/obj/item/inducer = 2,
 		/obj/item/storage/toolbox/electrical = 3,
 		/obj/item/electronics/apc = 3,
-		/obj/item/multitool = 3)
+		/obj/item/multitool = 3,
+		/obj/item/clothing/head/safety_helmet = 2)
 	generate_items_inside(items_inside,src)
 
 /obj/structure/closet/secure_closet/engineering_welding
@@ -68,6 +69,7 @@
 /obj/structure/closet/secure_closet/engineering_personal/PopulateContents()
 	..()
 	new /obj/item/clothing/head/beret/eng(src) // Waspstation edit - Berets
+	new /obj/item/clothing/head/safety_helmet(src)
 	new /obj/item/clothing/glasses/meson/prescription(src) //Waspstation edit - Prescription HUDs
 	new /obj/item/radio/headset/headset_eng(src)
 	new /obj/item/storage/toolbox/mechanical(src)
@@ -95,5 +97,6 @@
 	new /obj/item/clothing/suit/fire/atmos(src)
 	new /obj/item/clothing/mask/gas/atmos(src)
 	new /obj/item/clothing/head/hardhat/atmos(src)
+	new /obj/item/clothing/head/safety_helmet(src)
 	new /obj/item/clothing/glasses/meson/engine/tray(src)
 	new /obj/item/extinguisher/advanced(src)

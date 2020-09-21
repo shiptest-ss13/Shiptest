@@ -62,6 +62,7 @@
 	new /obj/item/clothing/glasses/meson(src)
 	new /obj/item/survivalcapsule(src)
 	new /obj/item/assault_pod/mining(src)
+	new /obj/item/clothing/head/hardhat/mining(src)
 
 
 /**********************Shuttle Computer**************************/
