@@ -491,6 +491,13 @@
 
 	update_icon()
 
+/mob/living/simple_animal/bot/mulebot/get_status_tab_items()
+	. = ..()
+	if(cell)
+		. += "Charge Left: [cell.charge]/[cell.maxcharge]"
+	else
+		. += text("No Cell Inserted!")
+
 
 /mob/living/simple_animal/bot/mulebot/call_bot()
 	..()

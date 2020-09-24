@@ -83,6 +83,3 @@
 	for(var/client/X in GLOB.mentors)
 		if(X.key!=key && X.key!=C.key)	//check client/X is an Mentor and isn't the sender or recipient
 			to_chat(X, "<span class='mentornotice'><B>Mentor PM: [key_name(src, X, 0)]-&gt;[key_name(C, X, 0)]:</B> [msg]</span>") //inform X
-	for(var/client/A in GLOB.admins)
-		if(A.key!=key && A.key!=C.key)	//check client/A is an Mentor and isn't the sender or recipient
-			to_chat(A, "<span class='mentornotice'><B>Mentor PM: [key_name(src, A, 0)]-&gt;[key_name(C, A, 0)]:</B> [msg]</span>") //inform A

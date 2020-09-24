@@ -17,23 +17,14 @@
 	log_mentor("MENTORHELP: [key_name_mentor(src, 0, 0, 0, 0)]: [msg]")
 
 	for(var/client/X in GLOB.mentors)
-		X << 'sound/items/bikehorn.ogg'
+		SEND_SOUND(X, 'sound/items/bikehorn.ogg')
 		to_chat(X, mentor_msg)
-
-	for(var/client/A in GLOB.admins)
-		A << 'sound/items/bikehorn.ogg'
-		to_chat(A, mentor_msg)
 
 	to_chat(src, "<span class='mentornotice'>PM to-<b>Mentors</b>: [msg]</span>")
 
 	//spam prevention, 60 second delay
-	src.verbs -= /client/verb/mentorhelp
-	addtimer(CALLBACK(src, .proc/return_mhelp, src), 600, TIMER_STOPPABLE) //1 minute cooldown of mentor helps
-	return
-
-/client/proc/return_mhelp(var/client/C)
-	C.verbs += /client/verb/mentorhelp
-	return
+	remove_verb(src, /client/verb/mentorhelp)
+	addtimer(CALLBACK(GLOBAL_PROC, .proc/add_verb, src, /client/verb/mentorhelp), 1 MINUTES, TIMER_STOPPABLE)
 
 /proc/get_mentor_counts()
 	. = list("total" = 0, "afk" = 0, "present" = 0)
@@ -44,7 +35,7 @@
 		else
 			.["present"]++
 
-/proc/key_name_mentor(var/whom, var/include_link = null, var/include_name = 0, var/include_follow = 0, var/char_name_only = 0)
+/proc/key_name_mentor(whom, include_link = null, include_name = 0, include_follow = 0, char_name_only = 0)
 	var/mob/M
 	var/client/C
 	var/key

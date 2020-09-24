@@ -31,14 +31,19 @@
 /mob/living/simple_animal/hostile/blob/Initialize()
 	. = ..()
 	if(!independent) //no pulling people deep into the blob
-		verbs -= /mob/living/verb/pulled
+		remove_verb(src, /mob/living/verb/pulled)
 	else
 		pass_flags &= ~PASSBLOB
-		
+
 /mob/living/simple_animal/hostile/blob/Destroy()
 	if(overmind)
 		overmind.blob_mobs -= src
 	return ..()
+
+/mob/living/simple_animal/hostile/blob/get_status_tab_items()
+	. = ..()
+	if(overmind)
+		. += "Blobs to Win: [overmind.blobs_legit.len]/[overmind.blobwincount]"
 
 /mob/living/simple_animal/hostile/blob/blob_act(obj/structure/blob/B)
 	if(stat != DEAD && health < maxHealth)
@@ -128,7 +133,7 @@
 	if(factory && z != factory.z)
 		death()
 	..()
-	
+
 /mob/living/simple_animal/hostile/blob/blobspore/attack_ghost(mob/user)
 	. = ..()
 	if(.)

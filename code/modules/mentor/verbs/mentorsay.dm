@@ -2,24 +2,22 @@
 	set category = "Mentor"
 	set name = "Msay"
 	set hidden = 1
-	if(!check_mentor())	return
+	if(!check_mentor())
+		return
 
-	msg = copytext(sanitize(msg), 1, MAX_MESSAGE_LEN)
-	if(!msg)	return
+	msg = emoji_parse(copytext_char(sanitize(msg), 1, MAX_MESSAGE_LEN))
+	if(!msg)
+		return
 
-	msg = emoji_parse(msg)
-	log_mentor("MSAY: [key_name(src)] : [msg]")
+	mob.log_talk(msg, LOG_MSAY)
 
+	msg = "<span class='[check_rights(R_ADMIN, 0) ? "mentoradmin" : "mentor"]'><span class='boldnotice'>MENTOR:</span> <EM>[key_name(usr, 0, 0)]</EM>: <span class='message'>[msg]</span></span>"
+	to_chat(GLOB.mentors,
+		type = MESSAGE_TYPE_MODCHAT,
+		html = msg,
+		confidential = TRUE)
 
-	if(check_rights(R_ADMIN,0))
-		msg = "<span class='mentoradmin'><span class='boldnotice'>MENTOR:</span> <EM>[key_name(src, 0, 0)]</EM>: <span class='message'>[msg]</span></span>"
-		to_chat(GLOB.mentors, msg)
-		to_chat(GLOB.admins, msg)
-
-	else
-		msg = "<span class='mentor'><span class='boldnotice'>MENTOR:</span> <EM>[key_name(src, 0, 0)]</EM>: <span class='message'>[msg]</span></span>"
-		to_chat(GLOB.mentors, msg)
-		to_chat(GLOB.admins, msg)
+	SSblackbox.record_feedback("tally", "mentor_verb", 1, "Msay") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 /client/proc/get_mentor_say()
 	var/msg = input(src, null, "msay \"text\"") as text|null

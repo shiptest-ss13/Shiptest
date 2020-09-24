@@ -24,6 +24,12 @@
 			if(!D)  //will occur if an invalid rank is provided
 				continue
 			D.associate(GLOB.directory[ckey])	//find the client for a ckey if they are connected and associate them with the new mentor datum
+		for(var/admin in GLOB.admins)
+			var/client/C = admin
+			var/datum/mentors/D = new(C.ckey)
+			if(!D)  //will occur if an invalid rank is provided
+				continue
+			D.associate(GLOB.directory[C.ckey])	//find the client for a ckey if they are connected and associate them with the new mentor datum
 		qdel(query)
 	else
 		log_world("Using legacy mentor system.")

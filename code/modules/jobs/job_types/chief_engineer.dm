@@ -67,7 +67,7 @@
 	head = null
 	internals_slot = ITEM_SLOT_SUITSTORE
 
-	/datum/outfit/job/ce/engineeringcoordinator
+/datum/outfit/job/ce/engineeringcoordinator
 	name = "Chief Engineer (Engineering Coordinator)"
 
 	belt = null

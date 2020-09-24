@@ -175,7 +175,7 @@
 			stack_trace("Borg MMI lacked a brainmob")
 		mmi = null
 	if(connected_ai)
-		connected_ai.connected_robots -= src
+		set_connected_ai(null)
 	if(shell)
 		GLOB.available_ai_shells -= src
 	else
@@ -304,19 +304,19 @@
 	if(thruster_button)
 		thruster_button.icon_state = "ionpulse[ionpulse_on]"
 
-/mob/living/silicon/robot/Stat()
-	..()
-	if(statpanel("Status"))
-		if(cell)
-			stat("Charge Left:", "[cell.charge]/[cell.maxcharge]")
-		else
-			stat(null, text("No Cell Inserted!"))
+/mob/living/silicon/robot/get_status_tab_items()
+	. = ..()
+	. += ""
+	if(cell)
+		. += "Charge Left: [cell.charge]/[cell.maxcharge]"
+	else
+		. += text("No Cell Inserted!")
 
-		if(module)
-			for(var/datum/robot_energy_storage/st in module.storages)
-				stat("[st.name]:", "[st.energy]/[st.max_energy]")
-		if(connected_ai)
-			stat("Master AI:", connected_ai.name)
+	if(module)
+		for(var/datum/robot_energy_storage/st in module.storages)
+			. += "[st.name]: [st.energy]/[st.max_energy]"
+	if(connected_ai)
+		. += "Master AI: [connected_ai.name]"
 
 /mob/living/silicon/robot/restrained(ignore_grab)
 	. = 0
@@ -433,9 +433,7 @@
 	gib()
 
 /mob/living/silicon/robot/proc/UnlinkSelf()
-	if(src.connected_ai)
-		connected_ai.connected_robots -= src
-		src.connected_ai = null
+	set_connected_ai(null)
 	lawupdate = FALSE
 	lockcharge = FALSE
 	mobility_flags |= MOBILITY_FLAGS_DEFAULT
@@ -902,7 +900,7 @@
 		builtInCamera.c_tag = real_name	//update the camera name too
 	mainframe = AI
 	deployed = TRUE
-	connected_ai = mainframe
+	set_connected_ai(mainframe)
 	mainframe.connected_robots |= src
 	lawupdate = TRUE
 	lawsync()
@@ -1013,9 +1011,8 @@
 
 
 /mob/living/silicon/robot/proc/TryConnectToAI()
-	connected_ai = select_active_ai_with_fewest_borgs(z)
+	set_connected_ai(select_active_ai_with_fewest_borgs(z))
 	if(connected_ai)
-		connected_ai.connected_robots += src
 		lawsync()
 		lawupdate = 1
 		return TRUE
@@ -1036,3 +1033,14 @@
 		cell.charge = min(cell.charge + amount, cell.maxcharge)
 	if(repairs)
 		heal_bodypart_damage(repairs, repairs - 1)
+
+/mob/living/silicon/robot/proc/set_connected_ai(new_ai)
+	if(connected_ai == new_ai)
+		return
+	. = connected_ai
+	connected_ai = new_ai
+	if(.)
+		var/mob/living/silicon/ai/old_ai = .
+		old_ai.connected_robots -= src
+	if(connected_ai)
+		connected_ai.connected_robots |= src
