@@ -175,7 +175,7 @@
 	toxpwr = 2
 	taste_description = "fish"
 
-/datum/reagent/toxin/carpotoxin/on_mob_life(mob/living/carbon/M)
+/datum/reagent/toxin/carpotoxin/on_mob_metabolize(mob/living/carbon/M)
 	if(isfelinid(M))
 		toxpwr = 0
 	..()
