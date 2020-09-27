@@ -147,8 +147,13 @@ WaspStation End */
 	required_reagents = list(/datum/reagent/chlorine = 1, /datum/reagent/fluorine = 1, /datum/reagent/aluminium = 1, /datum/reagent/medicine/potass_iodide = 1, /datum/reagent/fuel/oil = 1)
 
 /datum/chemical_reaction/regen_jelly
+	results = list(/datum/reagent/medicine/regen_jelly = 1)
+	required_reagents = list(/datum/reagent/medicine/tetracordrazine = 1, /datum/reagent/toxin/slimejelly = 1)
+
+/datum/chemical_reaction/regen_jelly2
 	results = list(/datum/reagent/medicine/regen_jelly = 2)
-	required_reagents = list(/datum/reagent/medicine/tricordrazine = 1, /datum/reagent/toxin/slimejelly = 1)
+	required_reagents = list(/datum/reagent/medicine/omnizine = 1, /datum/reagent/toxin/slimejelly = 1)
+
 /*WaspStation Begin
 /datum/chemical_reaction/higadrite
 	results = list(/datum/reagent/medicine/higadrite = 3)
