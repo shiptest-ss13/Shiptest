@@ -15,3 +15,12 @@
 			/obj/item/storage/firstaid/regular = 1,
 			/obj/item/storage/box/handcuffs = 1,
 		)
+
+/obj/effect/spawner/lootdrop/singularitygen
+	name = "Tesla or Singulo spawner"
+	lootdoubles = FALSE
+
+	loot = list(
+		/obj/machinery/the_singularitygen/tesla = 1,
+		/obj/machinery/the_singularitygen = 1,
+	)
