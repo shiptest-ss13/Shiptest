@@ -15,8 +15,11 @@
 	if(istype(H))
 		// Checks here are necessary so it wouldn't overwrite the wings of a moth they spawned in
 		if(!("moth_wings" in H.dna.species.mutant_bodyparts))
-			H.dna.features["moth_wings"] = wing_type
-			H.dna.species.mutant_bodyparts |= "moth_wings"
+			if(!H.dna.features["moth_wings"])
+				H.dna.features["moth_wings"] = wing_type
+				H.dna.species.mutant_bodyparts |= "moth_wings"
+			else
+				H.dna.species.mutant_bodyparts["moth_wings"] = H.dna.features["moth_wings"]
 		H.update_body()
 
 /obj/item/organ/moth_wings/Remove(mob/living/carbon/human/H,  special = 0)
