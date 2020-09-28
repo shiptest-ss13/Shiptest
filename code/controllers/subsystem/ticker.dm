@@ -36,7 +36,7 @@ SUBSYSTEM_DEF(ticker)
 	var/selected_tip						// What will be the tip of the day?
 
 	var/timeLeft						//pregame timer
-	var/start_at
+	//var/start_at		Wasp Edit - Countdown after init
 
 	var/gametime_offset = 432000		//Deciseconds to add to world.time for station time.
 	var/station_time_rate_multiplier = 12		//factor of station time progressal vs real time.
@@ -139,7 +139,7 @@ SUBSYSTEM_DEF(ticker)
 
 		GLOB.syndicate_code_response_regex = codeword_match
 
-	start_at = world.time + (CONFIG_GET(number/lobby_countdown) * 10)
+	//start_at = world.time + (CONFIG_GET(number/lobby_countdown) * 10)		Wasp Edit - Countdown at init
 	if(CONFIG_GET(flag/randomize_shift_time))
 		gametime_offset = rand(0, 23) HOURS
 	else if(CONFIG_GET(flag/shift_time_realtime))
@@ -157,8 +157,8 @@ SUBSYSTEM_DEF(ticker)
 /datum/controller/subsystem/ticker/fire()
 	switch(current_state)
 		if(GAME_STATE_STARTUP)
-			if(Master.initializations_finished_with_no_players_logged_in)
-				start_at = world.time + (CONFIG_GET(number/lobby_countdown) * 10)
+			/*if(Master.initializations_finished_with_no_players_logged_in)		Wasp Edit - Countdown after init
+				timeLeft = (CONFIG_GET(number/lobby_countdown) * 10)		Wasp Edit - Countdown after init */
 			for(var/client/C in GLOB.clients)
 				window_flash(C, ignorepref = TRUE) //let them know lobby has opened up.
 			to_chat(world, "<span class='boldnotice'>Welcome to [station_name()]!</span>")
@@ -171,7 +171,7 @@ SUBSYSTEM_DEF(ticker)
 		if(GAME_STATE_PREGAME)
 				//lobby stats for statpanels
 			if(isnull(timeLeft))
-				timeLeft = max(0,start_at - world.time)
+				timeLeft = (CONFIG_GET(number/lobby_countdown) * 10)		// Wasp Edit - Countdown after init
 			totalPlayers = LAZYLEN(GLOB.new_player_list)
 			totalPlayersReady = 0
 			for(var/i in GLOB.new_player_list)
@@ -201,7 +201,7 @@ SUBSYSTEM_DEF(ticker)
 			if(!setup())
 				//setup failed
 				current_state = GAME_STATE_STARTUP
-				start_at = world.time + (CONFIG_GET(number/lobby_countdown) * 10)
+				timeLeft = (CONFIG_GET(number/lobby_countdown)) * 10		// Wasp Edit - Countdown after init
 				timeLeft = null
 				Master.SetRunLevel(RUNLEVEL_LOBBY)
 
@@ -570,15 +570,15 @@ SUBSYSTEM_DEF(ticker)
 		send2otherserver(news_source, news_message,"News_Report")
 
 /datum/controller/subsystem/ticker/proc/GetTimeLeft()
-	if(isnull(SSticker.timeLeft))
-		return max(0, start_at - world.time)
+	/*if(isnull(SSticker.timeLeft))		Wasp Edit - Countdown after init
+		return max(0, start_at - world.time)*/		//Wasp Edit - Countdown after init
 	return timeLeft
 
 /datum/controller/subsystem/ticker/proc/SetTimeLeft(newtime)
-	if(newtime >= 0 && isnull(timeLeft))	//remember, negative means delayed
+	/*if(newtime >= 0 && isnull(timeLeft))	//remember, negative means delayed		Wasp Edit Begin - Countdown after init
 		start_at = world.time + newtime
-	else
-		timeLeft = newtime
+	else		Wasp Edit - Countdown after init	Wasp Edit End*/
+	timeLeft = newtime
 
 //Everyone who wanted to be an observer gets made one now
 /datum/controller/subsystem/ticker/proc/create_observers()
