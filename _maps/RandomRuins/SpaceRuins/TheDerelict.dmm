@@ -3581,17 +3581,15 @@
 	},
 /turf/open/floor/plasteel/airless,
 /area/solar/derelict_starboard)
-"zA" = (
-/obj/machinery/power/solar_control{
-	dir = 1;
-	id = "derelictsolar";
-	name = "Primary Solar Control"
+"zD" = (
+/obj/machinery/computer/vaultcontroller{
+	dir = 8
 	},
 /obj/structure/cable{
-	icon_state = "1-2"
+	icon_state = "0-2"
 	},
 /turf/open/floor/plasteel/airless,
-/area/ruin/space/derelict/se_solar)
+/area/ruin/space/derelict/bridge/ai_upload)
 "zL" = (
 /obj/machinery/door/window{
 	base_state = "right";
@@ -3935,13 +3933,6 @@
 	},
 /turf/template_noop,
 /area/solar/derelict_starboard)
-"KJ" = (
-/obj/item/stack/cable_coil/cut,
-/obj/structure/cable{
-	icon_state = "2-4"
-	},
-/turf/open/floor/plating/airless,
-/area/ruin/space/derelict/bridge/ai_upload)
 "KN" = (
 /turf/closed/wall,
 /area/ruin/space/derelict/hallway/primary/port)
@@ -3988,13 +3979,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/derelict/solar_control)
-"Lr" = (
-/obj/machinery/computer/vaultcontroller{
-	dir = 8
-	},
-/obj/structure/cable,
-/turf/open/floor/plasteel/airless,
-/area/ruin/space/derelict/bridge/ai_upload)
 "Lv" = (
 /turf/closed/wall,
 /area/space/nearstation)
@@ -4281,6 +4265,27 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/space/derelict/bridge/access)
+"RV" = (
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plating/airless,
+/area/ruin/space/derelict/bridge/ai_upload)
+"RX" = (
+/obj/machinery/power/solar_control{
+	dir = 1;
+	id = "derelictsolar";
+	name = "Primary Solar Control"
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/cable,
+/turf/open/floor/plasteel/airless,
+/area/ruin/space/derelict/se_solar)
 "Sv" = (
 /turf/closed/wall/r_wall,
 /area/space/nearstation)
@@ -10621,7 +10626,7 @@ aa
 nx
 nO
 Yi
-zA
+RX
 zL
 IW
 YK
@@ -11111,7 +11116,7 @@ bj
 ax
 bO
 bE
-bO
+xr
 bO
 bO
 ax
@@ -11223,8 +11228,8 @@ bj
 bj
 ax
 bK
-Lr
-KJ
+zD
+RV
 Gh
 LX
 Jc
