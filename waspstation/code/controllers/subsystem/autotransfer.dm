@@ -13,5 +13,5 @@ SUBSYSTEM_DEF(autotransfer)
 
 /datum/controller/subsystem/autotransfer/fire()
 	if (world.time > targettime)
-		SSvote.initiate_vote("transfer",null) //TODO figure out how to not use null as the user
+		SSvote.initiate_vote("transfer",null, FALSE) // WaspStation Edit - Ghost Vote Rework
 		targettime = targettime + CONFIG_GET(number/vote_autotransfer_interval)

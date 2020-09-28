@@ -71,7 +71,7 @@ SUBSYSTEM_DEF(vote)
 					choices[GLOB.master_mode] += non_voters.len
 					if(choices[GLOB.master_mode] >= greatest_votes)
 						greatest_votes = choices[GLOB.master_mode]
-						
+
 			//WaspStation Begin - Autotransfer
 			else if(mode == "transfer")
 				var/factor = 1
@@ -87,8 +87,8 @@ SUBSYSTEM_DEF(vote)
 					else
 						factor = 1.4
 				choices["Initiate Crew Transfer"] += round(non_voters.len * factor)
-			//WaspStation End	
-				
+			//WaspStation End
+
 			else if(mode == "map")
 				for (var/non_voter_ckey in non_voters)
 					var/client/C = non_voters[non_voter_ckey]
@@ -193,7 +193,7 @@ SUBSYSTEM_DEF(vote)
 				return vote
 	return FALSE
 
-/datum/controller/subsystem/vote/proc/initiate_vote(vote_type, initiator_key)
+/datum/controller/subsystem/vote/proc/initiate_vote(vote_type, initiator_key, observer_vote_allowed = TRUE)
 	if(!Master.current_runlevel) //Server is still intializing.
 		to_chat(usr, "<span class='warning'>Cannot start vote, server is not done initializing.</span>")
 		return FALSE
@@ -214,7 +214,6 @@ SUBSYSTEM_DEF(vote)
 				to_chat(usr, "<span class='warning'>A vote was initiated recently, you must wait [DisplayTimeText(next_allowed_time-world.time)] before a new vote can be started!</span>")
 				return FALSE
 
-		SEND_SOUND(world, sound('sound/misc/notice2.ogg'))//WS Edit - Autotransfer
 		reset()
 		switch(vote_type)
 			if("restart")
@@ -224,6 +223,16 @@ SUBSYSTEM_DEF(vote)
 
 			//WS Begin - Autotransfer
 			if("transfer")
+				var/list/ignore_vote = list(
+					SHUTTLE_IGNITING,
+					SHUTTLE_CALL,
+					SHUTTLE_ENDGAME,
+					SHUTTLE_ESCAPE,
+					SHUTTLE_DOCKED,
+					SHUTTLE_PREARRIVAL
+				)
+				if(SSshuttle.emergency.mode in ignore_vote)
+					return FALSE
 				choices.Add("Initiate Crew Transfer","Continue Playing")
 			//WS End
 
@@ -254,18 +263,42 @@ SUBSYSTEM_DEF(vote)
 		if(mode == "custom")
 			text += "\n[question]"
 		log_vote(text)
+
+		// WaspStation Begin - Ghost Vote Rework
 		var/vp = CONFIG_GET(number/vote_period)
-		to_chat(world, "\n<font color='purple'><b>[text]</b>\nType <b>vote</b> or click <a href='?src=[REF(src)]'>here</a> to place your votes.\nYou have [DisplayTimeText(vp)] to vote.</font>")
-		time_remaining = round(vp/10)
-		for(var/c in GLOB.clients)
-			var/client/C = c
-			var/datum/action/vote/V = new
-			if(question)
-				V.name = "Vote: [question]"
-			C.player_details.player_actions += V
-			V.Grant(C.mob)
-			generated_actions += V
-		return TRUE
+		var/vote_message =  "\n<font color='purple'><b>[text]</b>\nType <b>vote</b> or click <a href='?src=[REF(src)]'>here</a> to place your votes.\nYou have [DisplayTimeText(vp)] to vote.</font>"
+		if(observer_vote_allowed)
+			to_chat(world, vote_message)
+			SEND_SOUND(world, sound('sound/misc/notice2.ogg'))
+			time_remaining = round(vp/10)
+			for(var/c in GLOB.clients)
+				var/client/C = c
+				var/datum/action/vote/V = new
+				if(question)
+					V.name = "Vote: [question]"
+				C.player_details.player_actions += V
+				V.Grant(C.mob)
+				generated_actions += V
+			return TRUE
+		else
+			var/list/valid_clients = GLOB.clients.Copy()
+			for(var/c in valid_clients)
+				var/client/C = c
+				if(C.mob && (isobserver(C.mob) || isnewplayer(C.mob) || ismouse(C.mob)) && !check_rights_for(C, R_ADMIN))
+					valid_clients -= C
+			for(var/c in valid_clients)
+				var/client/C = c
+				SEND_SOUND(C, sound('sound/misc/notice2.ogg'))
+				to_chat(C.mob, vote_message)
+				var/datum/action/vote/V = new
+				if(question)
+					V.name = "Vote: [question]"
+				C.player_details.player_actions += V
+				V.Grant(C.mob)
+				generated_actions += V
+			time_remaining = round(vp/10)
+			return TRUE
+		// WaspStation End - Ghost Vote Rework
 	return FALSE
 
 /datum/controller/subsystem/vote/proc/interface(client/C)
@@ -360,16 +393,16 @@ SUBSYSTEM_DEF(vote)
 				CONFIG_SET(flag/allow_vote_map, !CONFIG_GET(flag/allow_vote_map))
 		if("restart")
 			if(CONFIG_GET(flag/allow_vote_restart) || usr.client.holder)
-				initiate_vote("restart",usr.key)
+				initiate_vote("restart",usr.key, TRUE) // WaspStation Edit - Ghost Vote Rework
 		if("gamemode")
 			if(CONFIG_GET(flag/allow_vote_mode) || usr.client.holder)
-				initiate_vote("gamemode",usr.key)
+				initiate_vote("gamemode",usr.key, TRUE) // WaspStation Edit - Ghost Vote Rework
 		if("map")
 			if(CONFIG_GET(flag/allow_vote_map) || usr.client.holder)
-				initiate_vote("map",usr.key)
+				initiate_vote("map",usr.key, TRUE) // WaspStation Edit - Ghost Vote Rework
 		if("custom")
 			if(usr.client.holder)
-				initiate_vote("custom",usr.key)
+				initiate_vote("custom",usr.key, TRUE) // WaspStation Edit - Ghost Vote Rework
 		else
 			submit_vote(round(text2num(href_list["vote"])))
 	usr.vote()

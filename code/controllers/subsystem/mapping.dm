@@ -348,7 +348,7 @@ GLOBAL_LIST_EMPTY(the_station_areas)
 		return
 	if(SSvote.mode) //Theres already a vote running, default to rotation.
 		maprotate()
-	SSvote.initiate_vote("map", "automatic map rotation")
+	SSvote.initiate_vote("map", "automatic map rotation", TRUE) // WaspStation Edit - Ghost Voting Rework
 
 /datum/controller/subsystem/mapping/proc/changemap(var/datum/map_config/VM)
 	if(!VM.MakeNextMap())
