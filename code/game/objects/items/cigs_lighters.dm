@@ -806,15 +806,18 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 ///////////////
 /obj/item/clothing/mask/vape
 	name = "\improper E-Cigarette"
-	desc = "A classy and highly sophisticated electronic cigarette, for classy and dignified gentlemen. A warning label reads \"Warning: Do not fill with flammable materials.\""//<<< i'd vape to that.
+	desc = "A classy and highly sophisticated electronic cigarette, for classy and dignified gentlemen. A warning label reads \"Warning: Do not fill with flammable materials.\" Must be lit via interfacing with a PDA."//<<< i'd vape to that.
 	icon = 'icons/obj/clothing/masks.dmi'
-	icon_state = "red_vape"
-	item_state = null
+	icon_state = "red_vapeoff"
+	item_state = "red_vapeoff"
 	w_class = WEIGHT_CLASS_TINY
+	var/on = FALSE
 	var/chem_volume = 100
 	var/vapetime = 0 //this so it won't puff out clouds every tick
 	var/screw = 0 // kinky
 	var/super = 0 //for the fattest vapes dude.
+	var/vapecolor  //What color the vape should be. If this is not filled out it will automatically be set on Initialize() - Waspstation edit - Lightable e-cigarettes
+	var/overlayname = "vape" //Used to decide what overlay sprites to use - Waspstation edit - Lightable e-cigarettes
 
 /obj/item/clothing/mask/vape/suicide_act(mob/user)
 	user.visible_message("<span class='suicide'>[user] is puffin hard on dat vape, [user.p_they()] trying to join the vape life on a whole notha plane!</span>")//it doesn't give you cancer, it is cancer
@@ -825,23 +828,28 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	. = ..()
 	create_reagents(chem_volume, NO_REACT)
 	reagents.add_reagent(/datum/reagent/drug/nicotine, 50)
-	if(!param_color)
-		param_color = pick("red","blue","black","white","green","purple","yellow","orange")
-	icon_state = "[param_color]_vape"
-	item_state = "[param_color]_vape"
+	if(!vapecolor) //Begin Waspstation edit - Lightable e-cigarettes
+		if(!param_color)
+			param_color = pick("red","blue","black","white","green","purple","yellow","orange")
+		vapecolor = param_color
+	icon_state = "[vapecolor]_vapeoff" 
+	item_state = "[vapecolor]_vapeoff" //End Waspstation edit - Lightable e-cigarettes
 
 /obj/item/clothing/mask/vape/attackby(obj/item/O, mob/user, params)
 	if(O.tool_behaviour == TOOL_SCREWDRIVER)
+		if(on)
+			to_chat(user, "<span class='warning'>You need to turn \the [src] off first!</span>")
+			return
 		if(!screw)
 			screw = TRUE
 			to_chat(user, "<span class='notice'>You open the cap on [src].</span>")
 			reagents.flags |= OPENCONTAINER
 			if(obj_flags & EMAGGED)
-				add_overlay("vapeopen_high")
+				add_overlay("[overlayname]open_high") //Waspstation edit - lightable e-cigarettes
 			else if(super)
-				add_overlay("vapeopen_med")
+				add_overlay("[overlayname]open_med") //Waspstation edit - lightable e-cigarettes
 			else
-				add_overlay("vapeopen_low")
+				add_overlay("[overlayname]open_low") //Waspstation edit - lightable e-cigarettes
 		else
 			screw = FALSE
 			to_chat(user, "<span class='notice'>You close the cap on [src].</span>")
@@ -854,17 +862,38 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 				cut_overlays()
 				super = 1
 				to_chat(user, "<span class='notice'>You increase the voltage of [src].</span>")
-				add_overlay("vapeopen_med")
+				add_overlay("[overlayname]open_med") //Waspstation edit - lightable e-cigarettes
 			else
 				cut_overlays()
 				super = 0
 				to_chat(user, "<span class='notice'>You decrease the voltage of [src].</span>")
-				add_overlay("vapeopen_low")
+				add_overlay("[overlayname]open_low") //Waspstation edit - lightable e-cigarettes
 
 		if(screw && (obj_flags & EMAGGED))
 			to_chat(user, "<span class='warning'>[src] can't be modified!</span>")
 		else
 			..()
+	if(istype(O, /obj/item/pda)) //Begin Waspstation edit - Lightable e-cigarettes
+		if(screw)
+			to_chat(user, "<span class='notice'>You need to close the cap first!</span>")
+			return
+		on = !on
+		if(on)
+			user.visible_message("<span class='notice'>[user] turns on [user.p_their()] [src] with a holographic flame from [user.p_their()] [O].</span>",
+								 "<span class='notice'>You turn on your [src] with a holographic flame from your [O].</span>")
+			reagents.flags |= NO_REACT
+			icon_state = "[vapecolor]_vape"
+			item_state = "[vapecolor]_vape"
+
+		else
+			user.visible_message("<span class='notice'>[user] turns off [user.p_their()] [src] with a holographic gust from [user.p_their()] [O].</span>",
+								 "<span class='notice'>You turn off your [src] with a holographic gust from your [O].</span>")
+			reagents.flags &= NO_REACT
+			icon_state = "[vapecolor]_vapeoff"
+			item_state = "[vapecolor]_vapeoff"
+		src.update_icon_state()
+		user.update_inv_wear_mask()
+		user.update_inv_hands() //End Waspstation edit - Lightable e-cigarettes
 
 
 /obj/item/clothing/mask/vape/emag_act(mob/user)// I WON'T REGRET WRITTING THIS, SURLY.
@@ -874,7 +903,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 			obj_flags |= EMAGGED
 			super = 0
 			to_chat(user, "<span class='warning'>You maximize the voltage of [src].</span>")
-			add_overlay("vapeopen_high")
+			add_overlay("[overlayname]open_high") //Waspstation edit - lightable e-cigarettes
 			var/datum/effect_system/spark_spread/sp = new /datum/effect_system/spark_spread //for effect
 			sp.set_up(5, 1, src)
 			sp.start()
@@ -890,18 +919,20 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 
 /obj/item/clothing/mask/vape/equipped(mob/user, slot)
 	. = ..()
-	if(slot == ITEM_SLOT_MASK)
-		if(!screw)
-			to_chat(user, "<span class='notice'>You start puffing on the vape.</span>")
-			reagents.flags &= ~(NO_REACT)
-			START_PROCESSING(SSobj, src)
-		else //it will not start if the vape is opened.
-			to_chat(user, "<span class='warning'>You need to close the cap first!</span>")
+	if(slot == ITEM_SLOT_MASK) //Begin Waspstation edit - Lightable e-cigarettes
+		if(on)
+			if(!screw)
+				to_chat(user, "<span class='notice'>You start puffing on \the [src].</span>")
+				START_PROCESSING(SSobj, src)
+			else //it will not start if the vape is opened.
+				to_chat(user, "<span class='warning'>You need to close the cap first!</span>")
+		else
+			to_chat(user, "<span class='notice'>You need to turn on \the [src] first!")	//End Waspstation edit - Lightable e-cigarettes
 
 /obj/item/clothing/mask/vape/dropped(mob/user)
-	. = ..()
-	if(user.get_item_by_slot(ITEM_SLOT_MASK) == src)
-		reagents.flags |= NO_REACT
+	. = ..()	
+	if(user.get_item_by_slot(ITEM_SLOT_MASK) == src)	
+		reagents.flags |= NO_REACT	
 		STOP_PROCESSING(SSobj, src)
 
 /obj/item/clothing/mask/vape/proc/hand_reagents()//had to rename to avoid duplicate error
@@ -966,3 +997,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 
 	if(reagents && reagents.total_volume)
 		hand_reagents()
+
+/obj/item/clothing/mask/vape/examine(mob/user) //Begin Waspstation edit - Lightable e-cigarettes
+	. = ..()
+	to_chat(user, "<span class='notice>It is currently [on ? "on" : "off"].</span>") //End Waspstation edit - Lightable e-cigarettes
