@@ -1560,7 +1560,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 				if("flavor_text")
 					var/msg = stripped_multiline_input(usr, "Set the flavor text in your 'examine' verb. This can also be used for OOC notes and preferences!", "Flavor Text", features["flavor_text"], 4096, TRUE)
-					if(!isnull(msg))
+					if(msg) //Waspstation edit - "Cancel" does not clear flavor text
 						features["flavor_text"] = html_decode(msg)
 
 				if("hair")
