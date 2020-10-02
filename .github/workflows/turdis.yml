@@ -47,8 +47,7 @@ jobs:
 
       - name: Run Linter
         id: linter
-        run: |
-          ~/dreamchecker > ${GITHUB_WORKSPACE}/output-annotations.txt 2>&1
+        run: ~/dreamchecker > ${GITHUB_WORKSPACE}/output-annotations.txt 2>&1
           
       - name: Annotate Linter
         uses: WaspStation/DreamAnnotate@v1
