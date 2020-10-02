@@ -884,6 +884,8 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 			reagents.flags |= NO_REACT
 			icon_state = "[vapecolor]_vape"
 			item_state = "[vapecolor]_vape"
+			if(user.get_item_by_slot(ITEM_SLOT_MASK) == src)
+				START_PROCESSING(SSobj, src)
 
 		else
 			user.visible_message("<span class='notice'>[user] turns off [user.p_their()] [src] with a holographic gust from [user.p_their()] [O].</span>",
@@ -891,6 +893,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 			reagents.flags &= NO_REACT
 			icon_state = "[vapecolor]_vapeoff"
 			item_state = "[vapecolor]_vapeoff"
+			STOP_PROCESSING(SSobj, src)
 		src.update_icon_state()
 		user.update_inv_wear_mask()
 		user.update_inv_hands() //End Waspstation edit - Lightable e-cigarettes
