@@ -1,8 +1,12 @@
 ---
 name: Feature request
 about: Suggest an idea for the codebase
+title: "[FEATURE]"
+labels: Feature
+assignees: ''
 
 ---
+
 <!-- Write **BELOW** The Headers and **ABOVE** The comments else it may not be viewable -->
 ## Name of feature:
 <!-- PLEASE at least include a name. -->
