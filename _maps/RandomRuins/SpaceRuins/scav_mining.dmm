@@ -6,17 +6,29 @@
 /turf/closed/mineral,
 /area/ruin/space/has_grav)
 "c" = (
-/turf/open/floor/plating/asteroid,
-/area/ruin/space/has_grav)
+/obj/machinery/door/airlock/hatch,
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/powered)
 "d" = (
-/obj/item/mining_scanner,
-/turf/open/floor/plating/asteroid,
-/area/ruin/space/has_grav)
+/obj/item/radio/off,
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/powered)
 "e" = (
-/obj/item/pickaxe/drill,
-/turf/open/floor/plating/asteroid,
+/mob/living/simple_animal/hostile/asteroid/hivelord,
+/turf/open/floor/plating/asteroid/airless,
 /area/ruin/space/has_grav)
 "f" = (
+/obj/item/stack/medical/bruise_pack,
+/turf/open/floor/plating/asteroid/airless,
+/area/ruin/space/has_grav)
+"g" = (
+/obj/item/stack/ore/gold{
+	amount = 2;
+	pixel_x = 13
+	},
+/turf/open/floor/plating/asteroid/airless,
+/area/ruin/space/has_grav)
+"h" = (
 /obj/item/stack/ore/iron{
 	amount = 15;
 	pixel_x = 15;
@@ -27,36 +39,12 @@
 	pixel_x = 5;
 	pixel_y = -2
 	},
-/turf/open/floor/plating/asteroid,
-/area/ruin/space/has_grav)
-"g" = (
-/obj/item/stack/ore/plasma{
-	amount = 5;
-	pixel_x = -15;
-	pixel_y = -10
-	},
-/obj/item/stack/ore/uranium{
-	pixel_x = -10
-	},
-/obj/item/stack/ore/silver{
-	amount = 5;
-	pixel_x = 6;
-	pixel_y = 5
-	},
-/turf/open/floor/plating/asteroid,
-/area/ruin/space/has_grav)
-"h" = (
-/obj/item/stack/ore/plasma{
-	amount = 10;
-	pixel_x = -10;
-	pixel_y = -10
-	},
-/turf/open/floor/plating/asteroid,
+/turf/open/floor/plating/asteroid/airless,
 /area/ruin/space/has_grav)
 "i" = (
-/obj/item/stack/ore/titanium,
-/turf/open/floor/plating/asteroid,
-/area/ruin/space/has_grav)
+/obj/machinery/portable_atmospherics/canister/air,
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/powered)
 "j" = (
 /obj/item/stack/ore/iron{
 	amount = 20;
@@ -77,9 +65,95 @@
 	pixel_x = 5;
 	pixel_y = -10
 	},
-/turf/open/floor/plating/asteroid,
+/turf/open/floor/plating/asteroid/airless,
 /area/ruin/space/has_grav)
-"k" = (
+"l" = (
+/obj/item/stack/ore/titanium,
+/turf/open/floor/plating/asteroid/airless,
+/area/ruin/space/has_grav)
+"n" = (
+/obj/machinery/portable_atmospherics/pump,
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/powered)
+"o" = (
+/turf/closed/wall/rust,
+/area/ruin/space/has_grav/powered)
+"p" = (
+/obj/item/stack/ore/plasma{
+	amount = 5;
+	pixel_x = -15;
+	pixel_y = -10
+	},
+/obj/item/stack/ore/uranium{
+	pixel_x = -10
+	},
+/obj/item/stack/ore/silver{
+	amount = 5;
+	pixel_x = 6;
+	pixel_y = 5
+	},
+/turf/open/floor/plating/asteroid/airless,
+/area/ruin/space/has_grav)
+"q" = (
+/obj/machinery/portable_atmospherics/scrubber,
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/powered)
+"t" = (
+/obj/item/stack/medical/ointment,
+/turf/open/floor/plating/asteroid/airless,
+/area/ruin/space/has_grav)
+"u" = (
+/turf/open/floor/plating/asteroid/airless,
+/area/ruin/space/has_grav)
+"v" = (
+/obj/machinery/portable_atmospherics/canister/oxygen,
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/powered)
+"w" = (
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/powered)
+"y" = (
+/obj/item/mining_scanner,
+/turf/open/floor/plating/asteroid/airless,
+/area/ruin/space/has_grav)
+"z" = (
+/obj/machinery/power/port_gen/pacman,
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/powered)
+"C" = (
+/obj/item/stack/ore/gold{
+	amount = 2;
+	pixel_x = 13;
+	pixel_y = 10
+	},
+/turf/open/floor/plating/asteroid/airless,
+/area/ruin/space/has_grav)
+"D" = (
+/obj/item/pickaxe/drill,
+/turf/open/floor/plating/asteroid/airless,
+/area/ruin/space/has_grav)
+"I" = (
+/obj/effect/decal/cleanable/oil/streak,
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/powered)
+"K" = (
+/obj/item/stack/spacecash/c500,
+/turf/open/floor/plating/asteroid/airless,
+/area/ruin/space/has_grav)
+"O" = (
+/obj/item/tank/internals/oxygen,
+/obj/item/tank/internals/oxygen,
+/obj/item/tank/jetpack/improvised,
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/powered)
+"P" = (
+/obj/item/stack/sheet/glass/fifty,
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/powered)
+"Q" = (
+/turf/closed/mineral/random,
+/area/ruin/space/has_grav)
+"S" = (
 /obj/item/stack/ore/iron{
 	amount = 15;
 	pixel_x = -10;
@@ -95,24 +169,22 @@
 	pixel_x = -9;
 	pixel_y = 5
 	},
-/turf/open/floor/plating/asteroid,
+/turf/open/floor/plating/asteroid/airless,
 /area/ruin/space/has_grav)
-"l" = (
-/obj/item/stack/ore/gold{
-	amount = 2;
-	pixel_x = 13;
-	pixel_y = 10
+"U" = (
+/obj/item/stack/ore/plasma{
+	amount = 10;
+	pixel_x = -10;
+	pixel_y = -10
 	},
-/turf/open/floor/plating/asteroid,
+/turf/open/floor/plating/asteroid/airless,
 /area/ruin/space/has_grav)
-"m" = (
-/obj/item/stack/ore/gold{
-	amount = 2;
-	pixel_x = 13
-	},
-/turf/open/floor/plating/asteroid,
-/area/ruin/space/has_grav)
-"n" = (
+"W" = (
+/obj/structure/door_assembly/door_assembly_hatch,
+/obj/effect/decal/cleanable/oil,
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/powered)
+"Y" = (
 /obj/item/stack/ore/iron{
 	amount = 5;
 	pixel_x = -10;
@@ -122,70 +194,7 @@
 	pixel_x = -5;
 	pixel_y = 10
 	},
-/turf/open/floor/plating/asteroid,
-/area/ruin/space/has_grav)
-"o" = (
-/turf/closed/wall/rust,
-/area/ruin/space/has_grav/powered)
-"p" = (
-/mob/living/simple_animal/hostile/asteroid/hivelord,
-/turf/open/floor/plating/asteroid,
-/area/ruin/space/has_grav)
-"q" = (
-/turf/open/floor/plating,
-/area/ruin/space/has_grav/powered)
-"t" = (
-/obj/machinery/power/port_gen/pacman,
-/turf/open/floor/plating,
-/area/ruin/space/has_grav/powered)
-"u" = (
-/obj/item/stack/medical/bruise_pack,
-/turf/open/floor/plating/asteroid,
-/area/ruin/space/has_grav)
-"v" = (
-/obj/item/stack/sheet/glass/fifty,
-/turf/open/floor/plating,
-/area/ruin/space/has_grav/powered)
-"w" = (
-/obj/item/stack/medical/ointment,
-/turf/open/floor/plating/asteroid,
-/area/ruin/space/has_grav)
-"x" = (
-/obj/machinery/door/airlock/hatch,
-/turf/open/floor/plating,
-/area/ruin/space/has_grav/powered)
-"y" = (
-/obj/item/stack/spacecash/c500,
-/turf/open/floor/plating/asteroid,
-/area/ruin/space/has_grav)
-"z" = (
-/obj/machinery/portable_atmospherics/canister/air,
-/turf/open/floor/plating,
-/area/ruin/space/has_grav/powered)
-"A" = (
-/obj/machinery/portable_atmospherics/scrubber,
-/turf/open/floor/plating,
-/area/ruin/space/has_grav/powered)
-"B" = (
-/obj/item/radio/off,
-/turf/open/floor/plating,
-/area/ruin/space/has_grav/powered)
-"C" = (
-/obj/machinery/portable_atmospherics/pump,
-/turf/open/floor/plating,
-/area/ruin/space/has_grav/powered)
-"D" = (
-/obj/item/tank/internals/oxygen,
-/obj/item/tank/internals/oxygen,
-/obj/item/tank/jetpack/improvised,
-/turf/open/floor/plating,
-/area/ruin/space/has_grav/powered)
-"E" = (
-/obj/machinery/portable_atmospherics/canister/oxygen,
-/turf/open/floor/plating,
-/area/ruin/space/has_grav/powered)
-"Q" = (
-/turf/closed/mineral/random,
+/turf/open/floor/plating/asteroid/airless,
 /area/ruin/space/has_grav)
 
 (1,1,1) = {"
@@ -324,10 +333,10 @@ Q
 a
 Q
 Q
-c
-c
-d
-c
+u
+u
+y
+u
 Q
 Q
 Q
@@ -346,19 +355,19 @@ Q
 a
 Q
 Q
-c
-c
-e
-p
-c
-c
-c
-c
 u
-c
-c
-c
-c
+u
+D
+e
+u
+u
+u
+u
+f
+u
+u
+u
+u
 Q
 Q
 Q
@@ -371,16 +380,16 @@ Q
 Q
 Q
 Q
-f
-i
+h
 l
-c
+C
 u
-w
-c
-d
-e
-c
+f
+t
+u
+y
+D
+u
 Q
 Q
 Q
@@ -393,16 +402,16 @@ Q
 Q
 Q
 Q
-g
-j
-m
-c
-c
-c
-y
 p
-c
-c
+j
+g
+u
+u
+u
+K
+e
+u
+u
 Q
 Q
 Q
@@ -415,13 +424,13 @@ a
 Q
 Q
 Q
-h
-k
-n
-c
-c
-c
-c
+U
+S
+Y
+u
+u
+u
+u
 Q
 Q
 Q
@@ -442,7 +451,7 @@ Q
 o
 o
 o
-x
+W
 o
 o
 o
@@ -462,11 +471,11 @@ Q
 Q
 Q
 o
-q
-v
-q
-z
-z
+w
+P
+I
+i
+i
 o
 Q
 Q
@@ -484,11 +493,11 @@ Q
 Q
 Q
 o
+w
+w
+w
 q
-q
-q
-A
-C
+n
 o
 Q
 Q
@@ -506,11 +515,11 @@ Q
 Q
 Q
 o
-q
-q
-q
-B
-q
+w
+w
+w
+d
+w
 o
 Q
 Q
@@ -528,11 +537,11 @@ Q
 Q
 Q
 o
-q
-q
-q
-q
-D
+w
+w
+w
+w
+O
 o
 Q
 Q
@@ -550,11 +559,11 @@ Q
 Q
 Q
 o
-t
-q
-q
-q
-E
+z
+w
+w
+w
+v
 o
 Q
 a
@@ -574,7 +583,7 @@ Q
 o
 o
 o
-x
+c
 o
 o
 o
