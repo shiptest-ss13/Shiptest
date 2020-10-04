@@ -1219,7 +1219,7 @@ GLOBAL_VAR_INIT(total_borer_hosts_needed, 3)
 	to_chat(owner.current, "<span class='notice'>You are the [name].</span>")
 	to_chat(owner.current, "You are a brain slug that worms its way into the head of its victim. Use stealth, persuasion and your powers of mind control to keep you, your host and your eventual spawn safe and warm.")
 	to_chat(owner.current, "Sugar nullifies your abilities, avoid it at all costs!")
-	to_chat(owner.current, "You can speak to your fellow borers by prefixing your messages with '.o'. Check out your Borer tab to see your abilities. To reproduce, you must have 200 chemicals and be controlling a host.")
+	to_chat(owner.current, "You can speak to your fellow borers by prefixing your messages with '.j'. Check out your Borer tab to see your abilities. To reproduce, you must have 200 chemicals and be controlling a host.")
 	return ..()
 
 //Objective

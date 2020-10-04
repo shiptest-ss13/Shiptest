@@ -43,8 +43,8 @@
 
 //Wasp begin - Borers
 #define MODE_BORER "borer"
-#define MODE_KEY_BORER "o"
-#define MODE_TOKEN_BORER ":o"
+#define MODE_KEY_BORER "j"
+#define MODE_TOKEN_BORER ":j"
 //Wasp end
 
 #define MODE_VOCALCORDS "cords"
