@@ -153,6 +153,19 @@ we use a hook instead
 /datum/gas_mixture/proc/get_moles(gas_type)
 /datum/gas_mixture/proc/set_moles(gas_type, moles)
 /datum/gas_mixture/proc/scrub_into(datum/gas_mixture/target, ratio, list/gases)
+
+// VV WRAPPERS - EXTOOLS HOOKED PROCS DO NOT TAKE ARGUMENTS FROM CALL() FOR SOME REASON.
+/datum/gas_mixture/proc/vv_set_moles(gas_type, moles)
+	return set_moles(gas_type, moles)
+/datum/gas_mixture/proc/vv_get_moles(gas_type)
+	return get_moles(gas_type)
+/datum/gas_mixture/proc/vv_set_temperature(new_temp)
+	return set_temperature(new_temp)
+/datum/gas_mixture/proc/vv_set_volume(new_volume)
+	return set_volume(new_volume)
+/datum/gas_mixture/proc/vv_react(datum/holder)
+	return react(holder)
+
 /datum/gas_mixture/proc/mark_immutable()
 /datum/gas_mixture/proc/mark_vacuum()
 /datum/gas_mixture/proc/get_gases()
