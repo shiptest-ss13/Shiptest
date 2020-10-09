@@ -6,6 +6,14 @@
 
 GLOBAL_LIST_INIT(spacepods_list, list())
 
+GLOBAL_LIST_INIT(spacepod_verb_list,  list(
+	/obj/spacepod/verb/exit_pod,
+	/obj/spacepod/verb/lock_pod,
+	/obj/spacepod/verb/toggle_brakes,
+	/obj/spacepod/verb/toggleLights,
+	/obj/spacepod/verb/toggleDoors
+))
+
 /obj/spacepod
 	name = "space pod"
 	desc = "A frame for a spacepod."
@@ -638,6 +646,8 @@ GLOBAL_LIST_INIT(spacepods_list, list())
 		return FALSE
 	M.stop_pulling()
 	M.forceMove(src)
+	if(allow_pilot)
+		add_verb(M, GLOB.spacepod_verb_list)
 	playsound(src, 'sound/machines/windowdoor.ogg', 50, 1)
 	return TRUE
 
@@ -649,6 +659,7 @@ GLOBAL_LIST_INIT(spacepods_list, list())
 		LAZYREMOVE(M.mousemove_intercept_objects, src)
 		if(M.click_intercept == src)
 			M.click_intercept = null
+		remove_verb(M, GLOB.spacepod_verb_list)
 		desired_angle = null // since there's no pilot there's no one aiming it.
 	else if(M in passengers)
 		passengers -= M
