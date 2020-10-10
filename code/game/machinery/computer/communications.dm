@@ -26,6 +26,7 @@
 	var/const/STATE_CONFIRM_LEVEL = 9
 	var/const/STATE_TOGGLE_EMERGENCY = 10
 	var/const/STATE_PURCHASE = 11
+	var/const/STATE_NIGHTSHIFT = 12 //Waspstation Edit - Communications Consoles can control Night Shift
 
 	var/stat_msg1
 	var/stat_msg2
@@ -258,6 +259,28 @@
 			message_admins("[ADMIN_LOOKUPFLW(usr)] disabled emergency maintenance access.")
 			deadchat_broadcast(" disabled emergency maintenance access at <span class='name'>[get_area_name(usr, TRUE)]</span>.", "<span class='name'>[usr.real_name]</span>", usr, message_type=DEADCHAT_ANNOUNCEMENT)
 			state = STATE_DEFAULT
+		if("nightshift") // Begin Waspstation Edit - Communications Consoles can control Night Shift
+			if(href_list["setnightshift"])
+				switch(href_list["setnightshift"])
+					if("auto")
+						SSnightshift.can_fire = TRUE
+						SSnightshift.fire()
+						log_game("[key_name(usr)] has returned the night shift to automatic running.")
+						message_admins("[ADMIN_LOOKUPFLW(usr)] has returned the night shift to automatic running.")
+					if("on")
+						SSnightshift.can_fire = FALSE
+						SSnightshift.update_nightshift(TRUE, TRUE)
+						log_game("[key_name(usr)] has overridden the night shift to be on.")
+						message_admins("[ADMIN_LOOKUPFLW(usr)] has overridden the night shift to be on.")
+					if("off")
+						SSnightshift.can_fire = FALSE
+						SSnightshift.update_nightshift(FALSE, TRUE)
+						log_game("[key_name(usr)] has overridden the night shift to be off.")
+						message_admins("[ADMIN_LOOKUPFLW(usr)] has overridden the night shift to be off.")
+					else
+						CRASH("Invalid href supplied!")
+			else
+				state = STATE_NIGHTSHIFT //End Waspstation Edit - Communications Consoles can control Night Shift
 
 		// Status display stuff
 		if("setstat")
@@ -474,6 +497,7 @@
 						dat += "<BR>\[ <A HREF='?src=[REF(src)];operation=cancelshuttle'>Cancel Shuttle Call</A> \]"
 
 				dat += "<BR>\[ <A HREF='?src=[REF(src)];operation=status'>Set Status Display</A> \]"
+				dat += "<BR>\[ <A HREF='?src=[REF(src)];operation=nightshift'>Night Shift Subroutine Access</A> \]" //Waspstation Edit - Communications Consoles can control Night Shift
 				if (authenticated==2)
 					dat += "<BR><BR><B>Captain Functions</B>"
 					dat += "<BR>\[ <A HREF='?src=[REF(src)];operation=announce'>Make a Captain's Announcement</A> \]"
@@ -578,6 +602,26 @@
 					if(S.prerequisites)
 						dat += "Prerequisites: [S.prerequisites]<BR>"
 					dat += "<A href='?src=[REF(src)];operation=buyshuttle;chosen_shuttle=[REF(S)]'>(<font color=red><i>Purchase</i></font>)</A><BR><BR>"
+		if(STATE_NIGHTSHIFT) //Begin Waspstation Edit - Communications Consoles can control Night Shift
+			playsound(src, 'sound/machines/terminal_prompt_confirm.ogg', 50, FALSE)
+			dat += "Current Night Shift Subroutine Autonomy: <b>[SSnightshift.can_fire ? "<span style='color:green'>NOMINAL</span>" : "<span style='color:red'>OVERRIDDEN"]</span></b>"
+			dat += "<br>Current Night Shift Subroutine Status: <b>[SSnightshift.nightshift_active ? "ON" : "OFF"]</b>"
+			dat += "<br>"
+			dat += "<br><b>MANUAL OVERRIDE SETTINGS:</b>"
+			dat += "<table>"
+			if(SSnightshift.can_fire) //If it is automatically ticking.
+				dat += "<td>AUTO</td>"
+				dat += "<br><td><A HREF='?src=[REF(src)];operation=nightshift;setnightshift=on'>ON</A></td>"
+				dat += "<br><td><A HREF='?src=[REF(src)];operation=nightshift;setnightshift=off'>OFF</A></td>"
+			else if(!SSnightshift.can_fire && SSnightshift.nightshift_active == FALSE) //If it is manually OFF.
+				dat += "<br><td><A HREF='?src=[REF(src)];operation=nightshift;setnightshift=auto'>AUTO</A></td>"
+				dat += "<br><td><A HREF='?src=[REF(src)];operation=nightshift;setnightshift=on'>ON</A></td>"
+				dat += "<br><td>OFF"
+			else if(!SSnightshift.can_fire && SSnightshift.nightshift_active == TRUE) //If it is manually ON.
+				dat += "<br><td><A HREF='?src=[REF(src)];operation=nightshift;setnightshift=auto'>AUTO</A></td>"
+				dat += "<br><td>ON</td>"
+				dat += "<br><td><A HREF='?src=[REF(src)];operation=nightshift;setnightshift=off'>OFF</A></td>"
+			dat += "</table>" //End Waspstation Edit - Communications Consoles can control Night Shift
 
 	dat += "<BR><BR>\[ [(state != STATE_DEFAULT) ? "<A HREF='?src=[REF(src)];operation=main'>Main Menu</A> | " : ""]<A HREF='?src=[REF(user)];mach_close=communications'>Close</A> \]"
 
