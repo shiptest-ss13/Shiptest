@@ -293,3 +293,4 @@
 	)
 	result = /obj/item/reagent_containers/food/snacks/soup/electron
 	subcategory = CAT_SOUP
+

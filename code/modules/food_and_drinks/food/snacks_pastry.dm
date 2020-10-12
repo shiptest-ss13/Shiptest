@@ -324,6 +324,7 @@
 	tastes = list("jelly" = 1, "donut" = 3, "matcha" = 1)
 	is_decorated = TRUE
 	filling_color = "#879630"
+
 ////////////////////////////////////////////MUFFINS////////////////////////////////////////////
 
 /obj/item/reagent_containers/food/snacks/muffin

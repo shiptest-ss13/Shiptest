@@ -94,3 +94,4 @@
 	)
 	result = /obj/item/reagent_containers/food/snacks/salad/citrusdelight
 	subcategory = CAT_SALAD
+
