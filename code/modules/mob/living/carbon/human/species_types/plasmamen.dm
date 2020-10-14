@@ -33,6 +33,7 @@
 	bodytemp_heat_damage_limit = (BODYTEMP_HEAT_DAMAGE_LIMIT - 20) // about 40C
 	// This effects how fast body temp stabilizes, also if cold resit is lost on the mob
 	bodytemp_cold_damage_limit = (BODYTEMP_COLD_DAMAGE_LIMIT - 50) // about -50c
+	ass_image = 'icons/ass/assplasma.png'
 
 /datum/species/plasmaman/spec_life(mob/living/carbon/human/H)
 	var/datum/gas_mixture/environment = H.loc.return_air()
@@ -84,6 +85,12 @@
 
 		if("Bartender", "Lawyer")
 			O = new /datum/outfit/plasmaman/bar
+<<<<<<< HEAD
+=======
+
+		if("Psychologist")
+			O = new /datum/outfit/plasmaman/psychologist
+>>>>>>> e9c1fcebaad3... Increases the accuracy of the photocopier (#54336)
 
 		if("Cook")
 			O = new /datum/outfit/plasmaman/chef

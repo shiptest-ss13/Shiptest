@@ -32,6 +32,8 @@
 	but due to some recent pressure from HR they're generally well-behaved. Most of them don't even fight all that well. \
 	Confusing them with Ash Walkers (the similarly lizard-like natives of the Lavaland Wastes) might lead to having a spear lodged in your skull."
 
+	ass_image = 'icons/ass/asslizard.png'
+
 /// Lizards are cold blooded and do not stabilize body temperature naturally
 /datum/species/lizard/natural_bodytemperature_stabilization(datum/gas_mixture/environment, mob/living/carbon/human/H)
 	return

@@ -175,6 +175,9 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	var/changesource_flags = NONE
 	var/loreblurb = "Description not provided. Yell at a coder. Also, please look into cooking fajitas. That stuff is amazing."
 
+	///For custom overrides for species ass images
+	var/icon/ass_image
+
 ///////////
 // PROCS //
 ///////////
