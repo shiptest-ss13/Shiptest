@@ -1,6 +1,6 @@
 /obj/item/gun/energy/laser/terra
-	name = "TerraGov laser rifle"
-	desc = "A laser rifle used by TerraGov's cannon fodder. Has a self-recharging cell but only 6 shots before needing to recharge."
+	name = "SolGov laser rifle"
+	desc = "A laser rifle used by SolGov's cannon fodder. Has a self-recharging cell but only 6 shots before needing to recharge."
 	icon_state = "terralaser"
 	item_state = "laser"
 	w_class = WEIGHT_CLASS_NORMAL

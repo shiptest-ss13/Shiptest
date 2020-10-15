@@ -1,24 +1,23 @@
-/obj/item/clothing/head/helmet/space/hardsuit/terragov
-	name = "terragov hardsuit helmet"
+/obj/item/clothing/head/helmet/space/hardsuit/solgov
+	name = "SolGov hardsuit helmet"
 	desc = "An armored spaceproof helmet. The glass has a metallic shine on it."
-	icon_state = "hardsuit0-terra"
-	item_state = "terra_helm"
-	hardsuit_type = "terra"
+	icon_state = "hardsuit0-solgov"
+	item_state = "hardsuit0-solgov"
+	hardsuit_type = "solgov"
 	armor = list("melee" = 50, "bullet" = 45, "laser" = 40,"energy" = 30, "bomb" = 60, "bio" = 100, "rad" = 90, "fire" = 85, "acid" = 75)
 	icon = 'waspstation/icons/obj/clothing/hats.dmi'
 	mob_overlay_icon = 'waspstation/icons/mob/clothing/head.dmi'
 
-/obj/item/clothing/suit/space/hardsuit/terragov
-	icon_state = "terrasuit"
-	name = "terragov hardsuit"
+/obj/item/clothing/suit/space/hardsuit/solgov
+	icon_state = "hardsuit_solgov"
+	name = "SolGov hardsuit"
 	desc = "An armored spaceproof suit. An exoskeleton helps the user not have slowdown, allowing full mobility with the suit."
-	item_state = "terrasuit"
-	armor = list("melee" = 50, "bullet" = 45, "laser" = 40, "energy" = 30, "bomb" = 60, "bio" = 100, "rad" = 90, "fire" = 85, "acid" = 75) //intentionally the fucking strong, this is master chief-tier armor
-	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/terragov
+	item_state = "hardsuit_solgov"
+	armor = list("melee" = 50, "bullet" = 45, "laser" = 40, "energy" = 30, "bomb" = 60, "bio" = 100, "rad" = 90, "fire" = 85, "acid" = 75) //intentionally the fucking strong, this is master chief-tier armor //is this really what you call the strong?? is this the best solgov has to offer??????
+	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/solgov
 	slowdown = 0
 	icon = 'waspstation/icons/obj/clothing/suits.dmi'
 	mob_overlay_icon = 'waspstation/icons/mob/clothing/suits.dmi'
-
 
 /obj/item/clothing/head/helmet/space/hardsuit/quixote
 	name = "Quixote mobility hardsuit helmet"
@@ -70,5 +69,5 @@
 /obj/item/clothing/suit/space/hardsuit/quixote/ui_action_click(mob/user, action)
 	if(action == /datum/action/innate/quixotejump)
 		jump.Activate()
-	else 
+	else
 		return ..()

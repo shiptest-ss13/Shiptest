@@ -1,10 +1,10 @@
-/datum/antagonist/ert/terragov
-	name = "TerraGov Officer"
-	outfit = /datum/outfit/terragov
+/datum/antagonist/ert/solgov
+	name = "SolGov Officer"
+	outfit = /datum/outfit/solgov
 	random_names = FALSE
-	role = "TerraGov Officer"
+	role = "SolGov Officer"
 
-/datum/antagonist/ert/terragov/leader
-	name = "TerraGov Commander"
-	outfit = /datum/outfit/terragov/commander
-	role = "TerraGov Commander"
+/datum/antagonist/ert/solgov/leader
+	name = "SolGov Commander"
+	outfit = /datum/outfit/solgov/commander
+	role = "SolGov Commander"
