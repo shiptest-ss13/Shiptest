@@ -1518,13 +1518,6 @@
 	icon_state = "white"
 	},
 /area/holodeck/rec_center/firingrange)
-"eb" = (
-/obj/structure/target_stake,
-/obj/machinery/magnetic_module,
-/turf/open/floor/holofloor{
-	icon_state = "white"
-	},
-/area/holodeck/rec_center/firingrange)
 "ec" = (
 /obj/structure/window/reinforced{
 	dir = 4
@@ -1944,27 +1937,6 @@
 /obj/effect/turf_decal/tile/red{
 	dir = 8
 	},
-/turf/open/floor/holofloor,
-/area/holodeck/rec_center/firingrange)
-"fh" = (
-/obj/item/paper/guides/jobs/security/range,
-/turf/open/floor/holofloor,
-/area/holodeck/rec_center/firingrange)
-"fi" = (
-/obj/structure/table/reinforced,
-/obj/machinery/magnetic_controller{
-	autolink = 1
-	},
-/obj/structure/window/reinforced{
-	dir = 4
-	},
-/obj/structure/window/reinforced{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/red{
-	dir = 4
-	},
-/obj/effect/turf_decal/tile/red,
 /turf/open/floor/holofloor,
 /area/holodeck/rec_center/firingrange)
 "fj" = (
@@ -5552,6 +5524,20 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/centcom/supply)
+"nI" = (
+/obj/structure/table/reinforced,
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/obj/structure/window/reinforced{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/red{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/red,
+/turf/open/floor/holofloor,
+/area/holodeck/rec_center/firingrange)
 "nK" = (
 /obj/effect/turf_decal/loading_area{
 	dir = 1
@@ -7292,14 +7278,6 @@
 /obj/effect/turf_decal/tile/bar{
 	dir = 1
 	},
-/turf/open/floor/plasteel,
-/area/syndicate_mothership/control)
-"rg" = (
-/obj/effect/turf_decal/tile/bar,
-/obj/effect/turf_decal/tile/bar{
-	dir = 1
-	},
-/mob/living/simple_animal/hostile/carp/cayenne,
 /turf/open/floor/plasteel,
 /area/syndicate_mothership/control)
 "rh" = (
@@ -16555,6 +16533,10 @@
 /obj/structure/table/wood,
 /turf/open/floor/plasteel/dark,
 /area/centcom/supplypod)
+"OE" = (
+/obj/structure/overmap/star,
+/turf/open/overmap,
+/area/overmap)
 "OG" = (
 /obj/structure/dresser,
 /obj/machinery/light{
@@ -16742,6 +16724,15 @@
 	},
 /turf/open/floor/carpet/black,
 /area/centcom/holding)
+"PH" = (
+/obj/effect/turf_decal/tile/bar,
+/obj/effect/turf_decal/tile/bar{
+	dir = 1
+	},
+/obj/structure/bed/dogbed/cayenne,
+/mob/living/simple_animal/hostile/carp/cayenne,
+/turf/open/floor/plasteel,
+/area/syndicate_mothership/control)
 "PI" = (
 /obj/machinery/biogenerator,
 /obj/effect/turf_decal/tile/green{
@@ -18150,10 +18141,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/centcom/supplypod/loading/one)
-"XH" = (
-/obj/structure/overmap/star,
-/turf/open/overmap,
-/area/overmap)
 "XK" = (
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plasteel,
@@ -21175,7 +21162,7 @@ Tt
 Tt
 Tt
 Tt
-XH
+OE
 Tt
 Tt
 Tt
@@ -37031,11 +37018,11 @@ ll
 pF
 qa
 pZ
-rg
+pZ
 sh
 sh
 pZ
-pZ
+PH
 Qd
 wo
 tZ
@@ -83149,13 +83136,13 @@ bP
 dk
 bj
 dD
-eb
+es
 es
 eF
 eF
 eF
 eF
-fh
+eF
 fp
 fv
 fx
@@ -83412,7 +83399,7 @@ eG
 eG
 eG
 eG
-fi
+nI
 fp
 fw
 fx

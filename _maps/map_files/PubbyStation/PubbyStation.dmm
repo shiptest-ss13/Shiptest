@@ -18170,9 +18170,6 @@
 /turf/open/floor/plasteel,
 /area/science/explab)
 "bvW" = (
-/obj/machinery/magnetic_module,
-/obj/effect/landmark/blobstart,
-/obj/structure/target_stake,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /obj/effect/turf_decal/tile/neutral{
 	dir = 1
@@ -18184,6 +18181,8 @@
 /obj/effect/turf_decal/tile/neutral{
 	dir = 8
 	},
+/obj/structure/training_machine,
+/obj/item/target,
 /turf/open/floor/plasteel/dark,
 /area/science/explab)
 "bvY" = (
@@ -21044,6 +21043,7 @@
 /area/maintenance/department/engine)
 "bGO" = (
 /obj/structure/window/reinforced,
+/mob/living/carbon/monkey,
 /turf/open/floor/plasteel/freezer,
 /area/medical/virology)
 "bGP" = (
@@ -45244,6 +45244,14 @@
 /obj/effect/decal/cleanable/oil,
 /turf/open/floor/plating,
 /area/maintenance/department/security/brig)
+"lqo" = (
+/obj/structure/table,
+/obj/item/training_toolbox{
+	pixel_y = 5
+	},
+/obj/item/training_toolbox,
+/turf/open/floor/plasteel,
+/area/crew_quarters/fitness/recreation)
 "lqE" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on,
 /obj/structure/cable{
@@ -53061,6 +53069,11 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/crew_quarters/bar)
+"qFh" = (
+/obj/structure/training_machine,
+/obj/item/target,
+/turf/open/floor/plasteel,
+/area/crew_quarters/fitness/recreation)
 "qFu" = (
 /obj/effect/spawner/structure/window/plasma/reinforced,
 /obj/machinery/door/poddoor/shutters/preopen{
@@ -64822,7 +64835,7 @@
 /turf/open/floor/plating,
 /area/maintenance/department/cargo)
 "ycr" = (
-/obj/structure/target_stake,
+/obj/structure/training_machine,
 /obj/item/target/syndicate,
 /turf/open/floor/plating,
 /area/maintenance/department/security/brig)
@@ -106884,8 +106897,8 @@ aqZ
 atn
 awB
 axw
-axw
-axw
+qFh
+lqo
 axw
 aBX
 atn
