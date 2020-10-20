@@ -34,11 +34,11 @@
 		to_chat(user, "<span class='warning'>\The [src] can only be used on station flooring.</span>")
 		return
 
-	if(F.dir == floor_dir && F.icon_state == floor_state && F.icon_regular_floor == floor_state)
+	if(F.dir == floor_dir && F.icon_state == floor_state && F.base_icon_state == floor_state)
 		return //No point wasting ink
 
 	F.icon_state = floor_state
-	F.icon_regular_floor = floor_state
+	F.base_icon_state = floor_state
 	F.dir = floor_dir
 	playsound(src.loc, 'sound/effects/spray2.ogg', 50, TRUE)
 
