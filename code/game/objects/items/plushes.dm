@@ -7,6 +7,7 @@
 	w_class = WEIGHT_CLASS_SMALL
 	resistance_flags = FLAMMABLE
 	var/list/squeak_override //Weighted list; If you want your plush to have different squeak sounds use this
+	var/should_squeak = TRUE //Waspstation edit: really shitty spritercode
 	var/stuffed = TRUE //If the plushie has stuffing in it
 	var/obj/item/grenade/grenade //You can remove the stuffing from a plushie and add a grenade to it for *nefarious uses*
 	//--love ~<3--
@@ -35,7 +36,8 @@
 
 /obj/item/toy/plush/Initialize()
 	. = ..()
-	AddComponent(/datum/component/squeak, squeak_override)
+	if(should_squeak)
+		AddComponent(/datum/component/squeak, squeak_override)
 
 	//have we decided if Pinocchio goes in the blue or pink aisle yet?
 	if(gender == NEUTER)
@@ -687,3 +689,25 @@
 		forceMove(random_open_spot)
 	user.dust(just_ash = FALSE, drop_items = TRUE)
 	return MANUAL_SUICIDE
+
+/obj/item/toy/plush/hornet //wasp begin: spritercode
+	name = "strange bug plushie"
+	desc = "A cute, soft plush of a long-horned bug."
+	icon = 'waspstation/icons/obj/plushes.dmi'
+	icon_state = "plushie_hornet"
+	attack_verb = list("poked", "shaws")
+	squeak_override = list('waspstation/sound/hornetnoises/hornet_gitgud.ogg'=1, 'waspstation/sound/hornetnoises/hornet_SHAW.ogg'=10) //i have no clue how this works, the intended effect is that "git gud" will play 1 out of 11 times
+	gender = FEMALE
+
+/obj/item/toy/plush/hornet/gay
+	name = "gay bug plushie"
+	desc = "A cute, soft plush of a long-horned bug. Her cloak is in the colors of the lesbian pride flag."
+	icon_state = "plushie_gayhornet"
+
+/obj/item/toy/plush/knight
+	name = "odd bug plushie"
+	desc = "A cute, soft plush of a little bug. It sounds like this one didn't come with a voice box."
+	icon = 'waspstation/icons/obj/plushes.dmi'
+	icon_state = "plushie_knight"
+	attack_verb = list("poked")
+	should_squeak = FALSE //wasp end
