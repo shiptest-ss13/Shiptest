@@ -12,8 +12,18 @@
 	mid_sounds = list('sound/machines/sm/loops/calm.ogg' = 1)
 	mid_length = 60
 	volume = 40
-	extra_range = 10
-	falloff = 4
+	extra_range = 25
+	falloff_exponent = 10
+	falloff_distance = 5
+	vary = TRUE
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+/datum/looping_sound/destabilized_crystal
+	mid_sounds = list('sound/machines/sm/loops/delamming.ogg' = 1)
+	mid_length = 60
+	volume = 55
+	extra_range = 15
 	vary = TRUE
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -61,3 +71,4 @@
 	mid_sounds = list('sound/machines/roulettejackpot.ogg')
 	volume = 85
 	vary = TRUE
+
