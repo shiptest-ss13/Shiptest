@@ -170,6 +170,11 @@
 		to_chat(src, "<span class='warning'>You're not holding anything to give!</span>")
 		return
 
+	if(istype(receiving, /obj/item/slapper))
+		offer_high_five(receiving)
+		return
+
+	//WS Begin - Give in the context menu
 	if(target)
 		if(!CanReach(target))
 			return
@@ -180,6 +185,7 @@
 			return
 		G.setup(target, src, receiving)
 		return
+	//WS End
 
 	visible_message("<span class='notice'>[src] is offering [receiving]</span>", \
 					"<span class='notice'>You offer [receiving]</span>", null, 2)
@@ -217,3 +223,15 @@
 						"<span class'notice'> You make a fool of yourself trying to give away an item stuck to your hands")
 		return
 	put_in_hands(I)
+
+/// Spin-off of [/mob/living/carbon/proc/give] exclusively for high-fiving
+/mob/living/carbon/proc/offer_high_five(obj/item/slap)
+	if(has_status_effect(STATUS_EFFECT_HIGHFIVE))
+		return
+	if(!(locate(/mob/living/carbon) in orange(1, src)))
+		visible_message("<span class='danger'>[src] raises [p_their()] arm, looking around for a high-five, but there's no one around! How embarassing...</span>", \
+			"<span class='warning'>You post up, looking for a high-five, but finding no one within range! How embarassing...</span>", null, 2)
+		SEND_SIGNAL(src, COMSIG_ADD_MOOD_EVENT, "high_five", /datum/mood_event/high_five_alone)
+		return
+
+	apply_status_effect(STATUS_EFFECT_HIGHFIVE, slap)
