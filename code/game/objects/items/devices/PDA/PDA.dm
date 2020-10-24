@@ -630,8 +630,18 @@ GLOBAL_LIST_EMPTY(PDAs)
 			H.sec_hud_set_ID()
 
 
-/obj/item/pda/proc/msg_input(mob/living/U = usr)
-	var/t = stripped_input(U, "Please enter message", name, null, MAX_MESSAGE_LEN)
+// WaspStation Start -- Added recipient to PDA messages
+/obj/item/pda/proc/msg_input(mob/living/U = usr, list/obj/item/pda/targets)
+	var/title = name
+	if(targets)
+		if(length(targets) == 1)
+			title = "[name] -> [targets[1]]"
+		else if(length(targets) > 1)
+			title = "[name] -> Multiple PDAs"
+		else
+			CRASH("msg_input(): Length of list/obj/item/pda/targets is non-positive")
+	var/t = stripped_input(U, "Please enter message", title, null, MAX_MESSAGE_LEN)
+	// WaspStation End
 	if(!t || toff)
 		return
 	if(!in_range(src, U) && loc != U)
@@ -641,7 +651,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 	return t
 
 /obj/item/pda/proc/send_message(mob/living/user, list/obj/item/pda/targets, everyone)
-	var/message = msg_input(user)
+	var/message = msg_input(user, targets)                  // WaspStation Edit -- Added recipient to PDA messages
 	if(!message || !targets.len)
 		return
 	if((last_text && world.time < last_text + 10) || (everyone && last_everyone && world.time < last_everyone + PDA_SPAM_DELAY))
