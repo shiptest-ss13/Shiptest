@@ -55,7 +55,8 @@ GLOBAL_VAR_INIT(normal_ooc_colour, "#002eb8")
 
 	mob.log_talk(raw_msg, LOG_OOC)
 	SSredbot.send_discord_message("ooc", "**[key]:** [msg]")
-
+	msg = process_chat_markup(msg) // Waspstation edit - Chat markup
+	
 	var/keyname = key
 	if(prefs.unlock_content)
 		if(prefs.toggles & MEMBER_PUBLIC)

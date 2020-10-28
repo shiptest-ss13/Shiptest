@@ -33,7 +33,8 @@
 		return
 
 	message = trim(copytext_char(sanitize(message), 1, MAX_MESSAGE_LEN))
-
+	message = process_chat_markup(message) // Waspstation edit - Chat markup
+	
 	usr.emote("me",1,message,TRUE)
 
 ///Speak as a dead person (ghost etc)

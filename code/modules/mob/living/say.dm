@@ -221,7 +221,8 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 
 	if(pressure < ONE_ATMOSPHERE*0.4) //Thin air, let's italicise the message
 		spans |= SPAN_ITALICS
-
+	message = process_chat_markup(message) // Waspstation edit - Chat markup
+	
 	send_speech(message, message_range, src, bubble_type, spans, language, message_mode)
 
 	if(succumbed)
@@ -360,6 +361,8 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 
 	if(cultslurring)
 		message = cultslur(message)
+
+	message = strip_html_simple(message) //Get rid of any markdown that might hurt us
 
 	// check for and apply punctuation. thanks, bee
 	var/end = copytext(message, length(message))
