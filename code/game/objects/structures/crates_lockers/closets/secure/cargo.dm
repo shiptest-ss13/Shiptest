@@ -5,6 +5,7 @@
 
 /obj/structure/closet/secure_closet/quartermaster/PopulateContents()
 	..()
+	new /obj/item/stack/tape(src) //Waspstation Edit - Tape
 	new /obj/item/card/id/departmental_budget/car(src)//WaspStation Edit - Budget Cards
 	new /obj/item/clothing/neck/cloak/qm(src)
 	new /obj/item/storage/lockbox/medal/cargo(src)

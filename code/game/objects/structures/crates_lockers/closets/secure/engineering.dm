@@ -9,6 +9,7 @@
 	new /obj/item/clothing/head/beret/ce(src) //Berets
 	new /obj/item/clothing/under/rank/command(src) //Better command uniforms
 	new /obj/item/card/id/departmental_budget/eng(src) //Budger Cards
+	new /obj/item/stack/tape/industrial/pro(src) //Better tape
 	//WaspStation End
 	new /obj/item/clothing/neck/cloak/ce(src)
 	new /obj/item/clothing/under/rank/engineering/chief_engineer(src)
@@ -40,6 +41,9 @@
 /obj/structure/closet/secure_closet/engineering_electrical/PopulateContents()
 	..()
 	var/static/items_inside = list(
+		//Waspstation Begin
+		/obj/item/stack/tape/industrial/electrical = 1, // Better tape
+		//Waspstation End
 		/obj/item/clothing/gloves/color/yellow = 2,
 		/obj/item/inducer = 2,
 		/obj/item/storage/toolbox/electrical = 3,
@@ -68,6 +72,7 @@
 
 /obj/structure/closet/secure_closet/engineering_personal/PopulateContents()
 	..()
+	new /obj/item/stack/tape/industrial(src) // Waspstation edit - Tape
 	new /obj/item/clothing/head/beret/eng(src) // Waspstation edit - Berets
 	new /obj/item/clothing/head/safety_helmet(src)
 	new /obj/item/clothing/glasses/meson/prescription(src) //Waspstation edit - Prescription HUDs
