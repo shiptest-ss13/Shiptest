@@ -23,6 +23,7 @@
 	//WaspStation Begin - Gun Cells
 	var/internal_cell = FALSE ///if the gun's cell cannot be replaced
 	var/small_gun = FALSE ///if the gun is small and can only fit batteries that have less than a certain max charge
+	var/big_gun = FALSE ///if the gun is big and can fit the comically large gun cell
 	var/max_charge = 10000 ///if the gun is small, this is the highest amount of charge can be in a battery for it
 	var/unscrewing_time = 20 ///Time it takes to unscrew the internal cell
 
@@ -113,6 +114,9 @@
 		to_chat(user, "<span class='warning'>\The [C] doesn't seem to fit into \the [src]...</span>")
 		return FALSE
 	if(!small_gun && istype(C, /obj/item/stock_parts/cell/gun/mini))
+		to_chat(user, "<span class='warning'>\The [C] doesn't seem to fit into \the [src]...</span>")
+		return FALSE
+	if(!big_gun && istype(C, /obj/item/stock_parts/cell/gun/large))
 		to_chat(user, "<span class='warning'>\The [C] doesn't seem to fit into \the [src]...</span>")
 		return FALSE
 	if(user.transferItemToLoc(C, src))

@@ -9,6 +9,7 @@
 	ammo_y_offset = 2
 	can_flashlight = FALSE
 	w_class = WEIGHT_CLASS_HUGE
+	big_gun = TRUE //yes, you can put the comically large cell in it. No, you aren't getting it roundstart. You slut.
 	flags_1 =  CONDUCT_1
 	slot_flags = ITEM_SLOT_BACK
 	ammo_type = list(/obj/item/ammo_casing/energy/ion)
@@ -316,7 +317,7 @@
 	icon_state = "freezegun"
 	desc = "A gun that changes temperatures."
 	ammo_type = list(/obj/item/ammo_casing/energy/temp, /obj/item/ammo_casing/energy/temp/hot)
-	cell_type = /obj/item/stock_parts/cell/gun/upgraded
+	cell_type = "/obj/item/stock_parts/cell/gun/upgraded"
 	ammo_x_offset = 2
 	automatic = 1
 	fire_rate = 4
