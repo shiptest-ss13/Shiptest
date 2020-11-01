@@ -127,10 +127,13 @@
 /datum/species/ethereal/proc/handle_charge(mob/living/carbon/human/H)
 	brutemod = 1.25
 	switch(get_charge(H))
-		if(ETHEREAL_CHARGE_NONE)
-			H.throw_alert("ethereal_charge", /obj/screen/alert/etherealcharge, 3)
+		// Waspstation Begin - Display Ethereal no charge icon
 		if(ETHEREAL_CHARGE_NONE to ETHEREAL_CHARGE_LOWPOWER)
-			H.throw_alert("ethereal_charge", /obj/screen/alert/etherealcharge, 2)
+			if(get_charge(H) == ETHEREAL_CHARGE_NONE)
+				H.throw_alert("ethereal_charge", /obj/screen/alert/etherealcharge, 3)
+			else
+				H.throw_alert("ethereal_charge", /obj/screen/alert/etherealcharge, 2)
+			// Waspstation End
 			if(H.health > 10.5)
 				apply_damage(0.2, TOX, null, null, H)
 			brutemod = 1.75
