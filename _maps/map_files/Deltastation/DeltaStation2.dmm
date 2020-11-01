@@ -16350,10 +16350,6 @@
 /obj/effect/turf_decal/atmos/carbon_dioxide,
 /turf/open/floor/engine/co2,
 /area/engine/atmos)
-"aXX" = (
-/obj/machinery/air_sensor/atmos/carbon_tank,
-/turf/open/floor/engine/co2,
-/area/engine/atmos)
 "aYg" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
@@ -17507,10 +17503,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/engine/atmos)
-"bbN" = (
-/obj/machinery/air_sensor/atmos/oxygen_tank,
-/turf/open/floor/engine/o2,
-/area/engine/atmos)
 "bbO" = (
 /obj/effect/turf_decal/atmos/oxygen,
 /turf/open/floor/engine/o2,
@@ -18355,10 +18347,6 @@
 /area/engine/atmos)
 "bev" = (
 /obj/effect/turf_decal/atmos/plasma,
-/turf/open/floor/engine/plasma,
-/area/engine/atmos)
-"bew" = (
-/obj/machinery/air_sensor/atmos/toxin_tank,
 /turf/open/floor/engine/plasma,
 /area/engine/atmos)
 "bey" = (
@@ -19300,10 +19288,6 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel,
-/area/engine/atmos)
-"bhv" = (
-/obj/machinery/air_sensor/atmos/nitrogen_tank,
-/turf/open/floor/engine/n2,
 /area/engine/atmos)
 "bhw" = (
 /obj/effect/turf_decal/atmos/nitrogen,
@@ -20428,10 +20412,6 @@
 /area/engine/atmos)
 "bkH" = (
 /obj/effect/turf_decal/atmos/nitrous_oxide,
-/turf/open/floor/engine/n2o,
-/area/engine/atmos)
-"bkI" = (
-/obj/machinery/air_sensor/atmos/nitrous_tank,
 /turf/open/floor/engine/n2o,
 /area/engine/atmos)
 "bkP" = (
@@ -81351,6 +81331,11 @@
 	},
 /turf/open/floor/plasteel,
 /area/crew_quarters/toilet/restrooms)
+"gic" = (
+/obj/machinery/atmospherics/miner/n2o,
+/obj/machinery/air_sensor/atmos/nitrous_tank,
+/turf/open/floor/engine/n2o,
+/area/engine/atmos)
 "gif" = (
 /obj/effect/spawner/structure/window/reinforced/shutters,
 /turf/open/floor/plating,
@@ -93245,6 +93230,11 @@
 	},
 /turf/open/floor/plasteel,
 /area/hallway/primary/starboard)
+"kiH" = (
+/obj/machinery/atmospherics/miner/toxins,
+/obj/machinery/air_sensor/atmos/toxin_tank,
+/turf/open/floor/engine/plasma,
+/area/engine/atmos)
 "kiI" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
@@ -106704,6 +106694,11 @@
 	},
 /turf/open/floor/carpet,
 /area/bridge/meeting_room/council)
+"oRT" = (
+/obj/machinery/atmospherics/miner/nitrogen,
+/obj/machinery/air_sensor/atmos/nitrogen_tank,
+/turf/open/floor/engine/n2,
+/area/engine/atmos)
 "oRV" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
@@ -112173,6 +112168,11 @@
 	},
 /turf/open/floor/plasteel,
 /area/engine/atmospherics_engine)
+"qLE" = (
+/obj/machinery/atmospherics/miner/carbon_dioxide,
+/obj/machinery/air_sensor/atmos/carbon_tank,
+/turf/open/floor/engine/co2,
+/area/engine/atmos)
 "qLJ" = (
 /obj/machinery/atmospherics/components/trinary/filter/critical{
 	dir = 4
@@ -129521,6 +129521,11 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/medical/surgery/room_b)
+"wMj" = (
+/obj/machinery/atmospherics/miner/oxygen,
+/obj/machinery/air_sensor/atmos/oxygen_tank,
+/turf/open/floor/engine/o2,
+/area/engine/atmos)
 "wMl" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/atmospherics/pipe/simple/cyan/visible{
@@ -154671,19 +154676,19 @@ aFq
 abj
 aRF
 aWu
-aXW
+qLE
 aWt
 aRF
 bcY
-bev
+kiH
 bcX
 aRF
 biU
-bkH
+gic
 biT
 aRF
 bpO
-kQk
+brU
 btK
 aRF
 qYo
@@ -154928,19 +154933,19 @@ aFr
 aad
 aRF
 aWv
-aXX
+aXW
 aZP
 aRF
 bcZ
-bew
+bev
 bfT
 aRF
 biV
-bkI
+bkH
 bmI
 aRF
 bpP
-brU
+kQk
 btL
 aRF
 qYo
@@ -161865,15 +161870,15 @@ aad
 aad
 aRF
 aTj
-aUZ
+aVa
 aWS
 aRF
 bak
-bbN
+bbO
 bdn
 aRF
 bgf
-bhv
+bhw
 bjn
 aRF
 aMO
@@ -162122,15 +162127,15 @@ aaa
 aad
 aRF
 aTk
-aVa
+aUZ
 aTl
 aRF
 bal
-bbO
+wMj
 bam
 aRF
 bgg
-bhw
+oRT
 bgh
 aRF
 aMN

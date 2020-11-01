@@ -7500,12 +7500,6 @@
 	initial_gas_mix = "n2=1000;TEMP=293.15"
 	},
 /area/engine/atmos)
-"aGV" = (
-/obj/machinery/air_sensor/atmos/nitrogen_tank,
-/turf/open/floor/engine/n2{
-	initial_gas_mix = "n2=1000;TEMP=293.15"
-	},
-/area/engine/atmos)
 "aGW" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/siphon/atmos/nitrogen_output{
 	dir = 4
@@ -7518,12 +7512,6 @@
 /obj/machinery/atmospherics/components/unary/outlet_injector/atmos/oxygen_input{
 	dir = 4
 	},
-/turf/open/floor/engine/o2{
-	initial_gas_mix = "o2=1000;TEMP=293.15"
-	},
-/area/engine/atmos)
-"aGY" = (
-/obj/machinery/air_sensor/atmos/oxygen_tank,
 /turf/open/floor/engine/o2{
 	initial_gas_mix = "o2=1000;TEMP=293.15"
 	},
@@ -7560,12 +7548,6 @@
 	initial_gas_mix = "co2=1000;TEMP=293.15"
 	},
 /area/engine/atmos)
-"aHe" = (
-/obj/machinery/air_sensor/atmos/carbon_tank,
-/turf/open/floor/engine/co2{
-	initial_gas_mix = "co2=1000;TEMP=293.15"
-	},
-/area/engine/atmos)
 "aHf" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/siphon/atmos/carbon_output{
 	dir = 1
@@ -7582,12 +7564,6 @@
 	initial_gas_mix = "plasma=1000;TEMP=293.15"
 	},
 /area/engine/atmos)
-"aHh" = (
-/obj/machinery/air_sensor/atmos/toxin_tank,
-/turf/open/floor/engine/plasma{
-	initial_gas_mix = "plasma=1000;TEMP=293.15"
-	},
-/area/engine/atmos)
 "aHi" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/siphon/atmos/toxin_output{
 	dir = 1
@@ -7600,12 +7576,6 @@
 /obj/machinery/atmospherics/components/unary/outlet_injector/atmos/nitrous_input{
 	dir = 1
 	},
-/turf/open/floor/engine/n2o{
-	initial_gas_mix = "n2o=1000;TEMP=293.15"
-	},
-/area/engine/atmos)
-"aHk" = (
-/obj/machinery/air_sensor/atmos/nitrous_tank,
 /turf/open/floor/engine/n2o{
 	initial_gas_mix = "n2o=1000;TEMP=293.15"
 	},
@@ -40275,6 +40245,13 @@
 /obj/item/hand_labeler,
 /turf/open/floor/plasteel/dark,
 /area/medical/surgery)
+"eXT" = (
+/obj/machinery/atmospherics/miner/nitrogen,
+/obj/machinery/air_sensor/atmos/nitrogen_tank,
+/turf/open/floor/engine/n2{
+	initial_gas_mix = "n2=1000;TEMP=293.15"
+	},
+/area/engine/atmos)
 "eYM" = (
 /obj/effect/turf_decal/tile/blue{
 	dir = 4
@@ -51700,6 +51677,13 @@
 /obj/item/camera,
 /turf/open/floor/plasteel/dark,
 /area/crew_quarters/heads/captain)
+"jiy" = (
+/obj/machinery/atmospherics/miner/n2o,
+/obj/machinery/air_sensor/atmos/nitrous_tank,
+/turf/open/floor/engine/n2o{
+	initial_gas_mix = "n2o=1000;TEMP=293.15"
+	},
+/area/engine/atmos)
 "jjj" = (
 /obj/structure/sign/warning/vacuum/external,
 /obj/effect/spawner/structure/window/reinforced/shutters,
@@ -68997,6 +68981,13 @@
 	icon_state = "platingdmg1"
 	},
 /area/maintenance/port/aft)
+"pwm" = (
+/obj/machinery/atmospherics/miner/oxygen,
+/obj/machinery/air_sensor/atmos/oxygen_tank,
+/turf/open/floor/engine/o2{
+	initial_gas_mix = "o2=1000;TEMP=293.15"
+	},
+/area/engine/atmos)
 "pwn" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1,
@@ -76589,6 +76580,13 @@
 	},
 /turf/open/floor/engine,
 /area/engine/engineering)
+"snq" = (
+/obj/machinery/atmospherics/miner/carbon_dioxide,
+/obj/machinery/air_sensor/atmos/carbon_tank,
+/turf/open/floor/engine/co2{
+	initial_gas_mix = "co2=1000;TEMP=293.15"
+	},
+/area/engine/atmos)
 "soo" = (
 /obj/effect/turf_decal/tile/neutral,
 /obj/effect/turf_decal/tile/neutral{
@@ -78902,6 +78900,13 @@
 	icon_state = "platingdmg1"
 	},
 /area/maintenance/port/fore)
+"tiH" = (
+/obj/machinery/atmospherics/miner/toxins,
+/obj/machinery/air_sensor/atmos/toxin_tank,
+/turf/open/floor/engine/plasma{
+	initial_gas_mix = "plasma=1000;TEMP=293.15"
+	},
+/area/engine/atmos)
 "tjj" = (
 /obj/machinery/door/airlock/command{
 	name = "Chief Engineer's Office";
@@ -117582,15 +117587,15 @@ bFS
 bFa
 aFM
 aDz
-aDA
+eXT
 aML
 aFM
 aDC
-aDD
+pwm
 aMO
 aFM
 aMY
-dSr
+aHb
 bUQ
 bFP
 cCX
@@ -117839,15 +117844,15 @@ bGG
 bFa
 aFM
 aGU
-aGV
+aDA
 aGW
 aFM
 aGX
-aGY
+aDD
 aGZ
 aFM
 aHa
-aHb
+dSr
 aHc
 jke
 cjm
@@ -120424,8 +120429,8 @@ nyL
 pqO
 nsM
 cBA
-aHe
 aFm
+snq
 aFc
 caK
 acK
@@ -121452,8 +121457,8 @@ nyL
 pqO
 nsM
 cBA
-aHh
 aFn
+tiH
 aFd
 ccT
 acK
@@ -122480,8 +122485,8 @@ vtp
 pqO
 nsM
 cBA
-aHk
 aFo
+jiy
 aFe
 ctr
 acK
@@ -123508,8 +123513,8 @@ xbV
 uqt
 nsM
 cBA
-aHn
 bIw
+aHn
 aFf
 aFM
 aeu

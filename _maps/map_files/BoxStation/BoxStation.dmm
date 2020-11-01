@@ -25324,10 +25324,6 @@
 /obj/machinery/atmospherics/pipe/simple/yellow/visible,
 /turf/open/floor/plasteel,
 /area/engine/atmos)
-"bUV" = (
-/obj/machinery/air_sensor/atmos/nitrous_tank,
-/turf/open/floor/engine/n2o,
-/area/engine/atmos)
 "bUW" = (
 /obj/machinery/light/small{
 	dir = 4
@@ -26264,10 +26260,6 @@
 /obj/effect/landmark/event_spawn,
 /turf/closed/wall,
 /area/crew_quarters/bar)
-"bYV" = (
-/obj/machinery/air_sensor/atmos/toxin_tank,
-/turf/open/floor/engine/plasma,
-/area/engine/atmos)
 "bYW" = (
 /obj/machinery/light/small{
 	dir = 4
@@ -26876,10 +26868,6 @@
 "ccw" = (
 /turf/closed/wall/r_wall,
 /area/engine/engineering)
-"ccC" = (
-/obj/machinery/air_sensor/atmos/carbon_tank,
-/turf/open/floor/engine/co2,
-/area/engine/atmos)
 "ccD" = (
 /obj/machinery/light/small{
 	dir = 4
@@ -27936,10 +27924,6 @@
 /obj/structure/closet/cardboard,
 /turf/open/floor/plating,
 /area/maintenance/starboard/aft)
-"ckU" = (
-/obj/machinery/air_sensor/atmos/nitrogen_tank,
-/turf/open/floor/engine/n2,
-/area/engine/atmos)
 "ckV" = (
 /obj/machinery/atmospherics/components/unary/outlet_injector/atmos/nitrogen_input{
 	dir = 1
@@ -27952,10 +27936,6 @@
 	},
 /turf/open/floor/engine/n2,
 /area/engine/atmos)
-"ckX" = (
-/obj/machinery/air_sensor/atmos/oxygen_tank,
-/turf/open/floor/engine/o2,
-/area/engine/atmos)
 "ckY" = (
 /obj/machinery/atmospherics/components/unary/outlet_injector/atmos/oxygen_input{
 	dir = 1
@@ -27967,10 +27947,6 @@
 	dir = 1
 	},
 /turf/open/floor/engine/o2,
-/area/engine/atmos)
-"cla" = (
-/obj/machinery/air_sensor/atmos/air_tank,
-/turf/open/floor/engine/air,
 /area/engine/atmos)
 "clb" = (
 /obj/machinery/atmospherics/components/unary/outlet_injector/atmos/air_input{
@@ -34049,6 +34025,11 @@
 	},
 /turf/open/floor/plasteel,
 /area/engine/engineering)
+"fEA" = (
+/obj/effect/landmark/event_spawn,
+/obj/machinery/air_sensor/atmos/air_tank,
+/turf/open/floor/engine/air,
+/area/engine/atmos)
 "fES" = (
 /obj/structure/closet,
 /obj/effect/spawner/lootdrop/maintenance/two,
@@ -47155,6 +47136,11 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/crew_quarters/heads/chief)
+"ptz" = (
+/obj/machinery/atmospherics/miner/carbon_dioxide,
+/obj/machinery/air_sensor/atmos/carbon_tank,
+/turf/open/floor/engine/co2,
+/area/engine/atmos)
 "ptM" = (
 /obj/structure/chair/stool/bar,
 /turf/open/floor/wood{
@@ -47313,6 +47299,11 @@
 	},
 /turf/open/floor/plating,
 /area/maintenance/port/fore)
+"pyB" = (
+/obj/machinery/atmospherics/miner/n2o,
+/obj/machinery/air_sensor/atmos/nitrous_tank,
+/turf/open/floor/engine/n2o,
+/area/engine/atmos)
 "pyN" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -47394,6 +47385,11 @@
 	},
 /turf/open/floor/circuit,
 /area/ai_monitored/turret_protected/ai_upload)
+"pBv" = (
+/obj/machinery/atmospherics/miner/toxins,
+/obj/machinery/air_sensor/atmos/toxin_tank,
+/turf/open/floor/engine/plasma,
+/area/engine/atmos)
 "pBY" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 1
@@ -50175,11 +50171,6 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /turf/closed/wall/r_wall,
 /area/maintenance/starboard/aft)
-"rGK" = (
-/obj/effect/landmark/event_spawn,
-/obj/effect/turf_decal/atmos/air,
-/turf/open/floor/engine/air,
-/area/engine/atmos)
 "rHy" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
@@ -54914,6 +54905,10 @@
 	},
 /turf/open/floor/plating,
 /area/maintenance/starboard/aft)
+"vih" = (
+/obj/effect/turf_decal/atmos/air,
+/turf/open/floor/engine/air,
+/area/engine/atmos)
 "viu" = (
 /obj/structure/table,
 /obj/effect/turf_decal/bot,
@@ -55741,6 +55736,16 @@
 	},
 /turf/open/floor/plasteel,
 /area/security/checkpoint/science)
+"vNB" = (
+/obj/machinery/atmospherics/miner/oxygen,
+/obj/machinery/air_sensor/atmos/oxygen_tank,
+/turf/open/floor/engine/o2,
+/area/engine/atmos)
+"vNF" = (
+/obj/machinery/atmospherics/miner/nitrogen,
+/obj/machinery/air_sensor/atmos/nitrogen_tank,
+/turf/open/floor/engine/n2,
+/area/engine/atmos)
 "vNX" = (
 /obj/structure/disposalpipe/segment{
 	dir = 9
@@ -91704,8 +91709,8 @@ nqT
 old
 aaf
 bQA
-ckU
 pDz
+vNF
 cmU
 bOh
 ccw
@@ -92732,8 +92737,8 @@ jlB
 mnd
 aaf
 bQA
-ckX
 oQb
+vNB
 cmV
 bOh
 cig
@@ -93760,8 +93765,8 @@ uZS
 old
 aaf
 bQA
-cla
-rGK
+vih
+fEA
 cmW
 bOh
 aaa
@@ -95024,19 +95029,19 @@ bzs
 bRK
 bOh
 bPl
-bQB
+uwD
 bRL
 bOh
 bTX
-bUV
+tOZ
 bWd
 bOh
 bXX
-bYV
+moV
 bZL
 bOh
 cbI
-ccC
+tVy
 cdD
 bOh
 cCG
@@ -95281,19 +95286,19 @@ bzs
 bRK
 bOh
 bPk
-uwD
+bQB
 bPm
 bOh
 bTW
-tOZ
+pyB
 bTW
 bOh
 bXW
-moV
+pBv
 bXW
 bOh
 cbH
-tVy
+ptz
 cbH
 bOh
 aaf
