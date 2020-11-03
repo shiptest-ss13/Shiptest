@@ -58,6 +58,8 @@ Simple datum which is instanced once per type and is used for every object of sa
 			ADD_KEEP_TOGETHER(source, MATERIAL_SOURCE(src))
 			source.filters += cached_texture_filter
 
+	if(alpha < 255)
+		source.opacity = FALSE
 	if(material_flags & MATERIAL_ADD_PREFIX)
 		source.name = "[name] [source.name]"
 
@@ -107,13 +109,14 @@ Simple datum which is instanced once per type and is used for every object of sa
 
 /datum/material/proc/on_applied_turf(var/turf/T, amount, material_flags)
 	if(isopenturf(T))
-		if(!turf_sound_override)
-			return
-		var/turf/open/O = T
-		O.footstep = turf_sound_override
-		O.barefootstep = turf_sound_override
-		O.clawfootstep = turf_sound_override
-		O.heavyfootstep = turf_sound_override
+		if(turf_sound_override)
+			var/turf/open/O = T
+			O.footstep = turf_sound_override
+			O.barefootstep = turf_sound_override
+			O.clawfootstep = turf_sound_override
+			O.heavyfootstep = turf_sound_override
+	if(alpha < 255)
+		T.AddElement(/datum/element/turf_z_transparency, TRUE)
 	return
 
 ///This proc is called when the material is removed from an object.
@@ -143,5 +146,17 @@ Simple datum which is instanced once per type and is used for every object of sa
 		o.force = initial(o.force)
 		o.throwforce = initial(o.throwforce)
 
-/datum/material/proc/on_removed_turf(turf/T, material_flags)
-	return
+/datum/material/proc/on_removed_turf(turf/T, amount, material_flags)
+	if(alpha)
+		RemoveElement(/datum/element/turf_z_transparency, FALSE)
+
+/** Returns the composition of this material.
+  *
+  * Mostly used for alloys when breaking down materials.
+  *
+  * Arguments:
+  * - amount: The amount of the material to break down.
+  * - breakdown_flags: Some flags dictating how exactly this material is being broken down.
+  */
+/datum/material/proc/return_composition(amount=1, breakdown_flags=NONE)
+	return list((src) = amount) // Yes we need the parenthesis, without them BYOND stringifies src into "src" and things break.

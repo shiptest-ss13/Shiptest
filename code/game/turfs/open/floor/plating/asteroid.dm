@@ -170,7 +170,7 @@
 	return FALSE
 
 /turf/open/floor/plating/asteroid/snow/icemoon
-	baseturfs = /turf/open/transparent/openspace/icemoon
+	baseturfs = /turf/open/openspace/icemoon
 	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
 	slowdown = 0
 
