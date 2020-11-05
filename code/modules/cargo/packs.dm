@@ -237,12 +237,12 @@
 
 /datum/supply_pack/security
 	group = "Security"
-	access_any = ACCESS_FORENSICS_LOCKERS //| ACCESS_SECURITY
+	access = ACCESS_FORENSICS_LOCKERS
 	crate_type = /obj/structure/closet/crate/secure/gear
 
 /datum/supply_pack/security/ammo
 	name = "Ammo Crate"
-	desc = "Contains two 20-round magazines for the WT-550 Auto Rifle, three boxes of buckshot ammo, three boxes of rubber ammo and special .38 speedloarders. Requires Security access to open."
+	desc = "Contains two 20-round magazines for the WT-550 Auto Rifle, three boxes of buckshot ammo, three boxes of rubber ammo and one special .38 speedloader of each type available. Requires extended Security access to open."
 	cost = 2500
 	contains = list(/obj/item/ammo_box/magazine/wt550m9,
 					/obj/item/ammo_box/magazine/wt550m9,
@@ -259,7 +259,7 @@
 
 /datum/supply_pack/security/armor
 	name = "Armor Crate"
-	desc = "Three vests of well-rounded, decently-protective armor. Requires Security access to open."
+	desc = "Three vests of well-rounded, decently-protective armor. Requires extended Security access to open."
 	cost = 1000
 	contains = list(/obj/item/clothing/suit/armor/vest,
 					/obj/item/clothing/suit/armor/vest,
@@ -268,7 +268,7 @@
 
 /datum/supply_pack/security/disabler
 	name = "Disabler Crate"
-	desc = "Three stamina-draining disabler weapons. Requires Security access to open."
+	desc = "Three stamina-draining disabler weapons. Requires extended Security access to open."
 	cost = 1500
 	contains = list(/obj/item/gun/energy/disabler,
 					/obj/item/gun/energy/disabler,
@@ -278,17 +278,16 @@
 
 /datum/supply_pack/security/dumdum
 	name = ".38 DumDum Speedloader"
-	desc = "Contains one speedloader of .38 DumDum ammunition, good for embedding in soft targets. Requires Security or Forensics access to open."
+	desc = "Contains one speedloader of .38 DumDum ammunition, good for embedding in soft targets. Requires extended Security to open."
 	cost = 1200
-	access = FALSE
 	small_item = TRUE
-	access_any = list(ACCESS_SECURITY, ACCESS_FORENSICS_LOCKERS)
 	contains = list(/obj/item/ammo_box/c38/dumdum)
 	crate_name = ".38 match crate"
+	dangerous = TRUE
 
 /datum/supply_pack/security/forensics
 	name = "Forensics Crate"
-	desc = "Stay hot on the criminal's heels with Nanotrasen's Detective Essentials(tm). Contains a forensics scanner, six evidence bags, camera, tape recorder, white crayon, and of course, a fedora. Requires Security access to open."
+	desc = "Stay hot on the criminal's heels with Nanotrasen's Detective Essentials(tm). Contains a forensics scanner, six evidence bags, camera, tape recorder, white crayon, and of course, a fedora. Requires extended Security access to open."
 	cost = 2000
 	contains = list(/obj/item/detective_scanner,
 					/obj/item/storage/box/evidence,
@@ -300,7 +299,7 @@
 
 /datum/supply_pack/security/helmets
 	name = "Helmets Crate"
-	desc = "Contains three standard-issue brain buckets. Requires Security access to open."
+	desc = "Contains three standard-issue brain buckets. Requires extended Security access to open."
 	cost = 1000
 	contains = list(/obj/item/clothing/head/helmet/sec,
 					/obj/item/clothing/head/helmet/sec,
@@ -309,7 +308,7 @@
 
 /datum/supply_pack/security/laser
 	name = "Lasers Crate"
-	desc = "Contains three lethal, high-energy laser guns. Requires Security access to open."
+	desc = "Contains three lethal, high-energy laser guns. Requires extended Security access to open."
 	cost = 2000
 	contains = list(/obj/item/gun/energy/laser,
 					/obj/item/gun/energy/laser,
@@ -319,17 +318,16 @@
 
 /datum/supply_pack/security/match
 	name = ".38 Match Grade Speedloader"
-	desc = "Contains one speedloader of match grade .38 ammunition, perfect for showing off trickshots. Requires Security or Forensics access to open."
+	desc = "Contains one speedloader of match grade .38 ammunition, perfect for showing off trickshots. Requires extended Security to open."
 	cost = 1200
-	access = FALSE
 	small_item = TRUE
-	access_any = list(ACCESS_SECURITY, ACCESS_FORENSICS_LOCKERS)
 	contains = list(/obj/item/ammo_box/c38/match)
 	crate_name = ".38 match crate"
+	dangerous = TRUE
 
 /datum/supply_pack/security/securitybarriers
 	name = "Security Barrier Grenades"
-	desc = "Stem the tide with four Security Barrier grenades. Requires Security access to open."
+	desc = "Stem the tide with four Security Barrier grenades. Requires extended Security access to open."
 	contains = list(/obj/item/grenade/barrier,
 					/obj/item/grenade/barrier,
 					/obj/item/grenade/barrier,
@@ -339,7 +337,7 @@
 
 /datum/supply_pack/security/securityclothes
 	name = "Security Clothing Crate"
-	desc = "Contains appropriate outfits for the station's private security force. Contains outfits for the Warden, Head of Security, and two Security Officers. Each outfit comes with a rank-appropriate jumpsuit, suit, and beret. Requires Security access to open."
+	desc = "Contains appropriate outfits for the station's private security force. Contains outfits for the Warden, Head of Security, and two Security Officers. Each outfit comes with a rank-appropriate jumpsuit, suit, and beret. Requires extended Security access to open."
 	cost = 3000
 	contains = list(/obj/item/clothing/under/rank/security/officer/formal,
 					/obj/item/clothing/under/rank/security/officer/formal,
@@ -360,21 +358,21 @@
 
 /datum/supply_pack/security/stingpack
 	name = "Stingbang Grenade Pack"
-	desc = "Contains five \"stingbang\" grenades, perfect for stopping riots and playing morally unthinkable pranks. Requires Security access to open."
+	desc = "Contains five \"stingbang\" grenades, perfect for stopping riots and playing morally unthinkable pranks. Requires extended Security access to open."
 	cost = 2500
 	contains = list(/obj/item/storage/box/stingbangs)
 	crate_name = "stingbang grenade pack crate"
 
 /datum/supply_pack/security/stingpack/single
 	name = "Stingbang Single-Pack"
-	desc = "Contains one \"stingbang\" grenade, perfect for playing meanhearted pranks. Requires Security access to open."
+	desc = "Contains one \"stingbang\" grenade, perfect for playing meanhearted pranks. Requires extended Security access to open."
 	cost = 1400
 	small_item = TRUE
 	contains = list(/obj/item/grenade/stingbang)
 
 /datum/supply_pack/security/supplies
 	name = "Security Supplies Crate"
-	desc = "Contains seven flashbangs, seven teargas grenades, six flashes, and seven handcuffs. Requires Security access to open."
+	desc = "Contains seven flashbangs, seven teargas grenades, six flashes, and seven handcuffs. Requires extended Security access to open."
 	cost = 1000
 	contains = list(/obj/item/storage/box/flashbangs,
 					/obj/item/storage/box/teargas,
@@ -384,14 +382,14 @@
 
 /datum/supply_pack/security/vending/security
 	name = "SecTech Supply Crate"
-	desc = "Officer Paul bought all the donuts? Then refill the security vendor with ths crate."
+	desc = "Officer Paul bought all the donuts? Then refill the security vendor with this crate. Requires extended Security access to open."
 	cost = 1500
 	contains = list(/obj/item/vending_refill/security)
 	crate_name = "SecTech supply crate"
 
 /datum/supply_pack/security/firingpins
 	name = "Standard Firing Pins Crate"
-	desc = "Upgrade your arsenal with 10 standard firing pins. Requires Security access to open."
+	desc = "Upgrade your arsenal with 10 standard firing pins. Requires extended Security access to open."
 	cost = 2000
 	contains = list(/obj/item/storage/box/firingpins,
 					/obj/item/storage/box/firingpins)
@@ -400,7 +398,7 @@
 
 /datum/supply_pack/security/firingpins/paywall
 	name = "Paywall Firing Pins Crate"
-	desc = "Specialized firing pins with a built-in configurable paywall. Requires Security access to open."
+	desc = "Specialized firing pins with a built-in configurable paywall. Requires extended Security access to open."
 	cost = 2500
 	contains = list(/obj/item/storage/box/firingpins/paywall,
 					/obj/item/storage/box/firingpins/paywall)
@@ -408,7 +406,7 @@
 
 /datum/supply_pack/security/justiceinbound
 	name = "Standard Justice Enforcer Crate"
-	desc = "This is it. The Bee's Knees. The Creme of the Crop. The Pick of the Litter. The best of the best of the best. The Crown Jewel of Nanotrasen. The Alpha and the Omega of security headwear. Guaranteed to strike fear into the hearts of each and every criminal aboard the station. Also comes with a security gasmask. Requires Security access to open."
+	desc = "This is it. The Bee's Knees. The Creme of the Crop. The Pick of the Litter. The best of the best of the best. The Crown Jewel of Nanotrasen. The Alpha and the Omega of security headwear. Guaranteed to strike fear into the hearts of each and every criminal aboard the station. Also comes with a security gasmask. Requires extended Security access to open."
 	cost = 6000 //justice comes at a price. An expensive, noisy price.
 	contraband = TRUE
 	contains = list(/obj/item/clothing/head/helmet/justice,
@@ -417,7 +415,7 @@
 
 /datum/supply_pack/security/baton
 	name = "Stun Batons Crate"
-	desc = "Arm the Civil Protection Forces with three stun batons. Batteries included. Requires Security access to open."
+	desc = "Arm the Civil Protection Forces with three stun batons. Batteries included. Requires extended Security access to open."
 	cost = 1000
 	contains = list(/obj/item/melee/baton/loaded,
 					/obj/item/melee/baton/loaded,
@@ -427,7 +425,7 @@
 
 /datum/supply_pack/security/wall_flash
 	name = "Wall-Mounted Flash Crate"
-	desc = "Contains four wall-mounted flashes. Requires Security access to open."
+	desc = "Contains four wall-mounted flashes. Requires extended Security access to open."
 	cost = 1000
 	contains = list(/obj/item/storage/box/wall_flash,
 					/obj/item/storage/box/wall_flash,
