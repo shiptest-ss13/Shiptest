@@ -1,4 +1,4 @@
-#define ETHEREAL_COLORS list("#00ffff", "#ffc0cb", "#9400D3", "#4B0082", "#0000FF", "#00FF00", "#FFFF00", "#FF7F00", "#FF0000")
+#define ETHEREAL_EMAG_COLORS list("#00ffff", "#ffc0cb", "#9400D3", "#4B0082", "#0000FF", "#00FF00", "#FFFF00", "#FF7F00", "#FF0000") // WaspStation Edit -- Multitool Color Change
 
 /datum/species/ethereal
 	name = "Ethereal"
@@ -29,14 +29,8 @@
 	hair_alpha = 140
 	var/current_color
 	var/EMPeffect = FALSE
-	var/emageffect = FALSE
-	var/r1
-	var/g1
-	var/b1
-	var/static/r2 = 237
-	var/static/g2 = 164
-	var/static/b2 = 149
-	//this is shit but how do i fix it? no clue.
+	var/emag_effect = FALSE                          // WaspStation Edit -- Multitool Color Change
+	var/static/unhealthy_color = rgb(237, 164, 149)  // WaspStation Edit -- Multitool Color Change
 	loreblurb = "Ethereals are organic humanoid beings with a blood that has strange luminiscent and electrical properties. \
 				Ethereals are barred from most authority roles on Nanotrasen stations and are not protected by the AI's default Asimov laws."
 	var/drain_time = 0 //used to keep ethereals from spam draining power sources
@@ -46,9 +40,7 @@
 	if(ishuman(C))
 		var/mob/living/carbon/human/H = C
 		default_color = "#" + H.dna.features["ethcolor"]
-		r1 = GetRedPart(default_color)
-		g1 = GetGreenPart(default_color)
-		b1 = GetBluePart(default_color)
+		// WaspStation Removal -- Multitool Color Change
 		spec_updatehealth(H)
 		RegisterSignal(C, COMSIG_ATOM_EMAG_ACT, .proc/on_emag_act)
 		RegisterSignal(C, COMSIG_ATOM_EMP_ACT, .proc/on_emp_act)
@@ -70,15 +62,42 @@
 /datum/species/ethereal/spec_updatehealth(mob/living/carbon/human/H)
 	.=..()
 	if(H.stat != DEAD && !EMPeffect)
-		var/healthpercent = max(H.health, 0) / 100
-		if(!emageffect)
-			current_color = rgb(r2 + ((r1-r2)*healthpercent), g2 + ((g1-g2)*healthpercent), b2 + ((b1-b2)*healthpercent))
-		H.set_light(1 + (2 * healthpercent), 1 + (1 * healthpercent), current_color)
+		// WaspStation Start -- Multitool Color Change
+		if(!emag_effect)
+			current_color = health_adjusted_color(H, default_color)
+		set_ethereal_light(H, current_color)
 		fixed_mut_color = copytext_char(current_color, 2)
+		// WaspStation End
 	else
 		H.set_light(0)
 		fixed_mut_color = rgb(128,128,128)
 	H.update_body()
+
+// WaspStation Start -- Multitool Color Change
+/datum/species/ethereal/proc/health_adjusted_color(mob/living/carbon/human/H, default_color)
+	var/health_percent = max(H.health, 0) / 100
+
+	var/static/unhealthy_color_red_part   = GetRedPart(unhealthy_color)
+	var/static/unhealthy_color_green_part = GetGreenPart(unhealthy_color)
+	var/static/unhealthy_color_blue_part  = GetBluePart(unhealthy_color)
+
+	var/default_color_red_part   = GetRedPart(default_color)
+	var/default_color_green_part = GetGreenPart(default_color)
+	var/default_color_blue_part  = GetBluePart(default_color)
+
+	var/result = rgb(unhealthy_color_red_part   + ((default_color_red_part   - unhealthy_color_red_part)   * health_percent),
+	                 unhealthy_color_green_part + ((default_color_green_part - unhealthy_color_green_part) * health_percent),
+	                 unhealthy_color_blue_part  + ((default_color_blue_part  - unhealthy_color_blue_part)  * health_percent))
+	return result
+
+/datum/species/ethereal/proc/set_ethereal_light(mob/living/carbon/human/H, current_color)
+	var/health_percent = max(H.health, 0) / 100
+
+	var/light_range = 1 + (2 * health_percent)
+	var/light_power = 1 + (1 * health_percent)
+
+	H.set_light(light_range, light_power, current_color)
+// WaspStation End
 
 /datum/species/ethereal/proc/on_emp_act(mob/living/carbon/human/H, severity)
 	EMPeffect = TRUE
@@ -91,9 +110,9 @@
 			addtimer(CALLBACK(src, .proc/stop_emp, H), 20 SECONDS, TIMER_UNIQUE|TIMER_OVERRIDE) //We're out for 20 seconds
 
 /datum/species/ethereal/proc/on_emag_act(mob/living/carbon/human/H, mob/user)
-	if(emageffect)
+	if(emag_effect)                              // WaspStation Edit -- Multitool Color Change
 		return
-	emageffect = TRUE
+	emag_effect = TRUE                           // WaspStation Edit -- Multitool Color Change
 	if(user)
 		to_chat(user, "<span class='notice'>You tap [H] on the back with your card.</span>")
 	H.visible_message("<span class='danger'>[H] starts flickering in an array of colors!</span>")
@@ -113,14 +132,14 @@
 
 
 /datum/species/ethereal/proc/handle_emag(mob/living/carbon/human/H)
-	if(!emageffect)
+	if(!emag_effect)                              // WaspStation Edit -- Multitool Color Change
 		return
-	current_color = pick(ETHEREAL_COLORS)
+	current_color = pick(ETHEREAL_EMAG_COLORS)    // WaspStation Edit -- Multitool Color Change
 	spec_updatehealth(H)
 	addtimer(CALLBACK(src, .proc/handle_emag, H), 5) //Call ourselves every 0.5 seconds to change color
 
 /datum/species/ethereal/proc/stop_emag(mob/living/carbon/human/H)
-	emageffect = FALSE
+	emag_effect = FALSE                           // WaspStation Edit -- Multitool Color Change
 	spec_updatehealth(H)
 	H.visible_message("<span class='danger'>[H] stops flickering and goes back to their normal state!</span>")
 
@@ -181,3 +200,32 @@
 	if(istype(stomach))
 		return stomach.crystal_charge
 	return ETHEREAL_CHARGE_NONE
+
+// WaspStation Start -- Multitool Color Change
+/datum/species/ethereal/spec_attacked_by(obj/item/I, mob/living/user, obj/item/bodypart/affecting, intent, mob/living/carbon/human/H)
+	if(istype(I, /obj/item/multitool))
+		if(user.a_intent == INTENT_HARM)
+			. = ..() // multitool beatdown
+			return
+
+		if (emag_effect == TRUE)
+			to_chat(user, "<span class='danger'>The multitool can't get a lock on [H]'s EM frequency</span>")
+			return
+
+		if(user != H)
+			// random color change
+			default_color = "#" + GLOB.color_list_ethereal[pick(GLOB.color_list_ethereal)]
+			current_color = health_adjusted_color(H, default_color)
+			spec_updatehealth(H)
+			H.visible_message("<span class='danger'>[H]'s EM frequency is scrambled to a random color.</span>")
+		else
+			// select new color
+			var/new_etherealcolor = input(user, "Choose your ethereal color", "Character Preference") as null|anything in GLOB.color_list_ethereal
+			if(new_etherealcolor)
+				default_color = "#" + GLOB.color_list_ethereal[new_etherealcolor]
+				current_color = health_adjusted_color(H, default_color)
+				spec_updatehealth(H)
+				H.visible_message("<span class='notice'>[H] modulates \his EM frequency to [new_etherealcolor].</span>")
+	else
+		. = ..()
+// WaspStation End
