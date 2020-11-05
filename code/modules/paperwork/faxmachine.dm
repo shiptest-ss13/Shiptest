@@ -248,6 +248,8 @@ GLOBAL_LIST_EMPTY(alldepartments)
 	else if(document_copy)
 		to_send = make_document_copy()
 
+	to_send.moveToNullspace()
+
 	var/datum/fax/admin/A = new /datum/fax/admin()
 	A.name = to_send.name
 	A.from_department = department

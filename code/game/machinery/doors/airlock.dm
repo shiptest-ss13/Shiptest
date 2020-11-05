@@ -844,6 +844,12 @@
 	return attack_hand(user)
 
 /obj/machinery/door/airlock/attack_hand(mob/user)
+	if(user.a_intent == INTENT_GRAB) //Wasp edit - Grabbing notes off doors
+		user.visible_message("<span class='notice'>[user] grabs [note] from [src].</span>", "<span class='notice'>You remove [note] from [src].</span>")
+		user.put_in_hands(note)
+		note = null
+		update_icon() //Wasp end
+		return TRUE
 	if(locked && allowed(user) && aac)
 		aac.request_from_door(src)
 		. = TRUE
