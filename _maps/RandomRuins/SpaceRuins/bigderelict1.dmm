@@ -1471,7 +1471,8 @@
 	name = "gelatinous floor"
 	},
 /mob/living/simple_animal/hostile/netherworld{
-	name = "Miss Tiggles"
+	name = "Miss Tiggles";
+	loot = list(/obj/item/disk/design_disk/ammo_1911);
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/derelictoutpost)
