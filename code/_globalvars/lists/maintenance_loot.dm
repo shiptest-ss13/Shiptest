@@ -167,6 +167,7 @@ GLOBAL_LIST_INIT(uncommon_loot, list(//uncommon: useful items
 		/obj/item/grenade/iedcasing/spawned = 1,
 		/obj/item/melee/baton/cattleprod = 1,
 		/obj/item/throwing_star = 1,
+		/obj/item/gun/ballistic/derringer = 1, //Waspstation - Derringer
 		) = 8,
 
 	list(//equipment
@@ -249,7 +250,6 @@ GLOBAL_LIST_INIT(oddity_loot, list(//oddity: strange or crazy items
 		/obj/item/clothing/shoes/jackboots/fast = 1,
 		/obj/item/clothing/suit/armor/reactive/table = 1,
 		/obj/item/storage/box/donkpockets/donkpocketgondola = 1,
-		/obj/item/gun/ballistic/derringer = 1, //Waspstation - Derringer
 		/obj/item/melee/greykingsword = 1 //Waspstation - Meth Sword
 	))
 
