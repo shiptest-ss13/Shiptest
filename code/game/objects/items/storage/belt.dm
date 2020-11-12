@@ -64,7 +64,10 @@
 		/obj/item/construction/rcd,
 		/obj/item/pipe_dispenser,
 		/obj/item/inducer,
-		/obj/item/plunger
+		/obj/item/plunger,
+		/obj/item/clothing/glasses/welding, //wasp edit: ok mald sure I'll add the welding stuff to the. ok. 
+		/obj/item/clothing/mask/gas/welding,
+		/obj/item/clothing/head/welding //wasp end
 		))
 
 /obj/item/storage/belt/utility/chief
