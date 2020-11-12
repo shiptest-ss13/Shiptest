@@ -283,7 +283,7 @@
 	materials = list(/datum/material/iron = 6000, /datum/material/silver = 600, /datum/material/glass = 1000)
 	build_path = /obj/item/ammo_box/magazine/wt550m9/wtic
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
-	
+
 //Waspstation edit - free lethals
 
 /datum/design/commanderammo
@@ -373,3 +373,38 @@
 	build_path = /obj/item/melee/baton/boomerang
 	category = list("Weapons")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
+
+//Wasp Edit - Energy Gun power cells
+/datum/design/gun_cell
+	name = "Weapon Power Cell"
+	desc = "A power cell for weapons holds 10 MJ of energy."
+	id = "gun_cell"
+	build_type = PROTOLATHE | AUTOLATHE
+	materials = list(/datum/material/iron = 700, /datum/material/glass = 70)
+	construction_time=100
+	build_path = /obj/item/stock_parts/cell/gun/empty
+	category = list("Misc","Weapons")
+	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE | DEPARTMENTAL_FLAG_SECURITY
+
+/datum/design/gun_cell/upgraded
+	name = "Upgraded Weapon Power Cell"
+	desc = "A upgraded power cell for weapons holds 20 MJ of energy."
+	id = "gun_cell_upgraded"
+	build_type = PROTOLATHE
+	materials = list(/datum/material/iron = 700, /datum/material/gold = 150, /datum/material/silver = 150, /datum/material/glass = 80)
+	construction_time=100
+	build_path = /obj/item/stock_parts/cell/gun/upgraded/empty
+	category = list("Misc","Weapons")
+	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE | DEPARTMENTAL_FLAG_SECURITY
+
+/datum/design/gun_cell/large
+	name = "Large Weapon Power Cell"
+	desc = "A huge weapon power cell, holding 50 MJ of energy."
+	id = "gun_cell_large"
+	build_type = PROTOLATHE
+	materials = list(/datum/material/iron = 2000, /datum/material/gold = 200, /datum/material/glass = 400, /datum/material/diamond = 160, /datum/material/titanium = 300, /datum/material/bluespace = 100)
+	construction_time=100
+	build_path = /obj/item/stock_parts/cell/gun/large/empty
+	category = list("Misc","Weapons")
+	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE | DEPARTMENTAL_FLAG_SECURITY
+//Wasp end

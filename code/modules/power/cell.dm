@@ -228,23 +228,28 @@
 /obj/item/stock_parts/cell/mini_egun
 	name = "miniature energy gun power cell"
 	maxcharge = 600
+	rating = 0 //gun batteries now incompatible with RPED Waspstation edit
 
 /obj/item/stock_parts/cell/hos_gun
 	name = "X-01 multiphase energy gun power cell"
 	maxcharge = 1200
+	rating = 0 //gun batteries now incompatible with RPED Waspstation edit
 
 /obj/item/stock_parts/cell/pulse //200 pulse shots
 	name = "pulse rifle power cell"
 	maxcharge = 400000
 	chargerate = 1500
+	rating = 0 //gun batteries now incompatible with RPED Waspstation edit
 
 /obj/item/stock_parts/cell/pulse/carbine //25 pulse shots
 	name = "pulse carbine power cell"
 	maxcharge = 50000
+	rating = 0 //gun batteries now incompatible with RPED Waspstation edit
 
 /obj/item/stock_parts/cell/pulse/pistol //10 pulse shots
 	name = "pulse pistol power cell"
 	maxcharge = 20000
+	rating = 0 //gun batteries now incompatible with RPED Waspstation edit
 
 /obj/item/stock_parts/cell/high
 	name = "high-capacity power cell"

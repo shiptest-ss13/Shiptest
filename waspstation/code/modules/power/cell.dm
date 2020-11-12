@@ -5,6 +5,7 @@
 	maxcharge = 10000
 	custom_materials = list(/datum/material/glass=60)
 	chargerate = 1500
+	rating = 0 //gun batteries now incompatible with RPED Waspstation edit
 
 /obj/item/stock_parts/cell/gun/empty/Initialize()
 	. = ..()
