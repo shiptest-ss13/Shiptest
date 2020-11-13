@@ -87,8 +87,9 @@
 	name = "pod window"
 	icon = 'icons/obj/smooth_structures/pod_window.dmi'
 	icon_state = "smooth"
-	smooth = SMOOTH_MORE
-	canSmoothWith = list(/turf/closed/wall/mineral/titanium/survival, /obj/machinery/door/airlock/survival_pod, /obj/structure/window/shuttle/survival_pod)
+	smoothing_flags = SMOOTH_CORNERS
+	smoothing_groups = list(SMOOTH_GROUP_SHUTTLE_PARTS, SMOOTH_GROUP_SURVIVAL_TIANIUM_POD)
+	canSmoothWith = list(SMOOTH_GROUP_SURVIVAL_TIANIUM_POD)
 
 /obj/structure/window/shuttle/survival_pod/spawner/north
 	dir = NORTH
@@ -133,7 +134,7 @@
 /obj/structure/table/survival_pod
 	icon = 'icons/obj/lavaland/survival_pod.dmi'
 	icon_state = "table"
-	smooth = SMOOTH_FALSE
+	smoothing_flags = NONE
 
 //Sleeper
 /obj/machinery/sleeper/survival_pod
@@ -199,7 +200,7 @@
 	icon = 'icons/obj/lavaland/donkvendor.dmi'
 	light_range = 5
 	light_power = 1.2
-	light_color = "#DDFFD3"
+	light_color = COLOR_VERY_PALE_LIME_GREEN
 	max_n_of_items = 10
 	pixel_y = -4
 	flags_1 = NODECONSTRUCT_1

@@ -68,13 +68,23 @@
 	var/firedoors_last_closed_on = 0
 	/// Can the Xenobio management console transverse this area by default?
 	var/xenobiology_compatible = FALSE
-	/// typecache to limit the areas that atoms in this area can smooth with, used for shuttles IIRC
-	var/list/canSmoothWithAreas
+	///Boolean to limit the areas (subtypes included) that atoms in this area can smooth with. Used for shuttles.
+	var/area_limited_icon_smoothing = FALSE
 
 	/// Wasp Addition - Color on minimaps, if it's null (which is default) it makes one at random.
 	var/minimap_color
-	
+
 	var/list/power_usage
+
+	var/lighting_colour_tube = "#FFF6ED"
+	var/lighting_colour_bulb = "#FFE6CC"
+	var/lighting_colour_night = "#FFDBB5"
+	var/lighting_brightness_tube = 10
+	var/lighting_brightness_bulb = 6
+	var/lighting_brightness_night = 6
+
+	///This datum, if set, allows terrain generation behavior to be ran on Initialize()
+	var/datum/map_generator/map_generator
 
 
 /**
@@ -141,7 +151,6 @@ GLOBAL_LIST_EMPTY(teleportlocs)
 	icon_state = ""
 	layer = AREA_LAYER
 	map_name = name // Save the initial (the name set in the map) name of the area.
-	canSmoothWithAreas = typecacheof(canSmoothWithAreas)
 
 	if(requires_power)
 		luminosity = 0
@@ -175,6 +184,9 @@ GLOBAL_LIST_EMPTY(teleportlocs)
 /area/LateInitialize()
 	power_change()		// all machines set to current power level, also updates icon
 	update_beauty()
+	if(map_generator)
+		map_generator = new map_generator()
+		map_generator.generate_terrain(get_area_turfs(src))
 
 /**
   * Register this area as belonging to a z level

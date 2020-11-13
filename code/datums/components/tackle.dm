@@ -63,11 +63,15 @@
 
 ///Store the thrownthing datum for later use
 /datum/component/tackler/proc/registerTackle(mob/living/carbon/user, datum/thrownthing/TT)
+	SIGNAL_HANDLER
+
 	tackle = TT
 
 ///See if we can tackle or not. If we can, leap!
 /datum/component/tackler/proc/checkTackle(mob/living/carbon/user, atom/A, params)
-	if(!user.in_throw_mode || user.get_active_held_item() || user.pulling || user.buckling)
+	SIGNAL_HANDLER
+
+	if(!user.in_throw_mode || user.get_active_held_item() || user.pulling || user.buckled || user.incapacitated())
 		return
 
 	if(!A || !(isturf(A) || isturf(A.loc)))
@@ -139,6 +143,8 @@
  * Finally, we return a bitflag to [COMSIG_MOVABLE_IMPACT] that forces the hitpush to false so that we don't knock them away.
 */
 /datum/component/tackler/proc/sack(mob/living/carbon/user, atom/hit)
+	SIGNAL_HANDLER_DOES_SLEEP
+
 	if(!tackling || !tackle)
 		return
 
@@ -450,6 +456,8 @@
 
 ///Check to see if we hit a table, and if so, make a big mess!
 /datum/component/tackler/proc/checkObstacle(mob/living/carbon/owner)
+	SIGNAL_HANDLER
+
 	if(!tackling)
 		return
 

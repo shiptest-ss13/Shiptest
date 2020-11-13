@@ -197,9 +197,6 @@
 	if(stat == DEAD)
 		. += "<span class='deadsay'>Upon closer examination, [p_they()] appear[p_s()] to be dead.</span>"
 
-/mob/living/simple_animal/updatehealth()
-	..()
-	health = clamp(health, 0, maxHealth)
 
 /mob/living/simple_animal/update_stat()
 	if(status_flags & GODMODE)
@@ -252,23 +249,23 @@
 					else
 						randomValue -= speak.len
 						if(emote_see && randomValue <= emote_see.len)
-							emote("me [pick(emote_see)]", 1)
+							manual_emote(pick(emote_see))
 						else
-							emote("me [pick(emote_hear)]", 2)
+							manual_emote(pick(emote_hear))
 				else
 					say(pick(speak), forced = "poly")
 			else
 				if(!(emote_hear && emote_hear.len) && (emote_see && emote_see.len))
-					emote("me", 1, pick(emote_see))
+					manual_emote(pick(emote_see))
 				if((emote_hear && emote_hear.len) && !(emote_see && emote_see.len))
-					emote("me", 2, pick(emote_hear))
+					manual_emote(pick(emote_hear))
 				if((emote_hear && emote_hear.len) && (emote_see && emote_see.len))
 					var/length = emote_hear.len + emote_see.len
 					var/pick = rand(1,length)
 					if(pick <= emote_see.len)
-						emote("me", 1, pick(emote_see))
+						manual_emote(pick(emote_see))
 					else
-						emote("me", 2, pick(emote_hear))
+						manual_emote(pick(emote_hear))
 
 /mob/living/simple_animal/proc/environment_air_is_safe()
 	. = TRUE
@@ -367,7 +364,7 @@
 	if(icon_gib)
 		new /obj/effect/temp_visual/gib_animation/animal(loc, icon_gib)
 
-/mob/living/simple_animal/say_mod(input, message_mode)
+/mob/living/simple_animal/say_mod(input, list/message_mods = list())
 	if(speak_emote && speak_emote.len)
 		verb_say = pick(speak_emote)
 	. = ..()
@@ -514,8 +511,17 @@
 	else
 		..()
 
+
+/mob/living/simple_animal/update_resting()
+	if(resting)
+		ADD_TRAIT(src, TRAIT_IMMOBILIZED, RESTING_TRAIT)
+	else
+		REMOVE_TRAIT(src, TRAIT_IMMOBILIZED, RESTING_TRAIT)
+	return ..()
+
+
 /mob/living/simple_animal/update_mobility(value_otherwise = TRUE)
-	if(IsUnconscious() || IsParalyzed() || IsStun() || IsKnockdown() || IsParalyzed() || stat || resting)
+	if(HAS_TRAIT_NOT_FROM(src, TRAIT_IMMOBILIZED, BUCKLED_TRAIT))
 		drop_all_held_items()
 		mobility_flags = NONE
 	else if(buckled)

@@ -13,19 +13,20 @@
 	throw_speed = 3
 	throw_range = 5
 	w_class = WEIGHT_CLASS_SMALL
-	var/w_class_on = WEIGHT_CLASS_BULKY
 	hitsound = "swing_hit"
 	armour_penetration = 35
-	var/saber_color = "green"
-	light_color = "#00ff00"//green
-	attack_verb = list("attacked", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
-	block_chance = 75
+	light_system = MOVABLE_LIGHT
+	light_range = 6 //TWICE AS BRIGHT AS A REGULAR ESWORD
+	light_color = LIGHT_COLOR_ELECTRIC_GREEN
+	light_on = FALSE
+	attack_verb = list("attacked", "slashed", "stabbed", "sliced", "tore", "lacerated", "ripped", "diced", "cut")
 	max_integrity = 200
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 70)
 	resistance_flags = FIRE_PROOF
+	var/w_class_on = WEIGHT_CLASS_BULKY
+	var/saber_color = "green"
 	var/two_hand_force = 34
 	var/hacked = FALSE
-	var/brightness_on = 6 //TWICE AS BRIGHT AS A REGULAR ESWORD
 	var/list/possible_colors = list("red", "blue", "green", "purple")
 	var/wielded = FALSE // track wielded status on item
 
@@ -36,6 +37,8 @@
 /// Triggered on wield of two handed item
 /// Specific hulk checks due to reflection chance for balance issues and switches hitsounds.
 /obj/item/dualsaber/proc/on_wield(obj/item/source, mob/living/carbon/user)
+	SIGNAL_HANDLER
+
 	if(user && user.has_dna())
 		if(user.dna.check_mutation(HULK))
 			to_chat(user, "<span class='warning'>You lack the grace to wield this!</span>")
@@ -45,17 +48,21 @@
 	w_class = w_class_on
 	hitsound = 'sound/weapons/blade1.ogg'
 	START_PROCESSING(SSobj, src)
-	set_light(brightness_on)
+	set_light_on(TRUE)
+
 
 /// Triggered on unwield of two handed item
 /// switch hitsounds
 /obj/item/dualsaber/proc/on_unwield(obj/item/source, mob/living/carbon/user)
+	SIGNAL_HANDLER
+
 	wielded = FALSE
 	sharpness = initial(sharpness)
 	w_class = initial(w_class)
 	hitsound = "swing_hit"
 	STOP_PROCESSING(SSobj, src)
-	set_light(0)
+	set_light_on(FALSE)
+
 
 /obj/item/dualsaber/update_icon_state()
 	if(wielded)
@@ -95,13 +102,13 @@
 		saber_color = pick(possible_colors)
 		switch(saber_color)
 			if("red")
-				light_color = LIGHT_COLOR_RED
+				set_light_color(COLOR_SOFT_RED)
 			if("green")
-				light_color = LIGHT_COLOR_GREEN
+				set_light_color(LIGHT_COLOR_GREEN)
 			if("blue")
-				light_color = LIGHT_COLOR_LIGHT_CYAN
+				set_light_color(LIGHT_COLOR_LIGHT_CYAN)
 			if("purple")
-				light_color = LIGHT_COLOR_LAVENDER
+				set_light_color(LIGHT_COLOR_LAVENDER)
 
 /obj/item/dualsaber/Destroy()
 	STOP_PROCESSING(SSobj, src)
@@ -139,7 +146,7 @@
 /obj/item/dualsaber/process()
 	if(wielded)
 		if(hacked)
-			light_color = pick(LIGHT_COLOR_RED, LIGHT_COLOR_GREEN, LIGHT_COLOR_LIGHT_CYAN, LIGHT_COLOR_LAVENDER)
+			set_light_color(pick(COLOR_SOFT_RED, LIGHT_COLOR_GREEN, LIGHT_COLOR_LIGHT_CYAN, LIGHT_COLOR_LAVENDER))
 		open_flame()
 	else
 		STOP_PROCESSING(SSobj, src)

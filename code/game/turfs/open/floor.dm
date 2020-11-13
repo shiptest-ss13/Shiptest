@@ -11,6 +11,9 @@
 	clawfootstep = FOOTSTEP_HARD_CLAW
 	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
 
+	smoothing_groups = list(SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_OPEN_FLOOR)
+	canSmoothWith = list(SMOOTH_GROUP_OPEN_FLOOR, SMOOTH_GROUP_TURF_OPEN)
+
 	var/icon_regular_floor = "floor" //used to remember what icon the tile should have by default
 	var/icon_plating = "plating"
 	thermal_conductivity = 0.040
@@ -272,8 +275,6 @@
 			if(A.electronics.unres_sides)
 				A.unres_sides = A.electronics.unres_sides
 			A.autoclose = TRUE
-			if(A.has_hatch)
-				A.setup_hatch()
 			return TRUE
 		if(RCD_DECONSTRUCT)
 			if(!ScrapeAway(flags = CHANGETURF_INHERIT_AIR))
@@ -285,7 +286,7 @@
 				return FALSE
 			to_chat(user, "<span class='notice'>You construct the grille.</span>")
 			var/obj/structure/grille/G = new(src)
-			G.anchored = TRUE
+			G.set_anchored(TRUE)
 			return TRUE
 		if(RCD_MACHINE)
 			if(locate(/obj/structure/frame/machine) in src)
@@ -293,13 +294,13 @@
 			var/obj/structure/frame/machine/M = new(src)
 			M.state = 2
 			M.icon_state = "box_1"
-			M.anchored = TRUE
+			M.set_anchored(TRUE)
 			return TRUE
 		if(RCD_COMPUTER)
 			if(locate(/obj/structure/frame/computer) in src)
 				return FALSE
 			var/obj/structure/frame/computer/C = new(src)
-			C.anchored = TRUE
+			C.set_anchored(TRUE)
 			C.state = 1
 			C.setDir(the_rcd.computer_dir)
 			return TRUE

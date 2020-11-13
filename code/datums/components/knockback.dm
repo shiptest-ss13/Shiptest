@@ -21,14 +21,20 @@
 	UnregisterSignal(parent, list(COMSIG_ITEM_AFTERATTACK, COMSIG_HOSTILE_ATTACKINGTARGET, COMSIG_PROJECTILE_ON_HIT))
 
 /datum/component/knockback/proc/item_afterattack(obj/item/source, atom/target, mob/user, proximity_flag, click_parameters)
+	SIGNAL_HANDLER
+
 	if(!proximity_flag)
 		return
 	do_knockback(target, user, get_dir(source, target))
 
 /datum/component/knockback/proc/hostile_attackingtarget(mob/living/simple_animal/hostile/attacker, atom/target)
+	SIGNAL_HANDLER
+
 	do_knockback(target, attacker, get_dir(attacker, target))
 
 /datum/component/knockback/proc/projectile_hit(atom/fired_from, atom/movable/firer, atom/target, Angle)
+	SIGNAL_HANDLER
+
 	do_knockback(target, null, angle2dir(Angle))
 
 /datum/component/knockback/proc/do_knockback(atom/target, mob/thrower, throw_dir)

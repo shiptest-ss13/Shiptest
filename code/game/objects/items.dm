@@ -433,7 +433,7 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 		return 1
 	return 0
 
-/obj/item/proc/talk_into(mob/M, input, channel, spans, datum/language/language)
+/obj/item/proc/talk_into(mob/M, input, channel, spans, datum/language/language, list/message_mods)
 	return ITALICS | REDUCE_RANGE
 
 /obj/item/proc/dropped(mob/user, silent = FALSE)
@@ -991,3 +991,11 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 		pain_stam_pct = (!isnull(embedding["pain_stam_pct"]) ? embedding["pain_stam_pct"] : EMBEDDED_PAIN_STAM_PCT),\
 		embed_chance_turf_mod = (!isnull(embedding["embed_chance_turf_mod"]) ? embedding["embed_chance_turf_mod"] : EMBED_CHANCE_TURF_MOD))
 	return TRUE
+
+// Update icons if this is being carried by a mob
+/obj/item/wash(clean_types)
+	. = ..()
+
+	if(ismob(loc))
+		var/mob/mob_loc = loc
+		mob_loc.regenerate_icons()

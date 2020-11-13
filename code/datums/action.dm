@@ -144,6 +144,8 @@
 		current_button.button_icon_state = button_icon_state
 
 /datum/action/proc/OnUpdatedIcon()
+	SIGNAL_HANDLER
+
 	UpdateButtonIcon()
 
 //Presets for item actions
@@ -292,6 +294,15 @@
 			button_icon_state = "vortex_ff_on"
 			name = "Toggle Friendly Fire \[ON\]"
 	..()
+
+/* Wasp revert
+/// Toggle the action icon for the space suit thermal regulator
+/datum/action/item_action/toggle_spacesuit/proc/toggle(obj/item/clothing/suit/space/suit)
+	SIGNAL_HANDLER
+
+	button_icon_state = "thermal_[suit.thermal_on ? "on" : "off"]"
+	UpdateButtonIcon()
+*/
 
 /datum/action/item_action/vortex_recall
 	name = "Vortex Recall"

@@ -14,7 +14,7 @@ GLOBAL_LIST_INIT(turfs_without_ground, typecacheof(list(
 	/turf/open/chasm,
 	/turf/open/lava,
 	/turf/open/water,
-	/turf/open/openspace
+	/turf/open/transparent/openspace
 	)))
 
 #define isgroundlessturf(A) (is_type_in_typecache(A, GLOB.turfs_without_ground))
@@ -40,6 +40,8 @@ GLOBAL_LIST_INIT(turfs_without_ground, typecacheof(list(
 #define ischasm(A) (istype(A, /turf/open/chasm))
 
 #define isplatingturf(A) (istype(A, /turf/open/floor/plating))
+
+#define istransparentturf(A) (istype(A, /turf/open/transparent))
 
 //Mobs
 #define isliving(A) (istype(A, /mob/living))
@@ -179,7 +181,7 @@ GLOBAL_LIST_INIT(turfs_without_ground, typecacheof(list(
 
 #define ismecha(A) (istype(A, /obj/mecha))
 
-#define is_cleanable(A) (istype(A, /obj/effect/decal/cleanable) || istype(A, /obj/effect/rune)) //if something is cleanable
+#define ismopable(A) (A.layer <= HIGH_SIGIL_LAYER) //If something can be cleaned by floor-cleaning devices such as mops or clean bots
 
 #define isorgan(A) (istype(A, /obj/item/organ))
 
@@ -229,3 +231,10 @@ GLOBAL_LIST_INIT(glass_sheet_types, typecacheof(list(
 //Wasp Begin
 #define isspacepod(A) (istype(A, /obj/spacepod))
 //Wasp End
+
+#define isbook(O) (is_type_in_typecache(O, GLOB.book_types))
+
+GLOBAL_LIST_INIT(book_types, typecacheof(list(
+	/obj/item/book,
+	/obj/item/spellbook,
+	/obj/item/storage/book)))

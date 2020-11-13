@@ -1,6 +1,9 @@
 GLOBAL_LIST_EMPTY(station_turfs)
 /turf
 	icon = 'icons/turf/floors.dmi'
+	flags_1 = CAN_BE_DIRTY_1
+	vis_flags = VIS_INHERIT_ID|VIS_INHERIT_PLANE // Important for interaction with and visualization of openspace.
+	luminosity = 1
 
 	var/intact = 1
 
@@ -17,8 +20,6 @@ GLOBAL_LIST_EMPTY(station_turfs)
 
 	var/blocks_air = FALSE
 
-	flags_1 = CAN_BE_DIRTY_1
-
 	var/list/image/blueprint_data //for the station blueprints, images of objects eg: pipes
 
 	var/explosion_level = 0	//for preventing explosion dodging
@@ -34,7 +35,27 @@ GLOBAL_LIST_EMPTY(station_turfs)
 
 	var/tiled_dirt = FALSE // use smooth tiled dirt decal
 
-	vis_flags = VIS_INHERIT_PLANE|VIS_INHERIT_ID	//when this be added to vis_contents of something it inherit something.plane and be associated with something on clicking, important for visualisation of turf in openspace and interraction with openspace that show you turf.
+	///Icon-smoothing variable to map a diagonal wall corner with a fixed underlay.
+	var/list/fixed_underlay = null
+
+	///Lumcount added by sources other than lighting datum objects, such as the overlay lighting component.
+	var/dynamic_lumcount = 0
+
+	var/dynamic_lighting = TRUE
+
+	var/tmp/lighting_corners_initialised = FALSE
+
+	///List of light sources affecting this turf.
+	var/tmp/list/datum/light_source/affecting_lights
+	///Our lighting object.
+	var/tmp/atom/movable/lighting_object/lighting_object
+	var/tmp/list/datum/lighting_corner/corners
+
+	///Which directions does this turf block the vision of, taking into account both the turf's opacity and the movable opacity_sources.
+	var/directional_opacity = NONE
+	///Lazylist of movable atoms providing opacity sources.
+	var/list/atom/movable/opacity_sources
+
 
 /turf/vv_edit_var(var_name, new_value)
 	var/static/list/banned_edits = list("x", "y", "z")
@@ -59,8 +80,18 @@ GLOBAL_LIST_EMPTY(station_turfs)
 	assemble_baseturfs()
 
 	levelupdate()
-	if(smooth)
-		queue_smooth(src)
+
+	if (length(smoothing_groups))
+		sortTim(smoothing_groups) //In case it's not properly ordered, let's avoid duplicate entries with the same values.
+		SET_BITFLAG_LIST(smoothing_groups)
+	if (length(canSmoothWith))
+		sortTim(canSmoothWith)
+		if(canSmoothWith[length(canSmoothWith)] > MAX_S_TURF) //If the last element is higher than the maximum turf-only value, then it must scan turf contents for smoothing targets.
+			smoothing_flags |= SMOOTH_OBJ
+		SET_BITFLAG_LIST(canSmoothWith)
+	if (smoothing_flags)
+		QUEUE_SMOOTH(src)
+
 	visibilityChanged()
 
 	for(var/atom/movable/AM in src)
@@ -87,7 +118,7 @@ GLOBAL_LIST_EMPTY(station_turfs)
 		SEND_SIGNAL(T, COMSIG_TURF_MULTIZ_NEW, src, UP)
 
 	if (opacity)
-		has_opaque_atom = TRUE
+		directional_opacity = ALL_CARDINALS
 
 	if(custom_materials)
 
@@ -277,13 +308,6 @@ GLOBAL_LIST_EMPTY(station_turfs)
 		if(QDELETED(mover))
 			return FALSE		//We were deleted.
 
-/turf/Entered(atom/movable/AM)
-	..()
-
-	// If an opaque movable atom moves around we need to potentially update visibility.
-	if (AM.opacity)
-		has_opaque_atom = TRUE // Make sure to do this before reconsider_lights(), incase we're on instant updates. Guaranteed to be on in this case.
-		reconsider_lights()
 
 /turf/open/Entered(atom/movable/AM)
 	..()
@@ -568,3 +592,17 @@ GLOBAL_LIST_EMPTY(station_turfs)
 	for(var/reagent in reagents)
 		var/datum/reagent/R = reagent
 		. |= R.expose_turf(src, reagents[R])
+
+/**
+  * Called when this turf is being washed. Washing a turf will also wash any mopable floor decals
+  */
+/turf/wash(clean_types)
+	. = ..()
+
+	for(var/am in src)
+		if(am == src)
+			continue
+		var/atom/movable/movable_content = am
+		if(!ismopable(movable_content))
+			continue
+		movable_content.wash(clean_types)

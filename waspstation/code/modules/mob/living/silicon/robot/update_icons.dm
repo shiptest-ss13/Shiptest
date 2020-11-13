@@ -7,7 +7,7 @@
 	if(module.cyborg_base_icon == "robot")
 		icon = 'icons/mob/robots.dmi'
 		pixel_x = initial(pixel_x)
-	if(stat != DEAD && !(IsUnconscious() || IsStun() || IsParalyzed() || low_power_mode)) //Not dead, not stunned.
+	if(stat != DEAD && !(HAS_TRAIT(src, TRAIT_KNOCKEDOUT) || IsStun() || IsParalyzed() || low_power_mode)) //Not dead, not stunned.
 		if(!eye_lights)
 			eye_lights = new()
 		if(lamp_intensity > 2)

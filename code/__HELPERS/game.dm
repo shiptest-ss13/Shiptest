@@ -262,7 +262,7 @@
 			Y1+=s
 			while(Y1!=Y2)
 				T=locate(X1,Y1,Z)
-				if(T.opacity)
+				if(IS_OPAQUE_TURF(T))
 					return 0
 				Y1+=s
 	else
@@ -278,7 +278,7 @@
 			else
 				X1+=signX //Line exits tile horizontally
 			T=locate(X1,Y1,Z)
-			if(T.opacity)
+			if(IS_OPAQUE_TURF(T))
 				return 0
 	return 1
 #undef SIGNV
@@ -531,15 +531,6 @@
 	var/obj/machinery/announcement_system/announcer = pick(GLOB.announcement_systems)
 	announcer.announce("ARRIVAL", character.real_name, displayed_rank, list()) //make the list empty to make it announce it in common
 	//Wasp end
-
-/proc/GetRedPart(const/hexa)
-	return hex2num(copytext(hexa, 2, 4))
-
-/proc/GetGreenPart(const/hexa)
-	return hex2num(copytext(hexa, 4, 6))
-
-/proc/GetBluePart(const/hexa)
-	return hex2num(copytext(hexa, 6, 8))
 
 /proc/lavaland_equipment_pressure_check(turf/T)
 	. = FALSE

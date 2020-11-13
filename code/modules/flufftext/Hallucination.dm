@@ -647,7 +647,7 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 	var/obj/machinery/door/airlock/airlock
 
 /obj/effect/hallucination/fake_door_lock/proc/lock()
-	bolt_light = image(airlock.overlays_file, get_turf(airlock), "lights_bolts",layer=airlock.layer+0.1)
+	bolt_light = image(airlock.overlays_file, airlock, "lights_bolts",layer=layer)
 	if(target.client)
 		target.client.images |= bolt_light
 		target.playsound_local(get_turf(airlock), 'sound/machines/boltsdown.ogg',30,0,3)
@@ -699,6 +699,8 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 			if(get_dist(target,H)<get_dist(target,person))
 				person = H
 
+	var/atom/movable/virtualspeaker/speaker
+
 	// Get person to affect if radio hallucination
 	var/is_radio = !person || force_radio
 	if (is_radio)
@@ -706,12 +708,19 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 		for(var/mob/living/carbon/human/H in GLOB.alive_mob_list)
 			humans += H
 		person = pick(humans)
+		speaker = new(null, person, target)
+		target.playsound_local(src, "sound/effects/radio_chatter.ogg", 20, FALSE)
 
 	// Generate message
 	var/spans = list(person.speech_span)
 	var/chosen = !specific_message ? capitalize(pick(is_radio ? speak_messages : radio_messages)) : specific_message
 	chosen = replacetext(chosen, "%TARGETNAME%", target_name)
-	var/message = target.compose_message(person, understood_language, chosen, is_radio ? "[FREQ_COMMON]" : null, spans, face_name = TRUE)
+
+	var/end = copytext(chosen, length(chosen)) //Hallucinations are given the same punctuation treatment player messages are given, for that slight bit of extra spook
+	if(!(end in list("!", ".", "?", ":", "\"", "-")))
+		chosen += "."
+
+	var/message = target.compose_message(speaker || person, understood_language, chosen, is_radio ? "[FREQ_COMMON]" : null, spans, face_name = TRUE)
 	feedback_details += "Type: [is_radio ? "Radio" : "Talk"], Source: [person.real_name], Message: [message]"
 
 	// Display message
@@ -719,7 +728,7 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 		var/image/speech_overlay = image('icons/mob/talk.dmi', person, "default0", layer = ABOVE_MOB_LAYER)
 		INVOKE_ASYNC(GLOBAL_PROC, /proc/flick_overlay, speech_overlay, list(target.client), 30)
 	if (target.client?.prefs.chat_on_map)
-		target.create_chat_message(person, understood_language, chosen, spans, 0)
+		target.create_chat_message(speaker || person, understood_language, chosen, spans)
 	to_chat(target, message)
 	qdel(src)
 

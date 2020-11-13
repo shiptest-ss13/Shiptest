@@ -41,11 +41,11 @@
 	if(do_after(user, clean_speedies, target = parent))
 		user?.mind.adjust_experience(/datum/skill/cleaning, CLEAN_SKILL_GENERIC_WASH_XP)
 		S.decreaseUses(user)
-		OnClean(source, CLEAN_MEDIUM)
+		OnClean(source, CLEAN_TYPE_PAINT)
 		return COMPONENT_NO_AFTERATTACK
 
 /datum/component/outline/proc/OnClean(datum/source, clean_strength)
-	if(clean_strength >= CLEAN_MEDIUM)
+	if(clean_strength >= CLEAN_TYPE_PAINT)
 		var/atom/A = parent
 		playsound(A, 'sound/effects/slosh.ogg', 50, TRUE)
 		A.visible_message("<span class='notice'>The outline around [A] is washed away!")

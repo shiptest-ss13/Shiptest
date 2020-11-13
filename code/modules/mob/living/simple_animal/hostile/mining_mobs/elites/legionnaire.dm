@@ -95,7 +95,6 @@
 			bonfire_teleport()
 		if(SPEW_SMOKE)
 			spew_smoke()
-
 /mob/living/simple_animal/hostile/asteroid/elite/legionnaire/proc/legionnaire_charge(target)
 	ranged_cooldown = world.time + 50
 	var/dir_to_target = get_dir(get_turf(src), get_turf(target))
@@ -253,7 +252,7 @@
 	anchored = TRUE
 	density = FALSE
 	light_range = 4
-	light_color = LIGHT_COLOR_RED
+	light_color = COLOR_SOFT_RED
 	var/mob/living/simple_animal/hostile/asteroid/elite/legionnaire/myowner = null
 
 

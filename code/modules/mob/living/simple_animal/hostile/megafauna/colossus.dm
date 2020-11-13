@@ -230,6 +230,7 @@ Difficulty: Very Hard
 	icon = 'icons/effects/effects.dmi'
 	icon_state = "at_shield2"
 	layer = FLY_LAYER
+	light_system = MOVABLE_LIGHT
 	light_range = 2
 	duration = 8
 	var/target
@@ -418,7 +419,7 @@ Difficulty: Very Hard
 		. += observer_desc
 		. += "It is activated by [activation_method]."
 
-/obj/machinery/anomalous_crystal/Hear(message, atom/movable/speaker, message_langs, raw_message, radio_freq, spans, message_mode)
+/obj/machinery/anomalous_crystal/Hear(message, atom/movable/speaker, message_langs, raw_message, radio_freq, spans, list/message_mods = list())
 	..()
 	if(isliving(speaker))
 		ActivationReaction(speaker, ACTIVATE_SPEECH)

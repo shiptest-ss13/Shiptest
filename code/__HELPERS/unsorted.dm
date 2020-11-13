@@ -437,17 +437,13 @@ Turf and target are separate in case you want to teleport some distance from a t
 		current = get_step_towards(current, target_turf)
 		while(current != target_turf)
 			if(steps > length)
-				return 0
-			if(current.opacity)
-				return 0
-			for(var/thing in current)
-				var/atom/A = thing
-				if(A.opacity)
-					return 0
+				return FALSE
+			if(IS_OPAQUE_TURF(current))
+				return FALSE
 			current = get_step_towards(current, target_turf)
 			steps++
+	return TRUE
 
-	return 1
 
 /proc/is_blocked_turf(turf/T, exclude_mobs)
 	if(T.density)

@@ -17,6 +17,10 @@ GLOBAL_VAR_INIT(observer_default_invisibility, INVISIBILITY_OBSERVER)
 	invisibility = INVISIBILITY_OBSERVER
 	hud_type = /datum/hud/ghost
 	movement_type = GROUND | FLYING
+	light_system = MOVABLE_LIGHT
+	light_range = 1
+	light_power = 2
+	light_on = FALSE
 	var/can_reenter_corpse
 	var/datum/hud/living/carbon/hud = null // hud
 	var/bootime = 0
@@ -144,6 +148,7 @@ GLOBAL_VAR_INIT(observer_default_invisibility, INVISIBILITY_OBSERVER)
 	grant_all_languages()
 	show_data_huds()
 	data_huds_on = 1
+
 
 /mob/dead/observer/get_photo_description(obj/item/camera/camera)
 	if(!invisibility || camera.see_ghosts)
@@ -345,7 +350,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 	if(mind.current.key && mind.current.key[1] != "@")	//makes sure we don't accidentally kick any clients
 		to_chat(usr, "<span class='warning'>Another consciousness is in your body...It is resisting you.</span>")
 		return
-	client.change_view(CONFIG_GET(string/default_view))
+	client.view_size.setDefault(getScreenSize(client.prefs.widescreenpref))//Let's reset so people can't become allseeing gods
 	SStgui.on_transfer(src, mind.current) // Transfer NanoUIs.
 	mind.current.key = key
 	mind.current.client.init_verbs()
@@ -503,22 +508,22 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 	set desc = "Change your view range."
 
 	var/max_view = client.prefs.unlock_content ? GHOST_MAX_VIEW_RANGE_MEMBER : GHOST_MAX_VIEW_RANGE_DEFAULT
-	if(client.view == CONFIG_GET(string/default_view))
+	if(client.view_size.getView() == client.view_size.default)
 		var/list/views = list()
 		for(var/i in 7 to max_view)
 			views |= i
-		var/new_view = input("Choose your new view", "Modify view range", 7) as null|anything in views
+		var/new_view = input("Choose your new view", "Modify view range", 0) as null|anything in views
 		if(new_view)
-			client.change_view(clamp(new_view, 7, max_view))
+			client.view_size.setTo(clamp(new_view, 7, max_view) - 7)
 	else
-		client.change_view(CONFIG_GET(string/default_view))
+		client.view_size.resetToDefault()
 
 /mob/dead/observer/verb/add_view_range(input as num)
 	set name = "Add View Range"
 	set hidden = TRUE
 	var/max_view = client.prefs.unlock_content ? GHOST_MAX_VIEW_RANGE_MEMBER : GHOST_MAX_VIEW_RANGE_DEFAULT
 	if(input)
-		client.rescale_view(input, 15, (max_view*2)+1)
+		client.rescale_view(input, 0, ((max_view*2)+1) - 15)
 
 /mob/dead/observer/verb/boo()
 	set category = "Ghost"
@@ -799,13 +804,13 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 /mob/dead/observer/vv_edit_var(var_name, var_value)
 	. = ..()
 	switch(var_name)
-		if("icon")
+		if(NAMEOF(src, icon))
 			ghostimage_default.icon = icon
 			ghostimage_simple.icon = icon
-		if("icon_state")
+		if(NAMEOF(src, icon_state))
 			ghostimage_default.icon_state = icon_state
 			ghostimage_simple.icon_state = icon_state
-		if("fun_verbs")
+		if(NAMEOF(src, fun_verbs))
 			if(fun_verbs)
 				add_verb(src, /mob/dead/observer/verb/boo)
 				add_verb(src, /mob/dead/observer/verb/possess)
@@ -876,10 +881,8 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 
 /mob/dead/observer/proc/set_invisibility(value)
 	invisibility = value
-	if(!value)
-		set_light(1, 2)
-	else
-		set_light(0, 0)
+	set_light_on(!value ? TRUE : FALSE)
+
 
 // Ghosts have no momentum, being massless ectoplasm
 /mob/dead/observer/Process_Spacemove(movement_dir)
@@ -887,7 +890,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 
 /mob/dead/observer/vv_edit_var(var_name, var_value)
 	. = ..()
-	if(var_name == "invisibility")
+	if(var_name == NAMEOF(src, invisibility))
 		set_invisibility(invisibility) // updates light
 
 /proc/set_observer_default_invisibility(amount, message=null)

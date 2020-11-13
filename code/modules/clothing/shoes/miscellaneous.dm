@@ -35,7 +35,7 @@
 /obj/item/clothing/shoes/combat/sneakboots/dropped(mob/living/carbon/human/user)
 	REMOVE_TRAIT(user, TRAIT_SILENT_FOOTSTEPS, SHOES_TRAIT)
 	return ..()
-	
+
 /obj/item/clothing/shoes/combat/swat //overpowered boots for death squads
 	name = "\improper SWAT boots"
 	desc = "High speed, no drag combat boots."
@@ -334,25 +334,31 @@
 	icon_state = "kindleKicks"
 	item_state = "kindleKicks"
 	actions_types = list(/datum/action/item_action/kindleKicks)
+	light_system = MOVABLE_LIGHT
+	light_range = 2
+	light_power = 3
+	light_on = FALSE
 	var/lightCycle = 0
 	var/active = FALSE
+
 
 /obj/item/clothing/shoes/kindleKicks/ui_action_click(mob/user, action)
 	if(active)
 		return
 	active = TRUE
-	set_light(2, 3, rgb(rand(0,255),rand(0,255),rand(0,255)))
-	addtimer(CALLBACK(src, .proc/lightUp), 5)
+	set_light_color(rgb(rand(0, 255), rand(0, 255), rand(0, 255)))
+	set_light_on(active)
+	addtimer(CALLBACK(src, .proc/lightUp), 0.5 SECONDS)
 
 /obj/item/clothing/shoes/kindleKicks/proc/lightUp(mob/user)
 	if(lightCycle < 15)
-		set_light(2, 3, rgb(rand(0,255),rand(0,255),rand(0,255)))
-		lightCycle += 1
-		addtimer(CALLBACK(src, .proc/lightUp), 5)
+		set_light_color(rgb(rand(0, 255), rand(0, 255), rand(0, 255)))
+		lightCycle++
+		addtimer(CALLBACK(src, .proc/lightUp), 0.5 SECONDS)
 	else
-		set_light(0)
 		lightCycle = 0
 		active = FALSE
+		set_light_on(active)
 
 /obj/item/clothing/shoes/russian
 	name = "russian boots"

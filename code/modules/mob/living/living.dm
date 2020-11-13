@@ -1,5 +1,6 @@
 /mob/living/Initialize()
 	. = ..()
+	register_init_signals()
 	if(unique_name)
 		set_name()
 	var/datum/atom_hud/data/human/medical/advanced/medhud = GLOB.huds[DATA_HUD_MEDICAL_ADVANCED]
@@ -266,7 +267,7 @@
 		AM.pulledby.stop_pulling() //an object can't be pulled by two mobs at once.
 
 	pulling = AM
-	AM.pulledby = src
+	AM.set_pulledby(src)
 
 	SEND_SIGNAL(src, COMSIG_LIVING_START_PULL, AM, state, force)
 
@@ -375,8 +376,6 @@
 /mob/living/pointed(atom/A as mob|obj|turf in view(client.view, src))
 	if(incapacitated())
 		return FALSE
-	if(HAS_TRAIT(src, TRAIT_DEATHCOMA))
-		return FALSE
 	if(!..())
 		return FALSE
 	visible_message("<span class='name'>[src]</span> points at [A].", "<span class='notice'>You point at [A].</span>")
@@ -446,18 +445,25 @@
 		else
 			to_chat(src, "<span class='warning'>You fail to get up!</span>")
 
+
+///Proc to hook behavior to the change of value in the resting variable.
 /mob/living/proc/set_resting(rest, silent = TRUE)
+	if(rest == resting)
+		return
 	if(!silent)
 		if(rest)
 			to_chat(src, "<span class='notice'>You are now resting.</span>")
 		else
 			to_chat(src, "<span class='notice'>You get up.</span>")
+	. = rest
 	resting = rest
 	update_resting()
+
 
 /mob/living/proc/update_resting()
 	update_rest_hud_icon()
 	update_mobility()
+
 
 //Recursive function to find everything a mob is holding. Really shitty proc tbh.
 /mob/living/get_contents()
@@ -488,10 +494,17 @@
 /mob/living/is_drawable(mob/user, allowmobs = TRUE)
 	return (allowmobs && reagents && can_inject(user))
 
+
+///Sets the current mob's health value. Do not call directly if you don't know what you are doing, use the damage procs, instead.
+/mob/living/proc/set_health(new_value)
+	. = health
+	health = new_value
+
+
 /mob/living/proc/updatehealth()
 	if(status_flags & GODMODE)
 		return
-	health = maxHealth - getOxyLoss() - getToxLoss() - getFireLoss() - getBruteLoss() - getCloneLoss()
+	set_health(maxHealth - getOxyLoss() - getToxLoss() - getFireLoss() - getBruteLoss() - getCloneLoss())
 	staminaloss = getStaminaLoss()
 	update_stat()
 	med_hud_set_health()
@@ -569,7 +582,7 @@
 				var/obj/effect/proc_holder/spell/spell = S
 				spell.updateButtonIcon()
 		if(excess_healing)
-			emote("gasp")
+			INVOKE_ASYNC(src, .proc/emote, "gasp")
 			log_combat(src, src, "revived")
 
 /mob/living/proc/remove_CC(should_update_mobility = TRUE)
@@ -904,9 +917,14 @@
 		if(!what.mob_can_equip(who, src, final_where, TRUE, TRUE))
 			to_chat(src, "<span class='warning'>\The [what.name] doesn't fit in that place!</span>")
 			return
-
-		who.visible_message("<span class='notice'>[src] tries to put [what] on [who].</span>", \
-						"<span class='notice'>[src] tries to put [what] on you.</span>", null, null, src)
+		if(istype(what,/obj/item/clothing))
+			var/obj/item/clothing/c = what
+			if(c.clothing_flags & DANGEROUS_OBJECT)
+				who.visible_message("<span class='danger'>[src] tries to put [what] on [who].</span>", \
+							"<span class='userdanger'>[src] tries to put [what] on you.</span>", null, null, src)
+			else
+				who.visible_message("<span class='notice'>[src] tries to put [what] on [who].</span>", \
+							"<span class='notice'>[src] tries to put [what] on you.</span>", null, null, src)
 		to_chat(src, "<span class='notice'>You try to put [what] on [who]...</span>")
 		if(do_mob(src, who, what.equip_delay_other))
 			if(what && Adjacent(who) && what.mob_can_equip(who, src, final_where, TRUE, TRUE))
@@ -1147,11 +1165,6 @@
 
 //Mobs on Fire end
 
-//Washing
-/mob/living/washed(var/atom/washer)
-	. = ..()
-	SEND_SIGNAL(src, COMSIG_COMPONENT_CLEAN_ACT, CLEAN_STRENGTH_BLOOD)
-
 // used by secbot and monkeys Crossed
 /mob/living/proc/knockOver(var/mob/living/carbon/C)
 	if(C.key) //save us from monkey hordes
@@ -1177,22 +1190,20 @@
 /mob/living/proc/update_mobility()
 	var/stat_softcrit = stat == SOFT_CRIT
 	var/stat_conscious = (stat == CONSCIOUS) || stat_softcrit
-	var/conscious = !IsUnconscious() && stat_conscious && !HAS_TRAIT(src, TRAIT_DEATHCOMA)
 	var/chokehold = pulledby && pulledby.grab_state >= GRAB_NECK
 	var/restrained = restrained()
 	var/has_legs = get_num_legs()
 	var/has_arms = get_num_arms()
 	var/broken_legs = get_broken_legs()
 	var/paralyzed = IsParalyzed()
-	var/stun = IsStun()
 	var/knockdown = IsKnockdown()
 	var/ignore_legs = get_leg_ignore()
-	var/canmove = !IsImmobilized() && !stun && conscious && !paralyzed && !buckled && (!stat_softcrit || !pulledby) && !chokehold && !IsFrozen() && !IS_IN_STASIS(src) && (has_arms || ignore_legs || has_legs)
+	var/canmove = !HAS_TRAIT(src, TRAIT_IMMOBILIZED) && (has_arms || ignore_legs || has_legs)
 	if(canmove)
 		mobility_flags |= MOBILITY_MOVE
 	else
 		mobility_flags &= ~MOBILITY_MOVE
-	var/canstand_involuntary = conscious && !stat_softcrit && !knockdown && !chokehold && !paralyzed && (ignore_legs || has_legs) && !(buckled && buckled.buckle_lying)
+	var/canstand_involuntary = stat_conscious && !stat_softcrit && !knockdown && !chokehold && !paralyzed && (ignore_legs || has_legs) && !(buckled && buckled.buckle_lying)
 	var/canstand = canstand_involuntary && !resting
 
 	if(buckled && buckled.buckle_lying != -1)
@@ -1218,7 +1229,7 @@
 
 
 
-	var/canitem = !paralyzed && !stun && conscious && !chokehold && !restrained && has_arms
+	var/canitem = !paralyzed && !IsStun() && stat_conscious && !chokehold && !restrained && has_arms
 	if(canitem)
 		mobility_flags |= (MOBILITY_USE | MOBILITY_PICKUP | MOBILITY_STORAGE)
 	else
@@ -1391,39 +1402,29 @@
 
 /mob/living/vv_edit_var(var_name, var_value)
 	switch(var_name)
-		if ("maxHealth")
+		if (NAMEOF(src, maxHealth))
 			if (!isnum(var_value) || var_value <= 0)
 				return FALSE
-		if("stat")
+		if(NAMEOF(src, stat))
 			if((stat == DEAD) && (var_value < DEAD))//Bringing the dead back to life
 				remove_from_dead_mob_list()
 				add_to_alive_mob_list()
 			if((stat < DEAD) && (var_value == DEAD))//Kill he
 				remove_from_alive_mob_list()
 				add_to_dead_mob_list()
+		if(NAMEOF(src, health)) //this doesn't work. gotta use procs instead.
+			return FALSE
 	. = ..()
 	switch(var_name)
-		if("knockdown")
-			SetParalyzed(var_value)
-		if("stun")
-			SetStun(var_value)
-		if("unconscious")
-			SetUnconscious(var_value)
-		if("sleeping")
-			SetSleeping(var_value)
-		if("eye_blind")
+		if(NAMEOF(src, eye_blind))
 			set_blindness(var_value)
-		if("eye_damage")
-			var/obj/item/organ/eyes/E = getorganslot(ORGAN_SLOT_EYES)
-			if(E)
-				E.setOrganDamage(var_value)
-		if("eye_blurry")
+		if(NAMEOF(src, eye_blurry))
 			set_blurriness(var_value)
-		if("maxHealth")
+		if(NAMEOF(src, maxHealth))
 			updatehealth()
-		if("resize")
+		if(NAMEOF(src, resize))
 			update_transform()
-		if("lighting_alpha")
+		if(NAMEOF(src, lighting_alpha))
 			sync_lighting_plane_alpha()
 
 /mob/living/proc/isLivingSSD()
@@ -1534,3 +1535,93 @@
 	if(!apply_change)
 		return BODYTEMP_NORMAL
 	return BODYTEMP_NORMAL + get_body_temp_normal_change()
+
+///Checks if the user is incapacitated or on cooldown.
+/mob/living/proc/can_look_up()
+	return !((next_move > world.time) || incapacitated(ignore_restraints = TRUE))
+
+/**
+ * look_up Changes the perspective of the mob to any openspace turf above the mob
+ *
+ * This also checks if an openspace turf is above the mob before looking up or resets the perspective if already looking up
+ *
+ */
+/mob/living/proc/look_up()
+
+	if(client.perspective != MOB_PERSPECTIVE) //We are already looking up.
+		stop_look_up()
+		return
+	if(!can_look_up())
+		return
+	var/turf/ceiling = get_step_multiz(src, UP)
+	if(!ceiling) //We are at the highest z-level.
+		to_chat(src, "<span class='warning'>You can't see through the ceiling above you.</span>")
+		return
+	else if(!istransparentturf(ceiling)) //There is no turf we can look through above us
+		to_chat(src, "<span class='warning'>You can't see through the floor above you.</span>")
+		return
+
+	changeNext_move(CLICK_CD_LOOK_UP)
+	reset_perspective(ceiling)
+	RegisterSignal(src, COMSIG_MOVABLE_PRE_MOVE, .proc/stop_look_up) //We stop looking up if we move.
+
+/mob/living/proc/stop_look_up()
+	reset_perspective()
+	UnregisterSignal(src, COMSIG_MOVABLE_PRE_MOVE)
+
+
+/mob/living/set_stat(new_stat)
+	. = ..()
+	if(isnull(.))
+		return
+	switch(.) //Previous stat.
+		if(CONSCIOUS)
+			if(stat >= UNCONSCIOUS)
+				ADD_TRAIT(src, TRAIT_IMMOBILIZED, TRAIT_KNOCKEDOUT)
+		if(SOFT_CRIT)
+			if(stat >= UNCONSCIOUS)
+				ADD_TRAIT(src, TRAIT_IMMOBILIZED, TRAIT_KNOCKEDOUT) //adding trait sources should come before removing to avoid unnecessary updates
+			if(pulledby)
+				REMOVE_TRAIT(src, TRAIT_IMMOBILIZED, PULLED_WHILE_SOFTCRIT_TRAIT)
+		if(UNCONSCIOUS)
+			cure_blind(UNCONSCIOUS_BLIND)
+	switch(stat) //Current stat.
+		if(CONSCIOUS)
+			if(. >= UNCONSCIOUS)
+				REMOVE_TRAIT(src, TRAIT_IMMOBILIZED, TRAIT_KNOCKEDOUT)
+		if(SOFT_CRIT)
+			if(pulledby)
+				ADD_TRAIT(src, TRAIT_IMMOBILIZED, PULLED_WHILE_SOFTCRIT_TRAIT) //adding trait sources should come before removing to avoid unnecessary updates
+			if(. >= UNCONSCIOUS)
+				REMOVE_TRAIT(src, TRAIT_IMMOBILIZED, TRAIT_KNOCKEDOUT)
+		if(UNCONSCIOUS)
+			become_blind(UNCONSCIOUS_BLIND)
+
+
+///Reports the event of the change in value of the buckled variable.
+/mob/living/proc/set_buckled(new_buckled)
+	if(new_buckled == buckled)
+		return
+	SEND_SIGNAL(src, COMSIG_LIVING_SET_BUCKLED, new_buckled)
+	. = buckled
+	buckled = new_buckled
+	if(buckled)
+		if(!.)
+			ADD_TRAIT(src, TRAIT_IMMOBILIZED, BUCKLED_TRAIT)
+	else if(.)
+		REMOVE_TRAIT(src, TRAIT_IMMOBILIZED, BUCKLED_TRAIT)
+
+
+/mob/living/set_pulledby(new_pulledby)
+	. = ..()
+	if(. == FALSE) //null is a valid value here, we only want to return if FALSE is explicitly passed.
+		return
+	if(pulledby)
+		if(!. && stat == SOFT_CRIT)
+			ADD_TRAIT(src, TRAIT_IMMOBILIZED, PULLED_WHILE_SOFTCRIT_TRAIT)
+	else if(. && stat == SOFT_CRIT)
+		REMOVE_TRAIT(src, TRAIT_IMMOBILIZED, PULLED_WHILE_SOFTCRIT_TRAIT)
+
+/// Only defined for carbons who can wear masks and helmets, we just assume other mobs have visible faces
+/mob/living/proc/is_face_visible()
+	return TRUE

@@ -359,3 +359,10 @@
 
 /// If you examine the same atom twice in this timeframe, we call examine_more() instead of examine()
 #define EXAMINE_MORE_TIME	1 SECONDS
+/// How far away you can be to make eye contact with someone while examining
+#define EYE_CONTACT_RANGE	5
+
+#define SILENCE_RANGED_MESSAGE (1<<0)
+
+///Swarmer flags
+#define SWARMER_LIGHT_ON (1<<0)

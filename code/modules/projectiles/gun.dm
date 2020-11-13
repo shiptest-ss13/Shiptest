@@ -134,7 +134,7 @@
 /obj/item/gun/equipped(mob/living/user, slot)
 	. = ..()
 	if(zoomed && user.get_active_held_item() != src)
-		zoom(user, FALSE) //we can only stay zoomed in if it's in our hands	//yeah and we only unzoom if we're actually zoomed using the gun!!
+		zoom(user, user.dir, FALSE) //we can only stay zoomed in if it's in our hands	//yeah and we only unzoom if we're actually zoomed using the gun!!
 
 //called after the gun has successfully fired its chambered ammo.
 /obj/item/gun/proc/process_chamber()
@@ -385,9 +385,7 @@
 			if(!user.transferItemToLoc(I, src))
 				return
 			to_chat(user, "<span class='notice'>You click [S] into place on [src].</span>")
-			if(S.on)
-				set_light(0)
-			gun_light = S
+			set_gun_light(S)
 			update_gunlight()
 			alight = new(src)
 			if(loc == user)
@@ -505,11 +503,39 @@
 	if(!gun_light)
 		return
 	var/obj/item/flashlight/seclite/removed_light = gun_light
-	gun_light = null
+	set_gun_light(null)
 	update_gunlight()
 	removed_light.update_brightness()
 	QDEL_NULL(alight)
 	return TRUE
+
+/**
+  * Swaps the gun's seclight, dropping the old seclight if it has not been qdel'd.
+  *
+  * Returns the former gun_light that has now been replaced by this proc.
+  * Arguments:
+  * * new_light - The new light to attach to the weapon. Can be null, which will mean the old light is removed with no replacement.
+  */
+/obj/item/gun/proc/set_gun_light(obj/item/flashlight/seclite/new_light)
+	// Doesn't look like this should ever happen? We're replacing our old light with our old light?
+	if(gun_light == new_light)
+		CRASH("Tried to set a new gun light when the old gun light was also the new gun light.")
+
+	. = gun_light
+
+	// If there's an old gun light that isn't being QDELETED, detatch and drop it to the floor.
+	if(!QDELETED(gun_light))
+		gun_light.set_light_flags(gun_light.light_flags & ~LIGHT_ATTACHED)
+		if(gun_light.loc != get_turf(src))
+			gun_light.forceMove(get_turf(src))
+
+	// If there's a new gun light to be added, attach and move it to the gun.
+	if(new_light)
+		new_light.set_light_flags(new_light.light_flags | LIGHT_ATTACHED)
+		if(new_light.loc != src)
+			new_light.forceMove(src)
+
+	gun_light = new_light
 
 /obj/item/gun/ui_action_click(mob/user, actiontype)
 	if(istype(actiontype, alight))
@@ -523,31 +549,14 @@
 
 	var/mob/living/carbon/human/user = usr
 	gun_light.on = !gun_light.on
+	gun_light.update_brightness()
 	to_chat(user, "<span class='notice'>You toggle the gunlight [gun_light.on ? "on":"off"].</span>")
 
 	playsound(user, 'sound/weapons/empty.ogg', 100, TRUE)
 	update_gunlight()
 
 /obj/item/gun/proc/update_gunlight()
-	if(gun_light)
-		if(gun_light.on)
-			set_light(gun_light.brightness_on, gun_light.flashlight_power, gun_light.light_color)
-		else
-			set_light(0)
-		cut_overlays(flashlight_overlay, TRUE)
-		var/state = "[gunlight_state][gun_light.on? "_on":""]"	//Generic state.
-		if(gun_light.icon_state in icon_states('icons/obj/guns/flashlights.dmi'))	//Snowflake state?
-			state = gun_light.icon_state
-		flashlight_overlay = mutable_appearance('icons/obj/guns/flashlights.dmi', state)
-		flashlight_overlay.pixel_x = flight_x_offset
-		flashlight_overlay.pixel_y = flight_y_offset
-		add_overlay(flashlight_overlay, TRUE)
-		add_overlay(knife_overlay, TRUE)
-	else
-		set_light(0)
-		cut_overlays(flashlight_overlay, TRUE)
-		flashlight_overlay = null
-	update_icon(TRUE)
+	update_icon()
 	for(var/X in actions)
 		var/datum/action/A = X
 		A.UpdateButtonIcon()
@@ -562,7 +571,7 @@
 	if(azoom)
 		azoom.Remove(user)
 	if(zoomed)
-		zoom(user,FALSE)
+		zoom(user, user.dir)
 
 /obj/item/gun/proc/handle_suicide(mob/living/carbon/human/user, mob/living/carbon/human/target, params, bypass_timer)
 	if(!ishuman(user) || !ishuman(target))
@@ -619,19 +628,25 @@
 	var/obj/item/gun/gun = null
 
 /datum/action/toggle_scope_zoom/Trigger()
-	gun.zoom(owner)
+	gun.zoom(owner, owner.dir)
 
 /datum/action/toggle_scope_zoom/IsAvailable()
 	. = ..()
 	if(!. && gun)
-		gun.zoom(owner, FALSE)
+		gun.zoom(owner, owner.dir, FALSE)
 
 /datum/action/toggle_scope_zoom/Remove(mob/living/L)
-	gun.zoom(L, FALSE)
+	gun.zoom(L, L.dir, FALSE)
 	..()
 
+/obj/item/gun/proc/rotate(atom/thing, old_dir, new_dir)
+	SIGNAL_HANDLER
 
-/obj/item/gun/proc/zoom(mob/living/user, forced_zoom)
+	if(ismob(thing))
+		var/mob/lad = thing
+		lad.client.view_size.zoomOut(zoom_out_amt, zoom_amt, new_dir)
+
+/obj/item/gun/proc/zoom(mob/living/user, direc, forced_zoom)
 	if(!user || !user.client)
 		return
 
@@ -641,25 +656,11 @@
 		zoomed = forced_zoom
 
 	if(zoomed)
-		var/_x = 0
-		var/_y = 0
-		switch(user.dir)
-			if(NORTH)
-				_y = zoom_amt
-			if(EAST)
-				_x = zoom_amt
-			if(SOUTH)
-				_y = -zoom_amt
-			if(WEST)
-				_x = -zoom_amt
-
-		user.client.change_view(zoom_out_amt)
-		user.client.pixel_x = world.icon_size*_x
-		user.client.pixel_y = world.icon_size*_y
+		RegisterSignal(user, COMSIG_ATOM_DIR_CHANGE, .proc/rotate)
+		user.client.view_size.zoomOut(zoom_out_amt, zoom_amt, direc)
 	else
-		user.client.change_view(CONFIG_GET(string/default_view))
-		user.client.pixel_x = 0
-		user.client.pixel_y = 0
+		UnregisterSignal(user, COMSIG_ATOM_DIR_CHANGE)
+		user.client.view_size.zoomIn()
 	return zoomed
 
 //Proc, so that gun accessories/scopes/etc. can easily add zooming.

@@ -9,8 +9,11 @@
 	item_state = "camera"
 	lefthand_file = 'icons/mob/inhands/misc/devices_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/misc/devices_righthand.dmi'
-	light_color = LIGHT_COLOR_WHITE
+	light_system = MOVABLE_LIGHT //Used as a flash here.
+	light_range = 8
+	light_color = COLOR_WHITE
 	light_power = FLASH_LIGHT_POWER
+	light_on = FALSE
 	w_class = WEIGHT_CLASS_SMALL
 	flags_1 = CONDUCT_1
 	slot_flags = ITEM_SLOT_NECK
@@ -36,6 +39,7 @@
 	var/picture_size_y_max = 4
 	var/can_customise = TRUE
 	var/default_picture_name
+
 
 /obj/item/camera/attack_self(mob/user)
 	if(!disk)
@@ -159,7 +163,8 @@
 
 /obj/item/camera/proc/captureimage(atom/target, mob/user, flag, size_x = 1, size_y = 1)
 	if(flash_enabled)
-		flash_lighting_fx(8, light_power, light_color)
+		set_light_on(TRUE)
+		addtimer(CALLBACK(src, .proc/flash_end), FLASH_LIGHT_DURATION, TIMER_OVERRIDE|TIMER_UNIQUE)
 	blending = TRUE
 	var/turf/target_turf = get_turf(target)
 	if(!isturf(target_turf))
@@ -182,7 +187,7 @@
 	var/clone_area = SSmapping.RequestBlockReservation(size_x * 2 + 1, size_y * 2 + 1)
 	for(var/turf/placeholder in block(locate(target_turf.x - size_x, target_turf.y - size_y, target_turf.z), locate(target_turf.x + size_x, target_turf.y + size_y, target_turf.z)))
 		var/turf/T = placeholder
-		while(istype(T, /turf/open/openspace)) //Multi-z photography
+		while(istype(T, /turf/open/transparent/openspace)) //Multi-z photography
 			T = SSmapping.get_turf_below(T)
 			if(!T)
 				break
@@ -209,6 +214,11 @@
 	var/datum/picture/P = new("picture", desc.Join(" "), mobs_spotted, dead_spotted, get_icon, null, psize_x, psize_y, blueprints)
 	after_picture(user, P, flag)
 	blending = FALSE
+
+
+/obj/item/camera/proc/flash_end()
+	set_light_on(FALSE)
+
 
 /obj/item/camera/proc/after_picture(mob/user, datum/picture/picture, proximity_flag)
 	printpicture(user, picture)

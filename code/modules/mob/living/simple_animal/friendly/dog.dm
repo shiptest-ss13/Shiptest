@@ -70,10 +70,10 @@
 						movement_target.attack_animal(src)
 					else if(ishuman(movement_target.loc) )
 						if(prob(20))
-							emote("me", 1, "stares at [movement_target.loc]'s [movement_target] with a sad puppy-face")
+							manual_emote("stares at [movement_target.loc]'s [movement_target] with a sad puppy-face")
 
 		if(prob(1))
-			emote("me", 1, pick("dances around.","chases its tail!"))
+			manual_emote(pick("dances around.","chases its tail!"))
 			INVOKE_ASYNC(GLOBAL_PROC, .proc/dance_rotate, src)
 
 //Corgis and pugs are now under one dog subtype
@@ -314,7 +314,7 @@
 /mob/living/simple_animal/pet/dog/corgi/proc/place_on_head(obj/item/item_to_add, mob/user)
 
 	if(istype(item_to_add, /obj/item/grenade/c4)) // last thing he ever wears, I guess
-		item_to_add.afterattack(src,user,1)
+		INVOKE_ASYNC(item_to_add, /obj/item.proc/afterattack, src, user, 1)
 		return
 
 	if(inventory_head)
@@ -648,8 +648,8 @@
 		if(change > 0)
 			if(M && stat != DEAD) // Added check to see if this mob (the dog) is dead to fix issue 2454
 				new /obj/effect/temp_visual/heart(loc)
-				emote("me", 1, "yaps happily!")
+				manual_emote("yaps happily!")
 				SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, src, /datum/mood_event/pet_animal, src)
 		else
 			if(M && stat != DEAD) // Same check here, even though emote checks it as well (poor form to check it only in the help case)
-				emote("me", 1, "growls!")
+				manual_emote("growls!")

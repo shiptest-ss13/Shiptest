@@ -41,7 +41,7 @@
   * * extra_classes - Extra classes to apply to the span that holds the text
   * * lifespan - The lifespan of the message in deciseconds
   */
-/datum/chatmessage/New(text, atom/target, mob/owner, list/extra_classes = null, lifespan = CHAT_MESSAGE_LIFESPAN)
+/datum/chatmessage/New(text, atom/target, mob/owner, list/extra_classes = list(), lifespan = CHAT_MESSAGE_LIFESPAN)
 	. = ..()
 	if (!istype(target))
 		CRASH("Invalid target given for chatmessage")
@@ -63,6 +63,14 @@
 	return ..()
 
 /**
+  * Calls qdel on the chatmessage when its parent is deleted, used to register qdel signal
+  */
+/datum/chatmessage/proc/on_parent_qdel()
+	SIGNAL_HANDLER
+
+	qdel(src)
+
+/**
   * Generates a chat message image representation
   *
   * Arguments:
@@ -75,7 +83,7 @@
 /datum/chatmessage/proc/generate_image(text, atom/target, mob/owner, list/extra_classes, lifespan)
 	// Register client who owns this message
 	owned_by = owner.client
-	RegisterSignal(owned_by, COMSIG_PARENT_QDELETING, .proc/qdel, src)
+	RegisterSignal(owned_by, COMSIG_PARENT_QDELETING, .proc/on_parent_qdel)
 
 	// Clip message
 	var/maxlen = owned_by.prefs.max_chat_length
@@ -105,7 +113,10 @@
 	// Append radio icon if from a virtual speaker
 	if (extra_classes.Find("virtual-speaker"))
 		var/image/r_icon = image('icons/UI_Icons/chat/chat_icons.dmi', icon_state = "radio")
-		text =  "\icon[r_icon]&nbsp;" + text
+		text =  "\icon[r_icon]&nbsp;[text]"
+	else if (extra_classes.Find("emote"))
+		var/image/r_icon = image('icons/UI_Icons/chat/chat_icons.dmi', icon_state = "emote")
+		text =  "\icon[r_icon]&nbsp;[text]"
 
 	// We dim italicized text to make it more distinguishable from regular text
 	var/tgt_color = extra_classes.Find("italics") ? target.chat_color_darkened : target.chat_color
@@ -115,7 +126,7 @@
 	// BYOND Bug #2563917
 	// Construct text
 	var/static/regex/html_metachars = new(@"&[A-Za-z]{1,7};", "g")
-	var/complete_text = "<span class='center maptext [extra_classes != null ? extra_classes.Join(" ") : ""]' style='color: [tgt_color]'>[text]</span>"
+	var/complete_text = "<span class='center maptext [extra_classes.Join(" ")]' style='color: [tgt_color]'>[text]</span>"
 	var/mheight = WXH_TO_HEIGHT(owned_by.MeasureText(replacetext(complete_text, html_metachars, "m"), null, CHAT_MESSAGE_WIDTH))
 	approx_lines = max(1, mheight / CHAT_MESSAGE_APPROX_LHEIGHT)
 
@@ -173,11 +184,10 @@
   * * message_language - The language that the message is said in
   * * raw_message - The text content of the message
   * * spans - Additional classes to be added to the message
-  * * message_mode - Bitflags relating to the mode of the message
   */
-/mob/proc/create_chat_message(atom/movable/speaker, datum/language/message_language, raw_message, list/spans, message_mode)
+/mob/proc/create_chat_message(atom/movable/speaker, datum/language/message_language, raw_message, list/spans, runechat_flags = NONE)
 	// Ensure the list we are using, if present, is a copy so we don't modify the list provided to us
-	spans = spans?.Copy()
+	spans = spans ? spans.Copy() : list()
 
 	// Check for virtual speakers (aka hearing a message through a radio)
 	var/atom/movable/originalSpeaker = speaker
@@ -191,7 +201,10 @@
 		return
 
 	// Display visual above source
-	new /datum/chatmessage(lang_treat(speaker, message_language, raw_message, spans, null, TRUE), speaker, src, spans)
+	if(runechat_flags & EMOTE_MESSAGE)
+		new /datum/chatmessage(raw_message, speaker, src, list("emote", "italics"))
+	else
+		new /datum/chatmessage(lang_treat(speaker, message_language, raw_message, spans, null, TRUE), speaker, src, spans)
 
 
 // Tweak these defines to change the available color ranges

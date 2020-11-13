@@ -10,7 +10,10 @@
 #define UNIQUE_RENAME			(1<<6) // can you customize the description/name of the thing?
 #define USES_TGUI				(1<<7)	//put on things that use tgui on ui_interact instead of custom/old UI.
 #define FROZEN					(1<<8)
-#define BLOCK_Z_FALL			(1<<9) // Should this object block z falling?
+#define BLOCK_Z_OUT_DOWN		(1<<9)  // Should this object block z falling from loc?
+#define BLOCK_Z_OUT_UP			(1<<10) // Should this object block z uprise from loc?
+#define BLOCK_Z_IN_DOWN			(1<<11) // Should this object block z falling from above?
+#define BLOCK_Z_IN_UP			(1<<12) // Should this object block z uprise from below?
 
 // If you add new ones, be sure to add them to /obj/Initialize as well for complete mapping support
 
@@ -44,7 +47,7 @@
 #define BLOCKS_SHOVE_KNOCKDOWN (1<<10) // Prevents shovies against a dense object from knocking the wearer down.
 #define SNUG_FIT               (1<<11) //Prevents knock-off from things like hat-throwing.
 #define ANTI_TINFOIL_MANEUVER   (1<<12) //Hats with negative effects when worn (i.e the tinfoil hat).
-
+#define DANGEROUS_OBJECT    (1<<13)     //Clothes that cause a larger notification when placed on a person.
 /// Flags for the organ_flags var on /obj/item/organ
 
 #define ORGAN_SYNTHETIC			(1<<0)	//Synthetic organs, or cybernetic organs. Reacts to EMPs and don't deteriorate or heal

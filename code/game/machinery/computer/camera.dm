@@ -4,7 +4,7 @@
 	icon_screen = "cameras"
 	icon_keyboard = "security_key"
 	circuit = /obj/item/circuitboard/computer/security
-	light_color = LIGHT_COLOR_RED
+	light_color = COLOR_SOFT_RED
 
 	var/list/network = list("ss13")
 	var/obj/machinery/camera/active_camera
@@ -261,7 +261,9 @@
 
 // Bypass clickchain to allow humans to use the telescreen from a distance
 /obj/machinery/computer/security/telescreen/entertainment/proc/BigClick()
-	interact(usr)
+	SIGNAL_HANDLER
+
+	INVOKE_ASYNC(src, /atom.proc/interact, usr)
 
 /obj/machinery/computer/security/telescreen/entertainment/proc/notify(on)
 	if(on && icon_state == icon_state_off)

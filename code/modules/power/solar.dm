@@ -61,7 +61,7 @@
 	if(!S)
 		S = new /obj/item/solar_assembly(src)
 		S.glass_type = /obj/item/stack/sheet/glass
-		S.anchored = TRUE
+		S.set_anchored(TRUE)
 	else
 		S.forceMove(src)
 	if(S.glass_type == /obj/item/stack/sheet/rglass) //if the panel is in reinforced glass
@@ -122,6 +122,8 @@
 	azimuth_target = azimuth
 
 /obj/machinery/power/solar/proc/queue_update_solar_exposure()
+	SIGNAL_HANDLER
+
 	needs_to_update_solar_exposure = TRUE //updating right away would be wasteful if we're also turning later
 
 /obj/machinery/power/solar/proc/update_turn()
@@ -147,7 +149,7 @@
 		x_hit += target_x
 		y_hit += target_y
 		hit = locate(round(x_hit, 1), round(y_hit, 1), z)
-		if(hit.opacity)
+		if(IS_OPAQUE_TURF(hit))
 			return
 		if(hit.x == 1 || hit.x == world.maxx || hit.y == 1 || hit.y == world.maxy) //edge of the map
 			break
@@ -237,7 +239,7 @@
 		if(isinspace())
 			to_chat(user, "<span class='warning'>You can't secure [src] here.</span>")
 			return
-		anchored = !anchored
+		set_anchored(!anchored)
 		if(anchored)
 			user.visible_message("<span class='notice'>[user] wrenches the solar assembly into place.</span>", "<span class='notice'>You wrench the solar assembly into place.</span>")
 			W.play_tool_sound(src, 75)
@@ -416,7 +418,7 @@
 				A.circuit = M
 				A.state = 3
 				A.icon_state = "3"
-				A.anchored = TRUE
+				A.set_anchored(TRUE)
 				qdel(src)
 			else
 				to_chat(user, "<span class='notice'>You disconnect the monitor.</span>")
@@ -427,7 +429,7 @@
 				A.circuit = M
 				A.state = 4
 				A.icon_state = "4"
-				A.anchored = TRUE
+				A.set_anchored(TRUE)
 				qdel(src)
 	else if(user.a_intent != INTENT_HARM && !(I.item_flags & NOBLUDGEON))
 		attack_hand(user)
@@ -458,6 +460,8 @@
 
 ///Ran every time the sun updates.
 /obj/machinery/power/solar_control/proc/timed_track()
+	SIGNAL_HANDLER
+
 	if(track == SOLAR_TRACK_TIMED)
 		azimuth_target += azimuth_rate
 		set_panels(azimuth_target)

@@ -15,7 +15,7 @@
 		var/turf/T = get_turf(src)
 		for(var/mob/living/carbon/C in viewers(T, null))
 			C.flash_act()
-		new /obj/effect/dummy/lighting_obj (get_turf(src), LIGHT_COLOR_WHITE, 10, 4, 4)
+		new /obj/effect/dummy/lighting_obj (get_turf(src), LIGHT_COLOR_HOLY_MAGIC, 10, 4, 4)
 		playsound(src, 'sound/magic/blind.ogg', 100, TRUE)
 		qdel(user)
 		return MANUAL_SUICIDE

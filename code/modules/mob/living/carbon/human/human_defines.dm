@@ -62,3 +62,6 @@
 	var/lastpuke = 0
 	var/last_fire_update
 	var/account_id
+
+	/// How many "units of blood" we have on our hands
+	var/blood_in_hands = 0

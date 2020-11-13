@@ -228,7 +228,7 @@
 		if(stored)
 			stored.forceMove(T)
 			src.transfer_fingerprints_to(stored)
-			stored.anchored = FALSE
+			stored.set_anchored(FALSE)
 			stored.density = TRUE
 			stored.update_icon()
 	for(var/atom/movable/AM in src) //out, out, darned crowbar!
@@ -243,7 +243,7 @@
 	. = ..()
 	if(.)
 		return
-	for(var/obj/item/I in src_object)
+	for(var/obj/item/I in src_object.parent)
 		if(user.active_storage != src_object)
 			if(I.on_found(user))
 				return

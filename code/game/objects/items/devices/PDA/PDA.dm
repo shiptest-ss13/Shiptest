@@ -25,7 +25,11 @@ GLOBAL_LIST_EMPTY(PDAs)
 	actions_types = list(/datum/action/item_action/toggle_light)
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 100)
 	resistance_flags = FIRE_PROOF | ACID_PROOF
-
+	light_system = MOVABLE_LIGHT_DIRECTIONAL
+	light_range = 2.3
+	light_power = 0.6
+	light_color = "#FFCC66"
+	light_on = FALSE
 
 	//Main variables
 	var/owner = null // String name of owner
@@ -48,10 +52,6 @@ GLOBAL_LIST_EMPTY(PDAs)
 
 	//Secondary variables
 	var/scanmode = PDA_SCANNER_NONE
-	var/fon = FALSE //Is the flashlight function on?
-	var/f_lum = 2.3 //Luminosity for the flashlight function
-	var/f_pow = 0.6 //Power for the flashlight function
-	var/f_col = "#FFCC66" //Color for the flashlight function
 	var/silent = FALSE //To beep or not to beep, that is the question
 	var/toff = FALSE //If TRUE, messenger disabled
 	var/tnote = null //Current Texts
@@ -107,9 +107,6 @@ GLOBAL_LIST_EMPTY(PDAs)
 
 /obj/item/pda/Initialize()
 	. = ..()
-	if(fon)
-		set_light(f_lum, f_pow, f_col)
-
 	GLOB.PDAs += src
 	if(default_cartridge)
 		cartridge = new default_cartridge(src)
@@ -176,7 +173,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 	if(inserted_item)
 		overlay.icon_state = "insert_overlay"
 		. += new /mutable_appearance(overlay)
-	if(fon)
+	if(light_on)
 		overlay.icon_state = "light_overlay"
 		. += new /mutable_appearance(overlay)
 	if(pai)
@@ -287,7 +284,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 					if (cartridge.access & CART_DRONEPHONE)
 						dat += "<li><a href='byond://?src=[REF(src)];choice=Drone Phone'>[PDAIMG(dronephone)]Drone Phone</a></li>"
 				dat += "<li><a href='byond://?src=[REF(src)];choice=3'>[PDAIMG(atmos)]Atmospheric Scan</a></li>"
-				dat += "<li><a href='byond://?src=[REF(src)];choice=Light'>[PDAIMG(flashlight)][fon ? "Disable" : "Enable"] Flashlight</a></li>"
+				dat += "<li><a href='byond://?src=[REF(src)];choice=Light'>[PDAIMG(flashlight)][light_on ? "Disable" : "Enable"] Flashlight</a></li>"
 				if (pai)
 					if(pai.loc != src)
 						pai = null
@@ -812,12 +809,10 @@ GLOBAL_LIST_EMPTY(PDAs)
 /obj/item/pda/proc/toggle_light(mob/user)
 	if(issilicon(user) || !user.canUseTopic(src, BE_CLOSE))
 		return
-	if(fon)
-		fon = FALSE
-		set_light(0)
-	else if(f_lum)
-		fon = TRUE
-		set_light(f_lum, f_pow, f_col)
+	if(light_on)
+		set_light_on(FALSE)
+	else if(light_range)
+		set_light_on(TRUE)
 	update_icon()
 	for(var/X in actions)
 		var/datum/action/A = X

@@ -26,7 +26,9 @@
 	RegisterSignal(owner, COMSIG_HUMAN_EARLY_UNARMED_ATTACK, .proc/on_attack_hand)
 	RegisterSignal(owner, COMSIG_MOB_SAY, .proc/handle_speech)
 
-/datum/mutation/human/hulk/proc/on_attack_hand(mob/living/source, atom/target, proximity)
+/datum/mutation/human/hulk/proc/on_attack_hand(mob/living/carbon/human/source, atom/target, proximity)
+	SIGNAL_HANDLER_DOES_SLEEP
+
 	if(!proximity)
 		return
 	if(source.a_intent != INTENT_HARM)
@@ -59,6 +61,8 @@
 	UnregisterSignal(owner, COMSIG_MOB_SAY)
 
 /datum/mutation/human/hulk/proc/handle_speech(original_message, wrapped_message)
+	SIGNAL_HANDLER
+
 	var/message = wrapped_message[1]
 	if(message)
 		message = "[replacetext(message, ".", "!")]!!"

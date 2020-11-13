@@ -3,17 +3,20 @@
 	icon_state = "laser"
 	pass_flags = PASSTABLE | PASSGLASS | PASSGRILLE
 	damage = 20
-	light_range = 2
 	damage_type = BURN
 	hitsound = 'sound/weapons/sear.ogg'
 	hitsound_wall = 'sound/weapons/effects/searwall.ogg'
 	flag = "laser"
 	eyeblur = 2
 	impact_effect_type = /obj/effect/temp_visual/impact_effect/red_laser
-	light_color = LIGHT_COLOR_RED
+	light_system = MOVABLE_LIGHT
+	light_range = 1.5
+	light_power = 1
+	light_color = COLOR_SOFT_RED
 	ricochets_max = 50	//Honk!
 	ricochet_chance = 80
 	reflectable = REFLECT_NORMAL
+
 
 /obj/projectile/beam/laser
 	tracer_type = /obj/effect/projectile/tracer/laser
@@ -146,7 +149,7 @@
 	icon_state = "laser"
 	suit_types = list(/obj/item/clothing/suit/bluetag)
 	impact_effect_type = /obj/effect/temp_visual/impact_effect/red_laser
-	light_color = LIGHT_COLOR_RED
+	light_color = COLOR_SOFT_RED
 	tracer_type = /obj/effect/projectile/tracer/laser
 	muzzle_type = /obj/effect/projectile/muzzle/laser
 	impact_type = /obj/effect/projectile/impact/laser
@@ -180,7 +183,7 @@
 /obj/projectile/beam/instakill/red
 	icon_state = "red_laser"
 	impact_effect_type = /obj/effect/temp_visual/impact_effect/red_laser
-	light_color = LIGHT_COLOR_RED
+	light_color = COLOR_SOFT_RED
 
 /obj/projectile/beam/instakill/on_hit(atom/target)
 	. = ..()

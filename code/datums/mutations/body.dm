@@ -192,6 +192,7 @@
 	var/obj/effect/dummy/luminescent_glow/glowth //shamelessly copied from luminescents
 	var/glow = 2.5
 	var/range = 2.5
+	var/glow_color
 	power_coeff = 1
 	conflicts = list(/datum/mutation/human/glow/anti)
 
@@ -199,6 +200,7 @@
 	. = ..()
 	if(.)
 		return
+	glow_color = glow_color()
 	glowth = new(owner)
 	modify()
 
@@ -206,7 +208,13 @@
 	if(!glowth)
 		return
 	var/power = GET_MUTATION_POWER(src)
-	glowth.set_light(range * power, glow * power, "#[dna.features["mcolor"]]")
+
+	glowth.set_light_range_power_color(range * power, glow, glow_color)
+
+
+/// Returns the color for the glow effect
+/datum/mutation/human/glow/proc/glow_color()
+	return pick(COLOR_RED, COLOR_BLUE, COLOR_YELLOW, COLOR_GREEN, COLOR_PURPLE, COLOR_ORANGE)
 
 /datum/mutation/human/glow/on_losing(mob/living/carbon/human/owner)
 	. = ..()
@@ -218,9 +226,12 @@
 	name = "Anti-Glow"
 	desc = "Your skin seems to attract and absorb nearby light creating 'darkness' around you."
 	text_gain_indication = "<span class='notice'>Your light around you seems to disappear.</span>"
-	glow = -3.5 //Slightly stronger, since negating light tends to be harder than making it.
+	glow = -1.5
 	conflicts = list(/datum/mutation/human/glow)
 	locked = TRUE
+
+/datum/mutation/human/glow/anti/glow_color()
+	return COLOR_VERY_LIGHT_GRAY
 
 /datum/mutation/human/strong
 	name = "Strength"
@@ -392,6 +403,8 @@
 
 ///Triggers on moved(). Randomly makes the owner trip
 /datum/mutation/human/extrastun/proc/on_move()
+	SIGNAL_HANDLER
+
 	if(prob(99.5)) //The brawl mutation
 		return
 	if(owner.buckled || !(owner.mobility_flags & MOBILITY_STAND) || !((owner.mobility_flags & (MOBILITY_STAND | MOBILITY_MOVE)) == (MOBILITY_STAND | MOBILITY_MOVE)) || owner.throwing || owner.movement_type & (VENTCRAWLING | FLYING | FLOATING))
@@ -420,6 +433,8 @@
 	UnregisterSignal(owner, COMSIG_MOB_STATCHANGE)
 
 /datum/mutation/human/martyrdom/proc/bloody_shower(new_stat)
+	SIGNAL_HANDLER
+
 	if(new_stat != UNCONSCIOUS)
 		return
 	var/list/organs = owner.getorganszone(BODY_ZONE_HEAD, 1)
@@ -485,5 +500,7 @@
 
 
 /datum/mutation/human/headless/proc/abortattachment(datum/source, obj/item/bodypart/new_limb, special) //you aren't getting your head back
+	SIGNAL_HANDLER
+
 	if(istype(new_limb, /obj/item/bodypart/head))
 		return COMPONENT_NO_ATTACH

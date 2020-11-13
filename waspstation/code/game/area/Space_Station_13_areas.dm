@@ -2,6 +2,8 @@
 	name = "Cryopod Room"
 	safe = TRUE
 	icon_state = "cryopod"
+	lighting_colour_tube = "#e3ffff"
+	lighting_colour_bulb = "#d5ffff"
 
 /area/medical/genetics/cloning
 	name = "Cloning Lab"

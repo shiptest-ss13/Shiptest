@@ -70,6 +70,9 @@ SUBSYSTEM_DEF(jukeboxes)
 		var/datum/track/T = new()
 		T.song_path = file("[global.config.directory]/jukebox_music/sounds/[S]")
 		var/list/L = splittext(S,"+")
+		if(L.len < 4)
+			log_config("Jukebox song [S] has invalid ID.")
+			continue
 		T.song_name = L[1]
 		T.song_length = text2num(L[2])
 		T.song_beat = text2num(L[3])
@@ -90,7 +93,7 @@ SUBSYSTEM_DEF(jukeboxes)
 		if(!istype(juketrack))
 			stack_trace("Invalid jukebox track datum.")
 			continue
-		var/obj/jukebox = jukeinfo[3]
+		var/obj/machinery/jukebox/jukebox = jukeinfo[3]
 		if(!istype(jukebox))
 			stack_trace("Nonexistant or invalid object associated with jukebox.")
 			continue
@@ -118,6 +121,9 @@ SUBSYSTEM_DEF(jukeboxes)
 			else
 				song_played.status = SOUND_MUTE | SOUND_UPDATE	//Setting volume = 0 doesn't let the sound properties update at all, which is lame.
 
-			M.playsound_local(currentturf, null, 100, channel = jukeinfo[2], S = song_played, envwet = (inrange ? -250 : 0), envdry = (inrange ? 0 : -10000))
+			if(jukebox.volume <= 0)
+				song_played.status |= SOUND_MUTE
+
+			M.playsound_local(currentturf, null, jukebox.volume, channel = jukeinfo[2], S = song_played, envwet = (inrange ? -250 : 0), envdry = (inrange ? 0 : -10000))
 			CHECK_TICK
 	return

@@ -66,6 +66,8 @@
 	return ..()
 
 /obj/item/melee/baton/proc/convert(datum/source, obj/item/I, mob/user)
+	SIGNAL_HANDLER
+
 	if(istype(I,/obj/item/conversion_kit) && convertible)
 		var/turf/T = get_turf(src)
 		var/obj/item/melee/classic_baton/B = new /obj/item/melee/classic_baton (T)
@@ -328,9 +330,7 @@
 		if(ishuman(hit_atom) && !caught && prob(throw_stun_chance))//if they are a carbon and they didn't catch it
 			baton_effect(hit_atom)
 		if(thrownby && !caught)
-			sleep(1)
-			if(!QDELETED(src))
-				throw_at(thrownby, throw_range+2, throw_speed, null, TRUE)
+			addtimer(CALLBACK(src, /atom/movable.proc/throw_at, thrownby, throw_range+2, throw_speed, null, TRUE), 1)
 	else
 		return ..()
 

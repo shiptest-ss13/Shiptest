@@ -246,7 +246,7 @@ Maintenance panel is [open ? "opened" : "closed"]"}
 		A.fire_act()
 		return //lol pranked no cleaning besides that
 	else
-		A.washed(src)
+		A.wash(CLEAN_WASH)
 
 
 

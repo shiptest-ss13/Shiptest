@@ -575,6 +575,15 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	w_class = WEIGHT_CLASS_TINY
 	flags_1 = CONDUCT_1
 	slot_flags = ITEM_SLOT_BELT
+	heat = 1500
+	resistance_flags = FIRE_PROOF
+	grind_results = list(/datum/reagent/iron = 1, /datum/reagent/fuel = 5, /datum/reagent/fuel/oil = 5)
+	custom_price = 55
+	light_system = MOVABLE_LIGHT
+	light_range = 2
+	light_power = 0.6
+	light_color = LIGHT_COLOR_FIRE
+	light_on = FALSE
 	var/lit = 0
 	var/fancy = TRUE
 	var/overlay_state
@@ -584,11 +593,6 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 		"thirteen",
 		"snake"
 		)
-	heat = 1500
-	resistance_flags = FIRE_PROOF
-	light_color = LIGHT_COLOR_FIRE
-	grind_results = list(/datum/reagent/iron = 1, /datum/reagent/fuel = 5, /datum/reagent/fuel/oil = 5)
-	custom_price = 55
 
 /obj/item/lighter/Initialize()
 	. = ..()
@@ -625,20 +629,19 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 		. = "<span class='rose'>With a single flick of [user.p_their()] wrist, [user] smoothly lights [A] with [src]. Damn [user.p_theyre()] cool.</span>"
 
 /obj/item/lighter/proc/set_lit(new_lit)
+	if(lit == new_lit)
+		return
 	lit = new_lit
 	if(lit)
 		force = 5
 		damtype = "fire"
 		hitsound = 'sound/items/welder.ogg'
 		attack_verb = list("burnt", "singed")
-		set_light(2, 0.6, LIGHT_COLOR_FIRE)
-		START_PROCESSING(SSobj, src)
 	else
 		hitsound = "swing_hit"
 		force = 0
 		attack_verb = null //human_defense.dm takes care of it
-		set_light(0)
-		STOP_PROCESSING(SSobj, src)
+	set_light_on(lit)
 	update_icon()
 
 /obj/item/lighter/extinguish()
@@ -769,7 +772,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	icon = 'waspstation/icons/obj/cigarettes.dmi'
 	icon_state = "clockworklighter"
 	heat = 2000 //??????????????????
-	light_color = LIGHT_COLOR_RED
+	light_color = LIGHT_COLOR_BLOOD_MAGIC
 	overlay_state = "clockwork"
 	grind_results = list(/datum/reagent/iron = 1, /datum/reagent/fuel = 5, /datum/reagent/copper = 1)
 
@@ -832,7 +835,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 		if(!param_color)
 			param_color = pick("red","blue","black","white","green","purple","yellow","orange")
 		vapecolor = param_color
-	icon_state = "[vapecolor]_vapeoff" 
+	icon_state = "[vapecolor]_vapeoff"
 	item_state = "[vapecolor]_vapeoff" //End Waspstation edit - Lightable e-cigarettes
 
 /obj/item/clothing/mask/vape/attackby(obj/item/O, mob/user, params)
@@ -933,9 +936,9 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 			to_chat(user, "<span class='notice'>You need to turn on \the [src] first!")	//End Waspstation edit - Lightable e-cigarettes
 
 /obj/item/clothing/mask/vape/dropped(mob/user)
-	. = ..()	
-	if(user.get_item_by_slot(ITEM_SLOT_MASK) == src)	
-		reagents.flags |= NO_REACT	
+	. = ..()
+	if(user.get_item_by_slot(ITEM_SLOT_MASK) == src)
+		reagents.flags |= NO_REACT
 		STOP_PROCESSING(SSobj, src)
 
 /obj/item/clothing/mask/vape/proc/hand_reagents()//had to rename to avoid duplicate error

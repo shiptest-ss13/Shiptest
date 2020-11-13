@@ -51,6 +51,14 @@
 	///Internal holder for emissive blocker object, do not use directly use blocks_emissive
 	var/atom/movable/emissive_blocker/em_block
 
+	///Used for the calculate_adjacencies proc for icon smoothing.
+	var/can_be_unanchored = FALSE
+
+	///Lazylist to keep track on the sources of illumination.
+	var/list/affected_dynamic_lights
+	///Highest-intensity light affecting us, which determines our visibility.
+	var/affecting_dynamic_lumi = 0
+
 
 /atom/movable/Initialize(mapload)
 	. = ..()
@@ -61,10 +69,50 @@
 			render_target = ref(src)
 			em_block = new(src, render_target)
 			vis_contents += em_block
+	if(opacity)
+		AddElement(/datum/element/light_blocking)
+	switch(light_system)
+		if(MOVABLE_LIGHT)
+			AddComponent(/datum/component/overlay_lighting)
+		if(MOVABLE_LIGHT_DIRECTIONAL)
+			AddComponent(/datum/component/overlay_lighting, is_directional = TRUE)
 
-/atom/movable/Destroy()
+
+/atom/movable/Destroy(force)
+	QDEL_NULL(proximity_monitor)
+	QDEL_NULL(language_holder)
 	QDEL_NULL(em_block)
-	return ..()
+
+	unbuckle_all_mobs(force = TRUE)
+
+	if(loc)
+		//Restore air flow if we were blocking it (movables with ATMOS_PASS_PROC will need to do this manually if necessary)
+		if(((CanAtmosPass == ATMOS_PASS_DENSITY && density) || CanAtmosPass == ATMOS_PASS_NO) && isturf(loc))
+			CanAtmosPass = ATMOS_PASS_YES
+			air_update_turf(TRUE)
+		loc.handle_atom_del(src)
+
+	if(opacity)
+		RemoveElement(/datum/element/light_blocking)
+
+	invisibility = INVISIBILITY_ABSTRACT
+
+	if(pulledby)
+		pulledby.stop_pulling()
+
+	if(orbiting)
+		orbiting.end_orbit(src)
+		orbiting = null
+
+	. = ..()
+
+	for(var/movable_content in contents)
+		qdel(movable_content)
+
+	LAZYCLEARLIST(client_mobs_in_contents)
+
+	moveToNullspace()
+
 
 /atom/movable/proc/update_emissive_block()
 	if(blocks_emissive != EMISSIVE_BLOCK_GENERIC)
@@ -128,25 +176,28 @@
 	if((var_name in careful_edits) && (var_value % world.icon_size) != 0)
 		return FALSE
 	switch(var_name)
-		if("x")
+		if(NAMEOF(src, anchored))
+			set_anchored(var_value)
+			return TRUE
+		if(NAMEOF(src, x))
 			var/turf/T = locate(var_value, y, z)
 			if(T)
 				forceMove(T)
 				return TRUE
 			return FALSE
-		if("y")
+		if(NAMEOF(src, y))
 			var/turf/T = locate(x, var_value, z)
 			if(T)
 				forceMove(T)
 				return TRUE
 			return FALSE
-		if("z")
+		if(NAMEOF(src, z))
 			var/turf/T = locate(x, y, var_value)
 			if(T)
 				forceMove(T)
 				return TRUE
 			return FALSE
-		if("loc")
+		if(NAMEOF(src, loc))
 			if(istype(var_value, /atom))
 				forceMove(var_value)
 				return TRUE
@@ -182,7 +233,7 @@
 		log_combat(AM, AM.pulledby, "pulled from", src)
 		AM.pulledby.stop_pulling() //an object can't be pulled by two mobs at once.
 	pulling = AM
-	AM.pulledby = src
+	AM.set_pulledby(src)
 	setGrabState(state)
 	if(ismob(AM))
 		var/mob/M = AM
@@ -194,13 +245,22 @@
 
 /atom/movable/proc/stop_pulling()
 	if(pulling)
-		pulling.pulledby = null
+		pulling.set_pulledby(null)
 		var/mob/living/ex_pulled = pulling
+		setGrabState(GRAB_PASSIVE)
 		pulling = null
-		setGrabState(0)
 		if(isliving(ex_pulled))
 			var/mob/living/L = ex_pulled
 			L.update_mobility()// mob gets up if it was lyng down in a chokehold
+
+
+///Reports the event of the change in value of the pulledby variable.
+/atom/movable/proc/set_pulledby(new_pulledby)
+	if(new_pulledby == pulledby)
+		return FALSE //null signals there was a change, be sure to return FALSE if none happened here.
+	. = pulledby
+	pulledby = new_pulledby
+
 
 /atom/movable/proc/Move_Pulled(atom/A)
 	if(!pulling)
@@ -414,29 +474,6 @@
 
 	return TRUE
 
-/atom/movable/Destroy(force)
-	QDEL_NULL(proximity_monitor)
-	QDEL_NULL(language_holder)
-
-	unbuckle_all_mobs(force=1)
-
-	. = ..()
-	if(loc)
-		//Restore air flow if we were blocking it (movables with ATMOS_PASS_PROC will need to do this manually if necessary)
-		if(((CanAtmosPass == ATMOS_PASS_DENSITY && density) || CanAtmosPass == ATMOS_PASS_NO) && isturf(loc))
-			CanAtmosPass = ATMOS_PASS_YES
-			air_update_turf(TRUE)
-		loc.handle_atom_del(src)
-	for(var/atom/movable/AM in contents)
-		qdel(AM)
-	moveToNullspace()
-	invisibility = INVISIBILITY_ABSTRACT
-	if(pulledby)
-		pulledby.stop_pulling()
-
-	if(orbiting)
-		orbiting.end_orbit(src)
-		orbiting = null
 
 // Make sure you know what you're doing if you call this, this is intended to only be called by byond directly.
 // You probably want CanPass()
@@ -472,6 +509,15 @@
 		if(QDELETED(A))
 			return
 	A.Bumped(src)
+
+///Sets the anchored var and returns if it was sucessfully changed or not.
+/atom/movable/proc/set_anchored(anchorvalue)
+	SHOULD_CALL_PARENT(TRUE)
+	if(anchored == anchorvalue)
+		return
+	. = anchored
+	anchored = anchorvalue
+	SEND_SIGNAL(src, COMSIG_MOVABLE_SET_ANCHORED, anchorvalue)
 
 /atom/movable/proc/forceMove(atom/destination)
 	. = FALSE
@@ -607,6 +653,10 @@
 ///If this returns FALSE then callback will not be called.
 /atom/movable/proc/throw_at(atom/target, range, speed, mob/thrower, spin = TRUE, diagonals_first = FALSE, datum/callback/callback, force = MOVE_FORCE_STRONG, gentle = FALSE, quickstart = TRUE)
 	. = FALSE
+
+	if(QDELETED(src))
+		CRASH("Qdeleted thing being thrown around.")
+
 	if (!target || speed <= 0)
 		return
 
@@ -642,20 +692,13 @@
 
 	. = TRUE // No failure conditions past this point.
 
-	var/datum/thrownthing/TT = new()
-	TT.thrownthing = src
-	TT.target = target
-	TT.target_turf = get_turf(target)
-	TT.init_dir = get_dir(src, target)
-	TT.maxrange = range
-	TT.speed = speed
-	TT.thrower = thrower
-	TT.diagonals_first = diagonals_first
-	TT.force = force
-	TT.gentle = gentle
-	TT.callback = callback
-	if(!QDELETED(thrower))
-		TT.target_zone = thrower.zone_selected
+	var/target_zone
+	if(QDELETED(thrower))
+		thrower = null //Let's not pass a qdeleting reference if any.
+	else
+		target_zone = thrower.zone_selected
+
+	var/datum/thrownthing/TT = new(src, target, get_turf(target), get_dir(src, target), range, speed, thrower, diagonals_first, force, gentle, callback, target_zone)
 
 	var/dist_x = abs(target.x - src.x)
 	var/dist_y = abs(target.y - src.y)
@@ -732,12 +775,12 @@
 	return blocker_opinion
 
 /// called when this atom is removed from a storage item, which is passed on as S. The loc variable is already set to the new destination before this is called.
-/atom/movable/proc/on_exit_storage(datum/component/storage/concrete/S)
-	return
+/atom/movable/proc/on_exit_storage(datum/component/storage/concrete/master_storage)
+	SEND_SIGNAL(src, CONSIG_STORAGE_EXITED, master_storage)
 
 /// called when this atom is added into a storage item, which is passed on as S. The loc variable is already set to the storage item.
-/atom/movable/proc/on_enter_storage(datum/component/storage/concrete/S)
-	return
+/atom/movable/proc/on_enter_storage(datum/component/storage/concrete/master_storage)
+	SEND_SIGNAL(src, COMISG_STORAGE_ENTERED, master_storage)
 
 /atom/movable/proc/get_spacemove_backup()
 	var/atom/movable/dense_object_backup
@@ -961,7 +1004,20 @@
   * This exists to act as a hook for behaviour
   */
 /atom/movable/proc/setGrabState(newstate)
+	if(newstate == grab_state)
+		return
+	SEND_SIGNAL(src, COMSIG_MOVABLE_SET_GRAB_STATE, newstate)
+	. = grab_state
 	grab_state = newstate
+	switch(.) //Previous state.
+		if(GRAB_PASSIVE, GRAB_AGGRESSIVE)
+			if(grab_state >= GRAB_NECK)
+				ADD_TRAIT(pulling, TRAIT_IMMOBILIZED, CHOKEHOLD_TRAIT)
+	switch(grab_state) //Current state.
+		if(GRAB_PASSIVE, GRAB_AGGRESSIVE)
+			if(. >= GRAB_NECK)
+				REMOVE_TRAIT(pulling, TRAIT_IMMOBILIZED, CHOKEHOLD_TRAIT)
+
 
 /obj/item/proc/do_pickup_animation(atom/target)
 	set waitfor = FALSE

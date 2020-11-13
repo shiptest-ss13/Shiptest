@@ -98,10 +98,10 @@
 /turf/closed/mineral,
 /area/space/nearstation)
 "aH" = (
-/turf/closed/mineral/diamond,
+/turf/closed/wall/mineral/diamond,
 /area/awaymission/wildwest/mines)
 "aI" = (
-/turf/closed/mineral/gold,
+/turf/closed/wall/mineral/gold,
 /area/awaymission/wildwest/mines)
 "aJ" = (
 /obj/effect/mapping_helpers/airlock/locked,
@@ -117,7 +117,7 @@
 /turf/open/floor/plasteel/cult,
 /area/awaymission/wildwest/vault)
 "aM" = (
-/turf/closed/mineral/silver,
+/turf/closed/wall/mineral/silver,
 /area/awaymission/wildwest/mines)
 "aN" = (
 /turf/closed/mineral,
@@ -538,7 +538,7 @@
 /area/awaymission/wildwest/mines)
 "cm" = (
 /obj/structure/bookcase/random{
-	book_count = 5
+	books_to_load = 5
 	},
 /turf/open/floor/wood,
 /area/awaymission/wildwest/gov)
@@ -654,7 +654,7 @@
 /area/awaymission/wildwest/gov)
 "cI" = (
 /obj/structure/bookcase/random{
-	book_count = 5
+	books_to_load = 5
 	},
 /turf/open/floor/wood,
 /area/awaymission/wildwest/mines)

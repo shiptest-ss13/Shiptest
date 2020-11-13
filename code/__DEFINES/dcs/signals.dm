@@ -59,67 +59,122 @@
 	#define EXAMINE_POSITION_ARTICLE 1
 	#define EXAMINE_POSITION_BEFORE 2
 	//End positions
-	#define COMPONENT_EXNAME_CHANGED 1
-#define COMSIG_ATOM_UPDATE_ICON "atom_update_icon"				///from base of atom/update_icon(): ()
-	#define COMSIG_ATOM_NO_UPDATE_ICON_STATE	1
-	#define COMSIG_ATOM_NO_UPDATE_OVERLAYS		2
-#define COMSIG_ATOM_UPDATE_OVERLAYS "atom_update_overlays"		///from base of atom/update_overlays(): (list/new_overlays)
-#define COMSIG_ATOM_UPDATED_ICON "atom_updated_icon"			///from base of atom/update_icon(): (signalOut, did_anything)
-#define COMSIG_ATOM_ENTERED "atom_entered"						///from base of atom/Entered(): (atom/movable/entering, /atom)
-#define COMSIG_ATOM_EXIT "atom_exit"							///from base of atom/Exit(): (/atom/movable/exiting, /atom/newloc)
-	#define COMPONENT_ATOM_BLOCK_EXIT 1
-#define COMSIG_ATOM_EXITED "atom_exited"						///from base of atom/Exited(): (atom/movable/exiting, atom/newloc)
-#define COMSIG_ATOM_BUMPED "atom_bumped"						///from base of atom/Bumped(): (/atom/movable)
-#define COMSIG_ATOM_EX_ACT "atom_ex_act"						///from base of atom/ex_act(): (severity, target)
-#define COMSIG_ATOM_EMP_ACT "atom_emp_act"						///from base of atom/emp_act(): (severity)
-#define COMSIG_ATOM_FIRE_ACT "atom_fire_act"					///from base of atom/fire_act(): (exposed_temperature, exposed_volume)
-#define COMSIG_ATOM_BULLET_ACT "atom_bullet_act"				///from base of atom/bullet_act(): (/obj/projectile, def_zone)
-#define COMSIG_ATOM_BLOB_ACT "atom_blob_act"					///from base of atom/blob_act(): (/obj/structure/blob)
-#define COMSIG_ATOM_ACID_ACT "atom_acid_act"					///from base of atom/acid_act(): (acidpwr, acid_volume)
-#define COMSIG_ATOM_EMAG_ACT "atom_emag_act"					///from base of atom/emag_act(): (/mob/user)
-#define COMSIG_ATOM_RAD_ACT "atom_rad_act"						///from base of atom/rad_act(intensity)
-#define COMSIG_ATOM_NARSIE_ACT "atom_narsie_act"				///from base of atom/narsie_act(): ()
-#define COMSIG_ATOM_RCD_ACT "atom_rcd_act"						///from base of atom/rcd_act(): (/mob, /obj/item/construction/rcd, passed_mode)
-#define COMSIG_ATOM_SING_PULL "atom_sing_pull"					///from base of atom/singularity_pull(): (S, current_size)
-#define COMSIG_ATOM_BSA_BEAM "atom_bsa_beam_pass"				///from obj/machinery/bsa/full/proc/fire(): ()
-	#define COMSIG_ATOM_BLOCKS_BSA_BEAM 1
-#define COMSIG_ATOM_SET_LIGHT "atom_set_light"					///from base of atom/set_light(): (l_range, l_power, l_color)
-#define COMSIG_ATOM_DIR_CHANGE "atom_dir_change"				///from base of atom/setDir(): (old_dir, new_dir)
-#define COMSIG_ATOM_CONTENTS_DEL "atom_contents_del"			///from base of atom/handle_atom_del(): (atom/deleted)
-#define COMSIG_ATOM_HAS_GRAVITY "atom_has_gravity"				///from base of atom/has_gravity(): (turf/location, list/forced_gravities)
-#define COMSIG_ATOM_RAD_PROBE "atom_rad_probe"					///from proc/get_rad_contents(): ()
-	#define COMPONENT_BLOCK_RADIATION 1
-#define COMSIG_ATOM_RAD_CONTAMINATING "atom_rad_contam"			///from base of datum/radiation_wave/radiate(): (strength)
-	#define COMPONENT_BLOCK_CONTAMINATION 1
-#define COMSIG_ATOM_RAD_WAVE_PASSING "atom_rad_wave_pass"		///from base of datum/radiation_wave/check_obstructions(): (datum/radiation_wave, width)
-  #define COMPONENT_RAD_WAVE_HANDLED 1
-#define COMSIG_ATOM_CANREACH "atom_can_reach"					///from internal loop in atom/movable/proc/CanReach(): (list/next)
+	#define COMPONENT_EXNAME_CHANGED (1<<0)
+///from base of atom/update_icon(): ()
+#define COMSIG_ATOM_UPDATE_ICON "atom_update_icon"
+	#define COMSIG_ATOM_NO_UPDATE_ICON_STATE	(1<<0)
+	#define COMSIG_ATOM_NO_UPDATE_OVERLAYS		(1<<1)
+///from base of atom/update_overlays(): (list/new_overlays)
+#define COMSIG_ATOM_UPDATE_OVERLAYS "atom_update_overlays"
+///from base of atom/update_icon(): (signalOut, did_anything)
+#define COMSIG_ATOM_UPDATED_ICON "atom_updated_icon"
+///from base of atom/Entered(): (atom/movable/entering, /atom)
+#define COMSIG_ATOM_ENTERED "atom_entered"
+///from base of atom/Exit(): (/atom/movable/exiting, /atom/newloc)
+#define COMSIG_ATOM_EXIT "atom_exit"
+	#define COMPONENT_ATOM_BLOCK_EXIT (1<<0)
+///from base of atom/Exited(): (atom/movable/exiting, atom/newloc)
+#define COMSIG_ATOM_EXITED "atom_exited"
+///from base of atom/Bumped(): (/atom/movable)
+#define COMSIG_ATOM_BUMPED "atom_bumped"
+///from base of atom/ex_act(): (severity, target)
+#define COMSIG_ATOM_EX_ACT "atom_ex_act"
+///from base of atom/emp_act(): (severity)
+#define COMSIG_ATOM_EMP_ACT "atom_emp_act"
+///from base of atom/fire_act(): (exposed_temperature, exposed_volume)
+#define COMSIG_ATOM_FIRE_ACT "atom_fire_act"
+///from base of atom/bullet_act(): (/obj/projectile, def_zone)
+#define COMSIG_ATOM_BULLET_ACT "atom_bullet_act"
+///from base of atom/blob_act(): (/obj/structure/blob)
+#define COMSIG_ATOM_BLOB_ACT "atom_blob_act"
+///from base of atom/acid_act(): (acidpwr, acid_volume)
+#define COMSIG_ATOM_ACID_ACT "atom_acid_act"
+///from base of atom/emag_act(): (/mob/user)
+#define COMSIG_ATOM_EMAG_ACT "atom_emag_act"
+///from base of atom/rad_act(intensity)
+#define COMSIG_ATOM_RAD_ACT "atom_rad_act"
+///from base of atom/narsie_act(): ()
+#define COMSIG_ATOM_NARSIE_ACT "atom_narsie_act"
+///from base of atom/rcd_act(): (/mob, /obj/item/construction/rcd, passed_mode)
+#define COMSIG_ATOM_RCD_ACT "atom_rcd_act"
+///from base of atom/singularity_pull(): (S, current_size)
+#define COMSIG_ATOM_SING_PULL "atom_sing_pull"
+///from obj/machinery/bsa/full/proc/fire(): ()
+#define COMSIG_ATOM_BSA_BEAM "atom_bsa_beam_pass"
+	#define COMSIG_ATOM_BLOCKS_BSA_BEAM (1<<0)
+///from base of atom/set_light(): (l_range, l_power, l_color, l_on)
+#define COMSIG_ATOM_SET_LIGHT "atom_set_light"
+///from base of atom/setDir(): (old_dir, new_dir). Called before the direction changes.
+#define COMSIG_ATOM_DIR_CHANGE "atom_dir_change"
+///from base of atom/handle_atom_del(): (atom/deleted)
+#define COMSIG_ATOM_CONTENTS_DEL "atom_contents_del"
+///from base of atom/has_gravity(): (turf/location, list/forced_gravities)
+#define COMSIG_ATOM_HAS_GRAVITY "atom_has_gravity"
+///from proc/get_rad_contents(): ()
+#define COMSIG_ATOM_RAD_PROBE "atom_rad_probe"
+	#define COMPONENT_BLOCK_RADIATION (1<<0)
+///from base of datum/radiation_wave/radiate(): (strength)
+#define COMSIG_ATOM_RAD_CONTAMINATING "atom_rad_contam"
+	#define COMPONENT_BLOCK_CONTAMINATION (1<<0)
+///from base of datum/radiation_wave/check_obstructions(): (datum/radiation_wave, width)
+#define COMSIG_ATOM_RAD_WAVE_PASSING "atom_rad_wave_pass"
+  #define COMPONENT_RAD_WAVE_HANDLED (1<<0)
+///from internal loop in atom/movable/proc/CanReach(): (list/next)
+#define COMSIG_ATOM_CANREACH "atom_can_reach"
 	#define COMPONENT_BLOCK_REACH 1
-#define COMSIG_ATOM_SCREWDRIVER_ACT "atom_screwdriver_act"		///from base of atom/screwdriver_act(): (mob/living/user, obj/item/I)
-#define COMSIG_ATOM_WRENCH_ACT "atom_wrench_act"				///from base of atom/wrench_act(): (mob/living/user, obj/item/I)
-#define COMSIG_ATOM_MULTITOOL_ACT "atom_multitool_act"			///from base of atom/multitool_act(): (mob/living/user, obj/item/I)
-#define COMSIG_ATOM_WELDER_ACT "atom_welder_act"				///from base of atom/welder_act(): (mob/living/user, obj/item/I)
-#define COMSIG_ATOM_WIRECUTTER_ACT "atom_wirecutter_act"		///from base of atom/wirecutter_act(): (mob/living/user, obj/item/I)
-#define COMSIG_ATOM_CROWBAR_ACT "atom_crowbar_act"				///from base of atom/crowbar_act(): (mob/living/user, obj/item/I)
-#define COMSIG_ATOM_ANALYSER_ACT "atom_analyser_act"			///from base of atom/analyser_act(): (mob/living/user, obj/item/I)
-	#define COMPONENT_BLOCK_TOOL_ATTACK 1
-#define COMSIG_ATOM_INTERCEPT_TELEPORT "intercept_teleport"		///called when teleporting into a protected turf: (channel, turf/origin)
-	#define COMPONENT_BLOCK_TELEPORT 1
-#define COMSIG_ATOM_HEARER_IN_VIEW "atom_hearer_in_view"		///called when an atom is added to the hearers on get_hearers_in_view(): (list/processing_list, list/hearers)
-#define COMSIG_ATOM_ORBIT_BEGIN "atom_orbit_begin"           ///called when an atom starts orbiting another atom: (atom)
-#define COMSIG_ATOM_ORBIT_STOP "atom_orbit_stop"           ///called when an atom stops orbiting another atom: (atom)
-/////////////////
-#define COMSIG_ATOM_ATTACK_GHOST "atom_attack_ghost"			///from base of atom/attack_ghost(): (mob/dead/observer/ghost)
-#define COMSIG_ATOM_ATTACK_HAND "atom_attack_hand"				///from base of atom/attack_hand(): (mob/user)
-#define COMSIG_ATOM_ATTACK_PAW "atom_attack_paw"				///from base of atom/attack_paw(): (mob/user)
-	#define COMPONENT_NO_ATTACK_HAND 1							//works on all 3.
-//This signal return value bitflags can be found in __DEFINES/misc.dm
+///from base of atom/screwdriver_act(): (mob/living/user, obj/item/I)
+#define COMSIG_ATOM_SCREWDRIVER_ACT "atom_screwdriver_act"
+///from base of atom/wrench_act(): (mob/living/user, obj/item/I)
+#define COMSIG_ATOM_WRENCH_ACT "atom_wrench_act"
+///from base of atom/multitool_act(): (mob/living/user, obj/item/I)
+#define COMSIG_ATOM_MULTITOOL_ACT "atom_multitool_act"
+///from base of atom/welder_act(): (mob/living/user, obj/item/I)
+#define COMSIG_ATOM_WELDER_ACT "atom_welder_act"
+///from base of atom/wirecutter_act(): (mob/living/user, obj/item/I)
+#define COMSIG_ATOM_WIRECUTTER_ACT "atom_wirecutter_act"
+///from base of atom/crowbar_act(): (mob/living/user, obj/item/I)
+#define COMSIG_ATOM_CROWBAR_ACT "atom_crowbar_act"
+///from base of atom/analyser_act(): (mob/living/user, obj/item/I)
+#define COMSIG_ATOM_ANALYSER_ACT "atom_analyser_act"
+	#define COMPONENT_BLOCK_TOOL_ATTACK (1<<0)
+///called when teleporting into a protected turf: (channel, turf/origin)
+#define COMSIG_ATOM_INTERCEPT_TELEPORT "intercept_teleport"
+	#define COMPONENT_BLOCK_TELEPORT (1<<0)
+///called when an atom is added to the hearers on get_hearers_in_view(): (list/processing_list, list/hearers)
+#define COMSIG_ATOM_HEARER_IN_VIEW "atom_hearer_in_view"
+///called when an atom starts orbiting another atom: (atom)
+#define COMSIG_ATOM_ORBIT_BEGIN "atom_orbit_begin"
+///called when an atom stops orbiting another atom: (atom)
+#define COMSIG_ATOM_ORBIT_STOP "atom_orbit_stop"
+///from base of atom/attack_ghost(): (mob/dead/observer/ghost)
+#define COMSIG_ATOM_ATTACK_GHOST "atom_attack_ghost"
+///from base of atom/attack_hand(): (mob/user)
+#define COMSIG_ATOM_ATTACK_HAND "atom_attack_hand"
+///from base of atom/attack_paw(): (mob/user)
+#define COMSIG_ATOM_ATTACK_PAW "atom_attack_paw"
+	#define COMPONENT_NO_ATTACK_HAND (1<<0)								//works on all 3.
+///from base of atom/set_opacity(): (new_opacity)
+#define COMSIG_ATOM_SET_OPACITY "atom_set_opacity"
+
+//from base of atom/movable/on_enter_storage(): (datum/component/storage/concrete/master_storage)
+#define COMISG_STORAGE_ENTERED "storage_entered"
+//from base of atom/movable/on_exit_storage(): (datum/component/storage/concrete/master_storage)
+#define CONSIG_STORAGE_EXITED "storage_exited"
 
 ///from base of atom/expose_reagents():
 #define COMSIG_ATOM_EXPOSE_REAGENTS "atom_expose_reagents"
 	/// Prevents the atom from being exposed to reagents if returned on [COMPONENT_ATOM_EXPOSE_REAGENTS]
 	#define COMPONENT_NO_EXPOSE_REAGENTS (1<<0)
-
+///Called right before the atom changes the value of light_range to a different one, from base atom/set_light_range(): (new_range)
+#define COMSIG_ATOM_SET_LIGHT_RANGE "atom_set_light_range"
+///Called right before the atom changes the value of light_power to a different one, from base atom/set_light_power(): (new_power)
+#define COMSIG_ATOM_SET_LIGHT_POWER "atom_set_light_power"
+///Called right before the atom changes the value of light_color to a different one, from base atom/set_light_color(): (new_color)
+#define COMSIG_ATOM_SET_LIGHT_COLOR "atom_set_light_color"
+///Called right before the atom changes the value of light_on to a different one, from base atom/set_light_on(): (new_value)
+#define COMSIG_ATOM_SET_LIGHT_ON "atom_set_light_on"
+///Called right before the atom changes the value of light_flags to a different one, from base atom/set_light_flags(): (new_value)
+#define COMSIG_ATOM_SET_LIGHT_FLAGS "atom_set_light_flags"
 ///called for each movable in a turf contents on /turf/zImpact(): (atom/movable/A, levels)
 #define COMSIG_ATOM_INTERCEPT_Z_FALL "movable_intercept_z_impact"
 ///called on a movable (NOT living) when someone starts pulling it (atom/movable/puller, state, force)
@@ -155,27 +210,44 @@
 #define COMSIG_TURF_MULTIZ_NEW "turf_multiz_new"				//from base of turf/New(): (turf/source, direction)
 
 // /atom/movable signals
-#define COMSIG_MOVABLE_PRE_MOVE "movable_pre_move"					///from base of atom/movable/Moved(): (/atom)
-	#define COMPONENT_MOVABLE_BLOCK_PRE_MOVE 1
-#define COMSIG_MOVABLE_MOVED "movable_moved"					///from base of atom/movable/Moved(): (/atom, dir)
-#define COMSIG_MOVABLE_CROSS "movable_cross"					///from base of atom/movable/Cross(): (/atom/movable)
-#define COMSIG_MOVABLE_CROSSED "movable_crossed"                ///from base of atom/movable/Crossed(): (/atom/movable)
-#define COMSIG_MOVABLE_UNCROSS "movable_uncross"				///from base of atom/movable/Uncross(): (/atom/movable)
-	#define COMPONENT_MOVABLE_BLOCK_UNCROSS 1
-#define COMSIG_MOVABLE_UNCROSSED "movable_uncrossed"           	///from base of atom/movable/Uncrossed(): (/atom/movable)
-#define COMSIG_MOVABLE_BUMP "movable_bump"						///from base of atom/movable/Bump(): (/atom)
-#define COMSIG_MOVABLE_IMPACT "movable_impact"					///from base of atom/movable/throw_impact(): (/atom/hit_atom, /datum/thrownthing/throwingdatum)
-	#define COMPONENT_MOVABLE_IMPACT_FLIP_HITPUSH 1			///if true, flip if the impact will push what it hits
-	#define COMPONENT_MOVABLE_IMPACT_NEVERMIND 2			///return true if you destroyed whatever it was you're impacting and there won't be anything for hitby() to run on
-#define COMSIG_MOVABLE_IMPACT_ZONE "item_impact_zone"			///from base of mob/living/hitby(): (mob/living/target, hit_zone)
-#define COMSIG_MOVABLE_BUCKLE "buckle"							///from base of atom/movable/buckle_mob(): (mob, force)
-#define COMSIG_MOVABLE_UNBUCKLE "unbuckle"						///from base of atom/movable/unbuckle_mob(): (mob, force)
-#define COMSIG_MOVABLE_PRE_THROW "movable_pre_throw"			///from base of atom/movable/throw_at(): (list/args)
-	#define COMPONENT_CANCEL_THROW 1
-#define COMSIG_MOVABLE_POST_THROW "movable_post_throw"			///from base of atom/movable/throw_at(): (datum/thrownthing, spin)
-#define COMSIG_MOVABLE_Z_CHANGED "movable_ztransit" 			///from base of atom/movable/onTransitZ(): (old_z, new_z)
-#define COMSIG_MOVABLE_SECLUDED_LOCATION "movable_secluded" 	///called when the movable is placed in an unaccessible area, used for stationloving: ()
-#define COMSIG_MOVABLE_HEAR "movable_hear"						///from base of atom/movable/Hear(): (proc args list(message, atom/movable/speaker, message_language, raw_message, radio_freq, list/spans, message_mode))
+
+///from base of atom/movable/Moved(): (/atom)
+#define COMSIG_MOVABLE_PRE_MOVE "movable_pre_move"
+	#define COMPONENT_MOVABLE_BLOCK_PRE_MOVE (1<<0)
+///from base of atom/movable/Moved(): (/atom, dir)
+#define COMSIG_MOVABLE_MOVED "movable_moved"
+///from base of atom/movable/Cross(): (/atom/movable)
+#define COMSIG_MOVABLE_CROSS "movable_cross"
+///from base of atom/movable/Crossed(): (/atom/movable)
+#define COMSIG_MOVABLE_CROSSED "movable_crossed"
+///from base of atom/movable/Uncross(): (/atom/movable)
+#define COMSIG_MOVABLE_UNCROSS "movable_uncross"
+	#define COMPONENT_MOVABLE_BLOCK_UNCROSS (1<<0)
+///from base of atom/movable/Uncrossed(): (/atom/movable)
+#define COMSIG_MOVABLE_UNCROSSED "movable_uncrossed"
+///from base of atom/movable/Bump(): (/atom)
+#define COMSIG_MOVABLE_BUMP "movable_bump"
+///from base of atom/movable/throw_impact(): (/atom/hit_atom, /datum/thrownthing/throwingdatum)
+#define COMSIG_MOVABLE_IMPACT "movable_impact"
+	#define COMPONENT_MOVABLE_IMPACT_FLIP_HITPUSH (1<<0)				//if true, flip if the impact will push what it hits
+	#define COMPONENT_MOVABLE_IMPACT_NEVERMIND (1<<1)					//return true if you destroyed whatever it was you're impacting and there won't be anything for hitby() to run on
+///from base of mob/living/hitby(): (mob/living/target, hit_zone)
+#define COMSIG_MOVABLE_IMPACT_ZONE "item_impact_zone"
+///from base of atom/movable/buckle_mob(): (mob, force)
+#define COMSIG_MOVABLE_BUCKLE "buckle"
+///from base of atom/movable/unbuckle_mob(): (mob, force)
+#define COMSIG_MOVABLE_UNBUCKLE "unbuckle"
+///from base of atom/movable/throw_at(): (list/args)
+#define COMSIG_MOVABLE_PRE_THROW "movable_pre_throw"
+	#define COMPONENT_CANCEL_THROW (1<<0)
+///from base of atom/movable/throw_at(): (datum/thrownthing, spin)
+#define COMSIG_MOVABLE_POST_THROW "movable_post_throw"
+///from base of atom/movable/onTransitZ(): (old_z, new_z)
+#define COMSIG_MOVABLE_Z_CHANGED "movable_ztransit"
+///called when the movable is placed in an unaccessible area, used for stationloving: ()
+#define COMSIG_MOVABLE_SECLUDED_LOCATION "movable_secluded"
+///from base of atom/movable/Hear(): (proc args list(message, atom/movable/speaker, message_language, raw_message, radio_freq, list/spans, list/message_mods = list()))
+#define COMSIG_MOVABLE_HEAR "movable_hear"
 	#define HEARING_MESSAGE 1
 	#define HEARING_SPEAKER 2
 //	#define HEARING_LANGUAGE 3
@@ -183,34 +255,73 @@
 	/* #define HEARING_RADIO_FREQ 5
 	#define HEARING_SPANS 6
 	#define HEARING_MESSAGE_MODE 7 */
-#define COMSIG_MOVABLE_DISPOSING "movable_disposing"			//called when the movable is added to a disposal holder object for disposal movement: (obj/structure/disposalholder/holder, obj/machinery/disposal/source)
+
+///called when the movable is added to a disposal holder object for disposal movement: (obj/structure/disposalholder/holder, obj/machinery/disposal/source)
+#define COMSIG_MOVABLE_DISPOSING "movable_disposing"
+///called when the movable sucessfully has it's anchored var changed, from base atom/movable/set_anchored(): (value)
+#define COMSIG_MOVABLE_SET_ANCHORED "movable_set_anchored"
+///from base of atom/movable/setGrabState(): (newstate)
+#define COMSIG_MOVABLE_SET_GRAB_STATE "living_set_grab_state"
+///Called when the movable tries to change its dynamic light color setting, from base atom/movable/lighting_overlay_set_color(): (color)
+#define COMSIG_MOVABLE_LIGHT_OVERLAY_SET_RANGE "movable_light_overlay_set_color"
+///Called when the movable tries to change its dynamic light power setting, from base atom/movable/lighting_overlay_set_power(): (power)
+#define COMSIG_MOVABLE_LIGHT_OVERLAY_SET_POWER "movable_light_overlay_set_power"
+///Called when the movable tries to change its dynamic light range setting, from base atom/movable/lighting_overlay_set_range(): (range)
+#define COMSIG_MOVABLE_LIGHT_OVERLAY_SET_COLOR "movable_light_overlay_set_range"
+///Called when the movable tries to toggle its dynamic light LIGHTING_ON status, from base atom/movable/lighting_overlay_toggle_on(): (new_state)
+#define COMSIG_MOVABLE_LIGHT_OVERLAY_TOGGLE_ON "movable_light_overlay_toggle_on"
 
 // /mob signals
-#define COMSIG_MOB_LOGIN "mob_login"							//from base of /mob/Login(): ()
-#define COMSIG_MOB_LOGOUT "mob_logout"							//from base of /mob/Logout(): ()
-#define COMSIG_MOB_DEATH "mob_death"							//from base of mob/death(): (gibbed)
-#define COMSIG_MOB_STATCHANGE "mob_statchange"					//from base of mob/set_stat(): (new_stat)
-#define COMSIG_MOB_CLICKON "mob_clickon"						//from base of mob/clickon(): (atom/A, params)
-#define COMSIG_MOB_MIDDLECLICKON "mob_middleclickon"			//from base of mob/MiddleClickOn(): (atom/A)
-#define COMSIG_MOB_ALTCLICKON "mob_altclickon"				//from base of mob/AltClickOn(): (atom/A)
-	#define COMSIG_MOB_CANCEL_CLICKON 1
 
-#define COMSIG_MOB_ALLOWED "mob_allowed"						//from base of obj/allowed(mob/M): (/obj) returns bool, if TRUE the mob has id access to the obj
-#define COMSIG_MOB_RECEIVE_MAGIC "mob_receive_magic"			//from base of mob/anti_magic_check(): (mob/user, magic, holy, tinfoil, chargecost, self, protection_sources)
-	#define COMPONENT_BLOCK_MAGIC 1
-#define COMSIG_MOB_HUD_CREATED "mob_hud_created"				//from base of mob/create_mob_hud(): ()
-#define COMSIG_MOB_ATTACK_HAND "mob_attack_hand"				//from base of
-#define COMSIG_MOB_ITEM_ATTACK "mob_item_attack"				//from base of /obj/item/attack(): (mob/M, mob/user)
-	#define COMPONENT_ITEM_NO_ATTACK 1
-#define COMSIG_MOB_APPLY_DAMGE	"mob_apply_damage"				//from base of /mob/living/proc/apply_damage(): (damage, damagetype, def_zone)
-#define COMSIG_MOB_ITEM_AFTERATTACK "mob_item_afterattack"		//from base of obj/item/afterattack(): (atom/target, mob/user, proximity_flag, click_parameters)
-#define COMSIG_MOB_ITEM_ATTACK_QDELETED "mob_item_attack_qdeleted"	//from base of obj/item/attack_qdeleted(): (atom/target, mob/user, proxiumity_flag, click_parameters)
-#define COMSIG_MOB_ATTACK_RANGED "mob_attack_ranged"			//from base of mob/RangedAttack(): (atom/A, params)
-#define COMSIG_MOB_THROW "mob_throw"							//from base of /mob/throw_item(): (atom/target)
-#define COMSIG_MOB_EXAMINATE "mob_examinate"					//from base of /mob/verb/examinate(): (atom/target)
-#define COMSIG_MOB_UPDATE_SIGHT "mob_update_sight"				//from base of /mob/update_sight(): ()
-#define COMSIG_MOB_SAY "mob_say" // from /mob/living/say(): ()
-	#define COMPONENT_UPPERCASE_SPEECH 1
+///from base of /mob/Login(): ()
+#define COMSIG_MOB_LOGIN "mob_login"
+///from base of /mob/Logout(): ()
+#define COMSIG_MOB_LOGOUT "mob_logout"
+///from base of mob/death(): (gibbed)
+#define COMSIG_MOB_DEATH "mob_death"
+///from base of mob/set_stat(): (new_stat)
+#define COMSIG_MOB_STATCHANGE "mob_statchange"
+///from base of mob/clickon(): (atom/A, params)
+#define COMSIG_MOB_CLICKON "mob_clickon"
+///from base of mob/MiddleClickOn(): (atom/A)
+#define COMSIG_MOB_MIDDLECLICKON "mob_middleclickon"
+///from base of mob/AltClickOn(): (atom/A)
+#define COMSIG_MOB_ALTCLICKON "mob_altclickon"
+	#define COMSIG_MOB_CANCEL_CLICKON (1<<0)
+
+///from base of obj/allowed(mob/M): (/obj) returns bool, if TRUE the mob has id access to the obj
+#define COMSIG_MOB_ALLOWED "mob_allowed"
+///from base of mob/anti_magic_check(): (mob/user, magic, holy, tinfoil, chargecost, self, protection_sources)
+#define COMSIG_MOB_RECEIVE_MAGIC "mob_receive_magic"
+	#define COMPONENT_BLOCK_MAGIC (1<<0)
+///from base of mob/create_mob_hud(): ()
+#define COMSIG_MOB_HUD_CREATED "mob_hud_created"
+///from base of atom/attack_hand(): (mob/user)
+#define COMSIG_MOB_ATTACK_HAND "mob_attack_hand"
+///from base of /obj/item/attack(): (mob/M, mob/user)
+#define COMSIG_MOB_ITEM_ATTACK "mob_item_attack"
+	#define COMPONENT_ITEM_NO_ATTACK (1<<0)
+///from base of /mob/living/proc/apply_damage(): (damage, damagetype, def_zone)
+#define COMSIG_MOB_APPLY_DAMGE	"mob_apply_damage"
+///from base of obj/item/afterattack(): (atom/target, mob/user, proximity_flag, click_parameters)
+#define COMSIG_MOB_ITEM_AFTERATTACK "mob_item_afterattack"
+///from base of obj/item/attack_qdeleted(): (atom/target, mob/user, proxiumity_flag, click_parameters)
+#define COMSIG_MOB_ITEM_ATTACK_QDELETED "mob_item_attack_qdeleted"
+///from base of mob/RangedAttack(): (atom/A, params)
+#define COMSIG_MOB_ATTACK_RANGED "mob_attack_ranged"
+///from base of /mob/throw_item(): (atom/target)
+#define COMSIG_MOB_THROW "mob_throw"
+///from base of /mob/verb/examinate(): (atom/target)
+#define COMSIG_MOB_EXAMINATE "mob_examinate"
+///from /mob/living/handle_eye_contact(): (mob/living/other_mob)
+#define COMSIG_MOB_EYECONTACT "mob_eyecontact"
+	/// return this if you want to block printing this message to this person, if you want to print your own (does not affect the other person's message)
+	#define COMSIG_BLOCK_EYECONTACT (1<<0)
+///from base of /mob/update_sight(): ()
+#define COMSIG_MOB_UPDATE_SIGHT "mob_update_sight"
+////from /mob/living/say(): ()
+#define COMSIG_MOB_SAY "mob_say"
+	#define COMPONENT_UPPERCASE_SPEECH (1<<0)
 	// used to access COMSIG_MOB_SAY argslist
 	#define SPEECH_MESSAGE 1
 	// #define SPEECH_BUBBLE_TYPE 2
@@ -219,26 +330,46 @@
 	#define SPEECH_LANGUAGE 5
 	#define SPEECH_IGNORE_SPAM 6
 	#define SPEECH_FORCED 7 */
-#define COMSIG_MOB_DEADSAY "mob_deadsay" // from /mob/say_dead(): (mob/speaker, message)
-	#define MOB_DEADSAY_SIGNAL_INTERCEPT 1
-#define COMSIG_MOB_EMOTE "mob_emote" // from /mob/living/emote(): ()
-#define COMSIG_MOB_SWAP_HANDS "mob_swap_hands"					//from base of mob/swap_hand(): (obj/item)
-	#define COMPONENT_BLOCK_SWAP 1
 
-// /mob/living signals
-#define COMSIG_LIVING_RESIST "living_resist"					//from base of mob/living/resist() (/mob/living)
-#define COMSIG_LIVING_IGNITED "living_ignite"					//from base of mob/living/IgniteMob() (/mob/living)
-#define COMSIG_LIVING_EXTINGUISHED "living_extinguished"		//from base of mob/living/ExtinguishMob() (/mob/living)
-#define COMSIG_LIVING_ELECTROCUTE_ACT "living_electrocute_act"		//from base of mob/living/electrocute_act(): (shock_damage, source, siemens_coeff, flags)
-#define COMSIG_LIVING_SHOCK_PREVENTED "living_shock_prevented"  //sent when items with siemen coeff. of 0 block a shock: (power_source, source, siemens_coeff, dist_check)
-#define COMSIG_LIVING_MINOR_SHOCK "living_minor_shock"			//sent by stuff like stunbatons and tasers: ()
-#define COMSIG_LIVING_REVIVE "living_revive"					//from base of mob/living/revive() (full_heal, admin_revive)
-#define COMSIG_LIVING_REGENERATE_LIMBS "living_regen_limbs"		//from base of /mob/living/regenerate_limbs(): (noheal, excluded_limbs)
-#define COMSIG_LIVING_ATTACH_LIMB "living_attach_limb"			//from base of /obj/item/bodypart/proc/attach_limb(): (new_limb, special) allows you to fail limb attachment
+///from /mob/say_dead(): (mob/speaker, message)
+#define COMSIG_MOB_DEADSAY "mob_deadsay"
+	#define MOB_DEADSAY_SIGNAL_INTERCEPT (1<<0)
+///from /mob/living/emote(): ()
+#define COMSIG_MOB_EMOTE "mob_emote"
+///from base of mob/swap_hand(): (obj/item)
+#define COMSIG_MOB_SWAP_HANDS "mob_swap_hands"
+	#define COMPONENT_BLOCK_SWAP (1<<0)
+
+///from base of mob/living/resist() (/mob/living)
+#define COMSIG_LIVING_RESIST "living_resist"
+///from base of mob/living/look_up() (/mob/living)
+#define COMSIG_LIVING_LOOK_UP "living_look_up"
+///from base of mob/living/IgniteMob() (/mob/living)
+#define COMSIG_LIVING_IGNITED "living_ignite"
+///from base of mob/living/ExtinguishMob() (/mob/living)
+#define COMSIG_LIVING_EXTINGUISHED "living_extinguished"
+///from base of mob/living/electrocute_act(): (shock_damage, source, siemens_coeff, flags)
+#define COMSIG_LIVING_ELECTROCUTE_ACT "living_electrocute_act"
+///sent when items with siemen coeff. of 0 block a shock: (power_source, source, siemens_coeff, dist_check)
+#define COMSIG_LIVING_SHOCK_PREVENTED "living_shock_prevented"
+///sent by stuff like stunbatons and tasers: ()
+#define COMSIG_LIVING_MINOR_SHOCK "living_minor_shock"
+///from base of mob/living/revive() (full_heal, admin_revive)
+#define COMSIG_LIVING_REVIVE "living_revive"
+///from base of /mob/living/regenerate_limbs(): (noheal, excluded_limbs)
+#define COMSIG_LIVING_REGENERATE_LIMBS "living_regen_limbs"
+///from base of /obj/item/bodypart/proc/attach_limb(): (new_limb, special) allows you to fail limb attachment
+#define COMSIG_LIVING_ATTACH_LIMB "living_attach_limb"
 	#define COMPONENT_NO_ATTACH 1
-#define COMSIG_PROCESS_BORGCHARGER_OCCUPANT "living_charge"		//sent from borg recharge stations: (amount, repairs)
-#define COMSIG_MOB_CLIENT_LOGIN "comsig_mob_client_login"		//sent when a mob/login() finishes: (client)
-#define COMSIG_BORG_SAFE_DECONSTRUCT "borg_safe_decon"			//sent from borg mobs to itself, for tools to catch an upcoming destroy() due to safe decon (rather than detonation)
+///from base of mob/living/set_buckled(): (new_buckled)
+#define COMSIG_LIVING_SET_BUCKLED "living_set_buckled"
+
+///sent from borg recharge stations: (amount, repairs)
+#define COMSIG_PROCESS_BORGCHARGER_OCCUPANT "living_charge"
+///sent when a mob/login() finishes: (client)
+#define COMSIG_MOB_CLIENT_LOGIN "comsig_mob_client_login"
+///sent from borg mobs to itself, for tools to catch an upcoming destroy() due to safe decon (rather than detonation)
+#define COMSIG_BORG_SAFE_DECONSTRUCT "borg_safe_decon"
 
 //ALL OF THESE DO NOT TAKE INTO ACCOUNT WHETHER AMOUNT IS 0 OR LOWER AND ARE SENT REGARDLESS!
 #define COMSIG_LIVING_STATUS_STUN "living_stun"					//from base of mob/living/Stun() (amount, update, ignore)
@@ -265,10 +396,13 @@
 	#define COMPONENT_HOSTILE_NO_ATTACK 1
 
 // /obj signals
-#define COMSIG_OBJ_DECONSTRUCT "obj_deconstruct"				//from base of obj/deconstruct(): (disassembled)
-#define COMSIG_OBJ_SETANCHORED "obj_setanchored"				//called in /obj/structure/setAnchored(): (value)
-#define COMSIG_OBJ_DEFAULT_UNFASTEN_WRENCH "obj_default_unfasten_wrench"	//from base of code/game/machinery
-#define COMSIG_OBJ_HIDE	"obj_hide"								//from base of /turf/proc/levelupdate(). (intact) true to hide and false to unhide
+
+///from base of obj/deconstruct(): (disassembled)
+#define COMSIG_OBJ_DECONSTRUCT "obj_deconstruct"
+///from base of code/game/machinery
+#define COMSIG_OBJ_DEFAULT_UNFASTEN_WRENCH "obj_default_unfasten_wrench"
+///from base of /turf/proc/levelupdate(). (intact) true to hide and false to unhide
+#define COMSIG_OBJ_HIDE	"obj_hide"
 
 // /obj/machinery signals
 #define COMSIG_MACHINERY_BROKEN "machinery_broken"				//from /obj/machinery/obj_break(damage_flag): (damage_flag)
@@ -379,9 +513,14 @@
 
 /*******Component Specific Signals*******/
 //Janitor
-#define COMSIG_TURF_IS_WET "check_turf_wet"							//(): Returns bitflags of wet values.
-#define COMSIG_TURF_MAKE_DRY "make_turf_try"						//(max_strength, immediate, duration_decrease = INFINITY): Returns bool.
-#define COMSIG_COMPONENT_CLEAN_ACT "clean_act"					//called on an object to clean it of cleanables. Usualy with soap: (num/strength)
+
+///(): Returns bitflags of wet values.
+#define COMSIG_TURF_IS_WET "check_turf_wet"
+///(max_strength, immediate, duration_decrease = INFINITY): Returns bool.
+#define COMSIG_TURF_MAKE_DRY "make_turf_try"
+
+///Called on an object to "clean it", such as removing blood decals/overlays, etc. The clean types bitfield is sent with it. Return TRUE if any cleaning was necessary and thus performed.
+#define COMSIG_COMPONENT_CLEAN_ACT "clean_act"
 
 //Creamed
 #define COMSIG_COMPONENT_CLEAN_FACE_ACT "clean_face_act"		//called when you wash your face at a sink: (num/strength)

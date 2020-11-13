@@ -60,6 +60,10 @@ field_generator power level display
 	fields = list()
 	connected_gens = list()
 
+/obj/machinery/field/generator/anchored/Initialize()
+	. = ..()
+	set_anchored(TRUE)
+
 /obj/machinery/field/generator/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/empprotection, EMP_PROTECT_SELF | EMP_PROTECT_WIRES)
@@ -84,6 +88,14 @@ field_generator power level display
 				add_fingerprint(user)
 	else
 		to_chat(user, "<span class='warning'>[src] needs to be firmly secured to the floor first!</span>")
+
+/obj/machinery/field/generator/set_anchored(anchorvalue)
+	. = ..()
+	if(isnull(.))
+		return
+	if(active)
+		turn_off()
+	state = anchorvalue ? FG_SECURED : FG_UNSECURED
 
 /obj/machinery/field/generator/can_be_unfasten_wrench(mob/user, silent)
 	if(active)
@@ -146,8 +158,7 @@ field_generator power level display
 
 /obj/machinery/field/generator/attack_animal(mob/living/simple_animal/M)
 	if(M.environment_smash & ENVIRONMENT_SMASH_RWALLS && active == FG_OFFLINE && state != FG_UNSECURED)
-		state = FG_UNSECURED
-		anchored = FALSE
+		set_anchored(FALSE)
 		M.visible_message("<span class='warning'>[M] rips [src] free from its moorings!</span>")
 	else
 		..()
@@ -203,7 +214,7 @@ field_generator power level display
 	warming_up++
 	update_icon()
 	if(warming_up >= 3)
-		start_fields()		
+		start_fields()
 	else
 		addtimer(CALLBACK(src, .proc/warm_up), 50)
 
@@ -264,7 +275,7 @@ field_generator power level display
 	addtimer(CALLBACK(src, .proc/setup_field, 2), 2)
 	addtimer(CALLBACK(src, .proc/setup_field, 4), 3)
 	addtimer(CALLBACK(src, .proc/setup_field, 8), 4)
-	addtimer(VARSET_CALLBACK(src, active, FG_ONLINE), 5)	
+	addtimer(VARSET_CALLBACK(src, active, FG_ONLINE), 5)
 
 /obj/machinery/field/generator/proc/setup_field(NSEW)
 	var/turf/T = loc
@@ -345,13 +356,13 @@ field_generator power level display
 	if(connected_gens.len < 2)
 		return
 	var/CGcounter
-	for(CGcounter = 1; CGcounter < connected_gens.len, CGcounter++)		
-		 
+	for(CGcounter = 1; CGcounter < connected_gens.len, CGcounter++)
+
 		var/list/CGList = ((connected_gens[CGcounter].connected_gens & connected_gens[CGcounter+1].connected_gens)^src)
 		if(!CGList.len)
 			return
 		var/obj/machinery/field/generator/CG = CGList[1]
-		
+
 		var/x_step
 		var/y_step
 		if(CG.x > x && CG.y > y)
@@ -370,14 +381,14 @@ field_generator power level display
 			for(x_step=x; x_step >= CG.x; x_step--)
 				for(y_step=y; y_step >= CG.y; y_step--)
 					place_floor(locate(x_step,y_step,z),create)
-					
+
 
 /obj/machinery/field/generator/proc/place_floor(Location,create)
 	if(create && !locate(/obj/effect/shield) in Location)
 		new/obj/effect/shield(Location)
-	else if(!create)		
+	else if(!create)
 		var/obj/effect/shield/S=locate(/obj/effect/shield) in Location
-		if(S)			
+		if(S)
 			qdel(S)
 
 /obj/machinery/field/generator/proc/notify_admins()

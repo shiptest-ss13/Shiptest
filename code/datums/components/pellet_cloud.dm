@@ -73,6 +73,8 @@
   * The arguments really don't matter, this proc is triggered by COMSIG_PELLET_CLOUD_INIT which is only for this really, it's just a big mess of the state vars we need for doing the stuff over here.
   */
 /datum/component/pellet_cloud/proc/create_casing_pellets(obj/item/ammo_casing/A, atom/target, mob/living/user, fired_from, randomspread, spread, zone_override, params, distro)
+	SIGNAL_HANDLER_DOES_SLEEP
+
 	shooter = user
 	var/targloc = get_turf(target)
 	if(!zone_override)
@@ -100,6 +102,8 @@
   * Note that grenades have extra handling for someone throwing themselves/being thrown on top of it, while landmines do not (obviously, it's a landmine!). See [/datum/component/pellet_cloud/proc/handle_martyrs()]
   */
 /datum/component/pellet_cloud/proc/create_blast_pellets()
+	SIGNAL_HANDLER_DOES_SLEEP
+
 	var/atom/A = parent
 	var/total_pellets_absorbed = 0
 
@@ -163,6 +167,8 @@
 
 ///One of our pellets hit something, record what it was and check if we're done (terminated == num_pellets)
 /datum/component/pellet_cloud/proc/pellet_hit(obj/projectile/P, atom/movable/firer, atom/target, Angle)
+	SIGNAL_HANDLER
+
 	pellets -= P
 	terminated++
 	hits++
@@ -220,17 +226,23 @@
 
 /// Look alive, we're armed! Now we start watching to see if anyone's covering us
 /datum/component/pellet_cloud/proc/grenade_armed()
+	SIGNAL_HANDLER
+
 	LAZYINITLIST(bodies)
 	RegisterSignal(parent, list(COMSIG_ITEM_DROPPED, COMSIG_MOVABLE_MOVED), .proc/grenade_moved)
 	RegisterSignal(parent, COMSIG_MOVABLE_UNCROSSED, .proc/grenade_uncrossed)
 
 /// Our grenade has moved, reset var/list/bodies so we're "on top" of any mobs currently on the tile
 /datum/component/pellet_cloud/proc/grenade_moved()
+	SIGNAL_HANDLER
+
 	LAZYCLEARLIST(bodies)
 	for(var/mob/living/L in get_turf(parent))
 		bodies += L
 
 /// Someone who was originally "under" the grenade has moved off the tile and is now eligible for being a martyr and "covering" it
 /datum/component/pellet_cloud/proc/grenade_uncrossed(datum/source, atom/movable/AM)
+	SIGNAL_HANDLER
+
 	bodies -= AM
 

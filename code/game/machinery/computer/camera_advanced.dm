@@ -3,6 +3,7 @@
 	desc = "Used to access the various cameras on the station."
 	icon_screen = "cameras"
 	icon_keyboard = "security_key"
+	light_color = COLOR_SOFT_RED
 	var/list/z_lock = list() // Lock use to these z levels
 	var/lock_override = NONE
 	var/mob/camera/aiEye/remote/eyeobj
@@ -11,8 +12,8 @@
 	var/datum/action/innate/camera_off/off_action = new
 	var/datum/action/innate/camera_jump/jump_action = new
 	var/list/actions = list()
-
-	light_color = LIGHT_COLOR_RED
+	///Should we supress any view changes?
+	var/should_supress_view_changes  = TRUE
 
 /obj/machinery/computer/camera_advanced/Initialize()
 	. = ..()
@@ -76,6 +77,7 @@
 
 	current_user = null
 	user.unset_machine()
+	user.client.view_size.unsupress()
 	playsound(src, 'sound/machines/terminal_off.ogg', 25, FALSE)
 
 /obj/machinery/computer/camera_advanced/check_eye(mob/user)
@@ -161,6 +163,8 @@
 	user.remote_control = eyeobj
 	user.reset_perspective(eyeobj)
 	eyeobj.setLoc(eyeobj.loc)
+	if(should_supress_view_changes )
+		user.client.view_size.supress()
 
 /mob/camera/aiEye/remote
 	name = "Inactive Camera Eye"

@@ -34,22 +34,34 @@
 	loreblurb = "Ethereals are organic humanoid beings with a blood that has strange luminiscent and electrical properties. \
 				Ethereals are barred from most authority roles on Nanotrasen stations and are not protected by the AI's default Asimov laws."
 	var/drain_time = 0 //used to keep ethereals from spam draining power sources
+	var/obj/effect/dummy/lighting_obj/ethereal_light
+
+
+/datum/species/ethereal/Destroy(force)
+	if(ethereal_light)
+		QDEL_NULL(ethereal_light)
+	return ..()
+
 
 /datum/species/ethereal/on_species_gain(mob/living/carbon/C, datum/species/old_species, pref_load)
-	.=..()
-	if(ishuman(C))
-		var/mob/living/carbon/human/H = C
-		default_color = "#" + H.dna.features["ethcolor"]
-		// WaspStation Removal -- Multitool Color Change
-		spec_updatehealth(H)
-		RegisterSignal(C, COMSIG_ATOM_EMAG_ACT, .proc/on_emag_act)
-		RegisterSignal(C, COMSIG_ATOM_EMP_ACT, .proc/on_emp_act)
+	. = ..()
+	if(!ishuman(C))
+		return
+	var/mob/living/carbon/human/ethereal = C
+	default_color = "#[ethereal.dna.features["ethcolor"]]"
+	// WaspStation Removal -- Multitool Color Change
+	RegisterSignal(ethereal, COMSIG_ATOM_EMAG_ACT, .proc/on_emag_act)
+	RegisterSignal(ethereal, COMSIG_ATOM_EMP_ACT, .proc/on_emp_act)
+	ethereal_light = ethereal.mob_light()
+	spec_updatehealth(ethereal)
+
 
 /datum/species/ethereal/on_species_loss(mob/living/carbon/human/C, datum/species/new_species, pref_load)
-	.=..()
-	C.set_light(0)
 	UnregisterSignal(C, COMSIG_ATOM_EMAG_ACT)
 	UnregisterSignal(C, COMSIG_ATOM_EMP_ACT)
+	QDEL_NULL(ethereal_light)
+	return ..()
+
 
 /datum/species/ethereal/random_name(gender,unique,lastname)
 	if(unique)
@@ -59,17 +71,19 @@
 
 	return randname
 
+
 /datum/species/ethereal/spec_updatehealth(mob/living/carbon/human/H)
-	.=..()
+	. = ..()
 	if(H.stat != DEAD && !EMPeffect)
 		// WaspStation Start -- Multitool Color Change
 		if(!emag_effect)
 			current_color = health_adjusted_color(H, default_color)
 		set_ethereal_light(H, current_color)
+		ethereal_light.set_light_on(TRUE)
 		fixed_mut_color = copytext_char(current_color, 2)
 		// WaspStation End
 	else
-		H.set_light(0)
+		ethereal_light.set_light_on(FALSE)
 		fixed_mut_color = rgb(128,128,128)
 	H.update_body()
 
@@ -77,13 +91,13 @@
 /datum/species/ethereal/proc/health_adjusted_color(mob/living/carbon/human/H, default_color)
 	var/health_percent = max(H.health, 0) / 100
 
-	var/static/unhealthy_color_red_part   = GetRedPart(unhealthy_color)
-	var/static/unhealthy_color_green_part = GetGreenPart(unhealthy_color)
-	var/static/unhealthy_color_blue_part  = GetBluePart(unhealthy_color)
+	var/static/unhealthy_color_red_part   = GETREDPART(unhealthy_color)
+	var/static/unhealthy_color_green_part = GETGREENPART(unhealthy_color)
+	var/static/unhealthy_color_blue_part  = GETBLUEPART(unhealthy_color)
 
-	var/default_color_red_part   = GetRedPart(default_color)
-	var/default_color_green_part = GetGreenPart(default_color)
-	var/default_color_blue_part  = GetBluePart(default_color)
+	var/default_color_red_part   = GETREDPART(default_color)
+	var/default_color_green_part = GETGREENPART(default_color)
+	var/default_color_blue_part  = GETBLUEPART(default_color)
 
 	var/result = rgb(unhealthy_color_red_part   + ((default_color_red_part   - unhealthy_color_red_part)   * health_percent),
 	                 unhealthy_color_green_part + ((default_color_green_part - unhealthy_color_green_part) * health_percent),
@@ -96,7 +110,7 @@
 	var/light_range = 1 + (2 * health_percent)
 	var/light_power = 1 + (1 * health_percent)
 
-	H.set_light(light_range, light_power, current_color)
+	ethereal_light.set_light_range_power_color(light_range, light_power, current_color)
 // WaspStation End
 
 /datum/species/ethereal/proc/on_emp_act(mob/living/carbon/human/H, severity)
