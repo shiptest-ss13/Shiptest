@@ -115,6 +115,14 @@
 					user.vars[variable] = user_vars_remembered[variable]
 		user_vars_remembered = initial(user_vars_remembered) // Effectively this sets it to null.
 
+	if((HIDEJUMPSUIT in flags_inv) || (LEGS & body_parts_covered))	//WaspStation start - Digitigrade magboots
+		var/mob/living/carbon/human/H = user
+		if(H.get_item_by_slot(ITEM_SLOT_FEET))
+			var/obj/item/clothing/shoes/S = H.get_item_by_slot(ITEM_SLOT_FEET)
+			if(("legs" in H.dna.species.mutant_bodyparts) && H.dna.features["legs"] == "Digitigrade Legs")
+				if((DIGITIGRADE_SHOE & S.obj_flags) || (DIGITIGRADE_COMPATIBLE & S.obj_flags))
+					S.digi_alt(H, 0)								//WaspStation end - Digitigrade magboots
+
 /obj/item/clothing/equipped(mob/user, slot)
 	..()
 	if (!istype(user))
@@ -125,6 +133,14 @@
 				if(variable in user.vars)
 					LAZYSET(user_vars_remembered, variable, user.vars[variable])
 					user.vv_edit_var(variable, user_vars_to_edit[variable])
+
+	if((HIDEJUMPSUIT in flags_inv) || (LEGS & body_parts_covered))	//WaspStation start - Digitigrade magboots
+		var/mob/living/carbon/human/H = user
+		if(H.get_item_by_slot(ITEM_SLOT_FEET))
+			var/obj/item/clothing/shoes/S = H.get_item_by_slot(ITEM_SLOT_FEET)
+			if(("legs" in H.dna.species.mutant_bodyparts) && H.dna.features["legs"] == "Digitigrade Legs")
+				if((DIGITIGRADE_SHOE & S.obj_flags) || (DIGITIGRADE_COMPATIBLE & S.obj_flags))
+					S.digi_alt(H, 1)								//WaspStation end - Digitigrade magboots
 
 /obj/item/clothing/examine(mob/user)
 	. = ..()
