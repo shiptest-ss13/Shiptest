@@ -568,7 +568,19 @@
 /datum/map_template/shuttle/arrival/omega
 	suffix = "omega"
 	name = "arrival shuttle (Omega)"
+//Wasp Edit
+/datum/map_template/shuttle/arrival/packed
+	suffix = "packed"
+	name = "arrival shuttle (Packedstation)"
 
+/datum/map_template/shuttle/cargo/packed
+	suffix = "packed"
+	name = "supply shuttle (Packedstation)"
+
+/datum/map_template/shuttle/mining/packed
+	suffix = "packed"
+	name = "mining shuttle (Packedstation)"
+//Wasp End
 /datum/map_template/shuttle/aux_base/default
 	suffix = "default"
 	name = "auxilliary base (Default)"

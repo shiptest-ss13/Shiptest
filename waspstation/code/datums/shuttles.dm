@@ -9,3 +9,9 @@
 	if(SHUTTLE_UNLOCK_EMAGGED in SSshuttle.shuttle_purchase_requirements_met)
 		return TRUE
 	return FALSE
+
+/datum/map_template/shuttle/emergency/packed
+	suffix = "packed"
+	name = "Packedstation emergency shuttle"
+	credit_cost = 1000
+	description = "Despite the name, this shuttle has a more open central seating area, and still complete with a brig and medbay."
