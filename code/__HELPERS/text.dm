@@ -84,7 +84,7 @@ GLOBAL_LIST_INIT(markup_regex, list("/"  = new /regex("((\\W|^)_)(\[^_\]*)(_(\\W
 	for(var/tag in (GLOB.markup_tags - ignore))
 		markup = GLOB.markup_regex[tag]
 		message = markup.Replace_char(message, "$2[GLOB.markup_tags[tag][1]]$3[GLOB.markup_tags[tag][2]]$5")
-	
+
 	return message
 //End Waspstation edit - Chat markup
 
@@ -357,6 +357,12 @@ GLOBAL_LIST_INIT(binary, list("0","1"))
 
 /proc/random_color()
 	return random_string(6, GLOB.hex_characters)
+
+/proc/random_short_color_natural()	//For use in natural haircolors.
+	var red = num2text(rand(0,255), 1, 16)
+	var green = num2text(rand(0,128), 1, 16)	//Conversion to hex
+	var blue = "00"
+	return red + green + blue
 
 //merges non-null characters (3rd argument) from "from" into "into". Returns result
 //e.g. into = "Hello World"

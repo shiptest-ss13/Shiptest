@@ -312,3 +312,10 @@
 	desc = "An envirosuit helmet made for the sanctioned plasmaman."
 	icon_state = "secmed_envirohelm"
 	item_state = "secmed_envirohelm"
+
+/obj/item/clothing/head/helmet/space/plasmaman/security/lieutenant //WS edit plasmaman customization
+	name = "lieutenants envirosuit helmet"
+	desc = "an envirosuit helmet made for the sentinel plasmaman."
+	icon_state = "lt_envirohelm"
+	item_state = "lt_envirohelm"
+	

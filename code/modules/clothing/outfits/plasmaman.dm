@@ -211,3 +211,10 @@
 	uniform = /obj/item/clothing/under/plasmaman/clown
 	mask = /obj/item/clothing/mask/gas/clown_hat
 	gloves = /obj/item/clothing/gloves/color/plasmaman/clown
+
+/datum/outfit/plasmaman/lieutenant //WS edit plasmaman customization
+	name = "Lt. Plasma"
+	head = /obj/item/clothing/head/helmet/space/plasmaman/security/lieutenant
+	uniform = /obj/item/clothing/under/plasmaman/lieutenant
+	gloves = /obj/item/clothing/gloves/combat
+	
