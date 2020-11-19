@@ -8,7 +8,7 @@
 	scramble_spans = list(SPAN_SGA)
 	key = "e"
 	sentence_chance = 8
-	space_chance = 95
+	space_chance = 10
 	syllables = list( //It's narsian, but the squids say it instead.
 		"sha", "mir", "sas", "mah", "hra", "zar", "tok", "lyr", "nqa", "nap", "olt", "val",
 		"yam", "qha", "fel", "det", "fwe", "mah", "erl", "ath", "yro", "eth", "gal", "mud",
