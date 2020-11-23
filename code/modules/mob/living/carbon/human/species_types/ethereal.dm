@@ -196,9 +196,9 @@
 		var/obj/item/organ/stomach/ethereal/stomach = H.getorganslot(ORGAN_SLOT_STOMACH)
 		playsound(H, 'sound/magic/lightningshock.ogg', 100, TRUE, extrarange = 5)
 		H.cut_overlay(overcharge)
-		tesla_zap(H, 2, stomach.crystal_charge*50, ZAP_OBJ_DAMAGE | ZAP_ALLOW_DUPLICATES)
+		tesla_zap(H, 2, (stomach.crystal_charge / ETHEREAL_CHARGE_SCALING_MULTIPLIER) * 50, ZAP_OBJ_DAMAGE | ZAP_ALLOW_DUPLICATES)       // Waspstation Edit -- Ethereal Charge Scaling
 		if(istype(stomach))
-			stomach.adjust_charge(100 - stomach.crystal_charge)
+			stomach.adjust_charge(ETHEREAL_CHARGE_FULL - stomach.crystal_charge)     // Waspstation Edit -- Ethereal Charge Scaling
 		to_chat(H, "<span class='warning'>You violently discharge energy!</span>")
 		H.visible_message("<span class='danger'>[H] violently discharges energy!</span>")
 		if(prob(10)) //chance of developing heart disease to dissuade overcharging oneself

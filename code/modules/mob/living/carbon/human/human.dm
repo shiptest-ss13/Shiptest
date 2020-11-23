@@ -88,7 +88,7 @@
 			if(istype(eth_species))
 				var/obj/item/organ/stomach/ethereal/stomach = src.getorganslot(ORGAN_SLOT_STOMACH)
 				if(istype(stomach))
-					. += "Crystal Charge: [round(stomach.crystal_charge, 0.1)]"
+					. += "Crystal Charge: [round((stomach.crystal_charge / ETHEREAL_CHARGE_SCALING_MULTIPLIER), 0.1)]%"
 		// WaspStation End
 
 	//NINJACODE
