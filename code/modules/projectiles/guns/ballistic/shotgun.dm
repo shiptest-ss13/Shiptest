@@ -10,8 +10,8 @@
 	fire_sound = 'sound/weapons/gun/shotgun/shot.ogg'
 	vary_fire_sound = FALSE
 	fire_sound_volume = 90
-	rack_sound = "sound/weapons/gun/shotgun/rack.ogg"
-	load_sound = "sound/weapons/gun/shotgun/insert_shell.ogg"
+	rack_sound = 'sound/weapons/gun/shotgun/rack.ogg'
+	load_sound = 'sound/weapons/gun/shotgun/insert_shell.ogg'
 	w_class = WEIGHT_CLASS_BULKY
 	force = 10
 	flags_1 =  CONDUCT_1
@@ -248,7 +248,7 @@
 	desc = "Range isn't an issue when you can bring your victim to you."
 	icon_state = "hookshotgun"
 	item_state = "shotgun"
-	load_sound = "sound/weapons/shotguninsert.ogg"
+	load_sound = 'sound/weapons/gun/shotgun/insert_shell.ogg'
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/bounty
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_MEDIUM
