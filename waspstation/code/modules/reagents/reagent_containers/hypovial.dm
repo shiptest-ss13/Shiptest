@@ -119,7 +119,7 @@
 	comes_with = list(/datum/reagent/medicine/bicaridine = 60)
 
 /obj/item/reagent_containers/glass/bottle/vial/small/preloaded/antitoxin
-	name = "green hypovial (Anti-Tox)"
+	name = "green hypovial (Dylovene)"
 	icon_state = "hypovial-a"
 	comes_with = list(/datum/reagent/medicine/antitoxin = 60)
 
@@ -144,24 +144,24 @@
 	comes_with = list(/datum/reagent/medicine/omnizine = 40, /datum/reagent/medicine/leporazine = 40, /datum/reagent/medicine/atropine = 40)
 
 /obj/item/reagent_containers/glass/bottle/vial/large/preloaded/bicaridine
-	name = "large red hypovial (bicaridine)"
+	name = "large red hypovial (bicaridine plus)"
 	icon_state = "hypoviallarge-b"
-	comes_with = list(/datum/reagent/medicine/bicaridine = 120)
+	comes_with = list(/datum/reagent/medicine/bicaridinep = 120)
 
 /obj/item/reagent_containers/glass/bottle/vial/large/preloaded/antitoxin
-	name = "large green hypovial (anti-tox)"
+	name = "large green hypovial (carthatoline)"
 	icon_state = "hypoviallarge-a"
-	comes_with = list(/datum/reagent/medicine/antitoxin = 120)
+	comes_with = list(/datum/reagent/medicine/carthatoline = 120)
 
 /obj/item/reagent_containers/glass/bottle/vial/large/preloaded/kelotane
-	name = "large orange hypovial (kelotane)"
+	name = "large orange hypovial (dermaline)"
 	icon_state = "hypoviallarge-k"
-	comes_with = list(/datum/reagent/medicine/kelotane = 120)
+	comes_with = list(/datum/reagent/medicine/dermaline = 120)
 
 /obj/item/reagent_containers/glass/bottle/vial/large/preloaded/dexalin
-	name = "large blue hypovial (dexalin)"
+	name = "large blue hypovial (dexalin plus)"
 	icon_state = "hypoviallarge-d"
-	comes_with = list(/datum/reagent/medicine/dexalin = 120)
+	comes_with = list(/datum/reagent/medicine/dexalinp = 120)
 
 /obj/item/reagent_containers/glass/bottle/vial/large/preloaded/charcoal
 	name = "large black hypovial (charcoal)"
