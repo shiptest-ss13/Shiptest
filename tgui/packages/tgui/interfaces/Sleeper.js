@@ -1,7 +1,9 @@
 import { useBackend } from '../backend';
-import { Box, Section, LabeledList, Button, ProgressBar } from '../components';
+import { AnimatedNumber, Box, Section, LabeledList, Button, ProgressBar } from '../components';
 import { Fragment } from 'inferno';
 import { Window } from '../layouts';
+import { sortBy } from 'common/collections';
+import { toFixed } from 'common/math';
 
 const damageTypes = [
   {
@@ -24,33 +26,31 @@ const damageTypes = [
 
 export const Sleeper = (props, context) => {
   const { act, data } = useBackend(context);
+  const chemicals = sortBy(chem => chem.title)(data.chemicals);
+  const transferAmounts = data.transferAmounts || [];
   const {
     open,
     occupant = {},
     occupied,
+    stasis,
+    canStasis,
     cell = {},
   } = data;
-  const preSortChems = data.chems || [];
-  const chems = preSortChems.sort((a, b) => {
-    const descA = a.name.toLowerCase();
-    const descB = b.name.toLowerCase();
-    if (descA < descB) {
-      return -1;
-    }
-    if (descA > descB) {
-      return 1;
-    }
-    return 0;
-  });
   return (
     <Window
-      width={310}
-      height={465}>
-      <Window.Content>
+      width={495}
+      height={550}
+      resizable>
+      <Window.Content scrollable>
         <Section
           title={occupant.name ? occupant.name : 'No Occupant'}
           minHeight="210px"
-          buttons={!!occupant.stat && (
+          buttons={!!occupied && !!canStasis && (
+            <Button
+              onClick={() => act('toggleStasis')}
+              color={stasis && 'good'}
+              content={"Toggle Stasis"} />
+          ) || !!occupant.stat && (
             <Box
               inline
               bold
@@ -82,6 +82,13 @@ export const Sleeper = (props, context) => {
                       color="bad" />
                   </LabeledList.Item>
                 ))}
+                {!!canStasis && !!occupant.stat && (
+                  <LabeledList.Item
+                    label="Status"
+                    color={occupant.statstate}>
+                    {occupant.stat}
+                  </LabeledList.Item>
+                )}
                 <LabeledList.Item
                   label="Cells"
                   color={occupant.cloneLoss ? 'bad' : 'good'}>
@@ -92,32 +99,55 @@ export const Sleeper = (props, context) => {
                   color={occupant.brainLoss ? 'bad' : 'good'}>
                   {occupant.brainLoss ? 'Abnormal' : 'Healthy'}
                 </LabeledList.Item>
+                <LabeledList.Item label="Reagents">
+                  <Box color="label">
+                    {occupant.reagents.length === 0 && '—'}
+                    {occupant.reagents.map(chemical => (
+                      <Box key={chemical.name}>
+                        <AnimatedNumber
+                          value={chemical.volume}
+                          format={value => toFixed(value, 1)} />
+                        {` units of ${chemical.name}`}
+                      </Box>
+                    ))}
+                  </Box>
+                </LabeledList.Item>
               </LabeledList>
             </Fragment>
           )}
         </Section>
         <Section
-          title="Medicines"
-          minHeight="205px"
+          title="Inject"
           buttons={(
-            <Button
-              icon={open ? 'door-open' : 'door-closed'}
-              content={open ? 'Open' : 'Closed'}
-              onClick={() => act('door')} />
+            transferAmounts.map(amount => (
+              <Button
+                key={amount}
+                icon="plus"
+                selected={amount === data.amount}
+                content={amount}
+                onClick={() => act('amount', {
+                  target: amount,
+                })} />
+            ))
           )}>
-          {chems.map(chem => (
-            <Button
-              key={chem.name}
-              icon="flask"
-              content={chem.name}
-              disabled={!occupied || !chem.allowed}
-              width="140px"
-              onClick={() => act('inject', {
-                chem: chem.id,
-              })} />
-          ))}
+          <Box mr={-1}>
+            {chemicals.map(chemical => (
+              <Button
+                key={chemical.id}
+                icon="tint"
+                width="150px"
+                lineHeight="21px"
+                disabled={!(occupied && chemical.allowed)}
+                content={`(${chemical.volume}) ${chemical.title}`}
+                onClick={() => act('inject', {
+                  reagent: chemical.id,
+                })} />
+            ))}
+          </Box>
         </Section>
       </Window.Content>
     </Window>
   );
 };
+
+
