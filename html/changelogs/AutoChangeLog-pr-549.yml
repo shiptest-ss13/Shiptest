@@ -1,0 +1,9 @@
+author: MarkSuckerberg
+delete-after: true
+changes:
+  - rscadd: 'Departmental loadout support (see: berets)'
+  - rscadd: Loadouts now linked to character slots instead of clients
+  - tweak: You can now have more than one item equipped from the loadout if you have
+      a slot for it
+  - bugfix: The toggle loadout button in the preferences menu now works again
+  - bugfix: Some berets had messed up sprites, which have been fixed
