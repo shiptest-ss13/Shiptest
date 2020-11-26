@@ -69,7 +69,6 @@
 
 	///Levels unlocked at roundstart in physiology
 	var/list/roundstart_experience
-	var/tmp/list/gear_leftovers = list()
 
 //Only override this proc, unless altering loadout code. Loadouts act on H but get info from M
 //H is usually a human unless an /equip override transformed it
@@ -88,6 +87,7 @@
 	if(!ishuman(H))
 		return
 	var/mob/living/carbon/human/human = H
+	var/list/gear_leftovers
 	if(M.client && (M.client.prefs.equipped_gear && M.client.prefs.equipped_gear.len))
 		for(var/gear in M.client.prefs.equipped_gear)
 			var/datum/gear/G = GLOB.gear_datums[gear]
@@ -115,18 +115,17 @@
 					continue // Handled in pre_equip
 				//End WaspStation Edit - Fix Loadout Uniforms not spawning ID/PDA
 				if(G.slot)
-					if(!H.equip_to_slot_or_del(G.spawn_item(H), G.slot))
-						gear_leftovers += G
+					if(!H.equip_to_slot_or_del(G.spawn_item(H, owner = H), G.slot))
+						LAZYADD(gear_leftovers, G)
 				else
-					gear_leftovers += G
-
+					LAZYADD(gear_leftovers, G)
 			else
 				M.client.prefs.equipped_gear -= gear
 
 	if(gear_leftovers?.len)
 		for(var/datum/gear/G in gear_leftovers)
 			var/metadata = M.client.prefs.equipped_gear[G.display_name]
-			var/item = G.spawn_item(null, metadata)
+			var/item = G.spawn_item(null, metadata, owner = H)
 			var/atom/placed_in = human.equip_or_collect(item)
 
 			if(istype(placed_in))
@@ -145,14 +144,12 @@
 
 			var/obj/item/storage/B = (locate() in H)
 			if(B)
-				G.spawn_item(B, metadata)
+				G.spawn_item(B, metadata, owner = H)
 				to_chat(M, "<span class='notice'>Placing [G.display_name] in [B.name]!</span>")
 				continue
 
 			to_chat(M, "<span class='danger'>Failed to locate a storage object on your mob, either you spawned with no hands free and no backpack or this is a bug.</span>")
 			qdel(item)
-
-		qdel(gear_leftovers)
 
 /datum/job/proc/announce(mob/living/carbon/human/H)
 	if(head_announce)
