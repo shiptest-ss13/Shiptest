@@ -141,8 +141,10 @@
 	. = ..()
 	if(!in_range(user, src) && !isobserver(user))
 		. += "<span class='warning'>You're too far away to read it!</span>"
+		if (check_rights_for(usr, R_ADMIN))
+			. += "<span class='notice'>If you're attempting to read this as an admin, either remotely or from a CentCom/Syndicate fax, make sure to turn on Admin AI Interact.</span>"
 		return
-	if(user.can_read(src))
+	if(user.can_read(src) || !check_rights_for(usr, R_ADMIN))
 		ui_interact(user)
 		return
 	. += "<span class='warning'>You cannot read it!</span>"
@@ -151,9 +153,9 @@
 		// Are we on fire?  Hard ot read if so
 	if(resistance_flags & ON_FIRE)
 		return UI_CLOSE
-	if(!in_range(user,src))
+	if(!in_range(user,src) && !IsAdminGhost(user))
 		return UI_CLOSE
-	if(user.incapacitated(TRUE, TRUE) || (isobserver(user) && !check_rights_for(usr, R_ADMIN)))
+	if(user.incapacitated(TRUE, TRUE) || (isobserver(user) && !check_rights_for(user.client, R_ADMIN)))
 		return UI_UPDATE
 	// Even harder to read if your blind...braile? humm
 	// .. or if you cannot read
@@ -230,6 +232,8 @@
 		ui = new(user, src, "PaperSheet", name)
 		ui.open()
 
+// /datum/wires/ui_state(mob/user)
+// 	return GLOB.physical_state
 
 /obj/item/paper/ui_static_data(mob/user)
 	. = list()
