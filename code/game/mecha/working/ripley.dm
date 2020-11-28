@@ -8,7 +8,8 @@
 	var/slow_pressure_step_in = 2.0 //step_in while in normal pressure conditions
 	max_temperature = 20000
 	max_integrity = 200
-	lights_power = 7
+	light_range = 7
+	light_power = 1
 	deflect_chance = 15
 	armor = list("melee" = 40, "bullet" = 20, "laser" = 10, "energy" = 20, "bomb" = 40, "bio" = 0, "rad" = 20, "fire" = 100, "acid" = 100)
 	max_equip = 6
@@ -85,7 +86,8 @@
 	slow_pressure_step_in = 4 //step_in while in normal pressure conditions
 	step_in = 4
 	resistance_flags = LAVA_PROOF | FIRE_PROOF | ACID_PROOF
-	lights_power = 7
+	light_range = 7
+	light_power = 1
 	armor = list("melee" = 40, "bullet" = 30, "laser" = 30, "energy" = 30, "bomb" = 60, "bio" = 0, "rad" = 70, "fire" = 100, "acid" = 100)
 	max_equip = 5 // More armor, less tools
 	wreckage = /obj/structure/mecha_wreckage/ripley/firefighter
@@ -102,7 +104,8 @@
 	fast_pressure_step_in = 2 //step_in while in low pressure conditions
 	slow_pressure_step_in = 3 //step_in while in normal pressure conditions
 	step_in = 4
-	lights_power = 7
+	light_range = 7
+	light_power = 1
 	wreckage = /obj/structure/mecha_wreckage/ripley/deathripley
 	step_energy_drain = 0
 	enclosed = TRUE

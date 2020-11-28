@@ -112,6 +112,7 @@
 	RegisterSignal(parent, COMSIG_ATOM_SET_LIGHT_COLOR, .proc/set_color)
 	RegisterSignal(parent, COMSIG_ATOM_SET_LIGHT_ON, .proc/on_toggle)
 	RegisterSignal(parent, COMSIG_ATOM_SET_LIGHT_FLAGS, .proc/on_light_flags_change)
+	RegisterSignal(parent, COMSIG_ATOM_USED_IN_CRAFT, .proc/on_parent_crafted)
 	var/atom/movable/movable_parent = parent
 	if(movable_parent.light_flags & LIGHT_ATTACHED)
 		overlay_lighting_flags |= LIGHTING_ATTACHED
@@ -133,6 +134,7 @@
 		COMSIG_ATOM_SET_LIGHT_COLOR,
 		COMSIG_ATOM_SET_LIGHT_ON,
 		COMSIG_ATOM_SET_LIGHT_FLAGS,
+		COMSIG_ATOM_USED_IN_CRAFT,
 		))
 	if(directional)
 		UnregisterSignal(parent, COMSIG_ATOM_DIR_CHANGE)
@@ -203,13 +205,12 @@
 /datum/component/overlay_lighting/proc/set_parent_attached_to(atom/movable/new_parent_attached_to)
 	if(new_parent_attached_to == parent_attached_to)
 		return
+
 	. = parent_attached_to
 	parent_attached_to = new_parent_attached_to
 	if(.)
 		var/atom/movable/old_parent_attached_to = .
 		UnregisterSignal(old_parent_attached_to, list(COMSIG_PARENT_QDELETING, COMSIG_MOVABLE_MOVED))
-		if(directional)
-			UnregisterSignal(old_parent_attached_to, COMSIG_ATOM_DIR_CHANGE)
 		if(old_parent_attached_to == current_holder)
 			RegisterSignal(old_parent_attached_to, COMSIG_PARENT_QDELETING, .proc/on_holder_qdel)
 			RegisterSignal(old_parent_attached_to, COMSIG_MOVABLE_MOVED, .proc/on_holder_moved)
@@ -236,13 +237,14 @@
 	if(new_holder == null)
 		clean_old_turfs()
 		return
-	if(overlay_lighting_flags & LIGHTING_ON)
-		add_dynamic_lumi()
 	if(new_holder != parent && new_holder != parent_attached_to)
 		RegisterSignal(new_holder, COMSIG_PARENT_QDELETING, .proc/on_holder_qdel)
 		RegisterSignal(new_holder, COMSIG_MOVABLE_MOVED, .proc/on_holder_moved)
 		if(directional)
 			RegisterSignal(new_holder, COMSIG_ATOM_DIR_CHANGE, .proc/on_holder_dir_change)
+	if(overlay_lighting_flags & LIGHTING_ON)
+		make_luminosity_update()
+		add_dynamic_lumi()
 
 
 ///Used to determine the new valid current_holder from the parent's loc.
@@ -442,6 +444,16 @@
 	cone.setDir(newdir)
 	if(overlay_lighting_flags & LIGHTING_ON)
 		make_luminosity_update()
+
+/datum/component/overlay_lighting/proc/on_parent_crafted(datum/source, atom/movable/new_craft)
+	SIGNAL_HANDLER
+
+	if(!istype(new_craft))
+		return
+
+	UnregisterSignal(parent, COMSIG_ATOM_USED_IN_CRAFT)
+	RegisterSignal(new_craft, COMSIG_ATOM_USED_IN_CRAFT, .proc/on_parent_crafted)
+	set_parent_attached_to(new_craft)
 
 #undef LIGHTING_ON
 #undef LIGHTING_ATTACHED
