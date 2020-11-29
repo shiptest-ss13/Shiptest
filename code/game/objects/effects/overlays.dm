@@ -62,7 +62,7 @@
 	appearance_flags = RESET_COLOR | RESET_ALPHA | RESET_TRANSFORM
 	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 	alpha = 0
-	vis_flags = NONE
+	vis_flags = VIS_HIDE
 
 /obj/effect/overlay/light_cone
 	name = ""
