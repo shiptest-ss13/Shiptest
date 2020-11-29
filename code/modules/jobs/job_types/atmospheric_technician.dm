@@ -59,8 +59,8 @@
 	name = "Atmospheric Technician (Life Support Specialist)"
 	backpack_contents = list(/obj/item/modular_computer/tablet/preset/advanced=1, /obj/item/storage/box/survival=2)
 
-/datum/outfit/job/atmos/senioratmospherics
-	name = "Atmospheric Technician (Senior Atmospheric Technician)"
+/datum/outfit/job/atmos/chadmos                // WaspStation Edit - Give Chadmos Sr. Uniform
+	name = "Atmospheric Technician (Chadmos)"  // WaspStation Edit - Give Chadmos Sr. Uniform
 
 	belt = null
 	uniform = /obj/item/clothing/under/suit/senior_atmos
