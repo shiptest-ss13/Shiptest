@@ -6,6 +6,7 @@
 	ask_verb = "pops"
 	exclaim_verb = "thunders"
 	sing_verb = "synthesizes"
+	flags = LANGUAGE_HIDE_ICON_IF_NOT_UNDERSTOOD //WaspStation Edit- Language icon hiding
 	key = "v"
 	space_chance = 20
 	syllables = list(

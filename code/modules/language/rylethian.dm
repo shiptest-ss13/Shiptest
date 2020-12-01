@@ -5,6 +5,7 @@
 	speech_verb = "gurgles"
 	ask_verb = "bubbles"
 	whisper_verb = "squelches"
+	flags = LANGUAGE_HIDE_ICON_IF_NOT_UNDERSTOOD //WaspStation Edit- Language icon hiding
 	scramble_spans = list(SPAN_SGA)
 	key = "e"
 	sentence_chance = 8

@@ -1,9 +1,10 @@
-/datum/language/moffic 
-	name = "Moffic" 
+/datum/language/moffic
+	name = "Moffic"
 	desc = "The common language of moths. Its origin is unknown, and defies the moths as easily as it does as historians."
 	speech_verb = "flutters"
 	ask_verb = "fluffs"
 	exclaim_verb = "floofs"
+	flags = LANGUAGE_HIDE_ICON_IF_NOT_UNDERSTOOD //WaspStation Edit- Language icon hiding
 	key = "m"
 	space_chance = 55
 	syllables = list(

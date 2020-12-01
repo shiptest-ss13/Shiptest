@@ -5,6 +5,7 @@
 	ask_verb = "buzzes"
 	exclaim_verb = "loudly buzzes"
 	sing_verb = "hums"
+	flags = LANGUAGE_HIDE_ICON_IF_NOT_UNDERSTOOD //WaspStation Edit- Language icon hiding
 	key = "z"
 	space_chance = 0
 	syllables = list(
