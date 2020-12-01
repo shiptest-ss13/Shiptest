@@ -11,6 +11,8 @@
 	force = 5
 	flags_1 = HEAR_1
 	light_system = MOVABLE_LIGHT
+	light_power = 0.8
+	light_range = 6
 	light_on = FALSE
 	var/ruin_mecha = FALSE //if the mecha starts on a ruin, don't automatically give it a tracking beacon to prevent metagaming.
 	var/can_move = 0 //time of next allowed movement
@@ -37,7 +39,6 @@
 	var/list/proc_res = list() //stores proc owners, like proc_res["functionname"] = owner reference
 	var/datum/effect_system/spark_spread/spark_system = new
 	var/lights = FALSE
-	var/lights_power = 6
 	var/last_user_hud = 1 // used to show/hide the mecha hud while preserving previous preference
 	var/completely_disabled = FALSE //stops the mech from doing anything
 
@@ -1079,7 +1080,7 @@
 
 	if(L && L.client)
 		L.update_mouse_pointer()
-		L.client.view_size.resetToDefault() 
+		L.client.view_size.resetToDefault()
 		zoom_mode = 0
 
 /////////////////////////

@@ -10,18 +10,18 @@
 /datum/gear/hat/hhat_yellow
 	display_name = "hardhat, yellow"
 	path = /obj/item/clothing/head/hardhat
-	allowed_roles = list("Chief Engineer", "Engineer")
+	allowed_roles = list("Chief Engineer", "Engineer", "Atmospheric Technician")
 	cost = 900
 
 /datum/gear/hat/hhat_orange
 	display_name = "hardhat, orange"
 	path = /obj/item/clothing/head/hardhat/orange
-	allowed_roles = list("Chief Engineer", "Engineer")
+	allowed_roles = list("Chief Engineer", "Engineer", "Atmospheric Technician")
 
 /datum/gear/hat/hhat_blue
 	display_name = "hardhat, blue"
 	path = /obj/item/clothing/head/hardhat/dblue
-	allowed_roles = list("Chief Engineer", "Engineer")
+	allowed_roles = list("Chief Engineer", "Engineer", "Atmospheric Technician")
 
 //Berets, AKA how I lost my will to live again
 
@@ -30,75 +30,52 @@
 	path = /obj/item/clothing/head/beret
 	cost = 2000
 
-/datum/gear/hat/beret/service
-	display_name = "beret, service"
-	path = /obj/item/clothing/head/beret/service
+/datum/gear/hat/beret/departmental
+	display_name = "beret, departmental"
+	path = /obj/item/clothing/head/beret/grey
+	role_replacements = list(
+		"Captain" = /obj/item/clothing/head/beret/captain,
+		"Head of Personnel" = /obj/item/clothing/head/beret/hop,
+		"Lieutenant" = /obj/item/clothing/head/beret/lt,
 
-/datum/gear/hat/beret/medical
-	display_name = "beret, medical"
-	path = /obj/item/clothing/head/beret/med
-	allowed_roles = list("Medical Doctor", "Chemist", "Chief Medical Officer", "Geneticist")
+		"Head of Security" = /obj/item/clothing/head/beret/sec/navyhos,
+		"Warden" = /obj/item/clothing/head/beret/sec/navywarden,
+		"Security Officer" = /obj/item/clothing/head/beret/sec/navyofficer,
+		"Detective" = /obj/item/clothing/head/beret/sec,
+		"Brig Physician" = /obj/item/clothing/head/beret/sec,
 
-/datum/gear/hat/beret/science
-	display_name = "beret, science"
-	path = /obj/item/clothing/head/beret/sci
-	allowed_roles = list("Scientist", "Research Director", "Roboticist")
+		"Chief Engineer" = /obj/item/clothing/head/beret/ce,
+		"Station Engineer" = /obj/item/clothing/head/beret/eng,
+		"Atmospheric Technician" = /obj/item/clothing/head/beret/atmos,
 
+		"Research Director" = /obj/item/clothing/head/beret/rd,
+		"Scientist" = /obj/item/clothing/head/beret/sci,
+		"Roboticist" = /obj/item/clothing/head/beret/sci,
 
-//Engineering
-/datum/gear/hat/beret/engineering
-	display_name = "beret, engineering"
-	path = /obj/item/clothing/head/beret/eng
-	allowed_roles = list("Station Engineer", "Atmospheric Technician", "Chief Engineer")
-	collapse = TRUE
+		"Chief Medical Officer" = /obj/item/clothing/head/beret/cmo,
+		"Medical Doctor" = /obj/item/clothing/head/beret/med,
+		"Paramedic" = /obj/item/clothing/head/beret/med,
+		"Chemist" = /obj/item/clothing/head/beret/chem,
+		"Geneticist" = /obj/item/clothing/head/beret/med,
 
-/datum/gear/hat/beret/engineering/atmos
-	display_name = "beret, atmos"
-	path = /obj/item/clothing/head/beret/atmos
-	allowed_roles = list("Atmospheric Technician", "Chief Engineer")
-	hidden = TRUE
+		"Quartermaster" = /obj/item/clothing/head/beret/qm,
+		"Cargo Technician" = /obj/item/clothing/head/beret/cargo,
+		"Shaft Miner" = /obj/item/clothing/head/beret/mining,
+
+		"Bartender" = /obj/item/clothing/head/beret/service,
+		"Botanist" = /obj/item/clothing/head/beret/service,
+		"Chef" = /obj/item/clothing/head/beret/service,
+		"Curator" = /obj/item/clothing/head/beret/service,
+		"Janitor" = /obj/item/clothing/head/beret/service,
+		"Lawyer" = /obj/item/clothing/head/beret/service,
+		"Mime" = /obj/item/clothing/head/beret,
+		"Clown" = /obj/item/clothing/head/beret/puce
+	)
 
 /datum/gear/hat/beret/engineering/hazard
 	display_name = "beret, hazard"
 	path = /obj/item/clothing/head/beret/eng/hazard
 	allowed_roles = list("Station Engineer", "Atmospheric Technician", "Chief Engineer")
-	hidden = TRUE
-
-/datum/gear/hat/beret/engineering/ce
-	display_name = "beret, chief engineer"
-	path = /obj/item/clothing/head/beret/ce
-	allowed_roles = list("Chief Engineer")
-	hidden = TRUE
-
-//Sec
-/datum/gear/hat/beret/security
-	display_name = "beret, security"
-	path = /obj/item/clothing/head/beret/sec
-	allowed_roles = list("Security Officer", "Warden", "Detective", "Head of Security")
-
-/datum/gear/hat/beret/command
-	display_name = "beret, command"
-	path = /obj/item/clothing/head/beret/command
-	allowed_roles = list("Captain", "Head of Personnel", "Lieutenant")
-	collapse = TRUE
-
-/datum/gear/hat/beret/command/captain
-	display_name = "beret, captain"
-	path = /obj/item/clothing/head/beret/captain
-	allowed_roles = list("Captain")
-	hidden = TRUE
-
-/datum/gear/hat/beret/command/hop
-	display_name = "beret, head of personnel"
-	path = /obj/item/clothing/head/beret/hop
-	allowed_roles = list("Captain", "Head of Personnel")
-	hidden = TRUE
-
-/datum/gear/hat/beret/command/lt
-	display_name = "beret, lieutenant"
-	path = /obj/item/clothing/head/beret/lt
-	allowed_roles = list("Captain", "Head of Personnel", "Lieutenant")
-	hidden = TRUE
 
 //Misc
 

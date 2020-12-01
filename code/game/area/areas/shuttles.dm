@@ -90,6 +90,11 @@
 /area/shuttle/abandoned/pod
 	name = "Abandoned Ship Pod"
 
+/area/shuttle/abandoned/atmospherics
+	name = "Abandoned Ship atmospherics"//wasp station edit
+
+/area/shuttle/abandoned/coridor
+	name = "Abandoned Ship coridor"//wasp station edit
 ////////////////////////////Single-area shuttles////////////////////////////
 
 /area/shuttle/transit

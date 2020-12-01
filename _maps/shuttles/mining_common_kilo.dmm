@@ -11,11 +11,6 @@
 /obj/item/storage/toolbox/emergency,
 /turf/open/floor/mineral/plastitanium,
 /area/shuttle/mining)
-"d" = (
-/obj/machinery/computer/shuttle/mining/common,
-/obj/effect/turf_decal/bot,
-/turf/open/floor/mineral/plastitanium,
-/area/shuttle/mining)
 "e" = (
 /obj/structure/table,
 /obj/item/radio,
@@ -110,7 +105,7 @@
 /obj/effect/turf_decal/delivery,
 /obj/machinery/airalarm{
 	dir = 4;
-	pixel_x = -22
+	pixel_x = -24
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/shuttle/mining)
@@ -131,6 +126,13 @@
 "s" = (
 /obj/structure/shuttle/engine/propulsion/burst,
 /turf/open/floor/plating/airless,
+/area/shuttle/mining)
+"S" = (
+/obj/machinery/computer/shuttle/mining/common{
+	possible_destinations = "commonmining_home;lavaland_common_away;landing_zone_dock;mining_public;second_public_mining_dock"
+	},
+/obj/effect/turf_decal/bot,
+/turf/open/floor/mineral/plastitanium,
 /area/shuttle/mining)
 
 (1,1,1) = {"
@@ -153,7 +155,7 @@ r
 "}
 (3,1,1) = {"
 b
-d
+S
 g
 k
 n

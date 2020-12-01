@@ -278,7 +278,7 @@
 	H.dna.add_mutation(DWARFISM)
 
 /obj/effect/mob_spawn/human/corpse/damaged/legioninfested/Initialize()
-	var/type = pickweight(list("Miner" = 66, "Ashwalker" = 10, "Golem" = 10,"Clown" = 10, pick(list("Shadow", "YeOlde","Operative", "Cultist")) = 4))
+	var/type = pickweight(list("Miner" = 66, "Ashwalker" = 5, "Kobold" = 5, "Golem" = 10,"Clown" = 10, pick(list("Shadow", "YeOlde","Operative", "Cultist")) = 4)) //Wasp Edit - Kobold
 	switch(type)
 		if("Miner")
 			mob_species = pickweight(list(/datum/species/human = 70, /datum/species/lizard = 26, /datum/species/fly = 2, /datum/species/plasmaman = 2))
@@ -321,6 +321,25 @@
 				r_pocket = /obj/item/kitchen/knife/combat/bone
 			if(prob(30))
 				l_pocket = /obj/item/kitchen/knife/combat/bone
+		//Wasp Edit Start - Kobold
+		if("Kobold")
+			mob_species = /datum/species/lizard/ashwalker/kobold
+			uniform = /obj/item/clothing/under/costume/gladiator/ash_walker
+			if(prob(95))
+				head = /obj/item/clothing/head/helmet/gladiator
+			else
+				head = /obj/item/clothing/head/helmet/skull
+				suit = /obj/item/clothing/suit/armor/bone
+				gloves = /obj/item/clothing/gloves/bracer
+			if(prob(5))
+				back = pickweight(list(/obj/item/spear/bonespear = 3, /obj/item/fireaxe/boneaxe = 2))
+			if(prob(10))
+				belt = /obj/item/storage/belt/mining/primitive
+			if(prob(30))
+				r_pocket = /obj/item/kitchen/knife/combat/bone
+			if(prob(30))
+				l_pocket = /obj/item/kitchen/knife/combat/bone
+		//Wasp Edit End - Kobold
 		if("Clown")
 			name = pick(GLOB.clown_names)
 			outfit = /datum/outfit/job/clown

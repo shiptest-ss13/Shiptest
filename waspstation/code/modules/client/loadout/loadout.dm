@@ -9,8 +9,8 @@ GLOBAL_LIST_EMPTY(gear_datums)
 	category = cat
 	..()
 
+///Create a list of gear datums to sort
 /proc/populate_gear_list()
-	//create a list of gear datums to sort
 	for(var/geartype in subtypesof(/datum/gear))
 		var/datum/gear/G = geartype
 
@@ -43,18 +43,28 @@ GLOBAL_LIST_EMPTY(gear_datums)
 	return 1
 
 /datum/gear
-	var/display_name       //Name/index. Must be unique.
-	var/description        //Description of this gear. If left blank will default to the description of the pathed item.
-	var/path               //Path to item.
-	var/cost = 0           //Number of metacoins
-	var/slot               //Slot to equip to.
-	var/list/allowed_roles //Roles that can spawn with this item.
-	var/list/species_blacklist //Stop certain species from receiving this gear
-	var/list/species_whitelist //Only allow certain species to receive this gear
-	var/collapse = FALSE   //Should the subtypes of this item collapse into one button?
-	var/hidden = FALSE     //Should it be hidden
+	///Name/index. Must be unique.
+	var/display_name
+	///Description of this gear. If left blank will default to the description of the pathed item.
+	var/description
+	///Path to item.
+	var/path
+	///Number of metacoins
+	var/cost = 0
+	///Slot to equip to.
+	var/slot
+	///Roles that can spawn with this item.
+	var/list/allowed_roles
+	///Stop certain species from receiving this gear
+	var/list/species_blacklist
+	///Only allow certain species to receive this gear
+	var/list/species_whitelist
+	///A list of jobs with typepaths to the loadout item the job should recieve
+	var/list/role_replacements
+	///The sub tab under gear that the loadout item is listed under
 	var/sort_category = "General"
-	var/subtype_path = /datum/gear //for skipping organizational subtypes (optional)
+	///for skipping organizational subtypes (optional)
+	var/subtype_path = /datum/gear
 
 /datum/gear/New()
 	..()
@@ -62,7 +72,8 @@ GLOBAL_LIST_EMPTY(gear_datums)
 		var/obj/O = path
 		description = initial(O.desc)
 
-/datum/gear/proc/purchase(var/client/C) //Called when the gear is first purchased
+///Called when the gear is first purchased
+/datum/gear/proc/purchase(client/C)
 	return
 
 /datum/gear_data
@@ -73,7 +84,15 @@ GLOBAL_LIST_EMPTY(gear_datums)
 	path = npath
 	location = nlocation
 
-/datum/gear/proc/spawn_item(location, metadata)
-	var/datum/gear_data/gd = new(path, location)
-	var/item = new gd.path(gd.location)
-	return item
+/datum/gear/proc/spawn_item(location, metadata, owner)
+	var/datum/gear_data/gd
+	if(ishuman(owner) && role_replacements) //If the owner is a human (should be one) and the item in question has a role replacement
+		var/mob/living/carbon/human/H = owner
+		var/job = H.job || H.mind?.assigned_role
+		if(job in role_replacements) //If the job has an applicable replacement
+			gd = new(role_replacements[job], location)
+			return new gd.path(gd.location)
+
+	gd = new(path, location) //Else, just give them the item and be done with it
+
+	return new gd.path(gd.location)

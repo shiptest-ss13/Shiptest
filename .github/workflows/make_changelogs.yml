@@ -7,7 +7,7 @@ on:
 jobs:
   MakeCL:
     runs-on: ubuntu-latest
-    if: github.repository == 'Waspstation/Waspstation-1.0'
+    if: github.repository == 'WaspStation/WaspStation-1.0' && !contains(github.event.head_commit.message, '[ci skip]')
     steps:
       - name: Checkout
         uses: actions/checkout@v1
@@ -23,7 +23,8 @@ jobs:
           pip install ruamel.yaml PyGithub
       - name: Make CL
         env:
+          #GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} Use this instead if you have unprotected branches
           GITHUB_TOKEN: ${{ secrets.CHANGELOG_TOKEN }}
-          GIT_EMAIL: "action@github.com"
-          GIT_NAME: "Changelogs"
+          GIT_EMAIL: "60119942+WaspStation-Bot@users.noreply.github.com"
+          GIT_NAME: "WaspStation-Bot"
         run: python tools/changelog/generate_cl.py

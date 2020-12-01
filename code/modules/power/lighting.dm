@@ -12,6 +12,9 @@
 #define BROKEN_SPARKS_MIN (3 MINUTES)
 #define BROKEN_SPARKS_MAX (9 MINUTES)
 
+#define LIGHT_DRAIN_TIME 25                                             // Waspstation Edit -- Ethereal Charge Scaling
+#define LIGHT_POWER_GAIN (1.75 * ETHEREAL_CHARGE_SCALING_MULTIPLIER)    // Waspstation Edit -- Ethereal Charge Scaling
+
 /obj/item/wallframe/light_fixture
 	name = "light fixture frame"
 	desc = "Used for building lights."
@@ -681,13 +684,13 @@
 				if(E.drain_time > world.time)
 					return
 				to_chat(H, "<span class='notice'>You start channeling some power through the [fitting] into your body.</span>")
-				E.drain_time = world.time + 30
-				while(do_after(user, 30, target = src)) //Wasp edit
-					E.drain_time = world.time + 30 //Wasp edit
+				E.drain_time = world.time + LIGHT_DRAIN_TIME          // Waspstation Edit -- Ethereal Charge Scaling
+				while(do_after(user, LIGHT_DRAIN_TIME, target = src)) //Wasp edit
+					E.drain_time = world.time + LIGHT_DRAIN_TIME //Wasp edit
 					var/obj/item/organ/stomach/ethereal/stomach = H.getorganslot(ORGAN_SLOT_STOMACH)
 					if(istype(stomach))
 						to_chat(H, "<span class='notice'>You receive some charge from the [fitting].</span>")
-						stomach.adjust_charge(2)
+						stomach.adjust_charge(LIGHT_POWER_GAIN)       // Waspstation Edit -- Ethereal Charge Scaling
 					else
 						to_chat(H, "<span class='warning'>You can't receive charge from the [fitting]!</span>")
 				return
@@ -931,3 +934,6 @@
 	layer = 2.5
 	light_type = /obj/item/light/bulb
 	fitting = "bulb"
+
+#undef LIGHT_DRAIN_TIME  // Waspstation Edit -- Ethereal Charge Scaling
+#undef LIGHT_POWER_GAIN  // Waspstation Edit -- Ethereal Charge Scaling

@@ -5,7 +5,6 @@
 /datum/chemical_reaction/bicaridinep
 	results = list(/datum/reagent/medicine/bicaridinep = 3)
 	required_reagents = list(/datum/reagent/medicine/bicaridine = 1, /datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/sodiumchloride = 1)
-	required_catalysts = list(/datum/reagent/toxin/plasma = 1)
 
 /datum/chemical_reaction/kelotane
 	results = list(/datum/reagent/medicine/kelotane = 2)

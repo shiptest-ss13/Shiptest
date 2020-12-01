@@ -50,6 +50,11 @@
 	desc =  "A standard grey beret. Why an assistant would need a beret is unknown."
 	icon_state = "beret_grey"
 
+/obj/item/clothing/head/beret/puce
+	name = "strange beret"
+	desc =  "You're not sure what to make of this."
+	icon_state = "beret_PUCE"
+
 /obj/item/clothing/head/beret/service
 	name = "service beret"
 	desc =  "A standard service beret. Held by those with the sanity to serve everyone else on the Nanotrasen stations."

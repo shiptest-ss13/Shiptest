@@ -82,7 +82,7 @@
 
 /obj/structure/lavaland/ash_walker/proc/remake_walker(var/datum/mind/oldmind, var/oldname)
 	var/mob/living/carbon/human/M = new /mob/living/carbon/human(get_step(loc, pick(GLOB.alldirs)))
-	M.set_species(/datum/species/lizard/ashwalker)
+	M.set_species(/datum/species/lizard/ashwalker/kobold) //Wasp Edit - Kobold
 	M.real_name = oldname
 	M.underwear = "Nude"
 	M.update_body()

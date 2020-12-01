@@ -72,5 +72,5 @@
 	plane = O_LIGHTING_VISUAL_PLANE
 	appearance_flags = RESET_COLOR | RESET_ALPHA | RESET_TRANSFORM
 	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
-	vis_flags = NONE
+	vis_flags = VIS_HIDE
 	alpha = 110

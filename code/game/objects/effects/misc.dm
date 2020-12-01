@@ -101,3 +101,4 @@
 
 /obj/effect/abstract/directional_lighting
 	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
+	vis_flags = VIS_HIDE

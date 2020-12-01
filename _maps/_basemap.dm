@@ -13,8 +13,8 @@
 		#include "map_files\PubbyStation\PubbyStation.dmm"
 		#include "map_files\BoxStation\BoxStation.dmm"
 		#include "map_files\PackedStation\PackedStation.dmm"
-
-		#ifdef TRAVISBUILDING
+    #include "map_files\MidwayStation\MidwayStation.dmm"
+		#ifdef CIBUILDING
 			#include "templates.dm"
 		#endif
 	#endif

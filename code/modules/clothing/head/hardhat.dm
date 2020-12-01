@@ -63,10 +63,14 @@
 	set_light_on(FALSE)
 
 /obj/item/clothing/head/hardhat/orange
+	icon_state = "hardhat_orange"
+	item_state = "hardhat_orange"
+	dog_fashion = null
+
+/obj/item/clothing/head/hardhat/red
 	name = "firefighter helmet"
 	icon_state = "hardhat_red"
 	item_state = "hardhat_red"
-	dog_fashion = null
 	clothing_flags = STOPSPRESSUREDAMAGE
 	heat_protection = HEAD
 	max_heat_protection_temperature = FIRE_HELM_MAX_TEMP_PROTECT
@@ -127,8 +131,11 @@
 	icon_state = "hardhat_mining"
 	item_state = "hardhat_mining"
 	dog_fashion = null
-
-	armor = list("melee" = 15, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 10, "bio" = 0, "rad" = 0, "fire" = 10, "acid" = 0)
+	heat_protection = HEAD
+	max_heat_protection_temperature = FIRE_HELM_MAX_TEMP_PROTECT
+	cold_protection = HEAD
+	min_cold_protection_temperature = FIRE_HELM_MIN_TEMP_PROTECT
+	armor = list("melee" = 30, "bullet" = 10, "laser" = 10, "energy" = 20, "bomb" = 50, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 0) //some of the wacky resistances the miner hood has have been reduced or removed
 
 /obj/item/clothing/head/hardhat/weldhat
 	name = "welding hard hat"
@@ -191,4 +198,3 @@
 /obj/item/clothing/head/hardhat/weldhat/dblue
 	icon_state = "hardhat_dblue"
 	item_state = "hardhat_dblue"
-
