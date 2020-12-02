@@ -33288,18 +33288,6 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/medical/surgery)
-"crn" = (
-/obj/machinery/atmospherics/components/unary/vent_pump/on{
-	dir = 8
-	},
-/obj/machinery/firealarm{
-	dir = 8;
-	pixel_x = 24
-	},
-/turf/open/floor/plasteel/white/side{
-	dir = 8
-	},
-/area/medical/surgery)
 "cro" = (
 /obj/structure/bed/roller,
 /obj/machinery/iv_drip,
@@ -33614,13 +33602,6 @@
 /turf/open/floor/plasteel/white/side{
 	dir = 1
 	},
-/area/medical/surgery)
-"csn" = (
-/obj/item/radio/intercom{
-	pixel_y = -30
-	},
-/obj/structure/closet/crate/freezer/blood,
-/turf/open/floor/plasteel,
 /area/medical/surgery)
 "cso" = (
 /obj/structure/bed/roller,
@@ -35348,6 +35329,12 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/medical/morgue)
+"cyi" = (
+/obj/item/radio/intercom{
+	pixel_y = -30
+	},
+/turf/open/floor/plasteel,
+/area/medical/surgery)
 "cyn" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden{
@@ -66671,6 +66658,14 @@
 	},
 /turf/open/floor/wood,
 /area/maintenance/port/aft)
+"obx" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on{
+	dir = 8
+	},
+/turf/open/floor/plasteel/white/side{
+	dir = 8
+	},
+/area/medical/surgery)
 "obE" = (
 /obj/machinery/door/airlock/security{
 	aiControlDisabled = 1;
@@ -67157,6 +67152,10 @@
 /obj/machinery/holopad,
 /turf/open/floor/plasteel,
 /area/engine/break_room)
+"omy" = (
+/obj/machinery/smartfridge/bloodbank/preloaded,
+/turf/closed/wall,
+/area/medical/surgery)
 "omB" = (
 /obj/effect/turf_decal/tile/yellow{
 	dir = 8
@@ -107202,8 +107201,8 @@ cmk
 cnq
 iiz
 uwC
-crn
-csn
+obx
+cyi
 cia
 cdl
 gFK
@@ -107459,7 +107458,7 @@ cia
 cia
 cia
 kXq
-cia
+omy
 cia
 cia
 ceu

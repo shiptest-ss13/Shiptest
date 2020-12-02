@@ -23685,23 +23685,6 @@
 	},
 /turf/closed/wall,
 /area/medical/surgery)
-"bIo" = (
-/obj/structure/closet/crate/freezer/blood,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
-	dir = 4
-	},
-/obj/effect/turf_decal/tile/blue{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/blue,
-/obj/effect/turf_decal/tile/blue{
-	dir = 4
-	},
-/obj/effect/turf_decal/tile/blue{
-	dir = 8
-	},
-/turf/open/floor/plasteel/white,
-/area/medical/surgery)
 "bIp" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
@@ -24450,22 +24433,6 @@
 "bKD" = (
 /obj/structure/bed,
 /turf/open/floor/plasteel/freezer,
-/area/medical/surgery)
-"bKE" = (
-/obj/machinery/atmospherics/components/unary/vent_pump/on{
-	dir = 1
-	},
-/obj/machinery/firealarm{
-	dir = 4;
-	pixel_x = -26
-	},
-/obj/effect/turf_decal/tile/blue{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/blue{
-	dir = 8
-	},
-/turf/open/floor/plasteel/white,
 /area/medical/surgery)
 "bKF" = (
 /obj/structure/table/optable,
@@ -44586,6 +44553,10 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/science/explab)
+"jJz" = (
+/obj/machinery/smartfridge/bloodbank/preloaded,
+/turf/closed/wall,
+/area/medical/surgery)
 "jJD" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on{
 	dir = 1
@@ -44908,6 +44879,26 @@
 	icon_state = "platingdmg3"
 	},
 /area/maintenance/department/engine)
+"jZn" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/blue{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/blue,
+/obj/effect/turf_decal/tile/blue{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/blue{
+	dir = 8
+	},
+/obj/machinery/firealarm{
+	dir = 1;
+	pixel_y = 27
+	},
+/turf/open/floor/plasteel/white,
+/area/medical/surgery)
 "jZr" = (
 /obj/effect/turf_decal/stripes/corner{
 	dir = 4
@@ -47303,6 +47294,18 @@
 	},
 /turf/open/floor/plating,
 /area/tcommsat/computer)
+"lLb" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/blue{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/blue{
+	dir = 8
+	},
+/turf/open/floor/plasteel/white,
+/area/medical/surgery)
 "lLi" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /obj/structure/cable{
@@ -94721,7 +94724,7 @@ bFU
 bFU
 bIn
 dtg
-bFU
+jJz
 bFU
 bFU
 bFU
@@ -94976,9 +94979,9 @@ bDx
 bEH
 bFU
 bFU
-bIo
+jZn
 bJu
-bKE
+lLb
 bLM
 bMN
 bFU
