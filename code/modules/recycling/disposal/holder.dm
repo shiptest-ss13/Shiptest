@@ -22,7 +22,8 @@
 
 // initialize a holder from the contents of a disposal unit
 /obj/structure/disposalholder/proc/init(obj/machinery/disposal/D)
-	gas = D.air_contents// transfer gas resv. into holder object
+	if(istype(D))
+		gas = D.air_contents// transfer gas resv. into holder object
 
 	//Check for any living mobs trigger hasmob.
 	//hasmob effects whether the package goes to cargo or its tagged destination.

@@ -68,6 +68,12 @@
 	break_connections()
 	return ..()
 
+///Every time the network is propogated, check the connections and make sure they're merged again
+/obj/machinery/power/deck_relay/connect_to_network(refresh = TRUE)
+	. = ..()
+	if(refresh)
+		find_relays()
+
 ///Lose connections and reset the merged powernet so it makes 2 new seperated ones
 /obj/machinery/power/deck_relay/proc/break_connections()
 	if(above)
@@ -100,13 +106,11 @@
 	if(!above && !below)
 		to_chat(user, "<span class='danger'>Cannot access valid powernet. Attempting to re-establish. Ensure any relays above and below are aligned properly and on cable nodes.</span>")
 		find_relays()
-		addtimer(CALLBACK(src, .proc/refresh), 20) //Wait a bit so we can find the one below, then get powering
 	return TRUE
 
 /obj/machinery/power/deck_relay/Initialize()
 	. = ..()
 	addtimer(CALLBACK(src, .proc/find_relays), 30)
-	addtimer(CALLBACK(src, .proc/refresh), 50) //Wait a bit so we can find the one below, then get powering
 
 ///Handles re-acquiring + merging powernets found by find_relays()
 /obj/machinery/power/deck_relay/proc/refresh()
@@ -116,7 +120,7 @@
 		below.merge(src)
 
 ///Merges the two powernets connected to the deck relays
-/obj/machinery/power/deck_relay/proc/merge(var/obj/machinery/power/deck_relay/DR)
+/obj/machinery/power/deck_relay/proc/merge(obj/machinery/power/deck_relay/DR)
 	if(!DR)
 		return
 	var/turf/merge_from = get_turf(DR)
@@ -124,7 +128,10 @@
 	var/obj/structure/cable/C = merge_from.get_cable_node()
 	var/obj/structure/cable/XR = merge_to.get_cable_node()
 	if(C && XR)
-		merge_powernets(XR.powernet,C.powernet)//Bridge the powernets.
+		var/datum/powernet/new_powernet = merge_powernets(XR.powernet,C.powernet)//Bridge the powernets.
+		if(new_powernet) //If there's a new powernet created, add both relays to it.
+			new_powernet.add_machine(src)
+			new_powernet.add_machine(DR)
 
 ///Locates relays that are above and below this object
 /obj/machinery/power/deck_relay/proc/find_relays()
@@ -134,11 +141,16 @@
 	below = null //in case we're re-establishing
 	above = null
 	var/obj/structure/cable/C = T.get_cable_node() //check if we have a node cable on the machine turf, the first found is picked
-	if(C && C.powernet)
-		C.powernet.add_machine(src) //Nice we're in.
-		powernet = C.powernet
+	if(C?.powernet)
+		connect_to_network(FALSE)
+
 	below = locate(/obj/machinery/power/deck_relay) in(SSmapping.get_turf_below(T))
 	above = locate(/obj/machinery/power/deck_relay) in(SSmapping.get_turf_above(T))
 	if(below || above)
 		icon_state = "cablerelay-on"
+		if(above)
+			above.below = src
+		if(below)
+			below.above = src
+		addtimer(CALLBACK(src, .proc/refresh), 20) //Wait a bit so we can find the one below, then get powering
 	return TRUE

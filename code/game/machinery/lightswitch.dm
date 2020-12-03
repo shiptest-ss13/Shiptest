@@ -9,6 +9,14 @@
 	/// instead of the switch's location.
 	var/area/area = null
 
+	FASTDMM_PROP(\
+		set_instance_vars(\
+			pixel_x = dir & EAST ? 23 : (dir & WEST  ? -23 : INSTANCE_VAR_DEFAULT),\
+			pixel_y = dir & NORTH ? 23 : (dir & SOUTH ? -23 : INSTANCE_VAR_DEFAULT)\
+		),\
+		dir_amount = 8\
+    )
+
 /obj/machinery/light_switch/Initialize()
 	. = ..()
 	if(istext(area))

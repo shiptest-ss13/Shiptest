@@ -203,6 +203,14 @@ GLOBAL_LIST_EMPTY(allCasters)
 	var/datum/newscaster/feed_channel/viewing_channel = null
 	var/allow_comments = 1
 
+	FASTDMM_PROP(\
+		set_instance_vars(\
+			pixel_x = dir == EAST ? 30 : (dir == WEST ? -30 : INSTANCE_VAR_DEFAULT),\
+			pixel_y = dir == NORTH ? 30 : (dir == SOUTH ? -30 : INSTANCE_VAR_DEFAULT)\
+		),\
+		dir_amount = 4\
+    )
+
 /obj/machinery/newscaster/security_unit
 	name = "security newscaster"
 	securityCaster = 1
