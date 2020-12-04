@@ -21554,28 +21554,8 @@
 	},
 /turf/open/floor/plating,
 /area/storage/tech)
-"bDB" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden{
-	dir = 4
-	},
-/obj/machinery/smartfridge/organ,
-/turf/open/floor/plasteel/white/side{
-	dir = 4
-	},
-/area/medical/sleeper)
 "bDC" = (
 /obj/machinery/computer/operating{
-	dir = 1
-	},
-/turf/open/floor/plasteel/white,
-/area/medical/sleeper)
-"bDD" = (
-/obj/structure/sign/warning/nosmoking{
-	pixel_x = -28
-	},
-/obj/structure/bed,
-/obj/item/bedsheet/medical,
-/obj/effect/turf_decal/tile/blue{
 	dir = 1
 	},
 /turf/open/floor/plasteel/white,
@@ -22074,11 +22054,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel,
 /area/science/storage)
-"bFJ" = (
-/obj/structure/bed,
-/obj/item/bedsheet/medical,
-/turf/open/floor/plasteel/white,
-/area/medical/sleeper)
 "bFK" = (
 /obj/structure/closet/wardrobe/pjs,
 /turf/open/floor/plasteel/white,
@@ -28044,13 +28019,6 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/medical/chemistry)
-"clp" = (
-/obj/machinery/camera{
-	c_tag = "Xenobiology Test Chamber";
-	network = list("xeno","rd")
-	},
-/turf/open/floor/plasteel/white,
-/area/medical/chemistry)
 "cls" = (
 /obj/structure/rack,
 /obj/effect/spawner/lootdrop/maintenance/three,
@@ -29537,30 +29505,6 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /turf/open/floor/plasteel,
 /area/quartermaster/storage)
-"cCp" = (
-/obj/structure/closet/crate/freezer,
-/obj/item/reagent_containers/blood,
-/obj/item/reagent_containers/blood,
-/obj/item/reagent_containers/blood/AMinus,
-/obj/item/reagent_containers/blood/BMinus{
-	pixel_x = -4;
-	pixel_y = 4
-	},
-/obj/item/reagent_containers/blood/BPlus{
-	pixel_x = 1;
-	pixel_y = 2
-	},
-/obj/item/reagent_containers/blood/OMinus,
-/obj/item/reagent_containers/blood/OPlus{
-	pixel_x = -2;
-	pixel_y = -1
-	},
-/obj/item/reagent_containers/blood/random,
-/obj/item/reagent_containers/blood/random,
-/obj/item/reagent_containers/blood/APlus,
-/obj/item/reagent_containers/blood/random,
-/turf/open/floor/plasteel,
-/area/medical/sleeper)
 "cCq" = (
 /obj/machinery/deepfryer,
 /turf/open/floor/plasteel/cafeteria,
@@ -30390,6 +30334,13 @@
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden,
 /turf/open/floor/plasteel,
 /area/hallway/primary/port)
+"cUx" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 4
+	},
+/obj/machinery/smartfridge/organ,
+/turf/closed/wall,
+/area/medical/sleeper)
 "cUX" = (
 /obj/structure/disposalpipe/segment{
 	dir = 6
@@ -30525,6 +30476,10 @@
 	},
 /turf/open/floor/plasteel,
 /area/science/mixing)
+"cZc" = (
+/obj/effect/turf_decal/stripes/line,
+/turf/open/floor/plating/airless,
+/area/space/nearstation)
 "dac" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -34691,6 +34646,12 @@
 "gjl" = (
 /turf/closed/wall,
 /area/quartermaster/warehouse)
+"gjq" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 9
+	},
+/turf/open/floor/plating/airless,
+/area/space/nearstation)
 "gkh" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
@@ -35755,13 +35716,6 @@
 	},
 /turf/open/floor/plating,
 /area/medical/pharmacy)
-"gZG" = (
-/obj/structure/closet/crate/freezer/surplus_limbs,
-/obj/item/reagent_containers/glass/beaker/synthflesh,
-/turf/open/floor/plasteel/white/side{
-	dir = 8
-	},
-/area/medical/sleeper)
 "gZY" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /turf/closed/wall/r_wall,
@@ -38477,14 +38431,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/security/prison)
-"jox" = (
-/obj/machinery/chem_dispenser,
-/obj/machinery/camera{
-	c_tag = "Engineering Storage";
-	dir = 4
-	},
-/turf/open/floor/plasteel/white,
-/area/medical/chemistry)
 "jpi" = (
 /obj/machinery/door/airlock{
 	name = "Unit 3"
@@ -41476,6 +41422,14 @@
 	},
 /turf/open/floor/plasteel,
 /area/quartermaster/qm)
+"lFc" = (
+/obj/structure/bed,
+/obj/item/bedsheet/medical,
+/obj/effect/turf_decal/tile/blue{
+	dir = 1
+	},
+/turf/open/floor/plasteel/white,
+/area/medical/sleeper)
 "lFk" = (
 /obj/machinery/door/airlock/medical/glass{
 	id_tag = "MedbayFoyer";
@@ -42637,6 +42591,12 @@
 "mtK" = (
 /turf/closed/wall/r_wall,
 /area/maintenance/starboard/aft)
+"muA" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 8
+	},
+/turf/open/floor/plating/airless,
+/area/space/nearstation)
 "muB" = (
 /obj/structure/cable{
 	icon_state = "0-4"
@@ -43138,6 +43098,12 @@
 	},
 /turf/open/floor/plasteel,
 /area/security/processing)
+"mIv" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 5
+	},
+/turf/open/floor/plating/airless,
+/area/space/nearstation)
 "mJc" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -43788,6 +43754,12 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /turf/open/floor/plasteel,
 /area/hallway/secondary/entry)
+"ndA" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 4
+	},
+/turf/open/floor/plating/airless,
+/area/space/nearstation)
 "ndO" = (
 /obj/machinery/light,
 /obj/effect/turf_decal/stripes/line,
@@ -45776,6 +45748,13 @@
 	},
 /turf/open/floor/plating,
 /area/maintenance/port)
+"ots" = (
+/obj/machinery/camera{
+	c_tag = "Chemistry - Factory East";
+	dir = 8
+	},
+/turf/open/floor/plasteel/white,
+/area/medical/chemistry)
 "otZ" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
@@ -46037,6 +46016,17 @@
 	},
 /turf/open/floor/plasteel,
 /area/hallway/secondary/entry)
+"oGu" = (
+/obj/structure/lattice/catwalk,
+/obj/structure/marker_beacon{
+	icon_state = "markerburgundy-on";
+	light_color = "#FA644B";
+	light_range = 3;
+	name = "Docking Beacon";
+	picked_color = "Burgundy"
+	},
+/turf/open/space/basic,
+/area/space/nearstation)
 "oGP" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -46638,13 +46628,6 @@
 	},
 /turf/open/floor/plating,
 /area/maintenance/port)
-"oZc" = (
-/obj/machinery/camera{
-	c_tag = "Chapel South";
-	dir = 8
-	},
-/turf/open/floor/plasteel/white,
-/area/medical/chemistry)
 "oZT" = (
 /obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden,
 /obj/machinery/light/small{
@@ -49749,6 +49732,14 @@
 	},
 /turf/open/floor/plating,
 /area/maintenance/port/aft)
+"rpN" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
+/turf/open/floor/plasteel/white/side{
+	dir = 4
+	},
+/area/medical/sleeper)
 "rqo" = (
 /obj/machinery/computer/atmos_control/toxinsmix{
 	dir = 4
@@ -50034,6 +50025,11 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ai_monitored/turret_protected/ai)
+"rzb" = (
+/obj/structure/closet/crate/freezer/surplus_limbs,
+/obj/item/reagent_containers/glass/beaker/synthflesh,
+/turf/open/floor/plasteel,
+/area/medical/sleeper)
 "rzt" = (
 /obj/structure/disposalpipe/segment{
 	dir = 10
@@ -50081,6 +50077,32 @@
 	},
 /turf/open/floor/plasteel,
 /area/hallway/primary/aft)
+"rBA" = (
+/mob/living/simple_animal/hostile/retaliate/bat{
+	desc = "A fierce companion for any person of power, this spider has been carefully trained by Nanotrasen specialists. Its beady, staring eyes send shivers down your spine.";
+	emote_hear = list("chitters");
+	faction = list("spiders");
+	harm_intent_damage = 3;
+	health = 200;
+	icon_dead = "guard_dead";
+	icon_gib = "guard_dead";
+	icon_living = "guard";
+	icon_state = "guard";
+	maxHealth = 250;
+	max_co2 = 5;
+	max_tox = 2;
+	melee_damage_lower = 15;
+	melee_damage_upper = 20;
+	min_oxy = 5;
+	movement_type = 1;
+	name = "Sergeant Araneus";
+	real_name = "Sergeant Araneus";
+	response_help_continuous = "pets";
+	response_help_simple = "pet";
+	turns_per_move = 10
+	},
+/turf/open/floor/carpet,
+/area/crew_quarters/heads/hos)
 "rBL" = (
 /obj/machinery/door/window/westleft{
 	name = "Delivery Desk";
@@ -51110,10 +51132,6 @@
 /obj/item/shovel/spade,
 /turf/open/floor/plasteel,
 /area/hallway/secondary/service)
-"syg" = (
-/obj/structure/lattice,
-/turf/open/space,
-/area/space)
 "syj" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 6
@@ -51400,6 +51418,14 @@
 	},
 /turf/open/floor/engine/airless,
 /area/escapepodbay)
+"sJy" = (
+/obj/machinery/chem_dispenser,
+/obj/machinery/camera{
+	c_tag = "Chemistry - Factory West";
+	dir = 4
+	},
+/turf/open/floor/plasteel/white,
+/area/medical/chemistry)
 "sJN" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -51434,6 +51460,10 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/medical/virology)
+"sMG" = (
+/obj/machinery/smartfridge/bloodbank/preloaded,
+/turf/closed/wall,
+/area/medical/sleeper)
 "sMV" = (
 /obj/structure/table,
 /obj/machinery/button/door{
@@ -51721,6 +51751,12 @@
 	},
 /turf/open/space/basic,
 /area/solar/starboard/aft)
+"sWE" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 10
+	},
+/turf/open/floor/plating/airless,
+/area/space/nearstation)
 "sXC" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 6
@@ -52515,6 +52551,14 @@
 	},
 /turf/open/floor/plating,
 /area/maintenance/starboard/aft)
+"tzj" = (
+/obj/structure/bed,
+/obj/item/bedsheet/medical,
+/obj/structure/sign/warning/nosmoking{
+	pixel_x = -28
+	},
+/turf/open/floor/plasteel/white,
+/area/medical/sleeper)
 "tzn" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden,
 /obj/effect/turf_decal/tile/red{
@@ -53081,6 +53125,13 @@
 	},
 /turf/open/floor/plasteel,
 /area/bridge)
+"tZd" = (
+/obj/machinery/camera{
+	c_tag = "Chemistry - Factory Mid";
+	network = list("ss13")
+	},
+/turf/open/floor/plasteel/white,
+/area/medical/chemistry)
 "tZh" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
@@ -56510,6 +56561,12 @@
 /obj/effect/turf_decal/bot,
 /turf/open/floor/plasteel/white,
 /area/science/nanite)
+"wop" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 6
+	},
+/turf/open/floor/plating/airless,
+/area/space/nearstation)
 "woZ" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -58839,6 +58896,12 @@
 /obj/item/stack/sheet/glass/fifty,
 /turf/open/floor/plasteel,
 /area/engine/engineering)
+"xZR" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 1
+	},
+/turf/open/floor/plating/airless,
+/area/space/nearstation)
 "xZT" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
@@ -64152,7 +64215,7 @@ aaa
 aaa
 aaa
 aaa
-aaa
+sEJ
 aaa
 aaa
 aaa
@@ -65178,6 +65241,11 @@ aaa
 aaa
 aaa
 aaa
+oGu
+aaa
+aaa
+aaa
+oGu
 aaa
 aaa
 aaa
@@ -65190,12 +65258,7 @@ aaa
 aaa
 aaa
 aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
+sEJ
 aaa
 aaa
 aaa
@@ -65429,23 +65492,23 @@ aaa
 aaa
 aaa
 aaa
+oGu
+aaa
+oGu
 aaa
 aaa
 aaa
+gXs
 aaa
 aaa
 aaa
+gXs
 aaa
 aaa
 aaa
+oGu
 aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
+oGu
 aaa
 aaa
 aaa
@@ -65686,23 +65749,23 @@ aaa
 aaa
 aaa
 aaa
+gXs
+aaa
+gXs
 aaa
 aaa
+gXs
+rVN
+gXs
+gXs
+gXs
+rVN
+gXs
 aaa
 aaa
+gXs
 aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
+gXs
 aaa
 aaa
 aaa
@@ -65942,25 +66005,25 @@ aaa
 aaa
 aaa
 aaa
+rVN
+rVN
+aaa
+rVN
+rVN
+gXs
+gXs
 aaa
 aaa
 aaa
 aaa
 aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aae
-aaa
+gXs
+gXs
+rVN
+rVN
+gXs
+aag
+rVN
 aaa
 aaa
 aaa
@@ -66199,6 +66262,12 @@ aaa
 aaa
 aaa
 aaa
+gjq
+muA
+aaa
+muA
+sWE
+gXs
 aaa
 aaa
 aaa
@@ -66206,18 +66275,12 @@ aaa
 aaa
 aaa
 aaa
+gXs
+gjq
+muA
 aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
+muA
+sWE
 aaa
 aaa
 aaa
@@ -66456,10 +66519,11 @@ aaa
 aaa
 aaa
 aaa
-aaa
+xZR
 aaa
 cpe
 aaa
+cZc
 aaa
 aaa
 aaa
@@ -66469,12 +66533,11 @@ aaa
 aaa
 aaa
 aaa
-aaa
-aaa
+xZR
 aaa
 cwV
 aaa
-aaa
+cZc
 aaa
 aaa
 aaa
@@ -66712,16 +66775,14 @@ aaa
 aaa
 aaa
 aae
-aaf
+aoV
+gXs
 aaa
 aaa
 aaa
+gXs
 aaa
-aaa
-aaa
-aae
-aaa
-aaa
+aoV
 aaa
 aaa
 aaa
@@ -66729,9 +66790,11 @@ aaa
 aaa
 aaa
 aaa
+gXs
 aaa
 aaa
 aaa
+gXs
 aaa
 aaa
 aaa
@@ -66969,7 +67032,12 @@ aaa
 aaa
 aaa
 aaa
-aaf
+aoV
+gXs
+aaa
+aaa
+aaa
+gXs
 aaa
 aaa
 aaa
@@ -66979,16 +67047,11 @@ aaa
 aaa
 aaa
 aaa
+gXs
 aaa
 aaa
 aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
+gXs
 aaa
 aaa
 aaa
@@ -67226,7 +67289,12 @@ aaa
 aaa
 aaa
 aaa
-aaf
+aoV
+gXs
+aaa
+aaa
+aaa
+gXs
 aaa
 aaa
 aaa
@@ -67236,16 +67304,11 @@ aaa
 aaa
 aaa
 aaa
+gXs
 aaa
 aaa
 aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
+gXs
 aaa
 aaa
 aaa
@@ -67483,26 +67546,26 @@ aaa
 aaa
 aaa
 aaa
-aaf
-aaa
-aaa
-cqq
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
+aoV
+gXs
 aaa
 cqq
 aaa
+gXs
 aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+gXs
+aaa
+cqq
+aaa
+gXs
 aaa
 aaa
 aaa
@@ -67740,7 +67803,7 @@ aaf
 aaf
 aaf
 aaa
-aaf
+aoV
 arB
 asE
 cyb
@@ -88522,7 +88585,7 @@ aaa
 aaa
 aaa
 aaa
-syg
+aaf
 aaf
 aaa
 aaf
@@ -92128,7 +92191,7 @@ aaf
 lim
 abU
 act
-acu
+rBA
 acu
 rky
 abq
@@ -92898,7 +92961,7 @@ aaa
 aaa
 aaa
 aaa
-aaa
+aaf
 aaa
 aaf
 hsQ
@@ -92974,7 +93037,7 @@ byZ
 bzI
 bAX
 bCF
-bDB
+rpN
 bFB
 bvd
 dAI
@@ -93148,13 +93211,13 @@ aaa
 aaa
 aaa
 aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
+aaf
+aaf
+aag
+aag
+aag
+aag
+aaf
 aaf
 aaf
 aaf
@@ -93919,11 +93982,11 @@ aaa
 aaa
 aaa
 aaa
-aaf
-aaf
-aag
-aag
-aag
+aaa
+aaa
+aaa
+aaa
+aaa
 aaa
 aaa
 aag
@@ -94002,8 +94065,8 @@ bvh
 bzS
 bBc
 bCJ
-gZG
-cCp
+buk
+rzb
 bvd
 mRC
 bLK
@@ -94176,11 +94239,11 @@ aaa
 aaa
 aaa
 aaa
-aaa
-aaa
-aaa
-aaa
-aaa
+aaf
+aaf
+aag
+aag
+aag
 aag
 aaf
 aaf
@@ -94257,9 +94320,9 @@ bvj
 bvj
 bvj
 bvj
-bvd
+cUx
 yaZ
-bvj
+sMG
 bvj
 bvd
 mRC
@@ -94516,8 +94579,8 @@ bvh
 bCG
 bBd
 bFw
-bDD
-bFJ
+lFc
+tzj
 bvd
 mRC
 bzs
@@ -94700,11 +94763,11 @@ aaa
 aaa
 aaa
 aaa
+gXs
 aaa
 aaa
 aaa
-aaa
-aaa
+gXs
 aaa
 aaa
 aaa
@@ -94957,11 +95020,11 @@ aaa
 aaa
 aaa
 aaa
+gXs
 aaa
 aaa
 aaa
-aaa
-aaa
+gXs
 aaa
 aaa
 aaa
@@ -95214,11 +95277,11 @@ aaa
 aaa
 aaa
 aaa
-aaa
+xZR
 aaa
 aqG
 aaa
-aaa
+cZc
 aaa
 aaa
 aaa
@@ -95471,11 +95534,11 @@ aaa
 aaa
 aaa
 aaa
+mIv
+ndA
 aaa
-aaa
-aaa
-aaa
-aaa
+ndA
+wop
 aaa
 aaa
 aaa
@@ -95723,16 +95786,16 @@ aaa
 aaa
 aaa
 aaa
+sEJ
 aaa
 aaa
 aaa
 aaa
-aaa
-aaa
-aae
-aaa
-aaa
-aaa
+rVN
+aag
+gXs
+rVN
+rVN
 aaa
 aaa
 aaa
@@ -95986,9 +96049,9 @@ aaa
 aaa
 aaa
 aaa
+gXs
 aaa
-aaa
-aaa
+gXs
 aaa
 aaa
 aaa
@@ -96243,9 +96306,9 @@ aaa
 aaa
 aaa
 aaa
+oGu
 aaa
-aaa
-aaa
+oGu
 aaa
 aaa
 aaa
@@ -98403,7 +98466,7 @@ ckl
 clk
 xfL
 vQQ
-jox
+sJy
 nEk
 djq
 hTU
@@ -100713,7 +100776,7 @@ rGg
 rGg
 chp
 mtK
-clp
+tZd
 mSR
 cnf
 bip
@@ -104570,7 +104633,7 @@ hxt
 cOT
 bip
 bip
-oZc
+ots
 hpH
 bip
 mtK

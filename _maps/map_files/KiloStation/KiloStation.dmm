@@ -6243,6 +6243,28 @@
 	},
 /turf/open/floor/engine,
 /area/ai_monitored/turret_protected/aisat/foyer)
+"aMv" = (
+/obj/effect/turf_decal/tile/neutral{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/neutral{
+	dir = 1
+	},
+/obj/effect/turf_decal/bot,
+/obj/machinery/power/apc{
+	areastring = "/area/medical/surgery";
+	dir = 4;
+	name = "Surgery APC";
+	pixel_x = 24
+	},
+/obj/machinery/light/small{
+	dir = 4
+	},
+/obj/structure/cable,
+/obj/structure/closet/crate/freezer/surplus_limbs,
+/obj/item/reagent_containers/glass/beaker/synthflesh,
+/turf/open/floor/plasteel/dark,
+/area/medical/surgery)
 "aMw" = (
 /obj/effect/turf_decal/bot,
 /obj/machinery/power/emitter,
@@ -7494,6 +7516,17 @@
 /obj/item/storage/box/beakers,
 /turf/open/floor/plasteel/dark,
 /area/medical/medbay/central)
+"aTQ" = (
+/obj/effect/turf_decal/tile/neutral{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/neutral{
+	dir = 1
+	},
+/obj/effect/turf_decal/bot,
+/obj/machinery/smartfridge/bloodbank/preloaded,
+/turf/open/floor/plasteel/dark,
+/area/medical/surgery)
 "aUa" = (
 /turf/closed/wall,
 /area/gateway)
@@ -7801,17 +7834,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/medical/virology)
-"aVB" = (
-/obj/effect/turf_decal/tile/neutral{
-	dir = 4
-	},
-/obj/effect/turf_decal/tile/neutral{
-	dir = 1
-	},
-/obj/effect/turf_decal/bot,
-/obj/structure/closet/crate/freezer/surplus_limbs,
-/turf/open/floor/plasteel/dark,
-/area/medical/surgery)
 "aVC" = (
 /obj/effect/turf_decal/tile/red,
 /obj/effect/turf_decal/tile/red{
@@ -11202,27 +11224,6 @@
 	dir = 1
 	},
 /area/hallway/primary/port)
-"bjN" = (
-/obj/effect/turf_decal/tile/neutral{
-	dir = 4
-	},
-/obj/effect/turf_decal/tile/neutral{
-	dir = 1
-	},
-/obj/effect/turf_decal/bot,
-/obj/structure/closet/crate/freezer/blood,
-/obj/machinery/power/apc{
-	areastring = "/area/medical/surgery";
-	dir = 4;
-	name = "Surgery APC";
-	pixel_x = 24
-	},
-/obj/machinery/light/small{
-	dir = 4
-	},
-/obj/structure/cable,
-/turf/open/floor/plasteel/dark,
-/area/medical/surgery)
 "bjV" = (
 /obj/effect/turf_decal/delivery,
 /obj/effect/decal/cleanable/cobweb/cobweb2,
@@ -115458,7 +115459,7 @@ sPy
 hAc
 mLn
 nsQ
-aVB
+aTQ
 xAR
 add
 bTW
@@ -115715,7 +115716,7 @@ sPy
 fSq
 iSz
 bqf
-bjN
+aMv
 xAR
 aaO
 bTW

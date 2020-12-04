@@ -5,6 +5,7 @@
 	ask_verb = "asks"
 	exclaim_verb = "exclaims"
 	sing_verb = "shanties"
+	flags = LANGUAGE_HIDE_ICON_IF_NOT_UNDERSTOOD //WaspStation Edit- Language icon hiding
 	key = "p"
 	space_chance = 100
 	default_priority = 90

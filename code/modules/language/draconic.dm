@@ -6,7 +6,7 @@
 	exclaim_verb = "roars"
 	sing_verb = "sings"
 	key = "o"
-	flags = TONGUELESS_SPEECH
+	flags = TONGUELESS_SPEECH | LANGUAGE_HIDE_ICON_IF_NOT_UNDERSTOOD //WaspStation Edit- Language icon hiding
 	space_chance = 40
 	syllables = list(
 		"za", "az", "ze", "ez", "zi", "iz", "zo", "oz", "zu", "uz", "zs", "sz",

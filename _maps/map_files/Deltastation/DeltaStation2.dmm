@@ -62547,19 +62547,6 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/medical/surgery)
-"dtQ" = (
-/obj/machinery/firealarm{
-	dir = 4;
-	pixel_x = -24
-	},
-/obj/effect/turf_decal/tile/blue{
-	dir = 1
-	},
-/obj/machinery/light{
-	dir = 8
-	},
-/turf/open/floor/plasteel/white,
-/area/medical/surgery)
 "dtR" = (
 /obj/effect/turf_decal/tile/blue{
 	dir = 1
@@ -64118,23 +64105,6 @@
 /obj/effect/turf_decal/tile/blue,
 /turf/open/floor/plasteel/white,
 /area/medical/surgery)
-"dyG" = (
-/obj/structure/closet/secure_closet/medical2,
-/obj/structure/sign/poster/official/cleanliness{
-	pixel_x = -32
-	},
-/obj/effect/turf_decal/tile/neutral{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/neutral,
-/obj/effect/turf_decal/tile/neutral{
-	dir = 4
-	},
-/obj/effect/turf_decal/tile/neutral{
-	dir = 8
-	},
-/turf/open/floor/plasteel/dark,
-/area/medical/surgery)
 "dyH" = (
 /obj/machinery/status_display/ai{
 	pixel_y = -32
@@ -64194,25 +64164,6 @@
 	dir = 8
 	},
 /obj/machinery/smartfridge/organ,
-/turf/open/floor/plasteel/dark,
-/area/medical/surgery)
-"dyK" = (
-/obj/structure/closet/crate/freezer/blood,
-/obj/machinery/vending/wallmed{
-	name = "Emergency NanoMed";
-	pixel_x = 26;
-	use_power = 0
-	},
-/obj/effect/turf_decal/tile/neutral{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/neutral,
-/obj/effect/turf_decal/tile/neutral{
-	dir = 4
-	},
-/obj/effect/turf_decal/tile/neutral{
-	dir = 8
-	},
 /turf/open/floor/plasteel/dark,
 /area/medical/surgery)
 "dyN" = (
@@ -94565,6 +94516,10 @@
 /obj/machinery/atmospherics/components/unary/vent_pump,
 /turf/open/floor/plasteel,
 /area/engine/gravity_generator)
+"kLh" = (
+/obj/machinery/smartfridge/bloodbank/preloaded,
+/turf/closed/wall,
+/area/medical/surgery)
 "kLl" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
@@ -107727,6 +107682,24 @@
 	},
 /turf/open/floor/wood,
 /area/lawoffice)
+"pke" = (
+/obj/machinery/vending/wallmed{
+	name = "Emergency NanoMed";
+	pixel_x = 26;
+	use_power = 0
+	},
+/obj/effect/turf_decal/tile/neutral{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/neutral,
+/obj/effect/turf_decal/tile/neutral{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/neutral{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark,
+/area/medical/surgery)
 "pkx" = (
 /obj/machinery/light_switch{
 	pixel_x = -26;
@@ -118689,6 +118662,27 @@
 /obj/machinery/atmospherics/pipe/manifold/cyan/visible,
 /turf/open/space,
 /area/engine/atmos)
+"teZ" = (
+/obj/structure/sign/poster/official/cleanliness{
+	pixel_x = -32
+	},
+/obj/effect/turf_decal/tile/neutral{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/neutral,
+/obj/effect/turf_decal/tile/neutral{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/neutral{
+	dir = 8
+	},
+/obj/machinery/firealarm{
+	dir = 1;
+	pixel_y = -24
+	},
+/obj/structure/closet/secure_closet/medical2,
+/turf/open/floor/plasteel/dark,
+/area/medical/surgery)
 "tfj" = (
 /obj/machinery/navbeacon{
 	codes_txt = "patrol;next_patrol=hall5";
@@ -120374,6 +120368,15 @@
 	},
 /turf/open/floor/plasteel,
 /area/hallway/primary/port)
+"tEK" = (
+/obj/effect/turf_decal/tile/blue{
+	dir = 1
+	},
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/open/floor/plasteel/white,
+/area/medical/surgery)
 "tFb" = (
 /obj/structure/lattice/catwalk,
 /obj/machinery/atmospherics/pipe/manifold/yellow/visible,
@@ -181223,7 +181226,7 @@ dnF
 rDM
 dnF
 dsM
-dma
+kLh
 ggM
 dma
 dma
@@ -181480,10 +181483,10 @@ dnG
 dnG
 slY
 dsN
-dtQ
+tEK
 fWS
 dxl
-dyG
+teZ
 dma
 dBs
 dCP
@@ -182511,7 +182514,7 @@ dsR
 dtU
 kLl
 dxp
-dyK
+pke
 dma
 wgk
 dCR
