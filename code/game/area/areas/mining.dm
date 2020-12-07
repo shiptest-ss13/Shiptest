@@ -20,6 +20,7 @@
 	flags_1 = NONE
 	ambientsounds = MINING
 	area_flags = VALID_TERRITORY | UNIQUE_AREA
+	sound_environment = SOUND_AREA_STANDARD_STATION
 
 /area/mine/unexplored
 	name = "Mine"
@@ -93,6 +94,7 @@
 	has_gravity = STANDARD_GRAVITY
 	flags_1 = NONE
 	area_flags = VALID_TERRITORY | UNIQUE_AREA | FLORA_ALLOWED
+	sound_environment = SOUND_AREA_LAVALAND
 
 /area/lavaland/surface
 	name = "Lavaland"
@@ -143,6 +145,7 @@
 	has_gravity = STANDARD_GRAVITY
 	flags_1 = NONE
 	area_flags = UNIQUE_AREA | FLORA_ALLOWED
+	sound_environment = SOUND_AREA_ICEMOON
 
 /area/icemoon/surface
 	name = "Icemoon"

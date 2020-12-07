@@ -12,9 +12,10 @@
 	area_flags = NONE
 	icon_state = "shuttle"
 	flags_1 = CAN_BE_DIRTY_1
-	area_limited_icon_smoothing = TRUE
 	lighting_colour_tube = "#fff0dd"
 	lighting_colour_bulb = "#ffe1c1"
+	area_limited_icon_smoothing = TRUE
+	sound_environment = SOUND_ENVIRONMENT_ROOM
 
 
 /area/shuttle/PlaceOnTopReact(list/new_baseturfs, turf/fake_turf_type, flags)

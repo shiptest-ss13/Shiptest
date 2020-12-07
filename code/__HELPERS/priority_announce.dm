@@ -28,15 +28,16 @@
 
 	announcement += "<br><span class='alert'>[html_encode(text)]</span><br>"
 	announcement += "<br>"
-	if(auth_id)                                                                                                       //WS Edit - Make cap's announcement use logged-in name
-		announcement += "<span class='alert'>-[auth_id]</span><br>"                                                   //WS Edit - Make cap's announcement use logged-in name
+	if(auth_id)															//WS Edit - Make cap's announcement use logged-in name
+		announcement += "<span class='alert'>-[auth_id]</span><br>"		//WS Edit - Make cap's announcement use logged-in name
 
-	var/s = sound(sound)
+	var/sound/S = sound(sound)
+	S.environment = SOUND_ENVIRONMENT_CONCERT_HALL
 	for(var/mob/M in GLOB.player_list)
 		if(!isnewplayer(M) && M.can_hear())
 			to_chat(M, announcement)
 			if(M.client.prefs.toggles & SOUND_ANNOUNCEMENTS)
-				SEND_SOUND(M, s)
+				SEND_SOUND(M, S)
 
 /proc/print_command_report(text = "", title = null, announce=TRUE)
 	if(!title)
@@ -55,11 +56,10 @@
 	if(!message)
 		return
 
+	var/sound/S = sound(alert ? 'sound/misc/notice1.ogg' : 'sound/misc/notice2.ogg')
+	S.environment = SOUND_ENVIRONMENT_CONCERT_HALL
 	for(var/mob/M in GLOB.player_list)
 		if(!isnewplayer(M) && M.can_hear())
 			to_chat(M, "<span class='minorannounce'><font color = red>[title]</font color><BR>[message]</span><BR>[from ? "<span class='alert'>-[from.name] ([from.job])</span>" : null]")
 			if(M.client.prefs.toggles & SOUND_ANNOUNCEMENTS)
-				if(alert)
-					SEND_SOUND(M, sound('sound/misc/notice1.ogg'))
-				else
-					SEND_SOUND(M, sound('sound/misc/notice2.ogg'))
+				SEND_SOUND(M, S)
