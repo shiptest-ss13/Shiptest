@@ -3,8 +3,8 @@
 	desc = "A small crowbar. This handy tool is useful for lots of things, such as prying floor tiles or opening unpowered doors."
 	icon = 'waspstation/icons/obj/tools.dmi' //WaspStation Edit - Better Tool Sprites
 	icon_state = "crowbar"
-	lefthand_file = 'icons/mob/inhands/equipment/tools_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/equipment/tools_righthand.dmi'
+	lefthand_file = 'waspstation/icons/mob/inhands/equipment/tools_lefthand.dmi' //wasp edit: i finally do those god forsaken inhands
+	righthand_file = 'waspstation/icons/mob/inhands/equipment/tools_righthand.dmi'
 	usesound = 'sound/items/crowbar.ogg'
 	flags_1 = CONDUCT_1
 	slot_flags = ITEM_SLOT_BELT
@@ -56,8 +56,6 @@
 	desc = "A set of jaws of life, compressed through the magic of science."
 	icon_state = "jaws_pry"
 	item_state = "jawsoflife"
-	lefthand_file = 'icons/mob/inhands/equipment/tools_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/equipment/tools_righthand.dmi'
 	custom_materials = list(/datum/material/iron=150,/datum/material/silver=50,/datum/material/titanium=25)
 	usesound = 'sound/items/jaws_pry.ogg'
 	force = 15

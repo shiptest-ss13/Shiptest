@@ -89,6 +89,13 @@
 	has_latches = FALSE
 	material_flags = NONE
 
+/obj/item/storage/toolbox/mechanical/old/PopulateContents()
+	new /obj/item/screwdriver/old(src)
+	new /obj/item/wrench/old(src)
+	new /obj/item/weldingtool/old(src)
+	new /obj/item/crowbar/old(src)
+	new /obj/item/wirecutters/old(src)
+
 /obj/item/storage/toolbox/mechanical/old/heirloom
 	name = "toolbox" //this will be named "X family toolbox"
 	desc = "It's seen better days."
@@ -128,7 +135,7 @@
 	new /obj/item/weldingtool/old(src)
 	new /obj/item/crowbar/old(src)
 	new /obj/item/wirecutters/old(src)
-	new /obj/item/multitool(src)
+	new /obj/item/multitool/old(src)
 	new /obj/item/clothing/gloves/color/yellow(src)
 
 /obj/item/storage/toolbox/electrical

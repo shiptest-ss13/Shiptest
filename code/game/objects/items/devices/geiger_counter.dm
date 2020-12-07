@@ -13,7 +13,7 @@
 	desc = "A handheld device used for detecting and measuring radiation pulses."
 	icon = 'waspstation/icons/obj/tools.dmi' //Wasp begin - Better tool sprites
 	icon_state = "geiger_off"
-	item_state = "multitool"
+	item_state = "geiger"
 	lefthand_file = 'waspstation/icons/mob/inhands/equipment/tools_lefthand.dmi'
 	righthand_file = 'waspstation/icons/mob/inhands/equipment/tools_righthand.dmi' //Wasp end
 	w_class = WEIGHT_CLASS_SMALL
