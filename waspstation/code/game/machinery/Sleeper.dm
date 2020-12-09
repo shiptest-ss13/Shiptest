@@ -129,7 +129,7 @@
 		occupant = null
 	if(!state_open && !panel_open)
 		flick("[initial(icon_state)]-anim", src)
-		..()
+		..(FALSE) //Don't drop the chem bag
 
 /obj/machinery/sleeper/close_machine(mob/user)
 	if((isnull(user) || istype(user)) && state_open && !panel_open)
