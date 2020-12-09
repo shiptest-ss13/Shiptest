@@ -173,6 +173,9 @@ GLOBAL_LIST_EMPTY(PDAs)
 	if(inserted_item)
 		overlay.icon_state = "insert_overlay"
 		. += new /mutable_appearance(overlay)
+	if(cartridge) //waspedit: lol copy and pasted from PR #55072 on TGstation haha!!
+		overlay.icon_state = "cartridge_overlay" //does this work? fuck if I know!
+		. += new /mutable_appearance(overlay) //waspstation end
 	if(light_on)
 		overlay.icon_state = "light_overlay"
 		. += new /mutable_appearance(overlay)
