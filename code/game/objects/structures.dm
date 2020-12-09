@@ -6,6 +6,7 @@
 	layer = BELOW_OBJ_LAYER
 	flags_ricochet = RICOCHET_HARD
 	ricochet_chance_mod = 0.5
+	pass_flags_self = PASSSTRUCTURE
 
 	var/climb_time = 20
 	var/climbable = FALSE

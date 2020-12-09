@@ -8,6 +8,7 @@
 	var/arms_required = 1	//why not?
 	var/fall_off_if_missing_arms = FALSE //heh...
 	var/message_cooldown = 0
+	pass_flags_self = PASSTABLE
 
 /obj/vehicle/ridden/Initialize()
 	. = ..()
@@ -99,6 +100,6 @@
 		return FALSE
 	return ..()
 
-/obj/vehicle/ridden/zap_act(zap_str, zap_flags, shocked_targets)
-	zap_buckle_check(zap_str)
-	. = ..()
+/obj/vehicle/ridden/zap_act(power, zap_flags)
+	zap_buckle_check(power)
+	return ..()

@@ -34,6 +34,7 @@
 #include "plantgrowth_tests.dm"
 #include "quick_swap_sanity.dm"
 #include "rcd.dm"
+#include "projectiles.dm"
 #include "reagent_id_typos.dm"
 #include "reagent_mod_expose.dm"
 #include "reagent_mod_procs.dm"

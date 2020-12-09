@@ -7,7 +7,7 @@
 	anchored = TRUE
 	layer = TABLE_LAYER
 	climbable = TRUE
-	pass_flags = LETPASSTHROW
+	pass_flags_self = LETPASSTHROW
 	can_buckle = TRUE
 	buckle_lying = 90 //we turn to you!
 	var/datum/religion_sect/sect_to_altar // easy access!
