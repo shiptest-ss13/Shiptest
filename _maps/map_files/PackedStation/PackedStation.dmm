@@ -4109,14 +4109,14 @@
 /turf/open/floor/circuit,
 /area/ai_monitored/turret_protected/ai)
 "aBO" = (
-/obj/effect/turf_decal/tile/bar,
-/obj/effect/turf_decal/tile/bar{
-	dir = 1
-	},
 /obj/machinery/airalarm{
 	dir = 1;
 	pixel_y = -24
 	},
+/obj/effect/turf_decal/tile/bar{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/bar,
 /turf/open/floor/plasteel,
 /area/crew_quarters/bar)
 "aBP" = (
@@ -35267,6 +35267,7 @@
 /obj/effect/turf_decal/tile/bar{
 	dir = 1
 	},
+/obj/machinery/vending/classicbeats,
 /turf/open/floor/plasteel,
 /area/crew_quarters/bar)
 "xBr" = (
