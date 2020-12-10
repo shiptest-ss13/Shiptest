@@ -108,7 +108,7 @@ mob/living/simple_animal/hostile/asteroid/basilisk/proc/cool_down()
 	a_intent = INTENT_HARM
 	speak_emote = list("telepathically cries")
 	attack_sound = 'sound/weapons/bladeslice.ogg'
-	stat_attack = UNCONSCIOUS
+	stat_attack = HARD_CRIT
 	movement_type = FLYING
 	robust_searching = 1
 	crusher_loot = /obj/item/crusher_trophy/watcher_wing

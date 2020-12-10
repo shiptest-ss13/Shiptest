@@ -946,7 +946,6 @@ GLOBAL_VAR_INIT(total_borer_hosts_needed, 3)
 		if(leaping)
 			leaping = FALSE
 			update_icons()
-			update_mobility()
 
 /proc/create_borer_mind(key)
 	var/datum/mind/M = new /datum/mind(key)

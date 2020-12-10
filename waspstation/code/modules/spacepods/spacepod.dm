@@ -553,7 +553,7 @@ GLOBAL_LIST_INIT(spacepod_verb_list,  list(
 	if(!isliving(usr) || usr.stat > CONSCIOUS)
 		return
 
-	if(usr.restrained())
+	if(HAS_TRAIT(usr, TRAIT_HANDS_BLOCKED))
 		to_chat(usr, "<span class='notice'>You attempt to stumble out of [src]. This will take two minutes.</span>")
 		if(pilot)
 			to_chat(pilot, "<span class='warning'>[usr] is trying to escape [src].</span>")

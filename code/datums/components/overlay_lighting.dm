@@ -199,7 +199,8 @@
 	light_source.update_dynamic_luminosity()
 	if(directional)
 		current_holder.vis_contents -= cone
-		directional_atom.moveToNullspace()
+		if(!directional_atom?.moveToNullspace())
+			directional_atom = new()
 
 ///Called to change the value of parent_attached_to.
 /datum/component/overlay_lighting/proc/set_parent_attached_to(atom/movable/new_parent_attached_to)
@@ -422,6 +423,8 @@
 		if(isnull(next_turf) || IS_OPAQUE_TURF(next_turf))
 			break
 		scanning = next_turf
+	if(!directional_atom)
+		directional_atom = new()
 	directional_atom.forceMove(scanning)
 
 ///Called when current_holder changes loc.

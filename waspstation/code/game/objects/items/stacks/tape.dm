@@ -53,13 +53,13 @@
 				to_chat(user, "<span class='warning'>Uh... which side sticks again?</span>")
 				apply_tapecuffs(user, user)
 				return
-			if(C.get_num_arms(FALSE) >= 2 || C.get_arm_ignore())
+			if(C.canBeHandcuffed())
 				if(use(5))
 					C.visible_message("<span class='danger'>[user] is trying to put [src.name] on [C]!</span>", \
 										"<span class='userdanger'>[user] is trying to put [src.name] on you!</span>")
 
 					playsound(loc, usesound, 30, TRUE, -2)
-					if(do_mob(user, C, self_delay) && (C.get_num_arms(FALSE) >= 2 || C.get_arm_ignore()))
+					if(do_mob(user, C, self_delay) && (C.canBeHandcuffed()))
 						apply_tapecuffs(C, user)
 						C.visible_message("<span class='notice'>[user] tapecuffs [C].</span>", \
 											"<span class='userdanger'>[user] tapecuffs you.</span>")

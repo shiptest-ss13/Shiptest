@@ -37,7 +37,6 @@
 	name = "Families: Armored Beat Cop"
 	suit = /obj/item/clothing/suit/armor/vest/blueshirt
 	head = /obj/item/clothing/head/helmet/blueshirt
-	belt = /obj/item/gun/ballistic/shotgun/automatic/combat
 	backpack_contents = list(/obj/item/storage/box/handcuffs = 1,
 	/obj/item/storage/box/teargas = 1,
 	/obj/item/storage/box/flashbangs = 1,
@@ -49,7 +48,6 @@
 	suit = /obj/item/clothing/suit/armor/riot
 	head = /obj/item/clothing/head/helmet/riot
 	gloves = /obj/item/clothing/gloves/combat
-	belt = /obj/item/gun/ballistic/shotgun/automatic/combat
 	backpack_contents = list(/obj/item/storage/box/handcuffs = 1,
 	/obj/item/storage/box/teargas = 1,
 	/obj/item/storage/box/flashbangs = 1,
@@ -60,7 +58,6 @@
 	name = "Families: Space FBI Officer"
 	suit = /obj/item/clothing/suit/armor/laserproof
 	head = /obj/item/clothing/head/helmet/riot
-	belt = /obj/item/gun/ballistic/automatic/proto/unrestricted
 	gloves = /obj/item/clothing/gloves/combat
 	backpack_contents = list(/obj/item/storage/box/handcuffs = 1,
 	/obj/item/storage/box/teargas = 1,

@@ -80,7 +80,7 @@
 
 /datum/action/cooldown/spit_ink
 	name = "Spit Ink"
-	check_flags = AB_CHECK_CONSCIOUS | AB_CHECK_STUN
+	check_flags = AB_CHECK_CONSCIOUS | AB_CHECK_IMMOBILE
 	icon_icon = 'icons/mob/actions.dmi'
 	button_icon_state = "squid_ink"
 	cooldown_time = 60

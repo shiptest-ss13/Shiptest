@@ -43,21 +43,10 @@
 
 /mob/living/simple_animal/pet/cat/Initialize()
 	. = ..()
-	add_verb(src, /mob/living/proc/lay_down)
+	add_verb(src, /mob/living/proc/toggle_resting)
 
-/mob/living/simple_animal/pet/cat/update_mobility()
-	..()
-	if(client && stat != DEAD)
-		if (resting)
-			icon_state = "[icon_living]_rest"
-			collar_type = "[initial(collar_type)]_rest"
-		else
-			icon_state = "[icon_living]"
-			collar_type = "[initial(collar_type)]"
-	regenerate_icons()
 
 /mob/living/simple_animal/pet/cat/space
-	name = "space cat"
 	desc = "It's a cat... in space!"
 	icon_state = "spacecat"
 	icon_living = "spacecat"
@@ -175,23 +164,33 @@
 	gold_core_spawnable = NO_SPAWN
 	unique_pet = TRUE
 
+
+/mob/living/simple_animal/pet/cat/update_resting()
+	. = ..()
+	if(stat == DEAD)
+		return
+	if (resting)
+		icon_state = "[icon_living]_rest"
+		collar_type = "[initial(collar_type)]_rest"
+	else
+		icon_state = "[icon_living]"
+		collar_type = "[initial(collar_type)]"
+	regenerate_icons()
+
+
 /mob/living/simple_animal/pet/cat/Life()
 	if(!stat && !buckled && !client)
 		if(prob(1))
 			manual_emote(pick("stretches out for a belly rub.", "wags its tail.", "lies down."))
-			icon_state = "[icon_living]_rest"
-			collar_type = "[initial(collar_type)]_rest"
 			set_resting(TRUE)
 		else if (prob(1))
 			manual_emote(pick("sits down.", "crouches on its hind legs.", "looks alert."))
+			set_resting(TRUE)
 			icon_state = "[icon_living]_sit"
 			collar_type = "[initial(collar_type)]_sit"
-			set_resting(TRUE)
 		else if (prob(1))
 			if (resting)
 				manual_emote(pick("gets up and meows.", "walks around.", "stops resting."))
-				icon_state = "[icon_living]"
-				collar_type = "[initial(collar_type)]"
 				set_resting(FALSE)
 			else
 				manual_emote(pick("grooms its fur.", "twitches its whiskers.", "shakes out its coat."))
