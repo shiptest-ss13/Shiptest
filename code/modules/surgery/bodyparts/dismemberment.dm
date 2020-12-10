@@ -87,7 +87,7 @@
 	var/atom/Tsec = owner.drop_location()
 	var/mob/living/carbon/C = owner
 	update_limb(1)
-	C.bodyparts -= src
+	C.remove_bodypart(src)
 
 	if(held_index)
 		if(C.hand_bodyparts[held_index] == src)
@@ -130,7 +130,6 @@
 	C.update_health_hud() //update the healthdoll
 	C.update_body()
 	C.update_hair()
-	C.update_mobility()
 
 	if(!Tsec)	// Tsec = null happens when a "dummy human" used for rendering icons on prefs screen gets its limbs replaced.
 		qdel(src)
@@ -183,7 +182,7 @@
 		if(C.handcuffed)
 			C.handcuffed.forceMove(drop_location())
 			C.handcuffed.dropped(C)
-			C.handcuffed = null
+			C.set_handcuffed(null)
 			C.update_handcuffed()
 		if(C.hud_used)
 			var/obj/screen/inventory/hand/R = C.hud_used.hand_slots["[held_index]"]
@@ -201,7 +200,7 @@
 		if(C.handcuffed)
 			C.handcuffed.forceMove(drop_location())
 			C.handcuffed.dropped(C)
-			C.handcuffed = null
+			C.set_handcuffed(null)
 			C.update_handcuffed()
 		if(C.hud_used)
 			var/obj/screen/inventory/hand/L = C.hud_used.hand_slots["[held_index]"]
@@ -283,7 +282,7 @@
 	. = TRUE
 	moveToNullspace()
 	owner = C
-	C.bodyparts += src
+	C.add_bodypart(src)
 	if(held_index)
 		if(held_index > C.hand_bodyparts.len)
 			C.hand_bodyparts.len = held_index
@@ -314,10 +313,18 @@
 	C.update_body()
 	C.update_hair()
 	C.update_damage_overlays()
-	C.update_mobility()
 
 
 /obj/item/bodypart/head/attach_limb(mob/living/carbon/C, special = FALSE, abort = FALSE)
+	// These are stored before calling super. This is so that if the head is from a different body, it persists its appearance.
+	var/hair_color = src.hair_color
+	var/hairstyle = src.hairstyle
+	var/facial_hair_color = src.facial_hair_color
+	var/facial_hairstyle = src.facial_hairstyle
+	var/lip_style = src.lip_style
+	var/lip_color = src.lip_color
+	var/real_name = src.real_name
+
 	. = ..()
 	if(!.)
 		return .
@@ -362,7 +369,7 @@
 	C.update_body()
 	C.update_hair()
 	C.update_damage_overlays()
-	C.update_mobility()
+
 
 //Regenerates all limbs. Returns amount of limbs regenerated
 /mob/living/proc/regenerate_limbs(noheal = FALSE, list/excluded_zones = list())
@@ -386,8 +393,8 @@
 	L = newBodyPart(limb_zone, 0, 0)
 	if(L)
 		if(!noheal)
-			L.brute_dam = 0
-			L.burn_dam = 0
+			L.set_brute_dam(0)
+			L.set_burn_dam(0)
 			L.brutestate = 0
 			L.burnstate = 0
 

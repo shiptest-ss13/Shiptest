@@ -26,7 +26,7 @@
 	name = "Brig Physician"
 	jobtype = /datum/job/brig_phys
 
-	belt = /obj/item/pda/security
+	belt = /obj/item/pda/brig_phys
 	ears = /obj/item/radio/headset/headset_medsec/alt
 	uniform = /obj/item/clothing/under/rank/security/brig_phys
 	alt_uniform = /obj/item/clothing/under/rank/medical/doctor/purple

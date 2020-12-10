@@ -1,0 +1,25 @@
+{
+	"map_name": "Galaxystation",
+	"map_path": "map_files/GalaxyStation",
+	"map_file": [
+		"Galaxystation.dmm",
+		"Galaxystation_LVL2.dmm"
+	],
+	"shuttles": {
+		"cargo": "cargo_box",
+		"ferry": "ferry_fancy",
+		"whiteship": "whiteship_delta",
+		"emergency": "emergency_box"
+	},
+	"traits": [
+		{
+			"Up" : 1,
+			"Linkage" : "Cross"
+		}, 
+		{
+			"Down" : -1,
+			"Baseturf" : "/turf/open/transparent/openspace",
+			"Linkage" : "Cross"
+		}
+	]
+}

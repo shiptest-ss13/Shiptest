@@ -97,12 +97,12 @@ GLOBAL_DATUM_INIT(crewmonitor, /datum/crewmonitor, new)
 	if(!z)
 		var/turf/T = get_turf(user)
 		z = T.z
-	var/list/zdata = update_data(z)
+	var/list/zdata = update_data(z, SSmapping.level_trait(z, ZTRAIT_STATION))
 	. = list()
 	.["sensors"] = zdata
 	.["link_allowed"] = isAI(user)
 
-/datum/crewmonitor/proc/update_data(z)
+/datum/crewmonitor/proc/update_data(z, station)
 	if(data_by_z["[z]"] && last_update["[z]"] && world.time <= last_update["[z]"] + SENSORS_UPDATE_PERIOD)
 		return data_by_z["[z]"]
 
@@ -129,7 +129,8 @@ GLOBAL_DATUM_INIT(crewmonitor, /datum/crewmonitor, new)
 			nanite_sensors = TRUE
 		// Check if their z-level is correct and if they are wearing a uniform.
 		// Accept H.z==0 as well in case the mob is inside an object.
-		if ((H.z == 0 || H.z == z) && (istype(H.w_uniform, /obj/item/clothing/under) || nanite_sensors))
+		// Accept any station zlevel if the console user is on a station zlevel
+		if ((H.z == 0 || H.z == z || (station && SSmapping.level_trait(H.z, ZTRAIT_STATION))) && (istype(H.w_uniform, /obj/item/clothing/under) || nanite_sensors))
 			U = H.w_uniform
 
 			// Are the suit sensors on?

@@ -47,12 +47,14 @@
 	uniform = /obj/item/clothing/under/rank/medical/doctor/blue
 	suit = /obj/item/clothing/suit/apron/surgical
 	mask = /obj/item/clothing/mask/surgical
+	suit_store = null
 
 /datum/outfit/job/doctor/nurse
 	name = "Medical Doctor (Nurse)"
 
 	head = /obj/item/clothing/head/nursehat
 	suit = null
+	suit_store = null
 	alt_uniform = /obj/item/clothing/under/rank/medical/doctor/nurse
 	accessory = /obj/item/clothing/accessory/armband/medblue
 

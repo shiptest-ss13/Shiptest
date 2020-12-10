@@ -131,8 +131,13 @@
 		dismantle_wall(1)
 		return
 
-/turf/closed/wall/attack_hulk(mob/user)
+/turf/closed/wall/attack_hulk(mob/living/carbon/user)
 	..()
+	var/obj/item/bodypart/arm = user.hand_bodyparts[user.active_hand_index]
+	if(!arm)
+		return
+	if(arm.bodypart_disabled)
+		return
 	if(prob(hardness))
 		playsound(src, 'sound/effects/meteorimpact.ogg', 100, TRUE)
 		user.say(pick(";RAAAAAAAARGH!", ";HNNNNNNNNNGGGGGGH!", ";GWAAAAAAAARRRHHH!", "NNNNNNNNGGGGGGGGHH!", ";AAAAAAARRRGH!" ), forced = "hulk")

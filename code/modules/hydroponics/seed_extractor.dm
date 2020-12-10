@@ -69,14 +69,14 @@
 
 /obj/machinery/seed_extractor/RefreshParts()
 	for(var/obj/item/stock_parts/matter_bin/B in component_parts)
-		max_seeds = max_seeds * B.rating
+		max_seeds *= B.rating
 	for(var/obj/item/stock_parts/manipulator/M in component_parts)
-		seed_multiplier = seed_multiplier * M.rating
+		seed_multiplier += M.rating
 
 /obj/machinery/seed_extractor/examine(mob/user)
 	. = ..()
 	if(in_range(user, src) || isobserver(user))
-		. += "<span class='notice'>The status display reads: Extracting <b>[seed_multiplier]</b> seed(s) per piece of produce.<br>Machine can store up to <b>[max_seeds]%</b> seeds.</span>"
+		. += "<span class='notice'>The status display reads: Seed extraction running at <b>[seed_multiplier]</b>x efficiency.<br>Machine can store up to <b>[max_seeds]%</b> seeds.</span>"
 
 /obj/machinery/seed_extractor/attackby(obj/item/O, mob/user, params)
 

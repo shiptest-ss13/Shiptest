@@ -198,7 +198,6 @@
 				visible_message("<span class='danger'>[user] grabs [src] by the neck!</span>",\
 								"<span class='userdanger'>[user] grabs you by the neck!</span>", "<span class='hear'>You hear aggressive shuffling!</span>", null, user)
 				to_chat(user, "<span class='danger'>You grab [src] by the neck!</span>")
-				update_mobility() //we fall down
 				if(!buckled && !density)
 					Move(user.loc)
 			if(GRAB_KILL)
@@ -206,7 +205,6 @@
 				visible_message("<span class='danger'>[user] is strangling [src]!</span>", \
 								"<span class='userdanger'>[user] is strangling you!</span>", "<span class='hear'>You hear aggressive shuffling!</span>", null, user)
 				to_chat(user, "<span class='danger'>You're strangling [src]!</span>")
-				update_mobility() //we fall down
 				if(!buckled && !density)
 					Move(user.loc)
 		user.set_pull_offsets(src, grab_state)

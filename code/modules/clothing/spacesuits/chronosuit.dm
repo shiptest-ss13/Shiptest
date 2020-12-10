@@ -273,7 +273,7 @@
 	if(target_ui)
 		QDEL_NULL(target_ui)
 
-/obj/effect/chronos_cam/relaymove(var/mob/user, direction)
+/obj/effect/chronos_cam/relaymove(mob/living/user, direction)
 	if(!holder)
 		qdel(src)
 		return

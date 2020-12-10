@@ -407,7 +407,7 @@
 
 	if(prob(99.5)) //The brawl mutation
 		return
-	if(owner.buckled || !(owner.mobility_flags & MOBILITY_STAND) || !((owner.mobility_flags & (MOBILITY_STAND | MOBILITY_MOVE)) == (MOBILITY_STAND | MOBILITY_MOVE)) || owner.throwing || owner.movement_type & (VENTCRAWLING | FLYING | FLOATING))
+	if(owner.buckled || owner.body_position == LYING_DOWN || HAS_TRAIT(owner, TRAIT_IMMOBILIZED) || owner.throwing || owner.movement_type & (VENTCRAWLING | FLYING | FLOATING))
 		return //remove the 'edge' cases
 	to_chat(owner, "<span class='danger'>You trip over your own feet.</span>")
 	owner.Knockdown(30)
@@ -435,7 +435,7 @@
 /datum/mutation/human/martyrdom/proc/bloody_shower(new_stat)
 	SIGNAL_HANDLER
 
-	if(new_stat != UNCONSCIOUS)
+	if(new_stat != HARD_CRIT)
 		return
 	var/list/organs = owner.getorganszone(BODY_ZONE_HEAD, 1)
 

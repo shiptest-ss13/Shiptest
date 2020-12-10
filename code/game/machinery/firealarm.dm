@@ -38,6 +38,14 @@
 	var/last_alarm = 0
 	var/area/myarea = null
 
+	FASTDMM_PROP(\
+		set_instance_vars(\
+			pixel_x = dir == EAST ? 26 : (dir == WEST ? -26 : INSTANCE_VAR_DEFAULT),\
+			pixel_y = dir == NORTH ? 26 : (dir == SOUTH ? -26 : INSTANCE_VAR_DEFAULT)\
+		),\
+		dir_amount = 4\
+    )
+
 /obj/machinery/firealarm/Initialize(mapload, dir, building)
 	. = ..()
 	if(dir)

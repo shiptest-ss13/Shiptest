@@ -16,8 +16,7 @@
 	var/breakout_time = 450
 
 /obj/machinery/abductor/experiment/MouseDrop_T(mob/target, mob/user)
-	var/mob/living/L = user
-	if(user.stat || (isliving(user) && (!(L.mobility_flags & MOBILITY_STAND) || !(L.mobility_flags & MOBILITY_UI))) || !Adjacent(user) || !target.Adjacent(user) || !ishuman(target))
+	if(user.stat != CONSCIOUS || HAS_TRAIT(user, TRAIT_UI_BLOCKED) || !Adjacent(user) || !target.Adjacent(user) || !ishuman(target))
 		return
 	if(isabductor(target))
 		return
@@ -34,14 +33,14 @@
 	if(state_open && !panel_open)
 		..(target)
 
-/obj/machinery/abductor/experiment/relaymove(mob/user)
+/obj/machinery/abductor/experiment/relaymove(mob/living/user, direction)
 	if(user.stat != CONSCIOUS)
 		return
 	if(message_cooldown <= world.time)
 		message_cooldown = world.time + 50
 		to_chat(user, "<span class='warning'>[src]'s door won't budge!</span>")
 
-/obj/machinery/abductor/experiment/container_resist(mob/living/user)
+/obj/machinery/abductor/experiment/container_resist_act(mob/living/user)
 	user.changeNext_move(CLICK_CD_BREAKOUT)
 	user.last_special = world.time + CLICK_CD_BREAKOUT
 	user.visible_message("<span class='notice'>You see [user] kicking against the door of [src]!</span>", \

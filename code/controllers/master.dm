@@ -35,9 +35,9 @@ GLOBAL_REAL(Master, /datum/controller/master) = new
 	var/tickdrift = 0
 
 	var/sleep_delta = 1
-	
+
 	///Only run ticker subsystems for the next n ticks.
-	var/skip_ticks = 0 
+	var/skip_ticks = 0
 
 	var/make_runtime = 0
 
@@ -451,7 +451,7 @@ GLOBAL_REAL(Master, /datum/controller/master) = new
 				break
 			queue_node_flags = queue_node.flags
 			queue_node_priority = queue_node.queued_priority
-			
+
 			if (!(queue_node_flags & SS_TICKER) && skip_ticks)
 				queue_node = queue_node.queue_next
 				continue
@@ -595,7 +595,7 @@ GLOBAL_REAL(Master, /datum/controller/master) = new
 /datum/controller/master/proc/laggy_byond_map_update_incoming()
 	if (!skip_ticks)
 		skip_ticks = 1
-		
+
 
 /datum/controller/master/stat_entry(msg)
 	msg = "(TickRate:[Master.processing]) (Iteration:[Master.iteration]) (TickLimit: [round(Master.current_ticklimit, 0.1)])"

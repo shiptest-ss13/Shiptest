@@ -10,6 +10,14 @@
 	var/obj/item/extinguisher/stored_extinguisher
 	var/opened = FALSE
 
+	FASTDMM_PROP(\
+		set_instance_vars(\
+			pixel_x = dir == EAST ? 27 : (dir == WEST ? -27 : INSTANCE_VAR_DEFAULT),\
+			pixel_y = dir == NORTH ? 30 : (dir == SOUTH ? -30 : INSTANCE_VAR_DEFAULT)\
+		),\
+		dir_amount = 4\
+    )
+
 /obj/structure/extinguisher_cabinet/Initialize(mapload, ndir, building)
 	. = ..()
 	if(building)

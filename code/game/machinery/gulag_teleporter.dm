@@ -83,7 +83,7 @@ The console is located at computer/gulag_teleporter.dm
 		return
 
 
-/obj/machinery/gulag_teleporter/relaymove(mob/user)
+/obj/machinery/gulag_teleporter/relaymove(mob/living/user, direction)
 	if(user.stat != CONSCIOUS)
 		return
 	if(locked)
@@ -93,7 +93,7 @@ The console is located at computer/gulag_teleporter.dm
 		return
 	open_machine()
 
-/obj/machinery/gulag_teleporter/container_resist(mob/living/user)
+/obj/machinery/gulag_teleporter/container_resist_act(mob/living/user)
 	if(!locked)
 		open_machine()
 		return

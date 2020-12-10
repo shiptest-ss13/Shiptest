@@ -104,12 +104,12 @@
 
 /obj/item/pda/heads
 	default_cartridge = /obj/item/cartridge/head
-	icon_state = "pda-head_of_personnel"
+	icon_state = "pda-hop"
 
 /obj/item/pda/heads/head_of_personnel
 	name = "head of personnel PDA"
 	default_cartridge = /obj/item/cartridge/head_of_personnel
-	icon_state = "pda-head_of_personnel"
+	icon_state = "pda-hop"
 
 /obj/item/pda/heads/hos
 	name = "head of security PDA"
@@ -189,18 +189,11 @@
 /obj/item/pda/curator
 	name = "curator PDA"
 	icon_state = "pda-library"
-	icon_alert = "pda-r-library"
 	// default_cartridge = /obj/item/cartridge/curator
 	inserted_item = /obj/item/pen/fountain
 	desc = "A portable microcomputer by Thinktronic Systems, LTD. This model is a WGW-11 series e-reader."
 	note = "Congratulations, your station has chosen the Thinktronic 5290 WGW-11 Series E-reader and Personal Data Assistant!"
 	silent = TRUE //Quiet in the library!
-	overlays_x_offset = -3
-
-/obj/item/pda/lieutenant
-	name = "lieutenant PDA"
-	default_cartridge = /obj/item/cartridge/hos
-	icon_state = "pda-h"
 
 /obj/item/pda/clear
 	name = "clear PDA"

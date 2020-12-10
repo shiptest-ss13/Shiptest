@@ -102,7 +102,7 @@
 	mask = /obj/item/clothing/mask/gas/hunter
 	glasses = /obj/item/clothing/glasses/sunglasses/garb
 	ears = /obj/item/radio/headset
-	l_pocket = /obj/item/tank/internals/plasma/full
+	l_pocket = /obj/item/tank/internals/emergency_oxygen
 	r_pocket = /obj/item/restraints/handcuffs/cable
 	id = /obj/item/card/id
 	r_hand = /obj/item/flamethrower/full/tank

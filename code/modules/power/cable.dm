@@ -41,6 +41,11 @@ By design, d1 is the smallest direction and d2 is the highest
 	var/d1 = 0   // cable direction 1 (see above)
 	var/d2 = 1   // cable direction 2 (see above)
 	var/datum/powernet/powernet
+	FASTDMM_PROP(\
+		pipe_group = "cable-[cable_layer]",\
+		pipe_type = PIPE_TYPE_AUTO,\
+		pipe_interference_group = "cable-[cable_layer]"\
+	)
 
 	var/obj/item/stack/cable_coil/stored
 
@@ -613,7 +618,7 @@ GLOBAL_LIST_INIT(cable_coil_recipes, list(new/datum/stack_recipe("cable restrain
 	C.d2 = dirn
 	C.add_fingerprint(user)
 	C.update_icon()
-	C.update_stored(1, cable_color) 
+	C.update_stored(1, cable_color)
 
 	//create a new powernet with the cable, if needed it will be merged later
 	var/datum/powernet/PN = new()
@@ -686,7 +691,7 @@ GLOBAL_LIST_INIT(cable_coil_recipes, list(new/datum/stack_recipe("cable restrain
 			NC.d2 = fdirn
 			NC.add_fingerprint(user)
 			NC.update_icon()
-			NC.update_stored(1, cable_color) 
+			NC.update_stored(1, cable_color)
 
 			//create a new powernet with the cable, if needed it will be merged later
 			var/datum/powernet/newPN = new(loc.z)

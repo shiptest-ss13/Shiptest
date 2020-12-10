@@ -31,7 +31,6 @@
 	host_mob.SetAllImmobility(0)
 	host_mob.adjustStaminaLoss(-75)
 	host_mob.set_resting(FALSE)
-	host_mob.update_mobility()
 	host_mob.reagents.add_reagent(/datum/reagent/medicine/stimulants, 1.5)
 
 /datum/nanite_program/hardening

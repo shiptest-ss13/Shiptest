@@ -45,7 +45,7 @@
 	. = ..()
 
 	if(shoes)
-		if(mobility_flags & MOBILITY_STAND)
+		if(body_position == STANDING_UP)
 			if(loc == NewLoc)
 				if(!has_gravity(loc))
 					return
@@ -69,9 +69,6 @@
 					update_inv_shoes()
 				//End bloody footprints
 				S.step_action()
-	// Limb crap
-	for(var/obj/item/bodypart/B in bodyparts)
-		B.on_mob_move()
 
 /mob/living/carbon/human/Process_Spacemove(movement_dir = 0) //Temporary laziness thing. Will change to handles by species reee.
 	if(dna.species.space_move(src))

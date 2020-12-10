@@ -69,6 +69,14 @@ GLOBAL_LIST_EMPTY(req_console_ckey_departments)
 	max_integrity = 300
 	armor = list("melee" = 70, "bullet" = 30, "laser" = 30, "energy" = 30, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 90, "acid" = 90)
 
+	FASTDMM_PROP(\
+		set_instance_vars(\
+			pixel_x = dir & EAST ? 32 : (dir & WEST ? -32 : INSTANCE_VAR_DEFAULT),\
+			pixel_y = dir & NORTH ? 32 : (dir & SOUTH ? -32 : INSTANCE_VAR_DEFAULT)\
+		),\
+		dir_amount = 8\
+    )
+
 /obj/machinery/requests_console/update_icon_state()
 	if(machine_stat & NOPOWER)
 		set_light(0)

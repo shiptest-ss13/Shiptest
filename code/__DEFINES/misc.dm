@@ -9,6 +9,8 @@
 #define TEXT_EAST			"[EAST]"
 #define TEXT_WEST			"[WEST]"
 
+/// Inverse direction, taking into account UP|DOWN if necessary.
+#define REVERSE_DIR(dir) ( ((dir & 85) << 1) | ((dir & 170) >> 1) )
 
 //Human Overlays Indexes/////////
 #define MUTATIONS_LAYER			29		//mutations. Tk headglows, cold resistance glow, etc
@@ -502,3 +504,6 @@ GLOBAL_LIST_INIT(pda_styles, sortList(list(MONO, VT, ORBITRON, SHARE)))
 #define ANON_DISABLED "" //so it's falsey
 #define ANON_RANDOMNAMES "Random Default"
 #define ANON_EMPLOYEENAMES "Employees"
+
+/// Possible value of [/atom/movable/buckle_lying]. If set to a different (positive-or-zero) value than this, the buckling thing will force a lying angle on the buckled.
+#define NO_BUCKLE_LYING -1

@@ -173,6 +173,9 @@ GLOBAL_LIST_EMPTY(PDAs)
 	if(inserted_item)
 		overlay.icon_state = "insert_overlay"
 		. += new /mutable_appearance(overlay)
+	if(cartridge) //waspedit: lol copy and pasted from PR #55072 on TGstation haha!!
+		overlay.icon_state = "cartridge_overlay" //does this work? fuck if I know!
+		. += new /mutable_appearance(overlay) //waspstation end
 	if(light_on)
 		overlay.icon_state = "light_overlay"
 		. += new /mutable_appearance(overlay)
@@ -720,7 +723,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 	else
 		L = get(src, /mob/living/silicon)
 
-	if(L && L.stat != UNCONSCIOUS)
+	if(L && (L.stat == CONSCIOUS || L.stat == SOFT_CRIT))
 		var/reply = "(<a href='byond://?src=[REF(src)];choice=Message;skiprefresh=1;target=[REF(signal.source)]'>Reply</a>)"
 		var/hrefstart
 		var/hrefend

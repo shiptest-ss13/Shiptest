@@ -10,9 +10,7 @@ GLOBAL_VAR(posibrain_notify_cooldown)
 	var/next_ask ///World time tick when ghost polling will be available again
 	var/askDelay = 600 ///Delay after polling ghosts
 	var/searching = FALSE
-	brainmob = null
 	req_access = list(ACCESS_ROBOTICS)
-	mecha = null//This does not appear to be used outside of reference in mecha.dm.
 	braintype = "Android"
 	var/autoping = TRUE ///If it pings on creation immediately
 	///Message sent to the user when polling ghosts
@@ -47,9 +45,8 @@ GLOBAL_VAR(posibrain_notify_cooldown)
 
 /obj/item/mmi/posibrain/attack_self(mob/user)
 	if(!brainmob)
-		brainmob = new(src)
+		set_brainmob(new /mob/living/brain(src))
 	if(is_occupied())
-		to_chat(user, "<span class='warning'>This [name] is already active!</span>")
 		return
 	if(next_ask > world.time)
 		to_chat(user, recharge_message)
@@ -174,7 +171,7 @@ GLOBAL_VAR(posibrain_notify_cooldown)
 
 /obj/item/mmi/posibrain/Initialize()
 	. = ..()
-	brainmob = new(src)
+	set_brainmob(new /mob/living/brain(src))
 	var/new_name
 	if(!LAZYLEN(possible_names))
 		new_name = pick(GLOB.posibrain_names)
@@ -186,6 +183,7 @@ GLOBAL_VAR(posibrain_notify_cooldown)
 	brainmob.container = src
 	if(autoping)
 		ping_ghosts("created", TRUE)
+
 
 /obj/item/mmi/posibrain/attackby(obj/item/O, mob/user)
 	return

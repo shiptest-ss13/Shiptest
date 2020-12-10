@@ -477,6 +477,8 @@
 	. = ..()
 	if(.)
 		return
+	if(!allowed(user))
+		return
 	playsound(loc, 'sound/effects/curtain.ogg', 50, TRUE)
 	toggle()
 

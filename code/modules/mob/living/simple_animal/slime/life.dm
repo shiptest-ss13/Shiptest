@@ -2,7 +2,6 @@
 /mob/living/simple_animal/slime
 	var/AIproc = 0 // determines if the AI loop is activated
 	var/Atkcool = 0 // attack cooldown
-	var/Tempstun = 0 // temporary temperature stuns
 	var/Discipline = 0 // if a slime has been hit with a freeze gun, or wrestled/attacked off a human, they become disciplined and don't attack anymore for a while
 	var/SStun = 0 // stun variable
 
@@ -24,11 +23,15 @@
 				handle_mood()
 				handle_speech()
 
-// Unlike most of the simple animals, slimes support UNCONSCIOUS
+
+// Unlike most of the simple animals, slimes support UNCONSCIOUS. This is an ugly hack.
 /mob/living/simple_animal/slime/update_stat()
-	if(stat == UNCONSCIOUS && health > 0)
-		return
-	..()
+	switch(stat)
+		if(UNCONSCIOUS, HARD_CRIT)
+			if(health > 0)
+				return
+	return ..()
+
 
 /mob/living/simple_animal/slime/proc/AIprocess()  // the master AI process
 
@@ -72,7 +75,7 @@
 						if(Target.Adjacent(src))
 							Target.attack_slime(src)
 					break
-				if((Target.mobility_flags & MOBILITY_STAND) && prob(80))
+				if((Target.body_position == STANDING_UP) && prob(80))
 
 					if(Target.client && Target.health >= 20)
 						if(!Atkcool)
@@ -122,7 +125,9 @@
 
 	if(bodytemperature < (T0C + 5)) // start calculating temperature damage etc
 		if(bodytemperature <= (T0C - 40)) // stun temperature
-			Tempstun = 1
+			ADD_TRAIT(src, TRAIT_IMMOBILIZED, SLIME_COLD)
+		else
+			REMOVE_TRAIT(src, TRAIT_IMMOBILIZED, SLIME_COLD)
 
 		if(bodytemperature <= (T0C - 50)) // hurt temperature
 			if(bodytemperature <= 50) // sqrting negative numbers is bad
@@ -130,28 +135,28 @@
 			else
 				adjustBruteLoss(round(sqrt(bodytemperature)) * 2)
 	else
-		Tempstun = 0
+		REMOVE_TRAIT(src, TRAIT_IMMOBILIZED, SLIME_COLD)
 
 	if(stat != DEAD)
 		var/bz_percentage = environment.total_moles() ? (environment.get_moles(/datum/gas/bz) / environment.total_moles()) : 0
 		var/stasis = (bz_percentage >= 0.05 && bodytemperature < (T0C + 100)) || force_stasis
 
-		if(stat == CONSCIOUS && stasis)
-			to_chat(src, "<span class='danger'>Nerve gas in the air has put you in stasis!</span>")
-			set_stat(UNCONSCIOUS)
-			powerlevel = 0
-			rabid = 0
-			update_mobility()
-			regenerate_icons()
-		else if(stat == UNCONSCIOUS && !stasis)
-			to_chat(src, "<span class='notice'>You wake up from the stasis.</span>")
-			set_stat(CONSCIOUS)
-			update_mobility()
-			regenerate_icons()
+		switch(stat)
+			if(CONSCIOUS)
+				if(stasis)
+					to_chat(src, "<span class='danger'>Nerve gas in the air has put you in stasis!</span>")
+					set_stat(UNCONSCIOUS)
+					powerlevel = 0
+					rabid = FALSE
+					regenerate_icons()
+			if(UNCONSCIOUS, HARD_CRIT)
+				if(!stasis)
+					to_chat(src, "<span class='notice'>You wake up from the stasis.</span>")
+					set_stat(CONSCIOUS)
+					regenerate_icons()
 
 	updatehealth()
 
-	return //TODO: DEFERRED
 
 /mob/living/simple_animal/slime/handle_status_effects()
 	..()
@@ -259,11 +264,6 @@
 
 
 /mob/living/simple_animal/slime/proc/handle_targets()
-	update_mobility()
-	if(Tempstun)
-		if(!buckled) // not while they're eating!
-			mobility_flags &= ~MOBILITY_MOVE
-
 	if(attacked > 50)
 		attacked = 50
 
@@ -360,13 +360,13 @@
 			if (Leader)
 				if(holding_still)
 					holding_still = max(holding_still - 1, 0)
-				else if((mobility_flags & MOBILITY_MOVE) && isturf(loc))
+				else if(!HAS_TRAIT(src, TRAIT_IMMOBILIZED) && isturf(loc))
 					step_to(src, Leader)
 
 			else if(hungry)
 				if (holding_still)
 					holding_still = max(holding_still - hungry, 0)
-				else if((mobility_flags & MOBILITY_MOVE) && isturf(loc) && prob(50))
+				else if(!HAS_TRAIT(src, TRAIT_IMMOBILIZED) && isturf(loc) && prob(50))
 					step(src, pick(GLOB.cardinals))
 
 			else
@@ -374,7 +374,7 @@
 					holding_still = max(holding_still - 1, 0)
 				else if (docile && pulledby)
 					holding_still = 10
-				else if((mobility_flags & MOBILITY_MOVE) && isturf(loc) && prob(33))
+				else if(!HAS_TRAIT(src, TRAIT_IMMOBILIZED) && isturf(loc) && prob(33))
 					step(src, pick(GLOB.cardinals))
 		else if(!AIproc)
 			INVOKE_ASYNC(src, .proc/AIprocess)

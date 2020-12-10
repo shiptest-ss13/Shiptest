@@ -668,7 +668,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 				else
 					standing += mutable_appearance(undershirt.icon, undershirt.icon_state, -BODY_LAYER)
 
-		if(H.socks && H.get_num_legs(FALSE) >= 2 && !(DIGITIGRADE in species_traits))
+		if(H.socks && H.num_legs >= 2 && !(DIGITIGRADE in species_traits))
 			var/datum/sprite_accessory/socks/socks = GLOB.socks_list[H.socks]
 			if(socks)
 				standing += mutable_appearance(socks.icon, socks.icon_state, -BODY_LAYER)
@@ -966,9 +966,6 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		if(!I.species_exception || !is_type_in_list(src, I.species_exception))
 			return FALSE
 
-	var/num_arms = H.get_num_arms(FALSE)
-	var/num_legs = H.get_num_legs(FALSE)
-
 	switch(slot)
 		if(ITEM_SLOT_HANDS)
 			if(H.get_empty_held_indexes())
@@ -1005,7 +1002,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 				return FALSE
 			if( !(I.slot_flags & ITEM_SLOT_GLOVES) )
 				return FALSE
-			if(num_arms < 2)
+			if(H.num_hands < 2)
 				return FALSE
 			return equip_delay_self_check(I, H, bypass_equip_delay_self)
 		if(ITEM_SLOT_FEET)
@@ -1013,7 +1010,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 				return FALSE
 			if( !(I.slot_flags & ITEM_SLOT_FEET) )
 				return FALSE
-			if(num_legs < 2)
+			if(H.num_legs < 2)
 				return FALSE
 			if((DIGITIGRADE in species_traits) == (I.obj_flags != DIGITIGRADE_SHOE)) //WaspStation Start - Digitigrade Magboots
 				if(!(DIGITIGRADE_COMPATIBLE & I.obj_flags))
@@ -1133,7 +1130,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 				return FALSE
 			if(!istype(I, /obj/item/restraints/handcuffs))
 				return FALSE
-			if(num_arms < 2)
+			if(H.num_hands < 2)
 				return FALSE
 			return TRUE
 		if(ITEM_SLOT_LEGCUFFED)
@@ -1141,7 +1138,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 				return FALSE
 			if(!istype(I, /obj/item/restraints/legcuffs))
 				return FALSE
-			if(num_legs < 2)
+			if(H.num_legs < 2)
 				return FALSE
 			return TRUE
 		if(ITEM_SLOT_BACKPACK)
@@ -1340,12 +1337,13 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 /datum/species/proc/spec_fully_heal(mob/living/carbon/human/H)
 	return
 
+
 /datum/species/proc/help(mob/living/carbon/human/user, mob/living/carbon/human/target, datum/martial_art/attacker_style)
-	if(!((target.health < 0 || HAS_TRAIT(target, TRAIT_FAKEDEATH)) && !(target.mobility_flags & MOBILITY_STAND)))
+	if(target.body_position == STANDING_UP || (target.health >= 0 && !HAS_TRAIT(target, TRAIT_FAKEDEATH)))
 		target.help_shake_act(user)
 		if(target != user)
 			log_combat(user, target, "shaken")
-		return 1
+		return TRUE
 	else
 		var/we_breathe = !HAS_TRAIT(user, TRAIT_NOBREATH)
 		var/we_lung = user.getorganslot(ORGAN_SLOT_LUNGS)
@@ -1367,7 +1365,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		return TRUE
 	else
 		//Steal them shoes
-		if(!(target.mobility_flags & MOBILITY_STAND) && (user.zone_selected == BODY_ZONE_L_LEG || user.zone_selected == BODY_ZONE_R_LEG) && user.a_intent == INTENT_GRAB && target.shoes)
+		if(target.body_position == LYING_DOWN && (user.zone_selected == BODY_ZONE_L_LEG || user.zone_selected == BODY_ZONE_R_LEG) && user.a_intent == INTENT_GRAB && target.shoes)
 			var/obj/item/I = target.shoes
 			user.visible_message("<span class='warning'>[user] starts stealing [target]'s [I.name]!</span>",
 							"<span class='danger'>You start stealing [target]'s [I.name]...</span>", null, null, target)
@@ -1396,7 +1394,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	else
 
 		var/atk_verb = user.dna.species.attack_verb
-		if(!(target.mobility_flags & MOBILITY_STAND))
+		if(target.body_position == LYING_DOWN)
 			atk_verb = ATTACK_EFFECT_KICK
 
 		switch(atk_verb)//this code is really stupid but some genius apparently made "claw" and "slash" two attack types but also the same one so it's needed i guess
@@ -1415,7 +1413,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 
 		var/miss_chance = 100//calculate the odds that a punch misses entirely. considers stamina and brute damage of the puncher. punches miss by default to prevent weird cases
 		if(user.dna.species.punchdamagelow)
-			if(atk_verb == ATTACK_EFFECT_KICK) //kicks never miss (provided your species deals more than 0 damage)
+			if(atk_verb == ATTACK_EFFECT_KICK || HAS_TRAIT(src, TRAIT_PERFECT_ATTACKER)) //kicks never miss (provided your species deals more than 0 damage)
 				miss_chance = 0
 			else
 				miss_chance = min((user.dna.species.punchdamagehigh/user.dna.species.punchdamagelow) + user.getStaminaLoss() + (user.getBruteLoss()*0.5), 100) //old base chance for a miss + various damage. capped at 100 to prevent weirdness in prob()
@@ -2109,7 +2107,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		return FALSE
 
 /datum/species/proc/CanFly(mob/living/carbon/human/H)
-	if(H.stat || !(H.mobility_flags & MOBILITY_STAND))
+	if(H.stat || H.body_position == LYING_DOWN)
 		return FALSE
 	if(H.wear_suit && ((H.wear_suit.flags_inv & HIDEJUMPSUIT) && (!H.wear_suit.species_exception || !is_type_in_list(src, H.wear_suit.species_exception))))	//Jumpsuits have tail holes, so it makes sense they have wing holes too
 		to_chat(H, "<span class='warning'>Your suit blocks your wings from extending!</span>")
@@ -2156,7 +2154,6 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		override_float = TRUE
 		passtable_on(H, SPECIES_TRAIT)
 		H.OpenWings()
-		H.update_mobility()
 	else
 		stunmod *= 0.5
 		speedmod += 0.35
@@ -2167,7 +2164,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 
 /datum/action/innate/flight
 	name = "Toggle Flight"
-	check_flags = AB_CHECK_CONSCIOUS|AB_CHECK_STUN
+	check_flags = AB_CHECK_CONSCIOUS|AB_CHECK_IMMOBILE
 	icon_icon = 'icons/mob/actions/actions_items.dmi'
 	button_icon_state = "flight"
 

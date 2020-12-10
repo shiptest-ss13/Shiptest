@@ -247,7 +247,7 @@
 
 		air1.set_moles(/datum/gas/oxygen, max(0,air1.get_moles(/datum/gas/oxygen) - 0.5 / efficiency)) // Magically consume gas? Why not, we run on cryo magic.
 
-/obj/machinery/atmospherics/components/unary/cryo_cell/relaymove(mob/user)
+/obj/machinery/atmospherics/components/unary/cryo_cell/relaymove(mob/living/user, direction)
 	if(message_cooldown <= world.time)
 		message_cooldown = world.time + 50
 		to_chat(user, "<span class='warning'>[src]'s door won't budge!</span>")
@@ -257,9 +257,6 @@
 		on = FALSE
 	for(var/mob/M in contents) //only drop mobs
 		M.forceMove(get_turf(src))
-		if(isliving(M))
-			var/mob/living/L = M
-			L.update_mobility()
 	occupant = null
 	flick("pod-open-anim", src)
 	..()
@@ -270,7 +267,7 @@
 		..(user)
 		return occupant
 
-/obj/machinery/atmospherics/components/unary/cryo_cell/container_resist(mob/living/user)
+/obj/machinery/atmospherics/components/unary/cryo_cell/container_resist_act(mob/living/user)
 	user.changeNext_move(CLICK_CD_BREAKOUT)
 	user.last_special = world.time + CLICK_CD_BREAKOUT
 	user.visible_message("<span class='notice'>You see [user] kicking against the glass of [src]!</span>", \
@@ -359,7 +356,7 @@
 			if(SOFT_CRIT)
 				data["occupant"]["stat"] = "Conscious"
 				data["occupant"]["statstate"] = "average"
-			if(UNCONSCIOUS)
+			if(UNCONSCIOUS, HARD_CRIT)
 				data["occupant"]["stat"] = "Unconscious"
 				data["occupant"]["statstate"] = "average"
 			if(DEAD)

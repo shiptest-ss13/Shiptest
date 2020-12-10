@@ -305,7 +305,7 @@
 /datum/reagent/fuel/unholywater/on_mob_life(mob/living/carbon/M)
 	if(iscultist(M))
 		M.drowsyness = max(M.drowsyness-5, 0)
-		M.AdjustAllImmobility(-40, FALSE)
+		M.AdjustAllImmobility(-40)
 		M.adjustStaminaLoss(-10, 0)
 		M.adjustToxLoss(-2, 0)
 		M.adjustOxyLoss(-2, 0)
@@ -813,7 +813,7 @@
 	taste_mult = 0 // apparently tasteless.
 
 /datum/reagent/mercury/on_mob_life(mob/living/carbon/M)
-	if((M.mobility_flags & MOBILITY_MOVE) && !isspaceturf(M.loc))
+	if(!HAS_TRAIT(src, TRAIT_IMMOBILIZED) && !isspaceturf(M.loc))
 		step(M, pick(GLOB.cardinals))
 	if(prob(5))
 		M.emote(pick("twitch","drool","moan"))
@@ -887,7 +887,7 @@
 	taste_description = "metal"
 
 /datum/reagent/lithium/on_mob_life(mob/living/carbon/M)
-	if((M.mobility_flags & MOBILITY_MOVE) && !isspaceturf(M.loc))
+	if(!HAS_TRAIT(M, TRAIT_IMMOBILIZED) && !isspaceturf(M.loc))
 		step(M, pick(GLOB.cardinals))
 	if(prob(5))
 		M.emote(pick("twitch","drool","moan"))
@@ -2167,5 +2167,5 @@
 	name = "Liquid Adamantine"
 	description = "A legengary lifegiving metal liquified."
 	color = "#10cca6" //RGB: 16, 204, 166
-	taste_description = "lifegiiving metal"
+	taste_description = "lifegiving metal"
 	can_synth = FALSE

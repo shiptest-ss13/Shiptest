@@ -47,7 +47,7 @@
 		for(var/mob/living/carbon/human/M in loc)
 			if(M == H)
 				continue
-			if(!(M.mobility_flags & MOBILITY_STAND))
+			if(M.body_position == LYING_DOWN)
 				visible_message("<span class='danger'>\the [src] grinds [M.name] into a fine paste!</span>")
 				if (M.stat != DEAD)
 					gib_scream = TRUE

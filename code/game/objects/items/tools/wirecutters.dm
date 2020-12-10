@@ -50,7 +50,7 @@
 	base_overlay.appearance_flags = RESET_COLOR
 	. += base_overlay
 
-/obj/item/screwdriver/get_belt_overlay()
+/obj/item/wirecutters/get_belt_overlay()
 	if(random_color)
 		var/mutable_appearance/body = mutable_appearance('waspstation/icons/obj/clothing/belt_overlays.dmi', "cutters")
 		var/mutable_appearance/head = mutable_appearance('waspstation/icons/obj/clothing/belt_overlays.dmi', "cutters_head")

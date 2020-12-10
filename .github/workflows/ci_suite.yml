@@ -92,6 +92,7 @@ jobs:
           source $HOME/BYOND/byond/bin/byondsetup
           bash tools/ci/dm.sh -DCIBUILDING tgstation.dme
           bash tools/ci/run_server.sh
+
 #  test_windows:
 #    name: Windows Build
 #    runs-on: windows-latest

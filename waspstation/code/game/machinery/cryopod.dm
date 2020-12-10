@@ -204,11 +204,24 @@ GLOBAL_LIST_EMPTY(cryopod_computers)
 
 	return control_computer != null
 
-/obj/machinery/cryopod/close_machine(mob/user)
+/obj/machinery/cryopod/JoinPlayerHere(mob/M, buckle)
+	close_machine(M, TRUE)
+
+/obj/machinery/cryopod/latejoin/Initialize()
+	. = ..()
+	new /obj/effect/landmark/latejoin(src)
+
+/obj/machinery/cryopod/close_machine(mob/user, exiting = FALSE)
 	if(!control_computer)
 		find_control_computer(TRUE)
 	if((isnull(user) || istype(user)) && state_open && !panel_open)
 		..(user)
+		if(exiting && istype(user, /mob/living/carbon))
+			var/mob/living/carbon/C = user
+			C.SetSleeping(50)
+			to_chat(occupant, "<span class='boldnotice'>You begin to wake from cryosleep...</span>")
+			icon_state = "cryopod"
+			return		
 		var/mob/living/mob_occupant = occupant
 		if(mob_occupant && mob_occupant.stat != DEAD)
 			to_chat(occupant, "<span class='boldnotice'>You feel cool air surround you. You go numb as your senses turn inward.</span>")
@@ -224,13 +237,13 @@ GLOBAL_LIST_EMPTY(cryopod_computers)
 	density = TRUE
 	name = initial(name)
 
-/obj/machinery/cryopod/container_resist(mob/living/user)
+/obj/machinery/cryopod/container_resist_act(mob/living/user)
 	visible_message("<span class='notice'>[occupant] emerges from [src]!</span>",
 		"<span class='notice'>You climb out of [src]!</span>")
 	open_machine()
 
 /obj/machinery/cryopod/relaymove(mob/user)
-	container_resist(user)
+	container_resist_act(user)
 
 /obj/machinery/cryopod/process()
 	if(!occupant)

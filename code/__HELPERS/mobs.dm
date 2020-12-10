@@ -338,7 +338,7 @@ GLOBAL_LIST_EMPTY(species_list)
 	return
 
 ///Timed action involving at least one mob user and a list of targets.
-/proc/do_after_mob(mob/user, list/targets, time = 3 SECONDS, uninterruptible = FALSE, progress = TRUE, datum/callback/extra_checks, required_mobility_flags = MOBILITY_STAND)
+/proc/do_after_mob(mob/user, list/targets, time = 3 SECONDS, uninterruptible = FALSE, progress = TRUE, datum/callback/extra_checks)
 	if(!user)
 		return FALSE
 	if(!islist(targets))
@@ -362,9 +362,6 @@ GLOBAL_LIST_EMPTY(species_list)
 
 	var/endtime = world.time + time
 	var/starttime = world.time
-	var/mob/living/L
-	if(isliving(user))
-		L = user
 	. = TRUE
 	mainloop:
 		while(world.time < endtime)
@@ -380,10 +377,6 @@ GLOBAL_LIST_EMPTY(species_list)
 			if(drifting && !user.inertia_dir)
 				drifting = FALSE
 				user_loc = user.loc
-
-			if(L && !((L.mobility_flags & required_mobility_flags) == required_mobility_flags))
-				. = FALSE
-				break
 
 			for(var/atom/target in targets)
 				if((!drifting && user_loc != user.loc) || QDELETED(target) || originalloc[target] != target.loc || user.get_active_held_item() != holding || user.incapacitated() || (extra_checks && !extra_checks.Invoke()))

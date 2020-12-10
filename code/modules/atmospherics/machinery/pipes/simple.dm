@@ -22,7 +22,7 @@
 	)
 
 /obj/machinery/atmospherics/pipe/simple/SetInitDirections()
-	if(dir in GLOB.diagonals)
+	if(ISDIAGONALDIR(dir))
 		initialize_directions = dir
 		return
 	switch(dir)

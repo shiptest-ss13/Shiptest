@@ -15,9 +15,8 @@
 	desc = "Used for pulsing wires to test which to cut. Not recommended by doctors."
 	icon = 'waspstation/icons/obj/tools.dmi' //WaspStation Edit - Better Tool Sprites
 	icon_state = "multitool"
-	item_state = "multitool"
-	lefthand_file = 'icons/mob/inhands/equipment/tools_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/equipment/tools_righthand.dmi'
+	lefthand_file = 'waspstation/icons/mob/inhands/equipment/tools_lefthand.dmi'
+	righthand_file = 'waspstation/icons/mob/inhands/equipment/tools_righthand.dmi'
 	force = 5
 	w_class = WEIGHT_CLASS_SMALL
 	tool_behaviour = TOOL_MULTITOOL

@@ -37,6 +37,10 @@
 
 	vis_flags = VIS_INHERIT_PLANE //when this be added to vis_contents of something it inherit something.plane, important for visualisation of obj in openspace.
 
+	FASTDMM_PROP(\
+		pinned_vars = list("name", "dir")\
+	)
+
 /obj/vv_edit_var(vname, vval)
 	if(vname == NAMEOF(src, obj_flags))
 		if ((obj_flags & DANGEROUS_POSSESSION) && !(vval & DANGEROUS_POSSESSION))
@@ -67,6 +71,11 @@
 	if((obj_flags & ON_BLUEPRINTS) && isturf(loc))
 		var/turf/T = loc
 		T.add_blueprints_preround(src)
+
+	for(var/i = 1; i < SStextobfs.obf_string_list.len + 1; i++)
+		if(src.name == SStextobfs.obf_string_list[i][4])
+			src.name = SStextobfs.obf_string_list[i][1]
+			break
 
 /obj/Destroy(force=FALSE)
 	if(!ismachinery(src))
@@ -164,9 +173,6 @@
 	if(.)
 		return
 	ui_interact(user)
-
-/obj/proc/container_resist(mob/living/user)
-	return
 
 /mob/proc/unset_machine()
 	if(machine)

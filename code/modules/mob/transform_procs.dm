@@ -136,7 +136,7 @@
 		O.Immobilize(AmountImmobilized(), ignore_canstun = TRUE)
 		O.Paralyze(AmountParalyzed(), ignore_canstun = TRUE)
 		O.Unconscious(AmountUnconscious(), ignore_canstun = TRUE)
-		O.Sleeping(AmountSleeping(), ignore_canstun = TRUE)
+		O.Sleeping(AmountSleeping())
 
 	//transfer reagents
 	if(tr_flags & TR_KEEPREAGENTS)
@@ -313,7 +313,7 @@
 		O.Immobilize(AmountImmobilized(), ignore_canstun = TRUE)
 		O.Paralyze(AmountParalyzed(), ignore_canstun = TRUE)
 		O.Unconscious(AmountUnconscious(), ignore_canstun = TRUE)
-		O.Sleeping(AmountSleeping(), ignore_canstun = TRUE)
+		O.Sleeping(AmountSleeping())
 
 	//transfer reagents
 	if(tr_flags & TR_KEEPREAGENTS)
@@ -444,7 +444,8 @@
 	if (notransform)
 		return
 	notransform = TRUE
-	mobility_flags = NONE
+	ADD_TRAIT(src, TRAIT_IMMOBILIZED, TRAIT_GENERIC)
+	ADD_TRAIT(src, TRAIT_HANDS_BLOCKED, TRAIT_GENERIC)
 	for(var/obj/item/W in src)
 		dropItemToGround(W)
 	regenerate_icons()
@@ -475,7 +476,8 @@
 	if (notransform)
 		return
 	notransform = TRUE
-	mobility_flags = NONE
+	ADD_TRAIT(src, TRAIT_IMMOBILIZED, TRAIT_GENERIC)
+	ADD_TRAIT(src, TRAIT_HANDS_BLOCKED, TRAIT_GENERIC)
 	for(var/obj/item/W in src)
 		dropItemToGround(W)
 	regenerate_icons()
