@@ -119,16 +119,6 @@
 	},
 /turf/open/floor/engine,
 /area/engine/engineering)
-"dK" = (
-/obj/machinery/atmospherics/components/binary/pump/on{
-	dir = 8;
-	name = "Gas to Cooling Loop"
-	},
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/turf/open/floor/engine,
-/area/engine/engineering)
 "ev" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -167,13 +157,6 @@
 "eP" = (
 /obj/structure/cable{
 	icon_state = "1-2"
-	},
-/turf/open/floor/engine,
-/area/engine/engineering)
-"fa" = (
-/obj/effect/turf_decal/stripes/corner,
-/obj/structure/cable{
-	icon_state = "1-8"
 	},
 /turf/open/floor/engine,
 /area/engine/engineering)
@@ -761,6 +744,16 @@
 	},
 /turf/closed/wall/r_wall,
 /area/engine/engineering)
+"sX" = (
+/obj/machinery/atmospherics/components/binary/pump{
+	dir = 8;
+	name = "Mix to Gas"
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/engine,
+/area/engine/engineering)
 "tc" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
@@ -858,6 +851,18 @@
 	},
 /turf/open/floor/engine,
 /area/engine/engineering)
+"vM" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 4
+	},
+/obj/effect/turf_decal/stripes/corner{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/turf/open/floor/engine,
+/area/engine/engineering)
 "vP" = (
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
@@ -881,18 +886,6 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
-/area/engine/engineering)
-"ww" = (
-/obj/effect/turf_decal/stripes/corner{
-	dir = 1
-	},
-/obj/structure/cable{
-	icon_state = "2-8"
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/turf/open/floor/engine,
 /area/engine/engineering)
 "wA" = (
 /obj/machinery/atmospherics/components/binary/pump/on{
@@ -1094,18 +1087,6 @@
 	},
 /turf/open/floor/engine,
 /area/engine/engineering)
-"BH" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
-	dir = 4
-	},
-/obj/effect/turf_decal/stripes/corner{
-	dir = 4
-	},
-/obj/structure/cable{
-	icon_state = "2-8"
-	},
-/turf/open/floor/engine,
-/area/engine/engineering)
 "BN" = (
 /obj/effect/turf_decal/stripes/corner{
 	dir = 4
@@ -1168,6 +1149,15 @@
 /obj/machinery/atmospherics/pipe/simple/cyan/visible,
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
+	},
+/turf/open/floor/engine,
+/area/engine/engineering)
+"Dd" = (
+/obj/effect/turf_decal/stripes/corner{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "1-4"
 	},
 /turf/open/floor/engine,
 /area/engine/engineering)
@@ -1349,15 +1339,6 @@
 /obj/effect/spawner/structure/window/plasma/reinforced,
 /turf/open/floor/plating,
 /area/engine/engineering)
-"GB" = (
-/obj/effect/turf_decal/stripes/corner{
-	dir = 8
-	},
-/obj/structure/cable{
-	icon_state = "1-4"
-	},
-/turf/open/floor/engine,
-/area/engine/engineering)
 "GH" = (
 /obj/machinery/atmospherics/pipe/manifold/general/visible{
 	dir = 1
@@ -1443,6 +1424,25 @@
 /obj/structure/table,
 /obj/item/stack/sheet/metal/fifty,
 /turf/open/floor/plasteel/dark,
+/area/engine/engineering)
+"HW" = (
+/obj/effect/turf_decal/stripes/corner,
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/turf/open/floor/engine,
+/area/engine/engineering)
+"Ip" = (
+/obj/effect/turf_decal/stripes/corner{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/engine,
 /area/engine/engineering)
 "IA" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
@@ -1645,16 +1645,6 @@
 /obj/machinery/atmospherics/pipe/simple/green/visible,
 /turf/closed/wall/r_wall,
 /area/engine/supermatter)
-"Pc" = (
-/obj/machinery/atmospherics/components/binary/pump{
-	dir = 8;
-	name = "Mix to Gas"
-	},
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/turf/open/floor/engine,
-/area/engine/engineering)
 "Pg" = (
 /obj/machinery/atmospherics/pipe/simple/cyan/visible,
 /turf/closed/wall/r_wall,
@@ -1869,6 +1859,16 @@
 	},
 /turf/open/floor/engine,
 /area/engine/supermatter)
+"VL" = (
+/obj/machinery/atmospherics/components/binary/pump/on{
+	dir = 8;
+	name = "Gas to Cooling Loop"
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/engine,
+/area/engine/engineering)
 "VR" = (
 /obj/machinery/atmospherics/components/trinary/filter/flipped/critical{
 	dir = 8;
@@ -2357,17 +2357,17 @@ pR
 (12,1,1) = {"
 NL
 Pm
-ww
+Ip
 eP
 eP
 eP
 eP
-dK
+VL
 eP
 eP
 wA
 eP
-GB
+Dd
 kR
 tc
 ce
@@ -2693,17 +2693,17 @@ pR
 (24,1,1) = {"
 zj
 Qn
-BH
+vM
 is
 eP
 eP
 eP
-Pc
+sX
 eP
 eP
 vJ
 eP
-fa
+HW
 JP
 wM
 HU

@@ -6,6 +6,7 @@
 #define POLL_IGNORE_SYNDICATE "syndicate"
 #define POLL_IGNORE_HOLOPARASITE "holoparasite"
 #define POLL_IGNORE_POSIBRAIN "posibrain"
+#define POLL_IGNORE_EM_HOLOGRAM "emergency_hologram"
 #define POLL_IGNORE_SPECTRAL_BLADE "spectral_blade"
 #define POLL_IGNORE_CONSTRUCT "construct"
 #define POLL_IGNORE_SPIDER "spider"
@@ -30,6 +31,7 @@ GLOBAL_LIST_INIT(poll_ignore_desc, list(
 	POLL_IGNORE_SYNDICATE = "Syndicate",
 	POLL_IGNORE_HOLOPARASITE = "Holoparasite",
 	POLL_IGNORE_POSIBRAIN = "Positronic brain",
+	POLL_IGNORE_EM_HOLOGRAM = "Emergency Hologram",
 	POLL_IGNORE_SPECTRAL_BLADE = "Spectral blade",
 	POLL_IGNORE_CONSTRUCT = "Construct",
 	POLL_IGNORE_SPIDER = "Spiders",

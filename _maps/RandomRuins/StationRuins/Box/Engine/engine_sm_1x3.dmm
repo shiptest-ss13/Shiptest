@@ -54,15 +54,6 @@
 	},
 /turf/open/floor/engine,
 /area/engine/engineering)
-"bJ" = (
-/obj/effect/turf_decal/stripes/corner{
-	dir = 8
-	},
-/obj/structure/cable{
-	icon_state = "1-4"
-	},
-/turf/open/floor/engine,
-/area/engine/engineering)
 "bM" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
@@ -124,16 +115,6 @@
 	},
 /turf/open/floor/engine,
 /area/engine/engineering)
-"cJ" = (
-/obj/machinery/atmospherics/components/binary/pump{
-	dir = 8;
-	name = "Mix to Gas"
-	},
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/turf/open/floor/engine,
-/area/engine/engineering)
 "dn" = (
 /turf/template_noop,
 /area/template_noop)
@@ -164,16 +145,6 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/dark,
-/area/engine/engineering)
-"eJ" = (
-/obj/machinery/atmospherics/components/binary/pump/on{
-	dir = 8;
-	name = "Gas to Cooling Loop"
-	},
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/turf/open/floor/engine,
 /area/engine/engineering)
 "eM" = (
 /obj/effect/turf_decal/stripes/line{
@@ -329,6 +300,18 @@
 	},
 /turf/open/floor/engine,
 /area/engine/engineering)
+"lj" = (
+/obj/effect/turf_decal/stripes/corner{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/engine,
+/area/engine/engineering)
 "ln" = (
 /obj/effect/turf_decal/delivery,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/visible,
@@ -444,13 +427,6 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /obj/effect/turf_decal/stripes/line{
 	dir = 4
-	},
-/turf/open/floor/engine,
-/area/engine/engineering)
-"ok" = (
-/obj/effect/turf_decal/stripes/corner,
-/obj/structure/cable{
-	icon_state = "1-8"
 	},
 /turf/open/floor/engine,
 /area/engine/engineering)
@@ -899,18 +875,6 @@
 	},
 /turf/open/floor/engine,
 /area/engine/engineering)
-"zc" = (
-/obj/effect/turf_decal/stripes/corner{
-	dir = 1
-	},
-/obj/structure/cable{
-	icon_state = "2-8"
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/turf/open/floor/engine,
-/area/engine/engineering)
 "zO" = (
 /obj/structure/lattice/catwalk,
 /obj/machinery/atmospherics/pipe/heat_exchanging/simple{
@@ -1022,6 +986,18 @@
 	},
 /turf/open/floor/engine,
 /area/engine/engineering)
+"Dj" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 4
+	},
+/obj/effect/turf_decal/stripes/corner{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/turf/open/floor/engine,
+/area/engine/engineering)
 "Dp" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/visible{
 	dir = 4
@@ -1067,6 +1043,13 @@
 	},
 /turf/open/floor/plating,
 /area/engine/supermatter)
+"Ev" = (
+/obj/effect/turf_decal/stripes/corner,
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/turf/open/floor/engine,
+/area/engine/engineering)
 "EA" = (
 /obj/machinery/atmospherics/pipe/simple/orange/visible{
 	dir = 4
@@ -1092,6 +1075,16 @@
 	dir = 10
 	},
 /turf/open/floor/plating,
+/area/engine/engineering)
+"FB" = (
+/obj/machinery/atmospherics/components/binary/pump{
+	dir = 8;
+	name = "Mix to Gas"
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/engine,
 /area/engine/engineering)
 "FD" = (
 /obj/machinery/atmospherics/pipe/manifold/cyan/visible{
@@ -1307,6 +1300,15 @@
 	},
 /turf/open/floor/engine,
 /area/engine/supermatter)
+"Ke" = (
+/obj/effect/turf_decal/stripes/corner{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/turf/open/floor/engine,
+/area/engine/engineering)
 "Kw" = (
 /obj/machinery/atmospherics/components/binary/pump/on{
 	dir = 8;
@@ -1511,6 +1513,16 @@
 /obj/structure/table,
 /obj/item/pipe_dispenser,
 /turf/open/floor/plasteel/dark,
+/area/engine/engineering)
+"Oo" = (
+/obj/machinery/atmospherics/components/binary/pump/on{
+	dir = 8;
+	name = "Gas to Cooling Loop"
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/engine,
 /area/engine/engineering)
 "Ox" = (
 /obj/structure/closet/secure_closet/engineering_personal,
@@ -1743,18 +1755,6 @@
 	icon_state = "1-4"
 	},
 /turf/open/floor/plating,
-/area/engine/engineering)
-"TC" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
-	dir = 4
-	},
-/obj/effect/turf_decal/stripes/corner{
-	dir = 4
-	},
-/obj/structure/cable{
-	icon_state = "2-8"
-	},
-/turf/open/floor/engine,
 /area/engine/engineering)
 "TK" = (
 /obj/structure/cable/yellow{
@@ -2317,17 +2317,17 @@ GC
 (12,1,1) = {"
 IX
 ba
-zc
+lj
 xi
 xi
 xi
 xi
-eJ
+Oo
 xi
 xi
 QQ
 xi
-bJ
+Ke
 WJ
 lO
 NV
@@ -2653,17 +2653,17 @@ GC
 (24,1,1) = {"
 Mb
 bM
-TC
+Dj
 mJ
 xi
 xi
 xi
-cJ
+FB
 xi
 xi
 Zu
 xi
-ok
+Ev
 cx
 MB
 PZ

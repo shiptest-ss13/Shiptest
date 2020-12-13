@@ -59,6 +59,9 @@ const HolopadContent = (props, context) => {
     loop_mode,
     record_mode,
     holo_calls = [],
+    em_hologram,
+    em_active,
+    em_cooldown,
   } = data;
   return (
     <Fragment>
@@ -74,6 +77,18 @@ const HolopadContent = (props, context) => {
             onClick={() => act('AIrequest')} />
         )} >
         <LabeledList>
+          {!!em_hologram && (
+            <LabeledList.Item label="">
+              <Button
+                icon="bell"
+                content={em_active
+                  ? "Deactivate emergency " + em_hologram + " hologram"
+                  : "Activate emergency " + em_hologram + " hologram"}
+                disabled={em_cooldown}
+                color={em_active ? 'bad' : 'good'}
+                onClick={() => act('em_action')} />
+            </LabeledList.Item>
+          )}
           <LabeledList.Item label="Communicator">
             <Button
               icon="phone-alt"

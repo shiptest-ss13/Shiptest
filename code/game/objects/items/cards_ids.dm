@@ -369,6 +369,11 @@ update_label()
 	lefthand_file = 'icons/mob/inhands/equipment/idcards_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/idcards_righthand.dmi'
 
+/obj/item/card/id/silver/hologram
+	assignment = "Head of Personnel"
+	registered_name = "Emergency Command Hologram"
+	access = list(ACCESS_CHANGE_IDS)
+
 /obj/item/card/id/silver/reaper
 	name = "Thirteen's ID Card (Reaper)"
 	access = list(ACCESS_MAINT_TUNNELS)
