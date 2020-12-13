@@ -19,18 +19,17 @@
 	new /obj/item/clothing/gloves/color/latex/nitrile(src)
 
 /obj/structure/closet/secure_closet/lieutenant
-	name = "\proper lieutenant's locker"
-	req_access = list(ACCESS_LIEUTENANT)
-	icon_state = "blueshield"
+	name = "SolGov official's locker"
+	req_access = list(ACCESS_SOLGOV)
+	icon_state = "solgov"
 
 /obj/structure/closet/secure_closet/lieutenant/PopulateContents()
 	..()
-	new /obj/item/clothing/head/beret/lt(src)
+	new /obj/item/clothing/head/beret/solgov(src)
 	new /obj/item/storage/briefcase(src)
 	new	/obj/item/storage/firstaid/regular(src)
-	new /obj/item/storage/belt/security/full(src)
 	new /obj/item/clothing/glasses/sunglasses(src)
-	new /obj/item/clothing/suit/armor/vest/lieutenant(src)
-	new /obj/item/clothing/suit/lieutenant(src)
-	new /obj/item/clothing/accessory/holster/lieutenant(src)
-	new /obj/item/clothing/shoes/jackboots(src)
+	new /obj/item/clothing/suit/armor/vest/solgov/rep(src)
+	new /obj/item/clothing/suit/solgov_trenchcoat(src)
+	new /obj/item/clothing/accessory/waistcoat/solgov(src)
+	new /obj/item/clothing/shoes/laceup(src)

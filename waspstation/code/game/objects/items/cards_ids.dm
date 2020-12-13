@@ -3,7 +3,7 @@
 	id_type_name = "\improper SolGov ID"
 	desc = "A SolGov ID with no proper access to speak of."
 	assignment = "SolGov Officer"
-	icon_state = "retro"
+	icon_state = "solgov"
 	uses_overlays = FALSE
 
 /obj/item/card/id/solgov/commander

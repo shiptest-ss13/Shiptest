@@ -5,11 +5,6 @@
 	item_state = "holster"
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/holster
 
-/obj/item/clothing/accessory/holster/lieutenant
-	name = "lieutenant's shoulder holster"
-	desc = "A modified shoulder holster designed to fit a small egun and power cells."
-	pocket_storage_component_path = /datum/component/storage/concrete/pockets/holster/lt
-
 /obj/item/clothing/accessory/holster/detective
 	name = "detective's shoulder holster"
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/holster/detective
@@ -19,7 +14,6 @@
 	new /obj/item/gun/ballistic/revolver/detective(src)
 	new /obj/item/ammo_box/c38(src)
 	new /obj/item/ammo_box/c38(src)
-
 
 /obj/item/clothing/accessory/holster/nukie
 	name = "operative holster"
@@ -54,3 +48,9 @@
 /obj/item/clothing/accessory/holster/chameleon/broken/Initialize()
 	. = ..()
 	chameleon_action.emp_randomise(INFINITY)
+
+/obj/item/clothing/accessory/waistcoat/solgov
+	name = "solgov waistcoat"
+	desc = "A standard issue waistcoat in solgov colors."
+	icon_state = "solgov_waistcoat"
+	icon = 'waspstation/icons/obj/clothing/accessories.dmi'

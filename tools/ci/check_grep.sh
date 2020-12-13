@@ -52,6 +52,16 @@ if grep -i 'centcomm' _maps/**/*.dmm; then
     echo "ERROR: Misspelling(s) of CENTCOM detected in maps, please remove the extra M(s)."
     st=1
 fi;
+#Wasp begin - SolGov
+if grep 'Solgov' code/**/*.dm; then
+    echo "ERROR: Misspelling(s) of SolGov detected in code, please check capitalization."
+    st=1
+fi;
+if grep 'Solgov' _maps/**/*.dmm; then
+    echo "ERROR: Misspelling(s) of SolGov detected in maps, please check capitalization."
+    st=1
+fi;
+#Wasp end
 if ls _maps/*.json | grep -P "[A-Z]"; then
     echo "Uppercase in a map json detected, these must be all lowercase."
 	st=1

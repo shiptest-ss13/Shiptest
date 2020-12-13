@@ -27,16 +27,6 @@
 	max_items = 2
 	max_w_class = WEIGHT_CLASS_BULKY
 
-/datum/component/storage/concrete/pockets/holster/lt/Initialize()
-	original_parent = parent
-	. = ..()
-	can_hold = typecacheof(list(
-		/obj/item/gun/energy/e_gun/lieutenant,
-		/obj/item/gun/energy/e_gun/mini,
-		/obj/item/gun/energy/disabler,
-		/obj/item/stock_parts/cell/gun
-	))
-
 /datum/component/storage/concrete/pockets/holster/nukie/Initialize()
 	original_parent = parent
 	. = ..()

@@ -36,7 +36,7 @@
 	role_replacements = list(
 		"Captain" = /obj/item/clothing/head/beret/captain,
 		"Head of Personnel" = /obj/item/clothing/head/beret/hop,
-		"Lieutenant" = /obj/item/clothing/head/beret/lt,
+		"SolGov Representative" = /obj/item/clothing/head/beret/solgov,
 
 		"Head of Security" = /obj/item/clothing/head/beret/sec/navyhos,
 		"Warden" = /obj/item/clothing/head/beret/sec/navywarden,

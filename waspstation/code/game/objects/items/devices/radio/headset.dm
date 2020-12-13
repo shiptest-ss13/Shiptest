@@ -1,17 +1,17 @@
-//Lieutenant
-/obj/item/radio/headset/heads/lieutenant
-	name = "\proper the lieutenant's headset"
-	desc = "The headset of the Lieutenant."
-	icon_state = "com_headset"
-	keyslot = new /obj/item/encryptionkey/heads/lieutenant
+//solgov
+/obj/item/radio/headset/solgov
+	name = "\improper SolGov Offical's headset"
+	desc = "A SolGov Official's headset."
+	icon = 'waspstation/icons/obj/radio.dmi'
+	icon_state = "solgov_headset"
+	keyslot = new /obj/item/encryptionkey/solgov
 
-/obj/item/radio/headset/heads/lieutenant/alt
-	name = "\proper the lieutenant's bowman headset"
-	desc = "The headset of the Lieutenant. Protects ears from flashbangs."
-	icon_state = "com_headset_alt"
-	keyslot = new /obj/item/encryptionkey/heads/lieutenant
+/obj/item/radio/headset/solgov/alt
+	name = "\improper SolGov Officer's bowman headset"
+	desc = "A SolGov Officer's headset. Protects ears from flashbangs."
+	icon_state = "solgov_headset_alt"
 
-/obj/item/radio/headset/heads/lieutenant/alt/ComponentInitialize()
+/obj/item/radio/headset/solgov/alt/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/wearertargeting/earprotection, list(ITEM_SLOT_EARS))
 

@@ -32,7 +32,7 @@ GLOBAL_DATUM_INIT(crewmonitor, /datum/crewmonitor, new)
 	var/list/jobs = new/list()
 	jobs["Captain"] = 00
 	jobs["Head of Personnel"] = 02
-	jobs["Lieutenant"] = 05
+	jobs["SolGov Representative"] = 05		// Wasp Edit - SolGov Rep
 	jobs["Head of Security"] = 10
 	jobs["Warden"] = 11
 	jobs["Security Officer"] = 12
@@ -198,4 +198,3 @@ GLOBAL_DATUM_INIT(crewmonitor, /datum/crewmonitor, new)
 			AI.ai_camera_track(params["name"])
 
 #undef SENSORS_UPDATE_PERIOD
-
