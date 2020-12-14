@@ -5,6 +5,10 @@
 	lighting_colour_tube = "#e3ffff"
 	lighting_colour_bulb = "#d5ffff"
 
+/area/crew_quarters/solgov
+	name = "SolGov Consulate"
+	icon_state = "solgov"
+
 /area/medical/genetics/cloning
 	name = "Cloning Lab"
 	icon_state = "genetics"
