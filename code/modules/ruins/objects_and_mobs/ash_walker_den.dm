@@ -7,7 +7,7 @@
 	icon_state = "ash_walker_nest"
 
 	move_resist=1000 // can be pulled if you displace it from the lava pool and have 1000 pull force, can be pushed if you have 1000 push force, takes damage if you somehow have more
-	anchored = FALSE
+	anchored = TRUE
 	density = TRUE
 
 	resistance_flags = FIRE_PROOF | LAVA_PROOF
@@ -17,9 +17,12 @@
 	var/faction = list("ashwalker")
 	var/meat_counter = 6
 	var/datum/team/ashwalkers/ashies
+	var/last_act = 0
+	var/init_zlevel = 0		//This is my home, I refuse to settle anywhere else.
 
 /obj/structure/lavaland/ash_walker/Initialize()
 	.=..()
+	init_zlevel = src.z
 	ashies = new /datum/team/ashwalkers()
 	var/datum/objective/protect_object/objective = new
 	objective.set_target(src)
@@ -96,3 +99,43 @@
 		new /obj/effect/mob_spawn/human/ash_walker(get_step(loc, pick(GLOB.alldirs)), ashies)
 		visible_message("<span class='danger'>One of the eggs swells to an unnatural size and tumbles free. It's ready to hatch!</span>")
 		meat_counter -= ASH_WALKER_SPAWN_THRESHOLD
+
+/obj/structure/lavaland/ash_walker/attackby(obj/item/I, mob/living/user, params)	//Wasp Edit - Movable Tendril
+	if(user.mind.assigned_role == "Ash Walker")
+		to_chat(user, "<span class='warning'>You would never think of harming the great Tendril of the Necropolis!</span>")
+		return
+	if(user.a_intent != INTENT_HELP)
+		return ..()
+
+	if(I.sharpness == IS_SHARP_ACCURATE)
+		if(last_act + 50 > world.time)	//prevents message spam
+			return
+		last_act = world.time
+		if(anchored)	//Getting here effectively just toggles the anchored bool, with some added flavor.
+			user.visible_message("<span class='warning'>[user] starts to cut the [src]'s roots free!</span>", \
+				"<span class='warning'>You start cutting the [src]'s roots from the ground...</span>", \
+				"<span class='hear'>You hear grotesque cutting.</span>")
+			if(I.use_tool(src, user, 50, volume=100))
+				playsound(loc,'sound/effects/tendril_destroyed.ogg', 200, FALSE, 50, TRUE, TRUE)
+				user.visible_message("<span class='danger'>The [src] writhes and screams as it's cut from the ground before finally settling down.</span>", \
+					"<span class='danger'>You cut the [src]'s from the ground, causing it to scream and writhe!</span>", \
+					"<span class='warning'>The ground shakes violently beneath you!</span>")
+				anchored = FALSE
+			return
+		else
+			if(src.z != init_zlevel)
+				user.show_message("<span class='warning'>The [src] refuses to settle down in this area! You can't secure it!</span>")
+				return
+			user.visible_message("<span class='notice'>[user] starts to plant the [src]'s roots into the ground!</span>", \
+				"<span class='notice'>You start threading the [src]'s roots back into the ground...</span>", \
+				"<span class='hear'>You hear grotesque cutting.</span>")
+			if(I.use_tool(src, user, 50, volume=100))
+				user.visible_message("<span class='notice'>The [src] seems to settle down as [user] finishest securing it firmly to the ashy plains.</span>", \
+					"<span class='notice'>You finish planting the [src]! It seems to calm down...</span>", \
+					"<span class='notice'>The ground seems to settle a bit...</span>")
+				anchored = TRUE
+			return
+
+	return ..()
+
+#undef ASH_WALKER_SPAWN_THRESHOLD
