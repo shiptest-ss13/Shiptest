@@ -71,8 +71,10 @@
 // Pipenet stuff; housekeeping
 
 /obj/machinery/atmospherics/components/nullifyNode(i)
-	if(nodes[i])
+	// Every node has a parent pipeline and an air associated with it, but we need to accomdate for edge cases like init dir cache building...
+	if(parents[i])
 		nullifyPipenet(parents[i])
+	if(airs[i])
 		QDEL_NULL(airs[i])
 	..()
 

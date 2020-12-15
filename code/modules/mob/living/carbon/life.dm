@@ -232,7 +232,7 @@
 				emote(pick("giggle","laugh"))
 			SEND_SIGNAL(src, COMSIG_ADD_MOOD_EVENT, "chemical_euphoria", /datum/mood_event/chemical_euphoria)
 		if(SA_partialpressure > safe_tox_max*3)
-			var/ratio = (breath.get_moles(/datum/gas/plasma)/safe_tox_max)
+			var/ratio = (breath.get_moles(/datum/gas/nitrous_oxide)/safe_tox_max)
 			adjustToxLoss(clamp(ratio, MIN_TOXIC_GAS_DAMAGE, MAX_TOXIC_GAS_DAMAGE))
 			throw_alert("too_much_tox", /obj/screen/alert/too_much_tox)
 		else
