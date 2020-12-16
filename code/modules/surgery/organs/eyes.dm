@@ -389,15 +389,8 @@
 	if(!isnull(light_flags))
 		set_light_flags(light_flags)
 
-
-/obj/item/organ/eyes/moth
-	name = "moth eyes"
-	desc = "These eyes seem to have increased sensitivity to bright light, with no improvement to low light vision."
-	flash_protect = FLASH_PROTECTION_SENSITIVE
-
 /obj/item/organ/eyes/snail
 	name = "snail eyes"
 	desc = "These eyes seem to have a large range, but might be cumbersome with glasses."
 	eye_icon_state = "snail_eyes"
 	icon_state = "snail_eyeballs"
-
