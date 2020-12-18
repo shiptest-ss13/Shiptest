@@ -84,6 +84,7 @@
 #define VV_HK_TRIGGER_EXPLOSION "explode"
 #define VV_HK_AUTO_RENAME "auto_rename"
 #define VV_HK_RADIATE "radiate"
+#define VV_HK_EDIT_FILTERS "edit_filters"
 
 // /obj
 #define VV_HK_OSAY "osay"
