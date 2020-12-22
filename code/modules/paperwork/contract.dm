@@ -228,11 +228,11 @@
 		var/response = "No"
 		if(ghost)
 			ghost.notify_cloning("A devil has offered you revival, at the cost of your soul.",'sound/effects/genetics.ogg', H)
-			response = tgalert(ghost, "A devil is offering you another chance at life, at the price of your soul, do you accept?", "Infernal Resurrection", "Yes", "No", "Never for this round", 0, 200)
+			response = tgui_alert(ghost, "A devil is offering you another chance at life, at the price of your soul, do you accept?", "Infernal Resurrection", "Yes", "No", "Never for this round", 0, 200)
 			if(!ghost)
 				return		//handle logouts that happen whilst the alert is waiting for a response.
 		else
-			response = tgalert(target.current, "A devil is offering you another chance at life, at the price of your soul, do you accept?", "Infernal Resurrection", "Yes", "No", "Never for this round", 0, 200)
+			response = tgui_alert(target.current, "A devil is offering you another chance at life, at the price of your soul, do you accept?", "Infernal Resurrection", "Yes", "No", "Never for this round", 0, 200)
 		if(response == "Yes")
 			H.revive(full_heal = TRUE, admin_revive = FALSE)
 			log_combat(user, H, "infernally revived via contract")

@@ -7,7 +7,6 @@
 	transfer_access = null
 	available_on_ntnet = FALSE
 	usage_flags = PROGRAM_LAPTOP | PROGRAM_TABLET
-	network_destination = "tracking program"
 	size = 5
 	tgui_id = "NtosRadar"
 	///List of trackable entities. Updated by the scan() proc.
@@ -64,7 +63,8 @@
 	return data
 
 /datum/computer_file/program/radar/ui_act(action, params)
-	if(..())
+	. = ..()
+	if(.)
 		return
 
 	switch(action)
@@ -207,12 +207,13 @@
 
 ///A program that tracks crew members via suit sensors
 /datum/computer_file/program/radar/lifeline
-	filename = "Lifeline"
+	filename = "lifeline"
 	filedesc = "Lifeline"
 	extended_desc = "This program allows for tracking of crew members via their suit sensors."
 	requires_ntnet = TRUE
 	transfer_access = ACCESS_MEDICAL
 	available_on_ntnet = TRUE
+	program_icon = "heartbeat"
 
 /datum/computer_file/program/radar/lifeline/find_atom()
 	return locate(selected) in GLOB.human_list
@@ -254,7 +255,7 @@
 
 ///A program that tracks crew members via suit sensors
 /datum/computer_file/program/radar/fission360
-	filename = "Fission360"
+	filename = "fission360"
 	filedesc = "Fission360"
 	program_icon_state = "radarsyndicate"
 	extended_desc = "This program allows for tracking of nuclear authorization disks and warheads."
@@ -263,6 +264,7 @@
 	available_on_ntnet = FALSE
 	available_on_syndinet = TRUE
 	tgui_id = "NtosRadarSyndicate"
+	program_icon = "bomb"
 	arrowstyle = "ntosradarpointerS.png"
 	pointercolor = "red"
 

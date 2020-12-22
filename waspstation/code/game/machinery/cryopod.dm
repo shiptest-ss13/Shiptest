@@ -221,7 +221,7 @@ GLOBAL_LIST_EMPTY(cryopod_computers)
 			C.SetSleeping(50)
 			to_chat(occupant, "<span class='boldnotice'>You begin to wake from cryosleep...</span>")
 			icon_state = "cryopod"
-			return		
+			return
 		var/mob/living/mob_occupant = occupant
 		if(mob_occupant && mob_occupant.stat != DEAD)
 			to_chat(occupant, "<span class='boldnotice'>You feel cool air surround you. You go numb as your senses turn inward.</span>")
@@ -401,7 +401,7 @@ GLOBAL_LIST_EMPTY(cryopod_computers)
 			to_chat(user, "<span class='danger'>You can't put [target] into [src]. They're conscious.</span>")
 		return
 	else if(target.client)
-		if(alert(target,"Would you like to enter cryosleep?",,"Yes","No") == "No")
+		if(tgui_alert(target, "Would you like to enter cryosleep?", "Cryopod", list("Yes","No")) != "Yes")
 			return
 
 	var/generic_plsnoleave_message = " Please adminhelp before leaving the round, even if there are no administrators online!"

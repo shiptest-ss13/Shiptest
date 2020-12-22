@@ -48,7 +48,8 @@
 		"smmon_4.gif" = 'icons/program_icons/smmon_4.gif',
 		"smmon_5.gif" = 'icons/program_icons/smmon_5.gif',
 		"smmon_6.gif" = 'icons/program_icons/smmon_6.gif',
-		"borg_mon.gif" = 'icons/program_icons/borg_mon.gif'
+		"borg_mon.gif" = 'icons/program_icons/borg_mon.gif',
+		"robotact.gif" = 'icons/program_icons/robotact.gif'
 	)
 
 /datum/asset/simple/radar_assets
@@ -398,4 +399,9 @@
 /datum/asset/simple/vv
 	assets = list(
 		"view_variables.css" = 'html/admin/view_variables.css'
+	)
+
+/datum/asset/simple/safe
+	assets = list(
+		"safe_dial.png" = 'html/safe_dial.png'
 	)

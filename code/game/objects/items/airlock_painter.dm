@@ -230,8 +230,10 @@
 	return data
 
 /obj/item/airlock_painter/decal/ui_act(action,list/params)
-	if(..())
+	. = ..()
+	if(.)
 		return
+
 	switch(action)
 		//Lists of decals and designs
 		if("select decal")

@@ -7,14 +7,15 @@
 #define CARDCON_DEPARTMENT_COMMAND "Command"
 
 /datum/computer_file/program/card_mod
-	filename = "cardmod"
-	filedesc = "ID Card Modification"
+	filename = "plexagonidwriter"
+	filedesc = "Plexagon Access Management"
 	program_icon_state = "id"
 	extended_desc = "Program for programming employee ID cards to access parts of the station."
 	transfer_access = ACCESS_HEADS
 	requires_ntnet = 0
 	size = 8
 	tgui_id = "NtosCard"
+	program_icon = "id-card"
 
 	var/is_centcom = FALSE
 	var/minor = FALSE
@@ -94,8 +95,9 @@
 	return FALSE
 
 /datum/computer_file/program/card_mod/ui_act(action, params)
-	if(..())
-		return TRUE
+	. = ..()
+	if(.)
+		return
 
 	var/obj/item/computer_hardware/card_slot/card_slot
 	var/obj/item/computer_hardware/printer/printer

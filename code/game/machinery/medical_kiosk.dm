@@ -328,8 +328,10 @@
 	return data
 
 /obj/machinery/medical_kiosk/ui_act(action,active)
-	if(..())
+	. = ..()
+	if(.)
 		return
+
 	switch(action)
 		if("beginScan_1")
 			inuse()

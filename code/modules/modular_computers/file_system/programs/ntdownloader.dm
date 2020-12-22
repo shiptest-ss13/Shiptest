@@ -1,16 +1,17 @@
 /datum/computer_file/program/ntnetdownload
-	filename = "ntndownloader"
-	filedesc = "Software Download Tool"
+	filename = "ntsoftwarehub"
+	filedesc = "NT Software Hub"
 	program_icon_state = "generic"
 	extended_desc = "This program allows downloads of software from official NT repositories"
-	unsendable = 1
-	undeletable = 1
+	unsendable = TRUE
+	undeletable = TRUE
 	size = 4
-	requires_ntnet = 1
+	requires_ntnet = TRUE
 	requires_ntnet_feature = NTNET_SOFTWAREDOWNLOAD
-	available_on_ntnet = 0
+	available_on_ntnet = FALSE
 	ui_header = "downloader_finished.gif"
 	tgui_id = "NtosNetDownloader"
+	program_icon = "download"
 
 	var/datum/computer_file/program/downloaded_file = null
 	var/hacked_download = 0
@@ -104,8 +105,9 @@
 	download_completion += download_netspeed
 
 /datum/computer_file/program/ntnetdownload/ui_act(action, params)
-	if(..())
-		return 1
+	. = ..()
+	if(.)
+		return
 	switch(action)
 		if("PRG_downloadfile")
 			if(!downloaded_file)
@@ -146,7 +148,7 @@
 	for(var/A in main_repo)
 		var/datum/computer_file/program/P = A
 		// Only those programs our user can run will show in the list
-		if(!P.can_run(user,transfer = 1) || hard_drive.find_file_by_name(P.filename))
+		if(hard_drive.find_file_by_name(P.filename))
 			continue
 		all_entries.Add(list(list(
 			"filename" = P.filename,
@@ -154,6 +156,7 @@
 			"fileinfo" = P.extended_desc,
 			"compatibility" = check_compatibility(P),
 			"size" = P.size,
+			"access" = P.can_run(user,transfer = 1)
 		)))
 	data["hackedavailable"] = FALSE
 	if(emagged) // If we are running on emagged computer we have access to some "bonus" software
@@ -167,7 +170,9 @@
 				"filename" = P.filename,
 				"filedesc" = P.filedesc,
 				"fileinfo" = P.extended_desc,
+				"compatibility" = check_compatibility(P),
 				"size" = P.size,
+				"access" = TRUE,
 			)))
 		data["hacked_programs"] = hacked_programs
 

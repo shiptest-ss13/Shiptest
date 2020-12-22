@@ -273,7 +273,8 @@
 	return data
 
 /obj/machinery/power/turbine/ui_act(action, params)
-	if(..())
+	. = ..()
+	if(.)
 		return
 
 	switch(action)
@@ -334,7 +335,8 @@
 	return data
 
 /obj/machinery/computer/turbine_computer/ui_act(action, params)
-	if(..())
+	. = ..()
+	if(.)
 		return
 
 	switch(action)

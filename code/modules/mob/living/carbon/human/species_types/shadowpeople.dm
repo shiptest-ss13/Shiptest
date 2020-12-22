@@ -190,11 +190,10 @@
 		if(isethereal(AM))
 			AM.emp_act(EMP_LIGHT)
 
-		if(iscyborg(AM))
+		else if(iscyborg(AM))
 			var/mob/living/silicon/robot/borg = AM
-			if(borg.lamp_intensity)
-				borg.update_headlamp(TRUE, INFINITY)
-				to_chat(borg, "<span class='danger'>Your headlamp is fried! You'll need a human to help replace it.</span>")
+			if(borg.lamp_enabled)
+				borg.smash_headlamp()
 		else
 			for(var/obj/item/O in AM)
 				if(O.light_range && O.light_power)
