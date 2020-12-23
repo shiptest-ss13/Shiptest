@@ -1,6 +1,7 @@
 /obj/item/gun/ballistic/automatic/toy
 	name = "foam force SMG"
 	desc = "A prototype three-round burst toy submachine gun. Ages 8 and up."
+	icon = 'waspstation/icons/obj/guns/projectile.dmi' // waspstation edit: spritebase maintenance
 	icon_state = "saber"
 	item_state = "gun"
 	mag_type = /obj/item/ammo_box/magazine/toy/smg
