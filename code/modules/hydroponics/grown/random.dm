@@ -27,6 +27,7 @@
 	desc = "What could this even be?"
 	icon_state = "crunchy"
 	bitesize_mod = 2
+	wine_flavor = "surprise mechanics" //wasp edit: surprise robberies
 
 /obj/item/reagent_containers/food/snacks/grown/random/Initialize()
 	. = ..()

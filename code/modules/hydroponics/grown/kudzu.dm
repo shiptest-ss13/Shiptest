@@ -104,4 +104,5 @@
 	bitesize_mod = 2
 	foodtype = VEGETABLES | GROSS
 	tastes = list("kudzu" = 1)
-	wine_power = 20
+	wine_power = 45
+	wine_flavor = "choking vines" //wasp edit: new wine flavors

@@ -112,6 +112,7 @@
 	bitesize_mod = 2
 	foodtype = FRUIT
 	wine_power = 70
+	wine_flavor = "an urge to burn houses down" //wasp edit: new wine flavors
 
 /obj/item/reagent_containers/food/snacks/grown/firelemon/attack_self(mob/living/user)
 	user.visible_message("<span class='warning'>[user] primes [src]!</span>", "<span class='userdanger'>You prime [src]!</span>")
@@ -183,8 +184,9 @@
 	icon_state = "orang"
 	filling_color = "#FFA500"
 	juice_results = list(/datum/reagent/consumable/orangejuice = 0)
-	distill_reagent = /datum/reagent/consumable/ethanol/triple_sec
 	tastes = list("polygons" = 1, "oranges" = 1)
+	wine_power = 90
+	wine_flavor = "removals" //wasp edit: new wine flavors
 
 /obj/item/reagent_containers/food/snacks/grown/citrus/orange_3d/pickup(mob/user)
 	. = ..()
