@@ -13,11 +13,16 @@
 	barefootstep = FOOTSTEP_SAND
 	clawfootstep = FOOTSTEP_SAND
 	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
+	/// Environment type for the turf
 	var/environment_type = "asteroid"
-	var/turf_type = /turf/open/floor/plating/asteroid //Because caves do whacky shit to revert to normal
-	var/floor_variance = 20 //probability floor has a different icon state
+	/// Base turf type to be created by the tunnel
+	var/turf_type = /turf/open/floor/plating/asteroid
+	/// Probability floor has a different icon state
+	var/floor_variance = 20
 	attachment_holes = FALSE
+	/// Itemstack to drop when dug by a shovel
 	var/obj/item/stack/digResult = /obj/item/stack/ore/glass/basalt
+	/// Whether the turf has been dug or not
 	var/dug
 
 /turf/open/floor/plating/asteroid/Initialize()
@@ -27,6 +32,7 @@
 	if(prob(floor_variance))
 		icon_state = "[environment_type][rand(0,12)]"
 
+/// Drops itemstack when dug and changes icon
 /turf/open/floor/plating/asteroid/proc/getDug()
 	new digResult(src, 5)
 	if(postdig_icon_change)
@@ -35,6 +41,7 @@
 			icon_state = "[environment_type]_dug"
 	dug = TRUE
 
+/// If the user can dig the turf
 /turf/open/floor/plating/asteroid/proc/can_dig(mob/user)
 	if(!dug)
 		return TRUE
@@ -124,7 +131,6 @@
 	planetary_atmos = TRUE
 	baseturfs = /turf/open/lava/smooth/lava_land_surface
 
-
 /turf/open/floor/plating/asteroid/lowpressure
 	initial_gas_mix = OPENTURF_LOW_PRESSURE
 	baseturfs = /turf/open/floor/plating/asteroid/lowpressure
@@ -134,188 +140,6 @@
 	initial_gas_mix = AIRLESS_ATMOS
 	baseturfs = /turf/open/floor/plating/asteroid/airless
 	turf_type = /turf/open/floor/plating/asteroid/airless
-
-
-#define SPAWN_MEGAFAUNA "bluh bluh huge boss"
-#define SPAWN_BUBBLEGUM 6
-
-GLOBAL_LIST_INIT(megafauna_spawn_list, list(/mob/living/simple_animal/hostile/megafauna/dragon = 4, /mob/living/simple_animal/hostile/megafauna/colossus = 2, /mob/living/simple_animal/hostile/megafauna/bubblegum = SPAWN_BUBBLEGUM))
-
-/turf/open/floor/plating/asteroid/airless/cave
-	var/length = 100
-	var/list/mob_spawn_list
-	var/list/megafauna_spawn_list
-	var/list/flora_spawn_list
-	var/list/terrain_spawn_list
-	var/sanity = 1
-	var/forward_cave_dir = 1
-	var/backward_cave_dir = 2
-	var/going_backwards = TRUE
-	var/has_data = FALSE
-	var/data_having_type = /turf/open/floor/plating/asteroid/airless/cave/has_data
-	turf_type = /turf/open/floor/plating/asteroid/airless
-
-/turf/open/floor/plating/asteroid/airless/cave/has_data //subtype for producing a tunnel with given data
-	has_data = TRUE
-
-/turf/open/floor/plating/asteroid/airless/cave/volcanic
-	mob_spawn_list = list(/mob/living/simple_animal/hostile/asteroid/goliath/beast/random = 50, /obj/structure/spawner/lavaland/goliath = 3, \
-		/mob/living/simple_animal/hostile/asteroid/basilisk/watcher/random = 40, /obj/structure/spawner/lavaland = 2, \
-		/mob/living/simple_animal/hostile/asteroid/hivelord/legion/random = 30, /obj/structure/spawner/lavaland/legion = 3, \
-		SPAWN_MEGAFAUNA = 6, /mob/living/simple_animal/hostile/asteroid/goldgrub = 10, )
-
-	data_having_type = /turf/open/floor/plating/asteroid/airless/cave/volcanic/has_data
-	turf_type = /turf/open/floor/plating/asteroid/basalt/lava_land_surface
-	icon_state = "basalt"
-	icon_plating = "basalt"
-	initial_gas_mix = LAVALAND_DEFAULT_ATMOS
-
-/turf/open/floor/plating/asteroid/airless/cave/volcanic/has_data //subtype for producing a tunnel with given data
-	has_data = TRUE
-
-/turf/open/floor/plating/asteroid/airless/cave/Initialize()
-	if (!mob_spawn_list)
-		mob_spawn_list = list(/mob/living/simple_animal/hostile/asteroid/goldgrub = 1, /mob/living/simple_animal/hostile/asteroid/goliath = 5, /mob/living/simple_animal/hostile/asteroid/basilisk = 4, /mob/living/simple_animal/hostile/asteroid/hivelord = 3)
-	if (!megafauna_spawn_list)
-		megafauna_spawn_list = GLOB.megafauna_spawn_list
-	if (!flora_spawn_list)
-		flora_spawn_list = list(/obj/structure/flora/ash/leaf_shroom = 2 , /obj/structure/flora/ash/cap_shroom = 2 , /obj/structure/flora/ash/stem_shroom = 2 , /obj/structure/flora/ash/cacti = 1, /obj/structure/flora/ash/tall_shroom = 2)
-	if(!terrain_spawn_list)
-		terrain_spawn_list = list(/obj/structure/geyser/random = 1)
-	. = ..()
-	if(!has_data)
-		produce_tunnel_from_data()
-
-/turf/open/floor/plating/asteroid/airless/cave/proc/get_cave_data(set_length, exclude_dir = -1)
-	// If set_length (arg1) isn't defined, get a random length; otherwise assign our length to the length arg.
-	if(!set_length)
-		length = rand(25, 50)
-	else
-		length = set_length
-
-	// Get our directiosn
-	forward_cave_dir = pick(GLOB.alldirs - exclude_dir)
-	// Get the opposite direction of our facing direction
-	backward_cave_dir = angle2dir(dir2angle(forward_cave_dir) + 180)
-
-/turf/open/floor/plating/asteroid/airless/cave/proc/produce_tunnel_from_data(tunnel_length, excluded_dir = -1)
-	get_cave_data(tunnel_length, excluded_dir)
-	// Make our tunnels
-	make_tunnel(forward_cave_dir)
-	if(going_backwards)
-		make_tunnel(backward_cave_dir)
-	// Kill ourselves by replacing ourselves with a normal floor.
-	SpawnFloor(src)
-
-/turf/open/floor/plating/asteroid/airless/cave/proc/make_tunnel(dir)
-	var/turf/closed/mineral/tunnel = src
-	var/next_angle = pick(45, -45)
-
-	for(var/i = 0; i < length; i++)
-		if(!sanity)
-			break
-
-		var/list/L = list(45)
-		if(ISODD(dir2angle(dir))) // We're going at an angle and we want thick angled tunnels.
-			L += -45
-
-		// Expand the edges of our tunnel
-		for(var/edge_angle in L)
-			var/turf/closed/mineral/edge = get_step(tunnel, angle2dir(dir2angle(dir) + edge_angle))
-			if(istype(edge))
-				SpawnFloor(edge)
-
-		if(!sanity)
-			break
-
-		// Move our tunnel forward
-		tunnel = get_step(tunnel, dir)
-
-		if(istype(tunnel))
-			// Small chance to have forks in our tunnel; otherwise dig our tunnel.
-			if(i > 3 && prob(20))
-				if(istype(tunnel.loc, /area/mine/explored) || (istype(tunnel.loc, /area/lavaland/surface/outdoors) && !istype(tunnel.loc, /area/lavaland/surface/outdoors/unexplored)))
-					sanity = 0
-					break
-				var/turf/open/floor/plating/asteroid/airless/cave/C = tunnel.ChangeTurf(data_having_type, null, CHANGETURF_IGNORE_AIR)
-				C.going_backwards = FALSE
-				C.produce_tunnel_from_data(rand(10, 15), dir)
-			else
-				SpawnFloor(tunnel)
-		else //if(!istype(tunnel, parent)) // We hit space/normal/wall, stop our tunnel.
-			break
-
-		// Chance to change our direction left or right.
-		if(i > 2 && prob(33))
-			// We can't go a full loop though
-			next_angle = -next_angle
-			setDir(angle2dir(dir2angle(dir) )+ next_angle)
-
-
-/turf/open/floor/plating/asteroid/airless/cave/proc/SpawnFloor(turf/T)
-	for(var/S in RANGE_TURFS(1, src))
-		var/turf/NT = S
-		if(!NT || isspaceturf(NT) || istype(NT.loc, /area/mine/explored) || (istype(NT.loc, /area/lavaland/surface/outdoors) && !istype(NT.loc, /area/lavaland/surface/outdoors/unexplored)))
-			sanity = 0
-			break
-	if(!sanity)
-		return
-	if(is_mining_level(z))
-		SpawnFlora(T)	//No space mushrooms, cacti.
-	SpawnTerrain(T)
-	SpawnMonster(T)		//Checks for danger area.
-	T.ChangeTurf(turf_type, null, CHANGETURF_IGNORE_AIR)
-
-/turf/open/floor/plating/asteroid/airless/cave/proc/SpawnMonster(turf/T)
-	if(prob(30))
-		if(istype(loc, /area/mine/explored) || !istype(loc, /area/lavaland/surface/outdoors/unexplored))
-			return
-		var/randumb = pickweight(mob_spawn_list)
-		while(randumb == SPAWN_MEGAFAUNA)
-			if(istype(loc, /area/lavaland/surface/outdoors/unexplored/danger)) //this is danger. it's boss time.
-				var/maybe_boss = pickweight(megafauna_spawn_list)
-				if(megafauna_spawn_list[maybe_boss])
-					randumb = maybe_boss
-			else //this is not danger, don't spawn a boss, spawn something else
-				randumb = pickweight(mob_spawn_list)
-
-		for(var/thing in urange(12, T)) //prevents mob clumps
-			if(!ishostile(thing) && !istype(thing, /obj/structure/spawner))
-				continue
-			if((ispath(randumb, /mob/living/simple_animal/hostile/megafauna) || ismegafauna(thing)) && get_dist(src, thing) <= 7)
-				return //if there's a megafauna within standard view don't spawn anything at all
-			if(ispath(randumb, /mob/living/simple_animal/hostile/asteroid) || istype(thing, /mob/living/simple_animal/hostile/asteroid))
-				return //if the random is a standard mob, avoid spawning if there's another one within 12 tiles
-			if((ispath(randumb, /obj/structure/spawner/lavaland) || istype(thing, /obj/structure/spawner/lavaland)) && get_dist(src, thing) <= 2)
-				return //prevents tendrils spawning in each other's collapse range
-
-		if(ispath(randumb, /mob/living/simple_animal/hostile/megafauna/bubblegum)) //there can be only one bubblegum, so don't waste spawns on it
-			megafauna_spawn_list.Remove(randumb)
-
-		new randumb(T)
-
-#undef SPAWN_MEGAFAUNA
-#undef SPAWN_BUBBLEGUM
-
-/turf/open/floor/plating/asteroid/airless/cave/proc/SpawnFlora(turf/T)
-	if(prob(12))
-		if(istype(loc, /area/mine/explored) || istype(loc, /area/lavaland/surface/outdoors/explored))
-			return
-		var/randumb = pickweight(flora_spawn_list)
-		for(var/obj/structure/flora/ash/F in range(4, T)) //Allows for growing patches, but not ridiculous stacks of flora
-			if(!istype(F, randumb))
-				return
-		new randumb(T)
-
-/turf/open/floor/plating/asteroid/airless/cave/proc/SpawnTerrain(turf/T)
-	if(prob(1))
-		if(istype(loc, /area/mine/explored) || istype(loc, /area/lavaland/surface/outdoors/explored))
-			return
-		var/randumb = pickweight(terrain_spawn_list)
-		for(var/obj/structure/geyser/F in range(7, T))
-			if(istype(F, randumb))
-				return
-		new randumb(T)
 
 /turf/open/floor/plating/asteroid/snow
 	gender = PLURAL

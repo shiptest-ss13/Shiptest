@@ -13,13 +13,10 @@
 	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 	invisibility = INVISIBILITY_LIGHTING
 
-	var/map_name // Set in New(); preserves the name set by the map maker, even if renamed by the Blueprints.
-
-	var/valid_territory = TRUE // If it's a valid territory for cult summoning or the CRAB-17 phone to spawn
-	var/blob_allowed = TRUE // If blobs can spawn there and if it counts towards their score.
+	var/area_flags = VALID_TERRITORY | BLOBS_ALLOWED | UNIQUE_AREA
 
 	var/fire = null
-	var/atmos = TRUE
+	///Whether there is an atmos alarm in this area
 	var/atmosalm = FALSE
 	var/poweralm = TRUE
 	var/lightswitch = TRUE
@@ -29,10 +26,8 @@
 	var/beauty = 0 // Beauty average per open turf in the area
 	var/beauty_threshold = 150 //If a room is too big it doesn't have beauty.
 
-	var/requires_power = TRUE
-	var/always_unpowered = FALSE	// This gets overridden to 1 for space in area/Initialize().
-
-	var/outdoors = FALSE //For space, the asteroid, lavaland, etc. Used with blueprints to determine if we are adding a new area (vs editing a station room)
+	/// For space, the asteroid, lavaland, etc. Used with blueprints or with weather to determine if we are adding a new area (vs editing a station room)
+	var/outdoors = FALSE
 
 	var/areasize = 0 //Size of the area in open turfs, only calculated for indoors areas.
 
@@ -41,21 +36,16 @@
 	/// Mood message for being here, only shows up if mood_bonus != 0
 	var/mood_message = "<span class='nicegreen'>This area is pretty nice!\n</span>"
 
+	///Will objects this area be needing power?
+	var/requires_power = TRUE
+	/// This gets overridden to 1 for space in area/Initialize().
+	var/always_unpowered = FALSE
+
 	var/power_equip = TRUE
 	var/power_light = TRUE
 	var/power_environ = TRUE
 
-	var/has_gravity = 0
-	///Are you forbidden from teleporting to the area? (centcom, mobs, wizard, hand teleporter)
-	var/noteleport = FALSE
-	///Hides area from player Teleport function.
-	var/hidden = FALSE
-	///Is the area teleport-safe: no space / radiation / aggresive mobs / other dangers
-	var/safe = FALSE
-	/// If false, loading multiple maps with this area type will create multiple instances.
-	var/unique = TRUE
-
-	var/no_air = null
+	var/has_gravity = FALSE
 
 	var/parallax_movedir = 0
 
@@ -66,8 +56,7 @@
 	var/list/cameras
 	var/list/firealarms
 	var/firedoors_last_closed_on = 0
-	/// Can the Xenobio management console transverse this area by default?
-	var/xenobiology_compatible = FALSE
+
 	///Boolean to limit the areas (subtypes included) that atoms in this area can smooth with. Used for shuttles.
 	var/area_limited_icon_smoothing = FALSE
 
@@ -107,7 +96,7 @@ GLOBAL_LIST_EMPTY(teleportlocs)
 /proc/process_teleport_locs()
 	for(var/V in GLOB.sortedAreas)
 		var/area/AR = V
-		if(istype(AR, /area/shuttle) || AR.noteleport)
+		if(istype(AR, /area/shuttle) || AR.area_flags & NOTELEPORT)
 			continue
 		if(GLOB.teleportlocs[AR.name])
 			continue
@@ -134,7 +123,7 @@ GLOBAL_LIST_EMPTY(teleportlocs)
 		else // no icon state? use random.
 			minimap_color = rgb(rand(50,70),rand(50,70),rand(50,70))	// This interacts with the map loader, so it needs to be set immediately
 	// rather than waiting for atoms to initialize.
-	if (unique)
+	if (area_flags & UNIQUE_AREA)
 		GLOB.areas_by_type[type] = src
 	power_usage = new /list(AREA_USAGE_LEN) // Some atoms would like to use power in Initialize()
 	return ..()
@@ -149,8 +138,6 @@ GLOBAL_LIST_EMPTY(teleportlocs)
   */
 /area/Initialize()
 	icon_state = ""
-	layer = AREA_LAYER
-	map_name = name // Save the initial (the name set in the map) name of the area.
 
 	if(requires_power)
 		luminosity = 0
@@ -184,9 +171,22 @@ GLOBAL_LIST_EMPTY(teleportlocs)
 /area/LateInitialize()
 	power_change()		// all machines set to current power level, also updates icon
 	update_beauty()
+
+/area/proc/RunGeneration()
 	if(map_generator)
 		map_generator = new map_generator()
-		map_generator.generate_terrain(get_area_turfs(src))
+		var/list/turfs = list()
+		for(var/turf/T in contents)
+			turfs += T
+		map_generator.generate_terrain(turfs)
+
+/area/proc/test_gen()
+	if(map_generator)
+		var/list/turfs = list()
+		for(var/turf/T in contents)
+			turfs += T
+		map_generator.generate_terrain(turfs)
+
 
 /**
   * Register this area as belonging to a z level
@@ -260,9 +260,9 @@ GLOBAL_LIST_EMPTY(teleportlocs)
   *
   * Sends to all ai players, alert consoles, drones and alarm monitor programs in the world
   */
-/area/proc/atmosalert(danger_level, obj/source)
-	if(danger_level != atmosalm)
-		if (danger_level==2)
+/area/proc/atmosalert(isdangerous, obj/source)
+	if(isdangerous != atmosalm)
+		if(isdangerous==TRUE)
 
 			for (var/item in GLOB.silicon_mobs)
 				var/mob/living/silicon/aiPlayer = item
@@ -277,7 +277,7 @@ GLOBAL_LIST_EMPTY(teleportlocs)
 				var/datum/computer_file/program/alarm_monitor/p = item
 				p.triggerAlarm("Atmosphere", src, cameras, source)
 
-		else if (src.atmosalm == 2)
+		else
 			for (var/item in GLOB.silicon_mobs)
 				var/mob/living/silicon/aiPlayer = item
 				aiPlayer.cancelAlarm("Atmosphere", src, source)
@@ -291,9 +291,9 @@ GLOBAL_LIST_EMPTY(teleportlocs)
 				var/datum/computer_file/program/alarm_monitor/p = item
 				p.cancelAlarm("Atmosphere", src, source)
 
-		src.atmosalm = danger_level
-		return 1
-	return 0
+		atmosalm = isdangerous
+		return TRUE
+	return FALSE
 
 /**
   * Try to close all the firedoors in the area
@@ -626,8 +626,8 @@ GLOBAL_LIST_EMPTY(teleportlocs)
 	power_light = FALSE
 	power_environ = FALSE
 	always_unpowered = FALSE
-	valid_territory = FALSE
-	blob_allowed = FALSE
+	area_flags &= ~VALID_TERRITORY
+	area_flags &= ~BLOBS_ALLOWED
 	addSorted()
 /**
   * Set the area size of the area

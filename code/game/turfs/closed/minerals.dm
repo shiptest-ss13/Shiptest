@@ -147,7 +147,7 @@
 /turf/closed/mineral/random
 	var/list/mineralSpawnChanceList = list(/obj/item/stack/ore/uranium = 5, /obj/item/stack/ore/diamond = 1, /obj/item/stack/ore/gold = 10,
 		/obj/item/stack/ore/silver = 12, /obj/item/stack/ore/plasma = 20, /obj/item/stack/ore/iron = 40, /obj/item/stack/ore/titanium = 11,
-		/turf/closed/mineral/gibtonite = 4, /turf/open/floor/plating/asteroid/airless/cave = 2, /obj/item/stack/ore/bluespace_crystal = 1)
+		/turf/closed/mineral/gibtonite = 4, /obj/item/stack/ore/bluespace_crystal = 1)
 		//Currently, Adamantine won't spawn as it has no uses. -Durandan
 	var/mineralChance = 13
 
@@ -176,11 +176,6 @@
 		else
 			Change_Ore(path, 1)
 			Spread_Vein(path)
-
-/turf/closed/mineral/random/no_caves
-	mineralSpawnChanceList = list(/obj/item/stack/ore/uranium = 5, /obj/item/stack/ore/diamond = 1, /obj/item/stack/ore/gold = 10,
-		/obj/item/stack/ore/silver = 12, /obj/item/stack/ore/plasma = 20, /obj/item/stack/ore/iron = 40, /obj/item/stack/ore/titanium = 11,
-		/turf/closed/mineral/gibtonite = 4, /obj/item/stack/ore/bluespace_crystal = 1)
 
 /turf/closed/mineral/random/high_chance
 	icon_state = "rock_highchance"
@@ -220,7 +215,7 @@
 	mineralSpawnChanceList = list(
 		/obj/item/stack/ore/uranium = 5, /obj/item/stack/ore/diamond = 1, /obj/item/stack/ore/gold = 10, /obj/item/stack/ore/titanium = 11,
 		/obj/item/stack/ore/silver = 12, /obj/item/stack/ore/plasma = 20, /obj/item/stack/ore/iron = 40,
-		/turf/closed/mineral/gibtonite/volcanic = 4, /turf/open/floor/plating/asteroid/airless/cave/volcanic = 1, /obj/item/stack/ore/bluespace_crystal = 1)
+		/turf/closed/mineral/gibtonite/volcanic = 4, /obj/item/stack/ore/bluespace_crystal = 1)
 
 
 /turf/closed/mineral/random/labormineral
@@ -248,13 +243,6 @@
 	mineralType = /obj/item/stack/ore/iron
 	scan_state = "rock_Iron"
 
-/turf/closed/mineral/iron/volcanic
-	environment_type = "basalt"
-	turf_type = /turf/open/floor/plating/asteroid/basalt/lava_land_surface
-	baseturfs = /turf/open/floor/plating/asteroid/basalt/lava_land_surface
-	initial_gas_mix = LAVALAND_DEFAULT_ATMOS
-	defer_change = 1
-
 /turf/closed/mineral/iron/ice
 	environment_type = "snow_cavern"
 	icon_state = "icerock_iron"
@@ -264,44 +252,36 @@
 	initial_gas_mix = FROZEN_ATMOS
 	defer_change = TRUE
 
-
 /turf/closed/mineral/uranium
 	mineralType = /obj/item/stack/ore/uranium
 	scan_state = "rock_Uranium"
-
-/turf/closed/mineral/uranium/volcanic
-	environment_type = "basalt"
-	turf_type = /turf/open/floor/plating/asteroid/basalt/lava_land_surface
-	baseturfs = /turf/open/floor/plating/asteroid/basalt/lava_land_surface
-	initial_gas_mix = LAVALAND_DEFAULT_ATMOS
-	defer_change = 1
-
 
 /turf/closed/mineral/diamond
 	mineralType = /obj/item/stack/ore/diamond
 	scan_state = "rock_Diamond"
 
-/turf/closed/mineral/diamond/volcanic
+/turf/closed/mineral/gold
+	mineralType = /obj/item/stack/ore/gold
+	scan_state = "rock_Gold"
+
+/turf/closed/mineral/gold/volcanic
 	environment_type = "basalt"
 	turf_type = /turf/open/floor/plating/asteroid/basalt/lava_land_surface
 	baseturfs = /turf/open/floor/plating/asteroid/basalt/lava_land_surface
 	initial_gas_mix = LAVALAND_DEFAULT_ATMOS
-	turf_type = /turf/open/floor/plating/asteroid/basalt/lava_land_surface
-	baseturfs = /turf/open/floor/plating/asteroid/basalt/lava_land_surface
-	initial_gas_mix = LAVALAND_DEFAULT_ATMOS
-	defer_change = 1
+	defer_change = TRUE
 
+/turf/closed/mineral/silver
+	mineralType = /obj/item/stack/ore/silver
+	scan_state = "rock_Silver"
+
+/turf/closed/mineral/titanium
+	mineralType = /obj/item/stack/ore/titanium
+	scan_state = "rock_Titanium"
 
 /turf/closed/mineral/plasma
 	mineralType = /obj/item/stack/ore/plasma
 	scan_state = "rock_Plasma"
-
-/turf/closed/mineral/plasma/volcanic
-	environment_type = "basalt"
-	turf_type = /turf/open/floor/plating/asteroid/basalt/lava_land_surface
-	baseturfs = /turf/open/floor/plating/asteroid/basalt/lava_land_surface
-	initial_gas_mix = LAVALAND_DEFAULT_ATMOS
-	defer_change = 1
 
 /turf/closed/mineral/plasma/ice
 	environment_type = "snow_cavern"
@@ -312,13 +292,10 @@
 	initial_gas_mix = FROZEN_ATMOS
 	defer_change = TRUE
 
-
-
 /turf/closed/mineral/bananium
 	mineralType = /obj/item/stack/ore/bananium
 	mineralAmt = 3
 	scan_state = "rock_Bananium"
-
 
 /turf/closed/mineral/bscrystal
 	mineralType = /obj/item/stack/ore/bluespace_crystal
@@ -330,8 +307,7 @@
 	turf_type = /turf/open/floor/plating/asteroid/basalt/lava_land_surface
 	baseturfs = /turf/open/floor/plating/asteroid/basalt/lava_land_surface
 	initial_gas_mix = LAVALAND_DEFAULT_ATMOS
-	defer_change = 1
-
+	defer_change = TRUE
 
 /turf/closed/mineral/volcanic
 	environment_type = "basalt"

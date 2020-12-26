@@ -86,7 +86,7 @@ GLOBAL_VAR_INIT(fscpassword, generate_password())
 	name = "Syndicate Forgotten Vault"
 	icon_state = "syndie-ship"
 	ambientsounds = list('sound/ambience/ambitech2.ogg', 'sound/ambience/ambitech3.ogg')
-	noteleport = TRUE
+	area_flags = NOTELEPORT | UNIQUE_AREA
 
 	//Cybersun hardsuit
 
