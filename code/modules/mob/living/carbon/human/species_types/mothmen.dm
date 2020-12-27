@@ -15,7 +15,7 @@
 	liked_food = FRUIT | VEGETABLES | DAIRY | CLOTH
 	disliked_food = GROSS
 	toxic_food = MEAT | RAW
-	mutanteyes = /obj/item/organ/eyes/night_vision/compound 	//WaspStation Edit - Compound eyes
+	mutanteyes = /obj/item/organ/eyes/compound 	//WaspStation Edit - Compound eyes
 	mutanttongue = /obj/item/organ/tongue/moth // WaspStation Edit - Insectoid language
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | ERT_SPAWN | RACE_SWAP | SLIME_EXTRACT
 	species_language_holder = /datum/language_holder/moth

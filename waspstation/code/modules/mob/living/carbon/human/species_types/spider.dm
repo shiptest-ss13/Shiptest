@@ -1,6 +1,12 @@
 GLOBAL_LIST_INIT(spider_first, world.file2list("strings/names/spider_first.txt"))
 GLOBAL_LIST_INIT(spider_last, world.file2list("strings/names/spider_last.txt"))
 
+/obj/item/organ/eyes/night_vision/spider
+	name = "spider eyes"
+	desc = "These eyes seem to have increased sensitivity to bright light, offset by basic night vision."
+	see_in_dark = 4
+	flash_protect = FLASH_PROTECTION_SENSITIVE
+
 /obj/item/organ/tongue/spider
 	name = "inner mandible"
 	desc = "A set of soft, spoon-esque mandibles closer to the mouth opening, that allow for basic speech, and the ability to speak Rachnidian."
@@ -49,7 +55,7 @@ GLOBAL_LIST_INIT(spider_last, world.file2list("strings/names/spider_last.txt"))
 	liked_food = MEAT | RAW
 	disliked_food = FRUIT | GROSS
 	toxic_food = VEGETABLES | DAIRY | CLOTH
-	mutanteyes = /obj/item/organ/eyes/night_vision/compound
+	mutanteyes = /obj/item/organ/eyes/night_vision/spider
 	mutanttongue = /obj/item/organ/tongue/spider
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | ERT_SPAWN | RACE_SWAP | SLIME_EXTRACT
 	species_language_holder = /datum/language_holder/spider

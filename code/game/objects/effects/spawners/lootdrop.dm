@@ -233,7 +233,7 @@
 	loot = list(
 		/obj/item/organ/ears/penguin,
 		/obj/item/organ/ears/cat,
-		/obj/item/organ/eyes/night_vision/compound,
+		/obj/item/organ/eyes/compound,
 		/obj/item/organ/eyes/snail,
 		/obj/item/organ/tongue/bone,
 		/obj/item/organ/tongue/fly,
