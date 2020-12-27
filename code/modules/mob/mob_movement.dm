@@ -475,6 +475,10 @@
 	if(dir != UP && dir != DOWN)
 		return FALSE
 	var/turf/target = get_step_multiz(src, dir)
+	if(incapacitated())//I'm so so sorry	//Wasp Start - No more flying while dead
+		if(feedback)
+			to_chat(src, "<span class='warning'>You can't do that right now!</span>")
+			return FALSE					//Wasp End
 	if(!target)
 		if(feedback)
 			to_chat(src, "<span class='warning'>There's nowhere to go in that direction!</span>")
@@ -483,7 +487,13 @@
 		if(feedback)
 			to_chat(src, "<span class='warning'>You couldn't move there!</span>")
 		return FALSE
+	var/atom/movable/AM
+	if(pulling)								//Wasp Start - Dragging across z-levels
+		AM = pulling
+		AM.forceMove(target)				//Wasp End
 	forceMove(target)
+	if(AM)									//Wasp Start - Dragging across z-levels
+		start_pulling(AM)					//Wasp End
 	return TRUE
 
 /// Can this mob move between z levels
