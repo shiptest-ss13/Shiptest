@@ -117,8 +117,13 @@
 	/// A luminescence-shifted value of the last color calculated for chatmessage overlays
 	var/chat_color_darkened
 
+	///Used for changing icon states for different base sprites.
+	var/base_icon_state
+
 	///Icon-smoothing behavior.
 	var/smoothing_flags = NONE
+	///What directions this is currently smoothing with. IMPORTANT: This uses the smoothing direction flags as defined in icon_smoothing.dm, instead of the BYOND flags.
+	var/smoothing_junction = null //This starts as null for us to know when it's first set, but after that it will hold a 8-bit mask ranging from 0 to 255.
 	///Smoothing variable
 	var/top_left_corner
 	///Smoothing variable
