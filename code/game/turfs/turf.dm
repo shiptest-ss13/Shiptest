@@ -89,7 +89,7 @@ GLOBAL_LIST_EMPTY(station_turfs)
 		if(canSmoothWith[length(canSmoothWith)] > MAX_S_TURF) //If the last element is higher than the maximum turf-only value, then it must scan turf contents for smoothing targets.
 			smoothing_flags |= SMOOTH_OBJ
 		SET_BITFLAG_LIST(canSmoothWith)
-	if (smoothing_flags)
+	if (smoothing_flags & (SMOOTH_CORNERS|SMOOTH_BITMASK))
 		QUEUE_SMOOTH(src)
 
 	visibilityChanged()
@@ -216,9 +216,20 @@ GLOBAL_LIST_EMPTY(station_turfs)
 		return FALSE
 	if(!force && (!can_zFall(A, levels, target) || !A.can_zFall(src, levels, target, DOWN)))
 		return FALSE
+	var/atom/movable/AM = null	//Wasp Start - Dragging down stairs works now
+	var/was_pulling = FALSE
+	if(ismob(A))
+		var/mob/M = A
+		if(A.pulling)
+			AM = M.pulling
+			AM.forceMove(target)
+			was_pulling = TRUE	//Wasp End
 	A.zfalling = TRUE
 	A.forceMove(target)
 	A.zfalling = FALSE
+	if(ismob(A) && was_pulling)	//Wasp Start - Dragging down stairs works now
+		var/mob/M = A
+		M.start_pulling(AM)		//Wasp End
 	target.zImpact(A, levels, src)
 	return TRUE
 

@@ -5,22 +5,24 @@
 	desc = "A canister for the storage of gas."
 	icon_state = "yellow"
 	density = TRUE
+	base_icon_state = "yellow" //Used to make dealing with breaking the canister less hellish.
+	volume = 1000
+	armor = list("melee" = 50, "bullet" = 50, "laser" = 50, "energy" = 100, "bomb" = 10, "bio" = 100, "rad" = 100, "fire" = 80, "acid" = 50)
+	max_integrity = 250
+	integrity_failure = 0.4
+	pressure_resistance = 7 * ONE_ATMOSPHERE
+	req_access = list()
 
 	var/valve_open = FALSE
 	var/obj/machinery/atmospherics/components/binary/passive_gate/pump
 	var/release_log = ""
 
-	volume = 1000
 	var/filled = 0.5
 	var/gas_type
 	var/release_pressure = ONE_ATMOSPHERE
 	var/can_max_release_pressure = (ONE_ATMOSPHERE * 10)
 	var/can_min_release_pressure = (ONE_ATMOSPHERE / 10)
 
-	armor = list("melee" = 50, "bullet" = 50, "laser" = 50, "energy" = 100, "bomb" = 10, "bio" = 100, "rad" = 100, "fire" = 80, "acid" = 50)
-	max_integrity = 250
-	integrity_failure = 0.4
-	pressure_resistance = 7 * ONE_ATMOSPHERE
 	var/temperature_resistance = 1000 + T0C
 	var/starter_temp
 	// Prototype vars
@@ -344,35 +346,47 @@
 		ui = new(user, src, "Canister", name)
 		ui.open()
 
+/obj/machinery/portable_atmospherics/canister/ui_static_data(mob/user)
+	return list(
+		"defaultReleasePressure" = round(CAN_DEFAULT_RELEASE_PRESSURE),
+		"minReleasePressure" = round(can_min_release_pressure),
+		"maxReleasePressure" = round(can_max_release_pressure),
+		"holdingTankLeakPressure" = round(TANK_LEAK_PRESSURE),
+		"holdingTankFragPressure" = round(TANK_FRAGMENT_PRESSURE)
+	)
+
 /obj/machinery/portable_atmospherics/canister/ui_data()
-	var/data = list()
-	data["portConnected"] = connected_port ? 1 : 0
-	data["tankPressure"] = round(air_contents.return_pressure() ? air_contents.return_pressure() : 0)
-	data["releasePressure"] = round(release_pressure ? release_pressure : 0)
-	data["defaultReleasePressure"] = round(CAN_DEFAULT_RELEASE_PRESSURE)
-	data["minReleasePressure"] = round(can_min_release_pressure)
-	data["maxReleasePressure"] = round(can_max_release_pressure)
-	data["valveOpen"] = valve_open ? 1 : 0
+	. = list(
+		"portConnected" = !!connected_port,
+		"tankPressure" = round(air_contents.return_pressure()),
+		"releasePressure" = round(release_pressure),
+		"valveOpen" = !!valve_open,
+		"isPrototype" = !!prototype,
+		"hasHoldingTank" = !!holding
+	)
 
-	data["isPrototype"] = prototype ? 1 : 0
 	if (prototype)
-		data["restricted"] = restricted
-		data["timing"] = timing
-		data["time_left"] = get_time_left()
-		data["timer_set"] = timer_set
-		data["timer_is_not_default"] = timer_set != default_timer_set
-		data["timer_is_not_min"] = timer_set != minimum_timer_set
-		data["timer_is_not_max"] = timer_set != maximum_timer_set
+		. += list(
+			"restricted" = restricted,
+			"timing" = timing,
+			"time_left" = get_time_left(),
+			"timer_set" = timer_set,
+			"timer_is_not_default" = timer_set != default_timer_set,
+			"timer_is_not_min" = timer_set != minimum_timer_set,
+			"timer_is_not_max" = timer_set != maximum_timer_set
+		)
 
-	data["hasHoldingTank"] = holding ? 1 : 0
 	if (holding)
-		data["holdingTank"] = list()
-		data["holdingTank"]["name"] = holding.name
-		data["holdingTank"]["tankPressure"] = round(holding.air_contents.return_pressure())
-	return data
+		. += list(
+			"holdingTank" = list(
+				"name" = holding.name,
+				"tankPressure" = round(holding.air_contents.return_pressure())
+			)
+		)
 
 /obj/machinery/portable_atmospherics/canister/ui_act(action, params)
-	if(..())
+	. = ..()
+	if(.)
 		return
 	switch(action)
 		if("relabel")

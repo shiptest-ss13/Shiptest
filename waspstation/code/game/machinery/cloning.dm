@@ -116,7 +116,8 @@
 	return data
 
 /obj/machinery/clonepod/ui_act(action, params)
-	if(..())
+	. = ..()
+	if(.)
 		return
 	switch(action)
 		if("ejectbeaker")

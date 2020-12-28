@@ -5,7 +5,6 @@
 	extended_desc = "A basic interface for supply personnel to check and claim bounties."
 	requires_ntnet = TRUE
 	transfer_access = ACCESS_CARGO
-	network_destination = "cargo claims interface"
 	size = 10
 	tgui_id = "NtosBountyConsole"
 	///cooldown var for printing paper sheets.
@@ -32,8 +31,9 @@
 	data["bountydata"] = bountyinfo
 	return data
 
-/datum/computer_file/program/bounty/ui_act(action,params)
-	if(..())
+/datum/computer_file/program/bounty/ui_act(action,params)	//When a button is clicked (claim or Print bounties)
+	. = ..()
+	if(.)
 		return
 	switch(action)
 		if("ClaimBounty")

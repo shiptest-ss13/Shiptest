@@ -53,3 +53,16 @@
 		H.say("Master forgive me, but I will have to go all out... Just this once")
 	user.visible_message("<span class='suicide'>[user] is cutting [user.p_them()]self on [user.p_their()] own edge!")
 	return (BRUTELOSS) //appropriate
+
+/obj/item/kitchen/knife/letter_opener
+	name = "letter opener"
+	icon = 'waspstation/icons/obj/items_and_weapons.dmi'
+	icon_state = "letter_opener"
+	desc = "A military combat utility survival knife."
+	embedding = list("pain_mult" = 4, "embed_chance" = 65, "fall_chance" = 10, "ignore_throwspeed_threshold" = TRUE)
+	force = 15
+	throwforce = 15
+	unique_reskin = list("Traditional" = "letter_opener",
+						"Boxcutter" = "letter_opener_b",
+						"Corporate" = "letter_opener_a"
+						)

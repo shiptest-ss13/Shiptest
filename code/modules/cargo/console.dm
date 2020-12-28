@@ -131,7 +131,8 @@
 	return data
 
 /obj/machinery/computer/cargo/ui_act(action, params, datum/tgui/ui)
-	if(..())
+	. = ..()
+	if(.)
 		return
 	switch(action)
 		if("send")

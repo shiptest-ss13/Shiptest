@@ -260,6 +260,21 @@
 	},
 /turf/open/floor/engine,
 /area/engine/supermatter)
+"hB" = (
+/obj/effect/turf_decal/stripes/corner{
+	dir = 1
+	},
+/obj/machinery/atmospherics/components/unary/vent_pump/on{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/engine,
+/area/engine/engineering)
 "hF" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /obj/effect/turf_decal/stripes/line{
@@ -416,6 +431,16 @@
 	},
 /turf/open/floor/engine,
 /area/engine/supermatter)
+"kb" = (
+/obj/machinery/atmospherics/components/binary/pump{
+	dir = 8;
+	name = "Mix to Gas"
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/engine,
+/area/engine/engineering)
 "kt" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 6
@@ -465,10 +490,8 @@
 	},
 /turf/open/floor/plating,
 /area/engine/supermatter)
-"lh" = (
-/obj/effect/turf_decal/stripes/corner{
-	dir = 8
-	},
+"lI" = (
+/obj/effect/turf_decal/stripes/corner,
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
@@ -545,16 +568,6 @@
 	},
 /turf/open/floor/plating,
 /area/engine/supermatter)
-"nU" = (
-/obj/machinery/atmospherics/components/binary/pump{
-	dir = 8;
-	name = "Mix to Gas"
-	},
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/turf/open/floor/engine,
-/area/engine/engineering)
 "oz" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 1
@@ -782,6 +795,17 @@
 /obj/effect/spawner/structure/window/plasma/reinforced/shutters,
 /turf/open/floor/plating,
 /area/engine/engineering)
+"tG" = (
+/obj/effect/turf_decal/stripes/line,
+/obj/machinery/atmospherics/components/binary/pump/on{
+	dir = 8;
+	name = "Engine Coolant Bypass"
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/engine,
+/area/engine/engineering)
 "tK" = (
 /obj/machinery/atmospherics/pipe/manifold/general/visible{
 	dir = 1
@@ -808,21 +832,6 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /obj/effect/turf_decal/stripes/line{
 	dir = 5
-	},
-/turf/open/floor/engine,
-/area/engine/engineering)
-"uc" = (
-/obj/effect/turf_decal/stripes/corner{
-	dir = 1
-	},
-/obj/machinery/atmospherics/components/unary/vent_pump/on{
-	dir = 1
-	},
-/obj/structure/cable{
-	icon_state = "2-8"
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
 	},
 /turf/open/floor/engine,
 /area/engine/engineering)
@@ -897,13 +906,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/engine/engineering)
-"vy" = (
-/obj/effect/turf_decal/stripes/corner,
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/turf/open/floor/engine,
-/area/engine/engineering)
 "vC" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 4
@@ -930,6 +932,18 @@
 	icon_state = "1-4"
 	},
 /turf/open/floor/plating,
+/area/engine/engineering)
+"wZ" = (
+/obj/effect/turf_decal/stripes/corner{
+	dir = 4
+	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/turf/open/floor/engine,
 /area/engine/engineering)
 "xj" = (
 /obj/machinery/atmospherics/pipe/simple/orange/visible{
@@ -1047,6 +1061,15 @@
 	},
 /turf/open/floor/engine,
 /area/engine/engineering)
+"zR" = (
+/obj/effect/turf_decal/stripes/corner{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/engine,
+/area/engine/engineering)
 "zT" = (
 /obj/structure/lattice,
 /turf/open/space,
@@ -1137,6 +1160,16 @@
 	},
 /turf/open/floor/engine,
 /area/engine/engineering)
+"BZ" = (
+/obj/machinery/atmospherics/components/binary/pump/on{
+	dir = 8;
+	name = "Gas to Cooling Loop"
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/engine,
+/area/engine/engineering)
 "Cx" = (
 /obj/machinery/door/airlock/engineering/glass{
 	name = "Supermatter Engine Room";
@@ -1156,18 +1189,6 @@
 /obj/effect/turf_decal/delivery,
 /turf/open/floor/plasteel/dark,
 /area/engine/engineering)
-"CG" = (
-/obj/effect/turf_decal/stripes/corner{
-	dir = 4
-	},
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on{
-	dir = 4
-	},
-/obj/structure/cable{
-	icon_state = "2-8"
-	},
-/turf/open/floor/engine,
-/area/engine/engineering)
 "CJ" = (
 /obj/machinery/atmospherics/pipe/manifold/cyan/visible{
 	dir = 8
@@ -1185,16 +1206,6 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
-/area/engine/engineering)
-"Dn" = (
-/obj/machinery/atmospherics/components/binary/pump/on{
-	dir = 8;
-	name = "Gas to Cooling Loop"
-	},
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/turf/open/floor/engine,
 /area/engine/engineering)
 "DL" = (
 /obj/effect/turf_decal/stripes/line,
@@ -1754,6 +1765,21 @@
 /obj/structure/closet/secure_closet/engineering_personal,
 /turf/open/floor/plasteel/dark,
 /area/engine/engineering)
+"PA" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 1
+	},
+/obj/machinery/camera{
+	c_tag = "Engineering Supermatter Aft";
+	network = list("ss13","engine");
+	pixel_x = 23
+	},
+/obj/effect/turf_decal/delivery,
+/obj/machinery/atmospherics/pipe/simple/cyan/visible{
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark,
+/area/engine/engineering)
 "PI" = (
 /obj/machinery/atmospherics/pipe/simple/general/visible{
 	dir = 10
@@ -1842,17 +1868,6 @@
 /obj/effect/spawner/structure/window/plasma/reinforced,
 /turf/open/floor/plating,
 /area/engine/supermatter)
-"QN" = (
-/obj/effect/turf_decal/stripes/line,
-/obj/machinery/atmospherics/components/binary/pump/on{
-	dir = 8;
-	name = "Engine Coolant Bypass"
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/turf/open/floor/engine,
-/area/engine/engineering)
 "QS" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 10
@@ -2010,21 +2025,6 @@
 	icon_state = "1-2"
 	},
 /turf/open/floor/engine,
-/area/engine/engineering)
-"WJ" = (
-/obj/effect/turf_decal/stripes/line{
-	dir = 1
-	},
-/obj/machinery/camera{
-	c_tag = "Engineering Supermatter Aft";
-	network = list("ss13","engine");
-	pixel_x = 23
-	},
-/obj/effect/turf_decal/delivery,
-/obj/machinery/atmospherics/pipe/simple/cyan/visible{
-	dir = 4
-	},
-/turf/open/floor/plasteel/dark,
 /area/engine/engineering)
 "WY" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
@@ -2479,17 +2479,17 @@ JG
 (12,1,1) = {"
 fI
 HM
-uc
+hB
 Vt
 Vt
 Vt
 Vt
-Dn
+BZ
 Vt
 Vt
 to
 Vt
-lh
+zR
 DZ
 Ip
 PO
@@ -2647,7 +2647,7 @@ JG
 (18,1,1) = {"
 Kg
 do
-QN
+tG
 HT
 II
 rz
@@ -2657,7 +2657,7 @@ FW
 TT
 TT
 QC
-WJ
+PA
 Lj
 Kg
 yB
@@ -2815,17 +2815,17 @@ JG
 (24,1,1) = {"
 XI
 fJ
-CG
+wZ
 Mf
 Vt
 Vt
 Vt
-nU
+kb
 Vt
 Vt
 aE
 Vt
-vy
+lI
 nv
 JK
 Jh

@@ -50,3 +50,4 @@
 	filling_color = "#FFD700"
 	distill_reagent = null
 	wine_power = 50
+	wine_flavor = "forbidden knowledge and discord" //wasp edit: new wine flavors

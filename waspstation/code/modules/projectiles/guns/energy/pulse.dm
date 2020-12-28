@@ -8,4 +8,4 @@
 	selfcharge = 1
 	icon = 'waspstation/icons/obj/guns/energy.dmi'
 	charge_delay = 0.5 //50 seconds to recharge the clip
-
+	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_BELT

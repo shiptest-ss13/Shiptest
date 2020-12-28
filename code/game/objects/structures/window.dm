@@ -304,7 +304,7 @@
 //This proc is used to update the icons of nearby windows.
 /obj/structure/window/proc/update_nearby_icons()
 	update_icon()
-	if(smoothing_flags)
+	if(smoothing_flags & (SMOOTH_CORNERS|SMOOTH_BITMASK))
 		QUEUE_SMOOTH_NEIGHBORS(src)
 
 //merges adjacent full-tile windows into one
@@ -317,7 +317,7 @@
 		var/ratio = obj_integrity / max_integrity
 		ratio = CEILING(ratio*4, 1) * 25
 
-		if(smoothing_flags)
+		if(smoothing_flags & (SMOOTH_CORNERS|SMOOTH_BITMASK))
 			QUEUE_SMOOTH(src)
 
 		cut_overlay(crack_overlay)
@@ -585,12 +585,13 @@
 
 /obj/structure/window/fulltile
 	icon = 'icons/obj/smooth_structures/window.dmi'
-	icon_state = "window"
+	icon_state = "window-0"
+	base_icon_state = "window"
 	dir = FULLTILE_WINDOW_DIR
 	max_integrity = 200
 	fulltile = TRUE
 	flags_1 = PREVENT_CLICK_UNDER_1
-	smoothing_flags = SMOOTH_CORNERS
+	smoothing_flags = SMOOTH_BITMASK
 	smoothing_groups = list(SMOOTH_GROUP_WINDOW_FULLTILE)
 	canSmoothWith = list(SMOOTH_GROUP_WINDOW_FULLTILE, SMOOTH_GROUP_WALLS)
 	glass_amount = 2
@@ -600,12 +601,13 @@
 
 /obj/structure/window/plasma/fulltile
 	icon = 'icons/obj/smooth_structures/plasma_window.dmi'
-	icon_state = "plasmawindow"
+	icon_state = "plasma_window-0"
+	base_icon_state = "plasma_window"
 	dir = FULLTILE_WINDOW_DIR
 	max_integrity = 1200
 	fulltile = TRUE
 	flags_1 = PREVENT_CLICK_UNDER_1
-	smoothing_flags = SMOOTH_CORNERS
+	smoothing_flags = SMOOTH_BITMASK
 	smoothing_groups = list(SMOOTH_GROUP_WINDOW_FULLTILE)
 	canSmoothWith = list(SMOOTH_GROUP_WINDOW_FULLTILE, SMOOTH_GROUP_WALLS)
 	glass_amount = 2
@@ -615,13 +617,14 @@
 
 /obj/structure/window/plasma/reinforced/fulltile
 	icon = 'icons/obj/smooth_structures/rplasma_window.dmi'
-	icon_state = "rplasmawindow"
+	icon_state = "rplasma_window-0"
+	base_icon_state = "rplasma_window"
 	dir = FULLTILE_WINDOW_DIR
 	state = RWINDOW_SECURE
 	max_integrity = 1000
 	fulltile = TRUE
 	flags_1 = PREVENT_CLICK_UNDER_1
-	smoothing_flags = SMOOTH_CORNERS
+	smoothing_flags = SMOOTH_BITMASK
 	smoothing_groups = list(SMOOTH_GROUP_WINDOW_FULLTILE)
 	canSmoothWith = list(SMOOTH_GROUP_WINDOW_FULLTILE, SMOOTH_GROUP_WALLS)
 	glass_amount = 2
@@ -632,13 +635,14 @@
 
 /obj/structure/window/reinforced/fulltile
 	icon = 'icons/obj/smooth_structures/reinforced_window.dmi'
-	icon_state = "r_window"
+	icon_state = "reinforced_window-0"
+	base_icon_state = "reinforced_window"
 	dir = FULLTILE_WINDOW_DIR
 	max_integrity = 150
 	fulltile = TRUE
 	flags_1 = PREVENT_CLICK_UNDER_1
 	state = RWINDOW_SECURE
-	smoothing_flags = SMOOTH_CORNERS
+	smoothing_flags = SMOOTH_BITMASK
 	smoothing_groups = list(SMOOTH_GROUP_WINDOW_FULLTILE)
 	canSmoothWith = list(SMOOTH_GROUP_WINDOW_FULLTILE, SMOOTH_GROUP_WALLS)
 	glass_amount = 2
@@ -649,18 +653,20 @@
 
 /obj/structure/window/reinforced/tinted/fulltile
 	icon = 'icons/obj/smooth_structures/tinted_window.dmi'
-	icon_state = "tinted_window"
+	icon_state = "tinted_window-0"
+	base_icon_state = "tinted_window"
 	dir = FULLTILE_WINDOW_DIR
 	fulltile = TRUE
 	flags_1 = PREVENT_CLICK_UNDER_1
-	smoothing_flags = SMOOTH_CORNERS
+	smoothing_flags = SMOOTH_BITMASK
 	smoothing_groups = list(SMOOTH_GROUP_WINDOW_FULLTILE)
 	canSmoothWith = list(SMOOTH_GROUP_WINDOW_FULLTILE, SMOOTH_GROUP_WALLS)
 	glass_amount = 2
 
 /obj/structure/window/reinforced/fulltile/ice
 	icon = 'icons/obj/smooth_structures/rice_window.dmi'
-	icon_state = "ice_window"
+	icon_state = "rice_window-0"
+	base_icon_state = "rice_window"
 	max_integrity = 300 //Wasp change - Monstermos
 	glass_amount = 2
 
@@ -668,7 +674,8 @@
 	name = "shuttle window"
 	desc = "A reinforced, air-locked pod window."
 	icon = 'waspstation/icons/obj/smooth_structures/shuttle_window.dmi'
-	icon_state = "shuttle_window"
+	icon_state = "shuttle_window-0"
+	base_icon_state = "shuttle_window"
 	dir = FULLTILE_WINDOW_DIR
 	max_integrity = 150
 	wtype = "shuttle"
@@ -677,9 +684,9 @@
 	reinf = TRUE
 	heat_resistance = 1600
 	armor = list("melee" = 90, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 50, "bio" = 100, "rad" = 100, "fire" = 80, "acid" = 100)
-	smoothing_flags = SMOOTH_CORNERS
-	smoothing_groups = list(SMOOTH_GROUP_SHUTTLE_PARTS)
-	canSmoothWith = null
+	smoothing_flags = SMOOTH_BITMASK
+	smoothing_groups = list(SMOOTH_GROUP_SHUTTLE_PARTS, SMOOTH_GROUP_WINDOW_FULLTILE_SHUTTLE)
+	canSmoothWith = list(SMOOTH_GROUP_WINDOW_FULLTILE_SHUTTLE)
 	explosion_block = 3
 	glass_type = /obj/item/stack/sheet/titaniumglass
 	glass_amount = 2
@@ -698,7 +705,8 @@
 	name = "plastitanium window"
 	desc = "A durable looking window made of an alloy of of plasma and titanium."
 	icon = 'icons/obj/smooth_structures/plastitanium_window.dmi'
-	icon_state = "plastitanium_window"
+	icon_state = "plastitanium_window-0"
+	base_icon_state = "plastitanium_window"
 	dir = FULLTILE_WINDOW_DIR
 	max_integrity = 200
 	wtype = "shuttle"
@@ -706,9 +714,9 @@
 	flags_1 = PREVENT_CLICK_UNDER_1
 	heat_resistance = 1600
 	armor = list("melee" = 95, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 50, "bio" = 100, "rad" = 100, "fire" = 80, "acid" = 100)
-	smoothing_flags = SMOOTH_CORNERS
-	smoothing_groups = list(SMOOTH_GROUP_WINDOW_FULLTILE)
-	canSmoothWith = null
+	smoothing_flags = SMOOTH_BITMASK
+	smoothing_groups = list(SMOOTH_GROUP_SHUTTLE_PARTS, SMOOTH_GROUP_WINDOW_FULLTILE)
+	canSmoothWith = list(SMOOTH_GROUP_WINDOW_FULLTILE)
 	explosion_block = 3
 	damage_deflection = 5		// Wasp Edit - Weakens R-Windows
 	glass_type = /obj/item/stack/sheet/plastitaniumglass
@@ -723,13 +731,14 @@
 	name = "paper frame"
 	desc = "A fragile separator made of thin wood and paper."
 	icon = 'icons/obj/smooth_structures/paperframes.dmi'
-	icon_state = "frame"
+	icon_state = "paperframes-0"
+	base_icon_state = "paperframes"
 	dir = FULLTILE_WINDOW_DIR
 	opacity = TRUE
 	max_integrity = 15
 	fulltile = TRUE
 	flags_1 = PREVENT_CLICK_UNDER_1
-	smoothing_flags = SMOOTH_CORNERS
+	smoothing_flags = SMOOTH_BITMASK
 	smoothing_groups = list(SMOOTH_GROUP_PAPERFRAME)
 	canSmoothWith = list(SMOOTH_GROUP_PAPERFRAME)
 	glass_amount = 2
@@ -783,7 +792,8 @@
 		cut_overlay(torn)
 		add_overlay(paper)
 		set_opacity(TRUE)
-	QUEUE_SMOOTH(src)
+	if(smoothing_flags & (SMOOTH_CORNERS|SMOOTH_BITMASK))
+		QUEUE_SMOOTH(src)
 
 
 /obj/structure/window/paperframe/attackby(obj/item/W, mob/user)
@@ -815,10 +825,11 @@
 	anchored = FALSE
 
 /obj/structure/window/bronze/fulltile
-	icon_state = "clockwork_window"
-	smoothing_flags = SMOOTH_CORNERS
-	smoothing_groups = list(SMOOTH_GROUP_WINDOW_FULLTILE)
-	canSmoothWith = null
+	icon_state = "clockwork_window-0"
+	base_icon_state = "clockwork_window"
+	smoothing_flags = SMOOTH_BITMASK
+	smoothing_groups = list(SMOOTH_GROUP_WINDOW_FULLTILE, SMOOTH_GROUP_WINDOW_FULLTILE_BRONZE)
+	canSmoothWith = list(SMOOTH_GROUP_WINDOW_FULLTILE_BRONZE)
 	fulltile = TRUE
 	flags_1 = PREVENT_CLICK_UNDER_1
 	dir = FULLTILE_WINDOW_DIR

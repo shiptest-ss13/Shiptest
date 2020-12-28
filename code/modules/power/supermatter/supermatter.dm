@@ -104,6 +104,7 @@ GLOBAL_DATUM(main_supermatter_engine, /obj/machinery/power/supermatter_crystal)
 	light_range = 4
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF | FREEZE_PROOF
 	critical_machine = TRUE
+	base_icon_state = "darkmatter"
 
 	///The id of our supermatter
 	var/uid = 1
@@ -113,8 +114,6 @@ GLOBAL_DATUM(main_supermatter_engine, /obj/machinery/power/supermatter_crystal)
 	var/zap_icon = DEFAULT_ZAP_ICON_STATE
 	///The portion of the gasmix we're on that we should remove
 	var/gasefficency = 0.15
-	///Used for changing icon states for diff base sprites
-	var/base_icon_state = "darkmatter"
 
 	///Are we exploding?
 	var/final_countdown = FALSE
@@ -680,12 +679,15 @@ GLOBAL_DATUM(main_supermatter_engine, /obj/machinery/power/supermatter_crystal)
 
 	//Tells the engi team to get their butt in gear
 	if(damage > warning_point) // while the core is still damaged and it's still worth noting its status
+		if(damage_archived < warning_point) //If damage_archive is under the warning point, this is the very first cycle that we've reached said point.
+			SEND_SIGNAL(src, COMSIG_SUPERMATTER_DELAM_START_ALARM)
 		if((REALTIMEOFDAY - lastwarning) / 10 >= WARNING_DELAY)
 			alarm()
 
 			//Oh shit it's bad, time to freak out
 			if(damage > emergency_point)
 				radio.talk_into(src, "[emergency_alert] Integrity: [get_integrity()]%", common_channel)
+				SEND_SIGNAL(src, COMSIG_SUPERMATTER_DELAM_ALARM)
 				lastwarning = REALTIMEOFDAY
 				if(!has_reached_emergency)
 					investigate_log("has reached the emergency point for the first time.", INVESTIGATE_SUPERMATTER)
@@ -693,6 +695,7 @@ GLOBAL_DATUM(main_supermatter_engine, /obj/machinery/power/supermatter_crystal)
 					has_reached_emergency = TRUE
 			else if(damage >= damage_archived) // The damage is still going up
 				radio.talk_into(src, "[warning_alert] Integrity: [get_integrity()]%", engineering_channel)
+				SEND_SIGNAL(src, COMSIG_SUPERMATTER_DELAM_ALARM)
 				lastwarning = REALTIMEOFDAY - (WARNING_DELAY * 5)
 
 			else                                                 // Phew, we're safe

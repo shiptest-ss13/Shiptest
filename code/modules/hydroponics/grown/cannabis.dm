@@ -110,7 +110,8 @@
 	name = "white cannabis leaf"
 	desc = "It feels smooth and nice to the touch."
 	icon_state = "whitecannabis"
-	wine_power = 10
+	wine_power = 40
+	wine_flavor = "medicinal properties" //wasp edit: new wine flavors
 
 /obj/item/reagent_containers/food/snacks/grown/cannabis/ultimate
 	seed = /obj/item/seeds/cannabis/ultimate
@@ -118,4 +119,5 @@
 	desc = "You feel dizzy looking at it. What the fuck?"
 	icon_state = "ocannabis"
 	volume = 420
-	wine_power = 90
+	wine_power = 120
+	wine_flavor = "the highest highs and the lowest lows" //wasp edit: new wine flavors

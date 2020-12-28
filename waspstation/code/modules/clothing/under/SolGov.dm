@@ -20,9 +20,11 @@
 	desc = "A formal SolGov uniform, for special occasions."
 	icon_state = "formal_solgov"
 	item_state = "formal_solgov"
+	can_adjust = TRUE
 
 /obj/item/clothing/under/solgov/formal/terragov
 	name = "\improper TerraGov formal uniform"
 	desc = "A formal SolGov uniform, for special occasions. This one is still colored in original TerraGov green."
 	icon_state = "formal_terragov"
 	item_state = "formal_terragov"
+	can_adjust = FALSE

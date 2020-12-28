@@ -1,8 +1,3 @@
-//Command
-/datum/job/lieutenant
-	alt_titles = list("Bridge Officer", "Executive Officer")
-	senior_title = "Senior Officer"
-
 //Engineering
 /datum/job/chief_engineer
 	alt_titles = list("Engineering Coordinator")

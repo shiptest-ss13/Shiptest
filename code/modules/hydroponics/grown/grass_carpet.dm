@@ -28,6 +28,7 @@
 	var/stacktype = /obj/item/stack/tile/grass
 	var/tile_coefficient = 0.02 // 1/50
 	wine_power = 15
+	wine_flavor = "rabbit food" //wasp edit: new wine flavors
 
 /obj/item/reagent_containers/food/snacks/grown/grass/attack_self(mob/user)
 	to_chat(user, "<span class='notice'>You prepare the astroturf.</span>")
@@ -60,6 +61,8 @@
 	icon_state = "fairygrassclump"
 	filling_color = "#3399ff"
 	stacktype = /obj/item/stack/tile/fairygrass
+	wine_power = 45
+	wine_flavor = "wild fantasy" //wasp edit: new wine flavors
 
 // Carpet
 /obj/item/seeds/grass/carpet
@@ -78,4 +81,5 @@
 	desc = "The textile industry's dark secret."
 	icon_state = "carpetclump"
 	stacktype = /obj/item/stack/tile/carpet
-	can_distill = FALSE
+	wine_power = 30
+	wine_flavor = "lint and dust" //wasp edit: new wine flavors

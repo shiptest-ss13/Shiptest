@@ -247,6 +247,28 @@
 	handle_power() // Handles all computer power interaction
 	//check_update_ui_need()
 
+/**
+  * Displays notification text alongside a soundbeep when requested to by a program.
+  *
+  * After checking tha the requesting program is allowed to send an alert, creates
+  * a visible message of the requested text alongside a soundbeep. This proc adds
+  * text to indicate that the message is coming from this device and the program
+  * on it, so the supplied text should be the exact message and ending punctuation.
+  *
+  * Arguments:
+  * The program calling this proc.
+  * The message that the program wishes to display.
+ */
+
+/obj/item/modular_computer/proc/alert_call(datum/computer_file/program/caller, alerttext, sound = 'sound/machines/twobeep_high.ogg')
+	if(!caller || !caller.alert_able || caller.alert_silenced || !alerttext) //Yeah, we're checking alert_able. No, you don't get to make alerts that the user can't silence.
+		return
+	playsound(src, sound, 50, TRUE)
+	visible_message("<span class='notice'>The [src] displays a [caller.filedesc] notification: [alerttext]</span>")
+	var/mob/living/holder = loc
+	if(istype(holder))
+		to_chat(holder, "[icon2html(src)] <span class='notice'>The [src] displays a [caller.filedesc] notification: [alerttext]</span>")
+
 // Function used by NanoUI's to obtain data for header. All relevant entries begin with "PC_"
 /obj/item/modular_computer/proc/get_header_data()
 	var/list/data = list()
@@ -341,6 +363,31 @@
 	enabled = 0
 	update_icon()
 
+/obj/item/modular_computer/screwdriver_act(mob/user, obj/item/tool)
+	if(!all_components.len)
+		to_chat(user, "<span class='warning'>This device doesn't have any components installed.</span>")
+		return
+	var/list/component_names = list()
+	for(var/h in all_components)
+		var/obj/item/computer_hardware/H = all_components[h]
+		component_names.Add(H.name)
+
+	var/choice = input(user, "Which component do you want to uninstall?", "Computer maintenance", null) as null|anything in sortList(component_names)
+
+	if(!choice)
+		return
+
+	if(!Adjacent(user))
+		return
+
+	var/obj/item/computer_hardware/H = find_hardware_by_name(choice)
+
+	if(!H)
+		return
+
+	uninstall_component(H, user)
+	return
+
 
 /obj/item/modular_computer/attackby(obj/item/W as obj, mob/user as mob)
 	// Insert items into the components
@@ -376,31 +423,6 @@
 		if(W.use_tool(src, user, 20, volume=50, amount=1))
 			obj_integrity = max_integrity
 			to_chat(user, "<span class='notice'>You repair \the [src].</span>")
-		return
-
-	if(W.tool_behaviour == TOOL_SCREWDRIVER)
-		if(!all_components.len)
-			to_chat(user, "<span class='warning'>This device doesn't have any components installed.</span>")
-			return
-		var/list/component_names = list()
-		for(var/h in all_components)
-			var/obj/item/computer_hardware/H = all_components[h]
-			component_names.Add(H.name)
-
-		var/choice = input(user, "Which component do you want to uninstall?", "Computer maintenance", null) as null|anything in sortList(component_names)
-
-		if(!choice)
-			return
-
-		if(!Adjacent(user))
-			return
-
-		var/obj/item/computer_hardware/H = find_hardware_by_name(choice)
-
-		if(!H)
-			return
-
-		uninstall_component(H, user)
 		return
 
 	..()

@@ -17,15 +17,16 @@
 	if (!armor)
 		armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
 	. = ..()
-	if(smoothing_flags)
+	if(smoothing_flags & (SMOOTH_CORNERS|SMOOTH_BITMASK))
 		QUEUE_SMOOTH(src)
 		QUEUE_SMOOTH_NEIGHBORS(src)
-		icon_state = ""
+		if(smoothing_flags & SMOOTH_CORNERS)
+			icon_state = ""
 	GLOB.cameranet.updateVisibility(src)
 
 /obj/structure/Destroy()
 	GLOB.cameranet.updateVisibility(src)
-	if(smoothing_flags)
+	if(smoothing_flags & (SMOOTH_CORNERS|SMOOTH_BITMASK))
 		QUEUE_SMOOTH_NEIGHBORS(src)
 	return ..()
 
@@ -40,8 +41,8 @@
 		structureclimber.visible_message("<span class='warning'>[structureclimber] is knocked off [src].</span>", "<span class='warning'>You're knocked off [src]!</span>", "<span class='warning'>You see [structureclimber] get knocked off [src].</span>")
 
 /obj/structure/ui_act(action, params)
-	. = ..()
 	add_fingerprint(usr)
+	return ..()
 
 /obj/structure/MouseDrop_T(atom/movable/O, mob/user)
 	. = ..()

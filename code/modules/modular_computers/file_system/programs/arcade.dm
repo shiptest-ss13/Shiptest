@@ -1,12 +1,12 @@
 /datum/computer_file/program/arcade
-	filename = "arcade"
-	filedesc = "Nanotrasen Micro Arcade"
+	filename = "dsarcade"
+	filedesc = "Donksoft Micro Arcade"
 	program_icon_state = "arcade"
 	extended_desc = "This port of the classic game 'Outbomb Cuban Pete', redesigned to run on tablets, with thrilling graphics and chilling storytelling."
 	requires_ntnet = FALSE
-	network_destination = "arcade network"
 	size = 6
 	tgui_id = "NtosArcade"
+	program_icon = "gamepad"
 
 	///Returns TRUE if the game is being played.
 	var/game_active = TRUE
@@ -92,8 +92,10 @@
 	return data
 
 /datum/computer_file/program/arcade/ui_act(action, list/params)
-	if(..())
-		return TRUE
+	. = ..()
+	if(.)
+		return
+
 	var/obj/item/computer_hardware/printer/printer
 	if(computer)
 		printer = computer.all_components[MC_PRINT]

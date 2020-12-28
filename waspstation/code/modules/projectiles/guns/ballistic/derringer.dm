@@ -15,10 +15,6 @@
 	tac_reloads = FALSE
 	w_class = WEIGHT_CLASS_TINY
 
-/obj/item/gun/ballistic/derringer/Initialize()
-	..()
-	transform *= 0.8 //Spriter too lazy to make icons smaller than default revolvers, local coder hacks in solution.
-
 /obj/item/gun/ballistic/derringer/get_ammo(countchambered = FALSE, countempties = TRUE)
 	var/boolets = 0 //legacy var name maturity
 	if (chambered && countchambered)

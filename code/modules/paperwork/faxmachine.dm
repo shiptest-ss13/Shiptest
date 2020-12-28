@@ -99,7 +99,8 @@ GLOBAL_LIST_EMPTY(alldepartments)
 	return data
 
 /obj/machinery/photocopier/faxmachine/ui_act(action, params)
-	if (..())
+	. = ..()
+	if (.)
 		return
 
 	var/is_authenticated = is_authenticated(usr)

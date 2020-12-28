@@ -14,7 +14,7 @@
 
 	if(left_click) //rectangular
 
-		var/confirm = alert("Are you sure you want to do this? This may cause extreme lag!", "Map Exporter", "Yes", "No")
+		var/confirm = tgui_alert("Are you sure you want to do this? This may cause extreme lag!", "Map Exporter", list("Yes", "No"))
 
 		if(confirm != "Yes")
 			return

@@ -9,7 +9,7 @@
 	var/end_y = input("End Y?", "Map Exporter", world.maxy-1) as num
 	var/date = time2text(world.timeofday, "YYYY-MM-DD_hh-mm-ss")
 	var/file_name = sanitize_filename(input("Filename?", "Map Exporter", "exportedmap_[date]") as text)
-	var/confirm = alert("Are you sure you want to do this? This will cause extreme lag!", "Map Exporter", "Yes", "No")
+	var/confirm = tgui_alert(usr, "Are you sure you want to do this? This will cause extreme lag!", "Map Exporter", list("Yes", "No"))
 
 	if(confirm != "Yes")
 		return

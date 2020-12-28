@@ -150,6 +150,7 @@
 		/obj/item/flashlight/pen,
 		/obj/item/extinguisher/mini,
 		/obj/item/reagent_containers/hypospray,
+		/obj/item/hypospray,
 		/obj/item/sensor_device,
 		/obj/item/radio,
 		/obj/item/clothing/gloves/,
@@ -193,6 +194,16 @@
 	new /obj/item/reagent_containers/syringe(src)
 	new /obj/item/reagent_containers/glass/bottle/epinephrine(src)
 	new /obj/item/reagent_containers/glass/bottle/formaldehyde(src)
+	update_icon()
+
+/obj/item/storage/belt/medical/surgery/PopulateContents()
+	new /obj/item/scalpel(src)
+	new /obj/item/circular_saw(src)
+	new /obj/item/surgicaldrill(src)
+	new /obj/item/retractor(src)
+	new /obj/item/cautery(src)
+	new /obj/item/hemostat(src)
+	new /obj/item/hypospray/mkii(src)
 	update_icon()
 
 /obj/item/storage/belt/security

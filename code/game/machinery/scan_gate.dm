@@ -199,8 +199,10 @@
 	return data
 
 /obj/machinery/scanner_gate/ui_act(action, params)
-	if(..())
+	. = ..()
+	if(.)
 		return
+
 	switch(action)
 		if("set_mode")
 			var/new_mode = params["new_mode"]

@@ -167,8 +167,9 @@
 
 
 /obj/machinery/lapvend/ui_act(action, params)
-	if(..())
-		return TRUE
+	. = ..()
+	if(.)
+		return
 
 	switch(action)
 		if("pick_device")
@@ -257,7 +258,7 @@
 			say("Insufficient credits on card to purchase!")
 			return
 		credits += target_credits
-		say("[target_credits] cr has been desposited from your account.")
+		say("[target_credits] cr has been deposited from your account.")
 		return
 	return ..()
 

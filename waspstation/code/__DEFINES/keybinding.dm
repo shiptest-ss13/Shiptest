@@ -1,0 +1,2 @@
+#define COMSIG_KB_MOVEMENT_UPWARDS_DOWN "keybinding_movement_upwards_down"
+#define COMSIG_KB_MOVEMENT_DOWNWARDS_DOWN "keybinding_movement_downwards_down"

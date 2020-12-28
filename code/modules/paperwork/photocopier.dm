@@ -83,7 +83,8 @@
 	return data
 
 /obj/machinery/photocopier/ui_act(action, list/params)
-	if(..())
+	. = ..()
+	if(.)
 		return
 
 	switch(action)

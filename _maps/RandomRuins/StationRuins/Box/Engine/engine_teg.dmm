@@ -131,6 +131,12 @@
 /obj/machinery/atmospherics/pipe/simple/dark/visible,
 /turf/open/floor/plating,
 /area/engine/engineering)
+"dp" = (
+/obj/machinery/atmospherics/components/binary/pump{
+	name = "Hot to Burn Chamber"
+	},
+/turf/open/floor/plasteel,
+/area/engine/engineering)
 "dO" = (
 /obj/machinery/atmospherics/pipe/manifold4w/cyan/visible,
 /turf/open/floor/plasteel,
@@ -387,6 +393,20 @@
 	},
 /turf/open/floor/plating,
 /area/engine/engineering)
+"jR" = (
+/obj/machinery/button/ignition/incinerator{
+	id = "TEG_igniter";
+	pixel_x = -5;
+	pixel_y = -24
+	},
+/obj/machinery/button/door{
+	id = "TEG_Vent";
+	pixel_x = 6;
+	pixel_y = -24
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel,
+/area/engine/engineering)
 "jT" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/visible,
 /obj/effect/turf_decal/stripes/line{
@@ -462,20 +482,6 @@
 /area/engine/engineering)
 "mj" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
-/turf/open/floor/plasteel,
-/area/engine/engineering)
-"ml" = (
-/obj/machinery/button/ignition/incinerator{
-	id = "TEG_igniter";
-	pixel_x = -5;
-	pixel_y = -24
-	},
-/obj/machinery/button/door{
-	id = "TEG_Vent";
-	pixel_x = 6;
-	pixel_y = -24
-	},
-/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel,
 /area/engine/engineering)
 "mO" = (
@@ -1838,12 +1844,6 @@
 /obj/effect/turf_decal/tile/yellow,
 /turf/open/floor/plasteel,
 /area/engine/engineering)
-"XW" = (
-/obj/machinery/atmospherics/components/binary/pump{
-	name = "Hot to Burn Chamber"
-	},
-/turf/open/floor/plasteel,
-/area/engine/engineering)
 "Ye" = (
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden{
 	dir = 1
@@ -2477,7 +2477,7 @@ cr
 Mr
 Dd
 Fb
-ml
+jR
 KN
 KN
 KN
@@ -2505,7 +2505,7 @@ Ru
 Lj
 fY
 tV
-XW
+dp
 di
 gh
 ox

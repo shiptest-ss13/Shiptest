@@ -287,7 +287,8 @@
 	return data
 
 /obj/item/paper/ui_act(action, params,datum/tgui/ui)
-	if(..())
+	. = ..()
+	if(.)
 		return
 	switch(action)
 		if("stamp")

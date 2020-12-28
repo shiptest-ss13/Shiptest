@@ -81,7 +81,8 @@
 	foodtype = FRUIT
 	juice_results = list(/datum/reagent/consumable/bungojuice = 0)
 	tastes = list("bungo" = 2, "tropical fruitiness" = 1)
-	distill_reagent = null
+	wine_power = 80
+	wine_flavor = "Hula! baby" //wasp edit: new wine flavors
 
 /obj/item/reagent_containers/food/snacks/grown/bungopit
 	seed = /obj/item/seeds/cocoapod/bungotree

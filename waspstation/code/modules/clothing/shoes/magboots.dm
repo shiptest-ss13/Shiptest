@@ -5,7 +5,7 @@
 /obj/item/clothing/shoes/magboots/attackby(obj/item/I, mob/user, params)
 	if(I.tool_behaviour == TOOL_WELDER)
 		if(I.use(1))
-			if (alert(user, "Are you sure you want to irreversibly weld the [src] to be able to fit digitigrade legs?", "Mold magboots:", "Yes", "No") != "Yes")
+			if (tgui_alert(user, "Are you sure you want to irreversibly weld the [src] to be able to fit digitigrade legs?", "Mold magboots", list("Yes", "No")) != "Yes")
 				return
 			I.play_tool_sound(src)
 			to_chat(user, "<span class='notice'>You weld the [src] into a shape able to be worn by those with digitigrade legs.</span>")

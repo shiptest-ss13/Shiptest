@@ -18,3 +18,8 @@
 
 ## Bot IP:Port for discord notifications
 BOT_IP 127.0.0.1:8081
+
+## Network-name used for cross-server broadcasts made from communication consoles.
+## Servers that do not match this network-name will have their messages discarded.
+## Leaving this commented will allow all messages through, regardless of network.
+#CROSS_COMMS_NETWORK default_network

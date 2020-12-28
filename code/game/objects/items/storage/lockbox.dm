@@ -3,6 +3,7 @@
 	desc = "A locked box."
 	icon_state = "lockbox+l"
 	item_state = "syringe_kit"
+	icon = 'waspstation/icons/obj/storage.dmi' //Wasp edit - better briefcases
 	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
 	w_class = WEIGHT_CLASS_BULKY
@@ -88,9 +89,6 @@
 	name = "medal box"
 	desc = "A locked box used to store medals of honor."
 	icon_state = "medalbox+l"
-	item_state = "syringe_kit"
-	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
 	w_class = WEIGHT_CLASS_NORMAL
 	req_access = list(ACCESS_CAPTAIN)
 	icon_locked = "medalbox+l"

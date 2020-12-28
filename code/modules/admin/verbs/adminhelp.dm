@@ -608,19 +608,26 @@ GLOBAL_DATUM_INIT(ahelp_tickets, /datum/admin_help_tickets, new)
 	msg2 = replacetext(replacetext(msg2, "\proper", ""), "\improper", "")
 	world.TgsTargetedChatBroadcast("[msg] | [msg2]", TRUE)
 
-//
-/proc/send2otherserver(source,msg,type = "Ahelp",target_servers)
-	var/comms_key = CONFIG_GET(string/comms_key)
-	if(!comms_key)
+/**
+  * Sends a message to a set of cross-communications-enabled servers using world topic calls
+  *
+  * Arguments:
+  * * source - Who sent this message
+  * * msg - The message body
+  * * type - The type of message, becomes the topic command under the hood
+  * * target_servers - A collection of servers to send the message to, defined in config
+  * * additional_data - An (optional) associated list of extra parameters and data to send with this world topic call
+  */
+/proc/send2otherserver(source, msg, type = "Ahelp", target_servers, list/additional_data = list())
+	if(!CONFIG_GET(string/comms_key))
+		debug_world_log("Server cross-comms message not sent for lack of configured key")
 		return
 
 	var/our_id = CONFIG_GET(string/cross_comms_name)
-	var/list/message = list()
-	message["message_sender"] = source
-	message["message"] = msg
-	message["source"] = "([our_id])"
-	message["key"] = comms_key
-	message += type
+	additional_data["message_sender"] = source
+	additional_data["message"] = msg
+	additional_data["source"] = "([our_id])"
+	additional_data += type
 
 	var/list/servers = CONFIG_GET(keyed_list/cross_server)
 	for(var/I in servers)
@@ -628,7 +635,7 @@ GLOBAL_DATUM_INIT(ahelp_tickets, /datum/admin_help_tickets, new)
 			continue
 		if(target_servers && !(I in target_servers))
 			continue
-		world.send_cross_comms(I, message)
+		world.send_cross_comms(I, additional_data)
 
 /// Sends a message to a given cross comms server by name (by name for security).
 /world/proc/send_cross_comms(server_name, list/message, auth = TRUE)

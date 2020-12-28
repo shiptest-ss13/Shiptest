@@ -1,7 +1,7 @@
 /obj/structure/flora/ash/space/voidmelon
 	icon_state = "melon"
 	name = "Grown void plant"
-	desc = "A cluster of strange plants with melonlike fruit atatched to their vines."
+	desc = "A cluster of strange plants with melonlike fruit attached to their vines."
 	harvested_name = "Void plant"
 	harvested_desc = "A cluster of strange plants melonlike fruits growing from their vines."
 	harvest = /obj/item/reagent_containers/food/snacks/grown/voidmelon
@@ -40,3 +40,4 @@
 	foodtype = FRUIT
 	juice_results = list(/datum/reagent/consumable/watermelonjuice = 0)
 	wine_power = 40
+	wine_flavor = "the breath of life" //zedaedit: wine flavor

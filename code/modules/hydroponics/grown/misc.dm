@@ -95,6 +95,7 @@
 	bitesize_mod = 3
 	foodtype = VEGETABLES
 	wine_power = 35
+	wine_flavor = "the vast and infinite cosmos" //wasp edit: new wine flavors
 	tastes = list("thistle" = 2, "artichoke" = 1)
 
 // Cabbage
@@ -183,6 +184,7 @@
 	foodtype = FRUIT
 	tastes = list("gunpowder" = 1)
 	wine_power = 90 //It burns going down, too.
+	wine_flavor = "the most powerful handgun in the world" //wasp edit: new wine flavors
 
 //Cherry Bombs
 /obj/item/seeds/cherry/bomb
@@ -206,6 +208,7 @@
 	volume = 125 //Gives enough room for the gunpowder at max potency
 	max_integrity = 40
 	wine_power = 80
+	wine_flavor = "smokey sweetness and poprocks" //wasp edit: new wine flavors
 
 /obj/item/reagent_containers/food/snacks/grown/cherry_bomb/attack_self(mob/living/user)
 	user.visible_message("<span class='warning'>[user] plucks the stem from [src]!</span>", "<span class='userdanger'>You pluck the stem from [src], which begins to hiss loudly!</span>")

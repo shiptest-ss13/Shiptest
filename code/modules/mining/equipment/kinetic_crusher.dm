@@ -433,7 +433,7 @@
 /obj/item/crusher_trophy/vortex_talisman/on_mark_detonation(mob/living/target, mob/living/user)
 	var/turf/current_location = get_turf(user)
 	var/area/current_area = current_location.loc
-	if(current_area.noteleport)
+	if(current_area.area_flags & NOTELEPORT)
 		to_chat(user, "[src] fizzles uselessly.")
 		return
 	var/turf/T = get_turf(user)

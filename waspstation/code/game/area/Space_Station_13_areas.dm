@@ -1,9 +1,13 @@
 /area/crew_quarters/cryopods
 	name = "Cryopod Room"
-	safe = TRUE
+	area_flags = VALID_TERRITORY | BLOBS_ALLOWED | UNIQUE_AREA
 	icon_state = "cryopod"
 	lighting_colour_tube = "#e3ffff"
 	lighting_colour_bulb = "#d5ffff"
+
+/area/crew_quarters/solgov
+	name = "SolGov Consulate"
+	icon_state = "solgov"
 
 /area/medical/genetics/cloning
 	name = "Cloning Lab"

@@ -1,14 +1,15 @@
 /datum/computer_file/program/aidiag
 	filename = "aidiag"
-	filedesc = "AI Integrity Restorer"
+	filedesc = "NT FRK"
 	program_icon_state = "generic"
-	extended_desc = "This program is capable of reconstructing damaged AI systems. Requires direct AI connection via intellicard slot."
+	extended_desc = "Firmware Restoration Kit, capable of reconstructing damaged AI systems. Requires direct AI connection via intellicard slot."
 	size = 12
 	requires_ntnet = FALSE
 	usage_flags = PROGRAM_CONSOLE | PROGRAM_LAPTOP
 	transfer_access = ACCESS_HEADS
 	available_on_ntnet = TRUE
 	tgui_id = "NtosAiRestorer"
+	program_icon = "laptop-code"
 	/// Variable dictating if we are in the process of restoring the AI in the inserted intellicard
 	var/restoring = FALSE
 
@@ -31,7 +32,8 @@
 	return
 
 /datum/computer_file/program/aidiag/ui_act(action, params)
-	if(..())
+	. = ..()
+	if(.)
 		return
 
 	var/mob/living/silicon/ai/A = get_ai()

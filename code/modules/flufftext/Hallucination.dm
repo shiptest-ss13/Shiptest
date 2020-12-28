@@ -1101,7 +1101,7 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 	name = "lava"
 
 /obj/effect/hallucination/danger/lava/show_icon()
-	image = image('icons/turf/floors/lava.dmi',src,"smooth",TURF_LAYER)
+	image = image('icons/turf/floors/lava.dmi', src, "lava-0", TURF_LAYER)
 	if(target.client)
 		target.client.images += image
 
@@ -1115,7 +1115,8 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 	name = "chasm"
 
 /obj/effect/hallucination/danger/chasm/show_icon()
-	image = image('icons/turf/floors/Chasms.dmi',src,"smooth",TURF_LAYER)
+	var/turf/target_loc = get_turf(target)
+	image = image('icons/turf/floors/chasms.dmi', src, "chasms-[target_loc.smoothing_junction]", TURF_LAYER)
 	if(target.client)
 		target.client.images += image
 
