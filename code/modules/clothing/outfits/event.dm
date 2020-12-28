@@ -22,5 +22,5 @@
 	H.hairstyle = "Long Hair 3"
 	H.facial_hairstyle = "Beard (Full)"
 	H.hair_color = "FFF"
-	//Waspstation Edit - Facial Hair and Head hair same color
+	H.facial_hair_color = "FFF"
 	H.update_hair()

@@ -442,7 +442,7 @@
 		if(!HAS_TRAIT(N, TRAIT_BALD))
 			N.hairstyle = "Spiky"
 		N.facial_hairstyle = "Shaved"
-		//Waspstation Edit - Facial Hair and Head hair same color
+		N.facial_hair_color = "000"
 		N.hair_color = "000"
 		if(!(HAIR in N.dna.species.species_traits)) //No hair? No problem!
 			N.dna.species.species_traits += HAIR
@@ -1690,7 +1690,7 @@
 		if(M && ishuman(M))
 			var/mob/living/carbon/human/H = M
 			H.hair_color = pick(potential_colors)
-			//Waspstation Edit - Facial Hair and Head hair same color
+			H.facial_hair_color = pick(potential_colors)
 			H.update_hair()
 
 /datum/reagent/barbers_aid

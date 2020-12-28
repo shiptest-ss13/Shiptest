@@ -225,7 +225,11 @@
 				if(new_hair_color)
 					H.hair_color = sanitize_hexcolor(new_hair_color)
 					H.dna.update_ui_block(DNA_HAIR_COLOR_BLOCK)
-				//Waspstation Edit - Facial Hair and Head hair same color
+				if(H.gender == "male")
+					var/new_face_color = input(H, "Choose your facial hair color", "Hair Color","#"+H.facial_hair_color) as color|null
+					if(new_face_color)
+						H.facial_hair_color = sanitize_hexcolor(new_face_color)
+						H.dna.update_ui_block(DNA_FACIAL_HAIR_COLOR_BLOCK)
 				H.update_hair()
 
 		if(BODY_ZONE_PRECISE_EYES)

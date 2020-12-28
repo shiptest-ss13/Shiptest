@@ -28,7 +28,7 @@
 	var/hairstyle = "Bald"
 	var/hair_alpha = 255
 	//Facial hair colour and style
-	//Waspstation Edit - Facial Hair and Head hair same color
+	var/facial_hair_color = "000"
 	var/facial_hairstyle = "Shaved"
 	//Eye Colouring
 
@@ -146,11 +146,19 @@
 		//Facial hair
 		if(H.facial_hairstyle && (FACEHAIR in S.species_traits))
 			facial_hairstyle = H.facial_hairstyle
-			//Waspstation Edit - Facial Hair and Head hair same color
+			if(S.hair_color)
+				if(S.hair_color == "mutcolor")
+					facial_hair_color = H.dna.features["mcolor"]
+				else if(hair_color == "fixedmutcolor")
+					facial_hair_color = "#[S.fixed_mut_color]"
+				else
+					facial_hair_color = S.hair_color
+			else
+				facial_hair_color = H.facial_hair_color
 			hair_alpha = S.hair_alpha
 		else
 			facial_hairstyle = "Shaved"
-	//Waspstation Edit - Facial Hair and Head hair same color
+			facial_hair_color = "000"
 			hair_alpha = 255
 		//Hair
 		if(H.hairstyle && (HAIR in S.species_traits))
@@ -199,7 +207,7 @@
 				var/datum/sprite_accessory/S = GLOB.facial_hairstyles_list[facial_hairstyle]
 				if(S)
 					var/image/facial_overlay = image(S.icon, "[S.icon_state]", -HAIR_LAYER, SOUTH)
-					facial_overlay.color = "#" + hair_color
+					facial_overlay.color = "#" + facial_hair_color
 					facial_overlay.alpha = hair_alpha
 					. += facial_overlay
 
