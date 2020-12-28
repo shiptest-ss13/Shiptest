@@ -226,6 +226,14 @@
 	category = list ("Hydroponics Machinery")
 	departmental_flags = DEPARTMENTAL_FLAG_SERVICE
 
+/datum/design/board/plantgenes
+	name = "Machine Design (Plant DNA Manipulator)"
+	desc = "The circuit board for a plant DNA manipulator."
+	id = "plantgenes"
+	build_path = /obj/item/circuitboard/machine/plantgenes
+	category = list ("Hydroponics Machinery")
+	departmental_flags = DEPARTMENTAL_FLAG_SERVICE
+
 /datum/design/board/destructive_analyzer
 	name = "Machine Design (Destructive Analyzer Board)"
 	desc = "The circuit board for a destructive analyzer."
