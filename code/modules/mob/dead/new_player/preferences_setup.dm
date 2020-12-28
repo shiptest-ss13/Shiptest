@@ -31,8 +31,7 @@
 		facial_hairstyle = random_facial_hairstyle(gender)
 	if(randomise[RANDOM_HAIR_COLOR])
 		hair_color = random_short_color()
-	if(randomise[RANDOM_FACIAL_HAIR_COLOR])
-		facial_hair_color = random_short_color()
+	//Waspstation Edit - Facial Hair and Head hair same color
 	if(randomise[RANDOM_SKIN_TONE])
 		skin_tone = random_skin_tone()
 	if(randomise[RANDOM_EYE_COLOR])

@@ -36,7 +36,7 @@
 	H.hairstyle = "Business Hair 3"
 	H.facial_hairstyle = "Shaved"
 	H.hair_color = "000"
-	H.facial_hair_color = H.hair_color
+	//Waspstation Edit - Facial Hair and Head hair same color
 	H.update_body()
 	if(H.mind)
 		H.mind.AddSpell(new /obj/effect/proc_holder/spell/aoe_turf/knock(null))

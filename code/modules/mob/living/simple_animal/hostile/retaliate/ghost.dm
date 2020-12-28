@@ -38,7 +38,7 @@
 	var/ghost_hair_color
 	var/mutable_appearance/ghost_hair
 	var/ghost_facial_hairstyle
-	var/ghost_facial_hair_color
+	//Waspstation Edit - Facial Hair and Head hair same color
 	var/mutable_appearance/ghost_facial_hair
 	var/random = TRUE //if you want random names for ghosts or not
 
@@ -62,5 +62,5 @@
 	if(ghost_facial_hairstyle != null)
 		ghost_facial_hair = mutable_appearance('icons/mob/human_face.dmi', "facial_[ghost_facial_hairstyle]", -HAIR_LAYER)
 		ghost_facial_hair.alpha = 200
-		ghost_facial_hair.color = ghost_facial_hair_color
+	//Waspstation Edit - Facial Hair and Head hair same color
 		add_overlay(ghost_facial_hair)

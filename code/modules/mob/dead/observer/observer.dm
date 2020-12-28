@@ -46,7 +46,7 @@ GLOBAL_VAR_INIT(observer_default_invisibility, INVISIBILITY_OBSERVER)
 	var/hair_color
 	var/mutable_appearance/hair_overlay
 	var/facial_hairstyle
-	var/facial_hair_color
+	//Waspstation Edit - Facial Hair and Head hair same color
 	var/mutable_appearance/facial_hair_overlay
 
 	var/updatedir = 1						//Do we have to update our dir as the ghost moves around?
@@ -112,7 +112,7 @@ GLOBAL_VAR_INIT(observer_default_invisibility, INVISIBILITY_OBSERVER)
 				hair_color = brighten_color(body_human.hair_color)
 			if(FACEHAIR in body_human.dna.species.species_traits)
 				facial_hairstyle = body_human.facial_hairstyle
-				facial_hair_color = brighten_color(body_human.facial_hair_color)
+	//Waspstation Edit - Facial Hair and Head hair same color
 
 	update_icon()
 
@@ -219,8 +219,7 @@ GLOBAL_VAR_INIT(observer_default_invisibility, INVISIBILITY_OBSERVER)
 			S = GLOB.facial_hairstyles_list[facial_hairstyle]
 			if(S)
 				facial_hair_overlay = mutable_appearance(S.icon, "[S.icon_state]", -HAIR_LAYER)
-				if(facial_hair_color)
-					facial_hair_overlay.color = "#" + facial_hair_color
+	//Waspstation Edit - Facial Hair and Head hair same color
 				facial_hair_overlay.alpha = 200
 				add_overlay(facial_hair_overlay)
 		if(hairstyle)
@@ -793,7 +792,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 		hair_color = brighten_color(client.prefs.hair_color)
 	if(FACEHAIR in client.prefs.pref_species.species_traits)
 		facial_hairstyle = client.prefs.facial_hairstyle
-		facial_hair_color = brighten_color(client.prefs.facial_hair_color)
+	//Waspstation Edit - Facial Hair and Head hair same color
 
 	update_icon()
 

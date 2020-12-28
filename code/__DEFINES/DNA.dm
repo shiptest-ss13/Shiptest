@@ -79,7 +79,7 @@
 
 #define DNA_UNI_IDENTITY_BLOCKS		7
 #define DNA_HAIR_COLOR_BLOCK		1
-#define DNA_FACIAL_HAIR_COLOR_BLOCK	2
+//Waspstation Edit - Facial Hair and Head hair same color
 #define DNA_SKIN_TONE_BLOCK			3
 #define DNA_EYE_COLOR_BLOCK			4
 #define DNA_GENDER_BLOCK			5

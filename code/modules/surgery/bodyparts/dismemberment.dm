@@ -319,7 +319,7 @@
 	// These are stored before calling super. This is so that if the head is from a different body, it persists its appearance.
 	var/hair_color = src.hair_color
 	var/hairstyle = src.hairstyle
-	var/facial_hair_color = src.facial_hair_color
+	//Waspstation Edit - Facial Hair and Head hair same color
 	var/facial_hairstyle = src.facial_hairstyle
 	var/lip_style = src.lip_style
 	var/lip_color = src.lip_color
@@ -349,7 +349,7 @@
 		var/mob/living/carbon/human/H = C
 		H.hair_color = hair_color
 		H.hairstyle = hairstyle
-		H.facial_hair_color = facial_hair_color
+		//Waspstation Edit - Facial Hair and Head hair same color
 		H.facial_hairstyle = facial_hairstyle
 		H.lip_style = lip_style
 		H.lip_color = lip_color

@@ -17,7 +17,7 @@
 	var/hairstyle = "Bald"
 
 	//Facial hair colour and style
-	var/facial_hair_color = "000"
+	//Waspstation Edit - Facial Hair and Head hair same color
 	var/facial_hairstyle = "Shaved"
 
 	//Eye colour

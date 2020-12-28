@@ -2088,7 +2088,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
 			var/mob/living/carbon/human/N = M
 			N.age += 1
 			if(N.age > 70)
-				N.facial_hair_color = "ccc"
+				//Waspstation Edit - Facial Hair and Head hair same color
 				N.hair_color = "ccc"
 				N.update_hair()
 				if(N.age > 100)
