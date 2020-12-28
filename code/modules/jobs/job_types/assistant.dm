@@ -33,19 +33,25 @@ Assistant
 	if(uniform != /obj/item/clothing/under/color/grey)
 		return
 	if (CONFIG_GET(flag/grey_assistants))
-		if(H.jumpsuit_style == PREF_SUIT)
-			uniform = /obj/item/clothing/under/color/grey
-		else if(H.jumpsuit_style == PREF_ALTSUIT)
-			uniform = /obj/item/clothing/under/misc/assistantformal
-		else
-			uniform = /obj/item/clothing/under/color/jumpskirt/grey
+		switch(H.jumpsuit_style)
+			if(PREF_SUIT)
+				uniform = /obj/item/clothing/under/color/grey
+			if(PREF_ALTSUIT)
+				uniform = /obj/item/clothing/under/misc/assistantformal
+			if(PREF_SKIRT)
+				uniform = /obj/item/clothing/under/color/jumpskirt/grey
+			else
+				uniform = /obj/item/clothing/under/color/grey
 	else
-		if(H.jumpsuit_style == PREF_SUIT)
-			uniform = /obj/item/clothing/under/color/random
-		else if(H.jumpsuit_style == PREF_ALTSUIT)
-			uniform = /obj/item/clothing/under/misc/assistantformal
-		else
-			uniform = /obj/item/clothing/under/color/jumpskirt/random
+		switch(H.jumpsuit_style)
+			if(PREF_SUIT)
+				uniform = /obj/item/clothing/under/color/random
+			if(PREF_ALTSUIT)
+				uniform = /obj/item/clothing/under/misc/assistantformal
+			if(PREF_SKIRT)
+				uniform = /obj/item/clothing/under/color/jumpskirt/random
+			else
+				uniform = /obj/item/clothing/under/color/grey
 
 /datum/outfit/job/assistant/businessman
 	name = "Assistant (Businessman)"

@@ -80,7 +80,6 @@
 	suit = /obj/item/clothing/suit/hazardvest
 	accessory = /obj/item/clothing/accessory/armband/engine
 	r_pocket = /obj/item/stack/cable_coil
-	l_pocket = /obj/item/flashlight
 
 /datum/outfit/job/engineer/juniorengineer
 	name = "Station Engineer (Junior Engineer)"

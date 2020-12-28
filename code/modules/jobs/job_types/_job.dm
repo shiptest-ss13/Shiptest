@@ -261,7 +261,7 @@
 	var/duffelbag = /obj/item/storage/backpack/duffelbag
 	var/courierbag = /obj/item/storage/backpack/messenger
 
-	var/alt_uniform = /obj/item/clothing/under
+	var/alt_uniform
 
 	var/alt_suit = null
 	var/dcoat = /obj/item/clothing/suit/hooded/wintercoat
@@ -294,7 +294,8 @@
 		if(PREF_SKIRT)
 			holder = "[uniform]/skirt"
 		if(PREF_ALTSUIT)
-			holder = "[alt_uniform]"
+			if(alt_uniform)
+				holder = "[alt_uniform]"
 		if(PREF_GREYSUIT)
 			holder = "/obj/item/clothing/under/color/grey"
 		// WaspStation Edit - Fix Loadout Uniforms not spawning ID/PDA
