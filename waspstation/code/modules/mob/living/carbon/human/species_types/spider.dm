@@ -198,6 +198,18 @@ GLOBAL_LIST_INIT(spider_last, world.file2list("strings/names/spider_last.txt"))
 		if(E.web_ready == FALSE)
 			to_chat(H, "<span class='warning'>You need to wait awhile to regenerate web fluid.</span>")
 			return
+		if(!H.Adjacent(A))	//No.
+			return
+		if(!isliving(A) && A.anchored)
+			to_chat(H, "<span class='warning'>[A] is bolted to the floor!</span>")
+			return
+		if(istype(A, /obj/structure/spider_player))
+			to_chat(H, "<span class='warning'>No double wrapping.</span>")
+			return
+		if(istype(A, /obj/effect))
+			to_chat(H, "<span class='warning'>You cannot wrap this.</span>")
+			return
+		H.visible_message("<span class='danger'>[H] starts to wrap [A] into a cocoon!</span>","<span class='warning'>You start to wrap [A] into a cocoon.</span>")
 		if(!do_after(H, 10 SECONDS, 1, A))
 			to_chat(H, "<span class='warning'>Your web spinning was interrupted!</span>")
 			return
