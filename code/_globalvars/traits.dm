@@ -144,7 +144,9 @@ GLOBAL_LIST_INIT(traits_by_type, list(
 		"TRAIT_SNOB" = TRAIT_SNOB,
 		"TRAIT_BALD" = TRAIT_BALD,
 		"TRAIT_NOBREAK" = TRAIT_NOBREAK,			//WS edit - Whitesands
-		"TRAIT_ALLBREAK" = TRAIT_ALLBREAK			//WS edit - Whitesands
+		"TRAIT_ALLBREAK" = TRAIT_ALLBREAK,			//WS edit - Whitesands
+		"TRAIT_BADTOUCH" = TRAIT_BADTOUCH
+
 	),
 	/obj/item/bodypart = list(
 		"TRAIT_PARALYSIS" = TRAIT_PARALYSIS

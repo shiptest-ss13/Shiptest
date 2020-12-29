@@ -601,3 +601,33 @@
 	gain_text = "<span class='danger'>There's a lot on your mind right now.</span>"
 	lose_text = "<span class='notice'>Your mind finally feels calm.</span>"
 	medical_record_text = "Patient's mind is in a vulnerable state, and cannot recover from traumatic events."
+
+/datum/quirk/bad_touch
+	name = "Bad Touch"
+	desc = "You don't like hugs. You'd really prefer if people just left you alone."
+	mob_trait = TRAIT_BADTOUCH
+	value = -1
+	gain_text = "<span class='danger'>You just want people to leave you alone.</span>"
+	lose_text = "<span class='notice'>You could use a big hug.</span>"
+	medical_record_text = "Patient has disdain for being touched. Potentially has undiagnosed haphephobia."
+	mood_quirk = TRUE
+
+/datum/quirk/bad_touch/add()
+	RegisterSignal(quirk_holder, list(COMSIG_LIVING_GET_PULLED, COMSIG_CARBON_HUGGED, COMSIG_CARBON_HEADPAT), .proc/uncomfortable_touch)
+
+/datum/quirk/bad_touch/remove()
+	UnregisterSignal(quirk_holder, list(COMSIG_LIVING_GET_PULLED, COMSIG_CARBON_HUGGED, COMSIG_CARBON_HEADPAT))
+
+/datum/quirk/bad_touch/proc/uncomfortable_touch()
+	SIGNAL_HANDLER
+
+	var/datum/component/mood/mood = quirk_holder.GetComponent(/datum/component/mood)
+	if(mood.sanity <= SANITY_NEUTRAL)
+		SEND_SIGNAL(quirk_holder, COMSIG_ADD_MOOD_EVENT, "bad_touch", /datum/mood_event/very_bad_touch)
+	else
+		SEND_SIGNAL(quirk_holder, COMSIG_ADD_MOOD_EVENT, "bad_touch", /datum/mood_event/bad_touch)
+
+#undef LOCATION_LPOCKET
+#undef LOCATION_RPOCKET
+#undef LOCATION_BACKPACK
+#undef LOCATION_HANDS
