@@ -60,6 +60,9 @@
 ///Delete the timer on parent datum Destroy() and when deltimer'd
 #define TIMER_DELETE_ME			(1<<6)
 
+///Delete the timer on parent datum Destroy() and when deltimer'd
+#define TIMER_DELETE_ME			(1<<6)
+
 ///Empty ID define
 #define TIMER_ID_NULL -1
 
