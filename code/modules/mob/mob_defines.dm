@@ -208,7 +208,7 @@
 
 	var/memory_throttle_time = 0
 
-	var/list/alerts = list() /// contains [/obj/screen/alert only] // On /mob so clientless mobs will throw alerts properly
+	var/list/alerts = list() /// contains [/atom/movable/screen/alert only] // On /mob so clientless mobs will throw alerts properly
 	var/list/screens = list()
 	var/list/client_colours = list()
 	var/hud_type = /datum/hud

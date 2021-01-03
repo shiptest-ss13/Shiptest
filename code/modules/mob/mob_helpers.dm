@@ -386,7 +386,7 @@
 		if(flashwindow)
 			window_flash(O.client)
 		if(source)
-			var/obj/screen/alert/notify_action/A = O.throw_alert("[REF(source)]_notify_action", /obj/screen/alert/notify_action)
+			var/atom/movable/screen/alert/notify_action/A = O.throw_alert("[REF(source)]_notify_action", /atom/movable/screen/alert/notify_action)
 			if(A)
 				if(O.client.prefs && O.client.prefs.UI_style)
 					A.icon = ui_style2icon(O.client.prefs.UI_style)
@@ -520,7 +520,7 @@
 			colored_message = "(ASAY) [colored_message]"
 		if(LOG_EMOTE)
 			colored_message = "(EMOTE) [colored_message]"
-	
+
 	var/list/timestamped_message = list("\[[time_stamp()]\] [key_name(src)] [loc_name(src)]" = colored_message)
 
 	logging[smessage_type] += timestamped_message
@@ -535,7 +535,7 @@
 	. = TRUE
 
 /mob/proc/has_mouth()
-	return FALSE 
+	return FALSE
 
 /**
   * Examine text for traits shared by multiple types.

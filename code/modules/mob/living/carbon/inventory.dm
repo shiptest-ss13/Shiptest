@@ -175,7 +175,7 @@
 			return
 		to_chat(src, "<span class='notice'>You offer [receiving].</span>")
 		to_chat(target, "<span class='notice'>[src] is offering [receiving]</span>")
-		var/obj/screen/alert/give/G = target.throw_alert("[src]", /obj/screen/alert/give)
+		var/atom/movable/screen/alert/give/G = target.throw_alert("[src]", /atom/movable/screen/alert/give)
 		if(!G)
 			return
 		G.setup(target, src, receiving)
@@ -187,7 +187,7 @@
 	for(var/mob/living/carbon/C in orange(1, src))
 		if(!CanReach(C))
 			return
-		var/obj/screen/alert/give/G = C.throw_alert("[src]", /obj/screen/alert/give)
+		var/atom/movable/screen/alert/give/G = C.throw_alert("[src]", /atom/movable/screen/alert/give)
 		if(!G)
 			return
 		G.setup(C, src, receiving)

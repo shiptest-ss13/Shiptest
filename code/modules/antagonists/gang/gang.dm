@@ -20,7 +20,7 @@
 	add_antag_hud(antag_hud_type, antag_hud_name, M)
 	if(M.hud_used)
 		var/datum/hud/H = M.hud_used
-		H.wanted_lvl = new /obj/screen/wanted
+		H.wanted_lvl = new /atom/movable/screen/wanted
 		H.infodisplay += H.wanted_lvl
 
 

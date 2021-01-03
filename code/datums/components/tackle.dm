@@ -374,7 +374,7 @@
 			user.emote("scream")
 			user.gain_trauma(/datum/brain_trauma/severe/paralysis/paraplegic) // oopsie indeed!
 			shake_camera(user, 7, 7)
-			user.overlay_fullscreen("flash", /obj/screen/fullscreen/flash)
+			user.overlay_fullscreen("flash", /atom/movable/screen/fullscreen/flash)
 			user.clear_fullscreen("flash", 4.5)
 
 		if(94 to 98)
@@ -385,7 +385,7 @@
 			user.gain_trauma_type(BRAIN_TRAUMA_MILD)
 			user.playsound_local(get_turf(user), 'sound/weapons/flashbang.ogg', 100, TRUE, 8, 0.9)
 			shake_camera(user, 6, 6)
-			user.overlay_fullscreen("flash", /obj/screen/fullscreen/flash)
+			user.overlay_fullscreen("flash", /atom/movable/screen/fullscreen/flash)
 			user.clear_fullscreen("flash", 3.5)
 
 		if(84 to 93)
@@ -398,7 +398,7 @@
 			user.playsound_local(get_turf(user), 'sound/weapons/flashbang.ogg', 100, TRUE, 8, 0.9)
 			user.Knockdown(40)
 			shake_camera(user, 5, 5)
-			user.overlay_fullscreen("flash", /obj/screen/fullscreen/flash)
+			user.overlay_fullscreen("flash", /atom/movable/screen/fullscreen/flash)
 			user.clear_fullscreen("flash", 2.5)
 
 		if(64 to 83)

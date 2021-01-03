@@ -98,7 +98,7 @@
 
 /mob/living/simple_animal/hologram/update_inv_pockets()
 	if(client && hud_used)
-		var/obj/screen/inventory/inv
+		var/atom/movable/screen/inventory/inv
 
 		inv = hud_used.inv_slots[TOBITSHIFT(ITEM_SLOT_LPOCKET) + 1]
 		inv.update_icon()

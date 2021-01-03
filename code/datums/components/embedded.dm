@@ -141,7 +141,7 @@
 	if(harmful)
 		victim.visible_message("<span class='danger'>[weapon] embeds itself in [victim]'s [limb.name]!</span>",ignored_mobs=victim)
 		to_chat(victim, "<span class='userdanger'>[weapon] embeds itself in your [limb.name]!</span>")
-		victim.throw_alert("embeddedobject", /obj/screen/alert/embeddedobject)
+		victim.throw_alert("embeddedobject", /atom/movable/screen/alert/embeddedobject)
 		playsound(victim,'sound/weapons/bladeslice.ogg', 40)
 		weapon.add_mob_blood(victim)//it embedded itself in you, of course it's bloody!
 		var/damage = weapon.w_class * impact_pain_mult

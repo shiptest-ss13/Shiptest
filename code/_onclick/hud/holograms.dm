@@ -1,8 +1,8 @@
 /datum/hud/dextrous/hologram/New(mob/owner)
 	..()
-	var/obj/screen/inventory/inv_box
+	var/atom/movable/screen/inventory/inv_box
 
-	inv_box = new /obj/screen/inventory()
+	inv_box = new /atom/movable/screen/inventory()
 	inv_box.name = "internal storage"
 	inv_box.icon = ui_style
 	inv_box.icon_state = "suit_storage"
@@ -11,7 +11,7 @@
 	inv_box.hud = src
 	static_inventory += inv_box
 
-	inv_box = new /obj/screen/inventory()
+	inv_box = new /atom/movable/screen/inventory()
 	inv_box.name = "storage1"
 	inv_box.icon = ui_style
 	inv_box.icon_state = "pocket"
@@ -20,7 +20,7 @@
 	inv_box.hud = src
 	static_inventory += inv_box
 
-	inv_box = new /obj/screen/inventory()
+	inv_box = new /atom/movable/screen/inventory()
 	inv_box.name = "storage2"
 	inv_box.icon = ui_style
 	inv_box.icon_state = "pocket"
@@ -29,14 +29,14 @@
 	inv_box.hud = src
 	static_inventory += inv_box
 
-	pull_icon = new /obj/screen/pull()
+	pull_icon = new /atom/movable/screen/pull()
 	pull_icon.icon = ui_style
 	pull_icon.update_icon()
 	pull_icon.screen_loc = ui_above_intent
 	pull_icon.hud = src
 	static_inventory += pull_icon
 
-	for(var/obj/screen/inventory/inv in (static_inventory + toggleable_inventory))
+	for(var/atom/movable/screen/inventory/inv in (static_inventory + toggleable_inventory))
 		if(inv.slot_id)
 			inv.hud = src
 			inv_slots[TOBITSHIFT(inv.slot_id) + 1] = inv
