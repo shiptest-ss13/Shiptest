@@ -28,3 +28,10 @@
 	icon_state = "formal_terragov"
 	item_state = "formal_terragov"
 	can_adjust = FALSE
+
+/obj/item/clothing/under/plasmaman/solgov
+	name = "SolGov envirosuit"
+	desc = "Why the human centric government sent the science-fiction equivalent of a leper to this station is beyond me."
+	icon_state = "plasma_solgov"
+	item_state = "plasma_solgov"
+	can_adjust = FALSE
