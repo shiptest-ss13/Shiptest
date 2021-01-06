@@ -450,16 +450,6 @@
 "bt" = (
 /turf/open/floor/plasteel,
 /area/mine/eva)
-"bu" = (
-/obj/machinery/light_switch{
-	pixel_y = -23
-	},
-/obj/effect/turf_decal/tile/brown,
-/obj/effect/turf_decal/tile/brown{
-	dir = 4
-	},
-/turf/open/floor/plasteel,
-/area/mine/eva)
 "bv" = (
 /obj/machinery/light/small{
 	dir = 8
@@ -3838,6 +3828,17 @@
 	},
 /obj/machinery/advanced_airlock_controller/lavaland{
 	pixel_y = 24
+	},
+/turf/open/floor/plasteel,
+/area/mine/eva)
+"vZ" = (
+/obj/effect/turf_decal/tile/brown,
+/obj/effect/turf_decal/tile/brown{
+	dir = 4
+	},
+/obj/machinery/light_switch{
+	dir = 4;
+	pixel_x = 23
 	},
 /turf/open/floor/plasteel,
 /area/mine/eva)
@@ -22643,7 +22644,7 @@ aj
 ab
 bf
 bp
-bu
+vZ
 bI
 tg
 aV
