@@ -67,8 +67,24 @@
 
 	///Levels unlocked at roundstart in physiology
 	var/list/roundstart_experience
+	/// Should this job be allowed to be picked for the bureaucratic error event?
+	var/allow_bureaucratic_error = TRUE
 
-//Only override this proc, unless altering loadout code. Loadouts act on H but get info from M
+/datum/job/New()
+	. = ..()
+	var/list/jobs_changes = GetMapChanges()
+	if(!jobs_changes)
+		return
+	if(isnum(jobs_changes["additional_access"]))
+		access += jobs_changes["additional_access"]
+	if(isnum(jobs_changes["additional_minimal_access"]))
+		minimal_access += jobs_changes["additional_minimal_access"]
+	if(isnum(jobs_changes["spawn_positions"]))
+		spawn_positions = jobs_changes["spawn_positions"]
+	if(isnum(jobs_changes["total_positions"]))
+		total_positions = jobs_changes["total_positions"]
+
+//Only override this proc
 //H is usually a human unless an /equip override transformed it
 //do actions on H but send messages to M as the key may not have been transferred_yet
 /datum/job/proc/after_spawn(mob/living/H, mob/M, latejoin = FALSE)
