@@ -274,6 +274,21 @@ GLOBAL_LIST_INIT(markup_regex, list("/"  = new /regex("((\\W|^)_)(\[^_\]*)(_(\\W
 			return copytext(text, 1, i + 1)
 	return ""
 
+/**
+  * Truncate a string to the given length
+  *
+  * Will only truncate if the string is larger than the length and *ignores unicode concerns*
+  *
+  * This exists soley because trim does other stuff too.
+  *
+  * Arguments:
+  * * text - String
+  * * max_length - integer length to truncate at
+  */
+/proc/truncate(text, max_length)
+	if(length(text) > max_length)
+		return copytext(text, 1, max_length)
+
 //Returns a string with reserved characters and spaces before the first word and after the last word removed.
 /proc/trim(text, max_length)
 	if(max_length)
