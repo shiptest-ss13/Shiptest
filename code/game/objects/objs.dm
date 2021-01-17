@@ -41,6 +41,9 @@
 		pinned_vars = list("name", "dir")\
 	)
 
+	///List of object types that the item can be anchored on top of, such as a table
+	var/list/anchorables = null
+
 /obj/vv_edit_var(vname, vval)
 	if(vname == NAMEOF(src, obj_flags))
 		if ((obj_flags & DANGEROUS_POSSESSION) && !(vval & DANGEROUS_POSSESSION))
@@ -56,6 +59,8 @@
 		stack_trace("Invalid type [armor.type] found in .armor during /obj Initialize()")
 	if(obj_integrity == null)
 		obj_integrity = max_integrity
+	if(anchorables)
+		anchorables = string_list(anchorables)
 
 	. = ..() //Do this after, else mat datums is mad.
 
