@@ -1,0 +1,2294 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"ad" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 1
+	},
+/obj/machinery/door/poddoor/preopen{
+	id = "mining_ship_port"
+	},
+/turf/open/floor/plating/airless,
+/area/shuttle/mining/ship/external)
+"aq" = (
+/obj/machinery/door/airlock/external,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/layer_manifold,
+/turf/open/floor/plasteel,
+/area/shuttle/mining/ship/crew)
+"av" = (
+/obj/effect/turf_decal/lumos/tile/neutral/fulltile,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
+	dir = 1
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plasteel/dark,
+/area/shuttle/mining/ship/crew)
+"aD" = (
+/obj/machinery/power/shuttle/engine/electric{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/turf/open/floor/plating/airless,
+/area/shuttle/mining/ship/engine)
+"aQ" = (
+/obj/structure/cable/yellow,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 1
+	},
+/obj/machinery/power/terminal{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating{
+	icon_state = "platingdmg2"
+	},
+/area/shuttle/mining/ship/engine)
+"aY" = (
+/obj/structure/cable/yellow{
+	icon_state = "0-2"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "0-4"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "0-8"
+	},
+/obj/machinery/power/solar,
+/turf/open/floor/plasteel/airless/solarpanel,
+/area/shuttle/mining/ship/external)
+"bb" = (
+/obj/machinery/power/smes/shuttle/precharged{
+	dir = 4
+	},
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/machinery/door/window/northright{
+	dir = 4;
+	name = "Engine Access"
+	},
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/turf/open/floor/plating,
+/area/shuttle/mining/ship/engine)
+"by" = (
+/turf/closed/wall/mineral/titanium,
+/area/shuttle/mining/ship/infirmary)
+"bS" = (
+/obj/effect/turf_decal/stripes/line,
+/obj/machinery/door/poddoor/preopen{
+	id = "mining_ship_starboard"
+	},
+/turf/open/floor/plating/airless,
+/area/shuttle/mining/ship/external)
+"bV" = (
+/turf/closed/wall/mineral/titanium,
+/area/shuttle/mining/ship/crew)
+"cu" = (
+/obj/effect/spawner/structure/window/shuttle,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
+	dir = 1
+	},
+/turf/open/floor/plating,
+/area/shuttle/mining/ship/engine)
+"cE" = (
+/obj/machinery/atmospherics/pipe/layer_manifold,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating,
+/area/shuttle/mining/ship/engine)
+"cV" = (
+/obj/structure/cable/yellow{
+	icon_state = "0-4"
+	},
+/obj/machinery/power/solar,
+/turf/open/floor/plasteel/airless/solarpanel,
+/area/shuttle/mining/ship/external)
+"dK" = (
+/turf/closed/wall/mineral/titanium,
+/area/shuttle/mining/ship/engine)
+"el" = (
+/obj/machinery/atmospherics/components/unary/portables_connector{
+	dir = 8
+	},
+/turf/open/floor/plating,
+/area/shuttle/mining/ship/engine)
+"ew" = (
+/obj/machinery/power/port_gen/pacman,
+/obj/structure/cable/yellow{
+	icon_state = "0-4"
+	},
+/obj/machinery/atmospherics/pipe/simple/orange/hidden,
+/obj/item/stack/sheet/mineral/plasma/five,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating,
+/area/shuttle/mining/ship/engine)
+"eK" = (
+/obj/effect/turf_decal/tile/blue{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/blue,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
+	dir = 5
+	},
+/obj/machinery/light,
+/turf/open/floor/plasteel,
+/area/shuttle/mining/ship/crew)
+"fP" = (
+/obj/structure/cable/yellow{
+	icon_state = "0-4"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "0-8"
+	},
+/obj/machinery/power/solar,
+/turf/open/floor/plasteel/airless/solarpanel,
+/area/shuttle/mining/ship/external)
+"fR" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer1{
+	dir = 1
+	},
+/obj/machinery/light{
+	dir = 4
+	},
+/obj/machinery/suit_storage_unit/mining/eva,
+/obj/effect/turf_decal/delivery,
+/turf/open/floor/plasteel,
+/area/shuttle/mining/ship/engine)
+"fX" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/layer1{
+	dir = 1
+	},
+/obj/effect/turf_decal/stripes/line{
+	dir = 10
+	},
+/obj/machinery/advanced_airlock_controller{
+	pixel_x = -26
+	},
+/turf/open/floor/plasteel,
+/area/shuttle/mining/ship/engine)
+"gk" = (
+/obj/structure/lattice/catwalk,
+/obj/structure/cable/yellow{
+	icon_state = "2-8"
+	},
+/turf/template_noop,
+/area/shuttle/mining/ship/external)
+"go" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/components/binary/pump{
+	dir = 8;
+	name = "engine fuel pump"
+	},
+/turf/open/floor/plating,
+/area/shuttle/mining/ship/engine)
+"gF" = (
+/obj/machinery/power/shuttle/engine/fueled/plasma{
+	dir = 4
+	},
+/turf/open/floor/plating/airless,
+/area/shuttle/mining/ship/engine)
+"gK" = (
+/obj/item/radio/intercom{
+	pixel_y = -28
+	},
+/obj/machinery/cryopod{
+	dir = 1
+	},
+/turf/open/floor/wood,
+/area/shuttle/mining/ship/crew)
+"gL" = (
+/obj/docking_port/stationary{
+	dir = 2;
+	dwidth = 3;
+	height = 5;
+	id = "commonmining_mining_ship";
+	name = "Mining Ship: Common Mining Dock";
+	width = 7
+	},
+/turf/open/floor/plating/airless,
+/area/shuttle/mining/ship/external)
+"hv" = (
+/obj/structure/table/wood,
+/obj/machinery/microwave,
+/turf/open/floor/plasteel/grimy,
+/area/shuttle/mining/ship/crew)
+"hB" = (
+/obj/structure/chair/comfy/shuttle{
+	dir = 4
+	},
+/obj/effect/turf_decal/bot,
+/obj/machinery/button/door{
+	id = "mining_ship_blast";
+	name = "Blast Door Control";
+	pixel_y = 28
+	},
+/turf/open/floor/plasteel/dark,
+/area/shuttle/mining/ship/bridge)
+"hK" = (
+/obj/machinery/atmospherics/components/unary/shuttle/heater{
+	dir = 4
+	},
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/machinery/door/window/northleft{
+	dir = 4;
+	name = "Engine Access"
+	},
+/turf/open/floor/plating,
+/area/shuttle/mining/ship/engine)
+"hY" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/turf/open/floor/plasteel/white,
+/area/shuttle/mining/ship/infirmary)
+"ie" = (
+/obj/structure/table,
+/obj/item/storage/belt/utility,
+/obj/item/radio/off{
+	pixel_x = 6;
+	pixel_y = 7
+	},
+/obj/machinery/atmospherics/pipe/simple/orange/hidden,
+/obj/machinery/light{
+	dir = 8
+	},
+/obj/item/storage/box/lights/mixed,
+/obj/item/paper/fluff/ruins/oldstation/generator_manual,
+/turf/open/floor/plating,
+/area/shuttle/mining/ship/engine)
+"jg" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/machinery/door/airlock/medical{
+	name = "Mining Ship Infirmary"
+	},
+/turf/open/floor/plasteel/white,
+/area/shuttle/mining/ship/infirmary)
+"jA" = (
+/obj/machinery/atmospherics/pipe/manifold/orange/hidden{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating,
+/area/shuttle/mining/ship/engine)
+"jB" = (
+/obj/machinery/door/airlock/medical{
+	name = "Mining Ship Infirmary"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plasteel/white,
+/area/shuttle/mining/ship/infirmary)
+"jD" = (
+/obj/machinery/atmospherics/components/binary/pump{
+	dir = 8;
+	name = "engine fuel pump"
+	},
+/obj/machinery/computer/helm/viewscreen{
+	pixel_y = 30
+	},
+/obj/effect/decal/cleanable/plasma,
+/turf/open/floor/plating{
+	icon_state = "platingdmg3"
+	},
+/area/shuttle/mining/ship/engine)
+"jO" = (
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/obj/machinery/atmospherics/components/unary/portables_connector{
+	dir = 8
+	},
+/obj/item/radio/intercom{
+	pixel_x = 27
+	},
+/turf/open/floor/plating,
+/area/shuttle/mining/ship/engine)
+"kQ" = (
+/obj/machinery/atmospherics/components/unary/tank/toxins{
+	dir = 8
+	},
+/turf/open/floor/plating,
+/area/shuttle/mining/ship/engine)
+"kS" = (
+/obj/structure/lattice/catwalk,
+/turf/template_noop,
+/area/shuttle/mining/ship/external)
+"kT" = (
+/obj/machinery/computer/operating{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/blue{
+	dir = 8
+	},
+/obj/effect/turf_decal/tile/blue{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/blue{
+	dir = 4
+	},
+/obj/effect/turf_decal/delivery,
+/turf/open/floor/plasteel/white,
+/area/shuttle/mining/ship/infirmary)
+"lA" = (
+/obj/effect/turf_decal/tile/blue{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/blue{
+	dir = 4
+	},
+/obj/structure/sink{
+	pixel_y = 17
+	},
+/obj/structure/mirror{
+	pixel_y = 28
+	},
+/turf/open/floor/plasteel/white,
+/area/shuttle/mining/ship/infirmary)
+"lG" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/effect/turf_decal/tile/brown{
+	dir = 8
+	},
+/obj/effect/turf_decal/tile/brown,
+/turf/open/floor/plasteel,
+/area/shuttle/mining/ship/crew)
+"lP" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer3{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 4
+	},
+/turf/open/floor/plasteel,
+/area/shuttle/mining/ship/crew)
+"mg" = (
+/obj/structure/cable,
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/orange/hidden,
+/obj/machinery/power/smes,
+/turf/open/floor/plating,
+/area/shuttle/mining/ship/engine)
+"mh" = (
+/obj/structure/bed/roller,
+/obj/item/bedsheet/medical,
+/obj/machinery/iv_drip,
+/obj/effect/turf_decal/tile/blue{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/blue{
+	dir = 4
+	},
+/obj/item/radio/intercom{
+	pixel_y = 20
+	},
+/turf/open/floor/plasteel/white,
+/area/shuttle/mining/ship/infirmary)
+"mz" = (
+/obj/structure/chair/comfy/shuttle{
+	dir = 4
+	},
+/obj/effect/turf_decal/bot,
+/turf/open/floor/plasteel/dark,
+/area/shuttle/mining/ship/bridge)
+"mO" = (
+/obj/structure/cable,
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/orange/hidden,
+/obj/machinery/power/smes/engineering,
+/turf/open/floor/plating{
+	icon_state = "platingdmg3"
+	},
+/area/shuttle/mining/ship/engine)
+"mS" = (
+/obj/machinery/status_display/shuttle{
+	shuttle_id = "mining_ship"
+	},
+/turf/closed/wall/mineral/titanium,
+/area/shuttle/mining/ship/bridge)
+"mW" = (
+/obj/machinery/vending/wallmed{
+	pixel_y = 28
+	},
+/obj/structure/closet/crate/freezer/blood,
+/obj/effect/turf_decal/tile/blue{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/blue{
+	dir = 4
+	},
+/turf/open/floor/plasteel/white,
+/area/shuttle/mining/ship/infirmary)
+"na" = (
+/obj/machinery/atmospherics/pipe/simple/general/hidden{
+	dir = 5
+	},
+/obj/machinery/airalarm/directional/south,
+/turf/open/floor/plating{
+	icon_state = "platingdmg3"
+	},
+/area/shuttle/mining/ship/engine)
+"nd" = (
+/obj/structure/cable,
+/obj/machinery/power/terminal{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/orange/hidden,
+/turf/open/floor/plating{
+	icon_state = "platingdmg3"
+	},
+/area/shuttle/mining/ship/engine)
+"os" = (
+/obj/structure/table,
+/obj/item/storage/firstaid/o2{
+	pixel_x = 4;
+	pixel_y = 3
+	},
+/obj/effect/turf_decal/lumos/tile/neutral/half{
+	dir = 8
+	},
+/obj/item/storage/firstaid/fire,
+/obj/item/storage/firstaid/medical{
+	pixel_x = -5;
+	pixel_y = -4
+	},
+/turf/open/floor/plasteel/dark,
+/area/shuttle/mining/ship/infirmary)
+"ov" = (
+/obj/effect/spawner/structure/window/shuttle,
+/obj/machinery/door/poddoor/preopen{
+	id = "mining_ship_blast"
+	},
+/turf/open/floor/plating,
+/area/shuttle/mining/ship/infirmary)
+"oB" = (
+/obj/effect/turf_decal/lumos/tile/neutral/fulltile,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
+/turf/open/floor/plasteel/dark,
+/area/shuttle/mining/ship/crew)
+"oI" = (
+/obj/effect/spawner/structure/window/shuttle,
+/obj/machinery/door/poddoor/preopen{
+	id = "mining_ship_blast"
+	},
+/turf/open/floor/plating,
+/area/shuttle/mining/ship/engine)
+"oO" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plasteel/white,
+/area/shuttle/mining/ship/infirmary)
+"pB" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
+	dir = 8
+	},
+/obj/machinery/door/airlock/command/glass{
+	name = "Mining Ship Bridge";
+	req_one_access_txt = "48;19"
+	},
+/turf/open/floor/plasteel,
+/area/shuttle/mining/ship/bridge)
+"pL" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating,
+/area/shuttle/mining/ship/engine)
+"pW" = (
+/obj/machinery/power/solar_control{
+	dir = 8
+	},
+/obj/structure/cable/yellow,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating,
+/area/shuttle/mining/ship/engine)
+"pZ" = (
+/obj/effect/turf_decal/tile/blue{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/blue{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer3{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer1,
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plasteel/white/side{
+	dir = 1
+	},
+/area/shuttle/mining/ship/crew)
+"qb" = (
+/obj/effect/turf_decal/stripes/line,
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel,
+/area/shuttle/mining/ship/crew)
+"qW" = (
+/obj/structure/closet/secure_closet/medical2,
+/obj/effect/turf_decal/bot,
+/obj/machinery/power/apc/auto_name/south,
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/turf/open/floor/plasteel/white,
+/area/shuttle/mining/ship/infirmary)
+"qX" = (
+/obj/machinery/power/port_gen/pacman,
+/obj/structure/cable/yellow{
+	icon_state = "0-4"
+	},
+/obj/machinery/atmospherics/pipe/simple/orange/hidden,
+/obj/item/stack/sheet/mineral/plasma/five,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating{
+	icon_state = "platingdmg3"
+	},
+/area/shuttle/mining/ship/engine)
+"ro" = (
+/obj/effect/spawner/structure/window/shuttle,
+/obj/machinery/door/poddoor/preopen{
+	id = "mining_ship_blast"
+	},
+/turf/open/floor/plating/airless,
+/area/shuttle/mining/ship/bridge)
+"rS" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/reagent_dispensers/watertank,
+/obj/item/storage/bag/trash{
+	pixel_x = 6
+	},
+/obj/item/reagent_containers/glass/bucket,
+/obj/item/mop,
+/turf/open/floor/plating,
+/area/shuttle/mining/ship/engine)
+"rU" = (
+/obj/structure/cable/yellow,
+/obj/structure/cable/yellow{
+	icon_state = "0-4"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "0-2"
+	},
+/obj/machinery/power/solar,
+/turf/open/floor/plasteel/airless/solarpanel,
+/area/shuttle/mining/ship/external)
+"sp" = (
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/shuttle/mining/ship/bridge)
+"sW" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 6
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
+	dir = 5
+	},
+/obj/effect/turf_decal/stripes/line{
+	dir = 8
+	},
+/turf/open/floor/plasteel,
+/area/shuttle/mining/ship/engine)
+"tg" = (
+/obj/docking_port/stationary{
+	dwidth = 3;
+	height = 5;
+	id = "mining_mining_ship";
+	name = "Mining Ship: Mining Dock";
+	width = 7
+	},
+/turf/open/floor/plating/airless,
+/area/shuttle/mining/ship/external)
+"tj" = (
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/structure/chair/sofa/left{
+	dir = 8
+	},
+/turf/open/floor/wood,
+/area/shuttle/mining/ship/crew)
+"uk" = (
+/obj/effect/turf_decal/tile/blue{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/blue{
+	dir = 4
+	},
+/obj/structure/table/reinforced,
+/obj/item/clothing/head/hardhat/mining{
+	pixel_x = -18;
+	pixel_y = 6
+	},
+/obj/item/phone{
+	pixel_x = 5;
+	pixel_y = 8
+	},
+/turf/open/floor/plasteel/dark,
+/area/shuttle/mining/ship/bridge)
+"uA" = (
+/obj/effect/turf_decal/tile/blue{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/blue{
+	dir = 4
+	},
+/obj/structure/table/reinforced,
+/obj/item/paper_bin,
+/obj/item/folder/yellow,
+/obj/item/folder/yellow,
+/obj/item/pen,
+/obj/item/radio/intercom/wideband{
+	pixel_y = 28
+	},
+/obj/machinery/power/apc/auto_name/west,
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/turf/open/floor/plasteel/dark,
+/area/shuttle/mining/ship/bridge)
+"uF" = (
+/obj/effect/turf_decal/tile/blue{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/blue,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
+	dir = 1
+	},
+/obj/item/kirbyplants/random,
+/turf/open/floor/plasteel,
+/area/shuttle/mining/ship/crew)
+"uP" = (
+/obj/machinery/power/smes/shuttle/precharged{
+	dir = 4
+	},
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/machinery/door/window/northleft{
+	dir = 4;
+	name = "Engine Access"
+	},
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/turf/open/floor/plating,
+/area/shuttle/mining/ship/engine)
+"uV" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer1{
+	dir = 1
+	},
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/open/floor/plasteel/grimy,
+/area/shuttle/mining/ship/crew)
+"vR" = (
+/obj/effect/turf_decal/lumos/tile/neutral/half{
+	dir = 8
+	},
+/obj/machinery/light/small,
+/obj/machinery/airalarm/directional/east,
+/obj/machinery/sleeper{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark,
+/area/shuttle/mining/ship/infirmary)
+"wj" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer1{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/turf/open/floor/plasteel/dark,
+/area/shuttle/mining/ship/bridge)
+"xb" = (
+/obj/effect/turf_decal/tile/blue{
+	dir = 8
+	},
+/obj/effect/turf_decal/tile/blue{
+	dir = 1
+	},
+/obj/effect/turf_decal/bot,
+/obj/machinery/light{
+	dir = 8
+	},
+/obj/machinery/stasis,
+/obj/effect/decal/cleanable/blood/old,
+/turf/open/floor/plasteel/white,
+/area/shuttle/mining/ship/infirmary)
+"xn" = (
+/obj/structure/rack,
+/obj/item/clothing/suit/hazardvest{
+	desc = "A high-visibility lifejacket complete with whistle and slot for oxygen tanks.";
+	name = "emergency lifejacket";
+	pixel_x = -4;
+	pixel_y = -4
+	},
+/obj/item/clothing/suit/hazardvest{
+	desc = "A high-visibility lifejacket complete with whistle and slot for oxygen tanks.";
+	name = "emergency lifejacket"
+	},
+/obj/item/clothing/suit/hazardvest{
+	desc = "A high-visibility lifejacket complete with whistle and slot for oxygen tanks.";
+	name = "emergency lifejacket";
+	pixel_x = 4;
+	pixel_y = 4
+	},
+/obj/item/clothing/head/hardhat/mining{
+	pixel_x = -4;
+	pixel_y = -4
+	},
+/obj/item/clothing/head/hardhat/mining,
+/obj/item/clothing/head/hardhat/mining{
+	pixel_x = 4;
+	pixel_y = 4
+	},
+/obj/item/pickaxe/emergency,
+/obj/item/pickaxe/emergency,
+/obj/item/pickaxe/emergency,
+/obj/item/gps/mining,
+/obj/item/gps/mining,
+/obj/item/gps/mining,
+/obj/item/clothing/glasses/meson/prescription,
+/obj/item/clothing/glasses/meson,
+/obj/item/clothing/glasses/meson,
+/turf/open/floor/plasteel/dark,
+/area/shuttle/mining/ship/crew)
+"xE" = (
+/obj/effect/turf_decal/delivery,
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/obj/machinery/atmospherics/pipe/simple/orange/hidden,
+/obj/machinery/suit_storage_unit/mining,
+/turf/open/floor/plasteel,
+/area/shuttle/mining/ship/engine)
+"xP" = (
+/obj/machinery/computer/monitor{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating,
+/area/shuttle/mining/ship/engine)
+"yq" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer3{
+	dir = 4
+	},
+/turf/open/floor/plasteel/white,
+/area/shuttle/mining/ship/infirmary)
+"yx" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer3{
+	dir = 1
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-4"
+	},
+/turf/open/floor/plasteel/grimy,
+/area/shuttle/mining/ship/crew)
+"yZ" = (
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark,
+/area/shuttle/mining/ship/bridge)
+"zb" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
+	dir = 1
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/machinery/door/airlock/public/glass{
+	name = "Mining Ship Crew Quarters"
+	},
+/turf/open/floor/plasteel,
+/area/shuttle/mining/ship/crew)
+"zT" = (
+/obj/machinery/door/airlock/engineering{
+	name = "Mining Ship Engineering";
+	req_one_access_txt = "10;24;48"
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
+	dir = 8
+	},
+/turf/open/floor/plasteel,
+/area/shuttle/mining/ship/engine)
+"zV" = (
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/effect/turf_decal/tile/brown{
+	dir = 8
+	},
+/obj/effect/turf_decal/tile/brown,
+/turf/open/floor/plasteel,
+/area/shuttle/mining/ship/crew)
+"Ae" = (
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer1{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
+	dir = 9
+	},
+/turf/open/floor/plasteel,
+/area/shuttle/mining/ship/engine)
+"Al" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
+	dir = 1
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plasteel/grimy,
+/area/shuttle/mining/ship/crew)
+"Ax" = (
+/obj/structure/table/reinforced,
+/obj/effect/turf_decal/tile/blue{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/blue,
+/obj/item/clothing/mask/gas,
+/turf/open/floor/plasteel/dark,
+/area/shuttle/mining/ship/bridge)
+"AF" = (
+/obj/structure/cable/yellow,
+/obj/structure/cable/yellow{
+	icon_state = "0-2"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "0-4"
+	},
+/obj/machinery/power/solar,
+/turf/open/floor/plasteel/airless/solarpanel,
+/area/shuttle/mining/ship/external)
+"AJ" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
+	dir = 8
+	},
+/turf/open/floor/plasteel,
+/area/shuttle/mining/ship/crew)
+"AR" = (
+/turf/closed/wall/mineral/titanium,
+/area/shuttle/mining/ship/bridge)
+"CO" = (
+/obj/machinery/atmospherics/components/unary/shuttle/heater{
+	dir = 4
+	},
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/machinery/door/window/northright{
+	dir = 4;
+	name = "Engine Access"
+	},
+/turf/open/floor/plating,
+/area/shuttle/mining/ship/engine)
+"CP" = (
+/obj/machinery/door/airlock/external,
+/turf/open/floor/plating,
+/area/shuttle/mining/ship/engine)
+"CR" = (
+/obj/item/reagent_containers/food/snacks/canned/beans{
+	pixel_x = -5;
+	pixel_y = 3
+	},
+/obj/item/reagent_containers/food/snacks/canned/beans{
+	pixel_x = 2;
+	pixel_y = 3
+	},
+/obj/item/reagent_containers/food/snacks/canned/beans{
+	pixel_x = -2
+	},
+/obj/item/reagent_containers/food/drinks/waterbottle/large{
+	pixel_x = 5
+	},
+/obj/item/reagent_containers/food/drinks/waterbottle/large{
+	pixel_x = 1;
+	pixel_y = -3
+	},
+/obj/item/reagent_containers/food/drinks/waterbottle/large{
+	pixel_x = 8;
+	pixel_y = -3
+	},
+/obj/structure/closet/crate{
+	name = "food crate"
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/item/storage/cans/sixbeer,
+/turf/open/floor/plating{
+	icon_state = "platingdmg2"
+	},
+/area/shuttle/mining/ship/engine)
+"Do" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer3{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark,
+/area/shuttle/mining/ship/bridge)
+"DS" = (
+/obj/effect/turf_decal/stripes/corner{
+	dir = 8
+	},
+/obj/item/radio/intercom{
+	pixel_y = -28
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel,
+/area/shuttle/mining/ship/crew)
+"Ew" = (
+/obj/effect/turf_decal/tile/yellow{
+	dir = 8
+	},
+/obj/effect/turf_decal/tile/yellow{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
+	dir = 8
+	},
+/obj/machinery/power/apc/auto_name/north,
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/turf/open/floor/plasteel,
+/area/shuttle/mining/ship/crew)
+"Ex" = (
+/obj/effect/turf_decal/lumos/tile/neutral/fulltile,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
+/turf/open/floor/plasteel/dark,
+/area/shuttle/mining/ship/crew)
+"EK" = (
+/obj/effect/turf_decal/stripes/corner{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
+	dir = 8
+	},
+/obj/machinery/button/door{
+	id = "mining_ship_port";
+	name = "Port Hangar Shutters";
+	pixel_y = 28
+	},
+/turf/open/floor/plasteel,
+/area/shuttle/mining/ship/crew)
+"EV" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/shuttle/mining/ship/crew)
+"Fz" = (
+/obj/effect/spawner/structure/window/shuttle,
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/machinery/door/poddoor/preopen{
+	id = "mining_ship_blast"
+	},
+/turf/open/floor/plating,
+/area/shuttle/mining/ship/crew)
+"FK" = (
+/obj/effect/turf_decal/tile/yellow{
+	dir = 8
+	},
+/obj/effect/turf_decal/tile/yellow{
+	dir = 1
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/machinery/airalarm/directional/south,
+/turf/open/floor/plasteel,
+/area/shuttle/mining/ship/crew)
+"FL" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
+	dir = 10
+	},
+/turf/open/floor/plasteel/white,
+/area/shuttle/mining/ship/infirmary)
+"FN" = (
+/obj/machinery/light/small{
+	dir = 1
+	},
+/obj/structure/chair/sofa/right{
+	dir = 8
+	},
+/obj/machinery/computer/helm/viewscreen{
+	pixel_x = 30
+	},
+/turf/open/floor/wood,
+/area/shuttle/mining/ship/crew)
+"FO" = (
+/obj/effect/turf_decal/stripes/corner{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
+	dir = 8
+	},
+/turf/open/floor/plasteel,
+/area/shuttle/mining/ship/crew)
+"FX" = (
+/obj/structure/cable/yellow{
+	icon_state = "2-8"
+	},
+/turf/open/floor/plating,
+/area/shuttle/mining/ship/engine)
+"Gh" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
+	dir = 8
+	},
+/obj/effect/turf_decal/tile/blue{
+	dir = 4
+	},
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/open/floor/plasteel/white/corner{
+	dir = 4
+	},
+/area/shuttle/mining/ship/crew)
+"Gk" = (
+/obj/structure/cable/yellow,
+/obj/structure/cable/yellow{
+	icon_state = "0-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 1
+	},
+/obj/machinery/power/terminal{
+	dir = 8
+	},
+/turf/open/floor/plating,
+/area/shuttle/mining/ship/engine)
+"Gq" = (
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/machinery/power/terminal{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/manifold/orange/hidden{
+	dir = 8
+	},
+/turf/open/floor/plating,
+/area/shuttle/mining/ship/engine)
+"Gs" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer1,
+/obj/structure/cable/yellow{
+	icon_state = "2-4"
+	},
+/turf/open/floor/plasteel/white,
+/area/shuttle/mining/ship/infirmary)
+"GQ" = (
+/obj/machinery/atmospherics/components/unary/tank/air{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating,
+/area/shuttle/mining/ship/engine)
+"GU" = (
+/obj/structure/lattice/catwalk,
+/obj/structure/cable/yellow{
+	icon_state = "1-8"
+	},
+/turf/template_noop,
+/area/shuttle/mining/ship/external)
+"Hs" = (
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/shuttle/mining/ship/crew)
+"HP" = (
+/obj/structure/table/wood,
+/obj/effect/spawner/lootdrop/donkpockets,
+/obj/item/reagent_containers/food/drinks/beer{
+	pixel_x = -7;
+	pixel_y = 6
+	},
+/obj/item/reagent_containers/food/drinks/beer{
+	pixel_x = 6;
+	pixel_y = 2
+	},
+/turf/open/floor/plasteel/grimy,
+/area/shuttle/mining/ship/crew)
+"HR" = (
+/obj/machinery/atmospherics/pipe/simple/orange/hidden{
+	dir = 9
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating,
+/area/shuttle/mining/ship/engine)
+"Is" = (
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/shuttle/mining/ship/infirmary)
+"IO" = (
+/obj/effect/turf_decal/stripes/corner,
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/machinery/light,
+/obj/machinery/button/door{
+	id = "mining_ship_starboard";
+	name = "Starboard Hangar Shutters";
+	pixel_y = -28
+	},
+/turf/open/floor/plasteel,
+/area/shuttle/mining/ship/crew)
+"IP" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/turf/open/floor/plasteel,
+/area/shuttle/mining/ship/crew)
+"JR" = (
+/obj/effect/turf_decal/tile/yellow,
+/obj/effect/turf_decal/tile/yellow{
+	dir = 8
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/components/binary/pump/on/layer1{
+	dir = 1;
+	name = "Air to Distro";
+	target_pressure = 500
+	},
+/obj/structure/cable/yellow{
+	icon_state = "2-4"
+	},
+/turf/open/floor/plasteel,
+/area/shuttle/mining/ship/engine)
+"Ke" = (
+/obj/effect/turf_decal/lumos/tile/neutral/fulltile,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer3{
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark,
+/area/shuttle/mining/ship/crew)
+"Ku" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
+	dir = 1
+	},
+/obj/effect/turf_decal/stripes/corner{
+	dir = 8
+	},
+/obj/structure/closet/firecloset/full{
+	anchored = 1
+	},
+/obj/effect/turf_decal/delivery,
+/turf/open/floor/plasteel,
+/area/shuttle/mining/ship/engine)
+"LC" = (
+/obj/effect/turf_decal/tile/yellow{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/yellow{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer1{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
+	dir = 8
+	},
+/turf/open/floor/plasteel,
+/area/shuttle/mining/ship/engine)
+"LQ" = (
+/obj/structure/table,
+/obj/item/stack/medical/suture,
+/obj/item/reagent_containers/syringe,
+/obj/item/reagent_containers/glass/bottle/epinephrine{
+	pixel_x = -4
+	},
+/obj/item/reagent_containers/glass/bottle/charcoal{
+	pixel_x = 7;
+	pixel_y = 4
+	},
+/obj/effect/turf_decal/lumos/tile/neutral/half{
+	dir = 8
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel/dark,
+/area/shuttle/mining/ship/infirmary)
+"My" = (
+/obj/effect/turf_decal/tile/blue{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/blue{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer1{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer3,
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/turf/open/floor/plasteel/white/side{
+	dir = 1
+	},
+/area/shuttle/mining/ship/crew)
+"Mz" = (
+/turf/open/floor/plasteel/grimy,
+/area/shuttle/mining/ship/crew)
+"Nx" = (
+/obj/effect/turf_decal/tile/blue{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/blue{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
+	dir = 8
+	},
+/turf/open/floor/plasteel/white/side{
+	dir = 1
+	},
+/area/shuttle/mining/ship/crew)
+"Nz" = (
+/obj/structure/table,
+/obj/effect/turf_decal/tile/blue{
+	dir = 8
+	},
+/obj/effect/turf_decal/tile/blue{
+	dir = 1
+	},
+/obj/item/book/manual/wiki/surgery,
+/obj/item/storage/backpack/duffelbag/med/surgery,
+/turf/open/floor/plasteel/white,
+/area/shuttle/mining/ship/infirmary)
+"NH" = (
+/obj/structure/cable/yellow{
+	icon_state = "2-8"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plating{
+	icon_state = "platingdmg3"
+	},
+/area/shuttle/mining/ship/engine)
+"Ou" = (
+/obj/structure/cable/yellow,
+/obj/structure/cable/yellow{
+	icon_state = "0-2"
+	},
+/obj/machinery/power/solar,
+/turf/open/floor/plasteel/airless/solarpanel,
+/area/shuttle/mining/ship/external)
+"OE" = (
+/obj/effect/turf_decal/tile/blue{
+	dir = 8
+	},
+/obj/effect/turf_decal/tile/blue,
+/obj/structure/table/reinforced,
+/obj/item/storage/toolbox/emergency{
+	pixel_x = -12
+	},
+/obj/item/megaphone{
+	pixel_x = 3;
+	pixel_y = 1
+	},
+/turf/open/floor/plasteel/dark,
+/area/shuttle/mining/ship/bridge)
+"OH" = (
+/obj/machinery/computer/camera_advanced/shuttle_docker/nav{
+	dir = 8
+	},
+/obj/effect/turf_decal/tile/blue{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/blue,
+/turf/open/floor/plasteel/dark,
+/area/shuttle/mining/ship/bridge)
+"OJ" = (
+/turf/template_noop,
+/area/template_noop)
+"OK" = (
+/obj/machinery/computer/helm{
+	dir = 8
+	},
+/obj/effect/turf_decal/tile/blue{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/blue,
+/turf/open/floor/plasteel/dark,
+/area/shuttle/mining/ship/bridge)
+"Pa" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer3{
+	dir = 1
+	},
+/turf/open/floor/plasteel,
+/area/shuttle/mining/ship/engine)
+"Pe" = (
+/obj/structure/lattice/catwalk,
+/obj/machinery/atmospherics/components/unary/outlet_injector/on/layer3{
+	dir = 1
+	},
+/turf/template_noop,
+/area/shuttle/mining/ship/external)
+"Pn" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 9
+	},
+/obj/item/radio/intercom{
+	pixel_x = -27
+	},
+/obj/machinery/atmospherics/components/unary/vent_pump/siphon/layer3,
+/turf/open/floor/plasteel,
+/area/shuttle/mining/ship/engine)
+"PO" = (
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/effect/turf_decal/tile/brown,
+/turf/open/floor/plasteel,
+/area/shuttle/mining/ship/crew)
+"PT" = (
+/obj/effect/turf_decal/tile/yellow{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/yellow{
+	dir = 4
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 6
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
+	dir = 6
+	},
+/turf/open/floor/plasteel,
+/area/shuttle/mining/ship/engine)
+"QQ" = (
+/obj/effect/spawner/structure/window/shuttle,
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/machinery/door/poddoor/preopen{
+	id = "mining_ship_blast"
+	},
+/turf/open/floor/plating,
+/area/shuttle/mining/ship/infirmary)
+"QW" = (
+/obj/machinery/atmospherics/pipe/manifold/general/hidden{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating,
+/area/shuttle/mining/ship/engine)
+"Rm" = (
+/obj/effect/turf_decal/caution{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/orange/hidden,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
+	dir = 8
+	},
+/turf/open/floor/plasteel,
+/area/shuttle/mining/ship/engine)
+"Rr" = (
+/turf/open/floor/plating/airless,
+/area/shuttle/mining/ship/external)
+"RF" = (
+/obj/effect/turf_decal/stripes/line,
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
+/turf/open/floor/plasteel,
+/area/shuttle/mining/ship/crew)
+"SQ" = (
+/obj/machinery/door/airlock/external,
+/obj/docking_port/mobile{
+	can_move_docking_ports = 1;
+	dir = 4;
+	dwidth = 8;
+	height = 26;
+	id = "mining_ship";
+	name = "mining ship";
+	port_direction = 2;
+	width = 17
+	},
+/turf/open/floor/plating,
+/area/shuttle/mining/ship/engine)
+"ST" = (
+/obj/effect/turf_decal/lumos/tile/neutral/fulltile,
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer1{
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark,
+/area/shuttle/mining/ship/crew)
+"Td" = (
+/obj/effect/turf_decal/tile/blue{
+	dir = 8
+	},
+/obj/effect/turf_decal/tile/blue,
+/obj/structure/table/reinforced,
+/obj/item/gps{
+	gpstag = "NTREC1";
+	pixel_x = -9;
+	pixel_y = 7
+	},
+/obj/item/radio/off{
+	pixel_x = 6;
+	pixel_y = 7
+	},
+/obj/item/radio/intercom{
+	pixel_y = -28
+	},
+/obj/machinery/airalarm/directional/west,
+/turf/open/floor/plasteel/dark,
+/area/shuttle/mining/ship/bridge)
+"Tl" = (
+/obj/structure/table/wood,
+/obj/item/flashlight/lamp/green,
+/turf/open/floor/wood,
+/area/shuttle/mining/ship/crew)
+"Tp" = (
+/obj/structure/rack,
+/obj/item/storage/toolbox/electrical{
+	pixel_x = 1;
+	pixel_y = 6
+	},
+/obj/item/storage/toolbox/mechanical{
+	pixel_x = -2;
+	pixel_y = -1
+	},
+/obj/item/clothing/head/welding{
+	pixel_x = -2;
+	pixel_y = 1
+	},
+/obj/machinery/power/apc/auto_name/east,
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/structure/cable,
+/turf/open/floor/plating,
+/area/shuttle/mining/ship/engine)
+"Uh" = (
+/obj/effect/turf_decal/tile/brown,
+/obj/effect/turf_decal/tile/brown{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
+	dir = 1
+	},
+/obj/structure/cable/yellow{
+	icon_state = "2-8"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-8"
+	},
+/turf/open/floor/plasteel,
+/area/shuttle/mining/ship/crew)
+"Uy" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/orange/hidden,
+/obj/machinery/light{
+	dir = 8
+	},
+/obj/structure/closet/emcloset/anchored,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating,
+/area/shuttle/mining/ship/engine)
+"UX" = (
+/obj/structure/tank_dispenser/oxygen,
+/obj/effect/turf_decal/stripes/corner{
+	dir = 1
+	},
+/obj/effect/turf_decal/bot,
+/turf/open/floor/plasteel,
+/area/shuttle/mining/ship/engine)
+"Vp" = (
+/obj/effect/turf_decal/delivery,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/orange/hidden,
+/obj/machinery/suit_storage_unit/mining,
+/turf/open/floor/plasteel,
+/area/shuttle/mining/ship/engine)
+"Vv" = (
+/obj/structure/table,
+/obj/machinery/cell_charger,
+/obj/item/stock_parts/cell/high/plus,
+/obj/item/stack/cable_coil/red{
+	pixel_x = 2;
+	pixel_y = 6
+	},
+/obj/item/radio/intercom{
+	pixel_x = 27
+	},
+/turf/open/floor/plating,
+/area/shuttle/mining/ship/engine)
+"VV" = (
+/obj/structure/cable/yellow,
+/obj/structure/cable/yellow{
+	icon_state = "0-4"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "0-8"
+	},
+/obj/machinery/power/tracker,
+/turf/open/floor/plasteel/airless/solarpanel,
+/area/shuttle/mining/ship/external)
+"Wd" = (
+/obj/effect/turf_decal/tile/yellow,
+/obj/effect/turf_decal/tile/yellow{
+	dir = 8
+	},
+/obj/structure/cable/yellow{
+	icon_state = "2-4"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel,
+/area/shuttle/mining/ship/engine)
+"Wj" = (
+/obj/effect/turf_decal/tile/blue{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/blue{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer1{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
+	dir = 8
+	},
+/turf/open/floor/plasteel/white/side{
+	dir = 1
+	},
+/area/shuttle/mining/ship/crew)
+"Wl" = (
+/obj/effect/turf_decal/tile/blue{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/blue,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
+	dir = 10
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 4
+	},
+/turf/open/floor/plasteel,
+/area/shuttle/mining/ship/crew)
+"Wn" = (
+/obj/structure/bed,
+/obj/item/bedsheet/brown,
+/obj/structure/curtain/bounty,
+/turf/open/floor/wood,
+/area/shuttle/mining/ship/crew)
+"Ws" = (
+/obj/effect/turf_decal/tile/yellow{
+	dir = 8
+	},
+/obj/effect/turf_decal/tile/yellow{
+	dir = 1
+	},
+/obj/machinery/mineral/ore_redemption,
+/turf/open/floor/plasteel,
+/area/shuttle/mining/ship/crew)
+"WU" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
+/obj/machinery/vending/snack/random,
+/turf/open/floor/plasteel/dark,
+/area/shuttle/mining/ship/crew)
+"WV" = (
+/obj/machinery/door/airlock/engineering{
+	name = "Mining Ship Engineering";
+	req_one_access_txt = "10;24;48"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel,
+/area/shuttle/mining/ship/engine)
+"Xy" = (
+/obj/structure/cable/yellow{
+	icon_state = "0-8"
+	},
+/obj/machinery/power/solar,
+/turf/open/floor/plasteel/airless/solarpanel,
+/area/shuttle/mining/ship/external)
+"Yu" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 4
+	},
+/obj/machinery/door/airlock/command/glass{
+	name = "Mining Ship Bridge";
+	req_one_access_txt = "48;19"
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel,
+/area/shuttle/mining/ship/bridge)
+"Yy" = (
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/shuttle/mining/ship/engine)
+"YB" = (
+/obj/effect/spawner/structure/window/shuttle,
+/obj/machinery/door/poddoor/preopen{
+	id = "mining_ship_blast"
+	},
+/turf/open/floor/plating,
+/area/shuttle/mining/ship/crew)
+"YU" = (
+/obj/effect/turf_decal/tile/brown,
+/obj/effect/turf_decal/tile/brown{
+	dir = 8
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel,
+/area/shuttle/mining/ship/crew)
+"YX" = (
+/obj/machinery/door/airlock/external,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
+	dir = 8
+	},
+/turf/open/floor/plasteel,
+/area/shuttle/mining/ship/engine)
+"ZN" = (
+/obj/effect/turf_decal/lumos/tile/neutral/fulltile,
+/turf/open/floor/plasteel/dark,
+/area/shuttle/mining/ship/crew)
+
+(1,1,1) = {"
+OJ
+OJ
+OJ
+OJ
+OJ
+kS
+dK
+dK
+SQ
+dK
+dK
+kS
+OJ
+OJ
+OJ
+OJ
+OJ
+"}
+(2,1,1) = {"
+OJ
+OJ
+OJ
+OJ
+OJ
+kS
+CP
+Pn
+sW
+fX
+CP
+kS
+OJ
+OJ
+OJ
+OJ
+OJ
+"}
+(3,1,1) = {"
+OJ
+OJ
+gF
+aD
+kS
+kS
+oI
+UX
+Pa
+Ku
+cu
+Pe
+kS
+aD
+gF
+OJ
+OJ
+"}
+(4,1,1) = {"
+OJ
+Yy
+hK
+bb
+Yy
+oI
+Yy
+Yy
+YX
+Yy
+Yy
+oI
+Yy
+uP
+CO
+Yy
+OJ
+"}
+(5,1,1) = {"
+OJ
+Yy
+jA
+Gq
+ie
+qX
+ew
+xE
+Rm
+Vp
+mO
+mg
+Uy
+nd
+HR
+Yy
+OJ
+"}
+(6,1,1) = {"
+OJ
+Yy
+jD
+go
+pL
+FX
+NH
+PT
+Ae
+JR
+Gk
+aQ
+cE
+QW
+na
+Yy
+OJ
+"}
+(7,1,1) = {"
+OJ
+Yy
+kQ
+jO
+rS
+CR
+Tp
+LC
+fR
+Wd
+pW
+xP
+Vv
+GQ
+el
+Yy
+OJ
+"}
+(8,1,1) = {"
+dK
+Yy
+Yy
+Yy
+Yy
+Yy
+Yy
+zT
+dK
+WV
+Yy
+Yy
+Yy
+Yy
+Yy
+Yy
+dK
+"}
+(9,1,1) = {"
+ad
+Rr
+Rr
+Rr
+Rr
+Rr
+Hs
+Ew
+Ws
+FK
+Hs
+Rr
+Rr
+Rr
+Rr
+Rr
+bS
+"}
+(10,1,1) = {"
+ad
+Rr
+Rr
+Rr
+Rr
+Rr
+Hs
+EK
+ZN
+IO
+Hs
+Rr
+Rr
+Rr
+Rr
+Rr
+bS
+"}
+(11,1,1) = {"
+ad
+Rr
+Rr
+Rr
+Rr
+Rr
+YB
+lP
+Ke
+qb
+YB
+Rr
+Rr
+Rr
+Rr
+Rr
+bS
+"}
+(12,1,1) = {"
+ad
+Rr
+Rr
+Rr
+Rr
+tg
+aq
+IP
+oB
+RF
+aq
+gL
+Rr
+Rr
+Rr
+Rr
+bS
+"}
+(13,1,1) = {"
+ad
+Rr
+Rr
+Rr
+Rr
+Rr
+YB
+AJ
+ZN
+qb
+YB
+Rr
+Rr
+Rr
+Rr
+Rr
+bS
+"}
+(14,1,1) = {"
+ad
+Rr
+Rr
+Rr
+Rr
+Rr
+Hs
+FO
+ZN
+DS
+Hs
+Rr
+Rr
+Rr
+Rr
+Rr
+bS
+"}
+(15,1,1) = {"
+ad
+Rr
+Rr
+Rr
+Rr
+Rr
+Hs
+Gh
+ZN
+PO
+Hs
+Rr
+Rr
+Rr
+Rr
+Rr
+bS
+"}
+(16,1,1) = {"
+by
+Is
+Is
+Is
+Is
+Is
+Is
+Nx
+ZN
+zV
+Hs
+Hs
+Hs
+Hs
+Hs
+Hs
+bV
+"}
+(17,1,1) = {"
+OJ
+cV
+Is
+kT
+xb
+Nz
+Is
+Nx
+ZN
+zV
+xn
+Hs
+Wn
+gK
+Hs
+cV
+OJ
+"}
+(18,1,1) = {"
+OJ
+fP
+Is
+lA
+yq
+qW
+Is
+Wj
+Ex
+lG
+WU
+EV
+uV
+Mz
+YB
+fP
+OJ
+"}
+(19,1,1) = {"
+OJ
+fP
+Is
+mh
+FL
+hY
+jB
+My
+ST
+YU
+Hs
+bV
+Mz
+hv
+YB
+fP
+OJ
+"}
+(20,1,1) = {"
+OJ
+fP
+Is
+mW
+Gs
+oO
+jg
+pZ
+av
+Uh
+zb
+Al
+yx
+HP
+YB
+fP
+OJ
+"}
+(21,1,1) = {"
+OJ
+fP
+Is
+os
+LQ
+vR
+Is
+Wl
+uF
+eK
+Hs
+FN
+tj
+Tl
+Hs
+fP
+OJ
+"}
+(22,1,1) = {"
+OJ
+fP
+Is
+ov
+QQ
+sp
+sp
+Yu
+mS
+pB
+Hs
+Hs
+Fz
+YB
+Hs
+fP
+OJ
+"}
+(23,1,1) = {"
+OJ
+gk
+Ou
+AF
+VV
+AR
+uA
+wj
+yZ
+Do
+Td
+AR
+aY
+rU
+Ou
+GU
+OJ
+"}
+(24,1,1) = {"
+OJ
+OJ
+OJ
+Xy
+Xy
+ro
+uk
+hB
+mz
+mz
+OE
+ro
+Xy
+Xy
+OJ
+OJ
+OJ
+"}
+(25,1,1) = {"
+OJ
+OJ
+OJ
+OJ
+OJ
+ro
+ro
+OH
+OK
+Ax
+ro
+ro
+OJ
+OJ
+OJ
+OJ
+OJ
+"}
+(26,1,1) = {"
+OJ
+OJ
+OJ
+OJ
+OJ
+OJ
+ro
+ro
+ro
+ro
+ro
+OJ
+OJ
+OJ
+OJ
+OJ
+OJ
+"}

@@ -71,6 +71,8 @@
   * * object - Overmap object to act on
   */
 /obj/structure/overmap/ship/simulated/proc/overmap_object_act(mob/user, obj/structure/overmap/object)
+	if(!is_still())
+		return "Shuttle must be still!"
 	if(istype(object, /obj/structure/overmap/dynamic))
 		var/obj/structure/overmap/dynamic/D = object
 		var/prev_state = state
@@ -80,6 +82,11 @@
 			state = prev_state
 		else
 			return dock(D) //If a value is returned from load_level(), say that, otherwise, commence docking
+	else if(istype(object, /obj/structure/overmap/ship/simulated))
+		var/obj/structure/overmap/ship/simulated/S = object
+		if(!S.is_still() || S.state != OVERMAP_SHIP_FLYING)
+			return "Target ship must be stopped to dock!"
+		return dock(object)
 	else if(istype(object, /obj/structure/overmap/level))
 		return dock(object)
 	else if(istype(object, /obj/structure/overmap/event))
@@ -94,19 +101,9 @@
 	if(!is_still())
 		return "Ship must be stopped to dock!"
 
-	var/obj/docking_port/stationary/dock_to_use
-	for(var/port_id in list(id, TERTIARY_OVERMAP_DOCK_PREFIX, PRIMARY_OVERMAP_DOCK_PREFIX, SECONDARY_OVERMAP_DOCK_PREFIX)) //This is poor form, but it was better than what it used to be. Tertiary is before default and secondary because it's currently the public mining ports.
-		var/obj/docking_port/stationary/found_port = SSshuttle.getDock("[port_id]_[to_dock.id]")
-		if(!found_port)
-			continue
-		if(!shuttle.check_dock(found_port, TRUE))
-			if(!found_port.width && !found_port.height)
-				. = "Please use a docking computer to specify dock location. "
-			continue
-		dock_to_use = found_port
-		break
+	var/obj/docking_port/stationary/dock_to_use = find_valid_dock(to_dock.id)
 
-	if(!dock_to_use)
+	if(!dock_to_use || !istype(dock_to_use))
 		state = OVERMAP_SHIP_FLYING
 		return . + "Error finding available docking port!"
 
@@ -116,6 +113,22 @@
 	addtimer(CALLBACK(src, .proc/complete_dock), shuttle.ignitionTime + 1 SECONDS) //A little bit of time to account for lag
 	state = OVERMAP_SHIP_DOCKING
 	return "Commencing docking..."
+
+/obj/structure/overmap/ship/simulated/proc/find_valid_dock(id_to_find = MAIN_OVERMAP_OBJECT_ID, multiple = FALSE, all = FALSE)
+	if(multiple)
+		. = list()
+	for(var/port_id in list(id, TERTIARY_OVERMAP_DOCK_PREFIX, PRIMARY_OVERMAP_DOCK_PREFIX, SECONDARY_OVERMAP_DOCK_PREFIX)) //This is poor form, but it was better than what it used to be. Tertiary is before default and secondary because it's currently the public mining ports.
+		var/obj/docking_port/stationary/found_port = SSshuttle.getDock("[port_id]_[id_to_find]")
+		if(!found_port)
+			continue
+		if(!all && !shuttle.check_dock(found_port, TRUE))
+			if(!found_port.width && !found_port.height)
+				. = "Please use a docking computer to specify dock location. "
+			continue
+		if(multiple)
+			. += found_port
+		else
+			return found_port
 
 /**
   * Undocks the shuttle by launching the shuttle with no destination (this causes it to remain in transit)
@@ -203,17 +216,16 @@
   */
 /obj/structure/overmap/ship/simulated/proc/check_loc()
 	var/docked_object = SSovermap.get_overmap_object_by_z(shuttle.z)
+	var/obj/docking_port/stationary/dock_port = shuttle.get_docked()
 	if(docked_object == loc) //The docked object is correct, move along
-		return TRUE
-	if(!docked_object && !docked) //The shuttle is in transit, and the ship is not docked to anything, move along
 		return TRUE
 	if(state == OVERMAP_SHIP_DOCKING || state == OVERMAP_SHIP_UNDOCKING)
 		return
 	if(docked && !docked_object) //The overmap object thinks it's docked to something, but it really isn't. Move to a random tile on the overmap
+		if(dock_port in find_valid_dock(docked.id, TRUE, TRUE)) //It's on one of the docked object's ports. Just let it be.
+			return TRUE
 		if(istype(docked, /obj/structure/overmap/dynamic))
 			var/obj/structure/overmap/dynamic/D = docked
-			if(D.reserve_dock.get_docked() == shuttle || D.reserve_dock_secondary.get_docked() == shuttle)
-				return TRUE
 			INVOKE_ASYNC(D, /obj/structure/overmap/dynamic/.proc/unload_level)
 		forceMove(SSovermap.get_unused_overmap_square())
 		docked = null
@@ -227,6 +239,19 @@
 		decelerate(max_speed)
 		update_screen()
 		return FALSE
+	if(!istype(dock_port, /obj/docking_port/stationary/transit)) //last-ditch attempt
+		var/list/split_id = splittext(dock_port.id, "_")
+		var/dock_port_id = split_id[1]
+		var/obj/structure/overmap/target = SSovermap.get_overmap_object_by_id(dock_port_id)
+		if(!target)
+			return FALSE //Well, we tried
+		forceMove(target)
+		docked = target
+		state = OVERMAP_SHIP_IDLE
+		decelerate(max_speed)
+		update_screen()
+		return FALSE
+	return TRUE
 
 /obj/structure/overmap/ship/simulated/tick_move()
 	if(docked)
@@ -248,6 +273,9 @@
 				forceMove(docked)
 				if(istype(docked, /obj/structure/overmap/level/main)) //Hardcoded and bad
 					addtimer(CALLBACK(src, .proc/repair), SHIP_DOCKED_REPAIR_TIME, TIMER_STOPPABLE | TIMER_LOOP)
+				else if(istype(docked, /obj/structure/overmap/ship/simulated)) //Even more hardcoded, even more bad
+					var/obj/structure/overmap/ship/simulated/S = docked
+					S.shuttle.shuttle_areas |= shuttle.shuttle_areas
 				state = OVERMAP_SHIP_IDLE
 		if(OVERMAP_SHIP_UNDOCKING)
 			if(docked)
@@ -255,6 +283,9 @@
 				if(istype(docked, /obj/structure/overmap/dynamic))
 					var/obj/structure/overmap/dynamic/D = docked
 					INVOKE_ASYNC(D, /obj/structure/overmap/dynamic/.proc/unload_level)
+				else if(istype(docked, /obj/structure/overmap/ship/simulated)) //Even more hardcoded, even more bad
+					var/obj/structure/overmap/ship/simulated/S = docked
+					S.shuttle.shuttle_areas -= shuttle.shuttle_areas
 				docked = null
 				state = OVERMAP_SHIP_FLYING
 				if(repair_timer)

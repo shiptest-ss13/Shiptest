@@ -331,7 +331,7 @@
 	initial_engines = count_engines()
 	current_engines = initial_engines
 
-	if(!mapload)
+	if(SSovermap.initialized)
 		SSovermap.setup_shuttle_ship(src)
 
 	#ifdef DOCKING_PORT_HIGHLIGHT

@@ -22,6 +22,11 @@
 	credit_cost = 1000
 	description = "This shuttle is long and made with a long open area with chairs on the side."
 
+//Mining ship
+/datum/map_template/shuttle/mining_ship
+	port_id = "mining_ship"
+	suffix = "all"
+
 //Ruins
 /datum/map_template/shuttle/ruin/solgov_exploration_pod
 	suffix = "solgov_exploration_pod"

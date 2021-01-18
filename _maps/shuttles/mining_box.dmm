@@ -111,6 +111,9 @@
 /obj/structure/cable,
 /turf/open/floor/mineral/titanium/blue,
 /area/shuttle/mining)
+"N" = (
+/turf/closed/wall/mineral/titanium/exterior,
+/area/shuttle/mining)
 "P" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -131,22 +134,22 @@
 /area/shuttle/mining)
 
 (1,1,1) = {"
-a
-a
+N
+N
 b
 a
 b
-a
-a
+N
+N
 "}
 (2,1,1) = {"
-a
+N
 c
 e
 g
 f
 i
-a
+N
 "}
 (3,1,1) = {"
 b
@@ -158,20 +161,20 @@ j
 l
 "}
 (4,1,1) = {"
-a
+N
 v
 e
 P
 f
 k
-a
+N
 "}
 (5,1,1) = {"
-a
-a
+N
+N
 b
 h
 b
-a
-a
+N
+N
 "}
