@@ -10,8 +10,8 @@
 	req_access = list(ACCESS_ARMORY)
 	var/broken = FALSE
 	var/open = FALSE
-	var/icon_locked = "lockbox+l"
-	var/icon_closed = "lockbox"
+	var/icon_locked = "lockbox" //Waspstation edit - fix lockbox sprites
+	var/icon_closed = "lockbox+l" //Waspstation edit - fix lockbox sprites
 	var/icon_broken = "lockbox+b"
 
 /obj/item/storage/lockbox/ComponentInitialize()
