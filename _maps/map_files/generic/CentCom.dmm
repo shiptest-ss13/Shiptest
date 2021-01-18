@@ -11509,14 +11509,6 @@
 	},
 /turf/open/floor/engine/cult,
 /area/wizard_station)
-"BV" = (
-/obj/machinery/chem_dispenser/drinks/beer,
-/turf/closed/indestructible{
-	icon = 'icons/turf/walls/wood_wall.dmi';
-	icon_state = "wood";
-	smoothing_flags = 1
-	},
-/area/centcom/holding)
 "BY" = (
 /obj/item/toy/figure/syndie,
 /turf/open/floor/plating/asteroid/snow/airless,
@@ -16381,13 +16373,6 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/centcom/control)
-"Nd" = (
-/turf/closed/indestructible{
-	icon = 'icons/turf/walls/wood_wall.dmi';
-	icon_state = "wood";
-	smoothing_flags = 1
-	},
-/area/centcom/holding)
 "Nh" = (
 /obj/structure/table/wood,
 /obj/item/storage/box/drinkingglasses,
@@ -16932,14 +16917,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/centcom/supplypod)
-"QT" = (
-/obj/machinery/chem_dispenser/drinks,
-/turf/closed/indestructible{
-	icon = 'icons/turf/walls/wood_wall.dmi';
-	icon_state = "wood";
-	smoothing_flags = 1
-	},
-/area/centcom/holding)
 "QU" = (
 /obj/effect/turf_decal/tile/red{
 	dir = 1
@@ -17345,6 +17322,10 @@
 /obj/effect/turf_decal/tile/brown,
 /turf/open/floor/plasteel,
 /area/centcom/supplypod/loading/two)
+"Td" = (
+/obj/machinery/chem_dispenser/drinks,
+/turf/closed/indestructible/wood,
+/area/centcom/holding)
 "Tj" = (
 /obj/structure/table/reinforced,
 /obj/item/reagent_containers/food/drinks/bottle/whiskey{
@@ -17374,9 +17355,6 @@
 /obj/structure/closet/chefcloset,
 /turf/open/floor/plasteel/cafeteria,
 /area/centcom/holding)
-"Tt" = (
-/turf/open/overmap,
-/area/overmap)
 "Ts" = (
 /obj/effect/turf_decal/tile/neutral{
 	dir = 1
@@ -17394,6 +17372,9 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/centcom/control)
+"Tt" = (
+/turf/open/overmap,
+/area/overmap)
 "Tu" = (
 /obj/structure/flora/ausbushes/fernybush,
 /obj/structure/flora/ausbushes/fullgrass,
@@ -17915,6 +17896,10 @@
 	},
 /turf/open/floor/plasteel,
 /area/centcom/ferry)
+"WA" = (
+/obj/machinery/chem_dispenser/drinks/beer,
+/turf/closed/indestructible/wood,
+/area/centcom/holding)
 "WJ" = (
 /obj/machinery/door/airlock/centcom{
 	name = "Thunderdome Administration";
@@ -17952,6 +17937,9 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/centcom/ferry)
+"WO" = (
+/turf/closed/indestructible/wood,
+/area/centcom/holding)
 "WQ" = (
 /obj/machinery/door/firedoor,
 /obj/machinery/door/airlock/centcom{
@@ -42707,38 +42695,38 @@ aa
 aa
 aa
 aa
-Nd
-Nd
-Nd
-Nd
-Nd
-Nd
-Nd
-Nd
-Nd
-Nd
-Nd
-Nd
-Nd
-Nd
-Nd
-Nd
-Nd
-Nd
-Nd
-Nd
-Nd
-Nd
-Nd
-Nd
-Nd
-Nd
-Nd
-Nd
-Nd
-Nd
-Nd
-Nd
+WO
+WO
+WO
+WO
+WO
+WO
+WO
+WO
+WO
+WO
+WO
+WO
+WO
+WO
+WO
+WO
+WO
+WO
+WO
+WO
+WO
+WO
+WO
+WO
+WO
+WO
+WO
+WO
+WO
+WO
+WO
+WO
 aa
 aa
 aa
@@ -42964,7 +42952,7 @@ aa
 aa
 aa
 aa
-Nd
+WO
 PO
 PO
 PO
@@ -42972,11 +42960,11 @@ Sw
 PO
 PO
 PO
-Nd
+WO
 QI
 VA
 Op
-Nd
+WO
 Rm
 Tn
 UT
@@ -42995,7 +42983,7 @@ CT
 CT
 oV
 CT
-Nd
+WO
 aa
 aa
 aa
@@ -43221,7 +43209,7 @@ aa
 aa
 aa
 aa
-Nd
+WO
 HQ
 PY
 PY
@@ -43229,7 +43217,7 @@ PY
 PY
 PY
 PY
-Nd
+WO
 qH
 ZW
 ZW
@@ -43252,7 +43240,7 @@ CT
 CT
 CT
 CT
-Nd
+WO
 aa
 aa
 aa
@@ -43478,7 +43466,7 @@ aa
 aa
 aa
 aa
-Nd
+WO
 Mu
 QH
 Bo
@@ -43486,11 +43474,11 @@ vs
 Rj
 PI
 Rd
-Nd
+WO
 Pa
 ZW
 ZW
-Nd
+WO
 CT
 CT
 CT
@@ -43509,7 +43497,7 @@ CT
 CT
 CT
 HH
-Nd
+WO
 aa
 aa
 aa
@@ -43735,7 +43723,7 @@ aa
 aa
 aa
 aa
-Nd
+WO
 PY
 PY
 PY
@@ -43743,11 +43731,11 @@ PY
 PY
 PY
 PY
-Nd
+WO
 SB
 ZW
 Nw
-Nd
+WO
 CT
 CT
 CT
@@ -43755,7 +43743,7 @@ Ph
 CT
 Tu
 Vu
-Nd
+WO
 Gs
 CT
 CT
@@ -43766,7 +43754,7 @@ CT
 CT
 CT
 CT
-Nd
+WO
 aa
 aa
 aa
@@ -43992,7 +43980,7 @@ aa
 aa
 aa
 aa
-Nd
+WO
 pE
 NJ
 SW
@@ -44000,11 +43988,11 @@ PY
 Um
 Nn
 PY
-Nd
-Nd
-Nd
-Nd
-Nd
+WO
+WO
+WO
+WO
+WO
 CT
 CT
 XM
@@ -44023,7 +44011,7 @@ CT
 CT
 CT
 HH
-Nd
+WO
 aa
 aa
 aa
@@ -44249,15 +44237,15 @@ aa
 aa
 aa
 aa
-Nd
-Nd
-Nd
-Nd
+WO
+WO
+WO
+WO
 XL
-Nd
-Nd
+WO
+WO
 py
-Nd
+WO
 CT
 oV
 CT
@@ -44280,7 +44268,7 @@ CT
 CT
 CT
 CT
-Nd
+WO
 aa
 aa
 aa
@@ -44506,7 +44494,7 @@ aa
 aa
 aa
 aa
-Nd
+WO
 PL
 CT
 oV
@@ -44516,9 +44504,9 @@ CT
 CT
 TE
 CT
-Nd
-Nd
-Nd
+WO
+WO
+WO
 Gs
 CT
 GY
@@ -44537,7 +44525,7 @@ CT
 CT
 Qu
 CT
-Nd
+WO
 aa
 aa
 aa
@@ -44763,17 +44751,17 @@ aa
 aa
 aa
 aa
-Nd
+WO
 Tq
 CT
 MG
 YN
-Nd
+WO
 Vm
 Fh
 zV
-Nd
-Nd
+WO
+WO
 Fa
 KT
 CT
@@ -44783,18 +44771,18 @@ CT
 CT
 CT
 HH
-Nd
+WO
 CT
 CT
 CT
-Nd
-Nd
-Nd
-Nd
-Nd
-Nd
-Nd
-Nd
+WO
+WO
+WO
+WO
+WO
+WO
+WO
+WO
 aa
 aa
 aa
@@ -45020,16 +45008,16 @@ aa
 aa
 aa
 aa
-Nd
+WO
 CT
 CT
 Rh
 Mm
-Nd
+WO
 MT
 Fh
 Yu
-Nd
+WO
 Fb
 Sd
 KT
@@ -45051,7 +45039,7 @@ OU
 OU
 RS
 VF
-Nd
+WO
 aa
 aa
 aa
@@ -45277,16 +45265,16 @@ aa
 aa
 aa
 aa
-Nd
+WO
 CT
 CT
 Rh
 ZT
-Nd
+WO
 Pr
 Fh
 QW
-Nd
+WO
 Fc
 Sd
 KT
@@ -45297,7 +45285,7 @@ Sd
 Sd
 Sd
 Sd
-Nd
+WO
 Gs
 Zx
 CT
@@ -45308,7 +45296,7 @@ CT
 CT
 CT
 CT
-Nd
+WO
 aa
 aa
 aa
@@ -45534,16 +45522,16 @@ aa
 aa
 aa
 aa
-Nd
-Nd
+WO
+WO
 XL
-Nd
-Nd
-Nd
+WO
+WO
+WO
 JE
 Fh
 YQ
-Nd
+WO
 MR
 Sd
 FW
@@ -45565,7 +45553,7 @@ CT
 XM
 XM
 CT
-Nd
+WO
 aa
 aa
 aa
@@ -45791,17 +45779,17 @@ aa
 aa
 aa
 aa
-Nd
+WO
 yM
 CT
 oV
 CT
-Nd
+WO
 SG
 Fh
 Vv
-Nd
-Nd
+WO
+WO
 Sd
 FX
 CT
@@ -45811,7 +45799,7 @@ CT
 CT
 CT
 HH
-Nd
+WO
 TA
 Ud
 Ud
@@ -45822,7 +45810,7 @@ Rw
 Po
 ZU
 CT
-Nd
+WO
 aa
 aa
 aa
@@ -46048,19 +46036,19 @@ aa
 aa
 aa
 aa
-Nd
+WO
 OG
 CT
 CT
 CT
-Nd
+WO
 zX
 Fh
 pS
-Nd
-Nd
-Nd
-Nd
+WO
+WO
+WO
+WO
 Gs
 CT
 XM
@@ -46079,7 +46067,7 @@ Sd
 Sd
 MM
 CT
-Nd
+WO
 aa
 aa
 aa
@@ -46305,12 +46293,12 @@ aa
 aa
 aa
 aa
-Nd
+WO
 TK
 CT
 CT
 CT
-Nd
+WO
 QA
 Fh
 Nv
@@ -46336,7 +46324,7 @@ Sd
 Sd
 MM
 xB
-Nd
+WO
 aa
 aa
 aa
@@ -46562,12 +46550,12 @@ aa
 aa
 aa
 aa
-Nd
+WO
 YL
 CT
 CT
 CT
-Nd
+WO
 Xo
 Fh
 Fh
@@ -46593,7 +46581,7 @@ Sd
 Sd
 MM
 CT
-Nd
+WO
 aa
 aa
 aa
@@ -46819,16 +46807,16 @@ aa
 aa
 aa
 aa
-Nd
+WO
 Xe
 CT
 CT
 CT
-Nd
+WO
 TB
 Fh
 Fh
-BV
+WA
 CT
 Fe
 UE
@@ -46839,7 +46827,7 @@ Ph
 CT
 Qk
 Vu
-Nd
+WO
 Gs
 Ud
 Ud
@@ -46850,7 +46838,7 @@ TC
 PA
 Pl
 CT
-Nd
+WO
 aa
 aa
 aa
@@ -47076,16 +47064,16 @@ aa
 aa
 aa
 aa
-Nd
+WO
 Ny
 CT
 CT
 CT
-Nd
+WO
 Vz
 Fh
 YJ
-QT
+Td
 CT
 Ya
 UE
@@ -47107,7 +47095,7 @@ CT
 GY
 GY
 CT
-Nd
+WO
 aa
 aa
 aa
@@ -47333,7 +47321,7 @@ aa
 aa
 aa
 aa
-Nd
+WO
 Bs
 Ri
 CT
@@ -47364,7 +47352,7 @@ CT
 CT
 CT
 CT
-Nd
+WO
 aa
 aa
 aa
@@ -47590,19 +47578,19 @@ aa
 aa
 aa
 aa
-Nd
+WO
 SU
 CT
 Qu
 Nm
-Nd
+WO
 SN
 pV
 Tr
-Nd
+WO
 Fj
-Nd
-Nd
+WO
+WO
 Fi
 Tn
 UT
@@ -47621,7 +47609,7 @@ Qg
 Tb
 Uh
 tW
-Nd
+WO
 aa
 aa
 aa
@@ -47847,38 +47835,38 @@ aa
 aa
 aa
 aa
-Nd
-Nd
-Nd
-Nd
-Nd
-Nd
-Nd
-Nd
-Nd
-Nd
-Nd
-Nd
-Nd
-Nd
-Nd
-Nd
-Nd
-Nd
-Nd
-Nd
-Nd
-Nd
-Nd
-Nd
-Nd
-Nd
-Nd
-Nd
-Nd
-Nd
-Nd
-Nd
+WO
+WO
+WO
+WO
+WO
+WO
+WO
+WO
+WO
+WO
+WO
+WO
+WO
+WO
+WO
+WO
+WO
+WO
+WO
+WO
+WO
+WO
+WO
+WO
+WO
+WO
+WO
+WO
+WO
+WO
+WO
+WO
 aa
 aa
 aa
