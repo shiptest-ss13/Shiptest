@@ -240,11 +240,12 @@
 	var/datum/signal/subspace/vocal/signal = new(src, freq, speaker, language, message, spans, message_mods)
 
 	// Independent radios, on the CentCom frequency, reach all independent radios
-	if (independent && (freq == FREQ_CENTCOM || freq == FREQ_SOLGOV || freq == FREQ_CTF_RED || freq == FREQ_CTF_BLUE))		// Wasp Edit - SolGov Rep
+	if (independent && (freq == FREQ_CENTCOM || freq == FREQ_SOLGOV || freq == FREQ_WIDEBAND || freq == FREQ_CTF_RED || freq == FREQ_CTF_BLUE))		// Wasp Edit - SolGov Rep
 		signal.data["compression"] = 0
 		signal.transmission_method = TRANSMISSION_SUPERSPACE
 		signal.levels = list(0)  // reaches all Z-levels
 		signal.broadcast()
+		playsound(src, "sound/effects/walkietalkie.ogg", 20, FALSE)			// Wasp Edit - Radio chatter
 		return
 
 	// All radios make an attempt to use the subspace system first
@@ -295,7 +296,7 @@
 		return FALSE
 	if (freq == FREQ_SYNDICATE && !syndie)
 		return FALSE
-	if (freq == FREQ_CENTCOM)
+	if (freq == FREQ_CENTCOM || freq == FREQ_SOLGOV)
 		return independent  // hard-ignores the z-level check
 	if (!(0 in level))
 		var/turf/position = get_turf(src)

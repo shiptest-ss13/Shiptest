@@ -19,7 +19,6 @@
 /obj/effect/mapping_helpers/airlock/cyclelink_helper,
 /obj/docking_port/mobile{
 	callTime = 250;
-	dheight = 0;
 	dir = 2;
 	dwidth = 11;
 	height = 17;
@@ -263,19 +262,15 @@
 /turf/closed/wall/mineral/titanium,
 /area/shuttle/abandoned/bar)
 "ay" = (
-/obj/structure/shuttle/engine/propulsion/left{
-	dir = 8
+/obj/machinery/power/shuttle/engine/fueled/plasma{
+	dir = 4
 	},
 /turf/open/floor/plating/airless,
 /area/shuttle/abandoned/engine)
 "az" = (
-/obj/structure/window/reinforced{
-	dir = 4
-	},
-/obj/structure/shuttle/engine/heater{
-	dir = 8
-	},
-/turf/open/floor/plating/airless,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/atmospherics/components/unary/tank/toxins,
+/turf/open/floor/plating,
 /area/shuttle/abandoned/engine)
 "aA" = (
 /obj/effect/turf_decal/stripes/line{
@@ -412,8 +407,11 @@
 /turf/open/floor/plasteel/dark,
 /area/shuttle/abandoned/bar)
 "aM" = (
-/obj/structure/shuttle/engine/propulsion/right{
-	dir = 8
+/obj/machinery/power/shuttle/engine/electric{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "0-4"
 	},
 /turf/open/floor/plating/airless,
 /area/shuttle/abandoned/engine)
@@ -421,13 +419,13 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 8
 	},
-/obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/cable{
 	icon_state = "2-4"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 6
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
 /area/shuttle/abandoned/engine)
 "aO" = (
@@ -938,6 +936,9 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/atmospherics/components/unary/portables_connector/visible,
 /obj/machinery/portable_atmospherics/canister/oxygen,
+/obj/machinery/atmospherics/pipe/simple/orange{
+	dir = 9
+	},
 /turf/open/floor/plating,
 /area/shuttle/abandoned/engine)
 "bz" = (
@@ -1116,6 +1117,12 @@
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden{
 	dir = 8
 	},
+/obj/machinery/power/terminal{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
 /turf/open/floor/plating,
 /area/shuttle/abandoned/engine)
 "bQ" = (
@@ -1126,6 +1133,9 @@
 /obj/structure/spider/stickyweb,
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden{
 	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
 	},
 /turf/open/floor/plating,
 /area/shuttle/abandoned/engine)
@@ -1540,6 +1550,9 @@
 	icon_state = "0-2"
 	},
 /obj/machinery/space_heater,
+/obj/machinery/power/terminal{
+	dir = 8
+	},
 /turf/open/floor/plating,
 /area/shuttle/abandoned/engine)
 "ct" = (
@@ -1634,6 +1647,9 @@
 	},
 /obj/structure/cable,
 /obj/item/wrench,
+/obj/machinery/atmospherics/pipe/simple/orange{
+	dir = 10
+	},
 /turf/open/floor/plating,
 /area/shuttle/abandoned/engine)
 "cC" = (
@@ -2657,9 +2673,39 @@
 /obj/machinery/door/firedoor/border_only,
 /turf/open/floor/plating,
 /area/shuttle/abandoned/medbay)
+"hW" = (
+/obj/machinery/atmospherics/pipe/simple/orange{
+	dir = 1
+	},
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/shuttle/abandoned/engine)
 "iM" = (
 /turf/closed/wall/mineral/titanium,
 /area/shuttle/abandoned/medbay)
+"lv" = (
+/obj/structure/spider/stickyweb,
+/obj/machinery/atmospherics/components/binary/pump{
+	dir = 1;
+	name = "engine fuel pump"
+	},
+/turf/open/floor/plating,
+/area/shuttle/abandoned/engine)
+"lG" = (
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/machinery/door/window/northright{
+	dir = 4;
+	name = "Engine Access"
+	},
+/obj/machinery/power/smes/shuttle/precharged{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/turf/open/floor/plating,
+/area/shuttle/abandoned/engine)
 "oo" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/cable{
@@ -2671,9 +2717,56 @@
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden,
 /turf/open/floor/plasteel,
 /area/shuttle/abandoned/crew)
+"rW" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/atmospherics/components/binary/pump{
+	name = "engine fuel pump"
+	},
+/turf/open/floor/plating,
+/area/shuttle/abandoned/engine)
+"vk" = (
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/machinery/door/window/northright{
+	dir = 4;
+	name = "Engine Access"
+	},
+/obj/machinery/atmospherics/components/unary/shuttle/heater{
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/shuttle/abandoned/engine)
 "vm" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/shuttle/abandoned/medbay)
+"wg" = (
+/obj/machinery/atmospherics/pipe/simple/orange,
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/shuttle/abandoned/engine)
+"wo" = (
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/machinery/door/window/northleft{
+	dir = 4;
+	name = "Engine Access"
+	},
+/obj/machinery/power/smes/shuttle/precharged{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/turf/open/floor/plating,
+/area/shuttle/abandoned/engine)
+"BI" = (
+/obj/structure/spider/stickyweb,
+/obj/machinery/atmospherics/components/unary/tank/toxins{
+	dir = 1
+	},
+/turf/open/floor/plating,
+/area/shuttle/abandoned/engine)
 "DZ" = (
 /obj/effect/turf_decal/delivery/white,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -2701,6 +2794,15 @@
 /obj/machinery/door/firedoor/border_only,
 /turf/open/floor/plating,
 /area/shuttle/abandoned/cargo)
+"Ic" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/shuttle/abandoned/engine)
 "Lm" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor{
@@ -2740,6 +2842,19 @@
 /obj/machinery/door/firedoor/border_only,
 /turf/open/floor/plating,
 /area/shuttle/abandoned/medbay)
+"XZ" = (
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/machinery/door/window/northleft{
+	dir = 4;
+	name = "Engine Access"
+	},
+/obj/machinery/atmospherics/components/unary/shuttle/heater{
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/shuttle/abandoned/engine)
 
 (1,1,1) = {"
 aa
@@ -2752,8 +2867,8 @@ aM
 ah
 aa
 ah
-ay
 aM
+ay
 ah
 aa
 aa
@@ -2763,19 +2878,19 @@ aa
 (2,1,1) = {"
 aa
 ah
-ay
-aM
-ai
-az
-az
 ai
 ai
 ai
-az
-az
+XZ
+lG
 ai
-ay
-aM
+ai
+ai
+wo
+vk
+ai
+ai
+ai
 ah
 aa
 "}
@@ -2783,8 +2898,8 @@ aa
 aa
 ai
 az
-az
-ai
+rW
+hW
 by
 bP
 bV
@@ -2792,9 +2907,9 @@ cc
 ck
 cs
 cB
-ai
-az
-az
+wg
+lv
+BI
 ai
 aa
 "}
@@ -2831,7 +2946,7 @@ bB
 bB
 cD
 cO
-dd
+Ic
 dB
 ai
 aa

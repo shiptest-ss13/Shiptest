@@ -3,12 +3,15 @@
 //Yes, I'm sorry.
 /datum/turf_reservation
 	var/list/reserved_turfs = list()
+	var/list/non_border_turfs
 	var/width = 0
 	var/height = 0
 	var/bottom_left_coords[3]
 	var/top_right_coords[3]
 	var/wipe_reservation_on_release = TRUE
 	var/turf_type = /turf/open/space
+	var/border_turf_type
+	var/area/area_type
 
 /datum/turf_reservation/transit
 	turf_type = /turf/open/space/transit
@@ -60,7 +63,19 @@
 		T.flags_1 &= ~UNUSED_RESERVATION_TURF_1
 		SSmapping.unused_turfs["[T.z]"] -= T
 		SSmapping.used_turfs[T] = src
-		T.ChangeTurf(turf_type, turf_type)
+		if(border_turf_type && T.x == BL.x || T.x == TR.x || T.y == BL.y || T.y == TR.y)
+			T.ChangeTurf(border_turf_type, turf_type)
+		else if(border_turf_type)
+			LAZYADD(non_border_turfs, T)
+			T.ChangeTurf(turf_type, turf_type)
+		else
+			T.ChangeTurf(turf_type, turf_type)
+		if(area_type)
+			if(ispath(area_type))
+				area_type = new area_type
+			var/area/old_area = get_area(T)
+			area_type.contents += T
+			T.change_area(old_area, area_type)
 	src.width = width
 	src.height = height
 	return TRUE

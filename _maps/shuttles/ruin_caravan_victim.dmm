@@ -251,9 +251,7 @@
 	},
 /area/shuttle/caravan/freighter1)
 "lC" = (
-/obj/machinery/power/smes{
-	charge = 0
-	},
+/obj/machinery/power/smes,
 /obj/structure/cable/yellow{
 	icon_state = "0-4"
 	},
@@ -582,7 +580,6 @@
 	},
 /area/shuttle/caravan/freighter1)
 "AM" = (
-/obj/machinery/door/firedoor,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
 	},
@@ -638,7 +635,6 @@
 /turf/open/floor/plasteel/dark/airless,
 /area/shuttle/caravan/freighter1)
 "BN" = (
-/obj/machinery/door/firedoor,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
 	},
@@ -786,7 +782,6 @@
 /area/shuttle/caravan/freighter1)
 "GJ" = (
 /obj/machinery/firealarm{
-	dir = 2;
 	pixel_y = 24
 	},
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden{
@@ -890,7 +885,6 @@
 /turf/open/floor/plating,
 /area/shuttle/caravan/freighter1)
 "LX" = (
-/obj/machinery/door/firedoor,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /obj/structure/door_assembly/door_assembly_min{
 	anchored = 1;
@@ -1077,7 +1071,6 @@
 /obj/structure/table,
 /obj/machinery/cell_charger,
 /obj/machinery/firealarm{
-	dir = 2;
 	pixel_y = 24
 	},
 /obj/item/stack/cable_coil/yellow{
@@ -1157,9 +1150,7 @@
 	},
 /area/shuttle/caravan/freighter1)
 "VD" = (
-/obj/effect/mapping_helpers/airlock/cyclelink_helper{
-	dir = 2
-	},
+/obj/effect/mapping_helpers/airlock/cyclelink_helper,
 /obj/effect/mapping_helpers/airlock/locked,
 /obj/machinery/door/airlock/external{
 	id_tag = "caravantrade1_bolt"

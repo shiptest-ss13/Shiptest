@@ -77,8 +77,10 @@
 	multiple_sprites = AMMO_BOX_PER_BULLET
 
 /obj/item/ammo_box/a762
-	name = "stripper clip (7.62mm)"
-	desc = "A stripper clip."
+	// WS Edit Start - Whitesands
+	name = "stripper clip (7.62x51mm)"
+	desc = "A rifle-cartrige stripper clip."
+	// WS Edit Start - Whitesands
 	icon_state = "762"
 	ammo_type = /obj/item/ammo_casing/a762
 	max_ammo = 5

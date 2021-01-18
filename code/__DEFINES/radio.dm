@@ -46,10 +46,12 @@
 #define RADIO_KEY_CENTCOM "y"
 #define RADIO_TOKEN_CENTCOM ":y"
 
-//Wasp Begin - SGR
+//Wasp Begin - SGR, Overmaps
 #define RADIO_CHANNEL_SOLGOV "SolGov"
 #define RADIO_KEY_SOLGOV "z"
 #define RADIO_TOKEN_SOLGOV ":z"
+
+#define RADIO_CHANNEL_WIDEBAND "Wideband"
 //Wasp End
 
 #define RADIO_CHANNEL_CTF_RED "Red Team"
@@ -93,6 +95,8 @@
 #define FREQ_COMMON 1459  // Common comms frequency, dark green
 
 #define MAX_FREQ 1489 // ------------------------------------------------------
+
+#define FREQ_WIDEBAND 1501 // Subspace/shuttle comms frequency, dark blue WASP ADDITION
 
 #define MAX_FREE_FREQ 1599 // -------------------------------------------------
 

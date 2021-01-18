@@ -16,20 +16,6 @@
 /obj/structure/closet/radiation,
 /turf/open/floor/plasteel/dark,
 /area/maintenance/disposal/incinerator)
-"aad" = (
-/obj/structure/disposalpipe/segment{
-	dir = 6
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden{
-	dir = 6
-	},
-/obj/structure/cable{
-	icon_state = "2-4"
-	},
-/turf/open/floor/plating{
-	icon_state = "platingdmg3"
-	},
-/area/maintenance/department/cargo)
 "aae" = (
 /obj/effect/turf_decal/tile/yellow{
 	dir = 1
@@ -13526,10 +13512,6 @@
 /area/quartermaster/miningdock)
 "bcG" = (
 /obj/structure/closet/emcloset,
-/obj/machinery/airalarm{
-	dir = 8;
-	pixel_x = 24
-	},
 /obj/effect/turf_decal/tile/brown{
 	dir = 1
 	},
@@ -13714,6 +13696,9 @@
 "bdL" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on{
 	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
 	},
 /turf/open/floor/plasteel,
 /area/quartermaster/miningdock)
@@ -14080,14 +14065,19 @@
 /turf/open/floor/plasteel,
 /area/quartermaster/miningdock)
 "beP" = (
-/obj/machinery/computer/shuttle/mining{
+/obj/effect/turf_decal/tile/brown,
+/obj/machinery/computer/security/mining{
 	dir = 8
 	},
-/obj/effect/turf_decal/tile/brown,
 /turf/open/floor/plasteel,
 /area/quartermaster/miningdock)
 "beS" = (
 /obj/item/caution,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/obj/structure/disposalpipe/segment,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plating,
 /area/maintenance/department/cargo)
 "beY" = (
@@ -14306,30 +14296,15 @@
 /area/quartermaster/miningdock)
 "bfH" = (
 /obj/effect/turf_decal/tile/brown,
+/obj/machinery/airalarm{
+	dir = 8;
+	pixel_x = 24
+	},
+/obj/machinery/computer/security/mining{
+	dir = 8
+	},
 /turf/open/floor/plasteel,
 /area/quartermaster/miningdock)
-"bfI" = (
-/obj/machinery/door/airlock/external{
-	name = "Mining Dock Airlock";
-	req_access_txt = "48"
-	},
-/obj/effect/mapping_helpers/airlock/cyclelink_helper{
-	dir = 4
-	},
-/turf/open/floor/plating,
-/area/quartermaster/miningdock)
-"bfK" = (
-/obj/docking_port/stationary{
-	dir = 4;
-	dwidth = 3;
-	height = 5;
-	id = "mining_home";
-	name = "mining shuttle bay";
-	roundstart_template = /datum/map_template/shuttle/mining/delta;
-	width = 7
-	},
-/turf/open/space/basic,
-/area/space)
 "bfM" = (
 /obj/structure/chair{
 	dir = 4
@@ -27962,8 +27937,8 @@
 	name = "BOMB RANGE"
 	},
 /turf/closed/indestructible/riveted{
-	name = "hyper-reinforced wall";
-	desc = "A wall impregnated with Fixium, able to withstand massive explosions with ease"
+	desc = "A wall impregnated with Fixium, able to withstand massive explosions with ease";
+	name = "hyper-reinforced wall"
 	},
 /area/asteroid/nearstation/bomb_site)
 "cjx" = (
@@ -28739,8 +28714,8 @@
 /area/asteroid/nearstation/bomb_site)
 "cnq" = (
 /turf/closed/indestructible/riveted{
-	name = "hyper-reinforced wall";
-	desc = "A wall impregnated with Fixium, able to withstand massive explosions with ease"
+	desc = "A wall impregnated with Fixium, able to withstand massive explosions with ease";
+	name = "hyper-reinforced wall"
 	},
 /area/asteroid/nearstation/bomb_site)
 "cnr" = (
@@ -29964,6 +29939,19 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /turf/closed/wall/mineral/iron,
 /area/chapel/main/monastery)
+"ctA" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/effect/spawner/lootdrop/maintenance,
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/maintenance/department/cargo)
 "ctJ" = (
 /obj/machinery/camera{
 	c_tag = "Chapel Office";
@@ -32630,14 +32618,9 @@
 /turf/open/floor/plasteel/white,
 /area/medical/medbay/zone2)
 "doK" = (
-/obj/machinery/computer/security/mining{
-	dir = 8
-	},
 /obj/effect/turf_decal/tile/brown,
-/obj/machinery/requests_console{
-	department = "Mining";
-	dir = 4;
-	pixel_x = 32
+/obj/structure/cable{
+	icon_state = "4-8"
 	},
 /turf/open/floor/plasteel,
 /area/quartermaster/miningdock)
@@ -34049,12 +34032,6 @@
 	},
 /turf/open/floor/plating,
 /area/maintenance/solars/starboard)
-"eiR" = (
-/obj/machinery/advanced_airlock_controller{
-	pixel_y = 24
-	},
-/turf/open/floor/plating,
-/area/quartermaster/miningdock)
 "ejg" = (
 /obj/structure/table,
 /obj/item/folder/white,
@@ -39723,6 +39700,19 @@
 /obj/effect/spawner/structure/window/reinforced/shutters,
 /turf/open/floor/plating/airless,
 /area/chapel/main/monastery)
+"hNF" = (
+/obj/machinery/door/airlock/external{
+	name = "Mining Dock Airlock";
+	req_access_txt = "48"
+	},
+/obj/effect/mapping_helpers/airlock/cyclelink_helper{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plating,
+/area/quartermaster/miningdock)
 "hNG" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 1
@@ -43630,22 +43620,6 @@
 	},
 /turf/open/floor/plating,
 /area/maintenance/department/security/brig)
-"kvN" = (
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden{
-	dir = 4
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/machinery/door/airlock/maintenance{
-	name = "Disposal Access";
-	req_access_txt = "12"
-	},
-/turf/open/floor/plating,
-/area/maintenance/department/cargo)
 "kvY" = (
 /obj/structure/reagent_dispensers/fueltank,
 /obj/machinery/power/apc{
@@ -46864,15 +46838,14 @@
 /turf/open/floor/plasteel/dark,
 /area/security/execution/transfer)
 "mEw" = (
-/obj/structure/disposalpipe/segment,
-/obj/machinery/atmospherics/pipe/manifold/supply/hidden{
-	dir = 8
-	},
 /obj/structure/cable{
 	icon_state = "2-4"
 	},
-/obj/structure/cable{
-	icon_state = "1-2"
+/obj/structure/disposalpipe/segment{
+	dir = 6
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 6
 	},
 /turf/open/floor/plating,
 /area/maintenance/department/cargo)
@@ -47142,6 +47115,15 @@
 	},
 /turf/open/floor/plating,
 /area/ai_monitored/turret_protected/AIsatextAP)
+"mNL" = (
+/obj/machinery/advanced_airlock_controller{
+	pixel_y = 24
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plating,
+/area/quartermaster/miningdock)
 "mOC" = (
 /obj/item/broken_bottle,
 /obj/structure/cable{
@@ -50427,16 +50409,6 @@
 	},
 /turf/closed/wall,
 /area/security/brig)
-"oPy" = (
-/obj/machinery/door/airlock/external{
-	name = "Mining Dock Airlock";
-	req_access_txt = "48"
-	},
-/obj/effect/mapping_helpers/airlock/cyclelink_helper{
-	dir = 8
-	},
-/turf/open/floor/plating,
-/area/quartermaster/miningdock)
 "oPI" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -52289,6 +52261,18 @@
 	},
 /turf/open/space,
 /area/solar/starboard)
+"qhm" = (
+/obj/docking_port/stationary{
+	dir = 4;
+	dwidth = 3;
+	height = 10;
+	id = "mining_home";
+	name = "mining shuttle bay";
+	roundstart_template = /datum/map_template/shuttle/mining/kilo;
+	width = 7
+	},
+/turf/open/space/basic,
+/area/space)
 "qhL" = (
 /obj/machinery/door/airlock/command/glass{
 	name = "AI Core";
@@ -54130,6 +54114,18 @@
 	},
 /turf/open/floor/plasteel,
 /area/hallway/secondary/entry)
+"rCo" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/maintenance/department/cargo)
 "rCP" = (
 /obj/structure/disposalpipe/segment,
 /obj/structure/cable{
@@ -54170,6 +54166,9 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /obj/structure/cable{
 	icon_state = "1-2"
+	},
+/obj/structure/cable{
+	icon_state = "1-4"
 	},
 /turf/open/floor/plasteel,
 /area/quartermaster/miningdock)
@@ -55315,6 +55314,19 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ai_monitored/security/armory)
+"spn" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 9
+	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden,
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/turf/open/floor/plating,
+/area/maintenance/department/cargo)
 "spz" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /turf/open/floor/plating,
@@ -56845,6 +56857,21 @@
 /obj/machinery/atmospherics/pipe/simple/cyan/hidden,
 /turf/open/floor/plasteel,
 /area/hallway/secondary/entry)
+"tpq" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
+/obj/machinery/light/small{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/maintenance/department/cargo)
 "tpt" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on{
 	dir = 8
@@ -58531,6 +58558,14 @@
 	},
 /turf/open/floor/plasteel,
 /area/construction/mining/aux_base)
+"uoC" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/obj/structure/disposalpipe/segment,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plating,
+/area/maintenance/department/cargo)
 "uoN" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 9
@@ -60160,15 +60195,6 @@
 	},
 /turf/open/floor/plating,
 /area/maintenance/department/engine)
-"vqI" = (
-/obj/effect/spawner/lootdrop/maintenance,
-/obj/structure/disposalpipe/segment,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden,
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/turf/open/floor/plating,
-/area/maintenance/department/cargo)
 "vqJ" = (
 /obj/machinery/light/small{
 	dir = 1
@@ -61503,6 +61529,15 @@
 	},
 /turf/open/floor/plasteel,
 /area/security/brig)
+"wgo" = (
+/obj/effect/turf_decal/tile/brown,
+/obj/machinery/requests_console{
+	department = "Mining";
+	dir = 4;
+	pixel_x = 32
+	},
+/turf/open/floor/plasteel,
+/area/quartermaster/miningdock)
 "wgB" = (
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
@@ -61766,6 +61801,19 @@
 /obj/structure/sign/warning,
 /turf/closed/wall,
 /area/science/mixing)
+"wnX" = (
+/obj/machinery/door/airlock/external{
+	name = "Mining Dock Airlock";
+	req_access_txt = "48"
+	},
+/obj/effect/mapping_helpers/airlock/cyclelink_helper{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plating,
+/area/quartermaster/miningdock)
 "woq" = (
 /obj/structure/chair,
 /turf/open/floor/plating,
@@ -106103,7 +106151,7 @@ bcG
 doK
 beP
 bfH
-bfH
+wgo
 bhv
 bbI
 aEj
@@ -106356,11 +106404,11 @@ aLg
 aLg
 aLg
 bbI
+bdI
+wnX
+bdI
 bbI
 bbI
-bdI
-bfI
-bdI
 bbI
 bbI
 aGP
@@ -106613,11 +106661,11 @@ aLg
 aaa
 aaa
 aaa
+lJD
+mNL
+lJD
 aaa
 aaa
-lJD
-eiR
-lJD
 aaa
 aEj
 pKd
@@ -106870,11 +106918,11 @@ aLg
 aaa
 aaa
 aaa
+lJD
+hNF
+lJD
 aaa
 aaa
-lJD
-oPy
-lJD
 aaa
 aEj
 aEj
@@ -107128,9 +107176,9 @@ aaa
 aaa
 aaa
 aaa
+qhm
 aaa
 aaa
-bfK
 aaa
 aaa
 aaa
@@ -108412,10 +108460,10 @@ aaa
 aaa
 aaa
 aaa
-aEj
-aEj
-aEj
-aEj
+aaa
+aaa
+aaa
+aaa
 aEj
 aEj
 aEj
@@ -108669,11 +108717,11 @@ aaa
 aaa
 aaa
 aaa
-wpf
-aad
-vqI
-kje
-kje
+aaa
+aaa
+aaa
+aaa
+aEj
 mEw
 aEU
 kje
@@ -108926,12 +108974,12 @@ aaa
 aaa
 aaa
 aaa
-aEj
-kvN
-aEj
-aKq
-aEj
-pdw
+aaa
+aaa
+aaa
+aaa
+wpf
+rCo
 aEj
 bkF
 bkF
@@ -109183,12 +109231,12 @@ aaa
 aaa
 aaa
 aaa
-wpf
-vMG
-aFi
-aFi
+aaa
+aaa
+aaa
+aaa
 aEj
-saO
+tpq
 lEn
 pnU
 pnU
@@ -109441,11 +109489,11 @@ wpf
 wpf
 aEj
 aEj
-vMG
-aFi
-aFi
 aEj
-pdw
+wpf
+wpf
+aEj
+ctA
 lEn
 uwb
 bjB
@@ -109698,11 +109746,11 @@ wNT
 kje
 mYn
 kje
-kLV
+uoC
 beS
-aFi
-aEj
-pdw
+uoC
+uoC
+spn
 lEn
 biD
 biD
@@ -110212,7 +110260,7 @@ kLV
 aFi
 pqN
 aFi
-aFi
+aKq
 kIo
 bfN
 aEj

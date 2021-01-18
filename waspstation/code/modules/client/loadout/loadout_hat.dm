@@ -38,11 +38,11 @@
 		"Head of Personnel" = /obj/item/clothing/head/beret/hop,
 		"SolGov Representative" = /obj/item/clothing/head/beret/solgov,
 
-		"Head of Security" = /obj/item/clothing/head/beret/sec/navyhos,
-		"Warden" = /obj/item/clothing/head/beret/sec/navywarden,
-		"Security Officer" = /obj/item/clothing/head/beret/sec/navyofficer,
+		"Head of Security" = /obj/item/clothing/head/beret/sec/hos,
+		"Warden" = /obj/item/clothing/head/beret/sec/warden,
+		"Security Officer" = /obj/item/clothing/head/beret/sec/officer,
 		"Detective" = /obj/item/clothing/head/beret/sec,
-		"Brig Physician" = /obj/item/clothing/head/beret/sec,
+		"Brig Physician" = /obj/item/clothing/head/beret/sec/brig_phys,
 
 		"Chief Engineer" = /obj/item/clothing/head/beret/ce,
 		"Station Engineer" = /obj/item/clothing/head/beret/eng,

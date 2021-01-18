@@ -144,3 +144,23 @@ GLOBAL_DATUM_INIT(openspace_backdrop_one_for_all, /atom/movable/openspace_backdr
 			PlaceOnTop(/turf/open/floor/plating, flags = CHANGETURF_INHERIT_AIR)
 			return TRUE
 	return FALSE
+
+/turf/open/transparent/openspace/icemoon
+	name = "ice chasm"
+	baseturfs = /turf/open/transparent/openspace/icemoon
+	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
+	planetary_atmos = TRUE
+	var/replacement_turf = /turf/open/floor/plating/asteroid/snow/icemoon
+
+/turf/open/transparent/openspace/icemoon/Initialize()
+	. = ..()
+	var/turf/T = below()
+	if(T.flags_1 & NO_RUINS_1)
+		ChangeTurf(replacement_turf, null, CHANGETURF_IGNORE_AIR)
+		return
+	if(!ismineralturf(T))
+		return
+	var/turf/closed/mineral/M = T
+	M.mineralAmt = 0
+	M.gets_drilled()
+	baseturfs = /turf/open/transparent/openspace/icemoon //This is to ensure that IF random turf generation produces a openturf, there won't be other turfs assigned other than openspace.

@@ -33,6 +33,9 @@
 		new /datum/data/mining_equipment("Kinetic Crusher",				/obj/item/kinetic_crusher,											750),
 		new /datum/data/mining_equipment("Kinetic Accelerator",			/obj/item/gun/energy/kinetic_accelerator,							750),
 		new /datum/data/mining_equipment("Advanced Scanner",			/obj/item/t_scanner/adv_mining_scanner,								800),
+		new /datum/data/mining_equipment("Deepcore Pointer",			/obj/item/pinpointer/deepcore,										200),		// WS edit - Deepcore
+		new /datum/data/mining_equipment("Advanced Pointer",			/obj/item/pinpointer/deepcore/advanced,								800),		// WS edit - Deepcore
+		new /datum/data/mining_equipment("Drill Deployment Capsule",	/obj/item/deepcorecapsule,											2000),		// WS edit - Deepcore
 		new /datum/data/mining_equipment("Resonator",					/obj/item/resonator,												800),
 		new /datum/data/mining_equipment("Fulton Pack",					/obj/item/extraction_pack,											1000),
 		new /datum/data/mining_equipment("Lazarus Injector",			/obj/item/lazarus_injector,											1000),

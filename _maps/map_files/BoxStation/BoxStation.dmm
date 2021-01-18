@@ -20976,6 +20976,9 @@
 /obj/effect/turf_decal/tile/brown{
 	dir = 8
 	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plasteel,
 /area/quartermaster/miningdock)
 "bHC" = (
@@ -24972,7 +24975,6 @@
 "caW" = (
 /obj/machinery/door/airlock/atmos/glass{
 	name = "Atmospherics EVA";
-	req_access_txt = "0";
 	req_one_access_txt = "11;24"
 	},
 /turf/open/floor/plasteel/dark,
@@ -30328,6 +30330,12 @@
 /obj/machinery/door/firedoor/border_only,
 /turf/open/floor/plasteel/white,
 /area/medical/medbay/central)
+"ecA" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel,
+/area/quartermaster/miningdock)
 "ecB" = (
 /obj/effect/turf_decal/delivery,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
@@ -31035,6 +31043,9 @@
 "eCC" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on{
 	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "1-8"
 	},
 /turf/open/floor/plasteel,
 /area/quartermaster/miningdock)
@@ -32446,6 +32457,9 @@
 "fGb" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden{
 	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
 	},
 /turf/open/floor/plasteel,
 /area/quartermaster/miningdock)
@@ -36767,6 +36781,15 @@
 	},
 /turf/open/floor/plating,
 /area/maintenance/port/fore)
+"iZF" = (
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel,
+/area/quartermaster/miningdock)
 "iZK" = (
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
@@ -39443,6 +39466,9 @@
 "kVW" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 9
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
 	},
 /turf/open/floor/plasteel,
 /area/quartermaster/miningdock)
@@ -43324,6 +43350,9 @@
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plasteel,
 /area/quartermaster/miningdock)
 "nrP" = (
@@ -46517,6 +46546,9 @@
 	},
 /obj/structure/cable{
 	icon_state = "1-4"
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
 	},
 /turf/open/floor/plasteel,
 /area/quartermaster/miningdock)
@@ -52892,8 +52924,7 @@
 /area/bridge)
 "tZd" = (
 /obj/machinery/camera{
-	c_tag = "Chemistry - Factory Mid";
-	network = list("ss13")
+	c_tag = "Chemistry - Factory Mid"
 	},
 /turf/open/floor/plasteel/white,
 /area/medical/chemistry)
@@ -54110,6 +54141,9 @@
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
 	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plasteel,
 /area/quartermaster/miningdock)
 "uNN" = (
@@ -54279,6 +54313,9 @@
 	name = "Mining Dock Airlock";
 	req_access_txt = "48";
 	shuttledocked = 1
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
 	},
 /turf/open/floor/plating,
 /area/quartermaster/miningdock)
@@ -80293,7 +80330,7 @@ aaf
 aaf
 lTa
 cvm
-byE
+ecA
 lwd
 lTa
 aoV
@@ -80550,7 +80587,7 @@ aaa
 aaa
 lTa
 swZ
-byE
+ecA
 poL
 lTa
 aoV
@@ -81321,7 +81358,7 @@ svm
 agv
 byE
 bAZ
-byE
+ecA
 bGm
 lTa
 aaf
@@ -81578,7 +81615,7 @@ bAb
 bzY
 bBa
 qrb
-bzY
+iZF
 jAK
 lTa
 aaa

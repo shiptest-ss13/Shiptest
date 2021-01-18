@@ -17,5 +17,9 @@
 /datum/gas_mixture/immutable/space
 	initial_temperature = TCMB
 
+/datum/gas_mixture/immutable/space/New()
+	..()
+	mark_vacuum()
+
 /datum/gas_mixture/immutable/space/populate()
 	set_min_heat_capacity(HEAT_CAPACITY_VACUUM)

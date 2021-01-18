@@ -128,6 +128,7 @@ GLOBAL_PROTECT(admin_verbs_server)
 	/client/proc/toggle_random_events,
 	/client/proc/forcerandomrotate,
 	/client/proc/adminchangemap,
+	/client/proc/adminchangeminingmap,
 	/client/proc/panicbunker,
 	/client/proc/toggle_interviews,
 	/client/proc/toggle_hub,

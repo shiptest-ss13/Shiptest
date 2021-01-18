@@ -12,14 +12,14 @@
 /turf/open/floor/mineral/plastitanium,
 /area/shuttle/mining)
 "d" = (
-/obj/machinery/computer/shuttle/mining/common,
 /obj/effect/turf_decal/bot,
+/obj/machinery/computer/helm,
 /turf/open/floor/mineral/plastitanium,
 /area/shuttle/mining)
 "e" = (
 /obj/structure/table,
 /obj/item/radio,
-/obj/item/radio/intercom{
+/obj/item/radio/intercom/wideband{
 	pixel_y = 22
 	},
 /turf/open/floor/mineral/plastitanium,
@@ -66,6 +66,9 @@
 /obj/machinery/atmospherics/pipe/simple/general/visible{
 	dir = 4
 	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
 /turf/open/floor/mineral/titanium/yellow,
 /area/shuttle/mining)
 "l" = (
@@ -75,6 +78,9 @@
 	},
 /obj/machinery/atmospherics/components/binary/valve{
 	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
 	},
 /turf/open/floor/mineral/titanium/yellow,
 /area/shuttle/mining)
@@ -93,6 +99,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/general/visible{
 	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
 	},
 /turf/open/floor/plating,
 /area/shuttle/mining)
@@ -113,10 +122,25 @@
 /turf/open/floor/mineral/plastitanium,
 /area/shuttle/mining)
 "p" = (
-/obj/effect/spawner/structure/window/shuttle,
-/obj/structure/shuttle/engine/heater,
+/obj/structure/window/reinforced{
+	dir = 8;
+	pixel_x = -4
+	},
+/obj/structure/window/reinforced{
+	dir = 4;
+	pixel_x = 4
+	},
+/obj/machinery/power/smes/shuttle/precharged{
+	dir = 1
+	},
+/obj/machinery/door/window/northleft{
+	name = "Engine Access"
+	},
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
 /turf/open/floor/plating,
-/area/space)
+/area/shuttle/mining)
 "q" = (
 /obj/structure/ore_box,
 /obj/effect/turf_decal/delivery,
@@ -127,8 +151,24 @@
 /turf/closed/wall/mineral/titanium,
 /area/shuttle/mining)
 "s" = (
-/obj/structure/shuttle/engine/propulsion/burst,
+/obj/structure/window/reinforced{
+	dir = 1;
+	pixel_y = 3
+	},
+/obj/machinery/power/shuttle/engine/electric{
+	dir = 1
+	},
+/obj/structure/cable,
 /turf/open/floor/plating/airless,
+/area/shuttle/mining)
+"J" = (
+/obj/structure/chair/comfy/shuttle{
+	dir = 1
+	},
+/obj/effect/turf_decal/bot,
+/obj/machinery/power/terminal,
+/obj/structure/cable,
+/turf/open/floor/mineral/plastitanium,
 /area/shuttle/mining)
 
 (1,1,1) = {"
@@ -154,7 +194,7 @@ b
 d
 g
 k
-n
+J
 p
 s
 "}

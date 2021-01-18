@@ -1,8 +1,10 @@
 // 7.62 (Nagant Rifle)
 
 /obj/item/ammo_casing/a762
-	name = "7.62 bullet casing"
-	desc = "A 7.62 bullet casing."
+// WS Edit Start - Whitesands
+	name = "7.62x51 bullet casing"
+	desc = "A 7.62x51 bullet casing."
+// WS Edit End - Whitesands
 	icon_state = "762-casing"
 	caliber = "a762"
 	projectile_type = /obj/projectile/bullet/a762

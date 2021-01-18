@@ -1,3 +1,6 @@
+/*
+	Waspstation Edit - Moved to modular folder
+
 //A slow but strong beast that tries to stun using its tentacles
 /mob/living/simple_animal/hostile/asteroid/goliath
 	name = "goliath"
@@ -236,4 +239,4 @@
 	name = "saddle"
 	desc = "This saddle will solve all your problems with being killed by lava beasts!"
 	icon = 'icons/obj/mining.dmi'
-	icon_state = "goliath_saddle"
+	icon_state = "goliath_saddle"	*/

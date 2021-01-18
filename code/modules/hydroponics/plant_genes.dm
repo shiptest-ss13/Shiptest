@@ -488,6 +488,9 @@
 /datum/plant_gene/trait/plant_type/fungal_metabolism
 	name = "Fungal Vitality"
 
+/datum/plant_gene/trait/plant_type/crystal		// WS edit - Crystals
+	name = "Crystalline Growing Patterns"
+
 /datum/plant_gene/trait/plant_type/alien_properties
 	name ="?????"
 

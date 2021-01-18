@@ -21,3 +21,10 @@
 	name = "Midwaystation emergency shuttle"
 	credit_cost = 1000
 	description = "This shuttle is long and made with a long open area with chairs on the side."
+
+//Ruins
+/datum/map_template/shuttle/ruin/solgov_exploration_pod
+	suffix = "solgov_exploration_pod"
+	name = "SolGov Exploration Pod"
+
+

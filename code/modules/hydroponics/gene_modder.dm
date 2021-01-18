@@ -410,6 +410,7 @@
 		return
 	if(copytext(seed.name, 1, 13) == "experimental")//13 == length("experimental") + 1
 		return // Already modded name and icon
+	seed.icon = 'icons/obj/hydroponics/seeds.dmi'		// WS - additional flora files
 	seed.name = "experimental " + seed.name
 	seed.icon_state = "seed-x"
 

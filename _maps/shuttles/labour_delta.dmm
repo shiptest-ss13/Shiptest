@@ -10,11 +10,11 @@
 /turf/open/floor/plating,
 /area/shuttle/labor)
 "c" = (
-/obj/machinery/computer/shuttle/labor{
-	dir = 4
-	},
 /obj/structure/reagent_dispensers/peppertank{
 	pixel_x = -31
+	},
+/obj/machinery/computer/helm{
+	dir = 4
 	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/shuttle/labor)
@@ -28,14 +28,17 @@
 /obj/item/folder/red,
 /obj/item/restraints/handcuffs,
 /obj/structure/table/reinforced,
+/obj/item/radio/intercom/wideband{
+	pixel_x = 29;
+	pixel_y = 22
+	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/shuttle/labor)
 "f" = (
-/obj/structure/grille,
 /obj/structure/cable/yellow{
 	icon_state = "0-8"
 	},
-/obj/structure/window/shuttle,
+/obj/effect/spawner/structure/window/shuttle,
 /turf/open/floor/plating,
 /area/shuttle/labor)
 "g" = (
@@ -83,9 +86,7 @@
 	name = "Labor Shuttle Airlock";
 	req_access_txt = "2"
 	},
-/obj/effect/turf_decal/stripes/line{
-	dir = 2
-	},
+/obj/effect/turf_decal/stripes/line,
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
 	},
@@ -100,9 +101,7 @@
 	input_dir = 2;
 	output_dir = 1
 	},
-/obj/effect/turf_decal/stripes/line{
-	dir = 2
-	},
+/obj/effect/turf_decal/stripes/line,
 /turf/open/floor/plasteel/white,
 /area/shuttle/labor)
 "n" = (
@@ -237,15 +236,29 @@
 /obj/structure/closet/crate/internals,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/delivery,
+/obj/machinery/power/terminal,
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
 /turf/open/floor/plasteel,
 /area/shuttle/labor)
 "u" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/bot,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plasteel,
 /area/shuttle/labor)
 "v" = (
 /obj/effect/turf_decal/bot,
+/obj/machinery/power/terminal,
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plasteel,
 /area/shuttle/labor)
 "w" = (
@@ -274,22 +287,53 @@
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
 	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plating,
 /area/shuttle/labor)
-"x" = (
-/obj/structure/shuttle/engine/heater,
-/obj/structure/window/reinforced{
-	dir = 1;
-	layer = 2.9
-	},
-/obj/effect/turf_decal/stripes/line,
-/turf/open/floor/plating/airless,
-/area/shuttle/labor)
 "y" = (
-/obj/structure/shuttle/engine/propulsion,
 /obj/effect/turf_decal/stripes/line,
+/obj/machinery/power/shuttle/engine/electric{
+	dir = 1
+	},
+/obj/structure/cable,
 /turf/open/floor/plating/airless,
 /area/shuttle/labor)
+"P" = (
+/obj/effect/turf_decal/stripes/line,
+/obj/machinery/power/smes/shuttle/precharged{
+	dir = 1
+	},
+/obj/structure/window/reinforced,
+/obj/machinery/door/window/brigdoor{
+	dir = 1;
+	name = "Engine Access";
+	req_access_txt = "2"
+	},
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/turf/open/floor/plating,
+/area/shuttle/labor)
+"Q" = (
+/obj/effect/turf_decal/stripes/line,
+/obj/machinery/power/smes/shuttle/precharged{
+	dir = 1
+	},
+/obj/structure/window/reinforced,
+/obj/machinery/door/window/brigdoor/northright{
+	name = "Engine Access";
+	req_access_txt = "2"
+	},
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/turf/open/floor/plating,
+/area/shuttle/labor)
+"T" = (
+/turf/template_noop,
+/area/template_noop)
 
 (1,1,1) = {"
 a
@@ -310,7 +354,7 @@ k
 n
 q
 t
-a
+P
 y
 "}
 (3,1,1) = {"
@@ -321,8 +365,8 @@ l
 o
 r
 u
-x
-y
+a
+T
 "}
 (4,1,1) = {"
 b
@@ -332,7 +376,7 @@ m
 p
 s
 v
-a
+Q
 y
 "}
 (5,1,1) = {"

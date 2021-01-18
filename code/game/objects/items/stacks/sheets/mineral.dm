@@ -341,6 +341,7 @@ GLOBAL_LIST_INIT(bananium_recipes, list ( \
 	throw_range = 3
 	sheettype = "titanium"
 	custom_materials = list(/datum/material/titanium=MINERAL_MATERIAL_AMOUNT)
+	grind_results = list(/datum/reagent/titanium = 20)		// Wasp Edit - Adds titanium reagent
 	point_value = 20
 	merge_type = /obj/item/stack/sheet/mineral/titanium
 	material_type = /datum/material/titanium

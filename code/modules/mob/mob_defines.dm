@@ -58,6 +58,9 @@
 	/// Tick time the mob can next move
 	var/next_move = null
 
+	///Last time an area was created by a mob plus a short cooldown period
+	var/create_area_cooldown
+
 	/**
 	  * Magic var that stops you moving and interacting with anything
 	  *
@@ -193,7 +196,7 @@
 	//Wasp Begin - Holy fuck work for spacepods
 	var/list/mousemove_intercept_objects
 	//Wasp End
-	
+
 	///For storing what do_after's someone has, in case we want to restrict them to only one of a certain do_after at a time
 	var/list/do_afters
 

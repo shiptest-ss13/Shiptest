@@ -1,3 +1,6 @@
+/*
+		Waspstation Edit - Moved to modular folder
+
 //A beast that fire freezing blasts.
 /mob/living/simple_animal/hostile/asteroid/basilisk
 	name = "basilisk"
@@ -211,4 +214,4 @@ mob/living/simple_animal/hostile/asteroid/basilisk/proc/cool_down()
 			L.apply_status_effect(/datum/status_effect/freon/watcher)
 
 /mob/living/simple_animal/hostile/asteroid/basilisk/watcher/tendril
-	fromtendril = TRUE
+	fromtendril = TRUE */

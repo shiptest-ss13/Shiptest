@@ -32,10 +32,10 @@
 	alt_uniform = /obj/item/clothing/under/rank/medical/doctor/purple
 	shoes = /obj/item/clothing/shoes/sneakers/white
 	glasses = /obj/item/clothing/glasses/hud/health/sunglasses
-	suit = /obj/item/clothing/suit/hazardvest/brig_phys
-	alt_suit = /obj/item/clothing/suit/toggle/labcoat/brig_phys
+	suit = /obj/item/clothing/suit/toggle/labcoat/brig_phys
+	alt_suit = /obj/item/clothing/suit/armor/vest/security/brig_phys
 	dcoat = /obj/item/clothing/suit/hooded/wintercoat/security
-	suit_store = /obj/item/flashlight/seclite
+	suit_store = /obj/item/flashlight/pen
 	l_hand = /obj/item/storage/firstaid/regular
 	head = /obj/item/clothing/head/soft/sec/brig_phys
 	implants = list(/obj/item/implant/mindshield)

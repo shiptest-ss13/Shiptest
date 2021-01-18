@@ -134,6 +134,7 @@ GLOBAL_LIST_INIT(sand_recipes, list(\
 	icon_state = "volcanic_sand"
 	item_state = "volcanic_sand"
 	singular_name = "volcanic ash pile"
+	grind_results = list(/datum/reagent/toxin/lava_microbe = 5)		// Wasp Edit - Fuck
 	mine_experience = 0
 
 /obj/item/stack/ore/plasma

@@ -29,9 +29,9 @@
 /turf/open/space/transit/Entered(atom/movable/AM, atom/OldLoc)
 	..()
 	if(!locate(/obj/structure/lattice) in src)
-		throw_atom(AM)
+		throw_atom_into_space(AM)
 
-/turf/open/space/transit/proc/throw_atom(atom/movable/AM)
+/atom/proc/throw_atom_into_space(atom/movable/AM)
 	set waitfor = FALSE
 	if(!AM || istype(AM, /obj/docking_port))
 		return
@@ -76,7 +76,7 @@
 	. = ..()
 	update_icon()
 	for(var/atom/movable/AM in src)
-		throw_atom(AM)
+		throw_atom_into_space(AM)
 
 /turf/open/space/transit/update_icon()
 	. = ..()
