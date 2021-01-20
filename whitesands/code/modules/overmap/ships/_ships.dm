@@ -20,7 +20,11 @@
 	///Minimum speed. Any lower is rounded down. (0.5 tiles per minute)
 	var/static/min_speed = 1/(2 MINUTES)
 	///The current speed in x/y direction in grid squares per minute
-	var/speed = list(0,0)
+	var/list/speed[2]
+	///The current target for the autopiloting system
+	var/atom/current_autopilot_target
+	///ONLY USED FOR NON-SIMULATED SHIPS. The amount per burn that this ship does
+	var/acceleration_speed = 0.02
 
 /obj/structure/overmap/ship/Destroy()
 	. = ..()
@@ -62,6 +66,8 @@
 		return
 	var/turf/newloc = locate(x + SIGN(speed[1]), y + SIGN(speed[2]), z)
 	Move(newloc)
+	if(current_autopilot_target)
+		tick_autopilot()
 
 	//Queue another movement
 	var/timer = 1 / round(MAGNITUDE(speed[1], speed[2]), SHIP_MOVE_RESOLUTION)
@@ -165,6 +171,47 @@
 	var/turf/T = locate(nx,ny,z)
 	if(T)
 		forceMove(T)
+
+/**
+ * Burns the engines in one direction, accelerating in that direction.
+ * Unsimulated ships use the acceleration_speed var, simulated ships check eacch engine's thrust and fuel.
+ * If no dir variable is provided, it decelerates the vessel.
+ * * n_dir - The direction to move in
+ */
+/obj/structure/overmap/ship/proc/burn_engines(n_dir = null, percentage = 100)
+	if(!n_dir)
+		decelerate(acceleration_speed * (percentage / 100))
+	else
+		accelerate(n_dir, acceleration_speed * (percentage / 100))
+
+/**
+ * Ticks the autopiloting system.
+ * Returns if there's no target, decelerates and returns if target reached.
+ * If stopped, burn towards the target, otherwise if going in the right direction, do nothing, if going in the wrong direction, stop.
+ */
+/obj/structure/overmap/ship/proc/tick_autopilot()
+	if(!current_autopilot_target)
+		return
+	if(get_turf(src) == get_turf(current_autopilot_target))
+		if(!is_still())
+			burn_engines(null)
+		return
+	var/target_direction = get_dir(src, current_autopilot_target)
+	var/current_distance = get_dist(src, current_autopilot_target)
+	if(current_distance >= SSovermap.size / 2)
+		target_direction = REVERSE_DIR(target_direction)
+	if(is_still())
+		burn_engines(target_direction)
+	else if(dir == target_direction)
+		return
+	else
+		burn_engines(null)
+		tick_autopilot()
+
+/obj/structure/overmap/ship/Uncrossed(atom/movable/AM, atom/newloc)
+	. = ..()
+	if(AM == current_autopilot_target)
+		tick_autopilot()
 
 /obj/structure/overmap/ship/update_icon_state()
 	if(!is_still())

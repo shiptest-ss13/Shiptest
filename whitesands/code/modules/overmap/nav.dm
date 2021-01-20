@@ -5,7 +5,7 @@
 	icon_keyboard = "tech_key"
 	lock_override = NONE
 	jumpto_ports = list("whiteship_home" = 1)
-	designate_time = 100
+	designate_time = 50
 	circuit = /obj/item/circuitboard/computer/shuttle/docker
 	var/obj/structure/overmap/ship/simulated/current_ship
 	var/obj/structure/overmap/level/current_target
@@ -65,6 +65,7 @@
 	if(!current_ship.is_still())
 		to_chat(user, "<span class='warning'>You can't try to land while moving!</span>")
 		return
+	view_range = max(current_ship.shuttle.height, current_ship.shuttle.width, 0)
 	jumpto_ports = list("[shuttleId]_[current_target.id]", "[PRIMARY_OVERMAP_DOCK_PREFIX]_[current_target.id]")
 	shuttlePortId = "[shuttleId]_[current_target.id]"
 	shuttlePortName = "[current_ship] [current_target.id] dock"

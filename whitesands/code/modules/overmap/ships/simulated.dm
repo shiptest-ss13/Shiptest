@@ -148,12 +148,7 @@
 	state = OVERMAP_SHIP_UNDOCKING
 	return "Beginning undocking procedures..."
 
-/**
-  * Burns the engines in one direction, accelerating in that direction.
-  * If no dir variable is provided, it decelerates the vessel.
-  * * n_dir - The direction to move in
-  */
-/obj/structure/overmap/ship/simulated/proc/burn_engines(n_dir = null, percentage = 100)
+/obj/structure/overmap/ship/simulated/burn_engines(n_dir = null, percentage = 100)
 	if(state != OVERMAP_SHIP_FLYING)
 		return
 
