@@ -150,17 +150,6 @@ GLOBAL_LIST_EMPTY(custom_shuttle_machines)		//Machines that require updating (He
 	to_chat(usr, "Direction to space is [position]")
 	return position
 
-/obj/item/shuttle_creator/proc/invertDir(var/input_dir)
-	if(input_dir == NORTH)
-		return SOUTH
-	else if(input_dir == SOUTH)
-		return NORTH
-	else if(input_dir == EAST)
-		return WEST
-	else if(input_dir == WEST)
-		return EAST
-	return null
-
 /obj/item/shuttle_creator/proc/shuttle_create_docking_port(atom/target, mob/user)
 
 	if(loggedTurfs.len == 0 || !recorded_shuttle_area)
@@ -181,7 +170,7 @@ GLOBAL_LIST_EMPTY(custom_shuttle_machines)		//Machines that require updating (He
 	port.area_type = recorded_shuttle_area
 
 	var/portDirection = getNonShuttleDirection(get_turf(port))
-	var/invertedDir = invertDir(portDirection)
+	var/invertedDir = REVERSE_DIR(portDirection)
 	if(!portDirection || !invertedDir)
 		to_chat(usr, "<span class='warning'>Shuttle creation aborted, docking airlock must be on an external wall. Please select a new airlock.</span>")
 		port.Destroy()

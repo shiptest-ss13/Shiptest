@@ -3,23 +3,32 @@
 /obj/structure/chair/comfy/shuttle{
 	dir = 4
 	},
-/obj/machinery/turretid{
-	ailock = 1;
-	desc = "A specially designed set of turret controls. Looks to be covered in protective casing to prevent AI interfacing.";
-	icon_state = "control_kill";
-	lethal = 1;
-	name = "Shuttle turret control";
-	pixel_x = 32;
-	pixel_y = -28;
-	req_access = null;
-	req_access_txt = "150"
-	},
 /mob/living/simple_animal/hostile/syndicate/ranged/smg/pilot{
 	environment_smash = 0
 	},
-/obj/machinery/atmospherics/components/unary/portables_connector{
+/turf/open/floor/mineral/plastitanium/red,
+/area/shuttle/caravan/syndicate1)
+"cU" = (
+/obj/machinery/atmospherics/pipe/simple/orange/hidden{
+	dir = 1
+	},
+/turf/closed/wall/mineral/plastitanium,
+/area/shuttle/caravan/syndicate1)
+"dw" = (
+/obj/machinery/porta_turret/syndicate/energy{
 	dir = 4
 	},
+/obj/machinery/atmospherics/pipe/manifold/orange/hidden{
+	dir = 4
+	},
+/turf/closed/wall/mineral/plastitanium,
+/area/shuttle/caravan/syndicate1)
+"eC" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/components/unary/portables_connector{
+	dir = 1
+	},
+/obj/machinery/portable_atmospherics/canister/toxins,
 /turf/open/floor/mineral/plastitanium/red,
 /area/shuttle/caravan/syndicate1)
 "fh" = (
@@ -29,44 +38,56 @@
 	network = list("caravansyndicate1");
 	pixel_x = 32
 	},
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/shuttle/caravan/syndicate1)
-"fp" = (
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/shuttle/caravan/syndicate1)
-"gt" = (
 /obj/machinery/atmospherics/pipe/simple/orange/hidden{
-	dir = 9
+	dir = 1
 	},
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/turf/closed/wall/mineral/plastitanium,
 /area/shuttle/caravan/syndicate1)
 "na" = (
 /obj/machinery/atmospherics/pipe/simple/orange/hidden{
-	dir = 10
+	dir = 4
 	},
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/turf/closed/wall/mineral/plastitanium,
 /area/shuttle/caravan/syndicate1)
 "qx" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/manifold/orange/hidden{
-	dir = 4
+/obj/machinery/turretid{
+	ailock = 1;
+	desc = "A specially designed set of turret controls. Looks to be covered in protective casing to prevent AI interfacing.";
+	icon_state = "control_kill";
+	lethal = 1;
+	name = "Shuttle turret control";
+	pixel_x = 32;
+	req_access = null;
+	req_access_txt = "150"
 	},
-/obj/machinery/computer/security{
-	dir = 8
+/obj/machinery/atmospherics/components/binary/pump{
+	dir = 1;
+	name = "engine fuel pump"
 	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/shuttle/caravan/syndicate1)
+"tH" = (
+/obj/machinery/atmospherics/pipe/simple/orange/hidden{
+	dir = 9
+	},
+/turf/closed/wall/mineral/plastitanium,
+/area/shuttle/caravan/syndicate1)
 "tU" = (
-/obj/machinery/atmospherics/pipe/simple/orange/hidden,
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/computer/security,
+/obj/machinery/atmospherics/pipe/simple/orange/hidden{
+	dir = 6
+	},
+/turf/open/floor/mineral/plastitanium/red,
 /area/shuttle/caravan/syndicate1)
 "us" = (
 /obj/machinery/power/shuttle/engine/fueled/plasma{
 	dir = 4
 	},
 /turf/open/floor/plating/airless,
-/area/template_noop)
+/area/shuttle/caravan/syndicate1)
 "uW" = (
 /obj/machinery/button/door{
 	id = "caravansyndicate1_bolt";
@@ -124,6 +145,21 @@
 	},
 /turf/open/floor/plating,
 /area/shuttle/caravan/syndicate1)
+"zu" = (
+/obj/machinery/porta_turret/syndicate/energy{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/orange/hidden{
+	dir = 1
+	},
+/turf/closed/wall/mineral/plastitanium,
+/area/shuttle/caravan/syndicate1)
+"Fs" = (
+/obj/machinery/atmospherics/pipe/simple/orange/hidden{
+	dir = 10
+	},
+/turf/closed/wall/mineral/plastitanium,
+/area/shuttle/caravan/syndicate1)
 "Jv" = (
 /turf/template_noop,
 /area/template_noop)
@@ -141,9 +177,9 @@
 Jv
 us
 YX
-fp
+YX
 wV
-fp
+YX
 YX
 us
 Jv
@@ -151,35 +187,35 @@ Jv
 (2,1,1) = {"
 Jv
 YP
-fp
+YX
 uW
 aA
 vK
-fp
+YX
 YP
 Jv
 "}
 (3,1,1) = {"
 YX
 na
-tU
+YX
 tU
 qx
-tU
-tU
-gt
+eC
+YX
+na
 YX
 "}
 (4,1,1) = {"
-fp
 YX
-Jv
-vD
+Fs
+cU
+dw
 fh
-vD
-Jv
+zu
+cU
+tH
 YX
-fp
 "}
 (5,1,1) = {"
 vD
