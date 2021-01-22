@@ -37,7 +37,7 @@
 	chameleon_extras = /obj/item/stamp/qm
 
 /datum/outfit/job/quartermaster/supplychief
-	name = "Supply Chief"
+	name = "Quartermaster (Supply Chief)"
 	jobtype = /datum/job/qm
 
 	uniform = /obj/item/clothing/under/suit/qm
@@ -47,4 +47,5 @@
 	shoes = /obj/item/clothing/shoes/laceup
 	l_hand = null
 	neck = /obj/item/clothing/neck/tie/brown
+	head = /obj/item/clothing/head/supply_chief
 	backpack_contents = list(/obj/item/modular_computer/tablet/preset/cargo=1, /obj/item/clipboard=1)

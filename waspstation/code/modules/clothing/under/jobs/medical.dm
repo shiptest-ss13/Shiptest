@@ -99,6 +99,14 @@
 	body_parts_covered = CHEST|GROIN|ARMS
 	can_adjust = FALSE
 
+/obj/item/clothing/under/rank/medical/chief_medical_officer/surgeon_general
+	name = "surgeon-general scrubs"
+	desc = "It's made of a special fiber that provides minor protection against biohazards. This one is meant to be worn by surgeon-generals."
+	icon = 'waspstation/icons/obj/clothing/under/medical.dmi'
+	mob_overlay_icon = 'waspstation/icons/mob/clothing/under/medical.dmi'
+	icon_state = "surgeon_general"
+	can_adjust = FALSE
+
 /obj/item/clothing/under/suit/senior_doctor
 	name = "senior doctor suit"
 	desc = "A suit with medical colors, meant to be worn by senior staff."
@@ -172,3 +180,10 @@
 	icon_state = "emt_skirt"
 
 	can_adjust = FALSE
+
+/obj/item/clothing/under/rank/medical/doctor/red
+	name = "medical scrubs"
+	desc = "It's made of a special fiber that provides minor protection against biohazards. This one is in red."
+	icon_state = "scrubsred"
+	can_adjust = FALSE
+	fitted = NO_FEMALE_UNIFORM

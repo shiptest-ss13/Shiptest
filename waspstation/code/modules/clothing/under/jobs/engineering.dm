@@ -114,3 +114,36 @@
 	body_parts_covered = CHEST|GROIN|ARMS
 	can_adjust = FALSE
 
+/obj/item/clothing/under/rank/engineering/atmospheric_technician/life_support_specialist
+	name = "life support specialists's jumpsuit"
+	desc = "It's a jumpsuit worn by life support specialists, who are the ones behind the fact you are able to breath and complain."
+	icon = 'waspstation/icons/obj/clothing/under/engineering.dmi'
+	mob_overlay_icon = 'waspstation/icons/mob/clothing/under/engineering.dmi'
+	icon_state = "life_support_specialist"
+	resistance_flags = NONE
+	fitted = NO_FEMALE_UNIFORM
+
+/obj/item/clothing/under/rank/engineering/atmospheric_technician/life_support_specialist/skirt
+	name = "life support specialists's jumpskirt"
+	desc = "It's a jumpskirt worn by life support specialists, who are the ones behind the fact you are able to breath and complain."
+	icon_state = "life_support_specialist_skirt"
+	body_parts_covered = CHEST|GROIN|ARMS
+	can_adjust = FALSE
+
+
+/obj/item/clothing/under/rank/engineering/atmospheric_technician/firefighter
+	name = "firefighter's jumpsuit"
+	desc = "It's a jumpsuit worn by firefigthers to help aid in dealing science caused fires. It is made of fire resistant materials."
+	icon = 'waspstation/icons/obj/clothing/under/engineering.dmi'
+	mob_overlay_icon = 'waspstation/icons/mob/clothing/under/engineering.dmi'
+	icon_state = "firefighter"
+	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 60, "acid" = 0) //Same fire number as standard engineer uniform
+	fitted = NO_FEMALE_UNIFORM
+
+/obj/item/clothing/under/rank/engineering/atmospheric_technician/firefighter/skirt
+	name = "firefighter's jumpskirt"
+	desc = "It's a jumpskirt worn by firefigthers to help aid in dealing science caused fires. It is made of fire resistant materials."
+	icon_state = "firefighter_skirt"
+	body_parts_covered = CHEST|GROIN|ARMS
+	can_adjust = FALSE
+

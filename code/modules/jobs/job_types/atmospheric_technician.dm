@@ -51,12 +51,13 @@
 
 /datum/outfit/job/atmos/firefighter
 	name = "Atmospheric Technician (Firefighter)"
-	uniform = /obj/item/clothing/under/rank/engineering/engineer/hazard
+	uniform = /obj/item/clothing/under/rank/engineering/atmospheric_technician/firefighter
 	head = /obj/item/clothing/head/hardhat/red
 	l_hand = /obj/item/extinguisher
 
 /datum/outfit/job/atmos/lifesupportspecialist
 	name = "Atmospheric Technician (Life Support Specialist)"
+	uniform = /obj/item/clothing/under/rank/engineering/atmospheric_technician/life_support_specialist
 	backpack_contents = list(/obj/item/modular_computer/tablet/preset/advanced=1, /obj/item/storage/box/survival=2)
 
 /datum/outfit/job/atmos/chadmos                // WaspStation Edit - Give Chadmos Sr. Uniform

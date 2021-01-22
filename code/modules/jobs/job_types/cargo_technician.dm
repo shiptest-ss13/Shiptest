@@ -29,3 +29,18 @@
 	dcoat = /obj/item/clothing/suit/hooded/wintercoat/cargo //Wasp Edit - Alt Uniforms
 	l_hand = /obj/item/export_scanner
 	backpack_contents = list(/obj/item/modular_computer/tablet/preset/cargo=1)
+
+/datum/outfit/job/cargo_tech/mailroomtechnician
+	name = "Cargo Technician (Mailroom Technician)"
+
+	uniform = /obj/item/clothing/under/rank/cargo/tech/mailroom_technician
+	alt_uniform = null
+
+/datum/outfit/job/cargo_tech/deliveriesofficer
+	name = "Cargo Technician (Deliveries Officer)"
+
+	uniform = /obj/item/clothing/under/suit/cargo_tech
+	alt_uniform = null
+	l_hand = null
+	head = /obj/item/clothing/head/deliveries_officer
+	backpack_contents = list(/obj/item/modular_computer/tablet/preset/cargo=1, /obj/item/export_scanner=1)
