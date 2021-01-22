@@ -203,6 +203,8 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_DWARF				"dwarf"
 #define TRAIT_SILENT_FOOTSTEPS	"silent_footsteps" //makes your footsteps completely silent
 #define TRAIT_NICE_SHOT			"nice_shot" //hnnnnnnnggggg..... you're pretty good....
+/// The holder of this trait has antennae or whatever that hurt a ton when noogied
+#define TRAIT_ANTENNAE	"antennae"
 
 //non-mob traits
 /// Used for limb-based paralysis, where replacing the limb will fix it.
