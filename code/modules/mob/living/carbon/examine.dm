@@ -131,6 +131,15 @@
 				. += "[t_He] look[p_s()] very happy."
 			if(MOOD_LEVEL_HAPPY4 to INFINITY)
 				. += "[t_He] look[p_s()] ecstatic."
+
+	switch(mothdust) //WS edit - moth dust from hugging
+		if(1 to 50)
+			. += "[t_He] [t_is] a little dusty."
+		if(51 to 150)
+			. += "[t_He] [t_has] a layer of shimmering dust on them."
+		if(151 to INFINITY)
+			. += "[t_He] [t_is] covered in glistening dust!" //End WS edit
+
 	. += "*---------*</span>"
 
 	SEND_SIGNAL(src, COMSIG_PARENT_EXAMINE, user, .)

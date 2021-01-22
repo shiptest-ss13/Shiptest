@@ -270,13 +270,25 @@
 						null, "<span class='hear'>You hear the rustling of clothes.</span>", DEFAULT_MESSAGE_RANGE, list(M, src))
 		to_chat(M, "<span class='notice'>You shake [src] trying to pick [p_them()] up!</span>")
 		to_chat(src, "<span class='notice'>[M] shakes you to get you up!</span>")
+		if(istype(M.dna.species, /datum/species/moth)) //WS edit - moth dust from hugging
+			mothdust += 10;
+		if(istype(dna.species, /datum/species/moth))
+			M.mothdust += 10; // End WS edit
 	else if(check_zone(M.zone_selected) == BODY_ZONE_HEAD) //Headpats!
 		M.visible_message("<span class='notice'>[M] gives [src] a pat on the head to make [p_them()] feel better!</span>", \
 					"<span class='notice'>You give [src] a pat on the head to make [p_them()] feel better!</span>")
+		if(istype(M.dna.species, /datum/species/moth)) //WS edit - moth dust from hugging
+			mothdust += 5;
+		if(istype(dna.species, /datum/species/moth))
+			M.mothdust += 5; // End WS edit
 
 	else if(M.zone_selected == BODY_ZONE_CHEST || M.zone_selected == BODY_ZONE_PRECISE_GROIN)			// Wasp Edit - Adds more help emotes
 		M.visible_message("<span class='notice'>[M] hugs [src] to make [p_them()] feel better!</span>", \
 					"<span class='notice'>You hug [src] to make [p_them()] feel better!</span>")
+		if(istype(M.dna.species, /datum/species/moth)) //WS edit - moth dust from hugging
+			mothdust += 15; 
+		if(istype(dna.species, /datum/species/moth))
+			M.mothdust += 15; // End WS edit
 
 		// Warm them up with hugs
 		share_bodytemperature(M)
