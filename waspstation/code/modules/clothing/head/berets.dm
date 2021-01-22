@@ -28,7 +28,7 @@
 /obj/item/clothing/head/beret/black
 	name = "black beret"
 	desc = "A black beret, perfect for war veterans and dark, brooding, anti-hero mimes."
-	icon_state = "beretblack"
+	icon_state = "beret_black"
 
 /obj/item/clothing/head/beret/highlander
 	desc = "That was white fabric. <i>Was.</i>"
@@ -81,41 +81,30 @@
 /obj/item/clothing/head/beret/sec
 	name = "security beret"
 	desc = "A robust beret with the security insignia emblazoned on it. Uses reinforced fabric to offer sufficient protection."
-	icon_state = "beret_officer"
+	icon_state = "beret_sec"
 	armor = list("melee" = 35, "bullet" = 30, "laser" = 30,"energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
 	strip_delay = 60
 	dog_fashion = null
 
-/obj/item/clothing/head/beret/sec/navyhos
-	name = "head of security's navy beret"
-	desc = "A navy-colored beret with the Head of Security's insignia emblazoned on it. A symbol of excellence, a badge of courage, a mark of distinction."
-	icon_state = "hosberet"
-	armor = list("melee" = 40, "bullet" = 30, "laser" = 25, "energy" = 35, "bomb" = 25, "bio" = 10, "rad" = 0, "fire" = 50, "acid" = 60)
-
-/obj/item/clothing/head/beret/sec/navyhos/black
+/obj/item/clothing/head/beret/sec/hos
 	name = "head of security's black beret"
 	desc = "A black beret with the Head of Security's insignia emblazoned on it. A symbol of excellence, a badge of courage, a mark of distinction."
-	icon_state = "hosberetblack"
+	icon_state = "beret_hos"
+	armor = list("melee" = 40, "bullet" = 30, "laser" = 25, "energy" = 35, "bomb" = 25, "bio" = 10, "rad" = 0, "fire" = 50, "acid" = 60)
 
-/obj/item/clothing/head/beret/sec/navywarden
-	name = "warden's beret"
-	desc = "A navy-colored beret with the Warden's insignia emblazoned on it. For wardens with class."
-	icon_state = "wardenberet"
-	armor = list("melee" = 40, "bullet" = 30, "laser" = 30, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 30, "acid" = 60)
-	strip_delay = 60
-
-/obj/item/clothing/head/beret/sec/navywarden/black
+/obj/item/clothing/head/beret/sec/warden
 	name = "warden's beret"
 	desc = "A beret made with black reinforced fabric with the Warden's insignia emblazoned on it. For wardens with class."
-	icon_state = "wardenberetblack"
+	icon_state = "beret_warden"
+	armor = list("melee" = 40, "bullet" = 30, "laser" = 30, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 30, "acid" = 60)
 
-/obj/item/clothing/head/beret/sec/navyofficer
-	desc = "A navy-colored beret with the security insignia emblazoned on it. For officers with class."
-	icon_state = "officerberet"
-
-/obj/item/clothing/head/beret/sec/navyofficer/black
+/obj/item/clothing/head/beret/sec/officer
 	desc = "A beret made out of black reinforced fabric with the security insignia emblazoned on it. For officers with class."
-	icon_state = "officerberetblack"
+	icon_state = "beret_officer"
+
+/obj/item/clothing/head/beret/sec/brig_phys
+	desc = "A beret made out of black reinforced fabric with  lue cross emblazoned on it. Denotes security's personal medic."
+	icon_state = "beret_brigphys"
 
 //Engineering
 /obj/item/clothing/head/beret/eng
@@ -123,7 +112,6 @@
 	desc = "A beret with the engineering insignia emblazoned on it. For engineers that are more inclined towards style than safety."
 	icon_state = "beret_engineering"
 	armor = list("rad" = 10, "fire" = 10)
-	strip_delay = 60
 
 /obj/item/clothing/head/beret/eng/hazard
 	name = "engineering hazardberet"
@@ -135,14 +123,12 @@
 	desc = "A beret for those who have shown immaculate proficienty in piping. Or plumbing. Mostly piping."
 	icon_state = "beret_atmospherics"
 	armor = list("rad" = 10, "fire" = 10)
-	strip_delay = 60
 
 /obj/item/clothing/head/beret/ce
 	name = "chief engineer beret"
 	desc = "A white beret with the engineering insignia emblazoned on it. Its owner knows what they're doing. Probably."
 	icon_state = "beret_ce"
 	armor = list("rad" = 20, "fire" = 30)
-	strip_delay = 60
 
 //Science
 /obj/item/clothing/head/beret/sci
@@ -150,14 +136,12 @@
 	desc = "A purple beret with a silver science department insignia emblazoned on it. It has that authentic burning plasma smell."
 	icon_state = "beret_sci"
 	armor = list("rad" = 5, "bio" = 5, "fire" = 5)
-	strip_delay = 60
 
 /obj/item/clothing/head/beret/rd
 	name = "research director beret"
 	desc = "A purple beret with a golden science insignia emblazoned on it. It has that authentic burning plasma smell, with a hint of tritium."
 	icon_state = "beret_rd"
 	armor = list("rad" = 10, "bio" = 10, "fire" = 10)
-	strip_delay = 60
 
 //Medical
 /obj/item/clothing/head/beret/med
@@ -165,28 +149,24 @@
 	desc = "A white beret with a blue cross finely threaded into it. It has that sterile smell about it."
 	icon_state = "beret_med"
 	armor = list("bio" = 20)
-	strip_delay = 60
 
 /obj/item/clothing/head/beret/chem
 	name = "chemistry beret"
 	desc = "A white beret with an orange insignia finely threaded into it. It smells of acid and ash."
 	icon_state = "beret_chem"
 	armor = list("acid" = 20)
-	strip_delay = 60
 
 /obj/item/clothing/head/beret/viro
 	name = "virology beret"
 	desc = "A white beret with a green insignia in the shape of a bacteria finely threaded into it. Smells unnaturally sterile..."
 	icon_state = "beret_viro"
 	armor = list("bio" = 30)
-	strip_delay = 60
 
 /obj/item/clothing/head/beret/cmo
 	name = "chief medical officer beret"
 	desc = "A baby blue beret with the insignia of Medistan. It smells very sterile."
 	icon_state = "beret_cmo"
 	armor = list("bio" = 30, "acid" = 20)
-	strip_delay = 60
 
 //Command
 /obj/item/clothing/head/beret/captain
@@ -215,7 +195,6 @@
 	desc = "A showy lieutenants's beret. Smells of spilled coffee and crushed dreams."
 	icon_state = "beret_com"
 	armor = list("melee" = 40, "bullet" = 20, "laser" = 10, "energy" = 10, "rad" = 10, "bio" = 5, "rad" = 5, "fire" = 5, "rad" = 30)
-	strip_delay = 60
 
 /obj/item/clothing/head/beret/solgov
 	name = "\improper SolGov beret"
@@ -223,7 +202,6 @@
 	icon_state = "beret_solgov"
 	item_state = "beret_solgov"
 	armor = list("melee" = 40, "bullet" = 30, "laser" = 30, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 30, "acid" = 60)
-	strip_delay = 60
 
 /obj/item/clothing/head/beret/solgov/plain
 	name = "\improper SolGov beret"

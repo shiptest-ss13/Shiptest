@@ -97,7 +97,7 @@
 				if(M.mode == SHUTTLE_RECHARGING)
 					to_chat(usr, "<span class='warning'>Shuttle engines are not ready for use.</span>")
 					return
-				if(M.mode != SHUTTLE_IDLE)
+				if(M.mode != SHUTTLE_IDLE && (M.timer < INFINITY))
 					to_chat(usr, "<span class='warning'>Shuttle already in transit.</span>")
 					return
 			var/list/options = params2list(possible_destinations)

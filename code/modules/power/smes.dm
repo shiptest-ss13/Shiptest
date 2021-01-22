@@ -64,7 +64,7 @@
 /obj/machinery/power/smes/RefreshParts()
 	var/IO = 0
 	var/MC = 0
-	var/C
+	var/C = 0
 	for(var/obj/item/stock_parts/capacitor/CP in component_parts)
 		IO += CP.rating
 	input_level_max = initial(input_level_max) * IO
@@ -74,7 +74,7 @@
 		C += PC.charge
 	capacity = MC * SMESCHARGE			// Wasp Edit - Removes magic number
 	if(!initial(charge) && !charge)
-		charge = C						// Wasp Edit - Prevents power duping
+		charge = C * SMESCHARGE			// Wasp Edit - Prevents power duping
 
 /* Wasp Edit - Smartwire Revert
 /obj/machinery/power/smes/should_have_node()

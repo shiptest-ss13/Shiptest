@@ -24,3 +24,9 @@
 	armor = list("melee" = 40, "bullet" = 30, "laser" = 30, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 30, "acid" = 60)
 	icon_state = "cap_terragov"
 	item_state = "cap_terragov"
+
+/obj/item/clothing/head/helmet/space/plasmaman/solgov
+	name = "SolGov envirosuit helmet"
+	desc = "A generic white envirohelmet with a secondary blue."
+	icon_state = "solgov_envirohelm"
+	item_state = "solgov_envirohelm"

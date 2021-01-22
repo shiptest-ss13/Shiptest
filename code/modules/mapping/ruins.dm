@@ -11,8 +11,15 @@
 
 		for(var/turf/check in get_affected_turfs(central_turf,1))
 			var/area/new_area = get_area(check)
-			if(!(istype(new_area, allowed_areas)) || check.flags_1 & NO_RUINS_1)
+			if(check.flags_1 & NO_RUINS_1)
 				valid = FALSE
+			else
+				valid = FALSE // set to false before we check
+				for(var/type in allowed_areas)
+					if(istype(new_area, type)) // it's at least one of our types so it's whitelisted
+						valid = TRUE
+						break
+			if(!valid)
 				break
 
 		if(!valid)
@@ -52,7 +59,7 @@
 	return center
 
 
-/proc/seedRuins(list/z_levels = null, budget = 0, whitelist = /area/space, list/potentialRuins)
+/proc/seedRuins(list/z_levels = null, budget = 0, whitelist = list(/area/space), list/potentialRuins)
 	if(!z_levels || !z_levels.len)
 		WARNING("No Z levels provided - Not generating ruins")
 		return
@@ -96,7 +103,7 @@
 				break
 		else //Otherwise just pick random one
 			current_pick = pickweight(ruins_availible)
-		
+
 		var/placement_tries = forced_turf ? 1 : PLACEMENT_TRIES //Only try once if we target specific turf
 		var/failed_to_place = TRUE
 		var/target_z = 0
@@ -116,8 +123,13 @@
 									continue outer
 								else
 									break outer
-
-				placed_turf = current_pick.try_to_place(target_z,whitelist,forced_turf)
+				// WS Edit Start - Whitesands Camp Ruins
+				var/datum/map_template/ruin/camp/C = current_pick
+				if (istype(C))
+					placed_turf = C.try_to_place(target_z, whitelist, forced_turf)
+				else
+					placed_turf = current_pick.try_to_place(target_z,whitelist,forced_turf)
+				// WS Edit End - Whitesands Camp Ruins
 				if(!placed_turf)
 					continue
 				else
@@ -169,5 +181,5 @@
 		for(var/datum/map_template/ruin/R in ruins_availible)
 			if(R.cost > budget)
 				ruins_availible -= R
-	
+
 	log_world("Ruin loader finished with [budget] left to spend.")

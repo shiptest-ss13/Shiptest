@@ -29,6 +29,15 @@
 			return FALSE
 	return TRUE
 
+// Get a list of the z(s) that have all the traits
+/datum/controller/subsystem/mapping/proc/levels_with_traits(list/traits)
+	. = list()
+	var/list/_z_list = z_list
+	for(var/A in _z_list)
+		var/datum/space_level/S = A
+		if (level_has_all_traits(S, traits))
+			. += S.z_value
+
 // Get a list of all z which have the specified trait
 /datum/controller/subsystem/mapping/proc/levels_by_trait(trait)
 	. = list()

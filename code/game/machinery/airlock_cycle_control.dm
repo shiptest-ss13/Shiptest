@@ -220,7 +220,7 @@
 	if(!prob(prb))
 		return 0 //you lucked out, no shock for you
 	var/datum/effect_system/spark_spread/s = new /datum/effect_system/spark_spread
-	s.set_up(5, TRUE, src)		
+	s.set_up(5, TRUE, src)
 	s.start() //sparks always.
 	if (electrocute_mob(user, get_area(src), src, 1, TRUE))
 		return 1
@@ -285,7 +285,7 @@
 
 // Handles the airlocks connected to the controller
 
-/obj/machinery/advanced_airlock_controller/proc/coerce_door(obj/machinery/door/airlock/door, target_density = 0) 
+/obj/machinery/advanced_airlock_controller/proc/coerce_door(obj/machinery/door/airlock/door, target_density = 0)
 	if(door.density == target_density && !door.operating)
 		door.bolt()
 		return TRUE

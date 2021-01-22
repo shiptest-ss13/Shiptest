@@ -24,3 +24,13 @@
 	self_delay = 50
 	other_delay = 20
 	failure_chance = 20
+
+/obj/item/stack/medical/bruise_pack/herb
+	name = "ashen herbal pack"
+	singular_name = "ashen herbal pack"
+	desc = "Thereputic herbs designed to treat bruises."
+
+/obj/item/stack/medical/ointment/herb
+	name = "burn ointment slurry"
+	singular_name = "burn ointment slurry"
+	desc = "Herb slurry meant to treat burns."

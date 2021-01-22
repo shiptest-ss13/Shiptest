@@ -422,6 +422,13 @@ By design, d1 is the smallest direction and d2 is the highest
 		var/datum/powernet/newPN = new(loc.z)// creates a new powernet...
 		propagate_network(O, newPN)//... and propagates it to the other side of the cable
 
+//Makes a new network for the cable and propgates it. If we already have one, just die
+/obj/structure/cable/proc/propagate_if_no_network()
+	if(powernet)
+		return
+	var/datum/powernet/newPN = new()
+	propagate_network(src, newPN)
+
 // cut the cable's powernet at this cable and updates the powergrid
 /obj/structure/cable/proc/cut_cable_from_powernet(remove=TRUE)
 	var/turf/T1 = loc

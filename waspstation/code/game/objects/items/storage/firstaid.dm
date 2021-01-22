@@ -115,6 +115,7 @@
 	generate_items_inside(items_inside,src)
 
 /obj/item/storage/firstaid/ancient
+	icon = 'icons/obj/storage.dmi'
 	icon_state = "firstaid"
 	desc = "A first aid kit with the ability to heal common types of injuries."
 

@@ -279,6 +279,13 @@
 	icon = "maidcafe"
 	desc = "Welcome back, master!"
 
+//Waspstation edit - Jackpot Brew
+/datum/barsign/jackpotbrew
+	name = "Jackpot Brews"
+	icon = "jackpotbrew"
+	desc = "Gambling and alcohol, nothing could go wrong with this combo!"
+//End waspstation edit
+
 /datum/barsign/the_lightbulb
 	name = "The Lightbulb"
 	icon = "the_lightbulb"

@@ -57,15 +57,15 @@
 
 /mob/living/carbon/attackby(obj/item/I, mob/user, params)
 	var/be_nice = FALSE
-	if(body_position == LYING_DOWN)
-		if((I.item_flags & SURGICAL_TOOL) && user.a_intent == INTENT_HELP)
-			attempt_initiate_surgery(I, src, user)
-			be_nice = TRUE
-		for(var/datum/surgery/S in surgeries)
-			if(body_position == LYING_DOWN || !S.lying_required)
-				if((S.self_operable || user != src) && (user.a_intent == INTENT_HELP || user.a_intent == INTENT_DISARM))
-					if(S.next_step(user ,user.a_intent))
-						return 1
+	// if(body_position == LYING_DOWN) // Waspstation - Fix IPC surgery
+	if((I.item_flags & SURGICAL_TOOL) && user.a_intent == INTENT_HELP)
+		attempt_initiate_surgery(I, src, user)
+		be_nice = TRUE
+	for(var/datum/surgery/S in surgeries)
+		if(body_position == LYING_DOWN || !S.lying_required)
+			if((S.self_operable || user != src) && (user.a_intent == INTENT_HELP || user.a_intent == INTENT_DISARM))
+				if(S.next_step(user ,user.a_intent))
+					return 1
 	if(be_nice)//so that if we don't stab them after starting a surgery that can't be started with a sharp tool
 		return 1
 	return ..()

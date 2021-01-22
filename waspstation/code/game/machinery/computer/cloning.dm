@@ -567,6 +567,10 @@
 			return
 	var/datum/data/record/R = new()
 	if(dna.species)
+		if(NO_DNA_COPY in dna.species.species_traits)
+			scantemp = "<font class='bad'>Unable to replicate genetic data.</font>"
+			playsound(src, 'sound/machines/terminal_prompt_deny.ogg', 50, FALSE)
+			return
 		// We store the instance rather than the path, because some
 		// species (abductors, slimepeople) store state in their
 		// species datums

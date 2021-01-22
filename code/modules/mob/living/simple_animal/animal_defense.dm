@@ -109,10 +109,14 @@
 		apply_damage(damage, damagetype, null, getarmor(null, armorcheck))
 		return TRUE
 
+/*		WS Edit - Whitesands
 /mob/living/simple_animal/bullet_act(obj/projectile/Proj)
+	var/armor = run_armor_check(def_zone, P.flag, "","",P.armour_penetration)
+	var/on_hit_state = P.on_hit(src, armor)
 	apply_damage(Proj.damage, Proj.damage_type)
 	Proj.on_hit(src)
 	return BULLET_ACT_HIT
+*/
 
 /mob/living/simple_animal/ex_act(severity, target, origin)
 	if(origin && istype(origin, /datum/spacevine_mutation) && isvineimmune(src))

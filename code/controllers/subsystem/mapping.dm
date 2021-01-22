@@ -16,6 +16,13 @@ SUBSYSTEM_DEF(mapping)
 	var/list/ruins_templates = list()
 	var/list/space_ruins_templates = list()
 	var/list/lava_ruins_templates = list()
+	var/list/ice_ruins_templates = list()
+	var/list/ice_ruins_underground_templates = list()
+	 // WS Edit Start - Whitesands
+	var/list/sand_ruins_templates = list()
+	var/list/sand_camps_templates = list()
+	// WS Edit End - Whitesands
+	var/list/jungle_ruins_templates = list()
 	var/datum/space_level/isolated_ruins_z //Created on demand during ruin loading.
 
 	var/list/shuttle_templates = list()
@@ -73,10 +80,16 @@ SUBSYSTEM_DEF(mapping)
 	while (space_levels_so_far < config.space_ruin_levels)
 		++space_levels_so_far
 		add_new_zlevel("Empty Area [space_levels_so_far]", ZTRAITS_SPACE)
+		var/turf/T = locate(round(world.maxx / 2), round(world.maxy / 2), z_list.len)
+		var/obj/docking_port/stationary/z_port = new(T)
+		z_port.id = "whiteship_z[z_list.len]"
 	// and one level with no ruins
 	for (var/i in 1 to config.space_empty_levels)
 		++space_levels_so_far
 		empty_space = add_new_zlevel("Empty Area [space_levels_so_far]", list(ZTRAIT_LINKAGE = CROSSLINKED))
+		var/turf/T = locate(round(world.maxx / 2), round(world.maxy / 2), z_list.len)
+		var/obj/docking_port/stationary/z_port = new(T)
+		z_port.id = "whiteship_z[z_list.len]"
 
 	// Pick a random away mission.
 	if(CONFIG_GET(flag/roundstart_away))
@@ -92,14 +105,32 @@ SUBSYSTEM_DEF(mapping)
 	loading_ruins = TRUE
 	var/list/lava_ruins = levels_by_trait(ZTRAIT_LAVA_RUINS)
 	if (lava_ruins.len)
-		seedRuins(lava_ruins, CONFIG_GET(number/lavaland_budget), /area/lavaland/surface/outdoors/unexplored, lava_ruins_templates)
+		seedRuins(lava_ruins, CONFIG_GET(number/lavaland_budget), list(/area/lavaland/surface/outdoors/unexplored), lava_ruins_templates)
 		for (var/lava_z in lava_ruins)
 			spawn_rivers(lava_z)
 
+	var/list/ice_ruins = levels_by_trait(ZTRAIT_ICE_RUINS)
+	if (ice_ruins.len)
+		// needs to be whitelisted for underground too so place_below ruins work
+		seedRuins(ice_ruins, CONFIG_GET(number/icemoon_budget), list(/area/icemoon/surface/outdoors/unexplored, /area/icemoon/underground/unexplored), ice_ruins_templates)
+		for (var/ice_z in ice_ruins)
+			spawn_rivers(ice_z, 4, /turf/open/transparent/openspace/icemoon, /area/icemoon/surface/outdoors/unexplored)
+
+	var/list/ice_ruins_underground = levels_by_trait(ZTRAIT_ICE_RUINS_UNDERGROUND)
+	if (ice_ruins_underground.len)
+		seedRuins(ice_ruins_underground, CONFIG_GET(number/icemoon_budget), list(/area/icemoon/underground/unexplored), ice_ruins_underground_templates)
+		for (var/ice_z in ice_ruins_underground)
+			spawn_rivers(ice_z, 4, /turf/open/lava/plasma/ice_moon, /area/icemoon/underground/unexplored)
+	// WS Edit Start - Whitesands
+	var/list/sand_ruins = levels_by_trait(ZTRAIT_SAND_RUINS)
+	if (sand_ruins.len)
+		seedRuins(sand_ruins, CONFIG_GET(number/whitesands_budget), list(/area/whitesands/surface/outdoors/unexplored), sand_ruins_templates)
+		seedRuins(sand_ruins, CONFIG_GET(number/whitesands_budget), list(/area/whitesands/surface/outdoors/explored), sand_camps_templates)
+	// WS Edit End - Whitesands
 	// Generate deep space ruins
 	var/list/space_ruins = levels_by_trait(ZTRAIT_SPACE_RUINS)
 	if (space_ruins.len)
-		seedRuins(space_ruins, CONFIG_GET(number/space_budget), /area/space, space_ruins_templates)
+		seedRuins(space_ruins, CONFIG_GET(number/space_budget), list(/area/space), space_ruins_templates)
 	SSmapping.seedStation() //Wasp - Random Engine Framework
 	loading_ruins = FALSE
 #endif
@@ -169,6 +200,10 @@ SUBSYSTEM_DEF(mapping)
 	ruins_templates = SSmapping.ruins_templates
 	space_ruins_templates = SSmapping.space_ruins_templates
 	lava_ruins_templates = SSmapping.lava_ruins_templates
+	// WS Edit Start - Whitesands
+	sand_ruins_templates = SSmapping.sand_ruins_templates
+	sand_camps_templates = SSmapping.sand_camps_templates
+	// WS Edit End - Whitesands
 	shuttle_templates = SSmapping.shuttle_templates
 	shelter_templates = SSmapping.shelter_templates
 	unused_turfs = SSmapping.unused_turfs
@@ -253,12 +288,30 @@ SUBSYSTEM_DEF(mapping)
 	while (world.maxz < (5 - 1) && space_levels_so_far < config.space_ruin_levels)
 		++space_levels_so_far
 		add_new_zlevel("Empty Area [space_levels_so_far]", ZTRAITS_SPACE)
+		var/turf/T = locate(round(world.maxx / 2), round(world.maxy / 2), z_list.len)
+		var/obj/docking_port/stationary/z_port = new(T)
+		z_port.id = "whiteship_z[z_list.len]"
 
-	// load mining
+	// pick a random mining map
+	if (config.minetype == "random")
+		config.minetype = pickweightAllowZero(GLOB.mining_maps)
+
+	GLOB.current_mining_map = config.minetype
+
 	if(config.minetype == "lavaland")
 		LoadGroup(FailedZs, "Lavaland", "map_files/Mining", "Lavaland.dmm", default_traits = ZTRAITS_LAVALAND)
+	else if (config.minetype == "icemoon")
+		LoadGroup(FailedZs, "Ice moon Underground", "map_files/Mining", "IcemoonUnderground.dmm", default_traits = ZTRAITS_ICEMOON_UNDERGROUND)
+		LoadGroup(FailedZs, "Ice moon", "map_files/Mining", "Icemoon.dmm", default_traits = ZTRAITS_ICEMOON)
+	else if (config.minetype == "whitesands")
+		LoadGroup(FailedZs, "Whitesands", "map_files/Mining", "Whitesands.dmm", default_traits = ZTRAITS_WHITESANDS)
 	else if (!isnull(config.minetype))
 		INIT_ANNOUNCE("WARNING: An unknown minetype '[config.minetype]' was set! This is being ignored! Update the maploader code!")
+
+	// reset the mining map to random so if an admin sets the mining map it isn't stuck to that forever
+	GLOB.next_mining_map = "random"
+	var/datum/map_config/VM = load_map_config()
+	SSmapping.changemap(VM)
 #endif
 
 	if(LAZYLEN(FailedZs))	//but seriously, unless the server's filesystem is messed up this will never happen
@@ -383,6 +436,8 @@ GLOBAL_LIST_EMPTY(the_station_areas)
 	// Still supporting bans by filename
 	var/list/banned = generateMapList("[global.config.directory]/lavaruinblacklist.txt")
 	banned += generateMapList("[global.config.directory]/spaceruinblacklist.txt")
+	banned += generateMapList("[global.config.directory]/iceruinblacklist.txt")
+	banned += generateMapList("[global.config.directory]/sandruinblacklist.txt")
 
 	for(var/item in sortList(subtypesof(/datum/map_template/ruin), /proc/cmp_ruincost_priority))
 		var/datum/map_template/ruin/ruin_type = item
@@ -399,6 +454,16 @@ GLOBAL_LIST_EMPTY(the_station_areas)
 
 		if(istype(R, /datum/map_template/ruin/lavaland))
 			lava_ruins_templates[R.name] = R
+		else if(istype(R, /datum/map_template/ruin/camp/whitesands))
+			sand_camps_templates[R.name] = R
+		else if(istype(R, /datum/map_template/ruin/whitesands))
+			sand_ruins_templates[R.name] = R
+		else if(istype(R, /datum/map_template/ruin/jungle))
+			jungle_ruins_templates[R.name] = R
+		else if(istype(R, /datum/map_template/ruin/icemoon/underground))
+			ice_ruins_underground_templates[R.name] = R
+		else if(istype(R, /datum/map_template/ruin/icemoon))
+			ice_ruins_templates[R.name] = R
 		else if(istype(R, /datum/map_template/ruin/space))
 			space_ruins_templates[R.name] = R
 		else if(istype(R, /datum/map_template/ruin/station)) //Wasp - Random Engine Framework
@@ -471,11 +536,15 @@ GLOBAL_LIST_EMPTY(the_station_areas)
 		message_admins("Loading [away_name] failed!")
 		return
 
-/datum/controller/subsystem/mapping/proc/RequestBlockReservation(width, height, z, type = /datum/turf_reservation, turf_type_override)
+/datum/controller/subsystem/mapping/proc/RequestBlockReservation(width, height, z, type = /datum/turf_reservation, turf_type_override, border_turf_override, area_override)
 	UNTIL((!z || reservation_ready["[z]"]) && !clearing_reserved_turfs)
 	var/datum/turf_reservation/reserve = new type
 	if(turf_type_override)
 		reserve.turf_type = turf_type_override
+	if(area_override)
+		reserve.area_type = area_override
+	if(border_turf_override)
+		reserve.border_turf_type = border_turf_override
 	if(!z)
 		for(var/i in levels_by_trait(ZTRAIT_RESERVED))
 			if(reserve.Reserve(width, height, i))

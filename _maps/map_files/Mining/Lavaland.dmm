@@ -450,16 +450,6 @@
 "bt" = (
 /turf/open/floor/plasteel,
 /area/mine/eva)
-"bu" = (
-/obj/machinery/light_switch{
-	pixel_y = -23
-	},
-/obj/effect/turf_decal/tile/brown,
-/obj/effect/turf_decal/tile/brown{
-	dir = 4
-	},
-/turf/open/floor/plasteel,
-/area/mine/eva)
 "bv" = (
 /obj/machinery/light/small{
 	dir = 8
@@ -3841,6 +3831,17 @@
 	},
 /turf/open/floor/plasteel,
 /area/mine/eva)
+"vZ" = (
+/obj/effect/turf_decal/tile/brown,
+/obj/effect/turf_decal/tile/brown{
+	dir = 4
+	},
+/obj/machinery/light_switch{
+	dir = 4;
+	pixel_x = 23
+	},
+/turf/open/floor/plasteel,
+/area/mine/eva)
 "wj" = (
 /obj/structure/closet/emcloset,
 /obj/effect/turf_decal/tile/purple{
@@ -4810,8 +4811,8 @@
 /obj/docking_port/stationary{
 	dir = 8;
 	dwidth = 3;
-	height = 7;
-	id = "lavaland_common_away";
+	height = 10;
+	id = "commonmining_away";
 	name = "Mining base public dock";
 	width = 7
 	},
@@ -5307,7 +5308,7 @@
 	dir = 2;
 	dwidth = 11;
 	height = 22;
-	id = "whiteship_lavaland";
+	id = "whiteship_away";
 	name = "lavaland wastes";
 	width = 35
 	},
@@ -9296,14 +9297,14 @@ aj
 aj
 aj
 aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
 aj
 aj
 aj
@@ -9552,16 +9553,16 @@ aj
 aj
 aj
 aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
 aj
 aj
 aj
@@ -9808,18 +9809,18 @@ aj
 aj
 aj
 aj
-aj
-aj
 ab
 ab
 ab
 ab
-aj
-aj
-aj
-aj
-aj
-aj
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
 aj
 aj
 aj
@@ -10064,8 +10065,6 @@ aj
 aj
 aj
 aj
-aj
-aj
 ab
 ab
 ab
@@ -10074,9 +10073,11 @@ ab
 ab
 ab
 ab
-aj
-aj
-aj
+ab
+ab
+ab
+ab
+ab
 aj
 aj
 aj
@@ -10317,11 +10318,10 @@ aj
 aj
 aj
 aj
-ab
+aj
 ai
 aj
 aj
-aj
 ab
 ab
 ab
@@ -10332,9 +10332,10 @@ ab
 ab
 ab
 ab
-aj
-aj
-aj
+ab
+ab
+ab
+ab
 aj
 aj
 aj
@@ -10573,12 +10574,10 @@ aj
 aj
 GJ
 aj
-ab
-ab
+aj
+aj
 ai
 ai
-aj
-aj
 ab
 ab
 ab
@@ -10591,7 +10590,9 @@ ab
 ab
 ab
 ab
-aj
+ab
+ab
+ab
 aj
 aj
 aj
@@ -10830,7 +10831,7 @@ bZ
 aj
 aj
 aj
-ab
+aj
 ab
 ai
 ai
@@ -10847,8 +10848,8 @@ ab
 ab
 ab
 ab
-aj
-aj
+ab
+ab
 aj
 aj
 aj
@@ -11104,8 +11105,8 @@ ab
 ab
 ab
 ab
-aj
-aj
+ab
+ab
 aj
 aj
 aj
@@ -11360,9 +11361,9 @@ ab
 ab
 ab
 ab
-aj
-aj
-aj
+ab
+ab
+ab
 aj
 aj
 aj
@@ -11617,9 +11618,9 @@ ab
 ab
 ab
 ab
-aj
-aj
-aj
+ab
+ab
+ab
 aj
 aj
 aj
@@ -11874,9 +11875,9 @@ ab
 ab
 ab
 ab
-aj
-aj
-aj
+ab
+ab
+ab
 aj
 aj
 aj
@@ -12131,9 +12132,9 @@ cR
 ab
 ab
 ab
-aj
-aj
-aj
+ab
+ab
+ab
 aj
 aj
 aj
@@ -12387,9 +12388,9 @@ KT
 cR
 ab
 ab
-aj
-aj
-aj
+ab
+ab
+ab
 aj
 aj
 aj
@@ -12642,10 +12643,10 @@ cM
 cR
 nk
 cR
-aj
-aj
-aj
-aj
+ab
+ab
+ab
+ab
 aj
 aj
 aj
@@ -12899,10 +12900,10 @@ kO
 eL
 Dz
 cR
-aj
-aj
-aj
-aj
+ab
+ab
+ab
+ab
 aj
 aj
 aj
@@ -13156,9 +13157,9 @@ dZ
 dZ
 xk
 cR
-aj
-aj
-aj
+ab
+ab
+ab
 aj
 aj
 aj
@@ -22643,7 +22644,7 @@ aj
 ab
 bf
 bp
-bu
+vZ
 bI
 tg
 aV

@@ -8,6 +8,8 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 1
 	},
+/obj/structure/cable,
+/obj/machinery/power/terminal,
 /turf/open/floor/plating,
 /area/shuttle/mining)
 "c" = (
@@ -33,34 +35,29 @@
 	pixel_x = -3;
 	pixel_y = -3
 	},
-/obj/item/clothing/head/hardhat/orange{
-	name = "protective hat";
-	pixel_y = 9
-	},
-/obj/item/clothing/head/hardhat/orange{
-	name = "protective hat";
-	pixel_y = 9
-	},
 /obj/structure/closet/crate/internals,
 /obj/effect/turf_decal/box/corners{
-	dir = 1;
-	icon_state = "box_corners"
+	dir = 1
 	},
-/obj/machinery/airalarm{
-	dir = 4;
-	pixel_x = -24
+/obj/item/pickaxe/emergency,
+/obj/item/clothing/head/hardhat/mining,
+/obj/item/clothing/head/hardhat/mining,
+/obj/item/storage/overmap_ship/electric{
+	pixel_x = -22
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/shuttle/mining)
 "e" = (
-/obj/structure/rack,
 /obj/item/crowbar/red,
 /obj/item/wrench,
-/obj/item/flashlight,
 /obj/effect/turf_decal/bot,
 /obj/effect/turf_decal/stripes/line{
 	dir = 1
 	},
+/obj/structure/cable,
+/obj/machinery/power/terminal,
+/obj/structure/table,
+/obj/item/storage/toolbox/emergency,
 /turf/open/floor/plating,
 /area/shuttle/mining)
 "f" = (
@@ -72,7 +69,6 @@
 /obj/structure/table,
 /obj/machinery/airalarm{
 	dir = 8;
-	icon_state = "alarm0";
 	pixel_x = 24
 	},
 /turf/open/floor/mineral/plastitanium,
@@ -87,16 +83,25 @@
 /obj/machinery/light/small{
 	dir = 8
 	},
-/obj/machinery/atmospherics/components/binary/pump{
-	dir = 1;
-	icon_state = "pump_map-2"
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/advanced_airlock_controller/lavaland{
+	pixel_x = -27
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/obj/machinery/atmospherics/components/unary/vent_pump/layer1{
+	dir = 1
 	},
 /turf/open/floor/plating,
 /area/shuttle/mining)
 "l" = (
 /obj/effect/turf_decal/box/corners,
-/obj/machinery/atmospherics/components/unary/vent_pump/on{
-	dir = 4
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/sign/warning/electricshock{
+	pixel_y = -32
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/shuttle/mining)
@@ -122,41 +127,45 @@
 /area/shuttle/mining)
 "p" = (
 /obj/machinery/light/small,
-/obj/item/radio/intercom{
-	pixel_y = -29
-	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/stripes/line{
 	dir = 4
 	},
 /obj/effect/turf_decal/stripes/corner{
-	dir = 8;
-	icon_state = "warninglinecorner"
+	dir = 8
+	},
+/obj/item/radio/intercom/wideband{
+	pixel_y = -29
 	},
 /turf/open/floor/mineral/titanium/yellow,
 /area/shuttle/mining)
-"r" = (
-/obj/structure/sign/warning/fire,
-/turf/closed/wall/mineral/titanium/nodiagonal,
-/area/shuttle/mining)
 "s" = (
 /obj/structure/table,
-/obj/item/radio,
+/obj/item/stack/ore/iron{
+	pixel_x = 6;
+	pixel_y = 4
+	},
+/obj/item/stack/ore/iron{
+	pixel_x = -2;
+	pixel_y = -8
+	},
 /turf/open/floor/mineral/plastitanium,
 /area/shuttle/mining)
 "t" = (
 /obj/effect/turf_decal/box/corners{
-	dir = 4;
-	icon_state = "box_corners"
+	dir = 4
 	},
 /obj/machinery/light/small{
-	dir = 1;
-	icon_state = "bulb"
+	dir = 1
 	},
+/obj/machinery/atmospherics/components/unary/portables_connector/layer1{
+	dir = 4
+	},
+/obj/machinery/portable_atmospherics/canister/air,
 /turf/open/floor/mineral/plastitanium,
 /area/shuttle/mining)
 "v" = (
-/obj/machinery/atmospherics/pipe/simple/general/visible,
+/obj/machinery/atmospherics/pipe/manifold4w/general/hidden/layer1,
 /turf/open/floor/mineral/titanium/yellow,
 /area/shuttle/mining)
 "x" = (
@@ -169,13 +178,16 @@
 /turf/open/floor/mineral/titanium/yellow,
 /area/shuttle/mining)
 "y" = (
-/obj/item/storage/toolbox/emergency,
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/table,
+/obj/machinery/computer/camera_advanced/shuttle_docker/nav,
+/obj/effect/turf_decal/bot,
 /turf/open/floor/mineral/plastitanium,
 /area/shuttle/mining)
 "z" = (
 /obj/effect/turf_decal/box/corners,
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
 /turf/open/floor/mineral/plastitanium,
 /area/shuttle/mining)
 "A" = (
@@ -187,19 +199,31 @@
 /turf/open/floor/mineral/titanium/yellow,
 /area/shuttle/mining)
 "B" = (
-/obj/effect/spawner/structure/window/shuttle,
-/obj/structure/shuttle/engine/heater,
+/obj/machinery/power/smes/shuttle/precharged{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/structure/window/reinforced,
+/obj/machinery/door/window/northleft{
+	name = "Engine Access"
+	},
 /turf/open/floor/plating,
 /area/shuttle/mining)
 "C" = (
 /obj/effect/turf_decal/stripes/line,
-/obj/machinery/atmospherics/components/unary/vent_pump/on,
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer1,
 /turf/open/floor/mineral/titanium/yellow,
 /area/shuttle/mining)
 "F" = (
-/obj/machinery/atmospherics/pipe/manifold/general/visible{
-	dir = 4
+/obj/structure/cable{
+	icon_state = "2-4"
 	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/obj/machinery/atmospherics/pipe/layer_manifold,
 /turf/open/floor/mineral/titanium/yellow,
 /area/shuttle/mining)
 "G" = (
@@ -215,8 +239,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/ore_box,
 /obj/effect/turf_decal/box/corners{
-	dir = 4;
-	icon_state = "box_corners"
+	dir = 4
 	},
 /obj/structure/extinguisher_cabinet{
 	pixel_x = 24
@@ -237,15 +260,18 @@
 /obj/machinery/door/airlock/mining{
 	name = "Mining Shuttle Cockpit"
 	},
-/obj/machinery/atmospherics/pipe/simple/general/visible,
+/obj/machinery/atmospherics/pipe/simple/general/hidden/layer1,
 /turf/open/floor/plasteel/dark,
 /area/shuttle/mining)
 "J" = (
-/obj/machinery/status_display/evac,
+/obj/machinery/status_display/shuttle{
+	shuttle_id = "mining"
+	},
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/shuttle/mining)
 "K" = (
 /obj/effect/spawner/structure/window/shuttle,
+/obj/machinery/door/firedoor/window,
 /turf/open/floor/plating,
 /area/shuttle/mining)
 "L" = (
@@ -264,7 +290,10 @@
 	width = 7
 	},
 /obj/effect/turf_decal/stripes/line,
-/obj/machinery/atmospherics/pipe/simple/general/visible,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /turf/open/floor/plating,
 /area/shuttle/mining)
 "M" = (
@@ -279,19 +308,29 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 1
 	},
-/obj/machinery/atmospherics/pipe/simple/general/visible,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/obj/machinery/atmospherics/components/binary/pump{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/general/hidden/layer1,
 /turf/open/floor/plating,
 /area/shuttle/mining)
 "P" = (
 /turf/closed/wall/mineral/titanium,
 /area/shuttle/mining)
 "Q" = (
-/obj/machinery/computer/shuttle/mining,
 /obj/effect/turf_decal/bot,
+/obj/machinery/computer/helm,
 /turf/open/floor/mineral/plastitanium,
 /area/shuttle/mining)
 "S" = (
-/obj/structure/shuttle/engine/propulsion,
+/obj/machinery/power/shuttle/engine/electric{
+	dir = 1
+	},
+/obj/structure/cable,
 /turf/open/floor/plating/airless,
 /area/shuttle/mining)
 "T" = (
@@ -306,21 +345,49 @@
 /obj/structure/table,
 /turf/open/floor/mineral/plastitanium,
 /area/shuttle/mining)
+"V" = (
+/obj/machinery/power/smes/shuttle/precharged{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/structure/window/reinforced,
+/obj/machinery/door/window/northright{
+	name = "Engine Access"
+	},
+/turf/open/floor/plating,
+/area/shuttle/mining)
 "W" = (
 /obj/effect/turf_decal/box/corners{
-	dir = 8;
-	icon_state = "box_corners"
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "2-4"
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/shuttle/mining)
 "X" = (
 /obj/effect/turf_decal/box/corners{
-	dir = 1;
-	icon_state = "box_corners"
+	dir = 1
 	},
 /obj/machinery/light/small{
-	dir = 1;
-	icon_state = "bulb"
+	dir = 1
+	},
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer1{
+	dir = 8
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/shuttle/mining)
+"Z" = (
+/obj/effect/turf_decal/box/corners{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/sign/warning/electricshock{
+	pixel_y = -32
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/shuttle/mining)
@@ -357,7 +424,7 @@ A
 J
 t
 l
-r
+h
 h
 h
 "}
@@ -380,8 +447,8 @@ G
 p
 h
 X
-W
-r
+Z
+h
 h
 h
 "}
@@ -394,7 +461,7 @@ h
 H
 z
 b
-B
+V
 S
 "}
 (7,1,1) = {"

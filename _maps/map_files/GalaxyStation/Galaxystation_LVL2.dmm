@@ -15,14 +15,6 @@
 "ab" = (
 /turf/open/transparent/openspace/airless,
 /area/space)
-"af" = (
-/obj/structure/fans/tiny,
-/obj/machinery/door/poddoor/shuttledock{
-	turftype = /turf/open/floor/engine/hull
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/engine/hull/interior,
-/area/quartermaster/miningdock)
 "ag" = (
 /obj/effect/turf_decal/trimline/white/corner,
 /turf/open/floor/engine/hull,
@@ -68,9 +60,7 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer3{
 	dir = 8
 	},
-/obj/machinery/airalarm/directional/south{
-	pixel_y = -24
-	},
+/obj/machinery/airalarm/directional/south,
 /turf/open/floor/engine/hull/reinforced/interior,
 /area/engine/gravity_generator)
 "au" = (
@@ -416,6 +406,11 @@
 	},
 /turf/open/floor/plating,
 /area/maintenance/aft/upper)
+"bG" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/spider/stickyweb,
+/turf/open/floor/engine/hull/interior,
+/area/quartermaster/miningdock)
 "bH" = (
 /obj/machinery/button/door{
 	id = "lawyerprivacy";
@@ -520,9 +515,7 @@
 /area/medical/abandoned)
 "ce" = (
 /obj/effect/turf_decal/stripes/corner,
-/obj/machinery/airalarm/directional/north{
-	pixel_y = 24
-	},
+/obj/machinery/airalarm/directional/north,
 /turf/open/floor/plating{
 	icon_state = "panelscorched"
 	},
@@ -858,9 +851,7 @@
 /area/engine/engineering)
 "dc" = (
 /obj/structure/lattice/catwalk,
-/obj/machinery/airalarm/directional/north{
-	pixel_y = 24
-	},
+/obj/machinery/airalarm/directional/north,
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -956,9 +947,7 @@
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
-/obj/machinery/power/apc/auto_name/east{
-	pixel_x = 24
-	},
+/obj/machinery/power/apc/auto_name/east,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer3{
 	dir = 8
 	},
@@ -969,9 +958,7 @@
 	dir = 10
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
-/obj/machinery/power/apc/auto_name/east{
-	pixel_x = 24
-	},
+/obj/machinery/power/apc/auto_name/east,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -1078,9 +1065,7 @@
 /turf/open/floor/plasteel,
 /area/medical/virology)
 "dz" = (
-/obj/machinery/power/apc/auto_name/east{
-	pixel_x = 24
-	},
+/obj/machinery/power/apc/auto_name/east,
 /obj/structure/cable,
 /turf/open/floor/plasteel/white,
 /area/medical/virology)
@@ -1378,9 +1363,7 @@
 "el" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
-/obj/machinery/airalarm/directional/east{
-	pixel_x = 24
-	},
+/obj/machinery/airalarm/directional/east,
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
@@ -1873,9 +1856,7 @@
 "fz" = (
 /obj/structure/bed/roller,
 /obj/machinery/iv_drip,
-/obj/machinery/airalarm/directional/east{
-	pixel_x = 24
-	},
+/obj/machinery/airalarm/directional/east,
 /obj/machinery/camera/autoname{
 	dir = 8
 	},
@@ -2434,9 +2415,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
-/obj/machinery/power/apc/auto_name/east{
-	pixel_x = 24
-	},
+/obj/machinery/power/apc/auto_name/east,
 /obj/structure/cable,
 /turf/open/floor/plating,
 /area/security/prison)
@@ -2817,9 +2796,7 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 1
 	},
-/obj/machinery/airalarm/directional/north{
-	pixel_y = 24
-	},
+/obj/machinery/airalarm/directional/north,
 /turf/open/floor/engine,
 /area/engine/engine_room/external)
 "hQ" = (
@@ -2869,9 +2846,7 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 4
 	},
-/obj/machinery/power/apc/auto_name/east{
-	pixel_x = 24
-	},
+/obj/machinery/power/apc/auto_name/east,
 /obj/machinery/camera{
 	c_tag = "Engineering Hallway - Center";
 	dir = 8;
@@ -3107,9 +3082,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
 	dir = 4
 	},
-/obj/machinery/airalarm/directional/north{
-	pixel_y = 24
-	},
+/obj/machinery/airalarm/directional/north,
 /obj/machinery/camera{
 	c_tag = "Detective's Office";
 	dir = 6
@@ -3966,9 +3939,7 @@
 "kf" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/chair/wood,
-/obj/machinery/airalarm/directional/west{
-	pixel_x = -24
-	},
+/obj/machinery/airalarm/directional/west,
 /turf/open/floor/wood,
 /area/crew_quarters/abandoned_gambling_den)
 "kh" = (
@@ -4996,9 +4967,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "0-2"
 	},
-/obj/machinery/airalarm/directional/north{
-	pixel_y = 24
-	},
+/obj/machinery/airalarm/directional/north,
 /turf/open/floor/plasteel/dark,
 /area/engine/engine_smes)
 "mJ" = (
@@ -6479,9 +6448,7 @@
 /turf/open/floor/plating,
 /area/maintenance/fore/upper)
 "pG" = (
-/obj/machinery/airalarm/directional/west{
-	pixel_x = -24
-	},
+/obj/machinery/airalarm/directional/west,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
 /area/hydroponics/garden/abandoned)
@@ -6580,6 +6547,18 @@
 "pU" = (
 /turf/closed/wall/r_wall,
 /area/ai_monitored/storage/eva)
+"pV" = (
+/obj/docking_port/stationary{
+	dir = 8;
+	dwidth = 3;
+	height = 10;
+	id = "mining_home";
+	name = "mining shuttle bay";
+	roundstart_template = /datum/map_template/shuttle/mining/large;
+	width = 7
+	},
+/turf/open/transparent/openspace/airless,
+/area/space)
 "pW" = (
 /turf/closed/wall/r_wall,
 /area/hallway/secondary/command)
@@ -7265,9 +7244,7 @@
 /turf/open/floor/plasteel,
 /area/hallway/primary/upper)
 "rC" = (
-/obj/machinery/airalarm/directional/north{
-	pixel_y = 24
-	},
+/obj/machinery/airalarm/directional/north,
 /obj/effect/turf_decal/tile/neutral{
 	dir = 1
 	},
@@ -7382,9 +7359,7 @@
 /area/hydroponics/garden/abandoned)
 "rS" = (
 /obj/structure/lattice/catwalk,
-/obj/machinery/airalarm/directional/north{
-	pixel_y = 24
-	},
+/obj/machinery/airalarm/directional/north,
 /turf/open/transparent/openspace,
 /area/maintenance/central)
 "rT" = (
@@ -8368,9 +8343,7 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 1
 	},
-/obj/machinery/airalarm/directional/north{
-	pixel_y = 24
-	},
+/obj/machinery/airalarm/directional/north,
 /turf/open/floor/plasteel,
 /area/quartermaster/storage)
 "uk" = (
@@ -8958,9 +8931,7 @@
 /obj/effect/turf_decal/tile/brown,
 /obj/item/clipboard,
 /obj/item/stamp/qm,
-/obj/machinery/power/apc/auto_name/east{
-	pixel_x = 24
-	},
+/obj/machinery/power/apc/auto_name/east,
 /obj/structure/disposalpipe/segment{
 	dir = 10
 	},
@@ -9748,9 +9719,7 @@
 /obj/machinery/light/small{
 	dir = 4
 	},
-/obj/machinery/power/apc/auto_name/east{
-	pixel_x = 24
-	},
+/obj/machinery/power/apc/auto_name/east,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
 	dir = 10
 	},
@@ -9867,9 +9836,7 @@
 /turf/open/floor/plasteel/white,
 /area/medical/psychology)
 "xC" = (
-/obj/machinery/airalarm/directional/east{
-	pixel_x = 24
-	},
+/obj/machinery/airalarm/directional/east,
 /turf/open/floor/plating,
 /area/medical/psychology)
 "xD" = (
@@ -10245,9 +10212,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
 	dir = 4
 	},
-/obj/machinery/airalarm/directional/north{
-	pixel_y = 24
-	},
+/obj/machinery/airalarm/directional/north,
 /obj/effect/turf_decal/delivery,
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -10560,9 +10525,7 @@
 /turf/open/floor/carpet/red,
 /area/crew_quarters/theatre)
 "ze" = (
-/obj/machinery/airalarm/directional/east{
-	pixel_x = 24
-	},
+/obj/machinery/airalarm/directional/east,
 /turf/open/floor/carpet/red,
 /area/crew_quarters/theatre)
 "zf" = (
@@ -10631,9 +10594,7 @@
 /obj/structure/cable{
 	icon_state = "2-4"
 	},
-/obj/machinery/airalarm/directional/north{
-	pixel_y = 24
-	},
+/obj/machinery/airalarm/directional/north,
 /turf/open/floor/plasteel,
 /area/crew_quarters/fitness)
 "zp" = (
@@ -11306,9 +11267,7 @@
 /area/crew_quarters/dorms)
 "AU" = (
 /obj/machinery/computer/apc_control,
-/obj/machinery/airalarm/directional/north{
-	pixel_y = 24
-	},
+/obj/machinery/airalarm/directional/north,
 /turf/open/floor/plasteel,
 /area/crew_quarters/heads/chief)
 "AV" = (
@@ -11422,9 +11381,7 @@
 /obj/effect/turf_decal/tile/purple{
 	dir = 4
 	},
-/obj/machinery/airalarm/directional/north{
-	pixel_y = 24
-	},
+/obj/machinery/airalarm/directional/north,
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -11614,9 +11571,7 @@
 /turf/open/floor/plasteel/dark,
 /area/hallway/secondary/service)
 "BD" = (
-/obj/machinery/power/apc/auto_name/east{
-	pixel_x = 24
-	},
+/obj/machinery/power/apc/auto_name/east,
 /obj/machinery/computer/cargo/request{
 	dir = 8
 	},
@@ -11753,7 +11708,9 @@
 /turf/open/floor/plasteel,
 /area/quartermaster/miningdock)
 "BW" = (
-/obj/item/stack/ore/glass,
+/obj/item/clothing/head/cone{
+	pixel_y = -12
+	},
 /turf/open/floor/plasteel,
 /area/quartermaster/miningdock)
 "BX" = (
@@ -11862,9 +11819,7 @@
 /obj/effect/turf_decal/tile/green{
 	dir = 4
 	},
-/obj/machinery/airalarm/directional/east{
-	pixel_x = 24
-	},
+/obj/machinery/airalarm/directional/east,
 /obj/structure/disposalpipe/trunk{
 	dir = 8
 	},
@@ -12069,19 +12024,6 @@
 /turf/open/floor/wood,
 /area/crew_quarters/dorms)
 "CI" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/engine/hull/interior,
-/area/quartermaster/miningdock)
-"CJ" = (
-/obj/docking_port/stationary{
-	dir = 2;
-	dwidth = 3;
-	height = 5;
-	id = "mining_home";
-	name = "mining shuttle bay";
-	roundstart_template = /datum/map_template/shuttle/mining/box;
-	width = 7
-	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/engine/hull/interior,
 /area/quartermaster/miningdock)
@@ -12300,16 +12242,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/engine/hull/interior,
 /area/quartermaster/miningdock)
-"Dn" = (
-/obj/structure/railing{
-	dir = 8
-	},
-/obj/machinery/computer/shuttle/mining{
-	dir = 4;
-	req_access = null
-	},
-/turf/open/floor/plasteel,
-/area/quartermaster/miningdock)
 "Do" = (
 /obj/structure/window/reinforced/spawner/west,
 /turf/open/floor/plasteel,
@@ -12485,9 +12417,7 @@
 /obj/structure/bed,
 /obj/item/bedsheet/clown,
 /obj/effect/landmark/start/clown,
-/obj/machinery/airalarm/directional/north{
-	pixel_y = 24
-	},
+/obj/machinery/airalarm/directional/north,
 /turf/open/floor/plasteel/grimy,
 /area/crew_quarters/dorms)
 "DP" = (
@@ -12666,9 +12596,7 @@
 	pixel_y = -26
 	},
 /obj/effect/spawner/lootdrop/minor/beret_or_rabbitears,
-/obj/machinery/airalarm/directional/east{
-	pixel_x = 24
-	},
+/obj/machinery/airalarm/directional/east,
 /turf/open/floor/wood,
 /area/crew_quarters/dorms)
 "Eq" = (
@@ -12718,7 +12646,7 @@
 /obj/structure/railing{
 	dir = 8
 	},
-/obj/item/stack/ore/iron,
+/obj/structure/reagent_dispensers/fueltank,
 /turf/open/floor/plasteel,
 /area/quartermaster/miningdock)
 "ED" = (
@@ -12873,9 +12801,7 @@
 /obj/structure/window/reinforced{
 	dir = 1
 	},
-/obj/machinery/airalarm/directional/south{
-	pixel_y = -24
-	},
+/obj/machinery/airalarm/directional/south,
 /turf/open/floor/plating,
 /area/maintenance/disposal)
 "EW" = (
@@ -13506,6 +13432,7 @@
 /obj/structure/railing{
 	dir = 8
 	},
+/obj/item/stack/ore/iron,
 /turf/open/floor/plasteel,
 /area/quartermaster/miningdock)
 "GY" = (
@@ -13618,13 +13545,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/engine/engineering)
-"HC" = (
-/obj/effect/turf_decal/trimline/white/line{
-	dir = 8
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/engine/hull/interior,
-/area/quartermaster/miningdock)
 "HE" = (
 /obj/machinery/door/airlock/maintenance_hatch{
 	name = "Law Office Maintenance";
@@ -13983,9 +13903,7 @@
 /obj/effect/turf_decal/tile/brown{
 	dir = 1
 	},
-/obj/machinery/airalarm/directional/south{
-	pixel_y = -24
-	},
+/obj/machinery/airalarm/directional/south,
 /obj/item/stamp{
 	pixel_x = -3;
 	pixel_y = 3
@@ -14241,9 +14159,7 @@
 /area/hallway/secondary/command)
 "Kl" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
-/obj/machinery/airalarm/directional/west{
-	pixel_x = -24
-	},
+/obj/machinery/airalarm/directional/west,
 /turf/open/floor/plating,
 /area/security/prison)
 "Ko" = (
@@ -14372,9 +14288,7 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/tile/brown,
-/obj/machinery/airalarm/directional/south{
-	pixel_y = -24
-	},
+/obj/machinery/airalarm/directional/south,
 /turf/open/floor/plasteel,
 /area/quartermaster/qm)
 "La" = (
@@ -14539,9 +14453,7 @@
 /obj/machinery/light{
 	dir = 8
 	},
-/obj/machinery/airalarm/directional/west{
-	pixel_x = -24
-	},
+/obj/machinery/airalarm/directional/west,
 /obj/machinery/requests_console{
 	department = "Virology Lab";
 	dir = 10;
@@ -14701,9 +14613,7 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/tile/neutral,
-/obj/machinery/airalarm/directional/east{
-	pixel_x = 24
-	},
+/obj/machinery/airalarm/directional/east,
 /obj/machinery/firealarm{
 	dir = 1;
 	pixel_y = 26
@@ -14804,9 +14714,7 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/tile/brown,
-/obj/machinery/airalarm/directional/south{
-	pixel_y = -24
-	},
+/obj/machinery/airalarm/directional/south,
 /obj/item/card/mining_access_card,
 /obj/item/folder/yellow,
 /obj/item/pen,
@@ -15464,6 +15372,13 @@
 	},
 /turf/open/floor/plasteel,
 /area/hallway/primary/upper)
+"Ps" = (
+/obj/machinery/advanced_airlock_controller{
+	dir = 1;
+	pixel_y = -24
+	},
+/turf/open/floor/plasteel,
+/area/quartermaster/miningdock)
 "Pt" = (
 /obj/machinery/door/airlock/external{
 	name = "Mining Dock Airlock"
@@ -15931,9 +15846,7 @@
 	pixel_x = 36;
 	pixel_y = 22
 	},
-/obj/machinery/airalarm/directional/east{
-	pixel_x = 24
-	},
+/obj/machinery/airalarm/directional/east,
 /obj/machinery/light_switch{
 	dir = 5;
 	pixel_x = 23;
@@ -16005,7 +15918,10 @@
 /area/crew_quarters/theatre)
 "RO" = (
 /obj/structure/railing,
-/obj/structure/reagent_dispensers/fueltank,
+/obj/machinery/computer/shuttle/mining{
+	dir = 4;
+	req_access = null
+	},
 /turf/open/floor/plasteel,
 /area/quartermaster/miningdock)
 "RP" = (
@@ -16059,9 +15975,7 @@
 /turf/open/floor/plasteel,
 /area/crew_quarters/fitness)
 "Sh" = (
-/obj/machinery/airalarm/directional/east{
-	pixel_x = 24
-	},
+/obj/machinery/airalarm/directional/east,
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
 	},
@@ -16292,9 +16206,7 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer3{
 	dir = 4
 	},
-/obj/machinery/airalarm/directional/north{
-	pixel_y = 24
-	},
+/obj/machinery/airalarm/directional/north,
 /obj/structure/cable{
 	icon_state = "2-4"
 	},
@@ -17277,9 +17189,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
 	dir = 4
 	},
-/obj/machinery/airalarm/directional/north{
-	pixel_y = 24
-	},
+/obj/machinery/airalarm/directional/north,
 /obj/machinery/camera{
 	c_tag = "Security - Law Office"
 	},
@@ -17553,10 +17463,6 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
 	dir = 4
 	},
-/obj/machinery/advanced_airlock_controller{
-	dir = 1;
-	pixel_y = -24
-	},
 /turf/open/floor/plasteel,
 /area/quartermaster/miningdock)
 "YR" = (
@@ -17795,9 +17701,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
 	dir = 4
 	},
-/obj/machinery/airalarm/directional/south{
-	pixel_y = -24
-	},
+/obj/machinery/airalarm/directional/south,
 /obj/effect/turf_decal/stripes/line{
 	dir = 1
 	},
@@ -39898,7 +39802,7 @@ ab
 ab
 ab
 ab
-ab
+pV
 ab
 ab
 ab
@@ -40157,7 +40061,7 @@ Ba
 Ba
 Hy
 Ba
-ab
+Ba
 ab
 ab
 ab
@@ -40413,13 +40317,13 @@ ab
 Ba
 Hv
 YM
+Ps
 Ba
-af
-af
-af
-af
-af
-Ba
+ab
+ab
+ab
+ab
+ab
 ab
 ab
 ab
@@ -40670,12 +40574,12 @@ xf
 Ba
 tE
 Ms
-tE
-HC
-HC
-HC
-HC
-HC
+Ba
+Ba
+Ba
+Ba
+Ba
+Ba
 Ba
 ab
 ab
@@ -40931,8 +40835,8 @@ RO
 CI
 CI
 Dm
-CI
-CI
+bG
+bG
 FI
 ab
 ab
@@ -41189,7 +41093,7 @@ CI
 Dl
 CI
 CI
-CI
+bG
 Ba
 ab
 ab
@@ -41442,7 +41346,7 @@ NX
 xg
 ph
 BW
-CJ
+CI
 CI
 CI
 CI
@@ -42471,7 +42375,7 @@ Pt
 Bh
 BX
 CK
-Dn
+CK
 GU
 EC
 Fo

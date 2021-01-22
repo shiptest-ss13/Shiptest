@@ -32,3 +32,16 @@
 	weapon_weight = WEAPON_LIGHT
 	w_class = WEIGHT_CLASS_SMALL
 	mag_type = /obj/item/ammo_box/magazine/pistol556mm
+
+/obj/item/gun/ballistic/automatic/aks74u
+	name = "AKS-74U"
+	desc = {"
+	 A pre-FTL era carbine, the \"curio\" status of the weapon and its relative cheap cost to manufacture make it
+	 perfect for colonists on a budget looking to license firearms for local manufacture.
+	"}
+	icon = 'waspstation/icons/obj/guns/projectile.dmi'
+	icon_state = "aks74u"
+	weapon_weight = WEAPON_MEDIUM
+	w_class = WEIGHT_CLASS_NORMAL
+	pin = /obj/item/firing_pin/explorer
+	mag_type = /obj/item/ammo_box/magazine/aks74u

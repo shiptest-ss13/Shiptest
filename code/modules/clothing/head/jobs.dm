@@ -26,8 +26,10 @@
 
 //Captain
 /obj/item/clothing/head/caphat
-	name = "captain's hat"
+	name = "captain's peaked cap"
 	desc = "It's good being the king."
+	icon = 'waspstation/icons/obj/clothing/hats.dmi'
+	mob_overlay_icon = 'waspstation/icons/mob/clothing/head.dmi'
 	icon_state = "captain"
 	item_state = "that"
 	flags_inv = 0
@@ -47,6 +49,8 @@
 //Head of Personnel
 /obj/item/clothing/head/hopcap
 	name = "head of personnel's cap"
+	icon = 'waspstation/icons/obj/clothing/hats.dmi'
+	mob_overlay_icon = 'waspstation/icons/mob/clothing/head.dmi'
 	icon_state = "hopcap"
 	desc = "The symbol of true bureaucratic micromanagement."
 	armor = list("melee" = 25, "bullet" = 15, "laser" = 25, "energy" = 35, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)

@@ -1,4 +1,4 @@
-//SolGov Rep
+// SolGov Rep //
 
 /obj/item/clothing/suit/solgov_trenchcoat
 	name = "solgov trenchcoat"
@@ -13,14 +13,42 @@
 	cold_protection = CHEST|LEGS|ARMS
 	heat_protection = CHEST|LEGS|ARMS
 
-//Brig Phys
+// Security //
 
-/obj/item/clothing/suit/hazardvest/brig_phys
-	name = "brig physician's vest"
-	desc = "A lightweight vest worn by the Brig Physician."
+/obj/item/clothing/suit/armor/vest/security
 	icon = 'waspstation/icons/obj/clothing/suits.dmi'
 	mob_overlay_icon = 'waspstation/icons/mob/clothing/suits.dmi'
-	icon_state = "brig_phys_vest"
-	item_state = "sec_helm"//looks kinda similar, I guess
-	allowed = list(/obj/item/analyzer, /obj/item/stack/medical, /obj/item/dnainjector, /obj/item/reagent_containers/dropper, /obj/item/reagent_containers/syringe, /obj/item/reagent_containers/hypospray, /obj/item/healthanalyzer, /obj/item/flashlight, /obj/item/reagent_containers/glass/bottle, /obj/item/reagent_containers/glass/beaker, /obj/item/reagent_containers/pill, /obj/item/storage/pill_bottle, /obj/item/paper, /obj/item/melee/classic_baton/telescopic, /obj/item/soap, /obj/item/tank/internals/emergency_oxygen)
-	armor = list("melee" = 10, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 10, "rad" = 0, "fire" = 50, "acid" = 50)
+	item_state = "armor"
+	body_parts_covered = CHEST|GROIN|ARMS
+	cold_protection = CHEST|GROIN|ARMS|HANDS
+	heat_protection = CHEST|GROIN|ARMS|HANDS
+	strip_delay = 70
+	resistance_flags = FLAMMABLE
+	dog_fashion = null
+
+/obj/item/clothing/suit/armor/vest/security/officer
+	name = "security officer's jacket"
+	desc = "This jacket is for those special occasions when a security officer isn't required to wear their armor."
+	icon_state = "officerjacket"
+	body_parts_covered = CHEST|ARMS
+
+/obj/item/clothing/suit/armor/vest/security/brig_phys
+	name = "brig physician's jacket"
+	desc = "A black jacket with dark blue and silver accents, for the brig physician to prove they're a real member of security in style."
+	icon_state = "brigphysjacket"
+	body_parts_covered = CHEST|ARMS
+
+/obj/item/clothing/suit/armor/vest/security/warden
+	name = "warden's jacket"
+	desc = "Perfectly suited for the warden that wants to leave an impression of style on those who visit the brig."
+	icon_state = "wardenjacket"
+
+/obj/item/clothing/suit/armor/vest/security/warden/alt
+	name = "warden's armored jacket"
+	desc = "A white jacket with silver rank pips and body armor strapped on top."
+	icon_state = "warden_jacket"
+
+/obj/item/clothing/suit/armor/vest/security/hos
+	name = "head of security's jacket"
+	desc = "This piece of clothing was specifically designed for asserting superior authority."
+	icon_state = "hosjacket"

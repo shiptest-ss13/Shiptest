@@ -171,7 +171,7 @@
 /obj/projectile/kinetic
 	name = "kinetic force"
 	icon_state = null
-	damage = 40
+	damage = 20
 	damage_type = BRUTE
 	flag = "bomb"
 	range = 3

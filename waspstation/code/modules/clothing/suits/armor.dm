@@ -15,3 +15,11 @@
 	desc = "A type I armor vest emblazoned with the SolGov logo."
 	icon_state = "armor_alt_solgov"
 	item_state = "armor_alt_solgov"
+
+/obj/item/clothing/suit/armor/vest/hop
+	name = "head of personnel's parade jacket"
+	desc = "For when an armoured vest isn't fashionable enough."
+	icon = 'waspstation/icons/obj/clothing/suits.dmi'
+	mob_overlay_icon = 'waspstation/icons/mob/clothing/suits.dmi'
+	icon_state = "hopformal"
+	item_state = "capspacesuit"

@@ -1,3 +1,5 @@
+/* WS edit - Command/Sec Resprite
+
 /*
  * Contains:
  *		Security
@@ -256,3 +258,5 @@
 	icon_state = "spacepolice_families"
 	item_state = "spacepolice_families"
 	can_adjust = FALSE
+
+WS edit - Command/Sec Resprite */

@@ -1,6 +1,8 @@
 
 /obj/item/clothing/head/centhat
 	name = "\improper CentCom hat"
+	icon = 'waspstation/icons/obj/clothing/hats.dmi'
+	mob_overlay_icon = 'waspstation/icons/mob/clothing/head.dmi'
 	icon_state = "centcom"
 	desc = "It's good to be emperor."
 	item_state = "that"

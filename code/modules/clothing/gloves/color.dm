@@ -164,8 +164,10 @@
 	item_state = "browngloves"
 
 /obj/item/clothing/gloves/color/captain
-	desc = "Regal blue gloves, with a nice gold trim, a diamond anti-shock coating, and an integrated thermal barrier. Swanky."
+	desc = "Regal white gloves, with a nice gold trim, a diamond anti-shock coating, and an integrated thermal barrier, and armoured bracers. Swanky."
 	name = "captain's gloves"
+	icon = 'waspstation/icons/obj/clothing/gloves.dmi'
+	mob_overlay_icon = 'waspstation/icons/mob/clothing/hands.dmi'
 	icon_state = "captain"
 	item_state = "egloves"
 	siemens_coefficient = 0

@@ -336,6 +336,16 @@
 	integer = FALSE
 	min_val = 0
 
+/datum/config_entry/number/whitesands_budget
+	config_entry_value = 60
+	integer = FALSE
+	min_val = 0
+
+/datum/config_entry/number/icemoon_budget
+	config_entry_value = 90
+	integer = FALSE
+	min_val = 0
+
 /datum/config_entry/number/space_budget
 	config_entry_value = 16
 	integer = FALSE
@@ -404,3 +414,9 @@
 /datum/config_entry/flag/dynamic_config_enabled
 
 /datum/config_entry/flag/allow_crew_objectives
+
+/datum/config_entry/number/max_shuttle_count
+	config_entry_value = 6
+
+/datum/config_entry/number/max_shuttle_size
+	config_entry_value = 250

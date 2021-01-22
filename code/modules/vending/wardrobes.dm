@@ -15,7 +15,7 @@
 	name = "\improper SecDrobe"
 	desc = "A vending machine for security and security-related clothing!"
 	icon_state = "secdrobe"
-	product_ads = "Beat perps in style!;It's red so you can't see the blood!;You have the right to be fashionable!;Now you can be the fashion police you always wanted to be!"
+	product_ads = "Beat perps in style!;You have the right to be fashionable!;Now you can be the fashion police you always wanted to be!"
 	vend_reply = "Thank you for using the SecDrobe!"
 	products = list(/obj/item/clothing/suit/hooded/wintercoat/security = 3,
 					/obj/item/storage/backpack/security = 3,
@@ -28,17 +28,14 @@
 					/obj/item/clothing/mask/bandana/red = 3,
 					/obj/item/clothing/gloves/color/black = 3,
 					/obj/item/clothing/under/rank/security/officer/skirt = 3,
-					///obj/item/clothing/under/rank/security/officer/grey = 3,
-					/obj/item/clothing/under/rank/security/officer/white = 3,//WaspStation edit - Better security jumpsuit sprites
 					/obj/item/clothing/under/pants/khaki = 3,
 					/obj/item/clothing/under/rank/security/officer/blueshirt = 3,
 					/obj/item/clothing/under/rank/security/officer/mallcop = 3,
-					/obj/item/clothing/neck/tie/red = 6,
+					/obj/item/clothing/neck/tie/blue = 6,
 					/obj/item/clothing/neck/tie/black = 6)
-	premium = list(/obj/item/clothing/under/rank/security/officer/formal = 3,//WaspStation edit - Better security jumpsuit sprites
-					/obj/item/clothing/suit/security/officer = 3,
-					/obj/item/clothing/head/beret/sec/navyofficer = 2,
-					/obj/item/clothing/head/beret/sec/navyofficer = 2)
+	premium = list(/obj/item/clothing/suit/armor/vest/security/officer = 3,
+					/obj/item/clothing/head/beret/sec/officer = 2,
+					/obj/item/clothing/head/beret/sec/officer = 2)
 	refill_canister = /obj/item/vending_refill/wardrobe/sec_wardrobe
 	payment_department = ACCOUNT_SEC
 	light_color = COLOR_MOSTLY_PURE_RED

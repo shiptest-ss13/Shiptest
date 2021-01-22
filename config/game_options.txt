@@ -36,8 +36,8 @@ CHAT_MARKUP
 ## To speed things up make the number negative, to slow things down, make the number positive.
 
 ## These modify the run/walk speed of all mobs before the mob-specific modifiers are applied.
-RUN_DELAY 1
-WALK_DELAY 4
+RUN_DELAY 1.5
+WALK_DELAY 3
 
 ## The variables below affect the movement of specific mob types. THIS AFFECTS ALL SUBTYPES OF THE TYPE YOU CHOOSE!
 ## Entries completely override all subtypes. Later entries have precedence over earlier entries.
@@ -94,20 +94,20 @@ ALERT_DELTA Destruction of the station is imminent. All crew are instructed to o
 
 PROBABILITY TRAITOR 5
 PROBABILITY TRAITORBRO 2
-PROBABILITY TRAITORCHAN 4
+PROBABILITY TRAITORCHAN 3
 PROBABILITY INTERNAL_AFFAIRS 3
 PROBABILITY NUCLEAR 2
 PROBABILITY REVOLUTION 2
 PROBABILITY CULT 2
 PROBABILITY CHANGELING 2
 PROBABILITY WIZARD 4
-PROBABILITY MONKEY 0
+PROBABILITY MONKEY 1
 PROBABILITY METEOR 0
-PROBABILITY EXTENDED 0
-PROBABILITY SECRET_EXTENDED 0
+PROBABILITY EXTENDED 1
+PROBABILITY SECRET_EXTENDED 1
 PROBABILITY DEVIL 0
 PROBABILITY DEVIL_AGENTS 0
-PROBABILITY CLOWNOPS 0
+PROBABILITY CLOWNOPS 2
 
 ## You probably want to keep sandbox off by default for secret and random.
 PROBABILITY SANDBOX 0
@@ -608,3 +608,14 @@ BOX_RANDOM_ENGINE Box TEG,3
 BOX_RANDOM_ENGINE Box Empty,0
 BOX_RANDOM_ENGINE Box Antimatter,1
 BOX_RANDOM_ENGINE Box P.A.C.M.A.N,1
+
+## Overmap Settings ##
+
+## Put max amount of different event clusters you want to spawn here
+MAX_OVERMAP_EVENT_CLUSTERS 15
+
+## Put the maximum amount of overmap events here
+MAX_OVERMAP_EVENTS 40
+
+## Put the maximum amount of dynamic (runtime loaded) overmap locations here
+MAX_OVERMAP_DYNAMIC_EVENTS 4

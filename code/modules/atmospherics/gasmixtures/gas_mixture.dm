@@ -71,6 +71,7 @@ GLOBAL_LIST_INIT(gaslist_cache, init_gaslist_cache())
 /datum/gas_mixture/proc/set_moles(gas_type, moles)
 /datum/gas_mixture/proc/scrub_into(datum/gas_mixture/target, list/gases)
 /datum/gas_mixture/proc/mark_immutable()
+/datum/gas_mixture/proc/mark_vacuum()
 /datum/gas_mixture/proc/get_gases()
 /datum/gas_mixture/proc/multiply(factor)
 // WaspStation Edit Start - Immutable Gax Mix Temperature Gradients

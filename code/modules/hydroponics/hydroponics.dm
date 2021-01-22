@@ -1,4 +1,6 @@
 #define TRAY_NAME_UPDATE name = myseed ? "[initial(name)] ([myseed.plantname])" : initial(name)
+#define CYCLE_DELAY_DEFAULT 200			//About 10 seconds / cycle
+#define CYCLE_DELAY_SLOW    500			//About 25 seconds / cycle
 
 /obj/machinery/hydroponics
 	name = "hydroponics tray"
@@ -22,7 +24,7 @@
 	var/plant_health		//Its health
 	var/lastproduce = 0		//Last time it was harvested
 	var/lastcycle = 0		//Used for timing of cycles.
-	var/cycledelay = 200	//About 10 seconds / cycle
+	var/cycledelay = CYCLE_DELAY_DEFAULT		// WS edit - Crystals
 	var/harvest = 0			//Ready to harvest?
 	var/obj/item/seeds/myseed = null	//The currently planted seed
 	var/rating = 1
@@ -32,6 +34,7 @@
 	var/self_sufficiency_req = 20 //Required total dose to make a self-sufficient hydro tray. 1:1 with earthsblood.
 	var/self_sufficiency_progress = 0
 	var/self_sustaining = FALSE //If the tray generates nutrients and water on its own
+	var/mutate_yield = 0 // WS spritercode edit: makes L4Z worth a damn
 
 
 /obj/machinery/hydroponics/constructable
@@ -104,11 +107,15 @@
 
 /obj/machinery/hydroponics/process()
 	var/needs_update = 0 // Checks if the icon needs updating so we don't redraw empty trays every time
+	var/temp_sustain = FALSE	// If we want self_sustaining effects temporarily		// WS edit begin - Crystals
 
-	if(myseed && (myseed.loc != src))
-		myseed.forceMove(src)
+	if(myseed)
+		if(myseed.loc != src)
+			myseed.forceMove(src)
+		if(myseed.get_gene(/datum/plant_gene/trait/plant_type/crystal))
+			temp_sustain = TRUE
 
-	if(self_sustaining)
+	if(self_sustaining || temp_sustain)		// Wasp edit end
 		adjustNutri(1)
 		adjustWater(rand(3,5))
 		adjustWeeds(-2)
@@ -387,6 +394,7 @@
 	harvest = 0
 	weedlevel = 0 // Reset
 	pestlevel = 0 // Reset
+	cycledelay = CYCLE_DELAY_DEFAULT		// WS edit - crystals
 	update_icon()
 	visible_message("<span class='warning'>The [oldPlantName] is overtaken by some [myseed.plantname]!</span>")
 	TRAY_NAME_UPDATE
@@ -511,16 +519,19 @@
 	if(S.has_reagent(/datum/reagent/plantnutriment/eznutriment, 1))
 		yieldmod = 1
 		mutmod = 1
+		mutate_yield = 0
 		adjustNutri(round(S.get_reagent_amount(/datum/reagent/plantnutriment/eznutriment) * 1))
 
 	if(S.has_reagent(/datum/reagent/plantnutriment/left4zednutriment, 1))
 		yieldmod = 0
 		mutmod = 2
+		mutate_yield = 1 //ws edit: L4Z is worth a damn now
 		adjustNutri(round(S.get_reagent_amount(/datum/reagent/plantnutriment/left4zednutriment) * 1))
 
 	if(S.has_reagent(/datum/reagent/plantnutriment/robustharvestnutriment, 1))
 		yieldmod = 1.3
 		mutmod = 0
+		mutate_yield = 0
 		adjustNutri(round(S.get_reagent_amount(/datum/reagent/plantnutriment/robustharvestnutriment) *1 ))
 
 	// Ambrosia Gaia produces earthsblood.
@@ -786,6 +797,11 @@
 				investigate_log("had Kudzu planted in it by [key_name(user)] at [AREACOORD(src)]","kudzu")
 			if(!user.transferItemToLoc(O, src))
 				return
+			var/obj/item/seeds/S = O
+			if(S.get_gene(/datum/plant_gene/trait/plant_type/crystal))
+				cycledelay = CYCLE_DELAY_SLOW
+			else
+				cycledelay = CYCLE_DELAY_DEFAULT
 			to_chat(user, "<span class='notice'>You plant [O].</span>")
 			dead = 0
 			myseed = O

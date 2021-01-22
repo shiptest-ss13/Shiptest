@@ -169,6 +169,16 @@
 		return TRUE
 	return FALSE
 
+/turf/open/floor/plating/asteroid/snow/icemoon
+	baseturfs = /turf/open/transparent/openspace/icemoon
+	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
+	slowdown = 0
+
+/turf/open/lava/plasma/ice_moon
+	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
+	baseturfs = /turf/open/lava/plasma/ice_moon
+	planetary_atmos = TRUE
+
 /turf/open/floor/plating/asteroid/snow/ice
 	name = "icy snow"
 	desc = "Looks colder."
@@ -182,6 +192,12 @@
 	barefootstep = FOOTSTEP_HARD_BAREFOOT
 	clawfootstep = FOOTSTEP_HARD_CLAW
 	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
+
+/turf/open/floor/plating/asteroid/snow/ice/icemoon
+	baseturfs = /turf/open/floor/plating/asteroid/snow/ice/icemoon
+	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
+	planetary_atmos = TRUE
+	slowdown = 0
 
 /turf/open/floor/plating/asteroid/snow/ice/burn_tile()
 	return FALSE

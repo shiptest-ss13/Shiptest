@@ -60,9 +60,6 @@
 	},
 /turf/open/floor/plating,
 /area/shuttle/supply)
-"l" = (
-/turf/closed/wall/mineral/titanium/interior,
-/area/shuttle/supply)
 "q" = (
 /obj/structure/window/reinforced{
 	dir = 1
@@ -97,6 +94,9 @@
 	},
 /turf/open/floor/mineral/titanium/blue,
 /area/shuttle/supply)
+"G" = (
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/shuttle/supply)
 
 (1,1,1) = {"
 b
@@ -122,8 +122,8 @@ x
 e
 e
 e
-l
-b
+G
+G
 t
 "}
 (3,1,1) = {"
@@ -178,8 +178,8 @@ h
 e
 e
 e
-l
-b
+G
+G
 v
 "}
 (7,1,1) = {"

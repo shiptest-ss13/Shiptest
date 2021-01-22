@@ -8,6 +8,7 @@
 	canhear_range = 2
 	dog_fashion = null
 	unscrewed = FALSE
+	var/obj/item/wallframe/wallframe = /obj/item/wallframe/intercom //Wasp edit - Wideband Radio
 
 /obj/item/radio/intercom/unscrewed
 	unscrewed = TRUE
@@ -51,7 +52,7 @@
 		if(I.use_tool(src, user, 80))
 			user.visible_message("<span class='notice'>[user] unsecures [src]!</span>", "<span class='notice'>You detach [src] from the wall.</span>")
 			playsound(src, 'sound/items/deconstruct.ogg', 50, TRUE)
-			new/obj/item/wallframe/intercom(get_turf(src))
+			new wallframe(get_turf(src))
 			qdel(src)
 		return
 	return ..()
@@ -104,7 +105,7 @@
 	if(on)
 		icon_state = initial(icon_state)
 	else
-		icon_state = "intercom-p"
+		icon_state = "[initial(icon_state)]-p"
 
 /**
  * Proc called whenever the intercom's area loses or gains power. Responsible for setting the `on` variable and calling `update_icon()`.

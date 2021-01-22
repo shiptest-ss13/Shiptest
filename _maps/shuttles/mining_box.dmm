@@ -4,9 +4,6 @@
 /area/shuttle/mining)
 "b" = (
 /obj/effect/spawner/structure/window/shuttle,
-/obj/machinery/door/firedoor/border_only{
-	dir = 1
-	},
 /turf/open/floor/plating,
 /area/shuttle/mining)
 "c" = (
@@ -14,7 +11,7 @@
 /turf/open/floor/mineral/titanium/blue,
 /area/shuttle/mining)
 "d" = (
-/obj/machinery/computer/shuttle/mining,
+/obj/machinery/computer/helm,
 /turf/open/floor/mineral/titanium/blue,
 /area/shuttle/mining)
 "e" = (
@@ -29,6 +26,9 @@
 "g" = (
 /obj/machinery/light{
 	dir = 8
+	},
+/obj/item/storage/overmap_ship/electric{
+	pixel_x = -22
 	},
 /turf/open/floor/mineral/titanium,
 /area/shuttle/mining)
@@ -51,6 +51,10 @@
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
 	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/fans/tiny,
 /turf/open/floor/plating,
 /area/shuttle/mining)
 "i" = (
@@ -58,16 +62,22 @@
 /turf/open/floor/mineral/titanium/blue,
 /area/shuttle/mining)
 "j" = (
-/obj/structure/shuttle/engine/heater,
-/obj/structure/window/reinforced{
-	dir = 1;
-	layer = 2.9
+/obj/machinery/power/smes/shuttle/precharged{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/machinery/door/window/northleft{
+	name = "Engine Access"
 	},
 /obj/structure/window/reinforced{
-	dir = 8
+	dir = 8;
+	pixel_x = -4
 	},
 /obj/structure/window/reinforced{
-	dir = 4
+	dir = 4;
+	pixel_x = 4
 	},
 /turf/open/floor/plating,
 /area/shuttle/mining)
@@ -76,15 +86,36 @@
 /turf/open/floor/mineral/titanium/blue,
 /area/shuttle/mining)
 "l" = (
-/obj/structure/shuttle/engine/propulsion/burst,
+/obj/machinery/power/shuttle/engine/electric{
+	dir = 1
+	},
+/obj/structure/cable,
+/obj/structure/window/reinforced{
+	dir = 1;
+	pixel_y = 3
+	},
 /turf/open/floor/plating/airless,
 /area/shuttle/mining)
-"E" = (
-/obj/effect/spawner/structure/window/shuttle,
-/obj/machinery/door/firedoor/border_only{
-	dir = 4
+"v" = (
+/obj/structure/table,
+/obj/item/radio/intercom/wideband{
+	pixel_y = 22
 	},
-/turf/open/floor/plating,
+/turf/open/floor/mineral/titanium/blue,
+/area/shuttle/mining)
+"A" = (
+/obj/structure/chair/comfy/shuttle{
+	dir = 1
+	},
+/obj/machinery/power/terminal,
+/obj/structure/cable,
+/turf/open/floor/mineral/titanium/blue,
+/area/shuttle/mining)
+"P" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/mineral/titanium,
 /area/shuttle/mining)
 "Q" = (
 /obj/structure/chair/comfy/shuttle{
@@ -92,20 +123,19 @@
 	},
 /turf/open/floor/mineral/titanium,
 /area/shuttle/mining)
-"T" = (
-/obj/effect/spawner/structure/window/shuttle,
-/obj/machinery/door/firedoor/border_only{
-	dir = 8
+"R" = (
+/obj/structure/cable{
+	icon_state = "2-4"
 	},
-/turf/open/floor/plating,
+/turf/open/floor/mineral/titanium,
 /area/shuttle/mining)
 
 (1,1,1) = {"
 a
 a
-T
+b
 a
-T
+b
 a
 a
 "}
@@ -122,16 +152,16 @@ a
 b
 d
 Q
-e
-f
+R
+A
 j
 l
 "}
 (4,1,1) = {"
 a
-c
+v
 e
-e
+P
 f
 k
 a
@@ -139,9 +169,9 @@ a
 (5,1,1) = {"
 a
 a
-E
+b
 h
-E
+b
 a
 a
 "}

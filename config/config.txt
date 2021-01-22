@@ -6,20 +6,21 @@ $include comms.txt
 $include antag_rep.txt
 $include resources.txt
 $include interviews.txt
+$include atmos_mix.txt
 
 # You can use the @ character at the beginning of a config option to lock it from being edited in-game
 # Example usage:
-# @SERVERNAME tgstation
+# @SERVERNAME White Sands
 # Which sets the SERVERNAME, and disallows admins from being able to change it using View Variables.
 # @LOG_TWITTER 0
 # Which explicitly disables LOG_TWITTER, as well as locking it.
 # There are various options which are hard-locked for security reasons.
 
-## Server name: This appears at the top of the screen in-game and in the BYOND hub. Uncomment and replace 'tgstation' with the name of your choice.
-# SERVERNAME tgstation
+## Server name: This appears at the top of the screen in-game and in the BYOND hub. Uncomment and replace 'White Sands' with the name of your choice.
+# SERVERNAME White Sands
 
 ## Server SQL name: This is the name used to identify the server to the SQL DB, distinct from SERVERNAME as it must be at most 32 characters.
-# SERVERSQLNAME tgstation
+# SERVERSQLNAME whitesands
 
 ## Station name: The name of the station as it is referred to in-game. If commented out, the game will generate a random name instead.
 STATIONNAME Space Station 13
@@ -253,19 +254,19 @@ CHECK_RANDOMIZER
 # SERVER ss13.example.com:2506
 
 ## forum address
-# FORUMURL http://tgstation13.org/phpBB/index.php
+# FORUMURL https://forum.white-sands.space
 
 ## Wiki address
-# WIKIURL http://www.tgstation13.org/wiki
+# WIKIURL https://wiki.white-sands.space
 
 ## Rules address
-# RULESURL http://www.tgstation13.org/wiki/Rules
+# RULESURL https://wiki.white-sands.space/Rules
 
 ## Github address
-# GITHUBURL https://www.github.com/tgstation/tgstation
+# GITHUBURL https://github.com/WaspStation/WaspStation-1.0
 
 ## Discord address
-# DISCORDURL https://www.github.com/tgstation/tgstation
+# DISCORDURL https://discord.gg/BUM8uRc
 
 ## Round specific stats address
 ## Link to round specific parsed logs; IE statbus. It is appended with the RoundID automatically by ticker/Reboot()
@@ -527,6 +528,10 @@ DEFAULT_VIEW 21x15
 ## The alternative square viewport size if you're using a widescreen view size
 ## You probably shouldn't ever be changing this, but it's here if you want to.
 DEFAULT_VIEW_SQUARE 15x15
+
+## Custom shuttle spam prevention. Changine these numbers allows you to change the maxsize and amount of custom shuttles.
+MAX_SHUTTLE_COUNT 6
+MAX_SHUTTLE_SIZE 300
 
 
 ## Enable automatic profiling - Byond 513.1506 and newer only.

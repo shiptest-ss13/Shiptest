@@ -96,6 +96,7 @@
 	check_poddoors()
 	new_dock.last_dock_time = world.time
 	setDir(new_dock.dir)
+	current_ship?.check_loc()
 
 	// remove any stragglers just in case, and clear the list
 	remove_ripples()

@@ -22,14 +22,18 @@
 	var/lightswitch = TRUE
 	var/vacuum = null
 
-	var/totalbeauty = 0 //All beauty in this area combined, only includes indoor area.
-	var/beauty = 0 // Beauty average per open turf in the area
-	var/beauty_threshold = 150 //If a room is too big it doesn't have beauty.
+	/// All beauty in this area combined, only includes indoor area.
+	var/totalbeauty = 0
+	/// Beauty average per open turf in the area
+	var/beauty = 0
+	/// If a room is too big it doesn't have beauty.
+	var/beauty_threshold = 150
 
 	/// For space, the asteroid, lavaland, etc. Used with blueprints or with weather to determine if we are adding a new area (vs editing a station room)
 	var/outdoors = FALSE
 
-	var/areasize = 0 //Size of the area in open turfs, only calculated for indoors areas.
+	/// Size of the area in open turfs, only calculated for indoors areas.
+	var/areasize = 0
 
 	/// Bonus mood for being in this area
 	var/mood_bonus = 0
@@ -121,7 +125,8 @@ GLOBAL_LIST_EMPTY(teleportlocs)
 			I.Scale(1,1)
 			minimap_color = I.GetPixel(1,1)
 		else // no icon state? use random.
-			minimap_color = rgb(rand(50,70),rand(50,70),rand(50,70))	// This interacts with the map loader, so it needs to be set immediately
+			minimap_color = rgb(rand(50,70),rand(50,70),rand(50,70))
+	// This interacts with the map loader, so it needs to be set immediately
 	// rather than waiting for atoms to initialize.
 	if (area_flags & UNIQUE_AREA)
 		GLOB.areas_by_type[type] = src

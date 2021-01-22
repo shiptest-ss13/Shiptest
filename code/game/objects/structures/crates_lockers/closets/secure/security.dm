@@ -61,7 +61,7 @@
 	new /obj/item/storage/box/ids(src)
 	new /obj/item/storage/box/ids(src)
 	new /obj/item/megaphone/command(src)
-	new /obj/item/clothing/suit/armor/vest/alt(src)
+	new /obj/item/clothing/suit/armor/vest/hop(src) //Waspstation edit - Command Resprite 3
 	new /obj/item/assembly/flash/handheld(src)
 	new /obj/item/clothing/glasses/sunglasses(src)
 	new /obj/item/gun/energy/e_gun/mini(src) //WaspStation Edit - Gives HoP a mini egun
@@ -96,8 +96,7 @@
 	new /obj/item/clothing/head/HoS(src)
 	new /obj/item/clothing/glasses/hud/security/sunglasses/eyepatch(src)
 	new /obj/item/clothing/glasses/hud/security/sunglasses/gars/supergars(src)
-	//new /obj/item/clothing/under/rank/security/head_of_security/grey(src)
-	new /obj/item/clothing/under/rank/security/head_of_security/white(src)//WaspStation Edit - Better security jumpsuit sprites
+	new /obj/item/clothing/suit/armor/vest/security/hos(src) //WS Edit - Better security jumpsuit sprites
 	new /obj/item/storage/lockbox/medal/sec(src)
 	new /obj/item/megaphone/sec(src)
 	new /obj/item/holosign_creator/security(src)
@@ -120,13 +119,11 @@
 /obj/structure/closet/secure_closet/warden/PopulateContents()
 	..()
 	new /obj/item/radio/headset/headset_sec(src)
-	new /obj/item/clothing/suit/armor/vest/warden(src)
+	new /obj/item/clothing/suit/armor/vest/security/warden(src)
 	new /obj/item/clothing/head/warden(src)
 	new /obj/item/clothing/head/warden/drill(src)
-	new /obj/item/clothing/head/beret/sec/navywarden(src)
-	new /obj/item/clothing/head/beret/sec/navywarden/black(src)
-	new /obj/item/clothing/suit/armor/vest/warden/alt(src)
-	new /obj/item/clothing/under/rank/security/warden/formal(src)
+	new /obj/item/clothing/head/beret/sec/warden(src)
+	new /obj/item/clothing/suit/armor/vest/security/warden/alt(src)
 	new /obj/item/clothing/under/rank/security/warden/skirt(src)
 	new /obj/item/clothing/glasses/hud/security/sunglasses(src)
 	new /obj/item/holosign_creator/security(src)

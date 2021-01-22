@@ -13,7 +13,7 @@
 	w_class = WEIGHT_CLASS_BULKY
 	custom_materials = list(/datum/material/iron=2000) //one sheet, but where can you make them?
 	tool_behaviour = TOOL_MINING
-	toolspeed = 1
+	toolspeed = 0.5
 	usesound = list('sound/effects/picaxe1.ogg', 'sound/effects/picaxe2.ogg', 'sound/effects/picaxe3.ogg')
 	attack_verb = list("hit", "pierced", "sliced", "attacked")
 
@@ -45,7 +45,7 @@
 	name = "silver-plated pickaxe"
 	icon_state = "spickaxe"
 	item_state = "spickaxe"
-	toolspeed = 0.5 //mines faster than a normal pickaxe, bought from mining vendor
+	toolspeed = 0.3 //mines faster than a normal pickaxe, bought from mining vendor
 	desc = "A silver-plated pickaxe that mines slightly faster than standard-issue."
 	force = 17
 
@@ -53,7 +53,7 @@
 	name = "diamond-tipped pickaxe"
 	icon_state = "dpickaxe"
 	item_state = "dpickaxe"
-	toolspeed = 0.3
+	toolspeed = 0.2
 	desc = "A pickaxe with a diamond pick head. Extremely robust at cracking rock walls and digging up dirt."
 	force = 19
 
@@ -62,7 +62,7 @@
 	icon_state = "handdrill"
 	item_state = "jackhammer"
 	slot_flags = ITEM_SLOT_BELT
-	toolspeed = 0.6 //available from roundstart, faster than a pickaxe.
+	toolspeed = 0.4 //available from roundstart, faster than a pickaxe.
 	usesound = 'sound/weapons/drill.ogg'
 	hitsound = 'sound/weapons/drill.ogg'
 	desc = "An electric mining drill for the especially scrawny."
@@ -103,7 +103,7 @@
 	item_state = "ipickaxe"
 	force = 10
 	throwforce = 7
-	toolspeed = 3 //3 times slower than a normal pickaxe
+	toolspeed = 1.5 //slower than a normal pickaxe
 	slot_flags = ITEM_SLOT_BELT
 	w_class = WEIGHT_CLASS_NORMAL
 	custom_materials = list(/datum/material/iron=12050) //metal needed for a crowbar and for a knife, why the FUCK does a knife cost 6 metal sheets while a crowbar costs 0.025 sheets? shit makes no sense fuck this
@@ -119,7 +119,7 @@
 	slot_flags = ITEM_SLOT_BELT
 	force = 8
 	tool_behaviour = TOOL_SHOVEL
-	toolspeed = 1
+	toolspeed = 0.6
 	usesound = 'sound/effects/shovel_dig.ogg'
 	throwforce = 4
 	item_state = "shovel"
@@ -160,6 +160,6 @@
 	force = 15
 	throwforce = 12
 	w_class = WEIGHT_CLASS_NORMAL
-	toolspeed = 0.7
+	toolspeed = 0.6
 	attack_verb = list("slashed", "impaled", "stabbed", "sliced")
 	sharpness = IS_SHARP

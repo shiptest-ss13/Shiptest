@@ -3,7 +3,7 @@
 	desc = "Used to control the White Ship."
 	circuit = /obj/item/circuitboard/computer/white_ship
 	shuttleId = "whiteship"
-	possible_destinations = "whiteship_away;whiteship_home;whiteship_z4;whiteship_lavaland;whiteship_custom"
+	possible_destinations = "whiteship_space;whiteship_home;whiteship_z4;whiteship_away;whiteship_custom"
 
 /obj/machinery/computer/shuttle/white_ship/pod
 	name = "Salvage Pod Console"
@@ -24,7 +24,7 @@
 	shuttleId = "whiteship"
 	lock_override = NONE
 	shuttlePortId = "whiteship_custom"
-	jumpto_ports = list("whiteship_away" = 1, "whiteship_home" = 1, "whiteship_z4" = 1)
+	jumpto_ports = list("whiteship_space" = 1, "whiteship_home" = 1, "whiteship_z4" = 1)
 	view_range = 10
 	x_offset = -6
 	y_offset = -10

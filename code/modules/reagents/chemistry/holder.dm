@@ -827,7 +827,7 @@
 				handle_reactions()
 			if(my_atom)
 				my_atom.on_reagent_change(REM_REAGENT)
-			return TRUE
+			return amount
 
 	return FALSE
 
