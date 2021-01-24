@@ -165,8 +165,10 @@
 			E.enabled = !E.enabled
 			S.refresh_engines()
 		if("change_heading")
+			S.current_autopilot_target = null
 			S.burn_engines(text2num(params["dir"]))
 		if("stop")
+			S.current_autopilot_target = null
 			S.burn_engines()
 
 /obj/machinery/computer/helm/ui_close(mob/user)

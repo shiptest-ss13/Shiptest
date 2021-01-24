@@ -173,11 +173,9 @@ const ShipContent = (props, context) => {
             /Y
             <AnimatedNumber value={y} />
           </LabeledList.Item>
-          <LabeledList.Item label="Next">
+          <LabeledList.Item label="ETA">
             <AnimatedNumber
-              value={eta > 1000 ? "N/A" : eta / 10} // it's in deciseconds
-              format={value => Math.round(value)} />
-            s
+              value={eta} />
           </LabeledList.Item>
         </LabeledList>
       </Section>

@@ -23,7 +23,7 @@
 	var/list/speed[2]
 	///The current target for the autopiloting system
 	var/atom/current_autopilot_target
-	///ONLY USED FOR NON-SIMULATED SHIPS. The amount per burn that this ship does
+	///ONLY USED FOR NON-SIMULATED SHIPS. The amount per burn that this ship accelerates
 	var/acceleration_speed = 0.02
 
 /obj/structure/overmap/ship/Destroy()
@@ -50,7 +50,7 @@
 
 	update_icon_state()
 
-	if(is_still() || QDELETED(src))
+	if(is_still() || QDELETED(src) || movement_callback_id)
 		return
 
 	var/timer = round(1 / MAGNITUDE(speed[1], speed[2]) * offset, SHIP_MOVE_RESOLUTION)
@@ -83,7 +83,7 @@
 /**
   * Returns the total speed in all directions.
   *
-  * The equation for speed is as follows:
+  * The equation for acceleration is as follows:
   * 60 SECONDS / (1 / ([ship's speed] / ([ship's mass] * 100)))
   */
 /obj/structure/overmap/ship/proc/get_speed()
@@ -109,10 +109,19 @@
 	return direction
 
 /**
-  * Returns the estimated time in deciseconds to the next tile at current speed
+  * Returns the estimated time in deciseconds to the next tile at current speed, or approx. time until reaching the destination when on autopilot
   */
 /obj/structure/overmap/ship/proc/get_eta()
-	return timeleft(movement_callback_id)
+	if(current_autopilot_target && !is_still())
+		var/distance = get_dist(src, current_autopilot_target)
+		var/time_per_tile = round(1 / MAGNITUDE(speed[1], speed[2]), SHIP_MOVE_RESOLUTION)
+		. += time_per_tile * (distance - 1) + timeleft(movement_callback_id)
+	else
+		. += timeleft(movement_callback_id)
+	if(!.)
+		return "--:--"
+	. /= 10 //they're in deciseconds
+	return "[add_leading(num2text((. / 60) % 60), 2, "0")]:[add_leading(num2text(. % 60), 2, "0")]"
 
 /**
   * Change the speed in a specified dir.
@@ -188,25 +197,43 @@
  * Ticks the autopiloting system.
  * Returns if there's no target, decelerates and returns if target reached.
  * If stopped, burn towards the target, otherwise if going in the right direction, do nothing, if going in the wrong direction, stop.
+ * returns FALSE until destination is reached
  */
 /obj/structure/overmap/ship/proc/tick_autopilot()
 	if(!current_autopilot_target)
 		return
+	if(QDELETED(current_autopilot_target))
+		current_autopilot_target = null
+		return
 	if(get_turf(src) == get_turf(current_autopilot_target))
 		if(!is_still())
 			burn_engines(null)
-		return
+			return tick_autopilot()
+		return TRUE //Destination reached
 	var/target_direction = get_dir(src, current_autopilot_target)
 	var/current_distance = get_dist(src, current_autopilot_target)
 	if(current_distance >= SSovermap.size / 2)
 		target_direction = REVERSE_DIR(target_direction)
 	if(is_still())
 		burn_engines(target_direction)
+		if(is_still())
+			return
+		return tick_autopilot()
 	else if(dir == target_direction)
+		if(get_speed() < 4) //4 SpM
+			burn_engines(target_direction)
+			return tick_autopilot()
 		return
+	else if(dir & target_direction)
+		for(var/newdir in GLOB.cardinals)
+			if(newdir == dir)
+				continue
+			if(newdir & target_direction)
+				burn_engines(newdir)
+				break
 	else
 		burn_engines(null)
-		tick_autopilot()
+		return tick_autopilot()
 
 /obj/structure/overmap/ship/Uncrossed(atom/movable/AM, atom/newloc)
 	. = ..()

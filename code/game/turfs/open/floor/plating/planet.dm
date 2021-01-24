@@ -4,7 +4,6 @@
 	desc = "Upon closer examination, it's still dirt."
 	icon = 'icons/turf/floors.dmi'
 	icon_state = "dirt"
-	baseturfs = /turf/open/chasm/jungle
 	initial_gas_mix = OPENTURF_LOW_PRESSURE
 	planetary_atmos = TRUE
 	attachment_holes = FALSE

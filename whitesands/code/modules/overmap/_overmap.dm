@@ -83,13 +83,13 @@
 
 /obj/structure/overmap/Initialize(mapload, _id)
 	. = ..()
-	LAZYADD(SSovermap.overmap_objects, src)
 	if(id == MAIN_OVERMAP_OBJECT_ID)
 		name = station_name()
 	if(_id)
 		id = _id
 	if(!id)
 		id = "overmap_object_[length(SSovermap.overmap_objects) + 1]"
+	LAZYSET(SSovermap.overmap_objects, id, src)
 	if(render_map)	// Initialize map objects
 		map_name = "overmap_[id]_map"
 		cam_screen = new
@@ -107,9 +107,17 @@
 		cam_background.del_on_map_removal = FALSE
 		update_screen()
 
+//I hate this, but it updates the SSovermap.overmap_objects lookup table stays accurate
+/obj/structure/overmap/vv_edit_var(vname, vval)
+	if(vname == NAMEOF(src, id))
+		LAZYREMOVE(SSovermap.overmap_objects, id)
+	. = ..()
+	if(vname == NAMEOF(src, id))
+		LAZYSET(SSovermap.overmap_objects, id, src)
+
 /obj/structure/overmap/Destroy()
 	. = ..()
-	LAZYREMOVE(SSovermap.overmap_objects, src)
+	LAZYREMOVE(SSovermap.overmap_objects, id)
 	if(render_map)
 		QDEL_NULL(cam_screen)
 		QDEL_NULL(cam_plane_master)

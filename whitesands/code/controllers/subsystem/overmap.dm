@@ -5,10 +5,10 @@ SUBSYSTEM_DEF(overmap)
 	flags = SS_KEEP_TIMING|SS_NO_TICK_CHECK
 	runlevels = RUNLEVEL_SETUP | RUNLEVEL_GAME
 
-	// Defines which generator to use for the overmap
+	///Defines which generator to use for the overmap
 	var/generator_type = OVERMAP_GENERATOR_RANDOM
 
-	///List of all overmap objects
+	///List of all overmap objects, keys are their respective IDs
 	var/list/overmap_objects
 	///List of all active, simulated ships
 	var/list/simulated_ships
@@ -406,18 +406,20 @@ SUBSYSTEM_DEF(overmap)
   * * id - ID of the overmap object you want to find
   */
 /datum/controller/subsystem/overmap/proc/get_overmap_object_by_id(id)
-	for(var/obj/structure/overmap/object in overmap_objects)
-		if(object.id == id)
-			return object
+	if(id in overmap_objects)
+		return overmap_objects[id]
 
 /**
   * Gets the corresponding overmap object that shares the provided z level
   * * zlevel - The Z-level of the overmap object you want to find
   */
 /datum/controller/subsystem/overmap/proc/get_overmap_object_by_z(zlevel)
-	for(var/obj/structure/overmap/level/object in overmap_objects)
-		if(zlevel in object.linked_levels)
-			return object
+	for(var/id in overmap_objects)
+		if(!istype(overmap_objects[id], /obj/structure/overmap/level))
+			continue
+		var/obj/structure/overmap/level/level = overmap_objects[id]
+		if(zlevel in level.linked_levels)
+			return level
 
 /datum/controller/subsystem/overmap/Recover()
 	if(istype(SSovermap.simulated_ships))

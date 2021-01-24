@@ -110,7 +110,7 @@
 	shuttle.request(dock_to_use)
 	docked = to_dock
 
-	addtimer(CALLBACK(src, .proc/complete_dock), shuttle.ignitionTime + 1 SECONDS) //A little bit of time to account for lag
+	addtimer(CALLBACK(src, .proc/complete_dock), shuttle.callTime)
 	state = OVERMAP_SHIP_DOCKING
 	return "Commencing docking..."
 
@@ -144,7 +144,7 @@
 	shuttle.destination = null
 	shuttle.mode = SHUTTLE_IGNITING
 	shuttle.setTimer(shuttle.ignitionTime)
-	addtimer(CALLBACK(src, .proc/complete_dock), shuttle.ignitionTime + 1 SECONDS) //See above
+	addtimer(CALLBACK(src, .proc/complete_dock), shuttle.ignitionTime)
 	state = OVERMAP_SHIP_UNDOCKING
 	return "Beginning undocking procedures..."
 
@@ -258,6 +258,15 @@
 		decelerate(max_speed / 100)
 	..()
 
+/obj/structure/overmap/ship/simulated/tick_autopilot()
+	if(docked)
+		return
+	. = ..()
+	if(!.) //Parent proc only returns TRUE when destination is reached.
+		return
+	overmap_object_act(null, current_autopilot_target)
+	current_autopilot_target = null
+
 /**
   * Called after the shuttle docks, and finishes the transfer to the new location.
   */
@@ -285,6 +294,7 @@
 				state = OVERMAP_SHIP_FLYING
 				if(repair_timer)
 					deltimer(repair_timer)
+				addtimer(CALLBACK(src, /obj/structure/overmap/ship/.proc/tick_autopilot, 20 SECONDS)) //TODO: Improve this SOMEHOW
 	update_screen()
 
 /**

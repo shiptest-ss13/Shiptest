@@ -113,7 +113,7 @@
 	icon_state_open = "burst_open"
 	thrust = 10
 	///Amount, in kilojoules, needed for a full burn.
-	var/power_per_burn = 100000
+	var/power_per_burn = 50000
 
 /obj/machinery/power/smes/shuttle
 	name = "electric engine precharger"
@@ -121,7 +121,7 @@
 	icon = 'whitesands/icons/obj/shuttle.dmi'
 	input_level = 0
 	input_level_max = 50000
-	output_level = 100000
+	output_level = 50000
 	circuit = /obj/item/circuitboard/machine/shuttle/smes
 
 /obj/machinery/power/smes/shuttle/precharged
