@@ -1399,7 +1399,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 
 /datum/uplink_item/device_tools/failsafe
 	name = "Failsafe Uplink Code"
-	desc = "When entered the uplink will self-destruct immediately."
+	desc = "When entered the uplink will self-destruct immediately, taking whoever punches the code in with it in an explosion." //WS edit - more descriptive failsafe
 	item = /obj/effect/gibspawner/generic
 	cost = 1
 	surplus = 0
