@@ -84,7 +84,7 @@
 			return TRUE
 
 /obj/machinery/power/shuttle/engine/fueled/plasma
-	name = "plasma-fueled thruster"
+	name = "plasma thruster"
 	desc = "A thruster that burns plasma from an adjacent heater to create thrust."
 	circuit = /obj/item/circuitboard/machine/shuttle/engine/plasma
 	fuel_type = /datum/gas/plasma
@@ -162,7 +162,7 @@
   * Turns a specific reagent or reagents into thrust.
   */
 /obj/machinery/power/shuttle/engine/liquid
-	name = "liquid fuel thruster"
+	name = "liquid thruster"
 	desc = "A thruster that burns reagents stored in the engine for fuel."
 	///How much fuel can be loaded into the engine.
 	var/max_reagents = 0

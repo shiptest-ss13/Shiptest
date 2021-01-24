@@ -204,7 +204,9 @@ const ShipContent = (props, context) => {
               className="candystripe">
               <Table.Cell collapsing>
                 <Button
-                  content={engine.name}
+                  content={
+                    (engine.name.len < 13) ? engine.name : engine.name.slice(0, 10) + "..."
+                  }
                   color={engine.enabled && "good"}
                   icon={engine.enabled ? "toggle-on" : "toggle-off"}
                   disabled={isViewer}
