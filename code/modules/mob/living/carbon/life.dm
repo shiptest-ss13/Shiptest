@@ -34,6 +34,7 @@
 		if(stat != DEAD)
 			handle_brain_damage()
 
+		mothdust = max(0, mothdust - 1); //WS edit - moth dust when hugging
 	else
 		. = ..()
 
