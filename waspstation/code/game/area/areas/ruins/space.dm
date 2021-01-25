@@ -63,3 +63,16 @@
 /area/ruin/space/has_grav/spacegym
 	name = "Space Gym"
 	icon_state = "firingrange"
+
+//scav_mining
+/area/ruin/space/has_grav/scav_mining/entrance
+	name = "Asteroid mine entrance"
+	icon_state = "red"
+
+/area/ruin/space/has_grav/scav_mining/core
+	name = "Asteroid mine core"
+	icon_state = "yellow"
+
+/area/ruin/space/has_grav/scav_mining/dorm
+	name = "Asteroid mine dorm"
+	icon_state = "blue"
