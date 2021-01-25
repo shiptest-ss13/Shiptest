@@ -432,12 +432,12 @@
 */
 
 /mob/dead/new_player/proc/LateChoices()
-	// Waspstation Start - Added selected character name to job selection window
+	//WS Start - Added selected character name to job selection window
 	var/name = client.prefs.real_name
 
 	var/dat = "<div class='notice'>Welcome, [name].</div>"
 	dat += "<div class='notice'>Round Duration: [DisplayTimeText(world.time - SSticker.round_start_time)]</div>"
-	// Waspstation End
+	//WS End
 
 	if(SSshuttle.emergency)
 		switch(SSshuttle.emergency.mode)
@@ -506,7 +506,7 @@
 			var/color = categorizedJobs[jobcat]["color"]
 			dat += "<fieldset style='border: 2px solid [color]; display: inline'>"
 			dat += "<legend align='center' style='color: [color]'>[jobcat]</legend>"
-			// Wasp Edit Start - Alt-Job Titles
+			//WS Edit Start - Alt-Job Titles
 			for(var/datum/job/job in categorizedJobs[jobcat]["jobs"])
 				var/altjobline = ""
 				var/position_class = "otherPosition"
@@ -518,7 +518,7 @@
 					dat += "<a class='[position_class]' style='display:block;width:170px' href='byond://?src=[REF(src)];SelectedJob=[job.title]'><font color='lime'><b>[job.title] [altjobline] ([job.current_positions])</b></font></a>"
 				else
 					dat += "<a class='[position_class]' style='display:block;width:170px' href='byond://?src=[REF(src)];SelectedJob=[job.title]'>[job.title] [altjobline] ([job.current_positions])</a>"
-			// Wasp Edit End - Alt-Job Titles
+			//WS Edit End - Alt-Job Titles
 			dat += "</fieldset><br>"
 
 

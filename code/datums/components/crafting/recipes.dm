@@ -818,8 +818,8 @@
             /obj/item/stack/sticky_tape = 1)
 	result = /obj/item/clothing/gloves/tackler/offbrand
 	category = CAT_CLOTHING
-	
-/* Wasp edit - Normal BoH
+
+/*WS edit - Normal BoH
 /datum/crafting_recipe/boh
 	name = "Bag of Holding"
 	reqs = list(

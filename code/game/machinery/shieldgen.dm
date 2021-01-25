@@ -247,7 +247,7 @@
 		cleanup_field(d)
 	return ..()
 
-/* Wasp Edit - Reverted Smartwire
+/*WS Edit - Reverted Smartwire
 /obj/machinery/power/shieldwallgen/should_have_node()
 	return anchored
 */
@@ -342,10 +342,10 @@
 	. |= default_unfasten_wrench(user, I, 0)
 	var/turf/T = get_turf(src)
 //	update_cable_icons_on_turf(T) - Removed because smartwire Revert
-// Wasp Begin - Smartwire Revert
+//WS Begin - Smartwire Revert
 	var/obj/structure/cable/C = locate(/obj/structure/cable) in T
 	C.update_icon()
-// Wasp End - Smartwire Revert	
+//WS End - Smartwire Revert
 	if(. == SUCCESSFUL_UNFASTEN && anchored)
 		connect_to_network()
 

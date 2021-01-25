@@ -14,22 +14,22 @@
 	a_intent = INTENT_HARM
 	var/crusher_loot
 	var/throw_message = "bounces off of"
-	var/throw_deflection = 20		// Waspstation edit - Whitesands
+	var/throw_deflection = 20		//WS edit - Whitesands
 	var/fromtendril = FALSE
 	see_in_dark = 8
 	lighting_alpha = LIGHTING_PLANE_ALPHA_MOSTLY_INVISIBLE
 	mob_size = MOB_SIZE_LARGE
 	var/icon_aggro = null
 	var/crusher_drop_mod = 25
-	var/datum/armor/armor		// Waspstation edit - Whitesands
+	var/datum/armor/armor		//WS edit - Whitesands
 
 /mob/living/simple_animal/hostile/asteroid/Initialize(mapload)
-	if (islist(armor))		// Waspstation edit begin - Whitesands
+	if (islist(armor))		//WS edit begin - Whitesands
 		armor = getArmor(arglist(armor))
 	else if (!armor)
 		armor = getArmor()
 	else if (!istype(armor, /datum/armor))
-		stack_trace("Invalid type [armor.type] found in .armor during /mob/living/simple_animal/hostile/asteroid Initialize()")		// Waspstation edit begin - Whitesands
+		stack_trace("Invalid type [armor.type] found in .armor during /mob/living/simple_animal/hostile/asteroid Initialize()")		//WS edit begin - Whitesands
 
 	. = ..()
 	apply_status_effect(STATUS_EFFECT_CRUSHERDAMAGETRACKING)
@@ -45,17 +45,17 @@
 		return
 	icon_state = icon_living
 
-/mob/living/simple_animal/hostile/asteroid/getarmor(def_zone, type)		// Waspstation edit begin - Whitesands
+/mob/living/simple_animal/hostile/asteroid/getarmor(def_zone, type)		//WS edit begin - Whitesands
 	if(armor)
 		return armor.getRating(type)
-	return 0		// If no armor		// Waspstation edit end
-	
+	return 0		// If no armor		//WS edit end
+
 /mob/living/simple_animal/hostile/asteroid/bullet_act(obj/projectile/P)//Reduces damage from most projectiles to curb off-screen kills
 	if(!stat)
 		Aggro()
-	/* if(P.damage < 30 && P.damage_type != BRUTE)		// Waspstation Edit Begin - Whitesands
+	/* if(P.damage < 30 && P.damage_type != BRUTE)		//WS Edit Begin - Whitesands
 		P.damage = (P.damage / 3)
-		visible_message("<span class='danger'>[P] has a reduced effect on [src]!</span>")	*/		// Waspstation Edit End
+		visible_message("<span class='danger'>[P] has a reduced effect on [src]!</span>")	*/		//WS Edit End
 	..()
 
 /mob/living/simple_animal/hostile/asteroid/hitby(atom/movable/AM, skipcatch, hitpush, blocked, datum/thrownthing/throwingdatum) //No floor tiling them to death, wiseguy
@@ -63,7 +63,7 @@
 		var/obj/item/T = AM
 		if(!stat)
 			Aggro()
-		if(T.throwforce <= throw_deflection)		// Waspstation Edit - Whitesands
+		if(T.throwforce <= throw_deflection)		//WS Edit - Whitesands
 			visible_message("<span class='notice'>The [T.name] [throw_message] [src.name]!</span>")
 			return
 	..()

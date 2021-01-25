@@ -1,5 +1,5 @@
 /*
-		Waspstation Edit - Moved to modular folder
+		WS Edit - Moved to modular folder
 
 //A beast that fire freezing blasts.
 /mob/living/simple_animal/hostile/asteroid/basilisk

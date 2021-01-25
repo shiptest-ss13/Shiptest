@@ -15,7 +15,7 @@ jobs:
       - name: Build and Publish Docker Image to Registry
         uses: elgohr/Publish-Docker-Github-Action@master
         with:
-          name: waspstation/waspstation
+          name: whitesands13/whitesands
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
           dockerfile: Dockerfile

@@ -130,7 +130,7 @@
 			else
 				. += "<span class='deadsay'>[t_He] [t_is] limp and unresponsive; there are no signs of life...</span>"
 
-//WaspStaion Begin - Broken Bones
+//WSStaion Begin - Broken Bones
 
 	var/list/splinted_stuff = list()
 	for(var/obj/item/bodypart/B in bodyparts)

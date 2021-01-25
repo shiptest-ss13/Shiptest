@@ -135,8 +135,8 @@
 				heirloom_type = /obj/item/reagent_containers/food/drinks/bottle/whiskey
 			if("Lawyer")
 				heirloom_type = pick(/obj/item/gavelhammer, /obj/item/book/manual/wiki/security_space_law)
-			if("Brig Physician") // Waspstation edit - Brig Physicians
-				heirloom_type = pick(/obj/item/clothing/neck/stethoscope, /obj/item/roller, /obj/item/book/manual/wiki/security_space_law) // Waspstation edit - Brig Physicians
+			if("Brig Physician") //WS edit - Brig Physicians
+				heirloom_type = pick(/obj/item/clothing/neck/stethoscope, /obj/item/roller, /obj/item/book/manual/wiki/security_space_law) //WS edit - Brig Physicians
 			if("Prisoner")
 				heirloom_type = /obj/item/pen/blue
 			//RnD

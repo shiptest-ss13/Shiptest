@@ -45,7 +45,7 @@
 	throw_range = 3
 	attack_verb = list("stung")
 	wine_power = 20
-	wine_flavor = "tingling itchiness" //wasp edit: new wine flavors
+	wine_flavor = "tingling itchiness" //WS edit: new wine flavors
 
 /obj/item/reagent_containers/food/snacks/grown/nettle/suicide_act(mob/user)
 	user.visible_message("<span class='suicide'>[user] is eating some of [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
@@ -93,7 +93,7 @@
 	force = 30
 	throwforce = 15
 	wine_power = 50
-	wine_flavor = "burning rage" //wasp edit: new wine flavors
+	wine_flavor = "burning rage" //WS edit: new wine flavors
 
 /obj/item/reagent_containers/food/snacks/grown/nettle/death/add_juice()
 	..()

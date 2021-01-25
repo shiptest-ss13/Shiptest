@@ -48,13 +48,13 @@
 	results = list(/datum/reagent/medicine/mine_salve = 15)
 	required_reagents = list(/datum/reagent/toxin/plasma = 5, /datum/reagent/iron = 5, /datum/reagent/consumable/sugar = 1) // A sheet of plasma, a twinkie and a sheet of metal makes four of these
 
-/* WaspStation Begin - No Cobbychmes
+/*WS Begin - No Cobbychmes
 
 /datum/chemical_reaction/instabitaluri
 	results = list(/datum/reagent/medicine/C2/instabitaluri = 3)
 	required_reagents = list(/datum/reagent/blood = 1, /datum/reagent/carbon = 1, /datum/reagent/medicine/C2/libital = 1)
 
-WaspStation End */
+WS End */
 
 /datum/chemical_reaction/calomel
 	results = list(/datum/reagent/medicine/calomel = 2)
@@ -154,11 +154,11 @@ WaspStation End */
 	results = list(/datum/reagent/medicine/regen_jelly = 2)
 	required_reagents = list(/datum/reagent/medicine/omnizine = 1, /datum/reagent/toxin/slimejelly = 1)
 
-/*WaspStation Begin
+/*WS Begin
 /datum/chemical_reaction/higadrite
 	results = list(/datum/reagent/medicine/higadrite = 3)
 	required_reagents = list(/datum/reagent/phenol = 2, /datum/reagent/lithium = 1)
-WaspStation End*/
+WS End*/
 /datum/chemical_reaction/morphine
 	results = list(/datum/reagent/medicine/morphine = 2)
 	required_reagents = list(/datum/reagent/carbon = 2, /datum/reagent/hydrogen = 2, /datum/reagent/consumable/ethanol = 1, /datum/reagent/oxygen = 1)
@@ -173,13 +173,13 @@ WaspStation End*/
 	results = list(/datum/reagent/medicine/psicodine = 5)
 	required_reagents = list( /datum/reagent/medicine/mannitol = 2, /datum/reagent/water = 2, /datum/reagent/impedrezene = 1)
 
-/* WaspStation Begin - No Cobby
+/*WS Begin - No Cobby
 
 /datum/chemical_reaction/granibitaluri
 	results = list(/datum/reagent/medicine/granibitaluri = 3)
 	required_reagents = list(/datum/reagent/acetone = 1, /datum/reagent/phenol = 1, /datum/reagent/nitrogen = 1)
 	required_catalysts = list(/datum/reagent/iron = 5)
-WaspStation End */
+WS End */
 
 /datum/chemical_reaction/medsuture
 	required_reagents = list(/datum/reagent/cellulose = 10, /datum/reagent/toxin/formaldehyde = 20, /datum/reagent/medicine/polypyr = 15) //This might be a bit much, reagent cost should be reviewed after implementation.

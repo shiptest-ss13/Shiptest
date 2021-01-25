@@ -282,7 +282,7 @@
 		if(istype(dna.species, /datum/species/moth))
 			M.mothdust += 5; // End WS edit
 
-	else if(M.zone_selected == BODY_ZONE_CHEST || M.zone_selected == BODY_ZONE_PRECISE_GROIN)			// Wasp Edit - Adds more help emotes
+	else if(M.zone_selected == BODY_ZONE_CHEST || M.zone_selected == BODY_ZONE_PRECISE_GROIN)			//WS Edit - Adds more help emotes
 		M.visible_message("<span class='notice'>[M] hugs [src] to make [p_them()] feel better!</span>", \
 					"<span class='notice'>You hug [src] to make [p_them()] feel better!</span>")
 		if(istype(M.dna.species, /datum/species/moth)) //WS edit - moth dust from hugging
@@ -328,7 +328,7 @@
 			to_chat(M, "<span class='warning'>[src] does not have a [M.zone_selected == BODY_ZONE_L_LEG ? "left" : "right"] leg!</span>")
 		else
 			M.visible_message("<span class='notice'>[M] pokes [src]'s leg.</span>", \
-						"<span class='notice'>You poke [src]'s leg.</span>")		// Wasp Edit End
+						"<span class='notice'>You poke [src]'s leg.</span>")		//WS Edit End
 	AdjustStun(-60)
 	AdjustKnockdown(-60)
 	AdjustUnconscious(-60)

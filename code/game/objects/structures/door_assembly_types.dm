@@ -233,9 +233,9 @@
 
 /obj/structure/door_assembly/door_assembly_titanium
 	name = "titanium airlock assembly"
-	icon = 'waspstation/icons/obj/doors/airlocks/shuttle/shuttle.dmi'
+	icon = 'whitesands/icons/obj/doors/airlocks/shuttle/shuttle.dmi'
 	base_name = "shuttle airlock"
-	overlays_file = 'waspstation/icons/obj/doors/airlocks/shuttle/overlays.dmi'
+	overlays_file = 'whitesands/icons/obj/doors/airlocks/shuttle/overlays.dmi'
 	glass_type = /obj/machinery/door/airlock/titanium/glass
 	airlock_type = /obj/machinery/door/airlock/titanium
 	mineral = "titanium"

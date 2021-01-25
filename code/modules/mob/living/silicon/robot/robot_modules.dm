@@ -33,7 +33,7 @@
 	var/allow_riding = TRUE
 	var/canDispose = FALSE // Whether the borg can stuff itself into disposal
 
-	var/icon/cyborg_icon_override //Wasp Addition, need this shit to use VG icons
+	var/icon/cyborg_icon_override //WS Addition, need this shit to use VG icons
 
 /obj/item/robot_module/Initialize()
 	. = ..()
@@ -263,23 +263,23 @@
 	moduleselect_icon = "standard"
 	hat_offset = -3
 
-//Wasp Begin - Can these all be modularized? Probably.
+//WS Begin - Can these all be modularized? Probably.
 /obj/item/robot_module/standard/be_transformed_to(obj/item/robot_module/old_module)
 	var/mob/living/silicon/robot/R = loc
 	var/static/list/default_icons
 	if(!default_icons)
 		default_icons = list(
 		"Default" = image(icon = 'icons/mob/robots.dmi', icon_state = "robot"),
-		"Antique" = image(icon = 'waspstation/icons/mob/robots.dmi', icon_state = "robot_old"),
-		"Droid" = image(icon = 'waspstation/icons/mob/robots.dmi', icon_state = "droid"),
-		"Marina" = image(icon = 'waspstation/icons/mob/robots.dmi', icon_state = "marinaSD"),
-		"Sleek" = image(icon = 'waspstation/icons/mob/robots.dmi', icon_state = "sleekstandard"),
-		"servbot" = image(icon = 'waspstation/icons/mob/robots.dmi', icon_state = "servbot"),
-		"Spider" = image(icon = 'waspstation/icons/mob/robots.dmi', icon_state = "spider-standard"),
-		"Kodiak - 'Polar'" = image(icon = 'waspstation/icons/mob/robots.dmi', icon_state = "kodiak-standard"),
-		"Noble" = image(icon = 'waspstation/icons/mob/robots.dmi', icon_state = "Noble-STD"),
-		"R34 - STR4a 'Durin'" = image(icon = 'waspstation/icons/mob/robots.dmi', icon_state = "durin"),
-		"Booty" = image(icon = 'waspstation/icons/mob/robots.dmi', icon_state = "booty-blue")
+		"Antique" = image(icon = 'whitesands/icons/mob/robots.dmi', icon_state = "robot_old"),
+		"Droid" = image(icon = 'whitesands/icons/mob/robots.dmi', icon_state = "droid"),
+		"Marina" = image(icon = 'whitesands/icons/mob/robots.dmi', icon_state = "marinaSD"),
+		"Sleek" = image(icon = 'whitesands/icons/mob/robots.dmi', icon_state = "sleekstandard"),
+		"servbot" = image(icon = 'whitesands/icons/mob/robots.dmi', icon_state = "servbot"),
+		"Spider" = image(icon = 'whitesands/icons/mob/robots.dmi', icon_state = "spider-standard"),
+		"Kodiak - 'Polar'" = image(icon = 'whitesands/icons/mob/robots.dmi', icon_state = "kodiak-standard"),
+		"Noble" = image(icon = 'whitesands/icons/mob/robots.dmi', icon_state = "Noble-STD"),
+		"R34 - STR4a 'Durin'" = image(icon = 'whitesands/icons/mob/robots.dmi', icon_state = "durin"),
+		"Booty" = image(icon = 'whitesands/icons/mob/robots.dmi', icon_state = "booty-blue")
 		)
 		default_icons = sortList(default_icons)
 	var/default_borg_icon = show_radial_menu(R, R , default_icons, custom_check = CALLBACK(src, .proc/check_menu, R), radius = 42, require_near = TRUE)
@@ -290,44 +290,44 @@
 			cyborg_base_icon = "robot_old"
 		if("Droid")
 			cyborg_base_icon = "droid"
-			cyborg_icon_override = 'waspstation/icons/mob/robots.dmi'
+			cyborg_icon_override = 'whitesands/icons/mob/robots.dmi'
 			special_light_key = "droid"
 		if("Marina")
 			cyborg_base_icon = "marinaSD"
-			cyborg_icon_override = 'waspstation/icons/mob/robots.dmi'
+			cyborg_icon_override = 'whitesands/icons/mob/robots.dmi'
 			special_light_key = "marinaSD"
 		if("Sleek")
 			cyborg_base_icon = "sleekstandard"
-			cyborg_icon_override = 'waspstation/icons/mob/robots.dmi'
+			cyborg_icon_override = 'whitesands/icons/mob/robots.dmi'
 			special_light_key = "sleekstandard"
 		if("servbot")
 			cyborg_base_icon = "servbot"
-			cyborg_icon_override = 'waspstation/icons/mob/robots.dmi'
+			cyborg_icon_override = 'whitesands/icons/mob/robots.dmi'
 			special_light_key = "servbot"
 		if("Spider")
 			cyborg_base_icon = "spider-standard"
-			cyborg_icon_override = 'waspstation/icons/mob/robots.dmi'
+			cyborg_icon_override = 'whitesands/icons/mob/robots.dmi'
 			special_light_key = "spider-standard"
 		if("Kodiak - 'Polar'")
 			cyborg_base_icon = "kodiak-standard"
-			cyborg_icon_override = 'waspstation/icons/mob/robots.dmi'
+			cyborg_icon_override = 'whitesands/icons/mob/robots.dmi'
 			special_light_key = "kodiak-standard"
 		if("Noble")
 			cyborg_base_icon = "Noble-STD"
-			cyborg_icon_override = 'waspstation/icons/mob/robots.dmi'
+			cyborg_icon_override = 'whitesands/icons/mob/robots.dmi'
 			special_light_key = "Noble-STD"
 		if("R34 - STR4a 'Durin'")
 			cyborg_base_icon = "durin"
-			cyborg_icon_override = 'waspstation/icons/mob/robots.dmi'
+			cyborg_icon_override = 'whitesands/icons/mob/robots.dmi'
 			special_light_key = "durin"
 		if("Booty")
 			cyborg_base_icon = "booty-blue"
-			cyborg_icon_override = 'waspstation/icons/mob/robots.dmi'
+			cyborg_icon_override = 'whitesands/icons/mob/robots.dmi'
 			special_light_key = "booty-blue"
 		else
 			return FALSE
 	return ..()
-//Wasp End
+//WS End
 
 /obj/item/robot_module/medical
 	name = "Medical"
@@ -356,78 +356,78 @@
 	can_be_pushed = FALSE
 	hat_offset = 3
 
-//Wasp Begin
+//WS Begin
 /obj/item/robot_module/medical/be_transformed_to(obj/item/robot_module/old_module)
 	var/mob/living/silicon/robot/R = loc
 	var/static/list/med_icons
 	if(!med_icons)
 		med_icons = list(
-		"Antique" = image(icon = 'waspstation/icons/mob/robots.dmi', icon_state = "medbot"),
-		"Needles" = image(icon = 'waspstation/icons/mob/robots.dmi', icon_state = "needles"),
+		"Antique" = image(icon = 'whitesands/icons/mob/robots.dmi', icon_state = "medbot"),
+		"Needles" = image(icon = 'whitesands/icons/mob/robots.dmi', icon_state = "needles"),
 		"Default" = image(icon = 'icons/mob/robots.dmi', icon_state = "medical"),
-		"EVE" = image(icon = 'waspstation/icons/mob/robots.dmi', icon_state = "eve"),
-		"Droid" = image(icon = 'waspstation/icons/mob/robots.dmi', icon_state = "droid-medical"),
-		"Marina" = image(icon = 'waspstation/icons/mob/robots.dmi', icon_state = "marina"),
-		"Sleek" = image(icon = 'waspstation/icons/mob/robots.dmi', icon_state = "sleekmedic"),
-		"#17" = image(icon = 'waspstation/icons/mob/robots.dmi', icon_state = "servbot-medi"),
-		"Kodiak - 'Arachne'" = image(icon = 'waspstation/icons/mob/robots.dmi', icon_state = "arachne"),
-		"Noble" = image(icon = 'waspstation/icons/mob/robots.dmi', icon_state = "Noble-MED"),
-		"R34 - MED6a 'Gibbs'" = image(icon = 'waspstation/icons/mob/robots.dmi', icon_state = "gibbs"),
-		"Booty" = image(icon = 'waspstation/icons/mob/robots.dmi', icon_state = "booty-white")
+		"EVE" = image(icon = 'whitesands/icons/mob/robots.dmi', icon_state = "eve"),
+		"Droid" = image(icon = 'whitesands/icons/mob/robots.dmi', icon_state = "droid-medical"),
+		"Marina" = image(icon = 'whitesands/icons/mob/robots.dmi', icon_state = "marina"),
+		"Sleek" = image(icon = 'whitesands/icons/mob/robots.dmi', icon_state = "sleekmedic"),
+		"#17" = image(icon = 'whitesands/icons/mob/robots.dmi', icon_state = "servbot-medi"),
+		"Kodiak - 'Arachne'" = image(icon = 'whitesands/icons/mob/robots.dmi', icon_state = "arachne"),
+		"Noble" = image(icon = 'whitesands/icons/mob/robots.dmi', icon_state = "Noble-MED"),
+		"R34 - MED6a 'Gibbs'" = image(icon = 'whitesands/icons/mob/robots.dmi', icon_state = "gibbs"),
+		"Booty" = image(icon = 'whitesands/icons/mob/robots.dmi', icon_state = "booty-white")
 		)
 		med_icons = sortList(med_icons)
 	var/med_borg_icon = show_radial_menu(R, R , med_icons, custom_check = CALLBACK(src, .proc/check_menu, R), radius = 42, require_near = TRUE)
 	switch(med_borg_icon)
 		if("Antique")
 			cyborg_base_icon = "medbot"
-			cyborg_icon_override = 'waspstation/icons/mob/robots.dmi'
+			cyborg_icon_override = 'whitesands/icons/mob/robots.dmi'
 			special_light_key = "medbot"
 		if("Needles")
 			cyborg_base_icon = "needles"
-			cyborg_icon_override = 'waspstation/icons/mob/robots.dmi'
+			cyborg_icon_override = 'whitesands/icons/mob/robots.dmi'
 			special_light_key = "needles"
 		if("Default")
 			cyborg_base_icon = "medical"
 		if("EVE")
 			cyborg_base_icon = "eve"
-			cyborg_icon_override = 'waspstation/icons/mob/robots.dmi'
+			cyborg_icon_override = 'whitesands/icons/mob/robots.dmi'
 			special_light_key = "eve"
 		if("Droid")
 			cyborg_base_icon = "droid-medical"
-			cyborg_icon_override = 'waspstation/icons/mob/robots.dmi'
+			cyborg_icon_override = 'whitesands/icons/mob/robots.dmi'
 			special_light_key = "droid-medical"
 		if("Marina")
 			cyborg_base_icon = "marina"
-			cyborg_icon_override = 'waspstation/icons/mob/robots.dmi'
+			cyborg_icon_override = 'whitesands/icons/mob/robots.dmi'
 			special_light_key = "marina"
 		if("Sleek")
 			cyborg_base_icon = "sleekmedic"
-			cyborg_icon_override = 'waspstation/icons/mob/robots.dmi'
+			cyborg_icon_override = 'whitesands/icons/mob/robots.dmi'
 			special_light_key = "sleekmedic"
 		if("#17")
 			cyborg_base_icon = "servbot-medi"
-			cyborg_icon_override = 'waspstation/icons/mob/robots.dmi'
+			cyborg_icon_override = 'whitesands/icons/mob/robots.dmi'
 			special_light_key = "servbot-medi"
 		if("Kodiak - 'Arachne'")
 			cyborg_base_icon = "arachne"
-			cyborg_icon_override = 'waspstation/icons/mob/robots.dmi'
+			cyborg_icon_override = 'whitesands/icons/mob/robots.dmi'
 			special_light_key = "arachne"
 		if("Noble")
 			cyborg_base_icon = "Noble-MED"
-			cyborg_icon_override = 'waspstation/icons/mob/robots.dmi'
+			cyborg_icon_override = 'whitesands/icons/mob/robots.dmi'
 			special_light_key = "Noble-MED"
 		if("R34 - MED6a 'Gibbs'")
 			cyborg_base_icon = "gibbs"
-			cyborg_icon_override = 'waspstation/icons/mob/robots.dmi'
+			cyborg_icon_override = 'whitesands/icons/mob/robots.dmi'
 			special_light_key = "gibbs"
 		if("Booty")
 			cyborg_base_icon = "booty-white"
-			cyborg_icon_override = 'waspstation/icons/mob/robots.dmi'
+			cyborg_icon_override = 'whitesands/icons/mob/robots.dmi'
 			special_light_key = "booty-white"
 		else
 			return FALSE
 	return ..()
-//Wasp End
+//WS End
 
 /obj/item/robot_module/engineering
 	name = "Engineering"
@@ -461,78 +461,78 @@
 	magpulsing = TRUE
 	hat_offset = -4
 
-//Wasp Begin
+//WS Begin
 /obj/item/robot_module/engineering/be_transformed_to(obj/item/robot_module/old_module)
 	var/mob/living/silicon/robot/R = loc
 	var/static/list/engi_icons
 	if(!engi_icons)
 		engi_icons = list(
-		"Antique" = image(icon = 'waspstation/icons/mob/robots.dmi', icon_state = "engibot"),
-		"Engiseer" = image(icon = 'waspstation/icons/mob/robots.dmi', icon_state = "engiseer"),
+		"Antique" = image(icon = 'whitesands/icons/mob/robots.dmi', icon_state = "engibot"),
+		"Engiseer" = image(icon = 'whitesands/icons/mob/robots.dmi', icon_state = "engiseer"),
 		"Default" = image(icon = 'icons/mob/robots.dmi', icon_state = "engineer"),
-		"Wall-E" = image(icon = 'waspstation/icons/mob/robots.dmi', icon_state = "wall-e"),
-		"Droid" = image(icon = 'waspstation/icons/mob/robots.dmi', icon_state = "droid-engineer"),
-		"Marina" = image(icon = 'waspstation/icons/mob/robots.dmi', icon_state = "marinaEN"),
-		"Sleek" = image(icon = 'waspstation/icons/mob/robots.dmi', icon_state = "sleekengineer"),
-		"#25" = image(icon = 'waspstation/icons/mob/robots.dmi', icon_state = "servbot-engi"),
-		"Kodiak" = image(icon = 'waspstation/icons/mob/robots.dmi', icon_state = "kodiak-eng"),
-		"Noble" = image(icon = 'waspstation/icons/mob/robots.dmi', icon_state = "Noble-ENG"),
-		"R34 - ENG7a 'Conagher'" = image(icon = 'waspstation/icons/mob/robots.dmi', icon_state = "conagher"),
-		"Booty" = image(icon = 'waspstation/icons/mob/robots.dmi', icon_state = "booty-yellow")
+		"Wall-E" = image(icon = 'whitesands/icons/mob/robots.dmi', icon_state = "wall-e"),
+		"Droid" = image(icon = 'whitesands/icons/mob/robots.dmi', icon_state = "droid-engineer"),
+		"Marina" = image(icon = 'whitesands/icons/mob/robots.dmi', icon_state = "marinaEN"),
+		"Sleek" = image(icon = 'whitesands/icons/mob/robots.dmi', icon_state = "sleekengineer"),
+		"#25" = image(icon = 'whitesands/icons/mob/robots.dmi', icon_state = "servbot-engi"),
+		"Kodiak" = image(icon = 'whitesands/icons/mob/robots.dmi', icon_state = "kodiak-eng"),
+		"Noble" = image(icon = 'whitesands/icons/mob/robots.dmi', icon_state = "Noble-ENG"),
+		"R34 - ENG7a 'Conagher'" = image(icon = 'whitesands/icons/mob/robots.dmi', icon_state = "conagher"),
+		"Booty" = image(icon = 'whitesands/icons/mob/robots.dmi', icon_state = "booty-yellow")
 		)
 		engi_icons = sortList(engi_icons)
 	var/engi_borg_icon = show_radial_menu(R, R , engi_icons, custom_check = CALLBACK(src, .proc/check_menu, R), radius = 42, require_near = TRUE)
 	switch(engi_borg_icon)
 		if("Antique")
 			cyborg_base_icon = "engibot"
-			cyborg_icon_override = 'waspstation/icons/mob/robots.dmi'
+			cyborg_icon_override = 'whitesands/icons/mob/robots.dmi'
 			special_light_key = "engibot"
 		if("Engiseer")
 			cyborg_base_icon = "engiseer"
-			cyborg_icon_override = 'waspstation/icons/mob/robots.dmi'
+			cyborg_icon_override = 'whitesands/icons/mob/robots.dmi'
 			special_light_key ="engiseer"
 		if("Default")
 			cyborg_base_icon = "engineer"
 		if("Wall-E")
 			cyborg_base_icon = "wall-e"
-			cyborg_icon_override = 'waspstation/icons/mob/robots.dmi'
+			cyborg_icon_override = 'whitesands/icons/mob/robots.dmi'
 			special_light_key = "wall-e"
 		if("Droid")
 			cyborg_base_icon = "droid-engineer"
-			cyborg_icon_override = 'waspstation/icons/mob/robots.dmi'
+			cyborg_icon_override = 'whitesands/icons/mob/robots.dmi'
 			special_light_key = "droid-engineer"
 		if("Marina")
 			cyborg_base_icon = "marinaEN"
-			cyborg_icon_override = 'waspstation/icons/mob/robots.dmi'
+			cyborg_icon_override = 'whitesands/icons/mob/robots.dmi'
 			special_light_key = "marinaEN"
 		if("Sleek")
 			cyborg_base_icon = "sleekengineer"
-			cyborg_icon_override = 'waspstation/icons/mob/robots.dmi'
+			cyborg_icon_override = 'whitesands/icons/mob/robots.dmi'
 			special_light_key = "sleekengineer"
 		if("#25")
 			cyborg_base_icon = "servbot-engi"
-			cyborg_icon_override = 'waspstation/icons/mob/robots.dmi'
+			cyborg_icon_override = 'whitesands/icons/mob/robots.dmi'
 			special_light_key = "servbot-engi"
 		if("Kodiak")
 			cyborg_base_icon = "kodiak-eng"
-			cyborg_icon_override = 'waspstation/icons/mob/robots.dmi'
+			cyborg_icon_override = 'whitesands/icons/mob/robots.dmi'
 			special_light_key = "kodiak-eng"
 		if("Noble")
 			cyborg_base_icon = "Noble-ENG"
-			cyborg_icon_override = 'waspstation/icons/mob/robots.dmi'
+			cyborg_icon_override = 'whitesands/icons/mob/robots.dmi'
 			special_light_key = "Noble-ENG"
 		if("R34 - ENG7a 'Conagher'")
 			cyborg_base_icon = "conagher"
-			cyborg_icon_override = 'waspstation/icons/mob/robots.dmi'
+			cyborg_icon_override = 'whitesands/icons/mob/robots.dmi'
 			special_light_key = "conagher"
 		if("Booty")
 			cyborg_base_icon = "booty-yellow"
-			cyborg_icon_override = 'waspstation/icons/mob/robots.dmi'
+			cyborg_icon_override = 'whitesands/icons/mob/robots.dmi'
 			special_light_key = "booty-yellow"
 		else
 			return FALSE
 	return ..()
-//Wasp End
+//WS End
 
 /obj/item/robot_module/security
 	name = "Security"
@@ -549,73 +549,73 @@
 	can_be_pushed = FALSE
 	hat_offset = 3
 
-//Wasp Begin
+//WS Begin
 /obj/item/robot_module/security/be_transformed_to(obj/item/robot_module/old_module)
 	var/mob/living/silicon/robot/R = loc
 	var/static/list/sec_icons
 	if(!sec_icons)
 		sec_icons = list(
-		"Antique" = image(icon = 'waspstation/icons/mob/robots.dmi', icon_state = "secbot"),
+		"Antique" = image(icon = 'whitesands/icons/mob/robots.dmi', icon_state = "secbot"),
 		"Default" = image(icon = 'icons/mob/robots.dmi', icon_state = "sec"),
-		"Securitron" = image(icon = 'waspstation/icons/mob/robots.dmi', icon_state = "securitron"),
-		"Droid 'Black Knight'" = image(icon = 'waspstation/icons/mob/robots.dmi', icon_state = "droid-security"),
-		"Marina" = image(icon = 'waspstation/icons/mob/robots.dmi', icon_state = "marinaSC"),
-		"Sleek" = image(icon = 'waspstation/icons/mob/robots.dmi', icon_state = "sleeksecurity"),
-		"#9" = image(icon = 'waspstation/icons/mob/robots.dmi', icon_state = "servbot-sec"),
-		"Kodiak" = image(icon = 'waspstation/icons/mob/robots.dmi', icon_state = "kodiak-sec"),
-		"Noble" = image(icon = 'waspstation/icons/mob/robots.dmi', icon_state = "Noble-SEC"),
-		"R34 - SEC10a 'Woody'" = image(icon = 'waspstation/icons/mob/robots.dmi', icon_state = "woody"),
-		"Booty" = image(icon = 'waspstation/icons/mob/robots.dmi', icon_state = "booty-red")
+		"Securitron" = image(icon = 'whitesands/icons/mob/robots.dmi', icon_state = "securitron"),
+		"Droid 'Black Knight'" = image(icon = 'whitesands/icons/mob/robots.dmi', icon_state = "droid-security"),
+		"Marina" = image(icon = 'whitesands/icons/mob/robots.dmi', icon_state = "marinaSC"),
+		"Sleek" = image(icon = 'whitesands/icons/mob/robots.dmi', icon_state = "sleeksecurity"),
+		"#9" = image(icon = 'whitesands/icons/mob/robots.dmi', icon_state = "servbot-sec"),
+		"Kodiak" = image(icon = 'whitesands/icons/mob/robots.dmi', icon_state = "kodiak-sec"),
+		"Noble" = image(icon = 'whitesands/icons/mob/robots.dmi', icon_state = "Noble-SEC"),
+		"R34 - SEC10a 'Woody'" = image(icon = 'whitesands/icons/mob/robots.dmi', icon_state = "woody"),
+		"Booty" = image(icon = 'whitesands/icons/mob/robots.dmi', icon_state = "booty-red")
 		)
 		sec_icons = sortList(sec_icons)
 	var/sec_borg_icon = show_radial_menu(R, R , sec_icons, custom_check = CALLBACK(src, .proc/check_menu, R), radius = 42, require_near = TRUE)
 	switch(sec_borg_icon)
 		if("Antique")
 			cyborg_base_icon = "secbot"
-			cyborg_icon_override = 'waspstation/icons/mob/robots.dmi'
+			cyborg_icon_override = 'whitesands/icons/mob/robots.dmi'
 			special_light_key = "secbot"
 		if("Default")
 			cyborg_base_icon = "sec"
 		if("Securitron")
 			cyborg_base_icon = "securitron"
-			cyborg_icon_override = 'waspstation/icons/mob/robots.dmi'
+			cyborg_icon_override = 'whitesands/icons/mob/robots.dmi'
 			special_light_key = "securitron"
 		if("Droid 'Black Knight'")
 			cyborg_base_icon = "droid-security"
-			cyborg_icon_override = 'waspstation/icons/mob/robots.dmi'
+			cyborg_icon_override = 'whitesands/icons/mob/robots.dmi'
 			special_light_key = "droid-security"
 		if("Marina")
 			cyborg_base_icon = "marinaSC"
-			cyborg_icon_override = 'waspstation/icons/mob/robots.dmi'
+			cyborg_icon_override = 'whitesands/icons/mob/robots.dmi'
 			special_light_key = "marinaSC"
 		if("Sleek")
 			cyborg_base_icon = "sleeksecurity"
-			cyborg_icon_override = 'waspstation/icons/mob/robots.dmi'
+			cyborg_icon_override = 'whitesands/icons/mob/robots.dmi'
 			special_light_key = "sleeksecurity"
 		if("#9")
 			cyborg_base_icon = "servbot-sec"
-			cyborg_icon_override = 'waspstation/icons/mob/robots.dmi'
+			cyborg_icon_override = 'whitesands/icons/mob/robots.dmi'
 			special_light_key = "servbot-sec"
 		if("Kodiak")
 			cyborg_base_icon = "kodiak-sec"
-			cyborg_icon_override = 'waspstation/icons/mob/robots.dmi'
+			cyborg_icon_override = 'whitesands/icons/mob/robots.dmi'
 			special_light_key = "kodiak-sec"
 		if("Noble")
 			cyborg_base_icon = "Noble-SEC"
-			cyborg_icon_override = 'waspstation/icons/mob/robots.dmi'
+			cyborg_icon_override = 'whitesands/icons/mob/robots.dmi'
 			special_light_key = "Noble-SEC"
 		if("R34 - SEC10a 'Woody'")
 			cyborg_base_icon = "woody"
-			cyborg_icon_override = 'waspstation/icons/mob/robots.dmi'
+			cyborg_icon_override = 'whitesands/icons/mob/robots.dmi'
 			special_light_key = "woody"
 		if("Booty")
 			cyborg_base_icon = "booty-red"
-			cyborg_icon_override = 'waspstation/icons/mob/robots.dmi'
+			cyborg_icon_override = 'whitesands/icons/mob/robots.dmi'
 			special_light_key = "booty-red"
 		else
 			return FALSE
 	return ..()
-//Wasp End
+//WS End
 
 /obj/item/robot_module/security/do_transform_animation()
 	..()
@@ -678,73 +678,73 @@
 	hat_offset = -5
 	clean_on_move = TRUE
 
-//Wasp Begin
+//WS Begin
 /obj/item/robot_module/janitor/be_transformed_to(obj/item/robot_module/old_module)
 	var/mob/living/silicon/robot/R = loc
 	var/static/list/jan_icons
 	if(!jan_icons)
 		jan_icons = list(
-		"Antique" = image(icon = 'waspstation/icons/mob/robots.dmi', icon_state = "janbot"),
-		"Mechaduster" = image(icon = 'waspstation/icons/mob/robots.dmi', icon_state = "mechaduster"),
-		"HAN-D" = image(icon = 'waspstation/icons/mob/robots.dmi', icon_state = "han-d"),
+		"Antique" = image(icon = 'whitesands/icons/mob/robots.dmi', icon_state = "janbot"),
+		"Mechaduster" = image(icon = 'whitesands/icons/mob/robots.dmi', icon_state = "mechaduster"),
+		"HAN-D" = image(icon = 'whitesands/icons/mob/robots.dmi', icon_state = "han-d"),
 		"Default" = image(icon = 'icons/mob/robots.dmi', icon_state = "janitor"),
-		"Droid - 'Mopbot'" = image(icon = 'waspstation/icons/mob/robots.dmi', icon_state = "droid-janitor"),
-		"Marina" = image(icon = 'waspstation/icons/mob/robots.dmi', icon_state = "marinaJN"),
-		"Sleek" = image(icon = 'waspstation/icons/mob/robots.dmi', icon_state = "sleekjanitor"),
-		"#29" = image(icon = 'waspstation/icons/mob/robots.dmi', icon_state = "servbot-jani"),
-		"Noble" = image(icon = 'waspstation/icons/mob/robots.dmi', icon_state = "Noble-JAN"),
-		"R34 - CUS3a 'Flynn'" = image(icon = 'waspstation/icons/mob/robots.dmi', icon_state = "flynn"),
-		"Booty" = image(icon = 'waspstation/icons/mob/robots.dmi', icon_state = "booty-green")
+		"Droid - 'Mopbot'" = image(icon = 'whitesands/icons/mob/robots.dmi', icon_state = "droid-janitor"),
+		"Marina" = image(icon = 'whitesands/icons/mob/robots.dmi', icon_state = "marinaJN"),
+		"Sleek" = image(icon = 'whitesands/icons/mob/robots.dmi', icon_state = "sleekjanitor"),
+		"#29" = image(icon = 'whitesands/icons/mob/robots.dmi', icon_state = "servbot-jani"),
+		"Noble" = image(icon = 'whitesands/icons/mob/robots.dmi', icon_state = "Noble-JAN"),
+		"R34 - CUS3a 'Flynn'" = image(icon = 'whitesands/icons/mob/robots.dmi', icon_state = "flynn"),
+		"Booty" = image(icon = 'whitesands/icons/mob/robots.dmi', icon_state = "booty-green")
 		)
 		jan_icons = sortList(jan_icons)
 	var/jan_borg_icon = show_radial_menu(R, R , jan_icons, custom_check = CALLBACK(src, .proc/check_menu, R), radius = 42, require_near = TRUE)
 	switch(jan_borg_icon)
 		if("Antique")
 			cyborg_base_icon = "janbot"
-			cyborg_icon_override = 'waspstation/icons/mob/robots.dmi'
+			cyborg_icon_override = 'whitesands/icons/mob/robots.dmi'
 			special_light_key = "janbot"
 		if("Mechaduster")
 			cyborg_base_icon = "mechaduster"
-			cyborg_icon_override = 'waspstation/icons/mob/robots.dmi'
+			cyborg_icon_override = 'whitesands/icons/mob/robots.dmi'
 			special_light_key = "mechaduster"
 		if("HAN-D")
 			cyborg_base_icon = "han-d"
-			cyborg_icon_override = 'waspstation/icons/mob/robots.dmi'
+			cyborg_icon_override = 'whitesands/icons/mob/robots.dmi'
 			special_light_key = "han-d"
 		if("Default")
 			cyborg_base_icon = "janitor"
 		if("Droid - 'Mopbot'")
 			cyborg_base_icon = "droid-janitor"
-			cyborg_icon_override = 'waspstation/icons/mob/robots.dmi'
+			cyborg_icon_override = 'whitesands/icons/mob/robots.dmi'
 			special_light_key = "droid-janitor"
 		if("Marina")
 			cyborg_base_icon = "marinaJN"
-			cyborg_icon_override = 'waspstation/icons/mob/robots.dmi'
+			cyborg_icon_override = 'whitesands/icons/mob/robots.dmi'
 			special_light_key = "marinaJN"
 		if("Sleek")
 			cyborg_base_icon = "sleekjanitor"
-			cyborg_icon_override = 'waspstation/icons/mob/robots.dmi'
+			cyborg_icon_override = 'whitesands/icons/mob/robots.dmi'
 			special_light_key = "sleekjanitor"
 		if("#29")
 			cyborg_base_icon = "servbot-jani"
-			cyborg_icon_override = 'waspstation/icons/mob/robots.dmi'
+			cyborg_icon_override = 'whitesands/icons/mob/robots.dmi'
 			special_light_key = "servbot-jani"
 		if("Noble")
 			cyborg_base_icon = "Noble-JAN"
-			cyborg_icon_override = 'waspstation/icons/mob/robots.dmi'
+			cyborg_icon_override = 'whitesands/icons/mob/robots.dmi'
 			special_light_key = "Noble-JAN"
 		if("R34 - CUS3a 'Flynn'")
 			cyborg_base_icon = "flynn"
-			cyborg_icon_override = 'waspstation/icons/mob/robots.dmi'
+			cyborg_icon_override = 'whitesands/icons/mob/robots.dmi'
 			special_light_key = "flynn"
 		if("Booty")
 			cyborg_base_icon = "booty-green"
-			cyborg_icon_override = 'waspstation/icons/mob/robots.dmi'
+			cyborg_icon_override = 'whitesands/icons/mob/robots.dmi'
 			special_light_key = "booty-green"
 		else
 			return FALSE
 	return ..()
-//Wasp End
+//WS End
 
 /obj/item/reagent_containers/spray/cyborg_drying
 	name = "drying agent spray"
@@ -829,7 +829,7 @@
 	if(O)
 		O.reagents.add_reagent(/datum/reagent/consumable/enzyme, 2 * coeff)
 
-//Wasp Edits Begin
+//WS Edits Begin
 /obj/item/robot_module/butler/be_transformed_to(obj/item/robot_module/old_module)
 	var/mob/living/silicon/robot/R = loc
 	var/static/list/service_icons
@@ -840,14 +840,14 @@
 		"Default - 'Bro'" = image(icon = 'icons/mob/robots.dmi', icon_state = "brobot"),
 		"Default - 'Kent'" = image(icon = 'icons/mob/robots.dmi', icon_state = "kent"),
 		"Default - 'Maximillion'" = image(icon = 'icons/mob/robots.dmi', icon_state = "tophat"),
-		"Default - 'Hydro'" = image(icon = 'waspstation/icons/mob/robots.dmi', icon_state = "hydrobot"),
-		"Marina" = image(icon = 'waspstation/icons/mob/robots.dmi', icon_state = "marinaSV"),
-		"Sleek" = image(icon = 'waspstation/icons/mob/robots.dmi', icon_state = "sleekservice"),
-		"#27" = image(icon = 'waspstation/icons/mob/robots.dmi', icon_state = "servbot-service"),
-		"Kodiak - 'Teddy'" = image(icon = 'waspstation/icons/mob/robots.dmi', icon_state = "kodiak-service"),
-		"Noble" = image(icon = 'waspstation/icons/mob/robots.dmi', icon_state = "Noble-SRV"),
-		"R34 - SRV9a 'Llyod'" = image(icon = 'waspstation/icons/mob/robots.dmi', icon_state = "lloyd"),
-		"Booty" = image(icon = 'waspstation/icons/mob/robots.dmi', icon_state = "booty-flower")
+		"Default - 'Hydro'" = image(icon = 'whitesands/icons/mob/robots.dmi', icon_state = "hydrobot"),
+		"Marina" = image(icon = 'whitesands/icons/mob/robots.dmi', icon_state = "marinaSV"),
+		"Sleek" = image(icon = 'whitesands/icons/mob/robots.dmi', icon_state = "sleekservice"),
+		"#27" = image(icon = 'whitesands/icons/mob/robots.dmi', icon_state = "servbot-service"),
+		"Kodiak - 'Teddy'" = image(icon = 'whitesands/icons/mob/robots.dmi', icon_state = "kodiak-service"),
+		"Noble" = image(icon = 'whitesands/icons/mob/robots.dmi', icon_state = "Noble-SRV"),
+		"R34 - SRV9a 'Llyod'" = image(icon = 'whitesands/icons/mob/robots.dmi', icon_state = "lloyd"),
+		"Booty" = image(icon = 'whitesands/icons/mob/robots.dmi', icon_state = "booty-flower")
 		)
 		service_icons = sortList(service_icons)
 	var/service_robot_icon = show_radial_menu(R, R , service_icons, custom_check = CALLBACK(src, .proc/check_menu, R), radius = 42, require_near = TRUE)
@@ -864,7 +864,7 @@
 			hat_offset = INFINITY //He is already wearing a hat
 		if("Default - 'Hydro'")
 			cyborg_base_icon = "hydrobot"
-			cyborg_icon_override = 'waspstation/icons/mob/robots.dmi'
+			cyborg_icon_override = 'whitesands/icons/mob/robots.dmi'
 			special_light_key = "hydrobot"
 		if("Default - 'Kent'")
 			cyborg_base_icon = "kent"
@@ -872,36 +872,36 @@
 			hat_offset = 3
 		if("Marina")
 			cyborg_base_icon = "marinaSV"
-			cyborg_icon_override = 'waspstation/icons/mob/robots.dmi'
+			cyborg_icon_override = 'whitesands/icons/mob/robots.dmi'
 			special_light_key = "marinaSV"
 		if("Sleek")
 			cyborg_base_icon = "sleekservice"
-			cyborg_icon_override = 'waspstation/icons/mob/robots.dmi'
+			cyborg_icon_override = 'whitesands/icons/mob/robots.dmi'
 			special_light_key = "sleekservice"
 		if("#27")
 			cyborg_base_icon = "servbot-service"
-			cyborg_icon_override = 'waspstation/icons/mob/robots.dmi'
+			cyborg_icon_override = 'whitesands/icons/mob/robots.dmi'
 			special_light_key = "servbot-service"
 		if("Kodiak - 'Teddy'")
 			cyborg_base_icon = "kodiak-service"
-			cyborg_icon_override = 'waspstation/icons/mob/robots.dmi'
+			cyborg_icon_override = 'whitesands/icons/mob/robots.dmi'
 			special_light_key = "kodiak-service"
 		if("Noble")
 			cyborg_base_icon = "Noble-SRV"
-			cyborg_icon_override = 'waspstation/icons/mob/robots.dmi'
+			cyborg_icon_override = 'whitesands/icons/mob/robots.dmi'
 			special_light_key = "Noble-SRV"
 		if("R34 - SRV9a 'Llyod'")
 			cyborg_base_icon = "lloyd"
-			cyborg_icon_override = 'waspstation/icons/mob/robots.dmi'
+			cyborg_icon_override = 'whitesands/icons/mob/robots.dmi'
 			special_light_key = "lloyd"
 		if("Booty")
 			cyborg_base_icon = "booty-flower"
-			cyborg_icon_override = 'waspstation/icons/mob/robots.dmi'
+			cyborg_icon_override = 'whitesands/icons/mob/robots.dmi'
 			special_light_key = "booty-flower"
 		else
 			return FALSE
 	return ..()
-//Wasp Edits End
+//WS Edits End
 
 /obj/item/robot_module/miner
 	name = "Miner"
@@ -924,68 +924,68 @@
 	hat_offset = 0
 	var/obj/item/t_scanner/adv_mining_scanner/cyborg/mining_scanner //built in memes.
 
-//Wasp Begin
+//WS Begin
 /obj/item/robot_module/miner/be_transformed_to(obj/item/robot_module/old_module)
 	var/mob/living/silicon/robot/R = loc
 	var/static/list/mining_icons
 	if(!mining_icons)
 		mining_icons = list(
-		"Antique" = image(icon = 'waspstation/icons/mob/robots.dmi', icon_state = "minerbot"),
+		"Antique" = image(icon = 'whitesands/icons/mob/robots.dmi', icon_state = "minerbot"),
 		"Default" = image(icon = 'icons/mob/robots.dmi', icon_state = "miner"),
-		"Wall-A" = image(icon = 'waspstation/icons/mob/robots.dmi', icon_state = "wall-a"),
-		"Droid" = image(icon = 'waspstation/icons/mob/robots.dmi', icon_state = "droid-miner"),
-		"Marina" = image(icon = 'waspstation/icons/mob/robots.dmi', icon_state = "marinaMN"),
-		"Sleek" = image(icon = 'waspstation/icons/mob/robots.dmi', icon_state = "sleekminer"),
-		"#31" = image(icon = 'waspstation/icons/mob/robots.dmi', icon_state = "servbot-miner"),
-		"Kodiak" = image(icon = 'waspstation/icons/mob/robots.dmi', icon_state = "kodiak-miner"),
-		"Noble" = image(icon = 'waspstation/icons/mob/robots.dmi', icon_state = "Noble-SUP"),
-		"R34 - MIN2a 'Ishimura'" = image(icon = 'waspstation/icons/mob/robots.dmi', icon_state = "ishimura")
+		"Wall-A" = image(icon = 'whitesands/icons/mob/robots.dmi', icon_state = "wall-a"),
+		"Droid" = image(icon = 'whitesands/icons/mob/robots.dmi', icon_state = "droid-miner"),
+		"Marina" = image(icon = 'whitesands/icons/mob/robots.dmi', icon_state = "marinaMN"),
+		"Sleek" = image(icon = 'whitesands/icons/mob/robots.dmi', icon_state = "sleekminer"),
+		"#31" = image(icon = 'whitesands/icons/mob/robots.dmi', icon_state = "servbot-miner"),
+		"Kodiak" = image(icon = 'whitesands/icons/mob/robots.dmi', icon_state = "kodiak-miner"),
+		"Noble" = image(icon = 'whitesands/icons/mob/robots.dmi', icon_state = "Noble-SUP"),
+		"R34 - MIN2a 'Ishimura'" = image(icon = 'whitesands/icons/mob/robots.dmi', icon_state = "ishimura")
 		)
 		mining_icons = sortList(mining_icons)
 	var/mining_borg_icon = show_radial_menu(R, R , mining_icons, custom_check = CALLBACK(src, .proc/check_menu, R), radius = 42, require_near = TRUE)
 	switch(mining_borg_icon)
 		if("Antique")
 			cyborg_base_icon = "minerbot"
-			cyborg_icon_override = 'waspstation/icons/mob/robots.dmi'
+			cyborg_icon_override = 'whitesands/icons/mob/robots.dmi'
 			special_light_key = "minerbot"
 		if("Default")
 			cyborg_base_icon = "miner"
 		if("Wall-A")
 			cyborg_base_icon = "wall-a"
-			cyborg_icon_override = 'waspstation/icons/mob/robots.dmi'
+			cyborg_icon_override = 'whitesands/icons/mob/robots.dmi'
 			special_light_key = "wall-a"
 		if("Droid")
 			cyborg_base_icon = "droid-miner"
-			cyborg_icon_override = 'waspstation/icons/mob/robots.dmi'
+			cyborg_icon_override = 'whitesands/icons/mob/robots.dmi'
 			special_light_key = "droid-miner"
 		if("Marina")
 			cyborg_base_icon = "marinaMN"
-			cyborg_icon_override = 'waspstation/icons/mob/robots.dmi'
+			cyborg_icon_override = 'whitesands/icons/mob/robots.dmi'
 			special_light_key = "marinaMN"
 		if("Sleek")
 			cyborg_base_icon = "sleekminer"
-			cyborg_icon_override = 'waspstation/icons/mob/robots.dmi'
+			cyborg_icon_override = 'whitesands/icons/mob/robots.dmi'
 			special_light_key = "sleekminer"
 		if("#31")
 			cyborg_base_icon = "servbot-miner"
-			cyborg_icon_override = 'waspstation/icons/mob/robots.dmi'
+			cyborg_icon_override = 'whitesands/icons/mob/robots.dmi'
 			special_light_key = "servbot-miner"
 		if("Kodiak")
 			cyborg_base_icon = "kodiak-miner"
-			cyborg_icon_override = 'waspstation/icons/mob/robots.dmi'
+			cyborg_icon_override = 'whitesands/icons/mob/robots.dmi'
 			special_light_key = "kodiak-miner"
 		if("Noble")
 			cyborg_base_icon = "Noble-SUP"
-			cyborg_icon_override = 'waspstation/icons/mob/robots.dmi'
+			cyborg_icon_override = 'whitesands/icons/mob/robots.dmi'
 			special_light_key = "Noble-SUP"
 		if("R34 - MIN2a 'Ishimura'")
 			cyborg_base_icon = "ishimura"
-			cyborg_icon_override = 'waspstation/icons/mob/robots.dmi'
+			cyborg_icon_override = 'whitesands/icons/mob/robots.dmi'
 			special_light_key = "ishimura"
 		else
 			return FALSE
 	return ..()
-//Wasp End
+//WS End
 
 /obj/item/robot_module/miner/rebuild_modules()
 	. = ..()

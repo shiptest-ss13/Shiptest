@@ -13,7 +13,7 @@
 	exp_type = EXP_TYPE_CREW
 	exp_type_department = EXP_TYPE_COMMAND
 	wiki_page = "Captain"
-	special_notice = "You may be the Captain of this station, but you are still beholden to The Corporation." //WaspStation Edit - Wikilinks/Warning
+	special_notice = "You may be the Captain of this station, but you are still beholden to The Corporation." //WS Edit - Wikilinks/Warning
 
 	outfit = /datum/outfit/job/captain
 
@@ -43,11 +43,11 @@
 	ears = /obj/item/radio/headset/heads/captain/alt
 	gloves = /obj/item/clothing/gloves/color/captain
 	uniform =  /obj/item/clothing/under/rank/command/captain
-	alt_uniform = /obj/item/clothing/under/rank/command/captain/parade //Wasp Edit - Alt Uniforms
-	dcoat = /obj/item/clothing/under/rank/command/captain/suit //Wasp Edit - Alt Uniforms
+	alt_uniform = /obj/item/clothing/under/rank/command/captain/parade //WS Edit - Alt Uniforms
+	dcoat = /obj/item/clothing/under/rank/command/captain/suit //WS Edit - Alt Uniforms
 	suit = /obj/item/clothing/suit/armor/vest/capcarapace
 	alt_suit = /obj/item/clothing/suit/armor/vest/capcarapace/alt
-	dcoat = /obj/item/clothing/suit/hooded/wintercoat/captain //Wasp Edit - Alt Uniforms
+	dcoat = /obj/item/clothing/suit/hooded/wintercoat/captain //WS Edit - Alt Uniforms
 	shoes = /obj/item/clothing/shoes/sneakers/brown
 	head = /obj/item/clothing/head/caphat
 	backpack_contents = list(/obj/item/melee/classic_baton/telescopic=1, /obj/item/station_charter=1)

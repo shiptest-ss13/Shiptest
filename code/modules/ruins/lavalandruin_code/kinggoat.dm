@@ -40,7 +40,7 @@
 	item_state = "c20r"
 	w_class = WEIGHT_CLASS_BULKY
 	ammo_type = list(/obj/item/ammo_casing/energy/goat)
-	internal_cell = TRUE //prevents you from giving it an OP cell - WaspStation Edit
+	internal_cell = TRUE //prevents you from giving it an OP cell - WS Edit
 	cell_type = /obj/item/stock_parts/cell
 	clumsy_check = 0
 	selfcharge = 1

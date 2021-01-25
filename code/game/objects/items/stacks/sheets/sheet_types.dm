@@ -622,7 +622,7 @@ GLOBAL_LIST_INIT(bronze_recipes, list ( \
 	w_class = WEIGHT_CLASS_NORMAL
 	throw_speed = 1
 	throw_range = 3
-	grind_results = list(/datum/reagent/calcium = 10)		// Wasp Edit - Fuck
+	grind_results = list(/datum/reagent/calcium = 10)		//WS Edit - Fuck
 	merge_type = /obj/item/stack/sheet/bone
 	material_type = /datum/material/bone
 

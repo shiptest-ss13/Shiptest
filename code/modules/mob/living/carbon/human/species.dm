@@ -779,7 +779,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		if(!H.dna.features["spider_mandibles"] || H.dna.features["spider_mandibles"] == "None" || H.head && (H.head.flags_inv & HIDEFACE) || (H.wear_mask && (H.wear_mask.flags_inv & HIDEFACE)) || !HD || HD.status == BODYPART_ROBOTIC)
 			bodyparts_to_add -= "spider_mandibles"
 
-	//Waspstation - Fix squids
+	//WS - Fix squids
 	if("squid_face" in mutant_bodyparts)
 		if(!H.dna.features["squid_face"] || H.dna.features["squid_face"] == "None" || H.head && (H.head.flags_inv & HIDEFACE) || (H.wear_mask && (H.wear_mask.flags_inv & HIDEFACE)) || !HD || HD.status == BODYPART_ROBOTIC)
 			bodyparts_to_add -= "squid_face"
@@ -1012,11 +1012,11 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 				return FALSE
 			if(H.num_legs < 2)
 				return FALSE
-			if((DIGITIGRADE in species_traits) == (I.obj_flags != DIGITIGRADE_SHOE)) //WaspStation Start - Digitigrade Magboots
+			if((DIGITIGRADE in species_traits) == (I.obj_flags != DIGITIGRADE_SHOE)) //WS Start - Digitigrade Magboots
 				if(!(DIGITIGRADE_COMPATIBLE & I.obj_flags))
 					if(!disable_warning)
 						to_chat(H, "<span class='warning'>These shoes aren't compatible with your feet!</span>")
-					return FALSE //WaspStation End - Digitigrade Magboots
+					return FALSE //WS End - Digitigrade Magboots
 			return equip_delay_self_check(I, H, bypass_equip_delay_self)
 		if(ITEM_SLOT_BELT)
 			if(H.belt && !swap)

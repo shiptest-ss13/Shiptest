@@ -126,11 +126,11 @@
 	if (CONFIG_GET(flag/log_ooc))
 		WRITE_LOG(GLOB.world_game_log, "OOC: [text]")
 
-//Begin Wasp Edit
+//BeginWS Edit
 /proc/log_looc(text)
 	if (CONFIG_GET(flag/log_ooc))
 		WRITE_LOG(GLOB.world_game_log, "LOOC: [text]")
-//End Wasp Edit
+//EndWS Edit
 
 /proc/log_whisper(text)
 	if (CONFIG_GET(flag/log_whisper))

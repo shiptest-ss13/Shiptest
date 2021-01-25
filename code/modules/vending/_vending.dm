@@ -717,7 +717,7 @@ GLOBAL_LIST_EMPTY(vending_products)
 		var/list/data = list(
 			path = replacetext(replacetext("[R.product_path]", "/obj/item/", ""), "/", "-"),
 			name = R.name,
-			price = R.custom_premium_price || extra_price,                                            // WaspStation Edit - vendor incorrect contraband price fix
+			price = R.custom_premium_price || extra_price,                                            //WS Edit - vendor incorrect contraband price fix
 			max_amount = R.max_amount,
 			ref = REF(R),
 			premium = TRUE

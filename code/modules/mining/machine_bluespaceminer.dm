@@ -1,7 +1,7 @@
 /obj/machinery/power/bluespace_miner
 	name = "bluespace mining machine"
 	desc = "A machine that uses the magic of Bluespace to slowly generate materials and add them to a linked ore silo."
-	icon = 'waspstation/icons/obj/machines/bsm.dmi'
+	icon = 'whitesands/icons/obj/machines/bsm.dmi'
 	icon_state = "bsm_off"
 	density = TRUE
 	circuit = /obj/item/circuitboard/machine/bluespace_miner

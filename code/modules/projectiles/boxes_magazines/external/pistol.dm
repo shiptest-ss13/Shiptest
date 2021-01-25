@@ -27,7 +27,7 @@
 
 /obj/item/ammo_box/magazine/m45
 	name = "handgun magazine (.45)"
-	icon = 'waspstation/icons/obj/ammo.dmi'
+	icon = 'whitesands/icons/obj/ammo.dmi'
 	icon_state = "45-8"
 	ammo_type = /obj/item/ammo_casing/c45
 	caliber = ".45"
@@ -43,7 +43,7 @@
 /obj/item/ammo_box/magazine/co9mm //WS edit begin - commander
 	name = "Commander magazine (9mm)"
 	desc = "A single stack M1911 reproduction magazine, modified to chamber 9mm."
-	icon = 'waspstation/icons/obj/ammo.dmi'
+	icon = 'whitesands/icons/obj/ammo.dmi'
 	icon_state = "co9mm-8"
 	ammo_type = /obj/item/ammo_casing/c9mm
 	caliber = "9mm"

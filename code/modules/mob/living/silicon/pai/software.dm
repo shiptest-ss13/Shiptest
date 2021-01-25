@@ -5,7 +5,7 @@
 //  - Camera jack
 
 
-/mob/living/silicon/pai/var/list/available_software = list( // Waspstation -- idk what to do about removing code so i'm just putting this note here to say, removes messanger and manifest, thet get it for free now
+/mob/living/silicon/pai/var/list/available_software = list( //WS -- idk what to do about removing code so i'm just putting this note here to say, removes messanger and manifest, thet get it for free now
 															//Nightvision
 															//T-Ray
 															//radiation eyes
@@ -309,8 +309,8 @@
 	dat += "<A href='byond://?src=[REF(src)];software=directives'>Directives</A><br>"
 	dat += "<A href='byond://?src=[REF(src)];software=radio;sub=0'>Radio Configuration</A><br>"
 	dat += "<A href='byond://?src=[REF(src)];software=image'>Screen Display</A><br>"
-	dat += "<a href='byond://?src=[REF(src)];software=pdamessage;sub=0'>Digital Messenger</a> <br>" // Waspstation Start -- pAIs get messanger and manifest for free
-	dat += "<a href='byond://?src=[REF(src)];software=manifest;sub=0'>Crew Manifest</a> <br>" // WaspStation end
+	dat += "<a href='byond://?src=[REF(src)];software=pdamessage;sub=0'>Digital Messenger</a> <br>" //WS Start -- pAIs get messanger and manifest for free
+	dat += "<a href='byond://?src=[REF(src)];software=manifest;sub=0'>Crew Manifest</a> <br>" //WS end
 	//dat += "Text Messaging <br>"
 	dat += "<br>"
 

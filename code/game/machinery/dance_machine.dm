@@ -5,7 +5,7 @@
 	icon_state = "jukebox"
 	verb_say = "states"
 	density = TRUE
-	// WaspStation Edit - Removed Jukebox Access Requirements
+	//WS Edit - Removed Jukebox Access Requirements
 	var/active = FALSE
 	var/list/rangers = list()
 	var/stop = 0
@@ -64,7 +64,7 @@
 		to_chat(user,"<span class='warning'>Error: Access Denied.</span>")
 		user.playsound_local(src, 'sound/misc/compiler-failure.ogg', 25, TRUE)
 		return UI_CLOSE
-	if(!SSjukeboxes.songs.len && !isobserver(user)) //Wasp Edit Cit #7367
+	if(!SSjukeboxes.songs.len && !isobserver(user)) //WS Edit Cit #7367
 		to_chat(user,"<span class='warning'>Error: No music tracks have been authorized for your station. Petition Central Command to resolve this issue.</span>")
 		playsound(src, 'sound/misc/compiler-failure.ogg', 25, TRUE)
 		return UI_CLOSE
@@ -80,7 +80,7 @@
 	var/list/data = list()
 	data["active"] = active
 	data["songs"] = list()
-	for(var/datum/track/S in SSjukeboxes.songs) //Wasp Edit Cit #7367
+	for(var/datum/track/S in SSjukeboxes.songs) //WS Edit Cit #7367
 		var/list/track_data = list(
 			name = S.song_name
 		)
@@ -109,11 +109,11 @@
 					to_chat(usr, "<span class='warning'>Error: The device is still resetting from the last activation, it will be ready again in [DisplayTimeText(stop-world.time)].</span>")
 					playsound(src, 'sound/misc/compiler-failure.ogg', 50, TRUE)
 					return
-				if(!istype(selection)) //Wasp Edit Cit #7367
+				if(!istype(selection)) //WS Edit Cit #7367
 					to_chat(usr, "<span class='warning'>Error: Severe user incompetence detected.</span>")
 					playsound(src, 'sound/misc/compiler-failure.ogg', 50, TRUE)
 					return
-				if(!activate_music()) //Wasp Edit Cit #7367
+				if(!activate_music()) //WS Edit Cit #7367
 					to_chat(usr, "<span class='warning'>Error: Generic hardware failure.</span>")
 					playsound(src, 'sound/misc/compiler-failure.ogg', 50, TRUE)
 					return
@@ -126,7 +126,7 @@
 				to_chat(usr, "<span class='warning'>Error: You cannot change the song until the current one is over.</span>")
 				return
 			var/list/available = list()
-			for(var/datum/track/S in SSjukeboxes.songs) //Wasp Edit Cit #7367
+			for(var/datum/track/S in SSjukeboxes.songs) //WS Edit Cit #7367
 				available[S.song_name] = S
 			var/selected = params["track"]
 			if(QDELETED(src) || !selected || !istype(available[selected], /datum/track))
@@ -149,7 +149,7 @@
 				return TRUE
 
 /obj/machinery/jukebox/proc/activate_music()
-	var/jukeboxslottotake = SSjukeboxes.addjukebox(src, selection, 2) //Wasp Edit Cit #7367 & #7458
+	var/jukeboxslottotake = SSjukeboxes.addjukebox(src, selection, 2) //WS Edit Cit #7367 & #7458
 	if(jukeboxslottotake)
 		active = TRUE
 		update_icon()
@@ -198,7 +198,7 @@
 	for(var/i in 1 to 10)
 		spawn_atom_to_turf(/obj/effect/temp_visual/hierophant/telegraph/edge, src, 1, FALSE)
 		sleep(5)
-		if(QDELETED(src)) //Wasp Edit Cit #11039
+		if(QDELETED(src)) //WS Edit Cit #11039
 			return
 
 #define DISCO_INFENO_RANGE (rand(85, 115)*0.01)
@@ -433,7 +433,7 @@
 	lying_prev = 0
 
 /obj/machinery/jukebox/proc/dance_over()
-	var/position = SSjukeboxes.findjukeboxindex(src) //Wasp Edit Cit #10689
+	var/position = SSjukeboxes.findjukeboxindex(src) //WS Edit Cit #10689
 	if(!position)
 		return
 	SSjukeboxes.removejukebox(position)
@@ -446,7 +446,7 @@
 	QDEL_LIST(sparkles)
 
 /obj/machinery/jukebox/process()
-	if(active && world.time >= stop) //Wasp Edit Cit #7367
+	if(active && world.time >= stop) //WS Edit Cit #7367
 		active = FALSE
 		dance_over()
 		playsound(src,'sound/machines/terminal_off.ogg',50,TRUE)

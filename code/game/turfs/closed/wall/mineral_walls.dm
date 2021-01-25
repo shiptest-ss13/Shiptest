@@ -217,7 +217,7 @@
 /turf/closed/wall/mineral/titanium //has to use this path due to how building walls works
 	name = "wall"
 	desc = "A light-weight titanium wall used in shuttles."
-	icon = 'waspstation/icons/turf/walls/shuttle_wall.dmi'
+	icon = 'whitesands/icons/turf/walls/shuttle_wall.dmi'
 	icon_state = "shuttle_wall-0"
 	base_icon_state = "shuttle_wall"
 	explosion_block = 3
@@ -229,7 +229,7 @@
 	canSmoothWith = list(SMOOTH_GROUP_TITANIUM_WALLS, SMOOTH_GROUP_AIRLOCK, SMOOTH_GROUP_SHUTTLE_PARTS)
 
 /turf/closed/wall/mineral/titanium/nodiagonal
-	icon = 'waspstation/icons/turf/walls/shuttle_wall.dmi'
+	icon = 'whitesands/icons/turf/walls/shuttle_wall.dmi'
 	icon_state = "map-shuttle_nd"
 	base_icon_state = "shuttle_wall"
 	smoothing_flags = SMOOTH_BITMASK

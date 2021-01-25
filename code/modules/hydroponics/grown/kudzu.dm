@@ -105,4 +105,4 @@
 	foodtype = VEGETABLES | GROSS
 	tastes = list("kudzu" = 1)
 	wine_power = 45
-	wine_flavor = "choking vines" //wasp edit: new wine flavors
+	wine_flavor = "choking vines" //WS edit: new wine flavors

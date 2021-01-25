@@ -166,8 +166,8 @@
 /obj/item/clothing/gloves/color/captain
 	desc = "Regal white gloves, with a nice gold trim, a diamond anti-shock coating, and an integrated thermal barrier, and armoured bracers. Swanky."
 	name = "captain's gloves"
-	icon = 'waspstation/icons/obj/clothing/gloves.dmi'
-	mob_overlay_icon = 'waspstation/icons/mob/clothing/hands.dmi'
+	icon = 'whitesands/icons/obj/clothing/gloves.dmi'
+	mob_overlay_icon = 'whitesands/icons/mob/clothing/hands.dmi'
 	icon_state = "captain"
 	item_state = "egloves"
 	siemens_coefficient = 0
@@ -222,10 +222,10 @@
 	icon = 'icons/obj/clothing/clockwork_garb.dmi'
 	icon_state = "clockwork_gauntlets"
 	item_state = "clockwork_gauntlets"
-	siemens_coefficient = 0				//Wasp Station eddit 	"Tinkers Gloves Insuls"
-	permeability_coefficient = 0.05		//Wasp Station eddit 	"Tinkers Gloves Insuls"
-	//siemens_coefficient = 0.8			Wasp Station eddit	"Tinkers Gloves Insuls"
-	//permeability_coefficient = 0.3	Wasp Station eddit 	"Tinkers Gloves Insuls"
+	siemens_coefficient = 0				//WS Station eddit 	"Tinkers Gloves Insuls"
+	permeability_coefficient = 0.05		//WS Station eddit 	"Tinkers Gloves Insuls"
+	//siemens_coefficient = 0.8			WS Station eddit	"Tinkers Gloves Insuls"
+	//permeability_coefficient = 0.3	WS Station eddit 	"Tinkers Gloves Insuls"
 	carrytrait = TRAIT_QUICK_BUILD
 	custom_materials = list(/datum/material/iron=2000, /datum/material/silver=1500, /datum/material/gold = 1000)
 

@@ -470,7 +470,7 @@
 					build_step++
 					return
 
-		// WaspStation Start -- hygienebot construction fix (Issue #301)
+		//WS Start -- hygienebot construction fix (Issue #301)
 		if(ASSEMBLY_SECOND_STEP)
 			if(istype(I, /obj/item/stack/ducts))
 				var/obj/item/stack/ducts/D = I
@@ -487,4 +487,4 @@
 						H.name = created_name
 						qdel(src)
 						return TRUE
-		// WaspStation end
+		//WS end

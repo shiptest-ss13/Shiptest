@@ -1,7 +1,7 @@
 /obj/item/storage/briefcase
 	name = "briefcase"
 	desc = "It's made of AUTHENTIC faux-leather and has a price-tag still attached. Its owner must be a real professional."
-	icon = 'waspstation/icons/obj/storage.dmi' //Wasp edit - Better briefcases
+	icon = 'whitesands/icons/obj/storage.dmi' //WS edit - Better briefcases
 	icon_state = "briefcase"
 	lefthand_file = 'icons/mob/inhands/equipment/briefcase_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/briefcase_righthand.dmi'

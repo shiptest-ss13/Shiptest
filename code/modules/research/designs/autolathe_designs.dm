@@ -155,7 +155,7 @@
 	id = "cable_coil"
 	build_type = AUTOLATHE
 	materials = list(/datum/material/iron = 10, /datum/material/glass = 5)
-	build_path = /obj/item/stack/cable_coil/random //Wasp Edit - Smartwire Revert
+	build_path = /obj/item/stack/cable_coil/random //WS Edit - Smartwire Revert
 	category = list("initial","Tools","Tool Designs")
 	maxstack = MAXCOIL
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
@@ -763,7 +763,7 @@
 	category = list("initial", "Misc")
 
 //hacked autolathe recipes
-// Waspstation - emagged recipies
+//WS - emagged recipies
 /datum/design/flamethrower
 	name = "Flamethrower"
 	id = "flamethrower"

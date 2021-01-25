@@ -122,7 +122,7 @@
 	H.update_hair()
 	playsound(loc, 'sound/items/welder2.ogg', 20, TRUE)
 
-/* Wasp edit - In modularized file
+/*WS edit - In modularized file
 /obj/item/razor/attack(mob/M, mob/user)
 	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
@@ -229,4 +229,4 @@
 			..()
 	else
 		..()
-Wasp end */
+WS end */

@@ -6,7 +6,7 @@
 	spawn_positions = 1
 	supervisors = "the head of personnel"
 	selection_color = "#bbe291"
-	wiki_page = "Janitor" //WaspStation Edit - Wikilinks/Warning
+	wiki_page = "Janitor" //WS Edit - Wikilinks/Warning
 
 	outfit = /datum/outfit/job/janitor
 
@@ -24,7 +24,7 @@
 	belt = /obj/item/pda/janitor
 	ears = /obj/item/radio/headset/headset_srv
 	uniform = /obj/item/clothing/under/rank/civilian/janitor
-	alt_uniform = /obj/item/clothing/under/rank/civilian/janitor/maid //Wasp Edit - Alt Uniforms
+	alt_uniform = /obj/item/clothing/under/rank/civilian/janitor/maid //WS Edit - Alt Uniforms
 	backpack_contents = list(/obj/item/modular_computer/tablet/preset/advanced=1)
 
 /datum/outfit/job/janitor/pre_equip(mob/living/carbon/human/H, visualsOnly)

@@ -6,7 +6,7 @@
 	spawn_positions = 1
 	supervisors = "the head of personnel"
 	selection_color = "#bbe291"
-	wiki_page = "Drinks" //WaspStation Edit - Wikilinks/Warning
+	wiki_page = "Drinks" //WS Edit - Wikilinks/Warning
 
 	outfit = /datum/outfit/job/bartender
 
@@ -24,7 +24,7 @@
 	belt = /obj/item/pda/bar
 	ears = /obj/item/radio/headset/headset_srv
 	uniform = /obj/item/clothing/under/rank/civilian/bartender
-	alt_uniform = /obj/item/clothing/under/rank/civilian/bartender/purple //Wasp Edit - Alt Uniforms
+	alt_uniform = /obj/item/clothing/under/rank/civilian/bartender/purple //WS Edit - Alt Uniforms
 	alt_suit = /obj/item/clothing/suit/apron/purple_bartender
 	suit = /obj/item/clothing/suit/armor/vest
 	backpack_contents = list(/obj/item/storage/box/beanbag=1)

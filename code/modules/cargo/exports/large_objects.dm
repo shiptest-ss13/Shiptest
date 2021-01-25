@@ -121,7 +121,7 @@
 	cost = 25
 	unit_name = "security barrier"
 	export_types = list(/obj/item/grenade/barrier, /obj/structure/barricade/security)
-/* Waspstation Begin - Cargo Rebalance?
+/*WS Begin - Cargo Rebalance?
 
 /datum/export/large/gas_canister
 	cost = 10 //Base cost of canister. You get more for nice gases inside.
@@ -142,4 +142,4 @@
 	worth += gases[/datum/gas/freon][MOLES]*15
 	return worth
 
-Waspstation end */
+WS end */

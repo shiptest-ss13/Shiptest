@@ -53,4 +53,4 @@
 	foodtype = VEGETABLES
 	tastes = list("koi" = 1)
 	wine_power = 40
-	wine_flavor = "something fishy" //wasp edit: new wine flavors
+	wine_flavor = "something fishy" //WS edit: new wine flavors

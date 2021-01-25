@@ -1,7 +1,7 @@
 /obj/item/gun/energy/pulse
 	name = "pulse rifle"
 	desc = "A heavy-duty, multifaceted energy rifle with three modes. Preferred by front-line combat personnel."
-	icon = 'waspstation/icons/obj/guns/energy.dmi' //waspstation edit
+	icon = 'whitesands/icons/obj/guns/energy.dmi' //WS edit
 	icon_state = "pulse"
 	item_state = null
 	w_class = WEIGHT_CLASS_BULKY
@@ -10,7 +10,7 @@
 	flags_1 =  CONDUCT_1
 	slot_flags = ITEM_SLOT_BACK
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/pulse, /obj/item/ammo_casing/energy/electrode, /obj/item/ammo_casing/energy/laser)
-	internal_cell = TRUE //prevents you from giving it an OP cell - WaspStation Edit
+	internal_cell = TRUE //prevents you from giving it an OP cell - WS Edit
 	cell_type = "/obj/item/stock_parts/cell/pulse"
 	fire_rate = 3
 	automatic = 1

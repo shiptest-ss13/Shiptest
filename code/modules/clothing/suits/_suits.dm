@@ -10,7 +10,7 @@
 	var/blood_overlay_type = "suit"
 	var/togglename = null
 	var/suittoggled = FALSE
-	pocket_storage_component_path = /datum/component/storage/concrete/pockets/exo // WaspStation Edit - Exowear Pockets
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/exo //WS Edit - Exowear Pockets
 
 
 /obj/item/clothing/suit/worn_overlays(isinhands = FALSE)

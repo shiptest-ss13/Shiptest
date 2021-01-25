@@ -265,13 +265,13 @@
 /obj/effect/anomaly/pyro/anomalyEffect()
 	..()
 	ticks++
-	if(ticks < 25) // WaspStation Edit - Pyroclastic Rebalance
+	if(ticks < 25) //WS Edit - Pyroclastic Rebalance
 		return
 	else
 		ticks = 0
 	var/turf/open/T = get_turf(src)
 	if(istype(T))
-		T.atmos_spawn_air("o2=5;plasma=5;TEMP=500") // WaspStation Edit - Pyroclastic Rebalance
+		T.atmos_spawn_air("o2=5;plasma=5;TEMP=500") //WS Edit - Pyroclastic Rebalance
 
 /obj/effect/anomaly/pyro/detonate()
 	INVOKE_ASYNC(src, .proc/makepyroslime)
@@ -279,7 +279,7 @@
 /obj/effect/anomaly/pyro/proc/makepyroslime()
 	var/turf/open/T = get_turf(src)
 	if(istype(T))
-		T.atmos_spawn_air("o2=250;plasma=250;TEMP=700") // WaspStation Edit - Pyroclastic Rebalance
+		T.atmos_spawn_air("o2=250;plasma=250;TEMP=700") //WS Edit - Pyroclastic Rebalance
 	var/new_colour = pick("red", "orange")
 	var/mob/living/simple_animal/slime/S = new(T, new_colour)
 	S.rabid = TRUE

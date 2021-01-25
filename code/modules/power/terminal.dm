@@ -22,7 +22,7 @@
 		master = null
 	return ..()
 
-/* Wasp Edit - Smartwire Revert - Fucking swear don't TG Marge This
+/*WS Edit - Smartwire Revert - Fucking swear don't TG Marge This
 /obj/machinery/power/terminal/should_have_node()
 	return TRUE
 */

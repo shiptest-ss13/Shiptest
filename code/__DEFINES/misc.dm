@@ -26,7 +26,7 @@
 #define GLOVES_LAYER			19
 #define SHOES_LAYER				18
 #define EARS_LAYER				17
-#define SPLINT_LAYER			16		//WaspStation Edit - breakable bones
+#define SPLINT_LAYER			16		//WS Edit - breakable bones
 #define SUIT_LAYER				15
 #define GLASSES_LAYER			14
 #define BELT_LAYER				13		//Possible make this an overlay of somethign required to wear a belt?

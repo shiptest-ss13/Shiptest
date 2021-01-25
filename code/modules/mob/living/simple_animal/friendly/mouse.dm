@@ -1,4 +1,4 @@
-//Wasp Edit
+//WS Edit
 GLOBAL_LIST_INIT(mouse_comestible, typecacheof(list(
 		/obj/effect/decal/cleanable/food,
 		/obj/effect/decal/cleanable/greenglow,
@@ -17,7 +17,7 @@ GLOBAL_VAR_INIT(mouse_spawned, 0)
 GLOBAL_VAR_INIT(mouse_killed, 0)
 
 #define FOODPERMOUSE 35
-//Wasp Edit
+//WS Edit
 
 /mob/living/simple_animal/mouse
 	name = "mouse"
@@ -31,7 +31,7 @@ GLOBAL_VAR_INIT(mouse_killed, 0)
 	emote_see = list("runs in a circle.", "shakes.")
 	speak_chance = 1
 	turns_per_move = 5
-	see_in_dark = 8 //wasp edit
+	see_in_dark = 8 //WS edit
 	maxHealth = 5
 	health = 5
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/mouse = 1)
@@ -46,14 +46,14 @@ GLOBAL_VAR_INIT(mouse_killed, 0)
 	pass_flags = PASSTABLE | PASSGRILLE | PASSMOB
 	mob_size = MOB_SIZE_TINY
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
-	lighting_alpha = LIGHTING_PLANE_ALPHA_MOSTLY_INVISIBLE //Wasp Edit
+	lighting_alpha = LIGHTING_PLANE_ALPHA_MOSTLY_INVISIBLE //WS Edit
 	var/body_color //brown, gray and white, leave blank for random
 	gold_core_spawnable = FRIENDLY_SPAWN
-	move_force = MOVE_FORCE_EXTREMELY_WEAK // Wasp Edit
+	move_force = MOVE_FORCE_EXTREMELY_WEAK //WS Edit
 	var/chew_probability = 1
-	var/full = FALSE // Wasp Edit
-	var/eating = FALSE // Wasp Edit
-	var/cheesed = FALSE // Wasp Edit
+	var/full = FALSE //WS Edit
+	var/eating = FALSE //WS Edit
+	var/cheesed = FALSE //WS Edit
 	can_be_held = TRUE
 	held_state = "mouse_gray"
 
@@ -66,7 +66,7 @@ GLOBAL_VAR_INIT(mouse_killed, 0)
 	icon_living = "mouse_[body_color]"
 	icon_dead = "mouse_[body_color]_dead"
 
-//Wasp Begin
+//WS Begin
 /mob/living/simple_animal/mouse/proc/splat()
 	if(!key)
 		src.health = 0
@@ -76,10 +76,10 @@ GLOBAL_VAR_INIT(mouse_killed, 0)
 		adjustHealth(rand(7,12))
 		if(health <= 0)
 			src.icon_dead = "mouse_[body_color]_splat"
-//Wasp End
+//WS End
 
 /mob/living/simple_animal/mouse/death(gibbed, toast)
-	GLOB.mouse_killed++ //Wasp Edit
+	GLOB.mouse_killed++ //WS Edit
 	if(!ckey)
 		..(1)
 		if(!gibbed)
@@ -115,7 +115,7 @@ GLOBAL_VAR_INIT(mouse_killed, 0)
 					C.deconstruct()
 					visible_message("<span class='warning'>[src] chews through the [C].</span>")
 
-//Wasp Begin
+//WS Begin
 /mob/living/simple_animal/mouse/Move()
 	. = ..()
 	if(stat != CONSCIOUS)
@@ -246,7 +246,7 @@ GLOBAL_VAR_INIT(mouse_killed, 0)
 	var/turf/T = get_turf(M)
 	do_teleport(M, T, teleport_radius, channel = TELEPORT_CHANNEL_BLUESPACE)
 	..()
-//Wasp End
+//WS End
 
 /*
  * Mouse types

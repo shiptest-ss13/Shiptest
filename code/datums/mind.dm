@@ -41,7 +41,7 @@
 	var/assigned_role
 	var/special_role
 	var/list/restricted_roles = list()
-	var/list/datum/objective/objectives = list() // WaspStation Edit - Cryopods
+	var/list/datum/objective/objectives = list() //WS Edit - Cryopods
 
 	var/list/spell_list = list() // Wizard mode & "Give Spell" badmin button.
 
@@ -73,7 +73,7 @@
 	///Assoc list of skills. Use SKILL_LVL to access level, and SKILL_EXP to access skill's exp.
 	var/list/known_skills = list()
 
-	///Wasp edit - Crew objectives variable, stores crew objective datums
+	///WS edit - Crew objectives variable, stores crew objective datums
 	var/list/crew_objectives
 
 

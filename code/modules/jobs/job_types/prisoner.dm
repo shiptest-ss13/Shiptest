@@ -15,7 +15,7 @@
 	name = "Prisoner"
 
 	uniform = /obj/item/clothing/under/rank/prisoner
-	alt_uniform = /obj/item/clothing/under/rank/prisoner //Wasp Edit - Alt Uniforms
+	alt_uniform = /obj/item/clothing/under/rank/prisoner //WS Edit - Alt Uniforms
 	alt_suit = /obj/item/clothing/suit/jacket/leather
 	shoes = /obj/item/clothing/shoes/sneakers/orange
 	id = /obj/item/card/id/prisoner

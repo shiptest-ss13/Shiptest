@@ -1,4 +1,4 @@
-#define ETHEREAL_EMAG_COLORS list("#00ffff", "#ffc0cb", "#9400D3", "#4B0082", "#0000FF", "#00FF00", "#FFFF00", "#FF7F00", "#FF0000") // WaspStation Edit -- Multitool Color Change
+#define ETHEREAL_EMAG_COLORS list("#00ffff", "#ffc0cb", "#9400D3", "#4B0082", "#0000FF", "#00FF00", "#FFFF00", "#FF7F00", "#FF0000") //WS Edit -- Multitool Color Change
 
 /datum/species/ethereal
 	name = "Ethereal"
@@ -14,7 +14,7 @@
 	brutemod = 1.25 //They're weak to punches
 	attack_type = BURN //burn bish
 	damage_overlay_type = "" //We are too cool for regular damage overlays
-	species_traits = list(DYNCOLORS, AGENDER, NO_UNDERWEAR, HAIR, FACEHAIR)    // Waspstation Edit - Gave Ethereals Beards
+	species_traits = list(DYNCOLORS, AGENDER, NO_UNDERWEAR, HAIR, FACEHAIR)    //WS Edit - Gave Ethereals Beards
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_PRIDE | MIRROR_MAGIC | RACE_SWAP | ERT_SPAWN | SLIME_EXTRACT
 	species_language_holder = /datum/language_holder/ethereal
 	inherent_traits = list(TRAIT_NOHUNGER)
@@ -29,8 +29,8 @@
 	hair_alpha = 140
 	var/current_color
 	var/EMPeffect = FALSE
-	var/emag_effect = FALSE                          // WaspStation Edit -- Multitool Color Change
-	var/static/unhealthy_color = rgb(237, 164, 149)  // WaspStation Edit -- Multitool Color Change
+	var/emag_effect = FALSE                          //WS Edit -- Multitool Color Change
+	var/static/unhealthy_color = rgb(237, 164, 149)  //WS Edit -- Multitool Color Change
 	loreblurb = "Ethereals are organic humanoid beings with a blood that has strange luminiscent and electrical properties. \
 				Ethereals are barred from most authority roles on Nanotrasen stations and are not protected by the AI's default Asimov laws."
 	var/drain_time = 0 //used to keep ethereals from spam draining power sources
@@ -49,7 +49,7 @@
 		return
 	var/mob/living/carbon/human/ethereal = C
 	default_color = "#[ethereal.dna.features["ethcolor"]]"
-	// WaspStation Removal -- Multitool Color Change
+	//WS Removal -- Multitool Color Change
 	RegisterSignal(ethereal, COMSIG_ATOM_EMAG_ACT, .proc/on_emag_act)
 	RegisterSignal(ethereal, COMSIG_ATOM_EMP_ACT, .proc/on_emp_act)
 	ethereal_light = ethereal.mob_light()
@@ -75,19 +75,19 @@
 /datum/species/ethereal/spec_updatehealth(mob/living/carbon/human/H)
 	. = ..()
 	if(H.stat != DEAD && !EMPeffect)
-		// WaspStation Start -- Multitool Color Change
+		//WS Start -- Multitool Color Change
 		if(!emag_effect)
 			current_color = health_adjusted_color(H, default_color)
 		set_ethereal_light(H, current_color)
 		ethereal_light.set_light_on(TRUE)
 		fixed_mut_color = copytext_char(current_color, 2)
-		// WaspStation End
+		//WS End
 	else
 		ethereal_light.set_light_on(FALSE)
 		fixed_mut_color = rgb(128,128,128)
 	H.update_body()
 
-// WaspStation Start -- Multitool Color Change
+//WS Start -- Multitool Color Change
 /datum/species/ethereal/proc/health_adjusted_color(mob/living/carbon/human/H, default_color)
 	var/health_percent = max(H.health, 0) / 100
 
@@ -111,7 +111,7 @@
 	var/light_power = 1 + (1 * health_percent)
 
 	ethereal_light.set_light_range_power_color(light_range, light_power, current_color)
-// WaspStation End
+//WS End
 
 /datum/species/ethereal/proc/on_emp_act(mob/living/carbon/human/H, severity)
 	EMPeffect = TRUE
@@ -124,9 +124,9 @@
 			addtimer(CALLBACK(src, .proc/stop_emp, H), 20 SECONDS, TIMER_UNIQUE|TIMER_OVERRIDE) //We're out for 20 seconds
 
 /datum/species/ethereal/proc/on_emag_act(mob/living/carbon/human/H, mob/user)
-	if(emag_effect)                              // WaspStation Edit -- Multitool Color Change
+	if(emag_effect)                              //WS Edit -- Multitool Color Change
 		return
-	emag_effect = TRUE                           // WaspStation Edit -- Multitool Color Change
+	emag_effect = TRUE                           //WS Edit -- Multitool Color Change
 	if(user)
 		to_chat(user, "<span class='notice'>You tap [H] on the back with your card.</span>")
 	H.visible_message("<span class='danger'>[H] starts flickering in an array of colors!</span>")
@@ -146,27 +146,27 @@
 
 
 /datum/species/ethereal/proc/handle_emag(mob/living/carbon/human/H)
-	if(!emag_effect)                              // WaspStation Edit -- Multitool Color Change
+	if(!emag_effect)                              //WS Edit -- Multitool Color Change
 		return
-	current_color = pick(ETHEREAL_EMAG_COLORS)    // WaspStation Edit -- Multitool Color Change
+	current_color = pick(ETHEREAL_EMAG_COLORS)    //WS Edit -- Multitool Color Change
 	spec_updatehealth(H)
 	addtimer(CALLBACK(src, .proc/handle_emag, H), 5) //Call ourselves every 0.5 seconds to change color
 
 /datum/species/ethereal/proc/stop_emag(mob/living/carbon/human/H)
-	emag_effect = FALSE                           // WaspStation Edit -- Multitool Color Change
+	emag_effect = FALSE                           //WS Edit -- Multitool Color Change
 	spec_updatehealth(H)
 	H.visible_message("<span class='danger'>[H] stops flickering and goes back to their normal state!</span>")
 
 /datum/species/ethereal/proc/handle_charge(mob/living/carbon/human/H)
 	brutemod = 1.25
 	switch(get_charge(H))
-		// Waspstation Begin - Display Ethereal no charge icon
+		//WS Begin - Display Ethereal no charge icon
 		if(ETHEREAL_CHARGE_NONE to ETHEREAL_CHARGE_LOWPOWER)
 			if(get_charge(H) == ETHEREAL_CHARGE_NONE)
 				H.throw_alert("ethereal_charge", /obj/screen/alert/etherealcharge, 3)
 			else
 				H.throw_alert("ethereal_charge", /obj/screen/alert/etherealcharge, 2)
-			// Waspstation End
+			//WS End
 			if(H.health > 10.5)
 				apply_damage(0.2, TOX, null, null, H)
 			brutemod = 1.75
@@ -196,9 +196,9 @@
 		var/obj/item/organ/stomach/ethereal/stomach = H.getorganslot(ORGAN_SLOT_STOMACH)
 		playsound(H, 'sound/magic/lightningshock.ogg', 100, TRUE, extrarange = 5)
 		H.cut_overlay(overcharge)
-		tesla_zap(H, 2, (stomach.crystal_charge / ETHEREAL_CHARGE_SCALING_MULTIPLIER) * 50, ZAP_OBJ_DAMAGE | ZAP_ALLOW_DUPLICATES)       // Waspstation Edit -- Ethereal Charge Scaling
+		tesla_zap(H, 2, (stomach.crystal_charge / ETHEREAL_CHARGE_SCALING_MULTIPLIER) * 50, ZAP_OBJ_DAMAGE | ZAP_ALLOW_DUPLICATES)       //WS Edit -- Ethereal Charge Scaling
 		if(istype(stomach))
-			stomach.adjust_charge(ETHEREAL_CHARGE_FULL - stomach.crystal_charge)     // Waspstation Edit -- Ethereal Charge Scaling
+			stomach.adjust_charge(ETHEREAL_CHARGE_FULL - stomach.crystal_charge)     //WS Edit -- Ethereal Charge Scaling
 		to_chat(H, "<span class='warning'>You violently discharge energy!</span>")
 		H.visible_message("<span class='danger'>[H] violently discharges energy!</span>")
 		if(prob(10)) //chance of developing heart disease to dissuade overcharging oneself
@@ -215,7 +215,7 @@
 		return stomach.crystal_charge
 	return ETHEREAL_CHARGE_NONE
 
-// WaspStation Start -- Multitool Color Change
+//WS Start -- Multitool Color Change
 /datum/species/ethereal/spec_attacked_by(obj/item/I, mob/living/user, obj/item/bodypart/affecting, intent, mob/living/carbon/human/H)
 	if(istype(I, /obj/item/multitool))
 		if(user.a_intent == INTENT_HARM)
@@ -242,4 +242,4 @@
 				H.visible_message("<span class='notice'>[H] modulates \his EM frequency to [new_etherealcolor].</span>")
 	else
 		. = ..()
-// WaspStation End
+//WS End

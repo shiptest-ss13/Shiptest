@@ -4,7 +4,7 @@
 	icon_state = "breath"
 	item_state = "m_mask"
 	body_parts_covered = 0
-	clothing_flags = ALLOWINTERNALS //Wasp Port - Cit Internals
+	clothing_flags = ALLOWINTERNALS //WS Port - Cit Internals
 	visor_flags = ALLOWINTERNALS
 	w_class = WEIGHT_CLASS_SMALL
 	gas_transfer_coefficient = 0.1

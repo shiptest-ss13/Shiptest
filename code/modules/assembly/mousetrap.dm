@@ -5,7 +5,7 @@
 	item_state = "mousetrap"
 	custom_materials = list(/datum/material/iron=100)
 	attachable = TRUE
-	layer = BELOW_OBJ_LAYER // Wasp Edit
+	layer = BELOW_OBJ_LAYER //WS Edit
 	var/armed = FALSE
 	drop_sound = 'sound/items/handling/component_drop.ogg'
 	pickup_sound =  'sound/items/handling/component_pickup.ogg'

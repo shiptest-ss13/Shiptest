@@ -33,8 +33,8 @@
 		return
 
 	message = trim(copytext_char(sanitize(message), 1, MAX_MESSAGE_LEN))
-	message = process_chat_markup(message) // Waspstation edit - Chat markup
-	
+	message = process_chat_markup(message) //WS edit - Chat markup
+
 	usr.emote("me",1,message,TRUE)
 
 ///Speak as a dead person (ghost etc)
@@ -100,10 +100,10 @@
 /mob/proc/lingcheck()
 	return LINGHIVE_NONE
 
-/// Wasp Begin - Check if the mob has a borer hivemind channel
+///WS Begin - Check if the mob has a borer hivemind channel
 /mob/proc/borercheck()
 	return FALSE
-//Wasp end
+//WS end
 
 ///The amount of items we are looking for in the message
 #define MESSAGE_MODS_LENGTH 6

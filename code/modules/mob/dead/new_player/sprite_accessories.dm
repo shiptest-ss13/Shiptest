@@ -1824,7 +1824,7 @@
 	icon_state = "round"
 
 /datum/sprite_accessory/moth_wings
-	icon = 'waspstation/icons/mob/moth_wings.dmi'
+	icon = 'whitesands/icons/mob/moth_wings.dmi'
 	color_src = null
 
 /datum/sprite_accessory/moth_wings/plain
@@ -1968,11 +1968,11 @@
 	name = "Witch Wing"
 	icon_state = "witchwing"
 
-//Waspstation begin - Moth wing additions / Squids / IPCs
+//WS begin - Moth wing additions / Squids / IPCs
 
 //Moth fluff
 /datum/sprite_accessory/moth_fluff
-	icon = 'waspstation/icons/mob/moth_wings.dmi'
+	icon = 'whitesands/icons/mob/moth_wings.dmi'
 	color_src = null
 
 /datum/sprite_accessory/moth_fluff/plain
@@ -2293,7 +2293,7 @@
 	limbs_id = "zhpipc"
 
 /datum/sprite_accessory/spider_legs
-	icon = 'waspstation/icons/mob/spider_legs.dmi'
+	icon = 'whitesands/icons/mob/spider_legs.dmi'
 	color_src = MUTCOLORS
 
 /datum/sprite_accessory/spider_legs/plain
@@ -2309,7 +2309,7 @@
 	icon_state = "spiky"
 
 /datum/sprite_accessory/spider_spinneret
-	icon = 'waspstation/icons/mob/spider_spinneret.dmi'
+	icon = 'whitesands/icons/mob/spider_spinneret.dmi'
 	color_src = MUTCOLORS
 
 /datum/sprite_accessory/spider_spinneret/plain
@@ -2325,7 +2325,7 @@
 	icon_state = "blackwidow"
 
 /datum/sprite_accessory/spider_mandibles
-	icon = 'waspstation/icons/mob/spider_mandibles.dmi'
+	icon = 'whitesands/icons/mob/spider_mandibles.dmi'
 	color_src = MUTCOLORS
 
 /datum/sprite_accessory/spider_mandibles/plain
@@ -2340,4 +2340,4 @@
 	name = "Spiky"
 	icon_state = "spiky"
 
-//END WaspStation
+//ENDWS

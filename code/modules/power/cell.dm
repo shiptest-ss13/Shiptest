@@ -1,8 +1,8 @@
-// Waspstation Begin -- Ethereal Charge Scaling
+//WS Begin -- Ethereal Charge Scaling
 #define CELL_DRAIN_TIME 35
 #define CELL_POWER_GAIN  (3    * ETHEREAL_CHARGE_SCALING_MULTIPLIER)
 #define CELL_POWER_DRAIN (37.5 * ETHEREAL_CHARGE_SCALING_MULTIPLIER)
-// Waspstation End
+//WS End
 
 /obj/item/stock_parts/cell
 	name = "power cell"
@@ -154,7 +154,7 @@
 				if(prob(25))
 					corrupt()
 
-// Waspstation Begin -- Ethereal Charge Scaling
+//WS Begin -- Ethereal Charge Scaling
 /obj/item/stock_parts/cell/attack_self(mob/user)
 	if(isethereal(user))
 		var/mob/living/carbon/human/H = user
@@ -181,7 +181,7 @@
 			else
 				to_chat(H, "<span class='warning'>You can't receive charge from [src]!</span>")
 		return
-// Waspstation End
+//WS End
 
 /obj/item/stock_parts/cell/blob_act(obj/structure/blob/B)
 	SSexplosions.highobj += src
@@ -236,28 +236,28 @@
 /obj/item/stock_parts/cell/mini_egun
 	name = "miniature energy gun power cell"
 	maxcharge = 600
-	rating = 0 //gun batteries now incompatible with RPED Waspstation edit
+	rating = 0 //gun batteries now incompatible with RPED WS edit
 
 /obj/item/stock_parts/cell/hos_gun
 	name = "X-01 multiphase energy gun power cell"
 	maxcharge = 1200
-	rating = 0 //gun batteries now incompatible with RPED Waspstation edit
+	rating = 0 //gun batteries now incompatible with RPED WS edit
 
 /obj/item/stock_parts/cell/pulse //200 pulse shots
 	name = "pulse rifle power cell"
 	maxcharge = 400000
 	chargerate = 1500
-	rating = 0 //gun batteries now incompatible with RPED Waspstation edit
+	rating = 0 //gun batteries now incompatible with RPED WS edit
 
 /obj/item/stock_parts/cell/pulse/carbine //25 pulse shots
 	name = "pulse carbine power cell"
 	maxcharge = 50000
-	rating = 0 //gun batteries now incompatible with RPED Waspstation edit
+	rating = 0 //gun batteries now incompatible with RPED WS edit
 
 /obj/item/stock_parts/cell/pulse/pistol //10 pulse shots
 	name = "pulse pistol power cell"
 	maxcharge = 20000
-	rating = 0 //gun batteries now incompatible with RPED Waspstation edit
+	rating = 0 //gun batteries now incompatible with RPED WS edit
 
 /obj/item/stock_parts/cell/high
 	name = "high-capacity power cell"
@@ -410,8 +410,8 @@
 	if(!A.lightswitch || !A.light_power)
 		charge = 0 //For naturally depowered areas, we start with no power
 
-// Waspstation Begin -- Ethereal Charge Scaling
+//WS Begin -- Ethereal Charge Scaling
 #undef CELL_DRAIN_TIME
 #undef CELL_POWER_GAIN
 #undef CELL_POWER_DRAIN
-// Waspstation End
+//WS End

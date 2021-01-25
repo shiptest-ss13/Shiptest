@@ -115,7 +115,7 @@
 		if(myseed.get_gene(/datum/plant_gene/trait/plant_type/crystal))
 			temp_sustain = TRUE
 
-	if(self_sustaining || temp_sustain)		// Wasp edit end
+	if(self_sustaining || temp_sustain)		//WS edit end
 		adjustNutri(1)
 		adjustWater(rand(3,5))
 		adjustWeeds(-2)

@@ -2,7 +2,7 @@
 	icon_state = "energy"
 	name = "energy gun"
 	desc = "A basic energy-based gun."
-	icon = 'waspstation/icons/obj/guns/energy.dmi'
+	icon = 'whitesands/icons/obj/guns/energy.dmi'
 
 	var/obj/item/stock_parts/cell/gun/cell //What type of power cell this uses
 	var/cell_type = /obj/item/stock_parts/cell/gun
@@ -20,7 +20,7 @@
 	var/use_cyborg_cell = FALSE //whether the gun's cell drains the cyborg user's cell to recharge
 	var/dead_cell = FALSE //set to true so the gun is given an empty cell
 
-	//WaspStation Begin - Gun Cells
+	//WS Begin - Gun Cells
 	var/internal_cell = FALSE ///if the gun's cell cannot be replaced
 	var/small_gun = FALSE ///if the gun is small and can only fit batteries that have less than a certain max charge
 	var/big_gun = FALSE ///if the gun is big and can fit the comically large gun cell
@@ -31,7 +31,7 @@
 	var/eject_sound = 'sound/weapons/gun/general/magazine_remove_full.ogg' //Sound of ejecting a cell. UPDATE PLEASE
 	var/sound_volume = 40 //Volume of loading/unloading sounds
 	var/load_sound_vary = TRUE //Should the load/unload sounds vary?
-	//WaspStation End
+	//WS End
 
 /obj/item/gun/energy/emp_act(severity)
 	. = ..()
@@ -90,7 +90,7 @@
 		if(charge_tick < charge_delay)
 			return
 		charge_tick = 0
-		cell.give(1000) // WaspStation Edit - Egun energy cells
+		cell.give(1000) //WS Edit - Egun energy cells
 		if(!chambered) //if empty chamber we try to charge a new shot
 			recharge_newshot(TRUE)
 		update_icon()

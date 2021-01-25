@@ -272,7 +272,7 @@ TOGGLE_CHECKBOX(/datum/verbs/menu/Settings, listen_ooc)()
 /datum/verbs/menu/Settings/listen_ooc/Get_checked(client/C)
 	return C.prefs.chat_toggles & CHAT_OOC
 
-//Begin Wasp Edit
+//BeginWS Edit
 TOGGLE_CHECKBOX(datum/verbs/menu/settings, listen_looc)()
 	set name = "Show/Hide LOOC"
 	set category = "Preferences"
@@ -283,7 +283,7 @@ TOGGLE_CHECKBOX(datum/verbs/menu/settings, listen_looc)()
 	SSblackbox.record_feedback("nested tally", "preferences_verb", 1, list("Toggle Seeing LOOC", "[usr.client.prefs.chat_toggles & CHAT_LOOC ? "Enabled" : "Disabled"]")) //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 /datum/verbs/menu/Settings/listen_looc/Get_checked(client/C)
 	return C.prefs.chat_toggles & CHAT_LOOC
-//End Wasp Edit
+//EndWS Edit
 
 TOGGLE_CHECKBOX(/datum/verbs/menu/Settings, listen_bank_card)()
 	set name = "Show/Hide Income Updates"

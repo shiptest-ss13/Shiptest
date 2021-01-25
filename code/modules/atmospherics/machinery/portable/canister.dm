@@ -239,7 +239,7 @@
 		. += "can-open"
 	if(connected_port)
 		. += "can-connector"
-	/* WaspStation Edit - Use our overlays
+	/*WS Edit - Use our overlays
 	var/pressure = air_contents.return_pressure()
 	if(pressure >= 40 * ONE_ATMOSPHERE)
 		. += "can-o3"
@@ -249,7 +249,7 @@
 		. += "can-o1"
 	else if(pressure >= 10)
 		. += "can-o0"
-	WaspStation End */
+	WS End */
 
 
 /obj/machinery/portable_atmospherics/canister/temperature_expose(datum/gas_mixture/air, exposed_temperature, exposed_volume)

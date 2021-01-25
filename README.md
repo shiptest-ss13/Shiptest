@@ -1,15 +1,15 @@
-# WaspStation 13 Codebase
+# White Sands 13 Codebase
 
-![Checks](https://github.com/WaspStation/WaspStation-1.0/workflows/Checks/badge.svg) [![Percentage of issues still open](http://isitmaintained.com/badge/open/waspstation/waspstation-1.0.svg)](https://isitmaintained.com/project/waspstation/waspstation-1.0 "Percentage of issues still open") [![Average time to resolve an issue](http://isitmaintained.com/badge/resolution/waspstation/waspstation-1.0.svg)](https://isitmaintained.com/project/waspstation/waspstation-1.0 "Average time to resolve an issue") [![GitHub issues](https://img.shields.io/github/issues/waspstation/waspstation-1.0)](https://github.com/waspstation/waspstation-1.0/issues) ![GitHub top language](https://img.shields.io/github/languages/top/waspstation/waspstation-1.0)
+![Checks](https://github.com/Whitesands13/Whitesands/workflows/Checks/badge.svg) [![Percentage of issues still open](http://isitmaintained.com/badge/open/whitesands13/whitesands.svg)](https://isitmaintained.com/project/whitesands13/whitesands "Percentage of issues still open") [![Average time to resolve an issue](http://isitmaintained.com/badge/resolution/whitesands13/whitesands.svg)](https://isitmaintained.com/project/whitesands13/whitesands "Average time to resolve an issue") [![GitHub issues](https://img.shields.io/github/issues/whitesands13/whitesands)](https://github.com/Whitesands13/Whitesands/issues) ![GitHub top language](https://img.shields.io/github/languages/top/whitesands13/whitesands)
 
 [![forthebadge](https://forthebadge.com/images/badges/built-with-resentment.svg)](https://forthebadge.com) [![forthebadge](https://forthebadge.com/images/badges/contains-technical-debt.svg)](https://user-images.githubusercontent.com/8171642/50290880-ffef5500-043a-11e9-8270-a2e5b697c86c.png) [![forinfinityandbyond](https://user-images.githubusercontent.com/5211576/29499758-4efff304-85e6-11e7-8267-62919c3688a9.gif)](https://www.reddit.com/r/SS13/comments/5oplxp/what_is_the_main_problem_with_byond_as_an_engine/dclbu1a)
 
-* **Website:** TBA
-* **Code:** <https://github.com/WaspStation/WaspStation-1.0>
-* **Mantis Discord:** <https://discord.gg/husVWe8>
-* **Boomer Discord:** <https://discord.gg/BUM8uRc>
+* **Website:** <https://white-sands.space>
+* **Forums:** <https://forum.white-sands.space>
+* **Wiki:** <https://wiki.white-sands.space>
+* **Code Docs:** <https://whitesands13.github.io/whitesands>
+* **Discord:** <https://discord.gg/BUM8uRc>
 * **Coderbus Discord:** <https://discord.gg/Vh8TJp9>
-* **Wiki** TBA
 
 This is the codebase for the /tg/station flavoured fork of SpaceStation 13.
 
@@ -38,7 +38,6 @@ Space Station 13 is a paranoia-laden round-based roleplaying game set against th
 * Oracle, for the inspiration and wonderful features and sprites
 * Interstation for bridging the gap between Oracle and Modern /tg/
 * YogStation for multiple different features
-* CEV Eris, for the PDA sprites
 
 And thank you to any other codebase not mentioned here that has been used in the code. Your wonderful contributions are known.
 
@@ -57,4 +56,4 @@ See the footer of [code/__DEFINES/tgs.dm](./code/__DEFINES/tgs.dm) and [code/mod
 
 All assets including icons and sound are under a [Creative Commons 3.0 BY-SA license](https://creativecommons.org/licenses/by-sa/3.0/) unless otherwise indicated.
 
-All assets located in the `goon` and `waspstation/goon` directory are under a [Creative Commons 3.0 BY-NC-SA license](https://creativecommons.org/licenses/by-nc-sa/3.0/). Assets created by Goonstation.
+All assets located in the `goon` and `whitesands/goon` directory are under a [Creative Commons 3.0 BY-NC-SA license](https://creativecommons.org/licenses/by-nc-sa/3.0/). Assets created by Goonstation.

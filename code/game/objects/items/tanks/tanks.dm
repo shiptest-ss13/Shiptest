@@ -23,7 +23,7 @@
 	toggle_internals(user)
 
 /obj/item/tank/proc/toggle_internals(mob/user)
-	var/mob/living/carbon/H = user //Wasp Port - Citadel Internals
+	var/mob/living/carbon/H = user //WS Port - Citadel Internals
 	if(!istype(H))
 		return
 
@@ -33,7 +33,7 @@
 		H.update_internals_hud_icon(0)
 	else
 		if(!H.getorganslot(ORGAN_SLOT_BREATHING_TUBE))
-			//Wasp Port Begin - Citadel Internals
+			//WS Port Begin - Citadel Internals
 			var/obj/item/clothing/check
 			var/internals = FALSE
 
@@ -48,7 +48,7 @@
 			if(!internals)
 				to_chat(H, "<span class='warning'>You are not wearing an internals mask!</span>")
 				return
-			//Wasp Port End - Citadel Internals
+			//WS Port End - Citadel Internals
 
 		if(H.internal)
 			to_chat(H, "<span class='notice'>You switch your internals to [src].</span>")

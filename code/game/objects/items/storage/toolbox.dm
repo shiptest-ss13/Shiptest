@@ -71,12 +71,12 @@
 	material_flags = NONE
 
 /obj/item/storage/toolbox/mechanical/PopulateContents()
-	//WaspStation Edit - Better Tool sprites
+	//WS Edit - Better Tool sprites
 	if(prob(50))
 		new /obj/item/wrench(src)
 	else
 		new /obj/item/wrench/crescent(src)
-	//WaspStation End
+	//WS End
 	new /obj/item/screwdriver(src)
 	new /obj/item/weldingtool(src)
 	new /obj/item/crowbar(src)
@@ -172,11 +172,11 @@
 
 /obj/item/storage/toolbox/syndicate/PopulateContents()
 	new /obj/item/screwdriver/nuke(src)
-	new /obj/item/wrench/syndie(src) //WaspStation Edit - Cool Syndie Tools
+	new /obj/item/wrench/syndie(src) //WS Edit - Cool Syndie Tools
 	new /obj/item/weldingtool/largetank(src)
-	new /obj/item/crowbar/syndie(src) //WaspStation Begin - Cool Syndie Tools
+	new /obj/item/crowbar/syndie(src) //WS Begin - Cool Syndie Tools
 	new /obj/item/wirecutters/syndie(src)
-	new /obj/item/multitool/syndie(src) //WaspStation End
+	new /obj/item/multitool/syndie(src) //WS End
 	new /obj/item/clothing/gloves/combat(src)
 
 /obj/item/storage/toolbox/drone

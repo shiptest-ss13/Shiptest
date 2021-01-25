@@ -321,10 +321,10 @@ Key procs
 /datum/language_holder/moth
 	understood_languages = list(/datum/language/common = list(LANGUAGE_ATOM),
 								/datum/language/moffic = list(LANGUAGE_ATOM),
-								/datum/language/buzzwords = list(LANGUAGE_ATOM)) // WaspStation Edit - Insectoid Language
+								/datum/language/buzzwords = list(LANGUAGE_ATOM)) //WS Edit - Insectoid Language
 	spoken_languages = list(/datum/language/common = list(LANGUAGE_ATOM),
 							/datum/language/moffic = list(LANGUAGE_ATOM),
-							/datum/language/buzzwords = list(LANGUAGE_ATOM)) // WaspStation Edit - Insectoid Language
+							/datum/language/buzzwords = list(LANGUAGE_ATOM)) //WS Edit - Insectoid Language
 
 /datum/language_holder/skeleton
 	understood_languages = list(/datum/language/common = list(LANGUAGE_ATOM),

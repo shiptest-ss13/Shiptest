@@ -139,7 +139,7 @@
 
 //Sleeper
 /obj/machinery/sleeper/survival_pod
-	icon = 'waspstation/icons/obj/machines/sleeper.dmi'
+	icon = 'whitesands/icons/obj/machines/sleeper.dmi'
 	icon_state = "lavaland_sleeper"
 
 /obj/machinery/sleeper/survival_pod/update_overlays()

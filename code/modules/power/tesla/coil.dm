@@ -29,7 +29,7 @@
 	wires = new /datum/wires/tesla_coil(src)
 	linked_techweb = SSresearch.science_tech
 
-/* Wasp Edit - Smartwire Revert
+/*WS Edit - Smartwire Revert
 /obj/machinery/power/tesla_coil/should_have_node()
 	return anchored
 */
@@ -62,7 +62,7 @@
 			connect_to_network()
 		else
 			disconnect_from_network()
-//		update_cable_icons_on_turf(get_turf(src)) - Wasp Edit - Smartwire Revert
+//		update_cable_icons_on_turf(get_turf(src)) - WS Edit - Smartwire Revert
 
 /obj/machinery/power/tesla_coil/attackby(obj/item/W, mob/user, params)
 	if(default_deconstruction_screwdriver(user, "coil_open[anchored]", "coil[anchored]", W))

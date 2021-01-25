@@ -216,20 +216,20 @@ GLOBAL_LIST_EMPTY(station_turfs)
 		return FALSE
 	if(!force && (!can_zFall(A, levels, target) || !A.can_zFall(src, levels, target, DOWN)))
 		return FALSE
-	var/atom/movable/AM = null	//Wasp Start - Dragging down stairs works now
+	var/atom/movable/AM = null	//WS Start - Dragging down stairs works now
 	var/was_pulling = FALSE
 	if(ismob(A))
 		var/mob/M = A
 		if(A.pulling)
 			AM = M.pulling
 			AM.forceMove(target)
-			was_pulling = TRUE	//Wasp End
+			was_pulling = TRUE	//WS End
 	A.zfalling = TRUE
 	A.forceMove(target)
 	A.zfalling = FALSE
-	if(ismob(A) && was_pulling)	//Wasp Start - Dragging down stairs works now
+	if(ismob(A) && was_pulling)	//WS Start - Dragging down stairs works now
 		var/mob/M = A
-		M.start_pulling(AM)		//Wasp End
+		M.start_pulling(AM)		//WS End
 	target.zImpact(A, levels, src)
 	return TRUE
 

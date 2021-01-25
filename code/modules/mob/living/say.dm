@@ -19,7 +19,7 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 	// Faction
 	RADIO_KEY_SYNDICATE = RADIO_CHANNEL_SYNDICATE,
 	RADIO_KEY_CENTCOM = RADIO_CHANNEL_CENTCOM,
-	RADIO_KEY_SOLGOV = RADIO_CHANNEL_SOLGOV,		// Wasp Edit - SolGov Rep
+	RADIO_KEY_SOLGOV = RADIO_CHANNEL_SOLGOV,		//WS Edit - SolGov Rep
 
 	// Admin
 	MODE_KEY_ADMIN = MODE_ADMIN,
@@ -207,7 +207,7 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 
 	if(pressure < ONE_ATMOSPHERE*0.4) //Thin air, let's italicise the message
 		spans |= SPAN_ITALICS
-	message = process_chat_markup(message) // Waspstation edit - Chat markup
+	message = process_chat_markup(message) //WS edit - Chat markup
 
 	send_speech(message, message_range, src, bubble_type, spans, language, message_mods)
 

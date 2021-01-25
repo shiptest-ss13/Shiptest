@@ -48,7 +48,7 @@
 	var/location = get_turf(holder.my_atom)
 	for(var/i = 1, i <= created_volume, i++)
 		new /obj/item/stack/sheet/mineral/gold(location)
-		
+
 /datum/chemical_reaction/adamantinesolidification
 	required_reagents = list(/datum/reagent/gold = 5, /datum/reagent/consumable/frostoil = 5, /datum/reagent/liquidadamantine = 10)
 	mob_react = FALSE
@@ -400,7 +400,7 @@
 	results = list(/datum/reagent/colorful_reagent = 5)
 	required_reagents = list(/datum/reagent/stable_plasma = 1, /datum/reagent/uranium/radium = 1, /datum/reagent/drug/space_drugs = 1, /datum/reagent/medicine/cryoxadone = 1, /datum/reagent/consumable/triple_citrus = 1)
 
-/* WaspStation Begin - No CobbyChems
+/*WS Begin - No CobbyChems
 
 /datum/chemical_reaction/life
 	required_reagents = list(/datum/reagent/medicine/strange_reagent = 1, /datum/reagent/medicine/C2/instabitaluri = 1, /datum/reagent/blood = 1)
@@ -413,7 +413,7 @@
 	required_reagents = list(/datum/reagent/medicine/strange_reagent = 1, /datum/reagent/medicine/C2/instabitaluri = 1, /datum/reagent/consumable/sugar = 1)
 	required_temp = 374
 
-WaspStation End */
+WS End */
 
 /datum/chemical_reaction/life_friendly/on_reaction(datum/reagents/holder, created_volume)
 	chemical_mob_spawn(holder, rand(1, round(created_volume, 1)), "Life (friendly)", FRIENDLY_SPAWN)
@@ -515,8 +515,8 @@ WaspStation End */
 /datum/chemical_reaction/pax
 	results = list(/datum/reagent/pax = 3)
 	required_reagents  = list(/datum/reagent/toxin/mindbreaker = 1, /datum/reagent/medicine/synaptizine = 1, /datum/reagent/water = 1)
-	
-	
+
+
 //////////////////EXPANDED MUTATION TOXINS/////////////////////
 
 /datum/chemical_reaction/yuck
@@ -597,7 +597,7 @@ WaspStation End */
 /datum/chemical_reaction/mutationtoxin/felinid
 	results = list(/datum/reagent/mutationtoxin/felinid = 1)
 	required_reagents  = list(/datum/reagent/mutationtoxin/unstable = 1, /datum/reagent/toxin/fentanyl = 10, /datum/reagent/impedrezene = 10)
-	
+
 /datum/chemical_reaction/mutationtoxin/fly
 	results = list(/datum/reagent/mutationtoxin/fly = 1)
 	required_reagents  = list(/datum/reagent/mutationtoxin/unstable = 1, /datum/reagent/toxin/mutagen = 10)
@@ -605,7 +605,7 @@ WaspStation End */
 /datum/chemical_reaction/mutationtoxin/moth
 	results = list(/datum/reagent/mutationtoxin/moth = 1)
 	required_reagents  = list(/datum/reagent/mutationtoxin/unstable = 1, /datum/reagent/toxin/lipolicide = 10) //I know it's the opposite of what moths like, but I am out of ideas for this.
-	
+
 /datum/chemical_reaction/mutationtoxin/pod
 	results = list(/datum/reagent/mutationtoxin/pod = 1)
 	required_reagents  = list(/datum/reagent/mutationtoxin/unstable = 1, /datum/reagent/plantnutriment/eznutriment = 10)
@@ -617,7 +617,7 @@ WaspStation End */
 /datum/chemical_reaction/mutationtoxin/abductor
 	results = list(/datum/reagent/mutationtoxin/abductor = 1)
 	required_reagents  = list(/datum/reagent/mutationtoxin/unstable = 1, /datum/reagent/medicine/morphine = 10, /datum/reagent/toxin/mutetoxin = 10)
-	
+
 /datum/chemical_reaction/mutationtoxin/squid
 	results = list(/datum/reagent/mutationtoxin/squid = 1)
 	required_reagents  = list(/datum/reagent/mutationtoxin/unstable = 1, /datum/reagent/consumable/sodiumchloride = 10, /datum/reagent/water = 20)
@@ -625,7 +625,7 @@ WaspStation End */
 /datum/chemical_reaction/mutationtoxin/ipc
 	results = list(/datum/reagent/mutationtoxin/ipc = 1)
 	required_reagents  = list(/datum/reagent/mutationtoxin/unstable = 1, /datum/reagent/teslium = 20)
-	
+
 //////////////Mutatuion toxins made out of advanced toxin/////////////
 
 /datum/chemical_reaction/mutationtoxin/skeleton
@@ -645,11 +645,11 @@ WaspStation End */
 /datum/chemical_reaction/mutationtoxin/ash
 	results = list(/datum/reagent/mutationtoxin/ash = 1)
 	required_reagents  = list(/datum/reagent/aslimetoxin = 1, /datum/reagent/mutationtoxin/lizard = 1, /datum/reagent/ash = 10, /datum/reagent/consumable/entpoly = 5)
-	
+
 /datum/chemical_reaction/mutationtoxin/shadow
 	results = list(/datum/reagent/mutationtoxin/shadow = 1)
 	required_reagents  = list(/datum/reagent/aslimetoxin = 1, /datum/reagent/liquid_dark_matter = 30, /datum/reagent/water/holywater = 10) //You need a tiny bit of thinking how to mix it
-	
+
 /datum/chemical_reaction/mutationtoxin/plasma
 	results = list(/datum/reagent/mutationtoxin/plasma = 1)
 	required_reagents  = list(/datum/reagent/aslimetoxin = 1, /datum/reagent/toxin/plasma = 60, /datum/reagent/uranium = 20)

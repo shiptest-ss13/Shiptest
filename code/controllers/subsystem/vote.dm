@@ -72,7 +72,7 @@ SUBSYSTEM_DEF(vote)
 					if(choices[GLOB.master_mode] >= greatest_votes)
 						greatest_votes = choices[GLOB.master_mode]
 
-			//WaspStation Begin - Autotransfer
+			//WS Begin - Autotransfer
 			else if(mode == "transfer")
 				var/factor = 1
 				switch(world.time / (1 MINUTES ))
@@ -87,7 +87,7 @@ SUBSYSTEM_DEF(vote)
 					else
 						factor = 1.4
 				choices["Initiate Crew Transfer"] += round(non_voters.len * factor)
-			//WaspStation End
+			//WS End
 
 			else if(mode == "map")
 				for (var/non_voter_ckey in non_voters)
@@ -264,7 +264,7 @@ SUBSYSTEM_DEF(vote)
 			text += "\n[question]"
 		log_vote(text)
 
-		// WaspStation Begin - Ghost Vote Rework
+		//WS Begin - Ghost Vote Rework
 		var/vp = CONFIG_GET(number/vote_period)
 		var/vote_message =  "\n<font color='purple'><b>[text]</b>\nType <b>vote</b> or click <a href='?src=[REF(src)]'>here</a> to place your votes.\nYou have [DisplayTimeText(vp)] to vote.</font>"
 		if(observer_vote_allowed)
@@ -298,7 +298,7 @@ SUBSYSTEM_DEF(vote)
 				generated_actions += V
 			time_remaining = round(vp/10)
 			return TRUE
-		// WaspStation End - Ghost Vote Rework
+		//WS End - Ghost Vote Rework
 	return FALSE
 
 /datum/controller/subsystem/vote/proc/interface(client/C)
@@ -393,16 +393,16 @@ SUBSYSTEM_DEF(vote)
 				CONFIG_SET(flag/allow_vote_map, !CONFIG_GET(flag/allow_vote_map))
 		if("restart")
 			if(CONFIG_GET(flag/allow_vote_restart) || usr.client.holder)
-				initiate_vote("restart",usr.key, TRUE) // WaspStation Edit - Ghost Vote Rework
+				initiate_vote("restart",usr.key, TRUE) //WS Edit - Ghost Vote Rework
 		if("gamemode")
 			if(CONFIG_GET(flag/allow_vote_mode) || usr.client.holder)
-				initiate_vote("gamemode",usr.key, TRUE) // WaspStation Edit - Ghost Vote Rework
+				initiate_vote("gamemode",usr.key, TRUE) //WS Edit - Ghost Vote Rework
 		if("map")
 			if(CONFIG_GET(flag/allow_vote_map) || usr.client.holder)
-				initiate_vote("map",usr.key, TRUE) // WaspStation Edit - Ghost Vote Rework
+				initiate_vote("map",usr.key, TRUE) //WS Edit - Ghost Vote Rework
 		if("custom")
 			if(usr.client.holder)
-				initiate_vote("custom",usr.key, TRUE) // WaspStation Edit - Ghost Vote Rework
+				initiate_vote("custom",usr.key, TRUE) //WS Edit - Ghost Vote Rework
 		else
 			submit_vote(round(text2num(href_list["vote"])))
 	usr.vote()

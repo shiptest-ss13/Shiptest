@@ -3,15 +3,15 @@
 	desc = "A locked box."
 	icon_state = "lockbox+l"
 	item_state = "syringe_kit"
-	icon = 'waspstation/icons/obj/storage.dmi' //Wasp edit - better briefcases
+	icon = 'whitesands/icons/obj/storage.dmi' //WS edit - better briefcases
 	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
 	w_class = WEIGHT_CLASS_BULKY
 	req_access = list(ACCESS_ARMORY)
 	var/broken = FALSE
 	var/open = FALSE
-	var/icon_locked = "lockbox" //Waspstation edit - fix lockbox sprites
-	var/icon_closed = "lockbox+l" //Waspstation edit - fix lockbox sprites
+	var/icon_locked = "lockbox" //WS edit - fix lockbox sprites
+	var/icon_closed = "lockbox+l" //WS edit - fix lockbox sprites
 	var/icon_broken = "lockbox+b"
 
 /obj/item/storage/lockbox/ComponentInitialize()

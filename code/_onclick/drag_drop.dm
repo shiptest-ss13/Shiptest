@@ -89,7 +89,7 @@
 /obj/screen/click_catcher/IsAutoclickable()
 	. = 1
 
-//Wasp Begin - Please fucking work for spacepod code
+//WS Begin - Please fucking work for spacepod code
 /client/MouseMove(object,location,control,params)
 	mouseParams = params
 	mouseLocation = location
@@ -101,7 +101,7 @@
 	..()
 /datum/proc/onMouseMove(object, location, control, params)
 	return
-//Wasp End
+//WS End
 
 /client/MouseDrag(src_object,atom/over_object,src_location,over_location,src_control,over_control,params)
 	var/list/L = params2list(params)

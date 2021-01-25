@@ -40,7 +40,7 @@
 		impact_effect_type = /obj/effect/temp_visual/impact_effect/red_laser/wall
 
 /obj/projectile/beam/weak
-	damage = 7			// Waspstation Edit - Shotgun nerf
+	damage = 7			//WS Edit - Shotgun nerf
 
 /obj/projectile/beam/weak/penetrator
 	armour_penetration = 50

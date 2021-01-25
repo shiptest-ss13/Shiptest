@@ -57,7 +57,7 @@
 
 /mob/living/carbon/attackby(obj/item/I, mob/user, params)
 	var/be_nice = FALSE
-	// if(body_position == LYING_DOWN) // Waspstation - Fix IPC surgery
+	// if(body_position == LYING_DOWN) //WS - Fix IPC surgery
 	if((I.item_flags & SURGICAL_TOOL) && user.a_intent == INTENT_HELP)
 		attempt_initiate_surgery(I, src, user)
 		be_nice = TRUE
@@ -422,9 +422,9 @@
 	var/obj/item/organ/alien/plasmavessel/vessel = getorgan(/obj/item/organ/alien/plasmavessel)
 	if(vessel)
 		. += "Plasma Stored: [vessel.storedPlasma]/[vessel.max_plasma]"
-	var/obj/item/organ/dwarfgland/dwarfgland = getorgan(/obj/item/organ/dwarfgland)		// Begin Wasp Edit - Dwarf Alcohol Gland
+	var/obj/item/organ/dwarfgland/dwarfgland = getorgan(/obj/item/organ/dwarfgland)		// BeginWS Edit - Dwarf Alcohol Gland
 	if(dwarfgland)
-		. += "Alcohol Stored: [dwarfgland.stored_alcohol]/[dwarfgland.max_alcohol]"		// End Wasp Edit
+		. += "Alcohol Stored: [dwarfgland.stored_alcohol]/[dwarfgland.max_alcohol]"		// EndWS Edit
 	if(locate(/obj/item/assembly/health) in src)
 		. += "Health: [health]"
 
@@ -543,7 +543,7 @@
 
 /mob/living/carbon/update_stamina()
 	var/stam = getStaminaLoss()
-	if(stam > DAMAGE_PRECISION && (health - stam) <= crit_threshold && !stat)		// Waspstation edit - Stamina stacks with health damage
+	if(stam > DAMAGE_PRECISION && (health - stam) <= crit_threshold && !stat)		//WS edit - Stamina stacks with health damage
 		enter_stamcrit()
 	else if(HAS_TRAIT_FROM(src, TRAIT_INCAPACITATED, STAMINA))
 		REMOVE_TRAIT(src, TRAIT_INCAPACITATED, STAMINA)
@@ -767,7 +767,7 @@
 	if(hud_used && hud_used.internals)
 		hud_used.internals.icon_state = "internal[internal_state]"
 
-/* Wasp revert
+/*WS revert
 /mob/living/carbon/proc/update_spacesuit_hud_icon(cell_state = "empty")
 	if(hud_used && hud_used.spacesuit)
 		hud_used.spacesuit.icon_state = "spacesuit_[cell_state]"

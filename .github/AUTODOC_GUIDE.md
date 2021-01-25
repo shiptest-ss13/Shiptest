@@ -1,5 +1,5 @@
 # dmdoc
-[DOCUMENTATION]: https://waspstation.github.io/WaspStation-1.0/
+[DOCUMENTATION]: https://whitesands13.github.io/Whitesands/
 
 [BYOND]: https://secure.byond.com/
 
@@ -89,7 +89,7 @@ that will also be rendered and added to the modules tree. The structure for
 these is deliberately not defined, so you can be as freeform and as wheeling as
 you would like.
 
-[Here is a representative example of what you might write](https://waspstation.github.io/WaspStation-1.0/code/modules/keybindings/readme.html)
+[Here is a representative example of what you might write](https://whitesands13.github.io/Whitesands/code/modules/keybindings/readme.html)
 
 ## Special variables
 You can use certain special template variables in DM DOC comments and they will be expanded

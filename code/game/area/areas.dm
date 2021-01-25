@@ -64,7 +64,7 @@
 	///Boolean to limit the areas (subtypes included) that atoms in this area can smooth with. Used for shuttles.
 	var/area_limited_icon_smoothing = FALSE
 
-	/// Wasp Addition - Color on minimaps, if it's null (which is default) it makes one at random.
+	///WS Addition - Color on minimaps, if it's null (which is default) it makes one at random.
 	var/minimap_color
 
 	var/list/power_usage

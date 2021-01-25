@@ -32,7 +32,7 @@ GLOBAL_DATUM_INIT(crewmonitor, /datum/crewmonitor, new)
 	var/list/jobs = new/list()
 	jobs["Captain"] = 00
 	jobs["Head of Personnel"] = 02
-	jobs["SolGov Representative"] = 05		// Wasp Edit - SolGov Rep
+	jobs["SolGov Representative"] = 05		//WS Edit - SolGov Rep
 	jobs["Head of Security"] = 10
 	jobs["Warden"] = 11
 	jobs["Security Officer"] = 12
@@ -146,7 +146,7 @@ GLOBAL_DATUM_INIT(crewmonitor, /datum/crewmonitor, new)
 				if (I)
 					name = I.registered_name
 					assignment = I.assignment
-					ijob = jobs[I.GetJobName()] //Why didn't it do this already - Wasp Edit - Alt Titles
+					ijob = jobs[I.GetJobName()] //Why didn't it do this already - WS Edit - Alt Titles
 				else
 					name = "Unknown"
 					assignment = ""

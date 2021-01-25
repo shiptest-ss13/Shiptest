@@ -131,7 +131,7 @@ SUBSYSTEM_DEF(mapping)
 	var/list/space_ruins = levels_by_trait(ZTRAIT_SPACE_RUINS)
 	if (space_ruins.len)
 		seedRuins(space_ruins, CONFIG_GET(number/space_budget), list(/area/space), space_ruins_templates)
-	SSmapping.seedStation() //Wasp - Random Engine Framework
+	SSmapping.seedStation() //WS - Random Engine Framework
 	loading_ruins = FALSE
 #endif
 	// Add the transit level
@@ -411,7 +411,7 @@ GLOBAL_LIST_EMPTY(the_station_areas)
 		return
 	if(SSvote.mode) //Theres already a vote running, default to rotation.
 		maprotate()
-	SSvote.initiate_vote("map", "automatic map rotation", TRUE) // WaspStation Edit - Ghost Voting Rework
+	SSvote.initiate_vote("map", "automatic map rotation", TRUE) //WS Edit - Ghost Voting Rework
 
 /datum/controller/subsystem/mapping/proc/changemap(var/datum/map_config/VM)
 	if(!VM.MakeNextMap())
@@ -466,7 +466,7 @@ GLOBAL_LIST_EMPTY(the_station_areas)
 			ice_ruins_templates[R.name] = R
 		else if(istype(R, /datum/map_template/ruin/space))
 			space_ruins_templates[R.name] = R
-		else if(istype(R, /datum/map_template/ruin/station)) //Wasp - Random Engine Framework
+		else if(istype(R, /datum/map_template/ruin/station)) //WS - Random Engine Framework
 			station_room_templates[R.name] = R
 
 /datum/controller/subsystem/mapping/proc/preloadShuttleTemplates()
@@ -628,7 +628,7 @@ GLOBAL_LIST_EMPTY(the_station_areas)
 		initialize_reserved_level(isolated_ruins_z.z_value)
 	return isolated_ruins_z.z_value
 
-	// Station Ruins - Wasp Port
+	// Station Ruins - WS Port
 /datum/controller/subsystem/mapping
 	var/list/station_room_templates = list()
 

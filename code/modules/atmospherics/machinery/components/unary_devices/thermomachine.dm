@@ -171,7 +171,7 @@
 
 	update_icon()
 
-//Wasp Edit - Update from Cit's Thermomachine - PR #8800, adds additional info to ctrl and alt clicks - BFAT
+//WS Edit - Update from Cit's Thermomachine - PR #8800, adds additional info to ctrl and alt clicks - BFAT
 
 /obj/machinery/atmospherics/components/unary/thermomachine/CtrlClick(mob/living/user)
 	var/area/A = get_area(src)

@@ -11,7 +11,7 @@
 	req_admin_notify = 1
 	minimal_player_age = 10
 	exp_requirements = 180
-	wiki_page = "Head_of_Personnel" //WaspStation Edit - Wikilinks/Warning
+	wiki_page = "Head_of_Personnel" //WS Edit - Wikilinks/Warning
 	exp_type = EXP_TYPE_CREW
 	exp_type_department = EXP_TYPE_SERVICE
 
@@ -44,9 +44,9 @@
 	belt = /obj/item/pda/heads/head_of_personnel
 	ears = /obj/item/radio/headset/heads/head_of_personnel
 	uniform = /obj/item/clothing/under/rank/command/head_of_personnel
-	alt_uniform = /obj/item/clothing/under/rank/command/head_of_personnel/suit //Wasp Edit - Alt Uniforms
+	alt_uniform = /obj/item/clothing/under/rank/command/head_of_personnel/suit //WS Edit - Alt Uniforms
 	alt_suit = /obj/item/clothing/suit/ianshirt
-	dcoat = /obj/item/clothing/suit/hooded/wintercoat/captain //Wasp Edit - Alt Uniforms
+	dcoat = /obj/item/clothing/suit/hooded/wintercoat/captain //WS Edit - Alt Uniforms
 	shoes = /obj/item/clothing/shoes/sneakers/brown
 	head = /obj/item/clothing/head/hopcap
 	backpack_contents = list(/obj/item/storage/box/ids=1,\

@@ -521,7 +521,7 @@
 	construction_time = 100
 	category = list("Exosuit Equipment")
 
-//Wasp Edit Begin - Smartwire Revert - Donut TG Marge this
+//WS Edit Begin - Smartwire Revert - Donut TG Marge this
 /datum/design/mech_cable_layer
 	name = "Exosuit Engineering Equipment (Cable Layer)"
 	id = "mech_cable_layer"
@@ -530,7 +530,7 @@
 	materials = list(/datum/material/iron=10000)
 	construction_time = 100
 	category = list("Exosuit Equipment")
-//Wasp Edit End - Smartwire Revert - Donut TG Marge this
+//WS Edit End - Smartwire Revert - Donut TG Marge this
 
 /datum/design/mech_generator
 	name = "Exosuit Equipment (Plasma Generator)"
@@ -862,4 +862,4 @@
 	build_path = /obj/item/organ/cyberimp/arm/power_cord
 	materials = list(MAT_IRON=2000, MAT_GLASS=1000)
 	construction_time = 100
-	category = list("IPC Components") 
+	category = list("IPC Components")

@@ -14,8 +14,8 @@ GLOBAL_LIST_INIT(freqtospan, list(
 	"[FREQ_AI_PRIVATE]" = "aiprivradio",
 	"[FREQ_SYNDICATE]" = "syndradio",
 	"[FREQ_CENTCOM]" = "centcomradio",
-	"[FREQ_SOLGOV]" = "solgovradio",		// Wasp Edit - SolGov Rep
-	"[FREQ_WIDEBAND]" = "widebandradio",	// Wasp Edit - Overmaps
+	"[FREQ_SOLGOV]" = "solgovradio",		//WS Edit - SolGov Rep
+	"[FREQ_WIDEBAND]" = "widebandradio",	//WS Edit - Overmaps
 	"[FREQ_CTF_RED]" = "redteamradio",
 	"[FREQ_CTF_BLUE]" = "blueteamradio"
 	))
@@ -28,7 +28,7 @@ GLOBAL_LIST_INIT(freqtospan, list(
 	spans |= speech_span
 	if(!language)
 		language = get_selected_language()
-	message = process_chat_markup(message) // Waspstation edit - Chat markup
+	message = process_chat_markup(message) //WS edit - Chat markup
 	send_speech(message, 7, src, , spans, message_language=language)
 
 /atom/movable/proc/Hear(message, atom/movable/speaker, message_language, raw_message, radio_freq, list/spans, list/message_mods = list())

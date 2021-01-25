@@ -7,7 +7,7 @@
 	w_class = WEIGHT_CLASS_SMALL
 	resistance_flags = FLAMMABLE
 	var/list/squeak_override //Weighted list; If you want your plush to have different squeak sounds use this
-	var/should_squeak = TRUE //Waspstation edit: really shitty spritercode
+	var/should_squeak = TRUE //WS edit: really shitty spritercode
 	var/stuffed = TRUE //If the plushie has stuffing in it
 	var/obj/item/grenade/grenade //You can remove the stuffing from a plushie and add a grenade to it for *nefarious uses*
 	//--love ~<3--
@@ -690,13 +690,13 @@
 	user.dust(just_ash = FALSE, drop_items = TRUE)
 	return MANUAL_SUICIDE
 
-/obj/item/toy/plush/hornet //wasp begin: spritercode
+/obj/item/toy/plush/hornet //WS begin: spritercode
 	name = "strange bug plushie"
 	desc = "A cute, soft plush of a long-horned bug."
-	icon = 'waspstation/icons/obj/plushes.dmi'
+	icon = 'whitesands/icons/obj/plushes.dmi'
 	icon_state = "plushie_hornet"
 	attack_verb = list("poked", "shaws")
-	squeak_override = list('waspstation/sound/hornetnoises/hornet_gitgud.ogg'=1, 'waspstation/sound/hornetnoises/hornet_SHAW.ogg'=10) //i have no clue how this works, the intended effect is that "git gud" will play 1 out of 11 times
+	squeak_override = list('whitesands/sound/hornetnoises/hornet_gitgud.ogg'=1, 'whitesands/sound/hornetnoises/hornet_SHAW.ogg'=10) //i have no clue how this works, the intended effect is that "git gud" will play 1 out of 11 times
 	gender = FEMALE
 
 /obj/item/toy/plush/hornet/gay
@@ -707,7 +707,7 @@
 /obj/item/toy/plush/knight
 	name = "odd bug plushie"
 	desc = "A cute, soft plush of a little bug. It sounds like this one didn't come with a voice box."
-	icon = 'waspstation/icons/obj/plushes.dmi'
+	icon = 'whitesands/icons/obj/plushes.dmi'
 	icon_state = "plushie_knight"
 	attack_verb = list("poked")
-	should_squeak = FALSE //wasp end
+	should_squeak = FALSE //WS end

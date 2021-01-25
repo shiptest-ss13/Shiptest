@@ -939,7 +939,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 		else
 			client.images -= stored_t_ray_images
 
-//Wasp Begin
+//WS Begin
 /mob/dead/observer/proc/possess_mouse_verb()
 	set category = "Ghost"
 	set name = "Possess a mouse"
@@ -1001,4 +1001,4 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 				food on the floor to gain health and help create new mice. Mouse traps will hurt your fragile body \
 				and so will any kind of weapons. You can control click food and trash items in order to eat them. Get. That. Cheese.")
 	return TRUE
-//Wasp End
+//WS End

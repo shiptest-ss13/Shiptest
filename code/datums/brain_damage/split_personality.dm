@@ -75,7 +75,7 @@
 	to_chat(owner, "<span class='userdanger'>You feel your control being taken away... your other personality is in charge now!</span>")
 	to_chat(current_backseat, "<span class='userdanger'>You manage to take control of your body!</span>")
 
-	//Wasp begin - Cortical Borers
+	//WS begin - Cortical Borers
 
 	var/mob/to_swap = owner
 
@@ -125,7 +125,7 @@
 
 	current_controller = !current_controller
 
-	//Wasp End
+	//WS End
 /mob/living/split_personality
 	name = "split personality"
 	real_name = "unknown conscience"

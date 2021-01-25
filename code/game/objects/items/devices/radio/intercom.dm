@@ -1,14 +1,14 @@
 /obj/item/radio/intercom
 	name = "station intercom"
 	desc = "Talk through this."
-	icon = 'waspstation/icons/obj/radio.dmi'
+	icon = 'whitesands/icons/obj/radio.dmi'
 	icon_state = "intercom"
 	anchored = TRUE
 	w_class = WEIGHT_CLASS_BULKY
 	canhear_range = 2
 	dog_fashion = null
 	unscrewed = FALSE
-	var/obj/item/wallframe/wallframe = /obj/item/wallframe/intercom //Wasp edit - Wideband Radio
+	var/obj/item/wallframe/wallframe = /obj/item/wallframe/intercom //WS edit - Wideband Radio
 
 /obj/item/radio/intercom/unscrewed
 	unscrewed = TRUE

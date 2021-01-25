@@ -114,10 +114,10 @@
 	R.add_fingerprint(user)
 	qdel(src)
 
-// WaspStation Start - Changing Posters Fix
+//WS Start - Changing Posters Fix
 /obj/structure/sign/poster/wrench_act(mob/living/user, obj/item/wrench/I)
 	return
-// WaspStation End
+//WS End
 
 /obj/structure/sign/poster/proc/roll_and_drop(loc)
 	pixel_x = 0

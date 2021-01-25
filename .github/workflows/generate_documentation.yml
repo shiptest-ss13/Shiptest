@@ -19,7 +19,7 @@ jobs:
         run: |
           ~/dmdoc
           touch dmdoc/.nojekyll
-          echo waspstation.github.io > dmdoc/CNAME
+          echo whitesands.github.io > dmdoc/CNAME
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@3.7.1
         with:

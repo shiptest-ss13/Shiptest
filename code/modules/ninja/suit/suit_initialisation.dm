@@ -37,10 +37,10 @@ GLOBAL_LIST_INIT(ninja_deinitialize_messages, list(
 	s_busy = TRUE
 	if(s_initialized)
 		deinitialize()
-		STOP_PROCESSING(SSobj, src)                   // Waspstation Edit - Ninja Buttons Fix (Issue #339)
+		STOP_PROCESSING(SSobj, src)                   //WS Edit - Ninja Buttons Fix (Issue #339)
 	else
 		ninitialize()
-		START_PROCESSING(SSobj, src)                  // Waspstation Edit - Ninja Buttons Fix (Issue #339)
+		START_PROCESSING(SSobj, src)                  //WS Edit - Ninja Buttons Fix (Issue #339)
 
 /**
   * Initializes the ninja suit

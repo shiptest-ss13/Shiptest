@@ -42,7 +42,7 @@
 /obj/machinery/power/rad_collector/Destroy()
 	return ..()
 
-/* Wasp Edit - Smartwire Revert
+/*WS Edit - Smartwire Revert
 /obj/machinery/power/rad_collector/should_have_node()
 	return anchored
 */

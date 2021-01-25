@@ -29,14 +29,14 @@
 	var/useable = TRUE
 	var/list/food_reagents = list(/datum/reagent/consumable/nutriment = 5)
 
-	//WaspStation Begin - IPCS
+	//WS Begin - IPCS
 	var/vital = 0
 	//Was this organ implanted/inserted/etc, if true will not be removed during species change.
 	var/external = FALSE
 	//whether to call Remove() when qdeling the organ.
 	var/remove_on_qdel = TRUE
 	var/synthetic = FALSE // To distinguish between organic and synthetic organs
-	//WaspStation End
+	//WS End
 
 /obj/item/organ/Initialize()
 	. = ..()

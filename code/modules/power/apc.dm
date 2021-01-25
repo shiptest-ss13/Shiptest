@@ -38,10 +38,10 @@
 #define APC_CHARGING 1
 #define APC_FULLY_CHARGED 2
 
-// Waspstation Begin -- Ethereal Charge Scaling
+//WS Begin -- Ethereal Charge Scaling
 #define APC_DRAIN_TIME 75
 #define APC_POWER_GAIN (10 * ETHEREAL_CHARGE_SCALING_MULTIPLIER)
-// Waspstation End
+//WS End
 
 // the Area Power Controller (APC), formerly Power Distribution Unit (PDU)
 // one per area, needs wire connection to power network through a terminal
@@ -98,8 +98,8 @@
 	var/main_status = 0
 	powernet = 0		// set so that APCs aren't found as powernet nodes //Hackish, Horrible, was like this before I changed it :(
 	var/malfhack = 0 //New var for my changes to AI malf. --NeoFite
-	var/malfhackhide = 0 // WaspStation Edit - Malf AI Rework
-	var/malfhackhidecooldown = 0 // WaspStation Edit - Malf AI Rework
+	var/malfhackhide = 0 //WS Edit - Malf AI Rework
+	var/malfhackhidecooldown = 0 //WS Edit - Malf AI Rework
 	var/mob/living/silicon/ai/malfai = null //See above --NeoFite
 	var/has_electronics = APC_ELECTRONICS_MISSING // 0 - none, 1 - plugged in, 2 - secured by screwdriver
 	var/overload = 1 //used for the Blackout malf module
@@ -378,7 +378,7 @@
 			update_state |= UPSTATE_OPENED1
 		if(opened==APC_COVER_REMOVED)
 			update_state |= UPSTATE_OPENED2
-	// WaspStation Edit - Malf AI Rework
+	//WS Edit - Malf AI Rework
 	else if((obj_flags & EMAGGED))
 		update_state |= UPSTATE_BLUESCREEN
 	else if(malfai)
@@ -386,7 +386,7 @@
 			update_state |= UPSTATE_ALLGOOD
 		else
 			update_state |= UPSTATE_BLUESCREEN
-	// End WaspStation Edit - Malf AI Rework
+	// EndWS Edit - Malf AI Rework
 	else if(panel_open)
 		update_state |= UPSTATE_WIREEXP
 	if(update_state <= 1)
@@ -815,7 +815,7 @@
 	if(.)
 		return
 
-	// Waspstation Begin -- Ethereal Charge Scaling
+	//WS Begin -- Ethereal Charge Scaling
 	if(isethereal(user))
 		var/mob/living/carbon/human/H = user
 		var/datum/species/ethereal/E = H.dna.species
@@ -830,8 +830,8 @@
 				return
 			E.drain_time = world.time + APC_DRAIN_TIME
 			to_chat(H, "<span class='notice'>You start channeling some power through the APC into your body.</span>")
-			while(do_after(user, APC_DRAIN_TIME, target = src)) //Wasp edit
-				E.drain_time = world.time + APC_DRAIN_TIME //Wasp edit
+			while(do_after(user, APC_DRAIN_TIME, target = src)) //WS edit
+				E.drain_time = world.time + APC_DRAIN_TIME //WS edit
 				if(cell.charge <= (cell.maxcharge / 2) || (stomach.crystal_charge > charge_limit))
 					return
 				if(istype(stomach))
@@ -851,8 +851,8 @@
 				return
 			E.drain_time = world.time + APC_DRAIN_TIME
 			to_chat(H, "<span class='notice'>You start channeling power through your body into the APC.</span>")
-			while(do_after(user, APC_DRAIN_TIME, target = src)) //Wasp edit
-				E.drain_time = world.time + APC_DRAIN_TIME //Wasp edit
+			while(do_after(user, APC_DRAIN_TIME, target = src)) //WS edit
+				E.drain_time = world.time + APC_DRAIN_TIME //WS edit
 				if(cell.charge >= (cell.maxcharge - APC_POWER_GAIN) || (stomach.crystal_charge < APC_POWER_GAIN))
 					return
 				if(istype(stomach))
@@ -862,7 +862,7 @@
 				else
 					to_chat(H, "<span class='warning'>You can't transfer power to the APC!</span>")
 			return
-	// Waspstation End
+	//WS End
 
 	if(opened && (!issilicon(user)))
 		if(cell)
@@ -1048,9 +1048,9 @@
 		if("deoccupy")
 			if(get_malf_status(usr))
 				malfvacate()
-		if("hide_hack") // WaspStation Edit - Malf AI Rework
+		if("hide_hack") //WS Edit - Malf AI Rework
 			if(get_malf_status(usr))
-				malfhidehack(usr) //End WaspStation Edit - Malf AI Rework
+				malfhidehack(usr) //EndWS Edit - Malf AI Rework
 		if("reboot")
 			failure_timer = 0
 			update_icon()
@@ -1079,7 +1079,7 @@
 	if(get_malf_status(malf) != 1)
 		return
 	if(malf.malfhacking)
-		to_chat(malf, "<span class='warning'>You are already hacking or masking an APC!</span>") // WaspStation Edit - Malf AI Rework
+		to_chat(malf, "<span class='warning'>You are already hacking or masking an APC!</span>") //WS Edit - Malf AI Rework
 		return
 	to_chat(malf, "<span class='notice'>Beginning override of APC systems. This takes some time, and you cannot perform other actions during the process.</span>")
 	malf.malfhack = src
@@ -1089,7 +1089,7 @@
 	A = malf.throw_alert("hackingapc", /obj/screen/alert/hackingapc)
 	A.target = src
 
-// WaspStation Edit - Malf AI Rework
+//WS Edit - Malf AI Rework
 /obj/machinery/power/apc/proc/malfhidehack(mob/living/silicon/ai/malf)
 	if(!istype(malf))
 		return
@@ -1132,7 +1132,7 @@
 	malfhackhidecooldown = 0
 	to_chat(malf, "<span class='notice'>The [src.area.name] APC has recovered from your masking and has returned to normal operating status.</span>" )
 
-// End WaspStation Edit - Malf AI Rework
+// EndWS Edit - Malf AI Rework
 
 /obj/machinery/power/apc/proc/malfoccupy(mob/living/silicon/ai/malf)
 	if(!istype(malf))
@@ -1540,10 +1540,10 @@
 #undef APC_CHARGING
 #undef APC_FULLY_CHARGED
 
-// Waspstation Begin -- Ethereal Charge Scaling
+//WS Begin -- Ethereal Charge Scaling
 #undef APC_DRAIN_TIME
 #undef APC_POWER_GAIN
-// Waspstation End
+//WS End
 
 //update_overlay
 #undef APC_UPOVERLAY_CHARGEING0

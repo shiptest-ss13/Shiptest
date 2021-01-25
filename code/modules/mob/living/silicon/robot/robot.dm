@@ -414,7 +414,7 @@
 /mob/living/silicon/robot/regenerate_icons()
 	return update_icons()
 
-/* /mob/living/silicon/robot/update_icons() <--- Wasp - Moved to modular for borg icons
+/* /mob/living/silicon/robot/update_icons() <--- WS - Moved to modular for borg icons
 /mob/living/silicon/robot/update_icons()
 	cut_overlays()
 	SSvis_overlays.remove_vis_overlay(src, managed_vis_overlays)

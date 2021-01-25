@@ -73,7 +73,7 @@
 	if (obj_flags & EMAGGED)
 		return
 	obj_flags |= EMAGGED
-	SSshuttle.shuttle_purchase_requirements_met |= SHUTTLE_UNLOCK_EMAGGED //Wasp Edit - Makes shuttles from Emag list purchaseable
+	SSshuttle.shuttle_purchase_requirements_met |= SHUTTLE_UNLOCK_EMAGGED //WS Edit - Makes shuttles from Emag list purchaseable
 	if (authenticated)
 		authorize_access = get_all_accesses()
 	to_chat(user, "<span class='danger'>You scramble the communication routing circuits!</span>")
@@ -318,7 +318,7 @@
 				log_game("[key_name(usr)] enabled emergency maintenance access.")
 				message_admins("[ADMIN_LOOKUPFLW(usr)] enabled emergency maintenance access.")
 				deadchat_broadcast(" enabled emergency maintenance access at <span class='name'>[get_area_name(usr, TRUE)]</span>.", "<span class='name'>[usr.real_name]</span>", usr, message_type = DEADCHAT_ANNOUNCEMENT)
-		//Wasp Begin - Nightshift Toggling
+		//WS Begin - Nightshift Toggling
 		if ("toggleNightshift")
 			if(!SSnightshift.can_fire)
 				SSnightshift.can_fire = TRUE
@@ -330,7 +330,7 @@
 				SSnightshift.update_nightshift(FALSE, TRUE)
 				log_game("[key_name(usr)] has overridden the night shift to be off.")
 				message_admins("[ADMIN_LOOKUPFLW(usr)] has overridden the night shift to be off.")
-		//Wasp End
+		//WS End
 
 /obj/machinery/computer/communications/ui_data(mob/user)
 	var/list/data = list(
@@ -362,9 +362,9 @@
 				data["shuttleCalled"] = FALSE
 				data["shuttleLastCalled"] = FALSE
 
-				//Wasp Begin - Allows Toggling Nightshift Lighting
+				//WS Begin - Allows Toggling Nightshift Lighting
 				data["nightShiftActive"] = SSnightshift.can_fire
-				//Wasp End
+				//WS End
 
 				data["alertLevel"] = get_security_level()
 				data["authorizeName"] = authorize_name
@@ -491,7 +491,7 @@
 		to_chat(user, "<span class='warning'>You find yourself unable to speak.</span>")
 	else
 		input = user.treat_message(input) //Adds slurs and so on. Someone should make this use languages too.
-	SScommunications.make_announcement(user, is_ai, input, authorize_name) // Waspstation Edit - Make cap's announcement use logged-in name
+	SScommunications.make_announcement(user, is_ai, input, authorize_name) //WS Edit - Make cap's announcement use logged-in name
 	deadchat_broadcast(" made a priority announcement from <span class='name'>[get_area_name(usr, TRUE)]</span>.", "<span class='name'>[user.real_name]</span>", user, message_type=DEADCHAT_ANNOUNCEMENT)
 
 /obj/machinery/computer/communications/proc/post_status(command, data1, data2)

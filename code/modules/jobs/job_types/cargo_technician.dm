@@ -6,7 +6,7 @@
 	spawn_positions = 2
 	supervisors = "the quartermaster and the head of personnel"
 	selection_color = "#dcba97"
-	wiki_page = "Cargo_technician" //WaspStation Edit - Wikilinks/Warning
+	wiki_page = "Cargo_technician" //WS Edit - Wikilinks/Warning
 
 	outfit = /datum/outfit/job/cargo_tech
 
@@ -24,9 +24,9 @@
 	belt = /obj/item/pda/cargo
 	ears = /obj/item/radio/headset/headset_cargo
 	uniform = /obj/item/clothing/under/rank/cargo/tech
-	alt_uniform = /obj/item/clothing/under/shorts/grey //Wasp Edit - Alt Uniforms
+	alt_uniform = /obj/item/clothing/under/shorts/grey //WS Edit - Alt Uniforms
 	alt_suit = /obj/item/clothing/suit/hazardvest
-	dcoat = /obj/item/clothing/suit/hooded/wintercoat/cargo //Wasp Edit - Alt Uniforms
+	dcoat = /obj/item/clothing/suit/hooded/wintercoat/cargo //WS Edit - Alt Uniforms
 	l_hand = /obj/item/export_scanner
 	backpack_contents = list(/obj/item/modular_computer/tablet/preset/cargo=1)
 

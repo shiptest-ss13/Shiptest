@@ -433,12 +433,12 @@
 		var/obj/mecha/M = the_target
 		if (M.occupant)
 			return FALSE
-	// Wasp start
+	//WS start
 	if(isspacepod(the_target))
 		var/obj/spacepod/SP = the_target
 		if(SP.pilot || SP.passengers.len)
 			return FALSE
-	// Wasp end
+	//WS end
 	return TRUE
 
 /mob/living/simple_animal/handle_fire()

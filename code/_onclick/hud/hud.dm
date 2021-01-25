@@ -59,9 +59,9 @@ GLOBAL_LIST_INIT(available_ui_styles, list(
 	var/obj/screen/healthdoll
 	var/obj/screen/internals
 	var/obj/screen/wanted/wanted_lvl
-	/* Wasp begin
+	/*WS begin
 	var/obj/screen/spacesuit
-	Wasp End - Fuckin' spacesuits. */
+	WS End - Fuckin' spacesuits. */
 	// subtypes can override this to force a specific UI style
 	var/ui_style
 
