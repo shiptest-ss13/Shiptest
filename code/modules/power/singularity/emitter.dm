@@ -26,7 +26,7 @@
 	var/locked = FALSE
 	var/allow_switch_interact = TRUE
 
-	var/projectile_type = /obj/projectile/beam/emitter/hitscan //Wasp - Hitscan emitters
+	var/projectile_type = /obj/projectile/beam/emitter/hitscan //WS - Hitscan emitters
 	var/projectile_sound = 'sound/weapons/emitter.ogg'
 	var/datum/effect_system/spark_spread/sparks
 
@@ -120,7 +120,7 @@
 		return FALSE
 	return TRUE
 
-/* Wasp Edit - Smartwire Revert
+/*WS Edit - Smartwire Revert
 /obj/machinery/power/emitter/should_have_node()
 	return welded
 */
@@ -275,7 +275,7 @@
 			welded = FALSE
 			to_chat(user, "<span class='notice'>You cut [src] free from the floor.</span>")
 			disconnect_from_network()
-//			update_cable_icons_on_turf(get_turf(src)) - Wasp Edit - Smartwire Revert
+//			update_cable_icons_on_turf(get_turf(src)) - WS Edit - Smartwire Revert
 
 	else if(anchored)
 		if(!I.tool_start_check(user, amount=0))
@@ -287,7 +287,7 @@
 			welded = TRUE
 			to_chat(user, "<span class='notice'>You weld [src] to the floor.</span>")
 			connect_to_network()
-//			update_cable_icons_on_turf(get_turf(src)) - Wasp Edit - Smartwire Revert
+//			update_cable_icons_on_turf(get_turf(src)) - WS Edit - Smartwire Revert
 
 	else
 		to_chat(user, "<span class='warning'>[src] needs to be wrenched to the floor!</span>")

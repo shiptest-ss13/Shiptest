@@ -125,7 +125,7 @@
 	else
 		airlock.cyclelinkeddir = dir
 
-/obj/effect/mapping_helpers/airlock/cyclelink_helper_target	//Wasp start
+/obj/effect/mapping_helpers/airlock/cyclelink_helper_target	//WS start
 	name = "airlock cyclelink helper target"
 	icon_state = "airlock_cyclelink_helper_target"
 	var/dirx
@@ -139,7 +139,7 @@
 			log_mapping("[src] at [AREACOORD(src)] tried to set [airlock] cyclelinkedx and y, but has dirx and diry are uninitialized")
 			return
 		airlock.cyclelinkedx = dirx
-		airlock.cyclelinkedy = diry//Wasp end
+		airlock.cyclelinkedy = diry//WS end
 
 /obj/effect/mapping_helpers/airlock/locked
 	name = "airlock lock helper"

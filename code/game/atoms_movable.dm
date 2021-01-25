@@ -326,7 +326,7 @@
 		direct = get_dir(src, newloc)
 	setDir(direct)
 
-	// Wasp start - multi tile object handling
+	//WS start - multi tile object handling
 	if(bound_width != world.icon_size || bound_height != world.icon_size)
 		var/list/newlocs = isturf(newloc) ? block(locate(newloc.x+(-bound_x)/world.icon_size,newloc.y+(-bound_y)/world.icon_size,newloc.z),locate(newloc.x+(-bound_x+bound_width)/world.icon_size-1,newloc.y+(-bound_y+bound_height)/world.icon_size-1,newloc.z)) : list(newloc)
 		if(!newlocs)
@@ -347,7 +347,7 @@
 
 		if(!newloc.Enter(src, src.loc))
 			return
-	// Wasp end
+	//WS end
 
 	if (SEND_SIGNAL(src, COMSIG_MOVABLE_PRE_MOVE, newloc) & COMPONENT_MOVABLE_BLOCK_PRE_MOVE)
 		return

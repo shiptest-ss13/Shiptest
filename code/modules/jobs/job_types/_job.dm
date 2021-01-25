@@ -108,10 +108,10 @@
 				if(!permitted)
 					to_chat(M, "<span class='warning'>Your current species or role does not permit you to spawn with [gear]!</span>")
 					continue
-				// WaspStation Edit - Fix Loadout Uniforms not spawning ID/PDA
+				//WS Edit - Fix Loadout Uniforms not spawning ID/PDA
 				if(G.slot == ITEM_SLOT_ICLOTHING)
 					continue // Handled in pre_equip
-				//End WaspStation Edit - Fix Loadout Uniforms not spawning ID/PDA
+				//EndWS Edit - Fix Loadout Uniforms not spawning ID/PDA
 				if(G.slot)
 					if(!H.equip_to_slot_or_del(G.spawn_item(H, owner = H), G.slot))
 						LAZYADD(gear_leftovers, G)
@@ -298,7 +298,7 @@
 				holder = "[alt_uniform]"
 		if(PREF_GREYSUIT)
 			holder = "/obj/item/clothing/under/color/grey"
-		// WaspStation Edit - Fix Loadout Uniforms not spawning ID/PDA
+		//WS Edit - Fix Loadout Uniforms not spawning ID/PDA
 		if(PREF_LOADOUT)
 			if (preference_source == null)
 				holder = "[uniform]" // Who are we getting the loadout pref from anyways?
@@ -312,7 +312,7 @@
 					holder = "[uniform]"
 				else
 					uniform = pref_loadout_uniform
-		// End WaspStation Edit - Fix Loadout Uniforms not spawning ID/PDA
+		// EndWS Edit - Fix Loadout Uniforms not spawning ID/PDA
 		else
 			holder = "[uniform]"
 
@@ -353,12 +353,12 @@
 		C.access = J.get_access()
 		shuffle_inplace(C.access) // Shuffle access list to make NTNet passkeys less predictable
 		C.registered_name = H.real_name
-		//Wasp begin - Alt job titles
+		//WS begin - Alt job titles
 		if(preference_source && preference_source.prefs && preference_source.prefs.alt_titles_preferences[J.title])
 			C.assignment = preference_source.prefs.alt_titles_preferences[J.title]
 		else
 			C.assignment = J.title
-		//Wasp end
+		//WS end
 		if(H.age)
 			C.registered_age = H.age
 		C.update_label()
@@ -373,12 +373,12 @@
 	var/obj/item/pda/PDA = H.get_item_by_slot(pda_slot)
 	if(istype(PDA))
 		PDA.owner = H.real_name
-		//Wasp begin - Alt job titles
+		//WS begin - Alt job titles
 		if(preference_source && preference_source.prefs && preference_source.prefs.alt_titles_preferences[J.title])
 			PDA.ownjob = preference_source.prefs.alt_titles_preferences[J.title]
 		else
 			PDA.ownjob = J.title
-		//Wasp end
+		//WS end
 		PDA.update_label()
 
 /datum/outfit/job/get_chameleon_disguise_info()

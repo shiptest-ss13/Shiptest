@@ -222,7 +222,7 @@
 /obj/item/storage/backpack/satchel/leather
 	name = "leather satchel"
 	desc = "It's a very fancy satchel made with fine leather."
-	icon = 'waspstation/icons/obj/storage.dmi'		// Wasp Edit - Suitcases
+	icon = 'whitesands/icons/obj/storage.dmi'		//WS Edit - Suitcases
 	icon_state = "satchel"
 	item_state = "satchel"
 
@@ -403,7 +403,7 @@
 	new /obj/item/wrench(src)
 	new /obj/item/weldingtool(src)
 	new /obj/item/crowbar(src)
-	new /obj/item/stack/cable_coil/random(src) //Random from Wasp Smartwire Revert
+	new /obj/item/stack/cable_coil/random(src) //Random from WS Smartwire Revert
 	new /obj/item/wirecutters(src)
 	new /obj/item/multitool(src)
 

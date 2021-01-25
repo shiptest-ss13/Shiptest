@@ -1,12 +1,12 @@
 # MAPS
 
-Waspstation currently comes equipped with five maps.
+White Sands currently comes equipped with five maps.
 
-* [BoxStation (default)](https://wiki.boomerstation.space/Boxstation)
-* [MetaStation](https://wiki.boomerstation.space/MetaStation)
-* [DeltaStation](https://wiki.boomerstation.space/DeltaStation)
-* [PubbyStation](https://wiki.boomerstation.space/PubbyStation)
-* [Kilostation](https://wiki.boomerstation.space/KiloStation)
+* [BoxStation (default)](https://wiki.white-sands.space/Boxstation)
+* [MetaStation](https://wiki.white-sands.space/MetaStation)
+* [DeltaStation](https://wiki.white-sands.space/DeltaStation)
+* [PubbyStation](https://wiki.white-sands.space/PubbyStation)
+* [Kilostation](https://wiki.white-sands.space/KiloStation)
 
 All maps have their own code file that is in the base of the _maps directory. Maps are loaded dynamically when the game starts. Follow this guideline when adding your own map, to your fork, for easy compatibility.
 
@@ -18,7 +18,7 @@ Anytime you want to make changes to a map it's imperative you use the [Map Mergi
 
 ## AWAY MISSIONS
 
-Waspstation supports loading away missions however they are disabled by default.
+White Sands supports loading away missions however they are disabled by default.
 
 Map files for away missions are located in the _maps/RandomZLevels directory. Each away mission includes it's own code definitions located in /code/modules/awaymissions/mission_code. These files must be included and compiled with the server beforehand otherwise the server will crash upon trying to load away missions that lack their code.
 

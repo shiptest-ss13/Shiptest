@@ -309,14 +309,14 @@
 
 	//Medals
 	parts += medal_report()
-	//Wasp Begin
+	//WS Begin
 	CHECK_TICK
 
 	//Mouse
 	parts += mouse_report()
 
 	CHECK_TICK
-	//Wasp End
+	//WS End
 	//Station Goals
 	parts += goal_report()
 
@@ -478,7 +478,7 @@
 			parts += com
 		return "<div class='panel stationborder'>[parts.Join("<br>")]</div>"
 	return ""
-//Wasp Begin
+//WS Begin
 /datum/controller/subsystem/ticker/proc/mouse_report()
 	if(GLOB.mouse_food_eaten)
 		var/list/parts = list()
@@ -488,7 +488,7 @@
 		parts += "Trash Eaten: [GLOB.mouse_food_eaten]"
 		return "<div class='panel stationborder'>[parts.Join("<br>")]</div>"
 	return ""
-//Wasp End
+//WS End
 /datum/controller/subsystem/ticker/proc/antag_report()
 	var/list/result = list()
 	var/list/all_teams = list()

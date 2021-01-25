@@ -1,4 +1,4 @@
-/proc/priority_announce(text, title = "", sound = 'sound/ai/attention.ogg', type, sender_override, auth_id)            // Waspstation Edit - Make cap's announcement use logged-in name
+/proc/priority_announce(text, title = "", sound = 'sound/ai/attention.ogg', type, sender_override, auth_id)            //WS Edit - Make cap's announcement use logged-in name
 	if(!text)
 		return
 
@@ -28,8 +28,8 @@
 
 	announcement += "<br><span class='alert'>[html_encode(text)]</span><br>"
 	announcement += "<br>"
-	if(auth_id)                                                                                                       // Waspstation Edit - Make cap's announcement use logged-in name
-		announcement += "<span class='alert'>-[auth_id]</span><br>"                                                   // Waspstation Edit - Make cap's announcement use logged-in name
+	if(auth_id)                                                                                                       //WS Edit - Make cap's announcement use logged-in name
+		announcement += "<span class='alert'>-[auth_id]</span><br>"                                                   //WS Edit - Make cap's announcement use logged-in name
 
 	var/s = sound(sound)
 	for(var/mob/M in GLOB.player_list)

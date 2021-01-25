@@ -6,7 +6,7 @@
 	exclaim_verb = "screeches"
 	whisper_verb = "clicks"
 	sing_verb = "chimes"
-	flags = LANGUAGE_HIDE_ICON_IF_NOT_UNDERSTOOD //WaspStation Edit- Language icon hiding
+	flags = LANGUAGE_HIDE_ICON_IF_NOT_UNDERSTOOD //WS Edit- Language icon hiding
 	key = "b"
 	space_chance = 10
 	syllables = list(

@@ -328,10 +328,10 @@
 	return list()
 
 /obj/machinery/atmospherics/update_remote_sight(mob/user)
-	if(isborer(user))		//Wasp Begin - Borers
+	if(isborer(user))		//WS Begin - Borers
 		user.sight |= (SEE_PIXELS)
 	else
-		user.sight |= (SEE_TURFS|BLIND)		//Wasp End
+		user.sight |= (SEE_TURFS|BLIND)		//WS End
 
 //Used for certain children of obj/machinery/atmospherics to not show pipe vision when mob is inside it.
 /obj/machinery/atmospherics/proc/can_see_pipes()

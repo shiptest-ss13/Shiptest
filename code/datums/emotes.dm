@@ -26,7 +26,7 @@
 	var/vary = FALSE	//used for the honk borg emote
 	var/only_forced_audio = FALSE //can only code call this event instead of the player.
 	var/cooldown = 0.8 SECONDS
-	var/static/regex/stop_bad_mime = regex(@"says|exclaims|yells|asks") //Wasp Edit
+	var/static/regex/stop_bad_mime = regex(@"says|exclaims|yells|asks") //WS Edit
 
 /datum/emote/New()
 	if (ispath(mob_type_allowed_typecache))

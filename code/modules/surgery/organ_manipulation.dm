@@ -102,7 +102,7 @@
 			"<span class='notice'>[user] begins to insert [tool] into [target]'s [parse_zone(target_zone)].</span>",
 			"<span class='notice'>[user] begins to insert something into [target]'s [parse_zone(target_zone)].</span>")
 
-	//WaspStation Begin - IPCs
+	//WS Begin - IPCs
 
 	if(istype(tool, /obj/item/mmi))//this whole thing is only used for robotic surgery in organ_mani_robotic.dm :*
 		current_type = "posibrain"
@@ -132,17 +132,17 @@
 			to_chat(user, "<span class='warning'>[I] seems to have been chewed on, you can't use this!</span>")
 			return -1
 
-	//WaspStation End
+	//WS End
 
 	else if(implement_type in implements_extract)
 		current_type = "extract"
 		var/list/organs = target.getorganszone(target_zone)
 
-		var/mob/living/simple_animal/borer/B = target.has_brain_worms()		//Wasp Begin - Borers
+		var/mob/living/simple_animal/borer/B = target.has_brain_worms()		//WS Begin - Borers
 		if(target.has_brain_worms())
 			user.visible_message("[user] begins to extract [B] from [target]'s [parse_zone(target_zone)].",
 					"<span class='notice'>You begin to extract [B] from [target]'s [parse_zone(target_zone)]...</span>")
-			return TRUE		//Wasp End
+			return TRUE		//WS End
 
 		if(!organs.len)
 			to_chat(user, "<span class='warning'>There are no removable organs in [target]'s [parse_zone(target_zone)]!</span>")
@@ -195,7 +195,7 @@
 			"<span class='notice'>[user] inserts something into [target]'s [parse_zone(target_zone)]!</span>")
 
 	else if(current_type == "extract")
-		//Wasp begin - borers
+		//WS begin - borers
 		var/mob/living/simple_animal/borer/B = target.has_brain_worms()
 		if(B && B.victim == target)
 			user.visible_message("[user] successfully extracts [B] from [target]'s [parse_zone(target_zone)]!",
@@ -203,7 +203,7 @@
 			log_combat(user, target, "surgically removed [B] from", addition="INTENT: [uppertext(user.a_intent)]")
 			B.leave_victim()
 			return FALSE
-		//Wasp end
+		//WS end
 		if(I && I.owner == target)
 			display_results(user, target, "<span class='notice'>You successfully extract [I] from [target]'s [parse_zone(target_zone)].</span>",
 				"<span class='notice'>[user] successfully extracts [I] from [target]'s [parse_zone(target_zone)]!</span>",

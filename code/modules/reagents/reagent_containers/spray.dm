@@ -406,7 +406,7 @@
 			item_state = "sprayer_med_blue"
 	M.update_inv_hands()
 
-/* WaspStation Begin - No Cobby
+/*WS Begin - No Cobby
 
 /obj/item/reagent_containers/spray/hercuri
 	name = "medical spray (hercuri)"
@@ -414,4 +414,4 @@
 	icon_state = "sprayer_large"
 	list_reagents = list(/datum/reagent/medicine/C2/hercuri = 100)
 
-WaspStation End */
+WS End */

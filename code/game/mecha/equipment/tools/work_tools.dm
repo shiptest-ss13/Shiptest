@@ -348,7 +348,7 @@
 /obj/item/mecha_parts/mecha_equipment/rcd/get_equip_info()
 	return "[..()] \[<a href='?src=[REF(src)];mode=0'>D</a>|<a href='?src=[REF(src)];mode=1'>C</a>|<a href='?src=[REF(src)];mode=2'>A</a>\]"
 
-//Wasp Edit Begin - Readded from Smartwire Revert
+//WS Edit Begin - Readded from Smartwire Revert
 /obj/item/mecha_parts/mecha_equipment/cable_layer
 	name = "cable layer"
 	desc = "Equipment for engineering exosuits. Lays cable along the exosuit's path."
@@ -483,7 +483,7 @@
 	//NC.mergeConnectedNetworksOnTurf()
 	last_piece = NC
 	return 1
-//Wasp Edit End - Readded from Smartwire Revert
+//WS Edit End - Readded from Smartwire Revert
 
 //Dunno where else to put this so shrug
 /obj/item/mecha_parts/mecha_equipment/ripleyupgrade

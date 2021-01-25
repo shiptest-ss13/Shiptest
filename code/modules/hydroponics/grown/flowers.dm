@@ -84,7 +84,7 @@
 	bitesize_mod = 3
 	foodtype = VEGETABLES
 	wine_power = 40
-	wine_flavor = "Purple"  //wasp edit: new wine flavors. capitalization intentional
+	wine_flavor = "Purple"  //WS edit: new wine flavors. capitalization intentional
 
 // Geranium
 /obj/item/seeds/poppy/geranium

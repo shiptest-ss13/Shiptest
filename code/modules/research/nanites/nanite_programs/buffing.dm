@@ -36,7 +36,7 @@
 /datum/nanite_program/hardening
 	name = "Dermal Hardening"
 	desc = "The nanites form a mesh under the host's skin, protecting them from melee and bullet impacts."
-	use_rate = 1.0			// Waspstation Edit - Increases nanite armor power use
+	use_rate = 1.0			//WS Edit - Increases nanite armor power use
 	rogue_types = list(/datum/nanite_program/skin_decay)
 
 //TODO on_hit effect that turns skin grey for a moment
@@ -45,35 +45,35 @@
 	. = ..()
 	if(ishuman(host_mob))
 		var/mob/living/carbon/human/H = host_mob
-		H.physiology.armor.melee += 30		// Waspstation Edit - nerfs nanite armor
-		H.physiology.armor.bullet += 30		// Waspstation Edit
+		H.physiology.armor.melee += 30		//WS Edit - nerfs nanite armor
+		H.physiology.armor.bullet += 30		//WS Edit
 
 /datum/nanite_program/hardening/disable_passive_effect()
 	. = ..()
 	if(ishuman(host_mob))
 		var/mob/living/carbon/human/H = host_mob
-		H.physiology.armor.melee -= 30		// Waspstation Edit - nerfs nanite armor
-		H.physiology.armor.bullet -= 30		// Waspstation Edit
+		H.physiology.armor.melee -= 30		//WS Edit - nerfs nanite armor
+		H.physiology.armor.bullet -= 30		//WS Edit
 
 /datum/nanite_program/refractive
 	name = "Dermal Refractive Surface"
 	desc = "The nanites form a membrane above the host's skin, reducing the effect of laser and energy impacts."
-	use_rate = 1.0			// Waspstation Edit - Increases nanite armor power use
+	use_rate = 1.0			//WS Edit - Increases nanite armor power use
 	rogue_types = list(/datum/nanite_program/skin_decay)
 
 /datum/nanite_program/refractive/enable_passive_effect()
 	. = ..()
 	if(ishuman(host_mob))
 		var/mob/living/carbon/human/H = host_mob
-		H.physiology.armor.laser += 30		// Waspstation Edit - nerfs nanite armor
-		H.physiology.armor.energy += 30		// Waspstation Edit
+		H.physiology.armor.laser += 30		//WS Edit - nerfs nanite armor
+		H.physiology.armor.energy += 30		//WS Edit
 
 /datum/nanite_program/refractive/disable_passive_effect()
 	. = ..()
 	if(ishuman(host_mob))
 		var/mob/living/carbon/human/H = host_mob
-		H.physiology.armor.laser -= 30		// Waspstation Edit - nerfs nanite armor
-		H.physiology.armor.energy -= 30		// Waspstation Edit
+		H.physiology.armor.laser -= 30		//WS Edit - nerfs nanite armor
+		H.physiology.armor.energy -= 30		//WS Edit
 
 /datum/nanite_program/coagulating
 	name = "Rapid Coagulation"

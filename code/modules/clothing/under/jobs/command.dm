@@ -1,4 +1,4 @@
-/* WaspStation Edit - Better Command Uniforms
+/*WS Edit - Better Command Uniforms
 
 /obj/item/clothing/under/rank/command/captain
 	desc = "It's a blue jumpsuit with some gold markings denoting the rank of \"Captain\"."
@@ -42,4 +42,4 @@
 	item_state = "by_suit"
 	can_adjust = FALSE
 
-WaspStation End */
+WS End */

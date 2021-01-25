@@ -85,7 +85,7 @@
 
 /obj/structure/lavaland/ash_walker/proc/remake_walker(var/datum/mind/oldmind, var/oldname)
 	var/mob/living/carbon/human/M = new /mob/living/carbon/human(get_step(loc, pick(GLOB.alldirs)))
-	M.set_species(/datum/species/lizard/ashwalker/kobold) //Wasp Edit - Kobold
+	M.set_species(/datum/species/lizard/ashwalker/kobold) //WS Edit - Kobold
 	M.real_name = oldname
 	M.underwear = "Nude"
 	M.update_body()
@@ -100,7 +100,7 @@
 		visible_message("<span class='danger'>One of the eggs swells to an unnatural size and tumbles free. It's ready to hatch!</span>")
 		meat_counter -= ASH_WALKER_SPAWN_THRESHOLD
 
-/obj/structure/lavaland/ash_walker/attackby(obj/item/I, mob/living/user, params)	//Wasp Edit - Movable Tendril
+/obj/structure/lavaland/ash_walker/attackby(obj/item/I, mob/living/user, params)	//WS Edit - Movable Tendril
 	if(user.mind.assigned_role == "Ash Walker")
 		to_chat(user, "<span class='warning'>You would never think of harming the great Tendril of the Necropolis!</span>")
 		return

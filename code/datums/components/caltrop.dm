@@ -22,7 +22,7 @@
 
 	if(ishuman(AM))
 		var/mob/living/carbon/human/H = AM
-		var/atom/A = parent		// Wasp Edit
+		var/atom/A = parent		//WS Edit
 
 		if(HAS_TRAIT(H, TRAIT_PIERCEIMMUNE))
 			return
@@ -51,17 +51,17 @@
 			return
 
 		var/damage = rand(min_damage, max_damage)
-		var/haslightstep = HAS_TRAIT(H, TRAIT_LIGHT_STEP) //Begin Waspstation edit - caltrops don't paralyze people with light step
+		var/haslightstep = HAS_TRAIT(H, TRAIT_LIGHT_STEP) //BeginWS edit - caltrops don't paralyze people with light step
 		if(haslightstep && !H.incapacitated(ignore_restraints = TRUE))
 			damage *= 0.75
 
 		if(cooldown < world.time - 10) //cooldown to avoid message spam.
-			//var/atom/A = parent		Wasp edit
+			//var/atom/A = parent		WS edit
 			if(!H.incapacitated(ignore_restraints = TRUE))
 				if(haslightstep)
 					H.visible_message("<span class='danger'>[H] carefully steps on [A].</span>",
 									  "<span class='danger'>You carefully step on [A], but it still hurts!</span>")
-				else 
+				else
 					H.visible_message("<span class='danger'>[H] steps on [A].</span>", \
 									  "<span class='userdanger'>You step on [A]!</span>")
 			else
@@ -71,8 +71,8 @@
 			cooldown = world.time
 		H.apply_damage(damage, BRUTE, picked_def_zone)
 		if(!haslightstep)
-			H.Paralyze(60) //End Waspstation edit - caltrops don't paralyze people with light step
-		if(H.pulledby)								// Waspstation Edit Begin - Being pulled over caltrops is logged
+			H.Paralyze(60) //EndWS edit - caltrops don't paralyze people with light step
+		if(H.pulledby)								//WS Edit Begin - Being pulled over caltrops is logged
 			log_combat(H.pulledby, H, "pulled", A)
 		else
-			H.log_message("has stepped on [A]", LOG_ATTACK, color="orange")		// Waspstation Edit End
+			H.log_message("has stepped on [A]", LOG_ATTACK, color="orange")		//WS Edit End

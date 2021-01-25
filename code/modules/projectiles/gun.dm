@@ -23,7 +23,7 @@
 	var/vary_fire_sound = TRUE
 	var/fire_sound_volume = 50
 	var/dry_fire_sound = 'sound/weapons/gun/general/dry_fire.ogg'
-	var/dry_fire_text = "click"				//change this on non-gun things		Wasp Edit - Dry firing
+	var/dry_fire_text = "click"				//change this on non-gun things		WS Edit - Dry firing
 	var/suppressed = null					//whether or not a message is displayed when fired
 	var/can_suppress = FALSE
 	var/suppressed_sound = 'sound/weapons/gun/general/heavy_shot_suppressed.ogg'
@@ -147,7 +147,7 @@
 	return TRUE
 
 /obj/item/gun/proc/shoot_with_empty_chamber(mob/living/user as mob|obj)
-	to_chat(user, "<span class='danger'>*[dry_fire_text]*</span>")		// Wasp Edit - Dry firing
+	to_chat(user, "<span class='danger'>*[dry_fire_text]*</span>")		//WS Edit - Dry firing
 	playsound(src, dry_fire_sound, 30, TRUE)
 
 
@@ -429,7 +429,7 @@
 	else if(bayonet && can_bayonet) //if it has a bayonet, and the bayonet can be removed
 		return remove_gun_attachment(user, I, bayonet, "unfix")
 
-	/* WaspStation Edit - Fixes Pin Removal
+	/*WS Edit - Fixes Pin Removal
 	else if(pin && user.is_holding(src))
 		user.visible_message("<span class='warning'>[user] attempts to remove [pin] from [src] with [I].</span>",
 		"<span class='notice'>You attempt to remove [pin] from [src]. (It will take [DisplayTimeText(FIRING_PIN_REMOVAL_DELAY)].)</span>", null, 3)
@@ -440,7 +440,7 @@
 								"<span class='warning'>You pry [pin] out with [I], destroying the pin in the process.</span>", null, 3)
 			QDEL_NULL(pin)
 			return TRUE
-	WaspStation End */
+	WS End */
 
 
 /obj/item/gun/welder_act(mob/living/user, obj/item/I)

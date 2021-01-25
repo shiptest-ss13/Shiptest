@@ -1,4 +1,4 @@
-/* Wasp Edit - Fuck Psychologists.
+/*WS Edit - Fuck Psychologists.
 /datum/job/psychologist
 	title = "Psychologist"
 	department_head = list("Head of Personnel","Chief Medical Officer")

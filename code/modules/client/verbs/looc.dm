@@ -45,8 +45,8 @@ GLOBAL_VAR_INIT(normal_looc_colour, "#6699CC")
 			return
 
 	msg = emoji_parse(msg)
-	msg = process_chat_markup(msg) // Waspstation edit - Chat markup
-	
+	msg = process_chat_markup(msg) //WS edit - Chat markup
+
 	mob.log_talk(msg,LOG_OOC, tag="(LOOC)")
 
 	var/list/heard = get_hearers_in_view(7, get_top_level_mob(src.mob))

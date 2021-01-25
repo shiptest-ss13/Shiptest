@@ -189,11 +189,11 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	READ_FILE(S["key_bindings"], key_bindings)
 	check_keybindings()
 
-	//Wasp Begin - Custom Prefs
+	//WS Begin - Custom Prefs
 	READ_FILE(S["purchased_gear"], purchased_gear)
 	READ_FILE(S["crew_objectives"], crew_objectives)
 	READ_FILE(S["show_credits"], show_credits)
-	//Wasp End
+	//WS End
 
 	//try to fix any outdated data if necessary
 	if(needs_update >= 0)
@@ -378,7 +378,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	READ_FILE(S["feature_moth_wings"], features["moth_wings"])
 	READ_FILE(S["feature_moth_markings"], features["moth_markings"])
 
-	//Wasp Begin
+	//WS Begin
 
 	READ_FILE(S["equipped_gear"], equipped_gear)
 	READ_FILE(S["jumpsuit_style"], jumpsuit_style)
@@ -403,7 +403,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	if(!equipped_gear)
 		equipped_gear = list()
 
-	//Wasp End
+	//WS End
 
 	if(!CONFIG_GET(flag/join_with_mutant_humans))
 		features["tail_human"] = "none"
@@ -559,7 +559,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["feature_moth_wings"]			, features["moth_wings"])
 	WRITE_FILE(S["feature_moth_markings"]		, features["moth_markings"])
 
-	//Wasp begin
+	//WS begin
 	WRITE_FILE(S["jumpsuit_style"]				, jumpsuit_style)
 	WRITE_FILE(S["exowear"]						, exowear)
 	WRITE_FILE(S["equipped_gear"]				, equipped_gear)
@@ -579,7 +579,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	//Flavor text
 	WRITE_FILE(S["feature_flavor_text"], features["flavor_text"])
 
-	//Wasp End
+	//WS End
 
 	//Custom names
 	for(var/custom_name_id in GLOB.preferences_custom_names)

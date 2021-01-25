@@ -100,10 +100,10 @@
 /obj/item/storage/bag/ore
 	name = "mining satchel"
 	desc = "This little bugger can be used to store and transport ores."
-	//WaspStation Begin - Better bag sprites
-	icon = 'waspstation/icons/obj/bags.dmi'
+	//WS Begin - Better bag sprites
+	icon = 'whitesands/icons/obj/bags.dmi'
 	icon_state = "minebag"
-	//WaspStation end
+	//WS end
 	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_POCKETS
 	component_type = /datum/component/storage/concrete/stack
 	var/spam_protection = FALSE //If this is TRUE, the holder won't receive any messages when they fail to pick up ore through crossing it
@@ -172,10 +172,10 @@
 /obj/item/storage/bag/ore/holding //miners, your messiah has arrived
 	name = "mining satchel of holding"
 	desc = "A revolution in convenience, this satchel allows for huge amounts of ore storage. It's been outfitted with anti-malfunction safety measures."
-	//WaspStation Begin - Better bag sprites
-	icon = 'waspstation/icons/obj/bags.dmi'
+	//WS Begin - Better bag sprites
+	icon = 'whitesands/icons/obj/bags.dmi'
 	icon_state = "minebagbs"
-	//WaspStation end
+	//WS end
 
 /obj/item/storage/bag/ore/holding/ComponentInitialize()
 	. = ..()
@@ -190,10 +190,10 @@
 
 /obj/item/storage/bag/plants
 	name = "plant bag"
-	//WaspStation Begin - Better bag sprites
-	icon = 'waspstation/icons/obj/bags.dmi'
+	//WS Begin - Better bag sprites
+	icon = 'whitesands/icons/obj/bags.dmi'
 	icon_state = "plantbag"
-	//WaspStation end
+	//WS end
 	resistance_flags = FLAMMABLE
 
 /obj/item/storage/bag/plants/ComponentInitialize()
@@ -365,10 +365,10 @@
 
 /obj/item/storage/bag/chemistry
 	name = "chemistry bag"
-	//WaspStation Begin - Better bag sprites
-	icon = 'waspstation/icons/obj/bags.dmi'
+	//WS Begin - Better bag sprites
+	icon = 'whitesands/icons/obj/bags.dmi'
 	icon_state = "chembag"
-	//WaspStation end
+	//WS end
 	desc = "A bag for storing pills, patches, and bottles."
 	resistance_flags = FLAMMABLE
 
@@ -395,10 +395,10 @@
 
 /obj/item/storage/bag/bio
 	name = "bio bag"
-	//WaspStation Begin - Better bag sprites
-	icon = 'waspstation/icons/obj/bags.dmi'
+	//WS Begin - Better bag sprites
+	icon = 'whitesands/icons/obj/bags.dmi'
 	icon_state = "virobag"
-	//WaspStation end
+	//WS end
 	desc = "A bag for the safe transportation and disposal of biowaste and other biological materials."
 	resistance_flags = FLAMMABLE
 
@@ -428,10 +428,10 @@
 
 /obj/item/storage/bag/construction
 	name = "construction bag"
-	//WaspStation Begin - Better bag sprites
-	icon = 'waspstation/icons/obj/bags.dmi'
+	//WS Begin - Better bag sprites
+	icon = 'whitesands/icons/obj/bags.dmi'
 	icon_state = "engbag"
-	//WaspStation end
+	//WS end
 	desc = "A bag for storing small construction components."
 	resistance_flags = FLAMMABLE
 

@@ -1,6 +1,6 @@
 /obj/item/ammo_box/magazine/wt550m9
 	name = "wt550 magazine (4.6x30mm)"
-	icon = 'waspstation/icons/obj/ammo.dmi'
+	icon = 'whitesands/icons/obj/ammo.dmi'
 	icon_state = "46x30mmt-20"
 	ammo_type = /obj/item/ammo_casing/c46x30mm
 	caliber = "4.6x30mm"
@@ -41,7 +41,7 @@
 
 /obj/item/ammo_box/magazine/smgm9mm
 	name = "SMG magazine (9mm)"
-	icon = 'waspstation/icons/obj/ammo.dmi'
+	icon = 'whitesands/icons/obj/ammo.dmi'
 	icon_state = "smg9mm-42"
 	ammo_type = /obj/item/ammo_casing/c9mm
 	caliber = "9mm"

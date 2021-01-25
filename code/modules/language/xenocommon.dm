@@ -5,7 +5,7 @@
 	ask_verb = "hisses"
 	exclaim_verb = "hisses"
 	sing_verb = "hisses musically"
-	flags = LANGUAGE_HIDE_ICON_IF_NOT_UNDERSTOOD //WaspStation Edit- Language icon hiding
+	flags = LANGUAGE_HIDE_ICON_IF_NOT_UNDERSTOOD //WS Edit- Language icon hiding
 	key = "4"
 	syllables = list("sss","sSs","SSS")
 	default_priority = 50

@@ -118,7 +118,7 @@
 	..()
 
 /obj/item/organ/stomach/ethereal/proc/charge(datum/source, amount, repairs)
-	adjust_charge((amount * ETHEREAL_CHARGE_SCALING_MULTIPLIER) / 70 )      // Waspstation Edit -- Ethereal Charge Scaling
+	adjust_charge((amount * ETHEREAL_CHARGE_SCALING_MULTIPLIER) / 70 )      //WS Edit -- Ethereal Charge Scaling
 
 /obj/item/organ/stomach/ethereal/proc/on_electrocute(datum/source, shock_damage, siemens_coeff = 1, flags = NONE)
 	if(flags & SHOCK_ILLUSION)
@@ -129,11 +129,11 @@
 /obj/item/organ/stomach/ethereal/proc/adjust_charge(amount)
 	crystal_charge = clamp(crystal_charge + amount, ETHEREAL_CHARGE_NONE, ETHEREAL_CHARGE_DANGEROUS)
 
-// WaspStation Begin - IPCs
+//WS Begin - IPCs
 
 /obj/item/organ/stomach/cell
 	name = "micro-cell"
-	icon = 'waspstation/icons/obj/surgery.dmi'
+	icon = 'whitesands/icons/obj/surgery.dmi'
 	icon_state = "microcell"
 	w_class = WEIGHT_CLASS_NORMAL
 	zone = "chest"
@@ -151,4 +151,4 @@
 			owner.nutrition = 250
 			to_chat(owner, "<span class='warning'>Alert: EMP Detected. Cycling battery.</span>")
 
-// WaspStation End
+//WS End

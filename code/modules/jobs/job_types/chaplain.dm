@@ -5,7 +5,7 @@
 	total_positions = 1
 	spawn_positions = 1
 	supervisors = "the head of personnel"
-	wiki_page = "Chaplain" //WaspStation Edit - Wikilinks/Warning
+	wiki_page = "Chaplain" //WS Edit - Wikilinks/Warning
 	selection_color = "#bbe291"
 
 	outfit = /datum/outfit/job/chaplain
@@ -122,7 +122,7 @@
 	belt = /obj/item/pda/chaplain
 	ears = /obj/item/radio/headset/headset_srv
 	uniform = /obj/item/clothing/under/rank/civilian/chaplain
-	alt_uniform = /obj/item/clothing/under/pants/youngfolksjeans //Wasp Edit - Alt Uniforms
+	alt_uniform = /obj/item/clothing/under/pants/youngfolksjeans //WS Edit - Alt Uniforms
 	backpack_contents = list(
 		/obj/item/stamp/chap = 1,
 		/obj/item/camera/spooky = 1

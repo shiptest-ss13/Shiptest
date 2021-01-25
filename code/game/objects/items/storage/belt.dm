@@ -65,9 +65,9 @@
 		/obj/item/pipe_dispenser,
 		/obj/item/inducer,
 		/obj/item/plunger,
-		/obj/item/clothing/glasses/welding, //wasp edit: ok mald sure I'll add the welding stuff to the. ok. 
+		/obj/item/clothing/glasses/welding, //WS edit: ok mald sure I'll add the welding stuff to the. ok.
 		/obj/item/clothing/mask/gas/welding,
-		/obj/item/clothing/head/welding //wasp end
+		/obj/item/clothing/head/welding //WS end
 		))
 
 /obj/item/storage/belt/utility/chief
@@ -236,7 +236,7 @@
 		/obj/item/clothing/gloves,
 		/obj/item/restraints/legcuffs/bola,
 		/obj/item/holosign_creator/security,
-		/obj/item/stock_parts/cell/gun   //waspstation edit Gun cells fit where they should and not where they dont
+		/obj/item/stock_parts/cell/gun   //WS edit Gun cells fit where they should and not where they dont
 		))
 
 /obj/item/storage/belt/security/full/PopulateContents()

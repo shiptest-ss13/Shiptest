@@ -5,7 +5,7 @@
 	total_positions = 1
 	spawn_positions = 1
 	supervisors = "the head of personnel"
-	wiki_page = "Mime" //WaspStation Edit - Wikilinks/Warning
+	wiki_page = "Mime" //WS Edit - Wikilinks/Warning
 	selection_color = "#bbe291"
 
 	outfit = /datum/outfit/job/mime
@@ -28,7 +28,7 @@
 	belt = /obj/item/pda/mime
 	ears = /obj/item/radio/headset/headset_srv
 	uniform = /obj/item/clothing/under/rank/civilian/mime
-	alt_uniform = /obj/item/clothing/under/rank/civilian/mime/sexy //Wasp Edit - Alt Uniforms
+	alt_uniform = /obj/item/clothing/under/rank/civilian/mime/sexy //WS Edit - Alt Uniforms
 	mask = /obj/item/clothing/mask/gas/mime
 	gloves = /obj/item/clothing/gloves/color/white
 	head = /obj/item/clothing/head/frenchberet

@@ -5,7 +5,7 @@
 	total_positions = 1
 	spawn_positions = 1
 	supervisors = "the head of personnel"
-	wiki_page = "Curator" //WaspStation Edit - Wikilinks/Warning
+	wiki_page = "Curator" //WS Edit - Wikilinks/Warning
 	selection_color = "#bbe291"
 
 	outfit = /datum/outfit/job/curator

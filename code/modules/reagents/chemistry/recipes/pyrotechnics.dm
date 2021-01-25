@@ -75,7 +75,7 @@
 /datum/chemical_reaction/reagent_explosion/rdx_explosion3
 	required_reagents = list(/datum/reagent/rdx = 1 , /datum/reagent/teslium = 1)
 	modifier = 6
-	strengthdiv = 3 
+	strengthdiv = 3
 
 /datum/chemical_reaction/reagent_explosion/rdx_explosion3/on_reaction(datum/reagents/holder, created_volume)
 	var/fire_range = round(created_volume/25) // I saw why edge has such a hardon for RDX
@@ -162,7 +162,7 @@
 			C.adjust_fire_stacks(5)
 			C.IgniteMob()
 
-/* WaspStation Edit - No Cobby
+/*WS Edit - No Cobby
 /datum/chemical_reaction/gunpowder
 	results = list(/datum/reagent/gunpowder = 3)
 	required_reagents = list(/datum/reagent/saltpetre = 1, /datum/reagent/medicine/C2/multiver = 1, /datum/reagent/sulfur = 1)
@@ -174,7 +174,7 @@
 	modifier = 1
 	mix_message = "<span class='boldannounce'>Sparks start flying around the blackpowder!</span>"
 
-WaspStation End*/
+WS End*/
 
 /datum/chemical_reaction/reagent_explosion/gunpowder_explosion/on_reaction(datum/reagents/holder, created_volume)
 	addtimer(CALLBACK(src, .proc/explode, holder, created_volume), rand(5,10) SECONDS)

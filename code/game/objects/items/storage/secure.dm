@@ -117,7 +117,7 @@
 // -----------------------------
 /obj/item/storage/secure/briefcase
 	name = "secure briefcase"
-	icon = 'waspstation/icons/obj/storage.dmi' //Wasp edit - better briefcases
+	icon = 'whitesands/icons/obj/storage.dmi' //WS edit - better briefcases
 	icon_state = "secure"
 	item_state = "sec-case"
 	lefthand_file = 'icons/mob/inhands/equipment/briefcase_lefthand.dmi'

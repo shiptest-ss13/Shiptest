@@ -284,7 +284,7 @@
 	build_path = /obj/item/ammo_box/magazine/wt550m9/wtic
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
-//Waspstation edit - free lethals
+//WS edit - free lethals
 
 /datum/design/commanderammo
 	name = "Commander magazine (9mm)"
@@ -374,7 +374,7 @@
 	category = list("Weapons")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
-//Wasp Edit - Energy Gun power cells
+//WS Edit - Energy Gun power cells
 /datum/design/gun_cell
 	name = "Weapon Power Cell"
 	desc = "A power cell for weapons holds 10 MJ of energy."
@@ -407,4 +407,4 @@
 	build_path = /obj/item/stock_parts/cell/gun/large/empty
 	category = list("Misc","Weapons")
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE | DEPARTMENTAL_FLAG_SECURITY
-//Wasp end
+//WS end

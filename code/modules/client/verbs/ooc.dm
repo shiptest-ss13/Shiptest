@@ -55,8 +55,8 @@ GLOBAL_VAR_INIT(normal_ooc_colour, "#002eb8")
 
 	mob.log_talk(raw_msg, LOG_OOC)
 	SSredbot.send_discord_message("ooc", "**[key]:** [msg]")
-	msg = process_chat_markup(msg) // Waspstation edit - Chat markup
-	
+	msg = process_chat_markup(msg) //WS edit - Chat markup
+
 	var/keyname = key
 	if(prefs.unlock_content)
 		if(prefs.toggles & MEMBER_PUBLIC)
@@ -99,7 +99,7 @@ GLOBAL_VAR_INIT(normal_ooc_colour, "#002eb8")
 		GLOB.ooc_allowed = !GLOB.ooc_allowed
 	to_chat(world, "<B>The OOC channel has been globally [GLOB.ooc_allowed ? "enabled" : "disabled"].</B>")
 
-//Begin Wasp Edit
+//BeginWS Edit
 /proc/toggle_looc(toggle = null)
 	if(toggle != null)
 		if(toggle != GLOB.looc_allowed)
@@ -108,7 +108,7 @@ GLOBAL_VAR_INIT(normal_ooc_colour, "#002eb8")
 			return
 	else
 		GLOB.looc_allowed = !GLOB.looc_allowed
-//End Wasp Edit
+//EndWS Edit
 
 /proc/toggle_dooc(toggle = null)
 	if(toggle != null)

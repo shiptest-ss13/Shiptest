@@ -322,8 +322,8 @@
 /obj/machinery/door/airlock/titanium
 	name = "shuttle airlock"
 	assemblytype = /obj/structure/door_assembly/door_assembly_titanium
-	icon = 'waspstation/icons/obj/doors/airlocks/shuttle/shuttle.dmi'
-	overlays_file = 'waspstation/icons/obj/doors/airlocks/shuttle/overlays.dmi'
+	icon = 'whitesands/icons/obj/doors/airlocks/shuttle/shuttle.dmi'
+	overlays_file = 'whitesands/icons/obj/doors/airlocks/shuttle/overlays.dmi'
 	normal_integrity = 400
 	has_hatch = FALSE
 
@@ -468,8 +468,8 @@
 
 /obj/machinery/door/airlock/shuttle
 	name = "shuttle airlock"
-	icon = 'waspstation/icons/obj/doors/airlocks/shuttle/shuttle.dmi' //Wasp Edit - Classic Shuttle
-	overlays_file = 'waspstation/icons/obj/doors/airlocks/shuttle/overlays.dmi'
+	icon = 'whitesands/icons/obj/doors/airlocks/shuttle/shuttle.dmi' //WS Edit - Classic Shuttle
+	overlays_file = 'whitesands/icons/obj/doors/airlocks/shuttle/overlays.dmi'
 	assemblytype = /obj/structure/door_assembly/door_assembly_shuttle
 	has_hatch = FALSE
 

@@ -109,7 +109,7 @@
 /datum/antagonist/traitor/proc/forge_ai_objectives()
 	var/objective_count = 1
 
-	// WaspStation Edit - Malf AI Rework
+	//WS Edit - Malf AI Rework
 	var/datum/objective/hack_apc/apc_objective = new
 	apc_objective.owner = owner
 	add_objective(apc_objective)
@@ -117,7 +117,7 @@
 	for(var/i = objective_count, i < CONFIG_GET(number/traitor_objectives_amount), i++)
 		objective_count += forge_single_objective()
 
-	// End WaspStation Edit - Malf AI Rework
+	// EndWS Edit - Malf AI Rework
 
 	var/datum/objective/survive/exist/exist_objective = new
 	exist_objective.owner = owner
@@ -133,7 +133,7 @@
 
 /datum/antagonist/traitor/proc/forge_single_human_objective() //Returns how many objectives are added
 	.=1
-	if(prob(40)) // WaspStation Edit - Less Murderbone, more Theft
+	if(prob(40)) //WS Edit - Less Murderbone, more Theft
 		var/list/active_ais = active_ais()
 		if(active_ais.len && prob(100/GLOB.joined_player_list.len))
 			var/datum/objective/destroy/destroy_objective = new
@@ -150,7 +150,7 @@
 			maroon_objective.owner = owner
 			maroon_objective.find_target()
 			add_objective(maroon_objective)
-		// End WaspStation Edit - Less Murderbone, more Theft
+		// EndWS Edit - Less Murderbone, more Theft
 	else
 		if(prob(15) && !(locate(/datum/objective/download) in objectives) && !(owner.assigned_role in list("Research Director", "Scientist", "Roboticist")))
 			var/datum/objective/download/download_objective = new
@@ -165,7 +165,7 @@
 
 /datum/antagonist/traitor/proc/forge_single_AI_objective()
 	.=1
-	// WaspStation Edit - Malf AI Rework
+	//WS Edit - Malf AI Rework
 	if(prob(20))
 		var/special_pick = rand(1,3)
 		switch(special_pick)
@@ -192,7 +192,7 @@
 		yandere_two.update_explanation_text() // normally called in find_target()
 		add_objective(yandere_two)
 		.=2
-		// End WaspStation Edit - Malf AI rework
+		// EndWS Edit - Malf AI rework
 
 /datum/antagonist/traitor/greet()
 	to_chat(owner.current, "<span class='alertsyndie'>You are the [owner.special_role].</span>")

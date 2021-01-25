@@ -12,8 +12,8 @@
 	max_integrity = 40
 	novariants = FALSE
 	item_flags = NOBLUDGEON
-	var/splint_fracture = FALSE //WaspStation Edit- Splints
-	var/failure_chance //Waspstation Edit - Failure chance
+	var/splint_fracture = FALSE //WS Edit- Splints
+	var/failure_chance //WS Edit - Failure chance
 	var/self_delay = 50
 	var/other_delay = 0
 	var/repeating = FALSE
@@ -57,11 +57,11 @@
 		to_chat(user, "<span class='warning'>\The [src] won't work on a robotic limb!</span>")
 		return
 
-	//Waspstation begin - failure chance
+	//WS begin - failure chance
 	if(prob(failure_chance))
 		user.visible_message("<span class='warning'>[user] tries to apply \the [src] on [C]'s [affecting.name], but fails!</span>", "<span class='warning'>You try to apply \the [src] on  on [C]'s [affecting.name], but fail!")
 		return
-	//Waspstation end
+	//WS end
 
 	if(affecting.brute_dam && brute || affecting.burn_dam && burn)
 		user.visible_message("<span class='green'>[user] applies \the [src] on [C]'s [affecting.name].</span>", "<span class='green'>You apply \the [src] on [C]'s [affecting.name].</span>")
@@ -76,7 +76,7 @@
 		return TRUE
 
 
-	//WaspStation Begin - Splints
+	//WS Begin - Splints
 	if(splint_fracture) //Check if it's a splint and the bone is broken
 		if(affecting.body_part in list(CHEST, HEAD)) // Check if it isn't the head or chest
 			to_chat(user, "<span class='warning'>You can't splint that bodypart!</span>")
@@ -91,7 +91,7 @@
 		C.update_inv_splints()
 		user.visible_message("<span class='green'>[user] applies [src] on [C].</span>", "<span class='green'>You apply [src] on [C]'s [affecting.name].</span>")
 		return TRUE
-	//WaspStation End
+	//WS End
 
 
 	to_chat(user, "<span class='warning'>[C]'s [affecting.name] can not be healed with \the [src]!</span>")

@@ -6,7 +6,7 @@
 	ask_verb = "inquires"
 	exclaim_verb = "declares"
 	sing_verb = "serenades"
-	flags = LANGUAGE_HIDE_ICON_IF_NOT_UNDERSTOOD //WaspStation Edit- Language icon hiding
+	flags = LANGUAGE_HIDE_ICON_IF_NOT_UNDERSTOOD //WS Edit- Language icon hiding
 	key = "h"
 	space_chance = 20
 	syllables = list(

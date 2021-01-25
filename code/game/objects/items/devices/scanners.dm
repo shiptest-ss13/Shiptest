@@ -21,7 +21,7 @@ GENE SCANNER
 	name = "\improper T-ray scanner"
 	desc = "A terahertz-ray emitter and scanner used to detect underfloor objects such as cables and pipes."
 	custom_price = 150
-	icon = 'waspstation/icons/obj/tools.dmi'
+	icon = 'whitesands/icons/obj/tools.dmi'
 	icon_state = "t-ray0"
 	var/on = FALSE
 	slot_flags = ITEM_SLOT_BELT
@@ -153,12 +153,12 @@ GENE SCANNER
 		if(H.undergoing_cardiac_arrest() && H.stat != DEAD)
 			render_list += "<span class='alert'>Subject suffering from heart attack: Apply defibrillation or other electric shock immediately!</span>\n"
 
-	//Wasp begin - Borers
+	//WS begin - Borers
 	if(iscarbon(M))
 		var/mob/living/carbon/C = M
 		if(C.has_brain_worms() && (!C.reagents.has_reagent(/datum/reagent/medicine/spaceacillin) || advanced))
 			render_list += "<span class='danger'>Foreign organism detected in subject's cranium. Recommended treatment: Dosage of sucrose solution and removal of object via surgery.</span>\n"
-	//Wasp end
+	//WS end
 
 	render_list += "<span class='info'>Analyzing results for [M]:</span>\n<span class='info ml-1'>Overall status: [mob_status]</span>\n"
 
@@ -303,12 +303,12 @@ GENE SCANNER
 		if(advanced && H.has_dna())
 			render_list += "<span class='info ml-1'>Genetic Stability: [H.dna.stability]%.</span>\n"
 
-		var/list/broken_stuff = list()		// Wasp Edit Begin - Adds bone breakage
+		var/list/broken_stuff = list()		//WS Edit Begin - Adds bone breakage
 		for(var/obj/item/bodypart/B in H.bodyparts)
 			if(B.bone_status >= BONE_FLAG_BROKEN)		// Checks if bone is broken or splinted
 				broken_stuff += B.name
 		if(broken_stuff.len)
-			render_list += "\t<span class='alert'>Bone fractures detected. Subject's [english_list(broken_stuff)] [broken_stuff.len > 1 ? "require" : "requires"] surgical treatment!</span>\n"		// Wasp Edit End
+			render_list += "\t<span class='alert'>Bone fractures detected. Subject's [english_list(broken_stuff)] [broken_stuff.len > 1 ? "require" : "requires"] surgical treatment!</span>\n"		//WS Edit End
 
 		// Species and body temperature
 		var/datum/species/S = H.dna.species
@@ -411,7 +411,7 @@ GENE SCANNER
 	desc = "A hand-held environmental scanner which reports current gas levels. Alt-Click to use the built in barometer function."
 	name = "analyzer"
 	custom_price = 100
-	icon = 'waspstation/icons/obj/tools.dmi' //Wasp edit - Better tools
+	icon = 'whitesands/icons/obj/tools.dmi' //WS edit - Better tools
 	icon_state = "analyzer"
 	item_state = "analyzer"
 	lefthand_file = 'icons/mob/inhands/equipment/tools_lefthand.dmi'
@@ -461,11 +461,11 @@ GENE SCANNER
 		var/co2_concentration = environment.get_moles(/datum/gas/carbon_dioxide)/total_moles
 		var/plasma_concentration = environment.get_moles(/datum/gas/plasma)/total_moles
 
-		// WaspStation Start -- Atmos Analyzer Reformat (Issue #419)
+		//WS Start -- Atmos Analyzer Reformat (Issue #419)
 		to_chat(user, "<span class='boldnotice'>Results of analysis.</span>")
 		to_chat(user, "<span class='info'>Pressure: [round(pressure,0.01)] kPa</span>")
 		to_chat(user, "<span class='info'>Temperature: [round(environment.return_temperature()-T0C, 0.01)] &deg;C ([round(environment.return_temperature(), 0.01)] K)</span>")
-		// WaspStation End
+		//WS End
 
 		if(abs(n2_concentration - N2STANDARD) < 20)
 			to_chat(user, "<span class='info'>Nitrogen: [round(n2_concentration*100, 0.01)] % ([round(environment.get_moles(/datum/gas/nitrogen), 0.01)] mol)</span>")
@@ -579,16 +579,16 @@ GENE SCANNER
 		var/cached_scan_results = air_contents.analyzer_results
 
 		if(total_moles > 0)
-			// WaspStation Start -- Atmos Analyzer Reformat (Issue #419)
+			//WS Start -- Atmos Analyzer Reformat (Issue #419)
 			render_list += "<span class='notice'>Moles: [round(total_moles, 0.01)] mol</span>\
 							\n<span class='notice'>Volume: [volume] L</span>\
 							\n<span class='notice'>Pressure: [round(pressure,0.01)] kPa</span>\
 							\n<span class='notice'>Temperature: [round(temperature - T0C,0.01)] &deg;C ([round(temperature, 0.01)] K)</span>"
-			// WaspStation End
+			//WS End
 
 			for(var/id in air_contents.get_gases())
 				var/gas_concentration = air_contents.get_moles(id)/total_moles
-				render_list += "<span class='notice'>[GLOB.meta_gas_info[id][META_GAS_NAME]]: [round(gas_concentration*100, 0.01)] % ([round(air_contents.get_moles(id), 0.01)] mol)</span>"  // WaspStation Edit -- Atmos Analyzer Reformat (Issue #419)
+				render_list += "<span class='notice'>[GLOB.meta_gas_info[id][META_GAS_NAME]]: [round(gas_concentration*100, 0.01)] % ([round(air_contents.get_moles(id), 0.01)] mol)</span>"  //WS Edit -- Atmos Analyzer Reformat (Issue #419)
 
 		else
 			render_list += airs.len > 1 ? "<span class='notice'>This node is empty!</span>" : "<span class='notice'>[target] is empty!</span>"

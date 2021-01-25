@@ -10,7 +10,7 @@
 	var/crate_name = "crate"
 	var/desc = ""//no desc by default
 	var/crate_type = /obj/structure/closet/crate
-	var/dangerous = FALSE // Should we message admins? // wasp station edit: all the dangerous shit is actually labeled as dangerous
+	var/dangerous = FALSE // Should we message admins? //WS station edit: all the dangerous shit is actually labeled as dangerous
 	var/special = FALSE //Event/Station Goals/Admin enabled packs
 	var/special_enabled = FALSE
 	var/DropPodOnly = FALSE//only usable by the Bluespace Drop Pod via the express cargo console

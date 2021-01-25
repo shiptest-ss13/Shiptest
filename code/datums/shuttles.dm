@@ -452,7 +452,7 @@
 	suffix = "whiteship_pod"
 	name = "Salvage Pod"
 
-/datum/map_template/shuttle/whiteship/midway//waspstation edit
+/datum/map_template/shuttle/whiteship/midway//WS edit
 	suffix = "midway"
 	name = "NT Atmospherics tanker"
 
@@ -572,7 +572,7 @@
 /datum/map_template/shuttle/arrival/omega
 	suffix = "omega"
 	name = "arrival shuttle (Omega)"
-//Wasp Edit
+//WS Edit
 /datum/map_template/shuttle/arrival/packed
 	suffix = "packed"
 	name = "arrival shuttle (Packedstation)"
@@ -584,7 +584,7 @@
 /datum/map_template/shuttle/mining/packed
 	suffix = "packed"
 	name = "mining shuttle (Packedstation)"
-//Wasp End
+//WS End
 /datum/map_template/shuttle/aux_base/default
 	suffix = "default"
 	name = "auxilliary base (Default)"

@@ -25,7 +25,7 @@
 	QDEL_NULL(soundloop)
 	return ..()
 
-/*Wasp Edit - Smartwire Revert
+/*WS Edit - Smartwire Revert
 /obj/machinery/power/port_gen/should_have_node()
 	return anchored
 */

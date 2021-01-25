@@ -125,8 +125,8 @@
 
 //Security
 /obj/item/clothing/suit/armor/vest/security
-	icon = 'waspstation/icons/obj/clothing/under/security.dmi'
-	mob_overlay_icon = 'waspstation/icons/mob/clothing/under/security.dmi'
+	icon = 'whitesands/icons/obj/clothing/under/security.dmi'
+	mob_overlay_icon = 'whitesands/icons/mob/clothing/under/security.dmi'
 
 /obj/item/clothing/suit/armor/vest/security/officer
 	name = "security officer's jacket"

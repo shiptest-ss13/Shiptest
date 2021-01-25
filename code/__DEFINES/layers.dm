@@ -35,7 +35,7 @@
 #define DISPOSAL_PIPE_LAYER 2.3
 #define GAS_PIPE_HIDDEN_LAYER 2.35
 #define WIRE_LAYER 2.4
-//#define WIRE_BRIDGE_LAYER 2.44 // Wasp - Smartwire Revert - I went slightly insane adding all these comments
+//#define WIRE_BRIDGE_LAYER 2.44 //WS - Smartwire Revert - I went slightly insane adding all these comments
 #define WIRE_TERMINAL_LAYER 2.45
 #define GAS_SCRUBBER_LAYER 2.46
 #define GAS_PIPE_VISIBLE_LAYER 2.47
@@ -68,7 +68,7 @@
 
 #define BELOW_MOB_LAYER 3.7
 #define LYING_MOB_LAYER 3.8
-#define SPACEPOD_LAYER 3.9 // Wasp - Spess pods
+#define SPACEPOD_LAYER 3.9 //WS - Spess pods
 //#define MOB_LAYER 4 //For easy recordkeeping; this is a byond define
 #define ABOVE_MOB_LAYER 4.1
 #define WALL_OBJ_LAYER 4.25

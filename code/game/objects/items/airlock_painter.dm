@@ -1,6 +1,6 @@
 /obj/item/airlock_painter
 	name = "airlock painter"
-	desc = "An advanced autopainter preprogrammed with several paintjobs for airlocks. Use it on an airlock during or after construction to change the paintjob." //WaspStation Edit - Floor Painters
+	desc = "An advanced autopainter preprogrammed with several paintjobs for airlocks. Use it on an airlock during or after construction to change the paintjob." //WS Edit - Floor Painters
 	icon = 'icons/obj/objects.dmi'
 	icon_state = "paint sprayer"
 	item_state = "paint sprayer"
@@ -144,11 +144,11 @@
 		to_chat(user, "<span class='notice'>You remove [ink] from [src].</span>")
 		ink = null
 
-/* Waspstation edit - no toner
+/*WS edit - no toner
 
 /obj/item/airlock_painter/decal
 	name = "decal painter"
-	desc = "An airlock painter, reprogramed to use a different style of paint in order to apply decals for floor tiles as well, in addition to repainting doors. Decals break when the floor tiles are removed. Alt-Click to change design." //WaspStation Edit - Floor Painters
+	desc = "An airlock painter, reprogramed to use a different style of paint in order to apply decals for floor tiles as well, in addition to repainting doors. Decals break when the floor tiles are removed. Alt-Click to change design." //WS Edit - Floor Painters
 	icon = 'icons/obj/objects.dmi'
 	icon_state = "decal_sprayer"
 	item_state = "decalsprayer"
@@ -256,4 +256,4 @@
 	. = ..()
 	ink = new /obj/item/toner/extreme(src)
 
-Waspstation end */
+WS end */

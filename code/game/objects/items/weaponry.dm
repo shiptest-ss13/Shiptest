@@ -534,14 +534,14 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	///The vehicle counterpart for the board
 	var/board_item_type = /obj/vehicle/ridden/scooter/skateboard
 
-/obj/item/melee/skateboard/suicide_act(mob/living/carbon/user)				// Wasp Edit Begin - Skateboards can take you to the afterlife
+/obj/item/melee/skateboard/suicide_act(mob/living/carbon/user)				//WS Edit Begin - Skateboards can take you to the afterlife
 	user.visible_message("<span class='suicide'>[user] begins attempting to preform a double kickflip! It looks like [user.p_theyre()] trying to commit suicide!</span>")
 	if(prob(3))
 		user.dust()
 		user.visible_message("<span class='suicide'>[user] succeeds! [user.p_theyre()] ascends for a moment before exploding into a fine dust!</span>") //this is very likely to cause issues in the future, yell at the coder
 		for(var/mob/living/M in get_hearers_in_view(7,user))
 			SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "Rad", /datum/mood_event/dkickflip)
-	return BRUTELOSS			// Wasp Edit End
+	return BRUTELOSS			//WS Edit End
 
 /obj/item/melee/skateboard/attack_self(mob/user)
 	var/obj/vehicle/ridden/scooter/skateboard/S = new board_item_type(get_turf(user))//this probably has fucky interactions with telekinesis but for the record it wasnt my fault

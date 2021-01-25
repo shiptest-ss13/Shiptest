@@ -238,10 +238,10 @@
 		/datum/reagent/medicine/atropine,\
 		/datum/reagent/medicine/cryoxadone,\
 		/datum/reagent/medicine/salbutamol,\
-		/* WaspStation Begin - No Cobby
+		/*WS Begin - No Cobby
 		/datum/reagent/medicine/C2/hercuri,\
 		/datum/reagent/medicine/C2/probital,\
-		WaspStation End */
+		WS End */
 		/datum/reagent/drug/methamphetamine,\
 		/datum/reagent/drug/crank,\
 		/datum/reagent/nitrous_oxide,\

@@ -32,7 +32,7 @@
 			var/obj/item/clothing/C = bp
 			if(C.body_parts_covered & def_zone.body_part)
 				protection += C.armor.getRating(d_type)
-	protection += physiology.armor.getRating(d_type) * (100 - protection) / 100		// Wasp Edit - Makes armor multiplicative
+	protection += physiology.armor.getRating(d_type) * (100 - protection) / 100		//WS Edit - Makes armor multiplicative
 	return protection
 
 /mob/living/carbon/human/on_hit(obj/projectile/P)
@@ -491,11 +491,11 @@
 			var/obj/item/organ/heart/heart = getorganslot(ORGAN_SLOT_HEART)
 			if(heart.Restart() && stat == CONSCIOUS)
 				to_chat(src, "<span class='notice'>You feel your heart beating again!</span>")
-	// Waspstation - Bootleg IPC revival
+	//WS - Bootleg IPC revival
 	if(stat == DEAD && isipc(src) && can_be_revived())
 		if(shock_damage * siemens_coeff >= 1 && prob(25))
 			revive(FALSE, FALSE)
-	// Waspstation - END
+	//WS - END
 	electrocution_animation(40)
 
 /mob/living/carbon/human/emp_act(severity)

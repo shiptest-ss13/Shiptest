@@ -1,7 +1,7 @@
 /obj/structure/extinguisher_cabinet
 	name = "extinguisher cabinet"
 	desc = "A small wall mounted cabinet designed to hold a fire extinguisher."
-	icon = 'waspstation/icons/obj/wallmounts.dmi' //WaspStation Edit - Better Icons
+	icon = 'whitesands/icons/obj/wallmounts.dmi' //WS Edit - Better Icons
 	icon_state = "extinguisher_closed"
 	anchored = TRUE
 	density = FALSE

@@ -5,8 +5,8 @@
 	total_positions = 1
 	spawn_positions = 1
 	supervisors = "the head of personnel"
-	wiki_page = "Clown" //WaspStation Edit - Wikilinks/Warning
-	special_notice = "There is a difference between funny pranks and griefing. Know it." //WaspStation Edit - Wikilinks/Warning
+	wiki_page = "Clown" //WS Edit - Wikilinks/Warning
+	special_notice = "There is a difference between funny pranks and griefing. Know it." //WS Edit - Wikilinks/Warning
 	selection_color = "#bbe291"
 
 	outfit = /datum/outfit/job/clown
@@ -30,7 +30,7 @@
 	belt = /obj/item/pda/clown
 	ears = /obj/item/radio/headset/headset_srv
 	uniform = /obj/item/clothing/under/rank/civilian/clown
-	alt_uniform = /obj/item/clothing/under/rank/civilian/clown/green //Wasp Edit - Alt Uniforms
+	alt_uniform = /obj/item/clothing/under/rank/civilian/clown/green //WS Edit - Alt Uniforms
 	shoes = /obj/item/clothing/shoes/clown_shoes
 	mask = /obj/item/clothing/mask/gas/clown_hat
 	l_pocket = /obj/item/bikehorn

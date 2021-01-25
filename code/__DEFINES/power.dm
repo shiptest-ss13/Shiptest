@@ -1,4 +1,4 @@
-/* Wasp - Smartwire Revertie Boys
+/*WS - Smartwire Revertie Boys
 #define CABLE_LAYER_1		1
 #define CABLE_LAYER_2		2
 #define CABLE_LAYER_3		4

@@ -20,7 +20,7 @@
 		pipe_astar_cost = 1\
 	)
 
-/*Wasp Edit - Revert smartwire
+/*WS Edit - Revert smartwire
 /obj/structure/grille/Destroy()
 	update_cable_icons_on_turf(get_turf(src))
 	return ..()

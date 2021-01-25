@@ -5,11 +5,11 @@
 
 /obj/structure/closet/secure_closet/captains/PopulateContents()
 	..()
-	//WaspStation Begin
+	//WS Begin
 	new /obj/item/clothing/head/beret/captain(src) //Berets
 	new /obj/item/card/id/departmental_budget/civ(src) //Budget Cards
 	new /obj/item/storage/backpack/messenger/com(src) //Messenger Bags
-	//WaspStation End
+	//WS End
 	new /obj/item/clothing/suit/hooded/wintercoat/captain(src)
 	if(prob(33))
 		new /obj/item/storage/backpack/captain(src)
@@ -48,12 +48,12 @@
 
 /obj/structure/closet/secure_closet/head_of_personnel/PopulateContents()
 	..()
-	new /obj/item/card/id/departmental_budget/srv(src) //WaspStation Edit - Budget Cards
+	new /obj/item/card/id/departmental_budget/srv(src) //WS Edit - Budget Cards
 	new /obj/item/clothing/neck/cloak/head_of_personnel(src)
 	new /obj/item/storage/lockbox/medal/service(src)
-	new /obj/item/clothing/head/beret/hop(src) //Waspstation edit - More Berets
-	new /obj/item/clothing/under/rank/command/head_of_personnel(src) //WaspStation Edit - Better Command Uniforms
-	new /obj/item/clothing/under/rank/command/head_of_personnel/skirt(src) //WaspStation Edit - Better Command Uniforms
+	new /obj/item/clothing/head/beret/hop(src) //WS edit - More Berets
+	new /obj/item/clothing/under/rank/command/head_of_personnel(src) //WS Edit - Better Command Uniforms
+	new /obj/item/clothing/under/rank/command/head_of_personnel/skirt(src) //WS Edit - Better Command Uniforms
 	new /obj/item/clothing/head/hopcap(src)
 	new /obj/item/cartridge/head_of_personnel(src)
 	new /obj/item/radio/headset/heads/head_of_personnel(src)
@@ -61,10 +61,10 @@
 	new /obj/item/storage/box/ids(src)
 	new /obj/item/storage/box/ids(src)
 	new /obj/item/megaphone/command(src)
-	new /obj/item/clothing/suit/armor/vest/hop(src) //Waspstation edit - Command Resprite 3
+	new /obj/item/clothing/suit/armor/vest/hop(src) //WS edit - Command Resprite 3
 	new /obj/item/assembly/flash/handheld(src)
 	new /obj/item/clothing/glasses/sunglasses(src)
-	new /obj/item/gun/energy/e_gun/mini(src) //WaspStation Edit - Gives HoP a mini egun
+	new /obj/item/gun/energy/e_gun/mini(src) //WS Edit - Gives HoP a mini egun
 	new /obj/item/clothing/neck/petcollar(src)
 	new /obj/item/pet_carrier(src)
 	new /obj/item/door_remote/civilian(src)
@@ -78,17 +78,17 @@
 
 /obj/structure/closet/secure_closet/hos/PopulateContents()
 	..()
-	new /obj/item/card/id/departmental_budget/sec(src) //WaspStation edit - budget card
-	new /obj/item/storage/box/deputy(src) // WaspStation edit - Small QoL Brig additions
+	new /obj/item/card/id/departmental_budget/sec(src) //WS edit - budget card
+	new /obj/item/storage/box/deputy(src) //WS edit - Small QoL Brig additions
 	new /obj/item/clothing/neck/cloak/hos(src)
-	new /obj/item/clothing/under/rank/command(src) // WaspStation edit - better command uniforms
+	new /obj/item/clothing/under/rank/command(src) //WS edit - better command uniforms
 	new /obj/item/cartridge/hos(src)
-	new /obj/item/radio/headset/heads/hos/alt(src) // WaspStation edit - Small QoL Brig additions
+	new /obj/item/radio/headset/heads/hos/alt(src) //WS edit - Small QoL Brig additions
 	new /obj/item/radio/headset/heads/hos(src)
 	new /obj/item/clothing/under/rank/security/head_of_security/parade/female(src)
 	new /obj/item/clothing/under/rank/security/head_of_security/parade(src)
 	new /obj/item/clothing/suit/armor/vest/leather(src)
-	new /obj/item/clothing/suit/armor/hos/trenchcoat(src) // WaspStation edit - Small QoL Brig additions
+	new /obj/item/clothing/suit/armor/hos/trenchcoat(src) //WS edit - Small QoL Brig additions
 	new /obj/item/clothing/suit/armor/hos(src)
 	new /obj/item/clothing/under/rank/security/head_of_security/skirt(src)
 	new /obj/item/clothing/under/rank/security/head_of_security/alt(src)
@@ -106,7 +106,7 @@
 	new /obj/item/shield/riot/tele(src)
 	new /obj/item/storage/belt/security/full(src)
 	new /obj/item/gun/energy/e_gun/hos(src)
-	new /obj/item/gun/ballistic/automatic/pistol/commander(src) // Waspstation edit - free lethals
+	new /obj/item/gun/ballistic/automatic/pistol/commander(src) //WS edit - free lethals
 	new /obj/item/pinpointer/nuke(src)
 	new /obj/item/circuitboard/machine/techfab/department/security(src)
 	new /obj/item/storage/photo_album/HoS(src)
@@ -132,11 +132,11 @@
 	new /obj/item/storage/box/flashbangs(src)
 	new /obj/item/storage/belt/security/full(src)
 	new /obj/item/flashlight/seclite(src)
-	new /obj/item/megaphone/sec(src) // WaspStation edit - Small QoL Brig additions
+	new /obj/item/megaphone/sec(src) //WS edit - Small QoL Brig additions
 	new /obj/item/clothing/gloves/krav_maga/sec(src)
 	new /obj/item/door_remote/head_of_security(src)
 	new /obj/item/gun/ballistic/shotgun/automatic/combat/compact(src)
-	new /obj/item/gun/ballistic/automatic/pistol/commander(src) // Waspstation edit - free lethals
+	new /obj/item/gun/ballistic/automatic/pistol/commander(src) //WS edit - free lethals
 
 /obj/structure/closet/secure_closet/security
 	name = "security officer's locker"
@@ -149,12 +149,12 @@
 	new /obj/item/clothing/head/helmet/sec(src)
 	new /obj/item/radio/headset/headset_sec(src)
 	new /obj/item/radio/headset/headset_sec/alt(src)
- 	//Waspstation begin - Prescription HUDs
+ 	//WS begin - Prescription HUDs
 	if(prob(75))
 		new /obj/item/clothing/glasses/hud/security/sunglasses(src)
 	else
 		new /obj/item/clothing/glasses/hud/security/prescription(src)
-	//Waspstation end
+	//WS end
 	new /obj/item/flashlight/seclite(src)
 
 /obj/structure/closet/secure_closet/security/sec
@@ -162,7 +162,7 @@
 /obj/structure/closet/secure_closet/security/sec/PopulateContents()
 	..()
 	new /obj/item/storage/belt/security/full(src)
-	new /obj/item/gun/ballistic/automatic/pistol/commander/no_mag(src) // Waspstation edit - free lethals
+	new /obj/item/gun/ballistic/automatic/pistol/commander/no_mag(src) //WS edit - free lethals
 
 /obj/structure/closet/secure_closet/security/cargo
 
@@ -210,7 +210,7 @@
 	new /obj/item/holosign_creator/security(src)
 	new /obj/item/reagent_containers/spray/pepper(src)
 	new /obj/item/clothing/suit/armor/vest/det_suit(src)
-	new /obj/item/clothing/accessory/holster/detective(src) //WaspStation Edit - Made Holsters Accessories
+	new /obj/item/clothing/accessory/holster/detective(src) //WS Edit - Made Holsters Accessories
 	new /obj/item/pinpointer/crew(src)
 	new /obj/item/binoculars(src)
 	new /obj/item/clothing/neck/tie/red(src)
@@ -335,10 +335,10 @@
 	..()
 	for(var/i in 1 to 3)
 		new /obj/item/storage/box/lethalshot(src)
-		new /obj/item/ammo_box/magazine/co9mm(src) // Waspstation edit - begin - better safe than sorry
+		new /obj/item/ammo_box/magazine/co9mm(src) //WS edit - begin - better safe than sorry
 		new /obj/item/ammo_box/magazine/co9mm(src)
 		new /obj/item/ammo_box/magazine/co9mm(src)
-		new /obj/item/ammo_box/magazine/co9mm(src) // Waspstation edit - end
+		new /obj/item/ammo_box/magazine/co9mm(src) //WS edit - end
 
 /obj/structure/closet/secure_closet/labor_camp_security
 	name = "labor camp security locker"

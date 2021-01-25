@@ -41,10 +41,10 @@
 
 		dna.species.spec_life(src) // for mutantraces
 
-	//WaspStation Begin - Broken bones
+	//WS Begin - Broken bones
 	if(stat != DEAD)
 		handle_fractures()
-	//WaspStation End
+	//WS End
 
 	//Update our name based on whether our face is obscured/disfigured
 	name = get_visible_name()

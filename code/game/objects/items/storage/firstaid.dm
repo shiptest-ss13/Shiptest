@@ -9,7 +9,7 @@
  * First Aid Kits
  */
 
-/* WaspStation Edit - In Modularized File
+/*WS Edit - In Modularized File
 
 /obj/item/storage/firstaid
 	name = "first-aid kit"
@@ -499,4 +499,4 @@
 	for(var/i in 1 to 5)
 		new /obj/item/reagent_containers/pill/paxpsych(src)
 
-WaspStation End */
+WS End */

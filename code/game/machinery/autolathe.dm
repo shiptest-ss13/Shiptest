@@ -419,14 +419,14 @@
 		var/datum/design/D = SSresearch.techweb_design_by_id(id)
 		if(D.build_type & AUTOLATHE)
 			if("hacked" in D.category)
-				if(hacked || obj_flags & EMAGGED) // Waspstation - Emag the lathe
+				if(hacked || obj_flags & EMAGGED) //WS - Emag the lathe
 					stored_research.add_design(D)
 				else
 					stored_research.remove_design(D)
 			if(("emagged" in D.category) && (obj_flags & EMAGGED))
 				stored_research.add_design(D)
 
-/obj/machinery/autolathe/emag_act(mob/user) // Waspstation - Emag the lathe
+/obj/machinery/autolathe/emag_act(mob/user) //WS - Emag the lathe
 	if(obj_flags & EMAGGED)
 		return
 	obj_flags |= EMAGGED

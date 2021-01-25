@@ -8,7 +8,7 @@
 	selection_color = "#fff5cc"
 	exp_requirements = 60
 	exp_type = EXP_TYPE_CREW
-	wiki_page = "Guide_to_Atmospherics" //WaspStation Edit - Wikilinks/Warning
+	wiki_page = "Guide_to_Atmospherics" //WS Edit - Wikilinks/Warning
 
 	outfit = /datum/outfit/job/atmos
 
@@ -28,9 +28,9 @@
 	l_pocket = /obj/item/pda/atmos
 	ears = /obj/item/radio/headset/headset_eng
 	uniform = /obj/item/clothing/under/rank/engineering/atmospheric_technician
-	alt_uniform = /obj/item/clothing/under/rank/engineering/engineer/hazard //Wasp Edit - Alt Uniforms
+	alt_uniform = /obj/item/clothing/under/rank/engineering/engineer/hazard //WS Edit - Alt Uniforms
 	alt_suit = /obj/item/clothing/suit/hazardvest
-	dcoat = /obj/item/clothing/suit/hooded/wintercoat/engineering //Wasp Edit - Alt Uniforms
+	dcoat = /obj/item/clothing/suit/hooded/wintercoat/engineering //WS Edit - Alt Uniforms
 	r_pocket = /obj/item/analyzer
 
 	backpack = /obj/item/storage/backpack/industrial
@@ -60,8 +60,8 @@
 	uniform = /obj/item/clothing/under/rank/engineering/atmospheric_technician/life_support_specialist
 	backpack_contents = list(/obj/item/modular_computer/tablet/preset/advanced=1, /obj/item/storage/box/survival=2)
 
-/datum/outfit/job/atmos/chadmos                // WaspStation Edit - Give Chadmos Sr. Uniform
-	name = "Atmospheric Technician (Chadmos)"  // WaspStation Edit - Give Chadmos Sr. Uniform
+/datum/outfit/job/atmos/chadmos                //WS Edit - Give Chadmos Sr. Uniform
+	name = "Atmospheric Technician (Chadmos)"  //WS Edit - Give Chadmos Sr. Uniform
 
 	belt = null
 	uniform = /obj/item/clothing/under/suit/senior_atmos

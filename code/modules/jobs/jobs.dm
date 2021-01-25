@@ -1,7 +1,7 @@
 GLOBAL_LIST_INIT(command_positions, list(
 	"Captain",
 	"Head of Personnel",
-	"SolGov Representative", //Wasp edit - SolGov Rep
+	"SolGov Representative", //WS edit - SolGov Rep
 	"Head of Security",
 	"Chief Engineer",
 	"Research Director",
@@ -37,7 +37,7 @@ GLOBAL_LIST_INIT(supply_positions, list(
 
 GLOBAL_LIST_INIT(service_positions, list(
 	"Head of Personnel",
-	"SolGov Representative",		// Wasp Edit - SolGov Rep
+	"SolGov Representative",		//WS Edit - SolGov Rep
 	"Bartender",
 	"Botanist",
 	"Cook",
@@ -57,7 +57,7 @@ GLOBAL_LIST_INIT(security_positions, list(
 	"Warden",
 	"Detective",
 	"Security Officer",
-	"Brig Physician")) //Wasp edit - Brig Physicians
+	"Brig Physician")) //WS edit - Brig Physicians
 
 
 GLOBAL_LIST_INIT(nonhuman_positions, list(

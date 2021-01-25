@@ -444,11 +444,11 @@ SUBSYSTEM_DEF(job)
 	if(living_mob.mind)
 		living_mob.mind.assigned_role = rank
 
-	//Wasp begin - Alt job titles
+	//WS begin - Alt job titles
 	var/display_rank = rank
 	if(M.client && M.client.prefs && M.client.prefs.alt_titles_preferences[rank])
 		display_rank = M.client.prefs.alt_titles_preferences[rank]
-	//Wasp end
+	//WS end
 
 	to_chat(M, "<b>You are the [display_rank].</b>")
 	if(job)
@@ -475,12 +475,12 @@ SUBSYSTEM_DEF(job)
 		if(CONFIG_GET(number/minimal_access_threshold))
 			to_chat(M, "<span class='notice'><B>As this station was initially staffed with a [CONFIG_GET(flag/jobs_have_minimal_access) ? "full crew, only your job's necessities" : "skeleton crew, additional access may"] have been added to your ID card.</B></span>")
 
-		//WaspStation Begin - Wikilinks and Special notice
+		//WS Begin - Wikilinks and Special notice
 		if(job.special_notice)
 			to_chat(M, "<span class='danger'>[job.special_notice]</span>")
 		if(job.wiki_page)
 			to_chat(M, "<span class='notice'><a href=[CONFIG_GET(string/wikiurl)]/[job.wiki_page]>Wiki Page</a></span>")
-		//WaspStation End
+		//WS End
 
 	var/related_policy = get_policy(rank)
 	if(related_policy)

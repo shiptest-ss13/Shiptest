@@ -78,7 +78,7 @@
 	tastes = list("death-berry" = 1)
 	distill_reagent = null
 	wine_power = 70
-	wine_flavor = "something breathtaking" //wasp edit: new wine flavors
+	wine_flavor = "something breathtaking" //WS edit: new wine flavors
 
 // Glow Berries
 /obj/item/seeds/berry/glow
@@ -105,7 +105,7 @@
 	tastes = list("glow-berry" = 1)
 	distill_reagent = null
 	wine_power = 60
-	wine_flavor = "gentle warmth" //wasp edit: new wine flavors
+	wine_flavor = "gentle warmth" //WS edit: new wine flavors
 
 // Cherries
 /obj/item/seeds/cherry

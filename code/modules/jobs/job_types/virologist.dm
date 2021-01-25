@@ -8,12 +8,12 @@
 	selection_color = "#ffeef0"
 	exp_type = EXP_TYPE_CREW
 	exp_requirements = 60
-	wiki_page = "Infections" //WaspStation Edit - Wikilinks/Warning
-	special_notice = "Don't release viruses, harmful or not, without the CMO's permission." //WaspStation Edit - Wikilinks/Warning
+	wiki_page = "Infections" //WS Edit - Wikilinks/Warning
+	special_notice = "Don't release viruses, harmful or not, without the CMO's permission." //WS Edit - Wikilinks/Warning
 
 	outfit = /datum/outfit/job/virologist
 
-	access = list(ACCESS_MEDICAL, ACCESS_MORGUE, ACCESS_SURGERY, ACCESS_CHEMISTRY, ACCESS_VIROLOGY, ACCESS_MECH_MEDICAL, ACCESS_GENETICS, ACCESS_CLONING, ACCESS_MINERAL_STOREROOM, ACCESS_EVA) //WaspStation edit - Gen/Sci Split
+	access = list(ACCESS_MEDICAL, ACCESS_MORGUE, ACCESS_SURGERY, ACCESS_CHEMISTRY, ACCESS_VIROLOGY, ACCESS_MECH_MEDICAL, ACCESS_GENETICS, ACCESS_CLONING, ACCESS_MINERAL_STOREROOM, ACCESS_EVA) //WS edit - Gen/Sci Split
 	minimal_access = list(ACCESS_MEDICAL, ACCESS_VIROLOGY, ACCESS_MECH_MEDICAL, ACCESS_MINERAL_STOREROOM)
 	paycheck = PAYCHECK_MEDIUM
 	paycheck_department = ACCOUNT_MED
@@ -27,12 +27,12 @@
 	belt = /obj/item/pda/viro
 	ears = /obj/item/radio/headset/headset_med
 	uniform = /obj/item/clothing/under/rank/medical/virologist
-	alt_uniform = /obj/item/clothing/under/rank/medical/doctor/green //Wasp Edit - Alt Uniforms
+	alt_uniform = /obj/item/clothing/under/rank/medical/doctor/green //WS Edit - Alt Uniforms
 	mask = /obj/item/clothing/mask/surgical
 	shoes = /obj/item/clothing/shoes/sneakers/white
 	suit =  /obj/item/clothing/suit/toggle/labcoat/virologist
 	alt_suit = /obj/item/clothing/suit/toggle/labcoat/mad
-	dcoat = /obj/item/clothing/suit/hooded/wintercoat/medical //Wasp Edit - Alt Uniforms
+	dcoat = /obj/item/clothing/suit/hooded/wintercoat/medical //WS Edit - Alt Uniforms
 	suit_store =  /obj/item/flashlight/pen
 
 	backpack = /obj/item/storage/backpack/virology

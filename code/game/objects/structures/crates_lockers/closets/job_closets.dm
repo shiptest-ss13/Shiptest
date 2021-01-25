@@ -124,7 +124,7 @@
 		/obj/item/clothing/under/rank/security/officer = 3,
 		/obj/item/clothing/under/rank/security/officer/skirt = 2,
 		/obj/item/clothing/shoes/jackboots = 3,
-		/obj/item/clothing/head/beret/sec = 3, // Waspstation edit - Berets
+		/obj/item/clothing/head/beret/sec = 3, //WS edit - Berets
 		/obj/item/clothing/head/soft/sec = 3,
 		/obj/item/clothing/mask/bandana/red = 2)
 	generate_items_inside(items_inside,src)
@@ -150,7 +150,7 @@
 
 /obj/structure/closet/wardrobe/atmospherics_yellow/PopulateContents()
 	var/static/items_inside = list(
-		/obj/item/clothing/head/beret/atmos = 3, // Waspstation edit - Berets
+		/obj/item/clothing/head/beret/atmos = 3, //WS edit - Berets
 		/obj/item/clothing/accessory/pocketprotector = 1,
 		/obj/item/storage/backpack/duffelbag/engineering = 1,
 		/obj/item/storage/backpack/satchel/eng = 1,
@@ -175,7 +175,7 @@
 		/obj/item/clothing/under/rank/engineering/engineer = 3,
 		/obj/item/clothing/suit/hazardvest = 3,
 		/obj/item/clothing/shoes/workboots = 3,
-		/obj/item/clothing/head/beret/eng = 3, // Waspstation edit - Berets
+		/obj/item/clothing/head/beret/eng = 3, //WS edit - Berets
 		/obj/item/clothing/head/hardhat = 3)
 	generate_items_inside(items_inside,src)
 	return
@@ -199,7 +199,7 @@
 		/obj/item/clothing/suit/toggle/labcoat = 3,
 		/obj/item/clothing/suit/toggle/labcoat/paramedic = 3,
 		/obj/item/clothing/shoes/sneakers/white = 3,
-		/obj/item/clothing/head/beret/med = 3, // Waspstation edit - Berets
+		/obj/item/clothing/head/beret/med = 3, //WS edit - Berets
 		/obj/item/clothing/head/soft/paramedic = 3)
 	generate_items_inside(items_inside,src)
 	return
@@ -215,7 +215,7 @@
 		/obj/item/clothing/suit/toggle/labcoat = 2,
 		/obj/item/clothing/shoes/sneakers/black = 2,
 		/obj/item/clothing/gloves/fingerless = 2,
-		/obj/item/clothing/head/beret/sci = 2, // Waspstation edit - Berets
+		/obj/item/clothing/head/beret/sci = 2, //WS edit - Berets
 		/obj/item/clothing/head/soft/black = 2)
 	generate_items_inside(items_inside,src)
 	if(prob(40))
@@ -266,7 +266,7 @@
 		/obj/item/clothing/shoes/sneakers/white = 2,
 		/obj/item/clothing/suit/toggle/labcoat/virologist = 2,
 		/obj/item/clothing/mask/surgical = 2,
-		/obj/item/clothing/head/beret/med = 2, // Waspstation edit - Berets
+		/obj/item/clothing/head/beret/med = 2, //WS edit - Berets
 		/obj/item/storage/backpack/virology = 2,
 		/obj/item/storage/backpack/satchel/vir = 2)
 	generate_items_inside(items_inside,src)
@@ -286,7 +286,7 @@
 		/obj/item/clothing/suit/toggle/labcoat/science = 3,
 		/obj/item/clothing/shoes/sneakers/white = 3,
 		/obj/item/radio/headset/headset_sci = 2,
-		/obj/item/clothing/head/beret/sci = 3, // Waspstation edit - Berets
+		/obj/item/clothing/head/beret/sci = 3, //WS edit - Berets
 		/obj/item/clothing/mask/gas = 3)
 	generate_items_inside(items_inside,src)
 	return

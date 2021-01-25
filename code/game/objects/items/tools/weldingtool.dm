@@ -2,7 +2,7 @@
 /obj/item/weldingtool
 	name = "welding tool"
 	desc = "A standard edition welder provided by Nanotrasen."
-	icon = 'waspstation/icons/obj/tools.dmi' //WaspStation Edit - Better Tool Sprites
+	icon = 'whitesands/icons/obj/tools.dmi' //WS Edit - Better Tool Sprites
 	icon_state = "welder"
 	item_state = "welder"
 	lefthand_file = 'icons/mob/inhands/equipment/tools_lefthand.dmi'
@@ -368,9 +368,9 @@
 	item_state = "exwelder"
 	max_fuel = 40
 	custom_materials = list(/datum/material/iron=70, /datum/material/glass=120)
-	/* Wasp Begin - Better Tool sprites
+	/*WS Begin - Better Tool sprites
 	change_icons = 0
-	Wasp End */
+	WS End */
 	can_off_process = 1
 	light_range = 1
 	toolspeed = 0.5

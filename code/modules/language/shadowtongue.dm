@@ -7,7 +7,7 @@
 	ask_verb = "growls"
 	exclaim_verb = "roars"
 	sing_verb = "chants"
-	flags = LANGUAGE_HIDE_ICON_IF_NOT_UNDERSTOOD //WaspStation Edit- Language icon hiding
+	flags = LANGUAGE_HIDE_ICON_IF_NOT_UNDERSTOOD //WS Edit- Language icon hiding
 	key = "x"
 	space_chance = 50
 	syllables = list(

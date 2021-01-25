@@ -14,7 +14,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 /obj/item/pda
 	name = "\improper PDA"
 	desc = "A portable microcomputer by Thinktronic Systems, LTD. Functionality determined by a preprogrammed ROM cartridge."
-	icon = 'waspstation/icons/obj/pda.dmi' //WaspStation Edit - Better PDAs from Eris(?)
+	icon = 'whitesands/icons/obj/pda.dmi' //WS Edit - Better PDAs from Eris(?)
 	icon_state = "pda"
 	item_state = "electronic"
 	lefthand_file = 'icons/mob/inhands/misc/devices_lefthand.dmi'
@@ -173,9 +173,9 @@ GLOBAL_LIST_EMPTY(PDAs)
 	if(inserted_item)
 		overlay.icon_state = "insert_overlay"
 		. += new /mutable_appearance(overlay)
-	if(cartridge) //waspedit: lol copy and pasted from PR #55072 on TGstation haha!!
+	if(cartridge) //WSedit: lol copy and pasted from PR #55072 on TGstation haha!!
 		overlay.icon_state = "cartridge_overlay" //does this work? fuck if I know!
-		. += new /mutable_appearance(overlay) //waspstation end
+		. += new /mutable_appearance(overlay) //WS end
 	if(light_on)
 		overlay.icon_state = "light_overlay"
 		. += new /mutable_appearance(overlay)
@@ -212,7 +212,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 
 	user.set_machine(src)
 
-	var/dat = "" // WaspStation Edit - PDA Redesign
+	var/dat = "" //WS Edit - PDA Redesign
 	dat += assets.css_tag()
 	dat += emoji_s.css_tag()
 
@@ -567,7 +567,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 						usr.put_in_hands(pai)
 						to_chat(usr, "<span class='notice'>You remove the pAI from the [name].</span>")
 
-// WaspStation Start -- Skill Cloak Fix
+//WS Start -- Skill Cloak Fix
 //SKILL FUNCTIONS===================================
 
 			if("SkillReward")
@@ -576,7 +576,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 				var/datum/mind/mind = U.mind
 				var/new_level = mind.get_skill_level(type)
 				S.try_skill_reward(mind, new_level)
-// WaspStation End
+//WS End
 
 //LINK FUNCTIONS===================================
 
@@ -630,7 +630,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 			H.sec_hud_set_ID()
 
 
-// WaspStation Start -- Added recipient to PDA messages
+//WS Start -- Added recipient to PDA messages
 /obj/item/pda/proc/msg_input(mob/living/U = usr, list/obj/item/pda/targets)
 	var/title = name
 	if(targets)
@@ -641,7 +641,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 		else
 			CRASH("msg_input(): Length of list/obj/item/pda/targets is non-positive")
 	var/t = stripped_input(U, "Please enter message", title, null, MAX_MESSAGE_LEN)
-	// WaspStation End
+	//WS End
 	if(!t || toff)
 		return
 	if(!in_range(src, U) && loc != U)
@@ -651,7 +651,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 	return t
 
 /obj/item/pda/proc/send_message(mob/living/user, list/obj/item/pda/targets, everyone)
-	var/message = msg_input(user, targets)                  // WaspStation Edit -- Added recipient to PDA messages
+	var/message = msg_input(user, targets)                  //WS Edit -- Added recipient to PDA messages
 	if(!message || !targets.len)
 		return
 	if((last_text && world.time < last_text + 10) || (everyone && last_everyone && world.time < last_everyone + PDA_SPAM_DELAY))

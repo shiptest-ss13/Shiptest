@@ -56,14 +56,14 @@
 /obj/item/wallframe/advanced_airlock_controller
 	name = "airlock controller frame"
 	desc = "Used for building advanced airlock controllers."
-	icon = 'waspstation/icons/obj/monitors.dmi'
+	icon = 'whitesands/icons/obj/monitors.dmi'
 	icon_state = "aac_bitem"
 	result_path = /obj/machinery/advanced_airlock_controller
 
 /obj/machinery/advanced_airlock_controller
 	name = "advanced airlock controller"
 	desc = "A machine designed to control the operation of cycling airlocks"
-	icon = 'waspstation/icons/obj/monitors.dmi'
+	icon = 'whitesands/icons/obj/monitors.dmi'
 	icon_state = "aac"
 	use_power = IDLE_POWER_USE
 	idle_power_usage = 4

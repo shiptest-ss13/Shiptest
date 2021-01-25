@@ -1,5 +1,5 @@
 /*
-	Waspstation Edit - Moved to modular folder
+	WS Edit - Moved to modular folder
 
 //A slow but strong beast that tries to stun using its tentacles
 /mob/living/simple_animal/hostile/asteroid/goliath

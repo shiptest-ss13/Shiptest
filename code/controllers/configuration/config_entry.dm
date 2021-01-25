@@ -159,7 +159,7 @@
 	var/key_mode
 	var/value_mode
 	var/splitter = " "
-	var/lowercase = TRUE //Wasp - Random Engine Framework
+	var/lowercase = TRUE //WS - Random Engine Framework
 
 /datum/config_entry/keyed_list/New()
 	. = ..()

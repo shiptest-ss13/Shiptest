@@ -185,7 +185,7 @@
 	var/image/holder = hud_list[STATUS_HUD]
 	var/icon/I = icon(icon, icon_state, dir)
 	var/virus_threat = check_virus()
-	var/mob/living/simple_animal/borer/B = has_brain_worms() //Wasp edit - Borers
+	var/mob/living/simple_animal/borer/B = has_brain_worms() //WS edit - Borers
 	holder.pixel_y = I.Height() - world.icon_size
 	if(HAS_TRAIT(src, TRAIT_XENO_HOST))
 		holder.icon_state = "hudxeno"
@@ -194,10 +194,10 @@
 			holder.icon_state = "huddefib"
 		else
 			holder.icon_state = "huddead"
-	//Wasp Begin - Borers
+	//WS Begin - Borers
 	else if(has_brain_worms() && B != null && B.controlling)
 		holder.icon_state = "hudbrainworm"
-	//Wasp end
+	//WS end
 	else
 		switch(virus_threat)
 			if(DISEASE_SEVERITY_BIOHAZARD)

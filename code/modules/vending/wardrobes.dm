@@ -53,7 +53,7 @@
 					/obj/item/storage/backpack/duffelbag/med = 4,
 					/obj/item/storage/backpack/medic = 4,
 					/obj/item/storage/backpack/satchel/med = 4,
-					/obj/item/clothing/head/beret/med = 4, //Wasp edit - berets
+					/obj/item/clothing/head/beret/med = 4, //WS edit - berets
 					/obj/item/clothing/suit/hooded/wintercoat/medical = 4,
 					/obj/item/clothing/under/rank/medical/doctor/nurse = 4,
 					/obj/item/clothing/head/nursehat = 4,
@@ -88,8 +88,8 @@
 					/obj/item/clothing/under/rank/engineering/engineer = 3,
 					/obj/item/clothing/under/rank/engineering/engineer/skirt = 3,
 					/obj/item/clothing/under/rank/engineering/engineer/hazard = 3,
-					/obj/item/clothing/head/beret/eng = 3, // Waspstation edit - Berets
-					/obj/item/clothing/head/beret/eng/hazard = 3, //Waspstation edit - Berets
+					/obj/item/clothing/head/beret/eng = 3, //WS edit - Berets
+					/obj/item/clothing/head/beret/eng/hazard = 3, //WS edit - Berets
 					/obj/item/clothing/suit/hazardvest = 3,
 					/obj/item/clothing/shoes/workboots = 3,
 					/obj/item/clothing/head/hardhat = 3,
@@ -111,7 +111,7 @@
 					/obj/item/storage/backpack/duffelbag/engineering = 2,
 					/obj/item/storage/backpack/satchel/eng = 2,
 					/obj/item/storage/backpack/industrial = 2,
-					/obj/item/clothing/head/beret/atmos = 3, // Waspstation edit - Berets
+					/obj/item/clothing/head/beret/atmos = 3, //WS edit - Berets
 					/obj/item/clothing/suit/hooded/wintercoat/engineering/atmos = 3,
 					/obj/item/clothing/under/rank/engineering/atmospheric_technician = 3,
 					/obj/item/clothing/under/rank/engineering/atmospheric_technician/skirt = 3,
@@ -156,7 +156,7 @@
 					/obj/item/clothing/suit/toggle/labcoat = 2,
 					/obj/item/clothing/shoes/sneakers/black = 2,
 					/obj/item/clothing/gloves/fingerless = 2,
-					/obj/item/clothing/head/beret/sci = 2, // Waspstation edit - Berets
+					/obj/item/clothing/head/beret/sci = 2, //WS edit - Berets
 					/obj/item/clothing/head/soft/black = 2,
 					/obj/item/clothing/mask/bandana/skull = 2
 					)
@@ -183,7 +183,7 @@
 					/obj/item/clothing/suit/toggle/labcoat/science = 3,
 					/obj/item/clothing/shoes/sneakers/white = 3,
 					/obj/item/radio/headset/headset_sci = 3,
-					/obj/item/clothing/head/beret/sci = 3, // Waspstation edit - Berets
+					/obj/item/clothing/head/beret/sci = 3, //WS edit - Berets
 					/obj/item/clothing/mask/gas = 3)
 	refill_canister = /obj/item/vending_refill/wardrobe/science_wardrobe
 	payment_department = ACCOUNT_SCI
@@ -198,7 +198,7 @@
 	vend_reply = "Thank you for using the Hydrobe!"
 	products = list(/obj/item/storage/backpack/botany = 2,
 					/obj/item/storage/backpack/satchel/hyd = 2,
-					/obj/item/clothing/head/beret/service = 2, //Wasp edit - Berets
+					/obj/item/clothing/head/beret/service = 2, //WS edit - Berets
 					/obj/item/clothing/suit/hooded/wintercoat/hydro = 2,
 					/obj/item/clothing/suit/apron = 2,
 					/obj/item/clothing/suit/apron/overalls = 3,
@@ -225,7 +225,7 @@
 					/obj/item/pen/blue = 2,
 					/obj/item/pen/fourcolor = 1,
 					/obj/item/pen/fountain = 2,
-					/obj/item/clothing/head/beret/service = 1, //Wasp edit - berets
+					/obj/item/clothing/head/beret/service = 1, //WS edit - berets
 					/obj/item/clothing/accessory/pocketprotector = 2,
 					/obj/item/clothing/under/rank/civilian/curator/skirt = 2,
 					/obj/item/clothing/under/rank/command/captain/suit/skirt = 2,
@@ -247,7 +247,7 @@
 	vend_reply = "Thank you for using the BarDrobe!"
 	products = list(/obj/item/clothing/head/that = 2,
 					/obj/item/radio/headset/headset_srv = 2,
-					/obj/item/clothing/head/beret/service = 2, //Wasp edit - Berets
+					/obj/item/clothing/head/beret/service = 2, //WS edit - Berets
 					/obj/item/clothing/under/suit/sl = 2,
 					/obj/item/clothing/under/rank/civilian/bartender = 2,
 					/obj/item/clothing/under/rank/civilian/bartender/purple = 2,
@@ -281,7 +281,7 @@
 	vend_reply = "Thank you for using the ChefDrobe!"
 	products = list(/obj/item/clothing/under/suit/waiter = 2,
 					/obj/item/radio/headset/headset_srv = 2,
-					/obj/item/clothing/head/beret/service = 2, //Wasp edit - berets
+					/obj/item/clothing/head/beret/service = 2, //WS edit - berets
 					/obj/item/clothing/accessory/waistcoat = 2,
 					/obj/item/clothing/suit/apron/chef = 3,
 					/obj/item/clothing/head/soft/mime = 2,
@@ -290,7 +290,7 @@
 					/obj/item/clothing/suit/toggle/chef = 1,
 					/obj/item/clothing/under/rank/civilian/chef = 1,
 					/obj/item/clothing/under/rank/civilian/chef/skirt = 2,
-					///obj/item/clothing/under/rank/chef = 3,//WaspStation edit - Better security jumpsuit sprites
+					///obj/item/clothing/under/rank/chef = 3,//WS edit - Better security jumpsuit sprites
 					/obj/item/clothing/head/chefhat = 1,
 					/obj/item/clothing/under/rank/civilian/cookjorts = 2,
 					/obj/item/clothing/shoes/cookflops = 2,
@@ -309,7 +309,7 @@
 	vend_reply = "Thank you for using the JaniDrobe!"
 	products = list(/obj/item/clothing/under/rank/civilian/janitor = 2,
 					/obj/item/cartridge/janitor = 2,
-					/obj/item/clothing/head/beret/service = 2, //Wasp edit - berets
+					/obj/item/clothing/head/beret/service = 2, //WS edit - berets
 					/obj/item/clothing/under/rank/civilian/janitor/skirt = 2,
 					/obj/item/clothing/gloves/color/black = 2,
 					/obj/item/clothing/head/soft/purple = 2,
@@ -374,7 +374,7 @@
 	vend_reply = "Thank you for using the ChapDrobe!"
 	products = list(/obj/item/choice_beacon/holy = 1,
 					/obj/item/storage/backpack/cultpack = 1,
-					/obj/item/clothing/head/beret/service = 1, //Wasp edit - berets
+					/obj/item/clothing/head/beret/service = 1, //WS edit - berets
 					/obj/item/clothing/accessory/pocketprotector/cosmetology = 1,
 					/obj/item/clothing/under/rank/civilian/chaplain = 1,
 					/obj/item/clothing/under/rank/civilian/chaplain/skirt = 2,
@@ -410,7 +410,7 @@
 	vend_reply = "Thank you for using the ChemDrobe!"
 	products = list(/obj/item/clothing/under/rank/medical/chemist = 2,
 					/obj/item/clothing/under/rank/medical/chemist/skirt = 2,
-					/obj/item/clothing/head/beret/chem = 2, // Waspstation edit - Berets
+					/obj/item/clothing/head/beret/chem = 2, //WS edit - Berets
 					/obj/item/clothing/shoes/sneakers/white = 2,
 					/obj/item/clothing/suit/toggle/labcoat/chemist = 2,
 					/obj/item/storage/backpack/chemistry = 2,
@@ -430,7 +430,7 @@
 	vend_reply = "Thank you for using the GeneDrobe!"
 	products = list(/obj/item/clothing/under/rank/medical/geneticist = 2,
 					/obj/item/clothing/under/rank/medical/geneticist/skirt = 2,
-					/obj/item/clothing/head/beret/med = 2, //Wasp edit - berets
+					/obj/item/clothing/head/beret/med = 2, //WS edit - berets
 					/obj/item/clothing/shoes/sneakers/white = 2,
 					/obj/item/clothing/suit/toggle/labcoat/genetics = 2,
 					/obj/item/storage/backpack/genetics = 2,
@@ -448,7 +448,7 @@
 	vend_reply = "Thank you for using the ViroDrobe"
 	products = list(/obj/item/clothing/under/rank/medical/virologist = 2,
 					/obj/item/clothing/under/rank/medical/virologist/skirt = 2,
-					/obj/item/clothing/head/beret/viro = 2, //Wasp edit - Berets
+					/obj/item/clothing/head/beret/viro = 2, //WS edit - Berets
 					/obj/item/clothing/shoes/sneakers/white = 2,
 					/obj/item/clothing/suit/toggle/labcoat/virologist = 2,
 					/obj/item/clothing/mask/surgical = 2,

@@ -1,5 +1,5 @@
 
-/* WaspStation Begin - Holsters are Accessories
+/*WS Begin - Holsters are Accessories
 
 
 /obj/item/storage/belt/holster
@@ -122,4 +122,4 @@
 		))
 
 
-WaspStation End */
+WS End */

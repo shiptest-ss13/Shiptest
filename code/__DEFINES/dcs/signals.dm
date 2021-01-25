@@ -332,7 +332,7 @@
 	#define SPEECH_MESSAGE 1
 	// #define SPEECH_BUBBLE_TYPE 2
 	#define SPEECH_SPANS 3
-	// #define SPEECH_SANITIZE 4  - Wasp edit - lizard tongues don't hiss when speaking Draconic
+	// #define SPEECH_SANITIZE 4  - WS edit - lizard tongues don't hiss when speaking Draconic
 	#define SPEECH_LANGUAGE 5
 	/* #define SPEECH_IGNORE_SPAM 6
 	#define SPEECH_FORCED 7 */

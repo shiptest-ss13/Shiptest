@@ -22,7 +22,7 @@
 	max_w_class = WEIGHT_CLASS_TINY
 	attack_hand_interact = FALSE
 
-//Waspstation Begin - Exowear Pockets
+//WS Begin - Exowear Pockets
 /datum/component/storage/concrete/pockets/exo
 	max_items = 2
 	max_w_class = WEIGHT_CLASS_SMALL
@@ -37,7 +37,7 @@
 
 /datum/component/storage/concrete/pockets/exo/large
 	max_items = 3
-//WaspStation End
+//WS End
 
 /datum/component/storage/concrete/pockets/small/fedora/Initialize()
 	. = ..()
@@ -50,14 +50,14 @@
 /datum/component/storage/concrete/pockets/small/fedora/detective
 	attack_hand_interact = TRUE // so the detectives would discover pockets in their hats
 
-//WaspStation Begin - Any small item in shoes
+//WS Begin - Any small item in shoes
 /datum/component/storage/concrete/pockets/shoes
 	max_items = 2
 	attack_hand_interact = FALSE
 	max_w_class = WEIGHT_CLASS_SMALL
 	quickdraw = FALSE
 	silent = TRUE
-//WaspStation End
+//WS End
 
 /datum/component/storage/concrete/pockets/shoes/Initialize()
 	. = ..()

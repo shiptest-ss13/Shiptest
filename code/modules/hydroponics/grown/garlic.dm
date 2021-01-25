@@ -20,4 +20,4 @@
 	bitesize_mod = 2
 	tastes = list("garlic" = 1)
 	wine_power = 10
-	wine_flavor = "vampire repellant"  //wasp edit: new wine flavors
+	wine_flavor = "vampire repellant"  //WS edit: new wine flavors

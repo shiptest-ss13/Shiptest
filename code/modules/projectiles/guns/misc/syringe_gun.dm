@@ -116,8 +116,8 @@
 	icon_state = "blowgun"
 	item_state = "blowgun"
 	fire_sound = 'sound/items/syringeproj.ogg'
-	dry_fire_sound = null //dont got a trigger, no dry fire sound	Wasp Edit - Dry firing
-	dry_fire_text = "pshoo" //heehee pshoo		Wasp Edit - Dry firing
+	dry_fire_sound = null //dont got a trigger, no dry fire sound	WS Edit - Dry firing
+	dry_fire_text = "pshoo" //heehee pshoo		WS Edit - Dry firing
 
 /obj/item/gun/syringe/blowgun/process_fire(atom/target, mob/living/user, message = TRUE, params = null, zone_override = "", bonus_spread = 0)
 	visible_message("<span class='danger'>[user] starts aiming with a blowgun!</span>")

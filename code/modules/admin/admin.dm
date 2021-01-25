@@ -61,7 +61,7 @@
 		body += "<a href='?_src_=holder;[HrefToken()];modantagrep=subtract;mob=[REF(M)]'>-</a> "
 		body += "<a href='?_src_=holder;[HrefToken()];modantagrep=set;mob=[REF(M)]'>=</a> "
 		body += "<a href='?_src_=holder;[HrefToken()];modantagrep=zero;mob=[REF(M)]'>0</a>"
-		//WaspStation Begin - Metacoins
+		//WS Begin - Metacoins
 		var/metabalance = M.client.get_metabalance()
 		body += "<br><br><b>[CONFIG_GET(string/metacurrency_name)]s</b>: [metabalance] "
 		body += "<br><a href='?_src_=holder;[HrefToken()];modmetacoin=add;mob=[REF(M)]'>+</a> "
@@ -75,7 +75,7 @@
 		body += "<a href='?_src_=holder;[HrefToken()];modantagtokens=subtract;mob=[REF(M)]'>-</a> "
 		body += "<a href='?_src_=holder;[HrefToken()];modantagtokens=set;mob=[REF(M)]'>=</a> "
 		body += "<a href='?_src_=holder;[HrefToken()];modantagtokens=zero;mob=[REF(M)]'>0</a>"
-		//WaspStation End
+		//WS End
 		var/full_version = "Unknown"
 		if(M.client.byond_version)
 			full_version = "[M.client.byond_version].[M.client.byond_build ? M.client.byond_build : "xxx"]"
@@ -216,13 +216,13 @@
 	body += "</body></html>"
 
 
-	//WaspStation Begin - Better Looking Admin Panels
+	//WS Begin - Better Looking Admin Panels
 	var/datum/browser/popup = new(usr, "adminplayeropts-[REF(M)]", "<div align='center'>Options for [M.key]</div>", 700, 600)
 	popup.set_content(body)
 	popup.open(0)
-	//WaspStation End
+	//WS End
 
-	/*WaspStation Begin - Better Looking Admin Panels
+	/*WS Begin - Better Looking Admin Panels
 	usr << browse(body, "window=adminplayeropts-[REF(M)];size=550x515")
 	*/
 
@@ -587,7 +587,7 @@
 	SSredbot.send_discord_message("ooc", "**OOC has been [GLOB.ooc_allowed ? "enabled" : "disabled"] on the server.**")
 	SSblackbox.record_feedback("nested tally", "admin_toggle", 1, list("Toggle OOC", "[GLOB.ooc_allowed ? "Enabled" : "Disabled"]")) //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
-//Begin Wasp Edit
+//BeginWS Edit
 /datum/admins/proc/toggleooclocal()
 	set category = "Server"
 	set desc="Toggle dat bitch"
@@ -596,7 +596,7 @@
 	log_admin("[key_name(usr)] toggled LOOC.")
 	message_admins("[key_name_admin(usr)] toggled LOOC.")
 	SSblackbox.record_feedback("nested tally", "admin_toggle", 1, list("Toggle Local OOC", "[GLOB.looc_allowed ? "Enabled" : "Disabled"]")) //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
-//End Wasp Edit
+//EndWS Edit
 
 /datum/admins/proc/toggleoocdead()
 	set category = "Server"

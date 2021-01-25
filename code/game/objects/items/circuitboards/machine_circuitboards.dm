@@ -723,7 +723,7 @@
 	icon_state = "medical"
 	build_path = /obj/machinery/rnd/production/protolathe/department/medical
 
-/* WaspStation Edit - Sleepers are now in the modularized file, so that if TG removes the circuit board, we don't lose em.
+/*WS Edit - Sleepers are now in the modularized file, so that if TG removes the circuit board, we don't lose em.
 
 /obj/item/circuitboard/machine/sleeper
 	name = "Sleeper (Machine Board)"
@@ -739,7 +739,7 @@
 	name = "Party Pod (Machine Board)"
 	build_path = /obj/machinery/sleeper/party
 
-WaspStation End */
+WS End */
 
 /obj/item/circuitboard/machine/smoke_machine
 	name = "Smoke Machine (Machine Board)"

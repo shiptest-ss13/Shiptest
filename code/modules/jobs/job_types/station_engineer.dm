@@ -8,7 +8,7 @@
 	selection_color = "#fff5cc"
 	exp_requirements = 60
 	exp_type = EXP_TYPE_CREW
-	wiki_page = "Station_Engineer" //WaspStation Edit - Wikilinks/Warning
+	wiki_page = "Station_Engineer" //WS Edit - Wikilinks/Warning
 
 	outfit = /datum/outfit/job/engineer
 
@@ -29,8 +29,8 @@
 	l_pocket = /obj/item/pda/engineering
 	ears = /obj/item/radio/headset/headset_eng
 	uniform = /obj/item/clothing/under/rank/engineering/engineer
-	alt_uniform = /obj/item/clothing/under/rank/engineering/engineer/hazard //Wasp Edit - Alt Uniforms
-	dcoat = /obj/item/clothing/suit/hooded/wintercoat/engineering //Wasp Edit - Alt Uniforms
+	alt_uniform = /obj/item/clothing/under/rank/engineering/engineer/hazard //WS Edit - Alt Uniforms
+	dcoat = /obj/item/clothing/suit/hooded/wintercoat/engineering //WS Edit - Alt Uniforms
 	shoes = /obj/item/clothing/shoes/workboots
 	head = /obj/item/clothing/head/hardhat
 	r_pocket = /obj/item/t_scanner
@@ -56,7 +56,7 @@
 	head = null
 	internals_slot = ITEM_SLOT_SUITSTORE
 
-//Wasp Edit Start - Alt-Job Titles
+//WS Edit Start - Alt-Job Titles
 /datum/outfit/job/engineer/electrician
 	name = "Station Engineer (Electrician)"
 
@@ -109,4 +109,4 @@
 	alt_uniform = null
 	head = /obj/item/clothing/head/hardhat/dblue
 
-//Wasp Edit End - Alt-Job Titles
+//WS Edit End - Alt-Job Titles

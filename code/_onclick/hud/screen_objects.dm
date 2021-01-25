@@ -300,7 +300,7 @@
 		icon_state = "internal0"
 	else
 		if(!C.getorganslot(ORGAN_SLOT_BREATHING_TUBE))
-		//Wasp Port Begin - Citadel Internals
+		//WS Port Begin - Citadel Internals
 			var/obj/item/clothing/check
 			var/internals = FALSE
 
@@ -315,7 +315,7 @@
 			if(!internals)
 				to_chat(C, "<span class='warning'>You are not wearing an internals mask!</span>")
 				return
-		//Wasp Port End - Citadel Internals
+		//WS Port End - Citadel Internals
 
 		var/obj/item/I = C.is_holding_item_of_type(/obj/item/tank)
 		if(I)

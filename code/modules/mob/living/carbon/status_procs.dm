@@ -17,7 +17,7 @@
 	ADD_TRAIT(src, TRAIT_INCAPACITATED, STAMINA)
 	ADD_TRAIT(src, TRAIT_IMMOBILIZED, STAMINA)
 	ADD_TRAIT(src, TRAIT_FLOORED, STAMINA)
-	if((maxHealth - health + getStaminaLoss()) > 120) // Puts you a little further into the initial stamcrit, makes stamcrit harder to outright counter with chems.		// Waspstation Edit - Stamina stacks with health damage
+	if((maxHealth - health + getStaminaLoss()) > 120) // Puts you a little further into the initial stamcrit, makes stamcrit harder to outright counter with chems.		//WS Edit - Stamina stacks with health damage
 		adjustStaminaLoss(30, FALSE)
 
 

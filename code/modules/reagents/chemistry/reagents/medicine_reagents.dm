@@ -406,7 +406,7 @@
 	color = "#000000"
 	metabolization_rate = 0.5 * REAGENTS_METABOLISM
 	taste_description = "ash"
-	process_flags = ORGANIC //WaspStation Edit - IPCs
+	process_flags = ORGANIC //WS Edit - IPCs
 
 /datum/reagent/medicine/charcoal/on_mob_life(mob/living/carbon/M)
 	M.adjustToxLoss(-2*REM, 0)
@@ -429,7 +429,7 @@
 	reagent_state = LIQUID
 	color = "#F1C40F"
 	metabolization_rate = 0.5 * REAGENTS_METABOLISM
-	process_flags = SYNTHETIC //WaspStation Edit - IPCs
+	process_flags = SYNTHETIC //WS Edit - IPCs
 
 /datum/reagent/medicine/system_cleaner/on_mob_life(mob/living/M)
 	M.adjustToxLoss(-2*REM, 0)
@@ -444,7 +444,7 @@
 	description = "Repairs brain damage in synthetics."
 	color = "#727272"
 	taste_description = "metallic"
-	process_flags = SYNTHETIC //WaspStation Edit - IPCs
+	process_flags = SYNTHETIC //WS Edit - IPCs
 
 /datum/reagent/medicine/liquid_solder/on_mob_life(mob/living/M)
 	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, -3*REM)
@@ -496,9 +496,9 @@
 	taste_description = "acid"
 
 /datum/reagent/medicine/calomel/on_mob_life(mob/living/carbon/M)
-	for(var/datum/reagent/R in M.reagents.reagent_list)				// Waspstation Edit Begin - Actually purges all chems
+	for(var/datum/reagent/R in M.reagents.reagent_list)				//WS Edit Begin - Actually purges all chems
 		if(R != src)
-			M.reagents.remove_reagent(R.type,3)		// Waspstation Edit End
+			M.reagents.remove_reagent(R.type,3)		//WS Edit End
 	if(M.health > 20)
 		M.adjustToxLoss(1*REM, 0)
 		. = 1
@@ -1171,7 +1171,7 @@
 		M.adjustToxLoss(-0.25*REM, 0)
 		. = 1
 	..()
-/datum/reagent/medicine/tetracordrazine //waspstation edit: Yes
+/datum/reagent/medicine/tetracordrazine //WS edit: Yes
 	name = "Tetracordrazine"
 	description = "A weak dilutant similar to Tricordrazine that slowly heals all damage types."
 	reagent_state = LIQUID
@@ -1215,7 +1215,7 @@
 	reagent_state = SOLID
 	color = "#555555"
 	overdose_threshold = 30
-	process_flags = ORGANIC | SYNTHETIC //WaspStation Edit - IPCs //WaspStation Edit - IPCs
+	process_flags = ORGANIC | SYNTHETIC //WS Edit - IPCs //WS Edit - IPCs
 
 /datum/reagent/medicine/syndicate_nanites/on_mob_life(mob/living/carbon/M)
 	M.adjustBruteLoss(-5*REM, 0) //A ton of healing - this is a 50 telecrystal investment.
@@ -1306,7 +1306,7 @@
 	..()
 	return TRUE
 
-/*	Wasp edit begin - Lavaland rework
+/*	WS edit begin - Lavaland rework
 /datum/reagent/medicine/lavaland_extract
 	name = "Lavaland Extract"
 	description = "An extract of lavaland atmospheric and mineral elements. Heals the user in small doses, but is extremely toxic otherwise."
@@ -1325,7 +1325,7 @@
 	M.adjustToxLoss(3*REM, 0)
 	..()
 	return TRUE
-*/		// Wasp edit end
+*/		//WS edit end
 
 //used for changeling's adrenaline power
 /datum/reagent/medicine/changelingadrenaline
@@ -1611,7 +1611,7 @@
 	..()
 	. = 1
 
-/* /datum/reagent/medicine/hepanephrodaxon    //Waspstation edit: Temporary removal of overloaded chem
+/* /datum/reagent/medicine/hepanephrodaxon    //WS edit: Temporary removal of overloaded chem
 	name = "Hepanephrodaxon"
 	description = "Used to repair the common tissues involved in filtration."
 	taste_description = "glue"

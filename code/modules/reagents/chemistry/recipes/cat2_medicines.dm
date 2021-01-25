@@ -12,17 +12,17 @@
 	required_reagents = list(/datum/reagent/phenol = 1, /datum/reagent/oxygen = 1, /datum/reagent/nitrogen = 1)
 
 
-/* WaspStation Begin - Fixes medicines
+/*WS Begin - Fixes medicines
 
 /datum/chemical_reaction/probital
 	results = list(/datum/reagent/medicine/C2/probital = 4)
 	required_reagents = list(/datum/reagent/copper = 1, /datum/reagent/acetone = 2,  /datum/reagent/phosphorus = 1)
 
-WaspStation End */
+WS End */
 
 /*****BURN*****/
 
-/* WaspStation Begin - No CobbyChems
+/*WS Begin - No CobbyChems
 
 /datum/chemical_reaction/lenturi
 	results = list(/datum/reagent/medicine/C2/lenturi = 5)
@@ -34,7 +34,7 @@ WaspStation End */
 	results = list(/datum/reagent/medicine/C2/aiuri = 4)
 	required_reagents = list(/datum/reagent/ammonia = 1, /datum/reagent/toxin/acid = 1, /datum/reagent/hydrogen = 2)
 
-/* WaspStation Begin - Fixes medicines
+/*WS Begin - Fixes medicines
 
 /datum/chemical_reaction/hercuri
 	results = list(/datum/reagent/medicine/C2/hercuri = 5)
@@ -42,11 +42,11 @@ WaspStation End */
 	required_temp = 47
 	is_cold_recipe = TRUE
 
-WaspStation End */
+WS End */
 
 /*****OXY*****/
 
-/* WaspStation Begin - No CobbyChems
+/*WS Begin - No CobbyChems
 
 /datum/chemical_reaction/convermol
 	results = list(/datum/reagent/medicine/C2/convermol = 3)
@@ -67,7 +67,7 @@ WaspStation End */
 	results = list(/datum/reagent/medicine/C2/seiver = 3)
 	required_reagents = list(/datum/reagent/nitrogen = 1, /datum/reagent/potassium = 1, /datum/reagent/aluminium = 1)
 
-/* WaspStation Begin - No CobbyChems
+/*WS Begin - No CobbyChems
 
 /datum/chemical_reaction/multiver
 	results = list(/datum/reagent/medicine/C2/multiver = 2)

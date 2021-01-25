@@ -1,7 +1,7 @@
 /obj/structure/chair
 	name = "chair"
 	desc = "You sit in this. Either by will or force."
-	icon = 'waspstation/icons/obj/chairs.dmi' //WaspStation Edit - Better Icons
+	icon = 'whitesands/icons/obj/chairs.dmi' //WS Edit - Better Icons
 	icon_state = "chair"
 	anchored = TRUE
 	can_buckle = TRUE
@@ -163,7 +163,7 @@
 	return ..()
 
 /obj/structure/chair/comfy/proc/GetArmrest()
-	return mutable_appearance('waspstation/icons/obj/chairs.dmi', "comfychair_armrest") //WaspStation Edit - Better Icons
+	return mutable_appearance('whitesands/icons/obj/chairs.dmi', "comfychair_armrest") //WS Edit - Better Icons
 
 /obj/structure/chair/comfy/Destroy()
 	QDEL_NULL(armrest)
@@ -205,7 +205,7 @@
 	buildstacktype = /obj/item/stack/sheet/mineral/titanium
 
 /obj/structure/chair/comfy/shuttle/GetArmrest()
-	return mutable_appearance('waspstation/icons/obj/chairs.dmi', "shuttle_chair_armrest")
+	return mutable_appearance('whitesands/icons/obj/chairs.dmi', "shuttle_chair_armrest")
 
 /obj/structure/chair/office
 	anchored = FALSE
@@ -258,7 +258,7 @@
 /obj/item/chair
 	name = "chair"
 	desc = "Bar brawl essential."
-	icon = 'waspstation/icons/obj/chairs.dmi' //WaspStation Edit - Better Icons
+	icon = 'whitesands/icons/obj/chairs.dmi' //WS Edit - Better Icons
 	icon_state = "chair_toppled"
 	item_state = "chair"
 	lefthand_file = 'icons/mob/inhands/misc/chairs_lefthand.dmi'

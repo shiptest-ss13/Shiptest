@@ -9,13 +9,13 @@
 	muzzle_type = /obj/effect/projectile/muzzle/stun
 	impact_type = /obj/effect/projectile/impact/stun
 
-	var/confusion_amt = 10		// Wasp Edit Begin - Nerfs tasers
+	var/confusion_amt = 10		//WS Edit Begin - Nerfs tasers
 	var/stamina_loss_amt = 60
 	var/apply_stun_delay = 2 SECONDS
 	var/stun_time = 5 SECONDS
 
 	var/attack_cooldown_check = 0 SECONDS
-	var/attack_cooldown = 2.5 SECONDS		// Wasp Edit End
+	var/attack_cooldown = 2.5 SECONDS		//WS Edit End
 
 /obj/projectile/energy/electrode/on_hit(atom/target, blocked = FALSE)
 	. = ..()
@@ -26,7 +26,7 @@
 		if(C.dna && C.dna.check_mutation(HULK))
 			C.say(pick(";RAAAAAAAARGH!", ";HNNNNNNNNNGGGGGGH!", ";GWAAAAAAAARRRHHH!", "NNNNNNNNGGGGGGGGHH!", ";AAAAAAARRRGH!" ), forced = "hulk")
 		else if((C.status_flags & CANKNOCKDOWN) && !HAS_TRAIT(C, TRAIT_STUNIMMUNE))
-			C.Jitter(20)				// Wasp Edit Begin - Nerfs tasers
+			C.Jitter(20)				//WS Edit Begin - Nerfs tasers
 			C.confused = max(confusion_amt, C.confused)
 			C.stuttering = max(8, C.stuttering)
 			C.apply_damage(stamina_loss_amt, STAMINA, BODY_ZONE_CHEST)
@@ -44,7 +44,7 @@
 	else
 		target.Knockdown(stun_time)
 	if(!target.IsKnockdown())
-		to_chat(target, "<span class='warning'>Your muscles seize, making you collapse[trait_check ? ", but your body quickly recovers..." : "!"]</span>")		// Wasp Edit End
+		to_chat(target, "<span class='warning'>Your muscles seize, making you collapse[trait_check ? ", but your body quickly recovers..." : "!"]</span>")		//WS Edit End
 
 
 /obj/projectile/energy/electrode/on_range() //to ensure the bolt sparks when it reaches the end of its range if it didn't hit a target yet

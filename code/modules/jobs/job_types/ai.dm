@@ -13,8 +13,8 @@
 	exp_type_department = EXP_TYPE_SILICON
 	display_order = JOB_DISPLAY_ORDER_AI
 	var/do_special_check = TRUE
-	wiki_page = "AI" //WaspStation Edit - Wikilinks/Warning
-	special_notice = "Your laws take precedence over everything, including space law and past objectives. Do NOT break them." //WaspStation Edit - Wikilinks/Warning
+	wiki_page = "AI" //WS Edit - Wikilinks/Warning
+	special_notice = "Your laws take precedence over everything, including space law and past objectives. Do NOT break them." //WS Edit - Wikilinks/Warning
 
 /datum/job/ai/equip(mob/living/carbon/human/H, visualsOnly, announce, latejoin, datum/outfit/outfit_override, client/preference_source = null)
 	if(visualsOnly)

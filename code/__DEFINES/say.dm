@@ -45,11 +45,11 @@
 #define MODE_KEY_CHANGELING "g"
 #define MODE_TOKEN_CHANGELING ":g"
 
-//Wasp begin - Borers
+//WS begin - Borers
 #define MODE_BORER "borer"
 #define MODE_KEY_BORER "j"
 #define MODE_TOKEN_BORER ":j"
-//Wasp end
+//WS end
 
 #define MODE_VOCALCORDS "cords"
 #define MODE_KEY_VOCALCORDS "x"
@@ -69,9 +69,9 @@
 #define SPAN_CLOWN "clown"
 #define SPAN_SINGING "singing"
 
-//WaspStation Spans - Begin
+//WS Spans - Begin
 #define SPAN_SGA "sga"
-//WaspStation Spans - End
+//WS Spans - End
 
 //bitflag #defines for return value of the radio() proc.
 #define ITALICS			(1<<0)

@@ -28,8 +28,8 @@
 /obj/item/clothing/head/caphat
 	name = "captain's peaked cap"
 	desc = "It's good being the king."
-	icon = 'waspstation/icons/obj/clothing/hats.dmi'
-	mob_overlay_icon = 'waspstation/icons/mob/clothing/head.dmi'
+	icon = 'whitesands/icons/obj/clothing/hats.dmi'
+	mob_overlay_icon = 'whitesands/icons/mob/clothing/head.dmi'
 	icon_state = "captain"
 	item_state = "that"
 	flags_inv = 0
@@ -49,8 +49,8 @@
 //Head of Personnel
 /obj/item/clothing/head/hopcap
 	name = "head of personnel's cap"
-	icon = 'waspstation/icons/obj/clothing/hats.dmi'
-	mob_overlay_icon = 'waspstation/icons/mob/clothing/head.dmi'
+	icon = 'whitesands/icons/obj/clothing/hats.dmi'
+	mob_overlay_icon = 'whitesands/icons/mob/clothing/head.dmi'
 	icon_state = "hopcap"
 	desc = "The symbol of true bureaucratic micromanagement."
 	armor = list("melee" = 25, "bullet" = 15, "laser" = 25, "energy" = 35, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
@@ -99,15 +99,15 @@
 			else
 				to_chat(user, "<span class='warning'>You just took a candy corn! You should wait a couple minutes, lest you burn through your stash.</span>")
 
-/*WaspStation Edit - Berets
+/*WS Edit - Berets
 //Mime
 /obj/item/clothing/head/beret
 	name = "beret"
 	desc = "A beret, a mime's favorite headwear."
 	icon_state = "beret"
 	dog_fashion = /datum/dog_fashion/head/beret
-	dynamic_hair_suffix = "+generic" // Waspstation edit - Berets
-	dynamic_fhair_suffix = "+generic" // Waspstation edit - Berets
+	dynamic_hair_suffix = "+generic" //WS edit - Berets
+	dynamic_fhair_suffix = "+generic" //WS edit - Berets
 
 /obj/item/clothing/head/beret/vintage
 	name = "vintage beret"
@@ -140,7 +140,7 @@
 	icon_state = "beretdurathread"
 	armor = list("melee" = 15, "bullet" = 5, "laser" = 15, "energy" = 25, "bomb" = 10, "bio" = 0, "rad" = 0, "fire" = 30, "acid" = 5)
 
-WaspStation End*/
+WS End*/
 
 //Curator
 /obj/item/clothing/head/fedora/curator
@@ -162,12 +162,12 @@ WaspStation End*/
 	name = "syndicate cap"
 	desc = "A black cap fit for a high ranking syndicate officer."
 
-/* Wasp edit - Better Berets
+/*WS edit - Better Berets
 /obj/item/clothing/head/HoS/beret
 	name = "head of security beret"
 	desc = "A robust beret for the Head of Security, for looking stylish while not sacrificing protection."
 	icon_state = "hosberetblack"
-Wasp End */
+WS End */
 
 /obj/item/clothing/head/HoS/beret/syndicate
 	name = "syndicate beret"

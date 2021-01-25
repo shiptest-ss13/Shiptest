@@ -71,16 +71,16 @@
 	custom_materials = list(/datum/material/iron=10000, /datum/material/glass=6000)
 	flags_1 = CONDUCT_1
 	item_flags = SURGICAL_TOOL | EYE_STAB
-	force = 10		// Wasp Edit - Makes drill weaker than circular saw
+	force = 10		//WS Edit - Makes drill weaker than circular saw
 	w_class = WEIGHT_CLASS_NORMAL
 	attack_verb = list("drilled")
-	sharpness = IS_SHARP		// Wasp Edit - Makes the Drill sharp
+	sharpness = IS_SHARP		//WS Edit - Makes the Drill sharp
 	tool_behaviour = TOOL_DRILL
 	toolspeed = 1
 
-/obj/item/surgicaldrill/Initialize()		// Wasp Edit Start - Trying to butcher with a drill is a bad idea
+/obj/item/surgicaldrill/Initialize()		//WS Edit Start - Trying to butcher with a drill is a bad idea
 	. = ..()
-	AddComponent(/datum/component/butchering, 300 * toolspeed, 30, 0, 'sound/weapons/circsawhit.ogg')		// Only technically works - Wasp Edit End
+	AddComponent(/datum/component/butchering, 300 * toolspeed, 30, 0, 'sound/weapons/circsawhit.ogg')		// Only technically works - WS Edit End
 
 /obj/item/surgicaldrill/suicide_act(mob/user)
 	user.visible_message("<span class='suicide'>[user] rams [src] into [user.p_their()] chest! It looks like [user.p_theyre()] trying to commit suicide!</span>")

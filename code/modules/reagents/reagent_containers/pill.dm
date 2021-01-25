@@ -262,7 +262,7 @@
 	list_reagents = list(/datum/reagent/medicine/potass_iodide = 15)
 	rename_with_volume = TRUE
 
-/* WaspStation Begin - No Cobbychem
+/*WS Begin - No Cobbychem
 
 /obj/item/reagent_containers/pill/C2/probital
 	name = "Probital pill"
@@ -271,7 +271,7 @@
 	list_reagents = list(/datum/reagent/medicine/C2/probital = 5, /datum/reagent/medicine/granibitaluri = 10)
 	rename_with_volume = TRUE
 
-WaspStation End */
+WS End */
 
 /obj/item/reagent_containers/pill/iron
 	name = "iron pill"

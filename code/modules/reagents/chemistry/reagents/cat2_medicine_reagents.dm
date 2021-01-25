@@ -91,7 +91,7 @@
 	..()
 	return TRUE
 
-/* WaspStation Begin - Medicine Fixes
+/*WS Begin - Medicine Fixes
 
 /datum/reagent/medicine/C2/probital
 	name = "Probital"
@@ -134,7 +134,7 @@
 
 	..()
 
-WaspStation End */
+WS End */
 
 /******BURN******/
 /*Suffix: -uri*/
@@ -174,7 +174,7 @@ WaspStation End */
 	..()
 	return TRUE
 
-/* WaspStation Begin - Fixes Medicines
+/*WS Begin - Fixes Medicines
 
 /datum/reagent/medicine/C2/hercuri
 	name = "Hercuri"
@@ -210,7 +210,7 @@ WaspStation End */
 	M.adjust_bodytemperature(-10*TEMPERATURE_DAMAGE_COEFFICIENT*REM,50) //chilly chilly
 	..()
 
-WaspStation End*/
+WS End*/
 
 /******OXY******/
 /*Suffix: -mol*/
@@ -329,7 +329,7 @@ WaspStation End*/
 
 #define issyrinormusc(A)	(istype(A,/datum/reagent/medicine/C2/syriniver) || istype(A,/datum/reagent/medicine/C2/musiver)) //musc is metab of syrin so let's make sure we're not purging either
 
-/* WaspStation Begin - Medicine Fixes
+/*WS Begin - Medicine Fixes
 
 /datum/reagent/medicine/C2/syriniver //Inject >> SYRINge
 	name = "Syriniver"
@@ -409,7 +409,7 @@ WaspStation End*/
 
 #undef issyrinormusc
 
-WaspStation End*/
+WS End*/
 
 /******COMBOS******/
 /*Suffix: Combo of healing, prob gonna get wack REAL fast*/

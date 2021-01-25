@@ -1,7 +1,7 @@
 #define FILE_ANTAG_REP "data/AntagReputation.json"
 #define FILE_RECENT_MAPS "data/RecentMaps.json"
 
-#define KEEP_ROUNDS_MAP 1		// Wasp Edit - Low pop means fewer map candidates
+#define KEEP_ROUNDS_MAP 1		//WS Edit - Low pop means fewer map candidates
 
 SUBSYSTEM_DEF(persistence)
 	name = "Persistence"

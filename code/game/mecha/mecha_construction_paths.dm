@@ -1051,7 +1051,7 @@
 			"desc" = "External armor is wrenched."
 		),
 		list(
-			"key" = /obj/item/assembly/signaler/anomaly, //WaspStation Edit - Any anomaly core for Phazons
+			"key" = /obj/item/assembly/signaler/anomaly, //WS Edit - Any anomaly core for Phazons
 			"action" = ITEM_DELETE,
 			"back_key" = TOOL_WELDER,
 			"desc" = "Bluespace anomaly core socket is open.",

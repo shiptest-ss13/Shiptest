@@ -6,7 +6,7 @@
 	spawn_positions = 1
 	supervisors = "the head of personnel"
 	selection_color = "#bbe291"
-	wiki_page = "Food" //WaspStation Edit - Wikilinks/Warning
+	wiki_page = "Food" //WS Edit - Wikilinks/Warning
 	var/cooks = 0 //Counts cooks amount
 
 	outfit = /datum/outfit/job/cook
@@ -25,7 +25,7 @@
 	belt = /obj/item/pda/cook
 	ears = /obj/item/radio/headset/headset_srv
 	uniform = /obj/item/clothing/under/rank/civilian/chef
-	alt_uniform = /obj/item/clothing/under/rank/civilian/cookjorts //Wasp Edit - Alt Uniforms
+	alt_uniform = /obj/item/clothing/under/rank/civilian/cookjorts //WS Edit - Alt Uniforms
 	suit = /obj/item/clothing/suit/toggle/chef
 	alt_suit = /obj/item/clothing/suit/apron/chef
 	head = /obj/item/clothing/head/chefhat
@@ -53,7 +53,7 @@
 	var/datum/martial_art/cqc/under_siege/justacook = new
 	justacook.teach(H)
 
-// Wasp Edit Start - Alt-Job Titles
+//WS Edit Start - Alt-Job Titles
 /datum/outfit/job/cook/grillmaster
 	uniform = /obj/item/clothing/under/rank/civilian/cookjorts
 	suit = null
@@ -61,4 +61,4 @@
 	mask = null
 	r_hand = /obj/item/reagent_containers/food/drinks/soda_cans/monkey_energy
 	l_pocket = /obj/item/stack/sheet/mineral/coal
-// Wasp Edit End - Alt-Job Titles
+//WS Edit End - Alt-Job Titles

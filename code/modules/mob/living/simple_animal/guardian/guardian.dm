@@ -713,7 +713,7 @@ GLOBAL_LIST_EMPTY(parasites) //all currently existing/living guardians
 	name = "holoparasite injector kit"
 
 /obj/item/storage/box/syndie_kit/guardian/PopulateContents()
-	new /obj/item/guardiancreator/tech/choose/dextrous(src) // WaspStation Edit - Dextrous Guardians
+	new /obj/item/guardiancreator/tech/choose/dextrous(src) //WS Edit - Dextrous Guardians
 	new /obj/item/paper/guides/antag/guardian(src)
 
 /obj/item/guardiancreator/carp

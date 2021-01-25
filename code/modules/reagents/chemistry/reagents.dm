@@ -72,9 +72,9 @@ GLOBAL_LIST_INIT(name2reagent, build_name2reagent())
 	var/datum/material/material
 
 
-	//WaspStation Begin
+	//WS Begin
 	var/process_flags = ORGANIC // What can process this? ORGANIC, SYNTHETIC, or ORGANIC | SYNTHETIC?. We'll assume by default that it affects organics.
-	//WaspStation End
+	//WS End
 
 /datum/reagent/New()
 	. = ..()

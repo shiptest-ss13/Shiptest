@@ -226,12 +226,12 @@
 	always_new_team = TRUE
 	send_to_spawnpoint = FALSE //Handled by event
 	nukeop_outfit = /datum/outfit/syndicate/full
-	var/intern_pop_max = 8			// Wasp Edit Begin - State from Jakefarm
+	var/intern_pop_max = 8			//WS Edit Begin - State from Jakefarm
 	var/intern_outfit = /datum/outfit/syndicate/intern
 
 /datum/antagonist/nukeop/lone/on_gain()
 	nukeop_outfit = get_active_player_count(alive_check = TRUE, afk_check = TRUE, human_check = TRUE) ? intern_outfit : nukeop_outfit
-	..()		// Wasp Edit End
+	..()		//WS Edit End
 
 /datum/antagonist/nukeop/lone/assign_nuke()
 	if(nuke_team && !nuke_team.tracked_nuke)

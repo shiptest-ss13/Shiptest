@@ -80,7 +80,7 @@
 #define ADMIN_PUNISHMENT_SUPPLYPOD "Supply Pod"
 #define ADMIN_PUNISHMENT_MAZING "Puzzle"
 #define ADMIN_PUNISHMENT_IMMERSE "Fully Immerse"
-#define ADMIN_PUNISHMENT_NYA "Neko"//WaspStation Edit - Admin Punishment: Cat Tongue
+#define ADMIN_PUNISHMENT_NYA "Neko"//WS Edit - Admin Punishment: Cat Tongue
 
 #define AHELP_ACTIVE 1
 #define AHELP_CLOSED 2

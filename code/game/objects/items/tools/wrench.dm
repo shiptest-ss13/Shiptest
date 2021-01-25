@@ -1,10 +1,10 @@
 /obj/item/wrench
 	name = "wrench"
 	desc = "A wrench with common uses. Can be found in your hand. This one is a pipe wrench."
-	icon = 'waspstation/icons/obj/tools.dmi'
+	icon = 'whitesands/icons/obj/tools.dmi'
 	icon_state = "wrench_pipe" //now where could my pipe wrench be?
-	lefthand_file = 'waspstation/icons/mob/inhands/equipment/tools_lefthand.dmi'
-	righthand_file = 'waspstation/icons/mob/inhands/equipment/tools_righthand.dmi'
+	lefthand_file = 'whitesands/icons/mob/inhands/equipment/tools_lefthand.dmi'
+	righthand_file = 'whitesands/icons/mob/inhands/equipment/tools_righthand.dmi'
 	flags_1 = CONDUCT_1
 	slot_flags = ITEM_SLOT_BELT
 	force = 5

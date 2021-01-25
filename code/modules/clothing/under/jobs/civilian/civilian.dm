@@ -56,7 +56,7 @@
 	can_adjust = FALSE
 	fitted = FEMALE_UNIFORM_TOP
 
-/* WaspStation Begin - Better Command Uniforms (see waspstation\code\modules\clothing\under\jobs\civilian\civilian.dm)
+/*WS Begin - Better Command Uniforms (see whitesands\code\modules\clothing\under\jobs\civilian\civilian.dm)
 
 /obj/item/clothing/under/rank/command/head_of_personnel
 	desc = "It's a jumpsuit worn by someone who works in the position of \"Head of Personnel\"."
@@ -90,7 +90,7 @@
 	can_adjust = FALSE
 	fitted = FEMALE_UNIFORM_TOP
 
-WaspStation End */
+WS End */
 
 /obj/item/clothing/under/rank/civilian/hydroponics
 	desc = "It's a jumpsuit designed to protect against minor plant-related hazards."

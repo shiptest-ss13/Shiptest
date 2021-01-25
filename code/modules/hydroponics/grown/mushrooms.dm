@@ -84,7 +84,7 @@
 	icon_state = "angel"
 	filling_color = "#C0C0C0"
 	wine_power = 60
-	wine_flavor = "armageddon" //wasp edit: new wine flavors
+	wine_flavor = "armageddon" //WS edit: new wine flavors
 
 // Liberty Cap
 /obj/item/seeds/liberty
@@ -110,7 +110,7 @@
 	icon_state = "libertycap"
 	filling_color = "#DAA520"
 	wine_power = 80
-	wine_flavor = "your third eye opening" //wasp edit: new wine flavors
+	wine_flavor = "your third eye opening" //WS edit: new wine flavors
 
 // Plump Helmet
 /obj/item/seeds/plump
@@ -233,7 +233,7 @@
 	icon_state = "jupitercup"
 	filling_color = "#B5003D"
 	wine_power = 50
-	wine_flavor = "rolling thunder and crackling lightning" //wasp edit: new wine flavors
+	wine_flavor = "rolling thunder and crackling lightning" //WS edit: new wine flavors
 
 // Glowshroom
 /obj/item/seeds/glowshroom
@@ -264,7 +264,7 @@
 	filling_color = "#00FA9A"
 	var/effect_path = /obj/structure/glowshroom
 	wine_power = 50
-	wine_flavor = "luminescence" //wasp edit: new wine flavors
+	wine_flavor = "luminescence" //WS edit: new wine flavors
 
 /obj/item/reagent_containers/food/snacks/grown/mushroom/glowshroom/attack_self(mob/user)
 	if(isspaceturf(user.loc))
@@ -312,7 +312,7 @@
 	effect_path = /obj/structure/glowshroom/glowcap
 	tastes = list("glowcap" = 1)
 	wine_power = 60
-	wine_flavor = "battery acid" //wasp edit: new wine flavors
+	wine_flavor = "battery acid" //WS edit: new wine flavors
 
 
 //Shadowshroom
@@ -338,7 +338,7 @@
 	effect_path = /obj/structure/glowshroom/shadowshroom
 	tastes = list("shadow" = 1, "mushroom" = 1)
 	wine_power = 60
-	wine_flavor = "flashdarks" //wasp edit: new wine flavors
+	wine_flavor = "flashdarks" //WS edit: new wine flavors
 
 /obj/item/reagent_containers/food/snacks/grown/mushroom/glowshroom/shadowshroom/attack_self(mob/user)
 	. = ..()

@@ -367,7 +367,7 @@
 	armor = list("melee" = 80, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 25, "bio" = 100, "rad" = 100, "fire" = 80, "acid" = 100)
 	max_integrity = 75
 	explosion_block = 1
-	damage_deflection = 5		// Wasp Edit - Weakens R-Windows
+	damage_deflection = 5		//WS Edit - Weakens R-Windows
 	state = RWINDOW_SECURE
 	glass_type = /obj/item/stack/sheet/rglass
 	rad_insulation = RAD_HEAVY_INSULATION
@@ -494,7 +494,7 @@
 	heat_resistance = 50000
 	armor = list("melee" = 80, "bullet" = 20, "laser" = 0, "energy" = 0, "bomb" = 60, "bio" = 100, "rad" = 100, "fire" = 99, "acid" = 100)
 	max_integrity = 500
-	damage_deflection = 11		// Wasp Edit - Weakens R-Windows
+	damage_deflection = 11		//WS Edit - Weakens R-Windows
 	explosion_block = 2
 	glass_type = /obj/item/stack/sheet/plasmarglass
 
@@ -667,13 +667,13 @@
 	icon = 'icons/obj/smooth_structures/rice_window.dmi'
 	icon_state = "rice_window-0"
 	base_icon_state = "rice_window"
-	max_integrity = 300 //Wasp change - Monstermos
+	max_integrity = 300 //WS change - Monstermos
 	glass_amount = 2
 
 /obj/structure/window/shuttle
 	name = "shuttle window"
 	desc = "A reinforced, air-locked pod window."
-	icon = 'waspstation/icons/obj/smooth_structures/shuttle_window.dmi'
+	icon = 'whitesands/icons/obj/smooth_structures/shuttle_window.dmi'
 	icon_state = "shuttle_window-0"
 	base_icon_state = "shuttle_window"
 	dir = FULLTILE_WINDOW_DIR
@@ -718,7 +718,7 @@
 	smoothing_groups = list(SMOOTH_GROUP_SHUTTLE_PARTS, SMOOTH_GROUP_WINDOW_FULLTILE)
 	canSmoothWith = list(SMOOTH_GROUP_WINDOW_FULLTILE)
 	explosion_block = 3
-	damage_deflection = 5		// Wasp Edit - Weakens R-Windows
+	damage_deflection = 5		//WS Edit - Weakens R-Windows
 	glass_type = /obj/item/stack/sheet/plastitaniumglass
 	glass_amount = 2
 	rad_insulation = RAD_HEAVY_INSULATION

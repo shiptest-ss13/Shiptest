@@ -143,8 +143,8 @@ GLOBAL_LIST_INIT(traits_by_type, list(
 		"TRAIT_GRABWEAKNESS" = TRAIT_GRABWEAKNESS,
 		"TRAIT_SNOB" = TRAIT_SNOB,
 		"TRAIT_BALD" = TRAIT_BALD,
-		"TRAIT_NOBREAK" = TRAIT_NOBREAK,			// Wasp edit - Whitesands
-		"TRAIT_ALLBREAK" = TRAIT_ALLBREAK			// Wasp edit - Whitesands
+		"TRAIT_NOBREAK" = TRAIT_NOBREAK,			//WS edit - Whitesands
+		"TRAIT_ALLBREAK" = TRAIT_ALLBREAK			//WS edit - Whitesands
 	),
 	/obj/item/bodypart = list(
 		"TRAIT_PARALYSIS" = TRAIT_PARALYSIS

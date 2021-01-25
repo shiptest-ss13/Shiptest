@@ -2,7 +2,7 @@
 /obj/item/plant_analyzer
 	name = "plant analyzer"
 	desc = "A scanner used to evaluate a plant's various areas of growth."
-	icon = 'waspstation/icons/obj/device.dmi' //Waspstation edit - analyzer update
+	icon = 'whitesands/icons/obj/device.dmi' //WS edit - analyzer update
 	icon_state = "hydro"
 	item_state = "analyzer"
 	lefthand_file = 'icons/mob/inhands/equipment/tools_lefthand.dmi'
