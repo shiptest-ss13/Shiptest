@@ -47,7 +47,7 @@ const SharedContent = (props, context) => {
             content={shipInfo.name}
             currentValue={shipInfo.name}
             onCommit={(e, value) => act('rename_ship', {
-              newName: value
+              newName: value,
             })} />
         ) || (shipInfo.name ? shipInfo.name : "Ship Info")}
         buttons={(

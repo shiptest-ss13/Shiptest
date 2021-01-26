@@ -132,9 +132,9 @@
 		ref = REF(current_ship)
 	)
 	if(class_name == "Ship")
-		var/obj/structure/overmap/ship/S = current_ship
+		var/obj/structure/overmap/ship/ship = current_ship
 		.["canFly"] = TRUE
-		.["maxSpeed"] = S.max_speed
+		.["maxSpeed"] = ship.max_speed
 
 
 /obj/machinery/computer/helm/ui_act(action, params)
