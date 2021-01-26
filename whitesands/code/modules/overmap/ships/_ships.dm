@@ -73,7 +73,11 @@
 		deltimer(movement_callback_id)
 
 	//Queue another movement
-	var/timer = 1 / round(MAGNITUDE(speed[1], speed[2]), SHIP_MOVE_RESOLUTION)
+	var/speed = round(MAGNITUDE(speed[1], speed[2]), SHIP_MOVE_RESOLUTION)
+	if(!speed)
+		CRASH("Speed somehow zero despite an is_still() check!")
+
+	var/timer = 1 / speed
 	movement_callback_id = addtimer(CALLBACK(src, .proc/tick_move), timer, TIMER_STOPPABLE)
 	update_screen()
 

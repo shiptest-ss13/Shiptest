@@ -2,7 +2,7 @@
 	var/obj/structure/overmap/ship/S = allocate(/obj/structure/overmap/ship, run_loc_bottom_left)
 
 	S.burn_engines(NORTHEAST)
-	TEST_ASSERT_EQUAL(S.speed[1], S.acceleration_speed, "Ship did not increase to proper speed after burning engines")
+	TEST_ASSERT_EQUAL(S.speed[1] + S.speed[2], S.acceleration_speed, "Ship did not increase to proper speed after burning engines")
 	TEST_ASSERT_EQUAL(S.get_heading(), NORTHEAST, "Ship went [dir2text(S.dir)] instead of northeast after burning engines")
 
 	S.tick_move()
