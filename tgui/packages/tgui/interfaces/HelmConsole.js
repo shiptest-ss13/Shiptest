@@ -39,7 +39,7 @@ const SharedContent = (props, context) => {
   const { act, data } = useBackend(context);
   const { isViewer, shipInfo = [], otherInfo = [] } = data;
   return (
-    <Fragment>
+    <>
       <Section
         title={shipInfo.name ? shipInfo.name : "Ship Info"}
         buttons={(
@@ -127,7 +127,7 @@ const SharedContent = (props, context) => {
           ))}
         </Table>
       </Section>
-    </Fragment>
+    </>
   );
 };
 
@@ -146,7 +146,7 @@ const ShipContent = (props, context) => {
     y,
   } = data;
   return (
-    <Fragment>
+    <>
       <Section title="Velocity">
         <LabeledList>
           <LabeledList.Item label="Speed">
@@ -250,7 +250,7 @@ const ShipContent = (props, context) => {
           </Table.Row>
         </Table>
       </Section>
-    </Fragment>
+    </>
   );
 };
 

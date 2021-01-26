@@ -1,6 +1,5 @@
 import { useBackend } from '../backend';
 import { AnimatedNumber, Box, Section, LabeledList, Button, ProgressBar } from '../components';
-import { Fragment } from 'inferno';
 import { Window } from '../layouts';
 import { sortBy } from 'common/collections';
 import { toFixed } from 'common/math';
@@ -59,7 +58,7 @@ export const Sleeper = (props, context) => {
             </Box>
           )}>
           {!!occupied && (
-            <Fragment>
+            <>
               <ProgressBar
                 value={occupant.health}
                 minValue={occupant.minHealth}
@@ -113,7 +112,7 @@ export const Sleeper = (props, context) => {
                   </Box>
                 </LabeledList.Item>
               </LabeledList>
-            </Fragment>
+            </>
           )}
         </Section>
         <Section

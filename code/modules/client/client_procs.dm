@@ -333,10 +333,9 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 		set_macros()
 
 	// Initialize tgui panel
-	tgui_panel.initialize()
 	src << browse(file('html/statbrowser.html'), "window=statbrowser")
 	addtimer(CALLBACK(src, .proc/check_panel_loaded), 30 SECONDS)
-
+	tgui_panel.initialize()
 
 	if(alert_mob_dupe_login)
 		spawn()
