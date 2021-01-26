@@ -229,7 +229,7 @@
 		return
 	if(!istype(loc, /obj/structure/overmap) && !docked_object) //The overmap object thinks it's docked to something, but it really isn't. Move to a random tile on the overmap
 		var/obj/structure/overmap/docked = loc
-		if(istype(docked) && dock_port in find_valid_dock(docked.id, TRUE, TRUE)) //It's on one of the docked object's ports. Just let it be.
+		if(istype(docked) && (dock_port in find_valid_dock(docked.id, TRUE, TRUE))) //It's on one of the docked object's ports. Just let it be.
 			return TRUE
 		if(istype(loc, /obj/structure/overmap/dynamic))
 			var/obj/structure/overmap/dynamic/D = loc
