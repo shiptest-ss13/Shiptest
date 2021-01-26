@@ -70,13 +70,7 @@
 
 /obj/machinery/computer/helm/ui_data(mob/user)
 	. = list()
-	.["shipInfo"] = list(
-		name = current_ship.name,
-		class = istype(current_ship, /obj/structure/overmap/ship) ? "Ship" : istype(current_ship, /obj/structure/overmap/level) ? "Planetoid" : "Station",
-		integrity = current_ship.integrity,
-		sensor_range = current_ship.sensor_range,
-		ref = REF(current_ship)
-	)
+	.["integrity"] = current_ship.integrity
 	.["otherInfo"] = list()
 	for (var/object in current_ship.close_overmap_objects)
 		var/obj/structure/overmap/O = object
@@ -87,30 +81,21 @@
 		)
 		.["otherInfo"] += list(other_data)
 
-	if(istype(current_ship.loc, /obj/structure/overmap))
-		.["x"] = current_ship.loc.x
-		.["y"] = current_ship.loc.y
-	else
-		.["x"] = current_ship.x
-		.["y"] = current_ship.y
+	var/turf/T = get_turf(current_ship)
+	.["x"] = T.x
+	.["y"] = T.y
 
 	if(!istype(current_ship, /obj/structure/overmap/ship/simulated))
 		return
 
 	var/obj/structure/overmap/ship/simulated/S = current_ship
 
-	.["canFly"] = TRUE
 	.["state"] = S.state
-	.["docked"] = S.docked ? TRUE : FALSE
-	.["heading"] = dir2angle(S.get_heading()) || 0
+	.["docked"] = isturf(S.loc) ? FALSE : TRUE
+	.["heading"] = dir2text(S.get_heading()) || "None"
 	.["speed"] = S.get_speed()
-	.["maxSpeed"] = S.max_speed
 	.["eta"] = S.get_eta()
-	.["stopped"] = S.is_still()
-	.["shipInfo"] += list(
-		mass = S.mass,
-		est_thrust = S.est_thrust
-	)
+	.["est_thrust"] = S.est_thrust
 	.["engineInfo"] = list()
 	for(var/obj/machinery/power/shuttle/engine/E in S.shuttle.engine_list)
 		var/list/engine_data
@@ -137,6 +122,21 @@
 	.["isViewer"] = viewer
 	.["mapRef"] = current_ship.map_name
 
+	var/class_name = istype(current_ship, /obj/structure/overmap/ship) ? "Ship" : istype(current_ship, /obj/structure/overmap/level) ? "Planetoid" : "Station"
+	.["shipInfo"] = list(
+		name = current_ship.name,
+		can_rename = class_name == "Ship",
+		class = class_name,
+		mass = current_ship.mass,
+		sensor_range = current_ship.sensor_range,
+		ref = REF(current_ship)
+	)
+	if(class_name == "Ship")
+		var/obj/structure/overmap/ship/S = current_ship
+		.["canFly"] = TRUE
+		.["maxSpeed"] = S.max_speed
+
+
 /obj/machinery/computer/helm/ui_act(action, params)
 	. = ..()
 	if(.)
@@ -158,8 +158,13 @@
 			say(S.undock())
 		if("reload_ship")
 			set_ship()
+			update_static_data()
 		if("reload_engines")
 			S.refresh_engines()
+		if("rename_ship")
+			S.name = params["newName"]
+			S.shuttle.name = params["newName"]
+			update_static_data()
 		if("toggle_engine")
 			var/obj/machinery/power/shuttle/engine/E = locate(params["engine"])
 			E.enabled = !E.enabled

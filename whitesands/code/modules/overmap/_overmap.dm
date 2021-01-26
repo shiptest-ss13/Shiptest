@@ -74,6 +74,8 @@
 	var/overmap_armor = 1
 	///List of other overmap objects in the same tile
 	var/list/close_overmap_objects
+	///Vessel approximate mass
+	var/mass
 
 	// Stuff needed to render the map
 	var/map_name
@@ -136,7 +138,7 @@
 /obj/structure/overmap/proc/update_screen()
 	if(render_map)
 		var/list/visible_turfs = list()
-		for(var/turf/T in view(sensor_range, src))
+		for(var/turf/T in view(sensor_range, get_turf(src)))
 			visible_turfs += T
 
 		var/list/bbox = get_bbox_of_atoms(visible_turfs)
@@ -224,7 +226,19 @@
 	else
 		SSovermap.main = src
 		name = GLOB.station_name
+		mass = get_total_station_mass()
 	..()
+
+/obj/structure/overmap/level/main/proc/get_total_station_mass()
+	. = 0
+	var/datum/station_state/S = GLOB.start_state
+	. += S.floor
+	. += S.wall
+	. += S.r_wall
+	. += S.window
+	. += S.door
+	. += S.grille
+	. += S.mach
 
 /obj/structure/overmap/level/mining
 	id = AWAY_OVERMAP_OBJECT_ID_MINING
@@ -234,16 +248,19 @@
 	name = "Lavaland"
 	desc = "A lava-covered planet known for its plentiful natural resources among dangerous fauna."
 	color = COLOR_ORANGE
+	mass = 73000000
 
 /obj/structure/overmap/level/mining/icemoon
 	name = "Icemoon"
 	desc = "A frozen planet, well known for it's deep chasms and rivers of plasma."
 	color = COLOR_BLUE_LIGHT
+	mass = 70000000
 
 /obj/structure/overmap/level/mining/whitesands
 	name = "Whitesands"
 	desc = "Once a mining colony abandoned in unknown circumstances, recent events have lead to it's attempted reestablishment."
 	color = COLOR_GRAY
+	mass = 85000000
 
 /obj/structure/overmap/dynamic
 	name = "weak energy signature"
@@ -275,6 +292,7 @@
   */
 /obj/structure/overmap/dynamic/proc/choose_level_type()
 	var/chosen = rand(0, 4)
+	mass = rand(50, 100) * 1000000 //50 to 100 million tonnes
 	switch(chosen)
 		if(0)
 			name = "weak energy signal"
@@ -282,6 +300,7 @@
 			planet = FALSE
 			icon_state = "strange_event"
 			color = null
+			mass = 0 //Space doesn't weigh anything
 		if(1)
 			name = "strange lava planet"
 			desc = "A very weak energy signal originating from a planet with lots of seismic and volcanic activity."

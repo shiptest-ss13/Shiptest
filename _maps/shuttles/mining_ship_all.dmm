@@ -897,12 +897,13 @@
 /turf/open/floor/plasteel/grimy,
 /area/shuttle/mining/ship/crew)
 "Ax" = (
-/obj/structure/table/reinforced,
 /obj/effect/turf_decal/tile/blue{
 	dir = 4
 	},
 /obj/effect/turf_decal/tile/blue,
-/obj/item/clothing/mask/gas,
+/obj/machinery/computer/autopilot{
+	dir = 8
+	},
 /turf/open/floor/plasteel/dark,
 /area/shuttle/mining/ship/bridge)
 "AF" = (
@@ -1688,6 +1689,10 @@
 	},
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
+	},
+/obj/item/storage/overmap_ship/electric{
+	pixel_x = 32;
+	pixel_y = -32
 	},
 /turf/open/floor/plasteel,
 /area/shuttle/mining/ship/engine)

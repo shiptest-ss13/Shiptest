@@ -21,8 +21,6 @@
 	var/state = OVERMAP_SHIP_IDLE
 	///Vessel estimated thrust
 	var/est_thrust
-	///Vessel approximate mass
-	var/mass
 	///Average fuel fullness percentage
 	var/avg_fuel_amnt = 100
 
@@ -36,16 +34,30 @@
 	LAZYADD(SSovermap.simulated_ships, src)
 	if(_shuttle)
 		shuttle = _shuttle
+	if(!mapload)
+		initial_load()
 
 /obj/structure/overmap/ship/simulated/proc/initial_load()
-	if(istype(loc, /obj/structure/overmap))
-		docked = loc
 	if(!shuttle)
 		shuttle = SSshuttle.getShuttle(id)
 	if(shuttle)
 		name = shuttle.name
 		calculate_mass()
+		initial_name()
 		refresh_engines()
+
+/obj/structure/overmap/ship/simulated/proc/initial_name()
+	if(mass < SHIP_SIZE_THRESHOLD)
+		return //You don't DESERVE a name >:(
+	var/chosen_name = pick_n_take(GLOB.ship_names)
+	if(!chosen_name)
+		return //Sorry, we're out of names
+	if(loc == SSovermap.main)
+		chosen_name = "NTSV [chosen_name]"
+	else
+		chosen_name = "ISV [chosen_name]"
+	name = chosen_name
+	shuttle?.name = chosen_name
 
 ///Destroy if integrity <= 0 and no concious mobs on shuttle
 /obj/structure/overmap/ship/simulated/recieve_damage(amount)
@@ -53,7 +65,7 @@
 	update_icon_state()
 	if(integrity > 0)
 		return
-	if(docked) //what even
+	if(!isturf(loc)) //what even
 		check_loc()
 		return
 	for(var/MN in GLOB.mob_living_list)
@@ -108,9 +120,8 @@
 		return . + "Error finding available docking port!"
 
 	shuttle.request(dock_to_use)
-	docked = to_dock
 
-	addtimer(CALLBACK(src, .proc/complete_dock), shuttle.callTime)
+	addtimer(CALLBACK(src, .proc/complete_dock, to_dock), shuttle.callTime)
 	state = OVERMAP_SHIP_DOCKING
 	return "Commencing docking..."
 
@@ -136,7 +147,7 @@
 /obj/structure/overmap/ship/simulated/proc/undock()
 	if(!is_still()) //how the hell is it even moving (is the question I've asked multiple times) //fuck you past me this didn't help at all
 		decelerate(max_speed)
-	if(!docked)
+	if(isturf(loc))
 		check_loc()
 		return "Ship not docked!"
 	if(!shuttle)
@@ -216,20 +227,19 @@
 		return TRUE
 	if(state == OVERMAP_SHIP_DOCKING || state == OVERMAP_SHIP_UNDOCKING)
 		return
-	if(docked && !docked_object) //The overmap object thinks it's docked to something, but it really isn't. Move to a random tile on the overmap
-		if(dock_port in find_valid_dock(docked.id, TRUE, TRUE)) //It's on one of the docked object's ports. Just let it be.
+	if(!istype(loc, /obj/structure/overmap) && !docked_object) //The overmap object thinks it's docked to something, but it really isn't. Move to a random tile on the overmap
+		var/obj/structure/overmap/docked = loc
+		if(istype(docked) && dock_port in find_valid_dock(docked.id, TRUE, TRUE)) //It's on one of the docked object's ports. Just let it be.
 			return TRUE
-		if(istype(docked, /obj/structure/overmap/dynamic))
-			var/obj/structure/overmap/dynamic/D = docked
+		if(istype(loc, /obj/structure/overmap/dynamic))
+			var/obj/structure/overmap/dynamic/D = loc
 			INVOKE_ASYNC(D, /obj/structure/overmap/dynamic/.proc/unload_level)
 		forceMove(SSovermap.get_unused_overmap_square())
-		docked = null
 		state = OVERMAP_SHIP_FLYING
 		update_screen()
 		return FALSE
-	if(!docked && docked_object) //The overmap object thinks it's NOT docked to something, but it actually is. Move to the correct place.
+	if(isturf(loc) && docked_object) //The overmap object thinks it's NOT docked to something, but it actually is. Move to the correct place.
 		forceMove(docked_object)
-		docked = docked_object
 		state = OVERMAP_SHIP_IDLE
 		decelerate(max_speed)
 		update_screen()
@@ -241,7 +251,6 @@
 		if(!target)
 			return FALSE //Well, we tried
 		forceMove(target)
-		docked = target
 		state = OVERMAP_SHIP_IDLE
 		decelerate(max_speed)
 		update_screen()
@@ -249,7 +258,7 @@
 	return TRUE
 
 /obj/structure/overmap/ship/simulated/tick_move()
-	if(docked)
+	if(!isturf(loc))
 		decelerate(max_speed)
 		deltimer(movement_callback_id)
 		movement_callback_id = null
@@ -259,7 +268,7 @@
 	..()
 
 /obj/structure/overmap/ship/simulated/tick_autopilot()
-	if(docked)
+	if(!isturf(loc))
 		return
 	. = ..()
 	if(!.) //Parent proc only returns TRUE when destination is reached.
@@ -270,27 +279,27 @@
 /**
   * Called after the shuttle docks, and finishes the transfer to the new location.
   */
-/obj/structure/overmap/ship/simulated/proc/complete_dock()
+/obj/structure/overmap/ship/simulated/proc/complete_dock(obj/structure/overmap/to_dock)
 	switch(state)
 		if(OVERMAP_SHIP_DOCKING) //so that the shuttle is truly docked first
 			if(shuttle.mode == SHUTTLE_CALL)
-				forceMove(docked)
-				if(istype(docked, /obj/structure/overmap/level/main)) //Hardcoded and bad
+				if(istype(to_dock, /obj/structure/overmap/level/main)) //Hardcoded and bad
 					addtimer(CALLBACK(src, .proc/repair), SHIP_DOCKED_REPAIR_TIME, TIMER_STOPPABLE | TIMER_LOOP)
-				else if(istype(docked, /obj/structure/overmap/ship/simulated)) //Even more hardcoded, even more bad
-					var/obj/structure/overmap/ship/simulated/S = docked
+				else if(istype(to_dock, /obj/structure/overmap/ship/simulated)) //Even more hardcoded, even more bad
+					var/obj/structure/overmap/ship/simulated/S = to_dock
 					S.shuttle.shuttle_areas |= shuttle.shuttle_areas
+				forceMove(to_dock)
 				state = OVERMAP_SHIP_IDLE
 		if(OVERMAP_SHIP_UNDOCKING)
-			if(docked)
-				forceMove(get_turf(docked))
-				if(istype(docked, /obj/structure/overmap/dynamic))
-					var/obj/structure/overmap/dynamic/D = docked
+			if(!isturf(loc))
+				if(istype(loc, /obj/structure/overmap/dynamic))
+					var/obj/structure/overmap/dynamic/D = loc
 					INVOKE_ASYNC(D, /obj/structure/overmap/dynamic/.proc/unload_level)
-				else if(istype(docked, /obj/structure/overmap/ship/simulated)) //Even more hardcoded, even more bad
-					var/obj/structure/overmap/ship/simulated/S = docked
+				else if(istype(loc, /obj/structure/overmap/ship/simulated)) //Even more hardcoded, even more bad
+					var/obj/structure/overmap/ship/simulated/S = loc
 					S.shuttle.shuttle_areas -= shuttle.shuttle_areas
-				docked = null
+					adjust_speed(S.speed[1], S.speed[2])
+				forceMove(get_turf(loc))
 				state = OVERMAP_SHIP_FLYING
 				if(repair_timer)
 					deltimer(repair_timer)
@@ -301,7 +310,7 @@
   * Handles repairs. Called by a repeating timer that is created when the ship docks.
   */
 /obj/structure/overmap/ship/simulated/proc/repair()
-	if(!docked)
+	if(isturf(loc))
 		deltimer(repair_timer)
 		return
 	if(integrity < initial(integrity))
@@ -310,6 +319,8 @@
 /obj/structure/overmap/ship/simulated/update_icon_state()
 	if(mass < SHIP_SIZE_THRESHOLD)
 		base_icon_state = "shuttle"
+	else
+		base_icon_state = "ship"
 	return ..()
 
 #undef SHIP_SIZE_THRESHOLD

@@ -3,6 +3,7 @@ import { useBackend, useLocalState } from '../backend';
 import { Button, ByondUi, LabeledList, Knob, Input, Section, Grid, Box, ProgressBar, Slider, AnimatedNumber, Tooltip } from '../components';
 import { refocusLayout, Window } from '../layouts';
 import { Table } from '../components/Table';
+import { ButtonInput } from '../components/Button';
 
 export const HelmConsole = (props, context) => {
   const { act, data, config } = useBackend(context);
@@ -37,11 +38,18 @@ export const HelmConsole = (props, context) => {
 
 const SharedContent = (props, context) => {
   const { act, data } = useBackend(context);
-  const { isViewer, shipInfo = [], otherInfo = [] } = data;
+  const { isViewer, integrity, shipInfo = [], otherInfo = [] } = data;
   return (
     <>
       <Section
-        title={shipInfo.name ? shipInfo.name : "Ship Info"}
+        title={shipInfo.can_rename && (
+          <Button.Input
+            content={shipInfo.name}
+            currentValue={shipInfo.name}
+            onCommit={(e, value) => act('rename_ship', {
+              newName: value
+            })} />
+        ) || (shipInfo.name ? shipInfo.name : "Ship Info")}
         buttons={(
           <Button
             tooltip="Refresh Ship Stats"
@@ -62,7 +70,7 @@ const SharedContent = (props, context) => {
                 bad: [0, 25],
               }}
               maxValue={100}
-              value={shipInfo.integrity} />
+              value={integrity} />
           </LabeledList.Item>
           <LabeledList.Item label="Sensor Range">
             <ProgressBar
@@ -205,7 +213,7 @@ const ShipContent = (props, context) => {
               <Table.Cell collapsing>
                 <Button
                   content={
-                    (engine.name.len < 13) ? engine.name : engine.name.slice(0, 10) + "..."
+                    (engine.name.len < 14) ? engine.name : engine.name.slice(0, 10) + "..."
                   }
                   color={engine.enabled && "good"}
                   icon={engine.enabled ? "toggle-on" : "toggle-off"}
@@ -280,6 +288,11 @@ const ShipControlContent = (props, context) => {
           disabled={data.state !== 'idle'}
           onClick={() => act('undock')} />
       )}>
+      {data.state === 'idle' && (
+        <div className="NoticeBox">
+          Ship Docked.
+        </div>
+      )}
       <Table collapsing>
         <Table.Row height={1}>
           <Table.Cell width={1}>
@@ -327,7 +340,7 @@ const ShipControlContent = (props, context) => {
               tooltip="Stop"
               icon="circle"
               mb={1}
-              disabled={data.stopped || !flyable}
+              disabled={!data.speed || !flyable}
               onClick={() => act('stop')} />
           </Table.Cell>
           <Table.Cell width={1}>

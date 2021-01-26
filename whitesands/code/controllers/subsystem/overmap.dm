@@ -100,9 +100,7 @@ SUBSYSTEM_DEF(overmap)
 /datum/controller/subsystem/overmap/proc/setup_shuttle_ship(obj/docking_port/mobile/shuttle)
 	var/docked_object = get_overmap_object_by_z(shuttle.z)
 	if(docked_object)
-		var/obj/structure/overmap/ship/simulated/S = new (docked_object, shuttle.id, shuttle)
-		S.docked = docked_object
-		shuttle.current_ship = S
+		shuttle.current_ship = new (docked_object, shuttle.id, shuttle)
 	else if(SSmapping.level_trait(shuttle.z, ZTRAIT_RESERVED))
 		shuttle.current_ship = new /obj/structure/overmap/ship/simulated(get_unused_overmap_square(), shuttle.id, shuttle)
 		shuttle.current_ship.state = OVERMAP_SHIP_FLYING

@@ -18,6 +18,8 @@
 	if(ship)
 		return
 	var/obj/docking_port/mobile/M = SSshuttle.get_containing_shuttle(src)
+	if(!M)
+		return
 	if(M.current_ship)
 		ship = M.current_ship
 	else
@@ -55,7 +57,7 @@
 			data["status"] = "Flying"
 
 	for(var/obj/structure/overmap/O in view(ship.sensor_range, get_turf(ship)))
-		if(O == ship.docked || istype(O, /obj/structure/overmap/event) || O == ship)
+		if(O == ship.loc || istype(O, /obj/structure/overmap/event) || O == ship)
 			continue
 		var/list/location_data = list(
 			id = REF(O),
@@ -82,7 +84,7 @@
 	switch(action)
 		if("move")
 			ship.current_autopilot_target = locate(params["shuttle_id"])
-			if(ship.docked)
+			if(!isturf(ship.loc))
 				ship.undock()
 			ship.tick_autopilot()
 			return TRUE

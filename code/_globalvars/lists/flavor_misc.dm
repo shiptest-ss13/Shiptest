@@ -256,6 +256,8 @@ GLOBAL_LIST_INIT(numbers_as_words, world.file2list("strings/numbers_as_words.txt
 
 GLOBAL_LIST_INIT(wisdoms, world.file2list("strings/wisdoms.txt"))
 
+GLOBAL_LIST_INIT(ship_names, world.file2list("strings/ship_names.txt"))
+
 /proc/generate_number_strings()
 	var/list/L[198]
 	for(var/i in 1 to 99)

@@ -52,7 +52,7 @@
 	if(!shuttleId || !current_ship)
 		to_chat(user, "<span class='warning'>No shuttle linked!</span>")
 		return
-	if(current_ship.docked)
+	if(!isturf(current_ship.loc))
 		to_chat(user, "<span class='warning'>Cannot select docking position while already docked.</span>")
 		return
 	current_target = locate() in current_ship.close_overmap_objects
