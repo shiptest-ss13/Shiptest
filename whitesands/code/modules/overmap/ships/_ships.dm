@@ -69,6 +69,9 @@
 	if(current_autopilot_target)
 		tick_autopilot()
 
+	if(movement_callback_id)
+		deltimer(movement_callback_id)
+
 	//Queue another movement
 	var/timer = 1 / round(MAGNITUDE(speed[1], speed[2]), SHIP_MOVE_RESOLUTION)
 	movement_callback_id = addtimer(CALLBACK(src, .proc/tick_move), timer, TIMER_STOPPABLE)

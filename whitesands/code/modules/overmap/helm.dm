@@ -131,12 +131,8 @@
 		sensor_range = current_ship.sensor_range,
 		ref = REF(current_ship)
 	)
-	if(class_name != "Ship")
-		return
-
-	var/obj/structure/overmap/ship/ship = current_ship
-	.["canFly"] = TRUE
-	.["maxSpeed"] = ship.max_speed
+	if(class_name == "Ship")
+		.["canFly"] = TRUE
 
 
 /obj/machinery/computer/helm/ui_act(action, params)

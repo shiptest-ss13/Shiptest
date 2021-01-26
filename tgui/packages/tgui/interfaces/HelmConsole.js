@@ -147,7 +147,6 @@ const ShipContent = (props, context) => {
     engineInfo,
     shipInfo,
     speed,
-    maxSpeed,
     heading,
     eta,
     x,
