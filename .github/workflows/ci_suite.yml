@@ -9,7 +9,7 @@ on:
 jobs:
   run_linters:
     name: Run Linters
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v2
       - name: Setup cache
@@ -42,7 +42,7 @@ jobs:
 
   compile_all_maps:
     name: Compile Maps
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v2
       - name: Setup cache
@@ -60,7 +60,7 @@ jobs:
 
   run_all_tests:
     name: Integration Tests
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     services:
       mysql:
         image: mysql:latest
@@ -87,7 +87,7 @@ jobs:
         run: |
           sudo dpkg --add-architecture i386
           sudo apt update || true
-          sudo apt install libssl1.1:i386
+          sudo apt install -o APT::Immediate-Configure=false libssl1.1:i386
           bash tools/ci/install_rust_g.sh
       - name: Compile and run tests
         run: |
