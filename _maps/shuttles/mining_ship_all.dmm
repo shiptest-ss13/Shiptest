@@ -561,6 +561,12 @@
 	},
 /turf/open/floor/plasteel,
 /area/shuttle/mining/ship/crew)
+"qh" = (
+/obj/machinery/status_display/shuttle{
+	shuttle_id = "mining_ship"
+	},
+/turf/closed/wall/mineral/titanium,
+/area/shuttle/mining/ship/engine)
 "qW" = (
 /obj/structure/closet/secure_closet/medical2,
 /obj/effect/turf_decal/bot,
@@ -825,6 +831,10 @@
 	},
 /obj/structure/cable/yellow{
 	icon_state = "1-4"
+	},
+/obj/item/kirbyplants/random{
+	pixel_x = -20;
+	pixel_y = 20
 	},
 /turf/open/floor/plasteel/grimy,
 /area/shuttle/mining/ship/crew)
@@ -1549,6 +1559,7 @@
 	id = "mining_ship";
 	name = "mining ship";
 	port_direction = 2;
+	undock_roundstart = 1;
 	width = 17
 	},
 /obj/structure/cable/yellow{
@@ -1963,7 +1974,7 @@ Yy
 Yy
 Yy
 zT
-dK
+qh
 WV
 Yy
 Yy

@@ -7466,17 +7466,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/bridge)
-"bpj" = (
-/obj/docking_port/stationary{
-	dir = 2;
-	dwidth = 11;
-	height = 22;
-	id = "whiteship_home";
-	name = "SS13: Auxiliary Dock, Station-Port";
-	width = 35
-	},
-/turf/open/space,
-/area/space)
 "bps" = (
 /obj/structure/closet/toolcloset,
 /obj/structure/cable{
@@ -13996,6 +13985,13 @@
 "gsc" = (
 /turf/open/floor/plasteel,
 /area/hallway/primary/central)
+"gss" = (
+/obj/machinery/light,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plating/airless,
+/area/engine/engineering)
 "gsI" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
 /turf/open/floor/plasteel/showroomfloor,
@@ -18414,13 +18410,6 @@
 /obj/machinery/atmospherics/pipe/manifold/cyan/visible,
 /turf/open/floor/plasteel,
 /area/engine/atmospherics_engine)
-"jRz" = (
-/obj/machinery/light,
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/turf/open/floor/plating/airless,
-/area/engine/engineering)
 "jRC" = (
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer3{
 	dir = 4
@@ -22298,6 +22287,18 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating,
 /area/maintenance/port)
+"mYg" = (
+/obj/docking_port/stationary{
+	dir = 2;
+	dwidth = 11;
+	height = 26;
+	id = "whiteship_home";
+	name = "SS13: Auxiliary Dock, Station-Port";
+	roundstart_template = /datum/map_template/shuttle/mining_ship;
+	width = 35
+	},
+/turf/open/space,
+/area/space)
 "mYi" = (
 /obj/machinery/light/small,
 /obj/structure/cable{
@@ -67070,7 +67071,7 @@ aGa
 aGa
 bkb
 vMH
-jRz
+gss
 dsq
 fOx
 fOx
@@ -84514,7 +84515,7 @@ nou
 taE
 eEE
 bKh
-bpj
+mYg
 aaa
 aaa
 aaa

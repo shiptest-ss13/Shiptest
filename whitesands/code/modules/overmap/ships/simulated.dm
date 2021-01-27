@@ -227,6 +227,8 @@
 		return TRUE
 	if(state == OVERMAP_SHIP_DOCKING || state == OVERMAP_SHIP_UNDOCKING)
 		return
+	if(!istype(loc, /obj/structure/overmap) && is_reserved_level(shuttle.z)) //The object isn't currently docked, and doesn't think it is. This is correct.
+		return TRUE
 	if(!istype(loc, /obj/structure/overmap) && !docked_object) //The overmap object thinks it's docked to something, but it really isn't. Move to a random tile on the overmap
 		var/obj/structure/overmap/docked = loc
 		if(istype(docked) && (dock_port in find_valid_dock(docked.id, TRUE, TRUE))) //It's on one of the docked object's ports. Just let it be.
@@ -282,7 +284,7 @@
 /obj/structure/overmap/ship/simulated/proc/complete_dock(obj/structure/overmap/to_dock)
 	switch(state)
 		if(OVERMAP_SHIP_DOCKING) //so that the shuttle is truly docked first
-			if(shuttle.mode == SHUTTLE_CALL)
+			if(shuttle.mode == SHUTTLE_CALL || shuttle.mode == SHUTTLE_IDLE)
 				if(istype(to_dock, /obj/structure/overmap/level/main)) //Hardcoded and bad
 					addtimer(CALLBACK(src, .proc/repair), SHIP_DOCKED_REPAIR_TIME, TIMER_STOPPABLE | TIMER_LOOP)
 				else if(istype(to_dock, /obj/structure/overmap/ship/simulated)) //Even more hardcoded, even more bad
@@ -290,6 +292,8 @@
 					S.shuttle.shuttle_areas |= shuttle.shuttle_areas
 				forceMove(to_dock)
 				state = OVERMAP_SHIP_IDLE
+			else
+				addtimer(CALLBACK(src, .proc/complete_dock), 1 SECONDS) //This should never happen
 		if(OVERMAP_SHIP_UNDOCKING)
 			if(!isturf(loc))
 				if(istype(loc, /obj/structure/overmap/dynamic))

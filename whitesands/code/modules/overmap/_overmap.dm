@@ -159,8 +159,8 @@
 		var/obj/structure/overmap/other = AM
 		if(other == src)
 			return
-		LAZYADD(other.close_overmap_objects, src)
-		LAZYADD(close_overmap_objects, other)
+		LAZYOR(other.close_overmap_objects, src)
+		LAZYOR(close_overmap_objects, other)
 
 /**
   * See [/obj/structure/overmap/Crossed]
@@ -228,10 +228,17 @@
 		name = GLOB.station_name
 		mass = get_total_station_mass()
 	..()
+	return INITIALIZE_HINT_LATELOAD
+
+/obj/structure/overmap/level/main/LateInitialize()
+	. = ..()
+	mass = get_total_station_mass()
 
 /obj/structure/overmap/level/main/proc/get_total_station_mass()
 	. = 0
 	var/datum/station_state/S = GLOB.start_state
+	if(!S)
+		return
 	. += S.floor
 	. += S.wall
 	. += S.r_wall

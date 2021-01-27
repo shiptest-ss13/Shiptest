@@ -13,6 +13,12 @@
 
 /obj/machinery/computer/autopilot/Initialize(mapload, obj/item/circuitboard/C)
 	. = ..()
+	if(SSovermap.initialized)
+		initial_load()
+	else
+		LAZYADD(SSovermap.autopilots, src)
+
+/obj/machinery/computer/autopilot/proc/initial_load()
 	if(ship_id)
 		ship = SSovermap.get_overmap_object_by_id(ship_id)
 	if(ship)

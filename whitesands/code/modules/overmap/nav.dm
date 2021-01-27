@@ -12,13 +12,10 @@
 
 /obj/machinery/computer/camera_advanced/shuttle_docker/nav/Initialize(mapload)
 	. = ..()
-	LAZYADD(SSovermap.navs, src)
-	if(!mapload)
+	if(!SSovermap.initialized)
 		link_shuttle()
-
-/obj/machinery/computer/camera_advanced/shuttle_docker/nav/Destroy()
-	. = ..()
-	LAZYREMOVE(SSovermap.navs, src)
+	else
+		LAZYADD(SSovermap.navs, src)
 
 /obj/machinery/computer/camera_advanced/shuttle_docker/nav/proc/link_shuttle(new_id)
 	if(new_id)

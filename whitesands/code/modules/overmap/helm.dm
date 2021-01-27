@@ -16,9 +16,10 @@
 
 /obj/machinery/computer/helm/Initialize(mapload)
 	. = ..()
-	LAZYADD(SSovermap.helms, src)
-	if(!mapload)
+	if(!SSovermap.initialized)
 		set_ship()
+	else
+		LAZYADD(SSovermap.helms, src)
 
 /obj/machinery/computer/helm/proc/set_ship(_id)
 	if(_id)
@@ -36,10 +37,6 @@
 		else
 			return FALSE
 	current_ship = SSovermap.get_overmap_object_by_id(id)
-
-/obj/machinery/computer/helm/Destroy()
-	. = ..()
-	LAZYREMOVE(SSovermap.helms, src)
 
 /obj/machinery/computer/helm/ui_interact(mob/user, datum/tgui/ui)
 	// Update UI

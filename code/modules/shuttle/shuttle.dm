@@ -293,6 +293,8 @@
 	///if this shuttle can move docking ports other than the one it is docked at
 	var/can_move_docking_ports = FALSE
 	var/list/hidden_turfs = list()
+	///If this shuttle should undock roundstart. Wasp edit.
+	var/undock_roundstart
 
 	///The linked overmap object, if there is one
 	var/obj/structure/overmap/ship/simulated/current_ship
@@ -710,6 +712,8 @@
 
 	var/timeleft = timeLeft()
 	if(timeleft > 1 HOURS)
+		if(current_ship)
+			return current_ship.get_eta()
 		return "--:--"
 	else if(timeleft > 0)
 		return "[add_leading(num2text((timeleft / 60) % 60), 2, "0")]:[add_leading(num2text(timeleft % 60), 2, "0")]"

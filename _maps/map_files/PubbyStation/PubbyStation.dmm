@@ -18169,22 +18169,6 @@
 "bvV" = (
 /turf/open/floor/plasteel,
 /area/science/explab)
-"bvW" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden,
-/obj/effect/turf_decal/tile/neutral{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/neutral,
-/obj/effect/turf_decal/tile/neutral{
-	dir = 4
-	},
-/obj/effect/turf_decal/tile/neutral{
-	dir = 8
-	},
-/obj/structure/training_machine,
-/obj/item/target,
-/turf/open/floor/plasteel/dark,
-/area/science/explab)
 "bvY" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 4
@@ -21041,11 +21025,6 @@
 /obj/item/reagent_containers/food/snacks/deadmouse,
 /turf/open/floor/plating,
 /area/maintenance/department/engine)
-"bGO" = (
-/obj/structure/window/reinforced,
-/mob/living/carbon/monkey,
-/turf/open/floor/plasteel/freezer,
-/area/medical/virology)
 "bGP" = (
 /obj/structure/window/reinforced,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on,
@@ -27777,17 +27756,6 @@
 "cjx" = (
 /turf/open/floor/plating/asteroid/airless,
 /area/asteroid/nearstation/bomb_site)
-"cjB" = (
-/obj/docking_port/stationary{
-	dir = 8;
-	dwidth = 11;
-	height = 22;
-	id = "whiteship_home";
-	name = "monastery";
-	width = 35
-	},
-/turf/open/space/basic,
-/area/space)
 "cjD" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -36224,6 +36192,11 @@
 	},
 /turf/open/floor/plasteel,
 /area/security/brig)
+"fEj" = (
+/obj/structure/window/reinforced,
+/mob/living/carbon/monkey,
+/turf/open/floor/plasteel/freezer,
+/area/medical/virology)
 "fEF" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 6
@@ -40563,6 +40536,14 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/medical/virology)
+"inT" = (
+/obj/structure/table,
+/obj/item/training_toolbox{
+	pixel_y = 5
+	},
+/obj/item/training_toolbox,
+/turf/open/floor/plasteel,
+/area/crew_quarters/fitness/recreation)
 "ioj" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on{
 	dir = 1
@@ -41125,6 +41106,11 @@
 	},
 /turf/open/floor/plating,
 /area/maintenance/department/cargo)
+"iJn" = (
+/obj/structure/training_machine,
+/obj/item/target,
+/turf/open/floor/plasteel,
+/area/crew_quarters/fitness/recreation)
 "iJu" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
@@ -45244,14 +45230,6 @@
 /obj/effect/decal/cleanable/oil,
 /turf/open/floor/plating,
 /area/maintenance/department/security/brig)
-"lqo" = (
-/obj/structure/table,
-/obj/item/training_toolbox{
-	pixel_y = 5
-	},
-/obj/item/training_toolbox,
-/turf/open/floor/plasteel,
-/area/crew_quarters/fitness/recreation)
 "lqE" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on,
 /obj/structure/cable{
@@ -48166,6 +48144,22 @@
 /obj/machinery/door/firedoor/border_only,
 /turf/open/floor/plasteel/dark,
 /area/bridge)
+"nnZ" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/obj/effect/turf_decal/tile/neutral{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/neutral,
+/obj/effect/turf_decal/tile/neutral{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/neutral{
+	dir = 8
+	},
+/obj/structure/training_machine,
+/obj/item/target,
+/turf/open/floor/plasteel/dark,
+/area/science/explab)
 "noi" = (
 /obj/structure/sign/warning/vacuum/external,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
@@ -50819,6 +50813,18 @@
 	},
 /turf/open/floor/plating,
 /area/maintenance/department/engine)
+"oWx" = (
+/obj/docking_port/stationary{
+	dir = 8;
+	dwidth = 11;
+	height = 26;
+	id = "whiteship_home";
+	name = "SS13: Auxiliary Dock, Monastary";
+	roundstart_template = /datum/map_template/shuttle/mining_ship;
+	width = 35
+	},
+/turf/open/space/basic,
+/area/space)
 "oWH" = (
 /obj/structure/table,
 /obj/machinery/camera{
@@ -52916,6 +52922,11 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/science/xenobiology)
+"qzw" = (
+/obj/structure/training_machine,
+/obj/item/target/syndicate,
+/turf/open/floor/plating,
+/area/maintenance/department/security/brig)
 "qzQ" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -53069,11 +53080,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/crew_quarters/bar)
-"qFh" = (
-/obj/structure/training_machine,
-/obj/item/target,
-/turf/open/floor/plasteel,
-/area/crew_quarters/fitness/recreation)
 "qFu" = (
 /obj/effect/spawner/structure/window/plasma/reinforced,
 /obj/machinery/door/poddoor/shutters/preopen{
@@ -64834,11 +64840,6 @@
 /obj/effect/spawner/lootdrop/maintenance,
 /turf/open/floor/plating,
 /area/maintenance/department/cargo)
-"ycr" = (
-/obj/structure/training_machine,
-/obj/item/target/syndicate,
-/turf/open/floor/plating,
-/area/maintenance/department/security/brig)
 "ycx" = (
 /turf/open/floor/wood{
 	icon_state = "wood-broken5"
@@ -75898,7 +75899,7 @@ aaa
 aaa
 aaa
 aaa
-cjB
+oWx
 aaa
 aaa
 aaa
@@ -80159,7 +80160,7 @@ aaa
 aaa
 aiu
 oFf
-ycr
+qzw
 wDm
 qkS
 ajD
@@ -89477,7 +89478,7 @@ bCb
 bvc
 bvc
 bFI
-bGO
+fEj
 bHU
 vxH
 bKn
@@ -106430,7 +106431,7 @@ hyE
 bqs
 btl
 buC
-bvW
+nnZ
 bxG
 bze
 syp
@@ -106897,8 +106898,8 @@ aqZ
 atn
 awB
 axw
-qFh
-lqo
+iJn
+inT
 axw
 aBX
 atn
