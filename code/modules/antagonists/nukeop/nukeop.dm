@@ -230,7 +230,7 @@
 	var/intern_outfit = /datum/outfit/syndicate/intern
 
 /datum/antagonist/nukeop/lone/on_gain()
-	nukeop_outfit = get_active_player_count(alive_check = TRUE, afk_check = TRUE, human_check = TRUE) ? intern_outfit : nukeop_outfit
+	nukeop_outfit = (get_active_player_count(alive_check = TRUE, afk_check = TRUE, human_check = TRUE) <= intern_pop_max) ? intern_outfit : nukeop_outfit
 	..()		//WS Edit End
 
 /datum/antagonist/nukeop/lone/assign_nuke()
