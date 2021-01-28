@@ -155,6 +155,14 @@
 	desc = "Making any sudden moves would probably be a bad idea!"
 	icon_state = "aimed"
 
+/datum/status_effect/heldup/on_apply()
+	owner.apply_status_effect(STATUS_EFFECT_SURRENDER)
+	return ..()
+
+/datum/status_effect/heldup/on_remove()
+	owner.remove_status_effect(STATUS_EFFECT_SURRENDER)
+	return ..()
+
 // holdup is for the person aiming
 /datum/status_effect/holdup
 	id = "holdup"
@@ -323,3 +331,20 @@
 /// Something fishy is going on here...
 /datum/status_effect/high_fiving/proc/dropped_slap(obj/item/source)
 	slap_item = null
+
+//this effect gives the user an alert they can use to surrender quickly
+/datum/status_effect/surrender
+	id = "surrender"
+	duration = -1
+	tick_interval = -1
+	status_type = STATUS_EFFECT_UNIQUE
+	alert_type = /atom/movable/screen/alert/status_effect/surrender
+
+/atom/movable/screen/alert/status_effect/surrender
+	name = "Surrender"
+	desc = "Looks like you're in trouble now, bud. Click here to surrender. (Warning: You will be incapacitated.)"
+	icon_state = "surrender"
+
+/atom/movable/screen/alert/status_effect/surrender/Click(location, control, params)
+	. = ..()
+	owner.emote("surrender")
