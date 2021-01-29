@@ -30,6 +30,7 @@
 	antagonist = owner.mind.has_antag_datum(/datum/antagonist/obsessed)
 	antagonist.trauma = src
 	RegisterSignal(obsession, COMSIG_MOB_EYECONTACT, .proc/stare)
+	RegisterSignal(src, COMSIG_CARBON_HUG, .proc/on_hug)
 	..()
 	//antag stuff//
 	antagonist.forge_objectives(obsession.mind)
@@ -66,6 +67,7 @@
 /datum/brain_trauma/special/obsessed/on_lose()
 	..()
 	owner.mind.remove_antag_datum(/datum/antagonist/obsessed)
+	UnregisterSignal(src, COMSIG_CARBON_HUG)
 	if(obsession)
 		UnregisterSignal(obsession, COMSIG_MOB_EYECONTACT)
 
