@@ -1,4 +1,3 @@
-#define SHIP_MOVE_RESOLUTION 0.00001
 #define MOVING(speed) abs(speed) >= min_speed
 
 /**
@@ -40,7 +39,7 @@
 /obj/structure/overmap/ship/proc/adjust_speed(n_x, n_y)
 	var/offset = 1
 	if(movement_callback_id)
-		var/previous_time = round(1 / MAGNITUDE(speed[1], speed[2]), SHIP_MOVE_RESOLUTION)
+		var/previous_time = round(1 / MAGNITUDE(speed[1], speed[2]), min_speed)
 		offset = timeleft(movement_callback_id) / previous_time
 		deltimer(movement_callback_id)
 		movement_callback_id = null //just in case
@@ -53,7 +52,7 @@
 	if(is_still() || QDELETED(src) || movement_callback_id)
 		return
 
-	var/timer = round(1 / MAGNITUDE(speed[1], speed[2]) * offset, SHIP_MOVE_RESOLUTION)
+	var/timer = round(1 / MAGNITUDE(speed[1], speed[2]) * offset, min_speed)
 	movement_callback_id = addtimer(CALLBACK(src, .proc/tick_move), timer, TIMER_STOPPABLE)
 
 /**
@@ -73,7 +72,7 @@
 		deltimer(movement_callback_id)
 
 	//Queue another movement
-	var/current_speed = round(MAGNITUDE(speed[1], speed[2]), SHIP_MOVE_RESOLUTION)
+	var/current_speed = round(MAGNITUDE(speed[1], speed[2]), min_speed)
 	if(!current_speed)
 		CRASH("Speed somehow zero despite an is_still() check!")
 
@@ -96,7 +95,7 @@
 /obj/structure/overmap/ship/proc/get_speed()
 	if(is_still())
 		return 0
-	return 60 SECONDS / round(1 / MAGNITUDE(speed[1], speed[2]), SHIP_MOVE_RESOLUTION) //It's per minute, which is 60 seconds
+	return 60 SECONDS / round(1 / MAGNITUDE(speed[1], speed[2]), min_speed) //It's per minute, which is 60 seconds
 
 /**
   * Returns the direction the ship is moving in terms of dirs
@@ -121,7 +120,7 @@
 /obj/structure/overmap/ship/proc/get_eta()
 	if(current_autopilot_target && !is_still())
 		var/distance = get_dist(src, current_autopilot_target)
-		var/time_per_tile = round(1 / MAGNITUDE(speed[1], speed[2]), SHIP_MOVE_RESOLUTION)
+		var/time_per_tile = round(1 / MAGNITUDE(speed[1], speed[2]), min_speed)
 		. += time_per_tile * (distance - 1) + timeleft(movement_callback_id)
 	else
 		. += timeleft(movement_callback_id)
