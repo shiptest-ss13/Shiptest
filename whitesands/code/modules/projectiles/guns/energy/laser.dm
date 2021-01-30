@@ -10,3 +10,11 @@
 	internal_cell = TRUE
 	charge_delay = 1 //50 seconds to recharge the clip
 
+/obj/item/gun/energy/laser/iot
+	name = "ESG 2555 Ultimate"
+	desc = "An energy shotgun with surveillance and statistics managing systems.
+	\nApparently used to better inform command on how soldiers operate.
+	\nRealistically used to compare kill counts and such."
+	icon_state = "iotshotgun"
+	item_state = "laser"
+	custom_materials = list(/datum/material/iron=2000, /datum/material/silver=250, /datum/material/gold=100)
