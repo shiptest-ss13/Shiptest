@@ -74,7 +74,7 @@
 	//Queue another movement
 	var/current_speed = round(MAGNITUDE(speed[1], speed[2]), min_speed)
 	if(!current_speed)
-		CRASH("Speed somehow zero despite an is_still() check!")
+		return
 
 	var/timer = 1 / current_speed
 	movement_callback_id = addtimer(CALLBACK(src, .proc/tick_move), timer, TIMER_STOPPABLE)
