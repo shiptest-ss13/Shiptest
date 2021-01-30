@@ -20,6 +20,8 @@ SUBSYSTEM_DEF(mapping)
 
 	var/list/shuttle_templates = list()
 	var/list/shelter_templates = list()
+	var/list/holodeck_templates = list()
+
 	var/list/areas_in_z = list()
 
 	var/loading_ruins = FALSE
@@ -89,6 +91,7 @@ SUBSYSTEM_DEF(mapping)
 	// WS Edit End - Whitesands
 	shuttle_templates = SSmapping.shuttle_templates
 	shelter_templates = SSmapping.shelter_templates
+	holodeck_templates = SSmapping.holodeck_templates
 
 	z_list = SSmapping.z_list
 
@@ -163,6 +166,7 @@ SUBSYSTEM_DEF(mapping)
 	preloadShuttleTemplates()
 	load_ship_templates()
 	preloadShelterTemplates()
+	preloadHolodeckTemplates()
 
 /datum/controller/subsystem/mapping/proc/preloadRuinTemplates()
 	// Still supporting bans by filename
@@ -266,6 +270,16 @@ SUBSYSTEM_DEF(mapping)
 	for(var/B in areas)
 		var/area/A = B
 		A.reg_in_areas_in_z()
+
+/datum/controller/subsystem/mapping/proc/preloadHolodeckTemplates()
+	for(var/item in subtypesof(/datum/map_template/holodeck))
+		var/datum/map_template/holodeck/holodeck_type = item
+		if(!(initial(holodeck_type.mappath)))
+			continue
+		var/datum/map_template/holodeck/holo_template = new holodeck_type()
+
+		holodeck_templates[holo_template.template_id] = holo_template
+		map_templates[holo_template.template_id] = holo_template
 
 //////////////////
 // RESERVATIONS //

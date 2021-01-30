@@ -61,6 +61,8 @@
 	///Lazylist of movable atoms providing opacity sources.
 	var/list/atom/movable/opacity_sources
 
+	///the holodeck can load onto this turf if TRUE
+	var/holodeck_compatible = FALSE
 
 /turf/vv_edit_var(var_name, new_value)
 	var/static/list/banned_edits = list("x", "y", "z")

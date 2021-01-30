@@ -100,7 +100,7 @@
 			port.load()
 
 //Whatever special stuff you want
-/datum/map_template/shuttle/proc/post_load(obj/docking_port/mobile/M)
+/datum/map_template/shuttle/post_load(obj/docking_port/mobile/M)
 	if(movement_force)
 		M.movement_force = movement_force.Copy()
 
