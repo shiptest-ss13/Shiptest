@@ -16,3 +16,5 @@
 	icon_state = "iotshotgun"
 	item_state = "laser"
 	ammo_type = list(/obj/item/ammo_casing/energy/disabler/scatter)
+	var/obj/item/modular_computer/integratedNTOS
+	var/NTOS_type = /obj/item/modular_computer/tablet/preset/cheap
