@@ -193,7 +193,7 @@
 						 "<span class='notice'>You attach the sign to [target_turf].</span>")
 	playsound(target_turf, 'sound/items/deconstruct.ogg', 50, TRUE)
 	placed_sign.obj_integrity = obj_integrity
-	placed_sign.setDir(dir)
+	placed_sign.setDir(turn(dir,180)) //SinguloStation13 Edit (Normally all wallframes's dir point away from the wall, not look into it when placed.)
 	qdel(src)
 
 /obj/structure/sign/nanotrasen
