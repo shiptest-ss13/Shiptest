@@ -1219,7 +1219,7 @@
 /obj/effect/turf_decal/tile/blue{
 	dir = 4
 	},
-/obj/machinery/sleeper,
+/obj/machinery/stasis,
 /turf/open/floor/plasteel/white,
 /area/shuttle/escape)
 "cE" = (
@@ -1716,6 +1716,16 @@
 	},
 /obj/structure/fans/tiny,
 /turf/open/floor/plating,
+/area/shuttle/escape)
+"kj" = (
+/obj/effect/turf_decal/tile/blue,
+/obj/effect/turf_decal/tile/blue{
+	dir = 8
+	},
+/obj/machinery/shower{
+	dir = 1
+	},
+/turf/open/floor/plasteel/white,
 /area/shuttle/escape)
 "pf" = (
 /obj/machinery/vending/wallmed{
@@ -2477,7 +2487,7 @@ cs
 cp
 cp
 cp
-cw
+kj
 ab
 cR
 cY
