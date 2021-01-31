@@ -301,20 +301,19 @@ SUBSYSTEM_DEF(overmap)
 	total_size = dock_size + ruin_size
 
 	var/datum/turf_reservation/encounter_reservation = SSmapping.RequestBlockReservation(total_size, total_size, border_turf_override = /turf/closed/indestructible/blank, area_override = target_area)
-	if(mapgen)
-		var/list/same_area_turfs = list()
-		for(var/turf in encounter_reservation.non_border_turfs)
-			var/turf/T = turf
-			var/area/A = T.loc
-			if(A?.type != target_area)
-				continue
-			same_area_turfs += T
-		mapgen.generate_terrain(same_area_turfs)
-
 	if(ruin_type) //Does AFTER the turfs are reserved so it can find where the allocation is
 		//gets a turf vaguely in the middle of the reserve
 		var/turf/ruin_turf = locate(encounter_reservation.bottom_left_coords[1] + dock_size + 2, encounter_reservation.bottom_left_coords[2] + dock_size, encounter_reservation.bottom_left_coords[3])
 		ruin_type.load(ruin_turf)
+
+	if(mapgen) //Does AFTER the ruin is loaded so that it does not spawn flora/fauna in the ruin
+		var/list/same_area_turfs = list()
+		for(var/turf in encounter_reservation.non_border_turfs)
+			var/turf/T = turf
+			if(T.loc?.type != target_area)
+				continue
+			same_area_turfs += T
+		mapgen.generate_terrain(same_area_turfs)
 
 	//gets the turf with an X in the middle of the reservation, and a Y that's 1/4ths up in the reservation.
 	var/turf/docking_turf = locate(encounter_reservation.bottom_left_coords[1] + dock_size, encounter_reservation.bottom_left_coords[2] + FLOOR(dock_size / 2, 1), encounter_reservation.bottom_left_coords[3])
