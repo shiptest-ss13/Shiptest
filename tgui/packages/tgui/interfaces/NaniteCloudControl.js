@@ -197,7 +197,7 @@ export const NaniteCloudBackupDetails = (props, context) => {
         !!has_program && (
           <Button
             icon="upload"
-            content="Upload From Disk"
+            content="Upload Program from Disk"
             color="good"
             onClick={() => act('upload_program')} />
         )
@@ -224,13 +224,23 @@ export const NaniteCloudBackupDetails = (props, context) => {
                   title="Rules"
                   level={2}
                   buttons={(
-                    <Button
-                      icon="plus"
-                      content="Add Rule from Disk"
-                      color="good"
-                      onClick={() => act('add_rule', {
-                        program_id: program.id,
-                      })} />
+                    <>
+                      {!!can_rule && (
+                        <Button
+                          icon="plus"
+                          content="Add Rule from Disk"
+                          color="good"
+                          onClick={() => act('add_rule', {
+                            program_id: program.id,
+                          })} />
+                      )}
+                      <Button
+                        icon={program.all_rules_required ? 'check-double' : 'check'}
+                        content={program.all_rules_required ? 'Meet all' : 'Meet any'}
+                        onClick={() => act('toggle_rule_logic', {
+                          program_id: program.id,
+                        })} />
+                    </>
                   )}>
                   {program.has_rules ? (
                     rules.map(rule => (
