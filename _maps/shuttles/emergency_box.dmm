@@ -333,9 +333,8 @@
 /turf/open/floor/mineral/titanium/yellow,
 /area/shuttle/escape)
 "bs" = (
-/obj/machinery/light/small{
-	brightness = 3;
-	dir = 8
+/obj/machinery/shower{
+	dir = 4
 	},
 /turf/open/floor/mineral/titanium/white,
 /area/shuttle/escape)
@@ -369,6 +368,10 @@
 /area/shuttle/escape)
 "XC" = (
 /obj/structure/closet/emcloset,
+/turf/open/floor/mineral/titanium/white,
+/area/shuttle/escape)
+"ZW" = (
+/obj/machinery/stasis,
 /turf/open/floor/mineral/titanium/white,
 /area/shuttle/escape)
 
@@ -608,7 +611,7 @@ aR
 ac
 bd
 be
-bd
+ZW
 ad
 ad
 "}

@@ -500,6 +500,9 @@
 "bJ" = (
 /obj/effect/decal/cleanable/blood/old,
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/shower{
+	dir = 1
+	},
 /turf/open/floor/plasteel,
 /area/shuttle/escape)
 "bK" = (
@@ -562,6 +565,11 @@
 "wq" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/table/optable,
+/turf/open/floor/plasteel,
+/area/shuttle/escape)
+"AE" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/stasis,
 /turf/open/floor/plasteel,
 /area/shuttle/escape)
 "Ev" = (
@@ -875,7 +883,7 @@ ax
 ac
 bB
 bB
-bD
+AE
 ad
 ad
 "}

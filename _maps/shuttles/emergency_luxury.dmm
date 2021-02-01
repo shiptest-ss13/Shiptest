@@ -624,6 +624,9 @@
 	pixel_x = -3;
 	pixel_y = 2
 	},
+/obj/machinery/shower{
+	pixel_y = 18
+	},
 /turf/open/floor/carpet/cyan,
 /area/shuttle/escape/luxury)
 "cb" = (
@@ -948,6 +951,10 @@
 	},
 /obj/structure/fans/tiny,
 /turf/open/floor/mineral/plastitanium/red/brig,
+/area/shuttle/escape/luxury)
+"IX" = (
+/obj/machinery/stasis,
+/turf/open/floor/carpet/cyan,
 /area/shuttle/escape/luxury)
 "Lt" = (
 /obj/machinery/door/airlock/security/glass{
@@ -1376,7 +1383,7 @@ bi
 bl
 bv
 ag
-cb
+IX
 ce
 cm
 ag

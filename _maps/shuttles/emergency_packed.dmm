@@ -172,7 +172,7 @@
 /turf/open/floor/mineral/titanium/white,
 /area/shuttle/escape)
 "C" = (
-/obj/structure/table/optable,
+/obj/machinery/stasis,
 /turf/open/floor/mineral/titanium/white,
 /area/shuttle/escape)
 "D" = (
@@ -280,6 +280,12 @@
 	},
 /turf/open/floor/mineral/titanium,
 /area/shuttle/escape)
+"Z" = (
+/obj/machinery/shower{
+	dir = 4
+	},
+/turf/open/floor/mineral/titanium/white,
+/area/shuttle/escape)
 
 (1,1,1) = {"
 i
@@ -316,7 +322,7 @@ T
 q
 T
 D
-z
+Z
 C
 T
 "}

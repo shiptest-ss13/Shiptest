@@ -503,8 +503,8 @@
 				target_area = /area/whitesands/surface/outdoors
 
 	var/list/turfs = get_area_turfs(target_area)
-	var/original_len = turfs.len
-	while(turfs.len)
+	var/original_len = turfs?.len
+	while(turfs?.len)
 		var/turf/T = pick(turfs)
 		if(T.x<edge_distance || T.y<edge_distance || (world.maxx+1-T.x)<edge_distance || (world.maxy+1-T.y)<edge_distance)
 			turfs -= T

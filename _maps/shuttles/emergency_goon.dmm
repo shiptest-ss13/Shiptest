@@ -24,6 +24,10 @@
 /obj/machinery/status_display/evac,
 /turf/closed/wall/mineral/titanium,
 /area/shuttle/escape)
+"g" = (
+/obj/machinery/stasis,
+/turf/open/floor/mineral/titanium/white,
+/area/shuttle/escape)
 "h" = (
 /obj/machinery/door/airlock/titanium{
 	name = "Emergency Shuttle Airlock"
@@ -183,6 +187,9 @@
 /area/shuttle/escape)
 "R" = (
 /obj/machinery/light/small,
+/obj/machinery/shower{
+	dir = 8
+	},
 /turf/open/floor/mineral/titanium/white,
 /area/shuttle/escape)
 "S" = (
@@ -271,7 +278,7 @@ c
 d
 q
 v
-q
+g
 d
 H
 H

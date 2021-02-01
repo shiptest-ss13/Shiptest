@@ -493,7 +493,9 @@
 /obj/effect/turf_decal/tile/blue{
 	dir = 8
 	},
-/obj/machinery/sleeper,
+/obj/machinery/sleeper{
+	dir = 1
+	},
 /turf/open/floor/plasteel/white,
 /area/shuttle/escape)
 "aR" = (
@@ -1380,6 +1382,16 @@
 /obj/structure/fans/tiny,
 /turf/open/floor/plasteel/white,
 /area/shuttle/escape)
+"rP" = (
+/obj/effect/turf_decal/tile/blue{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/blue{
+	dir = 8
+	},
+/obj/machinery/stasis,
+/turf/open/floor/plasteel/white,
+/area/shuttle/escape)
 
 (1,1,1) = {"
 aa
@@ -1887,7 +1899,7 @@ aB
 aG
 aJ
 aN
-aQ
+rP
 aP
 aZ
 bd
