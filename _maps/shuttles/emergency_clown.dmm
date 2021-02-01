@@ -325,12 +325,22 @@
 /obj/structure/shuttle/engine/propulsion,
 /turf/open/floor/plating/airless,
 /area/shuttle/escape)
+"dO" = (
+/obj/machinery/stasis,
+/turf/open/floor/mineral/bananium,
+/area/shuttle/escape)
 "tt" = (
 /obj/machinery/door/airlock/bananium{
 	name = "Emergency Shuttle Airlock"
 	},
 /obj/structure/fans/tiny,
 /turf/open/floor/plating,
+/area/shuttle/escape)
+"vK" = (
+/obj/machinery/shower{
+	dir = 4
+	},
+/turf/open/floor/mineral/bananium,
 /area/shuttle/escape)
 "Jq" = (
 /obj/machinery/door/airlock/bananium{
@@ -511,7 +521,7 @@ aN
 ak
 ac
 Zf
-aY
+vK
 Zf
 bf
 bg
@@ -584,7 +594,7 @@ aL
 ac
 aX
 bb
-aX
+dO
 ab
 ab
 "}

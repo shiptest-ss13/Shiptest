@@ -582,7 +582,7 @@
 /obj/item/radio/intercom{
 	pixel_x = 28
 	},
-/obj/machinery/sleeper,
+/obj/machinery/stasis,
 /turf/open/floor/plasteel/white/side{
 	dir = 4
 	},
@@ -647,6 +647,10 @@
 "by" = (
 /obj/machinery/iv_drip,
 /obj/structure/bed/roller,
+/obj/machinery/shower{
+	dir = 4;
+	name = "emergency shower"
+	},
 /turf/open/floor/plasteel/white/side{
 	dir = 10
 	},

@@ -1,2 +1,2 @@
-#!/bin/bash
-exec java -jar tools/mapmerge2/jtgmerge.jar merge "$@"
+#!/bin/sh
+exec tools/bootstrap/python -m mapmerge2.merge_driver "$@"
