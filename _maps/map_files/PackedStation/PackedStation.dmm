@@ -18414,6 +18414,13 @@
 /obj/machinery/atmospherics/pipe/manifold/cyan/visible,
 /turf/open/floor/plasteel,
 /area/engine/atmospherics_engine)
+"jRz" = (
+/obj/machinery/light,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plating/airless,
+/area/engine/engineering)
 "jRC" = (
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer3{
 	dir = 4
@@ -20429,13 +20436,6 @@
 /obj/machinery/microwave,
 /turf/open/floor/plating,
 /area/maintenance/fore/secondary)
-"lDg" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/machinery/holopad,
-/turf/open/floor/plating/airless,
-/area/engine/engineering)
 "lDk" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
 	dir = 9
@@ -25814,14 +25814,6 @@
 /obj/effect/turf_decal/tile/neutral,
 /turf/open/floor/plasteel/dark,
 /area/escapepodbay)
-"pHr" = (
-/obj/machinery/light,
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/machinery/holopad,
-/turf/open/floor/plating/airless,
-/area/engine/engineering)
 "pHS" = (
 /obj/structure/rack,
 /obj/item/rcl/pre_loaded,
@@ -28639,19 +28631,6 @@
 	},
 /turf/open/floor/carpet,
 /area/security/courtroom)
-"rVS" = (
-/obj/structure/cable/yellow{
-	icon_state = "1-8"
-	},
-/obj/structure/cable/yellow{
-	icon_state = "1-2"
-	},
-/obj/effect/turf_decal/stripes/line{
-	dir = 8
-	},
-/obj/machinery/holopad,
-/turf/open/floor/plating/airless,
-/area/engine/engineering)
 "rWs" = (
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/visible{
 	dir = 8
@@ -28928,16 +28907,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/quartermaster/storage)
-"siR" = (
-/obj/structure/cable/yellow{
-	icon_state = "1-2"
-	},
-/obj/structure/cable/yellow{
-	icon_state = "1-4"
-	},
-/obj/machinery/holopad,
-/turf/open/floor/plating/airless,
-/area/engine/engineering)
 "siS" = (
 /obj/structure/chair/wood/wings,
 /obj/item/toy/figure/captain,
@@ -65296,7 +65265,7 @@ hCP
 dpl
 jvX
 jvX
-siR
+jvX
 jvX
 kJR
 mSa
@@ -67089,7 +67058,7 @@ ecz
 pWB
 oOF
 bxn
-lDg
+rMq
 ueA
 udm
 aaa
@@ -67101,7 +67070,7 @@ aGa
 aGa
 bkb
 vMH
-pHr
+jRz
 dsq
 fOx
 fOx
@@ -68894,7 +68863,7 @@ gAS
 tmE
 qLv
 qLv
-rVS
+qLv
 qLv
 aFq
 dMB
