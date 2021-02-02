@@ -1,5 +1,5 @@
 /atom/movable/screen/human
-	icon = 'icons/mob/screen_midnight.dmi'
+	icon = 'icons/hud/screen_midnight.dmi'
 
 /atom/movable/screen/human/toggle
 	name = "toggle"
@@ -34,7 +34,7 @@
 	H.quick_equip()
 
 /atom/movable/screen/devil
-	icon = 'icons/mob/screen_devil.dmi'
+	icon = 'icons/hud/screen_devil.dmi'
 	invisibility = INVISIBILITY_ABSTRACT
 
 /atom/movable/screen/devil/soul_counter
@@ -63,7 +63,7 @@
 	invisibility = INVISIBILITY_ABSTRACT
 
 /atom/movable/screen/ling
-	icon = 'icons/mob/screen_changeling.dmi'
+	icon = 'icons/hud/screen_changeling.dmi'
 	invisibility = INVISIBILITY_ABSTRACT
 
 /atom/movable/screen/ling/sting
@@ -347,6 +347,9 @@
 	zone_select.hud = src
 	zone_select.update_icon()
 	static_inventory += zone_select
+
+	combo_display = new /atom/movable/screen/combo()
+	infodisplay += combo_display
 
 	for(var/atom/movable/screen/inventory/inv in (static_inventory + toggleable_inventory))
 		if(inv.slot_id)
