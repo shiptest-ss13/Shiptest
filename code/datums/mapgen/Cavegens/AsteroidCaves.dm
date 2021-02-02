@@ -16,8 +16,33 @@
 	death_limit = 3
 
 /datum/map_generator/cave_generator/asteroid/generate_terrain(list/turfs)
-	var/list/turfs_to_gen = turfs
+	var/maxx
+	var/maxy
+	var/minx
+	var/miny
+	for(var/turf/T as anything in turfs)
+		//Gets the min/max X value
+		if(T.x > maxx)
+			maxx = T.x
+		else if(T.x < minx)
+			minx = T.x
+
+		//Gets the min/max Y value
+		if(T.y > maxy)
+			maxy = T.y
+		else if(T.y < miny)
+			miny = T.y
+
+	var/midx = minx + (maxx - minx)
+	var/midy = miny + (maxy - miny)
+	var/radius = min(maxx - minx, maxy - miny)
+
+	var/list/turfs_to_gen
+	for(var/turf/T as anything in turfs)
+		if((T.x - midx) ** 2 + (T.y - midy) ** 2 <= rand(radius - 2, radius + 2) ** 2)
+			turfs_to_gen += turfs
+			new /obj/effect/debugging/marker(T)
 
 	//Remove turfs that aren't in the asteroid's shape from the turfs_to_gen list here
 
-	. = ..(turfs_to_gen)
+	return ..(turfs_to_gen)

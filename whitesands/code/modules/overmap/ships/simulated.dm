@@ -121,7 +121,7 @@
 
 	shuttle.request(dock_to_use)
 
-	addtimer(CALLBACK(src, .proc/complete_dock, to_dock), shuttle.callTime)
+	addtimer(CALLBACK(src, .proc/complete_dock, to_dock), shuttle.callTime + 1 SECONDS)
 	state = OVERMAP_SHIP_DOCKING
 	return "Commencing docking..."
 
@@ -155,7 +155,7 @@
 	shuttle.destination = null
 	shuttle.mode = SHUTTLE_IGNITING
 	shuttle.setTimer(shuttle.ignitionTime)
-	addtimer(CALLBACK(src, .proc/complete_dock), shuttle.ignitionTime)
+	addtimer(CALLBACK(src, .proc/complete_dock), shuttle.ignitionTime + 1 SECONDS)
 	state = OVERMAP_SHIP_UNDOCKING
 	return "Beginning undocking procedures..."
 
@@ -282,6 +282,7 @@
   * Called after the shuttle docks, and finishes the transfer to the new location.
   */
 /obj/structure/overmap/ship/simulated/proc/complete_dock(obj/structure/overmap/to_dock)
+	var/old_loc = loc
 	switch(state)
 		if(OVERMAP_SHIP_DOCKING) //so that the shuttle is truly docked first
 			if(shuttle.mode == SHUTTLE_CALL || shuttle.mode == SHUTTLE_IDLE)
@@ -296,18 +297,18 @@
 				addtimer(CALLBACK(src, .proc/complete_dock), 1 SECONDS) //This should never happen
 		if(OVERMAP_SHIP_UNDOCKING)
 			if(!isturf(loc))
-				if(istype(loc, /obj/structure/overmap/dynamic))
-					var/obj/structure/overmap/dynamic/D = loc
-					INVOKE_ASYNC(D, /obj/structure/overmap/dynamic/.proc/unload_level)
-				else if(istype(loc, /obj/structure/overmap/ship/simulated)) //Even more hardcoded, even more bad
+				if(istype(loc, /obj/structure/overmap/ship/simulated)) //Even more hardcoded, even more bad
 					var/obj/structure/overmap/ship/simulated/S = loc
 					S.shuttle.shuttle_areas -= shuttle.shuttle_areas
 					adjust_speed(S.speed[1], S.speed[2])
 				forceMove(get_turf(loc))
+				if(istype(old_loc, /obj/structure/overmap/dynamic))
+					var/obj/structure/overmap/dynamic/D = old_loc
+					INVOKE_ASYNC(D, /obj/structure/overmap/dynamic/.proc/unload_level)
 				state = OVERMAP_SHIP_FLYING
 				if(repair_timer)
 					deltimer(repair_timer)
-				addtimer(CALLBACK(src, /obj/structure/overmap/ship/.proc/tick_autopilot, 20 SECONDS)) //TODO: Improve this SOMEHOW
+				addtimer(CALLBACK(src, /obj/structure/overmap/ship/.proc/tick_autopilot), 5 SECONDS) //TODO: Improve this SOMEHOW
 	update_screen()
 
 /**

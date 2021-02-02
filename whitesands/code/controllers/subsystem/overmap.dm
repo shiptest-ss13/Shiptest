@@ -92,8 +92,7 @@ SUBSYSTEM_DEF(overmap)
 
 /datum/controller/subsystem/overmap/fire()
 	if(events_enabled)
-		for(var/event in events)
-			var/obj/structure/overmap/event/E = event
+		for(var/obj/structure/overmap/event/E as anything in events)
 			if(E?.affect_multiple_times && E?.close_overmap_objects)
 				E.apply_effect()
 
@@ -226,8 +225,7 @@ SUBSYSTEM_DEF(overmap)
   * Creates an overmap object for each ruin level, making them accessible.
   */
 /datum/controller/subsystem/overmap/proc/spawn_ruin_levels()
-	for(var/level in SSmapping.z_list)
-		var/datum/space_level/L = level
+	for(var/datum/space_level/L as anything in SSmapping.z_list)
 		if(ZTRAIT_SPACE_RUINS in L.traits)
 			var/obj/structure/overmap/level/ruin/new_level = new(get_unused_overmap_square(), null, L.z_value)
 			new_level.id = "z[L.z_value]"
@@ -291,6 +289,8 @@ SUBSYSTEM_DEF(overmap)
 				ruin_list = SSmapping.jungle_ruins_templates
 				mapgen = new /datum/map_generator/jungle_generator
 				target_area = /area/ruin/unpowered/planetoid/jungle
+			if(DYNAMIC_WORLD_ASTEROID)
+				mapgen = new /datum/map_generator/cave_generator/asteroid
 
 	if(ruin && ruin_list) //Done BEFORE the turfs are reserved so that it allocates the right size box
 		ruin_type = ruin_list[pick(ruin_list)]
@@ -308,9 +308,8 @@ SUBSYSTEM_DEF(overmap)
 
 	if(mapgen) //Does AFTER the ruin is loaded so that it does not spawn flora/fauna in the ruin
 		var/list/same_area_turfs = list()
-		for(var/turf in encounter_reservation.non_border_turfs)
-			var/turf/T = turf
-			if(T.loc?.type != target_area)
+		for(var/turf/T as anything in encounter_reservation.non_border_turfs)
+			if(target_area && T.loc?.type != target_area)
 				continue
 			same_area_turfs += T
 		mapgen.generate_terrain(same_area_turfs)
