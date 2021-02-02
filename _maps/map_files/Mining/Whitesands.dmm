@@ -938,6 +938,7 @@
 	pixel_x = 7;
 	pixel_y = 5
 	},
+/obj/item/reagent_containers/food/drinks/bottle/sarsaparilla,
 /turf/open/floor/plasteel,
 /area/whitesands/colony/dormitory/one)
 "uj" = (
@@ -1459,6 +1460,10 @@
 /obj/structure/table/reinforced,
 /obj/item/folder/red,
 /obj/item/folder/red,
+/obj/item/reagent_containers/food/drinks/bottle/sarsaparilla{
+	pixel_x = -7;
+	pixel_y = 6
+	},
 /turf/open/floor/plasteel,
 /area/whitesands/colony/guard)
 "Em" = (
@@ -1743,6 +1748,10 @@
 "HD" = (
 /obj/structure/table/wood,
 /obj/item/paper/pamphlet/ruin,
+/obj/item/reagent_containers/food/drinks/bottle/sarsaparilla{
+	pixel_x = 8;
+	pixel_y = 4
+	},
 /turf/open/floor/wood,
 /area/whitesands/colony)
 "HE" = (
@@ -1797,6 +1806,7 @@
 /obj/effect/turf_decal/tile/green{
 	dir = 1
 	},
+/obj/item/storage/bottles/sandblast,
 /turf/open/floor/plasteel,
 /area/whitesands/colony/dormitory/two)
 "Jg" = (
@@ -2025,15 +2035,11 @@
 	dir = 4
 	},
 /obj/item/reagent_containers/food/drinks/beer{
-	pixel_x = -8
-	},
-/obj/item/reagent_containers/food/drinks/beer{
-	pixel_x = -1;
-	pixel_y = 9
-	},
-/obj/item/reagent_containers/food/drinks/beer{
 	pixel_x = 7;
 	pixel_y = 5
+	},
+/obj/item/reagent_containers/food/drinks/bottle/sarsaparilla{
+	pixel_x = -4
 	},
 /turf/open/floor/plasteel,
 /area/whitesands/colony/dormitory/two)

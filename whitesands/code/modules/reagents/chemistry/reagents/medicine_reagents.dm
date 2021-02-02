@@ -189,7 +189,7 @@
 	for(var/datum/reagent/toxin/R in M.reagents.reagent_list)
 		M.reagents.remove_reagent(R.type, 0.25)
 	if(holder.has_reagent(/datum/reagent/medicine/soulus))				// No, you can't chemstack with soulus dust
-		holder.remove_reagent(/datum/reagent/medicine/soulus, 5)		
+		holder.remove_reagent(/datum/reagent/medicine/soulus, 5)
 	M.add_atom_colour(color, TEMPORARY_COLOUR_PRIORITY)		// Changes color to puce
 	..()
 
@@ -217,7 +217,7 @@ datum/reagent/medicine/puce_essence/expose_atom(atom/A, volume)
 		M.adjustToxLoss(-2*REM, 0)
 		M.adjustCloneLoss(-1*REM, 0)
 	for(var/datum/reagent/toxin/R in M.reagents.reagent_list)
-		M.reagents.remove_reagent(R.type, 1)		
+		M.reagents.remove_reagent(R.type, 1)
 	M.add_atom_colour(color, TEMPORARY_COLOUR_PRIORITY)		// Changes color to chartreuse
 	..()
 
@@ -313,6 +313,7 @@ datum/reagent/medicine/chartreuse/expose_atom(atom/A, volume)
 	description = "Refreshing softdrink made for the desert."
 	color = "#3d1916"
 	metabolization_rate = REAGENTS_METABOLISM
+	taste_description = "boiling sugar"
 
 /datum/reagent/medicine/molten_bubbles/on_mob_life(mob/living/carbon/M)
 	M.heal_bodypart_damage(1,1,0)
@@ -326,8 +327,10 @@ datum/reagent/medicine/chartreuse/expose_atom(atom/A, volume)
 	name = "Plasma Bubbles"
 	description = "Molten Bubbles with the refreshing taste of plasma."
 	color = "#852e63"
+	taste_description = "grape flavored cleaning solution"
 
 /datum/reagent/medicine/molten_bubbles/sand
-	name = "SandBlast Sarsaparilla"
+	name = "Sandblast Sarsaparilla"
 	description = "Extra refreshing for those long desert days."
 	color = "#af9938"
+	taste_description = "root-beer and asbestos"

@@ -674,6 +674,7 @@
 /obj/structure/table/wood,
 /obj/item/reagent_containers/food/snacks/spidereggsham,
 /obj/item/kitchen/fork/plastic,
+/obj/item/reagent_containers/food/drinks/bottle/sarsaparilla,
 /turf/open/floor/wood,
 /area/ruin/powered)
 "nY" = (
@@ -833,6 +834,11 @@
 /obj/item/storage/toolbox/mechanical/old/clean,
 /obj/effect/decal/cleanable/blood,
 /obj/effect/decal/cleanable/blood/gibs/bubblegum,
+/turf/open/floor/wood,
+/area/ruin/powered)
+"rz" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/item/storage/bottles/sandblast,
 /turf/open/floor/wood,
 /area/ruin/powered)
 "rK" = (
@@ -1224,6 +1230,7 @@
 /area/ruin/powered)
 "yR" = (
 /obj/structure/table/wood,
+/obj/item/reagent_containers/food/drinks/bottle/sarsaparilla,
 /turf/open/floor/wood{
 	icon_state = "wood-broken5"
 	},
@@ -1294,6 +1301,7 @@
 /obj/item/reagent_containers/food/snacks/cheesynachos,
 /obj/item/reagent_containers/food/snacks/branrequests,
 /obj/item/reagent_containers/food/snacks/canned/beans,
+/obj/item/reagent_containers/food/drinks/bottle/sarsaparilla,
 /turf/open/floor/wood,
 /area/ruin/powered)
 "Bw" = (
@@ -1715,6 +1723,7 @@
 /obj/item/reagent_containers/food/snacks/butterdog,
 /obj/item/reagent_containers/food/snacks/candy,
 /obj/item/reagent_containers/food/snacks/canned/peaches,
+/obj/item/reagent_containers/food/drinks/bottle/sarsaparilla,
 /turf/open/floor/wood,
 /area/ruin/powered)
 "Ko" = (
@@ -1807,6 +1816,11 @@
 /obj/structure/rack,
 /obj/effect/spawner/lootdrop/minor/kittyears_or_rabbitears,
 /obj/effect/decal/cleanable/dirt,
+/turf/open/floor/wood,
+/area/ruin/powered)
+"MJ" = (
+/obj/structure/table/wood,
+/obj/item/reagent_containers/food/drinks/bottle/sarsaparilla,
 /turf/open/floor/wood,
 /area/ruin/powered)
 "MQ" = (
@@ -3492,7 +3506,7 @@ FX
 FX
 kt
 ai
-kt
+MJ
 cl
 fC
 cl
@@ -3698,7 +3712,7 @@ eO
 FX
 Rj
 Rq
-fC
+rz
 FX
 Fr
 OZ
@@ -3743,7 +3757,7 @@ FX
 FX
 FX
 kt
-kt
+MJ
 kt
 IG
 CV
