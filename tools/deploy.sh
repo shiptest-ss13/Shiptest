@@ -35,3 +35,4 @@ cp -r strings/* $1/strings/
 if [ "$(uname -o)" = "Msys" ]; then
 	cp ./*.dll $1/
 fi
+cp *byond-extools.* $1/ || true
