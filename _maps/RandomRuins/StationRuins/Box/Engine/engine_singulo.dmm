@@ -3,6 +3,18 @@
 /obj/structure/lattice,
 /turf/open/space/basic,
 /area/space/nearstation)
+"aP" = (
+/obj/machinery/holopad,
+/turf/open/floor/plating/airless,
+/area/engine/engineering)
+"bj" = (
+/obj/effect/turf_decal/stripes/line,
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/machinery/holopad,
+/turf/open/floor/plating,
+/area/engine/engineering)
 "cq" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
@@ -171,13 +183,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/engine/engineering)
-"nc" = (
-/obj/effect/turf_decal/stripes/line,
-/obj/structure/cable/yellow{
-	icon_state = "1-2"
-	},
-/turf/open/floor/plating,
-/area/engine/engineering)
 "nn" = (
 /obj/effect/turf_decal/stripes/line,
 /obj/machinery/power/emitter/welded,
@@ -189,6 +194,16 @@
 	dir = 6
 	},
 /turf/open/floor/plasteel,
+/area/engine/engineering)
+"oa" = (
+/obj/structure/cable/yellow{
+	icon_state = "1-4"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-8"
+	},
+/obj/machinery/holopad,
+/turf/open/floor/plating/airless,
 /area/engine/engineering)
 "pK" = (
 /obj/effect/turf_decal/stripes/line{
@@ -270,6 +285,16 @@
 	},
 /turf/open/floor/plating,
 /area/engine/engineering)
+"ty" = (
+/obj/machinery/light,
+/obj/machinery/camera/emp_proof{
+	c_tag = "Engine - South";
+	dir = 1;
+	network = list("ss13","engine")
+	},
+/obj/machinery/holopad,
+/turf/open/floor/plating/airless,
+/area/engine/engineering)
 "tZ" = (
 /obj/machinery/atmospherics/components/unary/vent_pump{
 	dir = 1
@@ -286,14 +311,6 @@
 	},
 /turf/open/floor/plating/airless,
 /area/space/nearstation)
-"uI" = (
-/obj/machinery/camera/emp_proof{
-	c_tag = "Engine - East";
-	dir = 8;
-	network = list("ss13","engine")
-	},
-/turf/open/floor/plating/airless,
-/area/engine/engineering)
 "uU" = (
 /obj/structure/sign/warning/radiation/rad_area,
 /obj/machinery/atmospherics/pipe/simple/orange/visible{
@@ -471,6 +488,15 @@
 /obj/item/flashlight,
 /obj/item/pipe_dispenser,
 /turf/open/floor/plasteel,
+/area/engine/engineering)
+"Dr" = (
+/obj/machinery/camera/emp_proof{
+	c_tag = "Engine - West";
+	dir = 4;
+	network = list("ss13","engine")
+	},
+/obj/machinery/holopad,
+/turf/open/floor/plating/airless,
 /area/engine/engineering)
 "El" = (
 /obj/effect/turf_decal/stripes/line,
@@ -693,15 +719,6 @@
 /obj/effect/turf_decal/box,
 /turf/open/floor/engine,
 /area/engine/engineering)
-"MU" = (
-/obj/structure/cable/yellow{
-	icon_state = "1-4"
-	},
-/obj/structure/cable/yellow{
-	icon_state = "1-8"
-	},
-/turf/open/floor/plating/airless,
-/area/space/nearstation)
 "Oo" = (
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
@@ -811,6 +828,15 @@
 "Sa" = (
 /turf/open/floor/plating/airless,
 /area/space/nearstation)
+"Sj" = (
+/obj/machinery/camera/emp_proof{
+	c_tag = "Engine - East";
+	dir = 8;
+	network = list("ss13","engine")
+	},
+/obj/machinery/holopad,
+/turf/open/floor/plating/airless,
+/area/engine/engineering)
 "Ss" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 10
@@ -886,15 +912,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/engine/engineering)
-"VR" = (
-/obj/machinery/light,
-/obj/machinery/camera/emp_proof{
-	c_tag = "Engine - South";
-	dir = 1;
-	network = list("ss13","engine")
-	},
-/turf/open/floor/plating/airless,
-/area/engine/engineering)
 "Wg" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 1
@@ -932,14 +949,6 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel,
-/area/engine/engineering)
-"XY" = (
-/obj/machinery/camera/emp_proof{
-	c_tag = "Engine - West";
-	dir = 4;
-	network = list("ss13","engine")
-	},
-/turf/open/floor/plating/airless,
 /area/engine/engineering)
 "Yg" = (
 /obj/machinery/door/airlock/external{
@@ -1224,7 +1233,7 @@ lz
 lz
 lz
 lz
-XY
+Dr
 lz
 lz
 lz
@@ -1274,7 +1283,7 @@ XF
 mA
 QC
 Pt
-lz
+aP
 lz
 aI
 ky
@@ -1469,9 +1478,9 @@ Fk
 Fh
 wf
 eD
-nc
+bj
 vN
-MU
+oa
 Sa
 Sa
 Sa
@@ -1483,7 +1492,7 @@ Sa
 Sa
 OV
 aI
-VR
+ty
 Pt
 KX
 ky
@@ -1666,7 +1675,7 @@ yh
 Gm
 pK
 Pt
-lz
+aP
 ky
 aI
 ky
@@ -1728,7 +1737,7 @@ lz
 lz
 lz
 lz
-uI
+Sj
 lz
 lz
 lz

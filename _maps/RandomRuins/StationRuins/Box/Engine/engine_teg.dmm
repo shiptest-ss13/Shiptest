@@ -289,6 +289,17 @@
 /obj/effect/turf_decal/tile/yellow,
 /turf/open/floor/plasteel,
 /area/engine/engineering)
+"gS" = (
+/obj/machinery/light{
+	dir = 4
+	},
+/obj/item/bot_assembly/firebot,
+/obj/structure/extinguisher_cabinet{
+	dir = 4;
+	pixel_x = 27
+	},
+/turf/open/floor/plasteel,
+/area/engine/engineering)
 "ha" = (
 /obj/effect/spawner/structure/window/plasma/reinforced/shutters,
 /obj/machinery/atmospherics/pipe/heat_exchanging/junction,
@@ -302,7 +313,7 @@
 	dir = 5
 	},
 /obj/structure/extinguisher_cabinet{
-	pixel_y = -32
+	pixel_y = -30
 	},
 /obj/structure/rack,
 /obj/item/crowbar,
@@ -315,6 +326,11 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/dark/visible,
 /obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel,
+/area/engine/engineering)
+"hT" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/holopad,
 /turf/open/floor/plasteel,
 /area/engine/engineering)
 "ih" = (
@@ -462,6 +478,22 @@
 	},
 /turf/open/floor/plasteel,
 /area/engine/engineering)
+"lk" = (
+/obj/machinery/atmospherics/components/binary/pump{
+	dir = 8
+	},
+/obj/effect/turf_decal/tile/yellow{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/yellow{
+	dir = 1
+	},
+/obj/structure/extinguisher_cabinet{
+	dir = 1;
+	pixel_y = 30
+	},
+/turf/open/floor/plasteel,
+/area/engine/engineering)
 "lq" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /obj/effect/turf_decal/stripes/line{
@@ -524,25 +556,20 @@
 	},
 /turf/open/floor/plasteel,
 /area/engine/engineering)
-"ns" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible,
-/obj/structure/extinguisher_cabinet{
-	pixel_x = -28
-	},
-/obj/effect/turf_decal/tile/yellow{
-	dir = 8
-	},
-/obj/effect/turf_decal/tile/yellow{
-	dir = 1
-	},
-/turf/open/floor/plasteel,
-/area/engine/engineering)
 "nF" = (
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden{
 	dir = 8
 	},
 /obj/effect/turf_decal/stripes/line{
 	dir = 4
+	},
+/turf/open/floor/plasteel,
+/area/engine/engineering)
+"nR" = (
+/obj/structure/closet/firecloset,
+/obj/machinery/firealarm{
+	dir = 8;
+	pixel_x = -26
 	},
 /turf/open/floor/plasteel,
 /area/engine/engineering)
@@ -590,16 +617,6 @@
 	},
 /turf/open/space/basic,
 /area/space/nearstation)
-"pb" = (
-/obj/machinery/light{
-	dir = 4
-	},
-/obj/structure/extinguisher_cabinet{
-	pixel_x = 26
-	},
-/obj/item/bot_assembly/firebot,
-/turf/open/floor/plasteel,
-/area/engine/engineering)
 "pg" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/visible{
 	dir = 10
@@ -621,12 +638,8 @@
 /obj/structure/reagent_dispensers/fueltank,
 /turf/open/floor/plasteel,
 /area/engine/engineering)
-"qh" = (
-/obj/machinery/firealarm{
-	dir = 8;
-	pixel_x = 24
-	},
-/obj/effect/turf_decal/delivery,
+"qz" = (
+/obj/machinery/holopad,
 /turf/open/floor/plasteel,
 /area/engine/engineering)
 "qC" = (
@@ -858,6 +871,20 @@
 /obj/item/reagent_containers/food/drinks/soda_cans/thirteenloko,
 /turf/open/floor/plasteel,
 /area/engine/engineering)
+"yN" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible,
+/obj/effect/turf_decal/tile/yellow{
+	dir = 8
+	},
+/obj/effect/turf_decal/tile/yellow{
+	dir = 1
+	},
+/obj/structure/extinguisher_cabinet{
+	dir = 8;
+	pixel_x = -27
+	},
+/turf/open/floor/plasteel,
+/area/engine/engineering)
 "yR" = (
 /obj/machinery/atmospherics/pipe/simple/orange/visible,
 /obj/effect/turf_decal/tile/yellow{
@@ -964,6 +991,10 @@
 	dir = 4
 	},
 /obj/machinery/atmospherics/components/binary/pump,
+/turf/open/floor/plasteel,
+/area/engine/engineering)
+"CX" = (
+/obj/effect/turf_decal/delivery,
 /turf/open/floor/plasteel,
 /area/engine/engineering)
 "Dd" = (
@@ -1452,12 +1483,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/engine/engineering)
-"OY" = (
-/obj/structure/extinguisher_cabinet{
-	pixel_x = 26
-	},
-/turf/open/floor/plasteel,
-/area/engine/engineering)
 "Pm" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden{
 	dir = 8
@@ -1664,21 +1689,6 @@
 /obj/machinery/atmospherics/pipe/simple/orange/visible,
 /turf/open/floor/plasteel,
 /area/engine/engineering)
-"Ti" = (
-/obj/machinery/atmospherics/components/binary/pump{
-	dir = 8
-	},
-/obj/structure/extinguisher_cabinet{
-	pixel_y = 30
-	},
-/obj/effect/turf_decal/tile/yellow{
-	dir = 4
-	},
-/obj/effect/turf_decal/tile/yellow{
-	dir = 1
-	},
-/turf/open/floor/plasteel,
-/area/engine/engineering)
 "TB" = (
 /obj/machinery/atmospherics/components/unary/portables_connector,
 /obj/effect/turf_decal/delivery,
@@ -1705,6 +1715,13 @@
 	dir = 4
 	},
 /turf/closed/wall,
+/area/engine/engineering)
+"UK" = (
+/obj/structure/extinguisher_cabinet{
+	dir = 4;
+	pixel_x = 27
+	},
+/turf/open/floor/plasteel,
 /area/engine/engineering)
 "UL" = (
 /obj/machinery/atmospherics/pipe/heat_exchanging/simple{
@@ -2275,7 +2292,7 @@ Dd
 vc
 vc
 jv
-Dd
+qz
 od
 Hz
 li
@@ -2341,7 +2358,7 @@ yS
 yS
 Nf
 WL
-Dd
+qz
 Dd
 eC
 KN
@@ -2366,7 +2383,7 @@ Jk
 jT
 wt
 uG
-ns
+yN
 wt
 wt
 wt
@@ -2451,7 +2468,7 @@ xt
 Fb
 Dd
 Gr
-pb
+gS
 fy
 DB
 uz
@@ -2472,7 +2489,7 @@ Te
 XF
 yS
 UI
-Ti
+lk
 cr
 Mr
 Dd
@@ -2584,7 +2601,7 @@ FN
 vY
 AP
 GF
-cr
+hT
 fE
 fE
 ka
@@ -2638,7 +2655,7 @@ Dj
 AN
 cB
 sq
-Gr
+nR
 Dd
 QT
 Ba
@@ -2666,8 +2683,8 @@ Dj
 RO
 Dd
 Gf
-qh
-OY
+CX
+UK
 Ax
 Gk
 ci

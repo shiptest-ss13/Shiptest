@@ -59,6 +59,10 @@
 "df" = (
 /turf/closed/wall/r_wall,
 /area/space/nearstation)
+"do" = (
+/obj/machinery/holopad,
+/turf/open/floor/plasteel,
+/area/engine/engineering)
 "dr" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on{
 	dir = 8
@@ -93,6 +97,22 @@
 /obj/machinery/power/smes,
 /turf/open/floor/plasteel,
 /area/engine/engineering)
+"ed" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 4
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-8"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-4"
+	},
+/obj/machinery/holopad,
+/turf/open/floor/plasteel,
+/area/engine/engineering)
 "eC" = (
 /obj/structure/lattice,
 /turf/open/space/basic,
@@ -119,7 +139,7 @@
 "fc" = (
 /obj/machinery/firealarm{
 	dir = 8;
-	pixel_x = 24
+	pixel_x = -26
 	},
 /turf/open/floor/plasteel,
 /area/engine/engineering)
@@ -134,21 +154,6 @@
 "gK" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
-	},
-/turf/open/floor/plasteel,
-/area/engine/engineering)
-"ha" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
-	dir = 4
-	},
-/obj/structure/cable/yellow{
-	icon_state = "1-8"
-	},
-/obj/structure/cable/yellow{
-	icon_state = "1-2"
-	},
-/obj/structure/cable/yellow{
-	icon_state = "1-4"
 	},
 /turf/open/floor/plasteel,
 /area/engine/engineering)
@@ -1172,7 +1177,7 @@ TA
 iM
 bn
 ZC
-ZC
+fc
 Ok
 nB
 ZC
@@ -1371,7 +1376,7 @@ ho
 wb
 Bs
 Nz
-ha
+ed
 Nz
 Bs
 wb
@@ -1564,7 +1569,7 @@ CK
 hH
 Nq
 ZC
-fc
+ZC
 Et
 Fz
 ZC
@@ -1598,7 +1603,7 @@ oq
 ZC
 ZC
 ZC
-ZC
+do
 ZC
 ZC
 Qd
@@ -1622,7 +1627,7 @@ eE
 oT
 Zl
 CK
-ZC
+fc
 ZC
 ZC
 ZC
@@ -1650,7 +1655,7 @@ eE
 Pp
 ZC
 WW
-fc
+ZC
 ZC
 sz
 EV

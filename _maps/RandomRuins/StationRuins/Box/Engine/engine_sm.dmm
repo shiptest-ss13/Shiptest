@@ -258,17 +258,6 @@
 	},
 /turf/open/floor/plating,
 /area/engine/engineering)
-"hg" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden,
-/obj/effect/turf_decal/stripes/line{
-	dir = 4
-	},
-/obj/machinery/firealarm{
-	dir = 8;
-	pixel_x = 24
-	},
-/turf/open/floor/engine,
-/area/engine/engineering)
 "hk" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -416,6 +405,17 @@
 	},
 /turf/open/space,
 /area/space/nearstation)
+"lz" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
+/obj/effect/turf_decal/stripes/line{
+	dir = 8
+	},
+/obj/machinery/firealarm{
+	dir = 8;
+	pixel_x = -26
+	},
+/turf/open/floor/engine,
+/area/engine/engineering)
 "lG" = (
 /obj/structure/table,
 /obj/item/stack/sheet/metal/fifty,
@@ -426,6 +426,13 @@
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/visible,
 /obj/machinery/meter,
 /turf/open/floor/engine,
+/area/engine/engineering)
+"mj" = (
+/obj/machinery/firealarm{
+	dir = 4;
+	pixel_x = 26
+	},
+/turf/open/floor/plasteel/dark,
 /area/engine/engineering)
 "mp" = (
 /obj/structure/closet/secure_closet/engineering_personal,
@@ -533,6 +540,19 @@
 /obj/structure/cable/yellow{
 	icon_state = "1-4"
 	},
+/turf/open/floor/engine,
+/area/engine/engineering)
+"oy" = (
+/obj/effect/turf_decal/stripes/corner{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/holopad,
 /turf/open/floor/engine,
 /area/engine/engineering)
 "oP" = (
@@ -958,23 +978,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/engine/engineering)
-"yG" = (
-/obj/effect/turf_decal/stripes/line,
-/obj/machinery/firealarm{
-	dir = 1;
-	pixel_y = -26
-	},
-/obj/machinery/camera{
-	c_tag = "Engineering Supermatter Fore";
-	dir = 1;
-	network = list("ss13","engine");
-	pixel_x = 23
-	},
-/obj/machinery/atmospherics/pipe/manifold/green/visible{
-	dir = 1
-	},
-/turf/open/floor/engine,
-/area/engine/engineering)
 "zq" = (
 /obj/structure/lattice,
 /obj/machinery/atmospherics/pipe/heat_exchanging/simple{
@@ -1265,7 +1268,7 @@
 "HK" = (
 /obj/machinery/firealarm{
 	dir = 8;
-	pixel_x = 24
+	pixel_x = -26
 	},
 /turf/open/floor/plasteel/dark,
 /area/engine/engineering)
@@ -1294,16 +1297,11 @@
 "Id" = (
 /turf/open/floor/plating,
 /area/engine/engineering)
-"Jv" = (
-/obj/effect/turf_decal/stripes/corner{
-	dir = 1
-	},
+"IT" = (
 /obj/structure/cable{
-	icon_state = "2-8"
+	icon_state = "1-2"
 	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
+/obj/machinery/holopad,
 /turf/open/floor/engine,
 /area/engine/engineering)
 "JE" = (
@@ -1325,6 +1323,14 @@
 	},
 /obj/machinery/door/firedoor/border_only,
 /turf/open/floor/engine,
+/area/engine/engineering)
+"JX" = (
+/obj/effect/turf_decal/delivery,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible{
+	dir = 4
+	},
+/obj/machinery/holopad,
+/turf/open/floor/plasteel/dark,
 /area/engine/engineering)
 "Kb" = (
 /obj/effect/turf_decal/stripes/line,
@@ -1494,6 +1500,19 @@
 /obj/machinery/atmospherics/components/trinary/filter/flipped/critical{
 	dir = 4
 	},
+/turf/open/floor/engine,
+/area/engine/engineering)
+"Ot" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 4
+	},
+/obj/effect/turf_decal/stripes/corner{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/obj/machinery/holopad,
 /turf/open/floor/engine,
 /area/engine/engineering)
 "OF" = (
@@ -1856,18 +1875,6 @@
 	},
 /turf/closed/wall/r_wall,
 /area/engine/engineering)
-"Vj" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
-	dir = 4
-	},
-/obj/effect/turf_decal/stripes/corner{
-	dir = 4
-	},
-/obj/structure/cable{
-	icon_state = "2-8"
-	},
-/turf/open/floor/engine,
-/area/engine/engineering)
 "VK" = (
 /obj/structure/table,
 /obj/item/stack/cable_coil{
@@ -1996,6 +2003,22 @@
 	},
 /turf/open/floor/engine,
 /area/engine/supermatter)
+"XH" = (
+/obj/effect/turf_decal/stripes/line,
+/obj/machinery/camera{
+	c_tag = "Engineering Supermatter Fore";
+	dir = 1;
+	network = list("ss13","engine");
+	pixel_x = 23
+	},
+/obj/machinery/atmospherics/pipe/manifold/green/visible{
+	dir = 1
+	},
+/obj/machinery/firealarm{
+	pixel_y = -26
+	},
+/turf/open/floor/engine,
+/area/engine/engineering)
 "XS" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/visible{
 	dir = 10
@@ -2366,7 +2389,7 @@ DN
 VU
 yb
 cG
-cG
+lz
 cG
 VP
 fG
@@ -2392,13 +2415,13 @@ Go
 (12,1,1) = {"
 oS
 XW
-Jv
+oy
 yg
 yg
 yg
 yg
 Up
-yg
+IT
 yg
 Yq
 yg
@@ -2533,7 +2556,7 @@ Go
 Yo
 qL
 hk
-yG
+XH
 iX
 DK
 up
@@ -2571,7 +2594,7 @@ eF
 ER
 uY
 QK
-QK
+JX
 bo
 nF
 TP
@@ -2728,13 +2751,13 @@ Go
 (24,1,1) = {"
 hV
 qh
-Vj
+Ot
 qY
 yg
 yg
 yg
 Ki
-yg
+IT
 yg
 vF
 yg
@@ -2743,7 +2766,7 @@ fg
 Xf
 lG
 TP
-HK
+mj
 TP
 GD
 iI
@@ -2758,7 +2781,7 @@ bo
 ax
 NO
 We
-hg
+LU
 LU
 jd
 yp
@@ -2816,7 +2839,7 @@ zZ
 ft
 rZ
 bo
-TP
+HK
 qH
 Tu
 Tu
@@ -2844,7 +2867,7 @@ zZ
 sm
 Cj
 ds
-HK
+TP
 QQ
 WW
 yy
