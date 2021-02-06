@@ -85,12 +85,6 @@
 
 		if("Bartender", "Lawyer")
 			O = new /datum/outfit/plasmaman/bar
-<<<<<<< HEAD
-=======
-
-		if("Psychologist")
-			O = new /datum/outfit/plasmaman/psychologist
->>>>>>> e9c1fcebaad3... Increases the accuracy of the photocopier (#54336)
 
 		if("Cook")
 			O = new /datum/outfit/plasmaman/chef
