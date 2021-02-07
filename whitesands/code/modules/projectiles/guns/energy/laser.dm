@@ -21,4 +21,4 @@
 	internal_cell = TRUE
 	ammo_type = list(/obj/item/ammo_casing/energy/disabler)
 	var/obj/item/modular_computer/integratedNTOS
-	var/NTOS_type = /obj/item/modular_computer/tablet/preset/cheap
+	var/NTOS_type = /obj/item/modular_computer/internal
