@@ -19,6 +19,6 @@
 	flags_1 =  CONDUCT_1
 	cell_type = /obj/item/stock_parts/cell/gun/mini
 	internal_cell = TRUE
-	ammo_type = list(/obj/item/ammo_casing/energy/disabler)
+	ammo_type = list(/obj/item/ammo_casing/energy/disabler/scatter)
 	var/obj/item/modular_computer/integratedNTOS
 	var/NTOS_type = /obj/item/modular_computer/internal
