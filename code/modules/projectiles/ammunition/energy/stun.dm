@@ -27,3 +27,8 @@
 
 /obj/item/ammo_casing/energy/disabler/hos
 	e_cost = 600
+
+/obj/item/ammo_casing/energy/disabler/scatter	//WS edit, scatter rework
+	pellets = 3
+	variance = 15
+	select_name = "scatter"

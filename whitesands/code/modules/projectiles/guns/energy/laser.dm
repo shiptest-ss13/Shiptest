@@ -10,3 +10,15 @@
 	internal_cell = TRUE
 	charge_delay = 1 //50 seconds to recharge the clip
 
+/obj/item/gun/energy/laser/iot
+	name = "ESG 2555 Ultimate"
+	desc = "An energy shotgun with surveillance and statistics managing systems.\nApparently used to better inform command on how soldiers operate.\nRealistically used to compare kill counts and such."
+	icon_state = "iotshotgun"
+	item_state = "laser"
+	w_class = WEIGHT_CLASS_NORMAL
+	flags_1 =  CONDUCT_1
+	cell_type = /obj/item/stock_parts/cell/gun/mini
+	internal_cell = TRUE
+	ammo_type = list(/obj/item/ammo_casing/energy/disabler/scatter)
+	var/obj/item/modular_computer/integratedNTOS
+	var/NTOS_type = /obj/item/modular_computer/internal
