@@ -6,7 +6,7 @@
 	item_state = "arg"
 	mag_type = /obj/item/ammo_box/magazine/rifle47x33mm
 	can_suppress = FALSE
-	fire_rate = 4
+	fire_rate = 5
 	actions_types = list()
 	can_bayonet = FALSE
 	mag_display = TRUE
@@ -41,7 +41,22 @@
 	"}
 	icon = 'whitesands/icons/obj/guns/projectile.dmi'
 	icon_state = "aks74u"
+	lefthand_file = 'whitesands/icons/mob/inhands/weapons/guns_left.dmi'
+	righthand_file = 'whitesands/icons/mob/inhands/weapons/guns_right.dmi'
+	item_state = "aks74u"
 	weapon_weight = WEAPON_MEDIUM
 	w_class = WEIGHT_CLASS_NORMAL
 	pin = /obj/item/firing_pin/explorer
 	mag_type = /obj/item/ammo_box/magazine/aks74u
+
+/obj/item/gun/ballistic/automatic/vector
+	name = "Vector Carbine"
+	desc = "A police carbine based off of an SMG designed, with most of the complex workings removed for reliability. Chambered in 9mm."
+	icon = 'whitesands/icons/obj/guns/projectile.dmi'
+	icon_state = "vector"
+	item_state = "vector"
+	mag_type = /obj/item/ammo_box/magazine/smgm9mm/rubbershot //you guys remember when the autorifle was chambered in 9mm
+	bolt_type = BOLT_TYPE_LOCKING
+	mag_display = TRUE
+	weapon_weight = WEAPON_LIGHT
+	fire_rate = 4

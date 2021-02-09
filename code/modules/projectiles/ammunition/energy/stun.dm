@@ -28,7 +28,17 @@
 /obj/item/ammo_casing/energy/disabler/hos
 	e_cost = 600
 
-/obj/item/ammo_casing/energy/disabler/scatter	//WS edit, scatter rework
+/obj/item/ammo_casing/energy/disabler/scatter	//WS edit, scatter repathing
 	pellets = 3
 	variance = 15
 	select_name = "scatter"
+	fire_sound = 'sound/weapons/taser.ogg'
+
+/obj/item/ammo_casing/energy/disabler/scatter/ultima
+	projectile_type = /obj/projectile/beam/disabler/weak
+	pellets = 5
+	e_cost = 1600
+
+/obj/item/ammo_casing/energy/disabler/weak
+	projectile_type = /obj/projectile/beam/disabler/weak
+	e_cost = 330
