@@ -278,6 +278,7 @@
 	icon_state = "tile_bcircuit"
 	item_state = "tile-bcircuit"
 	turf_type = /turf/open/floor/circuit
+	custom_materials = list(/datum/material/iron = 500, /datum/material/glass = 500) // WS Edit - Item Materials
 
 /obj/item/stack/tile/circuit/green
 	name = "green circuit tile"

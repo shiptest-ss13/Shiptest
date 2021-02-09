@@ -58,6 +58,8 @@
 
 	slot_flags = ITEM_SLOT_MASK
 
+	custom_materials = list(/datum/material/iron = 150) // WS Edit - Item Materials
+
 	var/plunge_mod = 1 //time*plunge_mod = total time we take to plunge an object
 	var/reinforced = FALSE //whether we do heavy duty stuff like geysers
 

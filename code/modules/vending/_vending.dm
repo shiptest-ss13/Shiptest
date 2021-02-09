@@ -1118,6 +1118,7 @@ GLOBAL_LIST_EMPTY(vending_products)
 	machine_name = "Custom Vendor"
 	icon_state = "refill_custom"
 	custom_premium_price = 100
+	custom_materials = list(/datum/material/iron = 5000, /datum/material/glass = 2000) // WS Edit - Item Materials
 
 /obj/item/price_tagger
 	name = "price tagger"
@@ -1127,6 +1128,7 @@ GLOBAL_LIST_EMPTY(vending_products)
 	custom_premium_price = 25
 	///the price of the item
 	var/price = 1
+	custom_materials = list(/datum/material/iron = 1500, /datum/material/glass = 500) // WS Edit - Item Materials
 
 /obj/item/price_tagger/attack_self(mob/user)
 	price = max(1, round(input(user,"set price","price") as num|null, 1))

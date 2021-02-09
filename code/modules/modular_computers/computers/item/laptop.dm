@@ -8,6 +8,7 @@
 	icon_state_unpowered = "laptop-off"
 	icon_state_menu = "menu"
 	display_overlays = FALSE
+	custom_materials = list(/datum/material/iron = 10000, /datum/material/glass = 1000) // WS Edit - Item Materials
 
 	hardware_flag = PROGRAM_LAPTOP
 	max_hardware_size = 2

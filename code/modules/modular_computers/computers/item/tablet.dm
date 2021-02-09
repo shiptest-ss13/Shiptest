@@ -12,6 +12,7 @@
 	slot_flags = ITEM_SLOT_ID | ITEM_SLOT_BELT
 	has_light = TRUE //LED flashlight!
 	comp_light_luminosity = 2.3 //Same as the PDA
+	custom_materials = list(/datum/material/iron = 2000, /datum/material/glass = 1000) // WS Edit - Item Materials
 	var/has_variants = TRUE
 	var/finish_color = null
 
