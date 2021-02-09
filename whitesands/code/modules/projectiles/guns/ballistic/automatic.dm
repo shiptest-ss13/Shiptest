@@ -20,9 +20,59 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	mag_type = /obj/item/ammo_box/magazine/co9mm
 	can_suppress = FALSE
-
 /obj/item/gun/ballistic/automatic/pistol/commander/no_mag
 	spawnwithmagazine = FALSE
+
+/obj/item/gun/ballistic/automatic/pistol/commissar
+	name = "\improper Commissar"
+	desc = "A custom-designed 1911 handgun to further enhance it's effectiveness in troop discipline."
+	icon = 'whitesands/icons/obj/guns/projectile.dmi'
+	icon_state = "commander"
+	w_class = WEIGHT_CLASS_NORMAL
+	mag_type = /obj/item/ammo_box/magazine/co9mm
+	can_suppress = FALSE
+	var/funnysounds = TRUE
+	var/cooldown = 0
+
+/obj/item/gun/ballistic/automatic/pistol/commissar/equipped(mob/living/user, slot)
+	..()
+	if(slot == ITEM_SLOT_HANDS && funnysounds) // We do this instead of equip_sound as we only want this to play when it's wielded
+		playsound(src, 'whitesands/sound/weapons/gun/commissar/pickup.ogg', 30, 0)
+
+/obj/item/gun/ballistic/automatic/pistol/commissar/shoot_live_shot(mob/living/user, pointblank, atom/pbtarget, message)
+	. = ..()
+	if(prob(50) && funnysounds)
+		playsound(src, 'whitesands/sound/weapons/gun/commissar/shot.ogg', 30, 0)
+
+/obj/item/gun/ballistic/automatic/pistol/commissar/shoot_with_empty_chamber(mob/living/user)
+	. = ..()
+	if(prob(50) && funnysounds)
+		playsound(src, 'whitesands/sound/weapons/gun/commissar/dry.ogg', 30, 0)
+
+/obj/item/gun/ballistic/automatic/pistol/commissar/insert_magazine(mob/user, obj/item/ammo_box/magazine/AM, display_message)
+	. = ..()
+	if(bolt_locked)
+		drop_bolt(user)
+		if(. && funnysounds)
+			playsound(src, 'whitesands/sound/weapons/gun/commissar/magazine.ogg', 30, 0)
+
+/obj/item/gun/ballistic/automatic/pistol/commissar/multitool_act(mob/living/user, obj/item/I)
+	. = ..()
+	funnysounds = !funnysounds
+	to_chat(user, "<span class='notice'>You toggle [src]'s vox audio functions.</span>")
+
+/obj/item/gun/ballistic/automatic/pistol/commissar/AltClick(mob/user)
+	if(!user.canUseTopic(src, BE_CLOSE, ismonkey(user)))
+		return
+	if((cooldown < world.time - 200) && funnysounds)
+		user.audible_message("<font color='red' size='5'><b>DON'T TURN AROUND!</b></font>")
+		playsound(src, 'whitesands/sound/weapons/gun/commissar/dontturnaround.ogg', 50, 0, 4)
+		cooldown = world.time
+
+/obj/item/gun/ballistic/automatic/pistol/commissar/examine(mob/user)
+	. = ..()
+	if(funnysounds)
+		. += "<span class='info'>Alt-click to use \the [src] vox hailer.</span>"
 
 /obj/item/gun/ballistic/automatic/pistol/solgov
 	name = "SolGov M9C"
