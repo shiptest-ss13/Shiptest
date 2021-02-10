@@ -21,13 +21,6 @@
 	LAZYREMOVE(SSovermap.events, src)
 
 /**
-  * The action performed by a ship on this when the helm button is pressed.
-  * * acting - The ship acting on the event
-  */
-/obj/structure/overmap/event/proc/ship_act(mob/user, obj/structure/overmap/ship/simulated/acting)
-	return
-
-/**
   * The main proc for calling other procs. Called by SSovermap.
   */
 /obj/structure/overmap/event/proc/apply_effect()

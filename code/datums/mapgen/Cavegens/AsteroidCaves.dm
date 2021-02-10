@@ -10,7 +10,7 @@
 		SPAWN_MEGAFAUNA = 4, /mob/living/simple_animal/hostile/asteroid/goldgrub = 10)
 	flora_spawn_list = list(/obj/structure/flora/ash/space/voidmelon = 2)
 
-	initial_closed_chance = 45
+	initial_closed_chance = 70
 	smoothing_iterations = 20
 	birth_limit = 4
 	death_limit = 3
@@ -22,27 +22,32 @@
 	var/miny
 	for(var/turf/T as anything in turfs)
 		//Gets the min/max X value
-		if(T.x > maxx)
-			maxx = T.x
-		else if(T.x < minx)
+		if(T.x < minx || !minx)
 			minx = T.x
+		else if(T.x > maxx)
+			maxx = T.x
 
 		//Gets the min/max Y value
-		if(T.y > maxy)
-			maxy = T.y
-		else if(T.y < miny)
+		if(T.y < miny || !miny)
 			miny = T.y
+		else if(T.y > maxy)
+			maxy = T.y
 
-	var/midx = minx + (maxx - minx)
-	var/midy = miny + (maxy - miny)
-	var/radius = min(maxx - minx, maxy - miny)
+	var/midx = minx + (maxx - minx) / 2
+	var/midy = miny + (maxy - miny) / 2
+	var/radius = min(maxx - minx, maxy - miny) / 2
 
-	var/list/turfs_to_gen
+	var/list/turfs_to_gen = list()
+	var/area/asteroid/asteroid_area = GLOB.areas_by_type[/area/asteroid] || new
 	for(var/turf/T as anything in turfs)
-		if((T.x - midx) ** 2 + (T.y - midy) ** 2 <= rand(radius - 2, radius + 2) ** 2)
-			turfs_to_gen += turfs
-			new /obj/effect/debugging/marker(T)
-
-	//Remove turfs that aren't in the asteroid's shape from the turfs_to_gen list here
+		//var/dx = (T.x - midx)
+		//var/dy = (T.y - midy)
+		var/randradius = rand(radius - 2, radius + 2) * rand(radius - 2, radius + 2)
+		if((T.y - midy) ** 2 + (T.x - midx) ** 2 >= randradius)
+			continue
+		turfs_to_gen += T
+		var/area/old_area = get_area(T)
+		asteroid_area.contents += T
+		T.change_area(old_area, asteroid_area)
 
 	return ..(turfs_to_gen)

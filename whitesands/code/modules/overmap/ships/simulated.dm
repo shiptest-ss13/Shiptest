@@ -85,25 +85,13 @@
 /obj/structure/overmap/ship/simulated/proc/overmap_object_act(mob/user, obj/structure/overmap/object)
 	if(!is_still())
 		return "Shuttle must be still!"
-	if(istype(object, /obj/structure/overmap/dynamic))
-		var/obj/structure/overmap/dynamic/D = object
-		var/prev_state = state
-		state = OVERMAP_SHIP_DOCKING
-		. = D.load_level(shuttle)
-		if(.)
-			state = prev_state
-		else
-			return dock(D) //If a value is returned from load_level(), say that, otherwise, commence docking
-	else if(istype(object, /obj/structure/overmap/ship/simulated))
-		var/obj/structure/overmap/ship/simulated/S = object
-		if(!S.is_still() || S.state != OVERMAP_SHIP_FLYING)
-			return "Target ship must be stopped to dock!"
-		return dock(object)
-	else if(istype(object, /obj/structure/overmap/level))
-		return dock(object)
-	else if(istype(object, /obj/structure/overmap/event))
-		var/obj/structure/overmap/event/E = object
-		return E.ship_act(user, src)
+	return object.ship_act(user, src)
+
+//This is the proc that is called when a different ship tries to dock with us.
+/obj/structure/overmap/ship/simulated/ship_act(mob/user, obj/structure/overmap/ship/simulated/acting)
+	if(!is_still() || state != OVERMAP_SHIP_FLYING)
+		return "Target ship must be stopped and in a clear area to dock!"
+	return acting.dock(src)
 
 /**
   * Docks the shuttle by requesting a port at the requested spot.

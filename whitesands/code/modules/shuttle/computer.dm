@@ -60,7 +60,10 @@
 		if(OVERMAP_SHIP_IDLE)
 			data["status"] = "Idle"
 		else
-			data["status"] = "Flying"
+			if(ship.current_autopilot_target)
+				data["status"] = "Flying | Autopilot active (Dest: [ship.current_autopilot_target])"
+			else
+				data["status"] = "Flying | Autopilot inactive"
 
 	for(var/obj/structure/overmap/O in view(ship.sensor_range, get_turf(ship)))
 		if(O == ship.loc || istype(O, /obj/structure/overmap/event) || O == ship)

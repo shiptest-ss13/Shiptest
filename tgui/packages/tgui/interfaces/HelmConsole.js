@@ -46,6 +46,7 @@ const SharedContent = (props, context) => {
           <Button.Input
             content={shipInfo.name}
             currentValue={shipInfo.name}
+            disabled={isViewer}
             onCommit={(e, value) => act('rename_ship', {
               newName: value,
             })} />

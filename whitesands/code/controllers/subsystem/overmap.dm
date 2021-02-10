@@ -290,6 +290,7 @@ SUBSYSTEM_DEF(overmap)
 				mapgen = new /datum/map_generator/jungle_generator
 				target_area = /area/ruin/unpowered/planetoid/jungle
 			if(DYNAMIC_WORLD_ASTEROID)
+				ruin_list = null
 				mapgen = new /datum/map_generator/cave_generator/asteroid
 
 	if(ruin && ruin_list) //Done BEFORE the turfs are reserved so that it allocates the right size box
