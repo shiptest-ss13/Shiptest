@@ -11,11 +11,11 @@
 	charge_delay = 1 //50 seconds to recharge the clip
 
 /obj/item/gun/energy/laser/iot
-	name = "ESG 2555 Ultimate"
+	name = "\improper E-SG 255 Ultimate"
 	desc = "An energy shotgun with surveillance and statistics managing systems.\nApparently used to better inform command on how soldiers operate.\nRealistically used to compare kill counts and such."
 	icon_state = "iotshotgun"
 	item_state = "shotgun_combat"
-	w_class = WEIGHT_CLASS_NORMAL
+	w_class = WEIGHT_CLASS_BULKY
 	ammo_type = list(/obj/item/ammo_casing/energy/disabler/scatter/ultima)
 	var/obj/item/modular_computer/integratedNTOS
 	var/NTOS_type = /obj/item/modular_computer/internal

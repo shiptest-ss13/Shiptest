@@ -8,8 +8,8 @@
 	select_name = "kill"
 
 /obj/item/ammo_casing/energy/laser/smg //WS edit: fun
-	projectile_type = /obj/projectile/beam/laser/weak
-	e_cost = 660
+	projectile_type = /obj/projectile/beam/weak
+	e_cost = 800
 	select_name = "kill"
 
 /obj/item/ammo_casing/energy/lasergun/old

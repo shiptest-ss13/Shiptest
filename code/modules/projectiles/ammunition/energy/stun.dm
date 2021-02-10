@@ -37,7 +37,7 @@
 /obj/item/ammo_casing/energy/disabler/scatter/ultima
 	projectile_type = /obj/projectile/beam/disabler/weak
 	pellets = 5
-	e_cost = 1600
+	e_cost = 2000
 
 /obj/item/ammo_casing/energy/disabler/weak
 	projectile_type = /obj/projectile/beam/disabler/weak

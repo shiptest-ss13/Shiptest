@@ -38,3 +38,36 @@
 
 /obj/item/vending_refill/security
 	icon_state = "refill_sec"
+
+/obj/machinery/vending/security/attackby(obj/item/I, mob/user, params) //WS edit: THERE IS NO GOD. THERE IS ONLY GUNS. REPENT.
+	if(istype(I, /obj/item/gun_voucher))
+		RedeemVoucher(I, user)
+		return
+	return..()
+
+/obj/machinery/vending/security/proc/RedeemVoucher(obj/item/gun_voucher/voucher, mob/redeemer)
+	var/items = list("E-TAR SMG", "Vector SMG", "E-SG 255", "Hybrid Taser")
+
+	var/selection = input(redeemer, "Select your equipment", "Mining Voucher Redemption") as null|anything in sortList(items)
+	if(!selection || !Adjacent(redeemer) || QDELETED(voucher) || voucher.loc != redeemer)
+		return
+	var/drop_location = drop_location()
+	switch(selection)
+		if("E-TAR SMG")
+			new /obj/item/gun/energy/e_gun/smg(drop_location)
+		if("Vector SMG")
+			new /obj/item/gun/ballistic/automatic/vector(drop_location)
+		if("E-SG 255")
+			new /obj/item/gun/energy/laser/iot(drop_location)
+		if("Hybrid Taser")
+			new /obj/item/gun/energy/e_gun/advtaser(drop_location)
+
+	SSblackbox.record_feedback("tally", "gun_voucher_redeemed", 1, selection)
+	qdel(voucher)
+
+/obj/item/gun_voucher
+	name = "security weapon voucher"
+	desc = "A token used to redeem guns from the SecTech vendor."
+	icon = 'icons/obj/mining.dmi'
+	icon_state = "mining_voucher"
+	w_class = WEIGHT_CLASS_TINY //WS end
