@@ -78,7 +78,7 @@
 	if(mood && mood.sanity >= SANITY_GREAT && social_interaction())
 		speech_args[SPEECH_MESSAGE] = ""
 
-/datum/brain_trauma/special/obsessed/on_hug(mob/living/hugger, mob/living/hugged)
+/datum/brain_trauma/special/obsessed/proc/on_hug(mob/living/hugger, mob/living/hugged)
 	if(hugged == obsession)
 		obsession_hug_count++
 
