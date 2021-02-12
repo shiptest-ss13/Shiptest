@@ -441,3 +441,14 @@
 	cost = 35000
 	contains = list(/obj/machinery/jukebox)
 	crate_name = "Jukebox"
+
+/datum/supply_pack/service/lawnmower
+	name = "Boomer John's Riding Mower"
+	desc = "Can be used to cultivate gardens and shred weeds at record pace. Comes with a complementary can of Monkey Energy."
+	cost = 10000
+	access = ACCESS_HYDROPONICS
+	contains = list(
+		/obj/vehicle/ridden/lawnmower,
+		/obj/item/reagent_containers/food/drinks/soda_cans/monkey_energy
+	)
+	crate_name = "mower crate"

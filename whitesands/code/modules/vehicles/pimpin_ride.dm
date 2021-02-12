@@ -27,6 +27,7 @@
 	emagged = TRUE
 
 /obj/vehicle/ridden/lawnmower/Bump(atom/A)
+	. = ..()
 	if(emagged)
 		if(isliving(A))
 			var/mob/living/M = A
@@ -35,13 +36,15 @@
 			M.throw_at(newLoc, 4, 1)
 
 /obj/vehicle/ridden/lawnmower/Move()
-	..()
+	. = ..()
 	var/gibbed = FALSE
 	var/gib_scream = FALSE
 	var/mob/living/carbon/H
 
 	if(has_buckled_mobs())
 		H = buckled_mobs[1]
+	else
+		return .
 
 	if(emagged)
 		for(var/mob/living/carbon/human/M in loc)
@@ -61,6 +64,26 @@
 			playsound(loc, 'sound/voice/gib_scream.ogg', 100, 1, frequency = rand(11025*0.75, 11025*1.25))
 		else
 			playsound(loc, pick(gib_sounds), 75, 1)
-	else
-		playsound(loc, pick(drive_sounds), 75, 1)
 
+	mow_lawn()
+
+/obj/vehicle/ridden/lawnmower/proc/mow_lawn()
+	//Nearly copypasted from goats
+	var/mowed = FALSE
+	var/obj/structure/spacevine/SV = locate(/obj/structure/spacevine) in loc
+	if(SV)
+		SV.eat(src)
+		mowed = TRUE
+
+	var/obj/structure/glowshroom/GS = locate(/obj/structure/glowshroom) in loc
+	if(GS)
+		qdel(GS)
+		mowed = TRUE
+
+	var/obj/structure/alien/weeds/AW = locate(/obj/structure/alien/weeds) in loc
+	if(AW)
+		qdel(AW)
+		mowed = TRUE
+
+	if(mowed)
+		playsound(loc, pick(drive_sounds), 50, 1)
