@@ -19912,17 +19912,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/hallway/primary/aft)
-"bHT" = (
-/obj/effect/spawner/structure/window,
-/obj/machinery/door/poddoor/preopen{
-	id = "surgeryb";
-	name = "privacy shutters"
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
-	dir = 4
-	},
-/turf/open/floor/plating,
-/area/medical/medbay/central)
 "bHW" = (
 /obj/structure/disposalpipe/segment,
 /obj/effect/spawner/structure/window,
@@ -20894,22 +20883,6 @@
 /obj/machinery/vending/wallmed{
 	pixel_x = -32
 	},
-/turf/open/floor/plasteel/white,
-/area/medical/medbay/central)
-"bLV" = (
-/obj/structure/closet/crate/freezer/blood,
-/obj/effect/turf_decal/tile/blue,
-/obj/effect/turf_decal/tile/blue{
-	dir = 8
-	},
-/obj/effect/turf_decal/tile/blue{
-	dir = 4
-	},
-/obj/effect/turf_decal/tile/blue,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
-	dir = 4
-	},
-/obj/machinery/smartfridge/organ,
 /turf/open/floor/plasteel/white,
 /area/medical/medbay/central)
 "bLW" = (
@@ -29931,6 +29904,17 @@
 	},
 /turf/open/floor/plating,
 /area/maintenance/starboard/fore)
+"eAd" = (
+/obj/machinery/door/poddoor/preopen{
+	id = "surgeryb";
+	name = "privacy shutters"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 4
+	},
+/obj/effect/spawner/structure/window,
+/turf/open/floor/plating,
+/area/medical/medbay/central)
 "eAe" = (
 /obj/machinery/door/airlock/maintenance{
 	req_access_txt = "12"
@@ -31317,6 +31301,13 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/bridge)
+"fyX" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
+/obj/structure/closet/crate/freezer/blood,
+/turf/open/floor/plasteel/white,
+/area/medical/medbay/central)
 "fzb" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
@@ -32986,6 +32977,21 @@
 	},
 /turf/open/floor/plasteel,
 /area/gateway)
+"gEA" = (
+/obj/effect/turf_decal/tile/blue,
+/obj/effect/turf_decal/tile/blue{
+	dir = 8
+	},
+/obj/effect/turf_decal/tile/blue{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/blue,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 4
+	},
+/obj/machinery/smartfridge/organ,
+/turf/open/floor/plasteel/white,
+/area/medical/medbay/central)
 "gES" = (
 /obj/effect/turf_decal/tile/neutral{
 	dir = 1
@@ -98340,11 +98346,11 @@ bhh
 bhh
 btV
 bIr
-bCR
+fyX
 lvw
 yeI
 dBu
-bLV
+gEA
 bNd
 bOm
 bPp
@@ -98601,7 +98607,7 @@ bDF
 bIr
 bof
 bIr
-bHT
+eAd
 bNd
 bNd
 bNd
