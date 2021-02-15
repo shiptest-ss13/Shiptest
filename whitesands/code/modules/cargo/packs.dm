@@ -284,6 +284,7 @@
 					/obj/item/ammo_box/c45,
 					/obj/item/ammo_box/magazine/m50,
 					/obj/item/ammo_box/magazine/tommygunm45,
+					/obj/item/ammo_box/magazine/ak47,
 					/obj/item/ammo_box/foambox/riot)
 	dangerous = TRUE
 	contraband = TRUE
