@@ -23,7 +23,7 @@
 				of the pests that were quick to set into the facility after it was abandoned, not a human teleporter malfunction as many believe. \
 				Their initial limited intelligence led to moffic, their \"native\" language. Generations later, most mothpeople still speak this language. \
 				After finally being discovered by an unknown craft, mothpeople were quick to spread out across the galaxy and are now as commonplace as their natural counterparts."
-	wings_icon = "Megamoth"
+	wings_icons = list("Megamoth", "Mothra")
 	has_innate_wings = TRUE
 
 /datum/species/moth/regenerate_organs(mob/living/carbon/C,datum/species/old_species,replace_current=TRUE,list/excluded_zones)
