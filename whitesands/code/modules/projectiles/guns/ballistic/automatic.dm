@@ -51,7 +51,7 @@
 
 /obj/item/gun/ballistic/automatic/vector
 	name = "Vector Carbine"
-	desc = "A police carbine based off of an SMG designed, with most of the complex workings removed for reliability. Chambered in 9mm."
+	desc = "A police carbine based off of an SMG design, with most of the complex workings removed for reliability. Chambered in 9mm."
 	icon = 'whitesands/icons/obj/guns/projectile.dmi'
 	icon_state = "vector"
 	item_state = "vector"
