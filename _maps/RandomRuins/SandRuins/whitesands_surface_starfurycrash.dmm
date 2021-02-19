@@ -40,6 +40,14 @@
 /obj/item/toy/plush/lizardplushie,
 /turf/open/floor/plating/asteroid/whitesands,
 /area/whitesands/surface/outdoors/unexplored)
+"cL" = (
+/obj/structure/safe/floor,
+/obj/item/clothing/suit/space/hardsuit/syndi,
+/obj/item/documents/syndicate,
+/turf/open/floor/plating{
+	icon_state = "panelscorched"
+	},
+/area/whitesands/surface/outdoors/unexplored)
 "cO" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers,
 /turf/open/floor/plating{
@@ -521,10 +529,6 @@
 "Kw" = (
 /turf/open/floor/plating/asteroid/whitesands,
 /area/whitesands/surface/outdoors/unexplored)
-"Lc" = (
-/obj/item/gun/ballistic/automatic/pistol,
-/turf/open/floor/plating/asteroid/whitesands,
-/area/whitesands/surface/outdoors/unexplored)
 "LB" = (
 /obj/item/clothing/gloves/combat,
 /turf/open/floor/plating/asteroid/whitesands,
@@ -549,15 +553,6 @@
 	},
 /turf/open/floor/plating{
 	icon_state = "platingdmg1"
-	},
-/area/whitesands/surface/outdoors/unexplored)
-"LS" = (
-/obj/structure/safe/floor,
-/obj/item/clothing/suit/space/hardsuit/syndi,
-/obj/item/melee/transforming/energy/sword/saber/red,
-/obj/item/documents/syndicate,
-/turf/open/floor/plating{
-	icon_state = "panelscorched"
 	},
 /area/whitesands/surface/outdoors/unexplored)
 "Mc" = (
@@ -1063,7 +1058,7 @@ Wc
 tw
 tw
 Wc
-LS
+cL
 yV
 Wc
 Wc
@@ -1222,7 +1217,7 @@ Va
 Va
 Va
 Kw
-Lc
+Kw
 Kw
 Kw
 Kw
