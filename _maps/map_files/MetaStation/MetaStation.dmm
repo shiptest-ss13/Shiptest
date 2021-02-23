@@ -1306,12 +1306,9 @@
 /turf/open/floor/plasteel/dark,
 /area/crew_quarters/heads/hos)
 "afp" = (
-/obj/item/paper/pamphlet/ruin/originalcontent/treeside,
-/turf/closed/wall,
-/area/crew_quarters/solgov)
-"afq" = (
+/obj/machinery/light/small,
 /obj/structure/closet/secure_closet/lieutenant,
-/turf/open/floor/carpet/royalblue,
+/turf/open/floor/wood,
 /area/crew_quarters/solgov)
 "afs" = (
 /obj/machinery/teleport/station,
@@ -43415,6 +43412,7 @@
 /area/engine/atmos)
 "eRe" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on,
+/obj/item/kirbyplants/fullysynthetic,
 /turf/open/floor/wood,
 /area/crew_quarters/solgov)
 "eRo" = (
@@ -58064,10 +58062,6 @@
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
-/obj/machinery/door/airlock/solgov{
-	name = "Office 1";
-	req_one_access_txt = "90"
-	},
 /turf/open/floor/wood,
 /area/crew_quarters/solgov)
 "lnO" = (
@@ -75005,10 +74999,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/medical/cryo)
-"svc" = (
-/obj/item/paper/pamphlet/ruin/originalcontent/yelling,
-/turf/closed/wall,
-/area/crew_quarters/solgov)
 "svg" = (
 /obj/structure/lattice,
 /obj/structure/girder/reinforced,
@@ -82491,12 +82481,11 @@
 /turf/closed/wall/r_wall,
 /area/engine/atmos)
 "vUQ" = (
-/obj/structure/table/wood,
-/obj/machinery/photocopier/faxmachine/longrange,
 /obj/machinery/firealarm{
 	dir = 1;
 	pixel_y = 26
 	},
+/obj/structure/reagent_dispensers/water_cooler,
 /turf/open/floor/wood,
 /area/crew_quarters/solgov)
 "vVf" = (
@@ -85248,7 +85237,8 @@
 /area/medical/genetics/cloning)
 "xcQ" = (
 /obj/machinery/light/small,
-/obj/item/kirbyplants/fullysynthetic,
+/obj/structure/closet/secure_closet/lieutenant,
+/obj/item/reagent_containers/food/drinks/bottle/moonshine,
 /turf/open/floor/wood,
 /area/crew_quarters/solgov)
 "xcZ" = (
@@ -86242,8 +86232,8 @@
 /turf/open/floor/plasteel,
 /area/hallway/primary/aft)
 "xAi" = (
-/obj/structure/closet/secure_closet/lieutenant,
-/obj/item/reagent_containers/food/drinks/bottle/moonshine,
+/obj/structure/table/wood,
+/obj/machinery/photocopier/faxmachine/longrange,
 /turf/open/floor/carpet/royalblue,
 /area/crew_quarters/solgov)
 "xBe" = (
@@ -120520,7 +120510,7 @@ aaa
 aaa
 aaa
 aaa
-svc
+jZb
 tgI
 aey
 aey
@@ -121034,8 +121024,8 @@ aaa
 aaa
 aaa
 aaa
-afp
-afq
+jZb
+xAi
 rYU
 cgf
 eRe
@@ -121553,7 +121543,7 @@ tgI
 aey
 aey
 qyR
-xcQ
+afp
 jZb
 vUQ
 aey
