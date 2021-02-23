@@ -541,6 +541,10 @@ AUTO_PROFILE
 ## More API details can be found here: https://centcom.melonmesa.com/swagger/index.html
 #CENTCOM_BAN_DB https://centcom.melonmesa.com/ban/search
 
+## Uncomment to enable source whitelisting, a comma-separated list (no spaces) of CentCom sources (sourceName).
+## If enabled, only bans from these servers will be shown to admins using CentCom. The default sources list is an example.
+#CENTCOM_SOURCE_WHITELIST Beestation MRP,TGMC,FTL13
+
 #### DISCORD STUFFS ####
 ## MAKE SURE ALL SECTIONS OF THIS ARE FILLED OUT BEFORE ENABLING
 ## Discord IDs can be obtained by following this guide: https://support.discordapp.com/hc/en-us/articles/206346498-Where-can-I-find-my-User-Server-Message-ID-
