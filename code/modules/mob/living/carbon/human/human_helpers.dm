@@ -146,10 +146,10 @@
 		to_chat(src, "<span class='warning'>You can't bring yourself to use a ranged weapon!</span>")
 		return FALSE
 
-/mob/living/carbon/human/proc/get_bank_account()
+/mob/living/carbon/human/get_bank_account(hand_first)
 	RETURN_TYPE(/datum/bank_account)
 	var/datum/bank_account/account
-	var/obj/item/card/id/I = get_idcard()
+	var/obj/item/card/id/I = get_idcard(hand_first)
 
 	if(I && I.registered_account)
 		account = I.registered_account

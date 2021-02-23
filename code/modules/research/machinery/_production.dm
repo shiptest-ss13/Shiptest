@@ -152,8 +152,14 @@
 		if(!reagents.has_reagent(R, D.reagents_list[R]*amount/coeff))
 			say("Not enough reagents to complete prototype[amount > 1? "s" : ""].")
 			return FALSE
-	materials.mat_container.use_materials(efficient_mats, amount)
-	materials.silo_log(src, "built", -amount, "[D.name]", efficient_mats)
+	var/datum/bank_account/user_account = usr.get_bank_account()
+	if(materials.mat_container.linked_account && !(obj_flags & EMAGGED))
+		var/cost = materials.mat_container.get_material_list_cost(efficient_mats)
+		if(!user_account.has_money(cost))
+			say("Insufficient funds to complete prototype[amount > 1? "s" : ""].")
+			return FALSE
+	materials.mat_container.use_materials(efficient_mats, amount, user_account)
+	materials.silo_log(src, "built", -amount, "[D.name]", efficient_mats, !(obj_flags & EMAGGED))
 	for(var/R in D.reagents_list)
 		reagents.remove_reagent(R, D.reagents_list[R]*amount/coeff)
 	busy = TRUE
@@ -197,6 +203,9 @@
 	var/list/l = list()
 	l += "<div class='statusDisplay'><b>[host_research.organization] [department_tag] Department Lathe</b>"
 	l += "Security protocols: [(obj_flags & EMAGGED)? "<font color='red'>Disabled</font>" : "<font color='green'>Enabled</font>"]"
+	if (materials.mat_container.linked_account)
+		var/datum/bank_account/user_account = usr.get_bank_account()
+		l += "<B>User credit balance:</B> [user_account ? user_account.account_balance : "N/A"] cr, <B>Remote balance:</B> [materials.mat_container.linked_account.account_balance] cr"
 	if (materials.mat_container)
 		l += "<A href='?src=[REF(src)];switch_screen=[RESEARCH_FABRICATOR_SCREEN_MATERIALS]'><B>Material Amount:</B> [materials.format_amount()]</A>"
 	else
@@ -215,11 +224,17 @@
 	for(var/mat_id in materials.mat_container.materials)
 		var/datum/material/M = mat_id
 		var/amount = materials.mat_container.materials[mat_id]
+		var/cost = materials.mat_container.get_material_cost(M, MINERAL_MATERIAL_AMOUNT)
+		var/obj/item/card/id/user_id = usr.get_idcard(TRUE)
+		var/account_balance = user_id?.registered_account?.account_balance
 		var/ref = REF(M)
-		l += "* [amount] of [M.name]: "
-		if(amount >= MINERAL_MATERIAL_AMOUNT) l += "<A href='?src=[REF(src)];ejectsheet=[ref];eject_amt=1'>Eject</A> [RDSCREEN_NOBREAK]"
-		if(amount >= MINERAL_MATERIAL_AMOUNT*5) l += "<A href='?src=[REF(src)];ejectsheet=[ref];eject_amt=5'>5x</A> [RDSCREEN_NOBREAK]"
-		if(amount >= MINERAL_MATERIAL_AMOUNT) l += "<A href='?src=[REF(src)];ejectsheet=[ref];eject_amt=50'>All</A>[RDSCREEN_NOBREAK]"
+		l += "* [amount] units of [M.name]: ([cost]cr/sheet) "
+		if(amount >= MINERAL_MATERIAL_AMOUNT && account_balance >= cost)
+			l += "<A href='?src=[REF(src)];ejectsheet=[ref];eject_amt=1'>Eject</A> [RDSCREEN_NOBREAK]"
+		if(amount >= MINERAL_MATERIAL_AMOUNT*5 && account_balance >= cost*5)
+			l += "<A href='?src=[REF(src)];ejectsheet=[ref];eject_amt=5'>5x</A> [RDSCREEN_NOBREAK]"
+		if(amount >= MINERAL_MATERIAL_AMOUNT && account_balance >= cost)
+			l += "<A href='?src=[REF(src)];ejectsheet=[ref];eject_amt=50'>All</A>[RDSCREEN_NOBREAK]"
 		l += ""
 	l += "</div>[RDSCREEN_NOBREAK]"
 	return l
@@ -270,6 +285,21 @@
 			temp_material += " [all_materials[M]/coeff] [CallMaterialName(M)]"
 		c = min(c,t)
 
+	if(materials?.mat_container?.linked_account)
+		var/cost
+		if((obj_flags & EMAGGED) || iscyborg(usr) || isdrone(usr))
+			cost = 0
+		else
+			cost = materials.mat_container.get_material_list_cost(D.materials)
+		if(cost)
+			var/datum/bank_account/user_account = usr.get_bank_account()
+			var/d = FLOOR(user_account?.account_balance / cost, 1)
+			if(d < 1)
+				temp_material += " | <span class='bad'>[cost] cr/Item</span>"
+			else
+				temp_material += " | [cost] cr/Item"
+			c = min(c, d)
+
 	if (c >= 1)
 		l += "<A href='?src=[REF(src)];build=[D.id];amount=1'>[D.name]</A>[RDSCREEN_NOBREAK]"
 		if(c >= 5)
@@ -319,7 +349,8 @@
 	if (materials.on_hold())
 		say("Mineral access is on hold, please contact the quartermaster.")
 		return 0
-	var/count = mat_container.retrieve_sheets(text2num(eject_amt), eject_sheet, drop_location())
+	var/obj/item/card/id/user_id = usr.get_idcard(TRUE)
+	var/count = mat_container.retrieve_sheets(text2num(eject_amt), eject_sheet, drop_location(), user_id.registered_account)
 	var/list/matlist = list()
 	matlist[eject_sheet] = MINERAL_MATERIAL_AMOUNT
 	materials.silo_log(src, "ejected", -count, "sheets", matlist)

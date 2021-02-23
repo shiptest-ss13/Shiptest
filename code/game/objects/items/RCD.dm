@@ -144,8 +144,13 @@ RLD
 			if(user)
 				to_chat(user, no_ammo_message)
 			return FALSE
-
-		silo_mats.mat_container.use_materials(list(/datum/material/iron = 500), amount)
+		//Wasp start - Material Costs
+		var/obj/item/card/id/I = user.get_idcard()
+		if(!I.registered_account.has_money(silo_mats.mat_container.get_material_list_cost(list(/datum/material/iron = 500), amount)))
+			to_chat(user, "<span class='alert'>Not enough credits to use material.</span>")
+			return FALSE
+		silo_mats.mat_container.use_materials(list(/datum/material/iron = 500), amount, I.registered_account)
+		//Wasp end
 		silo_mats.silo_log(src, "consume", -amount, "build", list(GLOB.materials_list["iron"] = 500))
 		return TRUE
 

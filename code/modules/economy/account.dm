@@ -41,7 +41,7 @@
 	return FALSE
 
 /datum/bank_account/proc/transfer_money(datum/bank_account/from, amount)
-	if(from.has_money(amount))
+	if(from?.has_money(amount))
 		adjust_money(amount)
 		SSblackbox.record_feedback("amount", "credits_transferred", amount)
 		log_econ("[amount] credits were transferred from [from.account_holder]'s account to [src.account_holder]")
