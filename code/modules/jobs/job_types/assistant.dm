@@ -6,6 +6,7 @@ Assistant
 	faction = "Station"
 	total_positions = 5
 	spawn_positions = 5
+	department_head = list("Head of Personnel")
 	supervisors = "absolutely everyone"
 	selection_color = "#dddddd"
 	access = list()			//See /datum/job/assistant/get_access()
