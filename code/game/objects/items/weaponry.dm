@@ -515,7 +515,7 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 /obj/item/statuebust/Initialize()
 	. = ..()
 	AddComponent(/datum/component/art, impressiveness)
-	AddComponent(/datum/component/beauty, 1000)
+	AddElement(/datum/element/beauty, 1000)
 
 /obj/item/statuebust/hippocratic
 	name = "hippocrates bust"

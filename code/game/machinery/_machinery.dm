@@ -167,6 +167,7 @@ Class Procs:
 /obj/machinery/LateInitialize()
 	. = ..()
 	power_change()
+	become_area_sensitive(ROUNDSTART_TRAIT)
 	RegisterSignal(src, COMSIG_ENTER_AREA, PROC_REF(power_change))
 
 /obj/machinery/Destroy()

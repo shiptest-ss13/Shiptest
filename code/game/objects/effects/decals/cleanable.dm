@@ -30,7 +30,7 @@
 		COMSIG_ATOM_ENTERED = PROC_REF(on_entered),
 	)
 	AddElement(/datum/element/connect_loc, loc_connections)
-	AddComponent(/datum/component/beauty, beauty)
+	AddElement(/datum/element/beauty, beauty)
 
 	SSblackbox.record_feedback("tally", "station_mess_created", 1, name)
 
