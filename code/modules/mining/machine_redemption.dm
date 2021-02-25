@@ -215,7 +215,8 @@
 	var/list/data = list()
 	var/datum/bank_account/user_account = user.get_bank_account()
 	data["unclaimedPoints"] = points
-	data["userCash"] = user_account.account_balance
+	if (user_account)
+		data["userCash"] = user_account.account_balance
 
 	data["materials"] = list()
 	var/datum/component/material_container/mat_container = materials.mat_container
