@@ -111,3 +111,8 @@
 	display_name = "tacticool turtleneck"
 	path = /obj/item/clothing/under/syndicate/tacticool
 	cost = 10000
+
+/datum/gear/uniform/psychedelic
+	display_name = "psychedelic suit"
+	path = /obj/item/clothing/under/misc/psyche
+	cost = 10000

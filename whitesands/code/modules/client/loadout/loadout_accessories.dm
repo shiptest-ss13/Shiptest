@@ -57,6 +57,10 @@
 	display_name = "tie, blue"
 	path =  /obj/item/clothing/neck/tie/blue
 
+/datum/gear/accessory/tie/horrible
+	display_name = "tie, horrible"
+	path = /obj/item/clothing/neck/tie/horrible
+
 //Misc
 
 /datum/gear/accessory/armband_red

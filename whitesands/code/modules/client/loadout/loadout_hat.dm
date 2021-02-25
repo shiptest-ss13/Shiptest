@@ -112,3 +112,8 @@
 	display_name = "cat ears"
 	path = /obj/item/clothing/head/kitty
 	cost = 5000
+
+/datum/gear/hat/horse
+	display_name = "horse mask"
+	path = /obj/item/clothing/mask/horsehead
+	cost = 5000

@@ -158,3 +158,8 @@
 	display_name = "toy, ian balloon"
 	path = /obj/item/toy/balloon/corgi
 	cost = 2500
+
+/datum/gear/mask/surgical
+	display_name = "surgical mask"
+	path = /obj/item/clothing/mask/surgical
+	cost = 1200

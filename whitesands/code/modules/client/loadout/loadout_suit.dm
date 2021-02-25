@@ -33,6 +33,18 @@
 	display_name = "puffer jacket"
 	path = /obj/item/clothing/suit/jacket/puffer
 
+/datum/gear/suit/jacket/gothcoat
+	display_name = "goth jacket"
+	path = /obj/item/clothing/suit/gothcoat
+
+/datum/gear/suit/bronze
+	display_name = "bronze suit"
+	path = /obj/item/clothing/suit/bronze
+
+/datum/gear/suit/yakuza
+	display_name = "yakuza suit"
+	path = /obj/item/clothing/suit/yakuza
+
 //Misc
 /datum/gear/suit/grponcho
 	display_name = "poncho, green"

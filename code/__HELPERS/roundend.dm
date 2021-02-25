@@ -146,7 +146,7 @@
 						greentexters |= C
 
 	for (var/client/C in greentexters)
-		C.process_greentext()
+		C.process_greentext(world.time - SSticker.round_start_time <= 300 SECONDS, world.time - SSticker.round_start_time)
 
 /datum/controller/subsystem/ticker/proc/record_nuke_disk_location()
 	var/obj/item/disk/nuclear/N = locate() in GLOB.poi_list
@@ -213,7 +213,7 @@
 
 	for(var/client/C in GLOB.clients)
 		C.playtitlemusic(40)
-		C.process_endround_metacoin()
+		C.process_endround_metacoin(speed_round, world.time - SSticker.round_start_time)
 
 		if(speed_round)
 			C.give_award(/datum/award/achievement/misc/speed_round, C.mob)
@@ -405,7 +405,10 @@
 				for(var/datum/objective/crew/CO in M.mind.crew_objectives)
 					if(CO.check_completion())
 						parts += "<br><br><B>Your optional objective</B>: [CO.explanation_text] <span class='greentext'><B>Success!</B></span><br>"
-						C.inc_metabalance(METACOIN_CO_REWARD, reason="Completed your crew objective!")
+						var/speed_round = FALSE
+						if(world.time - SSticker.round_start_time <= 300 SECONDS)
+							speed_round = TRUE
+						C.inc_metabalance(METACOIN_CO_REWARD(speed_round, world.time - SSticker.round_start_time), reason="Completed your crew objective!")
 					else
 						parts += "<br><br><B>Your optional objective</B>: [CO.explanation_text] <span class='redtext'><B>Failed.</B></span><br>"
 

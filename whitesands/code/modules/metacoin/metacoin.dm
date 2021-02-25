@@ -40,23 +40,23 @@
 	message_admins("<span class='adminnotice'>[key_name_admin(usr)]: Modified [key_name(C)]'s [metacoin_name] ([log_text])</span>")
 	SSblackbox.record_feedback("tally", "admin_verb", 1, "Modify Metabalance") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
-/client/proc/process_endround_metacoin()
+/client/proc/process_endround_metacoin(is_speed_round, round_duration)
 	if(!mob)	return
 	var/mob/M = mob
 	if(M.mind && !isnewplayer(M))
 		if(M.stat != DEAD && !isbrain(M))
 			if(EMERGENCY_ESCAPED_OR_ENDGAMED)
 				if(!M.onCentCom() && !M.onSyndieBase())
-					inc_metabalance(METACOIN_SURVIVE_REWARD, reason="Survived the shift.")
+					inc_metabalance(METACOIN_SURVIVE_REWARD(is_speed_round, round_duration), reason="Survived the shift.")
 				else
-					inc_metabalance(METACOIN_ESCAPE_REWARD, reason="Survived the shift and escaped!")
+					inc_metabalance(METACOIN_ESCAPE_REWARD(is_speed_round, round_duration), reason="Survived the shift and escaped!")
 			else
-				inc_metabalance(METACOIN_ESCAPE_REWARD, reason="Survived the shift.")
+				inc_metabalance(METACOIN_ESCAPE_REWARD(is_speed_round, round_duration), reason="Survived the shift.")
 		else
 			inc_metabalance(METACOIN_NOTSURVIVE_REWARD, reason="You tried.")
 
-/client/proc/process_greentext()
-	inc_metabalance(METACOIN_GREENTEXT_REWARD, reason="Greentext!")
+/client/proc/process_greentext(is_speed_round, round_duration)
+	inc_metabalance(METACOIN_GREENTEXT_REWARD(is_speed_round, round_duration), reason="Greentext!")
 
 /client/proc/process_ten_minute_living()
 	inc_metabalance(METACOIN_TENMINUTELIVING_REWARD, FALSE)
