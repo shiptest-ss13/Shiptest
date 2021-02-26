@@ -1,11 +1,15 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "h" = (
-/obj/structure/chair/comfy/shuttle{
-	dir = 4
+/obj/machinery/power/smes/shuttle/precharged{
+	dir = 1
 	},
-/obj/item/storage/pod{
-	pixel_x = -24
+/obj/structure/cable{
+	icon_state = "0-2"
 	},
+/turf/open/floor/mineral/titanium/blue,
+/area/shuttle/pod_1)
+"m" = (
+/obj/machinery/computer/camera_advanced/shuttle_docker/nav,
 /turf/open/floor/mineral/titanium/blue,
 /area/shuttle/pod_1)
 "r" = (
@@ -16,12 +20,9 @@
 /obj/structure/window/shuttle,
 /turf/open/floor/plating,
 /area/shuttle/pod_1)
-"A" = (
-/obj/structure/chair/comfy/shuttle{
-	dir = 8
-	},
-/obj/item/radio/intercom{
-	pixel_x = 30
+"v" = (
+/obj/structure/cable{
+	icon_state = "1-2"
 	},
 /turf/open/floor/mineral/titanium/blue,
 /area/shuttle/pod_1)
@@ -29,15 +30,34 @@
 /turf/closed/wall/mineral/titanium,
 /area/shuttle/pod_1)
 "C" = (
-/obj/machinery/computer/shuttle/monastery_shuttle,
 /obj/machinery/light{
 	dir = 1
 	},
+/obj/machinery/computer/helm,
 /turf/open/floor/mineral/titanium/blue,
+/area/shuttle/pod_1)
+"E" = (
+/obj/machinery/computer/shuttle/monastery_shuttle{
+	possible_destinations = "monastery_shuttle_asteroid;monastery_shuttle_station;mining_public"
+	},
+/turf/open/floor/mineral/titanium/blue,
+/area/shuttle/pod_1)
+"F" = (
+/obj/machinery/power/shuttle/engine/electric{
+	dir = 1
+	},
+/obj/structure/cable,
+/obj/structure/window/reinforced/spawner/east,
+/obj/structure/window/reinforced/spawner/north,
+/turf/open/floor/plating,
 /area/shuttle/pod_1)
 "H" = (
 /obj/structure/chair/comfy/shuttle{
 	dir = 8
+	},
+/obj/machinery/power/terminal,
+/obj/structure/cable{
+	icon_state = "0-8"
 	},
 /turf/open/floor/mineral/titanium/blue,
 /area/shuttle/pod_1)
@@ -46,13 +66,21 @@
 	dir = 4
 	},
 /obj/machinery/status_display/evac{
-	pixel_x = -32
+	pixel_x = -32;
+	pixel_y = 32
+	},
+/obj/item/storage/pod{
+	pixel_x = -24
 	},
 /turf/open/floor/mineral/titanium/blue,
 /area/shuttle/pod_1)
 "L" = (
 /obj/structure/chair/comfy/shuttle{
 	dir = 4
+	},
+/obj/machinery/power/terminal,
+/obj/structure/cable{
+	icon_state = "0-4"
 	},
 /turf/open/floor/mineral/titanium/blue,
 /area/shuttle/pod_1)
@@ -61,7 +89,11 @@
 	dir = 8
 	},
 /obj/machinery/status_display/evac{
-	pixel_x = 32
+	pixel_x = 32;
+	pixel_y = 32
+	},
+/obj/item/radio/intercom/wideband{
+	pixel_x = 28
 	},
 /turf/open/floor/mineral/titanium/blue,
 /area/shuttle/pod_1)
@@ -76,18 +108,35 @@
 	port_direction = 2;
 	width = 5
 	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/mineral/titanium/blue,
 /area/shuttle/pod_1)
-"W" = (
-/turf/template_noop,
-/area/template_noop)
+"U" = (
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/turf/open/floor/mineral/titanium/blue,
+/area/shuttle/pod_1)
+"Y" = (
+/obj/machinery/power/shuttle/engine/electric{
+	dir = 1
+	},
+/obj/structure/cable,
+/obj/structure/window/reinforced/spawner/west,
+/obj/structure/window/reinforced/spawner/north,
+/turf/open/floor/plating,
+/area/shuttle/pod_1)
 "Z" = (
-/obj/structure/shuttle/engine/propulsion/burst,
-/turf/closed/wall/mineral/titanium,
+/turf/closed/wall/mineral/titanium/nodiagonal,
 /area/shuttle/pod_1)
 
 (1,1,1) = {"
-W
+B
 B
 B
 u
@@ -96,30 +145,30 @@ Z
 "}
 (2,1,1) = {"
 B
-B
+m
 J
 L
 h
-Z
+F
 "}
 (3,1,1) = {"
 u
 C
 r
-r
-r
+U
+v
 O
 "}
 (4,1,1) = {"
 B
-B
+E
 M
 H
-A
-Z
+h
+Y
 "}
 (5,1,1) = {"
-W
+B
 B
 B
 u
