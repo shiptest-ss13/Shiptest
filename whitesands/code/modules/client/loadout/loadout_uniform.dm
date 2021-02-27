@@ -103,7 +103,7 @@
 	display_name = "suitskirt, white shirt"
 	path = /obj/item/clothing/under/suit/black/skirt
 
-/datum/gear/uniform/suit/white
+/datum/gear/uniform/suit/white_shirt
 	display_name = "suit, white shirt"
 	path = /obj/item/clothing/under/suit/black
 //Premium

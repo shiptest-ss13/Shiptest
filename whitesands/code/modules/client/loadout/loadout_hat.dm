@@ -108,7 +108,7 @@
 	path = /obj/item/clothing/head/cowboy
 	cost = 1500
 
-/datum/gear/hat/tinfoil
+/datum/gear/hat/catears
 	display_name = "cat ears"
 	path = /obj/item/clothing/head/kitty
 	cost = 5000
