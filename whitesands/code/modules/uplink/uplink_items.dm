@@ -2,6 +2,16 @@
 Uplink Items
 **/
 
+/* Dangerous Weapons */
+/datum/uplink_item/dangerous/weebstick
+	name = "Nanoforged Katana"
+	desc = "A tailor-made blade forged from one of the many ninja clans within the syndicate. \
+			Merely weilding this weapon grants incredible agility."
+	item = /obj/item/storage/belt/weebstick
+	cost = 10
+	surplus = 5
+	limited_stock = 1
+
 /*Stealthy Weapons*/
 /datum/uplink_item/stealthy_weapons/derringerpack
 	name = "Compact Derringer"
