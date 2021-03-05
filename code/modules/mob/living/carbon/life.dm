@@ -545,7 +545,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
 			Dizzy(10)
 
 		if(drunkenness >= 51)
-			if(prob(3))
+			if(prob(3) && !dna.check_mutation(DORFISM)) //WS Edit - they can handle their drink to keep it down
 				confused += 15
 				vomit() // vomiting clears toxloss, consider this a blessing
 			Dizzy(25)
