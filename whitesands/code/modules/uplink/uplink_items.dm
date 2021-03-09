@@ -52,6 +52,21 @@ Uplink Items
 	item = /obj/item/reagent_containers/hypospray/medipen/bonefixingjuice
 	cost = 3
 
+/*Species Restricted*/
+/datum/uplink_item/race_restricted/razorwing
+	name = "Razorwing Implant"
+	desc = "Put those wings to good use! This implant makes your wingtips razor sharp and gives you the ability to flourish them, slicing anyone in range."
+	cost = 4
+	item = /obj/item/storage/box/syndie_kit/razorwing
+	restricted_species = list("moth")
+
+/datum/uplink_item/race_restricted/lampbang
+	name = "Lanternbang"
+	desc = "This LepiCorp-brand lantern has the ability to overload its lightbulb, blinding and confusing anyone in a radius around it except for its holder."
+	cost = 5
+	item = /obj/item/flashlight/lantern/lanternbang
+	restricted_species = list("moth")
+
 /*Role Restricted*/
 /datum/uplink_item/role_restricted/greykingsword
 	name = "Blade of The Grey Tide"

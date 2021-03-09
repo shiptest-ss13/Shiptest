@@ -1670,13 +1670,13 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	exclude_modes = list(/datum/game_mode/nuclear, /datum/game_mode/nuclear/clown_ops)
 	surplus = 0
 
-/datum/uplink_item/race_restricted/syndilamp
+/datum/uplink_item/race_restricted/syndilamp //WS edit - LepiCorp stuff
 	name = "Extra-Bright Lantern"
 	desc = "We heard that moths such as yourself really like lamps, so we decided to grant you early access to a prototype \
-	Syndicate brand \"Extra-Bright Lantern™\". Enjoy."
-	cost = 2
+	LepiCorp-brand \"Extra-Bright Lantern™\". Enjoy."
+	cost = 1
 	item = /obj/item/flashlight/lantern/syndicate
-	restricted_species = list("moth")
+	restricted_species = list("moth") //End WS edit
 
 /datum/uplink_item/race_restricted/syndigenetics
 	name = "Fire Breath"
