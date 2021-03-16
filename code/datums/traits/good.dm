@@ -39,16 +39,18 @@
 
 /datum/quirk/drunkhealing/on_process()
 	var/mob/living/carbon/C = quirk_holder
+	// Whitesands Start - Prevent Prosthetic healing from liquor
 	switch(C.drunkenness)
 		if (6 to 40)
-			C.adjustBruteLoss(-0.1, FALSE)
-			C.adjustFireLoss(-0.05, FALSE)
+			C.adjustBruteLoss(-0.1, FALSE, FALSE, BODYPART_ORGANIC)
+			C.adjustFireLoss(-0.05, FALSE, FALSE, BODYPART_ORGANIC)
 		if (41 to 60)
-			C.adjustBruteLoss(-0.4, FALSE)
-			C.adjustFireLoss(-0.2, FALSE)
+			C.adjustBruteLoss(-0.4, FALSE, FALSE, BODYPART_ORGANIC)
+			C.adjustFireLoss(-0.2, FALSE, FALSE, BODYPART_ORGANIC)
 		if (61 to INFINITY)
-			C.adjustBruteLoss(-0.8, FALSE)
-			C.adjustFireLoss(-0.4, FALSE)
+			C.adjustBruteLoss(-0.8, FALSE, FALSE, BODYPART_ORGANIC)
+			C.adjustFireLoss(-0.4, FALSE, FALSE, BODYPART_ORGANIC)
+	// Whitesands End - Prevent Prosthetic healing from liquor
 
 /datum/quirk/empath
 	name = "Empath"

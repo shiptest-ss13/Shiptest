@@ -244,6 +244,9 @@
 /area/whitesands/colony/maintenance
 	name = "Whitesands Colony Communications"
 
+/area/whitesands/colony/shuttle_consoles
+	name = "Whitesands Colony Shuttle Landing Zone"
+
 /area/whitesands/surface
 	name = "Whitesands"
 	icon_state = "explored"

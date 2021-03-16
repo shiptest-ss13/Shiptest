@@ -4,7 +4,7 @@
 /obj/machinery/mineral/ore_redemption
 	name = "ore redemption machine"
 	desc = "A machine that accepts ore and instantly transforms it into workable material sheets. Points for ore are generated based on type and can be redeemed at a mining equipment vendor."
-	icon = 'icons/obj/machines/mining_machines.dmi'
+	icon = 'whitesands/icons/obj/machines/orm.dmi' // WS Edit - Directional ORM Sprites
 	icon_state = "ore_redemption"
 	density = TRUE
 	input_dir = NORTH
@@ -363,6 +363,10 @@
 	..()
 
 /obj/machinery/mineral/ore_redemption/update_icon_state()
+	// WS Start - Directional ORM Sprites
+	if (panel_open)
+		icon_state = "[initial(icon_state)]-open"
+	// WS End - Directional ORM Sprites
 	if(powered())
 		icon_state = initial(icon_state)
 	else
