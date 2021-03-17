@@ -152,6 +152,8 @@
 /obj/structure/closet/proc/take_contents()
 	var/atom/L = drop_location()
 	for(var/atom/movable/AM in L)
+		if(istype(AM, /obj/effect))	//WS edit, closets and crates do not eat your lamp
+			continue
 		if(AM != src && insert(AM) == -1) // limit reached
 			break
 
