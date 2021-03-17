@@ -114,7 +114,7 @@
 				target_z = pick(z_levels)
 				if(forced_z)
 					target_z = forced_z
-				if(current_pick.always_spawn_with) //If the ruin has part below, make sure that z exists.
+				if(current_pick?.always_spawn_with) //If the ruin has part below, make sure that z exists.
 					for(var/v in current_pick.always_spawn_with)
 						if(current_pick.always_spawn_with[v] == PLACE_BELOW)
 							var/turf/T = locate(1,1,target_z)
