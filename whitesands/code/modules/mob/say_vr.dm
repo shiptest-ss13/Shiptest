@@ -5,7 +5,10 @@
 	var/flavor_text = "" //tired of fucking double checking this
 
 /mob/proc/update_flavor_text()
+	set name = "Update Flavor Text"
+	set category = "IC"
 	set src in usr
+
 	if(usr != src)
 		usr << "No."
 	var/msg = sanitize(input(usr,"Set the flavor text in your 'examine' verb. Can also be used for OOC notes about your character.","Flavor Text",html_decode(flavor_text)) as message|null)
