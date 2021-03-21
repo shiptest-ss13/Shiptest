@@ -102,7 +102,7 @@
 				forced = TRUE
 				break
 		else //Otherwise just pick random one
-			current_pick = pickweight(ruins_availible)
+			current_pick = pickweight_float(ruins_availible)
 
 		var/placement_tries = forced_turf ? 1 : PLACEMENT_TRIES //Only try once if we target specific turf
 		var/failed_to_place = TRUE
