@@ -1,4 +1,4 @@
-/proc/playsound(atom/source, soundin, vol as num, vary, extrarange as num, falloff, frequency = null, channel = 0, pressure_affected = TRUE, ignore_walls = TRUE)
+/proc/playsound(atom/source, soundin, vol as num, vary, extrarange as num, falloff, frequency = null, channel = 0, pressure_affected = TRUE, ignore_walls = TRUE, var/mono_adj = FALSE)	//WS Edit, Make tools and nearby airlocks use mono sound
 	if(isarea(source))
 		CRASH("playsound(): source is an area")
 
@@ -37,14 +37,20 @@
 
 	for(var/P in listeners)
 		var/mob/M = P
+		var/ismono = FALSE
+		if(mono_adj)
+			ismono = get_dist(get_turf(P), turf_source) < 2	//If adjacent, play as mono
 		if(get_dist(M, turf_source) <= maxdistance)
-			M.playsound_local(turf_source, soundin, vol, vary, frequency, falloff, channel, pressure_affected, S)
+			M.playsound_local(turf_source, soundin, vol, vary, frequency, falloff, channel, pressure_affected, S, ignore_direction = ismono)
 	for(var/P in SSmobs.dead_players_by_zlevel[source_z])
 		var/mob/M = P
+		var/ismono = FALSE
+		if(mono_adj)
+			ismono = get_dist(get_turf(P), turf_source) < 2
 		if(get_dist(M, turf_source) <= maxdistance)
-			M.playsound_local(turf_source, soundin, vol, vary, frequency, falloff, channel, pressure_affected, S)
+			M.playsound_local(turf_source, soundin, vol, vary, frequency, falloff, channel, pressure_affected, S, ignore_direction = ismono)
 
-/mob/proc/playsound_local(turf/turf_source, soundin, vol as num, vary, frequency, falloff, channel = 0, pressure_affected = TRUE, sound/S, distance_multiplier = 1, envwet = -10000, envdry = 0) //WS Edit Cit #7367 - Env Wet / Dry is Reverb
+/mob/proc/playsound_local(turf/turf_source, soundin, vol as num, vary, frequency, falloff, channel = 0, pressure_affected = TRUE, sound/S, distance_multiplier = 1, envwet = -10000, envdry = 0, var/ignore_direction = FALSE) //WS Edit Cit #7367 - Env Wet / Dry is Reverb , Make items and nearby airlocks use mono sound
 	if(!client || !can_hear())
 		return
 
@@ -95,14 +101,15 @@
 
 		if(S.volume <= 0)
 			return //No sound
-
-		var/dx = turf_source.x - T.x // Hearing from the right/left
-		S.x = dx * distance_multiplier
-		var/dz = turf_source.y - T.y // Hearing from infront/behind
-		S.z = dz * distance_multiplier
-		var/dy = (turf_source.z - T.z) * 5 * distance_multiplier // Hearing from  above / below, multiplied by 5 because we assume height is further along coords.
-		S.y = dy
-
+		if(!ignore_direction)	//WS Edit, allow for disabling directionality.
+			var/dx = turf_source.x - T.x // Hearing from the right/left
+			S.x = dx * distance_multiplier
+			var/dz = turf_source.y - T.y // Hearing from infront/behind
+			S.z = dz * distance_multiplier
+			var/dy = (turf_source.z - T.z) * 5 * distance_multiplier // Hearing from  above / below, multiplied by 5 because we assume height is further along coords.
+			S.y = dy
+		else
+			S.y = 1	//To make sure the mono sound doesn't make you feel like you're dying.
 		S.falloff = (falloff ? falloff : FALLOFF_SOUNDS)
 
 	SEND_SOUND(src, S)
