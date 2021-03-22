@@ -231,12 +231,12 @@
 
 // Allows picks with non-integer weights and also 0
 // precision 1000 means it works up to 3 decimal points
-/proc/pickweight_float(list/L, precision=1000)
+/proc/pickweight_float(list/L, default=1, precision=1000)
 	var/total = 0
 	var/item
 	for (item in L)
 		if (!L[item])
-			L[item] = 0
+			L[item] = default
 		total += round(L[item]*precision)
 
 	total = rand(0, total)/precision

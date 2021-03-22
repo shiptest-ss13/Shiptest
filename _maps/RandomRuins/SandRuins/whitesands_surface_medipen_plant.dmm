@@ -350,7 +350,7 @@
 /turf/open/floor/plasteel/dark,
 /area/whitesands/surface/outdoors/unexplored)
 "jM" = (
-/obj/machinery/atmospherics/pipe/layer_manifold/visible{
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible{
 	dir = 8
 	},
 /turf/closed/wall,
@@ -1007,7 +1007,7 @@
 "CI" = (
 /obj/structure/cable,
 /obj/machinery/power/port_gen/pacman/super,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
+/obj/machinery/atmospherics/pipe/layer_manifold{
 	dir = 8
 	},
 /turf/open/floor/plating,

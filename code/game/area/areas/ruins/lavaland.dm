@@ -69,6 +69,7 @@
 
 /area/ruin/unpowered/syndicate_lava_base/main
 	name = "Syndicate Lavaland Primary Hallway"
+	area_flags = HIDDEN_AREA | BLOBS_ALLOWED | UNIQUE_AREA // WS edit - Fix various startup runtimes
 
 /area/ruin/unpowered/syndicate_lava_base/cargo
 	name = "Syndicate Lavaland Cargo Bay"
