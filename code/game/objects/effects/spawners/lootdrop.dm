@@ -28,6 +28,8 @@
 				else
 					if (loot_spawned)
 						spawned_loot.pixel_x = spawned_loot.pixel_y = ((!(loot_spawned%2)*loot_spawned/2)*-1)+((loot_spawned%2)*(loot_spawned+1)/2*1)
+			else
+				break // WS edit - Support spawn weights of 0 in loot tables and ruins
 			loot_spawned++
 	return INITIALIZE_HINT_QDEL
 
@@ -472,6 +474,8 @@
 	qdel(spawner_to_table)
 	for(var/i in 1 to loot_count)
 		var/loot_spawn = pick_loot(lootpool)
+		if(!loot_spawn) // WS edit - Support spawn weights of 0 in loot tables and ruins
+			continue
 		if(!(loot_spawn in spawned_table))
 			spawned_table[loot_spawn] = 1
 		else

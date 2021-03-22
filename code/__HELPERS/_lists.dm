@@ -235,7 +235,7 @@
 	var/total = 0
 	var/item
 	for (item in L)
-		if (!L[item])
+		if (!isnum(L[item]))
 			L[item] = default
 		total += round(L[item]*precision)
 

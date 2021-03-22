@@ -103,6 +103,9 @@
 				break
 		else //Otherwise just pick random one
 			current_pick = pickweight_float(ruins_availible)
+			if(current_pick == null) // WS edit - Support spawn weights of 0 in loot tables and ruins
+				current_pick = list() // Couldn't pick a ruin from the list, which means they're all weight 0
+				continue
 
 		var/placement_tries = forced_turf ? 1 : PLACEMENT_TRIES //Only try once if we target specific turf
 		var/failed_to_place = TRUE
