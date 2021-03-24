@@ -25,3 +25,11 @@
 	ammo_type = /obj/item/ammo_casing/ballistic/a762_39
 	caliber = "7.62x39mm FMJ"
 	max_ammo = 30
+
+/obj/item/ammo_box/magazine/ebr
+	name = "M514 EBR Magazine (.308 Winchester FMJ)"
+	icon = 'whitesands/icons/obj/ammo.dmi'
+	icon_state = "ebr_mag"
+	ammo_type = /obj/item/ammo_casing/ballistic/win308
+	caliber = ".308 Winchester FMJ"
+	max_ammo = 10

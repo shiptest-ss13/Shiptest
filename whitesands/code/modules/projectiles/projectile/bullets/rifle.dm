@@ -10,3 +10,8 @@
 /obj/projectile/bullet/a762_39
 	name = "7.62x39mm FMJ"
 	damage = 32
+
+/obj/projectile/bullet/win308
+	name = ".308 Winchester FMJ"
+	damage = 45
+	armour_penetration = 15

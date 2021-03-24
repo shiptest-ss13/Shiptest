@@ -12,6 +12,21 @@ Uplink Items
 	surplus = 5
 	limited_stock = 1
 
+/datum/uplink_item/dangerous/tec9
+	name = "TEC9 Machine Pistol"
+	desc = "A powerful machine pistol sporting a high rate of fire and armor-piercing rounds."
+	item = /obj/item/gun/ballistic/automatic/pistol/tec9
+	cost = 12
+	surplus = 20
+
+/datum/uplink_item/dangerous/ebr
+	name = "M514 EBR"
+	desc = "A cheap rifle with high stopping power and low capacity."
+	item = /obj/item/gun/ballistic/automatic/ebr
+	cost = 8
+	surplus = 20
+	include_modes = list(/datum/game_mode/nuclear)
+
 /*Stealthy Weapons*/
 /datum/uplink_item/stealthy_weapons/derringerpack
 	name = "Compact Derringer"
@@ -51,6 +66,21 @@ Uplink Items
 	desc = "A medipen stocked with an agent that will help regenerate bones and organs. A single-use pocket Medbay visit."
 	item = /obj/item/reagent_containers/hypospray/medipen/bonefixingjuice
 	cost = 3
+
+/*Ammo*/
+/datum/uplink_item/ammo/tec9
+	name = "TEC9 Magazine"
+	desc = "An additional 20 round 9mm magazine for the TEC9."
+	item = /obj/item/ammo_box/magazine/tec9
+	cost = 3
+	exclude_modes = list(/datum/game_mode/nuclear/clown_ops)
+
+/datum/uplink_item/ammo/ebr
+	name = "M2514 EBR Magazine"
+	desc = "An additional 10 round .308 magazine for the EBR."
+	item = /obj/item/ammo_box/magazine/ebr
+	cost = 2
+	include_modes = list(/datum/game_mode/nuclear)
 
 /*Species Restricted*/
 /datum/uplink_item/race_restricted/razorwing

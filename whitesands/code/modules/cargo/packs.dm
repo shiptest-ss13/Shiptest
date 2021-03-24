@@ -261,10 +261,12 @@
 
 /datum/supply_pack/misc/traitor_ammo
 	name = "Syndicate-Grade Ammo Crate"
-	desc = "Contains three 10mm stechkin magazines, two .357 magnum speedloaders, and a box of buckshot for good measure. Comes in a re-usable coffin."
+	desc = "Contains three 10mm stechkin magazines, two .357 magnum speedloaders, two 9mm AP magazines, and a box of buckshot for good measure. Comes in a re-usable coffin."
 	contains = list(/obj/item/ammo_box/magazine/m10mm,
 					/obj/item/ammo_box/magazine/m10mm,
 					/obj/item/ammo_box/magazine/m10mm,
+					/obj/item/ammo_box/magazine/tec9,
+					/obj/item/ammo_box/magazine/tec9,
 					/obj/item/ammo_box/a357,
 					/obj/item/ammo_box/a357,
 					/obj/item/storage/box/lethalshot)

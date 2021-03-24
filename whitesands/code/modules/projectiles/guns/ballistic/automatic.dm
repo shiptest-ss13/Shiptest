@@ -109,3 +109,27 @@
 	w_class = WEIGHT_CLASS_BULKY
 	mag_type = /obj/item/ammo_box/magazine/ak47
 
+/obj/item/gun/ballistic/automatic/pistol/tec9
+	name = "TEC9 Machine Pistol"
+	desc = "A new take on an old classic, firing 9mm rounds at unprecedented firerates. Perfect for gatting people down, especially considering how plentiful ammo is."
+	icon = 'whitesands/icons/obj/guns/projectile.dmi'
+	icon_state = "tec9"
+	weapon_weight = WEAPON_LIGHT
+	w_class = WEIGHT_CLASS_SMALL
+	mag_type = /obj/item/ammo_box/magazine/tec9
+	fire_rate = 6
+	automatic = 1
+	mag_display = TRUE
+
+/obj/item/gun/ballistic/automatic/ebr
+	name = "M514 EBR"
+	desc = {"A cheap, reliable rifle often found in the hands of low-ranking Syndicate personnel. It's known for rather high stopping power and mild armor-piercing capabilities."}
+	icon = 'whitesands/icons/obj/guns/48x32guns.dmi'
+	icon_state = "ebr"
+	item_state = "ebr"
+	fire_rate = 2
+	mag_display = TRUE
+	weapon_weight = WEAPON_MEDIUM
+	w_class = WEIGHT_CLASS_BULKY
+	mag_type = /obj/item/ammo_box/magazine/ebr
+

@@ -31,3 +31,9 @@
 	desc = "A .300 Blackout bullet casing. It looks like it has been re-necked and reloaded several times."
 	caliber = ".300BLK"
 	projectile_type = /obj/projectile/bullet/aac_300blk
+
+/obj/item/ammo_casing/ballistic/win308
+	name = ".308 Winchester FMJ bullet casing"
+	desc = "A .308 Winchester FMJ bullet casing."
+	caliber = ".308 Winchester FMJ"
+	projectile_type = /obj/projectile/bullet/win308

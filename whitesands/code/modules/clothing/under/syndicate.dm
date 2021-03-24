@@ -16,10 +16,10 @@
 	head = /obj/item/clothing/head/helmet/space/syndicate/surplus
 	mask = /obj/item/clothing/mask/breath
 	shoes = /obj/item/clothing/shoes/laceup
-	r_hand = /obj/item/gun/ballistic/automatic/surplus
+	r_hand = /obj/item/gun/ballistic/automatic/ebr
 	gloves =  null
 	l_pocket = /obj/item/pinpointer/nuke/syndicate
-	r_pocket = /obj/item/ammo_box/magazine/m10mm/rifle
+	r_pocket = /obj/item/ammo_box/magazine/ebr
 	belt = null
 	back = /obj/item/tank/jetpack/oxygen/harness
 	backpack_contents = null

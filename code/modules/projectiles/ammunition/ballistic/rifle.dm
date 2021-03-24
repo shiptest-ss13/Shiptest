@@ -2,8 +2,8 @@
 
 /obj/item/ammo_casing/a762
 // WS Edit Start - Whitesands
-	name = "7.62x51 bullet casing"
-	desc = "A 7.62x51 bullet casing."
+	name = "7.62x54 bullet casing"
+	desc = "A 7.62x54 bullet casing."
 // WS Edit End - Whitesands
 	icon_state = "762-casing"
 	caliber = "a762"
