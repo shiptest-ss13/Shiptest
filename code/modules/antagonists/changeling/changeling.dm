@@ -513,6 +513,7 @@
 	var/list/exists_list = list()
 	var/list/item_state_list = list()
 	var/list/mob_overlay_icon_list = list()
+	var/list/mob_overlay_state_list = list() //WS EDIT - Mob Overlay State
 
 	var/underwear
 	var/undershirt
@@ -536,7 +537,7 @@
 	newprofile.undershirt = undershirt
 	newprofile.socks = socks
 	newprofile.mob_overlay_icon_list = mob_overlay_icon_list.Copy()
-
+	newprofile.mob_overlay_state_list = mob_overlay_state_list.Copy() //WS EDIT - Mob Overlay State
 
 /datum/antagonist/changeling/xenobio
 	name = "Xenobio Changeling"
