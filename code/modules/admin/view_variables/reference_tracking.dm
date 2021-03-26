@@ -31,26 +31,18 @@
 		usr.client.running_find_references = type
 
 	testing("Beginning search for references to a [type].")
-	last_find_references = world.time
 
-	DoSearchVar(GLOB, "(global) -> ") //globals
-	testing("Finished searching globals")
+	var/starting_time = world.time
 
-	for(var/atom/atom_thing) //atoms
-		DoSearchVar(atom_thing, "World -> [atom_thing]")
-	testing("Finished searching atoms")
+	DoSearchVar(GLOB, "GLOB") //globals
+	for(var/datum/thing in world) //atoms (don't beleive its lies)
+		DoSearchVar(thing, "World -> [thing.type]", search_time = starting_time)
 
-	for (var/datum/datum_thing) //datums
-		DoSearchVar(datum_thing, "World -> [datum_thing]")
-	testing("Finished searching datums")
+	for(var/datum/thing) //datums
+		DoSearchVar(thing, "Datums -> [thing.type]", search_time = starting_time)
 
-#ifndef FIND_REF_SKIP_CLIENTS
-	// DO NOT RUN THIS ON A LIVE SERVER
-	// IT WILL CRASH!!!
-	for (var/client/client_thing) //clients
-		DoSearchVar(client_thing, "World -> [client_thing]")
-	testing("Finished searching clients")
-#endif
+	for(var/client/thing) //clients
+		DoSearchVar(thing, "Clients -> [thing.type]", search_time = starting_time)
 
 	testing("Completed search for references to a [type].")
 	if(usr?.client)
@@ -80,26 +72,33 @@
 	qdel_and_find_ref_if_fail(src, TRUE)
 
 
-/datum/proc/DoSearchVar(potential_container, container_name, recursive_limit = 32)
+/datum/proc/DoSearchVar(potential_container, container_name, recursive_limit = 64, search_time = world.time)
 	#ifndef FIND_REF_NO_CHECK_TICK
 	CHECK_TICK
 	#endif
+
+	#ifdef REFERENCE_TRACKING_DEBUG
+	if(!found_refs)
+		found_refs = list()
+	#endif
+
 	if(usr?.client && !usr.client.running_find_references)
 		return
 
 	if(!recursive_limit)
+		testing("Recursion limit reached. [container_name]")
 		return
 
 	if(istype(potential_container, /datum))
 		var/datum/datum_container = potential_container
-		if(datum_container.last_find_references == last_find_references)
+		if(datum_container.last_find_references == search_time)
 			return
 
-		datum_container.last_find_references = last_find_references
+		datum_container.last_find_references = search_time
 		var/list/vars_list = datum_container.vars
 
 		for(var/varname in vars_list)
-			if (varname == "vars")
+			if (varname == "vars" || varname == "vis_locs") //Fun fact, vis_locs don't count for references
 				continue
 			#ifndef FIND_REF_NO_CHECK_TICK
 			CHECK_TICK
@@ -107,10 +106,13 @@
 			var/variable = vars_list[varname]
 
 			if(variable == src)
-				testing("Found [type] \ref[src] in [datum_container.type]'s [varname] var. [container_name]")
+				#ifdef REFERENCE_TRACKING_DEBUG
+				found_refs[varname] = TRUE
+				#endif
+				testing("Found [type] \ref[src] in [datum_container.type]'s \ref[datum_container] [varname] var. [container_name]")
 
 			else if(islist(variable))
-				DoSearchVar(variable, "[container_name] -> [varname] (list)", recursive_limit-1)
+				DoSearchVar(variable, "[container_name] \ref[datum_container] -> [varname] (list)", recursive_limit - 1, search_time)
 
 	else if(islist(potential_container))
 		var/normal = IS_NORMAL_LIST(potential_container)
@@ -118,22 +120,38 @@
 			#ifndef FIND_REF_NO_CHECK_TICK
 			CHECK_TICK
 			#endif
+			//Check normal entrys
 			if(element_in_list == src)
+				#ifdef REFERENCE_TRACKING_DEBUG
+				found_refs[potential_container] = TRUE
+				#endif
 				testing("Found [type] \ref[src] in list [container_name].")
 
-			else if(element_in_list && !isnum(element_in_list) && normal)
-				if(potential_container[element_in_list] == src)
-					testing("Found [type] \ref[src] in list [container_name]\[[element_in_list]\]")
-				else if(islist(potential_container[element_in_list]))
-					DoSearchVar(potential_container[element_in_list], "[container_name]\[[element_in_list]\]", recursive_limit-1)
+			//Check assoc entrys
+			else if(element_in_list && !isnum(element_in_list) && normal && potential_container[element_in_list] == src)
+				#ifdef REFERENCE_TRACKING_DEBUG
+				found_refs[potential_container] = TRUE
+				#endif
+				testing("Found [type] \ref[src] in list [container_name]\[[element_in_list]\]")
 
+			//Check normal sublists
 			else if(islist(element_in_list))
-				var/list/list_element = element_in_list
-				DoSearchVar(element_in_list, "[container_name]\[[list_element.Find(element_in_list)]] -> list", recursive_limit - 1)
+				DoSearchVar(element_in_list, "[container_name] -> [element_in_list] (list)", recursive_limit - 1, search_time)
+
+			//Check assoc sublists
+			else if(element_in_list && !isnum(element_in_list) && normal && islist(potential_container[element_in_list]))
+				DoSearchVar(potential_container[element_in_list], "[container_name]\[[element_in_list]\] -> [potential_container[element_in_list]] (list)", recursive_limit - 1, search_time)
+
+	#ifndef FIND_REF_NO_CHECK_TICK
+	CHECK_TICK
+	#endif
 
 
 /proc/qdel_and_find_ref_if_fail(datum/thing_to_del, force = FALSE)
-	SSgarbage.reference_find_on_fail[REF(thing_to_del)] = TRUE
-	qdel(thing_to_del, force)
+	thing_to_del.qdel_and_find_ref_if_fail(force)
+
+/datum/proc/qdel_and_find_ref_if_fail(force = FALSE)
+	SSgarbage.reference_find_on_fail["\ref[src]"] = TRUE
+	qdel(src, force)
 
 #endif
