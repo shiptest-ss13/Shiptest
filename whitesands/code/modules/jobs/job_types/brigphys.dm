@@ -48,3 +48,11 @@
 	suit = /obj/item/clothing/suit/toggle/labcoat/brig_phys
 	suit_store = /obj/item/flashlight/pen
 	alt_suit = null
+
+/datum/outfit/job/brig_phys/executionsupervisor
+	name = "Brig Physician (Execution Supervisor)"
+
+	uniform = /obj/item/clothing/under/rank/security/brig_phys/security_medic
+	suit = /obj/item/clothing/suit/toggle/labcoat/brig_phys
+	l_pocket = /obj/item/reagent_containers/syringe
+	alt_suit = null

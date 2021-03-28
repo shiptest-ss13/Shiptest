@@ -181,12 +181,14 @@
 	//Equip the rest of the gear
 	H.dna.species.before_equip_job(src, H, visualsOnly)
 
+	// WS Edit - Alt-Job Titles
 	if(outfit && preference_source?.prefs?.alt_titles_preferences[title] && !outfit_override)
 		var/outfitholder = "[outfit]/[ckey(preference_source.prefs.alt_titles_preferences[title])]"
 		if(text2path(outfitholder) || !outfitholder)
 			outfit_override = text2path(outfitholder)
 	if(outfit_override || outfit)
 		H.equipOutfit(outfit_override ? outfit_override : outfit, visualsOnly, preference_source)
+	// WS Edit - Alt-Job Titles
 
 	H.dna.species.after_equip_job(src, H, visualsOnly)
 
