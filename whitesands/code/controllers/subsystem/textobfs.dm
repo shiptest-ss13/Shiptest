@@ -22,7 +22,7 @@ SUBSYSTEM_DEF(textobfs)
 	var/worldURL
 	var/list/obf_string_list = new/list(OBF_STRING_COUNT, 4)
 	obf_string_list = list(
-		list("", ":d><Fy", "d907935191deb1b56b4f006be17013b4", "meatball")
+		list("", "=78=qL", "5e6a05833f9be0f7cdf301846e827f35", "meatball")
 	)
 
 /datum/controller/subsystem/textobfs/Initialize()
