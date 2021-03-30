@@ -88,6 +88,14 @@
 	suffix = "whitesands_surface_medipen_plant.dmm"
 	allow_duplicates = FALSE
 
+/datum/map_template/ruin/whitesands/youreinsane
+	name = "Lost Engine"
+	id = "ws-youreinsane"
+	description = "Nanotrasen would like to remind all employees that the Pi\[REDACTED\]er is not real."
+	suffix = "whitesands_surface_youreinsane.dmm"
+	allow_duplicates = FALSE
+
+
 //////////OUTSIDE SETTLEMENTS/RUINS//////////
 /datum/map_template/ruin/camp/whitesands/survivors
 	name = "Survivor Camp"
@@ -123,11 +131,29 @@
 	placement_weight = 0.5
 	allow_duplicates = FALSE
 
-/datum/map_template/ruin/camp/whitesands/survivors/cowboy
-	name = "Frontier Settlement"
-	id = "ws-survivors-cowboy"
-	description = "A frontier-style settlement founded by what can only be assumed as an offshoot of the original colony. Most inhabitants must have either moved on or died."
-	suffix = "whitesands_surface_camp_cowboy.dmm"
-	cost = 10
+/datum/map_template/ruin/camp/whitesands/survivors/farm
+	name = "Abandoned Farm"
+	id = "ws-farm"
+	description = "A abandoned farm, destroyed from years of shootouts and lack of maintenance."
+	cost = 1
 	placement_weight = 0.5
+	suffix = "whitesands_surface_camp_farm.dmm"
+	allow_duplicates = FALSE
+	
+/datum/map_template/ruin/camp/whitesands/survivors/drugstore
+	name = "Abandoned Store"
+	id = "ws-drugstore"
+	description = "A store that once sold a variety of items and equipment."
+	cost = 1
+	placement_weight = 0.5
+	suffix = "whitesands_surface_camp_drugstore.dmm"
+	allow_duplicates = FALSE
+	
+/datum/map_template/ruin/camp/whitesands/survivors/saloon
+	name = "Abandoned Saloon"
+	id = "ws-saloon"
+	description = "A western style saloon that has not been touched in years"
+	cost = 1
+	placement_weight = 0.5
+	suffix = "whitesands_surface_camp_saloon.dmm"
 	allow_duplicates = FALSE

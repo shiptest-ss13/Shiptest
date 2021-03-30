@@ -111,6 +111,15 @@
 	icon_state = "platingdmg1"
 	},
 /area/whitesands/surface/outdoors/unexplored)
+"dR" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 8
+	},
+/obj/item/circuitboard/computer/solar_control,
+/obj/item/stack/cable_coil/cyan,
+/obj/item/stack/cable_coil/cyan,
+/turf/open/floor/plating,
+/area/whitesands/surface/outdoors/unexplored)
 "dZ" = (
 /obj/machinery/door/airlock/public/glass,
 /obj/effect/turf_decal/tile/neutral,
@@ -155,6 +164,53 @@
 /turf/open/floor/plating{
 	icon_state = "platingdmg3"
 	},
+/area/whitesands/surface/outdoors/unexplored)
+"fg" = (
+/obj/structure/table_frame,
+/obj/item/shard{
+	icon_state = "tiny"
+	},
+/obj/item/shard{
+	icon_state = "small"
+	},
+/obj/effect/turf_decal/stripes/line{
+	dir = 8
+	},
+/turf/open/floor/plasteel/white,
+/area/whitesands/surface/outdoors/unexplored)
+"fl" = (
+/obj/structure/table_frame,
+/obj/item/shard{
+	icon_state = "tiny"
+	},
+/obj/item/shard{
+	icon_state = "medium"
+	},
+/obj/item/reagent_containers/glass/beaker/large{
+	pixel_x = 3;
+	pixel_y = -3
+	},
+/obj/item/reagent_containers/glass/beaker/large,
+/obj/effect/turf_decal/stripes/line{
+	dir = 8
+	},
+/turf/open/floor/plasteel/white,
+/area/whitesands/surface/outdoors/unexplored)
+"fB" = (
+/obj/structure/table_frame,
+/obj/item/shard{
+	icon_state = "tiny"
+	},
+/obj/item/shard{
+	icon_state = "small"
+	},
+/obj/item/construction/plumbing,
+/obj/item/wrench,
+/obj/effect/turf_decal/stripes/line{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/white,
 /area/whitesands/surface/outdoors/unexplored)
 "fG" = (
 /obj/item/shard{
@@ -349,27 +405,10 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/whitesands/surface/outdoors/unexplored)
-"jM" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible{
-	dir = 8
-	},
-/turf/closed/wall,
-/area/whitesands/surface/outdoors/unexplored)
 "kk" = (
 /obj/effect/spawner/structure/window,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 6
-	},
-/turf/open/floor/plating,
-/area/whitesands/surface/outdoors/unexplored)
-"ko" = (
-/obj/structure/table_frame,
-/obj/item/shard{
-	icon_state = "tiny"
-	},
-/obj/item/shard,
-/obj/item/shard{
-	icon_state = "medium"
 	},
 /turf/open/floor/plating,
 /area/whitesands/surface/outdoors/unexplored)
@@ -442,17 +481,13 @@
 	icon_state = "platingdmg3"
 	},
 /area/whitesands/surface/outdoors/unexplored)
-"mm" = (
+"mK" = (
+/obj/structure/table_frame,
 /obj/item/shard{
 	icon_state = "tiny"
 	},
 /obj/item/shard,
-/obj/item/shard{
-	icon_state = "medium"
-	},
-/turf/open/floor/plating{
-	icon_state = "platingdmg3"
-	},
+/turf/open/floor/plating,
 /area/whitesands/surface/outdoors/unexplored)
 "np" = (
 /obj/effect/turf_decal/stripes/line,
@@ -756,25 +791,6 @@
 	},
 /turf/open/floor/plating,
 /area/whitesands/surface/outdoors/unexplored)
-"vv" = (
-/obj/structure/table_frame,
-/obj/item/shard{
-	icon_state = "tiny"
-	},
-/obj/item/shard{
-	icon_state = "medium"
-	},
-/obj/item/shard,
-/obj/item/reagent_containers/glass/beaker/large{
-	pixel_x = 3;
-	pixel_y = -3
-	},
-/obj/item/reagent_containers/glass/beaker/large,
-/obj/effect/turf_decal/stripes/line{
-	dir = 8
-	},
-/turf/open/floor/plasteel/white,
-/area/whitesands/surface/outdoors/unexplored)
 "vB" = (
 /obj/structure/chair{
 	dir = 1
@@ -885,22 +901,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/dark,
 /area/whitesands/surface/outdoors/unexplored)
-"yv" = (
-/obj/structure/table_frame,
-/obj/item/shard{
-	icon_state = "tiny"
-	},
-/obj/item/shard{
-	icon_state = "medium"
-	},
-/obj/item/shard{
-	icon_state = "small"
-	},
-/obj/effect/turf_decal/stripes/line{
-	dir = 8
-	},
-/turf/open/floor/plasteel/white,
-/area/whitesands/surface/outdoors/unexplored)
 "yx" = (
 /obj/effect/turf_decal/tile/neutral{
 	dir = 1
@@ -937,6 +937,21 @@
 	},
 /turf/open/floor/plasteel,
 /area/whitesands/surface/outdoors/unexplored)
+"Ah" = (
+/obj/item/shard{
+	icon_state = "tiny"
+	},
+/obj/item/shard{
+	icon_state = "medium"
+	},
+/obj/machinery/reagentgrinder,
+/obj/effect/turf_decal/stripes/line{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/table_frame,
+/turf/open/floor/plasteel/white,
+/area/whitesands/surface/outdoors/unexplored)
 "AK" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
 	dir = 9
@@ -970,23 +985,6 @@
 	},
 /turf/open/floor/plating,
 /area/whitesands/surface/outdoors/unexplored)
-"BC" = (
-/obj/item/shard{
-	icon_state = "tiny"
-	},
-/obj/item/shard{
-	icon_state = "medium"
-	},
-/obj/item/shard{
-	icon_state = "small"
-	},
-/obj/machinery/reagentgrinder,
-/obj/effect/turf_decal/stripes/line{
-	dir = 4
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/white,
-/area/whitesands/surface/outdoors/unexplored)
 "BH" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating{
@@ -1003,14 +1001,6 @@
 /obj/structure/rack,
 /obj/effect/turf_decal/box,
 /turf/open/floor/engine,
-/area/whitesands/surface/outdoors/unexplored)
-"CI" = (
-/obj/structure/cable,
-/obj/machinery/power/port_gen/pacman/super,
-/obj/machinery/atmospherics/pipe/layer_manifold{
-	dir = 8
-	},
-/turf/open/floor/plating,
 /area/whitesands/surface/outdoors/unexplored)
 "Db" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on{
@@ -1055,20 +1045,11 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /turf/open/floor/plasteel/dark,
 /area/whitesands/surface/outdoors/unexplored)
-"EG" = (
-/obj/item/shard{
-	icon_state = "tiny"
+"EO" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible{
+	dir = 8
 	},
-/obj/item/shard{
-	icon_state = "small"
-	},
-/obj/item/shard,
-/obj/item/construction/plumbing,
-/obj/item/wrench,
-/obj/effect/turf_decal/stripes/line{
-	dir = 4
-	},
-/turf/open/floor/plasteel/white,
+/turf/closed/wall,
 /area/whitesands/surface/outdoors/unexplored)
 "Fd" = (
 /turf/open/floor/engine,
@@ -1107,6 +1088,22 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 8
 	},
+/turf/open/floor/plasteel/white,
+/area/whitesands/surface/outdoors/unexplored)
+"GG" = (
+/obj/item/shard{
+	icon_state = "tiny"
+	},
+/obj/item/shard{
+	icon_state = "small"
+	},
+/obj/item/shard,
+/obj/item/construction/plumbing,
+/obj/item/wrench,
+/obj/effect/turf_decal/stripes/line{
+	dir = 4
+	},
+/obj/structure/table_frame,
 /turf/open/floor/plasteel/white,
 /area/whitesands/surface/outdoors/unexplored)
 "GJ" = (
@@ -1157,6 +1154,13 @@
 "Jq" = (
 /obj/effect/turf_decal/loading_area,
 /turf/open/floor/engine,
+/area/whitesands/surface/outdoors/unexplored)
+"JJ" = (
+/obj/structure/cable,
+/obj/machinery/atmospherics/pipe/layer_manifold{
+	dir = 8
+	},
+/turf/open/floor/plating,
 /area/whitesands/surface/outdoors/unexplored)
 "Ko" = (
 /obj/structure/sign/poster/official/random{
@@ -1230,23 +1234,6 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
-/area/whitesands/surface/outdoors/unexplored)
-"LB" = (
-/obj/structure/table_frame,
-/obj/item/shard{
-	icon_state = "tiny"
-	},
-/obj/item/shard,
-/obj/item/shard{
-	icon_state = "small"
-	},
-/obj/item/construction/plumbing,
-/obj/item/wrench,
-/obj/effect/turf_decal/stripes/line{
-	dir = 8
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/white,
 /area/whitesands/surface/outdoors/unexplored)
 "LF" = (
 /obj/effect/decal/cleanable/dirt,
@@ -1372,6 +1359,16 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/whitesands/surface/outdoors/unexplored)
+"PM" = (
+/obj/item/shard{
+	icon_state = "tiny"
+	},
+/obj/item/shard,
+/obj/structure/table_frame,
+/turf/open/floor/plating{
+	icon_state = "platingdmg3"
+	},
+/area/whitesands/surface/outdoors/unexplored)
 "Qa" = (
 /obj/item/shard{
 	icon_state = "tiny"
@@ -1424,14 +1421,6 @@
 /obj/machinery/door/airlock/vault/derelict,
 /obj/structure/cable,
 /turf/open/floor/engine,
-/area/whitesands/surface/outdoors/unexplored)
-"Ra" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden{
-	dir = 8
-	},
-/obj/item/circuitboard/computer/solar_control,
-/obj/item/stack/cable_coil/cyan,
-/turf/open/floor/plating,
 /area/whitesands/surface/outdoors/unexplored)
 "Rs" = (
 /obj/effect/turf_decal/stripes/line{
@@ -1519,20 +1508,6 @@
 /obj/effect/turf_decal/stripes/line,
 /turf/open/floor/plasteel/white,
 /area/whitesands/surface/outdoors/unexplored)
-"Tw" = (
-/obj/structure/table_frame,
-/obj/item/shard{
-	icon_state = "tiny"
-	},
-/obj/item/shard{
-	icon_state = "small"
-	},
-/obj/item/shard,
-/obj/effect/turf_decal/stripes/line{
-	dir = 8
-	},
-/turf/open/floor/plasteel/white,
-/area/whitesands/surface/outdoors/unexplored)
 "Ub" = (
 /obj/effect/turf_decal/tile/neutral{
 	dir = 1
@@ -1586,6 +1561,38 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel,
+/area/whitesands/surface/outdoors/unexplored)
+"Ve" = (
+/obj/structure/table_frame,
+/obj/item/shard{
+	icon_state = "tiny"
+	},
+/obj/item/shard{
+	icon_state = "medium"
+	},
+/obj/effect/turf_decal/stripes/line{
+	dir = 8
+	},
+/turf/open/floor/plasteel/white,
+/area/whitesands/surface/outdoors/unexplored)
+"Vv" = (
+/obj/item/shard{
+	icon_state = "tiny"
+	},
+/obj/item/shard,
+/obj/item/shard{
+	icon_state = "small"
+	},
+/obj/item/reagent_containers/glass/beaker/large,
+/obj/item/reagent_containers/glass/beaker/large{
+	pixel_x = 3;
+	pixel_y = -3
+	},
+/obj/effect/turf_decal/stripes/line{
+	dir = 4
+	},
+/obj/structure/table_frame,
+/turf/open/floor/plasteel/white,
 /area/whitesands/surface/outdoors/unexplored)
 "Wa" = (
 /obj/effect/decal/cleanable/dirt,
@@ -1656,24 +1663,6 @@
 /obj/effect/turf_decal/tile/neutral,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/dark,
-/area/whitesands/surface/outdoors/unexplored)
-"YC" = (
-/obj/item/shard{
-	icon_state = "tiny"
-	},
-/obj/item/shard,
-/obj/item/shard{
-	icon_state = "small"
-	},
-/obj/item/reagent_containers/glass/beaker/large,
-/obj/item/reagent_containers/glass/beaker/large{
-	pixel_x = 3;
-	pixel_y = -3
-	},
-/obj/effect/turf_decal/stripes/line{
-	dir = 4
-	},
-/turf/open/floor/plasteel/white,
 /area/whitesands/surface/outdoors/unexplored)
 "YH" = (
 /obj/effect/spawner/structure/window,
@@ -1809,7 +1798,7 @@ Jb
 Go
 Go
 Jb
-jM
+EO
 Go
 Jb
 Jb
@@ -1840,15 +1829,15 @@ Jb
 WQ
 pS
 oD
-CI
+JJ
 Jb
 ja
-LB
-vv
+fB
+fl
 nz
-yv
-ko
-Tw
+Ve
+mK
+fg
 Gz
 sO
 iq
@@ -1868,7 +1857,7 @@ Mb
 Mb
 Mb
 Go
-Ra
+dR
 UH
 sG
 oq
@@ -2432,10 +2421,10 @@ Mb
 Mb
 Jb
 OJ
-EG
-YC
-BC
-mm
+GG
+Vv
+Ah
+PM
 hX
 zQ
 UH
