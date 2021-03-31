@@ -599,3 +599,19 @@
 			return FALSE
 
 	return TRUE
+
+/proc/list_keys(list/l)
+	if(!islist(l))
+		return list()
+	var/ret = list()
+	for(var/key in l)
+		ret += key
+	return ret
+
+/proc/list_values(list/l)
+	if(!islist(l))
+		return list()
+	var/ret = list()
+	for(var/key in l)
+		ret += l[key]
+	return ret

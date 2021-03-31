@@ -201,7 +201,7 @@
 
 /obj/structure/overmap/level/main //there should only be ONE of these in a given game.
 	name = "Space Station 13"
-	desc = "Nanotrasen's top-secret plasma research and extraction facility. Most likely the reason you're here."
+	desc = "SolGov and Nanotrasen's joint colonial expedition home base, orbiting White Sands. Most likely the reason you're here."
 	icon_state = "station"
 	id = MAIN_OVERMAP_OBJECT_ID
 	sensor_range = 6
@@ -215,6 +215,7 @@
 		return INITIALIZE_HINT_QDEL
 	else
 		SSovermap.main = src
+		name = GLOB.station_name
 	..()
 
 /obj/structure/overmap/level/mining
@@ -329,3 +330,13 @@
 		forceMove(SSovermap.get_unused_overmap_square())
 		choose_level_type()
 		QDEL_NULL(reserve)
+
+/obj/structure/overmap/star
+	name = "Kepler 453"
+	desc = "The binary star Kepler 453, home to the planet White Sands"
+	icon = 'whitesands/icons/effects/overmap_large.dmi'
+	icon_state = "kepler_453"
+	opacity = 1
+	density = 1
+	pixel_x = -32
+	pixel_y = -32
