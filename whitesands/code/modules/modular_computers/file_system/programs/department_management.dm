@@ -2,7 +2,7 @@
 	filename = "dept_manage"
 	filedesc = "Departmental Finances Manager"
 	program_icon_state = "id"
-	program_icon = "money"
+	program_icon = "money-check-alt"
 	extended_desc = "This program allows management of a department's finances, such as changing paychecks."
 	transfer_access = ACCESS_HEADS
 	required_access = ACCESS_HEADS

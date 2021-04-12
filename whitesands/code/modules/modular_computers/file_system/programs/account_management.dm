@@ -2,7 +2,7 @@
 	filename = "acct_manage"
 	filedesc = "Bank Account Manager"
 	program_icon_state = "id"
-	program_icon = "bank"
+	program_icon = "university"
 	extended_desc = "This program allows the review and control of all the station's active bank accounts."
 	transfer_access = ACCESS_VAULT
 	required_access = ACCESS_VAULT
