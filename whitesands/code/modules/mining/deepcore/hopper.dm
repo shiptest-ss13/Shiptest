@@ -30,16 +30,16 @@
 	if(active)
 		active = FALSE
 		use_power = 1 //Use idle power
-		to_chat(user, "<span class='notice'>You deactiveate [src]</span>")
+		to_chat(user, "<span class='notice'>You deactivate \the [src]</span>")
 	else
 		if(!network)
-			to_chat(user, "<span class='warning'>Unable to activate [src]! No ore located for processing.</span>")
+			to_chat(user, "<span class='warning'>Unable to activate \the [src]! No ore located for processing.</span>")
 		else if(!powered(power_channel))
-			to_chat(user, "<span class='warning'>Unable to activate [src]! Insufficient power.</span>")
+			to_chat(user, "<span class='warning'>Unable to activate \the [src]! Insufficient power.</span>")
 		else
 			active = TRUE
 			use_power = 2 //Use active power
-			to_chat(user, "<span class='notice'>You activeate \the [src]</span>")
+			to_chat(user, "<span class='notice'>You activate \the [src]</span>")
 	update_icon_state()
 
 /obj/machinery/deepcore/hopper/process()
