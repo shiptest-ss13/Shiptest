@@ -627,8 +627,3 @@
 		SEND_SIGNAL(quirk_holder, COMSIG_ADD_MOOD_EVENT, "bad_touch", /datum/mood_event/very_bad_touch)
 	else
 		SEND_SIGNAL(quirk_holder, COMSIG_ADD_MOOD_EVENT, "bad_touch", /datum/mood_event/bad_touch)
-
-#undef LOCATION_LPOCKET
-#undef LOCATION_RPOCKET
-#undef LOCATION_BACKPACK
-#undef LOCATION_HANDS

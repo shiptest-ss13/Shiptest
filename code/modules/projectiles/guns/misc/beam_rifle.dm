@@ -461,7 +461,7 @@
 	if(isobj(A) && (structure_pierce < structure_pierce_amount))
 		++structure_pierce
 		var/obj/O = A
-		O.take_damage((impact_structure_damage + aoe_structure_damage) * structure_bleed_coeff * get_damage_coeff(A), BURN, ENERGY, FALSE)
+		O.take_damage((impact_structure_damage + aoe_structure_damage) * structure_bleed_coeff * get_damage_coeff(A), BURN, "energy", FALSE)
 		return PROJECTILE_PIERCE_PHASE			// ditto and this could be refactored to on_hit honestly
 	return ..()
 
