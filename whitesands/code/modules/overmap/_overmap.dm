@@ -280,11 +280,15 @@
 	mass = 85000000
 
 /obj/structure/overmap/star
-	name = "Kepler 453"
-	desc = "The binary star Kepler 453, home to the planet White Sands"
+	name = "Star"
+	desc = "A star."
 	icon = 'whitesands/icons/effects/overmap_large.dmi'
 	icon_state = "kepler_453"
 	opacity = 1
 	density = 1
 	pixel_x = -32
 	pixel_y = -32
+
+/obj/structure/overmap/star/Initialize(mapload, _id)
+	. = ..()
+	name = pick(GLOB.greek_letters) + " \Roman[rand(1,99)]"

@@ -13,44 +13,8 @@ Format:
 	votable (is this map votable)
 endmap
 
-map boxstation
-	#default
-	#voteweight 1.5
-	votable
-endmap
-
-map midwaystation
-	#voteweight 1.5
-	votable
-endmap
-
-map metastation
-	minplayers 25
-	#voteweight 0.5
-	votable
-endmap
-
-map pubbystation
-	votable
-endmap
-
-map deltastation
-	minplayers 50
-	votable
-endmap
-
-map kilostation
-	minplayers 25
-	votable
-endmap
-
-map galaxystation
-	maxplayers 25
-	votable
-endmap
-
-map packedstation
-	maxplayers 30
+map salvage
+	default
 	votable
 endmap
 

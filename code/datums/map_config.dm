@@ -9,7 +9,7 @@ GLOBAL_VAR_INIT(next_mining_map, "random")
 
 /datum/map_config
 	// Metadata
-	var/config_filename = "_maps/boxstation.json"
+	var/config_filename = "_maps/salvage.json"
 	var/defaulted = TRUE  // set to FALSE by LoadConfig() succeeding
 	// Config from maps.txt
 	var/config_max_users = 0
@@ -18,9 +18,9 @@ GLOBAL_VAR_INIT(next_mining_map, "random")
 	var/votable = FALSE
 
 	// Config actually from the JSON - should default to Box
-	var/map_name = "Box Station"
-	var/map_path = "map_files/BoxStation"
-	var/map_file = "BoxStation.dmm"
+	var/map_name = "Salvage Expedition"
+	var/map_path = "map_files/Salvage"
+	var/map_file = "Salvage.dmm"
 
 	var/traits = null
 	var/space_ruin_levels = 7
