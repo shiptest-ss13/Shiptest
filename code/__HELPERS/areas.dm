@@ -110,4 +110,4 @@ GLOBAL_LIST_INIT(typecache_powerfailure_safe_areas, typecacheof(/area/engine/eng
 	to_chat(creator, "<span class='notice'>You have created a new area, named [newA.name]. It is now weather proof, and constructing an APC will allow it to be powered.</span>")
 	return TRUE
 
-#undef BP_MAX_ROOM_SIZE
+//#undef BP_MAX_ROOM_SIZE
