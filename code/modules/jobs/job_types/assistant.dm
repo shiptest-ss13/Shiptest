@@ -28,6 +28,7 @@ Assistant
 /datum/outfit/job/assistant
 	name = "Assistant"
 	jobtype = /datum/job/assistant
+	r_pocket = /obj/item/radio
 
 /datum/outfit/job/assistant/pre_equip(mob/living/carbon/human/H)
 	..()
@@ -54,21 +55,24 @@ Assistant
 			else
 				uniform = /obj/item/clothing/under/color/grey
 
-/datum/outfit/job/assistant/businessman
-	name = "Assistant (Businessman)"
-	uniform = /obj/item/clothing/under/suit/black_really
-	l_hand = /obj/item/storage/briefcase
-
-/datum/outfit/job/assistant/visitor
-	name = "Assistant (Visitor)"
-	uniform = /obj/item/clothing/under/misc/assistantformal
-	neck = /obj/item/camera
-
-/datum/outfit/job/assistant/trader
-	name = "Assistant (Trader)"
-	r_pocket = /obj/item/coin/gold
-	backpack_contents = list(/obj/item/export_scanner=1)
-
 /datum/outfit/job/assistant/entertainer
 	name = "Assistant (Entertainer)"
 	r_hand = /obj/item/bikehorn //comedy
+
+/datum/outfit/job/assistant/engineeringspecialist
+	name = "Assistant (Engineering Specialist)"
+	accessory = /obj/item/clothing/accessory/armband/engine
+
+/datum/outfit/job/assistant/medicalspecialist
+	name = "Assistant (Medical Specialist)"
+	uniform = /obj/item/clothing/under/color/white
+	accessory = /obj/item/clothing/accessory/armband/med
+
+/datum/outfit/job/assistant/sciencespecialist
+	name = "Assistant (Science Specialist)"
+	uniform = /obj/item/clothing/under/color/white
+	accessory = /obj/item/clothing/accessory/armband/science
+
+/datum/outfit/job/assistant/engineeringspecialist
+	name = "Assistant (Deckhand)"
+	accessory = /obj/item/clothing/accessory/armband/cargo
