@@ -9,6 +9,16 @@
 	},
 /turf/open/floor/plating,
 /area/shuttle/mining/ship/cargo)
+"ah" = (
+/obj/effect/turf_decal/tile/brown,
+/obj/effect/turf_decal/tile/brown{
+	dir = 8
+	},
+/obj/machinery/firealarm{
+	pixel_y = -28
+	},
+/turf/open/floor/plasteel,
+/area/shuttle/mining/ship/cargo)
 "aq" = (
 /obj/machinery/door/poddoor/preopen{
 	id = "mining_ship_blast"
@@ -1330,6 +1340,9 @@
 	dir = 9
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/firealarm{
+	pixel_y = -28
+	},
 /turf/open/floor/plating,
 /area/shuttle/mining/ship/engine)
 "HV" = (
@@ -1665,6 +1678,9 @@
 	},
 /obj/effect/turf_decal/stripes/corner{
 	dir = 8
+	},
+/obj/machinery/firealarm{
+	pixel_y = -28
 	},
 /turf/open/floor/plasteel,
 /area/shuttle/mining/ship/crew)
@@ -2327,7 +2343,7 @@ UI
 FP
 tU
 oB
-tg
+ah
 DB
 lP
 Ke

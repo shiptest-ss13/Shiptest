@@ -39,14 +39,9 @@
 
 	id = /obj/item/card/id/gold
 	belt = /obj/item/pda/captain
-	glasses = /obj/item/clothing/glasses/sunglasses
-	ears = /obj/item/radio/headset/heads/captain/alt
 	gloves = /obj/item/clothing/gloves/color/captain
 	uniform =  /obj/item/clothing/under/rank/command/captain
 	alt_uniform = /obj/item/clothing/under/rank/command/captain/parade //WS Edit - Alt Uniforms
-	dcoat = /obj/item/clothing/under/rank/command/captain/suit //WS Edit - Alt Uniforms
-	suit = /obj/item/clothing/suit/armor/vest/capcarapace
-	alt_suit = /obj/item/clothing/suit/armor/vest/capcarapace/alt
 	dcoat = /obj/item/clothing/suit/hooded/wintercoat/captain //WS Edit - Alt Uniforms
 	shoes = /obj/item/clothing/shoes/sneakers/brown
 	head = /obj/item/clothing/head/caphat
@@ -57,7 +52,6 @@
 	duffelbag = /obj/item/storage/backpack/duffelbag/captain
 	courierbag = /obj/item/storage/backpack/messenger/com
 
-	implants = list(/obj/item/implant/mindshield)
 	accessory = /obj/item/clothing/accessory/medal/gold/captain
 
 	chameleon_extras = list(/obj/item/gun/energy/e_gun, /obj/item/stamp/captain)
