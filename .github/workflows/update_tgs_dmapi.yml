@@ -27,8 +27,8 @@ jobs:
 
     - name: Commit and Push
       run: |
-        git config user.name Whitesands-Bot
-        git config user.email 60119942+Whitesands-Bot@users.noreply.github.com
+        git config user.name github-actions
+        git config user.email action@github.com
         git add .
         git commit -m 'Update TGS DMAPI'
         git push -f -u origin tgs-dmapi-update
