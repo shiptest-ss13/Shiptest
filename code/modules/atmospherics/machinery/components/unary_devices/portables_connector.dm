@@ -44,6 +44,10 @@
 		to_chat(user, "<span class='warning'>You cannot unwrench [src], detach [connected_device] first!</span>")
 		return FALSE
 
+/obj/machinery/atmospherics/components/unary/portables_connector/layer1
+	piping_layer = 1
+	icon_state = "connector_map-1"
+
 /obj/machinery/atmospherics/components/unary/portables_connector/layer2
 	piping_layer = 2
 	icon_state = "connector_map-2"
@@ -55,9 +59,17 @@
 /obj/machinery/atmospherics/components/unary/portables_connector/visible
 	hide = FALSE
 
+/obj/machinery/atmospherics/components/unary/portables_connector/visible/layer1
+	piping_layer = 1
+	icon_state = "connector_map-2"
+
 /obj/machinery/atmospherics/components/unary/portables_connector/visible/layer2
 	piping_layer = 2
 	icon_state = "connector_map-2"
+
+/obj/machinery/atmospherics/components/unary/portables_connector/visible/layer3
+	piping_layer = 3
+	icon_state = "connector_map-3"
 
 /obj/machinery/atmospherics/components/unary/portables_connector/visible/layer4
 	piping_layer = 4

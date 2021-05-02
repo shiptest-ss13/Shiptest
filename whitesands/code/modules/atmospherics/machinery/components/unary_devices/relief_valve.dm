@@ -13,13 +13,6 @@
 
 /obj/machinery/atmospherics/components/unary/relief_valve/layer1
 	piping_layer = PIPING_LAYER_MIN
-	pixel_x = -PIPING_LAYER_P_X
-	pixel_y = -PIPING_LAYER_P_Y
-
-/obj/machinery/atmospherics/components/unary/relief_valve/layer3
-	piping_layer = PIPING_LAYER_MAX
-	pixel_x = PIPING_LAYER_P_X
-	pixel_y = PIPING_LAYER_P_Y
 
 /obj/machinery/atmospherics/components/unary/relief_valve/atmos
 	close_pressure = ONE_ATMOSPHERE * 2

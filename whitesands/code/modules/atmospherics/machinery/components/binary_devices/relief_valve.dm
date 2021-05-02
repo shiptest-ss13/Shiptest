@@ -13,14 +13,10 @@
 	shift_underlay_only = FALSE
 
 /obj/machinery/atmospherics/components/binary/relief_valve/layer1
-	piping_layer = PIPING_LAYER_MIN
-	pixel_x = -PIPING_LAYER_P_X
-	pixel_y = -PIPING_LAYER_P_Y
+	piping_layer = 1
 
-/obj/machinery/atmospherics/components/binary/relief_valve/layer3
-	piping_layer = PIPING_LAYER_MAX
-	pixel_x = PIPING_LAYER_P_X
-	pixel_y = PIPING_LAYER_P_Y
+/obj/machinery/atmospherics/components/binary/relief_valve/layer5
+	piping_layer = 5
 
 /obj/machinery/atmospherics/components/binary/relief_valve/update_icon_nopipes()
 	if(dir==SOUTH)

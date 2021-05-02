@@ -312,6 +312,10 @@
 
 // mapping
 
+/obj/machinery/atmospherics/components/unary/vent_pump/layer1
+	piping_layer = 1
+	icon_state = "vent_map-1"
+
 /obj/machinery/atmospherics/components/unary/vent_pump/layer2
 	piping_layer = 2
 	icon_state = "vent_map-2"
@@ -323,6 +327,10 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on
 	on = TRUE
 	icon_state = "vent_map_on-3"
+
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer1
+	piping_layer = 1
+	icon_state = "vent_map_on-1"
 
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2
 	piping_layer = 2
@@ -349,6 +357,10 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/siphon/on
 	on = TRUE
 	icon_state = "vent_map_siphon_on-3"
+
+/obj/machinery/atmospherics/components/unary/vent_pump/siphon/on/layer1
+	piping_layer = 1
+	icon_state = "vent_map_siphon_on-1"
 
 /obj/machinery/atmospherics/components/unary/vent_pump/siphon/on/layer2
 	piping_layer = 2

@@ -293,6 +293,9 @@
 	pipe_vision_img.plane = ABOVE_HUD_PLANE
 	playsound(loc, 'sound/weapons/bladeslice.ogg', 100, TRUE)
 
+/obj/machinery/atmospherics/components/unary/vent_scrubber/layer1
+	piping_layer = 1
+	icon_state = "scrub_map-1"
 
 /obj/machinery/atmospherics/components/unary/vent_scrubber/layer2
 	piping_layer = 2
@@ -306,6 +309,10 @@
 	on = TRUE
 	icon_state = "scrub_map_on-3"
 
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer1
+	piping_layer = 1
+	icon_state = "scrub_map_on-1"
+
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2
 	piping_layer = 2
 	icon_state = "scrub_map_on-2"
@@ -315,9 +322,6 @@
 	icon_state = "scrub_map_on-4"
 
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/lavaland
-	filter_types = list(/datum/gas/carbon_dioxide, /datum/gas/plasma, /datum/gas/water_vapor, /datum/gas/bz)
-
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer3/lavaland
 	filter_types = list(/datum/gas/carbon_dioxide, /datum/gas/plasma, /datum/gas/water_vapor, /datum/gas/bz)
 
 #undef SIPHONING

@@ -37,6 +37,10 @@
 
 	update_layer()
 
+/obj/machinery/atmospherics/pipe/heat_exchanging/manifold4w/layer1
+	piping_layer = 1
+	icon_state = "manifold4w-1"
+
 /obj/machinery/atmospherics/pipe/heat_exchanging/manifold4w/layer2
 	piping_layer = 2
 	icon_state = "manifold4w-2"

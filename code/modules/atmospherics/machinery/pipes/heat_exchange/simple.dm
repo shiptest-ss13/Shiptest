@@ -28,6 +28,10 @@
 	icon_state = "pipe[nodes[1] ? "1" : "0"][nodes[2] ? "1" : "0"]-[piping_layer]"
 	update_layer()
 
+/obj/machinery/atmospherics/pipe/heat_exchanging/simple/layer1
+	piping_layer = 1
+	icon_state = "pipe11-1"
+
 /obj/machinery/atmospherics/pipe/heat_exchanging/simple/layer2
 	piping_layer = 2
 	icon_state = "pipe11-2"

@@ -37,7 +37,7 @@
 	else	// Adds/removes a random amount of job slots from all jobs.
 		for(var/job in jobs)
 			var/datum/job/current = job
-			if(!current.allow_bureaucratic_error || current.title in blacklisted || current.title == SSjob.overflow_role)
+			if(!current.allow_bureaucratic_error || (current.title in blacklisted) || current.title == SSjob.overflow_role)
 				continue
 			var/ran = rand(-2,4)
 			current.total_positions = max(current.total_positions + ran, 0)

@@ -166,6 +166,10 @@
 	on = TRUE
 	icon_state = "pump_on_map-3"
 
+/obj/machinery/atmospherics/components/binary/pump/on/layer1
+	piping_layer = 1
+	icon_state = "pump_on_map-1"
+
 /obj/machinery/atmospherics/components/binary/pump/on/layer2
 	piping_layer = 2
 	icon_state= "pump_on_map-2"
