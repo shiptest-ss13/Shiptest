@@ -50,21 +50,17 @@ SUBSYSTEM_DEF(overmap)
 		generator_type = OVERMAP_GENERATOR_RANDOM
 
 	if (generator_type == OVERMAP_GENERATOR_SOLAR)
-		var/obj/structure/overmap/star/center = locate(/obj/structure/overmap/star)
-		if (!istype(center))
-			WARNING("No center tile found in overmap, falling back to default generation method.")
-			generator_type = OVERMAP_GENERATOR_RANDOM
-		else
-			var/list/unsorted_turfs = get_area_turfs(/area/overmap)
-			// SSovermap.size - 2 = area of the overmap w/o borders
-			for(var/i in 3 to (size - 2) / 2)
-				radius_tiles["[i]"] = list()
-				for(var/turf/T in unsorted_turfs)
-					var/dist =  round(sqrt((T.x - center.x) ** 2 + (T.y - center.y) ** 2))
-					if (dist == i)
-						radius_tiles["[i]"] += T
-				unsorted_turfs = unsorted_turfs - radius_tiles["[i]"]
-			radius_tiles["unsorted"] = unsorted_turfs.Copy()
+		var/obj/structure/overmap/star/center = new(locate(size / 2, size / 2, 1))
+		var/list/unsorted_turfs = get_area_turfs(/area/overmap)
+		// SSovermap.size - 2 = area of the overmap w/o borders
+		for(var/i in 3 to (size - 2) / 2)
+			radius_tiles["[i]"] = list()
+			for(var/turf/T in unsorted_turfs)
+				var/dist =  round(sqrt((T.x - center.x) ** 2 + (T.y - center.y) ** 2))
+				if (dist == i)
+					radius_tiles["[i]"] += T
+			unsorted_turfs = unsorted_turfs - radius_tiles["[i]"]
+		radius_tiles["unsorted"] = unsorted_turfs.Copy()
 
 	create_map()
 
@@ -103,7 +99,7 @@ SUBSYSTEM_DEF(overmap)
 /datum/controller/subsystem/overmap/proc/setup_shuttle_ship(obj/docking_port/mobile/shuttle)
 	var/docked_object = get_overmap_object_by_z(shuttle.z)
 	if(docked_object)
-		shuttle.current_ship = new (docked_object, shuttle.id, shuttle)
+		shuttle.current_ship = new /obj/structure/overmap/ship/simulated(docked_object, shuttle.id, shuttle)
 		if(shuttle.undock_roundstart)
 			shuttle.current_ship.undock()
 	else if(is_centcom_level(shuttle.z))
@@ -118,7 +114,7 @@ SUBSYSTEM_DEF(overmap)
 	if (generator_type == OVERMAP_GENERATOR_SOLAR)
 		spawn_events_in_orbits()
 		spawn_ruin_levels_in_orbits()
-		spawn_station()
+		spawn_station_in_orbit()
 	else
 		spawn_events()
 		spawn_ruin_levels()
@@ -186,6 +182,40 @@ SUBSYSTEM_DEF(overmap)
 	if(main)
 		qdel(main)
 	var/obj/structure/overmap/level/mining/mining_level = /obj/structure/overmap/level/mining/lavaland
+	switch(GLOB.current_mining_map)
+		if("lavaland")
+			mining_level = /obj/structure/overmap/level/mining/lavaland
+		if("icemoon")
+			mining_level = /obj/structure/overmap/level/mining/icemoon
+		if("whitesands")
+			mining_level = /obj/structure/overmap/level/mining/whitesands
+		if(null)
+			mining_level = null
+
+	var/obj/structure/overmap/level/main/station = new(get_unused_overmap_square(), null, SSmapping.levels_by_trait(ZTRAIT_STATION))
+	if(!mining_level)
+		return
+	for(var/dir in shuffle(GLOB.alldirs))
+		var/turf/possible_tile = get_step(station, dir)
+		if(!istype(get_area(possible_tile), /area/overmap))
+			continue
+		if(locate(/obj/structure/overmap/event) in possible_tile)
+			continue
+		new mining_level(possible_tile, null, SSmapping.levels_by_trait(ZTRAIT_MINING))
+		return
+	if(attempt <= MAX_OVERMAP_PLACEMENT_ATTEMPTS)
+		spawn_station(++attempt) //Try to spawn the whole thing again
+	else
+		new mining_level(get_unused_overmap_square(), null, SSmapping.levels_by_trait(ZTRAIT_MINING))
+
+/**
+  * Creates a station and lavaland overmap object randomly on the overmap.
+  * * attempt - Used for the failsafe respawning of the station. Don't set unless you want it to only try to spawn it once.
+  */
+/datum/controller/subsystem/overmap/proc/spawn_station_in_orbit(attempt = 1)
+	if(main)
+		qdel(main)
+	var/obj/structure/overmap/level/mining/mining_level = /obj/structure/overmap/level/mining/lavaland
 	var/radius = "3"
 	switch(GLOB.current_mining_map)
 		if("lavaland")
@@ -197,15 +227,17 @@ SUBSYSTEM_DEF(overmap)
 		if("whitesands")
 			mining_level = /obj/structure/overmap/level/mining/whitesands
 			radius = "5"
+		if(null)
+			mining_level = null
 
-	var/turf/T
-	if (generator_type == OVERMAP_GENERATOR_SOLAR)
-		T = get_unused_overmap_square_in_radius(radius)
-	else
-		T = get_unused_overmap_square()
-	var/obj/structure/overmap/level/mining/instance = new mining_level(T, null, SSmapping.levels_by_trait(ZTRAIT_MINING))
+	var/turf/T = get_unused_overmap_square_in_radius(radius)
+	if(!mining_level)
+		new /obj/structure/overmap/level/main(T, null, SSmapping.levels_by_trait(ZTRAIT_STATION))
+		return
+
+	new mining_level(T, null, SSmapping.levels_by_trait(ZTRAIT_MINING))
 	for(var/dir in shuffle(GLOB.alldirs))
-		var/turf/possible_tile = get_step(instance, dir)
+		var/turf/possible_tile = get_step(T, dir)
 		if(!istype(get_area(possible_tile), /area/overmap))
 			continue
 		if(locate(/obj/structure/overmap) in possible_tile)
@@ -215,11 +247,7 @@ SUBSYSTEM_DEF(overmap)
 	if(attempt <= MAX_OVERMAP_PLACEMENT_ATTEMPTS)
 		spawn_station(++attempt) //Try to spawn the whole thing again
 	else
-		if (generator_type == OVERMAP_GENERATOR_SOLAR)
-			T = get_unused_overmap_square_in_radius(radius)
-		else
-			T = get_unused_overmap_square()
-		new mining_level(T, null, SSmapping.levels_by_trait(ZTRAIT_MINING))
+		new mining_level(get_unused_overmap_square_in_radius(radius), null, SSmapping.levels_by_trait(ZTRAIT_MINING))
 
 /**
   * Creates an overmap object for each ruin level, making them accessible.
@@ -229,7 +257,8 @@ SUBSYSTEM_DEF(overmap)
 		if(ZTRAIT_SPACE_RUINS in L.traits)
 			var/obj/structure/overmap/level/ruin/new_level = new(get_unused_overmap_square(), null, L.z_value)
 			new_level.id = "z[L.z_value]"
-
+	for(var/i in 1 to CONFIG_GET(number/max_overmap_dynamic_events))
+		new /obj/structure/overmap/dynamic(get_unused_overmap_square())
 
 /datum/controller/subsystem/overmap/proc/spawn_ruin_levels_in_orbits()
 	var/list/orbits = list_keys(SSovermap.radius_tiles)
@@ -251,8 +280,9 @@ SUBSYSTEM_DEF(overmap)
   * * dock_id - The id of the stationary docking port that will be spawned in the encounter. The primary and secondary prefixes will be applied, so do not include them.
   * * size - Size of the encounter, defaults to 1/3 total world size
   * * visiting_shuttle - The shuttle that is going to go to the encounter. Allows ruins to scale.
+  * * ruin_type - The ruin to spawn. Don't pass this argument if you want it to randomly select based on planet type.
   */
-/datum/controller/subsystem/overmap/proc/spawn_dynamic_encounter(planet_type, ruin = TRUE, dock_id, size = world.maxx / 4, obj/docking_port/mobile/visiting_shuttle, ignore_cooldown = FALSE)
+/datum/controller/subsystem/overmap/proc/spawn_dynamic_encounter(planet_type, ruin = TRUE, dock_id, size = world.maxx / 4, obj/docking_port/mobile/visiting_shuttle, ignore_cooldown = FALSE, datum/map_template/ruin/ruin_type)
 	if(!ignore_cooldown && !COOLDOWN_FINISHED(SSovermap, encounter_cooldown))
 		return FALSE
 
@@ -268,7 +298,6 @@ SUBSYSTEM_DEF(overmap)
 		dock_size = max(visiting_shuttle.width, visiting_shuttle.height) + 3 //a little bit of wiggle room
 
 	var/list/ruin_list = SSmapping.space_ruins_templates
-	var/datum/map_template/ruin/ruin_type
 	var/datum/map_generator/mapgen
 	var/area/target_area
 	if(planet_type)
@@ -293,18 +322,20 @@ SUBSYSTEM_DEF(overmap)
 				ruin_list = null
 				mapgen = new /datum/map_generator/cave_generator/asteroid
 
-	if(ruin && ruin_list) //Done BEFORE the turfs are reserved so that it allocates the right size box
+	if(ruin && ruin_list && !ruin_type) //Done BEFORE the turfs are reserved so that it allocates the right size box
 		ruin_type = ruin_list[pick(ruin_list)]
 		if(ispath(ruin_type))
 			ruin_type = new ruin_type
+
+	if(ruin_type)
 		ruin_size = max(ruin_type.width, ruin_type.height) + 4
 
-	total_size = dock_size + ruin_size
+	total_size = max(dock_size + ruin_size, total_size)
 
 	var/datum/turf_reservation/encounter_reservation = SSmapping.RequestBlockReservation(total_size, total_size, border_turf_override = /turf/closed/indestructible/blank, area_override = target_area)
 	if(ruin_type) //Does AFTER the turfs are reserved so it can find where the allocation is
 		//gets a turf vaguely in the middle of the reserve
-		var/turf/ruin_turf = locate(encounter_reservation.bottom_left_coords[1] + dock_size + 2, encounter_reservation.bottom_left_coords[2] + dock_size, encounter_reservation.bottom_left_coords[3])
+		var/turf/ruin_turf = locate(encounter_reservation.top_right_coords[1] - (ruin_size + 2), encounter_reservation.top_right_coords[2] - (ruin_size + 2), encounter_reservation.top_right_coords[3])
 		ruin_type.load(ruin_turf)
 
 	if(mapgen) //Does AFTER the ruin is loaded so that it does not spawn flora/fauna in the ruin

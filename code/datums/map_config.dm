@@ -23,10 +23,10 @@ GLOBAL_VAR_INIT(next_mining_map, "random")
 	var/map_file = "Salvage.dmm"
 
 	var/traits = null
-	var/space_ruin_levels = 7
-	var/space_empty_levels = 1
+	var/space_ruin_levels = 0
+	var/space_empty_levels = 0
 
-	var/minetype = "random"
+	var/minetype
 
 	var/allow_custom_shuttles = TRUE
 	var/shuttles = list(

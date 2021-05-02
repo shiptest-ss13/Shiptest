@@ -284,8 +284,8 @@
 	desc = "A star."
 	icon = 'whitesands/icons/effects/overmap_large.dmi'
 	icon_state = "kepler_453"
-	opacity = 1
-	density = 1
+	bound_height = 64
+	bound_width = 64
 	pixel_x = -32
 	pixel_y = -32
 

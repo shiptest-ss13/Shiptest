@@ -308,8 +308,6 @@ SUBSYSTEM_DEF(mapping)
 	else if (!isnull(config.minetype))
 		INIT_ANNOUNCE("WARNING: An unknown minetype '[config.minetype]' was set! This is being ignored! Update the maploader code!")
 
-	// reset the mining map to random so if an admin sets the mining map it isn't stuck to that forever
-	GLOB.next_mining_map = "random"
 	var/datum/map_config/VM = load_map_config()
 	SSmapping.changemap(VM)
 #endif

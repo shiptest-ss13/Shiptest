@@ -10,8 +10,8 @@
 		SPAWN_MEGAFAUNA = 4, /mob/living/simple_animal/hostile/asteroid/goldgrub = 10)
 	flora_spawn_list = list(/obj/structure/flora/ash/space/voidmelon = 2)
 
-	initial_closed_chance = 70
-	smoothing_iterations = 20
+	initial_closed_chance = 60
+	smoothing_iterations = 50
 	birth_limit = 4
 	death_limit = 3
 
@@ -40,8 +40,6 @@
 	var/list/turfs_to_gen = list()
 	var/area/asteroid/asteroid_area = GLOB.areas_by_type[/area/asteroid] || new
 	for(var/turf/T as anything in turfs)
-		//var/dx = (T.x - midx)
-		//var/dy = (T.y - midy)
 		var/randradius = rand(radius - 2, radius + 2) * rand(radius - 2, radius + 2)
 		if((T.y - midy) ** 2 + (T.x - midx) ** 2 >= randradius)
 			continue

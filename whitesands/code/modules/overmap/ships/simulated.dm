@@ -85,7 +85,7 @@
 /obj/structure/overmap/ship/simulated/proc/overmap_object_act(mob/user, obj/structure/overmap/object)
 	if(!is_still())
 		return "Shuttle must be still!"
-	return object.ship_act(user, src)
+	return object?.ship_act(user, src)
 
 //This is the proc that is called when a different ship tries to dock with us.
 /obj/structure/overmap/ship/simulated/ship_act(mob/user, obj/structure/overmap/ship/simulated/acting)
@@ -298,6 +298,11 @@
 					deltimer(repair_timer)
 				addtimer(CALLBACK(src, /obj/structure/overmap/ship/.proc/tick_autopilot), 5 SECONDS) //TODO: Improve this SOMEHOW
 	update_screen()
+
+/obj/structure/overmap/ship/simulated/get_eta()
+	if(current_autopilot_target && !is_still())
+		. += shuttle.callTime
+	return ..()
 
 /**
   * Handles repairs. Called by a repeating timer that is created when the ship docks.

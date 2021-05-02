@@ -4,6 +4,8 @@
 	icon_state = "strange_event"
 	///The active turf reservation, if there is one
 	var/datum/turf_reservation/reserve
+	///The preset ruin template to load, if/when it is loaded.
+	var/datum/map_template/template
 	///The docking port in the reserve
 	var/obj/docking_port/stationary/reserve_dock
 	///The docking port in the reserve
@@ -13,11 +15,9 @@
 	///If the level is a planet.
 	var/planet = FALSE
 
-/obj/structure/overmap/dynamic/Initialize(mapload, _id, preload_level)
+/obj/structure/overmap/dynamic/Initialize(mapload, _id)
 	. = ..()
 	choose_level_type()
-	if(preload_level)
-		load_level()
 
 /obj/structure/overmap/dynamic/Destroy()
 	. = ..()
@@ -36,7 +36,7 @@
   * Chooses a type of level for the dynamic level to use.
   */
 /obj/structure/overmap/dynamic/proc/choose_level_type()
-	var/chosen = rand(0, 4)
+	var/chosen = rand(0, 6)
 	mass = rand(50, 100) * 1000000 //50 to 100 million tonnes
 	switch(chosen)
 		if(0)
@@ -70,6 +70,12 @@
 			planet = DYNAMIC_WORLD_SAND
 			icon_state = "globe"
 			color = COLOR_GRAY
+		if(5 to 6)
+			name = "large asteroid"
+			desc = "A large asteroid with significant traces of minerals."
+			planet = DYNAMIC_WORLD_ASTEROID
+			icon_state = "asteroid"
+			mass = rand(1, 1000) * 100
 	desc += !preserve_level && "It may not still be here if you leave it."
 
 /**
@@ -81,7 +87,7 @@
 		return
 	if(!COOLDOWN_FINISHED(SSovermap, encounter_cooldown))
 		return "WARNING! Stellar interference is restricting flight in this area. Interference should pass in [COOLDOWN_TIMELEFT(SSovermap, encounter_cooldown) / 10] seconds."
-	var/datum/turf_reservation/new_reserve = SSovermap.spawn_dynamic_encounter(planet, TRUE, id, visiting_shuttle = visiting_shuttle)
+	var/datum/turf_reservation/new_reserve = SSovermap.spawn_dynamic_encounter(planet, TRUE, id, visiting_shuttle = visiting_shuttle, ruin_type = template)
 	if(!new_reserve)
 		return "FATAL NAVIGATION ERROR, PLEASE TRY AGAIN LATER!"
 	reserve = new_reserve
