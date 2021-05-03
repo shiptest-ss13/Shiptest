@@ -1,7 +1,7 @@
 #define WELDER_FUEL_BURN_INTERVAL 13
 /obj/item/weldingtool
 	name = "welding tool"
-	desc = "A standard edition welder provided by Nanotrasen."
+	desc = "A standard welder, used for cutting through metal."
 	icon = 'whitesands/icons/obj/tools.dmi' //WS Edit - Better Tool Sprites
 	icon_state = "welder"
 	item_state = "welder"
@@ -38,11 +38,16 @@
 	var/burned_fuel_for = 0	//when fuel was last removed
 	var/acti_sound = 'sound/items/welderactivate.ogg'
 	var/deac_sound = 'sound/items/welderdeactivate.ogg'
+	var/start_full = TRUE
+
+/obj/item/weldingtool/empty
+	start_full = FALSE
 
 /obj/item/weldingtool/Initialize()
 	. = ..()
 	create_reagents(max_fuel)
-	reagents.add_reagent(/datum/reagent/fuel, max_fuel)
+	if(start_full)
+		reagents.add_reagent(/datum/reagent/fuel, max_fuel)
 	update_icon()
 
 /obj/item/weldingtool/ComponentInitialize()
@@ -303,15 +308,27 @@
 	else
 		return ""
 
+/obj/item/weldingtool/mini
+	name = "emergency welding tool"
+	desc = "A miniature welder used during emergencies."
+	icon_state = "miniwelder"
+	max_fuel = 10
+	w_class = WEIGHT_CLASS_TINY
+	custom_materials = list(/datum/material/iron=30, /datum/material/glass=10)
+	change_icons = 0
+
+/obj/item/weldingtool/mini/empty
+	start_full = FALSE
+
 /obj/item/weldingtool/largetank
 	name = "industrial welding tool"
 	desc = "A slightly larger welder with a larger tank."
 	icon_state = "indwelder"
 	max_fuel = 40
-	custom_materials = list(/datum/material/glass=60)
+	custom_materials = list(/datum/material/iron = 70, /datum/material/glass=60)
 
-/obj/item/weldingtool/largetank/flamethrower_screwdriver()
-	return
+/obj/item/weldingtool/largetank/empty
+	start_full = FALSE
 
 /obj/item/weldingtool/largetank/cyborg
 	name = "integrated welding tool"
@@ -324,19 +341,6 @@
 	if(!isOn())
 		return
 	switched_on(user)
-
-
-/obj/item/weldingtool/mini
-	name = "emergency welding tool"
-	desc = "A miniature welder used during emergencies."
-	icon_state = "miniwelder"
-	max_fuel = 10
-	w_class = WEIGHT_CLASS_TINY
-	custom_materials = list(/datum/material/iron=30, /datum/material/glass=10)
-	change_icons = 0
-
-/obj/item/weldingtool/mini/flamethrower_screwdriver()
-	return
 
 /obj/item/weldingtool/abductor
 	name = "alien welding tool"
@@ -360,6 +364,9 @@
 	item_state = "upindwelder"
 	max_fuel = 80
 	custom_materials = list(/datum/material/iron=70, /datum/material/glass=120)
+
+/obj/item/weldingtool/hugetank/empty
+	start_full = FALSE
 
 /obj/item/weldingtool/experimental
 	name = "experimental welding tool"

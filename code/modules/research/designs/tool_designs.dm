@@ -3,6 +3,15 @@
 /////////////////Tools///////////////////
 /////////////////////////////////////////
 
+/datum/design/large_welding_tool
+	name = "Industrial Welding Tool"
+	id = "large_welding_tool"
+	build_type = PROTOLATHE
+	materials = list(/datum/material/iron = 70, /datum/material/glass = 60)
+	build_path = /obj/item/weldingtool/largetank/empty
+	category = list("initial", "Tool Designs")
+	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE | DEPARTMENTAL_FLAG_ENGINEERING
+
 /datum/design/handdrill
 	name = "Hand Drill"
 	desc = "A small electric hand drill with an interchangeable screwdriver and bolt bit"

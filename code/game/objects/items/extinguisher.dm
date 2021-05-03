@@ -25,6 +25,10 @@
 	var/power = 5 //Maximum distance launched water will travel
 	var/precision = FALSE //By default, turfs picked from a spray are random, set to 1 to make it always have at least one water effect per row
 	var/cooling_power = 2 //Sets the cooling_temperature of the water reagent datum inside of the extinguisher when it is refilled
+	var/start_full = TRUE
+
+/obj/item/extinguisher/empty
+	start_full = FALSE
 
 /obj/item/extinguisher/mini
 	name = "pocket fire extinguisher"
@@ -41,15 +45,19 @@
 	sprite_name = "miniFE"
 	dog_fashion = null
 
+/obj/item/extinguisher/mini/empty
+	start_full = FALSE
+
 /obj/item/extinguisher/proc/refill()
-	if(!chem)
-		return
 	create_reagents(max_water, AMOUNT_VISIBLE)
 	reagents.add_reagent(chem, max_water)
 
 /obj/item/extinguisher/Initialize()
 	. = ..()
-	refill()
+	if(start_full)
+		refill()
+	else
+		create_reagents(max_water, AMOUNT_VISIBLE)
 
 /obj/item/extinguisher/advanced
 	name = "advanced fire extinguisher"

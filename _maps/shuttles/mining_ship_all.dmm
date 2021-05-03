@@ -104,7 +104,7 @@
 /turf/open/floor/plating,
 /area/shuttle/mining/ship/cargo)
 "ci" = (
-/obj/machinery/autolathe/hacked,
+/obj/machinery/autolathe,
 /obj/effect/turf_decal/delivery,
 /turf/open/floor/plasteel,
 /area/shuttle/mining/ship/cargo)
@@ -1875,6 +1875,9 @@
 /obj/structure/cable,
 /obj/item/clothing/gloves/color/yellow,
 /obj/item/clothing/gloves/color/yellow,
+/obj/item/reagent_containers/glass/beaker{
+	list_reagents = list(/datum/reagent/fuel = 50)
+	},
 /turf/open/floor/plating,
 /area/shuttle/mining/ship/engine)
 "Ue" = (

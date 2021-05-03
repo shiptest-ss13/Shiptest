@@ -51,7 +51,7 @@
 	id = "extinguisher"
 	build_type = AUTOLATHE
 	materials = list(/datum/material/iron = 90)
-	build_path = /obj/item/extinguisher
+	build_path = /obj/item/extinguisher/empty
 	category = list("initial","Tools")
 
 /datum/design/pocketfireextinguisher
@@ -59,7 +59,7 @@
 	id = "pocketfireextinguisher"
 	build_type = AUTOLATHE
 	materials = list(/datum/material/iron = 50, /datum/material/glass = 40)
-	build_path = /obj/item/extinguisher/mini
+	build_path = /obj/item/extinguisher/mini/empty
 	category = list("initial","Tools")
 
 /datum/design/multitool
@@ -89,22 +89,22 @@
 	category = list("initial","Tools","Tool Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING
 
-/datum/design/weldingtool
-	name = "Welding Tool"
-	id = "welding_tool"
-	build_type = AUTOLATHE | PROTOLATHE
-	materials = list(/datum/material/iron = 70, /datum/material/glass = 20)
-	build_path = /obj/item/weldingtool
-	category = list("initial","Tools","Tool Designs")
-	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
-
 /datum/design/mini_weldingtool
 	name = "Emergency Welding Tool"
 	id = "mini_welding_tool"
 	build_type = AUTOLATHE
 	materials = list(/datum/material/iron = 30, /datum/material/glass = 10)
-	build_path = /obj/item/weldingtool/mini
+	build_path = /obj/item/weldingtool/mini/empty
 	category = list("initial","Tools")
+
+/datum/design/weldingtool
+	name = "Welding Tool"
+	id = "welding_tool"
+	build_type = AUTOLATHE | PROTOLATHE
+	materials = list(/datum/material/iron = 70, /datum/material/glass = 30)
+	build_path = /obj/item/weldingtool/empty
+	category = list("initial","Tools","Tool Designs")
+	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/screwdriver
 	name = "Screwdriver"
@@ -778,14 +778,6 @@
 	build_type = AUTOLATHE
 	materials = list(/datum/material/iron = 10000, /datum/material/glass = 2500)
 	build_path = /obj/item/electropack
-	category = list("hacked", "Tools")
-
-/datum/design/large_welding_tool
-	name = "Industrial Welding Tool"
-	id = "large_welding_tool"
-	build_type = AUTOLATHE
-	materials = list(/datum/material/iron = 70, /datum/material/glass = 60)
-	build_path = /obj/item/weldingtool/largetank
 	category = list("hacked", "Tools")
 
 /datum/design/handcuffs
