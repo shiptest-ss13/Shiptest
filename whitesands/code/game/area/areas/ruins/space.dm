@@ -1,24 +1,3 @@
-//DYNAMIC OVERMAP
-/area/space
-
-/area/ruin/unpowered/planetoid
-	name = "Unknown Planetoid"
-	icon_state = "away"
-	outdoors = TRUE
-	area_flags = UNIQUE_AREA | CAVES_ALLOWED | FLORA_ALLOWED | MOB_SPAWN_ALLOWED | NOTELEPORT
-
-/area/ruin/unpowered/planetoid/lava
-	name = "Volcanic Planetoid"
-
-/area/ruin/unpowered/planetoid/ice
-	name = "Frozen Planetoid"
-
-/area/ruin/unpowered/planetoid/sand
-	name = "Sandy Planetoid"
-
-/area/ruin/unpowered/planetoid/jungle
-	name = "Jungle Planetoid"
-
 //MACSPACE
 /area/ruin/space/has_grav/powered/macspace
 	name = "Mac Space Restaurant"

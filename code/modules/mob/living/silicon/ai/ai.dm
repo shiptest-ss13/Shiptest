@@ -333,7 +333,7 @@
 	if(!target)
 		return
 
-	if ((ai.z != target.z) && !is_station_level(ai.z))
+	if ((ai.get_virtual_z_level() != target.get_virtual_z_level()) && !is_station_level(ai.z))
 		return FALSE
 
 	if (istype(loc, /obj/item/aicard))
@@ -493,7 +493,7 @@
 	call_bot_cooldown = 0
 
 /mob/living/silicon/ai/triggerAlarm(class, area/A, O, obj/alarmsource)
-	if(alarmsource.z != z)
+	if(alarmsource.get_virtual_z_level() != get_virtual_z_level())
 		return
 	var/list/L = alarms[class]
 	for (var/I in L)

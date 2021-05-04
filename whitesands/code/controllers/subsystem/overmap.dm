@@ -97,7 +97,7 @@ SUBSYSTEM_DEF(overmap)
   * * Shuttle: The docking port to create an overmap object for
   */
 /datum/controller/subsystem/overmap/proc/setup_shuttle_ship(obj/docking_port/mobile/shuttle)
-	var/docked_object = get_overmap_object_by_z(shuttle.z)
+	var/docked_object = get_overmap_object_by_z(shuttle.get_virtual_z_level())
 	if(docked_object)
 		shuttle.current_ship = new /obj/structure/overmap/ship/simulated(docked_object, shuttle.id, shuttle)
 		if(shuttle.undock_roundstart)
@@ -305,22 +305,23 @@ SUBSYSTEM_DEF(overmap)
 			if(DYNAMIC_WORLD_LAVA)
 				ruin_list = SSmapping.lava_ruins_templates
 				mapgen = new /datum/map_generator/cave_generator/lavaland
-				target_area = /area/ruin/unpowered/planetoid/lava
+				target_area = /area/overmap_encounter/planetoid/lava
 			if(DYNAMIC_WORLD_ICE)
 				ruin_list = SSmapping.ice_ruins_templates
 				mapgen = new /datum/map_generator/cave_generator/icemoon/surface
-				target_area = /area/ruin/unpowered/planetoid/ice
+				target_area = /area/overmap_encounter/planetoid/ice
 			if(DYNAMIC_WORLD_SAND)
 				ruin_list = SSmapping.sand_ruins_templates
 				mapgen = new /datum/map_generator/cave_generator/whitesands
-				target_area = /area/ruin/unpowered/planetoid/sand
+				target_area = /area/overmap_encounter/planetoid/sand
 			if(DYNAMIC_WORLD_JUNGLE)
 				ruin_list = SSmapping.jungle_ruins_templates
 				mapgen = new /datum/map_generator/jungle_generator
-				target_area = /area/ruin/unpowered/planetoid/jungle
+				target_area = /area/overmap_encounter/planetoid/jungle
 			if(DYNAMIC_WORLD_ASTEROID)
 				ruin_list = null
 				mapgen = new /datum/map_generator/cave_generator/asteroid
+				target_area = /area/overmap_encounter
 
 	if(ruin && ruin_list && !ruin_type) //Done BEFORE the turfs are reserved so that it allocates the right size box
 		ruin_type = ruin_list[pick(ruin_list)]
@@ -339,12 +340,10 @@ SUBSYSTEM_DEF(overmap)
 		ruin_type.load(ruin_turf)
 
 	if(mapgen) //Does AFTER the ruin is loaded so that it does not spawn flora/fauna in the ruin
-		var/list/same_area_turfs = list()
-		for(var/turf/T as anything in encounter_reservation.non_border_turfs)
-			if(target_area && T.loc?.type != target_area)
-				continue
-			same_area_turfs += T
-		mapgen.generate_terrain(same_area_turfs)
+		var/list/turfs = list()
+		for(var/turf/T in encounter_reservation.area_type)
+			turfs += T
+		mapgen.generate_terrain(turfs)
 
 	//gets the turf with an X in the middle of the reservation, and a Y that's 1/4ths up in the reservation.
 	var/turf/docking_turf = locate(encounter_reservation.bottom_left_coords[1] + dock_size, encounter_reservation.bottom_left_coords[2] + FLOOR(dock_size / 2, 1), encounter_reservation.bottom_left_coords[3])
@@ -446,11 +445,14 @@ SUBSYSTEM_DEF(overmap)
   */
 /datum/controller/subsystem/overmap/proc/get_overmap_object_by_z(zlevel)
 	for(var/id in overmap_objects)
-		if(!istype(overmap_objects[id], /obj/structure/overmap/level))
-			continue
-		var/obj/structure/overmap/level/level = overmap_objects[id]
-		if(zlevel in level.linked_levels)
-			return level
+		if(istype(overmap_objects[id], /obj/structure/overmap/level))
+			var/obj/structure/overmap/level/L = overmap_objects[id]
+			if(zlevel in L.linked_levels)
+				return L
+		if(istype(overmap_objects[id], /obj/structure/overmap/dynamic))
+			var/obj/structure/overmap/dynamic/D = overmap_objects[id]
+			if(zlevel == D.virtual_z_level)
+				return D
 
 /datum/controller/subsystem/overmap/Recover()
 	if(istype(SSovermap.simulated_ships))

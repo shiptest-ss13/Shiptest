@@ -93,10 +93,10 @@ GLOBAL_DATUM_INIT(crewmonitor, /datum/crewmonitor, new)
 	return ui_sources[user]
 
 /datum/crewmonitor/ui_data(mob/user)
-	var/z = user.z
+	var/z = user.get_virtual_z_level()
 	if(!z)
 		var/turf/T = get_turf(user)
-		z = T.z
+		z = T.get_virtual_z_level()
 	var/list/zdata = update_data(z, SSmapping.level_trait(z, ZTRAIT_STATION))
 	. = list()
 	.["sensors"] = zdata
@@ -130,7 +130,7 @@ GLOBAL_DATUM_INIT(crewmonitor, /datum/crewmonitor, new)
 		// Check if their z-level is correct and if they are wearing a uniform.
 		// Accept H.z==0 as well in case the mob is inside an object.
 		// Accept any station zlevel if the console user is on a station zlevel
-		if ((H.z == 0 || H.z == z || (station && SSmapping.level_trait(H.z, ZTRAIT_STATION))) && (istype(H.w_uniform, /obj/item/clothing/under) || nanite_sensors))
+		if ((H.z == 0 || H.get_virtual_z_level() == z || (station && SSmapping.level_trait(H.z, ZTRAIT_STATION))) && (istype(H.w_uniform, /obj/item/clothing/under) || nanite_sensors))
 			U = H.w_uniform
 
 			// Are the suit sensors on?
@@ -138,7 +138,7 @@ GLOBAL_DATUM_INIT(crewmonitor, /datum/crewmonitor, new)
 				pos = H.z == 0 || (nanite_sensors || U.sensor_mode == SENSOR_COORDS) ? get_turf(H) : null
 
 				// Special case: If the mob is inside an object confirm the z-level on turf level.
-				if (H.z == 0 && (!pos || pos.z != z))
+				if (H.z == 0 && (!pos || (pos.get_virtual_z_level() != z)))
 					continue
 
 				I = H.wear_id ? H.wear_id.GetID() : null

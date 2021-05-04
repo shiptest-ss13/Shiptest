@@ -326,9 +326,11 @@
 	var/list/all_turfs = return_ordered_turfs(x, y, z, dir)
 	for(var/i in 1 to all_turfs.len)
 		var/turf/curT = all_turfs[i]
-		var/area/cur_area = curT.loc
+		var/area/shuttle/cur_area = curT.loc
 		if(istype(cur_area, area_type))
 			shuttle_areas[cur_area] = TRUE
+			if(!cur_area.mobile_port)
+				cur_area.link_to_shuttle(src)
 
 	initial_engines = count_engines()
 	current_engines = initial_engines
@@ -920,3 +922,7 @@
 
 /obj/docking_port/mobile/emergency/on_emergency_dock()
 	return
+
+/obj/docking_port/mobile/get_virtual_z_level()
+	var/datum/turf_reservation/TR = SSmapping.get_turf_reservation_at_coords(x, y, z)
+	return TR?.virtual_z_level || z

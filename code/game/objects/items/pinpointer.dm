@@ -66,7 +66,7 @@
 		return
 	var/turf/here = get_turf(src)
 	var/turf/there = get_turf(target)
-	if(here.z != there.z)
+	if(here.get_virtual_z_level() != there.get_virtual_z_level())
 		. += "pinon[alert ? "alert" : ""]null[icon_suffix]"
 		return
 	. += get_direction_icon(here, there)
@@ -97,7 +97,7 @@
 
 /obj/item/pinpointer/crew/proc/trackable(mob/living/carbon/human/H)
 	var/turf/here = get_turf(src)
-	if((H.z == 0 || H.z == here.z) && istype(H.w_uniform, /obj/item/clothing/under))
+	if((H.z == 0 || H.get_virtual_z_level() == here.get_virtual_z_level()) && istype(H.w_uniform, /obj/item/clothing/under))
 		var/obj/item/clothing/under/U = H.w_uniform
 
 		// Suit sensors must be on maximum.
@@ -105,7 +105,7 @@
 			return FALSE
 
 		var/turf/there = get_turf(H)
-		return (H.z != 0 || (there && there.z == here.z))
+		return (H.z != 0 || (there && ((there.get_virtual_z_level() == here.get_virtual_z_level()))))
 
 	return FALSE
 

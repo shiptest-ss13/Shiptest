@@ -32,7 +32,7 @@
 	for(var/i in GLOB.human_list)
 		var/mob/living/carbon/human/H = i
 		var/turf/T = get_turf(H)
-		if(!T || T.z != z)
+		if(!T || T.get_virtual_z_level() != get_virtual_z_level())
 			continue
 		H.Stun(10)
 		var/obj/item/clothing/C

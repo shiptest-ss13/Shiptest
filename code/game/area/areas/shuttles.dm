@@ -16,7 +16,13 @@
 	lighting_colour_bulb = "#ffe1c1"
 	area_limited_icon_smoothing = TRUE
 	sound_environment = SOUND_ENVIRONMENT_ROOM
+	//The mobile port attached to this area
+	var/obj/docking_port/mobile/mobile_port
 
+
+/area/shuttle/Destroy()
+	mobile_port = null
+	. = ..()
 
 /area/shuttle/PlaceOnTopReact(list/new_baseturfs, turf/fake_turf_type, flags)
 	. = ..()
@@ -24,6 +30,14 @@
 		return // More complicated larger changes indicate this isn't a player
 	if(ispath(new_baseturfs[1], /turf/open/floor/plating) && !new_baseturfs.Find(/turf/baseturf_skipover/shuttle))
 		new_baseturfs.Insert(1, /turf/baseturf_skipover/shuttle)
+
+/area/shuttle/proc/link_to_shuttle(obj/docking_port/mobile/M)
+	mobile_port = M
+
+/area/shuttle/get_virtual_z()
+	if(mobile_port)
+		return mobile_port.get_virtual_z_level()
+	return ..()
 
 ////////////////////////////Multi-area shuttles////////////////////////////
 

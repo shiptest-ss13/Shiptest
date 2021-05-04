@@ -129,6 +129,10 @@
 
 	target_shuttle.shuttle_areas[newA] = TRUE
 
+	newA.connect_to_shuttle(target_shuttle, target_shuttle.get_docked())
+	for(var/atom/thing in newA)
+		thing.connect_to_shuttle(target_shuttle, target_shuttle.get_docked())
+
 	target_shuttle.recalculate_bounds()
 
 	to_chat(creator, "<span class='notice'>You have created a new area, named [newA.name]. It is now weather proof, and constructing an APC will allow it to be powered.</span>")

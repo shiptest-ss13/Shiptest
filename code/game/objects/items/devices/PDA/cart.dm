@@ -261,7 +261,7 @@ Code:
 			for(var/obj/machinery/computer/monitor/pMon in GLOB.machines)
 				if(pMon.machine_stat & (NOPOWER | BROKEN)) //check to make sure the computer is functional
 					continue
-				if(pda_turf.z != pMon.z) //and that we're on the same zlevel as the computer (lore: limited signal strength)
+				if(pda_turf.get_virtual_z_level() != pMon.get_virtual_z_level()) //and that we're on the same zlevel as the computer (lore: limited signal strength)
 					continue
 				if(pMon.is_secret_monitor) //make sure it isn't a secret one (ie located on a ruin), allowing people to metagame that the location exists
 					continue
@@ -469,7 +469,7 @@ Code:
 					var/turf/ml = get_turf(M)
 
 					if(ml)
-						if (ml.z != cl.z)
+						if (ml.get_virtual_z_level() != cl.get_virtual_z_level())
 							continue
 						var/direction = get_dir(src, M)
 						ldat += "Mop - <b>\[[ml.x],[ml.y] ([uppertext(dir2text(direction))])\]</b> - [M.reagents.total_volume ? "Wet" : "Dry"]<br>"
@@ -486,7 +486,7 @@ Code:
 					var/turf/bl = get_turf(B)
 
 					if(bl)
-						if (bl.z != cl.z)
+						if (bl.get_virtual_z_level() != cl.get_virtual_z_level())
 							continue
 						var/direction = get_dir(src, B)
 						ldat += "Cart - <b>\[[bl.x],[bl.y] ([uppertext(dir2text(direction))])\]</b> - Water level: [B.reagents.total_volume]/100<br>"
@@ -503,7 +503,7 @@ Code:
 					var/turf/bl = get_turf(B)
 
 					if(bl)
-						if (bl.z != cl.z)
+						if (bl.get_virtual_z_level() != cl.get_virtual_z_level())
 							continue
 						var/direction = get_dir(src, B)
 						ldat += "Cleanbot - <b>\[[bl.x],[bl.y] ([uppertext(dir2text(direction))])\]</b> - [B.on ? "Online" : "Offline"]<br>"
@@ -717,11 +717,11 @@ Code:
 	else
 		menu += "<BR><A href='byond://?src=[REF(src)];op=botlist'>[PDAIMG(refresh)]Scan for active bots</A><BR><BR>"
 		var/turf/current_turf = get_turf(src)
-		var/zlevel = current_turf.z
+		var/zlevel = current_turf.get_virtual_z_level()
 		var/botcount = 0
 		for(var/B in GLOB.bots_list) //Git da botz
 			var/mob/living/simple_animal/bot/Bot = B
-			if(!Bot.on || Bot.z != zlevel || Bot.remote_disabled || !(bot_access_flags & Bot.bot_type)) //Only non-emagged bots on the same Z-level are detected!
+			if(!Bot.on || Bot.get_virtual_z_level() != zlevel || Bot.remote_disabled || !(bot_access_flags & Bot.bot_type)) //Only non-emagged bots on the same Z-level are detected!
 				continue //Also, the PDA must have access to the bot type.
 			menu += "[PDAIMG(medbot)]   <A href='byond://?src=[REF(src)];op=control;bot=[REF(Bot)]'><b>[Bot.name]</b> ([Bot.get_mode()])</a><BR>"
 			botcount++

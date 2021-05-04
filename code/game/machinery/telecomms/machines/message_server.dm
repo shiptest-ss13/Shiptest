@@ -162,7 +162,7 @@
 	source = init_source
 	data = init_data
 	var/turf/T = get_turf(source)
-	levels = list(T.z)
+	levels = list(T.get_virtual_z_level())
 	if(!("reject" in data))
 		data["reject"] = TRUE
 

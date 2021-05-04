@@ -209,7 +209,7 @@
   * Proc called after a shuttle is moved, used for checking a ship's location when it's moved manually (E.G. calling the mining shuttle via a console)
   */
 /obj/structure/overmap/ship/simulated/proc/check_loc()
-	var/docked_object = SSovermap.get_overmap_object_by_z(shuttle.z)
+	var/docked_object = SSovermap.get_overmap_object_by_z(get_virtual_z_level(shuttle))
 	var/obj/docking_port/stationary/dock_port = shuttle.get_docked()
 	if(docked_object == loc) //The docked object is correct, move along
 		return TRUE

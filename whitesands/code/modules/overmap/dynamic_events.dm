@@ -12,8 +12,10 @@
 	var/obj/docking_port/stationary/reserve_dock_secondary
 	///If the level should be preserved. Useful for if you want to build an autismfort or something.
 	var/preserve_level = FALSE
-	///If the level is a planet.
-	var/planet = FALSE
+	///What kind of planet the level is, if it's a planet at all.
+	var/planet
+	///The virtual z-level the level occupies
+	var/virtual_z_level
 
 /obj/structure/overmap/dynamic/Initialize(mapload, _id)
 	. = ..()
@@ -93,6 +95,7 @@
 	reserve = new_reserve
 	reserve_dock = SSshuttle.getDock("[PRIMARY_OVERMAP_DOCK_PREFIX]_[id]")
 	reserve_dock_secondary = SSshuttle.getDock("[SECONDARY_OVERMAP_DOCK_PREFIX]_[id]")
+	virtual_z_level = reserve.virtual_z_level
 
 /**
   * Unloads the reserve, deletes the linked docking port, and moves to a random location if there's no client-having, alive mobs.
@@ -100,11 +103,44 @@
 /obj/structure/overmap/dynamic/proc/unload_level()
 	if(preserve_level)
 		return
-	for(var/turf/T in reserve.non_border_turfs)
-		var/mob/living/L = locate() in T
-		if(L?.mind)
-			return //Don't fuck over stranded people plox
+
+	for(var/mob/living/L in GLOB.mob_living_list)
+		if(!L.mind)
+			continue
+		if(SSmapping.get_turf_reservation_at_coords(L.x, L.y, L.z) == reserve)
+			return //Don't fuck over stranded people
+
 	if(reserve)
 		forceMove(SSovermap.get_unused_overmap_square())
 		choose_level_type()
 		QDEL_NULL(reserve)
+
+/area/overmap_encounter
+	name = "\improper Overmap Encounter"
+	icon_state = "away"
+	area_flags = HIDDEN_AREA | UNIQUE_AREA | CAVES_ALLOWED | FLORA_ALLOWED | MOB_SPAWN_ALLOWED | NOTELEPORT
+	flags_1 = CAN_BE_DIRTY_1
+	dynamic_lighting = DYNAMIC_LIGHTING_FORCED
+	sound_environment = SOUND_ENVIRONMENT_STONEROOM
+	ambientsounds = RUINS
+	outdoors = TRUE
+
+/area/overmap_encounter/planetoid
+	name = "\improper Unknown Planetoid"
+	sound_environment = SOUND_ENVIRONMENT_MOUNTAINS
+	has_gravity = STANDARD_GRAVITY
+
+/area/overmap_encounter/planetoid/lava
+	name = "\improper Volcanic Planetoid"
+
+/area/overmap_encounter/planetoid/ice
+	name = "\improper Frozen Planetoid"
+	sound_environment = SOUND_ENVIRONMENT_CAVE
+
+/area/overmap_encounter/planetoid/sand
+	name = "\improper Sandy Planetoid"
+	sound_environment = SOUND_ENVIRONMENT_CARPETED_HALLWAY
+
+/area/overmap_encounter/planetoid/jungle
+	name = "\improper Jungle Planetoid"
+	sound_environment = SOUND_ENVIRONMENT_FOREST

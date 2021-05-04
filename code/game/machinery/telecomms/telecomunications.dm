@@ -52,7 +52,7 @@ GLOBAL_LIST_EMPTY(telecomms_list)
 			continue
 		if(amount && send_count >= amount)
 			break
-		if(z != machine.loc.z && !long_range_link && !machine.long_range_link)
+		if(get_virtual_z_level() != machine.loc.get_virtual_z_level() && !long_range_link && !machine.long_range_link)
 			continue
 
 		send_count++
@@ -102,7 +102,7 @@ GLOBAL_LIST_EMPTY(telecomms_list)
 /obj/machinery/telecomms/proc/add_link(obj/machinery/telecomms/T)
 	var/turf/position = get_turf(src)
 	var/turf/T_position = get_turf(T)
-	if((position.z == T_position.z) || (long_range_link && T.long_range_link))
+	if((position.get_virtual_z_level() == T_position.get_virtual_z_level()) || (long_range_link && T.long_range_link))
 		if(src != T)
 			for(var/x in autolinkers)
 				if(x in T.autolinkers)
