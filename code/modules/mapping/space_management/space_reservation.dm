@@ -8,10 +8,20 @@
 	var/bottom_left_coords[3]
 	var/top_right_coords[3]
 	var/wipe_reservation_on_release = TRUE
-	var/turf_type = /turf/open/space
-	var/border_turf_type
+	var/turf/turf_type = /turf/open/space
+	var/turf/border_turf_type
 	var/area/area_type
 	var/virtual_z_level
+
+// i have NO fucking idea why it didn't work when i tried to put this in the New() proc.
+// spent an hour trying to figure it out and didn't learn shit. goddammit
+/datum/turf_reservation/proc/set_overrides(turf_type_override, border_turf_override, area_override)
+	if(turf_type_override != null)
+		turf_type = turf_type_override
+	if(border_turf_override != null)
+		border_turf_type = border_turf_override
+	if(area_override != null)
+		area_type = area_override
 
 /datum/turf_reservation/transit
 	turf_type = /turf/open/space/transit

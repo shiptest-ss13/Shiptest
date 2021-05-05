@@ -459,7 +459,7 @@ SUBSYSTEM_DEF(shuttle)
 		if(WEST)
 			transit_path = /turf/open/space/transit/west
 
-	var/datum/turf_reservation/proposal = SSmapping.RequestBlockReservation(transit_width, transit_height, null, /datum/turf_reservation/transit, transit_path)
+	var/datum/turf_reservation/proposal = SSmapping.RequestBlockReservation(transit_width, transit_height, reserve_type = /datum/turf_reservation/transit, turf_type_override = transit_path)
 
 	if(!istype(proposal))
 		return FALSE

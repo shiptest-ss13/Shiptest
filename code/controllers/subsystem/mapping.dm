@@ -27,6 +27,7 @@ SUBSYSTEM_DEF(mapping)
 
 	var/list/shuttle_templates = list()
 	var/list/shelter_templates = list()
+	var/list/station_room_templates = list()
 
 	var/list/areas_in_z = list()
 
@@ -48,6 +49,8 @@ SUBSYSTEM_DEF(mapping)
 	var/datum/space_level/transit
 	var/datum/space_level/empty_space
 	var/num_of_res_levels = 1
+
+
 
 //dlete dis once #39770 is resolved
 /datum/controller/subsystem/mapping/proc/HACK_LoadMapConfig()
@@ -142,35 +145,6 @@ SUBSYSTEM_DEF(mapping)
 	generate_station_area_list()
 	initialize_reserved_level(transit.z_value)
 	return ..()
-
-/datum/controller/subsystem/mapping/proc/wipe_reservations(wipe_safety_delay = 100)
-	if(clearing_reserved_turfs || !initialized)			//in either case this is just not needed.
-		return
-	clearing_reserved_turfs = TRUE
-	SSshuttle.transit_requesters.Cut()
-	message_admins("Clearing dynamic reservation space.")
-	var/list/obj/docking_port/mobile/in_transit = list()
-	for(var/i in SSshuttle.transit)
-		var/obj/docking_port/stationary/transit/T = i
-		if(!istype(T))
-			continue
-		in_transit[T] = T.get_docked()
-	var/go_ahead = world.time + wipe_safety_delay
-	if(in_transit.len)
-		message_admins("Shuttles in transit detected. Attempting to fast travel. Timeout is [wipe_safety_delay/10] seconds.")
-	var/list/cleared = list()
-	for(var/i in in_transit)
-		INVOKE_ASYNC(src, .proc/safety_clear_transit_dock, i, in_transit[i], cleared)
-	UNTIL((go_ahead < world.time) || (cleared.len == in_transit.len))
-	do_wipe_turf_reservations()
-	clearing_reserved_turfs = FALSE
-
-/datum/controller/subsystem/mapping/proc/safety_clear_transit_dock(obj/docking_port/stationary/transit/T, obj/docking_port/mobile/M, list/returning)
-	M.setTimer(0)
-	var/error = M.initiate_docking(M.destination, M.preferred_direction)
-	if(!error)
-		returning += M
-		qdel(T, TRUE)
 
 /* Nuke threats, for making the blue tiles on the station go RED
    Used by the AI doomsday and the self destruct nuke.
@@ -534,16 +508,47 @@ GLOBAL_LIST_EMPTY(the_station_areas)
 		message_admins("Loading [away_name] failed!")
 		return
 
-/datum/controller/subsystem/mapping/proc/RequestBlockReservation(width, height, z, type = /datum/turf_reservation, turf_type_override, border_turf_override, area_override)
+///Initialize all biomes, assoc as type || instance
+/datum/controller/subsystem/mapping/proc/initialize_biomes()
+	for(var/biome_path in subtypesof(/datum/biome))
+		var/datum/biome/biome_instance = new biome_path()
+		biomes[biome_path] += biome_instance
+
+/datum/controller/subsystem/mapping/proc/reg_in_areas_in_z(list/areas)
+	for(var/B in areas)
+		var/area/A = B
+		A.reg_in_areas_in_z()
+
+/datum/controller/subsystem/mapping/proc/get_isolated_ruin_z()
+	if(!isolated_ruins_z)
+		isolated_ruins_z = add_new_zlevel("Isolated Ruins/Reserved", list(ZTRAIT_RESERVED = TRUE, ZTRAIT_ISOLATED_RUINS = TRUE))
+		initialize_reserved_level(isolated_ruins_z.z_value)
+	return isolated_ruins_z.z_value
+
+	// Station Ruins - WS Port
+/datum/controller/subsystem/mapping/proc/seedStation()
+	for(var/V in GLOB.stationroom_landmarks)
+		var/obj/effect/landmark/stationroom/LM = V
+		LM.load()
+	if(GLOB.stationroom_landmarks.len)
+		seedStation() //I'm sure we can trust everyone not to insert a 1x1 rooms which loads a landmark which loads a landmark which loads a la...
+
+//////////////////
+// RESERVATIONS //
+//////////////////
+
+/datum/controller/subsystem/mapping/proc/RequestBlockReservation(width, height, z, reserve_type = /datum/turf_reservation, turf_type_override = null, border_turf_override = null, area_override = null)
+	if(z && !level_trait(z, ZTRAIT_RESERVED))
+		return
+
 	UNTIL((!z || reservation_ready["[z]"]) && !clearing_reserved_turfs)
-	var/datum/turf_reservation/reserve = new type
-	if(turf_type_override)
-		reserve.turf_type = turf_type_override
-	if(area_override)
-		reserve.area_type = area_override
-	if(border_turf_override)
-		reserve.border_turf_type = border_turf_override
-	if(!z)
+	var/datum/turf_reservation/reserve = new reserve_type
+	reserve.set_overrides(turf_type_override, border_turf_override, area_override)
+
+	if(z)
+		if(reserve.Reserve(width, height, z))
+			return reserve
+	else
 		for(var/i in levels_by_trait(ZTRAIT_RESERVED))
 			if(reserve.Reserve(width, height, i))
 				return reserve
@@ -553,14 +558,7 @@ GLOBAL_LIST_EMPTY(the_station_areas)
 		initialize_reserved_level(newReserved.z_value)
 		if(reserve.Reserve(width, height, newReserved.z_value))
 			return reserve
-	else
-		if(!level_trait(z, ZTRAIT_RESERVED))
-			qdel(reserve)
-			return
-		else
-			if(reserve.Reserve(width, height, z))
-				return reserve
-	QDEL_NULL(reserve)
+	qdel(reserve)
 
 //This is not for wiping reserved levels, use wipe_reservations() for that.
 /datum/controller/subsystem/mapping/proc/initialize_reserved_level(z)
@@ -581,15 +579,35 @@ GLOBAL_LIST_EMPTY(the_station_areas)
 	reservation_ready["[z]"] = TRUE
 	clearing_reserved_turfs = FALSE
 
-/datum/controller/subsystem/mapping/proc/reserve_turfs(list/turfs)
-	for(var/i in turfs)
-		var/turf/T = i
-		T.empty(RESERVED_TURF_TYPE, RESERVED_TURF_TYPE, null, TRUE)
-		LAZYINITLIST(unused_turfs["[T.z]"])
-		unused_turfs["[T.z]"] |= T
-		T.flags_1 |= UNUSED_RESERVATION_TURF_1
-		GLOB.areas_by_type[world.area].contents += T
-		CHECK_TICK
+// For wiping all reserved levels.
+/datum/controller/subsystem/mapping/proc/wipe_reservations(wipe_safety_delay = 100)
+	if(clearing_reserved_turfs || !initialized)			//in either case this is just not needed.
+		return
+	clearing_reserved_turfs = TRUE
+	SSshuttle.transit_requesters.Cut()
+	message_admins("Clearing dynamic reservation space.")
+	var/list/obj/docking_port/mobile/in_transit = list()
+	for(var/i in SSshuttle.transit)
+		var/obj/docking_port/stationary/transit/T = i
+		if(!istype(T))
+			continue
+		in_transit[T] = T.get_docked()
+	var/go_ahead = world.time + wipe_safety_delay
+	if(in_transit.len)
+		message_admins("Shuttles in transit detected. Attempting to fast travel. Timeout is [wipe_safety_delay/10] seconds.")
+	var/list/cleared = list()
+	for(var/i in in_transit)
+		INVOKE_ASYNC(src, .proc/safety_clear_transit_dock, i, in_transit[i], cleared)
+	UNTIL((go_ahead < world.time) || (cleared.len == in_transit.len))
+	do_wipe_turf_reservations()
+	clearing_reserved_turfs = FALSE
+
+/datum/controller/subsystem/mapping/proc/safety_clear_transit_dock(obj/docking_port/stationary/transit/T, obj/docking_port/mobile/M, list/returning)
+	M.setTimer(0)
+	var/error = M.initiate_docking(M.destination, M.preferred_direction)
+	if(!error)
+		returning += M
+		qdel(T, TRUE)
 
 //DO NOT CALL THIS PROC DIRECTLY, CALL wipe_reservations().
 /datum/controller/subsystem/mapping/proc/do_wipe_turf_reservations()
@@ -609,33 +627,15 @@ GLOBAL_LIST_EMPTY(the_station_areas)
 	used_turfs.Cut()
 	reserve_turfs(clearing)
 
-///Initialize all biomes, assoc as type || instance
-/datum/controller/subsystem/mapping/proc/initialize_biomes()
-	for(var/biome_path in subtypesof(/datum/biome))
-		var/datum/biome/biome_instance = new biome_path()
-		biomes[biome_path] += biome_instance
-
-/datum/controller/subsystem/mapping/proc/reg_in_areas_in_z(list/areas)
-	for(var/B in areas)
-		var/area/A = B
-		A.reg_in_areas_in_z()
-
-/datum/controller/subsystem/mapping/proc/get_isolated_ruin_z()
-	if(!isolated_ruins_z)
-		isolated_ruins_z = add_new_zlevel("Isolated Ruins/Reserved", list(ZTRAIT_RESERVED = TRUE, ZTRAIT_ISOLATED_RUINS = TRUE))
-		initialize_reserved_level(isolated_ruins_z.z_value)
-	return isolated_ruins_z.z_value
-
-	// Station Ruins - WS Port
-/datum/controller/subsystem/mapping
-	var/list/station_room_templates = list()
-
-/datum/controller/subsystem/mapping/proc/seedStation()
-	for(var/V in GLOB.stationroom_landmarks)
-		var/obj/effect/landmark/stationroom/LM = V
-		LM.load()
-	if(GLOB.stationroom_landmarks.len)
-		seedStation() //I'm sure we can trust everyone not to insert a 1x1 rooms which loads a landmark which loads a landmark which loads a la...
+/datum/controller/subsystem/mapping/proc/reserve_turfs(list/turfs)
+	for(var/i in turfs)
+		var/turf/T = i
+		T.empty(RESERVED_TURF_TYPE, RESERVED_TURF_TYPE, null, TRUE)
+		LAZYINITLIST(unused_turfs["[T.z]"])
+		unused_turfs["[T.z]"] |= T
+		T.flags_1 |= UNUSED_RESERVATION_TURF_1
+		GLOB.areas_by_type[world.area].contents += T
+		CHECK_TICK
 
 /datum/controller/subsystem/mapping/proc/get_turf_reservation_at_coords(x, y, z)
 	for(var/datum/turf_reservation/TR as anything in turf_reservations)
