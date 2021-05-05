@@ -1,7 +1,7 @@
 ///This datum handles the transitioning from a turf to a specific biome, and handles spawning decorative structures and mobs.
 /datum/biome
 	///Type of turf this biome creates
-	var/turf_type
+	var/turf/turf_type
 	///Chance of having a structure from the flora types list spawn
 	var/flora_density = 0
 	///Chance of having a mob from the fauna types list spawn
@@ -13,7 +13,7 @@
 
 ///This proc handles the creation of a turf of a specific biome type
 /datum/biome/proc/generate_turf(var/turf/gen_turf)
-	gen_turf.ChangeTurf(turf_type, null, CHANGETURF_DEFER_CHANGE)
+	gen_turf.ChangeTurf(turf_type, initial(turf_type.baseturfs), CHANGETURF_DEFER_CHANGE)
 	if(length(fauna_types) && prob(fauna_density))
 		var/mob/fauna = pick(fauna_types)
 		new fauna(gen_turf)
