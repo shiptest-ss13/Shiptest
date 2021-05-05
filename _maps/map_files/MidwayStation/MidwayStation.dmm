@@ -4575,15 +4575,6 @@
 /obj/effect/turf_decal/bot,
 /turf/open/floor/plasteel,
 /area/teleporter)
-"axz" = (
-/obj/machinery/requests_console{
-	department = "Chapel";
-	departmentType = 2;
-	pixel_y = -32
-	},
-/obj/structure/chair,
-/turf/open/floor/plasteel/grimy,
-/area/chapel/office)
 "axA" = (
 /obj/effect/landmark/start/chaplain,
 /obj/machinery/airalarm{
@@ -8733,12 +8724,6 @@
 /obj/structure/flora/ausbushes/grassybush,
 /turf/open/floor/grass,
 /area/hallway/primary/fore)
-"aTH" = (
-/obj/machinery/light_switch{
-	pixel_y = -23
-	},
-/turf/open/floor/circuit,
-/area/ai_monitored/nuke_storage)
 "aTJ" = (
 /obj/structure/window/spawner/north,
 /obj/structure/window/spawner/east,
@@ -12233,18 +12218,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/quartermaster/office)
-"cVD" = (
-/obj/effect/turf_decal/tile/blue{
-	dir = 1
-	},
-/obj/machinery/light{
-	dir = 8
-	},
-/obj/structure/extinguisher_cabinet{
-	pixel_y = -30
-	},
-/turf/open/floor/plasteel,
-/area/hallway/primary/fore)
 "cVK" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -13195,25 +13168,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ai_monitored/turret_protected/AIsatextAS)
-"dLz" = (
-/obj/machinery/camera{
-	c_tag = "Cargo Delivery Office";
-	dir = 8
-	},
-/obj/machinery/requests_console{
-	department = "Cargo Bay";
-	departmentType = 2;
-	pixel_y = -32
-	},
-/obj/structure/disposalpipe/segment{
-	dir = 2
-	},
-/obj/structure/window/reinforced{
-	dir = 1;
-	layer = 2.9
-	},
-/turf/open/floor/plasteel,
-/area/quartermaster/sorting)
 "dLY" = (
 /obj/effect/turf_decal/tile/green{
 	dir = 8
@@ -21879,6 +21833,26 @@
 	},
 /turf/open/floor/circuit,
 /area/maintenance/starboard/central)
+"jHH" = (
+/obj/machinery/camera{
+	c_tag = "Cargo Delivery Office";
+	dir = 8
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 2
+	},
+/obj/structure/window/reinforced{
+	dir = 1;
+	layer = 2.9
+	},
+/obj/machinery/requests_console{
+	department = "Cargo Bay";
+	departmentType = 2;
+	dir = 4;
+	pixel_x = 32
+	},
+/turf/open/floor/plasteel,
+/area/quartermaster/sorting)
 "jIf" = (
 /obj/machinery/computer/cargo/request{
 	dir = 8
@@ -24449,6 +24423,13 @@
 /obj/effect/turf_decal/tile/neutral,
 /turf/open/floor/plasteel,
 /area/hallway/secondary/entry)
+"ltS" = (
+/obj/machinery/light_switch{
+	dir = 1;
+	pixel_y = 23
+	},
+/turf/open/floor/circuit,
+/area/ai_monitored/nuke_storage)
 "luI" = (
 /obj/effect/landmark/start/medical_doctor,
 /turf/open/floor/plasteel/white,
@@ -40139,6 +40120,19 @@
 	},
 /turf/open/floor/plasteel,
 /area/quartermaster/qm)
+"vOv" = (
+/obj/effect/turf_decal/tile/blue{
+	dir = 1
+	},
+/obj/machinery/light{
+	dir = 8
+	},
+/obj/structure/extinguisher_cabinet{
+	dir = 8;
+	pixel_x = -27
+	},
+/turf/open/floor/plasteel,
+/area/hallway/primary/fore)
 "vPa" = (
 /obj/structure/disposalpipe/segment{
 	dir = 5
@@ -41181,6 +41175,21 @@
 	},
 /turf/open/floor/plasteel,
 /area/quartermaster/storage)
+"wDo" = (
+/obj/machinery/requests_console{
+	department = "Chapel";
+	departmentType = 2;
+	pixel_y = -32
+	},
+/obj/structure/chair,
+/obj/machinery/requests_console{
+	department = "Chapel";
+	departmentType = 2;
+	dir = 1;
+	pixel_y = 32
+	},
+/turf/open/floor/plasteel/grimy,
+/area/chapel/office)
 "wDq" = (
 /obj/machinery/door/poddoor/preopen{
 	id = "bridge blast";
@@ -62215,7 +62224,7 @@ sql
 hvv
 aIm
 aIm
-aTH
+ltS
 aJu
 aJu
 aJx
@@ -63008,7 +63017,7 @@ srz
 idP
 aeb
 uQA
-dLz
+jHH
 dkS
 xGo
 mPA
@@ -63343,7 +63352,7 @@ mNs
 mWN
 rrr
 wqw
-cVD
+vOv
 xbI
 ixh
 ixh
@@ -73272,7 +73281,7 @@ wJs
 aaa
 aaa
 atT
-axz
+wDo
 pbF
 cRz
 auM
