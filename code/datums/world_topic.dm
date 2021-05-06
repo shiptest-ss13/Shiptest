@@ -173,9 +173,6 @@
 
 	.["gamestate"] = SSticker.current_state
 
-	.["map_name"] = SSmapping.config?.map_name || "Loading..."
-	.["mining_map_name"] = GLOB.current_mining_map
-
 	if(key_valid)
 		.["active_players"] = get_active_player_count()
 		if(SSticker.HasRoundStarted())

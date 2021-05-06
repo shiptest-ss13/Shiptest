@@ -319,11 +319,4 @@
 	invisibility = is_station_level(posobj.z) ? 0 : INVISIBILITY_ABSTRACT
 
 /atom/movable/screen/parallax_layer/planet/update_o()
-	switch(GLOB.current_mining_map)
-		if("lavaland")
-			icon_state = "planet"
-		if("icemoon")
-			icon_state = "icemoon"
-		if("whitesands")
-			icon_state = "whitesands"
-	return //Shit wont move
+	icon_state = "planet"

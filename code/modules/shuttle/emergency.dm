@@ -592,15 +592,6 @@
 	if(!mapload)
 		return
 
-	if(!target_area)
-		switch(GLOB.current_mining_map)
-			if("lavaland")
-				target_area = /area/lavaland/surface/outdoors
-			if("icemoon")
-				target_area = /area/icemoon/surface/outdoors
-			if("whitesands")
-				target_area = /area/whitesands/surface/outdoors
-
 	var/list/turfs = get_area_turfs(target_area)
 	var/original_len = turfs?.len
 	while(turfs?.len)

@@ -15,8 +15,6 @@ SUBSYSTEM_DEF(statpanels)
 		var/list/global_data = list(
 			"Map: [SSmapping.config?.map_name || "Loading..."]",
 			cached ? "Next Map: [cached.map_name]" : null,
-			"Mining Map: [GLOB.current_mining_map]",
-			GLOB.next_mining_map != "random" ? "Next Mining Map: [GLOB.next_mining_map]" : null,
 			"Round ID: [GLOB.round_id ? GLOB.round_id : "NULL"]",
 			"Server Time: [time2text(world.timeofday, "YYYY-MM-DD hh:mm:ss")]",
 			"Round Time: [round_time > MIDNIGHT_ROLLOVER ? "[round(round_time/MIDNIGHT_ROLLOVER)]:[worldtime2text()]" : worldtime2text()]",
