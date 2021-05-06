@@ -287,8 +287,10 @@ SUBSYSTEM_DEF(overmap)
 		mapgen.generate_terrain(turfs)
 
 	//gets the turf with an X in the middle of the reservation, and a Y that's 1/4ths up in the reservation.
-	var/turf/docking_turf = locate(encounter_reservation.bottom_left_coords[1] + dock_size, encounter_reservation.bottom_left_coords[2] + FLOOR(dock_size / 2, 1), encounter_reservation.bottom_left_coords[3])
-	var/obj/docking_port/stationary/dock = SSshuttle.getDock("[PRIMARY_OVERMAP_DOCK_PREFIX]_[dock_id]")
+	var/turf/docking_turf = locate(encounter_reservation.bottom_left_coords[1] + max(dock_size, visiting_shuttle?.dheight + 4), \
+								   encounter_reservation.bottom_left_coords[2] + max(FLOOR(dock_size / 2, 1), visiting_shuttle?.dwidth + 4), \
+								   encounter_reservation.bottom_left_coords[3])
+	var/obj/docking_port/stationary/dock = SSshuttle.getDock("[PRIMARY_OVERMAP_DOCK_PREFIX]_[dock_id]") //This check exists because docking ports don't like to be deleted.
 	if(!dock)
 		dock = new(docking_turf)
 	else
@@ -305,7 +307,9 @@ SUBSYSTEM_DEF(overmap)
 		dock.dwidth = FLOOR(dock_size / 2, 1)
 
 	//gets the turf with an X in the middle of the reservation, and a Y that's 3/4ths up in the reservation.
-	var/turf/secondary_docking_turf = locate(encounter_reservation.bottom_left_coords[1] + dock_size, encounter_reservation.bottom_left_coords[2] + CEILING(dock_size * 1.5, 1), encounter_reservation.bottom_left_coords[3])
+	var/turf/secondary_docking_turf = locate(encounter_reservation.bottom_left_coords[1] + max(dock_size, visiting_shuttle?.dheight + 4),
+											 encounter_reservation.bottom_left_coords[2] + max(CEILING(dock_size * 1.5, 1), visiting_shuttle?.dwidth * 2 + 4), \
+											 encounter_reservation.bottom_left_coords[3])
 	var/obj/docking_port/stationary/secondary_dock = SSshuttle.getDock("[SECONDARY_OVERMAP_DOCK_PREFIX]_[dock_id]")
 	if(!secondary_dock)
 		secondary_dock = new(secondary_docking_turf)
