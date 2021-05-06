@@ -367,6 +367,10 @@
 	config_entry_value = 10
 	min_val = 0
 
+/datum/config_entry/number/smuggler_satchels
+	config_entry_value = 3
+	min_val = 0
+
 /datum/config_entry/number/bombcap
 	config_entry_value = 14
 	min_val = 4
