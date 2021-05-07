@@ -13,15 +13,19 @@
 	var/area/area_type
 	var/virtual_z_level
 
-// i have NO fucking idea why it didn't work when i tried to put this in the New() proc.
-// spent an hour trying to figure it out and didn't learn shit. goddammit
-/datum/turf_reservation/proc/set_overrides(turf_type_override, border_turf_override, area_override)
-	if(turf_type_override != null)
+/datum/turf_reservation/New(turf_type_override, border_turf_override, area_override)
+	LAZYADD(SSmapping.turf_reservations, src)
+	if(turf_type_override)
 		turf_type = turf_type_override
-	if(border_turf_override != null)
+	if(border_turf_override)
 		border_turf_type = border_turf_override
-	if(area_override != null)
+	if(area_override)
 		area_type = area_override
+
+/datum/turf_reservation/Destroy()
+	Release()
+	LAZYREMOVE(SSmapping.turf_reservations, src)
+	return ..()
 
 /datum/turf_reservation/proc/Release()
 	var/v = reserved_turfs.Copy()
@@ -84,11 +88,3 @@
 	src.width = width
 	src.height = height
 	return TRUE
-
-/datum/turf_reservation/New()
-	LAZYADD(SSmapping.turf_reservations, src)
-
-/datum/turf_reservation/Destroy()
-	Release()
-	LAZYREMOVE(SSmapping.turf_reservations, src)
-	return ..()

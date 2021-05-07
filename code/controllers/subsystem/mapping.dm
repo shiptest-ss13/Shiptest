@@ -515,9 +515,8 @@ GLOBAL_LIST_EMPTY(the_station_areas)
 
 /datum/controller/subsystem/mapping/proc/RequestBlockReservation(width, height, turf_type_override = null, border_turf_override = null, area_override = null)
 	UNTIL(!clearing_reserved_turfs)
-	var/datum/turf_reservation/reserve = new
-	reserve.set_overrides(turf_type_override, border_turf_override, area_override)
 
+	var/datum/turf_reservation/reserve = new(turf_type_override, border_turf_override, area_override)
 	for(var/i in levels_by_trait(ZTRAIT_RESERVED))
 		if(reserve.Reserve(width, height, i))
 			return reserve
