@@ -1,7 +1,7 @@
 /datum/map_template/ruin/proc/try_to_place(z,allowed_areas,turf/forced_turf)
 	var/sanity = forced_turf ? 1 : PLACEMENT_TRIES
-	if(SSmapping.level_trait(z,ZTRAIT_ISOLATED_RUINS))
-		return place_on_isolated_level(z)
+	if(SSmapping.level_trait(z,ZTRAIT_RESERVED))
+		return place_on_isolated_level()
 	while(sanity > 0)
 		sanity--
 		var/width_border = TRANSITIONEDGE + SPACERUIN_MAP_EDGE_PAD + round(width / 2)
@@ -45,8 +45,8 @@
 		new /obj/effect/landmark/ruin(central_turf, src)
 		return central_turf
 
-/datum/map_template/ruin/proc/place_on_isolated_level(z)
-	var/datum/turf_reservation/reservation = SSmapping.RequestBlockReservation(width, height, z) //Make the new level creation work with different traits.
+/datum/map_template/ruin/proc/place_on_isolated_level()
+	var/datum/turf_reservation/reservation = SSmapping.RequestBlockReservation(width, height) //Make the new level creation work with different traits.
 	if(!reservation)
 		return
 	var/turf/placement = locate(reservation.bottom_left_coords[1],reservation.bottom_left_coords[2],reservation.bottom_left_coords[3])
@@ -177,8 +177,8 @@
 									forced_ruins[linked] = -1
 								if(PLACE_BELOW)
 									forced_ruins[linked] = SSmapping.get_turf_below(placed_turf)
-								if(PLACE_ISOLATED)
-									forced_ruins[linked] = SSmapping.get_isolated_ruin_z()
+								if(PLACE_RESERVED) // the specific z-value doesn't actually matter here, just that the z level has ZTRAIT_RESERVED, because
+									forced_ruins[linked] = pick(SSmapping.levels_by_trait(ZTRAIT_RESERVED)) // place_on_isolated_level doesn't take a z argument.
 
 		//Update the availible list
 		for(var/datum/map_template/ruin/R in ruins_availible)

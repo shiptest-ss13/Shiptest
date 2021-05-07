@@ -254,4 +254,4 @@
 	suffix = "kinggoatboss.dmm"
 	always_place = TRUE
 	allow_duplicates = FALSE
-	always_spawn_with = list(/datum/map_template/ruin/space/kinggoatarena = PLACE_ISOLATED)
+	always_spawn_with = list(/datum/map_template/ruin/space/kinggoatarena = PLACE_RESERVED)

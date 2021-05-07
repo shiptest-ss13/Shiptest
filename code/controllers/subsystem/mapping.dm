@@ -23,7 +23,6 @@ SUBSYSTEM_DEF(mapping)
 	var/list/sand_camps_templates = list()
 	// WS Edit End - Whitesands
 	var/list/jungle_ruins_templates = list()
-	var/datum/space_level/isolated_ruins_z //Created on demand during ruin loading.
 
 	var/list/shuttle_templates = list()
 	var/list/shelter_templates = list()
@@ -503,12 +502,6 @@ GLOBAL_LIST_EMPTY(the_station_areas)
 		var/area/A = B
 		A.reg_in_areas_in_z()
 
-/datum/controller/subsystem/mapping/proc/get_isolated_ruin_z()
-	if(!isolated_ruins_z)
-		isolated_ruins_z = add_new_zlevel("Isolated Ruins/Reserved", list(ZTRAIT_RESERVED = TRUE, ZTRAIT_ISOLATED_RUINS = TRUE))
-		initialize_reserved_level(isolated_ruins_z.z_value)
-	return isolated_ruins_z.z_value
-
 	// Station Ruins - WS Port
 /datum/controller/subsystem/mapping/proc/seedStation()
 	for(var/V in GLOB.stationroom_landmarks)
@@ -521,28 +514,24 @@ GLOBAL_LIST_EMPTY(the_station_areas)
 // RESERVATIONS //
 //////////////////
 
-/datum/controller/subsystem/mapping/proc/RequestBlockReservation(width, height, z, reserve_type = /datum/turf_reservation, turf_type_override = null, border_turf_override = null, area_override = null)
-	if(z && !level_trait(z, ZTRAIT_RESERVED))
-		return
-
-	UNTIL((!z || reservation_ready["[z]"]) && !clearing_reserved_turfs)
-	var/datum/turf_reservation/reserve = new reserve_type
+/datum/controller/subsystem/mapping/proc/RequestBlockReservation(width, height, turf_type_override = null, border_turf_override = null, area_override = null)
+	UNTIL(!clearing_reserved_turfs)
+	var/datum/turf_reservation/reserve = new
 	reserve.set_overrides(turf_type_override, border_turf_override, area_override)
 
-	if(z)
-		if(reserve.Reserve(width, height, z))
+	for(var/i in levels_by_trait(ZTRAIT_RESERVED))
+		if(reserve.Reserve(width, height, i))
 			return reserve
-	else
-		for(var/i in levels_by_trait(ZTRAIT_RESERVED))
-			if(reserve.Reserve(width, height, i))
-				return reserve
-		//If we didn't return at this point, theres a good chance we ran out of room on the exisiting reserved z levels, so lets try a new one
-		num_of_res_levels += 1
-		var/datum/space_level/newReserved = add_new_zlevel("Transit/Reserved [num_of_res_levels]", list(ZTRAIT_RESERVED = TRUE))
-		initialize_reserved_level(newReserved.z_value)
-		if(reserve.Reserve(width, height, newReserved.z_value))
-			return reserve
+
+	//If we didn't return at this point, theres a good chance we ran out of room on the exisiting reserved z levels, so lets try a new one
+	num_of_res_levels += 1
+	var/datum/space_level/newReserved = add_new_zlevel("Transit/Reserved [num_of_res_levels]", list(ZTRAIT_RESERVED = TRUE))
+	initialize_reserved_level(newReserved.z_value)
+	if(reserve.Reserve(width, height, newReserved.z_value))
+		return reserve
+
 	qdel(reserve)
+	return null
 
 //This is not for wiping reserved levels, use wipe_reservations() for that.
 /datum/controller/subsystem/mapping/proc/initialize_reserved_level(z)

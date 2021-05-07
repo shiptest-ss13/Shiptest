@@ -459,7 +459,7 @@ SUBSYSTEM_DEF(shuttle)
 		if(WEST)
 			transit_path = /turf/open/space/transit/west
 
-	var/datum/turf_reservation/proposal = SSmapping.RequestBlockReservation(transit_width, transit_height, reserve_type = /datum/turf_reservation/transit, turf_type_override = transit_path)
+	var/datum/turf_reservation/proposal = SSmapping.RequestBlockReservation(transit_width, transit_height, turf_type_override = transit_path)
 
 	if(!istype(proposal))
 		return FALSE
@@ -707,7 +707,7 @@ SUBSYSTEM_DEF(shuttle)
 /datum/controller/subsystem/shuttle/proc/load_template(datum/map_template/shuttle/S)
 	. = FALSE
 	// load shuttle template, centred at shuttle import landmark,
-	preview_reservation = SSmapping.RequestBlockReservation(S.width, S.height, SSmapping.transit.z_value, /datum/turf_reservation/transit)
+	preview_reservation = SSmapping.RequestBlockReservation(S.width, S.height, turf_type_override = /turf/open/space/transit/south)
 	if(!preview_reservation)
 		CRASH("failed to reserve an area for shuttle template loading")
 	var/turf/BL = TURF_FROM_COORDS_LIST(preview_reservation.bottom_left_coords)
