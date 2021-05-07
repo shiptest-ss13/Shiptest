@@ -45,7 +45,6 @@ SUBSYSTEM_DEF(mapping)
 	var/station_start  // should only be used for maploading-related tasks
 	var/space_levels_so_far = 0
 	var/list/z_list
-	var/datum/space_level/transit
 	var/datum/space_level/empty_space
 	var/num_of_res_levels = 1
 
@@ -137,12 +136,12 @@ SUBSYSTEM_DEF(mapping)
 	loading_ruins = FALSE
 #endif
 	// Add the transit level
-	transit = add_new_zlevel("Transit/Reserved", list(ZTRAIT_RESERVED = TRUE))
+	var/datum/space_level/transit_reserved = add_new_zlevel("Transit/Reserved", list(ZTRAIT_RESERVED = TRUE))
 	repopulate_sorted_areas()
 	// Set up Z-level transitions.
 	setup_map_transitions()
 	generate_station_area_list()
-	initialize_reserved_level(transit.z_value)
+	initialize_reserved_level(transit_reserved.z_value)
 	return ..()
 
 /* Nuke threats, for making the blue tiles on the station go RED
