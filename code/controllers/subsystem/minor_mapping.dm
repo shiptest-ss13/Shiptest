@@ -5,7 +5,7 @@ SUBSYSTEM_DEF(minor_mapping)
 
 /datum/controller/subsystem/minor_mapping/Initialize(timeofday)
 	trigger_migration(CONFIG_GET(number/mice_roundstart))
-	place_satchels()
+	place_satchels(CONFIG_GET(number/smuggler_satchels))
 	return ..()
 
 /datum/controller/subsystem/minor_mapping/proc/trigger_migration(num_mice=10)
@@ -24,7 +24,7 @@ SUBSYSTEM_DEF(minor_mapping)
 			num_mice -= 1
 			M = null
 
-/datum/controller/subsystem/minor_mapping/proc/place_satchels(amount=10)
+/datum/controller/subsystem/minor_mapping/proc/place_satchels(amount=3)
 	var/list/turfs = find_satchel_suitable_turfs()
 
 	while(turfs.len && amount > 0)

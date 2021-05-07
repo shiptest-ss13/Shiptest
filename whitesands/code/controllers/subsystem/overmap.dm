@@ -176,78 +176,19 @@ SUBSYSTEM_DEF(overmap)
 
 /**
   * Creates a station and lavaland overmap object randomly on the overmap.
-  * * attempt - Used for the failsafe respawning of the station. Don't set unless you want it to only try to spawn it once.
   */
-/datum/controller/subsystem/overmap/proc/spawn_station(attempt = 1)
+/datum/controller/subsystem/overmap/proc/spawn_station()
 	if(main)
 		qdel(main)
-	var/obj/structure/overmap/level/mining/mining_level = /obj/structure/overmap/level/mining/lavaland
-	switch(GLOB.current_mining_map)
-		if("lavaland")
-			mining_level = /obj/structure/overmap/level/mining/lavaland
-		if("icemoon")
-			mining_level = /obj/structure/overmap/level/mining/icemoon
-		if("whitesands")
-			mining_level = /obj/structure/overmap/level/mining/whitesands
-		if(null)
-			mining_level = null
-
-	var/obj/structure/overmap/level/main/station = new(get_unused_overmap_square(), null, SSmapping.levels_by_trait(ZTRAIT_STATION))
-	if(!mining_level)
-		return
-	for(var/dir in shuffle(GLOB.alldirs))
-		var/turf/possible_tile = get_step(station, dir)
-		if(!istype(get_area(possible_tile), /area/overmap))
-			continue
-		if(locate(/obj/structure/overmap/event) in possible_tile)
-			continue
-		new mining_level(possible_tile, null, SSmapping.levels_by_trait(ZTRAIT_MINING))
-		return
-	if(attempt <= MAX_OVERMAP_PLACEMENT_ATTEMPTS)
-		spawn_station(++attempt) //Try to spawn the whole thing again
-	else
-		new mining_level(get_unused_overmap_square(), null, SSmapping.levels_by_trait(ZTRAIT_MINING))
+	new /obj/structure/overmap/level/main(get_unused_overmap_square(), null, SSmapping.levels_by_trait(ZTRAIT_STATION))
 
 /**
   * Creates a station and lavaland overmap object randomly on the overmap.
-  * * attempt - Used for the failsafe respawning of the station. Don't set unless you want it to only try to spawn it once.
   */
-/datum/controller/subsystem/overmap/proc/spawn_station_in_orbit(attempt = 1)
+/datum/controller/subsystem/overmap/proc/spawn_station_in_orbit()
 	if(main)
 		qdel(main)
-	var/obj/structure/overmap/level/mining/mining_level = /obj/structure/overmap/level/mining/lavaland
-	var/radius = "3"
-	switch(GLOB.current_mining_map)
-		if("lavaland")
-			mining_level = /obj/structure/overmap/level/mining/lavaland
-			radius = "3"
-		if("icemoon")
-			mining_level = /obj/structure/overmap/level/mining/icemoon
-			radius = "8"
-		if("whitesands")
-			mining_level = /obj/structure/overmap/level/mining/whitesands
-			radius = "5"
-		if(null)
-			mining_level = null
-
-	var/turf/T = get_unused_overmap_square_in_radius(radius)
-	if(!mining_level)
-		new /obj/structure/overmap/level/main(T, null, SSmapping.levels_by_trait(ZTRAIT_STATION))
-		return
-
-	new mining_level(T, null, SSmapping.levels_by_trait(ZTRAIT_MINING))
-	for(var/dir in shuffle(GLOB.alldirs))
-		var/turf/possible_tile = get_step(T, dir)
-		if(!istype(get_area(possible_tile), /area/overmap))
-			continue
-		if(locate(/obj/structure/overmap) in possible_tile)
-			continue
-		new /obj/structure/overmap/level/main(possible_tile, null, SSmapping.levels_by_trait(ZTRAIT_STATION))
-		return
-	if(attempt <= MAX_OVERMAP_PLACEMENT_ATTEMPTS)
-		spawn_station(++attempt) //Try to spawn the whole thing again
-	else
-		new mining_level(get_unused_overmap_square_in_radius(radius), null, SSmapping.levels_by_trait(ZTRAIT_MINING))
+	new /obj/structure/overmap/level/main(get_unused_overmap_square_in_radius("[rand(3, 8)]"), null, SSmapping.levels_by_trait(ZTRAIT_STATION))
 
 /**
   * Creates an overmap object for each ruin level, making them accessible.
@@ -346,8 +287,10 @@ SUBSYSTEM_DEF(overmap)
 		mapgen.generate_terrain(turfs)
 
 	//gets the turf with an X in the middle of the reservation, and a Y that's 1/4ths up in the reservation.
-	var/turf/docking_turf = locate(encounter_reservation.bottom_left_coords[1] + dock_size, encounter_reservation.bottom_left_coords[2] + FLOOR(dock_size / 2, 1), encounter_reservation.bottom_left_coords[3])
-	var/obj/docking_port/stationary/dock = SSshuttle.getDock("[PRIMARY_OVERMAP_DOCK_PREFIX]_[dock_id]")
+	var/turf/docking_turf = locate(encounter_reservation.bottom_left_coords[1] + max(dock_size, visiting_shuttle?.dheight + 4), \
+								   encounter_reservation.bottom_left_coords[2] + max(FLOOR(dock_size / 2, 1), visiting_shuttle?.dwidth + 4), \
+								   encounter_reservation.bottom_left_coords[3])
+	var/obj/docking_port/stationary/dock = SSshuttle.getDock("[PRIMARY_OVERMAP_DOCK_PREFIX]_[dock_id]") //This check exists because docking ports don't like to be deleted.
 	if(!dock)
 		dock = new(docking_turf)
 	else
@@ -364,7 +307,9 @@ SUBSYSTEM_DEF(overmap)
 		dock.dwidth = FLOOR(dock_size / 2, 1)
 
 	//gets the turf with an X in the middle of the reservation, and a Y that's 3/4ths up in the reservation.
-	var/turf/secondary_docking_turf = locate(encounter_reservation.bottom_left_coords[1] + dock_size, encounter_reservation.bottom_left_coords[2] + CEILING(dock_size * 1.5, 1), encounter_reservation.bottom_left_coords[3])
+	var/turf/secondary_docking_turf = locate(encounter_reservation.bottom_left_coords[1] + max(dock_size, visiting_shuttle?.dheight + 4),
+											 encounter_reservation.bottom_left_coords[2] + max(CEILING(dock_size * 1.5, 1), visiting_shuttle?.dwidth * 2 + 4), \
+											 encounter_reservation.bottom_left_coords[3])
 	var/obj/docking_port/stationary/secondary_dock = SSshuttle.getDock("[SECONDARY_OVERMAP_DOCK_PREFIX]_[dock_id]")
 	if(!secondary_dock)
 		secondary_dock = new(secondary_docking_turf)

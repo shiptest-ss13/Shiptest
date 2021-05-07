@@ -23,3 +23,12 @@
 	mob_overlay_icon = 'whitesands/icons/mob/clothing/suits.dmi'
 	icon_state = "hopformal"
 	item_state = "capspacesuit"
+
+/obj/item/clothing/suit/armor/vest/syndie
+	name = "\improper Syndicate plate carrier"
+	desc = "A plate carrier vest commonly used by Syndicate forces, regardless of affiliation. Has a few attached pouches."
+	icon = 'whitesands/icons/obj/clothing/suits.dmi'
+	mob_overlay_icon = 'whitesands/icons/mob/clothing/suits.dmi'
+	icon_state = "syndiearmor"
+	item_state = "syndiearmor"
+

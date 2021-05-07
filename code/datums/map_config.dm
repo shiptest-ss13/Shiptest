@@ -3,10 +3,6 @@
 //defaults to box
 //  -Cyberboss
 
-GLOBAL_LIST_INIT(mining_maps, list("lavaland" = 1, "whitesands" = 1, "random" = 0))
-GLOBAL_VAR_INIT(current_mining_map, "random")
-GLOBAL_VAR_INIT(next_mining_map, "random")
-
 /datum/map_config
 	// Metadata
 	var/config_filename = "_maps/salvage.json"
@@ -25,8 +21,6 @@ GLOBAL_VAR_INIT(next_mining_map, "random")
 	var/traits = null
 	var/space_ruin_levels = 0
 	var/space_empty_levels = 0
-
-	var/minetype
 
 	var/allow_custom_shuttles = TRUE
 	var/shuttles = list(
@@ -138,9 +132,6 @@ GLOBAL_VAR_INIT(next_mining_map, "random")
 		log_world("map_config space_empty_levels is not a number!")
 		return
 
-	if ("minetype" in json)
-		minetype = json["minetype"]
-
 	allow_custom_shuttles = json["allow_custom_shuttles"] != FALSE
 
 	if ("job_changes" in json)
@@ -165,7 +156,6 @@ GLOBAL_VAR_INIT(next_mining_map, "random")
 	var/json = file("data/next_map.json")
 	json = file2text(json)
 	json = json_decode(json)
-	json["minetype"] = GLOB.next_mining_map
 	json = json_encode(json)
 	fdel("data/next_map.json")
 	json = text2file(json, "data/next_map.json")

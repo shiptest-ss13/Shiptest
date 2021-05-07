@@ -206,7 +206,7 @@ const ShipContent = (props, context) => {
               Fuel
             </Table.Cell>
           </Table.Row>
-          {engineInfo.map(engine => (
+          {engineInfo && engineInfo.map(engine => (
             <Table.Row
               key={engine.name}
               className="candystripe">
