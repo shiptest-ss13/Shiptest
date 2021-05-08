@@ -297,10 +297,15 @@
 /proc/generate_species_clothing(obj/item/O, index, icon, species)
 	var/icon/human_clothing_icon	= icon(icon, index)
 	var/icon/species_icon = new('icons/mob/clothing/species/teshari.dmi', "empty")
+
 	var/primary_color
 	var/primary_state
+
 	var/secondary_color
 	var/secondary_state
+
+	var/tertiary_color
+	var/tertiary_state
 
 	switch(O.slot_flags)
 		if(ITEM_SLOT_FEET)
@@ -326,7 +331,14 @@
 				primary_state = "scarf"
 
 		if(ITEM_SLOT_OCLOTHING)
-			if(istype(O, /obj/item/clothing/suit/space))
+			if(istype(O, /obj/item/clothing/suit/space/hardsuit))
+				primary_color = human_clothing_icon.GetPixel(10, 20)
+				primary_state = "hardsuit"
+				secondary_color = human_clothing_icon.GetPixel(14, 15)
+				secondary_state = "hardsuit_inner"
+				tertiary_color = human_clothing_icon.GetPixel(22, 12)
+				tertiary_state = "hardsuit_accents"
+			else if(istype(O, /obj/item/clothing/suit/space))
 				primary_color = human_clothing_icon.GetPixel(10, 20)
 				primary_state = "spacesuit"
 			else if(istype(O, /obj/item/clothing/suit/armor))
@@ -337,37 +349,27 @@
 				primary_state = "coat"
 
 		if(ITEM_SLOT_ICLOTHING)
-			var/shirt_color		= human_clothing_icon.GetPixel(15, 17)
-			var/pants_color		= human_clothing_icon.GetPixel(15, 10)
-			var/sleeves_color	= human_clothing_icon.GetPixel(10, 19)
-			if(shirt_color)
-				var/icon/shirt = icon(species, "shirt")
-				shirt.Blend(shirt_color, ICON_MULTIPLY)
-				species_icon.Blend(shirt, ICON_OVERLAY)
-			if(pants_color)
-				var/icon/pants
-				if(istype(O, /obj/item/clothing/under))
-					var/obj/item/clothing/under/U = O
-					pants = icon(species, U.fitted == FEMALE_UNIFORM_TOP ? "skirt" : "pants") //making a large assumption here that all skirts are FEMALE_UNIFORM_TOP
-				else
-					pants = icon(species, "pants")
-				pants.Blend(pants_color, ICON_MULTIPLY)
-				species_icon.Blend(pants, ICON_OVERLAY)
-			if(sleeves_color)
-				var/icon/sleeves = icon(species, "sleeves")
-				sleeves.Blend(sleeves_color, ICON_MULTIPLY)
-				species_icon.Blend(sleeves, ICON_OVERLAY)
+			var/obj/item/clothing/under/U = O
+			primary_color		= human_clothing_icon.GetPixel(15, 17)
+			secondary_color		= human_clothing_icon.GetPixel(15, 10)
+			tertiary_color	= human_clothing_icon.GetPixel(10, 19)
 
-			GLOB.species_clothing_icons[species][index] = species_icon
-			return //Uniforms have a third colour, so it doesn't need to let the rest of the proc run
+			primary_state = "shirt"
+			secondary_state = U.fitted == FEMALE_UNIFORM_TOP ? "skirt" : "pants" //making a large assumption here that all skirts are FEMALE_UNIFORM_TOP
+			tertiary_state = "sleeves"
 
-	if(primary_state)
-		species_icon = icon(species, primary_state)
-		species_icon.Blend(primary_color, ICON_MULTIPLY)
-		if(secondary_state)
-			var/icon/secondary_icon = icon(species, secondary_state)
-			secondary_icon.Blend(secondary_color, ICON_MULTIPLY)
-			species_icon.Blend(secondary_icon, ICON_OVERLAY)
+	if(primary_state && primary_color)
+		var/icon/primary_icon = icon(species, primary_state)
+		primary_icon.Blend(primary_color, ICON_MULTIPLY)
+		species_icon.Blend(primary_icon, ICON_OVERLAY)
+	if(secondary_state && primary_color)
+		var/icon/secondary_icon = icon(species, secondary_state)
+		secondary_icon.Blend(secondary_color, ICON_MULTIPLY)
+		species_icon.Blend(secondary_icon, ICON_OVERLAY)
+	if(tertiary_state && primary_color)
+		var/icon/tertiary_icon = icon(species, tertiary_state)
+		tertiary_icon.Blend(tertiary_color, ICON_MULTIPLY)
+		species_icon.Blend(tertiary_icon, ICON_OVERLAY)
 
 	GLOB.species_clothing_icons[species][index] = species_icon
 
