@@ -60,6 +60,7 @@
 	LAZYADD(myarea.firealarms, src)
 
 /obj/machinery/firealarm/Destroy()
+	myarea.firereset(src)
 	LAZYREMOVE(myarea.firealarms, src)
 	return ..()
 
@@ -145,7 +146,7 @@
 	if(!is_operational())
 		return
 	var/area/A = get_area(src)
-	A.firereset(src)
+	A.firereset()
 	if(user)
 		log_game("[user] reset a fire alarm at [COORD(src)]")
 
