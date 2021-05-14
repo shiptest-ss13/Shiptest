@@ -509,16 +509,6 @@ GLOBAL_LIST_EMPTY(the_station_areas)
 // RESERVATIONS //
 //////////////////
 
-/*
-/datum/controller/subsystem/mapping/proc/debug_test_fixed_reservations(num_of_fixed, do_fill)
-	var/reserve_number = 1
-	while(reserve_number <= num_of_fixed)
-		var/datum/turf_reservation/reserve = request_fixed_reservation()
-		if(do_fill)
-			reserve.fill_in(turf_type = /turf/open/floor/plasteel, border_turf_type = /turf/closed/indestructible/blank)
-		reserve_number += 1
-*/
-
 /datum/controller/subsystem/mapping/proc/request_fixed_reservation()
 	UNTIL(!clearing_reserved_turfs)
 	var/datum/turf_reservation/fixed/reservation = new()
