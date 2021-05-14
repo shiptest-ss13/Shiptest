@@ -50,6 +50,12 @@
 	var/turf/top_right = locate(top_right_coords[1], top_right_coords[2], top_right_coords[3])
 	return block(bottom_left, top_right)
 
+/datum/turf_reservation/proc/get_non_border_turfs()
+	SHOULD_NOT_OVERRIDE(TRUE)
+	var/turf/bottom_left = locate(bottom_left_coords[1]+1, bottom_left_coords[2]+1, bottom_left_coords[3])
+	var/turf/top_right = locate(top_right_coords[1]-1, top_right_coords[2]-1, top_right_coords[3])
+	return block(bottom_left, top_right)
+
 /datum/turf_reservation/proc/fill_in(turf/turf_type, turf/border_turf_type, area/area_override)
 	var/area/area_to_use = null
 	if(area_override)

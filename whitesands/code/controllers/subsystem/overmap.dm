@@ -275,7 +275,7 @@ SUBSYSTEM_DEF(overmap)
 	total_size = max(dock_size + ruin_size, total_size)
 
 	var/datum/turf_reservation/fixed/encounter_reservation = SSmapping.request_dynamic_reservation(total_size, total_size)
-	encounter_reservation.fill_in(border_turf_type = /turf/closed/indestructible, area_override = target_area)
+	encounter_reservation.fill_in(border_turf_type = /turf/closed/indestructible/blank, area_override = target_area)
 
 	if(ruin_type) //Does AFTER the turfs are reserved so it can find where the allocation is
 		//gets a turf vaguely in the middle of the reserve
@@ -283,10 +283,7 @@ SUBSYSTEM_DEF(overmap)
 		ruin_type.load(ruin_turf)
 
 	if(mapgen) //Does AFTER the ruin is loaded so that it does not spawn flora/fauna in the ruin
-		var/list/turfs = list()
-		for(var/turf/T in encounter_reservation.get_reserved_turfs())
-			turfs += T
-		mapgen.generate_terrain(turfs)
+		mapgen.generate_terrain(encounter_reservation.get_non_border_turfs())
 
 	//gets the turf with an X in the middle of the reservation, and a Y that's 1/4ths up in the reservation.
 	var/turf/docking_turf = locate(encounter_reservation.bottom_left_coords[1] + max(dock_size, visiting_shuttle?.dheight + 4), \
