@@ -1,19 +1,19 @@
-# White Sands 13 Codebase
+# Shiptest Codebase
 
-![Checks](https://github.com/Whitesands13/Whitesands/workflows/Checks/badge.svg) [![Percentage of issues still open](http://isitmaintained.com/badge/open/whitesands13/whitesands.svg)](https://isitmaintained.com/project/whitesands13/whitesands "Percentage of issues still open") [![Average time to resolve an issue](http://isitmaintained.com/badge/resolution/whitesands13/whitesands.svg)](https://isitmaintained.com/project/whitesands13/whitesands "Average time to resolve an issue") [![GitHub issues](https://img.shields.io/github/issues/whitesands13/whitesands)](https://github.com/Whitesands13/Whitesands/issues) ![GitHub top language](https://img.shields.io/github/languages/top/whitesands13/whitesands)
+[![Checks](https://github.com/shiptest-ss13/Shiptest/workflows/Checks/badge.svg)](https://github.com/shiptest-ss13/Shiptest/actions/workflows/ci_suite.yml) [![Percentage of issues still open](http://isitmaintained.com/badge/open/shiptest-ss13/Shiptest.svg)](https://isitmaintained.com/project/shiptest-ss13/Shiptest "Percentage of issues still open") [![Average time to resolve an issue](http://isitmaintained.com/badge/resolution/shiptest-ss13/Shiptest.svg)](https://isitmaintained.com/project/shiptest-ss13/Shiptest "Average time to resolve an issue") [![GitHub issues](https://img.shields.io/github/issues/shiptest-ss13/Shiptest)](https://github.com/shiptest-ss13/Shiptest/issues) ![GitHub top language](https://img.shields.io/github/languages/top/shiptest-ss13/Shiptest)
 
 [![forthebadge](https://forthebadge.com/images/badges/built-with-resentment.svg)](https://forthebadge.com) [![forthebadge](https://forthebadge.com/images/badges/contains-technical-debt.svg)](https://user-images.githubusercontent.com/8171642/50290880-ffef5500-043a-11e9-8270-a2e5b697c86c.png) [![forinfinityandbyond](https://user-images.githubusercontent.com/5211576/29499758-4efff304-85e6-11e7-8267-62919c3688a9.gif)](https://www.reddit.com/r/SS13/comments/5oplxp/what_is_the_main_problem_with_byond_as_an_engine/dclbu1a)
 
-* **Website:** <https://white-sands.space>
-* **Forums:** <https://forum.white-sands.space>
-* **Wiki:** <https://wiki.white-sands.space>
-* **Code Docs:** <https://whitesands13.github.io/whitesands>
-* **Discord:** <https://discord.gg/BUM8uRc>
+* **Website:** <https://shiptest.ga>
+* **Forums:** <https://forum.shiptest.ga>
+* **Wiki:** <https://wiki.shiptest.ga>
+* **Code Docs:** <https://codedocs.shiptest.ga/>
+* **Discord:** <https://discord.gg/XKBktpjAbh>
 * **Coderbus Discord:** <https://discord.gg/Vh8TJp9>
 
-This is the codebase for the /tg/station flavoured fork of SpaceStation 13.
+This is the codebase for the Ship-based Shiptest flavoured fork of SpaceStation 13.
 
-Space Station 13 is a paranoia-laden round-based roleplaying game set against the backdrop of a nonsensical, metal death trap masquerading as a space station, with charming spritework designed to represent the sci-fi setting and its dangerous undertones. Have fun, and survive!
+Shiptest is a thrill-packed round-based exploration and roleplaying game set against the backdrop of a whimsical metal spacefaring machine masquerading as a spaceship, with charming spritework designed to represent the sci-fi setting and it's dangerous undertones. Have fun, and survive with your crew!
 
 ## DOWNLOADING
 
@@ -33,7 +33,8 @@ Space Station 13 is a paranoia-laden round-based roleplaying game set against th
 
 ## CODEBASE CREDITS
 
-* /tg/, for the codebase
+* Whitesands, for the original codebase
+* /tg/, for the original codebase of the original codebase
 * BeeStation, for the many QoL changes
 * Oracle, for the inspiration and wonderful features and sprites
 * Interstation for bridging the gap between Oracle and Modern /tg/
