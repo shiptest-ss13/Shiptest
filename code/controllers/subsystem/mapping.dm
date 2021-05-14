@@ -31,12 +31,6 @@ SUBSYSTEM_DEF(mapping)
 	var/list/areas_in_z = list()
 
 	var/loading_ruins = FALSE
-	var/list/turf/unused_turfs = list()				//Not actually unused turfs they're unused but reserved for use for whatever requests them. "[zlevel_of_turf]" = list(turfs)
-	var/list/datum/turf_reservations		//list of turf reservations
-	var/list/used_turfs = list()				//list of turf = datum/turf_reservation
-
-	var/list/reservation_ready = list()
-	var/clearing_reserved_turfs = FALSE
 
 	///All possible biomes in assoc list as type || instance
 	var/list/biomes = list()
@@ -44,10 +38,14 @@ SUBSYSTEM_DEF(mapping)
 	// Z-manager stuff
 	var/station_start  // should only be used for maploading-related tasks
 	var/space_levels_so_far = 0
-	var/list/z_list
+	var/list/datum/space_level/z_list
 	var/datum/space_level/empty_space
-	var/num_of_res_levels = 1
 
+	// reserve stuff
+	var/list/reservations_by_level = list()	// list of lists of turf reservations (not reserved turfs) by z level. "[zlevel_of_reserve]" = list(reserves)
+	var/list/turf/unused_turfs = list()		// turfs on reserveable z-levels that are not currently reserved but are available to be. "[zlevel_of_turf]" = list(turfs)
+	var/clearing_reserved_turfs = FALSE 	// whether we're currently clearing out all the reserves
+	var/num_of_res_levels = 0				// number of z-levels for reserving
 
 
 //dlete dis once #39770 is resolved
@@ -136,12 +134,11 @@ SUBSYSTEM_DEF(mapping)
 	loading_ruins = FALSE
 #endif
 	// Add the transit level
-	var/datum/space_level/transit_reserved = add_new_zlevel("Transit/Reserved", list(ZTRAIT_RESERVED = TRUE))
+	new_reserved_level()
 	repopulate_sorted_areas()
 	// Set up Z-level transitions.
 	setup_map_transitions()
 	generate_station_area_list()
-	initialize_reserved_level(transit_reserved.z_value)
 	return ..()
 
 /* Nuke threats, for making the blue tiles on the station go RED
@@ -178,16 +175,15 @@ SUBSYSTEM_DEF(mapping)
 	// WS Edit End - Whitesands
 	shuttle_templates = SSmapping.shuttle_templates
 	shelter_templates = SSmapping.shelter_templates
-	unused_turfs = SSmapping.unused_turfs
-	turf_reservations = SSmapping.turf_reservations
-	used_turfs = SSmapping.used_turfs
-
 	config = SSmapping.config
 	next_map_config = SSmapping.next_map_config
 
-	clearing_reserved_turfs = SSmapping.clearing_reserved_turfs
-
 	z_list = SSmapping.z_list
+
+	reservations_by_level = SSmapping.reservations_by_level
+	unused_turfs = SSmapping.unused_turfs
+	clearing_reserved_turfs = SSmapping.clearing_reserved_turfs
+	num_of_res_levels = SSmapping.num_of_res_levels
 
 #define INIT_ANNOUNCE(X) to_chat(world, "<span class='boldannounce'>[X]</span>"); log_world(X)
 /datum/controller/subsystem/mapping/proc/LoadGroup(list/errorList, name, path, files, list/traits, list/default_traits, silent = FALSE)
@@ -513,23 +509,43 @@ GLOBAL_LIST_EMPTY(the_station_areas)
 // RESERVATIONS //
 //////////////////
 
-/datum/controller/subsystem/mapping/proc/RequestBlockReservation(width, height, turf_type_override = null, border_turf_override = null, area_override = null)
+/*
+/datum/controller/subsystem/mapping/proc/debug_test_fixed_reservations(num_of_fixed, do_fill)
+	var/reserve_number = 1
+	while(reserve_number <= num_of_fixed)
+		var/datum/turf_reservation/reserve = request_fixed_reservation()
+		if(do_fill)
+			reserve.fill_in(turf_type = /turf/open/floor/plasteel, border_turf_type = /turf/closed/indestructible/blank)
+		reserve_number += 1
+*/
+
+/datum/controller/subsystem/mapping/proc/request_fixed_reservation()
 	UNTIL(!clearing_reserved_turfs)
+	var/datum/turf_reservation/fixed/reservation = new()
 
-	var/datum/turf_reservation/reserve = new(turf_type_override, border_turf_override, area_override)
-	for(var/i in levels_by_trait(ZTRAIT_RESERVED))
-		if(reserve.Reserve(width, height, i))
-			return reserve
+	var/successful_reservation = reservation.reserve()
+	if(successful_reservation)
+		return reservation
 
-	//If we didn't return at this point, theres a good chance we ran out of room on the exisiting reserved z levels, so lets try a new one
-	num_of_res_levels += 1
-	var/datum/space_level/newReserved = add_new_zlevel("Transit/Reserved [num_of_res_levels]", list(ZTRAIT_RESERVED = TRUE))
-	initialize_reserved_level(newReserved.z_value)
-	if(reserve.Reserve(width, height, newReserved.z_value))
-		return reserve
-
-	qdel(reserve)
+	qdel(reservation)
 	return null
+
+/datum/controller/subsystem/mapping/proc/request_dynamic_reservation(width, height)
+	UNTIL(!clearing_reserved_turfs)
+	var/datum/turf_reservation/dynamic/reservation = new(width, height)
+
+	var/successful_reservation = reservation.reserve()
+	if(successful_reservation)
+		return reservation
+
+	qdel(reservation)
+	return null
+
+/datum/controller/subsystem/mapping/proc/new_reserved_level()
+	num_of_res_levels += 1
+	var/datum/space_level/new_reserved = add_new_zlevel("Reserved [num_of_res_levels]", list(ZTRAIT_RESERVED = TRUE))
+	initialize_reserved_level(new_reserved.z_value)
+	return new_reserved
 
 //This is not for wiping reserved levels, use wipe_reservations() for that.
 /datum/controller/subsystem/mapping/proc/initialize_reserved_level(z)
@@ -546,8 +562,9 @@ GLOBAL_LIST_EMPTY(the_station_areas)
 		// already /turf/open/space/basic.
 		var/turf/T = t
 		T.flags_1 |= UNUSED_RESERVATION_TURF_1
+
 	unused_turfs["[z]"] = block
-	reservation_ready["[z]"] = TRUE
+	reservations_by_level["[z]"] = list()
 	clearing_reserved_turfs = FALSE
 
 // For wiping all reserved levels.
@@ -584,21 +601,19 @@ GLOBAL_LIST_EMPTY(the_station_areas)
 /datum/controller/subsystem/mapping/proc/do_wipe_turf_reservations()
 	PRIVATE_PROC(TRUE)
 	UNTIL(initialized)							//This proc is for AFTER init, before init turf reservations won't even exist and using this will likely break things.
-	for(var/i in turf_reservations)
-		var/datum/turf_reservation/TR = i
-		if(!QDELETED(TR))
-			qdel(TR, TRUE)
-	UNSETEMPTY(turf_reservations)
+	for(var/z_level in reservations_by_level)
+		for(var/reserve in reservations_by_level[z_level])
+			var/datum/turf_reservation/TR = reserve
+			if(!QDELETED(TR))
+				qdel(TR, TRUE)
 	var/list/clearing = list()
 	for(var/l in unused_turfs)			//unused_turfs is a assoc list by z = list(turfs)
 		if(islist(unused_turfs[l]))
 			clearing |= unused_turfs[l]
-	clearing |= used_turfs		//used turfs is an associative list, BUT, reserve_turfs() can still handle it. If the code above works properly, this won't even be needed as the turfs would be freed already.
 	unused_turfs.Cut()
-	used_turfs.Cut()
-	reserve_turfs(clearing)
+	mark_turfs_as_unused(clearing)
 
-/datum/controller/subsystem/mapping/proc/reserve_turfs(list/turfs)
+/datum/controller/subsystem/mapping/proc/mark_turfs_as_unused(list/turfs)
 	for(var/i in turfs)
 		var/turf/T = i
 		T.empty(RESERVED_TURF_TYPE, RESERVED_TURF_TYPE, null, TRUE)
@@ -609,9 +624,7 @@ GLOBAL_LIST_EMPTY(the_station_areas)
 		CHECK_TICK
 
 /datum/controller/subsystem/mapping/proc/get_turf_reservation_at_coords(x, y, z)
-	for(var/datum/turf_reservation/TR as anything in turf_reservations)
-		if(z < TR.bottom_left_coords[3] || z > TR.top_right_coords[3])
-			continue
+	for(var/datum/turf_reservation/TR as anything in reservations_by_level["[z]"])
 		if(x < TR.bottom_left_coords[1] || x > TR.top_right_coords[1])
 			continue
 		if(y < TR.bottom_left_coords[2] || y > TR.top_right_coords[2])

@@ -31,7 +31,7 @@ require only minor tweaks.
 #define ZTRAIT_CENTCOM "CentCom"
 #define ZTRAIT_STATION "Station"
 #define ZTRAIT_MINING "Mining"
-#define ZTRAIT_RESERVED "Transit/Reserved"
+#define ZTRAIT_RESERVED "Reserved"
 #define ZTRAIT_AWAY "Away Mission"
 #define ZTRAIT_SPACE_RUINS "Space Ruins"
 #define ZTRAIT_LAVA_RUINS "Lava Ruins"
@@ -112,7 +112,7 @@ require only minor tweaks.
 #define CAMERA_LOCK_MINING 2
 #define CAMERA_LOCK_CENTCOM 4
 
-//Reserved/Transit turf type
+//Reserved turf type
 #define RESERVED_TURF_TYPE /turf/open/space/basic			//What the turf is when not being used
 
 //Ruin Generation
