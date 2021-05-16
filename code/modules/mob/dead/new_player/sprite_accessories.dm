@@ -1509,6 +1509,26 @@
 	name = "Thigh-high (Rainbow)"
 	icon_state = "rainbow_thigh"
 
+/datum/sprite_accessory/socks/les_thigh
+	name = "Thigh-high (Lesbian)"
+	icon_state = "les_thigh"
+
+/datum/sprite_accessory/socks/bi_thigh
+	name = "Thigh-high (Bi)"
+	icon_state = "bi_thigh" //bi thigh highs? we gotta study this
+
+/datum/sprite_accessory/socks/trans_thigh
+	name = "Thigh-high (Trans)"
+	icon_state = "trans_thigh"
+
+/datum/sprite_accessory/socks/enby_thigh
+	name = "Thigh-high (Nonbinary)"
+	icon_state = "enby_thigh"
+
+/datum/sprite_accessory/socks/ace_thigh
+	name = "Thigh-high (Asexual)"
+	icon_state = "ace_thigh"
+
 /datum/sprite_accessory/socks/striped_thigh
 	name = "Thigh-high (Striped)"
 	icon_state = "striped_thigh"
@@ -1732,7 +1752,7 @@
 	dimension_x = 96
 	center = TRUE
 	dimension_y = 32
-	
+
 /datum/sprite_accessory/wings/mothra
 	name = "Mothra"
 	icon_state = "mothra"
