@@ -7,14 +7,16 @@
 // Utility jumpsuits
 
 /datum/gear/uniform/utility
+	display_name = "jumpsuit, utility"
 	path = /obj/item/clothing/under/utility
 	description = "A cheaply manufactured jumpsuit made out of cheap materials designed for use by cheap labor."
-	cost = 0
+	cost = 1
 
 /datum/gear/uniform/utility_skirt
+	display_name = "jumpskirt, utility"
 	path = /obj/item/clothing/under/utility/skirt
 	description = "Does it being a skirt defeat the purpose of use in a hazardous work environment?"
-	cost = 0
+	cost = 1
 
 //Colored jumpsuits
 
