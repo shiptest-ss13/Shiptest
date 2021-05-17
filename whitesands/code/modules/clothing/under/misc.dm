@@ -5,6 +5,7 @@
 	desc = "A somewhat uncomfortable suit designed to be as cheap as possible to manufacture."
 	icon_state = "utility"
 	item_state = "utility"
+	fitted = FEMALE_UNIFORM_TOP //i dont know anymore
 	can_adjust = TRUE
 
 /obj/item/clothing/under/utility/skirt //trolled.
