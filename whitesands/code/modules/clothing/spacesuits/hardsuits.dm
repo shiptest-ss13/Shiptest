@@ -1,5 +1,5 @@
 /obj/item/clothing/head/helmet/space/hardsuit/solgov
-	name = "SolGov hardsuit helmet"
+	name = "\improper SolGov hardsuit helmet"
 	desc = "An armored spaceproof helmet. The glass has a metallic shine on it."
 	icon_state = "hardsuit0-solgov"
 	item_state = "hardsuit0-solgov"
@@ -10,7 +10,7 @@
 
 /obj/item/clothing/suit/space/hardsuit/solgov
 	icon_state = "hardsuit_solgov"
-	name = "SolGov hardsuit"
+	name = "\improper SolGov hardsuit"
 	desc = "An armored spaceproof suit. An exoskeleton helps the user not have slowdown, allowing full mobility with the suit."
 	item_state = "hardsuit_solgov"
 	armor = list("melee" = 50, "bullet" = 45, "laser" = 40, "energy" = 30, "bomb" = 60, "bio" = 100, "rad" = 90, "fire" = 85, "acid" = 75) //intentionally the fucking strong, this is master chief-tier armor //is this really what you call the strong?? is this the best solgov has to offer??????
@@ -20,7 +20,7 @@
 	mob_overlay_icon = 'whitesands/icons/mob/clothing/suits.dmi'
 
 /obj/item/clothing/head/helmet/space/hardsuit/quixote
-	name = "Quixote mobility hardsuit helmet"
+	name = "\improper Quixote mobility hardsuit helmet"
 	desc = "The integrated helmet of a Quixote mobility hardsuit."
 	icon_state = "hardsuit0-quixote"
 	item_state = "quixote-helm"
@@ -32,7 +32,7 @@
 	mob_overlay_icon = 'whitesands/icons/mob/clothing/head.dmi'
 
 /obj/item/clothing/suit/space/hardsuit/quixote
-	name = "Quixote mobility hardsuit"
+	name = "\improper Quixote mobility hardsuit"
 	desc = "The Quixote mobility suit is the magnum opus of Phorsman equipment, combining durable composite armor with high mobility thrusters."
 	icon_state = "quixotesuit"
 	item_state = "quixotesuit"

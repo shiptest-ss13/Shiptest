@@ -584,10 +584,16 @@
 	desc = "A poster advertising the latest PDA from Nanotrasen suppliers."
 	icon_state = "poster28_legit"
 
-/obj/structure/sign/poster/official/enlist
+/* /obj/structure/sign/poster/official/enlist
 	name = "Enlist" // but I thought deathsquad was never acknowledged
 	desc = "Enlist in the Nanotrasen Deathsquadron reserves today!"
-	icon_state = "poster29_legit"
+	icon_state = "poster29_legit" */ // I refuse to acknowledge this bullshit - Zeta
+
+/obj/structure/sign/poster/official/solgov_enlist //much better.
+	name = "Enlist"
+	desc = "Enlist to be a part of the SolGov Peacekeeping Operations today!"
+	icon = 'whitesands/icons/obj/contraband.dmi' // look i even did the modularizations
+	icon_state = "poster_solgov_enlist_legit"
 
 /obj/structure/sign/poster/official/nanomichi_ad
 	name = "Nanomichi Ad"
