@@ -262,7 +262,7 @@
 	Has a menacing red S on it."
 	volume = 10
 	amount_per_transfer_from_this = 10
-	list_reagents = list("bonefixingjuice" = 10)
+	list_reagents = list(/datum/reagent/medicine/bonefixingjuice = 10)
 	icon_state = "syndipen"
 
 #define HYPO_SPRAY 0
