@@ -30,6 +30,8 @@
 	can_adjust = FALSE
 
 /obj/item/clothing/under/plasmaman/solgov
+	icon = 'whitesands/icons/obj/clothing/under/solgov.dmi' //ogan i am going to kill you i stg
+	mob_overlay_icon = 'whitesands/icons/mob/clothing/under/solgov.dmi'
 	name = "SolGov envirosuit"
 	desc = "Why the human centric government sent the science-fiction equivalent of a leper to this station is beyond me."
 	icon_state = "plasma_solgov"

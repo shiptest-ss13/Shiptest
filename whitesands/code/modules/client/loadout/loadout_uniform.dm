@@ -4,6 +4,18 @@
 	slot = ITEM_SLOT_ICLOTHING
 	sort_category = "Uniforms"
 
+// Utility jumpsuits
+
+/datum/gear/uniform/utility
+	path = /obj/item/clothing/under/utility
+	description = "A cheaply manufactured jumpsuit made out of cheap materials designed for use by cheap labor."
+	cost = 0
+
+/datum/gear/uniform/utility_skirt
+	path = /obj/item/clothing/under/utility/skirt
+	description = "Does it being a skirt defeat the purpose of use in a hazardous work environment?"
+	cost = 0
+
 //Colored jumpsuits
 
 /datum/gear/uniform/color
@@ -106,6 +118,7 @@
 /datum/gear/uniform/suit/white_shirt
 	display_name = "suit, white shirt"
 	path = /obj/item/clothing/under/suit/black
+
 //Premium
 /datum/gear/uniform/tacticool
 	display_name = "tacticool turtleneck"
