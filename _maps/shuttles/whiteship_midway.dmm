@@ -882,23 +882,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/shuttle/abandoned/coridor)
-"rV" = (
-/obj/structure/table,
-/obj/structure/cable,
-/obj/machinery/power/apc/auto_name/west{
-	pixel_x = -24
-	},
-/obj/machinery/cell_charger,
-/obj/item/stock_parts/cell/high/plus,
-/obj/effect/turf_decal/tile/blue{
-	dir = 8
-	},
-/obj/effect/turf_decal/tile/blue{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/blue,
-/turf/open/floor/plasteel,
-/area/shuttle/abandoned/bridge)
 "se" = (
 /turf/closed/wall/mineral/titanium,
 /area/shuttle/abandoned/coridor)
@@ -987,17 +970,6 @@
 	},
 /turf/open/floor/engine/vacuum,
 /area/shuttle/abandoned/atmospherics)
-"uc" = (
-/obj/structure/chair,
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/turf_decal/tile/green{
-	dir = 4
-	},
-/obj/effect/turf_decal/tile/green{
-	dir = 1
-	},
-/turf/open/floor/plasteel,
-/area/shuttle/abandoned/crew)
 "ud" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/blood,
@@ -1432,13 +1404,6 @@
 /obj/effect/turf_decal/tile/blue,
 /turf/open/floor/plasteel,
 /area/shuttle/abandoned/bridge)
-"BQ" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden{
-	dir = 8
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plating,
-/area/shuttle/abandoned/engine)
 "BV" = (
 /obj/structure/window/reinforced{
 	dir = 4;
@@ -1487,6 +1452,15 @@
 "CS" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/shuttle/abandoned/coridor)
+"De" = (
+/obj/machinery/shower{
+	dir = 4
+	},
+/obj/machinery/airalarm/directional/west{
+	pixel_x = -24
+	},
+/turf/open/floor/plating,
+/area/shuttle/abandoned/engine)
 "Dk" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/shuttle/abandoned/cargo)
@@ -1496,6 +1470,13 @@
 	},
 /turf/open/floor/plasteel,
 /area/shuttle/abandoned/atmospherics)
+"DK" = (
+/obj/effect/turf_decal/tile/brown,
+/obj/machinery/airalarm/directional/south{
+	pixel_y = -24
+	},
+/turf/open/floor/plasteel,
+/area/shuttle/abandoned/cargo)
 "DQ" = (
 /obj/structure/spacepoddoor,
 /obj/machinery/door/poddoor{
@@ -1573,22 +1554,6 @@
 /obj/machinery/door/airlock/medical/glass,
 /turf/open/floor/plasteel,
 /area/shuttle/abandoned/medbay)
-"EN" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden{
-	dir = 4
-	},
-/obj/effect/turf_decal/tile/yellow{
-	dir = 4
-	},
-/obj/effect/turf_decal/tile/neutral,
-/obj/effect/turf_decal/tile/neutral{
-	dir = 8
-	},
-/obj/effect/turf_decal/tile/yellow{
-	dir = 1
-	},
-/turf/open/floor/plasteel,
-/area/shuttle/abandoned/coridor)
 "Fn" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /obj/structure/cable{
@@ -1832,6 +1797,15 @@
 	},
 /turf/open/floor/plasteel,
 /area/shuttle/abandoned/coridor)
+"Lc" = (
+/obj/effect/turf_decal/tile/blue{
+	dir = 4
+	},
+/obj/machinery/airalarm/directional/north{
+	pixel_y = 24
+	},
+/turf/open/floor/plasteel,
+/area/shuttle/abandoned/medbay)
 "Lg" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
@@ -2001,25 +1975,6 @@
 "Nz" = (
 /turf/closed/wall/mineral/titanium,
 /area/shuttle/abandoned/cargo)
-"Oi" = (
-/obj/structure/window/reinforced{
-	dir = 8;
-	layer = 2.9
-	},
-/obj/machinery/atmospherics/pipe/simple/yellow/visible,
-/obj/machinery/atmospherics/pipe/simple/green/visible{
-	dir = 4
-	},
-/obj/machinery/light/broken,
-/obj/effect/turf_decal/tile/yellow{
-	dir = 8
-	},
-/obj/effect/turf_decal/tile/yellow,
-/obj/effect/turf_decal/tile/yellow{
-	dir = 1
-	},
-/turf/open/floor/plasteel,
-/area/shuttle/abandoned/atmospherics)
 "Om" = (
 /obj/structure/closet/emcloset/anchored,
 /obj/effect/decal/cleanable/blood,
@@ -2097,6 +2052,20 @@
 "OZ" = (
 /turf/closed/wall/mineral/titanium,
 /area/shuttle/abandoned/medbay)
+"Pp" = (
+/obj/structure/chair,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/tile/green{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/green{
+	dir = 1
+	},
+/obj/machinery/airalarm/directional/north{
+	pixel_y = 24
+	},
+/turf/open/floor/plasteel,
+/area/shuttle/abandoned/crew)
 "PP" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 8
@@ -2172,12 +2141,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/shuttle/abandoned/coridor)
-"QU" = (
-/obj/machinery/shower{
-	dir = 4
-	},
-/turf/open/floor/plating,
-/area/shuttle/abandoned/engine)
 "QV" = (
 /obj/machinery/door/airlock/external,
 /obj/effect/mapping_helpers/airlock/cyclelink_helper,
@@ -2331,10 +2294,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/shuttle/abandoned/atmospherics)
-"SU" = (
-/obj/effect/turf_decal/tile/brown,
-/turf/open/floor/plasteel,
-/area/shuttle/abandoned/cargo)
 "Td" = (
 /obj/machinery/hydroponics/constructable,
 /obj/machinery/light/broken{
@@ -2345,6 +2304,16 @@
 	},
 /turf/open/floor/plasteel,
 /area/shuttle/abandoned/crew)
+"TC" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/airalarm/directional/north{
+	pixel_y = 24
+	},
+/turf/open/floor/plating,
+/area/shuttle/abandoned/engine)
 "TG" = (
 /obj/machinery/suit_storage_unit/atmos,
 /obj/effect/turf_decal/tile/brown{
@@ -2439,6 +2408,25 @@
 	},
 /turf/open/floor/plasteel,
 /area/shuttle/abandoned/crew)
+"UE" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/yellow{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/neutral,
+/obj/effect/turf_decal/tile/neutral{
+	dir = 8
+	},
+/obj/effect/turf_decal/tile/yellow{
+	dir = 1
+	},
+/obj/machinery/airalarm/directional/north{
+	pixel_y = 24
+	},
+/turf/open/floor/plasteel,
+/area/shuttle/abandoned/coridor)
 "UF" = (
 /obj/structure/closet/secure_closet/freezer/fridge/open,
 /obj/item/reagent_containers/food/snacks/meat/slab/synthmeat{
@@ -2673,6 +2661,28 @@
 	},
 /turf/open/floor/engine/vacuum,
 /area/shuttle/abandoned/atmospherics)
+"Zj" = (
+/obj/structure/window/reinforced{
+	dir = 8;
+	layer = 2.9
+	},
+/obj/machinery/atmospherics/pipe/simple/yellow/visible,
+/obj/machinery/atmospherics/pipe/simple/green/visible{
+	dir = 4
+	},
+/obj/machinery/light/broken,
+/obj/effect/turf_decal/tile/yellow{
+	dir = 8
+	},
+/obj/effect/turf_decal/tile/yellow,
+/obj/effect/turf_decal/tile/yellow{
+	dir = 1
+	},
+/obj/machinery/airalarm/directional/south{
+	pixel_y = -24
+	},
+/turf/open/floor/plasteel,
+/area/shuttle/abandoned/atmospherics)
 "Zn" = (
 /turf/open/space/basic,
 /area/space)
@@ -2688,6 +2698,26 @@
 	},
 /turf/open/floor/plating,
 /area/shuttle/abandoned/coridor)
+"Zx" = (
+/obj/structure/table,
+/obj/structure/cable,
+/obj/machinery/power/apc/auto_name/west{
+	pixel_x = -24
+	},
+/obj/machinery/cell_charger,
+/obj/item/stock_parts/cell/high/plus,
+/obj/effect/turf_decal/tile/blue{
+	dir = 8
+	},
+/obj/effect/turf_decal/tile/blue{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/blue,
+/obj/machinery/airalarm/directional/south{
+	pixel_y = -24
+	},
+/turf/open/floor/plasteel,
+/area/shuttle/abandoned/bridge)
 "Zz" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on{
 	dir = 1
@@ -2873,7 +2903,7 @@ bA
 Ih
 nZ
 hg
-QU
+De
 PP
 PR
 se
@@ -2881,7 +2911,7 @@ Fs
 JJ
 se
 PR
-BQ
+TC
 gA
 ZY
 tm
@@ -3041,7 +3071,7 @@ oi
 XQ
 SQ
 mB
-Oi
+Zj
 AU
 Zn
 se
@@ -3069,12 +3099,12 @@ AV
 Er
 td
 CS
-EN
+UE
 qG
 CS
 pd
 dW
-uc
+Pp
 OF
 zv
 sy
@@ -3281,7 +3311,7 @@ Dk
 xX
 Nz
 ud
-SU
+DK
 Dk
 xX
 CS
@@ -3290,7 +3320,7 @@ EE
 CS
 zz
 da
-dQ
+Lc
 gq
 OZ
 zz
@@ -3455,7 +3485,7 @@ Sk
 oD
 fu
 rC
-rV
+Zx
 Sk
 hY
 Zn
