@@ -17,15 +17,14 @@
 	lowercase = FALSE
 	splitter = ","
 
-/datum/config_entry/number/max_overmap_events
-	config_entry_value = 60
-
 /datum/config_entry/number/max_overmap_event_clusters
-	config_entry_value = 25
-	max_val = 30
+	config_entry_value = 10
+
+/datum/config_entry/number/max_overmap_events
+	config_entry_value = 150
 
 /datum/config_entry/number/max_overmap_dynamic_events
 	config_entry_value = 10
 
 /datum/config_entry/string/overmap_generator_type
-	config_entry_value = "random"
+	config_entry_value = "solar_system"
