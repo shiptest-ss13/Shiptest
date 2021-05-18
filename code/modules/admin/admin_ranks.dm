@@ -65,6 +65,8 @@ GLOBAL_PROTECT(protected_ranks)
 				flag = R_BAN
 			if("FUN")
 				flag = R_FUN
+			if("ROD") //WS edit: ROD
+				flag = R_ROD
 			if("SERVER")
 				flag = R_SERVER
 			if("DEBUG")

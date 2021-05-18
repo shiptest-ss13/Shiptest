@@ -1051,6 +1051,20 @@ Traitors and the like can also be revived with the previous role mostly intact.
 
 	SSblackbox.record_feedback("nested tally", "admin_toggle", 1, list("Toggled Hub Visibility", "[GLOB.hub_visibility ? "Enabled" : "Disabled"]")) //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
+/client/proc/rod(mob/living/target as mob) //WS edit: ROD
+	set name = "ROD"
+	set category = "Fun"
+	if(!check_rights(R_ROD))
+		return
+	
+	var/turf/T = get_turf(target) //Copypasted from smite verb.
+	var/startside = pick(GLOB.cardinals)
+	var/turf/startT = spaceDebrisStartLoc(startside, T.z)
+	var/turf/endT = spaceDebrisFinishLoc(startside, T.z)
+	new /obj/effect/immovablerod(startT, endT,target)
+
+	punish_log(target, ADMIN_PUNISHMENT_ROD) //End WS edit
+
 /client/proc/smite(mob/living/target as mob)
 	set name = "Smite"
 	set category = "Fun"
