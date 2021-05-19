@@ -1,4 +1,4 @@
-datum/status_effect/metab_frozen
+/datum/status_effect/metab_frozen
 	id = "metab_frozen"
 	duration = 5 SECONDS
 	status_type = STATUS_EFFECT_REFRESH
