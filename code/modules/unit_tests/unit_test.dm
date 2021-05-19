@@ -40,7 +40,7 @@ GLOBAL_VAR(test_log)
 	if (isnull(turf_reservation))
 		turf_reservation = SSmapping.request_dynamic_reservation(5, 5)
 
-	for (var/turf/reserved_turf in turf_reservation.reserved_turfs)
+	for (var/turf/reserved_turf in turf_reservation.get_reserved_turfs())
 		reserved_turf.ChangeTurf(test_turf_type)
 
 	allocated = new
