@@ -211,6 +211,10 @@ GLOBAL_LIST_EMPTY(cryopod_computers)
 	. = ..()
 	new /obj/effect/landmark/latejoin(src)
 
+/obj/machinery/cryopod/latejoin/Destroy()
+	SSjob.latejoin_trackers -= src
+	. = ..()
+
 /obj/machinery/cryopod/close_machine(mob/user, exiting = FALSE)
 	if(!control_computer)
 		find_control_computer(TRUE)

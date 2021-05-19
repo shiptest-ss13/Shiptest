@@ -236,48 +236,8 @@
 	else
 		SSovermap.main = src
 		name = GLOB.station_name
-		mass = get_total_station_mass()
 	..()
 	return INITIALIZE_HINT_LATELOAD
-
-/obj/structure/overmap/level/main/LateInitialize()
-	. = ..()
-	mass = get_total_station_mass()
-
-/obj/structure/overmap/level/main/proc/get_total_station_mass()
-	. = 0
-	var/datum/station_state/S = GLOB.start_state
-	if(!S)
-		return
-	. += S.floor
-	. += S.wall
-	. += S.r_wall
-	. += S.window
-	. += S.door
-	. += S.grille
-	. += S.mach
-
-/obj/structure/overmap/level/mining
-	id = AWAY_OVERMAP_OBJECT_ID_MINING
-	icon_state = "globe"
-
-/obj/structure/overmap/level/mining/lavaland
-	name = "Lavaland"
-	desc = "A lava-covered planet known for its plentiful natural resources among dangerous fauna."
-	color = COLOR_ORANGE
-	mass = 73000000
-
-/obj/structure/overmap/level/mining/icemoon
-	name = "Icemoon"
-	desc = "A frozen planet, well known for it's deep chasms and rivers of plasma."
-	color = COLOR_BLUE_LIGHT
-	mass = 70000000
-
-/obj/structure/overmap/level/mining/whitesands
-	name = "Whitesands"
-	desc = "Once a mining colony abandoned in unknown circumstances, recent events have lead to it's attempted reestablishment."
-	color = COLOR_GRAY
-	mass = 85000000
 
 /obj/structure/overmap/star
 	name = "Star"
@@ -286,9 +246,9 @@
 	icon_state = "kepler_453"
 	bound_height = 64
 	bound_width = 64
-	pixel_x = -32
-	pixel_y = -32
+	pixel_x = -16
+	pixel_y = -16
 
 /obj/structure/overmap/star/Initialize(mapload, _id)
 	. = ..()
-	name = pick(GLOB.greek_letters) + " \Roman[rand(1,99)]"
+	name = "[pick(GLOB.star_names)] [pick(GLOB.greek_letters)]"

@@ -26,10 +26,10 @@
 	if(deployed)
 		if(active)
 			active = FALSE
-			to_chat(user, "<span class='notice'>You deactivate [src]</span>")
+			to_chat(user, "<span class='notice'>You deactivate \the [src]</span>")
 		else
 			active = TRUE
-			to_chat(user, "<span class='notice'>You reactivate [src]</span>")
+			to_chat(user, "<span class='notice'>You reactivate \the [src]</span>")
 		update_icon_state()
 		update_overlays()
 		return TRUE
@@ -48,7 +48,7 @@
 /obj/machinery/deepcore/drill/AltClick(mob/user)
 	. = ..()
 	if(active)
-		to_chat(user, "<span class='warning'>You can't disengage [src] while it's active!</span>")
+		to_chat(user, "<span class='warning'>You can't disengage \the [src] while it's active!</span>")
 		return
 	else
 		playsound(src, 'sound/machines/windowdoor.ogg', 50)
@@ -139,6 +139,6 @@
 		update_overlays()
 
 /obj/machinery/deepcore/drill/can_be_unfasten_wrench(mob/user, silent)
-	to_chat(user, "<span class='notice'>You don't need a wrench to deploy [src]!</span>")
+	to_chat(user, "<span class='notice'>You don't need a wrench to deploy \the [src]!</span>")
 	return CANT_UNFASTEN
 
