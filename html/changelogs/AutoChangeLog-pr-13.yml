@@ -1,0 +1,10 @@
+author: tiramisuapimancer
+delete-after: true
+changes:
+  - rscadd: new pet, soda dispenser and orion trail board, cryo pod console, on mining
+      shuttle
+  - tweak: moved the SMES on mining shuttle and rewired to match, theres only one
+      smes now but who cares we never used the second one. this should fix some bullshit
+      with the ion thruster
+  - bugfix: plating put under two things on mining shuttle so that landing on planets
+      would stop eating the wires and killing the solarpanels
