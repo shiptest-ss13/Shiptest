@@ -194,11 +194,7 @@
 		other_wormhole = _other_wormhole
 	if(!other_wormhole)
 		if(SSovermap.generator_type == OVERMAP_GENERATOR_SOLAR)
-			var/list/L = list_keys(SSovermap.radius_tiles)
-			L -= "unsorted"
-			var/selected_radius = pick(L)
-			var/turf/T = SSovermap.get_unused_overmap_square_in_radius(selected_radius)
-			other_wormhole = new(T, "[id]_exit", src)
+			other_wormhole = new(SSovermap.get_unused_overmap_square_in_radius(), "[id]_exit", src)
 		else
 			other_wormhole = new(SSovermap.get_unused_overmap_square(), "[id]_exit", src)
 

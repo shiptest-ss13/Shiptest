@@ -111,7 +111,10 @@
 			return //Don't fuck over stranded people
 
 	if(reserve)
-		forceMove(SSovermap.get_unused_overmap_square())
+		if(SSovermap.generator_type == OVERMAP_GENERATOR_SOLAR)
+			forceMove(SSovermap.get_unused_overmap_square_in_radius())
+		else
+			forceMove(SSovermap.get_unused_overmap_square())
 		choose_level_type()
 		QDEL_NULL(reserve)
 
