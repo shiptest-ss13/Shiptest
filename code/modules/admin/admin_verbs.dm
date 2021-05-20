@@ -110,8 +110,10 @@ GLOBAL_LIST_INIT(admin_verbs_fun, list(
 	/client/proc/fax_panel
 	))
 GLOBAL_PROTECT(admin_verbs_fun)
-GLOBAL_LIST_INIT(admin_verbs_spawn, list(/datum/admins/proc/spawn_atom, /datum/admins/proc/podspawn_atom, /datum/admins/proc/spawn_cargo, /datum/admins/proc/spawn_objasmob, /client/proc/respawn_character, /datum/admins/proc/beaker_panel))
+GLOBAL_LIST_INIT(admin_verbs_spawn, list(/datum/admins/proc/spawn_atom, /datum/admins/proc/podspawn_atom, /datum/admins/proc/spawn_cargo, /datum/admins/proc/spawn_objasmob, /client/proc/respawn_character, /datum/admins/proc/beaker_panel, /datum/admins/proc/gift))
 GLOBAL_PROTECT(admin_verbs_spawn)
+GLOBAL_LIST_INIT(admin_verbs_rod, list(/client/proc/rod)) //WS edit: ROD
+GLOBAL_PROTECT(admin_verbs_rod) //WS edit: ROD
 GLOBAL_LIST_INIT(admin_verbs_server, world.AVerbsServer())
 GLOBAL_PROTECT(admin_verbs_server)
 /world/proc/AVerbsServer()
@@ -271,7 +273,9 @@ GLOBAL_PROTECT(admin_verbs_hideable)
 		if(rights & R_BAN)
 			add_verb(src, GLOB.admin_verbs_ban)
 		if(rights & R_FUN)
-			add_verb(src, GLOB.admin_verbs_fun)
+			verbs += GLOB.admin_verbs_fun
+		if(rights & R_ROD) //WS edit: ROD
+			verbs += GLOB.admin_verbs_rod
 		if(rights & R_SERVER)
 			add_verb(src, GLOB.admin_verbs_server)
 		if(rights & R_DEBUG)
@@ -299,6 +303,7 @@ GLOBAL_PROTECT(admin_verbs_hideable)
 		GLOB.mentor_verbs,
 		GLOB.admin_verbs_ban,
 		GLOB.admin_verbs_fun,
+		GLOB.admin_verbs_rod, //WS edit: ROD
 		GLOB.admin_verbs_server,
 		GLOB.admin_verbs_debug,
 		GLOB.admin_verbs_possess,

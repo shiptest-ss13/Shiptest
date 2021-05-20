@@ -56,6 +56,10 @@
 #define MARTYRDOM	/datum/mutation/human/martyrdom
 #define HARS		/datum/mutation/human/headless
 
+// WS Edit Start - Dwarves
+#define DORFISM		/datum/mutation/human/dorfism
+// WS Edit End - Dwarves
+
 #define UI_CHANGED "ui changed"
 #define UE_CHANGED "ue changed"
 

@@ -634,6 +634,8 @@
 	righthand_file = 'icons/mob/inhands/equipment/hydroponics_righthand.dmi'
 	desc = "A metallic container containing tasty paint."
 
+	custom_materials = list(/datum/material/iron = 100, /datum/material/glass = 100) // WS Edit - Item Materials
+
 	instant = TRUE
 	edible = FALSE
 	has_cap = TRUE

@@ -2397,6 +2397,9 @@
 	opacity = 0;
 	safety_mode = 1
 	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plasteel,
 /area/mine/production)
 "kb" = (
@@ -3589,6 +3592,9 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
 	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plasteel,
 /area/mine/production)
 "sK" = (
@@ -4206,6 +4212,19 @@
 	},
 /turf/open/floor/plasteel,
 /area/mine/laborcamp)
+"Cf" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/turf/open/floor/plasteel,
+/area/mine/production)
 "Co" = (
 /obj/machinery/computer/shuttle/mining/common{
 	dir = 4
@@ -4228,6 +4247,9 @@
 "Dp" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
 	},
 /turf/open/floor/plasteel,
 /area/mine/production)
@@ -4463,6 +4485,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
 	},
 /turf/open/floor/plasteel,
 /area/mine/production)
@@ -5073,6 +5098,9 @@
 	},
 /obj/machinery/advanced_airlock_controller/lavaland{
 	pixel_y = 24
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
 	},
 /turf/open/floor/plasteel,
 /area/mine/production)
@@ -21105,7 +21133,7 @@ ab
 br
 bD
 xZ
-RT
+Cf
 RT
 sy
 sy

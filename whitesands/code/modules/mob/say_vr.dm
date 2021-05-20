@@ -5,10 +5,13 @@
 	var/flavor_text = "" //tired of fucking double checking this
 
 /mob/proc/update_flavor_text()
+	set name = "Update Flavor Text"
+	set category = "IC"
 	set src in usr
+
 	if(usr != src)
 		usr << "No."
-	var/msg = input(usr,"Set the flavor text in your 'examine' verb. Can also be used for OOC notes about your character.","Flavor Text",html_decode(flavor_text)) as message|null
+	var/msg = sanitize(input(usr,"Set the flavor text in your 'examine' verb. Can also be used for OOC notes about your character.","Flavor Text",html_decode(flavor_text)) as message|null)
 
 	if(msg) //WS edit - "Cancel" does not clear flavor text
 		msg = copytext(msg, 1, MAX_MESSAGE_LEN)
@@ -68,7 +71,7 @@ SUBTLER  //WS - Subtle emotes
 		to_chat(user, "You cannot send IC messages (muted).")
 		return FALSE
 	else if(!params)
-		var/subtle_emote = input(user, "Choose an emote to display.", "Subtler")
+		var/subtle_emote = sanitize(input(user, "Choose an emote to display.", "Subtler"))
 		if(subtle_emote && !check_invalid(user, subtle_emote))
 			var/type = input("Is this a visible or hearable emote?") as null|anything in list("Visible", "Hearable")
 			switch(type)

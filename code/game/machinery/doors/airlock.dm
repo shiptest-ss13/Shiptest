@@ -185,7 +185,7 @@
 	if(density && has_hatch && (mover.pass_flags & PASSDOORHATCH) && !hatchstate)
 		hatchstate = 1
 		update_icon()
-		playsound(loc, hatch_open_sound, 40, 1, -1)
+		playsound(loc, hatch_open_sound, 40, 1, -1, mono_adj = TRUE)
 		if(mover.layer != initial(mover.layer))
 			return
 		mover.layer = UNDERDOOR
@@ -199,7 +199,7 @@
 /obj/machinery/door/airlock/proc/close_hatch()
 	hatchstate = 0
 	update_icon()
-	playsound(loc, hatch_close_sound, 30, 1, -1)
+	playsound(loc, hatch_close_sound, 30, 1, -1, mono_adj = TRUE)
 
 /obj/machinery/door/airlock/proc/update_other_id()
 	for(var/obj/machinery/door/airlock/A in GLOB.airlocks)
@@ -335,7 +335,7 @@
 	if(locked)
 		return
 	locked = TRUE
-	playsound(src,boltDown,30,FALSE,3)
+	playsound(src, boltDown, 30, FALSE, 3, mono_adj = TRUE)
 	audible_message("<span class='hear'>You hear a click from the bottom of the door.</span>", null,  1)
 	update_icon()
 
@@ -346,7 +346,7 @@
 	if(!locked)
 		return
 	locked = FALSE
-	playsound(src,boltUp,30,FALSE,3)
+	playsound(src, boltUp, 30, FALSE, 3, mono_adj = TRUE)
 	audible_message("<span class='hear'>You hear a click from the bottom of the door.</span>", null,  1)
 	update_icon()
 
@@ -724,7 +724,7 @@
 		if("deny")
 			if(!machine_stat)
 				update_icon(AIRLOCK_DENY)
-				playsound(src,doorDeni,50,FALSE,3)
+				playsound(src, doorDeni, 50, FALSE, 3, mono_adj = TRUE)
 				sleep(6)
 				update_icon(AIRLOCK_CLOSED)
 
@@ -1126,7 +1126,7 @@
 
 			if(!prying_so_hard)
 				var/time_to_open = 50
-				playsound(src, 'sound/machines/airlock_alien_prying.ogg', 100, TRUE) //is it aliens or just the CE being a dick?
+				playsound(src, 'sound/machines/airlock_alien_prying.ogg', 100, TRUE, mono_adj = TRUE) //is it aliens or just the CE being a dick?
 				prying_so_hard = TRUE
 				if(do_after(user, time_to_open, TRUE, src))
 					open(2)
@@ -1156,11 +1156,11 @@
 		if(obj_flags & EMAGGED)
 			return FALSE
 		use_power(50)
-		playsound(src, doorOpen, 30, TRUE)
+		playsound(src, doorOpen, 30, TRUE, mono_adj = TRUE)
 		if(closeOther != null && istype(closeOther, /obj/machinery/door/airlock/) && !closeOther.density)
 			closeOther.close()
 	else
-		playsound(src, 'sound/machines/airlockforced.ogg', 30, TRUE)
+		playsound(src, 'sound/machines/airlockforced.ogg', 30, TRUE, mono_adj = TRUE)
 
 	if(autoclose)
 		autoclose_in(normalspeed ? 150 : 15)
@@ -1204,9 +1204,9 @@
 		if(obj_flags & EMAGGED)
 			return
 		use_power(50)
-		playsound(src, doorClose, 30, TRUE)
+		playsound(src, doorClose, 30, TRUE, mono_adj = TRUE)
 	else
-		playsound(src, 'sound/machines/airlockforced.ogg', 30, TRUE)
+		playsound(src, 'sound/machines/airlockforced.ogg', 30, TRUE, mono_adj = TRUE)
 
 	var/obj/structure/window/killthis = (locate(/obj/structure/window) in get_turf(src))
 	if(killthis)
@@ -1313,7 +1313,7 @@
 	var/time_to_open = 5 //half a second
 	if(hasPower())
 		time_to_open = 5 SECONDS //Powered airlocks take longer to open, and are loud.
-		playsound(src, 'sound/machines/airlock_alien_prying.ogg', 100, TRUE)
+		playsound(src, 'sound/machines/airlock_alien_prying.ogg', 100, TRUE, mono_adj = TRUE)
 
 
 	if(do_after(user, time_to_open, TRUE, src))

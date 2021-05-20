@@ -361,13 +361,10 @@
 	desc = "An old lantern that has seen plenty of use."
 	light_range = 4
 
-/obj/item/flashlight/lantern/syndicate
-	name = "suspicious lantern"
-	desc = "A suspicious looking lantern."
-	icon_state = "syndilantern"
-	item_state = "syndilantern"
-	light_range = 10
-
+/obj/item/flashlight/lantern/syndicate //WS edit - LepiCorp stuff
+	desc = "A mining lantern with an extra-bright bulb. Manufactured by LepiCorp."
+	light_range = 10 //End WS edit
+	
 /obj/item/flashlight/slime
 	gender = PLURAL
 	name = "glowing slime extract"

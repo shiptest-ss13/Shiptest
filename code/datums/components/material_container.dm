@@ -9,6 +9,8 @@
 		MAX_STACK_SIZE - size of a stack of mineral sheets. Constant.
 */
 
+#define MINIMUM_REFUND_THRESHOLD 5000
+
 /datum/component/material_container
 	var/total_amount = 0
 	var/max_amount
@@ -21,6 +23,12 @@
 	var/precise_insertion = FALSE
 	var/datum/callback/precondition
 	var/datum/callback/after_insert
+	/// The bank account that will recieve funds at certain times when mats are used/withdrawn.
+	var/datum/bank_account/linked_account
+	/// Modifier for all materials drawn when there's a linked account.
+	var/cost_modifier = 1
+	/// The minimum required amount of credits in a bank account to consider giving refunds for inserting materials. Currently the same as cargo gets roundstart.
+	var/refund_minimum = 5000
 
 /// Sets up the proper signals and fills the list of materials with the appropriate references.
 /datum/component/material_container/Initialize(list/mat_list, max_amt = 0, _show_on_examine = FALSE, list/allowed_types, datum/callback/_precondition, datum/callback/_after_insert, _disable_attackby)
@@ -101,6 +109,12 @@
 	var/inserted = insert_item(I, stack_amt = requested_amount)
 	if(inserted)
 		to_chat(user, "<span class='notice'>You insert a material total of [inserted] into [parent].</span>")
+		if(linked_account)
+			var/cost = get_material_list_cost(I.custom_materials) * (cost_modifier / 4) //25% refund default, scaling with the price of mats.
+			cost = FLOOR(clamp(cost, 0, linked_account.account_balance - refund_minimum), 1) //Will pay what it can, as long as it doesn't go under the minimum threshold.
+			var/obj/item/card/id/C = user.get_idcard(TRUE)
+			if(C?.registered_account)
+				C.registered_account.transfer_money(linked_account, cost)
 		qdel(I)
 		if(after_insert)
 			after_insert.Invoke(I, last_inserted_id, inserted)
@@ -147,12 +161,14 @@
 	return FALSE
 
 /// Uses an amount of a specific material, effectively removing it.
-/datum/component/material_container/proc/use_amount_mat(amt, var/datum/material/mat)
+/datum/component/material_container/proc/use_amount_mat(amt, var/datum/material/mat, datum/bank_account/using_account, charge = FALSE)
 	if(!istype(mat))
 		mat = SSmaterials.GetMaterialRef(mat)
 	var/amount = materials[mat]
 	if(mat)
 		if(amount >= amt)
+			if(charge && linked_account && !linked_account.transfer_money(using_account, get_material_cost(mat, amt), 1))
+				return FALSE
 			materials[mat] -= amt
 			total_amount -= amt
 			return amt
@@ -168,9 +184,9 @@
 		return T.transer_amt_to(src, -amt, mat)
 	var/tr = min(amt, materials[mat],T.can_insert_amount_mat(amt, mat))
 	if(tr)
-		use_amount_mat(tr, mat)
-		T.insert_amount_mat(tr, mat)
-		return tr
+		if(use_amount_mat(tr, mat))
+			T.insert_amount_mat(tr, mat)
+			return tr
 	return FALSE
 
 /// Proc for checking if there is room in the component, returning the amount or else the amount lacking.
@@ -185,7 +201,7 @@
 
 
 /// For consuming a dictionary of materials. mats is the map of materials to use and the corresponding amounts, example: list(M/datum/material/glass =100, datum/material/iron=200)
-/datum/component/material_container/proc/use_materials(list/mats, multiplier=1)
+/datum/component/material_container/proc/use_materials(list/mats, multiplier=1, datum/bank_account/using_account, charge = TRUE)
 	if(!mats || !length(mats))
 		return FALSE
 
@@ -200,22 +216,24 @@
 		var/amount_required = mats[x] * multiplier
 		if(!(materials[req_mat] >= amount_required)) // do we have enough of the resource?
 			return FALSE //Can't afford it
+		if(linked_account && !using_account.has_money(get_material_list_cost(mats, multiplier)))
+			return FALSE //Can't afford the credit cost
 		mats_to_remove[req_mat] += amount_required //Add it to the assoc list of things to remove
 		continue
 
 	var/total_amount_save = total_amount
 
 	for(var/i in mats_to_remove)
-		total_amount_save -= use_amount_mat(mats_to_remove[i], i)
+		total_amount_save -= use_amount_mat(mats_to_remove[i], i, using_account, charge)
 
 	return total_amount_save - total_amount
 
 /// For spawning mineral sheets at a specific location. Used by machines to output sheets.
-/datum/component/material_container/proc/retrieve_sheets(sheet_amt, var/datum/material/M, target = null)
+/datum/component/material_container/proc/retrieve_sheets(sheet_amt, var/datum/material/M, target = null, datum/bank_account/using_account, charge = TRUE)
 	if(!M.sheet_type)
-		return 0 //Add greyscale sheet handling here later
+		return FALSE //Add greyscale sheet handling here later
 	if(sheet_amt <= 0)
-		return 0
+		return FALSE
 
 	if(!target)
 		target = get_turf(parent)
@@ -223,14 +241,16 @@
 		sheet_amt = round(materials[M] / MINERAL_MATERIAL_AMOUNT)
 	var/count = 0
 	while(sheet_amt > MAX_STACK_SIZE)
+		if(!use_amount_mat(sheet_amt * MINERAL_MATERIAL_AMOUNT, M, using_account, charge))
+			break
 		new M.sheet_type(target, MAX_STACK_SIZE)
 		count += MAX_STACK_SIZE
-		use_amount_mat(sheet_amt * MINERAL_MATERIAL_AMOUNT, M)
 		sheet_amt -= MAX_STACK_SIZE
 	if(sheet_amt >= 1)
+		if(!use_amount_mat(sheet_amt * MINERAL_MATERIAL_AMOUNT, M, using_account, charge))
+			return FALSE
 		new M.sheet_type(target, sheet_amt)
 		count += sheet_amt
-		use_amount_mat(sheet_amt * MINERAL_MATERIAL_AMOUNT, M)
 	return count
 
 
@@ -267,6 +287,48 @@
 			return FALSE
 
 	return TRUE
+
+/** For getting the price of a dictionary of materials.
+  *
+  * * mats - A map of materials to use and the corresponding amounts, example: list(M/datum/material/glass =100, datum/material/iron=200)
+  * * multiplier - How many mats lists should be added
+  */
+/datum/component/material_container/proc/get_material_list_cost(list/mats, multiplier=1)
+	if(!mats || !length(mats))
+		return FALSE
+
+	var/cost = 0
+	for(var/x in mats) //Loop through all required materials
+		var/datum/material/req_mat = x
+		cost += get_material_cost(req_mat, mats[x])
+
+	return CEILING(cost, 1)
+
+/** Returns the cost of a certain amount of one material
+  *
+  * * mat - The material to find the value of.
+  * * amt - The amout of material in question.
+  * * round - Whether or not to round the cost. **MORE IMPORTANT THAN IT SEEMS, IT COULD MEAN THE DIFFERENCE BETWEEN 2000cr AND 25cr!!**
+  */
+/datum/component/material_container/proc/get_material_cost(datum/material/mat, amt = 1, round = TRUE)
+	if(GLOB.security_level >= SEC_LEVEL_RED)
+		return FALSE //It's free when it's an emergency, don't want to prevent everyone from helping
+	if(!istype(mat))
+		mat = SSmaterials.GetMaterialRef(mat) //Get the ref if necesary
+
+	var/total_cost = amt * mat.value_per_unit * cost_modifier
+	if(!linked_account)
+		return FALSE //Don't need to charge for it, return default
+	if(!materials[mat]) //Do we have the resource?
+		//Can't afford it, send the default price times five so that it's very profitable to put in
+		return round ? CEILING(total_cost * 5, 1) : total_cost
+
+	var/amt_ratio = (materials[mat] + 1) / amt
+	if (amt_ratio < 2 && amt > 1)
+		// Cost Scaling = 2*(Amount Ratio - 1)^2
+		total_cost *= 1 + ((amt_ratio - 1) ** 2)
+
+	return round ? CEILING(total_cost, 1) : total_cost
 
 /// Returns all the categories in a recipe.
 /datum/component/material_container/proc/get_categories(list/mats)

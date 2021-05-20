@@ -354,6 +354,7 @@ GLOBAL_LIST_EMPTY(conveyors_by_id)
 	icon = 'icons/obj/recycling.dmi'
 	icon_state = "switch-off"
 	w_class = WEIGHT_CLASS_BULKY
+	custom_materials = list(/datum/material/iron = 450, /datum/material/glass = 190) // WS Edit - Item Materials
 	var/id = "" //inherited by the switch
 
 /obj/item/conveyor_switch_construct/Initialize()
@@ -389,6 +390,7 @@ GLOBAL_LIST_EMPTY(conveyors_by_id)
 	max_amount = 30
 	singular_name = "conveyor belt"
 	w_class = WEIGHT_CLASS_BULKY
+	custom_materials = list(/datum/material/iron = 3000) // WS Edit - Item Materials
 	///id for linking
 	var/id = ""
 

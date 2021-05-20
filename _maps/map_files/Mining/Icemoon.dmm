@@ -493,6 +493,9 @@
 	name = "Mining Shuttle Airlock";
 	opacity = 0
 	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plasteel,
 /area/mine/production)
 "ck" = (
@@ -515,6 +518,9 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /obj/structure/cable{
 	icon_state = "1-2"
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
 	},
 /turf/open/floor/plasteel,
 /area/mine/production)
@@ -3004,6 +3010,18 @@
 	},
 /turf/open/floor/plasteel/freezer,
 /area/mine/laborcamp)
+"BY" = (
+/obj/effect/turf_decal/tile/brown{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/brown{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel,
+/area/mine/production)
 "Cd" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
@@ -3058,6 +3076,12 @@
 /obj/effect/turf_decal/tile/brown,
 /turf/open/floor/plasteel,
 /area/mine/living_quarters)
+"Dk" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel,
+/area/mine/production)
 "Dn" = (
 /obj/structure/rack,
 /obj/item/storage/bag/ore,
@@ -4063,6 +4087,9 @@
 	glass = 1;
 	name = "Mining Shuttle Airlock";
 	opacity = 0
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
 	},
 /turf/open/floor/plasteel,
 /area/mine/production)
@@ -18570,7 +18597,7 @@ aa
 aa
 fA
 br
-bP
+Dk
 br
 fA
 aa
@@ -19084,7 +19111,7 @@ aa
 bq
 br
 bO
-ck
+BY
 cD
 br
 bq
@@ -19341,7 +19368,7 @@ fA
 bq
 bC
 Lu
-bP
+Dk
 cl
 cH
 cO

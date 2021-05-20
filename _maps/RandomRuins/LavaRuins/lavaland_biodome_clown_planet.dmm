@@ -658,15 +658,6 @@
 	icon_state = "white"
 	},
 /area/ruin/powered/clownplanet)
-"bj" = (
-/obj/structure/disposalpipe/segment{
-	dir = 4;
-	invisibility = 101
-	},
-/turf/open/indestructible{
-	icon_state = "light_on"
-	},
-/area/ruin/powered/clownplanet)
 "bk" = (
 /obj/structure/disposalpipe/segment{
 	invisibility = 101
@@ -677,11 +668,6 @@
 	},
 /turf/open/indestructible{
 	icon_state = "white"
-	},
-/area/ruin/powered/clownplanet)
-"bl" = (
-/turf/open/indestructible{
-	icon_state = "light_on"
 	},
 /area/ruin/powered/clownplanet)
 "bm" = (
@@ -1229,6 +1215,15 @@
 /obj/effect/mapping_helpers/no_lava,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
 /area/ruin/powered/clownplanet)
+"nD" = (
+/obj/structure/disposalpipe/segment{
+	dir = 4;
+	invisibility = 101
+	},
+/turf/open/indestructible{
+	icon_state = "light_on-1"
+	},
+/area/ruin/powered/clownplanet)
 "pv" = (
 /obj/machinery/light{
 	dir = 4
@@ -1261,6 +1256,11 @@
 /turf/open/indestructible{
 	icon_state = "darkfull";
 	wet = 8
+	},
+/area/ruin/powered/clownplanet)
+"Iz" = (
+/turf/open/indestructible{
+	icon_state = "light_on-1"
 	},
 /area/ruin/powered/clownplanet)
 "KX" = (
@@ -1659,8 +1659,8 @@ az
 aL
 bb
 bb
-bj
-bl
+nD
+Iz
 br
 bA
 bA
@@ -1693,8 +1693,8 @@ az
 aL
 bb
 bg
-bj
-bl
+nD
+Iz
 bp
 cc
 bA
@@ -2033,8 +2033,8 @@ az
 aL
 bd
 bb
-bl
-bl
+Iz
+Iz
 bp
 cc
 aZ
@@ -2067,8 +2067,8 @@ az
 aL
 be
 bb
-bl
-bl
+Iz
+Iz
 bz
 ch
 bK

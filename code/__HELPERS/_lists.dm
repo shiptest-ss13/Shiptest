@@ -229,6 +229,24 @@
 
 	return null
 
+// Allows picks with non-integer weights and also 0
+// precision 1000 means it works up to 3 decimal points
+/proc/pickweight_float(list/L, default=1, precision=1000)
+	var/total = 0
+	var/item
+	for (item in L)
+		if (!isnum(L[item]))
+			L[item] = default
+		total += round(L[item]*precision)
+
+	total = rand(0, total)/precision
+	for (item in L)
+		total -=L [item]
+		if (total <= 0 && L[item])
+			return item
+
+	return null
+
 //Pick a random element from the list and remove it from the list.
 /proc/pick_n_take(list/L)
 	RETURN_TYPE(L[_].type)
@@ -581,3 +599,19 @@
 			return FALSE
 
 	return TRUE
+
+/proc/list_keys(list/l)
+	if(!islist(l))
+		return list()
+	var/ret = list()
+	for(var/key in l)
+		ret += key
+	return ret
+
+/proc/list_values(list/l)
+	if(!islist(l))
+		return list()
+	var/ret = list()
+	for(var/key in l)
+		ret += l[key]
+	return ret

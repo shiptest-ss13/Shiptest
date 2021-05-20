@@ -440,3 +440,6 @@
 
 /mob/living/silicon/on_standing_up()
 	return // Silicons are always standing by default.
+
+/mob/living/silicon/get_bank_account() /// WS Edit - Silicons can buy and use materials
+	return SSeconomy.get_dep_account(ACCOUNT_CIV)

@@ -6,7 +6,7 @@
 	icon_state = "supply_chief_cap"
 
 /obj/item/clothing/head/deliveries_officer
-	name = "supply chief's cap"
+	name = "deliveries officer's cap"
 	desc = "Whether through fires, the vacuum of space, or hordes of souless husks of grey suited criminals, your crate will always be delivered!"
 	icon = 'whitesands/icons/obj/clothing/hats.dmi'
 	mob_overlay_icon = 'whitesands/icons/mob/clothing/head.dmi'

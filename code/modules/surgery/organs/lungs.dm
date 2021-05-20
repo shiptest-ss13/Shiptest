@@ -457,8 +457,7 @@
 	desc = "A basic cybernetic version of the lungs found in traditional humanoid entities."
 	icon_state = "lungs-c"
 	organ_flags = ORGAN_SYNTHETIC
-	safe_oxygen_min = 16
-	maxHealth = STANDARD_ORGAN_THRESHOLD*0.5
+	maxHealth = STANDARD_ORGAN_THRESHOLD * 0.5
 
 	var/emp_vulnerability = 80	//Chance of permanent effects if emp-ed.
 
@@ -466,7 +465,6 @@
 	name = "cybernetic lungs"
 	desc = "A cybernetic version of the lungs found in traditional humanoid entities. Allows for greater intakes of oxygen than organic lungs, requiring slightly less pressure."
 	icon_state = "lungs-c-u"
-	organ_flags = ORGAN_SYNTHETIC
 	maxHealth = 1.5 * STANDARD_ORGAN_THRESHOLD
 	safe_oxygen_min = 13
 	emp_vulnerability = 40
@@ -478,6 +476,7 @@
 	safe_toxins_max = 20
 	safe_co2_max = 20
 	maxHealth = 2 * STANDARD_ORGAN_THRESHOLD
+	safe_oxygen_min = 13
 	emp_vulnerability = 20
 
 	cold_level_1_threshold = 200

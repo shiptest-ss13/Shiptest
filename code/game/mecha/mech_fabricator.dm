@@ -37,6 +37,7 @@
 								"IPC components",
 								"Misc"
 								)
+	var/datum/bank_account/linked_account
 
 /obj/machinery/mecha_part_fabricator/Initialize(mapload)
 	stored_research = new
@@ -69,6 +70,8 @@
 	. = ..()
 	if(in_range(user, src) || isobserver(user))
 		. += "<span class='notice'>The status display reads: Storing up to <b>[rmat.local_size]</b> material units.<br>Material consumption at <b>[component_coeff*100]%</b>.<br>Build time reduced by <b>[100-time_coeff*100]%</b>.</span>"
+		if(linked_account)
+			. += "<span class='notice'><br><b>Linked account:</b> [linked_account.account_holder]'s bank account<span>"
 
 /obj/machinery/mecha_part_fabricator/emag_act()
 	if(obj_flags & EMAGGED)
@@ -118,6 +121,10 @@
 	else
 		output += "<font color='red'>No material storage connected, please contact the quartermaster.</font>"
 	output += "<br><a href='?src=[REF(src)];sync=1'>Sync with R&D servers</a><br>"
+	if(linked_account)
+		output += "<br><a href='?src=[REF(src)];link_id=1'>Unlink Linked Account: ([linked_account.account_holder])</a><br>"
+	else
+		output += "<br><a href='?src=[REF(src)];link_id=1'>Link Material Payment Account</a><br>"
 	output += "<a href='?src=[REF(src)];screen=main'>Main Screen</a>"
 	output += "</div>"
 	output += "<form name='search' action='?src=[REF(src)]'>\
@@ -190,9 +197,18 @@
 	if(!check_resources(D))
 		say("Not enough resources. Queue processing stopped.")
 		return FALSE
+	//Wasp start - Material Costs
+	if(materials.linked_account)
+		if(!linked_account)
+			say("No bank account linked. Please swipe an ID to link one.")
+			return FALSE
+		if(!linked_account.has_money(materials.get_material_list_cost(res_coef)) && !(obj_flags & EMAGGED))
+			say("Not enough credits in bank account. Queue processing stopped.")
+			return FALSE
 	being_built = D
 	desc = "It's building \a [initial(D.name)]."
-	materials.use_materials(res_coef)
+	materials.use_materials(res_coef, using_account = linked_account, charge = !(obj_flags & EMAGGED))
+	//Wasp end
 	rmat.silo_log(src, "built", -1, "[D.name]", res_coef)
 
 	add_overlay("fab-active")
@@ -434,6 +450,9 @@
 		var/datum/material/Mat = locate(href_list["material"])
 		eject_sheets(Mat, text2num(href_list["remove_mat"]))
 
+	if(href_list["link_id"])
+		link_user_id(usr)
+
 	updateUsrDialog()
 	return
 
@@ -452,7 +471,7 @@
 	if (rmat.on_hold())
 		say("Mineral access is on hold, please contact the quartermaster.")
 		return 0
-	var/count = mat_container.retrieve_sheets(text2num(eject_amt), eject_sheet, drop_location())
+	var/count = mat_container.retrieve_sheets(text2num(eject_amt), eject_sheet, drop_location(), linked_account)
 	var/list/matlist = list()
 	matlist[eject_sheet] = text2num(eject_amt)
 	rmat.silo_log(src, "ejected", -count, "sheets", matlist)
@@ -471,8 +490,26 @@
 	if(default_deconstruction_crowbar(W))
 		return TRUE
 
+	if(istype(W, /obj/item/card/id))
+		link_user_id(user)
+
 	return ..()
 
+/obj/machinery/mecha_part_fabricator/AltClick(mob/user)
+	. = ..()
+	link_user_id(user)
+
+/obj/machinery/mecha_part_fabricator/proc/link_user_id(mob/user)
+	if(linked_account)
+		linked_account = null
+		to_chat(user, "<span class='notice'>You unlink [src]'s linked account.</span>")
+	else
+		var/datum/bank_account/user_account = user.get_bank_account()
+		if(user_account)
+			linked_account = user_account
+			to_chat(user, "<span class='notice'>You link [user_account.account_holder]'s bank account on [src].</span>")
+		else
+			to_chat(user, "<span class='warning'>No bank account found!</span>")
 
 /obj/machinery/mecha_part_fabricator/proc/is_insertion_ready(mob/user)
 	if(panel_open)

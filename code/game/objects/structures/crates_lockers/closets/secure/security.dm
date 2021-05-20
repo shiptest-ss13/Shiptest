@@ -106,7 +106,7 @@
 	new /obj/item/shield/riot/tele(src)
 	new /obj/item/storage/belt/security/full(src)
 	new /obj/item/gun/energy/e_gun/hos(src)
-	new /obj/item/gun/ballistic/automatic/pistol/commander(src) //WS edit - free lethals
+	new /obj/item/gun/ballistic/automatic/pistol/commissar(src) //WS edit - free lethals
 	new /obj/item/pinpointer/nuke(src)
 	new /obj/item/circuitboard/machine/techfab/department/security(src)
 	new /obj/item/storage/photo_album/HoS(src)

@@ -59,3 +59,8 @@
 	display_name = "blindfold"
 	path = /obj/item/clothing/glasses/blindfold
 	cost = 750
+
+/datum/gear/eyewear/hipster_glasses
+	display_name = "Hipster Glasses"
+	path = /obj/item/clothing/glasses/regular/hipster
+	cost = 1250

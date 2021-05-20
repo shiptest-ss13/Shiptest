@@ -25,13 +25,25 @@
 	display_name = "leather jacket"
 	path = /obj/item/clothing/suit/jacket/leather
 
-/datum/gear/suit/jacket/leather
+/datum/gear/suit/jacket/military
 	display_name = "military jacket"
 	path = /obj/item/clothing/suit/jacket/miljacket
 
 /datum/gear/suit/jacket/puffer
 	display_name = "puffer jacket"
 	path = /obj/item/clothing/suit/jacket/puffer
+
+/datum/gear/suit/jacket/gothcoat
+	display_name = "goth jacket"
+	path = /obj/item/clothing/suit/gothcoat
+
+/datum/gear/suit/jacket/bronze
+	display_name = "bronze suit"
+	path = /obj/item/clothing/suit/bronze
+
+/datum/gear/suit/jacket/yakuza
+	display_name = "yakuza suit"
+	path = /obj/item/clothing/suit/yakuza
 
 //Misc
 /datum/gear/suit/grponcho

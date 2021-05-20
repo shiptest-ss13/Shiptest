@@ -8,6 +8,7 @@ GLOBAL_LIST_EMPTY(silo_access_logs)
 	icon_state = "silo"
 	density = TRUE
 	circuit = /obj/item/circuitboard/machine/ore_silo
+	req_access = ACCESS_VAULT
 
 	var/list/holds = list()
 	var/list/datum/component/remote_materials/connected = list()
@@ -28,9 +29,10 @@ GLOBAL_LIST_EMPTY(silo_access_logs)
 		/datum/material/bluespace,
 		/datum/material/plastic,
 		)
-	AddComponent(/datum/component/material_container, materials_list, INFINITY, allowed_types=/obj/item/stack, _disable_attackby=TRUE)
+	var/datum/component/material_container/materials = AddComponent(/datum/component/material_container, materials_list, INFINITY, allowed_types=/obj/item/stack, _disable_attackby=TRUE)
 	if (!GLOB.ore_silo_default && mapload && is_station_level(z))
 		GLOB.ore_silo_default = src
+		materials.linked_account = SSeconomy.get_dep_account(ACCOUNT_CAR)
 
 /obj/machinery/ore_silo/Destroy()
 	if (GLOB.ore_silo_default == src)
@@ -70,6 +72,29 @@ GLOBAL_LIST_EMPTY(silo_access_logs)
 /obj/machinery/ore_silo/attackby(obj/item/W, mob/user, params)
 	if (istype(W, /obj/item/stack))
 		return remote_attackby(src, user, W)
+	if (istype(W, /obj/item/card/id))
+		var/obj/item/card/id/I = W
+		var/datum/component/material_container/materials = GetComponent(/datum/component/material_container)
+		if(materials.linked_account && (I.registered_account == materials.linked_account || check_access(I)))
+			var/choice = input(user, "Please select a configuration option.", "Ore Silo") as null|anything in list("Unlink Account", "Change Markup", "Minimum Refund Threshold")
+			switch(choice)
+				if("Change Markup")
+					var/markup = clamp(input(user, "Please input the desired material markup cost. (Number, 0%-500%)", "Ore Silo", materials.cost_modifier * 100) as num, 0, 500)
+					if(markup)
+						materials.cost_modifier = markup / 100
+				if("Unlink Account")
+					materials.linked_account.bank_card_talk("[src] has been un-linked from your account.")
+					materials.linked_account = null
+				if("Minimum Refund Threshold")
+					var/threshold = max(input(user, "Please input the desired minimum balance at which to consider giving material price refunds. (Number, Minimum 0)", "Ore Silo", materials.refund_minimum) as num, 0)
+					if(threshold)
+						materials.refund_minimum = threshold
+		else if(!materials.linked_account && I.registered_account)
+			user.visible_message("[user] swipes [I] on [src], registering it's linked account for material payments.", \
+			 					 "You swipe [I] on [src], registering it's linked account for material payments.", \
+								 "You hear a someone sliding a card, and then a quiet beep.")
+			materials.linked_account = I.registered_account
+		return TRUE
 	return ..()
 
 /obj/machinery/ore_silo/ui_interact(mob/user)
@@ -80,7 +105,10 @@ GLOBAL_LIST_EMPTY(silo_access_logs)
 
 /obj/machinery/ore_silo/proc/generate_ui()
 	var/datum/component/material_container/materials = GetComponent(/datum/component/material_container)
-	var/list/ui = list("<head><title>Ore Silo</title></head><body><div class='statusDisplay'><h2>Stored Material:</h2>")
+	var/list/ui = list("<head><title>Ore Silo</title></head><body><div class='statusDisplay'>")
+	if(materials.linked_account)
+		ui += "<b>Linked account:</b> [materials.linked_account.account_holder]'s account ([materials.cost_modifier * 100]% markup)"
+	ui += "<h2>Stored Material:</h2>"
 	var/any = FALSE
 	for(var/M in materials.materials)
 		var/datum/material/mat = M
@@ -158,9 +186,10 @@ GLOBAL_LIST_EMPTY(silo_access_logs)
 		updateUsrDialog()
 		return TRUE
 	else if(href_list["ejectsheet"])
+		var/obj/item/card/id/I = usr.get_idcard(TRUE)
 		var/datum/material/eject_sheet = locate(href_list["ejectsheet"])
 		var/datum/component/material_container/materials = GetComponent(/datum/component/material_container)
-		var/count = materials.retrieve_sheets(text2num(href_list["eject_amt"]), eject_sheet, drop_location())
+		var/count = materials.retrieve_sheets(text2num(href_list["eject_amt"]), eject_sheet, drop_location(), I?.registered_account)
 		var/list/matlist = list()
 		matlist[eject_sheet] = MINERAL_MATERIAL_AMOUNT
 		silo_log(src, "ejected", -count, "sheets", matlist)

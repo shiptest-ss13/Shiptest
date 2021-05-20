@@ -632,10 +632,11 @@
 /datum/supply_pack/security/armory/russian
 	name = "Russian Surplus Crate"
 	desc = "Hello Comrade, we have the most modern russian military equipment the black market can offer, for the right price of course. Sadly we couldnt remove the lock so it requires Armory access to open."
-	cost = 5000
+	cost = 8000
 	contraband = TRUE
 	contains = list(/obj/item/reagent_containers/food/snacks/rationpack,
 					/obj/item/ammo_box/a762,
+					/obj/item/ammo_box/magazine/ak47, //WS edit: gun
 					/obj/item/storage/toolbox/ammo,
 					/obj/item/clothing/suit/armor/vest/russian,
 					/obj/item/clothing/head/helmet/rus_helmet,
@@ -646,6 +647,7 @@
 					/obj/item/clothing/mask/russian_balaclava,
 					/obj/item/clothing/head/helmet/rus_ushanka,
 					/obj/item/clothing/suit/armor/vest/russian_coat,
+					/obj/item/gun/ballistic/automatic/ak47, //WS edit: gun
 					/obj/item/gun/ballistic/rifle/boltaction,
 					/obj/item/gun/ballistic/rifle/boltaction)
 	crate_name = "surplus military crate"

@@ -4,7 +4,7 @@
 /obj/machinery/mineral/ore_redemption
 	name = "ore redemption machine"
 	desc = "A machine that accepts ore and instantly transforms it into workable material sheets. Points for ore are generated based on type and can be redeemed at a mining equipment vendor."
-	icon = 'icons/obj/machines/mining_machines.dmi'
+	icon = 'whitesands/icons/obj/machines/orm.dmi' // WS Edit - Directional ORM Sprites
 	icon_state = "ore_redemption"
 	density = TRUE
 	input_dir = NORTH
@@ -18,7 +18,6 @@
 	var/points = 0
 	var/ore_multiplier = 1
 	var/point_upgrade = 1
-	var/list/ore_values = list(/datum/material/iron = 1, /datum/material/glass = 1,  /datum/material/plasma = 15,  /datum/material/silver = 16, /datum/material/gold = 18, /datum/material/titanium = 30, /datum/material/uranium = 30, /datum/material/diamond = 50, /datum/material/bluespace = 50, /datum/material/bananium = 60)
 	/// Variable that holds a timer which is used for callbacks to `send_console_message()`. Used for preventing multiple calls to this proc while the ORM is eating a stack of ores.
 	var/console_notify_timer
 	var/datum/techweb/stored_research
@@ -214,7 +213,10 @@
 
 /obj/machinery/mineral/ore_redemption/ui_data(mob/user)
 	var/list/data = list()
+	var/datum/bank_account/user_account = user.get_bank_account()
 	data["unclaimedPoints"] = points
+	if (user_account)
+		data["userCash"] = user_account.account_balance
 
 	data["materials"] = list()
 	var/datum/component/material_container/mat_container = materials.mat_container
@@ -224,12 +226,12 @@
 			var/amount = mat_container.materials[M]
 			var/sheet_amount = amount / MINERAL_MATERIAL_AMOUNT
 			var/ref = REF(M)
-			data["materials"] += list(list("name" = M.name, "id" = ref, "amount" = sheet_amount, "value" = ore_values[M.type]))
+			data["materials"] += list(list("name" = M.name, "id" = ref, "amount" = sheet_amount, "value" = mat_container.get_material_cost(M, MINERAL_MATERIAL_AMOUNT)))
 
 		data["alloys"] = list()
 		for(var/v in stored_research.researched_designs)
 			var/datum/design/D = SSresearch.techweb_design_by_id(v)
-			data["alloys"] += list(list("name" = D.name, "id" = D.id, "amount" = can_smelt_alloy(D)))
+			data["alloys"] += list(list("name" = D.name, "id" = D.id, "amount" = can_smelt_alloy(D), "value" = mat_container.get_material_list_cost(D.materials)))
 
 	if (!mat_container)
 		data["disconnected"] = "local mineral storage is unavailable"
@@ -269,6 +271,7 @@
 				to_chat(usr, "<span class='warning'>No points to claim.</span>")
 			return TRUE
 		if("Release")
+			var/obj/item/card/id/I = usr.get_idcard(TRUE)
 			if(!mat_container)
 				return
 			if(materials.on_hold())
@@ -295,7 +298,7 @@
 
 				var/sheets_to_remove = round(min(desired,50,stored_amount))
 
-				var/count = mat_container.retrieve_sheets(sheets_to_remove, mat, get_step(src, output_dir))
+				var/count = mat_container.retrieve_sheets(sheets_to_remove, mat, get_step(src, output_dir), I?.registered_account)
 				var/list/mats = list()
 				mats[mat] = MINERAL_MATERIAL_AMOUNT
 				materials.silo_log(src, "released", -count, "sheets", mats)
@@ -330,15 +333,20 @@
 			var/datum/design/alloy = stored_research.isDesignResearchedID(alloy_id)
 			var/mob/M = usr
 			var/obj/item/card/id/I = M.get_idcard(TRUE)
+			var/datum/bank_account/user_account = I?.registered_account
 			if((check_access(I) || allowed(usr)) && alloy)
 				var/smelt_amount = can_smelt_alloy(alloy)
+				if(mat_container.linked_account && !(obj_flags & EMAGGED))
+					var/cost = mat_container.get_material_list_cost(alloy.materials)
+					if(cost)
+						smelt_amount = min(smelt_amount, FLOOR(user_account?.account_balance / cost, 1))
 				var/desired = 0
 				if (params["sheets"])
 					desired = text2num(params["sheets"])
 				else
 					desired = input("How many sheets?", "How many sheets would you like to smelt?", 1) as null|num
 				var/amount = round(min(desired,50,smelt_amount))
-				mat_container.use_materials(alloy.materials, amount)
+				mat_container.use_materials(alloy.materials, amount, user_account, !(obj_flags & EMAGGED))
 				materials.silo_log(src, "released", -amount, "sheets", alloy.materials)
 				var/output
 				if(ispath(alloy.build_path, /obj/item/stack/sheet))
@@ -355,6 +363,10 @@
 	..()
 
 /obj/machinery/mineral/ore_redemption/update_icon_state()
+	// WS Start - Directional ORM Sprites
+	if (panel_open)
+		icon_state = "[initial(icon_state)]-open"
+	// WS End - Directional ORM Sprites
 	if(powered())
 		icon_state = initial(icon_state)
 	else

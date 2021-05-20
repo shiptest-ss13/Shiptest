@@ -322,3 +322,7 @@
 
 /mob/living/simple_animal/drone/electrocute_act(shock_damage, source, siemens_coeff, flags = NONE)
 	return 0 //So they don't die trying to fix wiring
+
+/mob/living/simple_animal/drone/get_bank_account(hand_first)
+	return SSeconomy.get_dep_account(ACCOUNT_CIV)
+	

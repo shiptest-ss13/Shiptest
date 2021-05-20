@@ -103,11 +103,16 @@
 	display_name = "suitskirt, white shirt"
 	path = /obj/item/clothing/under/suit/black/skirt
 
-/datum/gear/uniform/suit/white
+/datum/gear/uniform/suit/white_shirt
 	display_name = "suit, white shirt"
 	path = /obj/item/clothing/under/suit/black
 //Premium
 /datum/gear/uniform/tacticool
 	display_name = "tacticool turtleneck"
 	path = /obj/item/clothing/under/syndicate/tacticool
+	cost = 10000
+
+/datum/gear/uniform/psychedelic
+	display_name = "psychedelic suit"
+	path = /obj/item/clothing/under/misc/psyche
 	cost = 10000

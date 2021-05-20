@@ -184,6 +184,8 @@ GLOBAL_LIST_INIT(modulo_angle_to_dir, list(NORTH,NORTHEAST,EAST,SOUTHEAST,SOUTH,
 		. += "[seperator]BAN"
 	if(rights & R_FUN)
 		. += "[seperator]FUN"
+	if(rights & R_ROD) //WS edit: ROD
+		. += "[seperator]ROD"
 	if(rights & R_SERVER)
 		. += "[seperator]SERVER"
 	if(rights & R_DEBUG)

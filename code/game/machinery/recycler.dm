@@ -96,7 +96,9 @@
 	if(safety_mode)
 		return
 	if(!isturf(AM0.loc))
-		return //I don't know how you called Crossed() but stop it.
+		return 	//I don't know how you called Crossed() but stop it.
+	if(istype(AM0, /obj/effect))
+		return	//WS Edit, effects are not touchable
 
 	var/list/to_eat = AM0.GetAllContents()
 

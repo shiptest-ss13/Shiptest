@@ -1,7 +1,6 @@
 /datum/language/rylethian
 	name = "Rylethian"
 	desc = "A strange language spoken by squidpeople."
-	icon_state = "squid"
 	speech_verb = "gurgles"
 	ask_verb = "bubbles"
 	whisper_verb = "squelches"
@@ -22,3 +21,8 @@
 		"forbici"
 	)
 	default_priority = 80
+
+	// WS Edit Start - Whitesands
+	icon = 'whitesands/icons/effects/language.dmi'
+	icon_state = "squiddish"
+	// WS Edit End - Whitesands

@@ -12,6 +12,7 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	attack_verb = list("swept", "brushed off", "bludgeoned", "whacked")
 	resistance_flags = FLAMMABLE
+	custom_materials = list(/datum/material/iron = 2000) // WS Edit - Item Materials
 
 /obj/item/pushbroom/Initialize()
 	. = ..()
@@ -30,37 +31,35 @@
 	SIGNAL_HANDLER
 
 	to_chat(user, "<span class='notice'>You brace the [src] against the ground in a firm sweeping stance.</span>")
-	RegisterSignal(user, COMSIG_MOVABLE_MOVED, .proc/sweep)
+	RegisterSignal(user, COMSIG_MOVABLE_PRE_MOVE, .proc/sweep)
 
 /// triggered on unwield of two handed item
 /obj/item/pushbroom/proc/on_unwield(obj/item/source, mob/user)
 	SIGNAL_HANDLER
 
-	UnregisterSignal(user, COMSIG_MOVABLE_MOVED)
+	UnregisterSignal(user, COMSIG_MOVABLE_PRE_MOVE)
 
 /obj/item/pushbroom/afterattack(atom/A, mob/user, proximity)
 	. = ..()
 	if(!proximity)
 		return
-	sweep(user, A, FALSE)
+	sweep(user, A)
 
-/obj/item/pushbroom/proc/sweep(mob/user, atom/A, moving = TRUE)
+/obj/item/pushbroom/proc/sweep(mob/user, atom/A)
 	SIGNAL_HANDLER
 
-	var/turf/target = moving ? user.loc : (isturf(A) ? A : A.loc)
-	if (!isturf(target))
+	var/turf/current_item_loc = isturf(A) ? A : A.loc
+	if(!isturf(current_item_loc))
 		return
-	if (locate(/obj/structure/table) in target.contents)
-		return
+	var/turf/new_item_loc = get_step(current_item_loc, user.dir)
+	var/obj/machinery/disposal/bin/target_bin = locate(/obj/machinery/disposal/bin) in new_item_loc.contents
 	var/i = 0
-	var/turf/target_turf = get_step(target, user.dir)
-	var/obj/machinery/disposal/bin/target_bin = locate(/obj/machinery/disposal/bin) in target_turf.contents
-	for(var/obj/item/garbage in target.contents)
+	for(var/obj/item/garbage in current_item_loc.contents)
 		if(!garbage.anchored)
-			if (target_bin)
+			if(target_bin)
 				garbage.forceMove(target_bin)
 			else
-				garbage.Move(target_turf, user.dir)
+				garbage.Move(new_item_loc, user.dir)
 			i++
 		if(i > 19)
 			break

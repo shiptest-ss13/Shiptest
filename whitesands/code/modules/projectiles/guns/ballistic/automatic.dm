@@ -20,9 +20,59 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	mag_type = /obj/item/ammo_box/magazine/co9mm
 	can_suppress = FALSE
-
 /obj/item/gun/ballistic/automatic/pistol/commander/no_mag
 	spawnwithmagazine = FALSE
+
+/obj/item/gun/ballistic/automatic/pistol/commissar
+	name = "\improper Commissar"
+	desc = "A custom-designed 1911 handgun to further enhance it's effectiveness in troop discipline."
+	icon = 'whitesands/icons/obj/guns/projectile.dmi'
+	icon_state = "commander"
+	w_class = WEIGHT_CLASS_NORMAL
+	mag_type = /obj/item/ammo_box/magazine/co9mm
+	can_suppress = FALSE
+	var/funnysounds = TRUE
+	var/cooldown = 0
+
+/obj/item/gun/ballistic/automatic/pistol/commissar/equipped(mob/living/user, slot)
+	..()
+	if(slot == ITEM_SLOT_HANDS && funnysounds) // We do this instead of equip_sound as we only want this to play when it's wielded
+		playsound(src, 'whitesands/sound/weapons/gun/commissar/pickup.ogg', 30, 0)
+
+/obj/item/gun/ballistic/automatic/pistol/commissar/shoot_live_shot(mob/living/user, pointblank, atom/pbtarget, message)
+	. = ..()
+	if(prob(50) && funnysounds)
+		playsound(src, 'whitesands/sound/weapons/gun/commissar/shot.ogg', 30, 0)
+
+/obj/item/gun/ballistic/automatic/pistol/commissar/shoot_with_empty_chamber(mob/living/user)
+	. = ..()
+	if(prob(50) && funnysounds)
+		playsound(src, 'whitesands/sound/weapons/gun/commissar/dry.ogg', 30, 0)
+
+/obj/item/gun/ballistic/automatic/pistol/commissar/insert_magazine(mob/user, obj/item/ammo_box/magazine/AM, display_message)
+	. = ..()
+	if(bolt_locked)
+		drop_bolt(user)
+		if(. && funnysounds)
+			playsound(src, 'whitesands/sound/weapons/gun/commissar/magazine.ogg', 30, 0)
+
+/obj/item/gun/ballistic/automatic/pistol/commissar/multitool_act(mob/living/user, obj/item/I)
+	. = ..()
+	funnysounds = !funnysounds
+	to_chat(user, "<span class='notice'>You toggle [src]'s vox audio functions.</span>")
+
+/obj/item/gun/ballistic/automatic/pistol/commissar/AltClick(mob/user)
+	if(!user.canUseTopic(src, BE_CLOSE, ismonkey(user)))
+		return
+	if((cooldown < world.time - 200) && funnysounds)
+		user.audible_message("<font color='red' size='5'><b>DON'T TURN AROUND!</b></font>")
+		playsound(src, 'whitesands/sound/weapons/gun/commissar/dontturnaround.ogg', 50, 0, 4)
+		cooldown = world.time
+
+/obj/item/gun/ballistic/automatic/pistol/commissar/examine(mob/user)
+	. = ..()
+	if(funnysounds)
+		. += "<span class='info'>Alt-click to use \the [src] vox hailer.</span>"
 
 /obj/item/gun/ballistic/automatic/pistol/solgov
 	name = "SolGov M9C"
@@ -41,6 +91,7 @@
 	"}
 	icon = 'whitesands/icons/obj/guns/projectile.dmi'
 	icon_state = "aks74u"
+	fire_rate = 10
 	lefthand_file = 'whitesands/icons/mob/inhands/weapons/guns_left.dmi'
 	righthand_file = 'whitesands/icons/mob/inhands/weapons/guns_right.dmi'
 	item_state = "aks74u"
@@ -48,6 +99,43 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	pin = /obj/item/firing_pin/explorer
 	mag_type = /obj/item/ammo_box/magazine/aks74u
+
+/obj/item/gun/ballistic/automatic/ak47
+	name = "AK-47"
+	desc = {"A favorite among both the soldiers of the Russian Colonial Army and civilians out on the edges of explored space, the AK-47 is a reliable rifle designed and sold by a Space Russian company and remains one of the most common automatic rifles in the known galaxy."}
+	icon = 'whitesands/icons/obj/guns/48x32guns.dmi'
+	icon_state = "ak47"
+	item_state = "arg"
+	fire_rate = 2
+	mag_display = TRUE
+	weapon_weight = WEAPON_MEDIUM
+	w_class = WEIGHT_CLASS_BULKY
+	mag_type = /obj/item/ammo_box/magazine/ak47
+
+/obj/item/gun/ballistic/automatic/pistol/tec9
+	name = "TEC9 Machine Pistol"
+	desc = "A new take on an old classic, firing 9mm rounds at unprecedented firerates. Perfect for gatting people down, especially considering how plentiful ammo is."
+	icon = 'whitesands/icons/obj/guns/projectile.dmi'
+	icon_state = "tec9"
+	weapon_weight = WEAPON_LIGHT
+	w_class = WEIGHT_CLASS_SMALL
+	mag_type = /obj/item/ammo_box/magazine/tec9
+	fire_rate = 6
+	automatic = 1
+	mag_display = TRUE
+
+/obj/item/gun/ballistic/automatic/ebr
+	name = "M514 EBR"
+	desc = {"A cheap, reliable rifle often found in the hands of low-ranking Syndicate personnel. It's known for rather high stopping power and mild armor-piercing capabilities."}
+	icon = 'whitesands/icons/obj/guns/48x32guns.dmi'
+	icon_state = "ebr"
+	item_state = "ebr"
+	fire_rate = 2
+	mag_display = TRUE
+	weapon_weight = WEAPON_MEDIUM
+	w_class = WEIGHT_CLASS_BULKY
+	mag_type = /obj/item/ammo_box/magazine/ebr
+
 
 /obj/item/gun/ballistic/automatic/vector
 	name = "Vector Carbine"

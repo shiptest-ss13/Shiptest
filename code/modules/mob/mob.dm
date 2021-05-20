@@ -1212,6 +1212,10 @@
 /mob/proc/get_id_in_hand()
 	return
 
+///Get the mob's probably linked bank account WS EDIT
+/mob/proc/get_bank_account(hand_first)
+	return
+
 /**
   * Get the mob VV dropdown extras
   */

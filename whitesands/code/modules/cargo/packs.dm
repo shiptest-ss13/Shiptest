@@ -261,10 +261,12 @@
 
 /datum/supply_pack/misc/traitor_ammo
 	name = "Syndicate-Grade Ammo Crate"
-	desc = "Contains three 10mm stechkin magazines, two .357 magnum speedloaders, and a box of buckshot for good measure. Comes in a re-usable coffin."
+	desc = "Contains three 10mm stechkin magazines, two .357 magnum speedloaders, two 9mm AP magazines, and a box of buckshot for good measure. Comes in a re-usable coffin."
 	contains = list(/obj/item/ammo_box/magazine/m10mm,
 					/obj/item/ammo_box/magazine/m10mm,
 					/obj/item/ammo_box/magazine/m10mm,
+					/obj/item/ammo_box/magazine/tec9,
+					/obj/item/ammo_box/magazine/tec9,
 					/obj/item/ammo_box/a357,
 					/obj/item/ammo_box/a357,
 					/obj/item/storage/box/lethalshot)
@@ -284,6 +286,7 @@
 					/obj/item/ammo_box/c45,
 					/obj/item/ammo_box/magazine/m50,
 					/obj/item/ammo_box/magazine/tommygunm45,
+					/obj/item/ammo_box/magazine/ak47,
 					/obj/item/ammo_box/foambox/riot)
 	dangerous = TRUE
 	contraband = TRUE
@@ -432,6 +435,30 @@
 	crate_name = "deep core logi crate"
 
 //////////////////////////////////////////////////////////////////////////////
+/////////////////////////// Overmap Shuttles /////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////
+
+/datum/supply_pack/engineering/shuttle_in_a_box
+	name = "Shuttle in a Box"
+	desc = "The bare minimum amount of machine and computer boards required to create a working spacecraft."
+	cost = 8000
+	contains = list(
+		/obj/item/circuitboard/computer/shuttle/docker,
+		/obj/item/circuitboard/computer/shuttle/helm,
+		/obj/item/circuitboard/machine/shuttle/smes,
+		/obj/item/circuitboard/machine/shuttle/engine/electric
+	)
+	crate_name = "Shuttle in a Box"
+
+/datum/supply_pack/engineering/shuttle_designator
+	name = "Shuttle Designator"
+	desc = "A tool used to create spacecraft from scratch, used for defining areas and linking consoles."
+	cost = 5000
+	contains = list(/obj/item/shuttle_creator)
+	crate_name = "Shuttle Designator"
+	small_item = TRUE
+
+//////////////////////////////////////////////////////////////////////////////
 //////////////////////////// Miscellaneous ///////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////
 
@@ -441,3 +468,14 @@
 	cost = 35000
 	contains = list(/obj/machinery/jukebox)
 	crate_name = "Jukebox"
+
+/datum/supply_pack/service/lawnmower
+	name = "Boomer John's Riding Mower"
+	desc = "Can be used to cultivate gardens and shred weeds at record pace. Comes with a complementary can of Monkey Energy."
+	cost = 10000
+	access = ACCESS_HYDROPONICS
+	contains = list(
+		/obj/vehicle/ridden/lawnmower,
+		/obj/item/reagent_containers/food/drinks/soda_cans/monkey_energy
+	)
+	crate_name = "mower crate"

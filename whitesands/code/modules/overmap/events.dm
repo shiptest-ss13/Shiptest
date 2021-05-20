@@ -7,6 +7,8 @@
 	var/chance_to_affect = 0
 	///Chance to spread to nearby tiles if spawned
 	var/spread_chance = 0
+	///How many additional tiles to spawn at once in the selected orbit. Used with OVERMAP_GENERATOR_SOLAR.
+	var/chain_rate = 0
 	///The event to run when the station gets hit by an event
 	var/datum/round_event_control/station_event
 
@@ -55,6 +57,7 @@
 	affect_multiple_times = TRUE
 	chance_to_affect = 5
 	spread_chance = 50
+	chain_rate = 4
 	station_event = /datum/round_event_control/meteor_wave/threatening
 	var/max_damage = 15
 	var/min_damage = 5
@@ -81,12 +84,14 @@
 /obj/structure/overmap/event/meteor/minor
 	name = "asteroid storm (minor)"
 	station_event = /datum/round_event_control/meteor_wave
+	chain_rate = 3
 	max_damage = 10
 	min_damage = 3
 
 /obj/structure/overmap/event/meteor/major
 	name = "asteroid storm (major)"
 	spread_chance = 25
+	chain_rate = 6
 	station_event = /datum/round_event_control/meteor_wave/catastrophic
 	max_damage = 25
 	min_damage = 10
@@ -96,6 +101,7 @@
 	name = "ion storm (moderate)"
 	icon_state = "ion1"
 	spread_chance = 20
+	chain_rate = 2
 	station_event = /datum/round_event_control/ion_storm
 	var/strength = 3
 
@@ -120,10 +126,12 @@
 
 /obj/structure/overmap/event/emp/minor
 	name = "ion storm (minor)"
+	chain_rate = 1
 	strength = 1
 
 /obj/structure/overmap/event/emp/major
 	name = "ion storm (major)"
+	chain_rate = 4
 	strength = 5
 
 ///ELECTRICAL STORM - Zaps places in the shuttle
@@ -131,6 +139,7 @@
 	name = "electrical storm (moderate)"
 	icon_state = "electrical1"
 	spread_chance = 30
+	chain_rate = 3
 	station_event = /datum/round_event_control/grid_check
 	var/max_damage = 15
 	var/min_damage = 5
@@ -157,18 +166,21 @@
 /obj/structure/overmap/event/electric/minor
 	name = "electrical storm (minor)"
 	spread_chance = 40
+	chain_rate = 2
 	max_damage = 10
 	min_damage = 3
 
 /obj/structure/overmap/event/electric/major
 	name = "electrical storm (major)"
 	spread_chance = 15
+	chain_rate = 6
 	max_damage = 20
 	min_damage = 10
 
 /obj/structure/overmap/event/nebula
 	name = "nebula"
 	icon_state = "nebula"
+	chain_rate = 8
 	spread_chance = 75
 	opacity = TRUE
 
@@ -176,6 +188,7 @@
 	name = "wormhole"
 	icon_state = "wormhole"
 	spread_chance = 0
+	chain_rate = 0
 	///The currently linked wormhole
 	var/obj/structure/overmap/event/wormhole/other_wormhole
 	///Amount of times a ship can pass through before it collapses
@@ -187,7 +200,14 @@
 	if(_other_wormhole)
 		other_wormhole = _other_wormhole
 	if(!other_wormhole)
-		other_wormhole = new(SSovermap.get_unused_overmap_square(), "[id]_exit", src)
+		if(SSovermap.generator_type == OVERMAP_GENERATOR_SOLAR)
+			var/list/L = list_keys(SSovermap.radius_tiles)
+			L -= "unsorted"
+			var/selected_radius = pick(L)
+			var/turf/T = SSovermap.get_unused_overmap_square_in_radius(selected_radius)
+			other_wormhole = new(T, "[id]_exit", src)
+		else
+			other_wormhole = new(SSovermap.get_unused_overmap_square(), "[id]_exit", src)
 
 /obj/structure/overmap/event/wormhole/affect_ship(obj/structure/overmap/ship/simulated/S)
 	if(!other_wormhole)
@@ -209,3 +229,17 @@
 	if(potential_turf.density) //So people don't abuse it to escape the overmap
 		potential_turf = get_turf(other_wormhole)
 	S.forceMove(potential_turf)
+
+GLOBAL_LIST_INIT(overmap_event_pick_list, list(
+	/obj/structure/overmap/event/wormhole = 10,
+	/obj/structure/overmap/event/nebula = 60,
+	/obj/structure/overmap/event/electric/minor = 45,
+	/obj/structure/overmap/event/electric = 40,
+	/obj/structure/overmap/event/electric/major = 35,
+	/obj/structure/overmap/event/emp/minor = 45,
+	/obj/structure/overmap/event/emp = 40,
+	/obj/structure/overmap/event/emp/major = 45,
+	/obj/structure/overmap/event/meteor/minor = 45,
+	/obj/structure/overmap/event/meteor = 40,
+	/obj/structure/overmap/event/meteor/major = 35
+))

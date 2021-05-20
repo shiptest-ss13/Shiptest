@@ -161,6 +161,7 @@
 					/obj/item/clothing/mask/bandana/skull = 2
 					)
 	contraband = list(/obj/item/clothing/suit/hooded/techpriest = 2,
+					/obj/item/clothing/suit/hooded/enginseer = 2, // WS edit: enginsineer robes
 					/obj/item/organ/tongue/robot = 2)
 	refill_canister = /obj/item/vending_refill/wardrobe/robo_wardrobe
 	extra_price = 300

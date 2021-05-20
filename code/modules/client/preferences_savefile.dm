@@ -437,7 +437,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 		update_character(needs_update, S)		//needs_update == savefile_version if we need an update (positive integer)
 
 	//Sanitize
-	real_name = reject_bad_name(real_name)
+	real_name = reject_bad_name(real_name, pref_species.allow_numbers_in_name)      // WS Edit - numbers in IPC names load from save
 	gender = sanitize_gender(gender)
 	if(!real_name)
 		real_name = random_unique_name(gender)

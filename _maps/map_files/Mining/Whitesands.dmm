@@ -251,12 +251,33 @@
 	},
 /turf/open/floor/circuit/telecomms,
 /area/whitesands/colony/maintenance)
+"fv" = (
+/obj/effect/turf_decal/lumos/loading_area{
+	dir = 8
+	},
+/obj/structure/table/reinforced,
+/obj/item/clothing/mask/breath,
+/obj/item/clothing/mask/breath,
+/obj/item/clothing/mask/breath,
+/obj/item/clothing/mask/breath,
+/obj/item/clothing/mask/breath,
+/turf/open/floor/plating,
+/area/whitesands/colony/shuttle_consoles)
 "fJ" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 1
 	},
 /obj/effect/turf_decal/stripes/line,
 /obj/structure/lattice/catwalk,
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 5
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
+	dir = 5
+	},
 /turf/open/floor/plating/asteroid/whitesands,
 /area/whitesands/surface/outdoors)
 "fQ" = (
@@ -309,6 +330,7 @@
 /area/whitesands/colony/production)
 "gn" = (
 /obj/structure/frame/computer,
+/obj/item/circuitboard/computer/shuttle/docker,
 /turf/open/floor/mineral/titanium/yellow,
 /area/whitesands/surface/outdoors)
 "gE" = (
@@ -384,6 +406,13 @@
 /obj/item/shard,
 /turf/open/floor/mineral/titanium/yellow,
 /area/whitesands/surface/outdoors)
+"hw" = (
+/obj/effect/turf_decal/lumos/loading_area{
+	dir = 4
+	},
+/obj/structure/tank_dispenser/oxygen,
+/turf/open/floor/plating,
+/area/whitesands/colony/shuttle_consoles)
 "hz" = (
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
@@ -421,6 +450,19 @@
 	},
 /turf/open/floor/wood,
 /area/whitesands/colony)
+"iJ" = (
+/obj/structure/lattice/catwalk,
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 5
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
+	dir = 5
+	},
+/turf/open/floor/plating/asteroid/whitesands,
+/area/whitesands/surface/outdoors)
 "iU" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer3{
 	dir = 8
@@ -536,6 +578,7 @@
 /obj/effect/turf_decal/stripes/corner{
 	dir = 8
 	},
+/mob/living/simple_animal/hostile/whitesands/survivor,
 /turf/open/floor/wood,
 /area/whitesands/colony)
 "kU" = (
@@ -578,6 +621,15 @@
 	dir = 1
 	},
 /obj/structure/lattice/catwalk,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
+	dir = 4
+	},
 /turf/open/floor/plating/asteroid/whitesands,
 /area/whitesands/surface/outdoors)
 "mu" = (
@@ -589,6 +641,7 @@
 /area/whitesands/colony/production)
 "mz" = (
 /obj/effect/gibspawner/human/bodypartless,
+/mob/living/simple_animal/hostile/whitesands/survivor,
 /turf/open/floor/plasteel,
 /area/whitesands/colony/production)
 "mW" = (
@@ -642,6 +695,16 @@
 	},
 /turf/open/floor/plating/asteroid/whitesands,
 /area/whitesands/surface/outdoors)
+"nv" = (
+/obj/structure/marker_beacon,
+/obj/effect/turf_decal/lumos/loading_area{
+	dir = 1
+	},
+/obj/effect/turf_decal/lumos/loading_area{
+	dir = 8
+	},
+/turf/open/floor/plating,
+/area/whitesands/colony/shuttle_consoles)
 "nE" = (
 /obj/structure/cable{
 	icon_state = "2-8"
@@ -841,19 +904,15 @@
 /obj/item/stack/cable_coil/random/five,
 /turf/open/floor/mineral/titanium/yellow,
 /area/whitesands/surface/outdoors)
-"rz" = (
-/obj/structure/table/reinforced,
-/obj/effect/turf_decal/tile/purple{
-	dir = 4
-	},
-/obj/effect/turf_decal/tile/red,
-/turf/open/floor/plasteel,
-/area/whitesands/colony/guard)
 "rH" = (
 /obj/structure/chair/office{
 	dir = 1
 	},
 /obj/effect/mob_spawn/human/corpse/assistant,
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer3,
 /turf/open/floor/plasteel,
 /area/whitesands/colony/guard)
 "rK" = (
@@ -875,9 +934,7 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/tile/red,
-/obj/item/kirbyplants{
-	icon_state = "plant-25"
-	},
+/obj/structure/tank_dispenser/oxygen,
 /turf/open/floor/plasteel,
 /area/whitesands/colony/guard)
 "rO" = (
@@ -890,6 +947,13 @@
 /obj/effect/turf_decal/bot,
 /turf/open/floor/plasteel,
 /area/whitesands/colony)
+"ss" = (
+/obj/structure/lattice/catwalk,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plating/asteroid/whitesands/dried,
+/area/whitesands/surface/outdoors)
 "su" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -898,6 +962,7 @@
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer3{
 	dir = 4
 	},
+/mob/living/simple_animal/hostile/whitesands/survivor,
 /turf/open/floor/plasteel,
 /area/whitesands/colony/guard)
 "sE" = (
@@ -953,14 +1018,21 @@
 	icon_state = "1-4"
 	},
 /obj/structure/lattice/catwalk,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
-	dir = 5
+/obj/structure/cable{
+	icon_state = "4-8"
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
-	dir = 5
-	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer3,
 /turf/open/floor/plating/asteroid/whitesands,
 /area/whitesands/surface/outdoors)
+"uk" = (
+/obj/structure/marker_beacon,
+/obj/effect/turf_decal/lumos/loading_area,
+/obj/effect/turf_decal/lumos/loading_area{
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/whitesands/colony/shuttle_consoles)
 "um" = (
 /obj/structure/bed,
 /obj/effect/turf_decal/tile/green,
@@ -1019,6 +1091,10 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/whitesands/colony/maintenance)
+"vo" = (
+/mob/living/simple_animal/hostile/whitesands/survivor,
+/turf/open/floor/carpet/blue,
+/area/whitesands/colony)
 "vv" = (
 /obj/machinery/power/apc/auto_name/east{
 	pixel_x = 24
@@ -1059,6 +1135,19 @@
 /obj/item/radio,
 /turf/open/floor/plasteel/dark,
 /area/whitesands/colony/maintenance)
+"wh" = (
+/obj/structure/lattice/catwalk,
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 10
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
+	dir = 10
+	},
+/turf/open/floor/plating/asteroid/whitesands,
+/area/whitesands/surface/outdoors)
 "wx" = (
 /obj/machinery/shower{
 	dir = 8
@@ -1088,6 +1177,10 @@
 "wO" = (
 /turf/open/floor/plating/asteroid/whitesands/dried,
 /area/whitesands/surface/outdoors)
+"wU" = (
+/mob/living/simple_animal/hostile/whitesands/ranged/hunter,
+/turf/open/floor/plasteel/dark,
+/area/whitesands/colony/maintenance)
 "wW" = (
 /turf/open/floor/plasteel,
 /area/whitesands/colony/production)
@@ -1144,8 +1237,21 @@
 "xV" = (
 /obj/structure/closet/crate,
 /obj/effect/spawner/lootdrop/maintenance/two,
+/mob/living/simple_animal/hostile/whitesands/survivor,
 /turf/open/floor/plasteel,
 /area/whitesands/colony/production)
+"yd" = (
+/obj/structure/lattice/catwalk,
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
+/turf/open/floor/plating/asteroid/whitesands,
+/area/whitesands/surface/outdoors)
 "yg" = (
 /obj/effect/turf_decal/stripes/line,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
@@ -1242,6 +1348,9 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer3{
 	dir = 8
 	},
+/obj/item/kirbyplants{
+	icon_state = "plant-25"
+	},
 /turf/open/floor/plasteel,
 /area/whitesands/colony/guard)
 "Ah" = (
@@ -1258,6 +1367,9 @@
 	},
 /turf/open/floor/plasteel,
 /area/whitesands/colony/production)
+"Al" = (
+/turf/closed/wall/r_wall,
+/area/whitesands/colony/shuttle_consoles)
 "Am" = (
 /turf/open/floor/plating/asteroid/whitesands,
 /area/whitesands/surface/outdoors)
@@ -1282,6 +1394,7 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer3{
 	dir = 1
 	},
+/mob/living/simple_animal/hostile/whitesands/survivor,
 /turf/open/floor/plasteel,
 /area/whitesands/colony/dormitory/two)
 "AN" = (
@@ -1346,13 +1459,15 @@
 /turf/open/floor/plasteel/dark,
 /area/whitesands/colony/maintenance)
 "By" = (
-/obj/machinery/camera{
-	c_tag = "Guard Post";
-	dir = 8;
-	network = list("mine")
+/obj/structure/cable{
+	icon_state = "0-8"
 	},
+/obj/machinery/power/terminal{
+	dir = 4
+	},
+/obj/machinery/power/apc/auto_name/east,
 /turf/open/floor/plasteel,
-/area/whitesands/colony/guard)
+/area/space)
 "BS" = (
 /obj/structure/fence/door,
 /turf/open/floor/plating/asteroid/whitesands,
@@ -1492,6 +1607,13 @@
 /obj/structure/closet/crate/hydroponics,
 /turf/open/floor/plasteel,
 /area/whitesands/colony/greenhouse)
+"EH" = (
+/obj/structure/lattice/catwalk,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plating/asteroid/whitesands/dried,
+/area/whitesands/surface/outdoors)
 "EP" = (
 /obj/structure/chair/stool,
 /obj/effect/mob_spawn/human/corpse/assistant,
@@ -1542,7 +1664,9 @@
 /obj/structure/window/reinforced{
 	dir = 1
 	},
-/obj/structure/shuttle/engine/heater,
+/obj/machinery/atmospherics/components/unary/shuttle/heater{
+	dir = 1
+	},
 /turf/open/floor/plating,
 /area/whitesands/surface/outdoors)
 "Fl" = (
@@ -1629,6 +1753,23 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
 /turf/open/floor/plating/asteroid/whitesands,
 /area/whitesands/surface/outdoors)
+"FS" = (
+/obj/effect/turf_decal/lumos/loading_area{
+	dir = 1
+	},
+/obj/effect/turf_decal/lumos/loading_area/corner{
+	dir = 8
+	},
+/obj/machinery/power/apc/auto_name/north,
+/obj/machinery/power/terminal{
+	dir = 1
+	},
+/obj/machinery/computer/shuttle/mining/common,
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/turf/open/floor/plating,
+/area/whitesands/colony/shuttle_consoles)
 "Gc" = (
 /obj/effect/turf_decal/tile/blue{
 	dir = 8
@@ -1709,6 +1850,14 @@
 	},
 /turf/open/floor/plasteel,
 /area/whitesands/colony/dormitory/two)
+"GV" = (
+/obj/effect/turf_decal/lumos/loading_area,
+/obj/machinery/computer/shuttle/mining{
+	dir = 1;
+	req_access = null
+	},
+/turf/open/floor/plating,
+/area/whitesands/colony/shuttle_consoles)
 "Hc" = (
 /obj/structure/fence/corner{
 	dir = 1
@@ -1755,13 +1904,22 @@
 /turf/open/floor/wood,
 /area/whitesands/colony)
 "HE" = (
-/obj/structure/closet/secure_closet/security,
 /obj/effect/turf_decal/tile/purple{
 	dir = 4
 	},
 /obj/effect/turf_decal/tile/red,
+/obj/machinery/suit_storage_unit/mining,
 /turf/open/floor/plasteel,
 /area/whitesands/colony/guard)
+"HL" = (
+/obj/structure/lattice/catwalk,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
+/turf/open/floor/plating/asteroid/whitesands,
+/area/whitesands/surface/outdoors)
 "Ii" = (
 /obj/effect/spawner/lootdrop/maintenance,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer3{
@@ -1784,6 +1942,14 @@
 	},
 /turf/open/floor/plating,
 /area/whitesands/colony)
+"IM" = (
+/obj/structure/marker_beacon,
+/obj/effect/turf_decal/lumos/loading_area,
+/obj/effect/turf_decal/lumos/loading_area{
+	dir = 8
+	},
+/turf/open/floor/plating,
+/area/whitesands/colony/shuttle_consoles)
 "IN" = (
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/firedoor/border_only{
@@ -1882,6 +2048,13 @@
 	},
 /turf/open/floor/plasteel,
 /area/whitesands/colony)
+"KE" = (
+/obj/structure/lattice/catwalk,
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/turf/open/floor/plating/asteroid/whitesands/dried,
+/area/whitesands/surface/outdoors)
 "KR" = (
 /obj/structure/cable{
 	icon_state = "1-8"
@@ -1894,6 +2067,14 @@
 	},
 /turf/open/floor/carpet/blue,
 /area/whitesands/colony)
+"KV" = (
+/obj/structure/fence,
+/obj/structure/lattice/catwalk,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plating/asteroid/whitesands,
+/area/whitesands/surface/outdoors)
 "Lb" = (
 /obj/machinery/conveyor{
 	dir = 4;
@@ -1975,6 +2156,10 @@
 	dir = 8;
 	network = list("mine")
 	},
+/obj/item/gps/mining,
+/obj/item/gps/mining,
+/obj/item/gps/mining,
+/obj/item/gps/mining,
 /turf/open/floor/plasteel,
 /area/whitesands/colony/guard)
 "Mi" = (
@@ -2053,6 +2238,18 @@
 /obj/item/pen/fountain,
 /turf/open/floor/wood,
 /area/whitesands/colony)
+"Nm" = (
+/obj/structure/lattice/catwalk,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
+/turf/open/floor/plating/asteroid/whitesands,
+/area/whitesands/surface/outdoors)
 "No" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -2235,11 +2432,11 @@
 /obj/effect/turf_decal/tile/purple{
 	dir = 8
 	},
-/obj/structure/closet/secure_closet/security,
 /obj/effect/turf_decal/tile/purple{
 	dir = 4
 	},
 /obj/effect/turf_decal/tile/red,
+/obj/machinery/suit_storage_unit/mining,
 /turf/open/floor/plasteel,
 /area/whitesands/colony/guard)
 "Qp" = (
@@ -2346,8 +2543,23 @@
 	name = "Secure Area"
 	},
 /obj/structure/fans/tiny,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
 /turf/open/floor/plasteel,
 /area/whitesands/colony/guard)
+"Sl" = (
+/obj/effect/turf_decal/lumos/loading_area{
+	dir = 4
+	},
+/obj/effect/turf_decal/lumos/loading_area{
+	dir = 1
+	},
+/obj/structure/marker_beacon,
+/turf/open/floor/plating,
+/area/whitesands/colony/shuttle_consoles)
 "Sn" = (
 /turf/closed/wall/r_wall,
 /area/whitesands/colony)
@@ -2406,11 +2618,13 @@
 "TQ" = (
 /obj/machinery/space_heater,
 /obj/effect/turf_decal/delivery,
+/obj/machinery/airalarm/directional/east,
 /turf/open/floor/plasteel,
 /area/whitesands/colony/guard)
 "Uf" = (
 /obj/structure/frame/computer,
 /obj/item/stack/sheet/glass,
+/obj/item/circuitboard/computer/shuttle/helm,
 /turf/open/floor/plating,
 /area/whitesands/surface/outdoors)
 "Us" = (
@@ -2451,6 +2665,7 @@
 /area/whitesands/colony)
 "VW" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer3,
+/mob/living/simple_animal/hostile/whitesands/survivor,
 /turf/open/floor/plasteel,
 /area/whitesands/colony/dormitory/one)
 "WP" = (
@@ -2527,7 +2742,9 @@
 /turf/open/floor/plasteel,
 /area/whitesands/colony/greenhouse)
 "Ym" = (
-/obj/structure/shuttle/engine/propulsion,
+/obj/machinery/power/shuttle/engine/fueled/expulsion{
+	dir = 1
+	},
 /turf/open/floor/plating/asteroid/whitesands,
 /area/whitesands/surface/outdoors)
 "Yr" = (
@@ -2541,6 +2758,21 @@
 /obj/effect/gibspawner/human/bodypartless,
 /turf/open/floor/plasteel,
 /area/whitesands/colony/dormitory/one)
+"YH" = (
+/obj/structure/lattice/catwalk,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plating/asteroid/whitesands,
+/area/whitesands/surface/outdoors)
+"YK" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer1,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
+/turf/open/floor/plasteel,
+/area/whitesands/colony/guard)
 "YL" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer1{
 	dir = 8
@@ -2621,6 +2853,19 @@
 	},
 /turf/open/floor/plasteel,
 /area/whitesands/colony)
+"ZE" = (
+/obj/structure/lattice/catwalk,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
+	dir = 4
+	},
+/turf/open/floor/plating/asteroid/whitesands,
+/area/whitesands/surface/outdoors)
 "ZI" = (
 /turf/open/floor/plating/asteroid/whitesands/dried,
 /area/whitesands/surface/outdoors/explored)
@@ -14863,9 +15108,9 @@ wO
 wO
 wO
 wO
-wO
-wO
-wO
+uk
+hw
+Sl
 wO
 wO
 wO
@@ -15120,13 +15365,13 @@ wO
 wO
 wO
 wO
-wO
-wO
-wO
-wO
-wO
-wO
-wO
+GV
+Al
+FS
+EH
+EH
+EH
+KE
 wO
 Am
 Am
@@ -15377,13 +15622,13 @@ wO
 wO
 wO
 wO
+IM
+fv
+nv
 wO
 wO
 wO
-wO
-wO
-wO
-wO
+ss
 wO
 Am
 Am
@@ -15640,7 +15885,7 @@ wO
 wO
 wO
 wO
-Am
+YH
 Am
 Am
 Am
@@ -15897,7 +16142,7 @@ wO
 wO
 wO
 Am
-Am
+YH
 Am
 Am
 Am
@@ -16154,7 +16399,7 @@ wO
 wO
 wO
 Am
-Am
+YH
 Am
 Am
 Am
@@ -16411,7 +16656,7 @@ Am
 Am
 Am
 Am
-Am
+YH
 Am
 Am
 Am
@@ -16668,7 +16913,7 @@ Am
 Am
 Am
 Am
-Am
+YH
 Am
 Am
 Am
@@ -16925,7 +17170,7 @@ Am
 Am
 Am
 Am
-Am
+YH
 Am
 Am
 Am
@@ -17182,7 +17427,7 @@ Am
 Am
 Am
 Am
-Am
+YH
 Am
 Am
 Am
@@ -17439,7 +17684,7 @@ Am
 Am
 Am
 Am
-Am
+YH
 Am
 Am
 Am
@@ -17696,7 +17941,7 @@ Am
 Am
 Am
 Am
-Am
+YH
 Am
 Am
 Am
@@ -17953,7 +18198,7 @@ Am
 Am
 Am
 Am
-Am
+YH
 Am
 Am
 Am
@@ -18210,7 +18455,7 @@ Am
 Am
 Am
 Am
-Am
+YH
 Am
 Am
 Am
@@ -18467,7 +18712,7 @@ Am
 Am
 Am
 Am
-Am
+YH
 Am
 Am
 Am
@@ -18724,7 +18969,7 @@ Am
 Am
 Am
 Am
-Am
+YH
 Am
 Am
 Am
@@ -18981,7 +19226,7 @@ Am
 Am
 Am
 Am
-Am
+YH
 Am
 Am
 Am
@@ -19238,7 +19483,7 @@ Am
 Am
 Am
 Am
-Am
+YH
 Am
 Am
 Am
@@ -19495,7 +19740,7 @@ Am
 Am
 Am
 Am
-Am
+YH
 Am
 Am
 Am
@@ -19752,7 +19997,7 @@ Am
 Am
 Am
 Am
-Am
+YH
 Am
 Am
 Am
@@ -20009,7 +20254,7 @@ Am
 Am
 Am
 Am
-Am
+YH
 Am
 Am
 Am
@@ -20266,7 +20511,7 @@ Am
 Am
 Am
 Am
-Am
+YH
 Am
 Am
 Am
@@ -20523,7 +20768,7 @@ TG
 TG
 TG
 Xf
-ZV
+KV
 ZV
 ZV
 ZV
@@ -20780,7 +21025,7 @@ Eh
 zG
 rd
 Xf
-Am
+YH
 Am
 Am
 Am
@@ -21035,11 +21280,11 @@ Am
 TG
 Be
 rH
-rd
+YK
 Sh
-Am
-Am
-Am
+yd
+HL
+iJ
 Am
 TC
 ha
@@ -21296,7 +21541,7 @@ TQ
 Xf
 Am
 Am
-Am
+ZE
 Am
 Am
 Am
@@ -21553,7 +21798,7 @@ Xf
 Xf
 Am
 Am
-Am
+ZE
 Am
 Am
 Am
@@ -21810,7 +22055,7 @@ Am
 Am
 Am
 Am
-Am
+ZE
 Am
 Am
 Am
@@ -22067,7 +22312,7 @@ Am
 Am
 Am
 Am
-Am
+ZE
 Am
 Am
 Am
@@ -22324,7 +22569,7 @@ Am
 Am
 Am
 Am
-Am
+ZE
 Am
 Am
 Am
@@ -22581,7 +22826,7 @@ Am
 Am
 Am
 Am
-Am
+ZE
 Am
 Am
 Am
@@ -22838,7 +23083,7 @@ Am
 Am
 Am
 Am
-Am
+ZE
 Am
 Am
 Am
@@ -23095,7 +23340,7 @@ Am
 Am
 Am
 Am
-Am
+ZE
 Am
 JQ
 bo
@@ -23114,7 +23359,7 @@ yj
 Dd
 Vi
 Ox
-yM
+wU
 eZ
 Pn
 Mu
@@ -23352,13 +23597,13 @@ Am
 Am
 Am
 Am
-Am
-Am
-Am
-Am
-Am
-Am
-Am
+wh
+HL
+HL
+Nm
+HL
+HL
+HL
 fJ
 Am
 Am
@@ -24912,7 +25157,7 @@ LS
 Qu
 Ad
 Mh
-rz
+HE
 HE
 Qn
 sJ
@@ -25433,7 +25678,7 @@ PX
 oC
 gE
 Ii
-QO
+vo
 av
 Am
 Am

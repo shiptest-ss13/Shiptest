@@ -217,6 +217,7 @@ GLOBAL_LIST_INIT(dye_registry, list(
 			righthand_file = initial(target_type.righthand_file)
 			item_state = initial(target_type.item_state)
 			mob_overlay_icon = initial(target_type.mob_overlay_icon)
+			mob_overlay_state = initial(target_type.mob_overlay_state) //WS EDIT - Mob Overlay State
 			inhand_x_dimension = initial(target_type.inhand_x_dimension)
 			inhand_y_dimension = initial(target_type.inhand_y_dimension)
 			name = initial(target_type.name)

@@ -5,6 +5,8 @@
 	var/account_balance = 0
 	var/datum/job/account_job
 	var/list/bank_cards = list()
+	///If the account has been frozen by someone at an account management terminal.
+	var/frozen = FALSE
 	var/add_to_accounts = TRUE
 	var/account_id
 	var/being_dumped = FALSE //pink levels are rising
@@ -20,6 +22,8 @@
 /datum/bank_account/Destroy()
 	if(add_to_accounts)
 		SSeconomy.bank_accounts -= src
+	for(var/obj/item/card/id/id_card in bank_cards)
+		id_card.registered_account = null
 	return ..()
 
 /datum/bank_account/proc/dumpeet()
@@ -32,16 +36,16 @@
 		account_balance = 0
 
 /datum/bank_account/proc/has_money(amt)
-	return account_balance >= amt
+	return account_balance >= amt && !frozen
 
 /datum/bank_account/proc/adjust_money(amt)
-	if((amt < 0 && has_money(-amt)) || amt > 0)
+	if((amt < 0 && has_money(-amt)) || amt > 0 && !frozen)
 		_adjust_money(amt)
 		return TRUE
 	return FALSE
 
 /datum/bank_account/proc/transfer_money(datum/bank_account/from, amount)
-	if(from.has_money(amount))
+	if(from?.has_money(amount))
 		adjust_money(amount)
 		SSblackbox.record_feedback("amount", "credits_transferred", amount)
 		log_econ("[amount] credits were transferred from [from.account_holder]'s account to [src.account_holder]")
@@ -50,6 +54,9 @@
 	return FALSE
 
 /datum/bank_account/proc/payday(amt_of_paychecks, free = FALSE)
+	if(frozen)
+		bank_card_talk("ERROR: Payday aborted, account frozen!")
+		return
 	var/money_to_transfer = account_job.paycheck * amt_of_paychecks
 	if(free)
 		adjust_money(money_to_transfer)
@@ -58,6 +65,9 @@
 	else
 		var/datum/bank_account/D = SSeconomy.get_dep_account(account_job.paycheck_department)
 		if(D)
+			if(D.frozen)
+				bank_card_talk("ERROR: Payday aborted, departmental funds frozen!")
+				return
 			if(!transfer_money(D, money_to_transfer))
 				bank_card_talk("ERROR: Payday aborted, departmental funds insufficient.")
 				return FALSE
