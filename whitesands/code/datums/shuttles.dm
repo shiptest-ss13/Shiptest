@@ -31,6 +31,9 @@
 	port_id = "amogus"
 	suffix = "sus"
 
+/datum/map_template/shuttle/minigalaxy
+	port_id = "mining_minigalaxy"
+
 //Ruins
 /datum/map_template/shuttle/ruin/solgov_exploration_pod
 	suffix = "solgov_exploration_pod"
