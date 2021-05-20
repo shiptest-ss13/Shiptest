@@ -178,6 +178,7 @@
 	name = "ripped poster"
 	desc = "You can't make out anything from the poster's original print. It's ruined."
 
+//begin contraband. Expect anything, really, from advertisements to syndicate propaganda to dead memes.
 /obj/structure/sign/poster/random
 	name = "random poster" // could even be ripped
 	icon_state = "random_anything"
@@ -430,9 +431,15 @@
 
 /obj/structure/sign/poster/contraband/steppyflag
 	name = "Steppy Flag"
+	desc = "A poster depicting the Syndicate logo. This probably shouldn't be anywhere near Nanotrasen stations."
+	icon_state = "poster48"
+
+/obj/structure/sign/poster/contraband/syndicate
+	name = "Steppy Flag"
 	desc = "A poster making a simple statement: \"Fuck around, Find out.\" There's a tiny Cargonia logo in the bottom right."
 	icon_state = "poster48"
 
+//beginning of Nanotrasen approved posters. Expect propaganda and corprate motavation
 /obj/structure/sign/poster/official
 	poster_item_name = "motivational poster"
 	poster_item_desc = "An official Nanotrasen-issued poster to foster a compliant and obedient workforce. It comes with state-of-the-art adhesive backing, for easy pinning to any vertical surface."
@@ -476,7 +483,8 @@
 
 /obj/structure/sign/poster/official/science
 	name = "Science"
-	desc = "A poster depicting an atom."
+	desc = "A poster depicting an beaker."
+	icon = 'whitesands/icons/obj/contraband.dmi' //funny edit to change to beaker, as atom looks more retro.
 	icon_state = "poster7_legit"
 
 /obj/structure/sign/poster/official/ian
@@ -624,5 +632,70 @@
 	name = "Carbon Dioxide"
 	desc = "This informational poster teaches the viewer what carbon dioxide is."
 	icon_state = "poster35_legit"
+
+//shiptest stuff, retro posters. very inspired by the early apple logos and 70s-90s tech logos.
+/obj/structure/sign/poster/official
+	poster_item_name = "retro poster"
+	poster_item_desc = "A really old Nanotrasen poster, that probably sells for a lot now days. It comes with adhesive backing, for easy pinning to any vertical surface."
+	poster_item_icon_state = "rolled_legit"
+
+/obj/structure/sign/poster/retro/random
+	name = "random retro poster"
+	icon_state = "random_contraband"
+	never_random = TRUE
+	random_basetype = /obj/structure/sign/poster/retro
+
+/obj/structure/sign/poster/retro/nanotrasen_logo_70s
+	name = "\improper Ancient Nanotrasen logo"
+	desc = "A poster depicting the Nanotrasen logo. This thing is ancient."
+	icon = 'whitesands/icons/obj/contraband.dmi'
+	icon_state = "poster-nanotrasen70s_retro"
+
+/obj/structure/sign/poster/retro/nanotrasen_logo_80s
+	name = "\improper Nanotrasen logo"
+	desc = "A poster depicting the Nanotrasen logo. It has a nice aesthetic."
+	icon = 'whitesands/icons/obj/contraband.dmi'
+	icon_state = "poster-nanotrasen_retro"
+
+/obj/structure/sign/poster/retro/smile
+	name = "Smile"
+	desc = "Turn that frown upside down! It has a nice aesthetic."
+	icon = 'whitesands/icons/obj/contraband.dmi'
+	icon_state = "poster-smile_retro"
+
+/obj/structure/sign/poster/retro/we_watch
+	name = "We Watch"
+	desc = "Big Brother is always watching. It has a nice aesthetic."
+	icon = 'whitesands/icons/obj/contraband.dmi'
+	icon_state = "poster-watch_retro"
+
+/obj/structure/sign/poster/retro/build
+	name = "Build"
+	desc = "A poster glorifying the engineering team. It has a nice aesthetic."
+	icon = 'whitesands/icons/obj/contraband.dmi'
+	icon_state = "poster-build_retro"
+
+/obj/structure/sign/poster/retro/science
+	name = "Science"
+	desc = "A poster depicting an atom. It has a nice aesthetic."
+	icon = 'whitesands/icons/obj/contraband.dmi'
+	icon_state = "poster-science_retro"
+
+/obj/structure/sign/poster/retro/pdaancient
+	name = "PDA Ad"
+	desc = "A poster advertising the original Thinkitronic PDA after it was aquired by Nanotrasen. This thing shipped with severe problems such as PDA message 'bombing' and memory errors. Despite this, it's fondly remembered. This thing is ancient."
+	icon = 'whitesands/icons/obj/contraband.dmi'
+	icon_state = "poster-pda70_retro"
+/obj/structure/sign/poster/retro/lasergun
+	name = "Retro Laser Gun"
+	desc = "A poster advertising the retro laser gun, back when it was new and called the L-204. It has a nice aesthetic."
+	icon = 'whitesands/icons/obj/contraband.dmi'
+	icon_state = "poster-l204_retro"
+
+/obj/structure/sign/poster/retro/emag
+	name = "Cryptographic Sequencer"
+	desc = "A poster a Nanotrasen beginner hacker tool. It was shelved due to not taking any skill to use. Nanotrasen probably regrets making this. It has a nice aesthetic."
+	icon = 'whitesands/icons/obj/contraband.dmi'
+	icon_state = "poster-emag_retro"
 
 #undef PLACE_SPEED
