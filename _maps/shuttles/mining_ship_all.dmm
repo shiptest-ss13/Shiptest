@@ -41,13 +41,12 @@
 /turf/open/floor/plating/airless,
 /area/shuttle/mining/ship/engine)
 "aQ" = (
-/obj/structure/cable/yellow,
-/obj/machinery/power/terminal{
-	dir = 8
-	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/landmark/start/assistant,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plating{
 	icon_state = "platingdmg2"
 	},
@@ -116,6 +115,10 @@
 "cE" = (
 /obj/machinery/atmospherics/pipe/layer_manifold,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/cable/yellow,
+/obj/machinery/power/terminal{
+	dir = 4
+	},
 /turf/open/floor/plating,
 /area/shuttle/mining/ship/engine)
 "cV" = (
@@ -136,6 +139,15 @@
 "dK" = (
 /turf/closed/wall/mineral/titanium,
 /area/shuttle/mining/ship/engine)
+"dS" = (
+/obj/structure/bed,
+/obj/item/bedsheet/brown,
+/obj/structure/curtain/bounty,
+/obj/structure/sign/poster/official/no_erp{
+	pixel_x = -32
+	},
+/turf/open/floor/wood,
+/area/shuttle/mining/ship/crew)
 "ef" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -151,6 +163,7 @@
 /obj/machinery/atmospherics/components/unary/portables_connector{
 	dir = 8
 	},
+/obj/structure/closet/emcloset/anchored,
 /turf/open/floor/plating,
 /area/shuttle/mining/ship/engine)
 "ew" = (
@@ -236,7 +249,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "2-8"
 	},
-/turf/template_noop,
+/turf/open/floor/plating/airless,
 /area/shuttle/mining/ship/external)
 "gL" = (
 /obj/effect/turf_decal/bot,
@@ -254,11 +267,11 @@
 /turf/open/floor/plasteel/airless/solarpanel,
 /area/shuttle/mining/ship/external)
 "hv" = (
-/obj/item/radio/intercom{
-	pixel_y = -28
-	},
 /obj/machinery/cryopod/latejoin{
 	dir = 1
+	},
+/obj/machinery/computer/cryopod{
+	pixel_y = -28
 	},
 /turf/open/floor/wood,
 /area/shuttle/mining/ship/crew)
@@ -338,6 +351,8 @@
 /obj/effect/turf_decal/bot,
 /obj/structure/closet/crate/large,
 /obj/effect/spawner/lootdrop/maintenance/four,
+/obj/item/circuitboard/machine/chem_dispenser/drinks,
+/obj/item/circuitboard/computer/arcade/orion_trail,
 /turf/open/floor/plasteel,
 /area/shuttle/mining/ship/cargo)
 "jD" = (
@@ -348,7 +363,6 @@
 /obj/machinery/computer/helm/viewscreen{
 	pixel_y = 30
 	},
-/obj/effect/decal/cleanable/plasma,
 /turf/open/floor/plating{
 	icon_state = "platingdmg3"
 	},
@@ -424,12 +438,7 @@
 /turf/open/floor/plasteel,
 /area/shuttle/mining/ship/crew)
 "mg" = (
-/obj/structure/cable,
-/obj/structure/cable{
-	icon_state = "0-2"
-	},
 /obj/machinery/atmospherics/pipe/simple/orange/hidden,
-/obj/machinery/power/smes,
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
@@ -474,12 +483,7 @@
 /turf/open/floor/plasteel,
 /area/shuttle/mining/ship/bridge)
 "mO" = (
-/obj/structure/cable,
-/obj/structure/cable{
-	icon_state = "0-2"
-	},
 /obj/machinery/atmospherics/pipe/simple/orange/hidden,
-/obj/machinery/power/smes/engineering,
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
@@ -830,7 +834,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "1-8"
 	},
-/turf/template_noop,
+/turf/open/floor/plating/airless,
 /area/shuttle/mining/ship/external)
 "vR" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
@@ -993,6 +997,9 @@
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/structure/sign/poster/official/no_erp{
+	pixel_y = 32
+	},
 /turf/open/floor/plasteel/grimy,
 /area/shuttle/mining/ship/crew)
 "Ax" = (
@@ -1289,10 +1296,6 @@
 /turf/open/floor/plasteel,
 /area/shuttle/mining/ship/crew)
 "Gk" = (
-/obj/structure/cable/yellow,
-/obj/machinery/power/terminal{
-	dir = 8
-	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
@@ -1333,6 +1336,11 @@
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/shuttle/mining/ship/crew)
 "HP" = (
+/mob/living/simple_animal/butterfly{
+	color = #DBB17F;
+	desc = "A moth.";
+	name = "moth"
+	},
 /turf/open/floor/plasteel/grimy,
 /area/shuttle/mining/ship/crew)
 "HR" = (
@@ -1512,6 +1520,12 @@
 /obj/structure/bed,
 /obj/item/bedsheet/brown,
 /obj/structure/curtain/bounty,
+/obj/structure/sign/poster/official/no_erp{
+	pixel_y = 32
+	},
+/obj/structure/sign/poster/official/no_erp{
+	pixel_x = -32
+	},
 /turf/open/floor/wood,
 /area/shuttle/mining/ship/crew)
 "MJ" = (
@@ -1726,6 +1740,12 @@
 	},
 /turf/open/floor/plasteel,
 /area/shuttle/mining/ship/engine)
+"Qe" = (
+/obj/item/radio/intercom{
+	pixel_y = -28
+	},
+/turf/open/floor/plasteel/grimy,
+/area/shuttle/mining/ship/crew)
 "QQ" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
 /obj/structure/cable/yellow{
@@ -1738,6 +1758,9 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/cable{
+	icon_state = "5-9"
+	},
 /turf/open/floor/plating,
 /area/shuttle/mining/ship/engine)
 "Rf" = (
@@ -1907,8 +1930,17 @@
 /obj/machinery/light{
 	dir = 8
 	},
-/obj/structure/closet/emcloset/anchored,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/table,
+/obj/machinery/cell_charger,
+/obj/item/stack/cable_coil/red{
+	pixel_x = 2;
+	pixel_y = 6
+	},
+/obj/item/stock_parts/cell/high/plus,
+/obj/structure/cable{
+	icon_state = "1-6"
+	},
 /turf/open/floor/plating,
 /area/shuttle/mining/ship/engine)
 "UI" = (
@@ -1944,15 +1976,9 @@
 /turf/open/floor/plasteel,
 /area/shuttle/mining/ship/engine)
 "Vv" = (
-/obj/structure/table,
-/obj/machinery/cell_charger,
-/obj/item/stock_parts/cell/high/plus,
-/obj/item/stack/cable_coil/red{
-	pixel_x = 2;
-	pixel_y = 6
-	},
-/obj/item/radio/intercom{
-	pixel_x = 27
+/obj/machinery/power/smes/engineering,
+/obj/structure/cable{
+	icon_state = "0-10"
 	},
 /turf/open/floor/plating,
 /area/shuttle/mining/ship/engine)
@@ -2505,7 +2531,7 @@ ZN
 YU
 Hs
 Mz
-Mz
+dS
 hv
 Hs
 gk
@@ -2525,7 +2551,7 @@ Uh
 zb
 Al
 yx
-HP
+Qe
 YB
 fP
 OJ
