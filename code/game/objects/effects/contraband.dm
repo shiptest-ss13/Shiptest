@@ -701,7 +701,7 @@
 
 /obj/structure/sign/poster/retro/emag
 	name = "Cryptographic Sequencer"
-	desc = "A poster a Nanotrasen beginner hacker tool. It was shelved due to not taking any skill to use. Nanotrasen probably regrets making this. It has a nice aesthetic."
+	desc = "A poster advertising a Nanotrasen beginner hacker tool. It was shelved due to not taking any skill to use. Nanotrasen probably regrets making this. It has a nice aesthetic."
 	icon = 'whitesands/icons/obj/contraband.dmi'
 	icon_state = "poster-emag_retro"
 
