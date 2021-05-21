@@ -94,10 +94,10 @@
 /area/whitesands/surface/outdoors/unexplored)
 "fz" = (
 /obj/effect/turf_decal/bot,
+/obj/machinery/portable_atmospherics/canister/toxins,
 /obj/machinery/atmospherics/components/unary/portables_connector/visible{
 	dir = 8
 	},
-/obj/machinery/portable_atmospherics/canister,
 /turf/open/floor/plasteel/dark,
 /area/whitesands/surface/outdoors/unexplored)
 "fB" = (
@@ -192,8 +192,10 @@
 	},
 /area/whitesands/surface/outdoors/unexplored)
 "la" = (
-/mob/living/simple_animal/hostile/syndicate/ranged/smg/space,
-/turf/open/floor/plating/asteroid/whitesands,
+/obj/machinery/power/generator,
+/turf/open/floor/engine{
+	initial_gas_mix = "ws_atmos"
+	},
 /area/whitesands/surface/outdoors/unexplored)
 "mu" = (
 /turf/closed/mineral/random/whitesands,
@@ -225,15 +227,6 @@
 	dir = 8
 	},
 /turf/open/floor/engine{
-	initial_gas_mix = "ws_atmos"
-	},
-/area/whitesands/surface/outdoors/unexplored)
-"or" = (
-/obj/structure/sign/poster/contraband/syndicate{
-	pixel_x = -32
-	},
-/turf/open/floor/plating{
-	icon_state = "panelscorched";
 	initial_gas_mix = "ws_atmos"
 	},
 /area/whitesands/surface/outdoors/unexplored)
@@ -271,14 +264,14 @@
 /turf/open/floor/plating/asteroid/whitesands,
 /area/whitesands/surface/outdoors/unexplored)
 "qv" = (
-/mob/living/simple_animal/hostile/syndicate/ranged/smg/space/stormtrooper,
+/mob/living/simple_animal/hostile/syndicate/ranged/space/stormtrooper,
 /turf/open/floor/plating{
 	icon_state = "panelscorched";
 	initial_gas_mix = "ws_atmos"
 	},
 /area/whitesands/surface/outdoors/unexplored)
 "qN" = (
-/obj/machinery/portable_atmospherics/canister,
+/obj/machinery/portable_atmospherics/canister/toxins,
 /turf/open/floor/plating{
 	icon_state = "panelscorched";
 	initial_gas_mix = "ws_atmos"
@@ -320,10 +313,10 @@
 /area/whitesands/surface/outdoors/unexplored)
 "ue" = (
 /obj/effect/turf_decal/bot,
+/obj/machinery/portable_atmospherics/canister/toxins,
 /obj/machinery/atmospherics/components/unary/portables_connector/visible{
 	dir = 4
 	},
-/obj/machinery/portable_atmospherics/canister,
 /turf/open/floor/plasteel/dark,
 /area/whitesands/surface/outdoors/unexplored)
 "uW" = (
@@ -369,7 +362,7 @@
 /turf/open/floor/plating,
 /area/whitesands/surface/outdoors/unexplored)
 "wg" = (
-/obj/item/storage/toolbox/mechanical,
+/obj/item/storage/toolbox/syndicate,
 /turf/open/floor/engine{
 	initial_gas_mix = "ws_atmos"
 	},
@@ -560,6 +553,7 @@
 	pixel_x = 6;
 	pixel_y = -10
 	},
+/obj/item/storage/box/stockparts/deluxe,
 /turf/open/floor/plating/asteroid/whitesands,
 /area/whitesands/surface/outdoors/unexplored)
 "Gu" = (
@@ -797,7 +791,6 @@
 /turf/closed/mineral/random/whitesands,
 /area/whitesands/surface/outdoors/unexplored)
 "Vc" = (
-/mob/living/simple_animal/hostile/syndicate/ranged/shotgun/space,
 /turf/open/floor/plating{
 	icon_state = "platingdmg1"
 	},
@@ -1063,7 +1056,7 @@ Va
 Wc
 Wc
 tw
-la
+Kw
 Wc
 Wc
 Wc
@@ -1092,7 +1085,7 @@ Wc
 Kw
 FD
 Wc
-or
+XV
 ZJ
 Wc
 Wc
@@ -1207,7 +1200,7 @@ Wc
 XV
 EX
 EX
-IC
+la
 EX
 FD
 EX
@@ -1370,7 +1363,7 @@ Va
 Va
 Va
 Va
-IC
+og
 IC
 IC
 og
