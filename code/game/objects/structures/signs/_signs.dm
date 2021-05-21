@@ -207,3 +207,18 @@
 	name = "\improper Nanotrasen logo sign"
 	desc = "The Nanotrasen corporate logo."
 	icon_state = "nanotrasen_sign1"
+
+// im still holding on to that syndicate city idea... my hope will never die
+/obj/structure/sign/syndicate	//based of paradise's syndicate logo. I will i was good enough to sprite the background
+	name = "\improper Syndicate logo sign"
+	sign_change_name = "Corporate Logo - Syndicate"
+	desc = "A sign with the Syndicate logo on it. Death to Nanotrasen."
+	icon_state = "syndicate"
+	is_editable = TRUE
+
+/obj/structure/sign/donk	//based off a collection of simplfied syndicate logos
+	name = "\improper Donk Co. logo sign"
+	sign_change_name = "Corporate Logo - Donk Co."
+	desc = "A sign with the Donk Co. logo on it. Fight for your Donk Pockets!"
+	icon_state = "donkco"
+	is_editable = TRUE

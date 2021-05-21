@@ -42,6 +42,11 @@
 	poster_type = /obj/structure/sign/poster/official/random
 	icon_state = "rolled_legit"
 
+/obj/item/poster/random_retro
+	name = "random retro poster"
+	poster_type = /obj/structure/sign/poster/retro/random
+	icon_state = "rolled_legit"
+
 // The poster sign/structure
 
 /obj/structure/sign/poster
@@ -431,13 +436,14 @@
 
 /obj/structure/sign/poster/contraband/steppyflag
 	name = "Steppy Flag"
-	desc = "A poster depicting the Syndicate logo. This probably shouldn't be anywhere near Nanotrasen stations."
+	desc = "A poster making a simple statement: \"Fuck around, Find out.\" There's a tiny Cargonia logo in the bottom right."
 	icon_state = "poster48"
 
 /obj/structure/sign/poster/contraband/syndicate
-	name = "Steppy Flag"
-	desc = "A poster making a simple statement: \"Fuck around, Find out.\" There's a tiny Cargonia logo in the bottom right."
-	icon_state = "poster48"
+	name = "Syndicate Logo"
+	desc = "A poster depicting the Syndicate logo. This probably shouldn't be anywhere near Nanotrasen stations."
+	icon = 'whitesands/icons/obj/contraband.dmi'
+	icon_state = "poster-syndicate"
 
 //beginning of Nanotrasen approved posters. Expect propaganda and corprate motavation
 /obj/structure/sign/poster/official
@@ -634,14 +640,15 @@
 	icon_state = "poster35_legit"
 
 //shiptest stuff, retro posters. very inspired by the early apple logos and 70s-90s tech logos.
-/obj/structure/sign/poster/official
+/obj/structure/sign/poster/retro
 	poster_item_name = "retro poster"
 	poster_item_desc = "A really old Nanotrasen poster, that probably sells for a lot now days. It comes with adhesive backing, for easy pinning to any vertical surface."
 	poster_item_icon_state = "rolled_legit"
 
 /obj/structure/sign/poster/retro/random
 	name = "random retro poster"
-	icon_state = "random_contraband"
+	icon = 'whitesands/icons/obj/contraband.dmi'
+	icon_state = "random_retro"
 	never_random = TRUE
 	random_basetype = /obj/structure/sign/poster/retro
 
