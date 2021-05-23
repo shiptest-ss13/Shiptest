@@ -93,14 +93,20 @@ SUBSYSTEM_DEF(overmap)
   */
 /datum/controller/subsystem/overmap/proc/setup_shuttle_ship(obj/docking_port/mobile/shuttle)
 	var/docked_object = get_overmap_object_by_z(shuttle.get_virtual_z_level())
+	var/obj/structure/overmap/ship/simulated/new_ship
 	if(docked_object)
-		shuttle.current_ship = new /obj/structure/overmap/ship/simulated(docked_object, shuttle.id, shuttle)
+		new_ship = new(docked_object, shuttle.id, shuttle)
 		if(shuttle.undock_roundstart)
-			shuttle.current_ship.undock()
+			new_ship.undock()
+	else if(is_reserved_level(shuttle.z))
+		new_ship = new(get_unused_overmap_square(), shuttle.id, shuttle)
+		new_ship.state = OVERMAP_SHIP_FLYING
 	else if(is_centcom_level(shuttle.z))
-		shuttle.current_ship = new /obj/structure/overmap/ship/simulated(null, shuttle.id, shuttle)
+		new_ship = new(null, shuttle.id, shuttle)
 	else
-		WARNING("Shuttle created in unknown location, unable to create overmap ship!")
+		CRASH("Shuttle created in unknown location, unable to create overmap ship!")
+
+	shuttle.current_ship = new_ship
 
 /**
   * The proc that creates all the objects on the overmap, split into seperate procs for redundancy.
@@ -109,11 +115,11 @@ SUBSYSTEM_DEF(overmap)
 	if (generator_type == OVERMAP_GENERATOR_SOLAR)
 		spawn_events_in_orbits()
 		spawn_ruin_levels_in_orbits()
-		spawn_station_in_orbit()
 	else
 		spawn_events()
 		spawn_ruin_levels()
-		spawn_station()
+
+	spawn_initial_ships()
 
 /**
   * VERY Simple random generation for overmap events, spawns the event in a random turf and sometimes spreads it out similar to ores
@@ -168,43 +174,19 @@ SUBSYSTEM_DEF(overmap)
 				continue
 			spawn_event_cluster(type, T, chance / 2)
 
-/**
-  * Creates a station and lavaland overmap object randomly on the overmap.
-  */
-/datum/controller/subsystem/overmap/proc/spawn_station()
-	if(main)
-		qdel(main)
-	new /obj/structure/overmap/level/main(get_unused_overmap_square(force = TRUE), null, SSmapping.levels_by_trait(ZTRAIT_STATION))
-
-/**
-  * Creates a station and lavaland overmap object randomly on the overmap.
-  */
-/datum/controller/subsystem/overmap/proc/spawn_station_in_orbit()
-	if(main)
-		qdel(main)
-	new /obj/structure/overmap/level/main(get_unused_overmap_square_in_radius(rand(3, 8), force = TRUE), null, SSmapping.levels_by_trait(ZTRAIT_STATION))
+/datum/controller/subsystem/overmap/proc/spawn_initial_ships()
+	SSshuttle.action_load(SSmapping.shuttle_templates[SSmapping.config.shuttle_id])
 
 /**
   * Creates an overmap object for each ruin level, making them accessible.
   */
 /datum/controller/subsystem/overmap/proc/spawn_ruin_levels()
-	for(var/datum/space_level/L as anything in SSmapping.z_list)
-		if(ZTRAIT_SPACE_RUINS in L.traits)
-			var/obj/structure/overmap/level/ruin/new_level = new(get_unused_overmap_square(), null, L.z_value)
-			new_level.id = "z[L.z_value]"
 	for(var/i in 1 to CONFIG_GET(number/max_overmap_dynamic_events))
 		new /obj/structure/overmap/dynamic(get_unused_overmap_square())
 
 /datum/controller/subsystem/overmap/proc/spawn_ruin_levels_in_orbits()
-	for(var/level in SSmapping.z_list)
-		var/datum/space_level/L = level
-		if(ZTRAIT_SPACE_RUINS in L.traits)
-			var/turf/T = get_unused_overmap_square_in_radius(L.z_value * 2 + 3)
-			var/obj/structure/overmap/level/ruin/new_level = new(T, null, L.z_value)
-			new_level.id = "z[L.z_value]"
 	for(var/i in 1 to CONFIG_GET(number/max_overmap_dynamic_events))
-		var/turf/T = get_unused_overmap_square_in_radius()
-		new /obj/structure/overmap/dynamic(T)
+		new /obj/structure/overmap/dynamic(get_unused_overmap_square_in_radius())
 
 /**
   * Reserves a square dynamic encounter area, and spawns a ruin in it if one is supplied.
@@ -369,7 +351,5 @@ SUBSYSTEM_DEF(overmap)
 		simulated_ships = SSovermap.simulated_ships
 	if(istype(SSovermap.events))
 		events = SSovermap.events
-	if(istype(SSovermap.main))
-		main = SSovermap.main
 	if(istype(SSovermap.radius_tiles))
 		radius_tiles = SSovermap.radius_tiles
