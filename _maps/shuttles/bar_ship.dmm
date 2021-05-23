@@ -81,6 +81,10 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 6
 	},
+/obj/item/megaphone{
+	pixel_x = 3;
+	pixel_y = 1
+	},
 /turf/open/floor/wood,
 /area/shuttle/diner/ship/crew_quarters)
 "cp" = (
@@ -138,6 +142,15 @@
 	},
 /obj/structure/cable{
 	icon_state = "1-2"
+	},
+/obj/item/phone{
+	pixel_x = 5;
+	pixel_y = 8
+	},
+/obj/item/gps{
+	gpstag = "NTREC1";
+	pixel_x = -9;
+	pixel_y = 7
 	},
 /turf/open/floor/plasteel,
 /area/shuttle/diner/ship/war_room)
@@ -669,6 +682,10 @@
 	},
 /obj/machinery/light/small{
 	dir = 4
+	},
+/obj/item/storage/firstaid/medical{
+	pixel_x = -5;
+	pixel_y = -4
 	},
 /turf/open/floor/plasteel/showroomfloor,
 /area/shuttle/diner/ship/mainroom)
@@ -1301,6 +1318,7 @@
 	icon_state = "0-2"
 	},
 /obj/effect/turf_decal/box,
+/obj/item/stack/sheet/mineral/plasma/five,
 /turf/open/floor/plating,
 /area/shuttle/diner/ship/maintenance)
 "Df" = (
@@ -1909,6 +1927,9 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 8
 	},
+/obj/item/areaeditor/shuttle{
+	pixel_x = -11
+	},
 /turf/open/floor/plasteel,
 /area/shuttle/diner/ship/war_room)
 "Rc" = (
@@ -2260,6 +2281,11 @@
 /obj/item/clothing/head/hardhat/mining,
 /obj/item/t_scanner/adv_mining_scanner/lesser,
 /obj/item/t_scanner/adv_mining_scanner/lesser,
+/obj/item/gps{
+	gpstag = "NTREC1";
+	pixel_x = -9;
+	pixel_y = 7
+	},
 /turf/open/floor/plasteel/dark,
 /area/shuttle/diner/ship/cargo)
 "Yn" = (
