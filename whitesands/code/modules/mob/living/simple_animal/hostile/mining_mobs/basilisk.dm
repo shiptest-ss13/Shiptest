@@ -102,7 +102,7 @@
 			projectiletype = /obj/projectile/temp/basilisk_heat
 			addtimer(CALLBACK(src, .proc/cool_down), 3000)
 
-mob/living/simple_animal/hostile/asteroid/basilisk/proc/cool_down()
+/mob/living/simple_animal/hostile/asteroid/basilisk/proc/cool_down()
 	visible_message("<span class='warning'>[src] appears to be cooling down...</span>")
 	if(stat != DEAD)
 		icon_state = "Basilisk"
@@ -144,14 +144,14 @@ mob/living/simple_animal/hostile/asteroid/basilisk/proc/cool_down()
 		return FALSE
 	return TRUE
 
-mob/living/simple_animal/hostile/asteroid/basilisk/whitesands/attacked_by(obj/item/I, mob/living/user)
+/mob/living/simple_animal/hostile/asteroid/basilisk/whitesands/attacked_by(obj/item/I, mob/living/user)
 	if(I.force)
 		if(shell_damage(I.force))			// Damage was absorbed by the shell, no need to go further
 			send_item_attack_message(I, user)
 			return TRUE
 	return ..()
-	
-mob/living/simple_animal/hostile/asteroid/basilisk/whitesands/bullet_act(obj/projectile/P)
+
+/mob/living/simple_animal/hostile/asteroid/basilisk/whitesands/bullet_act(obj/projectile/P)
 	shell_damage(BULLET_SHELL_DAMAGE)
 	return ..()
 
@@ -160,7 +160,7 @@ mob/living/simple_animal/hostile/asteroid/basilisk/whitesands/bullet_act(obj/pro
 		shell_damage(BULLET_SHELL_DAMAGE)
 	..()
 
-mob/living/simple_animal/hostile/asteroid/basilisk/whitesands/drop_loot()
+/mob/living/simple_animal/hostile/asteroid/basilisk/whitesands/drop_loot()
 	if(has_shell)
 		for(var/l in shell_loot)		// You get the stuff anyways
 			new l(loc)
