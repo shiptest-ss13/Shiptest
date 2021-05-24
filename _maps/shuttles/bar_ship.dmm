@@ -137,6 +137,9 @@
 /area/shuttle/diner/ship/war_room)
 "cY" = (
 /obj/machinery/door/window/eastright,
+/obj/structure/extinguisher_cabinet{
+	pixel_y = 30
+	},
 /turf/open/floor/plasteel/dark,
 /area/shuttle/diner/ship/mainroom)
 "dl" = (
@@ -169,8 +172,8 @@
 /turf/open/floor/wood,
 /area/shuttle/diner/ship/mainroom)
 "dN" = (
-/obj/machinery/suit_storage_unit/standard_unit,
 /obj/effect/turf_decal/box,
+/obj/machinery/suit_storage_unit/standard_unit,
 /turf/open/floor/plasteel/dark,
 /area/shuttle/diner/ship/mainroom)
 "dQ" = (
@@ -281,6 +284,9 @@
 /obj/effect/turf_decal/tile/neutral{
 	dir = 4
 	},
+/obj/item/radio/intercom{
+	pixel_y = -28
+	},
 /turf/open/floor/plasteel/dark,
 /area/shuttle/diner/ship/hydroponics)
 "gN" = (
@@ -314,18 +320,7 @@
 /area/shuttle/diner/ship/mainroom)
 "hs" = (
 /obj/structure/table/glass,
-/obj/item/reagent_containers/glass/bottle/nutrient/l4z{
-	pixel_x = -5;
-	pixel_y = -5
-	},
-/obj/item/reagent_containers/glass/bottle/nutrient/l4z{
-	pixel_x = 5;
-	pixel_y = -5
-	},
-/obj/item/reagent_containers/glass/bottle/nutrient/rh{
-	pixel_x = -5;
-	pixel_y = 5
-	},
+/obj/machinery/plantgenes,
 /turf/open/floor/plasteel/dark,
 /area/shuttle/diner/ship/hydroponics)
 "hu" = (
@@ -368,6 +363,9 @@
 	pixel_x = 24
 	},
 /obj/structure/chair,
+/obj/item/radio/intercom{
+	pixel_y = 20
+	},
 /turf/open/floor/plasteel/dark,
 /area/shuttle/diner/ship/mainroom)
 "if" = (
@@ -580,6 +578,12 @@
 	},
 /turf/open/floor/plasteel,
 /area/shuttle/diner/ship/mainroom)
+"ml" = (
+/obj/machinery/status_display/shuttle{
+	shuttle_id = "mining_ship"
+	},
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/shuttle/diner/ship/cold_room)
 "mp" = (
 /obj/machinery/atmospherics/components/binary/pump/on/layer2{
 	dir = 1;
@@ -853,6 +857,12 @@
 /obj/item/reagent_containers/food/condiment/enzyme,
 /turf/open/floor/plasteel,
 /area/shuttle/diner/ship/war_room)
+"tw" = (
+/obj/machinery/computer/helm/viewscreen{
+	pixel_x = -30
+	},
+/turf/open/floor/plasteel/dark,
+/area/shuttle/diner/ship/mainroom)
 "tM" = (
 /obj/machinery/door/airlock/external,
 /turf/open/floor/plasteel/dark,
@@ -915,6 +925,12 @@
 /obj/structure/chair/stool/bar,
 /turf/open/floor/wood,
 /area/shuttle/diner/ship/mainroom)
+"us" = (
+/obj/machinery/status_display/shuttle{
+	shuttle_id = "mining_ship"
+	},
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/shuttle/diner/ship/maintenance)
 "uG" = (
 /obj/structure/table/reinforced,
 /obj/machinery/airalarm/all_access{
@@ -954,7 +970,6 @@
 /turf/open/floor/plasteel/dark,
 /area/shuttle/diner/ship/cold_room)
 "vn" = (
-/obj/machinery/suit_storage_unit/standard_unit,
 /obj/effect/turf_decal/tile/neutral{
 	dir = 1
 	},
@@ -962,6 +977,7 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/box,
+/obj/machinery/suit_storage_unit/mining/eva,
 /turf/open/floor/plasteel/dark,
 /area/shuttle/diner/ship/cargo)
 "vJ" = (
@@ -1153,12 +1169,17 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/box,
+/obj/item/radio/intercom{
+	pixel_x = -27
+	},
 /turf/open/floor/plasteel/dark,
 /area/shuttle/diner/ship/war_room)
 "Aw" = (
-/obj/machinery/vending/wardrobe/chef_wardrobe,
-/turf/closed/wall/mineral/titanium/nodiagonal,
-/area/shuttle/diner/ship/maintenance)
+/obj/item/radio/intercom{
+	pixel_y = 20
+	},
+/turf/open/floor/plasteel/dark,
+/area/shuttle/diner/ship/mainroom)
 "Ax" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
@@ -1284,6 +1305,9 @@
 	},
 /obj/structure/cable{
 	icon_state = "0-2"
+	},
+/obj/item/radio/intercom{
+	pixel_x = 27
 	},
 /turf/open/floor/wood,
 /area/shuttle/diner/ship/crew_quarters)
@@ -1445,6 +1469,10 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/tile/neutral,
+/obj/structure/extinguisher_cabinet{
+	pixel_x = -30;
+	pixel_y = -30
+	},
 /turf/open/floor/plasteel/dark,
 /area/shuttle/diner/ship/war_room)
 "Fm" = (
@@ -1709,6 +1737,9 @@
 /obj/effect/turf_decal/tile/neutral{
 	dir = 8
 	},
+/obj/structure/extinguisher_cabinet{
+	pixel_y = -30
+	},
 /turf/open/floor/plasteel/dark,
 /area/shuttle/diner/ship/mainroom)
 "KJ" = (
@@ -1743,6 +1774,9 @@
 	req_access = null
 	},
 /obj/item/gun/ballistic/shotgun/doublebarrel,
+/obj/item/radio/intercom{
+	pixel_y = -28
+	},
 /turf/open/floor/plasteel/dark,
 /area/shuttle/diner/ship/mainroom)
 "Lu" = (
@@ -1758,6 +1792,9 @@
 "Mj" = (
 /obj/structure/cable{
 	icon_state = "2-8"
+	},
+/obj/item/radio/intercom{
+	pixel_x = 27
 	},
 /turf/open/floor/plating,
 /area/shuttle/diner/ship/maintenance)
@@ -1790,6 +1827,9 @@
 	req_access = null
 	},
 /obj/effect/turf_decal/box,
+/obj/item/radio/intercom{
+	pixel_y = -28
+	},
 /turf/open/floor/plasteel/dark,
 /area/shuttle/diner/ship/cold_room)
 "Nf" = (
@@ -1812,6 +1852,12 @@
 	},
 /turf/open/floor/plating,
 /area/shuttle/diner/ship/maintenance)
+"Nn" = (
+/obj/machinery/status_display/shuttle{
+	shuttle_id = "mining_ship"
+	},
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/shuttle/diner/ship/war_room)
 "Nu" = (
 /obj/machinery/vending/dinnerware,
 /obj/machinery/firealarm{
@@ -1974,6 +2020,7 @@
 /obj/item/multitool,
 /obj/structure/rack,
 /obj/effect/turf_decal/box,
+/obj/item/multitool,
 /turf/open/floor/plating,
 /area/shuttle/diner/ship/maintenance)
 "QS" = (
@@ -2053,6 +2100,12 @@
 	pixel_y = 28
 	},
 /turf/open/floor/plasteel,
+/area/shuttle/diner/ship/cargo)
+"SK" = (
+/obj/machinery/status_display/shuttle{
+	shuttle_id = "mining_ship"
+	},
+/turf/closed/wall/mineral/titanium/nodiagonal,
 /area/shuttle/diner/ship/cargo)
 "Tc" = (
 /obj/machinery/power/terminal{
@@ -2161,16 +2214,17 @@
 "Vm" = (
 /obj/structure/table/glass,
 /obj/item/reagent_containers/glass/bottle/nutrient/ez{
-	pixel_x = 5;
-	pixel_y = -5
-	},
-/obj/item/reagent_containers/glass/bottle/nutrient/ez{
 	pixel_x = -5;
 	pixel_y = -5
 	},
 /obj/item/reagent_containers/glass/bottle/nutrient/rh{
 	pixel_x = 5;
 	pixel_y = 5
+	},
+/obj/machinery/smartfridge/disks,
+/obj/item/reagent_containers/glass/bottle/nutrient/l4z{
+	pixel_x = 5;
+	pixel_y = -5
 	},
 /turf/open/floor/plasteel/dark,
 /area/shuttle/diner/ship/hydroponics)
@@ -2258,6 +2312,8 @@
 /obj/item/storage/bag/plants,
 /obj/item/hatchet,
 /obj/item/hatchet,
+/obj/item/storage/box/disks_plantgene,
+/obj/item/storage/box/disks_plantgene,
 /turf/open/floor/plasteel/dark,
 /area/shuttle/diner/ship/hydroponics)
 "Wy" = (
@@ -2304,6 +2360,9 @@
 /turf/open/floor/plasteel,
 /area/shuttle/diner/ship/war_room)
 "Xv" = (
+/obj/item/radio/intercom{
+	pixel_x = 27
+	},
 /turf/open/floor/plasteel,
 /area/shuttle/diner/ship/cargo)
 "XE" = (
@@ -2320,6 +2379,12 @@
 	},
 /turf/open/floor/plating,
 /area/shuttle/diner/ship/maintenance)
+"Yk" = (
+/obj/machinery/status_display/shuttle{
+	shuttle_id = "mining_ship"
+	},
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/shuttle/diner/ship/mainroom)
 "Yn" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 9
@@ -2464,7 +2529,7 @@ mk
 mp
 jl
 we
-Aw
+Wy
 me
 me
 me
@@ -2482,7 +2547,7 @@ kC
 kC
 DK
 ZH
-kC
+Yk
 kC
 kC
 Wy
@@ -2562,7 +2627,7 @@ vZ
 (8,1,1) = {"
 vZ
 kC
-GO
+Aw
 In
 BE
 AT
@@ -2597,7 +2662,7 @@ Wy
 nC
 Tl
 Wy
-Wy
+us
 Wy
 vZ
 "}
@@ -2610,7 +2675,7 @@ MI
 lJ
 dQ
 CB
-GO
+tw
 BU
 Dp
 uK
@@ -2776,14 +2841,14 @@ wu
 fu
 Ev
 Ev
-Ev
+SK
 rr
 zw
 Ht
 EY
 Lo
 if
-if
+ml
 if
 EG
 if
@@ -2943,7 +3008,7 @@ Ev
 rj
 Ev
 Ev
-GI
+Nn
 WK
 ha
 ha
