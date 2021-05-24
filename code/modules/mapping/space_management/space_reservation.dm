@@ -82,6 +82,7 @@
 
 /datum/turf_reservation/fixed/Destroy()
 	for(var/tu in get_reserved_turfs())
+		CHECK_TICK
 		var/turf/T = tu
 		T.empty(RESERVED_TURF_TYPE, RESERVED_TURF_TYPE, null, TRUE)
 	return ..()
