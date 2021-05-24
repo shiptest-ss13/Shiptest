@@ -32,7 +32,10 @@
 	if(.)
 		acting.state = prev_state
 	else
-		adjust_dock_to_shuttle(reserve_dock, acting.shuttle)
+		if(!reserve_dock.get_docked())
+			adjust_dock_to_shuttle(reserve_dock, acting.shuttle)
+		else if(!reserve_dock_secondary.get_docked())
+			adjust_dock_to_shuttle(reserve_dock_secondary, acting.shuttle)
 		return acting.dock(src) //If a value is returned from load_level(), say that, otherwise, commence docking
 
 /**

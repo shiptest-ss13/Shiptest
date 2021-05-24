@@ -252,7 +252,7 @@ SUBSYSTEM_DEF(overmap)
 	encounter_reservation.fill_in(border_turf_type = /turf/closed/indestructible/blank, area_override = target_area)
 
 	if(ruin_type) // loaded in after the reservation so we can place inside the reservation
-		var/turf/ruin_turf = locate(encounter_reservation.top_right_coords[1]-ruin_type.width-6,
+		var/turf/ruin_turf = locate(rand(encounter_reservation.bottom_left_coords[1]+6,encounter_reservation.top_right_coords[1]-ruin_type.width-6),
 									encounter_reservation.top_right_coords[2]-ruin_type.height-6,
 									encounter_reservation.top_right_coords[3])
 		ruin_type.load(ruin_turf)
