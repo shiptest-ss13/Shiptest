@@ -27,7 +27,7 @@
 			var/offset_x = T.x - center.x
 			var/offset_y = T.y - center.y
 			var/turf/newT = locate(cloned_center_x + offset_x, cloned_center_y + offset_y, clone_area.bottom_left_coords[3])
-			if(!(newT in clone_area.reserved_turfs))		//sanity check so we don't overwrite other areas somehow
+			if(!(newT in clone_area.get_reserved_turfs()))		//sanity check so we don't overwrite other areas somehow
 				continue
 			atoms += new /obj/effect/appearance_clone(newT, T)
 			if(T.loc.icon_state)

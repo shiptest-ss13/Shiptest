@@ -211,19 +211,11 @@ SUBSYSTEM_DEF(overmap)
   * * on_planet - If the encounter should be on a generated planet. Required, as it will be otherwise inaccessible.
   * * target - The ruin to spawn, if any
   * * dock_id - The id of the stationary docking port that will be spawned in the encounter. The primary and secondary prefixes will be applied, so do not include them.
-  * * size - Size of the encounter, defaults to 1/3 total world size
-  * * visiting_shuttle - The shuttle that is going to go to the encounter. Allows ruins to scale.
   * * ruin_type - The ruin to spawn. Don't pass this argument if you want it to randomly select based on planet type.
   */
-/datum/controller/subsystem/overmap/proc/spawn_dynamic_encounter(planet_type, ruin = TRUE, dock_id, size = world.maxx / 4, obj/docking_port/mobile/visiting_shuttle, ignore_cooldown = FALSE, datum/map_template/ruin/ruin_type)
+/datum/controller/subsystem/overmap/proc/spawn_dynamic_encounter(planet_type, ruin = TRUE, dock_id, ignore_cooldown = FALSE, datum/map_template/ruin/ruin_type)
 	if(!dock_id)
 		CRASH("Encounter spawner tried spawning an encounter without a docking port ID!")
-
-	var/total_size = size
-	var/ruin_size = CEILING(size / 2, 1)
-	var/dock_size = FLOOR(size / 2, 1)
-	if(visiting_shuttle)
-		dock_size = max(visiting_shuttle.width, visiting_shuttle.height) + 3 //a little bit of wiggle room
 
 	var/list/ruin_list = SSmapping.space_ruins_templates
 	var/datum/map_generator/mapgen
@@ -251,63 +243,56 @@ SUBSYSTEM_DEF(overmap)
 				mapgen = new /datum/map_generator/cave_generator/asteroid
 				target_area = /area/overmap_encounter
 
-	if(ruin && ruin_list && !ruin_type) //Done BEFORE the turfs are reserved so that it allocates the right size box
+	if(ruin && ruin_list && !ruin_type)
 		ruin_type = ruin_list[pick(ruin_list)]
 		if(ispath(ruin_type))
 			ruin_type = new ruin_type
 
-	if(ruin_type)
-		ruin_size = max(ruin_type.width, ruin_type.height) + 4
+	var/datum/turf_reservation/fixed/encounter_reservation = SSmapping.request_fixed_reservation()
+	encounter_reservation.fill_in(border_turf_type = /turf/closed/indestructible/blank, area_override = target_area)
 
-	total_size = max(dock_size + ruin_size, total_size)
-
-	var/datum/turf_reservation/encounter_reservation = SSmapping.RequestBlockReservation(total_size, total_size, border_turf_override = /turf/closed/indestructible/blank, area_override = target_area)
-	if(ruin_type) //Does AFTER the turfs are reserved so it can find where the allocation is
-		//gets a turf vaguely in the middle of the reserve
-		var/turf/ruin_turf = locate(encounter_reservation.top_right_coords[1] - (ruin_size + 2), encounter_reservation.top_right_coords[2] - (ruin_size + 2), encounter_reservation.top_right_coords[3])
+	if(ruin_type) // loaded in after the reservation so we can place inside the reservation
+		var/turf/ruin_turf = locate(rand(encounter_reservation.bottom_left_coords[1]+6,encounter_reservation.top_right_coords[1]-ruin_type.width-6),
+									encounter_reservation.top_right_coords[2]-ruin_type.height-6,
+									encounter_reservation.top_right_coords[3])
 		ruin_type.load(ruin_turf)
 
 	if(mapgen) //Does AFTER the ruin is loaded so that it does not spawn flora/fauna in the ruin
-		var/list/turfs = list()
-		for(var/turf/T in encounter_reservation.area_type)
-			turfs += T
-		mapgen.generate_terrain(turfs)
+		mapgen.generate_terrain(encounter_reservation.get_non_border_turfs())
 
-	//gets the turf with an X in the middle of the reservation, and a Y that's 1/4ths up in the reservation.
-	var/turf/docking_turf = locate(encounter_reservation.bottom_left_coords[1] + max(dock_size, visiting_shuttle?.dheight + 4), \
-								   encounter_reservation.bottom_left_coords[2] + max(FLOOR(dock_size / 2, 1), visiting_shuttle?.dwidth + 4), \
-								   encounter_reservation.bottom_left_coords[3])
-	var/obj/docking_port/stationary/dock = SSshuttle.getDock("[PRIMARY_OVERMAP_DOCK_PREFIX]_[dock_id]") //This check exists because docking ports don't like to be deleted.
-	if(!dock)
-		dock = new(docking_turf)
-	else
-		dock.forceMove(docking_turf)
-	dock.dir = WEST
-	dock.name = "\improper Uncharted Space"
-	dock.id = "[PRIMARY_OVERMAP_DOCK_PREFIX]_[dock_id]"
-	dock.height = dock_size
-	dock.width = dock_size
-	if(visiting_shuttle)
-		dock.dheight = min(visiting_shuttle.dheight, dock_size)
-		dock.dwidth = min(visiting_shuttle.dwidth, dock_size)
-	else
-		dock.dwidth = FLOOR(dock_size / 2, 1)
+	// locates the first dock in the bottom left, accounting for padding and the border
+	var/turf/primary_docking_turf = locate(encounter_reservation.bottom_left_coords[1]+SHUTTLE_DOCK_DEFAULT_PADDING+1,
+										   encounter_reservation.bottom_left_coords[2]+SHUTTLE_DOCK_DEFAULT_PADDING+1,
+										   encounter_reservation.bottom_left_coords[3])
+	// now we need to offset to account for the first dock
+	var/turf/secondary_docking_turf = locate(primary_docking_turf.x+SHUTTLE_MAX_SIZE_LONG+SHUTTLE_DOCK_DEFAULT_PADDING, primary_docking_turf.y, primary_docking_turf.z)
 
-	//gets the turf with an X in the middle of the reservation, and a Y that's 3/4ths up in the reservation.
-	var/turf/secondary_docking_turf = locate(encounter_reservation.bottom_left_coords[1] + max(dock_size, visiting_shuttle?.dheight + 4),
-											 encounter_reservation.bottom_left_coords[2] + max(CEILING(dock_size * 1.5, 1), visiting_shuttle?.dwidth * 2 + 4), \
-											 encounter_reservation.bottom_left_coords[3])
+	//This check exists because docking ports don't like to be deleted.
+	var/obj/docking_port/stationary/primary_dock = SSshuttle.getDock("[PRIMARY_OVERMAP_DOCK_PREFIX]_[dock_id]")
+	if(!primary_dock)
+		primary_dock = new(primary_docking_turf)
+	else
+		primary_dock.forceMove(primary_docking_turf)
+	primary_dock.dir = NORTH
+	primary_dock.name = "\improper Uncharted Space"
+	primary_dock.id = "[PRIMARY_OVERMAP_DOCK_PREFIX]_[dock_id]"
+	primary_dock.height = SHUTTLE_MAX_SIZE_SHORT
+	primary_dock.width = SHUTTLE_MAX_SIZE_LONG
+	primary_dock.dheight = 0
+	primary_dock.dwidth = 0
+
 	var/obj/docking_port/stationary/secondary_dock = SSshuttle.getDock("[SECONDARY_OVERMAP_DOCK_PREFIX]_[dock_id]")
 	if(!secondary_dock)
 		secondary_dock = new(secondary_docking_turf)
 	else
 		secondary_dock.forceMove(secondary_docking_turf)
-	secondary_dock.dir = WEST
+	secondary_dock.dir = NORTH
 	secondary_dock.name = "\improper Uncharted Space"
 	secondary_dock.id = "[SECONDARY_OVERMAP_DOCK_PREFIX]_[dock_id]"
-	secondary_dock.height = dock_size
-	secondary_dock.width = dock_size
-	secondary_dock.dwidth = FLOOR(dock_size / 2, 1)
+	secondary_dock.height = SHUTTLE_MAX_SIZE_LONG
+	secondary_dock.width = SHUTTLE_MAX_SIZE_SHORT
+	secondary_dock.dheight = 0
+	secondary_dock.dwidth = 0
 
 	return encounter_reservation
 
