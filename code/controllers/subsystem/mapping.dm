@@ -23,20 +23,14 @@ SUBSYSTEM_DEF(mapping)
 	var/list/sand_camps_templates = list()
 	// WS Edit End - Whitesands
 	var/list/jungle_ruins_templates = list()
-	var/datum/space_level/isolated_ruins_z //Created on demand during ruin loading.
 
 	var/list/shuttle_templates = list()
 	var/list/shelter_templates = list()
+	var/list/station_room_templates = list()
 
 	var/list/areas_in_z = list()
 
 	var/loading_ruins = FALSE
-	var/list/turf/unused_turfs = list()				//Not actually unused turfs they're unused but reserved for use for whatever requests them. "[zlevel_of_turf]" = list(turfs)
-	var/list/datum/turf_reservations		//list of turf reservations
-	var/list/used_turfs = list()				//list of turf = datum/turf_reservation
-
-	var/list/reservation_ready = list()
-	var/clearing_reserved_turfs = FALSE
 
 	///All possible biomes in assoc list as type || instance
 	var/list/biomes = list()
@@ -44,10 +38,15 @@ SUBSYSTEM_DEF(mapping)
 	// Z-manager stuff
 	var/station_start  // should only be used for maploading-related tasks
 	var/space_levels_so_far = 0
-	var/list/z_list
-	var/datum/space_level/transit
+	var/list/datum/space_level/z_list
 	var/datum/space_level/empty_space
-	var/num_of_res_levels = 1
+
+	// reserve stuff
+	var/list/reservations_by_level = list()	// list of lists of turf reservations (not reserved turfs) by z level. "[zlevel_of_reserve]" = list(reserves)
+	var/list/turf/unused_turfs = list()		// turfs on reserveable z-levels that are not currently reserved but are available to be. "[zlevel_of_turf]" = list(turfs)
+	var/clearing_reserved_turfs = FALSE 	// whether we're currently clearing out all the reserves
+	var/num_of_res_levels = 0				// number of z-levels for reserving
+
 
 //dlete dis once #39770 is resolved
 /datum/controller/subsystem/mapping/proc/HACK_LoadMapConfig()
@@ -135,42 +134,12 @@ SUBSYSTEM_DEF(mapping)
 	loading_ruins = FALSE
 #endif
 	// Add the transit level
-	transit = add_new_zlevel("Transit/Reserved", list(ZTRAIT_RESERVED = TRUE))
+	new_reserved_level()
 	repopulate_sorted_areas()
 	// Set up Z-level transitions.
 	setup_map_transitions()
 	generate_station_area_list()
-	initialize_reserved_level(transit.z_value)
 	return ..()
-
-/datum/controller/subsystem/mapping/proc/wipe_reservations(wipe_safety_delay = 100)
-	if(clearing_reserved_turfs || !initialized)			//in either case this is just not needed.
-		return
-	clearing_reserved_turfs = TRUE
-	SSshuttle.transit_requesters.Cut()
-	message_admins("Clearing dynamic reservation space.")
-	var/list/obj/docking_port/mobile/in_transit = list()
-	for(var/i in SSshuttle.transit)
-		var/obj/docking_port/stationary/transit/T = i
-		if(!istype(T))
-			continue
-		in_transit[T] = T.get_docked()
-	var/go_ahead = world.time + wipe_safety_delay
-	if(in_transit.len)
-		message_admins("Shuttles in transit detected. Attempting to fast travel. Timeout is [wipe_safety_delay/10] seconds.")
-	var/list/cleared = list()
-	for(var/i in in_transit)
-		INVOKE_ASYNC(src, .proc/safety_clear_transit_dock, i, in_transit[i], cleared)
-	UNTIL((go_ahead < world.time) || (cleared.len == in_transit.len))
-	do_wipe_turf_reservations()
-	clearing_reserved_turfs = FALSE
-
-/datum/controller/subsystem/mapping/proc/safety_clear_transit_dock(obj/docking_port/stationary/transit/T, obj/docking_port/mobile/M, list/returning)
-	M.setTimer(0)
-	var/error = M.initiate_docking(M.destination, M.preferred_direction)
-	if(!error)
-		returning += M
-		qdel(T, TRUE)
 
 /* Nuke threats, for making the blue tiles on the station go RED
    Used by the AI doomsday and the self destruct nuke.
@@ -206,16 +175,15 @@ SUBSYSTEM_DEF(mapping)
 	// WS Edit End - Whitesands
 	shuttle_templates = SSmapping.shuttle_templates
 	shelter_templates = SSmapping.shelter_templates
-	unused_turfs = SSmapping.unused_turfs
-	turf_reservations = SSmapping.turf_reservations
-	used_turfs = SSmapping.used_turfs
-
 	config = SSmapping.config
 	next_map_config = SSmapping.next_map_config
 
-	clearing_reserved_turfs = SSmapping.clearing_reserved_turfs
-
 	z_list = SSmapping.z_list
+
+	reservations_by_level = SSmapping.reservations_by_level
+	unused_turfs = SSmapping.unused_turfs
+	clearing_reserved_turfs = SSmapping.clearing_reserved_turfs
+	num_of_res_levels = SSmapping.num_of_res_levels
 
 #define INIT_ANNOUNCE(X) to_chat(world, "<span class='boldannounce'>[X]</span>"); log_world(X)
 /datum/controller/subsystem/mapping/proc/LoadGroup(list/errorList, name, path, files, list/traits, list/default_traits, silent = FALSE)
@@ -518,33 +486,56 @@ GLOBAL_LIST_EMPTY(the_station_areas)
 		message_admins("Loading [away_name] failed!")
 		return
 
-/datum/controller/subsystem/mapping/proc/RequestBlockReservation(width, height, z, type = /datum/turf_reservation, turf_type_override, border_turf_override, area_override)
-	UNTIL((!z || reservation_ready["[z]"]) && !clearing_reserved_turfs)
-	var/datum/turf_reservation/reserve = new type
-	if(turf_type_override)
-		reserve.turf_type = turf_type_override
-	if(area_override)
-		reserve.area_type = area_override
-	if(border_turf_override)
-		reserve.border_turf_type = border_turf_override
-	if(!z)
-		for(var/i in levels_by_trait(ZTRAIT_RESERVED))
-			if(reserve.Reserve(width, height, i))
-				return reserve
-		//If we didn't return at this point, theres a good chance we ran out of room on the exisiting reserved z levels, so lets try a new one
-		num_of_res_levels += 1
-		var/datum/space_level/newReserved = add_new_zlevel("Transit/Reserved [num_of_res_levels]", list(ZTRAIT_RESERVED = TRUE))
-		initialize_reserved_level(newReserved.z_value)
-		if(reserve.Reserve(width, height, newReserved.z_value))
-			return reserve
-	else
-		if(!level_trait(z, ZTRAIT_RESERVED))
-			qdel(reserve)
-			return
-		else
-			if(reserve.Reserve(width, height, z))
-				return reserve
-	QDEL_NULL(reserve)
+///Initialize all biomes, assoc as type || instance
+/datum/controller/subsystem/mapping/proc/initialize_biomes()
+	for(var/biome_path in subtypesof(/datum/biome))
+		var/datum/biome/biome_instance = new biome_path()
+		biomes[biome_path] += biome_instance
+
+/datum/controller/subsystem/mapping/proc/reg_in_areas_in_z(list/areas)
+	for(var/B in areas)
+		var/area/A = B
+		A.reg_in_areas_in_z()
+
+	// Station Ruins - WS Port
+/datum/controller/subsystem/mapping/proc/seedStation()
+	for(var/V in GLOB.stationroom_landmarks)
+		var/obj/effect/landmark/stationroom/LM = V
+		LM.load()
+	if(GLOB.stationroom_landmarks.len)
+		seedStation() //I'm sure we can trust everyone not to insert a 1x1 rooms which loads a landmark which loads a landmark which loads a la...
+
+//////////////////
+// RESERVATIONS //
+//////////////////
+
+/datum/controller/subsystem/mapping/proc/request_fixed_reservation()
+	UNTIL(!clearing_reserved_turfs)
+	var/datum/turf_reservation/fixed/reservation = new()
+
+	var/successful_reservation = reservation.reserve()
+	if(successful_reservation)
+		return reservation
+
+	qdel(reservation)
+	return null
+
+/datum/controller/subsystem/mapping/proc/request_dynamic_reservation(width, height)
+	UNTIL(!clearing_reserved_turfs)
+	var/datum/turf_reservation/dynamic/reservation = new(width, height)
+
+	var/successful_reservation = reservation.reserve()
+	if(successful_reservation)
+		return reservation
+
+	qdel(reservation)
+	return null
+
+/datum/controller/subsystem/mapping/proc/new_reserved_level()
+	num_of_res_levels += 1
+	var/datum/space_level/new_reserved = add_new_zlevel("Reserved [num_of_res_levels]", list(ZTRAIT_RESERVED = TRUE))
+	initialize_reserved_level(new_reserved.z_value)
+	return new_reserved
 
 //This is not for wiping reserved levels, use wipe_reservations() for that.
 /datum/controller/subsystem/mapping/proc/initialize_reserved_level(z)
@@ -561,11 +552,58 @@ GLOBAL_LIST_EMPTY(the_station_areas)
 		// already /turf/open/space/basic.
 		var/turf/T = t
 		T.flags_1 |= UNUSED_RESERVATION_TURF_1
+
 	unused_turfs["[z]"] = block
-	reservation_ready["[z]"] = TRUE
+	reservations_by_level["[z]"] = list()
 	clearing_reserved_turfs = FALSE
 
-/datum/controller/subsystem/mapping/proc/reserve_turfs(list/turfs)
+// For wiping all reserved levels.
+/datum/controller/subsystem/mapping/proc/wipe_reservations(wipe_safety_delay = 100)
+	if(clearing_reserved_turfs || !initialized)			//in either case this is just not needed.
+		return
+	clearing_reserved_turfs = TRUE
+	SSshuttle.transit_requesters.Cut()
+	message_admins("Clearing dynamic reservation space.")
+	var/list/obj/docking_port/mobile/in_transit = list()
+	for(var/i in SSshuttle.transit)
+		var/obj/docking_port/stationary/transit/T = i
+		if(!istype(T))
+			continue
+		in_transit[T] = T.get_docked()
+	var/go_ahead = world.time + wipe_safety_delay
+	if(in_transit.len)
+		message_admins("Shuttles in transit detected. Attempting to fast travel. Timeout is [wipe_safety_delay/10] seconds.")
+	var/list/cleared = list()
+	for(var/i in in_transit)
+		INVOKE_ASYNC(src, .proc/safety_clear_transit_dock, i, in_transit[i], cleared)
+	UNTIL((go_ahead < world.time) || (cleared.len == in_transit.len))
+	do_wipe_turf_reservations()
+	clearing_reserved_turfs = FALSE
+
+/datum/controller/subsystem/mapping/proc/safety_clear_transit_dock(obj/docking_port/stationary/transit/T, obj/docking_port/mobile/M, list/returning)
+	M.setTimer(0)
+	var/error = M.initiate_docking(M.destination, M.preferred_direction)
+	if(!error)
+		returning += M
+		qdel(T, TRUE)
+
+//DO NOT CALL THIS PROC DIRECTLY, CALL wipe_reservations().
+/datum/controller/subsystem/mapping/proc/do_wipe_turf_reservations()
+	PRIVATE_PROC(TRUE)
+	UNTIL(initialized)							//This proc is for AFTER init, before init turf reservations won't even exist and using this will likely break things.
+	for(var/z_level in reservations_by_level)
+		for(var/reserve in reservations_by_level[z_level])
+			var/datum/turf_reservation/TR = reserve
+			if(!QDELETED(TR))
+				qdel(TR, TRUE)
+	var/list/clearing = list()
+	for(var/l in unused_turfs)			//unused_turfs is a assoc list by z = list(turfs)
+		if(islist(unused_turfs[l]))
+			clearing |= unused_turfs[l]
+	unused_turfs.Cut()
+	mark_turfs_as_unused(clearing)
+
+/datum/controller/subsystem/mapping/proc/mark_turfs_as_unused(list/turfs)
 	for(var/i in turfs)
 		var/turf/T = i
 		T.empty(RESERVED_TURF_TYPE, RESERVED_TURF_TYPE, null, TRUE)
@@ -575,56 +613,8 @@ GLOBAL_LIST_EMPTY(the_station_areas)
 		GLOB.areas_by_type[world.area].contents += T
 		CHECK_TICK
 
-//DO NOT CALL THIS PROC DIRECTLY, CALL wipe_reservations().
-/datum/controller/subsystem/mapping/proc/do_wipe_turf_reservations()
-	PRIVATE_PROC(TRUE)
-	UNTIL(initialized)							//This proc is for AFTER init, before init turf reservations won't even exist and using this will likely break things.
-	for(var/i in turf_reservations)
-		var/datum/turf_reservation/TR = i
-		if(!QDELETED(TR))
-			qdel(TR, TRUE)
-	UNSETEMPTY(turf_reservations)
-	var/list/clearing = list()
-	for(var/l in unused_turfs)			//unused_turfs is a assoc list by z = list(turfs)
-		if(islist(unused_turfs[l]))
-			clearing |= unused_turfs[l]
-	clearing |= used_turfs		//used turfs is an associative list, BUT, reserve_turfs() can still handle it. If the code above works properly, this won't even be needed as the turfs would be freed already.
-	unused_turfs.Cut()
-	used_turfs.Cut()
-	reserve_turfs(clearing)
-
-///Initialize all biomes, assoc as type || instance
-/datum/controller/subsystem/mapping/proc/initialize_biomes()
-	for(var/biome_path in subtypesof(/datum/biome))
-		var/datum/biome/biome_instance = new biome_path()
-		biomes[biome_path] += biome_instance
-
-/datum/controller/subsystem/mapping/proc/reg_in_areas_in_z(list/areas)
-	for(var/B in areas)
-		var/area/A = B
-		A.reg_in_areas_in_z()
-
-/datum/controller/subsystem/mapping/proc/get_isolated_ruin_z()
-	if(!isolated_ruins_z)
-		isolated_ruins_z = add_new_zlevel("Isolated Ruins/Reserved", list(ZTRAIT_RESERVED = TRUE, ZTRAIT_ISOLATED_RUINS = TRUE))
-		initialize_reserved_level(isolated_ruins_z.z_value)
-	return isolated_ruins_z.z_value
-
-	// Station Ruins - WS Port
-/datum/controller/subsystem/mapping
-	var/list/station_room_templates = list()
-
-/datum/controller/subsystem/mapping/proc/seedStation()
-	for(var/V in GLOB.stationroom_landmarks)
-		var/obj/effect/landmark/stationroom/LM = V
-		LM.load()
-	if(GLOB.stationroom_landmarks.len)
-		seedStation() //I'm sure we can trust everyone not to insert a 1x1 rooms which loads a landmark which loads a landmark which loads a la...
-
 /datum/controller/subsystem/mapping/proc/get_turf_reservation_at_coords(x, y, z)
-	for(var/datum/turf_reservation/TR as anything in turf_reservations)
-		if(z < TR.bottom_left_coords[3] || z > TR.top_right_coords[3])
-			continue
+	for(var/datum/turf_reservation/TR as anything in reservations_by_level["[z]"])
 		if(x < TR.bottom_left_coords[1] || x > TR.top_right_coords[1])
 			continue
 		if(y < TR.bottom_left_coords[2] || y > TR.top_right_coords[2])
