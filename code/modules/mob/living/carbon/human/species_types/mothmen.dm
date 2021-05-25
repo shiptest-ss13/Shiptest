@@ -19,10 +19,7 @@
 	mutanttongue = /obj/item/organ/tongue/moth //WS Edit - Insectoid language
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | ERT_SPAWN | RACE_SWAP | SLIME_EXTRACT
 	species_language_holder = /datum/language_holder/moth
-	loreblurb = "Originating from the ruins of an unknown company's abandoned bluespace research facility, mothpeople are the mutated forms \
-				of the pests that were quick to set into the facility after it was abandoned, not a human teleporter malfunction as many believe. \
-				Their initial limited intelligence led to moffic, their \"native\" language. Generations later, most mothpeople still speak this language. \
-				After finally being discovered by an unknown craft, mothpeople were quick to spread out across the galaxy and are now as commonplace as their natural counterparts."
+	loreblurb = "Horrifying giant bug monsters, or possibly cute and fluffy cuddlebugs, depending on who you ask. Astoundingly common in every corner of space, their origin is typically assumed to be misdirected gene modification or mutation of regular Sol moths. Their wings, while pretty, are non-functional in standard gravity levels."
 	wings_icons = list("Megamoth", "Mothra")
 	has_innate_wings = TRUE
 

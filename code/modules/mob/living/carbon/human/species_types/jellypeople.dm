@@ -4,8 +4,10 @@
 	id = "jelly"
 	default_color = "00FF90"
 	say_mod = "chirps"
-	species_traits = list(MUTCOLORS,EYECOLOR,NOBLOOD,NO_BONES)
+	species_traits = list(MUTCOLORS,EYECOLOR,NOBLOOD,NO_BONES,HAIR,FACEHAIR)
 	inherent_traits = list(TRAIT_TOXINLOVER)
+	hair_color = "mutcolor"
+	hair_alpha = 150
 	mutantlungs = /obj/item/organ/lungs/slime
 	meat = /obj/item/reagent_containers/food/snacks/meat/slab/human/mutant/slime
 	exotic_blood = /datum/reagent/toxin/slimejelly
@@ -19,6 +21,7 @@
 	inherent_factions = list("slime")
 	species_language_holder = /datum/language_holder/jelly
 	ass_image = 'icons/ass/assslime.png'
+	loreblurb = "Alien beings made of a gelatinous substance. It's relatively common to be transformed into a jellyperson from another species due to the mutagenic properties of less intelligent slime beings, but many truly alien jelly people also exist. Their blood is toxic, and the properties of poisonous and poison-healing substances are inverted for them."
 
 /datum/species/jelly/on_species_loss(mob/living/carbon/C)
 	if(regenerate_limbs)
