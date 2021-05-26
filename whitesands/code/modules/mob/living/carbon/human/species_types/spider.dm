@@ -59,9 +59,7 @@ GLOBAL_LIST_INIT(spider_last, world.file2list("strings/names/spider_last.txt"))
 	mutanttongue = /obj/item/organ/tongue/spider
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | ERT_SPAWN | RACE_SWAP | SLIME_EXTRACT
 	species_language_holder = /datum/language_holder/spider
-	loreblurb = "A competitive species, evolved to enjoy working, Arachnids make up a small yet rapidly growing space in Nanotrasen’s workforce. \
-	Seen as valued assets due to their hard working tendencies, they are commonly found on stations near independent Arachnid civilizations. \
-	While their males are well integrated into NT's station crews, the females are voracious and dominant, and have willfully resisted integration (with deadly consequences)."
+	loreblurb = "A species biologically predisposed to a highly competitive attitude and with a strong work ethic, Arachnids make up a growing minority within the workforces of most factions. Males are commonly found on outposts near independent Arachnid civilizations, but the dominant arachnid \"Matriarchs\" have willfully resisted integration into most factions (with deadly consequences.)"
 	var/web_cooldown = 30
 	var/web_ready = TRUE
 	var/spinner_rate = 75

@@ -13,10 +13,7 @@
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_PRIDE | MIRROR_MAGIC | RACE_SWAP | ERT_SPAWN | SLIME_EXTRACT
 	var/original_felinid = TRUE //set to false for felinids created by mass-purrbation
 	ass_image = 'icons/ass/asscat.png'
-	loreblurb = "Felinids have a long history with Space Station 13. One of the earliest events still recorded, in much simpler times, shows cat ears and tails were perhaps just a consumer product \
-				available in the galaxy. Innocent enough as well, at least concerning what Felinids were, pet collars became the height of niche fashion a year after cat ears returned to shelves. \
-				Though consumers complained cat ears and collars could not be put on together, the manufacturers questioned who would be unable to wear ears on their head, a tail somewhere unpleasant \
-				and a collar on their neck all together. Market researchers claimed these complaints were from children not suited to the product given the letters were written in colourful crayon. "
+	loreblurb = "Humans with genetic modifications spliced from the domestic cat. These are by far the most common human genemod. There's a lot of rumors about potential issues in the culture or psychology of felinids, but the only proven differences between felinids and unmodified humans are physically apparent, such as the more iconic ears and tails, or minor alterations such as fangs or slit-eyes."
 
 /datum/species/human/felinid/qualifies_for_rank(rank, list/features)
 	return TRUE
