@@ -175,6 +175,10 @@ SUBSYSTEM_DEF(overmap)
 			spawn_event_cluster(type, T, chance / 2)
 
 /datum/controller/subsystem/overmap/proc/spawn_initial_ships()
+	if(!(SSmapping.config.shuttle_id in SSmapping.shuttle_templates))
+		INIT_ANNOUNCE("WARNING! The following shuttle datum with the ID of [SSmapping.config.shuttle_id] was not found! Fix your configs!")
+		SSshuttle.action_load(SSmapping.shuttle_templates[initial(SSmapping.config.shuttle_id)])
+		return
 	SSshuttle.action_load(SSmapping.shuttle_templates[SSmapping.config.shuttle_id])
 
 /**
