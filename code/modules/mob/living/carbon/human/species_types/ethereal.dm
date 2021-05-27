@@ -31,8 +31,7 @@
 	var/EMPeffect = FALSE
 	var/emag_effect = FALSE                          //WS Edit -- Multitool Color Change
 	var/static/unhealthy_color = rgb(237, 164, 149)  //WS Edit -- Multitool Color Change
-	loreblurb = "Ethereals are organic humanoid beings with a blood that has strange luminiscent and electrical properties. \
-				Ethereals are barred from most authority roles on Nanotrasen stations and are not protected by the AI's default Asimov laws."
+	loreblurb = "Ethereals are organic humanoid beings with a blood that has strange luminiscent and electrical properties. They require electricity to survive, rather than food, and cast bright, colorful light from their bodies."
 	var/drain_time = 0 //used to keep ethereals from spam draining power sources
 	var/obj/effect/dummy/lighting_obj/ethereal_light
 

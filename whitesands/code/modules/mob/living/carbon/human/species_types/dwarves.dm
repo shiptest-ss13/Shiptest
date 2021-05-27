@@ -27,7 +27,7 @@ GLOBAL_LIST_INIT(dwarf_last, world.file2list("strings/names/dwarf_last.txt")) //
 	species_language_holder = /datum/language_holder/dwarf
 	loreblurb = "A species of squat, sturdy creatures drenched in facial hair with a fondness for drink and industry.\
 	 They superficially look like short humans, but they have engorged livers, thick skin, and a specialized gall bladder\
-	 that processes alcohol into vital nutrients that the dwarf cannot live without, making them compulsory drunkards."
+	 that processes alcohol into vital nutrients that the dwarf cannot live without, making them compulsory drunkards. They are from Canada."
 
 /mob/living/carbon/human/species/dwarf //species admin spawn path
 	race = /datum/species/dwarf //and the race the path is set to.
