@@ -49,9 +49,9 @@ Assistant
 			if(PREF_ALTSUIT)
 				uniform = /obj/item/clothing/under/misc/assistantformal
 			if(PREF_SKIRT)
-				uniform = /obj/item/clothing/under/color/jumpskirt/random
+				uniform = /obj/item/clothing/under/utility/skirt
 			else
-				uniform = /obj/item/clothing/under/color/grey
+				uniform = /obj/item/clothing/under/utility
 
 /datum/outfit/job/assistant/entertainer
 	name = "Assistant (Entertainer)"
