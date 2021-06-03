@@ -102,7 +102,7 @@
 			losebreath++  //You can't breath at all when in critical or when being choked, so you're going to miss a breath
 
 		else if(health <= crit_threshold)
-			losebreath += 0.25 //You're having trouble breathing in soft crit, so you'll miss a breath one in four times
+			losebreath += 0.50 //You're having trouble breathing in soft crit, so you'll miss a breath one in two times
 
 	//Suffocate
 	if(losebreath >= 1) //You've missed a breath, take oxy damage
