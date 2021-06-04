@@ -8,7 +8,9 @@
 	possible_transfer_amounts = list(5,10,15,25,30)
 	volume = 30
 	fill_icon_thresholds = list(0, 10, 30, 50, 70)
-	lid_icon_state = "bottle_lid" //zedaedit: lids!!
+	var/lid_icon_state = "bottle_lid" // bodging time!! lids!!!!!!!
+	var/lid_on = TRUE
+	var/mutable_appearance/lid_overlay
 
 /obj/item/reagent_containers/glass/bottle/Initialize()
 	. = ..()
@@ -23,14 +25,13 @@
 
 /obj/item/reagent_containers/glass/bottle/examine(mob/user)
 	. = ..()
-	else if(lid_on)
+	if(lid_on)
 		. += "<span class='notice'>The lid is firmly on to prevent spilling. Alt-click to remove the lid.</span>"
 	else
 		. += "<span class='notice'>The lid has been taken off. Alt-click to put a lid on.</span>"
 
 /obj/item/reagent_containers/glass/bottle/AltClick(mob/user)
 	. = ..()
-	var/fumbled = HAS_TRAIT(user, TRAIT_CLUMSY) && prob(5)
 	if(lid_on)
 		lid_on = FALSE
 		spillable = TRUE

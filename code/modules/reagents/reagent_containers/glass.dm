@@ -117,7 +117,7 @@
 	item_state = "beaker"
 	custom_materials = list(/datum/material/glass=500)
 	fill_icon_thresholds = list(1, 40, 60, 80, 100)
-	var/lid_icon_state = "beaker_lid" // bodging time!!
+	var/lid_icon_state = "beaker_lid" // bodging time!! lids!!!
 	var/lid_on = TRUE
 	var/mutable_appearance/lid_overlay
 
@@ -131,14 +131,13 @@
 
 /obj/item/reagent_containers/glass/beaker/examine(mob/user)
 	. = ..()
-	else if(lid_on)
+	if(lid_on)
 		. += "<span class='notice'>The lid is firmly on to prevent spilling. Alt-click to remove the lid.</span>"
 	else
 		. += "<span class='notice'>The lid has been taken off. Alt-click to put a lid on.</span>"
 
 /obj/item/reagent_containers/glass/beaker/AltClick(mob/user)
 	. = ..()
-	var/fumbled = HAS_TRAIT(user, TRAIT_CLUMSY) && prob(5)
 	if(lid_on)
 		lid_on = FALSE
 		spillable = TRUE
