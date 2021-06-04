@@ -36,8 +36,7 @@
 		lid_on = FALSE
 		spillable = TRUE
 		cut_overlay(lid_overlay, TRUE)
-		animate(src, transform = null, time = 2, loop = 0)
-			to_chat(user, "<span class='notice'>You remove the lid from [src].</span>")
+		to_chat(user, "<span class='notice'>You remove the lid from [src].</span>")
 	else
 		lid_on = TRUE
 		spillable = FALSE
@@ -77,7 +76,7 @@
 	else if(istype(target, /obj/item/reagent_containers/glass/bottle))
 		var/obj/item/reagent_containers/glass/bottle/B = target
 		if(B.lid_on)
-			to_chat(user, "<span class='warning'>[WB] has a lid firmly stuck on!</span>")
+			to_chat(user, "<span class='warning'>[B] has a lid firmly stuck on!</span>")
 	. = ..()
 //bodgeover
 
