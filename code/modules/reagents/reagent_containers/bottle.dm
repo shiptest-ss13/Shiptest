@@ -8,12 +8,77 @@
 	possible_transfer_amounts = list(5,10,15,25,30)
 	volume = 30
 	fill_icon_thresholds = list(0, 10, 30, 50, 70)
+	lid_icon_state = "bottle_lid" //zedaedit: lids!!
 
 /obj/item/reagent_containers/glass/bottle/Initialize()
 	. = ..()
+	lid_overlay = mutable_appearance(icon, lid_icon_state)
+	if(lid_on)
+		spillable = FALSE
+		add_overlay(lid_overlay, TRUE)
+		update_icon()
 	if(!icon_state)
 		icon_state = "bottle"
 	update_icon()
+
+/obj/item/reagent_containers/glass/bottle/examine(mob/user)
+	. = ..()
+	else if(lid_on)
+		. += "<span class='notice'>The lid is firmly on to prevent spilling. Alt-click to remove the lid.</span>"
+	else
+		. += "<span class='notice'>The lid has been taken off. Alt-click to put a lid on.</span>"
+
+/obj/item/reagent_containers/glass/bottle/AltClick(mob/user)
+	. = ..()
+	var/fumbled = HAS_TRAIT(user, TRAIT_CLUMSY) && prob(5)
+	if(lid_on)
+		lid_on = FALSE
+		spillable = TRUE
+		cut_overlay(lid_overlay, TRUE)
+		animate(src, transform = null, time = 2, loop = 0)
+			to_chat(user, "<span class='notice'>You remove the lid from [src].</span>")
+	else
+		lid_on = TRUE
+		spillable = FALSE
+		add_overlay(lid_overlay, TRUE)
+		to_chat(user, "<span class='notice'>You put the lid on [src].</span>")
+	update_icon()
+
+/obj/item/reagent_containers/glass/bottle/is_refillable()
+	if(lid_on)
+		return FALSE
+	. = ..()
+
+/obj/item/reagent_containers/glass/bottle/is_drainable()
+	if(lid_on)
+		return FALSE
+	. = ..()
+
+/obj/item/reagent_containers/glass/bottle/attack(mob/target, mob/user, def_zone)
+	if(!target)
+		return
+
+	if(user.a_intent != INTENT_HARM)
+		if(lid_on && reagents.total_volume && istype(target))
+			to_chat(user, "<span class='warning'>You must remove the lid before you can do that!</span>")
+			return
+
+		return ..()
+
+	if(!lid_on)
+		SplashReagents(target)
+
+/obj/item/reagent_containers/glass/bottle/afterattack(obj/target, mob/user, proximity)
+	if(lid_on && (target.is_refillable() || target.is_drainable() || (reagents.total_volume && user.a_intent == INTENT_HARM)))
+		to_chat(user, "<span class='warning'>You must remove the lid before you can do that!</span>")
+		return
+
+	else if(istype(target, /obj/item/reagent_containers/glass/bottle))
+		var/obj/item/reagent_containers/glass/bottle/B = target
+		if(B.lid_on)
+			to_chat(user, "<span class='warning'>[WB] has a lid firmly stuck on!</span>")
+	. = ..()
+//bodgeover
 
 /obj/item/reagent_containers/glass/bottle/epinephrine
 	name = "epinephrine bottle"
@@ -38,13 +103,11 @@
 /obj/item/reagent_containers/glass/bottle/morphine
 	name = "morphine bottle"
 	desc = "A small bottle of morphine."
-	icon = 'icons/obj/chemical.dmi'
 	list_reagents = list(/datum/reagent/medicine/morphine = 30)
 
 /obj/item/reagent_containers/glass/bottle/chloralhydrate
 	name = "chloral hydrate bottle"
 	desc = "A small bottle of Choral Hydrate. Mickey's Favorite!"
-	icon_state = "bottle20"
 	list_reagents = list(/datum/reagent/toxin/chloralhydrate = 15)
 
 /obj/item/reagent_containers/glass/bottle/mannitol
@@ -188,7 +251,6 @@
 /obj/item/reagent_containers/glass/bottle/salglu_solution
 	name = "saline-glucose solution bottle"
 	desc = "A small bottle of saline-glucose solution."
-	icon_state = "bottle1"
 	list_reagents = list(/datum/reagent/medicine/salglu_solution = 30)
 
 /obj/item/reagent_containers/glass/bottle/atropine
@@ -240,7 +302,6 @@
 /obj/item/reagent_containers/glass/bottle/brainrot
 	name = "Brainrot culture bottle"
 	desc = "A small bottle. Contains Cryptococcus Cosmosis culture in synthblood medium."
-	icon_state = "bottle3"
 	spawned_disease = /datum/disease/brainrot
 
 /obj/item/reagent_containers/glass/bottle/magnitis

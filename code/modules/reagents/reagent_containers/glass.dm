@@ -112,15 +112,82 @@
 /obj/item/reagent_containers/glass/beaker
 	name = "beaker"
 	desc = "A beaker. It can hold up to 50 units."
-	icon = 'icons/obj/chemical.dmi'
+	icon = 'icons/obj/chemical.dmi' //Should I modularize this? Yes. Will I do it?
 	icon_state = "beaker"
 	item_state = "beaker"
 	custom_materials = list(/datum/material/glass=500)
-	fill_icon_thresholds = list(0, 10, 25, 50, 75, 80, 90)
+	fill_icon_thresholds = list(1, 40, 60, 80, 100)
+	var/lid_icon_state = "beaker_lid" // bodging time!!
+	var/lid_on = TRUE
+	var/mutable_appearance/lid_overlay
 
 /obj/item/reagent_containers/glass/beaker/Initialize()
 	. = ..()
+	lid_overlay = mutable_appearance(icon, lid_icon_state)
+	if(lid_on)
+		spillable = FALSE
+		add_overlay(lid_overlay, TRUE)
+		update_icon()
+
+/obj/item/reagent_containers/glass/beaker/examine(mob/user)
+	. = ..()
+	else if(lid_on)
+		. += "<span class='notice'>The lid is firmly on to prevent spilling. Alt-click to remove the lid.</span>"
+	else
+		. += "<span class='notice'>The lid has been taken off. Alt-click to put a lid on.</span>"
+
+/obj/item/reagent_containers/glass/beaker/AltClick(mob/user)
+	. = ..()
+	var/fumbled = HAS_TRAIT(user, TRAIT_CLUMSY) && prob(5)
+	if(lid_on)
+		lid_on = FALSE
+		spillable = TRUE
+		cut_overlay(lid_overlay, TRUE)
+		animate(src, transform = null, time = 2, loop = 0)
+			to_chat(user, "<span class='notice'>You remove the lid from [src].</span>")
+	else
+		lid_on = TRUE
+		spillable = FALSE
+		add_overlay(lid_overlay, TRUE)
+		to_chat(user, "<span class='notice'>You put the lid on [src].</span>")
 	update_icon()
+
+/obj/item/reagent_containers/glass/beaker/is_refillable()
+	if(lid_on)
+		return FALSE
+	. = ..()
+
+/obj/item/reagent_containers/glass/beaker/is_drainable()
+	if(lid_on)
+		return FALSE
+	. = ..()
+
+/obj/item/reagent_containers/glass/beaker/attack(mob/target, mob/user, def_zone)
+	if(!target)
+		return
+
+	if(user.a_intent != INTENT_HARM)
+		if(lid_on && reagents.total_volume && istype(target))
+			to_chat(user, "<span class='warning'>You must remove the lid before you can do that!</span>")
+			return
+
+		return ..()
+
+	if(!lid_on)
+		SplashReagents(target)
+
+/obj/item/reagent_containers/glass/beaker/afterattack(obj/target, mob/user, proximity)
+	if(lid_on && (target.is_refillable() || target.is_drainable() || (reagents.total_volume && user.a_intent == INTENT_HARM)))
+		to_chat(user, "<span class='warning'>You must remove the lid before you can do that!</span>")
+		return
+
+	else if(istype(target, /obj/item/reagent_containers/glass/beaker))
+		var/obj/item/reagent_containers/glass/beaker/B = target
+		if(B.lid_on)
+			to_chat(user, "<span class='warning'>[WB] has a lid firmly stuck on!</span>")
+	. = ..()
+
+// bodging over
 
 /obj/item/reagent_containers/glass/beaker/get_part_rating()
 	return reagents.maximum_volume
@@ -139,6 +206,7 @@
 	volume = 100
 	amount_per_transfer_from_this = 10
 	possible_transfer_amounts = list(5,10,15,20,25,30,50,100)
+	lid_icon_state = "beakerlarge_lid" //zedaedit: lids!!
 
 /obj/item/reagent_containers/glass/beaker/plastic
 	name = "x-large beaker"
@@ -149,6 +217,7 @@
 	volume = 120
 	amount_per_transfer_from_this = 10
 	possible_transfer_amounts = list(5,10,15,20,25,30,60,120)
+	lid_icon_state = "beakerlarge_lid" //zedaedit: lids!!
 
 /obj/item/reagent_containers/glass/beaker/meta
 	name = "metamaterial beaker"
@@ -158,6 +227,8 @@
 	volume = 180
 	amount_per_transfer_from_this = 10
 	possible_transfer_amounts = list(5,10,15,20,25,30,60,120,180)
+	fill_icon_thresholds = list(1, 25, 50, 75, 100)
+	lid_icon_state = "beakergold_lid" //zedaedit: lids!!
 
 /obj/item/reagent_containers/glass/beaker/noreact
 	name = "cryostasis beaker"
@@ -165,9 +236,10 @@
 		reactions. Can hold up to 50 units."
 	icon_state = "beakernoreact"
 	custom_materials = list(/datum/material/iron=3000)
-	reagent_flags = OPENCONTAINER | NO_REACT
+	reagent_flags = NO_REACT
 	volume = 50
 	amount_per_transfer_from_this = 10
+	lid_icon_state = "beakernoreact_lid" //zedaedit: lids!!
 
 /obj/item/reagent_containers/glass/beaker/bluespace
 	name = "bluespace beaker"
@@ -180,6 +252,7 @@
 	material_flags = MATERIAL_NO_EFFECTS
 	amount_per_transfer_from_this = 10
 	possible_transfer_amounts = list(5,10,15,20,25,30,50,100,300)
+	lid_icon_state = "beakerbluespace_lid" //zedaedit: lids!!
 
 /obj/item/reagent_containers/glass/beaker/cryoxadone
 	list_reagents = list(/datum/reagent/medicine/cryoxadone = 30)
@@ -294,6 +367,7 @@
 /obj/item/reagent_containers/glass/mortar
 	name = "mortar"
 	desc = "A specially formed bowl of ancient design. It is possible to crush or juice items placed in it using a pestle; however the process, unlike modern methods, is slow and physically exhausting. Alt click to eject the item."
+	icon = 'icons/obj/chemical.dmi'
 	icon_state = "mortar"
 	amount_per_transfer_from_this = 10
 	possible_transfer_amounts = list(5, 10, 15, 20, 25, 30, 50, 100)
