@@ -146,7 +146,7 @@
 	object_overlays.Cut()
 	remove_stored_outline()
 
-/obj/screen/inventory/proc/add_stored_outline()
+/atom/movable/screen/inventory/proc/add_stored_outline()
 	if(hud?.mymob && slot_id)
 		var/obj/item/inv_item = hud.mymob.get_item_by_slot(slot_id)
 		if(inv_item)
