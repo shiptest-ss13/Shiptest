@@ -110,3 +110,48 @@
 	icon_state = "space_near"
 
 // AMOGUS end.
+
+//Diner Ship
+
+/area/shuttle/diner/ship
+	name = "Diner Ship"
+	requires_power = TRUE
+
+/area/shuttle/diner/ship/mainroom
+	icon_state = "bar"
+
+/area/shuttle/diner/ship/bathroom
+	name = "Diner Bathroom"
+	icon_state = "toilet"
+
+/area/shuttle/diner/ship/crew_quarters
+	name = "Diner Staff Lounge"
+	icon_state = "crew_quarters"
+
+/area/shuttle/diner/ship/maintenance
+	name = "Diner Ship Life Support"
+	icon_state = "engine_smes"
+
+/area/shuttle/diner/ship/cold_room
+	name = "Diner Coldroom"
+	icon_state = "kitchen"
+
+/area/shuttle/diner/ship/war_room
+	name = "Diner Kitchen & Command"
+	icon_state = "meeting"
+
+/area/shuttle/diner/ship/cargo
+	name = "Diner Cargo"
+	icon_state = "cargo_bay"
+
+/area/shuttle/diner/ship/hydroponics
+	name = "Diner Hydroponics"
+	icon_state = "hydro"
+
+/area/shuttle/diner/ship/external
+	name = "Diner External"
+	requires_power = FALSE
+	dynamic_lighting = DYNAMIC_LIGHTING_IFSTARLIGHT
+	icon_state = "space_near"
+
+//diner end
