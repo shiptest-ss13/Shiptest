@@ -8,6 +8,7 @@
 		#include "map_files\debug\multiz.dmm"
 		#include "map_files\Salvage\Salvage.dmm"
 		#include "map_files\Amogus\Amogus.dmm"
+		#include "map_files\Engi\Engi.dmm"
 		#include "map_files\Diner\Diner.dmm"
 		#ifdef CIBUILDING
 			#include "templates.dm"
