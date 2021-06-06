@@ -10,7 +10,7 @@
 
 
 /obj/item/reagent_containers/glass/attack(mob/M, mob/user, obj/target)
-	if(!canconsume(M, user))
+	if(!istype(M))
 		return
 
 	if(!spillable)
@@ -20,36 +20,37 @@
 		to_chat(user, "<span class='warning'>[src] is empty!</span>")
 		return
 
-	if(istype(M))
-		if(user.a_intent == INTENT_HARM)
-			var/R
-			M.visible_message("<span class='danger'>[user] splashes the contents of [src] onto [M]!</span>", \
-							"<span class='userdanger'>[user] splashes the contents of [src] onto you!</span>")
-			if(reagents)
-				for(var/datum/reagent/A in reagents.reagent_list)
-					R += "[A] ([num2text(A.volume)]),"
+	if(user.a_intent == INTENT_HARM)
+		var/R
+		M.visible_message("<span class='danger'>[user] splashes the contents of [src] onto [M]!</span>", \
+						"<span class='userdanger'>[user] splashes the contents of [src] onto you!</span>")
+		if(reagents)
+			for(var/datum/reagent/A in reagents.reagent_list)
+				R += "[A] ([num2text(A.volume)]),"
 
-			if(isturf(target) && reagents.reagent_list.len && thrownby)
-				log_combat(thrownby, target, "splashed (thrown) [english_list(reagents.reagent_list)]")
-				message_admins("[ADMIN_LOOKUPFLW(thrownby)] splashed (thrown) [english_list(reagents.reagent_list)] on [target] at [ADMIN_VERBOSEJMP(target)].")
-			reagents.expose(M, TOUCH)
-			log_combat(user, M, "splashed", R)
-			reagents.clear_reagents()
+		if(isturf(target) && reagents.reagent_list.len && thrownby)
+			log_combat(thrownby, target, "splashed (thrown) [english_list(reagents.reagent_list)]")
+			message_admins("[ADMIN_LOOKUPFLW(thrownby)] splashed (thrown) [english_list(reagents.reagent_list)] on [target] at [ADMIN_VERBOSEJMP(target)].")
+		reagents.expose(M, TOUCH)
+		log_combat(user, M, "splashed", R)
+		reagents.clear_reagents()
+	else
+		if(!canconsume(M, user))
+			return
+		if(M != user)
+			M.visible_message("<span class='danger'>[user] attempts to feed [M] something from [src].</span>", \
+						"<span class='userdanger'>[user] attempts to feed you something from [src].</span>")
+			if(!do_mob(user, M))
+				return
+			if(!reagents || !reagents.total_volume)
+				return // The drink might be empty after the delay, such as by spam-feeding
+			M.visible_message("<span class='danger'>[user] feeds [M] something from [src].</span>", \
+						"<span class='userdanger'>[user] feeds you something from [src].</span>")
+			log_combat(user, M, "fed", reagents.log_list())
 		else
-			if(M != user)
-				M.visible_message("<span class='danger'>[user] attempts to feed [M] something from [src].</span>", \
-							"<span class='userdanger'>[user] attempts to feed you something from [src].</span>")
-				if(!do_mob(user, M))
-					return
-				if(!reagents || !reagents.total_volume)
-					return // The drink might be empty after the delay, such as by spam-feeding
-				M.visible_message("<span class='danger'>[user] feeds [M] something from [src].</span>", \
-							"<span class='userdanger'>[user] feeds you something from [src].</span>")
-				log_combat(user, M, "fed", reagents.log_list())
-			else
-				to_chat(user, "<span class='notice'>You swallow a gulp of [src].</span>")
-			addtimer(CALLBACK(reagents, /datum/reagents.proc/trans_to, M, 5, TRUE, TRUE, FALSE, user, FALSE, INGEST), 5)
-			playsound(M.loc,'sound/items/drink.ogg', rand(10,50), TRUE)
+			to_chat(user, "<span class='notice'>You swallow a gulp of [src].</span>")
+		addtimer(CALLBACK(reagents, /datum/reagents.proc/trans_to, M, 5, TRUE, TRUE, FALSE, user, FALSE, INGEST), 5)
+		playsound(M.loc,'sound/items/drink.ogg', rand(10,50), TRUE)
 
 /obj/item/reagent_containers/glass/afterattack(obj/target, mob/user, proximity)
 	. = ..()
@@ -117,84 +118,12 @@
 	item_state = "beaker"
 	custom_materials = list(/datum/material/glass=500)
 	fill_icon_thresholds = list(1, 40, 60, 80, 100)
-	var/lid_icon_state = "beaker_lid" // bodging time!! lids!!!
-	var/lid_on = TRUE
-	var/mutable_appearance/lid_overlay
-
-/obj/item/reagent_containers/glass/beaker/Initialize()
-	. = ..()
-	lid_overlay = mutable_appearance(icon, lid_icon_state)
-	if(lid_on)
-		spillable = FALSE
-		add_overlay(lid_overlay, TRUE)
-		update_icon()
-
-/obj/item/reagent_containers/glass/beaker/examine(mob/user)
-	. = ..()
-	if(lid_on)
-		. += "<span class='notice'>The lid is firmly on to prevent spilling. Alt-click to remove the lid.</span>"
-	else
-		. += "<span class='notice'>The lid has been taken off. Alt-click to put a lid on.</span>"
-
-/obj/item/reagent_containers/glass/beaker/AltClick(mob/user)
-	. = ..()
-	if(lid_on)
-		lid_on = FALSE
-		spillable = TRUE
-		cut_overlay(lid_overlay, TRUE)
-		to_chat(user, "<span class='notice'>You remove the lid from [src].</span>")
-	else
-		lid_on = TRUE
-		spillable = FALSE
-		add_overlay(lid_overlay, TRUE)
-		to_chat(user, "<span class='notice'>You put the lid on [src].</span>")
-	update_icon()
-
-/obj/item/reagent_containers/glass/beaker/is_refillable()
-	if(lid_on)
-		return FALSE
-	. = ..()
-
-/obj/item/reagent_containers/glass/beaker/is_drainable()
-	if(lid_on)
-		return FALSE
-	. = ..()
-
-/obj/item/reagent_containers/glass/beaker/attack(mob/target, mob/user, def_zone)
-	if(!target)
-		return
-
-	if(user.a_intent != INTENT_HARM)
-		if(lid_on && reagents.total_volume && istype(target))
-			to_chat(user, "<span class='warning'>You must remove the lid before you can do that!</span>")
-			return
-
-		return ..()
-
-	if(!lid_on)
-		SplashReagents(target)
-
-/obj/item/reagent_containers/glass/beaker/afterattack(obj/target, mob/user, proximity)
-	if(lid_on && (target.is_refillable() || target.is_drainable() || (reagents.total_volume && user.a_intent == INTENT_HARM)))
-		to_chat(user, "<span class='warning'>You must remove the lid before you can do that!</span>")
-		return
-
-	else if(istype(target, /obj/item/reagent_containers/glass/beaker))
-		var/obj/item/reagent_containers/glass/beaker/B = target
-		if(B.lid_on)
-			to_chat(user, "<span class='warning'>[B] has a lid firmly stuck on!</span>")
-	. = ..()
-
-// bodging over
+	can_have_cap = TRUE
+	cap_icon_state = "beaker_cap"
+	cap_on = TRUE
 
 /obj/item/reagent_containers/glass/beaker/get_part_rating()
 	return reagents.maximum_volume
-
-/obj/item/reagent_containers/glass/beaker/jar
-	name = "honey jar"
-	desc = "A jar for honey. It can hold up to 50 units of sweet delight."
-	icon = 'icons/obj/chemical.dmi'
-	icon_state = "vapour"
 
 /obj/item/reagent_containers/glass/beaker/large
 	name = "large beaker"
@@ -204,7 +133,7 @@
 	volume = 100
 	amount_per_transfer_from_this = 10
 	possible_transfer_amounts = list(5,10,15,20,25,30,50,100)
-	lid_icon_state = "beakerlarge_lid" //zedaedit: lids!!
+	cap_icon_state = "beakerlarge_cap" //zedaedit: lids!!
 
 /obj/item/reagent_containers/glass/beaker/plastic
 	name = "x-large beaker"
@@ -215,7 +144,7 @@
 	volume = 120
 	amount_per_transfer_from_this = 10
 	possible_transfer_amounts = list(5,10,15,20,25,30,60,120)
-	lid_icon_state = "beakerlarge_lid" //zedaedit: lids!!
+	cap_icon_state = "beakerlarge_cap" //zedaedit: lids!!
 
 /obj/item/reagent_containers/glass/beaker/meta
 	name = "metamaterial beaker"
@@ -226,7 +155,7 @@
 	amount_per_transfer_from_this = 10
 	possible_transfer_amounts = list(5,10,15,20,25,30,60,120,180)
 	fill_icon_thresholds = list(1, 25, 50, 75, 100)
-	lid_icon_state = "beakergold_lid" //zedaedit: lids!!
+	cap_icon_state = "beakergold_cap" //zedaedit: lids!!
 
 /obj/item/reagent_containers/glass/beaker/noreact
 	name = "cryostasis beaker"
@@ -237,7 +166,7 @@
 	reagent_flags = NO_REACT
 	volume = 50
 	amount_per_transfer_from_this = 10
-	lid_icon_state = "beakernoreact_lid" //zedaedit: lids!!
+	cap_icon_state = "beakernoreact_cap" //zedaedit: lids!!
 
 /obj/item/reagent_containers/glass/beaker/bluespace
 	name = "bluespace beaker"
@@ -250,7 +179,7 @@
 	material_flags = MATERIAL_NO_EFFECTS
 	amount_per_transfer_from_this = 10
 	possible_transfer_amounts = list(5,10,15,20,25,30,50,100,300)
-	lid_icon_state = "beakerbluespace_lid" //zedaedit: lids!!
+	cap_icon_state = "beakerbluespace_cap" //zedaedit: lids!!
 
 /obj/item/reagent_containers/glass/beaker/cryoxadone
 	list_reagents = list(/datum/reagent/medicine/cryoxadone = 30)
@@ -416,8 +345,3 @@
 		grinded = I
 		return
 	to_chat(user, "<span class='warning'>You can't grind this!</span>")
-
-/obj/item/reagent_containers/glass/saline
-	name = "saline canister"
-	volume = 5000
-	list_reagents = list(/datum/reagent/medicine/salglu_solution = 5000)
