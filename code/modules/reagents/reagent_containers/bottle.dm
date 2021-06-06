@@ -8,77 +8,9 @@
 	possible_transfer_amounts = list(5,10,15,25,30)
 	volume = 30
 	fill_icon_thresholds = list(0, 10, 30, 50, 70)
-	var/lid_icon_state = "bottle_lid" // bodging time!! lids!!!!!!!
-	var/lid_on = TRUE
-	var/mutable_appearance/lid_overlay
-
-/obj/item/reagent_containers/glass/bottle/Initialize()
-	. = ..()
-	lid_overlay = mutable_appearance(icon, lid_icon_state)
-	if(lid_on)
-		spillable = FALSE
-		add_overlay(lid_overlay, TRUE)
-		update_icon()
-	if(!icon_state)
-		icon_state = "bottle"
-	update_icon()
-
-/obj/item/reagent_containers/glass/bottle/examine(mob/user)
-	. = ..()
-	if(lid_on)
-		. += "<span class='notice'>The lid is firmly on to prevent spilling. Alt-click to remove the lid.</span>"
-	else
-		. += "<span class='notice'>The lid has been taken off. Alt-click to put a lid on.</span>"
-
-/obj/item/reagent_containers/glass/bottle/AltClick(mob/user)
-	. = ..()
-	if(lid_on)
-		lid_on = FALSE
-		spillable = TRUE
-		cut_overlay(lid_overlay, TRUE)
-		to_chat(user, "<span class='notice'>You remove the lid from [src].</span>")
-	else
-		lid_on = TRUE
-		spillable = FALSE
-		add_overlay(lid_overlay, TRUE)
-		to_chat(user, "<span class='notice'>You put the lid on [src].</span>")
-	update_icon()
-
-/obj/item/reagent_containers/glass/bottle/is_refillable()
-	if(lid_on)
-		return FALSE
-	. = ..()
-
-/obj/item/reagent_containers/glass/bottle/is_drainable()
-	if(lid_on)
-		return FALSE
-	. = ..()
-
-/obj/item/reagent_containers/glass/bottle/attack(mob/target, mob/user, def_zone)
-	if(!target)
-		return
-
-	if(user.a_intent != INTENT_HARM)
-		if(lid_on && reagents.total_volume && istype(target))
-			to_chat(user, "<span class='warning'>You must remove the lid before you can do that!</span>")
-			return
-
-		return ..()
-
-	if(!lid_on)
-		SplashReagents(target)
-
-/obj/item/reagent_containers/glass/bottle/afterattack(obj/target, mob/user, proximity)
-	if(lid_on && (target.is_refillable() || target.is_drainable() || (reagents.total_volume && user.a_intent == INTENT_HARM)))
-		to_chat(user, "<span class='warning'>You must remove the lid before you can do that!</span>")
-		return
-
-	else if(istype(target, /obj/item/reagent_containers/glass/bottle))
-		var/obj/item/reagent_containers/glass/bottle/B = target
-		if(B.lid_on)
-			to_chat(user, "<span class='warning'>[B] has a lid firmly stuck on!</span>")
-	. = ..()
-//bodgeover
+	can_have_cap = TRUE
+	cap_icon_state = "bottle_cap"
+	cap_on = TRUE
 
 /obj/item/reagent_containers/glass/bottle/epinephrine
 	name = "epinephrine bottle"
@@ -156,6 +88,9 @@
 	icon = 'icons/obj/drinks.dmi'
 	icon_state = "holyflask"
 	list_reagents = list(/datum/reagent/medicine/adminordrazine = 30)
+	can_have_cap = FALSE
+	cap_icon_state = null
+	cap_on = FALSE
 
 /obj/item/reagent_containers/glass/bottle/capsaicin
 	name = "Capsaicin Bottle"
@@ -170,7 +105,6 @@
 /obj/item/reagent_containers/glass/bottle/traitor
 	name = "syndicate bottle"
 	desc = "A small bottle. Contains a random nasty chemical."
-	icon = 'icons/obj/chemical.dmi'
 	var/extra_reagent = null
 
 /obj/item/reagent_containers/glass/bottle/traitor/Initialize()
