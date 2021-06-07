@@ -188,4 +188,8 @@
 	dynamic_lighting = DYNAMIC_LIGHTING_IFSTARLIGHT
 	icon_state = "space_near"
 
+/area/shuttle/moth/ship/atmos
+    name = "Atmospherics"
+    icon_state = "atmos"
+
 //MOTH done
