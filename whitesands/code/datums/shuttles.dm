@@ -34,6 +34,10 @@
 /datum/map_template/shuttle/minigalaxy
 	port_id = "mining_minigalaxy"
 
+/datum/map_template/shuttle/diner
+	port_id = "bar"
+	suffix = "ship"
+
 //Ruins
 /datum/map_template/shuttle/ruin/solgov_exploration_pod
 	suffix = "solgov_exploration_pod"

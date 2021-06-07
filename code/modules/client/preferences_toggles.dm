@@ -284,7 +284,7 @@ TOGGLE_CHECKBOX(/datum/verbs/menu/Settings, listen_ooc)()
 	return C.prefs.chat_toggles & CHAT_OOC
 
 //BeginWS Edit
-TOGGLE_CHECKBOX(datum/verbs/menu/settings, listen_looc)()
+TOGGLE_CHECKBOX(/datum/verbs/menu/settings, listen_looc)()
 	set name = "Show/Hide LOOC"
 	set category = "Preferences"
 	set desc = "Toggles seeing Local Out Of Character chat"

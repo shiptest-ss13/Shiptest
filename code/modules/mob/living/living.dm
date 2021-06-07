@@ -1751,13 +1751,6 @@
 	else
 		remove_movespeed_modifier(/datum/movespeed_modifier/limbless)
 
-	//this won't really work with species with more than 2 legs, but it'll function
-	if(broken_legs > 0)
-		var/broken_slowdown = 0
-		broken_slowdown += (default_num_legs - broken_legs) * 2
-		add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/bones, multiplicative_slowdown=broken_slowdown) //can't move fast with a broken leg
-	else
-		remove_movespeed_modifier(/datum/movespeed_modifier/bones)
 
 ///Proc to modify the value of brokene_legs and hook behavior associated to this event.
 /mob/living/proc/set_broken_legs(new_value)
@@ -1766,6 +1759,13 @@
 	. = broken_legs
 	broken_legs = new_value
 
+	//this won't really work with species with more than 2 legs, but it'll function
+	if(broken_legs > 0)
+		var/broken_slowdown = 0
+		broken_slowdown += (default_num_legs - broken_legs) * 2
+		add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/bones, multiplicative_slowdown=broken_slowdown) //can't move fast with a broken leg
+	else
+		remove_movespeed_modifier(/datum/movespeed_modifier/bones)
 
 ///Proc to modify the value of num_hands and hook behavior associated to this event.
 /mob/living/proc/set_num_hands(new_value)

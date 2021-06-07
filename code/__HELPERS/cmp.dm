@@ -127,3 +127,10 @@ GLOBAL_VAR_INIT(cmp_field, "name")
 
 /proc/cmp_pdajob_asc(obj/item/pda/A, obj/item/pda/B)
 	return sorttext(B.ownjob, A.ownjob)
+
+// begin shiptest
+/proc/cmp_reservations_asc(datum/turf_reservation/A, datum/turf_reservation/B)
+	if(A.bottom_left_coords[2] != B.bottom_left_coords[2]) // sort reserves by Y
+		return cmp_numeric_asc(A.bottom_left_coords[2], B.bottom_left_coords[2])
+	return cmp_numeric_asc(A.bottom_left_coords[1], B.bottom_left_coords[1]) // then by X
+// end shiptest

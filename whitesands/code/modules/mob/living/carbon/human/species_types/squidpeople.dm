@@ -30,7 +30,7 @@
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_PRIDE | MIRROR_MAGIC | RACE_SWAP | ERT_SPAWN | SLIME_EXTRACT
 	loreblurb = "A race of squid-like amphibians with an odd appearance. \
 	They posses the ability to change their pigmentation at will, often leading to confusion. \
-	Nanotrasen ensures that the squid people do not eat human grey matter, and such reports will be discarded."
+	It's frequently rumored that they eat human grey matter. This is definitely, absolutely, most certainly not in any way at all true."
 
 /datum/species/squid/random_name(gender,unique,lastname)
 	if(unique)

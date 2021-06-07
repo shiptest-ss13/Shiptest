@@ -193,7 +193,7 @@
 	M.add_atom_colour(color, TEMPORARY_COLOUR_PRIORITY)		// Changes color to puce
 	..()
 
-datum/reagent/medicine/puce_essence/expose_atom(atom/A, volume)
+/datum/reagent/medicine/puce_essence/expose_atom(atom/A, volume)
 	if(!iscarbon(A))
 		A.add_atom_colour(color, WASHABLE_COLOUR_PRIORITY)
 	..()
@@ -221,7 +221,7 @@ datum/reagent/medicine/puce_essence/expose_atom(atom/A, volume)
 	M.add_atom_colour(color, TEMPORARY_COLOUR_PRIORITY)		// Changes color to chartreuse
 	..()
 
-datum/reagent/medicine/chartreuse/expose_atom(atom/A, volume)
+/datum/reagent/medicine/chartreuse/expose_atom(atom/A, volume)
 	if(!iscarbon(A))
 		A.add_atom_colour(color, WASHABLE_COLOUR_PRIORITY)
 	..()

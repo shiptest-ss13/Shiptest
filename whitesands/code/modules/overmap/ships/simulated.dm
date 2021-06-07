@@ -101,7 +101,7 @@
 	if(!is_still())
 		return "Ship must be stopped to dock!"
 
-	var/obj/docking_port/stationary/dock_to_use = find_valid_dock(to_dock.id)
+	var/obj/docking_port/stationary/dock_to_use = find_valid_dock(to_dock.id, FALSE)
 
 	if(!dock_to_use || !istype(dock_to_use))
 		state = OVERMAP_SHIP_FLYING

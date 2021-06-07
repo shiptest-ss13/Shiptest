@@ -19,6 +19,9 @@
 						"black hypovial" = "hypovial-t",
 						"pink hypovial" = "hypovial-pink"
 						)
+	can_have_cap = FALSE
+	cap_icon_state = null
+	cap_on = FALSE
 
 /obj/item/reagent_containers/glass/bottle/vial/Initialize()
 	. = ..()

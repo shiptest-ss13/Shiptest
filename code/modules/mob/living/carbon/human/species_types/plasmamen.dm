@@ -22,8 +22,8 @@
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_PRIDE | MIRROR_MAGIC
 	outfit_important_for_life = /datum/outfit/plasmaman
 	species_language_holder = /datum/language_holder/skeleton
-	loreblurb = "The product of plasma experimentation on a human colony, these strange abominations lead a difficult life of breathing plasma and bursting into flames when exposed to oxygen. \
-	Logically speaking, they make for bad crewmembers. However, they don't have a choice but to work for the only corporation that can supply them with plasma."
+	loreblurb = "These strange abominations lead a difficult life of breathing plasma and bursting into flames when exposed to oxygen. Although where they come from is unknown, as not even plasmamen themselves typically seem to know for sure, their similarity to the human skeleton leads to the rumor that they're humans who were injured horribly in a plasma fire, losing their memories. Or  maybe they're just weird aliens, those things tend to look like humans all the time anyways. \
+	Spacers frequently groan at the prospect of having a plasmaman as a member of their crew, as they have difficult needs that tend to contrast with oxygen-breathing organic lifeforms. But hey, purple skeletons."
 
 	// Body temperature for Plasmen is much lower human as they can handle colder environments
 	bodytemp_normal = (BODYTEMP_NORMAL - 40)
