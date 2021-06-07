@@ -103,6 +103,11 @@
 
 		else if(health <= crit_threshold)
 			losebreath += 0.50 //You're having trouble breathing in soft crit, so you'll miss a breath half the time
+			var drop_chance = 50
+			if(prob(drop_chance))
+				Knockdown(75)
+				Jitter(50)
+				to_chat(src, "<span class='notice'>You are too tired to keep going!</span>")
 
 	//Suffocate
 	if(losebreath >= 1) //You've missed a breath, take oxy damage
