@@ -1,6 +1,8 @@
 /area/shuttle/solgov_exploration
 	name = "SolGov Exploration Pod"
 
+// Mining ship.
+
 /area/shuttle/mining/ship
 	name = "Mining Ship"
 	requires_power = TRUE
@@ -32,6 +34,8 @@
 	name = "Mining Ship Crew Quarters"
 	icon_state = "Sleep"
 	sound_environment = SOUND_AREA_WOODFLOOR
+
+// Mining end.
 
 // AMOGUS
 
