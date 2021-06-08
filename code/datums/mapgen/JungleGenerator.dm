@@ -46,6 +46,9 @@
 
 		var/height = text2num(rustg_noise_get_at_coordinates("[height_seed]", "[drift_x]", "[drift_y]"))
 
+		var/area/A = gen_turf.loc //meet my friends, Ctrl+C and Ctrl+V!
+		if(!(A.area_flags & CAVES_ALLOWED))
+			continue
 
 		var/datum/biome/selected_biome
 		if(height <= 0.85) //If height is less than 0.85, we generate biomes based on the heat and humidity of the area.
