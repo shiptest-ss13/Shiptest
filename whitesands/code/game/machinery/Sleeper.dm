@@ -7,7 +7,7 @@
 /obj/machinery/sleeper
 	name = "sleeper"
 	desc = "An enclosed machine used to stabilize and heal patients."
-	icon = 'icons/obj/machines/sleeper.dmi'
+	icon = 'whitesands/icons/obj/machines/sleeper.dmi'
 	icon_state = "sleeper"
 	density = FALSE
 	state_open = TRUE
@@ -72,10 +72,14 @@
 	update_contents()
 
 /obj/machinery/sleeper/update_icon_state()
-	if(state_open)
-		icon_state = "[initial(icon_state)]-open"
+
+	if(!state_open)
+		if(is_operational())
+			icon_state = "[initial(icon_state)]-active"
+		else
+			icon_state = "[initial(icon_state)]-idle"
 	else
-		icon_state = initial(icon_state)
+		icon_state = "[initial(icon_state)]"
 
 /obj/machinery/sleeper/container_resist_act(mob/living/user)
 	visible_message("<span class='notice'>[occupant] emerges from [src]!</span>",
@@ -127,12 +131,14 @@
 				stasis_enabled = FALSE
 		occupant = null
 	if(!state_open && !panel_open)
-		flick("[initial(icon_state)]-anim", src)
+		flick("[initial(icon_state)]", src)
+		update_icon_state()
 		..(FALSE) //Don't drop the chem bag
 
 /obj/machinery/sleeper/close_machine(mob/user)
 	if((isnull(user) || istype(user)) && state_open && !panel_open)
-		flick("[initial(icon_state)]-anim", src)
+		flick("[initial(icon_state)]", src)
+		update_icon_state()
 		..(user)
 		var/mob/living/mob_occupant = occupant
 		if(mob_occupant && mob_occupant.stat != DEAD)
@@ -189,7 +195,7 @@
 	if(state_open)
 		to_chat(user, "<span class='warning'>[src] must be closed to [panel_open ? "close" : "open"] its maintenance hatch!</span>")
 		return
-	if(default_deconstruction_screwdriver(user, "[initial(icon_state)]-o", initial(icon_state), I))
+	if(default_deconstruction_screwdriver(user, "[initial(icon_state)]-panel", initial(icon_state), I))
 		return
 	return FALSE
 
@@ -363,7 +369,7 @@
 	return
 
 /obj/machinery/sleeper/syndie
-	icon_state = "sleeper_s"
+	icon_state = "sleeper_syndicate"
 	controls_inside = TRUE
 
 /obj/machinery/sleeper/syndie/fullupgrade/Initialize()

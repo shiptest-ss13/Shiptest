@@ -12,8 +12,10 @@ GLOBAL_LIST_EMPTY(cryopod_computers)
 /obj/machinery/computer/cryopod
 	name = "cryogenic oversight console"
 	desc = "An interface between crew and the cryogenic storage oversight systems."
-	icon = 'icons/obj/Cryogenic2.dmi'
-	icon_state = "cellconsole_1"
+	icon = 'whitesands/icons/obj/machines/sleeper.dmi'
+	icon_state = "cryopod_console"
+	icon_screen = "cryopod_console-active"
+
 	// circuit = /obj/item/circuitboard/cryopodcontrol
 	density = FALSE
 	interaction_flags_machine = INTERACT_MACHINE_OFFLINE
@@ -137,8 +139,8 @@ GLOBAL_LIST_EMPTY(cryopod_computers)
 /obj/machinery/cryopod
 	name = "cryogenic freezer"
 	desc = "Suited for Cyborgs and Humanoids, the pod is a safe place for personnel affected by the Space Sleep Disorder to get some rest."
-	icon = 'icons/obj/cryogenic2.dmi'
-	icon_state = "cryopod-open"
+	icon = 'whitesands/icons/obj/machines/sleeper.dmi'
+	icon_state = "cryopod"
 	density = TRUE
 	anchored = TRUE
 	state_open = TRUE
@@ -224,7 +226,7 @@ GLOBAL_LIST_EMPTY(cryopod_computers)
 			var/mob/living/carbon/C = user
 			C.SetSleeping(50)
 			to_chat(occupant, "<span class='boldnotice'>You begin to wake from cryosleep...</span>")
-			icon_state = "cryopod"
+			icon_state = "cryopod-active"
 			return
 		var/mob/living/mob_occupant = occupant
 		if(mob_occupant && mob_occupant.stat != DEAD)
@@ -233,11 +235,11 @@ GLOBAL_LIST_EMPTY(cryopod_computers)
 			despawn_world_time = world.time + (time_till_despawn * 0.1) // This gives them 30 seconds
 		else
 			despawn_world_time = world.time + time_till_despawn
-	icon_state = "cryopod"
+	icon_state = "cryopod-active"
 
 /obj/machinery/cryopod/open_machine()
 	..()
-	icon_state = "cryopod-open"
+	icon_state = "cryopod"
 	density = TRUE
 	name = initial(name)
 
