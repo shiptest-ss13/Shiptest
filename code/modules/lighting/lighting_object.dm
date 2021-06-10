@@ -34,7 +34,7 @@
 /atom/movable/lighting_object/Destroy(force)
 	if (force)
 		SSlighting.objects_queue -= src
-		if (loc != myturf)
+		if (loc != myturf && loc)
 			var/turf/oldturf = get_turf(myturf)
 			var/turf/newturf = get_turf(loc)
 			stack_trace("A lighting object was qdeleted with a different loc then it is suppose to have ([COORD(oldturf)] -> [COORD(newturf)])")
