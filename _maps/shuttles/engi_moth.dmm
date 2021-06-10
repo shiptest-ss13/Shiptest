@@ -1043,7 +1043,10 @@
 /turf/open/floor/mineral/plastitanium/airless,
 /area/shuttle/moth/ship/external)
 "Fj" = (
-/obj/machinery/vending/engivend,
+/obj/machinery/vending/engivend{
+	default_price = 0;
+	extra_price = 0
+	},
 /turf/open/floor/plating,
 /area/shuttle/moth/ship/rightwing)
 "FB" = (
@@ -1124,6 +1127,14 @@
 /obj/item/pipe_dispenser,
 /obj/item/pipe_dispenser,
 /obj/item/pipe_dispenser,
+/obj/item/storage/belt{
+	pixel_x = -5;
+	pixel_y = -6
+	},
+/obj/item/storage/belt{
+	pixel_x = -5;
+	pixel_y = -6
+	},
 /obj/item/storage/belt{
 	pixel_x = -5;
 	pixel_y = -6
