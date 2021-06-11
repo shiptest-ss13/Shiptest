@@ -18,7 +18,9 @@
 /turf/open/floor/engine,
 /area/shuttle/moth/ship/smchamber)
 "ae" = (
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
+	},
 /turf/open/floor/engine,
 /area/shuttle/moth/ship/smchamber)
 "ao" = (
@@ -37,6 +39,9 @@
 /turf/open/floor/plating/airless,
 /area/shuttle/moth/ship/external)
 "aQ" = (
+/obj/machinery/light{
+	dir = 4
+	},
 /turf/open/floor/plating/airless,
 /area/shuttle/moth/ship/atmos)
 "aX" = (
@@ -183,7 +188,7 @@
 /area/shuttle/moth/ship/smchamber)
 "fb" = (
 /obj/machinery/status_display/shuttle{
-	shuttle_id = "engi"
+	shuttle_id = "moth"
 	},
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/shuttle/moth/ship/rightwing)
@@ -237,6 +242,10 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4,
 /turf/open/floor/engine,
 /area/shuttle/moth/ship/smchamber)
+"hb" = (
+/obj/machinery/mineral/ore_redemption,
+/turf/open/floor/mineral/plastitanium,
+/area/shuttle/moth/ship/mainarea)
 "hN" = (
 /obj/machinery/atmospherics/pipe/layer_manifold/visible,
 /obj/structure/cable{
@@ -271,10 +280,32 @@
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
 	},
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer2,
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 6
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 6
+	},
 /turf/open/floor/engine,
 /area/shuttle/moth/ship/smchamber)
+"jz" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/turf/open/floor/mineral/plastitanium/red,
+/area/shuttle/moth/ship/leftwing)
+"jC" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 5
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 9
+	},
+/turf/open/floor/mineral/plastitanium/red,
+/area/shuttle/moth/ship/mainarea)
 "jF" = (
 /obj/item/spacepod_equipment/weaponry/basic_pod_ka,
 /turf/open/floor/mineral/plastitanium,
@@ -283,11 +314,22 @@
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /turf/open/floor/plating,
 /area/shuttle/moth/ship/rightwing)
+"kc" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 9
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/turf/open/floor/mineral/plastitanium/red,
+/area/shuttle/moth/ship/mainarea)
 "kd" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 8
 	},
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
+	},
 /turf/open/floor/engine,
 /area/shuttle/moth/ship/smchamber)
 "kh" = (
@@ -305,7 +347,9 @@
 /obj/item/clothing/glasses/meson,
 /obj/structure/table/reinforced,
 /obj/machinery/light,
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 9
+	},
 /turf/open/floor/engine,
 /area/shuttle/moth/ship/smchamber)
 "kD" = (
@@ -316,6 +360,7 @@
 /area/shuttle/moth/ship/atmos)
 "kY" = (
 /obj/machinery/atmospherics/components/unary/thermomachine/freezer/on{
+	dir = 4;
 	min_temperature = 3;
 	target_temperature = 3
 	},
@@ -369,8 +414,10 @@
 /obj/machinery/atmospherics/pipe/simple/orange/hidden/layer1{
 	dir = 10
 	},
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer2,
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
+	dir = 4
+	},
 /turf/open/floor/engine,
 /area/shuttle/moth/ship/smchamber)
 "nL" = (
@@ -384,6 +431,9 @@
 /obj/item/clothing/head/radiation,
 /obj/item/clothing/glasses/meson,
 /obj/item/clothing/glasses/meson,
+/obj/item/storage/firstaid/toxin,
+/obj/item/storage/pill_bottle/penacid,
+/obj/item/storage/pill_bottle/potassiodide,
 /turf/open/floor/engine,
 /area/shuttle/moth/ship/smchamber)
 "oh" = (
@@ -401,6 +451,9 @@
 /obj/item/radio/intercom{
 	pixel_x = 32
 	},
+/obj/item/storage/firstaid/toxin,
+/obj/item/storage/pill_bottle/penacid,
+/obj/item/storage/pill_bottle/potassiodide,
 /turf/open/floor/engine,
 /area/shuttle/moth/ship/smchamber)
 "oK" = (
@@ -502,15 +555,12 @@
 /area/shuttle/moth/ship/smchamber)
 "qW" = (
 /obj/structure/table,
-/obj/item/storage/firstaid{
-	pixel_y = 5
-	},
 /obj/item/toy/figure/engineer,
 /obj/item/storage/firstaid/fire,
-/obj/item/storage/firstaid{
-	pixel_x = -6;
-	pixel_y = 5
-	},
+/obj/item/storage/firstaid/regular,
+/obj/item/storage/firstaid/regular,
+/obj/item/reagent_containers/hypospray/medipen/penacid,
+/obj/item/reagent_containers/hypospray/medipen/penacid,
 /turf/open/floor/mineral/plastitanium,
 /area/shuttle/moth/ship/leftwing)
 "qY" = (
@@ -533,6 +583,10 @@
 	dir = 1
 	},
 /obj/machinery/portable_atmospherics/canister/nitrogen,
+/obj/machinery/button/massdriver{
+	id = "smejection";
+	pixel_y = -25
+	},
 /turf/open/floor/engine,
 /area/shuttle/moth/ship/smchamber)
 "sg" = (
@@ -615,7 +669,7 @@
 /area/shuttle/moth/ship/mainarea)
 "up" = (
 /obj/machinery/status_display/shuttle{
-	shuttle_id = "engi"
+	shuttle_id = "moth"
 	},
 /turf/closed/indestructible/reinforced,
 /area/shuttle/moth/ship/smchamber)
@@ -628,8 +682,8 @@
 "uZ" = (
 /obj/machinery/door/airlock/engineering,
 /obj/machinery/atmospherics/pipe/simple/orange/hidden/layer1,
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer2,
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/engine,
 /area/shuttle/moth/ship/smchamber)
 "vg" = (
@@ -637,8 +691,8 @@
 /area/shuttle/moth/ship/leftwing)
 "vw" = (
 /obj/machinery/atmospherics/pipe/manifold/orange/hidden/layer1,
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer2,
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/mineral/plastitanium/red,
 /area/shuttle/moth/ship/mainarea)
 "vz" = (
@@ -735,7 +789,7 @@
 /area/shuttle/moth/ship/atmos)
 "xr" = (
 /obj/machinery/status_display/shuttle{
-	shuttle_id = "engi"
+	shuttle_id = "moth"
 	},
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/shuttle/moth/ship/atmos)
@@ -764,8 +818,12 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer2,
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
 /turf/open/floor/plating,
 /area/shuttle/moth/ship/rightwing)
 "xV" = (
@@ -836,6 +894,9 @@
 /obj/structure/window/plasma/reinforced/spawner,
 /obj/machinery/air_sensor/atmos/air_tank,
 /obj/effect/turf_decal/atmos/air,
+/obj/machinery/light{
+	dir = 1
+	},
 /turf/open/floor/engine/air,
 /area/shuttle/moth/ship/atmos)
 "zR" = (
@@ -877,8 +938,12 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer2,
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/shuttle/moth/ship/leftwing)
 "Au" = (
@@ -894,9 +959,12 @@
 /obj/structure/cable{
 	icon_state = "1-4"
 	},
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer2,
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/shuttle/moth/ship/mainarea)
 "Ba" = (
@@ -907,8 +975,12 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer2,
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/shuttle/moth/ship/mainarea)
 "Bh" = (
@@ -918,8 +990,12 @@
 /obj/structure/cable{
 	icon_state = "2-4"
 	},
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer2,
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/shuttle/moth/ship/mainarea)
 "Bj" = (
@@ -938,8 +1014,12 @@
 	icon_state = "0-4"
 	},
 /obj/machinery/power/terminal,
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer2,
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
 /turf/open/floor/plating,
 /area/shuttle/moth/ship/rightwing)
 "BJ" = (
@@ -948,8 +1028,8 @@
 	icon_state = "1-4"
 	},
 /obj/machinery/atmospherics/pipe/simple/orange/hidden/layer1,
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer2,
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/engine,
 /area/shuttle/moth/ship/mainarea)
 "Cm" = (
@@ -968,8 +1048,12 @@
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer2,
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
 /turf/open/floor/plating,
 /area/shuttle/moth/ship/rightwing)
 "Dc" = (
@@ -980,8 +1064,12 @@
 /turf/open/floor/mineral/plastitanium/airless,
 /area/shuttle/moth/ship/external)
 "Do" = (
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer2,
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 10
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 9
+	},
 /turf/open/floor/plating{
 	icon_state = "platingdmg3"
 	},
@@ -999,7 +1087,7 @@
 /area/shuttle/moth/ship/mainarea)
 "DS" = (
 /obj/machinery/status_display/shuttle{
-	shuttle_id = "engi"
+	shuttle_id = "moth"
 	},
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/shuttle/moth/ship/leftwing)
@@ -1013,8 +1101,12 @@
 /obj/structure/cable{
 	icon_state = "2-4"
 	},
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer2,
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/shuttle/moth/ship/leftwing)
 "Eu" = (
@@ -1024,8 +1116,12 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer2,
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/shuttle/moth/ship/leftwing)
 "EF" = (
@@ -1033,8 +1129,12 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer2,
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/shuttle/moth/ship/rightwing)
 "EH" = (
@@ -1055,12 +1155,13 @@
 /obj/structure/statue/gold/ce{
 	anchored = 1
 	},
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer2,
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer2,
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/mineral/plastitanium/red,
 /area/shuttle/moth/ship/mainarea)
 "FF" = (
@@ -1087,7 +1188,9 @@
 /turf/open/floor/plating/airless,
 /area/shuttle/moth/ship/external)
 "Gp" = (
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/shuttle/moth/ship/mainarea)
 "GT" = (
@@ -1104,7 +1207,9 @@
 /area/shuttle/moth/ship/external)
 "Ht" = (
 /obj/item/pod_parts/core,
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
+	dir = 1
+	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/shuttle/moth/ship/mainarea)
 "Hy" = (
@@ -1143,7 +1248,8 @@
 /area/shuttle/moth/ship/rightwing)
 "HQ" = (
 /obj/machinery/mass_driver{
-	dir = 1
+	dir = 1;
+	id = "smejection"
 	},
 /obj/machinery/power/supermatter_crystal/shard/engine,
 /turf/open/floor/engine,
@@ -1213,6 +1319,7 @@
 /obj/machinery/atmospherics/components/unary/tank/toxins{
 	dir = 1
 	},
+/obj/machinery/light,
 /turf/open/floor/mineral/plastitanium,
 /area/shuttle/moth/ship/atmos)
 "Ka" = (
@@ -1254,11 +1361,11 @@
 "Lb" = (
 /obj/effect/landmark/observer_start,
 /obj/machinery/atmospherics/pipe/simple/orange/hidden/layer1,
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer2,
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/mineral/plastitanium/red,
 /area/shuttle/moth/ship/mainarea)
 "Lf" = (
@@ -1269,12 +1376,8 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/atmospherics/pipe/simple/orange/hidden/layer1,
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer2,
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer2,
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer4,
 /turf/open/floor/mineral/plastitanium/red,
 /area/shuttle/moth/ship/mainarea)
 "Ln" = (
@@ -1307,8 +1410,12 @@
 /area/shuttle/moth/ship/atmos)
 "Mj" = (
 /obj/item/pod_parts/pod_frame/aft_port,
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer2,
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 10
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 9
+	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/shuttle/moth/ship/mainarea)
 "Mv" = (
@@ -1406,6 +1513,15 @@
 	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/shuttle/moth/ship/mainarea)
+"PO" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/turf/open/floor/mineral/plastitanium/red,
+/area/shuttle/moth/ship/atmos)
 "Qf" = (
 /obj/structure/ore_box,
 /obj/structure/cable{
@@ -1415,11 +1531,11 @@
 /area/shuttle/moth/ship/mainarea)
 "Qn" = (
 /obj/machinery/atmospherics/pipe/simple/orange/hidden/layer1,
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer2,
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/mineral/plastitanium/red,
 /area/shuttle/moth/ship/mainarea)
 "Qt" = (
@@ -1475,6 +1591,9 @@
 	name = "Port Blast Doors";
 	pixel_x = 25
 	},
+/obj/machinery/light{
+	dir = 4
+	},
 /turf/open/floor/plating/airless,
 /area/shuttle/moth/ship/atmos)
 "Sw" = (
@@ -1498,6 +1617,18 @@
 	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/shuttle/moth/ship/mainarea)
+"Tt" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/turf/open/floor/mineral/plastitanium/red,
+/area/shuttle/moth/ship/mainarea)
 "Tv" = (
 /obj/machinery/atmospherics/pipe/layer_manifold/visible{
 	dir = 4
@@ -1507,11 +1638,11 @@
 "TK" = (
 /obj/item/pod_parts/armor/industrial,
 /obj/machinery/atmospherics/pipe/simple/orange/hidden/layer1,
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer2,
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/mineral/plastitanium/red,
 /area/shuttle/moth/ship/mainarea)
 "Ug" = (
@@ -1523,11 +1654,18 @@
 /obj/machinery/atmospherics/components/unary/outlet_injector/atmos/nitrogen_input{
 	dir = 1
 	},
+/obj/machinery/light{
+	dir = 8
+	},
 /turf/open/floor/engine/n2,
 /area/shuttle/moth/ship/atmos)
 "Us" = (
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer2,
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 6
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 5
+	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/shuttle/moth/ship/leftwing)
 "UB" = (
@@ -1539,26 +1677,29 @@
 /area/shuttle/moth/ship/mainarea)
 "UN" = (
 /obj/structure/fans/tiny,
-/obj/machinery/door/poddoor,
+/obj/machinery/door/poddoor{
+	id = "smejection"
+	},
 /turf/open/floor/plating,
 /area/shuttle/moth/ship/smchamber)
 "UQ" = (
 /obj/machinery/atmospherics/pipe/simple/orange/hidden/layer1,
-/obj/machinery/mineral/ore_redemption,
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer2,
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer2,
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer2,
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
+	dir = 8
+	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/shuttle/moth/ship/mainarea)
 "UV" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 8
 	},
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer2,
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/shuttle/moth/ship/mainarea)
 "UX" = (
@@ -1588,8 +1729,12 @@
 /turf/open/floor/mineral/plastitanium/red,
 /area/shuttle/moth/ship/atmos)
 "VH" = (
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer2,
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 6
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 5
+	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/shuttle/moth/ship/atmos)
 "Ws" = (
@@ -1631,7 +1776,9 @@
 /turf/open/floor/mineral/plastitanium/airless,
 /area/shuttle/moth/ship/external)
 "Yi" = (
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/shuttle/moth/ship/mainarea)
 "Yk" = (
@@ -1659,15 +1806,21 @@
 /turf/open/floor/mineral/plastitanium,
 /area/shuttle/moth/ship/atmos)
 "YM" = (
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer2,
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/shuttle/moth/ship/mainarea)
 "Zc" = (
 /obj/item/stack/sheet/metal/fifty,
 /obj/machinery/atmospherics/pipe/simple/orange/hidden/layer1,
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer2,
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
+	dir = 4
+	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/shuttle/moth/ship/mainarea)
 "Zf" = (
@@ -1882,13 +2035,13 @@ Zf
 nf
 sY
 vg
-Us
+jz
 vg
 Jn
 mn
 Of
 xo
-VH
+PO
 eH
 yg
 ao
@@ -1914,7 +2067,7 @@ mn
 mn
 hX
 Gh
-VH
+PO
 KX
 yg
 qc
@@ -1966,7 +2119,7 @@ Kl
 QA
 OX
 Ht
-YM
+kc
 iu
 jF
 JR
@@ -2046,7 +2199,7 @@ Qn
 UQ
 Zc
 vw
-YM
+jC
 nL
 ui
 gk
@@ -2064,7 +2217,7 @@ kd
 nW
 Yk
 wr
-Bd
+Tt
 mV
 nL
 nL
@@ -2098,7 +2251,7 @@ QD
 UV
 sg
 to
-MF
+hb
 RP
 MF
 QG
