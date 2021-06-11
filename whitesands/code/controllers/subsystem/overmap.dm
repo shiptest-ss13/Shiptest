@@ -179,7 +179,9 @@ SUBSYSTEM_DEF(overmap)
 		INIT_ANNOUNCE("WARNING! The following shuttle datum with the ID of [SSmapping.config.shuttle_id] was not found! Fix your configs!")
 		SSshuttle.action_load(SSmapping.shuttle_templates[initial(SSmapping.config.shuttle_id)])
 		return
-	SSshuttle.action_load(SSmapping.shuttle_templates[SSmapping.config.shuttle_id])
+	var/datum/map_template/shuttle/selected_template = SSmapping.shuttle_templates[SSmapping.config.shuttle_id]
+	INIT_ANNOUNCE("Loading [selected_template.name]...")
+	SSshuttle.action_load(selected_template)
 
 /**
   * Creates an overmap object for each ruin level, making them accessible.
