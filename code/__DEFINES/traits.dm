@@ -423,3 +423,7 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_FISH_SAFE_STORAGE "fish_case"
 /// Stuff that can go inside fish cases
 #define TRAIT_FISH_CASE_COMPATIBILE "fish_case_compatibile"
+
+/// Trait granted by [mob/living/silicon/ai]
+/// Applied when the ai anchors itself
+#define AI_ANCHOR_TRAIT "ai_anchor"

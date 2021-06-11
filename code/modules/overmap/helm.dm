@@ -211,23 +211,24 @@
 	.["aiControls"] = allow_ai_control
 	.["burnDirection"] = current_ship.burn_direction
 	.["burnPercentage"] = current_ship.burn_percentage
-	for(var/obj/machinery/power/shuttle/engine/E as anything in current_ship.shuttle_port.engine_list)
+	for(var/datum/weakref/engine in current_ship.shuttle_port.engine_list)
+		var/obj/machinery/power/shuttle/engine/real_engine = engine.resolve()
 		var/list/engine_data
-		if(!E.thruster_active)
+		if(!real_engine.thruster_active)
 			engine_data = list(
-				name = E.name,
+				name = real_engine.name,
 				fuel = 0,
 				maxFuel = 100,
-				enabled = E.enabled,
-				ref = REF(E)
+				enabled = real_engine.enabled,
+				ref = REF(engine)
 			)
 		else
 			engine_data = list(
-				name = E.name,
-				fuel = E.return_fuel(),
-				maxFuel = E.return_fuel_cap(),
-				enabled = E.enabled,
-				ref = REF(E)
+				name = real_engine.name,
+				fuel = real_engine.return_fuel(),
+				maxFuel = real_engine.return_fuel_cap(),
+				enabled = real_engine.enabled,
+				ref = REF(engine)
 			)
 		.["engineInfo"] += list(engine_data)
 
@@ -300,9 +301,10 @@
 				say(current_ship.Dock(to_act))
 				return
 			if("toggle_engine")
-				var/obj/machinery/power/shuttle/engine/E = locate(params["engine"]) in current_ship.shuttle_port.engine_list
-				E.enabled = !E.enabled
-				E.update_icon_state()
+				var/datum/weakref/engine = locate(params["engine"]) in current_ship.shuttle_port.engine_list
+				var/obj/machinery/power/shuttle/engine/real_engine = engine.resolve()
+				real_engine.enabled = !real_engine.enabled
+				real_engine.update_icon_state()
 				current_ship.refresh_engines()
 				return
 			if("change_burn_percentage")
