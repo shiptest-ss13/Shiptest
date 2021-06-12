@@ -104,6 +104,10 @@
 	if(movement_force)
 		M.movement_force = movement_force.Copy()
 
+/datum/map_template/shuttle/standalone
+	prefix = "_maps/shuttles/standalone/"
+	can_be_bought = FALSE
+
 /datum/map_template/shuttle/emergency
 	port_id = "emergency"
 	name = "Base Shuttle Template (Emergency)"
