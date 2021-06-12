@@ -69,15 +69,15 @@ SUBSYSTEM_DEF(overmap)
 
 	for(var/obj/machinery/computer/helm/H as anything in helms)
 		H.set_ship()
-	qdel(helms)
+	QDEL_NULL(helms)
 
 	for(var/obj/machinery/computer/camera_advanced/shuttle_docker/nav/N as anything in navs)
 		N.link_shuttle()
-	qdel(navs)
+	QDEL_NULL(navs)
 
 	for(var/obj/machinery/computer/autopilot/A as anything in autopilots)
 		A.initial_load()
-	qdel(autopilots)
+	QDEL_NULL(autopilots)
 
 	return ..()
 
