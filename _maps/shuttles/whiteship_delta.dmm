@@ -103,8 +103,6 @@
 /area/shuttle/abandoned/crew)
 "am" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/bed,
-/obj/item/bedsheet/centcom,
 /obj/machinery/light/small{
 	dir = 1
 	},
@@ -112,6 +110,9 @@
 /obj/machinery/airalarm/all_access{
 	dir = 8;
 	pixel_x = 24
+	},
+/obj/machinery/cryopod/latejoin{
+	dir = 8
 	},
 /turf/open/floor/wood,
 /area/shuttle/abandoned/crew)
@@ -659,15 +660,6 @@
 /obj/effect/turf_decal/tile/bar,
 /obj/effect/turf_decal/tile/bar{
 	dir = 1
-	},
-/mob/living/simple_animal/hostile/poison/giant_spider/hunter{
-	desc = "Furry and black, it makes you shudder to look at it. This one has sparkling purple eyes, and looks abnormally thin and frail.";
-	environment_smash = 0;
-	health = 60;
-	maxHealth = 60;
-	melee_damage_lower = 5;
-	melee_damage_upper = 10;
-	name = "scrawny spider"
 	},
 /turf/open/floor/plasteel,
 /area/shuttle/abandoned/bar)
@@ -1357,15 +1349,6 @@
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden{
 	dir = 8
 	},
-/mob/living/simple_animal/hostile/poison/giant_spider/tarantula{
-	desc = "Furry and black, it makes you shudder to look at it. This one has abyssal red eyes, and looks abnormally thin and frail.";
-	environment_smash = 0;
-	health = 150;
-	maxHealth = 150;
-	melee_damage_lower = 20;
-	melee_damage_upper = 25;
-	name = "scrawny tarantula"
-	},
 /turf/open/floor/plasteel/dark,
 /area/shuttle/abandoned/bridge)
 "cg" = (
@@ -1380,14 +1363,14 @@
 /turf/open/floor/plasteel/dark,
 /area/shuttle/abandoned/bridge)
 "ch" = (
-/obj/machinery/computer/shuttle/white_ship{
-	dir = 8
-	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/turf_decal/tile/blue{
 	dir = 1
 	},
 /obj/effect/turf_decal/tile/blue{
+	dir = 8
+	},
+/obj/machinery/computer/helm{
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
@@ -1505,17 +1488,15 @@
 /turf/open/floor/plasteel/dark,
 /area/shuttle/abandoned/bridge)
 "cp" = (
-/obj/machinery/computer/camera_advanced/shuttle_docker/whiteship{
-	dir = 8;
-	x_offset = -2;
-	y_offset = -8
-	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/turf_decal/tile/blue{
 	dir = 1
 	},
 /obj/effect/turf_decal/tile/blue,
 /obj/effect/turf_decal/tile/blue{
+	dir = 8
+	},
+/obj/machinery/computer/autopilot{
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
@@ -2252,13 +2233,6 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/poison/giant_spider/nurse{
-	desc = "Furry and black, it makes you shudder to look at it. This one has brilliant green eyes, and looks abnormally thin and frail.";
-	environment_smash = 0;
-	health = 30;
-	maxHealth = 30;
-	name = "scrawny giant spider"
-	},
 /turf/open/floor/plasteel,
 /area/shuttle/abandoned/cargo)
 "dv" = (
@@ -2389,15 +2363,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/cable{
 	icon_state = "1-2"
-	},
-/mob/living/simple_animal/hostile/poison/giant_spider/hunter{
-	desc = "Furry and black, it makes you shudder to look at it. This one has sparkling purple eyes, and looks abnormally thin and frail.";
-	environment_smash = 0;
-	health = 60;
-	maxHealth = 60;
-	melee_damage_lower = 5;
-	melee_damage_upper = 10;
-	name = "scrawny spider"
 	},
 /turf/open/floor/plasteel,
 /area/shuttle/abandoned/medbay)
