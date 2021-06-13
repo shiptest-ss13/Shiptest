@@ -193,7 +193,7 @@
 		to_chat(usr, "<span class='warning'>The given name is too long. The area's name is unchanged.</span>")
 		return
 
-	rename_area(A, str)
+	A.rename_area(str)
 
 	to_chat(usr, "<span class='notice'>You rename the '[prevname]' to '[str]'.</span>")
 	log_game("[key_name(usr)] has renamed [prevname] to [str]")
@@ -210,16 +210,10 @@
 	icon_state = "blueprints"
 	fluffnotice = "Intellectual Property of Nanotrasen. For use in engineering cyborgs only. Wipe from memory upon departure from the station."
 
-/proc/rename_area(a, new_name)
-	var/area/A = get_area(a)
-	var/prevname = "[A.name]"
-	set_area_machinery_title(A, new_name, prevname)
-	A.name = new_name
-	if(A.firedoors)
-		for(var/D in A.firedoors)
-			var/obj/machinery/door/firedoor/FD = D
-			FD.CalculateAffectingAreas()
-	A.update_areasize()
+/area/proc/rename_area(new_name)
+	var/prevname = "[name]"
+	set_area_machinery_title(src, new_name, prevname)
+	name = new_name
 	return TRUE
 
 

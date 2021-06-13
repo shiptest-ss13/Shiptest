@@ -5,7 +5,7 @@
 	dir = 10
 	},
 /turf/open/floor/plating,
-/area/shuttle/moth/ship/smchamber)
+/area/ship/engineering/engine)
 "ac" = (
 /obj/machinery/power/rad_collector/anchored,
 /obj/machinery/atmospherics/pipe/manifold/green/visible{
@@ -16,13 +16,13 @@
 	},
 /obj/structure/window/plasma/reinforced/spawner/west,
 /turf/open/floor/engine,
-/area/shuttle/moth/ship/smchamber)
+/area/ship/engineering/engine)
 "ae" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
 	},
 /turf/open/floor/engine,
-/area/shuttle/moth/ship/smchamber)
+/area/ship/engineering/engine)
 "ao" = (
 /obj/machinery/computer/atmos_control/tank/air_tank{
 	dir = 1
@@ -33,23 +33,23 @@
 	pixel_y = -25
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/shuttle/moth/ship/atmos)
+/area/ship/engineering/atmospherics)
 "aH" = (
 /obj/machinery/atmospherics/components/unary/outlet_injector/on,
 /turf/open/floor/plating/airless,
-/area/shuttle/moth/ship/external)
+/area/ship/external)
 "aQ" = (
 /obj/machinery/light{
 	dir = 4
 	},
 /turf/open/floor/plating/airless,
-/area/shuttle/moth/ship/atmos)
+/area/ship/engineering/atmospherics)
 "aX" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 1
 	},
 /turf/open/floor/plating,
-/area/shuttle/moth/ship/rightwing)
+/area/ship/engineering/electrical)
 "bu" = (
 /obj/structure/fans/tiny,
 /obj/machinery/door/window/brigdoor{
@@ -60,7 +60,7 @@
 	dir = 9
 	},
 /turf/open/floor/engine,
-/area/shuttle/moth/ship/smchamber)
+/area/ship/engineering/engine)
 "bv" = (
 /obj/machinery/power/rad_collector/anchored,
 /obj/structure/cable/yellow{
@@ -69,7 +69,7 @@
 /obj/structure/window/plasma/reinforced/spawner/west,
 /obj/structure/window/plasma/reinforced/spawner/north,
 /turf/open/floor/engine,
-/area/shuttle/moth/ship/smchamber)
+/area/ship/engineering/engine)
 "bw" = (
 /obj/machinery/button/door{
 	id = "moth_east_door";
@@ -82,13 +82,13 @@
 	name = "Plasma to Engines"
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/shuttle/moth/ship/mainarea)
+/area/ship/bridge)
 "bY" = (
 /obj/machinery/atmospherics/pipe/simple/orange/visible{
 	dir = 9
 	},
 /turf/open/floor/plating/airless,
-/area/shuttle/moth/ship/external)
+/area/ship/external)
 "cp" = (
 /obj/machinery/atmospherics/pipe/simple/green/visible,
 /obj/structure/cable/yellow{
@@ -98,13 +98,13 @@
 	dir = 1
 	},
 /turf/open/floor/engine,
-/area/shuttle/moth/ship/smchamber)
+/area/ship/engineering/engine)
 "cK" = (
 /obj/machinery/atmospherics/pipe/simple/orange,
 /obj/structure/table/reinforced,
 /obj/item/pipe_dispenser,
 /turf/open/floor/engine,
-/area/shuttle/moth/ship/smchamber)
+/area/ship/engineering/engine)
 "dh" = (
 /obj/machinery/power/rad_collector/anchored,
 /obj/structure/cable/yellow{
@@ -116,34 +116,34 @@
 	dir = 4
 	},
 /turf/open/floor/engine,
-/area/shuttle/moth/ship/smchamber)
+/area/ship/engineering/engine)
 "dm" = (
 /obj/structure/window/plasma/reinforced/spawner,
 /obj/structure/window/plasma/reinforced/spawner/east,
 /obj/machinery/atmospherics/components/unary/vent_pump/high_volume/siphon/atmos/air_output,
 /turf/open/floor/engine/air,
-/area/shuttle/moth/ship/atmos)
+/area/ship/engineering/atmospherics)
 "dM" = (
 /obj/effect/turf_decal/stripes/line,
 /obj/machinery/atmospherics/pipe/simple/orange/hidden/layer1{
 	dir = 4
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/shuttle/moth/ship/mainarea)
+/area/ship/bridge)
 "dR" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 1
 	},
 /obj/effect/decal/remains/human,
 /turf/open/floor/mineral/plastitanium/airless,
-/area/shuttle/moth/ship/external)
+/area/ship/external)
 "dU" = (
 /obj/machinery/atmospherics/pipe/simple/cyan/visible{
 	dir = 6
 	},
 /obj/effect/spawner/structure/window/plasma/reinforced,
 /turf/open/floor/plating,
-/area/shuttle/moth/ship/smchamber)
+/area/ship/engineering/engine)
 "ed" = (
 /obj/structure/cable/yellow{
 	icon_state = "2-4"
@@ -152,7 +152,7 @@
 	icon_state = "2-8"
 	},
 /turf/open/floor/engine,
-/area/shuttle/moth/ship/smchamber)
+/area/ship/engineering/engine)
 "ew" = (
 /obj/structure/cable/yellow{
 	icon_state = "1-8"
@@ -164,13 +164,13 @@
 	dir = 6
 	},
 /turf/open/floor/engine,
-/area/shuttle/moth/ship/smchamber)
+/area/ship/engineering/engine)
 "eH" = (
 /obj/machinery/atmospherics/pipe/simple/orange/visible{
 	dir = 4
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/shuttle/moth/ship/atmos)
+/area/ship/engineering/atmospherics)
 "eX" = (
 /obj/machinery/atmospherics/pipe/simple/green/visible{
 	dir = 9
@@ -179,19 +179,19 @@
 	icon_state = "1-8"
 	},
 /turf/open/floor/engine,
-/area/shuttle/moth/ship/smchamber)
+/area/ship/engineering/engine)
 "eZ" = (
 /obj/item/wrench,
 /obj/structure/table/reinforced,
 /obj/machinery/atmospherics/pipe/layer_manifold/visible,
 /turf/open/floor/engine,
-/area/shuttle/moth/ship/smchamber)
+/area/ship/engineering/engine)
 "fb" = (
 /obj/machinery/status_display/shuttle{
 	shuttle_id = "moth"
 	},
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/shuttle/moth/ship/rightwing)
+/area/ship/engineering/electrical)
 "fg" = (
 /obj/machinery/atmospherics/pipe/simple/orange{
 	dir = 8
@@ -208,31 +208,31 @@
 	icon_state = "0-8"
 	},
 /turf/open/floor/engine,
-/area/shuttle/moth/ship/smchamber)
+/area/ship/engineering/engine)
 "fQ" = (
 /obj/machinery/atmospherics/components/trinary/filter/flipped{
 	dir = 8
 	},
 /turf/open/floor/engine,
-/area/shuttle/moth/ship/smchamber)
+/area/ship/engineering/engine)
 "gf" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on{
 	dir = 8
 	},
 /turf/open/floor/engine,
-/area/shuttle/moth/ship/smchamber)
+/area/ship/engineering/engine)
 "gk" = (
 /obj/machinery/computer/helm{
 	dir = 1
 	},
 /turf/open/floor/mineral/plastitanium/red,
-/area/shuttle/moth/ship/mainarea)
+/area/ship/bridge)
 "gl" = (
 /obj/machinery/atmospherics/pipe/simple/orange{
 	dir = 8
 	},
 /turf/open/floor/engine,
-/area/shuttle/moth/ship/smchamber)
+/area/ship/engineering/engine)
 "gu" = (
 /obj/machinery/atmospherics/pipe/simple/orange{
 	dir = 9
@@ -241,18 +241,18 @@
 /obj/structure/table/reinforced,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4,
 /turf/open/floor/engine,
-/area/shuttle/moth/ship/smchamber)
+/area/ship/engineering/engine)
 "hb" = (
 /obj/machinery/mineral/ore_redemption,
 /turf/open/floor/mineral/plastitanium,
-/area/shuttle/moth/ship/mainarea)
+/area/ship/bridge)
 "hN" = (
 /obj/machinery/atmospherics/pipe/layer_manifold/visible,
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
 /turf/open/floor/engine,
-/area/shuttle/moth/ship/smchamber)
+/area/ship/engineering/engine)
 "hX" = (
 /obj/machinery/power/apc/auto_name/north,
 /obj/machinery/power/terminal{
@@ -262,20 +262,20 @@
 	icon_state = "0-4"
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/shuttle/moth/ship/atmos)
+/area/ship/engineering/atmospherics)
 "ik" = (
 /obj/effect/turf_decal/stripes/line,
 /obj/machinery/atmospherics/pipe/simple/orange/visible{
 	dir = 10
 	},
 /turf/open/floor/mineral/plastitanium/airless,
-/area/shuttle/moth/ship/external)
+/area/ship/external)
 "iu" = (
 /obj/machinery/atmospherics/pipe/simple/orange/hidden/layer1{
 	dir = 4
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/shuttle/moth/ship/mainarea)
+/area/ship/bridge)
 "ja" = (
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
@@ -287,7 +287,7 @@
 	dir = 6
 	},
 /turf/open/floor/engine,
-/area/shuttle/moth/ship/smchamber)
+/area/ship/engineering/engine)
 "jz" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 8
@@ -296,7 +296,7 @@
 	dir = 4
 	},
 /turf/open/floor/mineral/plastitanium/red,
-/area/shuttle/moth/ship/leftwing)
+/area/ship/crew)
 "jC" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 5
@@ -305,15 +305,15 @@
 	dir = 9
 	},
 /turf/open/floor/mineral/plastitanium/red,
-/area/shuttle/moth/ship/mainarea)
+/area/ship/bridge)
 "jF" = (
 /obj/item/spacepod_equipment/weaponry/basic_pod_ka,
 /turf/open/floor/mineral/plastitanium,
-/area/shuttle/moth/ship/mainarea)
+/area/ship/bridge)
 "jS" = (
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /turf/open/floor/plating,
-/area/shuttle/moth/ship/rightwing)
+/area/ship/engineering/electrical)
 "kc" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 9
@@ -322,7 +322,7 @@
 	dir = 4
 	},
 /turf/open/floor/mineral/plastitanium/red,
-/area/shuttle/moth/ship/mainarea)
+/area/ship/bridge)
 "kd" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 8
@@ -331,7 +331,7 @@
 	dir = 8
 	},
 /turf/open/floor/engine,
-/area/shuttle/moth/ship/smchamber)
+/area/ship/engineering/engine)
 "kh" = (
 /obj/machinery/power/rad_collector/anchored,
 /obj/machinery/atmospherics/pipe/manifold/cyan/visible{
@@ -342,7 +342,7 @@
 	},
 /obj/structure/window/plasma/reinforced/spawner/east,
 /turf/open/floor/engine,
-/area/shuttle/moth/ship/smchamber)
+/area/ship/engineering/engine)
 "kk" = (
 /obj/item/clothing/glasses/meson,
 /obj/structure/table/reinforced,
@@ -351,13 +351,13 @@
 	dir = 9
 	},
 /turf/open/floor/engine,
-/area/shuttle/moth/ship/smchamber)
+/area/ship/engineering/engine)
 "kD" = (
 /obj/machinery/atmospherics/pipe/simple/orange/visible{
 	dir = 6
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/shuttle/moth/ship/atmos)
+/area/ship/engineering/atmospherics)
 "kY" = (
 /obj/machinery/atmospherics/components/unary/thermomachine/freezer/on{
 	dir = 4;
@@ -365,7 +365,7 @@
 	target_temperature = 3
 	},
 /turf/open/floor/engine,
-/area/shuttle/moth/ship/smchamber)
+/area/ship/engineering/engine)
 "mh" = (
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
@@ -375,38 +375,38 @@
 	},
 /obj/machinery/atmospherics/pipe/manifold4w/cyan/visible,
 /turf/open/floor/engine,
-/area/shuttle/moth/ship/smchamber)
+/area/ship/engineering/engine)
 "mi" = (
 /obj/machinery/atmospherics/components/unary/tank/toxins{
 	dir = 4
 	},
 /turf/open/floor/plating/airless,
-/area/shuttle/moth/ship/external)
+/area/ship/external)
 "mn" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/shuttle/moth/ship/leftwing)
+/area/ship/crew)
 "mC" = (
 /obj/structure/chair/comfy/shuttle,
 /obj/item/areaeditor/shuttle,
 /turf/open/floor/mineral/plastitanium/red,
-/area/shuttle/moth/ship/mainarea)
+/area/ship/bridge)
 "mR" = (
 /obj/structure/chair/comfy/shuttle,
 /turf/open/floor/mineral/plastitanium/red,
-/area/shuttle/moth/ship/mainarea)
+/area/ship/bridge)
 "mV" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 8
 	},
 /turf/open/floor/mineral/plastitanium/red,
-/area/shuttle/moth/ship/mainarea)
+/area/ship/bridge)
 "nf" = (
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /turf/open/floor/plating,
-/area/shuttle/moth/ship/leftwing)
+/area/ship/crew)
 "nE" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/shuttle/moth/ship/rightwing)
+/area/ship/engineering/electrical)
 "nG" = (
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
@@ -419,10 +419,10 @@
 	dir = 4
 	},
 /turf/open/floor/engine,
-/area/shuttle/moth/ship/smchamber)
+/area/ship/engineering/engine)
 "nL" = (
 /turf/open/floor/mineral/plastitanium/red,
-/area/shuttle/moth/ship/mainarea)
+/area/ship/bridge)
 "nW" = (
 /obj/structure/closet/radiation,
 /obj/item/clothing/suit/radiation,
@@ -435,7 +435,7 @@
 /obj/item/storage/pill_bottle/penacid,
 /obj/item/storage/pill_bottle/potassiodide,
 /turf/open/floor/engine,
-/area/shuttle/moth/ship/smchamber)
+/area/ship/engineering/engine)
 "oh" = (
 /obj/structure/closet/radiation,
 /obj/item/clothing/suit/radiation,
@@ -455,7 +455,7 @@
 /obj/item/storage/pill_bottle/penacid,
 /obj/item/storage/pill_bottle/potassiodide,
 /turf/open/floor/engine,
-/area/shuttle/moth/ship/smchamber)
+/area/ship/engineering/engine)
 "oK" = (
 /obj/structure/fans/tiny,
 /obj/machinery/door/poddoor{
@@ -463,11 +463,11 @@
 	name = "Eastern Blast Door"
 	},
 /turf/open/floor/mineral/plastitanium/red,
-/area/shuttle/moth/ship/mainarea)
+/area/ship/bridge)
 "oY" = (
 /obj/effect/turf_decal/box,
 /turf/open/floor/plating/airless,
-/area/shuttle/moth/ship/atmos)
+/area/ship/engineering/atmospherics)
 "pk" = (
 /obj/machinery/atmospherics/pipe/manifold/cyan/visible{
 	dir = 4
@@ -476,18 +476,18 @@
 	icon_state = "1-4"
 	},
 /turf/open/floor/engine,
-/area/shuttle/moth/ship/smchamber)
+/area/ship/engineering/engine)
 "pl" = (
 /obj/effect/decal/remains/human,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on,
 /turf/open/floor/engine,
-/area/shuttle/moth/ship/smchamber)
+/area/ship/engineering/engine)
 "pq" = (
 /obj/machinery/atmospherics/pipe/simple/cyan/visible{
 	dir = 6
 	},
 /turf/open/floor/mineral/plastitanium/red,
-/area/shuttle/moth/ship/atmos)
+/area/ship/engineering/atmospherics)
 "pt" = (
 /obj/structure/cable/yellow{
 	icon_state = "1-4"
@@ -496,11 +496,11 @@
 	icon_state = "4-8"
 	},
 /turf/open/floor/engine,
-/area/shuttle/moth/ship/smchamber)
+/area/ship/engineering/engine)
 "pC" = (
 /obj/machinery/atmospherics/pipe/manifold4w/cyan/visible,
 /turf/open/floor/engine,
-/area/shuttle/moth/ship/smchamber)
+/area/ship/engineering/engine)
 "pS" = (
 /obj/item/spacepod_equipment/cargo/large,
 /obj/structure/rack,
@@ -509,41 +509,41 @@
 /obj/item/stack/cable_coil/random,
 /obj/machinery/light,
 /turf/open/floor/mineral/plastitanium,
-/area/shuttle/moth/ship/mainarea)
+/area/ship/bridge)
 "pV" = (
 /obj/machinery/atmospherics/pipe/simple/orange/hidden/layer1{
 	dir = 4
 	},
 /turf/open/floor/mineral/plastitanium/red,
-/area/shuttle/moth/ship/mainarea)
+/area/ship/bridge)
 "pW" = (
 /obj/item/radio/intercom/wideband{
 	pixel_x = 5;
 	pixel_y = -5
 	},
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/shuttle/moth/ship/mainarea)
+/area/ship/bridge)
 "pY" = (
 /obj/structure/chair/sofa/left,
 /turf/open/floor/mineral/plastitanium,
-/area/shuttle/moth/ship/leftwing)
+/area/ship/crew)
 "qc" = (
 /obj/machinery/computer/atmos_control/tank/oxygen_tank{
 	dir = 1
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/shuttle/moth/ship/atmos)
+/area/ship/engineering/atmospherics)
 "qB" = (
 /obj/structure/tank_dispenser/oxygen,
 /turf/open/floor/mineral/plastitanium,
-/area/shuttle/moth/ship/mainarea)
+/area/ship/bridge)
 "qS" = (
 /obj/structure/mecha_wreckage/ripley/firefighter,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 4
 	},
 /turf/open/floor/mineral/plastitanium/red,
-/area/shuttle/moth/ship/mainarea)
+/area/ship/bridge)
 "qU" = (
 /obj/machinery/atmospherics/components/trinary/filter{
 	dir = 4
@@ -552,7 +552,7 @@
 	icon_state = "2-4"
 	},
 /turf/open/floor/engine,
-/area/shuttle/moth/ship/smchamber)
+/area/ship/engineering/engine)
 "qW" = (
 /obj/structure/table,
 /obj/item/toy/figure/engineer,
@@ -562,22 +562,22 @@
 /obj/item/reagent_containers/hypospray/medipen/penacid,
 /obj/item/reagent_containers/hypospray/medipen/penacid,
 /turf/open/floor/mineral/plastitanium,
-/area/shuttle/moth/ship/leftwing)
+/area/ship/crew)
 "qY" = (
 /obj/structure/tank_dispenser,
 /obj/machinery/light,
 /turf/open/floor/engine,
-/area/shuttle/moth/ship/smchamber)
+/area/ship/engineering/engine)
 "rv" = (
 /obj/machinery/atmospherics/components/binary/pump{
 	dir = 1
 	},
 /turf/open/floor/engine,
-/area/shuttle/moth/ship/smchamber)
+/area/ship/engineering/engine)
 "rN" = (
 /obj/structure/sign/poster/official/wtf_is_co2,
 /turf/closed/indestructible/reinforced,
-/area/shuttle/moth/ship/smchamber)
+/area/ship/engineering/engine)
 "se" = (
 /obj/machinery/atmospherics/components/unary/portables_connector{
 	dir = 1
@@ -588,13 +588,13 @@
 	pixel_y = -25
 	},
 /turf/open/floor/engine,
-/area/shuttle/moth/ship/smchamber)
+/area/ship/engineering/engine)
 "sg" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 8
 	},
 /turf/open/floor/mineral/plastitanium/red,
-/area/shuttle/moth/ship/mainarea)
+/area/ship/bridge)
 "sk" = (
 /obj/structure/cable{
 	icon_state = "2-8"
@@ -605,14 +605,14 @@
 /obj/machinery/power/port_gen/pacman,
 /obj/item/stack/sheet/mineral/plasma/five,
 /turf/open/floor/plating,
-/area/shuttle/moth/ship/rightwing)
+/area/ship/engineering/electrical)
 "sq" = (
 /obj/structure/rack,
 /obj/item/mining_scanner,
 /obj/item/mining_scanner,
 /obj/item/mining_scanner,
 /turf/open/floor/mineral/plastitanium,
-/area/shuttle/moth/ship/mainarea)
+/area/ship/bridge)
 "sJ" = (
 /obj/structure/cable/yellow{
 	icon_state = "0-2"
@@ -623,7 +623,7 @@
 /obj/machinery/power/port_gen/pacman,
 /obj/item/stack/sheet/mineral/plasma/five,
 /turf/open/floor/plating,
-/area/shuttle/moth/ship/rightwing)
+/area/ship/engineering/electrical)
 "sK" = (
 /obj/machinery/atmospherics/pipe/simple/orange/hidden/layer1{
 	dir = 5
@@ -640,15 +640,15 @@
 	dir = 4
 	},
 /turf/open/floor/engine,
-/area/shuttle/moth/ship/smchamber)
+/area/ship/engineering/engine)
 "sV" = (
 /obj/structure/chair/sofa/right,
 /turf/open/floor/mineral/plastitanium,
-/area/shuttle/moth/ship/leftwing)
+/area/ship/crew)
 "sY" = (
 /obj/structure/chair/sofa,
 /turf/open/floor/mineral/plastitanium,
-/area/shuttle/moth/ship/leftwing)
+/area/ship/crew)
 "to" = (
 /obj/effect/spawner/lootdrop/maintenance/two,
 /obj/effect/turf_decal/stripes/line{
@@ -658,7 +658,7 @@
 	dir = 4
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/shuttle/moth/ship/mainarea)
+/area/ship/bridge)
 "ui" = (
 /obj/structure/chair/comfy/shuttle,
 /obj/item/toy/plush/moth{
@@ -666,52 +666,52 @@
 	suicide_count = 3
 	},
 /turf/open/floor/mineral/plastitanium/red,
-/area/shuttle/moth/ship/mainarea)
+/area/ship/bridge)
 "up" = (
 /obj/machinery/status_display/shuttle{
 	shuttle_id = "moth"
 	},
 /turf/closed/indestructible/reinforced,
-/area/shuttle/moth/ship/smchamber)
+/area/ship/engineering/engine)
 "uP" = (
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
 /turf/closed/indestructible/reinforced,
-/area/shuttle/moth/ship/smchamber)
+/area/ship/engineering/engine)
 "uZ" = (
 /obj/machinery/door/airlock/engineering,
 /obj/machinery/atmospherics/pipe/simple/orange/hidden/layer1,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/engine,
-/area/shuttle/moth/ship/smchamber)
+/area/ship/engineering/engine)
 "vg" = (
 /turf/open/floor/mineral/plastitanium/red,
-/area/shuttle/moth/ship/leftwing)
+/area/ship/crew)
 "vw" = (
 /obj/machinery/atmospherics/pipe/manifold/orange/hidden/layer1,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/mineral/plastitanium/red,
-/area/shuttle/moth/ship/mainarea)
+/area/ship/bridge)
 "vz" = (
 /obj/machinery/atmospherics/pipe/simple/cyan/visible{
 	dir = 9
 	},
 /turf/open/floor/mineral/plastitanium/red,
-/area/shuttle/moth/ship/atmos)
+/area/ship/engineering/atmospherics)
 "vI" = (
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /turf/open/floor/plating,
-/area/shuttle/moth/ship/mainarea)
+/area/ship/bridge)
 "vJ" = (
 /obj/machinery/power/smes/engineering,
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
 /turf/open/floor/plating,
-/area/shuttle/moth/ship/rightwing)
+/area/ship/engineering/electrical)
 "vW" = (
 /obj/machinery/atmospherics/components/binary/pump{
 	dir = 1
@@ -722,7 +722,7 @@
 	pixel_x = -25
 	},
 /turf/open/floor/plating/airless,
-/area/shuttle/moth/ship/external)
+/area/ship/external)
 "vY" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -731,7 +731,7 @@
 	dir = 1
 	},
 /turf/open/floor/mineral/plastitanium/red,
-/area/shuttle/moth/ship/mainarea)
+/area/ship/bridge)
 "wr" = (
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
@@ -743,20 +743,20 @@
 	dir = 1
 	},
 /turf/open/floor/mineral/plastitanium/red,
-/area/shuttle/moth/ship/mainarea)
+/area/ship/bridge)
 "wx" = (
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
 /turf/open/floor/mineral/plastitanium/red,
-/area/shuttle/moth/ship/mainarea)
+/area/ship/bridge)
 "wy" = (
 /obj/machinery/door/airlock/engineering,
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
 /turf/open/floor/mineral/plastitanium/red,
-/area/shuttle/moth/ship/rightwing)
+/area/ship/engineering/electrical)
 "wK" = (
 /obj/structure/cable/yellow{
 	icon_state = "0-8"
@@ -768,7 +768,7 @@
 	dir = 1
 	},
 /turf/open/floor/plating,
-/area/shuttle/moth/ship/rightwing)
+/area/ship/engineering/electrical)
 "xd" = (
 /obj/structure/fans/tiny,
 /obj/machinery/door/poddoor{
@@ -776,23 +776,23 @@
 	name = "Western Blast Door"
 	},
 /turf/open/floor/mineral/plastitanium/red,
-/area/shuttle/moth/ship/atmos)
+/area/ship/engineering/atmospherics)
 "xe" = (
 /obj/machinery/power/shuttle/engine/fueled/plasma{
 	dir = 1
 	},
 /turf/open/floor/plating/airless,
-/area/shuttle/moth/ship/external)
+/area/ship/external)
 "xo" = (
 /obj/machinery/atmospherics/pipe/manifold/cyan/visible,
 /turf/open/floor/mineral/plastitanium/red,
-/area/shuttle/moth/ship/atmos)
+/area/ship/engineering/atmospherics)
 "xr" = (
 /obj/machinery/status_display/shuttle{
 	shuttle_id = "moth"
 	},
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/shuttle/moth/ship/atmos)
+/area/ship/engineering/atmospherics)
 "xu" = (
 /obj/structure/cable/yellow{
 	icon_state = "0-8"
@@ -804,7 +804,7 @@
 	icon_state = "4-8"
 	},
 /turf/open/floor/plating,
-/area/shuttle/moth/ship/rightwing)
+/area/ship/engineering/electrical)
 "xE" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -813,7 +813,7 @@
 	icon_state = "4-8"
 	},
 /turf/open/floor/plating,
-/area/shuttle/moth/ship/rightwing)
+/area/ship/engineering/electrical)
 "xL" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -825,14 +825,14 @@
 	dir = 4
 	},
 /turf/open/floor/plating,
-/area/shuttle/moth/ship/rightwing)
+/area/ship/engineering/electrical)
 "xV" = (
 /obj/structure/cable/yellow{
 	icon_state = "1-8"
 	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /turf/open/floor/plating,
-/area/shuttle/moth/ship/rightwing)
+/area/ship/engineering/electrical)
 "xX" = (
 /obj/item/clothing/gloves/color/yellow,
 /obj/item/clothing/gloves/color/yellow,
@@ -844,10 +844,10 @@
 	pixel_y = 24
 	},
 /turf/open/floor/plating,
-/area/shuttle/moth/ship/rightwing)
+/area/ship/engineering/electrical)
 "yg" = (
 /turf/open/floor/mineral/plastitanium,
-/area/shuttle/moth/ship/atmos)
+/area/ship/engineering/atmospherics)
 "yk" = (
 /obj/machinery/power/smes/engineering,
 /obj/structure/cable{
@@ -857,13 +857,13 @@
 	icon_state = "4-8"
 	},
 /turf/open/floor/plating,
-/area/shuttle/moth/ship/rightwing)
+/area/ship/engineering/electrical)
 "yo" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 4
 	},
 /turf/open/floor/mineral/plastitanium/red,
-/area/shuttle/moth/ship/mainarea)
+/area/ship/bridge)
 "yz" = (
 /obj/item/clothing/glasses/meson,
 /obj/item/clothing/glasses/meson,
@@ -879,7 +879,7 @@
 	pixel_x = 32
 	},
 /turf/open/floor/plating,
-/area/shuttle/moth/ship/rightwing)
+/area/ship/engineering/electrical)
 "yY" = (
 /obj/structure/bed,
 /obj/item/bedsheet/random,
@@ -889,7 +889,7 @@
 	dir = 1
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/shuttle/moth/ship/leftwing)
+/area/ship/crew)
 "zJ" = (
 /obj/structure/window/plasma/reinforced/spawner,
 /obj/machinery/air_sensor/atmos/air_tank,
@@ -898,7 +898,7 @@
 	dir = 1
 	},
 /turf/open/floor/engine/air,
-/area/shuttle/moth/ship/atmos)
+/area/ship/engineering/atmospherics)
 "zR" = (
 /obj/structure/bed,
 /obj/item/bedsheet/random,
@@ -907,7 +907,7 @@
 	pixel_y = 24
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/shuttle/moth/ship/leftwing)
+/area/ship/crew)
 "zV" = (
 /obj/machinery/atmospherics/pipe/manifold/orange/visible{
 	dir = 1
@@ -916,23 +916,23 @@
 	dir = 1
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/shuttle/moth/ship/atmos)
+/area/ship/engineering/atmospherics)
 "Ab" = (
 /obj/machinery/atmospherics/components/trinary/mixer/airmix{
 	dir = 4
 	},
 /turf/open/floor/mineral/plastitanium/red,
-/area/shuttle/moth/ship/atmos)
+/area/ship/engineering/atmospherics)
 "Ae" = (
 /obj/machinery/computer/autopilot{
 	dir = 1
 	},
 /turf/open/floor/mineral/plastitanium/red,
-/area/shuttle/moth/ship/mainarea)
+/area/ship/bridge)
 "An" = (
 /obj/machinery/door/airlock/engineering,
 /turf/open/floor/mineral/plastitanium/red,
-/area/shuttle/moth/ship/leftwing)
+/area/ship/crew)
 "Ao" = (
 /obj/machinery/door/airlock/engineering,
 /obj/structure/cable{
@@ -945,13 +945,13 @@
 	dir = 4
 	},
 /turf/open/floor/mineral/plastitanium/red,
-/area/shuttle/moth/ship/leftwing)
+/area/ship/crew)
 "Au" = (
 /obj/machinery/atmospherics/components/binary/pump{
 	dir = 1
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/shuttle/moth/ship/atmos)
+/area/ship/engineering/atmospherics)
 "AX" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -966,11 +966,11 @@
 	dir = 4
 	},
 /turf/open/floor/mineral/plastitanium/red,
-/area/shuttle/moth/ship/mainarea)
+/area/ship/bridge)
 "Ba" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /turf/open/floor/mineral/plastitanium/red,
-/area/shuttle/moth/ship/leftwing)
+/area/ship/crew)
 "Bd" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -982,7 +982,7 @@
 	dir = 4
 	},
 /turf/open/floor/mineral/plastitanium/red,
-/area/shuttle/moth/ship/mainarea)
+/area/ship/bridge)
 "Bh" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -997,14 +997,14 @@
 	dir = 4
 	},
 /turf/open/floor/mineral/plastitanium/red,
-/area/shuttle/moth/ship/mainarea)
+/area/ship/bridge)
 "Bj" = (
 /obj/item/spacepod_equipment/cargo/large/ore,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 8
 	},
 /turf/open/floor/mineral/plastitanium/red,
-/area/shuttle/moth/ship/mainarea)
+/area/ship/bridge)
 "Bp" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -1021,7 +1021,7 @@
 	dir = 4
 	},
 /turf/open/floor/plating,
-/area/shuttle/moth/ship/rightwing)
+/area/ship/engineering/electrical)
 "BJ" = (
 /obj/effect/turf_decal/radiation,
 /obj/structure/cable/yellow{
@@ -1031,19 +1031,19 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/engine,
-/area/shuttle/moth/ship/mainarea)
+/area/ship/bridge)
 "Cm" = (
 /obj/machinery/atmospherics/components/unary/vent_pump{
 	dir = 4
 	},
 /turf/open/floor/engine,
-/area/shuttle/moth/ship/smchamber)
+/area/ship/engineering/engine)
 "CJ" = (
 /obj/machinery/atmospherics/pipe/layer_manifold/visible{
 	dir = 4
 	},
 /turf/open/floor/mineral/plastitanium/red,
-/area/shuttle/moth/ship/mainarea)
+/area/ship/engineering/atmospherics)
 "CV" = (
 /obj/structure/cable{
 	icon_state = "1-8"
@@ -1055,14 +1055,14 @@
 	dir = 4
 	},
 /turf/open/floor/plating,
-/area/shuttle/moth/ship/rightwing)
+/area/ship/engineering/electrical)
 "Dc" = (
 /obj/effect/turf_decal/stripes/line,
 /obj/machinery/atmospherics/pipe/manifold/orange/visible{
 	dir = 1
 	},
 /turf/open/floor/mineral/plastitanium/airless,
-/area/shuttle/moth/ship/external)
+/area/ship/external)
 "Do" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 10
@@ -1073,7 +1073,7 @@
 /turf/open/floor/plating{
 	icon_state = "platingdmg3"
 	},
-/area/shuttle/moth/ship/rightwing)
+/area/ship/engineering/electrical)
 "DQ" = (
 /obj/effect/turf_decal/stripes/line,
 /obj/structure/rack,
@@ -1084,19 +1084,19 @@
 /obj/item/clothing/head/hardhat/mining,
 /obj/item/clothing/head/hardhat/mining,
 /turf/open/floor/mineral/plastitanium/red,
-/area/shuttle/moth/ship/mainarea)
+/area/ship/bridge)
 "DS" = (
 /obj/machinery/status_display/shuttle{
 	shuttle_id = "moth"
 	},
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/shuttle/moth/ship/leftwing)
+/area/ship/crew)
 "Ef" = (
 /obj/item/radio/intercom{
 	pixel_y = 32
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/shuttle/moth/ship/leftwing)
+/area/ship/crew)
 "En" = (
 /obj/structure/cable{
 	icon_state = "2-4"
@@ -1108,10 +1108,10 @@
 	dir = 4
 	},
 /turf/open/floor/mineral/plastitanium/red,
-/area/shuttle/moth/ship/leftwing)
+/area/ship/crew)
 "Eu" = (
 /turf/open/floor/plating,
-/area/shuttle/moth/ship/rightwing)
+/area/ship/engineering/electrical)
 "ED" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -1123,7 +1123,7 @@
 	dir = 4
 	},
 /turf/open/floor/mineral/plastitanium/red,
-/area/shuttle/moth/ship/leftwing)
+/area/ship/crew)
 "EF" = (
 /obj/machinery/door/airlock/engineering,
 /obj/structure/cable{
@@ -1136,19 +1136,19 @@
 	dir = 4
 	},
 /turf/open/floor/mineral/plastitanium/red,
-/area/shuttle/moth/ship/rightwing)
+/area/ship/engineering/electrical)
 "EH" = (
 /obj/structure/marker_beacon,
 /obj/effect/turf_decal/stripes/line,
 /turf/open/floor/mineral/plastitanium/airless,
-/area/shuttle/moth/ship/external)
+/area/ship/external)
 "Fj" = (
 /obj/machinery/vending/engivend{
 	default_price = 0;
 	extra_price = 0
 	},
 /turf/open/floor/plating,
-/area/shuttle/moth/ship/rightwing)
+/area/ship/engineering/electrical)
 "FB" = (
 /obj/machinery/atmospherics/pipe/simple/orange/hidden/layer1,
 /obj/effect/decal/hammerandsickle,
@@ -1163,11 +1163,11 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/mineral/plastitanium/red,
-/area/shuttle/moth/ship/mainarea)
+/area/ship/bridge)
 "FF" = (
 /obj/structure/ore_box,
 /turf/open/floor/mineral/plastitanium,
-/area/shuttle/moth/ship/mainarea)
+/area/ship/bridge)
 "Gc" = (
 /obj/structure/cable,
 /obj/machinery/power/apc/auto_name/east,
@@ -1175,49 +1175,49 @@
 	dir = 4
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/shuttle/moth/ship/mainarea)
+/area/ship/bridge)
 "Gh" = (
 /obj/machinery/atmospherics/components/binary/pump{
 	dir = 4;
 	name = "Air to Distro"
 	},
 /turf/open/floor/mineral/plastitanium/red,
-/area/shuttle/moth/ship/atmos)
+/area/ship/engineering/atmospherics)
 "Gj" = (
 /obj/machinery/atmospherics/components/binary/pump,
 /turf/open/floor/plating/airless,
-/area/shuttle/moth/ship/external)
+/area/ship/external)
 "Gp" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
 /turf/open/floor/mineral/plastitanium/red,
-/area/shuttle/moth/ship/mainarea)
+/area/ship/bridge)
 "GT" = (
 /obj/structure/window/plasma/reinforced/spawner/east,
 /obj/machinery/air_sensor/atmos/nitrogen_tank,
 /obj/effect/turf_decal/atmos/nitrogen,
 /turf/open/floor/engine/n2,
-/area/shuttle/moth/ship/atmos)
+/area/ship/engineering/atmospherics)
 "Hr" = (
 /obj/machinery/atmospherics/components/unary/shuttle/heater{
 	dir = 1
 	},
 /turf/open/floor/plating/airless,
-/area/shuttle/moth/ship/external)
+/area/ship/external)
 "Ht" = (
 /obj/item/pod_parts/core,
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
 	dir = 1
 	},
 /turf/open/floor/mineral/plastitanium/red,
-/area/shuttle/moth/ship/mainarea)
+/area/ship/bridge)
 "Hy" = (
 /obj/machinery/cryopod/latejoin{
 	dir = 1
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/shuttle/moth/ship/leftwing)
+/area/ship/crew)
 "HA" = (
 /obj/item/kirbyplants/random,
 /obj/machinery/power/apc/auto_name/east,
@@ -1226,7 +1226,7 @@
 	},
 /obj/structure/cable,
 /turf/open/floor/mineral/plastitanium,
-/area/shuttle/moth/ship/leftwing)
+/area/ship/crew)
 "HI" = (
 /obj/structure/table,
 /obj/item/pipe_dispenser,
@@ -1245,7 +1245,7 @@
 	pixel_y = -6
 	},
 /turf/open/floor/plating,
-/area/shuttle/moth/ship/rightwing)
+/area/ship/engineering/electrical)
 "HQ" = (
 /obj/machinery/mass_driver{
 	dir = 1;
@@ -1253,19 +1253,19 @@
 	},
 /obj/machinery/power/supermatter_crystal/shard,
 /turf/open/floor/engine,
-/area/shuttle/moth/ship/smchamber)
+/area/ship/engineering/engine)
 "HU" = (
 /obj/effect/decal/remains/human,
 /turf/open/floor/plating{
 	icon_state = "platingdmg3"
 	},
-/area/shuttle/moth/ship/rightwing)
+/area/ship/engineering/electrical)
 "Id" = (
 /obj/structure/chair/wood{
 	dir = 4
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/shuttle/moth/ship/leftwing)
+/area/ship/crew)
 "Jl" = (
 /obj/structure/table,
 /obj/item/radio,
@@ -1274,7 +1274,7 @@
 /obj/item/radio,
 /obj/item/radio,
 /turf/open/floor/mineral/plastitanium,
-/area/shuttle/moth/ship/leftwing)
+/area/ship/crew)
 "Jn" = (
 /obj/structure/chair/wood{
 	dir = 8
@@ -1283,7 +1283,7 @@
 	pixel_y = -32
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/shuttle/moth/ship/leftwing)
+/area/ship/crew)
 "Jo" = (
 /obj/structure/window/plasma/reinforced/spawner/east,
 /obj/structure/window/plasma/reinforced/spawner/north,
@@ -1291,47 +1291,47 @@
 	dir = 1
 	},
 /turf/open/floor/engine/n2,
-/area/shuttle/moth/ship/atmos)
+/area/ship/engineering/atmospherics)
 "Jt" = (
 /turf/open/floor/plating/airless,
-/area/shuttle/moth/ship/external)
+/area/ship/external)
 "Jx" = (
 /obj/machinery/suit_storage_unit/mining/eva,
 /turf/open/floor/plating,
-/area/shuttle/moth/ship/rightwing)
+/area/ship/engineering/electrical)
 "Jy" = (
 /obj/structure/table,
 /obj/machinery/microwave,
 /turf/open/floor/mineral/plastitanium,
-/area/shuttle/moth/ship/leftwing)
+/area/ship/crew)
 "JA" = (
 /obj/item/pod_parts/pod_frame/aft_starboard,
 /turf/open/floor/mineral/plastitanium,
-/area/shuttle/moth/ship/mainarea)
+/area/ship/bridge)
 "JR" = (
 /obj/structure/rack,
 /obj/item/pickaxe,
 /obj/item/pickaxe,
 /obj/item/pickaxe,
 /turf/open/floor/mineral/plastitanium,
-/area/shuttle/moth/ship/mainarea)
+/area/ship/bridge)
 "JT" = (
 /obj/machinery/atmospherics/components/unary/tank/toxins{
 	dir = 1
 	},
 /obj/machinery/light,
 /turf/open/floor/mineral/plastitanium,
-/area/shuttle/moth/ship/atmos)
+/area/ship/engineering/atmospherics)
 "Ka" = (
 /obj/structure/table,
 /obj/effect/spawner/lootdrop/donkpockets,
 /obj/effect/spawner/lootdrop/donkpockets,
 /turf/open/floor/mineral/plastitanium,
-/area/shuttle/moth/ship/leftwing)
+/area/ship/crew)
 "Kf" = (
 /obj/item/pod_parts/pod_frame/fore_starboard,
 /turf/open/floor/mineral/plastitanium,
-/area/shuttle/moth/ship/mainarea)
+/area/ship/bridge)
 "Kl" = (
 /obj/item/storage/toolbox/electrical,
 /obj/structure/table,
@@ -1350,14 +1350,14 @@
 /obj/item/gps/engineering,
 /obj/item/gps/engineering,
 /turf/open/floor/mineral/plastitanium,
-/area/shuttle/moth/ship/mainarea)
+/area/ship/bridge)
 "KX" = (
 /obj/machinery/atmospherics/components/binary/pump{
 	dir = 8;
 	name = "Plasma to Engines"
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/shuttle/moth/ship/atmos)
+/area/ship/engineering/atmospherics)
 "Lb" = (
 /obj/effect/landmark/observer_start,
 /obj/machinery/atmospherics/pipe/simple/orange/hidden/layer1,
@@ -1367,7 +1367,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/mineral/plastitanium/red,
-/area/shuttle/moth/ship/mainarea)
+/area/ship/bridge)
 "Lf" = (
 /obj/structure/cable{
 	icon_state = "2-4"
@@ -1379,11 +1379,11 @@
 /obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer4,
 /turf/open/floor/mineral/plastitanium/red,
-/area/shuttle/moth/ship/mainarea)
+/area/ship/bridge)
 "Ln" = (
 /obj/effect/spawner/structure/window/plasma/reinforced,
 /turf/open/floor/plating,
-/area/shuttle/moth/ship/smchamber)
+/area/ship/engineering/engine)
 "Lq" = (
 /obj/structure/table,
 /obj/effect/spawner/lootdrop/maintenance/four,
@@ -1391,23 +1391,23 @@
 	dir = 1
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/shuttle/moth/ship/mainarea)
+/area/ship/bridge)
 "LL" = (
 /obj/effect/spawner/structure/window/plasma/reinforced,
 /obj/machinery/atmospherics/pipe/simple/orange,
 /turf/open/floor/plating,
-/area/shuttle/moth/ship/smchamber)
+/area/ship/engineering/engine)
 "LN" = (
 /obj/machinery/suit_storage_unit/ce,
 /turf/open/floor/plating,
-/area/shuttle/moth/ship/rightwing)
+/area/ship/engineering/electrical)
 "Md" = (
 /obj/machinery/atmospherics/components/unary/shuttle/heater{
 	dir = 1
 	},
 /obj/structure/window/reinforced/spawner,
 /turf/open/floor/plating/airless,
-/area/shuttle/moth/ship/atmos)
+/area/ship/engineering/atmospherics)
 "Mj" = (
 /obj/item/pod_parts/pod_frame/aft_port,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -1417,7 +1417,7 @@
 	dir = 9
 	},
 /turf/open/floor/mineral/plastitanium/red,
-/area/shuttle/moth/ship/mainarea)
+/area/ship/bridge)
 "Mv" = (
 /obj/structure/fans/tiny,
 /obj/effect/turf_decal/stripes/line{
@@ -1428,91 +1428,97 @@
 	name = "Eastern Blast Door"
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/shuttle/moth/ship/mainarea)
+/area/ship/bridge)
 "MA" = (
 /obj/machinery/suit_storage_unit/engine,
 /turf/open/floor/plating,
-/area/shuttle/moth/ship/rightwing)
+/area/ship/engineering/electrical)
+"MB" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/ship/bridge)
 "MF" = (
 /turf/open/floor/mineral/plastitanium,
-/area/shuttle/moth/ship/mainarea)
+/area/ship/bridge)
 "MI" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/shuttle/moth/ship/atmos)
+/area/ship/engineering/atmospherics)
 "MK" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 1
 	},
 /turf/open/floor/mineral/plastitanium/red,
-/area/shuttle/moth/ship/leftwing)
+/area/ship/crew)
 "MS" = (
 /obj/machinery/suit_storage_unit/atmos,
 /obj/machinery/light,
 /turf/open/floor/plating,
-/area/shuttle/moth/ship/rightwing)
+/area/ship/engineering/electrical)
 "MV" = (
 /obj/machinery/portable_atmospherics/canister/air,
 /turf/open/floor/mineral/plastitanium,
-/area/shuttle/moth/ship/mainarea)
+/area/ship/bridge)
 "MZ" = (
 /obj/structure/table,
 /obj/item/circuitboard/mecha/pod,
 /turf/open/floor/mineral/plastitanium,
-/area/shuttle/moth/ship/mainarea)
+/area/ship/engineering/atmospherics)
 "Ni" = (
 /obj/item/radio/intercom{
 	pixel_x = 32
 	},
 /obj/structure/reagent_dispensers/fueltank,
 /turf/open/floor/mineral/plastitanium,
-/area/shuttle/moth/ship/mainarea)
+/area/ship/bridge)
 "Nr" = (
 /obj/structure/window/plasma/reinforced/spawner,
 /obj/machinery/atmospherics/components/unary/outlet_injector/atmos/air_input,
 /turf/open/floor/engine/air,
-/area/shuttle/moth/ship/atmos)
+/area/ship/engineering/atmospherics)
 "NL" = (
 /obj/machinery/autolathe,
 /turf/open/floor/mineral/plastitanium,
-/area/shuttle/moth/ship/mainarea)
+/area/ship/bridge)
 "Of" = (
 /obj/machinery/atmospherics/components/unary/thermomachine/heater/on,
 /obj/machinery/airalarm/all_access{
 	pixel_y = 24
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/shuttle/moth/ship/atmos)
+/area/ship/engineering/atmospherics)
 "Ol" = (
 /obj/machinery/atmospherics/components/binary/pump,
 /turf/open/floor/mineral/plastitanium,
-/area/shuttle/moth/ship/atmos)
+/area/ship/engineering/atmospherics)
 "Op" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 1
 	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /turf/open/floor/mineral/plastitanium,
-/area/shuttle/moth/ship/mainarea)
+/area/ship/bridge)
 "OX" = (
 /obj/effect/spawner/lootdrop/maintenance/two,
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/shuttle/moth/ship/mainarea)
+/area/ship/bridge)
 "PE" = (
 /obj/machinery/power/shuttle/engine/fueled/plasma{
 	dir = 1
 	},
 /turf/open/floor/plating/airless,
-/area/shuttle/moth/ship/atmos)
+/area/ship/engineering/atmospherics)
 "PN" = (
 /obj/item/stack/sheet/glass/fifty,
 /obj/machinery/atmospherics/pipe/simple/orange/hidden/layer1{
 	dir = 4
 	},
 /turf/open/floor/mineral/plastitanium/red,
-/area/shuttle/moth/ship/mainarea)
+/area/ship/bridge)
 "PO" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
@@ -1521,14 +1527,14 @@
 	dir = 4
 	},
 /turf/open/floor/mineral/plastitanium/red,
-/area/shuttle/moth/ship/atmos)
+/area/ship/engineering/atmospherics)
 "Qf" = (
 /obj/structure/ore_box,
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
 /turf/open/floor/mineral/plastitanium/red,
-/area/shuttle/moth/ship/mainarea)
+/area/ship/bridge)
 "Qn" = (
 /obj/machinery/atmospherics/pipe/simple/orange/hidden/layer1,
 /obj/structure/cable{
@@ -1537,14 +1543,14 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/mineral/plastitanium/red,
-/area/shuttle/moth/ship/mainarea)
+/area/ship/bridge)
 "Qt" = (
 /obj/machinery/air_sensor/atmos/oxygen_tank,
 /obj/effect/turf_decal/atmos/oxygen,
 /obj/structure/window/plasma/reinforced/spawner/east,
 /obj/structure/window/plasma/reinforced/spawner/north,
 /turf/open/floor/engine/o2,
-/area/shuttle/moth/ship/atmos)
+/area/ship/engineering/atmospherics)
 "QA" = (
 /obj/item/pod_parts/pod_frame/fore_port,
 /obj/structure/rack,
@@ -1555,36 +1561,36 @@
 /obj/item/clothing/suit/hazardvest,
 /obj/item/clothing/suit/hazardvest,
 /turf/open/floor/mineral/plastitanium,
-/area/shuttle/moth/ship/mainarea)
+/area/ship/bridge)
 "QD" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 9
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/shuttle/moth/ship/mainarea)
+/area/ship/bridge)
 "QG" = (
 /obj/machinery/ore_silo,
 /turf/open/floor/mineral/plastitanium,
-/area/shuttle/moth/ship/mainarea)
+/area/ship/bridge)
 "Rr" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/shuttle/moth/ship/mainarea)
+/area/ship/bridge)
 "RP" = (
 /obj/item/stack/rods/fifty,
 /turf/open/floor/mineral/plastitanium,
-/area/shuttle/moth/ship/mainarea)
+/area/ship/bridge)
 "Sb" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 1
 	},
 /turf/open/floor/mineral/plastitanium/red,
-/area/shuttle/moth/ship/mainarea)
+/area/ship/bridge)
 "Sf" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 1
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/shuttle/moth/ship/mainarea)
+/area/ship/bridge)
 "Si" = (
 /obj/machinery/button/door{
 	id = "moth_doors_west";
@@ -1595,28 +1601,28 @@
 	dir = 4
 	},
 /turf/open/floor/plating/airless,
-/area/shuttle/moth/ship/atmos)
+/area/ship/engineering/atmospherics)
 "Sw" = (
 /obj/structure/window/plasma/reinforced/spawner,
 /obj/machinery/atmospherics/components/unary/outlet_injector/atmos/oxygen_input,
 /turf/open/floor/engine/o2,
-/area/shuttle/moth/ship/atmos)
+/area/ship/engineering/atmospherics)
 "SS" = (
 /turf/open/floor/mineral/plastitanium/red/airless,
-/area/shuttle/moth/ship/external)
+/area/ship/external)
 "Tg" = (
 /obj/effect/turf_decal/stripes/line,
 /obj/machinery/atmospherics/pipe/layer_manifold/visible{
 	dir = 4
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/shuttle/moth/ship/mainarea)
+/area/ship/bridge)
 "Tp" = (
 /obj/machinery/computer/camera_advanced/shuttle_docker/nav{
 	dir = 1
 	},
 /turf/open/floor/mineral/plastitanium/red,
-/area/shuttle/moth/ship/mainarea)
+/area/ship/bridge)
 "Tt" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -1628,13 +1634,13 @@
 	dir = 4
 	},
 /turf/open/floor/mineral/plastitanium/red,
-/area/shuttle/moth/ship/mainarea)
+/area/ship/bridge)
 "Tv" = (
 /obj/machinery/atmospherics/pipe/layer_manifold/visible{
 	dir = 4
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/shuttle/moth/ship/mainarea)
+/area/ship/engineering/atmospherics)
 "TK" = (
 /obj/item/pod_parts/armor/industrial,
 /obj/machinery/atmospherics/pipe/simple/orange/hidden/layer1,
@@ -1644,11 +1650,11 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/mineral/plastitanium/red,
-/area/shuttle/moth/ship/mainarea)
+/area/ship/bridge)
 "Ug" = (
 /obj/effect/turf_decal/stripes/line,
 /turf/open/floor/mineral/plastitanium/airless,
-/area/shuttle/moth/ship/external)
+/area/ship/external)
 "Ul" = (
 /obj/structure/window/plasma/reinforced/spawner/north,
 /obj/machinery/atmospherics/components/unary/outlet_injector/atmos/nitrogen_input{
@@ -1658,7 +1664,7 @@
 	dir = 8
 	},
 /turf/open/floor/engine/n2,
-/area/shuttle/moth/ship/atmos)
+/area/ship/engineering/atmospherics)
 "Us" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 6
@@ -1667,21 +1673,21 @@
 	dir = 5
 	},
 /turf/open/floor/mineral/plastitanium/red,
-/area/shuttle/moth/ship/leftwing)
+/area/ship/crew)
 "UB" = (
 /obj/structure/rack,
 /obj/item/storage/bag/ore,
 /obj/item/storage/bag/ore,
 /obj/item/storage/bag/ore,
 /turf/open/floor/mineral/plastitanium,
-/area/shuttle/moth/ship/mainarea)
+/area/ship/bridge)
 "UN" = (
 /obj/structure/fans/tiny,
 /obj/machinery/door/poddoor{
 	id = "smejection"
 	},
 /turf/open/floor/plating,
-/area/shuttle/moth/ship/smchamber)
+/area/ship/engineering/engine)
 "UQ" = (
 /obj/machinery/atmospherics/pipe/simple/orange/hidden/layer1,
 /obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer2,
@@ -1689,7 +1695,7 @@
 	dir = 8
 	},
 /turf/open/floor/mineral/plastitanium/red,
-/area/shuttle/moth/ship/mainarea)
+/area/ship/bridge)
 "UV" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 8
@@ -1701,7 +1707,7 @@
 	dir = 4
 	},
 /turf/open/floor/mineral/plastitanium/red,
-/area/shuttle/moth/ship/mainarea)
+/area/ship/bridge)
 "UX" = (
 /obj/structure/table,
 /obj/item/vending_refill/engivend,
@@ -1710,24 +1716,24 @@
 	},
 /obj/item/multitool,
 /turf/open/floor/mineral/plastitanium,
-/area/shuttle/moth/ship/mainarea)
+/area/ship/bridge)
 "Vg" = (
 /obj/structure/marker_beacon,
 /obj/effect/turf_decal/stripes/line{
 	dir = 1
 	},
 /turf/open/floor/mineral/plastitanium/airless,
-/area/shuttle/moth/ship/external)
+/area/ship/external)
 "Vi" = (
 /obj/machinery/atmospherics/pipe/simple/cyan/visible{
 	dir = 5
 	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /turf/open/floor/mineral/plastitanium/red,
-/area/shuttle/moth/ship/atmos)
+/area/ship/engineering/atmospherics)
 "Vl" = (
 /turf/open/floor/mineral/plastitanium/red,
-/area/shuttle/moth/ship/atmos)
+/area/ship/engineering/atmospherics)
 "VH" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 6
@@ -1736,13 +1742,13 @@
 	dir = 5
 	},
 /turf/open/floor/mineral/plastitanium/red,
-/area/shuttle/moth/ship/atmos)
+/area/ship/engineering/atmospherics)
 "Ws" = (
 /obj/machinery/atmospherics/pipe/simple/cyan/visible{
 	dir = 5
 	},
 /turf/open/floor/mineral/plastitanium/red,
-/area/shuttle/moth/ship/atmos)
+/area/ship/engineering/atmospherics)
 "Xb" = (
 /obj/structure/fans/tiny,
 /obj/effect/turf_decal/stripes/line,
@@ -1754,19 +1760,19 @@
 	name = "Eastern Blast Door"
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/shuttle/moth/ship/mainarea)
+/area/ship/bridge)
 "Xl" = (
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/shuttle/moth/ship/mainarea)
+/area/ship/engineering/atmospherics)
 "XH" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 1
 	},
 /turf/open/floor/mineral/plastitanium/airless,
-/area/shuttle/moth/ship/external)
+/area/ship/external)
 "XK" = (
 /obj/structure/marker_beacon,
 /obj/effect/turf_decal/stripes/line,
@@ -1774,23 +1780,23 @@
 	dir = 1
 	},
 /turf/open/floor/mineral/plastitanium/airless,
-/area/shuttle/moth/ship/external)
+/area/ship/external)
 "Yi" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
 /turf/open/floor/mineral/plastitanium/red,
-/area/shuttle/moth/ship/mainarea)
+/area/ship/bridge)
 "Yk" = (
 /turf/closed/indestructible/reinforced,
-/area/shuttle/moth/ship/smchamber)
+/area/ship/engineering/engine)
 "Yv" = (
 /obj/machinery/light,
 /obj/machinery/computer/atmos_control/tank/nitrogen_tank{
 	dir = 1
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/shuttle/moth/ship/atmos)
+/area/ship/engineering/atmospherics)
 "Yy" = (
 /obj/structure/window/plasma/reinforced/spawner/east,
 /obj/structure/window/plasma/reinforced/spawner,
@@ -1798,13 +1804,13 @@
 	dir = 4
 	},
 /turf/open/floor/engine/o2,
-/area/shuttle/moth/ship/atmos)
+/area/ship/engineering/atmospherics)
 "YB" = (
 /obj/machinery/atmospherics/pipe/manifold/orange/visible{
 	dir = 1
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/shuttle/moth/ship/atmos)
+/area/ship/engineering/atmospherics)
 "YM" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
@@ -1813,7 +1819,7 @@
 	dir = 4
 	},
 /turf/open/floor/mineral/plastitanium/red,
-/area/shuttle/moth/ship/mainarea)
+/area/ship/bridge)
 "Zc" = (
 /obj/item/stack/sheet/metal/fifty,
 /obj/machinery/atmospherics/pipe/simple/orange/hidden/layer1,
@@ -1822,7 +1828,7 @@
 	dir = 4
 	},
 /turf/open/floor/mineral/plastitanium/red,
-/area/shuttle/moth/ship/mainarea)
+/area/ship/bridge)
 "Zf" = (
 /turf/template_noop,
 /area/template_noop)
@@ -1839,7 +1845,7 @@
 	},
 /obj/effect/turf_decal/box,
 /turf/open/floor/plating/airless,
-/area/shuttle/moth/ship/atmos)
+/area/ship/engineering/atmospherics)
 
 (1,1,1) = {"
 Zf
@@ -2093,9 +2099,9 @@ DS
 MZ
 Xl
 CJ
-YM
+PO
 Tv
-MF
+yg
 Yv
 xr
 MI
@@ -2143,7 +2149,7 @@ Bd
 MF
 MF
 MF
-Xl
+MB
 Gp
 Yi
 iu

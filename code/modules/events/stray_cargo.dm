@@ -68,14 +68,12 @@
 	if(!allowed_areas)
 		///Places that shouldn't explode
 		var/list/safe_area_types = typecacheof(list(
-		/area/ai_monitored/turret_protected/ai,
-		/area/ai_monitored/turret_protected/ai_upload,
-		/area/engine,
-		/area/shuttle)
-		)
+			/area/ship/science/ai_chamber,
+			/area/ship/engineering
+		))
 
 		///Subtypes from the above that actually should explode.
-		var/list/unsafe_area_subtypes = typecacheof(list(/area/engine/break_room))
+		var/list/unsafe_area_subtypes = typecacheof(list())
 		allowed_areas = make_associative(GLOB.the_station_areas) - safe_area_types + unsafe_area_subtypes
 	var/list/possible_areas = typecache_filter_list(GLOB.sortedAreas,allowed_areas)
 	if (length(possible_areas))

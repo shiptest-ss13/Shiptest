@@ -228,6 +228,6 @@
 
 ///Prevents use if the cook is not in the kitchen.
 /datum/martial_art/cqc/under_siege/can_use(mob/living/carbon/human/H) //this is used to make chef CQC only work in kitchen
-	if(!istype(get_area(H), /area/crew_quarters/kitchen))
+	if(!istype(get_area(H), /area/ship/crew/canteen/kitchen))
 		return FALSE
 	return ..()

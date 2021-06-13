@@ -31,7 +31,8 @@
 		desc = sign.desc
 
 	if(sign.rename_area && sign.name)
-		rename_area(src, sign.name)
+		var/area/A = get_area(src)
+		A.rename_area(sign.name)
 
 	return sign
 
