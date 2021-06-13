@@ -33,7 +33,8 @@
 
 /atom/proc/throw_atom_into_space(atom/movable/AM)
 	set waitfor = FALSE
-	if(!AM || istype(AM, /obj/docking_port))
+	qdel(AM) //ATOMized - VERY TEMPORARY
+/*	if(!AM || istype(AM, /obj/docking_port))
 		return
 	if(AM.loc != src) 	// Multi-tile objects are "in" multiple locs but its loc is it's true placement.
 		return			// Don't move multi tile objects if their origin isnt in transit
@@ -43,7 +44,7 @@
 	var/list/possible_transtitons = list()
 	for(var/A in SSmapping.z_list)
 		var/datum/space_level/D = A
-		if(D.linkage == CROSSLINKED || D.traits[ZTRAIT_SPACE_RUINS] || D.traits[ZTRAIT_STATION])
+		if(D.linkage == CROSSLINKED)
 			possible_transtitons += D.z_value
 	var/_z = pick(possible_transtitons)
 
@@ -65,7 +66,7 @@
 			_y = min
 
 	var/turf/T = locate(_x, _y, _z)
-	AM.forceMove(T)
+	AM.forceMove(T)*/
 
 
 /turf/open/space/transit/CanBuildHere()

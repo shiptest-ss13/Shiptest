@@ -219,26 +219,6 @@
 	desc = "A strange energy signature. Could be anything, or nothing at all."
 	icon_state = "event"
 
-/obj/structure/overmap/level/main //there should only be ONE of these in a given game.
-	name = "Space Station 13"
-	desc = "SolGov and Nanotrasen's joint colonial expedition home base, orbiting White Sands. Most likely the reason you're here."
-	icon_state = "station"
-	id = MAIN_OVERMAP_OBJECT_ID
-	sensor_range = 6
-
-/**
-  * Ensures there is only ONE main station object
-  */
-/obj/structure/overmap/level/main/Initialize(mapload, _id, list/_zs)
-	if(SSovermap.main)
-		WARNING("Multiple main overmap objects spawned, deleting extras.")
-		return INITIALIZE_HINT_QDEL
-	else
-		SSovermap.main = src
-		name = GLOB.station_name
-	..()
-	return INITIALIZE_HINT_LATELOAD
-
 /obj/structure/overmap/star
 	name = "Star"
 	desc = "A star."

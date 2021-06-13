@@ -591,22 +591,19 @@
 
 //Potion of Flight
 /obj/item/reagent_containers/glass/bottle/potion
-	icon = 'icons/obj/lavaland/artefacts.dmi'
 	icon_state = "potionflask"
-	can_have_cap = FALSE
-	cap_icon_state = null
+	can_have_cap = TRUE
+	cap_icon_state = "potionflask_cap"
 	cap_on = FALSE
+	fill_icon_thresholds = list(1, 40, 60, 80, 100)
+
 
 /obj/item/reagent_containers/glass/bottle/potion/flight
 	name = "strange elixir"
 	desc = "A flask with an almost-holy aura emitting from it. The label on the bottle says: 'erqo'hyy tvi'rf lbh jv'atf'."
+	icon_state = "potionflaskwinged"
+	fill_icon_state = "potionflask"
 	list_reagents = list(/datum/reagent/flightpotion = 5)
-
-/obj/item/reagent_containers/glass/bottle/potion/update_icon_state()
-	if(reagents.total_volume)
-		icon_state = "potionflask"
-	else
-		icon_state = "potionflask_empty"
 
 /datum/reagent/flightpotion
 	name = "Flight Potion"

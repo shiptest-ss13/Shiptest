@@ -69,26 +69,10 @@
 
 		qdel(M)
 
-		var/shuttles = alert("Do you want to modify the shuttles?", "Map Shuttles", "Yes", "No")
-		if(shuttles == "Yes")
-			for(var/s in VM.shuttles)
-				var/shuttle = input(s, "Map Shuttles") as null|text
-				if(!shuttle)
-					continue
-				if(!SSmapping.shuttle_templates[shuttle])
-					to_chat(usr, "<span class='warning'>No such shuttle as '[shuttle]' exists, using default.</span>")
-					continue
-				VM.shuttles[s] = shuttle
-
-		VM.map_path = "custom"
-		VM.map_file = "[map_file]"
 		VM.config_filename = "data/next_map.json"
 		var/json_value = list(
 			"version" = MAP_CURRENT_VERSION,
 			"map_name" = VM.map_name,
-			"map_path" = VM.map_path,
-			"map_file" = VM.map_file,
-			"shuttles" = VM.shuttles
 		)
 
 		// If the file isn't removed text2file will just append.
