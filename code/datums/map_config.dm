@@ -18,16 +18,14 @@
 	var/map_path = "map_files/Salvage"
 	var/map_file = "Salvage.dmm"
 
+	// Shuttle template ID to load
+	var/shuttle_id = "mining_ship_all"
+
 	var/traits = null
 	var/space_ruin_levels = 0
 	var/space_empty_levels = 0
 
 	var/allow_custom_shuttles = TRUE
-	var/shuttles = list(
-		"cargo" = "cargo_box",
-		"ferry" = "ferry_fancy",
-		"whiteship" = "whiteship_box",
-		"emergency" = "emergency_box")
 
 	/// Dictionary of job sub-typepath to template changes dictionary
 	var/job_changes = list()
@@ -77,33 +75,9 @@
 
 	CHECK_EXISTS("map_name")
 	map_name = json["map_name"]
-	CHECK_EXISTS("map_path")
-	map_path = json["map_path"]
 
-	map_file = json["map_file"]
-	// "map_file": "BoxStation.dmm"
-	if (istext(map_file))
-		if (!fexists("_maps/[map_path]/[map_file]"))
-			log_world("Map file ([map_path]/[map_file]) does not exist!")
-			return
-	// "map_file": ["Lower.dmm", "Upper.dmm"]
-	else if (islist(map_file))
-		for (var/file in map_file)
-			if (!fexists("_maps/[map_path]/[file]"))
-				log_world("Map file ([map_path]/[file]) does not exist!")
-				return
-	else
-		log_world("map_file missing from json!")
-		return
-
-	if (islist(json["shuttles"]))
-		var/list/L = json["shuttles"]
-		for(var/key in L)
-			var/value = L[key]
-			shuttles[key] = value
-	else if ("shuttles" in json)
-		log_world("map_config shuttles is not a list!")
-		return
+	if(istext(json["shuttle_id"]))
+		shuttle_id = json["shuttle_id"]
 
 	traits = json["traits"]
 	// "traits": [{"Linkage": "Cross"}, {"Space Ruins": true}]
@@ -118,20 +92,6 @@
 		log_world("map_config traits is not a list!")
 		return
 
-	var/temp = json["space_ruin_levels"]
-	if (isnum(temp))
-		space_ruin_levels = temp
-	else if (!isnull(temp))
-		log_world("map_config space_ruin_levels is not a number!")
-		return
-
-	temp = json["space_empty_levels"]
-	if (isnum(temp))
-		space_empty_levels = temp
-	else if (!isnull(temp))
-		log_world("map_config space_empty_levels is not a number!")
-		return
-
 	allow_custom_shuttles = json["allow_custom_shuttles"] != FALSE
 
 	if ("job_changes" in json)
@@ -143,13 +103,6 @@
 	defaulted = FALSE
 	return TRUE
 #undef CHECK_EXISTS
-
-/datum/map_config/proc/GetFullMapPaths()
-	if (istext(map_file))
-		return list("_maps/[map_path]/[map_file]")
-	. = list()
-	for (var/file in map_file)
-		. += "_maps/[map_path]/[file]"
 
 /datum/map_config/proc/MakeNextMap()
 	var/success = config_filename == "data/next_map.json" || fcopy(config_filename, "data/next_map.json")

@@ -45,6 +45,7 @@
 		calculate_mass()
 		initial_name()
 		refresh_engines()
+		check_loc()
 
 /obj/structure/overmap/ship/simulated/proc/initial_name()
 	if(mass < SHIP_SIZE_THRESHOLD)
@@ -52,10 +53,7 @@
 	var/chosen_name = pick_n_take(GLOB.ship_names)
 	if(!chosen_name)
 		return //Sorry, we're out of names
-	if(loc == SSovermap.main)
-		chosen_name = "NTSV [chosen_name]"
-	else
-		chosen_name = "ISV [chosen_name]"
+	chosen_name = "SV [chosen_name]"
 	name = chosen_name
 	shuttle?.name = chosen_name
 
@@ -274,9 +272,7 @@
 	switch(state)
 		if(OVERMAP_SHIP_DOCKING) //so that the shuttle is truly docked first
 			if(shuttle.mode == SHUTTLE_CALL || shuttle.mode == SHUTTLE_IDLE)
-				if(istype(to_dock, /obj/structure/overmap/level/main)) //Hardcoded and bad
-					addtimer(CALLBACK(src, .proc/repair), SHIP_DOCKED_REPAIR_TIME, TIMER_STOPPABLE | TIMER_LOOP)
-				else if(istype(to_dock, /obj/structure/overmap/ship/simulated)) //Even more hardcoded, even more bad
+				if(istype(to_dock, /obj/structure/overmap/ship/simulated)) //hardcoded and bad
 					var/obj/structure/overmap/ship/simulated/S = to_dock
 					S.shuttle.shuttle_areas |= shuttle.shuttle_areas
 				forceMove(to_dock)

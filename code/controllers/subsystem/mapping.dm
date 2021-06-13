@@ -68,7 +68,7 @@ SUBSYSTEM_DEF(mapping)
 			to_chat(world, "<span class='boldannounce'>Unable to load next or default map config, defaulting to Salvage Expedition</span>")
 			config = old_config
 	initialize_biomes()
-	loadWorld()
+	InitializeDefaultZLevels()
 	repopulate_sorted_areas()
 	process_teleport_locs()			//Sets up the wizard teleport locations
 	preloadTemplates()
@@ -231,53 +231,6 @@ SUBSYSTEM_DEF(mapping)
 	if(!silent)
 		INIT_ANNOUNCE("Loaded [name] in [(REALTIMEOFDAY - start_time)/10]s!")
 	return parsed_maps
-
-/datum/controller/subsystem/mapping/proc/loadWorld()
-	//if any of these fail, something has gone horribly, HORRIBLY, wrong
-	var/list/FailedZs = list()
-
-	// ensure we have space_level datums for compiled-in maps
-	InitializeDefaultZLevels()
-
-	// load the station
-	station_start = world.maxz + 1
-	INIT_ANNOUNCE("Loading [config.map_name]...")
-	LoadGroup(FailedZs, "Station", config.map_path, config.map_file, config.traits, ZTRAITS_STATION)
-
-	if(SSdbcore.Connect())
-		var/datum/DBQuery/query_round_map_name = SSdbcore.NewQuery({"
-			UPDATE [format_table_name("round")] SET map_name = :map_name WHERE id = :round_id
-		"}, list("map_name" = config.map_name, "round_id" = GLOB.round_id))
-		query_round_map_name.Execute()
-		qdel(query_round_map_name)
-
-#ifndef LOWMEMORYMODE
-	// TODO: remove this when the DB is prepared for the z-levels getting reordered
-	while (world.maxz < (5 - 1) && space_levels_so_far < config.space_ruin_levels)
-		++space_levels_so_far
-		add_new_zlevel("Empty Area [space_levels_so_far]", ZTRAITS_SPACE)
-		var/turf/T = locate(round(world.maxx / 2), round(world.maxy / 2), z_list.len)
-		var/obj/docking_port/stationary/z_port = new(T)
-		z_port.id = "whiteship_z[z_list.len]"
-
-	var/datum/map_config/VM = load_map_config()
-	SSmapping.changemap(VM)
-#endif
-
-	if(LAZYLEN(FailedZs))	//but seriously, unless the server's filesystem is messed up this will never happen
-		var/msg = "RED ALERT! The following map files failed to load: [FailedZs[1]]"
-		if(FailedZs.len > 1)
-			for(var/I in 2 to FailedZs.len)
-				msg += ", [FailedZs[I]]"
-		msg += ". Yell at your server host!"
-		INIT_ANNOUNCE(msg)
-#undef INIT_ANNOUNCE
-
-	// Custom maps are removed after station loading so the map files does not persist for no reason.
-	if(config.map_path == "custom")
-		fdel("_maps/custom/[config.map_file]")
-		// And as the file is now removed set the next map to default.
-		next_map_config = load_map_config(default_to_box = TRUE)
 
 GLOBAL_LIST_EMPTY(the_station_areas)
 

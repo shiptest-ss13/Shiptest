@@ -457,15 +457,6 @@
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
-/mob/living/simple_animal/hostile/zombie{
-	desc = "This undead fiend looks to be badly decomposed.";
-	environment_smash = 0;
-	health = 60;
-	melee_damage_lower = 11;
-	melee_damage_upper = 11;
-	name = "Rotting Carcass";
-	zombiejob = "Assistant"
-	},
 /turf/open/floor/plasteel/white/corner{
 	dir = 1
 	},
@@ -510,13 +501,15 @@
 /area/shuttle/abandoned/crew)
 "aL" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/closet/wardrobe/white/medical,
 /obj/machinery/atmospherics/components/unary/vent_pump/on{
 	dir = 1
 	},
 /obj/effect/turf_decal/tile/neutral,
 /obj/effect/turf_decal/tile/neutral{
 	dir = 8
+	},
+/obj/machinery/cryopod/latejoin{
+	dir = 1
 	},
 /turf/open/floor/plasteel,
 /area/shuttle/abandoned/crew)
@@ -567,14 +560,6 @@
 	icon_state = "1-2"
 	},
 /obj/effect/decal/cleanable/blood/old,
-/mob/living/simple_animal/hostile/zombie{
-	desc = "This undead fiend looks to be badly decomposed.";
-	environment_smash = 0;
-	health = 60;
-	melee_damage_lower = 11;
-	melee_damage_upper = 11;
-	name = "Rotting Carcass"
-	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel,
 /area/shuttle/abandoned/crew)
@@ -1211,14 +1196,6 @@
 	dir = 6
 	},
 /obj/effect/decal/cleanable/blood/old,
-/mob/living/simple_animal/hostile/zombie{
-	desc = "This undead fiend looks to be badly decomposed.";
-	environment_smash = 0;
-	health = 60;
-	melee_damage_lower = 11;
-	melee_damage_upper = 11;
-	name = "Rotting Carcass"
-	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel,
 /area/shuttle/abandoned/medbay)
@@ -1328,13 +1305,13 @@
 /area/shuttle/abandoned/bridge)
 "cb" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/computer/shuttle/white_ship{
-	dir = 8
-	},
 /obj/effect/turf_decal/tile/blue{
 	dir = 1
 	},
 /obj/effect/turf_decal/tile/blue{
+	dir = 8
+	},
+/obj/machinery/computer/helm{
 	dir = 8
 	},
 /turf/open/floor/plasteel,
@@ -1497,16 +1474,14 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/computer/camera_advanced/shuttle_docker/whiteship{
-	dir = 8;
-	x_offset = -7;
-	y_offset = -8
-	},
 /obj/effect/turf_decal/tile/blue{
 	dir = 1
 	},
 /obj/effect/turf_decal/tile/blue,
 /obj/effect/turf_decal/tile/blue{
+	dir = 8
+	},
+/obj/machinery/computer/autopilot{
 	dir = 8
 	},
 /turf/open/floor/plasteel,
@@ -2002,15 +1977,6 @@
 	icon_state = "4-8"
 	},
 /obj/effect/decal/cleanable/blood/gibs/old,
-/mob/living/simple_animal/hostile/zombie{
-	desc = "This undead fiend looks to be badly decomposed.";
-	environment_smash = 0;
-	health = 60;
-	melee_damage_lower = 11;
-	melee_damage_upper = 11;
-	name = "Rotting Carcass";
-	zombiejob = "Assistant"
-	},
 /turf/open/floor/plasteel,
 /area/shuttle/abandoned/medbay)
 "dc" = (

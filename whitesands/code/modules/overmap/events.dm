@@ -39,9 +39,6 @@
 	. = ..()
 	if(istype(AM, /obj/structure/overmap/ship))
 		affect_ship(AM)
-	else if(istype(AM, /obj/structure/overmap/level/main))
-		var/datum/round_event_control/E = new station_event()
-		E.runEvent()
 
 ///METEOR STORMS - Bounces harmlessly off the shield... unless your shield is breached
 /obj/structure/overmap/event/meteor
