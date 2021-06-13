@@ -4,8 +4,14 @@
 
 #ifndef LOWMEMORYMODE
 	#ifdef ALL_MAPS
-		#include "map_files\debug\runtimestation.dmm"
-		#include "map_files\debug\multiz.dmm"
+		#include "shuttles\amogus_sus.dmm"
+		#include "shuttles\bar_ship.dmm"
+		#include "shuttles\mining_ship_all.dmm"
+		#include "shuttles\whiteship_box.dmm"
+		#include "shuttles\whiteship_delta.dmm"
+		#include "shuttles\whiteship_meta.dmm"
+		#include "shuttles\whiteship_midway.dmm"
+		#include "shuttles\whiteship_pubby.dmm"
 		#ifdef CIBUILDING
 			#include "templates.dm"
 		#endif
