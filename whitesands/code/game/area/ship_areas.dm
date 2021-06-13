@@ -183,6 +183,10 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	lighting_colour_bulb = "#d5f2ff"
 	sound_environment = SOUND_AREA_STANDARD_STATION
 
+/area/ship/medical/surgery
+	name = "Surgical Bay"
+	icon_state = "surgery"
+
 /// Science Lab ///
 /area/ship/science
 	name = "Science Lab"
