@@ -31,12 +31,17 @@
 	port_id = "amogus"
 	suffix = "sus"
 
-/datum/map_template/shuttle/minigalaxy
-	port_id = "mining_minigalaxy"
-
 /datum/map_template/shuttle/diner
 	port_id = "bar"
 	suffix = "ship"
+
+/datum/map_template/shuttle/minigalaxy
+	port_id = "mining"
+	suffix = "minigalaxy"
+
+/datum/map_template/shuttle/ministarfury //"""mini"""
+	port_id = "mining"
+	suffix = "ministarfury"
 
 //Ruins
 /datum/map_template/shuttle/ruin/solgov_exploration_pod
