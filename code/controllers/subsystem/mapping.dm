@@ -135,7 +135,6 @@ SUBSYSTEM_DEF(mapping)
 	repopulate_sorted_areas()
 	// Set up Z-level transitions.
 	setup_map_transitions()
-	generate_station_area_list()
 	return ..()
 
 /* Nuke threats, for making the blue tiles on the station go RED
@@ -228,22 +227,6 @@ SUBSYSTEM_DEF(mapping)
 	if(!silent)
 		INIT_ANNOUNCE("Loaded [name] in [(REALTIMEOFDAY - start_time)/10]s!")
 	return parsed_maps
-
-GLOBAL_LIST_EMPTY(the_station_areas)
-
-/datum/controller/subsystem/mapping/proc/generate_station_area_list()
-	var/list/station_areas_blacklist = typecacheof(list(/area/space, /area/mine, /area/ruin))
-	for(var/area/A in world)
-		if (is_type_in_typecache(A, station_areas_blacklist))
-			continue
-		if (!A.contents.len || !(A.area_flags & UNIQUE_AREA))
-			continue
-		var/turf/picked = A.contents[1]
-		if (is_station_level(picked.z))
-			GLOB.the_station_areas += A.type
-
-	if(!GLOB.the_station_areas.len)
-		log_world("ERROR: Station areas list failed to generate!")
 
 /datum/controller/subsystem/mapping/proc/run_map_generation()
 	for(var/area/A in world)

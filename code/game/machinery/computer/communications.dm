@@ -328,19 +328,6 @@
 				log_game("[key_name(usr)] enabled emergency maintenance access.")
 				message_admins("[ADMIN_LOOKUPFLW(usr)] enabled emergency maintenance access.")
 				deadchat_broadcast(" enabled emergency maintenance access at <span class='name'>[get_area_name(usr, TRUE)]</span>.", "<span class='name'>[usr.real_name]</span>", usr, message_type = DEADCHAT_ANNOUNCEMENT)
-		//WS Begin - Nightshift Toggling
-		if ("toggleNightshift")
-			if(!SSnightshift.can_fire)
-				SSnightshift.can_fire = TRUE
-				SSnightshift.fire()
-				log_game("[key_name(usr)] has returned the night shift to automatic running.")
-				message_admins("[ADMIN_LOOKUPFLW(usr)] has returned the night shift to automatic running.")
-			else
-				SSnightshift.can_fire = FALSE
-				SSnightshift.update_nightshift(FALSE, TRUE)
-				log_game("[key_name(usr)] has overridden the night shift to be off.")
-				message_admins("[ADMIN_LOOKUPFLW(usr)] has overridden the night shift to be off.")
-		//WS End
 
 /obj/machinery/computer/communications/ui_data(mob/user)
 	var/list/data = list(
@@ -372,10 +359,6 @@
 				data["importantActionReady"] = COOLDOWN_FINISHED(src, important_action_cooldown)
 				data["shuttleCalled"] = FALSE
 				data["shuttleLastCalled"] = FALSE
-
-				//WS Begin - Allows Toggling Nightshift Lighting
-				data["nightShiftActive"] = SSnightshift.can_fire
-				//WS End
 
 				data["alertLevel"] = get_security_level()
 				data["authorizeName"] = authorize_name

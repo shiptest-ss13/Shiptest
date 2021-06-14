@@ -987,32 +987,10 @@ B --><-- A
 	sleep(duration)
 	A.cut_overlay(O)
 
-/proc/get_random_station_turf()
-	var/list/turfs = get_area_turfs(pick(GLOB.the_station_areas))
-	if (length(turfs))
-		return pick(turfs)
-
-/proc/get_safe_random_station_turf() //excludes dense turfs (like walls) and areas that have valid_territory set to FALSE
-	for (var/i in 1 to 5)
-		var/list/L = get_area_turfs(pick(GLOB.the_station_areas))
-		var/turf/target
-		while (L.len && !target)
-			var/I = rand(1, L.len)
-			var/turf/T = L[I]
-			var/area/X = get_area(T)
-			if(!T.density && (X.area_flags & VALID_TERRITORY))
-				var/clear = TRUE
-				for(var/obj/O in T)
-					if(O.density)
-						clear = FALSE
-						break
-				if(clear)
-					target = T
-			if (!target)
-				L.Cut(I,I+1)
-		if (target)
-			return target
-
+/proc/get_random_ship_turf()
+	var/obj/docking_port/mobile/shuttle = pick(SSshuttle.mobile)
+	var/area/A = pick(shuttle.shuttle_areas)
+	return pick(A.contents)
 
 /proc/get_closest_atom(type, list, source)
 	var/closest_atom

@@ -9,7 +9,7 @@
 		S.update_icon()
 		S.power_change()
 
-	for(var/area/A in GLOB.the_station_areas)
+	for(var/area/A in GLOB.sortedAreas)
 		if(!A.requires_power || A.always_unpowered )
 			continue
 		if(GLOB.typecache_powerfailure_safe_areas[A.type])
@@ -43,7 +43,7 @@
 		S.output_attempt = TRUE
 		S.update_icon()
 		S.power_change()
-	for(var/area/A in GLOB.the_station_areas)
+	for(var/area/A in GLOB.sortedAreas)
 		if(!A.requires_power || A.always_unpowered)
 			continue
 		if(!istype(A, /area/shuttle))
