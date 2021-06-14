@@ -70,26 +70,27 @@ if grep -i '/obj/effect/mapping_helpers/custom_icon' _maps/**/*.dmm; then
     echo "Custom icon helper found. Please include dmis as standard assets instead for built-in maps."
     st=1
 fi;
-for json in _maps/*.json
-do
-    filename="_maps/$(jq -r '.map_path' $json)/$(jq -r '.map_file' $json)"
-	if [ "$(jq -r '.map_file|type' $json)" == "array" ]
-	then
-		# We've got a multi-z map, check each file in succession
-		for file in $(jq -r '.map_file[]' $json)
-		do
-			subpath="_maps/$(jq -r '.map_path' $json)/$file"
-			if [ ! -f $subpath ]
-			then
-				echo "found invalid file reference to $subpath in _maps/$json"
-				st=1
-			fi
-		done
-    elif [ ! -f "$filename" ]
-    then
-        echo "found invalid file reference to $filename in _maps/$json"
-        st=1
-    fi
-done
+# this check will return when I add json support for map templates
+#for json in _maps/*.json
+#do
+#    filename="_maps/$(jq -r '.map_path' $json)/$(jq -r '.map_file' $json)"
+#	if [ "$(jq -r '.map_file|type' $json)" == "array" ]
+#	then
+#		# We've got a multi-z map, check each file in succession
+#		for file in $(jq -r '.map_file[]' $json)
+#		do
+#			subpath="_maps/$(jq -r '.map_path' $json)/$file"
+#			if [ ! -f $subpath ]
+#			then
+#				echo "found invalid file reference to $subpath in _maps/$json"
+#				st=1
+#			fi
+#		done
+#    elif [ ! -f "$filename" ]
+#    then
+#        echo "found invalid file reference to $filename in _maps/$json"
+#        st=1
+#    fi
+#done
 
 exit $st

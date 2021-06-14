@@ -98,13 +98,6 @@
 "eL" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/shuttle/abandoned/engine)
-"eV" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden,
-/obj/effect/decal/cleanable/dirt/dust,
-/mob/living/simple_animal/hostile/hivebot,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/dark,
-/area/shuttle/abandoned/cargo)
 "fh" = (
 /obj/machinery/door/poddoor{
 	id = "whiteship_bridge"
@@ -158,13 +151,10 @@
 /area/shuttle/abandoned/engine)
 "hw" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/computer/camera_advanced/shuttle_docker/whiteship{
-	dir = 8;
-	view_range = 14;
-	x_offset = -4;
-	y_offset = -8
-	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/computer/autopilot{
+	dir = 8
+	},
 /turf/open/floor/plasteel/dark,
 /area/shuttle/abandoned/bridge)
 "hX" = (
@@ -176,14 +166,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel,
-/area/shuttle/abandoned/cargo)
-"iz" = (
-/obj/effect/turf_decal/box/corners{
-	dir = 1
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/mob/living/simple_animal/hostile/hivebot,
-/turf/open/floor/engine,
 /area/shuttle/abandoned/cargo)
 "iF" = (
 /obj/machinery/button/door{
@@ -284,7 +266,6 @@
 /area/shuttle/abandoned/engine)
 "kZ" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/mob/living/simple_animal/hostile/hivebot,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /obj/machinery/atmospherics/components/binary/pump{
@@ -528,21 +509,6 @@
 	},
 /turf/open/floor/plating,
 /area/shuttle/abandoned/engine)
-"ui" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/chair/comfy/shuttle{
-	dir = 4
-	},
-/obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/hivebot/strong,
-/turf/open/floor/plasteel/dark,
-/area/shuttle/abandoned/bridge)
-"vQ" = (
-/obj/effect/turf_decal/box/corners,
-/obj/effect/decal/cleanable/dirt/dust,
-/mob/living/simple_animal/hostile/hivebot,
-/turf/open/floor/engine,
-/area/shuttle/abandoned/cargo)
 "wl" = (
 /obj/machinery/button/door{
 	id = "pubbywspodne";
@@ -804,10 +770,10 @@
 /area/shuttle/abandoned/cargo)
 "JU" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/computer/shuttle/white_ship{
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/computer/helm{
 	dir = 8
 	},
-/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/dark,
 /area/shuttle/abandoned/bridge)
 "Ku" = (
@@ -927,14 +893,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating,
 /area/shuttle/abandoned/engine)
-"OZ" = (
-/obj/effect/turf_decal/box/corners{
-	dir = 8
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/mob/living/simple_animal/hostile/hivebot,
-/turf/open/floor/engine,
-/area/shuttle/abandoned/cargo)
 "Pa" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt,
@@ -1045,7 +1003,6 @@
 "Tp" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/hivebot,
 /obj/machinery/power/terminal{
 	dir = 8
 	},
@@ -1426,14 +1383,14 @@ iQ
 (11,1,1) = {"
 du
 Ku
-iz
+tE
 YF
 Mp
 Gh
 Hx
 BN
 tE
-OZ
+YF
 tX
 du
 "}
@@ -1514,7 +1471,7 @@ Zz
 Lg
 sx
 Ql
-eV
+GW
 nr
 WN
 Zz
@@ -1545,7 +1502,7 @@ Gh
 Hx
 ow
 Qe
-vQ
+LU
 tX
 du
 "}
@@ -1597,7 +1554,7 @@ jV
 If
 Sj
 Pa
-ui
+kw
 kw
 Pa
 cl

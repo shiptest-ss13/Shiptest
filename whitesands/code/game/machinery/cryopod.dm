@@ -205,6 +205,7 @@ GLOBAL_LIST_EMPTY(cryopod_computers)
 	return control_computer != null
 
 /obj/machinery/cryopod/JoinPlayerHere(mob/M, buckle)
+	. = ..()
 	close_machine(M, TRUE)
 
 /obj/machinery/cryopod/latejoin/Initialize()
