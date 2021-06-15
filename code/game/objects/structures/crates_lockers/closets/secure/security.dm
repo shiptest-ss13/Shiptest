@@ -112,6 +112,7 @@
 	new /obj/item/pinpointer/nuke(src)
 	new /obj/item/circuitboard/machine/techfab/department/security(src)
 	new /obj/item/storage/photo_album/HoS(src)
+	new /obj/item/gun_voucher //WS edit - gun gun gun gun gun gun gun
 
 /obj/structure/closet/secure_closet/warden
 	name = "\proper warden's locker"
@@ -139,6 +140,7 @@
 	new /obj/item/door_remote/head_of_security(src)
 	new /obj/item/gun/ballistic/shotgun/automatic/combat/compact(src)
 	new /obj/item/gun/ballistic/automatic/pistol/commander(src) //WS edit - free lethals
+	new /obj/item/gun_voucher //WS edit - gun gun gun gun gun gun gun
 
 /obj/structure/closet/secure_closet/security
 	name = "security officer's locker"
