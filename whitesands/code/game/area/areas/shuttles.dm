@@ -155,3 +155,12 @@
 	icon_state = "space_near"
 
 //diner end
+
+//pirate radio
+/area/shuttle/radio/ship
+	requires_power = FALSE
+
+/area/shuttle/radio/ship/main
+	name = "Pirate Radio Ship"
+	requires_power = FALSE
+	icon_state = "crew_quarters"
