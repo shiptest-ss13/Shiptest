@@ -7,6 +7,11 @@
 	e_cost = 830
 	select_name = "kill"
 
+/obj/item/ammo_casing/energy/laser/smg //WS edit: fun
+	projectile_type = /obj/projectile/beam/weak
+	e_cost = 800
+	select_name = "kill"
+
 /obj/item/ammo_casing/energy/lasergun/old
 	projectile_type = /obj/projectile/beam/laser
 	e_cost = 2000
@@ -25,12 +30,6 @@
 	pellets = 5
 	variance = 25
 	select_name = "scatter"
-
-/obj/item/ammo_casing/energy/laser/scatter/disabler
-	projectile_type = /obj/projectile/beam/disabler
-	pellets = 3
-	variance = 15
-	harmful = FALSE
 
 /obj/item/ammo_casing/energy/laser/heavy
 	projectile_type = /obj/projectile/beam/laser/heavylaser
