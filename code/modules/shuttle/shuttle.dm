@@ -318,6 +318,11 @@
 	if(name == "shuttle")
 		name = "shuttle[SSshuttle.mobile.len]"
 
+	if(!mapload) // If maploaded, will be called in code\datums\shuttles.dm
+		load()
+
+
+/obj/docking_port/mobile/proc/load()
 	shuttle_areas = list()
 	var/list/all_turfs = return_ordered_turfs(x, y, z, dir)
 	for(var/i in 1 to all_turfs.len)
