@@ -512,9 +512,26 @@ Turf and target are separate in case you want to teleport some distance from a t
 				areas += V
 	return areas
 
-//Takes: Area type as text string or as typepath OR an instance of the area.
-//Returns: A list of all turfs in areas of that type of that type in the world.
-/proc/get_area_turfs(areatype, target_z = 0, subtypes=FALSE)
+/**
+ * Returns a list of all turfs in the provided area instance.
+ *
+ * Arguments:
+ * * A - The area to get all the turfs from
+ */
+/proc/get_area_turfs(area/A)
+	. = list()
+	for(var/turf/T in A)
+		. += T
+
+/**
+ * Returns a list of all turfs in ALL areas of that type in the world.
+ *
+ * Arguments:
+ * * areatype - The type of area to search for as a text string or typepath or instance
+ * * target_z - The z level to search for areas on
+ * * subtypes - Whether or not areas of a subtype type are included in the results
+ */
+/proc/get_areatype_turfs(areatype, target_z = 0, subtypes=FALSE)
 	if(istext(areatype))
 		areatype = text2path(areatype)
 	else if(isarea(areatype))

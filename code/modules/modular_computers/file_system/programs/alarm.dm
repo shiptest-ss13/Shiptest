@@ -37,8 +37,6 @@
 	return data
 
 /datum/computer_file/program/alarm_monitor/proc/triggerAlarm(class, area/A, O, obj/source)
-	return // TODO: Does not work.
-
 	var/list/L = alarms[class]
 	for(var/I in L)
 		if (I == A.name)

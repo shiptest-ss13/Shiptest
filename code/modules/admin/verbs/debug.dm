@@ -341,7 +341,7 @@ But you can call procs that are of type /mob/living/carbon/human/proc/ for that 
 
 	for(var/area/A in world)
 		if(on_station)
-			var/list/area_turfs = get_area_turfs(A.type)
+			var/list/area_turfs = get_area_turfs(A)
 			if (!length(area_turfs))
 				continue
 			var/turf/picked = pick(area_turfs)
