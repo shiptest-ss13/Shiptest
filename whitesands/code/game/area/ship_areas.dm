@@ -66,7 +66,6 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 // SHIP AREAS //
 
 /area/ship
-	requires_power = FALSE
 	dynamic_lighting = DYNAMIC_LIGHTING_FORCED
 	has_gravity = STANDARD_GRAVITY
 	always_unpowered = FALSE
@@ -115,7 +114,6 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	lighting_colour_tube = "#ffce99"
 	lighting_colour_bulb = "#ffdbb4"
 	lighting_brightness_tube = 6
-	sound_environment = SOUND_AREA_STANDARD_STATION
 
 /area/ship/crew/cryo
 	name = "Cryopod Room"
@@ -171,6 +169,7 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 /area/ship/crew/office
 	name = "Office"
 	icon_state = "vacant_office"
+	sound_environment = SOUND_AREA_WOODFLOOR
 
 /area/ship/crew/janitor
 	name = "Custodial Closet"
@@ -185,7 +184,6 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	ambientsounds = MEDICAL
 	lighting_colour_tube = "#e7f8ff"
 	lighting_colour_bulb = "#d5f2ff"
-	sound_environment = SOUND_AREA_STANDARD_STATION
 
 /area/ship/medical/surgery
 	name = "Surgical Bay"
@@ -197,7 +195,6 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	icon_state = "toxlab"
 	lighting_colour_tube = "#f0fbff"
 	lighting_colour_bulb = "#e4f7ff"
-	sound_environment = SOUND_AREA_STANDARD_STATION
 
 /area/ship/science/robotics
 	name = "Robotics"
@@ -230,7 +227,6 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	icon_state = "tcomsatcham"
 	lighting_colour_tube = "#e2feff"
 	lighting_colour_bulb = "#d5fcff"
-	sound_environment = SOUND_AREA_STANDARD_STATION
 
 /area/ship/engineering/engine
 	name = "Engine Room"
@@ -243,7 +239,6 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	ambientsounds = HIGHSEC
 	lighting_colour_tube = "#ffeee2"
 	lighting_colour_bulb = "#ffdfca"
-	sound_environment = SOUND_AREA_STANDARD_STATION
 
 /area/ship/security/prison
 	name = "Brig Cells"
@@ -271,6 +266,7 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	lighting_colour_tube = "#ffce99"
 	lighting_colour_bulb = "#ffdbb4"
 	lighting_brightness_tube = 7
+	sound_environment = SOUND_AREA_TUNNEL_ENCLOSED
 
 /area/ship/hallway/aft
 	name = "Aft Hallway"
