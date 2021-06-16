@@ -680,25 +680,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/shuttle/mining/ship/crew)
-"hN" = (
-/obj/structure/closet/secure_closet{
-	anchored = 1;
-	icon_state = "syndicate";
-	name = "armor_locker";
-	req_access = list(3,150)
-	},
-/obj/item/clothing/head/helmet/swat,
-/obj/item/clothing/head/helmet/swat,
-/obj/item/clothing/head/helmet/swat,
-/obj/item/clothing/suit/armor/bulletproof,
-/obj/item/clothing/suit/armor/bulletproof,
-/obj/item/clothing/suit/armor/bulletproof,
-/obj/item/clothing/suit/space/hardsuit/syndi,
-/obj/item/clothing/suit/space/hardsuit/syndi,
-/obj/item/clothing/suit/space/hardsuit/syndi,
-/obj/effect/turf_decal/bot_white/left,
-/turf/open/floor/mineral/plastitanium/red,
-/area/shuttle/mining/ship/crew)
 "hX" = (
 /obj/structure/table/reinforced,
 /obj/item/geiger_counter,
@@ -767,46 +748,8 @@
 /turf/open/floor/plasteel/dark,
 /area/shuttle/mining/ship/crew)
 "iq" = (
-/obj/structure/closet/secure_closet{
-	anchored = 1;
-	icon_state = "syndicate";
-	name = "ballistics locker";
-	req_access = list(3,150)
-	},
-/obj/item/storage/box/rubbershot,
-/obj/item/storage/box/rubbershot,
-/obj/item/storage/box/rubbershot,
-/obj/item/storage/box/rubbershot,
-/obj/item/stock_parts/cell/gun,
-/obj/item/stock_parts/cell/gun,
-/obj/item/ammo_box/magazine/smgm45,
-/obj/item/ammo_box/magazine/smgm45,
-/obj/item/ammo_box/magazine/smgm45,
-/obj/item/ammo_box/c45,
-/obj/item/ammo_box/c9mm{
-	ammo_type = /obj/item/ammo_casing/a556;
-	name = "ammo box (5.56mm)"
-	},
-/obj/item/ammo_box/magazine/smgm45,
-/obj/item/ammo_box/magazine/m12g/slug,
-/obj/item/storage/box/lethalshot,
-/obj/item/storage/box/lethalshot,
-/obj/item/ammo_box/magazine/m12g,
-/obj/item/ammo_box/magazine/m12g,
-/obj/item/ammo_box/c10mm,
-/obj/item/ammo_casing/caseless/rocket/hedp,
-/obj/item/ammo_casing/caseless/rocket,
-/obj/item/ammo_casing/caseless/rocket,
-/obj/item/ammo_casing/caseless/rocket/hedp,
-/obj/item/ammo_box/magazine/sniper_rounds,
-/obj/item/ammo_box/magazine/sniper_rounds,
-/obj/item/ammo_box/magazine/ebr,
-/obj/item/ammo_box/magazine/ebr,
-/obj/item/ammo_box/magazine/ebr,
-/obj/item/ammo_box/magazine/ebr,
-/obj/item/ammo_box/magazine/ebr,
-/obj/item/ammo_box/magazine/ebr,
-/obj/effect/turf_decal/bot_white/right,
+/obj/machinery/suit_storage_unit/syndicate,
+/obj/effect/turf_decal/bot_white,
 /turf/open/floor/mineral/plastitanium/red,
 /area/shuttle/mining/ship/crew)
 "iA" = (
@@ -853,8 +796,11 @@
 /turf/open/floor/carpet/nanoweave/red,
 /area/shuttle/mining/ship/crew)
 "ji" = (
-/obj/structure/bed,
 /obj/item/bedsheet/syndie,
+/obj/structure/bed,
+/obj/effect/mob_spawn/human/syndicate/battlecruiser/captain/mini{
+	dir = 8
+	},
 /turf/open/floor/carpet/nanoweave/red,
 /area/shuttle/mining/ship/crew)
 "jq" = (
@@ -1153,6 +1099,10 @@
 	},
 /obj/item/stack/sheet/mineral/plasma/five,
 /turf/open/floor/plating,
+/area/shuttle/mining/ship/engine)
+"ni" = (
+/obj/effect/mob_spawn/human/syndicate,
+/turf/open/floor/plasteel,
 /area/shuttle/mining/ship/engine)
 "nr" = (
 /obj/machinery/atmospherics/pipe/simple/orange/visible{
@@ -1595,7 +1545,7 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/siphon/atmos/toxin_output{
 	dir = 1
 	},
-/turf/open/floor/engine/n2,
+/turf/open/floor/engine/plasma,
 /area/shuttle/mining/ship/engine)
 "sT" = (
 /obj/machinery/atmospherics/pipe/simple/green/visible{
@@ -2150,27 +2100,13 @@
 /turf/open/floor/plating,
 /area/shuttle/mining/ship/bridge)
 "xC" = (
-/obj/structure/table/reinforced,
-/obj/structure/window/reinforced/spawner{
-	dir = 4
-	},
-/obj/item/ammo_box/magazine/m12g/slug,
-/obj/item/gun/ballistic/shotgun/bulldog{
-	spawnwithmagazine = FALSE
-	},
-/obj/machinery/door/window{
-	dir = 1;
-	req_access_txt = "150"
-	},
 /obj/machinery/light,
-/turf/open/floor/carpet/nanoweave/red,
+/turf/open/floor/mineral/plastitanium/red,
 /area/shuttle/mining/ship/crew)
 "yk" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 8
 	},
-/obj/machinery/suit_storage_unit/syndicate,
-/obj/effect/turf_decal/bot_white,
 /turf/open/floor/mineral/plastitanium/red,
 /area/shuttle/mining/ship/crew)
 "yp" = (
@@ -2879,13 +2815,14 @@
 /obj/structure/window/reinforced/spawner{
 	dir = 4
 	},
-/obj/item/gun/ballistic/rocketlauncher{
-	spawnwithmagazine = 0
-	},
 /obj/machinery/door/window{
 	dir = 1;
 	req_access_txt = "150"
 	},
+/obj/item/gun/ballistic/shotgun/bulldog{
+	spawnwithmagazine = FALSE
+	},
+/obj/item/ammo_box/magazine/m12g/stun,
 /turf/open/floor/carpet/nanoweave/red,
 /area/shuttle/mining/ship/engine)
 "Gl" = (
@@ -3016,6 +2953,9 @@
 /obj/item/bedsheet/black,
 /obj/machinery/door/window{
 	dir = 4
+	},
+/obj/effect/mob_spawn/human/syndicate/battlecruiser/medical/mini{
+	dir = 8
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/shuttle/mining/ship/crew)
@@ -3178,6 +3118,9 @@
 /obj/machinery/door/window{
 	dir = 8
 	},
+/obj/effect/mob_spawn/human/syndicate/battlecruiser/mini{
+	dir = 4
+	},
 /turf/open/floor/mineral/plastitanium,
 /area/shuttle/mining/ship/crew)
 "Jk" = (
@@ -3273,7 +3216,6 @@
 /turf/open/floor/plasteel/dark,
 /area/shuttle/mining/ship/cargo)
 "Kk" = (
-/obj/machinery/cryopod/latejoin,
 /obj/machinery/airalarm/directional/north,
 /turf/open/floor/mineral/plastitanium,
 /area/shuttle/mining/ship/crew)
@@ -3391,9 +3333,21 @@
 /turf/open/floor/plasteel/dark,
 /area/shuttle/mining/ship/cargo)
 "Li" = (
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
-/turf/open/floor/plasteel,
-/area/shuttle/mining/ship/engine)
+/obj/structure/closet/secure_closet{
+	anchored = 1;
+	icon_state = "syndicate";
+	name = "armor_locker";
+	req_access = list(3,150)
+	},
+/obj/item/clothing/head/helmet/swat,
+/obj/item/clothing/head/helmet/swat,
+/obj/item/clothing/head/helmet/swat,
+/obj/item/clothing/suit/armor/bulletproof,
+/obj/item/clothing/suit/armor/bulletproof,
+/obj/item/clothing/suit/armor/bulletproof,
+/obj/effect/turf_decal/bot_white/left,
+/turf/open/floor/mineral/plastitanium/red,
+/area/shuttle/mining/ship/crew)
 "Ln" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
@@ -3419,14 +3373,20 @@
 	},
 /obj/structure/window/plasma/reinforced,
 /obj/machinery/atmospherics/components/unary/outlet_injector/atmos/toxin_input,
-/turf/open/floor/engine/n2,
+/turf/open/floor/engine/plasma,
 /area/shuttle/mining/ship/engine)
 "LB" = (
 /turf/open/floor/plasteel/dark,
 /area/shuttle/mining/ship/crew)
 "LD" = (
-/obj/machinery/cryopod/latejoin{
-	dir = 1
+/obj/structure/window/reinforced,
+/obj/structure/bed,
+/obj/item/bedsheet/black,
+/obj/machinery/door/window{
+	dir = 4
+	},
+/obj/effect/mob_spawn/human/syndicate/battlecruiser/assault/mini{
+	dir = 8
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/shuttle/mining/ship/crew)
@@ -3567,6 +3527,9 @@
 /obj/structure/bed,
 /obj/item/bedsheet/black,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 4
+	},
+/obj/effect/mob_spawn/human/syndicate/battlecruiser/engineering/mini{
 	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
@@ -3859,6 +3822,9 @@
 "Pq" = (
 /obj/structure/bed,
 /obj/item/bedsheet/black,
+/obj/effect/mob_spawn/human/syndicate/battlecruiser/engineering/mini{
+	dir = 4
+	},
 /turf/open/floor/plasteel/dark,
 /area/shuttle/mining/ship/crew)
 "Pu" = (
@@ -4090,8 +4056,46 @@
 /turf/open/floor/plastic,
 /area/shuttle/mining/ship/infirmary)
 "RH" = (
-/obj/machinery/suit_storage_unit/syndicate,
-/obj/effect/turf_decal/bot_white,
+/obj/structure/closet/secure_closet{
+	anchored = 1;
+	icon_state = "syndicate";
+	name = "ballistics locker";
+	req_access = list(3,150)
+	},
+/obj/item/storage/box/rubbershot,
+/obj/item/storage/box/rubbershot,
+/obj/item/storage/box/rubbershot,
+/obj/item/storage/box/rubbershot,
+/obj/item/stock_parts/cell/gun,
+/obj/item/stock_parts/cell/gun,
+/obj/item/ammo_box/magazine/smgm45,
+/obj/item/ammo_box/magazine/smgm45,
+/obj/item/ammo_box/magazine/smgm45,
+/obj/item/ammo_box/c45,
+/obj/item/ammo_box/c9mm{
+	ammo_type = /obj/item/ammo_casing/a556;
+	name = "ammo box (5.56mm)"
+	},
+/obj/item/ammo_box/magazine/smgm45,
+/obj/item/ammo_box/magazine/m12g/slug,
+/obj/item/storage/box/lethalshot,
+/obj/item/storage/box/lethalshot,
+/obj/item/ammo_box/magazine/m12g,
+/obj/item/ammo_box/magazine/m12g,
+/obj/item/ammo_box/c10mm,
+/obj/item/ammo_casing/caseless/rocket/hedp,
+/obj/item/ammo_casing/caseless/rocket,
+/obj/item/ammo_casing/caseless/rocket,
+/obj/item/ammo_casing/caseless/rocket/hedp,
+/obj/item/ammo_box/magazine/sniper_rounds,
+/obj/item/ammo_box/magazine/sniper_rounds,
+/obj/item/ammo_box/magazine/ebr,
+/obj/item/ammo_box/magazine/ebr,
+/obj/item/ammo_box/magazine/ebr,
+/obj/item/ammo_box/magazine/ebr,
+/obj/item/ammo_box/magazine/ebr,
+/obj/item/ammo_box/magazine/ebr,
+/obj/effect/turf_decal/bot_white/right,
 /turf/open/floor/mineral/plastitanium/red,
 /area/shuttle/mining/ship/crew)
 "RN" = (
@@ -4238,6 +4242,9 @@
 /obj/machinery/door/window{
 	dir = 8;
 	req_access_txt = "150"
+	},
+/obj/effect/mob_spawn/human/syndicate/battlecruiser/mini{
+	dir = 4
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/shuttle/mining/ship/crew)
@@ -4500,7 +4507,7 @@
 	spawnwithmagazine = 0
 	},
 /turf/open/floor/carpet/nanoweave/red,
-/area/shuttle/mining/ship/crew)
+/area/shuttle/mining/ship/engine)
 "VD" = (
 /turf/open/floor/carpet/nanoweave/red,
 /area/shuttle/mining/ship/crew)
@@ -4869,6 +4876,9 @@
 /obj/structure/window/reinforced,
 /obj/machinery/door/window{
 	dir = 4
+	},
+/obj/effect/mob_spawn/human/syndicate/battlecruiser/mini{
+	dir = 8
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/shuttle/mining/ship/crew)
@@ -5558,7 +5568,7 @@ GS
 GS
 BF
 ls
-Xm
+ni
 Hv
 Qo
 vi
@@ -5805,7 +5815,7 @@ YK
 ZF
 Hk
 Hk
-Hk
+LD
 YZ
 ZF
 Gx
@@ -5962,7 +5972,7 @@ Zv
 Iz
 Lz
 ZF
-LD
+Qn
 QO
 Qn
 Qn
@@ -6397,7 +6407,7 @@ MF
 al
 xC
 YM
-Li
+YM
 Xm
 ai
 UA
@@ -6447,9 +6457,9 @@ Gm
 VD
 uL
 Wh
+Li
 MF
 VB
-YM
 YM
 YM
 YM
@@ -6500,7 +6510,7 @@ gB
 VJ
 rj
 hf
-MF
+RH
 MF
 le
 YM
@@ -6553,7 +6563,7 @@ Zs
 VD
 fK
 yk
-hN
+iq
 MF
 wi
 YM
@@ -6605,8 +6615,8 @@ ZF
 jg
 aj
 AH
-RH
 MF
+iq
 MF
 EC
 YM
@@ -6658,7 +6668,7 @@ ZF
 wH
 bH
 ZF
-RH
+MF
 iq
 MF
 Ge
