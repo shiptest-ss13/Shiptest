@@ -1025,18 +1025,6 @@
 	},
 /turf/open/floor/plating,
 /area/shuttle/mining/ship/engine)
-"lS" = (
-/obj/structure/window/reinforced,
-/obj/structure/bed,
-/obj/item/bedsheet/black,
-/obj/machinery/door/window{
-	dir = 4
-	},
-/obj/effect/mob_spawn/human/syndicate/battlecruiser/assault/mini{
-	dir = 8
-	},
-/turf/open/floor/mineral/plastitanium,
-/area/shuttle/mining/ship/crew)
 "lV" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 8
@@ -1113,9 +1101,12 @@
 /turf/open/floor/plating,
 /area/shuttle/mining/ship/engine)
 "ni" = (
-/obj/effect/mob_spawn/human/syndicate,
-/turf/open/floor/plasteel,
-/area/shuttle/mining/ship/engine)
+/obj/item/clothing/under/syndicate/intern,
+/obj/structure/closet/secure_closet/engineering_personal{
+	req_access = list(150)
+	},
+/turf/open/floor/plasteel/dark,
+/area/shuttle/mining/ship/crew)
 "nr" = (
 /obj/machinery/atmospherics/pipe/simple/orange/visible{
 	dir = 9
@@ -3114,6 +3105,18 @@
 /obj/machinery/atmospherics/pipe/simple/cyan/visible,
 /turf/open/floor/plating,
 /area/shuttle/mining/ship/engine)
+"IS" = (
+/obj/structure/window/reinforced,
+/obj/structure/bed,
+/obj/item/bedsheet/black,
+/obj/machinery/door/window{
+	dir = 4
+	},
+/obj/effect/mob_spawn/human/syndicate/battlecruiser/assault/mini{
+	dir = 8
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/shuttle/mining/ship/crew)
 "Jh" = (
 /obj/structure/window/reinforced/spawner,
 /obj/structure/window/reinforced/spawner{
@@ -3395,11 +3398,12 @@
 /turf/open/floor/plasteel/dark,
 /area/shuttle/mining/ship/crew)
 "LD" = (
-/obj/item/clothing/under/syndicate/intern,
-/obj/structure/closet/secure_closet/engineering_personal{
+/obj/structure/window/reinforced,
+/obj/structure/closet/secure_closet/medical3{
 	req_access = list(150)
 	},
-/turf/open/floor/plasteel/dark,
+/obj/item/clothing/under/syndicate/intern,
+/turf/open/floor/carpet/nanoweave/red,
 /area/shuttle/mining/ship/crew)
 "LI" = (
 /obj/effect/turf_decal/loading_area/red,
@@ -4898,14 +4902,6 @@
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/shuttle/mining/ship/crew)
-"Zb" = (
-/obj/structure/window/reinforced,
-/obj/structure/closet/secure_closet/medical3{
-	req_access = list(150)
-	},
-/obj/item/clothing/under/syndicate/intern,
-/turf/open/floor/carpet/nanoweave/red,
-/area/shuttle/mining/ship/crew)
 "Zc" = (
 /obj/structure/closet/secure_closet/brig,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
@@ -5573,7 +5569,7 @@ BT
 gA
 ZF
 he
-LD
+ni
 ZF
 WO
 pp
@@ -5592,7 +5588,7 @@ GS
 GS
 BF
 ls
-ni
+Xm
 Hv
 Qo
 vi
@@ -5785,7 +5781,7 @@ dK
 YK
 ZF
 KZ
-Zb
+LD
 EZ
 TO
 ZF
@@ -5839,7 +5835,7 @@ YK
 ZF
 Hk
 Hk
-lS
+IS
 YZ
 ZF
 Gx
