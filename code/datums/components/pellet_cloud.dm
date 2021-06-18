@@ -20,7 +20,7 @@
 	/// What's the projectile path of the shrapnel we're shooting?
 	var/projectile_type
 
-	/// How many shrapnel projectiles are we responsible fr tracking? May be reduced for grenades if someone dives on top of it. Defined by ammo casing for casings, derived from magnitude otherwise
+	/// How many shrapnel projectiles are we responsible for tracking? May be reduced for grenades if someone dives on top of it. Defined by ammo casing for casings, derived from magnitude otherwise
 	var/num_pellets
 	/// For grenades/landmines, how big is the radius of turfs we're targeting? Note this does not effect the projectiles range, only how many we generate
 	var/radius = 4
