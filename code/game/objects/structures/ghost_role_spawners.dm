@@ -514,7 +514,7 @@
 	glasses = /obj/item/clothing/glasses/meson/night
 	r_pocket = /obj/item/analyzer
 	l_pocket = /obj/item/gun/ballistic/automatic/pistol
-	belt = /obj/item/storage/belt/utility/syndicate/sbc
+	belt = /obj/item/storage/belt/utility/syndicate
 	back = /obj/item/storage/backpack/industrial
 	backpack_contents = list(/obj/item/storage/box/survival/syndie=1, /obj/item/construction/rcd/combat, /obj/item/rcd_ammo/large, /obj/item/stack/sheet/mineral/plastitanium=50)
 
@@ -530,14 +530,14 @@
 
 /datum/outfit/syndicate_empty/sbc/med
 	name = "Syndicate Battlecruiser Ship Medical Doctor"
-	uniform = /obj/item/clothing/under/syndicate/medic
+	uniform = /obj/item/clothing/under/syndicate/intern
 	glasses = /obj/item/clothing/glasses/hud/health/night
 	l_pocket = /obj/item/gun/ballistic/automatic/pistol
 	r_pocket = /obj/item/kitchen/knife/combat/survival
 	belt = /obj/item/defibrillator/compact/combat/loaded
 	back = /obj/item/storage/backpack/duffelbag/syndie/med
 	r_hand = /obj/item/gun/medbeam
-	backpack_contents = list(/obj/item/storage/box/survival/syndie=1, /obj/item/storage/firstaid/medical, /obj/item/storage/firstaid/tactical, /obj/item/storage/box/medipens/syndi=3)
+	backpack_contents = list(/obj/item/storage/box/survival/syndie=1, /obj/item/storage/firstaid/medical, /obj/item/storage/firstaid/tactical, /obj/item/storage/box/medipens=3)
 
 /obj/effect/mob_spawn/human/syndicate/battlecruiser/assault
 	name = "Syndicate Battlecruiser Assault Operative"
@@ -552,7 +552,7 @@
 /datum/outfit/syndicate_empty/sbc/assault
 	name = "Syndicate Battlecruiser Assault Operative"
 	uniform = /obj/item/clothing/under/syndicate/combat
-	l_pocket = /obj/item/ammo_box/magazine/m9mm
+//	l_pocket = /obj/item/ammo_box/magazine/m9mm
 	r_pocket = /obj/item/kitchen/knife/combat/survival
 	glasses = /obj/item/clothing/glasses/night
 	belt = /obj/item/storage/belt/military
@@ -580,7 +580,7 @@
 	suit_store = /obj/item/gun/ballistic/revolver/mateba
 	head = /obj/item/clothing/head/hos/syndicate
 	mask = /obj/item/clothing/mask/cigarette/cigar/havana
-	glasses = /obj/item/clothing/glasses/hud/eyepatch/admiral
+	glasses = /obj/item/clothing/glasses/hud/security/sunglasses/eyepatch
 
 //AND SINCE IM TOO LAZY TO MAKE ANOTHER FILE
 /obj/effect/mob_spawn/human/syndicate/battlecruiser/captain/mini
@@ -635,7 +635,7 @@
 	glasses = /obj/item/clothing/glasses/hud/health/prescription
 	l_pocket = /obj/item/gun/energy/e_gun/mini
 	r_hand = null
-	backpack_contents = list(/obj/item/storage/box/survival/syndie=1, /obj/item/storage/firstaid/medical, /obj/item/storage/firstaid/tactical, /obj/item/storage/box/medipens/syndi=3)
+	backpack_contents = list(/obj/item/storage/box/survival/syndie=1, /obj/item/storage/firstaid/medical, /obj/item/storage/firstaid/tactical, /obj/item/storage/box/medipens=3)
 
 /datum/outfit/syndicate_empty/sbc/mini
 	name = "Ministarfury Trooper"
