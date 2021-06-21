@@ -155,3 +155,41 @@
 	icon_state = "space_near"
 
 //diner end
+
+// Moth ship BEGIN
+
+/area/shuttle/moth/ship
+	name = "Mothship"
+	requires_power = TRUE
+
+/area/shuttle/moth/ship/smchamber
+	name = "Supermatter Chamber"
+	icon_state = "atmos_engine"
+
+/area/shuttle/moth/ship/outerchamber
+	name = "Supermatter Outer Area"
+	icon_state = "engine"
+
+/area/shuttle/moth/ship/leftwing
+	name = "Left Wing"
+	icon_state = "crew_quarters"
+
+/area/shuttle/moth/ship/rightwing
+	name = "Right Wing"
+	icon_state = "engine_smes"
+
+/area/shuttle/moth/ship/mainarea
+	name = "Main Construction Bay"
+	icon_state = "cargo_bay"
+
+/area/shuttle/moth/ship/external
+	name = "Mothship External"
+	requires_power = FALSE
+	dynamic_lighting = DYNAMIC_LIGHTING_IFSTARLIGHT
+	icon_state = "space_near"
+
+/area/shuttle/moth/ship/atmos
+    name = "Atmospherics"
+    icon_state = "atmos"
+
+//MOTH done
