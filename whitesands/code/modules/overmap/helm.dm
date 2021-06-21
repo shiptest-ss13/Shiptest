@@ -157,6 +157,7 @@
 		if("reload_engines")
 			S.refresh_engines()
 		if("rename_ship")
+			priority_announce("The [S.name] has been renamed to the [params["newName"]].", "Docking Announcement", sender_override = params["newName"], zlevel = S.shuttle.get_virtual_z_level())
 			S.name = params["newName"]
 			S.shuttle.name = params["newName"]
 			update_static_data()
