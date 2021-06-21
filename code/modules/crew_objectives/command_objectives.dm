@@ -26,7 +26,7 @@
 
 /datum/objective/crew/downwiththestation/check_completion()
 	if(owner && owner.current)
-		if(istype(get_area(owner.current), /area/bridge))
+		if(istype(get_area(owner.current), /area/ship/bridge))
 			return TRUE
 	return FALSE
 

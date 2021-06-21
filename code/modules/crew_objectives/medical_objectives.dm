@@ -1,16 +1,5 @@
 /*				MEDICAL OBJECTIVES				*/
 
-/datum/objective/crew/morgue //Ported from old Hippie
-	explanation_text = "Ensure there are no corpses on the station outside of the morgue when the shift ends."
-	jobs = "chiefmedicalofficer,geneticist,medicaldoctor"
-
-/datum/objective/crew/morgue/check_completion()
-	for(var/mob/living/carbon/human/H in GLOB.mob_list)
-		if(H.stat == DEAD && (H.z in SSmapping.levels_by_trait(ZTRAIT_STATION)))
-			if(get_area(H) != /area/medical/morgue)
-				return FALSE
-	return TRUE
-
 /datum/objective/crew/chems //Ported from old Hippie
 	var/targetchem = "none"
 	var/datum/reagent/chempath

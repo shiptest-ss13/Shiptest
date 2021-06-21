@@ -221,7 +221,7 @@ GLOBAL_LIST_EMPTY(custom_shuttle_machines)		//Machines that require updating (He
 	if(!loggedTurfs)
 		return FALSE
 	//Create the new area
-	var/area/shuttle/custom/powered/newS
+	var/area/ship/newS
 	var/area/oldA = loggedOldArea
 	var/str = stripped_input(user, "Shuttle Name:", "Blueprint Editing", "", MAX_NAME_LEN)
 	if(!str || !length(str))
@@ -229,7 +229,7 @@ GLOBAL_LIST_EMPTY(custom_shuttle_machines)		//Machines that require updating (He
 	if(length(str) > 50)
 		to_chat(user, "<span class='warning'>The provided ship name is too long, blares the [src]</span>")
 		return FALSE
-	newS = new /area/shuttle/custom/powered()
+	newS = new /area/ship()
 	newS.setup(str)
 	newS.set_dynamic_lighting()
 	//Shuttles always have gravity

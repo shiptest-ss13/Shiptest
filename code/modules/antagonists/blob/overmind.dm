@@ -122,7 +122,7 @@ GLOBAL_LIST_EMPTY(blob_nodes)
 
 	if(!victory_in_progress && max_count < blobs_legit.len)
 		max_count = blobs_legit.len
-		
+
 	if((world.time >= announcement_time || blobs_legit.len >= announcement_size) && !has_announced)
 		priority_announce("Confirmed outbreak of level 5 biohazard aboard [station_name()]. All personnel must contain the outbreak.", "Biohazard Alert", 'sound/ai/outbreak5.ogg')
 		has_announced = TRUE
@@ -156,8 +156,6 @@ GLOBAL_LIST_EMPTY(blob_nodes)
 			L.fully_heal(admin_revive = FALSE)
 
 		for(var/area/A in GLOB.sortedAreas)
-			if(!(A.type in GLOB.the_station_areas))
-				continue
 			if(!(A.area_flags & BLOBS_ALLOWED))
 				continue
 			A.color = blobstrain.color

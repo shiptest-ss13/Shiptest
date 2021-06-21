@@ -17,20 +17,15 @@
 	if(!allowed_areas)
 		//Places that shouldn't explode
 		var/list/safe_area_types = typecacheof(list(
-		/area/ai_monitored/turret_protected/ai,
-		/area/ai_monitored/turret_protected/ai_upload,
-		/area/engine,
-		/area/solar,
-		/area/holodeck,
-		/area/shuttle,
-		/area/maintenance,
-		/area/science/test_area)
+		/area/ship/science/ai_chamber,
+		/area/ship/engineering,
+		/area/ship/maintenance)
 		)
 
 		//Subtypes from the above that actually should explode.
-		var/list/unsafe_area_subtypes = typecacheof(list(/area/engine/break_room))
+		var/list/unsafe_area_subtypes = typecacheof(list())
 
-		allowed_areas = make_associative(GLOB.the_station_areas) - safe_area_types + unsafe_area_subtypes
+		allowed_areas = make_associative(typesof(/area/ship)) - safe_area_types + unsafe_area_subtypes
 	var/list/possible_areas = typecache_filter_list(GLOB.sortedAreas,allowed_areas)
 	if (length(possible_areas))
 		return pick(possible_areas)
@@ -39,7 +34,7 @@
 	impact_area = findEventArea()
 	if(!impact_area)
 		CRASH("No valid areas for anomaly found.")
-	var/list/turf_test = get_area_turfs(impact_area)
+	var/list/turf_test = get_areatype_turfs(impact_area)
 	if(!turf_test.len)
 		CRASH("Anomaly : No valid turfs found for [impact_area] - [impact_area.type]")
 
@@ -47,7 +42,7 @@
 	priority_announce("Localized energetic flux wave detected on long range scanners. Expected location of impact: [impact_area.name].", "Anomaly Alert")
 
 /datum/round_event/anomaly/start()
-	var/turf/T = pick(get_area_turfs(impact_area))
+	var/turf/T = pick(get_areatype_turfs(impact_area))
 	var/newAnomaly
 	if(T)
 		newAnomaly = new anomaly_path(T)
