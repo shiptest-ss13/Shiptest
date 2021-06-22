@@ -21,12 +21,12 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/port)
 "ax" = (
-/obj/machinery/airalarm/all_access{
-	dir = 1;
-	pixel_y = -24
-	},
 /obj/machinery/light/small,
 /obj/effect/turf_decal/stripes/corner,
+/obj/machinery/button/massdriver{
+	id = "ejected";
+	pixel_y = -32
+	},
 /turf/open/floor/plasteel,
 /area/ship/cargo)
 "az" = (
@@ -322,6 +322,9 @@
 	id = "amogusdoors";
 	name = "Blast Door Control";
 	pixel_x = 24
+	},
+/obj/machinery/mass_driver{
+	id = "ejected"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
@@ -1027,6 +1030,10 @@
 /obj/item/storage/bag/ore,
 /obj/item/storage/bag/ore,
 /obj/item/storage/bag/ore,
+/obj/machinery/airalarm/all_access{
+	dir = 4;
+	pixel_x = -24
+	},
 /turf/open/floor/plasteel,
 /area/ship/cargo)
 "pN" = (
@@ -2103,6 +2110,7 @@
 	pixel_x = -24
 	},
 /obj/machinery/door/window/eastright,
+/obj/item/defibrillator,
 /obj/item/storage/firstaid/fire,
 /obj/item/storage/firstaid/regular,
 /turf/open/floor/plasteel/dark,
