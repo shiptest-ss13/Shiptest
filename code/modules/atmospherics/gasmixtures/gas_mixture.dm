@@ -72,16 +72,16 @@ GLOBAL_LIST_INIT(auxtools_atmos_initialized, FALSE)
 		var/list/gases = get_gases()
 		for(var/gas in gases)
 			gases[gas] = get_moles(gas)
-		var/gastype = input(usr, "What kind of gas?", "Set Gas") as null|anything in subtypesof(/datum/gas)
-		if(!ispath(gastype, /datum/gas))
+		var/gasid = input(usr, "What kind of gas?", "Set Gas") as null|anything in GLOB.gas_data.ids
+		if(!gasid)
 			return
-		var/amount = input(usr, "Input amount", "Set Gas", gases[gastype] || 0) as num|null
+		var/amount = input(usr, "Input amount", "Set Gas", gases[gasid] || 0) as num|null
 		if(!isnum(amount))
 			return
 		amount = max(0, amount)
-		log_admin("[key_name(usr)] modified gas mixture [REF(src)]: Set gas type [gastype] to [amount] moles.")
-		message_admins("[key_name(usr)] modified gas mixture [REF(src)]: Set gas type [gastype] to [amount] moles.")
-		set_moles(gastype, amount)
+		log_admin("[key_name(usr)] modified gas mixture [REF(src)]: Set gas [gasid] to [amount] moles.")
+		message_admins("[key_name(usr)] modified gas mixture [REF(src)]: Set gas [gasid] to [amount] moles.")
+		set_moles(gasid, amount)
 	if(href_list[VV_HK_SET_TEMPERATURE])
 		var/temp = input(usr, "Set the temperature of this mixture to?", "Set Temperature", return_temperature()) as num|null
 		if(!isnum(temp))
