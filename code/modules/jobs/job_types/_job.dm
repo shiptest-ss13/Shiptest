@@ -83,12 +83,6 @@
 		spawn_positions = jobs_changes["spawn_positions"]
 	if(isnum(jobs_changes["total_positions"]))
 		total_positions = jobs_changes["total_positions"]
-	if(isnum(jobs_changes["job_name"]))
-		title = jobs_changes["job_name"]
-	if(isnum(jobs_changes["faction"]))
-		faction = jobs_changes["faction"]
-	if(isnum(jobs_changes["outfit"]))
-		outfit = jobs_changes["outfit"]
 
 /datum/job/New()
 	. = ..()
@@ -103,12 +97,6 @@
 		spawn_positions = jobs_changes["spawn_positions"]
 	if(isnum(jobs_changes["total_positions"]))
 		total_positions = jobs_changes["total_positions"]
-	if(isnum(jobs_changes["job_name"]))
-		title = jobs_changes["job_name"]
-	if(isnum(jobs_changes["faction"]))
-		faction = jobs_changes["faction"]
-	if(isnum(jobs_changes["outfit"]))
-		outfit = jobs_changes["outfit"]
 
 //Only override this proc
 //H is usually a human unless an /equip override transformed it
