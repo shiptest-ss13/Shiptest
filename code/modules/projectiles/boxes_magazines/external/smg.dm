@@ -45,7 +45,7 @@
 	icon_state = "smg9mm-42"
 	ammo_type = /obj/item/ammo_casing/c9mm
 	caliber = "9mm"
-	max_ammo = 21
+	max_ammo = 20
 
 /obj/item/ammo_box/magazine/smgm9mm/update_icon()
 	..()
@@ -58,6 +58,10 @@
 /obj/item/ammo_box/magazine/smgm9mm/fire
 	name = "SMG Magazine (Incendiary 9mm)"
 	ammo_type = /obj/item/ammo_casing/c9mm/inc
+
+/obj/item/ammo_box/magazine/smgm9mm/rubbershot
+	name = "SMG Magazine (Rubbershot 9mm)"
+	ammo_type = /obj/item/ammo_casing/c9mm/rubbershot
 
 /obj/item/ammo_box/magazine/smgm45
 	name = "SMG magazine (.45)"

@@ -6099,10 +6099,6 @@
 	},
 /turf/open/floor/plasteel/cafeteria,
 /area/ruin/space/has_grav/ancientstation/kitchen)
-"ni" = (
-/obj/structure/lattice/catwalk,
-/turf/template_noop,
-/area/solar/port)
 "nj" = (
 /obj/structure/lattice,
 /turf/closed/mineral/plasma,
@@ -7779,21 +7775,21 @@
 	icon_state = "4-8"
 	},
 /turf/template_noop,
-/area/solar/port)
+/area/space/nearstation)
 "qi" = (
 /obj/structure/lattice/catwalk,
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
 	},
 /turf/template_noop,
-/area/solar/port)
+/area/space/nearstation)
 "qj" = (
 /obj/item/solar_assembly,
 /obj/structure/cable/yellow{
 	icon_state = "0-2"
 	},
 /turf/open/floor/plating/airless,
-/area/solar/port)
+/area/space/nearstation)
 "qk" = (
 /obj/machinery/pipedispenser,
 /obj/effect/turf_decal/stripes/line{
@@ -7801,23 +7797,20 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/ancientstation/atmo)
-"ql" = (
-/turf/open/floor/plating/airless,
-/area/solar/port)
 "qm" = (
 /obj/machinery/power/solar,
 /obj/structure/cable/yellow{
 	icon_state = "0-2"
 	},
 /turf/open/floor/plating/airless,
-/area/solar/port)
+/area/space/nearstation)
 "qn" = (
 /obj/structure/lattice/catwalk,
 /obj/structure/cable/yellow{
 	icon_state = "2-4"
 	},
 /turf/template_noop,
-/area/solar/port)
+/area/space/nearstation)
 "qo" = (
 /obj/structure/lattice/catwalk,
 /obj/structure/cable/yellow{
@@ -7827,7 +7820,7 @@
 	icon_state = "1-8"
 	},
 /turf/template_noop,
-/area/solar/port)
+/area/space/nearstation)
 "qp" = (
 /obj/structure/lattice/catwalk,
 /obj/structure/cable/yellow{
@@ -7837,24 +7830,24 @@
 	icon_state = "4-8"
 	},
 /turf/template_noop,
-/area/solar/port)
+/area/space/nearstation)
 "qq" = (
 /obj/structure/lattice/catwalk,
 /obj/structure/cable/yellow{
 	icon_state = "1-8"
 	},
 /turf/template_noop,
-/area/solar/port)
+/area/space/nearstation)
 "qr" = (
 /obj/machinery/power/solar,
 /obj/structure/cable/yellow,
 /turf/open/floor/plating/airless,
-/area/solar/port)
+/area/space/nearstation)
 "qs" = (
 /obj/item/solar_assembly,
 /obj/structure/cable/yellow,
 /turf/open/floor/plating/airless,
-/area/solar/port)
+/area/space/nearstation)
 "qt" = (
 /obj/machinery/power/solar,
 /obj/structure/cable/yellow{
@@ -7864,7 +7857,7 @@
 	icon_state = "0-2"
 	},
 /turf/open/floor/plating/airless,
-/area/solar/port)
+/area/space/nearstation)
 "qu" = (
 /obj/structure/lattice/catwalk,
 /obj/structure/cable/yellow{
@@ -7874,7 +7867,7 @@
 	icon_state = "4-8"
 	},
 /turf/template_noop,
-/area/solar/port)
+/area/space/nearstation)
 "qv" = (
 /obj/structure/grille/broken,
 /turf/open/floor/plating/airless,
@@ -8001,18 +7994,18 @@
 	icon_state = "1-2"
 	},
 /turf/template_noop,
-/area/solar/port)
+/area/space/nearstation)
 "qM" = (
 /obj/structure/lattice/catwalk,
 /obj/structure/cable/yellow{
 	icon_state = "2-8"
 	},
 /turf/template_noop,
-/area/solar/port)
+/area/space/nearstation)
 "qN" = (
 /obj/structure/cable/yellow,
 /turf/open/floor/plating/airless,
-/area/solar/port)
+/area/space/nearstation)
 "qO" = (
 /mob/living/simple_animal/hostile/alien,
 /turf/open/floor/plating,
@@ -9452,9 +9445,9 @@ qj
 qn
 qr
 aa
-ql
-ni
-ql
+bf
+lg
+bf
 aa
 "}
 (14,1,1) = {"
@@ -9499,9 +9492,9 @@ dF
 aa
 qj
 qh
-ql
+bf
 dF
-ql
+bf
 qn
 qr
 aa
@@ -9546,7 +9539,7 @@ aa
 aa
 dF
 aa
-ql
+bf
 qh
 qr
 aa
@@ -9596,7 +9589,7 @@ aa
 dF
 aa
 dF
-ni
+lg
 dF
 aa
 dF
@@ -9644,13 +9637,13 @@ aa
 aa
 dF
 aa
-ql
-ni
-ql
+bf
+lg
+bf
 aa
 qj
 qh
-ql
+bf
 aa
 "}
 (18,1,1) = {"
@@ -9697,9 +9690,9 @@ qm
 qn
 qs
 aa
-ql
-ni
-ql
+bf
+lg
+bf
 aa
 "}
 (19,1,1) = {"
@@ -9742,13 +9735,13 @@ aa
 aa
 dF
 aa
-ql
-ni
-ql
+bf
+lg
+bf
 aa
 qm
-ni
-ql
+lg
+bf
 aa
 "}
 (20,1,1) = {"
@@ -9792,7 +9785,7 @@ aa
 dF
 aa
 dF
-ni
+lg
 dF
 aa
 dF
@@ -9824,7 +9817,7 @@ aa
 aa
 aa
 aa
-ni
+lg
 qi
 qi
 qi
@@ -9833,16 +9826,16 @@ qi
 qi
 qi
 qi
-ni
-ni
+lg
+lg
 qi
 qi
 qi
-ni
-ni
+lg
+lg
 qi
 qo
-ni
+lg
 qi
 qi
 qL
@@ -9890,11 +9883,11 @@ aa
 dF
 aa
 dF
-ni
+lg
 dF
 aa
 dF
-ni
+lg
 dF
 aa
 "}
@@ -9938,13 +9931,13 @@ aa
 aa
 dF
 aa
-ql
+bf
 qp
 qr
 aa
-ql
-ni
-ql
+bf
+lg
+bf
 aa
 "}
 (24,1,1) = {"
@@ -9987,13 +9980,13 @@ aa
 aa
 dF
 aa
-ql
-ni
-ql
+bf
+lg
+bf
 aa
-ql
-ni
-ql
+bf
+lg
+bf
 aa
 "}
 (25,1,1) = {"
@@ -10036,12 +10029,12 @@ aa
 aa
 dF
 aa
-ql
-ni
+bf
+lg
 qs
 aa
-ql
-ni
+bf
+lg
 qr
 aa
 "}
@@ -10090,7 +10083,7 @@ qh
 dF
 aa
 dF
-ni
+lg
 dF
 aa
 "}
@@ -10134,13 +10127,13 @@ aa
 aa
 dF
 aa
-ql
+bf
 qh
-ql
+bf
 aa
-ql
-ni
-ql
+bf
+lg
+bf
 aa
 "}
 (28,1,1) = {"
@@ -10184,10 +10177,10 @@ aa
 dF
 aa
 qj
-ni
-ql
+lg
+bf
 dF
-ql
+bf
 qp
 qr
 aa
@@ -10234,7 +10227,7 @@ dF
 aa
 qm
 qq
-ql
+bf
 aa
 qt
 qM

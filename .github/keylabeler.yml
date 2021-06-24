@@ -1,4 +1,14 @@
-tags:
+# Determines if we search the title (optional). Defaults to true.
+matchTitle: true
+
+# Determines if we search the body (optional). Defaults to true.
+matchBody: true
+
+# Determines if label matching is case sensitive (optional). Defaults to true.
+caseSensitive: false
+
+# Explicit keyword mappings to labels. Form of match:label. Required.
+labelMappings:
     fix: &fix_type Fix
     fixes: *fix_type
     bugfix: *fix_type
@@ -45,4 +55,5 @@ tags:
     "[tgui]": &ui_type tgui
     "[ui]": *ui_type
     "[rework]": Rework
+    "[wiki]": Wiki Edit
     "[wip]": WIP

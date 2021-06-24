@@ -4,8 +4,6 @@
 
 #ifndef LOWMEMORYMODE
 	#ifdef ALL_MAPS
-		#include "map_files\debug\runtimestation.dmm"
-		#include "map_files\debug\multiz.dmm"
 		#ifdef CIBUILDING
 			#include "templates.dm"
 		#endif

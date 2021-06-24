@@ -35,6 +35,10 @@
 	port_id = "bar"
 	suffix = "ship"
 
+/datum/map_template/shuttle/moth
+	port_id = "engi"
+	suffix = "moth"
+
 //Ruins
 /datum/map_template/shuttle/ruin/solgov_exploration_pod
 	suffix = "solgov_exploration_pod"

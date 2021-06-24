@@ -305,6 +305,18 @@
 	build_path = /obj/item/ammo_box/magazine/co9mm
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
+// WS edit - not so free rubbershot
+
+/datum/design/rubbershot9mm
+	name = "Rubbershot 9mm Ammo Box"
+	desc = "A box full of less-than-lethal 9mm ammunition."
+	id = "rubbershot9mm"
+	build_type = PROTOLATHE
+	materials = list(/datum/material/iron = 15000)
+	build_path = /obj/item/ammo_box/c9mm/rubbershot
+	category = list("Ammo")
+	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
+
 /datum/design/stunshell
 	name = "Stun Shell"
 	desc = "A stunning shell for a shotgun."

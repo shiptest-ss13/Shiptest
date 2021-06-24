@@ -58,7 +58,7 @@
 	smoke.attach(user)
 	smoke.start()
 	var/list/L = list()
-	for(var/turf/T in get_area_turfs(thearea.type))
+	for(var/turf/T in thearea)
 		if(!T.is_blocked_turf())
 			L += T
 
