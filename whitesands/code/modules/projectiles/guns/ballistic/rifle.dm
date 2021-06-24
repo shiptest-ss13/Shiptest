@@ -12,5 +12,5 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	pin = /obj/item/firing_pin/explorer
 	mag_type = /obj/item/ammo_box/magazine/internal/boltaction/polymer
-	lefthand_file = 'whitesands/icons/mob/inhands/weapons/64x_guns_left.dmi'
-	righthand_file = 'whitesands/icons/mob/inhands/weapons/64x_guns_right.dmi'
+	lefthand_file = 'whitesands/icons/mob/inhands/weapons/guns_left.dmi'
+	righthand_file = 'whitesands/icons/mob/inhands/weapons/guns_right.dmi'

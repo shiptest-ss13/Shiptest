@@ -54,8 +54,7 @@
 	if(!chosen_name)
 		return //Sorry, we're out of names
 	chosen_name = "SV [chosen_name]"
-	name = chosen_name
-	shuttle?.name = chosen_name
+	set_ship_name(chosen_name)
 
 ///Destroy if integrity <= 0 and no concious mobs on shuttle
 /obj/structure/overmap/ship/simulated/recieve_damage(amount)
@@ -309,6 +308,15 @@
 		return
 	if(integrity < initial(integrity))
 		integrity++
+
+/**
+  * Sets the ship, shuttle, and shuttle areas to a new name.
+  */
+/obj/structure/overmap/ship/simulated/proc/set_ship_name(new_name)
+	name = new_name
+	shuttle.name = new_name
+	for(var/area/shuttle_area in shuttle.shuttle_areas)
+		shuttle_area.rename_area("[new_name] [initial(shuttle_area.name)]")
 
 /obj/structure/overmap/ship/simulated/update_icon_state()
 	if(mass < SHIP_SIZE_THRESHOLD)

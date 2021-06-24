@@ -592,7 +592,7 @@
 	if(!mapload)
 		return
 
-	var/list/turfs = get_area_turfs(target_area)
+	var/list/turfs = get_areatype_turfs(target_area)
 	var/original_len = turfs?.len
 	while(turfs?.len)
 		var/turf/T = pick(turfs)

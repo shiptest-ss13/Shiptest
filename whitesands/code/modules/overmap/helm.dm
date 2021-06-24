@@ -157,8 +157,7 @@
 		if("reload_engines")
 			S.refresh_engines()
 		if("rename_ship")
-			S.name = params["newName"]
-			S.shuttle.name = params["newName"]
+			S.set_ship_name(params["newName"])
 			update_static_data()
 		if("toggle_engine")
 			var/obj/machinery/power/shuttle/engine/E = locate(params["engine"])

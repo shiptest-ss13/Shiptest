@@ -119,6 +119,8 @@
 
 /obj/structure/overmap/Destroy()
 	. = ..()
+	for(var/obj/structure/overmap/O in close_overmap_objects)
+		LAZYREMOVE(O.close_overmap_objects, src)
 	LAZYREMOVE(SSovermap.overmap_objects, id)
 	if(render_map)
 		QDEL_NULL(cam_screen)

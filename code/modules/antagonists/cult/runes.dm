@@ -997,7 +997,7 @@ structure_check() searches for nearby cultist structures required for the invoca
 			SEND_SOUND(M, 'sound/effects/pope_entry.ogg')
 	image_handler(images, duration)
 	if(intensity>=285) // Based on the prior formula, this means the cult makes up <15% of current players
-		var/outcome = rand(1,100)
+		var/outcome = rand(1,80)
 		switch(outcome)
 			if(1 to 10)
 				var/datum/round_event_control/disease_outbreak/D = new()
@@ -1035,9 +1035,6 @@ structure_check() searches for nearby cultist structures required for the invoca
 				var/datum/round_event_control/grey_tide/GT = new()
 				SV.runEvent()
 				GT.runEvent()
-			if(81 to 100)
-				var/datum/round_event_control/portal_storm_narsie/N = new()
-				N.runEvent()
 	qdel(src)
 
 /obj/effect/rune/apocalypse/proc/image_handler(var/list/images, duration)
