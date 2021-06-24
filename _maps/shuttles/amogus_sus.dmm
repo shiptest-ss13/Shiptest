@@ -7,10 +7,17 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/door/airlock/public/glass,
+<<<<<<< HEAD
 /obj/machinery/atmospherics/pipe/simple/supply/visible/layer2{
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+=======
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+>>>>>>> shetland-powerwashing
 	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
@@ -55,10 +62,17 @@
 /obj/structure/chair/plastic{
 	dir = 1
 	},
+<<<<<<< HEAD
 /obj/machinery/atmospherics/pipe/simple/supply/visible/layer2{
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+=======
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+>>>>>>> shetland-powerwashing
 	dir = 1
 	},
 /turf/open/floor/plasteel/white,
@@ -74,11 +88,19 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+<<<<<<< HEAD
 /obj/machinery/atmospherics/pipe/simple/supply/visible/layer2{
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
 	dir = 4
+=======
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 1
+>>>>>>> shetland-powerwashing
 	},
 /turf/open/floor/plasteel,
 /area/ship/engineering)
@@ -99,6 +121,19 @@
 /obj/item/wrench,
 /turf/open/floor/plating,
 /area/ship/engineering)
+"bj" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/door/airlock/public/glass,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/hallway/fore)
 "bp" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -107,12 +142,21 @@
 	dir = 4
 	},
 /obj/machinery/door/airlock/public/glass,
+<<<<<<< HEAD
 /obj/machinery/atmospherics/pipe/simple/supply/visible/layer2{
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
+=======
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 8
+	},
+>>>>>>> shetland-powerwashing
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/starboard)
 "bF" = (
@@ -126,8 +170,13 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/door/airlock/engineering,
+<<<<<<< HEAD
 /obj/machinery/atmospherics/pipe/simple/supply/visible/layer2{
 	dir = 8
+=======
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+>>>>>>> shetland-powerwashing
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/engine)
@@ -200,10 +249,17 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/atmospherics)
 "dk" = (
+<<<<<<< HEAD
 /obj/machinery/atmospherics/pipe/simple/supply/visible/layer2{
 	dir = 8
 	},
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
+=======
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 8
+	},
+>>>>>>> shetland-powerwashing
 /turf/open/floor/plasteel,
 /area/ship/hallway/fore)
 "dr" = (
@@ -248,12 +304,21 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/door/airlock/security,
+<<<<<<< HEAD
 /obj/machinery/atmospherics/pipe/simple/supply/visible/layer2{
 	dir = 8
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
+=======
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+>>>>>>> shetland-powerwashing
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "ea" = (
@@ -268,8 +333,13 @@
 /obj/machinery/cryopod/latejoin{
 	dir = 1
 	},
+<<<<<<< HEAD
 /obj/machinery/atmospherics/pipe/simple/supply/visible/layer2{
 	dir = 1
+=======
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 5
+>>>>>>> shetland-powerwashing
 	},
 /turf/open/floor/wood,
 /area/ship/crew)
@@ -294,7 +364,11 @@
 /turf/open/floor/plasteel,
 /area/ship/engineering/atmospherics)
 "eE" = (
+<<<<<<< HEAD
 /obj/machinery/atmospherics/pipe/simple/supply/visible/layer2{
+=======
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+>>>>>>> shetland-powerwashing
 	dir = 8
 	},
 /turf/open/floor/plasteel/grimy,
@@ -360,6 +434,12 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 6
 	},
+<<<<<<< HEAD
+=======
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 10
+	},
+>>>>>>> shetland-powerwashing
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew)
 "fD" = (
@@ -395,10 +475,17 @@
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
+<<<<<<< HEAD
 /obj/machinery/atmospherics/pipe/simple/supply/visible/layer2{
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+=======
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+>>>>>>> shetland-powerwashing
 	dir = 1
 	},
 /turf/open/floor/plasteel,
@@ -471,24 +558,42 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/starboard)
 "hs" = (
+<<<<<<< HEAD
 /obj/machinery/atmospherics/pipe/simple/supply/visible/layer2{
 	dir = 4
+=======
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 8
+>>>>>>> shetland-powerwashing
 	},
 /turf/open/floor/plasteel,
 /area/ship/cargo)
 "ht" = (
+<<<<<<< HEAD
 /obj/machinery/atmospherics/pipe/simple/supply/visible/layer2{
+=======
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+>>>>>>> shetland-powerwashing
 	dir = 1
 	},
 /turf/open/floor/plasteel,
 /area/ship/engineering)
 "hx" = (
+<<<<<<< HEAD
 /obj/machinery/atmospherics/pipe/simple/supply/visible/layer2{
 	dir = 10
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 1
 	},
+=======
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 1
+	},
+>>>>>>> shetland-powerwashing
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew)
 "hC" = (
@@ -530,6 +635,7 @@
 	},
 /turf/open/floor/plasteel,
 /area/ship/engineering/atmospherics)
+<<<<<<< HEAD
 "ij" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -542,6 +648,10 @@
 /area/ship/hallway/fore)
 "io" = (
 /obj/machinery/atmospherics/pipe/simple/supply/visible/layer2{
+=======
+"io" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+>>>>>>> shetland-powerwashing
 	dir = 1
 	},
 /turf/open/floor/plasteel/grimy,
@@ -601,9 +711,12 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/door/airlock/public/glass,
+<<<<<<< HEAD
 /obj/machinery/atmospherics/pipe/simple/supply/visible/layer2{
 	dir = 8
 	},
+=======
+>>>>>>> shetland-powerwashing
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
 	},
@@ -637,10 +750,17 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/door/airlock/engineering,
+<<<<<<< HEAD
 /obj/machinery/atmospherics/pipe/simple/supply/visible/layer2{
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+=======
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+>>>>>>> shetland-powerwashing
 	dir = 1
 	},
 /turf/open/floor/plasteel/dark,
@@ -687,12 +807,21 @@
 	icon_state = "4-8"
 	},
 /obj/effect/turf_decal/lumos/tile/red/checker,
+<<<<<<< HEAD
 /obj/machinery/atmospherics/pipe/simple/supply/visible/layer2{
 	dir = 8
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
+=======
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+>>>>>>> shetland-powerwashing
 /turf/open/floor/plasteel/white,
 /area/ship/crew/canteen)
 "kJ" = (
@@ -751,7 +880,11 @@
 /turf/open/floor/plasteel,
 /area/ship/engineering/atmospherics)
 "lB" = (
+<<<<<<< HEAD
 /obj/machinery/atmospherics/pipe/simple/supply/visible/layer2{
+=======
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+>>>>>>> shetland-powerwashing
 	dir = 1
 	},
 /turf/open/floor/plasteel/dark,
@@ -766,6 +899,18 @@
 	},
 /turf/open/floor/plasteel,
 /area/ship/cargo)
+"mn" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 5
+	},
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 5
+	},
+/turf/open/floor/plasteel,
+/area/ship/engineering)
 "mo" = (
 /obj/item/kirbyplants/random,
 /obj/structure/cable{
@@ -792,10 +937,17 @@
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
+<<<<<<< HEAD
 /obj/machinery/atmospherics/pipe/simple/supply/visible/layer2{
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+=======
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+>>>>>>> shetland-powerwashing
 	dir = 1
 	},
 /turf/open/floor/plasteel/grimy,
@@ -810,12 +962,21 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/door/airlock/public/glass,
+<<<<<<< HEAD
 /obj/machinery/atmospherics/pipe/simple/supply/visible/layer2{
 	dir = 8
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
+=======
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 8
+	},
+>>>>>>> shetland-powerwashing
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/fore)
 "mG" = (
@@ -827,7 +988,11 @@
 "mN" = (
 /obj/machinery/suit_storage_unit/mining/eva,
 /obj/effect/turf_decal/bot,
+<<<<<<< HEAD
 /obj/machinery/atmospherics/pipe/simple/supply/visible/layer2{
+=======
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+>>>>>>> shetland-powerwashing
 	dir = 10
 	},
 /turf/open/floor/plasteel/dark,
@@ -875,7 +1040,11 @@
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
 	dir = 1
 	},
+<<<<<<< HEAD
 /obj/machinery/atmospherics/pipe/simple/supply/visible/layer2{
+=======
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+>>>>>>> shetland-powerwashing
 	dir = 1
 	},
 /turf/open/floor/plasteel/dark,
@@ -903,12 +1072,21 @@
 /turf/open/floor/carpet/blue,
 /area/ship/bridge)
 "nz" = (
+<<<<<<< HEAD
 /obj/machinery/atmospherics/pipe/simple/supply/visible/layer2{
 	dir = 8
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
+=======
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 8
+	},
+>>>>>>> shetland-powerwashing
 /turf/open/floor/plasteel,
 /area/ship/hallway/fore)
 "nN" = (
@@ -947,12 +1125,21 @@
 /obj/structure/chair/plastic{
 	dir = 8
 	},
+<<<<<<< HEAD
 /obj/machinery/atmospherics/pipe/simple/supply/visible/layer2{
 	dir = 8
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
 	},
+=======
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+>>>>>>> shetland-powerwashing
 /turf/open/floor/plasteel/white,
 /area/ship/crew/canteen)
 "oy" = (
@@ -984,6 +1171,18 @@
 /obj/structure/fans/tiny,
 /turf/open/floor/plating,
 /area/ship/cargo)
+"pb" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 10
+	},
+/obj/structure/cable/yellow{
+	icon_state = "2-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 10
+	},
+/turf/open/floor/plasteel,
+/area/ship/hallway/starboard)
 "pq" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/cargo)
@@ -996,7 +1195,11 @@
 /turf/open/floor/plasteel,
 /area/ship/engineering/atmospherics)
 "pu" = (
+<<<<<<< HEAD
 /obj/machinery/atmospherics/pipe/simple/supply/visible/layer2{
+=======
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+>>>>>>> shetland-powerwashing
 	dir = 5
 	},
 /turf/open/floor/wood,
@@ -1070,12 +1273,21 @@
 /area/ship/crew/canteen)
 "ql" = (
 /obj/machinery/atmospherics/pipe/simple/green/visible,
+<<<<<<< HEAD
 /obj/machinery/atmospherics/pipe/simple/supply/visible/layer2{
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
 	dir = 4
 	},
+=======
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 1
+	},
+>>>>>>> shetland-powerwashing
 /turf/open/floor/plasteel,
 /area/ship/cargo)
 "qm" = (
@@ -1097,7 +1309,11 @@
 /area/ship/hallway/port)
 "qB" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
+<<<<<<< HEAD
 /obj/machinery/atmospherics/pipe/simple/supply/visible/layer2{
+=======
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+>>>>>>> shetland-powerwashing
 	dir = 1
 	},
 /turf/open/floor/plasteel,
@@ -1138,10 +1354,17 @@
 /obj/machinery/atmospherics/pipe/simple/green/visible{
 	dir = 9
 	},
+<<<<<<< HEAD
 /obj/machinery/atmospherics/pipe/simple/supply/visible/layer2{
 	dir = 9
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+=======
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 9
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+>>>>>>> shetland-powerwashing
 	dir = 9
 	},
 /turf/open/floor/plasteel,
@@ -1171,12 +1394,21 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/door/airlock/command,
+<<<<<<< HEAD
 /obj/machinery/atmospherics/pipe/simple/supply/visible/layer2{
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
+=======
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 8
+	},
+>>>>>>> shetland-powerwashing
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "sh" = (
@@ -1210,12 +1442,21 @@
 	dir = 8;
 	pixel_x = 24
 	},
+<<<<<<< HEAD
 /obj/machinery/atmospherics/pipe/simple/supply/visible/layer2{
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
 	dir = 4
 	},
+=======
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 1
+	},
+>>>>>>> shetland-powerwashing
 /turf/open/floor/plasteel,
 /area/ship/engineering)
 "sw" = (
@@ -1232,10 +1473,17 @@
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
+<<<<<<< HEAD
 /obj/machinery/atmospherics/pipe/simple/supply/visible/layer2{
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+=======
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+>>>>>>> shetland-powerwashing
 	dir = 4
 	},
 /turf/open/floor/plasteel,
@@ -1250,12 +1498,21 @@
 /obj/structure/cable/yellow{
 	icon_state = "1-8"
 	},
+<<<<<<< HEAD
 /obj/machinery/atmospherics/pipe/simple/supply/visible/layer2{
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
+=======
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 8
+	},
+>>>>>>> shetland-powerwashing
 /turf/open/floor/plasteel,
 /area/ship/hallway/starboard)
 "tl" = (
@@ -1264,9 +1521,12 @@
 	},
 /obj/effect/turf_decal/bot,
 /obj/structure/closet/crate,
+<<<<<<< HEAD
 /obj/machinery/atmospherics/pipe/simple/supply/visible/layer2{
 	dir = 4
 	},
+=======
+>>>>>>> shetland-powerwashing
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
@@ -1274,6 +1534,12 @@
 	desc = "A box containing boards for research equipment.";
 	name = "research equipment box"
 	},
+<<<<<<< HEAD
+=======
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 8
+	},
+>>>>>>> shetland-powerwashing
 /turf/open/floor/plasteel,
 /area/ship/cargo)
 "tz" = (
@@ -1305,12 +1571,21 @@
 	},
 /obj/effect/turf_decal/bot,
 /obj/structure/ore_box,
+<<<<<<< HEAD
 /obj/machinery/atmospherics/pipe/simple/supply/visible/layer2{
 	dir = 8
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
+=======
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 8
+	},
+>>>>>>> shetland-powerwashing
 /turf/open/floor/plating,
 /area/ship/cargo)
 "tK" = (
@@ -1331,12 +1606,21 @@
 /obj/item/radio/intercom{
 	pixel_y = -32
 	},
+<<<<<<< HEAD
 /obj/machinery/atmospherics/pipe/simple/supply/visible/layer2{
 	dir = 8
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
+=======
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+>>>>>>> shetland-powerwashing
 /turf/open/floor/plasteel,
 /area/ship/hallway/port)
 "tW" = (
@@ -1346,12 +1630,15 @@
 /obj/machinery/light,
 /turf/open/floor/plating,
 /area/ship/engineering)
+<<<<<<< HEAD
 "tX" = (
 /obj/machinery/atmospherics/pipe/simple/supply/visible/layer2{
 	dir = 1
 	},
 /turf/open/floor/plasteel,
 /area/ship/hallway/fore)
+=======
+>>>>>>> shetland-powerwashing
 "ud" = (
 /obj/machinery/atmospherics/components/trinary/filter/atmos/flipped/o2{
 	dir = 4
@@ -1382,12 +1669,21 @@
 /obj/structure/chair/plastic{
 	dir = 4
 	},
+<<<<<<< HEAD
 /obj/machinery/atmospherics/pipe/simple/supply/visible/layer2{
 	dir = 8
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
+=======
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+>>>>>>> shetland-powerwashing
 /turf/open/floor/plasteel/white,
 /area/ship/crew/canteen)
 "us" = (
@@ -1439,12 +1735,21 @@
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
+<<<<<<< HEAD
 /obj/machinery/atmospherics/pipe/simple/supply/visible/layer2{
 	dir = 8
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
+=======
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 8
+	},
+>>>>>>> shetland-powerwashing
 /turf/open/floor/plasteel,
 /area/ship/hallway/fore)
 "uH" = (
@@ -1458,10 +1763,17 @@
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "uR" = (
+<<<<<<< HEAD
 /obj/machinery/atmospherics/pipe/simple/supply/visible/layer2{
 	dir = 9
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+=======
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 9
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+>>>>>>> shetland-powerwashing
 	dir = 9
 	},
 /turf/open/floor/plasteel,
@@ -1489,8 +1801,13 @@
 /turf/open/floor/plasteel,
 /area/ship/engineering/atmospherics)
 "vo" = (
+<<<<<<< HEAD
 /obj/machinery/atmospherics/pipe/simple/supply/visible/layer2{
 	dir = 4
+=======
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 8
+>>>>>>> shetland-powerwashing
 	},
 /turf/open/floor/plasteel,
 /area/ship/engineering/atmospherics)
@@ -1541,7 +1858,11 @@
 /obj/structure/cable{
 	icon_state = "2-4"
 	},
+<<<<<<< HEAD
 /obj/machinery/atmospherics/pipe/simple/supply/visible/layer2{
+=======
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+>>>>>>> shetland-powerwashing
 	dir = 1
 	},
 /turf/open/floor/plating,
@@ -1572,12 +1893,21 @@
 /area/ship/hallway/starboard)
 "wL" = (
 /obj/item/flashlight/lantern,
+<<<<<<< HEAD
 /obj/machinery/atmospherics/pipe/simple/supply/visible/layer2{
 	dir = 9
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 1
 	},
+=======
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 9
+	},
+>>>>>>> shetland-powerwashing
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew/office)
 "xg" = (
@@ -1587,12 +1917,21 @@
 /obj/machinery/atmospherics/pipe/simple/green/visible{
 	dir = 4
 	},
+<<<<<<< HEAD
 /obj/machinery/atmospherics/pipe/simple/supply/visible/layer2{
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
+=======
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 8
+	},
+>>>>>>> shetland-powerwashing
 /turf/open/floor/plasteel,
 /area/ship/cargo)
 "xs" = (
@@ -1626,10 +1965,17 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/door/airlock/medical/glass,
+<<<<<<< HEAD
 /obj/machinery/atmospherics/pipe/simple/supply/visible/layer2{
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+=======
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+>>>>>>> shetland-powerwashing
 	dir = 1
 	},
 /turf/open/floor/plasteel/dark,
@@ -1652,12 +1998,21 @@
 	dir = 1;
 	pixel_y = -24
 	},
+<<<<<<< HEAD
 /obj/machinery/atmospherics/pipe/simple/supply/visible/layer2{
 	dir = 8
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
+=======
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+>>>>>>> shetland-powerwashing
 /turf/open/floor/plasteel,
 /area/ship/hallway/port)
 "xR" = (
@@ -1732,12 +2087,21 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+<<<<<<< HEAD
 /obj/machinery/atmospherics/pipe/simple/supply/visible/layer2{
 	dir = 10
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 9
 	},
+=======
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 9
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 10
+	},
+>>>>>>> shetland-powerwashing
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "yB" = (
@@ -1748,7 +2112,16 @@
 /area/ship/bridge)
 "yL" = (
 /obj/structure/cable{
-	icon_state = "2-8"
+	icon_state = "1-2"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
 	},
 /turf/open/floor/plasteel,
 /area/ship/hallway/starboard)
@@ -1774,10 +2147,17 @@
 /obj/structure/cable{
 	icon_state = "2-6"
 	},
+<<<<<<< HEAD
 /obj/machinery/atmospherics/pipe/simple/supply/visible/layer2{
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+=======
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+>>>>>>> shetland-powerwashing
 	dir = 1
 	},
 /turf/open/floor/plasteel,
@@ -1813,12 +2193,21 @@
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
+<<<<<<< HEAD
 /obj/machinery/atmospherics/pipe/simple/supply/visible/layer2{
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 6
 	},
+=======
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 6
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 1
+	},
+>>>>>>> shetland-powerwashing
 /turf/open/floor/plating,
 /area/ship/engineering/electrical)
 "zT" = (
@@ -1832,10 +2221,17 @@
 /obj/structure/cable{
 	icon_state = "2-4"
 	},
+<<<<<<< HEAD
 /obj/machinery/atmospherics/pipe/simple/supply/visible/layer2{
 	dir = 6
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+=======
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 6
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+>>>>>>> shetland-powerwashing
 	dir = 6
 	},
 /turf/open/floor/plasteel,
@@ -1877,11 +2273,19 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+<<<<<<< HEAD
 /obj/machinery/atmospherics/pipe/simple/supply/visible/layer2{
 	dir = 8
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
+=======
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 8
+>>>>>>> shetland-powerwashing
 	},
 /turf/open/floor/plasteel,
 /area/ship/engineering)
@@ -1924,26 +2328,43 @@
 /area/ship/engineering)
 "Bo" = (
 /obj/structure/bookcase/random,
+<<<<<<< HEAD
 /obj/machinery/atmospherics/pipe/simple/supply/visible/layer2{
 	dir = 8
 	},
 /obj/machinery/firealarm{
 	pixel_y = 24
 	},
+=======
+/obj/machinery/firealarm{
+	pixel_y = 24
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 8
+	},
+>>>>>>> shetland-powerwashing
 /turf/open/floor/wood,
 /area/ship/crew/office)
 "Bs" = (
 /obj/structure/cable{
 	icon_state = "1-4"
 	},
+<<<<<<< HEAD
 /obj/machinery/atmospherics/pipe/simple/supply/visible/layer2{
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+=======
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+>>>>>>> shetland-powerwashing
 	dir = 1
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
+<<<<<<< HEAD
 "Bw" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -1957,6 +2378,8 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/fore)
+=======
+>>>>>>> shetland-powerwashing
 "BO" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -1965,6 +2388,7 @@
 /turf/open/floor/plasteel/white,
 /area/ship/crew/canteen)
 "BR" = (
+<<<<<<< HEAD
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -1976,6 +2400,19 @@
 	},
 /obj/machinery/firealarm{
 	pixel_y = 24
+=======
+/obj/machinery/firealarm{
+	pixel_y = 24
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 10
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 10
+>>>>>>> shetland-powerwashing
 	},
 /turf/open/floor/plasteel,
 /area/ship/engineering)
@@ -1995,12 +2432,21 @@
 /obj/machinery/light/small{
 	dir = 4
 	},
+<<<<<<< HEAD
 /obj/machinery/atmospherics/pipe/simple/supply/visible/layer2{
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
 	dir = 4
 	},
+=======
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 1
+	},
+>>>>>>> shetland-powerwashing
 /turf/open/floor/plasteel,
 /area/ship/hallway/fore)
 "Ci" = (
@@ -2028,7 +2474,11 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 1
 	},
+<<<<<<< HEAD
 /obj/machinery/atmospherics/pipe/simple/supply/visible/layer2{
+=======
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+>>>>>>> shetland-powerwashing
 	dir = 1
 	},
 /turf/open/floor/plasteel,
@@ -2116,12 +2566,21 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/medical)
 "DY" = (
+<<<<<<< HEAD
 /obj/machinery/atmospherics/pipe/simple/supply/visible/layer2{
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 5
 	},
+=======
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 5
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 1
+	},
+>>>>>>> shetland-powerwashing
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "Eb" = (
@@ -2170,12 +2629,21 @@
 /obj/machinery/atmospherics/pipe/simple/green/visible{
 	dir = 4
 	},
+<<<<<<< HEAD
 /obj/machinery/atmospherics/pipe/simple/supply/visible/layer2{
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
+=======
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 8
+	},
+>>>>>>> shetland-powerwashing
 /turf/open/floor/plasteel,
 /area/ship/hallway/starboard)
 "Eo" = (
@@ -2222,10 +2690,17 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/door/airlock,
+<<<<<<< HEAD
 /obj/machinery/atmospherics/pipe/simple/supply/visible/layer2{
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+=======
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+>>>>>>> shetland-powerwashing
 	dir = 1
 	},
 /turf/open/floor/plasteel/dark,
@@ -2281,22 +2756,38 @@
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
+<<<<<<< HEAD
 /obj/machinery/atmospherics/pipe/simple/supply/visible/layer2{
 	dir = 10
 	},
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
 	dir = 4
 	},
+=======
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 10
+	},
+>>>>>>> shetland-powerwashing
 /turf/open/floor/plasteel,
 /area/ship/hallway/fore)
 "Fe" = (
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
+<<<<<<< HEAD
 /obj/machinery/atmospherics/pipe/simple/supply/visible/layer2{
 	dir = 5
 	},
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
+=======
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 5
+	},
+>>>>>>> shetland-powerwashing
 /turf/open/floor/plasteel,
 /area/ship/engineering)
 "Ff" = (
@@ -2323,18 +2814,30 @@
 /obj/item/kirbyplants/dead,
 /obj/effect/turf_decal/lumos/tile/neutral/half,
 /obj/effect/turf_decal/bot,
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/starboard)
 "FB" = (
 /obj/machinery/atmospherics/pipe/simple/green/visible{
 	dir = 4
 	},
+<<<<<<< HEAD
 /obj/machinery/atmospherics/pipe/simple/supply/visible/layer2{
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
+=======
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 8
+	},
+>>>>>>> shetland-powerwashing
 /turf/open/floor/plasteel,
 /area/ship/cargo)
 "FF" = (
@@ -2374,10 +2877,17 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+<<<<<<< HEAD
 /obj/machinery/atmospherics/pipe/simple/supply/visible/layer2{
 	dir = 8
 	},
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
+=======
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+>>>>>>> shetland-powerwashing
 /turf/open/floor/plasteel,
 /area/ship/hallway/fore)
 "FX" = (
@@ -2411,10 +2921,17 @@
 /area/ship/external)
 "Gy" = (
 /obj/machinery/door/airlock/public/glass,
+<<<<<<< HEAD
 /obj/machinery/atmospherics/pipe/simple/supply/visible/layer2{
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+=======
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+>>>>>>> shetland-powerwashing
 	dir = 1
 	},
 /turf/open/floor/plasteel/dark,
@@ -2441,6 +2958,12 @@
 /obj/machinery/airalarm/all_access{
 	pixel_y = 24
 	},
+<<<<<<< HEAD
+=======
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
+	dir = 1
+	},
+>>>>>>> shetland-powerwashing
 /turf/open/floor/plasteel,
 /area/ship/engineering/atmospherics)
 "GV" = (
@@ -2454,12 +2977,21 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+<<<<<<< HEAD
 /obj/machinery/atmospherics/pipe/simple/supply/visible/layer2{
 	dir = 8
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
 	},
+=======
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+>>>>>>> shetland-powerwashing
 /turf/open/floor/plasteel,
 /area/ship/hallway/fore)
 "GZ" = (
@@ -2489,7 +3021,11 @@
 "Hm" = (
 /obj/machinery/door/airlock/external,
 /obj/effect/mapping_helpers/airlock/cyclelink_helper,
+<<<<<<< HEAD
 /obj/machinery/atmospherics/pipe/simple/supply/visible/layer2{
+=======
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+>>>>>>> shetland-powerwashing
 	dir = 1
 	},
 /turf/open/floor/plasteel/dark,
@@ -2510,10 +3046,17 @@
 /area/ship/engineering)
 "Hx" = (
 /obj/machinery/door/airlock,
+<<<<<<< HEAD
 /obj/machinery/atmospherics/pipe/simple/supply/visible/layer2{
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+=======
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+>>>>>>> shetland-powerwashing
 	dir = 1
 	},
 /turf/open/floor/plasteel/dark,
@@ -2534,10 +3077,17 @@
 /obj/effect/turf_decal/lumos/tile/red/checker,
 /obj/structure/table,
 /obj/machinery/chem_dispenser/drinks,
+<<<<<<< HEAD
 /obj/machinery/atmospherics/pipe/simple/supply/visible/layer2{
 	dir = 8
 	},
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
+=======
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+>>>>>>> shetland-powerwashing
 /turf/open/floor/plasteel/white,
 /area/ship/crew/canteen)
 "HF" = (
@@ -2615,10 +3165,19 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/door/airlock/public/glass,
+<<<<<<< HEAD
 /obj/machinery/atmospherics/pipe/simple/supply/visible/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 1
 	},
+=======
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 1
+	},
+>>>>>>> shetland-powerwashing
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/fore)
 "IB" = (
@@ -2648,6 +3207,18 @@
 	},
 /turf/open/floor/plasteel,
 /area/ship/engineering/atmospherics)
+"IU" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 8
+	},
+/turf/open/floor/plasteel,
+/area/ship/hallway/fore)
 "IZ" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/security)
@@ -2692,12 +3263,21 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+<<<<<<< HEAD
 /obj/machinery/atmospherics/pipe/simple/supply/visible/layer2{
 	dir = 8
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
+=======
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 8
+	},
+>>>>>>> shetland-powerwashing
 /turf/open/floor/plasteel,
 /area/ship/cargo)
 "JI" = (
@@ -2720,12 +3300,21 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+<<<<<<< HEAD
 /obj/machinery/atmospherics/pipe/simple/supply/visible/layer2{
 	dir = 10
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 9
 	},
+=======
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 9
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 10
+	},
+>>>>>>> shetland-powerwashing
 /turf/open/floor/plasteel/grimy,
 /area/ship/security)
 "JT" = (
@@ -2770,7 +3359,11 @@
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "Km" = (
+<<<<<<< HEAD
 /obj/machinery/atmospherics/pipe/simple/supply/visible/layer2{
+=======
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+>>>>>>> shetland-powerwashing
 	dir = 1
 	},
 /turf/open/floor/plasteel/dark,
@@ -2809,7 +3402,11 @@
 	icon_state = "0-2"
 	},
 /obj/effect/turf_decal/bot,
+<<<<<<< HEAD
 /obj/machinery/atmospherics/pipe/simple/supply/visible/layer2{
+=======
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+>>>>>>> shetland-powerwashing
 	dir = 1
 	},
 /turf/open/floor/plating,
@@ -2821,7 +3418,13 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "Lf" = (
+<<<<<<< HEAD
 /obj/machinery/atmospherics/pipe/simple/supply/visible/layer2,
+=======
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 1
+	},
+>>>>>>> shetland-powerwashing
 /turf/open/floor/plasteel,
 /area/ship/hallway/fore)
 "Li" = (
@@ -2872,12 +3475,21 @@
 /obj/machinery/atmospherics/pipe/simple/green/visible{
 	dir = 6
 	},
+<<<<<<< HEAD
 /obj/machinery/atmospherics/pipe/simple/supply/visible/layer2{
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
 	dir = 4
 	},
+=======
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 1
+	},
+>>>>>>> shetland-powerwashing
 /turf/open/floor/plasteel,
 /area/ship/engineering/atmospherics)
 "Mg" = (
@@ -3008,12 +3620,21 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/light/small,
+<<<<<<< HEAD
 /obj/machinery/atmospherics/pipe/simple/supply/visible/layer2{
 	dir = 8
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
+=======
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+>>>>>>> shetland-powerwashing
 /turf/open/floor/plasteel,
 /area/ship/hallway/port)
 "Nv" = (
@@ -3093,12 +3714,21 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+<<<<<<< HEAD
 /obj/machinery/atmospherics/pipe/simple/supply/visible/layer2{
 	dir = 8
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
+=======
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 8
+	},
+>>>>>>> shetland-powerwashing
 /turf/open/floor/plasteel,
 /area/ship/hallway/fore)
 "Ol" = (
@@ -3127,7 +3757,11 @@
 /obj/machinery/camera/autoname{
 	dir = 4
 	},
+<<<<<<< HEAD
 /obj/machinery/atmospherics/pipe/simple/supply/visible/layer2{
+=======
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+>>>>>>> shetland-powerwashing
 	dir = 1
 	},
 /turf/open/floor/plasteel/dark,
@@ -3136,6 +3770,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+<<<<<<< HEAD
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
@@ -3145,6 +3780,8 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
+=======
+>>>>>>> shetland-powerwashing
 /turf/open/floor/plasteel,
 /area/ship/hallway/starboard)
 "OD" = (
@@ -3185,12 +3822,21 @@
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "OP" = (
+<<<<<<< HEAD
 /obj/machinery/atmospherics/pipe/simple/supply/visible/layer2{
 	dir = 1
 	},
 /obj/machinery/firealarm{
 	dir = 4;
 	pixel_x = -24
+=======
+/obj/machinery/firealarm{
+	dir = 4;
+	pixel_x = -24
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 1
+>>>>>>> shetland-powerwashing
 	},
 /turf/open/floor/plasteel/grimy,
 /area/ship/security)
@@ -3208,17 +3854,30 @@
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
+<<<<<<< HEAD
 /obj/machinery/atmospherics/pipe/simple/supply/visible/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 1
 	},
+=======
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 1
+	},
+>>>>>>> shetland-powerwashing
 /turf/open/floor/plasteel,
 /area/ship/hallway/fore)
 "Pz" = (
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
+<<<<<<< HEAD
 /obj/machinery/atmospherics/pipe/simple/supply/visible/layer2{
+=======
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+>>>>>>> shetland-powerwashing
 	dir = 6
 	},
 /turf/open/floor/plating,
@@ -3250,8 +3909,13 @@
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
+<<<<<<< HEAD
 /obj/machinery/atmospherics/pipe/simple/supply/visible/layer2{
 	dir = 8
+=======
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+>>>>>>> shetland-powerwashing
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
@@ -3278,7 +3942,11 @@
 /obj/structure/cable/yellow{
 	icon_state = "0-4"
 	},
+<<<<<<< HEAD
 /obj/machinery/atmospherics/pipe/simple/supply/visible/layer2{
+=======
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+>>>>>>> shetland-powerwashing
 	dir = 1
 	},
 /turf/open/floor/plating,
@@ -3297,12 +3965,21 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/power/apc/auto_name/north,
+<<<<<<< HEAD
 /obj/machinery/atmospherics/pipe/simple/supply/visible/layer2{
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
 	dir = 1
 	},
+=======
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 8
+	},
+>>>>>>> shetland-powerwashing
 /turf/open/floor/plasteel,
 /area/ship/hallway/starboard)
 "QL" = (
@@ -3400,12 +4077,21 @@
 /obj/machinery/atmospherics/pipe/simple/green/visible{
 	dir = 4
 	},
+<<<<<<< HEAD
 /obj/machinery/atmospherics/pipe/simple/supply/visible/layer2{
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
+=======
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 8
+	},
+>>>>>>> shetland-powerwashing
 /turf/open/floor/plasteel,
 /area/ship/cargo)
 "Sk" = (
@@ -3419,10 +4105,19 @@
 /obj/machinery/light/small{
 	dir = 4
 	},
+<<<<<<< HEAD
 /obj/machinery/atmospherics/pipe/simple/supply/visible/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 1
 	},
+=======
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 1
+	},
+>>>>>>> shetland-powerwashing
 /turf/open/floor/plasteel,
 /area/ship/hallway/fore)
 "Sr" = (
@@ -3439,10 +4134,17 @@
 "SA" = (
 /obj/machinery/atmospherics/pipe/simple/green/visible,
 /obj/machinery/door/airlock/public/glass,
+<<<<<<< HEAD
 /obj/machinery/atmospherics/pipe/simple/supply/visible/layer2{
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+=======
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+>>>>>>> shetland-powerwashing
 	dir = 1
 	},
 /turf/open/floor/plasteel/dark,
@@ -3467,12 +4169,21 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/door/airlock/public/glass,
+<<<<<<< HEAD
 /obj/machinery/atmospherics/pipe/simple/supply/visible/layer2{
 	dir = 8
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
+=======
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+>>>>>>> shetland-powerwashing
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
 "SU" = (
@@ -3562,7 +4273,11 @@
 	dir = 1
 	},
 /obj/machinery/power/apc/auto_name/north,
+<<<<<<< HEAD
 /obj/machinery/atmospherics/pipe/simple/supply/visible/layer2{
+=======
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+>>>>>>> shetland-powerwashing
 	dir = 10
 	},
 /turf/open/floor/plating,
@@ -3602,10 +4317,17 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+<<<<<<< HEAD
 /obj/machinery/atmospherics/pipe/simple/supply/visible/layer2{
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+=======
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+>>>>>>> shetland-powerwashing
 	dir = 1
 	},
 /turf/open/floor/plasteel,
@@ -3634,12 +4356,21 @@
 	},
 /obj/effect/turf_decal/lumos/tile/red/checker,
 /obj/structure/table,
+<<<<<<< HEAD
 /obj/machinery/atmospherics/pipe/simple/supply/visible/layer2{
 	dir = 8
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
 	},
+=======
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+>>>>>>> shetland-powerwashing
 /turf/open/floor/plasteel/white,
 /area/ship/crew/canteen)
 "Uw" = (
@@ -3721,13 +4452,22 @@
 /turf/open/floor/plasteel,
 /area/ship/hallway/fore)
 "Vk" = (
+<<<<<<< HEAD
 /obj/machinery/atmospherics/pipe/simple/supply/visible/layer2{
 	dir = 1
 	},
+=======
+>>>>>>> shetland-powerwashing
 /obj/machinery/firealarm{
 	dir = 4;
 	pixel_x = -24
 	},
+<<<<<<< HEAD
+=======
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 1
+	},
+>>>>>>> shetland-powerwashing
 /turf/open/floor/carpet/blue,
 /area/ship/bridge)
 "Vp" = (
@@ -3767,10 +4507,17 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/door/airlock/public/glass,
+<<<<<<< HEAD
 /obj/machinery/atmospherics/pipe/simple/supply/visible/layer2{
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+=======
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+>>>>>>> shetland-powerwashing
 	dir = 1
 	},
 /turf/open/floor/plasteel/dark,
@@ -3816,15 +4563,24 @@
 /turf/closed/wall/mineral/titanium,
 /area/ship/crew)
 "We" = (
-/obj/structure/cable/yellow{
-	icon_state = "2-8"
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 1
 	},
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 1
+	},
+<<<<<<< HEAD
 /obj/machinery/atmospherics/pipe/simple/supply/visible/layer2{
 	dir = 10
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 10
 	},
+=======
+>>>>>>> shetland-powerwashing
 /turf/open/floor/plasteel,
 /area/ship/hallway/starboard)
 "Wg" = (
@@ -3941,7 +4697,11 @@
 /area/ship/engineering/electrical)
 "Xj" = (
 /obj/machinery/light/small,
+<<<<<<< HEAD
 /obj/machinery/atmospherics/pipe/simple/supply/visible/layer2{
+=======
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+>>>>>>> shetland-powerwashing
 	dir = 8
 	},
 /turf/open/floor/wood,
@@ -3951,12 +4711,21 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/door/airlock/public/glass,
+<<<<<<< HEAD
 /obj/machinery/atmospherics/pipe/simple/supply/visible/layer2{
 	dir = 8
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
+=======
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+>>>>>>> shetland-powerwashing
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
 "Xq" = (
@@ -3973,7 +4742,11 @@
 /obj/structure/chair/office{
 	dir = 1
 	},
+<<<<<<< HEAD
 /obj/machinery/atmospherics/pipe/simple/supply/visible/layer2{
+=======
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+>>>>>>> shetland-powerwashing
 	dir = 8
 	},
 /turf/open/floor/wood,
@@ -4023,10 +4796,17 @@
 /area/ship/security)
 "Yd" = (
 /obj/effect/turf_decal/lumos/tile/red/checker,
+<<<<<<< HEAD
 /obj/machinery/atmospherics/pipe/simple/supply/visible/layer2{
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+=======
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+>>>>>>> shetland-powerwashing
 	dir = 1
 	},
 /turf/open/floor/plasteel/white,
@@ -4052,10 +4832,17 @@
 /area/ship/bridge)
 "Ys" = (
 /obj/machinery/atmospherics/pipe/simple/green/visible,
+<<<<<<< HEAD
 /obj/machinery/atmospherics/pipe/simple/supply/visible/layer2{
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+=======
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+>>>>>>> shetland-powerwashing
 	dir = 1
 	},
 /turf/open/floor/plasteel,
@@ -4149,12 +4936,21 @@
 /area/ship/cargo)
 "Zw" = (
 /obj/machinery/door/airlock/public/glass,
+<<<<<<< HEAD
 /obj/machinery/atmospherics/pipe/simple/supply/visible/layer2{
 	dir = 8
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
+=======
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 8
+	},
+>>>>>>> shetland-powerwashing
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/fore)
 "Zx" = (
@@ -4197,10 +4993,17 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+<<<<<<< HEAD
 /obj/machinery/atmospherics/pipe/simple/supply/visible/layer2{
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+=======
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+>>>>>>> shetland-powerwashing
 	dir = 1
 	},
 /turf/open/floor/plasteel,
@@ -4620,7 +5423,11 @@ qz
 gL
 gL
 BR
+<<<<<<< HEAD
 Qy
+=======
+mn
+>>>>>>> shetland-powerwashing
 JT
 XV
 Wz
@@ -4690,7 +5497,7 @@ Uw
 XY
 HD
 XT
-Ej
+pb
 We
 fd
 CB
@@ -5258,7 +6065,7 @@ Wd
 Wd
 ZI
 Pe
-jo
+bj
 Xh
 xD
 Xh
@@ -5313,9 +6120,9 @@ LO
 LU
 Du
 Bb
-tX
-tX
-tX
+Lf
+Lf
+Lf
 Ku
 zl
 ae
@@ -5345,7 +6152,11 @@ Du
 Du
 Du
 Du
+<<<<<<< HEAD
 GW
+=======
+IU
+>>>>>>> shetland-powerwashing
 Du
 Pe
 Du
@@ -5376,16 +6187,24 @@ Du
 Wg
 Fc
 ZW
-Bw
+Iy
 ZW
 Cb
 Vh
 Oi
+<<<<<<< HEAD
 ij
 So
 ij
 Iy
 ij
+=======
+ZW
+So
+ZW
+Iy
+ZW
+>>>>>>> shetland-powerwashing
 Pw
 uR
 Du
