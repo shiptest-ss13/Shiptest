@@ -14,6 +14,11 @@
 	damage = 10
 	fire_stacks = 1
 
+/obj/projectile/bullet/c9mm/rubbershot
+	name = "9mm rubber bullet"
+	damage = 5
+	stamina = 20
+
 // 10mm (Stechkin)
 
 /obj/projectile/bullet/c10mm
