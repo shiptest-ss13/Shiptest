@@ -131,7 +131,7 @@ CREATE TABLE `SS13_death` (
   `x_coord` smallint(5) unsigned NOT NULL,
   `y_coord` smallint(5) unsigned NOT NULL,
   `z_coord` smallint(5) unsigned NOT NULL,
-  `mapname` varchar(32) NOT NULL,
+  `mapname` varchar(64) NOT NULL,
   `server_ip` int(10) unsigned NOT NULL,
   `server_port` smallint(5) unsigned NOT NULL,
   `round_id` int(11) NOT NULL,

@@ -2,11 +2,23 @@ Any time you make a change to the schema files, remember to increment the databa
 
 The latest database version is 5.10; The query to update the schema revision table is:
 
-INSERT INTO `schema_revision` (`major`, `minor`) VALUES (5, 10);
+INSERT INTO `schema_revision` (`major`, `minor`) VALUES (5, 11);
 or
-INSERT INTO `SS13_schema_revision` (`major`, `minor`) VALUES (5, 10);
+INSERT INTO `SS13_schema_revision` (`major`, `minor`) VALUES (5, 11);
 
 In any query remember to add a prefix to the table names if you use one.
+
+-----------------------------------------------------
+
+Version 5.11, 25 June 2021, by MarkSuckerberg
+
+Increases mapname max value size in the round table slightly to accomodate larger map names.
+
+START TRANSACTION;
+
+ALTER TABLE `round` CHANGE COLUMN `map_name` `map_name` VARCHAR(64) NULL DEFAULT NULL COLLATE 'latin1_swedish_ci' AFTER `shuttle_name`;
+
+COMMIT;
 
 -----------------------------------------------------
 
@@ -85,14 +97,14 @@ ALTER TABLE `messages` ADD COLUMN `deleted_ckey` VARCHAR(32) NULL DEFAULT NULL A
 
 -----------------------------------------------------
 
-Version 5.72 27 March 2020 by MarkSuckerberg
+Version 5.7.2 27 March 2020 by MarkSuckerberg
 Added Metacoin and Antag token support.
 
 ALTER TABLE `player` ADD COLUMN (`antag_tokens` tinyint(4) unsigned DEFAULT '0', `metacoins` int(10) unsigned NOT NULL DEFAULT '0');
 
 -----------------------------------------------------
 
-Version 5.71 16 Febuary 2020 by MarkSuckerberg
+Version 5.7.1 16 Febuary 2020 by MarkSuckerberg
 Added Mentor table and Mentor Memo table from Oracle.
 
 DROP TABLE IF EXISTS `mentor`;
