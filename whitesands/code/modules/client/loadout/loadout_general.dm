@@ -139,6 +139,19 @@
 	path = /obj/item/toy/plush/knight
 	cost = 2000 //imagine not being able to afford the marketable plushes
 
+// Shiptest edit
+/datum/gear/amongus
+	display_name = "toy, suspicious pill plushie"
+	path = /obj/item/toy/plush/among
+	cost = 1000
+
+/datum/gear/amongus/New()
+	. = ..()
+	var/obj/item/toy/plush/among/temp = new path()
+	description = "[capitalize(pick(temp.among_colors))] sus."
+	qdel(temp)
+// End Shiptest
+
 /datum/gear/flashlight
 	display_name = "tool, flashlight"
 	path = /obj/item/flashlight
