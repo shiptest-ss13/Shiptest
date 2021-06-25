@@ -183,9 +183,9 @@ SUBSYSTEM_DEF(overmap)
 	INIT_ANNOUNCE("Loading [selected_template.name]...")
 	SSshuttle.action_load(selected_template)
 	if(SSdbcore.Connect())
-		var/datum/db_query/query_round_map_name = SSdbcore.NewQuery({"
+		var/datum/DBQuery/query_round_map_name = SSdbcore.NewQuery({"
 			UPDATE [format_table_name("round")] SET map_name = :map_name WHERE id = :round_id
-		"}, list("map_name" = config.map_name, "round_id" = GLOB.round_id))
+		"}, list("map_name" = selected_template.name, "round_id" = GLOB.round_id))
 		query_round_map_name.Execute()
 		qdel(query_round_map_name)
 
