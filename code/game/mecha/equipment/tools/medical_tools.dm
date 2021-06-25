@@ -443,27 +443,19 @@
 		output += "Total: [round(reagents.total_volume,0.001)]/[reagents.maximum_volume] - <a href=\"?src=[REF(src)];purge_all=1\">Purge All</a>"
 	return output || "None"
 
-/obj/item/mecha_parts/mecha_equipment/medical/syringe_gun/proc/load_syringe(obj/item/reagent_containers/syringe/S)
-	if(syringes.len<max_syringes)
-		if(get_dist(src,S) >= 2)
-			occupant_message("<span class='warning'>The syringe is too far away!</span>")
-			return 0
-		for(var/obj/structure/D in S.loc)//Basic level check for structures in the way (Like grilles and windows)
-			if(!(D.CanPass(S,src.loc)))
-				occupant_message("<span class='warning'>Unable to load syringe!</span>")
-				return 0
-		for(var/obj/machinery/door/D in S.loc)//Checks for doors
-			if(!(D.CanPass(S,src.loc)))
-				occupant_message("<span class='warning'>Unable to load syringe!</span>")
-				return 0
-		S.reagents.trans_to(src, S.reagents.total_volume, transfered_by = chassis.occupant)
-		S.forceMove(src)
-		syringes += S
-		occupant_message("<span class='notice'>Syringe loaded.</span>")
-		update_equip_info()
-		return 1
-	occupant_message("<span class='warning'>[src]'s syringe chamber is full!</span>")
-	return 0
+/obj/item/mecha_parts/mecha_equipment/medical/syringe_gun/proc/load_syringe(obj/item/reagent_containers/syringe/S, mob/user)
+	if(length(syringes) >= max_syringes)
+		occupant_message("<span class='warning'>[src]'s syringe chamber is full!</span>")
+		return FALSE
+	if(!chassis.Adjacent(S))
+		occupant_message("<span class='warning'>Unable to load syringe!</span>")
+		return FALSE
+	S.reagents.trans_to(src, S.reagents.total_volume, transfered_by = user)
+	S.forceMove(src)
+	syringes += S
+	occupant_message("<span class='notice'>Syringe loaded.</span>")
+	update_equip_info()
+	return TRUE
 
 /obj/item/mecha_parts/mecha_equipment/medical/syringe_gun/proc/analyze_reagents(atom/A)
 	if(get_dist(src,A) >= 4)
