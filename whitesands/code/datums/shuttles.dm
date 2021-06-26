@@ -46,6 +46,10 @@
 /datum/map_template/shuttle/ministarfury //"""mini"""
 	port_id = "mining"
 	suffix = "ministarfury"
+	
+/datum/map_template/shuttle/golemship 
+	port_id = "mining"
+	suffix = "golem"
 
 //Ruins
 /datum/map_template/shuttle/ruin/solgov_exploration_pod

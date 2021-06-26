@@ -2,7 +2,15 @@
 "aB" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/mineral/titanium/yellow,
-/area/ruin/powered/golem_ship)
+/area/ship/cargo)
+"aI" = (
+/obj/machinery/power/shuttle/engine/fueled/plasma{
+	dir = 8
+	},
+/turf/open/floor/plating{
+	initial_gas_mix = "LAVALAND_ATMOS"
+	},
+/area/ship/engineering)
 "aK" = (
 /obj/machinery/autolathe,
 /obj/effect/turf_decal/tile/neutral{
@@ -16,18 +24,21 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/dark,
-/area/ruin/powered/golem_ship)
+/area/ship/science)
 "aT" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/tile/neutral{
 	dir = 4
 	},
 /obj/effect/turf_decal/tile/neutral,
-/obj/effect/turf_decal/trimline/purple/line{
+/obj/effect/turf_decal/trimline/white/line{
 	dir = 8
 	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plasteel/dark,
-/area/ruin/powered/golem_ship)
+/area/ship/science)
 "aY" = (
 /obj/structure/table/reinforced,
 /obj/item/paper_bin,
@@ -39,7 +50,7 @@
 	dir = 4
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/powered/golem_ship)
+/area/ship/bridge)
 "bs" = (
 /obj/machinery/mineral/ore_redemption{
 	input_dir = 2;
@@ -48,13 +59,13 @@
 /obj/machinery/door/firedoor,
 /obj/effect/turf_decal/bot,
 /turf/open/floor/plasteel/dark,
-/area/ruin/powered/golem_ship)
+/area/ship/cargo)
 "bv" = (
 /obj/effect/turf_decal/bot,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/ore_box,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/powered/golem_ship)
+/area/ship/cargo)
 "bx" = (
 /obj/effect/turf_decal/tile/neutral{
 	dir = 1
@@ -68,7 +79,7 @@
 /obj/structure/reagent_dispensers/fueltank,
 /obj/effect/turf_decal/bot,
 /turf/open/floor/plasteel/dark,
-/area/ruin/powered/golem_ship)
+/area/ship/engineering)
 "bI" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood/tracks{
@@ -76,7 +87,14 @@
 	},
 /obj/effect/decal/cleanable/blood,
 /turf/open/floor/mineral/titanium/blue,
-/area/ruin/powered/golem_ship)
+/area/ship/bridge)
+"bO" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plasteel,
+/area/ship/engineering)
 "bR" = (
 /obj/structure/rack,
 /obj/item/shovel,
@@ -96,14 +114,21 @@
 	dir = 4
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/powered/golem_ship)
+/area/ship/cargo)
+"bV" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/turf/open/floor/mineral/titanium/white,
+/area/ship/science)
 "cp" = (
 /obj/structure/extinguisher_cabinet{
 	pixel_y = -30
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/dark,
-/area/ruin/powered/golem_ship)
+/area/ship/cargo)
 "cD" = (
 /obj/structure/fans/tiny,
 /obj/effect/turf_decal/stripes/line{
@@ -113,15 +138,35 @@
 /obj/effect/decal/cleanable/blood/tracks,
 /obj/effect/mapping_helpers/airlock/cyclelink_helper,
 /turf/open/floor/plasteel/dark,
-/area/ruin/powered/golem_ship)
+/area/ship/crew)
+"cM" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/bot,
+/obj/machinery/washing_machine,
+/turf/open/floor/plating,
+/area/ship/engineering)
+"da" = (
+/obj/effect/turf_decal/tile/neutral{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/neutral{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel,
+/area/ship/engineering)
 "dc" = (
-/obj/structure/shuttle/engine/propulsion{
-	dir = 8
+/obj/machinery/power/terminal{
+	dir = 4
 	},
-/turf/open/floor/plating{
-	initial_gas_mix = "LAVALAND_ATMOS"
+/obj/structure/cable{
+	icon_state = "0-8"
 	},
-/area/ruin/powered/golem_ship)
+/turf/open/floor/plating,
+/area/ship/engineering)
 "di" = (
 /obj/structure/closet/crate,
 /obj/item/storage/bag/ore,
@@ -140,13 +185,13 @@
 	dir = 4
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/powered/golem_ship)
+/area/ship/cargo)
 "dq" = (
 /obj/machinery/shower{
 	dir = 8
 	},
 /turf/open/floor/plasteel/freezer,
-/area/ruin/powered/golem_ship)
+/area/ship/crew)
 "dr" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/tile/neutral{
@@ -156,7 +201,7 @@
 	dir = 6
 	},
 /turf/open/floor/plasteel/dark,
-/area/ruin/powered/golem_ship)
+/area/ship/science)
 "dt" = (
 /obj/machinery/light/small,
 /obj/effect/decal/cleanable/dirt,
@@ -164,14 +209,14 @@
 	dir = 4
 	},
 /turf/open/floor/mineral/titanium/blue,
-/area/ruin/powered/golem_ship)
+/area/ship/bridge)
 "dv" = (
 /obj/item/soap,
 /obj/machinery/shower{
 	dir = 8
 	},
 /turf/open/floor/plasteel/freezer,
-/area/ruin/powered/golem_ship)
+/area/ship/crew)
 "dy" = (
 /obj/structure/closet/crate,
 /obj/item/storage/bag/ore,
@@ -192,18 +237,18 @@
 	dir = 4
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/powered/golem_ship)
+/area/ship/cargo)
 "dF" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/spawner/lootdrop/maintenance/three,
 /obj/structure/closet/crate,
 /turf/open/floor/mineral/titanium/yellow,
-/area/ruin/powered/golem_ship)
+/area/ship/cargo)
 "ea" = (
 /obj/machinery/light/small,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/dark,
-/area/ruin/powered/golem_ship)
+/area/ship/cargo)
 "ee" = (
 /obj/effect/turf_decal/tile/neutral,
 /obj/effect/turf_decal/tile/neutral{
@@ -216,7 +261,10 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel,
-/area/ruin/powered/golem_ship)
+/area/ship/crew)
+"em" = (
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ship/cargo)
 "ep" = (
 /obj/machinery/light/small,
 /obj/effect/turf_decal/tile/neutral{
@@ -227,8 +275,11 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/trimline/white/line,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plasteel,
-/area/ruin/powered/golem_ship)
+/area/ship/crew)
 "eA" = (
 /obj/effect/turf_decal/trimline/yellow/arrow_cw,
 /obj/effect/turf_decal/tile/neutral{
@@ -238,7 +289,7 @@
 	dir = 4
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/powered/golem_ship)
+/area/ship/cargo)
 "eG" = (
 /obj/machinery/light{
 	dir = 8
@@ -246,11 +297,18 @@
 /obj/effect/turf_decal/tile/neutral{
 	dir = 4
 	},
-/obj/effect/turf_decal/trimline/purple/line{
+/obj/effect/turf_decal/trimline/white/line{
 	dir = 10
 	},
 /turf/open/floor/plasteel/dark,
-/area/ruin/powered/golem_ship)
+/area/ship/science)
+"eL" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/mineral/titanium/yellow,
+/area/ship/cargo)
 "fi" = (
 /obj/machinery/door/airlock/titanium,
 /obj/effect/turf_decal/stripes/line{
@@ -258,7 +316,7 @@
 	},
 /obj/effect/turf_decal/stripes/line,
 /turf/open/floor/plasteel/dark,
-/area/ruin/powered/golem_ship)
+/area/ship/engineering)
 "fK" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 1
@@ -266,7 +324,7 @@
 /obj/effect/turf_decal/stripes/line,
 /obj/machinery/door/airlock/mining,
 /turf/open/floor/plasteel/dark,
-/area/ruin/powered/golem_ship)
+/area/ship/cargo)
 "fL" = (
 /obj/effect/turf_decal/tile/neutral{
 	dir = 4
@@ -276,7 +334,7 @@
 	},
 /obj/effect/turf_decal/trimline/white/line,
 /turf/open/floor/plasteel/dark,
-/area/ruin/powered/golem_ship)
+/area/ship/science)
 "fQ" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/trimline/yellow/corner{
@@ -290,7 +348,7 @@
 	},
 /obj/effect/turf_decal/tile/neutral,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/powered/golem_ship)
+/area/ship/cargo)
 "fS" = (
 /obj/effect/turf_decal/stripes/corner{
 	dir = 8
@@ -309,27 +367,33 @@
 	dir = 1
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/powered/golem_ship)
+/area/ship/cargo)
 "gg" = (
 /obj/machinery/light/small{
 	dir = 8
 	},
 /turf/open/floor/mineral/titanium/yellow,
-/area/ruin/powered/golem_ship)
+/area/ship/cargo)
+"gh" = (
+/obj/machinery/atmospherics/pipe/simple/orange/visible{
+	dir = 6
+	},
+/turf/open/floor/plating,
+/area/ship/engineering)
 "gn" = (
 /obj/effect/turf_decal/tile/neutral{
 	dir = 8
 	},
 /obj/effect/turf_decal/tile/neutral,
-/obj/effect/turf_decal/trimline/purple/line{
+/obj/effect/turf_decal/trimline/white/line{
 	dir = 1
 	},
 /turf/open/floor/plasteel/dark,
-/area/ruin/powered/golem_ship)
+/area/ship/science)
 "gs" = (
 /obj/effect/spawner/structure/window/shuttle,
 /turf/open/floor/plating,
-/area/ruin/powered/golem_ship)
+/area/ship/science)
 "gz" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/item/kirbyplants{
@@ -347,11 +411,31 @@
 	},
 /obj/effect/turf_decal/tile/neutral,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/powered/golem_ship)
+/area/ship/bridge)
 "gT" = (
+/obj/effect/turf_decal/tile/neutral{
+	dir = 8
+	},
+/obj/effect/turf_decal/tile/neutral,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/dark,
-/area/ruin/powered/golem_ship)
+/obj/effect/turf_decal/stripes/line{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plasteel,
+/area/ship/engineering)
+"hq" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/mineral/titanium/white,
+/area/ship/science)
+"ht" = (
+/turf/open/floor/plating,
+/area/ship/engineering)
 "hu" = (
 /obj/structure/rack,
 /obj/item/pickaxe{
@@ -371,7 +455,7 @@
 	dir = 4
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/powered/golem_ship)
+/area/ship/cargo)
 "hN" = (
 /obj/effect/turf_decal/tile/neutral{
 	dir = 4
@@ -380,16 +464,30 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plasteel,
-/area/ruin/powered/golem_ship)
+/area/ship/engineering)
 "hO" = (
-/obj/machinery/light/small,
-/obj/structure/extinguisher_cabinet{
-	pixel_y = -30
+/obj/effect/turf_decal/tile/neutral{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/neutral{
+	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/dark,
-/area/ruin/powered/golem_ship)
+/obj/effect/turf_decal/stripes/line{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/turf/open/floor/plasteel,
+/area/ship/engineering)
 "hS" = (
 /obj/structure/mirror{
 	pixel_y = 28
@@ -398,13 +496,13 @@
 	pixel_y = 22
 	},
 /turf/open/floor/plasteel/freezer,
-/area/ruin/powered/golem_ship)
+/area/ship/crew)
 "ia" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood/innards,
 /obj/effect/decal/cleanable/blood/gibs/limb,
 /turf/open/floor/mineral/titanium/blue,
-/area/ruin/powered/golem_ship)
+/area/ship/bridge)
 "in" = (
 /obj/structure/rack,
 /obj/item/card/id/mining,
@@ -421,7 +519,7 @@
 	},
 /obj/effect/turf_decal/tile/neutral,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/powered/golem_ship)
+/area/ship/cargo)
 "iw" = (
 /obj/effect/turf_decal/tile/neutral,
 /obj/effect/turf_decal/tile/neutral{
@@ -437,19 +535,22 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel,
-/area/ruin/powered/golem_ship)
+/area/ship/crew)
 "iE" = (
-/turf/open/floor/mineral/titanium/purple,
-/area/ruin/powered/golem_ship)
+/turf/open/floor/mineral/titanium/white,
+/area/ship/science)
 "iQ" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/spawner/lootdrop/maintenance,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/mineral/titanium/white,
-/area/ruin/powered/golem_ship)
+/area/ship/science)
 "iZ" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/mineral/titanium/blue,
-/area/ruin/powered/golem_ship)
+/area/ship/bridge)
 "jl" = (
 /obj/item/storage/firstaid/fire{
 	pixel_x = 4;
@@ -470,7 +571,26 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/dark,
-/area/ruin/powered/golem_ship)
+/area/ship/science)
+"jq" = (
+/obj/structure/window/reinforced{
+	dir = 4;
+	pixel_x = 4
+	},
+/obj/structure/window/reinforced{
+	dir = 1;
+	pixel_y = 3
+	},
+/obj/machinery/door/window/eastright{
+	dir = 8
+	},
+/obj/machinery/atmospherics/components/unary/shuttle/heater{
+	dir = 8
+	},
+/turf/open/floor/plating{
+	initial_gas_mix = "LAVALAND_ATMOS"
+	},
+/area/ship/engineering)
 "jC" = (
 /obj/structure/window/reinforced{
 	dir = 2;
@@ -487,7 +607,7 @@
 	},
 /obj/effect/turf_decal/trimline/purple/corner,
 /turf/open/floor/plasteel/dark,
-/area/ruin/powered/golem_ship)
+/area/ship/science)
 "jH" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/rack,
@@ -516,7 +636,7 @@
 	},
 /obj/effect/turf_decal/tile/neutral,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/powered/golem_ship)
+/area/ship/cargo)
 "jR" = (
 /obj/structure/window/reinforced{
 	dir = 2;
@@ -534,7 +654,7 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/dark,
-/area/ruin/powered/golem_ship)
+/area/ship/science)
 "jX" = (
 /obj/effect/turf_decal/tile/neutral{
 	dir = 1
@@ -544,7 +664,7 @@
 	},
 /obj/structure/closet/secure_closet/personal,
 /turf/open/floor/plasteel/dark,
-/area/ruin/powered/golem_ship)
+/area/ship/crew)
 "kg" = (
 /obj/machinery/light,
 /obj/effect/decal/cleanable/dirt,
@@ -556,14 +676,14 @@
 	},
 /obj/effect/turf_decal/trimline/white/line,
 /turf/open/floor/plasteel/dark,
-/area/ruin/powered/golem_ship)
+/area/ship/science)
 "ki" = (
 /obj/machinery/door/poddoor{
 	id = "golemloading"
 	},
 /obj/structure/fans/tiny,
 /turf/open/floor/plating,
-/area/ruin/powered/golem_ship)
+/area/ship/cargo)
 "kt" = (
 /obj/effect/turf_decal/tile/neutral,
 /obj/effect/turf_decal/tile/neutral{
@@ -573,14 +693,13 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/dark,
-/area/ruin/powered/golem_ship)
+/area/ship/science)
 "kw" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/bedsheetbin,
-/obj/structure/table,
 /obj/effect/turf_decal/bot,
+/obj/structure/table,
+/obj/structure/bedsheetbin,
 /turf/open/floor/plating,
-/area/ruin/powered/golem_ship)
+/area/ship/engineering)
 "kC" = (
 /obj/effect/turf_decal/tile/neutral,
 /obj/effect/turf_decal/tile/neutral{
@@ -594,7 +713,7 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel,
-/area/ruin/powered/golem_ship)
+/area/ship/crew)
 "kP" = (
 /obj/effect/turf_decal/stripes,
 /obj/effect/decal/cleanable/dirt,
@@ -606,12 +725,12 @@
 	dir = 4
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/powered/golem_ship)
+/area/ship/cargo)
 "kS" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/spawner/lootdrop/maintenance,
 /turf/open/floor/mineral/titanium/yellow,
-/area/ruin/powered/golem_ship)
+/area/ship/cargo)
 "kX" = (
 /obj/item/kirbyplants{
 	icon_state = "applebush"
@@ -625,13 +744,20 @@
 	dir = 4
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/powered/golem_ship)
+/area/ship/bridge)
 "kY" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/small,
 /obj/effect/decal/cleanable/blood,
 /turf/open/floor/plating,
-/area/ruin/powered/golem_ship)
+/area/ship/engineering)
+"lm" = (
+/obj/machinery/power/apc/auto_name/north,
+/obj/machinery/power/terminal{
+	dir = 1
+	},
+/turf/open/floor/plating,
+/area/ship/engineering)
 "lt" = (
 /obj/machinery/light/small{
 	dir = 1
@@ -640,7 +766,7 @@
 /obj/item/bedsheet/random,
 /obj/effect/decal/cleanable/blood,
 /turf/open/floor/wood,
-/area/ruin/powered/golem_ship)
+/area/ship/crew)
 "lN" = (
 /obj/structure/extinguisher_cabinet{
 	dir = 4;
@@ -651,7 +777,7 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
-/area/ruin/powered/golem_ship)
+/area/ship/cargo)
 "lU" = (
 /obj/effect/turf_decal/tile/neutral{
 	dir = 1
@@ -664,7 +790,13 @@
 	},
 /obj/effect/turf_decal/trimline/white/line,
 /turf/open/floor/plasteel,
-/area/ruin/powered/golem_ship)
+/area/ship/crew)
+"lX" = (
+/obj/machinery/atmospherics/components/unary/tank/toxins{
+	dir = 1
+	},
+/turf/open/floor/plating,
+/area/ship/engineering)
 "mt" = (
 /obj/effect/turf_decal/box/corners{
 	dir = 1
@@ -681,13 +813,24 @@
 	dir = 4
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/powered/golem_ship)
+/area/ship/cargo)
+"my" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/mineral/titanium/white,
+/area/ship/science)
 "mE" = (
 /obj/effect/decal/cleanable/blood/tracks{
 	dir = 4
 	},
 /turf/open/floor/mineral/titanium/yellow,
-/area/ruin/powered/golem_ship)
+/area/ship/cargo)
+"mJ" = (
+/obj/machinery/power/smes/engineering,
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/turf/open/floor/plating,
+/area/ship/engineering)
 "mL" = (
 /obj/effect/turf_decal/bot,
 /obj/effect/decal/cleanable/dirt,
@@ -695,7 +838,7 @@
 	dir = 4
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/powered/golem_ship)
+/area/ship/cargo)
 "mX" = (
 /obj/effect/turf_decal/tile/neutral{
 	dir = 1
@@ -709,7 +852,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/trimline/white/corner,
 /turf/open/floor/plasteel,
-/area/ruin/powered/golem_ship)
+/area/ship/crew)
 "nc" = (
 /obj/effect/turf_decal/tile/neutral,
 /obj/effect/turf_decal/tile/neutral{
@@ -727,10 +870,10 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
-/area/ruin/powered/golem_ship)
+/area/ship/engineering)
 "nl" = (
 /turf/open/floor/plasteel/freezer,
-/area/ruin/powered/golem_ship)
+/area/ship/crew)
 "np" = (
 /obj/structure/fans/tiny,
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
@@ -741,18 +884,16 @@
 	},
 /obj/machinery/door/airlock/external,
 /turf/open/floor/plasteel/dark,
-/area/ruin/powered/golem_ship)
+/area/ship/cargo)
 "nt" = (
-/obj/structure/shuttle/engine/heater{
-	dir = 4
+/obj/structure/cable{
+	icon_state = "2-4"
 	},
-/obj/structure/window/reinforced{
-	dir = 8
+/obj/structure/cable{
+	icon_state = "1-2"
 	},
-/turf/open/floor/plating{
-	initial_gas_mix = "LAVALAND_ATMOS"
-	},
-/area/ruin/powered/golem_ship)
+/turf/open/floor/plating,
+/area/ship/engineering)
 "ny" = (
 /obj/structure/fans/tiny,
 /obj/effect/decal/cleanable/dirt,
@@ -762,7 +903,7 @@
 /obj/effect/turf_decal/stripes/line,
 /obj/machinery/door/airlock/external,
 /turf/open/floor/plasteel/dark,
-/area/ruin/powered/golem_ship)
+/area/ship/cargo)
 "nA" = (
 /obj/effect/turf_decal/tile/neutral,
 /obj/effect/turf_decal/tile/neutral{
@@ -779,10 +920,10 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel,
-/area/ruin/powered/golem_ship)
+/area/ship/crew)
 "nD" = (
 /turf/open/floor/mineral/titanium/yellow,
-/area/ruin/powered/golem_ship)
+/area/ship/cargo)
 "nE" = (
 /obj/item/clothing/suit/hazardvest{
 	desc = "A high-visibility lifejacket complete with whistle and slot for oxygen tanks.";
@@ -818,7 +959,7 @@
 	dir = 8
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/powered/golem_ship)
+/area/ship/cargo)
 "nH" = (
 /obj/effect/turf_decal/tile/neutral{
 	dir = 1
@@ -838,7 +979,7 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/dark,
-/area/ruin/powered/golem_ship)
+/area/ship/engineering)
 "nL" = (
 /obj/effect/turf_decal/tile/neutral{
 	dir = 4
@@ -848,8 +989,11 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/spawner/lootdrop/maintenance,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plasteel,
-/area/ruin/powered/golem_ship)
+/area/ship/engineering)
 "nT" = (
 /obj/effect/turf_decal/stripes/line,
 /obj/effect/turf_decal/stripes/line{
@@ -858,7 +1002,18 @@
 /obj/machinery/door/airlock/titanium,
 /obj/effect/decal/cleanable/blood/tracks,
 /turf/open/floor/plasteel/dark,
-/area/ruin/powered/golem_ship)
+/area/ship/crew)
+"oi" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/trimline/yellow/line{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/neutral{
+	dir = 8
+	},
+/obj/effect/turf_decal/tile/neutral,
+/turf/open/floor/mineral/plastitanium,
+/area/ship/cargo)
 "om" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/trimline/yellow/corner{
@@ -875,34 +1030,29 @@
 	dir = 1
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/powered/golem_ship)
+/area/ship/cargo)
 "oF" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood/tracks{
 	dir = 4
 	},
 /turf/open/floor/mineral/titanium/yellow,
-/area/ruin/powered/golem_ship)
+/area/ship/cargo)
 "oO" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/small{
 	dir = 1
 	},
-/turf/open/floor/mineral/titanium/yellow,
-/area/ruin/powered/golem_ship)
-"pi" = (
-/obj/effect/turf_decal/tile/neutral{
-	dir = 8
+/obj/structure/cable{
+	icon_state = "4-8"
 	},
-/obj/effect/turf_decal/tile/neutral,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel,
-/area/ruin/powered/golem_ship)
+/turf/open/floor/mineral/titanium/yellow,
+/area/ship/cargo)
 "pT" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood,
 /turf/open/floor/mineral/titanium/yellow,
-/area/ruin/powered/golem_ship)
+/area/ship/cargo)
 "qt" = (
 /obj/structure/ore_box,
 /obj/effect/turf_decal/trimline/yellow/line{
@@ -916,11 +1066,22 @@
 	dir = 1
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/powered/golem_ship)
+/area/ship/cargo)
+"qT" = (
+/obj/machinery/door/airlock/titanium,
+/obj/effect/turf_decal/stripes/line{
+	dir = 1
+	},
+/obj/effect/turf_decal/stripes/line,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/engineering)
 "rl" = (
 /obj/structure/frame/machine,
 /turf/open/floor/plasteel/dark,
-/area/ruin/powered/golem_ship)
+/area/ship/science)
 "rv" = (
 /obj/effect/turf_decal/tile/neutral{
 	dir = 1
@@ -931,21 +1092,25 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/trimline/white/corner,
 /turf/open/floor/plasteel,
-/area/ruin/powered/golem_ship)
+/area/ship/crew)
 "rH" = (
 /obj/effect/decal/cleanable/blood/tracks{
 	dir = 6
 	},
 /obj/effect/spawner/lootdrop/maintenance,
 /turf/open/floor/mineral/titanium/yellow,
-/area/ruin/powered/golem_ship)
+/area/ship/cargo)
 "rR" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood/tracks{
 	dir = 4
 	},
 /turf/open/floor/mineral/titanium/blue,
-/area/ruin/powered/golem_ship)
+/area/ship/bridge)
+"rZ" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/dark,
+/area/ship/engineering)
 "se" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/trimline/yellow/line{
@@ -955,15 +1120,36 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/tile/neutral,
+/obj/machinery/power/apc/auto_name/north,
+/obj/machinery/power/terminal{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/powered/golem_ship)
+/area/ship/cargo)
+"sX" = (
+/obj/machinery/power/shuttle/engine/electric{
+	dir = 8
+	},
+/turf/open/floor/plating{
+	initial_gas_mix = "LAVALAND_ATMOS"
+	},
+/area/ship/engineering)
 "tw" = (
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/cable/yellow{
+	icon_state = "2-4"
+	},
 /turf/open/floor/plating,
-/area/ruin/powered/golem_ship)
+/area/ship/engineering)
 "tI" = (
-/turf/closed/wall/mineral/plastitanium,
-/area/ruin/powered/golem_ship)
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/turf/open/floor/plating,
+/area/ship/engineering)
 "uk" = (
 /obj/machinery/shower{
 	dir = 4
@@ -972,7 +1158,7 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/freezer,
-/area/ruin/powered/golem_ship)
+/area/ship/crew)
 "uw" = (
 /obj/machinery/light/small{
 	dir = 1
@@ -981,7 +1167,7 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/freezer,
-/area/ruin/powered/golem_ship)
+/area/ship/crew)
 "uA" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/trimline/blue/corner,
@@ -995,7 +1181,7 @@
 	dir = 8
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/powered/golem_ship)
+/area/ship/bridge)
 "uL" = (
 /obj/effect/turf_decal/stripes,
 /obj/effect/decal/cleanable/dirt,
@@ -1008,14 +1194,14 @@
 	dir = 4
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/powered/golem_ship)
+/area/ship/cargo)
 "uQ" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood/tracks{
 	dir = 10
 	},
 /turf/open/floor/mineral/titanium/yellow,
-/area/ruin/powered/golem_ship)
+/area/ship/cargo)
 "uZ" = (
 /obj/effect/decal/cleanable/blood/tracks,
 /obj/effect/turf_decal/stripes/line{
@@ -1024,7 +1210,7 @@
 /obj/effect/turf_decal/stripes/line,
 /obj/machinery/door/airlock/mining,
 /turf/open/floor/plasteel/dark,
-/area/ruin/powered/golem_ship)
+/area/ship/cargo)
 "vl" = (
 /obj/structure/table/reinforced,
 /obj/machinery/recharger,
@@ -1043,7 +1229,7 @@
 	dir = 8
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/powered/golem_ship)
+/area/ship/bridge)
 "vn" = (
 /obj/structure/table/reinforced,
 /obj/item/folder/blue,
@@ -1056,7 +1242,7 @@
 	dir = 8
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/powered/golem_ship)
+/area/ship/bridge)
 "vv" = (
 /obj/machinery/mineral/equipment_vendor/golem,
 /obj/effect/turf_decal/bot,
@@ -1071,7 +1257,7 @@
 	dir = 4
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/powered/golem_ship)
+/area/ship/cargo)
 "vA" = (
 /obj/structure/table/reinforced,
 /obj/machinery/light/small,
@@ -1093,21 +1279,24 @@
 	dir = 4
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/powered/golem_ship)
+/area/ship/bridge)
 "vS" = (
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plating,
-/area/ruin/powered/golem_ship)
+/area/ship/engineering)
 "vV" = (
 /obj/machinery/light/small{
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/dark,
-/area/ruin/powered/golem_ship)
+/area/ship/crew)
 "wg" = (
 /obj/structure/sign/warning/xeno_mining,
 /turf/closed/wall/mineral/titanium/nodiagonal,
-/area/ruin/powered/golem_ship)
+/area/ship/cargo)
 "wC" = (
 /obj/effect/turf_decal/tile/neutral{
 	dir = 1
@@ -1118,7 +1307,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/trimline/white/line,
 /turf/open/floor/plasteel,
-/area/ruin/powered/golem_ship)
+/area/ship/crew)
 "wJ" = (
 /obj/machinery/light/small{
 	dir = 1
@@ -1128,16 +1317,27 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood,
 /turf/open/floor/wood,
-/area/ruin/powered/golem_ship)
+/area/ship/crew)
 "wL" = (
 /obj/structure/frame/computer{
 	dir = 4
 	},
-/obj/effect/turf_decal/trimline/purple/line{
+/obj/effect/turf_decal/trimline/white/line{
 	dir = 5
 	},
 /turf/open/floor/plasteel/dark,
-/area/ruin/powered/golem_ship)
+/area/ship/science)
+"wM" = (
+/obj/machinery/door/airlock/titanium,
+/obj/effect/turf_decal/stripes/line{
+	dir = 1
+	},
+/obj/effect/turf_decal/stripes/line,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/crew)
 "wR" = (
 /obj/effect/turf_decal/tile/neutral,
 /obj/effect/turf_decal/tile/neutral{
@@ -1156,7 +1356,7 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
-/area/ruin/powered/golem_ship)
+/area/ship/engineering)
 "wW" = (
 /obj/machinery/computer{
 	desc = "A computer long since rendered non-functional due to lack of maintenance. Spitting out error messages.";
@@ -1165,12 +1365,38 @@
 	},
 /obj/effect/turf_decal/bot,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/powered/golem_ship)
+/area/ship/bridge)
+"xa" = (
+/obj/structure/window/reinforced{
+	dir = 4;
+	pixel_x = 4
+	},
+/obj/structure/window/reinforced,
+/obj/machinery/door/window/eastleft{
+	dir = 8
+	},
+/obj/machinery/atmospherics/components/unary/shuttle/heater{
+	dir = 8
+	},
+/turf/open/floor/plating{
+	initial_gas_mix = "LAVALAND_ATMOS"
+	},
+/area/ship/engineering)
+"xQ" = (
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/turf/open/floor/mineral/titanium/yellow,
+/area/ship/cargo)
+"xR" = (
+/obj/machinery/atmospherics/pipe/simple/orange/visible,
+/turf/open/floor/plating,
+/area/ship/engineering)
 "yg" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood,
 /turf/open/floor/plasteel/freezer,
-/area/ruin/powered/golem_ship)
+/area/ship/crew)
 "yu" = (
 /obj/machinery/light/small{
 	dir = 1
@@ -1182,18 +1408,21 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
-/area/ruin/powered/golem_ship)
+/area/ship/crew)
 "yN" = (
 /obj/effect/turf_decal/tile/neutral{
 	dir = 8
 	},
 /obj/effect/turf_decal/tile/neutral,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/trimline/purple/line{
+/obj/effect/turf_decal/trimline/white/line{
 	dir = 1
 	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plasteel/dark,
-/area/ruin/powered/golem_ship)
+/area/ship/science)
 "yO" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 4
@@ -1204,8 +1433,11 @@
 /obj/machinery/door/airlock/command{
 	name = "Bridge"
 	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plasteel/dark,
-/area/ruin/powered/golem_ship)
+/area/ship/bridge)
 "zg" = (
 /obj/effect/turf_decal/tile/neutral{
 	dir = 1
@@ -1215,12 +1447,19 @@
 	dir = 6
 	},
 /turf/open/floor/plasteel,
-/area/ruin/powered/golem_ship)
+/area/ship/crew)
+"zn" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/mineral/titanium/blue,
+/area/ship/bridge)
 "zs" = (
 /obj/machinery/light,
 /obj/effect/spawner/lootdrop/maintenance,
 /turf/open/floor/plasteel/freezer,
-/area/ruin/powered/golem_ship)
+/area/ship/crew)
 "zt" = (
 /obj/effect/turf_decal/trimline/yellow/arrow_cw{
 	dir = 4
@@ -1232,7 +1471,7 @@
 	dir = 1
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/powered/golem_ship)
+/area/ship/cargo)
 "zM" = (
 /obj/effect/turf_decal/stripes,
 /obj/effect/turf_decal/tile/neutral{
@@ -1242,18 +1481,18 @@
 	dir = 4
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/powered/golem_ship)
+/area/ship/cargo)
 "zW" = (
 /obj/machinery/light{
 	dir = 8
 	},
 /obj/effect/turf_decal/tile/neutral,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/trimline/purple/line{
+/obj/effect/turf_decal/trimline/white/line{
 	dir = 9
 	},
 /turf/open/floor/plasteel/dark,
-/area/ruin/powered/golem_ship)
+/area/ship/science)
 "zX" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/mapping_helpers/airlock/cyclelink_helper,
@@ -1262,13 +1501,13 @@
 	},
 /obj/machinery/door/airlock/external,
 /turf/open/floor/plasteel/dark,
-/area/ruin/powered/golem_ship)
+/area/ship/cargo)
 "zY" = (
 /obj/machinery/shower{
 	dir = 4
 	},
 /turf/open/floor/plasteel/freezer,
-/area/ruin/powered/golem_ship)
+/area/ship/crew)
 "Ad" = (
 /obj/effect/turf_decal/stripes,
 /obj/effect/decal/cleanable/dirt,
@@ -1279,7 +1518,7 @@
 	dir = 4
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/powered/golem_ship)
+/area/ship/cargo)
 "Ae" = (
 /obj/structure/chair/comfy/shuttle{
 	dir = 8
@@ -1293,8 +1532,9 @@
 /obj/effect/turf_decal/tile/neutral{
 	dir = 4
 	},
+/obj/item/clothing/head/beret/black,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/powered/golem_ship)
+/area/ship/bridge)
 "Af" = (
 /obj/effect/decal/cleanable/blood/tracks{
 	dir = 4
@@ -1309,19 +1549,28 @@
 	name = "Bridge"
 	},
 /turf/open/floor/plasteel/dark,
-/area/ruin/powered/golem_ship)
+/area/ship/bridge)
 "Ak" = (
 /obj/machinery/door/airlock/titanium,
 /obj/effect/turf_decal/stripes/line{
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
-/area/ruin/powered/golem_ship)
+/area/ship/crew)
+"An" = (
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plating,
+/area/ship/engineering)
+"AF" = (
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ship/science)
 "Ba" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood/tracks,
 /turf/open/floor/mineral/titanium/yellow,
-/area/ruin/powered/golem_ship)
+/area/ship/cargo)
 "Bw" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/tile/neutral{
@@ -1332,7 +1581,7 @@
 	},
 /obj/effect/turf_decal/trimline/white/line,
 /turf/open/floor/plasteel/dark,
-/area/ruin/powered/golem_ship)
+/area/ship/science)
 "BD" = (
 /obj/item/kirbyplants{
 	icon_state = "plant-21"
@@ -1352,7 +1601,7 @@
 	},
 /obj/effect/turf_decal/tile/neutral,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/powered/golem_ship)
+/area/ship/bridge)
 "BE" = (
 /obj/structure/fans/tiny,
 /obj/effect/turf_decal/stripes/line{
@@ -1366,7 +1615,29 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
-/area/ruin/powered/golem_ship)
+/area/ship/crew)
+"Ch" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating,
+/area/ship/engineering)
+"Cv" = (
+/obj/machinery/atmospherics/pipe/simple/orange/visible,
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ship/engineering)
+"Cw" = (
+/obj/machinery/door/airlock/titanium,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/stripes/line{
+	dir = 4
+	},
+/obj/effect/turf_decal/stripes/line{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/science)
 "CO" = (
 /obj/effect/turf_decal/tile/neutral,
 /obj/effect/turf_decal/tile/neutral{
@@ -1376,7 +1647,7 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel,
-/area/ruin/powered/golem_ship)
+/area/ship/crew)
 "Dp" = (
 /obj/effect/turf_decal/tile/neutral,
 /obj/effect/turf_decal/tile/neutral{
@@ -1394,19 +1665,20 @@
 	},
 /obj/item/stock_parts/cell/high/plus,
 /obj/effect/turf_decal/box/corners,
+/obj/item/stock_parts/cell/high/plus,
 /turf/open/floor/plasteel/dark,
-/area/ruin/powered/golem_ship)
+/area/ship/engineering)
 "DM" = (
-/obj/structure/fans/tiny,
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
-	dir = 8
-	},
-/obj/effect/turf_decal/stripes/line{
 	dir = 4
 	},
+/obj/effect/turf_decal/stripes/line{
+	dir = 8
+	},
 /obj/machinery/door/airlock/external,
+/obj/machinery/atmospherics/pipe/simple/orange/visible,
 /turf/open/floor/plasteel/dark,
-/area/ruin/powered/golem_ship)
+/area/ship/engineering)
 "DY" = (
 /obj/effect/turf_decal/tile/neutral{
 	dir = 8
@@ -1415,7 +1687,23 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood,
 /turf/open/floor/plasteel,
-/area/ruin/powered/golem_ship)
+/area/ship/engineering)
+"Eg" = (
+/obj/effect/turf_decal/tile/neutral{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/neutral{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel,
+/area/ship/engineering)
 "Er" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/box/corners{
@@ -1429,7 +1717,13 @@
 	dir = 4
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/powered/golem_ship)
+/area/ship/cargo)
+"Eu" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plating,
+/area/ship/engineering)
 "EF" = (
 /obj/structure/chair/comfy/shuttle{
 	dir = 4
@@ -1443,14 +1737,39 @@
 /obj/effect/turf_decal/tile/neutral{
 	dir = 8
 	},
+/obj/item/clothing/head/beret/captain,
+/obj/item/clothing/glasses/sunglasses,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/powered/golem_ship)
+/area/ship/bridge)
+"EP" = (
+/obj/effect/turf_decal/tile/neutral{
+	dir = 8
+	},
+/obj/effect/turf_decal/tile/neutral,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/trimline/white/line{
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/science)
+"ES" = (
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/orange/visible{
+	dir = 6
+	},
+/turf/open/floor/plating,
+/area/ship/engineering)
 "Fi" = (
 /obj/structure/table/reinforced,
 /obj/item/clipboard,
 /obj/item/pen,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/powered/golem_ship)
+/area/ship/bridge)
 "FE" = (
 /obj/effect/turf_decal/tile/neutral,
 /obj/effect/turf_decal/tile/neutral{
@@ -1465,20 +1784,17 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel,
-/area/ruin/powered/golem_ship)
+/area/ship/crew)
 "FP" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/washing_machine,
-/obj/effect/turf_decal/bot,
+/obj/structure/cable/yellow{
+	icon_state = "1-8"
+	},
 /turf/open/floor/plating,
-/area/ruin/powered/golem_ship)
+/area/ship/engineering)
 "FS" = (
 /obj/structure/table/reinforced,
 /obj/item/clipboard,
-/obj/item/toy/figure/rd{
-	name = "the Liberator action figure";
-	toysay = "Yeah, go do whatever."
-	},
 /obj/effect/turf_decal/trimline/blue/line,
 /obj/effect/turf_decal/tile/neutral{
 	dir = 1
@@ -1486,12 +1802,20 @@
 /obj/effect/turf_decal/tile/neutral{
 	dir = 4
 	},
+/obj/item/toy/figure/rd{
+	name = "Liberator action figure";
+	toysay = "Yeah, go do whatever."
+	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/powered/golem_ship)
+/area/ship/bridge)
 "FT" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel,
-/area/ruin/powered/golem_ship)
+/area/ship/engineering)
+"Ga" = (
+/obj/effect/spawner/structure/window/shuttle,
+/turf/open/floor/plating,
+/area/ship/cargo)
 "Gg" = (
 /obj/machinery/reagentgrinder,
 /obj/structure/table,
@@ -1502,7 +1826,7 @@
 	dir = 5
 	},
 /turf/open/floor/plasteel/dark,
-/area/ruin/powered/golem_ship)
+/area/ship/science)
 "Gn" = (
 /obj/structure/window/reinforced{
 	dir = 1;
@@ -1510,18 +1834,19 @@
 	},
 /obj/structure/table/wood,
 /obj/item/circuitboard/aicore,
-/obj/item/toy/figure/rd{
-	name = "the Liberator action figure";
-	toysay = "Yeah, go do whatever."
-	},
 /obj/effect/turf_decal/trimline/purple/line{
 	dir = 10
 	},
 /obj/effect/turf_decal/trimline/purple/corner{
 	dir = 4
 	},
+/obj/item/aiModule/reset/purge,
+/obj/item/toy/figure/rd{
+	name = "Liberator action figure";
+	toysay = "Yeah, go do whatever."
+	},
 /turf/open/floor/plasteel/dark,
-/area/ruin/powered/golem_ship)
+/area/ship/science)
 "Gr" = (
 /obj/effect/turf_decal/tile/neutral{
 	dir = 1
@@ -1536,7 +1861,7 @@
 /obj/structure/reagent_dispensers/fueltank,
 /obj/effect/turf_decal/bot,
 /turf/open/floor/plasteel/dark,
-/area/ruin/powered/golem_ship)
+/area/ship/engineering)
 "GB" = (
 /obj/effect/turf_decal/trimline/yellow/line{
 	dir = 1
@@ -1546,7 +1871,7 @@
 	dir = 8
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/powered/golem_ship)
+/area/ship/cargo)
 "GD" = (
 /obj/structure/bed,
 /obj/item/bedsheet/rd/royal_cape,
@@ -1565,7 +1890,7 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
-/area/ruin/powered/golem_ship)
+/area/ship/science)
 "Hg" = (
 /obj/effect/turf_decal/tile/neutral,
 /obj/effect/turf_decal/tile/neutral{
@@ -1578,10 +1903,13 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel,
-/area/ruin/powered/golem_ship)
+/area/ship/crew)
 "Hs" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/mineral/titanium/white,
-/area/ruin/powered/golem_ship)
+/area/ship/science)
 "HK" = (
 /obj/effect/turf_decal/tile/neutral{
 	dir = 8
@@ -1590,13 +1918,20 @@
 /obj/effect/turf_decal/trimline/white/line{
 	dir = 1
 	},
+/obj/machinery/power/apc/auto_name/north,
+/obj/machinery/power/terminal{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
 /turf/open/floor/plasteel/dark,
-/area/ruin/powered/golem_ship)
+/area/ship/science)
 "HW" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood/tracks,
 /turf/open/floor/plasteel/dark,
-/area/ruin/powered/golem_ship)
+/area/ship/crew)
 "HZ" = (
 /turf/template_noop,
 /area/template_noop)
@@ -1609,27 +1944,34 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/tile/neutral,
-/obj/effect/turf_decal/trimline/purple/line{
+/obj/effect/turf_decal/trimline/white/line{
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
-/area/ruin/powered/golem_ship)
+/area/ship/science)
 "IB" = (
 /obj/machinery/light/small{
 	dir = 1
 	},
 /obj/effect/decal/cleanable/blood,
 /turf/open/floor/wood,
-/area/ruin/powered/golem_ship)
+/area/ship/crew)
 "IK" = (
 /obj/structure/sign/departments/science,
 /turf/closed/wall/mineral/titanium/nodiagonal,
-/area/ruin/powered/golem_ship)
+/area/ship/science)
+"IO" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/turf/open/floor/mineral/titanium/yellow,
+/area/ship/cargo)
 "IW" = (
 /obj/structure/table/reinforced,
 /obj/item/storage/toolbox/mechanical,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/powered/golem_ship)
+/area/ship/bridge)
 "Jk" = (
 /obj/structure/closet/crate/science,
 /obj/item/storage/box/stockparts/basic,
@@ -1643,7 +1985,19 @@
 	dir = 4
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/powered/golem_ship)
+/area/ship/cargo)
+"Jn" = (
+/obj/machinery/light/small,
+/obj/effect/turf_decal/tile/neutral{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/neutral{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/trimline/white/line,
+/turf/open/floor/plasteel,
+/area/ship/crew)
 "JA" = (
 /obj/effect/turf_decal/stripes/line,
 /obj/machinery/door/airlock/external,
@@ -1652,21 +2006,27 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/dark,
-/area/ruin/powered/golem_ship)
+/area/ship/crew)
 "JL" = (
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/mineral/titanium/purple,
-/area/ruin/powered/golem_ship)
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/turf/open/floor/mineral/titanium/white,
+/area/ship/science)
 "JX" = (
 /turf/open/floor/plasteel,
-/area/ruin/powered/golem_ship)
+/area/ship/engineering)
 "Kb" = (
 /obj/machinery/door/airlock/titanium,
 /obj/effect/turf_decal/stripes/line{
 	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
-/area/ruin/powered/golem_ship)
+/area/ship/engineering)
 "Kc" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/tile/neutral{
@@ -1680,12 +2040,12 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
-/area/ruin/powered/golem_ship)
+/area/ship/science)
 "Kg" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/frame/machine,
 /turf/open/floor/plasteel/dark,
-/area/ruin/powered/golem_ship)
+/area/ship/science)
 "KC" = (
 /obj/structure/rack,
 /obj/item/mop,
@@ -1696,7 +2056,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/bot,
 /turf/open/floor/plating,
-/area/ruin/powered/golem_ship)
+/area/ship/engineering)
 "KG" = (
 /obj/structure/fans/tiny,
 /obj/effect/turf_decal/stripes/line{
@@ -1705,17 +2065,27 @@
 /obj/machinery/door/airlock/external,
 /obj/effect/mapping_helpers/airlock/cyclelink_helper,
 /turf/open/floor/plasteel/dark,
-/area/ruin/powered/golem_ship)
+/area/ship/crew)
 "KH" = (
 /obj/structure/bed,
 /obj/item/bedsheet/random,
 /turf/open/floor/wood,
-/area/ruin/powered/golem_ship)
+/area/ship/crew)
 "KO" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood/gibs/up,
 /turf/open/floor/mineral/titanium/blue,
-/area/ruin/powered/golem_ship)
+/area/ship/bridge)
+"KW" = (
+/obj/machinery/power/terminal{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/machinery/atmospherics/components/binary/valve/digital,
+/turf/open/floor/plating,
+/area/ship/engineering)
 "La" = (
 /obj/machinery/door/airlock/titanium,
 /obj/effect/turf_decal/stripes/line{
@@ -1725,29 +2095,30 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
-/area/ruin/powered/golem_ship)
+/area/ship/cargo)
 "Ld" = (
 /obj/effect/turf_decal/bot,
 /obj/structure/reagent_dispensers/watertank,
 /turf/open/floor/plating,
-/area/ruin/powered/golem_ship)
+/area/ship/engineering)
+"Le" = (
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ship/engineering)
 "LL" = (
-/obj/effect/mapping_helpers/airlock/cyclelink_helper{
-	dir = 4
-	},
-/obj/effect/turf_decal/stripes/line{
+/obj/effect/turf_decal/tile/neutral{
 	dir = 8
 	},
-/obj/machinery/door/airlock/external,
-/turf/open/floor/plasteel/dark,
-/area/ruin/powered/golem_ship)
+/obj/effect/turf_decal/tile/neutral,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel,
+/area/ship/engineering)
 "Ma" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor{
 	id = "golemwindows"
 	},
 /turf/open/floor/plating,
-/area/ruin/powered/golem_ship)
+/area/ship/crew)
 "Ml" = (
 /obj/machinery/door/poddoor{
 	id = "golemloading"
@@ -1755,7 +2126,7 @@
 /obj/structure/fans/tiny,
 /obj/effect/decal/cleanable/blood/tracks,
 /turf/open/floor/plating,
-/area/ruin/powered/golem_ship)
+/area/ship/cargo)
 "Mv" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/trimline/blue/corner{
@@ -1769,7 +2140,7 @@
 	dir = 8
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/powered/golem_ship)
+/area/ship/bridge)
 "Mw" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood/tracks{
@@ -1779,12 +2150,15 @@
 	dir = 1
 	},
 /turf/open/floor/mineral/titanium/yellow,
-/area/ruin/powered/golem_ship)
+/area/ship/cargo)
 "Mx" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plasteel,
-/area/ruin/powered/golem_ship)
+/area/ship/engineering)
 "MN" = (
 /obj/effect/turf_decal/tile/neutral{
 	dir = 1
@@ -1795,14 +2169,23 @@
 /obj/structure/closet/secure_closet/personal,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/dark,
-/area/ruin/powered/golem_ship)
+/area/ship/crew)
 "MO" = (
 /obj/effect/decal/cleanable/blood/tracks{
 	dir = 5
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/mineral/titanium/purple,
-/area/ruin/powered/golem_ship)
+/turf/open/floor/mineral/titanium/white,
+/area/ship/science)
+"MP" = (
+/obj/machinery/power/terminal{
+	dir = 4
+	},
+/obj/structure/cable/yellow{
+	icon_state = "0-2"
+	},
+/turf/open/floor/plating,
+/area/ship/engineering)
 "MT" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood/old,
@@ -1811,12 +2194,15 @@
 	},
 /obj/effect/spawner/lootdrop/maintenance/two,
 /turf/open/floor/mineral/titanium/yellow,
-/area/ruin/powered/golem_ship)
+/area/ship/cargo)
+"Na" = (
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ship/bridge)
 "Ng" = (
 /obj/structure/closet/crate,
 /obj/effect/spawner/lootdrop/maintenance/two,
 /turf/open/floor/mineral/titanium/yellow,
-/area/ruin/powered/golem_ship)
+/area/ship/cargo)
 "Nj" = (
 /obj/effect/turf_decal/bot,
 /obj/structure/rack,
@@ -1830,7 +2216,7 @@
 	pixel_y = 3
 	},
 /turf/open/floor/plating,
-/area/ruin/powered/golem_ship)
+/area/ship/engineering)
 "Nu" = (
 /obj/effect/turf_decal/tile/neutral,
 /obj/effect/turf_decal/tile/neutral{
@@ -1846,7 +2232,14 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel,
-/area/ruin/powered/golem_ship)
+/area/ship/crew)
+"NP" = (
+/obj/machinery/door/airlock/titanium,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plating,
+/area/ship/engineering)
 "NT" = (
 /obj/item/areaeditor/blueprints{
 	desc = "Use to build new structures in the wastes.";
@@ -1865,7 +2258,18 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
-/area/ruin/powered/golem_ship)
+/area/ship/science)
+"NY" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/power/apc/auto_name/north,
+/obj/machinery/power/terminal{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/turf/open/floor/mineral/titanium/blue,
+/area/ship/bridge)
 "NZ" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/trimline/yellow/arrow_cw,
@@ -1876,11 +2280,36 @@
 	dir = 4
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/powered/golem_ship)
+/area/ship/cargo)
+"Og" = (
+/obj/effect/turf_decal/tile/neutral{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/neutral{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/trimline/white/line,
+/obj/machinery/power/apc/auto_name/south,
+/obj/machinery/power/terminal,
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/turf/open/floor/plasteel,
+/area/ship/crew)
+"Oi" = (
+/turf/closed/wall/mineral/plastitanium,
+/area/ship/engineering)
 "Oj" = (
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
 /turf/open/floor/mineral/titanium/white,
-/area/ruin/powered/golem_ship)
+/area/ship/science)
 "Om" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/ore_box,
@@ -1895,12 +2324,12 @@
 	},
 /obj/effect/turf_decal/tile/neutral,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/powered/golem_ship)
+/area/ship/cargo)
 "On" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/item/pod_parts/pod_frame/aft_port,
 /turf/open/floor/mineral/titanium/yellow,
-/area/ruin/powered/golem_ship)
+/area/ship/cargo)
 "Ox" = (
 /obj/effect/turf_decal/tile/neutral{
 	dir = 1
@@ -1909,16 +2338,16 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/trimline/purple/line,
+/obj/effect/turf_decal/trimline/white/line,
 /turf/open/floor/plasteel/dark,
-/area/ruin/powered/golem_ship)
+/area/ship/science)
 "OD" = (
 /obj/structure/frame/machine,
-/obj/effect/turf_decal/trimline/purple/line{
+/obj/effect/turf_decal/trimline/white/line{
 	dir = 6
 	},
 /turf/open/floor/plasteel/dark,
-/area/ruin/powered/golem_ship)
+/area/ship/science)
 "OF" = (
 /obj/effect/turf_decal/stripes/line,
 /obj/machinery/door/airlock/external,
@@ -1926,7 +2355,7 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/dark,
-/area/ruin/powered/golem_ship)
+/area/ship/crew)
 "PD" = (
 /obj/effect/turf_decal/tile/neutral{
 	dir = 1
@@ -1938,7 +2367,7 @@
 /obj/structure/reagent_dispensers/watertank,
 /obj/effect/turf_decal/bot,
 /turf/open/floor/plasteel/dark,
-/area/ruin/powered/golem_ship)
+/area/ship/engineering)
 "PE" = (
 /obj/effect/turf_decal/tile/neutral{
 	dir = 4
@@ -1946,7 +2375,23 @@
 /obj/effect/turf_decal/tile/neutral,
 /obj/structure/closet/secure_closet/personal,
 /turf/open/floor/plasteel/dark,
-/area/ruin/powered/golem_ship)
+/area/ship/crew)
+"PK" = (
+/obj/machinery/door/window/eastleft{
+	dir = 8
+	},
+/obj/structure/window/reinforced{
+	dir = 4;
+	pixel_x = 4
+	},
+/obj/structure/window/reinforced,
+/obj/machinery/power/smes/shuttle/precharged{
+	dir = 4
+	},
+/turf/open/floor/plating{
+	initial_gas_mix = "LAVALAND_ATMOS"
+	},
+/area/ship/engineering)
 "PV" = (
 /obj/effect/turf_decal/tile/neutral,
 /obj/effect/decal/cleanable/blood/tracks,
@@ -1960,11 +2405,11 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel,
-/area/ruin/powered/golem_ship)
+/area/ship/crew)
 "PX" = (
 /obj/structure/sign/departments/cargo,
 /turf/closed/wall/mineral/titanium/nodiagonal,
-/area/ruin/powered/golem_ship)
+/area/ship/cargo)
 "Ql" = (
 /obj/machinery/door/airlock/titanium,
 /obj/effect/decal/cleanable/dirt,
@@ -1975,7 +2420,26 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
-/area/ruin/powered/golem_ship)
+/area/ship/science)
+"Qw" = (
+/obj/machinery/door/window/eastright{
+	dir = 8
+	},
+/obj/structure/window/reinforced{
+	dir = 4;
+	pixel_x = 4
+	},
+/obj/structure/window/reinforced{
+	dir = 1;
+	pixel_y = 3
+	},
+/obj/machinery/power/smes/shuttle/precharged{
+	dir = 4
+	},
+/turf/open/floor/plating{
+	initial_gas_mix = "LAVALAND_ATMOS"
+	},
+/area/ship/engineering)
 "Qz" = (
 /obj/effect/turf_decal/tile/neutral{
 	dir = 1
@@ -1986,7 +2450,7 @@
 /obj/structure/reagent_dispensers/watertank,
 /obj/effect/turf_decal/bot,
 /turf/open/floor/plasteel/dark,
-/area/ruin/powered/golem_ship)
+/area/ship/engineering)
 "QD" = (
 /obj/effect/turf_decal/tile/neutral{
 	dir = 1
@@ -1999,7 +2463,7 @@
 	},
 /obj/effect/turf_decal/trimline/white/line,
 /turf/open/floor/plasteel,
-/area/ruin/powered/golem_ship)
+/area/ship/crew)
 "QY" = (
 /obj/item/storage/firstaid/brute{
 	pixel_x = 4;
@@ -2020,7 +2484,26 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/dark,
-/area/ruin/powered/golem_ship)
+/area/ship/science)
+"Re" = (
+/obj/structure/fans/tiny,
+/obj/effect/mapping_helpers/airlock/cyclelink_helper{
+	dir = 8
+	},
+/obj/effect/turf_decal/stripes/line{
+	dir = 4
+	},
+/obj/machinery/door/airlock/external,
+/turf/open/floor/plasteel/dark,
+/area/ship/engineering)
+"Rl" = (
+/obj/machinery/light/small,
+/obj/structure/extinguisher_cabinet{
+	pixel_y = -30
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/dark,
+/area/ship/engineering)
 "RB" = (
 /obj/effect/turf_decal/bot,
 /obj/effect/turf_decal/tile/neutral,
@@ -2036,7 +2519,7 @@
 	pixel_x = -5
 	},
 /turf/open/floor/plasteel/dark,
-/area/ruin/powered/golem_ship)
+/area/ship/engineering)
 "RK" = (
 /obj/effect/turf_decal/bot,
 /obj/structure/closet/crate,
@@ -2044,7 +2527,7 @@
 /obj/item/kinetic_crusher,
 /obj/effect/spawner/lootdrop/maintenance,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/powered/golem_ship)
+/area/ship/cargo)
 "Sa" = (
 /obj/item/kirbyplants{
 	icon_state = "plant-22"
@@ -2058,7 +2541,7 @@
 	dir = 8
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/powered/golem_ship)
+/area/ship/bridge)
 "Sc" = (
 /obj/machinery/computer/arcade/battle,
 /obj/effect/turf_decal/tile/neutral{
@@ -2071,24 +2554,26 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
-/area/ruin/powered/golem_ship)
+/area/ship/crew)
 "Sg" = (
 /obj/effect/turf_decal/bot,
-/obj/item/stack/cable_coil/red{
-	pixel_x = 2;
-	pixel_y = 6
-	},
-/obj/item/stock_parts/cell/high/plus,
-/obj/item/wirecutters,
-/obj/structure/table,
+/obj/structure/cable/yellow,
+/obj/machinery/power/port_gen/pacman/super,
+/obj/item/stack/sheet/mineral/uranium/five,
 /turf/open/floor/plating,
-/area/ruin/powered/golem_ship)
+/area/ship/engineering)
+"Sk" = (
+/obj/machinery/atmospherics/pipe/manifold/orange/visible{
+	dir = 8
+	},
+/turf/open/floor/plating,
+/area/ship/engineering)
 "SG" = (
 /obj/effect/turf_decal/bot,
 /obj/effect/decal/cleanable/dirt,
 /obj/item/pod_parts/pod_frame/fore_port,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/powered/golem_ship)
+/area/ship/cargo)
 "SR" = (
 /obj/effect/turf_decal/tile/neutral{
 	dir = 1
@@ -2096,9 +2581,9 @@
 /obj/effect/turf_decal/tile/neutral{
 	dir = 4
 	},
-/obj/effect/turf_decal/trimline/purple/line,
+/obj/effect/turf_decal/trimline/white/line,
 /turf/open/floor/plasteel/dark,
-/area/ruin/powered/golem_ship)
+/area/ship/science)
 "SV" = (
 /obj/item/pod_parts/pod_frame/fore_starboard,
 /obj/effect/turf_decal/trimline/yellow/line{
@@ -2109,7 +2594,7 @@
 	dir = 8
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/powered/golem_ship)
+/area/ship/cargo)
 "Td" = (
 /obj/structure/rack,
 /obj/item/storage/bag/ore,
@@ -2130,14 +2615,33 @@
 	dir = 4
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/powered/golem_ship)
+/area/ship/cargo)
 "Tj" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood/tracks{
 	dir = 9
 	},
 /turf/open/floor/mineral/titanium/yellow,
-/area/ruin/powered/golem_ship)
+/area/ship/cargo)
+"TF" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plating,
+/area/ship/engineering)
+"TL" = (
+/obj/machinery/power/terminal{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/machinery/atmospherics/pipe/manifold/orange/visible{
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/ship/engineering)
 "TN" = (
 /obj/structure/rack,
 /obj/item/resonator{
@@ -2165,7 +2669,7 @@
 	},
 /obj/effect/turf_decal/tile/neutral,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/powered/golem_ship)
+/area/ship/cargo)
 "TO" = (
 /obj/effect/turf_decal/tile/neutral{
 	dir = 1
@@ -2177,8 +2681,11 @@
 /obj/effect/turf_decal/trimline/white/corner{
 	dir = 8
 	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
 /turf/open/floor/plasteel,
-/area/ruin/powered/golem_ship)
+/area/ship/crew)
 "Ud" = (
 /obj/effect/turf_decal/tile/neutral{
 	dir = 1
@@ -2188,7 +2695,7 @@
 	},
 /obj/effect/turf_decal/trimline/white/line,
 /turf/open/floor/plasteel,
-/area/ruin/powered/golem_ship)
+/area/ship/crew)
 "Uq" = (
 /obj/effect/decal/cleanable/blood/tracks,
 /obj/effect/turf_decal/tile/neutral{
@@ -2197,9 +2704,9 @@
 /obj/effect/turf_decal/tile/neutral{
 	dir = 4
 	},
-/obj/effect/turf_decal/trimline/purple/line,
+/obj/effect/turf_decal/trimline/white/line,
 /turf/open/floor/plasteel/dark,
-/area/ruin/powered/golem_ship)
+/area/ship/science)
 "UD" = (
 /obj/structure/chair/comfy/shuttle{
 	dir = 8
@@ -2213,7 +2720,7 @@
 	},
 /obj/effect/turf_decal/tile/neutral,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/powered/golem_ship)
+/area/ship/bridge)
 "UH" = (
 /obj/structure/chair/comfy/shuttle{
 	dir = 4
@@ -2227,14 +2734,31 @@
 /obj/effect/turf_decal/tile/neutral{
 	dir = 4
 	},
+/obj/item/clothing/head/beret/black,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/powered/golem_ship)
+/area/ship/bridge)
+"US" = (
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plating,
+/area/ship/engineering)
+"Vd" = (
+/obj/effect/spawner/structure/window/shuttle,
+/obj/machinery/door/poddoor{
+	id = "golemwindows"
+	},
+/turf/open/floor/plating,
+/area/ship/cargo)
 "Vy" = (
 /obj/effect/turf_decal/bot,
 /obj/effect/decal/cleanable/dirt,
 /obj/item/pod_parts/pod_frame/aft_starboard,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/powered/golem_ship)
+/area/ship/cargo)
 "VY" = (
 /obj/structure/table/reinforced,
 /obj/machinery/light/small{
@@ -2247,11 +2771,14 @@
 	},
 /obj/effect/turf_decal/tile/neutral,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/powered/golem_ship)
+/area/ship/bridge)
 "Wr" = (
 /obj/effect/spawner/lootdrop/maintenance,
-/turf/open/floor/mineral/titanium/purple,
-/area/ruin/powered/golem_ship)
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/mineral/titanium/white,
+/area/ship/science)
 "WO" = (
 /obj/machinery/computer/arcade/orion_trail,
 /obj/effect/turf_decal/tile/neutral{
@@ -2261,17 +2788,14 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/dark,
-/area/ruin/powered/golem_ship)
+/area/ship/crew)
 "Xc" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor{
 	id = "golemwindows"
 	},
-/obj/effect/mapping_helpers/airlock/cyclelink_helper{
-	dir = 8
-	},
 /turf/open/floor/plating,
-/area/ruin/powered/golem_ship)
+/area/ship/bridge)
 "Xr" = (
 /obj/structure/closet/crate,
 /obj/item/storage/bag/ore,
@@ -2291,7 +2815,7 @@
 	dir = 4
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/powered/golem_ship)
+/area/ship/cargo)
 "Xv" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/tile/neutral{
@@ -2305,21 +2829,32 @@
 	},
 /obj/effect/turf_decal/trimline/white/corner,
 /turf/open/floor/plasteel/dark,
-/area/ruin/powered/golem_ship)
+/area/ship/science)
+"XJ" = (
+/obj/effect/spawner/structure/window/shuttle,
+/obj/machinery/door/poddoor{
+	id = "golemwindows"
+	},
+/turf/open/floor/plating,
+/area/ship/engineering)
 "XR" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/closed/wall/mineral/titanium/nodiagonal,
-/area/ruin/powered/golem_ship)
+/area/ship/bridge)
 "XY" = (
 /obj/effect/turf_decal/bot,
 /obj/structure/closet/crate,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/spawner/lootdrop/maintenance/two,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/powered/golem_ship)
+/area/ship/cargo)
 "Ye" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
-/area/ruin/powered/golem_ship)
+/area/ship/crew)
+"Yv" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/dark,
+/area/ship/cargo)
 "YN" = (
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
 	dir = 8
@@ -2329,7 +2864,7 @@
 	},
 /obj/machinery/door/airlock/external,
 /turf/open/floor/plasteel/dark,
-/area/ruin/powered/golem_ship)
+/area/ship/cargo)
 "YQ" = (
 /obj/structure/chair/comfy/shuttle{
 	dir = 8
@@ -2343,15 +2878,19 @@
 /obj/effect/turf_decal/tile/neutral{
 	dir = 8
 	},
+/obj/item/clothing/head/beret/black,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/powered/golem_ship)
+/area/ship/bridge)
 "YV" = (
 /obj/machinery/light/small{
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/mineral/titanium/blue,
-/area/ruin/powered/golem_ship)
+/area/ship/bridge)
 "YZ" = (
 /obj/effect/turf_decal/bot,
 /obj/effect/turf_decal/tile/neutral,
@@ -2370,7 +2909,7 @@
 	pixel_y = 3
 	},
 /turf/open/floor/plasteel/dark,
-/area/ruin/powered/golem_ship)
+/area/ship/engineering)
 "Ze" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 4
@@ -2383,12 +2922,20 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
-/area/ruin/powered/golem_ship)
+/area/ship/crew)
+"Zm" = (
+/obj/machinery/door/airlock/titanium,
+/obj/effect/turf_decal/stripes/line{
+	dir = 1
+	},
+/obj/effect/turf_decal/stripes/line,
+/turf/open/floor/plasteel/dark,
+/area/ship/crew)
 "ZX" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood/splatter,
 /turf/open/floor/mineral/titanium/blue,
-/area/ruin/powered/golem_ship)
+/area/ship/bridge)
 "ZY" = (
 /obj/machinery/computer/shuttle{
 	dir = 4
@@ -2396,7 +2943,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/bot,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/powered/golem_ship)
+/area/ship/bridge)
 
 (1,1,1) = {"
 HZ
@@ -2406,11 +2953,11 @@ HZ
 HZ
 HZ
 Xc
-Ma
-Ma
-Ma
-Ma
-Ma
+Xc
+Xc
+Xc
+Xc
+Xc
 HZ
 HZ
 HZ
@@ -2425,12 +2972,12 @@ HZ
 HZ
 HZ
 HZ
-Ma
+Xc
 IW
 wW
 ZY
 Fi
-Ma
+Xc
 HZ
 HZ
 HZ
@@ -2445,15 +2992,15 @@ HZ
 HZ
 Ye
 BE
-Ye
+Na
 VY
 UD
 UD
 vA
-Ye
+Na
 np
 np
-Ye
+em
 HZ
 HZ
 HZ
@@ -2470,10 +3017,10 @@ gz
 iZ
 iZ
 BD
-Ye
-gT
+Na
+Yv
 cp
-Ye
+em
 HZ
 HZ
 HZ
@@ -2485,15 +3032,15 @@ HZ
 Ye
 Ye
 Ze
-Ye
+Na
 KO
 uA
 Mv
 ZX
-Ye
-gT
+Na
+Yv
 ea
-Ye
+em
 HZ
 HZ
 HZ
@@ -2505,18 +3052,18 @@ Ye
 Ye
 CO
 lU
-Ye
+Na
 iZ
 UH
 EF
 ia
-Ye
+Na
 YN
 YN
-Ye
-Ye
-Ye
-Ye
+em
+em
+em
+em
 "}
 (7,1,1) = {"
 Ye
@@ -2525,12 +3072,12 @@ nT
 PV
 FE
 QD
-Ye
-iZ
+Na
+NY
 FS
 vn
 bI
-Ye
+Na
 GB
 nD
 nD
@@ -2545,12 +3092,12 @@ Ye
 ee
 mX
 zg
-Ye
+Na
 YV
 aY
 vl
 dt
-Ye
+Na
 SV
 aB
 Ng
@@ -2565,12 +3112,12 @@ Ye
 iw
 wC
 Sc
-Ye
-iZ
+Na
+zn
 Ae
 YQ
 rR
-Ye
+Na
 GB
 Tj
 uQ
@@ -2585,12 +3132,12 @@ Ye
 kC
 wC
 WO
-Ye
-iZ
+Na
+zn
 kX
 Sa
 rR
-Ye
+Na
 nE
 mE
 MT
@@ -2603,15 +3150,15 @@ Ye
 PE
 Ye
 kC
-wC
-Ye
-Ye
+Og
+AF
+Na
 yO
-Ye
-Ye
+Na
+Na
 Af
-Ye
-Ye
+Na
+em
 Mw
 On
 aB
@@ -2624,7 +3171,7 @@ lt
 nT
 nA
 ep
-Ye
+AF
 zW
 aT
 Gn
@@ -2636,7 +3183,7 @@ oF
 mt
 zt
 fS
-Ye
+em
 "}
 (13,1,1) = {"
 Ye
@@ -2644,7 +3191,7 @@ Ye
 Ye
 CO
 TO
-fi
+wM
 yN
 JL
 GD
@@ -2656,7 +3203,7 @@ rH
 eA
 XY
 bv
-Ma
+Vd
 "}
 (14,1,1) = {"
 Ma
@@ -2664,31 +3211,31 @@ wJ
 nT
 Nu
 rv
-fi
-yN
-JL
+Zm
+EP
+hq
 wL
 OD
-JL
+my
 Ox
 fK
 nD
 NZ
 Vy
 SG
-Ma
+Vd
 "}
 (15,1,1) = {"
 Ye
 MN
 Ye
 kC
-ep
+Jn
 IK
-yN
-JL
-JL
-JL
+EP
+hq
+my
+my
 iE
 SR
 PX
@@ -2696,7 +3243,7 @@ nD
 Er
 mL
 RK
-Ye
+em
 "}
 (16,1,1) = {"
 Ye
@@ -2706,17 +3253,17 @@ ee
 wC
 gs
 gn
-JL
+hq
 Kg
 rl
 iE
 Ox
-Ye
+em
 La
-Ye
-Ye
-Ye
-Ye
+em
+em
+em
+em
 "}
 (17,1,1) = {"
 cD
@@ -2725,17 +3272,17 @@ JA
 Hg
 Ud
 gs
-yN
+EP
 Wr
-JL
-JL
+my
+my
 iE
 SR
-Ye
+em
 se
-aB
+IO
 zX
-gT
+Yv
 ny
 "}
 (18,1,1) = {"
@@ -2744,16 +3291,16 @@ vV
 OF
 CO
 Ud
-Ye
+AF
 HK
 Oj
 Hs
-Oj
-Hs
+bV
+iE
 fL
-gs
-se
-aB
+Ga
+oi
+eL
 zX
 lN
 ny
@@ -2764,19 +3311,19 @@ Ye
 Ye
 Ak
 Ye
-Ye
+AF
 kt
-Oj
-Hs
-Oj
-Oj
+my
+iE
+hq
+my
 Kc
 bs
 om
-aB
+eL
 wg
-Ye
-Ye
+em
+em
 "}
 (20,1,1) = {"
 Ye
@@ -2784,19 +3331,19 @@ uk
 zY
 nl
 zY
-Ye
+AF
 aK
-Oj
-Hs
-Oj
-Hs
+my
+iE
+hq
+iE
 kg
-Ye
+em
 Om
-aB
+eL
 nD
 vv
-Ye
+em
 "}
 (21,1,1) = {"
 Ye
@@ -2804,19 +3351,19 @@ hS
 yg
 nl
 zs
-Ye
+AF
 jl
-Oj
-Oj
+my
+my
 iQ
-Oj
+my
 Kc
 fK
 fQ
-aB
+eL
 nD
 di
-Ma
+Vd
 "}
 (22,1,1) = {"
 Ye
@@ -2824,177 +3371,217 @@ uw
 dv
 nl
 dq
-Ye
+AF
 QY
-Oj
-Oj
-Oj
-Oj
+my
+my
+hq
+my
 Bw
-Ye
+em
 in
-aB
+eL
 aB
 Xr
-Ma
+Vd
 "}
 (23,1,1) = {"
-Ye
-Ye
-Ye
+Le
+Le
+Le
 Kb
-Ye
-Ye
+Le
+AF
 Gg
 NT
-Oj
-Oj
+my
+hq
 Xv
 dr
-Ye
+em
 TN
-aB
+eL
 kS
 dy
-Ye
+em
 "}
 (24,1,1) = {"
-Ye
+Le
 Nj
 tw
-vS
+An
 Sg
-Ye
-Ye
-Ye
+AF
+AF
+AF
 Ql
-Ql
-Ye
-Ye
-Ye
+Cw
+AF
+AF
+em
 jH
-aB
+eL
 pT
 Td
-Ma
+Vd
 "}
 (25,1,1) = {"
-Ye
+Le
 KC
-tw
+TF
 kY
-Ye
-Ye
+Le
+Le
 YZ
 Dp
-pi
+LL
 hN
 wR
 RB
-Ye
-Ye
+Le
+Le
 oO
 aB
 bR
-Ma
+Vd
 "}
 (26,1,1) = {"
-Ma
+XJ
 Ld
 vS
-tw
+Ch
 fi
 JX
 FT
 FT
 DY
-hN
-FT
-FT
+Eg
+bO
+bO
 Mx
-fi
-nD
+qT
+xQ
 nD
 hu
-Ye
+em
 "}
 (27,1,1) = {"
-Ma
-Ma
+XJ
+MP
 FP
 kw
-Ye
+Le
 bx
 PD
 nc
-pi
+LL
 nL
 nH
 Qz
 Gr
-Ye
+Le
 qt
 qt
-Ye
-Ye
+em
+em
 "}
 (28,1,1) = {"
-HZ
-Ye
-Ye
-Ye
-Ye
-Ye
-Ye
-Ye
+Le
+mJ
+ht
+cM
+Le
+Le
+Le
+Le
 LL
-LL
-Ye
-Ye
-Ye
-Ye
-Ye
-Ye
-Ye
-HZ
+da
+Le
+Le
+Le
+Le
+Le
+Le
+Le
+Le
 "}
 (29,1,1) = {"
-HZ
+Le
 tI
 nt
 nt
-tI
-nt
-nt
-Ye
+Eu
+Eu
+Eu
+NP
 gT
 hO
-Ye
-nt
-nt
-tI
-nt
-nt
-tI
-HZ
+NP
+Eu
+Eu
+Eu
+US
+ES
+lX
+Le
 "}
 (30,1,1) = {"
+Le
+lm
+dc
+dc
+ht
+gh
+Sk
+Cv
+DM
+DM
+Cv
+Sk
+Sk
+xR
+KW
+TL
+lX
+Le
+"}
+(31,1,1) = {"
+Le
+Oi
+Qw
+PK
+Oi
+jq
+xa
+Le
+rZ
+Rl
+Le
+jq
+xa
+Oi
+Qw
+PK
+Oi
+Le
+"}
+(32,1,1) = {"
 HZ
-tI
-dc
-dc
-tI
-dc
-dc
-Ye
-DM
-DM
-Ye
-dc
-dc
-tI
-dc
-dc
-tI
+Oi
+sX
+sX
+Oi
+aI
+aI
+Le
+Re
+Re
+Le
+aI
+aI
+Oi
+sX
+sX
+Oi
 HZ
 "}
