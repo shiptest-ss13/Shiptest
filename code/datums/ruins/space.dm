@@ -302,3 +302,8 @@
 	suffix = "hellfactory.dmm"
 	name = "Heck Brewery"
 	description = "An abandoned warehouse and brewing facility, which has been recently rediscovered. Reports claim that the security system entered an ultra-hard lockdown, but these reports are inconclusive."
+/datum/map_template/ruin/space/cryocontainment
+	id = "cryocontainment"
+	suffix = "cryocontainment.dmm"
+	name = "Cryogenic Containment Facility"
+	description = "Some old facility where they stored something in a cryotube to experiement on, obviously it got out and now the only thing it contains is Space Carps."
