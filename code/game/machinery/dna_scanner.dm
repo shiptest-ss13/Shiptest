@@ -156,8 +156,10 @@
 
 /obj/item/disk/data/Initialize()
 	. = ..()
+	/*shiptest edit : it conflicts with the new disks!!
 	icon_state = "datadisk[rand(0,6)]"
 	add_overlay("datadisk_gene")
+	*/
 
 /obj/item/disk/data/attack_self(mob/user)
 	read_only = !read_only
