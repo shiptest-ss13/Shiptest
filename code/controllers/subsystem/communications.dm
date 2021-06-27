@@ -20,7 +20,7 @@ SUBSYSTEM_DEF(communications)
 	if(!can_announce(user, is_silicon))
 		return FALSE
 	if(is_silicon)
-		minor_announce(html_decode(input),"[user.name] Announces:")
+		minor_announce(html_decode(input),"[user.name] Announces:", from = user, zlevel = user.get_virtual_z_level())
 		silicon_message_cooldown = world.time + COMMUNICATION_COOLDOWN_AI
 	else
 		priority_announce(html_decode(user.treat_message(input)), null, 'sound/misc/announce.ogg', "Captain", null, auth_id, user.get_virtual_z_level()) //WS Edit - Name on announcements & Make cap's announcement use logged-in name
