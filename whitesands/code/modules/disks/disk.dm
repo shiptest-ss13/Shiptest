@@ -10,13 +10,13 @@
 	var/random_color = TRUE
 	var/illustration = "generic"
 	var/static/list/random_disk_colors = list(
-		"blue" = "#0000ff",
-		"red" = "#ff000d",
-		"pink" = "#fb00ff",
-		"brown" = "#ff7b00",
-		"green" = "#00ff26",
-		"cyan" = "#00ffd9",
-		"yellow" = "#ffd000"
+		"blue" = "#8080ff",
+		"red" = "#ff666e",
+		"pink" = "#fd99ff",
+		"brown" = "#b38459",
+		"green" = "#9fe3a9",
+		"cyan" = "#96ffef",
+		"yellow" = "#ffe366"
 	)
 
 obj/item/disk/Initialize()
@@ -32,15 +32,16 @@ obj/item/disk/Initialize()
 
 /obj/item/disk/update_overlays()
 	. = ..()
-	if(!random_color) //icon override
-		return
 	var/mutable_appearance/label = mutable_appearance(icon, "label")
 	var/mutable_appearance/protect = mutable_appearance(icon, "protect")
 	protect.appearance_flags = RESET_COLOR
-	if(illustration)
-		. += illustration
+	label.appearance_flags = RESET_COLOR
 	. += label
 	. += protect
+	if(illustration)
+		var/mutable_appearance/writing = mutable_appearance(icon, "illustration")
+		writing.appearance_flags = RESET_COLOR
+		. += writing
 
 /obj/item/disk/design_disk
 	random_color = FALSE
@@ -50,19 +51,29 @@ obj/item/disk/Initialize()
 /obj/item/disk/tech_disk
 	random_color = FALSE
 	icon_state = "disk_map"
-	color = "#ff0000"
+	color = "#973328"
 
 /obj/item/disk/nuclear
 	random_color = FALSE
 	icon_state = "disk_map"
 	color = "#4ED57C"
-	illustration = "nuke_real"
+	illustration = "nuke_useless"
 	desc = "The authentication disk of a nuclear bomb. This is probably useless."
 
 /obj/item/disk/tech_disk/major
 	icon_state = "disk_map"
 	color = "#FFBAFF"
 	illustration = "bepis"
+
+/obj/item/disk/holodisk
+	random_color = FALSE
+	icon_state = "disk_map"
+	color = "#A7A3A6"
+	illustration = "holo"
+
+/obj/item/disk/data
+	icon_state = "disk_map"
+	illustration = "dna"
 
 /obj/item/disk/design_disk/modkit_disc
 	illustration = "accel"
