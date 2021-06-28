@@ -1,3 +1,5 @@
+//this code is not final
+
 /obj/item/disk
 	icon = 'whitesands/icons/obj/diskette.dmi'
 	w_class = WEIGHT_CLASS_TINY
@@ -39,7 +41,7 @@ obj/item/disk/Initialize()
 	. += label
 	. += protect
 	if(illustration)
-		var/mutable_appearance/writing = mutable_appearance(icon, "illustration")
+		var/mutable_appearance/writing = mutable_appearance(icon, illustration)
 		writing.appearance_flags = RESET_COLOR
 		. += writing
 
@@ -89,6 +91,95 @@ obj/item/disk/Initialize()
 
 /obj/item/disk/design_disk/golem_shell
 	illustration = "poyo"
+
+//security
+/obj/item/disk/design_disk/sec
+	name = "security design disk"
+	desc = "A design disk for use in a autolathe. Includes designs for security departments."
+	color = "#BE4130"
+	illustration = "security"
+
+/obj/item/disk/design_disk/sectech
+	name = "sec-tech design disk"
+	desc = "A design disk for use in a autolathe. This one is manufactured by Sec-Tech, and are quite rare after the russians went dark."
+	color = "#BE4130"
+	illustration = "security"
+
+/obj/item/disk/design_disk/armadyne
+	name = "sec-tech design disk"
+	desc = "A design disk for use in a autolathe. This one is manufactured by Armadyne.	Although NT cut ties after it was found that Armadyne had ties with the syndicate, it is now widely used after the disapearance of Sec-Tech"
+	color = "#BE4130"
+	illustration = "arma"
+
+//research
+/obj/item/disk/design_disk/rd
+	name = "research design disk"
+	desc = "A design disk for use in a autolathe. Includes designs for research departments."
+	color = "#7D59AE"
+	illustration = "sci"
+
+//engineering
+/obj/item/disk/design_disk/engi
+	name = "engineering design disk"
+	desc = "A design disk for use in a autolathe. Includes designs for engineering departments."
+	color = "#D6A001"
+	illustration = "engineering"
+
+//medical
+/obj/item/disk/design_disk/med
+	name = "medical design disk"
+	desc = "A design disk for use in a autolathe. Includes designs for engineering departments."
+	color = "#6DA0BE"
+	illustration = "med"
+
+//soviet
+/obj/item/disk/design_disk/russia
+	name = "russian design disk"
+	desc = "A design disk for use in a autolathe. It reads: Dlya tekh, kto prodvigayet tsivilizatsiyu. The label is a little faded."
+	color = "#DA251D"
+	illustration = "russia"
+
+/obj/item/disk/design_disk/russia/soviet
+	desc = "A design disk for use in a autolathe. It reads: Sobstvennost' slovatskogo pravitel'stva."
+	illustration = "soviet"
+
+//nanotresen
+/obj/item/disk/design_disk/nt
+	name = "nanotrasen design disk"
+	desc = "A design disk for use in a autolathe. Includes high tech designs from nanotrasen."
+	color = "#19196E"
+	illustration = "nt"
+
+/obj/item/disk/design_disk/nt/old
+	name = "old design disk"
+	desc = "A design disk for use in a autolathe. This is a old nanotrasen design."
+	color = "#19196E"
+	illustration = "nt"
+
+//solgov
+/obj/item/disk/design_disk/solgov
+	name = "solgov design disk"
+	desc = "A design disk for use in a autolathe. Includes designs from Solgov."
+	color = "#4C5B76"
+	illustration = "solgov"
+/obj/item/disk/design_disk/solgov_old
+	name = "solgov design disk"
+	desc = "A design disk for use in a autolathe. Includes old designs from Solgov."
+	color = "#00AC56"
+	illustration = "solgov_old"
+
+/obj/item/disk/design_disk/solgov_older
+	name = "ancient design disk"
+	desc = "A design disk for use in a autolathe. This thing probably hasn't been touched in many years, and the label is faded away."
+	color = "#5B92E5"
+	illustration = "solgov_older"
+
+//lavaland
+/obj/item/disk/design_disk/lavaland
+	name = "lavaland design disk"
+	desc = "A strange disk, with no label. Something complells you to stick it in a autolathe."
+	color = "#6F6F6F"
+	illustration = "rd_major"
 
 /obj/item/disk/design_disk/amogus_plushie
 	name = "suspicous design disk"
