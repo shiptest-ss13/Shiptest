@@ -152,8 +152,8 @@ obj/item/disk/Initialize()
 /obj/item/disk/design_disk/nt/old
 	name = "old design disk"
 	desc = "A design disk for use in a autolathe. This is a old nanotrasen design."
-	color = "#19196E"
-	illustration = "nt"
+	color = "#004E82"
+	illustration = "nt_old"
 
 //solgov
 /obj/item/disk/design_disk/solgov
