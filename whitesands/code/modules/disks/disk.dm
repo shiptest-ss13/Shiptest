@@ -99,17 +99,16 @@ obj/item/disk/Initialize()
 	color = "#BE4130"
 	illustration = "security"
 
-/obj/item/disk/design_disk/sectech
+/obj/item/disk/design_disk/sec/sectech
 	name = "sec-tech design disk"
 	desc = "A design disk for use in a autolathe. This one is manufactured by Sec-Tech, and are quite rare after the russians went dark."
 	color = "#BE4130"
 	illustration = "security"
 
-/obj/item/disk/design_disk/armadyne
-	name = "sec-tech design disk"
-	desc = "A design disk for use in a autolathe. This one is manufactured by Armadyne.	Although NT cut ties after it was found that Armadyne had ties with the syndicate, it is now widely used after the disapearance of Sec-Tech"
-	color = "#BE4130"
-	illustration = "arma"
+/obj/item/disk/design_disk/sec/ironhammer
+	name = "ironhammer design disk"
+	desc = "A design disk for use in a autolathe. This one is manufactured by Ironhammer. Although NT cut ties after it was found that Ironhammer had ties with the syndicate, it is now widely used after the disapearance of Sec-Tech"
+	illustration = "hammer"
 
 //research
 /obj/item/disk/design_disk/rd
