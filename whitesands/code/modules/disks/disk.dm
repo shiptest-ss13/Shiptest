@@ -119,6 +119,14 @@ obj/item/disk/Initialize()
 	name = "Disabler disk"
 	illustration = "gun"
 
+/obj/item/disk/design_disk/sec/shotshelllethal
+	name = "Buckshot disk"
+	illustration = "ammo"
+
+/obj/item/disk/design_disk/sec/shotshelnotllethal
+	name = "Shotgun Shell disk"
+	illustration = "ammo"
+
 /obj/item/disk/design_disk/sec/standard
 	name = "Standard security equipment disk"
 
@@ -133,6 +141,7 @@ obj/item/disk/Initialize()
 
 /obj/item/disk/design_disk/sec/m1911
 	name = "Colt M1911"
+	illustration = "gun"
 
 //research
 /obj/item/disk/design_disk/rd
