@@ -150,10 +150,6 @@
 	category = "escape_pod"
 	can_be_bought = FALSE
 
-/datum/map_template/shuttle/assault_pod
-	category = "assault_pod"
-	can_be_bought = FALSE
-
 /datum/map_template/shuttle/pirate
 	category = "pirate"
 	can_be_bought = FALSE
@@ -604,10 +600,6 @@
 /datum/map_template/shuttle/escape_pod/large
 	file_name = "escape_pod_large"
 	name = "escape pod (Large)"
-
-/datum/map_template/shuttle/assault_pod/default
-	file_name = "escape_pod_default"
-	name = "assault pod (Default)"
 
 /datum/map_template/shuttle/pirate/default
 	file_name = "pirate_default"

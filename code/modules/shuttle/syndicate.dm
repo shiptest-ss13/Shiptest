@@ -33,25 +33,6 @@
 	desc = "Use this if your friends left you behind."
 	possible_destinations = "syndicate_away"
 
-/obj/machinery/computer/shuttle/syndicate/drop_pod
-	name = "syndicate assault pod control"
-	desc = "Controls the drop pod's launch system."
-	icon = 'icons/obj/terminals.dmi'
-	icon_state = "dorm_available"
-	light_color = LIGHT_COLOR_BLUE
-	req_access = list(ACCESS_SYNDICATE)
-	shuttleId = "steel_rain"
-	possible_destinations = null
-
-/obj/machinery/computer/shuttle/syndicate/drop_pod/launch_check(mob/user)
-	. = ..()
-	if(!.)
-		return FALSE
-	if(!is_centcom_level(z))
-		to_chat(user, "<span class='warning'>Pods are one way!</span>")
-		return FALSE
-	return TRUE
-
 /obj/machinery/computer/camera_advanced/shuttle_docker/syndicate
 	name = "syndicate shuttle navigation computer"
 	desc = "Used to designate a precise transit location for the syndicate shuttle."

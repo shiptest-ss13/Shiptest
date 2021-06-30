@@ -181,9 +181,6 @@
 /area/shuttle/transport
 	name = "Transport Shuttle"
 
-/area/shuttle/assault_pod
-	name = "Steel Rain"
-
 /area/shuttle/sbc_starfury
 	name = "SBC Starfury"
 
