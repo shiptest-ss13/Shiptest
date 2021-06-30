@@ -61,7 +61,6 @@
 	new /obj/item/clothing/glasses/meson/prescription(src) //WS edit - Prescription HUDs
 	new /obj/item/clothing/glasses/meson(src)
 	new /obj/item/survivalcapsule(src)
-	new /obj/item/assault_pod/mining(src)
 	new /obj/item/clothing/head/hardhat/mining(src)
 
 

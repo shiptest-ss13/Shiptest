@@ -577,35 +577,6 @@
 	if(possible_destinations == initial(possible_destinations) || override)
 		possible_destinations = "pod_lavaland[idnum]"
 
-/obj/docking_port/stationary/random
-	name = "escape pod"
-	id = "pod"
-	dwidth = 1
-	width = 3
-	height = 4
-	var/target_area
-	var/edge_distance = 16
-	// Minimal distance from the map edge, setting this too low can result in shuttle landing on the edge and getting "sliced"
-
-/obj/docking_port/stationary/random/Initialize(mapload)
-	. = ..()
-	if(!mapload)
-		return
-
-	var/list/turfs = get_area_turfs(target_area)
-	var/original_len = turfs?.len
-	while(turfs?.len)
-		var/turf/T = pick(turfs)
-		if(T.x<edge_distance || T.y<edge_distance || (world.maxx+1-T.x)<edge_distance || (world.maxy+1-T.y)<edge_distance)
-			turfs -= T
-		else
-			forceMove(T)
-			return
-
-	// Fallback: couldn't find anything
-	WARNING("docking port '[id]' could not be randomly placed in [target_area]: of [original_len] turfs, none were suitable")
-	return INITIALIZE_HINT_QDEL
-
 //Pod suits/pickaxes
 
 

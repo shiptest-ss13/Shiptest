@@ -108,11 +108,6 @@
 	icon_state = "engineering"
 	build_path = /obj/machinery/computer/auxillary_base
 
-/obj/item/circuitboard/computer/base_construction
-	name = "circuit board (Aux Mining Base Construction Console)"
-	icon_state = "engineering"
-	build_path = /obj/machinery/computer/camera_advanced/base_construction
-
 /obj/item/circuitboard/computer/comm_monitor
 	name = "Telecommunications Monitor (Computer Board)"
 	icon_state = "engineering"
