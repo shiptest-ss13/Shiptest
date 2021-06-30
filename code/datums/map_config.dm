@@ -22,8 +22,6 @@
 	var/shuttle_id = "mining_ship_all"
 
 	var/traits = null
-	var/space_ruin_levels = 0
-	var/space_empty_levels = 0
 
 	var/allow_custom_shuttles = TRUE
 

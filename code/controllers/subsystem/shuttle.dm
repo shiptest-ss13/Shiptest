@@ -378,24 +378,6 @@ SUBSYSTEM_DEF(shuttle)
 			You have 3 minutes to board the Emergency Shuttle.",
 			null, 'sound/ai/shuttledock.ogg', "Priority")
 
-//try to move/request to dockHome if possible, otherwise dockAway. Mainly used for admin buttons
-/datum/controller/subsystem/shuttle/proc/toggleShuttle(shuttleId, dockHome, dockAway, timed)
-	var/obj/docking_port/mobile/M = getShuttle(shuttleId)
-	if(!M)
-		return 1
-	var/obj/docking_port/stationary/dockedAt = M.get_docked()
-	var/destination = dockHome
-	if(dockedAt && dockedAt.id == dockHome)
-		destination = dockAway
-	if(timed)
-		if(M.request(getDock(destination)))
-			return 2
-	else
-		if(M.initiate_docking(getDock(destination)) != DOCKING_SUCCESS)
-			return 2
-	return 0	//dock successful
-
-
 /datum/controller/subsystem/shuttle/proc/moveShuttle(shuttleId, dockId, timed)
 	var/obj/docking_port/mobile/M = getShuttle(shuttleId)
 	var/obj/docking_port/stationary/D = getDock(dockId)
@@ -577,7 +559,7 @@ SUBSYSTEM_DEF(shuttle)
 /datum/controller/subsystem/shuttle/proc/get_containing_shuttle(atom/A)
 	var/list/mobile_cache = mobile
 	for(var/i in 1 to mobile_cache.len)
-		var/obj/docking_port/port = mobile_cache[i]
+		var/obj/docking_port/mobile/port = mobile_cache[i]
 		if(port.is_in_shuttle_bounds(A))
 			return port
 
@@ -774,23 +756,23 @@ SUBSYSTEM_DEF(shuttle)
 	for(var/shuttle_id in SSmapping.shuttle_templates)
 		var/datum/map_template/shuttle/S = SSmapping.shuttle_templates[shuttle_id]
 
-		if(!templates[S.port_id])
-			data["templates_tabs"] += S.port_id
-			templates[S.port_id] = list(
-				"port_id" = S.port_id,
+		if(!templates[S.category])
+			data["templates_tabs"] += S.category
+			templates[S.category] = list(
+				"category" = S.category,
 				"templates" = list())
 
 		var/list/L = list()
 		L["name"] = S.name
-		L["shuttle_id"] = S.shuttle_id
-		L["port_id"] = S.port_id
+		L["file_name"] = S.file_name
+		L["category"] = S.category
 		L["description"] = S.description
 		L["admin_notes"] = S.admin_notes
 
 		if(selected == S)
 			data["selected"] = L
 
-		templates[S.port_id]["templates"] += list(L)
+		templates[S.category]["templates"] += list(L)
 
 	data["templates_tabs"] = sortList(data["templates_tabs"])
 
@@ -832,13 +814,14 @@ SUBSYSTEM_DEF(shuttle)
 	var/mob/user = usr
 
 	// Preload some common parameters
-	var/shuttle_id = params["shuttle_id"]
-	var/datum/map_template/shuttle/S = SSmapping.shuttle_templates[shuttle_id]
+	var/file_name = params["file_name"]
+	var/datum/map_template/shuttle/S = SSmapping.shuttle_templates[file_name]
 
 	switch(action)
 		if("select_template")
 			if(S)
-				existing_shuttle = getShuttle(S.port_id)
+				// DEBUG REWORK
+//				existing_shuttle = getShuttle(S.port_id)
 				selected = S
 				. = TRUE
 		if("jump_to")

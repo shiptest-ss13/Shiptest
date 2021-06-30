@@ -119,14 +119,6 @@
 			if(target_destination)
 				destination = target_destination
 				return TRUE
-		if("request")
-			if(!COOLDOWN_FINISHED(src, request_cooldown))
-				to_chat(usr, "<span class='warning'>CentCom is still processing last authorization request!</span>")
-				return
-			COOLDOWN_START(src, request_cooldown, 1 MINUTES)
-			to_chat(usr, "<span class='notice'>Your request has been received by CentCom.</span>")
-			to_chat(GLOB.admins, "<b>FERRY: <font color='#3d5bc3'>[ADMIN_LOOKUPFLW(usr)] (<A HREF='?_src_=holder;[HrefToken()];secrets=moveferry'>Move Ferry</a>)</b> is requesting to move the transport ferry to CentCom.</font>")
-			return TRUE
 
 /obj/machinery/computer/shuttle/emag_act(mob/user)
 	if(obj_flags & EMAGGED)

@@ -39,8 +39,7 @@ export const ShuttleConsole = (props, context) => {
               lineHeight="40px"
               icon="arrow-circle-right"
               content="Request Authorization"
-              color="bad"
-              onClick={() => act('request')} />
+              color="bad" />
           </Box>
         </Modal>
       )}
