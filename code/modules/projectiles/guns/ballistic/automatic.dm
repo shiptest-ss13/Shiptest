@@ -121,7 +121,7 @@
 	pin = /obj/item/firing_pin/implant/pindicate
 	mag_display = TRUE
 	empty_indicator = TRUE
-	fire_sound = 'sound/weapons/gun/smg/shot_alt.ogg'
+	fire_sound = 'sound/weapons/gun/smg/shot.ogg'
 
 /obj/item/gun/ballistic/automatic/m90/Initialize()
 	. = ..()
