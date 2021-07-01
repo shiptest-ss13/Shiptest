@@ -51,11 +51,17 @@ SUBSYSTEM_DEF(overmap)
 		if(startype == SMALLSTAR)
 			center = new(locate(size / 2, size / 2, 1))
 		if(startype == TWOSTAR)
-			center = new(locate(size / 2, size / 2, 1))
+			var/obj/structure/overmap/star/big/binary/S
+			S = new(locate(size / 2, size / 2, 1))
+			center = S
 		if(startype == MEDSTAR)
-			center = new(locate(size / 2, size / 2, 1))
+			var/obj/structure/overmap/star/medium/S
+			S = new(locate(size / 2, size / 2, 1))
+			center = S
 		if(startype == BIGSTAR)
-			center = new(locate(size / 2, size / 2, 1))
+			var/obj/structure/overmap/star/big/S
+			S = new(locate(size / 2, size / 2, 1))
+			center = S
 		var/list/unsorted_turfs = get_areatype_turfs(/area/overmap)
 		// SSovermap.size - 2 = area of the overmap w/o borders
 		radius_tiles = list()

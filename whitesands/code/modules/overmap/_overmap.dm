@@ -238,13 +238,12 @@
 
 /obj/structure/overmap/star/Initialize(mapload, _id)
 	. = ..()
-	if(.)
-		return
 	name = "[pick(GLOB.star_names)] [pick(GLOB.greek_letters)]"
 	class = pick(star_classes)
 	var/c = "#ffffff"
 	if(class == STARO)
 		c = "#75ffff"
+		desc = "A blue giant"
 	if(class == STARB)
 		c = "#c0ffff"
 	if(class == STARG)
@@ -263,14 +262,15 @@
 		desc = "A brown dwarf"
 	if(class == STARD)
 		c = pick("#75ffff", "#c0ffff", "#ffffff")
+		desc = "A white dwarf"
 	add_atom_colour(c, FIXED_COLOUR_PRIORITY)
 
 /obj/structure/overmap/star/medium
 	icon = 'whitesands/icons/effects/overmap_large.dmi'
 	bound_height = 64
 	bound_width = 64
-	pixel_x = -24
-	pixel_y = -24
+	pixel_x = -16
+	pixel_y = -16
 	icon_state = "star2"
 	star_classes = list(\
 		STARB,
@@ -285,8 +285,8 @@
 	icon_state = "star3"
 	bound_height = 96
 	bound_width = 96
-	pixel_z = -36
-	pixel_w = -36
+	pixel_z = -32
+	pixel_w = -32
 	star_classes = list(\
 		STARO,
 		STARB,
@@ -310,9 +310,11 @@
 	. = ..()
 	name = "[pick(GLOB.greek_letters)] [pick(GLOB.star_names)] AB"
 	class = pick(star_classes)
+	color = "#ffffff"
 	add_star_overlay()
 
 /obj/structure/overmap/star/big/binary/proc/add_star_overlay()
+	cut_overlays()
 	var/mutable_appearance/s1 = mutable_appearance(icon_state = "binary1")
 	var/mutable_appearance/s2 = mutable_appearance(icon_state = "binary2")
 	if(class == STARK)
