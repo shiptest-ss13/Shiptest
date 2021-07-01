@@ -5,6 +5,8 @@ SUBSYSTEM_DEF(overmap)
 	flags = SS_KEEP_TIMING|SS_NO_TICK_CHECK
 	runlevels = RUNLEVEL_SETUP | RUNLEVEL_GAME
 
+	//The type of star this system will have
+	var/startype
 	///Defines which generator to use for the overmap
 	var/generator_type = OVERMAP_GENERATOR_RANDOM
 
@@ -44,7 +46,16 @@ SUBSYSTEM_DEF(overmap)
 		generator_type = OVERMAP_GENERATOR_RANDOM
 
 	if (generator_type == OVERMAP_GENERATOR_SOLAR)
-		var/obj/structure/overmap/star/center = new(locate(size / 2, size / 2, 1))
+		var/obj/structure/overmap/star/center
+		startype = pick(SMALLSTAR,TWOSTAR,MEDSTAR,BIGSTAR)
+		if(startype == SMALLSTAR)
+			center = new(locate(size / 2, size / 2, 1))
+		if(startype == TWOSTAR)
+			center = new(locate(size / 2, size / 2, 1))
+		if(startype == MEDSTAR)
+			center = new(locate(size / 2, size / 2, 1))
+		if(startype == BIGSTAR)
+			center = new(locate(size / 2, size / 2, 1))
 		var/list/unsorted_turfs = get_areatype_turfs(/area/overmap)
 		// SSovermap.size - 2 = area of the overmap w/o borders
 		radius_tiles = list()
