@@ -115,8 +115,12 @@ obj/item/disk/Initialize()
 	name = "SPAS-12 disk"
 	illustration = "gun"
 
-/obj/item/disk/design_disk/sec/combatshotgun
+/obj/item/disk/design_disk/sec/disabler
 	name = "Disabler disk"
+	illustration = "gun"
+
+/obj/item/disk/design_disk/sec/combatshotgun
+	name = "Liberator Disposable pistol"
 	illustration = "gun"
 
 /obj/item/disk/design_disk/sec/shotshelllethal
@@ -149,6 +153,41 @@ obj/item/disk/Initialize()
 	desc = "A design disk for use in a autolathe. Includes designs for research departments."
 	color = "#7D59AE"
 	illustration = "sci"
+/*
+/obj/item/disk/design_disk/rd/golem
+	name = "Golem Creation Disk"
+	icon_state = "poyo"
+
+/obj/item/disk/design_disk/rd/golem_shell/Initialize()
+	. = ..()
+	var/datum/design/golem_shell/G = new
+	blueprints[1] = G
+*/
+/obj/item/disk/design_disk/rd/xenobio
+	name = "xenobiology creation disk"
+	illustration = "poyo"
+
+/obj/item/disk/design_disk/rd/borg
+	name = "Cyborg limbs and exoskeleton disk"
+
+/obj/item/disk/design_disk/rd/tempgun
+	name = "temperture gun disk"
+	illustration = "gun"
+
+/obj/item/disk/design_disk/rd/rnd
+	name = "NT Researchdos disk"
+	illustration = "nt"
+
+/obj/item/disk/design_disk/rd/flash
+	name = "Flash disk"
+
+/obj/item/disk/design_disk/rd/iongun
+	name = "ion gun disk"
+	illustration = "gun"
+
+/obj/item/disk/design_disk/rd/postibrain
+	name = "artifical brain disk"
+	illustration = "nt"
 
 //engineering
 /obj/item/disk/design_disk/engi
