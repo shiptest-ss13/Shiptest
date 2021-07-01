@@ -328,18 +328,14 @@
 /turf/open/floor/plating,
 /area/ship/science)
 "gD" = (
-/obj/structure/lattice/catwalk,
 /obj/docking_port/mobile{
 	can_move_docking_ports = 1;
-	dwidth = 8;
-	height = 19;
 	id = "mining_minigalaxy";
 	name = "SS Galaxy";
-	undock_roundstart = 1;
-	width = 28
+	undock_roundstart = 1
 	},
-/turf/template_noop,
-/area/ship/external)
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ship/cargo)
 "hj" = (
 /obj/structure/table/reinforced,
 /obj/machinery/door/firedoor,
@@ -2358,7 +2354,7 @@ uW
 PP
 uW
 uW
-uW
+gD
 NW
 "}
 (3,1,1) = {"
@@ -2506,7 +2502,7 @@ OY
 OY
 YT
 Wa
-gD
+NW
 "}
 (10,1,1) = {"
 NW

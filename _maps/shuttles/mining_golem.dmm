@@ -1279,18 +1279,20 @@
 /turf/open/floor/mineral/plastitanium,
 /area/ship/cargo)
 "vz" = (
+/obj/effect/spawner/structure/window/shuttle,
+/obj/machinery/door/poddoor{
+	id = "golemwindows"
+	},
 /obj/docking_port/mobile{
 	can_move_docking_ports = 1;
 	dir = 4;
-	height = 18;
 	id = "mining_golem";
 	name = "Free Golem Ship";
 	port_direction = 4;
-	undock_roundstart = 1;
-	width = 18
+	undock_roundstart = 1
 	},
-/turf/template_noop,
-/area/template_noop)
+/turf/open/floor/plating,
+/area/ship/bridge)
 "vA" = (
 /obj/structure/table/reinforced,
 /obj/machinery/light/small,
@@ -2959,13 +2961,13 @@
 /area/ship/bridge)
 
 (1,1,1) = {"
+HZ
+HZ
+HZ
+HZ
+HZ
+HZ
 vz
-HZ
-HZ
-HZ
-HZ
-HZ
-Xc
 Xc
 Xc
 Xc
