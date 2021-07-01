@@ -1,7 +1,7 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "af" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/shuttle/caravan/pirate)
+/area/ship/engineering)
 "aE" = (
 /obj/structure/closet{
 	name = "pirate outfits"
@@ -14,7 +14,7 @@
 /turf/open/floor/plasteel/dark/side{
 	dir = 5
 	},
-/area/shuttle/caravan/pirate)
+/area/ship/crew)
 "bd" = (
 /obj/structure/table/reinforced,
 /obj/machinery/button/door{
@@ -27,14 +27,17 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
-/area/shuttle/caravan/pirate)
+/area/ship/bridge)
 "bH" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 5
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plasteel,
-/area/shuttle/caravan/pirate)
+/area/ship/medical)
 "de" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden{
 	dir = 8
@@ -49,8 +52,14 @@
 /obj/effect/turf_decal/tile/neutral{
 	dir = 8
 	},
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
 /turf/open/floor/plasteel/dark,
-/area/shuttle/caravan/pirate)
+/area/ship/crew)
 "dE" = (
 /obj/effect/turf_decal/tile/neutral{
 	dir = 1
@@ -63,13 +72,16 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
-/area/shuttle/caravan/pirate)
+/area/ship/bridge)
 "fh" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden{
 	dir = 4
 	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plating,
-/area/shuttle/caravan/pirate)
+/area/ship/engineering)
 "fL" = (
 /obj/effect/turf_decal/tile/red{
 	dir = 1
@@ -81,7 +93,7 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
-/area/shuttle/caravan/pirate)
+/area/ship/bridge)
 "fS" = (
 /obj/structure/bed,
 /obj/item/bedsheet/brown,
@@ -93,7 +105,7 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
-/area/shuttle/caravan/pirate)
+/area/ship/crew)
 "fU" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden,
 /obj/effect/turf_decal/tile/red,
@@ -101,20 +113,35 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel,
-/area/shuttle/caravan/pirate)
+/area/ship/security)
 "hh" = (
 /mob/living/simple_animal/hostile/pirate{
 	environment_smash = 0
 	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plasteel,
-/area/shuttle/caravan/pirate)
+/area/ship/security)
 "hI" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
-/obj/structure/cable/yellow{
+/obj/structure/cable{
 	icon_state = "1-8"
 	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
 /turf/open/floor/plating,
-/area/shuttle/caravan/pirate)
+/area/ship/engineering)
+"hN" = (
+/obj/machinery/light/small{
+	dir = 8
+	},
+/obj/structure/sign/warning/vacuum{
+	pixel_x = -32
+	},
+/turf/open/floor/plating,
+/area/ship/security)
 "hT" = (
 /obj/machinery/light/small{
 	dir = 1
@@ -122,7 +149,7 @@
 /obj/structure/bed,
 /obj/item/bedsheet/brown,
 /turf/open/floor/plasteel/dark,
-/area/shuttle/caravan/pirate)
+/area/ship/crew)
 "hZ" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /obj/effect/turf_decal/tile/neutral{
@@ -135,8 +162,11 @@
 /obj/effect/turf_decal/tile/neutral{
 	dir = 8
 	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plasteel/dark,
-/area/shuttle/caravan/pirate)
+/area/ship/crew)
 "iF" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 9
@@ -151,8 +181,11 @@
 /obj/effect/turf_decal/tile/neutral{
 	dir = 8
 	},
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
 /turf/open/floor/plasteel/dark,
-/area/shuttle/caravan/pirate)
+/area/ship/crew)
 "iX" = (
 /obj/structure/table,
 /obj/machinery/door/window/southleft{
@@ -172,21 +205,21 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
-/area/shuttle/caravan/pirate)
+/area/ship/security)
 "jh" = (
 /obj/machinery/power/port_gen/pacman{
 	anchored = 1
 	},
 /obj/item/wrench,
-/obj/structure/cable,
 /obj/effect/turf_decal/stripes/line{
 	dir = 6
 	},
 /obj/machinery/atmospherics/pipe/manifold/orange/hidden{
 	dir = 4
 	},
+/obj/structure/cable/yellow,
 /turf/open/floor/plating,
-/area/shuttle/caravan/pirate)
+/area/ship/engineering)
 "jo" = (
 /obj/structure/table,
 /obj/machinery/airalarm/all_access{
@@ -204,7 +237,7 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
-/area/shuttle/caravan/pirate)
+/area/ship/security)
 "kl" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden{
 	dir = 1
@@ -212,7 +245,7 @@
 /turf/open/floor/plasteel/white/side{
 	dir = 1
 	},
-/area/shuttle/caravan/pirate)
+/area/ship/medical)
 "ku" = (
 /obj/structure/rack,
 /obj/item/storage/bag/money/vault,
@@ -224,21 +257,27 @@
 	name = "Pegwing"
 	},
 /turf/open/floor/plasteel/dark,
-/area/shuttle/caravan/pirate)
+/area/ship/crew)
 "kY" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden{
 	dir = 8
 	},
 /obj/machinery/meter,
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
 /turf/open/floor/plating,
-/area/shuttle/caravan/pirate)
+/area/ship/engineering)
 "le" = (
 /obj/machinery/porta_turret/syndicate/pod{
 	dir = 5;
 	faction = list("pirate")
 	},
 /turf/closed/wall/mineral/plastitanium,
-/area/shuttle/caravan/pirate)
+/area/ship/crew)
+"lu" = (
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/bridge)
 "lG" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on,
 /obj/effect/turf_decal/tile/neutral{
@@ -252,7 +291,14 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
-/area/shuttle/caravan/pirate)
+/area/ship/bridge)
+"lY" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel,
+/area/ship/medical)
 "mr" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
@@ -271,8 +317,19 @@
 /obj/effect/turf_decal/tile/neutral{
 	dir = 8
 	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plasteel/dark,
-/area/shuttle/caravan/pirate)
+/area/ship/bridge)
+"mF" = (
+/obj/structure/grille,
+/obj/structure/window/plasma/reinforced/plastitanium,
+/obj/machinery/door/poddoor{
+	id = "caravanpirate_bridge"
+	},
+/turf/open/floor/plating,
+/area/ship/security)
 "mI" = (
 /obj/structure/table,
 /obj/item/storage/firstaid/brute{
@@ -285,15 +342,22 @@
 	pixel_y = -24
 	},
 /turf/open/floor/plasteel/white,
-/area/shuttle/caravan/pirate)
+/area/ship/medical)
 "na" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
 	},
+/obj/machinery/power/apc/auto_name/north,
+/obj/machinery/power/terminal{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
 /turf/open/floor/plasteel/white/side{
 	dir = 1
 	},
-/area/shuttle/caravan/pirate)
+/area/ship/medical)
 "nD" = (
 /obj/machinery/light/small{
 	dir = 4
@@ -304,7 +368,7 @@
 /turf/open/floor/plasteel/white/side{
 	dir = 1
 	},
-/area/shuttle/caravan/pirate)
+/area/ship/medical)
 "oe" = (
 /obj/structure/table,
 /obj/item/circular_saw,
@@ -317,10 +381,13 @@
 /obj/machinery/light/small{
 	dir = 8
 	},
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
 /turf/open/floor/plasteel/white/side{
 	dir = 8
 	},
-/area/shuttle/caravan/pirate)
+/area/ship/medical)
 "oF" = (
 /obj/structure/closet{
 	name = "pirate outfits"
@@ -334,10 +401,10 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/dark,
-/area/shuttle/caravan/pirate)
+/area/ship/crew)
 "oL" = (
 /turf/closed/wall/mineral/plastitanium,
-/area/shuttle/caravan/pirate)
+/area/ship/medical)
 "oO" = (
 /obj/effect/turf_decal/tile/red{
 	dir = 1
@@ -345,9 +412,9 @@
 /obj/effect/turf_decal/tile/red{
 	dir = 4
 	},
-/obj/machinery/computer/camera_advanced/shuttle_docker/nav,
+/obj/machinery/computer/autopilot,
 /turf/open/floor/plasteel/dark,
-/area/shuttle/caravan/pirate)
+/area/ship/bridge)
 "oT" = (
 /obj/structure/table,
 /obj/structure/window/reinforced{
@@ -373,7 +440,7 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
-/area/shuttle/caravan/pirate)
+/area/ship/security)
 "pK" = (
 /obj/item/stack/sheet/mineral/gold{
 	amount = 25
@@ -397,13 +464,23 @@
 /obj/item/coin/gold,
 /obj/item/coin/gold,
 /obj/effect/turf_decal/tile/blue,
+/obj/machinery/power/apc/auto_name/east,
+/obj/machinery/power/terminal{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
 /turf/open/floor/plasteel/dark,
-/area/shuttle/caravan/pirate)
+/area/ship/crew)
 "pS" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plasteel,
-/area/shuttle/caravan/pirate)
+/area/ship/security)
 "pZ" = (
 /obj/structure/tank_dispenser/oxygen,
 /obj/machinery/firealarm{
@@ -420,14 +497,14 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
-/area/shuttle/caravan/pirate)
+/area/ship/security)
 "qo" = (
 /obj/machinery/porta_turret/syndicate/pod{
 	dir = 6;
 	faction = list("pirate")
 	},
 /turf/closed/wall/mineral/plastitanium,
-/area/shuttle/caravan/pirate)
+/area/ship/crew)
 "qC" = (
 /obj/structure/table,
 /obj/item/storage/fancy/donut_box{
@@ -448,7 +525,7 @@
 	pixel_x = 32
 	},
 /turf/open/floor/plasteel/dark,
-/area/shuttle/caravan/pirate)
+/area/ship/crew)
 "qX" = (
 /obj/structure/reagent_dispensers/watertank,
 /obj/item/reagent_containers/glass/bucket,
@@ -460,7 +537,10 @@
 	dir = 4
 	},
 /turf/open/floor/plating,
-/area/shuttle/caravan/pirate)
+/area/ship/engineering)
+"rI" = (
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/crew)
 "sr" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
@@ -469,12 +549,21 @@
 /obj/effect/turf_decal/tile/red{
 	dir = 8
 	},
+/obj/machinery/power/apc/auto_name/south,
+/obj/machinery/power/terminal,
+/obj/structure/cable,
 /turf/open/floor/plasteel,
-/area/shuttle/caravan/pirate)
+/area/ship/security)
 "su" = (
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
 /turf/open/floor/plasteel,
-/area/shuttle/caravan/pirate)
+/area/ship/medical)
 "th" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
@@ -483,8 +572,11 @@
 /obj/machinery/door/airlock/engineering{
 	name = "Engineering"
 	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plating,
-/area/shuttle/caravan/pirate)
+/area/ship/engineering)
 "to" = (
 /obj/structure/table,
 /obj/item/reagent_containers/food/drinks/bottle/rum{
@@ -493,20 +585,26 @@
 	},
 /obj/item/reagent_containers/food/drinks/bottle/rum,
 /turf/open/floor/plasteel/dark,
-/area/shuttle/caravan/pirate)
+/area/ship/bridge)
 "tM" = (
 /obj/effect/decal/cleanable/dirt,
 /mob/living/simple_animal/hostile/pirate/ranged{
 	environment_smash = 0
 	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
 /turf/open/floor/plasteel,
-/area/shuttle/caravan/pirate)
+/area/ship/security)
 "ul" = (
 /obj/structure/table,
 /obj/item/retractor,
 /obj/item/hemostat,
 /turf/open/floor/plasteel/white,
-/area/shuttle/caravan/pirate)
+/area/ship/medical)
 "un" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
@@ -518,15 +616,21 @@
 /obj/effect/turf_decal/tile/red{
 	dir = 8
 	},
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
 /turf/open/floor/plasteel,
-/area/shuttle/caravan/pirate)
+/area/ship/security)
 "vd" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 6
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plasteel,
-/area/shuttle/caravan/pirate)
+/area/ship/security)
 "vq" = (
 /obj/structure/bed,
 /obj/item/bedsheet/brown,
@@ -537,14 +641,17 @@
 /turf/open/floor/plasteel/dark/side{
 	dir = 6
 	},
-/area/shuttle/caravan/pirate)
+/area/ship/crew)
 "vW" = (
 /obj/machinery/light/small{
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plating,
-/area/shuttle/caravan/pirate)
+/area/ship/engineering)
 "wL" = (
 /obj/machinery/button/door{
 	id = "caravanpirate_bolt_port";
@@ -560,7 +667,7 @@
 /turf/open/floor/plasteel/white/side{
 	dir = 1
 	},
-/area/shuttle/caravan/pirate)
+/area/ship/medical)
 "wX" = (
 /obj/machinery/light/small{
 	dir = 8
@@ -571,8 +678,11 @@
 /obj/effect/turf_decal/tile/red{
 	dir = 8
 	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
 /turf/open/floor/plasteel,
-/area/shuttle/caravan/pirate)
+/area/ship/security)
 "wZ" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden{
 	dir = 4
@@ -587,15 +697,32 @@
 /obj/effect/turf_decal/tile/neutral{
 	dir = 8
 	},
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
 /turf/open/floor/plasteel/dark,
-/area/shuttle/caravan/pirate)
+/area/ship/crew)
 "xg" = (
 /obj/structure/table,
 /obj/machinery/microwave{
 	pixel_y = 5
 	},
 /turf/open/floor/plasteel/dark,
-/area/shuttle/caravan/pirate)
+/area/ship/crew)
+"xR" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
+/obj/machinery/power/apc/auto_name/south,
+/obj/machinery/power/terminal,
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/bridge)
 "yt" = (
 /obj/structure/reagent_dispensers/fueltank,
 /obj/effect/turf_decal/stripes/line{
@@ -605,7 +732,7 @@
 	dir = 4
 	},
 /turf/open/floor/plating,
-/area/shuttle/caravan/pirate)
+/area/ship/engineering)
 "yu" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 10
@@ -620,8 +747,11 @@
 /obj/effect/turf_decal/tile/neutral{
 	dir = 8
 	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
 /turf/open/floor/plasteel/dark,
-/area/shuttle/caravan/pirate)
+/area/ship/crew)
 "yW" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on{
 	dir = 4
@@ -634,7 +764,7 @@
 	dir = 9
 	},
 /turf/open/floor/plating,
-/area/shuttle/caravan/pirate)
+/area/ship/engineering)
 "zB" = (
 /obj/machinery/button/door{
 	id = "caravanpirate_bolt_starboard";
@@ -652,12 +782,12 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel,
-/area/shuttle/caravan/pirate)
+/area/ship/security)
 "Ag" = (
 /obj/structure/table/optable,
 /obj/effect/turf_decal/bot,
 /turf/open/floor/plasteel/white,
-/area/shuttle/caravan/pirate)
+/area/ship/medical)
 "Ah" = (
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
 	dir = 1
@@ -667,7 +797,7 @@
 	id_tag = "caravanpirate_bolt_starboard"
 	},
 /turf/open/floor/plating,
-/area/shuttle/caravan/pirate)
+/area/ship/security)
 "Av" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
@@ -677,12 +807,15 @@
 	name = "Medbay"
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plasteel,
-/area/shuttle/caravan/pirate)
+/area/ship/medical)
 "AP" = (
 /obj/structure/sign/departments/medbay/alt,
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/shuttle/caravan/pirate)
+/area/ship/medical)
 "Bi" = (
 /obj/structure/grille,
 /obj/structure/window/plasma/reinforced/plastitanium,
@@ -690,7 +823,7 @@
 	id = "caravanpirate_bridge"
 	},
 /turf/open/floor/plating,
-/area/shuttle/caravan/pirate)
+/area/ship/medical)
 "BI" = (
 /obj/structure/table,
 /obj/machinery/light/small{
@@ -699,7 +832,7 @@
 	},
 /obj/item/stack/spacecash/c200,
 /turf/open/floor/plasteel/dark,
-/area/shuttle/caravan/pirate)
+/area/ship/bridge)
 "BL" = (
 /obj/structure/table,
 /obj/machinery/cell_charger,
@@ -707,37 +840,39 @@
 /obj/item/stock_parts/cell/high,
 /obj/effect/turf_decal/bot,
 /turf/open/floor/plating,
-/area/shuttle/caravan/pirate)
+/area/ship/engineering)
 "Cb" = (
-/obj/machinery/power/apc{
-	dir = 8;
-	name = "Pirate Cutter APC";
-	pixel_x = -25
-	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /obj/machinery/airalarm/all_access{
 	dir = 8;
 	pixel_x = 24
 	},
-/obj/structure/cable/yellow{
+/obj/machinery/power/apc/auto_name/west,
+/obj/machinery/power/terminal{
+	dir = 8
+	},
+/obj/structure/cable{
 	icon_state = "0-2"
 	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plating,
-/area/shuttle/caravan/pirate)
+/area/ship/engineering)
 "DY" = (
 /obj/structure/closet/crate/secure/loot,
 /obj/machinery/airalarm/all_access{
 	pixel_y = 24
 	},
 /turf/open/floor/plasteel/dark,
-/area/shuttle/caravan/pirate)
+/area/ship/bridge)
 "Ek" = (
 /obj/machinery/atmospherics/components/unary/tank/toxins{
 	dir = 1
 	},
 /obj/effect/turf_decal/delivery,
 /turf/open/floor/plating,
-/area/shuttle/caravan/pirate)
+/area/ship/engineering)
 "EB" = (
 /obj/structure/chair/office{
 	dir = 4
@@ -763,13 +898,16 @@
 	environment_smash = 0
 	},
 /turf/open/floor/plasteel/dark,
-/area/shuttle/caravan/pirate)
+/area/ship/bridge)
 "EK" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on{
 	dir = 1
 	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plasteel,
-/area/shuttle/caravan/pirate)
+/area/ship/medical)
 "FM" = (
 /obj/machinery/power/terminal{
 	dir = 1
@@ -790,26 +928,40 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 4
 	},
-/obj/structure/cable{
-	icon_state = "0-2"
-	},
 /obj/machinery/atmospherics/pipe/manifold/orange/hidden{
 	dir = 4
 	},
+/obj/structure/cable/yellow{
+	icon_state = "0-2"
+	},
 /turf/open/floor/plating,
-/area/shuttle/caravan/pirate)
+/area/ship/engineering)
 "Gh" = (
 /obj/machinery/atmospherics/components/unary/tank/air,
 /obj/effect/turf_decal/bot,
 /turf/open/floor/plating,
-/area/shuttle/caravan/pirate)
+/area/ship/engineering)
+"Gw" = (
+/obj/machinery/suit_storage_unit/open,
+/obj/effect/turf_decal/tile/neutral{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/neutral,
+/obj/effect/turf_decal/tile/neutral{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/neutral{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/security)
 "GO" = (
 /obj/machinery/porta_turret/syndicate/pod{
 	dir = 9;
 	faction = list("pirate")
 	},
 /turf/closed/wall/mineral/plastitanium,
-/area/template_noop)
+/area/ship/engineering)
 "GQ" = (
 /obj/machinery/light/small{
 	dir = 4
@@ -822,14 +974,17 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel,
-/area/shuttle/caravan/pirate)
+/area/ship/security)
 "GR" = (
 /obj/structure/table,
 /obj/item/coin/gold,
 /obj/item/coin/silver,
 /obj/item/coin/silver,
 /turf/open/floor/plasteel/dark,
-/area/shuttle/caravan/pirate)
+/area/ship/bridge)
+"Hp" = (
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/security)
 "HD" = (
 /obj/structure/window/reinforced{
 	dir = 4
@@ -838,7 +993,7 @@
 	dir = 4
 	},
 /turf/open/floor/plating/airless,
-/area/shuttle/caravan/pirate)
+/area/ship/engineering)
 "HO" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
@@ -848,13 +1003,16 @@
 	name = "Armory"
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plasteel,
-/area/shuttle/caravan/pirate)
+/area/ship/security)
 "II" = (
 /obj/structure/closet/crate/freezer/surplus_limbs,
 /obj/effect/turf_decal/bot,
 /turf/open/floor/plasteel/white,
-/area/shuttle/caravan/pirate)
+/area/ship/medical)
 "Jb" = (
 /obj/effect/mapping_helpers/airlock/cyclelink_helper,
 /obj/effect/mapping_helpers/airlock/locked,
@@ -874,7 +1032,7 @@
 	width = 22
 	},
 /turf/open/floor/plating,
-/area/shuttle/caravan/pirate)
+/area/ship/medical)
 "Jv" = (
 /turf/template_noop,
 /area/template_noop)
@@ -888,7 +1046,7 @@
 	pixel_y = -24
 	},
 /turf/open/floor/plasteel/white,
-/area/shuttle/caravan/pirate)
+/area/ship/medical)
 "Ku" = (
 /obj/effect/mapping_helpers/airlock/cyclelink_helper,
 /obj/effect/mapping_helpers/airlock/locked,
@@ -896,7 +1054,7 @@
 	id_tag = "caravanpirate_bolt_starboard"
 	},
 /turf/open/floor/plating,
-/area/shuttle/caravan/pirate)
+/area/ship/security)
 "Ld" = (
 /obj/machinery/suit_storage_unit/open,
 /obj/effect/turf_decal/tile/neutral{
@@ -910,7 +1068,10 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
-/area/shuttle/caravan/pirate)
+/area/ship/medical)
+"LG" = (
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/medical)
 "NM" = (
 /obj/machinery/light/small{
 	dir = 8
@@ -923,32 +1084,38 @@
 	pixel_x = -27
 	},
 /turf/open/floor/plasteel/dark,
-/area/shuttle/caravan/pirate)
+/area/ship/crew)
 "ON" = (
 /obj/machinery/porta_turret/syndicate/pod{
 	dir = 10;
 	faction = list("pirate")
 	},
 /turf/closed/wall/mineral/plastitanium,
-/area/template_noop)
+/area/ship/engineering)
 "Pc" = (
 /obj/structure/sign/departments/engineering,
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/shuttle/caravan/pirate)
+/area/ship/engineering)
 "Pn" = (
 /obj/machinery/power/shuttle/engine/fueled/plasma{
 	dir = 4
 	},
 /turf/open/floor/plating/airless,
-/area/shuttle/caravan/pirate)
+/area/ship/engineering)
+"QQ" = (
+/turf/closed/wall/mineral/plastitanium,
+/area/ship/security)
 "Rq" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
 	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
 /turf/open/floor/plasteel/white/side{
 	dir = 9
 	},
-/area/shuttle/caravan/pirate)
+/area/ship/medical)
 "Rz" = (
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
 	dir = 1
@@ -958,7 +1125,7 @@
 	id_tag = "caravanpirate_bolt_port"
 	},
 /turf/open/floor/plating,
-/area/shuttle/caravan/pirate)
+/area/ship/medical)
 "RC" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
@@ -969,8 +1136,11 @@
 /obj/effect/turf_decal/tile/red{
 	dir = 8
 	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plasteel/dark,
-/area/shuttle/caravan/pirate)
+/area/ship/crew)
 "RK" = (
 /obj/machinery/power/smes{
 	charge = 5e+006
@@ -978,14 +1148,14 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 5
 	},
-/obj/structure/cable/yellow{
-	icon_state = "0-4"
-	},
 /obj/machinery/atmospherics/pipe/simple/orange/hidden{
 	dir = 10
 	},
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
 /turf/open/floor/plating,
-/area/shuttle/caravan/pirate)
+/area/ship/engineering)
 "Sd" = (
 /obj/machinery/light/small{
 	dir = 8
@@ -994,7 +1164,7 @@
 	pixel_x = -32
 	},
 /turf/open/floor/plating,
-/area/shuttle/caravan/pirate)
+/area/ship/medical)
 "Sk" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
@@ -1003,16 +1173,22 @@
 /obj/effect/turf_decal/tile/blue{
 	dir = 4
 	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plasteel/dark,
-/area/shuttle/caravan/pirate)
+/area/ship/crew)
 "SF" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
 	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plasteel/dark/side{
 	dir = 4
 	},
-/area/shuttle/caravan/pirate)
+/area/ship/crew)
 "SR" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 9
@@ -1021,13 +1197,14 @@
 	dir = 1;
 	pixel_y = -24
 	},
+/obj/machinery/holopad/emergency/command,
 /turf/open/floor/plasteel/dark,
-/area/shuttle/caravan/pirate)
+/area/ship/bridge)
 "Ty" = (
 /obj/machinery/atmospherics/components/unary/tank/toxins,
 /obj/effect/turf_decal/delivery,
 /turf/open/floor/plating,
-/area/shuttle/caravan/pirate)
+/area/ship/engineering)
 "UP" = (
 /obj/structure/rack,
 /obj/item/storage/toolbox/emergency,
@@ -1036,16 +1213,16 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
-/area/shuttle/caravan/pirate)
+/area/ship/bridge)
 "Wb" = (
 /obj/machinery/light/small,
 /obj/structure/bed,
 /obj/item/bedsheet/brown,
 /turf/open/floor/plasteel/dark,
-/area/shuttle/caravan/pirate)
+/area/ship/crew)
 "Wd" = (
 /turf/closed/wall/mineral/plastitanium,
-/area/template_noop)
+/area/ship/engineering)
 "Xq" = (
 /obj/structure/table/reinforced,
 /obj/machinery/recharger,
@@ -1055,7 +1232,10 @@
 	pixel_y = -29
 	},
 /turf/open/floor/plasteel/dark,
-/area/shuttle/caravan/pirate)
+/area/ship/bridge)
+"Yb" = (
+/turf/closed/wall/mineral/plastitanium,
+/area/ship/crew)
 "Yo" = (
 /obj/structure/table,
 /obj/item/storage/box/lethalshot,
@@ -1070,19 +1250,33 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
-/area/shuttle/caravan/pirate)
+/area/ship/security)
 "Yw" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
 	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plasteel/dark,
-/area/shuttle/caravan/pirate)
+/area/ship/bridge)
 "Zo" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 5
 	},
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
 /turf/open/floor/plating,
-/area/shuttle/caravan/pirate)
+/area/ship/engineering)
+"Zp" = (
+/obj/structure/grille,
+/obj/structure/window/plasma/reinforced/plastitanium,
+/obj/machinery/door/poddoor{
+	id = "caravanpirate_bridge"
+	},
+/turf/open/floor/plating,
+/area/ship/bridge)
 "ZY" = (
 /obj/structure/chair/office{
 	dir = 8
@@ -1098,7 +1292,7 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
-/area/shuttle/caravan/pirate)
+/area/ship/bridge)
 
 (1,1,1) = {"
 Jv
@@ -1177,33 +1371,33 @@ Jv
 "}
 (6,1,1) = {"
 Jv
-af
+LG
 Ld
 Rq
 oe
 ul
-af
+Hp
 Yo
 wX
 un
-Ld
-af
+Gw
+Hp
 Jv
 "}
 (7,1,1) = {"
 oL
-af
-af
+LG
+LG
 na
 su
 Ag
-af
+Hp
 jo
 tM
 sr
-af
-af
-oL
+Hp
+Hp
+QQ
 "}
 (8,1,1) = {"
 Jb
@@ -1212,28 +1406,28 @@ Rz
 kl
 EK
 mI
-af
+Hp
 pZ
 pS
 fU
 Ku
-Sd
+hN
 Ah
 "}
 (9,1,1) = {"
 oL
-af
-af
+LG
+LG
 wL
-su
+lY
 Kd
-af
+Hp
 oT
 hh
 zB
-af
-af
-oL
+Hp
+Hp
+QQ
 "}
 (10,1,1) = {"
 Jv
@@ -1242,33 +1436,33 @@ Ld
 nD
 bH
 II
-af
+Hp
 iX
 vd
 GQ
-Ld
-Bi
+Gw
+mF
 Jv
 "}
 (11,1,1) = {"
 Jv
 oL
-af
+LG
 AP
 Av
-af
-af
-af
+LG
+Hp
+Hp
 HO
-af
-af
-oL
+Hp
+Hp
+QQ
 Jv
 "}
 (12,1,1) = {"
 Jv
 Jv
-af
+rI
 aE
 SF
 vq
@@ -1276,14 +1470,14 @@ NM
 fS
 RC
 oF
-af
+rI
 Jv
 Jv
 "}
 (13,1,1) = {"
 Jv
 Jv
-af
+rI
 hT
 yu
 hZ
@@ -1291,7 +1485,7 @@ wZ
 de
 iF
 Wb
-af
+rI
 Jv
 Jv
 "}
@@ -1299,13 +1493,13 @@ Jv
 Jv
 Jv
 le
-af
+rI
 xg
 qC
 pK
 Sk
 ku
-af
+rI
 qo
 Jv
 Jv
@@ -1314,13 +1508,13 @@ Jv
 Jv
 Jv
 Jv
-oL
-af
-af
-af
+Yb
+lu
+lu
+lu
 mr
-af
-oL
+lu
+Yb
 Jv
 Jv
 Jv
@@ -1330,11 +1524,11 @@ Jv
 Jv
 Jv
 Jv
-af
+lu
 to
 BI
 Yw
-af
+lu
 Jv
 Jv
 Jv
@@ -1345,11 +1539,11 @@ Jv
 Jv
 Jv
 Jv
-af
+lu
 GR
 ZY
-Yw
-af
+xR
+lu
 Jv
 Jv
 Jv
@@ -1360,11 +1554,11 @@ Jv
 Jv
 Jv
 Jv
-af
+lu
 DY
 lG
 SR
-af
+lu
 Jv
 Jv
 Jv
@@ -1375,11 +1569,11 @@ Jv
 Jv
 Jv
 Jv
-af
+lu
 UP
 dE
 Xq
-af
+lu
 Jv
 Jv
 Jv
@@ -1390,11 +1584,11 @@ Jv
 Jv
 Jv
 Jv
-Bi
+Zp
 oO
 EB
 bd
-Bi
+Zp
 Jv
 Jv
 Jv
@@ -1405,11 +1599,11 @@ Jv
 Jv
 Jv
 Jv
-Bi
-Bi
+Zp
+Zp
 fL
-Bi
-Bi
+Zp
+Zp
 Jv
 Jv
 Jv
@@ -1421,9 +1615,9 @@ Jv
 Jv
 Jv
 Jv
-Bi
-Bi
-Bi
+Zp
+Zp
+Zp
 Jv
 Jv
 Jv
