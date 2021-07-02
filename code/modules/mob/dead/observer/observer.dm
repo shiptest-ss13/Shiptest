@@ -117,7 +117,7 @@ GLOBAL_VAR_INIT(observer_default_invisibility, INVISIBILITY_OBSERVER)
 	update_icon()
 
 	if(!T)
-		var/list/turfs = get_area_turfs(/area/shuttle/arrival)
+		var/list/turfs = get_areatype_turfs(/area/shuttle/arrival)
 		if(turfs.len)
 			T = pick(turfs)
 		else
@@ -421,7 +421,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 		return
 
 	var/list/L = list()
-	for(var/turf/T in get_area_turfs(thearea.type))
+	for(var/turf/T in get_areatype_turfs(thearea.type))
 		L+=T
 
 	if(!L || !L.len)

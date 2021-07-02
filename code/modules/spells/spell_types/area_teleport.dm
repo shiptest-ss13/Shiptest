@@ -38,7 +38,7 @@
 	playsound(get_turf(user), sound1, 50,TRUE)
 	for(var/mob/living/target in targets)
 		var/list/L = list()
-		for(var/turf/T in get_area_turfs(thearea.type))
+		for(var/turf/T in thearea.contents)
 			if(!T.density)
 				var/clear = TRUE
 				for(var/obj/O in T)

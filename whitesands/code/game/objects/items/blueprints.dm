@@ -65,7 +65,7 @@
 	if(turfs.len > BP_MAX_ROOM_SIZE)
 		to_chat(creator, "<span class='warning'>The room you're in is too big. It is [turfs.len >= BP_MAX_ROOM_SIZE *2 ? "more than 100" : ((turfs.len / BP_MAX_ROOM_SIZE)-1)*100]% larger than allowed.</span>")
 		return
-	var/list/areas = list("New Area" = /area/shuttle)
+	var/list/areas = list("New Area" = /area/ship)
 	var/list/shuttle_coords = target_shuttle.return_coords()
 	var/near_shuttle = FALSE
 	for(var/i in 1 to turfs.len)

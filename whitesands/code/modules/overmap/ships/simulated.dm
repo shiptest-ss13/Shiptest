@@ -54,8 +54,7 @@
 	if(!chosen_name)
 		return //Sorry, we're out of names
 	chosen_name = "SV [chosen_name]"
-	name = chosen_name
-	shuttle?.name = chosen_name
+	set_ship_name(chosen_name)
 
 ///Destroy if integrity <= 0 and no concious mobs on shuttle
 /obj/structure/overmap/ship/simulated/recieve_damage(amount)
@@ -107,6 +106,8 @@
 
 	shuttle.request(dock_to_use)
 
+	priority_announce("Beginning docking procedures. Completion in [(shuttle.callTime + 1 SECONDS)/10] seconds.", "Docking Announcement", sender_override = name, zlevel = shuttle.get_virtual_z_level())
+
 	addtimer(CALLBACK(src, .proc/complete_dock, to_dock), shuttle.callTime + 1 SECONDS)
 	state = OVERMAP_SHIP_DOCKING
 	return "Commencing docking..."
@@ -141,6 +142,7 @@
 	shuttle.destination = null
 	shuttle.mode = SHUTTLE_IGNITING
 	shuttle.setTimer(shuttle.ignitionTime)
+	priority_announce("Beginning undocking procedures. Completion in [(shuttle.ignitionTime + 1 SECONDS)/10] seconds.", "Docking Announcement", sender_override = name, zlevel = shuttle.get_virtual_z_level())
 	addtimer(CALLBACK(src, .proc/complete_dock), shuttle.ignitionTime + 1 SECONDS)
 	state = OVERMAP_SHIP_UNDOCKING
 	return "Beginning undocking procedures..."
@@ -309,6 +311,15 @@
 		return
 	if(integrity < initial(integrity))
 		integrity++
+
+/**
+  * Sets the ship, shuttle, and shuttle areas to a new name.
+  */
+/obj/structure/overmap/ship/simulated/proc/set_ship_name(new_name)
+	name = new_name
+	shuttle.name = new_name
+	for(var/area/shuttle_area in shuttle.shuttle_areas)
+		shuttle_area.rename_area("[new_name] [initial(shuttle_area.name)]")
 
 /obj/structure/overmap/ship/simulated/update_icon_state()
 	if(mass < SHIP_SIZE_THRESHOLD)

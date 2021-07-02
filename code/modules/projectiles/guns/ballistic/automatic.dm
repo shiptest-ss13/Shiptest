@@ -96,7 +96,7 @@
 	mag_display = TRUE
 	mag_display_ammo = TRUE
 	empty_indicator = TRUE
-	fire_rate = 3
+	fire_rate = 4 //zedaedit: autorifle but awesome
 
 /obj/item/gun/ballistic/automatic/mini_uzi
 	name = "\improper Type U3 Uzi"
@@ -121,7 +121,7 @@
 	pin = /obj/item/firing_pin/implant/pindicate
 	mag_display = TRUE
 	empty_indicator = TRUE
-	fire_sound = 'sound/weapons/gun/smg/shot_alt.ogg'
+	fire_sound = 'sound/weapons/gun/smg/shot.ogg'
 
 /obj/item/gun/ballistic/automatic/m90/Initialize()
 	. = ..()

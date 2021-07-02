@@ -6,8 +6,7 @@ SUBSYSTEM_DEF(blackmarket)
 	/// Descriptions for each shipping methods.
 	var/shipping_method_descriptions = list(
 		SHIPPING_METHOD_LAUNCH="Launches the item at the station from space, cheap but you might not recieve your item at all.",
-		SHIPPING_METHOD_LTSRBT="Long-To-Short-Range-Bluespace-Transceiver, a machine that recieves items outside the station and then teleports them to the location of the uplink.",
-		SHIPPING_METHOD_TELEPORT="Teleports the item in a random area in the station, you get 60 seconds to get there first though."
+		SHIPPING_METHOD_LTSRBT="Long-To-Short-Range-Bluespace-Transceiver, a machine that recieves items outside the station and then teleports them to the location of the uplink."
 	)
 
 	/// List of all existing markets.
@@ -69,19 +68,6 @@ SUBSYSTEM_DEF(blackmarket)
 
 				queued_purchases -= purchase
 				pad.add_to_queue(purchase)
-			// Get random area, throw it somewhere there.
-			if(SHIPPING_METHOD_TELEPORT)
-				var/turf/targetturf = get_safe_random_station_turf()
-				// This shouldn't happen.
-				if (!targetturf)
-					continue
-
-				to_chat(recursive_loc_check(purchase.uplink.loc, /mob), "<span class='notice'>[purchase.uplink] flashes a message noting that the order is being teleported to [get_area(targetturf)] in 60 seconds.</span>")
-
-				// do_teleport does not want to teleport items from nullspace, so it just forceMoves and does sparks.
-				addtimer(CALLBACK(src, /datum/controller/subsystem/blackmarket/proc/fake_teleport, purchase.entry.spawn_item(), targetturf), 60 SECONDS)
-				queued_purchases -= purchase
-				qdel(purchase)
 			// Get the current location of the uplink if it exists, then throws the item from space at the station from a random direction.
 			if(SHIPPING_METHOD_LAUNCH)
 				var/startSide = pick(GLOB.cardinals)

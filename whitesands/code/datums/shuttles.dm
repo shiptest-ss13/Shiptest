@@ -35,6 +35,10 @@
 	port_id = "bar"
 	suffix = "ship"
 
+/datum/map_template/shuttle/moth
+	port_id = "engi"
+	suffix = "moth"
+
 /datum/map_template/shuttle/radio
 	port_id = "radio"
 	suffix = "funny"

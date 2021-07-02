@@ -1,4 +1,4 @@
-/proc/priority_announce(text, title = "", sound = 'sound/ai/attention.ogg', type, sender_override, auth_id)            //WS Edit - Make cap's announcement use logged-in name
+/proc/priority_announce(text, title = "", sound = 'sound/ai/attention.ogg', type, sender_override, auth_id, zlevel)            //WS Edit - Make cap's announcement use logged-in name
 	if(!text)
 		return
 
@@ -34,10 +34,15 @@
 	var/sound/S = sound(sound)
 	S.environment = SOUND_ENVIRONMENT_CONCERT_HALL
 	for(var/mob/M in GLOB.player_list)
-		if(!isnewplayer(M) && M.can_hear())
-			to_chat(M, announcement)
-			if(M.client.prefs.toggles & SOUND_ANNOUNCEMENTS)
-				SEND_SOUND(M, S)
+		if(isnewplayer(M) || !M.can_hear())
+			continue
+
+		if(zlevel && (M.get_virtual_z_level() != zlevel)) // If a z-level is specified and the mob's z does not equal it
+			continue
+
+		to_chat(M, announcement)
+		if(M.client.prefs.toggles & SOUND_ANNOUNCEMENTS)
+			SEND_SOUND(M, S)
 
 /proc/print_command_report(text = "", title = null, announce=TRUE)
 	if(!title)
@@ -52,14 +57,19 @@
 
 	SScommunications.send_message(M)
 
-/proc/minor_announce(message, title = "Attention:", alert, mob/from)
+/proc/minor_announce(message, title = "Attention:", alert, mob/from, zlevel)
 	if(!message)
 		return
 
 	var/sound/S = sound(alert ? 'sound/misc/notice1.ogg' : 'sound/misc/notice2.ogg')
 	S.environment = SOUND_ENVIRONMENT_CONCERT_HALL
 	for(var/mob/M in GLOB.player_list)
-		if(!isnewplayer(M) && M.can_hear())
-			to_chat(M, "<span class='minorannounce'><font color = red>[title]</font color><BR>[message]</span><BR>[from ? "<span class='alert'>-[from.name] ([from.job])</span>" : null]")
-			if(M.client.prefs.toggles & SOUND_ANNOUNCEMENTS)
-				SEND_SOUND(M, S)
+		if(isnewplayer(M) || !M.can_hear())
+			continue
+
+		if(zlevel && (M.get_virtual_z_level() != zlevel)) // If a z-level is specified and the mob's z does not equal it
+			continue
+
+		to_chat(M, "<span class='minorannounce'><font color = red>[title]</font color><BR>[message]</span><BR>[from ? "<span class='alert'>-[from.name] ([from.job])</span>" : null]")
+		if(M.client.prefs.toggles & SOUND_ANNOUNCEMENTS)
+			SEND_SOUND(M, S)

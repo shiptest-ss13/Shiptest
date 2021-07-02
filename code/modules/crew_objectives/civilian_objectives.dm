@@ -79,7 +79,7 @@
 	. = ..()
 	if(prob(1))
 		hardmode = TRUE
-	var/list/blacklistnormal = list(typesof(/area/space) - typesof(/area/lavaland) - typesof(/area/mine) - typesof(/area/ai_monitored/turret_protected) - typesof(/area/tcommsat))
+	var/list/blacklistnormal = list(typesof(/area/space) - typesof(/area/lavaland) - typesof(/area/mine) - typesof(/area/ship/science/ai_chamber) - typesof(/area/tcommsat))
 	var/list/blacklisthard = list(typesof(/area/lavaland) - typesof(/area/mine))
 	var/list/possibleareas = list()
 	if(hardmode)
@@ -293,6 +293,6 @@
 	if(owner && owner.current)
 		for(var/datum/mind/M in SSticker.minds)
 			if(M.current && isliving(M.current))
-				if(!M.special_role && !(M.assigned_role == "Security Officer") && !(M.assigned_role == "Detective") && !(M.assigned_role == "Head of Security") && !(M.assigned_role == "Internal Affairs Agent") && !(M.assigned_role == "Warden") && get_area(M.current) != typesof(/area/security/prison))
+				if(!M.special_role && !(M.assigned_role == "Security Officer") && !(M.assigned_role == "Detective") && !(M.assigned_role == "Head of Security") && !(M.assigned_role == "Internal Affairs Agent") && !(M.assigned_role == "Warden") && get_area(M.current) != typesof(/area/ship/security/prison))
 					return FALSE
 		return TRUE

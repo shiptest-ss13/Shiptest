@@ -45,7 +45,7 @@ SUBSYSTEM_DEF(overmap)
 
 	if (generator_type == OVERMAP_GENERATOR_SOLAR)
 		var/obj/structure/overmap/star/center = new(locate(size / 2, size / 2, 1))
-		var/list/unsorted_turfs = get_area_turfs(/area/overmap)
+		var/list/unsorted_turfs = get_areatype_turfs(/area/overmap)
 		// SSovermap.size - 2 = area of the overmap w/o borders
 		radius_tiles = list()
 		for(var/i in 1 to (size - 2) / 2)
@@ -180,8 +180,14 @@ SUBSYSTEM_DEF(overmap)
 		SSshuttle.action_load(SSmapping.shuttle_templates[initial(SSmapping.config.shuttle_id)])
 		return
 	var/datum/map_template/shuttle/selected_template = SSmapping.shuttle_templates[SSmapping.config.shuttle_id]
-	INIT_ANNOUNCE("Loading [selected_template.name]...")
+	INIT_ANNOUNCE("Loading [SSmapping.config.map_name]...")
 	SSshuttle.action_load(selected_template)
+	if(SSdbcore.Connect())
+		var/datum/DBQuery/query_round_map_name = SSdbcore.NewQuery({"
+			UPDATE [format_table_name("round")] SET map_name = :map_name WHERE id = :round_id
+		"}, list("map_name" = SSmapping.config.map_name, "round_id" = GLOB.round_id))
+		query_round_map_name.Execute()
+		qdel(query_round_map_name)
 
 /**
   * Creates an overmap object for each ruin level, making them accessible.
@@ -229,7 +235,6 @@ SUBSYSTEM_DEF(overmap)
 			if(DYNAMIC_WORLD_ASTEROID)
 				ruin_list = null
 				mapgen = new /datum/map_generator/cave_generator/asteroid
-				target_area = /area/overmap_encounter
 
 	if(ruin && ruin_list && !ruin_type)
 		ruin_type = ruin_list[pick(ruin_list)]
@@ -291,7 +296,7 @@ SUBSYSTEM_DEF(overmap)
   */
 /datum/controller/subsystem/overmap/proc/get_unused_overmap_square(thing_to_not_have = /obj/structure/overmap, tries = MAX_OVERMAP_PLACEMENT_ATTEMPTS, force = FALSE)
 	for(var/i in 1 to tries)
-		. = pick(pick(get_area_turfs(/area/overmap)))
+		. = pick(pick(get_areatype_turfs(/area/overmap)))
 		if(locate(thing_to_not_have) in .)
 			continue
 		return

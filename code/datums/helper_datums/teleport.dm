@@ -153,9 +153,12 @@
 	if(!precision)
 		return list(center)
 	var/list/posturfs = list()
+	var/current_z_level = center.get_virtual_z_level()
 	for(var/turf/T in range(precision,center))
 		if(T.is_transition_turf())
 			continue // Avoid picking these.
+		if(T.get_virtual_z_level() != current_z_level)
+			continue
 		var/area/A = T.loc
 		if(!(A.area_flags & NOTELEPORT))
 			posturfs.Add(T)
