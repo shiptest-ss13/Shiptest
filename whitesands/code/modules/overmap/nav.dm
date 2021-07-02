@@ -21,7 +21,7 @@
 	if(new_id)
 		shuttleId = new_id
 	if(!shuttleId)
-		var/obj/docking_port/port = SSshuttle.get_containing_shuttle(src)
+		var/obj/docking_port/mobile/port = SSshuttle.get_containing_shuttle(src)
 		if(!port)
 			return
 		shuttleId = port.id
