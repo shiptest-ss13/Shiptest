@@ -18,11 +18,14 @@
 /area/ruin/powered)
 "g" = (
 /obj/structure/table/wood,
-/obj/item/robot_module/syndicate_medical{
-	name = "Unknown Cyborg Module"
+/obj/item/borg/upgrade/transform/clown{
+	desc = "Allows you to to turn a cyborg into a... something.";
+	name = "borg module picker (Unknown)"
 	},
-/obj/item/robot_module/clown{
-	name = "Unknown Cyborg Module"
+/obj/item/borg/upgrade/transform{
+	desc = "Allows you to to turn a cyborg into a... something.";
+	name = "borg module picker (Unknown)";
+	new_module = /obj/item/robot_module/syndicate_medical
 	},
 /turf/open/floor/wood,
 /area/ruin/powered)

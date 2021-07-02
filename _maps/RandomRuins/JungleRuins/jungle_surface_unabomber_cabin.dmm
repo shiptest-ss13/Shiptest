@@ -27,14 +27,15 @@
 /area/ruin/powered)
 "B" = (
 /obj/structure/table/wood,
-/obj/item/book/granter/spell/fireball{
-	pixel_y = 8
-	},
 /obj/item/grenade/chem_grenade/adv_release,
 /turf/open/floor/wood,
 /area/ruin/powered)
 "E" = (
 /obj/item/screwdriver/power,
+/turf/open/floor/wood,
+/area/ruin/powered)
+"F" = (
+/obj/item/stack/packageWrap,
 /turf/open/floor/wood,
 /area/ruin/powered)
 "M" = (
@@ -52,6 +53,7 @@
 	pixel_y = 10
 	},
 /obj/item/grenade/chem_grenade,
+/obj/item/stack/packageWrap,
 /turf/open/floor/wood,
 /area/ruin/powered)
 "S" = (
@@ -109,7 +111,7 @@ N
 a
 B
 i
-i
+F
 i
 a
 "}
