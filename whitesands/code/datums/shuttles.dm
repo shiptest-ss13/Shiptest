@@ -39,6 +39,10 @@
 	port_id = "engi"
 	suffix = "moth"
 
+/datum/map_template/shuttle/skipper
+	port_id = "ntsv"
+	suffix = "skipper"
+
 //Ruins
 /datum/map_template/shuttle/ruin/solgov_exploration_pod
 	suffix = "solgov_exploration_pod"
