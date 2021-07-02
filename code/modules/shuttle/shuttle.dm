@@ -16,6 +16,7 @@
 	/// stationary ports and whatnot to tell them your ship's mobile
 	/// port can be used in these places, or the docking port is compatible, etc.
 	var/id
+
 	///Common standard is for this to point -away- from the dockingport door, ie towards the ship
 	dir = NORTH
 	///size of covered area, perpendicular to dir. You shouldn't modify this for mobile dockingports, set automatically.
@@ -204,7 +205,7 @@
 
 /obj/docking_port/stationary/proc/load_roundstart()
 	if(roundstart_template) // passed a PATH
-		var/sid = "[initial(roundstart_template.port_id)]_[initial(roundstart_template.suffix)]"
+		var/sid = "[initial(roundstart_template.file_name)]"
 
 		roundstart_template = SSmapping.shuttle_templates[sid]
 		if(!roundstart_template)
@@ -217,14 +218,18 @@
 	. = locate(/obj/docking_port/mobile) in loc
 
 /obj/docking_port/stationary/transit
-	name = "In Transit"
+	name = "transit dock"
+
 	var/datum/turf_reservation/reserved_area
 	var/area/shuttle/transit/assigned_area
 	var/obj/docking_port/mobile/owner
 
 /obj/docking_port/stationary/transit/Initialize()
+	var/static/transit_dock_counter = 0
 	. = ..()
 	SSshuttle.transit += src
+	transit_dock_counter++
+	name = "transit dock [transit_dock_counter]"
 
 /obj/docking_port/stationary/transit/Destroy(force=FALSE)
 	if(force)
@@ -456,14 +461,14 @@
 	var/obj/docking_port/stationary/S1 = assigned_transit
 	if(S1)
 		if(initiate_docking(S1) != DOCKING_SUCCESS)
-			WARNING("shuttle \"[id]\" could not enter transit space. Docked at [S0 ? S0.id : "null"]. Transit dock [S1 ? S1.id : "null"].")
+			WARNING("shuttle \"[id]\" could not enter transit space. Docked at [S0 ? S0.name : "null"]. Transit dock [S1 ? S1.name : "null"].")
 		else
 			if(S0.delete_after)
 				qdel(S0, TRUE)
 			else
 				previous = S0
 	else
-		WARNING("shuttle \"[id]\" could not enter transit space. S0=[S0 ? S0.id : "null"] S1=[S1 ? S1.id : "null"]")
+		WARNING("shuttle \"[id]\" could not enter transit space. S0=[S0 ? S0.name : "null"] S1=[S1 ? S1.name : "null"]")
 
 
 /obj/docking_port/mobile/proc/jumpToNullSpace()
@@ -763,11 +768,11 @@
 		else
 			dst = destination
 		if(dst)
-			. = "(transit to) [dst.name || dst.id]"
+			. = "(transit to) [dst.name]"
 		else
 			. = "(transit to) nowhere"
 	else if(dockedAt)
-		. = dockedAt.name || dockedAt.id
+		. = dockedAt.name
 	else
 		. = "unknown"
 
