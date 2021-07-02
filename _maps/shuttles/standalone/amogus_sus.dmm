@@ -304,7 +304,8 @@
 /turf/open/floor/plasteel,
 /area/ship/engineering)
 "eG" = (
-/obj/machinery/computer/camera_advanced/shuttle_docker/nav{
+/obj/structure/frame/computer{
+	anchored = 1;
 	dir = 8
 	},
 /obj/effect/turf_decal/lumos/tile/neutral/half{

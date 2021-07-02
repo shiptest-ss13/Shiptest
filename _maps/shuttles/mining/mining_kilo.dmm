@@ -179,7 +179,9 @@
 /area/shuttle/mining)
 "y" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/computer/camera_advanced/shuttle_docker/nav,
+/obj/structure/frame/computer{
+	anchored = 1
+	},
 /obj/effect/turf_decal/bot,
 /turf/open/floor/mineral/plastitanium,
 /area/shuttle/mining)

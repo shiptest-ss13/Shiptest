@@ -84,26 +84,11 @@
 		return "Shuttle must be still!"
 	return object?.ship_act(user, src)
 
-//This is the proc that is called when a different ship tries to dock with us.
-/obj/structure/overmap/ship/simulated/ship_act(mob/user, obj/structure/overmap/ship/simulated/acting)
-	if(!is_still() || state != OVERMAP_SHIP_FLYING)
-		return "Target ship must be stopped and in a clear area to dock!"
-	return acting.dock(src)
-
 /**
   * Docks the shuttle by requesting a port at the requested spot.
   * * to_dock - The [/obj/structure/overmap] to dock to.
   */
-/obj/structure/overmap/ship/simulated/proc/dock(obj/structure/overmap/to_dock)
-	if(!is_still())
-		return "Ship must be stopped to dock!"
-
-	var/obj/docking_port/stationary/dock_to_use = find_valid_dock(to_dock.id, FALSE)
-
-	if(!dock_to_use || !istype(dock_to_use))
-		state = OVERMAP_SHIP_FLYING
-		return . + "Error finding available docking port!"
-
+/obj/structure/overmap/ship/simulated/proc/dock(obj/structure/overmap/to_dock, obj/docking_port/stationary/dock_to_use)
 	shuttle.request(dock_to_use)
 
 	priority_announce("Beginning docking procedures. Completion in [(shuttle.callTime + 1 SECONDS)/10] seconds.", "Docking Announcement", sender_override = name, zlevel = shuttle.get_virtual_z_level())
@@ -111,22 +96,6 @@
 	addtimer(CALLBACK(src, .proc/complete_dock, to_dock), shuttle.callTime + 1 SECONDS)
 	state = OVERMAP_SHIP_DOCKING
 	return "Commencing docking..."
-
-/obj/structure/overmap/ship/simulated/proc/find_valid_dock(id_to_find = MAIN_OVERMAP_OBJECT_ID, multiple = FALSE, all = FALSE)
-	if(multiple)
-		. = list()
-	for(var/port_id in list(id, TERTIARY_OVERMAP_DOCK_PREFIX, PRIMARY_OVERMAP_DOCK_PREFIX, SECONDARY_OVERMAP_DOCK_PREFIX)) //This is poor form, but it was better than what it used to be. Tertiary is before default and secondary because it's currently the public mining ports.
-		var/obj/docking_port/stationary/found_port = SSshuttle.getDock("[port_id]_[id_to_find]")
-		if(!found_port)
-			continue
-		if(!all && !shuttle.check_dock(found_port, TRUE))
-			if(!found_port.width && !found_port.height)
-				. = "Please use a docking computer to specify dock location. "
-			continue
-		if(multiple)
-			. += found_port
-		else
-			return found_port
 
 /**
   * Undocks the shuttle by launching the shuttle with no destination (this causes it to remain in transit)
@@ -218,12 +187,6 @@
 	if(!istype(loc, /obj/structure/overmap) && is_reserved_level(shuttle.z)) //The object isn't currently docked, and doesn't think it is. This is correct.
 		return TRUE
 	if(!istype(loc, /obj/structure/overmap) && !docked_object) //The overmap object thinks it's docked to something, but it really isn't. Move to a random tile on the overmap
-		var/obj/structure/overmap/docked = loc
-		if(istype(docked) && (dock_port in find_valid_dock(docked.id, TRUE, TRUE))) //It's on one of the docked object's ports. Just let it be.
-			return TRUE
-		if(istype(loc, /obj/structure/overmap/dynamic))
-			var/obj/structure/overmap/dynamic/D = loc
-			INVOKE_ASYNC(D, /obj/structure/overmap/dynamic/.proc/unload_level)
 		forceMove(SSovermap.get_unused_overmap_square())
 		state = OVERMAP_SHIP_FLYING
 		update_screen()

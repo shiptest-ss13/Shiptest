@@ -14,8 +14,6 @@ SUBSYSTEM_DEF(overmap)
 	var/list/simulated_ships
 	///List of all helms, to be adjusted
 	var/list/helms
-	///List of all nav computers to initialize
-	var/list/navs
 	///List of all events
 	var/list/events
 	///List of all autopilot consoles
@@ -70,10 +68,6 @@ SUBSYSTEM_DEF(overmap)
 	for(var/obj/machinery/computer/helm/H as anything in helms)
 		H.set_ship()
 	QDEL_NULL(helms)
-
-	for(var/obj/machinery/computer/camera_advanced/shuttle_docker/nav/N as anything in navs)
-		N.link_shuttle()
-	QDEL_NULL(navs)
 
 	for(var/obj/machinery/computer/autopilot/A as anything in autopilots)
 		A.initial_load()
@@ -261,33 +255,23 @@ SUBSYSTEM_DEF(overmap)
 	var/turf/secondary_docking_turf = locate(primary_docking_turf.x+RESERVE_DOCK_MAX_SIZE_LONG+RESERVE_DOCK_DEFAULT_PADDING, primary_docking_turf.y, primary_docking_turf.z)
 
 	//This check exists because docking ports don't like to be deleted.
-	var/obj/docking_port/stationary/primary_dock = SSshuttle.getDock("[PRIMARY_OVERMAP_DOCK_PREFIX]_[dock_id]")
-	if(!primary_dock)
-		primary_dock = new(primary_docking_turf)
-	else
-		primary_dock.forceMove(primary_docking_turf)
+	var/obj/docking_port/stationary/primary_dock = new(primary_docking_turf)
 	primary_dock.dir = NORTH
 	primary_dock.name = "\improper Uncharted Space"
-	primary_dock.id = "[PRIMARY_OVERMAP_DOCK_PREFIX]_[dock_id]"
 	primary_dock.height = RESERVE_DOCK_MAX_SIZE_SHORT
 	primary_dock.width = RESERVE_DOCK_MAX_SIZE_LONG
 	primary_dock.dheight = 0
 	primary_dock.dwidth = 0
 
-	var/obj/docking_port/stationary/secondary_dock = SSshuttle.getDock("[SECONDARY_OVERMAP_DOCK_PREFIX]_[dock_id]")
-	if(!secondary_dock)
-		secondary_dock = new(secondary_docking_turf)
-	else
-		secondary_dock.forceMove(secondary_docking_turf)
+	var/obj/docking_port/stationary/secondary_dock = new(secondary_docking_turf)
 	secondary_dock.dir = NORTH
 	secondary_dock.name = "\improper Uncharted Space"
-	secondary_dock.id = "[SECONDARY_OVERMAP_DOCK_PREFIX]_[dock_id]"
 	secondary_dock.height = RESERVE_DOCK_MAX_SIZE_LONG
 	secondary_dock.width = RESERVE_DOCK_MAX_SIZE_SHORT
 	secondary_dock.dheight = 0
 	secondary_dock.dwidth = 0
 
-	return encounter_reservation
+	return list(encounter_reservation, primary_dock, secondary_dock)
 
 /**
   * Returns a random, usually empty turf in the overmap
@@ -348,10 +332,6 @@ SUBSYSTEM_DEF(overmap)
   */
 /datum/controller/subsystem/overmap/proc/get_overmap_object_by_z(zlevel)
 	for(var/id in overmap_objects)
-		if(istype(overmap_objects[id], /obj/structure/overmap/level))
-			var/obj/structure/overmap/level/L = overmap_objects[id]
-			if(zlevel in L.linked_levels)
-				return L
 		if(istype(overmap_objects[id], /obj/structure/overmap/dynamic))
 			var/obj/structure/overmap/dynamic/D = overmap_objects[id]
 			if(zlevel == D.virtual_z_level)

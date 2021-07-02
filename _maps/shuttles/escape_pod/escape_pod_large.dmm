@@ -9,7 +9,9 @@
 /turf/open/floor/mineral/titanium/blue,
 /area/shuttle/pod_1)
 "m" = (
-/obj/machinery/computer/camera_advanced/shuttle_docker/nav,
+/obj/structure/frame/computer{
+	anchored = 1
+	},
 /turf/open/floor/mineral/titanium/blue,
 /area/shuttle/pod_1)
 "r" = (

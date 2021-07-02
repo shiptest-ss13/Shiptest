@@ -1798,7 +1798,8 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
 "Kd" = (
-/obj/machinery/computer/camera_advanced/shuttle_docker/nav{
+/obj/structure/frame/computer{
+	anchored = 1;
 	dir = 8
 	},
 /obj/effect/turf_decal/tile/blue{

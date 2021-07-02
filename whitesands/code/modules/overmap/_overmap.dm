@@ -85,8 +85,6 @@
 
 /obj/structure/overmap/Initialize(mapload, _id)
 	. = ..()
-	if(id == MAIN_OVERMAP_OBJECT_ID)
-		name = station_name()
 	if(_id)
 		id = _id
 	if(!id)
@@ -189,37 +187,6 @@
   */
 /obj/structure/overmap/proc/ship_act(mob/user, obj/structure/overmap/ship/simulated/acting)
 	return "Unknown error!"
-
-/**
-  * ## Z-level linked overmap object
-  *
-  * These are exactly what they say on the tin, overmap objects that are linked to one or more z-levels.
-  * There is nothing special on this side, but overmap ships treat them differently from all other overmap objects,
-  * such as the fact they can dock on said z-level.
-  *
-  */
-/obj/structure/overmap/level
-	///List of linked Z-levels (z number), used to dock
-	var/list/linked_levels
-	///If the shuttle navigation/docking computer can be used to change the docking location
-	var/custom_docking = TRUE
-	render_map = TRUE //this is done because it's not expensive to load the map once since levels don't move
-
-/obj/structure/overmap/level/Initialize(mapload, _id, list/_zs)
-	if(_zs)
-		LAZYADD(linked_levels, _zs)
-	else if(!linked_levels)
-		WARNING("Overmap zlevel initialized with no linked level")
-		return INITIALIZE_HINT_QDEL
-	..()
-
-/obj/structure/overmap/level/ship_act(mob/user, obj/structure/overmap/ship/simulated/acting)
-	return acting.dock(src)
-
-/obj/structure/overmap/level/ruin
-	name = "energy signature"
-	desc = "A strange energy signature. Could be anything, or nothing at all."
-	icon_state = "event"
 
 /obj/structure/overmap/star
 	name = "Star"

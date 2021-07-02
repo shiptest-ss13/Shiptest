@@ -32,11 +32,17 @@
 	if(.)
 		acting.state = prev_state
 	else
+		var/dock_to_use
 		if(!reserve_dock.get_docked())
-			adjust_dock_to_shuttle(reserve_dock, acting.shuttle)
+			dock_to_use = reserve_dock
 		else if(!reserve_dock_secondary.get_docked())
-			adjust_dock_to_shuttle(reserve_dock_secondary, acting.shuttle)
-		return acting.dock(src) //If a value is returned from load_level(), say that, otherwise, commence docking
+			dock_to_use = reserve_dock_secondary
+
+		if(!dock_to_use)
+			acting.state = prev_state
+			return "Error finding available docking port!"
+		adjust_dock_to_shuttle(dock_to_use, acting.shuttle)
+		return acting.dock(src, dock_to_use) //If a value is returned from load_level(), say that, otherwise, commence docking
 
 /**
   * Chooses a type of level for the dynamic level to use.
@@ -93,12 +99,12 @@
 		return
 	if(!COOLDOWN_FINISHED(SSovermap, encounter_cooldown))
 		return "WARNING! Stellar interference is restricting flight in this area. Interference should pass in [COOLDOWN_TIMELEFT(SSovermap, encounter_cooldown) / 10] seconds."
-	var/datum/turf_reservation/new_reserve = SSovermap.spawn_dynamic_encounter(planet, TRUE, id, ruin_type = template)
+	var/list/dynamic_encounter_values = SSovermap.spawn_dynamic_encounter(planet, TRUE, id, ruin_type = template)
+	var/datum/turf_reservation/new_reserve = dynamic_encounter_values[1]
 	if(!new_reserve)
 		return "FATAL NAVIGATION ERROR, PLEASE TRY AGAIN LATER!"
-	reserve = new_reserve
-	reserve_dock = SSshuttle.getDock("[PRIMARY_OVERMAP_DOCK_PREFIX]_[id]")
-	reserve_dock_secondary = SSshuttle.getDock("[SECONDARY_OVERMAP_DOCK_PREFIX]_[id]")
+	reserve_dock = dynamic_encounter_values[2]
+	reserve_dock_secondary = dynamic_encounter_values[3]
 	virtual_z_level = reserve.virtual_z_level
 
 // alters the position and orientation of a stationary docking port to ensure that any mobile port small enough can dock within its bounds
@@ -178,6 +184,13 @@
 			forceMove(SSovermap.get_unused_overmap_square())
 		choose_level_type()
 		QDEL_NULL(reserve)
+
+	if(reserve_dock)
+		qdel(reserve_dock, TRUE)
+		reserve_dock = null
+	if(reserve_dock_secondary)
+		qdel(reserve_dock_secondary, TRUE)
+		reserve_dock_secondary = null
 
 /area/overmap_encounter
 	name = "\improper Overmap Encounter"

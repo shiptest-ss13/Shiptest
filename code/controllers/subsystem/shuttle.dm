@@ -820,7 +820,7 @@ SUBSYSTEM_DEF(shuttle)
 	switch(action)
 		if("select_template")
 			if(S)
-				// DEBUG REWORK
+				// DEBUG REMOVE
 //				existing_shuttle = getShuttle(S.port_id)
 				selected = S
 				. = TRUE
