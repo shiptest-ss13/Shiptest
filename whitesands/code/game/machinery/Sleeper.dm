@@ -23,12 +23,12 @@
 	var/list/dispensable_reagents
 
 	var/list/starting_beakers = list(
-		/obj/item/reagent_containers/glass/bottle/antitoxin,
-		/obj/item/reagent_containers/glass/bottle/bicaridine,
-		/obj/item/reagent_containers/glass/bottle/dexalin,
-		/obj/item/reagent_containers/glass/bottle/epinephrine,
-		/obj/item/reagent_containers/glass/bottle/kelotane,
-		/obj/item/reagent_containers/glass/bottle/morphine)
+		/obj/item/reagent_containers/glass/bottle/antitoxin/sleeper,
+		/obj/item/reagent_containers/glass/bottle/bicaridine/sleeper,
+		/obj/item/reagent_containers/glass/bottle/dexalin/sleeper,
+		/obj/item/reagent_containers/glass/bottle/epinephrine/sleeper,
+		/obj/item/reagent_containers/glass/bottle/kelotane/sleeper,
+		/obj/item/reagent_containers/glass/bottle/morphine/sleeper)
 
 	///Chembag which holds all the beakers, don't look at me like that
 	var/obj/item/storage/bag/chemistry/chembag

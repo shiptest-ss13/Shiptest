@@ -323,7 +323,7 @@ But you can call procs that are of type /mob/living/carbon/human/proc/ for that 
 	var/list/areas_with_LS = list()
 	var/list/areas_with_intercom = list()
 	var/list/areas_with_camera = list()
-	var/list/station_areas_blacklist = typecacheof(list(/area/holodeck/rec_center, /area/shuttle, /area/engine/supermatter, /area/science/test_area, /area/space, /area/solar, /area/mine, /area/ruin, /area/asteroid))
+	var/list/station_areas_blacklist = typecacheof(list(/area/shuttle, /area/ship/engineering/engine, /area/space, /area/solar, /area/mine, /area/ruin, /area/asteroid))
 
 	if(SSticker.current_state == GAME_STATE_STARTUP)
 		to_chat(usr, "Game still loading, please hold!", confidential = TRUE)
@@ -341,7 +341,7 @@ But you can call procs that are of type /mob/living/carbon/human/proc/ for that 
 
 	for(var/area/A in world)
 		if(on_station)
-			var/list/area_turfs = get_area_turfs(A.type)
+			var/list/area_turfs = get_area_turfs(A)
 			if (!length(area_turfs))
 				continue
 			var/turf/picked = pick(area_turfs)

@@ -560,10 +560,13 @@ Traitors and the like can also be revived with the previous role mostly intact.
 		return
 
 	var/confirm = alert(src, "Do you want to announce the contents of the report to the crew?", "Announce", "Yes", "No", "Cancel")
+
+	var/level = input(usr, "Enter the (virtual) z-level you want to announce to. Specifying zero sends to all levels.", "Announce", 0) as num
+
 	var/announce_command_report = TRUE
 	switch(confirm)
 		if("Yes")
-			priority_announce(input, null, 'sound/ai/commandreport.ogg')
+			priority_announce(input, null, 'sound/ai/commandreport.ogg', zlevel = level)
 			announce_command_report = FALSE
 		if("Cancel")
 			return

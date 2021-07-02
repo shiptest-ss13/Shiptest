@@ -150,10 +150,13 @@
 			else
 				L["[get_area(com.target)] (Inactive)"] = com.target
 	var/list/turfs = list()
+	var/current_z_level = user.get_virtual_z_level()
 	for(var/turf/T in urange(10, orange=1))
 		if(T.x>world.maxx-8 || T.x<8)
 			continue	//putting them at the edge is dumb
 		if(T.y>world.maxy-8 || T.y<8)
+			continue
+		if(T.get_virtual_z_level() != current_z_level)
 			continue
 		var/area/A = T.loc
 		if(A.area_flags & NOTELEPORT)

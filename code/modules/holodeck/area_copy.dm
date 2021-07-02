@@ -65,27 +65,24 @@ GLOBAL_LIST_INIT(duplicate_forbidden_vars,list(
 	if(!A || !src)
 		return 0
 
-	var/list/turfs_src = get_area_turfs(src.type)
-	var/list/turfs_trg = get_area_turfs(A.type)
-
 	var/src_min_x = 99999
 	var/src_min_y = 99999
 	var/list/refined_src = new/list()
 
-	for (var/turf/T in turfs_src)
+	for (var/turf/T in contents)
 		src_min_x = min(src_min_x,T.x)
 		src_min_y = min(src_min_y,T.y)
-	for (var/turf/T in turfs_src)
+	for (var/turf/T in contents)
 		refined_src[T] = "[T.x - src_min_x].[T.y - src_min_y]"
 
 	var/trg_min_x = 99999
 	var/trg_min_y = 99999
 	var/list/refined_trg = new/list()
 
-	for (var/turf/T in turfs_trg)
+	for (var/turf/T in A.contents)
 		trg_min_x = min(trg_min_x,T.x)
 		trg_min_y = min(trg_min_y,T.y)
-	for (var/turf/T in turfs_trg)
+	for (var/turf/T in A.contents)
 		refined_trg["[T.x - trg_min_x].[T.y - trg_min_y]"] = T
 
 	var/list/toupdate = new/list()

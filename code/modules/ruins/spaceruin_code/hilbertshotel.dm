@@ -325,7 +325,7 @@ GLOBAL_VAR_INIT(hhmysteryRoomNumber, 1337)
 	var/turf/storageTurf
 	var/virtual_z_value
 
-/area/hilbertshotel/get_virtual_z()
+/area/hilbertshotel/get_virtual_z_level()
 	if(virtual_z_value)
 		return virtual_z_value
 	else

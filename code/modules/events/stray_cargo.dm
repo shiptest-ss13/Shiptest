@@ -14,7 +14,7 @@
 	var/static/list/stray_spawnable_supply_packs = list() ///List of default spawnable supply packs, filtered from the cargo list
 
 /datum/round_event/stray_cargo/announce(fake)
-	priority_announce("Stray cargo pod detected on long-range scanners. Expected location of impact: [impact_area.name].", "Collision Alert")
+	priority_announce("Stray cargo pod detected on long-range scanners. Expected location of impact: [impact_area.name].", "Collision Alert", zlevel = impact_area.get_virtual_z_level())
 
 /**
 * Tries to find a valid area, throws an error if none are found
@@ -25,7 +25,7 @@
 	impact_area = find_event_area()
 	if(!impact_area)
 		CRASH("No valid areas for cargo pod found.")
-	var/list/turf_test = get_area_turfs(impact_area)
+	var/list/turf_test = get_areatype_turfs(impact_area)
 	if(!turf_test.len)
 		CRASH("Stray Cargo Pod : No valid turfs found for [impact_area] - [impact_area.type]")
 
@@ -38,7 +38,7 @@
 
 ///Spawns a random supply pack, puts it in a pod, and spawns it on a random tile of the selected area
 /datum/round_event/stray_cargo/start()
-	var/list/turf/valid_turfs = get_area_turfs(impact_area)
+	var/list/turf/valid_turfs = get_areatype_turfs(impact_area)
 	//Only target non-dense turfs to prevent wall-embedded pods
 	for(var/i in valid_turfs)
 		var/turf/T = i
@@ -68,15 +68,13 @@
 	if(!allowed_areas)
 		///Places that shouldn't explode
 		var/list/safe_area_types = typecacheof(list(
-		/area/ai_monitored/turret_protected/ai,
-		/area/ai_monitored/turret_protected/ai_upload,
-		/area/engine,
-		/area/shuttle)
-		)
+			/area/ship/science/ai_chamber,
+			/area/ship/engineering
+		))
 
 		///Subtypes from the above that actually should explode.
-		var/list/unsafe_area_subtypes = typecacheof(list(/area/engine/break_room))
-		allowed_areas = make_associative(GLOB.the_station_areas) - safe_area_types + unsafe_area_subtypes
+		var/list/unsafe_area_subtypes = typecacheof(list())
+		allowed_areas = make_associative(typesof(/area/ship)) - safe_area_types + unsafe_area_subtypes
 	var/list/possible_areas = typecache_filter_list(GLOB.sortedAreas,allowed_areas)
 	if (length(possible_areas))
 		return pick(possible_areas)

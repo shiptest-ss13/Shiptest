@@ -186,6 +186,8 @@
 	if(mapload)
 		for(var/turf/T in return_turfs())
 			T.flags_1 |= NO_RUINS_1
+		if(SSshuttle.initialized) // If the docking port is loaded via map but SSshuttle has already init (therefore this would never be called)
+			load_roundstart()
 
 	#ifdef DOCKING_PORT_HIGHLIGHT
 	highlight("#f00")
@@ -321,6 +323,11 @@
 	if(name == "shuttle")
 		name = "shuttle[SSshuttle.mobile.len]"
 
+	if(!mapload) // If maploaded, will be called in code\datums\shuttles.dm
+		load()
+
+
+/obj/docking_port/mobile/proc/load()
 	shuttle_areas = list()
 	var/list/all_turfs = return_ordered_turfs(x, y, z, dir)
 	for(var/i in 1 to all_turfs.len)

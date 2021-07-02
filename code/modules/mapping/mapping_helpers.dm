@@ -28,8 +28,8 @@
 		baseturf_to_replace = formatted
 
 	var/area/our_area = get_area(src)
-	for(var/i in get_area_turfs(our_area, z))
-		replace_baseturf(i)
+	for(var/turf/T in our_area.contents)
+		replace_baseturf(T)
 
 	qdel(src)
 

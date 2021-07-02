@@ -37,6 +37,10 @@
 	file_name = "bar_ship"
 	name = "Bar Ship"
 
+/datum/map_template/shuttle/moth
+	port_id = "engi"
+	suffix = "moth"
+
 //Ruins
 /datum/map_template/shuttle/ruin/solgov_exploration_pod
 	file_name = "ruin_solgov_exploration_pod"

@@ -97,6 +97,8 @@
 					port.dwidth = port_y_offset - 1
 					port.dheight = width - port_x_offset
 
+			port.load()
+
 //Whatever special stuff you want
 /datum/map_template/shuttle/proc/post_load(obj/docking_port/mobile/M)
 	if(movement_force)

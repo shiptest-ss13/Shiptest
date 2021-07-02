@@ -697,7 +697,7 @@ GLOBAL_PROTECT(admin_verbs_hideable)
 			j = 100
 
 			do
-				area = pick(GLOB.the_station_areas)
+				area = pick(GLOB.sortedAreas)
 
 				if (area)
 

@@ -48,7 +48,7 @@
 		priority_announce("Bluespace artillery fire detected. Brace for impact.")
 		message_admins("[ADMIN_LOOKUPFLW(usr)] has launched an artillery strike.")
 		var/list/L = list()
-		for(var/turf/T in get_area_turfs(thearea.type))
+		for(var/turf/T in get_area_turfs(thearea))
 			L+=T
 		var/loc = pick(L)
 		explosion(loc,explosiondev,explosionmed,explosionlight)
