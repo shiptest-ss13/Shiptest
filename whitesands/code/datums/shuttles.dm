@@ -43,9 +43,11 @@
 	port_id = "ntsv"
 	suffix = "skipper"
 
+/datum/map_template/shuttle/radio
+	port_id = "radio"
+	suffix = "funny"
+
 //Ruins
 /datum/map_template/shuttle/ruin/solgov_exploration_pod
 	suffix = "solgov_exploration_pod"
 	name = "SolGov Exploration Pod"
-
-
