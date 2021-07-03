@@ -664,6 +664,9 @@
 	},
 /obj/structure/window/reinforced/spawner/west,
 /obj/machinery/door/window/eastright,
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "lw" = (
@@ -940,6 +943,9 @@
 /obj/machinery/power/shuttle/engine/electric{
 	dir = 4
 	},
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
 /turf/open/floor/plating,
 /area/ship/external)
 "pe" = (
@@ -1154,6 +1160,9 @@
 	},
 /obj/structure/window/reinforced/spawner/west,
 /obj/machinery/door/window/eastleft,
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "qX" = (
@@ -1634,20 +1643,20 @@
 /area/ship/engineering)
 "yI" = (
 /obj/structure/table/glass,
-/obj/item/storage/firstaid{
-	pixel_x = -5;
-	pixel_y = 5
-	},
-/obj/item/reagent_containers/glass/bottle{
-	list_reagents = list(/datum/reagent/medicine/thializid = 30);
-	name = "thializid bottle"
-	},
 /obj/item/reagent_containers/glass/bottle/formaldehyde{
 	pixel_x = 5;
 	pixel_y = 8
 	},
+/obj/item/storage/firstaid/regular{
+	pixel_x = -7;
+	pixel_y = 4
+	},
 /obj/structure/window/reinforced{
 	dir = 1
+	},
+/obj/item/reagent_containers/glass/bottle{
+	list_reagents = list(/datum/reagent/medicine/thializid = 30);
+	name = "thializid bottle"
 	},
 /turf/open/floor/plasteel,
 /area/ship/medical)
@@ -1657,6 +1666,9 @@
 	},
 /obj/structure/window/reinforced/spawner/west,
 /obj/machinery/door/window/eastleft,
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "yR" = (
@@ -1887,6 +1899,9 @@
 	},
 /obj/structure/window/reinforced/spawner/west,
 /obj/machinery/door/window/eastright,
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "CQ" = (
@@ -1965,7 +1980,6 @@
 /area/ship/engineering/engine)
 "DW" = (
 /obj/machinery/atmospherics/components/unary/outlet_injector/atmos/air_input,
-/obj/structure/closet/firecloset,
 /turf/open/floor/engine/air,
 /area/ship/engineering/atmospherics)
 "DY" = (
@@ -2219,13 +2233,10 @@
 /obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer2,
 /obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,
 /obj/structure/cable{
-	icon_state = "1-8"
+	icon_state = "2-4"
 	},
 /obj/structure/cable{
-	icon_state = "2-8"
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
+	icon_state = "1-2"
 	},
 /turf/open/floor/carpet/nanoweave,
 /area/ship/hallway/central)
@@ -3768,7 +3779,7 @@ wz
 wz
 wz
 wz
-jk
+wz
 wz
 wz
 wz
