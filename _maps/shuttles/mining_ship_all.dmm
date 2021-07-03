@@ -351,6 +351,7 @@
 /obj/effect/spawner/lootdrop/maintenance/four,
 /obj/item/circuitboard/machine/chem_dispenser/drinks,
 /obj/item/circuitboard/computer/arcade/orion_trail,
+/obj/item/kinetic_crusher,
 /turf/open/floor/plasteel,
 /area/ship/cargo)
 "jD" = (
@@ -1206,15 +1207,16 @@
 	pixel_x = 4;
 	pixel_y = 4
 	},
-/obj/item/pickaxe/emergency,
-/obj/item/pickaxe/emergency,
-/obj/item/pickaxe/emergency,
 /obj/item/gps/mining,
 /obj/item/gps/mining,
 /obj/item/gps/mining,
 /obj/item/clothing/glasses/meson/prescription,
 /obj/item/clothing/glasses/meson,
 /obj/item/clothing/glasses/meson,
+/obj/item/t_scanner/adv_mining_scanner/lesser,
+/obj/item/gun/energy/kinetic_accelerator,
+/obj/item/pickaxe/silver,
+/obj/item/pickaxe/silver,
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
 "Fz" = (
@@ -1326,7 +1328,7 @@
 "GU" = (
 /obj/machinery/vending/snack/random,
 /turf/open/floor/plasteel/dark,
-/area/ship/hallway/central)
+/area)
 "Hs" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/crew)
@@ -2152,6 +2154,13 @@
 	},
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew)
+"ZF" = (
+/obj/structure/closet/crate/wooden,
+/obj/item/clothing/suit/hooded/explorer,
+/obj/item/clothing/suit/hooded/explorer,
+/obj/item/clothing/suit/hooded/explorer,
+/turf/open/floor/plating,
+/area/ship/cargo)
 "ZN" = (
 /obj/effect/turf_decal/lumos/tile/neutral/fulltile,
 /turf/open/floor/plasteel/dark,
@@ -2466,7 +2475,7 @@ DB
 FP
 FP
 kT
-FP
+ZF
 DB
 GU
 ST
