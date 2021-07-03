@@ -144,6 +144,9 @@
 	var/obj/structure/overmap/ship/simulated/S = current_ship
 	switch(action)
 		if("act_overmap")
+			if(SSshuttle.jump_mode == BS_JUMP_INITIATED)
+				to_chat(usr, "<span class='warning'>You've already escaped. Never going back to that place again!</span>")
+				return
 			var/obj/structure/overmap/to_act = locate(params["ship_to_act"])
 			say(S.overmap_object_act(usr, to_act))
 		if("undock")

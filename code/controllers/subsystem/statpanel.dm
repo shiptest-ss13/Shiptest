@@ -23,10 +23,8 @@ SUBSYSTEM_DEF(statpanels)
 			"Playing/Connected: [get_active_player_count()]/[GLOB.clients.len]"
 		)
 
-		if(SSshuttle.emergency)
-			var/ETA = SSshuttle.emergency.getModeStr()
-			if(ETA)
-				global_data += "[ETA] [SSshuttle.emergency.getTimerStr()]"
+		if(SSshuttle.jump_mode != BS_JUMP_IDLE)
+			global_data += "Jump: [SSshuttle.jump_mode] [round(timeleft(SSshuttle.jump_timer)/10)]"
 		encoded_global_data = url_encode(json_encode(global_data))
 		src.currentrun = GLOB.clients.Copy()
 		mc_data_encoded = null
