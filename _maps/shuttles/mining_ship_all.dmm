@@ -1217,8 +1217,10 @@
 /obj/item/gun/energy/kinetic_accelerator,
 /obj/item/pickaxe/silver,
 /obj/item/pickaxe/silver,
+/obj/item/storage/bag/ore,
+/obj/item/storage/bag/ore,
 /turf/open/floor/plasteel/dark,
-/area/ship/hallway/central)
+/area/ship/crew)
 "Fz" = (
 /obj/structure/cable/yellow{
 	icon_state = "1-4"
@@ -1328,7 +1330,7 @@
 "GU" = (
 /obj/machinery/vending/snack/random,
 /turf/open/floor/plasteel/dark,
-/area)
+/area/ship/crew)
 "Hs" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/crew)
@@ -1790,6 +1792,13 @@
 /obj/effect/turf_decal/stripes/line,
 /turf/open/floor/plasteel,
 /area/ship/crew)
+"RU" = (
+/obj/structure/closet/crate/wooden,
+/obj/item/clothing/suit/hooded/explorer,
+/obj/item/clothing/suit/hooded/explorer,
+/obj/item/clothing/suit/hooded/explorer,
+/turf/open/floor/plating,
+/area/ship/cargo)
 "Sw" = (
 /obj/machinery/suit_storage_unit/mining/eva,
 /obj/effect/turf_decal/delivery,
@@ -2154,13 +2163,6 @@
 	},
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew)
-"ZF" = (
-/obj/structure/closet/crate/wooden,
-/obj/item/clothing/suit/hooded/explorer,
-/obj/item/clothing/suit/hooded/explorer,
-/obj/item/clothing/suit/hooded/explorer,
-/turf/open/floor/plating,
-/area/ship/cargo)
 "ZN" = (
 /obj/effect/turf_decal/lumos/tile/neutral/fulltile,
 /turf/open/floor/plasteel/dark,
@@ -2475,7 +2477,7 @@ DB
 FP
 FP
 kT
-ZF
+RU
 DB
 GU
 ST
