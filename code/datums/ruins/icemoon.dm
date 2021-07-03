@@ -38,6 +38,12 @@
 	prefix = "_maps/RandomRuins/AnywhereRuins/"
 	suffix = "fountain_hall.dmm"
 
+/datum/map_template/ruin/icemoon/slimerancher //Shiptest edit
+	name = "Slime Ranch"
+	id = "slimerancher"
+	description = "Slime ranchin with the bud."
+	suffix = "icemoon_surface_slimerancher.dmm"
+
 // above and below ground together
 
 /datum/map_template/ruin/icemoon/mining_site
