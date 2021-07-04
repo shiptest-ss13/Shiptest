@@ -1403,12 +1403,10 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
 "wW" = (
-/obj/machinery/computer{
-	desc = "A computer long since rendered non-functional due to lack of maintenance. Spitting out error messages.";
-	dir = 4;
-	name = "Broken Computer"
-	},
 /obj/effect/turf_decal/bot,
+/obj/machinery/computer/autopilot{
+	dir = 4
+	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/bridge)
 "xo" = (
@@ -2952,11 +2950,11 @@
 /turf/open/floor/mineral/titanium/blue,
 /area/ship/bridge)
 "ZY" = (
-/obj/machinery/computer/shuttle{
-	dir = 4
-	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/bot,
+/obj/machinery/computer/helm{
+	dir = 4
+	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/bridge)
 

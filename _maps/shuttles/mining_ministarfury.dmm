@@ -77,15 +77,17 @@
 /obj/docking_port/mobile{
 	can_move_docking_ports = 1;
 	dir = 4;
-	height = 35;
 	id = "mining_ministarfury";
 	name = "SBD starfurys revenge";
 	port_direction = 4;
-	undock_roundstart = 1;
-	width = 51
+	undock_roundstart = 1
 	},
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ship/engineering/electrical)
+/obj/structure/railing,
+/obj/structure/railing{
+	dir = 1
+	},
+/turf/open/floor/plating/airless,
+/area/ship/external)
 "bh" = (
 /obj/machinery/portable_atmospherics/scrubber,
 /turf/open/floor/plasteel/dark,
@@ -115,6 +117,9 @@
 /obj/structure/chair/office{
 	dir = 8
 	},
+/obj/item/clothing/gloves/krav_maga/combatglovesplus,
+/obj/item/clothing/head/warden,
+/obj/item/melee/classic_baton/telescopic,
 /turf/open/floor/carpet/red,
 /area/ship/security)
 "bK" = (
@@ -840,6 +845,13 @@
 /obj/item/clothing/head/helmet/space/syndicate/green,
 /turf/open/floor/carpet/nanoweave/red,
 /area/ship/crew/dorm)
+"js" = (
+/obj/structure/railing,
+/obj/structure/railing{
+	dir = 1
+	},
+/turf/open/floor/plating/airless,
+/area/ship/external)
 "jF" = (
 /obj/machinery/firealarm{
 	pixel_y = -28
@@ -994,15 +1006,14 @@
 /obj/structure/window/reinforced/spawner{
 	dir = 4
 	},
-/obj/item/gun/energy/e_gun{
-	name = "cybersun energy gun"
-	},
-/obj/item/screwdriver/nuke,
 /obj/machinery/door/window{
 	dir = 1;
 	req_access_txt = "150"
 	},
 /obj/machinery/light,
+/obj/item/gun/ballistic/automatic/c20r{
+	spawnwithmagazine = 0
+	},
 /turf/open/floor/carpet/nanoweave/red,
 /area/ship/security)
 "li" = (
@@ -2007,12 +2018,12 @@
 /obj/structure/window/reinforced/spawner{
 	dir = 4
 	},
-/obj/item/gun/ballistic/automatic/sniper_rifle/syndicate{
-	spawnwithmagazine = 0
-	},
 /obj/machinery/door/window{
 	dir = 1;
 	req_access_txt = "150"
+	},
+/obj/item/gun/ballistic/automatic/c20r{
+	spawnwithmagazine = 0
 	},
 /turf/open/floor/carpet/nanoweave/red,
 /area/ship/security)
@@ -2163,6 +2174,20 @@
 "xy" = (
 /obj/machinery/power/supermatter_crystal/engine,
 /turf/open/floor/engine,
+/area/ship/engineering/engine)
+"xz" = (
+/obj/machinery/door/airlock/external{
+	name = "Engineering External Access";
+	req_access_txt = "150"
+	},
+/obj/structure/fans/tiny,
+/obj/structure/railing/corner{
+	dir = 8
+	},
+/obj/structure/railing/corner{
+	dir = 1
+	},
+/turf/open/floor/plating,
 /area/ship/engineering/engine)
 "xB" = (
 /obj/machinery/button/massdriver{
@@ -2774,12 +2799,14 @@
 /obj/structure/window/reinforced/spawner{
 	dir = 4
 	},
-/obj/item/gun/energy/ionrifle,
 /obj/machinery/door/window{
 	dir = 1;
 	req_access_txt = "150"
 	},
 /obj/machinery/light,
+/obj/item/gun/ballistic/automatic/sniper_rifle/syndicate{
+	spawnwithmagazine = 0
+	},
 /turf/open/floor/carpet/nanoweave/red,
 /area/ship/security)
 "EH" = (
@@ -2923,10 +2950,7 @@
 	dir = 1;
 	req_access_txt = "150"
 	},
-/obj/item/gun/ballistic/shotgun/bulldog{
-	spawnwithmagazine = FALSE
-	},
-/obj/item/ammo_box/magazine/m12g/stun,
+/obj/item/gun/energy/ionrifle,
 /turf/open/floor/carpet/nanoweave/red,
 /area/ship/security)
 "Gl" = (
@@ -3124,6 +3148,7 @@
 	dir = 1;
 	pixel_y = 26
 	},
+/obj/machinery/suit_storage_unit/syndicate,
 /turf/open/floor/carpet/red,
 /area/ship/security)
 "HN" = (
@@ -3283,9 +3308,11 @@
 	dir = 1;
 	req_access_txt = "150"
 	},
-/obj/effect/spawner/newbomb/timer,
-/obj/effect/spawner/newbomb/timer,
 /obj/machinery/light,
+/obj/item/gun/ballistic/shotgun/bulldog{
+	spawnwithmagazine = FALSE
+	},
+/obj/item/ammo_box/magazine/m12g/stun,
 /turf/open/floor/carpet/nanoweave/red,
 /area/ship/security)
 "JL" = (
@@ -3780,15 +3807,15 @@
 /obj/structure/window/reinforced/spawner{
 	dir = 1
 	},
-/obj/item/gun/ballistic/automatic/c20r{
-	spawnwithmagazine = 0
-	},
 /obj/machinery/door/window{
 	dir = 4;
 	req_access_txt = "150"
 	},
 /obj/machinery/light{
 	dir = 8
+	},
+/obj/item/gun/ballistic/automatic/m90{
+	spawnwithmagazine = FALSE
 	},
 /turf/open/floor/carpet/nanoweave/red,
 /area/ship/security)
@@ -4252,6 +4279,11 @@
 /obj/item/ammo_box/magazine/ebr,
 /obj/item/ammo_box/magazine/ebr,
 /obj/effect/turf_decal/bot_white/right,
+/obj/item/ammo_box/magazine/m556,
+/obj/item/ammo_box/magazine/m556,
+/obj/item/ammo_box/magazine/smgm45,
+/obj/item/ammo_box/magazine/smgm45,
+/obj/item/ammo_box/magazine/smgm45,
 /turf/open/floor/mineral/plastitanium/red,
 /area/ship/security)
 "RN" = (
@@ -5203,12 +5235,12 @@ Xu
 Xu
 Xu
 Xu
+YM
+YM
+YM
+Xu
+Xu
 bd
-YM
-YM
-Xu
-Xu
-Xu
 Xu
 Xu
 Xu
@@ -5261,7 +5293,7 @@ vb
 YM
 Xu
 Xu
-Xu
+js
 Xu
 Xu
 AN
@@ -5314,7 +5346,7 @@ qZ
 YM
 Xu
 Xu
-Xu
+js
 Xu
 AN
 AN
@@ -5367,7 +5399,7 @@ Ya
 YM
 Xu
 AN
-ou
+xz
 AN
 AN
 BX
