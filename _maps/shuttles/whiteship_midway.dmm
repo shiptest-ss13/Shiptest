@@ -519,6 +519,7 @@
 /obj/structure/cable{
 	icon_state = "1-4"
 	},
+/obj/machinery/autolathe,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "mJ" = (
@@ -771,6 +772,7 @@
 /obj/effect/turf_decal/tile/blue{
 	dir = 4
 	},
+/obj/item/areaeditor/shuttle,
 /turf/open/floor/plasteel,
 /area/ship/bridge)
 "rC" = (
@@ -810,6 +812,7 @@
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
+/obj/item/circuitboard/machine/ore_redemption,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "sN" = (
@@ -1082,6 +1085,9 @@
 /obj/effect/turf_decal/tile/green,
 /obj/machinery/cryopod/latejoin{
 	dir = 8
+	},
+/obj/machinery/computer/cryopod{
+	pixel_x = 32
 	},
 /turf/open/floor/plasteel,
 /area/ship/crew)
@@ -2167,6 +2173,9 @@
 /obj/machinery/airalarm/directional/south{
 	pixel_y = -24
 	},
+/obj/structure/rack,
+/obj/item/pickaxe/emergency,
+/obj/item/pickaxe/emergency,
 /turf/open/floor/plasteel,
 /area/ship/cargo)
 "QV" = (
@@ -2403,6 +2412,7 @@
 	dir = 4
 	},
 /obj/structure/closet/emcloset/anchored,
+/obj/item/lightreplacer,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "Um" = (

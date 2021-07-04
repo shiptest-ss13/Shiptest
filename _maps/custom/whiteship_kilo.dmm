@@ -70,11 +70,7 @@
 	},
 /obj/effect/decal/cleanable/blood/old,
 /mob/living/simple_animal/hostile/netherworld/migo{
-	environment_smash = 0;
-	faction = list("neutral");
-	melee_damage_lower = 5;
-	melee_damage_upper = 10;
-	name = "maurice"
+	environment_smash = 0
 	},
 /turf/open/floor/mineral/titanium/yellow,
 /area/ship/cargo)
@@ -503,7 +499,6 @@
 	dir = 4;
 	pixel_x = -24
 	},
-/obj/item/circuitboard/machine/ore_redemption,
 /turf/open/floor/plating,
 /area/ship/cargo)
 "cl" = (
@@ -621,6 +616,7 @@
 /turf/open/floor/mineral/titanium/blue,
 /area/ship/bridge)
 "cV" = (
+/obj/structure/bed,
 /obj/effect/turf_decal/stripes/line,
 /obj/machinery/airalarm/all_access{
 	dir = 4;
@@ -630,11 +626,7 @@
 	dir = 1
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on,
-/obj/machinery/cryopod/latejoin,
-/obj/machinery/computer/cryopod{
-	pixel_y = 32
-	},
-/obj/item/bedsheet/random,
+/obj/item/bedsheet/brown,
 /turf/open/floor/wood,
 /area/ship/crew)
 "cW" = (
@@ -652,8 +644,8 @@
 	dir = 1
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on,
+/obj/item/bedsheet/brown,
 /obj/effect/decal/cleanable/greenglow,
-/obj/item/bedsheet/random,
 /turf/open/floor/wood,
 /area/ship/crew)
 "cY" = (
@@ -1024,7 +1016,6 @@
 	dir = 1;
 	pixel_y = 26
 	},
-/obj/item/areaeditor/shuttle,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/bridge)
 "oj" = (
@@ -2213,10 +2204,6 @@
 /obj/structure/table,
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
-"ZG" = (
-/obj/structure/falsewall/titanium,
-/turf/open/floor/plating,
-/area/ship/crew)
 
 (1,1,1) = {"
 aa
@@ -2512,7 +2499,7 @@ CP
 Va
 dh
 mz
-ZG
+mz
 mz
 mz
 aa

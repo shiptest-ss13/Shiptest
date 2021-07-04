@@ -1278,7 +1278,6 @@
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
-/obj/effect/decal/cleanable/blood/gibs/old,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel,
 /area/ship/bridge)
@@ -1447,6 +1446,7 @@
 /obj/effect/turf_decal/tile/blue{
 	dir = 8
 	},
+/obj/item/areaeditor/shuttle,
 /turf/open/floor/plasteel,
 /area/ship/bridge)
 "cn" = (
@@ -1787,6 +1787,8 @@
 /obj/item/stack/sheet/mineral/plasma{
 	amount = 10
 	},
+/obj/item/circuitboard/machine/ore_redemption,
+/obj/item/pickaxe/emergency,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "cN" = (
@@ -1797,6 +1799,7 @@
 /obj/structure/cable{
 	icon_state = "1-4"
 	},
+/obj/machinery/autolathe,
 /turf/open/floor/plasteel/white/side{
 	dir = 10
 	},
@@ -1950,17 +1953,6 @@
 /turf/open/floor/plasteel/white/corner{
 	dir = 8
 	},
-/area/ship/medical)
-"db" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden{
-	dir = 4
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/effect/decal/cleanable/blood/gibs/old,
-/turf/open/floor/plasteel,
 /area/ship/medical)
 "dc" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -2654,7 +2646,7 @@ cf
 al
 cG
 cQ
-db
+dd
 dl
 al
 ag
