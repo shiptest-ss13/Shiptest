@@ -74,20 +74,10 @@
 /turf/open/floor/plating,
 /area/ship/engineering/electrical)
 "bd" = (
-/obj/docking_port/mobile{
-	can_move_docking_ports = 1;
-	dir = 4;
-	id = "mining_ministarfury";
-	name = "SBD starfurys revenge";
-	port_direction = 4;
-	undock_roundstart = 1
-	},
-/obj/structure/railing,
-/obj/structure/railing{
-	dir = 1
-	},
-/turf/open/floor/plating/airless,
-/area/ship/external)
+/obj/machinery/light/floor,
+/obj/spacepod/prebuilt/jousting/red,
+/turf/open/floor/pod/dark,
+/area/ship/cargo)
 "bh" = (
 /obj/machinery/portable_atmospherics/scrubber,
 /turf/open/floor/plasteel/dark,
@@ -845,13 +835,6 @@
 /obj/item/clothing/head/helmet/space/syndicate/green,
 /turf/open/floor/carpet/nanoweave/red,
 /area/ship/crew/dorm)
-"js" = (
-/obj/structure/railing,
-/obj/structure/railing{
-	dir = 1
-	},
-/turf/open/floor/plating/airless,
-/area/ship/external)
 "jF" = (
 /obj/machinery/firealarm{
 	pixel_y = -28
@@ -893,6 +876,12 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
 	},
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
@@ -1024,6 +1013,12 @@
 /obj/effect/turf_decal/tile/bar,
 /obj/structure/cable{
 	icon_state = "4-8"
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
 	},
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
@@ -1861,10 +1856,11 @@
 	req_access_txt = "151"
 	},
 /obj/item/card/id/syndicate_command/captain_id{
-	access = list(150,151)
+	access = list(150,151,3)
 	},
 /obj/item/clothing/under/syndicate,
 /obj/item/storage/belt/sabre,
+/obj/item/ammo_box/a357,
 /turf/open/floor/carpet/nanoweave/red,
 /area/ship/crew/dorm)
 "vb" = (
@@ -2172,22 +2168,11 @@
 /turf/open/floor/plating,
 /area/ship/cargo)
 "xy" = (
-/obj/machinery/power/supermatter_crystal/engine,
+/obj/machinery/power/supermatter_crystal/engine{
+	engineering_channel = "Syndicate";
+	radio_key = /obj/item/encryptionkey/syndicate
+	},
 /turf/open/floor/engine,
-/area/ship/engineering/engine)
-"xz" = (
-/obj/machinery/door/airlock/external{
-	name = "Engineering External Access";
-	req_access_txt = "150"
-	},
-/obj/structure/fans/tiny,
-/obj/structure/railing/corner{
-	dir = 8
-	},
-/obj/structure/railing/corner{
-	dir = 1
-	},
-/turf/open/floor/plating,
 /area/ship/engineering/engine)
 "xB" = (
 /obj/machinery/button/massdriver{
@@ -2481,6 +2466,7 @@
 /obj/structure/closet/secure_closet/security{
 	req_access = list(150)
 	},
+/obj/item/ammo_box/magazine/m10mm,
 /turf/open/floor/carpet/nanoweave/red,
 /area/ship/crew/dorm)
 "Bw" = (
@@ -2850,10 +2836,16 @@
 /area/ship/bridge)
 "EZ" = (
 /obj/structure/window/reinforced,
-/obj/structure/closet/secure_closet/warden{
+/obj/item/clothing/under/syndicate,
+/obj/structure/closet/secure_closet/security{
+	icon_state = "warden";
 	req_access = list(150,3)
 	},
-/obj/item/clothing/under/syndicate,
+/obj/item/clothing/gloves/krav_maga/combatglovesplus,
+/obj/item/clothing/head/warden,
+/obj/item/melee/classic_baton/telescopic,
+/obj/item/ammo_box/magazine/m10mm/ap,
+/obj/item/ammo_box/magazine/m10mm/ap,
 /turf/open/floor/carpet/nanoweave/red,
 /area/ship/crew/dorm)
 "Fd" = (
@@ -2888,6 +2880,20 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
+"Fw" = (
+/obj/machinery/door/airlock/external{
+	name = "Engineering External Access";
+	req_access_txt = "150"
+	},
+/obj/structure/fans/tiny,
+/obj/structure/railing/corner{
+	dir = 8
+	},
+/obj/structure/railing/corner{
+	dir = 1
+	},
+/turf/open/floor/plating,
+/area/ship/engineering/engine)
 "Fy" = (
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/engine)
@@ -3310,7 +3316,7 @@
 	},
 /obj/machinery/light,
 /obj/item/gun/ballistic/shotgun/bulldog{
-	spawnwithmagazine = FALSE
+	spawnwithmagazine = 0
 	},
 /obj/item/ammo_box/magazine/m12g/stun,
 /turf/open/floor/carpet/nanoweave/red,
@@ -3517,6 +3523,13 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/dorm)
+"Lr" = (
+/obj/structure/railing,
+/obj/structure/railing{
+	dir = 1
+	},
+/turf/open/floor/plating/airless,
+/area/ship/external)
 "Lw" = (
 /obj/structure/bed,
 /obj/item/bedsheet/hos,
@@ -3544,6 +3557,21 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/dorm)
+"LN" = (
+/obj/docking_port/mobile{
+	can_move_docking_ports = 1;
+	dir = 4;
+	id = "mining_ministarfury";
+	name = "SBD starfurys revenge";
+	port_direction = 8;
+	undock_roundstart = 1
+	},
+/obj/structure/railing,
+/obj/structure/railing{
+	dir = 1
+	},
+/turf/open/floor/plating/airless,
+/area/ship/external)
 "LQ" = (
 /obj/machinery/door/airlock/grunge{
 	name = "Bathroom";
@@ -3593,7 +3621,9 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 8
 	},
-/obj/machinery/airalarm/directional/north,
+/obj/machinery/airalarm/directional/north{
+	req_access = null
+	},
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -3815,7 +3845,7 @@
 	dir = 8
 	},
 /obj/item/gun/ballistic/automatic/m90{
-	spawnwithmagazine = FALSE
+	spawnwithmagazine = 0
 	},
 /turf/open/floor/carpet/nanoweave/red,
 /area/ship/security)
@@ -3864,6 +3894,7 @@
 /obj/structure/closet/secure_closet/security{
 	req_access = list(150)
 	},
+/obj/item/ammo_box/magazine/m10mm,
 /turf/open/floor/carpet/nanoweave/red,
 /area/ship/crew/dorm)
 "ON" = (
@@ -4500,6 +4531,7 @@
 /obj/machinery/light/small{
 	dir = 8
 	},
+/obj/item/ammo_box/magazine/m10mm,
 /turf/open/floor/carpet/nanoweave/red,
 /area/ship/crew/dorm)
 "TX" = (
@@ -4798,7 +4830,6 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 10
 	},
-/obj/spacepod/prebuilt/jousting/red,
 /turf/open/floor/pod/dark,
 /area/ship/cargo)
 "Xg" = (
@@ -5240,7 +5271,7 @@ YM
 YM
 Xu
 Xu
-bd
+LN
 Xu
 Xu
 Xu
@@ -5293,7 +5324,7 @@ vb
 YM
 Xu
 Xu
-js
+Lr
 Xu
 Xu
 AN
@@ -5346,7 +5377,7 @@ qZ
 YM
 Xu
 Xu
-js
+Lr
 Xu
 AN
 AN
@@ -5399,7 +5430,7 @@ Ya
 YM
 Xu
 AN
-xz
+Fw
 AN
 AN
 BX
@@ -5537,7 +5568,7 @@ pw
 tk
 rv
 rv
-tk
+bd
 eR
 eq
 eq

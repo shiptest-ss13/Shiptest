@@ -552,7 +552,7 @@
 /datum/outfit/syndicate_empty/sbc/assault
 	name = "Syndicate Battlecruiser Assault Operative"
 	uniform = /obj/item/clothing/under/syndicate/combat
-//	l_pocket = /obj/item/ammo_box/magazine/m9mm
+	l_pocket = /obj/item/ammo_box/magazine/m10mm
 	r_pocket = /obj/item/kitchen/knife/combat/survival
 	glasses = /obj/item/clothing/glasses/night
 	belt = /obj/item/storage/belt/military
