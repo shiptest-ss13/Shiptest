@@ -501,9 +501,9 @@
 
 /obj/effect/mob_spawn/human/syndicate/battlecruiser/engineering
 	name = "Syndicate Battlecruiser Ship Engineer"
-	short_desc = "You are an engineer aboard the Syndicate flagship: the SBC Starfury."
+	short_desc = "You are an engineer aboard the Syndicate flagship <i>Starfury</i>."
 	flavour_text = "Your job is to maintain the ship, and keep the engine running. If you are unfamiliar with how the supermatter engine functions, do not attempt to start it alone; ask a fellow crewman for help."
-	important_info = "While your role means you can help in the assault with your tools, first of all you must keep the cruiser and engine in a working state."
+	important_info = "While your role means you can help in the assault with your tools,  you must first and foremost keep the cruiser and engine in a working state."
 	outfit = /datum/outfit/syndicate_empty/sbc/engi
 	assignedrole = "Battlecruiser Engineer"
 	mob_name = "syndicate engineer"
