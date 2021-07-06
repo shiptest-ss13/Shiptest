@@ -477,7 +477,7 @@
 //shiptest edit start, adding egors updated starfury roles, this should theoritacly not fuck with shit since this code is unused anyways
 /obj/effect/mob_spawn/human/syndicate/battlecruiser
 	name = "Syndicate Battlecruiser Ship Operative"
-	short_desc = "You are a crewmember aboard the Syndicate flagship: the SBC Starfury."
+	short_desc = "You are a crewmember aboard the Syndicate flagship <i>Starfury</i>."
 	flavour_text = "Your job is to follow your higher-ranking operatives' orders, assisting in pretty much anything that might need your help."
 	important_info = "While you don't have a strict role, you are supposed to obey orders given by anyone on the ship, including medical, engineering and assault operatives."
 	outfit = /datum/outfit/syndicate_empty/sbc
