@@ -1,30 +1,30 @@
 /obj/effect/mob_spawn/human/syndicate/battlecruiser/captain/mini
-	name = "Gorelex Captain"
-	short_desc = "You are the captain aboard the Syndicate destroyer: the SBD Starfury's Revenge."
+	name = "Gorlex Captain"
+	short_desc = "You are the captain aboard the Syndicate destroyer <i>Starfury's Revenge</i>."
 	flavour_text = "Pirates have been detected in this region of space. As the Syndicate wish to push their claim over this region, you have been sent in to deal with the pirates in this area. This also serves as a training ground for new recruits to become operatives, since pirates should be easy pickings... Right?."
 	important_info = ""
 	id_access_list = list(150,151,3)
-	id_job = "Gorelex Captain"
-	assignedrole = "Gorelex Captain"
+	id_job = "Gorlex Captain"
+	assignedrole = "Gorlex Captain"
 
 /obj/effect/mob_spawn/human/syndicate/battlecruiser/assault/mini
-	name = "Gorelex Operative"
-	short_desc = "You are an operative aboard the syndicate destroyer: the SBD Starfury's Revenge."
-	flavour_text = "You have been taken from the front lines for a more specialised role. Your job is to train the various new recruits on field against simple targets: pirates. Or so, they should be easy..."
-	important_info = "you are basicly a warden"
+	name = "Gorlex Operative"
+	short_desc = "You are an operative aboard the syndicate destroyer <i>Starfury's Revenge</i>."
+	flavour_text = "You have been taken from the front lines for a more specialized role. Your job is to train the various new recruits on field against simple targets: pirates. Or so, they should be easy..."
+	important_info = "you are basically a warden"
 	id_access_list = list(150,3)
 	outfit = /datum/outfit/syndicate_empty/sbc/assault
-	assignedrole = "Gorelex Operative"
+	assignedrole = "Gorlex Operative"
 	id_job = "Gorelex Operative"
 
 /obj/effect/mob_spawn/human/syndicate/battlecruiser/mini
 	name = "Gorelex Trooper"
-	short_desc = "You are a crewmember aboard the syndicate destroyer: the SBD Starfury's Revenge."
-	flavour_text = "You are a new or inexperienced recruit for the syndicate, specificly for the Gorelex Mauderaders. You have been taken here for a more 'hands on' training. Your job is to follow your higher-ranking operatives' orders. ."
+	short_desc = "You are a crewmember aboard the syndicate destroyer <i>Starfury's Revenge</i>."
+	flavour_text = "You are a new or inexperienced recruit for the syndicate, specifically of the Gorlex Mauderaders. You have been taken here for a more 'hands on' training. Your job is to follow your higher-ranking operatives' orders. ."
 	important_info = "Despite what the role implies, you are supposed to be a security officer, however here you are the lowest ranking crew member."
 	outfit = /datum/outfit/syndicate_empty/sbc/mini
-	assignedrole = "Gorelex Trooper"
-	id_job = "Gorelex Trooper"
+	assignedrole = "Gorlex Trooper"
+	id_job = "Gorlex Trooper"
 
 /obj/effect/mob_spawn/human/syndicate/battlecruiser/medical/mini
 	name = "Cybersun Medic"
