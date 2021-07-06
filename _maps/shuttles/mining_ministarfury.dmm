@@ -19,6 +19,7 @@
 	dir = 1
 	},
 /obj/machinery/door/firedoor/border_only,
+/obj/effect/mapping_helpers/airlock/cyclelink_helper,
 /turf/open/floor/engine,
 /area/ship/engineering/engine)
 "ai" = (
@@ -57,6 +58,18 @@
 "aB" = (
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
+"aG" = (
+/obj/structure/reflector/box/anchored{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/engineering/engine)
 "aR" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -92,7 +105,7 @@
 /obj/machinery/firealarm{
 	pixel_y = -28
 	},
-/turf/open/floor/plastic,
+/turf/open/floor/plasteel/airless/white,
 /area/ship/medical/surgery)
 "bu" = (
 /obj/machinery/atmospherics/components/trinary/filter/atmos/plasma{
@@ -107,9 +120,6 @@
 /obj/structure/chair/office{
 	dir = 8
 	},
-/obj/item/clothing/gloves/krav_maga/combatglovesplus,
-/obj/item/clothing/head/warden,
-/obj/item/melee/classic_baton/telescopic,
 /turf/open/floor/carpet/red,
 /area/ship/security)
 "bK" = (
@@ -131,12 +141,19 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/engine)
 "bS" = (
-/obj/machinery/door/poddoor{
-	id = "sbccargo";
-	name = "cargo bay blast door"
+/obj/effect/turf_decal/stripes/line,
+/obj/machinery/atmospherics/pipe/simple/orange/visible{
+	dir = 4
 	},
-/turf/open/floor/plating,
-/area/ship/cargo)
+/obj/machinery/door/firedoor/border_only,
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/engine,
+/area/ship/engineering/engine)
 "bX" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 1
@@ -179,7 +196,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/turf/open/floor/plastic,
+/turf/open/floor/plasteel/airless/white,
 /area/ship/medical/surgery)
 "cp" = (
 /obj/item/tank/internals/plasma,
@@ -191,6 +208,10 @@
 	},
 /obj/effect/turf_decal/stripes/line{
 	dir = 8
+	},
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "SupermatterExternal";
+	name = "radiation shutters"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
@@ -358,6 +379,9 @@
 /obj/machinery/power/emitter/welded{
 	dir = 4
 	},
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/engine)
 "eh" = (
@@ -392,6 +416,7 @@
 	req_one_access_txt = "150"
 	},
 /obj/machinery/button{
+	id = "syndikitchen";
 	pixel_x = 8;
 	pixel_y = 24
 	},
@@ -403,7 +428,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/turf/open/floor/plastic,
+/turf/open/floor/plasteel/airless/white,
 /area/ship/medical)
 "eR" = (
 /obj/effect/turf_decal/stripes/line,
@@ -420,7 +445,7 @@
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
-/turf/open/floor/plastic,
+/turf/open/floor/plasteel/airless/white,
 /area/ship/medical)
 "eV" = (
 /obj/machinery/light{
@@ -481,6 +506,9 @@
 /area/ship/engineering/engine)
 "fw" = (
 /obj/effect/turf_decal/delivery,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/engine)
 "fK" = (
@@ -586,6 +614,10 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 8
 	},
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "SupermatterExternal";
+	name = "radiation shutters"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "gI" = (
@@ -594,6 +626,9 @@
 /obj/item/clothing/gloves/color/yellow,
 /obj/item/pipe_dispenser,
 /obj/item/flashlight,
+/obj/item/analyzer,
+/obj/item/analyzer,
+/obj/item/analyzer,
 /turf/open/floor/plasteel,
 /area/ship/engineering/engine)
 "gR" = (
@@ -797,7 +832,7 @@
 /obj/item/storage/belt/medical,
 /obj/item/clothing/glasses/hud/health/night,
 /obj/item/storage/firstaid/medical,
-/turf/open/floor/plastic,
+/turf/open/floor/plasteel/airless/white,
 /area/ship/medical)
 "jg" = (
 /obj/machinery/door/airlock/grunge{
@@ -847,7 +882,7 @@
 /area/ship/bridge)
 "jN" = (
 /obj/machinery/smartfridge/bloodbank/preloaded,
-/turf/open/floor/plastic,
+/turf/open/floor/plasteel/airless/white,
 /area/ship/medical)
 "jP" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
@@ -889,9 +924,6 @@
 /obj/effect/turf_decal/stripes/corner{
 	dir = 1
 	},
-/obj/structure/cable/yellow{
-	icon_state = "1-8"
-	},
 /obj/machinery/atmospherics/components/trinary/filter{
 	dir = 4
 	},
@@ -903,6 +935,9 @@
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
 	},
 /turf/open/floor/engine,
 /area/ship/engineering/engine)
@@ -1100,7 +1135,7 @@
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
-/turf/open/floor/plastic,
+/turf/open/floor/plasteel/airless/white,
 /area/ship/medical)
 "mD" = (
 /turf/open/floor/plating,
@@ -1230,7 +1265,7 @@
 "ot" = (
 /obj/structure/bed/roller,
 /obj/machinery/iv_drip,
-/turf/open/floor/plastic,
+/turf/open/floor/plasteel/airless/white,
 /area/ship/medical)
 "ou" = (
 /obj/machinery/door/airlock/external{
@@ -1407,6 +1442,10 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 8
 	},
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "SupermatterExternal";
+	name = "radiation shutters"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "qk" = (
@@ -1503,7 +1542,7 @@
 /obj/structure/table/reinforced,
 /obj/item/storage/backpack/duffelbag/syndie/surgery,
 /obj/item/reagent_containers/medigel/sterilizine,
-/turf/open/floor/plastic,
+/turf/open/floor/plasteel/airless/white,
 /area/ship/medical/surgery)
 "rG" = (
 /obj/machinery/door/airlock/medical{
@@ -1525,7 +1564,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/turf/open/floor/plastic,
+/turf/open/floor/plasteel/airless/white,
 /area/ship/medical)
 "rM" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
@@ -1662,7 +1701,7 @@
 /obj/machinery/computer/operating{
 	dir = 4
 	},
-/turf/open/floor/plastic,
+/turf/open/floor/plasteel/airless/white,
 /area/ship/medical/surgery)
 "tw" = (
 /obj/structure/window/plasma/reinforced{
@@ -1729,6 +1768,10 @@
 	},
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
+	},
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "SupermatterExternal";
+	name = "radiation shutters"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
@@ -2123,7 +2166,7 @@
 	icon_state = "sleeper_s"
 	},
 /obj/machinery/light,
-/turf/open/floor/plastic,
+/turf/open/floor/plasteel/airless/white,
 /area/ship/medical)
 "xf" = (
 /obj/machinery/power/shuttle/engine/fueled/plasma{
@@ -2243,7 +2286,7 @@
 	name = "War Criminal";
 	skin = "bezerk"
 	},
-/turf/open/floor/plastic,
+/turf/open/floor/plasteel/airless/white,
 /area/ship/medical)
 "yS" = (
 /obj/machinery/atmospherics/pipe/simple/cyan/visible{
@@ -2316,6 +2359,9 @@
 /obj/machinery/power/emitter/welded{
 	dir = 8
 	},
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/engine)
 "zY" = (
@@ -2348,7 +2394,7 @@
 /obj/item/organ/liver/cybernetic/tier2,
 /obj/item/organ/lungs/cybernetic/tier2,
 /obj/item/organ/tail/cat,
-/turf/open/floor/plastic,
+/turf/open/floor/plasteel/airless/white,
 /area/ship/medical/surgery)
 "As" = (
 /obj/structure/chair/comfy/black{
@@ -2443,6 +2489,9 @@
 	dir = 10
 	},
 /obj/machinery/door/firedoor/border_only,
+/obj/structure/cable/yellow{
+	icon_state = "1-4"
+	},
 /turf/open/floor/engine,
 /area/ship/engineering/engine)
 "Bn" = (
@@ -2455,6 +2504,9 @@
 /obj/effect/turf_decal/stripes/line,
 /obj/machinery/atmospherics/pipe/manifold/orange/visible,
 /obj/machinery/door/firedoor/border_only,
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
 /turf/open/floor/engine,
 /area/ship/engineering/engine)
 "Bv" = (
@@ -2540,7 +2592,7 @@
 	dir = 10
 	},
 /obj/machinery/airalarm/directional/east,
-/turf/open/floor/plastic,
+/turf/open/floor/plasteel/airless/white,
 /area/ship/medical/surgery)
 "Co" = (
 /obj/machinery/door/airlock/grunge{
@@ -2754,15 +2806,15 @@
 /obj/effect/turf_decal/stripes/corner{
 	dir = 4
 	},
-/obj/structure/cable/yellow{
-	icon_state = "1-4"
-	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 5
 	},
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
 /obj/structure/cable{
 	icon_state = "4-8"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
 	},
 /turf/open/floor/engine,
 /area/ship/engineering/engine)
@@ -2852,6 +2904,9 @@
 /obj/effect/turf_decal/stripes/line,
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/atmospherics/pipe/manifold4w/orange/visible,
+/obj/structure/cable/yellow{
+	icon_state = "1-8"
+	},
 /turf/open/floor/engine,
 /area/ship/engineering/engine)
 "Fe" = (
@@ -3128,7 +3183,7 @@
 /area/ship/engineering/engine)
 "Hy" = (
 /obj/machinery/light,
-/turf/open/floor/plastic,
+/turf/open/floor/plasteel/airless/white,
 /area/ship/medical/surgery)
 "Hz" = (
 /obj/structure/window/reinforced/spawner{
@@ -3160,6 +3215,15 @@
 "HN" = (
 /obj/structure/reflector/box/anchored{
 	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/cable{
+	icon_state = "1-8"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/engine)
@@ -3193,7 +3257,7 @@
 	dir = 1
 	},
 /obj/machinery/door/firedoor/border_only,
-/turf/open/floor/plastic,
+/turf/open/floor/plasteel/airless/white,
 /area/ship/medical)
 "Iv" = (
 /obj/effect/turf_decal/stripes/corner{
@@ -3296,7 +3360,7 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 8
 	},
-/turf/open/floor/plastic,
+/turf/open/floor/plasteel/airless/white,
 /area/ship/medical)
 "JB" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
@@ -3427,7 +3491,7 @@
 	dir = 8;
 	pixel_x = -26
 	},
-/turf/open/floor/plastic,
+/turf/open/floor/plasteel/airless/white,
 /area/ship/medical)
 "KB" = (
 /obj/effect/turf_decal/tile/bar{
@@ -3533,7 +3597,7 @@
 "Lw" = (
 /obj/structure/bed,
 /obj/item/bedsheet/hos,
-/turf/open/floor/plastic,
+/turf/open/floor/plasteel/airless/white,
 /area/ship/medical)
 "LA" = (
 /obj/structure/window/plasma/reinforced{
@@ -3652,6 +3716,9 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
 /turf/open/floor/engine,
 /area/ship/engineering/engine)
 "MA" = (
@@ -3731,6 +3798,10 @@
 /obj/item/tank/internals/plasma,
 /obj/structure/cable/yellow{
 	icon_state = "1-4"
+	},
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "SupermatterExternal";
+	name = "radiation shutters"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
@@ -3820,6 +3891,9 @@
 	},
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/obj/effect/mapping_helpers/airlock/cyclelink_helper{
 	dir = 1
 	},
 /turf/open/floor/engine,
@@ -4150,7 +4224,7 @@
 /obj/structure/cable{
 	icon_state = "1-4"
 	},
-/turf/open/floor/plastic,
+/turf/open/floor/plasteel/airless/white,
 /area/ship/medical/surgery)
 "QD" = (
 /obj/structure/closet/emcloset,
@@ -4251,6 +4325,9 @@
 	dir = 8
 	},
 /obj/machinery/door/firedoor/border_only,
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
 /turf/open/floor/engine,
 /area/ship/engineering/engine)
 "RD" = (
@@ -4267,7 +4344,7 @@
 /area/ship/bridge)
 "RF" = (
 /obj/structure/table/optable,
-/turf/open/floor/plastic,
+/turf/open/floor/plasteel/airless/white,
 /area/ship/medical/surgery)
 "RH" = (
 /obj/structure/closet/secure_closet{
@@ -4319,7 +4396,7 @@
 /area/ship/security)
 "RN" = (
 /obj/machinery/vending/medical/syndicate_access,
-/turf/open/floor/plastic,
+/turf/open/floor/plasteel/airless/white,
 /area/ship/medical)
 "Sa" = (
 /obj/machinery/door/airlock/grunge{
@@ -4371,7 +4448,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/turf/open/floor/plastic,
+/turf/open/floor/plasteel/airless/white,
 /area/ship/medical/surgery)
 "Sw" = (
 /obj/machinery/atmospherics/pipe/simple/purple/visible{
@@ -4385,6 +4462,9 @@
 	dir = 5
 	},
 /obj/machinery/door/firedoor/border_only,
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
 /turf/open/floor/engine,
 /area/ship/engineering/engine)
 "Sz" = (
@@ -4417,7 +4497,7 @@
 	dir = 1;
 	icon_state = "sleeper_s"
 	},
-/turf/open/floor/plastic,
+/turf/open/floor/plasteel/airless/white,
 /area/ship/medical)
 "SL" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
@@ -4430,7 +4510,7 @@
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
-/turf/open/floor/plastic,
+/turf/open/floor/plasteel/airless/white,
 /area/ship/medical)
 "SQ" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
@@ -4543,7 +4623,7 @@
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
-/turf/open/floor/plastic,
+/turf/open/floor/plasteel/airless/white,
 /area/ship/medical/surgery)
 "Ua" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/visible{
@@ -4591,9 +4671,6 @@
 /obj/machinery/atmospherics/pipe/simple/orange/visible{
 	dir = 10
 	},
-/obj/machinery/atmospherics/pipe/manifold/orange/visible{
-	dir = 4
-	},
 /turf/open/floor/circuit/green,
 /area/ship/engineering/engine)
 "UA" = (
@@ -4630,7 +4707,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/dorm)
 "UI" = (
-/turf/open/floor/plastic,
+/turf/open/floor/plasteel/airless/white,
 /area/ship/medical)
 "UJ" = (
 /obj/effect/turf_decal/stripes/line{
@@ -4674,7 +4751,7 @@
 	dir = 1
 	},
 /obj/structure/closet/secure_closet/chemical/heisenberg,
-/turf/open/floor/plastic,
+/turf/open/floor/plasteel/airless/white,
 /area/ship/medical)
 "Vo" = (
 /obj/effect/turf_decal/stripes/line,
@@ -4682,6 +4759,9 @@
 	dir = 4
 	},
 /obj/machinery/door/firedoor/border_only,
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
 /turf/open/floor/engine,
 /area/ship/engineering/engine)
 "Vs" = (
@@ -4806,11 +4886,22 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/dorm)
+"Wy" = (
+/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plating,
+/area/ship/engineering/engine)
 "WG" = (
 /obj/structure/cable/yellow{
 	icon_state = "2-4"
 	},
 /obj/item/tank/internals/plasma,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "SupermatterExternal";
+	name = "radiation shutters"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "WH" = (
@@ -5035,7 +5126,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/turf/open/floor/plastic,
+/turf/open/floor/plasteel/airless/white,
 /area/ship/medical)
 "YB" = (
 /obj/machinery/door/airlock/grunge{
@@ -5458,8 +5549,8 @@ Xu
 Xu
 Xu
 Um
-bS
-bS
+xx
+xx
 xx
 xx
 xx
@@ -6173,11 +6264,11 @@ ah
 HO
 NU
 Mu
-Vo
-XZ
+bS
+Wy
 fw
 HN
-HN
+aG
 AN
 US
 Ys

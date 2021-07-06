@@ -59,4 +59,4 @@
 /datum/outfit/syndicate_empty/sbc/engi/mini
 	name = "Ministarfury Engineer"
 	uniform = /obj/item/clothing/under/syndicate/intern
-	backpack_contents = list(/obj/item/storage/box/survival/syndie=1, /obj/item/construction/rcd/combat, /obj/item/rcd_ammo/large, /obj/item/stack/sheet/mineral/plastitanium=50, /obj/item/gun/ballistic/automatic/pistol/m1911)
+	backpack_contents = list(/obj/item/storage/box/survival/syndie=1, /obj/item/construction/rcd/combat, /obj/item/rcd_ammo/large, /obj/item/stack/sheet/mineral/plastitanium=50)
