@@ -28,7 +28,7 @@
 
 /obj/effect/mob_spawn/human/syndicate/battlecruiser/medical/mini
 	name = "Cybersun Medic"
-	short_desc = "You are a medic aboard the Syndicate destroyer: the SBD Starfury's Revenge."
+	short_desc = "You are a medic aboard the Syndicate destroyer <i>Starfury's Revenge</i>."
 	flavour_text = "Your job is to maintain the crew's physical health and keep your comrades alive at all cost. You aren't apart of the crew's corpration, however if you want to keep a job and not die you should listen to the captain."
 	important_info = ""
 	outfit = /datum/outfit/syndicate_empty/sbc/med/mini
@@ -37,7 +37,7 @@
 
 /obj/effect/mob_spawn/human/syndicate/battlecruiser/engineering/mini
 	name = "TamosCorp Engineer"
-	short_desc = "You are an engineer aboard the Syndicate destroyer: the SBD Starfury's Revenge."
+	short_desc = "You are an engineer aboard the Syndicate destroyer <i>Starfury's Revenge</i>."
 	flavour_text = "Your job is to maintain the ship, and keep the engine running while the troopers are doing fuck-all. If you are unfamiliar with how the supermatter engine functions, do not attempt to start it alone; ask a fellow crewman for help."
 	important_info = ""
 	outfit = /datum/outfit/syndicate_empty/sbc/engi/mini
