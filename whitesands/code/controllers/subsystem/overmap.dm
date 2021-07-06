@@ -5,6 +5,8 @@ SUBSYSTEM_DEF(overmap)
 	flags = SS_KEEP_TIMING|SS_NO_TICK_CHECK
 	runlevels = RUNLEVEL_SETUP | RUNLEVEL_GAME
 
+	//The type of star this system will have
+	var/startype
 	///Defines which generator to use for the overmap
 	var/generator_type = OVERMAP_GENERATOR_RANDOM
 
@@ -44,7 +46,22 @@ SUBSYSTEM_DEF(overmap)
 		generator_type = OVERMAP_GENERATOR_RANDOM
 
 	if (generator_type == OVERMAP_GENERATOR_SOLAR)
-		var/obj/structure/overmap/star/center = new(locate(size / 2, size / 2, 1))
+		var/obj/structure/overmap/star/center
+		startype = pick(SMALLSTAR,TWOSTAR,MEDSTAR,BIGSTAR)
+		if(startype == SMALLSTAR)
+			center = new(locate(size / 2, size / 2, 1))
+		if(startype == TWOSTAR)
+			var/obj/structure/overmap/star/big/binary/S
+			S = new(locate(size / 2, size / 2, 1))
+			center = S
+		if(startype == MEDSTAR)
+			var/obj/structure/overmap/star/medium/S
+			S = new(locate(size / 2, size / 2, 1))
+			center = S
+		if(startype == BIGSTAR)
+			var/obj/structure/overmap/star/big/S
+			S = new(locate(size / 2, size / 2, 1))
+			center = S
 		var/list/unsorted_turfs = get_areatype_turfs(/area/overmap)
 		// SSovermap.size - 2 = area of the overmap w/o borders
 		radius_tiles = list()
@@ -180,8 +197,14 @@ SUBSYSTEM_DEF(overmap)
 		SSshuttle.action_load(SSmapping.shuttle_templates[initial(SSmapping.config.shuttle_id)])
 		return
 	var/datum/map_template/shuttle/selected_template = SSmapping.shuttle_templates[SSmapping.config.shuttle_id]
-	INIT_ANNOUNCE("Loading [selected_template.name]...")
+	INIT_ANNOUNCE("Loading [SSmapping.config.map_name]...")
 	SSshuttle.action_load(selected_template)
+	if(SSdbcore.Connect())
+		var/datum/DBQuery/query_round_map_name = SSdbcore.NewQuery({"
+			UPDATE [format_table_name("round")] SET map_name = :map_name WHERE id = :round_id
+		"}, list("map_name" = SSmapping.config.map_name, "round_id" = GLOB.round_id))
+		query_round_map_name.Execute()
+		qdel(query_round_map_name)
 
 /**
   * Creates an overmap object for each ruin level, making them accessible.

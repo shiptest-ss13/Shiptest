@@ -93,7 +93,7 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 /area/ship/proc/link_to_shuttle(obj/docking_port/mobile/M)
 	mobile_port = M
 
-/area/ship/get_virtual_z()
+/area/ship/get_virtual_z_level()
 	if(mobile_port)
 		return mobile_port.get_virtual_z_level()
 	return ..()

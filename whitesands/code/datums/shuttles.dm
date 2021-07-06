@@ -39,6 +39,10 @@
 	port_id = "engi"
 	suffix = "moth"
 
+/datum/map_template/shuttle/radio
+	port_id = "radio"
+	suffix = "funny"
+
 /datum/map_template/shuttle/minigalaxy
 	port_id = "mining"
 	suffix = "minigalaxy"
@@ -55,5 +59,3 @@
 /datum/map_template/shuttle/ruin/solgov_exploration_pod
 	suffix = "solgov_exploration_pod"
 	name = "SolGov Exploration Pod"
-
-

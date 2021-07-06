@@ -224,13 +224,116 @@
 /obj/structure/overmap/star
 	name = "Star"
 	desc = "A star."
-	icon = 'whitesands/icons/effects/overmap_large.dmi'
-	icon_state = "kepler_453"
-	bound_height = 64
-	bound_width = 64
-	pixel_x = -16
-	pixel_y = -16
+	icon = 'whitesands/icons/effects/overmap.dmi'
+	icon_state = "star1"
+	var/class //what kind of star will you be?
+	var/star_classes = list(\
+		STARK,
+		STARM,
+		STARL,
+		START,
+		STARY,
+		STARD
+	)
 
 /obj/structure/overmap/star/Initialize(mapload, _id)
 	. = ..()
 	name = "[pick(GLOB.star_names)] [pick(GLOB.greek_letters)]"
+	class = pick(star_classes)
+	var/c = "#ffffff"
+	if(class == STARO)
+		c = "#75ffff"
+		desc = "A blue giant"
+	if(class == STARB)
+		c = "#c0ffff"
+	if(class == STARG)
+		c = "#ffff00"
+	if(class == STARK)
+		c = "#ff7f00"
+	if(class == STARM)
+		c = "#d50000"
+	if(class == STARL) //Take the L
+		c = "#a31300"
+	if(class == START)
+		c = "#a60347"
+		desc = "A brown dwarf"
+	if(class == STARY)
+		c = "#4a3059"
+		desc = "A brown dwarf"
+	if(class == STARD)
+		c = pick("#75ffff", "#c0ffff", "#ffffff")
+		desc = "A white dwarf"
+	add_atom_colour(c, FIXED_COLOUR_PRIORITY)
+
+/obj/structure/overmap/star/medium
+	icon = 'whitesands/icons/effects/overmap_large.dmi'
+	bound_height = 64
+	bound_width = 64
+	pixel_x = -16
+	pixel_y = -16
+	icon_state = "star2"
+	star_classes = list(\
+		STARB,
+		STARA,
+		STARF,
+		STARG,
+		STARK
+	)
+
+/obj/structure/overmap/star/big
+	icon = 'whitesands/icons/effects/overmap_larger.dmi'
+	icon_state = "star3"
+	bound_height = 96
+	bound_width = 96
+	pixel_z = -32
+	pixel_w = -32
+	star_classes = list(\
+		STARO,
+		STARB,
+		STARG,
+		STARM
+	)
+
+/obj/structure/overmap/star/big/binary
+	icon_state = "binaryswoosh"
+	var/class2 //because this one has two!
+	star_classes = list(\
+		STARK,
+		STARM,
+		STARL,
+		START,
+		STARY,
+		STARD
+	)
+
+/obj/structure/overmap/star/big/binary/Initialize(mapload, _id)
+	. = ..()
+	name = "[pick(GLOB.greek_letters)] [pick(GLOB.star_names)] AB"
+	class = pick(star_classes)
+	color = "#ffffff"
+	add_star_overlay()
+
+/obj/structure/overmap/star/big/binary/proc/add_star_overlay()
+	cut_overlays()
+	var/mutable_appearance/s1 = mutable_appearance(icon_state = "binary1")
+	var/mutable_appearance/s2 = mutable_appearance(icon_state = "binary2")
+	if(class == STARK)
+		s1.color = "#ff7f00"
+		s2.color = "#ffff00"
+	if(class == STARM)
+		s1.color = "#d50000"
+		s2.color = "#a31300"
+	if(class == STARL)
+		s1.color = "#a31300"
+		s2.color = "#ff7f00"
+	if(class == START)
+		s1.color = "#a60347"
+		s2.color = pick("#75ffff", "#c0ffff", "#ffffff")
+	if(class == STARY)
+		s1.color = "#4a3059"
+		s2.color = pick("#75ffff", "#c0ffff", "#ffffff")
+	if(class == STARD)
+		s1.color = pick("#75ffff", "#c0ffff", "#ffffff")
+		s2.color = pick("#4a3059", "#a60347", "#a31300")
+	add_overlay(s1)
+	add_overlay(s2)

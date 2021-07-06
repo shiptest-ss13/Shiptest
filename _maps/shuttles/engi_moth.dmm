@@ -286,6 +286,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 6
 	},
+/obj/machinery/holopad/emergency/engineering,
 /turf/open/floor/engine,
 /area/ship/engineering/engine)
 "jz" = (
@@ -304,6 +305,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 9
 	},
+/obj/machinery/holopad,
 /turf/open/floor/mineral/plastitanium/red,
 /area/ship/bridge)
 "jF" = (
@@ -1800,9 +1802,7 @@
 "Yy" = (
 /obj/structure/window/plasma/reinforced/spawner/east,
 /obj/structure/window/plasma/reinforced/spawner,
-/obj/machinery/atmospherics/components/unary/vent_pump/siphon/atmos/oxygen_output{
-	dir = 4
-	},
+/obj/machinery/atmospherics/components/unary/vent_pump/siphon/atmos/oxygen_output,
 /turf/open/floor/engine/o2,
 /area/ship/engineering/atmospherics)
 "YB" = (

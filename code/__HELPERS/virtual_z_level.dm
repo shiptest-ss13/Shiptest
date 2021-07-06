@@ -18,4 +18,4 @@
 		return TR.virtual_z_level
 
 	var/area/A = get_area(src)
-	return A?.get_virtual_z() || z
+	return A?.get_virtual_z_level() || z
