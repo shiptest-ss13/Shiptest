@@ -730,8 +730,8 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/atmospherics)
 "ks" = (
-/obj/structure/window/reinforced/tinted,
 /obj/machinery/airalarm/directional/west,
+/obj/structure/window/reinforced,
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew)
 "kE" = (
@@ -873,7 +873,6 @@
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "mn" = (
-/obj/structure/window/reinforced/tinted,
 /obj/structure/table/wood,
 /obj/item/paper_bin,
 /obj/item/pen,
@@ -882,6 +881,7 @@
 	name = "announcements console";
 	pixel_x = 32
 	},
+/obj/structure/window/reinforced,
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew)
 "mr" = (
@@ -965,7 +965,7 @@
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
 "no" = (
-/obj/structure/table,
+/obj/machinery/suit_storage_unit/mining,
 /turf/open/floor/plasteel/dark/side{
 	dir = 10
 	},
@@ -1775,9 +1775,8 @@
 /obj/item/clothing/glasses/meson,
 /obj/item/clothing/glasses/meson,
 /obj/item/clothing/glasses/meson,
-/obj/item/pickaxe/emergency,
-/obj/item/pickaxe/emergency,
-/obj/item/pickaxe/emergency,
+/obj/item/t_scanner/adv_mining_scanner/lesser,
+/obj/item/kinetic_crusher,
 /turf/open/floor/plasteel/dark/side{
 	dir = 4
 	},
@@ -1924,6 +1923,11 @@
 /area/ship/hallway/central)
 "zP" = (
 /obj/structure/rack,
+/obj/item/storage/bag/ore,
+/obj/item/storage/bag/ore,
+/obj/item/pickaxe/silver,
+/obj/item/pickaxe/mini,
+/obj/item/pickaxe/mini,
 /turf/open/floor/plasteel/dark/side{
 	dir = 8
 	},
@@ -2644,6 +2648,7 @@
 /area/ship/engineering)
 "JW" = (
 /obj/machinery/light,
+/obj/structure/ore_box,
 /turf/open/floor/plasteel/dark/side,
 /area/ship/cargo)
 "Kf" = (
@@ -2874,6 +2879,7 @@
 /area/ship/medical)
 "Od" = (
 /obj/structure/table,
+/obj/effect/spawner/lootdrop/maintenance,
 /turf/open/floor/plasteel/dark/side{
 	dir = 6
 	},
@@ -2973,7 +2979,7 @@
 /obj/structure/table,
 /obj/item/book/manual/wiki/surgery,
 /obj/item/storage/backpack/duffelbag/med/surgery,
-/obj/structure/window/reinforced/tinted{
+/obj/structure/window/reinforced{
 	dir = 8
 	},
 /turf/open/floor/plasteel/showroomfloor,
