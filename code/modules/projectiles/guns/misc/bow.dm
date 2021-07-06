@@ -6,7 +6,7 @@
 	worn_icon_state = "pipebow"
 	inhand_icon_state = "bow"
 	load_sound = null
-	fire_sound = 'sound/weapons/bowfire.ogg'
+	fire_sound = 'whitesands/sound/weapons/bowfire.ogg'
 	slot_flags = ITEM_SLOT_BACK
 	mag_type = /obj/item/ammo_box/magazine/internal/bow
 	trigger_guard = TRIGGER_GUARD_ALLOW_ALL
@@ -37,7 +37,7 @@
 	if(chambered)
 		to_chat(user, "<span class='notice'>You [drawn ? "release the tension on" : "draw the string on"] [src].</span>")
 		if(!drawn)
-			playsound(src, 'sound/weapons/bowdraw.ogg', 75, 0)
+			playsound(src, 'whitesands/sound/weapons/bowdraw.ogg', 75, 0)
 		drawn = !drawn
 	update_icon()
 
