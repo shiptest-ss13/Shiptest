@@ -541,7 +541,7 @@
 
 /obj/effect/mob_spawn/human/syndicate/battlecruiser/assault
 	name = "Syndicate Battlecruiser Assault Operative"
-	short_desc = "You are an assault operative aboard the syndicate flagship: the SBC Starfury."
+	short_desc = "You are an assault operative aboard the syndicate flagship <i>Starfury</i>."
 	flavour_text = "Your job is to follow your captain's orders, keep intruders out of the ship, and assault Space Station 13. There is an armory, multiple assault ships, and beam cannons to attack the station with."
 	important_info = "Work as a team with your fellow operatives and work out a plan of attack. If you are overwhelmed, escape back to your ship!"
 	outfit = /datum/outfit/syndicate_empty/sbc/assault
