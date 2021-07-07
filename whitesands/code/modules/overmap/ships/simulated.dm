@@ -29,23 +29,17 @@
 	///The docking port of the linked shuttle
 	var/obj/docking_port/mobile/shuttle
 
-/obj/structure/overmap/ship/simulated/Initialize(mapload, _id, obj/docking_port/mobile/_shuttle)
+/obj/structure/overmap/ship/simulated/Initialize(mapload, obj/docking_port/mobile/_shuttle)
 	. = ..()
-	LAZYADD(SSovermap.simulated_ships, src)
 	if(_shuttle)
 		shuttle = _shuttle
-	if(!mapload)
-		initial_load()
-
-/obj/structure/overmap/ship/simulated/proc/initial_load()
 	if(!shuttle)
-		shuttle = SSshuttle.getShuttle(id)
-	if(shuttle)
-		name = shuttle.name
-		calculate_mass()
-		initial_name()
-		refresh_engines()
-		check_loc()
+		CRASH("Simulated overmap ship created without associated shuttle!")
+	name = shuttle.name
+	calculate_mass()
+	initial_name()
+	refresh_engines()
+	check_loc()
 
 /obj/structure/overmap/ship/simulated/proc/initial_name()
 	if(mass < SHIP_SIZE_THRESHOLD)
@@ -178,8 +172,7 @@
   * Proc called after a shuttle is moved, used for checking a ship's location when it's moved manually (E.G. calling the mining shuttle via a console)
   */
 /obj/structure/overmap/ship/simulated/proc/check_loc()
-	var/docked_object = SSovermap.get_overmap_object_by_z(get_virtual_z_level(shuttle))
-	var/obj/docking_port/stationary/dock_port = shuttle.get_docked()
+	var/docked_object = SSovermap.get_overmap_object_by_z(shuttle.get_virtual_z_level())
 	if(docked_object == loc) //The docked object is correct, move along
 		return TRUE
 	if(state == OVERMAP_SHIP_DOCKING || state == OVERMAP_SHIP_UNDOCKING)
@@ -193,17 +186,6 @@
 		return FALSE
 	if(isturf(loc) && docked_object) //The overmap object thinks it's NOT docked to something, but it actually is. Move to the correct place.
 		forceMove(docked_object)
-		state = OVERMAP_SHIP_IDLE
-		decelerate(max_speed)
-		update_screen()
-		return FALSE
-	if(!istype(dock_port, /obj/docking_port/stationary/transit)) //last-ditch attempt
-		var/list/split_id = splittext(dock_port.id, "_")
-		var/dock_port_id = split_id[1]
-		var/obj/structure/overmap/target = SSovermap.get_overmap_object_by_id(dock_port_id)
-		if(!target)
-			return FALSE //Well, we tried
-		forceMove(target)
 		state = OVERMAP_SHIP_IDLE
 		decelerate(max_speed)
 		update_screen()

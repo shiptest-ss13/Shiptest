@@ -378,17 +378,14 @@ SUBSYSTEM_DEF(shuttle)
 			You have 3 minutes to board the Emergency Shuttle.",
 			null, 'sound/ai/shuttledock.ogg', "Priority")
 
-/datum/controller/subsystem/shuttle/proc/moveShuttle(shuttleId, dockId, timed)
-	var/obj/docking_port/mobile/M = getShuttle(shuttleId)
-	var/obj/docking_port/stationary/D = getDock(dockId)
-
-	if(!M)
+/datum/controller/subsystem/shuttle/proc/moveShuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock, timed)
+	if(!port)
 		return 1
 	if(timed)
-		if(M.request(D))
+		if(port.request(dock))
 			return 2
 	else
-		if(M.initiate_docking(D) != DOCKING_SUCCESS)
+		if(port.initiate_docking(dock) != DOCKING_SUCCESS)
 			return 2
 	return 0	//dock successful
 
@@ -476,7 +473,7 @@ SUBSYSTEM_DEF(shuttle)
 	A.contents = proposal.get_reserved_turfs()
 	var/obj/docking_port/stationary/transit/new_transit_dock = new(midpoint)
 	new_transit_dock.reserved_area = proposal
-	new_transit_dock.name = "Transit for [M.id]/[M.name]"
+	new_transit_dock.name = "Transit for [M.name]"
 	new_transit_dock.owner = M
 	new_transit_dock.assigned_area = A
 

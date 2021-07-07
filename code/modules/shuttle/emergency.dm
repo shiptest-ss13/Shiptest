@@ -538,47 +538,11 @@
 	height = 4
 	launch_status = UNLAUNCHED
 
-/obj/docking_port/mobile/pod/request(obj/docking_port/stationary/S)
-	var/obj/machinery/computer/shuttle/C = getControlConsole()
-	if(!istype(C, /obj/machinery/computer/shuttle/pod))
-		return ..()
-	if(GLOB.security_level >= SEC_LEVEL_RED || (C && (C.obj_flags & EMAGGED)))
-		if(launch_status == UNLAUNCHED)
-			launch_status = EARLY_LAUNCHED
-			return ..()
-	else
-		to_chat(usr, "<span class='warning'>Escape pods will only launch during \"Code Red\" security alert.</span>")
-		return TRUE
-
 /obj/docking_port/mobile/pod/cancel()
 	return
 
-/obj/machinery/computer/shuttle/pod
-	name = "pod control computer"
-	admin_controlled = TRUE
-	possible_destinations = "pod_asteroid"
-	icon = 'icons/obj/terminals.dmi'
-	icon_state = "dorm_available"
-	light_color = LIGHT_COLOR_BLUE
-	density = FALSE
-
-/obj/machinery/computer/shuttle/pod/ComponentInitialize()
-	. = ..()
-	AddElement(/datum/element/update_icon_blocker)
-
-/obj/machinery/computer/shuttle/pod/emag_act(mob/user)
-	if(obj_flags & EMAGGED)
-		return
-	obj_flags |= EMAGGED
-	to_chat(user, "<span class='warning'>You fry the pod's alert level checking system.</span>")
-
-/obj/machinery/computer/shuttle/pod/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock, idnum, override=FALSE)
-	. = ..()
-	if(possible_destinations == initial(possible_destinations) || override)
-		possible_destinations = "pod_lavaland[idnum]"
 
 //Pod suits/pickaxes
-
 
 /obj/item/clothing/head/helmet/space/orange
 	name = "emergency space helmet"

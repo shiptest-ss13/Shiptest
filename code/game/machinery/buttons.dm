@@ -127,10 +127,10 @@
 		A.id = id
 	initialized_button = 1
 
-/obj/machinery/button/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock, idnum, override=FALSE)
+/obj/machinery/button/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock, override=FALSE)
 	if(id && istype(device, /obj/item/assembly/control))
 		var/obj/item/assembly/control/A = device
-		A.id = "[idnum][id]"
+		A.id = "[REF(port)][id]"
 
 /obj/machinery/button/attack_hand(mob/user)
 	. = ..()

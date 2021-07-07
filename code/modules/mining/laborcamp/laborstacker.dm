@@ -88,7 +88,7 @@ GLOBAL_LIST(labor_sheet_values)
 			if(!alone_in_area(get_area(src), usr))
 				to_chat(usr, "<span class='alert'>Prisoners are only allowed to be released while alone.</span>")
 			else
-				switch(SSshuttle.moveShuttle("laborcamp", "laborcamp_home", TRUE))
+				switch(SSshuttle.moveShuttle(SSshuttle.getShuttle("laborcamp"), SSshuttle.getDock("laborcamp_home"), TRUE))
 					if(1)
 						to_chat(usr, "<span class='alert'>Shuttle not found.</span>")
 					if(2)

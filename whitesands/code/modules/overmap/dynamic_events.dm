@@ -17,7 +17,7 @@
 	///The virtual z-level the level occupies
 	var/virtual_z_level
 
-/obj/structure/overmap/dynamic/Initialize(mapload, _id)
+/obj/structure/overmap/dynamic/Initialize(mapload)
 	. = ..()
 	choose_level_type()
 
@@ -99,9 +99,9 @@
 		return
 	if(!COOLDOWN_FINISHED(SSovermap, encounter_cooldown))
 		return "WARNING! Stellar interference is restricting flight in this area. Interference should pass in [COOLDOWN_TIMELEFT(SSovermap, encounter_cooldown) / 10] seconds."
-	var/list/dynamic_encounter_values = SSovermap.spawn_dynamic_encounter(planet, TRUE, id, ruin_type = template)
-	var/datum/turf_reservation/new_reserve = dynamic_encounter_values[1]
-	if(!new_reserve)
+	var/list/dynamic_encounter_values = SSovermap.spawn_dynamic_encounter(planet, TRUE, ruin_type = template)
+	reserve = dynamic_encounter_values[1]
+	if(!reserve)
 		return "FATAL NAVIGATION ERROR, PLEASE TRY AGAIN LATER!"
 	reserve_dock = dynamic_encounter_values[2]
 	reserve_dock_secondary = dynamic_encounter_values[3]

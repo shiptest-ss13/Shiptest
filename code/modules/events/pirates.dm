@@ -174,14 +174,6 @@
 	toggle_off()
 	return ..()
 
-/obj/machinery/computer/shuttle/pirate
-	name = "pirate shuttle console"
-	shuttleId = "pirateship"
-	icon_screen = "syndishuttle"
-	icon_keyboard = "syndie_key"
-	light_color = COLOR_SOFT_RED
-	possible_destinations = "pirateship_away;pirateship_home;pirateship_custom"
-
 /obj/machinery/computer/camera_advanced/shuttle_docker/syndicate/pirate
 	name = "pirate shuttle navigation computer"
 	desc = "Used to designate a precise transit location for the pirate shuttle."

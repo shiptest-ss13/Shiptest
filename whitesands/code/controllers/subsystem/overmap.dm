@@ -8,10 +8,8 @@ SUBSYSTEM_DEF(overmap)
 	///Defines which generator to use for the overmap
 	var/generator_type = OVERMAP_GENERATOR_RANDOM
 
-	///List of all overmap objects, keys are their respective IDs
+	///List of all overmap objects.
 	var/list/overmap_objects
-	///List of all active, simulated ships
-	var/list/simulated_ships
 	///List of all helms, to be adjusted
 	var/list/helms
 	///List of all events
@@ -62,9 +60,6 @@ SUBSYSTEM_DEF(overmap)
 			continue
 		setup_shuttle_ship(M)
 
-	for(var/obj/structure/overmap/ship/simulated/S as anything in simulated_ships)
-		S.initial_load()
-
 	for(var/obj/machinery/computer/helm/H as anything in helms)
 		H.set_ship()
 	QDEL_NULL(helms)
@@ -89,14 +84,14 @@ SUBSYSTEM_DEF(overmap)
 	var/docked_object = get_overmap_object_by_z(shuttle.get_virtual_z_level())
 	var/obj/structure/overmap/ship/simulated/new_ship
 	if(docked_object)
-		new_ship = new(docked_object, shuttle.id, shuttle)
+		new_ship = new(docked_object, shuttle)
 		if(shuttle.undock_roundstart)
 			new_ship.undock()
 	else if(is_reserved_level(shuttle.z))
-		new_ship = new(get_unused_overmap_square(), shuttle.id, shuttle)
+		new_ship = new(get_unused_overmap_square(), shuttle)
 		new_ship.state = OVERMAP_SHIP_FLYING
 	else if(is_centcom_level(shuttle.z))
-		new_ship = new(null, shuttle.id, shuttle)
+		new_ship = new(null, shuttle)
 	else
 		CRASH("Shuttle created in unknown location, unable to create overmap ship!")
 
@@ -198,13 +193,9 @@ SUBSYSTEM_DEF(overmap)
   * Reserves a square dynamic encounter area, and spawns a ruin in it if one is supplied.
   * * on_planet - If the encounter should be on a generated planet. Required, as it will be otherwise inaccessible.
   * * target - The ruin to spawn, if any
-  * * dock_id - The id of the stationary docking port that will be spawned in the encounter. The primary and secondary prefixes will be applied, so do not include them.
   * * ruin_type - The ruin to spawn. Don't pass this argument if you want it to randomly select based on planet type.
   */
-/datum/controller/subsystem/overmap/proc/spawn_dynamic_encounter(planet_type, ruin = TRUE, dock_id, ignore_cooldown = FALSE, datum/map_template/ruin/ruin_type)
-	if(!dock_id)
-		CRASH("Encounter spawner tried spawning an encounter without a docking port ID!")
-
+/datum/controller/subsystem/overmap/proc/spawn_dynamic_encounter(planet_type, ruin = TRUE, ignore_cooldown = FALSE, datum/map_template/ruin/ruin_type)
 	var/list/ruin_list = SSmapping.space_ruins_templates
 	var/datum/map_generator/mapgen
 	var/area/target_area
@@ -319,27 +310,17 @@ SUBSYSTEM_DEF(overmap)
 			ret_dist = dist
 
 /**
-  * Gets the corresponding overmap object that shares the provided ID
-  * * id - ID of the overmap object you want to find
-  */
-/datum/controller/subsystem/overmap/proc/get_overmap_object_by_id(id)
-	if(id in overmap_objects)
-		return overmap_objects[id]
-
-/**
   * Gets the corresponding overmap object that shares the provided z level
   * * zlevel - The Z-level of the overmap object you want to find
   */
 /datum/controller/subsystem/overmap/proc/get_overmap_object_by_z(zlevel)
-	for(var/id in overmap_objects)
-		if(istype(overmap_objects[id], /obj/structure/overmap/dynamic))
-			var/obj/structure/overmap/dynamic/D = overmap_objects[id]
+	for(var/O in overmap_objects)
+		if(istype(O, /obj/structure/overmap/dynamic))
+			var/obj/structure/overmap/dynamic/D = O
 			if(zlevel == D.virtual_z_level)
 				return D
 
 /datum/controller/subsystem/overmap/Recover()
-	if(istype(SSovermap.simulated_ships))
-		simulated_ships = SSovermap.simulated_ships
 	if(istype(SSovermap.events))
 		events = SSovermap.events
 	if(istype(SSovermap.radius_tiles))

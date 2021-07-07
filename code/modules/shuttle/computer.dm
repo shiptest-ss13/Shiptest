@@ -5,10 +5,10 @@
 	icon_keyboard = "tech_key"
 	light_color = LIGHT_COLOR_CYAN
 	req_access = list( )
-	/// ID of the attached shuttle
-	var/shuttleId
+	/// port of the attached shuttle
+	var/obj/docking_port/mobile/shuttle_port
 	/// Possible destinations of the attached shuttle
-	var/possible_destinations = ""
+	var/list/obj/docking_port/stationary/destination_ports = list()
 	/// Variable dictating if the attached shuttle requires authorization from the admin staff to move
 	var/admin_controlled = FALSE
 	/// Variable dictating if the attached shuttle is forbidden to change destinations mid-flight
@@ -18,6 +18,9 @@
 	/// Authorization request cooldown to prevent request spam to admin staff
 	COOLDOWN_DECLARE(request_cooldown)
 
+/obj/machinery/computer/shuttle/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock, override=FALSE)
+	shuttle_port = port
+
 /obj/machinery/computer/shuttle/ui_interact(mob/user, datum/tgui/ui)
 	ui = SStgui.try_update_ui(user, src, ui)
 	if(!ui)
@@ -26,8 +29,7 @@
 
 /obj/machinery/computer/shuttle/ui_data(mob/user)
 	var/list/data = list()
-	var/list/options = params2list(possible_destinations)
-	var/obj/docking_port/mobile/M = SSshuttle.getShuttle(shuttleId)
+	var/obj/docking_port/mobile/M = shuttle_port
 	data["docked_location"] = M ? M.get_status_text_tgui() : "Unknown"
 	data["locations"] = list()
 	data["locked"] = FALSE
@@ -49,14 +51,13 @@
 				data["status"] = "Recharging"
 			else
 				data["status"] = "In Transit"
-	for(var/obj/docking_port/stationary/S in SSshuttle.stationary)
-		if(!options.Find(S.id))
-			continue
-		if(!M.check_dock(S, silent = TRUE))
+	for(var/S in destination_ports)
+		var/obj/docking_port/stationary/dock = S
+		if(!M.check_dock(dock, silent = TRUE))
 			continue
 		var/list/location_data = list(
-			id = S.id,
-			name = S.name
+			id = REF(dock),
+			name = dock.name
 		)
 		data["locations"] += list(location_data)
 	if(length(data["locations"]) == 1)
@@ -89,26 +90,29 @@
 		if("move")
 			if(!launch_check(usr))
 				return
-			var/obj/docking_port/mobile/M = SSshuttle.getShuttle(shuttleId)
-			if(M.launch_status == ENDGAME_LAUNCHED)
+			if(shuttle_port.launch_status == ENDGAME_LAUNCHED)
 				to_chat(usr, "<span class='warning'>You've already escaped. Never going back to that place again!</span>")
 				return
 			if(no_destination_swap)
-				if(M.mode == SHUTTLE_RECHARGING)
+				if(shuttle_port.mode == SHUTTLE_RECHARGING)
 					to_chat(usr, "<span class='warning'>Shuttle engines are not ready for use.</span>")
 					return
-				if(M.mode != SHUTTLE_IDLE && (M.timer < INFINITY))
+				if(shuttle_port.mode != SHUTTLE_IDLE && (shuttle_port.timer < INFINITY))
 					to_chat(usr, "<span class='warning'>Shuttle already in transit.</span>")
 					return
-			var/list/options = params2list(possible_destinations)
-			if(!(params["shuttle_id"] in options))
+			var/obj/docking_port/stationary/destination_dock = null
+			for(var/S in destination_ports)
+				if(params["shuttle_id"] == REF(S))
+					destination_dock = S
+					break
+			if(!destination_dock)
 				log_admin("[usr] attempted to href dock exploit on [src] with target location \"[params["shuttle_id"]]\"")
 				message_admins("[usr] just attempted to href dock exploit on [src] with target location \"[params["shuttle_id"]]\"")
 				return
-			switch(SSshuttle.moveShuttle(shuttleId, params["shuttle_id"], 1))
+			switch(SSshuttle.moveShuttle(shuttle_port, destination_dock, 1))
 				if(0)
 					say("Shuttle departing. Please stand away from the doors.")
-					log_shuttle("[key_name(usr)] has sent shuttle \"[M]\" towards \"[params["shuttle_id"]]\", using [src].")
+					log_shuttle("[key_name(usr)] has sent shuttle \"[shuttle_port]\" towards \"[destination_dock]\", using [src].")
 					return TRUE
 				if(1)
 					to_chat(usr, "<span class='warning'>Invalid shuttle requested.</span>")
@@ -126,7 +130,3 @@
 	req_access = list()
 	obj_flags |= EMAGGED
 	to_chat(user, "<span class='notice'>You fried the consoles ID checking system.</span>")
-
-/obj/machinery/computer/shuttle/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock, idnum, override=FALSE)
-	if(port && (shuttleId == initial(shuttleId) || override))
-		shuttleId = port.id

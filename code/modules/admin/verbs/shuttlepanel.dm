@@ -17,14 +17,14 @@
 			continue  // please don't do this
 		var/obj/docking_port/stationary/S = port
 		if (canDock(S) == SHUTTLE_CAN_DOCK)
-			options[S.name || S.id] = S
+			options[S.name] = S
 
 	options += "--------"
 	options += "Infinite Transit"
 	options += "Delete Shuttle"
 	options += "Into The Sunset (delete & greentext 'escape')"
 
-	var/selection = input(user, "Select where to fly [name || id]:", "Fly Shuttle") as null|anything in options
+	var/selection = input(user, "Select where to fly [name]:", "Fly Shuttle") as null|anything in options
 	if(!selection)
 		return
 
@@ -35,12 +35,12 @@
 			setTimer(ignitionTime)
 
 		if("Delete Shuttle")
-			if(alert(user, "Really delete [name || id]?", "Delete Shuttle", "Cancel", "Really!") != "Really!")
+			if(alert(user, "Really delete [name]?", "Delete Shuttle", "Cancel", "Really!") != "Really!")
 				return
 			jumpToNullSpace()
 
 		if("Into The Sunset (delete & greentext 'escape')")
-			if(alert(user, "Really delete [name || id] and greentext escape objectives?", "Delete Shuttle", "Cancel", "Really!") != "Really!")
+			if(alert(user, "Really delete [name] and greentext escape objectives?", "Delete Shuttle", "Cancel", "Really!") != "Really!")
 				return
 			intoTheSunset()
 
@@ -65,7 +65,7 @@
 			continue  // please don't do this
 		var/obj/docking_port/stationary/S = port
 		if (canDock(S) == SHUTTLE_CAN_DOCK)
-			options[S.name || S.id] = S
+			options[S.name] = S
 
 	var/selection = input(user, "Select the new arrivals destination:", "Fly Shuttle") as null|anything in options
 	if(!selection)

@@ -53,8 +53,8 @@
 	else
 		icon_state = "igniter[on]"
 
-/obj/machinery/igniter/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock, idnum, override=FALSE)
-	id = "[idnum][id]"
+/obj/machinery/igniter/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock, override=FALSE)
+	id = "[REF(port)][id]"
 
 // Wall mounted remote-control igniter.
 

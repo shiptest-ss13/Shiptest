@@ -62,8 +62,7 @@
 	desc = "An unknown celestial object."
 	icon = 'whitesands/icons/effects/overmap.dmi'
 	icon_state = "object"
-	///ID, literally the most important thing
-	var/id
+
 	///~~If we need to render a map for cameras and helms for this object~~ basically can you look at and use this as a ship or station
 	var/render_map = FALSE
 	///The range of the view shown to helms and viewscreens (subject to be relegated to something else)
@@ -83,15 +82,11 @@
 	var/atom/movable/screen/plane_master/lighting/cam_plane_master
 	var/atom/movable/screen/background/cam_background
 
-/obj/structure/overmap/Initialize(mapload, _id)
+/obj/structure/overmap/Initialize(mapload)
 	. = ..()
-	if(_id)
-		id = _id
-	if(!id)
-		id = "overmap_object_[length(SSovermap.overmap_objects) + 1]"
-	LAZYSET(SSovermap.overmap_objects, id, src)
+	LAZYADD(SSovermap.overmap_objects, src)
 	if(render_map)	// Initialize map objects
-		map_name = "overmap_[id]_map"
+		map_name = "overmap_[REF(src)]_map"
 		cam_screen = new
 		cam_screen.name = "screen"
 		cam_screen.assigned_map = map_name
@@ -107,19 +102,11 @@
 		cam_background.del_on_map_removal = FALSE
 		update_screen()
 
-//I hate this, but it updates the SSovermap.overmap_objects lookup table stays accurate
-/obj/structure/overmap/vv_edit_var(vname, vval)
-	if(vname == NAMEOF(src, id))
-		LAZYREMOVE(SSovermap.overmap_objects, id)
-	. = ..()
-	if(vname == NAMEOF(src, id))
-		LAZYSET(SSovermap.overmap_objects, id, src)
-
 /obj/structure/overmap/Destroy()
 	. = ..()
 	for(var/obj/structure/overmap/O in close_overmap_objects)
 		LAZYREMOVE(O.close_overmap_objects, src)
-	LAZYREMOVE(SSovermap.overmap_objects, id)
+	LAZYREMOVE(SSovermap.overmap_objects, src)
 	if(render_map)
 		QDEL_NULL(cam_screen)
 		QDEL_NULL(cam_plane_master)
@@ -198,6 +185,6 @@
 	pixel_x = -16
 	pixel_y = -16
 
-/obj/structure/overmap/star/Initialize(mapload, _id)
+/obj/structure/overmap/star/Initialize(mapload)
 	. = ..()
 	name = "[pick(GLOB.star_names)] [pick(GLOB.greek_letters)]"
