@@ -1,4 +1,4 @@
-/datum/map_template/ruin/icemoon/underground/syndicate_outpost //tegu edit, nuke ruin
+/datum/map_template/ruin/icemoon/underground/syndicate_outpost
 	name = "Abandoned Syndicate Outpost"
 	id = "syndicate-outpost-icemoon"
 	description = "A outpost that used to be a staging area for nuclear operatives. The Syndicate have moved to another location, but this still remains."
