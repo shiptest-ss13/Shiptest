@@ -4,6 +4,8 @@
 	icon = 'icons/obj/guns/projectile.dmi'
 	icon_state = "bow"
 	item_state = "pipebow"
+	lefthand_file = 'whitesands/icons/mob/inhands/items_lefthand.dmi'
+	righthand_file = 'whitesands/mob/inhands/items_righthand.dmi'
 	inhand_icon_state = "bow"
 	load_sound = null
 	fire_sound = 'whitesands/sound/weapons/bowfire.ogg'
@@ -108,3 +110,4 @@
 	name = "leather quiver"
 	desc = "A quiver made from the hide of some animal. Used to hold arrows."
 	arrow_path = null
+	icon = 'whitesands/icons/obj/items_and_weapons.dmi'
