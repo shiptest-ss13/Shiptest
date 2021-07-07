@@ -3,7 +3,7 @@
 	desc = "While pretty finely crafted, surely you can find something better to use in the current year."
 	icon = 'icons/obj/guns/projectile.dmi'
 	icon_state = "bow"
-	worn_icon_state = "pipebow"
+	item_state = "pipebow"
 	inhand_icon_state = "bow"
 	load_sound = null
 	fire_sound = 'whitesands/sound/weapons/bowfire.ogg'
@@ -59,7 +59,7 @@
 	desc = "Some sort of primitive projectile weapon made of bone and wrapped sinew."
 	icon_state = "ashenbow"
 	inhand_icon_state = "ashenbow"
-	worn_icon_state = "ashenbow"
+	item_state = "ashenbow"
 	force = 8
 
 /obj/item/gun/ballistic/bow/pipe
@@ -82,7 +82,7 @@
 	desc = "Holds arrows for your bow. Good, because while pocketing arrows is possible, it surely can't be pleasant."
 	icon_state = "quiver"
 	inhand_icon_state = "quiver"
-	worn_icon_state = "harpoon_quiver"
+	item_state = "harpoon_quiver"
 	var/arrow_path = /obj/item/ammo_casing/caseless/arrow
 
 /obj/item/storage/bag/quiver/Initialize(mapload)

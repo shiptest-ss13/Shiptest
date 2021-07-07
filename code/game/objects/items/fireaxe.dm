@@ -64,7 +64,7 @@
 	icon_state = "bone_axe0"
 	name = "bone axe"
 	desc = "A large, vicious axe crafted out of several sharpened bone plates and crudely tied together. Made of monsters, by killing monsters, for killing monsters."
-	icon = 'whitesandsicons/obj/items_and_weapons.dmi'
+	icon = 'whitesands/icons/obj/items_and_weapons.dmi'
 
 /obj/item/fireaxe/boneaxe/ComponentInitialize()
 	. = ..()
