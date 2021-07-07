@@ -42,3 +42,24 @@
 	id = "unabomber-cabin"
 	description = "The Industrial Revolution and its consequences have been a disaster for the human race."
 	suffix = "jungle_surface_unabomber_cabin.dmm"
+	
+//Arachnid Funky Cave
+/datum/map_template/ruin/jungle/bigspidercave
+	name = "Megaaracnid Cave"
+	id = "bigspider-cave"
+	description = "A cave full of giant alien spiders, it seems a syndicate expedition met a poor fate here first."
+	suffix = "jungle_arachnid_cave.dmm"
+	
+//The Hall of the Skeleton King
+/datum/map_template/ruin/jungle/skeletonhall
+	name = "Hall of the Skeleton King"
+	id = "skele-hall"
+	description = "No cost too great."
+	suffix = "jungle_challenge.dmm"
+	
+//Tribe of the Sun God
+/datum/map_template/ruin/jungle/suntribe
+	name= "Tribe of the Sun God"
+	id = "suntribe"
+	description = "A small village overun with the rampant followers of the sun god."
+	suffix = "jungle_encampment.dmm"	
