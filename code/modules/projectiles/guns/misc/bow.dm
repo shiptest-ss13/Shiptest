@@ -4,8 +4,6 @@
 	icon = 'icons/obj/guns/projectile.dmi'
 	icon_state = "bow"
 	item_state = "pipebow"
-	lefthand_file = 'whitesands/icons/mob/inhands/items_lefthand.dmi'
-	righthand_file = 'whitesands/mob/inhands/items_righthand.dmi'
 	inhand_icon_state = "bow"
 	load_sound = null
 	fire_sound = 'whitesands/sound/weapons/bowfire.ogg'
@@ -60,8 +58,10 @@
 	name = "Bone Bow"
 	desc = "Some sort of primitive projectile weapon made of bone and wrapped sinew."
 	icon_state = "ashenbow"
-	inhand_icon_state = "ashenbow"
 	item_state = "ashenbow"
+	icon = 'whitesands/icons/obj/guns/projectile.dmi'
+	lefthand_file = 'whitesands/icons/mob/inhands/weapons/guns_lefthand.dmi'
+	righthand_file = 'whitesands/icons/mob/inhands/weapons/guns_righthand.dmi'
 	force = 8
 
 /obj/item/gun/ballistic/bow/pipe
@@ -83,7 +83,6 @@
 	name = "quiver"
 	desc = "Holds arrows for your bow. Good, because while pocketing arrows is possible, it surely can't be pleasant."
 	icon_state = "quiver"
-	inhand_icon_state = "quiver"
 	item_state = "harpoon_quiver"
 	var/arrow_path = /obj/item/ammo_casing/caseless/arrow
 

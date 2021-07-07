@@ -2,7 +2,7 @@
 	name = "arrow"
 	desc = "An arrow made of... something. It's hella sharp."
 	projectile_type = /obj/projectile/bullet/reusable/arrow
-	caliber = CALIBER_ARROW
+	caliber = "arrow"
 	icon_state = "arrow"
 	throwforce = 3 //good luck hitting someone with the pointy end of the arrow
 	throw_speed = 3
