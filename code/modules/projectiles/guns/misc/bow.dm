@@ -66,6 +66,9 @@
 	name = "Pipe Bow"
 	desc = "A crude projectile weapon made from silk string, pipe and lots of bending."
 	icon_state = "pipebow"
+	icon = 'whitesands/icons/obj/guns/projectile.dmi'
+	lefthand_file = 'whitesands/icons/mob/inhands/weapons/guns_left.dmi'
+	righthand_file = 'whitesands/icons/mob/inhands/weapons/guns_right.dmi'
 	force = 7
 
 /obj/item/ammo_casing/caseless/arrow/despawning/dropped()
@@ -106,4 +109,3 @@
 	name = "leather quiver"
 	desc = "A quiver made from the hide of some animal. Used to hold arrows."
 	arrow_path = null
-	icon = 'whitesands/icons/obj/items_and_weapons.dmi'
