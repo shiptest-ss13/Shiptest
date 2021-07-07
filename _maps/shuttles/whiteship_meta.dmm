@@ -810,6 +810,9 @@
 /obj/machinery/cryopod/latejoin{
 	dir = 8
 	},
+/obj/machinery/computer/cryopod{
+	pixel_y = 32
+	},
 /turf/open/floor/plasteel,
 /area/ship/crew)
 "bg" = (
@@ -888,6 +891,7 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/mineral/ore_redemption,
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
 "bn" = (
@@ -1597,7 +1601,6 @@
 "cm" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/decal/cleanable/blood/gibs/old,
 /obj/effect/turf_decal/tile/neutral{
 	dir = 1
 	},
@@ -1737,7 +1740,6 @@
 /area/ship/bridge)
 "ct" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/decal/cleanable/blood/gibs/old,
 /obj/effect/turf_decal/tile/neutral{
 	dir = 1
 	},
@@ -1917,6 +1919,7 @@
 /obj/item/wrench{
 	pixel_x = -12
 	},
+/obj/item/areaeditor/shuttle,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "cF" = (
@@ -2225,6 +2228,7 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer1{
 	dir = 4
 	},
+/obj/machinery/autolathe,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "da" = (
