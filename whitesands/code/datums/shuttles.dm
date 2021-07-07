@@ -39,6 +39,10 @@
 	port_id = "engi"
 	suffix = "moth"
 
+/datum/map_template/shuttle/skipper
+	port_id = "ntsv"
+	suffix = "skipper"
+
 /datum/map_template/shuttle/radio
 	port_id = "radio"
 	suffix = "funny"
