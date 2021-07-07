@@ -58,8 +58,8 @@
 	icon_state = "ashenbow"
 	item_state = "ashenbow"
 	icon = 'whitesands/icons/obj/guns/projectile.dmi'
-	lefthand_file = 'whitesands/icons/mob/inhands/weapons/guns_lefthand.dmi'
-	righthand_file = 'whitesands/icons/mob/inhands/weapons/guns_righthand.dmi'
+	lefthand_file = 'whitesands/icons/mob/inhands/weapons/guns_left.dmi'
+	righthand_file = 'whitesands/icons/mob/inhands/weapons/guns_right.dmi'
 	force = 8
 
 /obj/item/gun/ballistic/bow/pipe
