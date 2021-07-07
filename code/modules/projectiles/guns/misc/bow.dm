@@ -4,15 +4,13 @@
 	icon = 'icons/obj/guns/projectile.dmi'
 	icon_state = "bow"
 	item_state = "pipebow"
-	inhand_icon_state = "bow"
 	load_sound = null
 	fire_sound = 'whitesands/sound/weapons/bowfire.ogg'
 	slot_flags = ITEM_SLOT_BACK
 	mag_type = /obj/item/ammo_box/magazine/internal/bow
 	trigger_guard = TRIGGER_GUARD_ALLOW_ALL
 	force = 15
-	attack_verb_continuous = list("whipped", "cracked")
-	attack_verb_simple = list("whip", "crack")
+	attack_verb = list("whipped", "cracked")
 	weapon_weight = WEAPON_HEAVY
 	w_class = WEIGHT_CLASS_BULKY
 	internal_magazine = TRUE
@@ -68,7 +66,6 @@
 	name = "Pipe Bow"
 	desc = "A crude projectile weapon made from silk string, pipe and lots of bending."
 	icon_state = "pipebow"
-	inhand_icon_state = "pipebow"
 	force = 7
 
 /obj/item/ammo_casing/caseless/arrow/despawning/dropped()

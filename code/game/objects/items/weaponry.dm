@@ -207,7 +207,6 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	name = "Bone Sword"
 	desc = "Jagged pieces of bone are tied to what looks like a goliaths femur."
 	icon_state = "bone_sword"
-	inhand_icon_state = "bone_sword"
 	force = 15
 	throwforce = 10
 	armour_penetration = 15

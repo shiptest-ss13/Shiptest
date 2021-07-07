@@ -511,7 +511,7 @@
 	opaque_closed = TRUE
 
 /obj/structure/curtain/cloth/deconstruct(disassembled = TRUE)
-	new /obj/item/stack/cotton/cloth (loc, 4)
+	new /obj/item/stack/sheet/cotton/cloth (loc, 4)
 	new /obj/item/stack/rods (loc, 1)
 	qdel(src)
 
