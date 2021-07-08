@@ -1,16 +1,23 @@
 
 /turf/open/floor/plating/airless
-	icon_state = "plating"
 	initial_gas_mix = AIRLESS_ATMOS
 
 /turf/open/floor/plating/lowpressure
 	initial_gas_mix = OPENTURF_LOW_PRESSURE
 	baseturfs = /turf/open/floor/plating/lowpressure
 
+/turf/open/floor/plating/icemoon
+	icon_state = "plating"
+	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
+
 /turf/open/floor/plating/abductor
 	name = "alien floor"
 	icon_state = "alienpod1"
+	base_icon_state = "alienpod1"
 	tiled_dirt = FALSE
+
+/turf/open/floor/plating/abductor/setup_broken_states()
+	return list("alienpod1")
 
 /turf/open/floor/plating/abductor/Initialize()
 	. = ..()
@@ -20,6 +27,7 @@
 /turf/open/floor/plating/abductor2
 	name = "alien plating"
 	icon_state = "alienplating"
+	base_icon_state = "alienplating"
 	tiled_dirt = FALSE
 
 /turf/open/floor/plating/abductor2/break_tile()
@@ -102,6 +110,7 @@
 	name = "wet rocky ground"
 	smoothing_flags = NONE
 	icon_state = "wateryrock"
+	base_icon_state = "wateryrock"
 	slowdown = 2
 	footstep = FOOTSTEP_FLOOR
 	barefootstep = FOOTSTEP_HARD_BAREFOOT
@@ -135,46 +144,70 @@
 	name = "sand"
 	desc = "Surf's up."
 	icon_state = "sand"
+	base_icon_state = "sand"
 	baseturfs = /turf/open/floor/plating/beach/sand
+
+/turf/open/floor/plating/beach/sand/setup_broken_states()
+	return list("sand")
 
 /turf/open/floor/plating/beach/coastline_t
 	name = "coastline"
 	desc = "Tide's high tonight. Charge your batons."
 	icon_state = "sandwater_t"
+	base_icon_state = "sandwater_t"
 	baseturfs = /turf/open/floor/plating/beach/coastline_t
+
+/turf/open/floor/plating/beach/sand/coastline_t/setup_broken_states()
+	return list("sandwater_t")
 
 /turf/open/floor/plating/beach/coastline_b //need to make this water subtype.
 	name = "coastline"
 	icon_state = "sandwater_b"
+	base_icon_state = "sandwater_b"
 	baseturfs = /turf/open/floor/plating/beach/coastline_b
 	footstep = FOOTSTEP_LAVA
 	barefootstep = FOOTSTEP_LAVA
 	clawfootstep = FOOTSTEP_LAVA
 	heavyfootstep = FOOTSTEP_LAVA
 
+/turf/open/floor/plating/beach/sand/coastline_b/setup_broken_states()
+	return list("sandwater_b")
+
 /turf/open/floor/plating/beach/water
 	gender = PLURAL
 	name = "water"
 	desc = "You get the feeling that nobody's bothered to actually make this water functional..."
 	icon_state = "water"
+	base_icon_state = "water"
 	baseturfs = /turf/open/floor/plating/beach/water
 	footstep = FOOTSTEP_LAVA //placeholder, kinda.
 	barefootstep = FOOTSTEP_LAVA
 	clawfootstep = FOOTSTEP_LAVA
 	heavyfootstep = FOOTSTEP_LAVA
 
+/turf/open/floor/plating/beach/water/setup_broken_states()
+	return list("water")
+
 /turf/open/floor/plating/beach/coastline_t/sandwater_inner
 	icon_state = "sandwater_inner"
 	baseturfs = /turf/open/floor/plating/beach/coastline_t/sandwater_inner
+
+/turf/open/floor/plating/beach/water/coastline_t/sandwater_inner/setup_broken_states()
+	return list("sandwater_inner")
 
 /turf/open/floor/plating/ironsand
 	gender = PLURAL
 	name = "iron sand"
 	desc = "Like sand, but more <i>metal</i>."
+	icon_state = "ironsand1"
+	base_icon_state = "ironsand1"
 	footstep = FOOTSTEP_SAND
 	barefootstep = FOOTSTEP_SAND
 	clawfootstep = FOOTSTEP_SAND
 	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
+
+/turf/open/floor/plating/ironsand/setup_broken_states()
+	return list("ironsand1")
 
 /turf/open/floor/plating/ironsand/Initialize()
 	. = ..()
@@ -191,6 +224,7 @@
 	desc = "A sheet of solid ice. Looks slippery."
 	icon = 'icons/turf/floors/ice_turf.dmi'
 	icon_state = "ice_turf-0"
+	base_icon_state = "ice_turf-0"
 	initial_gas_mix = FROZEN_ATMOS
 	temperature = 180
 	planetary_atmos = TRUE
@@ -217,12 +251,6 @@
 	smoothing_groups = list(SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_FLOOR_ICE)
 	canSmoothWith = list(SMOOTH_GROUP_FLOOR_ICE)
 
-/turf/open/floor/plating/ice/colder
-	temperature = 140
-
-/turf/open/floor/plating/ice/temperate
-	temperature = 255.37
-
 /turf/open/floor/plating/ice/break_tile()
 	return
 
@@ -231,12 +259,14 @@
 
 /turf/open/floor/plating/ice/icemoon
 	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
+	slowdown = 0
 
 /turf/open/floor/plating/snowed
 	name = "snowed-over plating"
 	desc = "A section of heated plating, helps keep the snow from stacking up too high."
 	icon = 'icons/turf/snow.dmi'
 	icon_state = "snowplating"
+	base_icon_state = "snowplating"
 	initial_gas_mix = FROZEN_ATMOS
 	temperature = 180
 	attachment_holes = FALSE
@@ -247,7 +277,10 @@
 	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
 
 /turf/open/floor/plating/snowed/cavern
-	initial_gas_mix = "o2=0;n2=82;plasma=24;TEMP=120"
+	initial_gas_mix = "n2=82;plasma=24;TEMP=120"
+
+/turf/open/floor/plating/snowed/icemoon
+	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
 
 /turf/open/floor/plating/snowed/smoothed
 	icon = 'icons/turf/floors/snow_turf.dmi'
@@ -257,9 +290,6 @@
 	smoothing_groups = list(SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_FLOOR_SNOWED)
 	canSmoothWith = list(SMOOTH_GROUP_FLOOR_SNOWED)
 	planetary_atmos = TRUE
-
-/turf/open/floor/plating/snowed/colder
-	temperature = 140
 
 /turf/open/floor/plating/snowed/temperatre
 	temperature = 255.37
@@ -272,6 +302,7 @@
 	desc = "A patch of grass."
 	icon_state = "grass0"
 	base_icon_state = "grass"
+	baseturfs = /turf/open/floor/plating/sandy_dirt
 	bullet_bounce_sound = null
 	footstep = FOOTSTEP_GRASS
 	barefootstep = FOOTSTEP_GRASS
@@ -282,6 +313,9 @@
 	canSmoothWith = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_FLOOR_GRASS)
 	layer = HIGH_TURF_LAYER
 	var/smooth_icon = 'icons/turf/floors/grass.dmi'
+
+/turf/open/floor/plating/grass/setup_broken_states()
+	return list("damaged")
 
 /turf/open/floor/plating/grass/Initialize()
 	. = ..()
@@ -299,9 +333,13 @@
 	name = "dirt"
 	desc = "Upon closer examination, it's still dirt."
 	icon_state = "sand"
+	base_icon_state = "sand"
 	bullet_bounce_sound = null
 	footstep = FOOTSTEP_SAND
 	barefootstep = FOOTSTEP_SAND
 	clawfootstep = FOOTSTEP_SAND
 	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
 	tiled_dirt = FALSE
+
+/turf/open/floor/plating/sandy_dirt/setup_broken_states()
+	return list("sand_damaged")
