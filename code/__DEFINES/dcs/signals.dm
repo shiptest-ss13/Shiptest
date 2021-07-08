@@ -422,6 +422,8 @@
 #define COMSIG_ON_VENDOR_CRUSH "carbon_vendor_crush"
 ///from base of mob/living/carbon/soundbang_act(): (list(intensity))
 #define COMSIG_CARBON_SOUNDBANG "carbon_soundbang"
+//Shiptest from base of mob/living/carbon/set_species(): (new_race)
+#define COMSIG_CARBON_SPECIESCHANGE "mob_carbon_specieschange"
 ///from /item/organ/proc/Insert() (/obj/item/organ/)
 #define COMSIG_CARBON_GAIN_ORGAN "carbon_gain_organ"
 ///from /item/organ/proc/Remove() (/obj/item/organ/)

@@ -24,6 +24,7 @@
 	toxic_food = FRIED
 	mutanttongue = /obj/item/organ/tongue/squid
 	species_language_holder = /datum/language_holder/squid
+	swimming_component = /datum/component/swimming/squid //shiptest
 	meat = /obj/item/reagent_containers/food/snacks/meat/slab/human/mutant/squid
 	exotic_bloodtype = "S"
 	no_equip = list(ITEM_SLOT_FEET)

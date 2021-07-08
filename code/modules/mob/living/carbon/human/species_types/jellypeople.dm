@@ -20,6 +20,7 @@
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_PRIDE | MIRROR_MAGIC | RACE_SWAP | ERT_SPAWN | SLIME_EXTRACT
 	inherent_factions = list("slime")
 	species_language_holder = /datum/language_holder/jelly
+	swimming_component = /datum/component/swimming/dissolve //shiptest
 	ass_image = 'icons/ass/assslime.png'
 	loreblurb = "Alien beings made of a gelatinous substance. It's relatively common to be transformed into a jellyperson from another species due to the mutagenic properties of less intelligent slime beings, but many truly alien jelly people also exist. Their blood is toxic, and the properties of poisonous and poison-healing substances are inverted for them."
 
