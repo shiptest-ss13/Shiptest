@@ -137,7 +137,7 @@
 /obj/structure/overmap/ship/proc/accelerate(direction, acceleration)
 	var/heading = get_heading()
 	if(!(direction in GLOB.cardinals))
-		acceleration *= 2 //Makes it so going diagonally isn't 2x as efficient
+		acceleration *= 0.5 //Makes it so going diagonally isn't 2x as efficient
 	if(heading && (direction & DIRFLIP(heading))) //This is so if you burn in the opposite direction you're moving, you can actually reach zero
 		if(EWCOMPONENT(direction))
 			acceleration = min(acceleration, abs(speed[1]))
@@ -157,7 +157,7 @@
   * * acceleration - How much to decelerate by
   */
 /obj/structure/overmap/ship/proc/decelerate(acceleration)
-	if(speed[1] && speed[2]) //another check to make sure that deceleration isn't sqrt(2)x as fast when moving diagonally
+	if(speed[1] && speed[2]) //another check to make sure that deceleration isn't 2x as fast when moving diagonally
 		adjust_speed(-SIGN(speed[1]) * min(acceleration * 0.5, abs(speed[1])), -SIGN(speed[2]) * min(acceleration * 0.5, abs(speed[2])))
 	else if(speed[1])
 		adjust_speed(-SIGN(speed[1]) * min(acceleration, abs(speed[1])), 0)
