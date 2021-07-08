@@ -100,6 +100,19 @@
 "bV" = (
 /obj/machinery/door/airlock/external,
 /obj/structure/fans/tiny,
+/obj/docking_port/mobile{
+	can_move_docking_ports = 1;
+	dir = 2;
+	dwidth = 12;
+	height = 17;
+	id = "mining_ship";
+	launch_status = 0;
+	name = "mining ship";
+	port_direction = 8;
+	preferred_direction = 4;
+	undock_roundstart = 1;
+	width = 28
+	},
 /turf/open/floor/plating,
 /area/ship/cargo)
 "ci" = (
@@ -697,6 +710,7 @@
 /area/ship/engineering)
 "qW" = (
 /obj/machinery/light,
+/obj/structure/ore_box,
 /turf/open/floor/plating,
 /area/ship/cargo)
 "qX" = (
@@ -769,6 +783,10 @@
 "tU" = (
 /obj/effect/turf_decal/bot,
 /turf/open/floor/plasteel,
+/area/ship/cargo)
+"tX" = (
+/obj/structure/ore_box,
+/turf/open/floor/plating,
 /area/ship/cargo)
 "uk" = (
 /obj/structure/cable/yellow,
@@ -1340,6 +1358,7 @@
 	desc = "A moth.";
 	name = "moth"
 	},
+/obj/effect/landmark/observer_start,
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew)
 "HR" = (
@@ -1809,17 +1828,6 @@
 /area/ship/cargo)
 "SQ" = (
 /obj/machinery/door/airlock/external,
-/obj/docking_port/mobile{
-	can_move_docking_ports = 1;
-	dir = 4;
-	dwidth = 8;
-	height = 28;
-	id = "mining_ship";
-	name = "mining ship";
-	port_direction = 2;
-	undock_roundstart = 1;
-	width = 17
-	},
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
@@ -2419,7 +2427,7 @@ zx
 pi
 FP
 FP
-FP
+tX
 nR
 uV
 xn
