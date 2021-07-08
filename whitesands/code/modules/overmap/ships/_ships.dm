@@ -1,4 +1,4 @@
-#define MOVING(speed) abs(speed) >= min_speed
+#define MOVING(speed) speed
 
 /**
   * ## Overmap ships
@@ -39,7 +39,7 @@
 /obj/structure/overmap/ship/proc/adjust_speed(n_x, n_y)
 	var/offset = 1
 	if(movement_callback_id)
-		var/previous_time = round(1 / MAGNITUDE(speed[1], speed[2]), min_speed)
+		var/previous_time = 1 / MAGNITUDE(speed[1], speed[2])
 		offset = timeleft(movement_callback_id) / previous_time
 		deltimer(movement_callback_id)
 		movement_callback_id = null //just in case
@@ -52,7 +52,7 @@
 	if(is_still() || QDELETED(src) || movement_callback_id)
 		return
 
-	var/timer = round(1 / MAGNITUDE(speed[1], speed[2]) * offset, min_speed)
+	var/timer = 1 / MAGNITUDE(speed[1], speed[2]) * offset
 	movement_callback_id = addtimer(CALLBACK(src, .proc/tick_move), timer, TIMER_STOPPABLE)
 
 /**
@@ -72,7 +72,7 @@
 		deltimer(movement_callback_id)
 
 	//Queue another movement
-	var/current_speed = round(MAGNITUDE(speed[1], speed[2]), min_speed)
+	var/current_speed = MAGNITUDE(speed[1], speed[2])
 	if(!current_speed)
 		return
 
@@ -95,7 +95,7 @@
 /obj/structure/overmap/ship/proc/get_speed()
 	if(is_still())
 		return 0
-	return 60 SECONDS / round(1 / MAGNITUDE(speed[1], speed[2]), min_speed) //It's per minute, which is 60 seconds
+	return 60 SECONDS / (1 / MAGNITUDE(speed[1], speed[2])) //It's per minute, which is 60 seconds
 
 /**
   * Returns the direction the ship is moving in terms of dirs
@@ -120,7 +120,7 @@
 /obj/structure/overmap/ship/proc/get_eta()
 	if(current_autopilot_target && !is_still())
 		var/distance = get_dist(src, current_autopilot_target)
-		var/time_per_tile = round(1 / MAGNITUDE(speed[1], speed[2]), min_speed)
+		var/time_per_tile = 1 / MAGNITUDE(speed[1], speed[2])
 		. += time_per_tile * (distance - 1) + timeleft(movement_callback_id)
 	else
 		. += timeleft(movement_callback_id)
@@ -135,8 +135,14 @@
   * * acceleration - How much to accelerate by
   */
 /obj/structure/overmap/ship/proc/accelerate(direction, acceleration)
+	var/heading = get_heading()
 	if(!(direction in GLOB.cardinals))
-		acceleration *= 0.5 //Makes it so going diagonally isn't twice as efficient
+		acceleration /= SQRT_2 //Makes it so going diagonally isn't sqrt(2)x as efficient
+	if(heading && (direction & DIRFLIP(heading))) //This is so if you burn in the opposite direction you're moving, you can actually reach zero
+		if(EWCOMPONENT(direction))
+			acceleration = min(acceleration, abs(speed[1]))
+		else
+			acceleration = min(acceleration, abs(speed[2]))
 	if(direction & EAST)
 		adjust_speed(acceleration, 0)
 	if(direction & WEST)
@@ -151,8 +157,8 @@
   * * acceleration - How much to decelerate by
   */
 /obj/structure/overmap/ship/proc/decelerate(acceleration)
-	if(speed[1] && speed[2]) //another check to make sure that deceleration isn't twice as fasts when moving diagonally
-		adjust_speed(-SIGN(speed[1]) * min(acceleration / 2, abs(speed[1])), -SIGN(speed[2]) * min(acceleration / 2, abs(speed[2])))
+	if(speed[1] && speed[2]) //another check to make sure that deceleration isn't sqrt(2)x as fast when moving diagonally
+		adjust_speed(-SIGN(speed[1]) * min(acceleration / SQRT_2, abs(speed[1])), -SIGN(speed[2]) * min(acceleration / SQRT_2, abs(speed[2])))
 	else if(speed[1])
 		adjust_speed(-SIGN(speed[1]) * min(acceleration, abs(speed[1])), 0)
 	else if(speed[2])

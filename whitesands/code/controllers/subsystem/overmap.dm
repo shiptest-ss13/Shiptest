@@ -259,7 +259,7 @@ SUBSYSTEM_DEF(overmap)
 			ruin_type = new ruin_type
 
 	var/datum/turf_reservation/fixed/encounter_reservation = SSmapping.request_fixed_reservation()
-	encounter_reservation.fill_in(border_turf_type = /turf/closed/indestructible/blank, area_override = target_area)
+	encounter_reservation.fill_in(/turf/open/space, /turf/closed/indestructible/blank, target_area)
 
 	if(ruin_type) // loaded in after the reservation so we can place inside the reservation
 		var/turf/ruin_turf = locate(rand(encounter_reservation.bottom_left_coords[1]+6,encounter_reservation.top_right_coords[1]-ruin_type.width-6),
