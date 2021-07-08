@@ -1,5 +1,3 @@
-#define MOVING(speed) speed
-
 /**
   * ## Overmap ships
   * Basically, any overmap object that is capable of moving by itself.
@@ -84,7 +82,7 @@
   * Returns whether or not the ship is moving in any direction.
   */
 /obj/structure/overmap/ship/proc/is_still()
-	return !MOVING(speed[1]) && !MOVING(speed[2])
+	return !speed[1] && !speed[2]
 
 /**
   * Returns the total speed in all directions.
@@ -102,12 +100,12 @@
   */
 /obj/structure/overmap/ship/proc/get_heading()
 	var/direction = 0
-	if(MOVING(speed[1]))
+	if(speed[1])
 		if(speed[1] > 0)
 			direction |= EAST
 		else
 			direction |= WEST
-	if(MOVING(speed[2]))
+	if(speed[2])
 		if(speed[2] > 0)
 			direction |= NORTH
 		else
@@ -260,5 +258,3 @@
 		icon_state = base_icon_state
 	if(integrity < initial(integrity) / 4)
 		icon_state = "[icon_state]_damaged"
-
-#undef MOVING
