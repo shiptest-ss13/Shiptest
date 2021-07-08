@@ -1,0 +1,177 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"a" = (
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ship/storage)
+"b" = (
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/button{
+	id = "tinyass";
+	pixel_x = 23;
+	pixel_y = 23
+	},
+/obj/machinery/firealarm{
+	pixel_x = 39;
+	pixel_y = 23
+	},
+/turf/open/floor/carpet/nanoweave/beige,
+/area/ship/storage)
+"c" = (
+/turf/template_noop,
+/area/template_noop)
+"e" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/machinery/power/port_gen/pacman/super,
+/obj/item/stack/sheet/mineral/uranium/five,
+/turf/open/floor/carpet/nanoweave/beige,
+/area/ship/storage)
+"f" = (
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/turf/open/floor/carpet/nanoweave/beige,
+/area/ship/storage)
+"g" = (
+/obj/machinery/computer/helm{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/turf/open/floor/carpet/nanoweave/purple,
+/area/ship/storage)
+"i" = (
+/obj/structure/fans/tiny,
+/obj/machinery/door/poddoor{
+	id = "tinyass"
+	},
+/obj/docking_port/mobile{
+	can_move_docking_ports = 1;
+	id = "a";
+	undock_roundstart = 1
+	},
+/obj/structure/ore_box,
+/turf/open/floor/plating,
+/area/ship/storage)
+"s" = (
+/obj/machinery/power/shuttle/engine/electric{
+	dir = 4
+	},
+/obj/structure/window/reinforced/spawner{
+	dir = 4
+	},
+/obj/structure/cable,
+/turf/open/floor/plating/airless,
+/area/ship/storage)
+"w" = (
+/obj/machinery/cryopod/latejoin{
+	dir = 4
+	},
+/turf/open/floor/carpet/nanoweave/blue,
+/area/ship/storage)
+"y" = (
+/obj/machinery/power/shuttle/engine/electric{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/structure/window/reinforced/spawner{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/turf/open/floor/plating/airless,
+/area/ship/storage)
+"A" = (
+/obj/structure/rack,
+/obj/item/pickaxe/drill,
+/obj/item/pickaxe/drill,
+/obj/item/pickaxe/drill,
+/obj/item/t_scanner/adv_mining_scanner/lesser,
+/obj/item/t_scanner/adv_mining_scanner/lesser,
+/obj/item/t_scanner/adv_mining_scanner/lesser,
+/obj/item/storage/bag/ore,
+/obj/item/storage/bag/ore,
+/obj/item/storage/bag/ore,
+/obj/machinery/door/firedoor/border_only,
+/turf/open/floor/carpet/nanoweave/beige,
+/area/ship/storage)
+"C" = (
+/obj/effect/spawner/structure/window/shuttle,
+/turf/open/floor/plating,
+/area/ship/storage)
+"F" = (
+/obj/structure/fans/tiny,
+/obj/machinery/door/poddoor{
+	id = "tinyass"
+	},
+/turf/open/floor/plating,
+/area/ship/storage)
+"N" = (
+/obj/item/storage/firstaid/advanced,
+/obj/item/storage/firstaid/toxin,
+/obj/item/storage/firstaid/o2,
+/obj/item/storage/backpack/duffelbag/med/surgery,
+/obj/machinery/power/apc/auto_name/south,
+/obj/machinery/power/terminal,
+/obj/structure/bed,
+/turf/open/floor/carpet/nanoweave/blue,
+/area/ship/storage)
+"T" = (
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/mineral/ore_redemption,
+/obj/machinery/airalarm/directional/west,
+/turf/open/floor/carpet/nanoweave/beige,
+/area/ship/storage)
+"W" = (
+/obj/structure/window/reinforced/spawner{
+	dir = 1
+	},
+/obj/machinery/door/window/eastright{
+	dir = 8
+	},
+/obj/machinery/portable_atmospherics/canister/air,
+/turf/open/floor/plating,
+/area/ship/storage)
+
+(1,1,1) = {"
+a
+a
+y
+s
+a
+"}
+(2,1,1) = {"
+i
+T
+e
+w
+a
+"}
+(3,1,1) = {"
+F
+b
+f
+N
+a
+"}
+(4,1,1) = {"
+a
+A
+g
+W
+a
+"}
+(5,1,1) = {"
+c
+C
+C
+C
+c
+"}
