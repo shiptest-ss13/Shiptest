@@ -225,7 +225,7 @@
 		return FALSE
 	if(replacementmode && round_converted == 2)
 		return replacementmode.check_finished()
-	if(SSshuttle.emergency && (SSshuttle.emergency.mode == SHUTTLE_ENDGAME))
+	if(SSshuttle.jump_mode == BS_JUMP_COMPLETED)
 		return TRUE
 	if(station_was_nuked)
 		return TRUE

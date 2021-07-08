@@ -19,6 +19,13 @@ SUBSYSTEM_DEF(shuttle)
 	var/obj/docking_port/mobile/emergency/emergency
 	var/obj/docking_port/mobile/arrivals/arrivals
 	var/obj/docking_port/mobile/emergency/backup/backup_shuttle
+
+	/// Timer ID of the timer used for telling which stage of an endround "jump" the ships are in
+	var/jump_timer
+
+	/// Current state of the jump
+	var/jump_mode = BS_JUMP_IDLE
+
 	var/emergencyCallTime = 6000	//time taken for emergency shuttle to reach the station when called (in deciseconds)
 	var/emergencyDockTime = 1800	//time taken for emergency shuttle to leave again once it has docked (in deciseconds)
 	var/emergencyEscapeTime = 1200	//time taken for emergency shuttle to reach a safe distance after leaving station (in deciseconds)
@@ -72,12 +79,6 @@ SUBSYSTEM_DEF(shuttle)
 
 	initial_load()
 
-	if(!arrivals)
-		WARNING("No /obj/docking_port/mobile/arrivals placed on the map!")
-	if(!emergency)
-		WARNING("No /obj/docking_port/mobile/emergency placed on the map!")
-	if(!backup_shuttle)
-		WARNING("No /obj/docking_port/mobile/emergency/backup placed on the map!")
 	if(!supply)
 		WARNING("No /obj/docking_port/mobile/supply placed on the map!")
 	return ..()
@@ -124,6 +125,27 @@ SUBSYSTEM_DEF(shuttle)
 					M.transit_failure()
 			if(MC_TICK_CHECK)
 				break
+
+/datum/controller/subsystem/shuttle/proc/request_jump(modifier = 1)
+	jump_mode = BS_JUMP_CALLED
+	jump_timer = addtimer(CALLBACK(src, .proc/initiate_jump), emergencyCallTime * modifier, TIMER_STOPPABLE)
+	priority_announce("Preparing for jump. ETD: [emergencyCallTime * modifier / 600] minutes.", null, null, "Priority")
+
+/datum/controller/subsystem/shuttle/proc/cancel_jump()
+	if(jump_mode != BS_JUMP_CALLED)
+		return
+	deltimer(jump_timer)
+	jump_mode = BS_JUMP_IDLE
+
+/datum/controller/subsystem/shuttle/proc/initiate_jump()
+	jump_mode = BS_JUMP_INITIATED
+	SSmapping.mapvote() //If no map vote has been run yet, start one.
+	for(var/obj/docking_port/mobile/M as anything in mobile)
+		M.hyperspace_sound(HYPERSPACE_WARMUP, M.shuttle_areas)
+		M.on_emergency_launch()
+
+	priority_announce("Jump initiated. ETA: [emergencyEscapeTime / 600] minutes.", null, null, "Priority")
+	addtimer(VARSET_CALLBACK(src, jump_mode, BS_JUMP_COMPLETED), emergencyEscapeTime)
 
 /datum/controller/subsystem/shuttle/proc/CheckAutoEvac()
 	if(emergencyNoEscape || emergencyNoRecall || !emergency || !SSticker.HasRoundStarted())
