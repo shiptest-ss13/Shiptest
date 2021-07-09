@@ -14,11 +14,12 @@
 ///This proc handles the creation of a turf of a specific biome type
 /datum/biome/proc/generate_turf(var/turf/gen_turf)
 	gen_turf.ChangeTurf(turf_type, initial(turf_type.baseturfs), CHANGETURF_DEFER_CHANGE)
-	if(length(fauna_types) && prob(fauna_density))
+	var/area/A = gen_turf.loc
+	if(length(fauna_types) && prob(fauna_density) && (A.area_flags & MOB_SPAWN_ALLOWED))
 		var/mob/fauna = pick(fauna_types)
 		new fauna(gen_turf)
 
-	if(length(flora_types) && prob(flora_density))
+	if(length(flora_types) && prob(flora_density) && (A.area_flags & FLORA_ALLOWED))
 		var/obj/structure/flora = pick(flora_types)
 		new flora(gen_turf)
 
