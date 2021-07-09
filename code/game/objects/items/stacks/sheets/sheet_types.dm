@@ -374,6 +374,7 @@ GLOBAL_LIST_INIT(silk_recipes, list ( \
 	name = "silk"
 	desc = "A long soft material. This one is made from cotton rather than spidersilk."
 	singular_name = "Silk Sheet"
+	icon = 'whitesands/icons/obj/stack_objects.dmi'
 	icon_state = "sheet-silk"
 	novariants = TRUE
 	merge_type = /obj/item/stack/sheet/silk
