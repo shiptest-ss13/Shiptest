@@ -255,3 +255,11 @@
 	always_place = TRUE
 	allow_duplicates = FALSE
 	always_spawn_with = list(/datum/map_template/ruin/space/kinggoatarena = PLACE_RESERVED)
+
+/datum/map_template/ruin/lavaland/syndicate_comm_outpost
+	name = "Syndicate Comm Outpost"
+	id = "syndicateoutpost"
+	description = "A forgotten outpost houses a tragic tale of star crossed operatives."
+	suffix = "lavaland_surface_comm_outpost.dmm"
+	allow_duplicates = FALSE
+	cost = 5
