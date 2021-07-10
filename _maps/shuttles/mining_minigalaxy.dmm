@@ -656,6 +656,7 @@
 	},
 /obj/item/reagent_containers/syringe,
 /obj/item/stack/medical/suture,
+/obj/item/defibrillator/loaded,
 /turf/open/floor/plasteel,
 /area/ship/medical)
 "pz" = (
@@ -948,6 +949,7 @@
 /obj/effect/turf_decal/tile/blue{
 	dir = 1
 	},
+/obj/machinery/holopad/emergency/science,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "vp" = (
@@ -1066,6 +1068,7 @@
 /obj/effect/turf_decal/tile/neutral{
 	dir = 8
 	},
+/obj/item/areaeditor/shuttle,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "yj" = (
@@ -1130,7 +1133,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
 	},
-/obj/machinery/mecha_part_fabricator,
+/obj/structure/mecha_wreckage/ripley,
 /turf/open/floor/plasteel,
 /area/ship/science)
 "AK" = (
@@ -1482,6 +1485,43 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel,
 /area/ship/medical)
+"HN" = (
+/obj/item/reagent_containers/food/snacks/canned/beans{
+	pixel_x = -5;
+	pixel_y = 3
+	},
+/obj/item/reagent_containers/food/snacks/canned/beans{
+	pixel_x = 2;
+	pixel_y = 3
+	},
+/obj/item/reagent_containers/food/snacks/canned/beans{
+	pixel_x = -2
+	},
+/obj/item/reagent_containers/food/drinks/waterbottle/large{
+	pixel_x = 5
+	},
+/obj/item/reagent_containers/food/drinks/waterbottle/large{
+	pixel_x = 1;
+	pixel_y = -3
+	},
+/obj/item/reagent_containers/food/drinks/waterbottle/large{
+	pixel_x = 8;
+	pixel_y = -3
+	},
+/obj/structure/closet/crate{
+	name = "food crate"
+	},
+/obj/item/storage/cans/sixbeer,
+/obj/item/reagent_containers/food/snacks/rationpack,
+/obj/item/reagent_containers/food/snacks/rationpack,
+/obj/item/reagent_containers/food/snacks/rationpack,
+/obj/item/reagent_containers/food/snacks/rationpack,
+/obj/item/reagent_containers/food/snacks/rationpack,
+/obj/item/reagent_containers/food/snacks/rationpack,
+/turf/open/floor/plating{
+	icon_state = "platingdmg2"
+	},
+/area/ship/cargo)
 "HZ" = (
 /obj/machinery/atmospherics/pipe/simple/orange/hidden,
 /turf/open/floor/plasteel,
@@ -2121,7 +2161,6 @@
 	dir = 8
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
-/obj/machinery/holopad/emergency/science,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "SZ" = (
@@ -2436,6 +2475,14 @@
 /obj/item/seeds/cabbage,
 /obj/item/seeds/corn,
 /obj/item/circuitboard/computer/xenobiology,
+/obj/item/bodypart/chest/robot,
+/obj/item/bodypart/r_leg/robot,
+/obj/item/bodypart/l_leg/robot,
+/obj/item/bodypart/head/robot,
+/obj/item/bodypart/r_arm/robot,
+/obj/item/bodypart/r_leg/robot,
+/obj/item/assembly/flash,
+/obj/item/assembly/flash,
 /turf/open/floor/plasteel/white,
 /area/ship/science)
 "Za" = (
@@ -2680,7 +2727,7 @@ DS
 uW
 LT
 Ag
-OY
+HN
 OY
 YT
 Wa
