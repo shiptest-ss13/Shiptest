@@ -1,6 +1,5 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "ab" = (
-/obj/structure/mecha_wreckage/ripley,
 /obj/machinery/light{
 	dir = 4
 	},
@@ -54,9 +53,6 @@
 /turf/open/floor/plasteel,
 /area/ship/hallway)
 "bo" = (
-/obj/structure/table/reinforced,
-/obj/item/circuitboard/mecha/ripley/peripherals,
-/obj/item/circuitboard/mecha/ripley/main,
 /obj/effect/turf_decal/tile/purple,
 /obj/effect/turf_decal/tile/purple{
 	dir = 8
@@ -65,6 +61,7 @@
 	dir = 4
 	},
 /obj/machinery/light,
+/obj/structure/tank_dispenser,
 /turf/open/floor/plasteel/white,
 /area/ship/science)
 "br" = (
@@ -177,8 +174,16 @@
 	},
 /obj/machinery/power/apc/auto_name/south,
 /obj/structure/cable,
+/obj/machinery/aug_manipulator,
 /turf/open/floor/plasteel/white,
 /area/ship/science)
+"ee" = (
+/obj/machinery/light{
+	dir = 1
+	},
+/obj/machinery/vending/snack/random,
+/turf/open/floor/plasteel,
+/area/ship/hallway)
 "er" = (
 /obj/machinery/atmospherics/pipe/simple/orange/hidden,
 /turf/closed/wall/mineral/titanium/nodiagonal,
@@ -217,6 +222,9 @@
 	dir = 5
 	},
 /obj/machinery/light,
+/obj/item/radio/intercom/wideband{
+	pixel_y = -30
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "eQ" = (
@@ -244,6 +252,8 @@
 /obj/machinery/light{
 	dir = 1
 	},
+/obj/structure/table/reinforced,
+/obj/machinery/microwave,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "fh" = (
@@ -340,6 +350,9 @@
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
+	},
+/obj/machinery/door/poddoor{
+	id = "mining_window_shutter"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
@@ -448,6 +461,9 @@
 /area/ship/hallway)
 "kn" = (
 /obj/effect/spawner/structure/window/shuttle,
+/obj/machinery/door/poddoor{
+	id = "mining_window_shutter"
+	},
 /turf/open/floor/plating/airless,
 /area/ship/bridge)
 "ks" = (
@@ -545,6 +561,9 @@
 /area/ship/cargo)
 "mu" = (
 /obj/effect/spawner/structure/window/shuttle,
+/obj/machinery/door/poddoor{
+	id = "mining_window_shutter"
+	},
 /turf/open/floor/plating,
 /area/ship/hallway)
 "mA" = (
@@ -952,11 +971,11 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "vG" = (
-/obj/machinery/aug_manipulator,
 /obj/effect/turf_decal/tile/purple,
 /obj/effect/turf_decal/tile/purple{
 	dir = 8
 	},
+/obj/machinery/computer/pandemic,
 /turf/open/floor/plasteel/white,
 /area/ship/science)
 "vO" = (
@@ -993,7 +1012,9 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 10
 	},
-/obj/structure/mecha_wreckage/marauder,
+/obj/machinery/computer/rdconsole{
+	dir = 4
+	},
 /turf/open/floor/plasteel,
 /area/ship/science)
 "wC" = (
@@ -1094,10 +1115,10 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 6
 	},
-/obj/structure/mecha_wreckage/honker,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
 	},
+/obj/machinery/mecha_part_fabricator,
 /turf/open/floor/plasteel,
 /area/ship/science)
 "AK" = (
@@ -1296,9 +1317,6 @@
 /turf/open/floor/plasteel,
 /area/ship/engineering)
 "DG" = (
-/obj/machinery/door/airlock/medical{
-	name = "Infirmary"
-	},
 /obj/effect/turf_decal/stripes/line{
 	dir = 8
 	},
@@ -1320,6 +1338,9 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
 	},
+/obj/machinery/door/airlock/medical/glass{
+	name = "Sickbay"
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "DS" = (
@@ -1336,8 +1357,10 @@
 /obj/effect/turf_decal/tile/neutral{
 	dir = 8
 	},
-/obj/effect/turf_decal/tile/blue{
-	dir = 8
+/obj/machinery/button/door{
+	id = "mining_window_shutter";
+	name = "Window Shutters";
+	pixel_y = 28
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
@@ -1414,6 +1437,9 @@
 	dir = 8
 	},
 /obj/machinery/airalarm/directional/south,
+/obj/item/circuitboard/mecha/ripley/main,
+/obj/item/circuitboard/mecha/ripley/peripherals,
+/obj/item/transfer_valve,
 /turf/open/floor/plasteel/white,
 /area/ship/science)
 "Hj" = (
@@ -1472,6 +1498,9 @@
 /area/ship/security)
 "JV" = (
 /obj/effect/spawner/structure/window/shuttle,
+/obj/machinery/door/poddoor{
+	id = "mining_window_shutter"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "Kh" = (
@@ -1674,7 +1703,7 @@
 /area/ship/medical)
 "NI" = (
 /obj/machinery/door/airlock/research/glass{
-	name = "Salvaging Lab"
+	name = "Lab"
 	},
 /obj/effect/turf_decal/stripes/line{
 	dir = 8
@@ -1926,6 +1955,13 @@
 	},
 /turf/open/floor/plasteel,
 /area/ship/hallway)
+"Rg" = (
+/obj/machinery/door/poddoor{
+	id = "mining_window_shutter"
+	},
+/obj/effect/spawner/structure/window/shuttle,
+/turf/open/floor/plating/airless,
+/area/ship/bridge)
 "Rq" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 1
@@ -2073,6 +2109,7 @@
 	dir = 8
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
+/obj/machinery/holopad/emergency/science,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "SZ" = (
@@ -2161,6 +2198,10 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/science)
+"UZ" = (
+/obj/machinery/vending/cola/random,
+/turf/open/floor/plasteel,
+/area/ship/hallway)
 "Vd" = (
 /obj/structure/bed,
 /obj/structure/curtain/cloth/grey,
@@ -2198,7 +2239,6 @@
 /area/ship/cargo)
 "Wq" = (
 /obj/structure/table/reinforced,
-/obj/item/mining_voucher,
 /obj/effect/turf_decal/tile/neutral,
 /obj/effect/turf_decal/tile/neutral{
 	dir = 1
@@ -2206,6 +2246,9 @@
 /obj/effect/turf_decal/tile/neutral{
 	dir = 8
 	},
+/obj/effect/spawner/lootdrop/donkpockets,
+/obj/effect/spawner/lootdrop/donkpockets,
+/obj/effect/spawner/lootdrop/donkpockets,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "Wu" = (
@@ -2293,7 +2336,7 @@
 /area/ship/security)
 "Yo" = (
 /obj/machinery/door/airlock/research/glass{
-	name = "Salvaging Lab"
+	name = "Lab"
 	},
 /obj/effect/turf_decal/stripes/line,
 /obj/effect/turf_decal/stripes/line{
@@ -2313,6 +2356,9 @@
 "Yp" = (
 /obj/machinery/atmospherics/pipe/simple/orange/visible,
 /obj/effect/spawner/structure/window/shuttle,
+/obj/machinery/door/poddoor{
+	id = "mining_window_shutter"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "Yy" = (
@@ -2359,7 +2405,6 @@
 /turf/open/floor/engine/hull/interior,
 /area/ship/cargo)
 "YX" = (
-/obj/structure/closet/l3closet/scientist,
 /obj/effect/turf_decal/tile/purple{
 	dir = 1
 	},
@@ -2375,6 +2420,15 @@
 /obj/machinery/light{
 	dir = 8
 	},
+/obj/structure/closet{
+	icon_state = "science";
+	name = "science experiments"
+	},
+/obj/item/seeds/replicapod,
+/obj/item/seeds/cabbage,
+/obj/item/seeds/corn,
+/obj/item/circuitboard/computer/xenobiology,
+/obj/item/storage/portable_chem_mixer,
 /turf/open/floor/plasteel/white,
 /area/ship/science)
 "Za" = (
@@ -2758,8 +2812,8 @@ br
 Lt
 SZ
 iH
-Xy
 Wu
+Xy
 Rq
 ev
 DS
@@ -2801,7 +2855,7 @@ eQ
 zp
 Dd
 Ji
-cY
+ee
 DS
 ev
 DS
@@ -2843,7 +2897,7 @@ Ji
 Ji
 fM
 Ji
-DS
+UZ
 DS
 vV
 zd
@@ -2969,7 +3023,7 @@ Kz
 Kz
 NW
 kn
-kn
+Rg
 kn
 kn
 kn
