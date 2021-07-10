@@ -293,6 +293,9 @@
 	pipe_vision_img.plane = ABOVE_HUD_PLANE
 	playsound(loc, 'sound/weapons/bladeslice.ogg', 100, TRUE)
 
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on_area_rename(title, oldtitle)
+	name = replacetext(name, oldtitle, title)
+
 /obj/machinery/atmospherics/components/unary/vent_scrubber/layer1
 	piping_layer = 1
 	icon_state = "scrub_map-1"

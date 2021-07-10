@@ -189,7 +189,11 @@
 				to_chat(usr, "<span class='warning'>Server is full.</span>")
 				return
 
-		AttemptLateSpawn(href_list["SelectedJob"])
+		var/atom/destination = tgui_input_list(usr, "Please select a location to spawn at.", "Spawn Location", SSjob.latejoin_trackers)
+		if(!destination)
+			return
+
+		AttemptLateSpawn(href_list["SelectedJob"], destination)
 		return
 
 	if(!ready && href_list["preference"])
@@ -291,7 +295,7 @@
 		return JOB_UNAVAILABLE_GENERIC
 	return JOB_AVAILABLE
 
-/mob/dead/new_player/proc/AttemptLateSpawn(rank)
+/mob/dead/new_player/proc/AttemptLateSpawn(rank, destination)
 	var/error = IsJobUnavailable(rank)
 	if(error != JOB_AVAILABLE)
 		alert(src, get_job_unavailable_error_message(error, rank))
@@ -326,7 +330,7 @@
 	var/datum/job/job = SSjob.GetJob(rank)
 
 	if(job && !job.override_latejoin_spawn(character))
-		SSjob.SendToLateJoin(character)
+		SSjob.SendToLateJoin(character, destination)
 		if(!arrivals_docked)
 			var/atom/movable/screen/splash/Spl = new(character.client, TRUE)
 			Spl.Fade(TRUE)

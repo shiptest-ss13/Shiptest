@@ -76,6 +76,9 @@
 	real_explosion_block = explosion_block
 	explosion_block = EXPLOSION_BLOCK_PROC
 
+	if(name == initial(name))
+		name = get_area_name(src)
+
 /obj/machinery/door/proc/set_init_door_layer()
 	if(density)
 		layer = closingLayer
@@ -464,3 +467,6 @@
 	. = ..()
 	if(. && !(machine_stat & NOPOWER))
 		autoclose_in(rand(0.5 SECONDS, 3 SECONDS))
+
+/obj/machinery/door/on_area_rename(title, oldtitle)
+	name = replacetext(name, oldtitle, title)

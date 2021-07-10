@@ -188,6 +188,8 @@ GLOBAL_LIST_EMPTY(cryopod_computers)
 /obj/machinery/cryopod/LateInitialize()
 	update_icon()
 	find_control_computer()
+	if(name == initial(name))
+		name = "[get_area_name(src)] cryogenic freezer"
 
 /obj/machinery/cryopod/proc/find_control_computer(urgent = 0)
 	for(var/M in GLOB.cryopod_computers)
@@ -240,7 +242,6 @@ GLOBAL_LIST_EMPTY(cryopod_computers)
 	..()
 	icon_state = "cryopod-open"
 	density = TRUE
-	name = initial(name)
 
 /obj/machinery/cryopod/container_resist_act(mob/living/user)
 	visible_message("<span class='notice'>[occupant] emerges from [src]!</span>",
@@ -385,7 +386,6 @@ GLOBAL_LIST_EMPTY(cryopod_computers)
 	handle_objectives()
 	QDEL_NULL(occupant)
 	open_machine()
-	name = initial(name)
 
 /obj/machinery/cryopod/MouseDrop_T(mob/living/target, mob/user)
 	if(!istype(target) || user.incapacitated() || !target.Adjacent(user) || !Adjacent(user) || !ismob(target) || (!ishuman(user) && !iscyborg(user)) || !istype(user.loc, /turf) || target.buckled)
@@ -456,7 +456,6 @@ GLOBAL_LIST_EMPTY(cryopod_computers)
 	close_machine(target)
 
 	to_chat(target, "<span class='boldnotice'>If you ghost, log out or close your client now, your character will shortly be permanently removed from the round.</span>")
-	name = "[name] ([occupant.name])"
 	log_admin("<span class='notice'>[key_name(target)] entered a stasis pod.</span>")
 	message_admins("[key_name_admin(target)] entered a stasis pod. (<A HREF='?_src_=holder;[HrefToken()];adminplayerobservecoodjump=1;X=[x];Y=[y];Z=[z]'>JMP</a>)")
 	add_fingerprint(target)
@@ -464,3 +463,6 @@ GLOBAL_LIST_EMPTY(cryopod_computers)
 //Attacks/effects.
 /obj/machinery/cryopod/blob_act()
 	return //Sorta gamey, but we don't really want these to be destroyed.
+
+/obj/machinery/cryopod/on_area_rename(title, oldtitle)
+	name = replacetext(name, oldtitle, title)

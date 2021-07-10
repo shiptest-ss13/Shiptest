@@ -851,6 +851,9 @@
 		new /obj/item/stack/cable_coil(loc, 3)
 	qdel(src)
 
+/obj/machinery/airalarm/on_area_rename(title, oldtitle)
+	name = replacetext(name, oldtitle, title)
+
 #undef AALARM_MODE_SCRUBBING
 #undef AALARM_MODE_VENTING
 #undef AALARM_MODE_PANIC

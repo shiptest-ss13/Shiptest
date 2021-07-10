@@ -631,3 +631,6 @@ Class Procs:
 	. = . % 9
 	AM.pixel_x = -8 + ((.%3)*8)
 	AM.pixel_y = -8 + (round( . / 3)*8)
+
+/obj/machinery/proc/on_area_rename(title, oldtitle)
+	return

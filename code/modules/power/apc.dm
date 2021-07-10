@@ -1517,6 +1517,9 @@
 			L.update(FALSE)
 		CHECK_TICK
 
+/obj/machinery/power/apc/on_area_rename(title, oldtitle)
+	name = replacetext(name, oldtitle, title)
+
 #undef UPSTATE_CELL_IN
 #undef UPSTATE_OPENED1
 #undef UPSTATE_OPENED2

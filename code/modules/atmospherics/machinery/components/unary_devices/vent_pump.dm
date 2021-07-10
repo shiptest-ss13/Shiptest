@@ -310,6 +310,9 @@
 	var/datum/gas_mixture/air_contents = airs[1]
 	air_contents.set_volume(1000)
 
+/obj/machinery/atmospherics/components/unary/vent_pump/on_area_rename(title, oldtitle)
+	name = replacetext(name, oldtitle, title)
+
 // mapping
 
 /obj/machinery/atmospherics/components/unary/vent_pump/layer1

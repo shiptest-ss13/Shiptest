@@ -211,23 +211,9 @@
 	fluffnotice = "Intellectual Property of Nanotrasen. For use in engineering cyborgs only. Wipe from memory upon departure from the station."
 
 /area/proc/rename_area(new_name)
-	var/prevname = "[name]"
-	set_area_machinery_title(src, new_name, prevname)
+	var/prev_name = name
+	for(var/obj/machinery/M in src)
+		M.on_area_rename(new_name, prev_name)
 	name = new_name
 	sortTim(GLOB.sortedAreas, /proc/cmp_name_asc)
 	return TRUE
-
-/proc/set_area_machinery_title(area/A, title, oldtitle)
-	if(!oldtitle) // or replacetext goes to infinite loop
-		return
-	for(var/obj/machinery/airalarm/M in A)
-		M.name = replacetext(M.name,oldtitle,title)
-	for(var/obj/machinery/power/apc/M in A)
-		M.name = replacetext(M.name,oldtitle,title)
-	for(var/obj/machinery/atmospherics/components/unary/vent_scrubber/M in A)
-		M.name = replacetext(M.name,oldtitle,title)
-	for(var/obj/machinery/atmospherics/components/unary/vent_pump/M in A)
-		M.name = replacetext(M.name,oldtitle,title)
-	for(var/obj/machinery/door/M in A)
-		M.name = replacetext(M.name,oldtitle,title)
-	//TODO: much much more. Unnamed airlocks, cameras, etc.

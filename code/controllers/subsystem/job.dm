@@ -631,8 +631,11 @@ SUBSYSTEM_DEF(job)
 		return
 	..()
 
-/datum/controller/subsystem/job/proc/SendToLateJoin(mob/M, buckle = TRUE)
-	var/atom/destination
+/datum/controller/subsystem/job/proc/SendToLateJoin(mob/M, buckle = TRUE, atom/destination)
+	if(destination)
+		destination.JoinPlayerHere(M, buckle)
+		return TRUE
+
 	if(M.mind && M.mind.assigned_role && length(GLOB.jobspawn_overrides[M.mind.assigned_role])) //We're doing something special today.
 		destination = pick(GLOB.jobspawn_overrides[M.mind.assigned_role])
 		destination.JoinPlayerHere(M, FALSE)
