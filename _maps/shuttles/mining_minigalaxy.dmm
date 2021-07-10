@@ -177,13 +177,6 @@
 /obj/machinery/aug_manipulator,
 /turf/open/floor/plasteel/white,
 /area/ship/science)
-"ee" = (
-/obj/machinery/light{
-	dir = 1
-	},
-/obj/machinery/vending/snack/random,
-/turf/open/floor/plasteel,
-/area/ship/hallway)
 "er" = (
 /obj/machinery/atmospherics/pipe/simple/orange/hidden,
 /turf/closed/wall/mineral/titanium/nodiagonal,
@@ -517,6 +510,10 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/hallway)
+"lz" = (
+/obj/machinery/vending/cola/random,
+/turf/open/floor/plasteel,
+/area/ship/hallway)
 "lB" = (
 /obj/effect/turf_decal/caution/stand_clear{
 	dir = 4
@@ -553,6 +550,13 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
+"lX" = (
+/obj/machinery/light{
+	dir = 1
+	},
+/obj/machinery/vending/snack/random,
+/turf/open/floor/plasteel,
+/area/ship/hallway)
 "mo" = (
 /obj/machinery/power/shuttle/engine/fueled/plasma{
 	dir = 4
@@ -1398,6 +1402,13 @@
 	},
 /turf/open/floor/plasteel,
 /area/ship/hallway)
+"EJ" = (
+/obj/machinery/door/poddoor{
+	id = "mining_window_shutter"
+	},
+/obj/effect/spawner/structure/window/shuttle,
+/turf/open/floor/plating/airless,
+/area/ship/bridge)
 "EM" = (
 /obj/machinery/atmospherics/pipe/layer_manifold,
 /obj/machinery/atmospherics/pipe/simple/orange/visible{
@@ -1955,13 +1966,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/ship/hallway)
-"Rg" = (
-/obj/machinery/door/poddoor{
-	id = "mining_window_shutter"
-	},
-/obj/effect/spawner/structure/window/shuttle,
-/turf/open/floor/plating/airless,
-/area/ship/bridge)
 "Rq" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 1
@@ -2198,10 +2202,6 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/science)
-"UZ" = (
-/obj/machinery/vending/cola/random,
-/turf/open/floor/plasteel,
-/area/ship/hallway)
 "Vd" = (
 /obj/structure/bed,
 /obj/structure/curtain/cloth/grey,
@@ -2428,7 +2428,6 @@
 /obj/item/seeds/cabbage,
 /obj/item/seeds/corn,
 /obj/item/circuitboard/computer/xenobiology,
-/obj/item/storage/portable_chem_mixer,
 /turf/open/floor/plasteel/white,
 /area/ship/science)
 "Za" = (
@@ -2855,7 +2854,7 @@ eQ
 zp
 Dd
 Ji
-ee
+lX
 DS
 ev
 DS
@@ -2897,7 +2896,7 @@ Ji
 Ji
 fM
 Ji
-UZ
+lz
 DS
 vV
 zd
@@ -3023,7 +3022,7 @@ Kz
 Kz
 NW
 kn
-Rg
+EJ
 kn
 kn
 kn
