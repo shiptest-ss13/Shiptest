@@ -89,6 +89,7 @@
 			planet = DYNAMIC_WORLD_ASTEROID
 			icon_state = "asteroid"
 			mass = rand(1, 1000) * 100
+			color = COLOR_GRAY
 	desc += !preserve_level && "It may not still be here if you leave it."
 
 /**
