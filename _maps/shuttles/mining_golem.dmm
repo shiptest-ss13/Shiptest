@@ -407,6 +407,9 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/tile/neutral,
+/obj/item/radio/intercom{
+	pixel_y = 20
+	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/bridge)
 "gS" = (
@@ -1633,6 +1636,9 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/tile/neutral,
+/obj/item/radio/intercom/wideband{
+	pixel_y = -30
+	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/bridge)
 "BE" = (
@@ -1768,6 +1774,11 @@
 /obj/item/clipboard,
 /obj/item/pen,
 /turf/open/floor/mineral/plastitanium,
+/area/ship/bridge)
+"Fm" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/holopad/emergency/command,
+/turf/open/floor/mineral/titanium/blue,
 /area/ship/bridge)
 "Fp" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
@@ -3036,7 +3047,7 @@ yu
 XR
 gz
 iZ
-iZ
+Fm
 BD
 hP
 hK

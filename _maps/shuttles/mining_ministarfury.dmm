@@ -1100,6 +1100,11 @@
 "lN" = (
 /turf/open/floor/carpet/nanoweave/red,
 /area/ship/crew/dorm)
+"lS" = (
+/obj/structure/table/reinforced,
+/obj/item/radio/intercom,
+/turf/open/floor/plasteel/dark,
+/area/ship/bridge)
 "lV" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 8
@@ -2281,13 +2286,9 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
 "yM" = (
-/mob/living/simple_animal/bot/medbot{
-	damage_coeff = list("brute" = 0, "fire" = 0, "toxin" = 0, "clone" = 0, "stamina" = 0, "oxygen" = 1);
-	name = "War Criminal";
-	skin = "bezerk"
-	},
-/turf/open/floor/plasteel/airless/white,
-/area/ship/medical)
+/obj/machinery/holopad/emergency/command,
+/turf/open/floor/plasteel/dark,
+/area/ship/bridge)
 "yS" = (
 /obj/machinery/atmospherics/pipe/simple/cyan/visible{
 	dir = 9
@@ -4091,6 +4092,7 @@
 	dir = 1;
 	pixel_y = 26
 	},
+/obj/machinery/holopad/emergency/engineering,
 /turf/open/floor/engine,
 /area/ship/engineering/engine)
 "Pq" = (
@@ -5101,6 +5103,7 @@
 /area/ship/engineering/engine)
 "Yu" = (
 /obj/structure/table/reinforced,
+/obj/item/radio/intercom/wideband,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "Yw" = (
@@ -6232,7 +6235,7 @@ Xu
 Xu
 SF
 dy
-Xy
+yM
 RD
 gb
 dQ
@@ -6338,14 +6341,14 @@ Xu
 Xu
 SF
 SF
-Yu
+lS
 Ky
 MR
 Xy
 Zv
 rt
 Vn
-yM
+UI
 ot
 rt
 eq
