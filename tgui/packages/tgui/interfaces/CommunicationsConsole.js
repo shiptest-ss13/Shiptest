@@ -317,7 +317,6 @@ const PageMain = (props, context) => {
     shuttleCanEvacOrFailReason,
     shuttleLastCalled,
     shuttleRecallable,
-    nightshiftActive,
   } = data;
 
   const [callingShuttle, setCallingShuttle] = useLocalState(
@@ -431,13 +430,6 @@ const PageMain = (props, context) => {
             icon="envelope-o"
             content="Message List"
             onClick={() => act("setState", { state: STATE_MESSAGES })}
-          />
-
-          <Button
-            icon="lightbulb-o"
-            content="Toggle Nightshift Lighting"
-            color={nightshiftActive}
-            onClick={() => act("toggleNightshift")}
           />
 
           {(canBuyShuttles !== 0) && <Button

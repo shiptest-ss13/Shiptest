@@ -26,8 +26,6 @@ SUBSYSTEM_DEF(mapping)
 
 	var/list/shuttle_templates = list()
 	var/list/shelter_templates = list()
-	var/list/station_room_templates = list()
-
 	var/list/areas_in_z = list()
 
 	var/loading_ruins = FALSE
@@ -68,7 +66,7 @@ SUBSYSTEM_DEF(mapping)
 			to_chat(world, "<span class='boldannounce'>Unable to load next or default map config, defaulting to Salvage Expedition</span>")
 			config = old_config
 	initialize_biomes()
-	loadWorld()
+	InitializeDefaultZLevels()
 	repopulate_sorted_areas()
 	process_teleport_locs()			//Sets up the wizard teleport locations
 	preloadTemplates()
@@ -130,7 +128,6 @@ SUBSYSTEM_DEF(mapping)
 	var/list/space_ruins = levels_by_trait(ZTRAIT_SPACE_RUINS)
 	if (space_ruins.len)
 		seedRuins(space_ruins, CONFIG_GET(number/space_budget), list(/area/space), space_ruins_templates)
-	SSmapping.seedStation() //WS - Random Engine Framework
 	loading_ruins = FALSE
 #endif
 	// Add the transit level
@@ -138,7 +135,6 @@ SUBSYSTEM_DEF(mapping)
 	repopulate_sorted_areas()
 	// Set up Z-level transitions.
 	setup_map_transitions()
-	generate_station_area_list()
 	return ..()
 
 /* Nuke threats, for making the blue tiles on the station go RED
@@ -231,69 +227,6 @@ SUBSYSTEM_DEF(mapping)
 	if(!silent)
 		INIT_ANNOUNCE("Loaded [name] in [(REALTIMEOFDAY - start_time)/10]s!")
 	return parsed_maps
-
-/datum/controller/subsystem/mapping/proc/loadWorld()
-	//if any of these fail, something has gone horribly, HORRIBLY, wrong
-	var/list/FailedZs = list()
-
-	// ensure we have space_level datums for compiled-in maps
-	InitializeDefaultZLevels()
-
-	// load the station
-	station_start = world.maxz + 1
-	INIT_ANNOUNCE("Loading [config.map_name]...")
-	LoadGroup(FailedZs, "Station", config.map_path, config.map_file, config.traits, ZTRAITS_STATION)
-
-	if(SSdbcore.Connect())
-		var/datum/DBQuery/query_round_map_name = SSdbcore.NewQuery({"
-			UPDATE [format_table_name("round")] SET map_name = :map_name WHERE id = :round_id
-		"}, list("map_name" = config.map_name, "round_id" = GLOB.round_id))
-		query_round_map_name.Execute()
-		qdel(query_round_map_name)
-
-#ifndef LOWMEMORYMODE
-	// TODO: remove this when the DB is prepared for the z-levels getting reordered
-	while (world.maxz < (5 - 1) && space_levels_so_far < config.space_ruin_levels)
-		++space_levels_so_far
-		add_new_zlevel("Empty Area [space_levels_so_far]", ZTRAITS_SPACE)
-		var/turf/T = locate(round(world.maxx / 2), round(world.maxy / 2), z_list.len)
-		var/obj/docking_port/stationary/z_port = new(T)
-		z_port.id = "whiteship_z[z_list.len]"
-
-	var/datum/map_config/VM = load_map_config()
-	SSmapping.changemap(VM)
-#endif
-
-	if(LAZYLEN(FailedZs))	//but seriously, unless the server's filesystem is messed up this will never happen
-		var/msg = "RED ALERT! The following map files failed to load: [FailedZs[1]]"
-		if(FailedZs.len > 1)
-			for(var/I in 2 to FailedZs.len)
-				msg += ", [FailedZs[I]]"
-		msg += ". Yell at your server host!"
-		INIT_ANNOUNCE(msg)
-#undef INIT_ANNOUNCE
-
-	// Custom maps are removed after station loading so the map files does not persist for no reason.
-	if(config.map_path == "custom")
-		fdel("_maps/custom/[config.map_file]")
-		// And as the file is now removed set the next map to default.
-		next_map_config = load_map_config(default_to_box = TRUE)
-
-GLOBAL_LIST_EMPTY(the_station_areas)
-
-/datum/controller/subsystem/mapping/proc/generate_station_area_list()
-	var/list/station_areas_blacklist = typecacheof(list(/area/space, /area/mine, /area/ruin, /area/asteroid/nearstation))
-	for(var/area/A in world)
-		if (is_type_in_typecache(A, station_areas_blacklist))
-			continue
-		if (!A.contents.len || !(A.area_flags & UNIQUE_AREA))
-			continue
-		var/turf/picked = A.contents[1]
-		if (is_station_level(picked.z))
-			GLOB.the_station_areas += A.type
-
-	if(!GLOB.the_station_areas.len)
-		log_world("ERROR: Station areas list failed to generate!")
 
 /datum/controller/subsystem/mapping/proc/run_map_generation()
 	for(var/area/A in world)
@@ -416,8 +349,6 @@ GLOBAL_LIST_EMPTY(the_station_areas)
 			ice_ruins_templates[R.name] = R
 		else if(istype(R, /datum/map_template/ruin/space))
 			space_ruins_templates[R.name] = R
-		else if(istype(R, /datum/map_template/ruin/station)) //WS - Random Engine Framework
-			station_room_templates[R.name] = R
 
 /datum/controller/subsystem/mapping/proc/preloadShuttleTemplates()
 	var/list/unbuyable = generateMapList("[global.config.directory]/unbuyableshuttles.txt")
@@ -496,14 +427,6 @@ GLOBAL_LIST_EMPTY(the_station_areas)
 	for(var/B in areas)
 		var/area/A = B
 		A.reg_in_areas_in_z()
-
-	// Station Ruins - WS Port
-/datum/controller/subsystem/mapping/proc/seedStation()
-	for(var/V in GLOB.stationroom_landmarks)
-		var/obj/effect/landmark/stationroom/LM = V
-		LM.load()
-	if(GLOB.stationroom_landmarks.len)
-		seedStation() //I'm sure we can trust everyone not to insert a 1x1 rooms which loads a landmark which loads a landmark which loads a la...
 
 //////////////////
 // RESERVATIONS //

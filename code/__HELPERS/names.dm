@@ -57,9 +57,6 @@ GLOBAL_VAR(command_name)
 	else
 		world.name = GLOB.station_name
 
-	if(SSovermap.main)
-		SSovermap.main.name = GLOB.station_name
-
 
 /proc/new_station_name()
 	var/random = rand(1,5)

@@ -144,6 +144,9 @@
 	var/obj/structure/overmap/ship/simulated/S = current_ship
 	switch(action)
 		if("act_overmap")
+			if(SSshuttle.jump_mode == BS_JUMP_INITIATED)
+				to_chat(usr, "<span class='warning'>You've already escaped. Never going back to that place again!</span>")
+				return
 			var/obj/structure/overmap/to_act = locate(params["ship_to_act"])
 			say(S.overmap_object_act(usr, to_act))
 		if("undock")
@@ -157,8 +160,8 @@
 		if("reload_engines")
 			S.refresh_engines()
 		if("rename_ship")
-			S.name = params["newName"]
-			S.shuttle.name = params["newName"]
+			priority_announce("The [S.name] has been renamed to the [params["newName"]].", "Docking Announcement", sender_override = params["newName"], zlevel = S.shuttle.get_virtual_z_level())
+			S.set_ship_name(params["newName"])
 			update_static_data()
 		if("toggle_engine")
 			var/obj/machinery/power/shuttle/engine/E = locate(params["engine"])

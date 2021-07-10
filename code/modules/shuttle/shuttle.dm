@@ -185,6 +185,8 @@
 	if(mapload)
 		for(var/turf/T in return_turfs())
 			T.flags_1 |= NO_RUINS_1
+		if(SSshuttle.initialized) // If the docking port is loaded via map but SSshuttle has already init (therefore this would never be called)
+			load_roundstart()
 
 	#ifdef DOCKING_PORT_HIGHLIGHT
 	highlight("#f00")
@@ -203,19 +205,13 @@
 	area_type = newarea?.type
 
 /obj/docking_port/stationary/proc/load_roundstart()
-	if(json_key)
-		var/sid = SSmapping.config.shuttles[json_key]
-		roundstart_template = SSmapping.shuttle_templates[sid]
-		if(!roundstart_template)
-			CRASH("json_key:[json_key] value \[[sid]\] resulted in a null shuttle template for [src]")
-	else if(roundstart_template) // passed a PATH
+	if(roundstart_template) // passed a PATH
 		var/sid = "[initial(roundstart_template.port_id)]_[initial(roundstart_template.suffix)]"
 
 		roundstart_template = SSmapping.shuttle_templates[sid]
 		if(!roundstart_template)
 			CRASH("Invalid path ([sid]/[roundstart_template]) passed to docking port.")
 
-	if(roundstart_template)
 		SSshuttle.action_load(roundstart_template, src)
 
 //returns first-found touching shuttleport
@@ -322,6 +318,11 @@
 	if(name == "shuttle")
 		name = "shuttle[SSshuttle.mobile.len]"
 
+	if(!mapload) // If maploaded, will be called in code\datums\shuttles.dm
+		load()
+
+
+/obj/docking_port/mobile/proc/load()
 	shuttle_areas = list()
 	var/list/all_turfs = return_ordered_turfs(x, y, z, dir)
 	for(var/i in 1 to all_turfs.len)

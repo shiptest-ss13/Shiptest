@@ -158,11 +158,7 @@ SUBSYSTEM_DEF(vote)
 			//WS Begin - Autotransfer
 			if("transfer")
 				if(. == "Initiate Crew Transfer")
-					//TODO find a cleaner way to do this
-					SSshuttle.requestEvac(null,"Crew transfer requested.")
-					var/obj/machinery/computer/communications/C = locate() in GLOB.machines
-					if(C)
-						C.post_status("shuttle")
+					SSshuttle.request_jump()
 			//WS End
 
 			if("map")
@@ -223,15 +219,7 @@ SUBSYSTEM_DEF(vote)
 
 			//WS Begin - Autotransfer
 			if("transfer")
-				var/list/ignore_vote = list(
-					SHUTTLE_IGNITING,
-					SHUTTLE_CALL,
-					SHUTTLE_ENDGAME,
-					SHUTTLE_ESCAPE,
-					SHUTTLE_DOCKED,
-					SHUTTLE_PREARRIVAL
-				)
-				if(SSshuttle.emergency.mode in ignore_vote)
+				if(SSshuttle.jump_mode != BS_JUMP_IDLE)
 					return FALSE
 				choices.Add("Initiate Crew Transfer","Continue Playing")
 			//WS End

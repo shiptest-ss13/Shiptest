@@ -27,3 +27,21 @@
 	desc = "A small bottle. Contains dexalin, used to treat minor oxygen deprivation."
 	volume = 50
 	list_reagents = list(/datum/reagent/medicine/dexalin = 50)
+
+/obj/item/reagent_containers/glass/bottle/epinephrine/sleeper
+	cap_on = FALSE
+
+/obj/item/reagent_containers/glass/bottle/bicaridine/sleeper
+	cap_on = FALSE
+
+/obj/item/reagent_containers/glass/bottle/kelotane/sleeper
+	cap_on = FALSE
+
+/obj/item/reagent_containers/glass/bottle/antitoxin/sleeper
+	cap_on = FALSE
+
+/obj/item/reagent_containers/glass/bottle/dexalin/sleeper
+	cap_on = FALSE
+
+/obj/item/reagent_containers/glass/bottle/morphine/sleeper
+	cap_on = FALSE

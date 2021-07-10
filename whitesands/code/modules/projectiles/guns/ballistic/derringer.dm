@@ -1,10 +1,10 @@
 /obj/item/gun/ballistic/derringer
 	name = ".38 Derringer"
-	desc = "A easily consealable derringer. Uses .38 ammo"
+	desc = "A easily concealable derringer. Uses .38 ammo."
 	icon = 'whitesands/icons/obj/guns/projectile.dmi'
 	icon_state = "derringer"
 	mag_type = /obj/item/ammo_box/magazine/internal/derr38
-	fire_sound = 'sound/weapons/gun/revolver/shot_alt.ogg'
+	fire_sound = 'sound/weapons/gun/revolver/shot.ogg'
 	load_sound = 'sound/weapons/gun/revolver/load_bullet.ogg'
 	eject_sound = 'sound/weapons/gun/revolver/empty.ogg'
 	fire_sound_volume = 60
@@ -30,13 +30,13 @@
 
 /obj/item/gun/ballistic/derringer/traitor
 	name = "\improper .357 Syndicate Derringer"
-	desc = "An easily consealable derriger, if not for the bright red and black. Uses .357 ammo"
+	desc = "An easily concealable derriger, if not for the bright red and black. Uses .357 ammo."
 	icon_state = "derringer_syndie"
 	mag_type = /obj/item/ammo_box/magazine/internal/derr357
 	fire_sound_volume = 50 //Tactical stealth firing
 
 /obj/item/gun/ballistic/derringer/gold
 	name = "\improper Golden Derringer"
-	desc = "The golden sheen is somewhat counterintuitive as a stealth weapon, but it looks cool. Uses .357 ammo"
+	desc = "The golden sheen is somewhat counterintuitive as a stealth weapon, but it looks cool. Uses .357 ammo."
 	icon_state = "derringer_gold"
 	mag_type = /obj/item/ammo_box/magazine/internal/derr357

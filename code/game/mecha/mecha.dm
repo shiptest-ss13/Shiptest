@@ -651,7 +651,9 @@
 	if(phasing && get_charge() >= phasing_energy_drain && !throwing)
 		if(!can_move)
 			return
-		can_move = 0
+		if(istype(obstacle, /turf/closed/indestructible))
+			return
+		can_move = FALSE
 		if(phase_state)
 			flick(phase_state, src)
 		forceMove(get_step(src,dir))

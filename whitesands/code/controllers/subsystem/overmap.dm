@@ -5,6 +5,8 @@ SUBSYSTEM_DEF(overmap)
 	flags = SS_KEEP_TIMING|SS_NO_TICK_CHECK
 	runlevels = RUNLEVEL_SETUP | RUNLEVEL_GAME
 
+	//The type of star this system will have
+	var/startype
 	///Defines which generator to use for the overmap
 	var/generator_type = OVERMAP_GENERATOR_RANDOM
 
@@ -44,8 +46,23 @@ SUBSYSTEM_DEF(overmap)
 		generator_type = OVERMAP_GENERATOR_RANDOM
 
 	if (generator_type == OVERMAP_GENERATOR_SOLAR)
-		var/obj/structure/overmap/star/center = new(locate(size / 2, size / 2, 1))
-		var/list/unsorted_turfs = get_area_turfs(/area/overmap)
+		var/obj/structure/overmap/star/center
+		startype = pick(SMALLSTAR,TWOSTAR,MEDSTAR,BIGSTAR)
+		if(startype == SMALLSTAR)
+			center = new(locate(size / 2, size / 2, 1))
+		if(startype == TWOSTAR)
+			var/obj/structure/overmap/star/big/binary/S
+			S = new(locate(size / 2, size / 2, 1))
+			center = S
+		if(startype == MEDSTAR)
+			var/obj/structure/overmap/star/medium/S
+			S = new(locate(size / 2, size / 2, 1))
+			center = S
+		if(startype == BIGSTAR)
+			var/obj/structure/overmap/star/big/S
+			S = new(locate(size / 2, size / 2, 1))
+			center = S
+		var/list/unsorted_turfs = get_areatype_turfs(/area/overmap)
 		// SSovermap.size - 2 = area of the overmap w/o borders
 		radius_tiles = list()
 		for(var/i in 1 to (size - 2) / 2)
@@ -93,14 +110,20 @@ SUBSYSTEM_DEF(overmap)
   */
 /datum/controller/subsystem/overmap/proc/setup_shuttle_ship(obj/docking_port/mobile/shuttle)
 	var/docked_object = get_overmap_object_by_z(shuttle.get_virtual_z_level())
+	var/obj/structure/overmap/ship/simulated/new_ship
 	if(docked_object)
-		shuttle.current_ship = new /obj/structure/overmap/ship/simulated(docked_object, shuttle.id, shuttle)
+		new_ship = new(docked_object, shuttle.id, shuttle)
 		if(shuttle.undock_roundstart)
-			shuttle.current_ship.undock()
+			new_ship.undock()
+	else if(is_reserved_level(shuttle.z))
+		new_ship = new(get_unused_overmap_square(), shuttle.id, shuttle)
+		new_ship.state = OVERMAP_SHIP_FLYING
 	else if(is_centcom_level(shuttle.z))
-		shuttle.current_ship = new /obj/structure/overmap/ship/simulated(null, shuttle.id, shuttle)
+		new_ship = new(null, shuttle.id, shuttle)
 	else
-		WARNING("Shuttle created in unknown location, unable to create overmap ship!")
+		CRASH("Shuttle created in unknown location, unable to create overmap ship!")
+
+	shuttle.current_ship = new_ship
 
 /**
   * The proc that creates all the objects on the overmap, split into seperate procs for redundancy.
@@ -109,11 +132,11 @@ SUBSYSTEM_DEF(overmap)
 	if (generator_type == OVERMAP_GENERATOR_SOLAR)
 		spawn_events_in_orbits()
 		spawn_ruin_levels_in_orbits()
-		spawn_station_in_orbit()
 	else
 		spawn_events()
 		spawn_ruin_levels()
-		spawn_station()
+
+	spawn_initial_ships()
 
 /**
   * VERY Simple random generation for overmap events, spawns the event in a random turf and sometimes spreads it out similar to ores
@@ -168,43 +191,31 @@ SUBSYSTEM_DEF(overmap)
 				continue
 			spawn_event_cluster(type, T, chance / 2)
 
-/**
-  * Creates a station and lavaland overmap object randomly on the overmap.
-  */
-/datum/controller/subsystem/overmap/proc/spawn_station()
-	if(main)
-		qdel(main)
-	new /obj/structure/overmap/level/main(get_unused_overmap_square(force = TRUE), null, SSmapping.levels_by_trait(ZTRAIT_STATION))
-
-/**
-  * Creates a station and lavaland overmap object randomly on the overmap.
-  */
-/datum/controller/subsystem/overmap/proc/spawn_station_in_orbit()
-	if(main)
-		qdel(main)
-	new /obj/structure/overmap/level/main(get_unused_overmap_square_in_radius(rand(3, 8), force = TRUE), null, SSmapping.levels_by_trait(ZTRAIT_STATION))
+/datum/controller/subsystem/overmap/proc/spawn_initial_ships()
+	if(!(SSmapping.config.shuttle_id in SSmapping.shuttle_templates))
+		INIT_ANNOUNCE("WARNING! The following shuttle datum with the ID of [SSmapping.config.shuttle_id] was not found! Fix your configs!")
+		SSshuttle.action_load(SSmapping.shuttle_templates[initial(SSmapping.config.shuttle_id)])
+		return
+	var/datum/map_template/shuttle/selected_template = SSmapping.shuttle_templates[SSmapping.config.shuttle_id]
+	INIT_ANNOUNCE("Loading [SSmapping.config.map_name]...")
+	SSshuttle.action_load(selected_template)
+	if(SSdbcore.Connect())
+		var/datum/DBQuery/query_round_map_name = SSdbcore.NewQuery({"
+			UPDATE [format_table_name("round")] SET map_name = :map_name WHERE id = :round_id
+		"}, list("map_name" = SSmapping.config.map_name, "round_id" = GLOB.round_id))
+		query_round_map_name.Execute()
+		qdel(query_round_map_name)
 
 /**
   * Creates an overmap object for each ruin level, making them accessible.
   */
 /datum/controller/subsystem/overmap/proc/spawn_ruin_levels()
-	for(var/datum/space_level/L as anything in SSmapping.z_list)
-		if(ZTRAIT_SPACE_RUINS in L.traits)
-			var/obj/structure/overmap/level/ruin/new_level = new(get_unused_overmap_square(), null, L.z_value)
-			new_level.id = "z[L.z_value]"
 	for(var/i in 1 to CONFIG_GET(number/max_overmap_dynamic_events))
 		new /obj/structure/overmap/dynamic(get_unused_overmap_square())
 
 /datum/controller/subsystem/overmap/proc/spawn_ruin_levels_in_orbits()
-	for(var/level in SSmapping.z_list)
-		var/datum/space_level/L = level
-		if(ZTRAIT_SPACE_RUINS in L.traits)
-			var/turf/T = get_unused_overmap_square_in_radius(L.z_value * 2 + 3)
-			var/obj/structure/overmap/level/ruin/new_level = new(T, null, L.z_value)
-			new_level.id = "z[L.z_value]"
 	for(var/i in 1 to CONFIG_GET(number/max_overmap_dynamic_events))
-		var/turf/T = get_unused_overmap_square_in_radius()
-		new /obj/structure/overmap/dynamic(T)
+		new /obj/structure/overmap/dynamic(get_unused_overmap_square_in_radius())
 
 /**
   * Reserves a square dynamic encounter area, and spawns a ruin in it if one is supplied.
@@ -220,28 +231,32 @@ SUBSYSTEM_DEF(overmap)
 	var/list/ruin_list = SSmapping.space_ruins_templates
 	var/datum/map_generator/mapgen
 	var/area/target_area
+	var/turf/surface = /turf/open/space
 	if(planet_type)
 		switch(planet_type)
 			if(DYNAMIC_WORLD_LAVA)
 				ruin_list = SSmapping.lava_ruins_templates
 				mapgen = new /datum/map_generator/cave_generator/lavaland
 				target_area = /area/overmap_encounter/planetoid/lava
+				surface = /turf/open/floor/plating/asteroid/basalt/lava_land_surface
 			if(DYNAMIC_WORLD_ICE)
 				ruin_list = SSmapping.ice_ruins_templates
 				mapgen = new /datum/map_generator/cave_generator/icemoon/surface
 				target_area = /area/overmap_encounter/planetoid/ice
+				surface = /turf/open/floor/plating/asteroid/snow/icemoon
 			if(DYNAMIC_WORLD_SAND)
 				ruin_list = SSmapping.sand_ruins_templates
 				mapgen = new /datum/map_generator/cave_generator/whitesands
 				target_area = /area/overmap_encounter/planetoid/sand
+				surface = /turf/open/floor/plating/asteroid/whitesands
 			if(DYNAMIC_WORLD_JUNGLE)
 				ruin_list = SSmapping.jungle_ruins_templates
 				mapgen = new /datum/map_generator/jungle_generator
 				target_area = /area/overmap_encounter/planetoid/jungle
+				surface = /turf/open/floor/plating/dirt/jungle
 			if(DYNAMIC_WORLD_ASTEROID)
 				ruin_list = null
 				mapgen = new /datum/map_generator/cave_generator/asteroid
-				target_area = /area/overmap_encounter
 
 	if(ruin && ruin_list && !ruin_type)
 		ruin_type = ruin_list[pick(ruin_list)]
@@ -249,7 +264,7 @@ SUBSYSTEM_DEF(overmap)
 			ruin_type = new ruin_type
 
 	var/datum/turf_reservation/fixed/encounter_reservation = SSmapping.request_fixed_reservation()
-	encounter_reservation.fill_in(border_turf_type = /turf/closed/indestructible/blank, area_override = target_area)
+	encounter_reservation.fill_in(surface, /turf/closed/indestructible/blank, target_area)
 
 	if(ruin_type) // loaded in after the reservation so we can place inside the reservation
 		var/turf/ruin_turf = locate(rand(encounter_reservation.bottom_left_coords[1]+6,encounter_reservation.top_right_coords[1]-ruin_type.width-6),
@@ -303,7 +318,7 @@ SUBSYSTEM_DEF(overmap)
   */
 /datum/controller/subsystem/overmap/proc/get_unused_overmap_square(thing_to_not_have = /obj/structure/overmap, tries = MAX_OVERMAP_PLACEMENT_ATTEMPTS, force = FALSE)
 	for(var/i in 1 to tries)
-		. = pick(pick(get_area_turfs(/area/overmap)))
+		. = pick(pick(get_areatype_turfs(/area/overmap)))
 		if(locate(thing_to_not_have) in .)
 			continue
 		return
@@ -369,7 +384,5 @@ SUBSYSTEM_DEF(overmap)
 		simulated_ships = SSovermap.simulated_ships
 	if(istype(SSovermap.events))
 		events = SSovermap.events
-	if(istype(SSovermap.main))
-		main = SSovermap.main
 	if(istype(SSovermap.radius_tiles))
 		radius_tiles = SSovermap.radius_tiles
