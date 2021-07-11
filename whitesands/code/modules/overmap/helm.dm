@@ -132,7 +132,7 @@
 		.["canFly"] = TRUE
 
 
-/obj/machinery/computer/helm/ui_act(action, params)
+/obj/machinery/computer/helm/ui_act(action, list/params, datum/tgui/ui, datum/ui_state/state)
 	. = ..()
 	if(.)
 		return
@@ -142,37 +142,53 @@
 		return
 
 	var/obj/structure/overmap/ship/simulated/S = current_ship
-	switch(action)
-		if("act_overmap")
-			if(SSshuttle.jump_mode == BS_JUMP_INITIATED)
-				to_chat(usr, "<span class='warning'>You've already escaped. Never going back to that place again!</span>")
+
+	switch(action) // Universal topics
+		if("rename_ship")
+			if(!("newName" in params) || params["newName"] == S.name)
 				return
-			var/obj/structure/overmap/to_act = locate(params["ship_to_act"])
-			say(S.overmap_object_act(usr, to_act))
-		if("undock")
-			S.calculate_avg_fuel()
-			if(S.avg_fuel_amnt < 25 && tgui_alert(usr, "Ship only has ~[round(S.avg_fuel_amnt)]% fuel remaining! Are you sure you want to undock?", name, list("Yes", "No")) != "Yes")
-				return
-			say(S.undock())
+			if(!S.set_ship_name(params["newName"]))
+				say("Error: [COOLDOWN_TIMELEFT(S, rename_cooldown)/10] seconds until ship designation can be changed..")
+			update_static_data(usr, ui)
+			return
 		if("reload_ship")
 			set_ship()
-			update_static_data()
+			update_static_data(usr, ui)
+			return
 		if("reload_engines")
 			S.refresh_engines()
-		if("rename_ship")
-			priority_announce("The [S.name] has been renamed to the [params["newName"]].", "Docking Announcement", sender_override = params["newName"], zlevel = S.shuttle.get_virtual_z_level())
-			S.set_ship_name(params["newName"])
-			update_static_data()
-		if("toggle_engine")
-			var/obj/machinery/power/shuttle/engine/E = locate(params["engine"])
-			E.enabled = !E.enabled
-			S.refresh_engines()
-		if("change_heading")
-			S.current_autopilot_target = null
-			S.burn_engines(text2num(params["dir"]))
-		if("stop")
-			S.current_autopilot_target = null
-			S.burn_engines()
+			return
+
+	switch(S.state) // Ship state-llimited topics
+		if(OVERMAP_SHIP_FLYING)
+			switch(action)
+				if("act_overmap")
+					if(SSshuttle.jump_mode == BS_JUMP_INITIATED)
+						to_chat(usr, "<span class='warning'>You've already escaped. Never going back to that place again!</span>")
+						return
+					var/obj/structure/overmap/to_act = locate(params["ship_to_act"])
+					say(S.overmap_object_act(usr, to_act))
+					return
+				if("toggle_engine")
+					var/obj/machinery/power/shuttle/engine/E = locate(params["engine"])
+					E.enabled = !E.enabled
+					S.refresh_engines()
+					return
+				if("change_heading")
+					S.current_autopilot_target = null
+					S.burn_engines(text2num(params["dir"]))
+					return
+				if("stop")
+					S.current_autopilot_target = null
+					S.burn_engines()
+					return
+		if(OVERMAP_SHIP_IDLE)
+			if(action == "undock")
+				S.calculate_avg_fuel()
+				if(S.avg_fuel_amnt < 25 && tgui_alert(usr, "Ship only has ~[round(S.avg_fuel_amnt)]% fuel remaining! Are you sure you want to undock?", name, list("Yes", "No")) != "Yes")
+					return
+				say(S.undock())
+				return
 
 /obj/machinery/computer/helm/ui_close(mob/user)
 	var/user_ref = REF(user)

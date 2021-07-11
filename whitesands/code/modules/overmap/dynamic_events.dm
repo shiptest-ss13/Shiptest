@@ -27,7 +27,7 @@
 
 /obj/structure/overmap/dynamic/ship_act(mob/user, obj/structure/overmap/ship/simulated/acting)
 	var/prev_state = acting.state
-	acting.state = OVERMAP_SHIP_DOCKING //This is so the controls are locked while loading the level to give both a sense of confirmation and to prevent people from moving the ship
+	acting.state = OVERMAP_SHIP_ACTING //This is so the controls are locked while loading the level to give both a sense of confirmation and to prevent people from moving the ship
 	. = load_level(acting.shuttle)
 	if(.)
 		acting.state = prev_state

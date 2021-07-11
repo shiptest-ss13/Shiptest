@@ -23,6 +23,8 @@
 	var/est_thrust
 	///Average fuel fullness percentage
 	var/avg_fuel_amnt = 100
+	///Cooldown until the ship can be renamed again
+	COOLDOWN_DECLARE(rename_cooldown)
 
 	///The overmap object the ship is docked to, if any
 	var/obj/structure/overmap/docked
@@ -80,8 +82,9 @@
   * * object - Overmap object to act on
   */
 /obj/structure/overmap/ship/simulated/proc/overmap_object_act(mob/user, obj/structure/overmap/object)
-	if(!is_still())
+	if(!is_still() || state != OVERMAP_SHIP_FLYING)
 		return "Shuttle must be still!"
+
 	return object?.ship_act(user, src)
 
 //This is the proc that is called when a different ship tries to dock with us.
@@ -316,10 +319,16 @@
   * Sets the ship, shuttle, and shuttle areas to a new name.
   */
 /obj/structure/overmap/ship/simulated/proc/set_ship_name(new_name)
+	if(!new_name || new_name == name || !COOLDOWN_FINISHED(src, rename_cooldown))
+		return
+	if(name != initial(name))
+		priority_announce("The [name] has been renamed to the [new_name].", "Docking Announcement", sender_override = new_name, zlevel = shuttle.get_virtual_z_level())
 	name = new_name
 	shuttle.name = new_name
+	COOLDOWN_START(src, rename_cooldown, 5 MINUTES)
 	for(var/area/shuttle_area in shuttle.shuttle_areas)
 		shuttle_area.rename_area("[new_name] [initial(shuttle_area.name)]")
+	return TRUE
 
 /obj/structure/overmap/ship/simulated/update_icon_state()
 	if(mass < SHIP_SIZE_THRESHOLD)
