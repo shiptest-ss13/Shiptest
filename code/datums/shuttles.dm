@@ -17,6 +17,8 @@
 	var/port_x_offset
 	var/port_y_offset
 	var/extra_desc = ""
+	var/short_name = ""
+	var/list/job_slots
 
 /datum/map_template/shuttle/proc/prerequisites_met()
 	return TRUE

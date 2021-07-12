@@ -208,12 +208,21 @@ GLOBAL_LIST_EMPTY(cryopod_computers)
 	. = ..()
 	close_machine(M, TRUE)
 
+/obj/machinery/cryopod/latejoin
+	var/obj/docking_port/mobile/linked_ship
+
 /obj/machinery/cryopod/latejoin/Initialize()
 	. = ..()
 	new /obj/effect/landmark/latejoin(src)
 
+/obj/machinery/cryopod/latejoin/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock, idnum, override)
+	. = ..()
+	linked_ship = port
+	linked_ship.spawn_points += src
+
 /obj/machinery/cryopod/latejoin/Destroy()
 	SSjob.latejoin_trackers -= src
+	linked_ship?.spawn_points -= src
 	. = ..()
 
 /obj/machinery/cryopod/close_machine(mob/user, exiting = FALSE)
