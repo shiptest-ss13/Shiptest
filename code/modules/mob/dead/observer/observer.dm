@@ -420,7 +420,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 	if(!thearea)
 		return
 
-	usr.forceMove(pick(get_area_turfs(A)))
+	usr.forceMove(pick(get_area_turfs(thearea)))
 	update_parallax_contents()
 
 /mob/dead/observer/verb/follow()
