@@ -420,15 +420,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 	if(!thearea)
 		return
 
-	var/list/L = list()
-	for(var/turf/T in get_areatype_turfs(thearea.type))
-		L+=T
-
-	if(!L || !L.len)
-		to_chat(usr, "<span class='warning'>No area available.</span>")
-		return
-
-	usr.forceMove(pick(L))
+	usr.forceMove(pick(get_area_turfs(A)))
 	update_parallax_contents()
 
 /mob/dead/observer/verb/follow()

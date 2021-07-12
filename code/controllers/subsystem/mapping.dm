@@ -20,6 +20,8 @@ SUBSYSTEM_DEF(mapping)
 	var/list/jungle_ruins_templates = list()
 
 	var/list/maplist
+	var/list/ship_purchase_list
+
 	var/list/shuttle_templates = list()
 	var/list/shelter_templates = list()
 	var/list/areas_in_z = list()
@@ -220,6 +222,7 @@ SUBSYSTEM_DEF(mapping)
 #define CHECK_EXISTS(X) if(!istext(data[X])) { log_world("[##X] missing from json!"); continue; }
 /datum/controller/subsystem/mapping/proc/load_ship_templates()
 	maplist = list()
+	ship_purchase_list = list()
 	var/list/filelist = flist("_maps/configs/")
 	for(var/filename in filelist)
 		var/file = file("_maps/configs/" + filename)
@@ -241,11 +244,14 @@ SUBSYSTEM_DEF(mapping)
 		CHECK_EXISTS("map_id")
 		var/datum/map_template/shuttle/S = new(data["map_path"], data["map_name"], TRUE)
 		S.shuttle_id = data["map_id"]
+		S.port_id = "ship"
 
 		if(istext(data["map_short_name"]))
 			S.short_name = data["map_short_name"]
 		if(islist(data["job_slots"]))
 			S.job_slots = data["job_slots"]
+		if(isnum(data["cost"]))
+			ship_purchase_list[S] = data["cost"]
 
 		shuttle_templates[S.shuttle_id] = S
 		map_templates[S.shuttle_id] = S

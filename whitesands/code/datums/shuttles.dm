@@ -22,23 +22,6 @@
 	credit_cost = 1000
 	description = "This shuttle is long and made with a long open area with chairs on the side."
 
-//Mining ship
-/datum/map_template/shuttle/mining_ship
-	port_id = "mining_ship"
-	suffix = "all"
-
-/datum/map_template/shuttle/amogus
-	port_id = "amogus"
-	suffix = "sus"
-
-/datum/map_template/shuttle/diner
-	port_id = "bar"
-	suffix = "ship"
-
-/datum/map_template/shuttle/moth
-	port_id = "engi"
-	suffix = "moth"
-
 /datum/map_template/shuttle/radio
 	port_id = "radio"
 	suffix = "funny"
