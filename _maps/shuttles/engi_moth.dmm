@@ -390,10 +390,12 @@
 "mC" = (
 /obj/structure/chair/comfy/shuttle,
 /obj/item/areaeditor/shuttle,
+/obj/item/toy/plush/moth,
 /turf/open/floor/mineral/plastitanium/red,
 /area/ship/bridge)
 "mR" = (
 /obj/structure/chair/comfy/shuttle,
+/obj/item/toy/plush/moth,
 /turf/open/floor/mineral/plastitanium/red,
 /area/ship/bridge)
 "mV" = (
@@ -660,6 +662,14 @@
 	dir = 4
 	},
 /turf/open/floor/mineral/plastitanium,
+/area/ship/bridge)
+"ui" = (
+/obj/structure/chair/comfy/shuttle,
+/obj/item/toy/plush/moth{
+	desc = "A plushie depicting a creepy mothperson. It's killed three people.";
+	suicide_count = 3
+	},
+/turf/open/floor/mineral/plastitanium/red,
 /area/ship/bridge)
 "up" = (
 /obj/machinery/status_display/shuttle{
@@ -2200,7 +2210,7 @@ Zc
 vw
 jC
 nL
-mR
+ui
 gk
 vI
 "}
