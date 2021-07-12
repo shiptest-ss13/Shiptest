@@ -378,7 +378,8 @@
 		var/price = SSmapping.ship_purchase_list[M]
 		if(SSdbcore.IsConnected() && usr.client.get_metabalance() < price)
 			alert(src, "You have insufficient metabalance to cover this purchase! (Price: [price])")
-		usr.client.inc_metabalance(price, TRUE, "buying [M.name]")
+			return
+		usr.client.inc_metabalance(-price, TRUE, "buying [M.name]")
 		close_spawn_windows()
 		var/obj/docking_port/mobile/target = SSshuttle.action_load(M)
 		if(!AttemptLateSpawn("Captain", target.current_ship))
