@@ -390,12 +390,18 @@
 "mC" = (
 /obj/structure/chair/comfy/shuttle,
 /obj/item/areaeditor/shuttle,
-/obj/item/toy/plush/moth,
+/obj/item/toy/plush/moth{
+	desc = "A plushie depicting a warrior-like mothperson. You find the prospect of dodging all of its projectile attacks daunting.";
+	name = "meditative moth plushie"
+	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/ship/bridge)
 "mR" = (
 /obj/structure/chair/comfy/shuttle,
-/obj/item/toy/plush/moth,
+/obj/item/toy/plush/moth{
+	desc = "A plushie depicting a mothperson. Smells like incense.";
+	name = "dreamy moth plushie"
+	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/ship/bridge)
 "mV" = (
@@ -666,7 +672,8 @@
 "ui" = (
 /obj/structure/chair/comfy/shuttle,
 /obj/item/toy/plush/moth{
-	desc = "A plushie depicting a creepy mothperson. It's killed three people.";
+	desc = "An unsettling mothperson plushie. You can't seem to forget its gaze.";
+	name = "radiant moth plushie";
 	suicide_count = 3
 	},
 /turf/open/floor/mineral/plastitanium/red,
