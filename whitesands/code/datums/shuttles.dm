@@ -46,14 +46,11 @@
 /datum/map_template/shuttle/minigalaxy
 	port_id = "mining"
 	suffix = "minigalaxy"
-
-/datum/map_template/shuttle/ministarfury //"""mini"""
-	port_id = "mining"
-	suffix = "ministarfury"
 	
 /datum/map_template/shuttle/golemship 
 	port_id = "mining"
 	suffix = "golem"
+	description = "Not a roundstart ship! Starts off weaker than other ships, but has the potiental to create a mech army... If they don't succumb to boredom first"
 
 //Ruins
 /datum/map_template/shuttle/ruin/solgov_exploration_pod

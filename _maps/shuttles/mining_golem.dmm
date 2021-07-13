@@ -503,7 +503,10 @@
 /area/ship/crew)
 "ia" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/blood/innards,
+/obj/effect/decal/cleanable/blood/innards{
+	desc = "A top Nanotrasen executive. They don't seem too hot anymore.";
+	name = "John"
+	},
 /obj/effect/decal/cleanable/blood/gibs/limb,
 /turf/open/floor/mineral/titanium/blue,
 /area/ship/bridge)
@@ -1162,6 +1165,9 @@
 "tI" = (
 /obj/structure/cable{
 	icon_state = "2-8"
+	},
+/obj/structure/cable{
+	icon_state = "2-4"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
@@ -2274,6 +2280,9 @@
 /obj/machinery/power/apc/auto_name/north,
 /obj/machinery/power/terminal{
 	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "0-8"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
