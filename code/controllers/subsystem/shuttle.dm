@@ -715,7 +715,6 @@ SUBSYSTEM_DEF(shuttle)
 	// plugging the existing shuttles old values in works fine.
 	preview_shuttle.timer = timer
 	preview_shuttle.mode = mode
-	preview_shuttle.source_template = loading_template
 
 	preview_shuttle.register()
 

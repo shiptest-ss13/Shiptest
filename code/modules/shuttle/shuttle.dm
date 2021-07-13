@@ -305,6 +305,8 @@
 /obj/docking_port/mobile/Destroy(force)
 	if(force)
 		SSshuttle.mobile -= src
+		if(current_ship)
+			qdel(current_ship)
 		destination = null
 		previous = null
 		QDEL_NULL(assigned_transit)		//don't need it where we're goin'!

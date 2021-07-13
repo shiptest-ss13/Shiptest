@@ -360,12 +360,12 @@
 			employmentCabinet.addFile(employee)
 
 /mob/dead/new_player/proc/LateChoices()
-	var/list/shuttle_choices = list("Purchase ship..." = "Purchase")
+	var/list/shuttle_choices = list("Purchase ship..." = "Purchase") //Dummy for purchase option
 
 	for(var/obj/structure/overmap/ship/simulated/S as anything in SSovermap.simulated_ships)
 		if(length(S.shuttle.spawn_points) < 1)
 			continue
-		shuttle_choices[S.name + " ([S.shuttle.source_template.short_name ? S.shuttle.source_template.short_name : "Unknown-class"])"] = S
+		shuttle_choices[S.name + " ([S.shuttle.source_template.short_name ? S.shuttle.source_template.short_name : "Unknown-class"])"] = S //Try to get the class name
 
 	var/obj/structure/overmap/ship/simulated/selected_ship = shuttle_choices[tgui_input_list(src, "Select ship to spawn on.", "Welcome, [client.prefs.real_name].", shuttle_choices)]
 	if(!selected_ship)
@@ -382,7 +382,7 @@
 		usr.client.inc_metabalance(-price, TRUE, "buying [M.name]")
 		close_spawn_windows()
 		var/obj/docking_port/mobile/target = SSshuttle.action_load(M)
-		if(!AttemptLateSpawn("Captain", target.current_ship))
+		if(!AttemptLateSpawn(target.current_ship.job_slots[1], target.current_ship)) //Try to spawn as the first listed job in the job slots (usually captain)
 			new_player_panel()
 		return
 

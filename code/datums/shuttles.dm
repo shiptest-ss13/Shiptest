@@ -79,6 +79,7 @@
 				port.register()
 			if(isnull(port_x_offset))
 				continue
+			port.source_template = src
 			switch(port.dir) // Yeah this looks a little ugly but mappers had to do this in their head before
 				if(NORTH)
 					port.width = width
