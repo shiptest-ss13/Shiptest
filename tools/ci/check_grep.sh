@@ -67,7 +67,7 @@ fi;
 
 for json in _maps/configs/*.json
 do
-	filename="_maps/$(jq -r '.map_path' $json)"
+	filename="$(jq -r '.map_path' $json)"
 	if [ ! -f "$filename" ]
 	then
 		echo "found invalid file reference to $filename in _maps/$json"
