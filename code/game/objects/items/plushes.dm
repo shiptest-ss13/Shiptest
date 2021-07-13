@@ -666,7 +666,7 @@
 
 /obj/item/toy/plush/moth
 	name = "moth plushie"
-	desc = "A plushie depicting an adorable mothperson. It's a huggable bug!"
+	desc = "A plushie depicting an adorable mothperson, featuring realistic mothperson agony sounds every time you hug it."
 	icon_state = "moffplush"
 	item_state = "moffplush"
 	attack_verb = list("fluttered", "flapped")
