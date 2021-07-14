@@ -147,6 +147,7 @@
 	if(istype(I, /obj/item/tank/internals))
 		user.transferItemToLoc(I, src)
 		fuel_tank = I
+		return
 	return ..()
 
 /obj/machinery/atmospherics/components/unary/shuttle/heater/AltClick(mob/living/L)
@@ -159,7 +160,7 @@
 		icon_state_closed = use_tank ? "heater" : initial(icon_state)
 		icon_state_open = use_tank ? "heater_open" : "[initial(icon_state)]_open"
 	else
-		to_chat(L, "<span class='warning'>This [src] doesn't support switching modes!")
+		to_chat(L, "<span class='warning'>The [src] doesn't support switching modes!")
 
 /obj/machinery/atmospherics/components/unary/shuttle/heater/proc/update_adjacent_engines()
 	var/engine_turf
@@ -191,43 +192,52 @@
 	icon_state_closed = "fuel_port"
 	icon_state_open = "fuel_port_empty"
 	var/icon_state_open_tank = "fuel_port_full"
+	var/opened = FALSE
+	use_tank = TRUE
+
+	density = 0
 	idle_power_usage = 0
 	circuit = null
 
 /obj/machinery/atmospherics/components/unary/shuttle/heater/fuel_port/attackby(obj/item/I, mob/living/user, params)
-	update_adjacent_engines()
 	if(I.tool_behaviour == TOOL_CROWBAR)
-		if(panel_open)
+		if(opened)
 			visible_message("<span class='notice'>[usr] shuts the \the [src].</span>", "<span class='notice'>You tightly shut \the [src].</span>")
-			playsound(src.loc, 'sound/effects/bin_close.ogg', 25, 0, -3)
-			panel_open = FALSE
+			playsound(src.loc, 'sound/effects/bin_close.ogg', 25, 0, 10)
+			opened = FALSE
 			icon_state = icon_state_closed
+			return
 		else
 			visible_message("<span class='notice'>[usr] opens the \the [src].</span>", "<span class='notice'>You open up \the [src].</span>")
-			playsound(src.loc, 'sound/effects/bin_open.ogg', 25, 0, -3)
-			panel_open = TRUE
+			playsound(src.loc, 'sound/effects/bin_open.ogg', 25, 0, 10)
+			opened = TRUE
 			if(fuel_tank)
 				icon_state = icon_state_open_tank
 			else
 				icon_state = icon_state_open
-
+			return
 	if(istype(I, /obj/item/tank/internals))
-		if(panel_open)
+		if(opened)
 			user.transferItemToLoc(I, src)
 			fuel_tank = I
-		if(panel_closed)
+			icon_state = icon_state_open_tank
+		else
 			to_chat(user, "<spawn class='warning'>\The [src] door is still closed!")
+		return
+	if(I.tool_behaviour == TOOL_SCREWDRIVER)
+		return ..()
 	return ..()
 
 /obj/machinery/atmospherics/components/unary/shuttle/heater/fuel_port/attack_hand(mob/living/user)
 	. = ..()
-	if(!panel_open)
+	if(!opened)
 		to_chat(user, "<spawn class='notice'>The door is secured tightly. You'll need a crowbar to open it.")
 	else
 		var/obj/item/I = fuel_tank
-		I.forceMove(loc)
+		I.forceMove(user.loc)
+		fuel_tank = null
 		icon_state = icon_state_open
 
 /obj/machinery/atmospherics/components/unary/shuttle/heater/fuel_port/full/Initialize()
 	. = ..()
-	fuel_tank = new /obj/item/tank/internals/plasma/emergency_tank(src)
+	fuel_tank = new /obj/item/tank/internals/plasma/full/emergency_tank(src)

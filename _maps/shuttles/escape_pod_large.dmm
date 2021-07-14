@@ -1,4 +1,12 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"a" = (
+/obj/machinery/power/shuttle/engine/fueled/plasma{
+	dir = 1
+	},
+/obj/structure/window/reinforced/spawner/west,
+/obj/structure/window/reinforced/spawner/north,
+/turf/open/floor/plating,
+/area/ship)
 "d" = (
 /obj/structure/closet/emcloset/wall,
 /obj/item/reagent_containers/hypospray/medipen/survival,
@@ -34,26 +42,18 @@
 /obj/item/pickaxe/emergency,
 /obj/item/clothing/suit/space/fragile,
 /obj/item/clothing/head/helmet/space/fragile,
+/obj/item/storage/toolbox/emergency/shuttle/fueled,
+/obj/item/tank/internals/plasma/full/emergency_tank,
 /turf/closed/wall/mineral/titanium/nodiagonal,
-/area/shuttle)
-"e" = (
-/obj/machinery/atmospherics/components/unary/shuttle/heater{
-	desc = "Supplies fuel to  an attached thruster.";
-	dir = 1;
-	icon_state = "fuel_port";
-	icon_state_closed = "fuel_port";
-	icon_state_open = "fuel_port_empty";
-	name = "fuel port";
-	use_tank = 1
-	},
-/obj/structure/window/reinforced/spawner/east,
-/turf/closed/wall/mineral/titanium,
-/area/shuttle)
+/area/ship)
 "h" = (
 /obj/machinery/door/firedoor/heavy,
-/obj/item/tank/internals/plasma/full/emergency_tank,
+/obj/machinery/atmospherics/components/unary/shuttle/heater/fuel_port/full{
+	dir = 1;
+	pixel_x = -32
+	},
 /turf/open/floor/mineral/titanium/blue,
-/area/shuttle)
+/area/ship)
 "j" = (
 /obj/machinery/light/floor{
 	color = "red";
@@ -62,7 +62,7 @@
 	pixel_y = 10
 	},
 /turf/closed/wall/mineral/titanium,
-/area/shuttle)
+/area/ship)
 "m" = (
 /obj/structure/chair/comfy/shuttle{
 	dir = 4
@@ -74,24 +74,24 @@
 	},
 /obj/machinery/door/firedoor/border_only,
 /turf/open/floor/mineral/titanium/blue,
-/area/shuttle)
+/area/ship)
 "r" = (
 /turf/open/floor/mineral/titanium/blue,
-/area/shuttle)
+/area/ship)
 "u" = (
 /obj/machinery/light{
 	dir = 1
 	},
 /obj/machinery/computer/helm,
 /turf/open/floor/mineral/titanium/blue,
-/area/shuttle)
+/area/ship)
 "v" = (
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
 /obj/machinery/door/firedoor/heavy,
 /turf/open/floor/mineral/titanium/blue,
-/area/shuttle)
+/area/ship)
 "y" = (
 /obj/structure/closet/emcloset/wall,
 /obj/item/defibrillator/loaded,
@@ -127,28 +127,38 @@
 /obj/item/pickaxe/emergency,
 /obj/item/clothing/suit/space/fragile,
 /obj/item/clothing/head/helmet/space/fragile,
+/obj/item/storage/toolbox/emergency/shuttle/fueled,
+/obj/item/tank/internals/plasma/full/emergency_tank,
 /turf/closed/wall/mineral/titanium/nodiagonal,
-/area/shuttle)
+/area/ship)
 "A" = (
 /obj/machinery/holopad/emergency/medical,
 /obj/machinery/door/firedoor/border_only,
 /turf/open/floor/mineral/titanium/blue,
-/area/shuttle)
-"B" = (
-/turf/closed/wall/mineral/titanium,
-/area/shuttle)
+/area/ship)
 "C" = (
 /obj/structure/cable{
 	icon_state = "2-4"
 	},
+/obj/machinery/atmospherics/components/unary/shuttle/heater{
+	dir = 1
+	},
 /turf/open/floor/mineral/titanium/blue,
-/area/shuttle)
+/area/ship)
 "D" = (
 /obj/structure/grille,
 /obj/structure/window/shuttle,
 /obj/machinery/door/firedoor,
 /turf/open/floor/plating,
-/area/shuttle)
+/area/ship)
+"F" = (
+/obj/machinery/door/firedoor/heavy,
+/obj/machinery/atmospherics/components/unary/shuttle/heater/fuel_port/full{
+	dir = 1;
+	pixel_x = 32
+	},
+/turf/open/floor/mineral/titanium/blue,
+/area/ship)
 "H" = (
 /obj/structure/chair/comfy/shuttle{
 	dir = 8
@@ -164,7 +174,7 @@
 	icon_state = "0-8"
 	},
 /turf/open/floor/mineral/titanium/blue,
-/area/shuttle)
+/area/ship)
 "J" = (
 /obj/machinery/power/terminal,
 /obj/structure/chair/comfy/shuttle{
@@ -174,7 +184,7 @@
 	dir = 8
 	},
 /turf/open/floor/mineral/titanium/blue,
-/area/shuttle)
+/area/ship)
 "K" = (
 /obj/structure/chair/comfy/shuttle{
 	dir = 8
@@ -184,7 +194,7 @@
 	},
 /obj/machinery/door/firedoor/border_only,
 /turf/open/floor/mineral/titanium/blue,
-/area/shuttle)
+/area/ship)
 "L" = (
 /obj/structure/chair/comfy/shuttle{
 	dir = 4
@@ -196,7 +206,7 @@
 	dir = 8
 	},
 /turf/open/floor/mineral/titanium/blue,
-/area/shuttle)
+/area/ship)
 "M" = (
 /obj/structure/chair/comfy/shuttle{
 	dir = 8
@@ -205,13 +215,13 @@
 	dir = 4
 	},
 /turf/open/floor/mineral/titanium/blue,
-/area/shuttle)
+/area/ship)
 "N" = (
 /obj/structure/grille,
 /obj/structure/window/shuttle,
 /obj/machinery/door/firedoor/heavy,
 /turf/open/floor/plating,
-/area/shuttle)
+/area/ship)
 "O" = (
 /obj/machinery/door/airlock/titanium{
 	name = "Shuttle Airlock"
@@ -228,52 +238,30 @@
 	},
 /obj/machinery/door/firedoor,
 /turf/open/floor/mineral/titanium/blue,
-/area/shuttle)
-"P" = (
-/obj/machinery/atmospherics/components/unary/shuttle/heater{
-	desc = "Supplies fuel to  an attached thruster.";
-	dir = 1;
-	icon_state = "fuel_port";
-	icon_state_closed = "fuel_port";
-	icon_state_open = "fuel_port_empty";
-	name = "fuel port";
-	use_tank = 1
-	},
-/obj/structure/window/reinforced/spawner/west,
-/turf/closed/wall/mineral/titanium,
-/area/shuttle)
-"U" = (
+/area/ship)
+"Y" = (
 /obj/machinery/power/shuttle/engine/fueled/plasma{
 	dir = 1
 	},
-/obj/structure/window/reinforced/spawner/west,
-/obj/structure/window/reinforced/spawner/north,
-/turf/open/floor/plating,
-/area/shuttle)
-"Y" = (
-/obj/structure/window/shuttle,
-/turf/open/floor/plating,
-/area/shuttle)
-"Z" = (
 /obj/structure/window/reinforced/spawner/east,
 /obj/structure/window/reinforced/spawner/north,
-/obj/machinery/power/shuttle/engine/fueled/plasma{
-	dir = 1
-	},
 /turf/open/floor/plating,
-/area/shuttle)
+/area/ship)
+"Z" = (
+/turf/closed/wall/mineral/titanium,
+/area/ship)
 
 (1,1,1) = {"
 j
-B
-B
+Z
+Z
 N
-B
-P
+Z
+Z
 Z
 "}
 (2,1,1) = {"
-B
+Z
 y
 m
 J
@@ -291,20 +279,20 @@ v
 O
 "}
 (4,1,1) = {"
-B
+Z
 d
 K
 M
 H
-h
-Y
+F
+a
 "}
 (5,1,1) = {"
 j
-B
-B
+Z
+Z
 N
-B
-e
-U
+Z
+Z
+Z
 "}

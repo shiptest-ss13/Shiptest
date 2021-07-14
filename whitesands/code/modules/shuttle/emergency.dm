@@ -81,6 +81,9 @@
 	new /obj/item/stock_parts/cell/emproof/disposable(src)
 
 //Reskinned plasma tank
+/obj/item/tank/internals/plasma/emergency_tank
+	name = "emergency fuel reserve tank"
+	desc = "For emergencies only. Slot into engine for an emergency measure of fuel to get to the nearest planet or station."
 /obj/item/tank/internals/plasma/full/emergency_tank
 	name = "emergency fuel reserve tank"
 	desc = "For emergencies only. Slot into engine for an emergency measure of fuel to get to the nearest planet or station."

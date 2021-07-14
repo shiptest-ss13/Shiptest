@@ -1,15 +1,9 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "t" = (
-/obj/machinery/atmospherics/components/unary/shuttle/heater{
-	desc = "Supplies fuel to  an attached thruster.";
-	dir = 1;
-	icon_state = "fuel_port";
-	icon_state_closed = "fuel_port";
-	icon_state_open = "fuel_port_empty";
-	name = "fuel port";
-	use_tank = 1
-	},
 /obj/structure/window/reinforced/spawner/east,
+/obj/machinery/atmospherics/components/unary/shuttle/heater/fuel_port/full{
+	dir = 1
+	},
 /turf/closed/wall/mineral/titanium,
 /area/ship)
 "B" = (
@@ -60,24 +54,19 @@
 	pixel_x = 28;
 	pixel_y = -2
 	},
-/obj/item/tank/internals/plasma/full/emergency_tank,
-/obj/item/tank/internals/plasma/full/emergency_tank,
 /obj/item/gps/engineering{
 	gpstag = "EMERGENCY0"
 	},
+/obj/item/crowbar/red,
+/obj/item/storage/toolbox/emergency/shuttle/fueled,
+/obj/item/tank/internals/plasma/full/emergency_tank,
 /turf/open/floor/mineral/titanium/blue,
 /area/ship)
 "J" = (
-/obj/machinery/atmospherics/components/unary/shuttle/heater{
-	desc = "Supplies fuel to  an attached thruster.";
-	dir = 1;
-	icon_state = "fuel_port";
-	icon_state_closed = "fuel_port";
-	icon_state_open = "fuel_port_empty";
-	name = "fuel port";
-	use_tank = 1
-	},
 /obj/structure/window/reinforced/spawner/west,
+/obj/machinery/atmospherics/components/unary/shuttle/heater/fuel_port/full{
+	dir = 1
+	},
 /turf/closed/wall/mineral/titanium,
 /area/ship)
 "N" = (
