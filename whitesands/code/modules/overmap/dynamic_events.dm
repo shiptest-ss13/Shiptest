@@ -36,6 +36,9 @@
 			adjust_dock_to_shuttle(reserve_dock, acting.shuttle)
 		else if(!reserve_dock_secondary.get_docked())
 			adjust_dock_to_shuttle(reserve_dock_secondary, acting.shuttle)
+		else
+			acting.state = prev_state
+			return "All potential docking locations occupied."
 		return acting.dock(src) //If a value is returned from load_level(), say that, otherwise, commence docking
 
 /**
