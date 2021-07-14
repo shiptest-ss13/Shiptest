@@ -1,12 +1,4 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
-"a" = (
-/obj/machinery/power/shuttle/engine/fueled/plasma{
-	dir = 1
-	},
-/obj/structure/window/reinforced/spawner/west,
-/obj/structure/window/reinforced/spawner/north,
-/turf/open/floor/plating,
-/area/ship)
 "d" = (
 /obj/structure/closet/emcloset/wall,
 /obj/item/reagent_containers/hypospray/medipen/survival,
@@ -140,9 +132,6 @@
 /obj/structure/cable{
 	icon_state = "2-4"
 	},
-/obj/machinery/atmospherics/components/unary/shuttle/heater{
-	dir = 1
-	},
 /turf/open/floor/mineral/titanium/blue,
 /area/ship)
 "D" = (
@@ -150,14 +139,6 @@
 /obj/structure/window/shuttle,
 /obj/machinery/door/firedoor,
 /turf/open/floor/plating,
-/area/ship)
-"F" = (
-/obj/machinery/door/firedoor/heavy,
-/obj/machinery/atmospherics/components/unary/shuttle/heater/fuel_port/full{
-	dir = 1;
-	pixel_x = 32
-	},
-/turf/open/floor/mineral/titanium/blue,
 /area/ship)
 "H" = (
 /obj/structure/chair/comfy/shuttle{
@@ -239,6 +220,22 @@
 /obj/machinery/door/firedoor,
 /turf/open/floor/mineral/titanium/blue,
 /area/ship)
+"R" = (
+/obj/machinery/power/shuttle/engine/fueled/plasma{
+	dir = 1
+	},
+/obj/structure/window/reinforced/spawner/west,
+/obj/structure/window/reinforced/spawner/north,
+/turf/open/floor/plating,
+/area/ship)
+"T" = (
+/obj/machinery/door/firedoor/heavy,
+/obj/machinery/atmospherics/components/unary/shuttle/heater/fuel_port/full{
+	dir = 1;
+	pixel_x = 32
+	},
+/turf/open/floor/mineral/titanium/blue,
+/area/ship)
 "Y" = (
 /obj/machinery/power/shuttle/engine/fueled/plasma{
 	dir = 1
@@ -284,8 +281,8 @@ d
 K
 M
 H
-F
-a
+T
+R
 "}
 (5,1,1) = {"
 j
