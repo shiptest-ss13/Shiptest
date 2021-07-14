@@ -753,6 +753,7 @@ SUBSYSTEM_DEF(shuttle)
 					qdel(P, force=TRUE)
 					log_world("Map warning: Shuttle Template [S.mappath] has multiple mobile docking ports.")
 				else
+					P.id = "[P.id]_[REF(P)]" //TODO: Remove bandaid
 					preview_shuttle = P
 			if(istype(P, /obj/docking_port/stationary))
 				log_world("Map warning: Shuttle Template [S.mappath] has a stationary docking port.")

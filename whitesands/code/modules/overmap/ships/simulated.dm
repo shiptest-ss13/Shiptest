@@ -32,6 +32,10 @@
 	///The docking port of the linked shuttle
 	var/obj/docking_port/mobile/shuttle
 
+/obj/structure/overmap/ship/simulated/Destroy()
+	. = ..()
+	LAZYREMOVE(SSovermap.simulated_ships, src)
+
 /obj/structure/overmap/ship/simulated/Initialize(mapload, _id, obj/docking_port/mobile/_shuttle)
 	. = ..()
 	LAZYADD(SSovermap.simulated_ships, src)
