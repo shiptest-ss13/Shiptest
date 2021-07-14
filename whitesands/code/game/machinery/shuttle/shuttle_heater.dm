@@ -27,6 +27,7 @@
 
 	pipe_flags = PIPING_ONE_PER_TURF | PIPING_DEFAULT_LAYER_ONLY
 
+	var/allow_mode_switching = TRUE
 	var/efficiency_multiplier = 1
 	var/gas_capacity = 0
 	///Whether or not to draw from the attached internals tank
@@ -152,10 +153,13 @@
 	. = ..()
 	if(panel_open)
 		return
-	use_tank = !use_tank
-	to_chat(L, "<span class='notice'>You switch [src] to draw fuel from [use_tank ? "the attached tank" : "the atmospherics system"].")
-	icon_state_closed = use_tank ? "heater" : initial(icon_state)
-	icon_state_open = use_tank ? "heater_open" : "[initial(icon_state)]_open"
+	if(allow_mode_switching)
+		use_tank = !use_tank
+		to_chat(L, "<span class='notice'>You switch [src] to draw fuel from [use_tank ? "the attached tank" : "the atmospherics system"].")
+		icon_state_closed = use_tank ? "heater" : initial(icon_state)
+		icon_state_open = use_tank ? "heater_open" : "[initial(icon_state)]_open"
+	else
+		to_chat(L, "<span class='warning'>This [src] doesn't support switching modes!")
 
 /obj/machinery/atmospherics/components/unary/shuttle/heater/proc/update_adjacent_engines()
 	var/engine_turf
@@ -177,3 +181,53 @@
 	. = ..()
 	fuel_tank = new /obj/item/tank/internals/plasma/full(src)
 	use_tank = TRUE
+
+/obj/machinery/atmospherics/components/unary/shuttle/heater/fuel_port
+	name = "fuel port"
+	desc = "A fuel input port that takes in a plasma tank. Holds one tank. Use a crowbar to open and close it."
+	allow_mode_switching = FALSE
+
+	icon_state = "fuel_port"
+	icon_state_closed = "fuel_port"
+	icon_state_open = "fuel_port_empty"
+	var/icon_state_open_tank = "fuel_port_full"
+	idle_power_usage = 0
+	circuit = null
+
+/obj/machinery/atmospherics/components/unary/shuttle/heater/fuel_port/attackby(obj/item/I, mob/living/user, params)
+	update_adjacent_engines()
+	if(I.tool_behaviour == TOOL_CROWBAR)
+		if(panel_open)
+			visible_message("<span class='notice'>[usr] shuts the \the [src].</span>", "<span class='notice'>You tightly shut \the [src].</span>")
+			playsound(src.loc, 'sound/effects/bin_close.ogg', 25, 0, -3)
+			panel_open = FALSE
+			icon_state = icon_state_closed
+		else
+			visible_message("<span class='notice'>[usr] opens the \the [src].</span>", "<span class='notice'>You open up \the [src].</span>")
+			playsound(src.loc, 'sound/effects/bin_open.ogg', 25, 0, -3)
+			panel_open = TRUE
+			if(fuel_tank)
+				icon_state = icon_state_open_tank
+			else
+				icon_state = icon_state_open
+
+	if(istype(I, /obj/item/tank/internals))
+		if(panel_open)
+			user.transferItemToLoc(I, src)
+			fuel_tank = I
+		if(panel_closed)
+			to_chat(user, "<spawn class='warning'>\The [src] door is still closed!")
+	return ..()
+
+/obj/machinery/atmospherics/components/unary/shuttle/heater/fuel_port/attack_hand(mob/living/user)
+	. = ..()
+	if(!panel_open)
+		to_chat(user, "<spawn class='notice'>The door is secured tightly. You'll need a crowbar to open it.")
+	else
+		var/obj/item/I = fuel_tank
+		I.forceMove(loc)
+		icon_state = icon_state_open
+
+/obj/machinery/atmospherics/components/unary/shuttle/heater/fuel_port/full/Initialize()
+	. = ..()
+	fuel_tank = new /obj/item/tank/internals/plasma/emergency_tank(src)

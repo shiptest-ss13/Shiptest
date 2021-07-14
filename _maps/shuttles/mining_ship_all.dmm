@@ -151,10 +151,11 @@
 	},
 /obj/machinery/atmospherics/pipe/layer_manifold,
 /obj/structure/fans/tiny,
-/obj/machinery/door/airlock/external{
-	name = "Hangar Airlock"
+/obj/effect/spawner/structure/window/shuttle,
+/obj/machinery/door/poddoor/preopen{
+	id = "mining_ship_blast"
 	},
-/turf/open/floor/plasteel,
+/turf/open/floor/plating,
 /area/ship/crew)
 "el" = (
 /obj/machinery/atmospherics/components/unary/portables_connector{
@@ -377,6 +378,10 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
+"jU" = (
+/obj/effect/spawner/structure/window/shuttle,
+/turf/open/floor/plating,
+/area/ship/external)
 "ki" = (
 /obj/effect/turf_decal/tile/blue{
 	dir = 8
@@ -686,6 +691,7 @@
 	icon_state = "4-8"
 	},
 /obj/effect/turf_decal/stripes/corner,
+/obj/machinery/light,
 /turf/open/floor/plasteel,
 /area/ship/crew)
 "qh" = (
@@ -779,6 +785,16 @@
 	},
 /obj/machinery/power/tracker,
 /turf/open/floor/plasteel/airless/solarpanel,
+/area/ship/external)
+"uy" = (
+/obj/docking_port/stationary{
+	dir = 4;
+	dwidth = 2;
+	id = "commonmining_mining_pod";
+	name = "Station";
+	roundstart_template = null
+	},
+/turf/open/floor/plating/airless,
 /area/ship/external)
 "uA" = (
 /obj/structure/cable{
@@ -877,13 +893,18 @@
 	icon_state = "4-8"
 	},
 /obj/effect/turf_decal/tile/brown,
-/obj/machinery/light,
 /turf/open/floor/plasteel,
 /area/ship/crew)
 "xn" = (
 /obj/effect/spawner/structure/window/shuttle,
 /turf/open/floor/plating,
 /area/ship/cargo)
+"xD" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plating,
+/area/ship/external)
 "xE" = (
 /obj/structure/cable{
 	icon_state = "2-4"
@@ -929,6 +950,15 @@
 "zb" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ship/crew)
+"zf" = (
+/obj/machinery/door/airlock/external{
+	name = "Hangar Airlock"
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plating,
 /area/ship/crew)
 "zr" = (
 /obj/machinery/status_display/shuttle{
@@ -998,6 +1028,21 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /turf/open/floor/plasteel/grimy,
+/area/ship/crew)
+"Aq" = (
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/effect/turf_decal/tile/brown{
+	dir = 8
+	},
+/obj/effect/turf_decal/tile/brown,
+/obj/machinery/button/door{
+	id = "mining_ship_starboard";
+	name = "Starboard Hangar Shutters";
+	pixel_y = -28
+	},
+/turf/open/floor/plasteel,
 /area/ship/crew)
 "Ax" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
@@ -1136,16 +1181,18 @@
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/cargo)
 "DX" = (
-/obj/docking_port/stationary{
-	dir = 2;
-	dwidth = 3;
-	height = 5;
-	id = "commonmining_mining_ship";
-	name = "Mining Ship: Common Mining Dock";
-	width = 7
+/obj/structure/cable{
+	icon_state = "4-8"
 	},
-/turf/open/floor/plating/airless,
-/area/ship/external)
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/airalarm/directional/north,
+/turf/open/floor/plasteel,
+/area/ship/crew)
 "Ew" = (
 /obj/effect/turf_decal/tile/yellow{
 	dir = 8
@@ -1165,6 +1212,9 @@
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
 	},
 /turf/open/floor/plasteel,
 /area/ship/crew)
@@ -1244,7 +1294,9 @@
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
-/obj/machinery/airalarm/directional/south,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plasteel,
 /area/ship/crew)
 "FL" = (
@@ -1288,6 +1340,9 @@
 /obj/effect/turf_decal/stripes/corner{
 	dir = 1
 	},
+/obj/machinery/light{
+	dir = 1
+	},
 /turf/open/floor/plasteel,
 /area/ship/crew)
 "Gk" = (
@@ -1327,6 +1382,10 @@
 /obj/machinery/vending/snack/random,
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
+"Hk" = (
+/obj/effect/spawner/structure/window/shuttle,
+/turf/open/floor/plating,
+/area/ship/crew)
 "Hs" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/crew)
@@ -1375,7 +1434,6 @@
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
-/obj/machinery/light,
 /obj/machinery/button/door{
 	id = "mining_ship_starboard";
 	name = "Starboard Hangar Shutters";
@@ -1398,6 +1456,10 @@
 	},
 /turf/open/floor/plasteel,
 /area/ship/crew)
+"IV" = (
+/obj/effect/spawner/structure/window/shuttle,
+/turf/open/floor/plating/airless,
+/area/ship/external)
 "Jo" = (
 /obj/effect/turf_decal/tile/blue{
 	dir = 4
@@ -1443,6 +1505,12 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
+"Ki" = (
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/turf/open/floor/plating,
+/area/ship/external)
 "Ku" = (
 /obj/effect/turf_decal/stripes/corner{
 	dir = 8
@@ -1499,6 +1567,9 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
+"Mb" = (
+/turf/open/floor/plating,
+/area/ship/external)
 "Mq" = (
 /obj/machinery/suit_storage_unit/mining/eva,
 /obj/effect/turf_decal/delivery,
@@ -2057,6 +2128,9 @@
 /obj/machinery/mineral/ore_redemption{
 	dir = 4
 	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plasteel,
 /area/ship/crew)
 "WU" = (
@@ -2320,12 +2394,12 @@ DB
 Ew
 Ws
 FK
-Hs
-Rr
-Rr
-Rr
-Rr
-Rr
+zf
+xD
+xD
+Ki
+Mb
+jU
 bS
 "}
 (10,1,1) = {"
@@ -2336,15 +2410,15 @@ Cp
 eH
 ci
 DB
-Nx
+DX
 Wn
 IO
 Hs
+IV
 Rr
+uy
 Rr
-Rr
-Rr
-Rr
+IV
 bS
 "}
 (11,1,1) = {"
@@ -2397,7 +2471,7 @@ AJ
 WU
 Ii
 ef
-DX
+Rr
 Rr
 Rr
 Rr
@@ -2472,7 +2546,7 @@ GU
 ST
 ZN
 xi
-Hs
+Hk
 Rr
 Rr
 Rr
@@ -2490,7 +2564,7 @@ hT
 hT
 Wj
 ZN
-YU
+Aq
 Hs
 Hs
 Hs

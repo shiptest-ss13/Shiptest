@@ -1,19 +1,85 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"t" = (
+/obj/machinery/atmospherics/components/unary/shuttle/heater{
+	desc = "Supplies fuel to  an attached thruster.";
+	dir = 1;
+	icon_state = "fuel_port";
+	icon_state_closed = "fuel_port";
+	icon_state_open = "fuel_port_empty";
+	name = "fuel port";
+	use_tank = 1
+	},
+/obj/structure/window/reinforced/spawner/east,
+/turf/closed/wall/mineral/titanium,
+/area/ship)
 "B" = (
 /turf/closed/wall/mineral/titanium,
-/area/shuttle/pod_1)
+/area/ship)
 "G" = (
 /obj/structure/chair/comfy/shuttle{
 	dir = 1
 	},
-/obj/machinery/status_display/evac{
-	pixel_x = 32
+/obj/machinery/light/floor,
+/obj/item/radio/intercom/wideband{
+	pixel_x = 28;
+	pixel_y = 25
 	},
-/obj/machinery/computer/shuttle/pod{
+/obj/machinery/computer/helm{
+	density = 0;
+	icon = 'icons/obj/terminals.dmi';
+	icon_state = "dorm_available";
+	pixel_x = -29;
+	pixel_y = 23
+	},
+/obj/structure/closet/emcloset/wall{
 	pixel_x = -32
 	},
+/obj/item/clothing/head/hardhat/orange{
+	name = "protective hat";
+	pixel_y = 9
+	},
+/obj/item/clothing/head/hardhat/orange{
+	name = "protective hat";
+	pixel_y = 9
+	},
+/obj/item/clothing/suit/hazardvest{
+	desc = "A high-visibility lifejacket complete with whistle and slot for oxygen tanks.";
+	name = "emergency lifejacket"
+	},
+/obj/item/clothing/suit/hazardvest{
+	desc = "A high-visibility lifejacket complete with whistle and slot for oxygen tanks.";
+	name = "emergency lifejacket"
+	},
+/obj/item/clothing/head/helmet/space/fragile,
+/obj/item/clothing/head/helmet/space/fragile,
+/obj/item/clothing/suit/space/fragile,
+/obj/item/clothing/suit/space/fragile,
+/obj/item/reagent_containers/hypospray/medipen/survival,
+/obj/machinery/firealarm{
+	name = "ARM: PULL BEFORE LEAVING";
+	pixel_x = 28;
+	pixel_y = -2
+	},
+/obj/item/tank/internals/plasma/full/emergency_tank,
+/obj/item/tank/internals/plasma/full/emergency_tank,
+/obj/item/gps/engineering{
+	gpstag = "EMERGENCY0"
+	},
 /turf/open/floor/mineral/titanium/blue,
-/area/shuttle/pod_1)
+/area/ship)
+"J" = (
+/obj/machinery/atmospherics/components/unary/shuttle/heater{
+	desc = "Supplies fuel to  an attached thruster.";
+	dir = 1;
+	icon_state = "fuel_port";
+	icon_state_closed = "fuel_port";
+	icon_state_open = "fuel_port_empty";
+	name = "fuel port";
+	use_tank = 1
+	},
+/obj/structure/window/reinforced/spawner/west,
+/turf/closed/wall/mineral/titanium,
+/area/ship)
 "N" = (
 /obj/machinery/door/airlock/titanium{
 	name = "Escape Pod Airlock"
@@ -21,36 +87,41 @@
 /obj/docking_port/mobile/pod{
 	port_direction = 2
 	},
+/obj/machinery/door/firedoor/heavy,
 /turf/open/floor/mineral/titanium/blue,
-/area/shuttle/pod_1)
+/area/ship)
 "Q" = (
 /obj/effect/spawner/structure/window/shuttle,
+/obj/machinery/door/firedoor/heavy,
 /turf/open/floor/plating,
-/area/shuttle/pod_1)
+/area/ship)
+"S" = (
+/obj/machinery/power/shuttle/engine/fueled/plasma{
+	dir = 1
+	},
+/obj/structure/window/reinforced/spawner/north,
+/obj/structure/window/reinforced/spawner/west,
+/turf/open/floor/plating,
+/area/ship)
 "U" = (
 /obj/structure/chair/comfy/shuttle{
 	dir = 1
 	},
-/obj/item/radio/intercom{
-	pixel_x = 25
-	},
-/obj/item/storage/pod{
-	pixel_x = -26
-	},
-/obj/machinery/light/small{
-	dir = 8
-	},
 /turf/open/floor/mineral/titanium/blue,
-/area/shuttle/pod_1)
+/area/ship)
 "Z" = (
-/obj/structure/shuttle/engine/propulsion/burst,
-/turf/closed/wall/mineral/titanium,
-/area/shuttle/pod_1)
+/obj/machinery/power/shuttle/engine/fueled/plasma{
+	dir = 1
+	},
+/obj/structure/window/reinforced/spawner/north,
+/obj/structure/window/reinforced/spawner/east,
+/turf/open/floor/plating,
+/area/ship)
 
 (1,1,1) = {"
 B
 B
-B
+J
 Z
 "}
 (2,1,1) = {"
@@ -62,6 +133,6 @@ N
 (3,1,1) = {"
 B
 B
-B
-Z
+t
+S
 "}
