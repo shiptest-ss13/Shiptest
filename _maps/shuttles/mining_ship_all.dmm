@@ -100,6 +100,19 @@
 "bV" = (
 /obj/machinery/door/airlock/external,
 /obj/structure/fans/tiny,
+/obj/docking_port/mobile{
+	can_move_docking_ports = 1;
+	dir = 2;
+	dwidth = 12;
+	height = 17;
+	id = "mining_ship";
+	launch_status = 0;
+	name = "mining ship";
+	port_direction = 8;
+	preferred_direction = 4;
+	undock_roundstart = 1;
+	width = 28
+	},
 /turf/open/floor/plating,
 /area/ship/cargo)
 "ci" = (
@@ -151,11 +164,10 @@
 	},
 /obj/machinery/atmospherics/pipe/layer_manifold,
 /obj/structure/fans/tiny,
-/obj/effect/spawner/structure/window/shuttle,
-/obj/machinery/door/poddoor/preopen{
-	id = "mining_ship_blast"
+/obj/machinery/door/airlock/external{
+	name = "Hangar Airlock"
 	},
-/turf/open/floor/plating,
+/turf/open/floor/plasteel,
 /area/ship/crew)
 "el" = (
 /obj/machinery/atmospherics/components/unary/portables_connector{
@@ -352,6 +364,7 @@
 /obj/effect/spawner/lootdrop/maintenance/four,
 /obj/item/circuitboard/machine/chem_dispenser/drinks,
 /obj/item/circuitboard/computer/arcade/orion_trail,
+/obj/item/kinetic_crusher,
 /turf/open/floor/plasteel,
 /area/ship/cargo)
 "jD" = (
@@ -378,10 +391,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
-"jU" = (
-/obj/effect/spawner/structure/window/shuttle,
-/turf/open/floor/plating,
-/area/ship/external)
 "ki" = (
 /obj/effect/turf_decal/tile/blue{
 	dir = 8
@@ -691,7 +700,6 @@
 	icon_state = "4-8"
 	},
 /obj/effect/turf_decal/stripes/corner,
-/obj/machinery/light,
 /turf/open/floor/plasteel,
 /area/ship/crew)
 "qh" = (
@@ -702,6 +710,7 @@
 /area/ship/engineering)
 "qW" = (
 /obj/machinery/light,
+/obj/structure/ore_box,
 /turf/open/floor/plating,
 /area/ship/cargo)
 "qX" = (
@@ -775,6 +784,10 @@
 /obj/effect/turf_decal/bot,
 /turf/open/floor/plasteel,
 /area/ship/cargo)
+"tX" = (
+/obj/structure/ore_box,
+/turf/open/floor/plating,
+/area/ship/cargo)
 "uk" = (
 /obj/structure/cable/yellow,
 /obj/structure/cable/yellow{
@@ -785,16 +798,6 @@
 	},
 /obj/machinery/power/tracker,
 /turf/open/floor/plasteel/airless/solarpanel,
-/area/ship/external)
-"uy" = (
-/obj/docking_port/stationary{
-	dir = 4;
-	dwidth = 2;
-	id = "commonmining_mining_pod";
-	name = "Station";
-	roundstart_template = null
-	},
-/turf/open/floor/plating/airless,
 /area/ship/external)
 "uA" = (
 /obj/structure/cable{
@@ -893,18 +896,13 @@
 	icon_state = "4-8"
 	},
 /obj/effect/turf_decal/tile/brown,
+/obj/machinery/light,
 /turf/open/floor/plasteel,
 /area/ship/crew)
 "xn" = (
 /obj/effect/spawner/structure/window/shuttle,
 /turf/open/floor/plating,
 /area/ship/cargo)
-"xD" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/turf/open/floor/plating,
-/area/ship/external)
 "xE" = (
 /obj/structure/cable{
 	icon_state = "2-4"
@@ -950,15 +948,6 @@
 "zb" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /turf/closed/wall/mineral/titanium/nodiagonal,
-/area/ship/crew)
-"zf" = (
-/obj/machinery/door/airlock/external{
-	name = "Hangar Airlock"
-	},
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/turf/open/floor/plating,
 /area/ship/crew)
 "zr" = (
 /obj/machinery/status_display/shuttle{
@@ -1028,21 +1017,6 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /turf/open/floor/plasteel/grimy,
-/area/ship/crew)
-"Aq" = (
-/obj/structure/cable/yellow{
-	icon_state = "4-8"
-	},
-/obj/effect/turf_decal/tile/brown{
-	dir = 8
-	},
-/obj/effect/turf_decal/tile/brown,
-/obj/machinery/button/door{
-	id = "mining_ship_starboard";
-	name = "Starboard Hangar Shutters";
-	pixel_y = -28
-	},
-/turf/open/floor/plasteel,
 /area/ship/crew)
 "Ax" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
@@ -1181,18 +1155,16 @@
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/cargo)
 "DX" = (
-/obj/structure/cable{
-	icon_state = "4-8"
+/obj/docking_port/stationary{
+	dir = 2;
+	dwidth = 3;
+	height = 5;
+	id = "commonmining_mining_ship";
+	name = "Mining Ship: Common Mining Dock";
+	width = 7
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 8
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 4
-	},
-/obj/machinery/airalarm/directional/north,
-/turf/open/floor/plasteel,
-/area/ship/crew)
+/turf/open/floor/plating/airless,
+/area/ship/external)
 "Ew" = (
 /obj/effect/turf_decal/tile/yellow{
 	dir = 8
@@ -1212,9 +1184,6 @@
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
-	},
-/obj/structure/cable{
-	icon_state = "2-8"
 	},
 /turf/open/floor/plasteel,
 /area/ship/crew)
@@ -1256,17 +1225,20 @@
 	pixel_x = 4;
 	pixel_y = 4
 	},
-/obj/item/pickaxe/emergency,
-/obj/item/pickaxe/emergency,
-/obj/item/pickaxe/emergency,
 /obj/item/gps/mining,
 /obj/item/gps/mining,
 /obj/item/gps/mining,
 /obj/item/clothing/glasses/meson/prescription,
 /obj/item/clothing/glasses/meson,
 /obj/item/clothing/glasses/meson,
+/obj/item/t_scanner/adv_mining_scanner/lesser,
+/obj/item/gun/energy/kinetic_accelerator,
+/obj/item/pickaxe/silver,
+/obj/item/pickaxe/silver,
+/obj/item/storage/bag/ore,
+/obj/item/storage/bag/ore,
 /turf/open/floor/plasteel/dark,
-/area/ship/hallway/central)
+/area/ship/crew)
 "Fz" = (
 /obj/structure/cable/yellow{
 	icon_state = "1-4"
@@ -1294,9 +1266,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
+/obj/machinery/airalarm/directional/south,
 /turf/open/floor/plasteel,
 /area/ship/crew)
 "FL" = (
@@ -1340,9 +1310,6 @@
 /obj/effect/turf_decal/stripes/corner{
 	dir = 1
 	},
-/obj/machinery/light{
-	dir = 1
-	},
 /turf/open/floor/plasteel,
 /area/ship/crew)
 "Gk" = (
@@ -1381,10 +1348,6 @@
 "GU" = (
 /obj/machinery/vending/snack/random,
 /turf/open/floor/plasteel/dark,
-/area/ship/hallway/central)
-"Hk" = (
-/obj/effect/spawner/structure/window/shuttle,
-/turf/open/floor/plating,
 /area/ship/crew)
 "Hs" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
@@ -1395,6 +1358,7 @@
 	desc = "A moth.";
 	name = "moth"
 	},
+/obj/effect/landmark/observer_start,
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew)
 "HR" = (
@@ -1434,6 +1398,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
+/obj/machinery/light,
 /obj/machinery/button/door{
 	id = "mining_ship_starboard";
 	name = "Starboard Hangar Shutters";
@@ -1456,10 +1421,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/ship/crew)
-"IV" = (
-/obj/effect/spawner/structure/window/shuttle,
-/turf/open/floor/plating/airless,
-/area/ship/external)
 "Jo" = (
 /obj/effect/turf_decal/tile/blue{
 	dir = 4
@@ -1505,12 +1466,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
-"Ki" = (
-/obj/structure/cable{
-	icon_state = "1-4"
-	},
-/turf/open/floor/plating,
-/area/ship/external)
 "Ku" = (
 /obj/effect/turf_decal/stripes/corner{
 	dir = 8
@@ -1567,9 +1522,6 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
-"Mb" = (
-/turf/open/floor/plating,
-/area/ship/external)
 "Mq" = (
 /obj/machinery/suit_storage_unit/mining/eva,
 /obj/effect/turf_decal/delivery,
@@ -1859,6 +1811,13 @@
 /obj/effect/turf_decal/stripes/line,
 /turf/open/floor/plasteel,
 /area/ship/crew)
+"RU" = (
+/obj/structure/closet/crate/wooden,
+/obj/item/clothing/suit/hooded/explorer,
+/obj/item/clothing/suit/hooded/explorer,
+/obj/item/clothing/suit/hooded/explorer,
+/turf/open/floor/plating,
+/area/ship/cargo)
 "Sw" = (
 /obj/machinery/suit_storage_unit/mining/eva,
 /obj/effect/turf_decal/delivery,
@@ -1869,17 +1828,6 @@
 /area/ship/cargo)
 "SQ" = (
 /obj/machinery/door/airlock/external,
-/obj/docking_port/mobile{
-	can_move_docking_ports = 1;
-	dir = 4;
-	dwidth = 8;
-	height = 28;
-	id = "mining_ship";
-	name = "mining ship";
-	port_direction = 2;
-	undock_roundstart = 1;
-	width = 17
-	},
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
@@ -2127,9 +2075,6 @@
 	},
 /obj/machinery/mineral/ore_redemption{
 	dir = 4
-	},
-/obj/structure/cable{
-	icon_state = "1-2"
 	},
 /turf/open/floor/plasteel,
 /area/ship/crew)
@@ -2394,12 +2339,12 @@ DB
 Ew
 Ws
 FK
-zf
-xD
-xD
-Ki
-Mb
-jU
+Hs
+Rr
+Rr
+Rr
+Rr
+Rr
 bS
 "}
 (10,1,1) = {"
@@ -2410,15 +2355,15 @@ Cp
 eH
 ci
 DB
-DX
+Nx
 Wn
 IO
 Hs
-IV
 Rr
-uy
 Rr
-IV
+Rr
+Rr
+Rr
 bS
 "}
 (11,1,1) = {"
@@ -2471,7 +2416,7 @@ AJ
 WU
 Ii
 ef
-Rr
+DX
 Rr
 Rr
 Rr
@@ -2482,7 +2427,7 @@ zx
 pi
 FP
 FP
-FP
+tX
 nR
 uV
 xn
@@ -2540,13 +2485,13 @@ DB
 FP
 FP
 kT
-FP
+RU
 DB
 GU
 ST
 ZN
 xi
-Hk
+Hs
 Rr
 Rr
 Rr
@@ -2564,7 +2509,7 @@ hT
 hT
 Wj
 ZN
-Aq
+YU
 Hs
 Hs
 Hs
