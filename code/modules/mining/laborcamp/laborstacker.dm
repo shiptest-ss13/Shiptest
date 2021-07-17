@@ -84,23 +84,6 @@ GLOBAL_LIST(labor_sheet_values)
 				. = TRUE
 			else
 				to_chat(usr, "<span class='alert'>No valid id for point transfer detected.</span>")
-		if("move_shuttle")
-			if(!alone_in_area(get_area(src), usr))
-				to_chat(usr, "<span class='alert'>Prisoners are only allowed to be released while alone.</span>")
-			else
-				switch(SSshuttle.moveShuttle(SSshuttle.getShuttle("laborcamp"), SSshuttle.getDock("laborcamp_home"), TRUE))
-					if(1)
-						to_chat(usr, "<span class='alert'>Shuttle not found.</span>")
-					if(2)
-						to_chat(usr, "<span class='alert'>Shuttle already at station.</span>")
-					if(3)
-						to_chat(usr, "<span class='alert'>No permission to dock could be granted.</span>")
-					else
-						if(!(obj_flags & EMAGGED))
-							Radio.set_frequency(FREQ_SECURITY)
-							Radio.talk_into(src, "A prisoner has returned to the station. Minerals and Prisoner ID card ready for retrieval.", FREQ_SECURITY)
-						to_chat(usr, "<span class='notice'>Shuttle received message and will be sent shortly.</span>")
-						. = TRUE
 
 /obj/machinery/mineral/labor_claim_console/proc/locate_stacking_machine()
 	stacking_machine = locate(/obj/machinery/mineral/stacking_machine, get_step(src, machinedir))

@@ -18,7 +18,7 @@
 	/// Authorization request cooldown to prevent request spam to admin staff
 	COOLDOWN_DECLARE(request_cooldown)
 
-/obj/machinery/computer/shuttle/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock, override=FALSE)
+/obj/machinery/computer/shuttle/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock)
 	shuttle_port = port
 
 /obj/machinery/computer/shuttle/ui_interact(mob/user, datum/tgui/ui)

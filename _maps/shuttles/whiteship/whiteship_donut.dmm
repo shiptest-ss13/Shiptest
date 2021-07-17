@@ -479,9 +479,9 @@
 /turf/open/floor/plating,
 /area/shuttle/abandoned)
 "br" = (
-/obj/machinery/computer/camera_advanced/shuttle_docker/whiteship{
-	dir = 1;
-	icon_state = "computer"
+/obj/structure/frame/computer{
+	anchored = 1;
+	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/disk/holodisk/donutstation/whiteship,

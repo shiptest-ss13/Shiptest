@@ -39,7 +39,7 @@
 		bulb = new(src)
 
 
-/obj/machinery/flasher/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock, override=FALSE)
+/obj/machinery/flasher/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock)
 	id = "[REF(port)][id]"
 
 /obj/machinery/flasher/Destroy()

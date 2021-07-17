@@ -516,7 +516,7 @@
 						shuttle navigation protocols. Please contact your \
 						supervisor.", "SYSTEM ERROR:", alert=TRUE)
 
-				dock_id(destination_dock)
+				initiate_docking(SSshuttle.getDock(destination_dock))
 				mode = SHUTTLE_ENDGAME
 				timer = 0
 

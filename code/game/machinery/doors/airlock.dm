@@ -175,7 +175,7 @@
 	. = ..()
 	AddComponent(/datum/component/ntnet_interface)
 
-/obj/machinery/door/airlock/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock, override=FALSE)
+/obj/machinery/door/airlock/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock)
 	if(id_tag)
 		id_tag = "[REF(port)][id_tag]"
 

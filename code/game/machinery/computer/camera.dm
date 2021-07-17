@@ -48,7 +48,7 @@
 	qdel(cam_background)
 	return ..()
 
-/obj/machinery/computer/security/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock, override=FALSE)
+/obj/machinery/computer/security/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock)
 	for(var/i in network)
 		network -= i
 		network += "[REF(port)][i]"

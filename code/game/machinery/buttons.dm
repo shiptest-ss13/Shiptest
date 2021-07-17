@@ -127,7 +127,7 @@
 		A.id = id
 	initialized_button = 1
 
-/obj/machinery/button/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock, override=FALSE)
+/obj/machinery/button/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock)
 	if(id && istype(device, /obj/item/assembly/control))
 		var/obj/item/assembly/control/A = device
 		A.id = "[REF(port)][id]"

@@ -510,10 +510,9 @@
 /obj/machinery/light/small{
 	dir = 8
 	},
-/obj/machinery/computer/camera_advanced/shuttle_docker/syndicate/pirate{
-	dir = 4;
-	x_offset = -3;
-	y_offset = 7
+/obj/structure/frame/computer{
+	anchored = 1;
+	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/firealarm{

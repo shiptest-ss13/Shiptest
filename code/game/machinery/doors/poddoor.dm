@@ -16,7 +16,7 @@
 	damage_deflection = 70
 	poddoor = TRUE
 
-/obj/machinery/door/poddoor/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock, override=FALSE)
+/obj/machinery/door/poddoor/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock)
 	id = "[REF(port)][id]"
 
 /obj/machinery/door/poddoor/preopen

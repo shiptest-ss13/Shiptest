@@ -29,8 +29,6 @@
 	var/dheight = 0
 
 	var/area_type
-	///are we invisible to shuttle navigation computers?
-	var/hidden = FALSE
 
 	///Delete this port after ship fly off.
 	var/delete_after = FALSE
@@ -352,10 +350,10 @@
 /obj/docking_port/mobile/proc/linkup(datum/map_template/shuttle/template, obj/docking_port/stationary/dock)
 	for(var/place in shuttle_areas)
 		var/area/area = place
-		area.connect_to_shuttle(src, dock, FALSE)
+		area.connect_to_shuttle(src, dock)
 		for(var/each in place)
 			var/atom/atom = each
-			atom.connect_to_shuttle(src, dock, FALSE)
+			atom.connect_to_shuttle(src, dock)
 
 
 //this is a hook for custom behaviour. Maybe at some point we could add checks to see if engines are intact
@@ -552,20 +550,6 @@
 /obj/docking_port/mobile/proc/check_poddoors()
 	for(var/obj/machinery/door/poddoor/shuttledock/pod in GLOB.airlocks)
 		pod.check()
-
-/obj/docking_port/mobile/proc/dock_id(id)
-	var/port = SSshuttle.getDock(id)
-	if(port)
-		. = initiate_docking(port)
-	else
-		. = null
-
-/obj/effect/landmark/shuttle_import
-	name = "Shuttle Import"
-
-// Never move the shuttle import landmark, otherwise things get WEIRD
-/obj/effect/landmark/shuttle_import/onShuttleMove()
-	return FALSE
 
 //used by shuttle subsystem to check timers
 /obj/docking_port/mobile/proc/check()
