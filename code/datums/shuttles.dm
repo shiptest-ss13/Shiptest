@@ -427,42 +427,6 @@
 	name = "kilo transport ferry"
 	description = "Standard issue CentCom Ferry for Kilo pattern stations. Includes additional equipment and rechargers."
 
-/datum/map_template/shuttle/whiteship/box
-	suffix = "box"
-	name = "Hospital Ship"
-
-/datum/map_template/shuttle/whiteship/meta
-	suffix = "meta"
-	name = "Salvage Ship"
-
-/datum/map_template/shuttle/whiteship/pubby
-	suffix = "pubby"
-	name = "NT White UFO"
-
-/datum/map_template/shuttle/whiteship/cere
-	suffix = "cere"
-	name = "NT Construction Vessel"
-
-/datum/map_template/shuttle/whiteship/kilo
-	suffix = "kilo"
-	name = "NT Mining Shuttle"
-
-/datum/map_template/shuttle/whiteship/donut
-	suffix = "donut"
-	name = "NT Long-Distance Bluespace Jumper"
-
-/datum/map_template/shuttle/whiteship/delta
-	suffix = "delta"
-	name = "NT Frigate"
-
-/datum/map_template/shuttle/whiteship/pod
-	suffix = "whiteship_pod"
-	name = "Salvage Pod"
-
-/datum/map_template/shuttle/whiteship/midway//WS edit
-	suffix = "midway"
-	name = "NT Atmospherics tanker"
-
 /datum/map_template/shuttle/cargo/kilo
 	suffix = "kilo"
 	name = "supply shuttle (Kilo)"
