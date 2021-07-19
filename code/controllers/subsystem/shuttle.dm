@@ -35,14 +35,11 @@ SUBSYSTEM_DEF(shuttle)
 	var/ordernum = 1					//order number given to next order
 	var/points = 5000					//number of trade-points we have
 	var/centcom_message = ""			//Remarks from CentCom on how well you checked the last order.
-	var/list/discoveredPlants = list()	//Typepaths for unusual plants we've already sent CentCom, associated with their potencies
 
 	var/list/supply_packs = list()
 	var/list/shoppinglist = list()
 	var/list/requestlist = list()
 	var/list/orderhistory = list()
-
-	var/datum/round_event/shuttle_loan/shuttle_loan
 
 	var/shuttle_purchased = FALSE //If the station has purchased a replacement escape shuttle this round
 	var/list/shuttle_purchase_requirements_met = list() //For keeping track of ingame events that would unlock new shuttles, such as defeating a boss or discovering a secret item
@@ -502,18 +499,12 @@ SUBSYSTEM_DEF(shuttle)
 	if (istype(SSshuttle.supply))
 		supply = SSshuttle.supply
 
-	if (istype(SSshuttle.discoveredPlants))
-		discoveredPlants = SSshuttle.discoveredPlants
-
 	if (istype(SSshuttle.shoppinglist))
 		shoppinglist = SSshuttle.shoppinglist
 	if (istype(SSshuttle.requestlist))
 		requestlist = SSshuttle.requestlist
 	if (istype(SSshuttle.orderhistory))
 		orderhistory = SSshuttle.orderhistory
-
-	if (istype(SSshuttle.shuttle_loan))
-		shuttle_loan = SSshuttle.shuttle_loan
 
 	if (istype(SSshuttle.shuttle_purchase_requirements_met))
 		shuttle_purchase_requirements_met = SSshuttle.shuttle_purchase_requirements_met
