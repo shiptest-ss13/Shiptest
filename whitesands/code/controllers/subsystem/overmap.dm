@@ -56,8 +56,6 @@ SUBSYSTEM_DEF(overmap)
 	create_map()
 
 	for(var/obj/docking_port/mobile/M as anything in SSshuttle.mobile)
-		if(istype(M, /obj/docking_port/mobile/arrivals))
-			continue
 		setup_shuttle_ship(M)
 
 	for(var/obj/machinery/computer/helm/H as anything in helms)
