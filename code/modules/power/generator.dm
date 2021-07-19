@@ -1,6 +1,7 @@
 /obj/machinery/power/generator
 	name = "thermoelectric generator"
 	desc = "It's a high efficiency thermoelectric generator."
+	icon = 'whitesands/icons/obj/power.dmi'
 	icon_state = "teg"
 	density = TRUE
 	use_power = NO_POWER_USE
@@ -35,7 +36,7 @@
 	if(!(machine_stat & (NOPOWER|BROKEN)))
 		var/L = min(round(lastgenlev/100000),11)
 		if(L != 0)
-			. += mutable_appearance('icons/obj/power.dmi', "teg-op[L]")
+			. += mutable_appearance('whitesands/icons/obj/power.dmi', "teg-op[L]")
 
 		if(hot_circ && cold_circ)
 			. += "teg-oc[lastcirc]"

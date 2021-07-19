@@ -53,6 +53,7 @@
 /obj/machinery/power/apc
 	name = "area power controller"
 	desc = "A control terminal for the area's electrical systems."
+	icon = 'whitesands/icons/obj/power.dmi'
 
 	icon_state = "apc0"
 	use_power = NO_POWER_USE
