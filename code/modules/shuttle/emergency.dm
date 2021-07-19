@@ -495,11 +495,6 @@
 						break
 				if(area_parallax)
 					parallax_slowdown()
-					for(var/A in SSshuttle.mobile)
-						var/obj/docking_port/mobile/M = A
-						if(M.launch_status == ENDGAME_LAUNCHED)
-							if(istype(M, /obj/docking_port/mobile/pod))
-								M.parallax_slowdown()
 
 			if(time_left <= 0)
 				//move each escape pod to its corresponding escape dock
@@ -529,17 +524,6 @@
 	setTimer(SSshuttle.emergencyEscapeTime)
 	priority_announce("The Emergency Shuttle is preparing for direct jump. Estimate [timeLeft(600)] minutes until the shuttle docks at Central Command.", null, null, "Priority")
 
-
-/obj/docking_port/mobile/pod
-	name = "escape pod"
-	id = "pod"
-	dwidth = 1
-	width = 3
-	height = 4
-	launch_status = UNLAUNCHED
-
-/obj/docking_port/mobile/pod/cancel()
-	return
 
 
 //Pod suits/pickaxes
