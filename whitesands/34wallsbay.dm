@@ -94,6 +94,13 @@
 	base_icon_state = "wall"
 	icon = 'goon/icons/turf/bay-wall.dmi'
 	color = null
+	smoothing_flags = SMOOTH_BITMASK
+
+/turf/closed/wall/mineral/titanium/nodiagonal
+	icon_state = "wall-0"
+	base_icon_state = "wall"
+	icon = 'goon/icons/turf/bay-wall.dmi'
+	color = null
 
 /turf/closed/wall/mineral/plastitanium
 	color = null

@@ -40,8 +40,7 @@
 	update_icon_nopipes()
 
 	underlays.Cut()
-
-	plane = showpipe ? GAME_PLANE : FLOOR_PLANE
+	plane = showpipe ? FLOOR_PLANE : FLOOR_PLANE
 
 	if(!showpipe)
 		return

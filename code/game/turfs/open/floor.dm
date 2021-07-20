@@ -28,6 +28,8 @@
 	tiled_dirt = TRUE
 
 /turf/open/floor/Initialize(mapload)
+	if(color)
+		add_atom_colour(color, FIXED_COLOUR_PRIORITY) //This should already be called in atoms.dm:150 but apparently it's not and I'm too lazy to find out why B)
 	if (!broken_states)
 		broken_states = string_list(list("damaged1", "damaged2", "damaged3", "damaged4", "damaged5"))
 	else
@@ -130,16 +132,19 @@
 /turf/open/floor/proc/break_tile()
 	if(broken)
 		return
-	icon_state = pick(broken_states)
+	var/image/I = image(icon = src.icon, icon_state = pick(broken_states))
+	src.overlays += I
 	broken = 1
 
 /turf/open/floor/burn_tile()
 	if(broken || burnt)
 		return
 	if(LAZYLEN(burnt_states))
-		icon_state = pick(burnt_states)
+		var/image/I = image(icon = src.icon, icon_state = pick(burnt_states))
+		src.overlays += I
 	else
-		icon_state = pick(broken_states)
+		var/image/I = image(icon = src.icon, icon_state = pick(broken_states))
+		src.overlays += I
 	burnt = 1
 
 /turf/open/floor/proc/make_plating()
@@ -312,6 +317,8 @@
 	name = "floor"
 	icon_state = "materialfloor"
 	material_flags = MATERIAL_ADD_PREFIX | MATERIAL_COLOR | MATERIAL_AFFECT_STATISTICS
+	icon = 'whitesands/icons/turf/floors/tiles.dmi'
+	icon_state = "tiled"
 
 /turf/open/floor/material/spawn_tile()
 	for(var/i in custom_materials)

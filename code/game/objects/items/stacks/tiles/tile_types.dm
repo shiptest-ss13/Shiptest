@@ -340,6 +340,7 @@
 	mineralType = "metal"
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 70)
 	resistance_flags = FIRE_PROOF
+	color = COLOR_FLOORTILE_GRAY
 
 /obj/item/stack/tile/plasteel/cyborg
 	custom_materials = null // All other Borg versions of items have no Metal or Glass - RR
@@ -353,6 +354,12 @@
 	icon_state = "tile_plastic"
 	custom_materials = list(/datum/material/plastic=500)
 	turf_type = /turf/open/floor/plastic
+
+/obj/item/stack/tile/plasteel/dark
+	turf_type = /turf/open/floor/plasteel/dark
+
+/obj/item/stack/tile/plasteel/white
+	turf_type = /turf/open/floor/plasteel/white
 
 /obj/item/stack/tile/material
 	name = "floor tile"
