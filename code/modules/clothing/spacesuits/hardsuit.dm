@@ -107,6 +107,7 @@
 	var/obj/item/tank/jetpack/suit/jetpack = null
 	var/hardsuit_type
 	pocket_storage_component_path = FALSE //WS Edit - Exowear Pockets
+	simple_states = list("hardsuit" = list(10, 20), "hardsuit_inner" = list(14, 15), "hardsuit_accents" = list(22, 12))
 
 
 /obj/item/clothing/suit/space/hardsuit/Initialize()

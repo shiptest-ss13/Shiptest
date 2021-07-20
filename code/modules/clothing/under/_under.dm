@@ -11,6 +11,7 @@
 	pickup_sound =  'sound/items/handling/cloth_pickup.ogg'
 	cuttable = TRUE
 	clothamnt = 5
+	simple_states = list("shirt" = list(15, 17), "pants" = list(15, 10), "sleeves" = list(10, 19))
 	var/fitted = FEMALE_UNIFORM_FULL // For use in alternate clothing styles for women
 	var/has_sensor = HAS_SENSORS // For the crew computer
 	var/random_sensor = TRUE

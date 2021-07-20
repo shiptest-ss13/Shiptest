@@ -11,7 +11,7 @@
 	var/togglename = null
 	var/suittoggled = FALSE
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/exo //WS Edit - Exowear Pockets
-
+	simple_states = list("coat" = list(13, 15))
 
 /obj/item/clothing/suit/worn_overlays(isinhands = FALSE)
 	. = list()

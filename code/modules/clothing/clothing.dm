@@ -31,6 +31,9 @@
 	var/list/user_vars_to_edit //VARNAME = VARVALUE eg: "name" = "butts"
 	var/list/user_vars_remembered //Auto built by the above + dropped() + equipped()
 
+	/// Needs to follow this syntax: list([icon_state], list(position_x, position_y)) where icon state is an icon state to overlay on the simple species recolours and the positions list is the position of the pixel that the overlay gets their colour from
+	var/list/simple_states
+
 	var/pocket_storage_component_path
 
 	//These allow head/mask items to dynamically alter the user's hair
@@ -294,82 +297,25 @@
 	female_clothing_icon 			= fcopy_rsc(female_clothing_icon)
 	GLOB.female_clothing_icons[index] = female_clothing_icon
 
-/proc/generate_species_clothing(obj/item/O, index, icon, species)
+/proc/generate_species_clothing(obj/item/clothing/O, index, icon, species)
 	var/icon/human_clothing_icon	= icon(icon, index)
 	var/icon/species_icon = new('icons/mob/clothing/species/teshari.dmi', "empty")
 
-	var/primary_color
-	var/primary_state
+	if(!istype(O) || !O.simple_states)
+		GLOB.species_clothing_icons[species][index] = species_icon
+		return
 
-	var/secondary_color
-	var/secondary_state
-
-	var/tertiary_color
-	var/tertiary_state
-
-	switch(O.slot_flags)
-		if(ITEM_SLOT_FEET)
-			primary_color = human_clothing_icon.GetPixel(13, 3)
-			primary_state = "shoes"
-		if(ITEM_SLOT_GLOVES)
-			primary_color = human_clothing_icon.GetPixel(10, 13)
-			primary_state = "gloves"
-		if(ITEM_SLOT_EYES)
-			primary_color = human_clothing_icon.GetPixel(17, 26)
-			primary_state = "glasses"
-
-		if(ITEM_SLOT_NECK)
-			if(istype(O, /obj/item/clothing/neck/cloak) || istype(O, /obj/item/bedsheet))
-				primary_color = human_clothing_icon.GetPixel(11, 15)
-				primary_state = "cloak"
-			else if(istype(O, /obj/item/clothing/neck/tie))
-				primary_color = human_clothing_icon.GetPixel(16, 20)
-				primary_state = "tie"
-			else
-				if(!O.color)
-					primary_color = human_clothing_icon.GetPixel(15, 19)
-				primary_state = "scarf"
-
-		if(ITEM_SLOT_OCLOTHING)
-			if(istype(O, /obj/item/clothing/suit/space/hardsuit))
-				primary_color = human_clothing_icon.GetPixel(10, 20)
-				primary_state = "hardsuit"
-				secondary_color = human_clothing_icon.GetPixel(14, 15)
-				secondary_state = "hardsuit_inner"
-				tertiary_color = human_clothing_icon.GetPixel(22, 12)
-				tertiary_state = "hardsuit_accents"
-			else if(istype(O, /obj/item/clothing/suit/space))
-				primary_color = human_clothing_icon.GetPixel(10, 20)
-				primary_state = "spacesuit"
-			else if(istype(O, /obj/item/clothing/suit/armor))
-				primary_color = human_clothing_icon.GetPixel(14, 18)
-				primary_state = "armor"
-			else
-				primary_color = human_clothing_icon.GetPixel(13, 15)
-				primary_state = "coat"
-
-		if(ITEM_SLOT_ICLOTHING)
-			var/obj/item/clothing/under/U = O
-			primary_color		= human_clothing_icon.GetPixel(15, 17)
-			secondary_color		= human_clothing_icon.GetPixel(15, 10)
-			tertiary_color	= human_clothing_icon.GetPixel(10, 19)
-
-			primary_state = "shirt"
-			secondary_state = U.fitted == FEMALE_UNIFORM_TOP ? "skirt" : "pants" //making a large assumption here that all skirts are FEMALE_UNIFORM_TOP
-			tertiary_state = "sleeves"
-
-	if(primary_state && primary_color)
-		var/icon/primary_icon = icon(species, primary_state)
-		primary_icon.Blend(primary_color, ICON_MULTIPLY)
-		species_icon.Blend(primary_icon, ICON_OVERLAY)
-	if(secondary_state && primary_color)
-		var/icon/secondary_icon = icon(species, secondary_state)
-		secondary_icon.Blend(secondary_color, ICON_MULTIPLY)
-		species_icon.Blend(secondary_icon, ICON_OVERLAY)
-	if(tertiary_state && primary_color)
-		var/icon/tertiary_icon = icon(species, tertiary_state)
-		tertiary_icon.Blend(tertiary_color, ICON_MULTIPLY)
-		species_icon.Blend(tertiary_icon, ICON_OVERLAY)
+	for(var/icon_state_name in O.simple_states)
+		var/icon/result_icon = icon(species, icon_state_name)
+		var/color
+		if(islist(O.simple_states[icon_state_name]))
+			color = human_clothing_icon.GetPixel(O.simple_states[icon_state_name][1], O.simple_states[icon_state_name][2])
+		else
+			color = O.simple_states[icon_state_name]
+		if(!color)
+			return
+		result_icon.Blend(color, ICON_MULTIPLY)
+		species_icon.Blend(result_icon, ICON_OVERLAY)
 
 	GLOB.species_clothing_icons[species][index] = species_icon
 

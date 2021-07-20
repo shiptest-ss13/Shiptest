@@ -7,6 +7,7 @@
 	equip_delay_other = 40
 	cuttable = TRUE
 	clothamnt = 2
+	simple_states = list("scarf" = list(15, 19))
 
 /obj/item/clothing/neck/worn_overlays(isinhands = FALSE)
 	. = list()
@@ -25,6 +26,7 @@
 	item_state = ""	//no inhands
 	w_class = WEIGHT_CLASS_SMALL
 	custom_price = 60
+	simple_states = list("tie" = list(16, 20))
 
 /obj/item/clothing/neck/tie/blue
 	name = "blue tie"
@@ -94,6 +96,11 @@
 	desc = "A stylish scarf. The perfect winter accessory for those with a keen fashion sense, and those who just can't handle a cold breeze on their necks."
 	dog_fashion = /datum/dog_fashion/head
 	custom_price = 60
+
+/obj/item/clothing/neck/scarf/Initialize()
+	. = ..()
+	if(color)
+		simple_states["scarf"] = color
 
 /obj/item/clothing/neck/scarf/black
 	name = "black scarf"

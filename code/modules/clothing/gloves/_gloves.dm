@@ -12,6 +12,7 @@
 	equip_delay_other = 40
 	cuttable = TRUE
 	clothamnt = 2
+	simple_states = list("gloves" = list(10, 13))
 
 /obj/item/clothing/gloves/wash(clean_types)
 	. = ..()
