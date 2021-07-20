@@ -235,7 +235,7 @@
 	config_entry_value = "https://shiptest.ga/wiki/"
 
 /datum/config_entry/string/forumurl
-	config_entry_value = "https://discord.gg/XKBktpjAbh"
+	config_entry_value = "https://discord.gg/Zuv47eNuhE"
 
 /datum/config_entry/string/rulesurl
 	config_entry_value = "https://shiptest.ga/wiki/Rules"
@@ -244,7 +244,7 @@
 	config_entry_value = "https://github.com/shiptest-ss13/Shiptest"
 
 /datum/config_entry/string/discordurl
-	config_entry_value = "https://discord.gg/XKBktpjAbh"
+	config_entry_value = "https://discord.gg/Zuv47eNuhE"
 
 /datum/config_entry/string/centcom_ban_db	// URL for the CentCom Galactic Ban DB API
 
