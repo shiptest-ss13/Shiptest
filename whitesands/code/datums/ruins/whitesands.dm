@@ -96,6 +96,13 @@
 	allow_duplicates = FALSE
 
 
+/datum/map_template/ruin/whitesands/assaultpodcrash
+	name = "Crashed Syndicate Assault Drop Pod"
+	id = "ws-assaultpodcrash"
+	description = "The fauna of desert planets can be deadly even to equipped Syndicate Operatives."
+	suffix = "whitesands_surface_assaultpodcrash.dmm"
+	allow_duplicates = FALSE
+
 //////////OUTSIDE SETTLEMENTS/RUINS//////////
 /datum/map_template/ruin/camp/whitesands/survivors
 	name = "Survivor Camp"
@@ -139,7 +146,7 @@
 	placement_weight = 0.5
 	suffix = "whitesands_surface_camp_farm.dmm"
 	allow_duplicates = FALSE
-	
+
 /datum/map_template/ruin/camp/whitesands/survivors/drugstore
 	name = "Abandoned Store"
 	id = "ws-drugstore"
@@ -148,7 +155,7 @@
 	placement_weight = 0.5
 	suffix = "whitesands_surface_camp_drugstore.dmm"
 	allow_duplicates = FALSE
-	
+
 /datum/map_template/ruin/camp/whitesands/survivors/saloon
 	name = "Abandoned Saloon"
 	id = "ws-saloon"
