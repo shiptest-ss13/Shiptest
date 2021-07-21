@@ -64,3 +64,14 @@
 	desc = "An armored coat worn for special occasions. This one is still dyed in original TerraGov green."
 	icon_state = "coat_terragov"
 	item_state = "coat_terragov"
+
+/obj/item/clothing/suit/toggle/solgov
+	name = "\improper 2nd Battlegroup jacket"
+	desc = "An armored jacket worn by the Gorlex Marauders 2nd Battlegroup."
+	body_parts_covered = CHEST|GROIN|ARMS|HANDS
+	icon_state = "aclfjacket"
+	item_state = "aclfjacket"
+	icon = 'whitesands/icons/obj/clothing/suits.dmi'
+	mob_overlay_icon = 'whitesands/icons/mob/clothing/suits.dmi'
+	blood_overlay_type = "coat"
+	armor = list("melee" = 35, "bullet" = 30, "laser" = 30, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
