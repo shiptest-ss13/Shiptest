@@ -128,8 +128,7 @@
 	initial_gas_mix = AIRLESS_ATMOS
 
 
-/turf/open/floor/plasteel/stairs
-	/turf/open/floor/plasteel/stairs //considering removal
+/turf/open/floor/plasteel/stairs //considering removal
 	icon = 'icons/turf/floors.dmi'
 	tiled_dirt = FALSE
 /turf/open/floor/plasteel/stairs/left

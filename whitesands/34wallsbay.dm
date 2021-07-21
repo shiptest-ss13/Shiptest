@@ -125,7 +125,7 @@
 	smoothing_flags = SMOOTH_BITMASK
 	smoothing_groups = list(SMOOTH_GROUP_WINDOW_FULLTILE)
 	canSmoothWith = list(SMOOTH_GROUP_WINDOW_FULLTILE, SMOOTH_GROUP_WALLS, SMOOTH_GROUP_AIRLOCK)
-	layer = 4
+//	layer = 4
 
 
 
@@ -446,3 +446,25 @@ obj/machinery/door/poddoor/Initialize()
 /obj/machinery/door/airlock/security/glass
 	opacity = 0
 	glass = TRUE
+
+/obj/effect/turf_decal/solgov //Credit to baystation for these sprites!
+	alpha = 230
+	icon = 'whitesands/icons/obj/solgov_floor.dmi'
+	icon_state = "center"
+
+/obj/structure/sign/solgov_seal
+	name = "Seal of the solarian government"
+	desc = "A seal emblazened with a gold trim depicting the star, sol."
+	icon = 'whitesands/icons/obj/solgov_logos.dmi'
+	icon_state = "solgovseal"
+	pixel_y = 27
+
+/obj/structure/sign/solgov_flag
+	name = "solgov banner"
+	desc = "A large flag displaying the logo of solgov, the local government of the sol system."
+	icon = 'whitesands/icons/obj/solgov_logos.dmi'
+	icon_state = "solgovflag-left"
+	pixel_y = 26
+
+/obj/structure/sign/solgov_flag/right
+	icon_state = "solgovflag-right"
