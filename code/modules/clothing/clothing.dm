@@ -32,7 +32,8 @@
 	var/list/user_vars_remembered //Auto built by the above + dropped() + equipped()
 
 	/// Needs to follow this syntax: list([icon_state], list(position_x, position_y)) where icon state is an icon state to overlay on the simple species recolours and the positions list is the position of the pixel that the overlay gets their colour from
-	var/list/simple_states
+	var/list/simple_states[3]
+	var/simple_icon_state
 
 	var/pocket_storage_component_path
 
@@ -299,24 +300,24 @@
 
 /proc/generate_species_clothing(obj/item/clothing/O, index, icon, species)
 	var/icon/human_clothing_icon	= icon(icon, index)
-	var/icon/species_icon = new('icons/mob/clothing/species/teshari.dmi', "empty")
 
-	if(!istype(O) || !O.simple_states)
-		GLOB.species_clothing_icons[species][index] = species_icon
+	if(!istype(O) || !O.simple_states || !O.simple_icon_state)
+		GLOB.species_clothing_icons[species][index] = human_clothing_icon
 		return
 
-	for(var/icon_state_name in O.simple_states)
-		var/icon/result_icon = icon(species, icon_state_name)
-		var/color
-		if(islist(O.simple_states[icon_state_name]))
-			color = human_clothing_icon.GetPixel(O.simple_states[icon_state_name][1], O.simple_states[icon_state_name][2])
-		else
-			color = O.simple_states[icon_state_name]
-		if(!color)
-			return
-		result_icon.Blend(color, ICON_MULTIPLY)
-		species_icon.Blend(result_icon, ICON_OVERLAY)
+	var/icon/species_icon 			= icon(species, O.simple_icon_state)
+	var/list/final_list = list()
+	for(var/i in 1 to 3)
+		if(length(O.simple_states) < i)
+			final_list += "#00000000"
+			continue
+		var/color = O.simple_states[i]
+		if(islist(color))
+			final_list += human_clothing_icon.GetPixel(color[1], color[2])
+		else if(istext(color))
+			final_list += color
 
+	species_icon.MapColors(final_list[1], final_list[2], final_list[3])
 	GLOB.species_clothing_icons[species][index] = species_icon
 
 /obj/item/clothing/under/verb/toggle()
