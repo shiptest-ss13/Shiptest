@@ -18,9 +18,9 @@
 /datum/crafting_recipe/portableseedextractor
 	name = "Portable seed extractor"
 	reqs = list(
-			/obj/item/storage/bag/plants,
-			/obj/item/plant_analyzer,
-			/obj/item/stock_parts/manipulator,
+			/obj/item/storage/bag/plants = 1,
+			/obj/item/plant_analyzer = 1,
+			/obj/item/stock_parts/manipulator = 1,
 			/obj/item/stack/cable_coil = 2)
 	result = /obj/item/storage/bag/plants/portaseeder //this will probably mean that you can craft portable seed extractors into themselves, sending the other materials into the void, but we still don't have a solution for recipes involving radios stealing your headset, so this is officially not my problem. "no, Tills-The-Soil, adding more analyzers and micro-manipulators to your portable seed extractor does not make it make more seeds. in fact it does exactly nothing."
 	time = 20
