@@ -23,7 +23,7 @@ After setting it up, optionally navigate your git commandline to the project fol
 
 We have a [list of guides on the wiki](https://wiki.white-sands.space/index.php/Guides#Development_and_Contribution_Guides) that will help you get started contributing to White Sands with Git and Dream Maker. For beginners, it is recommended you work on small projects like bugfixes at first. If you need help learning to program in BYOND, check out this [repository of resources](http://www.byond.com/developer/articles/resources).
 
-There is an open list of approachable issues for [your inspiration here](https://github.com/Whitesands13/Whitesands/issues?q=is%3Aopen+is%3Aissue+label%3A%22Good+First+Issue%22).e
+There is an open list of approachable issues for [your inspiration here](https://github.com/shiptest-ss13/Shiptestissues?q=is%3Aopen+is%3Aissue+label%3A%22Good+First+Issue%22).e
 
 You can of course, as always, ask for help on the discord channels, or the forums, We're just here to have fun and help out, so please don't expect professional support.
 
