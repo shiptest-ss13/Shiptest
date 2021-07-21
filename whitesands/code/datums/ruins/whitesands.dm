@@ -95,12 +95,18 @@
 	suffix = "whitesands_surface_youreinsane.dmm"
 	allow_duplicates = FALSE
 
-
 /datum/map_template/ruin/whitesands/assaultpodcrash
 	name = "Crashed Syndicate Assault Drop Pod"
 	id = "ws-assaultpodcrash"
 	description = "The fauna of desert planets can be deadly even to equipped Syndicate Operatives."
 	suffix = "whitesands_surface_assaultpodcrash.dmm"
+	allow_duplicates = FALSE
+
+/datum/map_template/ruin/whitesands/conveniencestore
+	name = "Conveniently Abandoned Convenience Store"
+	id = "ws-conveniencestore"
+	description = "Pretty convenient that they have a convenience store out here, huh?"
+	suffix = "whitesands_surface_conveniencestore.dmm"
 	allow_duplicates = FALSE
 
 //////////OUTSIDE SETTLEMENTS/RUINS//////////
