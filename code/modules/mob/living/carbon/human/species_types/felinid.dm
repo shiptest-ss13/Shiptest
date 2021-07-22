@@ -1,8 +1,7 @@
 //Subtype of human
 /datum/species/human/felinid
-	name = "Felinid"
+	name = "Abhuman"
 	id = "felinid"
-	say_mod = "meows"
 	limbs_id = "human"
 
 	mutant_bodyparts = list("ears", "tail_human")
@@ -13,7 +12,7 @@
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_PRIDE | MIRROR_MAGIC | RACE_SWAP | ERT_SPAWN | SLIME_EXTRACT
 	var/original_felinid = TRUE //set to false for felinids created by mass-purrbation
 	ass_image = 'icons/ass/asscat.png'
-	loreblurb = "Humans with genetic modifications spliced from the domestic cat. These are by far the most common human genemod. There's a lot of rumors about potential issues in the culture or psychology of felinids, but the only proven differences between felinids and unmodified humans are physically apparent, such as the more iconic ears and tails, or minor alterations such as fangs or slit-eyes."
+	loreblurb = "Abhumans is a general term for any human with any sort of significant genetic modification, and as such, they can vary a decent amount."
 
 /datum/species/human/felinid/qualifies_for_rank(rank, list/features)
 	return TRUE
