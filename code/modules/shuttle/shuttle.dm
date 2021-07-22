@@ -11,11 +11,6 @@
 
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
 	anchored = TRUE
-	/// The identifier of the port or ship.
-	/// This will be used in numerous other places like the console,
-	/// stationary ports and whatnot to tell them your ship's mobile
-	/// port can be used in these places, or the docking port is compatible, etc.
-	var/id
 
 	///Common standard is for this to point -away- from the dockingport door, ie towards the ship
 	dir = NORTH
@@ -142,11 +137,6 @@
 /obj/docking_port/proc/get_docked()
 	return locate(/obj/docking_port/stationary) in loc
 
-/obj/docking_port/proc/getDockedId()
-	var/obj/docking_port/P = get_docked()
-	if(P)
-		return P.id
-
 /obj/docking_port/proc/is_in_shuttle_bounds(atom/A)
 	var/turf/T = get_turf(A)
 	if(T?.z != z)
@@ -173,8 +163,6 @@
 /obj/docking_port/stationary/Initialize(mapload)
 	. = ..()
 	SSshuttle.stationary += src
-	if(!id)
-		id = "[SSshuttle.stationary.len]"
 	if(name == "dock")
 		name = "dock[SSshuttle.stationary.len]"
 	if(!area_type)
@@ -311,13 +299,9 @@
 		remove_ripples()
 	. = ..()
 
-/obj/docking_port/mobile/Initialize(mapload, _id)
+/obj/docking_port/mobile/Initialize(mapload)
 	. = ..()
 
-	if(_id)
-		id = _id
-	if(!id)
-		id = "[SSshuttle.mobile.len]"
 	if(name == "shuttle")
 		name = "shuttle[SSshuttle.mobile.len]"
 

@@ -74,7 +74,7 @@
 	var/datum/bank_account/D = SSeconomy.get_dep_account(ACCOUNT_CAR)
 	if(D)
 		data["points"] = D.account_balance
-	data["away"] = SSshuttle.supply.getDockedId() == "supply_away"
+	data["away"] = SSshuttle.supply.get_docked() == SSshuttle.supply_away_port
 	data["self_paid"] = self_paid
 	data["docked"] = SSshuttle.supply.mode == SHUTTLE_IDLE
 	var/message = "Remember to stamp and send back the supply manifests."
@@ -140,15 +140,15 @@
 			if(SSshuttle.supplyBlocked)
 				say(blockade_warning)
 				return
-			if(SSshuttle.supply.getDockedId() == "supply_home")
+			if(SSshuttle.supply.get_docked() == SSshuttle.supply_home_port)
 				SSshuttle.supply.export_categories = get_export_categories()
-				SSshuttle.moveShuttle(SSshuttle.supply, SSshuttle.getDock("supply_away"), TRUE)
+				SSshuttle.moveShuttle(SSshuttle.supply, SSshuttle.supply_away_port, TRUE)
 				say("The supply shuttle is departing.")
 				investigate_log("[key_name(usr)] sent the supply shuttle away.", INVESTIGATE_CARGO)
 			else
 				investigate_log("[key_name(usr)] called the supply shuttle.", INVESTIGATE_CARGO)
 				say("The supply shuttle has been called and will arrive in [SSshuttle.supply.timeLeft(600)] minutes.")
-				SSshuttle.moveShuttle(SSshuttle.supply, SSshuttle.getDock("supply_home"), TRUE)
+				SSshuttle.moveShuttle(SSshuttle.supply, SSshuttle.supply_home_port, TRUE)
 			. = TRUE
 		if("add")
 			var/id = text2path(params["id"])

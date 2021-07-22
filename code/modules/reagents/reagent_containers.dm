@@ -15,7 +15,7 @@
 	var/list/fill_icon_thresholds = null
 	var/fill_icon_state = null // Optional custom name for reagent fill icon_state prefix
 
-	/// To enable caps, set can_have_cap to TRUE and define a . Do not change at runtime.
+	/// To enable caps, set can_have_cap to TRUE and define a cap_icon_state. Do not change at runtime.
 	var/can_have_cap = FALSE
 	VAR_PROTECTED/cap_icon_state = null
 	/// Whether the container has a cap on. Do not set directly at runtime; use set_cap_status().

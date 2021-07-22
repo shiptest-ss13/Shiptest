@@ -171,7 +171,6 @@ export const ShuttleManipulatorTemplates = (props, context) => {
 export const ShuttleManipulatorModification = (props, context) => {
   const { act, data } = useBackend(context);
   const selected = data.selected || {};
-  const existingShuttle = data.existing_shuttle || {};
   return (
     <Section>
       {selected ? (
@@ -194,35 +193,6 @@ export const ShuttleManipulatorModification = (props, context) => {
               </LabeledList>
             )}
           </Section>
-          {existingShuttle ? (
-            <Section
-              level={2}
-              title={'Existing Shuttle: ' + existingShuttle.name}>
-              <LabeledList>
-                <LabeledList.Item
-                  label="Status"
-                  buttons={(
-                    <Button
-                      content="Jump To"
-                      onClick={() => act('jump_to', {
-                        type: 'mobile',
-                        id: existingShuttle.id,
-                      })} />
-                  )}>
-                  {existingShuttle.status}
-                  {!!existingShuttle.timer && (
-                    <>
-                      ({existingShuttle.timeleft})
-                    </>
-                  )}
-                </LabeledList.Item>
-              </LabeledList>
-            </Section>
-          ) : (
-            <Section
-              level={2}
-              title="Existing Shuttle: None" />
-          )}
           <Section
             level={2}
             title="Status">

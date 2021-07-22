@@ -264,7 +264,6 @@
 
 /obj/docking_port/mobile/emergency
 	name = "emergency shuttle"
-	id = "emergency"
 
 	dwidth = 9
 	width = 22
@@ -402,9 +401,9 @@
 	if(!ripples.len && (time_left <= SHUTTLE_RIPPLE_TIME) && ((mode == SHUTTLE_CALL) || (mode == SHUTTLE_ESCAPE)))
 		var/destination
 		if(mode == SHUTTLE_CALL)
-			destination = SSshuttle.getDock("emergency_home")
+			destination = SSshuttle.emergency_home_port
 		else if(mode == SHUTTLE_ESCAPE)
-			destination = SSshuttle.getDock("emergency_away")
+			destination = SSshuttle.emergency_away_port
 		create_ripples(destination)
 
 	switch(mode)
@@ -415,7 +414,7 @@
 		if(SHUTTLE_CALL)
 			if(time_left <= 0)
 				//move emergency shuttle to station
-				if(initiate_docking(SSshuttle.getDock("emergency_home")) != DOCKING_SUCCESS)
+				if(initiate_docking(SSshuttle.emergency_home_port) != DOCKING_SUCCESS)
 					setTimer(20)
 					return
 				mode = SHUTTLE_DOCKED
@@ -504,14 +503,13 @@
 
 				// now move the actual emergency shuttle to centcom
 				// unless the shuttle is "hijacked"
-				var/destination_dock = "emergency_away"
 				if(is_hijacked() && elimination_hijack())
-					destination_dock = "emergency_syndicate"
+					//destination_dock = "emergency_syndicate"
 					minor_announce("Corruption detected in \
 						shuttle navigation protocols. Please contact your \
 						supervisor.", "SYSTEM ERROR:", alert=TRUE)
 
-				initiate_docking(SSshuttle.getDock(destination_dock))
+				initiate_docking(SSshuttle.emergency_away_port)
 				mode = SHUTTLE_ENDGAME
 				timer = 0
 
@@ -593,7 +591,6 @@
 
 /obj/docking_port/mobile/emergency/backup
 	name = "backup shuttle"
-	id = "backup"
 	dwidth = 2
 	width = 8
 	height = 8
@@ -608,10 +605,6 @@
 	. = ..()
 	SSshuttle.emergency = current_emergency
 	SSshuttle.backup_shuttle = src
-
-/obj/docking_port/mobile/emergency/shuttle_build/register()
-	. = ..()
-	initiate_docking(SSshuttle.getDock("emergency_home"))
 
 #undef TIME_LEFT
 #undef ENGINES_START_TIME

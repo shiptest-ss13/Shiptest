@@ -14,19 +14,10 @@
 /area/shuttle/hunter)
 "ac" = (
 /obj/structure/fans/tiny,
-/obj/docking_port/stationary{
-	dir = 4;
-	dwidth = 3;
-	height = 12;
-	id = "huntership_home";
-	name = "Deep Space";
-	width = 7
-	},
 /obj/docking_port/mobile{
 	dir = 4;
 	dwidth = 3;
 	height = 12;
-	id = "huntership";
 	name = "hunter shuttle";
 	rechargeTime = 1800;
 	width = 7
