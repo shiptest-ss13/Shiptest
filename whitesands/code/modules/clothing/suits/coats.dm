@@ -65,7 +65,7 @@
 	icon_state = "coat_terragov"
 	item_state = "coat_terragov"
 
-/obj/item/clothing/suit/toggle/solgov
+/obj/item/clothing/suit/aclf
 	name = "\improper 2nd Battlegroup jacket"
 	desc = "An armored jacket worn by the Gorlex Marauders 2nd Battlegroup."
 	body_parts_covered = CHEST|GROIN|ARMS|HANDS
