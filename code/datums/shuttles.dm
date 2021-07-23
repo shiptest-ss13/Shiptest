@@ -20,7 +20,6 @@
 	return TRUE
 
 /datum/map_template/shuttle/New()
-//	shuttle_id = "[port_id]_[suffix]"
 	mappath = "_maps/shuttles/[category]/[file_name].dmm"
 	. = ..()
 
