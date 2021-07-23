@@ -255,11 +255,12 @@
 	always_place = TRUE
 	allow_duplicates = FALSE
 	
-	/datum/map_template/ruin/lavaland/boss/bubblegum
+/datum/map_template/ruin/lavaland/boss/bubblegum
 	name = "Bubblegum Ritual"
 	id = "bubblegum-ritual"
 	description = "A giant hulking flesh monster cartoonishly named bubblegum has recently awoken here."
 	suffix = "bubblegum_ruin.dmm"
+
 /datum/map_template/ruin/lavaland/boss/drake
 	name = "Dragon Cave"
 	id = "dragon-cave"
