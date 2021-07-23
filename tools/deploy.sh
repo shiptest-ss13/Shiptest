@@ -33,12 +33,5 @@ cp -r strings/* $1/strings/
 #find $1/_maps -name "*.dm" -type f -delete
 
 #dlls on windows
-<<<<<<< HEAD
-if [ "$(uname -o)" = "Msys" ]; then
-	cp ./*.dll $1/
-fi
-cp *byond-extools.* $1/ || true
-=======
 cp rust_g* $1/ || true
 cp auxtools/*auxmos.* $1/auxtools/ || true
->>>>>>> 6b5d452b2ff (The Great Auxtools Switch (#3767))
