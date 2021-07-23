@@ -23,5 +23,5 @@ Download a pre-compiled nightly at https://tgstation13.download/nightlies/ (same
 Use our docker image that tracks the master branch (See commits for build status. Again, same caveats as option 2)
 
 ```
-docker run -d -p <your port>:1337 -v /path/to/your/config:/tgstation/config -v /path/to/your/data:/tgstation/data whitesands13/whitesands <dream daemon options i.e. -public or -params>
+docker run -d -p <your port>:1337 -v /path/to/your/config:/tgstation/config -v /path/to/your/data:/tgstation/data shiptestss13/shiptest <dream daemon options i.e. -public or -params>
 ```

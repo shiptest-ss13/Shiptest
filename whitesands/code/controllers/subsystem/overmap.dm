@@ -5,6 +5,8 @@ SUBSYSTEM_DEF(overmap)
 	flags = SS_KEEP_TIMING|SS_NO_TICK_CHECK
 	runlevels = RUNLEVEL_SETUP | RUNLEVEL_GAME
 
+	//The type of star this system will have
+	var/startype
 	///Defines which generator to use for the overmap
 	var/generator_type = OVERMAP_GENERATOR_RANDOM
 
@@ -40,7 +42,22 @@ SUBSYSTEM_DEF(overmap)
 		generator_type = OVERMAP_GENERATOR_RANDOM
 
 	if (generator_type == OVERMAP_GENERATOR_SOLAR)
-		var/obj/structure/overmap/star/center = new(locate(size / 2, size / 2, 1))
+		var/obj/structure/overmap/star/center
+		startype = pick(SMALLSTAR,TWOSTAR,MEDSTAR,BIGSTAR)
+		if(startype == SMALLSTAR)
+			center = new(locate(size / 2, size / 2, 1))
+		if(startype == TWOSTAR)
+			var/obj/structure/overmap/star/big/binary/S
+			S = new(locate(size / 2, size / 2, 1))
+			center = S
+		if(startype == MEDSTAR)
+			var/obj/structure/overmap/star/medium/S
+			S = new(locate(size / 2, size / 2, 1))
+			center = S
+		if(startype == BIGSTAR)
+			var/obj/structure/overmap/star/big/S
+			S = new(locate(size / 2, size / 2, 1))
+			center = S
 		var/list/unsorted_turfs = get_areatype_turfs(/area/overmap)
 		// SSovermap.size - 2 = area of the overmap w/o borders
 		radius_tiles = list()
@@ -197,24 +214,29 @@ SUBSYSTEM_DEF(overmap)
 	var/list/ruin_list = SSmapping.space_ruins_templates
 	var/datum/map_generator/mapgen
 	var/area/target_area
+	var/turf/surface = /turf/open/space
 	if(planet_type)
 		switch(planet_type)
 			if(DYNAMIC_WORLD_LAVA)
 				ruin_list = SSmapping.lava_ruins_templates
 				mapgen = new /datum/map_generator/cave_generator/lavaland
 				target_area = /area/overmap_encounter/planetoid/lava
+				surface = /turf/open/floor/plating/asteroid/basalt/lava_land_surface
 			if(DYNAMIC_WORLD_ICE)
 				ruin_list = SSmapping.ice_ruins_templates
 				mapgen = new /datum/map_generator/cave_generator/icemoon/surface
 				target_area = /area/overmap_encounter/planetoid/ice
+				surface = /turf/open/floor/plating/asteroid/snow/icemoon
 			if(DYNAMIC_WORLD_SAND)
 				ruin_list = SSmapping.sand_ruins_templates
 				mapgen = new /datum/map_generator/cave_generator/whitesands
 				target_area = /area/overmap_encounter/planetoid/sand
+				surface = /turf/open/floor/plating/asteroid/whitesands
 			if(DYNAMIC_WORLD_JUNGLE)
 				ruin_list = SSmapping.jungle_ruins_templates
 				mapgen = new /datum/map_generator/jungle_generator
 				target_area = /area/overmap_encounter/planetoid/jungle
+				surface = /turf/open/floor/plating/dirt/jungle
 			if(DYNAMIC_WORLD_ASTEROID)
 				ruin_list = null
 				mapgen = new /datum/map_generator/cave_generator/asteroid
@@ -225,7 +247,7 @@ SUBSYSTEM_DEF(overmap)
 			ruin_type = new ruin_type
 
 	var/datum/turf_reservation/fixed/encounter_reservation = SSmapping.request_fixed_reservation()
-	encounter_reservation.fill_in(border_turf_type = /turf/closed/indestructible/blank, area_override = target_area)
+	encounter_reservation.fill_in(surface, /turf/closed/indestructible/blank, target_area)
 
 	if(ruin_type) // loaded in after the reservation so we can place inside the reservation
 		var/turf/ruin_turf = locate(rand(encounter_reservation.bottom_left_coords[1]+6,encounter_reservation.top_right_coords[1]-ruin_type.width-6),

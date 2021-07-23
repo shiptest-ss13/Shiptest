@@ -100,6 +100,18 @@
 "bV" = (
 /obj/machinery/door/airlock/external,
 /obj/structure/fans/tiny,
+/obj/docking_port/mobile{
+	can_move_docking_ports = 1;
+	dir = 2;
+	dwidth = 12;
+	height = 17;
+	launch_status = 0;
+	name = "mining ship";
+	port_direction = 8;
+	preferred_direction = 4;
+	undock_roundstart = 1;
+	width = 28
+	},
 /turf/open/floor/plating,
 /area/ship/cargo)
 "ci" = (
@@ -351,6 +363,7 @@
 /obj/effect/spawner/lootdrop/maintenance/four,
 /obj/item/circuitboard/machine/chem_dispenser/drinks,
 /obj/item/circuitboard/computer/arcade/orion_trail,
+/obj/item/kinetic_crusher,
 /turf/open/floor/plasteel,
 /area/ship/cargo)
 "jD" = (
@@ -694,6 +707,7 @@
 /area/ship/engineering)
 "qW" = (
 /obj/machinery/light,
+/obj/structure/ore_box,
 /turf/open/floor/plating,
 /area/ship/cargo)
 "qX" = (
@@ -766,6 +780,10 @@
 "tU" = (
 /obj/effect/turf_decal/bot,
 /turf/open/floor/plasteel,
+/area/ship/cargo)
+"tX" = (
+/obj/structure/ore_box,
+/turf/open/floor/plating,
 /area/ship/cargo)
 "uk" = (
 /obj/structure/cable/yellow,
@@ -1201,17 +1219,20 @@
 	pixel_x = 4;
 	pixel_y = 4
 	},
-/obj/item/pickaxe/emergency,
-/obj/item/pickaxe/emergency,
-/obj/item/pickaxe/emergency,
 /obj/item/gps/mining,
 /obj/item/gps/mining,
 /obj/item/gps/mining,
 /obj/item/clothing/glasses/meson/prescription,
 /obj/item/clothing/glasses/meson,
 /obj/item/clothing/glasses/meson,
+/obj/item/t_scanner/adv_mining_scanner/lesser,
+/obj/item/gun/energy/kinetic_accelerator,
+/obj/item/pickaxe/silver,
+/obj/item/pickaxe/silver,
+/obj/item/storage/bag/ore,
+/obj/item/storage/bag/ore,
 /turf/open/floor/plasteel/dark,
-/area/ship/hallway/central)
+/area/ship/crew)
 "Fz" = (
 /obj/structure/cable/yellow{
 	icon_state = "1-4"
@@ -1321,7 +1342,7 @@
 "GU" = (
 /obj/machinery/vending/snack/random,
 /turf/open/floor/plasteel/dark,
-/area/ship/hallway/central)
+/area/ship/crew)
 "Hs" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/crew)
@@ -1331,6 +1352,7 @@
 	desc = "A moth.";
 	name = "moth"
 	},
+/obj/effect/landmark/observer_start,
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew)
 "HR" = (
@@ -1783,6 +1805,13 @@
 /obj/effect/turf_decal/stripes/line,
 /turf/open/floor/plasteel,
 /area/ship/crew)
+"RU" = (
+/obj/structure/closet/crate/wooden,
+/obj/item/clothing/suit/hooded/explorer,
+/obj/item/clothing/suit/hooded/explorer,
+/obj/item/clothing/suit/hooded/explorer,
+/turf/open/floor/plating,
+/area/ship/cargo)
 "Sw" = (
 /obj/machinery/suit_storage_unit/mining/eva,
 /obj/effect/turf_decal/delivery,
@@ -1793,16 +1822,6 @@
 /area/ship/cargo)
 "SQ" = (
 /obj/machinery/door/airlock/external,
-/obj/docking_port/mobile{
-	can_move_docking_ports = 1;
-	dir = 4;
-	dwidth = 8;
-	height = 28;
-	name = "mining ship";
-	port_direction = 2;
-	undock_roundstart = 1;
-	width = 17
-	},
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
@@ -2403,7 +2422,7 @@ zx
 pi
 FP
 FP
-FP
+tX
 nR
 uV
 xn
@@ -2461,7 +2480,7 @@ DB
 FP
 FP
 kT
-FP
+RU
 DB
 GU
 ST

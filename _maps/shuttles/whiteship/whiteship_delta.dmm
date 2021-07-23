@@ -113,6 +113,9 @@
 /obj/machinery/cryopod/latejoin{
 	dir = 8
 	},
+/obj/machinery/computer/cryopod{
+	pixel_x = 32
+	},
 /turf/open/floor/wood,
 /area/ship/crew)
 "an" = (
@@ -187,17 +190,12 @@
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
-/obj/machinery/power/apc{
-	dir = 8;
-	name = "Frigate Bar APC";
-	pixel_x = -24;
-	req_access = null
-	},
 /obj/structure/spider/stickyweb,
 /obj/effect/turf_decal/tile/bar,
 /obj/effect/turf_decal/tile/bar{
 	dir = 1
 	},
+/obj/machinery/power/apc/auto_name/west,
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
 "au" = (
@@ -529,18 +527,13 @@
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
-/obj/machinery/power/apc{
-	dir = 1;
-	name = "Frigate Crew Quarters APC";
-	pixel_y = 24;
-	req_access = null
-	},
 /obj/effect/turf_decal/tile/neutral{
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden{
 	dir = 1
 	},
+/obj/machinery/power/apc/auto_name/north,
 /turf/open/floor/plasteel,
 /area/ship/crew)
 "aV" = (
@@ -1265,14 +1258,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
-"ca" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/spider/stickyweb,
-/obj/effect/turf_decal/tile/blue{
-	dir = 8
-	},
-/turf/open/floor/plasteel,
-/area/ship/hallway/central)
 "cb" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/cable{
@@ -1316,18 +1301,13 @@
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
-/obj/machinery/power/apc{
-	dir = 8;
-	name = "Frigate Bridge APC";
-	pixel_x = -24;
-	req_access = null
-	},
 /obj/effect/turf_decal/tile/blue{
 	dir = 1
 	},
 /obj/effect/turf_decal/tile/blue{
 	dir = 8
 	},
+/obj/machinery/power/apc/auto_name/west,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "cf" = (
@@ -1388,6 +1368,10 @@
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden{
 	dir = 4
 	},
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/machinery/power/apc/auto_name/east,
 /turf/open/floor/plasteel,
 /area/ship/hallway/central)
 "ck" = (
@@ -1417,13 +1401,8 @@
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
-/obj/machinery/power/apc{
-	dir = 4;
-	name = "Frigate Engineering APC";
-	pixel_x = 24;
-	req_access = null
-	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/obj/machinery/power/apc/auto_name/east,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "cm" = (
@@ -1457,7 +1436,6 @@
 /obj/effect/decal/remains/human{
 	desc = "They look like human remains, and have clearly been gnawed at."
 	},
-/obj/effect/decal/cleanable/blood/gibs/old,
 /obj/item/clothing/head/centhat{
 	desc = "There's a gouge through the top where something has clawed clean through it. Whoever was wearing it probably doesn't need a hat any more.";
 	name = "\improper damaged CentCom hat";
@@ -1566,6 +1544,7 @@
 /obj/effect/turf_decal/tile/blue{
 	dir = 4
 	},
+/obj/item/areaeditor/shuttle,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "cv" = (
@@ -1781,7 +1760,6 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/structure/spider/stickyweb,
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden{
 	dir = 8
 	},
@@ -1898,6 +1876,11 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/spider/stickyweb,
+/obj/structure/closet/crate,
+/obj/item/pickaxe/emergency,
+/obj/item/pickaxe/emergency,
+/obj/item/mining_scanner,
+/obj/item/circuitboard/machine/ore_redemption,
 /turf/open/floor/plasteel,
 /area/ship/cargo)
 "cY" = (
@@ -2380,12 +2363,7 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/cable,
-/obj/machinery/power/apc{
-	dir = 8;
-	name = "Frigate Cargo APC";
-	pixel_x = -24;
-	req_access = null
-	},
+/obj/machinery/power/apc/auto_name/west,
 /turf/open/floor/plasteel,
 /area/ship/cargo)
 "dK" = (
@@ -2472,12 +2450,8 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/turf_decal/bot,
 /obj/structure/cable,
-/obj/machinery/power/apc{
-	name = "Frigate Medbay APC";
-	pixel_y = -24;
-	req_access = null
-	},
 /obj/structure/spider/stickyweb,
+/obj/machinery/power/apc/auto_name/south,
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "dR" = (
@@ -2553,6 +2527,7 @@
 /obj/effect/turf_decal/tile/neutral{
 	dir = 8
 	},
+/obj/machinery/autolathe,
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
 "dX" = (
@@ -3018,7 +2993,7 @@ oo
 aO
 bF
 bF
-ca
+bF
 bM
 cq
 cq

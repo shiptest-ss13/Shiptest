@@ -42,6 +42,14 @@
 	file_name = "engi_moth"
 	name = "Engi"
 
+/datum/map_template/shuttle/skipper
+	port_id = "ntsv"
+	suffix = "skipper"
+
+/datum/map_template/shuttle/radio
+	port_id = "radio"
+	suffix = "funny"
+
 //Ruins
 /datum/map_template/shuttle/ruin/solgov_exploration_pod
 	file_name = "ruin_solgov_exploration_pod"

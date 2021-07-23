@@ -27,12 +27,12 @@
 
 /obj/structure/overmap/dynamic/ship_act(mob/user, obj/structure/overmap/ship/simulated/acting)
 	var/prev_state = acting.state
-	acting.state = OVERMAP_SHIP_DOCKING //This is so the controls are locked while loading the level to give both a sense of confirmation and to prevent people from moving the ship
+	acting.state = OVERMAP_SHIP_ACTING //This is so the controls are locked while loading the level to give both a sense of confirmation and to prevent people from moving the ship
 	. = load_level(acting.shuttle)
 	if(.)
 		acting.state = prev_state
 	else
-		var/dock_to_use
+		var/dock_to_use = null
 		if(!reserve_dock.get_docked())
 			dock_to_use = reserve_dock
 		else if(!reserve_dock_secondary.get_docked())
@@ -40,7 +40,7 @@
 
 		if(!dock_to_use)
 			acting.state = prev_state
-			return "Error finding available docking port!"
+			return "All potential docking locations occupied."
 		adjust_dock_to_shuttle(dock_to_use, acting.shuttle)
 		return acting.dock(src, dock_to_use) //If a value is returned from load_level(), say that, otherwise, commence docking
 

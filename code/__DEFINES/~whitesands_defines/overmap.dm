@@ -11,5 +11,6 @@
 //Possible ship states
 #define OVERMAP_SHIP_IDLE				"idle"
 #define OVERMAP_SHIP_FLYING				"flying"
+#define OVERMAP_SHIP_ACTING				"acting"
 #define OVERMAP_SHIP_DOCKING			"docking"
 #define OVERMAP_SHIP_UNDOCKING			"undocking"

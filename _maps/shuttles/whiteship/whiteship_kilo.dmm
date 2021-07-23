@@ -69,6 +69,13 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/blood/old,
+/mob/living/simple_animal/hostile/netherworld/migo{
+	environment_smash = 0;
+	faction = list("neutral");
+	melee_damage_lower = 5;
+	melee_damage_upper = 10;
+	name = "maurice"
+	},
 /turf/open/floor/mineral/titanium/yellow,
 /area/ship/cargo)
 "ay" = (
@@ -348,9 +355,6 @@
 /obj/effect/turf_decal/stripes/line,
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden,
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/netherworld/migo{
-	environment_smash = 0
-	},
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -417,7 +421,6 @@
 /obj/machinery/atmospherics/components/binary/valve{
 	dir = 8
 	},
-/obj/effect/decal/cleanable/blood/gibs/old,
 /obj/effect/decal/cleanable/blood/old,
 /obj/effect/turf_decal/stripes/line{
 	dir = 8
@@ -430,9 +433,6 @@
 "ca" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/oil,
-/mob/living/simple_animal/hostile/netherworld/blankbody{
-	environment_smash = 0
-	},
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -503,6 +503,7 @@
 	dir = 4;
 	pixel_x = -24
 	},
+/obj/item/circuitboard/machine/ore_redemption,
 /turf/open/floor/plating,
 /area/ship/cargo)
 "cl" = (
@@ -620,7 +621,6 @@
 /turf/open/floor/mineral/titanium/blue,
 /area/ship/bridge)
 "cV" = (
-/obj/structure/bed,
 /obj/effect/turf_decal/stripes/line,
 /obj/machinery/airalarm/all_access{
 	dir = 4;
@@ -630,7 +630,11 @@
 	dir = 1
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on,
-/obj/item/bedsheet/brown,
+/obj/machinery/cryopod/latejoin,
+/obj/machinery/computer/cryopod{
+	pixel_y = 32
+	},
+/obj/item/bedsheet/random,
 /turf/open/floor/wood,
 /area/ship/crew)
 "cW" = (
@@ -648,8 +652,8 @@
 	dir = 1
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on,
-/obj/item/bedsheet/brown,
 /obj/effect/decal/cleanable/greenglow,
+/obj/item/bedsheet/random,
 /turf/open/floor/wood,
 /area/ship/crew)
 "cY" = (
@@ -657,11 +661,7 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/blood/gibs/old,
 /obj/machinery/atmospherics/components/unary/vent_pump/on,
-/mob/living/simple_animal/hostile/netherworld/blankbody{
-	environment_smash = 0
-	},
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
@@ -733,11 +733,8 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 10
 	},
-/obj/machinery/power/apc{
-	name = "Salvage Ship Engineering APC";
-	pixel_y = -24
-	},
 /obj/structure/cable,
+/obj/machinery/power/apc/auto_name/south,
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "dh" = (
@@ -862,6 +859,17 @@
 	pixel_y = 2
 	},
 /obj/item/stack/rods/fifty,
+/obj/item/storage/toolbox/electrical{
+	pixel_x = -3;
+	pixel_y = 8
+	},
+/obj/item/stock_parts/cell/high{
+	charge = 100;
+	maxcharge = 15000;
+	pixel_x = 3;
+	pixel_y = -1
+	},
+/obj/item/stack/sheet/metal/fifty,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/cargo)
 "hS" = (
@@ -935,21 +943,10 @@
 /area/ship/cargo)
 "jx" = (
 /obj/effect/turf_decal/bot_white,
-/obj/structure/table,
-/obj/item/stack/sheet/metal/fifty,
-/obj/item/storage/toolbox/electrical{
-	pixel_x = -3;
-	pixel_y = 8
-	},
-/obj/item/stock_parts/cell/high{
-	charge = 100;
-	maxcharge = 15000;
-	pixel_x = 3;
-	pixel_y = -1
-	},
 /obj/machinery/status_display/evac{
 	pixel_y = 32
 	},
+/obj/machinery/autolathe,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/cargo)
 "jK" = (
@@ -1027,6 +1024,7 @@
 	dir = 1;
 	pixel_y = 26
 	},
+/obj/item/areaeditor/shuttle,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/bridge)
 "oj" = (
@@ -1143,11 +1141,6 @@
 /obj/effect/turf_decal/stripes/corner{
 	dir = 8
 	},
-/obj/machinery/power/apc{
-	dir = 8;
-	name = "Salvage Ship Cargo APC";
-	pixel_x = -24
-	},
 /obj/effect/decal/cleanable/blood/old,
 /obj/effect/decal/cleanable/cobweb,
 /obj/structure/cable{
@@ -1156,6 +1149,7 @@
 /obj/machinery/shower{
 	pixel_y = 18
 	},
+/obj/machinery/power/apc/auto_name/west,
 /turf/open/floor/mineral/titanium/yellow,
 /area/ship/cargo)
 "sD" = (
@@ -1311,21 +1305,14 @@
 /obj/effect/turf_decal/stripes/corner{
 	dir = 1
 	},
-/obj/machinery/power/apc{
-	dir = 1;
-	name = "NTMS-037 Crew Quarters APC";
-	pixel_y = 24
-	},
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden{
 	dir = 1
 	},
 /obj/effect/decal/cleanable/blood/old,
-/mob/living/simple_animal/hostile/netherworld/migo{
-	environment_smash = 0
-	},
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
+/obj/machinery/power/apc/auto_name/north,
 /turf/open/floor/plasteel/showroomfloor,
 /area/ship/crew)
 "xF" = (
@@ -1350,9 +1337,6 @@
 /obj/item/wrench,
 /obj/effect/decal/cleanable/blood/old,
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/netherworld{
-	environment_smash = 0
-	},
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
@@ -1566,7 +1550,6 @@
 /obj/effect/turf_decal/stripes/corner{
 	dir = 4
 	},
-/obj/effect/decal/cleanable/blood/gibs/old,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 5
 	},
@@ -1772,9 +1755,6 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 9
-	},
-/mob/living/simple_animal/hostile/netherworld{
-	environment_smash = 0
 	},
 /obj/structure/cable{
 	icon_state = "1-8"
@@ -2099,7 +2079,6 @@
 	dir = 6
 	},
 /obj/effect/decal/cleanable/blood/old,
-/obj/effect/decal/cleanable/blood/gibs/old,
 /obj/machinery/status_display/supply{
 	pixel_x = 32;
 	pixel_y = -32
@@ -2151,7 +2130,6 @@
 /turf/open/floor/plasteel/white,
 /area/ship/crew/canteen)
 "YL" = (
-/obj/effect/decal/cleanable/blood/gibs/old,
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden{
 	dir = 8
 	},
@@ -2206,20 +2184,11 @@
 /obj/machinery/microwave{
 	pixel_y = 5
 	},
-/obj/machinery/power/apc{
-	dir = 8;
-	name = "NTMS-037 Saloon APC";
-	pixel_x = -24
-	},
 /obj/structure/cable,
+/obj/machinery/power/apc/auto_name/west,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/crew/canteen)
 "ZA" = (
-/obj/machinery/power/apc{
-	dir = 1;
-	name = "NTMS-037 Bridge APC";
-	pixel_y = 24
-	},
 /obj/effect/turf_decal/stripes/line{
 	dir = 5
 	},
@@ -2227,6 +2196,7 @@
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
+/obj/machinery/power/apc/auto_name/north,
 /turf/open/floor/mineral/titanium/blue,
 /area/ship/bridge)
 "ZF" = (
@@ -2242,6 +2212,10 @@
 /obj/structure/table,
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
+"ZG" = (
+/obj/structure/falsewall/titanium,
+/turf/open/floor/plating,
+/area/ship/crew)
 
 (1,1,1) = {"
 aa
@@ -2537,7 +2511,7 @@ CP
 Va
 dh
 mz
-mz
+ZG
 mz
 mz
 aa
