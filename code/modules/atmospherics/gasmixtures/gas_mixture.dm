@@ -197,6 +197,7 @@ we use a hook instead
 	return 1
 
 /datum/gas_mixture/parse_gas_string(gas_string)
+	gas_string = SSair.preprocess_gas_string(gas_string)
 	var/list/gas = params2list(gas_string)
 	if(gas["TEMP"])
 		var/temp = text2num(gas["TEMP"])

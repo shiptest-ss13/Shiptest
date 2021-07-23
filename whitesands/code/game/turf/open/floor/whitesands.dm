@@ -12,13 +12,6 @@
 	light_power = 0.6
 	light_color = COLOR_VERY_LIGHT_GRAY
 
-/turf/open/floor/plating/asteroid/whitesands/Initialize()
-	..()
-	if (GLOB.ws_planet_atmos == null)
-		GLOB.ws_planet_atmos = new
-	air = GLOB.ws_planet_atmos
-	update_air_ref()
-
 /// Drops itemstack when dug and changes icon
 /turf/open/floor/plating/asteroid/getDug()
 	new digResult(src, 5)
