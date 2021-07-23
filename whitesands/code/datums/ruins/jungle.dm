@@ -42,9 +42,3 @@
 	id = "unabomber-cabin"
 	description = "The Industrial Revolution and its consequences have been a disaster for the human race."
 	suffix = "jungle_surface_unabomber_cabin.dmm"
-
-/datum/map_template/ruin/jungle/outpost
-	name = "Nanotrasen Core Mining Outpost"
-	id = "jungle-outpost"
-	description = "A quickly made, skeleton crewed outpost to harvest the deepcore materials of this planet, although the local wildlife does not take nicely to this rapid industrialization."
-	suffix = "jungle_outpost.dmm"
