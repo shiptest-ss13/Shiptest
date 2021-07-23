@@ -104,7 +104,7 @@
 		M.movement_force = movement_force.Copy()
 
 /datum/map_template/shuttle/shiptest
-	category = "shiptestable"
+	category = "shiptest"
 	can_be_bought = FALSE
 
 /datum/map_template/shuttle/emergency
