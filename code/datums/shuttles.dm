@@ -103,8 +103,8 @@
 	if(movement_force)
 		M.movement_force = movement_force.Copy()
 
-/datum/map_template/shuttle/standalone
-	category = "standalone"
+/datum/map_template/shuttle/shiptest
+	category = "shiptestable"
 	can_be_bought = FALSE
 
 /datum/map_template/shuttle/emergency
