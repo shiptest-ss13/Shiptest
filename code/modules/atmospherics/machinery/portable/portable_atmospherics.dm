@@ -16,7 +16,7 @@
 
 /obj/machinery/portable_atmospherics/New()
 	..()
-	SSair.atmos_machinery += src
+	SSair.atmos_air_machinery += src
 
 /obj/machinery/portable_atmospherics/Initialize()
 	. = ..()
@@ -24,8 +24,7 @@
 	air_contents.set_temperature(T20C)
 
 /obj/machinery/portable_atmospherics/Destroy()
-	SSair.atmos_machinery -= src
-
+	SSair.atmos_air_machinery -= src
 	disconnect()
 	qdel(air_contents)
 	air_contents = null

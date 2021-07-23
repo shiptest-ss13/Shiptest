@@ -28,9 +28,9 @@
 	SSweather.set_temperature_gradient(src)
 
 /datum/gas_mixture/immutable/whitesands_planet/proc/populate_default()
-	set_moles(/datum/gas/nitrogen, ws_moles_amount * N2STANDARD)
-	set_moles(/datum/gas/oxygen, ws_moles_amount * (O2STANDARD / 2))
-	set_moles(/datum/gas/carbon_dioxide, ws_moles_amount *  (O2STANDARD / 2))
+	set_moles(GAS_N2, ws_moles_amount * N2STANDARD)
+	set_moles(GAS_O2, ws_moles_amount * (O2STANDARD / 2))
+	set_moles(GAS_CO2, ws_moles_amount *  (O2STANDARD / 2))
 
 /datum/gas_mixture/immutable/whitesands_planet/populate()
 	var/list/ws_atmos_conf = CONFIG_GET(keyed_list/whitesands_atmos_mix)
@@ -68,6 +68,6 @@ GLOBAL_DATUM(ws_planet_atmos, /datum/gas_mixture/immutable/whitesands_planet)
 	var/datum/gas_mixture/immutable/whitesands_planet/gasmix = GLOB.ws_planet_atmos
 	var/list/gas_string_builder = list()
 	for(var/i in GLOB.ws_planet_atmos.get_gases())
-		gas_string_builder += "[GLOB.meta_gas_info[i][META_GAS_ID]]=[gasmix.get_moles(i)]"
+		gas_string_builder += "[GLOB.gas_data.ids[i]]=[gasmix.get_moles(i)]"
 	gas_string_builder += "TEMP=[gasmix.return_temperature()]"
 	gas_string = gas_string_builder.Join(";")
