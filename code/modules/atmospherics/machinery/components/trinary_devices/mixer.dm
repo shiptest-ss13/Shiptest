@@ -121,7 +121,7 @@
 		parent2.update = TRUE
 
 	var/datum/pipeline/parent3 = parents[3]
-	parent3.update = TRUE
+	parent3?.update = TRUE
 
 /obj/machinery/atmospherics/components/trinary/mixer/ui_interact(mob/user, datum/tgui/ui)
 	ui = SStgui.try_update_ui(user, src, ui)

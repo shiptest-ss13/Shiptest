@@ -165,7 +165,7 @@
 /obj/machinery/atmospherics/proc/returnPipenet()
 	return
 
-/obj/machinery/atmospherics/proc/returnPipenetAir()
+/obj/machinery/atmospherics/proc/returnPipenetAirs()
 	return
 
 /obj/machinery/atmospherics/proc/setPipenet()
