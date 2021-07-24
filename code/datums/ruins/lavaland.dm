@@ -254,11 +254,12 @@
 	suffix = "kinggoatboss.dmm"
 	always_place = TRUE
 	allow_duplicates = FALSE
+	always_spawn_with = list(/datum/map_template/ruin/space/kinggoatarena = PLACE_RESERVED)
 	
 /datum/map_template/ruin/lavaland/boss/bubblegum
 	name = "Bubblegum Ritual"
 	id = "bubblegum-ritual"
-	description = "A giant hulking flesh monster cartoonishly named bubblegum has recently awoken here."
+	description = "A giant hulking flesh monster, cartoonishly named 'Bubblegum', has recently awoken here."
 	suffix = "bubblegum_ruin.dmm"
 
 /datum/map_template/ruin/lavaland/boss/drake
@@ -272,4 +273,3 @@
 	id = "colossus-cross"
 	description = "The almighty one, here in this chunk of rock called lavaland."
 	suffix = "colossus_ruin.dmm"
-	always_spawn_with = list(/datum/map_template/ruin/space/kinggoatarena = PLACE_RESERVED)
