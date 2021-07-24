@@ -51,6 +51,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Setup cache
+        id: cache-byond-install
         uses: actions/cache@v2
         with:
           path: ~/BYOND
@@ -79,7 +80,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Setup cache
-        id: cache-byond
+        id: cache-byond-install
         uses: actions/cache@v2
         with:
           path: ~/BYOND
