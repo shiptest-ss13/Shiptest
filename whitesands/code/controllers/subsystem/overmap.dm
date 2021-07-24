@@ -277,8 +277,8 @@ SUBSYSTEM_DEF(overmap)
 	var/obj/docking_port/stationary/secondary_dock = new(secondary_docking_turf)
 	secondary_dock.dir = NORTH
 	secondary_dock.name = "\improper Uncharted Space"
-	secondary_dock.height = RESERVE_DOCK_MAX_SIZE_LONG
-	secondary_dock.width = RESERVE_DOCK_MAX_SIZE_SHORT
+	secondary_dock.height = RESERVE_DOCK_MAX_SIZE_SHORT
+	secondary_dock.width = RESERVE_DOCK_MAX_SIZE_LONG
 	secondary_dock.dheight = 0
 	secondary_dock.dwidth = 0
 
