@@ -119,7 +119,7 @@ export const ShuttleManipulatorTemplates = (props, context) => {
                 key={templateId}
                 selected={selectedTemplateId === templateId}
                 onClick={() => setSelectedTemplateId(templateId)}>
-                {template.port_id}
+                {template.category}
               </Tabs.Tab>
             ))(templateObject)}
           </Tabs>
@@ -127,20 +127,20 @@ export const ShuttleManipulatorTemplates = (props, context) => {
         <Flex.Item grow={1} basis={0}>
           {actualTemplates.map(actualTemplate => {
             const isSelected = (
-              actualTemplate.shuttle_id === selected.shuttle_id
+              actualTemplate.file_name === selected.file_name
             );
             // Whoever made the structure being sent is an asshole
             return (
               <Section
                 title={actualTemplate.name}
                 level={2}
-                key={actualTemplate.shuttle_id}
+                key={actualTemplate.file_name}
                 buttons={(
                   <Button
                     content={isSelected ? 'Selected' : 'Select'}
                     selected={isSelected}
                     onClick={() => act('select_template', {
-                      shuttle_id: actualTemplate.shuttle_id,
+                      file_name: actualTemplate.file_name,
                     })} />
                 )}>
                 {(!!actualTemplate.description
@@ -171,7 +171,6 @@ export const ShuttleManipulatorTemplates = (props, context) => {
 export const ShuttleManipulatorModification = (props, context) => {
   const { act, data } = useBackend(context);
   const selected = data.selected || {};
-  const existingShuttle = data.existing_shuttle || {};
   return (
     <Section>
       {selected ? (
@@ -194,48 +193,19 @@ export const ShuttleManipulatorModification = (props, context) => {
               </LabeledList>
             )}
           </Section>
-          {existingShuttle ? (
-            <Section
-              level={2}
-              title={'Existing Shuttle: ' + existingShuttle.name}>
-              <LabeledList>
-                <LabeledList.Item
-                  label="Status"
-                  buttons={(
-                    <Button
-                      content="Jump To"
-                      onClick={() => act('jump_to', {
-                        type: 'mobile',
-                        id: existingShuttle.id,
-                      })} />
-                  )}>
-                  {existingShuttle.status}
-                  {!!existingShuttle.timer && (
-                    <>
-                      ({existingShuttle.timeleft})
-                    </>
-                  )}
-                </LabeledList.Item>
-              </LabeledList>
-            </Section>
-          ) : (
-            <Section
-              level={2}
-              title="Existing Shuttle: None" />
-          )}
           <Section
             level={2}
             title="Status">
             <Button
               content="Preview"
               onClick={() => act('preview', {
-                shuttle_id: selected.shuttle_id,
+                file_name: selected.file_name,
               })} />
             <Button
               content="Load"
               color="bad"
               onClick={() => act('load', {
-                shuttle_id: selected.shuttle_id,
+                file_name: selected.file_name,
               })} />
           </Section>
         </>

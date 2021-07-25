@@ -73,21 +73,6 @@ SUBSYSTEM_DEF(mapping)
 	run_map_generation()
 
 #ifndef LOWMEMORYMODE
-	// Create space ruin levels
-	while (space_levels_so_far < config.space_ruin_levels)
-		++space_levels_so_far
-		add_new_zlevel("Empty Area [space_levels_so_far]", ZTRAITS_SPACE)
-		var/turf/T = locate(round(world.maxx / 2), round(world.maxy / 2), z_list.len)
-		var/obj/docking_port/stationary/z_port = new(T)
-		z_port.id = "whiteship_z[z_list.len]"
-	// and one level with no ruins
-	for (var/i in 1 to config.space_empty_levels)
-		++space_levels_so_far
-		empty_space = add_new_zlevel("Empty Area [space_levels_so_far]", list(ZTRAIT_LINKAGE = SELFLOOPING))
-		var/turf/T = locate(round(world.maxx / 2), round(world.maxy / 2), z_list.len)
-		var/obj/docking_port/stationary/z_port = new(T)
-		z_port.id = "whiteship_z[z_list.len]"
-
 	// Pick a random away mission.
 	if(CONFIG_GET(flag/roundstart_away))
 		createRandomZlevel()
@@ -355,15 +340,15 @@ SUBSYSTEM_DEF(mapping)
 
 	for(var/item in subtypesof(/datum/map_template/shuttle))
 		var/datum/map_template/shuttle/shuttle_type = item
-		if(!(initial(shuttle_type.suffix)))
+		if(!(initial(shuttle_type.file_name)))
 			continue
 
 		var/datum/map_template/shuttle/S = new shuttle_type()
 		if(unbuyable.Find(S.mappath))
 			S.can_be_bought = FALSE
 
-		shuttle_templates[S.shuttle_id] = S
-		map_templates[S.shuttle_id] = S
+		shuttle_templates[S.file_name] = S
+		map_templates[S.file_name] = S
 
 /datum/controller/subsystem/mapping/proc/preloadShelterTemplates()
 	for(var/item in subtypesof(/datum/map_template/shelter))

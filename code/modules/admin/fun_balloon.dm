@@ -85,24 +85,6 @@
 		M.forceMove(T)
 		to_chat(M, "<span class='notice'>Pop!</span>", confidential = TRUE)
 
-/obj/effect/station_crash
-	name = "station crash"
-	desc = "With no survivors!"
-	icon = 'icons/obj/items_and_weapons.dmi'
-	icon_state = "syndballoon"
-	anchored = TRUE
-
-/obj/effect/station_crash/Initialize()
-	..()
-	for(var/S in SSshuttle.stationary)
-		var/obj/docking_port/stationary/SM = S
-		if(SM.id == "emergency_home")
-			var/new_dir = turn(SM.dir, 180)
-			SM.forceMove(get_ranged_target_turf(SM, new_dir, rand(3,15)))
-			break
-	return INITIALIZE_HINT_QDEL
-
-
 //Arena
 
 /obj/effect/forcefield/arena_shuttle
