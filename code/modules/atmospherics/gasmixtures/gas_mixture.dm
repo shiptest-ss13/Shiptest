@@ -210,6 +210,11 @@ we use a hook instead
 		set_moles(id, text2num(gas[id]))
 	return 1
 
+/datum/gas_mixture/proc/set_analyzer_results(instability)
+	if(!analyzer_results)
+		analyzer_results = new
+	analyzer_results["fusion"] = instability
+
 ///Mathematical proofs:
 /**
 get_breath_partial_pressure(gas_pp) --> gas_pp/total_moles()*breath_pp = pp

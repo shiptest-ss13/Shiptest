@@ -159,9 +159,10 @@
 	desc = "Don't be a badmin."
 
 /obj/machinery/portable_atmospherics/canister/fusion_test/create_gas()
-	air_contents.set_moles(GAS_CO2, 500)
-	air_contents.set_moles(GAS_PLASMA, 500)
-	air_contents.set_moles(GAS_TRITIUM, 350)
+	air_contents.set_moles(GAS_CO2,300)
+	air_contents.set_moles(GAS_PLASMA,1000)
+	air_contents.set_moles(GAS_TRITIUM,100.61)
+	air_contents.set_moles(GAS_NITRYL,1)
 	air_contents.set_temperature(15000)
 
 /obj/machinery/portable_atmospherics/canister/proc/get_time_left()
