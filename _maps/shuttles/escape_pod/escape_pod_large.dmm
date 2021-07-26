@@ -1,0 +1,176 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"h" = (
+/obj/machinery/power/smes/shuttle/precharged{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/turf/open/floor/mineral/titanium/blue,
+/area/shuttle/pod_1)
+"m" = (
+/obj/structure/frame/computer{
+	anchored = 1
+	},
+/turf/open/floor/mineral/titanium/blue,
+/area/shuttle/pod_1)
+"r" = (
+/turf/open/floor/mineral/titanium/blue,
+/area/shuttle/pod_1)
+"u" = (
+/obj/structure/grille,
+/obj/structure/window/shuttle,
+/turf/open/floor/plating,
+/area/shuttle/pod_1)
+"v" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/mineral/titanium/blue,
+/area/shuttle/pod_1)
+"B" = (
+/turf/closed/wall/mineral/titanium,
+/area/shuttle/pod_1)
+"C" = (
+/obj/machinery/light{
+	dir = 1
+	},
+/obj/machinery/computer/helm,
+/turf/open/floor/mineral/titanium/blue,
+/area/shuttle/pod_1)
+"E" = (
+/obj/machinery/computer/shuttle,
+/turf/open/floor/mineral/titanium/blue,
+/area/shuttle/pod_1)
+"F" = (
+/obj/machinery/power/shuttle/engine/electric{
+	dir = 1
+	},
+/obj/structure/cable,
+/obj/structure/window/reinforced/spawner/east,
+/obj/structure/window/reinforced/spawner/north,
+/turf/open/floor/plating,
+/area/shuttle/pod_1)
+"H" = (
+/obj/structure/chair/comfy/shuttle{
+	dir = 8
+	},
+/obj/machinery/power/terminal,
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/turf/open/floor/mineral/titanium/blue,
+/area/shuttle/pod_1)
+"J" = (
+/obj/structure/chair/comfy/shuttle{
+	dir = 4
+	},
+/obj/machinery/status_display/evac{
+	pixel_x = -32;
+	pixel_y = 32
+	},
+/obj/item/storage/pod{
+	pixel_x = -24
+	},
+/turf/open/floor/mineral/titanium/blue,
+/area/shuttle/pod_1)
+"L" = (
+/obj/structure/chair/comfy/shuttle{
+	dir = 4
+	},
+/obj/machinery/power/terminal,
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/turf/open/floor/mineral/titanium/blue,
+/area/shuttle/pod_1)
+"M" = (
+/obj/structure/chair/comfy/shuttle{
+	dir = 8
+	},
+/obj/machinery/status_display/evac{
+	pixel_x = 32;
+	pixel_y = 32
+	},
+/obj/item/radio/intercom/wideband{
+	pixel_x = 28
+	},
+/turf/open/floor/mineral/titanium/blue,
+/area/shuttle/pod_1)
+"O" = (
+/obj/machinery/door/airlock/titanium{
+	name = "Shuttle Airlock"
+	},
+/obj/docking_port/mobile{
+	dwidth = 2;
+	height = 6;
+	port_direction = 2;
+	width = 5
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/mineral/titanium/blue,
+/area/shuttle/pod_1)
+"U" = (
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/turf/open/floor/mineral/titanium/blue,
+/area/shuttle/pod_1)
+"Y" = (
+/obj/machinery/power/shuttle/engine/electric{
+	dir = 1
+	},
+/obj/structure/cable,
+/obj/structure/window/reinforced/spawner/west,
+/obj/structure/window/reinforced/spawner/north,
+/turf/open/floor/plating,
+/area/shuttle/pod_1)
+"Z" = (
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/shuttle/pod_1)
+
+(1,1,1) = {"
+B
+B
+B
+u
+B
+Z
+"}
+(2,1,1) = {"
+B
+m
+J
+L
+h
+F
+"}
+(3,1,1) = {"
+u
+C
+r
+U
+v
+O
+"}
+(4,1,1) = {"
+B
+E
+M
+H
+h
+Y
+"}
+(5,1,1) = {"
+B
+B
+B
+u
+B
+Z
+"}

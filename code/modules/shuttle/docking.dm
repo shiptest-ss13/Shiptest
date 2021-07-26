@@ -55,19 +55,6 @@
 		remove_ripples()
 		return
 
-	/*******************************************Hiding turfs if necessary*******************************************/
-	// TODO: Move this somewhere sane
-	var/list/new_hidden_turfs
-	if(hidden)
-		new_hidden_turfs = list()
-		for(var/i in 1 to old_turfs.len)
-			CHECK_TICK
-			var/turf/oldT = old_turfs[i]
-			if(old_turfs[oldT] & MOVE_TURF)
-				new_hidden_turfs += new_turfs[i]
-		SSshuttle.update_hidden_docking_ports(null, new_hidden_turfs)
-	/***************************************************************************************************************/
-
 	if(!force)
 		if(!check_dock(new_dock))
 			remove_ripples()
@@ -86,12 +73,6 @@
 	cleanup_runway(new_dock, old_turfs, new_turfs, areas_to_move, moved_atoms, rotation, movement_direction, underlying_old_area)
 
 	CHECK_TICK
-
-	/*******************************************Unhiding turfs if necessary******************************************/
-	if(new_hidden_turfs)
-		SSshuttle.update_hidden_docking_ports(hidden_turfs, null)
-		hidden_turfs = new_hidden_turfs
-	/****************************************************************************************************************/
 
 	check_poddoors()
 	new_dock.last_dock_time = world.time

@@ -255,3 +255,21 @@
 	always_place = TRUE
 	allow_duplicates = FALSE
 	always_spawn_with = list(/datum/map_template/ruin/space/kinggoatarena = PLACE_RESERVED)
+	
+/datum/map_template/ruin/lavaland/boss/bubblegum
+	name = "Bubblegum Ritual"
+	id = "bubblegum-ritual"
+	description = "A giant hulking flesh monster, cartoonishly named 'Bubblegum', has recently awoken here."
+	suffix = "bubblegum_ruin.dmm"
+
+/datum/map_template/ruin/lavaland/boss/drake
+	name = "Dragon Cave"
+	id = "dragon-cave"
+	description = "A dragon has taken lodging in this here cave, storing its riches and valuables."
+	suffix = "drake_ruin.dmm"
+	
+/datum/map_template/ruin/lavaland/boss/colossus
+	name = "Colossus Cross"
+	id = "colossus-cross"
+	description = "The almighty one, here in this chunk of rock called lavaland."
+	suffix = "colossus_ruin.dmm"

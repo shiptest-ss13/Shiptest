@@ -267,15 +267,13 @@
 /// General-purpose shuttle status display.
 /obj/machinery/status_display/shuttle
 	name = "shuttle display"
-	var/shuttle_id
+	var/shuttle
 
 /obj/machinery/status_display/shuttle/process()
-	if(!shuttle_id || (machine_stat & NOPOWER))
+	if(!shuttle || (machine_stat & NOPOWER))
 		// No power, no processing.
 		remove_display()
 		return PROCESS_KILL
-
-	var/shuttle = SSshuttle.getShuttle(shuttle_id)
 
 	if(!shuttle)
 		// No shuttle, no processing.
@@ -286,8 +284,8 @@
 
 /obj/machinery/status_display/shuttle/examine(mob/user)
 	. = ..()
-	if(shuttle_id)
-		. += examine_shuttle(user, SSshuttle.getShuttle(shuttle_id))
+	if(shuttle)
+		. += examine_shuttle(user, shuttle)
 	else
 		. += "The display is blank."
 
@@ -296,12 +294,11 @@
 	if(!.)
 		return
 	switch(var_name)
-		if(NAMEOF(src, shuttle_id))
+		if(NAMEOF(src, shuttle))
 			update()
 
-/obj/machinery/status_display/shuttle/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock, idnum, override)
-	if (port && (shuttle_id == initial(shuttle_id) || override))
-		shuttle_id = port.id
+/obj/machinery/status_display/shuttle/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock)
+	shuttle = port
 	update()
 
 

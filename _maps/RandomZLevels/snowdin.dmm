@@ -10420,7 +10420,6 @@
 	dir = 4;
 	dwidth = 3;
 	height = 6;
-	id = "snowdin_excavation_top";
 	name = "snowdin excavation top";
 	roundstart_template = /datum/map_template/shuttle/snowdin/excavation;
 	width = 6
@@ -10462,7 +10461,6 @@
 	dir = 4;
 	dwidth = 3;
 	height = 6;
-	id = "snowdin_excavation_down";
 	name = "snowdin excavation down";
 	width = 6
 	},
@@ -10638,11 +10636,9 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 4
 	},
-/obj/machinery/computer/shuttle/snowdin/mining{
+/obj/machinery/computer/shuttle{
 	dir = 8;
-	name = "Excavation Elevator Console";
-	possible_destinations = "snowdin_excavation_top;snowdin_excavation_down";
-	shuttleId = "snowdin_excavation"
+	name = "Excavation Elevator Console"
 	},
 /obj/effect/turf_decal/tile/neutral,
 /obj/effect/turf_decal/tile/neutral{
@@ -10680,11 +10676,9 @@
 /obj/effect/turf_decal/stripes/white/line{
 	dir = 1
 	},
-/obj/machinery/computer/shuttle/snowdin/mining{
+/obj/machinery/computer/shuttle{
 	dir = 8;
-	name = "Excavation Elevator Console";
-	possible_destinations = "snowdin_excavation_top;snowdin_excavation_down";
-	shuttleId = "snowdin_excavation"
+	name = "Excavation Elevator Console"
 	},
 /turf/open/floor/plating/snowed,
 /area/awaymission/snowdin/cave)
@@ -15385,7 +15379,6 @@
 	dir = 4;
 	dwidth = 2;
 	height = 5;
-	id = "snowdin_mining_top";
 	name = "snowdin mining top";
 	roundstart_template = /datum/map_template/shuttle/snowdin/mining;
 	width = 5
@@ -15442,7 +15435,6 @@
 	dir = 4;
 	dwidth = 2;
 	height = 5;
-	id = "snowdin_mining_down";
 	name = "snowdin mining bottom";
 	width = 5
 	},
@@ -15604,7 +15596,7 @@
 	},
 /area/awaymission/snowdin/post/mining_main)
 "KO" = (
-/obj/machinery/computer/shuttle/snowdin/mining{
+/obj/machinery/computer/shuttle{
 	dir = 8
 	},
 /obj/effect/turf_decal/stripes/line{
@@ -15617,7 +15609,7 @@
 /turf/open/floor/plasteel,
 /area/awaymission/snowdin/post/mining_main)
 "KQ" = (
-/obj/machinery/computer/shuttle/snowdin/mining{
+/obj/machinery/computer/shuttle{
 	dir = 8
 	},
 /obj/effect/turf_decal/stripes/line{

@@ -1321,15 +1321,6 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	cost = 1
 	surplus = 20
 
-/datum/uplink_item/device_tools/assault_pod
-	name = "Assault Pod Targeting Device"
-	desc = "Use this to select the landing zone of your assault pod."
-	item = /obj/item/assault_pod
-	cost = 30
-	surplus = 0
-	include_modes = list(/datum/game_mode/nuclear, /datum/game_mode/nuclear/clown_ops)
-	restricted = TRUE
-
 /datum/uplink_item/device_tools/binary
 	name = "Binary Translator Key"
 	desc = "A key that, when inserted into a radio headset, allows you to listen to and talk with silicon-based lifeforms, \

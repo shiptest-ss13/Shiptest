@@ -12,7 +12,7 @@
 	///The event to run when the station gets hit by an event
 	var/datum/round_event_control/station_event
 
-/obj/structure/overmap/event/Initialize(mapload, _id)
+/obj/structure/overmap/event/Initialize(mapload)
 	. = ..()
 	LAZYADD(SSovermap.events, src)
 
@@ -52,7 +52,7 @@
 	var/max_damage = 15
 	var/min_damage = 5
 
-/obj/structure/overmap/event/meteor/Initialize(mapload, _id)
+/obj/structure/overmap/event/meteor/Initialize(mapload)
 	. = ..()
 	icon_state = "meteor[rand(1, 4)]"
 
@@ -95,7 +95,7 @@
 	station_event = /datum/round_event_control/ion_storm
 	var/strength = 3
 
-/obj/structure/overmap/event/emp/Initialize(mapload, _id)
+/obj/structure/overmap/event/emp/Initialize(mapload)
 	. = ..()
 	icon_state = "ion[rand(1, 4)]"
 
@@ -134,7 +134,7 @@
 	var/max_damage = 15
 	var/min_damage = 5
 
-/obj/structure/overmap/event/electric/Initialize(mapload, _id)
+/obj/structure/overmap/event/electric/Initialize(mapload)
 	. = ..()
 	icon_state = "electrical[rand(1, 4)]"
 
@@ -184,16 +184,16 @@
 	///Amount of times a ship can pass through before it collapses
 	var/stability
 
-/obj/structure/overmap/event/wormhole/Initialize(mapload, _id, _other_wormhole)
+/obj/structure/overmap/event/wormhole/Initialize(mapload, _other_wormhole)
 	. = ..()
 	stability = rand(1, 5)
 	if(_other_wormhole)
 		other_wormhole = _other_wormhole
 	if(!other_wormhole)
 		if(SSovermap.generator_type == OVERMAP_GENERATOR_SOLAR)
-			other_wormhole = new(SSovermap.get_unused_overmap_square_in_radius(), "[id]_exit", src)
+			other_wormhole = new(SSovermap.get_unused_overmap_square_in_radius(), src)
 		else
-			other_wormhole = new(SSovermap.get_unused_overmap_square(), "[id]_exit", src)
+			other_wormhole = new(SSovermap.get_unused_overmap_square(), src)
 
 /obj/structure/overmap/event/wormhole/affect_ship(obj/structure/overmap/ship/simulated/S)
 	if(!other_wormhole)
