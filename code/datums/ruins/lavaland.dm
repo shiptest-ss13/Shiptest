@@ -255,7 +255,15 @@
 	always_place = TRUE
 	allow_duplicates = FALSE
 	always_spawn_with = list(/datum/map_template/ruin/space/kinggoatarena = PLACE_RESERVED)
-	
+
+/datum/map_template/ruin/lavaland/comm_outpost
+	name = "Syndicate Comm Outpost"
+	id = "commoutpost"
+	description = "A forgotten outpost home to only a tragic tale."
+	suffix = "lavaland_surface_comm_outpost"
+	allow_duplicates = FALSE
+	cost = 5
+
 /datum/map_template/ruin/lavaland/boss/bubblegum
 	name = "Bubblegum Ritual"
 	id = "bubblegum-ritual"
