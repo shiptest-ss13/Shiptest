@@ -301,17 +301,6 @@
 		alert(src, "An administrator has disabled late join spawning.")
 		return FALSE
 
-	var/arrivals_docked = TRUE
-	if(SSshuttle.arrivals)
-		close_spawn_windows()	//In case we get held up
-		if(SSshuttle.arrivals.damaged && CONFIG_GET(flag/arrivals_shuttle_require_safe_latejoin))
-			src << alert("The arrivals shuttle is currently malfunctioning! You cannot join.")
-			return FALSE
-
-		if(CONFIG_GET(flag/arrivals_shuttle_require_undocked))
-			SSshuttle.arrivals.RequireUndocked(src)
-		arrivals_docked = SSshuttle.arrivals.mode != SHUTTLE_CALL
-
 	//Remove the player from the join queue if he was in one and reset the timer
 	SSticker.queued_players -= src
 	SSticker.queue_delay = 4
@@ -327,11 +316,6 @@
 
 	if(job && !job.override_latejoin_spawn(character))
 		SSjob.SendToLateJoin(character)
-		if(!arrivals_docked)
-			var/atom/movable/screen/splash/Spl = new(character.client, TRUE)
-			Spl.Fade(TRUE)
-			character.playsound_local(get_turf(character), 'sound/voice/ApproachingTG.ogg', 25)
-
 		character.update_parallax_teleport()
 
 	SSticker.minds += character.mind
@@ -342,10 +326,7 @@
 
 	if(humanc)	//These procs all expect humans
 		GLOB.data_core.manifest_inject(humanc)
-		if(SSshuttle.arrivals)
-			SSshuttle.arrivals.QueueAnnounce(humanc, rank)
-		else
-			AnnounceArrival(humanc, rank)
+		AnnounceArrival(humanc, rank)
 		AddEmploymentContract(humanc)
 		if(GLOB.highlander)
 			to_chat(humanc, "<span class='userdanger'><i>THERE CAN BE ONLY ONE!!!</i></span>")
