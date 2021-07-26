@@ -359,7 +359,7 @@
 /mob/dead/new_player/proc/LateChoices()
 	var/list/shuttle_choices = list("Purchase ship..." = "Purchase") //Dummy for purchase option
 
-	for(var/obj/structure/overmap/ship/simulated/S as anything in SSovermap.simulated_ships)
+	for(var/obj/structure/overmap/ship/simulated/S in SSovermap.overmap_objects)
 		if(length(S.shuttle.spawn_points) < 1)
 			continue
 		shuttle_choices[S.name + " ([S.shuttle.source_template.short_name ? S.shuttle.source_template.short_name : "Unknown-class"])"] = S //Try to get the class name
@@ -378,6 +378,7 @@
 			return
 		usr.client.inc_metabalance(-price, TRUE, "buying [M.name]")
 		close_spawn_windows()
+		to_chat(usr, "<span class='danger'>Your [M.name] is being prepared. Please be patient!</span>")
 		var/obj/docking_port/mobile/target = SSshuttle.action_load(M)
 		if(!AttemptLateSpawn(target.current_ship.job_slots[1], target.current_ship)) //Try to spawn as the first listed job in the job slots (usually captain)
 			new_player_panel()

@@ -243,8 +243,8 @@ SUBSYSTEM_DEF(mapping)
 		CHECK_EXISTS("map_path")
 		CHECK_EXISTS("map_id")
 		var/datum/map_template/shuttle/S = new(data["map_path"], data["map_name"], TRUE)
-		S.shuttle_id = data["map_id"]
-		S.port_id = "ship"
+		S.file_name = data["map_id"]
+		S.category = "shiptest"
 
 		if(istext(data["map_short_name"]))
 			S.short_name = data["map_short_name"]
@@ -253,8 +253,8 @@ SUBSYSTEM_DEF(mapping)
 		if(isnum(data["cost"]))
 			ship_purchase_list[S] = data["cost"]
 
-		shuttle_templates[S.shuttle_id] = S
-		map_templates[S.shuttle_id] = S
+		shuttle_templates[S.file_name] = S
+		map_templates[S.file_name] = S
 		if(isnum(data["roundstart"]) && data["roundstart"])
 			maplist[S.name] = S
 #undef CHECK_EXISTS

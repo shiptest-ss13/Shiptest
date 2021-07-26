@@ -21,8 +21,11 @@
 /datum/map_template/shuttle/proc/prerequisites_met()
 	return TRUE
 
-/datum/map_template/shuttle/New()
-	mappath = "_maps/shuttles/[category]/[file_name].dmm"
+/datum/map_template/shuttle/New(path, rename, cache)
+	if(path)
+		mappath = path
+	else
+		mappath = "_maps/shuttles/[category]/[file_name].dmm"
 	. = ..()
 
 /datum/map_template/shuttle/preload_size(path, cache)
