@@ -47,6 +47,11 @@
 	port_id = "radio"
 	suffix = "funny"
 
+/datum/map_template/shuttle/turtle
+	port_id = "solgov"
+	suffix = "turtle"
+	description = "A solgov crusier with a functioning telecomms unit installed."
+
 //Ruins
 /datum/map_template/shuttle/ruin/solgov_exploration_pod
 	suffix = "solgov_exploration_pod"
