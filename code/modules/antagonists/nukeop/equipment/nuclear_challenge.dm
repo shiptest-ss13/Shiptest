@@ -3,8 +3,6 @@
 #define CHALLENGE_MIN_PLAYERS 50
 #define CHALLENGE_SHUTTLE_DELAY 15000 // 25 minutes, so the ops have at least 5 minutes before the shuttle is callable.
 
-GLOBAL_LIST_EMPTY(jam_on_wardec)
-
 /obj/item/nuclear_challenge
 	name = "Declaration of War (Challenge Mode)"
 	icon = 'icons/obj/device.dmi'
@@ -53,13 +51,6 @@ GLOBAL_LIST_EMPTY(jam_on_wardec)
 	priority_announce(war_declaration, title = "Declaration of War", sound = 'sound/machines/alarm.ogg')
 
 	to_chat(user, "You've attracted the attention of powerful forces within the syndicate. A bonus bundle of telecrystals has been granted to your team. Great things await you if you complete the mission.")
-
-	for(var/V in GLOB.syndicate_shuttle_boards)
-		var/obj/item/circuitboard/computer/syndicate_shuttle/board = V
-		board.challenge = TRUE
-
-	for(var/obj/machinery/computer/camera_advanced/shuttle_docker/D in GLOB.jam_on_wardec)
-		D.jammed = TRUE
 
 	var/list/orphans = list()
 	var/list/uplinks = list()
@@ -112,11 +103,6 @@ GLOBAL_LIST_EMPTY(jam_on_wardec)
 	if(world.time-SSticker.round_start_time > CHALLENGE_TIME_LIMIT)
 		to_chat(user, "<span class='boldwarning'>It's too late to declare hostilities. Your benefactors are already busy with other schemes. You'll have to make do with what you have on hand.</span>")
 		return FALSE
-	for(var/V in GLOB.syndicate_shuttle_boards)
-		var/obj/item/circuitboard/computer/syndicate_shuttle/board = V
-		if(board.moved)
-			to_chat(user, "<span class='boldwarning'>The shuttle has already been moved! You have forfeit the right to declare war.</span>")
-			return FALSE
 	return TRUE
 
 /obj/item/nuclear_challenge/clownops

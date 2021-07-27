@@ -73,7 +73,7 @@
 	var/datum/game_mode/nuclear/NM = SSticker.mode
 	switch(off_station)
 		if(0)
-			if(istype(NM) && !NM.nuke_team.syndies_escaped())
+			if(istype(NM))
 				return CINEMATIC_ANNIHILATION
 			else
 				return CINEMATIC_NUKE_WIN
@@ -417,8 +417,6 @@
 	if(timing)
 		previous_level = get_security_level()
 		detonation_timer = world.time + (timer_set * 10)
-		for(var/obj/item/pinpointer/nuke/syndicate/S in GLOB.pinpointer_list)
-			S.switch_mode_to(TRACK_INFILTRATOR)
 		countdown.start()
 		SSredbot.send_discord_message("admin","A nuclear device has been set to explode in [timing] seconds!","round ending event")
 		set_security_level("delta")

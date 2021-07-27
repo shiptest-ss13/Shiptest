@@ -19,6 +19,7 @@
 	var/id = null
 	var/datum/radio_frequency/radio_connection
 
+	interacts_with_air = TRUE
 	layer = GAS_SCRUBBER_LAYER
 
 	pipe_state = "injector"
@@ -63,13 +64,10 @@
 
 	var/datum/gas_mixture/air_contents = airs[1]
 
-	if(air_contents.return_temperature() > 0)
-		var/transfer_moles = (air_contents.return_pressure())*volume_rate/(air_contents.return_temperature() * R_IDEAL_GAS_EQUATION)
-
-		var/datum/gas_mixture/removed = air_contents.remove(transfer_moles)
-
-		loc.assume_air(removed)
-		air_update_turf()
+	if(air_contents != null)
+		if(air_contents.return_temperature() > 0)
+			loc.assume_air_ratio(air_contents, volume_rate / air_contents.return_volume())
+			air_update_turf()
 
 		update_parents()
 
@@ -83,9 +81,7 @@
 	injecting = 1
 
 	if(air_contents.return_temperature() > 0)
-		var/transfer_moles = (air_contents.return_pressure())*volume_rate/(air_contents.return_temperature() * R_IDEAL_GAS_EQUATION)
-		var/datum/gas_mixture/removed = air_contents.remove(transfer_moles)
-		loc.assume_air(removed)
+		loc.assume_air_ratio(air_contents, volume_rate / air_contents.return_volume())
 		update_parents()
 
 	flick("inje_inject", src)

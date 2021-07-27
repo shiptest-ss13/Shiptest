@@ -1,5 +1,5 @@
 /datum/map_template/shuttle/emergency/syndicate
-	suffix = "syndicate"
+	file_name = "emergency_syndicate"
 	name = "Syndicate GM Battlecruiser"
 	credit_cost = 20000
 	description = "Manufactured by the Gorlex Marauders, this cruiser has been specially designed with high occupancy in mind, while remaining robust in combat situations. Features a fully stocked EVA storage, armory, medbay, and bar!"
@@ -11,43 +11,22 @@
 	return FALSE
 
 /datum/map_template/shuttle/emergency/packed
-	suffix = "packed"
+	file_name = "emergency_packed"
 	name = "Packedstation emergency shuttle"
 	credit_cost = 1000
 	description = "Despite the name, this shuttle has a more open central seating area, and still complete with a brig and medbay."
 
 /datum/map_template/shuttle/emergency/midway
-	suffix = "midway"
+	file_name = "emergency_midway"
 	name = "Midwaystation emergency shuttle"
 	credit_cost = 1000
 	description = "This shuttle is long and made with a long open area with chairs on the side."
 
-//Mining ship
-/datum/map_template/shuttle/mining_ship
-	port_id = "mining_ship"
-	suffix = "all"
-
-/datum/map_template/shuttle/amogus
-	port_id = "amogus"
-	suffix = "sus"
-
-/datum/map_template/shuttle/diner
-	port_id = "bar"
-	suffix = "ship"
-
-/datum/map_template/shuttle/moth
-	port_id = "engi"
-	suffix = "moth"
-
-/datum/map_template/shuttle/skipper
-	port_id = "ntsv"
-	suffix = "skipper"
-
-/datum/map_template/shuttle/radio
-	port_id = "radio"
-	suffix = "funny"
+/datum/map_template/shuttle/shiptest/radio
+	file_name = "radio_funny"
+	name = "Radio"
 
 //Ruins
 /datum/map_template/shuttle/ruin/solgov_exploration_pod
-	suffix = "solgov_exploration_pod"
+	file_name = "ruin_solgov_exploration_pod"
 	name = "SolGov Exploration Pod"

@@ -223,7 +223,7 @@
 	if(isopenturf(loc))
 		var/turf/open/O = loc
 		if(O.air)
-			if(O.air.get_moles(/datum/gas/oxygen) > 2)
+			if(O.air.get_moles(GAS_O2) > 2)
 				return TRUE
 	return FALSE
 
