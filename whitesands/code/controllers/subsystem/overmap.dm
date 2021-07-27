@@ -179,17 +179,13 @@ SUBSYSTEM_DEF(overmap)
 			spawn_event_cluster(type, T, chance / 2)
 
 /datum/controller/subsystem/overmap/proc/spawn_initial_ships()
-	if(!(SSmapping.config.shuttle_id in SSmapping.shuttle_templates))
-		INIT_ANNOUNCE("WARNING! The following shuttle datum with the ID of [SSmapping.config.shuttle_id] was not found! Fix your configs!")
-		SSshuttle.action_load(SSmapping.shuttle_templates[initial(SSmapping.config.shuttle_id)])
-		return
-	var/datum/map_template/shuttle/selected_template = SSmapping.shuttle_templates[SSmapping.config.shuttle_id]
-	INIT_ANNOUNCE("Loading [SSmapping.config.map_name]...")
+	var/datum/map_template/shuttle/selected_template = SSmapping.maplist[pick(SSmapping.maplist)]
+	INIT_ANNOUNCE("Loading [selected_template.name]...")
 	SSshuttle.action_load(selected_template)
 	if(SSdbcore.Connect())
 		var/datum/DBQuery/query_round_map_name = SSdbcore.NewQuery({"
 			UPDATE [format_table_name("round")] SET map_name = :map_name WHERE id = :round_id
-		"}, list("map_name" = SSmapping.config.map_name, "round_id" = GLOB.round_id))
+		"}, list("map_name" = selected_template.name, "round_id" = GLOB.round_id))
 		query_round_map_name.Execute()
 		qdel(query_round_map_name)
 

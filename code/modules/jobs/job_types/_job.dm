@@ -84,20 +84,6 @@
 	if(isnum(jobs_changes["total_positions"]))
 		total_positions = jobs_changes["total_positions"]
 
-/datum/job/New()
-	. = ..()
-	var/list/jobs_changes = GetMapChanges()
-	if(!jobs_changes)
-		return
-	if(isnum(jobs_changes["additional_access"]))
-		access += jobs_changes["additional_access"]
-	if(isnum(jobs_changes["additional_minimal_access"]))
-		minimal_access += jobs_changes["additional_minimal_access"]
-	if(isnum(jobs_changes["spawn_positions"]))
-		spawn_positions = jobs_changes["spawn_positions"]
-	if(isnum(jobs_changes["total_positions"]))
-		total_positions = jobs_changes["total_positions"]
-
 //Only override this proc
 //H is usually a human unless an /equip override transformed it
 //do actions on H but send messages to M as the key may not have been transferred_yet
@@ -283,9 +269,8 @@
 	var/list/splits = splittext(string_type, "/")
 	var/endpart = splits[splits.len]
 
-	SSmapping.HACK_LoadMapConfig()
 
-	var/list/job_changes = SSmapping.config.job_changes
+	var/list/job_changes
 	if(!(endpart in job_changes))
 		return list()
 

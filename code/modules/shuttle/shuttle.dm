@@ -285,6 +285,10 @@
 
 	///The linked overmap object, if there is one
 	var/obj/structure/overmap/ship/simulated/current_ship
+	///The map template the shuttle was spawned from, if it was indeed created from a template
+	var/datum/map_template/shuttle/source_template
+	///List of spawn points on the ship
+	var/list/atom/spawn_points = list()
 
 /obj/docking_port/mobile/proc/register()
 	SSshuttle.mobile += src
@@ -292,6 +296,8 @@
 /obj/docking_port/mobile/Destroy(force)
 	if(force)
 		SSshuttle.mobile -= src
+		if(current_ship)
+			qdel(current_ship)
 		destination = null
 		previous = null
 		QDEL_NULL(assigned_transit)		//don't need it where we're goin'!

@@ -22,30 +22,6 @@
 	credit_cost = 1000
 	description = "This shuttle is long and made with a long open area with chairs on the side."
 
-// Mining ship
-/datum/map_template/shuttle/shiptest/mining_ship
-	file_name = "mining_ship_all"
-	name = "Mining Ship"
-
-// Skeld
-/datum/map_template/shuttle/shiptest/amogus
-	file_name = "amogus_sus"
-	name = "Skeld"
-
-// Diner ship
-/datum/map_template/shuttle/shiptest/diner
-	file_name = "bar_ship"
-	name = "Bar Ship"
-
-// Engi ship
-/datum/map_template/shuttle/shiptest/moth
-	file_name = "engi_moth"
-	name = "Engi"
-
-/datum/map_template/shuttle/shiptest/skipper
-	file_name = "ntsv_skipper"
-	name = "Skipper"
-
 /datum/map_template/shuttle/shiptest/radio
 	file_name = "radio_funny"
 	name = "Radio"

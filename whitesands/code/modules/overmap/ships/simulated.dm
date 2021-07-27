@@ -26,6 +26,9 @@
 	///Cooldown until the ship can be renamed again
 	COOLDOWN_DECLARE(rename_cooldown)
 
+	///Assoc list of remaining open job slots (job = remaining slots)
+	var/list/job_slots = list("Assistant" = 5, "Captain" = 1)
+
 	///The overmap object the ship is docked to, if any
 	var/obj/structure/overmap/docked
 	///The docking port of the linked shuttle
@@ -38,6 +41,7 @@
 	if(!shuttle)
 		CRASH("Simulated overmap ship created without associated shuttle!")
 	name = shuttle.name
+	job_slots = shuttle.source_template.job_slots
 	calculate_mass()
 	initial_name()
 	refresh_engines()

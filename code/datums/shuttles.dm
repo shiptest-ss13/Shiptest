@@ -15,12 +15,17 @@
 	var/port_x_offset
 	var/port_y_offset
 	var/extra_desc = ""
+	var/short_name = ""
+	var/list/job_slots = list()
 
 /datum/map_template/shuttle/proc/prerequisites_met()
 	return TRUE
 
-/datum/map_template/shuttle/New()
-	mappath = "_maps/shuttles/[category]/[file_name].dmm"
+/datum/map_template/shuttle/New(path, rename, cache)
+	if(path)
+		mappath = path
+	else
+		mappath = "_maps/shuttles/[category]/[file_name].dmm"
 	. = ..()
 
 /datum/map_template/shuttle/preload_size(path, cache)
@@ -74,6 +79,7 @@
 				port.register()
 			if(isnull(port_x_offset))
 				continue
+			port.source_template = src
 			switch(port.dir) // Yeah this looks a little ugly but mappers had to do this in their head before
 				if(NORTH)
 					port.width = width
@@ -420,42 +426,6 @@
 	file_name = "ferry_kilo"
 	name = "kilo transport ferry"
 	description = "Standard issue CentCom Ferry for Kilo pattern stations. Includes additional equipment and rechargers."
-
-/datum/map_template/shuttle/whiteship/box
-	file_name = "whiteship_box"
-	name = "Hospital Ship"
-
-/datum/map_template/shuttle/whiteship/meta
-	file_name = "whiteship_meta"
-	name = "Salvage Ship"
-
-/datum/map_template/shuttle/whiteship/pubby
-	file_name = "whiteship_pubby"
-	name = "NT White UFO"
-
-/datum/map_template/shuttle/whiteship/cere
-	file_name = "whiteship_cere"
-	name = "NT Construction Vessel"
-
-/datum/map_template/shuttle/whiteship/kilo
-	file_name = "whiteship_kilo"
-	name = "NT Mining Shuttle"
-
-/datum/map_template/shuttle/whiteship/donut
-	file_name = "whiteship_donut"
-	name = "NT Long-Distance Bluespace Jumper"
-
-/datum/map_template/shuttle/whiteship/delta
-	file_name = "whiteship_delta"
-	name = "NT Frigate"
-
-/datum/map_template/shuttle/whiteship/pod
-	file_name = "whiteship_whiteship_pod"
-	name = "Salvage Pod"
-
-/datum/map_template/shuttle/whiteship/midway//WS edit
-	file_name = "whiteship_midway"
-	name = "NT Atmospherics tanker"
 
 /datum/map_template/shuttle/cargo/kilo
 	file_name = "cargo_kilo"
