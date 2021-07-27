@@ -9,8 +9,6 @@
 			msg += "\"nuclear_disk\"."
 		if(TRACK_MALF_AI)
 			msg += "\"01000001 01001001\"."
-		if(TRACK_INFILTRATOR)
-			msg += "\"vasvygengbefuvc\"."
 		else
 			msg = "Its tracking indicator is blank."
 	. += msg
@@ -45,8 +43,6 @@
 				var/obj/machinery/power/apc/A = V
 				if(A.malfhack && A.occupier)
 					target = A
-		if(TRACK_INFILTRATOR)
-			target = SSshuttle.getShuttle("syndicate")
 	..()
 
 /obj/item/pinpointer/nuke/proc/switch_mode_to(new_mode)
@@ -57,9 +53,9 @@
 	mode = new_mode
 	scan_for_target()
 
-/obj/item/pinpointer/nuke/syndicate // Syndicate pinpointers automatically point towards the infiltrator once the nuke is active.
+/obj/item/pinpointer/nuke/syndicate
 	name = "syndicate pinpointer"
-	desc = "A handheld tracking device that locks onto certain signals. It's configured to switch tracking modes once it detects the activation signal of a nuclear device."
+	desc = "A handheld tracking device that locks onto certain signals."
 	icon_state = "pinpointer_syndicate"
 
 /obj/item/pinpointer/syndicate_cyborg // Cyborg pinpointers just look for a random operative.

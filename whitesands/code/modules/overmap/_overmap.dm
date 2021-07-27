@@ -62,8 +62,7 @@
 	desc = "An unknown celestial object."
 	icon = 'whitesands/icons/effects/overmap.dmi'
 	icon_state = "object"
-	///ID, literally the most important thing
-	var/id
+
 	///~~If we need to render a map for cameras and helms for this object~~ basically can you look at and use this as a ship or station
 	var/render_map = FALSE
 	///The range of the view shown to helms and viewscreens (subject to be relegated to something else)
@@ -83,17 +82,11 @@
 	var/atom/movable/screen/plane_master/lighting/cam_plane_master
 	var/atom/movable/screen/background/cam_background
 
-/obj/structure/overmap/Initialize(mapload, _id)
+/obj/structure/overmap/Initialize(mapload)
 	. = ..()
-	if(id == MAIN_OVERMAP_OBJECT_ID)
-		name = station_name()
-	if(_id)
-		id = _id
-	if(!id)
-		id = "overmap_object_[length(SSovermap.overmap_objects) + 1]"
-	LAZYSET(SSovermap.overmap_objects, id, src)
+	LAZYADD(SSovermap.overmap_objects, src)
 	if(render_map)	// Initialize map objects
-		map_name = "overmap_[id]_map"
+		map_name = "overmap_[REF(src)]_map"
 		cam_screen = new
 		cam_screen.name = "screen"
 		cam_screen.assigned_map = map_name
@@ -109,19 +102,11 @@
 		cam_background.del_on_map_removal = FALSE
 		update_screen()
 
-//I hate this, but it updates the SSovermap.overmap_objects lookup table stays accurate
-/obj/structure/overmap/vv_edit_var(vname, vval)
-	if(vname == NAMEOF(src, id))
-		LAZYREMOVE(SSovermap.overmap_objects, id)
-	. = ..()
-	if(vname == NAMEOF(src, id))
-		LAZYSET(SSovermap.overmap_objects, id, src)
-
 /obj/structure/overmap/Destroy()
 	. = ..()
 	for(var/obj/structure/overmap/O in close_overmap_objects)
 		LAZYREMOVE(O.close_overmap_objects, src)
-	LAZYREMOVE(SSovermap.overmap_objects, id)
+	LAZYREMOVE(SSovermap.overmap_objects, src)
 	if(render_map)
 		QDEL_NULL(cam_screen)
 		QDEL_NULL(cam_plane_master)
@@ -190,37 +175,6 @@
 /obj/structure/overmap/proc/ship_act(mob/user, obj/structure/overmap/ship/simulated/acting)
 	return "Unknown error!"
 
-/**
-  * ## Z-level linked overmap object
-  *
-  * These are exactly what they say on the tin, overmap objects that are linked to one or more z-levels.
-  * There is nothing special on this side, but overmap ships treat them differently from all other overmap objects,
-  * such as the fact they can dock on said z-level.
-  *
-  */
-/obj/structure/overmap/level
-	///List of linked Z-levels (z number), used to dock
-	var/list/linked_levels
-	///If the shuttle navigation/docking computer can be used to change the docking location
-	var/custom_docking = TRUE
-	render_map = TRUE //this is done because it's not expensive to load the map once since levels don't move
-
-/obj/structure/overmap/level/Initialize(mapload, _id, list/_zs)
-	if(_zs)
-		LAZYADD(linked_levels, _zs)
-	else if(!linked_levels)
-		WARNING("Overmap zlevel initialized with no linked level")
-		return INITIALIZE_HINT_QDEL
-	..()
-
-/obj/structure/overmap/level/ship_act(mob/user, obj/structure/overmap/ship/simulated/acting)
-	return acting.dock(src)
-
-/obj/structure/overmap/level/ruin
-	name = "energy signature"
-	desc = "A strange energy signature. Could be anything, or nothing at all."
-	icon_state = "event"
-
 /obj/structure/overmap/star
 	name = "Star"
 	desc = "A star."
@@ -236,7 +190,7 @@
 		STARD
 	)
 
-/obj/structure/overmap/star/Initialize(mapload, _id)
+/obj/structure/overmap/star/Initialize(mapload)
 	. = ..()
 	name = "[pick(GLOB.star_names)] [pick(GLOB.greek_letters)]"
 	class = pick(star_classes)
@@ -306,7 +260,7 @@
 		STARD
 	)
 
-/obj/structure/overmap/star/big/binary/Initialize(mapload, _id)
+/obj/structure/overmap/star/big/binary/Initialize(mapload)
 	. = ..()
 	name = "[pick(GLOB.greek_letters)] [pick(GLOB.star_names)] AB"
 	class = pick(star_classes)

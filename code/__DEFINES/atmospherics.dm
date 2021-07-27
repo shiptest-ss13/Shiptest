@@ -1,15 +1,3 @@
-//LISTMOS
-//indices of values in gas lists.
-#define MOLES			1
-#define ARCHIVE			2
-#define GAS_META		3
-#define META_GAS_SPECIFIC_HEAT	1
-#define META_GAS_NAME			2
-#define META_GAS_MOLES_VISIBLE	3
-#define META_GAS_OVERLAY		4
-#define META_GAS_DANGER			5
-#define META_GAS_ID				6
-#define META_GAS_FUSION_POWER   7
 //ATMOS
 //stuff you should probably leave well alone!
 /// kPa*L/(K*mol)
@@ -358,6 +346,25 @@
 #define PIPING_DEFAULT_LAYER_ONLY		(1<<2)
 /// north/south east/west doesn't matter, auto normalize on build.
 #define PIPING_CARDINAL_AUTONORMALIZE	(1<<3)
+
+// Gas defines because i hate typepaths
+#define GAS_O2					"o2"
+#define GAS_N2					"n2"
+#define GAS_CO2					"co2"
+#define GAS_PLASMA				"plasma"
+#define GAS_H2O					"water_vapor"
+#define GAS_HYPERNOB			"nob"
+#define GAS_NITROUS				"n2o"
+#define GAS_NITRYL				"no2"
+#define GAS_TRITIUM				"tritium"
+#define GAS_BZ					"bz"
+#define GAS_STIMULUM			"stim"
+#define GAS_PLUOXIUM			"pluox"
+#define GAS_MIASMA				"miasma"
+#define GAS_FREON				"freon"
+
+#define GAS_FLAG_DANGEROUS		(1<<0)
+#define GAS_FLAG_BREATH_PROC	(1<<1)
 
 //HELPERS
 #define PIPING_LAYER_SHIFT(T, PipingLayer) \

@@ -264,7 +264,6 @@
 
 /obj/docking_port/mobile/emergency
 	name = "emergency shuttle"
-	id = "emergency"
 
 	dwidth = 9
 	width = 22
@@ -402,9 +401,9 @@
 	if(!ripples.len && (time_left <= SHUTTLE_RIPPLE_TIME) && ((mode == SHUTTLE_CALL) || (mode == SHUTTLE_ESCAPE)))
 		var/destination
 		if(mode == SHUTTLE_CALL)
-			destination = SSshuttle.getDock("emergency_home")
+			destination = SSshuttle.emergency_home_port
 		else if(mode == SHUTTLE_ESCAPE)
-			destination = SSshuttle.getDock("emergency_away")
+			destination = SSshuttle.emergency_away_port
 		create_ripples(destination)
 
 	switch(mode)
@@ -415,7 +414,7 @@
 		if(SHUTTLE_CALL)
 			if(time_left <= 0)
 				//move emergency shuttle to station
-				if(initiate_docking(SSshuttle.getDock("emergency_home")) != DOCKING_SUCCESS)
+				if(initiate_docking(SSshuttle.emergency_home_port) != DOCKING_SUCCESS)
 					setTimer(20)
 					return
 				mode = SHUTTLE_DOCKED
@@ -495,11 +494,6 @@
 						break
 				if(area_parallax)
 					parallax_slowdown()
-					for(var/A in SSshuttle.mobile)
-						var/obj/docking_port/mobile/M = A
-						if(M.launch_status == ENDGAME_LAUNCHED)
-							if(istype(M, /obj/docking_port/mobile/pod))
-								M.parallax_slowdown()
 
 			if(time_left <= 0)
 				//move each escape pod to its corresponding escape dock
@@ -509,14 +503,13 @@
 
 				// now move the actual emergency shuttle to centcom
 				// unless the shuttle is "hijacked"
-				var/destination_dock = "emergency_away"
 				if(is_hijacked() && elimination_hijack())
-					destination_dock = "emergency_syndicate"
+					//destination_dock = "emergency_syndicate"
 					minor_announce("Corruption detected in \
 						shuttle navigation protocols. Please contact your \
 						supervisor.", "SYSTEM ERROR:", alert=TRUE)
 
-				dock_id(destination_dock)
+				initiate_docking(SSshuttle.emergency_away_port)
 				mode = SHUTTLE_ENDGAME
 				timer = 0
 
@@ -530,84 +523,8 @@
 	priority_announce("The Emergency Shuttle is preparing for direct jump. Estimate [timeLeft(600)] minutes until the shuttle docks at Central Command.", null, null, "Priority")
 
 
-/obj/docking_port/mobile/pod
-	name = "escape pod"
-	id = "pod"
-	dwidth = 1
-	width = 3
-	height = 4
-	launch_status = UNLAUNCHED
-
-/obj/docking_port/mobile/pod/request(obj/docking_port/stationary/S)
-	var/obj/machinery/computer/shuttle/C = getControlConsole()
-	if(!istype(C, /obj/machinery/computer/shuttle/pod))
-		return ..()
-	if(GLOB.security_level >= SEC_LEVEL_RED || (C && (C.obj_flags & EMAGGED)))
-		if(launch_status == UNLAUNCHED)
-			launch_status = EARLY_LAUNCHED
-			return ..()
-	else
-		to_chat(usr, "<span class='warning'>Escape pods will only launch during \"Code Red\" security alert.</span>")
-		return TRUE
-
-/obj/docking_port/mobile/pod/cancel()
-	return
-
-/obj/machinery/computer/shuttle/pod
-	name = "pod control computer"
-	admin_controlled = TRUE
-	possible_destinations = "pod_asteroid"
-	icon = 'icons/obj/terminals.dmi'
-	icon_state = "dorm_available"
-	light_color = LIGHT_COLOR_BLUE
-	density = FALSE
-
-/obj/machinery/computer/shuttle/pod/ComponentInitialize()
-	. = ..()
-	AddElement(/datum/element/update_icon_blocker)
-
-/obj/machinery/computer/shuttle/pod/emag_act(mob/user)
-	if(obj_flags & EMAGGED)
-		return
-	obj_flags |= EMAGGED
-	to_chat(user, "<span class='warning'>You fry the pod's alert level checking system.</span>")
-
-/obj/machinery/computer/shuttle/pod/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock, idnum, override=FALSE)
-	. = ..()
-	if(possible_destinations == initial(possible_destinations) || override)
-		possible_destinations = "pod_lavaland[idnum]"
-
-/obj/docking_port/stationary/random
-	name = "escape pod"
-	id = "pod"
-	dwidth = 1
-	width = 3
-	height = 4
-	var/target_area
-	var/edge_distance = 16
-	// Minimal distance from the map edge, setting this too low can result in shuttle landing on the edge and getting "sliced"
-
-/obj/docking_port/stationary/random/Initialize(mapload)
-	. = ..()
-	if(!mapload)
-		return
-
-	var/list/turfs = get_areatype_turfs(target_area)
-	var/original_len = turfs?.len
-	while(turfs?.len)
-		var/turf/T = pick(turfs)
-		if(T.x<edge_distance || T.y<edge_distance || (world.maxx+1-T.x)<edge_distance || (world.maxy+1-T.y)<edge_distance)
-			turfs -= T
-		else
-			forceMove(T)
-			return
-
-	// Fallback: couldn't find anything
-	WARNING("docking port '[id]' could not be randomly placed in [target_area]: of [original_len] turfs, none were suitable")
-	return INITIALIZE_HINT_QDEL
 
 //Pod suits/pickaxes
-
 
 /obj/item/clothing/head/helmet/space/orange
 	name = "emergency space helmet"
@@ -674,7 +591,6 @@
 
 /obj/docking_port/mobile/emergency/backup
 	name = "backup shuttle"
-	id = "backup"
 	dwidth = 2
 	width = 8
 	height = 8
@@ -689,10 +605,6 @@
 	. = ..()
 	SSshuttle.emergency = current_emergency
 	SSshuttle.backup_shuttle = src
-
-/obj/docking_port/mobile/emergency/shuttle_build/register()
-	. = ..()
-	initiate_docking(SSshuttle.getDock("emergency_home"))
 
 #undef TIME_LEFT
 #undef ENGINES_START_TIME

@@ -56,14 +56,12 @@
 #define HELPER(Type, Color) \
 	HELPER_PARTIAL(/obj/machinery/atmospherics/pipe/simple/##Type, #Type, "pipe11", Color) 			\
 	HELPER_PARTIAL(/obj/machinery/atmospherics/pipe/manifold/##Type, #Type, "manifold", Color)		\
-	HELPER_PARTIAL(/obj/machinery/atmospherics/pipe/manifold4w/##Type, #Type, "manifold4w", Color)	\
-	HELPER_PARTIAL(/obj/effect/mapping_helpers/simple_pipes/##Type, #Type, "pipe", Color)
+	HELPER_PARTIAL(/obj/machinery/atmospherics/pipe/manifold4w/##Type, #Type, "manifold4w", Color)
 
 #define HELPER_NAMED(Type, Name, Color) \
 	HELPER_PARTIAL_NAMED(/obj/machinery/atmospherics/pipe/simple/##Type, #Type, "pipe11", Color, Name) 			\
 	HELPER_PARTIAL_NAMED(/obj/machinery/atmospherics/pipe/manifold/##Type, #Type, "manifold", Color, Name)		\
-	HELPER_PARTIAL_NAMED(/obj/machinery/atmospherics/pipe/manifold4w/##Type, #Type, "manifold4w", Color, Name)	\
-	HELPER_PARTIAL_NAMED(/obj/effect/mapping_helpers/simple_pipes/##Type, #Type, "pipe", Color, Name)
+	HELPER_PARTIAL_NAMED(/obj/machinery/atmospherics/pipe/manifold4w/##Type, #Type, "manifold4w", Color, Name)
 
 HELPER(general, null)
 HELPER(yellow, rgb(255, 198, 0))

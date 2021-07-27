@@ -11,8 +11,6 @@
 	var/list/concurrent_users = list()
 	///Is this for viewing only?
 	var/viewer = FALSE
-	///The overmap object/shuttle ID
-	var/id
 
 /obj/machinery/computer/helm/Initialize(mapload)
 	. = ..()
@@ -21,22 +19,13 @@
 	else
 		LAZYADD(SSovermap.helms, src)
 
-/obj/machinery/computer/helm/proc/set_ship(_id)
-	if(_id)
-		id = _id
-	if(!id)
-		var/obj/docking_port/mobile/port = SSshuttle.get_containing_shuttle(src)
-		var/area/A = get_area(src)
-		if(port)
-			if(port.current_ship)
-				current_ship = port.current_ship
-				return
-			id = port.id
-		else if(is_station_level(z) && !A?.outdoors)
-			id = MAIN_OVERMAP_OBJECT_ID
-		else
-			return FALSE
-	current_ship = SSovermap.get_overmap_object_by_id(id)
+/obj/machinery/computer/helm/proc/set_ship()
+	var/obj/docking_port/mobile/port = SSshuttle.get_containing_shuttle(src)
+	if(!port)
+		return FALSE
+	if(port.current_ship)
+		current_ship = port.current_ship
+		return TRUE
 
 /obj/machinery/computer/helm/ui_interact(mob/user, datum/tgui/ui)
 	// Update UI
@@ -119,7 +108,7 @@
 	.["isViewer"] = viewer
 	.["mapRef"] = current_ship.map_name
 
-	var/class_name = istype(current_ship, /obj/structure/overmap/ship) ? "Ship" : istype(current_ship, /obj/structure/overmap/level) ? "Planetoid" : "Station"
+	var/class_name = istype(current_ship, /obj/structure/overmap/ship) ? "Ship" : "Planetoid"
 	.["shipInfo"] = list(
 		name = current_ship.name,
 		can_rename = class_name == "Ship",
@@ -132,7 +121,7 @@
 		.["canFly"] = TRUE
 
 
-/obj/machinery/computer/helm/ui_act(action, params)
+/obj/machinery/computer/helm/ui_act(action, list/params, datum/tgui/ui, datum/ui_state/state)
 	. = ..()
 	if(.)
 		return
@@ -142,34 +131,53 @@
 		return
 
 	var/obj/structure/overmap/ship/simulated/S = current_ship
-	switch(action)
-		if("act_overmap")
-			var/obj/structure/overmap/to_act = locate(params["ship_to_act"])
-			say(S.overmap_object_act(usr, to_act))
-		if("undock")
-			S.calculate_avg_fuel()
-			if(S.avg_fuel_amnt < 25 && tgui_alert(usr, "Ship only has ~[round(S.avg_fuel_amnt)]% fuel remaining! Are you sure you want to undock?", name, list("Yes", "No")) != "Yes")
+
+	switch(action) // Universal topics
+		if("rename_ship")
+			if(!("newName" in params) || params["newName"] == S.name)
 				return
-			say(S.undock())
+			if(!S.set_ship_name(params["newName"]))
+				say("Error: [COOLDOWN_TIMELEFT(S, rename_cooldown)/10] seconds until ship designation can be changed..")
+			update_static_data(usr, ui)
+			return
 		if("reload_ship")
 			set_ship()
-			update_static_data()
+			update_static_data(usr, ui)
+			return
 		if("reload_engines")
 			S.refresh_engines()
-		if("rename_ship")
-			priority_announce("The [S.name] has been renamed to the [params["newName"]].", "Docking Announcement", sender_override = params["newName"], zlevel = S.shuttle.get_virtual_z_level())
-			S.set_ship_name(params["newName"])
-			update_static_data()
-		if("toggle_engine")
-			var/obj/machinery/power/shuttle/engine/E = locate(params["engine"])
-			E.enabled = !E.enabled
-			S.refresh_engines()
-		if("change_heading")
-			S.current_autopilot_target = null
-			S.burn_engines(text2num(params["dir"]))
-		if("stop")
-			S.current_autopilot_target = null
-			S.burn_engines()
+			return
+
+	switch(S.state) // Ship state-llimited topics
+		if(OVERMAP_SHIP_FLYING)
+			switch(action)
+				if("act_overmap")
+					if(SSshuttle.jump_mode == BS_JUMP_INITIATED)
+						to_chat(usr, "<span class='warning'>You've already escaped. Never going back to that place again!</span>")
+						return
+					var/obj/structure/overmap/to_act = locate(params["ship_to_act"])
+					say(S.overmap_object_act(usr, to_act))
+					return
+				if("toggle_engine")
+					var/obj/machinery/power/shuttle/engine/E = locate(params["engine"])
+					E.enabled = !E.enabled
+					S.refresh_engines()
+					return
+				if("change_heading")
+					S.current_autopilot_target = null
+					S.burn_engines(text2num(params["dir"]))
+					return
+				if("stop")
+					S.current_autopilot_target = null
+					S.burn_engines()
+					return
+		if(OVERMAP_SHIP_IDLE)
+			if(action == "undock")
+				S.calculate_avg_fuel()
+				if(S.avg_fuel_amnt < 25 && tgui_alert(usr, "Ship only has ~[round(S.avg_fuel_amnt)]% fuel remaining! Are you sure you want to undock?", name, list("Yes", "No")) != "Yes")
+					return
+				say(S.undock())
+				return
 
 /obj/machinery/computer/helm/ui_close(mob/user)
 	var/user_ref = REF(user)
