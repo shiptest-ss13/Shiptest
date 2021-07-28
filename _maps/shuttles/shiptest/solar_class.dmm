@@ -360,9 +360,12 @@
 "gD" = (
 /obj/docking_port/mobile{
 	can_move_docking_ports = 1;
+	height = 19;
+	launch_status = 0;
 	name = "SS Galaxy";
 	port_direction = 4;
-	undock_roundstart = 1
+	undock_roundstart = 1;
+	width = 27
 	},
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/cargo)
