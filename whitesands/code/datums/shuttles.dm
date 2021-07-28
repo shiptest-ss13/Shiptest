@@ -47,10 +47,11 @@
 	port_id = "radio"
 	suffix = "funny"
 
-/datum/map_template/shuttle/turtle
+/datum/map_template/shuttle/cricket
+	name = "Solgov 'Cricket' Scout"
 	port_id = "solgov"
-	suffix = "turtle"
-	description = "A solgov crusier with a functioning telecomms unit installed."
+	suffix = "cricket"
+	description = "A compact shuttle in service of the Solar Government. Its compact design and onboard telecommunications center makes it an ideal vessel for long scouting and delivery missions."
 
 //Ruins
 /datum/map_template/shuttle/ruin/solgov_exploration_pod
