@@ -33,7 +33,6 @@
 	accessory = /obj/item/clothing/accessory/pocketprotector/full
 	backpack_contents = list(
 		/obj/item/choice_beacon/hero = 1,
-		/obj/item/soapstone = 1,
 		/obj/item/barcodescanner = 1
 	)
 
@@ -54,6 +53,5 @@
 	l_pocket = /obj/item/newspaper
 	backpack_contents = list(
 		/obj/item/choice_beacon/hero = 1,
-		/obj/item/soapstone = 1,
 		/obj/item/tape = 1
 	)

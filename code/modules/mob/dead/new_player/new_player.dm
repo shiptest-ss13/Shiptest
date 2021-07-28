@@ -175,23 +175,6 @@
 	if(href_list["manifest"])
 		ViewManifest()
 
-	if(href_list["SelectedJob"])
-		if(!SSticker?.IsRoundInProgress())
-			to_chat(usr, "<span class='danger'>The round is either not ready, or has already finished...</span>")
-			return
-
-		if(!GLOB.enter_allowed)
-			to_chat(usr, "<span class='notice'>There is an administrative lock on entering the game!</span>")
-			return
-
-		if(SSticker.queued_players.len && !(ckey(key) in GLOB.admin_datums))
-			if((living_player_count() >= relevant_cap) || (src != SSticker.queued_players[1]))
-				to_chat(usr, "<span class='warning'>Server is full.</span>")
-				return
-
-		AttemptLateSpawn(href_list["SelectedJob"])
-		return
-
 	if(!ready && href_list["preference"])
 		if(client)
 			client.prefs.process_link(src, href_list)
@@ -270,7 +253,7 @@
 	var/datum/job/job = SSjob.GetJob(rank)
 	if(!job)
 		return JOB_UNAVAILABLE_GENERIC
-	if((job.current_positions >= job.total_positions) && job.total_positions != -1)
+/*	if((job.current_positions >= job.total_positions) && job.total_positions != -1)
 		if(job.title == "Assistant")
 			if(isnum(client.player_age) && client.player_age <= 14) //Newbies can always be assistants
 				return JOB_AVAILABLE
@@ -278,7 +261,7 @@
 				if(J && J.current_positions < J.total_positions && J.title != job.title)
 					return JOB_UNAVAILABLE_SLOTFULL
 		else
-			return JOB_UNAVAILABLE_SLOTFULL
+			return JOB_UNAVAILABLE_SLOTFULL*/
 	if(is_banned_from(ckey, rank))
 		return JOB_UNAVAILABLE_BANNED
 	if(QDELETED(src))
@@ -291,7 +274,7 @@
 		return JOB_UNAVAILABLE_GENERIC
 	return JOB_AVAILABLE
 
-/mob/dead/new_player/proc/AttemptLateSpawn(rank)
+/mob/dead/new_player/proc/AttemptLateSpawn(rank, obj/structure/overmap/ship/simulated/ship)
 	var/error = IsJobUnavailable(rank)
 	if(error != JOB_AVAILABLE)
 		alert(src, get_job_unavailable_error_message(error, rank))
@@ -301,16 +284,12 @@
 		alert(src, "An administrator has disabled late join spawning.")
 		return FALSE
 
-	var/arrivals_docked = TRUE
-	if(SSshuttle.arrivals)
-		close_spawn_windows()	//In case we get held up
-		if(SSshuttle.arrivals.damaged && CONFIG_GET(flag/arrivals_shuttle_require_safe_latejoin))
-			src << alert("The arrivals shuttle is currently malfunctioning! You cannot join.")
-			return FALSE
+	//Removes a job slot
+	if(ship.job_slots[rank] < 1)
+		alert(src, get_job_unavailable_error_message(JOB_UNAVAILABLE_SLOTFULL, rank))
+		return FALSE
 
-		if(CONFIG_GET(flag/arrivals_shuttle_require_undocked))
-			SSshuttle.arrivals.RequireUndocked(src)
-		arrivals_docked = SSshuttle.arrivals.mode != SHUTTLE_CALL
+	ship.job_slots[rank]--
 
 	//Remove the player from the join queue if he was in one and reset the timer
 	SSticker.queued_players -= src
@@ -326,11 +305,10 @@
 	var/datum/job/job = SSjob.GetJob(rank)
 
 	if(job && !job.override_latejoin_spawn(character))
-		SSjob.SendToLateJoin(character)
-		if(!arrivals_docked)
-			var/atom/movable/screen/splash/Spl = new(character.client, TRUE)
-			Spl.Fade(TRUE)
-			character.playsound_local(get_turf(character), 'sound/voice/ApproachingTG.ogg', 25)
+		SSjob.SendToLateJoin(character, destination = pick(ship.shuttle.spawn_points))
+		var/atom/movable/screen/splash/Spl = new(character.client, TRUE)
+		Spl.Fade(TRUE)
+		character.playsound_local(get_turf(character), 'sound/voice/ApproachingTG.ogg', 25)
 
 		character.update_parallax_teleport()
 
@@ -342,10 +320,7 @@
 
 	if(humanc)	//These procs all expect humans
 		GLOB.data_core.manifest_inject(humanc)
-		if(SSshuttle.arrivals)
-			SSshuttle.arrivals.QueueAnnounce(humanc, rank)
-		else
-			AnnounceArrival(humanc, rank)
+		AnnounceArrival(humanc, rank)
 		AddEmploymentContract(humanc)
 		if(GLOB.highlander)
 			to_chat(humanc, "<span class='userdanger'><i>THERE CAN BE ONLY ONE!!!</i></span>")
@@ -381,160 +356,66 @@
 		if(!employmentCabinet.virgin)
 			employmentCabinet.addFile(employee)
 
-/*
 /mob/dead/new_player/proc/LateChoices()
-	var/list/dat = list("<div class='notice'>Round Duration: [DisplayTimeText(world.time - SSticker.round_start_time)]</div>")
-	if(SSshuttle.emergency)
-		switch(SSshuttle.emergency.mode)
-			if(SHUTTLE_ESCAPE)
-				dat += "<div class='notice red'>The station has been evacuated.</div><br>"
-			if(SHUTTLE_CALL)
-				if(!SSshuttle.canRecall())
-					dat += "<div class='notice red'>The station is currently undergoing evacuation procedures.</div><br>"
-	for(var/datum/job/prioritized_job in SSjob.prioritized_jobs)
-		if(prioritized_job.current_positions >= prioritized_job.total_positions)
-			SSjob.prioritized_jobs -= prioritized_job
-	dat += "<table><tr><td valign='top'>"
-	var/column_counter = 0
-	// render each category's available jobs
-	for(var/category in GLOB.position_categories)
-		// position_categories contains category names mapped to available jobs and an appropriate color
-		var/cat_color = GLOB.position_categories[category]["color"]
-		dat += "<fieldset style='width: 185px; border: 2px solid [cat_color]; display: inline'>"
-		dat += "<legend align='center' style='color: [cat_color]'>[category]</legend>"
-		var/list/dept_dat = list()
-		for(var/job in GLOB.position_categories[category]["jobs"])
-			var/datum/job/job_datum = SSjob.name_occupations[job]
-			if(job_datum && IsJobUnavailable(job_datum.title, TRUE) == JOB_AVAILABLE)
-				var/command_bold = ""
-				if(job in GLOB.command_positions)
-					command_bold = " command"
-				if(job_datum in SSjob.prioritized_jobs)
-					dept_dat += "<a class='job[command_bold]' href='byond://?src=[REF(src)];SelectedJob=[job_datum.title]'><span class='priority'>[job_datum.title] ([job_datum.current_positions])</span></a>"
-				else
-					dept_dat += "<a class='job[command_bold]' href='byond://?src=[REF(src)];SelectedJob=[job_datum.title]'>[job_datum.title] ([job_datum.current_positions])</a>"
-		if(!dept_dat.len)
-			dept_dat += "<span class='nopositions'>No positions open.</span>"
-		dat += jointext(dept_dat, "")
-		dat += "</fieldset><br>"
-		column_counter++
-		if(column_counter > 0 && (column_counter % 3 == 0))
-			dat += "</td><td valign='top'>"
-	dat += "</td></tr></table></center>"
-	dat += "</div></div>"
-	var/datum/browser/popup = new(src, "latechoices", "Choose Profession", 680, 580)
-	popup.add_stylesheet("playeroptions", 'html/browser/playeroptions.css')
-	popup.set_content(dat)
-	popup.open(FALSE) // FALSE is passed to open so that it doesn't use the onclose() proc
-*/
+	var/list/shuttle_choices = list("Purchase ship..." = "Purchase") //Dummy for purchase option
 
-/*
-	Ported from yogs: https://github.com/yogstation13/Yogstation-TG/blob/master/yogstation/code/modules/mob/dead/new_player/new_player.dm
-*/
+	for(var/obj/structure/overmap/ship/simulated/S in SSovermap.overmap_objects)
+		if(length(S.shuttle.spawn_points) < 1)
+			continue
+		shuttle_choices[S.name + " ([S.shuttle.source_template.short_name ? S.shuttle.source_template.short_name : "Unknown-class"])"] = S //Try to get the class name
 
-/mob/dead/new_player/proc/LateChoices()
-	//WS Start - Added selected character name to job selection window
-	var/name = client.prefs.real_name
+	var/obj/structure/overmap/ship/simulated/selected_ship = shuttle_choices[tgui_input_list(src, "Select ship to spawn on.", "Welcome, [client.prefs.real_name].", shuttle_choices)]
+	if(!selected_ship)
+		return
 
-	var/dat = "<div class='notice'>Welcome, [name].</div>"
-	dat += "<div class='notice'>Round Duration: [DisplayTimeText(world.time - SSticker.round_start_time)]</div>"
-	//WS End
+	if(selected_ship == "Purchase")
+		var/obj/docking_port/mobile/M = tgui_input_list(src, "Please select ship to purchase!", "Welcome, [client.prefs.real_name].", SSmapping.ship_purchase_list)
+		if(!M)
+			return LateChoices()
+		var/price = SSmapping.ship_purchase_list[M]
+		if(SSdbcore.IsConnected() && usr.client.get_metabalance() < price)
+			alert(src, "You have insufficient metabalance to cover this purchase! (Price: [price])")
+			return
+		usr.client.inc_metabalance(-price, TRUE, "buying [M.name]")
+		close_spawn_windows()
+		to_chat(usr, "<span class='danger'>Your [M.name] is being prepared. Please be patient!</span>")
+		var/obj/docking_port/mobile/target = SSshuttle.action_load(M)
+		if(!AttemptLateSpawn(target.current_ship.job_slots[1], target.current_ship)) //Try to spawn as the first listed job in the job slots (usually captain)
+			new_player_panel()
+		return
 
-	if(SSshuttle.emergency)
-		switch(SSshuttle.emergency.mode)
-			if(SHUTTLE_ESCAPE)
-				dat += "<div class='notice red'>The station has been evacuated.</div><br>"
-			if(SHUTTLE_CALL)
-				if(!SSshuttle.canRecall())
-					dat += "<div class='notice red'>The station is currently undergoing evacuation procedures.</div><br>"
+	var/list/job_choices = list()
+	for(var/job in selected_ship.job_slots)
+		if(selected_ship.job_slots[job] < 1)
+			continue
+		job_choices["[job] ([selected_ship.job_slots[job]] positions)"] = job
 
-	var/available_job_count = 0
-	for(var/datum/job/job in SSjob.occupations)
-		if(job && IsJobUnavailable(job.title, TRUE) == JOB_AVAILABLE)
-			available_job_count++;
-			break;
+	var/selected_job = job_choices[tgui_input_list(src, "Select job.", "Welcome, [client.prefs.real_name].", job_choices)]
+	if(!selected_job)
+		return LateChoices() //Send them back to shuttle selection
 
-	if(!available_job_count)
-		dat += "<div class='notice red'>There are currently no open positions!</div>"
+	if(!SSticker?.IsRoundInProgress())
+		to_chat(usr, "<span class='danger'>The round is either not ready, or has already finished...</span>")
+		return
 
+	if(!GLOB.enter_allowed)
+		to_chat(usr, "<span class='notice'>There is an administrative lock on entering the game!</span>")
+		return
+
+	var/relevant_cap
+	var/hpc = CONFIG_GET(number/hard_popcap)
+	var/epc = CONFIG_GET(number/extreme_popcap)
+	if(hpc && epc)
+		relevant_cap = min(hpc, epc)
 	else
+		relevant_cap = max(hpc, epc)
 
-	// if(length(SSjob.prioritized_jobs))
-	// 	dat += "<div class='notice red'>The station has flagged these jobs as high priority:<br>"
-	// 	for(var/datum/job/a in SSjob.prioritized_jobs)
-	// 		dat += " [a.title], "
-	// 	dat += "</div>"
+	if(SSticker.queued_players.len && !(ckey(key) in GLOB.admin_datums))
+		if((living_player_count() >= relevant_cap) || (src != SSticker.queued_players[1]))
+			to_chat(usr, "<span class='warning'>Server is full.</span>")
+			return
 
-		dat += "<div class='clearBoth'>Choose from the following open positions:</div><br>"
-		var/list/categorizedJobs = list(
-			"Command" = list(jobs = list(), titles = GLOB.command_positions, color = "#aac1ee"),
-			"Engineering" = list(jobs = list(), titles = GLOB.engineering_positions, color = "#ffd699"),
-			"Supply" = list(jobs = list(), titles = GLOB.supply_positions, color = "#ead4ae"),
-			"Miscellaneous" = list(jobs = list(), titles = list(), color = "#ffffff", colBreak = TRUE),
-			"Synthetic" = list(jobs = list(), titles = GLOB.nonhuman_positions, color = "#ccffcc"),
-			"Service" = list(jobs = list(), titles = GLOB.service_positions, color = "#cccccc"),
-			"Medical" = list(jobs = list(), titles = GLOB.medical_positions, color = "#99ffe6", colBreak = TRUE),
-			"Science" = list(jobs = list(), titles = GLOB.science_positions, color = "#e6b3e6"),
-			"Security" = list(jobs = list(), titles = GLOB.security_positions, color = "#ff9999"),
-		)
-		for(var/datum/job/job in SSjob.occupations)
-			if(job && IsJobUnavailable(job.title, TRUE) == JOB_AVAILABLE)
-				var/categorized = FALSE
-				for(var/jobcat in categorizedJobs)
-					var/list/jobs = categorizedJobs[jobcat]["jobs"]
-					if(job.title in categorizedJobs[jobcat]["titles"])
-						categorized = TRUE
-						if(jobcat == "Command")
-
-							if(job.title == "Captain") // Put captain at top of command jobs
-								jobs.Insert(1, job)
-							else
-								jobs += job
-						else // Put heads at top of non-command jobs
-							if(job.title in GLOB.command_positions)
-								jobs.Insert(1, job)
-							else
-								jobs += job
-				if(!categorized)
-					categorizedJobs["Miscellaneous"]["jobs"] += job
-
-		dat += "<table><tr><td valign='top'>"
-		for(var/jobcat in categorizedJobs)
-			if(categorizedJobs[jobcat]["colBreak"])
-				dat += "</td><td valign='top'>"
-			if(length(categorizedJobs[jobcat]["jobs"]) < 1)
-				continue
-			var/color = categorizedJobs[jobcat]["color"]
-			dat += "<fieldset style='border: 2px solid [color]; display: inline'>"
-			dat += "<legend align='center' style='color: [color]'>[jobcat]</legend>"
-			//WS Edit Start - Alt-Job Titles
-			for(var/datum/job/job in categorizedJobs[jobcat]["jobs"])
-				var/altjobline = ""
-				var/position_class = "otherPosition"
-				if(client && client.prefs && client.prefs.alt_titles_preferences[job.title])
-					altjobline = "(as [client.prefs.alt_titles_preferences[job.title]])"
-				if(job.title in GLOB.command_positions)
-					position_class = "commandPosition"
-				if(job in SSjob.prioritized_jobs)
-					dat += "<a class='[position_class]' style='display:block;width:170px' href='byond://?src=[REF(src)];SelectedJob=[job.title]'><font color='lime'><b>[job.title] [altjobline] ([job.current_positions])</b></font></a>"
-				else
-					dat += "<a class='[position_class]' style='display:block;width:170px' href='byond://?src=[REF(src)];SelectedJob=[job.title]'>[job.title] [altjobline] ([job.current_positions])</a>"
-			//WS Edit End - Alt-Job Titles
-			dat += "</fieldset><br>"
-
-
-		dat += "</td></tr></table></center>"
-		dat += "</div></div>"
-
-	// Removing the old window method but leaving it here for reference
-	//src << browse(dat, "window=latechoices;size=300x640;can_close=1")
-
-	// Added the new browser window method
-	var/datum/browser/popup = new(src, "latechoices", "Choose Profession", 680, 580)
-	popup.add_stylesheet("playeroptions", 'html/browser/playeroptions.css')
-	popup.set_content(dat)
-	popup.open(FALSE) // 0 is passed to open so that it doesn't use the onclose() proc
-
+	AttemptLateSpawn(selected_job, selected_ship)
 
 /mob/dead/new_player/proc/create_character(transfer_after)
 	spawning = 1
@@ -596,7 +477,6 @@
 
 /mob/dead/new_player/proc/close_spawn_windows()
 
-	src << browse(null, "window=latechoices") //closes late choices window
 	src << browse(null, "window=playersetup") //closes the player setup window
 	src << browse(null, "window=preferences") //closes job selection
 	src << browse(null, "window=mob_occupation")

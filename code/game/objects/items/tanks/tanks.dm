@@ -203,6 +203,9 @@
 /obj/item/tank/remove_air(amount)
 	return air_contents.remove(amount)
 
+/obj/item/tank/remove_air_ratio(ratio)
+	return air_contents.remove_ratio(ratio)
+
 /obj/item/tank/return_air()
 	return air_contents
 
@@ -211,6 +214,18 @@
 
 /obj/item/tank/assume_air(datum/gas_mixture/giver)
 	air_contents.merge(giver)
+
+	check_status()
+	return 1
+
+/obj/item/tank/assume_air_moles(datum/gas_mixture/giver, moles)
+	giver.transfer_to(air_contents, moles)
+
+	check_status()
+	return 1
+
+/obj/item/tank/assume_air_ratio(datum/gas_mixture/giver, ratio)
+	giver.transfer_ratio_to(air_contents, ratio)
 
 	check_status()
 	return 1

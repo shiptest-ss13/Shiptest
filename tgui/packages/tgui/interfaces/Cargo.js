@@ -68,8 +68,6 @@ const CargoStatus = (props, context) => {
   const {
     away,
     docked,
-    loan,
-    loan_dispatched,
     location,
     message,
     points,
@@ -97,20 +95,6 @@ const CargoStatus = (props, context) => {
         <LabeledList.Item label="CentCom Message">
           {message}
         </LabeledList.Item>
-        {!!loan && !requestonly && (
-          <LabeledList.Item label="Loan">
-            {!loan_dispatched && (
-              <Button
-                content="Loan Shuttle"
-                disabled={!(away && docked)}
-                onClick={() => act('loan')} />
-            ) || (
-              <Box color="bad">
-                Loaned to Centcom
-              </Box>
-            )}
-          </LabeledList.Item>
-        )}
       </LabeledList>
     </Section>
   );

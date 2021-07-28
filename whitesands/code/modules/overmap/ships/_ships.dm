@@ -25,7 +25,6 @@
 
 /obj/structure/overmap/ship/Destroy()
 	. = ..()
-	LAZYREMOVE(SSovermap.simulated_ships, src)
 	if(movement_callback_id)
 		deltimer(movement_callback_id)
 

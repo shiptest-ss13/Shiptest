@@ -89,19 +89,6 @@ SUBSYSTEM_DEF(vote)
 				choices["Initiate Crew Transfer"] += round(non_voters.len * factor)
 			//WS End
 
-			else if(mode == "map")
-				for (var/non_voter_ckey in non_voters)
-					var/client/C = non_voters[non_voter_ckey]
-					if(C.prefs.preferred_map)
-						if(choices[C.prefs.preferred_map]) //No votes if the map isnt in the vote.
-							var/preferred_map = C.prefs.preferred_map
-							choices[preferred_map] += 1
-							greatest_votes = max(greatest_votes, choices[preferred_map])
-					else if(config.defaultmap)
-						if(choices[config.defaultmap]) //No votes if the map isnt in the vote.
-							var/default_map = config.defaultmap.map_name
-							choices[default_map] += 1
-							greatest_votes = max(greatest_votes, choices[default_map])
 	//get all options with that many votes and return them in a list
 	. = list()
 	if(greatest_votes)
@@ -162,8 +149,8 @@ SUBSYSTEM_DEF(vote)
 			//WS End
 
 			if("map")
-				SSmapping.changemap(global.config.maplist[.])
-				SSmapping.map_voted = TRUE
+				SSshuttle.action_load(SSmapping.maplist[.])
+
 	if(restart)
 		var/active_admins = FALSE
 		for(var/client/C in GLOB.admins)
@@ -225,14 +212,7 @@ SUBSYSTEM_DEF(vote)
 			//WS End
 
 			if("map")
-				if(!admin && SSmapping.map_voted)
-					to_chat(usr, "<span class='warning'>The next map has already been selected.</span>")
-					return FALSE
-				for(var/map in config.maplist)
-					var/datum/map_config/VM = config.maplist[map]
-					if(!VM.votable || (VM.map_name in SSpersistence.blocked_maps))
-						continue
-					choices.Add(VM.map_name)
+				choices.Add(SSmapping.maplist)
 			if("custom")
 				question = stripped_input(usr,"What is the vote for?")
 				if(!question)

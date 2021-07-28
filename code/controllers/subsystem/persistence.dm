@@ -1,22 +1,15 @@
 #define FILE_ANTAG_REP "data/AntagReputation.json"
-#define FILE_RECENT_MAPS "data/RecentMaps.json"
-
-#define KEEP_ROUNDS_MAP 1		//WS Edit - Low pop means fewer map candidates
 
 SUBSYSTEM_DEF(persistence)
 	name = "Persistence"
 	init_order = INIT_ORDER_PERSISTENCE
 	flags = SS_NO_FIRE
 
-	var/list/obj/structure/chisel_message/chisel_messages = list()
 	var/list/saved_messages = list()
 	var/list/saved_modes = list(1,2,3)
-	var/list/saved_maps = list()
-	var/list/blocked_maps = list()
 	var/list/saved_trophies = list()
 	var/list/antag_rep = list()
 	var/list/antag_rep_change = list()
-	var/list/picture_logging_information = list()
 	var/list/obj/structure/sign/picture_frame/photo_frames
 	var/list/obj/item/storage/photo_album/photo_albums
 	var/list/obj/structure/sign/painting/painting_frames = list()
@@ -24,10 +17,8 @@ SUBSYSTEM_DEF(persistence)
 
 /datum/controller/subsystem/persistence/Initialize()
 	LoadPoly()
-	LoadChiselMessages()
 	LoadTrophies()
 	LoadRecentModes()
-	LoadRecentMaps()
 	LoadPhotoPersistence()
 	if(CONFIG_GET(flag/use_antag_rep))
 		LoadAntagReputation()
@@ -39,51 +30,6 @@ SUBSYSTEM_DEF(persistence)
 	for(var/mob/living/simple_animal/parrot/Poly/P in GLOB.alive_mob_list)
 		twitterize(P.speech_buffer, "polytalk")
 		break //Who's been duping the bird?!
-
-/datum/controller/subsystem/persistence/proc/LoadChiselMessages()
-	var/list/saved_messages = list()
-	if(fexists("data/npc_saves/ChiselMessages.sav")) //legacy compatability to convert old format to new
-		var/savefile/chisel_messages_sav = new /savefile("data/npc_saves/ChiselMessages.sav")
-		var/saved_json
-		chisel_messages_sav[SSmapping.config.map_name] >> saved_json
-		if(!saved_json)
-			return
-		saved_messages = json_decode(saved_json)
-		fdel("data/npc_saves/ChiselMessages.sav")
-	else
-		var/json_file = file("data/npc_saves/ChiselMessages[SSmapping.config.map_name].json")
-		if(!fexists(json_file))
-			return
-		var/list/json = json_decode(file2text(json_file))
-
-		if(!json)
-			return
-		saved_messages = json["data"]
-
-	for(var/item in saved_messages)
-		if(!islist(item))
-			continue
-
-		var/xvar = item["x"]
-		var/yvar = item["y"]
-		var/zvar = item["z"]
-
-		if(!xvar || !yvar || !zvar)
-			continue
-
-		var/turf/T = locate(xvar, yvar, zvar)
-		if(!isturf(T))
-			continue
-
-		if(locate(/obj/structure/chisel_message) in T)
-			continue
-
-		var/obj/structure/chisel_message/M = new(T)
-
-		if(!QDELETED(M))
-			M.unpack(item)
-
-	log_world("Loaded [saved_messages.len] engraved messages on map [SSmapping.config.map_name]")
 
 /datum/controller/subsystem/persistence/proc/LoadTrophies()
 	if(fexists("data/npc_saves/TrophyItems.sav")) //legacy compatability to convert old format to new
@@ -112,27 +58,6 @@ SUBSYSTEM_DEF(persistence)
 	if(!json)
 		return
 	saved_modes = json["data"]
-
-/datum/controller/subsystem/persistence/proc/LoadRecentMaps()
-	var/map_sav = FILE_RECENT_MAPS
-	if(!fexists(FILE_RECENT_MAPS))
-		return
-	var/list/json = json_decode(file2text(map_sav))
-	if(!json)
-		return
-	saved_maps = json["data"]
-
-	//Convert the mapping data to a shared blocking list, saves us doing this in several places later.
-	for(var/map in config.maplist)
-		var/datum/map_config/VM = config.maplist[map]
-		var/run = 0
-		if(VM.map_name == SSmapping.config.map_name)
-			run++
-		for(var/name in SSpersistence.saved_maps)
-			if(VM.map_name == name)
-				run++
-		if(run >= 2) //If run twice in the last KEEP_ROUNDS_MAP + 1 (including current) rounds, disable map for voting and rotation.
-			blocked_maps += VM.map_name
 
 /datum/controller/subsystem/persistence/proc/LoadAntagReputation()
 	var/json = file2text(FILE_ANTAG_REP)
@@ -171,10 +96,8 @@ SUBSYSTEM_DEF(persistence)
 		T.update_icon()
 
 /datum/controller/subsystem/persistence/proc/CollectData()
-	CollectChiselMessages()
 	CollectTrophies()
 	CollectRoundtype()
-	CollectMaps()
 	SavePhotoPersistence()						//THIS IS PERSISTENCE, NOT THE LOGGING PORTION.
 	if(CONFIG_GET(flag/use_antag_rep))
 		CollectAntagReputation()
@@ -250,22 +173,6 @@ SUBSYSTEM_DEF(persistence)
 
 	WRITE_FILE(frame_path, frame_json)
 
-/datum/controller/subsystem/persistence/proc/CollectChiselMessages()
-	var/json_file = file("data/npc_saves/ChiselMessages[SSmapping.config.map_name].json")
-
-	for(var/obj/structure/chisel_message/M in chisel_messages)
-		saved_messages += list(M.pack())
-
-	log_world("Saved [saved_messages.len] engraved messages on map [SSmapping.config.map_name]")
-	var/list/file_data = list()
-	file_data["data"] = saved_messages
-	fdel(json_file)
-	WRITE_FILE(json_file, json_encode(file_data))
-
-/datum/controller/subsystem/persistence/proc/SaveChiselMessage(obj/structure/chisel_message/M)
-	saved_messages += list(M.pack()) // dm eats one list
-
-
 /datum/controller/subsystem/persistence/proc/CollectTrophies()
 	var/json_file = file("data/npc_saves/TrophyItems.json")
 	var/list/file_data = list()
@@ -299,21 +206,6 @@ SUBSYSTEM_DEF(persistence)
 	var/json_file = file("data/RecentModes.json")
 	var/list/file_data = list()
 	file_data["data"] = saved_modes
-	fdel(json_file)
-	WRITE_FILE(json_file, json_encode(file_data))
-
-/datum/controller/subsystem/persistence/proc/CollectMaps()
-	if(length(saved_maps) > KEEP_ROUNDS_MAP) //Get rid of extras from old configs.
-		saved_maps.Cut(KEEP_ROUNDS_MAP+1)
-	var/mapstosave = min(length(saved_maps)+1, KEEP_ROUNDS_MAP)
-	if(length(saved_maps) < mapstosave) //Add extras if too short, one per round.
-		saved_maps += mapstosave
-	for(var/i = mapstosave; i > 1; i--)
-		saved_maps[i] = saved_maps[i-1]
-	saved_maps[1] = SSmapping.config.map_name
-	var/json_file = file(FILE_RECENT_MAPS)
-	var/list/file_data = list()
-	file_data["data"] = saved_maps
 	fdel(json_file)
 	WRITE_FILE(json_file, json_encode(file_data))
 

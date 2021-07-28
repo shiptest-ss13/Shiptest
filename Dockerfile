@@ -76,6 +76,8 @@ WORKDIR /tgstation
 RUN apt-get install -y --no-install-recommends \
         libssl1.0.0:i386 \
         zlib1g:i386
+#auxtools fexists memes
+RUN ln -s /tgstation/auxtools/libauxmos.so /root/.byond/bin/libauxmos.so
 
 COPY --from=build /deploy ./
 COPY --from=rust_g /rust_g/target/i686-unknown-linux-gnu/release/librust_g.so ./librust_g.so

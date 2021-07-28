@@ -61,6 +61,9 @@
 /mob/living/attackby(obj/item/I, mob/living/user, params)
 	if(..())
 		return TRUE
+	if((I.item_flags & SURGICAL_TOOL) && user.a_intent == INTENT_HELP)
+		attempt_initiate_surgery(I, src, user)
+		return TRUE
 	user.changeNext_move(CLICK_CD_MELEE)
 	return I.attack(src, user)
 

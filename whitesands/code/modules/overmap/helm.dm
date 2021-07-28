@@ -11,8 +11,6 @@
 	var/list/concurrent_users = list()
 	///Is this for viewing only?
 	var/viewer = FALSE
-	///The overmap object/shuttle ID
-	var/id
 
 /obj/machinery/computer/helm/Initialize(mapload)
 	. = ..()
@@ -21,22 +19,13 @@
 	else
 		LAZYADD(SSovermap.helms, src)
 
-/obj/machinery/computer/helm/proc/set_ship(_id)
-	if(_id)
-		id = _id
-	if(!id)
-		var/obj/docking_port/mobile/port = SSshuttle.get_containing_shuttle(src)
-		var/area/A = get_area(src)
-		if(port)
-			if(port.current_ship)
-				current_ship = port.current_ship
-				return
-			id = port.id
-		else if(is_station_level(z) && !A?.outdoors)
-			id = MAIN_OVERMAP_OBJECT_ID
-		else
-			return FALSE
-	current_ship = SSovermap.get_overmap_object_by_id(id)
+/obj/machinery/computer/helm/proc/set_ship()
+	var/obj/docking_port/mobile/port = SSshuttle.get_containing_shuttle(src)
+	if(!port)
+		return FALSE
+	if(port.current_ship)
+		current_ship = port.current_ship
+		return TRUE
 
 /obj/machinery/computer/helm/ui_interact(mob/user, datum/tgui/ui)
 	// Update UI
@@ -119,7 +108,7 @@
 	.["isViewer"] = viewer
 	.["mapRef"] = current_ship.map_name
 
-	var/class_name = istype(current_ship, /obj/structure/overmap/ship) ? "Ship" : istype(current_ship, /obj/structure/overmap/level) ? "Planetoid" : "Station"
+	var/class_name = istype(current_ship, /obj/structure/overmap/ship) ? "Ship" : "Planetoid"
 	.["shipInfo"] = list(
 		name = current_ship.name,
 		can_rename = class_name == "Ship",

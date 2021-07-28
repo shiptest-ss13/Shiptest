@@ -1,0 +1,155 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"a" = (
+/turf/closed/wall/mineral/titanium,
+/area/ship/bridge)
+"d" = (
+/obj/structure/window/shuttle,
+/turf/open/floor/plating,
+/area/ship/bridge)
+"g" = (
+/obj/machinery/power/shuttle/engine/electric{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/turf/open/floor/plating,
+/area/ship/bridge)
+"j" = (
+/obj/machinery/computer/helm{
+	dir = 4
+	},
+/turf/open/floor/mineral/titanium/blue,
+/area/ship/bridge)
+"s" = (
+/obj/machinery/power/smes/shuttle{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/machinery/door/window/westright,
+/turf/open/floor/plating,
+/area/ship/bridge)
+"w" = (
+/obj/machinery/power/smes/shuttle{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/machinery/door/window/westleft,
+/turf/open/floor/plating,
+/area/ship/bridge)
+"y" = (
+/obj/structure/chair/comfy/shuttle{
+	dir = 8
+	},
+/obj/machinery/power/apc/auto_name/north,
+/obj/machinery/power/terminal{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/turf/open/floor/mineral/titanium/yellow,
+/area/ship/bridge)
+"z" = (
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ship/bridge)
+"B" = (
+/obj/machinery/power/terminal{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/holopad/emergency/command,
+/turf/open/floor/mineral/titanium/yellow,
+/area/ship/bridge)
+"E" = (
+/obj/structure/frame/computer{
+	anchored = 1;
+	dir = 4
+	},
+/turf/open/floor/mineral/titanium/blue,
+/area/ship/bridge)
+"G" = (
+/obj/machinery/door/airlock/titanium,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/docking_port/mobile{
+	height = 6;
+	name = "SolGov Exploration Pod";
+	port_direction = 8;
+	preferred_direction = 4;
+	width = 4
+	},
+/turf/open/floor/plating,
+/area/ship/bridge)
+"J" = (
+/obj/structure/chair/comfy/shuttle{
+	dir = 8
+	},
+/turf/open/floor/mineral/titanium/yellow,
+/area/ship/bridge)
+"U" = (
+/obj/machinery/power/terminal{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/turf/open/floor/mineral/titanium/yellow,
+/area/ship/bridge)
+"Y" = (
+/obj/machinery/door/airlock/titanium,
+/turf/open/floor/plating,
+/area/ship/bridge)
+
+(1,1,1) = {"
+a
+d
+d
+a
+"}
+(2,1,1) = {"
+d
+E
+j
+d
+"}
+(3,1,1) = {"
+a
+y
+J
+a
+"}
+(4,1,1) = {"
+Y
+U
+B
+G
+"}
+(5,1,1) = {"
+a
+s
+w
+a
+"}
+(6,1,1) = {"
+z
+g
+g
+z
+"}
