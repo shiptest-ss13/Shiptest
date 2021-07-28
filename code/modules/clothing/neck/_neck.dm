@@ -7,8 +7,8 @@
 	equip_delay_other = 40
 	cuttable = TRUE
 	clothamnt = 2
-	simple_states = list(list(15, 19))
-	simple_icon_state = "scarf"
+	greyscale_colors = list(list(15, 19))
+	greyscale_icon_state = "scarf"
 
 /obj/item/clothing/neck/worn_overlays(isinhands = FALSE)
 	. = list()
@@ -27,8 +27,8 @@
 	item_state = ""	//no inhands
 	w_class = WEIGHT_CLASS_SMALL
 	custom_price = 60
-	simple_states = list(list(16, 20))
-	simple_icon_state = "tie"
+	greyscale_colors = list(list(16, 20))
+	greyscale_icon_state = "tie"
 
 /obj/item/clothing/neck/tie/blue
 	name = "blue tie"

@@ -31,9 +31,10 @@
 	var/list/user_vars_to_edit //VARNAME = VARVALUE eg: "name" = "butts"
 	var/list/user_vars_remembered //Auto built by the above + dropped() + equipped()
 
-	/// Needs to follow this syntax: list([icon_state], list(position_x, position_y)) where icon state is an icon state to overlay on the simple species recolours and the positions list is the position of the pixel that the overlay gets their colour from
-	var/list/simple_states[3]
-	var/simple_icon_state
+	/// Needs to follow this syntax: either a list() with the x and y coordinates of the pixel you want to get the colour from, or a hexcolour. Colour one replaces red, two replaces blue, and three replaces green in the icon state.
+	var/list/greyscale_colors[3]
+	/// Needs to be a RGB-greyscale format icon state in all species' clothing icon files.
+	var/greyscale_icon_state
 
 	var/pocket_storage_component_path
 
@@ -301,17 +302,17 @@
 /proc/generate_species_clothing(obj/item/clothing/O, index, icon, species)
 	var/icon/human_clothing_icon	= icon(icon, index)
 
-	if(!istype(O) || !O.simple_states || !O.simple_icon_state)
+	if(!istype(O) || !O.greyscale_colors || !O.greyscale_icon_state)
 		GLOB.species_clothing_icons[species][index] = human_clothing_icon
 		return
 
-	var/icon/species_icon 			= icon(species, O.simple_icon_state)
+	var/icon/species_icon 			= icon(species, O.greyscale_icon_state)
 	var/list/final_list = list()
 	for(var/i in 1 to 3)
-		if(length(O.simple_states) < i)
+		if(length(O.greyscale_colors) < i)
 			final_list += "#00000000"
 			continue
-		var/color = O.simple_states[i]
+		var/color = O.greyscale_colors[i]
 		if(islist(color))
 			final_list += human_clothing_icon.GetPixel(color[1], color[2])
 		else if(istext(color))

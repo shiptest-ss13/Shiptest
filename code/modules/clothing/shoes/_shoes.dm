@@ -7,8 +7,8 @@
 
 	body_parts_covered = FEET
 	slot_flags = ITEM_SLOT_FEET
-	simple_states = list(list(13, 3))
-	simple_icon_state = "shoes"
+	greyscale_colors = list(list(13, 3))
+	greyscale_icon_state = "shoes"
 
 	permeability_coefficient = 0.5
 	slowdown = SHOES_SLOWDOWN
