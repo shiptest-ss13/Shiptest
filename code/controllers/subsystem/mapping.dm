@@ -12,11 +12,7 @@ SUBSYSTEM_DEF(mapping)
 	var/list/space_ruins_templates = list()
 	var/list/lava_ruins_templates = list()
 	var/list/ice_ruins_templates = list()
-	var/list/ice_ruins_underground_templates = list()
-	 // WS Edit Start - Whitesands
 	var/list/sand_ruins_templates = list()
-	var/list/sand_camps_templates = list()
-	// WS Edit End - Whitesands
 	var/list/jungle_ruins_templates = list()
 
 	var/list/maplist
@@ -90,7 +86,6 @@ SUBSYSTEM_DEF(mapping)
 	lava_ruins_templates = SSmapping.lava_ruins_templates
 	// WS Edit Start - Whitesands
 	sand_ruins_templates = SSmapping.sand_ruins_templates
-	sand_camps_templates = SSmapping.sand_camps_templates
 	// WS Edit End - Whitesands
 	shuttle_templates = SSmapping.shuttle_templates
 	shelter_templates = SSmapping.shelter_templates
@@ -191,14 +186,10 @@ SUBSYSTEM_DEF(mapping)
 
 		if(istype(R, /datum/map_template/ruin/lavaland))
 			lava_ruins_templates[R.name] = R
-		else if(istype(R, /datum/map_template/ruin/camp/whitesands))
-			sand_camps_templates[R.name] = R
 		else if(istype(R, /datum/map_template/ruin/whitesands))
 			sand_ruins_templates[R.name] = R
 		else if(istype(R, /datum/map_template/ruin/jungle))
 			jungle_ruins_templates[R.name] = R
-		else if(istype(R, /datum/map_template/ruin/icemoon/underground))
-			ice_ruins_underground_templates[R.name] = R
 		else if(istype(R, /datum/map_template/ruin/icemoon))
 			ice_ruins_templates[R.name] = R
 		else if(istype(R, /datum/map_template/ruin/space))
