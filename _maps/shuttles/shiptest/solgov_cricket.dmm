@@ -775,7 +775,7 @@
 	icon_state = "2-4"
 	},
 /mob/living/simple_animal/bot/cleanbot{
-	auto_patrol = 1;
+	auto_patrol = 0;
 	name = "Janniebot"
 	},
 /turf/open/floor/carpet/nanoweave/purple,
@@ -960,7 +960,6 @@
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
-/obj/machinery/navbeacon,
 /turf/open/floor/carpet/nanoweave/purple,
 /area/ship/hallway/port)
 "nl" = (
@@ -2845,7 +2844,6 @@
 /area/ship/engineering/atmospherics)
 "Kd" = (
 /obj/item/kirbyplants/random,
-/obj/machinery/navbeacon,
 /turf/open/floor/carpet/nanoweave/orange,
 /area/ship/hallway/aft)
 "Kh" = (
@@ -2923,10 +2921,6 @@
 /obj/structure/sign/departments/cargo{
 	pixel_y = -32
 	},
-/turf/open/floor/carpet/nanoweave/beige,
-/area/ship/hallway/starboard)
-"LY" = (
-/obj/machinery/navbeacon,
 /turf/open/floor/carpet/nanoweave/beige,
 /area/ship/hallway/starboard)
 "Mg" = (
@@ -3937,7 +3931,6 @@
 	dir = 4;
 	pixel_x = -24
 	},
-/obj/machinery/navbeacon,
 /turf/open/floor/carpet/nanoweave/orange,
 /area/ship/hallway/aft)
 "Zp" = (
@@ -4589,7 +4582,7 @@ AV
 Di
 hg
 Ii
-LY
+LC
 OU
 TM
 YJ
