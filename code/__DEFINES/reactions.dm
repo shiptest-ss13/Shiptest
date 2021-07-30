@@ -23,14 +23,13 @@
 #define TRITIUM_BURN_TRIT_FACTOR			10
 #define TRITIUM_BURN_RADIOACTIVITY_FACTOR	50000 	//The neutrons gotta go somewhere. Completely arbitrary number.
 #define TRITIUM_MINIMUM_RADIATION_ENERGY	0.1  	//minimum 0.01 moles trit or 10 moles oxygen to start producing rads
-#define MINIMUM_TRIT_OXYBURN_ENERGY 		2000000	//This is calculated to help prevent singlecap bombs(Overpowered tritium/oxygen single tank bombs)
 #define SUPER_SATURATION_THRESHOLD			96
 #define STIMULUM_HEAT_SCALE					100000
 #define STIMULUM_FIRST_RISE					0.65
 #define STIMULUM_FIRST_DROP					0.065
 #define STIMULUM_SECOND_RISE				0.0009
 #define STIMULUM_ABSOLUTE_DROP				0.00000335
-#define REACTION_OPPRESSION_THRESHOLD		5
+#define REACTION_OPPRESSION_THRESHOLD		10
 #define NOBLIUM_FORMATION_ENERGY			2e9 	//1 Mole of Noblium takes the planck energy to condense.
 #define STIM_BALL_GAS_AMOUNT				5
 //Research point amounts
@@ -51,4 +50,3 @@
 #define FUSION_RAD_MAX						2000
 #define FUSION_RAD_COEFFICIENT				(-1000)
 #define FUSION_INSTABILITY_ENDOTHERMALITY   2
-#define FUSION_MAXIMUM_TEMPERATURE			1e8

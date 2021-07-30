@@ -19,8 +19,6 @@
 		LAZYADD(SSovermap.autopilots, src)
 
 /obj/machinery/computer/autopilot/proc/initial_load()
-	if(ship_id)
-		ship = SSovermap.get_overmap_object_by_id(ship_id)
 	if(ship)
 		return
 	var/obj/docking_port/mobile/M = SSshuttle.get_containing_shuttle(src)
@@ -28,8 +26,6 @@
 		return
 	if(M.current_ship)
 		ship = M.current_ship
-	else
-		ship = SSovermap.get_overmap_object_by_id(M.id)
 
 /obj/machinery/computer/autopilot/ui_interact(mob/user, datum/tgui/ui)
 	ui = SStgui.try_update_ui(user, src, ui)

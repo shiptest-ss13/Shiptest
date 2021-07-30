@@ -11,14 +11,6 @@
 	var/icon_state_open = "burst_plasma_open"
 	var/icon_state_off = "burst_plasma_off"
 
-/obj/machinery/power/shuttle/Initialize()
-	. = ..()
-	GLOB.custom_shuttle_machines += src
-
-/obj/machinery/power/shuttle/Destroy()
-	. = ..()
-	GLOB.custom_shuttle_machines -= src
-
 /obj/machinery/power/shuttle/attackby(obj/item/I, mob/living/user, params)
 	if(default_deconstruction_screwdriver(user, icon_state_open, icon_state_closed, I))
 		return

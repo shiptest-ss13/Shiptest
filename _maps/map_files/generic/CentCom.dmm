@@ -3679,7 +3679,6 @@
 	dir = 8;
 	dwidth = 8;
 	height = 7;
-	id = "supply_away";
 	json_key = "cargo";
 	name = "CentCom";
 	width = 20
@@ -4021,7 +4020,6 @@
 /obj/docking_port/stationary{
 	dwidth = 25;
 	height = 50;
-	id = "emergency_syndicate";
 	name = "Syndicate Auxillary Shuttle Dock";
 	width = 50
 	},
@@ -4097,7 +4095,6 @@
 	dir = 8;
 	dwidth = 12;
 	height = 17;
-	id = "syndicate_away";
 	name = "syndicate recon outpost";
 	roundstart_template = /datum/map_template/shuttle/infiltrator/basic;
 	width = 23
@@ -4750,14 +4747,14 @@
 /turf/open/floor/plasteel/dark,
 /area/centcom/supply)
 "md" = (
-/obj/machinery/computer/shuttle/labor,
+/obj/machinery/computer/shuttle,
 /obj/effect/turf_decal/stripes/line{
 	dir = 10
 	},
 /turf/open/floor/plasteel,
 /area/centcom/supply)
 "me" = (
-/obj/machinery/computer/shuttle/mining,
+/obj/machinery/computer/shuttle,
 /obj/effect/turf_decal/stripes/line{
 	dir = 6
 	},
@@ -6571,7 +6568,6 @@
 	dir = 8;
 	dwidth = 2;
 	height = 13;
-	id = "ferry_away";
 	json_key = "ferry";
 	name = "CentCom Ferry Dock";
 	width = 5
@@ -7120,7 +7116,7 @@
 /turf/open/floor/plasteel/dark,
 /area/centcom/supplypod)
 "qJ" = (
-/obj/machinery/computer/shuttle/syndicate/recall,
+/obj/machinery/computer/shuttle,
 /obj/effect/turf_decal/tile/bar,
 /obj/effect/turf_decal/tile/bar{
 	dir = 1
@@ -7337,14 +7333,14 @@
 /turf/open/floor/plasteel/dark,
 /area/centcom/ferry)
 "rm" = (
-/obj/machinery/computer/shuttle/labor,
+/obj/machinery/computer/shuttle,
 /obj/effect/turf_decal/stripes/line{
 	dir = 10
 	},
 /turf/open/floor/plasteel,
 /area/centcom/ferry)
 "rn" = (
-/obj/machinery/computer/shuttle/mining,
+/obj/machinery/computer/shuttle,
 /obj/effect/turf_decal/stripes/line{
 	dir = 6
 	},
@@ -7831,7 +7827,7 @@
 /turf/open/floor/plating/airless,
 /area/syndicate_mothership/control)
 "sq" = (
-/obj/machinery/computer/shuttle/white_ship{
+/obj/machinery/computer/shuttle{
 	dir = 4
 	},
 /obj/effect/turf_decal/stripes/line{
@@ -8199,7 +8195,7 @@
 /turf/open/floor/plating/airless,
 /area/syndicate_mothership/control)
 "to" = (
-/obj/machinery/computer/shuttle/ferry{
+/obj/machinery/computer/shuttle{
 	dir = 4
 	},
 /obj/effect/turf_decal/stripes/line{
@@ -8510,14 +8506,6 @@
 /turf/open/floor/wood,
 /area/syndicate_mothership/control)
 "ua" = (
-/obj/docking_port/stationary{
-	area_type = /area/syndicate_mothership/control;
-	dwidth = 3;
-	height = 7;
-	name = "escape pod loader";
-	roundstart_template = /datum/map_template/shuttle/assault_pod/default;
-	width = 7
-	},
 /turf/open/floor/plating/airless,
 /area/syndicate_mothership/control)
 "ud" = (
@@ -8991,7 +8979,6 @@
 	dir = 4;
 	dwidth = 25;
 	height = 50;
-	id = "emergency_away";
 	json_key = "emergency";
 	name = "CentCom Emergency Shuttle Dock";
 	width = 50
@@ -15433,7 +15420,6 @@
 	dir = 4;
 	dwidth = 2;
 	height = 8;
-	id = "backup_away";
 	name = "Backup Shuttle Dock";
 	roundstart_template = /datum/map_template/shuttle/emergency/backup;
 	width = 8
@@ -15736,7 +15722,6 @@
 /obj/docking_port/stationary{
 	dwidth = 1;
 	height = 4;
-	id = "pod4_away";
 	name = "recovery ship";
 	width = 3
 	},
@@ -15746,7 +15731,6 @@
 /obj/docking_port/stationary{
 	dwidth = 1;
 	height = 4;
-	id = "pod3_away";
 	name = "recovery ship";
 	width = 3
 	},
@@ -15930,7 +15914,6 @@
 	dir = 4;
 	dwidth = 1;
 	height = 4;
-	id = "pod2_away";
 	name = "recovery ship";
 	width = 3
 	},
@@ -15969,7 +15952,6 @@
 	dir = 4;
 	dwidth = 2;
 	height = 7;
-	id = "pod_away";
 	name = "recovery ship";
 	width = 5
 	},
@@ -17777,7 +17759,6 @@
 /turf/open/floor/plasteel/dark,
 /area/centcom/ferry)
 "VX" = (
-/obj/effect/landmark/shuttle_import,
 /turf/open/space/basic,
 /area/space)
 "Wc" = (

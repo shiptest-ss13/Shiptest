@@ -36,7 +36,6 @@
 
 /obj/machinery/atmospherics/components/unary/shuttle/heater/New()
 	. = ..()
-	GLOB.custom_shuttle_machines += src
 	SetInitDirections()
 	update_adjacent_engines()
 	update_gas_stats()
@@ -44,7 +43,6 @@
 /obj/machinery/atmospherics/components/unary/shuttle/heater/Destroy()
 	. = ..()
 	update_adjacent_engines()
-	GLOB.custom_shuttle_machines -= src
 
 /obj/machinery/atmospherics/components/unary/shuttle/heater/on_construction()
 	..(dir, dir)

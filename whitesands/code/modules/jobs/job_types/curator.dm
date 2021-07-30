@@ -4,7 +4,6 @@
 	neck = /obj/item/clothing/neck/tie/brown
 	backpack_contents = list(
 		/obj/item/choice_beacon/hero = 1,
-		/obj/item/soapstone = 1,
 		/obj/item/tape = 1,
 		/obj/item/paper_bin/bundlenatural = 1,
 		/obj/item/pen/fountain = 1
@@ -15,7 +14,6 @@
 	suit = /obj/item/clothing/suit/nerdshirt
 	backpack_contents = list(
 		/obj/item/choice_beacon/hero = 1,
-		/obj/item/soapstone = 1,
 		/obj/item/tape = 1,
 		/obj/item/storage/pill_bottle/dice = 1,
 		/obj/item/toy/cards/deck/cas = 1,
