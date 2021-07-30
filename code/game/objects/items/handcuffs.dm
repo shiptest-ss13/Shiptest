@@ -373,6 +373,12 @@
 	breakouttime = 70
 	knockdown = 35
 
+/obj/item/restraints/legcuffs/bola/watcher //tribal bola for tribal lizards
+	name = "watcher Bola"
+	desc = "A Bola made from the stretchy sinew of fallen watchers."
+	icon_state = "bola_watcher"
+	breakouttime = 45
+
 /obj/item/restraints/legcuffs/bola/energy //For Security
 	name = "energy bola"
 	desc = "A specialized hard-light bola designed to ensnare fleeing criminals and aid in arrests."

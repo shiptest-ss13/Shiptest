@@ -483,7 +483,7 @@
 	toggle()
 
 /obj/structure/curtain/deconstruct(disassembled = TRUE)
-	new /obj/item/stack/sheet/cloth (loc, 2)
+	new /obj/item/stack/sheet/cotton/cloth (loc, 2)
 	new /obj/item/stack/sheet/plastic (loc, 2)
 	new /obj/item/stack/rods (loc, 1)
 	qdel(src)
@@ -511,7 +511,7 @@
 	opaque_closed = TRUE
 
 /obj/structure/curtain/cloth/deconstruct(disassembled = TRUE)
-	new /obj/item/stack/sheet/cloth (loc, 4)
+	new /obj/item/stack/cotton/cloth (loc, 4)
 	new /obj/item/stack/rods (loc, 1)
 	qdel(src)
 

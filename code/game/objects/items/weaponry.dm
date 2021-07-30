@@ -203,6 +203,16 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	name = new_name
 	playsound(user, 'sound/items/screwdriver2.ogg', 50, TRUE)
 
+/obj/item/claymore/bone
+	name = "Bone Sword"
+	desc = "Jagged pieces of bone are tied to what looks like a goliaths femur."
+	icon_state = "bone_sword"
+	inhand_icon_state = "bone_sword"
+	force = 15
+	throwforce = 10
+	armour_penetration = 15
+	block_chance = 30
+
 /obj/item/katana
 	name = "katana"
 	desc = "Woefully underpowered in D20."
