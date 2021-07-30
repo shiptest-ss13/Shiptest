@@ -33,7 +33,7 @@
 
 /obj/item/gun/ballistic/bow/attack_self(mob/user)
 	if(chambered)
-		to_chat(user, "<span class='notice'>You [drawn ? "release the tension on" : "draw the string on"] [src].</span>")
+		to_chat(user, "<span class='notice'>You [drawn ? "release" : "draw"] [src]'s string.</span>")
 		if(!drawn)
 			playsound(src, 'whitesands/sound/weapons/bowdraw.ogg', 75, 0)
 		drawn = !drawn
