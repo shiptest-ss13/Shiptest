@@ -16,6 +16,8 @@
 	var/planet
 	///The virtual z-level the level occupies
 	var/virtual_z_level
+	///List of probabilities for each type of planet.
+	var/static/list/probabilities
 
 /obj/structure/overmap/dynamic/Initialize(mapload)
 	. = ..()
@@ -49,47 +51,49 @@
   * Chooses a type of level for the dynamic level to use.
   */
 /obj/structure/overmap/dynamic/proc/choose_level_type()
-	var/chosen = rand(0, 6)
-	mass = rand(50, 100) * 1000000 //50 to 100 million tonnes
+	if(!probabilities)
+		probabilities = list(DYNAMIC_WORLD_LAVA = length(SSmapping.lava_ruins_templates), DYNAMIC_WORLD_ICE = length(SSmapping.ice_ruins_templates), DYNAMIC_WORLD_JUNGLE = length(SSmapping.jungle_ruins_templates), DYNAMIC_WORLD_SAND = length(SSmapping.sand_ruins_templates), FALSE = length(SSmapping.space_ruins_templates), DYNAMIC_WORLD_ASTEROID = 30)
+	var/chosen = pickweight(probabilities)
+	mass = rand(50, 100) * 1000000 //50 to 100 million tonnes //this was a stupid feature
 	switch(chosen)
-		if(0)
-			name = "weak energy signal"
-			desc = "A very weak energy signal emenating from space."
-			planet = FALSE
-			icon_state = "strange_event"
-			color = null
-			mass = 0 //Space doesn't weigh anything
-		if(1)
+		if(DYNAMIC_WORLD_LAVA)
 			name = "strange lava planet"
 			desc = "A very weak energy signal originating from a planet with lots of seismic and volcanic activity."
 			planet = DYNAMIC_WORLD_LAVA
 			icon_state = "globe"
 			color = COLOR_ORANGE
-		if(2)
+		if(DYNAMIC_WORLD_ICE)
 			name = "strange ice planet"
 			desc = "A very weak energy signal originating from a planet with traces of water and extremely low temperatures."
 			planet = DYNAMIC_WORLD_ICE
 			icon_state = "globe"
 			color = COLOR_BLUE_LIGHT
-		if(3)
+		if(DYNAMIC_WORLD_JUNGLE)
 			name = "strange jungle planet"
 			desc = "A very weak energy signal originating from a planet teeming with life."
 			planet = DYNAMIC_WORLD_JUNGLE
 			icon_state = "globe"
 			color = COLOR_LIME
-		if(4)
+		if(DYNAMIC_WORLD_SAND)
 			name = "strange sand planet"
 			desc = "A very weak energy signal originating from a planet with many traces of silica."
 			planet = DYNAMIC_WORLD_SAND
 			icon_state = "globe"
 			color = COLOR_GRAY
-		if(5 to 6)
+		if(DYNAMIC_WORLD_ASTEROID)
 			name = "large asteroid"
 			desc = "A large asteroid with significant traces of minerals."
 			planet = DYNAMIC_WORLD_ASTEROID
 			icon_state = "asteroid"
 			mass = rand(1, 1000) * 100
 			color = COLOR_GRAY
+		else // Space ruin
+			name = "weak energy signal"
+			desc = "A very weak energy signal emenating from space."
+			planet = FALSE
+			icon_state = "strange_event"
+			color = null
+			mass = 0 //Space doesn't weigh anything
 	desc += !preserve_level && "It may not still be here if you leave it."
 
 /**
