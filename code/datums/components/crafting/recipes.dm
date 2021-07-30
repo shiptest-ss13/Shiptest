@@ -251,16 +251,6 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
 
-/datum/crafting_recipe/pipebow
-	name = "Pipe Bow"
-	result = /obj/item/gun/ballistic/bow/pipe
-	reqs = list(/obj/item/pipe = 5,
-				/obj/item/stack/sheet/plastic = 15,
-				/obj/item/weaponcrafting/silkstring = 10)
-	time = 450
-	category = CAT_WEAPONRY
-	subcategory = CAT_WEAPON
-
 /datum/crafting_recipe/meteorslug
 	name = "Meteorslug Shell"
 	result = /obj/item/ammo_casing/shotgun/meteorslug
@@ -334,45 +324,6 @@
 				/obj/item/stock_parts/micro_laser/high = 1)
 	tools = list(TOOL_SCREWDRIVER)
 	time = 5
-	category = CAT_WEAPONRY
-	subcategory = CAT_AMMO
-
-/datum/crafting_recipe/arrow
-	name = "Arrow"
-	result = /obj/item/ammo_casing/caseless/arrow/wood
-	time = 30
-	reqs = list(/obj/item/stack/sheet/mineral/wood = 1,
-				/obj/item/stack/sheet/silk = 1,
-				/obj/item/stack/rods = 1) //1 metal sheet = 2 rods= 2 arrows
-	category = CAT_WEAPONRY
-	subcategory = CAT_AMMO
-
-/datum/crafting_recipe/bone_arrow
-	name = "Bone Arrow"
-	result = /obj/item/ammo_casing/caseless/arrow/bone
-	time = 30
-	reqs = list(/obj/item/stack/sheet/bone = 1,
-				/obj/item/stack/sheet/sinew = 1,
-				/obj/item/ammo_casing/caseless/arrow/ash = 1)
-	category = CAT_WEAPONRY
-	subcategory = CAT_AMMO
-
-/datum/crafting_recipe/ashen_arrow
-	name = "Fire hardened arrow"
-	result = /obj/item/ammo_casing/caseless/arrow/ash
-	tools = list(TOOL_WELDER)
-	time = 30
-	reqs = list(/obj/item/ammo_casing/caseless/arrow/wood = 1)
-	category = CAT_WEAPONRY
-	subcategory = CAT_AMMO
-
-/datum/crafting_recipe/bronze_arrow
-	name = "Bronze arrow"
-	result = /obj/item/ammo_casing/caseless/arrow/bronze
-	time = 30
-	reqs = list(/obj/item/stack/sheet/mineral/wood = 1,
-				/obj/item/stack/tile/bronze = 1,
-				/obj/item/stack/sheet/silk = 1)
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
 
@@ -582,14 +533,6 @@
 	reqs = list(/obj/item/stack/sheet/bone = 6)
 	category = CAT_PRIMAL
 
-/datum/crafting_recipe/heavybonearmor
-	name = "Heavy Bone Armor"
-	result = /obj/item/clothing/suit/hooded/cloak/bone
-	time = 60
-	reqs = list(/obj/item/stack/sheet/bone = 8,
-				/obj/item/stack/sheet/sinew = 3)
-	category = CAT_PRIMAL
-
 /datum/crafting_recipe/bonetalisman
 	name = "Bone Talisman"
 	result = /obj/item/clothing/accessory/talisman
@@ -645,54 +588,6 @@
 	reqs = list(/obj/item/stack/sheet/bone = 10,
 				/obj/item/stack/sheet/sinew = 2,
 				/obj/item/stack/sheet/animalhide/ashdrake = 5)
-	category = CAT_PRIMAL
-
-/datum/crafting_recipe/watcherbola
-	name = "Watcher Bola"
-	result = /obj/item/restraints/legcuffs/bola/watcher
-	time = 30
-	reqs = list(/obj/item/stack/sheet/animalhide/goliath_hide = 2,
-				/obj/item/restraints/handcuffs/cable/sinew = 1)
-	category = CAT_PRIMAL
-
-/datum/crafting_recipe/goliathshield
-	name = "Goliath shield"
-	result = /obj/item/shield/riot/goliath
-	time = 60
-	reqs = list(/obj/item/stack/sheet/bone = 4,
-				/obj/item/stack/sheet/animalhide/goliath_hide = 3)
-	category = CAT_PRIMAL
-
-/datum/crafting_recipe/bonesword
-	name = "Bone Sword"
-	result = /obj/item/claymore/bone
-	time = 40
-	reqs = list(/obj/item/stack/sheet/bone = 3,
-				/obj/item/stack/sheet/sinew = 2)
-	category = CAT_PRIMAL
-
-/datum/crafting_recipe/hunterbelt
-	name = "Hunters Belt"
-	result = /obj/item/storage/belt/mining/primitive
-	time = 20
-	reqs = list(/obj/item/stack/sheet/sinew = 2,
-				/obj/item/stack/sheet/animalhide/goliath_hide = 2)
-	category = CAT_PRIMAL
-
-/datum/crafting_recipe/quiver
-	name = "Quiver"
-	result = /obj/item/storage/bag/quiver/empty
-	time = 80
-	reqs = list(/obj/item/stack/sheet/leather = 3,
-				/obj/item/stack/sheet/sinew = 4)
-	category = CAT_PRIMAL
-
-/datum/crafting_recipe/bone_bow
-	name = "Bone Bow"
-	result = /obj/item/gun/ballistic/bow/ashen
-	time = 200
-	reqs = list(/obj/item/stack/sheet/bone = 8,
-				/obj/item/stack/sheet/sinew = 4)
 	category = CAT_PRIMAL
 
 /datum/crafting_recipe/firebrand
