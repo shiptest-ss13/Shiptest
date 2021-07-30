@@ -3864,13 +3864,9 @@
 /obj/machinery/door/airlock/external,
 /obj/effect/mapping_helpers/airlock/cyclelink_helper,
 /obj/docking_port/mobile{
-	can_move_docking_ports = 1;
 	dir = 2;
-	height = 24;
 	launch_status = 0;
 	port_direction = 8;
-	undock_roundstart = 1;
-	width = 34
 	},
 /obj/machinery/door/firedoor/heavy,
 /turf/open/floor/plasteel/dark,
