@@ -1031,10 +1031,6 @@
 	dir = 4;
 	pixel_x = 28
 	},
-/obj/effect/turf_decal/corner/red/diagonal,
-/obj/effect/turf_decal/corner/yellow/diagonal{
-	dir = 4
-	},
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
 "nk" = (
@@ -1486,6 +1482,12 @@
 /obj/structure/curtain/bounty,
 /turf/open/floor/plating,
 /area/ship/crew/canteen)
+"sp" = (
+/obj/effect/turf_decal/lumos/tile/yellow/half{
+	dir = 4
+	},
+/turf/open/floor/plasteel,
+/area/ship/engineering)
 "sr" = (
 /obj/machinery/power/port_gen/pacman,
 /obj/structure/cable/yellow{
@@ -2685,6 +2687,7 @@
 /turf/open/floor/plasteel,
 /area/ship/engineering/atmospherics)
 "Hj" = (
+/obj/effect/turf_decal/lumos/tile/blue/checker,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
@@ -2695,8 +2698,7 @@
 	density = 0;
 	pixel_y = 32
 	},
-/obj/effect/turf_decal/corner/white/mono,
-/turf/open/floor/plasteel/mono/white,
+/turf/open/floor/plasteel/white,
 /area/ship/medical)
 "Hq" = (
 /obj/structure/bed,
@@ -5075,7 +5077,7 @@ gu
 gu
 bN
 UU
-BA
+Aa
 bN
 KS
 HZ
@@ -5108,6 +5110,8 @@ bN
 cI
 BA
 bN
+BA
+bN
 rD
 pA
 zI
@@ -5138,6 +5142,7 @@ gu
 gu
 bN
 tp
+bN
 bN
 Px
 Yq
