@@ -40,9 +40,10 @@
 
 		if(!dock_to_use)
 			acting.state = prev_state
-			return "All potential docking locations occupied."
+			to_chat(user, "<span class='notice'>All potential docking locations occupied.</span>")
+			return
 		adjust_dock_to_shuttle(dock_to_use, acting.shuttle)
-		return acting.dock(src, dock_to_use) //If a value is returned from load_level(), say that, otherwise, commence docking
+		to_chat(user, "<span class='notice'>[acting.dock(src, dock_to_use)]</span>") //If a value is returned from load_level(), say that, otherwise, commence docking
 
 /**
   * Chooses a type of level for the dynamic level to use.
@@ -107,7 +108,9 @@
 	reserve_dock_secondary = dynamic_encounter_values[3]
 	virtual_z_level = reserve.virtual_z_level
 
-// alters the position and orientation of a stationary docking port to ensure that any mobile port small enough can dock within its bounds
+/**
+ * Alters the position and orientation of a stationary docking port to ensure that any mobile port small enough can dock within its bounds
+ */
 /obj/structure/overmap/dynamic/proc/adjust_dock_to_shuttle(obj/docking_port/stationary/dock_to_adjust, obj/docking_port/mobile/shuttle)
 	// the shuttle's dimensions where "true height" measures distance from the shuttle's fore to its aft
 	var/shuttle_true_height = shuttle.height
