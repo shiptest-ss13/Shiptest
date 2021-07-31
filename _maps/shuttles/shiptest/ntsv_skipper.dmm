@@ -388,7 +388,7 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/siphon/atmos/toxin_output{
 	dir = 1
 	},
-/turf/open/floor/engine/air,
+/turf/open/floor/engine/plasma,
 /area/ship/engineering/atmospherics)
 "ee" = (
 /obj/machinery/light_switch{
@@ -524,7 +524,7 @@
 /area/ship/hallway/central)
 "gn" = (
 /obj/effect/turf_decal/atmos/oxygen,
-/turf/open/floor/engine/n2,
+/turf/open/floor/engine/o2,
 /area/ship/engineering/atmospherics)
 "gu" = (
 /turf/template_noop,
@@ -717,6 +717,19 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /turf/open/floor/wood,
 /area/ship/crew/solgov)
+"jD" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/orange/visible,
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/turf/open/floor/plasteel,
+/area/ship/engineering)
 "jE" = (
 /obj/machinery/atmospherics/pipe/simple/orange/visible{
 	dir = 4
@@ -809,13 +822,16 @@
 /area/ship/crew)
 "kE" = (
 /obj/machinery/vending/snack/random,
+/obj/structure/sign/poster/official/high_class_martini{
+	pixel_y = 32
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
 "kG" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/siphon/atmos/oxygen_output{
 	dir = 1
 	},
-/turf/open/floor/engine/n2,
+/turf/open/floor/engine/o2,
 /area/ship/engineering/atmospherics)
 "kY" = (
 /obj/structure/cable{
@@ -1004,11 +1020,11 @@
 /area/ship/medical)
 "mD" = (
 /obj/effect/turf_decal/atmos/nitrogen,
-/turf/open/floor/engine/o2,
+/turf/open/floor/engine/n2,
 /area/ship/engineering/atmospherics)
 "mK" = (
 /obj/machinery/air_sensor/atmos/oxygen_tank,
-/turf/open/floor/engine/n2,
+/turf/open/floor/engine/o2,
 /area/ship/engineering/atmospherics)
 "mV" = (
 /obj/effect/turf_decal/lumos/tile/red/checker,
@@ -1018,9 +1034,6 @@
 /obj/machinery/firealarm{
 	dir = 4;
 	pixel_x = 28
-	},
-/obj/structure/sign/poster/official/random{
-	pixel_y = 32
 	},
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
@@ -1471,6 +1484,11 @@
 	},
 /turf/open/floor/carpet/nanoweave,
 /area/ship/hallway/central)
+"sa" = (
+/obj/effect/spawner/structure/window/reinforced/shutters,
+/obj/structure/curtain/bounty,
+/turf/open/floor/plating,
+/area/ship/crew/canteen)
 "sp" = (
 /obj/effect/turf_decal/lumos/tile/yellow/half{
 	dir = 4
@@ -1492,7 +1510,7 @@
 /obj/machinery/atmospherics/components/unary/outlet_injector/atmos/toxin_input{
 	dir = 1
 	},
-/turf/open/floor/engine/air,
+/turf/open/floor/engine/plasma,
 /area/ship/engineering/atmospherics)
 "sP" = (
 /obj/effect/turf_decal/corner/blue{
@@ -2044,6 +2062,9 @@
 /area/ship/cargo)
 "zQ" = (
 /obj/machinery/vending/cola/random,
+/obj/structure/sign/poster/official/random{
+	pixel_y = 32
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
 "zR" = (
@@ -2233,7 +2254,7 @@
 /area/ship/hallway/central)
 "Cz" = (
 /obj/machinery/air_sensor/atmos/toxin_tank,
-/turf/open/floor/engine/air,
+/turf/open/floor/engine/plasma,
 /area/ship/engineering/atmospherics)
 "CA" = (
 /obj/machinery/atmospherics/pipe/simple/green/visible,
@@ -2334,6 +2355,15 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/solgov)
+"Ek" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/turf/open/floor/plasteel,
+/area/ship/engineering)
 "El" = (
 /turf/closed/wall,
 /area/ship/medical)
@@ -2421,9 +2451,6 @@
 /obj/structure/cable,
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew/solgov)
-"Ff" = (
-/turf/closed/wall,
-/area/ship/storage)
 "Fl" = (
 /obj/machinery/power/apc/auto_name/south,
 /obj/structure/cable{
@@ -2564,7 +2591,7 @@
 /area/ship/crew/solgov)
 "Gq" = (
 /obj/effect/turf_decal/atmos/plasma,
-/turf/open/floor/engine/air,
+/turf/open/floor/engine/plasma,
 /area/ship/engineering/atmospherics)
 "Gv" = (
 /obj/structure/cable{
@@ -2616,6 +2643,12 @@
 /area/ship/cargo)
 "GP" = (
 /obj/machinery/door/airlock/external,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
 /turf/open/floor/plasteel,
 /area/ship/engineering)
 "GT" = (
@@ -2638,14 +2671,15 @@
 /area/ship/engineering/atmospherics)
 "Hj" = (
 /obj/effect/turf_decal/lumos/tile/blue/checker,
-/obj/structure/sign/poster/official/random{
-	pixel_y = 32
-	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
+	},
+/obj/machinery/smartfridge/bloodbank/preloaded{
+	density = 0;
+	pixel_y = 32
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
@@ -2832,7 +2866,7 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/siphon/atmos/nitrogen_output{
 	dir = 1
 	},
-/turf/open/floor/engine/o2,
+/turf/open/floor/engine/n2,
 /area/ship/engineering/atmospherics)
 "JP" = (
 /obj/effect/turf_decal/industrial/warning{
@@ -3572,7 +3606,7 @@
 /obj/machinery/atmospherics/components/unary/outlet_injector/atmos/oxygen_input{
 	dir = 1
 	},
-/turf/open/floor/engine/n2,
+/turf/open/floor/engine/o2,
 /area/ship/engineering/atmospherics)
 "Ty" = (
 /obj/effect/spawner/structure/window/reinforced/shutters,
@@ -3606,7 +3640,7 @@
 /area/ship/hallway/central)
 "UD" = (
 /obj/machinery/air_sensor/atmos/nitrogen_tank,
-/turf/open/floor/engine/o2,
+/turf/open/floor/engine/n2,
 /area/ship/engineering/atmospherics)
 "UM" = (
 /obj/structure/table/reinforced,
@@ -3674,7 +3708,7 @@
 /obj/machinery/atmospherics/components/unary/outlet_injector/atmos/nitrogen_input{
 	dir = 1
 	},
-/turf/open/floor/engine/o2,
+/turf/open/floor/engine/n2,
 /area/ship/engineering/atmospherics)
 "VO" = (
 /obj/effect/turf_decal/lumos/tile/brown/half{
@@ -3849,6 +3883,9 @@
 /obj/machinery/door/window/northleft,
 /turf/open/floor/plasteel,
 /area/ship/medical)
+"Yg" = (
+/turf/open/space/basic,
+/area/ship/cargo)
 "Yh" = (
 /turf/closed/wall,
 /area/ship/engineering)
@@ -3924,6 +3961,9 @@
 "Zk" = (
 /obj/structure/table/reinforced,
 /obj/machinery/chem_dispenser/drinks,
+/obj/structure/sign/poster/official/random{
+	pixel_y = 32
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/crew/canteen)
 "Zm" = (
@@ -4107,7 +4147,7 @@ jE
 GY
 GY
 oU
-oU
+Ek
 nu
 oU
 oU
@@ -4138,7 +4178,7 @@ JC
 Rp
 lG
 Gv
-fM
+jD
 fM
 fM
 XA
@@ -4551,7 +4591,7 @@ Rk
 RJ
 Bu
 Bu
-Bu
+Yg
 Bv
 JW
 gx
@@ -4684,7 +4724,7 @@ gu
 (23,1,1) = {"
 gu
 gu
-FT
+sa
 mV
 PB
 PB
@@ -4841,11 +4881,11 @@ gu
 gu
 gu
 FT
-dB
-dB
+FT
+FT
 Ae
-dB
-dB
+FT
+FT
 qr
 MN
 aB
@@ -4876,7 +4916,7 @@ Xu
 EB
 cT
 zB
-Ff
+bN
 ll
 wz
 cP
@@ -4938,7 +4978,7 @@ bN
 Zm
 Aa
 Fl
-Ff
+bN
 Eu
 wz
 jr
@@ -4969,7 +5009,7 @@ bN
 bN
 PH
 ve
-Ff
+bN
 Uo
 Sw
 jr
@@ -5000,7 +5040,7 @@ gu
 bN
 UU
 Aa
-Ff
+bN
 KS
 HZ
 jr
@@ -5031,7 +5071,7 @@ gu
 bN
 bN
 BA
-Ff
+bN
 rD
 pA
 zI
@@ -5062,7 +5102,7 @@ gu
 gu
 bN
 bN
-Ff
+bN
 Px
 Yq
 jr
