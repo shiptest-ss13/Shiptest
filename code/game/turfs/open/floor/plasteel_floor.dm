@@ -130,6 +130,7 @@
 
 /turf/open/floor/plasteel/stairs //considering removal
 	icon = 'icons/turf/floors.dmi'
+	icon_state = "stairs"
 	tiled_dirt = FALSE
 /turf/open/floor/plasteel/stairs/left
 	icon_state = "stairs-l"

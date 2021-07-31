@@ -734,7 +734,7 @@
 
 /obj/effect/turf_decal/industrial/warning
 	name = "hazard stripes"
-	color = "#d2d53d"
+//	color = "#d2d53d"
 	icon_state = "stripe"
 
 /obj/effect/turf_decal/industrial/warning/corner
