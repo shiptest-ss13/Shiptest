@@ -13,10 +13,10 @@
 /obj/machinery/firealarm{
 	pixel_y = -28
 	},
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/corner/neutral{
 	dir = 4
 	},
-/obj/effect/turf_decal/tile/neutral,
+/obj/effect/turf_decal/corner/neutral,
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
 	},
@@ -51,7 +51,7 @@
 /obj/item/plant_analyzer,
 /obj/item/plant_analyzer,
 /obj/item/plant_analyzer,
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/corner/neutral{
 	dir = 1
 	},
 /obj/effect/turf_decal/box,
@@ -301,10 +301,10 @@
 "gD" = (
 /obj/machinery/hydroponics/constructable,
 /obj/machinery/light,
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/corner/neutral{
 	dir = 1
 	},
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/corner/neutral{
 	dir = 4
 	},
 /obj/item/radio/intercom{
@@ -352,10 +352,10 @@
 	dir = 8
 	},
 /obj/structure/cable,
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/corner/neutral{
 	dir = 1
 	},
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/corner/neutral{
 	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
@@ -371,13 +371,13 @@
 "ia" = (
 /obj/structure/tank_dispenser/oxygen,
 /obj/machinery/light,
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/corner/neutral{
 	dir = 4
 	},
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/corner/neutral{
 	dir = 1
 	},
-/obj/effect/turf_decal/tile/neutral,
+/obj/effect/turf_decal/corner/neutral,
 /obj/effect/turf_decal/box,
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
@@ -396,7 +396,7 @@
 /area/ship/storage)
 "in" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/effect/turf_decal/stripes/line{
+/obj/effect/turf_decal/industrial/warning{
 	dir = 1
 	},
 /turf/open/floor/plasteel,
@@ -504,13 +504,13 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/corner/neutral{
 	dir = 1
 	},
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/corner/neutral{
 	dir = 4
 	},
-/obj/effect/turf_decal/tile/neutral,
+/obj/effect/turf_decal/corner/neutral,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "lp" = (
@@ -595,10 +595,10 @@
 /obj/machinery/firealarm{
 	pixel_y = -28
 	},
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/corner/neutral{
 	dir = 1
 	},
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/corner/neutral{
 	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
@@ -620,7 +620,7 @@
 	target_pressure = 500
 	},
 /obj/machinery/door/window/southleft,
-/obj/effect/turf_decal/stripes/line{
+/obj/effect/turf_decal/industrial/warning{
 	dir = 1
 	},
 /turf/open/floor/plating,
@@ -700,10 +700,10 @@
 "oX" = (
 /obj/structure/table/reinforced,
 /obj/machinery/microwave,
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/corner/neutral{
 	dir = 8
 	},
-/obj/effect/turf_decal/tile/neutral,
+/obj/effect/turf_decal/corner/neutral,
 /obj/effect/turf_decal/box,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
@@ -712,13 +712,13 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/corner/neutral{
 	dir = 1
 	},
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/corner/neutral{
 	dir = 8
 	},
-/obj/effect/turf_decal/tile/neutral,
+/obj/effect/turf_decal/corner/neutral,
 /obj/effect/turf_decal/box,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
@@ -841,21 +841,21 @@
 /area/ship/maintenance)
 "sd" = (
 /obj/machinery/deepfryer,
-/obj/effect/turf_decal/tile/neutral,
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/corner/neutral,
+/obj/effect/turf_decal/corner/neutral{
 	dir = 4
 	},
 /obj/effect/turf_decal/box,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "sw" = (
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/corner/neutral{
 	dir = 1
 	},
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/corner/neutral{
 	dir = 4
 	},
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/corner/neutral{
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
@@ -867,7 +867,7 @@
 /turf/open/floor/wood,
 /area/ship/crew)
 "tu" = (
-/obj/effect/turf_decal/stripes/line{
+/obj/effect/turf_decal/industrial/warning{
 	dir = 1
 	},
 /obj/machinery/button/door{
@@ -927,10 +927,10 @@
 	department = "Cockpit";
 	pixel_y = 30
 	},
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/corner/neutral{
 	dir = 8
 	},
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/corner/neutral{
 	dir = 1
 	},
 /obj/machinery/button/door{
@@ -967,11 +967,11 @@
 	pixel_y = 24
 	},
 /obj/item/storage/box/donkpockets,
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/corner/neutral{
 	dir = 8
 	},
-/obj/effect/turf_decal/tile/neutral,
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/corner/neutral,
+/obj/effect/turf_decal/corner/neutral{
 	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
@@ -1000,10 +1000,10 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/storage)
 "vn" = (
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/corner/neutral{
 	dir = 1
 	},
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/corner/neutral{
 	dir = 4
 	},
 /obj/effect/turf_decal/box,
@@ -1045,13 +1045,13 @@
 "wp" = (
 /obj/machinery/vending/wardrobe/chef_wardrobe,
 /obj/machinery/light,
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/corner/neutral{
 	dir = 8
 	},
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/corner/neutral{
 	dir = 1
 	},
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/corner/neutral{
 	dir = 4
 	},
 /obj/effect/turf_decal/box,
@@ -1108,7 +1108,7 @@
 /obj/machinery/airalarm/all_access{
 	pixel_y = 24
 	},
-/obj/effect/turf_decal/stripes/corner{
+/obj/effect/turf_decal/industrial/warning/corner{
 	dir = 4
 	},
 /turf/open/floor/plasteel,
@@ -1197,11 +1197,11 @@
 /obj/machinery/light{
 	dir = 8
 	},
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/corner/neutral{
 	dir = 8
 	},
-/obj/effect/turf_decal/tile/neutral,
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/corner/neutral,
+/obj/effect/turf_decal/corner/neutral{
 	dir = 4
 	},
 /obj/effect/turf_decal/box,
@@ -1230,7 +1230,7 @@
 /area/ship/maintenance)
 "Az" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
-/obj/effect/turf_decal/stripes/line{
+/obj/effect/turf_decal/industrial/warning{
 	dir = 1
 	},
 /turf/open/floor/plasteel,
@@ -1239,20 +1239,20 @@
 /obj/structure/chair/comfy/shuttle{
 	dir = 4
 	},
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/corner/neutral{
 	dir = 8
 	},
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/corner/neutral{
 	dir = 1
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "AQ" = (
 /obj/structure/chair/stool/bar,
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/corner/neutral{
 	dir = 1
 	},
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/corner/neutral{
 	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
@@ -1325,10 +1325,10 @@
 	dir = 1;
 	pixel_y = -24
 	},
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/corner/neutral{
 	dir = 1
 	},
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/corner/neutral{
 	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
@@ -1376,10 +1376,10 @@
 /obj/machinery/computer/helm{
 	dir = 8
 	},
-/obj/effect/turf_decal/tile/blue{
+/obj/effect/turf_decal/corner/blue{
 	dir = 1
 	},
-/obj/effect/turf_decal/tile/blue{
+/obj/effect/turf_decal/corner/blue{
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
@@ -1516,13 +1516,13 @@
 	dir = 4;
 	pixel_x = -12
 	},
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/corner/neutral{
 	dir = 1
 	},
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/corner/neutral{
 	dir = 4
 	},
-/obj/effect/turf_decal/tile/neutral,
+/obj/effect/turf_decal/corner/neutral,
 /obj/structure/extinguisher_cabinet{
 	pixel_x = -30;
 	pixel_y = -30
@@ -1615,10 +1615,10 @@
 /area/ship/bridge)
 "Gz" = (
 /obj/structure/chair/stool/bar,
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/corner/neutral{
 	dir = 1
 	},
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/corner/neutral{
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
@@ -1654,10 +1654,10 @@
 /obj/machinery/computer/autopilot{
 	dir = 8
 	},
-/obj/effect/turf_decal/tile/blue{
+/obj/effect/turf_decal/corner/blue{
 	dir = 1
 	},
-/obj/effect/turf_decal/tile/blue{
+/obj/effect/turf_decal/corner/blue{
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
@@ -1723,10 +1723,10 @@
 /area/ship/crew/canteen)
 "Iv" = (
 /obj/machinery/hydroponics/constructable,
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/corner/neutral{
 	dir = 1
 	},
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/corner/neutral{
 	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
@@ -1798,19 +1798,19 @@
 	anchored = 1;
 	dir = 8
 	},
-/obj/effect/turf_decal/tile/blue{
+/obj/effect/turf_decal/corner/blue{
 	dir = 1
 	},
-/obj/effect/turf_decal/tile/blue{
+/obj/effect/turf_decal/corner/blue{
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "Kp" = (
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/corner/neutral{
 	dir = 1
 	},
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/corner/neutral{
 	dir = 8
 	},
 /obj/structure/extinguisher_cabinet{
@@ -1858,8 +1858,8 @@
 "Lu" = (
 /obj/machinery/chem_master/condimaster,
 /obj/item/storage/box/beakers,
-/obj/effect/turf_decal/tile/neutral,
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/corner/neutral,
+/obj/effect/turf_decal/corner/neutral{
 	dir = 4
 	},
 /obj/effect/turf_decal/box,
@@ -1937,10 +1937,10 @@
 /obj/machinery/firealarm{
 	pixel_y = -28
 	},
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/corner/neutral{
 	dir = 1
 	},
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/corner/neutral{
 	dir = 4
 	},
 /obj/effect/turf_decal/box,
@@ -1950,17 +1950,17 @@
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
-/obj/effect/turf_decal/stripes/line{
+/obj/effect/turf_decal/industrial/warning{
 	dir = 8
 	},
 /turf/open/floor/plasteel/freezer,
 /area/ship/storage)
 "Oz" = (
 /obj/machinery/vending/wardrobe/bar_wardrobe,
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/corner/neutral{
 	dir = 8
 	},
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/corner/neutral{
 	dir = 1
 	},
 /turf/open/floor/plasteel/dark,
@@ -2022,10 +2022,10 @@
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/corner/neutral{
 	dir = 4
 	},
-/obj/effect/turf_decal/tile/neutral,
+/obj/effect/turf_decal/corner/neutral,
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
 	},
@@ -2112,7 +2112,7 @@
 /turf/open/floor/plasteel,
 /area/ship/bridge)
 "Rc" = (
-/obj/effect/turf_decal/stripes/line{
+/obj/effect/turf_decal/industrial/warning{
 	dir = 1
 	},
 /turf/open/floor/plasteel,
@@ -2228,10 +2228,10 @@
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/corner/neutral{
 	dir = 1
 	},
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/corner/neutral{
 	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
@@ -2321,7 +2321,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/effect/turf_decal/stripes/corner{
+/obj/effect/turf_decal/industrial/warning/corner{
 	dir = 1
 	},
 /turf/open/floor/plasteel/freezer,
@@ -2346,10 +2346,10 @@
 /obj/item/seeds/random,
 /obj/item/seeds/wheat/rice,
 /obj/item/seeds/wheat/rice,
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/corner/neutral{
 	dir = 1
 	},
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/corner/neutral{
 	dir = 4
 	},
 /obj/effect/turf_decal/box,
@@ -2382,10 +2382,10 @@
 	dir = 8
 	},
 /obj/structure/chair/stool/bar,
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/corner/neutral{
 	dir = 1
 	},
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/corner/neutral{
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
@@ -2405,10 +2405,10 @@
 /area/ship/maintenance)
 "WK" = (
 /obj/machinery/grill,
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/corner/neutral{
 	dir = 8
 	},
-/obj/effect/turf_decal/tile/neutral,
+/obj/effect/turf_decal/corner/neutral,
 /obj/effect/turf_decal/box,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
@@ -2432,7 +2432,7 @@
 /turf/open/floor/plasteel,
 /area/ship/crew/hydroponics)
 "Xj" = (
-/obj/effect/turf_decal/stripes/corner{
+/obj/effect/turf_decal/industrial/warning/corner{
 	dir = 1
 	},
 /turf/open/floor/plasteel,

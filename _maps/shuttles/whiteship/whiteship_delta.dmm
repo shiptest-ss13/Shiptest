@@ -5,8 +5,8 @@
 "ab" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/chair/stool/bar,
-/obj/effect/turf_decal/tile/bar,
-/obj/effect/turf_decal/tile/bar{
+/obj/effect/turf_decal/corner/bar,
+/obj/effect/turf_decal/corner/bar{
 	dir = 1
 	},
 /turf/open/floor/plasteel,
@@ -154,8 +154,8 @@
 	pixel_x = 7;
 	pixel_y = 4
 	},
-/obj/effect/turf_decal/tile/bar,
-/obj/effect/turf_decal/tile/bar{
+/obj/effect/turf_decal/corner/bar,
+/obj/effect/turf_decal/corner/bar{
 	dir = 1
 	},
 /turf/open/floor/plasteel,
@@ -164,8 +164,8 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/chair/stool/bar,
 /obj/structure/spider/stickyweb,
-/obj/effect/turf_decal/tile/bar,
-/obj/effect/turf_decal/tile/bar{
+/obj/effect/turf_decal/corner/bar,
+/obj/effect/turf_decal/corner/bar{
 	dir = 1
 	},
 /turf/open/floor/plasteel,
@@ -176,8 +176,8 @@
 	pixel_y = 24
 	},
 /obj/structure/closet/crate/bin,
-/obj/effect/turf_decal/tile/bar,
-/obj/effect/turf_decal/tile/bar{
+/obj/effect/turf_decal/corner/bar,
+/obj/effect/turf_decal/corner/bar{
 	dir = 1
 	},
 /turf/open/floor/plasteel,
@@ -191,8 +191,8 @@
 	icon_state = "0-2"
 	},
 /obj/structure/spider/stickyweb,
-/obj/effect/turf_decal/tile/bar,
-/obj/effect/turf_decal/tile/bar{
+/obj/effect/turf_decal/corner/bar,
+/obj/effect/turf_decal/corner/bar{
 	dir = 1
 	},
 /obj/machinery/power/apc/auto_name/west,
@@ -271,7 +271,7 @@
 /turf/open/floor/plating,
 /area/ship/engineering)
 "aA" = (
-/obj/effect/turf_decal/stripes/line{
+/obj/effect/turf_decal/industrial/warning{
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt/dust,
@@ -344,8 +344,8 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/chair/stool/bar,
 /obj/effect/decal/cleanable/blood/old,
-/obj/effect/turf_decal/tile/bar,
-/obj/effect/turf_decal/tile/bar{
+/obj/effect/turf_decal/corner/bar,
+/obj/effect/turf_decal/corner/bar{
 	dir = 1
 	},
 /turf/open/floor/plasteel,
@@ -357,8 +357,8 @@
 	},
 /obj/effect/decal/cleanable/blood/gibs/old,
 /obj/structure/spider/stickyweb,
-/obj/effect/turf_decal/tile/bar,
-/obj/effect/turf_decal/tile/bar{
+/obj/effect/turf_decal/corner/bar,
+/obj/effect/turf_decal/corner/bar{
 	dir = 1
 	},
 /turf/open/floor/plasteel,
@@ -388,8 +388,8 @@
 "aK" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/spider/stickyweb,
-/obj/effect/turf_decal/tile/bar,
-/obj/effect/turf_decal/tile/bar{
+/obj/effect/turf_decal/corner/bar,
+/obj/effect/turf_decal/corner/bar{
 	dir = 1
 	},
 /turf/open/floor/plasteel,
@@ -414,7 +414,7 @@
 /turf/open/floor/plating/airless,
 /area/ship/engineering)
 "aN" = (
-/obj/effect/turf_decal/stripes/line{
+/obj/effect/turf_decal/industrial/warning{
 	dir = 8
 	},
 /obj/structure/cable{
@@ -460,7 +460,7 @@
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/corner/neutral{
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden{
@@ -473,7 +473,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/corner/neutral{
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden{
@@ -486,7 +486,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/corner/neutral{
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
@@ -508,7 +508,7 @@
 	pixel_y = -24
 	},
 /obj/structure/spider/stickyweb,
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/corner/neutral{
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
@@ -527,7 +527,7 @@
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/corner/neutral{
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden{
@@ -542,7 +542,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/corner/neutral{
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden,
@@ -623,8 +623,8 @@
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
-/obj/effect/turf_decal/tile/bar,
-/obj/effect/turf_decal/tile/bar{
+/obj/effect/turf_decal/corner/bar,
+/obj/effect/turf_decal/corner/bar{
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
@@ -634,8 +634,8 @@
 /area/ship/crew/canteen)
 "bb" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/turf_decal/tile/bar,
-/obj/effect/turf_decal/tile/bar{
+/obj/effect/turf_decal/corner/bar,
+/obj/effect/turf_decal/corner/bar{
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
@@ -649,8 +649,8 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/blood/old,
-/obj/effect/turf_decal/tile/bar,
-/obj/effect/turf_decal/tile/bar{
+/obj/effect/turf_decal/corner/bar,
+/obj/effect/turf_decal/corner/bar{
 	dir = 1
 	},
 /turf/open/floor/plasteel,
@@ -662,16 +662,16 @@
 	},
 /obj/structure/chair,
 /obj/structure/spider/stickyweb,
-/obj/effect/turf_decal/tile/bar,
-/obj/effect/turf_decal/tile/bar{
+/obj/effect/turf_decal/corner/bar,
+/obj/effect/turf_decal/corner/bar{
 	dir = 1
 	},
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
 "be" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/turf_decal/tile/bar,
-/obj/effect/turf_decal/tile/bar{
+/obj/effect/turf_decal/corner/bar,
+/obj/effect/turf_decal/corner/bar{
 	dir = 1
 	},
 /turf/open/floor/plasteel,
@@ -682,14 +682,14 @@
 	},
 /obj/effect/turf_decal/bot_white,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/corner/neutral{
 	dir = 1
 	},
-/obj/effect/turf_decal/tile/neutral,
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/corner/neutral,
+/obj/effect/turf_decal/corner/neutral{
 	dir = 4
 	},
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/corner/neutral{
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
@@ -703,14 +703,14 @@
 	dir = 8
 	},
 /obj/item/shard,
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/corner/neutral{
 	dir = 1
 	},
-/obj/effect/turf_decal/tile/neutral,
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/corner/neutral,
+/obj/effect/turf_decal/corner/neutral{
 	dir = 4
 	},
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/corner/neutral{
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
@@ -737,7 +737,7 @@
 /turf/open/floor/plating/airless,
 /area/ship/external)
 "bk" = (
-/obj/effect/turf_decal/stripes/corner{
+/obj/effect/turf_decal/industrial/warning/corner{
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt/dust,
@@ -779,8 +779,8 @@
 	icon_state = "1-2"
 	},
 /obj/structure/spider/stickyweb,
-/obj/effect/turf_decal/tile/blue,
-/obj/effect/turf_decal/tile/blue{
+/obj/effect/turf_decal/corner/blue,
+/obj/effect/turf_decal/corner/blue{
 	dir = 8
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
@@ -801,8 +801,8 @@
 	desc = "A badge on the arm indicates that it's meant to be worn by CentCom recovery teams. This one seems dusty and clearly hasn't been cleaned in some time.";
 	name = "\improper dusty old CentCom jumpsuit"
 	},
-/obj/effect/turf_decal/tile/blue,
-/obj/effect/turf_decal/tile/blue{
+/obj/effect/turf_decal/corner/blue,
+/obj/effect/turf_decal/corner/blue{
 	dir = 8
 	},
 /turf/open/floor/plasteel,
@@ -867,8 +867,8 @@
 "bu" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/chair,
-/obj/effect/turf_decal/tile/bar,
-/obj/effect/turf_decal/tile/bar{
+/obj/effect/turf_decal/corner/bar,
+/obj/effect/turf_decal/corner/bar{
 	dir = 1
 	},
 /turf/open/floor/plasteel,
@@ -890,8 +890,8 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/table,
 /obj/machinery/microwave,
-/obj/effect/turf_decal/tile/bar,
-/obj/effect/turf_decal/tile/bar{
+/obj/effect/turf_decal/corner/bar,
+/obj/effect/turf_decal/corner/bar{
 	dir = 1
 	},
 /turf/open/floor/plasteel,
@@ -908,7 +908,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
 "by" = (
-/obj/effect/turf_decal/stripes/line{
+/obj/effect/turf_decal/industrial/warning{
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt/dust,
@@ -975,7 +975,7 @@
 /area/ship/hallway/central)
 "bF" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/turf_decal/tile/blue{
+/obj/effect/turf_decal/corner/blue{
 	dir = 8
 	},
 /turf/open/floor/plasteel,
@@ -985,7 +985,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/effect/turf_decal/tile/blue,
+/obj/effect/turf_decal/corner/blue,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /turf/open/floor/plasteel,
 /area/ship/hallway/central)
@@ -1022,8 +1022,8 @@
 	pixel_x = -8;
 	pixel_y = 4
 	},
-/obj/effect/turf_decal/tile/bar,
-/obj/effect/turf_decal/tile/bar{
+/obj/effect/turf_decal/corner/bar,
+/obj/effect/turf_decal/corner/bar{
 	dir = 1
 	},
 /turf/open/floor/plasteel,
@@ -1032,8 +1032,8 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/table,
 /obj/item/storage/fancy/donut_box,
-/obj/effect/turf_decal/tile/bar,
-/obj/effect/turf_decal/tile/bar{
+/obj/effect/turf_decal/corner/bar,
+/obj/effect/turf_decal/corner/bar{
 	dir = 1
 	},
 /turf/open/floor/plasteel,
@@ -1056,8 +1056,8 @@
 /obj/item/reagent_containers/food/drinks/beer,
 /obj/item/reagent_containers/food/snacks/sandwich,
 /obj/structure/spider/stickyweb,
-/obj/effect/turf_decal/tile/bar,
-/obj/effect/turf_decal/tile/bar{
+/obj/effect/turf_decal/corner/bar,
+/obj/effect/turf_decal/corner/bar{
 	dir = 1
 	},
 /turf/open/floor/plasteel,
@@ -1087,7 +1087,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
 "bP" = (
-/obj/effect/turf_decal/stripes/line{
+/obj/effect/turf_decal/industrial/warning{
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt/dust,
@@ -1146,8 +1146,8 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/recharger,
 /obj/structure/spider/stickyweb,
-/obj/effect/turf_decal/tile/blue,
-/obj/effect/turf_decal/tile/blue{
+/obj/effect/turf_decal/corner/blue,
+/obj/effect/turf_decal/corner/blue{
 	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
@@ -1178,13 +1178,13 @@
 /obj/machinery/light/small/built{
 	dir = 4
 	},
-/obj/effect/turf_decal/tile/blue,
+/obj/effect/turf_decal/corner/blue,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /turf/open/floor/plasteel,
 /area/ship/hallway/central)
 "bV" = (
 /obj/machinery/light/small/built,
-/obj/effect/turf_decal/stripes/corner{
+/obj/effect/turf_decal/industrial/warning/corner{
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt/dust,
@@ -1213,10 +1213,10 @@
 	pixel_x = -4
 	},
 /obj/structure/spider/stickyweb,
-/obj/effect/turf_decal/tile/blue{
+/obj/effect/turf_decal/corner/blue{
 	dir = 1
 	},
-/obj/effect/turf_decal/tile/blue{
+/obj/effect/turf_decal/corner/blue{
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
@@ -1234,7 +1234,7 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/turf_decal/tile/blue{
+/obj/effect/turf_decal/corner/blue{
 	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
@@ -1247,13 +1247,13 @@
 /obj/item/shard,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/turf_decal/tile/blue{
+/obj/effect/turf_decal/corner/blue{
 	dir = 1
 	},
-/obj/effect/turf_decal/tile/blue{
+/obj/effect/turf_decal/corner/blue{
 	dir = 4
 	},
-/obj/effect/turf_decal/tile/blue{
+/obj/effect/turf_decal/corner/blue{
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
@@ -1264,7 +1264,7 @@
 	icon_state = "1-2"
 	},
 /obj/structure/spider/stickyweb,
-/obj/effect/turf_decal/tile/blue,
+/obj/effect/turf_decal/corner/blue,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /turf/open/floor/plasteel,
 /area/ship/hallway/central)
@@ -1301,10 +1301,10 @@
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
-/obj/effect/turf_decal/tile/blue{
+/obj/effect/turf_decal/corner/blue{
 	dir = 1
 	},
-/obj/effect/turf_decal/tile/blue{
+/obj/effect/turf_decal/corner/blue{
 	dir = 8
 	},
 /obj/machinery/power/apc/auto_name/west,
@@ -1337,10 +1337,10 @@
 /area/ship/bridge)
 "ch" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/turf_decal/tile/blue{
+/obj/effect/turf_decal/corner/blue{
 	dir = 1
 	},
-/obj/effect/turf_decal/tile/blue{
+/obj/effect/turf_decal/corner/blue{
 	dir = 8
 	},
 /obj/machinery/computer/helm{
@@ -1378,7 +1378,7 @@
 /obj/machinery/light/small/built{
 	dir = 1
 	},
-/obj/effect/turf_decal/stripes/corner{
+/obj/effect/turf_decal/industrial/warning/corner{
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt/dust,
@@ -1423,10 +1423,10 @@
 	dir = 4;
 	pixel_x = -24
 	},
-/obj/effect/turf_decal/tile/blue{
+/obj/effect/turf_decal/corner/blue{
 	dir = 1
 	},
-/obj/effect/turf_decal/tile/blue{
+/obj/effect/turf_decal/corner/blue{
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
@@ -1455,16 +1455,16 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/blood/old,
 /obj/structure/spider/stickyweb,
-/obj/effect/turf_decal/tile/blue,
+/obj/effect/turf_decal/corner/blue,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "cp" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/turf_decal/tile/blue{
+/obj/effect/turf_decal/corner/blue{
 	dir = 1
 	},
-/obj/effect/turf_decal/tile/blue,
-/obj/effect/turf_decal/tile/blue{
+/obj/effect/turf_decal/corner/blue,
+/obj/effect/turf_decal/corner/blue{
 	dir = 8
 	},
 /obj/machinery/computer/autopilot{
@@ -1474,7 +1474,7 @@
 /area/ship/bridge)
 "cq" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/turf_decal/tile/blue{
+/obj/effect/turf_decal/corner/blue{
 	dir = 1
 	},
 /turf/open/floor/plasteel,
@@ -1484,14 +1484,14 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/effect/turf_decal/tile/blue{
+/obj/effect/turf_decal/corner/blue{
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /turf/open/floor/plasteel,
 /area/ship/hallway/central)
 "cs" = (
-/obj/effect/turf_decal/stripes/line{
+/obj/effect/turf_decal/industrial/warning{
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt/dust,
@@ -1540,8 +1540,8 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/spider/stickyweb,
-/obj/effect/turf_decal/tile/blue,
-/obj/effect/turf_decal/tile/blue{
+/obj/effect/turf_decal/corner/blue,
+/obj/effect/turf_decal/corner/blue{
 	dir = 4
 	},
 /obj/item/areaeditor/shuttle,
@@ -1561,7 +1561,7 @@
 /obj/machinery/light/small/built{
 	dir = 4
 	},
-/obj/effect/turf_decal/tile/blue{
+/obj/effect/turf_decal/corner/blue{
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
@@ -1588,7 +1588,7 @@
 /turf/closed/wall/mineral/titanium,
 /area/ship/cargo)
 "cB" = (
-/obj/effect/turf_decal/stripes/line{
+/obj/effect/turf_decal/industrial/warning{
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt/dust,
@@ -1661,14 +1661,14 @@
 	lootcount = 3;
 	name = "3maintenance loot spawner"
 	},
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/corner/neutral{
 	dir = 1
 	},
-/obj/effect/turf_decal/tile/neutral,
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/corner/neutral,
+/obj/effect/turf_decal/corner/neutral{
 	dir = 4
 	},
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/corner/neutral{
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
@@ -1678,14 +1678,14 @@
 /obj/structure/closet,
 /obj/item/storage/toolbox/emergency,
 /obj/structure/spider/stickyweb,
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/corner/neutral{
 	dir = 1
 	},
-/obj/effect/turf_decal/tile/neutral,
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/corner/neutral,
+/obj/effect/turf_decal/corner/neutral{
 	dir = 4
 	},
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/corner/neutral{
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
@@ -1714,14 +1714,14 @@
 	dir = 4
 	},
 /obj/structure/closet/crate/internals,
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/corner/neutral{
 	dir = 1
 	},
-/obj/effect/turf_decal/tile/neutral,
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/corner/neutral,
+/obj/effect/turf_decal/corner/neutral{
 	dir = 4
 	},
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/corner/neutral{
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
@@ -1749,7 +1749,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
 "cN" = (
-/obj/effect/turf_decal/stripes/corner{
+/obj/effect/turf_decal/industrial/warning/corner{
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt/dust,
@@ -1780,10 +1780,10 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/effect/turf_decal/tile/blue{
+/obj/effect/turf_decal/corner/blue{
 	dir = 1
 	},
-/obj/effect/turf_decal/tile/blue{
+/obj/effect/turf_decal/corner/blue{
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
@@ -1794,10 +1794,10 @@
 /obj/structure/rack,
 /obj/item/defibrillator,
 /obj/machinery/atmospherics/components/unary/vent_pump/on,
-/obj/effect/turf_decal/tile/blue{
+/obj/effect/turf_decal/corner/blue{
 	dir = 1
 	},
-/obj/effect/turf_decal/tile/blue{
+/obj/effect/turf_decal/corner/blue{
 	dir = 4
 	},
 /turf/open/floor/plasteel,
@@ -1888,14 +1888,14 @@
 /obj/effect/turf_decal/box/white/corners{
 	dir = 8
 	},
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/corner/neutral{
 	dir = 1
 	},
-/obj/effect/turf_decal/tile/neutral,
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/corner/neutral,
+/obj/effect/turf_decal/corner/neutral{
 	dir = 4
 	},
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/corner/neutral{
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
@@ -1903,14 +1903,14 @@
 "cZ" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/spider/stickyweb,
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/corner/neutral{
 	dir = 1
 	},
-/obj/effect/turf_decal/tile/neutral,
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/corner/neutral,
+/obj/effect/turf_decal/corner/neutral{
 	dir = 4
 	},
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/corner/neutral{
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
@@ -1925,14 +1925,14 @@
 	lootcount = 3;
 	name = "3maintenance loot spawner"
 	},
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/corner/neutral{
 	dir = 1
 	},
-/obj/effect/turf_decal/tile/neutral,
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/corner/neutral,
+/obj/effect/turf_decal/corner/neutral{
 	dir = 4
 	},
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/corner/neutral{
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
@@ -1948,7 +1948,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
 "dc" = (
-/obj/effect/turf_decal/stripes/line{
+/obj/effect/turf_decal/industrial/warning{
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt/dust,
@@ -2052,9 +2052,16 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
 	},
-/turf/open/floor/plasteel/white/side{
-	dir = 9
+/obj/effect/turf_decal/corner/white{
+	dir = 1
 	},
+/obj/effect/turf_decal/corner/white{
+	dir = 4
+	},
+/obj/effect/turf_decal/corner/white{
+	dir = 8
+	},
+/turf/open/floor/plasteel,
 /area/ship/medical)
 "dk" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -2064,9 +2071,13 @@
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden{
 	dir = 1
 	},
-/turf/open/floor/plasteel/white/side{
+/obj/effect/turf_decal/corner/white{
 	dir = 1
 	},
+/obj/effect/turf_decal/corner/white{
+	dir = 4
+	},
+/turf/open/floor/plasteel,
 /area/ship/medical)
 "dl" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -2080,9 +2091,13 @@
 	icon_state = "1-8"
 	},
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden,
-/turf/open/floor/plasteel/white/side{
+/obj/effect/turf_decal/corner/white{
 	dir = 1
 	},
+/obj/effect/turf_decal/corner/white{
+	dir = 4
+	},
+/turf/open/floor/plasteel,
 /area/ship/medical)
 "dm" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -2095,9 +2110,14 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
 	},
-/turf/open/floor/plasteel/white/side{
-	dir = 5
+/obj/effect/turf_decal/corner/white{
+	dir = 1
 	},
+/obj/effect/turf_decal/corner/white,
+/obj/effect/turf_decal/corner/white{
+	dir = 4
+	},
+/turf/open/floor/plasteel,
 /area/ship/medical)
 "dn" = (
 /obj/effect/turf_decal/stripes/white/line{
@@ -2214,14 +2234,14 @@
 	},
 /obj/effect/turf_decal/bot_white,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/corner/neutral{
 	dir = 1
 	},
-/obj/effect/turf_decal/tile/neutral,
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/corner/neutral,
+/obj/effect/turf_decal/corner/neutral{
 	dir = 4
 	},
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/corner/neutral{
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
@@ -2238,14 +2258,14 @@
 /obj/effect/turf_decal/bot_white,
 /obj/item/stack/rods,
 /obj/item/stack/cable_coil/cut/red,
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/corner/neutral{
 	dir = 1
 	},
-/obj/effect/turf_decal/tile/neutral,
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/corner/neutral,
+/obj/effect/turf_decal/corner/neutral{
 	dir = 4
 	},
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/corner/neutral{
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
@@ -2273,7 +2293,7 @@
 /turf/open/floor/plating/airless,
 /area/ship/external)
 "dA" = (
-/obj/effect/turf_decal/stripes/line{
+/obj/effect/turf_decal/industrial/warning{
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt/dust,
@@ -2308,7 +2328,11 @@
 	req_access = null
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plasteel/white/side,
+/obj/effect/turf_decal/corner/white,
+/obj/effect/turf_decal/corner/white{
+	dir = 8
+	},
+/turf/open/floor/plasteel,
 /area/ship/medical)
 "dE" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -2320,7 +2344,11 @@
 	pixel_x = 24
 	},
 /obj/structure/spider/stickyweb,
-/turf/open/floor/plasteel/white/side,
+/obj/effect/turf_decal/corner/white,
+/obj/effect/turf_decal/corner/white{
+	dir = 8
+	},
+/turf/open/floor/plasteel,
 /area/ship/medical)
 "dF" = (
 /obj/structure/table/optable,
@@ -2328,9 +2356,13 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/spider/stickyweb,
-/turf/open/floor/plasteel/white/side{
+/obj/effect/turf_decal/corner/white{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/white{
 	dir = 8
 	},
+/turf/open/floor/plasteel,
 /area/ship/medical)
 "dG" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -2371,14 +2403,14 @@
 /obj/effect/turf_decal/box/white/corners{
 	dir = 4
 	},
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/corner/neutral{
 	dir = 1
 	},
-/obj/effect/turf_decal/tile/neutral,
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/corner/neutral,
+/obj/effect/turf_decal/corner/neutral{
 	dir = 4
 	},
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/corner/neutral{
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
@@ -2388,14 +2420,14 @@
 /obj/effect/turf_decal/box/white/corners{
 	dir = 1
 	},
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/corner/neutral{
 	dir = 1
 	},
-/obj/effect/turf_decal/tile/neutral,
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/corner/neutral,
+/obj/effect/turf_decal/corner/neutral{
 	dir = 4
 	},
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/corner/neutral{
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
@@ -2441,14 +2473,16 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plasteel/white/side{
+/obj/effect/turf_decal/corner/white,
+/obj/effect/turf_decal/corner/white{
 	dir = 4
 	},
+/turf/open/floor/plasteel,
 /area/ship/medical)
 "dQ" = (
 /obj/machinery/iv_drip,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/turf_decal/bot,
+/obj/effect/turf_decal/industrial/outline/yellow,
 /obj/structure/cable,
 /obj/structure/spider/stickyweb,
 /obj/machinery/power/apc/auto_name/south,
@@ -2463,7 +2497,7 @@
 /obj/item/reagent_containers/blood/OMinus,
 /obj/item/reagent_containers/blood/random,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/turf_decal/bot,
+/obj/effect/turf_decal/industrial/outline/yellow,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
@@ -2490,14 +2524,14 @@
 	dir = 4
 	},
 /obj/item/shard,
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/corner/neutral{
 	dir = 1
 	},
-/obj/effect/turf_decal/tile/neutral,
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/corner/neutral,
+/obj/effect/turf_decal/corner/neutral{
 	dir = 4
 	},
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/corner/neutral{
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
@@ -2517,14 +2551,14 @@
 	dir = 8
 	},
 /obj/structure/spider/stickyweb,
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/corner/neutral{
 	dir = 1
 	},
-/obj/effect/turf_decal/tile/neutral,
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/corner/neutral,
+/obj/effect/turf_decal/corner/neutral{
 	dir = 4
 	},
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/corner/neutral{
 	dir = 8
 	},
 /obj/machinery/autolathe,
@@ -2539,14 +2573,14 @@
 	lootcount = 3;
 	name = "3maintenance loot spawner"
 	},
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/corner/neutral{
 	dir = 1
 	},
-/obj/effect/turf_decal/tile/neutral,
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/corner/neutral,
+/obj/effect/turf_decal/corner/neutral{
 	dir = 4
 	},
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/corner/neutral{
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
@@ -2567,14 +2601,14 @@
 	dir = 1;
 	pixel_y = -24
 	},
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/corner/neutral{
 	dir = 1
 	},
-/obj/effect/turf_decal/tile/neutral,
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/corner/neutral,
+/obj/effect/turf_decal/corner/neutral{
 	dir = 4
 	},
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/corner/neutral{
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
@@ -2644,7 +2678,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/corner/neutral{
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden,

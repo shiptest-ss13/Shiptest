@@ -9,7 +9,7 @@
 /obj/machinery/door/poddoor{
 	id = "bigderelictshipdock"
 	},
-/obj/effect/turf_decal/delivery,
+/obj/effect/turf_decal/industrial/hatch/yellow,
 /turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/derelictoutpost/cargobay)
 "ad" = (
@@ -214,7 +214,7 @@
 /obj/structure/closet/crate{
 	icon_state = "crateopen"
 	},
-/obj/effect/turf_decal/delivery,
+/obj/effect/turf_decal/industrial/hatch/yellow,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/derelictoutpost/cargobay)
 "aO" = (
@@ -247,7 +247,7 @@
 /obj/structure/extinguisher_cabinet{
 	pixel_x = -24
 	},
-/obj/effect/turf_decal/delivery,
+/obj/effect/turf_decal/industrial/hatch/yellow,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/derelictoutpost/cargobay)
 "aU" = (
@@ -281,7 +281,7 @@
 /area/ruin/space/has_grav/derelictoutpost/dockedship)
 "aX" = (
 /obj/structure/closet/crate,
-/obj/effect/turf_decal/delivery,
+/obj/effect/turf_decal/industrial/hatch/yellow,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/derelictoutpost/cargobay)
 "aY" = (
@@ -506,27 +506,27 @@
 	name = "Security Checkpoint";
 	req_access_txt = "63"
 	},
-/obj/effect/turf_decal/tile/red{
+/obj/effect/turf_decal/corner/red{
 	dir = 1
 	},
-/obj/effect/turf_decal/tile/red,
-/obj/effect/turf_decal/tile/red{
+/obj/effect/turf_decal/corner/red,
+/obj/effect/turf_decal/corner/red{
 	dir = 4
 	},
-/obj/effect/turf_decal/tile/red{
+/obj/effect/turf_decal/corner/red{
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/derelictoutpost)
 "bz" = (
-/obj/effect/turf_decal/tile/red{
+/obj/effect/turf_decal/corner/red{
 	dir = 1
 	},
-/obj/effect/turf_decal/tile/red,
-/obj/effect/turf_decal/tile/red{
+/obj/effect/turf_decal/corner/red,
+/obj/effect/turf_decal/corner/red{
 	dir = 4
 	},
-/obj/effect/turf_decal/tile/red{
+/obj/effect/turf_decal/corner/red{
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
@@ -537,14 +537,14 @@
 	desc = "A thick gelatinous surface covers the floor.  Someone get the golashes.";
 	name = "gelatinous floor"
 	},
-/obj/effect/turf_decal/tile/red{
+/obj/effect/turf_decal/corner/red{
 	dir = 1
 	},
-/obj/effect/turf_decal/tile/red,
-/obj/effect/turf_decal/tile/red{
+/obj/effect/turf_decal/corner/red,
+/obj/effect/turf_decal/corner/red{
 	dir = 4
 	},
-/obj/effect/turf_decal/tile/red{
+/obj/effect/turf_decal/corner/red{
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
@@ -553,14 +553,14 @@
 /obj/effect/decal/cleanable/cobweb/cobweb2,
 /obj/structure/table,
 /obj/machinery/recharger,
-/obj/effect/turf_decal/tile/red{
+/obj/effect/turf_decal/corner/red{
 	dir = 1
 	},
-/obj/effect/turf_decal/tile/red,
-/obj/effect/turf_decal/tile/red{
+/obj/effect/turf_decal/corner/red,
+/obj/effect/turf_decal/corner/red{
 	dir = 4
 	},
-/obj/effect/turf_decal/tile/red{
+/obj/effect/turf_decal/corner/red{
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
@@ -679,14 +679,14 @@
 /obj/machinery/light{
 	dir = 8
 	},
-/obj/effect/turf_decal/tile/red{
+/obj/effect/turf_decal/corner/red{
 	dir = 1
 	},
-/obj/effect/turf_decal/tile/red,
-/obj/effect/turf_decal/tile/red{
+/obj/effect/turf_decal/corner/red,
+/obj/effect/turf_decal/corner/red{
 	dir = 4
 	},
-/obj/effect/turf_decal/tile/red{
+/obj/effect/turf_decal/corner/red{
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
@@ -698,14 +698,14 @@
 	desc = "A thick gelatinous surface covers the floor.  Someone get the golashes.";
 	name = "gelatinous floor"
 	},
-/obj/effect/turf_decal/tile/red{
+/obj/effect/turf_decal/corner/red{
 	dir = 1
 	},
-/obj/effect/turf_decal/tile/red,
-/obj/effect/turf_decal/tile/red{
+/obj/effect/turf_decal/corner/red,
+/obj/effect/turf_decal/corner/red{
 	dir = 4
 	},
-/obj/effect/turf_decal/tile/red{
+/obj/effect/turf_decal/corner/red{
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
@@ -717,14 +717,14 @@
 	desc = "A thick gelatinous surface covers the floor.  Someone get the golashes.";
 	name = "gelatinous floor"
 	},
-/obj/effect/turf_decal/tile/red{
+/obj/effect/turf_decal/corner/red{
 	dir = 1
 	},
-/obj/effect/turf_decal/tile/red,
-/obj/effect/turf_decal/tile/red{
+/obj/effect/turf_decal/corner/red,
+/obj/effect/turf_decal/corner/red{
 	dir = 4
 	},
-/obj/effect/turf_decal/tile/red{
+/obj/effect/turf_decal/corner/red{
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
@@ -741,14 +741,14 @@
 	desc = "A thick gelatinous surface covers the floor.  Someone get the golashes.";
 	name = "gelatinous floor"
 	},
-/obj/effect/turf_decal/tile/red{
+/obj/effect/turf_decal/corner/red{
 	dir = 1
 	},
-/obj/effect/turf_decal/tile/red,
-/obj/effect/turf_decal/tile/red{
+/obj/effect/turf_decal/corner/red,
+/obj/effect/turf_decal/corner/red{
 	dir = 4
 	},
-/obj/effect/turf_decal/tile/red{
+/obj/effect/turf_decal/corner/red{
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
@@ -861,14 +861,14 @@
 /obj/structure/window/reinforced{
 	dir = 1
 	},
-/obj/effect/turf_decal/tile/red{
+/obj/effect/turf_decal/corner/red{
 	dir = 1
 	},
-/obj/effect/turf_decal/tile/red,
-/obj/effect/turf_decal/tile/red{
+/obj/effect/turf_decal/corner/red,
+/obj/effect/turf_decal/corner/red{
 	dir = 4
 	},
-/obj/effect/turf_decal/tile/red{
+/obj/effect/turf_decal/corner/red{
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
@@ -883,14 +883,14 @@
 /obj/structure/table_frame,
 /obj/item/stack/sheet/metal,
 /obj/item/stack/sheet/plasteel,
-/obj/effect/turf_decal/tile/red{
+/obj/effect/turf_decal/corner/red{
 	dir = 1
 	},
-/obj/effect/turf_decal/tile/red,
-/obj/effect/turf_decal/tile/red{
+/obj/effect/turf_decal/corner/red,
+/obj/effect/turf_decal/corner/red{
 	dir = 4
 	},
-/obj/effect/turf_decal/tile/red{
+/obj/effect/turf_decal/corner/red{
 	dir = 8
 	},
 /obj/item/stack/cable_coil,
@@ -1287,7 +1287,7 @@
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/derelictoutpost/cargobay)
 "cW" = (
-/obj/effect/turf_decal/delivery,
+/obj/effect/turf_decal/industrial/hatch/yellow,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/derelictoutpost/cargobay)
 "cX" = (
@@ -1473,6 +1473,7 @@
 /mob/living/simple_animal/hostile/netherworld{
 	name = "Miss Tiggles";
 	loot = list(/obj/item/disk/design_disk/ammo_1911);
+	
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/derelictoutpost)
@@ -1864,7 +1865,7 @@
 /obj/structure/closet/crate,
 /obj/item/stack/sheet/glass/fifty,
 /obj/item/stack/sheet/glass/fifty,
-/obj/effect/turf_decal/delivery,
+/obj/effect/turf_decal/industrial/hatch/yellow,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/derelictoutpost/cargostorage)
 "dW" = (
@@ -1872,7 +1873,7 @@
 /area/ruin/space/has_grav/derelictoutpost/cargostorage)
 "dX" = (
 /obj/structure/closet/crate/secure/loot,
-/obj/effect/turf_decal/delivery,
+/obj/effect/turf_decal/industrial/hatch/yellow,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/derelictoutpost/cargostorage)
 "dY" = (
@@ -1880,7 +1881,7 @@
 	icon_state = "crateopen"
 	},
 /obj/item/stack/sheet/plasteel/twenty,
-/obj/effect/turf_decal/delivery,
+/obj/effect/turf_decal/industrial/hatch/yellow,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/derelictoutpost/cargostorage)
 "dZ" = (
@@ -1892,7 +1893,7 @@
 "ea" = (
 /obj/structure/closet/crate,
 /obj/item/storage/pill_bottle/stimulant,
-/obj/effect/turf_decal/delivery,
+/obj/effect/turf_decal/industrial/hatch/yellow,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/derelictoutpost/cargostorage)
 "eb" = (
@@ -1905,7 +1906,7 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/obj/effect/turf_decal/delivery,
+/obj/effect/turf_decal/industrial/hatch/yellow,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/derelictoutpost/cargostorage)
 "ec" = (
@@ -1914,7 +1915,7 @@
 	empty = 1;
 	name = "First-Aid (empty)"
 	},
-/obj/effect/turf_decal/delivery,
+/obj/effect/turf_decal/industrial/hatch/yellow,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/derelictoutpost/cargostorage)
 "ed" = (
@@ -1924,7 +1925,7 @@
 	name = "First-Aid (empty)"
 	},
 /obj/item/storage/firstaid/o2,
-/obj/effect/turf_decal/delivery,
+/obj/effect/turf_decal/industrial/hatch/yellow,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/derelictoutpost/cargostorage)
 "ee" = (
@@ -1976,7 +1977,7 @@
 /obj/structure/closet/crate,
 /obj/item/stack/sheet/cloth/ten,
 /obj/item/stack/sheet/cloth/ten,
-/obj/effect/turf_decal/delivery,
+/obj/effect/turf_decal/industrial/hatch/yellow,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/derelictoutpost/cargostorage)
 "ek" = (
@@ -1984,7 +1985,7 @@
 	icon_state = "crateopen"
 	},
 /obj/item/stack/sheet/cardboard/fifty,
-/obj/effect/turf_decal/delivery,
+/obj/effect/turf_decal/industrial/hatch/yellow,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/derelictoutpost/cargostorage)
 "el" = (
@@ -2015,14 +2016,14 @@
 /obj/structure/closet/crate/internals,
 /obj/item/storage/toolbox/emergency,
 /obj/item/clothing/mask/breath,
-/obj/effect/turf_decal/delivery,
+/obj/effect/turf_decal/industrial/hatch/yellow,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/derelictoutpost/cargostorage)
 "ep" = (
 /obj/structure/closet/crate/engineering/electrical,
 /obj/item/storage/toolbox/electrical,
 /obj/item/stack/cable_coil,
-/obj/effect/turf_decal/delivery,
+/obj/effect/turf_decal/industrial/hatch/yellow,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/derelictoutpost/cargostorage)
 "eq" = (
@@ -2035,7 +2036,7 @@
 "er" = (
 /obj/structure/closet/crate/medical,
 /obj/item/storage/firstaid/regular,
-/obj/effect/turf_decal/delivery,
+/obj/effect/turf_decal/industrial/hatch/yellow,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/derelictoutpost/cargostorage)
 "es" = (
@@ -2047,7 +2048,7 @@
 /obj/structure/closet/crate/medical,
 /obj/item/storage/firstaid/brute,
 /obj/item/storage/firstaid/fire,
-/obj/effect/turf_decal/delivery,
+/obj/effect/turf_decal/industrial/hatch/yellow,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/derelictoutpost/cargostorage)
 "eu" = (
@@ -2088,7 +2089,7 @@
 	icon_state = "trails_1";
 	dir = 8
 	},
-/obj/effect/turf_decal/delivery,
+/obj/effect/turf_decal/industrial/hatch/yellow,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/derelictoutpost/cargostorage)
 "ez" = (
@@ -2106,7 +2107,7 @@
 /obj/structure/closet/crate,
 /obj/item/stack/sheet/metal/fifty,
 /obj/item/stack/sheet/metal/fifty,
-/obj/effect/turf_decal/delivery,
+/obj/effect/turf_decal/industrial/hatch/yellow,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/derelictoutpost/cargostorage)
 "eB" = (
@@ -2115,13 +2116,13 @@
 	},
 /obj/item/paicard,
 /obj/machinery/light,
-/obj/effect/turf_decal/delivery,
+/obj/effect/turf_decal/industrial/hatch/yellow,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/derelictoutpost/cargostorage)
 "eC" = (
 /obj/structure/closet/crate,
 /obj/item/pda/clear,
-/obj/effect/turf_decal/delivery,
+/obj/effect/turf_decal/industrial/hatch/yellow,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/derelictoutpost/cargostorage)
 "eE" = (
@@ -2129,12 +2130,12 @@
 /obj/item/tank/internals/emergency_oxygen/engi,
 /obj/item/tank/internals/emergency_oxygen/engi,
 /obj/item/storage/firstaid/toxin,
-/obj/effect/turf_decal/delivery,
+/obj/effect/turf_decal/industrial/hatch/yellow,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/derelictoutpost/cargostorage)
 "eF" = (
 /obj/structure/closet/crate,
-/obj/effect/turf_decal/delivery,
+/obj/effect/turf_decal/industrial/hatch/yellow,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/derelictoutpost/cargostorage)
 "eG" = (
@@ -2144,7 +2145,7 @@
 "eH" = (
 /obj/structure/closet/crate/engineering,
 /obj/item/multitool,
-/obj/effect/turf_decal/delivery,
+/obj/effect/turf_decal/industrial/hatch/yellow,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/derelictoutpost/cargostorage)
 "eI" = (
