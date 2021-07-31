@@ -123,9 +123,10 @@
 /area/ship/crew)
 "ba" = (
 /obj/structure/reagent_dispensers/fueltank,
-/turf/open/floor/plasteel/dark/side{
-	dir = 4
+/obj/effect/turf_decal/corner/black{
+	dir = 6
 	},
+/turf/open/floor/plasteel,
 /area/ship/cargo)
 "be" = (
 /obj/structure/bed,
@@ -225,9 +226,10 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
-/turf/open/floor/plasteel/dark/side{
-	dir = 8
+/obj/effect/turf_decal/corner/black{
+	dir = 9
 	},
+/turf/open/floor/plasteel,
 /area/ship/cargo)
 "co" = (
 /obj/structure/table/reinforced,
@@ -392,9 +394,10 @@
 	pixel_x = 25;
 	pixel_y = 25
 	},
-/turf/open/floor/plasteel/dark/side{
-	dir = 1
+/obj/effect/turf_decal/corner/black{
+	dir = 5
 	},
+/turf/open/floor/plasteel,
 /area/ship/cargo)
 "el" = (
 /obj/machinery/atmospherics/pipe/simple/orange/visible{
@@ -467,9 +470,10 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/turf/open/floor/plasteel/dark/side{
-	dir = 1
+/obj/effect/turf_decal/corner/black{
+	dir = 5
 	},
+/turf/open/floor/plasteel,
 /area/ship/cargo)
 "fM" = (
 /obj/structure/cable{
@@ -497,7 +501,10 @@
 /obj/machinery/firealarm{
 	pixel_y = -28
 	},
-/turf/open/floor/plasteel/dark/side,
+/obj/effect/turf_decal/corner/black{
+	dir = 10
+	},
+/turf/open/floor/plasteel,
 /area/ship/cargo)
 "gi" = (
 /obj/machinery/door/firedoor/border_only,
@@ -764,9 +771,10 @@
 "ka" = (
 /obj/machinery/ore_silo,
 /obj/item/multitool,
-/turf/open/floor/plasteel/dark/side{
-	dir = 9
+/obj/effect/turf_decal/corner/black/three_quarters{
+	dir = 8
 	},
+/turf/open/floor/plasteel,
 /area/ship/cargo)
 "kb" = (
 /obj/structure/sign/warning/vacuum,
@@ -1025,9 +1033,8 @@
 /area/ship/crew/canteen)
 "no" = (
 /obj/machinery/suit_storage_unit/mining,
-/turf/open/floor/plasteel/dark/side{
-	dir = 10
-	},
+/obj/effect/turf_decal/corner/black/three_quarters,
+/turf/open/floor/plasteel,
 /area/ship/cargo)
 "np" = (
 /obj/effect/turf_decal/lumos/tile/neutral/fulltile,
@@ -1277,9 +1284,10 @@
 	dir = 4
 	},
 /obj/machinery/suit_storage_unit/mining/eva,
-/turf/open/floor/plasteel/dark/side{
-	dir = 4
+/obj/effect/turf_decal/corner/black{
+	dir = 6
 	},
+/turf/open/floor/plasteel,
 /area/ship/cargo)
 "pJ" = (
 /obj/machinery/computer/operating{
@@ -1353,7 +1361,10 @@
 "qB" = (
 /obj/machinery/power/apc/auto_name/south,
 /obj/structure/cable,
-/turf/open/floor/plasteel/dark/side,
+/obj/effect/turf_decal/corner/black{
+	dir = 10
+	},
+/turf/open/floor/plasteel,
 /area/ship/cargo)
 "qC" = (
 /obj/machinery/atmospherics/pipe/simple/cyan/visible{
@@ -1511,9 +1522,10 @@
 /area/ship/bridge)
 "te" = (
 /obj/machinery/autolathe,
-/turf/open/floor/plasteel/dark/side{
-	dir = 8
+/obj/effect/turf_decal/corner/black{
+	dir = 9
 	},
+/turf/open/floor/plasteel,
 /area/ship/cargo)
 "tf" = (
 /obj/structure/chair/office,
@@ -1783,9 +1795,10 @@
 /turf/open/floor/plasteel,
 /area/ship/engineering/atmospherics)
 "ws" = (
-/turf/open/floor/plasteel/dark/side{
-	dir = 8
+/obj/effect/turf_decal/corner/black{
+	dir = 9
 	},
+/turf/open/floor/plasteel,
 /area/ship/cargo)
 "wz" = (
 /turf/open/floor/carpet/nanoweave,
@@ -1831,9 +1844,10 @@
 /obj/item/clothing/glasses/meson,
 /obj/item/t_scanner/adv_mining_scanner/lesser,
 /obj/item/kinetic_crusher,
-/turf/open/floor/plasteel/dark/side{
-	dir = 4
+/obj/effect/turf_decal/corner/black{
+	dir = 6
 	},
+/turf/open/floor/plasteel,
 /area/ship/cargo)
 "xq" = (
 /turf/closed/wall/r_wall,
@@ -2018,9 +2032,10 @@
 /obj/item/pickaxe/silver,
 /obj/item/pickaxe/mini,
 /obj/item/pickaxe/mini,
-/turf/open/floor/plasteel/dark/side{
-	dir = 8
+/obj/effect/turf_decal/corner/black{
+	dir = 9
 	},
+/turf/open/floor/plasteel,
 /area/ship/cargo)
 "zQ" = (
 /obj/machinery/vending/cola/random,
@@ -2347,9 +2362,10 @@
 /area/ship/engineering)
 "Ez" = (
 /obj/machinery/suit_storage_unit/mining/eva,
-/turf/open/floor/plasteel/dark/side{
-	dir = 5
+/obj/effect/turf_decal/corner/black/three_quarters{
+	dir = 1
 	},
+/turf/open/floor/plasteel,
 /area/ship/cargo)
 "EB" = (
 /obj/machinery/light/small{
@@ -2753,9 +2769,10 @@
 /obj/item/radio/intercom{
 	pixel_x = 28
 	},
-/turf/open/floor/plasteel/dark/side{
-	dir = 4
+/obj/effect/turf_decal/corner/black{
+	dir = 6
 	},
+/turf/open/floor/plasteel,
 /area/ship/cargo)
 "IV" = (
 /obj/machinery/power/terminal{
@@ -2857,7 +2874,10 @@
 "JW" = (
 /obj/machinery/light,
 /obj/structure/ore_box,
-/turf/open/floor/plasteel/dark/side,
+/obj/effect/turf_decal/corner/black{
+	dir = 10
+	},
+/turf/open/floor/plasteel,
 /area/ship/cargo)
 "Kf" = (
 /obj/effect/turf_decal/lumos/tile/neutral/fulltile,
@@ -3134,9 +3154,10 @@
 "Od" = (
 /obj/structure/table,
 /obj/effect/spawner/lootdrop/maintenance,
-/turf/open/floor/plasteel/dark/side{
-	dir = 6
+/obj/effect/turf_decal/corner/black/three_quarters{
+	dir = 4
 	},
+/turf/open/floor/plasteel,
 /area/ship/cargo)
 "Of" = (
 /obj/machinery/atmospherics/pipe/simple/orange/visible{
@@ -3416,9 +3437,10 @@
 /turf/open/floor/plasteel,
 /area/ship/cargo)
 "RJ" = (
-/turf/open/floor/plasteel/dark/side{
-	dir = 1
+/obj/effect/turf_decal/corner/black{
+	dir = 5
 	},
+/turf/open/floor/plasteel,
 /area/ship/cargo)
 "RO" = (
 /obj/structure/bookcase/random,
