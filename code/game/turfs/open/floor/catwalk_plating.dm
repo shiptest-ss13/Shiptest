@@ -1,4 +1,4 @@
-/**
+/*/**
  * ## catwalk flooring
  *
  * They show what's underneath their catwalk flooring (pipes and the like)
@@ -10,6 +10,7 @@
 	icon_state = "catwalk_below"
 	name = "catwalk floor"
 	desc = "Flooring that shows its contents underneath. Engineers love it!"
+	layer = CATWALK_LAYER
 	baseturfs = /turf/open/floor/plating
 	footstep = FOOTSTEP_CATWALK
 	barefootstep = FOOTSTEP_CATWALK
@@ -35,8 +36,12 @@
 	to_chat(user, "[!covered ? "cover removed" : "cover added"]") //shiptest edit, baloon alerts bad
 	update_overlays() //missing refactor 2
 
-/turf/open/floor/plating/catwalk_floor/pry_tile(obj/item/crowbar, mob/user, silent)
+/turf/open/floor/plating/catwalk_floor/crowbar_act(mob/living/user, obj/item/I)
 	if(covered)
-		to_chat(user, "remove the cover first!") //shiptest edit, baloon alerts bad part two
+		to_chat(user, "Remove the cover first!") //shiptest edit, baloon alerts bad part two
 		return FALSE
-	. = ..()
+	else //edit, not sure how else to get it to work
+		I.play_tool_sound(src, 80)
+		return ScrapeAway(1, CHANGETURF_INHERIT_AIR) //this doesnt work unless its like this
+forever gone
+*/

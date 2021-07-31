@@ -16,13 +16,6 @@
 /obj/effect/turf_decal/corner/yellow/half,
 /turf/open/floor/plasteel,
 /area/ship/cargo)
-"aq" = (
-/obj/machinery/door/poddoor/preopen{
-	id = "mining_ship_blast"
-	},
-/obj/effect/spawner/structure/window/shuttle,
-/turf/open/floor/plating,
-/area/ship/crew)
 "av" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
 	dir = 1
@@ -33,7 +26,8 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/turf/open/floor/plating/catwalk_floor,
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/turf/open/floor/plating,
 /area/ship/crew)
 "aD" = (
 /obj/machinery/power/shuttle/engine/electric{
@@ -51,7 +45,8 @@
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
 	},
-/turf/open/floor/plating/catwalk_floor,
+/obj/structure/catwalk/over,
+/turf/open/floor/plating,
 /area/ship/engineering)
 "aY" = (
 /obj/structure/cable/yellow{
@@ -115,8 +110,8 @@
 /turf/open/floor/plasteel,
 /area/ship/cargo)
 "cu" = (
-/obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "cE" = (
@@ -126,7 +121,8 @@
 /obj/machinery/power/terminal{
 	dir = 4
 	},
-/turf/open/floor/plating/catwalk_floor,
+/obj/structure/catwalk/over,
+/turf/open/floor/plating,
 /area/ship/engineering)
 "cV" = (
 /obj/machinery/button/door{
@@ -141,7 +137,7 @@
 /turf/open/floor/plasteel,
 /area/ship/cargo)
 "dK" = (
-/turf/closed/wall/mineral/titanium,
+/turf/closed/wall,
 /area/ship/engineering)
 "dS" = (
 /obj/structure/bed,
@@ -181,6 +177,16 @@
 /obj/effect/turf_decal/corner/yellow/border,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
+"fJ" = (
+/obj/machinery/power/port_gen/pacman,
+/obj/structure/cable/yellow{
+	icon_state = "0-4"
+	},
+/obj/item/stack/sheet/mineral/plasma/five,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/atmospherics/pipe/simple/orange/visible,
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/engineering)
 "fP" = (
 /obj/structure/cable/yellow{
 	icon_state = "0-4"
@@ -232,7 +238,8 @@
 	dir = 8;
 	name = "engine fuel pump"
 	},
-/turf/open/floor/plating/catwalk_floor,
+/obj/structure/catwalk/over,
+/turf/open/floor/plating,
 /area/ship/engineering)
 "gF" = (
 /obj/machinery/power/shuttle/engine/fueled/plasma{
@@ -241,11 +248,10 @@
 /turf/open/floor/plating/airless,
 /area/ship/external)
 "gK" = (
-/obj/structure/lattice/catwalk,
 /obj/structure/cable/yellow{
 	icon_state = "2-8"
 	},
-/turf/open/floor/plating/airless,
+/turf/open/floor/plating,
 /area/ship/external)
 "gL" = (
 /obj/structure/closet/crate,
@@ -302,7 +308,7 @@
 /turf/open/floor/plating,
 /area/ship/engineering)
 "hT" = (
-/turf/closed/wall/mineral/titanium/nodiagonal,
+/turf/closed/wall/r_wall,
 /area/ship/medical)
 "hY" = (
 /obj/structure/table,
@@ -360,7 +366,8 @@
 /obj/machinery/computer/helm/viewscreen{
 	pixel_y = 30
 	},
-/turf/open/floor/plating/catwalk_floor,
+/obj/structure/catwalk/over,
+/turf/open/floor/plating,
 /area/ship/engineering)
 "jO" = (
 /obj/structure/cable{
@@ -402,6 +409,9 @@
 	},
 /turf/open/floor/plasteel,
 /area/ship/cargo)
+"kY" = (
+/turf/closed/wall,
+/area/ship/medical)
 "lA" = (
 /obj/structure/cable/yellow,
 /obj/structure/cable/yellow{
@@ -471,7 +481,8 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/turf/open/floor/plating/catwalk_floor,
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/turf/open/floor/plating,
 /area/ship/crew)
 "mW" = (
 /obj/structure/sink{
@@ -506,6 +517,10 @@
 	icon_state = "4-8"
 	},
 /obj/effect/turf_decal/corner/yellow,
+/obj/machinery/light_switch{
+	pixel_x = 24;
+	pixel_y = -24
+	},
 /turf/open/floor/plasteel,
 /area/ship/cargo)
 "os" = (
@@ -546,10 +561,10 @@
 /turf/open/floor/plasteel,
 /area/ship/cargo)
 "oI" = (
-/obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor/preopen{
 	id = "mining_ship_blast"
 	},
+/obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "oO" = (
@@ -596,7 +611,8 @@
 "pL" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/landmark/start/assistant,
-/turf/open/floor/plating/catwalk_floor,
+/obj/structure/catwalk/over,
+/turf/open/floor/plating,
 /area/ship/engineering)
 "pS" = (
 /obj/machinery/ore_silo,
@@ -647,7 +663,7 @@
 /area/ship/crew)
 "qh" = (
 /obj/machinery/status_display/shuttle,
-/turf/closed/wall/mineral/titanium,
+/turf/closed/wall,
 /area/ship/engineering)
 "qW" = (
 /obj/machinery/light,
@@ -665,18 +681,15 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
 "rb" = (
-/obj/effect/spawner/structure/window/shuttle,
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
 /obj/machinery/door/poddoor/preopen{
 	id = "mining_ship_blast"
 	},
+/obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
 /area/ship/medical)
-"ro" = (
-/turf/closed/wall/mineral/titanium,
-/area/ship/bridge)
 "rS" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -736,6 +749,9 @@
 /obj/effect/turf_decal/solarpanel,
 /turf/open/floor/plating,
 /area/ship/external)
+"uq" = (
+/turf/closed/wall/r_wall,
+/area/ship/crew)
 "uA" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -754,7 +770,8 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/turf/open/floor/plating/catwalk_floor,
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/turf/open/floor/plating,
 /area/ship/crew)
 "uP" = (
 /obj/machinery/power/smes/shuttle/precharged{
@@ -773,10 +790,6 @@
 /turf/open/floor/plating,
 /area/ship/engineering)
 "uV" = (
-/obj/machinery/light_switch{
-	pixel_x = 24;
-	pixel_y = -24
-	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/corner/yellow/three_quarters{
 	dir = 4
@@ -784,11 +797,10 @@
 /turf/open/floor/plasteel,
 /area/ship/cargo)
 "vd" = (
-/obj/structure/lattice/catwalk,
 /obj/structure/cable/yellow{
 	icon_state = "1-8"
 	},
-/turf/open/floor/plating/airless,
+/turf/open/floor/plating,
 /area/ship/external)
 "vR" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
@@ -825,7 +837,7 @@
 /turf/open/floor/plasteel/mono/white,
 /area/ship/medical)
 "xc" = (
-/turf/closed/wall/mineral/titanium/nodiagonal,
+/turf/closed/wall/r_wall,
 /area/ship/bridge)
 "xi" = (
 /obj/structure/cable/yellow{
@@ -836,7 +848,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
 "xn" = (
-/obj/effect/spawner/structure/window/shuttle,
+/obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
 /area/ship/cargo)
 "xE" = (
@@ -857,10 +869,10 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
 "yq" = (
-/obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor/preopen{
 	id = "mining_ship_blast"
 	},
+/obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating/airless,
 /area/ship/bridge)
 "yx" = (
@@ -887,11 +899,11 @@
 /area/ship/crew)
 "zb" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/turf/closed/wall/mineral/titanium/nodiagonal,
+/turf/closed/wall,
 /area/ship/crew)
 "zr" = (
 /obj/machinery/status_display/shuttle,
-/turf/closed/wall/mineral/titanium,
+/turf/closed/wall,
 /area/ship/bridge)
 "zx" = (
 /obj/machinery/door/poddoor/preopen{
@@ -950,7 +962,8 @@
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
 	dir = 4
 	},
-/turf/open/floor/plating/catwalk_floor,
+/obj/structure/catwalk/over,
+/turf/open/floor/plating,
 /area/ship/engineering)
 "Al" = (
 /obj/machinery/light{
@@ -1006,6 +1019,10 @@
 "Cp" = (
 /turf/open/floor/plasteel,
 /area/ship/cargo)
+"CF" = (
+/obj/structure/closet/emcloset/wall,
+/turf/closed/wall,
+/area/ship/medical)
 "CO" = (
 /obj/machinery/atmospherics/components/unary/shuttle/heater{
 	dir = 4
@@ -1071,9 +1088,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
-"DB" = (
-/turf/closed/wall/mineral/titanium/nodiagonal,
-/area/ship/cargo)
 "DX" = (
 /obj/docking_port/stationary{
 	dir = 2;
@@ -1084,6 +1098,9 @@
 	},
 /turf/open/floor/plating/airless,
 /area/ship/external)
+"Eg" = (
+/turf/closed/wall,
+/area/ship/cargo)
 "Ew" = (
 /obj/machinery/power/apc/auto_name/north,
 /obj/structure/cable{
@@ -1115,44 +1132,7 @@
 /turf/open/floor/plasteel,
 /area/ship/cargo)
 "EV" = (
-/obj/structure/rack,
-/obj/item/clothing/suit/hazardvest{
-	desc = "A high-visibility lifejacket complete with whistle and slot for oxygen tanks.";
-	name = "emergency lifejacket";
-	pixel_x = -4;
-	pixel_y = -4
-	},
-/obj/item/clothing/suit/hazardvest{
-	desc = "A high-visibility lifejacket complete with whistle and slot for oxygen tanks.";
-	name = "emergency lifejacket"
-	},
-/obj/item/clothing/suit/hazardvest{
-	desc = "A high-visibility lifejacket complete with whistle and slot for oxygen tanks.";
-	name = "emergency lifejacket";
-	pixel_x = 4;
-	pixel_y = 4
-	},
-/obj/item/clothing/head/hardhat/mining{
-	pixel_x = -4;
-	pixel_y = -4
-	},
-/obj/item/clothing/head/hardhat/mining,
-/obj/item/clothing/head/hardhat/mining{
-	pixel_x = 4;
-	pixel_y = 4
-	},
-/obj/item/gps/mining,
-/obj/item/gps/mining,
-/obj/item/gps/mining,
-/obj/item/clothing/glasses/meson/prescription,
-/obj/item/clothing/glasses/meson,
-/obj/item/clothing/glasses/meson,
-/obj/item/t_scanner/adv_mining_scanner/lesser,
-/obj/item/gun/energy/kinetic_accelerator,
-/obj/item/pickaxe/silver,
-/obj/item/pickaxe/silver,
-/obj/item/storage/bag/ore,
-/obj/item/storage/bag/ore,
+/obj/machinery/vending/cola/random,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
 "Fz" = (
@@ -1205,17 +1185,8 @@
 /obj/structure/cable/yellow{
 	icon_state = "2-8"
 	},
-/turf/open/floor/plating/catwalk_floor,
-/area/ship/engineering)
-"Gb" = (
-/obj/machinery/power/port_gen/pacman,
-/obj/structure/cable/yellow{
-	icon_state = "0-4"
-	},
-/obj/item/stack/sheet/mineral/plasma/five,
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/atmospherics/pipe/simple/orange/visible,
-/turf/open/floor/plasteel/tech/grid,
+/obj/structure/catwalk/over,
+/turf/open/floor/plating,
 /area/ship/engineering)
 "Gh" = (
 /obj/effect/turf_decal/industrial/warning/corner{
@@ -1228,7 +1199,8 @@
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
 	},
-/turf/open/floor/plating/catwalk_floor,
+/obj/structure/catwalk/over,
+/turf/open/floor/plating,
 /area/ship/engineering)
 "Gq" = (
 /obj/structure/cable{
@@ -1260,9 +1232,6 @@
 "GU" = (
 /obj/machinery/vending/snack/random,
 /turf/open/floor/plasteel/dark,
-/area/ship/crew)
-"Hs" = (
-/turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/crew)
 "HP" = (
 /mob/living/simple_animal/butterfly{
@@ -1336,13 +1305,13 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "JE" = (
-/obj/effect/spawner/structure/window/shuttle,
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
 /obj/machinery/door/poddoor/preopen{
 	id = "mining_ship_blast"
 	},
+/obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
 /area/ship/crew)
 "JR" = (
@@ -1370,7 +1339,8 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/turf/open/floor/plating/catwalk_floor,
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/turf/open/floor/plating,
 /area/ship/crew)
 "Ku" = (
 /obj/effect/turf_decal/delivery,
@@ -1485,7 +1455,8 @@
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
 	},
-/turf/open/floor/plating/catwalk_floor,
+/obj/structure/catwalk/over,
+/turf/open/floor/plating,
 /area/ship/engineering)
 "Ou" = (
 /obj/structure/table/reinforced,
@@ -1651,7 +1622,8 @@
 /obj/structure/cable{
 	icon_state = "5-9"
 	},
-/turf/open/floor/plating/catwalk_floor,
+/obj/structure/catwalk/over,
+/turf/open/floor/plating,
 /area/ship/engineering)
 "Rf" = (
 /obj/structure/cable/yellow,
@@ -1688,7 +1660,7 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
 "Rq" = (
-/turf/closed/wall/mineral/titanium,
+/turf/closed/wall,
 /area/ship/crew)
 "Rr" = (
 /turf/open/floor/plating/airless,
@@ -1784,8 +1756,49 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
+"TD" = (
+/obj/item/clothing/suit/hazardvest{
+	desc = "A high-visibility lifejacket complete with whistle and slot for oxygen tanks.";
+	name = "emergency lifejacket";
+	pixel_x = -4;
+	pixel_y = -4
+	},
+/obj/item/clothing/suit/hazardvest{
+	desc = "A high-visibility lifejacket complete with whistle and slot for oxygen tanks.";
+	name = "emergency lifejacket"
+	},
+/obj/item/clothing/suit/hazardvest{
+	desc = "A high-visibility lifejacket complete with whistle and slot for oxygen tanks.";
+	name = "emergency lifejacket";
+	pixel_x = 4;
+	pixel_y = 4
+	},
+/obj/item/clothing/head/hardhat/mining{
+	pixel_x = -4;
+	pixel_y = -4
+	},
+/obj/item/clothing/head/hardhat/mining,
+/obj/item/clothing/head/hardhat/mining{
+	pixel_x = 4;
+	pixel_y = 4
+	},
+/obj/item/gps/mining,
+/obj/item/gps/mining,
+/obj/item/gps/mining,
+/obj/item/clothing/glasses/meson/prescription,
+/obj/item/clothing/glasses/meson,
+/obj/item/clothing/glasses/meson,
+/obj/item/t_scanner/adv_mining_scanner/lesser,
+/obj/item/gun/energy/kinetic_accelerator,
+/obj/item/pickaxe/silver,
+/obj/item/pickaxe/silver,
+/obj/item/storage/bag/ore,
+/obj/item/storage/bag/ore,
+/obj/structure/closet/wall,
+/turf/closed/wall/r_wall,
+/area/ship/cargo)
 "Ue" = (
-/turf/closed/wall/mineral/titanium,
+/turf/closed/wall/r_wall,
 /area/ship/cargo)
 "Uh" = (
 /obj/structure/cable/yellow{
@@ -1926,7 +1939,8 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/turf/open/floor/plating/catwalk_floor,
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/turf/open/floor/plating,
 /area/ship/crew)
 "Ws" = (
 /obj/machinery/mineral/ore_redemption{
@@ -1946,6 +1960,9 @@
 	},
 /turf/open/floor/plasteel,
 /area/ship/crew)
+"WJ" = (
+/turf/closed/wall,
+/area/ship/bridge)
 "WU" = (
 /obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
@@ -1960,7 +1977,8 @@
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
-/turf/open/floor/plating/catwalk_floor,
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/turf/open/floor/plating,
 /area/ship/crew)
 "WV" = (
 /obj/structure/cable/yellow{
@@ -1979,10 +1997,10 @@
 /turf/open/floor/plasteel,
 /area/ship/engineering)
 "Xy" = (
-/obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor/preopen{
 	id = "mining_ship_blast"
 	},
+/obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
 /area/ship/medical)
 "Yu" = (
@@ -2001,13 +2019,13 @@
 	},
 /area/ship/crew)
 "Yy" = (
-/turf/closed/wall/mineral/titanium/nodiagonal,
+/turf/closed/wall/r_wall,
 /area/ship/engineering)
 "YB" = (
-/obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor/preopen{
 	id = "mining_ship_blast"
 	},
+/obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
 /area/ship/crew)
 "YU" = (
@@ -2051,7 +2069,8 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/turf/open/floor/plating/catwalk_floor,
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/turf/open/floor/plating,
 /area/ship/crew)
 
 (1,1,1) = {"
@@ -2137,7 +2156,7 @@ jA
 Gq
 ie
 qX
-Gb
+fJ
 xE
 Rm
 Vp
@@ -2189,12 +2208,12 @@ OJ
 "}
 (8,1,1) = {"
 Ue
-DB
-DB
-DB
-DB
-DB
-DB
+Ue
+Ue
+Ue
+Ue
+Ue
+Ue
 zT
 qh
 WV
@@ -2207,17 +2226,17 @@ Yy
 dK
 "}
 (9,1,1) = {"
-DB
+Ue
 Mq
 Mq
 Sw
 Bx
 pS
-DB
+Eg
 Ew
 Ws
 FK
-Hs
+Rq
 Rr
 Rr
 Rr
@@ -2232,11 +2251,11 @@ eH
 Cp
 eH
 ci
-DB
+Eg
 Nx
 Wn
 IO
-Hs
+Rq
 Rr
 Rr
 Rr
@@ -2251,11 +2270,11 @@ FP
 tU
 oB
 ah
-DB
+Eg
 lP
 Ke
 qb
-Hs
+Rq
 Rr
 Rr
 Rr
@@ -2274,7 +2293,7 @@ xn
 IP
 ZN
 RF
-aq
+YB
 Rr
 Rr
 Rr
@@ -2312,7 +2331,7 @@ xn
 IP
 ZN
 RF
-aq
+YB
 Rr
 Rr
 Rr
@@ -2321,17 +2340,17 @@ Rr
 zx
 "}
 (15,1,1) = {"
-DB
+Ue
 cV
 FP
 OU
 pc
-DB
-DB
+Ue
+TD
 Gh
 ZN
 PO
-Hs
+Rq
 Rr
 Rr
 Rr
@@ -2345,12 +2364,12 @@ FP
 gL
 jB
 qW
-DB
+Ue
 EV
 Nx
 ZN
 zV
-Hs
+Rq
 Rr
 Rr
 Rr
@@ -2359,17 +2378,17 @@ Rr
 zx
 "}
 (17,1,1) = {"
-DB
+Ue
 FP
 FP
 kT
 RU
-DB
+Ue
 GU
 ST
 ZN
 xi
-Hs
+Rq
 Rr
 Rr
 Rr
@@ -2379,21 +2398,21 @@ zx
 "}
 (18,1,1) = {"
 Ue
-DB
+Ue
 hT
 hT
 hT
 hT
-hT
+CF
 Wj
 ZN
 YU
-Hs
-Hs
-Hs
-Hs
-Hs
-Hs
+Rq
+uq
+uq
+uq
+uq
+uq
 Rq
 "}
 (19,1,1) = {"
@@ -2403,15 +2422,15 @@ hT
 mh
 FL
 hY
-hT
+kY
 pZ
 ZN
 YU
-Hs
+Rq
 Mz
 dS
 hv
-Hs
+uq
 gk
 OJ
 "}
@@ -2422,7 +2441,7 @@ hT
 mW
 Gs
 oO
-hT
+kY
 pZ
 av
 Uh
@@ -2445,7 +2464,7 @@ HV
 Wl
 uF
 eK
-Hs
+Rq
 FN
 HP
 Tl
@@ -2479,15 +2498,15 @@ hT
 AF
 VV
 AR
-hT
+kY
 wj
 yZ
 Do
-Hs
+Rq
 pU
 aY
 rU
-Hs
+uq
 fP
 OJ
 "}
@@ -2498,15 +2517,15 @@ hT
 Xy
 rb
 xc
-xc
+WJ
 hB
 zr
 mz
-xc
+WJ
 xc
 JE
 YB
-Hs
+uq
 fP
 OJ
 "}
@@ -2516,13 +2535,13 @@ gK
 gR
 lA
 uk
-ro
+xc
 Ou
 OH
 OK
 Ax
 PR
-ro
+xc
 MY
 Rf
 gR
