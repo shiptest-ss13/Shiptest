@@ -220,7 +220,7 @@ SUBSYSTEM_DEF(overmap)
 				surface = /turf/open/floor/plating/asteroid/basalt/lava_land_surface
 			if(DYNAMIC_WORLD_ICE)
 				ruin_list = SSmapping.ice_ruins_templates
-				mapgen = new /datum/map_generator/cave_generator/icemoon/surface
+				mapgen = new /datum/map_generator/cave_generator/icemoon
 				target_area = /area/overmap_encounter/planetoid/ice
 				surface = /turf/open/floor/plating/asteroid/snow/icemoon
 			if(DYNAMIC_WORLD_SAND)
