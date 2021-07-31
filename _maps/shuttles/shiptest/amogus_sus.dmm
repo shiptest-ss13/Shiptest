@@ -1758,7 +1758,6 @@
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "yb" = (
-/obj/machinery/door/airlock/atmos,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
@@ -1766,6 +1765,7 @@
 /obj/machinery/door/firedoor{
 	dir = 4
 	},
+/obj/machinery/door/airlock/engineering,
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/atmospherics)
 "yd" = (
@@ -1786,7 +1786,6 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/machinery/door/airlock/atmos,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
@@ -1794,6 +1793,7 @@
 /obj/machinery/door/firedoor{
 	dir = 4
 	},
+/obj/machinery/door/airlock/engineering,
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/atmospherics)
 "yh" = (
@@ -3022,11 +3022,11 @@
 /obj/machinery/atmospherics/pipe/simple/green/visible{
 	dir = 4
 	},
-/obj/machinery/door/airlock/atmos,
 /obj/effect/turf_decal/industrial/warning/fulltile,
 /obj/machinery/door/firedoor{
 	dir = 4
 	},
+/obj/machinery/door/airlock/engineering,
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/atmospherics)
 "MW" = (
