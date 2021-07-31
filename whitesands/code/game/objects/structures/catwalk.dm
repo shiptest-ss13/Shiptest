@@ -3,6 +3,7 @@
 	desc = "A catwalk for easier EVA maneuvering and cable placement."
 	icon = 'whitesands/icons/obj/smooth_structures/catwalk.dmi'
 	icon_state = "catwalk"
+	base_icon_state = "catwalk"
 	density = FALSE
 	anchored = TRUE
 	armor = list("melee" = 50, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 80, "acid" = 50)
@@ -50,7 +51,7 @@
 		var/turf/open/floor/turf_type = plated_tile.turf_type
 		smoothing_flags = null
 		I = image('whitesands/icons/obj/catwalks.dmi', "plated")
-		I.color = turf_type.color
+		I.color = initial(turf_type.color)
 		overlays += I
 	else
 		smoothing_flags = SMOOTH_BITMASK

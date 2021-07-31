@@ -1,4 +1,4 @@
-/*/**
+/**
  * ## catwalk flooring
  *
  * They show what's underneath their catwalk flooring (pipes and the like)
@@ -42,6 +42,6 @@
 		return FALSE
 	else //edit, not sure how else to get it to work
 		I.play_tool_sound(src, 80)
-		return ScrapeAway(1, CHANGETURF_INHERIT_AIR) //this doesnt work unless its like this
+		return ScrapeAway(1, CHANGETURF_INHERIT_AIR) //edit, this doesnt work unless its like this
 forever gone
-*/
+
