@@ -9,9 +9,6 @@
 	},
 /turf/open/floor/wood,
 /area/ship/crew)
-"aE" = (
-/turf/closed/wall/r_wall,
-/area/ship/bridge)
 "aJ" = (
 /obj/machinery/firealarm{
 	pixel_y = -28
@@ -27,10 +24,6 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
-/area/ship/crew/canteen)
-"bK" = (
-/obj/structure/table/reinforced,
-/turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/canteen)
 "bM" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
@@ -144,9 +137,6 @@
 	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/crew/canteen)
-"cR" = (
-/turf/closed/wall/r_wall,
-/area/ship/storage)
 "cX" = (
 /obj/structure/table/reinforced,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -582,6 +572,9 @@
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance)
+"mf" = (
+/turf/closed/wall/r_wall,
+/area/ship/bridge)
 "mg" = (
 /obj/machinery/door/airlock/glass,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -672,6 +665,9 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/wood,
 /area/ship/crew/canteen)
+"nR" = (
+/turf/closed/wall/r_wall,
+/area/ship/storage)
 "oi" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 8
@@ -750,6 +746,9 @@
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance)
+"pW" = (
+/turf/closed/wall,
+/area/ship/crew/canteen)
 "qa" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 9
@@ -768,6 +767,9 @@
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance)
+"ql" = (
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/crew/canteen)
 "qq" = (
 /obj/machinery/mineral/ore_redemption,
 /obj/effect/turf_decal/box,
@@ -1007,16 +1009,6 @@
 /obj/machinery/suit_storage_unit/mining/eva,
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
-"vp" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 1
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/turf/open/floor/plasteel/mono,
-/area/ship/bridge)
 "vJ" = (
 /obj/structure/table/wood/fancy/black,
 /obj/item/reagent_containers/food/condiment/peppermill,
@@ -1070,6 +1062,9 @@
 	},
 /obj/machinery/door/airlock/station,
 /turf/open/floor/plasteel/dark,
+/area/ship/cargo)
+"wH" = (
+/turf/closed/wall,
 /area/ship/cargo)
 "wS" = (
 /obj/structure/table/reinforced,
@@ -1165,9 +1160,6 @@
 /obj/item/reagent_containers/food/condiment/peppermill,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/canteen)
-"yX" = (
-/turf/closed/wall/r_wall,
-/area/ship/crew)
 "zw" = (
 /obj/structure/table/reinforced,
 /obj/machinery/chem_dispenser/drinks/beer{
@@ -1652,11 +1644,8 @@
 /turf/open/floor/plasteel,
 /area/ship/crew/hydroponics)
 "GI" = (
-/turf/closed/wall/mineral/titanium/nodiagonal,
-/area/ship/bridge)
-"GM" = (
 /turf/closed/wall,
-/area/ship/cargo)
+/area/ship/bridge)
 "GO" = (
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
@@ -1764,6 +1753,9 @@
 /obj/item/toy/cards/deck/cas/black,
 /turf/open/floor/wood,
 /area/ship/crew/canteen)
+"IP" = (
+/turf/closed/wall/r_wall,
+/area/ship/crew/hydroponics)
 "IW" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 8
@@ -1777,6 +1769,9 @@
 	},
 /turf/open/floor/carpet/nanoweave,
 /area/ship/crew/canteen)
+"Jm" = (
+/turf/open/floor/plasteel/mono/white,
+/area/ship/bridge)
 "Jx" = (
 /obj/machinery/newscaster{
 	pixel_x = -30;
@@ -1895,6 +1890,10 @@
 	},
 /turf/open/floor/carpet/nanoweave,
 /area/ship/crew/canteen)
+"MK" = (
+/obj/structure/table/reinforced,
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/crew/canteen)
 "Nb" = (
 /obj/structure/table/reinforced,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -1980,12 +1979,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
-"OM" = (
-/turf/closed/wall,
-/area/ship/crew/canteen)
-"OR" = (
-/turf/open/floor/plasteel/mono/white,
-/area/ship/bridge)
 "OV" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
 	dir = 8
@@ -2156,9 +2149,6 @@
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
 /area/ship/bridge)
-"RR" = (
-/turf/closed/wall/r_wall,
-/area/ship/crew/hydroponics)
 "Sa" = (
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
@@ -2178,7 +2168,7 @@
 /area/ship/crew)
 "So" = (
 /obj/machinery/smartfridge/drinks,
-/turf/closed/wall/mineral/titanium/nodiagonal,
+/turf/closed/wall,
 /area/ship/storage)
 "SA" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -2307,9 +2297,6 @@
 /obj/machinery/holopad/emergency/bar,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/canteen)
-"Vj" = (
-/turf/open/floor/plasteel/mono/dark,
-/area/ship/crew/canteen)
 "Vm" = (
 /obj/structure/table/glass,
 /obj/item/reagent_containers/glass/bottle/nutrient/ez{
@@ -2376,9 +2363,6 @@
 /obj/item/seeds/peas,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/hydroponics)
-"VD" = (
-/turf/closed/wall,
-/area/ship/bridge)
 "VO" = (
 /obj/machinery/atmospherics/components/unary/tank/air{
 	piping_layer = 2
@@ -2389,9 +2373,15 @@
 /obj/effect/turf_decal/box,
 /turf/open/floor/plating,
 /area/ship/maintenance)
+"We" = (
+/turf/closed/wall/r_wall,
+/area/ship/crew)
 "Wg" = (
 /turf/closed/wall,
 /area/ship/crew/hydroponics)
+"Wm" = (
+/turf/closed/wall,
+/area/ship/maintenance)
 "Wo" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 8
@@ -2452,6 +2442,16 @@
 	},
 /turf/open/floor/plasteel,
 /area/ship/cargo)
+"Xm" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plasteel/mono,
+/area/ship/bridge)
 "Xn" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 8
@@ -2523,9 +2523,6 @@
 	},
 /turf/open/floor/carpet/nanoweave,
 /area/ship/crew/canteen)
-"YJ" = (
-/turf/closed/wall,
-/area/ship/maintenance)
 "YN" = (
 /obj/structure/table/reinforced,
 /obj/item/paper_bin,
@@ -2605,7 +2602,7 @@ kC
 dN
 Sa
 ji
-OM
+pW
 pl
 we
 Wy
@@ -2629,13 +2626,13 @@ mk
 mp
 jl
 we
-YJ
+Wm
 me
 me
 me
 xh
 xh
-YJ
+Wm
 tM
 Wy
 yi
@@ -2644,13 +2641,13 @@ yi
 vZ
 vZ
 kC
-OM
+pW
 DK
 ZH
 Yk
-OM
-OM
-YJ
+pW
+pW
+Wm
 vf
 HD
 HD
@@ -2668,10 +2665,10 @@ jD
 GO
 OI
 Sa
-OM
+pW
 ro
 xd
-YJ
+Wm
 VO
 pt
 Qu
@@ -2689,10 +2686,10 @@ jD
 In
 xX
 kM
-OM
+pW
 ZU
 gd
-YJ
+Wm
 TN
 QR
 rH
@@ -2710,11 +2707,11 @@ GO
 In
 TL
 Qn
-OM
+pW
 cO
-OM
-YJ
-YJ
+pW
+Wm
+Wm
 mH
 nF
 GZ
@@ -2731,11 +2728,11 @@ Aw
 In
 BE
 AT
-OM
+pW
 rh
 xI
 BI
-YJ
+Wm
 CV
 Mj
 Si
@@ -2749,19 +2746,19 @@ vZ
 vZ
 kC
 cY
-OM
+pW
 Pf
 aJ
-OM
+pW
 ce
-OM
-OM
-YJ
-YJ
-YJ
+pW
+pW
+Wm
+Wm
+Wm
 nC
 Tl
-YJ
+Wm
 us
 Wy
 vZ
@@ -2784,7 +2781,7 @@ ay
 qu
 Zz
 Zz
-yX
+We
 vZ
 "}
 (11,1,1) = {"
@@ -2805,7 +2802,7 @@ Sj
 KJ
 Dx
 Rq
-yX
+We
 vZ
 "}
 (12,1,1) = {"
@@ -2840,7 +2837,7 @@ oO
 IO
 up
 Ld
-Vj
+ql
 uK
 Cv
 tR
@@ -2889,7 +2886,7 @@ UU
 if
 Ft
 uK
-yX
+We
 vZ
 "}
 (16,1,1) = {"
@@ -2900,17 +2897,17 @@ MI
 Bg
 AQ
 YN
-bK
-bK
+MK
+MK
 yt
 EV
-OM
+pW
 if
 Ot
 Vy
 cq
 Nc
-cR
+nR
 vZ
 "}
 (17,1,1) = {"
@@ -2920,18 +2917,18 @@ dl
 MI
 hk
 AQ
-bK
-Vj
-Vj
+MK
+ql
+ql
 Ve
-Vj
-Vj
+ql
+ql
 So
 zP
 bM
 fG
 vj
-cR
+nR
 vZ
 "}
 (18,1,1) = {"
@@ -2939,8 +2936,8 @@ vZ
 Ev
 wu
 fu
-GM
-GM
+wH
+wH
 SK
 rr
 zw
@@ -2952,7 +2949,7 @@ ml
 if
 EG
 if
-cR
+nR
 vZ
 "}
 (19,1,1) = {"
@@ -2962,18 +2959,18 @@ SB
 mb
 hu
 lD
-VD
-VD
-VD
+GI
+GI
+GI
 Dy
 GI
-VD
-VD
+GI
+GI
 Vm
 Wv
 ZI
 mj
-RR
+IP
 vZ
 "}
 (20,1,1) = {"
@@ -2982,19 +2979,19 @@ Ev
 xN
 wh
 vn
-VD
-VD
+GI
+GI
 sd
 Al
 Ac
 Ff
 Lu
-VD
+GI
 hs
 fs
 QH
 Cr
-RR
+IP
 vZ
 "}
 (21,1,1) = {"
@@ -3003,12 +3000,12 @@ cp
 in
 DB
 vn
-VD
+GI
 oX
 Jx
 Nf
 fz
-OR
+Jm
 ha
 Tw
 hQ
@@ -3024,13 +3021,13 @@ yk
 Az
 DB
 ia
-VD
+GI
 uG
-OR
+Jm
 nt
 tv
 ha
-OR
+Jm
 lh
 Ro
 WP
@@ -3047,17 +3044,17 @@ fM
 Co
 mg
 CL
-vp
+Xm
 Nb
 jQ
 GE
-vp
+Xm
 Gs
 eZ
 Xg
 Yn
 gD
-RR
+IP
 vZ
 "}
 (24,1,1) = {"
@@ -3068,11 +3065,11 @@ jN
 jv
 FA
 ha
-OR
+Jm
 ID
 cX
 wS
-OR
+Jm
 kc
 lg
 fs
@@ -3087,12 +3084,12 @@ Ev
 Xj
 qq
 Xv
-VD
+GI
 oY
 ha
 nf
 QS
-OR
+Jm
 ha
 wp
 Wg
@@ -3110,17 +3107,17 @@ Ev
 Ev
 Nn
 WK
-OR
+Jm
 ha
 Xn
 ha
-OR
+Jm
 Nu
-RR
-RR
-RR
+IP
+IP
+IP
 cc
-RR
+IP
 vZ
 "}
 (27,1,1) = {"
@@ -3129,19 +3126,19 @@ Ev
 Pd
 Ev
 vZ
-aE
-aE
+mf
+mf
 ud
 AK
 AK
 AK
 Oz
-aE
-aE
+mf
+mf
 vZ
-RR
+IP
 Yw
-RR
+IP
 vZ
 "}
 (28,1,1) = {"

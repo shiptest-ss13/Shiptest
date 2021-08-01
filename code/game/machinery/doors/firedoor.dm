@@ -28,6 +28,8 @@
 	var/nextstate = null
 	var/boltslocked = TRUE
 	var/list/affecting_areas
+	var/door_open_sound = 'whitesands/sound/effects/airlocks/firedoor_open.ogg'
+	var/door_close_sound = 'whitesands/sound/effects/airlocks/firedoor_open.ogg'
 
 /obj/machinery/door/firedoor/Initialize()
 	. = ..()
@@ -214,10 +216,13 @@
 
 /obj/machinery/door/firedoor/open()
 	. = ..()
+	playsound(loc, door_open_sound, 90, TRUE)
 	latetoggle()
+
 
 /obj/machinery/door/firedoor/close()
 	. = ..()
+	playsound(loc, door_close_sound, 90, TRUE)
 	latetoggle()
 
 /obj/machinery/door/firedoor/proc/whack_a_mole(reconsider_immediately = FALSE)
