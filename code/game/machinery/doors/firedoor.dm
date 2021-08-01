@@ -215,14 +215,14 @@
 		. += "welded_open"
 
 /obj/machinery/door/firedoor/open()
-	. = ..()
 	playsound(loc, door_open_sound, 90, TRUE)
+	. = ..()
 	latetoggle()
 
 
 /obj/machinery/door/firedoor/close()
-	. = ..()
 	playsound(loc, door_close_sound, 90, TRUE)
+	. = ..()
 	latetoggle()
 
 /obj/machinery/door/firedoor/proc/whack_a_mole(reconsider_immediately = FALSE)
