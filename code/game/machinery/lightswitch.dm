@@ -51,6 +51,7 @@
 /obj/machinery/light_switch/interact(mob/user)
 	. = ..()
 
+	playsound(src, pick('whitesands/sound/machines/switch1.ogg','whitesands/sound/machines/switch2.ogg','whitesands/sound/machines/switch3.ogg','whitesands/sound/machines/switch4.ogg'), 30)
 	area.lightswitch = !area.lightswitch
 	area.update_icon()
 
