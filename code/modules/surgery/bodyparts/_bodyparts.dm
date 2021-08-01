@@ -465,10 +465,10 @@
 	if(source)
 		C = source
 		if(!original_owner)
-			original_owner = WEAKREF(source)
+			original_owner = source
 	else
 		C = owner
-		if(original_owner && !IS_WEAKREF_OF(owner, original_owner)) //Foreign limb
+		if(original_owner && original_owner != owner) //Foreign limb
 			no_update = TRUE
 		else
 			no_update = FALSE
