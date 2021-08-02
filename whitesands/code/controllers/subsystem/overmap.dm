@@ -12,6 +12,8 @@ SUBSYSTEM_DEF(overmap)
 
 	///List of all overmap objects.
 	var/list/overmap_objects
+	///List of all simulated ships
+	var/list/simulated_ships
 	///List of all helms, to be adjusted
 	var/list/helms
 	///List of all events
@@ -37,6 +39,11 @@ SUBSYSTEM_DEF(overmap)
   * Creates an overmap object for shuttles, triggers initialization procs for ships and helms
   */
 /datum/controller/subsystem/overmap/Initialize(start_timeofday)
+	overmap_objects = list()
+	simulated_ships = list()
+	events = list()
+	autopilots = list()
+
 	generator_type = CONFIG_GET(string/overmap_generator_type)
 	if (!generator_type)
 		generator_type = OVERMAP_GENERATOR_RANDOM
