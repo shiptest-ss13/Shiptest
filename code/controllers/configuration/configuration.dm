@@ -8,9 +8,6 @@
 	var/list/entries
 	var/list/entries_by_type
 
-	var/list/maplist
-	var/datum/map_config/defaultmap
-
 	var/list/modes			// allowed modes
 	var/list/gamemode_cache
 	var/list/votable_modes		// votable modes
@@ -48,7 +45,6 @@
 				for(var/J in legacy_configs)
 					LoadEntries(J)
 				break
-	loadmaplist(CONFIG_MAPS_FILE)
 	LoadMOTD()
 	LoadPolicy()
 	LoadChatFilter()
@@ -62,9 +58,6 @@
 	entries_by_type.Cut()
 	QDEL_LIST_ASSOC_VAL(entries)
 	entries = null
-	QDEL_LIST_ASSOC_VAL(maplist)
-	maplist = null
-	QDEL_NULL(defaultmap)
 
 /datum/controller/configuration/Destroy()
 	full_wipe()
@@ -279,64 +272,6 @@ Example config:
 			DelayedMessageAdmins("JSON parsing failure for policy.json")
 		else
 			policy = parsed
-
-/datum/controller/configuration/proc/loadmaplist(filename)
-	log_config("Loading config file [filename]...")
-	filename = "[directory]/[filename]"
-	var/list/Lines = world.file2list(filename)
-
-	var/datum/map_config/currentmap = null
-	for(var/t in Lines)
-		if(!t)
-			continue
-
-		t = trim(t)
-		if(length(t) == 0)
-			continue
-		else if(t[1] == "#")
-			continue
-
-		var/pos = findtext(t, " ")
-		var/command = null
-		var/data = null
-
-		if(pos)
-			command = lowertext(copytext(t, 1, pos))
-			data = copytext(t, pos + length(t[pos]))
-		else
-			command = lowertext(t)
-
-		if(!command)
-			continue
-
-		if (!currentmap && command != "map")
-			continue
-
-		switch (command)
-			if ("map")
-				currentmap = load_map_config("_maps/[data].json")
-				if(currentmap.defaulted)
-					log_config("Failed to load map config for [data]!")
-					currentmap = null
-			if ("minplayers","minplayer")
-				currentmap.config_min_users = text2num(data)
-			if ("maxplayers","maxplayer")
-				currentmap.config_max_users = text2num(data)
-			if ("weight","voteweight")
-				currentmap.voteweight = text2num(data)
-			if ("default","defaultmap")
-				defaultmap = currentmap
-			if ("votable")
-				currentmap.votable = TRUE
-			if ("endmap")
-				LAZYINITLIST(maplist)
-				maplist[currentmap.map_name] = currentmap
-				currentmap = null
-			if ("disabled")
-				currentmap = null
-			else
-				log_config("Unknown command in map vote config: '[command]'")
-
 
 /datum/controller/configuration/proc/pick_mode(mode_name)
 	// I wish I didn't have to instance the game modes in order to look up

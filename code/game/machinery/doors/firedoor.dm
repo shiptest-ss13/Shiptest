@@ -72,17 +72,8 @@
 /obj/machinery/door/firedoor/Bumped(atom/movable/AM)
 	if(panel_open || operating || welded || (machine_stat & NOPOWER))
 		return
-	if(ismob(AM))
-		var/mob/user = AM
-		if(allow_hand_open(user))
-			add_fingerprint(user)
-			open()
-			return TRUE
-	if(ismecha(AM))
-		var/obj/mecha/M = AM
-		if(M.occupant && allow_hand_open(M.occupant))
-			open()
-			return TRUE
+	if(!density)
+		return ..()
 	return FALSE
 
 
