@@ -84,7 +84,7 @@
 
 /obj/structure/overmap/Initialize(mapload)
 	. = ..()
-	LAZYADD(SSovermap.overmap_objects, src)
+	SSovermap.overmap_objects += src
 	if(render_map)	// Initialize map objects
 		map_name = "overmap_[REF(src)]_map"
 		cam_screen = new
@@ -104,9 +104,9 @@
 
 /obj/structure/overmap/Destroy()
 	. = ..()
-	for(var/obj/structure/overmap/O in close_overmap_objects)
+	for(var/obj/structure/overmap/O as anything in close_overmap_objects)
 		LAZYREMOVE(O.close_overmap_objects, src)
-	LAZYREMOVE(SSovermap.overmap_objects, src)
+	SSovermap.overmap_objects -= src
 	if(render_map)
 		QDEL_NULL(cam_screen)
 		QDEL_NULL(cam_plane_master)
