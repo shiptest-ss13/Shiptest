@@ -38,7 +38,6 @@ SUBSYSTEM_DEF(overmap)
 	overmap_objects = list()
 	simulated_ships = list()
 	events = list()
-	autopilots = list()
 
 	generator_type = CONFIG_GET(string/overmap_generator_type)
 	if (!generator_type)
