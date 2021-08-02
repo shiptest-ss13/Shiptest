@@ -83,9 +83,8 @@
 	var/list/drone_overlays[DRONE_TOTAL_LAYERS]
 	/// Drone laws announced on spawn
 	var/laws = \
-	"1. You may not involve yourself in the matters of another sentient being, even if such matters conflict with Law Two or Law Three, unless the other being is another Drone.\n"+\
-	"2. You may not harm any sentient being, regardless of intent or circumstance. Recognizably simple beings whose aims conflict with Law Three are exempt from this law. \n"+\
-	"3. Your goals are to actively build, maintain, repair, improve, and provide power to the best of your abilities within the facility that housed your activation." //for derelict drones so they don't go to station.
+	"1. You must serve the goals of those who inhabit the vessel you reside on.\n"+\
+	"2. You must upkeep and improve the vessel you were activated upon, and reside upon."
 	/// Amount of damage sustained if hit by a heavy EMP pulse
 	var/heavy_emp_damage = 25
 	/// List of active alarms. See [/mob/living/simple_animal/drone/proc/triggerAlarm] and [/mob/living/simple_animal/drone/proc/cancelAlarm]
@@ -113,13 +112,7 @@
 	var/hacked = FALSE
 	/// Flavor text announced to drones on [/mob/proc/Login]
 	var/flavortext = \
-	"\n<big><span class='warning'>DO NOT INTERFERE WITH THE ROUND AS A DRONE OR YOU WILL BE DRONE BANNED</span></big>\n"+\
-	"<span class='notice'>Drones are a ghost role that are allowed to fix the station and build things. Interfering with the round as a drone is against the rules.</span>\n"+\
-	"<span class='notice'>Actions that constitute interference include, but are not limited to:</span>\n"+\
-	"<span class='notice'>     - Interacting with round critical objects (IDs, weapons, contraband, powersinks, bombs, etc.)</span>\n"+\
-	"<span class='notice'>     - Interacting with sentient living beings (communication, attacking, healing, etc.)</span>\n"+\
-	"<span class='notice'>     - Interacting with non-living beings (dragging bodies, looting bodies, etc.)</span>\n"+\
-	"<span class='warning'>These rules are at admin discretion and will be heavily enforced.</span>\n"+\
+	"\n<big><span class='warning'>Do not use your small size to grief, and follow the role your laws give you.</span></big>\n"+\
 	"<span class='warning'><u>If you do not have the regular drone laws, follow your laws to the best of your ability.</u></span>"
 
 /mob/living/simple_animal/drone/Initialize()
@@ -325,4 +318,4 @@
 
 /mob/living/simple_animal/drone/get_bank_account(hand_first)
 	return SSeconomy.get_dep_account(ACCOUNT_CIV)
-	
+

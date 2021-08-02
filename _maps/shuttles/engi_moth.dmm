@@ -363,8 +363,8 @@
 "kY" = (
 /obj/machinery/atmospherics/components/unary/thermomachine/freezer/on{
 	dir = 4;
-	min_temperature = 3;
-	target_temperature = 3
+	min_temperature = 1;
+	target_temperature = 1
 	},
 /turf/open/floor/engine,
 /area/ship/engineering/engine)
@@ -571,9 +571,7 @@
 /turf/open/floor/engine,
 /area/ship/engineering/engine)
 "rv" = (
-/obj/machinery/atmospherics/components/binary/pump{
-	dir = 1
-	},
+/obj/machinery/atmospherics/pipe/simple/cyan/visible,
 /turf/open/floor/engine,
 /area/ship/engineering/engine)
 "rN" = (
@@ -673,13 +671,13 @@
 /obj/machinery/status_display/shuttle{
 	shuttle_id = "moth"
 	},
-/turf/closed/indestructible/reinforced,
+/turf/closed/wall/r_wall,
 /area/ship/engineering/engine)
 "uP" = (
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/turf/closed/indestructible/reinforced,
+/turf/closed/wall/r_wall,
 /area/ship/engineering/engine)
 "uZ" = (
 /obj/machinery/door/airlock/engineering,
@@ -1790,7 +1788,7 @@
 /turf/open/floor/mineral/plastitanium/red,
 /area/ship/bridge)
 "Yk" = (
-/turf/closed/indestructible/reinforced,
+/turf/closed/wall/r_wall,
 /area/ship/engineering/engine)
 "Yv" = (
 /obj/machinery/light,

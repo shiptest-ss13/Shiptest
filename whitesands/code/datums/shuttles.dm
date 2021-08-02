@@ -42,7 +42,30 @@
 /datum/map_template/shuttle/radio
 	port_id = "radio"
 	suffix = "funny"
-
+/datum/map_template/shuttle/syndie
+	port_id = "syndieship"
+	suffix = "revamped"
+/datum/map_template/shuttle/stationtest
+	port_id = "stationtest"
+	suffix = "huge"
+/datum/map_template/shuttle/syndie2
+	port_id = "syndieship2"
+	suffix = "small"
+/datum/map_template/shuttle/syndie3
+	port_id = "syndieship3"
+	suffix = "fuck"
+/datum/map_template/shuttle/raven2
+	port_id = "raven"
+	suffix = "redone"
+/datum/map_template/shuttle/goontest
+	port_id = "goontest"
+	suffix = "ship"
+/datum/map_template/shuttle/tinyfucker
+	port_id = "tiny"
+	suffix = "fucker"
+/datum/map_template/shuttle/piratetest
+	port_id = "pirate2"
+	suffix = "test"
 //Ruins
 /datum/map_template/shuttle/ruin/solgov_exploration_pod
 	suffix = "solgov_exploration_pod"
