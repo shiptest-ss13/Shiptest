@@ -12,6 +12,8 @@ SUBSYSTEM_DEF(overmap)
 
 	///List of all overmap objects.
 	var/list/overmap_objects
+	///List of all simulated ships
+	var/list/simulated_ships
 	///List of all helms, to be adjusted
 	var/list/helms
 	///List of all events
@@ -37,6 +39,11 @@ SUBSYSTEM_DEF(overmap)
   * Creates an overmap object for shuttles, triggers initialization procs for ships and helms
   */
 /datum/controller/subsystem/overmap/Initialize(start_timeofday)
+	overmap_objects = list()
+	simulated_ships = list()
+	events = list()
+	autopilots = list()
+
 	generator_type = CONFIG_GET(string/overmap_generator_type)
 	if (!generator_type)
 		generator_type = OVERMAP_GENERATOR_RANDOM
@@ -220,7 +227,7 @@ SUBSYSTEM_DEF(overmap)
 				surface = /turf/open/floor/plating/asteroid/basalt/lava_land_surface
 			if(DYNAMIC_WORLD_ICE)
 				ruin_list = SSmapping.ice_ruins_templates
-				mapgen = new /datum/map_generator/cave_generator/icemoon/surface
+				mapgen = new /datum/map_generator/cave_generator/icemoon
 				target_area = /area/overmap_encounter/planetoid/ice
 				surface = /turf/open/floor/plating/asteroid/snow/icemoon
 			if(DYNAMIC_WORLD_SAND)

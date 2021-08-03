@@ -16,7 +16,7 @@
 	if(SSovermap.initialized)
 		initial_load()
 	else
-		LAZYADD(SSovermap.autopilots, src)
+		SSovermap.autopilots += src
 
 /obj/machinery/computer/autopilot/proc/initial_load()
 	if(ship)

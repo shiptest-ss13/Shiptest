@@ -26,9 +26,6 @@
 	///Cooldown until the ship can be renamed again
 	COOLDOWN_DECLARE(rename_cooldown)
 
-	///Assoc list of remaining open job slots (job = remaining slots)
-	var/list/job_slots = list("Assistant" = 5, "Captain" = 1)
-
 	///The overmap object the ship is docked to, if any
 	var/obj/structure/overmap/docked
 	///The docking port of the linked shuttle
@@ -36,6 +33,7 @@
 
 /obj/structure/overmap/ship/simulated/Initialize(mapload, obj/docking_port/mobile/_shuttle)
 	. = ..()
+	SSovermap.simulated_ships += src
 	if(_shuttle)
 		shuttle = _shuttle
 	if(!shuttle)

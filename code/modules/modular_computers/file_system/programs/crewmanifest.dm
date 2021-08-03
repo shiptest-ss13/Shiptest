@@ -11,7 +11,7 @@
 
 /datum/computer_file/program/crew_manifest/ui_static_data(mob/user)
 	var/list/data = list()
-	data["manifest"] = GLOB.data_core.get_manifest()
+	data["manifest"] = SSjob.get_manifest()
 	return data
 
 /datum/computer_file/program/crew_manifest/ui_data(mob/user)
