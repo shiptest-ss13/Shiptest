@@ -441,14 +441,9 @@
 	name = "armory locker";
 	pixel_x = 32
 	},
-/obj/item/storage/box/lethalshot{
-	pixel_x = 5;
-	pixel_y = 5
-	},
-/obj/item/storage/box/lethalshot,
-/obj/item/storage/box/lethalshot{
-	pixel_x = -5;
-	pixel_y = -5
+/obj/item/storage/box{
+	icon_state = "lethalshot_box";
+	name = "dusty shotshell box"
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/security)
@@ -512,11 +507,10 @@
 	name = "armory locker";
 	pixel_x = 32
 	},
-/obj/item/gun/ballistic/shotgun/riot{
+/obj/item/gun/ballistic/shotgun{
 	pixel_y = 5
 	},
-/obj/item/gun/ballistic/shotgun/riot,
-/obj/item/gun/ballistic/shotgun/riot{
+/obj/item/gun/ballistic/shotgun/doublebarrel{
 	pixel_y = -5
 	},
 /turf/open/floor/mineral/plastitanium,
