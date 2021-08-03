@@ -264,6 +264,13 @@
 	allow_duplicates = FALSE
 	cost = 5
 
+/datum/map_template/ruin/lavaland/dwarffortress
+	name = "Legion infested Dwarf Fortress"
+	id = "dwarffortress"
+	description = "A forgotten fortress home to only a tragic tale and infested corpses."
+	suffix = "lavaland_surface_dwarffortress"
+	allow_duplicates = FALSE
+
 /datum/map_template/ruin/lavaland/boss/bubblegum
 	name = "Bubblegum Ritual"
 	id = "bubblegum-ritual"
@@ -275,7 +282,7 @@
 	id = "dragon-cave"
 	description = "A dragon has taken lodging in this here cave, storing its riches and valuables."
 	suffix = "drake_ruin.dmm"
-	
+
 /datum/map_template/ruin/lavaland/boss/colossus
 	name = "Colossus Cross"
 	id = "colossus-cross"
