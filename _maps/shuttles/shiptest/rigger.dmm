@@ -51,9 +51,6 @@
 	pixel_y = 10
 	},
 /obj/item/paper_bin,
-/obj/item/lighter/greyscale{
-	pixel_x = 8
-	},
 /obj/machinery/airalarm/all_access{
 	dir = 1;
 	pixel_y = -24
@@ -687,6 +684,7 @@
 /obj/item/clothing/shoes/jackboots,
 /obj/item/clothing/glasses/sunglasses,
 /obj/item/clothing/accessory/armband,
+/obj/item/clothing/gloves/fingerless,
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "kA" = (
@@ -742,10 +740,6 @@
 /obj/structure/curtain,
 /obj/machinery/shower{
 	dir = 4
-	},
-/obj/machinery/airalarm/all_access{
-	dir = 1;
-	pixel_y = -24
 	},
 /obj/structure/window/reinforced/tinted/frosted{
 	dir = 1
@@ -1180,8 +1174,9 @@
 	pixel_x = 12
 	},
 /obj/machinery/light/small,
-/obj/structure/sign/poster/official/cleanliness{
-	pixel_y = -32
+/obj/machinery/airalarm/all_access{
+	dir = 1;
+	pixel_y = -24
 	},
 /turf/open/floor/plasteel/showroomfloor,
 /area/ship/crew)
@@ -2501,6 +2496,9 @@
 /obj/machinery/light/small{
 	dir = 4
 	},
+/obj/structure/sign/poster/official/cleanliness{
+	pixel_y = 32
+	},
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew)
 "Hm" = (
@@ -3491,6 +3489,10 @@
 "Va" = (
 /obj/structure/window/plasma/reinforced/plastitanium,
 /obj/structure/grille,
+/obj/machinery/door/poddoor/shutters{
+	id = "riggerwindows";
+	name = "blast shutters"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "Vj" = (
