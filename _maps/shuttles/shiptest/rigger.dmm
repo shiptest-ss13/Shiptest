@@ -510,14 +510,6 @@
 	},
 /turf/open/floor/plasteel/showroomfloor,
 /area/ship/crew)
-"iw" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/machinery/navbeacon/wayfinding/dorms{
-	name = "navigation beacon"
-	},
-/turf/open/floor/plasteel/grimy,
-/area/ship/crew)
 "iA" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
@@ -1881,7 +1873,7 @@
 /turf/open/floor/plasteel,
 /area/ship/engineering)
 "yL" = (
-/obj/machinery/atmospherics/components/unary/vent_pump/layer2{
+/obj/machinery/atmospherics/components/unary/vent_pump/high_volume/siphon/layer2{
 	dir = 8
 	},
 /turf/open/floor/plasteel,
@@ -2207,6 +2199,14 @@
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
+"Da" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/navbeacon/wayfinding/dorms{
+	name = "navigation beacon"
+	},
+/turf/open/floor/plasteel/grimy,
+/area/ship/crew)
 "Dm" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
@@ -2595,14 +2595,6 @@
 	},
 /turf/open/floor/plasteel/grimy,
 /area/ship/security)
-"HL" = (
-/obj/effect/turf_decal/lumos/tile/brown/checker,
-/obj/machinery/navbeacon{
-	codes_txt = "patrol;next_patrol=cargo";
-	location = "canteen"
-	},
-/turf/open/floor/plasteel,
-/area/ship/crew/canteen)
 "HS" = (
 /obj/machinery/door/airlock/glass{
 	name = "Head"
@@ -3291,6 +3283,14 @@
 "Sh" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/maintenance/starboard)
+"Sq" = (
+/obj/effect/turf_decal/lumos/tile/brown/checker,
+/obj/machinery/navbeacon{
+	codes_txt = "patrol;next_patrol=cargo";
+	location = "canteen"
+	},
+/turf/open/floor/plasteel,
+/area/ship/crew/canteen)
 "SA" = (
 /obj/effect/turf_decal/lumos/tile/purple/fullcorner{
 	dir = 4
@@ -4101,7 +4101,7 @@ nL
 HS
 od
 CL
-iw
+Da
 tE
 RW
 Dr
@@ -4111,7 +4111,7 @@ Cf
 Yv
 Yv
 qw
-HL
+Sq
 XR
 Uv
 tT
