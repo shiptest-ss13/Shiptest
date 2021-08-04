@@ -487,6 +487,14 @@
 /obj/structure/window/plasma/reinforced/plastitanium,
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
+"ip" = (
+/obj/effect/turf_decal/lumos/tile/brown/checker,
+/obj/machinery/navbeacon{
+	codes_txt = "patrol;next_patrol=cargo";
+	location = "canteen"
+	},
+/turf/open/floor/plasteel,
+/area/ship/crew/canteen)
 "ir" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
@@ -903,7 +911,7 @@
 /obj/machinery/light{
 	dir = 4
 	},
-/obj/machinery/modular_computer/console/preset/engineering{
+/obj/machinery/computer/monitor{
 	dir = 8
 	},
 /turf/open/floor/plating,
@@ -1303,6 +1311,14 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/communications)
+"rl" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/navbeacon/wayfinding/dorms{
+	name = "navigation beacon"
+	},
+/turf/open/floor/plasteel/grimy,
+/area/ship/crew)
 "rr" = (
 /obj/structure/cable{
 	icon_state = "1-4"
@@ -2967,14 +2983,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
-"NJ" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/machinery/navbeacon/wayfinding/dorms{
-	name = "navigation beacon"
-	},
-/turf/open/floor/plasteel/grimy,
-/area/ship/crew)
 "NU" = (
 /obj/machinery/atmospherics/components/unary/passive_vent/layer4{
 	dir = 4
@@ -3640,14 +3648,6 @@
 /obj/effect/turf_decal/delivery,
 /turf/open/floor/plating,
 /area/ship/engineering)
-"Wv" = (
-/obj/effect/turf_decal/lumos/tile/brown/checker,
-/obj/machinery/navbeacon{
-	codes_txt = "patrol;next_patrol=cargo";
-	location = "canteen"
-	},
-/turf/open/floor/plasteel,
-/area/ship/crew/canteen)
 "Wy" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -4138,7 +4138,7 @@ nL
 HS
 od
 CL
-NJ
+rl
 tE
 RW
 Dr
@@ -4148,7 +4148,7 @@ Cf
 Yv
 Yv
 qw
-Wv
+ip
 XR
 Uv
 tT
