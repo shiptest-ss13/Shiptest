@@ -470,7 +470,10 @@
 	dir = 8
 	},
 /obj/structure/window/reinforced,
-/obj/item/screwdriver,
+/obj/item/screwdriver{
+	pixel_x = 6;
+	pixel_y = 6
+	},
 /obj/item/spacepod_key/sec{
 	pixel_x = -8;
 	pixel_y = 9
@@ -868,7 +871,7 @@
 "oY" = (
 /obj/structure/table/reinforced,
 /obj/item/desk_flag/solgov{
-	pixel_x = 13
+	pixel_x = -13
 	},
 /obj/machinery/computer/secure_data/laptop{
 	dir = 1;
@@ -2585,9 +2588,12 @@
 /obj/structure/table/reinforced,
 /obj/item/paper_bin{
 	pixel_x = -5;
-	pixel_y = 7
+	pixel_y = -5
 	},
-/obj/item/folder/blue,
+/obj/item/folder/blue{
+	pixel_x = -1;
+	pixel_y = 8
+	},
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
