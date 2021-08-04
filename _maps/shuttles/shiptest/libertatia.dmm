@@ -700,6 +700,10 @@
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
 	dir = 4
 	},
+/obj/machinery/navbeacon{
+	codes_txt = "patrol;next_patrol=port";
+	location = "forward"
+	},
 /turf/open/floor/pod/light,
 /area/ship/crew)
 "vW" = (
@@ -1517,6 +1521,10 @@
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
+/obj/machinery/navbeacon{
+	codes_txt = "patrol;next_patrol=starboard";
+	location = "port"
+	},
 /turf/open/floor/pod/light,
 /area/ship/cargo)
 "Sc" = (
@@ -1625,6 +1633,10 @@
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
+	},
+/obj/machinery/navbeacon{
+	codes_txt = "patrol;next_patrol=forward";
+	location = "starboard"
 	},
 /turf/open/floor/pod/light,
 /area/ship/cargo)
