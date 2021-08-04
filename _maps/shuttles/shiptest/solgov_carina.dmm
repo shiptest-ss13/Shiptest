@@ -371,17 +371,20 @@
 /area/ship/engineering)
 "hj" = (
 /obj/structure/table,
-/obj/structure/window/plasma/reinforced/spawner/west,
-/obj/item/storage/box/flashes{
-	pixel_x = -1;
-	pixel_y = 14
+/obj/structure/window/reinforced{
+	dir = 8
 	},
-/obj/item/storage/box/zipties{
-	pixel_x = 7;
-	pixel_y = 3
+/obj/item/clothing/accessory/armband,
+/obj/item/storage/belt/security,
+/obj/item/radio/headset/headset_sec/alt,
+/obj/item/clothing/suit/armor/vest/solgov/rep{
+	name = "\proper slim SolGov armor vest"
 	},
-/obj/item/spacepod_key/sec,
-/obj/item/screwdriver,
+/obj/item/clothing/head/beret/solgov,
+/obj/item/clothing/glasses/hud/security/sunglasses,
+/obj/item/melee/classic_baton/telescopic,
+/obj/item/clothing/under/solgov,
+/obj/item/clothing/shoes/combat,
 /turf/open/floor/carpet/nanoweave/red,
 /area/ship/security/prison)
 "hs" = (
@@ -424,6 +427,14 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/item/gun/grenadelauncher,
+/obj/item/storage/box/zipties{
+	pixel_x = 7;
+	pixel_y = 3
+	},
+/obj/item/storage/box/flashes{
+	pixel_x = -1;
+	pixel_y = 14
+	},
 /turf/open/floor/carpet/nanoweave/red,
 /area/ship/security/prison)
 "iH" = (
@@ -451,15 +462,18 @@
 /area/ship/cargo)
 "jw" = (
 /obj/structure/table,
-/obj/structure/window/plasma/reinforced/spawner/west,
 /obj/machinery/recharger,
 /obj/item/storage/fancy/donut_box{
 	pixel_y = 12
 	},
-/obj/item/paper{
-	info = <b><center><u><large>Armory Inventory</large></b></center></u><br><br><b>Ship Time:</b>10:00<br><b>Shipment Number:</b>00<br><br><b>Equipment in this shipment:</b><br><small>Leave blank or write 0 if none</small><br><br>Firearms, Ballistic: Pistol M9 - x1,<br>Grenade Launcher Mk13 - x1,<br>Firearms, Energy: Disabler - x3,<br><br>Weapons, Melee: Telescoping Baton - x1,<br>Combat Knife - x3,<br>Armor: SolGov Infantry - x3 sets, Vest Type 1 - x1,<br><br>Ammunition, Lethal: 5.56mm HITP - x24 (2 magazines),<br>Ammunition, Less-Lethal:,<br><br>Explosives, Lethal:,<br>Explosives, Less-Lethal: Grenade, Pepper M8A7 - x7,<br><br>Miscellaneous: Zip Ties - x1 box, Flashbulbs - x1 box, <br>Nanotrasen SecTech vendor- x1<br><br><b>Warden signature:</b>;
-	name = "paper - Armory Inventory";
-	pixel_x = 11
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/structure/window/reinforced,
+/obj/item/screwdriver,
+/obj/item/spacepod_key/sec{
+	pixel_x = -8;
+	pixel_y = 9
 	},
 /turf/open/floor/carpet/nanoweave/red,
 /area/ship/security/prison)
@@ -736,17 +750,13 @@
 /obj/structure/table/reinforced,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/item/flashlight/lamp{
-	pixel_y = 14
+	pixel_y = 5
 	},
-/obj/item/clothing/accessory/armband,
-/obj/item/storage/belt/security,
-/obj/item/radio/headset/headset_sec/alt,
-/obj/item/clothing/suit/armor/vest/solgov/rep{
-	name = "\proper slim SolGov armor vest"
+/obj/item/paper{
+	info = <b><center><u><large>Armory Inventory</large></b></center></u><br><br><b>Ship Time:</b>10:00<br><b>Shipment Number:</b>00<br><br><b>Equipment in this shipment:</b><br><small>Leave blank or write 0 if none</small><br><br>Firearms, Ballistic: Pistol M9 - x1,<br>Grenade Launcher Mk13 - x1,<br>Firearms, Energy: Disabler - x3,<br><br>Weapons, Melee: Telescoping Baton - x1,<br>Combat Knife - x3,<br>Armor: SolGov Infantry - x3 sets, Vest Type 1 - x1,<br><br>Ammunition, Lethal: 5.56mm HITP - x24 (2 magazines),<br>Ammunition, Less-Lethal:,<br><br>Explosives, Lethal:,<br>Explosives, Less-Lethal: Grenade, Pepper M8A7 - x7,<br><br>Miscellaneous: Zip Ties - x1 box, Flashbulbs - x1 box, <br>Nanotrasen SecTech vendor- x1<br><br><b>Warden signature:</b>;
+	name = "paper - Armory Inventory";
+	pixel_x = 11
 	},
-/obj/item/clothing/head/beret/solgov,
-/obj/item/clothing/glasses/hud/security/sunglasses,
-/obj/item/melee/classic_baton/telescopic,
 /turf/open/floor/carpet/nanoweave/red,
 /area/ship/security/prison)
 "nE" = (
@@ -764,6 +774,7 @@
 /area/ship/security)
 "nF" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/door/window/brigdoor/southleft,
 /turf/open/floor/carpet/nanoweave/red,
 /area/ship/security/prison)
 "nG" = (
@@ -1096,9 +1107,6 @@
 	name = "equipment closet";
 	pixel_y = -28
 	},
-/obj/item/storage/belt/security/webbing,
-/obj/item/storage/belt/security/webbing,
-/obj/item/storage/belt/security/webbing,
 /obj/item/clothing/gloves/color/black,
 /obj/item/clothing/gloves/color/black,
 /obj/item/clothing/gloves/color/black,
@@ -1106,8 +1114,6 @@
 /obj/item/clothing/under/solgov,
 /obj/item/clothing/under/solgov,
 /obj/item/clothing/under/solgov,
-/obj/item/clothing/under/solgov,
-/obj/item/clothing/shoes/combat,
 /obj/item/clothing/shoes/combat,
 /obj/item/clothing/shoes/combat,
 /obj/item/clothing/shoes/combat,
@@ -1366,10 +1372,12 @@
 /area/ship/bridge)
 "uN" = (
 /obj/machinery/vending/security,
-/obj/structure/window/plasma/reinforced/spawner/west,
 /obj/machinery/camera/autoname,
 /obj/machinery/firealarm{
 	pixel_y = 24
+	},
+/obj/structure/window/reinforced{
+	dir = 8
 	},
 /turf/open/floor/carpet/nanoweave/red,
 /area/ship/security/prison)
@@ -1494,6 +1502,7 @@
 	codes_txt = "patrol;next_patrol=podbay";
 	location = "med"
 	},
+/obj/structure/window/reinforced,
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "wY" = (
@@ -2457,13 +2466,6 @@
 	name = "equipment closet";
 	pixel_y = -28
 	},
-/obj/item/flashlight/seclite{
-	pixel_y = 10
-	},
-/obj/item/flashlight/seclite{
-	pixel_y = 5
-	},
-/obj/item/flashlight/seclite,
 /obj/item/radio/headset/headset_sec/alt,
 /obj/item/radio/headset/headset_sec/alt,
 /obj/item/radio/headset/headset_sec/alt,
