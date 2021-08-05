@@ -347,8 +347,10 @@
 /turf/open/floor/plasteel/dark/airless,
 /area/ruin/space/has_grav/transport18mid)
 "jV" = (
-/obj/machinery/power/shuttle/engine/liquid/oil{
-	dir = 4
+/obj/machinery/power/shuttle/engine/liquid{
+	dir = 4;
+	fuel_reagents = list(/datum/reagent/consumable/ethanol/beer = 50);
+	name = "modified thruster"
 	},
 /turf/open/floor/plating,
 /area/ruin/space/transport18aft)
@@ -655,8 +657,10 @@
 	},
 /area/ruin/space/transport18aft)
 "pE" = (
-/obj/machinery/power/shuttle/engine/liquid/oil{
-	dir = 4
+/obj/machinery/power/shuttle/engine/liquid{
+	dir = 4;
+	fuel_reagents = list(/datum/reagent/consumable/ethanol/beer = 50);
+	name = "modified thruster"
 	},
 /turf/open/floor/plating/airless,
 /area/ruin/space/transport18aft)
