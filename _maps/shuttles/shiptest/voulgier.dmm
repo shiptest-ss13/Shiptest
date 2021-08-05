@@ -616,6 +616,11 @@
 /obj/machinery/modular_computer/console/preset/command{
 	dir = 8
 	},
+/obj/machinery/button/door{
+	id = "voulgier_guns";
+	name = "Turret Shutters";
+	pixel_y = 28
+	},
 /turf/open/floor/wood,
 /area/ship/bridge)
 "ng" = (
@@ -714,6 +719,7 @@
 	},
 /obj/docking_port/mobile{
 	can_move_docking_ports = 1;
+	launch_status = 0;
 	name = "STV Voulgier";
 	port_direction = 4;
 	undock_roundstart = 1
@@ -996,8 +1002,10 @@
 /turf/open/floor/mineral/plastitanium,
 /area/ship/security)
 "vX" = (
-/obj/machinery/door/poddoor,
 /obj/structure/fans/tiny,
+/obj/machinery/door/poddoor{
+	id = "voulgier_rr"
+	},
 /turf/open/floor/plating,
 /area/ship/security)
 "wK" = (
@@ -1030,6 +1038,12 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
+"xS" = (
+/obj/machinery/camera/motion{
+	dir = 1
+	},
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/external)
 "yc" = (
 /obj/machinery/airalarm/all_access{
 	dir = 8;
@@ -1056,7 +1070,9 @@
 /area/ship/hallway/central)
 "yV" = (
 /obj/structure/fans/tiny,
-/obj/machinery/door/poddoor,
+/obj/machinery/door/poddoor{
+	id = "voulgier_rr"
+	},
 /turf/open/floor/plating,
 /area/ship/security/range)
 "zh" = (
@@ -1139,9 +1155,6 @@
 /obj/structure/closet/emcloset,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/hallway/central)
-"AA" = (
-/turf/closed/wall/mineral/plastitanium,
-/area/ship/cargo)
 "AM" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
@@ -1235,6 +1248,7 @@
 /area/ship/medical)
 "Dr" = (
 /obj/machinery/manned_turret{
+	anchored = 1;
 	dir = 4
 	},
 /turf/open/floor/mineral/plastitanium/red,
@@ -1308,7 +1322,7 @@
 /turf/open/floor/mineral/plastitanium,
 /area/ship/crew/canteen)
 "Fv" = (
-/turf/closed/wall/mineral/plastitanium,
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/crew/dorm)
 "Fy" = (
 /obj/effect/turf_decal/number{
@@ -1317,12 +1331,10 @@
 /turf/open/floor/mineral/plastitanium/red,
 /area/ship/security/range)
 "FA" = (
-/turf/closed/wall/mineral/plastitanium,
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/engineering/electrical)
 "FG" = (
-/obj/machinery/door/poddoor,
-/obj/structure/fans/tiny,
-/turf/open/floor/plating,
+/turf/open/space/basic,
 /area/ship/cargo)
 "FM" = (
 /turf/open/space/basic,
@@ -1331,10 +1343,10 @@
 /obj/machinery/power/shuttle/engine/fueled/plasma{
 	dir = 4
 	},
-/turf/closed/wall/mineral/plastitanium,
+/turf/open/floor/plating,
 /area/ship/external)
 "FW" = (
-/turf/closed/wall/mineral/plastitanium,
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/security)
 "Gb" = (
 /obj/machinery/firealarm{
@@ -1608,7 +1620,7 @@
 /turf/open/floor/mineral/plastitanium,
 /area/ship/crew/canteen)
 "JQ" = (
-/turf/closed/wall/mineral/plastitanium,
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/engineering/engine)
 "JV" = (
 /obj/structure/cable{
@@ -1630,7 +1642,7 @@
 /turf/open/floor/mineral/plastitanium,
 /area/ship/crew/canteen)
 "KI" = (
-/turf/closed/wall/mineral/plastitanium,
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/bridge)
 "KS" = (
 /obj/structure/cable{
@@ -1648,11 +1660,7 @@
 /turf/open/floor/mineral/plastitanium,
 /area/ship/crew/canteen)
 "Le" = (
-/obj/effect/turf_decal/bot,
-/obj/machinery/light{
-	dir = 4
-	},
-/turf/open/floor/plating,
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/cargo)
 "Ll" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -1882,7 +1890,7 @@
 /turf/open/floor/mineral/plastitanium,
 /area/ship/crew/canteen)
 "QD" = (
-/turf/closed/wall/mineral/plastitanium,
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/security/range)
 "Ra" = (
 /obj/machinery/cryopod/latejoin{
@@ -1920,7 +1928,7 @@
 /obj/machinery/computer/cryopod{
 	pixel_y = 24
 	},
-/turf/closed/wall/mineral/plastitanium,
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/crew/dorm)
 "RL" = (
 /obj/structure/window/reinforced/tinted{
@@ -1986,7 +1994,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/electrical)
 "Ss" = (
-/turf/closed/wall/mineral/plastitanium,
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/crew/canteen)
 "SY" = (
 /obj/structure/cable{
@@ -2034,7 +2042,7 @@
 /turf/open/floor/mineral/titanium/yellow,
 /area/ship/engineering/electrical)
 "TI" = (
-/turf/closed/wall/mineral/plastitanium,
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/medical)
 "Ue" = (
 /obj/structure/table/reinforced,
@@ -2210,16 +2218,14 @@
 /turf/open/floor/mineral/plastitanium,
 /area/ship/crew/canteen)
 "XJ" = (
-/obj/machinery/atmospherics/components/unary/shuttle/heater{
-	dir = 4
+/obj/machinery/door/poddoor{
+	id = "voulgier_rr"
 	},
-/obj/structure/window/reinforced/spawner/west,
-/obj/machinery/door/window/eastleft,
-/obj/structure/window/reinforced/spawner/north,
-/turf/closed/wall/mineral/plastitanium,
-/area/ship/engineering/engine)
+/obj/structure/fans/tiny,
+/turf/open/floor/plating,
+/area/ship/cargo)
 "XP" = (
-/turf/closed/wall/mineral/plastitanium,
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/hallway/central)
 "XS" = (
 /obj/structure/chair/comfy/shuttle,
@@ -2246,7 +2252,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
-/turf/closed/wall/mineral/plastitanium,
+/turf/open/floor/mineral/plastitanium,
 /area/ship/bridge)
 "Ym" = (
 /obj/structure/cable{
@@ -2336,7 +2342,7 @@ FM
 FM
 FM
 FM
-Ag
+xS
 JQ
 JQ
 FS
@@ -2366,7 +2372,7 @@ FM
 FM
 JQ
 Wm
-XJ
+Ol
 uS
 xq
 JQ
@@ -2522,10 +2528,10 @@ FA
 "}
 (8,1,1) = {"
 FM
-AA
-AA
-AA
-AA
+FG
+Le
+Le
+Le
 kU
 oL
 kW
@@ -2550,7 +2556,7 @@ pI
 (9,1,1) = {"
 FM
 FG
-DJ
+XJ
 DJ
 eX
 eX
@@ -2577,7 +2583,7 @@ zh
 (10,1,1) = {"
 FM
 FG
-DJ
+XJ
 DJ
 eW
 kW
@@ -2604,7 +2610,7 @@ FA
 (11,1,1) = {"
 FM
 FG
-DJ
+XJ
 DJ
 AO
 IF
@@ -2631,7 +2637,7 @@ FM
 (12,1,1) = {"
 FM
 FG
-DJ
+XJ
 DJ
 gl
 pF
@@ -2658,8 +2664,8 @@ FM
 (13,1,1) = {"
 FM
 FG
+XJ
 DJ
-Le
 eX
 va
 pf
@@ -2684,13 +2690,13 @@ BK
 "}
 (14,1,1) = {"
 Ag
-AA
-AA
-AA
-AA
-AA
-AA
-AA
+Le
+Le
+Le
+Le
+Le
+Le
+Le
 XP
 HV
 UU
