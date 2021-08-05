@@ -13,6 +13,13 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/unpowered)
+"aW" = (
+/obj/structure/girder/displaced,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating{
+	icon_state = "platingdmg3"
+	},
+/area/ruin/unpowered)
 "bm" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/stack/cable_coil/cut/red,
@@ -206,8 +213,8 @@
 	name = "armory locker";
 	pixel_x = 32
 	},
-/obj/item/gun/ballistic/shotgun/doublebarrel/improvised/sawn,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/item/gun/ballistic/shotgun/automatic,
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/unpowered)
 "hL" = (
@@ -257,6 +264,12 @@
 /obj/effect/decal/cleanable/oil,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
+/area/ruin/unpowered)
+"jy" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating{
+	icon_state = "platingdmg3"
+	},
 /area/ruin/unpowered)
 "jE" = (
 /obj/item/stack/rods,
@@ -368,6 +381,21 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/pod/light,
 /area/ruin/unpowered)
+"nz" = (
+/obj/structure/grille,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating{
+	icon_state = "platingdmg3"
+	},
+/area/ruin/unpowered)
+"nI" = (
+/obj/structure/girder/displaced,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating{
+	broken = 1;
+	icon_state = "platingdmg1"
+	},
+/area/ruin/unpowered)
 "oc" = (
 /turf/open/floor/engine/hull,
 /area/ruin/unpowered)
@@ -472,12 +500,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/pod/light,
 /area/ruin/unpowered)
-"rz" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plating{
-	icon_state = "platingdmg3"
-	},
-/area/ruin/unpowered)
 "rM" = (
 /obj/effect/turf_decal/bot,
 /obj/machinery/power/port_gen/pacman/super,
@@ -514,14 +536,6 @@
 /obj/structure/lattice/catwalk,
 /obj/structure/lattice,
 /turf/template_noop,
-/area/ruin/unpowered)
-"sH" = (
-/obj/structure/girder/displaced,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plating{
-	broken = 1;
-	icon_state = "platingdmg1"
-	},
 /area/ruin/unpowered)
 "sU" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -659,6 +673,13 @@
 	},
 /turf/template_noop,
 /area/template_noop)
+"wd" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating{
+	icon_state = "platingdmg3"
+	},
+/area/ruin/unpowered)
 "wi" = (
 /obj/effect/turf_decal/caution/stand_clear{
 	dir = 8
@@ -976,13 +997,6 @@
 /obj/item/rack_parts,
 /turf/template_noop,
 /area/template_noop)
-"Gd" = (
-/obj/structure/girder/displaced,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plating{
-	icon_state = "platingdmg2"
-	},
-/area/ruin/unpowered)
 "Hl" = (
 /obj/effect/decal/cleanable/blood/old,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -1072,13 +1086,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating/airless,
 /area/ruin/unpowered)
-"KF" = (
-/obj/structure/grille,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plating{
-	icon_state = "platingdmg3"
-	},
-/area/ruin/unpowered)
 "KJ" = (
 /obj/structure/cable{
 	icon_state = "2-4"
@@ -1096,6 +1103,12 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/pod/light,
+/area/ruin/unpowered)
+"Lc" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating{
+	icon_state = "platingdmg1"
+	},
 /area/ruin/unpowered)
 "Lo" = (
 /obj/structure/door_assembly/door_assembly_hatch,
@@ -1123,13 +1136,6 @@
 "Mf" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
-/area/ruin/unpowered)
-"Mu" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plating{
-	icon_state = "platingdmg3"
-	},
 /area/ruin/unpowered)
 "My" = (
 /obj/structure/lattice,
@@ -1200,13 +1206,6 @@
 	},
 /turf/template_noop,
 /area/template_noop)
-"OU" = (
-/obj/structure/girder/displaced,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plating{
-	icon_state = "platingdmg3"
-	},
-/area/ruin/unpowered)
 "OW" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 4
@@ -1260,13 +1259,6 @@
 	},
 /turf/template_noop,
 /area/template_noop)
-"QJ" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plating{
-	broken = 1;
-	icon_state = "platingdmg1"
-	},
-/area/ruin/unpowered)
 "QV" = (
 /turf/open/floor/plating{
 	icon_state = "platingdmg2"
@@ -1320,6 +1312,13 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/pod/dark,
 /area/ruin/unpowered)
+"RX" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating{
+	broken = 1;
+	icon_state = "platingdmg1"
+	},
+/area/ruin/unpowered)
 "Sm" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -1355,12 +1354,6 @@
 	},
 /turf/template_noop,
 /area/template_noop)
-"Tr" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plating{
-	icon_state = "platingdmg1"
-	},
-/area/ruin/unpowered)
 "Ty" = (
 /obj/effect/turf_decal/lumos/tile/neutral/fulltile,
 /obj/structure/cable{
@@ -1369,6 +1362,13 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/stairs,
+/area/ruin/unpowered)
+"TC" = (
+/obj/structure/girder/displaced,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating{
+	icon_state = "platingdmg2"
+	},
 /area/ruin/unpowered)
 "TM" = (
 /obj/effect/turf_decal/stripes/line{
@@ -1725,7 +1725,7 @@ ZO
 ZO
 ZO
 ZO
-QJ
+RX
 hO
 ZO
 ZO
@@ -1886,8 +1886,8 @@ jE
 Uy
 Uy
 zH
-QJ
-rz
+RX
+jy
 uk
 hO
 ZO
@@ -1991,8 +1991,8 @@ ZO
 PU
 ZO
 Vm
-QJ
-QJ
+RX
+RX
 hO
 ZO
 ZO
@@ -2044,7 +2044,7 @@ ZO
 Uy
 Uy
 Uy
-rz
+jy
 DS
 ZO
 ZO
@@ -2803,7 +2803,7 @@ Uy
 ZO
 ZO
 Ra
-QJ
+RX
 mK
 ZO
 ZO
@@ -2856,7 +2856,7 @@ ZO
 ZO
 Uy
 iB
-Tr
+Lc
 Ra
 ZO
 Ry
@@ -2868,7 +2868,7 @@ mK
 ZO
 ZO
 My
-Gd
+TC
 Ra
 Ra
 Ry
@@ -2915,7 +2915,7 @@ Ry
 OW
 Ry
 pM
-QJ
+RX
 JX
 ZO
 MZ
@@ -2955,7 +2955,7 @@ ZO
 ZO
 mK
 AD
-OU
+aW
 zY
 Ra
 Ry
@@ -3005,7 +3005,7 @@ ZO
 ZO
 ZO
 ZO
-QJ
+RX
 uJ
 AI
 sU
@@ -3109,7 +3109,7 @@ ZO
 ZO
 ZO
 Uy
-KF
+nz
 XE
 gq
 ls
@@ -3171,7 +3171,7 @@ wi
 Qh
 Qh
 Qh
-sH
+nI
 VP
 rO
 ED
@@ -3180,7 +3180,7 @@ ZO
 ZO
 ZO
 Vv
-Tr
+Lc
 bN
 yw
 zt
@@ -3218,12 +3218,12 @@ Uy
 ZO
 ZO
 ZO
-rz
+jy
 aO
 Ry
 mK
 ZO
-QJ
+RX
 Ew
 El
 pJ
@@ -3234,7 +3234,7 @@ Uy
 mK
 Mf
 Ra
-Tr
+Lc
 Ry
 ef
 Ry
@@ -3270,7 +3270,7 @@ Uy
 ZO
 ZO
 ZO
-Tr
+Lc
 AD
 Ra
 ZO
@@ -3367,9 +3367,9 @@ ZO
 ZO
 DS
 DS
-rz
+jy
 tZ
-rz
+jy
 DS
 DS
 ZO
@@ -3420,10 +3420,10 @@ hO
 DS
 AX
 xy
-rz
+jy
 Uy
 mK
-rz
+jy
 wN
 jE
 ZO
@@ -3445,7 +3445,7 @@ Ra
 Ry
 io
 oP
-rz
+jy
 mK
 wb
 ZO
@@ -3470,13 +3470,13 @@ ZO
 ZO
 hO
 AX
-QJ
+RX
 pJ
 ZO
 Uy
 ZO
 WV
-QJ
+RX
 ZO
 cr
 ZO
@@ -3498,7 +3498,7 @@ Ra
 mK
 Ra
 xM
-QJ
+RX
 ZO
 ZO
 ZO
@@ -3574,7 +3574,7 @@ ZO
 ZO
 DS
 rr
-rz
+jy
 Vm
 ZO
 ZO
@@ -3627,7 +3627,7 @@ ZO
 DS
 hO
 Uy
-QJ
+RX
 ZO
 ZO
 Uy
@@ -3678,9 +3678,9 @@ ZO
 ZO
 ZO
 WV
-QJ
+RX
 mK
-rz
+jy
 od
 ZO
 ZO
@@ -3892,7 +3892,7 @@ ZO
 ZO
 ZO
 ZO
-Mu
+wd
 ZO
 ZO
 ZO
