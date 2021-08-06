@@ -788,17 +788,17 @@
 /area/ship/crew)
 "zi" = (
 /obj/structure/table/reinforced,
-/obj/item/storage/backpack/duffelbag/syndie/surgery,
 /obj/machinery/vending/wallmed{
 	pixel_y = 30
 	},
+/obj/item/storage/backpack/duffelbag/med/surgery,
 /obj/item/clothing/gloves/color/latex,
 /obj/item/clothing/mask/surgical,
 /obj/item/clothing/suit/apron/surgical,
-/obj/item/healthanalyzer,
 /obj/structure/sign/departments/medbay/alt{
 	pixel_x = -32
 	},
+/obj/item/healthanalyzer,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/light/small{
 	dir = 8
