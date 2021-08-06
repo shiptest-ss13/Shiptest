@@ -116,16 +116,8 @@
 	},
 /obj/structure/closet/syndicate,
 /obj/item/ammo_box/magazine/ebr{
-	pixel_y = 4
-	},
-/obj/item/ammo_box/magazine/ebr{
-	pixel_x = 3
-	},
-/obj/item/ammo_box/magazine/ebr,
-/obj/item/ammo_box/magazine/ebr{
 	pixel_x = -3
 	},
-/obj/item/ammo_box/magazine/ebr,
 /obj/item/ammo_box/magazine/ebr,
 /turf/open/floor/mineral/plastitanium/red,
 /area/ship/security)
@@ -548,15 +540,6 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
-"lu" = (
-/obj/structure/chair/comfy/shuttle,
-/obj/machinery/button/door{
-	id = "voulgier_rr";
-	name = "Ready Room Shutters";
-	pixel_y = 28
-	},
-/turf/open/floor/mineral/plastitanium,
-/area/ship/security)
 "lx" = (
 /obj/effect/turf_decal/lumos/tile/blue/fulltile,
 /obj/structure/chair/greyscale{
@@ -661,9 +644,13 @@
 /area/ship/security/range)
 "op" = (
 /obj/structure/rack,
-/obj/item/gun/ballistic/automatic/pistol/tec9,
+/obj/item/gun/ballistic/shotgun/bulldog,
 /turf/open/floor/mineral/plastitanium/red,
 /area/ship/security)
+"oB" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/turf/open/floor/carpet/red,
+/area/ship/crew/dorm)
 "oL" = (
 /obj/effect/turf_decal/bot,
 /obj/structure/closet/crate,
@@ -817,8 +804,8 @@
 	dir = 8
 	},
 /obj/structure/closet/syndicate,
-/obj/item/ammo_box/magazine/tec9,
-/obj/item/ammo_box/magazine/tec9,
+/obj/item/ammo_box/magazine/m12g,
+/obj/item/ammo_box/magazine/m12g,
 /turf/open/floor/mineral/plastitanium/red,
 /area/ship/security)
 "ru" = (
@@ -1524,6 +1511,15 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
+"It" = (
+/obj/structure/chair/comfy/shuttle,
+/obj/machinery/button/door{
+	id = "voulgier_rr";
+	name = "Ready Room Shutters";
+	pixel_y = 28
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/ship/security)
 "Iv" = (
 /obj/effect/turf_decal/lumos/tile/blue/fulltile,
 /obj/structure/bed/roller,
@@ -1652,10 +1648,6 @@
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/crew/canteen)
-"JX" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/turf/open/floor/carpet/red,
-/area/ship/crew/dorm)
 "Kc" = (
 /obj/machinery/holopad,
 /obj/structure/cable{
@@ -2994,7 +2986,7 @@ dx
 Fv
 Fv
 OH
-JX
+oB
 uH
 UM
 RE
@@ -3166,7 +3158,7 @@ FM
 (30,1,1) = {"
 FM
 FW
-lu
+It
 Vr
 iM
 Vr
@@ -3355,7 +3347,7 @@ FM
 (37,1,1) = {"
 FM
 FW
-lu
+It
 Vr
 jy
 Vr
