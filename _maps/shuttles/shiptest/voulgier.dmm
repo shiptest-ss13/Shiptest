@@ -506,6 +506,15 @@
 	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/ship/security/range)
+"kv" = (
+/obj/structure/chair/comfy/shuttle,
+/obj/machinery/button/door{
+	id = "voulgier_rr";
+	name = "Ready Room Shutters";
+	pixel_y = 28
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/ship/security)
 "kK" = (
 /obj/effect/turf_decal/number{
 	dir = 8
@@ -1071,7 +1080,7 @@
 "yV" = (
 /obj/structure/fans/tiny,
 /obj/machinery/door/poddoor{
-	id = "voulgier_rr"
+	id = "voulgier_guns"
 	},
 /turf/open/floor/plating,
 /area/ship/security/range)
@@ -2317,6 +2326,11 @@
 /area/ship/crew/canteen)
 "ZJ" = (
 /obj/structure/table/wood,
+/obj/machinery/button/door{
+	id = "voulgier_rr";
+	name = "Ready Room Shutters";
+	pixel_y = 28
+	},
 /turf/open/floor/wood,
 /area/ship/bridge)
 "ZO" = (
@@ -3123,7 +3137,7 @@ FM
 (30,1,1) = {"
 FM
 FW
-sj
+kv
 Vr
 iM
 Vr
@@ -3312,7 +3326,7 @@ FM
 (37,1,1) = {"
 FM
 FW
-sj
+kv
 Vr
 jy
 Vr
