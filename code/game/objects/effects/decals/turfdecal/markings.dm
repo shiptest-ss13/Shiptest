@@ -314,3 +314,38 @@
 
 /obj/effect/turf_decal/siding/wideplating/dark/end
 	icon_state = "siding_wideplating_end"
+
+///SYNDICATE EMBLEM///
+
+//Bottom
+
+/obj/effect/turf_decal/syndicateemblem/bottom/left
+	icon_state = "s1,1"
+
+/obj/effect/turf_decal/syndicateemblem/bottom/middle
+	icon_state = "s1,2"
+
+/obj/effect/turf_decal/syndicateemblem/bottom/right
+	icon_state = "s1,3"
+
+//Middle
+
+/obj/effect/turf_decal/syndicateemblem/middle/left
+	icon_state = "s2,1"
+
+/obj/effect/turf_decal/syndicateemblem/middle/middle
+	icon_state = "s2,2"
+
+/obj/effect/turf_decal/syndicateemblem/middle/right
+	icon_state = "s2,3"
+
+//Top
+
+/obj/effect/turf_decal/syndicateemblem/top/left
+	icon_state = "s3,1"
+
+/obj/effect/turf_decal/syndicateemblem/top/middle
+	icon_state = "s3,2"
+
+/obj/effect/turf_decal/syndicateemblem/top/right
+	icon_state = "s3,3"
