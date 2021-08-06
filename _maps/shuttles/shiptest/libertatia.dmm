@@ -507,11 +507,11 @@
 	name = "armory locker";
 	pixel_x = 32
 	},
-/obj/item/gun/ballistic/shotgun{
-	pixel_y = 5
-	},
 /obj/item/gun/ballistic/shotgun/doublebarrel{
 	pixel_y = -5
+	},
+/obj/item/gun/ballistic/shotgun/lethal{
+	pixel_y = 5
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/security)
@@ -1190,6 +1190,9 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/extinguisher_cabinet{
 	pixel_x = 32
+	},
+/obj/machinery/airalarm/all_access{
+	pixel_y = 24
 	},
 /turf/open/floor/pod/light,
 /area/ship/cargo)
