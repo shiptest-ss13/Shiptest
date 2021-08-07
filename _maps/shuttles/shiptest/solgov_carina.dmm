@@ -2252,8 +2252,7 @@
 	dir = 4
 	},
 /obj/machinery/door/airlock/solgov/glass{
-	name = "Bridge";
-	req_one_access_txt = "19"
+	name = "Bridge"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
@@ -2472,20 +2471,20 @@
 /obj/item/radio/headset/headset_sec/alt,
 /obj/item/radio/headset/headset_sec/alt,
 /obj/item/radio/headset/headset_sec/alt,
-/obj/item/kitchen/knife/combat{
-	pixel_y = 10
+/obj/item/storage/belt/security/webbing,
+/obj/item/storage/belt/security/webbing,
+/obj/item/storage/belt/security/webbing,
+/obj/item/storage/backpack/security,
+/obj/item/storage/backpack/security,
+/obj/item/storage/backpack/security,
+/obj/item/storage/backpack/security,
+/obj/item/kitchen/knife/letter_opener{
+	pixel_y = -5
 	},
-/obj/item/kitchen/knife/combat{
+/obj/item/kitchen/knife/letter_opener,
+/obj/item/kitchen/knife/letter_opener{
 	pixel_y = 5
 	},
-/obj/item/kitchen/knife/combat,
-/obj/item/storage/belt/security/webbing,
-/obj/item/storage/belt/security/webbing,
-/obj/item/storage/belt/security/webbing,
-/obj/item/storage/backpack/security,
-/obj/item/storage/backpack/security,
-/obj/item/storage/backpack/security,
-/obj/item/storage/backpack/security,
 /turf/open/floor/plasteel/dark,
 /area/ship/security/prison)
 "Oa" = (
@@ -3333,9 +3332,7 @@
 /turf/open/floor/carpet/nanoweave,
 /area/ship/crew)
 "ZC" = (
-/obj/machinery/door/airlock/maintenance{
-	req_one_access_txt = "10"
-	},
+/obj/machinery/door/airlock/maintenance,
 /obj/machinery/atmospherics/pipe/simple/green/hidden/layer4{
 	dir = 8
 	},
