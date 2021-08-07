@@ -1,0 +1,8 @@
+author: MarkSuckerberg
+delete-after: true
+changes:
+  - code_imp: Speeds up a lot of more intensive parts of the code
+  - bugfix: Specifically notable is the lag that used to occur when any ship was attempting
+      to land. This was fixed by making the reservation turf filling have an additional
+      CHECK_TICK.
+  - bugfix: Large asteroids are no longer weirdly coloured sometimes
