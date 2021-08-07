@@ -224,17 +224,3 @@
 	SIGNAL_HANDLER
 
 	SEND_SIGNAL(quirk_holder, COMSIG_ADD_MOOD_EVENT, "bad_hair_day", /datum/mood_event/bald)
-
-/datum/quirk/colorist
-	name = "Colorist"
-	desc = "You like carrying around a hair dye spray to quickly apply color patterns to your hair."
-	value = 0
-	medical_record_text = "Patient enjoys dyeing their hair with pretty colors."
-
-/datum/quirk/colorist/on_spawn()
-	var/mob/living/carbon/human/H = quirk_holder
-	var/obj/item/dyespray/spraycan = new(get_turf(H))
-	H.put_in_hands(spraycan)
-	H.equip_to_slot(spraycan, ITEM_SLOT_BACKPACK)
-	H.regenerate_icons()
-	
