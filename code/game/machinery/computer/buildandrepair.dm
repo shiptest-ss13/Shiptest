@@ -1,6 +1,7 @@
 /obj/structure/frame/computer
 	name = "computer frame"
-	icon_state = "0"
+	icon = 'whitesands/icons/obj/consoles_construction.dmi'
+	icon_state = "console_frame"
 	state = 0
 
 /obj/structure/frame/computer/attackby(obj/item/P, mob/user, params)
@@ -56,7 +57,7 @@
 				P.play_tool_sound(src)
 				to_chat(user, "<span class='notice'>You remove [circuit].</span>")
 				state = 1
-				icon_state = "0"
+				icon_state = "console_frame"
 				circuit.forceMove(drop_location())
 				circuit.add_fingerprint(user)
 				circuit = null

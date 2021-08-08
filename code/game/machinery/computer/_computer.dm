@@ -1,6 +1,6 @@
 /obj/machinery/computer
 	name = "computer"
-	icon = 'icons/obj/computer.dmi'
+	icon = 'whitesands/icons/obj/consoles.dmi'
 	icon_state = "computer"
 	density = TRUE
 	use_power = IDLE_POWER_USE
@@ -14,6 +14,9 @@
 	var/icon_screen = "generic"
 	var/time_to_screwdrive = 20
 	var/authenticated = 0
+
+	var/clickvol = 40		// sound volume played on succesful click
+	var/next_clicksound = 0	// value to compare with world.time for whether to play clicksound according to CLICKSOUND_INTERVAL
 
 /obj/machinery/computer/Initialize(mapload, obj/item/circuitboard/C)
 	. = ..()
@@ -124,3 +127,16 @@
 	. = ..()
 	if(!user.canUseTopic(src, !issilicon(user)) || !is_operational())
 		return
+
+/obj/machinery/computer/proc/play_click_sound(var/clicksound)
+	if(clicksound && world.time > next_clicksound)
+		next_clicksound = world.time + CLICKSOUND_INTERVAL
+		playsound(src, clicksound, clickvol)
+	return 1
+
+obj/machinery/computer/proc/on_interact_click(mob/user, datum/tgui/ui)
+	if(!ui)
+		var/is_living = isliving(user)
+		if(is_living)
+			play_click_sound("keyboard")
+	return 1
