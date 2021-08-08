@@ -5,8 +5,10 @@
 #define SHIP_DOCKED_REPAIR_TIME	2 SECONDS
 
 /**
-  * ### Simulated overmap ship
+  * # Simulated overmap ship
+  *
   * A ship that corresponds to an actual, physical shuttle.
+  *
   * Can be docked to any other overmap object with a corresponding docking port and/or zlevel.
   * SUPPOSED to be linked to the corresponding shuttle's mobile docking port, but you never know do you
   */
@@ -26,9 +28,6 @@
 	///Cooldown until the ship can be renamed again
 	COOLDOWN_DECLARE(rename_cooldown)
 
-	///Assoc list of remaining open job slots (job = remaining slots)
-	var/list/job_slots = list("Assistant" = 5, "Captain" = 1)
-
 	///The overmap object the ship is docked to, if any
 	var/obj/structure/overmap/docked
 	///The docking port of the linked shuttle
@@ -36,6 +35,7 @@
 
 /obj/structure/overmap/ship/simulated/Initialize(mapload, obj/docking_port/mobile/_shuttle)
 	. = ..()
+	SSovermap.simulated_ships += src
 	if(_shuttle)
 		shuttle = _shuttle
 	if(!shuttle)
@@ -81,9 +81,10 @@
   */
 /obj/structure/overmap/ship/simulated/proc/overmap_object_act(mob/user, obj/structure/overmap/object)
 	if(!is_still() || state != OVERMAP_SHIP_FLYING)
-		return "Shuttle must be still!"
+		to_chat(user, "<span class='warning'>Ship must be still to interact!</span>")
+		return
 
-	return object?.ship_act(user, src)
+	INVOKE_ASYNC(object, /obj/structure/overmap/.proc/ship_act, user, src)
 
 /**
   * Docks the shuttle by requesting a port at the requested spot.
