@@ -21,8 +21,8 @@
 /obj/structure/stone_tile/cracked{
 	dir = 8
 	},
-/turf/closed/mineral/volcanic/lava_land_surface,
-/area/lavaland/surface/outdoors)
+/turf/closed/indestructible/riveted/boss,
+/area/ruin/unpowered/ash_walkers)
 "ae" = (
 /obj/structure/stone_tile/block/cracked{
 	dir = 1
@@ -36,8 +36,8 @@
 /obj/structure/stone_tile{
 	dir = 8
 	},
-/turf/closed/mineral/volcanic/lava_land_surface,
-/area/lavaland/surface/outdoors)
+/turf/closed/indestructible/riveted/boss,
+/area/ruin/unpowered/ash_walkers)
 "ag" = (
 /obj/structure/stone_tile/surrounding_tile/cracked{
 	dir = 1
@@ -165,7 +165,7 @@
 /obj/structure/stone_tile/cracked{
 	dir = 8
 	},
-/obj/item/malf_upgrade,
+/obj/item/storage/firstaid/regular,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
 /area/ruin/unpowered/ash_walkers)
 "aB" = (
@@ -177,7 +177,6 @@
 /area/ruin/unpowered/ash_walkers)
 "aC" = (
 /obj/structure/stone_tile/block/cracked,
-/obj/item/storage/toolbox/syndicate,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
 /area/ruin/unpowered/ash_walkers)
 "aE" = (
@@ -189,7 +188,7 @@
 /obj/item/reagent_containers/blood/random,
 /obj/item/reagent_containers/blood/lizard,
 /obj/item/reagent_containers/blood/lizard,
-/obj/item/stack/sheet/cloth/ten,
+/obj/item/stack/sheet/cotton/cloth/ten,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
 /area/ruin/unpowered/ash_walkers)
 "aF" = (
@@ -257,7 +256,6 @@
 /obj/structure/stone_tile{
 	dir = 1
 	},
-/obj/item/weldingtool/experimental,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
 /area/ruin/unpowered/ash_walkers)
 "aO" = (
@@ -440,6 +438,9 @@
 	dir = 4
 	},
 /obj/item/storage/bag/plants/portaseeder,
+/obj/item/seeds/cotton,
+/obj/item/seeds/cotton/durathread,
+/obj/structure/closet/crate/hydroponics,
 /turf/open/indestructible/boss,
 /area/ruin/unpowered/ash_walkers)
 "bk" = (
@@ -473,7 +474,6 @@
 /obj/structure/stone_tile/cracked{
 	dir = 4
 	},
-/obj/item/construction/rcd/loaded,
 /turf/open/indestructible/boss,
 /area/ruin/unpowered/ash_walkers)
 "bn" = (
@@ -573,6 +573,7 @@
 /obj/item/stack/sheet/mineral/wood,
 /obj/item/stack/sheet/mineral/wood,
 /obj/item/stack/sheet/mineral/wood,
+/obj/item/seeds/tower,
 /obj/item/seeds/tower,
 /turf/open/indestructible/boss,
 /area/ruin/unpowered/ash_walkers)
@@ -695,11 +696,11 @@
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "bP" = (
-/obj/structure/stone_tile/block,
-/obj/item/spear,
-/obj/effect/mapping_helpers/no_lava,
-/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/lavaland/surface/outdoors)
+/obj/structure/stone_tile/block/cracked{
+	dir = 1
+	},
+/turf/closed/indestructible/riveted/boss,
+/area/ruin/unpowered/ash_walkers)
 "bQ" = (
 /obj/structure/stone_tile/block,
 /obj/structure/stone_tile{
@@ -986,7 +987,7 @@
 /obj/structure/stone_tile/cracked{
 	dir = 1
 	},
-/obj/item/spear,
+/obj/item/spear/bonespear,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
 /area/ruin/unpowered/ash_walkers)
 "cA" = (
@@ -1029,8 +1030,8 @@
 	dir = 1
 	},
 /obj/structure/table/wood,
-/obj/item/spear,
-/obj/item/storage/belt,
+/obj/item/storage/belt/utility,
+/obj/item/spear/bonespear,
 /turf/open/indestructible/boss,
 /area/ruin/unpowered/ash_walkers)
 "cI" = (
@@ -1072,8 +1073,8 @@
 	dir = 4
 	},
 /obj/structure/table/wood,
-/obj/item/spear,
 /obj/item/scythe,
+/obj/item/spear/bonespear,
 /turf/open/indestructible/boss,
 /area/ruin/unpowered/ash_walkers)
 "cM" = (
@@ -1085,7 +1086,7 @@
 	dir = 8
 	},
 /obj/structure/table/wood,
-/obj/item/spear,
+/obj/item/spear/bonespear,
 /turf/open/indestructible/boss,
 /area/ruin/unpowered/ash_walkers)
 "cN" = (
@@ -1100,8 +1101,8 @@
 	dir = 4
 	},
 /obj/structure/table/wood,
-/obj/item/spear,
 /obj/item/clothing/head/helmet/roman/legionnaire,
+/obj/item/spear/bonespear,
 /turf/open/indestructible/boss,
 /area/ruin/unpowered/ash_walkers)
 "cO" = (
@@ -1392,6 +1393,63 @@
 	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
+"fW" = (
+/obj/effect/mapping_helpers/no_lava,
+/obj/structure/stone_tile/slab,
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/area/lavaland/surface/outdoors)
+"iy" = (
+/obj/structure/stone_tile/slab,
+/obj/structure/table/wood/reinforced,
+/obj/item/construction/rcd/loaded,
+/turf/open/indestructible/boss,
+/area/ruin/unpowered/ash_walkers)
+"lb" = (
+/obj/structure/stone_tile/block/cracked{
+	dir = 8
+	},
+/obj/machinery/grill{
+	name = "old rusty grill"
+	},
+/obj/item/stack/sheet/mineral/coal/ten,
+/obj/item/stack/sheet/mineral/coal/five,
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
+"mG" = (
+/obj/structure/stone_tile/slab,
+/obj/structure/table/wood/reinforced,
+/obj/item/storage/toolbox/syndicate,
+/turf/open/indestructible/boss,
+/area/ruin/unpowered/ash_walkers)
+"Iy" = (
+/obj/structure/stone_tile/slab,
+/turf/open/indestructible/boss,
+/area/ruin/unpowered/ash_walkers)
+"Tc" = (
+/obj/structure/stone_tile/slab,
+/obj/structure/table/wood/reinforced,
+/obj/item/weldingtool/experimental,
+/turf/open/indestructible/boss,
+/area/ruin/unpowered/ash_walkers)
+"UC" = (
+/obj/structure/stone_tile/slab,
+/obj/structure/table/wood/reinforced,
+/obj/item/malf_upgrade,
+/turf/open/indestructible/boss,
+/area/ruin/unpowered/ash_walkers)
+"WI" = (
+/obj/structure/stone_tile/block{
+	dir = 1
+	},
+/turf/closed/indestructible/riveted/boss,
+/area/ruin/unpowered/ash_walkers)
+"Ya" = (
+/obj/structure/stone_tile/slab,
+/obj/structure/table/wood/reinforced,
+/obj/item/spear/bonespear,
+/obj/item/spear/bonespear,
+/turf/open/indestructible/boss,
+/area/ruin/unpowered/ash_walkers)
 
 (1,1,1) = {"
 aa
@@ -1425,7 +1483,7 @@ ah
 ah
 bi
 ah
-bi
+lb
 cO
 ah
 ah
@@ -1622,7 +1680,7 @@ ak
 ak
 ak
 ak
-ak
+fW
 bF
 bE
 cb
@@ -1638,15 +1696,15 @@ aa
 (12,1,1) = {"
 ac
 ak
+Iy
+Iy
+Iy
+Iy
+Iy
 ak
 ak
-ak
-ak
-ak
-ak
-ak
-ak
-bP
+fW
+ds
 bL
 bX
 co
@@ -1659,8 +1717,8 @@ aa
 "}
 (13,1,1) = {"
 ad
-ak
-ak
+iy
+Iy
 au
 aG
 aS
@@ -1680,9 +1738,9 @@ ah
 ah
 "}
 (14,1,1) = {"
-ae
-ak
-ak
+bP
+mG
+Iy
 av
 aH
 aT
@@ -1702,9 +1760,9 @@ bi
 cO
 "}
 (15,1,1) = {"
-ac
-ak
-ak
+WI
+Ya
+Iy
 aw
 aI
 aU
@@ -1724,9 +1782,9 @@ ak
 ah
 "}
 (16,1,1) = {"
-ac
-ak
-ak
+WI
+Tc
+Iy
 ax
 aJ
 aV
@@ -1747,8 +1805,8 @@ ah
 "}
 (17,1,1) = {"
 af
-ak
-ak
+UC
+Iy
 ay
 aK
 aW
@@ -1770,14 +1828,14 @@ ah
 (18,1,1) = {"
 ac
 ak
+Iy
+Iy
+Iy
+Iy
+Iy
 ak
 ak
-ak
-ak
-ak
-ak
-ak
-ak
+bS
 bV
 bX
 bN
@@ -1798,7 +1856,7 @@ ak
 ak
 ak
 ak
-ak
+ah
 bI
 bW
 cf
