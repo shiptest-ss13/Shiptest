@@ -181,9 +181,9 @@
 /turf/open/floor/engine,
 /area/ship/engineering/engine)
 "eZ" = (
-/obj/item/wrench,
 /obj/structure/table/reinforced,
 /obj/machinery/atmospherics/pipe/layer_manifold/visible,
+/obj/item/wrench/combat,
 /turf/open/floor/engine,
 /area/ship/engineering/engine)
 "fb" = (
@@ -582,7 +582,7 @@
 /area/ship/engineering/engine)
 "rN" = (
 /obj/structure/sign/poster/official/wtf_is_co2,
-/turf/closed/indestructible/reinforced,
+/turf/closed/wall/r_wall/syndicate/nodiagonal,
 /area/ship/engineering/engine)
 "se" = (
 /obj/machinery/atmospherics/components/unary/portables_connector{
@@ -676,13 +676,13 @@
 /area/ship/bridge)
 "up" = (
 /obj/machinery/status_display/shuttle,
-/turf/closed/indestructible/reinforced,
+/turf/closed/wall/r_wall/syndicate/nodiagonal,
 /area/ship/engineering/engine)
 "uP" = (
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/turf/closed/wall/r_wall,
+/turf/closed/wall/r_wall/syndicate/nodiagonal,
 /area/ship/engineering/engine)
 "uZ" = (
 /obj/machinery/door/airlock/engineering,
@@ -1464,6 +1464,7 @@
 "MZ" = (
 /obj/structure/table,
 /obj/item/circuitboard/mecha/pod,
+/obj/item/wrench/combat,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/engineering/atmospherics)
 "Ni" = (
@@ -1790,7 +1791,7 @@
 /turf/open/floor/mineral/plastitanium/red,
 /area/ship/bridge)
 "Yk" = (
-/turf/closed/wall/r_wall,
+/turf/closed/wall/r_wall/syndicate/nodiagonal,
 /area/ship/engineering/engine)
 "Yv" = (
 /obj/machinery/light,

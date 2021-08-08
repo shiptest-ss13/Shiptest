@@ -9,7 +9,7 @@
 /obj/machinery/atmospherics/components/unary/outlet_injector/on{
 	dir = 4
 	},
-/turf/open/floor/plating/airless,
+/turf/open/floor/carpet/nanoweave/red,
 /area/ship/storage)
 "b" = (
 /obj/structure/cable{
@@ -34,7 +34,7 @@
 	dir = 1
 	},
 /obj/machinery/power/apc/auto_name/west,
-/turf/open/floor/carpet/nanoweave/beige,
+/turf/open/floor/carpet/nanoweave/red,
 /area/ship/storage)
 "c" = (
 /obj/item/pickaxe/drill,
@@ -84,9 +84,10 @@
 	dir = 8
 	},
 /obj/item/toy/plush/among,
-/turf/open/floor/carpet/nanoweave/beige{
-	initial_gas_mix = "o2=100;TEMP=293.15"
+/obj/machinery/cryopod/latejoin{
+	density = 0
 	},
+/turf/open/floor/carpet/nanoweave/red,
 /area/ship/storage)
 
 (1,1,1) = {"
