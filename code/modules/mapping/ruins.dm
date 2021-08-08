@@ -126,13 +126,6 @@
 									continue outer
 								else
 									break outer
-				// WS Edit Start - Whitesands Camp Ruins
-				var/datum/map_template/ruin/camp/C = current_pick
-				if (istype(C))
-					placed_turf = C.try_to_place(target_z, whitelist, forced_turf)
-				else
-					placed_turf = current_pick.try_to_place(target_z,whitelist,forced_turf)
-				// WS Edit End - Whitesands Camp Ruins
 				if(!placed_turf)
 					continue
 				else

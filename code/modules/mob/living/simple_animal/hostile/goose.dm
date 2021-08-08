@@ -173,8 +173,8 @@
 	if (stat == DEAD)
 		return
 	var/turf/T = get_turf(src)
-	var/obj/item/reagent_containers/food/consumed = locate() in contents //Barf out a single food item from our guts
-	choking = FALSE // assume birdboat is vomiting out whatever he was choking on
+	var/obj/item/consumed = locate() in contents //Barf out a single food item from our guts
+	choking = FALSE
 	if (prob(50) && consumed)
 		barf_food(consumed)
 	else

@@ -7,6 +7,15 @@
 	icon = 'whitesands/icons/obj/clothing/under/syndicate.dmi'
 	mob_overlay_icon = 'whitesands/icons/mob/clothing/under/syndicate.dmi'
 
+/obj/item/clothing/under/syndicate/aclf
+	name = "2nd Battlegroup uniform"
+	desc = "A black uniform worn by the officers of the Gorlex Marauders 2nd Battlegroup."
+	icon_state = "aclf"
+	armor = list("melee" = 10, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 40)
+	alt_covers_chest = TRUE
+	icon = 'whitesands/icons/obj/clothing/under/syndicate.dmi'
+	mob_overlay_icon = 'whitesands/icons/mob/clothing/under/syndicate.dmi'
+
 /datum/outfit/syndicate/intern
 	name = "Syndicate Operative - Intern"
 

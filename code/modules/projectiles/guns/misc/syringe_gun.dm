@@ -116,6 +116,7 @@
 	icon_state = "blowgun"
 	item_state = "blowgun"
 	fire_sound = 'sound/items/syringeproj.ogg'
+	trigger_guard = TRIGGER_GUARD_ALLOW_ALL
 	dry_fire_sound = null //dont got a trigger, no dry fire sound	WS Edit - Dry firing
 	dry_fire_text = "pshoo" //heehee pshoo		WS Edit - Dry firing
 

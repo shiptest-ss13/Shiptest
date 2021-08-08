@@ -100,6 +100,7 @@
 	SSticker.minds -= src
 	if(islist(antag_datums))
 		QDEL_LIST(antag_datums)
+	QDEL_NULL(language_holder)
 	return ..()
 
 /datum/mind/proc/get_language_holder()
