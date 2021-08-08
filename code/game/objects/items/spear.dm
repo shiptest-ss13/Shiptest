@@ -162,6 +162,10 @@
 	icon_state = "bone_spear0"
 	name = "bone spear"
 	desc = "A haphazardly-constructed yet still deadly weapon. The pinnacle of modern technology."
+	icon = 'whitesands/icons/obj/items_and_weapons.dmi'
+	lefthand_file = 'whitesands/icons/mob/inhands/weapons/polearms_lefthand.dmi'
+	righthand_file = 'whitesands/icons/mob/inhands/weapons/polearms_righthand.dmi'
+	mob_overlay_icon = 'whitesands/icons/mob/clothing/back.dmi'
 	force = 12
 	throwforce = 22
 	armour_penetration = 15				//Enhanced armor piercing
