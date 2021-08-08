@@ -100,13 +100,11 @@
 		update_icon()
 
 /obj/item/gun/energy/attackby(obj/item/A, mob/user, params)
-	. = ..()
-	if (.)
-		return
 	if (!internal_cell && istype(A, /obj/item/stock_parts/cell/gun))
 		var/obj/item/stock_parts/cell/gun/C = A
 		if (!cell)
 			insert_cell(user, C)
+	. = ..()
 
 /obj/item/gun/energy/proc/insert_cell(mob/user, obj/item/stock_parts/cell/gun/C)
 	if(small_gun && !istype(C, /obj/item/stock_parts/cell/gun/mini))
@@ -129,11 +127,11 @@
 	playsound(src, load_sound, sound_volume, load_sound_vary)
 	cell.forceMove(drop_location())
 	var/obj/item/stock_parts/cell/gun/old_cell = cell
-	if (insert_cell(user, tac_load))
+	/*if(insert_cell(user, tac_load))
 		to_chat(user, "<span class='notice'>You perform a tactical reload on \the [src].</span>")
 	else
-		to_chat(user, "<span class='warning'>You dropped the old cell, but the new one doesn't fit. How embarassing.</span>")
-		cell = null
+		to_chat(user, "<span class='warning'>You dropped the old cell, but the new one doesn't fit. How embarassing.</span>")*/
+	cell = null
 	user.put_in_hands(old_cell)
 	old_cell.update_icon()
 	to_chat(user, "<span class='notice'>You pull the cell out of \the [src].</span>")
