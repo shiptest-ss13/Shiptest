@@ -6,6 +6,13 @@
 	var/list/job_slots = list("Assistant" = 5, "Captain" = 1)
 	///Manifest list of people on the ship
 	var/list/manifest = list()
+	///Shipwide bank account
+	var/datum/bank_account/ship/ship_account
+
+/obj/structure/overmap/ship/simulated/Initialize(mapload, obj/docking_port/mobile/_shuttle)
+	. = ..()
+	job_slots = shuttle.source_template.job_slots
+	ship_account = new(name, 7500)
 
 /**
   * Bastardized version of GLOB.manifest.manifest_inject, but used per ship

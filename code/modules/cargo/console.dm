@@ -151,6 +151,8 @@
 				SSshuttle.moveShuttle(SSshuttle.supply, SSshuttle.supply_home_port, TRUE)
 			. = TRUE
 		if("add")
+			if(istype(src, /obj/machinery/computer/cargo/express))
+				return
 			var/id = text2path(params["id"])
 			var/datum/supply_pack/pack = SSshuttle.supply_packs[id]
 			if(!istype(pack))
