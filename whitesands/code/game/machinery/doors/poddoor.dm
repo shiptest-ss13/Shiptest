@@ -58,18 +58,3 @@
 	icon = 'whitesands/icons/obj/doors/1x2blast_hor.dmi'
 	bound_width = 64
 	dir = EAST
-
-//bay podoors
-/obj/machinery/door/poddoor/shutters
-	icon = 'goon/icons/obj/airlocks/shutters.dmi'
-	open_sound = 'sound/machines/shutters_open.ogg'
-	close_sound = 'sound/machines/shutters_close.ogg'
-
-/obj/machinery/door/poddoor
-	name = "Double blast door"
-	icon = 'goon/icons/obj/airlocks/blastdoor.dmi'
-
-/obj/machinery/door/poddoor/preopen
-	icon_state = "open"
-	density = FALSE
-	opacity = 0

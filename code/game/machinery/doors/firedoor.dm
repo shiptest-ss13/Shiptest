@@ -28,8 +28,8 @@
 	var/nextstate = null
 	var/boltslocked = TRUE
 	var/list/affecting_areas
-	var/door_open_sound = 'whitesands/sound/effects/airlocks/firedoor_open.ogg'
-	var/door_close_sound = 'whitesands/sound/effects/airlocks/firedoor_open.ogg'
+	var/door_open_sound = 'sound/effects/airlocks/firedoor_open.ogg'
+	var/door_close_sound = 'sound/effects/airlocks/firedoor_open.ogg'
 
 /obj/machinery/door/firedoor/Initialize()
 	. = ..()
