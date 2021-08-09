@@ -118,6 +118,10 @@
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
+/obj/machinery/firealarm{
+	dir = 8;
+	pixel_x = -26
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/medical)
 "aw" = (
@@ -1096,6 +1100,9 @@
 	dir = 8
 	},
 /obj/machinery/vending/wardrobe/medi_wardrobe,
+/obj/machinery/firealarm{
+	pixel_y = 24
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
 "cM" = (
@@ -1118,6 +1125,9 @@
 /obj/machinery/power/apc/auto_name/south,
 /obj/structure/cable{
 	icon_state = "0-4"
+	},
+/obj/machinery/firealarm{
+	pixel_y = 24
 	},
 /turf/open/floor/plasteel/freezer,
 /area/ship/crew)
@@ -1338,9 +1348,6 @@
 /obj/structure/bed,
 /obj/item/bedsheet/dorms,
 /obj/structure/curtain/bounty,
-/obj/structure/window/reinforced/tinted{
-	dir = 1
-	},
 /obj/structure/sign/poster/random{
 	pixel_x = 32
 	},
@@ -1551,6 +1558,10 @@
 	dir = 8
 	},
 /obj/machinery/iv_drip,
+/obj/machinery/firealarm{
+	dir = 1;
+	pixel_y = -24
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/medical)
 "nQ" = (
@@ -1588,9 +1599,6 @@
 /obj/structure/bed,
 /obj/item/bedsheet/dorms,
 /obj/structure/curtain/bounty,
-/obj/structure/window/reinforced/tinted{
-	dir = 1
-	},
 /obj/effect/turf_decal/siding/wood/corner{
 	dir = 8
 	},
@@ -1817,6 +1825,16 @@
 /obj/effect/turf_decal/tile/blue,
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
+"Jf" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 1
+	},
+/obj/machinery/firealarm{
+	dir = 8;
+	pixel_x = -26
+	},
+/turf/open/floor/plasteel/white,
+/area/ship/cargo)
 "Jq" = (
 /obj/effect/turf_decal/tile/blue,
 /obj/effect/turf_decal/tile/blue{
@@ -2374,7 +2392,7 @@ ot
 (19,1,1) = {"
 cC
 aj
-aB
+Jf
 OA
 bX
 cQ
