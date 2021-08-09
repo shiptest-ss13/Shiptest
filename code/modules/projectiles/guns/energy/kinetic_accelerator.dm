@@ -8,11 +8,9 @@
 	item_flags = NONE
 	obj_flags = UNIQUE_RENAME
 	weapon_weight = WEAPON_LIGHT
-	can_flashlight = TRUE
 	flight_x_offset = 15
 	flight_y_offset = 9
 	automatic_charge_overlays = FALSE
-	can_bayonet = TRUE
 	knife_x_offset = 20
 	knife_y_offset = 12
 	internal_cell = TRUE //prevents you from giving it an OP cell - WS Edit

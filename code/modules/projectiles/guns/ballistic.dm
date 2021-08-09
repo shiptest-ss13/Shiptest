@@ -452,9 +452,6 @@ GLOBAL_LIST_INIT(gun_saw_types, typecacheof(list(
 	if(sawn_off)
 		to_chat(user, "<span class='warning'>\The [src] is already shortened!</span>")
 		return
-	if(bayonet)
-		to_chat(user, "<span class='warning'>You cannot saw-off \the [src] with \the [bayonet] attached!</span>")
-		return
 	user.changeNext_move(CLICK_CD_MELEE)
 	user.visible_message("<span class='notice'>[user] begins to shorten \the [src].</span>", "<span class='notice'>You begin to shorten \the [src]...</span>")
 

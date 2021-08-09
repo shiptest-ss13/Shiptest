@@ -67,7 +67,6 @@
 	fire_delay = 2
 	burst_size = 2
 	pin = /obj/item/firing_pin/implant/pindicate
-	can_bayonet = TRUE
 	knife_x_offset = 26
 	knife_y_offset = 12
 	mag_display = TRUE
@@ -90,7 +89,6 @@
 	mag_type = /obj/item/ammo_box/magazine/wt550m9
 	can_suppress = FALSE
 	actions_types = list()
-	can_bayonet = TRUE
 	knife_x_offset = 25
 	knife_y_offset = 12
 	mag_display = TRUE

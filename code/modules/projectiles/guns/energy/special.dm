@@ -7,7 +7,6 @@
 	shaded_charge = FALSE
 	ammo_x_offset = 2
 	ammo_y_offset = 2
-	can_flashlight = FALSE
 	w_class = WEIGHT_CLASS_HUGE
 	big_gun = TRUE //yes, you can put the comically large cell in it. No, you aren't getting it roundstart. You slut.
 	flags_1 =  CONDUCT_1
@@ -26,7 +25,6 @@
 	ammo_x_offset = 2
 	ammo_y_offset = 0
 	pin = null
-	can_flashlight = TRUE
 	flight_x_offset = 18
 	flight_y_offset = 11
 
@@ -101,7 +99,6 @@
 	overheat_time = 20
 	holds_charge = TRUE
 	unique_frequency = TRUE
-	can_flashlight = FALSE
 	max_mod_capacity = 0
 
 /obj/item/gun/energy/kinetic_accelerator/crossbow/halloween

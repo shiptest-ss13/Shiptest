@@ -8,7 +8,6 @@
 	can_suppress = FALSE
 	fire_rate = 5
 	actions_types = list()
-	can_bayonet = FALSE
 	mag_display = TRUE
 	w_class = WEIGHT_CLASS_BULKY
 

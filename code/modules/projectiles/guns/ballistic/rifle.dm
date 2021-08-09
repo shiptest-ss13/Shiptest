@@ -63,7 +63,6 @@
 	item_state = "moistnugget"
 	slot_flags = ITEM_SLOT_BACK
 	mag_type = /obj/item/ammo_box/magazine/internal/boltaction
-	can_bayonet = TRUE
 	knife_x_offset = 27
 	knife_y_offset = 13
 	can_be_sawn_off = TRUE
@@ -72,7 +71,6 @@
 	. = ..()
 	if(.)
 		spread = 36
-		can_bayonet = FALSE
 		item_state = "moistnugget_sawn"
 
 /obj/item/gun/ballistic/rifle/boltaction/blow_up(mob/user)
@@ -99,7 +97,6 @@
 	icon_state = "arcane_barrage"
 	item_state = "arcane_barrage"
 	slot_flags = null
-	can_bayonet = FALSE
 	item_flags = NEEDS_PERMIT | DROPDEL | ABSTRACT | NOBLUDGEON
 	flags_1 = NONE
 	trigger_guard = TRIGGER_GUARD_ALLOW_ALL
