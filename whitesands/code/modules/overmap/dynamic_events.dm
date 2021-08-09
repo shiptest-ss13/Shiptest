@@ -52,7 +52,7 @@
   */
 /obj/structure/overmap/dynamic/proc/choose_level_type()
 	if(!probabilities)
-		probabilities = list(DYNAMIC_WORLD_LAVA = length(SSmapping.lava_ruins_templates), DYNAMIC_WORLD_ICE = length(SSmapping.ice_ruins_templates), DYNAMIC_WORLD_JUNGLE = length(SSmapping.jungle_ruins_templates), DYNAMIC_WORLD_SAND = length(SSmapping.sand_ruins_templates), FALSE = length(SSmapping.space_ruins_templates), DYNAMIC_WORLD_ASTEROID = 30)
+		probabilities = list(DYNAMIC_WORLD_LAVA = length(SSmapping.lava_ruins_templates), DYNAMIC_WORLD_ICE = length(SSmapping.ice_ruins_templates), DYNAMIC_WORLD_JUNGLE = length(SSmapping.jungle_ruins_templates), DYNAMIC_WORLD_SAND = length(SSmapping.sand_ruins_templates), DYNAMIC_WORLD_SPACERUIN = length(SSmapping.space_ruins_templates), DYNAMIC_WORLD_ASTEROID = 30)
 	var/chosen = pickweight(probabilities)
 	mass = rand(50, 100) * 1000000 //50 to 100 million tonnes //this was a stupid feature
 	switch(chosen)
@@ -87,7 +87,7 @@
 			icon_state = "asteroid"
 			mass = rand(1, 1000) * 100
 			color = COLOR_GRAY
-		else // Space ruin
+		if(DYNAMIC_WORLD_SPACERUIN)
 			name = "weak energy signal"
 			desc = "A very weak energy signal emenating from space."
 			planet = FALSE
