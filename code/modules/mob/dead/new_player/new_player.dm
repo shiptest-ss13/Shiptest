@@ -367,13 +367,17 @@
 		if(SSdbcore.IsConnected() && usr.client.get_metabalance() < price)
 			alert(src, "You have insufficient metabalance to cover this purchase! (Price: [price])")
 			return
-		usr.client.inc_metabalance(-price, TRUE, "buying [M.name]")
 		close_spawn_windows()
 		to_chat(usr, "<span class='danger'>Your [M.name] is being prepared. Please be patient!</span>")
 		var/obj/docking_port/mobile/target = SSshuttle.action_load(M)
+		if(!istype(target))
+			to_chat(usr, "<span class='danger'>There was an error loading the ship (You have not been charged). Please contact admins!</span>")
+			return
+		usr.client.inc_metabalance(-price, TRUE, "buying [M.name]")
 		if(!AttemptLateSpawn(target.current_ship.job_slots[1], target.current_ship)) //Try to spawn as the first listed job in the job slots (usually captain)
+			to_chat(usr, "<span class='danger'>Ship spawned, but you were unable to be spawned. You can likely try to spawn in the ship through joining normally, but if not, please contact an admin.</span>")
 			new_player_panel()
-		return
+
 
 	var/list/job_choices = list()
 	for(var/job in selected_ship.job_slots)

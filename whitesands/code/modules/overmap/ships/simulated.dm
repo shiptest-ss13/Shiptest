@@ -47,6 +47,10 @@
 	refresh_engines()
 	check_loc()
 
+/obj/structure/overmap/ship/simulated/Destroy()
+	. = ..()
+	SSovermap.simulated_ships -= src
+
 /obj/structure/overmap/ship/simulated/proc/initial_name()
 	if(mass < SHIP_SIZE_THRESHOLD)
 		return //You don't DESERVE a name >:(
