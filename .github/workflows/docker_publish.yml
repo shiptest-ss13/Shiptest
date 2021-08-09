@@ -1,24 +1,24 @@
-#name: Docker Build
+name: Docker Build
 
-#on:
-#  workflow_dispatch:
-#  push:
-#    branches:
-#      - master
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - master
 
-#jobs:
-#  publish:
-#    if: "!contains(github.event.head_commit.message, '[ci skip]')"
-#    runs-on: ubuntu-20.04
-#    steps:
-#      - uses: actions/checkout@v2
+jobs:
+  publish:
+    if: "!contains(github.event.head_commit.message, '[ci skip]')"
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2
 
-#      - name: Build and Publish Docker Image to Registry
-#        uses: elgohr/Publish-Docker-Github-Action@master
-#        with:
-#          name: whitesands13/whitesands
-#          username: ${{ secrets.DOCKER_USERNAME }}
-#          password: ${{ secrets.DOCKER_PASSWORD }}
-#          dockerfile: Dockerfile
-#          tags: "latest"
-#          cache: true
+      - name: Build and Publish Docker Image to Registry
+        uses: elgohr/Publish-Docker-Github-Action@master
+        with:
+          name: shiptest13/shiptest
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+          dockerfile: Dockerfile
+          tags: "latest"
+          cache: true

@@ -20,6 +20,10 @@
 	ion_trail.auto_process = FALSE
 	ion_trail.set_up(src)
 
+/obj/item/tank/jetpack/Destroy()
+	QDEL_NULL(ion_trail)
+	return ..()
+
 /obj/item/tank/jetpack/populate_gas()
 	if(gas_type)
 		air_contents.set_moles(gas_type, ((6 * ONE_ATMOSPHERE) * volume / (R_IDEAL_GAS_EQUATION * T20C)))

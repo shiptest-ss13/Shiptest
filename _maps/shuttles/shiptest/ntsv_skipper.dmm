@@ -1667,11 +1667,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
-/obj/machinery/door/airlock/greyscale{
-	color = "#7084AD";
-	hatch_colour = "#7084AD";
-	name = "SolGov Mobile Consulate"
-	},
+/obj/machinery/door/airlock/solgov,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/solgov)
 "uN" = (
@@ -3902,7 +3898,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/machinery/door/airlock/greyscale/mining,
+/obj/machinery/door/airlock/mining,
 /turf/open/floor/plasteel,
 /area/ship/cargo)
 "XQ" = (

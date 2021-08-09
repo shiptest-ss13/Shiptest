@@ -87,12 +87,12 @@
 			return
 		playsound(src.loc, 'sound/items/poster_ripped.ogg', 100, TRUE)
 		to_chat(user, "<span class='notice'>You cut the [src] into strips with [W].</span>")
-		var/obj/item/stack/sheet/cloth/C = new (get_turf(src), clothamnt)
+		var/obj/item/stack/sheet/cotton/cloth/C = new (get_turf(src), clothamnt)
 		user.put_in_hands(C)
 		qdel(src)
 
-	if(damaged_clothes && istype(W, /obj/item/stack/sheet/cloth))
-		var/obj/item/stack/sheet/cloth/C = W
+	if(damaged_clothes && istype(W, /obj/item/stack/sheet/cotton/cloth))
+		var/obj/item/stack/sheet/cotton/cloth/C = W
 		C.use(1)
 		update_clothes_damaged_state(FALSE)
 		obj_integrity = max_integrity

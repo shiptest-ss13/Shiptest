@@ -484,13 +484,13 @@
 
 /datum/crafting_recipe/curtain
 	name = "Curtains"
-	reqs = 	list(/obj/item/stack/sheet/cloth = 4, /obj/item/stack/rods = 1)
+	reqs = 	list(/obj/item/stack/sheet/cotton/cloth = 4, /obj/item/stack/rods = 1)
 	result = /obj/structure/curtain/cloth
 	category = CAT_MISC
 
 /datum/crafting_recipe/showercurtain
 	name = "Shower Curtains"
-	reqs = 	list(/obj/item/stack/sheet/cloth = 2, /obj/item/stack/sheet/plastic = 2, /obj/item/stack/rods = 1)
+	reqs = 	list(/obj/item/stack/sheet/cotton/cloth = 2, /obj/item/stack/sheet/plastic = 2, /obj/item/stack/rods = 1)
 	result = /obj/structure/curtain
 	category = CAT_MISC
 
@@ -696,20 +696,20 @@
 	result = /obj/item/clothing/mask/mummy
 	time = 10
 	tools = list(/obj/item/nullrod/egyptian)
-	reqs = list(/obj/item/stack/sheet/cloth = 2)
+	reqs = list(/obj/item/stack/sheet/cotton/cloth = 2)
 	category = CAT_CLOTHING
 
 /datum/crafting_recipe/mummy/body
 	name = "Mummification Bandages (Body)"
 	result = /obj/item/clothing/under/costume/mummy
-	reqs = list(/obj/item/stack/sheet/cloth = 5)
+	reqs = list(/obj/item/stack/sheet/cotton/cloth = 5)
 
 /datum/crafting_recipe/chaplain_hood
 	name = "Follower Hoodie"
 	result = /obj/item/clothing/suit/hooded/chaplain_hoodie
 	time = 10
 	tools = list(/obj/item/clothing/suit/hooded/chaplain_hoodie, /obj/item/storage/book/bible)
-	reqs = list(/obj/item/stack/sheet/cloth = 4)
+	reqs = list(/obj/item/stack/sheet/cotton/cloth = 4)
 	category = CAT_CLOTHING
 
 /datum/crafting_recipe/guillotine
