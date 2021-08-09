@@ -46,6 +46,7 @@
 	pic = new(temp_image)
 	pic.color = _color
 	pic.alpha = _alpha
+	pic.appearance_flags = RESET_COLOR
 	return TRUE
 
 /datum/component/decal/proc/apply(atom/thing)

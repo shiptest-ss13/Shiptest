@@ -16,7 +16,7 @@
 	obj_flags = CAN_BE_HIT | BLOCK_Z_OUT_DOWN | BLOCK_Z_IN_UP
 	var/number_of_rods = 2
 	var/hatch_open = FALSE
-	var/obj/item/stack/tile/plasteel/plated_tile
+	var/obj/item/stack/tile/plated_tile
 
 /obj/structure/catwalk/Initialize()
 	. = ..()
@@ -28,47 +28,39 @@
 /obj/structure/catwalk/over/plated_catwalk
 	name = "plated catwalk"
 	icon_state = "catwalk_platedwhite"
-	plated_tile = new /obj/item/stack/tile/plasteel
+	plated_tile = /obj/item/stack/tile/plasteel
 
 /obj/structure/catwalk/over/plated_catwalk/dark
-	plated_tile = new /obj/item/stack/tile/plasteel/dark
+	plated_tile = /obj/item/stack/tile/plasteel/dark
 
 /obj/structure/catwalk/over/plated_catwalk/white
 	name = "plated catwalk"
-	plated_tile = new /obj/item/stack/tile/plasteel/white
+	plated_tile = /obj/item/stack/tile/plasteel/white
 
 /obj/structure/catwalk/update_icon()
 	..()
 	cut_overlays()
-	icon_state = ""
-	var/image/I
-	icon_state = hatch_open ? "catwalk" : "open"
-	if(!hatch_open)
-		icon_state = "catwalk"
-	else
-		icon_state = "open"
+	icon_state = hatch_open ? "open" : "catwalk"
 	if(plated_tile)
-		var/turf/open/floor/turf_type = plated_tile.turf_type
-		smoothing_flags = null
-		I = image('whitesands/icons/obj/catwalks.dmi', "plated")
+		var/turf/open/floor/turf_type = initial(plated_tile.turf_type)
+		smoothing_flags &= ~SMOOTH_BITMASK
+		SSicon_smooth.remove_from_queues(src)
+		var/image/I = image('whitesands/icons/obj/catwalks.dmi', "plated")
 		I.color = initial(turf_type.color)
 		overlays += I
 	else
-		smoothing_flags = SMOOTH_BITMASK
+		smoothing_flags |= SMOOTH_BITMASK
 
 /obj/structure/catwalk/examine(mob/user)
 	. = ..()
-	. += deconstruction_hints(user)
-
-/obj/structure/catwalk/proc/deconstruction_hints(mob/user)
-	return "<span class='notice'>The supporting rods look like they could be <b>sliced</b>.</span>"
+	if(!(resistance_flags & INDESTRUCTIBLE))
+		. += "<span class='notice'>The supporting rods look like they could be <b>sliced</b>.</span>"
 
 /obj/structure/catwalk/attackby(obj/item/C, mob/user, params)
-	if(resistance_flags & INDESTRUCTIBLE)
-		return
-	if(C.tool_behaviour == TOOL_WELDER)
+	if(C.tool_behaviour == TOOL_WELDER && !(resistance_flags & INDESTRUCTIBLE))
 		to_chat(user, "<span class='notice'>You slice off [src]</span>")
 		deconstruct()
+		return
 	if(C.tool_behaviour == TOOL_CROWBAR && plated_tile)
 		hatch_open = !hatch_open
 		if(hatch_open)
@@ -87,15 +79,17 @@
 			name = "plated catwalk"
 			src.add_fingerprint(user)
 			if(ST.use(1))
-				plated_tile = C
+				plated_tile = ST.type
 				update_icon()
+		return
+	return ..()
 
-
-/obj/structure/catwalk/Move()
+/obj/structure/catwalk/Move(atom/newloc)
 	var/turf/T = loc
-	for(var/obj/structure/cable/C in T)
-		C.deconstruct()
-	..()
+	if(!istype(T, /turf/open/floor))
+		for(var/obj/structure/cable/C in T)
+			C.deconstruct()
+	return ..()
 
 /obj/structure/catwalk/deconstruct(disassembled = TRUE)
 	if(!(flags_1 & NODECONSTRUCT_1))
@@ -105,4 +99,4 @@
 	if(!istype(T, /turf/open/floor))
 		for(var/obj/structure/cable/C in T)
 			C.deconstruct()
-	..()
+	return ..()

@@ -106,7 +106,7 @@ odir = EAST / WEST. We need it to face forwards so you can get through
 	name = "Command"
 	icon = 'goon/icons/obj/airlocks/command.dmi'
 
-obj/machinery/door/poddoor/Initialize()
+/obj/machinery/door/poddoor/Initialize()
 	. = ..()
 	set_smooth_dir()
 
