@@ -1451,6 +1451,7 @@
 /area/ship/medical)
 "gD" = (
 /obj/structure/closet/secure_closet/CMO,
+/obj/item/retractor/advanced,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
 "gE" = (
@@ -1646,6 +1647,7 @@
 "wc" = (
 /obj/structure/table,
 /obj/machinery/microwave,
+/obj/machinery/airalarm/all_access,
 /turf/open/floor/wood,
 /area/ship/crew)
 "wh" = (
@@ -1796,10 +1798,6 @@
 "ER" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 8
-	},
-/obj/machinery/airalarm/all_access{
-	dir = 1;
-	pixel_y = -24
 	},
 /obj/effect/turf_decal/siding/wood{
 	dir = 4
@@ -2406,7 +2404,7 @@ cR
 dc
 dm
 gD
-tD
+Rx
 "}
 (20,1,1) = {"
 cC
@@ -2425,7 +2423,7 @@ cS
 dc
 LG
 dq
-tD
+Rx
 "}
 (21,1,1) = {"
 cC
@@ -2444,7 +2442,7 @@ cT
 de
 dn
 Yj
-tD
+Rx
 "}
 (22,1,1) = {"
 cC
@@ -2463,7 +2461,7 @@ wc
 df
 UP
 ER
-tD
+Rx
 "}
 (23,1,1) = {"
 ae
@@ -2482,7 +2480,7 @@ zZ
 dg
 do
 ds
-tD
+Rx
 "}
 (24,1,1) = {"
 aG
