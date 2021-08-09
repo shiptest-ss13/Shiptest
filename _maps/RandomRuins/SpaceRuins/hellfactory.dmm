@@ -171,13 +171,7 @@
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/hellfactory)
 "aB" = (
-/obj/effect/turf_decal/corner/black{
-	dir = 1
-	},
-/obj/effect/turf_decal/corner/black{
-	dir = 2
-	},
-/turf/open/floor/plasteel,
+/turf/open/floor/plasteel/checker,
 /area/ruin/space/has_grav/hellfactory)
 "aC" = (
 /obj/machinery/atmospherics/pipe/heat_exchanging/simple,
@@ -228,6 +222,18 @@
 	},
 /obj/machinery/atmospherics/pipe/heat_exchanging/simple{
 	dir = 5
+	},
+/turf/open/floor/plastic,
+/area/ruin/space/has_grav/hellfactory)
+"aN" = (
+/obj/machinery/atmospherics/pipe/heat_exchanging/simple{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/heat_exchanging/simple/layer1{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/heat_exchanging/simple{
+	dir = 4
 	},
 /turf/open/floor/plastic,
 /area/ruin/space/has_grav/hellfactory)
@@ -294,13 +300,7 @@
 /obj/machinery/light{
 	dir = 4
 	},
-/obj/effect/turf_decal/corner/black{
-	dir = 1
-	},
-/obj/effect/turf_decal/corner/black{
-	dir = 2
-	},
-/turf/open/floor/plasteel,
+/turf/open/floor/plasteel/checker,
 /area/ruin/space/has_grav/hellfactory)
 "ba" = (
 /obj/structure/plasticflaps,
@@ -365,13 +365,7 @@
 /area/ruin/space/has_grav/hellfactory)
 "bk" = (
 /obj/structure/tank_dispenser/oxygen,
-/obj/effect/turf_decal/corner/black{
-	dir = 1
-	},
-/obj/effect/turf_decal/corner/black{
-	dir = 2
-	},
-/turf/open/floor/plasteel,
+/turf/open/floor/plasteel/checker,
 /area/ruin/space/has_grav/hellfactory)
 "bl" = (
 /obj/structure/window/reinforced{
@@ -533,7 +527,7 @@
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/hellfactory)
 "bJ" = (
-/obj/effect/turf_decal/industrial/hatch/yellow,
+/obj/effect/turf_decal/delivery,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/hellfactory)
 "bK" = (
@@ -885,18 +879,18 @@
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/hellfactory)
 "cQ" = (
-/obj/structure/catwalk,
+/obj/structure/lattice/catwalk,
 /turf/open/space/basic,
 /area/ruin/space/has_grav/hellfactory)
 "cR" = (
-/obj/structure/catwalk,
+/obj/structure/lattice/catwalk,
 /obj/structure/marker_beacon{
 	icon_state = "markerburgundy-on"
 	},
 /turf/open/space/basic,
 /area/ruin/space/has_grav/hellfactory)
 "cS" = (
-/obj/structure/catwalk,
+/obj/structure/lattice/catwalk,
 /obj/item/keycard/entry,
 /turf/open/space/basic,
 /area/ruin/space/has_grav/hellfactory)
@@ -957,13 +951,7 @@
 	brightness = 3;
 	dir = 8
 	},
-/obj/effect/turf_decal/corner/black{
-	dir = 1
-	},
-/obj/effect/turf_decal/corner/black{
-	dir = 2
-	},
-/turf/open/floor/plasteel,
+/turf/open/floor/plasteel/checker,
 /area/ruin/space/has_grav/hellfactory)
 "pb" = (
 /obj/structure/cable{
@@ -1064,13 +1052,7 @@
 /area/ruin/space/has_grav/hellfactory)
 "GE" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/turf_decal/corner/black{
-	dir = 1
-	},
-/obj/effect/turf_decal/corner/black{
-	dir = 2
-	},
-/turf/open/floor/plasteel,
+/turf/open/floor/plasteel/checker,
 /area/ruin/space/has_grav/hellfactory)
 "Jv" = (
 /obj/structure/table/reinforced,
@@ -1273,7 +1255,7 @@ ac
 ae
 av
 ab
-aw
+aN
 hv
 bb
 aA
@@ -1300,7 +1282,7 @@ aW
 af
 aN
 aD
-aw
+aN
 aU
 bb
 bL
