@@ -642,6 +642,9 @@
 	pixel_y = -24
 	},
 /obj/machinery/light/small/built,
+/obj/machinery/atmospherics/components/unary/portables_connector{
+	dir = 8
+	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "aW" = (
@@ -826,9 +829,7 @@
 /area/ship/engineering)
 "bn" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/atmospherics/pipe/simple/orange/hidden{
-	dir = 9
-	},
+/obj/machinery/atmospherics/pipe/manifold/orange/visible,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "bo" = (
@@ -839,6 +840,9 @@
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on{
 	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/orange/hidden{
+	dir = 4
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
@@ -2111,13 +2115,7 @@
 	},
 /area/ship/medical)
 "do" = (
-/obj/machinery/door/airlock/external,
-/obj/effect/mapping_helpers/airlock/cyclelink_helper,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/door/firedoor/border_only{
-	dir = 1
-	},
-/obj/machinery/door/firedoor/border_only,
 /turf/open/floor/plating,
 /area/ship/medical)
 "dp" = (
@@ -2162,14 +2160,6 @@
 /turf/open/floor/plating,
 /area/ship/medical)
 "dt" = (
-/obj/machinery/door/airlock/external,
-/obj/effect/mapping_helpers/airlock/cyclelink_helper{
-	dir = 1
-	},
-/obj/machinery/door/firedoor/border_only{
-	dir = 1
-	},
-/obj/machinery/door/firedoor/border_only,
 /turf/open/floor/plating,
 /area/ship/medical)
 "dv" = (
@@ -2270,8 +2260,7 @@
 /area/ship/medical)
 "Ps" = (
 /obj/machinery/atmospherics/pipe/simple/orange/hidden,
-/obj/structure/lattice/catwalk,
-/turf/template_noop,
+/turf/open/floor/plating/airless,
 /area/ship/external)
 "Rx" = (
 /obj/effect/spawner/structure/window/shuttle,

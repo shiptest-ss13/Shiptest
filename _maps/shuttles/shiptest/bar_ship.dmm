@@ -918,6 +918,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/machinery/vending/hydroseeds,
 /turf/open/floor/wood,
 /area/ship/crew)
 "ud" = (
@@ -2327,38 +2328,12 @@
 /turf/open/floor/plasteel/freezer,
 /area/ship/storage)
 "Vz" = (
-/obj/item/seeds/tomato,
-/obj/item/seeds/tomato,
-/obj/item/seeds/tomato,
-/obj/structure/closet/crate/hydroponics,
-/obj/item/seeds/wheat,
-/obj/item/seeds/wheat,
-/obj/item/seeds/wheat,
-/obj/item/seeds/garlic,
-/obj/item/seeds/potato,
-/obj/item/seeds/potato,
-/obj/item/seeds/apple,
-/obj/item/seeds/pineapple,
-/obj/item/seeds/sugarcane,
-/obj/item/seeds/cabbage,
-/obj/item/seeds/banana,
-/obj/item/seeds/chili,
-/obj/item/seeds/random,
-/obj/item/seeds/wheat/rice,
-/obj/item/seeds/wheat/rice,
-/obj/effect/turf_decal/tile/neutral{
-	dir = 1
-	},
 /obj/effect/turf_decal/tile/neutral{
 	dir = 4
 	},
-/obj/effect/turf_decal/box,
-/obj/item/seeds/cotton,
-/obj/item/seeds/pumpkin,
-/obj/item/seeds/pumpkin,
-/obj/item/seeds/peas,
-/obj/item/seeds/peas,
-/obj/item/seeds/peas,
+/obj/effect/turf_decal/tile/neutral{
+	dir = 1
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/hydroponics)
 "VO" = (
