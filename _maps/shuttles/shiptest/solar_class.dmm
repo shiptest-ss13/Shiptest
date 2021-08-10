@@ -280,7 +280,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/turf/open/floor/plasteel/mono,
+/turf/open/floor/plasteel,
 /area/ship/hallway)
 "fh" = (
 /obj/machinery/firealarm{
@@ -1498,7 +1498,7 @@
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
 	dir = 1
 	},
-/turf/open/floor/plasteel/mono,
+/turf/open/floor/plasteel,
 /area/ship/hallway)
 "EJ" = (
 /obj/machinery/door/poddoor{
@@ -1855,7 +1855,9 @@
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
 	},
-/obj/machinery/door/airlock/greyscale/research,
+/obj/machinery/door/airlock/research{
+	name = "salvage bay"
+	},
 /turf/open/floor/plasteel,
 /area/ship/cargo)
 "NR" = (
@@ -2482,7 +2484,9 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/machinery/door/airlock/greyscale/research,
+/obj/machinery/door/airlock/research{
+	name = "salvage bay"
+	},
 /turf/open/floor/plasteel,
 /area/ship/science)
 "Yp" = (
