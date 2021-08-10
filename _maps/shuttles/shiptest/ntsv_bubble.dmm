@@ -6,6 +6,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 6
 	},
+/obj/effect/landmark/start/assistant,
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "bT" = (
@@ -39,6 +40,7 @@
 /obj/effect/turf_decal/tile/yellow{
 	dir = 4
 	},
+/obj/effect/landmark/start/station_engineer,
 /turf/open/floor/plasteel,
 /area/ship/engineering)
 "cV" = (
@@ -470,6 +472,7 @@
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer4{
 	dir = 1
 	},
+/obj/effect/landmark/start/captain,
 /turf/open/floor/plasteel,
 /area/ship/bridge)
 "xu" = (
@@ -584,6 +587,19 @@
 	},
 /turf/open/floor/plating,
 /area/ship/external)
+"Gq" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 4
+	},
+/obj/effect/landmark/start/assistant,
+/turf/open/floor/plasteel,
+/area/ship/hallway/central)
 "GD" = (
 /obj/machinery/power/smes/shuttle/precharged{
 	dir = 4
@@ -619,6 +635,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/effect/landmark/start/assistant,
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "Iw" = (
@@ -672,6 +689,10 @@
 /obj/structure/cable/yellow,
 /turf/open/floor/plating,
 /area/ship/engineering)
+"Je" = (
+/obj/effect/landmark/start/shaft_miner,
+/turf/open/floor/plasteel,
+/area/ship/cargo)
 "Js" = (
 /obj/machinery/door/airlock/maintenance_hatch,
 /obj/effect/turf_decal/siding/thinplating,
@@ -767,6 +788,7 @@
 /turf/open/floor/plasteel,
 /area/ship/crew/dorm)
 "MW" = (
+/obj/effect/landmark/start/assistant,
 /turf/open/floor/plating,
 /area/ship/maintenance/aft)
 "MY" = (
@@ -840,6 +862,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 6
 	},
+/obj/effect/landmark/start/assistant,
 /turf/open/floor/plasteel,
 /area/ship/crew/dorm)
 "RO" = (
@@ -1005,6 +1028,7 @@
 	icon_state = "0-2"
 	},
 /obj/machinery/power/apc/auto_name/north,
+/obj/effect/landmark/start/assistant,
 /turf/open/floor/plasteel,
 /area/ship/crew/dorm)
 "XG" = (
@@ -1076,6 +1100,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 5
 	},
+/obj/effect/landmark/start/scientist,
 /turf/open/floor/plasteel,
 /area/ship/science)
 "ZQ" = (
@@ -1102,6 +1127,7 @@
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer4,
+/obj/effect/landmark/start/assistant,
 /turf/open/floor/plasteel,
 /area/ship/hallway/central)
 
@@ -1266,7 +1292,7 @@ LK
 VO
 VQ
 Tr
-HK
+Gq
 Yx
 nH
 ZR
@@ -1319,7 +1345,7 @@ gl
 Gl
 ec
 nS
-nS
+Je
 Dj
 mV
 DU
