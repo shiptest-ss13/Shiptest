@@ -57,10 +57,10 @@
 /area/ruin/powered)
 "cc" = (
 /obj/machinery/door/airlock/research,
-/obj/machinery/door/poddoor/shutters{
-	id = "rd3"
-	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/door/poddoor/shutters{
+	id = "rd4"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/powered)
 "cd" = (
@@ -257,7 +257,7 @@
 "gk" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/door/poddoor/shutters{
-	id = "rd3"
+	id = "rd4"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
@@ -941,6 +941,14 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel,
+/area/ruin/powered)
+"BO" = (
+/obj/effect/spawner/structure/window/reinforced,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/door/poddoor/shutters{
+	id = "rd4"
+	},
+/turf/open/floor/plating,
 /area/ruin/powered)
 "BS" = (
 /obj/effect/turf_decal/tile/blue{
@@ -1906,7 +1914,9 @@
 /turf/open/floor/plasteel/white,
 /area/ruin/powered)
 "YM" = (
-/obj/machinery/door/poddoor/ert,
+/obj/machinery/door/poddoor/ert{
+	id = "c"
+	},
 /turf/open/floor/plating,
 /area/ruin/powered)
 "Zt" = (
@@ -3350,10 +3360,10 @@ LI
 LI
 LI
 gk
-gk
+BO
 cc
-gk
-gk
+BO
+BO
 EH
 FI
 FI
@@ -3390,7 +3400,7 @@ Zt
 jP
 jP
 LI
-gk
+BO
 Xz
 Xz
 Xz
@@ -3431,7 +3441,7 @@ Zt
 VN
 UU
 VN
-gk
+BO
 Xz
 Xz
 AR
@@ -3472,7 +3482,7 @@ Zt
 Xw
 Xw
 Xw
-gk
+BO
 Xz
 Xz
 Xz
