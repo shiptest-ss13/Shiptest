@@ -370,6 +370,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 4
 	},
+/obj/machinery/holopad/emergency/command,
 /turf/open/floor/plasteel,
 /area/ship/bridge)
 "vz" = (
@@ -961,6 +962,9 @@
 	},
 /obj/machinery/light{
 	dir = 1
+	},
+/obj/item/radio/intercom/wideband{
+	pixel_x = -26
 	},
 /turf/open/floor/plasteel,
 /area/ship/bridge)
