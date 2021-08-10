@@ -324,6 +324,12 @@
 /obj/item/stack/sheet/glass,
 /turf/open/floor/plasteel,
 /area/ship/science)
+"rK" = (
+/obj/structure/sign/poster/official/build{
+	pixel_y = 32
+	},
+/turf/open/floor/plasteel,
+/area/ship/hallway/central)
 "rS" = (
 /obj/machinery/door/airlock/command/glass,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
@@ -967,6 +973,7 @@
 	dir = 1;
 	pixel_y = -24
 	},
+/obj/item/areaeditor/shuttle,
 /turf/open/floor/wood,
 /area/ship/crew/dorm)
 "VQ" = (
@@ -1220,7 +1227,7 @@ ML
 nr
 kt
 VQ
-jl
+rK
 vY
 YA
 nH
