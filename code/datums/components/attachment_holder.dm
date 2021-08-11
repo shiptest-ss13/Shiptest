@@ -39,9 +39,10 @@
 		var/list/attach_overlays = list()
 		SEND_SIGNAL(attach, COMSIG_ATTACHMENT_UPDATE_OVERLAY, attach_overlays)
 		for(var/mutable_appearance/overlay as anything in attach_overlays)
-			var/matrix/overlay_matrix = new
-			overlay_matrix.Translate(slot_offsets[slot]["x"], slot_offsets[slot]["y"])
-			overlay.transform = overlay_matrix
+			if(slot_offsets && slot_offsets[slot])
+				var/matrix/overlay_matrix = new
+				overlay_matrix.Translate(slot_offsets[slot]["x"], slot_offsets[slot]["y"])
+				overlay.transform = overlay_matrix
 			overlays += overlay
 
 /datum/component/attachment_holder/proc/handle_qdel()
@@ -99,6 +100,8 @@
 	. = SEND_SIGNAL(attachment, COMSIG_ATTACHMENT_ATTACH, parent, user)
 	if(.)
 		attachments += attachment
+		var/atom/parent = src.parent
+		parent.update_icon()
 
 /datum/component/attachment_holder/proc/do_detach(obj/item/attachment, mob/user)
 	var/slot = SEND_SIGNAL(attachment, COMSIG_ATTACHMENT_GET_SLOT)
