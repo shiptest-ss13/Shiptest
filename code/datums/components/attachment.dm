@@ -49,9 +49,7 @@
 	RegisterSignal(parent, COMSIG_ATTACHMENT_ATTACH, .proc/try_attach)
 	RegisterSignal(parent, COMSIG_ATTACHMENT_DETACH, .proc/try_detach)
 	RegisterSignal(parent, COMSIG_ATTACHMENT_TOGGLE, .proc/try_toggle)
-
-	if(attachment_overlay)
-		RegisterSignal(parent, COMSIG_ATTACHMENT_UPDATE_OVERLAY, .proc/update_overlays)
+	RegisterSignal(parent, COMSIG_ATTACHMENT_UPDATE_OVERLAY, .proc/update_overlays)
 
 	for(var/signal in signals)
 		RegisterSignal(parent, signal, signals[signal])
@@ -79,7 +77,7 @@
 	return TRUE
 
 /datum/component/attachment/proc/update_overlays(obj/item/parent, list/overlays, list/offset)
-	overlays += attachment_overlay
+	overlays += mutable_appearance(parent.icon, "[parent.icon_state]-attach")
 
 /datum/component/attachment/proc/try_attach(obj/item/parent, obj/item/holder, mob/user)
 	SIGNAL_HANDLER
