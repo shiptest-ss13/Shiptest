@@ -46,7 +46,7 @@ SUBSYSTEM_DEF(time_track)
 
 /datum/controller/subsystem/time_track/Initialize(start_timeofday)
 	. = ..()
-	GLOB.perf_log = "[GLOB.log_directory]/perf-[GLOB.round_id ? GLOB.round_id : "NULL"]-[SSmapping.config?.map_name].csv"
+	GLOB.perf_log = "[GLOB.log_directory]/perf-[GLOB.round_id ? GLOB.round_id : "NULL"].csv"
 #ifdef SENDMAPS_PROFILE
 	world.Profile(PROFILE_RESTART, type = "sendmaps")
 	//Need to do the sendmaps stuff in its own file, since it works different then everything else
@@ -72,12 +72,16 @@ SUBSYSTEM_DEF(time_track)
 			"air_superconductivity_cost",
 			"air_pipenets_cost",
 			"air_rebuilds_cost",
-			"air_turf_count",
-			"air_eg_count",
+			"air_equalize_cost",
+			"air_post_process_cost",
+			"air_deferred_airs_cost",
 			"air_hotspot_count",
 			"air_network_count",
 			"air_delta_count",
-			"air_superconductive_count"
+			"air_deferred_airs_count",
+			"air_high_pressure_turfs",
+			"air_low_pressure_turfs",
+			"air_gasmix_count"
 #ifdef SENDMAPS_PROFILE
 		) + sendmaps_shorthands
 #else
@@ -138,12 +142,15 @@ SUBSYSTEM_DEF(time_track)
 			SSair.cost_superconductivity,
 			SSair.cost_pipenets,
 			SSair.cost_rebuilds,
-			length(SSair.active_turfs),
-			length(SSair.excited_groups),
+			SSair.cost_equalize,
+			SSair.cost_post_process,
+			SSair.cost_deferred_airs,
 			length(SSair.hotspots),
 			length(SSair.networks),
 			length(SSair.high_pressure_delta),
-			length(SSair.active_super_conductivity)
+			length(SSair.deferred_airs),
+			SSair.high_pressure_turfs,
+			SSair.low_pressure_turfs,
 #ifdef SENDMAPS_PROFILE
 		) + send_maps_values
 #else
