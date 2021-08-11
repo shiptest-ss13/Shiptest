@@ -110,6 +110,8 @@
 	. = SEND_SIGNAL(attachment, COMSIG_ATTACHMENT_DETACH, parent, user)
 	if(.)
 		attachments -= attachment
+		var/atom/parent = src.parent
+		parent.update_icon()
 
 /datum/component/attachment_holder/proc/handle_detach(obj/item/parent, obj/item/tool, mob/user)
 	var/list/list = list()
