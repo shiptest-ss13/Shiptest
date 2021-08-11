@@ -5,7 +5,7 @@
 	invisibility = INVISIBILITY_ABSTRACT
 	var/rad_power = 33
 	var/rad_range = 1 // !Range mod = rad dropoff speed
-	var/rad_spread = 4 // Range of nearby atoms to radiate
+	var/rad_spread = 6 // Range of nearby atoms to radiate
 	var/rad_delay = 20
 	var/rad_prob = 10
 	var/_pulse = 0 // Holds the world.time interval in process
