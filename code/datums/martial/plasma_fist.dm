@@ -85,7 +85,7 @@
 		A.color = "#9C00FF"
 		flash_color(A, flash_color = "#9C00FF", flash_time = 3 SECONDS)
 		animate(A, color = oldcolor, time = 3 SECONDS)
-	
+
 
 /datum/martial_art/plasma_fist/proc/Apotheosis(mob/living/carbon/human/A, mob/living/carbon/human/D)
 	A.say("APOTHEOSIS!!", forced="plasma fist")

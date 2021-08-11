@@ -64,7 +64,7 @@
 	multiplier = 4 //hush money
 	bonus_desc = "Do not mention this shipment to security."
 	foodtype = "batch of \"muffins\""
-	
+
 /datum/bounty/item/botany/cannabis_white
 	name = "Lifeweed Leaves"
 	wanted_types = list(/obj/item/reagent_containers/food/snacks/grown/cannabis/white)

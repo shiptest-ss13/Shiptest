@@ -365,7 +365,7 @@
 /obj/item/flashlight/lantern/syndicate //WS edit - LepiCorp stuff
 	desc = "A mining lantern with an extra-bright bulb. Manufactured by LepiCorp."
 	light_range = 10 //End WS edit
-	
+
 /obj/item/flashlight/slime
 	gender = PLURAL
 	name = "glowing slime extract"

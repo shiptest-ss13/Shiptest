@@ -9,7 +9,7 @@
 
 //Star classes
 #define STARO 1 //Extremely bright blue main sequence star or (super)giant
-#define STARB 2 //Bright blue main sequence star or (super)giant 
+#define STARB 2 //Bright blue main sequence star or (super)giant
 #define STARA 3 //Light blue main sequence star
 #define STARF 4 //White main sequence star
 #define STARG 5 //Yellow main sequence star or supergiant

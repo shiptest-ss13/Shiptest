@@ -56,7 +56,7 @@ SUBSYSTEM_DEF(lighting)
 
 		C.needs_update = FALSE //update_objects() can call qdel if the corner is storing no data
 		C.update_objects()
-		
+
 		if(init_tick_checks)
 			CHECK_TICK
 		else if (MC_TICK_CHECK)
