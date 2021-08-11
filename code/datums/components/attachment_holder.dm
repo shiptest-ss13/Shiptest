@@ -145,4 +145,5 @@
 
 	for(var/obj/item/attach as anything in attachments)
 		if(SEND_SIGNAL(attach, COMSIG_ATTACHMENT_PRE_ATTACK, parent, target, user, params))
+			user.do_attack_animation(target)
 			return TRUE
