@@ -22,12 +22,10 @@
 	var/datum/callback/on_attach
 	var/datum/callback/on_detach
 	var/datum/callback/on_toggle
-	var/mutable_appearance/attachment_overlay
 	var/list/datum/action/actions
 
 /datum/component/attachment/Initialize(
 		slot = ATTACHMENT_SLOT_RAIL,
-		mutable_appearance/attachment_overlay = null,
 		valid_parent_types = list(/obj/item/gun),
 		datum/callback/on_attach = null,
 		datum/callback/on_detach = null,
@@ -70,7 +68,7 @@
 
 /datum/component/attachment/proc/do_toggle(obj/item/parent, obj/item/holder, mob/user)
 	if(on_toggle)
-		on_toggle.Invoke(parent, holder, user)
+		on_toggle.Invoke(src, holder, user)
 		return TRUE
 
 	parent.attack_self(user)
@@ -85,7 +83,7 @@
 	if(!parent.Adjacent(user) || (length(valid_parent_types) && (holder.type in valid_parent_types)))
 		return FALSE
 
-	if(on_attach && !on_attach.Invoke(parent, holder, user))
+	if(on_attach && !on_attach.Invoke(src, holder, user))
 		return FALSE
 
 	parent.forceMove(holder)
@@ -97,7 +95,7 @@
 	if(!parent.Adjacent(user) || (valid_parent_types && (holder.type in valid_parent_types)))
 		return FALSE
 
-	if(on_attach && !on_detach.Invoke(parent, holder, user))
+	if(on_attach && !on_detach.Invoke(src, holder, user))
 		return FALSE
 
 	if(user.can_put_in_hand(parent))
