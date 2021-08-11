@@ -113,9 +113,9 @@ GENE SCANNER
 		user.visible_message("<span class='warning'>[user] analyzes the floor's vitals!</span>", \
 							"<span class='notice'>You stupidly try to analyze the floor's vitals!</span>")
 		to_chat(user, "<span class='info'>Analyzing results for The floor:\n\tOverall status: <b>Healthy</b></span>\
-					 \n<span class='info'>Key: <font color='blue'>Suffocation</font>/<font color='green'>Toxin</font>/<font color='#FF8000'>Burn</font>/<font color='red'>Brute</font></span>\
-					 \n<span class='info'>\tDamage specifics: <font color='blue'>0</font>-<font color='green'>0</font>-<font color='#FF8000'>0</font>-<font color='red'>0</font></span>\
-					 \n<span class='info'>Body temperature: ???</span>")
+					\n<span class='info'>Key: <font color='blue'>Suffocation</font>/<font color='green'>Toxin</font>/<font color='#FF8000'>Burn</font>/<font color='red'>Brute</font></span>\
+					\n<span class='info'>\tDamage specifics: <font color='blue'>0</font>-<font color='green'>0</font>-<font color='#FF8000'>0</font>-<font color='red'>0</font></span>\
+					\n<span class='info'>Body temperature: ???</span>")
 		return
 
 	user.visible_message("<span class='notice'>[user] analyzes [M]'s vitals.</span>", \
@@ -454,7 +454,7 @@ GENE SCANNER
 	var/total_moles = environment.total_moles()
 
 	render_list += "<span class='info'><B>Results:</B></span>\
-				 \n<span class='[abs(pressure - ONE_ATMOSPHERE) < 10 ? "info" : "alert"]'>Pressure: [round(pressure, 0.01)] kPa</span>\n"
+		\n<span class='[abs(pressure - ONE_ATMOSPHERE) < 10 ? "info" : "alert"]'>Pressure: [round(pressure, 0.01)] kPa</span>\n"
 	if(total_moles)
 		var/o2_concentration = environment.get_moles(GAS_O2)/total_moles
 		var/n2_concentration = environment.get_moles(GAS_N2)/total_moles

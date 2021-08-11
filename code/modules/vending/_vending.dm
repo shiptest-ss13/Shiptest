@@ -75,24 +75,24 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 	var/list/pinned_mobs = list()
 
 	/**
-	  * List of products this machine sells
-	  *
-	  *	form should be list(/type/path = amount, /type/path2 = amount2)
-	  */
+	* List of products this machine sells
+	*
+	*	form should be list(/type/path = amount, /type/path2 = amount2)
+	*/
 	var/list/products	= list()
 
 	/**
-	  * List of products this machine sells when you hack it
-	  *
-	  *	form should be list(/type/path = amount, /type/path2 = amount2)
-	  */
+	* List of products this machine sells when you hack it
+	*
+	*	form should be list(/type/path = amount, /type/path2 = amount2)
+	*/
 	var/list/contraband	= list()
 
 	/**
-	  * List of premium products this machine sells
-	  *
-	  *	form should be list(/type/path, /type/path2) as there is only ever one in stock
-	  */
+	* List of premium products this machine sells
+	*
+	*	form should be list(/type/path, /type/path2) as there is only ever one in stock
+	*/
 	var/list/premium 	= list()
 
 	///String of slogans separated by semicolons, optional
@@ -140,11 +140,11 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 	var/extra_price = 50
 	///Whether our age check is currently functional
 	var/age_restrictions = TRUE
-  	/**
-	  * Is this item on station or not
-	  *
-	  * if it doesn't originate from off-station during mapload, everything is free
-	  */
+	/**
+	* Is this item on station or not
+	*
+	* if it doesn't originate from off-station during mapload, everything is free
+	*/
 	var/onstation = TRUE //if it doesn't originate from off-station during mapload, everything is free
   ///A variable to change on a per instance basis on the map that allows the instance to force cost and ID requirements
 	var/onstation_override = FALSE //change this on the object on the map to override the onstation check. DO NOT APPLY THIS GLOBALLY.

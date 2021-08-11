@@ -98,9 +98,11 @@
 	var/default_color_green_part = GETGREENPART(default_color)
 	var/default_color_blue_part  = GETBLUEPART(default_color)
 
-	var/result = rgb(unhealthy_color_red_part   + ((default_color_red_part   - unhealthy_color_red_part)   * health_percent),
-	                 unhealthy_color_green_part + ((default_color_green_part - unhealthy_color_green_part) * health_percent),
-	                 unhealthy_color_blue_part  + ((default_color_blue_part  - unhealthy_color_blue_part)  * health_percent))
+	var/result = rgb(
+		unhealthy_color_red_part   + ((default_color_red_part   - unhealthy_color_red_part)   * health_percent),
+		unhealthy_color_green_part + ((default_color_green_part - unhealthy_color_green_part) * health_percent),
+		unhealthy_color_blue_part  + ((default_color_blue_part  - unhealthy_color_blue_part)  * health_percent)
+	)
 	return result
 
 /datum/species/ethereal/proc/set_ethereal_light(mob/living/carbon/human/H, current_color)

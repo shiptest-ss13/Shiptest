@@ -605,7 +605,7 @@
 	R.fields["body_only"] = body_only
 
 	if(!body_only)
-	    //Add an implant if needed
+		//Add an implant if needed
 		var/obj/item/implant/health/imp
 		for(var/obj/item/implant/health/HI in mob_occupant.implants)
 			imp = HI

@@ -60,10 +60,10 @@
 	var/r_pocket = null
 
 	/**
-	  * Type path of item to go in suit storage slot
-	  *
-	  * (make sure it's valid for that suit)
-	  */
+	* Type path of item to go in suit storage slot
+	*
+	* (make sure it's valid for that suit)
+	*/
 	var/suit_store = null
 
 	///Type path of item to go in the right hand
@@ -79,20 +79,20 @@
 	var/internals_slot = null
 
 	/**
-	  * list of items that should go in the backpack of the user
-	  *
-	  * Format of this list should be: list(path=count,otherpath=count)
-	  */
+	* list of items that should go in the backpack of the user
+	*
+	* Format of this list should be: list(path=count,otherpath=count)
+	*/
 	var/list/backpack_contents = null
 
 	/// Internals box. Will be inserted at the start of backpack_contents
 	var/box
 
 	/**
-	  * Any implants the mob should start implanted with
-	  *
-	  * Format of this list is (typepath, typepath, typepath)
-	  */
+	* Any implants the mob should start implanted with
+	*
+	* Format of this list is (typepath, typepath, typepath)
+	*/
 	var/list/implants = null
 
   /// Any undershirt. While on humans it is a string, here we use paths to stay consistent with the rest of the equips.
@@ -105,12 +105,12 @@
 	var/can_be_admin_equipped = TRUE
 
 	/**
-	  * extra types for chameleon outfit changes, mostly guns
-	  *
-	  * Format of this list is (typepath, typepath, typepath)
-	  *
-	  * These are all added and returns in the list for get_chamelon_diguise_info proc
-	  */
+	* extra types for chameleon outfit changes, mostly guns
+	*
+	* Format of this list is (typepath, typepath, typepath)
+	*
+	* These are all added and returns in the list for get_chamelon_diguise_info proc
+	*/
 	var/list/chameleon_extras
 
 /**
