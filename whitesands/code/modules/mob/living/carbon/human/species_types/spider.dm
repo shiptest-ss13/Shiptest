@@ -114,10 +114,10 @@ GLOBAL_LIST_INIT(spider_last, world.file2list("strings/names/spider_last.txt"))
 	SW?.Remove(H)
 
 /datum/action/innate/spin_web
-    name = "Spin Web"
-    check_flags = AB_CHECK_HANDS_BLOCKED|AB_CHECK_IMMOBILE|AB_CHECK_CONSCIOUS
-    icon_icon = 'icons/mob/actions/actions_animal.dmi'
-    button_icon_state = "lay_web"
+	name = "Spin Web"
+	check_flags = AB_CHECK_HANDS_BLOCKED|AB_CHECK_IMMOBILE|AB_CHECK_CONSCIOUS
+	icon_icon = 'icons/mob/actions/actions_animal.dmi'
+	button_icon_state = "lay_web"
 
 /datum/action/innate/spin_cocoon
 	name = "Spin Cocoon"

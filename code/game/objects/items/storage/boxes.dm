@@ -474,8 +474,8 @@
 	var/donktype = /obj/item/reagent_containers/food/snacks/donkpocket
 
 /obj/item/storage/box/donkpockets/PopulateContents()
-    for(var/i in 1 to 6)
-        new donktype(src)
+	for(var/i in 1 to 6)
+		new donktype(src)
 
 /obj/item/storage/box/donkpockets/ComponentInitialize()
 	. = ..()

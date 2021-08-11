@@ -242,7 +242,7 @@ structure_check() searches for nearby cultist structures required for the invoca
 		convertee.adjustBruteLoss(-(brutedamage * 0.75))
 		convertee.adjustFireLoss(-(burndamage * 0.75))
 	convertee.visible_message(
-		"<span class='warning'>[convertee] writhes in pain [brutedamage || burndamage ? "even as [convertee.p_their()] wounds heal and close" : "as the markings below [convertee.p_them()] glow a bloody red"]!</span>", \ // Hello there buddy! Come here often? I hope you were wondering wtf this string was
+		"<span class='warning'>[convertee] writhes in pain [brutedamage || burndamage ? "even as [convertee.p_their()] wounds heal and close" : "as the markings below [convertee.p_them()] glow a bloody red"]!</span>", // Hello there buddy! Come here often? I hope you were wondering wtf this string was
 		"<span class='cultlarge'><i>AAAAAAAAAAAAAA-</i></span>")
 	SSticker.mode.add_cultist(convertee.mind, 1)
 	new /obj/item/melee/cultblade/dagger(get_turf(src))
@@ -902,8 +902,9 @@ structure_check() searches for nearby cultist structures required for the invoca
 				Beam(affecting, icon_state="drainbeam", time=2)
 				affecting.forceMove(get_turf(src)) //NO ESCAPE :^)
 			if(affecting.key)
-				affecting.visible_message("<span class='warning'>[affecting] slowly relaxes, the glow around [affecting.p_them()] dimming.</span>", \
-									 "<span class='danger'>You are re-united with your physical form. [src] releases its hold over you.</span>")
+				affecting.visible_message(
+					"<span class='warning'>[affecting] slowly relaxes, the glow around [affecting.p_them()] dimming.</span>", \
+					"<span class='danger'>You are re-united with your physical form. [src] releases its hold over you.</span>")
 				affecting.Paralyze(40)
 				break
 			if(affecting.health <= 10)

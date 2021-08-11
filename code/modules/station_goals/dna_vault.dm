@@ -32,8 +32,8 @@
 			.++
 
 /datum/station_goal/dna_vault/get_report()
-	return {
-	"Our long term prediction systems indicate a 99% chance of system-wide cataclysm in the near future.
+	return {"
+	Our long term prediction systems indicate a 99% chance of system-wide cataclysm in the near future.
 	We need you to construct a DNA Vault aboard your station.
 
 	The DNA Vault needs to contain samples of:

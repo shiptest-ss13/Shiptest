@@ -44,7 +44,7 @@
 			pixel_y = dir == NORTH ? 26 : (dir == SOUTH ? -26 : INSTANCE_VAR_DEFAULT)\
 		),\
 		dir_amount = 4\
-    )
+	)
 
 /obj/machinery/firealarm/Initialize(mapload, dir, building)
 	. = ..()

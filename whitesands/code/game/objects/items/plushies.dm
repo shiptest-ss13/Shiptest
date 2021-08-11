@@ -33,7 +33,7 @@
 	var/rare_among = 1 //chance for rare color variant
 
 
-    var/static/list/among_colors = list(\
+	var/static/list/among_colors = list(\
 		"red" = "#c51111",
 		"blue" = "#123ed1",
 		"green" = "#117f2d",

@@ -340,7 +340,7 @@
 	tastes = list("meat" = 1)
 
 /obj/item/reagent_containers/food/snacks/meat/steak/plain
-    foodtype = MEAT
+	foodtype = MEAT
 
 /obj/item/reagent_containers/food/snacks/meat/steak/plain/human
 	tastes = list("tender meat" = 1)
@@ -406,7 +406,7 @@
 
 
 /obj/item/reagent_containers/food/snacks/meat/rawcutlet/plain
-    foodtype = MEAT
+	foodtype = MEAT
 
 /obj/item/reagent_containers/food/snacks/meat/rawcutlet/plain/human
 	cooked_type = /obj/item/reagent_containers/food/snacks/meat/cutlet/plain/human
