@@ -11,6 +11,19 @@
 
 /obj/item/attachment/rail_light/Toggle(datum/component/attachment_holder/holder, obj/item/gun/gun, mob/user)
 	. = ..()
-
 	set_light_on(toggled)
 	update_icon()
+
+/obj/item/attachment/rail_light/Attach(datum/component/attachment_holder/holder, obj/item/gun/gun, mob/user)
+	. = ..()
+	if(!.)
+		return
+
+	set_light_flags(light_flags | LIGHT_ATTACHED)
+
+/obj/item/attachment/rail_light/Detach(datum/component/attachment_holder/holder, obj/item/gun/gun, mob/user)
+	. = ..()
+	if(!.)
+		return
+
+	set_light_flags(light_flags & ~LIGHT_ATTACHED)
