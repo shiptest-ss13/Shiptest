@@ -76,7 +76,7 @@
 
 /datum/component/attachment_holder/proc/handle_examine(obj/item/parent, mob/user, list/examine_list)
 	examine_list += "<span class='notice'>It has [max_attachments] attachment-slot\s.</span>"
-	examine_list += "<span class='notice'>\tThere are [max_attachments - length(attachments)] slot\s left."
+	examine_list += "<span class='notice'>\t[max_attachments - length(attachments)] attachment-slot\s remain."
 	for(var/obj/item/attach as anything in attachments)
 		SEND_SIGNAL(attach, COMSIG_ATTACHMENT_EXAMINE, user, examine_list)
 
