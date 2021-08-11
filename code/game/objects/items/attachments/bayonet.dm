@@ -13,10 +13,9 @@
 	reach = toggled ? reach_extended : initial(reach)
 	force = toggled ? force_extended : initial(force)
 
-	playsound(user, 'sound/weapons/batonextend.ogg')
+	playsound(gun, 'sound/weapons/batonextend.ogg')
 	user.visible_message("[user] [toggled ? "expands" : "retracts"] [user.p_their()] [src].", "You [toggled ? "expand" : "retract"] \the [src].")
 
 /obj/item/attachment/bayonet/PreAttack(obj/item/gun/gun, atom/target, mob/user, list/params)
-	if(user.CanReach(target, src, TRUE))
-		target.attackby(src, user, params)
-		return TRUE
+	if(user.CanReach(target, src, TRUE)) // Call our melee chain and if we do anything cancel our parents.
+		return melee_attack_chain(user, target, params)
