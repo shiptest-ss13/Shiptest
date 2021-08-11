@@ -54,7 +54,6 @@ GLOBAL_VAR_INIT(normal_ooc_colour, "#002eb8")
 		return
 
 	mob.log_talk(raw_msg, LOG_OOC)
-	SSredbot.send_discord_message("ooc", "**[key]:** [msg]")
 	msg = process_chat_markup(msg) //WS edit - Chat markup
 
 	var/keyname = key

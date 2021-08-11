@@ -364,6 +364,8 @@ SUBSYSTEM_DEF(shuttle)
 		//Make all cargo consoles speak up
 
 /datum/controller/subsystem/shuttle/proc/checkHostileEnvironment()
+	if(!emergency)
+		return
 	for(var/datum/d in hostileEnvironments)
 		if(!istype(d) || QDELETED(d))
 			hostileEnvironments -= d

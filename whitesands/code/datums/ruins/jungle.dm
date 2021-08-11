@@ -21,6 +21,12 @@
 	description = "A Space Ikea Brand AI Core and Necessities Crate, it seems to have missed its intended target."
 	suffix = "jungle_surface_ikea_ai.dmm"
 
+/datum/map_template/ruin/jungle/coffinpirate
+	name = "Coffin-Shaped Pirate Hut"
+	id = "coffinpirate"
+	description = "An odd coffin shaped pirate hut that the inhabitant of died in."
+	suffix = "jungle_surface_coffinpirate.dmm"
+
 ///how bad can i possibly be?
 /datum/map_template/ruin/jungle/onceler
 	name = "Thneed Factory"
