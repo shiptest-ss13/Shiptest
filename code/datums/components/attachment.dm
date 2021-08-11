@@ -67,7 +67,7 @@
 /datum/component/attachment/proc/try_toggle(obj/item/parent, obj/item/holder, mob/user)
 	SIGNAL_HANDLER
 
-	CallAsync(src, .proc/do_toggle)
+	INVOKE_ASYNC(src, .proc/do_toggle, parent, holder, user)
 
 
 /datum/component/attachment/proc/do_toggle(obj/item/parent, obj/item/holder, mob/user)

@@ -1,5 +1,3 @@
-
-
 /datum/component/attachment_holder
 	dupe_mode = COMPONENT_DUPE_UNIQUE_PASSARGS
 
@@ -55,10 +53,23 @@
 	attachments = null
 	return ..()
 
+/datum/component/attachment_holder/proc/attachments_to_list()
+	. = list()
+	for(var/obj/item/attach as anything in attachments)
+		if(attach.name in .)
+			stack_trace("two attachments with same name; this shouldn't happen and will cause failures")
+			continue
+		.[attach.name] = attach
+
 /datum/component/attachment_holder/proc/handle_ctrl_shift_click(obj/item/parent, mob/user)
 	SIGNAL_HANDLER
 
-	// TODO: ATTACHMENT RADIAL MENU
+	INVOKE_ASYNC(src, .proc/do_attachment_radial, parent, user)
+
+/datum/component/attachment_holder/proc/do_attachment_radial(obj/item/parent, mob/user)
+	var/list/attachments_as_list = attachments_to_list()
+	var/selection = show_radial_menu(user, parent, attachments_as_list)
+	SEND_SIGNAL(attachments_as_list[selection], COMSIG_ATTACHMENT_TOGGLE, parent, user)
 
 /datum/component/attachment_holder/proc/handle_examine(obj/item/parent, mob/user, list/examine_list)
 	examine_list += "<span class='notice'>It has [max_attachments] attachment-slot\s.</span>"
@@ -78,9 +89,10 @@
 
 /datum/component/attachment_holder/proc/do_attach(obj/item/attachment, mob/user)
 	var/slot = SEND_SIGNAL(attachment, COMSIG_ATTACHMENT_GET_SLOT)
-	if(slot_room && !slot_room[slot])
-		return
-	slot_room[slot]--
+	if(slot_room)
+		if(!slot_room[slot])
+			return
+		slot_room[slot]--
 	. = SEND_SIGNAL(attachment, COMSIG_ATTACHMENT_ATTACH, parent, user)
 	if(.)
 		attachments += attachment
@@ -109,11 +121,11 @@
 		return
 
 	if(item.tool_behaviour == TOOL_CROWBAR && length(attachments))
-		CallAsync(src, .proc/handle_detach, list(parent, item, user))
+		INVOKE_ASYNC(src, .proc/handle_detach, parent, item, user)
 		return TRUE
 
 	if(HAS_TRAIT(item, TRAIT_ATTACHABLE) && length(attachments) < max_attachments)
-		CallAsync(src, .proc/do_attach, list(item, user))
+		INVOKE_ASYNC(src, .proc/do_attach, item, user)
 		return TRUE
 
 	for(var/obj/item/attach as anything in attachments)
