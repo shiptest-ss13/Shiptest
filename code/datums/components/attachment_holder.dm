@@ -140,10 +140,10 @@
 		if(SEND_SIGNAL(attach, COMSIG_ATTACHMENT_ATTACK, parent, item, user))
 			return TRUE
 
-/datum/component/attachment_holder/proc/handle_item_pre_attack(obj/item/parent, atom/target, mob/user, params)
+/datum/component/attachment_holder/proc/handle_item_pre_attack(obj/item/parent, atom/target_atom, mob/user, params)
 	SIGNAL_HANDLER
 
 	for(var/obj/item/attach as anything in attachments)
-		if(SEND_SIGNAL(attach, COMSIG_ATTACHMENT_PRE_ATTACK, parent, target, user, params))
-			user.do_attack_animation(target)
+		if(SEND_SIGNAL(attach, COMSIG_ATTACHMENT_PRE_ATTACK, parent, target_atom, user, params))
+			user.do_attack_animation(target_atom)
 			return TRUE

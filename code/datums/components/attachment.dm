@@ -22,6 +22,7 @@
 	var/datum/callback/on_attach
 	var/datum/callback/on_detach
 	var/datum/callback/on_toggle
+	var/datum/callback/on_preattack
 	var/list/datum/action/actions
 
 /datum/component/attachment/Initialize(
@@ -30,6 +31,7 @@
 		datum/callback/on_attach = null,
 		datum/callback/on_detach = null,
 		datum/callback/on_toggle = null,
+		datum/callback/on_preattack = null,
 		list/signals = null,
 	)
 
@@ -41,11 +43,13 @@
 	src.on_attach = on_attach
 	src.on_detach = on_detach
 	src.on_toggle = on_toggle
+	src.on_preattack = on_preattack
 
 	ADD_TRAIT(parent, TRAIT_ATTACHABLE, src)
 	RegisterSignal(parent, COMSIG_ATTACHMENT_ATTACH, .proc/try_attach)
 	RegisterSignal(parent, COMSIG_ATTACHMENT_DETACH, .proc/try_detach)
 	RegisterSignal(parent, COMSIG_ATTACHMENT_TOGGLE, .proc/try_toggle)
+	RegisterSignal(parent, COMSIG_ATTACHMENT_PRE_ATTACK, .proc/relay_pre_attack)
 	RegisterSignal(parent, COMSIG_ATTACHMENT_UPDATE_OVERLAY, .proc/update_overlays)
 
 	for(var/signal in signals)
@@ -67,7 +71,7 @@
 
 /datum/component/attachment/proc/do_toggle(obj/item/parent, obj/item/holder, mob/user)
 	if(on_toggle)
-		on_toggle.Invoke(src, holder, user)
+		on_toggle.Invoke( holder, user)
 		return TRUE
 
 	parent.attack_self(user)
@@ -82,7 +86,7 @@
 	if(!parent.Adjacent(user) || (length(valid_parent_types) && (holder.type in valid_parent_types)))
 		return FALSE
 
-	if(on_attach && !on_attach.Invoke(src, holder, user))
+	if(on_attach && !on_attach.Invoke(holder, user))
 		return FALSE
 
 	parent.forceMove(holder)
@@ -94,7 +98,7 @@
 	if(!parent.Adjacent(user) || (valid_parent_types && (holder.type in valid_parent_types)))
 		return FALSE
 
-	if(on_attach && !on_detach.Invoke(src, holder, user))
+	if(on_attach && !on_detach.Invoke(holder, user))
 		return FALSE
 
 	if(user.can_put_in_hand(parent))
@@ -103,3 +107,9 @@
 
 	parent.forceMove(holder.drop_location())
 	return TRUE
+
+/datum/component/attachment/proc/relay_pre_attack(obj/item/parent, obj/item/gun, atom/target_atom, mob/user, params)
+	SIGNAL_HANDLER_DOES_SLEEP
+
+	if(on_preattack)
+		return on_preattack.Invoke(gun, target_atom, user, params)

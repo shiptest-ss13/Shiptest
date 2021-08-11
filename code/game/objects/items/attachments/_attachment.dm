@@ -5,7 +5,7 @@
 
 	var/slot = ATTACHMENT_SLOT_RAIL
 	var/list/valid_parents = list()
-	var/list/signals = null
+	var/list/signals = list()
 
 	var/toggled = FALSE
 
@@ -20,16 +20,17 @@
 		CALLBACK(src, .proc/Attach), \
 		CALLBACK(src, .proc/Detach), \
 		CALLBACK(src, .proc/Toggle), \
+		CALLBACK(src, .proc/PreAttack), \
 		signals)
 
-/obj/item/attachment/proc/Toggle(datum/component/attachment_holder/holder, obj/item/gun/gun, mob/user)
+/obj/item/attachment/proc/Toggle(obj/item/gun/gun, mob/user)
 	SHOULD_CALL_PARENT(TRUE)
 
 	toggled = !toggled
 	icon_state = "[initial(icon_state)][toggled ? "-on" : ""]"
 
 /// Checks if a user should be allowed to attach this attachment to the given parent
-/obj/item/attachment/proc/Attach(datum/component/attachment_holder/holder, obj/item/gun/gun, mob/user)
+/obj/item/attachment/proc/Attach(obj/item/gun/gun, mob/user)
 	SHOULD_CALL_PARENT(TRUE)
 
 	if(toggled)
@@ -38,9 +39,12 @@
 
 	return TRUE
 
-/obj/item/attachment/proc/Detach(datum/component/attachment_holder/holder, obj/item/gun/gun, mob/user)
+/obj/item/attachment/proc/Detach(obj/item/gun/gun, mob/user)
 	SHOULD_CALL_PARENT(TRUE)
 
 	if(toggled)
-		Toggle(holder, gun, user)
+		Toggle(gun, user)
 	return TRUE
+
+/obj/item/attachment/proc/PreAttack(obj/item/gun/gun, atom/target, mob/user, list/params)
+	return FALSE
