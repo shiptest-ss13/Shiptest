@@ -4,7 +4,7 @@
 	icon_state = "laser_sight"
 	force = 20
 	signals = list(
-		COMSIG_ATTACHMENT_PRE_ATTACK = .proc/handle_attack
+		COMSIG_ATTACHMENT_PRE_ATTACK = /obj/item/attachment/bayonet/proc/handle_attack
 	)
 
 	var/range = 1
