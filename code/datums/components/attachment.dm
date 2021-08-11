@@ -37,7 +37,6 @@
 		return COMPONENT_INCOMPATIBLE
 
 	src.slot = slot
-	src.attachment_overlay = attachment_overlay
 	src.valid_parent_types = valid_parent_types
 	src.on_attach = on_attach
 	src.on_detach = on_detach
