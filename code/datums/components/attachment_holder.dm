@@ -69,7 +69,10 @@
 /datum/component/attachment_holder/proc/do_attachment_radial(obj/item/parent, mob/user)
 	var/list/attachments_as_list = attachments_to_list()
 	var/selection = show_radial_menu(user, parent, attachments_as_list)
-	SEND_SIGNAL(attachments_as_list[selection], COMSIG_ATTACHMENT_TOGGLE, parent, user)
+	var/obj/item/attach = attachments_as_list[selection]
+	if(!attach)
+		CRASH("Invalid attachment reference")
+	SEND_SIGNAL(attach, COMSIG_ATTACHMENT_TOGGLE, parent, user)
 
 /datum/component/attachment_holder/proc/handle_examine(obj/item/parent, mob/user, list/examine_list)
 	examine_list += "<span class='notice'>It has [max_attachments] attachment-slot\s.</span>"
