@@ -588,7 +588,7 @@ GENE SCANNER
 
 			for(var/id in air_contents.get_gases())
 				var/gas_concentration = air_contents.get_moles(id)/total_moles
-				render_list += "<span class='notice'>[GLOB.gas_data.names[id]]]: [round(gas_concentration*100, 0.01)] % ([round(air_contents.get_moles(id), 0.01)] mol)</span>"  //WS Edit -- Atmos Analyzer Reformat (Issue #419)
+				render_list += "<span class='notice'>[GLOB.gas_data.names[id]]: [round(gas_concentration*100, 0.01)] % ([round(air_contents.get_moles(id), 0.01)] mol)</span>"  //WS Edit -- Atmos Analyzer Reformat (Issue #419)
 
 		else
 			render_list += airs.len > 1 ? "<span class='notice'>This node is empty!</span>" : "<span class='notice'>[target] is empty!</span>"
