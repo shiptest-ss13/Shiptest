@@ -10,6 +10,15 @@
 	if(message)
 		say(message)
 
+///The say verb, but with typing indicator shown
+/mob/verb/say_with_indicator()
+	set name = "Say_indicator"
+	set category = "IC"
+	set hidden = TRUE
+	display_typing_indicator()
+	say_verb(input(usr, "", "say \"text\"") as text|null)
+	clear_typing_indicator() // clear it
+
 ///Whisper verb
 /mob/verb/whisper_verb(message as text)
 	set name = "Whisper"
@@ -36,6 +45,15 @@
 	message = process_chat_markup(message) //WS edit - Chat markup
 
 	usr.emote("me",1,message,TRUE)
+
+///The me/emote verb, but with typing indicator shown
+/mob/verb/me_with_indicator()
+	set name = "Me_indicator"
+	set category = "IC"
+	set hidden = TRUE
+	display_typing_indicator()
+	me_verb(input(usr, "", "me \"text\"") as text|null)
+	clear_typing_indicator() // clear it
 
 ///Speak as a dead person (ghost etc)
 /mob/proc/say_dead(var/message)

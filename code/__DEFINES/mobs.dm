@@ -334,6 +334,9 @@
 
 #define HUMAN_FIRE_STACK_ICON_NUM	3
 
+/// How long before the typing indicator above someone's head will last with the say dialogue open before it vanishes
+#define TYPING_INDICATOR_TIMEOUT 5 MINUTES
+
 #define GRAB_PIXEL_SHIFT_PASSIVE 6
 #define GRAB_PIXEL_SHIFT_AGGRESSIVE 12
 #define GRAB_PIXEL_SHIFT_NECK 16
