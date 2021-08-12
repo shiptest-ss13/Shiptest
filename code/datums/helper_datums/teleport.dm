@@ -101,7 +101,7 @@
 		if(!zlevels)
 			potential_targets += possible_ship.shuttle
 			continue
-		if(possible_ship.z in zlevels || possible_ship.get_virtual_z_level() in zlevels)
+		if((possible_ship.z in zlevels) || (possible_ship.get_virtual_z_level() in zlevels))
 			potential_targets += possible_ship.shuttle.shuttle_areas
 
 	if(!length(potential_targets))
