@@ -268,6 +268,7 @@
 
 /obj/machinery/computer/piratepad_control/ui_interact(mob/user, datum/tgui/ui)
 	ui = SStgui.try_update_ui(user, src, ui)
+	on_interact_click(user, ui)
 	if(!ui)
 		ui = new(user, src, "CargoHoldTerminal", name)
 		ui.open()
@@ -284,6 +285,7 @@
 	. = ..()
 	if(.)
 		return
+	play_click_sound("keystroke")
 	if(!pad)
 		return
 

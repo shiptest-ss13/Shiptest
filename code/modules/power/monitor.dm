@@ -84,6 +84,7 @@
 
 /obj/machinery/computer/monitor/ui_interact(mob/user, datum/tgui/ui)
 	ui = SStgui.try_update_ui(user, src, ui)
+	on_interact_click(user, ui)
 	if(!ui)
 		ui = new(user, src, "PowerMonitor", name)
 		ui.open()
