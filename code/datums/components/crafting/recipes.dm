@@ -770,8 +770,8 @@
 	name = "Collosal Rib"
 	always_availible = FALSE
 	reqs = list(
-            /obj/item/stack/sheet/bone = 10,
-            /datum/reagent/fuel/oil = 5)
+			/obj/item/stack/sheet/bone = 10,
+			/datum/reagent/fuel/oil = 5)
 	result = /obj/structure/statue/bone/rib
 	subcategory = CAT_PRIMAL
 
@@ -779,8 +779,8 @@
 	name = "Skull Carving"
 	always_availible = FALSE
 	reqs = list(
-            /obj/item/stack/sheet/bone = 6,
-            /datum/reagent/fuel/oil = 5)
+			/obj/item/stack/sheet/bone = 6,
+			/datum/reagent/fuel/oil = 5)
 	result = /obj/structure/statue/bone/skull
 	category = CAT_PRIMAL
 
@@ -788,8 +788,8 @@
 	name = "Cracked Skull Carving"
 	always_availible = FALSE
 	reqs = list(
-            /obj/item/stack/sheet/bone = 3,
-            /datum/reagent/fuel/oil = 5)
+			/obj/item/stack/sheet/bone = 3,
+			/datum/reagent/fuel/oil = 5)
 	result = /obj/structure/statue/bone/skull/half
 	category = CAT_PRIMAL
 
@@ -797,25 +797,25 @@
 	name = "Serrated Bone Shovel"
 	always_availible = FALSE
 	reqs = list(
-            /obj/item/stack/sheet/bone = 4,
-            /datum/reagent/fuel/oil = 5,
-            /obj/item/shovel/spade = 1)
+			/obj/item/stack/sheet/bone = 4,
+			/datum/reagent/fuel/oil = 5,
+			/obj/item/shovel/spade = 1)
 	result = /obj/item/shovel/serrated
 	category = CAT_PRIMAL
 
 /datum/crafting_recipe/lasso
 	name = "Bone Lasso"
 	reqs = list(
-            /obj/item/stack/sheet/bone = 1,
-            /obj/item/stack/sheet/sinew = 5)
+			/obj/item/stack/sheet/bone = 1,
+			/obj/item/stack/sheet/sinew = 5)
 	result = /obj/item/key/lasso
 	category = CAT_PRIMAL
 
 /datum/crafting_recipe/gripperoffbrand
 	name = "Improvised Gripper Gloves"
 	reqs = list(
-            /obj/item/clothing/gloves/fingerless = 1,
-            /obj/item/stack/sticky_tape = 1)
+			/obj/item/clothing/gloves/fingerless = 1,
+			/obj/item/stack/sticky_tape = 1)
 	result = /obj/item/clothing/gloves/tackler/offbrand
 	category = CAT_CLOTHING
 
@@ -823,8 +823,8 @@
 /datum/crafting_recipe/boh
 	name = "Bag of Holding"
 	reqs = list(
-            /obj/item/bag_of_holding_inert = 1,
-            /obj/item/assembly/signaler/anomaly/bluespace = 1)
+			/obj/item/bag_of_holding_inert = 1,
+			/obj/item/assembly/signaler/anomaly/bluespace = 1)
 	result = /obj/item/storage/backpack/holding
 	category = CAT_CLOTHING
 */
@@ -832,8 +832,8 @@
 /datum/crafting_recipe/ipickaxe
 	name = "Improvised Pickaxe"
 	reqs = list(
-           /obj/item/crowbar = 1,
-           /obj/item/kitchen/knife = 1,
-           /obj/item/stack/sticky_tape = 1)
+		   /obj/item/crowbar = 1,
+		   /obj/item/kitchen/knife = 1,
+		   /obj/item/stack/sticky_tape = 1)
 	result = /obj/item/pickaxe/improvised
 	category = CAT_MISC

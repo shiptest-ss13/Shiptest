@@ -208,7 +208,7 @@
 	alt_covers_chest = TRUE
 
 /*
-  WS edit - Better security jumpsuit sprites
+	WS edit - Better security jumpsuit sprites
 */
 
 /*

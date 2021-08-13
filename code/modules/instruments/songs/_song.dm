@@ -62,11 +62,11 @@
 
 	/////////////////// Playing variables ////////////////
 	/**
-	  * Build by compile_chords()
-	  * Must be rebuilt on instrument switch.
-	  * Compilation happens when we start playing and is cleared after we finish playing.
-	  * Format: list of chord lists, with chordlists having (key1, key2, key3, tempodiv)
-	  */
+	* Build by compile_chords()
+	* Must be rebuilt on instrument switch.
+	* Compilation happens when we start playing and is cleared after we finish playing.
+	* Format: list of chord lists, with chordlists having (key1, key2, key3, tempodiv)
+	*/
 	var/list/compiled_chords
 	/// Current section of a long chord we're on, so we don't need to make a billion chords, one for every unit ticklag.
 	var/elapsed_delay

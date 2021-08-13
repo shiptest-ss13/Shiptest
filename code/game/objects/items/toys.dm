@@ -281,9 +281,11 @@
 		return
 	playsound(user, 'sound/weapons/gun/revolver/shot.ogg', 100, TRUE)
 	src.bullets--
-	user.visible_message("<span class='danger'>[user] fires [src] at [target]!</span>", \
-						"<span class='danger'>You fire [src] at [target]!</span>", \
-						 "<span class='hear'>You hear a gunshot!</span>")
+	user.visible_message(
+		"<span class='danger'>[user] fires [src] at [target]!</span>",
+		"<span class='danger'>You fire [src] at [target]!</span>",
+		"<span class='hear'>You hear a gunshot!</span>"
+	)
 
 /obj/item/toy/ammo/gun
 	name = "capgun ammo"
