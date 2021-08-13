@@ -67,12 +67,12 @@ cases = [
     exactly(22, "world << uses", r'world[ \t]*<<'),
     exactly(0, "world.log << uses", r'world.log[ \t]*<<'),
 
-    exactly(945, "<< uses", r'(?<!<)<<(?!<)'),
+    exactly(946, "<< uses", r'(?<!<)<<(?!<)'),
     exactly(0, "incorrect indentations", r'^(?:  +)(?!\*)'),
     exactly(0, "superflous whitespace", r'[ \t]+$'),
     exactly(36, "mixed indentation", r'^( +\t+|\t+ +)'),
 
-    exactly(2242, "indentions inside #defines", r'^(\s*)#define (\w*)( {2,}| ?\t+)(?!(\/\/|\/\*))')
+    exactly(2243, "indentions inside #defines", r'^(\s*)#define (\w*)( {2,}| ?\t+)(?!(\/\/|\/\*))')
 ]
 # With the potential exception of << if you increase any
 # of these numbers you're probably doing it wrong
