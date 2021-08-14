@@ -24,7 +24,7 @@
 /datum/asset_cache_item/New(name, file)
 	if (!isfile(file))
 		file = fcopy_rsc(file)
-		
+
 	hash = md5asfile(file) //icons sent to the rsc sometimes md5 incorrectly
 	if (!hash)
 		CRASH("invalid asset sent to asset cache")
