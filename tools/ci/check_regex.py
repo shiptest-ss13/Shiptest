@@ -203,7 +203,7 @@ if __name__ == "__main__":
             colour = Fore.RED
 
         output_write("\n", to_stdout=False)
-        output_write((f"%4s:%7i |%7i | %s")
+        output_write("%4s:%7i |%7i | %s"
             % (
                 "OK" if match else ">>>>",
                 count,
@@ -228,9 +228,9 @@ if __name__ == "__main__":
 
     output_write("\n"
         + (
-            f"There are mismatches present, please address those"
+            "There are mismatches present, please address those"
             if failure else
-            f"All OK!"
+            "All OK!"
         ),
         colour= Fore.RED if failure else Fore.GREEN,
         to_file= False
