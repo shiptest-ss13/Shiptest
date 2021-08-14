@@ -289,7 +289,6 @@
 	floor_tile = /obj/item/stack/tile/carpet/royalblue
 	smoothing_groups = list(SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_CARPET_ROYAL_BLUE)
 	canSmoothWith = list(SMOOTH_GROUP_CARPET_ROYAL_BLUE)
-	
 /turf/open/floor/carpet/executive
 	name = "executive carpet"
 	icon = 'icons/turf/floors/carpet_executive.dmi'
