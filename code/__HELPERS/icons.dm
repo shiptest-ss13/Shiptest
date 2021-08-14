@@ -1154,7 +1154,7 @@ GLOBAL_DATUM_INIT(dummySave, /savefile, new("tmp/dummySave.sav")) //Cache of ico
 				return SSassets.transport.get_asset_url(name)
 			return "<img class='icon icon-misc' src='[SSassets.transport.get_asset_url(name)]'>"
 		var/atom/A = thing
-		
+
 		I = A.icon
 		if (isnull(icon_state))
 			icon_state = A.icon_state
@@ -1162,10 +1162,10 @@ GLOBAL_DATUM_INIT(dummySave, /savefile, new("tmp/dummySave.sav")) //Cache of ico
 				icon_state = initial(A.icon_state)
 				if (isnull(dir))
 					dir = initial(A.dir)
-		
+
 		if (isnull(dir))
-			dir = A.dir		
-		
+			dir = A.dir
+
 		if (ishuman(thing)) // Shitty workaround for a BYOND issue.
 			var/icon/temp = I
 			I = icon()
