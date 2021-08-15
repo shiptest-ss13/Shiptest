@@ -85,8 +85,8 @@
 /obj/item/gun/ballistic/automatic/aks74u
 	name = "AKS-74U"
 	desc = {"
-	 A pre-FTL era carbine, the \"curio\" status of the weapon and its relative cheap cost to manufacture make it
-	 perfect for colonists on a budget looking to license firearms for local manufacture.
+	A pre-FTL era carbine, the \"curio\" status of the weapon and its relative cheap cost to manufacture make it
+	perfect for colonists on a budget looking to license firearms for local manufacture.
 	"}
 	icon = 'whitesands/icons/obj/guns/projectile.dmi'
 	icon_state = "aks74u"

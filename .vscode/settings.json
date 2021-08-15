@@ -1,4 +1,14 @@
 {
+	"files.eol": "\n",
+	"editor.autoIndent": "keep",
+	"editor.insertSpaces": false,
+	"editor.detectIndentation": false,
+	"editor.renderIndentGuides": true,
+	"editor.wrappingIndent": "indent",
+	"editor.renderWhitespace": "all",
+	"editor.trimAutoWhitespace": true,
+	"editor.tabSize": 4,
+
 	"eslint.nodePath": "tgui/.yarn/sdks",
 	"eslint.workingDirectories": [
 		"./tgui"
@@ -11,6 +21,5 @@
 	"workbench.editorAssociations": {
 		"*.dmi": "imagePreview.previewEditor"
 	},
-	"files.eol": "\n",
 	"gitlens.advanced.blame.customArguments": ["-w"]
 }

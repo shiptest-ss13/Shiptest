@@ -241,9 +241,9 @@ structure_check() searches for nearby cultist structures required for the invoca
 	if(brutedamage || burndamage)
 		convertee.adjustBruteLoss(-(brutedamage * 0.75))
 		convertee.adjustFireLoss(-(burndamage * 0.75))
-	convertee.visible_message("<span class='warning'>[convertee] writhes in pain \
-	[brutedamage || burndamage ? "even as [convertee.p_their()] wounds heal and close" : "as the markings below [convertee.p_them()] glow a bloody red"]!</span>", \
- 	"<span class='cultlarge'><i>AAAAAAAAAAAAAA-</i></span>")
+	convertee.visible_message(
+		"<span class='warning'>[convertee] writhes in pain [brutedamage || burndamage ? "even as [convertee.p_their()] wounds heal and close" : "as the markings below [convertee.p_them()] glow a bloody red"]!</span>", // Hello there buddy! Come here often? I hope you were wondering wtf this string was
+		"<span class='cultlarge'><i>AAAAAAAAAAAAAA-</i></span>")
 	SSticker.mode.add_cultist(convertee.mind, 1)
 	new /obj/item/melee/cultblade/dagger(get_turf(src))
 	convertee.mind.special_role = ROLE_CULTIST
@@ -578,8 +578,9 @@ structure_check() searches for nearby cultist structures required for the invoca
 			return
 	SEND_SOUND(mob_to_revive, 'sound/ambience/antag/bloodcult.ogg')
 	to_chat(mob_to_revive, "<span class='cultlarge'>\"PASNAR SAVRAE YAM'TOTH. Arise.\"</span>")
-	mob_to_revive.visible_message("<span class='warning'>[mob_to_revive] draws in a huge breath, red light shining from [mob_to_revive.p_their()] eyes.</span>", \
-								  "<span class='cultlarge'>You awaken suddenly from the void. You're alive!</span>")
+	mob_to_revive.visible_message(
+		"<span class='warning'>[mob_to_revive] draws in a huge breath, red light shining from [mob_to_revive.p_their()] eyes.</span>", \
+		"<span class='cultlarge'>You awaken suddenly from the void. You're alive!</span>")
 	rune_in_use = FALSE
 
 /obj/effect/rune/raise_dead/proc/validness_checks(mob/living/target_mob, mob/living/user)
@@ -641,8 +642,9 @@ structure_check() searches for nearby cultist structures required for the invoca
 	if(density)
 		spread_density()
 	var/carbon_user = iscarbon(user)
-	user.visible_message("<span class='warning'>[user] [carbon_user ? "places [user.p_their()] hands on":"stares intently at"] [src], and [density ? "the air above it begins to shimmer" : "the shimmer above it fades"].</span>", \
-						 "<span class='cult italic'>You channel [carbon_user ? "your life ":""]energy into [src], [density ? "temporarily preventing" : "allowing"] passage above it.</span>")
+	user.visible_message(
+		"<span class='warning'>[user] [carbon_user ? "places [user.p_their()] hands on":"stares intently at"] [src], and [density ? "the air above it begins to shimmer" : "the shimmer above it fades"].</span>", \
+		"<span class='cult italic'>You channel [carbon_user ? "your life ":""]energy into [src], [density ? "temporarily preventing" : "allowing"] passage above it.</span>")
 	if(carbon_user)
 		var/mob/living/carbon/C = user
 		C.apply_damage(2, BRUTE, pick(BODY_ZONE_L_ARM, BODY_ZONE_R_ARM))
@@ -728,8 +730,9 @@ structure_check() searches for nearby cultist structures required for the invoca
 		fail_invoke()
 		log_game("Summon Cultist rune failed - target in away mission")
 		return
-	cultist_to_summon.visible_message("<span class='warning'>[cultist_to_summon] suddenly disappears in a flash of red light!</span>", \
-									  "<span class='cult italic'><b>Overwhelming vertigo consumes you as you are hurled through the air!</b></span>")
+	cultist_to_summon.visible_message(
+		"<span class='warning'>[cultist_to_summon] suddenly disappears in a flash of red light!</span>", \
+		"<span class='cult italic'><b>Overwhelming vertigo consumes you as you are hurled through the air!</b></span>")
 	..()
 	visible_message("<span class='warning'>A foggy shape materializes atop [src] and solidifes into [cultist_to_summon]!</span>")
 	cultist_to_summon.forceMove(get_turf(src))
@@ -874,16 +877,18 @@ structure_check() searches for nearby cultist structures required for the invoca
 		qdel(N)
 		ghosts--
 		if(new_human)
-			new_human.visible_message("<span class='warning'>[new_human] suddenly dissolves into bones and ashes.</span>", \
-									  "<span class='cultlarge'>Your link to the world fades. Your form breaks apart.</span>")
+			new_human.visible_message(
+				"<span class='warning'>[new_human] suddenly dissolves into bones and ashes.</span>", \
+				"<span class='cultlarge'>Your link to the world fades. Your form breaks apart.</span>")
 			for(var/obj/I in new_human)
 				new_human.dropItemToGround(I, TRUE)
 			new_human.dust()
 	else if(choice == "Ascend as a Dark Spirit")
 		affecting = user
 		affecting.add_atom_colour(RUNE_COLOR_DARKRED, ADMIN_COLOUR_PRIORITY)
-		affecting.visible_message("<span class='warning'>[affecting] freezes statue-still, glowing an unearthly red.</span>", \
-						 "<span class='cult'>You see what lies beyond. All is revealed. In this form you find that your voice booms louder and you can mark targets for the entire cult</span>")
+		affecting.visible_message(
+			"<span class='warning'>[affecting] freezes statue-still, glowing an unearthly red.</span>", \
+			"<span class='cult'>You see what lies beyond. All is revealed. In this form you find that your voice booms louder and you can mark targets for the entire cult</span>")
 		var/mob/dead/observer/G = affecting.ghostize(1)
 		var/datum/action/innate/cult/comm/spirit/CM = new
 		var/datum/action/innate/cult/ghostmark/GM = new
@@ -897,8 +902,9 @@ structure_check() searches for nearby cultist structures required for the invoca
 				Beam(affecting, icon_state="drainbeam", time=2)
 				affecting.forceMove(get_turf(src)) //NO ESCAPE :^)
 			if(affecting.key)
-				affecting.visible_message("<span class='warning'>[affecting] slowly relaxes, the glow around [affecting.p_them()] dimming.</span>", \
-									 "<span class='danger'>You are re-united with your physical form. [src] releases its hold over you.</span>")
+				affecting.visible_message(
+					"<span class='warning'>[affecting] slowly relaxes, the glow around [affecting.p_them()] dimming.</span>", \
+					"<span class='danger'>You are re-united with your physical form. [src] releases its hold over you.</span>")
 				affecting.Paralyze(40)
 				break
 			if(affecting.health <= 10)

@@ -633,7 +633,7 @@
 // BROKEN BONE PROCS //
 /obj/item/bodypart/proc/can_break_bone()
 	// Do they have bones, are the bones not broken, is the limb not robotic? If yes to all, return 1
-    return (bone_status && bone_status != BONE_FLAG_BROKEN && status != BODYPART_ROBOTIC)
+	return (bone_status && bone_status != BONE_FLAG_BROKEN && status != BODYPART_ROBOTIC)
 
 /obj/item/bodypart/proc/break_bone()
 	if(!can_break_bone())

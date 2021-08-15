@@ -178,11 +178,11 @@
 		return
 	var/static/items_inside = list(
 		/obj/item/healthanalyzer = 1,
-    	/obj/item/storage/pill_bottle/charcoal/less = 1,
+		/obj/item/storage/pill_bottle/charcoal/less = 1,
 		/obj/item/reagent_containers/syringe/thializid = 3,
 		/obj/item/storage/pill_bottle/potassiodide = 1,
 		/obj/item/reagent_containers/hypospray/medipen/penacid = 1,
-		)
+	)
 	generate_items_inside(items_inside,src)
 
 /obj/item/storage/firstaid/o2

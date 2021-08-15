@@ -28,7 +28,7 @@
 				SSdiscord.notify_members -= "[stored_id]" // The list uses strings because BYOND cannot handle a 17 digit integer
 				to_chat(src, "<span class='notice'>You will no longer be notified when the server restarts</span>")
 				return // This is necassary so it doesnt get added again, as it relies on the for loop being unsuccessful to tell us if they are in the list or not
-		
+
 		// If we got here, they arent in the list. Chuck 'em in!
 		to_chat(src, "<span class='notice'>You will now be notified when the server restarts</span>")
 		SSdiscord.notify_members += "[stored_id]" // The list uses strings because BYOND cannot handle a 17 digit integer

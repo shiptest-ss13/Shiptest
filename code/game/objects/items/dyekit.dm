@@ -38,4 +38,3 @@
 		return
 	playsound(src, 'sound/effects/spray.ogg', 5, TRUE, 5)
 	human_target.update_hair()
-	

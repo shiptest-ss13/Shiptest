@@ -106,13 +106,12 @@
 	. = LUM_FALLOFF(C, pixel_turf);              \
 	. *= light_power;                            \
 	var/OLD = effect_str[C];                     \
-	                                             \
 	C.update_lumcount                            \
 	(                                            \
 		(. * lum_r) - (OLD * applied_lum_r),     \
 		(. * lum_g) - (OLD * applied_lum_g),     \
 		(. * lum_b) - (OLD * applied_lum_b)      \
-	);                                           \
+	);
 
 #define REMOVE_CORNER(C)                         \
 	. = -effect_str[C];                          \

@@ -568,12 +568,12 @@
 	..()
 
 /datum/reagent/consumable/honey/expose_mob(mob/living/M, method=TOUCH, reac_volume)
-  if(iscarbon(M) && (method in list(TOUCH, VAPOR, PATCH)))
-    var/mob/living/carbon/C = M
-    for(var/s in C.surgeries)
-      var/datum/surgery/S = s
-      S.speed_modifier = max(0.6, S.speed_modifier)
-  ..()
+	if(iscarbon(M) && (method in list(TOUCH, VAPOR, PATCH)))
+		var/mob/living/carbon/C = M
+		for(var/s in C.surgeries)
+			var/datum/surgery/S = s
+			S.speed_modifier = max(0.6, S.speed_modifier)
+	..()
 
 /datum/reagent/consumable/mayonnaise
 	name = "Mayonnaise"
@@ -724,7 +724,7 @@
 		var/mob/living/carbon/C = M
 		var/obj/item/organ/stomach/ethereal/stomach = C.getorganslot(ORGAN_SLOT_STOMACH)
 		if(istype(stomach))
-			stomach.adjust_charge(reac_volume * REM * ETHEREAL_CHARGE_SCALING_MULTIPLIER)      //WS Edit -- Ethereal Charge Scaling
+			stomach.adjust_charge(reac_volume * REM * ETHEREAL_CHARGE_SCALING_MULTIPLIER)	  //WS Edit -- Ethereal Charge Scaling
 
 /datum/reagent/consumable/liquidelectricity/on_mob_life(mob/living/carbon/M)
 	if(prob(25) && !isethereal(M))

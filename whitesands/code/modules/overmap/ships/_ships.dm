@@ -1,6 +1,6 @@
 /**
   * # Overmap ships
-  * 
+  *
   * Basically, any overmap object that is capable of moving by itself.
   *
   */
