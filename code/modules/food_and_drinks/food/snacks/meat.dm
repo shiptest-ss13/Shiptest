@@ -85,6 +85,7 @@
 /obj/item/reagent_containers/food/snacks/meat/slab/human/mutant/lizard
 	icon_state = "lizardmeat"
 	desc = "Delicious dino damage."
+	cooked_type = /obj/item/reagent_containers/food/snacks/meat/steak/plain/human/lizard
 	filling_color = "#6B8E23"
 	tastes = list("meat" = 4, "scales" = 1)
 	foodtype = MEAT | RAW
@@ -155,11 +156,16 @@
 /obj/item/reagent_containers/food/snacks/meat/slab/synthmeat
 	name = "synthmeat"
 	desc = "A synthetic slab of meat."
+	icon_state = "meat_old"
+	cooked_type = /obj/item/reagent_containers/food/snacks/meat/steak/synth
 	foodtype = RAW | MEAT //hurr durr chemicals we're harmed in the production of this meat thus its non-vegan.
 
 /obj/item/reagent_containers/food/snacks/meat/slab/meatproduct
 	name = "meat product"
+	icon_state = "meatproduct"
 	desc = "A slab of station reclaimed and chemically processed meat product."
+	cooked_type = /obj/item/reagent_containers/food/snacks/meat/steak/meatproduct
+	tastes = list("meat flavoring" = 2, "modified starches" = 2, "natural & artificial dyes" = 1, "butyric acid" = 1)
 	foodtype = RAW | MEAT
 
 /obj/item/reagent_containers/food/snacks/meat/slab/monkey
@@ -290,6 +296,7 @@
 
 /obj/item/reagent_containers/food/snacks/meat/slab/penguin
 	name = "penguin meat"
+	icon_state = "birdmeat"
 	desc = "A slab of penguin meat."
 	list_reagents = list(/datum/reagent/consumable/nutriment = 2, /datum/reagent/consumable/cooking_oil = 3)
 	cooked_type = /obj/item/reagent_containers/food/snacks/meat/steak/penguin
@@ -320,6 +327,7 @@
 
 /obj/item/reagent_containers/food/snacks/meat/slab/chicken
 	name = "chicken meat"
+	icon_state = "birdmeat"
 	desc = "A slab of raw chicken. Remember to wash your hands!"
 	cooked_type = /obj/item/reagent_containers/food/snacks/meat/steak/chicken
 	slice_path = /obj/item/reagent_containers/food/snacks/meat/rawcutlet/chicken
@@ -340,7 +348,7 @@
 	tastes = list("meat" = 1)
 
 /obj/item/reagent_containers/food/snacks/meat/steak/plain
-    foodtype = MEAT
+	foodtype = MEAT
 
 /obj/item/reagent_containers/food/snacks/meat/steak/plain/human
 	tastes = list("tender meat" = 1)
@@ -378,11 +386,30 @@
 
 /obj/item/reagent_containers/food/snacks/meat/steak/penguin
 	name = "penguin steak"
+	icon_state = "birdsteak"
 	tastes = list("beef" = 1, "cod fish" = 1)
 
 /obj/item/reagent_containers/food/snacks/meat/steak/chicken
 	name = "chicken steak" //Can you have chicken steaks? Maybe this should be renamed once it gets new sprites.
+	icon_state = "birdsteak"
 	tastes = list("chicken" = 1)
+
+/obj/item/reagent_containers/food/snacks/meat/steak/plain/human/lizard
+	name = "lizard steak"
+	icon_state = "birdsteak"
+	tastes = list("juicy chicken" = 3, "scales" = 1)
+	foodtype = MEAT
+
+/obj/item/reagent_containers/food/snacks/meat/steak/meatproduct
+	name = "thermally processed meat product"
+	icon_state = "meatproductsteak"
+	tastes = list("enhanced char" = 2, "suspicious tenderness" = 2, "natural & artificial dyes" = 2, "emulsifying agents" = 1)
+
+/obj/item/reagent_containers/food/snacks/meat/steak/synth
+	name = "synthsteak"
+	desc = "A synthetic meat steak. It doesn't look quite right, now does it?"
+	icon_state = "meatsteak_old"
+	tastes = list("meat" = 4, "cryoxandone" = 1)
 
 //////////////////////////////// MEAT CUTLETS ///////////////////////////////////////////////////////
 
@@ -406,7 +433,7 @@
 
 
 /obj/item/reagent_containers/food/snacks/meat/rawcutlet/plain
-    foodtype = MEAT
+	foodtype = MEAT
 
 /obj/item/reagent_containers/food/snacks/meat/rawcutlet/plain/human
 	cooked_type = /obj/item/reagent_containers/food/snacks/meat/cutlet/plain/human

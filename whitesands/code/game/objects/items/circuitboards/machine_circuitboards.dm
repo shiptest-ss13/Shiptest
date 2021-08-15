@@ -98,6 +98,8 @@
 /obj/item/circuitboard/machine/shuttle/smes
 	name = "Electric Engine Precharger (Machine Board)"
 	build_path = /obj/machinery/power/smes/shuttle
-	req_components = list(/obj/item/stack/cable_coil = 5,
-	 /obj/item/stock_parts/cell = 3,
-	  /obj/item/stock_parts/capacitor = 1)
+	req_components = list(
+		/obj/item/stack/cable_coil = 5,
+		/obj/item/stock_parts/cell = 3,
+		/obj/item/stock_parts/capacitor = 1
+	)

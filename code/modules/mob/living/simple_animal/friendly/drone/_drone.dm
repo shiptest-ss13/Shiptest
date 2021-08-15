@@ -98,15 +98,15 @@
 	/// Default [/mob/living/simple_animal/drone/var/head] item
 	var/obj/item/default_hatmask
 	/**
-	  * icon_state of drone from icons/mobs/drone.dmi
-	  *
-	  * Possible states are:
-	  *
-	  * - [MAINTDRONE]
-	  * - [REPAIRDRONE]
-	  * - [SCOUTDRONE]
-	  * - [CLOCKDRONE]
-	  */
+	* icon_state of drone from icons/mobs/drone.dmi
+	*
+	* Possible states are:
+	*
+	* - [MAINTDRONE]
+	* - [REPAIRDRONE]
+	* - [SCOUTDRONE]
+	* - [CLOCKDRONE]
+	*/
 	var/visualAppearance = MAINTDRONE
 	/// Hacked state, see [/mob/living/simple_animal/drone/proc/update_drone_hack]
 	var/hacked = FALSE

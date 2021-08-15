@@ -16,7 +16,7 @@ GLOBAL_LIST_INIT(skill_types, subtypesof(/datum/skill))
 /datum/skill/proc/get_skill_modifier(modifier, level)
 	return modifiers[modifier][level] //Levels range from 1 (None) to 7 (Legendary)
 /**
-  * new: sets up some lists. 
+  * new: sets up some lists.
   *
   *Can't happen in the datum's definition because these lists are not constant expressions
   */
@@ -28,7 +28,7 @@ GLOBAL_LIST_INIT(skill_types, subtypesof(/datum/skill))
 	"<span class='nicegreen'>I'm getting much better at [name]!</span>",
 	"<span class='nicegreen'>I feel like I've become quite proficient at [name]!</span>",
 	"<span class='nicegreen'>After lots of practice, I've begun to truly understand the intricies \
-	 and surprising depth behind [name]. I now condsider myself a master [title].</span>",
+	and surprising depth behind [name]. I now condsider myself a master [title].</span>",
 	"<span class='nicegreen'>Through incredible determination and effort, I've reached the peak of my [name] abiltities. I'm finally able to consider myself a legendary [title]!</span>" )
 	levelDownMessages = list("<span class='nicegreen'>I have somehow completely lost all understanding of [name]. Please tell an admin if you see this.</span>",
 	"<span class='nicegreen'>I'm starting to forget what [name] really even is. I need more practice...</span>",
@@ -66,10 +66,10 @@ GLOBAL_LIST_INIT(skill_types, subtypesof(/datum/skill))
 /datum/skill/proc/try_skill_reward(var/datum/mind/mind, new_level)
 	if (new_level != SKILL_LEVEL_LEGENDARY)
 		return
-	if (!ispath(skill_cape_path))	
+	if (!ispath(skill_cape_path))
 		to_chat(mind.current, "<span class='nicegreen'>My legendary [name] skill is quite impressive, though it seems the Professional [title] Association doesn't have any status symbols to commemorate my abilities with. I should let Centcom know of this travesty, maybe they can do something about it.</span>")
 		return
-	if (LAZYFIND(mind.skills_rewarded, src.type))	
+	if (LAZYFIND(mind.skills_rewarded, src.type))
 		to_chat(mind.current, "<span class='nicegreen'>It seems the Professional [title] Association won't send me another status symbol.</span>")
 		return
 	var/obj/structure/closet/supplypod/bluespacepod/pod = new()

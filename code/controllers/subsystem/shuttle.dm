@@ -364,6 +364,8 @@ SUBSYSTEM_DEF(shuttle)
 		//Make all cargo consoles speak up
 
 /datum/controller/subsystem/shuttle/proc/checkHostileEnvironment()
+	if(!emergency)
+		return
 	for(var/datum/d in hostileEnvironments)
 		if(!istype(d) || QDELETED(d))
 			hostileEnvironments -= d
@@ -452,10 +454,10 @@ SUBSYSTEM_DEF(shuttle)
 	// Then create a transit docking port in the middle
 	var/coords = M.return_coords(0, 0, dock_dir)
 	/*  0------2
-        |      |
-        |      |
-        |  x   |
-        3------1
+	*   |      |
+	*   |      |
+	*   |  x   |
+	*   3------1
 	*/
 
 	var/x0 = coords[1]

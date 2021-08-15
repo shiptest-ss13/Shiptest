@@ -7,6 +7,7 @@
 #define DYNAMIC_WORLD_SAND				"sand"
 #define DYNAMIC_WORLD_JUNGLE			"jungle"
 #define DYNAMIC_WORLD_ASTEROID			"asteroid"
+#define DYNAMIC_WORLD_SPACERUIN			"space"
 
 //Possible ship states
 #define OVERMAP_SHIP_IDLE				"idle"

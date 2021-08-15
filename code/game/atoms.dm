@@ -38,10 +38,10 @@
 	var/explosion_block = 0
 
 	/**
-	  * used to store the different colors on an atom
-	  *
-	  * its inherent color, the colored paint applied on it, special color effect etc...
-	  */
+	* used to store the different colors on an atom
+	*
+	* its inherent color, the colored paint applied on it, special color effect etc...
+	*/
 	var/list/atom_colours
 
 

@@ -36,8 +36,9 @@
 	var/choice = pick(masks)
 	var/obj/item/clothing/mask/magichead = new choice(get_turf(target))
 
-	target.visible_message("<span class='danger'>[target]'s face bursts into flames, and a barnyard animal's head takes its place!</span>", \
-						   "<span class='danger'>Your face burns up, and shortly after the fire you realise you have the face of a barnyard animal!</span>")
+	target.visible_message(
+		"<span class='danger'>[target]'s face bursts into flames, and a barnyard animal's head takes its place!</span>", \
+		"<span class='danger'>Your face burns up, and shortly after the fire you realise you have the face of a barnyard animal!</span>")
 	if(!target.dropItemToGround(target.wear_mask))
 		qdel(target.wear_mask)
 	target.equip_to_slot_if_possible(magichead, ITEM_SLOT_MASK, 1, 1)

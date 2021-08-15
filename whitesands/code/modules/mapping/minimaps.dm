@@ -81,7 +81,7 @@
 /datum/minimap/proc/send(mob/user)
 	if(!id)
 		CRASH("ERROR: send called, but the minimap id is null/missing. ID: [id]")
-	SSassets.transport.send_assets(user, list("minimap-[id].png" = map_icon, "minimap-[id]-meta.png" = meta_icon))
+	SSassets.transport.send_assets(user.client, list("minimap-[id].png" = map_icon, "minimap-[id]-meta.png" = meta_icon))
 
 /datum/minimap_group
 	var/list/minimaps = list()
