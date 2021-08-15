@@ -141,10 +141,27 @@
 /obj/effect/turf_decal/lumos/tile/brown/half{
 	dir = 8
 	},
-/obj/structure/closet/crate/hydroponics,
-/obj/item/seeds/lemon,
-/obj/item/hatchet,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/closet/crate,
+/obj/item/vending_refill/engineering,
+/obj/item/vending_refill/engineering,
+/obj/item/vending_refill/engivend,
+/obj/item/vending_refill/engivend,
+/obj/item/vending_refill/hydronutrients,
+/obj/item/vending_refill/hydroseeds,
+/obj/item/vending_refill/hydronutrients,
+/obj/item/vending_refill/hydroseeds,
+/obj/item/vending_refill/boozeomat,
+/obj/item/vending_refill/boozeomat,
+/obj/item/vending_refill/medical,
+/obj/item/vending_refill/medical,
+/obj/item/vending_refill/cigarette,
+/obj/item/vending_refill/cigarette,
+/obj/item/vending_refill/snack,
+/obj/item/vending_refill/snack,
+/obj/item/vending_refill/sovietsoda,
+/obj/item/vending_refill/cola,
+/obj/item/vending_refill/cola,
 /turf/open/floor/plasteel/dark,
 /area/ship/storage)
 "dh" = (
@@ -233,7 +250,7 @@
 /area/ship/medical)
 "es" = (
 /mob/living/simple_animal/hostile/retaliate/gator/steppy{
-	name = "Donk! Co. Enjoyment Ensurer"
+	name = "Donk! Co. Head of Customer Complaints"
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/dark,
@@ -403,7 +420,7 @@
 	dir = 1
 	},
 /turf/open/floor/plating,
-/area/template_noop)
+/area/ship/engineering)
 "hg" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -1137,7 +1154,6 @@
 /turf/open/floor/plating,
 /area/ship/engineering)
 "vF" = (
-/obj/structure/closet/crate/medical,
 /obj/effect/turf_decal/tile/brown{
 	dir = 1
 	},
@@ -1145,6 +1161,47 @@
 /obj/effect/turf_decal/tile/brown{
 	dir = 4
 	},
+/obj/structure/closet/crate/science,
+/obj/item/storage/box/rndboards{
+	desc = "A box containing every board you need to start your own civilian research operation!";
+	name = "Donk! Co. RND Boards Kit"
+	},
+/obj/item/storage/box/rndboards{
+	desc = "A box containing every board you need to start your own civilian research operation!";
+	name = "Donk! Co. RND Boards Kit"
+	},
+/obj/item/storage/box/rndboards{
+	desc = "A box containing every board you need to start your own civilian research operation!";
+	name = "Donk! Co. RND Boards Kit"
+	},
+/obj/item/storage/box/rndboards{
+	desc = "A box containing every board you need to start your own civilian research operation!";
+	name = "Donk! Co. RND Boards Kit"
+	},
+/obj/item/storage/box/rndboards{
+	desc = "A box containing every board you need to start your own civilian research operation!";
+	name = "Donk! Co. RND Boards Kit"
+	},
+/obj/item/circuitboard/machine/chem_dispenser/drinks,
+/obj/item/circuitboard/machine/chem_dispenser/drinks,
+/obj/item/circuitboard/machine/chem_dispenser/drinks,
+/obj/item/circuitboard/machine/chem_dispenser/drinks/beer,
+/obj/item/circuitboard/machine/chem_dispenser/drinks/beer,
+/obj/item/circuitboard/machine/chem_dispenser/drinks/beer,
+/obj/item/circuitboard/machine/deep_fryer,
+/obj/item/circuitboard/machine/deep_fryer,
+/obj/item/circuitboard/machine/deep_fryer,
+/obj/item/circuitboard/machine/mechfab,
+/obj/item/circuitboard/machine/mechfab,
+/obj/item/circuitboard/machine/mechfab,
+/obj/item/circuitboard/machine/mechfab,
+/obj/item/circuitboard/machine/mechfab,
+/obj/item/circuitboard/machine/ore_redemption,
+/obj/item/circuitboard/machine/ore_redemption,
+/obj/item/circuitboard/machine/ore_redemption,
+/obj/item/circuitboard/machine/microwave,
+/obj/item/circuitboard/machine/microwave,
+/obj/item/circuitboard/machine/microwave,
 /turf/open/floor/plasteel/dark,
 /area/ship/storage)
 "vU" = (
@@ -1653,9 +1710,6 @@
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
-/obj/machinery/power/terminal{
-	dir = 4
-	},
 /obj/effect/turf_decal/lumos/tile/brown/half{
 	dir = 4
 	},
@@ -1719,6 +1773,14 @@
 /obj/effect/turf_decal/tile/brown{
 	dir = 1
 	},
+/obj/item/soap/syndie,
+/obj/item/soap/syndie,
+/obj/item/soap/syndie,
+/obj/item/soap/syndie,
+/obj/item/soap/syndie,
+/obj/item/soap/syndie,
+/obj/item/soap/syndie,
+/obj/item/soap/syndie,
 /turf/open/floor/plasteel/dark,
 /area/ship/storage)
 "Nc" = (
@@ -1767,9 +1829,6 @@
 /obj/machinery/power/apc/auto_name/west,
 /obj/structure/cable{
 	icon_state = "0-4"
-	},
-/obj/machinery/power/terminal{
-	dir = 8
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/crew/dorm)
@@ -2022,9 +2081,6 @@
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
-/obj/machinery/power/terminal{
-	dir = 1
-	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 4
 	},
@@ -2046,7 +2102,7 @@
 /area/ship/bridge)
 "UE" = (
 /turf/open/floor/plating,
-/area/template_noop)
+/area/ship/engineering)
 "UM" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -2090,9 +2146,6 @@
 /obj/machinery/power/apc/auto_name/east,
 /obj/structure/cable{
 	icon_state = "0-8"
-	},
-/obj/machinery/power/terminal{
-	dir = 4
 	},
 /obj/effect/turf_decal/lumos/tile/brown/half{
 	dir = 4
