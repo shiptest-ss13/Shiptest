@@ -286,6 +286,15 @@
 			mode = HYPO_SPRAY
 			to_chat(M, "[src] is now set to spray contents on application.")
 
+/obj/item/reagent_containers/hypospray/medipen/survival
+	name = "survival stimpak"
+	desc = "A medical cocktail for surviving in the harshest of environments, quickly heals and inhibits pain to help overcome extreme conditions. WARNING: Frequent use has long-term side effects."
+	icon_state = "stimpen"
+	item_state = "stimpen"
+	volume = 45
+	amount_per_transfer_from_this = 46
+	list_reagents = list(/datum/reagent/medicine/atropine = 4, /datum/reagent/medicine/lavaland_extract = 6, /datum/reagent/medicine/soulus = 25, /datum/reagent/drug/methamphetamine = 4, /datum/reagent/drug/aranesp = 6)
+
 #undef HYPO_SPRAY
 #undef HYPO_INJECT
 #undef WAIT_SPRAY

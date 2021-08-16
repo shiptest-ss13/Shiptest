@@ -130,20 +130,21 @@
 
 /datum/reagent/medicine/soulus
 	name = "Soulus Dust"
-	description = "Ground legion cores."
+	description = "Ground legion cores. The dust quickly seals wounds yet slowly causes the tissue to undergo necrosis."
 	reagent_state = SOLID
 	color = "#302f20"
-	metabolization_rate = REAGENTS_METABOLISM
+	metabolization_rate = REAGENTS_METABOLISM * 0.5
 	overdose_threshold = 100
 	var/clone_dam = 0.25
 
 /datum/reagent/medicine/soulus/expose_mob(mob/living/M, method=TOUCH, reac_volume, show_message = 1)
 	if(iscarbon(M) && M.stat != DEAD)
-		if(method in list(PATCH, TOUCH))
+		if(method in list(INGEST, INJECT))
+			M.jitteriness += reac_volume
 			if(M.getFireLoss())
-				M.adjustFireLoss(-reac_volume)
+				M.adjustFireLoss(-reac_volume*1.5)
 			if(M.getBruteLoss())
-				M.adjustBruteLoss(-reac_volume)
+				M.adjustBruteLoss(-reac_volume*1.5)
 	if(prob(50))
 		SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "legion", /datum/mood_event/legion_good, name)
 	else
@@ -151,8 +152,8 @@
 	..()
 
 /datum/reagent/medicine/soulus/on_mob_life(mob/living/carbon/M)
-	M.adjustFireLoss(-1*REM, 0)
-	M.adjustBruteLoss(-1*REM, 0)
+	M.adjustFireLoss(-0.1*REM, 0)
+	M.adjustBruteLoss(-0.1*REM, 0)
 	M.adjustCloneLoss(clone_dam *REM, 0)
 	..()
 
@@ -171,7 +172,7 @@
 	color = "#302f20"
 	metabolization_rate = REAGENTS_METABOLISM
 	overdose_threshold = 100
-	clone_dam = 0
+	clone_dam = 0.1
 
 /datum/reagent/medicine/puce_essence		// P U C E
 	name = "Pucetylline Essence"
