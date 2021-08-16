@@ -59,7 +59,7 @@
 	#endif
 
 	#ifdef REFERENCE_TRACKING_DEBUG
-	if(!found_refs)
+	if(!found_refs && SSgarbage.should_save_refs)
 		found_refs = list()
 	#endif
 
@@ -96,7 +96,8 @@
 
 			if(variable == src)
 				#ifdef REFERENCE_TRACKING_DEBUG
-				found_refs[varname] = TRUE
+				if(SSgarbage.should_save_refs)
+					found_refs[varname] = TRUE
 				#endif
 				log_reftracker("Found [type] \ref[src] in [datum_container.type]'s \ref[datum_container] [varname] var. [container_name]")
 				continue
@@ -114,7 +115,8 @@
 			//Check normal entrys
 			if(element_in_list == src)
 				#ifdef REFERENCE_TRACKING_DEBUG
-				found_refs[potential_cache] = TRUE
+				if(SSgarbage.should_save_refs)
+					found_refs[potential_cache] = TRUE
 				#endif
 				log_reftracker("Found [type] \ref[src] in list [container_name].")
 				continue
@@ -125,7 +127,8 @@
 			//Check assoc entrys
 			if(assoc_val == src)
 				#ifdef REFERENCE_TRACKING_DEBUG
-				found_refs[potential_cache] = TRUE
+				if(SSgarbage.should_save_refs)
+					found_refs[potential_cache] = TRUE
 				#endif
 				log_reftracker("Found [type] \ref[src] in list [container_name]\[[element_in_list]\]")
 				continue

@@ -23,6 +23,8 @@
 
 /obj/item/storage/fancy/PopulateContents()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	if(!spawn_type)
+		return
 	for(var/i = 1 to STR.max_items)
 		new spawn_type(src)
 

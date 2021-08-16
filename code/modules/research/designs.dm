@@ -159,6 +159,7 @@ other types of metals and chemistry for reagents).
 	name = "design disk - disposable gun"
 	desc = "A design disk containing designs for a cheap and disposable gun."
 	illustration = "gun"
+	max_blueprints = 2
 
 /obj/item/disk/design_disk/disposable_gun/Initialize()
 	. = ..()

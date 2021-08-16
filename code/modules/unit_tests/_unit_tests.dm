@@ -20,6 +20,14 @@
 /// Intended to be used in the manner of `TEST_FOCUS(/datum/unit_test/math)`
 #define TEST_FOCUS(test_path) ##test_path { focus = TRUE; }
 
+/// Constants indicating unit test completion status
+#define UNIT_TEST_PASSED 0
+#define UNIT_TEST_FAILED 1
+#define UNIT_TEST_SKIPPED 2
+
+#define TEST_DEFAULT 1
+#define TEST_DEL_WORLD INFINITY
+
 #include "anchored_mobs.dm"
 #include "autowiki.dm"
 #include "bespoke_id.dm"
@@ -28,6 +36,7 @@
 #include "component_tests.dm"
 #include "connect_loc.dm"
 #include "emoting.dm"
+#include "create_and_destroy.dm"
 #include "keybinding_init.dm"
 #include "machine_disassembly.dm"
 #include "outfit_sanity.dm"

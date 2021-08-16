@@ -134,6 +134,8 @@
 	name = "\proper nutrient sac"
 
 /obj/item/udder/gutlunch/initial_conditions()
+	if(!udder_mob)
+		return
 	if(udder_mob.gender == FEMALE)
 		START_PROCESSING(SSobj, src)
 	RegisterSignal(udder_mob, COMSIG_HOSTILE_ATTACKINGTARGET, .proc/on_mob_attacking)

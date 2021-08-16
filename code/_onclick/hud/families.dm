@@ -12,6 +12,8 @@
 /atom/movable/screen/wanted/Initialize()
 	. = ..()
 	var/datum/game_mode/gang/F = SSticker.mode
+	if(!istype(F))
+		return
 	level = F.wanted_level
 	cops_arrived = F.cops_arrived
 	update_icon()

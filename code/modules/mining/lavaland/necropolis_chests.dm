@@ -950,6 +950,12 @@
 	. += "<span class='notice'>This weapon contains a gradual heat accelerator that increases shot power as the weapon's energy stores are depleted. Shots at low power are significantly stronger, but also have incredibly short range.</span>"
 
 /obj/item/gun/energy/spur/update_icon()
+	if(!cell)
+		chargesound = null
+		recoil = 1
+		fire_sound = 'sound/weapons/spur_high.ogg'
+		return
+
 	var/maxcharge = cell.maxcharge
 	var/charge = cell.charge
 

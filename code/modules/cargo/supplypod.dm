@@ -302,6 +302,9 @@
 
 /obj/effect/DPtarget/Initialize(mapload, podParam, single_order = null)
 	. = ..()
+	if(!podParam)
+		stack_trace("Pod landingzone created with no pod")
+		return INITIALIZE_HINT_QDEL
 	if (ispath(podParam)) //We can pass either a path for a pod (as expressconsoles do), or a reference to an instantiated pod (as the centcom_podlauncher does)
 		podParam = new podParam() //If its just a path, instantiate it
 	pod = podParam

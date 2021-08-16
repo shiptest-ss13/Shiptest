@@ -48,6 +48,7 @@
 
 /mob/living/simple_animal/hostile/mining_drone/Initialize()
 	. = ..()
+
 	stored_gun = new(src)
 	var/datum/action/innate/minedrone/toggle_light/toggle_light_action = new()
 	toggle_light_action.Grant(src)
