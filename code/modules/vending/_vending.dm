@@ -134,6 +134,8 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 	var/obj/item/coin/coin
 	///Bills we accept?
 	var/obj/item/stack/spacecash/bill
+	///Does this machine accept mining points?
+	var/mining_point_vendor = FALSE
 	///Default price of items if not overridden
 	var/default_price = 25
 	///Default price of premium items if not overridden
@@ -314,6 +316,9 @@ GLOBAL_LIST_EMPTY(vending_products)
 		var/datum/data/vending_product/R = new /datum/data/vending_product()
 		GLOB.vending_products[typepath] = 1
 		R.name = initial(temp.name)
+		if(istype(temp, /obj/item/stack)) //Include stack amount
+			var/obj/item/stack/S = temp
+			R.name += " ([S.amount])"
 		R.product_path = typepath
 		if(!start_empty)
 			R.amount = amount
@@ -692,6 +697,7 @@ GLOBAL_LIST_EMPTY(vending_products)
 /obj/machinery/vending/ui_static_data(mob/user)
 	. = list()
 	.["onstation"] = onstation
+	.["miningvendor"] = mining_point_vendor
 	.["department"] = payment_department
 	.["product_records"] = list()
 	for (var/datum/data/vending_product/R in product_records)
@@ -733,16 +739,19 @@ GLOBAL_LIST_EMPTY(vending_products)
 	if(ishuman(user))
 		H = user
 		C = H.get_idcard(TRUE)
-		if(C?.registered_account)
+		if(C)
 			.["user"] = list()
-			.["user"]["name"] = C.registered_account.account_holder
-			.["user"]["cash"] = C.registered_account.account_balance
-			if(C.registered_account.account_job)
-				.["user"]["job"] = C.registered_account.account_job.title
-				.["user"]["department"] = C.registered_account.account_job.paycheck_department
-			else
-				.["user"]["job"] = "No Job"
-				.["user"]["department"] = "No Department"
+			.["user"]["points"] = C.mining_points
+			.["user"]["name"] = C.registered_name
+			if(C.registered_account)
+				.["user"]["name"] = C.registered_account.account_holder
+				.["user"]["cash"] = C.registered_account.account_balance
+				if(C.registered_account.account_job)
+					.["user"]["job"] = C.registered_account.account_job.title
+					.["user"]["department"] = C.registered_account.account_job.paycheck_department
+				else
+					.["user"]["job"] = "No Job"
+					.["user"]["department"] = "No Department"
 	.["stock"] = list()
 	for (var/datum/data/vending_product/R in product_records + coin_records + hidden_records)
 		.["stock"][R.name] = R.amount
@@ -779,7 +788,7 @@ GLOBAL_LIST_EMPTY(vending_products)
 				vend_ready = TRUE
 				message_admins("Vending machine exploit attempted by [ADMIN_LOOKUPFLW(usr)]!")
 				return
-			if (R.amount <= 0)
+			if (R.amount <= 0 && R.max_amount >= 0)
 				say("Sold out of [R.name].")
 				flick(icon_deny,src)
 				vend_ready = TRUE
@@ -793,7 +802,7 @@ GLOBAL_LIST_EMPTY(vending_products)
 					flick(icon_deny,src)
 					vend_ready = TRUE
 					return
-				else if (!C.registered_account)
+				else if (!C.registered_account && !mining_point_vendor)
 					say("No account found.")
 					flick(icon_deny,src)
 					vend_ready = TRUE
@@ -807,21 +816,29 @@ GLOBAL_LIST_EMPTY(vending_products)
 					flick(icon_deny,src)
 					vend_ready = TRUE
 					return
-				var/datum/bank_account/account = C.registered_account
-				if(account.account_job && account.account_job.paycheck_department == payment_department)
-					price_to_use = 0
-				if(coin_records.Find(R) || hidden_records.Find(R))
-					price_to_use = R.custom_premium_price ? R.custom_premium_price : extra_price
-				if(price_to_use && !account.adjust_money(-price_to_use))
-					say("You do not possess the funds to purchase [R.name].")
-					flick(icon_deny,src)
-					vend_ready = TRUE
-					return
-				var/datum/bank_account/D = SSeconomy.get_dep_account(payment_department)
-				if(D)
-					D.adjust_money(price_to_use)
-					SSblackbox.record_feedback("amount", "vending_spent", price_to_use)
-					log_econ("[price_to_use] credits were inserted into [src] by [D.account_holder] to buy [R].")
+				if(mining_point_vendor)
+					if(price_to_use > C.mining_points)
+						say("You do not possess the funds to purchase [R.name].")
+						flick(icon_deny,src)
+						vend_ready = TRUE
+						return
+					C.mining_points -= price_to_use
+				else
+					var/datum/bank_account/account = C.registered_account
+					if(account.account_job && account.account_job.paycheck_department == payment_department)
+						price_to_use = 0
+					if(coin_records.Find(R) || hidden_records.Find(R))
+						price_to_use = R.custom_premium_price ? R.custom_premium_price : extra_price
+					if(price_to_use && !account.adjust_money(-price_to_use))
+						say("You do not possess the funds to purchase [R.name].")
+						flick(icon_deny,src)
+						vend_ready = TRUE
+						return
+					var/datum/bank_account/D = SSeconomy.get_dep_account(payment_department)
+					if(D)
+						D.adjust_money(price_to_use)
+						SSblackbox.record_feedback("amount", "vending_spent", price_to_use)
+						log_econ("[price_to_use] credits were inserted into [src] by [D.account_holder] to buy [R].")
 			if(last_shopper != usr || purchase_message_cooldown < world.time)
 				say("Thank you for shopping with [src]!")
 				purchase_message_cooldown = world.time + 5 SECONDS
@@ -831,7 +848,8 @@ GLOBAL_LIST_EMPTY(vending_products)
 				flick(icon_vend,src)
 			playsound(src, 'sound/machines/machine_vend.ogg', 50, TRUE, extrarange = -3)
 			new R.product_path(get_turf(src))
-			R.amount--
+			if(R.max_amount >= 0)
+				R.amount--
 			SSblackbox.record_feedback("nested tally", "vending_machine_usage", 1, list("[type]", "[R.product_path]"))
 			vend_ready = TRUE
 
