@@ -562,6 +562,16 @@
 /area/ship/engineering/atmospherics)
 "io" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/item/gun/ballistic/automatic/pistol/commander/no_mag,
+/obj/item/gun/ballistic/automatic/pistol/commander/no_mag,
+/obj/structure/closet/secure_closet{
+	icon_state = "armory";
+	name = "firearms locker"
+	},
+/obj/item/ammo_box/magazine/co9mm,
+/obj/item/ammo_box/magazine/co9mm,
+/obj/item/ammo_box/magazine/co9mm,
+/obj/item/ammo_box/magazine/co9mm,
 /turf/open/floor/plasteel/grimy,
 /area/ship/security)
 "ip" = (
@@ -830,6 +840,7 @@
 "mu" = (
 /obj/effect/turf_decal/lumos/tile/blue/fulltile,
 /obj/effect/decal/cleanable/blood/drip,
+/mob/living/simple_animal/bot/cleanbot/medbay,
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "mA" = (
@@ -1033,6 +1044,16 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 5
 	},
+/obj/item/gun/energy/e_gun/mini,
+/obj/structure/closet/secure_closet{
+	icon_state = "armory";
+	name = "firearms locker"
+	},
+/obj/item/gun/energy/e_gun/mini,
+/obj/item/gun/energy/e_gun/mini,
+/obj/item/stock_parts/cell/gun/mini,
+/obj/item/stock_parts/cell/gun/mini,
+/obj/item/stock_parts/cell/gun/mini,
 /turf/open/floor/wood,
 /area/ship/security)
 "pC" = (
@@ -2246,7 +2267,7 @@
 /obj/item/radio/intercom{
 	pixel_y = 32
 	},
-/obj/item/areaeditor/shuttle,
+/obj/machinery/recharger,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "EK" = (
@@ -2636,6 +2657,7 @@
 	pixel_x = 5;
 	pixel_y = 8
 	},
+/obj/item/storage/belt/medical,
 /obj/item/reagent_containers/glass/bottle{
 	list_reagents = list(/datum/reagent/medicine/thializid = 30);
 	name = "thializid bottle"
@@ -2714,6 +2736,7 @@
 "Jb" = (
 /obj/machinery/power/port_gen/pacman/super,
 /obj/structure/cable/yellow,
+/obj/effect/turf_decal/bot,
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "Jl" = (
@@ -2939,6 +2962,7 @@
 	dir = 1
 	},
 /obj/machinery/power/apc/auto_name/north,
+/obj/structure/closet/secure_closet/lieutenant,
 /turf/open/floor/carpet/blue,
 /area/ship/bridge)
 "Ms" = (
@@ -3048,6 +3072,7 @@
 	pixel_y = -10
 	},
 /obj/item/storage/toolbox/electrical,
+/obj/item/areaeditor/shuttle,
 /turf/open/floor/plating,
 /area/ship/engineering/electrical)
 "Nk" = (
@@ -3079,6 +3104,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "0-2"
 	},
+/obj/effect/turf_decal/bot,
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "NP" = (
@@ -3295,6 +3321,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "0-2"
 	},
+/obj/effect/turf_decal/bot,
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "Qf" = (
@@ -3399,7 +3426,6 @@
 /area/ship/engineering/engine)
 "Rn" = (
 /obj/structure/table/wood,
-/obj/item/folder/red,
 /obj/item/toy/plush/hornet/gay{
 	pixel_x = 12;
 	pixel_y = 5
@@ -3407,6 +3433,7 @@
 /obj/item/radio/intercom{
 	pixel_y = 32
 	},
+/obj/machinery/recharger,
 /turf/open/floor/wood,
 /area/ship/security)
 "Rq" = (
@@ -3520,6 +3547,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "0-2"
 	},
+/obj/effect/turf_decal/bot,
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "ST" = (
@@ -3940,6 +3968,7 @@
 "WO" = (
 /obj/machinery/power/port_gen/pacman,
 /obj/structure/cable/yellow,
+/obj/effect/turf_decal/bot,
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "WQ" = (

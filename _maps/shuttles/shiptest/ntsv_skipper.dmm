@@ -104,8 +104,7 @@
 "aP" = (
 /obj/structure/table/reinforced,
 /obj/machinery/door/window/brigdoor/southright{
-	name = "Personnel Office";
-	opacity = 1
+	name = "Personnel Office"
 	},
 /obj/machinery/door/window/northleft{
 	name = "Personnel Office Exterior"
@@ -337,6 +336,7 @@
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
+/obj/machinery/holopad/emergency/command,
 /turf/open/floor/wood,
 /area/ship/crew/solgov)
 "dz" = (
@@ -796,6 +796,17 @@
 "ks" = (
 /obj/machinery/airalarm/directional/west,
 /obj/structure/window/reinforced,
+/obj/structure/closet/secure_closet{
+	icon_state = "armory";
+	name = "armor locker"
+	},
+/obj/item/gun/energy/e_gun/mini,
+/obj/item/gun/energy/e_gun/mini,
+/obj/item/stock_parts/cell/gun/mini,
+/obj/item/stock_parts/cell/gun/mini,
+/obj/item/gun/ballistic/automatic/pistol/commander/no_mag,
+/obj/item/ammo_box/magazine/co9mm,
+/obj/item/ammo_box/magazine/co9mm,
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew)
 "kE" = (
@@ -1507,6 +1518,7 @@
 	pixel_y = 1
 	},
 /obj/item/areaeditor/shuttle,
+/obj/machinery/recharger,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "te" = (
@@ -2031,6 +2043,7 @@
 /area/ship/crew/canteen)
 "zR" = (
 /obj/structure/closet/secure_closet/captains,
+/obj/item/stock_parts/cell/gun,
 /turf/open/floor/carpet/royalblue,
 /area/ship/crew)
 "Aa" = (
@@ -3315,6 +3328,8 @@
 /obj/structure/window/reinforced{
 	dir = 8
 	},
+/obj/item/storage/box/gloves,
+/obj/item/storage/belt/medical,
 /turf/open/floor/plasteel/showroomfloor,
 /area/ship/medical)
 "PT" = (
@@ -3631,6 +3646,7 @@
 /obj/item/radio/intercom{
 	pixel_x = 28
 	},
+/obj/machinery/pipedispenser,
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/atmospherics)
 "Vg" = (

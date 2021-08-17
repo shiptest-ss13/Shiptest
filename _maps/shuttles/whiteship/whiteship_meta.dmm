@@ -194,6 +194,8 @@
 /obj/effect/turf_decal/tile/neutral{
 	dir = 8
 	},
+/obj/item/gun/energy/e_gun/mini,
+/obj/item/stock_parts/cell/gun/mini,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
 "av" = (
@@ -1673,6 +1675,7 @@
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer1{
 	dir = 8
 	},
+/obj/machinery/holopad/emergency/bar,
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
 "cq" = (
@@ -1720,7 +1723,6 @@
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
-/obj/effect/decal/remains/human,
 /obj/effect/decal/cleanable/blood/old,
 /obj/effect/turf_decal/tile/neutral{
 	dir = 1
@@ -3133,7 +3135,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/blood,
-/obj/effect/decal/remains/human,
 /obj/effect/turf_decal/tile/neutral{
 	dir = 1
 	},
