@@ -5,10 +5,40 @@ import { refocusLayout, Window } from '../layouts';
 import { Table } from '../components/Table';
 import { ButtonInput } from '../components/Button';
 
-class OvermapView extends Component {
+class OvermapDisplay extends Component {
+  constructor(props) {
+    super(props);
+    this.canvasRef = createRef();
+  }
 
+  componentDidMount() {
+    return;
+  }
 
+  componentDidUpdate(prevProps, prevState, snapshot) {
+    return;
+  }
 
+  componentWillUnmount() {
+    return;
+  }
 
-
+  render() {
+    return (
+      <canvas
+        ref={this.canvasRef}
+        {...this.props}>
+        Canvas failed to render.
+      </canvas>
+    );
+  }
 }
+
+export const OvermapView = (props, context) => {
+  const {act, data, config} = useBackend(context);
+  return (
+    <Window resizable>
+      <OvermapDisplay />
+    </Window>
+  );
+};
