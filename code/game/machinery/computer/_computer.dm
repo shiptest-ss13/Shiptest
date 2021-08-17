@@ -134,7 +134,7 @@
 		playsound(src, clicksound, clickvol)
 	return 1
 
-obj/machinery/computer/proc/on_interact_click(mob/user, datum/tgui/ui)
+/obj/machinery/computer/proc/on_interact_click(mob/user, datum/tgui/ui)
 	if(!ui)
 		var/is_living = isliving(user)
 		if(is_living)
