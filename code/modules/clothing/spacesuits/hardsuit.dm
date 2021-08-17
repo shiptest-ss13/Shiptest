@@ -278,6 +278,7 @@
 	allowed = list(/obj/item/flashlight, /obj/item/tank/internals, /obj/item/storage/bag/ore, /obj/item/pickaxe)
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/mining
 	heat_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
+	custom_price = 2000
 
 /obj/item/clothing/suit/space/hardsuit/mining/Initialize()
 	. = ..()

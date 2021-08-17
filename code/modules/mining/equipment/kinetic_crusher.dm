@@ -23,6 +23,7 @@
 	light_system = MOVABLE_LIGHT
 	light_range = 5
 	light_on = FALSE
+	custom_price = 800
 	var/list/trophies = list()
 	var/charged = TRUE
 	var/charge_time = 15

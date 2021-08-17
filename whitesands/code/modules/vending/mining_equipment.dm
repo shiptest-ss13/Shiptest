@@ -47,7 +47,6 @@
 		/obj/item/tank/jetpack/suit = 3,
 		/obj/item/stack/spacecash/c1000 = 5,
 		/obj/item/clothing/suit/space/hardsuit/mining = 3,
-		/obj/item/pickaxe/diamond = 1,
 		/obj/item/resonator/upgraded = 1,
 		/obj/item/clothing/shoes/bhop = 3,
 		/obj/item/survivalcapsule/luxury = 3,
@@ -68,6 +67,7 @@
 	premium = list(
 		/obj/item/reagent_containers/food/drinks/bottle/absinthe/premium = 3,
 		/obj/item/laser_pointer = 1,
+		/obj/item/pickaxe/diamond = 1,
 		/obj/item/clothing/mask/facehugger/toy = 1,
 		/obj/item/clothing/glasses/meson/gar = 2,
 		/obj/item/survivalcapsule/luxuryelite = 1,
