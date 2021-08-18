@@ -75,7 +75,7 @@
 /obj/machinery/computer/cryopod{
 	pixel_y = 26
 	},
-/turf/open/floor/mineral/plastitanium,
+/turf/open/floor/carpet/donk,
 /area/ship/crew/dorm)
 "cv" = (
 /turf/open/floor/plasteel/dark,
@@ -110,6 +110,7 @@
 "cQ" = (
 /obj/structure/table,
 /obj/item/radio/intercom/wideband,
+/obj/item/codespeak_manual/unlimited,
 /obj/item/toy/plush/among,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/bridge)
@@ -132,6 +133,7 @@
 /obj/item/gun/energy/kinetic_accelerator,
 /obj/item/tank/internals/emergency_oxygen/double,
 /obj/item/clothing/under/syndicate/intern,
+/obj/item/storage/backpack/duffelbag/syndie,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "dc" = (
@@ -187,7 +189,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/medical)
 "dj" = (
-/turf/open/floor/mineral/plastitanium/red,
+/turf/open/floor/carpet/donk,
 /area/ship/crew/dorm)
 "dw" = (
 /obj/machinery/suit_storage_unit/engine,
@@ -250,6 +252,7 @@
 /area/ship/medical)
 "es" = (
 /mob/living/simple_animal/hostile/retaliate/gator/steppy{
+	desc = "A Donk! Co. esteemed employee, the one you go to when you have a complaint about the product. Teeth included.";
 	name = "Donk! Co. Head of Customer Complaints"
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -346,7 +349,7 @@
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
-/turf/open/floor/mineral/plastitanium,
+/turf/open/floor/carpet/donk,
 /area/ship/crew/dorm)
 "go" = (
 /obj/structure/closet/secure_closet/chemical/heisenberg{
@@ -360,7 +363,7 @@
 /area/ship/medical)
 "gw" = (
 /obj/machinery/smartfridge/bloodbank/preloaded,
-/turf/open/floor/plasteel/dark,
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/medical)
 "gz" = (
 /obj/structure/cable{
@@ -511,6 +514,9 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/medical)
+"ie" = (
+/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/area/ship/crew/dorm)
 "ig" = (
 /obj/machinery/vending/dinnerware,
 /turf/open/floor/mineral/plastitanium,
@@ -545,7 +551,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 6
 	},
-/turf/open/floor/mineral/plastitanium/red,
+/turf/open/floor/carpet/donk,
 /area/ship/crew/dorm)
 "jb" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
@@ -660,7 +666,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
-/turf/open/floor/mineral/plastitanium/red,
+/turf/open/floor/carpet/donk,
 /area/ship/crew/dorm)
 "lm" = (
 /obj/effect/turf_decal/lumos/tile/blue/half{
@@ -796,7 +802,7 @@
 "nJ" = (
 /obj/machinery/washing_machine,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/mineral/plastitanium,
+/turf/open/floor/carpet/donk,
 /area/ship/crew/dorm)
 "of" = (
 /obj/structure/chair/plastic,
@@ -828,7 +834,7 @@
 "po" = (
 /obj/structure/table,
 /obj/structure/bedsheetbin/empty,
-/turf/open/floor/mineral/plastitanium,
+/turf/open/floor/carpet/donk,
 /area/ship/crew/dorm)
 "pv" = (
 /obj/machinery/light{
@@ -851,7 +857,7 @@
 /obj/item/radio/headset/syndicate/alt,
 /obj/item/radio/headset/syndicate/alt,
 /obj/item/radio/headset/syndicate/alt,
-/turf/open/floor/mineral/plastitanium,
+/turf/open/floor/carpet/donk,
 /area/ship/crew/dorm)
 "pR" = (
 /obj/machinery/power/smes/engineering,
@@ -1202,6 +1208,8 @@
 /obj/item/circuitboard/machine/microwave,
 /obj/item/circuitboard/machine/microwave,
 /obj/item/circuitboard/machine/microwave,
+/obj/item/storage/box/stockparts/deluxe,
+/obj/item/storage/box/stockparts/deluxe,
 /turf/open/floor/plasteel/dark,
 /area/ship/storage)
 "vU" = (
@@ -1251,7 +1259,7 @@
 	dir = 1;
 	pixel_y = -24
 	},
-/turf/open/floor/mineral/plastitanium,
+/turf/open/floor/carpet/donk,
 /area/ship/crew/dorm)
 "xx" = (
 /obj/machinery/light,
@@ -1314,7 +1322,7 @@
 	dir = 9
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/mineral/plastitanium/red,
+/turf/open/floor/carpet/donk,
 /area/ship/crew/dorm)
 "zO" = (
 /obj/structure/fans/tiny,
@@ -1343,7 +1351,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 9
 	},
-/turf/open/floor/mineral/plastitanium/red,
+/turf/open/floor/carpet/donk,
 /area/ship/crew/dorm)
 "AE" = (
 /obj/machinery/door/airlock/external,
@@ -1421,6 +1429,9 @@
 /obj/machinery/door/firedoor/border_only,
 /turf/open/floor/plating,
 /area/ship/engineering)
+"CP" = (
+/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/area/ship/storage)
 "Db" = (
 /obj/structure/table,
 /obj/item/storage/toolbox/syndicate,
@@ -1440,7 +1451,7 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/mineral/plastitanium,
+/turf/open/floor/carpet/donk,
 /area/ship/crew/dorm)
 "DS" = (
 /obj/effect/turf_decal/lumos/tile/brown/half{
@@ -1538,7 +1549,7 @@
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
 	},
-/turf/open/floor/mineral/plastitanium/red,
+/turf/open/floor/plating,
 /area/ship/engineering)
 "Gs" = (
 /obj/structure/cable{
@@ -1549,7 +1560,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
-/turf/open/floor/mineral/plastitanium/red,
+/turf/open/floor/carpet/donk,
 /area/ship/crew/dorm)
 "Gz" = (
 /obj/effect/turf_decal/syndicateemblem/middle/right,
@@ -1662,6 +1673,9 @@
 /obj/item/clothing/under/syndicate/intern,
 /obj/item/hand_labeler,
 /obj/item/hand_labeler_refill,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
+	dir = 4
+	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "Jw" = (
@@ -1703,7 +1717,7 @@
 	icon_state = "2-4"
 	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2,
-/turf/open/floor/mineral/plastitanium/red,
+/turf/open/floor/carpet/donk,
 /area/ship/crew/dorm)
 "LI" = (
 /obj/machinery/power/apc/auto_name/east,
@@ -1758,7 +1772,7 @@
 "Ml" = (
 /obj/structure/bed/pod,
 /obj/item/bedsheet/syndie,
-/turf/open/floor/mineral/plastitanium,
+/turf/open/floor/carpet/donk,
 /area/ship/crew/dorm)
 "MX" = (
 /obj/item/toy/sword,
@@ -1830,7 +1844,7 @@
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
-/turf/open/floor/mineral/plastitanium,
+/turf/open/floor/carpet/donk,
 /area/ship/crew/dorm)
 "OE" = (
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
@@ -1941,7 +1955,7 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/mineral/plastitanium/red,
+/turf/open/floor/carpet/donk,
 /area/ship/crew/dorm)
 "Rl" = (
 /obj/structure/cable{
@@ -2019,7 +2033,7 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
 	dir = 4
 	},
-/turf/open/floor/mineral/plastitanium,
+/turf/open/floor/carpet/donk,
 /area/ship/crew/dorm)
 "SR" = (
 /obj/effect/turf_decal/syndicateemblem/top/middle,
@@ -2059,7 +2073,7 @@
 /obj/item/clothing/head/HoS/beret/syndicate,
 /obj/item/clothing/head/HoS/beret/syndicate,
 /obj/machinery/airalarm/directional/west,
-/turf/open/floor/mineral/plastitanium,
+/turf/open/floor/carpet/donk,
 /area/ship/crew/dorm)
 "TW" = (
 /turf/open/floor/mineral/plastitanium/red,
@@ -2164,8 +2178,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/medical)
 "VR" = (
-/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
-/turf/open/floor/plating,
+/turf/closed/wall/r_wall/syndicate/nodiagonal,
 /area/ship/engineering)
 "VZ" = (
 /obj/machinery/power/terminal{
@@ -2203,7 +2216,7 @@
 /obj/structure/bed/pod,
 /obj/item/bedsheet/syndie,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/mineral/plastitanium,
+/turf/open/floor/carpet/donk,
 /area/ship/crew/dorm)
 "WU" = (
 /obj/machinery/computer/piratepad_control{
@@ -2243,7 +2256,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
-/turf/open/floor/mineral/plastitanium/red,
+/turf/open/floor/carpet/donk,
 /area/ship/crew/dorm)
 "XP" = (
 /obj/structure/cable{
@@ -2331,7 +2344,7 @@
 /obj/structure/sign/poster/contraband/syndicate{
 	pixel_x = -32
 	},
-/turf/open/floor/mineral/plastitanium,
+/turf/open/floor/carpet/donk,
 /area/ship/crew/dorm)
 "Zn" = (
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
@@ -2395,7 +2408,7 @@ Nr
 Nr
 Nr
 Nr
-vp
+Nr
 Nr
 Nr
 Nr
@@ -2424,9 +2437,9 @@ Nr
 Nr
 Nr
 Nr
-vp
 VR
-vp
+VR
+VR
 Nr
 Nr
 Nr
@@ -2452,11 +2465,11 @@ Ka
 qj
 Ka
 Nr
-Nr
-vp
+CP
+VR
 qe
-vp
-vp
+VR
+VR
 Nr
 Nr
 Nr
@@ -2482,7 +2495,7 @@ Xk
 Ka
 qj
 Ka
-vp
+VR
 qR
 jK
 VR
@@ -2514,8 +2527,8 @@ YD
 vp
 rV
 LU
-vp
-vp
+VR
+VR
 Nr
 Nr
 "}
@@ -2804,8 +2817,8 @@ xm
 vp
 uK
 wT
-vp
-vp
+VR
+VR
 Nr
 Nr
 "}
@@ -2830,7 +2843,7 @@ Ml
 EO
 AM
 EO
-vp
+VR
 EW
 Kk
 VR
@@ -2858,11 +2871,11 @@ EO
 AM
 EO
 Nr
-Nr
-vp
+ie
+VR
 sk
-vp
-vp
+VR
+VR
 Nr
 Nr
 Nr
@@ -2888,9 +2901,9 @@ Nr
 Nr
 Nr
 Nr
-vp
 VR
-vp
+VR
+VR
 Nr
 Nr
 Nr
@@ -2917,7 +2930,7 @@ Nr
 Nr
 Nr
 Nr
-vp
+Nr
 Nr
 Nr
 Nr
