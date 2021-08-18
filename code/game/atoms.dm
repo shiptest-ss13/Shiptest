@@ -228,7 +228,7 @@
 		SET_BITFLAG_LIST(canSmoothWith)
 
 	var/area/ship/current_ship_area = get_area(src)
-	if(!mapload && istype(current_ship_area))
+	if(!mapload && istype(current_ship_area) && current_ship_area.mobile_port)
 		connect_to_shuttle(current_ship_area.mobile_port, current_ship_area.mobile_port.get_docked())
 
 	var/temp_list = list()

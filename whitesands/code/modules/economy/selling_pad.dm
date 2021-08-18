@@ -3,10 +3,7 @@
 	name = "cargo hold pad"
 	icon = 'icons/obj/telescience.dmi'
 	icon_state = "lpad-idle-o"
-	var/idle_state = "lpad-idle-o"
-	var/warmup_state = "lpad-idle"
-	var/sending_state = "lpad-beam"
-	var/cargo_hold_id
+	circuit = /obj/item/circuitboard/machine/selling_pad
 
 /obj/machinery/selling_pad/multitool_act(mob/living/user, obj/item/multitool/I)
 	. = ..()
@@ -17,6 +14,7 @@
 
 /obj/machinery/computer/selling_pad_control
 	name = "cargo hold control terminal"
+	circuit = /obj/item/circuitboard/computer/selling_pad_control
 	var/status_report = "Ready for delivery."
 	var/datum/weakref/pad
 	var/warmup_time = 100
@@ -24,7 +22,6 @@
 	var/datum/bank_account/sell_account
 	var/datum/export_report/total_report
 	var/sending_timer
-	var/cargo_hold_id
 
 /obj/machinery/computer/selling_pad_control/Initialize()
 	..()
@@ -32,29 +29,30 @@
 
 /obj/machinery/computer/selling_pad_control/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock)
 	. = ..()
-	sell_account = port.current_ship?.ship_account
+	sell_account = port.current_ship.ship_account
 
 /obj/machinery/computer/selling_pad_control/multitool_act(mob/living/user, obj/item/multitool/I)
 	. = ..()
-	if (istype(I) && istype(I.buffer,/obj/machinery/selling_pad))
+	if (istype(I) && istype(I.buffer, /obj/machinery/selling_pad))
 		to_chat(user, "<span class='notice'>You link [src] with [I.buffer] in [I] buffer.</span>")
 		pad = WEAKREF(I.buffer)
 		return TRUE
 
-/obj/machinery/computer/selling_pad_control/LateInitialize()
-	. = ..()
-	if(cargo_hold_id)
-		for(var/obj/machinery/selling_pad/P in GLOB.machines)
-			if(P.cargo_hold_id == cargo_hold_id)
-				pad = P
-				return
-	else
+/obj/machinery/computer/selling_pad_control/proc/try_connect()
+	if(!pad)
 		var/obj/machinery/selling_pad/sell_pad = locate() in range(4,src)
 		pad = WEAKREF(sell_pad)
+	if(!sell_account)
+		var/area/ship/current_area = get_area(src)
+		if(!istype(current_area))
+			return
+		sell_account = current_area.mobile_port?.current_ship.ship_account
 
 /obj/machinery/computer/selling_pad_control/ui_interact(mob/user, datum/tgui/ui)
 	ui = SStgui.try_update_ui(user, src, ui)
 	if(!ui)
+		if(!pad || !sell_account)
+			try_connect()
 		ui = new(user, src, "CargoHoldTerminal", name)
 		ui.open()
 
@@ -147,8 +145,8 @@
 		status_report += "Nothing"
 
 	sell_pad.visible_message("<span class='notice'>[sell_pad] activates!</span>")
-	flick(sell_pad.sending_state,pad)
-	sell_pad.icon_state = sell_pad.idle_state
+	flick("[initial(sell_pad.icon_state)]-beam", pad)
+	sell_pad.icon_state = "[initial(sell_pad.icon_state)]-idle-o"
 	sending = FALSE
 
 /obj/machinery/computer/selling_pad_control/proc/start_sending()
@@ -160,7 +158,7 @@
 	sending = TRUE
 	status_report = "Sending..."
 	sell_pad.visible_message("<span class='notice'>[pad] starts charging up.</span>")
-	sell_pad.icon_state = sell_pad.warmup_state
+	sell_pad.icon_state = "[initial(sell_pad.icon_state)]-idle"
 	sending_timer = addtimer(CALLBACK(src,.proc/send),warmup_time, TIMER_STOPPABLE)
 
 /obj/machinery/computer/selling_pad_control/proc/stop_sending()
@@ -171,5 +169,5 @@
 		return
 	sending = FALSE
 	status_report = "Ready for delivery."
-	sell_pad.icon_state = sell_pad.idle_state
+	sell_pad.icon_state = "[initial(sell_pad.icon_state)]-idle-o"
 	deltimer(sending_timer)

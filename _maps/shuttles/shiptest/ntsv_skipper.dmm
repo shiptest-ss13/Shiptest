@@ -448,6 +448,13 @@
 /obj/machinery/airalarm/directional/south,
 /turf/open/floor/plasteel,
 /area/ship/engineering/engine)
+"fd" = (
+/obj/effect/turf_decal/lumos/tile/brown/half{
+	dir = 1
+	},
+/obj/machinery/selling_pad,
+/turf/open/floor/plasteel,
+/area/ship/cargo)
 "fg" = (
 /obj/effect/turf_decal/lumos/tile/blue/fulltile,
 /obj/structure/cable{
@@ -2962,6 +2969,7 @@
 /obj/effect/turf_decal/lumos/tile/brown/fullcorner{
 	dir = 8
 	},
+/obj/machinery/computer/selling_pad_control,
 /turf/open/floor/plasteel,
 /area/ship/cargo)
 "LC" = (
@@ -3576,6 +3584,21 @@
 /obj/machinery/air_sensor/atmos/air_tank,
 /turf/open/floor/engine/air,
 /area/ship/engineering/atmospherics)
+"TT" = (
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/obj/effect/turf_decal/stripes/line{
+	dir = 4
+	},
+/obj/effect/turf_decal/lumos/tile/brown/half{
+	dir = 4
+	},
+/obj/machinery/computer/cargo/express{
+	dir = 1
+	},
+/turf/open/floor/plasteel,
+/area/ship/cargo)
 "Uj" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -4452,7 +4475,7 @@ ov
 GF
 HN
 Rd
-FA
+fd
 Kf
 Kf
 Kf
@@ -4485,7 +4508,7 @@ KN
 Rd
 Lz
 CQ
-CQ
+TT
 vQ
 oC
 uQ
