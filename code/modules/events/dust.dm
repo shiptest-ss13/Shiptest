@@ -1,4 +1,4 @@
-/datum/round_event_control/space_dust
+/*/datum/round_event_control/space_dust
 	name = "Minor Space Dust"
 	typepath = /datum/round_event/space_dust
 	weight = 200
@@ -14,7 +14,7 @@
 /datum/round_event/space_dust/start()
 	spawn_meteors(1, GLOB.meteorsC)
 
-/*/datum/round_event_control/sandstorm
+/datum/round_event_control/sandstorm
 	name = "Sandstorm"
 	typepath = /datum/round_event/sandstorm
 	weight = 0

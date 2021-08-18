@@ -40,6 +40,10 @@ jobs:
           tools/bootstrap/python -m dmi.test
           tools/bootstrap/python -m mapmerge2.dmm_test
           ~/dreamchecker > ${GITHUB_WORKSPACE}/output-annotations.txt 2>&1
+      - name: Annotate Regex Matches
+        if: always()
+        run: |
+          cat check_regex_output.txt
       - name: Annotate Lints
         uses: yogstation13/DreamAnnotate@v1
         if: always()

@@ -30,6 +30,8 @@ THE SOFTWARE.
 '''
 
 # Standard Python
+from io import FileIO
+import sys
 import os
 import re as regex
 import time
@@ -37,6 +39,8 @@ import time
 # Third party
 import colorama
 from colorama import Fore, Back, Style
+
+annotation_file_output_name = "check_regex_output.txt"
 
 class TestExpression:
     def __init__(self, expected, message, pattern) -> None:
@@ -105,8 +109,14 @@ def test_file(results, expressions, file, ignore_comments=False):
     def is_a_line_comment(line):
         return line_comment_regex_expression.match(line)
 
+    matched = [None] * len(expressions)
+    for i in range(0, len(expressions)):
+        matched[i] = []
+
+    line_number = 0
     is_comment_block = False
     for line in open(file, 'r', encoding='latin-1'):
+        line_number += 1
         if ignore_comments:
             if str.find(line, '/*') >= 0:
                 is_comment_block = True
@@ -119,6 +129,7 @@ def test_file(results, expressions, file, ignore_comments=False):
             expression = expressions[it]
             matches = regex.findall(expression, line)
             if len(matches) > 0:
+                matched[it].append(line_number)
                 key = file
                 count = len(matches)
                 if key not in results[it]:
@@ -126,7 +137,19 @@ def test_file(results, expressions, file, ignore_comments=False):
                 else:
                     results[it][key] += count
                 results[it]["SUM"] += count
+    return matched
 
+# For writing to both stdout and file at once
+output_file: FileIO = None
+
+def output_write(message, colour=None, to_stdout=True, to_file=True):
+    if to_stdout:
+        if colour is not None:
+            print(f"{colour}{message}{Fore.RESET}")
+        else:
+            print(message)
+    if to_file and output_file is not None:
+        output_file.write(message + "\n")
 
 if __name__ == "__main__":
     colorama.init()
@@ -136,28 +159,36 @@ if __name__ == "__main__":
 
     results = list()
     expressions = list()
+    matched_lines_by_expression = list()
     for it in range(0, len(cases)):
         case = cases[it]
         results.append({
             "SUM": 0
         })
         expressions.append(regex.compile(case.pattern))
+        matched_lines_by_expression.append(dict())
 
     for it in files_to_test:
         file = files_to_test[it]
-        test_file(results, expressions, file)
+        matched = test_file(results, expressions, file)
+        for j in range(0, len(expressions)):
+            matched_lines = matched[j]
+            if len(matched_lines) > 0:
+                matched_lines_by_expression[j][file] = matched_lines
 
     # This is the end, go process the data then show the results!
 
-    print(f"\n{'='*5} Regex Results {'='*36}")
-    print("\n%-12s | %-6s | %s"
+    output_file = open(annotation_file_output_name, mode='wt', encoding="utf-8")
+
+    output_write(f"\n{'='*5} Regex Results {'='*66}")
+    output_write("\n%-12s | %-6s | %s"
         % (
             "Result",
             "Target",
             "Description"
-        )
+        ),
     )
-    print(f"{'-'*13}+{'-'*8}+{'-'*33}")
+    output_write(f"{'-'*13}+{'-'*8}+{'-'*63}")
 
     failure = 0
     for it in range(0, len(results)):
@@ -171,25 +202,49 @@ if __name__ == "__main__":
             match = False
             colour = Fore.RED
 
-        print(
-            (f"{colour}%4s:%7i |%7i | %s{Fore.RESET}")
+        output_write("\n", to_stdout=False)
+        output_write("%4s:%7i |%7i | %s"
             % (
                 "OK" if match else ">>>>",
                 count,
                 case.expected,
                 case.message
-            )
+            ),
+            colour=colour
         )
-    print("\n"
+
+        # Annotation info
+        if not output_file.writable():
+            continue
+        lines_by_file = list(matched_lines_by_expression[it].items())
+        files_count = len(lines_by_file)
+        for jt in range(0, len(lines_by_file)):
+            file, matches = lines_by_file[jt]
+            padding = "\u251C" if jt < len(lines_by_file) - 1 else "\u2514"
+            output_write(
+                "%3s %-86s: (%3i) %s" % (padding, file, len(matches), matches),
+                to_stdout= False
+            )
+
+    output_write("\n"
         + (
-            f"{Fore.RED}There are mismatches present, please address those"
+            "There are mismatches present, please address those"
             if failure else
-            f"{Fore.GREEN}All OK!"
-        ) + Fore.RESET
+            "All OK!"
+        ),
+        colour= Fore.RED if failure else Fore.GREEN,
+        to_file= False
     )
-    print("\nThis script completed in %7.3f seconds"
+    output_write("\nThis script completed in %7.3f seconds"
         % (time.time() - start_time)
     )
-    print(f"{'='*56}\n")
+    output_write("\nFull match and annotation written to: %s"
+        % (str.join("/", [os.getcwd(), annotation_file_output_name])),
+        to_file=False
+    )
+    output_write(f"{'='*86}\n", to_file= False)
+
+    output_file.close()
+    output_file = None
 
     exit(failure > 0)

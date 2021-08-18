@@ -679,6 +679,7 @@
 	dir = 5
 	},
 /obj/item/stack/rods,
+/obj/machinery/holopad/emergency/command,
 /turf/open/floor/mineral/titanium/blue,
 /area/ship/bridge)
 "da" = (
@@ -929,6 +930,9 @@
 	dir = 4
 	},
 /obj/machinery/recharger,
+/obj/item/radio/intercom/wideband{
+	pixel_y = 28
+	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/bridge)
 "iM" = (
@@ -1780,6 +1784,8 @@
 /obj/machinery/light/small{
 	dir = 8
 	},
+/obj/item/gun/energy/e_gun/mini,
+/obj/item/stock_parts/cell/gun/mini,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/crew)
 "NI" = (
@@ -1795,6 +1801,8 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/greenglow,
+/obj/item/gun/energy/e_gun/mini,
+/obj/item/stock_parts/cell/gun/mini,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/crew)
 "Oi" = (
