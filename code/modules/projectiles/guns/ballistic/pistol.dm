@@ -40,7 +40,7 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	mag_type = /obj/item/ammo_box/magazine/m45
 	can_suppress = FALSE
-	fire_sound = 'sound/weapons/gun/pistol/shot_alt.ogg'
+	fire_sound = 'sound/weapons/gun/pistol/shot.ogg'
 	rack_sound = 'sound/weapons/gun/pistol/rack.ogg'
 	lock_back_sound = 'sound/weapons/gun/pistol/slide_lock.ogg'
 	bolt_drop_sound = 'sound/weapons/gun/pistol/slide_drop.ogg'
@@ -56,7 +56,7 @@
 	mag_type = /obj/item/ammo_box/magazine/m50
 	can_suppress = FALSE
 	mag_display = TRUE
-	fire_sound = 'sound/weapons/gun/rifle/shot.ogg'
+	fire_sound = 'sound/weapons/gun/rifle/shot_alt.ogg'
 	rack_sound = 'sound/weapons/gun/pistol/rack.ogg'
 	lock_back_sound = 'sound/weapons/gun/pistol/slide_lock.ogg'
 	bolt_drop_sound = 'sound/weapons/gun/pistol/slide_drop.ogg'
