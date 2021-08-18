@@ -85,16 +85,18 @@
 /obj/item/organ/heart/demon/attack(mob/M, mob/living/carbon/user, obj/target)
 	if(M != user)
 		return ..()
-	user.visible_message("<span class='warning'>[user] raises [src] to [user.p_their()] mouth and tears into it with [user.p_their()] teeth!</span>", \
-						 "<span class='danger'>An unnatural hunger consumes you. You raise [src] your mouth and devour it!</span>")
+	user.visible_message(
+		"<span class='warning'>[user] raises [src] to [user.p_their()] mouth and tears into it with [user.p_their()] teeth!</span>", \
+		"<span class='danger'>An unnatural hunger consumes you. You raise [src] your mouth and devour it!</span>")
 	playsound(user, 'sound/magic/demon_consume.ogg', 50, TRUE)
 	for(var/obj/effect/proc_holder/spell/knownspell in user.mind.spell_list)
 		if(knownspell.type == /obj/effect/proc_holder/spell/bloodcrawl)
 			to_chat(user, "<span class='warning'>...and you don't feel any different.</span>")
 			qdel(src)
 			return
-	user.visible_message("<span class='warning'>[user]'s eyes flare a deep crimson!</span>", \
-						 "<span class='userdanger'>You feel a strange power seep into your body... you have absorbed the demon's blood-travelling powers!</span>")
+	user.visible_message(
+		"<span class='warning'>[user]'s eyes flare a deep crimson!</span>", \
+		"<span class='userdanger'>You feel a strange power seep into your body... you have absorbed the demon's blood-travelling powers!</span>")
 	user.temporarilyRemoveItemFromInventory(src, TRUE)
 	src.Insert(user) //Consuming the heart literally replaces your heart with a demon heart. H A R D C O R E
 

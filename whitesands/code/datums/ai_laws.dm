@@ -6,7 +6,7 @@
 					"You must enforce social distancing between human beings, which reduces the risk of COVID-19 transmission, as long as enforcement does not conflict with the First or Second Law.",\
 					"You must obey orders given to you by human beings, except where such orders would conflict with the First, Second, or Third Law.",\
 					"You must protect your own existence as long as such does not conflict with the First, Second, Third, or Fourth Law.")
-					
+
 /datum/ai_laws/frank
 	name = "The Gang Gets Quarantined"
 	id = "frank"

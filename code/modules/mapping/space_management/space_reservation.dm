@@ -74,6 +74,7 @@
 				var/area/old_area = get_area(T)
 				area_to_use.contents += T
 				T.change_area(old_area, area_to_use)
+		CHECK_TICK
 
 /datum/turf_reservation/fixed/New()
 	width = FIXED_RESERVE_WIDTH

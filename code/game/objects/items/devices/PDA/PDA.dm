@@ -401,9 +401,9 @@ GLOBAL_LIST_EMPTY(PDAs)
 			else//Else it links to the cart menu proc. Although, it really uses menu hub 4--menu 4 doesn't really exist as it simply redirects to hub.
 				dat += cartridge.generate_menu()
 
-  var/datum/browser/popup = new(user, "pda_ui", "<div align='center'>Personal Data Assistant</div>", 500, 600)
-  popup.set_content(dat)
-  popup.open(0)
+	var/datum/browser/popup = new(user, "pda_ui", "<div align='center'>Personal Data Assistant</div>", 500, 600)
+	popup.set_content(dat)
+	popup.open(0)
 
 /obj/item/pda/Topic(href, href_list)
 	..()

@@ -12,25 +12,22 @@
 	///Is this for viewing only?
 	var/viewer = FALSE
 
-/obj/machinery/computer/helm/Initialize(mapload)
-	. = ..()
-	if(!SSovermap.initialized)
-		set_ship()
-	else
-		LAZYADD(SSovermap.helms, src)
+/obj/machinery/computer/helm/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock)
+	current_ship = port.current_ship
 
-/obj/machinery/computer/helm/proc/set_ship()
+/**
+ * This proc manually rechecks that the helm computer is connected to a proper ship
+ */
+/obj/machinery/computer/helm/proc/reload_ship()
 	var/obj/docking_port/mobile/port = SSshuttle.get_containing_shuttle(src)
-	if(!port)
-		return FALSE
-	if(port.current_ship)
+	if(port?.current_ship)
 		current_ship = port.current_ship
 		return TRUE
 
 /obj/machinery/computer/helm/ui_interact(mob/user, datum/tgui/ui)
 	// Update UI
-	if(!current_ship)
-		set_ship()
+	if(!current_ship && !reload_ship())
+		return
 	ui = SStgui.try_update_ui(user, src, ui)
 	on_interact_click(user, ui)
 	if(!ui)
@@ -143,7 +140,7 @@
 			update_static_data(usr, ui)
 			return
 		if("reload_ship")
-			set_ship()
+			reload_ship()
 			update_static_data(usr, ui)
 			return
 		if("reload_engines")
@@ -188,7 +185,7 @@
 	concurrent_users -= user_ref
 	// Unregister map objects
 	if(current_ship)
-		user.client.clear_map(current_ship.map_name)
+		user.client?.clear_map(current_ship.map_name)
 	// Turn off the console
 	if(length(concurrent_users) == 0 && is_living)
 		playsound(src, 'sound/machines/terminal_off.ogg', 25, FALSE)

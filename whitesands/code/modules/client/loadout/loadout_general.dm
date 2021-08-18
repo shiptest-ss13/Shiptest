@@ -150,6 +150,12 @@
 	var/obj/item/toy/plush/among/temp = new path()
 	description = "[capitalize(pick(temp.among_colors))] sus."
 	qdel(temp)
+
+/datum/gear/hairspray
+	display_name = "hair dye"
+	path = /obj/item/dyespray
+	cost = 700
+
 // End Shiptest
 
 /datum/gear/flashlight

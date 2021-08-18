@@ -340,7 +340,7 @@
 		return
 	locked = TRUE
 	playsound(src, boltDown, 30, FALSE, 3, mono_adj = TRUE)
-	audible_message("<span class='hear'>You hear a click from the bottom of the door.</span>", null,  1)
+	audible_message("<span class='hear'>You hear a click from the bottom of the door.</span>", null, 1)
 	update_icon()
 
 /obj/machinery/door/airlock/unlock()
@@ -351,7 +351,7 @@
 		return
 	locked = FALSE
 	playsound(src, boltUp, 30, FALSE, 3, mono_adj = TRUE)
-	audible_message("<span class='hear'>You hear a click from the bottom of the door.</span>", null,  1)
+	audible_message("<span class='hear'>You hear a click from the bottom of the door.</span>", null, 1)
 	update_icon()
 
 /obj/machinery/door/airlock/narsie_act()
@@ -1181,8 +1181,10 @@
 	if(I)
 		var/beingcrowbarred = (I.tool_behaviour == TOOL_CROWBAR)
 		if(!security_level && (beingcrowbarred && panel_open && ((obj_flags & EMAGGED) || (density && welded && !operating && !hasPower() && !locked))))
-			user.visible_message("<span class='notice'>[user] removes the electronics from the airlock assembly.</span>", \
-							 	"<span class='notice'>You start to remove electronics from the airlock assembly...</span>")
+			user.visible_message(
+				"<span class='notice'>[user] removes the electronics from the airlock assembly.</span>",
+				"<span class='notice'>You start to remove electronics from the airlock assembly...</span>"
+			)
 			if(I.use_tool(src, user, 40, volume=100))
 				deconstruct(TRUE, user)
 				return

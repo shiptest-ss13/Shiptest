@@ -33,7 +33,7 @@
 	if(murder)
 		L.gib()
 		return
-	var/targetturf = find_safe_turf(stuck_zlevel)
+	var/targetturf = find_safe_turf(list(stuck_zlevel))
 	if(!targetturf)
 		targetturf = locate(world.maxx/2,world.maxy/2,stuck_zlevel)
 	L.forceMove(targetturf)

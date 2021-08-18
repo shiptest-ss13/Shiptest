@@ -225,11 +225,11 @@
 	var/obj/item/storage/briefcase/launchpad/briefcase
 
 /obj/machinery/launchpad/briefcase/Initialize(mapload, briefcase)
-    . = ..()
-    if(!briefcase)
-        log_game("[src] has been spawned without a briefcase.")
-        return INITIALIZE_HINT_QDEL
-    src.briefcase = briefcase
+	. = ..()
+	if(!briefcase)
+		log_game("[src] has been spawned without a briefcase.")
+		return INITIALIZE_HINT_QDEL
+	src.briefcase = briefcase
 
 /obj/machinery/launchpad/briefcase/Destroy()
 	QDEL_NULL(briefcase)

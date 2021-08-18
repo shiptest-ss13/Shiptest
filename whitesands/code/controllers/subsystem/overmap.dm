@@ -14,12 +14,8 @@ SUBSYSTEM_DEF(overmap)
 	var/list/overmap_objects
 	///List of all simulated ships
 	var/list/simulated_ships
-	///List of all helms, to be adjusted
-	var/list/helms
 	///List of all events
 	var/list/events
-	///List of all autopilot consoles
-	var/list/autopilots
 
 	///Map of tiles at each radius (represented by index) around the sun
 	var/list/list/radius_tiles
@@ -36,13 +32,12 @@ SUBSYSTEM_DEF(overmap)
 	var/encounter_cooldown = 0
 
 /**
-  * Creates an overmap object for shuttles, triggers initialization procs for ships and helms
+  * Creates an overmap object for shuttles, triggers initialization procs for ships
   */
 /datum/controller/subsystem/overmap/Initialize(start_timeofday)
 	overmap_objects = list()
 	simulated_ships = list()
 	events = list()
-	autopilots = list()
 
 	generator_type = CONFIG_GET(string/overmap_generator_type)
 	if (!generator_type)
@@ -81,14 +76,6 @@ SUBSYSTEM_DEF(overmap)
 
 	for(var/obj/docking_port/mobile/M as anything in SSshuttle.mobile)
 		setup_shuttle_ship(M)
-
-	for(var/obj/machinery/computer/helm/H as anything in helms)
-		H.set_ship()
-	QDEL_NULL(helms)
-
-	for(var/obj/machinery/computer/autopilot/A as anything in autopilots)
-		A.initial_load()
-	QDEL_NULL(autopilots)
 
 	return ..()
 
@@ -262,9 +249,10 @@ SUBSYSTEM_DEF(overmap)
 		mapgen.generate_terrain(encounter_reservation.get_non_border_turfs())
 
 	// locates the first dock in the bottom left, accounting for padding and the border
-	var/turf/primary_docking_turf = locate(encounter_reservation.bottom_left_coords[1]+RESERVE_DOCK_DEFAULT_PADDING+1,
-										   encounter_reservation.bottom_left_coords[2]+RESERVE_DOCK_DEFAULT_PADDING+1,
-										   encounter_reservation.bottom_left_coords[3])
+	var/turf/primary_docking_turf = locate(
+		encounter_reservation.bottom_left_coords[1]+RESERVE_DOCK_DEFAULT_PADDING+1,
+		encounter_reservation.bottom_left_coords[2]+RESERVE_DOCK_DEFAULT_PADDING+1,
+		encounter_reservation.bottom_left_coords[3])
 	// now we need to offset to account for the first dock
 	var/turf/secondary_docking_turf = locate(primary_docking_turf.x+RESERVE_DOCK_MAX_SIZE_LONG+RESERVE_DOCK_DEFAULT_PADDING, primary_docking_turf.y, primary_docking_turf.z)
 

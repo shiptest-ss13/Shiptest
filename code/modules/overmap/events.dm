@@ -1,3 +1,8 @@
+/**
+ * # Overmap Events
+ *
+ * These are events that have some sort of effect on overmap ships that are on the same tile.
+ */
 /obj/structure/overmap/event
 	name = "generic overmap event"
 	integrity = 0

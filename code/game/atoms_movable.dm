@@ -116,6 +116,8 @@
 
 	LAZYCLEARLIST(client_mobs_in_contents)
 
+	vis_contents.Cut()
+
 	moveToNullspace()
 
 
