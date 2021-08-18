@@ -76,6 +76,13 @@
 #define VV_HK_ADDCOMPONENT "addcomponent"
 #define VV_HK_MODIFY_TRAITS "modtraits"
 
+// /datum/gas_mixture
+#define VV_HK_SET_MOLES "set_moles"
+#define VV_HK_EMPTY "empty"
+#define VV_HK_SET_TEMPERATURE "set_temp"
+#define VV_HK_PARSE_GASSTRING "parse_gasstring"
+#define VV_HK_SET_VOLUME "set_volume"
+
 // /atom
 #define VV_HK_MODIFY_TRANSFORM "atom_transform"
 #define VV_HK_ADD_REAGENT "addreagent"

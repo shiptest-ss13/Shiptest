@@ -31,7 +31,7 @@
 	if(reverse_boost && SEND_SIGNAL(M, COMSIG_HAS_NANITES))
 		if(prob(A.stage_prob))
 			A.stage = min(A.stage + 1,A.max_stages)
-			
+
 /datum/symptom/nano_destroy
 	name = "Silicolysis"
 	desc = "The virus reacts to nanites in the host's bloodstream by attacking and consuming them."

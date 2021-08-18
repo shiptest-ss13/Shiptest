@@ -164,13 +164,15 @@ GLOBAL_VAR_INIT(mouse_killed, 0)
 
 	eating = TRUE
 	layer = MOB_LAYER
-	visible_message("<span class='danger'>[src] starts eating away [A]...</span>",
-						 "<span class='notice'>You start eating the [A]...</span>")
+	visible_message(
+		"<span class='danger'>[src] starts eating away [A]...</span>",
+		"<span class='notice'>You start eating the [A]...</span>")
 	if(do_after(src, 30, FALSE, A))
 		if(QDELETED(A))
 			return
-		visible_message("<span class='danger'>[src] finishes eating up [A]!</span>",
-						 "<span class='notice'>You finish up eating [A]</span>")
+		visible_message(
+			"<span class='danger'>[src] finishes eating up [A]!</span>",
+			"<span class='notice'>You finish up eating [A]</span>")
 		A.mouse_eat(src)
 		GLOB.mouse_food_eaten++
 

@@ -11,6 +11,7 @@
 /obj/item/clothing/under/utility/skirt //trolled.
 	name = "utility jumpskirt"
 	desc = "A somewhat uncomfortable suit designed to be as cheap as possible to manufacture. This one has a skirt."
+	body_parts_covered = CHEST|GROIN|ARMS
 	icon_state = "utility_skirt"
 	item_state = "utility_skirt"
 	can_adjust = FALSE

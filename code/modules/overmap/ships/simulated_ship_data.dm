@@ -27,4 +27,3 @@
 			assignment = C.prefs.alt_titles_preferences[assignment]
 
 		manifest[H.real_name] = assignment
-		sortList(manifest, /proc/cmp_job_display_asc)

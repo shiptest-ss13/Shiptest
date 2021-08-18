@@ -99,7 +99,7 @@
 		hidden_uplink.active = TRUE
 	else
 		to_chat(U, "<span class='alert'>PDA not found.</span>")
-		
+
 /obj/item/cartridge/virus/frame/attackby(obj/item/I, mob/user, params)
 	. = ..()
 	if(istype(I, /obj/item/stack/telecrystal))

@@ -24,10 +24,7 @@
 	var/dat = "<TITLE>Telecommunications Monitor</TITLE><center><b>Telecommunications Monitor</b></center>"
 
 	switch(screen)
-
-
-	  // --- Main Menu ---
-
+		// --- Main Menu ---
 		if(0)
 			dat += "<br>[temp]<br><br>"
 			dat += "<br>Current Network: <a href='?src=[REF(src)];network=1'>[network]</a><br>"
@@ -40,9 +37,7 @@
 			else
 				dat += "<a href='?src=[REF(src)];operation=probe'>\[Probe Network\]</a>"
 
-
-	  // --- Viewing Machine ---
-
+		// --- Viewing Machine ---
 		if(1)
 			dat += "<br>[temp]<br>"
 			dat += "<center><a href='?src=[REF(src)];operation=mainmenu'>\[Main Menu\]</a></center>"
@@ -53,8 +48,6 @@
 				if(!T.hide)
 					dat += "<li><a href='?src=[REF(src)];viewmachine=[T.id]'>[REF(T.id)] [T.name]</a> ([T.id])</li>"
 			dat += "</ol>"
-
-
 
 	user << browse(dat, "window=comm_monitor;size=575x400")
 	onclose(user, "server_control")

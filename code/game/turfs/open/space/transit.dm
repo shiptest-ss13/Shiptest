@@ -33,41 +33,16 @@
 
 /atom/proc/throw_atom_into_space(atom/movable/AM)
 	set waitfor = FALSE
-	qdel(AM) //ATOMized - VERY TEMPORARY
-/*	if(!AM || istype(AM, /obj/docking_port))
+	if(!AM || istype(AM, /obj/docking_port))
 		return
 	if(AM.loc != src) 	// Multi-tile objects are "in" multiple locs but its loc is it's true placement.
 		return			// Don't move multi tile objects if their origin isnt in transit
-	var/max = world.maxx-TRANSITIONEDGE
-	var/min = 1+TRANSITIONEDGE
-
-	var/list/possible_transtitons = list()
-	for(var/A in SSmapping.z_list)
-		var/datum/space_level/D = A
-		if(D.linkage == CROSSLINKED)
-			possible_transtitons += D.z_value
-	var/_z = pick(possible_transtitons)
-
-	//now select coordinates for a border turf
-	var/_x
-	var/_y
-	switch(dir)
-		if(SOUTH)
-			_x = rand(min,max)
-			_y = max
-		if(WEST)
-			_x = max
-			_y = rand(min,max)
-		if(EAST)
-			_x = min
-			_y = rand(min,max)
-		else
-			_x = rand(min,max)
-			_y = min
-
-	var/turf/T = locate(_x, _y, _z)
-	AM.forceMove(T)*/
-
+	if(iseffect(AM))
+		return
+	if(isliving(AM))
+		var/mob/living/poor_soul = AM			// This may not seem like much, but if you toss someone out
+		poor_soul.apply_damage_type(50, BRUTE)	// and they go through like four tiles, they're goners
+	qdel(AM)
 
 /turf/open/space/transit/CanBuildHere()
 	return SSshuttle.is_in_shuttle_bounds(src)

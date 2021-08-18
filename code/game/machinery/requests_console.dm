@@ -75,7 +75,7 @@ GLOBAL_LIST_EMPTY(req_console_ckey_departments)
 			pixel_y = dir & NORTH ? 32 : (dir & SOUTH ? -32 : INSTANCE_VAR_DEFAULT)\
 		),\
 		dir_amount = 8\
-    )
+	)
 
 /obj/machinery/requests_console/update_icon_state()
 	if(machine_stat & NOPOWER)

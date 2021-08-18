@@ -163,4 +163,4 @@
 	desc = "A navy blue envirosuit with chlorophyll green trimmings and a poofy skirt, just as blue to match."
 	icon_state = "lt_enviroskirt"
 	item_state = "lt_enviroskirt"
-	
+

@@ -1,25 +1,25 @@
 /client
 	/**
-	 * Assoc list with all the active maps - when a screen obj is added to
-	 * a map, it's put in here as well.
-	 *
-	 * Format: list(<mapname> = list(/atom/movable/screen))
-	 */
+	* Assoc list with all the active maps - when a screen obj is added to
+	* a map, it's put in here as well.
+	*
+	* Format: list(<mapname> = list(/atom/movable/screen))
+	*/
 	var/list/screen_maps = list()
 
 /atom/movable/screen
 	/**
-	 * Map name assigned to this object.
-	 * Automatically set by /client/proc/add_obj_to_map.
-	 */
+	* Map name assigned to this object.
+	* Automatically set by /client/proc/add_obj_to_map.
+	*/
 	var/assigned_map
 	/**
-	 * Mark this object as garbage-collectible after you clean the map
-	 * it was registered on.
-	 *
-	 * This could probably be changed to be a proc, for conditional removal.
-	 * But for now, this works.
-	 */
+	* Mark this object as garbage-collectible after you clean the map
+	* it was registered on.
+	*
+	* This could probably be changed to be a proc, for conditional removal.
+	* But for now, this works.
+	*/
 	var/del_on_map_removal = TRUE
 
 /**
