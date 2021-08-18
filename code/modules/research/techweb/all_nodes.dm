@@ -135,6 +135,9 @@
 	display_name = "Data Theory"
 	description = "Big Data, in space!"
 	prereq_ids = list("base")
+	design_ids = list(
+		"survey-handheld-advanced"
+	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 	export_price = 5000
 
@@ -391,7 +394,19 @@
 	display_name = "Computer Consoles"
 	description = "Computers and how they work."
 	prereq_ids = list("datatheory")
-	design_ids = list("cargo", "cargorequest", "libraryconsole", "mining", "crewconsole", "rdcamera", "comconsole", "idcard","idcardconsole", "seccamera")
+	design_ids = list(
+		"cargo",
+		"cargorequest",
+		"comconsole",
+		"crewconsole",
+		"idcard",
+		"idcardconsole",
+		"libraryconsole",
+		"mining",
+		"rdcamera",
+		"seccamera",
+		"survey-handheld-elite",
+	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2000)
 	export_price = 5000
 
