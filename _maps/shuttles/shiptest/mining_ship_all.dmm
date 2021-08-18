@@ -318,7 +318,10 @@
 	},
 /obj/item/book/manual/wiki/surgery,
 /obj/item/storage/backpack/duffelbag/med/surgery,
-/turf/open/floor/pod/light,
+/obj/item/clothing/mask/surgical,
+/obj/item/clothing/suit/apron/surgical,
+/obj/item/clothing/gloves/color/latex/nitrile,
+/turf/open/floor/plasteel/white,
 /area/ship/medical)
 "ie" = (
 /obj/structure/table,
@@ -1975,7 +1978,8 @@
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
-/turf/open/floor/pod/dark,
+/obj/item/storage/belt/medical,
+/turf/open/floor/plasteel/dark,
 /area/ship/medical)
 "Wd" = (
 /obj/effect/turf_decal/tile/yellow,
