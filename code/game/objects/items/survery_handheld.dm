@@ -3,6 +3,7 @@
 	desc = "A small tool designed for quick and inefficient data collection about your local star sector."
 	icon = 'icons/obj/item/survey_handheld.dmi'
 	icon_state = "survey"
+	var/active = FALSE
 	var/survey_value = 50
 	var/survey_delay = 2 SECONDS
 
@@ -20,6 +21,10 @@
 	survey_delay = 1 SECONDS
 
 /obj/item/survey_handheld/attack_self(mob/user)
+	if(active)
+		return
+	active = TRUE
+
 	while(user.get_active_held_item() == src)
 		to_chat(user, "<span class='notice'>You begin to scan your surroundings with [src].</span>")
 
@@ -27,7 +32,7 @@
 			flick(icon_state + "-corrupted", src)
 			playsound(src, 'sound/machines/buzz-sigh.ogg')
 			audible_message("Warning: results corrupted. Please try again.")
-			return
+			break
 
 		flick(icon_state + "print", src)
 		playsound(src, 'sound/machines/chime.ogg')
@@ -37,6 +42,7 @@
 			var/obj/item/research_notes/research = user.get_inactive_held_item()
 			research.merge(result)
 
+	active = FALSE
 
 /datum/design/survey_handheld
 	name = "Survey Handheld"
