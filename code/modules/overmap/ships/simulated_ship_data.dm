@@ -11,7 +11,7 @@
 
 /obj/structure/overmap/ship/simulated/Initialize(mapload, obj/docking_port/mobile/_shuttle)
 	. = ..()
-	job_slots = shuttle.source_template.job_slots
+	job_slots = shuttle.source_template.job_slots.Copy()
 	ship_account = new(name, 7500)
 
 /**
