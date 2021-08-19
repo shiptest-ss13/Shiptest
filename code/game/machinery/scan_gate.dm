@@ -8,7 +8,7 @@
 #define SCANGATE_NUTRITION		"Nutrition"
 
 #define SCANGATE_HUMAN			"human"
-#define SCANGATE_lizard			"lizard"
+#define SCANGATE_LIZARD			"lizard"
 #define SCANGATE_FELINID		"felinid"
 #define SCANGATE_FLY			"fly"
 #define SCANGATE_PLASMAMAN		"plasma"
@@ -18,6 +18,10 @@
 #define SCANGATE_GOLEM			"golem"
 #define SCANGATE_ZOMBIE			"zombie"
 #define SCANGATE_SPIDER			"rachnid"
+#define SCANGATE_IPC			"ipc"
+#define SCANGATE_SQUID			"squid"
+#define SCANGATE_ETHEREAL		"ethereal"
+#define SCANGATE_TESHARI		"tesh"
 
 /obj/machinery/scanner_gate
 	name = "scanner gate"
@@ -123,7 +127,7 @@
 				var/mob/living/carbon/human/H = M
 				var/datum/species/scan_species = /datum/species/human
 				switch(detect_species)
-					if(SCANGATE_lizard)
+					if(SCANGATE_LIZARD)
 						scan_species = /datum/species/lizard
 					if(SCANGATE_FLY)
 						scan_species = /datum/species/fly
@@ -143,6 +147,14 @@
 						scan_species = /datum/species/zombie
 					if(SCANGATE_SPIDER)
 						scan_species = /datum/species/spider
+					if(SCANGATE_IPC)
+						scan_species = /datum/species/ipc
+					if(SCANGATE_SQUID)
+						scan_species = /datum/species/squid
+					if(SCANGATE_ETHEREAL)
+						scan_species = /datum/species/ethereal
+					if(SCANGATE_TESHARI)
+						scan_species = /datum/species/teshari
 				if(is_species(H, scan_species))
 					beep = TRUE
 				if(detect_species == SCANGATE_ZOMBIE) //Can detect dormant zombies
@@ -252,7 +264,7 @@
 #undef SCANGATE_NUTRITION
 
 #undef SCANGATE_HUMAN
-#undef SCANGATE_lizard
+#undef SCANGATE_LIZARD
 #undef SCANGATE_FELINID
 #undef SCANGATE_FLY
 #undef SCANGATE_PLASMAMAN
@@ -262,3 +274,7 @@
 #undef SCANGATE_GOLEM
 #undef SCANGATE_ZOMBIE
 #undef SCANGATE_SPIDER
+#undef SCANGATE_IPC
+#undef SCANGATE_SQUID
+#undef SCANGATE_ETHEREAL
+#undef SCANGATE_TESHARI
