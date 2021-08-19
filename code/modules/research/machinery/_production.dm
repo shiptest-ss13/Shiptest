@@ -24,10 +24,26 @@
 	matching_designs = list()
 	cached_designs = list()
 	stored_research = new
-	host_research = SSresearch.science_tech
 	update_research()
 	materials = AddComponent(/datum/component/remote_materials, "lathe", mapload)
 	RefreshParts()
+
+/obj/machinery/rnd/production/attackby(obj/item/O, mob/user, params)
+	. = ..()
+
+	if(istype(O, /obj/item/multitool))
+		if(host_research)
+			audible_message("Disconnected from Server.")
+			host_research = null
+			qdel(stored_research)
+			stored_research = new
+			return
+
+		var/obj/item/multitool/multi = O
+		if(istype(multi.buffer, /obj/machinery/rnd/server))
+			var/obj/machinery/rnd/server/server = multi.buffer
+			audible_message("Linked to Server!")
+			host_research = server.stored_research
 
 /obj/machinery/rnd/production/Destroy()
 	materials = null
@@ -38,6 +54,10 @@
 	return ..()
 
 /obj/machinery/rnd/production/proc/update_research()
+	if(!host_research)
+		audible_message("Warning. No Linked Server!")
+		return
+
 	host_research.copy_research_to(stored_research, TRUE)
 	update_designs()
 
