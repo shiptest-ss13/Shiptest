@@ -86,10 +86,18 @@ Nothing else in the console has ID requirements.
 
 /obj/machinery/computer/rdconsole/Initialize()
 	. = ..()
-	stored_research = SSresearch.science_tech
-	stored_research.consoles_accessing[src] = TRUE
 	matching_design_ids = list()
+
+/obj/machinery/computer/rdconsole/proc/connect_to_server(obj/machinery/rnd/server/server)
+	if(stored_research)
+		disconnect_from_server()
+	stored_research = server.stored_research
+	stored_research.consoles_accessing[src] = TRUE
 	SyncRDevices()
+
+/obj/machinery/computer/rdconsole/proc/disconnect_from_server()
+	stored_research.consoles_accessing -= src
+	stored_research = null
 
 /obj/machinery/computer/rdconsole/Destroy()
 	if(stored_research)
@@ -115,10 +123,24 @@ Nothing else in the console has ID requirements.
 /obj/machinery/computer/rdconsole/attackby(obj/item/D, mob/user, params)
 	if(istype(D, /obj/item/research_notes))
 		var/obj/item/research_notes/R = D
-		SSresearch.science_tech.add_point_list(list(TECHWEB_POINT_TYPE_GENERIC = R.value))
+		stored_research.add_point_list(list(TECHWEB_POINT_TYPE_GENERIC = R.value))
 		playsound(src,'sound/machines/copier.ogg', 100, TRUE)
 		qdel(R)
 		return TRUE
+
+	if(istype(D, /obj/item/multitool))
+		var/obj/item/multitool/multi = D
+
+		if(istype(multi.buffer, /obj/machinery/rnd/server))
+			visible_message("Connected to Server.")
+			connect_to_server(multi.buffer)
+			return
+
+		if(stored_research)
+			visible_message("Disconnected from Server.")
+			disconnect_from_server()
+			return
+
 	//Loading a disk into it.
 	if(istype(D, /obj/item/disk))
 		if(istype(D, /obj/item/disk/tech_disk))
@@ -979,7 +1001,7 @@ Nothing else in the console has ID requirements.
 	if(ls["research_node"])
 		if(!research_control)
 			return				//honestly should call them out for href exploiting :^)
-		if(!SSresearch.science_tech.available_nodes[ls["research_node"]])
+		if(!stored_research.available_nodes[ls["research_node"]])
 			return			//Nope!
 		research_node(ls["research_node"], usr)
 	if(ls["clear_tech"]) //Erase la on the technology disk.
@@ -1076,6 +1098,10 @@ Nothing else in the console has ID requirements.
 
 /obj/machinery/computer/rdconsole/ui_interact(mob/user)
 	. = ..()
+	if(!stored_research)
+		visible_message("Warning: No Linked Server!")
+		return
+
 	var/datum/browser/popup = new(user, "rndconsole", name, 900, 600)
 	popup.add_stylesheet("techwebs", 'html/browser/techwebs.css')
 	popup.set_content(generate_ui())
