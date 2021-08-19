@@ -278,8 +278,9 @@
 	name = "Machine Design (R&D Server Board)"
 	desc = "The circuit board for an R&D Server."
 	id = "rdserver"
+	build_type = AUTOLATHE | IMPRINTER
 	build_path = /obj/item/circuitboard/machine/rdserver
-	category = list("Research Machinery")
+	category = list("Research Machinery", "initial", "Equipment")
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/board/mechfab

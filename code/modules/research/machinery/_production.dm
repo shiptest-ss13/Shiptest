@@ -55,7 +55,7 @@
 
 /obj/machinery/rnd/production/proc/update_research()
 	if(!host_research)
-		audible_message("Warning. No Linked Server!")
+		visible_message("Warning. No Linked Server!")
 		return
 
 	host_research.copy_research_to(stored_research, TRUE)
@@ -74,6 +74,11 @@
 /obj/machinery/rnd/production/ui_interact(mob/user)
 	if(!consoleless_interface)
 		return ..()
+
+	if(!host_research)
+		visible_message("Warning. No Linked Server!")
+		return
+
 	user.set_machine(src)
 	var/datum/browser/popup = new(user, "rndconsole", name, 460, 550)
 	popup.set_content(generate_ui())
