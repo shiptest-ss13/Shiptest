@@ -143,6 +143,14 @@
 		return
 
 /obj/machinery/computer/scan_consolenew/attackby(obj/item/I, mob/user, params)
+	if(istype(I, /obj/item/multitool))
+		var/obj/item/multitool/multi = I
+		if(istype(multi.buffer, /obj/machinery/rnd/server))
+			var/obj/machinery/rnd/server/serv = multi.buffer
+			stored_research = serv.stored_research
+			visible_message("Linked to Server!")
+		return
+
 	// Store chromosomes in the console if there's room
 	if (istype(I, /obj/item/chromosome))
 		if(LAZYLEN(stored_chromosomes) < max_chromosomes)
@@ -202,10 +210,6 @@
 
 	// Set the default tgui state
 	set_default_state()
-
-	// Link machine with research techweb. Used for discovering and accessing
-	//  already discovered mutations
-	stored_research = SSresearch.science_tech
 
 /obj/machinery/computer/scan_consolenew/ui_interact(mob/user, datum/tgui/ui)
 	// Most of ui_interact is spent setting variables for passing to the tgui

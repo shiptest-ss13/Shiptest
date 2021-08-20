@@ -35,6 +35,17 @@
 	var/list/valid_items = list() //valid items for special reactions like transforming
 	var/list/critical_items_typecache //items that can cause critical reactions
 	var/banned_typecache // items that won't be produced
+	var/datum/techweb/linked_techweb
+
+/obj/machinery/rnd/experimentor/attackby(obj/item/O, mob/user, params)
+	. = ..()
+	if(istype(O, /obj/item/multitool))
+		var/obj/item/multitool/multi = O
+		if(istype(multi.buffer, /obj/machinery/rnd/server))
+			var/obj/machinery/rnd/server/serv = multi.buffer
+			linked_techweb = serv.stored_research
+			visible_message("Linked to Server!")
+		return
 
 /obj/machinery/rnd/experimentor/proc/ConvertReqString2List(list/source_list)
 	var/list/temp_list = params2list(source_list)
@@ -147,11 +158,11 @@
 			for(var/node_id in listin)
 				var/datum/techweb_node/N = SSresearch.techweb_node_by_id(node_id)
 				var/str = "<b>[N.display_name]</b>: [listin[N]] points.</b>"
-				if(SSresearch.science_tech.researched_nodes[N.id])
+				if(linked_techweb.researched_nodes[N.id])
 					res += str
-				else if(SSresearch.science_tech.boosted_nodes[N.id])
+				else if(linked_techweb.boosted_nodes[N.id])
 					boosted += str
-				if(SSresearch.science_tech.visible_nodes[N.id])	//JOY OF DISCOVERY!
+				if(linked_techweb.visible_nodes[N.id])	//JOY OF DISCOVERY!
 					output += str
 			output += boosted + res
 			dat += output

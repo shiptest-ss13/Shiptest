@@ -108,8 +108,6 @@
 	qdel(J)
 	skin = new_skin
 	update_icon()
-	linked_techweb = SSresearch.science_tech
-
 
 /mob/living/simple_animal/bot/medbot/bot_reset()
 	..()
@@ -199,6 +197,14 @@
 	return
 
 /mob/living/simple_animal/bot/medbot/attackby(obj/item/W as obj, mob/user as mob, params)
+	if(istype(W, /obj/item/multitool))
+		var/obj/item/multitool/multi = W
+		if(istype(multi.buffer, /obj/machinery/rnd/server))
+			var/obj/machinery/rnd/server/serv = multi.buffer
+			linked_techweb = serv.stored_research
+			visible_message("Linked to Server!")
+		return
+
 	var/current_health = health
 	..()
 	if(health < current_health) //if medbot took some damage

@@ -19,6 +19,7 @@
 	var/busy_icon_state
 	var/busy_message
 	var/message_cooldown = 0
+	var/datum/techweb/linked_techweb
 
 /obj/machinery/nanite_chamber/Initialize()
 	. = ..()
@@ -73,9 +74,9 @@
 	//TODO MACHINE DING
 	locked = locked_state
 	set_busy(FALSE)
-	if(!occupant)
+	if(!occupant || !linked_techweb)
 		return
-	occupant.AddComponent(/datum/component/nanites, 100)
+	occupant.AddComponent(/datum/component/nanites, linked_techweb, 100)
 
 /obj/machinery/nanite_chamber/proc/remove_nanites(datum/nanite_program/NP)
 	if(machine_stat & (NOPOWER|BROKEN))
@@ -187,6 +188,12 @@
 	open_machine()
 
 /obj/machinery/nanite_chamber/attackby(obj/item/I, mob/user, params)
+	if(istype(I, /obj/item/multitool))
+		var/obj/item/multitool/multi = I
+		if(istype(multi.buffer, /obj/machinery/rnd/server))
+			var/obj/machinery/rnd/server/server = multi.buffer
+			linked_techweb = server.stored_research
+
 	if(!occupant && default_deconstruction_screwdriver(user, icon_state, icon_state, I))//sent icon_state is irrelevant...
 		update_icon()//..since we're updating the icon here, since the scanner can be unpowered when opened/closed
 		return
