@@ -127,12 +127,7 @@ GLOBAL_LIST_EMPTY(cryopod_computers)
 
 	updateUsrDialog()
 	return
-/* Should more cryos be buildable?
-    /obj/item/circuitboard/cryopodcontrol
-	name = "Circuit board (Cryogenic Oversight Console)"
-	build_path = "/obj/machinery/computer/cryopod"
-	origin_tech = "programming=1"
-*/
+
 //Cryopods themselves.
 /obj/machinery/cryopod
 	name = "cryogenic freezer"
@@ -143,12 +138,8 @@ GLOBAL_LIST_EMPTY(cryopod_computers)
 	anchored = TRUE
 	state_open = TRUE
 
-	var/on_store_message = "has entered long-term storage."
-	var/on_store_name = "Cryogenic Oversight"
-
-	// 5 minutes-ish safe period before being despawned.
-	var/time_till_despawn = 5 * 600 // This is reduced to 30 seconds if a player manually enters cryo
-	var/despawn_world_time = null          // Used to keep track of the safe period.
+	/// Time until the human inside is despawned. Reduced to 10% of this if player manually enters cryo.
+	var/time_till_despawn = 5 MINUTES
 
 	var/obj/machinery/computer/cryopod/control_computer
 	var/last_no_computer_message = 0
@@ -189,7 +180,7 @@ GLOBAL_LIST_EMPTY(cryopod_computers)
 	update_icon()
 	find_control_computer()
 
-/obj/machinery/cryopod/proc/find_control_computer(urgent = 0)
+/obj/machinery/cryopod/proc/find_control_computer(urgent = FALSE)
 	for(var/M in GLOB.cryopod_computers)
 		var/obj/machinery/computer/cryopod/C = M
 		if(get_area(C) == get_area(src))
@@ -197,7 +188,7 @@ GLOBAL_LIST_EMPTY(cryopod_computers)
 			break
 
 	// Don't send messages unless we *need* the computer, and less than five minutes have passed since last time we messaged
-	if(!control_computer && urgent && last_no_computer_message + 5*60*10 < world.time)
+	if(!control_computer && urgent && last_no_computer_message + 5 MINUTES < world.time)
 		log_admin("Cryopod in [get_area(src)] could not find control computer!")
 		message_admins("Cryopod in [get_area(src)] could not find control computer!")
 		last_no_computer_message = world.time
@@ -207,14 +198,6 @@ GLOBAL_LIST_EMPTY(cryopod_computers)
 /obj/machinery/cryopod/JoinPlayerHere(mob/M, buckle)
 	. = ..()
 	close_machine(M, TRUE)
-
-/obj/machinery/cryopod/latejoin/Initialize()
-	. = ..()
-	new /obj/effect/landmark/latejoin(src)
-
-/obj/machinery/cryopod/latejoin/Destroy()
-	SSjob.latejoin_trackers -= src
-	. = ..()
 
 /obj/machinery/cryopod/close_machine(mob/user, exiting = FALSE)
 	if(!control_computer)
@@ -230,10 +213,7 @@ GLOBAL_LIST_EMPTY(cryopod_computers)
 		var/mob/living/mob_occupant = occupant
 		if(mob_occupant && mob_occupant.stat != DEAD)
 			to_chat(occupant, "<span class='boldnotice'>You feel cool air surround you. You go numb as your senses turn inward.</span>")
-		if(mob_occupant.client)//if they're logged in
-			despawn_world_time = world.time + (time_till_despawn * 0.1) // This gives them 30 seconds
-		else
-			despawn_world_time = world.time + time_till_despawn
+		addtimer(CALLBACK(src, .proc/try_despawn_occupant, mob_occupant), mob_occupant.client ? time_till_despawn * 0.1 : time_till_despawn) // If they're logged in, reduce the timer
 	icon_state = "cryopod"
 
 /obj/machinery/cryopod/open_machine()
@@ -250,24 +230,22 @@ GLOBAL_LIST_EMPTY(cryopod_computers)
 /obj/machinery/cryopod/relaymove(mob/user)
 	container_resist_act(user)
 
-/obj/machinery/cryopod/process()
-	if(!occupant)
+/obj/machinery/cryopod/proc/try_despawn_occupant(mob/target)
+	if(!occupant || occupant != target)
 		return
 
 	var/mob/living/mob_occupant = occupant
-	if(mob_occupant)
-		// Eject dead people
-		if(mob_occupant.stat == DEAD)
-			open_machine()
+	if(mob_occupant.stat > UNCONSCIOUS) // Eject occupant if they're not alive
+		open_machine()
+		return
 
-		if(!(world.time > despawn_world_time))
-			return
+	if(!mob_occupant.client) //Occupant's client isn't present
+		if(!control_computer)
+			find_control_computer(urgent = TRUE)//better hope you found it this time
 
-		if(!mob_occupant.client && mob_occupant.stat <= 2) //Occupant is living and has no client.
-			if(!control_computer)
-				find_control_computer(urgent = TRUE)//better hope you found it this time
-
-			despawn_occupant()
+		despawn_occupant()
+	else
+		addtimer(CALLBACK(src, .proc/try_despawn_occupant, mob_occupant), time_till_despawn) //try again with normal delay
 
 /obj/machinery/cryopod/proc/handle_objectives()
 	var/mob/living/mob_occupant = occupant
@@ -312,7 +290,7 @@ GLOBAL_LIST_EMPTY(cryopod_computers)
 						ob.owner.announce_objectives()
 				qdel(O)
 
-// This function can not be undone; do not call this unless you are sure
+/// This function can not be undone; do not call this unless you are sure. It compeletely removes all trace of the mob from the round.
 /obj/machinery/cryopod/proc/despawn_occupant()
 	var/mob/living/mob_occupant = occupant
 
@@ -338,11 +316,6 @@ GLOBAL_LIST_EMPTY(cryopod_computers)
 			announce_rank = G.fields["rank"]
 			qdel(G)
 
-	for(var/obj/machinery/computer/cloning/cloner in world)
-		for(var/datum/data/record/R in cloner.records)
-			if(R.fields["name"] == mob_occupant.real_name)
-				cloner.records.Remove(R)
-
 	//Make an announcement and log the person entering storage.
 	if(control_computer)
 		control_computer.frozen_crew += "[mob_occupant.real_name]"
@@ -357,6 +330,7 @@ GLOBAL_LIST_EMPTY(cryopod_computers)
 		if(W.loc.loc && (( W.loc.loc == loc ) || (W.loc.loc == control_computer)))
 			continue//means we already moved whatever this thing was in
 			//I'm a professional, okay
+			//what the fuck are you on rn and can I have some
 		for(var/T in preserve_items)
 			if(istype(W, T))
 				if(control_computer && control_computer.allow_items)
@@ -377,11 +351,11 @@ GLOBAL_LIST_EMPTY(cryopod_computers)
 		qdel(R.mmi)
 
 	// Ghost and delete the mob.
-	if(!mob_occupant.get_ghost(1))
-		if(world.time < 15 * 600)//before the 15 minute mark
-			mob_occupant.ghostize(0) // Players despawned too early may not re-enter the game
+	if(!mob_occupant.get_ghost(TRUE))
+		if(world.time < 15 MINUTES)//before the 15 minute mark
+			mob_occupant.ghostize(FALSE) // Players despawned too early may not re-enter the game
 		else
-			mob_occupant.ghostize(1)
+			mob_occupant.ghostize(TRUE)
 	handle_objectives()
 	QDEL_NULL(occupant)
 	open_machine()
@@ -409,46 +383,14 @@ GLOBAL_LIST_EMPTY(cryopod_computers)
 		if(tgui_alert(target, "Would you like to enter cryosleep?", "Cryopod", list("Yes","No")) != "Yes")
 			return
 
-	var/generic_plsnoleave_message = " Please adminhelp before leaving the round, even if there are no administrators online!"
-
-	if(target == user && world.time - target.client.cryo_warned > 5 MINUTES)//if we haven't warned them in the last 5 minutes
-		var/caught = FALSE
-		if(target.mind.assigned_role in GLOB.command_positions)
-			alert("You're a Head of Staff![generic_plsnoleave_message]")
-			caught = TRUE
-		if(isovermind(target))
-			alert("You're a Blob![generic_plsnoleave_message]")
-			caught = TRUE
-		if(is_changeling(target))
-			alert("You're a Changeling![generic_plsnoleave_message]")
-			caught = TRUE
-		if(iscultist(target))
-			alert("You're a Cultist![generic_plsnoleave_message]")
-			caught = TRUE
-		if(is_devil(target))
-			alert("You're a Devil![generic_plsnoleave_message]")
-			caught = TRUE
-		if(is_nuclear_operative(target))
-			alert("You're a Nuclear Operative![generic_plsnoleave_message]")
-			caught = TRUE
-		if(is_revolutionary(target) || is_head_revolutionary(target))
-			alert("You're a Revolutionary![generic_plsnoleave_message]")
-			caught = TRUE
-		if(is_wizard(target))
-			alert("You're a Wizard![generic_plsnoleave_message]")
-			caught = TRUE
-		if(caught)
-			target.client.cryo_warned = world.time
-			return
-
 	if(!target || user.incapacitated() || !target.Adjacent(user) || !Adjacent(user) || (!ishuman(user) && !iscyborg(user)) || !istype(user.loc, /turf) || target.buckled)
 		return
 		//rerun the checks in case of shenanigans
 
 	if(target == user)
-		visible_message("[user] starts climbing into the cryo pod.")
+		visible_message("[user] starts climbing into [src].")
 	else
-		visible_message("[user] starts putting [target] into the cryo pod.")
+		visible_message("[user] starts putting [target] into [src].")
 
 	if(occupant)
 		to_chat(user, "<span class='boldnotice'>\The [src] is in use.</span>")
@@ -461,6 +403,27 @@ GLOBAL_LIST_EMPTY(cryopod_computers)
 	message_admins("[key_name_admin(target)] entered a stasis pod. (<A HREF='?_src_=holder;[HrefToken()];adminplayerobservecoodjump=1;X=[x];Y=[y];Z=[z]'>JMP</a>)")
 	add_fingerprint(target)
 
-//Attacks/effects.
-/obj/machinery/cryopod/blob_act()
-	return //Sorta gamey, but we don't really want these to be destroyed.
+/obj/machinery/cryopod/latejoin
+	var/obj/docking_port/mobile/linked_ship
+
+/obj/machinery/cryopod/latejoin/Initialize()
+	. = ..()
+	new /obj/effect/landmark/latejoin(src)
+
+/obj/machinery/cryopod/latejoin/despawn_occupant()
+	if(!linked_ship)
+		return ..()
+	var/mob/living/mob_occupant = occupant
+	if(mob_occupant.job in linked_ship.current_ship.job_slots)
+		linked_ship.current_ship.job_slots[mob_occupant.job]++
+	return ..()
+
+/obj/machinery/cryopod/latejoin/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock, idnum, override)
+	. = ..()
+	linked_ship = port
+	linked_ship.spawn_points += src
+
+/obj/machinery/cryopod/latejoin/Destroy()
+	SSjob.latejoin_trackers -= src
+	linked_ship?.spawn_points -= src
+	. = ..()

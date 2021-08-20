@@ -6,23 +6,17 @@ SUBSYSTEM_DEF(mapping)
 	var/list/nuke_tiles = list()
 	var/list/nuke_threats = list()
 
-	var/datum/map_config/config
-	var/datum/map_config/next_map_config
-
-	var/map_voted = FALSE
-
 	var/list/map_templates = list()
 
 	var/list/ruins_templates = list()
 	var/list/space_ruins_templates = list()
 	var/list/lava_ruins_templates = list()
 	var/list/ice_ruins_templates = list()
-	var/list/ice_ruins_underground_templates = list()
-	 // WS Edit Start - Whitesands
 	var/list/sand_ruins_templates = list()
-	var/list/sand_camps_templates = list()
-	// WS Edit End - Whitesands
 	var/list/jungle_ruins_templates = list()
+
+	var/list/maplist
+	var/list/ship_purchase_list
 
 	var/list/shuttle_templates = list()
 	var/list/shelter_templates = list()
@@ -45,26 +39,9 @@ SUBSYSTEM_DEF(mapping)
 	var/clearing_reserved_turfs = FALSE 	// whether we're currently clearing out all the reserves
 	var/num_of_res_levels = 0				// number of z-levels for reserving
 
-
-//dlete dis once #39770 is resolved
-/datum/controller/subsystem/mapping/proc/HACK_LoadMapConfig()
-	if(!config)
-#ifdef FORCE_MAP
-		config = load_map_config(FORCE_MAP)
-#else
-		config = load_map_config(error_if_missing = FALSE)
-#endif
-
 /datum/controller/subsystem/mapping/Initialize(timeofday)
-	HACK_LoadMapConfig()
 	if(initialized)
 		return
-	if(config.defaulted)
-		var/old_config = config
-		config = global.config.defaultmap
-		if(!config || config.defaulted)
-			to_chat(world, "<span class='boldannounce'>Unable to load next or default map config, defaulting to Salvage Expedition</span>")
-			config = old_config
 	initialize_biomes()
 	InitializeDefaultZLevels()
 	repopulate_sorted_areas()
@@ -72,64 +49,6 @@ SUBSYSTEM_DEF(mapping)
 	preloadTemplates()
 	run_map_generation()
 
-#ifndef LOWMEMORYMODE
-	// Create space ruin levels
-	while (space_levels_so_far < config.space_ruin_levels)
-		++space_levels_so_far
-		add_new_zlevel("Empty Area [space_levels_so_far]", ZTRAITS_SPACE)
-		var/turf/T = locate(round(world.maxx / 2), round(world.maxy / 2), z_list.len)
-		var/obj/docking_port/stationary/z_port = new(T)
-		z_port.id = "whiteship_z[z_list.len]"
-	// and one level with no ruins
-	for (var/i in 1 to config.space_empty_levels)
-		++space_levels_so_far
-		empty_space = add_new_zlevel("Empty Area [space_levels_so_far]", list(ZTRAIT_LINKAGE = SELFLOOPING))
-		var/turf/T = locate(round(world.maxx / 2), round(world.maxy / 2), z_list.len)
-		var/obj/docking_port/stationary/z_port = new(T)
-		z_port.id = "whiteship_z[z_list.len]"
-
-	// Pick a random away mission.
-	if(CONFIG_GET(flag/roundstart_away))
-		createRandomZlevel()
-
-	// Load the virtual reality hub
-	if(CONFIG_GET(flag/virtual_reality))
-		to_chat(world, "<span class='boldannounce'>Loading virtual reality...</span>")
-		load_new_z_level("_maps/RandomZLevels/VR/vrhub.dmm", "Virtual Reality Hub")
-		to_chat(world, "<span class='boldannounce'>Virtual reality loaded.</span>")
-
-	// Generate mining ruins
-	loading_ruins = TRUE
-	var/list/lava_ruins = levels_by_trait(ZTRAIT_LAVA_RUINS)
-	if (lava_ruins.len)
-		seedRuins(lava_ruins, CONFIG_GET(number/lavaland_budget), list(/area/lavaland/surface/outdoors/unexplored), lava_ruins_templates)
-		for (var/lava_z in lava_ruins)
-			spawn_rivers(lava_z)
-
-	var/list/ice_ruins = levels_by_trait(ZTRAIT_ICE_RUINS)
-	if (ice_ruins.len)
-		// needs to be whitelisted for underground too so place_below ruins work
-		seedRuins(ice_ruins, CONFIG_GET(number/icemoon_budget), list(/area/icemoon/surface/outdoors/unexplored, /area/icemoon/underground/unexplored), ice_ruins_templates)
-		for (var/ice_z in ice_ruins)
-			spawn_rivers(ice_z, 4, /turf/open/openspace/icemoon, /area/icemoon/surface/outdoors/unexplored)
-
-	var/list/ice_ruins_underground = levels_by_trait(ZTRAIT_ICE_RUINS_UNDERGROUND)
-	if (ice_ruins_underground.len)
-		seedRuins(ice_ruins_underground, CONFIG_GET(number/icemoon_budget), list(/area/icemoon/underground/unexplored), ice_ruins_underground_templates)
-		for (var/ice_z in ice_ruins_underground)
-			spawn_rivers(ice_z, 4, /turf/open/lava/plasma/ice_moon, /area/icemoon/underground/unexplored)
-	// WS Edit Start - Whitesands
-	var/list/sand_ruins = levels_by_trait(ZTRAIT_SAND_RUINS)
-	if (sand_ruins.len)
-		seedRuins(sand_ruins, CONFIG_GET(number/whitesands_budget), list(/area/whitesands/surface/outdoors/unexplored), sand_ruins_templates)
-		seedRuins(sand_ruins, CONFIG_GET(number/whitesands_budget), list(/area/whitesands/surface/outdoors/explored), sand_camps_templates)
-	// WS Edit End - Whitesands
-	// Generate deep space ruins
-	var/list/space_ruins = levels_by_trait(ZTRAIT_SPACE_RUINS)
-	if (space_ruins.len)
-		seedRuins(space_ruins, CONFIG_GET(number/space_budget), list(/area/space), space_ruins_templates)
-	loading_ruins = FALSE
-#endif
 	// Add the transit level
 	new_reserved_level()
 	repopulate_sorted_areas()
@@ -138,7 +57,7 @@ SUBSYSTEM_DEF(mapping)
 	return ..()
 
 /* Nuke threats, for making the blue tiles on the station go RED
-   Used by the AI doomsday and the self destruct nuke.
+*   Used by the AI doomsday and the self destruct nuke.
 */
 
 /datum/controller/subsystem/mapping/proc/add_nuke_threat(datum/nuke)
@@ -167,12 +86,9 @@ SUBSYSTEM_DEF(mapping)
 	lava_ruins_templates = SSmapping.lava_ruins_templates
 	// WS Edit Start - Whitesands
 	sand_ruins_templates = SSmapping.sand_ruins_templates
-	sand_camps_templates = SSmapping.sand_camps_templates
 	// WS Edit End - Whitesands
 	shuttle_templates = SSmapping.shuttle_templates
 	shelter_templates = SSmapping.shelter_templates
-	config = SSmapping.config
-	next_map_config = SSmapping.next_map_config
 
 	z_list = SSmapping.z_list
 
@@ -232,78 +148,10 @@ SUBSYSTEM_DEF(mapping)
 	for(var/area/A in world)
 		A.RunGeneration()
 
-/datum/controller/subsystem/mapping/proc/maprotate()
-	if(map_voted || SSmapping.next_map_config) //If voted or set by other means.
-		return
-
-	var/players = GLOB.clients.len
-	var/list/mapvotes = list()
-	//count votes
-	var/pmv = CONFIG_GET(flag/preference_map_voting)
-	if(pmv)
-		for (var/client/c in GLOB.clients)
-			var/vote = c.prefs.preferred_map
-			if (!vote)
-				if (global.config.defaultmap)
-					mapvotes[global.config.defaultmap.map_name] += 1
-				continue
-			mapvotes[vote] += 1
-	else
-		for(var/M in global.config.maplist)
-			mapvotes[M] = 1
-
-	//filter votes
-	for (var/map in mapvotes)
-		if (!map)
-			mapvotes.Remove(map)
-			continue
-		if (!(map in global.config.maplist))
-			mapvotes.Remove(map)
-			continue
-		if(map in SSpersistence.blocked_maps)
-			mapvotes.Remove(map)
-			continue
-		var/datum/map_config/VM = global.config.maplist[map]
-		if (!VM)
-			mapvotes.Remove(map)
-			continue
-		if (VM.voteweight <= 0)
-			mapvotes.Remove(map)
-			continue
-		if (VM.config_min_users > 0 && players < VM.config_min_users)
-			mapvotes.Remove(map)
-			continue
-		if (VM.config_max_users > 0 && players > VM.config_max_users)
-			mapvotes.Remove(map)
-			continue
-
-		if(pmv)
-			mapvotes[map] = mapvotes[map]*VM.voteweight
-
-	var/pickedmap = pickweight(mapvotes)
-	if (!pickedmap)
-		return
-	var/datum/map_config/VM = global.config.maplist[pickedmap]
-	message_admins("Randomly rotating map to [VM.map_name]")
-	. = changemap(VM)
-	if (. && VM.map_name != config.map_name)
-		to_chat(world, "<span class='boldannounce'>Map rotation has chosen [VM.map_name] for next round!</span>")
-
 /datum/controller/subsystem/mapping/proc/mapvote()
-	if(map_voted || SSmapping.next_map_config) //If voted or set by other means.
-		return
-	if(SSvote.mode) //Theres already a vote running, default to rotation.
-		maprotate()
 	SSvote.initiate_vote("map", "automatic map rotation", TRUE) //WS Edit - Ghost Voting Rework
 
-/datum/controller/subsystem/mapping/proc/changemap(var/datum/map_config/VM)
-	if(!VM.MakeNextMap())
-		next_map_config = load_map_config(default_to_box = TRUE)
-		message_admins("Failed to set new map with next_map.json for [VM.map_name]! Using default as backup!")
-		return
-
-	next_map_config = VM
-	return TRUE
+/datum/controller/subsystem/mapping/proc/changemap(datum/map_template/map)
 
 /datum/controller/subsystem/mapping/proc/preloadTemplates(path = "_maps/templates/") //see master controller setup
 	var/list/filelist = flist(path)
@@ -313,6 +161,7 @@ SUBSYSTEM_DEF(mapping)
 
 	preloadRuinTemplates()
 	preloadShuttleTemplates()
+	load_ship_templates()
 	preloadShelterTemplates()
 
 /datum/controller/subsystem/mapping/proc/preloadRuinTemplates()
@@ -337,14 +186,10 @@ SUBSYSTEM_DEF(mapping)
 
 		if(istype(R, /datum/map_template/ruin/lavaland))
 			lava_ruins_templates[R.name] = R
-		else if(istype(R, /datum/map_template/ruin/camp/whitesands))
-			sand_camps_templates[R.name] = R
 		else if(istype(R, /datum/map_template/ruin/whitesands))
 			sand_ruins_templates[R.name] = R
 		else if(istype(R, /datum/map_template/ruin/jungle))
 			jungle_ruins_templates[R.name] = R
-		else if(istype(R, /datum/map_template/ruin/icemoon/underground))
-			ice_ruins_underground_templates[R.name] = R
 		else if(istype(R, /datum/map_template/ruin/icemoon))
 			ice_ruins_templates[R.name] = R
 		else if(istype(R, /datum/map_template/ruin/space))
@@ -355,15 +200,55 @@ SUBSYSTEM_DEF(mapping)
 
 	for(var/item in subtypesof(/datum/map_template/shuttle))
 		var/datum/map_template/shuttle/shuttle_type = item
-		if(!(initial(shuttle_type.suffix)))
+		if(!(initial(shuttle_type.file_name)))
 			continue
 
 		var/datum/map_template/shuttle/S = new shuttle_type()
 		if(unbuyable.Find(S.mappath))
 			S.can_be_bought = FALSE
 
-		shuttle_templates[S.shuttle_id] = S
-		map_templates[S.shuttle_id] = S
+		shuttle_templates[S.file_name] = S
+		map_templates[S.file_name] = S
+
+#define CHECK_EXISTS(X) if(!istext(data[X])) { log_world("[##X] missing from json!"); continue; }
+/datum/controller/subsystem/mapping/proc/load_ship_templates()
+	maplist = list()
+	ship_purchase_list = list()
+	var/list/filelist = flist("_maps/configs/")
+	for(var/filename in filelist)
+		var/file = file("_maps/configs/" + filename)
+		if(!file)
+			log_world("Could not open map config: [filename]")
+			continue
+		file = file2text(file)
+		if(!file)
+			log_world("map config is not text: [filename]")
+			continue
+
+		var/list/data = json_decode(file)
+		if(!data)
+			log_world("map config is not json: [filename]")
+			continue
+
+		CHECK_EXISTS("map_name")
+		CHECK_EXISTS("map_path")
+		CHECK_EXISTS("map_id")
+		var/datum/map_template/shuttle/S = new(data["map_path"], data["map_name"], TRUE)
+		S.file_name = data["map_id"]
+		S.category = "shiptest"
+
+		if(istext(data["map_short_name"]))
+			S.short_name = data["map_short_name"]
+		if(islist(data["job_slots"]))
+			S.job_slots = data["job_slots"]
+		if(isnum(data["cost"]))
+			ship_purchase_list[S] = data["cost"]
+
+		shuttle_templates[S.file_name] = S
+		map_templates[S.file_name] = S
+		if(isnum(data["roundstart"]) && data["roundstart"])
+			maplist[S.name] = S
+#undef CHECK_EXISTS
 
 /datum/controller/subsystem/mapping/proc/preloadShelterTemplates()
 	for(var/item in subtypesof(/datum/map_template/shelter))
@@ -374,48 +259,6 @@ SUBSYSTEM_DEF(mapping)
 
 		shelter_templates[S.shelter_id] = S
 		map_templates[S.shelter_id] = S
-
-//Manual loading of away missions.
-/client/proc/admin_away()
-	set name = "Load Away Mission"
-	set category = "Admin - Events"
-
-	if(!holder ||!check_rights(R_FUN))
-		return
-
-
-	if(!GLOB.the_gateway)
-		if(alert("There's no home gateway on the station. You sure you want to continue ?", "Uh oh", "Yes", "No") != "Yes")
-			return
-
-	var/list/possible_options = GLOB.potentialRandomZlevels + "Custom"
-	var/away_name
-	var/datum/space_level/away_level
-
-	var/answer = input("What kind ? ","Away") as null|anything in possible_options
-	switch(answer)
-		if("Custom")
-			var/mapfile = input("Pick file:", "File") as null|file
-			if(!mapfile)
-				return
-			away_name = "[mapfile] custom"
-			to_chat(usr,"<span class='notice'>Loading [away_name]...</span>")
-			var/datum/map_template/template = new(mapfile, "Away Mission")
-			away_level = template.load_new_z()
-		else
-			if(answer in GLOB.potentialRandomZlevels)
-				away_name = answer
-				to_chat(usr,"<span class='notice'>Loading [away_name]...</span>")
-				var/datum/map_template/template = new(away_name, "Away Mission")
-				away_level = template.load_new_z()
-			else
-				return
-
-	message_admins("Admin [key_name_admin(usr)] has loaded [away_name] away mission.")
-	log_admin("Admin [key_name(usr)] has loaded [away_name] away mission.")
-	if(!away_level)
-		message_admins("Loading [away_name] failed!")
-		return
 
 ///Initialize all biomes, assoc as type || instance
 /datum/controller/subsystem/mapping/proc/initialize_biomes()

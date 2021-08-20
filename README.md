@@ -8,7 +8,7 @@
 * **Forums:** <https://forum.shiptest.ga>
 * **Wiki:** <https://wiki.shiptest.ga>
 * **Code Docs:** <https://codedocs.shiptest.ga/>
-* **Discord:** <https://discord.gg/XKBktpjAbh>
+* **Discord:** <https://discord.gg/Zuv47eNuhE>
 * **Coderbus Discord:** <https://discord.gg/Vh8TJp9>
 
 This is the codebase for the Ship-based Shiptest flavoured fork of SpaceStation 13.
@@ -37,8 +37,9 @@ Shiptest is a thrill-packed round-based exploration and roleplaying game set aga
 * /tg/, for the original codebase of the original codebase
 * BeeStation, for the many QoL changes
 * Oracle, for the inspiration and wonderful features and sprites
-* Interstation for bridging the gap between Oracle and Modern /tg/
-* YogStation for multiple different features
+* Interstation, for bridging the gap between Oracle and Modern /tg/
+* YogStation, for multiple different features
+* Baystation, for the initial overmap concept and sprites
 
 And thank you to any other codebase not mentioned here that has been used in the code. Your wonderful contributions are known.
 

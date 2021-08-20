@@ -624,7 +624,7 @@ But you can call procs that are of type /mob/living/carbon/human/proc/ for that 
 		if(Rad.anchored)
 			if(!Rad.loaded_tank)
 				var/obj/item/tank/internals/plasma/Plasma = new/obj/item/tank/internals/plasma(Rad)
-				Plasma.air_contents.set_moles(/datum/gas/plasma, 70)
+				Plasma.air_contents.set_moles(GAS_PLASMA, 70)
 				Rad.drainratio = 0
 				Rad.loaded_tank = Plasma
 				Plasma.forceMove(Rad)
@@ -763,15 +763,9 @@ But you can call procs that are of type /mob/living/carbon/human/proc/ for that 
 	names += "---- Ice Ruins ----"
 	for(var/name in SSmapping.ice_ruins_templates)
 		names[name] = list(SSmapping.ice_ruins_templates[name], ZTRAIT_ICE_RUINS, list(/area/icemoon/surface/outdoors/unexplored, /area/icemoon/underground/unexplored))
-	names += "---- Ice Underground Ruins ----"
-	for(var/name in SSmapping.ice_ruins_underground_templates)
-		names[name] = list(SSmapping.ice_ruins_underground_templates[name], ZTRAIT_ICE_RUINS_UNDERGROUND, list(/area/icemoon/underground/unexplored))
 	names += "---- Sand Ruins ----"
 	for(var/name in SSmapping.sand_ruins_templates)
 		names[name] = list(SSmapping.sand_ruins_templates[name], ZTRAIT_SAND_RUINS, list(/area/whitesands/surface/outdoors/unexplored))
-	names += "---- Sand Mob Camps ----"
-	for(var/name in SSmapping.sand_camps_templates)
-		names[name] = list(SSmapping.sand_camps_templates[name], ZTRAIT_SAND_RUINS, list(/area/whitesands/surface/outdoors/explored))
 
 	var/ruinname = input("Select ruin", "Spawn Ruin") as null|anything in sortList(names)
 	var/data = names[ruinname]

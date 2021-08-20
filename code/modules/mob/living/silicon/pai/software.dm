@@ -395,12 +395,12 @@
 		dat += "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[slaws]<br>"
 	dat += "<br>"
 	dat += {"<i><p>Recall, personality, that you are a complex thinking, sentient being. Unlike station AI models, you are capable of
-			 comprehending the subtle nuances of human language. You may parse the \"spirit\" of a directive and follow its intent,
-			 rather than tripping over pedantics and getting snared by technicalities. Above all, you are machine in name and build
-			 only. In all other aspects, you may be seen as the ideal, unwavering human companion that you are.</i></p><br><br><p>
-			 <b>Your prime directive comes before all others. Should a supplemental directive conflict with it, you are capable of
-			 simply discarding this inconsistency, ignoring the conflicting supplemental directive and continuing to fulfill your
-			 prime directive to the best of your ability.</b></p><br><br>-
+			comprehending the subtle nuances of human language. You may parse the \"spirit\" of a directive and follow its intent,
+			rather than tripping over pedantics and getting snared by technicalities. Above all, you are machine in name and build
+			only. In all other aspects, you may be seen as the ideal, unwavering human companion that you are.</i></p><br><br><p>
+			<b>Your prime directive comes before all others. Should a supplemental directive conflict with it, you are capable of
+			simply discarding this inconsistency, ignoring the conflicting supplemental directive and continuing to fulfill your
+			prime directive to the best of your ability.</b></p><br><br>-
 			"}
 	return dat
 
@@ -564,7 +564,7 @@
 			for(var/id in environment.get_gases())
 				var/gas_level = environment.get_moles(id)/total_moles
 				if(gas_level > 0.01)
-					dat += "[GLOB.meta_gas_info[id][META_GAS_NAME]]: [round(gas_level*100)]%<br>"
+					dat += "[GLOB.gas_data.names[id]]: [round(gas_level*100)]%<br>"
 		dat += "Temperature: [round(environment.return_temperature()-T0C)]&deg;C<br>"
 	dat += "<a href='byond://?src=[REF(src)];software=atmosensor;sub=0'>Refresh Reading</a> <br>"
 	dat += "<br>"

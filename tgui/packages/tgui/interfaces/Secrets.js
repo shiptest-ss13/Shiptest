@@ -221,37 +221,6 @@ const HelpfulTab = (props, context) => {
             onClick={() => act("reset_name")} />
         </Flex.Item>
       </Flex>
-      <Flex
-        grow={1}
-        direction="row"
-        height="100%"
-        align="stretch"
-        justify="space-between">
-        <Flex.Item grow={1}>
-          <Button
-            icon="plane-departure"
-            lineHeight={lineHeightNormal}
-            fluid
-            content="Move Ferry"
-            onClick={() => act("moveferry")} />
-        </Flex.Item>
-        <Flex.Item grow={1} mx={0.5}>
-          <Button
-            icon="plane"
-            lineHeight={lineHeightNormal}
-            fluid
-            content="Toggle Arrivals"
-            onClick={() => act("togglearrivals")} />
-        </Flex.Item>
-        <Flex.Item grow={1}>
-          <Button
-            icon="plane-arrival"
-            lineHeight={lineHeightNormal}
-            fluid
-            content="Move Labor"
-            onClick={() => act("movelaborshuttle")} />
-        </Flex.Item>
-      </Flex>
     </Flex>
   );
 };

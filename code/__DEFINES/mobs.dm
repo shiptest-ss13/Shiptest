@@ -45,7 +45,7 @@
 #define BLOODCRAWL_EAT 2 /// crawling+mob devour
 
 //Mob bio-types flags
-#define MOB_ORGANIC 	1 << 0
+#define MOB_ORGANIC		1 << 0
 #define MOB_MINERAL		1 << 1
 #define MOB_ROBOTIC 	1 << 2
 #define MOB_UNDEAD		1 << 3
@@ -384,3 +384,7 @@
 
 ///Define for spawning megafauna instead of a mob for cave gen
 #define SPAWN_MEGAFAUNA "bluh bluh huge boss"
+
+/// Breathing types. Lungs can access either by these or by a string, which will be considered a gas ID.
+#define BREATH_OXY		/datum/breathing_class/oxygen
+#define BREATH_PLASMA	/datum/breathing_class/plasma

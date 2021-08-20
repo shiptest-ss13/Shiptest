@@ -142,8 +142,8 @@
 	level = 7
 	var/triple_metabolism = FALSE
 	var/reduced_hunger = FALSE
-	desc = "The virus causes the host's metabolism to accelerate rapidly, making them process chemicals twice as fast,\
-	 but also causing increased hunger."
+	desc = "The virus causes the host's metabolism to accelerate rapidly, making them process chemicals twice as fast, \
+	but also causing increased hunger."
 	threshold_descs = list(
 		"Stealth 3" = "Reduces hunger rate.",
 		"Stage Speed 10" = "Chemical metabolization is tripled instead of doubled.",
@@ -404,7 +404,7 @@
 	if(M.loc)
 		environment = M.loc.return_air()
 	if(environment)
-		if(environment.get_moles(/datum/gas/plasma) && environment.get_moles(/datum/gas/plasma) > GLOB.meta_gas_info[/datum/gas/plasma][META_GAS_MOLES_VISIBLE]) //if there's enough plasma in the air to see
+		if(environment.get_moles(GAS_PLASMA) && environment.get_moles(GAS_PLASMA) > GLOB.gas_data.visibility[GAS_PLASMA]) //if there's enough plasma in the air to see
 			. += power * 0.5
 	if(M.reagents.has_reagent(/datum/reagent/toxin/plasma, needs_metabolizing = TRUE))
 		. +=  power * 0.75

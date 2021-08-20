@@ -46,9 +46,15 @@
 #error You need version 513.1514 or higher
 #endif
 
-//Don't load extools on 514
-#if DM_VERSION < 514
-#define USE_EXTOOLS
+//Update this whenever the byond version is stable so people stop updating to hilariously broken versions
+#define MAX_COMPILER_VERSION 514
+#define MAX_COMPILER_BUILD 1557
+#if DM_VERSION > MAX_COMPILER_VERSION || DM_BUILD > MAX_COMPILER_BUILD
+#warn WARNING: Your BYOND version is over the recommended version (514.1557)! Stability is not guaranteed.
+#endif
+//Log the full sendmaps profile on 514.1556+, any earlier and we get bugs or it not existing
+#if DM_VERSION >= 514 && DM_BUILD >= 1556
+#define SENDMAPS_PROFILE
 #endif
 
 //Additional code for the above flags.
@@ -67,3 +73,15 @@
 // A reasonable number of maximum overlays an object needs
 // If you think you need more, rethink it
 #define MAX_ATOM_OVERLAYS 100
+
+#define AUXMOS (world.system_type == MS_WINDOWS ? "auxtools/auxmos.dll" : __detect_auxmos())
+
+/proc/__detect_auxmos()
+	if (fexists("./libauxmos.so"))
+		return "./libauxmos.so"
+	else if (fexists("./auxtools/libauxmos.so"))
+		return "./auxtools/libauxmos.so"
+	else if (fexists("[world.GetConfig("env", "HOME")]/.byond/bin/libauxmos.so"))
+		return "[world.GetConfig("env", "HOME")]/.byond/bin/libauxmos.so"
+	else
+		CRASH("Could not find libauxmos.so")

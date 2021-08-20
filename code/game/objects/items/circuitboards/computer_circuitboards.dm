@@ -108,11 +108,6 @@
 	icon_state = "engineering"
 	build_path = /obj/machinery/computer/auxillary_base
 
-/obj/item/circuitboard/computer/base_construction
-	name = "circuit board (Aux Mining Base Construction Console)"
-	icon_state = "engineering"
-	build_path = /obj/machinery/computer/camera_advanced/base_construction
-
 /obj/item/circuitboard/computer/comm_monitor
 	name = "Telecommunications Monitor (Computer Board)"
 	icon_state = "engineering"
@@ -207,11 +202,6 @@
 	else
 		return ..()
 
-/obj/item/circuitboard/computer/monastery_shuttle
-	name = "Monastery Shuttle (Computer Board)"
-	icon_state = "generic"
-	build_path = /obj/machinery/computer/shuttle/monastery_shuttle
-
 /obj/item/circuitboard/computer/olddoor
 	name = "DoorMex (Computer Board)"
 	icon_state = "generic"
@@ -232,38 +222,10 @@
 	icon_state = "generic"
 	build_path = /obj/machinery/computer/pod/old/swf
 
-/obj/item/circuitboard/computer/syndicate_shuttle
-	name = "Syndicate Shuttle (Computer Board)"
-	icon_state = "generic"
-	build_path = /obj/machinery/computer/shuttle/syndicate
-	var/challenge = FALSE
-	var/moved = FALSE
-
-/obj/item/circuitboard/computer/syndicate_shuttle/Initialize()
-	. = ..()
-	GLOB.syndicate_shuttle_boards += src
-
-/obj/item/circuitboard/computer/syndicate_shuttle/Destroy()
-	GLOB.syndicate_shuttle_boards -= src
-	return ..()
-
 /obj/item/circuitboard/computer/syndicatedoor
 	name = "ProComp Executive (Computer Board)"
 	icon_state = "generic"
 	build_path = /obj/machinery/computer/pod/old/syndicate
-
-/obj/item/circuitboard/computer/white_ship
-	name = "White Ship (Computer Board)"
-	icon_state = "generic"
-	build_path = /obj/machinery/computer/shuttle/white_ship
-
-/obj/item/circuitboard/computer/white_ship/pod
-	name = "Salvage Pod (Computer Board)"
-	build_path = /obj/machinery/computer/shuttle/white_ship/pod
-
-/obj/item/circuitboard/computer/white_ship/pod/recall
-	name = "Salvage Pod Recall (Computer Board)"
-	build_path = /obj/machinery/computer/shuttle/white_ship/pod/recall
 
 //Medical
 
@@ -360,16 +322,6 @@
 
 //Security
 
-/obj/item/circuitboard/computer/labor_shuttle
-	name = "Labor Shuttle (Computer Board)"
-	icon_state = "security"
-	build_path = /obj/machinery/computer/shuttle/labor
-
-/obj/item/circuitboard/computer/labor_shuttle/one_way
-	name = "Prisoner Shuttle Console (Computer Board)"
-	icon_state = "security"
-	build_path = /obj/machinery/computer/shuttle/labor/one_way
-
 /obj/item/circuitboard/computer/gulag_teleporter_console
 	name = "Labor Camp teleporter console (Computer Board)"
 	icon_state = "security"
@@ -449,26 +401,7 @@
 	name = "Supply Request Console (Computer Board)"
 	build_path = /obj/machinery/computer/cargo/request
 
-/obj/item/circuitboard/computer/ferry
-	name = "Transport Ferry (Computer Board)"
-	icon_state = "supply"
-	build_path = /obj/machinery/computer/shuttle/ferry
-
-/obj/item/circuitboard/computer/ferry/request
-	name = "Transport Ferry Console (Computer Board)"
-	icon_state = "supply"
-	build_path = /obj/machinery/computer/shuttle/ferry/request
-
 /obj/item/circuitboard/computer/mining
 	name = "Outpost Status Display (Computer Board)"
 	icon_state = "supply"
 	build_path = /obj/machinery/computer/security/mining
-
-/obj/item/circuitboard/computer/mining_shuttle
-	name = "Mining Shuttle (Computer Board)"
-	icon_state = "supply"
-	build_path = /obj/machinery/computer/shuttle/mining
-
-/obj/item/circuitboard/computer/mining_shuttle/common
-	name = "Lavaland Shuttle (Computer Board)"
-	build_path = /obj/machinery/computer/shuttle/mining/common

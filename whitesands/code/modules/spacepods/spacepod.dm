@@ -75,12 +75,13 @@ GLOBAL_LIST_INIT(spacepod_verb_list,  list(
 
 	var/lights = 0
 	var/lights_power = 6
-	var/static/list/icon_light_color = list("pod_civ" = LIGHT_COLOR_HALOGEN, \
-									 "pod_mil" = LIGHT_COLOR_GREEN, \
-									 "pod_synd" = LIGHT_COLOR_FLARE, \
-									 "pod_gold" = LIGHT_COLOR_HALOGEN, \
-									 "pod_black" = LIGHT_COLOR_DARK_BLUE, \
-									 "pod_industrial" = LIGHT_COLOR_TUNGSTEN)
+	var/static/list/icon_light_color = list(
+		"pod_civ" = LIGHT_COLOR_HALOGEN,
+		"pod_mil" = LIGHT_COLOR_GREEN,
+		"pod_synd" = LIGHT_COLOR_FLARE,
+		"pod_gold" = LIGHT_COLOR_HALOGEN,
+		"pod_black" = LIGHT_COLOR_DARK_BLUE,
+		"pod_industrial" = LIGHT_COLOR_TUNGSTEN)
 
 	var/bump_impulse = 0.6
 	var/bounce_factor = 0.2 // how much of our velocity to keep on collision
@@ -93,10 +94,6 @@ GLOBAL_LIST_INIT(spacepod_verb_list,  list(
 	cabin_air = new
 	cabin_air.set_temperature(T20C)
 	cabin_air.set_volume(200)
-	/*cabin_air.assert_gas(/datum/gas/oxygen)
-	cabin_air.assert_gas(/datum/gas/nitrogen)
-	cabin_air.gases[/datum/gas/oxygen][MOLES] = ONE_ATMOSPHERE*O2STANDARD*cabin_air.volume/(R_IDEAL_GAS_EQUATION*cabin_air.temperature)
-	cabin_air.gases[/datum/gas/nitrogen][MOLES] = ONE_ATMOSPHERE*N2STANDARD*cabin_air.volume/(R_IDEAL_GAS_EQUATION*cabin_air.temperature)*/
 
 /obj/spacepod/Destroy()
 	GLOB.spacepods_list -= src
