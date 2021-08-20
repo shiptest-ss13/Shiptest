@@ -3,6 +3,8 @@
 	desc = "A small tool designed for quick and inefficient data collection about your local star sector."
 	icon = 'icons/obj/item/survey_handheld.dmi'
 	icon_state = "survey"
+	var/static/list/z_active = list()
+	var/static/list/z_history = list()
 	var/active = FALSE
 	var/survey_value = 50
 	var/survey_delay = 2 SECONDS
@@ -23,26 +25,52 @@
 /obj/item/survey_handheld/attack_self(mob/user)
 	if(active)
 		return
+
+	if(z_active["[z]"])
+		visible_message("Warning: There is already an active survey in progress.")
+		return
+
 	active = TRUE
+	z_active["[z]"] = TRUE
 
 	while(user.get_active_held_item() == src)
 		to_chat(user, "<span class='notice'>You begin to scan your surroundings with [src].</span>")
 
-		if(!do_after_mob(user, list(src), survey_delay))
+		var/penalty = 1
+		if(z_history["[z]"])
+			penalty += z_history["[z]"] * 0.05
+		else
+			z_history["[z]"] = 0
+
+		if(penalty > 2)
+			visible_message("Warning: there is very little data left to analyze in this sector.")
+
+		if(!do_after_mob(user, list(src), survey_delay * penalty))
 			flick(icon_state + "-corrupted", src)
 			playsound(src, 'sound/machines/buzz-sigh.ogg')
-			audible_message("Warning: results corrupted. Please try again.")
+			visible_message("Warning: results corrupted. Please try again.")
 			break
+
+		z_history["[z]"]++
 
 		flick(icon_state + "print", src)
 		playsound(src, 'sound/machines/chime.ogg')
-		audible_message("Data recorded and enscribed to research packet.")
-		var/obj/item/result = new /obj/item/research_notes(user.loc, survey_value, pick(list("astronomy", "physics", "planetary", "space")))
+		visible_message("Data recorded and enscribed to research packet.")
+
+
+
+		var/obj/item/result = new /obj/item/research_notes(user.loc, survey_value / penalty, pick(list("astronomy", "physics", "planetary", "space")))
 		if(!user.put_in_hands(result) && istype(user.get_inactive_held_item(), /obj/item/research_notes))
 			var/obj/item/research_notes/research = user.get_inactive_held_item()
 			research.merge(result)
+			continue
+
+		var/obj/item/research_notes/notes = locate() in get_turf(user)
+		if(notes)
+			notes.merge(result)
 
 	active = FALSE
+	z_active["[z]"] = FALSE
 
 /datum/design/survey_handheld
 	name = "Survey Handheld"
