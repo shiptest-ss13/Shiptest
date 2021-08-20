@@ -8,22 +8,15 @@
 "ad" = (
 /obj/machinery/door/airlock/external,
 /obj/effect/mapping_helpers/airlock/cyclelink_helper,
-/obj/docking_port/mobile{
-	callTime = 250;
-	dir = 2;
-	dwidth = 11;
-	height = 17;
-	launch_status = 0;
-	movement_force = list("KNOCKDOWN" = 0, "THROW" = 0);
-	name = "NT Frigate";
-	port_direction = 8;
-	preferred_direction = 4;
-	width = 27
-	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
 	},
 /obj/machinery/door/firedoor/border_only,
+/obj/docking_port/mobile{
+	dir = 2;
+	launch_status = 0;
+	port_direction = 8
+	},
 /turf/open/floor/plating,
 /area/ship/hallway/central)
 "ae" = (
@@ -1812,10 +1805,10 @@
 /turf/open/floor/plating,
 /area/ship/hallway/central)
 "el" = (
-/obj/machinery/door/poddoor/shutters{
-	id = ''Igotoafghanistan''
-	},
 /obj/structure/fans/tiny,
+/obj/machinery/door/poddoor/shutters{
+	id = "delta_cargo"
+	},
 /turf/open/floor/plating,
 /area/ship/cargo)
 "ev" = (
@@ -1855,12 +1848,6 @@
 /obj/item/storage/fancy/egg_box,
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
-"gh" = (
-/obj/machinery/button{
-	id = ''Igotoafghanistan''
-	},
-/turf/closed/wall/mineral/titanium/nodiagonal,
-/area/ship/cargo)
 "hW" = (
 /obj/machinery/atmospherics/pipe/simple/orange{
 	dir = 1
@@ -2249,7 +2236,7 @@
 /area/ship/cargo)
 "QL" = (
 /obj/machinery/button{
-	id = ''Igotoafghanistan''
+	id = "delta_cargo"
 	},
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/hallway/central)
@@ -2266,6 +2253,10 @@
 	},
 /obj/effect/turf_decal/box,
 /obj/structure/ore_box,
+/obj/machinery/button{
+	id = "delta_cargo";
+	pixel_y = 22
+	},
 /turf/open/floor/plasteel,
 /area/ship/cargo)
 "SF" = (
@@ -2311,6 +2302,13 @@
 /obj/machinery/door/firedoor/border_only,
 /turf/open/floor/plating,
 /area/ship/medical)
+"Wl" = (
+/obj/machinery/door/poddoor/shutters{
+	id = "delta_cargo"
+	},
+/obj/structure/fans/tiny,
+/turf/open/floor/plating,
+/area/ship/cargo)
 "XT" = (
 /obj/effect/turf_decal/stripes/line,
 /obj/effect/turf_decal/stripes/line{
@@ -2763,7 +2761,7 @@ ea
 ea
 ea
 SF
-el
+Wl
 "}
 (23,1,1) = {"
 ae
@@ -2776,7 +2774,7 @@ ae
 aa
 aa
 aa
-gh
+HJ
 Sy
 ZM
 DT

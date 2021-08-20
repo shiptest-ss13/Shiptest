@@ -871,6 +871,17 @@
 "kA" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/engineering/engine)
+"mk" = (
+/obj/machinery/door/poddoor{
+	id = "whiteship_port"
+	},
+/obj/docking_port/mobile{
+	dir = 2;
+	launch_status = 0;
+	port_direction = 4
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/cargo)
 "mv" = (
 /obj/item/pod_parts/pod_frame/fore_port,
 /turf/open/floor/plasteel/dark,
@@ -2126,7 +2137,7 @@ YB
 Vx
 "}
 (11,1,1) = {"
-AS
+mk
 ox
 jU
 KM
