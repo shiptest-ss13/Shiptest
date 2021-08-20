@@ -2,7 +2,7 @@
 /obj/machinery/selling_pad
 	name = "cargo hold pad"
 	icon = 'icons/obj/telescience.dmi'
-	icon_state = "lpad-idle-o"
+	icon_state = "lpad"
 	circuit = /obj/item/circuitboard/machine/selling_pad
 
 /obj/machinery/selling_pad/multitool_act(mob/living/user, obj/item/multitool/I)
