@@ -399,8 +399,8 @@ GLOBAL_LIST_INIT(arcade_prize_pool, list(
 
 //Orion Trail Events
 #define ORION_TRAIL_RAIDERS 	"Raiders"
-#define ORION_TRAIL_FLUX 	"Interstellar Flux"
-#define ORION_TRAIL_ILLNESS 	"Illness"
+#define ORION_TRAIL_FLUX "Interstellar Flux"
+#define ORION_TRAIL_ILLNESS "Illness"
 #define ORION_TRAIL_BREAKDOWN "Breakdown"
 #define ORION_TRAIL_LING 	"Changelings?"
 #define ORION_TRAIL_LING_ATTACK "Changeling Ambush"
@@ -409,10 +409,10 @@ GLOBAL_LIST_INIT(arcade_prize_pool, list(
 #define ORION_TRAIL_SPACEPORT "Spaceport"
 #define ORION_TRAIL_BLACKHOLE "BlackHole"
 #define ORION_TRAIL_OLDSHIP 	"Old Ship"
-#define ORION_TRAIL_SEARCH 	"Old Ship Search"
+#define ORION_TRAIL_SEARCH "Old Ship Search"
 
 #define ORION_STATUS_START 	1
-#define ORION_STATUS_NORMAL 	2
+#define ORION_STATUS_NORMAL 2
 #define ORION_STATUS_GAMEOVER 3
 #define ORION_STATUS_MARKET 	4
 

@@ -13,9 +13,9 @@ GENE SCANNER
 
 // Describes the two modes of scanning available for health analyzers
 #define SCANMODE_HEALTH 	0
-#define SCANMODE_CHEMICAL 	1
-#define SCANNER_CONDENSED 	0
-#define SCANNER_VERBOSE 	1
+#define SCANMODE_CHEMICAL 1
+#define SCANNER_CONDENSED 0
+#define SCANNER_VERBOSE 1
 
 /obj/item/t_scanner
 	name = "\improper T-ray scanner"

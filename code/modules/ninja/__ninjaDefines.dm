@@ -10,7 +10,7 @@ Contents:
 //ninjacost() specificCheck defines
 #define N_STEALTH_CANCEL 1
 #define N_SMOKE_BOMB 	2
-#define N_ADRENALINE 	3
+#define N_ADRENALINE 3
 
 //ninjaDrainAct() defines for non numerical returns
 //While not strictly needed, it's nicer than them just returning "twat"
