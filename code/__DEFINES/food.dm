@@ -10,15 +10,15 @@
 #define SUGAR (1<<9)
 #define GROSS (1<<10)
 #define TOXIC (1<<11)
-#define PINEAPPLE	(1<<12)
-#define BREAKFAST	(1<<13)
+#define PINEAPPLE (1<<12)
+#define BREAKFAST (1<<13)
 #define CLOTH (1<<14)
 #define GRILLED (1<<15)
 
-#define DRINK_NICE	1
-#define DRINK_GOOD	2
-#define DRINK_VERYGOOD	3
-#define DRINK_FANTASTIC	4
+#define DRINK_NICE 1
+#define DRINK_GOOD 2
+#define DRINK_VERYGOOD 3
+#define DRINK_FANTASTIC 4
 #define FOOD_AMAZING 5
 
 #define FOOD_IN_CONTAINER (1<<0)

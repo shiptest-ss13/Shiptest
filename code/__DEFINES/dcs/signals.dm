@@ -62,7 +62,7 @@
 	#define COMPONENT_EXNAME_CHANGED (1<<0)
 ///from base of atom/update_icon(): ()
 #define COMSIG_ATOM_UPDATE_ICON "atom_update_icon"
-	#define COMSIG_ATOM_NO_UPDATE_ICON_STATE	(1<<0)
+	#define COMSIG_ATOM_NO_UPDATE_ICON_STATE (1<<0)
 	#define COMSIG_ATOM_NO_UPDATE_OVERLAYS (1<<1)
 ///from base of atom/update_overlays(): (list/new_overlays)
 #define COMSIG_ATOM_UPDATE_OVERLAYS "atom_update_overlays"
@@ -316,7 +316,7 @@
 #define COMSIG_MOB_ITEM_ATTACK "mob_item_attack"
 	#define COMPONENT_ITEM_NO_ATTACK (1<<0)
 ///from base of /mob/living/proc/apply_damage(): (damage, damagetype, def_zone)
-#define COMSIG_MOB_APPLY_DAMGE	"mob_apply_damage"
+#define COMSIG_MOB_APPLY_DAMGE "mob_apply_damage"
 ///from base of obj/item/afterattack(): (atom/target, mob/user, proximity_flag, click_parameters)
 #define COMSIG_MOB_ITEM_AFTERATTACK "mob_item_afterattack"
 ///from base of obj/item/attack_qdeleted(): (atom/target, mob/user, proxiumity_flag, click_parameters)
@@ -446,7 +446,7 @@
 ///from base of code/game/machinery
 #define COMSIG_OBJ_DEFAULT_UNFASTEN_WRENCH "obj_default_unfasten_wrench"
 ///from base of /turf/proc/levelupdate(). (intact) true to hide and false to unhide
-#define COMSIG_OBJ_HIDE	"obj_hide"
+#define COMSIG_OBJ_HIDE "obj_hide"
 
 // /obj/machinery signals
 
@@ -554,7 +554,7 @@
 #define COMSIG_HUMAN_EARLY_UNARMED_ATTACK "human_early_unarmed_attack" //from mob/living/carbon/human/UnarmedAttack(): (atom/target, proximity)
 #define COMSIG_HUMAN_MELEE_UNARMED_ATTACK "human_melee_unarmed_attack" //from mob/living/carbon/human/UnarmedAttack(): (atom/target, proximity)
 #define COMSIG_HUMAN_MELEE_UNARMED_ATTACKBY "human_melee_unarmed_attackby" //from mob/living/carbon/human/UnarmedAttack(): (mob/living/carbon/human/attacker)
-#define COMSIG_HUMAN_DISARM_HIT	"human_disarm_hit"	//Hit by successful disarm attack (mob/living/carbon/human/attacker,zone_targeted)
+#define COMSIG_HUMAN_DISARM_HIT "human_disarm_hit"	//Hit by successful disarm attack (mob/living/carbon/human/attacker,zone_targeted)
 #define COMSIG_JOB_RECEIVED "job_received" //Whenever EquipRanked is called, called after job is set
 
 // /datum/species signals
@@ -597,7 +597,7 @@
 #define COMSIG_HAS_NANITES "has_nanites" //() returns TRUE if nanites are found
 #define COMSIG_NANITE_IS_STEALTHY "nanite_is_stealthy" //() returns TRUE if nanites have stealth
 #define COMSIG_NANITE_DELETE "nanite_delete" //() deletes the nanite component
-#define COMSIG_NANITE_GET_PROGRAMS	"nanite_get_programs" //(list/nanite_programs) - makes the input list a copy the nanites' program list
+#define COMSIG_NANITE_GET_PROGRAMS "nanite_get_programs" //(list/nanite_programs) - makes the input list a copy the nanites' program list
 #define COMSIG_NANITE_GET_VOLUME "nanite_get_volume" //(amount) Returns nanite amount
 #define COMSIG_NANITE_SET_VOLUME "nanite_set_volume" //(amount) Sets current nanite volume to the given amount
 #define COMSIG_NANITE_ADJUST_VOLUME "nanite_adjust" //(amount) Adjusts nanite volume by the given amount

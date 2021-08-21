@@ -55,7 +55,7 @@
 #define DEPARTMENTAL_FLAG_MEDICAL (1<<1)
 #define DEPARTMENTAL_FLAG_CARGO (1<<2)
 #define DEPARTMENTAL_FLAG_SCIENCE (1<<3)
-#define DEPARTMENTAL_FLAG_ENGINEERING	(1<<4)
+#define DEPARTMENTAL_FLAG_ENGINEERING (1<<4)
 #define DEPARTMENTAL_FLAG_SERVICE (1<<5)
 
 #define DESIGN_ID_IGNORE "IGNORE_THIS_DESIGN" ///For instances where we don't want a design showing up due to it being for debug/sanity purposes

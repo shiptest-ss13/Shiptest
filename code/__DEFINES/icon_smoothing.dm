@@ -1,14 +1,14 @@
 /* smoothing_flags */
 /// Smoothing system in where adjacencies are calculated and used to build an image by mounting each corner at runtime.
-#define SMOOTH_CORNERS	(1<<0)
+#define SMOOTH_CORNERS (1<<0)
 /// Smoothing system in where adjacencies are calculated and used to select a pre-baked icon_state, encoded by bitmasking.
 #define SMOOTH_BITMASK (1<<1)
 /// Atom has diagonal corners, with underlays under them.
-#define SMOOTH_DIAGONAL_CORNERS	(1<<2)
+#define SMOOTH_DIAGONAL_CORNERS (1<<2)
 /// Atom will smooth with the borders of the map.
-#define SMOOTH_BORDER	(1<<3)
+#define SMOOTH_BORDER (1<<3)
 /// Atom is currently queued to smooth.
-#define SMOOTH_QUEUED	(1<<4)
+#define SMOOTH_QUEUED (1<<4)
 /// Smooths with objects, and will thus need to scan turfs for contents.
 #define SMOOTH_OBJ (1<<5)
 
@@ -58,7 +58,7 @@ DEFINE_BITFIELD(smoothing_flags, list(
 #define SMOOTH_GROUP_CARPET_GREEN S_TURF(14) ///turf/open/floor/carpet/green
 #define SMOOTH_GROUP_CARPET_ORANGE S_TURF(15) ///turf/open/floor/carpet/orange
 #define SMOOTH_GROUP_CARPET_PURPLE S_TURF(16) ///turf/open/floor/carpet/purple
-#define SMOOTH_GROUP_CARPET_RED	S_TURF(17) ///turf/open/floor/carpet/red
+#define SMOOTH_GROUP_CARPET_RED S_TURF(17) ///turf/open/floor/carpet/red
 #define SMOOTH_GROUP_CARPET_ROYAL_BLACK S_TURF(18) ///turf/open/floor/carpet/royalblack
 #define SMOOTH_GROUP_CARPET_ROYAL_BLUE S_TURF(19) ///turf/open/floor/carpet/royalblue
 #define SMOOTH_GROUP_CARPET_EXECUTIVE S_TURF(20)	///turf/open/floor/carpet/executive
@@ -126,7 +126,7 @@ DEFINE_BITFIELD(smoothing_flags, list(
 
 #define SMOOTH_GROUP_SHUTTLE_PARTS S_OBJ(66) ///obj/structure/window/shuttle, /obj/structure/shuttle/engine/heater
 
-#define SMOOTH_GROUP_CLEANABLE_DIRT	S_OBJ(67) ///obj/effect/decal/cleanable/dirt
+#define SMOOTH_GROUP_CLEANABLE_DIRT S_OBJ(67) ///obj/effect/decal/cleanable/dirt
 
 #define SMOOTH_GROUP_INDUSTRIAL_LIFT S_OBJ(70) ///obj/structure/industrial_lift
 

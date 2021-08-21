@@ -18,14 +18,14 @@
 #define OXYLOSS (1<<3)
 #define SHAME (1<<4)
 #define MANUAL_SUICIDE (1<<5)	//suicide_act will do the actual killing.
-#define MANUAL_SUICIDE_NONLETHAL	(1<<6) //when the suicide is conditionally lethal
+#define MANUAL_SUICIDE_NONLETHAL (1<<6) //when the suicide is conditionally lethal
 
 #define EFFECT_STUN "stun"
-#define EFFECT_KNOCKDOWN	"knockdown"
-#define EFFECT_UNCONSCIOUS	"unconscious"
+#define EFFECT_KNOCKDOWN "knockdown"
+#define EFFECT_UNCONSCIOUS "unconscious"
 #define EFFECT_PARALYZE "paralyze"
-#define EFFECT_IMMOBILIZE	"immobilize"
-#define EFFECT_IRRADIATE	"irradiate"
+#define EFFECT_IMMOBILIZE "immobilize"
+#define EFFECT_IRRADIATE "irradiate"
 #define EFFECT_STUTTER "stutter"
 #define EFFECT_SLUR "slur"
 #define EFFECT_EYE_BLUR "eye_blur"
@@ -34,8 +34,8 @@
 
 //Bitflags defining which status effects could be or are inflicted on a mob
 #define CANSTUN (1<<0)
-#define CANKNOCKDOWN	(1<<1)
-#define CANUNCONSCIOUS	(1<<2)
+#define CANKNOCKDOWN (1<<1)
+#define CANUNCONSCIOUS (1<<2)
 #define CANPUSH (1<<3)
 #define GODMODE (1<<4)
 
@@ -90,10 +90,10 @@
 #define ATTACK_EFFECT_SMASH "smash"
 #define ATTACK_EFFECT_CLAW "claw"
 #define ATTACK_EFFECT_SLASH "slash"
-#define ATTACK_EFFECT_DISARM	"disarm"
+#define ATTACK_EFFECT_DISARM "disarm"
 #define ATTACK_EFFECT_BITE "bite"
-#define ATTACK_EFFECT_MECHFIRE	"mech_fire"
-#define ATTACK_EFFECT_MECHTOXIN	"mech_toxin"
+#define ATTACK_EFFECT_MECHFIRE "mech_fire"
+#define ATTACK_EFFECT_MECHTOXIN "mech_toxin"
 #define ATTACK_EFFECT_BOOP "boop" //Honk
 
 //intent defines
@@ -192,7 +192,7 @@ GLOBAL_LIST_INIT(shove_disarming_types, typecacheof(list(
 //Object/Item sharpness
 #define IS_BLUNT 0
 #define IS_SHARP 1
-#define IS_SHARP_ACCURATE	2
+#define IS_SHARP_ACCURATE 2
 
 //His Grace.
 #define HIS_GRACE_SATIATED 0 //He hungers not. If bloodthirst is set to this, His Grace is asleep.
@@ -228,10 +228,10 @@ GLOBAL_LIST_INIT(shove_disarming_types, typecacheof(list(
 #define BODY_ZONE_PRECISE_EYES "eyes"
 #define BODY_ZONE_PRECISE_MOUTH "mouth"
 #define BODY_ZONE_PRECISE_GROIN "groin"
-#define BODY_ZONE_PRECISE_L_HAND	"l_hand"
-#define BODY_ZONE_PRECISE_R_HAND	"r_hand"
-#define BODY_ZONE_PRECISE_L_FOOT	"l_foot"
-#define BODY_ZONE_PRECISE_R_FOOT	"r_foot"
+#define BODY_ZONE_PRECISE_L_HAND "l_hand"
+#define BODY_ZONE_PRECISE_R_HAND "r_hand"
+#define BODY_ZONE_PRECISE_L_FOOT "l_foot"
+#define BODY_ZONE_PRECISE_R_FOOT "r_foot"
 
 //We will round to this value in damage calculations.
 #define DAMAGE_PRECISION 0.1
@@ -241,4 +241,4 @@ GLOBAL_LIST_INIT(shove_disarming_types, typecacheof(list(
 #define BULLET_ACT_BLOCK "BLOCK" //It's a blocked hit, whatever that means in the context of the thing it's hitting.
 #define BULLET_ACT_FORCE_PIERCE "PIERCE"	//It pierces through the object regardless of the bullet being piercing by default.
 
-#define NICE_SHOT_RICOCHET_BONUS	10 //if the shooter has the NICE_SHOT trait and they fire a ricocheting projectile, add this to the ricochet chance and auto aim angle
+#define NICE_SHOT_RICOCHET_BONUS 10 //if the shooter has the NICE_SHOT trait and they fire a ricocheting projectile, add this to the ricochet chance and auto aim angle

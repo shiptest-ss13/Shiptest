@@ -92,7 +92,7 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_RESTRAINED "restrained"
 #define TRAIT_INCAPACITATED "incapacitated"
 ///In some kind of critical condition. Is able to succumb.
-#define TRAIT_CRITICAL_CONDITION	"critical-condition"
+#define TRAIT_CRITICAL_CONDITION "critical-condition"
 /// Doesn't miss attacks
 #define TRAIT_PERFECT_ATTACKER "perfect_attacker"
 #define TRAIT_BLIND "blind"
@@ -108,7 +108,7 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_DUMB "dumb"
 #define TRAIT_MONKEYLIKE "monkeylike" //sets IsAdvancedToolUser to FALSE
 #define TRAIT_PACIFISM "pacifism"
-#define TRAIT_IGNORESLOWDOWN	"ignoreslow"
+#define TRAIT_IGNORESLOWDOWN "ignoreslow"
 #define TRAIT_IGNOREDAMAGESLOWDOWN "ignoredamageslowdown"
 #define TRAIT_DEATHCOMA "deathcoma" //Causes death-like unconsciousness
 #define TRAIT_FAKEDEATH "fakedeath" //Makes the owner appear as dead to most forms of medical examination
@@ -120,14 +120,14 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_SLEEPIMMUNE "sleep_immunity"
 #define TRAIT_PUSHIMMUNE "push_immunity"
 #define TRAIT_SHOCKIMMUNE "shock_immunity"
-#define TRAIT_TESLA_SHOCKIMMUNE	"tesla_shock_immunity"
+#define TRAIT_TESLA_SHOCKIMMUNE "tesla_shock_immunity"
 #define TRAIT_STABLEHEART "stable_heart"
 #define TRAIT_STABLELIVER "stable_liver"
 #define TRAIT_RESISTHEAT "resist_heat"
-#define TRAIT_RESISTHEATHANDS	"resist_heat_handsonly" //For when you want to be able to touch hot things, but still want fire to be an issue.
+#define TRAIT_RESISTHEATHANDS "resist_heat_handsonly" //For when you want to be able to touch hot things, but still want fire to be an issue.
 #define TRAIT_RESISTCOLD "resist_cold"
-#define TRAIT_RESISTHIGHPRESSURE	"resist_high_pressure"
-#define TRAIT_RESISTLOWPRESSURE	"resist_low_pressure"
+#define TRAIT_RESISTHIGHPRESSURE "resist_high_pressure"
+#define TRAIT_RESISTLOWPRESSURE "resist_low_pressure"
 #define TRAIT_BOMBIMMUNE "bomb_immunity"
 #define TRAIT_RADIMMUNE "rad_immunity"
 #define TRAIT_GENELESS "geneless"
@@ -143,7 +143,7 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_EASYDISMEMBER "easy_dismember"
 #define TRAIT_LIMBATTACHMENT "limb_attach"
 #define TRAIT_NOLIMBDISABLE "no_limb_disable"
-#define TRAIT_EASYLIMBDISABLE	"easy_limb_disable"
+#define TRAIT_EASYLIMBDISABLE "easy_limb_disable"
 #define TRAIT_TOXINLOVER "toxinlover"
 #define TRAIT_NOBREATH "no_breath"
 #define TRAIT_ANTIMAGIC "anti_magic"
@@ -160,10 +160,10 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_DISSECTED "dissected"
 #define TRAIT_SIXTHSENSE "sixth_sense" //I can hear dead people
 #define TRAIT_FEARLESS "fearless"
-#define TRAIT_PARALYSIS_L_ARM	"para-l-arm" //These are used for brain-based paralysis, where replacing the limb won't fix it
-#define TRAIT_PARALYSIS_R_ARM	"para-r-arm"
-#define TRAIT_PARALYSIS_L_LEG	"para-l-leg"
-#define TRAIT_PARALYSIS_R_LEG	"para-r-leg"
+#define TRAIT_PARALYSIS_L_ARM "para-l-arm" //These are used for brain-based paralysis, where replacing the limb won't fix it
+#define TRAIT_PARALYSIS_R_ARM "para-r-arm"
+#define TRAIT_PARALYSIS_L_LEG "para-l-leg"
+#define TRAIT_PARALYSIS_R_LEG "para-r-leg"
 #define TRAIT_CANNOT_OPEN_PRESENTS "cannot-open-presents"
 #define TRAIT_PRESENT_VISION "present-vision"
 #define TRAIT_DISK_VERIFIER "disk-verifier"
@@ -173,7 +173,7 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_ABDUCTOR_TRAINING "abductor-training"
 #define TRAIT_ABDUCTOR_SCIENTIST_TRAINING "abductor-scientist-training"
 #define TRAIT_SURGEON "surgeon"
-#define TRAIT_STRONG_GRABBER	"strong_grabber"
+#define TRAIT_STRONG_GRABBER "strong_grabber"
 #define TRAIT_MAGIC_CHOKE "magic_choke"
 #define TRAIT_SOOTHED_THROAT "soothed-throat"
 #define TRAIT_LAW_ENFORCEMENT_METABOLISM "law-enforcement-metabolism"
@@ -187,7 +187,7 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_OIL_FRIED "oil_fried"
 #define TRAIT_MEDICAL_HUD "med_hud"
 #define TRAIT_SECURITY_HUD "sec_hud"
-#define TRAIT_DIAGNOSTIC_HUD	"diag_hud" //for something granting you a diagnostic hud
+#define TRAIT_DIAGNOSTIC_HUD "diag_hud" //for something granting you a diagnostic hud
 #define TRAIT_MEDIBOTCOMINGTHROUGH "medbot" //Is a medbot healing you
 #define TRAIT_PASSTABLE "passtable"
 #define TRAIT_NOFLASH "noflash" //Makes you immune to flashes
@@ -195,16 +195,16 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_NAIVE "naive"
 #define TRAIT_PRIMITIVE "primitive"
 #define TRAIT_GUNFLIP "gunflip"
-#define TRAIT_SPECIAL_TRAUMA_BOOST	"special_trauma_boost" ///Increases chance of getting special traumas, makes them harder to cure
-#define TRAIT_BLOODCRAWL_EAT	"bloodcrawl_eat"
+#define TRAIT_SPECIAL_TRAUMA_BOOST "special_trauma_boost" ///Increases chance of getting special traumas, makes them harder to cure
+#define TRAIT_BLOODCRAWL_EAT "bloodcrawl_eat"
 #define TRAIT_SPACEWALK "spacewalk"
 #define TRAIT_GAMERGOD "gamer-god" //double arcade prizes
 #define TRAIT_GIANT "giant"
 #define TRAIT_DWARF "dwarf"
-#define TRAIT_SILENT_FOOTSTEPS	"silent_footsteps" //makes your footsteps completely silent
+#define TRAIT_SILENT_FOOTSTEPS "silent_footsteps" //makes your footsteps completely silent
 #define TRAIT_NICE_SHOT "nice_shot" //hnnnnnnnggggg..... you're pretty good....
 /// The holder of this trait has antennae or whatever that hurt a ton when noogied
-#define TRAIT_ANTENNAE	"antennae"
+#define TRAIT_ANTENNAE "antennae"
 
 //non-mob traits
 /// Used for limb-based paralysis, where replacing the limb will fix it.
@@ -214,12 +214,12 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 
 // item traits
 #define TRAIT_NODROP "nodrop"
-#define TRAIT_NO_STORAGE_INSERT	"no_storage_insert" //cannot be inserted in a storage.
+#define TRAIT_NO_STORAGE_INSERT "no_storage_insert" //cannot be inserted in a storage.
 #define TRAIT_T_RAY_VISIBLE "t-ray-visible" // Visible on t-ray scanners if the atom/var/level == 1
 #define TRAIT_NO_TELEPORT "no-teleport" //you just can't
 
 //quirk traits
-#define TRAIT_ALCOHOL_TOLERANCE	"alcohol_tolerance"
+#define TRAIT_ALCOHOL_TOLERANCE "alcohol_tolerance"
 #define TRAIT_AGEUSIA "ageusia"
 #define TRAIT_HEAVY_SLEEPER "heavy_sleeper"
 #define TRAIT_NIGHT_VISION "night_vision"

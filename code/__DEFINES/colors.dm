@@ -39,7 +39,7 @@
 #define COLOR_VERY_PALE_LIME_GREEN "#DDFFD3"
 #define COLOR_VERY_DARK_LIME_GREEN "#003300"
 #define COLOR_GREEN "#008000"
-#define COLOR_DARK_MODERATE_LIME_GREEN	"#44964A"
+#define COLOR_DARK_MODERATE_LIME_GREEN "#44964A"
 
 #define COLOR_CYAN "#00FFFF"
 #define COLOR_DARK_CYAN "#00A2FF"
@@ -112,7 +112,7 @@
 /// Diluted cyan. rgb(125, 225, 225)
 #define LIGHT_COLOR_CYAN "#7DE1E1"
 /// Electric cyan rgb(0, 255, 255)
-#define LIGHT_COLOR_ELECTRIC_CYAN	"#00FFFF"
+#define LIGHT_COLOR_ELECTRIC_CYAN "#00FFFF"
 /// More-saturated cyan. rgb(16, 21, 22)
 #define LIGHT_COLOR_LIGHT_CYAN "#40CEFF"
 /// Saturated blue. rgb(51, 117, 248)
@@ -130,9 +130,9 @@
 /// Less-saturated light purple. rgb(155, 81, 255)
 #define LIGHT_COLOR_LAVENDER "#9B51FF"
 ///slightly desaturated bright yellow.
-#define LIGHT_COLOR_HOLY_MAGIC	"#FFF743"
+#define LIGHT_COLOR_HOLY_MAGIC "#FFF743"
 /// deep crimson
-#define LIGHT_COLOR_BLOOD_MAGIC	"#D00000"
+#define LIGHT_COLOR_BLOOD_MAGIC "#D00000"
 
 /* These ones aren't a direct colour like the ones above, because nothing would fit */
 /// Warm orange color, leaning strongly towards yellow. rgb(250, 160, 25)

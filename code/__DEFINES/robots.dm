@@ -13,7 +13,7 @@
 #define BOT_HUNT 1	// found target, hunting
 #define BOT_PREP_ARREST 2	// at target, preparing to arrest
 #define BOT_ARREST 3	// arresting target
-#define BOT_START_PATROL	4	// start patrol
+#define BOT_START_PATROL 4	// start patrol
 #define BOT_PATROL 5	// patrolling
 #define BOT_SUMMON 6	// summoned by PDA
 #define BOT_CLEANING 7	// cleaning (cleanbots)
@@ -25,9 +25,9 @@
 #define BOT_GO_HOME 13	// returning to home
 #define BOT_BLOCKED 14	// blocked
 #define BOT_NAV 15	// computing navigation
-#define BOT_WAIT_FOR_NAV	16	// waiting for nav computation
+#define BOT_WAIT_FOR_NAV 16	// waiting for nav computation
 #define BOT_NO_ROUTE 17	// no destination beacon found (or no route)
-#define BOT_SHOWERSTANCE	18	// cleaning unhygienic humans
+#define BOT_SHOWERSTANCE 18	// cleaning unhygienic humans
 #define BOT_TIPPED 19	// someone tipped a medibot over ;_;
 
 //Bot types

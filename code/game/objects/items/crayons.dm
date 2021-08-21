@@ -8,9 +8,9 @@
 #define RANDOM_RUNE "Random Rune"
 #define RANDOM_ANY "Random Anything"
 
-#define PAINT_NORMAL	1
-#define PAINT_LARGE_HORIZONTAL	2
-#define PAINT_LARGE_HORIZONTAL_ICON	'icons/effects/96x32.dmi'
+#define PAINT_NORMAL 1
+#define PAINT_LARGE_HORIZONTAL 2
+#define PAINT_LARGE_HORIZONTAL_ICON 'icons/effects/96x32.dmi'
 
 /*
  * Crayons

@@ -11,33 +11,33 @@
 /// wanted, released, parroled, security status
 #define WANTED_HUD "4"
 /// loyality implant
-#define IMPLOYAL_HUD	"5"
+#define IMPLOYAL_HUD "5"
 /// chemical implant
 #define IMPCHEM_HUD "6"
 /// tracking implant
-#define IMPTRACK_HUD	"7"
+#define IMPTRACK_HUD "7"
 /// Silicon/Mech/Circuit Status
-#define DIAG_STAT_HUD	"8"
+#define DIAG_STAT_HUD "8"
 /// Silicon health bar
 #define DIAG_HUD "9"
 /// Borg/Mech/Circutry power meter
-#define DIAG_BATT_HUD	"10"
+#define DIAG_BATT_HUD "10"
 /// Mech health bar
-#define DIAG_MECH_HUD	"11"
+#define DIAG_MECH_HUD "11"
 /// Bot HUDs
-#define DIAG_BOT_HUD	"12"
+#define DIAG_BOT_HUD "12"
 /// Circuit assembly health bar
 #define DIAG_CIRCUIT_HUD "13"
 /// Mech/Silicon tracking beacon, Circutry long range icon
-#define DIAG_TRACK_HUD	"14"
+#define DIAG_TRACK_HUD "14"
 /// Airlock shock overlay
 #define DIAG_AIRLOCK_HUD "15"
 /// Bot path indicators
 #define DIAG_PATH_HUD "16"
 /// Gland indicators for abductors
 #define GLAND_HUD "17"
-#define SENTIENT_DISEASE_HUD	"18"
-#define AI_DETECT_HUD	"19"
+#define SENTIENT_DISEASE_HUD "18"
+#define AI_DETECT_HUD "19"
 #define NANITE_HUD "20"
 #define DIAG_NANITE_FULL_HUD "21"
 /// Displays launchpads' targeting reticle
@@ -58,7 +58,7 @@
 #define DATA_HUD_MEDICAL_BASIC 3
 #define DATA_HUD_MEDICAL_ADVANCED 4
 #define DATA_HUD_DIAGNOSTIC_BASIC 5
-#define DATA_HUD_DIAGNOSTIC_ADVANCED	6
+#define DATA_HUD_DIAGNOSTIC_ADVANCED 6
 #define DATA_HUD_ABDUCTOR 7
 #define DATA_HUD_SENTIENT_DISEASE 8
 #define DATA_HUD_AI_DETECT 9
@@ -75,13 +75,13 @@
 #define ANTAG_HUD_CHANGELING 18
 #define ANTAG_HUD_ABDUCTOR 19
 #define ANTAG_HUD_DEVIL 20
-#define ANTAG_HUD_SINTOUCHED	21
+#define ANTAG_HUD_SINTOUCHED 21
 #define ANTAG_HUD_SOULLESS 22
 #define ANTAG_HUD_BROTHER 23
-#define ANTAG_HUD_OBSESSED	24
-#define ANTAG_HUD_FUGITIVE	25
-#define ANTAG_HUD_GANGSTER	26
-#define ANTAG_HUD_SPACECOP	27
+#define ANTAG_HUD_OBSESSED 24
+#define ANTAG_HUD_FUGITIVE 25
+#define ANTAG_HUD_GANGSTER 26
+#define ANTAG_HUD_SPACECOP 27
 
 
 // Notification action types

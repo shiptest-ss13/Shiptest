@@ -1,19 +1,19 @@
 
 /// For use with the `color_mode` var. Photos will be printed in greyscale while the var has this value.
-#define PHOTO_GREYSCALE	"Greyscale"
+#define PHOTO_GREYSCALE "Greyscale"
 /// For use with the `color_mode` var. Photos will be printed in full color while the var has this value.
-#define PHOTO_COLOR		"Color"
+#define PHOTO_COLOR 	"Color"
 
 /// How much toner is used for making a copy of a paper.
-#define PAPER_TONER_USE		0.125
+#define PAPER_TONER_USE 	0.125
 /// How much toner is used for making a copy of a photo.
-#define PHOTO_TONER_USE		0.625
+#define PHOTO_TONER_USE 	0.625
 /// How much toner is used for making a copy of a document.
-#define DOCUMENT_TONER_USE	0.75
+#define DOCUMENT_TONER_USE 0.75
 /// How much toner is used for making a copy of an ass.
-#define ASS_TONER_USE		0.625
+#define ASS_TONER_USE 	0.625
 /// The maximum amount of copies you can make with one press of the copy button.
-#define MAX_COPIES_AT_ONCE	10
+#define MAX_COPIES_AT_ONCE 10
 
 /obj/machinery/photocopier
 	name = "photocopier"

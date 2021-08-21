@@ -54,7 +54,7 @@
 /// Minimum temperature difference before the gas temperatures are just set to be equal
 #define MINIMUM_TEMPERATURE_DELTA_TO_CONSIDER 0.5
 #define MINIMUM_TEMPERATURE_FOR_SUPERCONDUCTION (T20C+10)
-#define MINIMUM_TEMPERATURE_START_SUPERCONDUCTION	(T20C+200)
+#define MINIMUM_TEMPERATURE_START_SUPERCONDUCTION (T20C+200)
 
 //HEAT TRANSFER COEFFICIENTS
 //Must be between 0 and 1. Values closer to 1 equalize temperature faster
@@ -62,13 +62,13 @@
 #define WALL_HEAT_TRANSFER_COEFFICIENT 0.0
 #define OPEN_HEAT_TRANSFER_COEFFICIENT 0.4
 /// a hack for now
-#define WINDOW_HEAT_TRANSFER_COEFFICIENT	0.1
+#define WINDOW_HEAT_TRANSFER_COEFFICIENT 0.1
 /// a hack to help make vacuums "cold", sacrificing realism for gameplay
 #define HEAT_CAPACITY_VACUUM 7000
 
 //FIRE
-#define FIRE_MINIMUM_TEMPERATURE_TO_SPREAD	(150+T0C)
-#define FIRE_MINIMUM_TEMPERATURE_TO_EXIST	(100+T0C)
+#define FIRE_MINIMUM_TEMPERATURE_TO_SPREAD (150+T0C)
+#define FIRE_MINIMUM_TEMPERATURE_TO_EXIST (100+T0C)
 #define FIRE_SPREAD_RADIOSITY_SCALE 0.85
 #define FIRE_GROWTH_RATE 40000	//For small fires
 #define PLASMA_MINIMUM_BURN_TEMPERATURE (100+T0C)
@@ -76,8 +76,8 @@
 #define PLASMA_OXYGEN_FULLBURN 10
 
 //COLD FIRE (this is used only for the freon-o2 reaction, there is no fire still)
-#define COLD_FIRE_MAXIMUM_TEMPERATURE_TO_SPREAD	263 //fire will spread if the temperature is -10 °C
-#define COLD_FIRE_MAXIMUM_TEMPERATURE_TO_EXIST	273 //fire will start if the temperature is 0 °C
+#define COLD_FIRE_MAXIMUM_TEMPERATURE_TO_SPREAD 263 //fire will spread if the temperature is -10 °C
+#define COLD_FIRE_MAXIMUM_TEMPERATURE_TO_EXIST 273 //fire will start if the temperature is 0 °C
 #define COLD_FIRE_SPREAD_RADIOSITY_SCALE 0.95
 #define COLD_FIRE_GROWTH_RATE 40000
 #define FREON_MAXIMUM_BURN_TEMPERATURE 293
@@ -155,7 +155,7 @@
 #define FIRE_HELM_MAX_TEMP_PROTECT 30000
 
 /// what max_heat_protection_temperature is set to for firesuit quality suits and helmets. MUST NOT BE 0.
-#define FIRE_IMMUNITY_MAX_TEMP_PROTECT	35000
+#define FIRE_IMMUNITY_MAX_TEMP_PROTECT 35000
 
 /// For normal helmets
 #define HELMET_MIN_TEMP_PROTECT 160
@@ -196,7 +196,7 @@
 #define UNARY 1
 #define BINARY 2
 #define TRINARY 3
-#define QUATERNARY	4
+#define QUATERNARY 4
 
 //TANKS
 /// temperature in kelvins at which a tank will start to melt
@@ -315,7 +315,7 @@
 #define INCINERATOR_ATMOS_AUXVENT "atmos_incinerator_auxvent"
 #define INCINERATOR_ATMOS_DP_VENTPUMP "atmos_incinerator_airlock_pump"
 #define INCINERATOR_ATMOS_AIRLOCK_SENSOR "atmos_incinerator_airlock_sensor"
-#define INCINERATOR_ATMOS_AIRLOCK_CONTROLLER	"atmos_incinerator_airlock_controller"
+#define INCINERATOR_ATMOS_AIRLOCK_CONTROLLER "atmos_incinerator_airlock_controller"
 #define INCINERATOR_ATMOS_AIRLOCK_INTERIOR "atmos_incinerator_airlock_interior"
 #define INCINERATOR_ATMOS_AIRLOCK_EXTERIOR "atmos_incinerator_airlock_exterior"
 
@@ -345,7 +345,7 @@
 /// can only exist at PIPING_LAYER_DEFAULT
 #define PIPING_DEFAULT_LAYER_ONLY (1<<2)
 /// north/south east/west doesn't matter, auto normalize on build.
-#define PIPING_CARDINAL_AUTONORMALIZE	(1<<3)
+#define PIPING_CARDINAL_AUTONORMALIZE (1<<3)
 
 // Gas defines because i hate typepaths
 #define GAS_O2 "o2"
@@ -364,7 +364,7 @@
 #define GAS_FREON "freon"
 
 #define GAS_FLAG_DANGEROUS (1<<0)
-#define GAS_FLAG_BREATH_PROC	(1<<1)
+#define GAS_FLAG_BREATH_PROC (1<<1)
 
 //HELPERS
 #define PIPING_LAYER_SHIFT(T, PipingLayer) \

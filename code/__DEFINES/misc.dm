@@ -18,7 +18,7 @@
 #define BODYPARTS_LAYER 27 //Initially "AUGMENTS", this was repurposed to be a catch-all bodyparts flag
 #define BODY_ADJ_LAYER 26 //certain mutantrace features (snout, body markings) that must appear above the body parts
 #define BODY_LAYER 25 //underwear, undershirts, socks, eyes, lips(makeup)
-#define FRONT_MUTATIONS_LAYER	24 //mutations that should appear above body, body_adj and bodyparts layer (e.g. laser eyes)
+#define FRONT_MUTATIONS_LAYER 24 //mutations that should appear above body, body_adj and bodyparts layer (e.g. laser eyes)
 #define DAMAGE_LAYER 23 //damage indicators (cuts and burns)
 #define UNIFORM_LAYER 22
 #define ID_LAYER 21 //lmao at the idiot who put both ids and hands on the same layer
@@ -56,10 +56,10 @@
 
 
 //Security levels
-#define SEC_LEVEL_GREEN	0
-#define SEC_LEVEL_BLUE	1
-#define SEC_LEVEL_RED	2
-#define SEC_LEVEL_DELTA	3
+#define SEC_LEVEL_GREEN 0
+#define SEC_LEVEL_BLUE 1
+#define SEC_LEVEL_RED 2
+#define SEC_LEVEL_DELTA 3
 
 //some arbitrary defines to be used by self-pruning global lists. (see master_controller)
 #define PROCESS_KILL 26	//Used to trigger removal from a processing list
@@ -88,7 +88,7 @@
 //SSticker.current_state values
 #define GAME_STATE_STARTUP 0
 #define GAME_STATE_PREGAME 1
-#define GAME_STATE_SETTING_UP	2
+#define GAME_STATE_SETTING_UP 2
 #define GAME_STATE_PLAYING 3
 #define GAME_STATE_FINISHED 4
 
@@ -107,14 +107,14 @@
 #define RESIZE_DEFAULT_SIZE 1
 
 //transfer_ai() defines. Main proc in ai_core.dm
-#define AI_TRANS_TO_CARD	1 //Downloading AI to InteliCard.
-#define AI_TRANS_FROM_CARD	2 //Uploading AI from InteliCard
+#define AI_TRANS_TO_CARD 1 //Downloading AI to InteliCard.
+#define AI_TRANS_FROM_CARD 2 //Uploading AI from InteliCard
 #define AI_MECH_HACK 3 //Malfunctioning AI hijacking mecha
 
 //check_target_facings() return defines
 #define FACING_SAME_DIR 1
 #define FACING_EACHOTHER 2
-#define FACING_INIT_FACING_TARGET_TARGET_FACING_PERPENDICULAR	3 //Do I win the most informative but also most stupid define award?
+#define FACING_INIT_FACING_TARGET_TARGET_FACING_PERPENDICULAR 3 //Do I win the most informative but also most stupid define award?
 
 //stages of shoe tying-ness
 #define SHOES_UNTIED 0
@@ -129,7 +129,7 @@ GLOBAL_LIST_EMPTY(bloody_footprints_cache)
 
 //Bloody shoes/footprints
 #define MAX_SHOE_BLOODINESS 100
-#define BLOODY_FOOTPRINT_BASE_ALPHA	150
+#define BLOODY_FOOTPRINT_BASE_ALPHA 150
 #define BLOOD_GAIN_PER_STEP 100
 #define BLOOD_LOSS_PER_STEP 5
 #define BLOOD_LOSS_IN_SPREAD 20
@@ -158,10 +158,10 @@ GLOBAL_LIST_EMPTY(bloody_footprints_cache)
 //Wet floor type flags. Stronger ones should be higher in number.
 #define TURF_DRY (0)
 #define TURF_WET_WATER (1<<0)
-#define TURF_WET_PERMAFROST	(1<<1)
+#define TURF_WET_PERMAFROST (1<<1)
 #define TURF_WET_ICE (1<<2)
 #define TURF_WET_LUBE (1<<3)
-#define TURF_WET_SUPERLUBE	(1<<4)
+#define TURF_WET_SUPERLUBE (1<<4)
 
 #define IS_WET_OPEN_TURF(O) O.GetComponent(/datum/component/wet_floor)
 
@@ -188,10 +188,10 @@ GLOBAL_LIST_EMPTY(bloody_footprints_cache)
 
 //Ghost orbit types:
 #define GHOST_ORBIT_CIRCLE "circle"
-#define GHOST_ORBIT_TRIANGLE	"triangle"
+#define GHOST_ORBIT_TRIANGLE "triangle"
 #define GHOST_ORBIT_HEXAGON "hexagon"
 #define GHOST_ORBIT_SQUARE "square"
-#define GHOST_ORBIT_PENTAGON	"pentagon"
+#define GHOST_ORBIT_PENTAGON "pentagon"
 
 //Ghost showing preferences:
 #define GHOST_ACCS_NONE 1
@@ -202,7 +202,7 @@ GLOBAL_LIST_EMPTY(bloody_footprints_cache)
 #define GHOST_ACCS_DIR_NAME "only directional sprites"
 #define GHOST_ACCS_FULL_NAME "full accessories"
 
-#define GHOST_ACCS_DEFAULT_OPTION	GHOST_ACCS_FULL
+#define GHOST_ACCS_DEFAULT_OPTION GHOST_ACCS_FULL
 
 GLOBAL_LIST_INIT(ghost_accs_options, list(GHOST_ACCS_NONE, GHOST_ACCS_DIR, GHOST_ACCS_FULL)) //So save files can be sanitized properly.
 
@@ -225,7 +225,7 @@ GLOBAL_LIST_INIT(ghost_others_options, list(GHOST_OTHERS_SIMPLE, GHOST_OTHERS_DE
 //pda fonts
 #define MONO "Monospaced"
 #define VT "VT323"
-#define ORBITRON	"Orbitron"
+#define ORBITRON "Orbitron"
 #define SHARE "Share Tech Mono"
 
 GLOBAL_LIST_INIT(pda_styles, sortList(list(MONO, VT, ORBITRON, SHARE)))
@@ -247,7 +247,7 @@ GLOBAL_LIST_INIT(pda_styles, sortList(list(MONO, VT, ORBITRON, SHARE)))
 // Enabling certain features
 #define APPEARANCE_CONSIDER_TRANSFORM ~RESET_TRANSFORM
 #define APPEARANCE_CONSIDER_COLOUR ~RESET_COLOUR
-#define APPEARANCE_CONSIDER_CLIENT_COLOUR	~NO_CLIENT_COLOR
+#define APPEARANCE_CONSIDER_CLIENT_COLOUR ~NO_CLIENT_COLOR
 #define APPEARANCE_CONSIDER_COLOURING (~RESET_COLOR|~NO_CLIENT_COLOR)
 #define APPEARANCE_CONSIDER_ALPHA ~RESET_ALPHA
 #define APPEARANCE_LONG_GLIDE LONG_GLIDE
@@ -259,7 +259,7 @@ GLOBAL_LIST_INIT(pda_styles, sortList(list(MONO, VT, ORBITRON, SHARE)))
 #define APPEARANCE_UI (RESET_COLOR|RESET_TRANSFORM|NO_CLIENT_COLOR|PIXEL_SCALE)
 
 //Just space
-#define SPACE_ICON_STATE	"[((x + y) ^ ~(x * y) + z) % 25]"
+#define SPACE_ICON_STATE "[((x + y) ^ ~(x * y) + z) % 25]"
 
 // Maploader bounds indices
 #define MAP_MINX 1
@@ -486,7 +486,7 @@ GLOBAL_LIST_INIT(pda_styles, sortList(list(MONO, VT, ORBITRON, SHARE)))
 // possible bitflag return values of intercept_zImpact(atom/movable/AM, levels = 1) calls
 #define FALL_INTERCEPTED (1<<0) //Stops the movable from falling further and crashing on the ground
 #define FALL_NO_MESSAGE (1<<1) //Used to suppress the "[A] falls through [old_turf]" messages where it'd make little sense at all, like going downstairs.
-#define FALL_STOP_INTERCEPTING	(1<<2) //Used in situations where halting the whole "intercept" loop would be better, like supermatter dusting (and thus deleting) the atom.
+#define FALL_STOP_INTERCEPTING (1<<2) //Used in situations where halting the whole "intercept" loop would be better, like supermatter dusting (and thus deleting) the atom.
 
 //Religion
 

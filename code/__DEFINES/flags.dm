@@ -13,7 +13,7 @@ GLOBAL_LIST_INIT(bitflags, list(1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 204
 
 // for /datum/var/datum_flags
 #define DF_USE_TAG (1<<0)
-#define DF_VAR_EDITED	(1<<1)
+#define DF_VAR_EDITED (1<<1)
 #define DF_ISPROCESSING (1<<2)
 
 //FLAGS BITMASK
@@ -51,7 +51,7 @@ GLOBAL_LIST_INIT(bitflags, list(1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 204
 
 //turf-only flags
 #define NOJAUNT_1 (1<<0)
-#define UNUSED_RESERVATION_TURF_1	(1<<1)
+#define UNUSED_RESERVATION_TURF_1 (1<<1)
 /// If a turf can be made dirty at roundstart. This is also used in areas.
 #define CAN_BE_DIRTY_1 (1<<2)
 /// If blood cultists can draw runes or build structures on this turf
@@ -95,15 +95,15 @@ GLOBAL_LIST_INIT(bitflags, list(1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 204
 #define PASSGRILLE (1<<2)
 #define PASSBLOB (1<<3)
 #define PASSMOB (1<<4)
-#define PASSCLOSEDTURF	(1<<5)
+#define PASSCLOSEDTURF (1<<5)
 /// Let thrown things past us. **ONLY MEANINGFUL ON pass_flags_self!**
-#define LETPASSTHROW	(1<<6)
+#define LETPASSTHROW (1<<6)
 #define PASSDOORHATCH (1<<7)
 
 //Movement Types
 #define GROUND (1<<0)
 #define FLYING (1<<1)
-#define VENTCRAWLING	(1<<2)
+#define VENTCRAWLING (1<<2)
 #define FLOATING (1<<3)
 /// When moving, will Cross()/Uncross() everything, but won't stop or Bump() anything.
 #define PHASING (1<<4)
@@ -119,9 +119,9 @@ GLOBAL_LIST_INIT(bitflags, list(1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 204
 /// acid stuck on it doesn't melt it.
 #define ACID_PROOF (1<<5)
 /// doesn't take damage
-#define INDESTRUCTIBLE	(1<<6)
+#define INDESTRUCTIBLE (1<<6)
 /// can't be frozen
-#define FREEZE_PROOF	(1<<7)
+#define FREEZE_PROOF (1<<7)
 
 //tesla_zap
 #define ZAP_MACHINE_EXPLOSIVE (1<<0)

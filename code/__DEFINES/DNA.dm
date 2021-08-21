@@ -5,55 +5,55 @@
 //Defines copying names of mutations in all cases, make sure to change this if you change mutation's type
 #define HULK /datum/mutation/human/hulk
 #define XRAY /datum/mutation/human/thermal/x_ray
-#define SPACEMUT	/datum/mutation/human/space_adaptation
+#define SPACEMUT /datum/mutation/human/space_adaptation
 #define TK /datum/mutation/human/telekinesis
 #define NERVOUS /datum/mutation/human/nervousness
-#define EPILEPSY	/datum/mutation/human/epilepsy
+#define EPILEPSY /datum/mutation/human/epilepsy
 #define MUTATE /datum/mutation/human/bad_dna
 #define COUGH /datum/mutation/human/cough
-#define DWARFISM	/datum/mutation/human/dwarfism
-#define GIGANTISM	/datum/mutation/human/gigantism
-#define CLOWNMUT	/datum/mutation/human/clumsy
-#define TOURETTES	/datum/mutation/human/tourettes
+#define DWARFISM /datum/mutation/human/dwarfism
+#define GIGANTISM /datum/mutation/human/gigantism
+#define CLOWNMUT /datum/mutation/human/clumsy
+#define TOURETTES /datum/mutation/human/tourettes
 #define DEAFMUT /datum/mutation/human/deaf
-#define BLINDMUT	/datum/mutation/human/blind
+#define BLINDMUT /datum/mutation/human/blind
 #define RACEMUT /datum/mutation/human/race
-#define BADSIGHT	/datum/mutation/human/nearsight
-#define LASEREYES	/datum/mutation/human/laser_eyes
-#define CHAMELEON	/datum/mutation/human/chameleon
+#define BADSIGHT /datum/mutation/human/nearsight
+#define LASEREYES /datum/mutation/human/laser_eyes
+#define CHAMELEON /datum/mutation/human/chameleon
 #define WACKY /datum/mutation/human/wacky
-#define MUT_MUTE	/datum/mutation/human/mute
+#define MUT_MUTE /datum/mutation/human/mute
 #define STONER /datum/mutation/human/stoner
 #define UNINTELLIGIBLE /datum/mutation/human/unintelligible
 #define SWEDISH /datum/mutation/human/swedish
 #define CHAV /datum/mutation/human/chav
 #define ELVIS /datum/mutation/human/elvis
-#define RADIOACTIVE	/datum/mutation/human/radioactive
+#define RADIOACTIVE /datum/mutation/human/radioactive
 #define GLOWY /datum/mutation/human/glow
-#define ANTIGLOWY	/datum/mutation/human/glow/anti
-#define TELEPATHY	/datum/mutation/human/telepathy
-#define FIREBREATH	/datum/mutation/human/firebreath
+#define ANTIGLOWY /datum/mutation/human/glow/anti
+#define TELEPATHY /datum/mutation/human/telepathy
+#define FIREBREATH /datum/mutation/human/firebreath
 #define VOID /datum/mutation/human/void
-#define TONGUESPIKE	/datum/mutation/human/tonguespike
+#define TONGUESPIKE /datum/mutation/human/tonguespike
 #define TONGUESPIKECHEM /datum/mutation/human/tongue_spike/chem
 #define STRONG /datum/mutation/human/strong
 #define STIMMED /datum/mutation/human/stimmed
-#define FIRESWEAT	/datum/mutation/human/fire
+#define FIRESWEAT /datum/mutation/human/fire
 #define THERMAL /datum/mutation/human/thermal
 #define ANTENNA /datum/mutation/human/antenna
-#define PARANOIA	/datum/mutation/human/paranoia
-#define MINDREAD	/datum/mutation/human/mindreader
-#define INSULATED	/datum/mutation/human/insulated
-#define SHOCKTOUCH	/datum/mutation/human/shock
-#define OLFACTION	/datum/mutation/human/olfaction
-#define ACIDFLESH	/datum/mutation/human/acidflesh
-#define BADBLINK	/datum/mutation/human/badblink
+#define PARANOIA /datum/mutation/human/paranoia
+#define MINDREAD /datum/mutation/human/mindreader
+#define INSULATED /datum/mutation/human/insulated
+#define SHOCKTOUCH /datum/mutation/human/shock
+#define OLFACTION /datum/mutation/human/olfaction
+#define ACIDFLESH /datum/mutation/human/acidflesh
+#define BADBLINK /datum/mutation/human/badblink
 #define SPASTIC /datum/mutation/human/spastic
-#define EXTRASTUN	/datum/mutation/human/extrastun
+#define EXTRASTUN /datum/mutation/human/extrastun
 #define GELADIKINESIS /datum/mutation/human/geladikinesis
 #define CRYOKINESIS /datum/mutation/human/cryokinesis
-#define SPIDER_WEB	/datum/mutation/human/webbing
-#define MARTYRDOM	/datum/mutation/human/martyrdom
+#define SPIDER_WEB /datum/mutation/human/webbing
+#define MARTYRDOM /datum/mutation/human/martyrdom
 #define HARS /datum/mutation/human/headless
 
 // WS Edit Start - Dwarves
@@ -83,11 +83,11 @@
 
 #define DNA_UNI_IDENTITY_BLOCKS 7
 #define DNA_HAIR_COLOR_BLOCK 1
-#define DNA_FACIAL_HAIR_COLOR_BLOCK	2
+#define DNA_FACIAL_HAIR_COLOR_BLOCK 2
 #define DNA_SKIN_TONE_BLOCK 3
 #define DNA_EYE_COLOR_BLOCK 4
 #define DNA_GENDER_BLOCK 5
-#define DNA_FACIAL_HAIRSTYLE_BLOCK	6
+#define DNA_FACIAL_HAIRSTYLE_BLOCK 6
 #define DNA_HAIRSTYLE_BLOCK 7
 
 #define DNA_SEQUENCE_LENGTH 4
@@ -95,18 +95,18 @@
 #define DNA_UNIQUE_ENZYMES_LEN 32
 
 //Transformation proc stuff
-#define TR_KEEPITEMS	(1<<0)
-#define TR_KEEPVIRUS	(1<<1)
-#define TR_KEEPDAMAGE	(1<<2)
+#define TR_KEEPITEMS (1<<0)
+#define TR_KEEPVIRUS (1<<1)
+#define TR_KEEPDAMAGE (1<<2)
 /// hashing names (e.g. monkey(e34f)) (only in monkeyize)
 #define TR_HASHNAME (1<<3)
-#define TR_KEEPIMPLANTS	(1<<4)
+#define TR_KEEPIMPLANTS (1<<4)
 /// changelings shouldn't edit the DNA's SE when turning into a monkey
 #define TR_KEEPSE (1<<5)
-#define TR_DEFAULTMSG	(1<<6)
-#define TR_KEEPORGANS	(1<<8)
-#define TR_KEEPSTUNS	(1<<9)
-#define TR_KEEPREAGENTS	(1<<10)
+#define TR_DEFAULTMSG (1<<6)
+#define TR_KEEPORGANS (1<<8)
+#define TR_KEEPSTUNS (1<<9)
+#define TR_KEEPREAGENTS (1<<10)
 
 //species traits for mutantraces
 #define MUTCOLORS 1
@@ -115,13 +115,13 @@
 #define EYECOLOR 4
 #define LIPS 5
 #define NOBLOOD 6
-#define NOTRANSSTING	7
+#define NOTRANSSTING 7
 /// Used if we want the mutant colour to be only used by mutant bodyparts. Don't combine this with MUTCOLORS, or it will be useless.
-#define MUTCOLORS_PARTSONLY	8
+#define MUTCOLORS_PARTSONLY 8
 #define NOZOMBIE 9
 /// Uses weird leg sprites. Optional for lizards, required for ashwalkers. Don't give it to other races unless you make sprites for this (see human_parts_greyscale.dmi)
 #define DIGITIGRADE 10
-#define NO_UNDERWEAR	11
+#define NO_UNDERWEAR 11
 #define NOLIVER 12
 #define NOSTOMACH 13
 #define NO_DNA_COPY 14
@@ -129,11 +129,11 @@
 #define NOFLASH 16
 #define DYNCOLORS 17 //! Use this if you want to change the race's color without the player being able to pick their own color. AKA special color shifting
 #define AGENDER 18
-#define NOEYESPRITES	19 //! Do not draw eyes or eyeless overlay
+#define NOEYESPRITES 19 //! Do not draw eyes or eyeless overlay
 #define NOREAGENTS 20 //! DO NOT PROCESS REAGENTS
 #define REVIVESBYHEALING 21 // Will revive on heal when healing and total HP > 0.
 #define NOHUSK 22 // Can't be husked.
-#define ROBOTIC_LIMBS	23 //limbs start out as robotic; but also use organic icons. If you want to use the default ones, you'll have to use on_species_gain
+#define ROBOTIC_LIMBS 23 //limbs start out as robotic; but also use organic icons. If you want to use the default ones, you'll have to use on_species_gain
 #define NOMOUTH 24
 #define NO_BONES 25 //WS Edit - Breakable Bones
 

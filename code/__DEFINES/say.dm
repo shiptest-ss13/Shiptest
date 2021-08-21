@@ -75,7 +75,7 @@
 
 //bitflag #defines for return value of the radio() proc.
 #define ITALICS (1<<0)
-#define REDUCE_RANGE	(1<<1)
+#define REDUCE_RANGE (1<<1)
 #define NOPASS (1<<2)
 
 //Eavesdropping

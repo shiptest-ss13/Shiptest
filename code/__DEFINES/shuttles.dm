@@ -1,10 +1,10 @@
 //shuttle mode defines
 #define SHUTTLE_IDLE "idle"
-#define SHUTTLE_IGNITING	"igniting"
+#define SHUTTLE_IGNITING "igniting"
 #define SHUTTLE_RECALL "recalled"
 #define SHUTTLE_CALL "called"
 #define SHUTTLE_DOCKED "docked"
-#define SHUTTLE_STRANDED	"stranded"
+#define SHUTTLE_STRANDED "stranded"
 #define SHUTTLE_ESCAPE "escape"
 #define SHUTTLE_ENDGAME "endgame: game over"
 #define SHUTTLE_RECHARGING "recharging"
@@ -64,7 +64,7 @@
 #define DOCKING_BLOCKED (1<<0)
 #define DOCKING_IMMOBILIZED (1<<1)
 #define DOCKING_AREA_EMPTY (1<<2)
-#define DOCKING_NULL_DESTINATION	(1<<3)
+#define DOCKING_NULL_DESTINATION (1<<3)
 #define DOCKING_NULL_SOURCE (1<<4)
 
 //Docking turf movements
@@ -75,7 +75,7 @@
 //Rotation params
 #define ROTATE_DIR 1
 #define ROTATE_SMOOTH 2
-#define ROTATE_OFFSET	4
+#define ROTATE_OFFSET 4
 
 //Shuttle defaults
 #define SHUTTLE_DEFAULT_SHUTTLE_AREA_TYPE /area/ship

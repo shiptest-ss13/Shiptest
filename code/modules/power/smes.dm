@@ -5,15 +5,15 @@
 #define SMESCHARGE 70			// ratio of battery storage to SMES storage		//WS Edit - Removes magic number
 
 //Cache defines
-#define SMES_CLEVEL_1		1
-#define SMES_CLEVEL_2		2
-#define SMES_CLEVEL_3		3
-#define SMES_CLEVEL_4		4
-#define SMES_CLEVEL_5		5
-#define SMES_OUTPUTTING		6
+#define SMES_CLEVEL_1 	1
+#define SMES_CLEVEL_2 	2
+#define SMES_CLEVEL_3 	3
+#define SMES_CLEVEL_4 	4
+#define SMES_CLEVEL_5 	5
+#define SMES_OUTPUTTING 	6
 #define SMES_NOT_OUTPUTTING 7
-#define SMES_INPUTTING		8
-#define SMES_INPUT_ATTEMPT	9
+#define SMES_INPUTTING 	8
+#define SMES_INPUT_ATTEMPT 9
 
 /obj/machinery/power/smes
 	name = "power storage unit"

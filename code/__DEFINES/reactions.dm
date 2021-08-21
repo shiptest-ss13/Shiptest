@@ -4,7 +4,7 @@
 #define OXYGEN_BURN_RATE_BASE 1.4
 #define PLASMA_BURN_RATE_DELTA 9
 #define PLASMA_MINIMUM_OXYGEN_NEEDED 2
-#define PLASMA_MINIMUM_OXYGEN_PLASMA_RATIO	30
+#define PLASMA_MINIMUM_OXYGEN_PLASMA_RATIO 30
 #define FIRE_CARBON_ENERGY_RELEASED 100000	//Amount of heat released per mole of burnt carbon into the tile
 #define FIRE_HYDROGEN_ENERGY_RELEASED 280000 //Amount of heat released per mole of burnt hydrogen and/or tritium(hydrogen isotope)
 #define FIRE_PLASMA_ENERGY_RELEASED 3000000	//Amount of heat released per mole of burnt plasma into the tile
@@ -15,14 +15,14 @@
 #define FIRE_FREON_ENERGY_RELEASED -300000 //amount of heat absorbed per mole of burnt freon in the tile
 
 #define N2O_DECOMPOSITION_MIN_ENERGY 1400
-#define N2O_DECOMPOSITION_ENERGY_RELEASED	200000
+#define N2O_DECOMPOSITION_ENERGY_RELEASED 200000
 
 #define NITRYL_FORMATION_ENERGY 100000
 #define NITROUS_FORMATION_ENERGY 10000
 #define TRITIUM_BURN_OXY_FACTOR 100
 #define TRITIUM_BURN_TRIT_FACTOR 10
-#define TRITIUM_BURN_RADIOACTIVITY_FACTOR	50000 //The neutrons gotta go somewhere. Completely arbitrary number.
-#define TRITIUM_MINIMUM_RADIATION_ENERGY	0.1 //minimum 0.01 moles trit or 10 moles oxygen to start producing rads
+#define TRITIUM_BURN_RADIOACTIVITY_FACTOR 50000 //The neutrons gotta go somewhere. Completely arbitrary number.
+#define TRITIUM_MINIMUM_RADIATION_ENERGY 0.1 //minimum 0.01 moles trit or 10 moles oxygen to start producing rads
 #define SUPER_SATURATION_THRESHOLD 96
 #define STIMULUM_HEAT_SCALE 100000
 #define STIMULUM_FIRST_RISE 0.65

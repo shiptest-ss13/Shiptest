@@ -13,7 +13,7 @@
 /// incapacitated check checks grab
 #define INTERACT_ATOM_CHECK_GRAB (1<<6)
 /// prevents leaving fingerprints automatically on attack_hand
-#define INTERACT_ATOM_NO_FINGERPRINT_ATTACK_HAND	(1<<7)
+#define INTERACT_ATOM_NO_FINGERPRINT_ATTACK_HAND (1<<7)
 /// adds hiddenprints instead of fingerprints on interact
 #define INTERACT_ATOM_NO_FINGERPRINT_INTERACT (1<<8)
 
@@ -31,7 +31,7 @@
 /// let silicons interact while open
 #define INTERACT_MACHINE_OPEN_SILICON (1<<4)
 /// must be silicon to interact
-#define INTERACT_MACHINE_REQUIRES_SILICON	(1<<5)
+#define INTERACT_MACHINE_REQUIRES_SILICON (1<<5)
 /// MACHINES HAVE THIS BY DEFAULT, SOMEONE SHOULD RUN THROUGH MACHINES AND REMOVE IT FROM THINGS LIKE LIGHT SWITCHES WHEN POSSIBLE!!--------------------------
 /// This flag determines if a machine set_machine's the user when the user uses it, making updateUsrDialog make the user re-call interact() on it.
 /// THIS FLAG IS ON ALL MACHINES BY DEFAULT, NEEDS TO BE RE-EVALUATED LATER!!
