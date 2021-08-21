@@ -125,7 +125,7 @@
 /// Similar to the BODYTEMP_AUTORECOVERY_DIVISOR, but this is the divisor which is applied at the stage that follows autorecovery. This is the divisor which comes into play when the human's loc temperature is higher than their body temperature. Make it lower to gain bodytemp faster.
 #define BODYTEMP_HEAT_DIVISOR 15
 /// The maximum number of degrees that your body can cool in 1 tick, due to the environment, when in a cold area.
-#define BODYTEMP_COOLING_MAX				-100
+#define BODYTEMP_COOLING_MAX -100
 /// The maximum number of degrees that your body can heat up in 1 tick, due to the environment, when in a hot area.
 #define BODYTEMP_HEATING_MAX 30
 /// The body temperature limit the human body can take before it starts taking damage from heat.
@@ -368,23 +368,23 @@
 
 //HELPERS
 #define PIPING_LAYER_SHIFT(T, PipingLayer) \
-	if(T.dir & (NORTH|SOUTH)) {									\
-		T.pixel_x = (PipingLayer - PIPING_LAYER_DEFAULT) * PIPING_LAYER_P_X;\
-	}																		\
-	if(T.dir & (EAST|WEST)) {										\
-		T.pixel_y = (PipingLayer - PIPING_LAYER_DEFAULT) * PIPING_LAYER_P_Y;\
+	if(T.dir & (NORTH|SOUTH)) {									 \
+		T.pixel_x = (PipingLayer - PIPING_LAYER_DEFAULT) * PIPING_LAYER_P_X; \
+	}																		 \
+	if(T.dir & (EAST|WEST)) {										 \
+		T.pixel_y = (PipingLayer - PIPING_LAYER_DEFAULT) * PIPING_LAYER_P_Y; \
 	}
 
 #define PIPING_FORWARD_SHIFT(T, PipingLayer, more_shift) \
-	if(T.dir & (NORTH|SOUTH)) {									\
-		T.pixel_y += more_shift * (PipingLayer - PIPING_LAYER_DEFAULT);\
-	}																		\
-	if(T.dir & (EAST|WEST)) {										\
-		T.pixel_x += more_shift * (PipingLayer - PIPING_LAYER_DEFAULT);\
+	if(T.dir & (NORTH|SOUTH)) {									 \
+		T.pixel_y += more_shift * (PipingLayer - PIPING_LAYER_DEFAULT); \
+	}																		 \
+	if(T.dir & (EAST|WEST)) {										 \
+		T.pixel_x += more_shift * (PipingLayer - PIPING_LAYER_DEFAULT); \
 	}
 
 #define PIPING_LAYER_DOUBLE_SHIFT(T, PipingLayer) \
-	T.pixel_x = (PipingLayer - PIPING_LAYER_DEFAULT) * PIPING_LAYER_P_X;\
+	T.pixel_x = (PipingLayer - PIPING_LAYER_DEFAULT) * PIPING_LAYER_P_X; \
 	T.pixel_y = (PipingLayer - PIPING_LAYER_DEFAULT) * PIPING_LAYER_P_Y;
 
 #ifdef TESTING
@@ -395,14 +395,14 @@ GLOBAL_LIST_INIT(atmos_adjacent_savings, list(0,0))
 #endif
 
 GLOBAL_VAR(atmos_extools_initialized) // this must be an uninitialized (null) one or init_monstermos will be called twice because reasons
-#define ATMOS_EXTOOLS_CHECK if(!GLOB.atmos_extools_initialized){\
-	GLOB.atmos_extools_initialized=TRUE;\
-	if(fexists(world.system_type == MS_WINDOWS ? "./byond-extools.dll" : "./libbyond-extools.so")){\
-		var/result = call((world.system_type == MS_WINDOWS ? "./byond-extools.dll" : "./libbyond-extools.so"),"init_monstermos")();\
-		if(result != "ok") {CRASH(result);}\
-	} else {\
-		CRASH("byond-extools.dll does not exist!");\
-	}\
+#define ATMOS_EXTOOLS_CHECK if(!GLOB.atmos_extools_initialized){ \
+	GLOB.atmos_extools_initialized=TRUE; \
+	if(fexists(world.system_type == MS_WINDOWS ? "./byond-extools.dll" : "./libbyond-extools.so")){ \
+		var/result = call((world.system_type == MS_WINDOWS ? "./byond-extools.dll" : "./libbyond-extools.so"),"init_monstermos")(); \
+		if(result != "ok") {CRASH(result);} \
+	} else { \
+		CRASH("byond-extools.dll does not exist!"); \
+	} \
 }
 
 GLOBAL_LIST_INIT(pipe_paint_colors, sortList(list(

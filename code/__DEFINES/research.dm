@@ -51,14 +51,14 @@
 #define RESEARCH_FABRICATOR_SCREEN_CATEGORYVIEW 5
 
 ///Department flags for techwebs. Defines which department can print what from each protolathe so Cargo can't print guns, etc.
-#define DEPARTMENTAL_FLAG_SECURITY		(1<<0)
-#define DEPARTMENTAL_FLAG_MEDICAL		(1<<1)
-#define DEPARTMENTAL_FLAG_CARGO			(1<<2)
-#define DEPARTMENTAL_FLAG_SCIENCE		(1<<3)
+#define DEPARTMENTAL_FLAG_SECURITY (1<<0)
+#define DEPARTMENTAL_FLAG_MEDICAL (1<<1)
+#define DEPARTMENTAL_FLAG_CARGO (1<<2)
+#define DEPARTMENTAL_FLAG_SCIENCE (1<<3)
 #define DEPARTMENTAL_FLAG_ENGINEERING	(1<<4)
-#define DEPARTMENTAL_FLAG_SERVICE		(1<<5)
+#define DEPARTMENTAL_FLAG_SERVICE (1<<5)
 
-#define DESIGN_ID_IGNORE "IGNORE_THIS_DESIGN"			///For instances where we don't want a design showing up due to it being for debug/sanity purposes
+#define DESIGN_ID_IGNORE "IGNORE_THIS_DESIGN" ///For instances where we don't want a design showing up due to it being for debug/sanity purposes
 
 #define RESEARCH_MATERIAL_RECLAMATION_ID "__materials"
 
@@ -69,13 +69,13 @@
 #define TECHWEB_POINT_TYPE_DEFAULT TECHWEB_POINT_TYPE_GENERIC
 
 ///Associative names for techweb point values, see: [/modules/research/techweb/all_nodes][all_nodes]
-#define TECHWEB_POINT_TYPE_LIST_ASSOCIATIVE_NAMES list(\
-	TECHWEB_POINT_TYPE_GENERIC = "General Research",\
-	TECHWEB_POINT_TYPE_NANITES = "Nanite Research"\
+#define TECHWEB_POINT_TYPE_LIST_ASSOCIATIVE_NAMES list( \
+	TECHWEB_POINT_TYPE_GENERIC = "General Research", \
+	TECHWEB_POINT_TYPE_NANITES = "Nanite Research" \
 	)
 
 ///R&D point value for a maxcap bomb. Can be adjusted if need be. Current Value Cap Radius: 100
-#define TECHWEB_BOMB_POINTCAP		50000
+#define TECHWEB_BOMB_POINTCAP 50000
 
 ///Research point values for slime extracts, see: [/modules/research/xenobiology/xenobio_camera][xenobio_camera]
 #define SLIME_RESEARCH_TIER_0 100

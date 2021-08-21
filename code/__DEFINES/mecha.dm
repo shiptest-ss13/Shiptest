@@ -1,4 +1,4 @@
-#define MECHA_INT_FIRE			(1<<0)
+#define MECHA_INT_FIRE (1<<0)
 #define MECHA_INT_TEMP_CONTROL	(1<<1)
 #define MECHA_INT_SHORT_CIRCUIT	(1<<2)
 #define MECHA_INT_TANK_BREACH	(1<<3)
