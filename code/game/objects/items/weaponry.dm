@@ -618,7 +618,7 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 		homerun_ready = 0
 		return
 	else if(!target.anchored)
-		target.throw_at(throw_target, rand(1,2), 7, user)
+		target.throw_at(throw_target, rand(1,2), 2, user, gentle = TRUE)
 
 /obj/item/melee/baseball_bat/ablative
 	name = "metal baseball bat"
