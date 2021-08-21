@@ -35,17 +35,6 @@
 	var/list/valid_items = list() //valid items for special reactions like transforming
 	var/list/critical_items_typecache //items that can cause critical reactions
 	var/banned_typecache // items that won't be produced
-	var/datum/techweb/linked_techweb
-
-/obj/machinery/rnd/experimentor/attackby(obj/item/O, mob/user, params)
-	. = ..()
-	if(istype(O, /obj/item/multitool))
-		var/obj/item/multitool/multi = O
-		if(istype(multi.buffer, /obj/machinery/rnd/server))
-			var/obj/machinery/rnd/server/serv = multi.buffer
-			linked_techweb = serv.stored_research
-			visible_message("Linked to Server!")
-		return
 
 /obj/machinery/rnd/experimentor/proc/ConvertReqString2List(list/source_list)
 	var/list/temp_list = params2list(source_list)

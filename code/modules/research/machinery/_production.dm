@@ -13,7 +13,6 @@
 	var/list/datum/design/matching_designs
 	var/department_tag = "Unidentified"			//used for material distribution among other things.
 	var/datum/techweb/stored_research
-	var/datum/techweb/host_research
 
 	var/screen = RESEARCH_FABRICATOR_SCREEN_MAIN
 	var/selected_category
@@ -28,37 +27,20 @@
 	materials = AddComponent(/datum/component/remote_materials, "lathe", mapload)
 	RefreshParts()
 
-/obj/machinery/rnd/production/attackby(obj/item/O, mob/user, params)
-	. = ..()
-
-	if(istype(O, /obj/item/multitool))
-		if(host_research)
-			audible_message("Disconnected from Server.")
-			host_research = null
-			qdel(stored_research)
-			stored_research = new
-			return
-
-		var/obj/item/multitool/multi = O
-		if(istype(multi.buffer, /obj/machinery/rnd/server))
-			var/obj/machinery/rnd/server/server = multi.buffer
-			audible_message("Linked to Server!")
-			host_research = server.stored_research
-
 /obj/machinery/rnd/production/Destroy()
 	materials = null
 	cached_designs = null
 	matching_designs = null
 	QDEL_NULL(stored_research)
-	host_research = null
+	linked_techweb = null
 	return ..()
 
 /obj/machinery/rnd/production/proc/update_research()
-	if(!host_research)
+	if(!linked_techweb)
 		visible_message("Warning. No Linked Server!")
 		return
 
-	host_research.copy_research_to(stored_research, TRUE)
+	linked_techweb.copy_research_to(stored_research, TRUE)
 	update_designs()
 
 /obj/machinery/rnd/production/proc/update_designs()
@@ -75,7 +57,7 @@
 	if(!consoleless_interface)
 		return ..()
 
-	if(!host_research)
+	if(!linked_techweb)
 		visible_message("Warning. No Linked Server!")
 		return
 
@@ -226,7 +208,7 @@
 
 /obj/machinery/rnd/production/proc/ui_header()
 	var/list/l = list()
-	l += "<div class='statusDisplay'><b>[host_research.organization] [department_tag] Department Lathe</b>"
+	l += "<div class='statusDisplay'><b>[linked_techweb.organization] [department_tag] Department Lathe</b>"
 	l += "Security protocols: [(obj_flags & EMAGGED)? "<font color='red'>Disabled</font>" : "<font color='green'>Enabled</font>"]"
 	if (materials.mat_container.linked_account)
 		var/datum/bank_account/user_account = usr.get_bank_account()
