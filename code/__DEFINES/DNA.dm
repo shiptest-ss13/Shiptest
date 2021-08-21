@@ -68,9 +68,9 @@
 // String identifiers for associative list lookup
 
 //Types of usual mutations
-#define	POSITIVE 1
-#define	NEGATIVE 2
-#define	MINOR_NEGATIVE 4
+#define POSITIVE 1
+#define NEGATIVE 2
+#define MINOR_NEGATIVE 4
 
 
 //Mutation classes. Normal being on them, extra being additional mutations with instability and other being stuff you dont want people to fuck with like wizard mutate
