@@ -101,6 +101,7 @@
 		set_nanite_bar(TRUE)
 		host_mob.hud_set_nanite_indicator()
 	host_mob = null
+	linked_techweb = null
 	return ..()
 
 /datum/component/nanites/InheritComponent(datum/component/nanites/new_nanites, i_am_original, amount, cloud)

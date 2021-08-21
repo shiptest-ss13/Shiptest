@@ -109,6 +109,10 @@
 	skin = new_skin
 	update_icon()
 
+/mob/living/simple_animal/bot/medbot/Destroy()
+	linked_techweb = null
+	. = ..()
+
 /mob/living/simple_animal/bot/medbot/bot_reset()
 	..()
 	patient = null
@@ -182,6 +186,10 @@
 		update_icon()
 
 	else if(href_list["hptech"])
+		if(!linked_techweb)
+			speak("Warning: no linked server.")
+			return
+
 		var/oldheal_amount = heal_amount
 		var/tech_boosters
 		for(var/i in linked_techweb.researched_designs)

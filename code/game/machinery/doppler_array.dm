@@ -198,6 +198,10 @@
 	desc = "A specialized tachyon-doppler bomb detection array that uses the results of the highest yield of explosions for research."
 	var/datum/techweb/linked_techweb
 
+/obj/machinery/doppler_array/research/Destroy()
+	linked_techweb = null
+	. = ..()
+
 /obj/machinery/doppler_array/research/attackby(obj/item/I, mob/user, params)
 	. = ..()
 	if(istype(I, /obj/item/multitool))

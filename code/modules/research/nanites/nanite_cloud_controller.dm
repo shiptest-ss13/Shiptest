@@ -13,6 +13,7 @@
 
 /obj/machinery/computer/nanite_cloud_controller/Destroy()
 	QDEL_LIST(cloud_backups) //rip backups
+	linked_techweb = null
 	eject()
 	return ..()
 

@@ -22,7 +22,8 @@
 		list(name = "Protocols"),
 	)
 
-/obj/machinery/nanite_program_hub/Initialize()
+/obj/machinery/nanite_program_hub/Destroy()
+	linked_techweb = null
 	. = ..()
 
 /obj/machinery/nanite_program_hub/attackby(obj/item/I, mob/user)
@@ -58,6 +59,10 @@
 	return
 
 /obj/machinery/nanite_program_hub/ui_interact(mob/user, datum/tgui/ui)
+	if(!linked_techweb)
+		visible_message("Warning: no linked server!")
+		SStgui.close_uis(src)
+		return
 	ui = SStgui.try_update_ui(user, src, ui)
 	if(!ui)
 		ui = new(user, src, "NaniteProgramHub", name)

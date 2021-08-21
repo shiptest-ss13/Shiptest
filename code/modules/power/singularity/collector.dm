@@ -41,12 +41,8 @@
 	req_access = list(ACCESS_ENGINE_EQUIP, ACCESS_ATMOSPHERICS)
 
 /obj/machinery/power/rad_collector/Destroy()
+	linked_techweb = null
 	return ..()
-
-/*WS Edit - Smartwire Revert
-/obj/machinery/power/rad_collector/should_have_node()
-	return anchored
-*/
 
 /obj/machinery/power/rad_collector/process()
 	if(!loaded_tank)

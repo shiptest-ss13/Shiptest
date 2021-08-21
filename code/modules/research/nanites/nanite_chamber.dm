@@ -25,6 +25,10 @@
 	. = ..()
 	occupant_typecache = GLOB.typecache_living
 
+/obj/machinery/nanite_chamber/Destroy()
+	linked_techweb = null
+	. = ..()
+
 /obj/machinery/nanite_chamber/RefreshParts()
 	scan_level = 0
 	for(var/obj/item/stock_parts/scanning_module/P in component_parts)

@@ -28,10 +28,9 @@
 	. = ..()
 	wires = new /datum/wires/tesla_coil(src)
 
-/*WS Edit - Smartwire Revert
-/obj/machinery/power/tesla_coil/should_have_node()
-	return anchored
-*/
+/obj/machinery/power/tesla_coil/Destroy()
+	linked_techweb = null
+	. = ..()
 
 /obj/machinery/power/tesla_coil/RefreshParts()
 	var/power_multiplier = 0
