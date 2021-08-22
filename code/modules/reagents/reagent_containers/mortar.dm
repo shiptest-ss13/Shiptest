@@ -16,6 +16,8 @@ to accommodate additional materials.
 	desc = "A specially formed bowl of ancient design. It is possible to crush or juice items placed in it using a pestle; however the process, unlike modern methods, is slow and physically exhausting. Alt click to eject the item."
 	icon = 'icons/obj/chemical.dmi'
 	icon_state = "mortar_wood"
+	fill_icon_state = "mortar"
+	fill_icon_thresholds = list(1, 20, 40, 80, 100)
 	amount_per_transfer_from_this = 10
 	possible_transfer_amounts = list(5, 10, 15, 20, 25, 30, 50, 100)
 	volume = 100
