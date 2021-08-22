@@ -119,7 +119,12 @@
 	reqs = list(/obj/item/stack/sheet/bone = 8,
 				/obj/item/stack/sheet/sinew = 4)
 	category = CAT_PRIMAL
-
+/datum/crafting_recipe/boneclub
+	name = "Bone Club"
+	result = /obj/item/melee/baseball_bat/bone
+	time = 40
+	reqs = list(/obj/item/stack/sheet/bone = 6)
+	category = CAT_PRIMAL
 /datum/crafting_recipe/polarbearcloak
 	name = "Polar Cloak"
 	result = /obj/item/clothing/suit/hooded/cloak/goliath/polar
