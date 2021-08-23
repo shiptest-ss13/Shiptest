@@ -37,7 +37,7 @@
 	item = /obj/item/storage/box
 
 	price_min = 1500
-	price_max = 2000
+	price_max = 4000
 	stock_max = 3
 	availability_prob = 30
 
@@ -65,23 +65,6 @@
 	item = /obj/item/clothing/suit/space/hardsuit/combatmedic
 
 	price_min = 5500
-	price_max = 6000
+	price_max = 7000
 	stock_max = 1
 	availability_prob = 10
-/datum/blackmarket_item/clothing/hitmankit
-	name = "Hitman Kit"
-	desc = "Because at the end of the day, as long as there is two people left on the planet, someone is gonna want someone dead."
-	item = /obj/item/storage/backpack/duffelbag/syndie/hitman
-
-	price_min = 7000
-	price_max = 8500
-	availability_prob = 15
-	stock_max = 3
-/datum/blackmarket_item/clothing/centcom
-	name = "Nanotrasen Intern Costume"
-	desc = "Can get you out of a situation in a pinch, beware of SSV vessels (Please, just beware)"
-	item = /obj/item/storage/box/syndie_kit/centcom_costume
-	price_min = 1300
-	price_max = 1600
-	availability_prob = 20
-	stock_max = 4

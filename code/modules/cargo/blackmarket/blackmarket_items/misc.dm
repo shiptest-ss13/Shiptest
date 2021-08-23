@@ -56,12 +56,3 @@
 	price_max = 1000
 	stock_max = 2
 	availability_prob = 30
-
-/datum/blackmarket_item/misc/firing_pins
-	name = "Standard Firing Pins"
-	desc = "In the world of guns, don't be the guy with the rock."
-	item = /obj/item/storage/box/firingpins
-	price_min = 1200
-	price_max = 1400
-	availability_prob = 20
-	stock_max = 2
