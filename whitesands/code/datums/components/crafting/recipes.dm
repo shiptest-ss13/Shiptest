@@ -131,3 +131,17 @@
 	time = 20
 	tools = list(TOOL_SCREWDRIVER, TOOL_WIRECUTTER)
 	category = CAT_MISC
+
+/datum/crafting_recipe/ZipPistol
+	name = "Zip Pistol"
+	result = /obj/item/gun/ballistic/automatic/ZipPistol
+	reqs = list(/obj/item/stack/rods = 4,
+			/obj/item/pipe = 1,
+			/obj/item/stack/cable_coil = 15,
+			/obj/item/weaponcrafting/receiver = 1,
+			/obj/item/floor_painter = 1,
+			/obj/item/stack/packageWrap = 10)
+	tools = list(TOOL_SCREWDRIVER)
+	time = 100
+	category = CAT_WEAPONRY
+	subcategory = CAT_WEAPON

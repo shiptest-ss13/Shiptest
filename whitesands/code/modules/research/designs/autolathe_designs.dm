@@ -7,3 +7,11 @@
 	build_path = /obj/item/floor_painter
 	category = list("initial","Tools","Tool Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SERVICE
+
+/datum/design/ZipAmmo9mm
+	name = "Budget pistol 9mm magazine"
+	id = "ZipAmmo9mm"
+	build_type = AUTOLATHE
+	materials = list(/datum/material/iron = 20000)
+	build_path = /obj/item/ammo_box/magazine/ZipAmmo9mm
+	category = list("hacked", "Security")

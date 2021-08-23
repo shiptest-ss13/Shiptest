@@ -152,3 +152,19 @@
 	mag_display = TRUE
 	weapon_weight = WEAPON_LIGHT
 	fire_rate = 4
+	
+/obj/item/gun/ballistic/automatic/ZipPistol
+	name = "Makeshift Pistol"
+	desc = "A makeshift janky pistol, its a miracle it even works."
+	icon = 'whitesands/icons/obj/guns/projectile.dmi'
+	icon_state = "ZipPistol"
+	lefthand_file = 'whitesands/icons/mob/inhands/weapons/guns_left.dmi'
+	righthand_file = 'whitesands/icons/mob/inhands/weapons/guns_right.dmi'
+	item_state = "ZipPistol"
+	mag_type = /obj/item/ammo_box/magazine/ZipAmmo9mm
+	can_suppress = FALSE
+	actions_types = list()
+	can_bayonet = FALSE
+	mag_display = TRUE
+	weapon_weight = WEAPON_LIGHT
+	fire_rate = 3
