@@ -87,7 +87,6 @@
 /obj/item/blackmarket_uplink/ui_static_data(mob/user)
 	var/list/data = list()
 	data["delivery_method_description"] = SSblackmarket.shipping_method_descriptions
-	data["ltsrbt_built"] = SSblackmarket.telepads.len
 	data["markets"] = list()
 	for(var/M in accessible_markets)
 		var/datum/blackmarket_market/BM = SSblackmarket.markets[M]

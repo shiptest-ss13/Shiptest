@@ -5,14 +5,11 @@ SUBSYSTEM_DEF(blackmarket)
 
 	/// Descriptions for each shipping methods.
 	var/shipping_method_descriptions = list(
-		SHIPPING_METHOD_LAUNCH="Launches the item at the station from space, cheap but you might not recieve your item at all.",
-		SHIPPING_METHOD_LTSRBT="Long-To-Short-Range-Bluespace-Transceiver, a machine that recieves items outside the station and then teleports them to the location of the uplink."
+		SHIPPING_METHOD_TELE="Because of the new age of ship tech, the members of the blackmarket have stole a little more and upgraded their systems for a cheap (and effective) way of transporting objects... shipping costs included.",
 	)
 
 	/// List of all existing markets.
 	var/list/datum/blackmarket_market/markets		= list()
-	/// List of existing ltsrbts.
-	var/list/obj/machinery/ltsrbt/telepads			= list()
 	/// Currently queued purchases.
 	var/list/queued_purchases 						= list()
 
@@ -45,39 +42,17 @@ SUBSYSTEM_DEF(blackmarket)
 			continue
 
 		switch(purchase.method)
-			// Find a ltsrbt pad and make it handle the shipping.
-			if(SHIPPING_METHOD_LTSRBT)
-				if(!telepads.len)
-					continue
-				// Prioritize pads that don't have a cooldown active.
-				var/free_pad_found = FALSE
-				for(var/obj/machinery/ltsrbt/pad in telepads)
-					if(pad.recharge_cooldown)
-						continue
-					pad.add_to_queue(purchase)
-					queued_purchases -= purchase
-					free_pad_found = TRUE
-					break
 
-				if(free_pad_found)
-					continue
-
-				var/obj/machinery/ltsrbt/pad = pick(telepads)
-
-				to_chat(recursive_loc_check(purchase.uplink.loc, /mob), "<span class='notice'>[purchase.uplink] flashes a message noting that the order is being processed by [pad].</span>")
-
-				queued_purchases -= purchase
-				pad.add_to_queue(purchase)
 			// Get the current location of the uplink if it exists, then throws the item from space at the station from a random direction.
-			if(SHIPPING_METHOD_LAUNCH)
+			if(SHIPPING_METHOD_TELE)
 				var/startSide = pick(GLOB.cardinals)
 				var/turf/T = get_turf(purchase.uplink)
 				var/pickedloc = spaceDebrisStartLoc(startSide, T.z)
 
 				var/atom/movable/item = purchase.entry.spawn_item(pickedloc)
-				item.throw_at(purchase.uplink, 3, 3, spin = FALSE)
+				fake_teleport(purchase.entry.spawn_item(pickedloc), get_turf(purchase.uplink))
 
-				to_chat(recursive_loc_check(purchase.uplink.loc, /mob), "<span class='notice'>[purchase.uplink] flashes a message noting the order is being launched at the station from [dir2text(startSide)].</span>")
+				to_chat(recursive_loc_check(purchase.uplink.loc, /mob), "<span class='notice'>[purchase.uplink] flashes a message noting the order is being verified and sent to your current area</span>")
 
 				queued_purchases -= purchase
 				qdel(purchase)
@@ -95,7 +70,5 @@ SUBSYSTEM_DEF(blackmarket)
 
 /// Used to add /datum/blackmarket_purchase to queued_purchases var. Returns TRUE when queued.
 /datum/controller/subsystem/blackmarket/proc/queue_item(datum/blackmarket_purchase/P)
-	if(P.method == SHIPPING_METHOD_LTSRBT && !telepads.len)
-		return FALSE
 	queued_purchases += P
 	return TRUE
