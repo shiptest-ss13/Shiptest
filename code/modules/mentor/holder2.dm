@@ -6,11 +6,15 @@ GLOBAL_PROTECT(mentor_datums)
 	var/target
 	var/following = null
 
-/datum/mentors/New(ckey)
-	if(!ckey)
-		del(src)
-		return
-	GLOB.mentor_datums[ckey] = src
+/datum/mentors/New(target)
+	if(!target)
+		QDEL_IN(src, 0)
+		CRASH("Attempted to create a new mentor datum with no target")
+	if(GLOB.mentor_datums[target])
+		QDEL_IN(src, 0)
+		CRASH("Attempted to create a new mentor datum for [target] when one already exists.")
+	src.target = target
+	GLOB.mentor_datums[target] = src
 
 /datum/mentors/proc/associate(client/C)
 	if(istype(C))
