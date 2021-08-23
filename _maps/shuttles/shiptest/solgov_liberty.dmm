@@ -42,6 +42,10 @@
 /obj/item/gun/energy/e_gun,
 /obj/item/melee/sabre,
 /obj/item/storage/belt/sabre,
+/obj/item/folder/blue{
+	pixel_x = -1;
+	pixel_y = 8
+	},
 /turf/open/floor/carpet/nanoweave/blue,
 /area/ship/bridge)
 "bb" = (
@@ -131,6 +135,13 @@
 	pixel_x = -7
 	},
 /obj/item/melee/classic_baton/telescopic,
+/obj/item/folder/blue{
+	pixel_x = -1;
+	pixel_y = 8
+	},
+/obj/item/pen/solgov{
+	pixel_x = 5
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "fp" = (
@@ -1076,12 +1087,10 @@
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
-/obj/structure/closet/wall{
-	name = "brig locker";
-	pixel_x = -32
-	},
-/obj/item/clothing/under/rank/prisoner,
-/obj/item/clothing/under/rank/prisoner,
+/obj/structure/table,
+/obj/machinery/cell_charger,
+/obj/item/stock_parts/cell/high,
+/obj/item/stock_parts/cell/high,
 /turf/open/floor/carpet/nanoweave/red,
 /area/ship/cargo)
 "Hh" = (
@@ -1097,10 +1106,7 @@
 /obj/machinery/status_display/shuttle{
 	pixel_y = 32
 	},
-/obj/machinery/cell_charger,
-/obj/structure/table,
-/obj/item/stock_parts/cell/high,
-/obj/item/stock_parts/cell/high,
+/obj/structure/filingcabinet/chestdrawer,
 /turf/open/floor/carpet/nanoweave/red,
 /area/ship/cargo)
 "Hw" = (
