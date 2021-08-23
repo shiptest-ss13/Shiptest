@@ -15,3 +15,4 @@
 	materials = list(/datum/material/iron = 20000)
 	build_path = /obj/item/ammo_box/magazine/ZipAmmo9mm
 	category = list("hacked", "Security")
+	

@@ -837,3 +837,4 @@
 		   /obj/item/stack/sticky_tape = 1)
 	result = /obj/item/pickaxe/improvised
 	category = CAT_MISC
+	
