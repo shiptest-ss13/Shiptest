@@ -3,6 +3,7 @@ GLOBAL_PROTECT(mentor_datums)
 
 /datum/mentors
 	var/client/owner = null
+	var/target
 	var/following = null
 
 /datum/mentors/New(ckey)
@@ -13,25 +14,18 @@ GLOBAL_PROTECT(mentor_datums)
 
 /datum/mentors/proc/associate(client/C)
 	if(istype(C))
+		if(C.ckey != target)
+			message_admins("[C] attempted to assosciate with the mentor datum of [target]!")
+			return
 		owner = C
 		GLOB.mentors |= C
-		owner.holder.rank = "Mentor"
-		owner.holder.rank.rights = R_MENTOR
-		owner.add_admin_verbs()
+		owner.add_mentor_verbs()
 
 /datum/mentors/proc/disassociate()
 	if(owner)
 		GLOB.mentors -= owner
-		owner.holder.rank = "Player"
-		owner.remove_admin_verbs()
+		owner.remove_mentor_verbs()
 		owner = null
-
-/client/proc/dementor()
-	var/mentor = GLOB.mentor_datums[ckey]
-	GLOB.mentor_datums -= ckey
-	qdel(mentor)
-
-	return TRUE
 
 /proc/check_mentor()
 	if(usr && usr.client)
