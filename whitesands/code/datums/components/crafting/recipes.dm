@@ -145,3 +145,11 @@
 	time = 100
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
+	
+/datum/crafting_recipe/ScrapArmor
+	name = "Scrap Armor"
+	result = /obj/item/clothing/suit/armor/vest/scraparmor
+	time = 60
+	reqs = list(/obj/item/stack/sheet/metal = 10,
+				/obj/item/stack/cable_coil = 20)
+	category = CAT_CLOTHING

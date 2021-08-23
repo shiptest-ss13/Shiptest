@@ -32,3 +32,11 @@
 	icon_state = "syndiearmor"
 	item_state = "syndiearmor"
 
+/obj/item/clothing/suit/armor/vest/scraparmor
+	name = "\improper Scrap Armor"
+	desc = "Who thought this is a good idea for armor?"
+	icon = 'whitesands/icons/obj/clothing/suits.dmi'
+	mob_overlay_icon = 'whitesands/icons/mob/clothing/suits.dmi'
+	icon_state = "scraparmor"
+	item_state = "scraparmor"
+	armor = list(melee = 5, bullet = 0, laser = 0, energy = 0, bomb = 0, bio = 0, rad = 0, fire = 0, acid = 0)
