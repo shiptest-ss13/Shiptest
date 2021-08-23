@@ -18,10 +18,10 @@
 #define SCANGATE_GOLEM			"golem"
 #define SCANGATE_ZOMBIE			"zombie"
 #define SCANGATE_SPIDER			"rachnid"
-#define SCANGATE_IPC			"ipc"
-#define SCANGATE_SQUID			"squid"
-#define SCANGATE_ETHEREAL		"ethereal"
-#define SCANGATE_TESHARI		"tesh"
+#define SCANGATE_IPC "ipc"
+#define SCANGATE_SQUID "squid"
+#define SCANGATE_ETHEREAL "ethereal"
+#define SCANGATE_TESHARI "tesh"
 
 /obj/machinery/scanner_gate
 	name = "scanner gate"
