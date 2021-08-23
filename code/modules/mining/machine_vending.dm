@@ -280,6 +280,7 @@
 /obj/item/storage/backpack/duffelbag/mining_conscript
 	name = "mining conscription kit"
 	desc = "A kit containing everything a crewmember needs to support a shaft miner in the field."
+	custom_price = 1500
 
 /obj/item/storage/backpack/duffelbag/mining_conscript/PopulateContents()
 	new /obj/item/clothing/glasses/meson(src)
