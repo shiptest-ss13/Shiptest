@@ -242,8 +242,9 @@
 //determines if a mob can smash through it
 #define ENVIRONMENT_SMASH_NONE			0
 #define ENVIRONMENT_SMASH_STRUCTURES	(1<<0) 	//crates, lockers, ect
-#define ENVIRONMENT_SMASH_WALLS			(1<<1)  //walls
-#define ENVIRONMENT_SMASH_RWALLS		(1<<2)	//rwalls
+#define ENVIRONMENT_SMASH_MINERALS		(1<<1)	//minable walls
+#define ENVIRONMENT_SMASH_WALLS			(1<<2)  //walls
+#define ENVIRONMENT_SMASH_RWALLS		(1<<3)	//rwalls
 
 #define NO_SLIP_WHEN_WALKING	(1<<0)
 #define SLIDE					(1<<1)
