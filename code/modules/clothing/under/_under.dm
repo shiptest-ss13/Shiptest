@@ -11,7 +11,7 @@
 	pickup_sound =  'sound/items/handling/cloth_pickup.ogg'
 	cuttable = TRUE
 	clothamnt = 5
-	greyscale_colors = list(list(15, 17), list(15, 10), list(10, 19))
+	greyscale_colors = list(list(15, 17), list(10, 19), list(15, 10))
 	greyscale_icon_state = "under"
 	var/fitted = FEMALE_UNIFORM_FULL // For use in alternate clothing styles for women
 	var/has_sensor = HAS_SENSORS // For the crew computer
@@ -58,6 +58,8 @@
 	if(random_sensor)
 		//make the sensor mode favor higher levels, except coords.
 		sensor_mode = pick(SENSOR_OFF, SENSOR_LIVING, SENSOR_LIVING, SENSOR_VITALS, SENSOR_VITALS, SENSOR_VITALS, SENSOR_COORDS, SENSOR_COORDS)
+	if(!(body_parts_covered & LEGS))
+		greyscale_icon_state = "under_skirt"
 
 /obj/item/clothing/under/emp_act()
 	. = ..()

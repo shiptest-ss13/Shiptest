@@ -10,7 +10,7 @@
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS
 	flags_inv = HIDESUITSTORAGE
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/exo/cloak //WS Edit - Exowear Pockets
-	greyscale_colors = list(list(11, 15))
+	greyscale_colors = list(list(11, 15), list(12, 22))
 	greyscale_icon_state = "cloak"
 
 /obj/item/clothing/neck/cloak/suicide_act(mob/user)

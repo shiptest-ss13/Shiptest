@@ -137,8 +137,8 @@ There are several things that need to be remembered:
 		if(OFFSET_UNIFORM in dna.species.offset_features)
 			uniform_overlay.pixel_x += dna.species.offset_features[OFFSET_UNIFORM][1]
 			uniform_overlay.pixel_y += dna.species.offset_features[OFFSET_UNIFORM][2]
-			U.accessory_overlay?.pixel_x += dna.species.offset_features[OFFSET_ACCESSORY][1]
-			U.accessory_overlay?.pixel_y += dna.species.offset_features[OFFSET_ACCESSORY][2]
+			U.accessory_overlay?.pixel_x = dna.species.offset_features[OFFSET_ACCESSORY][1]
+			U.accessory_overlay?.pixel_y = dna.species.offset_features[OFFSET_ACCESSORY][2]
 		overlays_standing[UNIFORM_LAYER] = uniform_overlay
 
 	apply_overlay(UNIFORM_LAYER)
@@ -427,12 +427,15 @@ There are several things that need to be remembered:
 		generate_female_clothing(index,t_color,icon,type)
 	return mutable_appearance(GLOB.female_clothing_icons[t_color], layer = -layer)
 
-/proc/wear_species_version(obj/item/O, index, icon, layer, species)
+/obj/item/proc/wear_species_version(file2use, state2use, layer, species)
+	return
+
+/obj/item/clothing/wear_species_version(file2use, state2use, layer, species)
 	LAZYINITLIST(GLOB.species_clothing_icons[species])
-	var/icon/species_clothing_icon = GLOB.species_clothing_icons[species][index]
+	var/icon/species_clothing_icon = GLOB.species_clothing_icons[species]["[file2use]-[state2use]"]
 	if(!species_clothing_icon) 	//Create standing/laying icons if they don't exist
-		generate_species_clothing(O, index, icon, species)
-	return mutable_appearance(GLOB.species_clothing_icons[species][index], layer = -layer)
+		generate_species_clothing(file2use, state2use, species)
+	return mutable_appearance(GLOB.species_clothing_icons[species]["[file2use]-[state2use]"], layer = -layer)
 
 /mob/living/carbon/human/proc/get_overlays_copy(list/unwantedLayers)
 	var/list/out = new
@@ -519,7 +522,7 @@ generate/load female uniform sprites matching all previously decided variables
 
 	var/mutable_appearance/standing
 	if(species)
-		standing = wear_species_version(src, t_state, file2use, layer2use, species)
+		standing = wear_species_version(file2use, t_state, layer2use, species)
 	else if(femaleuniform)
 		standing = wear_female_version(t_state,file2use,layer2use,femaleuniform) //should layer2use be in sync with the adjusted value below? needs testing - shiz
 	if(!standing)

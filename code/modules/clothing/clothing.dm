@@ -299,27 +299,28 @@
 	female_clothing_icon 			= fcopy_rsc(female_clothing_icon)
 	GLOB.female_clothing_icons[index] = female_clothing_icon
 
-/proc/generate_species_clothing(obj/item/clothing/O, index, icon, species)
-	var/icon/human_clothing_icon	= icon(icon, index)
+/obj/item/clothing/proc/generate_species_clothing(file2use, state2use, species)
+	var/icon/human_clothing_icon = icon(file2use, state2use)
 
-	if(!istype(O) || !O.greyscale_colors || !O.greyscale_icon_state)
-		GLOB.species_clothing_icons[species][index] = human_clothing_icon
+	if(!greyscale_colors || !greyscale_icon_state)
+		GLOB.species_clothing_icons[species]["[file2use]-[state2use]"] = human_clothing_icon
 		return
 
-	var/icon/species_icon 			= icon(species, O.greyscale_icon_state)
+	var/icon/species_icon = icon(species, greyscale_icon_state)
 	var/list/final_list = list()
 	for(var/i in 1 to 3)
-		if(length(O.greyscale_colors) < i)
+		if(length(greyscale_colors) < i)
 			final_list += "#00000000"
 			continue
-		var/color = O.greyscale_colors[i]
+		var/color = greyscale_colors[i]
 		if(islist(color))
-			final_list += human_clothing_icon.GetPixel(color[1], color[2])
+			final_list += human_clothing_icon.GetPixel(color[1], color[2]) || "#00000000"
 		else if(istext(color))
 			final_list += color
 
 	species_icon.MapColors(final_list[1], final_list[2], final_list[3])
-	GLOB.species_clothing_icons[species][index] = species_icon
+	species_icon = fcopy_rsc(species_icon)
+	GLOB.species_clothing_icons[species]["[file2use]-[state2use]"] = species_icon
 
 /obj/item/clothing/under/verb/toggle()
 	set name = "Adjust Suit Sensors"
