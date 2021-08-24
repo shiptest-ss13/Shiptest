@@ -38,10 +38,10 @@
 	var/explosion_block = 0
 
 	/**
-	  * used to store the different colors on an atom
-	  *
-	  * its inherent color, the colored paint applied on it, special color effect etc...
-	  */
+	* used to store the different colors on an atom
+	*
+	* its inherent color, the colored paint applied on it, special color effect etc...
+	*/
 	var/list/atom_colours
 
 
@@ -273,12 +273,13 @@
 			AA.remove_from_hud(src)
 
 	if(reagents)
-		qdel(reagents)
+		QDEL_NULL(reagents)
 
 	orbiters = null // The component is attached to us normaly and will be deleted elsewhere
 
 	LAZYCLEARLIST(overlays)
 	LAZYCLEARLIST(priority_overlays)
+	LAZYCLEARLIST(managed_overlays)
 
 	for(var/i in targeted_by)
 		var/mob/M = i

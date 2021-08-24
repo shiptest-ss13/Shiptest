@@ -109,6 +109,13 @@
 	suffix = "whitesands_surface_conveniencestore.dmm"
 	allow_duplicates = FALSE
 
+/datum/map_template/ruin/whitesands/onlyaspoonful
+	name = "Abandoned Spoon Factory"
+	id = "ws-onlyaspoonful"
+	description = "Literally a fucking spoon factory"
+	suffix = "whitesands_surface_onlyaspoonful.dmm"
+	allow_duplicates = FALSE
+
 //////////OUTSIDE SETTLEMENTS/RUINS//////////
 /datum/map_template/ruin/whitesands/survivors
 	name = "Survivor Camp"

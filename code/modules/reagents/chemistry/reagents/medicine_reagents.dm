@@ -588,8 +588,8 @@
 	return TRUE
 
 /datum/reagent/medicine/perfluorodecalin/overdose_process(mob/living/M)
-    metabolization_rate += 1
-    return ..()
+	metabolization_rate += 1
+	return ..()
 
 /datum/reagent/medicine/ephedrine
 	name = "Ephedrine"
@@ -1611,7 +1611,7 @@
 	..()
 	. = 1
 
-/* /datum/reagent/medicine/hepanephrodaxon    //WS edit: Temporary removal of overloaded chem
+/* /datum/reagent/medicine/hepanephrodaxon	//WS edit: Temporary removal of overloaded chem
 	name = "Hepanephrodaxon"
 	description = "Used to repair the common tissues involved in filtration."
 	taste_description = "glue"

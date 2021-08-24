@@ -67,10 +67,11 @@ Difficulty: Hard
 	score_achievement_type = /datum/award/score/hierophant_score
 	del_on_death = TRUE
 	deathsound = 'sound/magic/repulse.ogg'
-	attack_action_types = list(/datum/action/innate/megafauna_attack/blink,
-							   /datum/action/innate/megafauna_attack/chaser_swarm,
-							   /datum/action/innate/megafauna_attack/cross_blasts,
-							   /datum/action/innate/megafauna_attack/blink_spam)
+	attack_action_types = list(
+		/datum/action/innate/megafauna_attack/blink,
+		/datum/action/innate/megafauna_attack/chaser_swarm,
+		/datum/action/innate/megafauna_attack/cross_blasts,
+		/datum/action/innate/megafauna_attack/blink_spam)
 
 	var/burst_range = 3 //range on burst aoe
 	var/beam_range = 5 //range on cross blast beams
@@ -89,6 +90,10 @@ Difficulty: Hard
 /mob/living/simple_animal/hostile/megafauna/hierophant/Initialize()
 	. = ..()
 	spawned_beacon = new(loc)
+
+/mob/living/simple_animal/hostile/megafauna/hierophant/Destroy()
+	QDEL_NULL(spawned_beacon)
+	. = ..()
 
 /datum/action/innate/megafauna_attack/blink
 	name = "Blink To Target"
@@ -411,10 +416,6 @@ Difficulty: Hard
 		hierophant_burst(null, get_turf(src), 10)
 		set_stat(CONSCIOUS) // deathgasp wont run if dead, stupid
 		..(force_grant = stored_nearby)
-
-/mob/living/simple_animal/hostile/megafauna/hierophant/Destroy()
-	qdel(spawned_beacon)
-	. = ..()
 
 /mob/living/simple_animal/hostile/megafauna/hierophant/devour(mob/living/L)
 	for(var/obj/item/W in L)

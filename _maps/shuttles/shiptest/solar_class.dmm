@@ -19,7 +19,7 @@
 /obj/effect/turf_decal{
 	dir = 1
 	},
-/turf/open/floor/plating,
+/turf/open/floor/plating/airless,
 /area/ship/external)
 "at" = (
 /obj/effect/turf_decal/stripes/line{
@@ -83,7 +83,7 @@
 /obj/effect/turf_decal{
 	dir = 5
 	},
-/turf/open/floor/plating,
+/turf/open/floor/plating/airless,
 /area/ship/external)
 "cy" = (
 /obj/effect/turf_decal/tile/blue{
@@ -157,11 +157,10 @@
 /turf/open/floor/plasteel,
 /area/ship/hallway)
 "dq" = (
-/obj/structure/lattice/catwalk,
 /obj/machinery/atmospherics/components/unary/outlet_injector/on/layer4{
 	dir = 4
 	},
-/turf/template_noop,
+/turf/open/floor/plating/airless,
 /area/ship/external)
 "dM" = (
 /obj/effect/turf_decal/stripes/line{
@@ -360,6 +359,7 @@
 "gD" = (
 /obj/docking_port/mobile{
 	can_move_docking_ports = 1;
+	launch_status = 0;
 	name = "SS Galaxy";
 	port_direction = 4;
 	undock_roundstart = 1
@@ -511,7 +511,7 @@
 /obj/effect/turf_decal{
 	dir = 9
 	},
-/turf/open/floor/plating,
+/turf/open/floor/plating/airless,
 /area/ship/external)
 "lE" = (
 /obj/structure/chair/comfy/shuttle{
@@ -538,7 +538,7 @@
 /obj/machinery/power/shuttle/engine/fueled/plasma{
 	dir = 4
 	},
-/turf/open/floor/plating,
+/turf/open/floor/plating/airless,
 /area/ship/engineering)
 "lX" = (
 /obj/machinery/light{
@@ -551,7 +551,7 @@
 /obj/machinery/power/shuttle/engine/fueled/plasma{
 	dir = 4
 	},
-/turf/open/floor/plating,
+/turf/open/floor/plating/airless,
 /area/ship/cargo)
 "mu" = (
 /obj/effect/spawner/structure/window/shuttle,
@@ -784,6 +784,20 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/tile/blue,
+/obj/structure/closet/wall{
+	pixel_y = 32
+	},
+/obj/item/gun/energy/e_gun/mini,
+/obj/item/stock_parts/cell/gun/mini,
+/obj/item/ammo_box/magazine/co9mm,
+/obj/item/ammo_box/magazine/co9mm,
+/obj/item/ammo_box/magazine/co9mm,
+/obj/item/ammo_box/magazine/co9mm,
+/obj/item/ammo_box/magazine/co9mm,
+/obj/item/ammo_box/magazine/co9mm,
+/obj/item/gun/ballistic/automatic/pistol/commander/no_mag,
+/obj/item/gun/ballistic/automatic/pistol/commander/no_mag,
+/obj/item/gun/ballistic/automatic/pistol/commander/no_mag,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "sI" = (
@@ -1087,6 +1101,10 @@
 	dir = 8
 	},
 /obj/item/areaeditor/shuttle,
+/obj/item/storage/firstaid/regular{
+	pixel_x = -8;
+	pixel_y = -8
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "yj" = (
@@ -1615,7 +1633,6 @@
 	dir = 1
 	},
 /obj/structure/table/reinforced,
-/obj/item/storage/firstaid/regular,
 /obj/effect/turf_decal/tile/neutral{
 	dir = 8
 	},
@@ -1626,6 +1643,7 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/tile/neutral,
+/obj/machinery/recharger,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "Lt" = (
@@ -1923,7 +1941,7 @@
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
-/turf/open/floor/plating,
+/turf/open/floor/plating/airless,
 /area/ship/external)
 "QA" = (
 /obj/structure/cable{
@@ -2171,6 +2189,8 @@
 /obj/effect/turf_decal/tile/blue{
 	dir = 4
 	},
+/obj/item/storage/box/gloves,
+/obj/item/storage/belt/medical,
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "Uv" = (
@@ -2290,7 +2310,7 @@
 /obj/machinery/power/shuttle/engine/fueled/plasma{
 	dir = 4
 	},
-/turf/open/floor/plating,
+/turf/open/floor/plating/airless,
 /area/ship/crew)
 "Xi" = (
 /turf/open/floor/plasteel/white,

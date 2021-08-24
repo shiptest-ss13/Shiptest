@@ -37,7 +37,7 @@
 	desc = "A sign labelling an area containing pharmacy equipment."
 	icon_state = "pharmacy"
 	is_editable = TRUE
-	
+
 /obj/structure/sign/departments/psychology
 	name = "\improper Psychology sign"
 	sign_change_name = "Department - Medbay: Psychology"

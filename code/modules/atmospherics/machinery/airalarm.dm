@@ -76,9 +76,9 @@
 		set_instance_vars(\
 			pixel_x = (dir & 3)? INSTANCE_VAR_DEFAULT : (dir == 4 ? -24 : 24),\
 			pixel_y = (dir & 3)? (dir == 1 ? -24 : 24) : INSTANCE_VAR_DEFAULT\
-        ),\
+		),\
 		dir_amount = 4\
-    )
+	)
 
 	var/danger_level = 0
 	var/mode = AALARM_MODE_SCRUBBING
@@ -223,6 +223,8 @@
 	SSradio.remove_object(src, frequency)
 	qdel(wires)
 	wires = null
+	var/area/ourarea = get_area(src)
+	ourarea.atmosalert(FALSE, src)
 	return ..()
 
 /obj/machinery/airalarm/Initialize(mapload)

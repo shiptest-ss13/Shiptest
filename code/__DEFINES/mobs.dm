@@ -45,7 +45,7 @@
 #define BLOODCRAWL_EAT 2 /// crawling+mob devour
 
 //Mob bio-types flags
-#define MOB_ORGANIC 	1 << 0
+#define MOB_ORGANIC		1 << 0
 #define MOB_MINERAL		1 << 1
 #define MOB_ROBOTIC 	1 << 2
 #define MOB_UNDEAD		1 << 3

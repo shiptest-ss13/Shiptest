@@ -69,7 +69,7 @@
 			pixel_y = dir == NORTH ? 24 : (dir == SOUTH ? -24 : INSTANCE_VAR_DEFAULT)\
 		),\
 		dir_amount = 4\
-    )
+	)
 
 	var/lon_range = 1.5
 	var/area/area
@@ -215,6 +215,7 @@
 	area.power_equip = FALSE
 	area.power_environ = FALSE
 	area.power_change()
+	area.poweralert(FALSE, src)
 	if(occupier)
 		malfvacate(1)
 	qdel(wires)
@@ -906,7 +907,7 @@
 				"status" = equipment,
 				"topicParams" = list(
 					"auto" = list("eqp" = 3),
-					"on"   = list("eqp" = 2),
+					"on"	= list("eqp" = 2),
 					"off"  = list("eqp" = 1)
 				)
 			),
@@ -916,7 +917,7 @@
 				"status" = lighting,
 				"topicParams" = list(
 					"auto" = list("lgt" = 3),
-					"on"   = list("lgt" = 2),
+					"on"	= list("lgt" = 2),
 					"off"  = list("lgt" = 1)
 				)
 			),
@@ -926,7 +927,7 @@
 				"status" = environ,
 				"topicParams" = list(
 					"auto" = list("env" = 3),
-					"on"   = list("env" = 2),
+					"on"	= list("env" = 2),
 					"off"  = list("env" = 1)
 				)
 			)
@@ -969,13 +970,13 @@
 	if(user.has_unlimited_silicon_privilege)
 		var/mob/living/silicon/ai/AI = user
 		var/mob/living/silicon/robot/robot = user
-		if (                                                             \
-			src.aidisabled ||                                            \
-			malfhack && istype(malfai) &&                                \
-			(                                                            \
-				(istype(AI) && (malfai!=AI && malfai != AI.parent)) ||   \
-				(istype(robot) && (robot in malfai.connected_robots))    \
-			)                                                            \
+		if (																				 \
+			src.aidisabled ||														  \
+			malfhack && istype(malfai) &&										  \
+			(																				\
+				(istype(AI) && (malfai!=AI && malfai != AI.parent)) ||	\
+				(istype(robot) && (robot in malfai.connected_robots))	 \
+			)																				\
 		)
 			if(!loud)
 				to_chat(user, "<span class='danger'>\The [src] has eee disabled!</span>")

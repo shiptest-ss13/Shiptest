@@ -45,8 +45,8 @@
 /mob/living/simple_animal/hostile/whitesands/survivor
 	name = "Whitesands Survivor"
 	desc = {"
-	 This person might have once been a colonist, station crew, or even a tourist.
-	 What they are now is something entirely different, as life on Whitesands has beat them into something new.
+	This person might have once been a colonist, station crew, or even a tourist.
+	What they are now is something entirely different, as life on Whitesands has beat them into something new.
 	"}
 
 /mob/living/simple_animal/hostile/whitesands/ranged
@@ -63,8 +63,8 @@
 /mob/living/simple_animal/hostile/whitesands/ranged/hunter
 	name = "Whitesands Hunter"
 	desc = {"
-	 One of the few survivors on the planet with working weaponry.
-	 Hunting on Whitesands is dangerous, hard work, making a hunter still standing one to be feared.
+	One of the few survivors on the planet with working weaponry.
+	Hunting on Whitesands is dangerous, hard work, making a hunter still standing one to be feared.
 	"}
 	loot = list(
 		/obj/effect/mob_spawn/human/corpse/whitesands/survivor/hunter,
@@ -74,8 +74,8 @@
 /mob/living/simple_animal/hostile/whitesands/ranged/gunslinger
 	name = "Whitesands Gunslinger"
 	desc = {"
-	 One of the few survivors on the planet with working weaponry.
-	 While the weapon they wield is ancient compared to most modern firearms, it packs a hell of a punch.
+	One of the few survivors on the planet with working weaponry.
+	While the weapon they wield is ancient compared to most modern firearms, it packs a hell of a punch.
 	"}
 	icon_state = "survivor_gunslinger"
 	icon_living = "survivor_gunslinger"

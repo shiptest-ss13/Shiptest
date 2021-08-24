@@ -288,6 +288,20 @@ GLOBAL_LIST_INIT(bamboo_recipes, list ( \
 /*
  * Cloth
  */
+
+/obj/item/stack/sheet/cotton
+	name = "raw cotton bundle"
+	desc = "A bundle of raw cotton ready to be spun on the loom."
+	singular_name = "raw cotton ball"
+	icon_state = "sheet-cotton"
+	resistance_flags = FLAMMABLE
+	force = 0
+	throwforce = 0
+	merge_type = /obj/item/stack/sheet/cotton
+	var/pull_effort = 30
+	var/loom_result = /obj/item/stack/sheet/cotton/cloth
+	grind_results = list(/datum/reagent/cellulose = 20)
+
 GLOBAL_LIST_INIT(cloth_recipes, list ( \
 	new/datum/stack_recipe("white jumpskirt", /obj/item/clothing/under/color/jumpskirt/white, 3), /*Ladies first*/ \
 	new/datum/stack_recipe("white jumpsuit", /obj/item/clothing/under/color/white, 3), \
@@ -321,7 +335,7 @@ GLOBAL_LIST_INIT(cloth_recipes, list ( \
 	new/datum/stack_recipe("23x23 canvas", /obj/item/canvas/twentythreeXtwentythree, 5), \
 	))
 
-/obj/item/stack/sheet/cloth
+/obj/item/stack/sheet/cotton/cloth
 	name = "cloth"
 	desc = "Is it cotton? Linen? Denim? Burlap? Canvas? You can't tell."
 	singular_name = "cloth roll"
@@ -330,20 +344,44 @@ GLOBAL_LIST_INIT(cloth_recipes, list ( \
 	resistance_flags = FLAMMABLE
 	force = 0
 	throwforce = 0
-	merge_type = /obj/item/stack/sheet/cloth
+	merge_type = /obj/item/stack/sheet/cotton/cloth
+	pull_effort = 90
+	loom_result = /obj/item/stack/sheet/silk
 	drop_sound = 'sound/items/handling/cloth_drop.ogg'
 	pickup_sound =  'sound/items/handling/cloth_pickup.ogg'
 	grind_results = list(/datum/reagent/cellulose = 20)
 
-/obj/item/stack/sheet/cloth/get_main_recipes()
+/obj/item/stack/sheet/cotton/cloth/get_main_recipes()
 	. = ..()
 	. += GLOB.cloth_recipes
 
-/obj/item/stack/sheet/cloth/ten
+/obj/item/stack/sheet/cotton/cloth/ten
 	amount = 10
 
-/obj/item/stack/sheet/cloth/five
+/obj/item/stack/sheet/cotton/cloth/five
 	amount = 5
+
+
+/*
+ * Silk
+ */
+
+GLOBAL_LIST_INIT(silk_recipes, list ( \
+	new/datum/stack_recipe("silk string", /obj/item/weaponcrafting/silkstring, 2, time = 40)
+	))
+
+/obj/item/stack/sheet/silk
+	name = "silk"
+	desc = "A long soft material. This one is made from cotton rather than spidersilk."
+	singular_name = "Silk Sheet"
+	icon = 'whitesands/icons/obj/stack_objects.dmi'
+	icon_state = "sheet-silk"
+	novariants = TRUE
+	merge_type = /obj/item/stack/sheet/silk
+
+/obj/item/stack/sheet/silk/get_main_recipes()
+	. = ..()
+	. +=  GLOB.silk_recipes
 
 GLOBAL_LIST_INIT(durathread_recipes, list ( \
 	new/datum/stack_recipe("durathread jumpsuit", /obj/item/clothing/under/misc/durathread, 4, time = 40),
@@ -368,19 +406,6 @@ GLOBAL_LIST_INIT(durathread_recipes, list ( \
 /obj/item/stack/sheet/durathread/get_main_recipes()
 	. = ..()
 	. += GLOB.durathread_recipes
-
-/obj/item/stack/sheet/cotton
-	name = "raw cotton bundle"
-	desc = "A bundle of raw cotton ready to be spun on the loom."
-	singular_name = "raw cotton ball"
-	icon_state = "sheet-cotton"
-	resistance_flags = FLAMMABLE
-	force = 0
-	throwforce = 0
-	merge_type = /obj/item/stack/sheet/cotton
-	var/pull_effort = 30
-	var/loom_result = /obj/item/stack/sheet/cloth
-	grind_results = list(/datum/reagent/cellulose = 20)
 
 /obj/item/stack/sheet/cotton/durathread
 	name = "raw durathread bundle"
