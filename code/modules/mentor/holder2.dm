@@ -3,35 +3,33 @@ GLOBAL_PROTECT(mentor_datums)
 
 /datum/mentors
 	var/client/owner = null
+	var/target
 	var/following = null
 
-/datum/mentors/New(ckey)
-	if(!ckey)
-		del(src)
-		return
-	GLOB.mentor_datums[ckey] = src
+/datum/mentors/New(target)
+	if(!target)
+		QDEL_IN(src, 0)
+		CRASH("Attempted to create a new mentor datum with no target")
+	if(GLOB.mentor_datums[target])
+		QDEL_IN(src, 0)
+		CRASH("Attempted to create a new mentor datum for [target] when one already exists.")
+	src.target = target
+	GLOB.mentor_datums[target] = src
 
 /datum/mentors/proc/associate(client/C)
 	if(istype(C))
+		if(C.ckey != target)
+			message_admins("[C] attempted to assosciate with the mentor datum of [target]!")
+			return
 		owner = C
 		GLOB.mentors |= C
-		owner.holder.rank = "Mentor"
-		owner.holder.rank.rights = R_MENTOR
-		owner.add_admin_verbs()
+		owner.add_mentor_verbs()
 
 /datum/mentors/proc/disassociate()
 	if(owner)
 		GLOB.mentors -= owner
-		owner.holder.rank = "Player"
-		owner.remove_admin_verbs()
+		owner.remove_mentor_verbs()
 		owner = null
-
-/client/proc/dementor()
-	var/mentor = GLOB.mentor_datums[ckey]
-	GLOB.mentor_datums -= ckey
-	qdel(mentor)
-
-	return TRUE
 
 /proc/check_mentor()
 	if(usr && usr.client)
