@@ -145,7 +145,7 @@
 	time = 100
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
-	
+
 /datum/crafting_recipe/ScrapArmor
 	name = "Scrap Armor"
 	result = /obj/item/clothing/suit/armor/vest/scraparmor
