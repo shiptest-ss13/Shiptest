@@ -2,15 +2,16 @@
 /obj/machinery/selling_pad
 	name = "cargo hold pad"
 	icon = 'icons/obj/telescience.dmi'
-	icon_state = "lpad"
+	icon_state = "lpad-idle-o"
 	circuit = /obj/item/circuitboard/machine/selling_pad
 
 /obj/machinery/selling_pad/multitool_act(mob/living/user, obj/item/multitool/I)
 	. = ..()
-	if (istype(I))
-		to_chat(user, "<span class='notice'>You register [src] in [I]s buffer.</span>")
-		I.buffer = src
-		return TRUE
+	if(!multitool_check_buffer(user, I))
+		return
+	to_chat(user, "<span class='notice'>You register [src] in [I]s buffer.</span>")
+	I.buffer = src
+	return TRUE
 
 /obj/machinery/computer/selling_pad_control
 	name = "cargo hold control terminal"
@@ -29,11 +30,11 @@
 
 /obj/machinery/computer/selling_pad_control/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock)
 	. = ..()
-	sell_account = port.current_ship.ship_account
+	sell_account = port.current_ship?.ship_account
 
 /obj/machinery/computer/selling_pad_control/multitool_act(mob/living/user, obj/item/multitool/I)
 	. = ..()
-	if (istype(I) && istype(I.buffer, /obj/machinery/selling_pad))
+	if (istype(I.buffer, /obj/machinery/selling_pad))
 		to_chat(user, "<span class='notice'>You link [src] with [I.buffer] in [I] buffer.</span>")
 		pad = WEAKREF(I.buffer)
 		return TRUE
@@ -145,8 +146,8 @@
 		status_report += "Nothing"
 
 	sell_pad.visible_message("<span class='notice'>[sell_pad] activates!</span>")
-	flick("[initial(sell_pad.icon_state)]-beam", pad)
-	sell_pad.icon_state = "[initial(sell_pad.icon_state)]-idle-o"
+	flick("lpad-beam", pad)
+	sell_pad.icon_state = "lpad-idle-o"
 	sending = FALSE
 
 /obj/machinery/computer/selling_pad_control/proc/start_sending()
@@ -157,8 +158,8 @@
 		return
 	sending = TRUE
 	status_report = "Sending..."
-	sell_pad.visible_message("<span class='notice'>[pad] starts charging up.</span>")
-	sell_pad.icon_state = "[initial(sell_pad.icon_state)]-idle"
+	sell_pad.visible_message("<span class='notice'>[sell_pad] starts charging up.</span>")
+	sell_pad.icon_state = "lpad-idle"
 	sending_timer = addtimer(CALLBACK(src,.proc/send),warmup_time, TIMER_STOPPABLE)
 
 /obj/machinery/computer/selling_pad_control/proc/stop_sending()
@@ -169,5 +170,5 @@
 		return
 	sending = FALSE
 	status_report = "Ready for delivery."
-	sell_pad.icon_state = "[initial(sell_pad.icon_state)]-idle-o"
+	sell_pad.icon_state = "lpad-idle-o"
 	deltimer(sending_timer)
