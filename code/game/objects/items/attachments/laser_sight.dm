@@ -1,9 +1,9 @@
 /obj/item/attachment/laser_sight
 	name = "Laser Sight"
 	desc = "This laser sight is designed to be rail-mounted on a compatible firearm to provide increased accuracy."
-	icon_state = "laser_sight"
+	icon_state = "laserpointer"
 
-/obj/item/attachment/laser_sight/Toggle(datum/component/attachment_holder/holder, obj/item/gun/gun, mob/user)
+/obj/item/attachment/laser_sight/Toggle(obj/item/gun/gun, mob/user)
 	. = ..()
 
 	playsound(user, toggled ? 'sound/weapons/magin.ogg' : 'sound/weapons/magout.ogg', 40, TRUE)
