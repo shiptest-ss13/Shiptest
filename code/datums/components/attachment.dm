@@ -78,7 +78,7 @@
 	return TRUE
 
 /datum/component/attachment/proc/update_overlays(obj/item/parent, list/overlays, list/offset)
-	overlays += mutable_appearance(parent.icon, "[parent.icon_state]-attach")
+	overlays += mutable_appearance(parent.icon, "[parent.icon_state]-attached")
 
 /datum/component/attachment/proc/try_attach(obj/item/parent, obj/item/holder, mob/user)
 	SIGNAL_HANDLER
