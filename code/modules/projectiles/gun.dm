@@ -49,9 +49,6 @@
 
 	var/obj/item/firing_pin/pin = /obj/item/firing_pin //standard firing pin for most guns
 
-	var/knife_x_offset = 0
-	var/knife_y_offset = 0
-
 	var/ammo_x_offset = 0 //used for positioning ammo count overlay on sprite
 	var/ammo_y_offset = 0
 	var/flight_x_offset = 0
@@ -68,15 +65,23 @@
 	var/automatic = 0 //can gun use it, 0 is no, anything above 0 is the delay between clicks in ds
 	var/pb_knockback = 0
 
+	/// The types of attachments allowed, a list of types. SUBTYPES OF AN ALLOWED TYPE ARE ALSO ALLOWED
+	var/list/valid_attachments = list()
 	/// Reference to our attachment holder to prevent subtypes having to call GetComponent
 	var/datum/component/attachment_holder/attachment_holder
+	/// Maximum number of attachments allowed
+	var/attachment_max = 2
+	/// Number of attachments that can fit on a given slot
+	var/list/slot_available = list()
+	/// Offsets for the slots on this gun. should be indexed by SLOT and then by X/Y
+	var/list/slot_offsets = list()
 
 /obj/item/gun/Initialize()
 	. = ..()
 	if(pin)
 		pin = new pin(src)
 	build_zooming()
-	attachment_holder = AddComponent(/datum/component/attachment_holder)
+	attachment_holder = AddComponent(/datum/component/attachment_holder, attachment_max, slot_available, valid_attachments, slot_offsets)
 
 /obj/item/gun/Destroy()
 	if(isobj(pin)) //Can still be the initial path, then we skip

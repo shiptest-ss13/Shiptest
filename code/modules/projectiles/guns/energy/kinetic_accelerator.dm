@@ -11,8 +11,6 @@
 	flight_x_offset = 15
 	flight_y_offset = 9
 	automatic_charge_overlays = FALSE
-	knife_x_offset = 20
-	knife_y_offset = 12
 	internal_cell = TRUE //prevents you from giving it an OP cell - WS Edit
 	var/overheat_time = 16
 	var/holds_charge = FALSE

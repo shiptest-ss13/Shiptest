@@ -63,8 +63,6 @@
 	item_state = "moistnugget"
 	slot_flags = ITEM_SLOT_BACK
 	mag_type = /obj/item/ammo_box/magazine/internal/boltaction
-	knife_x_offset = 27
-	knife_y_offset = 13
 	can_be_sawn_off = TRUE
 
 /obj/item/gun/ballistic/rifle/boltaction/sawoff(mob/user)
