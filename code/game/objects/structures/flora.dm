@@ -461,3 +461,96 @@
 	. = ..()
 	icon_state = "[initial(icon_state)][rand(1,3)]"
 
+// Special tree used in chapel ship
+/obj/structure/flora/tree/chapel
+	name = "sacred oak tree"
+	icon = 'icons/obj/flora/chapeltree.dmi'
+	icon_state = "churchtree"
+	desc = "A true earthen oak tree imported directly from the holy soil of earth. It's radiates a spiritual warmth that calms the soul."
+	pixel_x = 0
+	max_integrity = 200
+	bound_width = 64
+	bound_height = 64
+	var/karma = 0
+	// Determines the karma gained/lost when feeding the tree this chem
+	var/list/moralchems = list(
+		/datum/reagent/water = 0.1,
+		/datum/reagent/plantnutriment = 0.2,
+		/datum/reagent/medicine/earthsblood = 1,
+		/datum/reagent/water/holywater = 0.8,
+		/datum/reagent/medicine/cryoxadone = 0.3,
+		/datum/reagent/ammonia = 0.4,
+		/datum/reagent/saltpetre = 0.5,
+		/datum/reagent/ash = 0.2,
+		/datum/reagent/diethylamine = 0.5,
+		/datum/reagent/consumable/nutriment = 0.1,
+		/datum/reagent/consumable/virus_food = 0.1,
+		/datum/reagent/blood = -0.1,
+		/datum/reagent/consumable/ethanol = -0.1,
+		/datum/reagent/toxin = -0.2,
+		/datum/reagent/fluorine = -0.3,
+		/datum/reagent/chlorine = -0.3,
+		/datum/reagent/toxin/acid = -0.3,
+		/datum/reagent/toxin/acid/fluacid = -0.4,
+		/datum/reagent/toxin/plantbgone = -0.5,
+		/datum/reagent/napalm = -0.6,
+		/datum/reagent/hellwater = -1,
+		/datum/reagent/liquidgibs = -0.2,
+		/datum/reagent/consumable/ethanol/demonsblood = -0.8,
+		/datum/reagent/medicine/soulus = -0.2
+	)
+
+/obj/structure/flora/tree/chapel/Initialize()
+	START_PROCESSING(SSobj, src)
+	. = ..()
+
+/obj/structure/flora/tree/chapel/attackby(obj/item/I, mob/user, params)
+	if(istype(I, /obj/item/reagent_containers))
+		var/obj/item/reagent_containers/container = I
+		if(istype(container, /obj/item/reagent_containers/syringe))
+			var/obj/item/reagent_containers/syringe/syr = container
+			if(syr.mode != 1)
+				to_chat(user, "<span class='warning'>You can't get any extract out of this plant.</span>")
+				return
+		if(!container.reagents.total_volume)
+			to_chat(user, "<span class='warning'>[reagent_source] is empty!</span>")
+			return 1
+		if(!container.is_drainable())
+			if(container.can_have_cap)
+				to_chat(user, "<span class='warning'>[reagent_source] has a cap on!</span>")
+			else
+				to_chat(user, "<span class='warning'>You can't use [reagent_source] on [src]!</span>")
+			return 1
+		to_chat(user, "<span class='notice'>You feed [src] [container.amount_per_transfer_from_this]u from [container]...</span>")
+		playsound(loc, 'sound/effects/slosh.ogg', 25, TRUE)
+		var/datum/reagents/R = new /datum/reagents()
+		R.my_atom = src
+		container.reagents.trans_to(R, container.amount_per_transfer_from_this, transfered_by = user)
+		apply_reagents(R, user)
+	else ..()
+
+/obj/structure/flora/tree/chapel/proc/apply_reagents(datum/reagents/S, mob/user)
+	var/gainedkarma = 0
+	for(var/datum/reagent/R in moralchems)
+		if(S.has_reagent(R, 1))
+			gainedkarma += S.get_reagent_amount(R) * moralchems[R]
+	if(gainedkarma >= 0)
+		to_chat(user, "<span class='green'>[src] fills with new life as a wave of comfort washes over you.</span>")
+		SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT, "treekarma", /datum/mood_event/good_tree, name)
+		user.adjustBruteLoss(-0.5*gainedkarma, 0)
+		user.adjustFireLoss(-0.5*gainedkarma, 0)
+		user.adjustToxLoss(-0.5*gainedkarma, 0)
+		user.adjustCloneLoss(-0.5*gainedkarma, 0)
+	else
+		to_chat(user, "<span class='danger'>Colors fade from [src] as a wave of guilt crawls into your skin.</span>")
+		SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT, "treekarma", /datum/mood_event/bad_tree, name)
+		user.adjustToxLoss(-1*gainedkarma, 0)
+/datum/mood_event/good_tree
+	description = "<span class='nicegreen'>I feel closer to my soul.</span>\n"
+	mood_change = 3
+	timeout = 5 MINUTES
+
+/datum/mood_event/bad_tree
+	description = "<span class='warning'>It's like a root is digging into my heart.</span>\n"
+	mood_change = -3
+	timeout = 5 MINUTES
