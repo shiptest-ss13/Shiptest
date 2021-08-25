@@ -7,8 +7,6 @@
 	ammo_type = list(/obj/item/ammo_casing/energy/disabler, /obj/item/ammo_casing/energy/laser)
 	modifystate = 1
 	ammo_x_offset = 3
-	flight_x_offset = 15
-	flight_y_offset = 10
 	weapon_weight = WEAPON_MEDIUM
 
 /obj/item/gun/energy/e_gun/mini
@@ -21,8 +19,6 @@
 	small_gun = TRUE
 	ammo_x_offset = 2
 	charge_sections = 3
-	flight_x_offset = 19
-	flight_y_offset = 13
 	weapon_weight = WEAPON_LIGHT
 
 /obj/item/gun/energy/e_gun/stun

@@ -25,8 +25,6 @@
 	ammo_x_offset = 2
 	ammo_y_offset = 0
 	pin = null
-	flight_x_offset = 18
-	flight_y_offset = 11
 
 /obj/item/gun/energy/decloner
 	name = "biological demolecularisor"

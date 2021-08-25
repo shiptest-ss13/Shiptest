@@ -48,8 +48,6 @@
 	internal_cell = FALSE
 	big_gun = TRUE //haha gun go brr
 	cell_type = "/obj/item/stock_parts/cell/gun/large"
-	flight_x_offset = 18
-	flight_y_offset = 12
 
 /obj/item/gun/energy/pulse/carbine/loyalpin
 	pin = /obj/item/firing_pin/implant/mindshield

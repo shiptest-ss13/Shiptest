@@ -51,8 +51,6 @@
 
 	var/ammo_x_offset = 0 //used for positioning ammo count overlay on sprite
 	var/ammo_y_offset = 0
-	var/flight_x_offset = 0
-	var/flight_y_offset = 0
 
 	//Zooming
 	var/zoomable = FALSE //whether the gun generates a Zoom action on creation
