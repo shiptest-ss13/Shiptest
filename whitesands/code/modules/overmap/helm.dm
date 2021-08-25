@@ -11,6 +11,10 @@
 	var/list/concurrent_users = list()
 	///Is this for viewing only?
 	var/viewer = FALSE
+	// DEBUG REMOVE
+	var/prediction_test = TRUE
+	var/physics_test_initialized = FALSE
+	var/zoom_level = 1
 
 /obj/machinery/computer/helm/Initialize(mapload)
 	. = ..()
@@ -51,11 +55,28 @@
 			current_ship.update_screen()
 
 		// Open UI
-		ui = new(user, src, "HelmConsole", name)
+		ui = new(user, src, "OvermapView", name)
 		ui.open()
 
 /obj/machinery/computer/helm/ui_data(mob/user)
 	. = list()
+	// DEBUG BEGIN
+	if(!physics_test_initialized)
+		SSphysics.test_system(1)
+		physics_test_initialized = TRUE
+
+	var/datum/physics_object/circ = SSphysics.processing[1]
+	.["prediction_test"] = prediction_test
+	.["zoom_level"] = zoom_level
+	.["pos_x"] = circ.pos_x
+	.["pos_y"] = circ.pos_y
+	.["vel_x"] = circ.vel_x
+	.["vel_y"] = circ.vel_y
+	.["acc_x"] = circ.acc_x
+	.["acc_y"] = circ.acc_y
+
+	// DEBUG END
+	/*
 	.["integrity"] = current_ship.integrity
 	.["otherInfo"] = list()
 	for (var/object in current_ship.close_overmap_objects)
@@ -102,6 +123,7 @@
 				ref = REF(E)
 			)
 		.["engineInfo"] += list(engine_data)
+	*/
 
 /obj/machinery/computer/helm/ui_static_data(mob/user)
 	. = list()

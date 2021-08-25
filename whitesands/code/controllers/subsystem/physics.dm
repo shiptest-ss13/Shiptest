@@ -1,8 +1,10 @@
 // orbital period of an object w/ semi-major axis of 1 AU around an object of 1 solar mass
-#define STD_ORBIT_TIME (20 MINUTES)
+#define STD_ORBIT_TIME (1 MINUTES)
 
 // the relative mass of the sun compared to "1" mass
 #define SOLAR_MASS 1
+
+#define ONE_AU 1
 
 // we can calculate G using our choice of units like so
 #define NORM_GRAV_CONSTANT (((2 * PI / STD_ORBIT_TIME)**2)/SOLAR_MASS)
@@ -10,7 +12,7 @@
 SUBSYSTEM_DEF(physics)
 	name = "Physics"
 	priority = FIRE_PRIORITY_PROCESS
-	flags = SS_BACKGROUND|SS_NO_INIT
+	flags = SS_BACKGROUND
 	wait = 2
 
 	// copied from SSprocessing
@@ -45,11 +47,13 @@ SUBSYSTEM_DEF(physics)
 		current_run.len--
 		if(QDELETED(thing))
 			processing -= thing
-		else if(thing.process(delta_time) == PROCESS_KILL)
+		else if(thing.process(wait) == PROCESS_KILL)
 			// fully stop so that a future START_PROCESSING will work
 			STOP_PROCESSING(src, thing)
 		if (MC_TICK_CHECK)
 			return
+
+	last_realtime = current_realtime
 
 /datum/controller/subsystem/physics/proc/test_system(max_planets)
 	if(sun)
@@ -64,18 +68,17 @@ SUBSYSTEM_DEF(physics)
 	var/num_planets = 0
 	while(num_planets < max_planets)
 		num_planets++
-		var/semi_major = pick(list(0.3871, 0.7233, 1, 1.5273, 5.2028, 9.5388, 19.1914, 30.0611))
-		var/eccentricity = rand()
+//		var/semi_major = pick(list(0.3871, 0.7233, 1, 1.5273, 5.2028, 9.5388, 19.1914, 30.0611))
+		var/semi_major = 1
+		var/eccentricity = rand(0, 10) / 100
 		if(eccentricity == 1)
 			eccentricity = 0
 		var/periapsis_angle = rand(0, 359)
 
 		var/datum/physics_object/planet = new(semi_major, eccentricity, periapsis_angle, sun)
-		planet.name = "[num2text(semi_major, 4)]-[num2text(eccentricity, 4)]"
 
 
 /datum/physics_object
-	var/name
 	// position relative to parent
 	var/pos_x = 0
 	var/pos_y = 0
@@ -86,10 +89,9 @@ SUBSYSTEM_DEF(physics)
 	var/acc_x = 0
 	var/acc_y = 0
 
+	var/affected_by_grav = TRUE
 	var/mass = 0.00003
 	var/datum/physics_object/parent
-
-	var/start_energy
 
 /// Argument of periapsis should be passed in degrees.
 /datum/physics_object/New(s_m_axis = 1, eccentricity = 0, arg_of_periapsis = 0, datum/physics_object/attractor)
@@ -113,8 +115,6 @@ SUBSYSTEM_DEF(physics)
 
 	update_acceleration()
 
-	start_energy = total_energy()
-
 	START_PROCESSING(SSphysics, src)
 
 /datum/physics_object/Destroy()
@@ -130,12 +130,11 @@ SUBSYSTEM_DEF(physics)
 	update_acceleration()
 	vel_x += d_t*acc_x/2
 	vel_y += d_t*acc_y/2
-	//var/energy = total_energy()
-	//var/energy_accuracy = energy/start_energy
-	//if((energy_accuracy > 1.05 || energy_accuracy < 0.95))
-	//	SSphysics.outputs.Add("[name]: [energy_accuracy] ([energy]/[start_energy])")
 
 /datum/physics_object/proc/update_acceleration()
+	if(!affected_by_grav)
+		return
+
 	var/radius = get_distance_to_parent()
 	var/acc = NORM_GRAV_CONSTANT*parent.mass / (radius**2)
 
