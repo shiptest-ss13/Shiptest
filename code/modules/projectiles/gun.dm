@@ -68,7 +68,7 @@
 	/// Reference to our attachment holder to prevent subtypes having to call GetComponent
 	var/datum/component/attachment_holder/attachment_holder
 	/// Maximum number of attachments allowed
-	var/attachment_max = 2
+	var/attachment_max = 0
 	/// Number of attachments that can fit on a given slot
 	var/list/slot_available = list()
 	/// Offsets for the slots on this gun. should be indexed by SLOT and then by X/Y
