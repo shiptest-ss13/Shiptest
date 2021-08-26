@@ -31,56 +31,150 @@ THE SOFTWARE.
 
 # Standard Python
 from io import FileIO
-import sys
 import os
 import re as regex
 import time
+from typing import Dict, List, Tuple
 
 # Third party
+import yaml
 import colorama
 from colorama import Fore, Back, Style
 
+# Defaults
+config_file_default_name = "check_regex.yaml"
 annotation_file_output_name = "check_regex_output.txt"
 
+# Data struct for holding info about standardization rules
 class TestExpression:
-    def __init__(self, expected, message, pattern) -> None:
+    def __init__(
+        self,
+        expected: int,
+        message: str,
+        pattern: str,
+        method: str
+    ):
         self.expected = expected
         self.message = message
-        self.pattern = pattern
+        self.pattern = regex.compile(pattern)
+        self.method = method
 
-def exactly(num, message, pattern) -> TestExpression:
-    return TestExpression(num, message, pattern)
+    def __repr__(self) -> str:
+        return self.__str__()
 
-# These were lifted from the old check_paths.sh script
-# With the original comment:
+    def __str__(self) -> str:
+        return ("TestExpression[%s -> %d, %s, %s]" % (
+            self.method,
+            self.expected,
+            self.message,
+            self.pattern
+        ))
+
 #
-# With the potential exception of << if you increase any
-# of these numbers you're probably doing it wrong
-cases = [
-    exactly(8, "escapes", r'\\\\(red|blue|green|black|b|i[^mc])'),
-    exactly(9, "Del()s", r'\WDel\('),
+# Test methods & result defines
+#
+RESULT_FAIL = 2
+RESULT_WARNING = 1
+RESULT_OK = 0
 
-    exactly(0, "/atom text paths", r'"/atom'),
-    exactly(1, "/area text paths", r'"/area'),
-    exactly(16, "/datum text paths", r'"/datum'),
-    exactly(4, "/mob text paths", r'"/mob'),
-    exactly(49, "/obj text paths", r'"/obj'),
-    exactly(0, "/turf text paths", r'"/turf'),
-    exactly(126, "text2path uses", r'text2path'),
+def exactly_cmp(target, result):
+    if result == target:
+        return RESULT_OK
+    return RESULT_FAIL
 
-    exactly(22, "world << uses", r'world[ \t]*<<'),
-    exactly(0, "world.log << uses", r'world.log[ \t]*<<'),
+def no_more_cmp(target, result):
+    if result <= target:
+        if result == target:
+            return RESULT_OK
+        return RESULT_WARNING
+    return RESULT_FAIL
 
-    exactly(305, "<< uses", r'(?<!\d)(?<!\d\s)(?<!<)<<(?!=|\s\d|\d|<|\/)'),
-    exactly(0, "incorrect indentations", r'^(?:  +)(?!\*)'),
-    exactly(0, "superflous whitespace", r'[ \t]+$'),
-    exactly(36, "mixed indentation", r'^( +\t+|\t+ +)'),
+# Used to bind a config string to the corresponding function
+target_method_binding = {
+    "exactly": exactly_cmp,
+    "no_more": no_more_cmp
+}
 
-    exactly(2243, "indentions inside #defines", r'^(\s*)#define (\w*)( {2,}| ?\t+)(?!(\/\/|\/\*))')
-]
-# With the potential exception of << if you increase any
-# of these numbers you're probably doing it wrong
+#
+# Configuration
+#
 
+# Configuration loading
+def load_yaml_config(config_file: str) -> Dict:
+    if not os.path.exists(config_file):
+        print(f"Could not find {config_file}")
+        return None
+    if not os.path.isfile(config_file):
+        print(f"Could not open {config_file}: is not a file")
+        return None
+
+    yaml_entries = {}
+    try:
+        with open(config_file, 'rt', encoding="utf-8") as f:
+            all_entries = yaml.load(f, Loader=yaml.SafeLoader)
+            yaml_entries = all_entries
+    except Exception as e:
+        print(f"Could not read config {config_file}: {e}")
+        return None
+
+    return yaml_entries
+
+# Configuration parsing
+def parse_yaml_config(yaml_data: Dict) -> Tuple[List]:
+    def get_tuple(entry):
+        return list(entry.items())[0]
+
+    def parse_standards():
+        def parse_short(entry):
+            (method, args) = get_tuple(entry)
+            (num, message, pattern) = args
+            return TestExpression(
+                num, message, pattern, method
+            )
+
+        def parse_verbose(entry):
+            (target, message, pattern) = (
+                entry["target"],
+                entry["message"],
+                entry["pattern"]
+            )
+            (method, number) = get_tuple(target)
+            if method in target_method_binding:
+                return TestExpression(
+                    number,
+                    message,
+                    pattern,
+                    method
+                )
+            return None
+
+        configured_standards = list()
+        standards_config = yaml_data["standards"]
+        for standard in standards_config:
+            arg_count = len(standard.items())
+            if arg_count == 1:
+                try:
+                    configured_standards.append(parse_short(standard))
+                except Exception as e:
+                    print(f"The yaml object {standard} is not a valid short config: {e}")
+            else:
+                try:
+                    s = parse_verbose(standard)
+                    if s is not None:
+                        configured_standards.append(s)
+                except Exception as e:
+                    print(f"The yaml object {standard} is not a valid config: {e}")
+        return configured_standards
+
+    return (
+        parse_standards()
+    )
+
+#
+# Analysis
+#
+
+# Collection of data/code files to work on
 def construct_filename_regex(extensions):
     return regex.compile(rf'\.({str.join("|", extensions)})$')
 
@@ -100,6 +194,8 @@ def collect_candidate_files(directory, extensions):
                 full_path = os.path.normpath(full_path)
                 candidates[len(candidates) + 1] = full_path
     return candidates
+
+# Analysis functions
 
 # A constant for the function below, so it won't be compiled
 # every time the function is called
@@ -139,6 +235,10 @@ def test_file(results, expressions, file, ignore_comments=False):
                 results[it]["SUM"] += count
     return matched
 
+#
+# Logging & Output formatting
+#
+
 # For writing to both stdout and file at once
 output_file: FileIO = None
 
@@ -151,21 +251,55 @@ def output_write(message, colour=None, to_stdout=True, to_file=True):
     if to_file and output_file is not None:
         output_file.write(message + "\n")
 
+def create_title(title, char='='):
+    MAX_WIDTH = 100
+    if len(title):
+        right = MAX_WIDTH - (7 + len(title))
+        return f"\n{char*5} {title} {char*right}"
+    return char*MAX_WIDTH
+
+def try_normalize_path(filepath):
+    return os.path.normpath(filepath)
+
+#
+# Entry point & main behaviour
+#
 if __name__ == "__main__":
     colorama.init()
+
+    output_file = open(annotation_file_output_name, mode='wt', encoding="utf-8")
+
+    output_write(create_title("Configuration"))
+    output_write("- Trying to load config: %s" % (
+        try_normalize_path(config_file_default_name)
+    ))
+
+    raw_config = load_yaml_config(config_file_default_name)
+    (standards) = parse_yaml_config(raw_config)
+
+    output_write("- Succesfully loaded config: %s" % (
+        try_normalize_path(config_file_default_name)
+    ))
+    output_write("- Loaded %d standardization rules" % (
+        len(standards)
+    ))
 
     start_time = time.time()
     files_to_test = collect_candidate_files('./', 'dm')
 
+    output_write(create_title(
+        f"Processing {len(files_to_test)} files", '-'
+    ))
+
     results = list()
     expressions = list()
     matched_lines_by_expression = list()
-    for it in range(0, len(cases)):
-        case = cases[it]
+    for ii in range(0, len(standards)):
+        s = standards[ii]
         results.append({
             "SUM": 0
         })
-        expressions.append(regex.compile(case.pattern))
+        expressions.append(s.pattern)
         matched_lines_by_expression.append(dict())
 
     for it in files_to_test:
@@ -177,10 +311,7 @@ if __name__ == "__main__":
                 matched_lines_by_expression[j][file] = matched_lines
 
     # This is the end, go process the data then show the results!
-
-    output_file = open(annotation_file_output_name, mode='wt', encoding="utf-8")
-
-    output_write(f"\n{'='*5} Regex Results {'='*66}")
+    output_write(create_title("Regex Results"))
     output_write("\n%-12s | %-6s | %s"
         % (
             "Result",
@@ -188,27 +319,39 @@ if __name__ == "__main__":
             "Description"
         ),
     )
-    output_write(f"{'-'*13}+{'-'*8}+{'-'*63}")
+    output_write(f"{'-'*13}+{'-'*8}+{'-'*(77)}")
 
     failure = 0
-    for it in range(0, len(results)):
-        case = cases[it]
-        count = results[it]["SUM"]
+    warning = 0
+    for jj in range(0, len(results)):
+        standard = standards[jj]
+        count = results[jj]["SUM"]
 
-        match = True
+        prefix = "OK"
         colour = Fore.GREEN
-        if not count == case.expected:
+        matching = target_method_binding[standard.method](
+            standard.expected,
+            count
+        )
+        if matching == RESULT_FAIL:
             failure += 1
-            match = False
+            prefix = ">>>>"
             colour = Fore.RED
+        elif matching == RESULT_WARNING:
+            warning += 1
+            prefix = "!!!!"
+            colour = Fore.YELLOW
 
-        output_write("\n", to_stdout=False)
+        output_write(
+            f"\n{'-'*13}+{'-'*8}+{'-'*(77)}",
+            to_stdout= False
+        )
         output_write("%4s:%7i |%7i | %s"
             % (
-                "OK" if match else ">>>>",
+                prefix,
                 count,
-                case.expected,
-                case.message
+                standard.expected,
+                standard.message
             ),
             colour=colour
         )
@@ -216,13 +359,33 @@ if __name__ == "__main__":
         # Annotation info
         if not output_file.writable():
             continue
-        lines_by_file = list(matched_lines_by_expression[it].items())
+        lines_by_file = list(matched_lines_by_expression[jj].items())
         files_count = len(lines_by_file)
-        for jt in range(0, len(lines_by_file)):
-            file, matches = lines_by_file[jt]
-            padding = "\u251C" if jt < len(lines_by_file) - 1 else "\u2514"
+        output_write(
+            f"{'-'*13}+{'-'*8}+{'-'*(77)}",
+            to_stdout= False
+        )
+        for kk in range(0, len(lines_by_file)):
+            file, matches = lines_by_file[kk]
+            branch = "\u251C" if kk < len(lines_by_file) - 1 else "\u2514"
             output_write(
-                "%3s %-86s: (%3i) %s" % (padding, file, len(matches), matches),
+                "%13s %-72s: %s" % (
+                    "%4s:%7i%2s" % (
+                        prefix,
+                        len(matches),
+                        branch
+                    ),
+                    file,
+                    matches
+                ),
+                to_stdout= False
+            )
+        if not len(lines_by_file):
+            output_write(
+                "%14s %s" % (
+                    "\u2514",
+                    "None found"
+                ),
                 to_stdout= False
             )
 
@@ -230,19 +393,30 @@ if __name__ == "__main__":
         + (
             "There are mismatches present, please address those"
             if failure else
+            "There are possible improvements, a review of code or configured values is recommended"
+            if warning else
             "All OK!"
         ),
-        colour= Fore.RED if failure else Fore.GREEN,
+        colour=
+            Fore.RED if failure else
+            Fore.YELLOW if warning else
+            Fore.GREEN,
         to_file= False
     )
     output_write("\nThis script completed in %7.3f seconds"
         % (time.time() - start_time)
     )
     output_write("\nFull match and annotation written to: %s"
-        % (str.join("/", [os.getcwd(), annotation_file_output_name])),
+        % (
+            try_normalize_path(
+                str.join("/", [os.getcwd(), annotation_file_output_name])
+        )),
         to_file=False
     )
-    output_write(f"{'='*86}\n", to_file= False)
+    output_write(
+        create_title(''),
+        to_file= False
+    )
 
     output_file.close()
     output_file = None
