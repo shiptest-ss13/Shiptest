@@ -361,6 +361,7 @@
 	dir = 1
 	},
 /obj/structure/window/reinforced/spawner/north,
+/obj/structure/cable,
 /turf/open/floor/plating,
 /area/ship/engineering/electrical)
 "fC" = (
@@ -522,6 +523,9 @@
 "iP" = (
 /obj/machinery/power/smes/shuttle/precharged{
 	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "0-2"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
@@ -819,6 +823,7 @@
 	dir = 1
 	},
 /obj/structure/window/reinforced/spawner/north,
+/obj/structure/cable,
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "nK" = (
@@ -1095,6 +1100,9 @@
 	dir = 1
 	},
 /obj/structure/window/reinforced/spawner/west,
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "rV" = (
@@ -1915,6 +1923,9 @@
 "CJ" = (
 /obj/machinery/power/smes/shuttle/precharged{
 	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "0-2"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/electrical)
@@ -3455,6 +3466,9 @@
 	dir = 1
 	},
 /obj/structure/window/reinforced/spawner/east,
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/electrical)
 "YE" = (
