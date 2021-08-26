@@ -294,7 +294,7 @@
 	custom_price = 500
 	volume = 35
 	amount_per_transfer_from_this = 36
-	list_reagents = list(/datum/reagent/medicine/epinephrine = 5.5, /datum/reagent/medicine/lavaland_extract = 3, /datum/reagent/drug/methamphetamine = 2, /datum/reagent/drug/morphine = 0.5, /datum/reagent/medicine/leporazine = 6, /datum/reagent/medicine/salglu_solution = 8, /datum/reagent/medicine/oxandrolone = 5, /datum/reagent/medicine/sal_acid = 5)
+	list_reagents = list(/datum/reagent/medicine/epinephrine = 5.5, /datum/reagent/medicine/lavaland_extract = 3, /datum/reagent/drug/methamphetamine = 2, /datum/reagent/medicine/morphine = 0.5, /datum/reagent/medicine/leporazine = 6, /datum/reagent/medicine/salglu_solution = 8, /datum/reagent/medicine/oxandrolone = 5, /datum/reagent/medicine/sal_acid = 5)
 
 #undef HYPO_SPRAY
 #undef HYPO_INJECT
