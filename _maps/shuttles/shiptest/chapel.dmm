@@ -62,7 +62,7 @@
 /area/ship/crew/dorm)
 "aT" = (
 /obj/machinery/button/door{
-	id = chapel_recdoor;
+	id = "chapel_recdoor";
 	name = "Blast Door Control";
 	pixel_y = 24
 	},
@@ -114,7 +114,7 @@
 /area/ship/crew/dorm)
 "bZ" = (
 /obj/machinery/door/poddoor{
-	id = chapel_massdriver
+	id = "chapel_massdriver"
 	},
 /turf/open/floor/plating,
 /area/ship/crew/chapel)
@@ -589,7 +589,7 @@
 /area/ship/bridge)
 "jM" = (
 /obj/machinery/mass_driver{
-	id = chapel_massdriver
+	id = "chapel_massdriver"
 	},
 /obj/machinery/door/window/brigdoor/northleft,
 /turf/open/floor/plating,
@@ -597,7 +597,7 @@
 "jP" = (
 /obj/structure/grille,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = chapel_medshutter;
+	id = "chapel_medshutter";
 	name = "privacy shutters"
 	},
 /obj/effect/spawner/structure/window/reinforced,
@@ -1787,7 +1787,7 @@
 "BI" = (
 /obj/structure/grille,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = chapel_medshutter;
+	id = "chapel_medshutter";
 	name = "privacy shutters"
 	},
 /obj/effect/spawner/structure/window/reinforced,
@@ -1922,7 +1922,7 @@
 /obj/structure/table/reinforced,
 /obj/machinery/door/window/westleft,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = chapel_engshutter;
+	id = "chapel_engshutter";
 	name = "engineering shutters"
 	},
 /obj/machinery/door/firedoor/heavy,
@@ -1985,7 +1985,7 @@
 /area/ship/medical)
 "Dh" = (
 /obj/machinery/button/door{
-	id = chapel_medshutter;
+	id = "chapel_medshutter";
 	name = "Privacy Shutters Control";
 	pixel_x = 26;
 	pixel_y = -8
@@ -2053,7 +2053,7 @@
 "EI" = (
 /obj/structure/grille,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = chapel_medshutter;
+	id = "chapel_medshutter";
 	name = "privacy shutters"
 	},
 /obj/effect/spawner/structure/window/reinforced,
@@ -2391,7 +2391,7 @@
 /obj/structure/window/reinforced/spawner/north,
 /obj/machinery/atmospherics/components/binary/pump/on,
 /obj/machinery/button/door{
-	id = chapel_engshutter;
+	id = "chapel_engshutter";
 	name = "Privacy Shutters Control";
 	pixel_x = -26
 	},
@@ -2441,7 +2441,7 @@
 /obj/machinery/autolathe,
 /obj/machinery/door/window/westright,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = chapel_engshutter;
+	id = "chapel_engshutter";
 	name = "engineering shutters"
 	},
 /obj/machinery/door/firedoor/heavy,
@@ -2636,7 +2636,7 @@
 "Pa" = (
 /obj/machinery/computer/pod{
 	dir = 1;
-	id = chapel_massdriver
+	id = "chapel_massdriver"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/chapel)
@@ -2741,7 +2741,7 @@
 "QU" = (
 /obj/structure/fans/tiny,
 /obj/machinery/door/poddoor{
-	id = chapel_recdoor
+	id = "chapel_recdoor"
 	},
 /turf/open/floor/plating,
 /area/ship/crew/dorm)
