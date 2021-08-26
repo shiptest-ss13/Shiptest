@@ -1493,7 +1493,7 @@
 /turf/open/floor/plasteel/showroomfloor,
 /area/ship/crew/dorm)
 "vB" = (
-/turf/open/water,
+/turf/open/water/jungle,
 /area/ship/crew/hydroponics)
 "vI" = (
 /obj/structure/lattice,
@@ -2254,7 +2254,9 @@
 /area/ship/medical)
 "Ir" = (
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating/ashplanet/rocky,
+/turf/open/floor/plating/asteroid{
+	name = "earth imported sand"
+	},
 /area/ship/crew/hydroponics)
 "ID" = (
 /obj/machinery/bookbinder,
@@ -2530,7 +2532,9 @@
 /turf/open/floor/wood,
 /area/ship/medical)
 "MM" = (
-/turf/open/floor/plating/ashplanet/rocky,
+/turf/open/floor/plating/asteroid{
+	name = "earth imported sand"
+	},
 /area/ship/crew/hydroponics)
 "Nj" = (
 /obj/structure/table/wood,
@@ -3394,7 +3398,7 @@
 /obj/docking_port/mobile{
 	dir = 4;
 	launch_status = 0;
-	port_direction = 1
+	port_direction = 8
 	},
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
 	dir = 4
