@@ -21,25 +21,23 @@
 #
 
 standards:
-  - exactly: [0, 'escapes', '\\\\(red|blue|green|black|b|i[^mc])']
-  - exactly: [6, 'Del()s', '\WDel\(']
+  - exactly: [8, 'escapes', '\\\\(red|blue|green|black|b|i[^mc])']
+  - exactly: [9, 'Del()s', '\WDel\(']
 
-  - exactly: [2, '/atom text paths', '"/atom']
-  - exactly: [2, '/area text paths', '"/area']
-  - exactly: [2, '/datum text paths', '"/datum']
-  - exactly: [2, '/mob text paths', '"/mob']
-  - exactly: [19, '/obj text paths', '"/obj']
-  - exactly: [8, '/turf text paths', '"/turf']
-  - exactly: [28, 'text2path uses', 'text2path']
+  - exactly: [0, '/atom text paths', '"/atom']
+  - exactly: [1, '/area text paths', '"/area']
+  - exactly: [16, '/datum text paths', '"/datum']
+  - exactly: [4, '/mob text paths', '"/mob']
+  - exactly: [49, '/obj text paths', '"/obj']
+  - exactly: [0, '/turf text paths', '"/turf']
+  - exactly: [126, 'text2path uses', 'text2path']
 
-  - exactly: [0, 'world<< uses', 'world[ \t]*<<']
+  - exactly: [22, 'world<< uses', 'world[ \t]*<<']
   - exactly: [0, 'world.log<< uses', 'world.log[ \t]*<<']
-  - no_more: [207, 'to_world() uses', 'to_world\(']
-  - no_more: [71, 'to_world_log() uses', 'to_world_log\(']
 
-  - exactly: [14, 'non-bitwise << uses', '(?<!\d)(?<!\d\s)(?<!<)<<(?!=|\s\d|\d|<|\/)']
+  - exactly: [305, 'non-bitwise << uses', '(?<!\d)(?<!\d\s)(?<!<)<<(?!=|\s\d|\d|<|\/)']
   - exactly: [0, 'incorrect indentations', '^(?:  +)(?!\*)']
   - exactly: [0, 'superflous whitespace', '[ \t]+$']
-  - exactly: [8, 'mixed indentation', '^( +\t+|\t+ +)']
+  - exactly: [36, 'mixed indentation', '^( +\t+|\t+ +)']
 
-  - no_more: [1442, 'indentions inside defines', '^(\s*)#define (\w*)( {2,}| ?\t+)(?!(\/\/|\/\*))']
+  - no_more: [2243, 'indentions inside defines', '^(\s*)#define (\w*)( {2,}| ?\t+)(?!(\/\/|\/\*))']
