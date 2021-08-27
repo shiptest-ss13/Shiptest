@@ -51,17 +51,6 @@ annotation_file_output_name = "check_regex_output.txt"
 
 preferred_encoding = "utf-8"
 
-class SubjectFileInfo:
-    def __init__(
-        self,
-        path: str
-    ):
-        self.path = path
-        self.git_is_added = False
-        self.git_is_deleted = False
-        self.git_is_modified = False
-        self.git_is_renamed = False
-
 # Data struct for holding info about standardization rules
 class TestExpression:
     def __init__(
@@ -247,7 +236,7 @@ class RegexStandardAnalyzer:
                 expression = self.expressions[it]
                 matches = regex.findall(expression, line)
                 if len(matches) > 0:
-                    matched[it].append(index)
+                    matched[it].append(index + 1)
                     count = len(matches)
                     if key not in results[it]:
                         results[it][key] = count
@@ -354,7 +343,7 @@ if __name__ == "__main__":
     )
 
     output_write(create_title("Configuration"))
-    output_write("- Trying to load config: %s" % (
+    output_write(" - Trying to load config: %s" % (
         try_normalize_path(config_file_default_name)
     ))
 
@@ -363,10 +352,10 @@ if __name__ == "__main__":
 
     N = len(standards)
 
-    output_write("- Succesfully loaded config: %s" % (
+    output_write(" - Succesfully loaded config: %s" % (
         try_normalize_path(config_file_default_name)
     ))
-    output_write("- Loaded %d standardization rules" % (
+    output_write(" - Loaded %d standardization rules" % (
         len(standards)
     ))
 
@@ -409,7 +398,6 @@ if __name__ == "__main__":
 
     output_write(" - Found %d *.dm files with diffs" % (len(files_of_interest)))
 
-    file_database = dict()
     changed_files = list()
     diff_added_content:   Dict[str, Dict[int, str]] = dict()
     diff_removed_content: Dict[str, Dict[int, str]] = dict()
@@ -418,14 +406,6 @@ if __name__ == "__main__":
         if not diff.path in files_of_interest:
             continue
         changed_files.append(diff.path)
-
-        finfo = SubjectFileInfo(diff.path)
-        finfo.git_is_added = diff.is_added_file
-        finfo.git_is_deleted = diff.is_removed_file
-        finfo.git_is_modified = diff.is_modified_file
-        finfo.git_is_renamed = diff.is_rename
-
-        file_database[diff.path] = finfo
 
         to_add = {}
         to_remove = {}
@@ -442,10 +422,6 @@ if __name__ == "__main__":
 
     # Get files
     files_to_test = collect_candidate_files('./', 'dm')
-    for file in files_to_test:
-        if file in file_database:
-            continue
-        file_database[file] = SubjectFileInfo(file)
 
     output_write(f" - Found {len(files_to_test)} '*.dm' files in local state")
 
@@ -476,14 +452,14 @@ if __name__ == "__main__":
 
     # This is the end, go process the data then show the results!
     output_write(create_title("Regex Results"))
-    output_write("\n%24s | %-6s | %s"
+    output_write("\n%27s | %-6s | %s"
         % (
             "Result",
             "Target",
             "Description"
         ),
     )
-    output_write(f"{'-'*25}+{'-'*8}+{'-'*(77)}")
+    output_write(f"{'-'*28}+{'-'*8}+{'-'*(63)}")
 
     failure = 0
     warning = 0
@@ -509,17 +485,17 @@ if __name__ == "__main__":
             prefix = "!!!!"
             colour = Fore.YELLOW
 
-        stats = "%-5s %-5s %5i" % (
+        stats = "%-6s %-6s %6i" % (
             ("+%-5i" % added) if added else "",
             ("-%-5i" % removed) if removed else "",
             count
         )
 
         output_write(
-            f"\n{'-'*13}+{'-'*8}+{'-'*(77)}",
+            f"{'-'*28}+{'-'*8}+{'-'*(63)}",
             to_stdout= False
         )
-        output_write("%4s: %-22s |%7i | %s"
+        output_write("%4s: %21s |%7i | %s"
             % (
                 prefix,
                 stats,
@@ -532,41 +508,78 @@ if __name__ == "__main__":
         # Annotation info
         if not output_file.writable():
             continue
-        lines_by_file = list(matched_lines_by_expression[jj].items())
-        files_count = len(lines_by_file)
+
+
+        matched_files = matched_lines_by_expression[jj]
         output_write(
-            f"{'-'*13}+{'-'*8}+{'-'*(77)}",
+            f"{'-'*28}+{'-'*8}+{'-'*(63)}",
             to_stdout= False
         )
-        for kk in range(0, len(lines_by_file)):
-            file, matches = lines_by_file[kk]
-            branch = "\u251C" if kk < len(lines_by_file) - 1 else "\u2514"
+
+        all_files = set().union(
+            list(matched_lines_by_expression[jj].keys()),
+            list(added_matches[jj].keys()),
+            list(removed_matches[jj].keys())
+        )
+        files_count = len(all_files)
+
+        for (index, file) in enumerate(all_files):
+            branch = "\u251C" if index < files_count - 1 else "\u2514"
+            stem = "\u2502" if index < files_count -1 else " "
+
+            show_items = []
+            inner_prefix = ""
+
+            matches = (matched_files[file] if file in matched_files else [])
+            adds = (added_matches[jj][file] if file in added_matches[jj] else [])
+            removes = (removed_matches[jj][file] if file in removed_matches[jj] else [])
+            if len(matches):
+                show_items.append("Current (%4i): %s" % (len(matches), matches))
+            if len(adds):
+                show_items.append("+++++++ (%4i): %s" % (len(adds), adds))
+                inner_prefix = prefix
+            if len(removes):
+                show_items.append("------- (%4i): %s" % (len(removes), removes))
+                inner_prefix = prefix
+
             output_write(
-                "%13s %-72s: %s" % (
-                    "%4s:%7i%2s" % (
-                        prefix,
-                        len(matches),
-                        branch
-                    ),
-                    file,
-                    matches
+                "%4s %1s%2s %s" % (
+                    inner_prefix,
+                    branch,
+                    "\u2500\u252C",
+                    file
                 ),
                 to_stdout= False
             )
-        if not len(lines_by_file):
+            for nn in range(0, len(show_items)):
+                inner_branch = "\u251C" if nn < len(show_items) - 1 else "\u2514"
+                output_write("%4s %1s %1s %s" % (
+                        inner_prefix,
+                        stem,
+                        inner_branch,
+                        show_items[nn]
+                    ),
+                    to_stdout= False
+                )
+            if index < files_count - 1:
+                output_write("%4s %1s" % (inner_prefix, stem), to_stdout=False)
+
+        if not files_count:
             output_write(
-                "%14s %s" % (
+                "%6s %s" % (
                     "\u2514",
                     "None found"
                 ),
                 to_stdout= False
             )
 
+        output_write("", to_stdout=False) # Just space out between the lines
+
     output_write("\n"
         + (
             "There are mismatches present, please address those"
             if failure else
-            "There are possible improvements, a review of code or configured values is recommended"
+            "There are possible improvements present, a review of code or configured values is recommended"
             if warning else
             "All OK!"
         ),
