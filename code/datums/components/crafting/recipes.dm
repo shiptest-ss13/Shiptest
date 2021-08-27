@@ -25,6 +25,23 @@
 /datum/crafting_recipe/proc/check_requirements(mob/user, list/collected_requirements)
 	return TRUE
 
+/datum/crafting_recipe/energy_bayonet
+	name = "Plasma Bayonet"
+	result = /obj/item/attachment/bayonet
+	reqs = list(
+		/obj/item/kitchen/knife/combat = 1,
+		/obj/item/stack/cable_coil = 30,
+		/obj/item/stack/sheet/plasteel = 5,
+		/obj/item/stack/ore/plasma = 20,
+		/obj/item/assembly/igniter = 1,
+	)
+	time = 10 SECONDS
+	category = CAT_WEAPONRY
+	subcategory = CAT_WEAPON
+	tools = list(
+		TOOL_WELDER, TOOL_SCREWDRIVER, TOOL_MULTITOOL
+	)
+
 /datum/crafting_recipe/IED
 	name = "IED"
 	result = /obj/item/grenade/iedcasing
