@@ -24,9 +24,14 @@
 		if(target == user && toggled)
 			extended = !extended
 			reach = extended ? reach_extended : initial(reach)
+			gun.reach = reach // Even if your gun has a longer reach you default to the bayonets because STAB STAB STAB
 			force = extended ? force_extended : force_on
-			icon_state += "_long"
+			// Hey, I just met you
+			if(extended) // And this is crazy
+				icon_state += "-long" // But heres my number
+			else // Call me never
+				icon_state = replacetext(icon_state, "-long", "") // Because why is this so ugly
 			user.visible_message("[user] [extended ? "increased" : "decreased"] the length of [src].")
-			return TRUE
+			return COMPONENT_NO_ATTACK
 		melee_attack_chain(user, target, params)
-		return TRUE
+		return COMPONENT_NO_ATTACK
