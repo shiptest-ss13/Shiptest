@@ -9,7 +9,7 @@
 	desc = "An infectious respiratory disease spread by close contact. Early detection and rest can result in recovery, but later stages of the disease are terminal."
 	disease_flags = CAN_CARRY
 	severity = DISEASE_SEVERITY_DANGEROUS
-	
+
 /datum/disease/coronavirus/stage_act()
 	..()
 	switch(stage)
@@ -27,7 +27,7 @@
 			if(prob(1))
 				to_chat(affected_mob, "<span class='danger'>Your throat feels sore.</span>")
 			if(prob(1))
-				to_chat(affected_mob, "<span class='danger'>Mucous runs down the back of your throat.</span>")	
+				to_chat(affected_mob, "<span class='danger'>Mucous runs down the back of your throat.</span>")
 		if(3)
 			if(!(affected_mob.mobility_flags & MOBILITY_STAND) && prob(20))
 				to_chat(affected_mob, "<span class='notice'>You feel better.</span>")
@@ -44,17 +44,17 @@
 			if(prob(1))
 				to_chat(affected_mob, "<span class='danger'>You feel tired.</span>")
 			if(prob(1))
-				to_chat(affected_mob, "<span class='danger'>Mucous runs down the back of your throat.</span>")	 
+				to_chat(affected_mob, "<span class='danger'>Mucous runs down the back of your throat.</span>")
 			if(prob(1))
 				to_chat(affected_mob, "<span class='danger'>Your muscles ache.</span>")
 				if(prob(20))
-					affected_mob.take_bodypart_damage(1)	 
+					affected_mob.take_bodypart_damage(1)
 		if(4)
 			if(prob(1))
 				affected_mob.emote("cough")
 			if(prob(2))
 				to_chat(affected_mob, "<span class='userdanger'>You see four of everything!</span>")
-				affected_mob.Dizzy(5)	
+				affected_mob.Dizzy(5)
 			if(prob(2))
 				to_chat(affected_mob, "<span class='danger'>You feel a sharp pain from your lower chest!</span>")
 				affected_mob.adjustOxyLoss(5)

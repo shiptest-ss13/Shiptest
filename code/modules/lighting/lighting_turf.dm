@@ -39,7 +39,7 @@
 	L = lighting_corner_NW
 	if (L)
 		totallums += L.lum_r + L.lum_b + L.lum_g
-		
+
 
 	totallums /= 12 // 4 corners, each with 3 channels, get the average.
 
@@ -107,14 +107,14 @@
 /turf/proc/generate_missing_corners()
 	if (!lighting_corner_NE)
 		lighting_corner_NE = new/datum/lighting_corner(src, NORTH|EAST)
-	
+
 	if (!lighting_corner_SE)
 		lighting_corner_SE = new/datum/lighting_corner(src, SOUTH|EAST)
-	
+
 	if (!lighting_corner_SW)
 		lighting_corner_SW = new/datum/lighting_corner(src, SOUTH|WEST)
-	
+
 	if (!lighting_corner_NW)
 		lighting_corner_NW = new/datum/lighting_corner(src, NORTH|WEST)
-	
+
 	lighting_corners_initialised = TRUE

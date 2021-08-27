@@ -27,12 +27,10 @@
 /obj/machinery/power/tesla_coil/Initialize()
 	. = ..()
 	wires = new /datum/wires/tesla_coil(src)
-	linked_techweb = SSresearch.science_tech
 
-/*WS Edit - Smartwire Revert
-/obj/machinery/power/tesla_coil/should_have_node()
-	return anchored
-*/
+/obj/machinery/power/tesla_coil/Destroy()
+	linked_techweb = null
+	. = ..()
 
 /obj/machinery/power/tesla_coil/RefreshParts()
 	var/power_multiplier = 0
@@ -76,6 +74,14 @@
 
 	if(is_wire_tool(W) && panel_open)
 		wires.interact(user)
+		return
+
+	if(istype(W, /obj/item/multitool))
+		var/obj/item/multitool/multi = W
+		if(istype(multi.buffer, /obj/machinery/rnd/server))
+			var/obj/machinery/rnd/server/serv = multi.buffer
+			linked_techweb = serv.stored_research
+			visible_message("Linked to Server!")
 		return
 
 	return ..()

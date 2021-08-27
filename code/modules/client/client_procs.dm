@@ -250,11 +250,9 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 			new /datum/admins(localhost_rank, ckey, 1, 1)
 
 	//Mentor Authorisation
-	var/mentor = GLOB.mentor_datums[ckey]
+	var/datum/mentors/mentor = GLOB.mentor_datums[ckey]
 	if(mentor)
-		verbs += /client/proc/cmd_mentor_say
-		verbs += /client/proc/show_mentor_memo
-		GLOB.mentors += src
+		mentor.associate(src)
 
 	//preferences datum - also holds some persistent data for the client (because we may as well keep these datums to a minimum)
 	prefs = GLOB.preferences_datums[ckey]
@@ -729,7 +727,7 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 
 			sleep(15 SECONDS) //Longer sleep here since this would trigger if a client tries to reconnect manually because the inital reconnect failed
 
-			 //we sleep after telling the client to reconnect, so if we still exist something is up
+			//we sleep after telling the client to reconnect, so if we still exist something is up
 			log_access("Forced disconnect: [key] [computer_id] [address] - CID randomizer check")
 
 			qdel(src)

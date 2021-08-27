@@ -6,4 +6,4 @@
 	icon_state = "nanite_remote"
 
 /obj/item/nanite_injector/attack_self(mob/user)
-	user.AddComponent(/datum/component/nanites, 150)
+	user.AddComponent(/datum/component/nanites, null, 150)

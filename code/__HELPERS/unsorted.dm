@@ -803,24 +803,24 @@ GLOBAL_LIST_INIT(WALLITEMS_INVERSE, typecacheof(list(
 
 
 /*
-rough example of the "cone" made by the 3 dirs checked
-
- B
-  \
-   \
-    >
-      <
-       \
-        \
-B --><-- A
-        /
-       /
-      <
-     >
-    /
-   /
- B
-
+* rough example of the "cone" made by the 3 dirs checked*
+*
+* B
+*  \
+*   \
+*    >
+*      <
+*       \
+*        \
+*B --><-- A
+*        /
+*       /
+*      <
+*     >
+*    /
+*   /
+* B
+*
 */
 
 

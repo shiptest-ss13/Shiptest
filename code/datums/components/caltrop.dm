@@ -6,7 +6,7 @@
 
 	var/cooldown = 0
 
-/datum/component/caltrop/Initialize(_min_damage = 0, _max_damage = 0, _probability = 100,  _flags = NONE)
+/datum/component/caltrop/Initialize(_min_damage = 0, _max_damage = 0, _probability = 100, _flags = NONE)
 	min_damage = _min_damage
 	max_damage = max(_min_damage, _max_damage)
 	probability = _probability
@@ -59,14 +59,20 @@
 			//var/atom/A = parent		WS edit
 			if(!H.incapacitated(ignore_restraints = TRUE))
 				if(haslightstep)
-					H.visible_message("<span class='danger'>[H] carefully steps on [A].</span>",
-									  "<span class='danger'>You carefully step on [A], but it still hurts!</span>")
+					H.visible_message(
+						"<span class='danger'>[H] carefully steps on [A].</span>",
+						"<span class='danger'>You carefully step on [A], but it still hurts!</span>"
+					)
 				else
-					H.visible_message("<span class='danger'>[H] steps on [A].</span>", \
-									  "<span class='userdanger'>You step on [A]!</span>")
+					H.visible_message(
+						"<span class='danger'>[H] steps on [A].</span>",
+						"<span class='userdanger'>You step on [A]!</span>"
+					)
 			else
-				H.visible_message("<span class='danger'>[H] slides on [A]!</span>", \
-						"<span class='userdanger'>You slide on [A]!</span>")
+				H.visible_message(
+					"<span class='danger'>[H] slides on [A]!</span>",
+					"<span class='userdanger'>You slide on [A]!</span>"
+				)
 
 			cooldown = world.time
 		H.apply_damage(damage, BRUTE, picked_def_zone)

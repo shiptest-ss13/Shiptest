@@ -39,3 +39,15 @@
 	id = "fueldepot"
 	suffix = "fuel_depot.dmm"
 	description = "An orbital refueling station with the remains of a ship lodged among the debris."
+
+/datum/map_template/ruin/space/nuclear_dump
+	id = "radioactivedump"
+	suffix = "nuclear_dump.dmm"
+	name = "Nuclear Waste Dump"
+	description = "An abandoned nuclear waste disposal zone, a relic of old-age spaceflight and a death sentence to any who dare enter..."
+
+/datum/map_template/ruin/space/ntfacility
+	id = "ntfacility"
+	suffix = "ntfacility.dmm"
+	name = "Abandoned Facility"
+	description = "A NT research station. Something has gone horribly wrong here."

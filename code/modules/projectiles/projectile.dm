@@ -43,17 +43,17 @@
 	var/temporary_unstoppable_movement = FALSE
 
 	/** PROJECTILE PIERCING
-	  * WARNING:
-	  * Projectile piercing MUST be done using these variables.
-	  * Ordinary passflags will be **IGNORED**.
-	  * The two flag variables below both use pass flags.
-	  * In the context of LETPASStHROW, it means the projectile will ignore things that are currently "in the air" from a throw.
-	  *
-	  * Also, projectiles sense hits using Bump(), and then pierce them if necessary.
-	  * They simply do not follow conventional movement rules.
-	  * NEVER flag a projectile as PHASING movement type.
-	  * If you so badly need to make one go through *everything*, override check_pierce() for your projectile to always return PROJECTILE_PIERCE_PHASE/HIT.
-	  */
+	* WARNING:
+	* Projectile piercing MUST be done using these variables.
+	* Ordinary passflags will be **IGNORED**.
+	* The two flag variables below both use pass flags.
+	* In the context of LETPASStHROW, it means the projectile will ignore things that are currently "in the air" from a throw.
+	*
+	* Also, projectiles sense hits using Bump(), and then pierce them if necessary.
+	* They simply do not follow conventional movement rules.
+	* NEVER flag a projectile as PHASING movement type.
+	* If you so badly need to make one go through *everything*, override check_pierce() for your projectile to always return PROJECTILE_PIERCE_PHASE/HIT.
+	*/
 	/// The "usual" flags of pass_flags is used in that can_hit_target ignores these unless they're specifically targeted/clicked on. This behavior entirely bypasses process_hit if triggered, rather than phasing which uses prehit_pierce() to check.
 	pass_flags = PASSTABLE
 	/// If FALSE, allow us to hit something directly targeted/clicked/whatnot even if we're able to phase through it

@@ -61,11 +61,30 @@
 /mob/living/attackby(obj/item/I, mob/living/user, params)
 	if(..())
 		return TRUE
+	if(user.a_intent == INTENT_HELP || user.a_intent == INTENT_DISARM)
+		for(var/datum/surgery/S in surgeries)
+			if(body_position != LYING_DOWN && S.lying_required)
+				continue
+			if(!S.self_operable && user == src)
+				continue
+			if(S.next_step(user, user.a_intent))
+				return TRUE
 	if((I.item_flags & SURGICAL_TOOL) && user.a_intent == INTENT_HELP)
-		attempt_initiate_surgery(I, src, user)
-		return TRUE
+		if(attempt_initiate_surgery(I, src, user))
+			return TRUE
 	user.changeNext_move(CLICK_CD_MELEE)
 	return I.attack(src, user)
+
+/mob/living/attack_hand(mob/living/user)
+	if(..())
+		return TRUE
+	for(var/datum/surgery/S in surgeries)
+		if(body_position != LYING_DOWN && S.lying_required)
+			continue
+		if(!S.self_operable && user == src)
+			continue
+		if(S.next_step(user, user.a_intent))
+			return TRUE
 
 /**
   * Called from [/mob/living/attackby]

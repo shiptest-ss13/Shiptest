@@ -22,10 +22,9 @@
 
 	//WS Begin - Gun Cells
 	var/internal_cell = FALSE ///if the gun's cell cannot be replaced
-	var/small_gun = FALSE ///if the gun is small and can only fit batteries that have less than a certain max charge
+	var/small_gun = FALSE ///if the gun is small and can only fit the small gun cell
 	var/big_gun = FALSE ///if the gun is big and can fit the comically large gun cell
-	var/max_charge = 10000 ///if the gun is small, this is the highest amount of charge can be in a battery for it
-	var/unscrewing_time = 20 ///Time it takes to unscrew the internal cell
+	var/unscrewing_time = 20 ///Time it takes to unscrew the cell
 
 	var/load_sound = 'sound/weapons/gun/general/magazine_insert_full.ogg' //Sound when inserting magazine. UPDATE PLEASE
 	var/eject_sound = 'sound/weapons/gun/general/magazine_remove_full.ogg' //Sound of ejecting a cell. UPDATE PLEASE
@@ -101,19 +100,14 @@
 		update_icon()
 
 /obj/item/gun/energy/attackby(obj/item/A, mob/user, params)
-	. = ..()
-	if (.)
-		return
 	if (!internal_cell && istype(A, /obj/item/stock_parts/cell/gun))
 		var/obj/item/stock_parts/cell/gun/C = A
 		if (!cell)
 			insert_cell(user, C)
+	return ..()
 
 /obj/item/gun/energy/proc/insert_cell(mob/user, obj/item/stock_parts/cell/gun/C)
 	if(small_gun && !istype(C, /obj/item/stock_parts/cell/gun/mini))
-		to_chat(user, "<span class='warning'>\The [C] doesn't seem to fit into \the [src]...</span>")
-		return FALSE
-	if(!small_gun && istype(C, /obj/item/stock_parts/cell/gun/mini))
 		to_chat(user, "<span class='warning'>\The [C] doesn't seem to fit into \the [src]...</span>")
 		return FALSE
 	if(!big_gun && istype(C, /obj/item/stock_parts/cell/gun/large))
@@ -133,18 +127,18 @@
 	playsound(src, load_sound, sound_volume, load_sound_vary)
 	cell.forceMove(drop_location())
 	var/obj/item/stock_parts/cell/gun/old_cell = cell
-	if (insert_cell(user, tac_load))
+	/*if(insert_cell(user, tac_load))
 		to_chat(user, "<span class='notice'>You perform a tactical reload on \the [src].</span>")
 	else
-		to_chat(user, "<span class='warning'>You dropped the old cell, but the new one doesn't fit. How embarassing.</span>")
-		cell = null
+		to_chat(user, "<span class='warning'>You dropped the old cell, but the new one doesn't fit. How embarassing.</span>")*/
+	cell = null
 	user.put_in_hands(old_cell)
 	old_cell.update_icon()
 	to_chat(user, "<span class='notice'>You pull the cell out of \the [src].</span>")
 	update_icon()
 
 /obj/item/gun/energy/screwdriver_act(mob/living/user, obj/item/I)
-	if(cell && !internal_cell && !gun_light && !bayonet)
+	if(cell && !internal_cell && !bayonet && (!gun_light || !can_flashlight))
 		to_chat(user, "<span class='notice'>You begin unscrewing and pulling out the cell...</span>")
 		if(I.use_tool(src, user, unscrewing_time, volume=100))
 			to_chat(user, "<span class='notice'>You remove the power cell.</span>")
