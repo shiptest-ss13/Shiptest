@@ -63,6 +63,8 @@
 	var/automatic = 0 //can gun use it, 0 is no, anything above 0 is the delay between clicks in ds
 	var/pb_knockback = 0
 
+
+	// ATTACHMENT STUFF RIGHT HERE //
 	/// The types of attachments allowed, a list of types. SUBTYPES OF AN ALLOWED TYPE ARE ALSO ALLOWED
 	var/list/valid_attachments = list()
 	/// Reference to our attachment holder to prevent subtypes having to call GetComponent
@@ -70,7 +72,7 @@
 	/// Maximum number of attachments allowed
 	var/attachment_max = 0
 	/// Number of attachments that can fit on a given slot
-	var/list/slot_available = list()
+	var/list/slot_available = ATTACHMENT_DEFAULT_SLOT_AVAILABLE
 	/// Offsets for the slots on this gun. should be indexed by SLOT and then by X/Y
 	var/list/slot_offsets = list()
 

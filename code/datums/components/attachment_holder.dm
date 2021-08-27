@@ -36,6 +36,7 @@
 
 	for(var/obj/item/attach as anything in attachments)
 		var/slot = SEND_SIGNAL(attach, COMSIG_ATTACHMENT_GET_SLOT)
+		slot = attachment_slot_from_bflag(slot)
 		var/list/attach_overlays = list()
 		SEND_SIGNAL(attach, COMSIG_ATTACHMENT_UPDATE_OVERLAY, attach_overlays)
 		for(var/mutable_appearance/overlay as anything in attach_overlays)
@@ -93,10 +94,11 @@
 
 /datum/component/attachment_holder/proc/do_attach(obj/item/attachment, mob/user)
 	var/slot = SEND_SIGNAL(attachment, COMSIG_ATTACHMENT_GET_SLOT)
-	if(slot_room)
-		if(!slot_room[slot])
-			return
-		slot_room[slot]--
+	slot = attachment_slot_from_bflag(slot)
+	if(!slot_room[slot])
+		to_chat(user, "<span class='notice'>[parent] does not contain room for [attachment]!</span>")
+		return
+	slot_room[slot]--
 	. = SEND_SIGNAL(attachment, COMSIG_ATTACHMENT_ATTACH, parent, user)
 	if(.)
 		attachments += attachment
@@ -105,7 +107,8 @@
 
 /datum/component/attachment_holder/proc/do_detach(obj/item/attachment, mob/user)
 	var/slot = SEND_SIGNAL(attachment, COMSIG_ATTACHMENT_GET_SLOT)
-	if(slot_room)
+	slot = attachment_slot_from_bflag(slot)
+	if(slot in slot_room)
 		slot_room[slot]++
 	. = SEND_SIGNAL(attachment, COMSIG_ATTACHMENT_DETACH, parent, user)
 	if(.)

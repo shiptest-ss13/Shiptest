@@ -12,9 +12,38 @@
 	#define ATTACHMENT_SLOT_GRIP "attach-slot-grip"
 	#define ATTACHMENT_SLOT_RAIL "attach-slot-rail"
 
+/proc/attachment_slot_to_bflag(slot)
+	switch(slot)
+		if(ATTACHMENT_SLOT_MUZZLE)
+			return (1<<0)
+		if(ATTACHMENT_SLOT_SCOPE)
+			return (1<<1)
+		if(ATTACHMENT_SLOT_GRIP)
+			return (1<<2)
+		if(ATTACHMENT_SLOT_RAIL)
+			return (1<<3)
+
+/proc/attachment_slot_from_bflag(slot)
+	switch(slot)
+		if(1<<0)
+			return ATTACHMENT_SLOT_MUZZLE
+		if(1<<1)
+			return ATTACHMENT_SLOT_SCOPE
+		if(1<<2)
+			return ATTACHMENT_SLOT_GRIP
+		if(1<<3)
+			return ATTACHMENT_SLOT_RAIL
+
 #define COMSIG_ATTACHMENT_TOGGLE "attach-toggle"
 
 #define TRAIT_ATTACHABLE "attachable"
+
+#define ATTACHMENT_DEFAULT_SLOT_AVAILABLE list( \
+	ATTACHMENT_SLOT_MUZZLE = 1, \
+	ATTACHMENT_SLOT_SCOPE = 1, \
+	ATTACHMENT_SLOT_GRIP = 1, \
+	ATTACHMENT_SLOT_RAIL = 1, \
+)
 
 /datum/component/attachment
 	var/slot
@@ -51,6 +80,7 @@
 	RegisterSignal(parent, COMSIG_ATTACHMENT_TOGGLE, .proc/try_toggle)
 	RegisterSignal(parent, COMSIG_ATTACHMENT_PRE_ATTACK, .proc/relay_pre_attack)
 	RegisterSignal(parent, COMSIG_ATTACHMENT_UPDATE_OVERLAY, .proc/update_overlays)
+	RegisterSignal(parent, COMSIG_ATTACHMENT_GET_SLOT, .proc/send_slot)
 
 	for(var/signal in signals)
 		RegisterSignal(parent, signal, signals[signal])
@@ -113,3 +143,7 @@
 
 	if(on_preattack)
 		return on_preattack.Invoke(gun, target_atom, user, params)
+
+/datum/component/attachment/proc/send_slot(obj/item/parent)
+	SIGNAL_HANDLER
+	return attachment_slot_to_bflag(slot)
