@@ -39,7 +39,8 @@ from typing import Dict, List, Tuple
 
 # Third party
 import git                  # For fetching git data & diffs
-import unidiff              # For parsing of unified diff data
+import unidiff
+from unidiff.patch import Line, PatchInfo, PatchedFile              # For parsing of unified diff data
 import yaml                 # For configuration
 import colorama             # For logging styling
 from colorama import Fore, Back, Style
@@ -49,6 +50,17 @@ config_file_default_name = "check_regex.yaml"
 annotation_file_output_name = "check_regex_output.txt"
 
 preferred_encoding = "utf-8"
+
+class SubjectFileInfo:
+    def __init__(
+        self,
+        path: str
+    ):
+        self.path = path
+        self.git_is_added = False
+        self.git_is_deleted = False
+        self.git_is_modified = False
+        self.git_is_renamed = False
 
 # Data struct for holding info about standardization rules
 class TestExpression:
@@ -214,10 +226,15 @@ def test_content_lines(results, expressions, lines, ignore_comments=False):
     for i in range(0, len(expressions)):
         matched[i] = []
 
-    line_number = 0
     is_comment_block = False
-    for line in lines:
-        line_number += 1
+
+    enumeration = list()
+    if type(lines) is dict:
+        enumeration = list(lines.items())
+    else:
+        enumeration = enumerate(lines)
+
+    for (index, line) in enumeration:
         if ignore_comments:
             if str.find(line, '/*') >= 0:
                 is_comment_block = True
@@ -230,7 +247,7 @@ def test_content_lines(results, expressions, lines, ignore_comments=False):
             expression = expressions[it]
             matches = regex.findall(expression, line)
             if len(matches) > 0:
-                matched[it].append(line_number)
+                matched[it].append(index)
                 key = file
                 count = len(matches)
                 if key not in results[it]:
@@ -272,12 +289,16 @@ def create_title(title, char='='):
 def try_normalize_path(filepath):
     return os.path.normpath(filepath)
 
+def git_diff_range_branches(parent, head=None):
+    if head is not None:
+        return "%s...%s" % (head, parent)
+    return parent
+
 #
 # Entry point & main behaviour
 #
 if __name__ == "__main__":
     colorama.init()
-
 
     output_file = open(
         annotation_file_output_name,
@@ -316,39 +337,66 @@ if __name__ == "__main__":
     origin_info = g.execute("git remote show origin")
     head_pattern = regex.compile(r'[ ]*HEAD branch: ([\w\S]+)')
     head_branch = head_pattern.findall(origin_info)[0]
-    active_branch = repo.active_branch
+    active_branch = None
 
     output_write(" - Found git remote default: %s" % (head_branch))
     output_write(" - Found git local active:   %s" % (active_branch))
     # Get what files have been changed, instead of getting all diffs at once
     changed_files = g.diff(
-        "%s...%s" % (head_branch, active_branch),
+        git_diff_range_branches(head_branch, active_branch),
         "--name-only"
         ).split("\n")
 
-    changed_files = list(filter(
+    files_of_interest = list(filter(
         lambda item: item.endswith(".dm"),
         changed_files
     ))
 
+    raw_diff = g.diff(git_diff_range_branches(head_branch, active_branch))
+    diffs = unidiff.PatchSet.from_string(raw_diff)
+
     output_write(" - %d *.dm files with diffs found" % (len(changed_files)))
 
-    for changed in changed_files:
-        raw_diff = g.diff(
-            "%s...%s" % (head_branch, active_branch),
-            changed
-            )
+    file_database = dict()
+    diff_added_content:   Dict[str, Dict[int, str]] = dict()
+    diff_removed_content: Dict[str, Dict[int, str]] = dict()
+    diff: PatchedFile
+    for diff in diffs:
+        if not diff.path in files_of_interest:
+            continue
+        finfo = SubjectFileInfo(diff.path)
+        finfo.git_is_added = diff.is_added_file
+        finfo.git_is_deleted = diff.is_removed_file
+        finfo.git_is_modified = diff.is_modified_file
+        finfo.git_is_renamed = diff.is_rename
 
-        diff_data = unidiff.PatchSet.from_string(raw_diff, encoding=preferred_encoding)
+        file_database[diff.path] = finfo
 
-        print(diff_data)
+        to_add = {}
+        to_remove = {}
+        for hunk in diff:
+            line: Line
+            for index, line in enumerate(hunk):
+                if line.is_added:
+                    to_add[index] = line.value
+                elif line.is_removed:
+                    to_remove[index] = line.value
+
+        diff_added_content[diff.path] = to_add
+        diff_removed_content[diff.path] = to_remove
+
+    print(diff_added_content)
 
     exit(0)
 
     # Get files
     files_to_test = collect_candidate_files('./', 'dm')
+    for file in files_to_test:
+        if file in file_database:
+            continue
+        file_database[file] = SubjectFileInfo(file)
 
-    output_write(f" - Found {len(files_to_test)} '*.dm' files")
+    output_write(f" - Found {len(files_to_test)} '*.dm' files in local state")
 
     results = list()
     expressions = list()
