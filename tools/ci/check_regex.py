@@ -216,52 +216,59 @@ def collect_candidate_files(directory, extensions):
 
 # A constant for the function below, so it won't be compiled
 # every time the function is called
-line_comment_regex_expression = regex.compile(r'^\s*\/\/')
+class RegexStandardAnalyzer:
+    def __init__(self) -> None:
+        self.results = dict()
 
-def test_content_lines(results, expressions, lines, ignore_comments=False):
-    def is_a_line_comment(line):
-        return line_comment_regex_expression.match(line)
+        self.line_comment_regex_expression = regex.compile(r'^\s*\/\/')
 
-    matched = [None] * len(expressions)
-    for i in range(0, len(expressions)):
-        matched[i] = []
+    def ___is_a_line_comment(self, line):
+        return self.line_comment_regex_expression.match(line)
 
-    is_comment_block = False
+    def ___test_content_lines(self, results, expressions, key, lines, ignore_comments=False):
+        matched = [None] * len(expressions)
+        for i in range(0, len(expressions)):
+            matched[i] = []
 
-    enumeration = list()
-    if type(lines) is dict:
-        enumeration = list(lines.items())
-    else:
-        enumeration = enumerate(lines)
+        is_comment_block = False
 
-    for (index, line) in enumeration:
-        if ignore_comments:
-            if str.find(line, '/*') >= 0:
-                is_comment_block = True
-            if str.find(line, '*/') >= 0:
-                is_comment_block = False
-            if is_comment_block or is_a_line_comment(line):
-                continue
+        enumeration = list()
+        if type(lines) is dict:
+            enumeration = list(lines.items())
+        else:
+            enumeration = enumerate(lines)
 
-        for it in range(0, len(expressions)):
-            expression = expressions[it]
-            matches = regex.findall(expression, line)
-            if len(matches) > 0:
-                matched[it].append(index)
-                key = file
-                count = len(matches)
-                if key not in results[it]:
-                    results[it][key] = count
-                else:
-                    results[it][key] += count
-                results[it]["SUM"] += count
-    return matched
+        for (index, line) in enumeration:
+            if ignore_comments:
+                if str.find(line, '/*') >= 0:
+                    is_comment_block = True
+                if str.find(line, '*/') >= 0:
+                    is_comment_block = False
+                if is_comment_block or self.___is_a_line_comment(line):
+                    continue
 
-def test_file(results, expressions, file, ignore_comments=False):
-    contents = []
-    with open(file, 'rt', encoding=preferred_encoding) as f:
-        contents = f.readlines()
-    return test_content_lines(results, expressions, contents, ignore_comments)
+            for it in range(0, len(expressions)):
+                expression = expressions[it]
+                matches = regex.findall(expression, line)
+                if len(matches) > 0:
+                    matched[it].append(index)
+                    key = file
+                    count = len(matches)
+                    if key not in results[it]:
+                        results[it][key] = count
+                    else:
+                        results[it][key] += count
+                    results[it]["SUM"] += count
+        return matched
+
+    def ___test_file(self, results, expressions, file, ignore_comments=False):
+        contents = []
+        with open(file, 'rt', encoding=preferred_encoding) as f:
+            contents = f.readlines()
+        return self.___test_content_lines(results, expressions, file, contents, ignore_comments)
+
+    def analyze_files(self):
+        pass
 
 #
 # Logging & Output formatting
@@ -385,7 +392,7 @@ if __name__ == "__main__":
         diff_added_content[diff.path] = to_add
         diff_removed_content[diff.path] = to_remove
 
-    print(diff_added_content)
+    results_added
 
     exit(0)
 
