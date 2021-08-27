@@ -73,8 +73,9 @@
 	var/selection = show_radial_menu(user, parent, attachments_as_list)
 	var/obj/item/attach = attachments_as_list[selection]
 	if(!attach)
-		CRASH("Invalid attachment reference")
+		return
 	SEND_SIGNAL(attach, COMSIG_ATTACHMENT_TOGGLE, parent, user)
+	parent.update_icon()
 
 /datum/component/attachment_holder/proc/handle_examine(obj/item/parent, mob/user, list/examine_list)
 	examine_list += "<span class='notice'>It has [max_attachments] attachment-slot\s.</span>"
@@ -141,6 +142,7 @@
 
 	for(var/obj/item/attach as anything in attachments)
 		if(SEND_SIGNAL(attach, COMSIG_ATTACHMENT_ATTACK, parent, item, user))
+			parent.update_icon()
 			return TRUE
 
 /datum/component/attachment_holder/proc/handle_item_pre_attack(obj/item/parent, atom/target_atom, mob/user, params)
@@ -149,4 +151,5 @@
 	for(var/obj/item/attach as anything in attachments)
 		if(SEND_SIGNAL(attach, COMSIG_ATTACHMENT_PRE_ATTACK, parent, target_atom, user, params))
 			user.do_attack_animation(target_atom)
+			parent.update_icon()
 			return TRUE
