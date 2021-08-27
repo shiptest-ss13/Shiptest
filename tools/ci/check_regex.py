@@ -212,22 +212,18 @@ def collect_candidate_files(directory, extensions):
                 candidates[len(candidates) + 1] = full_path
     return candidates
 
-# Analysis functions
-
-# A constant for the function below, so it won't be compiled
-# every time the function is called
+# Analyzer class
 class RegexStandardAnalyzer:
     def __init__(self) -> None:
-        self.results = dict()
-
+        self.ignore_comments = False
         self.line_comment_regex_expression = regex.compile(r'^\s*\/\/')
 
     def ___is_a_line_comment(self, line):
         return self.line_comment_regex_expression.match(line)
 
-    def ___test_content_lines(self, results, expressions, key, lines, ignore_comments=False):
-        matched = [None] * len(expressions)
-        for i in range(0, len(expressions)):
+    def ___test_content_lines(self, results, key, lines):
+        matched = [None] * len(self.expressions)
+        for i in range(0, len(self.expressions)):
             matched[i] = []
 
         is_comment_block = False
@@ -239,7 +235,7 @@ class RegexStandardAnalyzer:
             enumeration = enumerate(lines)
 
         for (index, line) in enumeration:
-            if ignore_comments:
+            if self.ignore_comments:
                 if str.find(line, '/*') >= 0:
                     is_comment_block = True
                 if str.find(line, '*/') >= 0:
@@ -247,8 +243,8 @@ class RegexStandardAnalyzer:
                 if is_comment_block or self.___is_a_line_comment(line):
                     continue
 
-            for it in range(0, len(expressions)):
-                expression = expressions[it]
+            for it in range(0, len(self.expressions)):
+                expression = self.expressions[it]
                 matches = regex.findall(expression, line)
                 if len(matches) > 0:
                     matched[it].append(index)
@@ -261,14 +257,59 @@ class RegexStandardAnalyzer:
                     results[it]["SUM"] += count
         return matched
 
-    def ___test_file(self, results, expressions, file, ignore_comments=False):
+    def ___test_file(self, results, file):
         contents = []
         with open(file, 'rt', encoding=preferred_encoding) as f:
             contents = f.readlines()
-        return self.___test_content_lines(results, expressions, file, contents, ignore_comments)
+        return self.___test_content_lines(results, expressions, file, contents)
 
-    def analyze_files(self):
-        pass
+    def ___create_data_sets(self) -> Tuple[Dict, Dict]:
+        results = list()
+        matched_lines_by_expression = list()
+        for ii in range(0, len(self.expressions)):
+            results.append({
+                "SUM": 0
+            })
+            matched_lines_by_expression.append(dict())
+        return (results, matched_lines_by_expression)
+
+    def set_expressions(self, expressions: List[TestExpression]):
+        self.expressions = [None] * len(expressions)
+        for ii in range(0, len(expressions)):
+            s = expressions[ii]
+            self.expressions[ii] = s.pattern
+
+    def analyze_files(
+        self,
+        files_to_test
+    ) -> Tuple[Dict, Dict]:
+        (r, mlbe) = self.___create_data_sets()
+
+        for key in files_to_test:
+            file = files_to_test[key]
+            matched = self.___test_file(r, file)
+            for ii in range(0, len(self.expressions)):
+                matched_lines = matched[ii]
+                if len(matched_lines) > 0:
+                    mlbe[ii][file] = matched_lines
+
+        return (r, mlbe)
+
+    def analyze_file_contents(
+        self,
+        file_contents: Dict[str, Dict[int, str]]
+    ) -> Tuple[Dict, Dict]:
+        (r, mlbe) = self.___create_data_sets()
+
+        for key in file_contents:
+            contents = file_contents[key]
+            matched = self.___test_content_lines(r, key, contents)
+            for ii in range(0, len(self.expressions)):
+                matched_lines = matched[ii]
+                if len(matched_lines) > 0:
+                    mlbe[ii][key] = matched_lines
+
+        return (r, mlbe)
 
 #
 # Logging & Output formatting
@@ -321,6 +362,8 @@ if __name__ == "__main__":
     raw_config = load_yaml_config(config_file_default_name)
     (standards) = parse_yaml_config(raw_config)
 
+    N = len(standards)
+
     output_write("- Succesfully loaded config: %s" % (
         try_normalize_path(config_file_default_name)
     ))
@@ -329,7 +372,7 @@ if __name__ == "__main__":
     ))
 
     output_write(create_title(
-        "Processing", '-'
+        "Collection", '-'
     ))
 
     start_time = time.time()
@@ -340,8 +383,8 @@ if __name__ == "__main__":
     assert repo.remotes.origin.exists()
     assert len(repo.remotes.origin.url)
 
-    g = git.cmd.Git("./")
-    origin_info = g.execute("git remote show origin")
+    g = git.cmd.Git(repo)
+    origin_info = g.execute(["git", "remote", "show", "origin"])
     head_pattern = regex.compile(r'[ ]*HEAD branch: ([\w\S]+)')
     head_branch = head_pattern.findall(origin_info)[0]
     active_branch = None
@@ -349,28 +392,31 @@ if __name__ == "__main__":
     output_write(" - Found git remote default: %s" % (head_branch))
     output_write(" - Found git local active:   %s" % (active_branch))
     # Get what files have been changed, instead of getting all diffs at once
-    changed_files = g.diff(
+    files_with_diffs = g.diff(
         git_diff_range_branches(head_branch, active_branch),
         "--name-only"
         ).split("\n")
 
     files_of_interest = list(filter(
         lambda item: item.endswith(".dm"),
-        changed_files
+        files_with_diffs
     ))
 
     raw_diff = g.diff(git_diff_range_branches(head_branch, active_branch))
     diffs = unidiff.PatchSet.from_string(raw_diff)
 
-    output_write(" - %d *.dm files with diffs found" % (len(changed_files)))
+    output_write(" - %d *.dm files with diffs found" % (len(files_of_interest)))
 
     file_database = dict()
+    changed_files = list()
     diff_added_content:   Dict[str, Dict[int, str]] = dict()
     diff_removed_content: Dict[str, Dict[int, str]] = dict()
     diff: PatchedFile
     for diff in diffs:
         if not diff.path in files_of_interest:
             continue
+        changed_files.append(diff.path)
+
         finfo = SubjectFileInfo(diff.path)
         finfo.git_is_added = diff.is_added_file
         finfo.git_is_deleted = diff.is_removed_file
@@ -392,10 +438,6 @@ if __name__ == "__main__":
         diff_added_content[diff.path] = to_add
         diff_removed_content[diff.path] = to_remove
 
-    results_added
-
-    exit(0)
-
     # Get files
     files_to_test = collect_candidate_files('./', 'dm')
     for file in files_to_test:
@@ -405,24 +447,37 @@ if __name__ == "__main__":
 
     output_write(f" - Found {len(files_to_test)} '*.dm' files in local state")
 
-    results = list()
-    expressions = list()
-    matched_lines_by_expression = list()
-    for ii in range(0, len(standards)):
-        s = standards[ii]
-        results.append({
-            "SUM": 0
-        })
-        expressions.append(s.pattern)
-        matched_lines_by_expression.append(dict())
+    output_write(create_title(
+        "Analysizing", '-'
+    ))
 
-    for it in files_to_test:
-        file = files_to_test[it]
-        matched = test_file(results, expressions, file)
-        for j in range(0, len(expressions)):
-            matched_lines = matched[j]
-            if len(matched_lines) > 0:
-                matched_lines_by_expression[j][file] = matched_lines
+    analyser = RegexStandardAnalyzer()
+    analyser.set_expressions(standards)
+
+    # Hate this? Don't worry. I hate it too.
+    #(results,       matched_lines_by_expression)    = analyser.analyze_files(files_to_test)
+    (sum_added,     added_matches)                  = analyser.analyze_file_contents(diff_added_content)
+    (sum_removed,   removed_matches)                = analyser.analyze_file_contents(diff_removed_content)
+
+    # Process the results
+
+    print(sum_added)
+    print(sum_removed)
+
+    sum_deltas = [None] * N
+    for ii in range(0, N):
+        if sum_added[ii]['SUM'] or sum_removed[ii]['SUM']:
+            if sum_deltas[ii] is None:
+                sum_deltas[ii] = dict()
+            keys = set(sum_added[ii].keys()) + set(sum_removed[ii].keys())
+            for key in list(keys):
+                added = sum_added[ii][key] if key in sum_added[ii] else 0
+                removed = sum_removed[ii][key] if key in sum_removed[ii] else 0
+                sum_deltas[ii][key] = added + removed
+
+    print(sum_deltas)
+
+    exit(0)
 
     # This is the end, go process the data then show the results!
     output_write(create_title("Regex Results"))
