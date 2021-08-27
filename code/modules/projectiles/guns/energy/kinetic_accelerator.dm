@@ -22,6 +22,20 @@
 
 	var/recharge_timerid
 
+	valid_attachments = list(
+		/obj/item/attachment/bayonet
+	)
+	attachment_max = 1
+	slot_available = list(
+		ATTACHMENT_SLOT_RAIL = 1
+	)
+	slot_offsets = list(
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 24,
+			"y" = 13,
+		)
+	)
+
 /obj/item/gun/energy/kinetic_accelerator/examine(mob/user)
 	. = ..()
 	if(max_mod_capacity)
