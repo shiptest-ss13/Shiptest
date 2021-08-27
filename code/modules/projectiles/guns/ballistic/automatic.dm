@@ -85,12 +85,23 @@
 	icon_state = "wt550"
 	item_state = "arg"
 	mag_type = /obj/item/ammo_box/magazine/wt550m9
-	can_suppress = FALSE
 	actions_types = list()
 	mag_display = TRUE
 	mag_display_ammo = TRUE
 	empty_indicator = TRUE
 	fire_rate = 4 //zedaedit: autorifle but awesome
+	attachment_max = 2
+	slot_available = list(ATTACHMENT_SLOT_RAIL = 1, ATTACHMENT_SLOT_MUZZLE = 1)
+	slot_offsets = list(
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 18,
+			"y" = 15,
+		),
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 31,
+			"y" = 19,
+		)
+	)
 
 /obj/item/gun/ballistic/automatic/mini_uzi
 	name = "\improper Type U3 Uzi"

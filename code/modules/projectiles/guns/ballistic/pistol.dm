@@ -29,8 +29,8 @@
 
 /obj/item/gun/ballistic/automatic/pistol/suppressed/Initialize(mapload)
 	. = ..()
-	var/obj/item/suppressor/S = new(src)
-	install_suppressor(S)
+	var/obj/item/attachment/silencer/silencer = new(src)
+	attachment_holder.do_attach(silencer, null)
 
 /obj/item/gun/ballistic/automatic/pistol/m1911
 	name = "\improper M1911"
