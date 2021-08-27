@@ -30,20 +30,25 @@ THE SOFTWARE.
 '''
 
 # Standard Python
-from io import FileIO
-import os
-import re as regex
-import time
+from io import FileIO       # For strong typing
+import os                   # For file and directory operations
+import re as regex          # For regex
+import time                 # For very basic performance profiling
+# Also for strong typing
 from typing import Dict, List, Tuple
 
 # Third party
-import yaml
-import colorama
+import git                  # For fetching git data & diffs
+import unidiff              # For parsing of unified diff data
+import yaml                 # For configuration
+import colorama             # For logging styling
 from colorama import Fore, Back, Style
 
 # Defaults
 config_file_default_name = "check_regex.yaml"
 annotation_file_output_name = "check_regex_output.txt"
+
+preferred_encoding = "utf-8"
 
 # Data struct for holding info about standardization rules
 class TestExpression:
@@ -201,7 +206,7 @@ def collect_candidate_files(directory, extensions):
 # every time the function is called
 line_comment_regex_expression = regex.compile(r'^\s*\/\/')
 
-def test_file(results, expressions, file, ignore_comments=False):
+def test_content_lines(results, expressions, lines, ignore_comments=False):
     def is_a_line_comment(line):
         return line_comment_regex_expression.match(line)
 
@@ -211,7 +216,7 @@ def test_file(results, expressions, file, ignore_comments=False):
 
     line_number = 0
     is_comment_block = False
-    for line in open(file, 'r', encoding='latin-1'):
+    for line in lines:
         line_number += 1
         if ignore_comments:
             if str.find(line, '/*') >= 0:
@@ -234,6 +239,12 @@ def test_file(results, expressions, file, ignore_comments=False):
                     results[it][key] += count
                 results[it]["SUM"] += count
     return matched
+
+def test_file(results, expressions, file, ignore_comments=False):
+    contents = []
+    with open(file, 'rt', encoding=preferred_encoding) as f:
+        contents = f.readlines()
+    return test_content_lines(results, expressions, contents, ignore_comments)
 
 #
 # Logging & Output formatting
@@ -267,7 +278,12 @@ def try_normalize_path(filepath):
 if __name__ == "__main__":
     colorama.init()
 
-    output_file = open(annotation_file_output_name, mode='wt', encoding="utf-8")
+
+    output_file = open(
+        annotation_file_output_name,
+        mode='wt',
+        encoding=preferred_encoding
+    )
 
     output_write(create_title("Configuration"))
     output_write("- Trying to load config: %s" % (
@@ -284,12 +300,55 @@ if __name__ == "__main__":
         len(standards)
     ))
 
+    output_write(create_title(
+        "Processing", '-'
+    ))
+
     start_time = time.time()
+
+    # Get diffs
+    repo = git.Repo("./")
+    assert not repo.bare
+    assert repo.remotes.origin.exists()
+    assert len(repo.remotes.origin.url)
+
+    g = git.cmd.Git("./")
+    origin_info = g.execute("git remote show origin")
+    head_pattern = regex.compile(r'[ ]*HEAD branch: ([\w\S]+)')
+    head_branch = head_pattern.findall(origin_info)[0]
+    active_branch = repo.active_branch
+
+    output_write(" - Found git remote default: %s" % (head_branch))
+    output_write(" - Found git local active:   %s" % (active_branch))
+    # Get what files have been changed, instead of getting all diffs at once
+    changed_files = g.diff(
+        "%s...%s" % (head_branch, active_branch),
+        "--name-only"
+        ).split("\n")
+
+    changed_files = list(filter(
+        lambda item: item.endswith(".dm"),
+        changed_files
+    ))
+
+    output_write(" - %d *.dm files with diffs found" % (len(changed_files)))
+
+    for changed in changed_files:
+        raw_diff = g.diff(
+            "%s...%s" % (head_branch, active_branch),
+            changed
+            )
+
+        diff_data = unidiff.PatchSet.from_string(raw_diff, encoding=preferred_encoding)
+
+        print(diff_data)
+
+    exit(0)
+
+    # Get files
     files_to_test = collect_candidate_files('./', 'dm')
 
-    output_write(create_title(
-        f"Processing {len(files_to_test)} files", '-'
-    ))
+    output_write(f" - Found {len(files_to_test)} '*.dm' files")
 
     results = list()
     expressions = list()
