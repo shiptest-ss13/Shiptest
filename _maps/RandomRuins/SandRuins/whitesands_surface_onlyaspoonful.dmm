@@ -9,10 +9,6 @@
 /obj/effect/decal/cleanable/blood/splatter,
 /turf/open/floor/plastic,
 /area/ruin/powered)
-"aV" = (
-/obj/structure/sign/poster/official/safety_internals,
-/turf/closed/wall/r_wall/rust,
-/area/ruin/powered)
 "aW" = (
 /obj/item/stack/medical/bruise_pack,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -20,7 +16,7 @@
 /area/ruin/powered)
 "bd" = (
 /turf/open/floor/plating/asteroid/whitesands,
-/area/whitesands/surface/outdoors/unexplored)
+/area/whitesands/surface/outdoors/explored)
 "bf" = (
 /obj/structure/chair/office{
 	dir = 1
@@ -69,9 +65,7 @@
 /area/ruin/powered)
 "ew" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/mob/living/simple_animal/hostile/whitesands/survivor{
-	faction = list("spoon")
-	},
+/mob/living/simple_animal/hostile/whitesands/survivor,
 /turf/open/floor/plastic,
 /area/ruin/powered)
 "eH" = (
@@ -134,20 +128,14 @@
 /area/ruin/powered)
 "gK" = (
 /obj/structure/closet/crate/secure,
-/obj/item/kitchen/spoon/plastic{
-	pixel_x = -6
-	},
 /obj/item/kitchen/spoon/plastic,
 /obj/item/kitchen/spoon/plastic,
 /obj/item/kitchen/spoon/plastic,
-/obj/item/kitchen/spoon/plastic{
-	pixel_x = 8
-	},
 /obj/item/kitchen/spoon/plastic,
 /obj/item/kitchen/spoon/plastic,
-/obj/item/kitchen/spoon/plastic{
-	pixel_x = 15
-	},
+/obj/item/kitchen/spoon/plastic,
+/obj/item/kitchen/spoon/plastic,
+/obj/item/kitchen/spoon/plastic,
 /obj/item/kitchen/spoon/plastic,
 /obj/item/kitchen/spoon/plastic,
 /obj/item/kitchen/spoon/plastic,
@@ -156,39 +144,20 @@
 	},
 /turf/open/floor/plastic,
 /area/ruin/powered)
-"hh" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/item/organ/brain,
-/turf/open/floor/plastic,
-/area/ruin/powered)
 "hs" = (
 /obj/structure/closet/crate/secure,
-/obj/item/kitchen/spoon/plastic{
-	pixel_x = -5
-	},
-/obj/item/kitchen/spoon/plastic{
-	pixel_x = 1
-	},
-/obj/item/kitchen/spoon/plastic{
-	pixel_x = 7
-	},
-/obj/item/kitchen/spoon/plastic{
-	pixel_x = 3
-	},
-/obj/item/kitchen/spoon/plastic{
-	pixel_x = 10
-	},
-/obj/item/kitchen/spoon/plastic{
-	pixel_x = 15
-	},
+/obj/item/kitchen/spoon/plastic,
+/obj/item/kitchen/spoon/plastic,
+/obj/item/kitchen/spoon/plastic,
+/obj/item/kitchen/spoon/plastic,
+/obj/item/kitchen/spoon/plastic,
+/obj/item/kitchen/spoon/plastic,
 /obj/item/kitchen/spoon/plastic,
 /obj/item/kitchen/spoon/plastic,
 /turf/open/floor/plastic,
 /area/ruin/powered)
 "hw" = (
-/mob/living/simple_animal/hostile/whitesands/ranged/hunter{
-	faction = list("spoon")
-	},
+/mob/living/simple_animal/hostile/whitesands/ranged/hunter,
 /turf/open/floor/plastic,
 /area/ruin/powered)
 "hA" = (
@@ -229,22 +198,16 @@
 /obj/item/kitchen/spoon/plastic,
 /obj/item/kitchen/spoon/plastic,
 /obj/item/kitchen/spoon/plastic,
-/obj/item/kitchen/spoon/plastic{
-	pixel_x = 14
-	},
-/obj/item/kitchen/spoon/plastic,
-/obj/item/kitchen/spoon/plastic{
-	pixel_x = 8
-	},
 /obj/item/kitchen/spoon/plastic,
 /obj/item/kitchen/spoon/plastic,
 /obj/item/kitchen/spoon/plastic,
 /obj/item/kitchen/spoon/plastic,
 /obj/item/kitchen/spoon/plastic,
 /obj/item/kitchen/spoon/plastic,
-/obj/item/kitchen/spoon/plastic{
-	pixel_x = 4
-	},
+/obj/item/kitchen/spoon/plastic,
+/obj/item/kitchen/spoon/plastic,
+/obj/item/kitchen/spoon/plastic,
+/obj/item/kitchen/spoon/plastic,
 /turf/open/floor/plastic,
 /area/ruin/powered)
 "km" = (
@@ -253,65 +216,36 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plastic,
 /area/ruin/powered)
-"nG" = (
-/obj/structure/sign/poster/official/safety_report,
-/turf/closed/wall/r_wall/rust,
-/area/ruin/powered)
 "os" = (
 /obj/structure/closet/crate/secure,
-/obj/item/kitchen/spoon/plastic{
-	pixel_x = 12
-	},
-/obj/item/kitchen/spoon/plastic,
-/obj/item/kitchen/spoon/plastic,
-/obj/item/kitchen/spoon/plastic{
-	pixel_x = 9
-	},
-/obj/item/kitchen/spoon/plastic{
-	pixel_x = 15
-	},
 /obj/item/kitchen/spoon/plastic,
 /obj/item/kitchen/spoon/plastic,
 /obj/item/kitchen/spoon/plastic,
-/obj/item/kitchen/spoon/plastic{
-	pixel_x = -3
-	},
+/obj/item/kitchen/spoon/plastic,
+/obj/item/kitchen/spoon/plastic,
+/obj/item/kitchen/spoon/plastic,
+/obj/item/kitchen/spoon/plastic,
+/obj/item/kitchen/spoon/plastic,
+/obj/item/kitchen/spoon/plastic,
 /turf/open/floor/plastic,
 /area/ruin/powered)
 "oN" = (
 /obj/structure/closet/crate/secure,
-/obj/item/kitchen/spoon/plastic{
-	pixel_x = 16
-	},
 /obj/item/kitchen/spoon/plastic,
-/obj/item/kitchen/spoon/plastic{
-	pixel_x = 8
-	},
+/obj/item/kitchen/spoon/plastic,
+/obj/item/kitchen/spoon/plastic,
 /obj/item/kitchen/spoon/plastic,
 /obj/item/kitchen/spoon/plastic,
 /obj/item/kitchen/spoon/plastic,
 /obj/item/kitchen/spoon/plastic,
 /turf/open/floor/plastic,
 /area/ruin/powered)
-"oO" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/decal/cleanable/blood{
-	icon_state = "floor3"
-	},
-/turf/open/floor/material,
-/area/ruin/powered)
 "pl" = (
 /obj/structure/closet/crate/secure,
-/obj/item/kitchen/spoon/plastic{
-	pixel_x = 3
-	},
 /obj/item/kitchen/spoon/plastic,
-/obj/item/kitchen/spoon/plastic{
-	pixel_x = 7
-	},
-/obj/item/kitchen/spoon/plastic{
-	pixel_x = 13
-	},
+/obj/item/kitchen/spoon/plastic,
+/obj/item/kitchen/spoon/plastic,
+/obj/item/kitchen/spoon/plastic,
 /obj/item/kitchen/spoon/plastic,
 /obj/item/kitchen/spoon/plastic,
 /turf/open/floor/plastic,
@@ -325,19 +259,7 @@
 /obj/machinery/icecream_vat,
 /obj/item/shovel/spoon,
 /turf/open/floor/plating/asteroid/whitesands/dried,
-/area/whitesands/surface/outdoors/unexplored)
-"qd" = (
-/obj/structure/closet/crate/secure,
-/obj/item/kitchen/spoon/plastic,
-/obj/item/kitchen/spoon/plastic{
-	pixel_x = 12
-	},
-/obj/item/kitchen/spoon/plastic{
-	pixel_x = 5
-	},
-/obj/item/kitchen/spoon/plastic,
-/turf/open/floor/plastic,
-/area/ruin/powered)
+/area/whitesands/surface/outdoors/explored)
 "sl" = (
 /obj/item/kitchen/spoon/plastic{
 	pixel_x = 11
@@ -366,7 +288,7 @@
 /area/ruin/powered)
 "uE" = (
 /turf/open/floor/plating/asteroid/whitesands/dried,
-/area/whitesands/surface/outdoors/unexplored)
+/area/whitesands/surface/outdoors/explored)
 "vO" = (
 /obj/item/ammo_casing/spent{
 	dir = 9;
@@ -398,9 +320,7 @@
 	pixel_y = 9
 	},
 /obj/effect/decal/cleanable/blood/tracks,
-/mob/living/simple_animal/hostile/whitesands/ranged/gunslinger{
-	faction = list("spoon")
-	},
+/mob/living/simple_animal/hostile/whitesands/ranged/gunslinger,
 /turf/open/floor/plastic,
 /area/ruin/powered)
 "wr" = (
@@ -420,10 +340,6 @@
 	dir = 1
 	},
 /turf/open/floor/plastic,
-/area/ruin/powered)
-"yT" = (
-/obj/structure/sign/poster/official/do_not_question,
-/turf/closed/wall/r_wall,
 /area/ruin/powered)
 "zb" = (
 /obj/item/ammo_casing/spent{
@@ -463,20 +379,6 @@
 /obj/item/kitchen/spoon/plastic,
 /obj/item/kitchen/spoon/plastic,
 /obj/item/kitchen/spoon/plastic,
-/turf/open/floor/plastic,
-/area/ruin/powered)
-"Bo" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/decal/cleanable/blood/gibs,
-/obj/item/melee/cultblade/dagger{
-	attack_verb = list("attacked","pricked","stabbed","forked","shanked","pierced","stuck","jabbed","poked");
-	desc = "It radiates a dark aura. You feel deeply ill just looking at this thing.";
-	icon = 'icons/obj/kitchen.dmi';
-	icon_state = "plastic_fork";
-	lefthand_file = 'icons/mob/inhands/equipment/kitchen_lefthand.dmi';
-	name = "plastic fork";
-	righthand_file = 'icons/mob/inhands/equipment/kitchen_righthand.dmi'
-	},
 /turf/open/floor/plastic,
 /area/ruin/powered)
 "BR" = (
@@ -530,13 +432,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plastic,
 /area/ruin/powered)
-"Dt" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/item/paper/crumpled/bloody{
-	info = "weve gone too far. weve crossed a line and now we will all pay."
-	},
-/turf/open/floor/plastic,
-/area/ruin/powered)
 "DM" = (
 /obj/structure/chair/office{
 	dir = 4
@@ -550,11 +445,9 @@
 /turf/open/floor/material,
 /area/ruin/powered)
 "EC" = (
-/mob/living/simple_animal/hostile/whitesands/ranged/hunter{
-	faction = list("spoon")
-	},
+/mob/living/simple_animal/hostile/whitesands/ranged/hunter,
 /turf/open/floor/plating/asteroid/whitesands,
-/area/whitesands/surface/outdoors/unexplored)
+/area/whitesands/surface/outdoors/explored)
 "Fi" = (
 /obj/machinery/autolathe,
 /obj/machinery/camera{
@@ -585,15 +478,9 @@
 /area/ruin/powered)
 "HS" = (
 /obj/structure/closet/crate/secure,
-/obj/item/kitchen/spoon/plastic{
-	pixel_x = -5
-	},
-/obj/item/kitchen/spoon/plastic{
-	pixel_x = 13
-	},
-/obj/item/kitchen/spoon/plastic{
-	pixel_x = 7
-	},
+/obj/item/kitchen/spoon/plastic,
+/obj/item/kitchen/spoon/plastic,
+/obj/item/kitchen/spoon/plastic,
 /obj/item/kitchen/spoon/plastic,
 /turf/open/floor/plastic,
 /area/ruin/powered)
@@ -654,11 +541,7 @@
 /area/ruin/powered)
 "Lz" = (
 /turf/closed/mineral/random/whitesands,
-/area/whitesands/surface/outdoors/unexplored)
-"LM" = (
-/obj/structure/sign/poster/retro/we_watch,
-/turf/closed/wall/r_wall/rust,
-/area/ruin/powered)
+/area/whitesands/surface/outdoors/explored)
 "Me" = (
 /obj/item/ammo_casing/spent{
 	dir = 8;
@@ -696,9 +579,7 @@
 /area/ruin/powered)
 "NU" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/mob/living/simple_animal/hostile/whitesands/survivor{
-	faction = list("spoon")
-	},
+/mob/living/simple_animal/hostile/whitesands/survivor,
 /turf/open/floor/material,
 /area/ruin/powered)
 "Oo" = (
@@ -720,22 +601,11 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plastic,
 /area/ruin/powered)
-"OU" = (
-/obj/structure/sign/poster/retro/build,
-/obj/structure/sign/poster/official/build,
-/turf/closed/wall/r_wall,
-/area/ruin/powered)
 "Pi" = (
 /obj/effect/decal/cleanable/blood/splatter{
 	icon_state = "gibbl5"
 	},
 /obj/item/ammo_box/magazine/wt550m9,
-/turf/open/floor/plastic,
-/area/ruin/powered)
-"Px" = (
-/mob/living/simple_animal/hostile/whitesands/survivor{
-	faction = list("spoon")
-	},
 /turf/open/floor/plastic,
 /area/ruin/powered)
 "PO" = (
@@ -759,26 +629,8 @@
 "Qp" = (
 /obj/structure/closet/crate/secure,
 /obj/item/kitchen/spoon/plastic,
-/obj/item/kitchen/spoon/plastic{
-	pixel_x = 10
-	},
+/obj/item/kitchen/spoon/plastic,
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plastic,
-/area/ruin/powered)
-"Qv" = (
-/obj/structure/closet/crate/secure,
-/obj/item/kitchen/spoon/plastic,
-/obj/item/kitchen/spoon/plastic,
-/obj/item/kitchen/spoon/plastic{
-	pixel_x = 12
-	},
-/obj/item/kitchen/spoon/plastic{
-	pixel_x = -3
-	},
-/obj/item/kitchen/spoon/plastic,
-/obj/item/kitchen/spoon/plastic,
-/obj/item/kitchen/spoon/plastic,
-/obj/item/kitchen/spoon/plastic,
 /turf/open/floor/plastic,
 /area/ruin/powered)
 "Ro" = (
@@ -824,7 +676,7 @@
 /area/ruin/powered)
 "Sw" = (
 /obj/effect/decal/remains/human,
-/obj/item/clothing/head/hardhat,
+/obj/item/clothing/head/hardhat/weldhat/orange,
 /turf/open/floor/plastic,
 /area/ruin/powered)
 "ST" = (
@@ -863,10 +715,6 @@
 "VR" = (
 /turf/open/floor/plastic,
 /area/ruin/powered)
-"Wi" = (
-/obj/structure/sign/poster/official/safety_eye_protection,
-/turf/closed/wall/r_wall,
-/area/ruin/powered)
 "WA" = (
 /obj/machinery/camera{
 	dir = 1
@@ -880,10 +728,6 @@
 	dir = 1
 	},
 /turf/open/floor/plastic,
-/area/ruin/powered)
-"YT" = (
-/obj/structure/sign/poster/official/work_for_a_future,
-/turf/closed/wall/r_wall/rust,
 /area/ruin/powered)
 "Ze" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -962,16 +806,16 @@ ct
 ct
 dl
 MG
-OU
-dl
-MG
-MG
-dl
 dl
 dl
 MG
+MG
 dl
-LM
+dl
+dl
+MG
+dl
+MG
 NU
 TA
 NP
@@ -1002,7 +846,7 @@ bd
 ct
 MG
 wr
-Bo
+Ze
 Ze
 MG
 eH
@@ -1011,9 +855,9 @@ Zr
 dk
 sv
 WA
-nG
+MG
 RN
-oO
+PO
 PO
 IH
 bd
@@ -1022,11 +866,11 @@ bd
 ct
 dl
 ys
-Dt
+Ze
 HA
 ud
 Pi
-Qv
+hs
 Tt
 Me
 Ze
@@ -1049,7 +893,7 @@ Hl
 Ze
 Ze
 hs
-qd
+HS
 VR
 Ze
 Jt
@@ -1064,13 +908,13 @@ TD
 eZ
 gy
 km
-YT
+MG
 sl
 Cq
 os
 vV
 Ze
-hh
+Ze
 ka
 Ze
 dl
@@ -1081,8 +925,8 @@ ct
 (10,1,1) = {"
 ct
 dl
-aV
-Wi
+MG
+dl
 MG
 MG
 gK
@@ -1110,7 +954,7 @@ aU
 RG
 Ze
 vO
-Px
+VR
 VR
 hA
 ia
@@ -1208,7 +1052,7 @@ MG
 MG
 dl
 MG
-yT
+dl
 MG
 MG
 dl
