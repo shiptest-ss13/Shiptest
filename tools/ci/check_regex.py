@@ -248,7 +248,6 @@ class RegexStandardAnalyzer:
                 matches = regex.findall(expression, line)
                 if len(matches) > 0:
                     matched[it].append(index)
-                    key = file
                     count = len(matches)
                     if key not in results[it]:
                         results[it][key] = count
@@ -261,7 +260,7 @@ class RegexStandardAnalyzer:
         contents = []
         with open(file, 'rt', encoding=preferred_encoding) as f:
             contents = f.readlines()
-        return self.___test_content_lines(results, expressions, file, contents)
+        return self.___test_content_lines(results, file, contents)
 
     def ___create_data_sets(self) -> Tuple[Dict, Dict]:
         results = list()
@@ -387,13 +386,16 @@ if __name__ == "__main__":
     origin_info = g.execute(["git", "remote", "show", "origin"])
     head_pattern = regex.compile(r'[ ]*HEAD branch: ([\w\S]+)')
     head_branch = head_pattern.findall(origin_info)[0]
-    active_branch = None
+    other_branch = None
 
-    output_write(" - Found git remote default: %s" % (head_branch))
-    output_write(" - Found git local active:   %s" % (active_branch))
+    output_write(" - Diff branch #1: origin/%s" % (head_branch))
+    if other_branch is not None:
+        output_write(" - Diff branch #2: %s" % (other_branch))
+    else:
+        output_write(" - Diff branch #2: HEAD @ %s" % repo.active_branch)
     # Get what files have been changed, instead of getting all diffs at once
     files_with_diffs = g.diff(
-        git_diff_range_branches(head_branch, active_branch),
+        git_diff_range_branches(head_branch, other_branch),
         "--name-only"
         ).split("\n")
 
@@ -402,10 +404,10 @@ if __name__ == "__main__":
         files_with_diffs
     ))
 
-    raw_diff = g.diff(git_diff_range_branches(head_branch, active_branch))
+    raw_diff = g.diff(git_diff_range_branches(head_branch, other_branch))
     diffs = unidiff.PatchSet.from_string(raw_diff)
 
-    output_write(" - %d *.dm files with diffs found" % (len(files_of_interest)))
+    output_write(" - Found %d *.dm files with diffs" % (len(files_of_interest)))
 
     file_database = dict()
     changed_files = list()
@@ -455,46 +457,42 @@ if __name__ == "__main__":
     analyser.set_expressions(standards)
 
     # Hate this? Don't worry. I hate it too.
-    #(results,       matched_lines_by_expression)    = analyser.analyze_files(files_to_test)
+    (results,       matched_lines_by_expression)    = analyser.analyze_files(files_to_test)
     (sum_added,     added_matches)                  = analyser.analyze_file_contents(diff_added_content)
     (sum_removed,   removed_matches)                = analyser.analyze_file_contents(diff_removed_content)
 
     # Process the results
 
-    print(sum_added)
-    print(sum_removed)
-
-    sum_deltas = [None] * N
+    sum_deltas = dict()
     for ii in range(0, N):
         if sum_added[ii]['SUM'] or sum_removed[ii]['SUM']:
-            if sum_deltas[ii] is None:
+            if ii not in sum_deltas:
                 sum_deltas[ii] = dict()
-            keys = set(sum_added[ii].keys()) + set(sum_removed[ii].keys())
+            keys = set().union(list(sum_added[ii].keys()), list(sum_removed[ii].keys()))
             for key in list(keys):
                 added = sum_added[ii][key] if key in sum_added[ii] else 0
                 removed = sum_removed[ii][key] if key in sum_removed[ii] else 0
-                sum_deltas[ii][key] = added + removed
-
-    print(sum_deltas)
-
-    exit(0)
+                sum_deltas[ii][key] = added - removed
 
     # This is the end, go process the data then show the results!
     output_write(create_title("Regex Results"))
-    output_write("\n%-12s | %-6s | %s"
+    output_write("\n%24s | %-6s | %s"
         % (
             "Result",
             "Target",
             "Description"
         ),
     )
-    output_write(f"{'-'*13}+{'-'*8}+{'-'*(77)}")
+    output_write(f"{'-'*25}+{'-'*8}+{'-'*(77)}")
 
     failure = 0
     warning = 0
     for jj in range(0, len(results)):
         standard = standards[jj]
         count = results[jj]["SUM"]
+        added = sum_added[jj]["SUM"]
+        removed = sum_removed[jj]["SUM"]
+        delta = sum_deltas[jj]["SUM"] if jj in sum_deltas else None
 
         prefix = "OK"
         colour = Fore.GREEN
@@ -511,14 +509,20 @@ if __name__ == "__main__":
             prefix = "!!!!"
             colour = Fore.YELLOW
 
+        stats = "%-5s %-5s %5i" % (
+            ("+%-5i" % added) if added else "",
+            ("-%-5i" % removed) if removed else "",
+            count
+        )
+
         output_write(
             f"\n{'-'*13}+{'-'*8}+{'-'*(77)}",
             to_stdout= False
         )
-        output_write("%4s:%7i |%7i | %s"
+        output_write("%4s: %-22s |%7i | %s"
             % (
                 prefix,
-                count,
+                stats,
                 standard.expected,
                 standard.message
             ),
