@@ -332,7 +332,7 @@ def git_diff_range_branches(parent, head=None):
     return parent
 
 def git_get_detached_head_ref(head: Head, ref_info: str):
-    raw = "%s (.+)\n" % head.commit.hexsha
+    raw = "%s (\S+)" % head.commit.hexsha
     pattern = regex.compile(raw)
     return pattern.findall(ref_info)[0]
 
@@ -400,7 +400,6 @@ if __name__ == "__main__":
         except TypeError as te:
             other_head = repo.head
             ref_info = g.execute(["git", "show-ref"])
-            print(ref_info)
             d = "Detached "
             b = git_get_detached_head_ref(other_head, ref_info)
         output_write(" - Diff branch #2: %sHEAD @ %s" % (d, b))
