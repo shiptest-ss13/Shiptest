@@ -37,6 +37,8 @@
 	var/delivery_icon = "deliverycloset" //which icon to use when packagewrapped. null to be unwrappable.
 	var/anchorable = TRUE
 	var/icon_welded = "welded"
+	/// Whether or not to populate items roundstart
+	var/populate = TRUE
 
 
 /obj/structure/closet/Initialize(mapload)
@@ -44,7 +46,8 @@
 		addtimer(CALLBACK(src, .proc/take_contents), 0)
 	. = ..()
 	update_icon()
-	PopulateContents()
+	if(populate)
+		PopulateContents()
 
 	RegisterSignal(src, COMSIG_ATOM_CANREACH, .proc/canreach_react)
 

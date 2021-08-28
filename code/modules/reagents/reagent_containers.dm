@@ -224,3 +224,10 @@
 
 		filling.color = mix_color_from_reagents(reagents.reagent_list)
 		. += filling
+
+/obj/item/reagent_containers/get_save_vars()
+	list_reagents = list()
+	for(var/reagent in reagents.reagent_list)
+		var/datum/reagent/R = reagent
+		list_reagents[R.type] = R.volume
+	return ..() + "list_reagents"
