@@ -467,9 +467,8 @@
 	icon = 'icons/obj/flora/chapeltree.dmi'
 	icon_state = "churchtree"
 	desc = "A true earthen oak tree imported directly from the holy soil of earth. It's radiates a spiritual warmth that calms the soul."
-	pixel_x = 0
+	pixel_x = -16
 	max_integrity = 200
-	bound_width = 64
 	bound_height = 64
 	var/karma = 0
 	var/mojorange = 4
