@@ -38,7 +38,8 @@ import time                 # For very basic performance profiling
 from typing import Dict, List, Tuple
 
 # Third party
-import git                  # For fetching git data & diffs
+import git
+from git.refs.head import Head                  # For fetching git data & diffs
 import unidiff              # For parsing of unified diff data
 from unidiff.patch import Line, PatchedFile
 import yaml                 # For configuration
@@ -330,6 +331,11 @@ def git_diff_range_branches(parent, head=None):
         return "%s...%s" % (head, parent)
     return parent
 
+def git_get_detached_head_ref(head: Head, ref_info: str):
+    raw = "%s (.+)\n" % head.commit.hexsha
+    pattern = regex.compile(raw)
+    return pattern.findall(ref_info)[0]
+
 #
 # Entry point & main behaviour
 #
@@ -382,8 +388,20 @@ if __name__ == "__main__":
         output_write(" - Diff branch #2: %s" % (other_branch))
     else:
         # It is common practice to fetch PR branch as a detached branch in Github Actions
-        b = repo.active_branch.commit.hexsha if repo.active_branch.is_detached else repo.active_branch
-        d = "Detached " if repo.active_branch.is_detached else ""
+        # And a dumb bug in GitPython will always cause a "HEAD is a detached symbolic reference to xxxx"
+        # when trying to get the active_branch, despite that git shows it when using "git branch"
+        # But we want the actual ref, and it is possible to retrieve it from "git show-ref", then find
+        # it by using the detached head's commit sha.
+        d, b = "", ""
+        try:
+            ab = repo.active_branch
+            b = repo.refs if ab.is_detached else ab
+            d = "Detached " if ab.is_detached else ""
+        except TypeError as te:
+            other_head = repo.head
+            ref_info = g.execute(["git", "show-ref"])
+            d = "Detached "
+            b = git_get_detached_head_ref(other_head, ref_info)
         output_write(" - Diff branch #2: %sHEAD @ %s" % (d, b))
 
     # Get what files have been changed, instead of getting all diffs at once
