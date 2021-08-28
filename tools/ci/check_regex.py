@@ -382,7 +382,7 @@ if __name__ == "__main__":
         output_write(" - Diff branch #2: %s" % (other_branch))
     else:
         # It is common practice to fetch PR branch as a detached branch in Github Actions
-        b = repo.active_branch.name if repo.active_branch.is_detached else repo.active_branch
+        b = repo.active_branch.ref if repo.active_branch.is_detached else repo.active_branch
         d = "Detached " if repo.active_branch.is_detached else ""
         output_write(" - Diff branch #2: %sHEAD @ %s" % (d, b))
 
