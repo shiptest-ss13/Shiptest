@@ -192,6 +192,11 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	name = "Surgical Bay"
 	icon_state = "surgery"
 
+/area/ship/medical/morgue
+	name = "Morgue"
+	icon_state = "morgue"
+	ambientsounds = SPOOKY
+
 /// Science Lab ///
 /area/ship/science
 	name = "Science Lab"

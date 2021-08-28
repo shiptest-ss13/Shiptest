@@ -13,7 +13,7 @@
 /obj/machinery/door/window/westright,
 /obj/effect/spawner/lootdrop/maintenance,
 /turf/open/floor/plasteel/dark,
-/area/ship/crew/chapel)
+/area/ship/medical/morgue)
 "am" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 4
@@ -61,11 +61,6 @@
 /turf/open/floor/plasteel/showroomfloor,
 /area/ship/crew/dorm)
 "aT" = (
-/obj/machinery/button/door{
-	id = "chapel_recdoor";
-	name = "Blast Door Control";
-	pixel_y = 24
-	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 6
 	},
@@ -85,10 +80,10 @@
 /turf/open/floor/wood,
 /area/ship/crew/dorm)
 "bu" = (
-/obj/machinery/light{
-	dir = 1
-	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
+/obj/machinery/light/small{
+	dir = 8
+	},
 /turf/open/floor/plasteel/showroomfloor,
 /area/ship/crew/dorm)
 "bO" = (
@@ -118,7 +113,7 @@
 	},
 /obj/machinery/door/firedoor/heavy,
 /turf/open/floor/plating,
-/area/ship/crew/chapel)
+/area/ship/medical/morgue)
 "ca" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -162,13 +157,10 @@
 /obj/effect/mob_spawn/human/clown/corpse,
 /obj/item/grown/bananapeel,
 /turf/open/floor/plasteel/dark,
-/area/ship/crew/chapel)
+/area/ship/medical/morgue)
 "cu" = (
 /obj/machinery/power/terminal,
 /obj/structure/cable/yellow,
-/obj/machinery/light{
-	dir = 8
-	},
 /obj/structure/rack,
 /obj/item/pickaxe,
 /obj/item/storage/bag/ore,
@@ -230,7 +222,7 @@
 	pixel_x = -32
 	},
 /turf/open/floor/plasteel/grimy,
-/area/ship/crew/office)
+/area/ship/crew/chapel/office)
 "dk" = (
 /obj/structure/chair/pew,
 /turf/open/floor/plasteel/chapel{
@@ -245,7 +237,7 @@
 /area/ship/crew/chapel)
 "dr" = (
 /turf/open/floor/mineral/silver,
-/area/ship/crew/office)
+/area/ship/crew/chapel/office)
 "dL" = (
 /obj/machinery/atmospherics/components/trinary/filter/atmos/flipped/n2{
 	dir = 8
@@ -276,6 +268,10 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 9
+	},
+/obj/machinery/light_switch{
+	pixel_x = 22;
+	pixel_y = -4
 	},
 /turf/open/floor/plasteel/chapel,
 /area/ship/crew/chapel)
@@ -382,7 +378,7 @@
 	dir = 8
 	},
 /turf/open/floor/carpet,
-/area/ship/crew/chapel)
+/area/ship/medical/morgue)
 "fQ" = (
 /obj/machinery/light{
 	dir = 4
@@ -457,7 +453,7 @@
 "gY" = (
 /obj/machinery/airalarm/directional/east,
 /turf/open/floor/plasteel/dark,
-/area/ship/crew/chapel)
+/area/ship/medical/morgue)
 "hb" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -471,7 +467,13 @@
 /obj/machinery/power/apc/auto_name/east,
 /obj/structure/cable,
 /turf/open/floor/mineral/silver,
-/area/ship/crew/office)
+/area/ship/crew/chapel/office)
+"hr" = (
+/obj/effect/spawner/structure/window/reinforced,
+/obj/structure/grille,
+/obj/machinery/door/firedoor/window,
+/turf/open/floor/plating,
+/area/ship/medical/morgue)
 "hw" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
@@ -552,7 +554,7 @@
 	pixel_x = -22
 	},
 /turf/open/floor/plasteel/grimy,
-/area/ship/crew/office)
+/area/ship/crew/chapel/office)
 "jb" = (
 /obj/structure/bookcase/random/fiction,
 /turf/open/floor/carpet/red,
@@ -610,7 +612,7 @@
 	},
 /obj/machinery/door/window/brigdoor/northleft,
 /turf/open/floor/plating,
-/area/ship/crew/chapel)
+/area/ship/medical/morgue)
 "jP" = (
 /obj/structure/grille,
 /obj/machinery/door/poddoor/shutters/preopen{
@@ -698,7 +700,7 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/grimy,
-/area/ship/crew/office)
+/area/ship/crew/chapel/office)
 "kZ" = (
 /obj/machinery/atmospherics/components/unary/portables_connector{
 	dir = 8
@@ -713,7 +715,7 @@
 /obj/structure/table/glass,
 /obj/item/reagent_containers/food/snacks/grown/poppy,
 /turf/open/floor/carpet,
-/area/ship/crew/chapel)
+/area/ship/medical/morgue)
 "lc" = (
 /turf/open/floor/plasteel/stairs/right{
 	dir = 1
@@ -736,7 +738,7 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/grimy,
-/area/ship/crew/office)
+/area/ship/crew/chapel/office)
 "lp" = (
 /obj/structure/closet/secure_closet/personal/cabinet,
 /obj/item/gun/ballistic/shotgun/doublebarrel,
@@ -746,7 +748,7 @@
 /obj/item/clothing/suit/space/hardsuit/ert/paranormal/inquisitor,
 /obj/item/megaphone,
 /turf/open/floor/plasteel/grimy,
-/area/ship/crew/office)
+/area/ship/crew/chapel/office)
 "lw" = (
 /obj/structure/grille,
 /obj/effect/spawner/structure/window/reinforced,
@@ -795,13 +797,13 @@
 /area/ship/crew/chapel)
 "lS" = (
 /turf/closed/wall/mineral/iron,
-/area/ship/crew/office)
+/area/ship/crew/chapel/office)
 "lZ" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 4
 	},
 /turf/open/floor/mineral/silver,
-/area/ship/crew/office)
+/area/ship/crew/chapel/office)
 "mf" = (
 /turf/open/floor/carpet,
 /area/ship/crew/dorm)
@@ -824,11 +826,11 @@
 /obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/door/firedoor/window,
 /turf/open/floor/plating,
-/area/ship/crew/office)
+/area/ship/crew/chapel/office)
 "nm" = (
 /obj/structure/table/glass,
 /turf/open/floor/carpet,
-/area/ship/crew/chapel)
+/area/ship/medical/morgue)
 "nn" = (
 /obj/machinery/cryopod/latejoin,
 /obj/structure/window/reinforced/tinted/frosted{
@@ -872,7 +874,7 @@
 /obj/structure/closet/crate/coffin,
 /obj/structure/window/spawner/west,
 /turf/open/floor/plasteel/dark,
-/area/ship/crew/chapel)
+/area/ship/medical/morgue)
 "nU" = (
 /obj/machinery/photocopier,
 /turf/open/floor/wood,
@@ -896,7 +898,7 @@
 	dir = 10
 	},
 /turf/open/floor/plasteel/dark,
-/area/ship/crew/chapel)
+/area/ship/medical/morgue)
 "oi" = (
 /obj/machinery/door/airlock/survival_pod,
 /obj/machinery/door/firedoor/border_only,
@@ -923,7 +925,7 @@
 	pixel_y = -28
 	},
 /turf/open/floor/plasteel/dark,
-/area/ship/crew/office)
+/area/ship/crew/chapel/office)
 "oE" = (
 /obj/machinery/firealarm{
 	dir = 1;
@@ -958,7 +960,7 @@
 	dir = 5
 	},
 /turf/open/floor/carpet,
-/area/ship/crew/chapel)
+/area/ship/medical/morgue)
 "pt" = (
 /turf/open/floor/wood,
 /area/ship/crew/hydroponics)
@@ -1037,7 +1039,7 @@
 	dir = 1
 	},
 /turf/open/floor/mineral/silver,
-/area/ship/crew/office)
+/area/ship/crew/chapel/office)
 "qS" = (
 /obj/structure/table/wood/reinforced,
 /obj/machinery/door/firedoor,
@@ -1120,7 +1122,7 @@
 	pixel_y = 22
 	},
 /turf/open/floor/plasteel/dark,
-/area/ship/crew/office)
+/area/ship/crew/chapel/office)
 "rA" = (
 /obj/machinery/power/smes/shuttle/precharged{
 	dir = 1
@@ -1139,7 +1141,7 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel/grimy,
-/area/ship/crew/office)
+/area/ship/crew/chapel/office)
 "sd" = (
 /obj/structure/bookcase/random/religion,
 /turf/open/floor/wood,
@@ -1148,9 +1150,6 @@
 /obj/structure/table/wood,
 /obj/machinery/light{
 	dir = 1
-	},
-/obj/item/statuebust/hippocratic{
-	pixel_y = 8
 	},
 /turf/open/floor/wood,
 /area/ship/medical)
@@ -1163,7 +1162,7 @@
 	dir = 1
 	},
 /turf/open/floor/carpet,
-/area/ship/crew/chapel)
+/area/ship/medical/morgue)
 "sx" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 8
@@ -1284,7 +1283,7 @@
 /area/ship/hallway/fore)
 "tO" = (
 /turf/open/floor/plasteel/dark,
-/area/ship/crew/chapel)
+/area/ship/medical/morgue)
 "tS" = (
 /obj/machinery/atmospherics/components/unary/portables_connector,
 /obj/machinery/portable_atmospherics/canister/oxygen,
@@ -1392,7 +1391,7 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
-/area/ship/crew/chapel)
+/area/ship/medical/morgue)
 "vn" = (
 /obj/machinery/atmospherics/pipe/layer_manifold/visible,
 /turf/open/floor/plasteel,
@@ -1526,6 +1525,12 @@
 /obj/effect/turf_decal/stripes/corner{
 	dir = 1
 	},
+/obj/machinery/button/door{
+	id = "chapel_recdoor";
+	name = "Blast Door Control";
+	pixel_x = -8;
+	pixel_y = 34
+	},
 /turf/open/floor/wood,
 /area/ship/crew/dorm)
 "wE" = (
@@ -1655,7 +1660,7 @@
 "yv" = (
 /obj/machinery/airalarm/directional/west,
 /turf/open/floor/mineral/silver,
-/area/ship/crew/office)
+/area/ship/crew/chapel/office)
 "yw" = (
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
@@ -1752,7 +1757,7 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
-/area/ship/crew/office)
+/area/ship/crew/chapel/office)
 "Aq" = (
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/firedoor/border_only{
@@ -1937,7 +1942,7 @@
 	icon_state = "6-9"
 	},
 /turf/open/floor/plasteel/grimy,
-/area/ship/crew/office)
+/area/ship/crew/chapel/office)
 "CJ" = (
 /obj/machinery/power/smes/shuttle/precharged{
 	dir = 1
@@ -1976,7 +1981,7 @@
 "CV" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /turf/open/floor/carpet,
-/area/ship/crew/chapel)
+/area/ship/medical/morgue)
 "CX" = (
 /obj/machinery/power/port_gen/pacman,
 /obj/structure/cable/yellow{
@@ -2230,6 +2235,9 @@
 	},
 /turf/open/floor/wood,
 /area/ship/crew/library)
+"If" = (
+/turf/closed/wall/mineral/iron,
+/area/ship/medical/morgue)
 "Is" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -2260,7 +2268,7 @@
 	dir = 4
 	},
 /turf/open/floor/carpet,
-/area/ship/crew/chapel)
+/area/ship/medical/morgue)
 "IW" = (
 /obj/machinery/door/airlock/maintenance,
 /obj/machinery/door/firedoor/border_only{
@@ -2301,7 +2309,7 @@
 /obj/structure/closet/crate/coffin,
 /obj/machinery/door/window/southright,
 /turf/open/floor/plasteel/dark,
-/area/ship/crew/chapel)
+/area/ship/medical/morgue)
 "Ju" = (
 /obj/machinery/atmospherics/pipe/simple/purple/visible{
 	dir = 4
@@ -2358,7 +2366,7 @@
 	},
 /obj/item/storage/fancy/candle_box,
 /turf/open/floor/plasteel/grimy,
-/area/ship/crew/office)
+/area/ship/crew/chapel/office)
 "Km" = (
 /obj/item/storage/fancy/candle_box{
 	pixel_y = 10
@@ -2473,7 +2481,7 @@
 	dir = 10
 	},
 /turf/open/floor/carpet,
-/area/ship/crew/chapel)
+/area/ship/medical/morgue)
 "LO" = (
 /obj/machinery/autolathe,
 /obj/machinery/door/window/westright,
@@ -2507,6 +2515,12 @@
 	},
 /turf/open/floor/wood,
 /area/ship/crew/library)
+"MC" = (
+/obj/machinery/light_switch{
+	pixel_x = -20
+	},
+/turf/open/floor/carpet,
+/area/ship/medical/morgue)
 "MF" = (
 /obj/structure/closet/crate/coffin,
 /obj/machinery/light/small{
@@ -2514,7 +2528,7 @@
 	},
 /obj/effect/spawner/lootdrop/maintenance/six,
 /turf/open/floor/plasteel/dark,
-/area/ship/crew/chapel)
+/area/ship/medical/morgue)
 "MH" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 6
@@ -2566,8 +2580,12 @@
 /obj/item/nullrod,
 /obj/item/stamp/chap,
 /obj/item/areaeditor/shuttle,
+/obj/machinery/light_switch{
+	pixel_x = -20;
+	pixel_y = -6
+	},
 /turf/open/floor/plasteel/grimy,
-/area/ship/crew/office)
+/area/ship/crew/chapel/office)
 "NR" = (
 /turf/closed/wall,
 /area/ship/engineering/electrical)
@@ -2667,14 +2685,14 @@
 	dir = 4
 	},
 /turf/open/floor/carpet,
-/area/ship/crew/chapel)
+/area/ship/medical/morgue)
 "Pa" = (
 /obj/machinery/computer/pod{
 	dir = 1;
 	id = "chapel_massdriver"
 	},
 /turf/open/floor/plasteel/dark,
-/area/ship/crew/chapel)
+/area/ship/medical/morgue)
 "Pf" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -2705,6 +2723,9 @@
 	},
 /turf/open/floor/carpet,
 /area/ship/hallway/port)
+"PL" = (
+/turf/open/floor/carpet,
+/area/ship/medical/morgue)
 "PX" = (
 /obj/machinery/door/airlock/research/glass{
 	name = "Library"
@@ -2735,7 +2756,7 @@
 	dir = 5
 	},
 /turf/open/floor/plasteel/grimy,
-/area/ship/crew/office)
+/area/ship/crew/chapel/office)
 "Qr" = (
 /turf/open/floor/engine/air,
 /area/ship/engineering/atmospherics)
@@ -2786,7 +2807,7 @@
 /obj/structure/window/spawner,
 /obj/effect/spawner/lootdrop/maintenance/two,
 /turf/open/floor/plasteel/dark,
-/area/ship/crew/chapel)
+/area/ship/medical/morgue)
 "Rd" = (
 /obj/structure/table/wood,
 /obj/item/paper_bin,
@@ -2968,7 +2989,7 @@
 	name = "Confession Booth"
 	},
 /turf/open/floor/plasteel/dark,
-/area/ship/crew/office)
+/area/ship/crew/chapel/office)
 "SH" = (
 /obj/structure/lattice/catwalk,
 /obj/machinery/atmospherics/pipe/simple/purple/visible,
@@ -2995,7 +3016,7 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/dark,
-/area/ship/crew/chapel)
+/area/ship/medical/morgue)
 "SN" = (
 /turf/closed/wall,
 /area/ship/bridge)
@@ -3037,15 +3058,12 @@
 /obj/structure/curtain/cloth/grey,
 /obj/effect/spawner/structure/window,
 /turf/open/floor/plasteel/dark,
-/area/ship/crew/office)
+/area/ship/crew/chapel/office)
 "TG" = (
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/pipe/layer_manifold/visible,
-/obj/machinery/light{
-	dir = 8
-	},
 /obj/structure/sign/poster/official/help_others{
 	pixel_x = -32
 	},
@@ -3060,7 +3078,7 @@
 	pixel_x = 32
 	},
 /turf/open/floor/plasteel/dark,
-/area/ship/crew/chapel)
+/area/ship/medical/morgue)
 "Uc" = (
 /obj/machinery/light{
 	dir = 4
@@ -3075,7 +3093,7 @@
 	dir = 1
 	},
 /turf/open/floor/mineral/silver,
-/area/ship/crew/office)
+/area/ship/crew/chapel/office)
 "Ud" = (
 /obj/machinery/atmospherics/components/trinary/filter/flipped/on{
 	dir = 8
@@ -3090,7 +3108,7 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/grimy,
-/area/ship/crew/office)
+/area/ship/crew/chapel/office)
 "Uy" = (
 /obj/structure/closet/wall{
 	name = "alchemist closet";
@@ -3252,7 +3270,7 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/grimy,
-/area/ship/crew/office)
+/area/ship/crew/chapel/office)
 "Wk" = (
 /obj/machinery/door/airlock/maintenance,
 /obj/structure/cable{
@@ -3296,7 +3314,7 @@
 /turf/open/floor/plasteel/dark/side{
 	dir = 1
 	},
-/area/ship/crew/office)
+/area/ship/crew/chapel/office)
 "Wr" = (
 /turf/closed/wall,
 /area/ship/storage)
@@ -3344,7 +3362,7 @@
 	dir = 10
 	},
 /turf/open/floor/carpet,
-/area/ship/crew/chapel)
+/area/ship/medical/morgue)
 "Xg" = (
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
@@ -4299,15 +4317,15 @@ YF
 Md
 YF
 XV
-Lm
+If
 vk
-Lm
-Lm
-Lm
-Lm
-Lm
-Lm
-Lm
+If
+If
+If
+If
+If
+If
+If
 ZP
 ZP
 ZP
@@ -4336,15 +4354,15 @@ YF
 Md
 YF
 tY
-Lm
+If
 Xd
 sw
 IU
 fC
 OY
-iK
+MC
 nm
-yW
+hr
 ZP
 ZP
 ZP
@@ -4373,15 +4391,15 @@ aM
 aM
 lw
 kk
-Lm
+If
 LI
 CV
 CV
 pr
-iK
-iK
+PL
+PL
 lb
-yW
+hr
 ZP
 ZP
 ZP
@@ -4410,15 +4428,15 @@ CT
 gr
 iN
 UL
-Lm
+If
 al
 nS
 Rc
 og
 SM
 Pa
-Lm
-Lm
+If
+If
 ZP
 ZP
 ZP
@@ -4447,7 +4465,7 @@ XY
 ca
 hX
 tE
-Lm
+If
 cr
 MF
 Jh
@@ -4486,13 +4504,13 @@ SA
 SA
 WZ
 WZ
-Lm
-Lm
-Lm
-Lm
-Lm
-Lm
-Lm
+If
+If
+If
+If
+If
+If
+If
 ZP
 ZP
 ZP
