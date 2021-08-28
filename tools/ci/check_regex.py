@@ -396,8 +396,7 @@ if __name__ == "__main__":
         d, b = "", ""
         try:
             ab = repo.active_branch
-            b = repo.refs if ab.is_detached else ab
-            d = "Detached " if ab.is_detached else ""
+            b = ab.name
         except TypeError as te:
             other_head = repo.head
             ref_info = g.execute(["git", "show-ref"])
