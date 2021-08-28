@@ -147,6 +147,10 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	flags_1 = NONE
 	sound_environment = SOUND_AREA_LARGE_ENCLOSED
 
+/area/ship/crew/chapel/office
+	name = "Chapel Office"
+	icon_state = "chapeloffice"
+	sound_environment = SOUND_AREA_SMALL_SOFTFLOOR
 /area/ship/crew/library
 	name = "Library"
 	icon_state = "library"

@@ -116,6 +116,7 @@
 /obj/machinery/door/poddoor{
 	id = "chapel_massdriver"
 	},
+/obj/machinery/door/firedoor/heavy,
 /turf/open/floor/plating,
 /area/ship/crew/chapel)
 "ca" = (
@@ -173,6 +174,12 @@
 /obj/item/storage/bag/ore,
 /obj/item/mining_scanner,
 /obj/item/flashlight/lantern,
+/obj/machinery/button/door{
+	id = "chapel_orm";
+	name = "ORM Shutter Control";
+	pixel_x = -24;
+	pixel_y = 8
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/electrical)
 "cC" = (
@@ -215,6 +222,7 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 4
 	},
+/mob/living/simple_animal/hostile/retaliate/poison/snake/bookworm,
 /turf/open/floor/carpet/red,
 /area/ship/crew/library)
 "de" = (
@@ -222,7 +230,7 @@
 	pixel_x = -32
 	},
 /turf/open/floor/plasteel/grimy,
-/area/ship/crew/chapel)
+/area/ship/crew/office)
 "dk" = (
 /obj/structure/chair/pew,
 /turf/open/floor/plasteel/chapel{
@@ -237,7 +245,7 @@
 /area/ship/crew/chapel)
 "dr" = (
 /turf/open/floor/mineral/silver,
-/area/ship/crew/chapel)
+/area/ship/crew/office)
 "dL" = (
 /obj/machinery/atmospherics/components/trinary/filter/atmos/flipped/n2{
 	dir = 8
@@ -285,6 +293,7 @@
 /obj/structure/railing{
 	dir = 9
 	},
+/obj/structure/altar_of_gods,
 /turf/open/floor/carpet,
 /area/ship/bridge)
 "eB" = (
@@ -329,6 +338,7 @@
 /turf/open/floor/wood,
 /area/ship/crew/library)
 "fl" = (
+/obj/machinery/ore_silo,
 /obj/structure/railing{
 	dir = 5
 	},
@@ -367,6 +377,9 @@
 "fC" = (
 /obj/structure/chair/pew{
 	dir = 4
+	},
+/obj/machinery/light{
+	dir = 8
 	},
 /turf/open/floor/carpet,
 /area/ship/crew/chapel)
@@ -458,7 +471,7 @@
 /obj/machinery/power/apc/auto_name/east,
 /obj/structure/cable,
 /turf/open/floor/mineral/silver,
-/area/ship/crew/chapel)
+/area/ship/crew/office)
 "hw" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
@@ -539,7 +552,7 @@
 	pixel_x = -22
 	},
 /turf/open/floor/plasteel/grimy,
-/area/ship/crew/chapel)
+/area/ship/crew/office)
 "jb" = (
 /obj/structure/bookcase/random/fiction,
 /turf/open/floor/carpet/red,
@@ -685,7 +698,7 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/grimy,
-/area/ship/crew/chapel)
+/area/ship/crew/office)
 "kZ" = (
 /obj/machinery/atmospherics/components/unary/portables_connector{
 	dir = 8
@@ -709,6 +722,7 @@
 "lf" = (
 /obj/machinery/power/terminal,
 /obj/structure/cable/yellow,
+/obj/structure/ore_box,
 /turf/open/floor/plating,
 /area/ship/engineering/electrical)
 "li" = (
@@ -722,7 +736,7 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/grimy,
-/area/ship/crew/chapel)
+/area/ship/crew/office)
 "lp" = (
 /obj/structure/closet/secure_closet/personal/cabinet,
 /obj/item/gun/ballistic/shotgun/doublebarrel,
@@ -732,7 +746,7 @@
 /obj/item/clothing/suit/space/hardsuit/ert/paranormal/inquisitor,
 /obj/item/megaphone,
 /turf/open/floor/plasteel/grimy,
-/area/ship/crew/chapel)
+/area/ship/crew/office)
 "lw" = (
 /obj/structure/grille,
 /obj/effect/spawner/structure/window/reinforced,
@@ -770,12 +784,24 @@
 	},
 /turf/open/floor/carpet,
 /area/ship/crew/dorm)
+"lK" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/turf/open/floor/plasteel/chapel,
+/area/ship/crew/chapel)
+"lS" = (
+/turf/closed/wall/mineral/iron,
+/area/ship/crew/office)
 "lZ" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 4
 	},
 /turf/open/floor/mineral/silver,
-/area/ship/crew/chapel)
+/area/ship/crew/office)
 "mf" = (
 /turf/open/floor/carpet,
 /area/ship/crew/dorm)
@@ -798,7 +824,7 @@
 /obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/door/firedoor/window,
 /turf/open/floor/plating,
-/area/ship/crew/chapel)
+/area/ship/crew/office)
 "nm" = (
 /obj/structure/table/glass,
 /turf/open/floor/carpet,
@@ -897,7 +923,7 @@
 	pixel_y = -28
 	},
 /turf/open/floor/plasteel/dark,
-/area/ship/crew/chapel)
+/area/ship/crew/office)
 "oE" = (
 /obj/machinery/firealarm{
 	dir = 1;
@@ -1011,7 +1037,7 @@
 	dir = 1
 	},
 /turf/open/floor/mineral/silver,
-/area/ship/crew/chapel)
+/area/ship/crew/office)
 "qS" = (
 /obj/structure/table/wood/reinforced,
 /obj/machinery/door/firedoor,
@@ -1094,7 +1120,7 @@
 	pixel_y = 22
 	},
 /turf/open/floor/plasteel/dark,
-/area/ship/crew/chapel)
+/area/ship/crew/office)
 "rA" = (
 /obj/machinery/power/smes/shuttle/precharged{
 	dir = 1
@@ -1113,21 +1139,19 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel/grimy,
-/area/ship/crew/chapel)
+/area/ship/crew/office)
 "sd" = (
 /obj/structure/bookcase/random/religion,
 /turf/open/floor/wood,
 /area/ship/crew/library)
 "sp" = (
 /obj/structure/table/wood,
-/obj/item/clothing/suit/hooded/chaplainsuit/monkhabit,
-/obj/item/clothing/suit/hooded/chaplainsuit/monkhabit,
 /obj/machinery/light{
 	dir = 1
 	},
-/obj/item/organ_storage,
-/obj/item/organ_storage,
-/obj/item/organ_storage,
+/obj/item/statuebust/hippocratic{
+	pixel_y = 8
+	},
 /turf/open/floor/wood,
 /area/ship/medical)
 "su" = (
@@ -1135,9 +1159,6 @@
 /turf/open/floor/wood,
 /area/ship/medical)
 "sw" = (
-/obj/machinery/light{
-	dir = 8
-	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 1
 	},
@@ -1342,7 +1363,7 @@
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
 	},
-/turf/open/floor/carpet,
+/turf/open/floor/plasteel/dark,
 /area/ship/hallway/starboard)
 "vf" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
@@ -1393,12 +1414,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/fore)
-"vq" = (
-/obj/machinery/light{
-	dir = 8
-	},
-/turf/open/floor/carpet,
-/area/ship/crew/chapel)
 "vB" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 6
@@ -1472,10 +1487,10 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/starboard)
 "wz" = (
-/obj/effect/spawner/lootdrop/maintenance/three,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 8
 	},
+/obj/effect/spawner/lootdrop/maintenance/two,
 /turf/open/floor/wood,
 /area/ship/storage)
 "wC" = (
@@ -1549,6 +1564,7 @@
 /obj/structure/sink/kitchen{
 	pixel_y = 20
 	},
+/obj/effect/spawner/lootdrop/maintenance,
 /turf/open/floor/wood,
 /area/ship/storage)
 "wQ" = (
@@ -1571,6 +1587,10 @@
 /area/ship/crew/chapel)
 "xx" = (
 /obj/structure/table/wood,
+/obj/item/reagent_containers/glass/bowl/mushroom_bowl{
+	pixel_x = -4;
+	pixel_y = 8
+	},
 /obj/item/reagent_containers/glass/mortar,
 /obj/item/pestle,
 /turf/open/floor/wood,
@@ -1635,7 +1655,7 @@
 "yv" = (
 /obj/machinery/airalarm/directional/west,
 /turf/open/floor/mineral/silver,
-/area/ship/crew/chapel)
+/area/ship/crew/office)
 "yw" = (
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
@@ -1654,9 +1674,6 @@
 	},
 /turf/open/floor/wood,
 /area/ship/medical)
-"yP" = (
-/turf/closed/wall/mineral/iron,
-/area/ship/engineering/electrical)
 "yW" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/structure/grille,
@@ -1735,14 +1752,14 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
-/area/ship/crew/chapel)
+/area/ship/crew/office)
 "Aq" = (
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
 	},
 /obj/machinery/door/airlock/public/glass,
-/turf/open/floor/carpet,
+/turf/open/floor/plasteel/dark,
 /area/ship/hallway/fore)
 "AA" = (
 /obj/structure/bookcase/random/fiction,
@@ -1912,6 +1929,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 8
 	},
+/obj/effect/spawner/lootdrop/maintenance,
 /turf/open/floor/wood,
 /area/ship/storage)
 "Cy" = (
@@ -1919,7 +1937,7 @@
 	icon_state = "6-9"
 	},
 /turf/open/floor/plasteel/grimy,
-/area/ship/crew/chapel)
+/area/ship/crew/office)
 "CJ" = (
 /obj/machinery/power/smes/shuttle/precharged{
 	dir = 1
@@ -1940,13 +1958,13 @@
 /turf/open/floor/plasteel,
 /area/ship/engineering/atmospherics)
 "CR" = (
-/obj/machinery/light,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 8
 	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 8
 	},
+/obj/machinery/light/small,
 /turf/open/floor/wood,
 /area/ship/storage)
 "CT" = (
@@ -2055,6 +2073,18 @@
 	},
 /turf/open/floor/wood,
 /area/ship/medical)
+"Eu" = (
+/obj/machinery/door/window/brigdoor/eastleft,
+/obj/machinery/door/window/brigdoor/westleft,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "chapel_orm"
+	},
+/obj/machinery/door/firedoor/heavy,
+/obj/machinery/mineral/ore_redemption{
+	dir = 8
+	},
+/turf/open/floor/plating,
+/area/ship/engineering/electrical)
 "Ez" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 9
@@ -2086,9 +2116,6 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/starboard)
 "EX" = (
-/obj/machinery/light{
-	dir = 8
-	},
 /turf/open/floor/plasteel/chapel{
 	dir = 1
 	},
@@ -2183,7 +2210,6 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/effect/spawner/lootdrop/organ_spawner,
 /turf/open/floor/wood,
 /area/ship/medical)
 "HE" = (
@@ -2332,7 +2358,7 @@
 	},
 /obj/item/storage/fancy/candle_box,
 /turf/open/floor/plasteel/grimy,
-/area/ship/crew/chapel)
+/area/ship/crew/office)
 "Km" = (
 /obj/item/storage/fancy/candle_box{
 	pixel_y = 10
@@ -2471,6 +2497,7 @@
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
 	dir = 4
 	},
+/obj/machinery/door/firedoor/heavy,
 /turf/open/floor/plating,
 /area/ship/engineering/electrical)
 "Mj" = (
@@ -2536,14 +2563,11 @@
 /area/ship/hallway/port)
 "Nw" = (
 /obj/structure/table/wood,
-/obj/machinery/light{
-	dir = 8
-	},
 /obj/item/nullrod,
 /obj/item/stamp/chap,
 /obj/item/areaeditor/shuttle,
 /turf/open/floor/plasteel/grimy,
-/area/ship/crew/chapel)
+/area/ship/crew/office)
 "NR" = (
 /turf/closed/wall,
 /area/ship/engineering/electrical)
@@ -2711,7 +2735,7 @@
 	dir = 5
 	},
 /turf/open/floor/plasteel/grimy,
-/area/ship/crew/chapel)
+/area/ship/crew/office)
 "Qr" = (
 /turf/open/floor/engine/air,
 /area/ship/engineering/atmospherics)
@@ -2723,7 +2747,7 @@
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
 	},
-/turf/open/floor/carpet,
+/turf/open/floor/plasteel/dark,
 /area/ship/hallway/port)
 "QL" = (
 /obj/structure/grille,
@@ -2816,6 +2840,7 @@
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
 	dir = 1
 	},
+/obj/machinery/door/firedoor/heavy,
 /turf/open/floor/plating,
 /area/ship/engineering/electrical)
 "RB" = (
@@ -2943,7 +2968,7 @@
 	name = "Confession Booth"
 	},
 /turf/open/floor/plasteel/dark,
-/area/ship/crew/chapel)
+/area/ship/crew/office)
 "SH" = (
 /obj/structure/lattice/catwalk,
 /obj/machinery/atmospherics/pipe/simple/purple/visible,
@@ -2980,6 +3005,9 @@
 	icon_state = "0-2"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/structure/sign/warning/electricshock{
+	pixel_x = -32
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/electrical)
 "ST" = (
@@ -3009,7 +3037,7 @@
 /obj/structure/curtain/cloth/grey,
 /obj/effect/spawner/structure/window,
 /turf/open/floor/plasteel/dark,
-/area/ship/crew/chapel)
+/area/ship/crew/office)
 "TG" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -3047,7 +3075,7 @@
 	dir = 1
 	},
 /turf/open/floor/mineral/silver,
-/area/ship/crew/chapel)
+/area/ship/crew/office)
 "Ud" = (
 /obj/machinery/atmospherics/components/trinary/filter/flipped/on{
 	dir = 8
@@ -3062,13 +3090,24 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/grimy,
-/area/ship/crew/chapel)
+/area/ship/crew/office)
 "Uy" = (
+/obj/structure/closet/wall{
+	name = "alchemist closet";
+	pixel_y = 30
+	},
+/obj/item/clothing/suit/hooded/chaplainsuit/monkhabit,
+/obj/item/clothing/suit/hooded/chaplainsuit/monkhabit,
+/obj/item/organ_storage,
+/obj/item/organ_storage,
+/obj/item/organ_storage,
 /turf/open/floor/wood,
 /area/ship/medical)
 "UD" = (
 /obj/structure/table/wood,
-/obj/machinery/computer/libraryconsole,
+/obj/machinery/computer/bookmanagement{
+	pixel_y = 4
+	},
 /turf/open/floor/wood,
 /area/ship/crew/library)
 "UL" = (
@@ -3213,7 +3252,7 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/grimy,
-/area/ship/crew/chapel)
+/area/ship/crew/office)
 "Wk" = (
 /obj/machinery/door/airlock/maintenance,
 /obj/structure/cable{
@@ -3257,7 +3296,7 @@
 /turf/open/floor/plasteel/dark/side{
 	dir = 1
 	},
-/area/ship/crew/chapel)
+/area/ship/crew/office)
 "Wr" = (
 /turf/closed/wall,
 /area/ship/storage)
@@ -3315,9 +3354,6 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 5
-	},
-/obj/structure/sign/warning/electricshock{
-	pixel_x = -32
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/electrical)
@@ -3556,7 +3592,7 @@ JU
 Mh
 JU
 JU
-JU
+Eu
 JU
 JU
 JU
@@ -3745,15 +3781,15 @@ NR
 NR
 IW
 NR
-yP
-yP
-Lm
-Lm
-Lm
-Lm
-Lm
-Lm
-Lm
+lS
+lS
+lS
+lS
+lS
+lS
+lS
+lS
+lS
 ZP
 ZP
 ZP
@@ -3782,7 +3818,7 @@ XP
 WV
 AQ
 vS
-Lm
+lS
 dr
 lZ
 dr
@@ -3856,11 +3892,11 @@ PG
 PG
 sB
 tK
-Lm
-Lm
-Lm
+lS
+lS
+lS
 SF
-Lm
+lS
 Wf
 Cy
 Un
@@ -3893,11 +3929,11 @@ YF
 Md
 YF
 Fp
-Lm
+lS
 rz
 TE
 ou
-Lm
+lS
 lp
 rZ
 li
@@ -3930,15 +3966,15 @@ YF
 Md
 YF
 Zf
-Lm
+lS
 SF
-Lm
-Lm
-Lm
-Lm
-Lm
+lS
+lS
+lS
+lS
+lS
 Ao
-Lm
+lS
 ZP
 ZP
 ZP
@@ -4231,7 +4267,7 @@ JJ
 ly
 FG
 dQ
-FG
+lK
 dQ
 dW
 yW
@@ -4306,7 +4342,7 @@ sw
 IU
 fC
 OY
-vq
+iK
 nm
 yW
 ZP
