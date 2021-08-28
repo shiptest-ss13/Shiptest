@@ -407,3 +407,7 @@
 /datum/config_entry/flag/dynamic_config_enabled
 
 /datum/config_entry/flag/allow_crew_objectives
+
+/datum/config_entry/number/respawn_timer
+	min_val = 0
+	config_entry_value = 1 MINUTES

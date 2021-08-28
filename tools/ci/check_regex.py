@@ -71,7 +71,7 @@ cases = [
     exactly(22, "world << uses", r'world[ \t]*<<'),
     exactly(0, "world.log << uses", r'world.log[ \t]*<<'),
 
-    exactly(946, "<< uses", r'(?<!<)<<(?!<)'),
+    exactly(306, "<< uses", r'(?<!\d)(?<!\d\s)(?<!<)<<(?!=|\s\d|\d|<|\/)'),
     exactly(0, "incorrect indentations", r'^(?:  +)(?!\*)'),
     exactly(0, "superflous whitespace", r'[ \t]+$'),
     exactly(36, "mixed indentation", r'^( +\t+|\t+ +)'),

@@ -250,11 +250,9 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 			new /datum/admins(localhost_rank, ckey, 1, 1)
 
 	//Mentor Authorisation
-	var/mentor = GLOB.mentor_datums[ckey]
+	var/datum/mentors/mentor = GLOB.mentor_datums[ckey]
 	if(mentor)
-		verbs += /client/proc/cmd_mentor_say
-		verbs += /client/proc/show_mentor_memo
-		GLOB.mentors += src
+		mentor.associate(src)
 
 	//preferences datum - also holds some persistent data for the client (because we may as well keep these datums to a minimum)
 	prefs = GLOB.preferences_datums[ckey]

@@ -159,7 +159,7 @@
 	var/points = 1
 	if(!host_mob.client) //less brainpower
 		points *= 0.25
-	SSresearch.science_tech.add_point_list(list(TECHWEB_POINT_TYPE_GENERIC = points))
+	nanites.linked_techweb.add_point_list(list(TECHWEB_POINT_TYPE_GENERIC = points))
 
 /datum/nanite_program/researchplus
 	name = "Neural Network"
@@ -192,7 +192,7 @@
 	var/points = round(SSnanites.neural_network_count / 12, 0.1)
 	if(!C.client) //less brainpower
 		points *= 0.25
-	SSresearch.science_tech.add_point_list(list(TECHWEB_POINT_TYPE_GENERIC = points))
+	nanites.linked_techweb.add_point_list(list(TECHWEB_POINT_TYPE_GENERIC = points))
 
 /datum/nanite_program/access
 	name = "Subdermal ID"
@@ -249,7 +249,7 @@
 	var/mob/living/infectee = pick(target_hosts)
 	if(prob(100 - (infectee.get_permeability_protection() * 100)))
 		//this will potentially take over existing nanites!
-		infectee.AddComponent(/datum/component/nanites, 10)
+		infectee.AddComponent(/datum/component/nanites, null, 10)
 		SEND_SIGNAL(infectee, COMSIG_NANITE_SYNC, nanites)
 		infectee.investigate_log("was infected by spreading nanites by [key_name(host_mob)] at [AREACOORD(infectee)].", INVESTIGATE_NANITES)
 
@@ -273,7 +273,7 @@
 	var/mob/living/infectee = pick(target_hosts)
 	if(prob(100 - (infectee.get_permeability_protection() * 100)))
 		//unlike with Infective Exo-Locomotion, this can't take over existing nanites, because Nanite Sting only targets non-hosts.
-		infectee.AddComponent(/datum/component/nanites, 5)
+		infectee.AddComponent(/datum/component/nanites, null, 5)
 		SEND_SIGNAL(infectee, COMSIG_NANITE_SYNC, nanites)
 		infectee.investigate_log("was infected by a nanite cluster by [key_name(host_mob)] at [AREACOORD(infectee)].", INVESTIGATE_NANITES)
 		to_chat(infectee, "<span class='warning'>You feel a tiny prick.</span>")

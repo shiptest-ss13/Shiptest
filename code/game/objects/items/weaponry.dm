@@ -579,7 +579,7 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	item_state = "baseball_bat"
 	lefthand_file = 'icons/mob/inhands/weapons/melee_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/melee_righthand.dmi'
-	force = 10
+	force = 12
 	throwforce = 12
 	attack_verb = list("beat", "smacked")
 	custom_materials = list(/datum/material/wood = MINERAL_MATERIAL_AMOUNT * 3.5)
@@ -618,7 +618,7 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 		homerun_ready = 0
 		return
 	else if(!target.anchored)
-		target.throw_at(throw_target, rand(1,2), 7, user)
+		target.throw_at(throw_target, rand(1,2), 2, user, gentle = TRUE)
 
 /obj/item/melee/baseball_bat/ablative
 	name = "metal baseball bat"

@@ -13,7 +13,6 @@
 	var/list/datum/design/matching_designs
 	var/department_tag = "Unidentified"			//used for material distribution among other things.
 	var/datum/techweb/stored_research
-	var/datum/techweb/host_research
 
 	var/screen = RESEARCH_FABRICATOR_SCREEN_MAIN
 	var/selected_category
@@ -24,7 +23,6 @@
 	matching_designs = list()
 	cached_designs = list()
 	stored_research = new
-	host_research = SSresearch.science_tech
 	update_research()
 	materials = AddComponent(/datum/component/remote_materials, "lathe", mapload)
 	RefreshParts()
@@ -34,11 +32,15 @@
 	cached_designs = null
 	matching_designs = null
 	QDEL_NULL(stored_research)
-	host_research = null
+	linked_techweb = null
 	return ..()
 
 /obj/machinery/rnd/production/proc/update_research()
-	host_research.copy_research_to(stored_research, TRUE)
+	if(!linked_techweb)
+		visible_message("Warning. No Linked Server!")
+		return
+
+	linked_techweb.copy_research_to(stored_research, TRUE)
 	update_designs()
 
 /obj/machinery/rnd/production/proc/update_designs()
@@ -54,6 +56,11 @@
 /obj/machinery/rnd/production/ui_interact(mob/user)
 	if(!consoleless_interface)
 		return ..()
+
+	if(!linked_techweb)
+		visible_message("Warning. No Linked Server!")
+		return
+
 	user.set_machine(src)
 	var/datum/browser/popup = new(user, "rndconsole", name, 460, 550)
 	popup.set_content(generate_ui())
@@ -201,7 +208,7 @@
 
 /obj/machinery/rnd/production/proc/ui_header()
 	var/list/l = list()
-	l += "<div class='statusDisplay'><b>[host_research.organization] [department_tag] Department Lathe</b>"
+	l += "<div class='statusDisplay'><b>[linked_techweb.organization] [department_tag] Department Lathe</b>"
 	l += "Security protocols: [(obj_flags & EMAGGED)? "<font color='red'>Disabled</font>" : "<font color='green'>Enabled</font>"]"
 	if (materials.mat_container.linked_account)
 		var/datum/bank_account/user_account = usr.get_bank_account()

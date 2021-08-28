@@ -96,6 +96,11 @@ If ever any of these procs are useful for non-shuttles, rename it to proc/rotate
 		var/new_pos = supposed_node_connect.Find(real_node_connect[i])
 		nodes[new_pos] = nodes_copy[i]
 
+/obj/machinery/mineral/shuttleRotate(rotation, params)
+	. = ..()
+	input_dir = angle2dir(rotation + dir2angle(input_dir))
+	output_dir = angle2dir(rotation + dir2angle(output_dir))
+
 //prevents shuttles attempting to rotate this since it messes up sprites
 /obj/machinery/gateway/shuttleRotate(rotation, params)
 	params = NONE

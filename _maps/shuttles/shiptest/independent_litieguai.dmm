@@ -1186,9 +1186,11 @@
 	name = "\proper Deuce"
 	},
 /obj/structure/bed/dogbed{
+	anchored = 1;
 	desc = "A comfy-looking... snake bed? There's bits of shed scales stuck in the bedding...";
 	name = "snake bed"
 	},
+/obj/item/clothing/glasses/hud/health,
 /turf/open/floor/carpet/nanoweave/red,
 /area/ship/bridge)
 "DH" = (
@@ -2038,6 +2040,9 @@
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)

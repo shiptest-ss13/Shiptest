@@ -699,9 +699,25 @@
 
 	if (CONFIG_GET(flag/norespawn))
 		return
+
 	if ((stat != DEAD || !( SSticker )))
 		to_chat(usr, "<span class='boldnotice'>You must be dead to use this!</span>")
 		return
+
+	var/respawn_timer = CONFIG_GET(number/respawn_timer)
+	if(respawn_timer)
+		if(!SSticker.respawn_timer[client])
+			to_chat(usr, "<span class='boldnotice'>You have begun your respawn timer. You will be allowed to Respawn in [DisplayTimeText(respawn_timer)]</span>")
+			SSticker.respawn_timer[client] = world.time + respawn_timer
+			return
+
+		var/left = round(SSticker.respawn_timer[client] - world.time)
+		if(left > 0)
+			to_chat(usr, "<span class='boldnotice'>You still have [DisplayTimeText(left)] left before you can respawn.</span>")
+			return
+
+		// Their timer is up, let them through
+		SSticker.respawn_timer -= client
 
 	log_game("[key_name(usr)] used abandon mob.")
 

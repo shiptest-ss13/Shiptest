@@ -955,7 +955,9 @@
 /area/ship/bridge)
 "up" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
-/obj/structure/chair/stool/bar,
+/obj/structure/chair/stool/bar{
+	dir = 1
+	},
 /turf/open/floor/wood,
 /area/ship/crew/canteen)
 "us" = (
@@ -1120,6 +1122,12 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/carpet/nanoweave,
+/area/ship/crew/canteen)
+"xW" = (
+/obj/structure/chair/stool/bar{
+	dir = 1
+	},
+/turf/open/floor/wood,
 /area/ship/crew/canteen)
 "xX" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -1615,12 +1623,14 @@
 /turf/open/floor/plasteel,
 /area/ship/bridge)
 "Gz" = (
-/obj/structure/chair/stool/bar,
 /obj/effect/turf_decal/tile/neutral{
 	dir = 1
 	},
 /obj/effect/turf_decal/tile/neutral{
 	dir = 8
+	},
+/obj/structure/chair/stool/bar{
+	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
@@ -2356,12 +2366,14 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
 	},
-/obj/structure/chair/stool/bar,
 /obj/effect/turf_decal/tile/neutral{
 	dir = 1
 	},
 /obj/effect/turf_decal/tile/neutral{
 	dir = 8
+	},
+/obj/structure/chair/stool/bar{
+	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
@@ -2518,9 +2530,11 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 8
 	},
-/obj/structure/chair/stool/bar,
 /obj/structure/cable{
 	icon_state = "1-2"
+	},
+/obj/structure/chair/stool/bar{
+	dir = 4
 	},
 /turf/open/floor/wood,
 /area/ship/crew/canteen)
@@ -2532,6 +2546,18 @@
 	dir = 6
 	},
 /turf/open/floor/plasteel/showroomfloor,
+/area/ship/crew/canteen)
+"ZW" = (
+/obj/structure/chair/stool/bar{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/neutral{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/neutral{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
 
 (1,1,1) = {"
@@ -2816,7 +2842,7 @@ BF
 Qa
 gv
 dq
-Qa
+xW
 xp
 ER
 uK
@@ -2839,7 +2865,7 @@ Gz
 Gz
 Gz
 Wo
-Gz
+ZW
 Kp
 if
 UU

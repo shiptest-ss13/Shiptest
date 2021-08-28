@@ -67,6 +67,9 @@ SUBSYSTEM_DEF(ticker)
 	/// Why an emergency shuttle was called
 	var/emergency_reason
 
+	/// Assosciative list of clients who want to respawn and their world.time at which they will be allowed to do so.
+	var/list/respawn_timer = list()
+
 /datum/controller/subsystem/ticker/Initialize(timeofday)
 	load_mode()
 
