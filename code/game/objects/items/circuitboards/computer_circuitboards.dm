@@ -295,11 +295,6 @@
 	name = "R&D Console Production Only (Computer Board)"
 	build_path = /obj/machinery/computer/rdconsole/production
 
-/obj/item/circuitboard/computer/rdservercontrol
-	name = "R&D Server Control (Computer Board)"
-	icon_state = "science"
-	build_path = /obj/machinery/computer/rdservercontrol
-
 /obj/item/circuitboard/computer/research
 	name = "Research Monitor (Computer Board)"
 	icon_state = "science"

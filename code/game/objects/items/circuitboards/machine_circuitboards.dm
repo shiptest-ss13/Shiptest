@@ -939,11 +939,31 @@ WS End */
 
 /obj/item/circuitboard/machine/rdserver
 	name = "R&D Server (Machine Board)"
+	var/server_id = "default-server"
+	var/static/list/all_ids = list()
 	icon_state = "science"
 	build_path = /obj/machinery/rnd/server
 	req_components = list(
 		/obj/item/stack/cable_coil = 2,
 		/obj/item/stock_parts/scanning_module = 1)
+
+/obj/item/circuitboard/machine/rdserver/multitool_act(mob/living/user)
+	. = ..()
+	var/new_id = input("Set the server ID", "ServerID ID", server_id) as text|null
+	new_id = replacetext(new_id, " ", "-")
+	if(!new_id || (loc != user))
+		to_chat(user, "<span class='warning'>You must hold the circuitboard to change its Server ID!</span>")
+		return
+
+	if(new_id in all_ids)
+		to_chat(user, "<span class='warning'>Server ID already in use!</span>")
+		return
+
+	if(server_id != initial(server_id))
+		all_ids -= server_id
+
+	server_id = new_id
+	all_ids |= server_id
 
 /obj/item/circuitboard/machine/techfab/department/science
 	name = "\improper Departmental Techfab (Machine Board) - Science"

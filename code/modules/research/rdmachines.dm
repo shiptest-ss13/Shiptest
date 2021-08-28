@@ -14,6 +14,7 @@
 	var/disabled = FALSE
 	var/obj/machinery/computer/rdconsole/linked_console
 	var/obj/item/loaded_item = null //the item loaded inside the machine (currently only used by experimentor and destructive analyzer)
+	var/datum/techweb/linked_techweb
 
 /obj/machinery/rnd/proc/reset_busy()
 	busy = FALSE
@@ -24,6 +25,7 @@
 
 /obj/machinery/rnd/Destroy()
 	QDEL_NULL(wires)
+	linked_techweb = null
 	return ..()
 
 /obj/machinery/rnd/proc/shock(mob/user, prb)
@@ -47,6 +49,12 @@
 	if(panel_open && is_wire_tool(O))
 		wires.interact(user)
 		return TRUE
+	if(istype(O, /obj/item/multitool))
+		var/obj/item/multitool/multi = O
+		if(multi.buffer && istype(multi.buffer, /obj/machinery/rnd/server) && multi.buffer != src)
+			var/obj/machinery/rnd/server/server = multi.buffer
+			linked_techweb = server.stored_research
+			visible_message("Linked to [server]!")
 	if(is_refillable() && O.is_drainable())
 		return FALSE //inserting reagents into the machine
 	if(Insert_Item(O, user))
