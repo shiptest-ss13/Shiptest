@@ -11,7 +11,6 @@ import { PING_INTERVAL, PING_QUEUE_SIZE, PING_TIMEOUT } from './constants';
 export const pingMiddleware = store => {
   let initialized = false;
   let index = 0;
-  let interval;
   const pings = [];
   const sendPing = () => {
     for (let i = 0; i < PING_QUEUE_SIZE; i++) {
@@ -33,14 +32,8 @@ export const pingMiddleware = store => {
     const { type, payload } = action;
     if (!initialized) {
       initialized = true;
-      interval = setInterval(sendPing, PING_INTERVAL);
+      setInterval(sendPing, PING_INTERVAL);
       sendPing();
-    }
-    if (type === 'roundrestart') {
-      // Stop pinging because dreamseeker is currently reconnecting.
-      // Topic calls in the middle of reconnect will crash the connection.
-      clearInterval(interval);
-      return next(action);
     }
     if (type === 'pingReply') {
       const { index } = payload;
