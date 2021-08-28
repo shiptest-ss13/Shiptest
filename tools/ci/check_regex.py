@@ -419,7 +419,7 @@ if __name__ == "__main__":
     raw_diff = g.diff(git_diff_range_branches(head_branch, other_branch))
     diffs = unidiff.PatchSet.from_string(raw_diff)
 
-    output_write(" - Found %d *.dm files with diffs" % (len(files_of_interest)))
+    output_write(" - Found %d *.dm files with diffs, out of %d changed files" % (len(files_of_interest) ,len(files_with_diffs)))
 
     changed_files = list()
     diff_added_content:   Dict[str, Dict[int, str]] = dict()
