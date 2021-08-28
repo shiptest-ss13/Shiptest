@@ -327,6 +327,7 @@ def try_normalize_path(filepath):
     return os.path.normpath(filepath)
 
 def git_diff_range_branches(parent, head=None):
+    parent = f"origin/{parent}"
     if head is not None:
         return "%s...%s" % (head, parent)
     return parent
