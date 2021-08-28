@@ -39,8 +39,8 @@ from typing import Dict, List, Tuple
 
 # Third party
 import git                  # For fetching git data & diffs
-import unidiff
-from unidiff.patch import Line, PatchInfo, PatchedFile              # For parsing of unified diff data
+import unidiff              # For parsing of unified diff data
+from unidiff.patch import Line, PatchedFile
 import yaml                 # For configuration
 import colorama             # For logging styling
 from colorama import Fore, Back, Style
@@ -381,7 +381,11 @@ if __name__ == "__main__":
     if other_branch is not None:
         output_write(" - Diff branch #2: %s" % (other_branch))
     else:
-        output_write(" - Diff branch #2: HEAD @ %s" % repo.active_branch)
+        # It is common practice to fetch PR branch as a detached branch in Github Actions
+        b = repo.active_branch.name if repo.active_branch.is_detached else repo.active_branch
+        d = "Detached " if repo.active_branch.is_detached else ""
+        output_write(" - Diff branch #2: %sHEAD @ %s" % (d, b))
+
     # Get what files have been changed, instead of getting all diffs at once
     files_with_diffs = g.diff(
         git_diff_range_branches(head_branch, other_branch),
@@ -438,7 +442,6 @@ if __name__ == "__main__":
     (sum_removed,   removed_matches)                = analyser.analyze_file_contents(diff_removed_content)
 
     # Process the results
-
     sum_deltas = dict()
     for ii in range(0, N):
         if sum_added[ii]['SUM'] or sum_removed[ii]['SUM']:
@@ -505,7 +508,7 @@ if __name__ == "__main__":
             colour=colour
         )
 
-        # Annotation info
+        # Annotation info to a file
         if not output_file.writable():
             continue
 
@@ -523,47 +526,6 @@ if __name__ == "__main__":
         )
         files_count = len(all_files)
 
-        for (index, file) in enumerate(all_files):
-            branch = "\u251C" if index < files_count - 1 else "\u2514"
-            stem = "\u2502" if index < files_count -1 else " "
-
-            show_items = []
-            inner_prefix = ""
-
-            matches = (matched_files[file] if file in matched_files else [])
-            adds = (added_matches[jj][file] if file in added_matches[jj] else [])
-            removes = (removed_matches[jj][file] if file in removed_matches[jj] else [])
-            if len(matches):
-                show_items.append("Current (%4i): %s" % (len(matches), matches))
-            if len(adds):
-                show_items.append("+++++++ (%4i): %s" % (len(adds), adds))
-                inner_prefix = prefix
-            if len(removes):
-                show_items.append("------- (%4i): %s" % (len(removes), removes))
-                inner_prefix = prefix
-
-            output_write(
-                "%4s %1s%2s %s" % (
-                    inner_prefix,
-                    branch,
-                    "\u2500\u252C",
-                    file
-                ),
-                to_stdout= False
-            )
-            for nn in range(0, len(show_items)):
-                inner_branch = "\u251C" if nn < len(show_items) - 1 else "\u2514"
-                output_write("%4s %1s %1s %s" % (
-                        inner_prefix,
-                        stem,
-                        inner_branch,
-                        show_items[nn]
-                    ),
-                    to_stdout= False
-                )
-            if index < files_count - 1:
-                output_write("%4s %1s" % (inner_prefix, stem), to_stdout=False)
-
         if not files_count:
             output_write(
                 "%6s %s" % (
@@ -572,6 +534,48 @@ if __name__ == "__main__":
                 ),
                 to_stdout= False
             )
+        else:
+            for (index, file) in enumerate(all_files):
+                branch = "\u251C" if index < files_count - 1 else "\u2514"
+                stem = "\u2502" if index < files_count -1 else " "
+
+                show_items = []
+                inner_prefix = ""
+
+                matches = (matched_files[file] if file in matched_files else [])
+                adds = (added_matches[jj][file] if file in added_matches[jj] else [])
+                removes = (removed_matches[jj][file] if file in removed_matches[jj] else [])
+                if len(matches):
+                    show_items.append("Current (%4i): %s" % (len(matches), matches))
+                if len(adds):
+                    show_items.append("+++++++ (%4i): %s" % (len(adds), adds))
+                    inner_prefix = prefix
+                if len(removes):
+                    show_items.append("------- (%4i): %s" % (len(removes), removes))
+                    inner_prefix = prefix
+
+                output_write(
+                    "%4s %1s%2s %s" % (
+                        inner_prefix,
+                        branch,
+                        "\u2500\u252C",
+                        file
+                    ),
+                    to_stdout= False
+                )
+                for nn in range(0, len(show_items)):
+                    inner_branch = "\u251C" if nn < len(show_items) - 1 else "\u2514"
+                    output_write("%4s %1s %1s %s" % (
+                            inner_prefix,
+                            stem,
+                            inner_branch,
+                            show_items[nn]
+                        ),
+                        to_stdout= False
+                    )
+                if index < files_count - 1:
+                    output_write("%4s %1s" % (inner_prefix, stem), to_stdout=False)
+        # end
 
         output_write("", to_stdout=False) # Just space out between the lines
 
