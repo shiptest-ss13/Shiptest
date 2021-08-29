@@ -9,6 +9,8 @@
 	equip_delay_other = 25
 	resistance_flags = NONE
 	custom_materials = list(/datum/material/glass = 250)
+	greyscale_colors = list(list(14, 26), list(17, 26))
+	greyscale_icon_state = "glasses"
 	var/vision_flags = 0
 	var/darkness_view = 2//Base human is 2
 	var/invis_view = SEE_INVISIBLE_LIVING	//admin only for now
