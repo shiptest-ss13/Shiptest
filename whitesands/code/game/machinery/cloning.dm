@@ -326,7 +326,7 @@
 		else if(mob_occupant && mob_occupant.cloneloss > (100 - heal_level))
 			mob_occupant.Unconscious(80)
 			var/dmg_mult = CONFIG_GET(number/damage_multiplier)
-			 //Slowly get that clone healed and finished.
+//Slowly get that clone healed and finished.
 			mob_occupant.adjustCloneLoss(-((speed_coeff / 2) * dmg_mult))
 			if(beaker.reagents.has_reagent(/datum/reagent/medicine/synthflesh, fleshamnt))
 				beaker.reagents.remove_reagent(/datum/reagent/medicine/synthflesh, fleshamnt)

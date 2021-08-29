@@ -38,10 +38,10 @@
 	var/explosion_block = 0
 
 	/**
-	  * used to store the different colors on an atom
-	  *
-	  * its inherent color, the colored paint applied on it, special color effect etc...
-	  */
+	* used to store the different colors on an atom
+	*
+	* its inherent color, the colored paint applied on it, special color effect etc...
+	*/
 	var/list/atom_colours
 
 
@@ -226,6 +226,10 @@
 		if(canSmoothWith[length(canSmoothWith)] > MAX_S_TURF) //If the last element is higher than the maximum turf-only value, then it must scan turf contents for smoothing targets.
 			smoothing_flags |= SMOOTH_OBJ
 		SET_BITFLAG_LIST(canSmoothWith)
+
+	var/area/ship/current_ship_area = get_area(src)
+	if(!mapload && istype(current_ship_area) && current_ship_area.mobile_port)
+		connect_to_shuttle(current_ship_area.mobile_port, current_ship_area.mobile_port.get_docked())
 
 	var/temp_list = list()
 	for(var/i in custom_materials)

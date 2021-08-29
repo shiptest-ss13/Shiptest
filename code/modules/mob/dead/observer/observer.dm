@@ -117,7 +117,7 @@ GLOBAL_VAR_INIT(observer_default_invisibility, INVISIBILITY_OBSERVER)
 	update_icon()
 
 	if(!T)
-		var/list/turfs = get_areatype_turfs(/area/shuttle/arrival)
+		var/list/turfs = get_areatype_turfs(/area/overmap)
 		if(turfs.len)
 			T = pick(turfs)
 		else

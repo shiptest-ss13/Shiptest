@@ -1,4 +1,4 @@
-#define BASE_HUMAN_REWARD 500
+#define BASE_HUMAN_REWARD 1500
 #define EXPDIS_FAIL_MSG "<span class='notice'>You dissect [target], but do not find anything particularly interesting.</span>"
 #define PUBLIC_TECHWEB_GAIN 0.6 //how many research points go directly into the main pool
 #define PRIVATE_TECHWEB_GAIN (1 - PUBLIC_TECHWEB_GAIN) //how many research points go directly into the main pool
@@ -77,8 +77,7 @@
 	var/points_earned = check_value(target, surgery)
 	user.visible_message("<span class='notice'>[user] dissects [target], discovering [points_earned] point\s of data!</span>", "<span class='notice'>You dissect [target], finding [points_earned] point\s worth of discoveries, you also write a few notes.</span>")
 
-	SSresearch.science_tech.add_point_list(list(TECHWEB_POINT_TYPE_GENERIC = points_earned*PUBLIC_TECHWEB_GAIN))
-	var/obj/item/research_notes/the_dossier =new /obj/item/research_notes(user.loc, points_earned*PRIVATE_TECHWEB_GAIN, "biology")
+	var/obj/item/research_notes/the_dossier =new /obj/item/research_notes(user.loc, points_earned, "biology")
 	if(!user.put_in_hands(the_dossier) && istype(user.get_inactive_held_item(), /obj/item/research_notes))
 		var/obj/item/research_notes/hand_dossier = user.get_inactive_held_item()
 		hand_dossier.merge(the_dossier)
@@ -94,8 +93,7 @@
 	var/points_earned = round(check_value(target, surgery) * 0.01)
 	user.visible_message("<span class='notice'>[user] dissects [target]!</span>", EXPDIS_FAIL_MSG)
 
-	SSresearch.science_tech.add_point_list(list(TECHWEB_POINT_TYPE_GENERIC = points_earned*PUBLIC_TECHWEB_GAIN))
-	var/obj/item/research_notes/the_dossier =new /obj/item/research_notes(user.loc, points_earned*PRIVATE_TECHWEB_GAIN, "biology")
+	var/obj/item/research_notes/the_dossier =new /obj/item/research_notes(user.loc, points_earned, "biology")
 	if(!user.put_in_hands(the_dossier) && istype(user.get_inactive_held_item(), /obj/item/research_notes))
 		var/obj/item/research_notes/hand_dossier = user.get_inactive_held_item()
 		hand_dossier.merge(the_dossier)

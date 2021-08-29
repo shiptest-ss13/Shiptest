@@ -11,7 +11,7 @@
 	RegisterSignal(parent, COMSIG_ITEM_DROPPED,.proc/OnDropped)
 
 	src.knockoff_chance = knockoff_chance
-	
+
 	if(zone_override)
 		target_zones = zone_override
 

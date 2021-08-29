@@ -21,9 +21,9 @@
 	///The mob that owns this client_colour.
 	var/mob/owner
 	/**
-	  * We prioritize colours with higher priority (lower numbers), so they don't get overriden by less important ones:
-	  * eg: "Bloody screen" > "goggles colour" as the former is much more important
-	  */
+	* We prioritize colours with higher priority (lower numbers), so they don't get overriden by less important ones:
+	* eg: "Bloody screen" > "goggles colour" as the former is much more important
+	*/
 	var/priority = PRIORITY_NORMAL
 	///Will this client_colour prevent ones of lower priority from being applied?
 	var/override = FALSE

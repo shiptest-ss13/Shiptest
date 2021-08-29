@@ -90,9 +90,10 @@ GLOBAL_LIST_EMPTY(silo_access_logs)
 					if(threshold)
 						materials.refund_minimum = threshold
 		else if(!materials.linked_account && I.registered_account)
-			user.visible_message("[user] swipes [I] on [src], registering it's linked account for material payments.", \
-			 					 "You swipe [I] on [src], registering it's linked account for material payments.", \
-								 "You hear a someone sliding a card, and then a quiet beep.")
+			user.visible_message(
+				"[user] swipes [I] on [src], registering it's linked account for material payments.",
+				"You swipe [I] on [src], registering it's linked account for material payments.",
+				"You hear a someone sliding a card, and then a quiet beep.")
 			materials.linked_account = I.registered_account
 		return TRUE
 	return ..()

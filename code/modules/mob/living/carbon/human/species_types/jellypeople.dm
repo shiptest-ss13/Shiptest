@@ -233,7 +233,7 @@
 	if(owner_nanites)
 		//copying over nanite programs/cloud sync with 50% saturation in host and spare
 		owner_nanites.nanite_volume *= 0.5
-		spare.AddComponent(/datum/component/nanites, owner_nanites.nanite_volume)
+		spare.AddComponent(/datum/component/nanites, owner_nanites.linked_techweb, owner_nanites.nanite_volume)
 		SEND_SIGNAL(spare, COMSIG_NANITE_SYNC, owner_nanites, TRUE, TRUE) //The trues are to copy activation as well
 
 	H.blood_volume *= 0.45

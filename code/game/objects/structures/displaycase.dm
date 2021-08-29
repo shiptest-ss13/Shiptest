@@ -174,7 +174,7 @@
 		update_icon()
 		return
 	else
-	    //prevents remote "kicks" with TK
+		//prevents remote "kicks" with TK
 		if (!Adjacent(user))
 			return
 		if (user.a_intent == INTENT_HELP)

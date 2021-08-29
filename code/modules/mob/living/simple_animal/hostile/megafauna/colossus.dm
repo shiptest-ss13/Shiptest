@@ -53,10 +53,11 @@ Difficulty: Very Hard
 	loot = list(/obj/structure/closet/crate/necropolis/colossus)
 	deathmessage = "disintegrates, leaving a glowing core in its wake."
 	deathsound = 'sound/magic/demon_dies.ogg'
-	attack_action_types = list(/datum/action/innate/megafauna_attack/spiral_attack,
-							   /datum/action/innate/megafauna_attack/aoe_attack,
-							   /datum/action/innate/megafauna_attack/shotgun,
-							   /datum/action/innate/megafauna_attack/alternating_cardinals)
+	attack_action_types = list(
+		/datum/action/innate/megafauna_attack/spiral_attack,
+		/datum/action/innate/megafauna_attack/aoe_attack,
+		/datum/action/innate/megafauna_attack/shotgun,
+		/datum/action/innate/megafauna_attack/alternating_cardinals)
 	small_sprite_type = /datum/action/small_sprite/megafauna/colossus
 
 /datum/action/innate/megafauna_attack/spiral_attack

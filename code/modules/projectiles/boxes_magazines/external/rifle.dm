@@ -15,6 +15,7 @@
 
 /obj/item/ammo_box/magazine/m556
 	name = "toploader magazine (5.56mm)"
+	icon = 'whitesands/icons/obj/ammo.dmi'
 	icon_state = "5.56m"
 	ammo_type = /obj/item/ammo_casing/a556
 	caliber = "a556"

@@ -102,6 +102,6 @@
 	species_language_holder = /datum/language_holder/lizard/ash
 
 /datum/species/lizard/ashwalker/kobold/on_species_gain(mob/living/carbon/C, datum/species/old_species, pref_load)
-  . = ..() //call everything from species/on_species_gain()
-  C.dna.add_mutation(DWARFISM)
+	. = ..() //call everything from species/on_species_gain()
+	C.dna.add_mutation(DWARFISM)
 //WS Edit End - Kobold

@@ -248,6 +248,14 @@
 	category = list("Computer Boards")
 	departmental_flags = DEPARTMENTAL_FLAG_CARGO | DEPARTMENTAL_FLAG_SECURITY
 
+/datum/design/board/selling
+	name = "Computer Design (Cargo Hold Control Terminal)"
+	desc = "Allows for the construction of circuit boards used to build a Cargo Hold Control Terminal."
+	id = "selling_console"
+	build_path = /obj/item/circuitboard/computer/selling_pad_control
+	category = list("Computer Boards")
+	departmental_flags = DEPARTMENTAL_FLAG_CARGO
+
 /datum/design/board/comm_monitor
 	name = "Computer Design (Telecommunications Monitoring Console)"
 	desc = "Allows for the construction of circuit boards used to build a telecommunications monitor."

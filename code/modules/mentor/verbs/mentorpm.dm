@@ -2,7 +2,7 @@
 /client/proc/cmd_mentor_pm_panel()
 	set category = "Mentor"
 	set name = "Mentor PM"
-	if(!holder)
+	if(!check_mentor())
 		to_chat(src, "<span class='warning'>Error: Mentor-PM-Panel: Only Mentors may use this command.</span>")
 		return
 	var/list/client/targets[0]
@@ -33,7 +33,7 @@
 	else if(istype(whom,/client))
 		C = whom
 	if(!C)
-		if(holder)
+		if(check_mentor())
 			to_chat(src, "<span class='warning'>Error: Mentor-PM: Client not found.</span>")
 		else
 			mentorhelp(msg)	//Mentor we are replying to left. Mentorhelp instead

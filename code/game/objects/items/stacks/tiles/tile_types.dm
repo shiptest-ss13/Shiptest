@@ -61,9 +61,11 @@
 
 			if (mineralType == "metal")
 				var/obj/item/stack/sheet/metal/new_item = new(user.loc)
-				user.visible_message("<span class='notice'>[user.name] shaped [src] into metal with the welding tool.</span>", \
-							 "<span class='notice'>You shaped [src] into metal with the welding tool.</span>", \
-							 "<span class='hear'>You hear welding.</span>")
+				user.visible_message(
+					"<span class='notice'>[user.name] shaped [src] into metal with the welding tool.</span>",
+					"<span class='notice'>You shaped [src] into metal with the welding tool.</span>",
+					"<span class='hear'>You hear welding.</span>"
+				)
 				var/obj/item/stack/rods/R = src
 				src = null
 				var/replace = (user.get_inactive_held_item()==R)
@@ -74,9 +76,11 @@
 			else
 				var/sheet_type = text2path("/obj/item/stack/sheet/mineral/[mineralType]")
 				var/obj/item/stack/sheet/mineral/new_item = new sheet_type(user.loc)
-				user.visible_message("<span class='notice'>[user.name] shaped [src] into a sheet with the welding tool.</span>", \
-							 "<span class='notice'>You shaped [src] into a sheet with the welding tool.</span>", \
-							 "<span class='hear'>You hear welding.</span>")
+				user.visible_message(
+					"<span class='notice'>[user.name] shaped [src] into a sheet with the welding tool.</span>",
+					"<span class='notice'>You shaped [src] into a sheet with the welding tool.</span>",
+					"<span class='hear'>You hear welding.</span>"
+				)
 				var/obj/item/stack/rods/R = src
 				src = null
 				var/replace = (user.get_inactive_held_item()==R)
@@ -199,6 +203,23 @@
 	turf_type = /turf/open/floor/carpet/royalblue
 	tableVariant = /obj/structure/table/wood/fancy/royalblue
 
+/obj/item/stack/tile/carpet/executive
+	name = "executive carpet"
+	icon_state = "tile_carpet_executive"
+	item_state = "tile-carpet-royalblue"
+	turf_type = /turf/open/floor/carpet/executive
+
+/obj/item/stack/tile/carpet/stellar
+	name = "stellar carpet"
+	icon_state = "tile_carpet_stellar"
+	item_state = "tile-carpet-royalblue"
+	turf_type = /turf/open/floor/carpet/stellar
+
+/obj/item/stack/tile/carpet/donk
+	name = "donk co promotional carpet"
+	icon_state = "tile_carpet_donk"
+	item_state = "tile-carpet-orange"
+	turf_type = /turf/open/floor/carpet/donk
 
 /obj/item/stack/tile/carpet/fifty
 	amount = 50
