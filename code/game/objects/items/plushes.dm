@@ -690,3 +690,11 @@
 		forceMove(random_open_spot)
 	user.dust(just_ash = FALSE, drop_items = TRUE)
 	return MANUAL_SUICIDE
+
+/obj/item/toy/plush/spider
+	name = "spider plushie"
+	desc = "A plushie depicting an adorable rendition of a large spider. Additional legs give it four times the hugging power!"
+	icon_state = "spiderplush"
+	item_state = "spiderplush"
+	attack_verb = list("bites", "skitters")
+	squeak_override = list('sound/weapons/bite.ogg' = 10, 'sound/voice/hiss1.ogg' = 1, 'sound/voice/hiss2.ogg' = 1, 'sound/voice/hiss3.ogg' = 1, 'sound/voice/hiss4.ogg' = 1)
