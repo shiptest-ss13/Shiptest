@@ -10,6 +10,9 @@ SUBSYSTEM_DEF(overmap)
 	///Defines which generator to use for the overmap
 	var/generator_type = OVERMAP_GENERATOR_RANDOM
 
+	// DEBUG FIX -- modularize this to a list
+	var/datum/overmap_system/primary_system
+
 	///List of all overmap objects.
 	var/list/overmap_objects
 	///List of all helms, to be adjusted

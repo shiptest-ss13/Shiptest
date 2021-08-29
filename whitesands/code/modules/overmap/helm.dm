@@ -12,8 +12,7 @@
 	///Is this for viewing only?
 	var/viewer = FALSE
 	// DEBUG REMOVE
-	var/prediction_test = TRUE
-	var/physics_test_initialized = FALSE
+	var/interp_test = TRUE
 	var/zoom_level = 1
 
 /obj/machinery/computer/helm/Initialize(mapload)
@@ -61,19 +60,12 @@
 /obj/machinery/computer/helm/ui_data(mob/user)
 	. = list()
 	// DEBUG BEGIN
-	if(!physics_test_initialized)
-		SSphysics.test_system(1)
-		physics_test_initialized = TRUE
+	if(!SSovermap.primary_system)
+		SSovermap.primary_system = new /datum/overmap_system()
 
-	var/datum/physics_object/circ = SSphysics.processing[1]
-	.["prediction_test"] = prediction_test
+	.["interp_test"] = interp_test
 	.["zoom_level"] = zoom_level
-	.["pos_x"] = circ.pos_x
-	.["pos_y"] = circ.pos_y
-	.["vel_x"] = circ.vel_x
-	.["vel_y"] = circ.vel_y
-	.["acc_x"] = circ.acc_x
-	.["acc_y"] = circ.acc_y
+	.["body_information"] = SSovermap.primary_system.get_data_for_user(user)
 
 	// DEBUG END
 	/*

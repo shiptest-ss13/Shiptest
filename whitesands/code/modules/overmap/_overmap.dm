@@ -1,3 +1,107 @@
+/datum/overmap_system
+	var/list/datum/overmap_obj/all_children = list()
+
+// DEBUG FIX -- move this somewhere else. make it better too
+/datum/overmap_system/New()
+	. = ..()
+
+	var/datum/sun = new /datum/overmap_obj/sun()
+	var/sun_component = sun.AddComponent(/datum/component/physics_processing, null, FALSE, 1)
+	all_children.Add(sun)
+
+	var/desired_planets = 5
+	var/num_planets = 0
+
+	var/datum/overmap_obj/planet/cur_planet
+	var/datum/component/physics_processing/cur_component
+	while(num_planets < desired_planets)
+		cur_planet = new()
+		cur_component = cur_planet.AddComponent(/datum/component/physics_processing, sun_component, TRUE)
+
+		// DEBUG FIX -- update these to more interesting and varied possibilities
+		var/s_m = pick(list(0.3871, 0.7233, 1, 1.5273))
+//		var/s_m = pick(list(1, 1.5273, 5.2028, 9.5388, 19.1914, 30.0611))
+//		var/ecc = pick(0.205630, 0.006772, 0.0167086, 0.0934, 0.0489, 0.0565, 0.046381, 0.008678)
+		var/ecc = rand(0, 400) / 1000
+		var/ccwise = prob(50)
+		var/arg_of_p = rand(0, 359)
+		cur_planet.orbit_s_m_axis = s_m
+		cur_planet.orbit_eccentricity = ecc
+		cur_planet.orbit_counterclockwise = ccwise
+		cur_planet.orbit_arg_of_periapsis = arg_of_p
+
+		// note that this technically unfairly biases start locations near periapsis
+		cur_component.set_up_orbit(s_m, ecc, ccwise, arg_of_p, rand(0, 359))
+		all_children.Add(cur_planet)
+		num_planets++
+
+/datum/overmap_system/proc/get_data_for_user(user)
+	var/list/data = list()
+	for(var/C in all_children)
+		var/datum/overmap_obj/child = C
+		if(child.is_visible_to_user(user))
+			data.Add(list(child.serialize_list())) // this proc returns a list, but in order to add a list to a list we need to wrap it in another fucking list
+	return data
+
+/datum/overmap_obj
+	/// The name of the overmap object as communicated to the player. Need not be unique; should not be treated as such.
+	var/name = "overmap object"
+
+	/// The color associated with this object.
+	var/display_color
+	/// Used to determine the relative size of the object on certain displays. Usually radius.
+	var/display_size
+
+	/// Whether orbit information should be sent to applicable displays for orbit line display.
+	var/show_orbit = TRUE
+	/// The semi-major axis of the object's orbit, used for orbit lines. Does not affect movement.
+	var/orbit_s_m_axis
+	/// The eccentricity of the object's orbit, used for orbit lines. Does not affect movement.
+	var/orbit_eccentricity
+	/// The semi-major axis of the object's orbit, used for orbit lines. Does not affect movement.
+	var/orbit_counterclockwise
+	/// The semi-major axis of the object's orbit, used for orbit lines. Does not affect movement.
+	var/orbit_arg_of_periapsis
+
+// DEBUG FIX: maybe add functionality to this, explain why it's here
+/datum/overmap_obj/proc/is_visible_to_user(user)
+	return TRUE
+
+/datum/overmap_obj/serialize_list(list/options)
+	. = list()
+	.["name"] = name
+	.["ref"] = REF(src)
+	.["color"] = display_color
+	.["size"] = display_size
+
+	var/datum/component/physics_processing/phys_comp = GetComponent(/datum/component/physics_processing)
+	.["parent_ref"] = phys_comp.pos_parent ? REF(phys_comp.pos_parent.parent) : null
+	// the overmap display thinks +y is down, while the physics system thinks +y is up.
+	// thus, we invert the y on the numbers we said it, so code there doesn't have to worry much.
+	.["position"] = list(phys_comp.pos_x, -phys_comp.pos_y)
+	// the physics system uses deciseconds as its native units, but that's inconvenient for the display.
+	// to compensate, we convert velocity and acceleration to their respective values in seconds
+	.["velocity"] = list(phys_comp.vel_x SECONDS, -phys_comp.vel_y SECONDS)
+	.["acceleration"] = list(phys_comp.acc_x SECONDS SECONDS, -phys_comp.acc_y SECONDS SECONDS)
+
+	.["show_orbit"] = show_orbit
+	.["o_semimajor"] = orbit_s_m_axis
+	.["o_eccentricity"] = orbit_eccentricity
+	.["o_counterclockwise"] = orbit_counterclockwise
+	.["o_arg_of_periapsis"] = orbit_arg_of_periapsis
+
+// DEBUG REMOVE: figure out a better approach than "sun" and "planet"
+/datum/overmap_obj/sun
+	name = "Sun"
+	display_color = "#F6DE01"
+	display_size = 0.25*ONE_AU
+	show_orbit = FALSE
+
+/datum/overmap_obj/planet
+	name = "Planet"
+	display_color = COLOR_SILVER
+	display_size = 0.06*ONE_AU
+
 /* OVERMAP TURFS */
 /turf/open/overmap
 	icon = 'whitesands/icons/turf/overmap.dmi'
