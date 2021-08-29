@@ -34,12 +34,14 @@ from io import FileIO       # For strong typing
 import os                   # For file and directory operations
 import re as regex          # For regex
 import time                 # For very basic performance profiling
+import argparse             # For arguments
 # Also for strong typing
 from typing import Dict, List, Tuple
 
 # Third party
 import git
-from git.refs.head import Head                  # For fetching git data & diffs
+from git.index import typ                  # For fetching git data & diffs
+from git.refs.head import Head
 import unidiff              # For parsing of unified diff data
 from unidiff.patch import Line, PatchedFile
 import yaml                 # For configuration
@@ -51,6 +53,23 @@ config_file_default_name = "check_regex.yaml"
 annotation_file_output_name = "check_regex_output.txt"
 
 preferred_encoding = "utf-8"
+
+# Args
+options = argparse.ArgumentParser()
+options.add_argument(
+    "-c", "--config",
+    dest="input_config_file")
+options.add_argument(
+    "-u",
+    "--update",
+    dest="update_config_file")
+options.add_argument(
+    "--log-changes-only",
+    dest="log_changes_only",
+    default=False,
+    action="store_true")
+
+args = options.parse_args()
 
 # Data struct for holding info about standardization rules
 class TestExpression:
@@ -105,6 +124,11 @@ target_method_binding = {
 #
 # Configuration
 #
+
+def get_config_file() -> str:
+    if args.input_config_file is not None:
+        return args.input_config_file
+    return config_file_default_name
 
 # Configuration loading
 def load_yaml_config(config_file: str) -> Dict:
@@ -349,18 +373,20 @@ if __name__ == "__main__":
         encoding=preferred_encoding
     )
 
+    config_file = get_config_file()
+
     output_write(create_title("Configuration"))
     output_write(" - Trying to load config: %s" % (
-        try_normalize_path(config_file_default_name)
+        try_normalize_path(config_file)
     ))
 
-    raw_config = load_yaml_config(config_file_default_name)
+    raw_config = load_yaml_config(config_file)
     (standards) = parse_yaml_config(raw_config)
 
     N = len(standards)
 
     output_write(" - Succesfully loaded config: %s" % (
-        try_normalize_path(config_file_default_name)
+        try_normalize_path(config_file)
     ))
     output_write(" - Loaded %d standardization rules" % (
         len(standards)
