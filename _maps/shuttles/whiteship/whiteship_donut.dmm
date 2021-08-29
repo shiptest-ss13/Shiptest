@@ -180,7 +180,7 @@
 /obj/machinery/door/airlock/titanium{
 	name = "restroom"
 	},
-/turf/open/floor/plasteel/showroomfloor/airless,
+/turf/open/floor/plasteel/airless/showroomfloor,
 /area/shuttle/abandoned)
 "aG" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -213,11 +213,11 @@
 	},
 /obj/machinery/door/window/eastleft,
 /obj/structure/window/reinforced/tinted,
-/turf/open/floor/plasteel/showroomfloor/airless,
+/turf/open/floor/plasteel/airless/showroomfloor,
 /area/shuttle/abandoned)
 "aL" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plasteel/showroomfloor/airless,
+/turf/open/floor/plasteel/airless/showroomfloor,
 /area/shuttle/abandoned)
 "aM" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -225,7 +225,7 @@
 /obj/machinery/shower{
 	dir = 8
 	},
-/turf/open/floor/plasteel/showroomfloor/airless,
+/turf/open/floor/plasteel/airless/showroomfloor,
 /area/shuttle/abandoned)
 "aN" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -253,12 +253,12 @@
 	pixel_x = -12
 	},
 /obj/item/soap,
-/turf/open/floor/plasteel/showroomfloor/airless,
+/turf/open/floor/plasteel/airless/showroomfloor,
 /area/shuttle/abandoned)
 "aR" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/light,
-/turf/open/floor/plasteel/showroomfloor/airless,
+/turf/open/floor/plasteel/airless/showroomfloor,
 /area/shuttle/abandoned)
 "aS" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -270,7 +270,7 @@
 /obj/structure/window/reinforced/tinted{
 	dir = 1
 	},
-/turf/open/floor/plasteel/showroomfloor/airless,
+/turf/open/floor/plasteel/airless/showroomfloor,
 /area/shuttle/abandoned)
 "aT" = (
 /obj/machinery/mech_bay_recharge_port,
@@ -310,10 +310,10 @@
 "aY" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/stack/sheet/metal,
-/obj/effect/turf_decal/corner/yellow{
+/obj/effect/turf_decal/tile/yellow{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/yellow{
+/obj/effect/turf_decal/tile/yellow{
 	dir = 8
 	},
 /turf/open/floor/plasteel/airless,
@@ -353,8 +353,8 @@
 /area/shuttle/abandoned)
 "bd" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/turf_decal/corner/yellow,
-/obj/effect/turf_decal/corner/yellow{
+/obj/effect/turf_decal/tile/yellow,
+/obj/effect/turf_decal/tile/yellow{
 	dir = 8
 	},
 /turf/open/floor/plasteel/airless,
@@ -374,10 +374,10 @@
 	dir = 8
 	},
 /obj/item/folder/blue,
-/obj/effect/turf_decal/corner/blue{
+/obj/effect/turf_decal/tile/blue{
 	dir = 8
 	},
-/obj/effect/turf_decal/corner/blue{
+/obj/effect/turf_decal/tile/blue{
 	dir = 1
 	},
 /turf/open/floor/plasteel/airless,
@@ -388,8 +388,8 @@
 /obj/machinery/light{
 	dir = 4
 	},
-/obj/effect/turf_decal/corner/blue,
-/obj/effect/turf_decal/corner/blue{
+/obj/effect/turf_decal/tile/blue,
+/obj/effect/turf_decal/tile/blue{
 	dir = 4
 	},
 /obj/machinery/cell_charger,
@@ -423,11 +423,11 @@
 /obj/item/paper_bin{
 	total_paper = 20
 	},
-/obj/effect/turf_decal/corner/blue{
+/obj/effect/turf_decal/tile/blue{
 	dir = 8
 	},
-/obj/effect/turf_decal/corner/blue,
-/obj/effect/turf_decal/corner/blue{
+/obj/effect/turf_decal/tile/blue,
+/obj/effect/turf_decal/tile/blue{
 	dir = 1
 	},
 /turf/open/floor/plasteel/airless,
@@ -438,7 +438,7 @@
 	dir = 8;
 	icon_state = "paperstack"
 	},
-/obj/effect/turf_decal/corner/blue{
+/obj/effect/turf_decal/tile/blue{
 	dir = 8
 	},
 /turf/open/floor/plasteel/airless,
@@ -446,17 +446,17 @@
 "bn" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/reagent_containers/food/drinks/mug,
-/obj/effect/turf_decal/corner/blue,
+/obj/effect/turf_decal/tile/blue,
 /turf/open/floor/plasteel/airless,
 /area/shuttle/abandoned)
 "bo" = (
 /obj/structure/table,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/turf_decal/corner/blue,
-/obj/effect/turf_decal/corner/blue{
+/obj/effect/turf_decal/tile/blue,
+/obj/effect/turf_decal/tile/blue{
 	dir = 8
 	},
-/obj/effect/turf_decal/corner/blue{
+/obj/effect/turf_decal/tile/blue{
 	dir = 4
 	},
 /turf/open/floor/plasteel/airless,
@@ -464,11 +464,11 @@
 "bp" = (
 /obj/structure/table,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/turf_decal/corner/blue,
-/obj/effect/turf_decal/corner/blue{
+/obj/effect/turf_decal/tile/blue,
+/obj/effect/turf_decal/tile/blue{
 	dir = 8
 	},
-/obj/effect/turf_decal/corner/blue{
+/obj/effect/turf_decal/tile/blue{
 	dir = 1
 	},
 /turf/open/floor/plasteel/airless,
@@ -484,8 +484,8 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/disk/holodisk/donutstation/whiteship,
-/obj/effect/turf_decal/corner/blue,
-/obj/effect/turf_decal/corner/blue{
+/obj/effect/turf_decal/tile/blue,
+/obj/effect/turf_decal/tile/blue{
 	dir = 8
 	},
 /turf/open/floor/plasteel/airless,
@@ -495,8 +495,8 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/turf_decal/corner/blue,
-/obj/effect/turf_decal/corner/blue{
+/obj/effect/turf_decal/tile/blue,
+/obj/effect/turf_decal/tile/blue{
 	dir = 8
 	},
 /turf/open/floor/plasteel/airless,
@@ -506,8 +506,8 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/turf_decal/corner/blue,
-/obj/effect/turf_decal/corner/blue{
+/obj/effect/turf_decal/tile/blue,
+/obj/effect/turf_decal/tile/blue{
 	dir = 8
 	},
 /turf/open/floor/plasteel/airless,

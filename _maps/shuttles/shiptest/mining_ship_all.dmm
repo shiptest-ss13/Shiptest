@@ -152,23 +152,11 @@
 /turf/closed/wall,
 /area/ship/bridge)
 "dh" = (
-/obj/structure/table,
-/obj/item/book/manual/wiki/surgery,
-/obj/item/storage/backpack/duffelbag/med/surgery,
 /obj/effect/turf_decal/corner/white/mono,
 /obj/effect/turf_decal/corner/blue/border{
 	dir = 10
 	},
-/obj{
-	name = "---Merge conflict marker---"
-	},
 /obj/structure/table,
-/obj/effect/turf_decal/tile/blue{
-	dir = 8
-	},
-/obj/effect/turf_decal/tile/blue{
-	dir = 1
-	},
 /obj/item/book/manual/wiki/surgery,
 /obj/item/storage/backpack/duffelbag/med/surgery,
 /obj/item/clothing/mask/surgical,
@@ -790,26 +778,6 @@
 /obj/item/reagent_containers/glass/bottle/charcoal{
 	pixel_x = 7;
 	pixel_y = 4
-	},
-/obj/structure/cable/yellow{
-	icon_state = "4-8"
-	},
-/obj{
-	name = "---Merge conflict marker---"
-	},
-/obj/structure/table,
-/obj/item/defibrillator/loaded,
-/obj/item/stack/medical/suture,
-/obj/item/reagent_containers/syringe,
-/obj/item/reagent_containers/glass/bottle/epinephrine{
-	pixel_x = -4
-	},
-/obj/item/reagent_containers/glass/bottle/charcoal{
-	pixel_x = 7;
-	pixel_y = 4
-	},
-/obj/effect/turf_decal/lumos/tile/neutral/half{
-	dir = 8
 	},
 /obj/structure/cable/yellow{
 	icon_state = "4-8"

@@ -190,7 +190,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "0-2"
 	},
-/obj/effect/turf_decal/bot,
+/obj/effect/turf_decal/industrial/hatch,
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "cV" = (
@@ -234,7 +234,7 @@
 "dv" = (
 /obj/machinery/power/port_gen/pacman/super,
 /obj/structure/cable/yellow,
-/obj/effect/turf_decal/bot,
+/obj/effect/turf_decal/industrial/hatch,
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "dw" = (
@@ -710,27 +710,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
-"iP" = (
-/obj{
-	name = "---Merge conflict marker---"
-	},
-/obj/effect/turf_decal/lumos/tile/neutral/half{
-	dir = 4
-	},
-/obj/structure/table/glass,
-/obj/machinery/door/window/eastleft,
-/obj/item/reagent_containers/glass/bottle/formaldehyde{
-	pixel_x = 5;
-	pixel_y = 8
-	},
-/obj/item/storage/belt/medical,
-/obj/item/reagent_containers/glass/bottle{
-	list_reagents = list(/datum/reagent/medicine/thializid = 30);
-	name = "thializid bottle"
-	},
-/obj/item/reagent_containers/syringe,
-/turf/closed/wall,
-/area/ship/medical)
 "iQ" = (
 /turf/open/floor/plating{
 	icon_state = "platingdmg3"
@@ -790,7 +769,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "0-2"
 	},
-/obj/effect/turf_decal/bot,
+/obj/effect/turf_decal/industrial/hatch,
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "jU" = (
@@ -934,7 +913,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "0-2"
 	},
-/obj/effect/turf_decal/bot,
+/obj/effect/turf_decal/industrial/hatch,
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "lP" = (
@@ -1720,12 +1699,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "vE" = (
-/obj/effect/decal/cleanable/blood/drip,
 /obj/effect/turf_decal/corner/red/mono,
-/obj{
-	name = "---Merge conflict marker---"
-	},
-/obj/effect/turf_decal/lumos/tile/blue/fulltile,
 /obj/effect/decal/cleanable/blood/drip,
 /mob/living/simple_animal/bot/cleanbot/medbay,
 /turf/open/floor/plasteel/mono/white,
@@ -2622,6 +2596,7 @@
 /obj/structure/window/reinforced/spawner{
 	dir = 1
 	},
+/obj/item/storage/belt/medical,
 /turf/open/floor/plasteel/dark,
 /area/ship/medical)
 "EM" = (
@@ -3079,23 +3054,11 @@
 /turf/open/floor/plasteel,
 /area/ship/cargo)
 "Jx" = (
-/obj/structure/table/wood,
-/obj/item/folder/red,
-/obj/item/toy/plush/hornet/gay{
-	pixel_x = 12;
-	pixel_y = 5
-	},
 /obj/effect/turf_decal/corner/b_green/full,
-/obj{
-	name = "---Merge conflict marker---"
-	},
 /obj/structure/table/wood,
 /obj/item/toy/plush/hornet/gay{
 	pixel_x = 12;
 	pixel_y = 5
-	},
-/obj/item/radio/intercom{
-	pixel_y = 32
 	},
 /obj/machinery/recharger,
 /turf/open/floor/plasteel,
@@ -3681,11 +3644,7 @@
 /turf/open/floor/plasteel/mono/white,
 /area/ship/medical)
 "Qc" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/effect/turf_decal/corner/b_green/full,
-/obj{
-	name = "---Merge conflict marker---"
-	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/item/gun/ballistic/automatic/pistol/commander/no_mag,
 /obj/item/gun/ballistic/automatic/pistol/commander/no_mag,
@@ -3945,6 +3904,9 @@
 /turf/open/floor/plating,
 /area/ship/engineering)
 "Sn" = (
+/obj/item/radio/intercom{
+	pixel_y = 32
+	},
 /turf/open/floor/wood,
 /area/ship/security)
 "Sr" = (
@@ -4661,7 +4623,7 @@
 "Zz" = (
 /obj/machinery/power/port_gen/pacman,
 /obj/structure/cable/yellow,
-/obj/effect/turf_decal/bot,
+/obj/effect/turf_decal/industrial/hatch,
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "ZG" = (
@@ -5193,7 +5155,7 @@ mB
 qm
 It
 nG
-iP
+nG
 nG
 iI
 iI

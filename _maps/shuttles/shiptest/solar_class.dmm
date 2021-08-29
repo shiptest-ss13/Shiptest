@@ -88,12 +88,6 @@
 /obj/machinery/atmospherics/components/unary/outlet_injector/on/layer4{
 	dir = 4
 	},
-/obj{
-	name = "---Merge conflict marker---"
-	},
-/obj/machinery/atmospherics/components/unary/outlet_injector/on/layer4{
-	dir = 4
-	},
 /turf/open/floor/plating/airless,
 /area/ship/external)
 "bE" = (
@@ -296,6 +290,12 @@
 /obj/item/bodypart/r_arm/robot,
 /obj/item/bodypart/r_leg/robot,
 /obj/item/assembly/flash,
+/obj/item/slime_scanner,
+/obj/item/slime_extract/grey,
+/obj/item/storage/box/rndboards{
+	desc = "A box containing boards for research equipment.";
+	name = "research equipment box"
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/science)
 "fv" = (
@@ -854,11 +854,6 @@
 /turf/open/floor/plasteel/white,
 /area/ship/security)
 "qS" = (
-/obj/structure/window/reinforced{
-	dir = 1
-	},
-/obj/structure/table/reinforced,
-/obj/item/storage/firstaid/regular,
 /obj/effect/turf_decal/corner/neutral{
 	dir = 8
 	},
@@ -869,23 +864,10 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/corner/neutral,
-/obj{
-	name = "---Merge conflict marker---"
-	},
 /obj/structure/window/reinforced{
 	dir = 1
 	},
 /obj/structure/table/reinforced,
-/obj/effect/turf_decal/tile/neutral{
-	dir = 8
-	},
-/obj/effect/turf_decal/tile/neutral{
-	dir = 4
-	},
-/obj/effect/turf_decal/tile/neutral{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/neutral,
 /obj/machinery/recharger,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
@@ -1326,30 +1308,12 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "yC" = (
-/obj/structure/table/reinforced,
-/obj/item/storage/toolbox/mechanical,
-/obj/item/radio/off,
-/obj/effect/turf_decal/corner/neutral,
 /obj/effect/turf_decal/corner/neutral{
 	dir = 1
 	},
-/obj/item/areaeditor/shuttle,
-/obj{
-	name = "---Merge conflict marker---"
-	},
 /obj/structure/table/reinforced,
 /obj/item/storage/toolbox/mechanical,
 /obj/item/radio/off,
-/obj/effect/turf_decal/tile/neutral{
-	dir = 4
-	},
-/obj/effect/turf_decal/tile/neutral,
-/obj/effect/turf_decal/tile/neutral{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/neutral{
-	dir = 8
-	},
 /obj/item/areaeditor/shuttle,
 /obj/item/storage/firstaid/regular{
 	pixel_x = -8;
@@ -1714,7 +1678,9 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
 	},
-/turf/open/floor/plasteel/mono,
+/turf/open/floor/plasteel/stairs/medium{
+	dir = 4
+	},
 /area/ship/hallway)
 "Gs" = (
 /obj/effect/turf_decal/corner/blue{
@@ -1797,7 +1763,6 @@
 /turf/open/floor/plasteel/white,
 /area/ship/hallway)
 "Ib" = (
-/obj/structure/window/reinforced,
 /obj/effect/turf_decal/corner/neutral{
 	dir = 4
 	},
@@ -1812,24 +1777,7 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/corner/blue,
-/obj{
-	name = "---Merge conflict marker---"
-	},
 /obj/structure/window/reinforced,
-/obj/effect/turf_decal/tile/neutral{
-	dir = 4
-	},
-/obj/effect/turf_decal/tile/neutral,
-/obj/effect/turf_decal/tile/neutral{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/neutral{
-	dir = 8
-	},
-/obj/effect/turf_decal/tile/blue{
-	dir = 8
-	},
-/obj/effect/turf_decal/tile/blue,
 /obj/structure/closet/wall{
 	pixel_y = 32
 	},
@@ -2604,26 +2552,14 @@
 /turf/open/floor/plasteel,
 /area/ship/hallway)
 "XD" = (
-/obj/structure/table,
-/obj/item/storage/backpack/duffelbag/med/surgery,
-/obj/machinery/vending/wallmed{
-	pixel_y = 28
-	},
 /obj/effect/turf_decal/corner/blue{
 	dir = 4
 	},
-/obj{
-	name = "---Merge conflict marker---"
-	},
 /obj/structure/table,
 /obj/item/storage/backpack/duffelbag/med/surgery,
 /obj/machinery/vending/wallmed{
 	pixel_y = 28
 	},
-/obj/effect/turf_decal/tile/blue{
-	dir = 4
-	},
-/obj/item/storage/box/gloves,
 /obj/item/storage/belt/medical,
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
