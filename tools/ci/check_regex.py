@@ -133,10 +133,10 @@ def get_config_file() -> str:
 # Configuration loading
 def load_yaml_config(config_file: str) -> Dict:
     if not os.path.exists(config_file):
-        print(f"Could not find {config_file}")
+        raise IOError(f"Could not find {config_file}")
         return None
     if not os.path.isfile(config_file):
-        print(f"Could not open {config_file}: is not a file")
+        raise IOError(f"Could not open {config_file}: is not a file")
         return None
 
     yaml_entries = {}
@@ -565,16 +565,23 @@ if __name__ == "__main__":
             to_stdout= False
         )
 
-        all_files = set().union(
-            list(matched_lines_by_expression[jj].keys()),
-            list(added_matches[jj].keys()),
-            list(removed_matches[jj].keys())
-        )
+        all_files = set()
+        if args.log_changes_only:
+            all_files = set().union(
+                list(matched_lines_by_expression[jj].keys()),
+                list(added_matches[jj].keys()),
+                list(removed_matches[jj].keys())
+            )
+        else:
+            all_files = set().union(
+                list(added_matches[jj].keys()),
+                list(removed_matches[jj].keys())
+            )
         files_count = len(all_files)
 
         # Collect subitems first, depending on changes
         to_show = list()
-        if not files_count:
+        if files_count:
             for (index, file) in enumerate(all_files):
                 lines = []
                 show_items = []
@@ -584,20 +591,14 @@ if __name__ == "__main__":
                 adds = (added_matches[jj][file] if file in added_matches[jj] else [])
                 removes = (removed_matches[jj][file] if file in removed_matches[jj] else [])
 
-                was_changed = False
                 if len(matches):
                     show_items.append("Current (%4i): %s" % (len(matches), matches))
                 if len(adds):
                     show_items.append("+++++++ (%4i): %s" % (len(adds), adds))
-                    was_changed = True
                     inner_prefix = prefix
                 if len(removes):
                     show_items.append("------- (%4i): %s" % (len(removes), removes))
-                    was_changed = True
                     inner_prefix = prefix
-
-                if args.log_changes_only and not was_changed:
-                    continue
 
                 lines.append(
                     "%2s %s" % (
