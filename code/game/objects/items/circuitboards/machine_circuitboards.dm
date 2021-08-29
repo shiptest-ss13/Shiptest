@@ -1256,6 +1256,17 @@ WS End */
 	icon_state = "supply"
 	build_path = /obj/machinery/rnd/production/techfab/department/cargo
 
+/obj/item/circuitboard/machine/selling_pad
+	name = "Cargo hold pad (Machine Board)"
+	icon_state = "supply"
+	build_path = /obj/machinery/selling_pad
+	req_components = list(
+		/obj/item/stock_parts/subspace/amplifier = 2,
+		/obj/item/stock_parts/subspace/transmitter = 2,
+		/obj/item/stock_parts/subspace/crystal = 1,
+		/obj/item/stock_parts/scanning_module = 2,
+		/obj/item/stock_parts/micro_laser = 2)
+
 //Misc
 /obj/item/circuitboard/machine/sheetifier
 	name = "Sheet-meister 2000 (Machine Board)"

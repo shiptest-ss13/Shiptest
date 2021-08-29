@@ -113,6 +113,13 @@
 					M.playsound_local(get_turf(sound_atom), 'sound/machines/twobeep_high.ogg', 50, TRUE)
 					to_chat(M, "[icon2html(icon_source, M)] <span class='notice'>[message]</span>")
 
+/datum/bank_account/ship
+	add_to_accounts = FALSE
+
+/datum/bank_account/ship/New(newname, budget)
+	account_holder = newname
+	account_balance = budget
+
 /datum/bank_account/department
 	account_holder = "Guild Credit Agency"
 	var/department_id = "REPLACE_ME"
