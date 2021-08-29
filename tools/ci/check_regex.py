@@ -499,6 +499,8 @@ if __name__ == "__main__":
 
     # This is the end, go process the data then show the results!
     output_write(create_title("Regex Results"))
+    if args.log_changes_only:
+        output_write(" - Showing changes only", to_stdout=False)
     output_write("\n%27s | %-6s | %s"
         % (
             "Result",
@@ -570,55 +572,68 @@ if __name__ == "__main__":
         )
         files_count = len(all_files)
 
+        # Collect subitems first, depending on changes
+        to_show = list()
         if not files_count:
-            output_write(
-                "%6s %s" % (
-                    "\u2514",
-                    "None found"
-                ),
-                to_stdout= False
-            )
-        else:
             for (index, file) in enumerate(all_files):
-                branch = "\u251C" if index < files_count - 1 else "\u2514"
-                stem = "\u2502" if index < files_count -1 else " "
-
+                lines = []
                 show_items = []
                 inner_prefix = ""
 
                 matches = (matched_files[file] if file in matched_files else [])
                 adds = (added_matches[jj][file] if file in added_matches[jj] else [])
                 removes = (removed_matches[jj][file] if file in removed_matches[jj] else [])
+
+                was_changed = False
                 if len(matches):
                     show_items.append("Current (%4i): %s" % (len(matches), matches))
                 if len(adds):
                     show_items.append("+++++++ (%4i): %s" % (len(adds), adds))
+                    was_changed = True
                     inner_prefix = prefix
                 if len(removes):
                     show_items.append("------- (%4i): %s" % (len(removes), removes))
+                    was_changed = True
                     inner_prefix = prefix
 
-                output_write(
-                    "%4s %1s%2s %s" % (
-                        inner_prefix,
-                        branch,
+                if args.log_changes_only and not was_changed:
+                    continue
+
+                lines.append(
+                    "%2s %s" % (
                         "\u2500\u252C",
                         file
-                    ),
-                    to_stdout= False
+                    )
                 )
                 for nn in range(0, len(show_items)):
                     inner_branch = "\u251C" if nn < len(show_items) - 1 else "\u2514"
-                    output_write("%4s %1s %1s %s" % (
-                            inner_prefix,
-                            stem,
+                    lines.append("%2s %s" % (
                             inner_branch,
                             show_items[nn]
-                        ),
-                        to_stdout= False
+                        )
                     )
-                if index < files_count - 1:
+                to_show.append((inner_prefix, lines))
+
+        # Finally render subitems if there are any present
+        if len(to_show):
+            for (index, (inner_prefix, lines)) in enumerate(to_show):
+                branch = "\u251C" if index < len(to_show) - 1 else "\u2514"
+                stem = "\u2502" if index < len(to_show) -1 else " "
+                for jj, line in enumerate(lines):
+                    if jj == 0:
+                        output_write("%4s %1s%s" % (inner_prefix, branch, line), to_stdout=False)
+                    else:
+                        output_write("%4s %1s%s" % (inner_prefix, stem, line), to_stdout=False)
+                if index < len(to_show) - 1:
                     output_write("%4s %1s" % (inner_prefix, stem), to_stdout=False)
+        else:
+            output_write(
+                "%6s %s" % (
+                    "\u2514",
+                    "None found" if not args.log_changes_only else "No changes found"
+                ),
+                to_stdout= False
+            )
         # end
 
         output_write("", to_stdout=False) # Just space out between the lines
