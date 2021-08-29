@@ -727,6 +727,9 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 4
 	},
+/obj/machinery/computer/selling_pad_control{
+	dir = 4
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
 "nA" = (
@@ -1391,6 +1394,9 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/computer/cargo/express{
+	dir = 4
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
 "vI" = (
@@ -1563,6 +1569,10 @@
 /obj/item/weldingtool/mini,
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
+"xZ" = (
+/obj/machinery/selling_pad,
+/turf/open/floor/plasteel/dark,
+/area/ship/cargo)
 "yg" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -3839,7 +3849,7 @@ Wo
 bI
 bU
 nx
-TN
+xZ
 vG
 fv
 cW

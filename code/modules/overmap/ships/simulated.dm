@@ -41,7 +41,6 @@
 	if(!shuttle)
 		CRASH("Simulated overmap ship created without associated shuttle!")
 	name = shuttle.name
-	job_slots = shuttle.source_template.job_slots
 	calculate_mass()
 	initial_name()
 	refresh_engines()
