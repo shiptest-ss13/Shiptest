@@ -116,6 +116,7 @@
 /turf/open/floor/mineral/titanium/yellow,
 /area/ship/bridge)
 "fH" = (
+/obj/structure/sign/nanotrasen,
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/crew)
 "fU" = (
@@ -184,6 +185,10 @@
 /obj/structure/cable,
 /turf/closed/wall/mineral/titanium,
 /area/ship/engineering)
+"ku" = (
+/obj/structure/sign/poster/retro/nanotrasen_logo_70s,
+/turf/closed/wall/mineral/titanium,
+/area/ship/crew)
 "lI" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 9
@@ -204,7 +209,9 @@
 /turf/open/floor/mineral/titanium/blue,
 /area/ship/medical)
 "mB" = (
-/obj/machinery/door/poddoor,
+/obj/machinery/door/poddoor{
+	id = "goon"
+	},
 /obj/structure/fans/tiny,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/mineral/titanium/white,
@@ -290,8 +297,14 @@
 /turf/open/floor/mineral/titanium/white,
 /area/ship/crew)
 "ra" = (
-/obj/machinery/door/poddoor,
 /obj/structure/fans/tiny,
+/obj/machinery/button/door{
+	id = "goon";
+	pixel_x = 26
+	},
+/obj/machinery/door/poddoor{
+	id = "goon"
+	},
 /turf/open/floor/mineral/titanium/white,
 /area/ship/crew)
 "ro" = (
@@ -400,6 +413,7 @@
 /obj/effect/spawner/lootdrop/donkpockets,
 /obj/item/storage/cans/sixbeer,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
+/obj/item/soap/nanotrasen,
 /turf/open/floor/mineral/titanium/purple,
 /area/ship/crew)
 "wV" = (
@@ -428,6 +442,10 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
+"ya" = (
+/obj/structure/sign/nanotrasen,
+/turf/closed/wall/mineral/titanium,
+/area/ship/medical)
 "yi" = (
 /obj/machinery/vending/wallmed,
 /turf/closed/wall/mineral/titanium,
@@ -462,6 +480,10 @@
 	},
 /turf/open/floor/mineral/titanium/blue,
 /area/ship/medical)
+"AP" = (
+/obj/structure/sign/nanotrasen,
+/turf/closed/wall/mineral/titanium,
+/area/ship/crew)
 "Be" = (
 /obj/machinery/sleeper,
 /turf/open/floor/mineral/titanium/blue,
@@ -709,6 +731,10 @@
 	dir = 1
 	},
 /turf/open/floor/mineral/titanium/yellow,
+/area/ship/engineering)
+"ON" = (
+/obj/structure/sign/nanotrasen,
+/turf/closed/wall/mineral/titanium,
 /area/ship/engineering)
 "OQ" = (
 /obj/structure/cable{
@@ -1001,7 +1027,7 @@ fU
 IZ
 "}
 (8,1,1) = {"
-SH
+ya
 SH
 SH
 ZH
@@ -1011,7 +1037,7 @@ TR
 vX
 TR
 TR
-TR
+ON
 "}
 (9,1,1) = {"
 at
@@ -1040,17 +1066,17 @@ Ea
 at
 "}
 (11,1,1) = {"
-IN
+AP
 IN
 ZQ
 rX
-IN
+ku
 wV
 Wv
 Kx
 uV
 IN
-IN
+AP
 "}
 (12,1,1) = {"
 HK

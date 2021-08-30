@@ -238,8 +238,7 @@
 /obj/effect/turf_decal/tile/purple{
 	dir = 8
 	},
-/obj/structure/table,
-/obj/machinery/recharger,
+/obj/machinery/vending/wardrobe/science_wardrobe,
 /turf/open/floor/plasteel/white,
 /area/ship/science)
 "aN" = (
@@ -1385,8 +1384,21 @@
 /obj/effect/turf_decal/tile/purple{
 	dir = 4
 	},
-/obj/machinery/vending/wardrobe/science_wardrobe,
-/obj/machinery/camera/autoname,
+/obj/structure/table,
+/obj/item/disk/tech_disk{
+	pixel_x = 4;
+	pixel_y = 4
+	},
+/obj/item/disk/tech_disk{
+	pixel_x = 4;
+	pixel_y = 4
+	},
+/obj/machinery/cell_charger,
+/obj/item/stock_parts/cell/high,
+/obj/item/stock_parts/cell/high,
+/obj/machinery/light{
+	dir = 1
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/science)
 "fc" = (
@@ -1633,26 +1645,12 @@
 /area/ship/medical)
 "fN" = (
 /obj/effect/turf_decal/tile/purple{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/purple{
 	dir = 4
 	},
-/obj/structure/table,
-/obj/item/disk/tech_disk{
-	pixel_x = 4;
-	pixel_y = 4
-	},
-/obj/item/disk/tech_disk{
-	pixel_x = 4;
-	pixel_y = 4
-	},
-/obj/machinery/cell_charger,
-/obj/item/stock_parts/cell/high,
-/obj/item/stock_parts/cell/high,
-/obj/machinery/light{
+/obj/effect/turf_decal/tile/purple{
 	dir = 1
 	},
+/obj/machinery/camera/autoname,
 /turf/open/floor/plasteel/white,
 /area/ship/science)
 "fP" = (
@@ -9351,6 +9349,7 @@
 	dir = 8
 	},
 /obj/machinery/airalarm/directional/east,
+/obj/machinery/recharger,
 /turf/open/floor/plasteel/white,
 /area/ship/science)
 "IK" = (
@@ -10771,6 +10770,18 @@
 /obj/effect/landmark/start/clown,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
+"OA" = (
+/obj/effect/turf_decal/tile/yellow{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/blue{
+	dir = 4
+	},
+/obj/machinery/atmospherics/components/trinary/filter/atmos/flipped/o2{
+	dir = 8
+	},
+/turf/open/floor/plasteel,
+/area/ship/engineering/atmospherics)
 "OD" = (
 /obj/machinery/power/port_gen/pacman,
 /obj/machinery/light/dim,
@@ -10816,6 +10827,7 @@
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer2,
 /turf/open/floor/plasteel/white,
 /area/ship/science)
 "OH" = (
@@ -15742,7 +15754,7 @@ zX
 kh
 Tu
 hA
-oz
+OA
 gH
 AB
 ZU

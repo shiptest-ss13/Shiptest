@@ -38,13 +38,11 @@
 /turf/open/floor/mineral/plastitanium,
 /area/template_noop)
 "dh" = (
-/obj/structure/table/reinforced,
-/turf/open/floor/plasteel/dark,
+/turf/closed/wall/r_wall/syndicate/nodiagonal,
 /area/template_noop)
 "dB" = (
-/turf/open/floor/mineral/plastitanium{
-	color = "#68b9ff"
-	},
+/obj/structure/tank_dispenser/oxygen,
+/turf/open/floor/plasteel/dark,
 /area/template_noop)
 "dQ" = (
 /obj/machinery/power/shuttle/engine/fueled/plasma{
@@ -56,15 +54,7 @@
 /obj/structure/window/reinforced/survival_pod{
 	dir = 10
 	},
-/turf/open/floor/mineral/plastitanium{
-	color = "#f3b3fe"
-	},
-/area/template_noop)
-"es" = (
-/obj/structure/frame/machine,
-/turf/open/floor/mineral/plastitanium{
-	color = "#68b9ff"
-	},
+/turf/open/floor/plasteel/dark,
 /area/template_noop)
 "ey" = (
 /obj/machinery/power/shuttle/engine/electric,
@@ -79,9 +69,7 @@
 /obj/item/nanite_remote/comm,
 /obj/item/nanite_scanner,
 /obj/item/storage/box/disks_nanite,
-/turf/open/floor/mineral/plastitanium{
-	color = "#f3b3fe"
-	},
+/turf/open/floor/circuit/red,
 /area/template_noop)
 "fg" = (
 /obj/machinery/power/smes/shuttle/precharged,
@@ -89,8 +77,11 @@
 /turf/open/floor/plating,
 /area/template_noop)
 "fA" = (
+/obj/machinery/computer/helm{
+	id = null
+	},
 /turf/open/floor/mineral/plastitanium{
-	color = "#ff8649"
+	color = "#f3b3fe"
 	},
 /area/template_noop)
 "gi" = (
@@ -122,43 +113,25 @@
 /turf/open/floor/plasteel/dark,
 /area/template_noop)
 "ht" = (
-/turf/open/floor/mineral/plastitanium{
-	color = "#f3b3fe"
-	},
+/obj/structure/table/glass,
+/turf/open/floor/mineral/plastitanium/red,
 /area/template_noop)
 "hR" = (
-/obj/structure/cable{
-	icon_state = "2-4"
-	},
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
+/obj/structure/table/glass,
 /turf/open/floor/plasteel/dark,
 /area/template_noop)
 "io" = (
-/obj/structure/cable{
-	icon_state = "2-4"
-	},
+/obj/structure/AIcore/latejoin_inactive,
 /turf/open/floor/mineral/plastitanium{
 	color = "#f3b3fe"
 	},
 /area/template_noop)
 "ix" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/structure/cable{
-	icon_state = "2-8"
-	},
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/circuit/red,
 /area/template_noop)
 "iy" = (
-/obj/structure/cable{
-	icon_state = "1-8"
-	},
-/turf/open/floor/mineral/plastitanium{
-	color = "#f3b3fe"
-	},
+/obj/structure/closet/secure_closet/RD,
+/turf/open/floor/plasteel/dark,
 /area/template_noop)
 "iL" = (
 /obj/structure/closet/emcloset,
@@ -174,10 +147,11 @@
 /turf/open/floor/plasteel/dark,
 /area/template_noop)
 "je" = (
-/obj/structure/cable{
-	icon_state = "1-8"
+/obj/machinery/vending/autodrobe/all_access{
+	default_price = 0;
+	extra_price = 0
 	},
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/turf/open/floor/mineral/plastitanium/red,
 /area/template_noop)
 "jf" = (
 /obj/structure/cable{
@@ -186,10 +160,8 @@
 /turf/open/floor/plasteel/dark,
 /area/template_noop)
 "jg" = (
-/obj/structure/cable{
-	icon_state = "2-8"
-	},
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/obj/structure/window/plasma/reinforced/spawner,
+/turf/open/floor/engine/plasma,
 /area/template_noop)
 "js" = (
 /obj/structure/cable{
@@ -202,21 +174,12 @@
 /turf/open/floor/plasteel/dark,
 /area/template_noop)
 "jF" = (
-/obj/structure/cable{
-	icon_state = "1-4"
-	},
 /obj/structure/frame/machine,
-/turf/open/floor/mineral/plastitanium{
-	color = "#68b9ff"
-	},
+/turf/open/floor/plasteel/dark,
 /area/template_noop)
 "jN" = (
-/obj/structure/cable{
-	icon_state = "2-8"
-	},
-/turf/open/floor/mineral/plastitanium{
-	color = "#68b9ff"
-	},
+/obj/structure/window/plasma/reinforced/spawner,
+/turf/open/floor/engine/o2,
 /area/template_noop)
 "jZ" = (
 /obj/effect/turf_decal/syndicateemblem/middle/left,
@@ -224,15 +187,11 @@
 /area/template_noop)
 "kl" = (
 /obj/machinery/chem_master,
-/turf/open/floor/mineral/plastitanium{
-	color = "#68b9ff"
-	},
+/turf/open/floor/plasteel/dark,
 /area/template_noop)
 "lh" = (
 /obj/structure/window/reinforced/survival_pod,
-/turf/open/floor/mineral/plastitanium{
-	color = "#f3b3fe"
-	},
+/turf/open/floor/plasteel/dark,
 /area/template_noop)
 "lr" = (
 /obj/machinery/door/poddoor,
@@ -248,9 +207,7 @@
 /obj/machinery/reagentgrinder,
 /obj/item/storage/box/syringes,
 /obj/item/storage/box/beakers,
-/turf/open/floor/mineral/plastitanium{
-	color = "#68b9ff"
-	},
+/turf/open/floor/plasteel/dark,
 /area/template_noop)
 "lV" = (
 /obj/machinery/computer/turbine_computer{
@@ -259,31 +216,14 @@
 	},
 /turf/open/floor/plating,
 /area/template_noop)
-"mH" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/machinery/door/window/survival_pod,
-/turf/open/floor/mineral/plastitanium{
-	color = "#68b9ff"
-	},
-/area/template_noop)
 "mM" = (
 /obj/machinery/smartfridge/chemistry,
 /obj/machinery/door/window/survival_pod,
-/turf/open/floor/mineral/plastitanium{
-	color = "#68b9ff"
-	},
+/turf/open/floor/plasteel/dark,
 /area/template_noop)
 "mX" = (
-/turf/open/floor/mineral/plastitanium{
-	color = "#68b9ff"
-	},
-/area/template_noop)
-"na" = (
-/turf/open/floor/mineral/plastitanium{
-	color = "#68b9ff"
-	},
+/obj/machinery/atmospherics/components/trinary/mixer/on,
+/turf/open/floor/plating,
 /area/template_noop)
 "nx" = (
 /obj/structure/cable{
@@ -319,16 +259,9 @@
 /obj/machinery/smartfridge/bloodbank/preloaded,
 /turf/open/floor/mineral/plastitanium/red,
 /area/template_noop)
-"qo" = (
-/turf/open/floor/mineral/plastitanium{
-	color = "#f3b3fe"
-	},
-/area/template_noop)
 "qq" = (
 /obj/machinery/nanite_programmer,
-/turf/open/floor/mineral/plastitanium{
-	color = "#f3b3fe"
-	},
+/turf/open/floor/circuit/green,
 /area/template_noop)
 "qR" = (
 /obj/structure/table/glass,
@@ -352,14 +285,6 @@
 "rV" = (
 /obj/structure/table/reinforced,
 /turf/open/floor/plasteel/dark,
-/area/template_noop)
-"si" = (
-/obj/structure/window/reinforced/survival_pod{
-	dir = 8
-	},
-/turf/open/floor/mineral/plastitanium{
-	color = "#68b9ff"
-	},
 /area/template_noop)
 "sk" = (
 /obj/structure/table/glass,
@@ -390,20 +315,13 @@
 /obj/machinery/door/window/survival_pod{
 	dir = 8
 	},
-/turf/open/floor/mineral/plastitanium{
-	color = "#68b9ff"
-	},
+/turf/open/floor/plasteel/dark,
 /area/template_noop)
 "sN" = (
 /obj/machinery/power/turbine{
 	luminosity = 2
 	},
 /turf/open/floor/engine/vacuum,
-/area/template_noop)
-"tY" = (
-/turf/open/floor/mineral/plastitanium{
-	color = "#f3b3fe"
-	},
 /area/template_noop)
 "tZ" = (
 /obj/machinery/ore_silo,
@@ -413,20 +331,11 @@
 /obj/structure/window/reinforced/survival_pod{
 	dir = 8
 	},
-/turf/open/floor/mineral/plastitanium{
-	color = "#f3b3fe"
-	},
-/area/template_noop)
-"vd" = (
-/turf/open/floor/mineral/plastitanium{
-	color = "#68b9ff"
-	},
+/turf/open/floor/plasteel/dark,
 /area/template_noop)
 "wa" = (
 /obj/item/clothing/under/rank/rnd/scientist/nanite,
-/turf/open/floor/mineral/plastitanium{
-	color = "#f3b3fe"
-	},
+/turf/open/floor/circuit/red,
 /area/template_noop)
 "wn" = (
 /obj/structure/sink{
@@ -436,9 +345,7 @@
 /obj/structure/mirror{
 	pixel_x = -24
 	},
-/turf/open/floor/mineral/plastitanium{
-	color = "#68b9ff"
-	},
+/turf/open/floor/plasteel/dark,
 /area/template_noop)
 "xj" = (
 /obj/machinery/door/poddoor/incinerator_atmos_main,
@@ -446,9 +353,7 @@
 /area/template_noop)
 "xY" = (
 /obj/machinery/nanite_program_hub,
-/turf/open/floor/mineral/plastitanium{
-	color = "#f3b3fe"
-	},
+/turf/open/floor/circuit/green,
 /area/template_noop)
 "zO" = (
 /obj/structure/tank_dispenser/oxygen,
@@ -458,16 +363,6 @@
 /obj/effect/turf_decal/syndicateemblem/bottom/middle,
 /turf/open/floor/mineral/plastitanium/red,
 /area/template_noop)
-"At" = (
-/turf/open/floor/mineral/plastitanium{
-	color = "#f3b3fe"
-	},
-/area/template_noop)
-"AM" = (
-/turf/open/floor/mineral/plastitanium{
-	color = "#68b9ff"
-	},
-/area/template_noop)
 "AW" = (
 /obj/effect/turf_decal/syndicateemblem/bottom/left,
 /turf/open/floor/mineral/plastitanium/red,
@@ -475,12 +370,6 @@
 "Be" = (
 /obj/effect/turf_decal/syndicateemblem/top/left,
 /turf/open/floor/mineral/plastitanium/red,
-/area/template_noop)
-"Cr" = (
-/obj/machinery/door/window/survival_pod,
-/turf/open/floor/mineral/plastitanium{
-	color = "#f3b3fe"
-	},
 /area/template_noop)
 "Ct" = (
 /obj/machinery/power/compressor{
@@ -506,23 +395,13 @@
 /area/template_noop)
 "Ee" = (
 /obj/machinery/nanite_chamber,
-/turf/open/floor/mineral/plastitanium{
-	color = "#f3b3fe"
-	},
+/turf/open/floor/circuit/green,
 /area/template_noop)
 "En" = (
 /obj/machinery/computer/nanite_chamber_control{
 	dir = 8
 	},
-/turf/open/floor/mineral/plastitanium{
-	color = "#f3b3fe"
-	},
-/area/template_noop)
-"Ep" = (
-/obj/structure/cable{
-	icon_state = "1-8"
-	},
-/turf/open/floor/mineral/plastitanium/red,
+/turf/open/floor/circuit/red,
 /area/template_noop)
 "FP" = (
 /obj/structure/window/reinforced/survival_pod{
@@ -530,38 +409,15 @@
 	},
 /obj/structure/window/reinforced/survival_pod,
 /obj/structure/table/glass,
-/turf/open/floor/mineral/plastitanium{
-	color = "#68b9ff"
-	},
-/area/template_noop)
-"Gf" = (
-/turf/open/floor/mineral/plastitanium{
-	color = "#68b9ff"
-	},
+/turf/open/floor/plasteel/dark,
 /area/template_noop)
 "GM" = (
 /obj/item/clothing/under/rank/rnd/scientist/nanite/skirt,
-/turf/open/floor/mineral/plastitanium{
-	color = "#f3b3fe"
-	},
-/area/template_noop)
-"HF" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/template_noop)
-"HL" = (
-/obj/structure/cable{
-	icon_state = "2-4"
-	},
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/turf/open/floor/circuit/red,
 /area/template_noop)
 "HQ" = (
 /obj/machinery/door/window/survival_pod,
-/turf/open/floor/mineral/plastitanium{
-	color = "#68b9ff"
-	},
+/turf/open/floor/plasteel/dark,
 /area/template_noop)
 "HS" = (
 /obj/structure/fans/tiny,
@@ -585,12 +441,8 @@
 /turf/open/floor/plasteel/dark,
 /area/template_noop)
 "IK" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/turf/open/floor/mineral/plastitanium{
-	color = "#f3b3fe"
-	},
+/obj/structure/chair/office,
+/turf/open/floor/plasteel/dark,
 /area/template_noop)
 "Ja" = (
 /obj/structure/cable{
@@ -598,23 +450,10 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/template_noop)
-"Jw" = (
-/turf/open/floor/mineral/plastitanium{
-	color = "#68b9ff"
-	},
-/area/template_noop)
 "JC" = (
 /obj/machinery/door/poddoor,
 /obj/structure/fans/tiny,
 /turf/open/floor/mineral/plastitanium/red,
-/area/template_noop)
-"KB" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/turf/open/floor/mineral/plastitanium{
-	color = "#68b9ff"
-	},
 /area/template_noop)
 "KF" = (
 /obj/machinery/mass_driver{
@@ -622,99 +461,27 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/template_noop)
-"KK" = (
-/obj/structure/chair/comfy/shuttle{
-	dir = 1
-	},
-/obj/item/areaeditor/shuttle,
-/turf/open/floor/mineral/plastitanium{
-	color = "#f3b3fe"
-	},
-/area/template_noop)
-"Ly" = (
-/turf/open/floor/mineral/plastitanium{
-	color = "#f3b3fe"
-	},
-/area/template_noop)
 "LJ" = (
 /obj/effect/turf_decal/syndicateemblem/top/right,
 /turf/open/floor/mineral/plastitanium/red,
 /area/template_noop)
-"Mg" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/machinery/vending/autodrobe/all_access{
-	default_price = 0;
-	extra_price = 0
-	},
-/turf/open/floor/mineral/plastitanium,
-/area/template_noop)
-"Mi" = (
-/obj/structure/cable{
-	icon_state = "1-4"
-	},
-/turf/open/floor/mineral/plastitanium/red,
-/area/template_noop)
 "Mm" = (
 /obj/machinery/computer/nanite_cloud_controller,
-/turf/open/floor/mineral/plastitanium{
-	color = "#f3b3fe"
-	},
-/area/template_noop)
-"Nc" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/turf/open/floor/mineral/plastitanium{
-	color = "#68b9ff"
-	},
+/turf/open/floor/circuit/green,
 /area/template_noop)
 "Nr" = (
 /turf/template_noop,
-/area/template_noop)
-"Nx" = (
-/turf/open/floor/mineral/plastitanium{
-	color = "#68b9ff"
-	},
-/area/template_noop)
-"ND" = (
-/turf/open/floor/mineral/plastitanium{
-	color = "#68b9ff"
-	},
 /area/template_noop)
 "Oj" = (
 /obj/structure/closet/secure_closet/chemical/heisenberg{
 	req_access = list(21)
 	},
 /obj/item/storage/box/bodybags,
-/turf/open/floor/mineral/plastitanium{
-	color = "#68b9ff"
-	},
-/area/template_noop)
-"Pr" = (
-/obj/structure/cable{
-	icon_state = "1-4"
-	},
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/template_noop)
-"Ql" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
 /turf/open/floor/plasteel/dark,
-/area/template_noop)
-"QT" = (
-/obj/structure/cable{
-	icon_state = "2-8"
-	},
-/turf/open/floor/mineral/plastitanium,
 /area/template_noop)
 "Rr" = (
 /obj/structure/table/optable,
-/turf/open/floor/mineral/plastitanium{
-	color = "#68b9ff"
-	},
+/turf/open/floor/plasteel/dark,
 /area/template_noop)
 "RG" = (
 /obj/structure/table/glass,
@@ -722,9 +489,7 @@
 /obj/structure/window/reinforced/survival_pod{
 	dir = 1
 	},
-/turf/open/floor/mineral/plastitanium{
-	color = "#68b9ff"
-	},
+/turf/open/floor/plasteel/dark,
 /area/template_noop)
 "Sj" = (
 /obj/structure/window/plasma/reinforced/spawner/west,
@@ -734,9 +499,7 @@
 /obj/machinery/door/window/survival_pod{
 	dir = 1
 	},
-/turf/open/floor/mineral/plastitanium{
-	color = "#68b9ff"
-	},
+/turf/open/floor/plasteel/dark,
 /area/template_noop)
 "VA" = (
 /obj/structure/window/reinforced/survival_pod{
@@ -745,31 +508,18 @@
 /obj/machinery/computer/operating{
 	dir = 8
 	},
-/turf/open/floor/mineral/plastitanium{
-	color = "#68b9ff"
-	},
+/turf/open/floor/plasteel/dark,
 /area/template_noop)
 "VC" = (
 /turf/open/floor/mineral/plastitanium{
 	color = "#f3b3fe"
 	},
 /area/template_noop)
-"VN" = (
-/obj/structure/cable{
-	icon_state = "2-4"
-	},
-/turf/open/floor/mineral/plastitanium/red,
-/area/template_noop)
 "Wd" = (
-/obj/machinery/computer/helm{
-	id = null
+/obj/structure/chair/comfy/shuttle{
+	dir = 1
 	},
-/turf/open/floor/mineral/plastitanium{
-	color = "#f3b3fe"
-	},
-/area/template_noop)
-"Wl" = (
-/obj/structure/AIcore/latejoin_inactive,
+/obj/item/areaeditor/shuttle,
 /turf/open/floor/mineral/plastitanium{
 	color = "#f3b3fe"
 	},
@@ -777,12 +527,6 @@
 "Wn" = (
 /obj/machinery/autolathe,
 /turf/open/floor/mineral/plastitanium/red,
-/area/template_noop)
-"Wp" = (
-/obj/structure/cable{
-	icon_state = "1-4"
-	},
-/turf/open/floor/mineral/plastitanium,
 /area/template_noop)
 "Xx" = (
 /turf/open/floor/engine/vacuum,
@@ -850,13 +594,13 @@ Nr
 Nr
 Nr
 Nr
-XP
-XP
-XP
-XP
-XP
-XP
-XP
+dh
+dh
+dh
+dh
+dh
+dh
+dh
 Nr
 Nr
 Nr
@@ -877,13 +621,13 @@ Nr
 Nr
 Nr
 Nr
-XP
-XP
-XP
-XP
-XP
-XP
-XP
+dh
+dh
+dh
+dh
+dh
+dh
+dh
 Nr
 Nr
 Nr
@@ -895,18 +639,18 @@ Nr
 Nr
 Nr
 Nr
-XP
+dh
 YY
-XP
-VC
+dh
+gi
 lh
 xY
 eL
 qq
-XP
+dh
 YY
 YY
-XP
+dh
 Nr
 Nr
 Nr
@@ -930,8 +674,8 @@ nJ
 hh
 gi
 gi
-XP
-XP
+dh
+dh
 Nr
 Nr
 Nr
@@ -941,21 +685,21 @@ Nr
 Nr
 Nr
 Nr
-XP
-XP
-VC
-VC
-VC
-Cr
+dh
+dh
+gi
+gi
+gi
+HQ
 wa
 GM
-VC
+ix
 XP
 Zo
 Zo
-XP
+dh
 YY
-XP
+dh
 Nr
 Nr
 Nr
@@ -978,8 +722,8 @@ hs
 Zn
 Zn
 Io
-XP
-XP
+dh
+dh
 Nr
 Nr
 Nr
@@ -987,12 +731,12 @@ Nr
 Nr
 Nr
 Nr
-XP
-XP
-VC
-VC
-VC
-VC
+dh
+dh
+gi
+gi
+gi
+gi
 lh
 Ee
 En
@@ -1002,9 +746,9 @@ Zo
 YL
 Zo
 Zo
-XP
+dh
 YY
-XP
+dh
 Nr
 Nr
 Nr
@@ -1017,8 +761,8 @@ Nr
 Nr
 Nr
 Nr
-XP
-XP
+dh
+dh
 XP
 XP
 XP
@@ -1026,7 +770,7 @@ XP
 gi
 Ja
 gi
-XP
+dh
 Nr
 Nr
 Nr
@@ -1035,11 +779,11 @@ Nr
 Nr
 Nr
 YY
-VC
-VC
-VC
-VC
-VC
+gi
+gi
+gi
+gi
+gi
 ee
 uH
 uH
@@ -1051,8 +795,8 @@ YL
 Zo
 XP
 ZH
-XP
-XP
+dh
+dh
 Nr
 Nr
 Nr
@@ -1062,10 +806,10 @@ Nr
 "}
 (6,1,1) = {"
 Nr
-XP
+dh
 YY
-XP
-gI
+dh
+dB
 gI
 gI
 gI
@@ -1073,23 +817,23 @@ XP
 XP
 Ja
 gi
-XP
+dh
 YY
+dh
+Nr
+Nr
+Nr
+Nr
+dh
+dh
+gi
 XP
-Nr
-Nr
-Nr
-Nr
-XP
-XP
-VC
-VC
-VC
-VC
-VC
-VC
-VC
-VC
+gi
+gi
+gi
+gi
+gi
+gi
 XP
 Zo
 YL
@@ -1099,44 +843,44 @@ Zo
 XP
 ZH
 ZH
-XP
+dh
 YY
-XP
+dh
 Nr
 Nr
 Nr
 Nr
 "}
 (7,1,1) = {"
+dh
+dh
+gi
+gi
+gi
+gi
+gi
+gi
+gi
 XP
-XP
-gi
-gi
-gi
-Zn
-Zn
-Zn
-Zn
-Zn
-ix
+js
 Io
 gi
 gi
-XP
-XP
+dh
+dh
 Nr
 Nr
-XP
-XP
-VC
-VC
-VC
-VC
-VC
-VC
-VC
-VC
-VC
+dh
+dh
+gi
+gi
+hR
+gi
+gi
+gi
+gi
+gi
+hR
 XP
 Zo
 YL
@@ -1148,8 +892,8 @@ ZH
 ZH
 ZH
 ZH
-XP
-XP
+dh
+dh
 Nr
 Nr
 Nr
@@ -1165,27 +909,27 @@ gi
 gi
 gi
 gi
-gi
-js
+Zn
+hs
 Zn
 Io
 gi
+dh
+dh
+dh
+dh
+gi
+gi
+IK
+hR
+gi
+gi
+gi
+gi
+gi
 XP
 XP
-XP
-XP
-VC
-io
-IK
-IK
-IK
-IK
-IK
-IK
-IK
-HF
-HF
-Wp
+Zo
 YL
 YL
 YL
@@ -1202,16 +946,16 @@ Nr
 Nr
 "}
 (9,1,1) = {"
-XP
-XP
+dh
+dh
 rV
-XP
-XP
+dh
+dh
 YW
 YW
 YW
-XP
-XP
+dh
+dh
 iL
 jB
 gi
@@ -1221,19 +965,19 @@ tZ
 gi
 gi
 XP
-HL
+XP
 iy
-VC
-VC
-VC
-VC
-VC
-VC
+gi
+hR
+gi
+gi
+gi
+gi
 XP
 XP
 Zo
-QT
-Mi
+YL
+YL
 YL
 YL
 Zo
@@ -1243,48 +987,48 @@ ZH
 ZH
 ZH
 ZH
-XP
-XP
+dh
+dh
 Nr
 Nr
 "}
 (10,1,1) = {"
 Nr
-XP
+dh
 YY
-XP
+dh
 ab
 ab
 ab
 ab
 ab
-XP
+dh
 YY
-XP
+dh
 gi
 gi
 js
-Zn
-Zn
-Zn
-IK
-je
-XP
-XP
-VC
-XP
+gi
+gi
+gi
 VC
 XP
 XP
 XP
-Zo
+XP
 YL
 YL
-YL
-YL
-Zo
 XP
 XP
+XP
+VC
+YL
+YL
+YL
+YL
+Zo
+dh
+dh
 ZH
 ZH
 ZH
@@ -1307,8 +1051,8 @@ ab
 ab
 ab
 ab
-XP
-XP
+dh
+dh
 bO
 gi
 gi
@@ -1317,21 +1061,21 @@ VC
 VC
 XP
 Wn
+ht
+ht
 YL
 YL
-YL
-YL
-YL
-YL
+ht
+ht
 XP
+VC
+VC
+YL
+YL
 Zo
-YL
-YL
-YL
-Zo
-XP
-XP
-bR
+dh
+dh
+jg
 ZH
 ZH
 ZH
@@ -1358,27 +1102,27 @@ ab
 oK
 gi
 gi
-gi
-gi
 VC
 VC
 VC
 VC
+VC
+VC
 YL
 YL
 YL
 YL
 YL
+VC
+VC
+VC
+VC
 VC
 VC
 Zo
-YL
-YL
-YL
-Zo
-XP
+dh
 bR
-bR
+jg
 ZH
 ZH
 ZH
@@ -1408,7 +1152,7 @@ Zo
 Zo
 Zo
 Zo
-Zo
+XP
 XP
 VC
 VC
@@ -1417,15 +1161,15 @@ jZ
 AW
 VC
 VC
-XP
+dh
+dh
 Zo
-YL
-YL
-YL
 Zo
-XP
+Zo
+Zo
+dh
 bR
-bR
+jg
 ZH
 ZH
 ZH
@@ -1455,26 +1199,26 @@ YL
 YL
 YL
 YL
-YL
 YY
+fA
 Wd
-KK
+VC
 Zw
 bj
 Ad
 VC
-Wl
-XP
-Zo
+VC
+io
+dh
 YL
 YL
 YL
-fA
-XP
-XP
-XP
+YL
+dh
+dh
+dh
 ZH
-ZH
+mX
 ZH
 ZH
 HS
@@ -1502,7 +1246,7 @@ Zo
 Zo
 Zo
 Zo
-VC
+XP
 XP
 VC
 VC
@@ -1511,15 +1255,15 @@ pE
 lA
 VC
 VC
-XP
+dh
+dh
 Zo
-YL
-YL
-YL
 Zo
-XP
+Zo
+Zo
+dh
 cl
-cl
+jN
 ZH
 ZH
 ZH
@@ -1546,27 +1290,27 @@ ab
 oK
 gi
 gi
-gi
-gi
 VC
 VC
 VC
 VC
+VC
+VC
 YL
 YL
 YL
 YL
 YL
+VC
+VC
+VC
+VC
 VC
 VC
 Zo
-YL
-YL
-YL
-Zo
-XP
+dh
 cl
-cl
+jN
 ZH
 ZH
 ZH
@@ -1589,8 +1333,8 @@ ab
 ab
 ab
 ab
-XP
-XP
+dh
+dh
 gi
 gi
 gi
@@ -1598,22 +1342,22 @@ gi
 VC
 VC
 XP
+ht
+ht
 YL
 YL
 YL
-YL
-YL
-YL
-YL
+ht
+ht
 XP
+VC
+VC
+YL
+YL
 Zo
-YL
-YL
-YL
-Zo
-XP
-XP
-cl
+dh
+dh
+jN
 ZH
 ZH
 ZH
@@ -1626,41 +1370,41 @@ Nr
 "}
 (18,1,1) = {"
 Nr
-XP
+dh
 YY
-XP
+dh
 ab
 ab
 ab
 ab
 ab
-XP
+dh
 YY
-XP
+dh
 gi
 gi
 ou
-Zn
-Zn
-Zn
-IK
-Pr
-XP
-XP
-ND
-XP
-ND
+gi
+gi
+gi
+VC
 XP
 XP
 XP
-Zo
+YL
+XP
+YL
+XP
+XP
+XP
+VC
 YL
 YL
 YL
 YL
 Zo
-XP
-XP
+dh
+dh
 ZH
 ZH
 ZH
@@ -1672,16 +1416,16 @@ dQ
 Nr
 "}
 (19,1,1) = {"
-XP
-XP
+dh
+dh
 rV
-XP
-XP
+dh
+dh
 YW
 YW
 YW
-XP
-XP
+dh
+dh
 iL
 jB
 gi
@@ -1691,19 +1435,19 @@ gi
 gi
 gi
 XP
-jg
+XP
 jF
 lN
-ND
+gi
 wn
-ND
-ND
-ND
+gi
+gi
+gi
 XP
 XP
 Zo
-VN
-Ep
+YL
+YL
 YL
 YL
 Zo
@@ -1713,8 +1457,8 @@ ZH
 ZH
 ZH
 ZH
-XP
-XP
+dh
+dh
 Nr
 Nr
 "}
@@ -1729,28 +1473,28 @@ gi
 gi
 gi
 gi
-gi
-ou
+Zn
+iU
 Zn
 jf
 gi
+dh
+dh
+dh
+dh
+jF
+gi
+HQ
+gi
+gi
+gi
+gi
+gi
+gi
 XP
 XP
-XP
-XP
-es
-jN
-mH
-Nc
-Nc
-Nc
-Nc
-Nc
-Nc
-HF
-Mg
-Ep
-YL
+Zo
+je
 YL
 YL
 Zo
@@ -1766,57 +1510,57 @@ Nr
 Nr
 "}
 (21,1,1) = {"
+dh
+dh
+gi
+gi
+gi
+gi
+gi
+gi
+gi
 XP
-XP
-gi
-gi
-gi
-Zn
-Zn
-Zn
-Zn
-Zn
-iU
+ou
 jf
 gi
 gi
-XP
-XP
+dh
+dh
 Nr
 Nr
-XP
-XP
+dh
+dh
 kl
 mM
-ND
-ND
-ND
-YL
-ND
-ND
+gi
+gi
+gi
+gi
+gi
+gi
+gi
 XP
 Zo
 YL
 YL
 YL
-YL
 Zo
 XP
 ZH
 ZH
 ZH
 ZH
-XP
-XP
+dh
+dh
 Nr
 Nr
 Nr
 "}
 (22,1,1) = {"
 Nr
-XP
+dh
 YY
-XP
+dh
 zO
 gI
 gI
@@ -1825,25 +1569,25 @@ XP
 XP
 Ja
 gi
-XP
+dh
 YY
-XP
+dh
 Nr
 Nr
 Nr
 Nr
+dh
+dh
 XP
+gi
+gi
+gi
+gi
+gi
+gi
+gi
 XP
-XP
-ND
-ND
-ND
 Zo
-ND
-ND
-XP
-Zo
-YL
 YL
 YL
 hm
@@ -1851,9 +1595,9 @@ ct
 XP
 ZH
 ZH
-XP
+dh
 YY
-XP
+dh
 Nr
 Nr
 Nr
@@ -1863,8 +1607,8 @@ Nr
 Nr
 Nr
 Nr
-XP
-XP
+dh
+dh
 XP
 XP
 XP
@@ -1872,7 +1616,7 @@ XP
 gi
 Ja
 gi
-XP
+dh
 Nr
 Nr
 Nr
@@ -1880,14 +1624,14 @@ Nr
 Nr
 Nr
 Nr
-XP
+dh
 pR
-si
+uH
 sA
 FP
-ND
-ND
-ND
+gi
+gi
+gi
 XP
 XP
 Zo
@@ -1897,8 +1641,8 @@ YL
 Zo
 XP
 ZH
-XP
-XP
+dh
+dh
 Nr
 Nr
 Nr
@@ -1918,8 +1662,8 @@ iU
 Zn
 Zn
 jf
-XP
-XP
+dh
+dh
 Nr
 Nr
 Nr
@@ -1927,14 +1671,14 @@ Nr
 Nr
 Nr
 Nr
-XP
-XP
+dh
+dh
 Oj
-ND
+gi
 HQ
-ND
-ND
-ND
+gi
+gi
+gi
 RG
 XP
 XP
@@ -1942,9 +1686,9 @@ Zo
 YL
 Zo
 Zo
-XP
+dh
 YY
-XP
+dh
 Nr
 Nr
 Nr
@@ -1964,8 +1708,8 @@ nJ
 nx
 gi
 gi
-XP
-XP
+dh
+dh
 Nr
 Nr
 Nr
@@ -1975,21 +1719,21 @@ Nr
 Nr
 Nr
 Nr
-XP
-XP
+dh
+dh
 qR
 sk
-ND
-ND
-ND
+gi
+gi
+gi
 Ul
-ND
+gi
 XP
 Zo
 Zo
-XP
+dh
 YY
-XP
+dh
 Nr
 Nr
 Nr
@@ -2005,13 +1749,13 @@ Nr
 Nr
 Nr
 Nr
-XP
-XP
-XP
-XP
-XP
-XP
-XP
+dh
+dh
+dh
+dh
+dh
+dh
+dh
 Nr
 Nr
 Nr
@@ -2023,18 +1767,18 @@ Nr
 Nr
 Nr
 Nr
-XP
+dh
 YY
-XP
-ND
-ND
-ND
+dh
+gi
+gi
+gi
 VA
 Rr
-XP
+dh
 YY
 YY
-XP
+dh
 Nr
 Nr
 Nr
@@ -2072,13 +1816,13 @@ Nr
 Nr
 Nr
 Nr
-XP
-XP
+dh
+dh
 YY
-XP
-XP
-XP
-XP
+dh
+dh
+dh
+dh
 Nr
 Nr
 Nr
