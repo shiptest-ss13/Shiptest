@@ -50,7 +50,7 @@ SUBSYSTEM_DEF(blackmarket)
 				var/pickedloc = spaceDebrisStartLoc(startSide, T.z)
 
 				var/atom/movable/item = purchase.entry.spawn_item(pickedloc)
-				fake_teleport(purchase.entry.spawn_item(pickedloc), get_turf(purchase.uplink))
+				fake_teleport(item, get_turf(purchase.uplink))
 
 				to_chat(recursive_loc_check(purchase.uplink.loc, /mob), "<span class='notice'>[purchase.uplink] flashes a message noting the order is being verified and sent to your current area</span>")
 
