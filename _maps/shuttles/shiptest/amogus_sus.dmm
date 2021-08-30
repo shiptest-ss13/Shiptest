@@ -446,6 +446,10 @@
 "gq" = (
 /turf/closed/wall/mineral/titanium,
 /area/ship/crew/office)
+"gC" = (
+/obj/machinery/computer/cargo/express,
+/turf/open/floor/plasteel,
+/area/ship/cargo)
 "gI" = (
 /obj/effect/turf_decal/bot,
 /obj/structure/closet/crate,
@@ -965,7 +969,7 @@
 /turf/open/floor/plasteel/white,
 /area/ship/crew/canteen)
 "nT" = (
-/obj/machinery/piratepad,
+/obj/machinery/selling_pad,
 /turf/open/floor/plating,
 /area/ship/cargo)
 "ok" = (
@@ -4092,7 +4096,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/starboard)
 "XF" = (
-/obj/machinery/computer/piratepad_control,
+/obj/machinery/computer/selling_pad_control,
 /turf/open/floor/plasteel,
 /area/ship/cargo)
 "XM" = (
@@ -5138,7 +5142,7 @@ GO
 xR
 Do
 iY
-Yh
+gC
 hs
 Yh
 FY

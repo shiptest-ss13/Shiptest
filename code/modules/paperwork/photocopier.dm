@@ -504,6 +504,7 @@
  */
 /obj/item/toner
 	name = "toner cartridge"
+	icon = 'icons/obj/device.dmi'
 	icon_state = "tonercartridge"
 	var/charges = 5
 	var/max_charges = 5
