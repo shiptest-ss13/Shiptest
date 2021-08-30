@@ -698,3 +698,31 @@
 	item_state = "spiderplush"
 	attack_verb = list("bites", "skitters")
 	squeak_override = list('sound/weapons/bite.ogg' = 10, 'sound/voice/hiss1.ogg' = 1, 'sound/voice/hiss2.ogg' = 1, 'sound/voice/hiss3.ogg' = 1, 'sound/voice/hiss4.ogg' = 1)
+	var/spraycharges = 10
+	var/max_spraycharges = 10
+
+/obj/item/toy/plush/spider/attackby(obj/item/I, mob/living/user, params)
+	. = ..()
+	if(istype(I, /obj/item/stack/sheet/plastic))
+		if(spraycharges >= max_spraycharges)
+			to_chat(user, "<span class='notice'>[src] is already stuffed full!")
+			return
+		var/obj/item/stack/sheet/plastic/p_sheets = I
+		var/usedcharges = min(max_spraycharges - spraycharges, p_sheets.get_amount())
+		if(p_sheets.use(usedcharges))
+			spraycharges += usedcharges
+			playsound(src.loc, 'sound/weapons/bite.ogg', 40, TRUE, -6)
+			to_chat(user, "<span class='notice'>You feed [src] [usedcharges] sheets of plastic.</span>")
+
+/obj/item/toy/plush/spider/afterattack(atom/A, mob/user)
+	. = ..()
+	if(istype(A, /turf/open/floor))
+		if(!spraycharges)
+			to_chat(user, "<span class='notice'>You squeeze [src] tightly and nothing happens!</span>")
+			return
+		if(!in_range(user, A))
+			return
+		playsound(src.loc, 'sound/effects/spray2.ogg', 30, TRUE, -6)
+		user.visible_message("<span class='notice'>[user] sprays plastic webbing out from [src]!</span>", "<span class='notice'>You squeeze [src] and plastic webbing fires out!")
+		new /obj/effect/decal/cleanable/sprayweb(A)
+		spraycharges--
