@@ -24,7 +24,6 @@
 	if(!ship && !reload_ship())
 		return
 	ui = SStgui.try_update_ui(user, src, ui)
-	on_interact_click(user, ui)
 	if(!ui)
 		ui = new(user, src, "ShuttleConsole", name)
 		ui.open()
@@ -78,7 +77,6 @@
 	. = ..()
 	if(.)
 		return
-	play_click_sound("keystroke")
 	if(!allowed(usr))
 		to_chat(usr, "<span class='danger'>Access denied.</span>")
 		return

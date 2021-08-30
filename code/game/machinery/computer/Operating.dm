@@ -65,7 +65,6 @@
 	return GLOB.not_incapacitated_state
 
 /obj/machinery/computer/operating/ui_interact(mob/user, datum/tgui/ui)
-	on_interact_click(user, ui)
 	ui = SStgui.try_update_ui(user, src, ui)
 	if(!ui)
 		ui = new(user, src, "OperatingComputer", name)
@@ -148,7 +147,6 @@
 	. = ..()
 	if(.)
 		return
-	play_click_sound("keystroke")
 	switch(action)
 		if("sync")
 			sync_surgeries()

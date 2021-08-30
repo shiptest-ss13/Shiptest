@@ -208,7 +208,6 @@
 	stored_research = SSresearch.science_tech
 
 /obj/machinery/computer/scan_consolenew/ui_interact(mob/user, datum/tgui/ui)
-	on_interact_click(user, ui)
 	// Most of ui_interact is spent setting variables for passing to the tgui
 	//  interface.
 	// We can also do some general state processing here too as it's a good
@@ -353,7 +352,6 @@
 	. = ..()
 	if(.)
 		return
-	play_click_sound("keystroke")
 	. = TRUE
 
 	add_fingerprint(usr)

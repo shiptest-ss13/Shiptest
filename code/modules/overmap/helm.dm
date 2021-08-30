@@ -29,7 +29,6 @@
 	if(!current_ship && !reload_ship())
 		return
 	ui = SStgui.try_update_ui(user, src, ui)
-	on_interact_click(user, ui)
 	if(!ui)
 		var/user_ref = REF(user)
 		var/is_living = isliving(user)
@@ -130,7 +129,6 @@
 
 	var/obj/structure/overmap/ship/simulated/S = current_ship
 
-	play_click_sound("keystroke")
 	switch(action) // Universal topics
 		if("rename_ship")
 			if(!("newName" in params) || params["newName"] == S.name)

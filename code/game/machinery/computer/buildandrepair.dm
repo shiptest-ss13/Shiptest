@@ -1,6 +1,5 @@
 /obj/structure/frame/computer
 	name = "computer frame"
-	icon = 'whitesands/icons/obj/consoles_construction.dmi'
 	icon_state = "console_frame"
 	state = 0
 
@@ -39,7 +38,7 @@
 					return
 				playsound(src, 'sound/items/deconstruct.ogg', 50, TRUE)
 				to_chat(user, "<span class='notice'>You place [P] inside the frame.</span>")
-				update_overlays()
+				icon_state = "1"
 				circuit = P
 				circuit.add_fingerprint(user)
 				return
@@ -51,13 +50,13 @@
 				P.play_tool_sound(src)
 				to_chat(user, "<span class='notice'>You screw [circuit] into place.</span>")
 				state = 2
-				update_overlays()
+				icon_state = "2"
 				return
 			if(P.tool_behaviour == TOOL_CROWBAR && circuit)
 				P.play_tool_sound(src)
 				to_chat(user, "<span class='notice'>You remove [circuit].</span>")
 				state = 1
-				update_overlays()
+				icon_state = "console_frame"
 				circuit.forceMove(drop_location())
 				circuit.add_fingerprint(user)
 				circuit = null
@@ -67,7 +66,7 @@
 				P.play_tool_sound(src)
 				to_chat(user, "<span class='notice'>You unfasten the circuit board.</span>")
 				state = 1
-				update_overlays()
+				icon_state = "1"
 				return
 			if(istype(P, /obj/item/stack/cable_coil))
 				if(!P.tool_start_check(user, amount=5))
@@ -78,14 +77,14 @@
 						return
 					to_chat(user, "<span class='notice'>You add cables to the frame.</span>")
 					state = 3
-					update_overlays()
+					icon_state = "3"
 				return
 		if(3)
 			if(P.tool_behaviour == TOOL_WIRECUTTER)
 				P.play_tool_sound(src)
 				to_chat(user, "<span class='notice'>You remove the cables.</span>")
 				state = 2
-				update_overlays()
+				icon_state = "2"
 				var/obj/item/stack/cable_coil/A = new (drop_location(), 5)
 				A.add_fingerprint(user)
 				return
@@ -100,14 +99,14 @@
 						return
 					to_chat(user, "<span class='notice'>You put in the glass panel.</span>")
 					state = 4
-					src.update_overlays()
+					src.icon_state = "4"
 				return
 		if(4)
 			if(P.tool_behaviour == TOOL_CROWBAR)
 				P.play_tool_sound(src)
 				to_chat(user, "<span class='notice'>You remove the glass panel.</span>")
 				state = 3
-				update_overlays()
+				icon_state = "3"
 				var/obj/item/stack/sheet/glass/G = new(drop_location(), 2)
 				G.add_fingerprint(user)
 				return
@@ -122,10 +121,6 @@
 	if(user.a_intent == INTENT_HARM)
 		return ..()
 
-/obj/structure/frame/computer/update_overlays()
-	. = ..()
-	var/mutable_appearance/buildstate = mutable_appearance(icon, num2text(state))
-	. += buildstate
 
 /obj/structure/frame/computer/deconstruct(disassembled = TRUE)
 	if(!(flags_1 & NODECONSTRUCT_1))
