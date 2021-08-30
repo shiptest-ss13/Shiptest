@@ -107,6 +107,14 @@
 "hr" = (
 /obj/effect/landmark/start/assistant,
 /mob/living/simple_animal/hostile/cockroach,
+/obj/structure/safe/floor{
+	desc = "A huge chunk of metal with a dial embedded in it. Fine print on the dial reads \"Scarborough Arms - 2 tumbler safe, guaranteed thermite resistant, explosion resistant, and assistant resistant.\ Contains the spare ID."";
+	name = "Spare ID Safe";
+	number_of_tumblers = 4
+	},
+/obj/item/card/id/captains_spare{
+	desc = "The spare ID of the Grand Tider himself."
+	},
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "hQ" = (
@@ -116,6 +124,7 @@
 /obj/machinery/door/airlock/maintenance_hatch,
 /obj/effect/decal/cleanable/blood/footprints,
 /obj/effect/decal/cleanable/blood/tracks,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
 /turf/open/floor/plating,
 /area/ship/maintenance/fore)
 "hU" = (
@@ -196,12 +205,10 @@
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "nh" = (
-/obj/machinery/door/window/northright,
-/obj/structure/window,
-/obj/effect/decal/cleanable/glass,
-/obj/machinery/atmospherics/components/unary/shuttle/heater{
-	dir = 1
+/obj/machinery/door/window/northright{
+	dir = 2
 	},
+/obj/effect/decal/cleanable/glass,
 /turf/open/floor/plating,
 /area/ship/maintenance/central)
 "nq" = (
@@ -241,10 +248,18 @@
 /turf/closed/wall,
 /area/ship/maintenance/aft)
 "pI" = (
-/obj/machinery/atmospherics/components/unary/tank/toxins,
 /obj/effect/decal/cleanable/cobweb,
 /obj/effect/decal/cleanable/cobweb/cobweb2,
 /obj/effect/decal/cleanable/glass,
+/obj/structure/reagent_dispensers/cooking_oil{
+	desc = "A huge metal vat with a tap on the front. Contains your backup fuel.";
+	name = "vat of engine oil";
+	reagent_id = /datum/reagent/fuel/oil;
+	tank_volume = 3000
+	},
+/obj/item/reagent_containers/glass/bucket{
+	desc = "Better get scoopin'."
+	},
 /turf/open/floor/plating,
 /area/ship/maintenance/central)
 "pU" = (
@@ -345,9 +360,6 @@
 /mob/living/simple_animal/hostile/cockroach,
 /obj/structure/cable{
 	icon_state = "4-8"
-	},
-/obj/machinery/atmospherics/components/binary/pump{
-	name = "engine fuel pump"
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/central)
@@ -563,7 +575,7 @@
 /turf/open/floor/plating,
 /area/ship/maintenance/fore)
 "HQ" = (
-/obj/machinery/power/shuttle/engine/fueled/plasma{
+/obj/machinery/power/shuttle/engine/liquid/oil{
 	dir = 1
 	},
 /turf/open/floor/plating,
@@ -829,6 +841,9 @@
 	},
 /obj/item/reagent_containers/food/snacks/burger/rat,
 /obj/item/cigbutt,
+/obj/item/reagent_containers/food/drinks/sillycup/smallcarton{
+	list_reagents = list(/datum/reagent/consumable/ethanol/vodka = 100)
+	},
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "Zj" = (
