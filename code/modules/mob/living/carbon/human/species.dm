@@ -293,6 +293,11 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 
 		var/obj/item/organ/oldorgan = C.getorganslot(slot) //used in removing
 		var/obj/item/organ/neworgan = slot_mutantorgans[slot] //used in adding
+
+		if(isnull(neworgan)) //If null is specified, just delete the old organ and call it a day
+			QDEL_NULL(oldorgan)
+			continue
+
 		var/used_neworgan = FALSE
 		neworgan = new neworgan()
 		var/should_have = neworgan.get_availability(src) //organ proc that points back to a species trait (so if the species is supposed to have this organ)

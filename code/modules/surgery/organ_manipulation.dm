@@ -68,7 +68,7 @@
 	time = 64
 	name = "manipulate organs"
 	repeatable = TRUE
-	implements = list(/obj/item/organ = 100, /obj/item/organ_storage = 100)
+	implements = list(/obj/item/organ = 100, /obj/item/organ_storage = 100, /obj/item/mmi = 100)
 	var/implements_extract = list(TOOL_HEMOSTAT = 100, TOOL_CROWBAR = 55, /obj/item/kitchen/fork = 35)
 	var/current_type
 	var/obj/item/organ/I = null
@@ -107,6 +107,7 @@
 	if(istype(tool, /obj/item/mmi))//this whole thing is only used for robotic surgery in organ_mani_robotic.dm :*
 		current_type = "posibrain"
 		var/obj/item/bodypart/affected = target.get_bodypart(check_zone(target_zone))
+		var/obj/item/mmi/P = tool
 		if(!affected)
 			return -1
 		if(affected.status != ORGAN_ROBOTIC)
@@ -121,15 +122,8 @@
 		if(target.internal_organs_slot[ORGAN_SLOT_BRAIN])
 			to_chat(user, "<span class='notice'>[target] already has a brain! You'd rather not find out what would happen with two in there.</span>")
 			return -1
-		var/obj/item/mmi/P = tool
-		if(!istype(P))
-			return -1
 		if(!P.brainmob || !P.brainmob.client)
 			to_chat(user, "<span class='notice'>[tool] has no life in it, this would be pointless!</span>")
-			return -1
-		var/obj/item/organ/meatslab = tool
-		if(!meatslab.useable)
-			to_chat(user, "<span class='warning'>[I] seems to have been chewed on, you can't use this!</span>")
 			return -1
 
 	//WS End
@@ -166,18 +160,12 @@
 
 /datum/surgery_step/manipulate_organs/success(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery, default_display_results)
 	if(current_type == "posibrain")
-		if(istype(tool, /obj/item/organ_storage))
-			tool.icon_state = "evidenceobj"
-			tool.desc = "A container for holding body parts."
-			tool.cut_overlays()
-			tool = tool.contents[1]
-
-		user.temporarilyRemoveItemFromInventory(tool)
-		spawn(1)
-			I = new /obj/item/organ/brain/mmi_holder/posibrain(tool)
-			I.Insert(target)
-			user.visible_message("<span class='notice'>[user] inserts [tool] into [target]'s [parse_zone(target_zone)]!</span>",
-				"<span class='notice'>You insert [tool] into [target]'s [parse_zone(target_zone)].</span>")
+		user.temporarilyRemoveItemFromInventory(tool, TRUE)
+		I = new /obj/item/organ/brain/mmi_holder/posibrain(null, tool)
+		I.Insert(target)
+		display_results(user, target, "<span class='notice'>You insert [tool] into [target]'s [parse_zone(target_zone)].</span>",
+			"<span class='notice'>[user] inserts [tool] into [target]'s [parse_zone(target_zone)]!</span>",
+			"<span class='notice'>[user] inserts something into [target]'s [parse_zone(target_zone)]!</span>")
 
 	else if(current_type == "insert")
 		if(istype(tool, /obj/item/organ_storage))
