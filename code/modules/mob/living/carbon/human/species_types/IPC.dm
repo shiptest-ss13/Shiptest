@@ -13,6 +13,7 @@
 	mutantstomach = /obj/item/organ/stomach/cell
 	mutantears = /obj/item/organ/ears/robot
 	mutantlungs = null //no more collecting change for you
+	mutantappendix = null
 	mutant_organs = list(/obj/item/organ/cyberimp/arm/power_cord)
 	mutant_bodyparts = list("ipc_screen", "ipc_antenna", "ipc_chassis")
 	default_features = list("mcolor" = "#7D7D7D", "ipc_screen" = "Static", "ipc_antenna" = "None", "ipc_chassis" = "Morpheus Cyberkinetics(Greyscale)")
@@ -47,9 +48,6 @@
 
 /datum/species/ipc/on_species_gain(mob/living/carbon/C) // Let's make that IPC actually robotic.
 	. = ..()
-	var/obj/item/organ/appendix/appendix = C.getorganslot("appendix") // Easiest way to remove it.
-	appendix.Remove(C)
-	QDEL_NULL(appendix)
 	if(ishuman(C) && !change_screen)
 		change_screen = new
 		change_screen.Grant(C)
