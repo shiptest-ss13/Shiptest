@@ -717,7 +717,7 @@
 /obj/item/toy/plush/spider/afterattack(atom/A, mob/user)
 	. = ..()
 	if(istype(A, /turf/open/floor))
-		if(!spraycharges)
+		if(spraycharges <= 0)
 			to_chat(user, "<span class='notice'>You squeeze [src] tightly and nothing happens!</span>")
 			return
 		if(!in_range(user, A))
