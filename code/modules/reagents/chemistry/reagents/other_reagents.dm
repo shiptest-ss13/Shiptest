@@ -979,6 +979,13 @@
 			if(!QDELETED(GG))
 				GG.reagents.add_reagent(type, reac_volume)
 
+/datum/reagent/uranium/dip_object(obj/item/I, mob/user, obj/item/reagent_containers/H)
+	. = ..()
+	if(istype(I, /obj/item/stock_parts/micro_laser))
+		H.reagents.add_reagent(/datum/reagent/uranium/radium, (H.reagents.remove_reagent(/datum/reagent/uranium, 10*I.get_part_rating())))
+		return TRUE
+	return
+
 /datum/reagent/uranium/radium
 	name = "Radium"
 	description = "Radium is an alkaline earth metal. It is extremely radioactive."
@@ -988,6 +995,9 @@
 	irradiation_level = 2*REM
 	process_flags = ORGANIC | SYNTHETIC //WS Edit - IPCs
 	material = null
+
+/datum/reagent/uranium/radium/dip_object(obj/item/I, mob/user, obj/item/reagent_containers/H)
+	return FALSE
 
 /datum/reagent/bluespace
 	name = "Bluespace Dust"

@@ -204,6 +204,18 @@
 /obj/item/reagent_containers/temperature_expose(datum/gas_mixture/air, exposed_temperature, exposed_volume)
 	reagents.expose_temperature(exposed_temperature)
 
+/obj/item/reagent_containers/attackby(obj/item/I, mob/user, params)
+	var/success = FALSE
+	if(!src.cap_on)
+		for(var/datum/reagent/R in reagents.reagent_list)
+			if(R.dip_object(I, user, src))
+				success = TRUE
+		if(success)
+			to_chat(user, "<span class='notice'>You dip [I] into [src], and the solution begins to bubble.</span>")
+			playsound(src, 'sound/effects/bubbles.ogg', 80, TRUE)
+	else
+		to_chat(user, "<span class='notice'>You cannot dip [I] into [src] while its cap is on!")
+
 /obj/item/reagent_containers/on_reagent_change(changetype)
 	update_icon()
 
