@@ -1,6 +1,6 @@
 /obj/item/mmi
 	name = "\improper Man-Machine Interface"
-	desc = "The Warrior's bland acronym, MMI, obscures the true horror of this monstrosity, that nevertheless has become standard-issue on Nanotrasen stations."
+	desc = "Circuit board to brain."
 	icon = 'icons/obj/assemblies.dmi'
 	icon_state = "mmi_off"
 	w_class = WEIGHT_CLASS_NORMAL
