@@ -309,7 +309,7 @@ But you can call procs that are of type /mob/living/carbon/human/proc/ for that 
 	popup.set_content(dat.Join())
 	popup.open()
 
-/client/proc/cmd_admin_areatest(on_station)
+/client/proc/cmd_admin_areatest()
 	set category = "Mapping"
 	set name = "Test Areas"
 
@@ -329,27 +329,11 @@ But you can call procs that are of type /mob/living/carbon/human/proc/ for that 
 		to_chat(usr, "Game still loading, please hold!", confidential = TRUE)
 		return
 
-	var/log_message
-	if(on_station)
-		dat += "<b>Only checking areas on station z-levels.</b><br><br>"
-		log_message = "station z-levels"
-	else
-		log_message = "all z-levels"
-
-	message_admins("<span class='adminnotice'>[key_name_admin(usr)] used the Test Areas debug command checking [log_message].</span>")
-	log_admin("[key_name(usr)] used the Test Areas debug command checking [log_message].")
+	message_admins("<span class='adminnotice'>[key_name_admin(usr)] used the Test Areas debug command checking all z-levels.</span>")
+	log_admin("[key_name(usr)] used the Test Areas debug command checking z-levels.")
 
 	for(var/area/A in world)
-		if(on_station)
-			var/list/area_turfs = get_area_turfs(A)
-			if (!length(area_turfs))
-				continue
-			var/turf/picked = pick(area_turfs)
-			if(is_station_level(picked.z))
-				if(!(A.type in areas_all) && !is_type_in_typecache(A, station_areas_blacklist))
-					areas_all.Add(A.type)
-		else if(!(A.type in areas_all))
-			areas_all.Add(A.type)
+		areas_all.Add(A.type)
 		CHECK_TICK
 
 	for(var/obj/machinery/power/apc/APC in GLOB.apcs_list)

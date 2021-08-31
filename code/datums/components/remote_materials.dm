@@ -16,7 +16,7 @@ handles linking back and forth.
 	var/allow_standalone
 	var/local_size = INFINITY
 
-/datum/component/remote_materials/Initialize(category, mapload, allow_standalone = TRUE, force_connect = FALSE)
+/datum/component/remote_materials/Initialize(category, mapload, allow_standalone = TRUE)
 	if (!isatom(parent))
 		return COMPONENT_INCOMPATIBLE
 
@@ -27,17 +27,7 @@ handles linking back and forth.
 	RegisterSignal(parent, COMSIG_ATOM_MULTITOOL_ACT, .proc/OnMultitool)
 
 	var/turf/T = get_turf(parent)
-	if (force_connect || (mapload && is_station_level(T.z)))
-		addtimer(CALLBACK(src, .proc/LateInitialize))
-	else if (allow_standalone)
-		_MakeLocal()
-
-/datum/component/remote_materials/proc/LateInitialize()
-	silo = GLOB.ore_silo_default
-	if (silo)
-		silo.connected += src
-		mat_container = silo.GetComponent(/datum/component/material_container)
-	else
+	if (allow_standalone)
 		_MakeLocal()
 
 /datum/component/remote_materials/Destroy()
