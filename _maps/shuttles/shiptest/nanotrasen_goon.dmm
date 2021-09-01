@@ -59,7 +59,6 @@
 /turf/open/floor/mineral/titanium/yellow,
 /area/ship/bridge)
 "cF" = (
-/obj/machinery/atmospherics/components/binary/pump,
 /turf/open/floor/mineral/titanium/yellow,
 /area/ship/engineering)
 "cR" = (
@@ -250,7 +249,7 @@
 /turf/open/floor/mineral/titanium/yellow,
 /area/ship/engineering)
 "pi" = (
-/obj/machinery/atmospherics/pipe/manifold/purple/visible{
+/obj/machinery/atmospherics/components/binary/volume_pump{
 	dir = 4
 	},
 /turf/open/floor/mineral/titanium/yellow,
@@ -553,6 +552,9 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/machinery/atmospherics/pipe/simple/purple/hidden{
+	dir = 10
+	},
 /turf/open/floor/mineral/titanium/blue,
 /area/ship/medical)
 "BI" = (
@@ -571,10 +573,10 @@
 /area/ship/crew)
 "BV" = (
 /obj/machinery/atmospherics/pipe/simple/purple/visible,
-/obj/machinery/atmospherics/pipe/simple/purple/visible{
-	dir = 9
-	},
 /obj/machinery/suit_storage_unit/engine,
+/obj/machinery/atmospherics/components/binary/volume_pump{
+	dir = 8
+	},
 /turf/open/floor/mineral/titanium/yellow,
 /area/ship/engineering)
 "CW" = (
@@ -589,8 +591,8 @@
 /area/ship/bridge)
 "Du" = (
 /obj/structure/closet/secure_closet/medical3,
-/obj/machinery/atmospherics/pipe/simple/purple/hidden{
-	dir = 10
+/obj/machinery/atmospherics/components/binary/volume_pump{
+	dir = 8
 	},
 /turf/open/floor/mineral/titanium/blue,
 /area/ship/medical)
@@ -665,8 +667,8 @@
 /area/ship/bridge)
 "Ix" = (
 /obj/machinery/atmospherics/pipe/simple/purple/hidden,
-/turf/open/floor/mineral/titanium/blue,
-/area/ship/medical)
+/turf/closed/wall/mineral/titanium,
+/area/ship/engineering)
 "IN" = (
 /turf/closed/wall/mineral/titanium,
 /area/ship/crew)
@@ -725,6 +727,7 @@
 	dir = 10
 	},
 /obj/machinery/airalarm/directional/north,
+/obj/machinery/atmospherics/pipe/simple/purple/visible,
 /turf/open/floor/mineral/titanium/yellow,
 /area/ship/engineering)
 "Kx" = (
@@ -770,6 +773,7 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 1
 	},
+/obj/machinery/atmospherics/pipe/simple/purple/visible,
 /turf/open/floor/mineral/titanium/yellow,
 /area/ship/engineering)
 "ON" = (
@@ -781,6 +785,7 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
+/obj/machinery/atmospherics/pipe/simple/purple/hidden,
 /turf/open/floor/mineral/titanium/blue,
 /area/ship/medical)
 "QI" = (
@@ -852,6 +857,9 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 5
 	},
+/obj/machinery/atmospherics/pipe/manifold/purple/visible{
+	dir = 4
+	},
 /turf/open/floor/mineral/titanium/yellow,
 /area/ship/engineering)
 "Wh" = (
@@ -889,6 +897,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 6
 	},
+/obj/machinery/atmospherics/pipe/simple/purple/hidden,
 /turf/open/floor/mineral/titanium/blue,
 /area/ship/medical)
 "Xt" = (
@@ -928,9 +937,6 @@
 /turf/open/floor/plating,
 /area/ship/engineering)
 "YI" = (
-/obj/machinery/atmospherics/components/binary/pump{
-	dir = 1
-	},
 /obj/machinery/atmospherics/components/binary/pump/layer2{
 	dir = 4
 	},
@@ -949,6 +955,9 @@
 /obj/machinery/firealarm{
 	pixel_y = -26
 	},
+/obj/machinery/atmospherics/pipe/simple/purple/visible{
+	dir = 9
+	},
 /turf/open/floor/mineral/titanium/yellow,
 /area/ship/engineering)
 "Zs" = (
@@ -956,6 +965,7 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 1
 	},
+/obj/machinery/atmospherics/pipe/simple/purple/hidden,
 /turf/open/floor/mineral/titanium/blue,
 /area/ship/medical)
 "ZH" = (
@@ -1023,9 +1033,9 @@ YC
 (3,1,1) = {"
 Xt
 Du
-Ix
-Ix
-Ix
+bd
+bd
+bd
 Jf
 YI
 pi
@@ -1039,7 +1049,7 @@ Bw
 OQ
 Xh
 Zs
-TR
+Ix
 JZ
 VQ
 Ng

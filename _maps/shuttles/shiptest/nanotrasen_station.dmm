@@ -9801,7 +9801,8 @@
 "KL" = (
 /obj/machinery/door/window/northleft{
 	name = "Custodial Cubby";
-	req_access = "26"
+	req_access = null;
+	req_access_txt = "26"
 	},
 /obj/structure/cable{
 	icon_state = "1-8"
