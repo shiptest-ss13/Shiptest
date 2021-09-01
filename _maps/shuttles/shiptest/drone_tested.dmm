@@ -169,6 +169,7 @@
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
+/obj/item/mining_scanner,
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
 "ii" = (
@@ -306,6 +307,7 @@
 /obj/effect/turf_decal/stripes/end{
 	dir = 4
 	},
+/obj/item/storage/bag/ore,
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
 "pg" = (
@@ -445,6 +447,7 @@
 /obj/effect/turf_decal/stripes{
 	dir = 6
 	},
+/obj/item/pickaxe,
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
 "vB" = (
@@ -712,8 +715,6 @@
 /turf/open/floor/plating,
 /area/ship/bridge)
 "Gm" = (
-/obj/item/circuitboard/machine/rdserver,
-/obj/structure/frame/machine,
 /obj/effect/turf_decal/trimline/purple/filled/line{
 	dir = 5
 	},
@@ -721,6 +722,7 @@
 	icon_state = "0-8"
 	},
 /obj/machinery/power/apc/auto_name/north,
+/obj/machinery/rnd/server,
 /turf/open/floor/plasteel/dark,
 /area/ship/science)
 "Go" = (

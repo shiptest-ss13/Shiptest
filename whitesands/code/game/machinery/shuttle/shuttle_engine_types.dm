@@ -199,7 +199,7 @@
 	desc = "A highly inefficient thruster that burns oil as a propellant."
 	max_reagents = 1000
 	thrust = 20
-	fuel_reagents = list(/datum/reagent/fuel/oil = 20)
+	fuel_reagents = list(/datum/reagent/fuel/oil = 50)
 	circuit = /obj/item/circuitboard/machine/shuttle/engine/oil
 
 /**

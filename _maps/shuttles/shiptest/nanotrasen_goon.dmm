@@ -24,7 +24,11 @@
 	name = "Emergency Shuttle Airlock"
 	},
 /obj/structure/fans/tiny,
-/turf/open/floor/plating,
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/turf/open/floor/mineral/titanium,
 /area/ship/crew)
 "bd" = (
 /turf/open/floor/mineral/titanium/blue,
@@ -149,6 +153,7 @@
 	dir = 4
 	},
 /obj/machinery/suit_storage_unit/standard_unit,
+/obj/machinery/door/firedoor/border_only,
 /turf/open/floor/mineral/titanium/white,
 /area/ship/crew)
 "iC" = (
@@ -178,6 +183,12 @@
 /obj/item/radio,
 /turf/open/floor/mineral/titanium/yellow,
 /area/ship/bridge)
+"ka" = (
+/obj/machinery/firealarm{
+	pixel_y = -26
+	},
+/turf/open/floor/mineral/titanium/blue,
+/area/ship/medical)
 "kd" = (
 /obj/machinery/power/terminal{
 	dir = 8
@@ -187,6 +198,10 @@
 /area/ship/engineering)
 "ku" = (
 /obj/structure/sign/poster/retro/nanotrasen_logo_70s,
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only,
 /turf/closed/wall/mineral/titanium,
 /area/ship/crew)
 "lI" = (
@@ -248,6 +263,10 @@
 /area/ship/crew)
 "pD" = (
 /obj/machinery/suit_storage_unit/standard_unit,
+/obj/machinery/firealarm{
+	dir = 4;
+	pixel_x = 26
+	},
 /turf/open/floor/mineral/titanium/white,
 /area/ship/crew)
 "pG" = (
@@ -287,6 +306,12 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
 /turf/open/floor/mineral/titanium/yellow,
 /area/ship/bridge)
 "qL" = (
@@ -294,6 +319,7 @@
 /obj/item/stack/sheet/metal/fifty,
 /obj/item/stack/sheet/metal/fifty,
 /obj/item/stack/sheet/glass/fifty,
+/obj/machinery/door/firedoor/border_only,
 /turf/open/floor/mineral/titanium/white,
 /area/ship/crew)
 "ra" = (
@@ -318,6 +344,9 @@
 /area/ship/engineering)
 "rX" = (
 /obj/machinery/autolathe,
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
 /turf/open/floor/mineral/titanium/white,
 /area/ship/crew)
 "sd" = (
@@ -379,6 +408,12 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
 	},
 /turf/open/floor/mineral/titanium/yellow,
 /area/ship/engineering)
@@ -547,6 +582,9 @@
 	dir = 4
 	},
 /obj/machinery/light/small,
+/obj/machinery/firealarm{
+	pixel_y = -26
+	},
 /turf/open/floor/mineral/titanium/yellow,
 /area/ship/bridge)
 "Du" = (
@@ -576,6 +614,7 @@
 "EJ" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/door/firedoor/border_only,
 /turf/open/floor/mineral/titanium/white,
 /area/ship/crew)
 "ET" = (
@@ -700,6 +739,9 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
 /turf/open/floor/mineral/titanium/purple,
 /area/ship/crew)
 "Lr" = (
@@ -760,6 +802,13 @@
 	},
 /turf/open/floor/mineral/titanium/yellow,
 /area/ship/bridge)
+"Rw" = (
+/obj/machinery/firealarm{
+	dir = 4;
+	pixel_x = -24
+	},
+/turf/open/floor/mineral/titanium,
+/area/ship/crew)
 "RI" = (
 /obj/structure/bed/pod,
 /obj/structure/window/reinforced/survival_pod{
@@ -899,6 +948,9 @@
 	pixel_y = -10
 	},
 /obj/item/storage/toolbox/mechanical,
+/obj/machinery/firealarm{
+	pixel_y = -26
+	},
 /turf/open/floor/mineral/titanium/yellow,
 /area/ship/engineering)
 "Zs" = (
@@ -921,6 +973,12 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
 /turf/open/floor/mineral/titanium/blue,
 /area/ship/medical)
 "ZO" = (
@@ -930,6 +988,9 @@
 /area/ship/crew)
 "ZQ" = (
 /obj/machinery/mineral/ore_redemption{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only{
 	dir = 8
 	},
 /turf/open/floor/mineral/titanium/white,
@@ -992,7 +1053,7 @@ SH
 Uo
 Be
 oa
-bd
+ka
 TR
 Lr
 ro
@@ -1049,7 +1110,7 @@ wf
 ds
 HV
 Ea
-Ea
+Rw
 at
 "}
 (10,1,1) = {"

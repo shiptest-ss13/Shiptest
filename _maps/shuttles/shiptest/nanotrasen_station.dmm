@@ -563,7 +563,9 @@
 /obj/machinery/atmospherics/pipe/simple/cyan/visible{
 	dir = 4
 	},
-/turf/closed/wall/r_wall,
+/turf/closed/wall/r_wall{
+	rad_insulation = 0
+	},
 /area/ship/engineering/engine)
 "bS" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
@@ -3034,7 +3036,9 @@
 /obj/machinery/atmospherics/pipe/simple/yellow/visible{
 	dir = 8
 	},
-/turf/closed/wall/r_wall,
+/turf/closed/wall/r_wall{
+	rad_insulation = 0
+	},
 /area/ship/engineering/engine)
 "lm" = (
 /obj/machinery/camera/autoname{
@@ -3918,6 +3922,7 @@
 /obj/machinery/camera/autoname{
 	dir = 9
 	},
+/obj/structure/closet/secure_closet/medical3,
 /turf/open/floor/plasteel/white,
 /area/ship/crew)
 "oK" = (
@@ -12533,6 +12538,11 @@
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
 /area/ship/crew/chapel)
+"US" = (
+/turf/closed/wall/r_wall{
+	rad_insulation = 0
+	},
+/area/ship/engineering/engine)
 "UU" = (
 /obj/effect/turf_decal/tile/bar{
 	dir = 8
@@ -14188,15 +14198,15 @@ Vh
 UN
 xK
 jg
-fm
-fm
-fm
-fm
-fm
-fm
-fm
-fm
-fm
+US
+US
+US
+US
+US
+US
+US
+US
+US
 "}
 (7,1,1) = {"
 ld
@@ -14246,7 +14256,7 @@ iA
 UN
 pQ
 OD
-fm
+US
 fQ
 Sw
 Hi
@@ -14254,7 +14264,7 @@ uT
 of
 cB
 Yz
-fm
+US
 "}
 (8,1,1) = {"
 zB
@@ -14304,7 +14314,7 @@ Bc
 UN
 xK
 DV
-fm
+US
 BA
 cr
 Hi
@@ -14312,7 +14322,7 @@ Xg
 of
 Ra
 AT
-fm
+US
 "}
 (9,1,1) = {"
 km
@@ -14362,7 +14372,7 @@ Jo
 UN
 zI
 UN
-fm
+US
 BA
 cr
 Hi
@@ -14370,7 +14380,7 @@ ZQ
 of
 Ra
 AT
-fm
+US
 "}
 (10,1,1) = {"
 dE
@@ -14420,15 +14430,15 @@ kL
 Td
 bh
 Kp
-fm
+US
 Sq
 bR
-fm
+US
 cH
-fm
+US
 lk
 dx
-fm
+US
 "}
 (11,1,1) = {"
 dE
@@ -14478,7 +14488,7 @@ vN
 wX
 RT
 dZ
-fm
+US
 WO
 hk
 NS
@@ -14486,7 +14496,7 @@ gz
 qR
 uz
 Bs
-fm
+US
 "}
 (12,1,1) = {"
 pp
@@ -14536,7 +14546,7 @@ lm
 sh
 Gz
 XW
-fm
+US
 Eg
 jT
 Tf
@@ -14544,7 +14554,7 @@ LX
 ZQ
 aH
 Jv
-fm
+US
 "}
 (13,1,1) = {"
 pp
@@ -14594,7 +14604,7 @@ Ja
 gv
 nf
 gv
-fm
+US
 uV
 Ki
 Mf
@@ -14602,7 +14612,7 @@ GZ
 mW
 cF
 Jv
-fm
+US
 "}
 (14,1,1) = {"
 dE
@@ -14652,15 +14662,15 @@ Ja
 XB
 Wv
 Mj
-fm
-fm
+US
+US
 XY
 mQ
 ua
 Qc
 id
-fm
-fm
+US
+US
 "}
 (15,1,1) = {"
 if
@@ -14711,13 +14721,13 @@ lK
 kl
 RE
 fm
-fm
-fm
-fm
+US
+US
+US
 Rv
-fm
-fm
-fm
+US
+US
+US
 Ql
 "}
 (16,1,1) = {"
