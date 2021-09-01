@@ -12,7 +12,7 @@
 
 ///The say verb, but with typing indicator shown
 /mob/verb/say_with_indicator()
-	set name = "Say_indicator"
+	set name = "Say Visible"
 	set category = "IC"
 	set hidden = TRUE
 	display_typing_indicator()
@@ -48,7 +48,7 @@
 
 ///The me/emote verb, but with typing indicator shown
 /mob/verb/me_with_indicator()
-	set name = "Me_indicator"
+	set name = "Me Visible"
 	set category = "IC"
 	set hidden = TRUE
 	display_typing_indicator()
