@@ -829,6 +829,15 @@
 	category = CAT_CLOTHING
 */
 
+/datum/crafting_recipe/filter
+	name = "Filtered Beaker"
+	reqs = list(
+		   /obj/item/stack/cable_coil = 1,
+		   /obj/item/reagent_containers/glass/beaker/large = 1,
+		   /obj/item/paper = 1)
+	result = /obj/item/reagent_containers/glass/filter
+	category = CAT_MISC
+
 /datum/crafting_recipe/ipickaxe
 	name = "Improvised Pickaxe"
 	reqs = list(
