@@ -1140,7 +1140,7 @@
 	display_name = "Australicus Security Protocols"
 	description = "It is said that security in the Australicus sector is tight, so we took some pointers from their equipment. Thankfully, our sector lacks any signs of these, 'dropbears'."
 	prereq_ids = list("base")
-	design_ids = list("pin_explorer", "stun_boomerang")
+	design_ids = list("stun_boomerang")
 
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 	export_price = 2500

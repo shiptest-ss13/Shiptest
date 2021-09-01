@@ -1,4 +1,3 @@
-GLOBAL_DATUM(ore_silo_default, /obj/machinery/ore_silo)
 GLOBAL_LIST_EMPTY(silo_access_logs)
 
 /obj/machinery/ore_silo
@@ -29,15 +28,9 @@ GLOBAL_LIST_EMPTY(silo_access_logs)
 		/datum/material/bluespace,
 		/datum/material/plastic,
 		)
-	var/datum/component/material_container/materials = AddComponent(/datum/component/material_container, materials_list, INFINITY, allowed_types=/obj/item/stack, _disable_attackby=TRUE)
-	if (!GLOB.ore_silo_default && mapload && is_station_level(z))
-		GLOB.ore_silo_default = src
-		materials.linked_account = SSeconomy.get_dep_account(ACCOUNT_CAR)
+	AddComponent(/datum/component/material_container, materials_list, INFINITY, allowed_types=/obj/item/stack, _disable_attackby=TRUE)
 
 /obj/machinery/ore_silo/Destroy()
-	if (GLOB.ore_silo_default == src)
-		GLOB.ore_silo_default = null
-
 	for(var/C in connected)
 		var/datum/component/remote_materials/mats = C
 		mats.disconnect_from(src)

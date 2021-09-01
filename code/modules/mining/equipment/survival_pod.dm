@@ -60,10 +60,6 @@
 
 		playsound(src, 'sound/effects/phasein.ogg', 100, TRUE)
 
-		var/turf/T = deploy_location
-		if(!is_mining_level(T.z)) //only report capsules away from the mining/lavaland level
-			message_admins("[ADMIN_LOOKUPFLW(usr)] activated a bluespace capsule away from the mining level! [ADMIN_VERBOSEJMP(T)]")
-			log_admin("[key_name(usr)] activated a bluespace capsule away from the mining level at [AREACOORD(T)]")
 		template.load(deploy_location, centered = TRUE)
 		new /obj/effect/particle_effect/smoke(get_turf(src))
 		qdel(src)

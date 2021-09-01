@@ -413,12 +413,9 @@ structure_check() searches for nearby cultist structures required for the invoca
 			to_chat(user, "<span class='cult'>You[moveuserlater ? "r vision blurs, and you suddenly appear somewhere else":" send everything above the rune away"].</span>")
 		else
 			to_chat(user, "<span class='cult'>You[moveuserlater ? "r vision blurs briefly, but nothing happens":" try send everything above the rune away, but the teleportation fails"].</span>")
-		if(is_mining_level(z) && !is_mining_level(target.z)) //No effect if you stay on lavaland
-			actual_selected_rune.handle_portal("lava")
-		else
-			var/area/A = get_area(T)
-			if(initial(A.name) == "Space")
-				actual_selected_rune.handle_portal("space", T)
+		var/area/A = get_area(T)
+		if(initial(A.name) == "Space")
+			actual_selected_rune.handle_portal("space", T)
 		if(movesuccess)
 			target.visible_message("<span class='warning'>There is a boom of outrushing air as something appears above the rune!</span>", null, "<i>You hear a boom.</i>")
 	else
@@ -476,8 +473,6 @@ structure_check() searches for nearby cultist structures required for the invoca
 
 /obj/effect/rune/narsie/invoke(var/list/invokers)
 	if(used)
-		return
-	if(!is_station_level(z))
 		return
 	var/mob/living/user = invokers[1]
 	var/datum/antagonist/cult/user_antag = user.mind.has_antag_datum(/datum/antagonist/cult,TRUE)
@@ -834,9 +829,6 @@ structure_check() searches for nearby cultist structures required for the invoca
 	var/turf/T = get_turf(src)
 	var/choice = alert(user,"You tear open a connection to the spirit realm...",,"Summon a Cult Ghost","Ascend as a Dark Spirit","Cancel")
 	if(choice == "Summon a Cult Ghost")
-		if(is_mining_level(T.z))
-			to_chat(user, "<span class='cultitalic'><b>The veil is not weak enough here to manifest spirits, you must be on station!</b></span>")
-			return
 		if(ghosts >= ghost_limit)
 			to_chat(user, "<span class='cultitalic'>You are sustaining too many ghosts to summon more!</span>")
 			fail_invoke()

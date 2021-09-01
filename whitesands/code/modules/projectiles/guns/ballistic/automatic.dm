@@ -99,7 +99,6 @@
 	item_state = "aks74u"
 	weapon_weight = WEAPON_MEDIUM
 	w_class = WEIGHT_CLASS_NORMAL
-	pin = /obj/item/firing_pin/explorer
 	mag_type = /obj/item/ammo_box/magazine/aks74u
 
 /obj/item/gun/ballistic/automatic/ak47
