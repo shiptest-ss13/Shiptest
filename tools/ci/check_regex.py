@@ -5,8 +5,31 @@ Usage:
 check_regex.py - Run regex expression tests on all DM code inside current
     directory
 
-    To add, modify, or remove test cases/expressions, edit this script.
-    See the "cases" variable and the use of exact(int, string, string).
+    Requires a default/HEAD branch and an origin to exist in the git to
+    make use of diffs. So you can easily track changes in your branch
+    compared to the master it branched off from. With that said, you will
+    require an accessible Git installation for this feature to work as well.
+
+    Requires a check_regex.yaml config to work proper. See in repository's
+    root or somewhere applicable to find an example with instructions.
+    Granted - if the config was not cargo-culted then stripped.
+
+    This takes the following arguments:
+    -c, --config <config file>
+        Overrides the default configuration with
+        with the specificed configuration yaml file
+
+    -u, --update <OPTIONAL: config file>
+        Tells this to update the default or the config overriden as above
+        optionally, you can give it the name/path of the configuration file
+        it should save to instead of overwriting the original. While updating
+        a backup of the original will always be created
+
+    --log-changes-only
+        An output option to suppress all matches it was found but not in
+        diffs; leaving only files with changed contents, be it add,
+        modification, or removal. Good if you want to track down errors
+        caused by commit or PR changes.
 
 Copyright 2021 Martin Lyrå
 
