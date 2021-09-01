@@ -28,7 +28,7 @@ GLOBAL_LIST_EMPTY(silo_access_logs)
 		/datum/material/bluespace,
 		/datum/material/plastic,
 		)
-	var/datum/component/material_container/materials = AddComponent(/datum/component/material_container, materials_list, INFINITY, allowed_types=/obj/item/stack, _disable_attackby=TRUE)
+	AddComponent(/datum/component/material_container, materials_list, INFINITY, allowed_types=/obj/item/stack, _disable_attackby=TRUE)
 
 /obj/machinery/ore_silo/Destroy()
 	for(var/C in connected)

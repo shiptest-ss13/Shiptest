@@ -26,7 +26,6 @@ handles linking back and forth.
 	RegisterSignal(parent, COMSIG_PARENT_ATTACKBY, .proc/OnAttackBy)
 	RegisterSignal(parent, COMSIG_ATOM_MULTITOOL_ACT, .proc/OnMultitool)
 
-	var/turf/T = get_turf(parent)
 	if (allow_standalone)
 		_MakeLocal()
 

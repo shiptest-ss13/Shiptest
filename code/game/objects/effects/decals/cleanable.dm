@@ -31,7 +31,6 @@
 	SSblackbox.record_feedback("tally", "station_mess_created", 1, name)
 
 /obj/effect/decal/cleanable/Destroy()
-	var/turf/T = get_turf(src)
 	SSblackbox.record_feedback("tally", "station_mess_destroyed", 1, name)
 	return ..()
 

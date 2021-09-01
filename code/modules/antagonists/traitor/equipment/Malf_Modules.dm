@@ -165,7 +165,6 @@ GLOBAL_LIST_INIT(malf_modules, subtypesof(/datum/AI_Module))
 	auto_use_uses = FALSE
 
 /datum/action/innate/ai/nuke_station/Activate()
-	var/turf/T = get_turf(owner)
 	if(alert(owner, "Send arming signal? (true = arm, false = cancel)", "purge_all_life()", "confirm = TRUE;", "confirm = FALSE;") != "confirm = TRUE;")
 		return
 	if (active)
@@ -304,7 +303,6 @@ GLOBAL_LIST_INIT(malf_modules, subtypesof(/datum/AI_Module))
 	sleep(100)
 	for(var/i in GLOB.mob_living_list)
 		var/mob/living/L = i
-		var/turf/T = get_turf(L)
 		if(issilicon(L))
 			continue
 		to_chat(L, "<span class='userdanger'>The blast wave from [src] tears you atom from atom!</span>")
