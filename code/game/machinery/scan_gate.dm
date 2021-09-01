@@ -1,4 +1,4 @@
-#define SCANGATE_NONE 			"Off"
+#define SCANGATE_NONE "Off"
 #define SCANGATE_MINDSHIELD "Mindshield"
 #define SCANGATE_NANITES "Nanites"
 #define SCANGATE_DISEASE "Disease"
@@ -7,7 +7,7 @@
 #define SCANGATE_SPECIES "Species"
 #define SCANGATE_NUTRITION "Nutrition"
 
-#define SCANGATE_HUMAN 		"human"
+#define SCANGATE_HUMAN "human"
 #define SCANGATE_LIZARD "lizard"
 #define SCANGATE_FELINID "felinid"
 #define SCANGATE_FLY "fly"

@@ -326,7 +326,7 @@
 		/obj/item/stack/sheet/glass = 1)
 
 #define PATH_FREEZER /obj/machinery/atmospherics/components/unary/thermomachine/freezer
-#define PATH_HEATER  /obj/machinery/atmospherics/components/unary/thermomachine/heater
+#define PATH_HEATER /obj/machinery/atmospherics/components/unary/thermomachine/heater
 
 /obj/item/circuitboard/machine/thermomachine/Initialize()
 	. = ..()

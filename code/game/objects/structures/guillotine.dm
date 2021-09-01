@@ -1,11 +1,11 @@
-#define GUILLOTINE_BLADE_MAX_SHARP  10 // This is maxiumum sharpness and will decapitate without failure
+#define GUILLOTINE_BLADE_MAX_SHARP 10 // This is maxiumum sharpness and will decapitate without failure
 #define GUILLOTINE_DECAP_MIN_SHARP 7  // Minimum amount of sharpness for decapitation. Any less and it will just do severe brute damage
 #define GUILLOTINE_ANIMATION_LENGTH 9 // How many deciseconds the animation is
-#define GUILLOTINE_BLADE_RAISED     1
+#define GUILLOTINE_BLADE_RAISED 1
 #define GUILLOTINE_BLADE_MOVING 2
 #define GUILLOTINE_BLADE_DROPPED 3
 #define GUILLOTINE_BLADE_SHARPENING 4
-#define GUILLOTINE_HEAD_OFFSET      16 // How much we need to move the player to center their head
+#define GUILLOTINE_HEAD_OFFSET 16 // How much we need to move the player to center their head
 #define GUILLOTINE_LAYER_DIFF 1.2 // How much to increase/decrease a head when it's buckled/unbuckled
 #define GUILLOTINE_ACTIVATE_DELAY 30 // Delay for executing someone
 #define GUILLOTINE_WRENCH_DELAY 10

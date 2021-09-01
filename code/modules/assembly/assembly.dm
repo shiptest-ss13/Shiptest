@@ -1,4 +1,4 @@
-#define WIRE_RECEIVE 	(1<<0)
+#define WIRE_RECEIVE (1<<0)
 #define WIRE_PULSE (1<<1)
 #define WIRE_PULSE_SPECIAL (1<<2)
 #define WIRE_RADIO_RECEIVE (1<<3)

@@ -4,13 +4,13 @@
 #define POPUP_ANIM_TIME 5
 #define POPDOWN_ANIM_TIME 5 //Be sure to change the icon animation at the same time or it'll look bad
 
-#define TURRET_FLAG_SHOOT_ALL_REACT 	(1<<0)	// The turret gets pissed off and shoots at people nearby (unless they have sec access!)
+#define TURRET_FLAG_SHOOT_ALL_REACT (1<<0)	// The turret gets pissed off and shoots at people nearby (unless they have sec access!)
 #define TURRET_FLAG_AUTH_WEAPONS (1<<1)	// Checks if it can shoot people that have a weapon they aren't authorized to have
 #define TURRET_FLAG_SHOOT_CRIMINALS (1<<2)	// Checks if it can shoot people that are wanted
 #define TURRET_FLAG_SHOOT_ALL (1<<3)  // The turret gets pissed off and shoots at people nearby (unless they have sec access!)
 #define TURRET_FLAG_SHOOT_ANOMALOUS (1<<4)  // Checks if it can shoot at unidentified lifeforms (ie xenos)
 #define TURRET_FLAG_SHOOT_UNSHIELDED (1<<5)	// Checks if it can shoot people that aren't mindshielded and who arent heads
-#define TURRET_FLAG_SHOOT_BORGS 		(1<<6)	// checks if it can shoot cyborgs
+#define TURRET_FLAG_SHOOT_BORGS (1<<6)	// checks if it can shoot cyborgs
 #define TURRET_FLAG_SHOOT_HEADS (1<<7)	// checks if it can shoot at heads of staff
 
 DEFINE_BITFIELD(turret_flags, list(

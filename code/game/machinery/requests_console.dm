@@ -8,7 +8,7 @@ GLOBAL_LIST_EMPTY(allConsoles)
 GLOBAL_LIST_EMPTY(req_console_ckey_departments)
 
 
-#define REQ_SCREEN_MAIN 			0
+#define REQ_SCREEN_MAIN 0
 #define REQ_SCREEN_REQ_ASSISTANCE 1
 #define REQ_SCREEN_REQ_SUPPLIES 2
 #define REQ_SCREEN_RELAY 3

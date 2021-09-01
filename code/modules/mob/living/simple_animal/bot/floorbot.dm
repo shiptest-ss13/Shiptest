@@ -33,7 +33,7 @@
 	var/toolbox = /obj/item/storage/toolbox/mechanical
 	var/toolbox_color = ""
 
-	#define HULL_BREACH 	1
+	#define HULL_BREACH 1
 	#define LINE_SPACE_MODE 2
 	#define FIX_TILE 3
 	#define AUTO_TILE 4

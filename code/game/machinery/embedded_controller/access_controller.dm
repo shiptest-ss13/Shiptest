@@ -1,4 +1,4 @@
-#define CLOSING 		1
+#define CLOSING 1
 #define OPENING 2
 #define CYCLE 3
 #define CYCLE_EXTERIOR 4

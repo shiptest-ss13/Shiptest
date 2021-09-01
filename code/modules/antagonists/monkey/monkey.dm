@@ -1,4 +1,4 @@
-#define MONKEYS_ESCAPED 	1
+#define MONKEYS_ESCAPED 1
 #define MONKEYS_LIVED 2
 #define MONKEYS_DIED 3
 #define DISEASE_LIVED 4

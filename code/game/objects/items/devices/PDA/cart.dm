@@ -6,7 +6,7 @@
 #define CART_MIME (1<<6)
 #define CART_JANITOR (1<<7)
 #define CART_REAGENT_SCANNER (1<<8)
-#define CART_NEWSCASTER 		(1<<9)
+#define CART_NEWSCASTER (1<<9)
 #define CART_REMOTE_DOOR (1<<10)
 #define CART_STATUS_DISPLAY (1<<11)
 #define CART_QUARTERMASTER (1<<12)

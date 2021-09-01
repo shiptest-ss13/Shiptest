@@ -23,7 +23,7 @@
 #define PARROT_STEAL (1<<3)	//Flying towards a target to steal it/from it
 #define PARROT_ATTACK (1<<4)	//Flying towards a target to attack it
 #define PARROT_RETURN (1<<5)	//Flying towards its perch
-#define PARROT_FLEE 	(1<<6)	//Flying away from its attacker
+#define PARROT_FLEE (1<<6)	//Flying away from its attacker
 
 
 /mob/living/simple_animal/parrot
