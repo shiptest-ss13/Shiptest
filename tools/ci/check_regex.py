@@ -35,22 +35,28 @@ import os                   # For file and directory operations
 import re as regex          # For regex
 import time                 # For very basic performance profiling
 import argparse             # For arguments
+import difflib              # For sequence matching of strings (for updating and merging config files)
 # Also for strong typing
-from typing import Dict, List, Tuple
+from typing import Dict, List, Pattern, Tuple
 
 # Third party
 import git
-from git.index import typ                  # For fetching git data & diffs
+from git.index import base, typ                  # For fetching git data & diffs
 from git.refs.head import Head
 import unidiff              # For parsing of unified diff data
 from unidiff.patch import Line, PatchedFile
 import yaml                 # For configuration
 import colorama             # For logging styling
 from colorama import Fore, Back, Style
+from yaml.dumper import Dumper
+from yaml.nodes import MappingNode, Node
 
 # Defaults
 config_file_default_name = "check_regex.yaml"
 annotation_file_output_name = "check_regex_output.txt"
+
+# The required ratio score for using the new configuration line instead of old
+config_update_string_score_decision_limit = 0.80
 
 preferred_encoding = "utf-8"
 
@@ -62,7 +68,10 @@ options.add_argument(
 options.add_argument(
     "-u",
     "--update",
-    dest="update_config_file")
+    dest="update_config_file",
+    nargs='?',
+    const=True,
+    default=False)
 options.add_argument(
     "--log-changes-only",
     dest="log_changes_only",
@@ -78,12 +87,14 @@ class TestExpression:
         expected: int,
         message: str,
         pattern: str,
-        method: str
+        method: str,
+        dump_hint: int
     ):
         self.expected = expected
         self.message = message
-        self.pattern = regex.compile(pattern)
+        self.pattern: Pattern = regex.compile(pattern)
         self.method = method
+        self.dump_hint = dump_hint
 
     def __repr__(self) -> str:
         return self.__str__()
@@ -95,6 +106,15 @@ class TestExpression:
             self.message,
             self.pattern
         ))
+
+    def copy(self):
+        return TestExpression(
+            self.expected,
+            self.message,
+            self.pattern.pattern,
+            self.method,
+            self.dump_hint
+        )
 
 #
 # Test methods & result defines
@@ -125,10 +145,18 @@ target_method_binding = {
 # Configuration
 #
 
+DUMP_HINT_SHORT = 1
+DUMP_HINT_VERBOSE = 2
+
 def get_config_file() -> str:
     if args.input_config_file is not None:
         return args.input_config_file
     return config_file_default_name
+
+def get_config_update_target_file() -> str:
+    if type(args.update_config_file) is str:
+        return args.update_config_file
+    return get_config_file()
 
 # Configuration loading
 def load_yaml_config(config_file: str) -> Dict:
@@ -160,7 +188,7 @@ def parse_yaml_config(yaml_data: Dict) -> Tuple[List]:
             (method, args) = get_tuple(entry)
             (num, message, pattern) = args
             return TestExpression(
-                num, message, pattern, method
+                num, message, pattern, method, DUMP_HINT_SHORT
             )
 
         def parse_verbose(entry):
@@ -175,7 +203,8 @@ def parse_yaml_config(yaml_data: Dict) -> Tuple[List]:
                     number,
                     message,
                     pattern,
-                    method
+                    method,
+                    DUMP_HINT_VERBOSE
                 )
             return None
 
@@ -200,6 +229,119 @@ def parse_yaml_config(yaml_data: Dict) -> Tuple[List]:
     return (
         parse_standards()
     )
+
+# A override class to override the official specification where
+# indentation "iS nOt NeCeSsEcArY", that is bullshit
+#
+# See https://web.archive.org/web/20170903201521/https://pyyaml.org/ticket/64
+class IndentedDumper(yaml.Dumper):
+    def increase_indent(self, flow, indentless=False):
+        return super(IndentedDumper, self).increase_indent(flow=flow, indentless=False)
+
+# Configuration dumping (for updating)
+def dump_config_yaml(config_file: str, standards: List[TestExpression]) -> None:
+    def dump_standards_set(dumper: Dumper, l: List[TestExpression]):
+        return dumper.represent_list(l)
+
+    def dump_test_expression(dumper: Dumper, standard: TestExpression):
+        def dump_short() -> MappingNode:
+            mapNode = dumper.represent_dict({})
+            listNode = dumper.represent_list([])
+            listNode.flow_style = True
+
+            expected = dumper.represent_int(standard.expected)
+            message = dumper.represent_str(standard.message)
+            message.style = "'"
+            pattern = dumper.represent_str(standard.pattern.pattern)
+            pattern.style = "'"
+            listNode.value.append(expected)
+            listNode.value.append(message)
+            listNode.value.append(pattern)
+            mapNode.value.append(
+                (dumper.represent_str(standard.method), listNode)
+            )
+            return mapNode
+
+        def dump_verbose() -> MappingNode:
+            tmp = dumper.sort_keys
+            dumper.sort_keys = False
+            node = dumper.represent_dict({
+                "target": {
+                    f"{standard.method}": standard.expected
+                },
+                "message": standard.message,
+                "pattern": standard.pattern.pattern
+            })
+            dumper.sort_keys = tmp
+            return node
+
+
+        if standard.dump_hint == DUMP_HINT_SHORT:
+            return dump_short()
+        if standard.dump_hint == DUMP_HINT_VERBOSE:
+            return dump_verbose()
+        return None
+
+    def string_score(left, right) -> float:
+        return difflib.SequenceMatcher(None, left, right).ratio()
+
+    yaml.add_representer(List[TestExpression], dump_standards_set)
+    yaml.add_representer(TestExpression, dump_test_expression)
+
+    new_yaml = yaml.dump({
+        "standards": standards
+    }, indent=2, width=512, Dumper=IndentedDumper)
+
+    old_yaml = ""
+    with open(config_file, mode="rt", encoding=preferred_encoding) as f:
+        old_yaml = f.read()
+
+    # Create backup of the old config file
+    backup_file = f"{config_file}.backup"
+    with open(backup_file, mode="wt", encoding=preferred_encoding) as f:
+        f.write(old_yaml)
+    output_write("Config Update: Created backup file: %s" % backup_file)
+
+    # Try to combine the new into the old
+    new_lines = new_yaml.split("\n")
+    old_lines = [(l if not l == "" else "\0") for l in old_yaml.split("\n")]
+    output = []
+    ii, jj = 0, 0
+    nnew, nold = len(new_lines), len(old_lines)
+    while (ii < nnew or jj < nold):
+        increment_left, increment_right = False, False
+        new = new_lines[ii] if ii < nnew else None
+        old = old_lines[jj] if jj < nold else None
+
+        if new and old:
+            score = string_score(new, old)
+            if score > config_update_string_score_decision_limit:
+                increment_left = True
+                increment_right = True
+                output.append(new)
+            else:
+                increment_right = True
+                output.append(old)
+        else:
+            increment_left = increment_right = True
+            if (ii < nnew):
+                output.append(new)
+            else:
+                output.append(old)
+
+        if (increment_left and ii < nnew):
+            ii += 1
+        if (increment_right and jj < nold):
+            jj += 1
+
+    # Time to output it
+    combined = str.join("\n", [
+        l if not l == "\0" else ""
+        for l in output
+    ])
+    with open(config_file, mode="wt", encoding=preferred_encoding) as f:
+        f.write(combined)
+    output_write("Config Update: Updated config file: %s" % config_file)
 
 #
 # Analysis
@@ -232,7 +374,7 @@ class RegexStandardAnalyzer:
         self.ignore_comments = False
         self.line_comment_regex_expression = regex.compile(r'^\s*\/\/')
 
-    def ___is_a_line_comment(self, line):
+    def ___is_a_line_comment(self, line) -> bool:
         return self.line_comment_regex_expression.match(line)
 
     def ___test_content_lines(self, results, key, lines):
@@ -331,7 +473,7 @@ class RegexStandardAnalyzer:
 # For writing to both stdout and file at once
 output_file: FileIO = None
 
-def output_write(message, colour=None, to_stdout=True, to_file=True):
+def output_write(message, colour=None, to_stdout=True, to_file=True) -> None:
     if to_stdout:
         if colour is not None:
             print(f"{colour}{message}{Fore.RESET}")
@@ -340,23 +482,23 @@ def output_write(message, colour=None, to_stdout=True, to_file=True):
     if to_file and output_file is not None:
         output_file.write(message + "\n")
 
-def create_title(title, char='='):
+def create_title(title, char='=') -> None:
     MAX_WIDTH = 100
     if len(title):
         right = MAX_WIDTH - (7 + len(title))
         return f"\n{char*5} {title} {char*right}"
     return char*MAX_WIDTH
 
-def try_normalize_path(filepath):
+def try_normalize_path(filepath) -> str:
     return os.path.normpath(filepath)
 
-def git_diff_range_branches(parent, head=None):
+def git_diff_range_branches(parent, head=None) -> str:
     parent = f"origin/{parent}"
     if head is not None:
         return "%s...%s" % (head, parent)
     return parent
 
-def git_get_detached_head_ref(head: Head, ref_info: str):
+def git_get_detached_head_ref(head: Head, ref_info: str) -> str:
     raw = "%s (\S+)" % head.commit.hexsha
     pattern = regex.compile(raw)
     return pattern.findall(ref_info)[0]
@@ -391,6 +533,10 @@ if __name__ == "__main__":
     output_write(" - Loaded %d standardization rules" % (
         len(standards)
     ))
+    if args.update_config_file:
+        output_write("\nNOTE: Config file %s will be updated end of this script" % (
+            get_config_update_target_file()
+        ))
 
     output_write(create_title(
         "Collection", '-'
@@ -639,20 +785,46 @@ if __name__ == "__main__":
 
         output_write("", to_stdout=False) # Just space out between the lines
 
-    output_write("\n"
-        + (
-            "There are mismatches present, please address those"
-            if failure else
-            "There are possible improvements present, a review of code or configured values is recommended"
-            if warning else
-            "All OK!"
-        ),
-        colour=
-            Fore.RED if failure else
-            Fore.YELLOW if warning else
-            Fore.GREEN,
-        to_file= False
-    )
+    if args.update_config_file:
+        output_write("" , to_file=False)
+        new_standards = [
+            s.copy() for s in standards
+        ]
+
+        updates = 0
+        for ii in range(0, len(standards)):
+            new = new_standards[ii]
+            old = standards[ii]
+            new.expected = results[ii]['SUM']
+            if new.expected != old.expected:
+                updates += 1
+
+        if updates > 0:
+            output_write("Config Update: %d target%s will be updated" % (
+                updates,
+                "s" if updates > 1 else ""
+            ))
+            dump_config_yaml(
+                get_config_update_target_file(),
+                new_standards
+            )
+        else:
+            output_write("Config Update: No deltas were found between results and targets, the config will not be updated.")
+    else:
+        output_write("\n"
+            + (
+                "There are mismatches present, please address those"
+                if failure else
+                "There are possible improvements present, a review of code or configured values is recommended"
+                if warning else
+                "All OK!"
+            ),
+            colour=
+                Fore.RED if failure else
+                Fore.YELLOW if warning else
+                Fore.GREEN,
+            to_file= False
+        )
     output_write("\nThis script completed in %7.3f seconds"
         % (time.time() - start_time)
     )
