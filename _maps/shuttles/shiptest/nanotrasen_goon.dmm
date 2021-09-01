@@ -56,6 +56,9 @@
 /obj/machinery/light/small{
 	dir = 1
 	},
+/obj/item/radio/intercom/wideband{
+	pixel_y = 28
+	},
 /turf/open/floor/mineral/titanium/yellow,
 /area/ship/bridge)
 "cF" = (
@@ -145,6 +148,7 @@
 /turf/open/floor/plating,
 /area/ship/engineering)
 "hh" = (
+/obj/machinery/holopad,
 /turf/open/floor/mineral/titanium/purple,
 /area/ship/crew)
 "iy" = (
@@ -698,6 +702,7 @@
 /obj/structure/table/reinforced,
 /obj/item/storage/firstaid/regular,
 /obj/structure/window/reinforced,
+/obj/item/storage/firstaid/regular,
 /turf/open/floor/mineral/titanium/yellow,
 /area/ship/bridge)
 "JP" = (

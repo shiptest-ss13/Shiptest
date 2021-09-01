@@ -353,7 +353,7 @@
 /area/ship/crew/dorm)
 "go" = (
 /obj/structure/closet/secure_closet/chemical/heisenberg{
-	req_access = list(21)
+	req_access = list(21,41)
 	},
 /obj/item/storage/box/bodybags,
 /obj/effect/turf_decal/lumos/tile/blue/half{
@@ -741,7 +741,9 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
 	dir = 8
 	},
-/obj/structure/closet/secure_closet/bar,
+/obj/structure/closet/secure_closet/bar{
+	req_access = list(25,41)
+	},
 /obj/item/clothing/head/HoS/beret/syndicate,
 /obj/item/card/id/syndicate,
 /obj/item/clothing/under/syndicate,
@@ -790,7 +792,9 @@
 /obj/item/clothing/under/syndicate/skirt,
 /obj/item/clothing/under/syndicate/bloodred/sleepytime,
 /obj/item/radio/headset/syndicate/alt,
-/obj/structure/closet/secure_closet/medical3,
+/obj/structure/closet/secure_closet/medical3{
+	req_access = list(45,41)
+	},
 /obj/machinery/firealarm{
 	dir = 4;
 	pixel_x = 26
@@ -840,6 +844,9 @@
 	dir = 4
 	},
 /obj/machinery/computer/cargo/express,
+/obj/item/radio/intercom/wideband{
+	pixel_y = 28
+	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/bridge)
 "py" = (
@@ -1065,7 +1072,9 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/storage)
 "tN" = (
-/obj/structure/closet/secure_closet/engineering_personal,
+/obj/structure/closet/secure_closet/engineering_personal{
+	req_access = list(11,41)
+	},
 /obj/item/card/id/syndicate,
 /obj/item/clothing/under/syndicate/skirt,
 /obj/item/clothing/under/syndicate/bloodred/sleepytime,
@@ -1361,8 +1370,8 @@
 /turf/open/floor/plating,
 /area/ship/crew/dorm)
 "Bd" = (
-/obj/machinery/piratepad,
 /obj/effect/turf_decal/stripes/box,
+/obj/machinery/selling_pad,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/bridge)
 "Be" = (
@@ -2209,7 +2218,7 @@
 /turf/open/floor/carpet/donk,
 /area/ship/crew/dorm)
 "WU" = (
-/obj/machinery/computer/piratepad_control{
+/obj/machinery/computer/selling_pad_control{
 	dir = 4
 	},
 /turf/open/floor/mineral/plastitanium,

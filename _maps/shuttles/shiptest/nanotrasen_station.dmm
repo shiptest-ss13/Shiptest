@@ -555,6 +555,7 @@
 "bP" = (
 /obj/effect/turf_decal/lumos/tile/bar/checker,
 /obj/structure/chair/stool/bar{
+	dir = 8;
 	pixel_x = -8
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -5383,6 +5384,7 @@
 "uA" = (
 /obj/effect/turf_decal/lumos/tile/bar/checker,
 /obj/structure/chair/stool/bar{
+	dir = 4;
 	pixel_x = 8
 	},
 /mob/living/carbon/monkey/punpun,
@@ -6183,6 +6185,7 @@
 "xl" = (
 /obj/effect/turf_decal/lumos/tile/bar/checker,
 /obj/structure/chair/stool/bar{
+	dir = 1;
 	pixel_y = 12
 	},
 /turf/open/floor/plasteel/dark,
@@ -9146,11 +9149,12 @@
 /area/ship/hallway/fore)
 "HT" = (
 /obj/effect/turf_decal/lumos/tile/bar/checker,
-/obj/structure/chair/stool/bar{
-	pixel_y = 12
-	},
 /obj/machinery/light{
 	dir = 8
+	},
+/obj/structure/chair/stool/bar{
+	dir = 1;
+	pixel_y = 12
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
@@ -9304,11 +9308,12 @@
 /area/ship/crew/cryo)
 "IC" = (
 /obj/effect/turf_decal/lumos/tile/bar/checker,
-/obj/structure/chair/stool/bar{
-	pixel_x = 8
-	},
 /obj/machinery/light{
 	dir = 1
+	},
+/obj/structure/chair/stool/bar{
+	dir = 4;
+	pixel_x = 8
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
@@ -10992,10 +10997,11 @@
 /area/ship/engineering/electrical)
 "Pl" = (
 /obj/effect/turf_decal/lumos/tile/bar/checker,
+/obj/effect/landmark/start/assistant,
 /obj/structure/chair/stool/bar{
+	dir = 4;
 	pixel_x = 8
 	},
-/obj/effect/landmark/start/assistant,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
 "Pm" = (
@@ -11343,14 +11349,15 @@
 /area/ship/security/prison)
 "QG" = (
 /obj/effect/turf_decal/lumos/tile/bar/checker,
-/obj/structure/chair/stool/bar{
-	pixel_x = 8
-	},
 /obj/effect/landmark/start/geneticist,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 6
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/chair/stool/bar{
+	dir = 4;
+	pixel_x = 8
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
 "QH" = (
@@ -13151,11 +13158,12 @@
 /area/ship/crew/canteen/kitchen)
 "WY" = (
 /obj/effect/turf_decal/lumos/tile/bar/checker,
-/obj/structure/chair/stool/bar{
-	pixel_y = 12
-	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
+/obj/structure/chair/stool/bar{
+	dir = 1;
+	pixel_y = 12
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
 "WZ" = (
@@ -13293,6 +13301,7 @@
 "XO" = (
 /obj/effect/turf_decal/lumos/tile/bar/checker,
 /obj/structure/chair/stool/bar{
+	dir = 8;
 	pixel_x = -8
 	},
 /turf/open/floor/plasteel/dark,

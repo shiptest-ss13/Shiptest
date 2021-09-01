@@ -15,9 +15,6 @@
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
-/obj/machinery/power/port_gen/pacman/super{
-	anchored = 1
-	},
 /obj/item/stack/sheet/mineral/uranium/five,
 /obj/machinery/atmospherics/pipe/simple/scrubbers{
 	dir = 8
@@ -25,6 +22,13 @@
 /obj/structure/window/reinforced/spawner,
 /obj/structure/window/reinforced/spawner{
 	dir = 1
+	},
+/obj/machinery/cryopod/latejoin{
+	density = 0
+	},
+/obj/machinery/power/port_gen/pacman/super{
+	anchored = 1;
+	density = 0
 	},
 /obj/machinery/power/apc/auto_name/west,
 /turf/open/floor/carpet/nanoweave/red,
@@ -77,15 +81,13 @@
 	dir = 8
 	},
 /obj/item/toy/plush/among,
-/obj/machinery/cryopod/latejoin{
-	density = 0
-	},
 /obj/docking_port/mobile{
 	can_move_docking_ports = 1;
 	dir = 8;
 	launch_status = 0;
 	undock_roundstart = 1
 	},
+/obj/item/storage/toolbox/mechanical/old,
 /turf/open/floor/carpet/nanoweave/red,
 /area/ship/storage)
 

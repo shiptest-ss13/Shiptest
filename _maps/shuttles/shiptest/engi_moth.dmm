@@ -1,10 +1,8 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "ab" = (
+/obj/effect/spawner/structure/window/plasma/reinforced,
 /obj/machinery/atmospherics/pipe/simple/green/visible{
 	dir = 10
-	},
-/obj/effect/spawner/structure/window/plasma/reinforced{
-	rad_insulation = 0
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
@@ -143,9 +141,7 @@
 /obj/machinery/atmospherics/pipe/simple/cyan/visible{
 	dir = 6
 	},
-/obj/effect/spawner/structure/window/plasma/reinforced{
-	rad_insulation = 0
-	},
+/obj/effect/spawner/structure/window/plasma/reinforced,
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "ed" = (
@@ -185,9 +181,9 @@
 /turf/open/floor/engine,
 /area/ship/engineering/engine)
 "eZ" = (
+/obj/item/wrench,
 /obj/structure/table/reinforced,
 /obj/machinery/atmospherics/pipe/layer_manifold/visible,
-/obj/item/wrench/combat,
 /turf/open/floor/engine,
 /area/ship/engineering/engine)
 "fb" = (
@@ -365,8 +361,8 @@
 "kY" = (
 /obj/machinery/atmospherics/components/unary/thermomachine/freezer/on{
 	dir = 4;
-	min_temperature = 1;
-	target_temperature = 1
+	min_temperature = 3;
+	target_temperature = 3
 	},
 /turf/open/floor/engine,
 /area/ship/engineering/engine)
@@ -581,14 +577,14 @@
 /turf/open/floor/engine,
 /area/ship/engineering/engine)
 "rv" = (
-/obj/machinery/atmospherics/pipe/simple/cyan/visible,
+/obj/machinery/atmospherics/components/binary/pump{
+	dir = 1
+	},
 /turf/open/floor/engine,
 /area/ship/engineering/engine)
 "rN" = (
 /obj/structure/sign/poster/official/wtf_is_co2,
-/turf/closed/wall/r_wall/syndicate/nodiagonal{
-	rad_insulation = 0
-	},
+/turf/closed/indestructible/reinforced,
 /area/ship/engineering/engine)
 "se" = (
 /obj/machinery/atmospherics/components/unary/portables_connector{
@@ -682,17 +678,13 @@
 /area/ship/bridge)
 "up" = (
 /obj/machinery/status_display/shuttle,
-/turf/closed/wall/r_wall/syndicate/nodiagonal{
-	rad_insulation = 0
-	},
+/turf/closed/indestructible/reinforced,
 /area/ship/engineering/engine)
 "uP" = (
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/turf/closed/wall/r_wall/syndicate/nodiagonal{
-	rad_insulation = 0
-	},
+/turf/closed/indestructible/reinforced,
 /area/ship/engineering/engine)
 "uZ" = (
 /obj/machinery/door/airlock/engineering,
@@ -966,11 +958,6 @@
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/engineering/atmospherics)
-"AW" = (
-/turf/closed/wall/r_wall/syndicate/nodiagonal{
-	rad_insulation = 0
-	},
-/area/ship/engineering/electrical)
 "AX" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -1398,9 +1385,7 @@
 /turf/open/floor/mineral/plastitanium/red,
 /area/ship/bridge)
 "Ln" = (
-/obj/effect/spawner/structure/window/plasma/reinforced{
-	rad_insulation = 0
-	},
+/obj/effect/spawner/structure/window/plasma/reinforced,
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "Lq" = (
@@ -1412,10 +1397,8 @@
 /turf/open/floor/mineral/plastitanium,
 /area/ship/bridge)
 "LL" = (
+/obj/effect/spawner/structure/window/plasma/reinforced,
 /obj/machinery/atmospherics/pipe/simple/orange,
-/obj/effect/spawner/structure/window/plasma/reinforced{
-	rad_insulation = 0
-	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "LN" = (
@@ -1484,7 +1467,6 @@
 "MZ" = (
 /obj/structure/table,
 /obj/item/circuitboard/mecha/pod,
-/obj/item/wrench/combat,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/engineering/atmospherics)
 "Ni" = (
@@ -1704,11 +1686,6 @@
 /obj/item/storage/bag/ore,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/bridge)
-"UK" = (
-/turf/closed/wall/r_wall/syndicate/nodiagonal{
-	rad_insulation = 0
-	},
-/area/ship/crew)
 "UN" = (
 /obj/structure/fans/tiny,
 /obj/machinery/door/poddoor{
@@ -1816,9 +1793,7 @@
 /turf/open/floor/mineral/plastitanium/red,
 /area/ship/bridge)
 "Yk" = (
-/turf/closed/wall/r_wall/syndicate/nodiagonal{
-	rad_insulation = 0
-	},
+/turf/closed/indestructible/reinforced,
 /area/ship/engineering/engine)
 "Yv" = (
 /obj/machinery/light,
@@ -2118,7 +2093,7 @@ Ln
 Ln
 Ln
 Yk
-UK
+mn
 qW
 vg
 ED
@@ -2145,7 +2120,7 @@ kY
 kY
 qY
 up
-UK
+mn
 An
 Ao
 mn
@@ -2301,7 +2276,7 @@ eZ
 gu
 kk
 Yk
-AW
+nE
 wy
 EF
 nE
@@ -2326,7 +2301,7 @@ Ln
 Ln
 Ln
 rN
-AW
+nE
 vJ
 wK
 Bp
