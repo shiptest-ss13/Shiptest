@@ -430,18 +430,6 @@
 			parts += "<div class='panel redborder'>"
 			parts += "<span class='redtext'>You did not survive the events on [station_name()]...</span>"
 
-		if(CONFIG_GET(flag/allow_crew_objectives))
-			if(M.mind.current && LAZYLEN(M.mind.crew_objectives))
-				for(var/datum/objective/crew/CO in M.mind.crew_objectives)
-					if(CO.check_completion())
-						parts += "<br><br><B>Your optional objective</B>: [CO.explanation_text] <span class='greentext'><B>Success!</B></span><br>"
-						var/speed_round = FALSE
-						if(world.time - SSticker.round_start_time <= 300 SECONDS)
-							speed_round = TRUE
-						C.inc_metabalance(METACOIN_CO_REWARD(speed_round, world.time - SSticker.round_start_time), reason="Completed your crew objective!")
-					else
-						parts += "<br><br><B>Your optional objective</B>: [CO.explanation_text] <span class='redtext'><B>Failed.</B></span><br>"
-
 	else
 		parts += "<div class='panel stationborder'>"
 	parts += "<br>"
