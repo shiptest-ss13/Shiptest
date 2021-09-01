@@ -63,16 +63,15 @@ import difflib              # For sequence matching of strings (for updating and
 from typing import Dict, List, Pattern, Tuple
 
 # Third party
-import git
-from git.index import base, typ                  # For fetching git data & diffs
+import git                  # For fetching git data & diffs
 from git.refs.head import Head
 import unidiff              # For parsing of unified diff data
 from unidiff.patch import Line, PatchedFile
 import yaml                 # For configuration
+from yaml.dumper import Dumper
+from yaml.nodes import MappingNode
 import colorama             # For logging styling
 from colorama import Fore, Back, Style
-from yaml.dumper import Dumper
-from yaml.nodes import MappingNode, Node
 
 # Defaults
 config_file_default_name = "check_regex.yaml"
@@ -573,7 +572,7 @@ if __name__ == "__main__":
     assert repo.remotes.origin.exists()
     assert len(repo.remotes.origin.url)
 
-    g = git.cmd.Git(repo)
+    g: git.Git = git.Git(repo)
     origin_info = g.execute(["git", "remote", "show", "origin"])
     head_pattern = regex.compile(r'[ ]*HEAD branch: ([\w\S]+)')
     head_branch = head_pattern.findall(origin_info)[0]
@@ -599,28 +598,21 @@ if __name__ == "__main__":
             b = git_get_detached_head_ref(other_head, ref_info)
         output_write(" - Diff branch #2: %sHEAD @ %s" % (d, b))
 
-    # Get what files have been changed, instead of getting all diffs at once
-    files_with_diffs = g.diff(
+    # Get diffs
+    raw_diff = g.diff([
         git_diff_range_branches(head_branch, other_branch),
-        "--name-only"
-        ).split("\n")
-
-    files_of_interest = list(filter(
-        lambda item: item.endswith(".dm"),
-        files_with_diffs
-    ))
-
-    raw_diff = g.diff(git_diff_range_branches(head_branch, other_branch))
+        "*.dm"
+    ])
     diffs = unidiff.PatchSet.from_string(raw_diff)
-
-    output_write(" - Found %d *.dm files with diffs, out of %d changed files" % (len(files_of_interest) ,len(files_with_diffs)))
 
     changed_files = list()
     diff_added_content:   Dict[str, Dict[int, str]] = dict()
     diff_removed_content: Dict[str, Dict[int, str]] = dict()
     diff: PatchedFile
+    n_added_lines = 0
+    n_removed_lines = 0
     for diff in diffs:
-        if not diff.path in files_of_interest:
+        if not diff.path.endswith(".dm"):
             continue
         changed_files.append(diff.path)
 
@@ -628,14 +620,27 @@ if __name__ == "__main__":
         to_remove = {}
         for hunk in diff:
             line: Line
-            for index, line in enumerate(hunk):
+            for line in hunk:
+                # For love of mother god, please do not use `index` here
+                # Else you will cause an overwrite of what was saved to
+                # the lists below, as each file can have more than one
+                # hunk. Which index will go back to 0 several times
                 if line.is_added:
-                    to_add[index] = line.value
-                elif line.is_removed:
-                    to_remove[index] = line.value
+                    to_add[line.target_line_no] = line.value
+                if line.is_removed:
+                    to_remove[line.source_line_no] = line.value
+
+        assert(diff.added == len(to_add))
+        assert(diff.removed == len(to_remove))
 
         diff_added_content[diff.path] = to_add
         diff_removed_content[diff.path] = to_remove
+        n_added_lines += len(to_add)
+        n_removed_lines += len(to_add)
+
+    output_write(" - Found %d *.dm files with diffs" % (len(changed_files)))
+    output_write(f"    - Added lines:   {n_added_lines}")
+    output_write(f"    - Removed lines: {n_removed_lines}")
 
     # Get files
     files_to_test = collect_candidate_files('./', 'dm')
