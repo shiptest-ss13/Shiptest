@@ -365,15 +365,13 @@
 /turf/open/floor/mineral/plastitanium/red,
 /area/ship/bridge)
 "mX" = (
+/obj/effect/spawner/structure/window/reinforced,
 /obj/docking_port/mobile{
 	can_move_docking_ports = 1;
 	dir = 2;
-	id = null;
 	launch_status = 0;
-	name = "SRV Spitfire";
 	undock_roundstart = 1
 	},
-/obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
 /area/ship/bridge)
 "nu" = (
@@ -809,10 +807,8 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/medical/surgery)
 "Bu" = (
-/obj/machinery/computer/helm{
-	id = null
-	},
 /obj/effect/turf_decal/syndicateemblem/top/middle,
+/obj/machinery/computer/helm,
 /turf/open/floor/mineral/plastitanium/red,
 /area/ship/bridge)
 "By" = (

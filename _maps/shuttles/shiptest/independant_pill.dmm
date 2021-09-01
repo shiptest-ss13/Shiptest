@@ -19,13 +19,6 @@
 	anchored = 1
 	},
 /obj/item/stack/sheet/mineral/uranium/five,
-/obj/docking_port/mobile{
-	can_move_docking_ports = 1;
-	dir = 2;
-	id = null;
-	launch_status = 0;
-	undock_roundstart = 1
-	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers{
 	dir = 8
 	},
@@ -86,6 +79,12 @@
 /obj/item/toy/plush/among,
 /obj/machinery/cryopod/latejoin{
 	density = 0
+	},
+/obj/docking_port/mobile{
+	can_move_docking_ports = 1;
+	dir = 8;
+	launch_status = 0;
+	undock_roundstart = 1
 	},
 /turf/open/floor/carpet/nanoweave/red,
 /area/ship/storage)

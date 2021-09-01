@@ -9738,17 +9738,15 @@
 /area/ship/hallway/starboard)
 "Kr" = (
 /obj/structure/fans/tiny,
-/obj/docking_port/mobile{
-	can_move_docking_ports = 1;
-	dir = 2;
-	id = null;
-	launch_status = 0;
-	name = "Vesselstation";
-	undock_roundstart = 1
-	},
 /obj/machinery/door/poddoor{
 	id = "stationtestdoors";
 	name = "Blast Doors"
+	},
+/obj/docking_port/mobile{
+	can_move_docking_ports = 1;
+	dir = 2;
+	launch_status = 0;
+	undock_roundstart = 1
 	},
 /turf/open/floor/plasteel,
 /area/ship/cargo)
