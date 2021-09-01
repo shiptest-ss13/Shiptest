@@ -21,7 +21,7 @@ GLOBAL_LIST_EMPTY(typing_indicator_overlays)
 	if(typing_indicator_current)
 		return
 	typing_indicator_current = mutable_appearance('icons/mob/talk.dmi', state_override || "default0", plane = RUNECHAT_PLANE)
-	typing_indicator_current.appearance_flags = RESET_COLOR | TILE_BOUND | PIXEL_SCALE
+	typing_indicator_current.appearance_flags = RESET_COLOR | RESET_TRANSFORM | TILE_BOUND | PIXEL_SCALE
 	add_overlay(typing_indicator_current)
 	typing_indicator_timerid = addtimer(CALLBACK(src, .proc/clear_typing_indicator), TYPING_INDICATOR_TIMEOUT, TIMER_STOPPABLE)
 
