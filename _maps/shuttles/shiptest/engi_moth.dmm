@@ -1,8 +1,10 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "ab" = (
-/obj/effect/spawner/structure/window/plasma/reinforced,
 /obj/machinery/atmospherics/pipe/simple/green/visible{
 	dir = 10
+	},
+/obj/effect/spawner/structure/window/plasma/reinforced{
+	rad_insulation = 0
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
@@ -141,7 +143,9 @@
 /obj/machinery/atmospherics/pipe/simple/cyan/visible{
 	dir = 6
 	},
-/obj/effect/spawner/structure/window/plasma/reinforced,
+/obj/effect/spawner/structure/window/plasma/reinforced{
+	rad_insulation = 0
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "ed" = (
@@ -582,7 +586,9 @@
 /area/ship/engineering/engine)
 "rN" = (
 /obj/structure/sign/poster/official/wtf_is_co2,
-/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/turf/closed/wall/r_wall/syndicate/nodiagonal{
+	rad_insulation = 0
+	},
 /area/ship/engineering/engine)
 "se" = (
 /obj/machinery/atmospherics/components/unary/portables_connector{
@@ -676,13 +682,17 @@
 /area/ship/bridge)
 "up" = (
 /obj/machinery/status_display/shuttle,
-/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/turf/closed/wall/r_wall/syndicate/nodiagonal{
+	rad_insulation = 0
+	},
 /area/ship/engineering/engine)
 "uP" = (
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/turf/closed/wall/r_wall/syndicate/nodiagonal{
+	rad_insulation = 0
+	},
 /area/ship/engineering/engine)
 "uZ" = (
 /obj/machinery/door/airlock/engineering,
@@ -956,6 +966,11 @@
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/engineering/atmospherics)
+"AW" = (
+/turf/closed/wall/r_wall/syndicate/nodiagonal{
+	rad_insulation = 0
+	},
+/area/ship/engineering/electrical)
 "AX" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -1383,7 +1398,9 @@
 /turf/open/floor/mineral/plastitanium/red,
 /area/ship/bridge)
 "Ln" = (
-/obj/effect/spawner/structure/window/plasma/reinforced,
+/obj/effect/spawner/structure/window/plasma/reinforced{
+	rad_insulation = 0
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "Lq" = (
@@ -1395,8 +1412,10 @@
 /turf/open/floor/mineral/plastitanium,
 /area/ship/bridge)
 "LL" = (
-/obj/effect/spawner/structure/window/plasma/reinforced,
 /obj/machinery/atmospherics/pipe/simple/orange,
+/obj/effect/spawner/structure/window/plasma/reinforced{
+	rad_insulation = 0
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "LN" = (
@@ -1685,6 +1704,11 @@
 /obj/item/storage/bag/ore,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/bridge)
+"UK" = (
+/turf/closed/wall/r_wall/syndicate/nodiagonal{
+	rad_insulation = 0
+	},
+/area/ship/crew)
 "UN" = (
 /obj/structure/fans/tiny,
 /obj/machinery/door/poddoor{
@@ -1792,7 +1816,9 @@
 /turf/open/floor/mineral/plastitanium/red,
 /area/ship/bridge)
 "Yk" = (
-/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/turf/closed/wall/r_wall/syndicate/nodiagonal{
+	rad_insulation = 0
+	},
 /area/ship/engineering/engine)
 "Yv" = (
 /obj/machinery/light,
@@ -2092,7 +2118,7 @@ Ln
 Ln
 Ln
 Yk
-mn
+UK
 qW
 vg
 ED
@@ -2119,7 +2145,7 @@ kY
 kY
 qY
 up
-mn
+UK
 An
 Ao
 mn
@@ -2275,7 +2301,7 @@ eZ
 gu
 kk
 Yk
-nE
+AW
 wy
 EF
 nE
@@ -2300,7 +2326,7 @@ Ln
 Ln
 Ln
 rN
-nE
+AW
 vJ
 wK
 Bp
