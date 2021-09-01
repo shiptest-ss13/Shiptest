@@ -714,12 +714,12 @@ if __name__ == "__main__":
         all_files = set()
         if args.log_changes_only:
             all_files = set().union(
-                list(matched_lines_by_expression[jj].keys()),
                 list(added_matches[jj].keys()),
                 list(removed_matches[jj].keys())
             )
         else:
             all_files = set().union(
+                list(matched_lines_by_expression[jj].keys()),
                 list(added_matches[jj].keys()),
                 list(removed_matches[jj].keys())
             )
