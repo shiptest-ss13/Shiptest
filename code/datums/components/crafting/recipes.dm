@@ -831,6 +831,7 @@
 
 /datum/crafting_recipe/filter
 	name = "Filtered Beaker"
+	time = 15
 	reqs = list(
 		   /obj/item/stack/cable_coil = 1,
 		   /obj/item/reagent_containers/glass/beaker/large = 1,
@@ -845,4 +846,15 @@
 		   /obj/item/kitchen/knife = 1,
 		   /obj/item/stack/sticky_tape = 1)
 	result = /obj/item/pickaxe/improvised
+	category = CAT_MISC
+
+/datum/crafting_recipe/chem_scanner
+	name = "Reagent Scanner"
+	time = 30
+	tools = list(TOOL_WIRECUTTER, TOOL_SCREWDRIVER)
+	reqs = list(
+		   /obj/item/healthanalyzer = 1,
+		   /obj/item/stack/cable_coil = 5,
+		   /obj/item/stock_parts/scanning_module = 1)
+	result = /obj/item/reagent_scanner
 	category = CAT_MISC

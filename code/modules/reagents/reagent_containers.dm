@@ -213,8 +213,6 @@
 		if(success)
 			to_chat(user, "<span class='notice'>You dip [I] into [src], and the solution begins to bubble.</span>")
 			playsound(src, 'sound/effects/bubbles.ogg', 80, TRUE)
-	else
-		to_chat(user, "<span class='notice'>You cannot dip [I] into [src] while its cap is on!")
 
 /obj/item/reagent_containers/on_reagent_change(changetype)
 	update_icon()

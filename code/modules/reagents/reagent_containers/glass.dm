@@ -373,11 +373,10 @@
 		if(target.reagents.holder_full())
 			to_chat(user, "<span class='warning'>[target] is full.</span>")
 			return
-		var/trans = 0
-		var/id = reagents.get_master_reagent_id()
-		for(var/i = 1; i <= amount_per_transfer_from_this; i++)
-			trans += reagents.trans_id_to(target, id)
-		to_chat(user, "<span class='notice'>You filter off [trans] unit\s of the solution into [target].</span>")
+		to_chat(user, "<span class='notice'>You begin to filter off something from [src].")
+		if(do_after(user, 25, target = src))
+			var/trans = reagents.trans_id_to(target, reagents.get_master_reagent_id(), amount_per_transfer_from_this,)
+			to_chat(user, "<span class='notice'>You filter off [trans] unit\s of the solution into [target].</span>")
 
 	else if(target.is_drainable()) //A dispenser. Transfer FROM it TO us.
 		if(!target.reagents.total_volume)
