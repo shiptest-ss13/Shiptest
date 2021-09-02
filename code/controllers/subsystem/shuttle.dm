@@ -15,12 +15,6 @@ SUBSYSTEM_DEF(shuttle)
 	var/list/transit_requesters = list()
 	var/list/transit_request_failures = list()
 
-		//emergency shuttle stuff
-	var/obj/docking_port/mobile/emergency/emergency
-	var/obj/docking_port/mobile/emergency/backup/backup_shuttle
-	var/obj/docking_port/stationary/emergency_home_port
-	var/obj/docking_port/stationary/emergency_away_port
-
 	/// Timer ID of the timer used for telling which stage of an endround "jump" the ships are in
 	var/jump_timer
 
@@ -31,11 +25,6 @@ SUBSYSTEM_DEF(shuttle)
 	var/emergencyDockTime = 1800	//time taken for emergency shuttle to leave again once it has docked (in deciseconds)
 	var/emergencyEscapeTime = 1200	//time taken for emergency shuttle to reach a safe distance after leaving station (in deciseconds)
 	var/area/emergencyLastCallLoc
-	var/emergencyCallAmount = 0		//how many times the escape shuttle was called
-	var/emergencyNoEscape
-	var/emergencyNoRecall = FALSE
-	var/list/hostileEnvironments = list() //Things blocking escape shuttle from leaving
-	var/list/tradeBlockade = list() //Things blocking cargo from leaving.
 	var/supplyBlocked = FALSE
 
 		//supply shuttle stuff
@@ -105,7 +94,6 @@ SUBSYSTEM_DEF(shuttle)
 			var/not_in_use = (!T.get_docked())
 			if(idle && not_centcom_evac && not_in_use)
 				qdel(T, force=TRUE)
-	CheckAutoEvac()
 
 	if(!SSmapping.clearing_reserved_turfs)
 		while(transit_requesters.len)
@@ -141,220 +129,6 @@ SUBSYSTEM_DEF(shuttle)
 
 	priority_announce("Jump initiated. ETA: [emergencyEscapeTime / 600] minutes.", null, null, "Priority")
 	addtimer(VARSET_CALLBACK(src, jump_mode, BS_JUMP_COMPLETED), emergencyEscapeTime)
-
-/datum/controller/subsystem/shuttle/proc/CheckAutoEvac()
-	if(emergencyNoEscape || emergencyNoRecall || !emergency || !SSticker.HasRoundStarted())
-		return
-
-	var/threshold = CONFIG_GET(number/emergency_shuttle_autocall_threshold)
-	if(!threshold)
-		return
-
-	var/alive = 0
-	for(var/I in GLOB.player_list)
-		var/mob/M = I
-		if(M.stat != DEAD)
-			++alive
-
-	var/total = GLOB.joined_player_list.len
-	if(total <= 0)
-		return //no players no autoevac
-
-	if(alive / total <= threshold)
-		var/msg = "Automatically dispatching emergency shuttle due to crew death."
-		message_admins(msg)
-		log_shuttle("[msg] Alive: [alive], Roundstart: [total], Threshold: [threshold]")
-		emergencyNoRecall = TRUE
-		priority_announce("Catastrophic casualties detected: crisis shuttle protocols activated - jamming recall signals across all frequencies.")
-		if(emergency.timeLeft(1) > emergencyCallTime * 0.4)
-			emergency.request(null, set_coefficient = 0.4)
-
-/datum/controller/subsystem/shuttle/proc/block_recall(lockout_timer)
-	emergencyNoRecall = TRUE
-	addtimer(CALLBACK(src, .proc/unblock_recall), lockout_timer)
-
-/datum/controller/subsystem/shuttle/proc/unblock_recall()
-	emergencyNoRecall = FALSE
-
-/// Check if we can call the evac shuttle.
-/// Returns TRUE if we can. Otherwise, returns a string detailing the problem.
-/datum/controller/subsystem/shuttle/proc/canEvac(mob/user)
-	var/srd = CONFIG_GET(number/shuttle_refuel_delay)
-	if(world.time - SSticker.round_start_time < srd && user != null) //WS Edit - Autotransfer
-		return "The emergency shuttle is refueling. Please wait [DisplayTimeText(srd - (world.time - SSticker.round_start_time))] before attempting to call."
-
-	switch(emergency.mode)
-		if(SHUTTLE_RECALL)
-			return "The emergency shuttle may not be called while returning to CentCom."
-		if(SHUTTLE_CALL)
-			return "The emergency shuttle is already on its way."
-		if(SHUTTLE_DOCKED)
-			return "The emergency shuttle is already here."
-		if(SHUTTLE_IGNITING)
-			return "The emergency shuttle is firing its engines to leave."
-		if(SHUTTLE_ESCAPE)
-			return "The emergency shuttle is moving away to a safe distance."
-		if(SHUTTLE_STRANDED)
-			return "The emergency shuttle has been disabled by CentCom."
-
-	return TRUE
-
-/datum/controller/subsystem/shuttle/proc/requestEvac(mob/user, call_reason)
-	if(!emergency)
-		WARNING("requestEvac(): There is no emergency shuttle, but the \
-			shuttle was called. Using the backup shuttle instead.")
-		if(!backup_shuttle)
-			CRASH("requestEvac(): There is no emergency shuttle, \
-			or backup shuttle! The game will be unresolvable. This is \
-			possibly a mapping error, more likely a bug with the shuttle \
-			manipulation system, or badminry. It is possible to manually \
-			resolve this problem by loading an emergency shuttle template \
-			manually, and then calling register() on the mobile docking port. \
-			Good luck.")
-		emergency = backup_shuttle
-
-	var/can_evac_or_fail_reason = SSshuttle.canEvac(user)
-	if(can_evac_or_fail_reason != TRUE)
-		to_chat(user, "<span class='alert'>[can_evac_or_fail_reason]</span>")
-		return
-
-	call_reason = trim(html_encode(call_reason))
-
-	if(length(call_reason) < CALL_SHUTTLE_REASON_LENGTH && seclevel2num(get_security_level()) > SEC_LEVEL_GREEN)
-		to_chat(user, "<span class='alert'>You must provide a reason.</span>")
-		return
-
-	var/area/signal_origin = get_area(user)
-	var/emergency_reason = "\nNature of emergency:\n\n[call_reason]"
-	var/security_num = seclevel2num(get_security_level())
-	switch(security_num)
-		if(SEC_LEVEL_RED,SEC_LEVEL_DELTA)
-			emergency.request(null, signal_origin, html_decode(emergency_reason), 1) //There is a serious threat we gotta move no time to give them five minutes.
-		else
-			emergency.request(null, signal_origin, html_decode(emergency_reason), 0)
-
-	var/datum/radio_frequency/frequency = SSradio.return_frequency(FREQ_STATUS_DISPLAYS)
-
-	if(!frequency)
-		return
-
-	var/datum/signal/status_signal = new(list("command" = "update")) // Start processing shuttle-mode displays to display the timer
-	frequency.post_signal(src, status_signal)
-
-	var/area/A = get_area(user)
-
-	log_shuttle("[key_name(user)] has called the emergency shuttle.")
-	deadchat_broadcast(" has called the shuttle at <span class='name'>[A.name]</span>.", "<span class='name'>[user.real_name]</span>", user, message_type=DEADCHAT_ANNOUNCEMENT)
-	if(call_reason)
-		SSblackbox.record_feedback("text", "shuttle_reason", 1, "[call_reason]")
-		log_shuttle("Shuttle call reason: [call_reason]")
-		SSticker.emergency_reason = call_reason
-	message_admins("[ADMIN_LOOKUPFLW(user)] has called the shuttle. (<A HREF='?_src_=holder;[HrefToken()];trigger_centcom_recall=1'>TRIGGER CENTCOM RECALL</A>)")
-
-/datum/controller/subsystem/shuttle/proc/centcom_recall(old_timer, admiral_message)
-	if(emergency.mode != SHUTTLE_CALL || emergency.timer != old_timer)
-		return
-	emergency.cancel()
-
-	if(!admiral_message)
-		admiral_message = pick(GLOB.admiral_messages)
-	var/intercepttext = "<font size = 3><b>Nanotrasen Update</b>: Request For Shuttle.</font><hr>\
-						To whom it may concern:<br><br>\
-						We have taken note of the situation upon [station_name()] and have come to the \
-						conclusion that it does not warrant the abandonment of the station.<br>\
-						If you do not agree with our opinion we suggest that you open a direct \
-						line with us and explain the nature of your crisis.<br><br>\
-						<i>This message has been automatically generated based upon readings from long \
-						range diagnostic tools. To assure the quality of your request every finalized report \
-						is reviewed by an on-call rear admiral.<br>\
-						<b>Rear Admiral's Notes:</b> \
-						[admiral_message]"
-	print_command_report(intercepttext, announce = TRUE)
-
-// Called when an emergency shuttle mobile docking port is
-// destroyed, which will only happen with admin intervention
-/datum/controller/subsystem/shuttle/proc/emergencyDeregister()
-	// When a new emergency shuttle is created, it will override the
-	// backup shuttle.
-	src.emergency = src.backup_shuttle
-
-/datum/controller/subsystem/shuttle/proc/cancelEvac(mob/user)
-	if(canRecall())
-		emergency.cancel(get_area(user))
-		log_shuttle("[key_name(user)] has recalled the shuttle.")
-		message_admins("[ADMIN_LOOKUPFLW(user)] has recalled the shuttle.")
-		deadchat_broadcast(" has recalled the shuttle from <span class='name'>[get_area_name(user, TRUE)]</span>.", "<span class='name'>[user.real_name]</span>", user, message_type=DEADCHAT_ANNOUNCEMENT)
-		return 1
-
-/datum/controller/subsystem/shuttle/proc/canRecall()
-	if(!emergency || emergency.mode != SHUTTLE_CALL || emergencyNoRecall || SSticker.mode.name == "meteor")
-		return
-	var/security_num = seclevel2num(get_security_level())
-	switch(security_num)
-		if(SEC_LEVEL_GREEN)
-			if(emergency.timeLeft(1) < emergencyCallTime)
-				return
-		if(SEC_LEVEL_BLUE)
-			if(emergency.timeLeft(1) < emergencyCallTime * 0.5)
-				return
-		else
-			if(emergency.timeLeft(1) < emergencyCallTime * 0.25)
-				return
-	return 1
-
-/datum/controller/subsystem/shuttle/proc/registerHostileEnvironment(datum/bad)
-	hostileEnvironments[bad] = TRUE
-	checkHostileEnvironment()
-
-/datum/controller/subsystem/shuttle/proc/clearHostileEnvironment(datum/bad)
-	hostileEnvironments -= bad
-	checkHostileEnvironment()
-
-
-/datum/controller/subsystem/shuttle/proc/registerTradeBlockade(datum/bad)
-	tradeBlockade[bad] = TRUE
-	checkTradeBlockade()
-
-/datum/controller/subsystem/shuttle/proc/clearTradeBlockade(datum/bad)
-	tradeBlockade -= bad
-	checkTradeBlockade()
-
-
-/datum/controller/subsystem/shuttle/proc/checkTradeBlockade()
-	for(var/datum/d in tradeBlockade)
-		if(!istype(d) || QDELETED(d))
-			tradeBlockade -= d
-	supplyBlocked = tradeBlockade.len
-
-	if(supplyBlocked && (supply.mode == SHUTTLE_IGNITING))
-		supply.mode = SHUTTLE_STRANDED
-		supply.timer = null
-		//Make all cargo consoles speak up
-	if(!supplyBlocked && (supply.mode == SHUTTLE_STRANDED))
-		supply.mode = SHUTTLE_DOCKED
-		//Make all cargo consoles speak up
-
-/datum/controller/subsystem/shuttle/proc/checkHostileEnvironment()
-	if(!emergency)
-		return
-	for(var/datum/d in hostileEnvironments)
-		if(!istype(d) || QDELETED(d))
-			hostileEnvironments -= d
-	emergencyNoEscape = hostileEnvironments.len
-
-	if(emergencyNoEscape && (emergency.mode == SHUTTLE_IGNITING))
-		emergency.mode = SHUTTLE_STRANDED
-		emergency.timer = null
-		emergency.sound_played = FALSE
-		priority_announce("Hostile environment detected. \
-			Departure has been postponed indefinitely pending \
-			conflict resolution.", null, 'sound/misc/notice1.ogg', "Priority")
-	if(!emergencyNoEscape && (emergency.mode == SHUTTLE_STRANDED))
-		emergency.mode = SHUTTLE_DOCKED
-		emergency.setTimer(emergencyDockTime)
-		priority_announce("Hostile environment resolved. \
-			You have 3 minutes to board the Emergency Shuttle.",
-			null, 'sound/ai/shuttledock.ogg', "Priority")
 
 /datum/controller/subsystem/shuttle/proc/moveShuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock, timed)
 	if(!port)
@@ -473,17 +247,6 @@ SUBSYSTEM_DEF(shuttle)
 	if (istype(SSshuttle.transit_request_failures))
 		transit_request_failures = SSshuttle.transit_request_failures
 
-	if (istype(SSshuttle.emergency))
-		emergency = SSshuttle.emergency
-	if (istype(SSshuttle.backup_shuttle))
-		backup_shuttle = SSshuttle.backup_shuttle
-
-	if (istype(SSshuttle.emergencyLastCallLoc))
-		emergencyLastCallLoc = SSshuttle.emergencyLastCallLoc
-
-	if (istype(SSshuttle.hostileEnvironments))
-		hostileEnvironments = SSshuttle.hostileEnvironments
-
 	if (istype(SSshuttle.supply))
 		supply = SSshuttle.supply
 
@@ -501,9 +264,6 @@ SUBSYSTEM_DEF(shuttle)
 	centcom_message = SSshuttle.centcom_message
 	ordernum = SSshuttle.ordernum
 	points = D.account_balance
-	emergencyNoEscape = SSshuttle.emergencyNoEscape
-	emergencyCallAmount = SSshuttle.emergencyCallAmount
-	shuttle_purchased = SSshuttle.shuttle_purchased
 	lockdown = SSshuttle.lockdown
 
 	selected = SSshuttle.selected
@@ -718,9 +478,7 @@ SUBSYSTEM_DEF(shuttle)
 			L["timeleft"] = "Infinity"
 		L["can_fast_travel"] = M.timer && timeleft >= 50
 		L["can_fly"] = TRUE
-		if(istype(M, /obj/docking_port/mobile/emergency))
-			L["can_fly"] = FALSE
-		else if(!M.destination)
+		if(!M.destination)
 			L["can_fast_travel"] = FALSE
 		if (M.mode != SHUTTLE_IDLE)
 			L["mode"] = capitalize(M.mode)

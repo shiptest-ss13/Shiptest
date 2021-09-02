@@ -8,9 +8,8 @@
 #define SCROLL_SPEED 2
 
 #define SD_BLANK 0  // 0 = Blank
-#define SD_EMERGENCY 1  // 1 = Emergency Shuttle timer
-#define SD_MESSAGE 2  // 2 = Arbitrary message(s)
-#define SD_PICTURE 3  // 3 = alert picture
+#define SD_MESSAGE 1  // 1 = Arbitrary message(s)
+#define SD_PICTURE 2  // 2 = alert picture
 
 #define SD_AI_EMOTE 1  // 1 = AI emoticon
 #define SD_AI_BSOD 2  // 2 = Blue screen of death
@@ -156,7 +155,7 @@
 /// Evac display which shows shuttle timer or message set by Command.
 /obj/machinery/status_display/evac
 	var/frequency = FREQ_STATUS_DISPLAYS
-	var/mode = SD_EMERGENCY
+	var/mode = SD_BLANK
 	var/friendc = FALSE      // track if Friend Computer mode
 	var/last_picture  // For when Friend Computer mode is undone
 
@@ -184,9 +183,6 @@
 			remove_display()
 			return PROCESS_KILL
 
-		if(SD_EMERGENCY)
-			return display_shuttle_status(SSshuttle.emergency)
-
 		if(SD_MESSAGE)
 			return ..()
 
@@ -196,18 +192,13 @@
 
 /obj/machinery/status_display/evac/examine(mob/user)
 	. = ..()
-	if(mode == SD_EMERGENCY)
-		. += examine_shuttle(user, SSshuttle.emergency)
-	else if(!message1 && !message2)
+	if(!message1 && !message2)
 		. += "The display is blank."
 
 /obj/machinery/status_display/evac/receive_signal(datum/signal/signal)
 	switch(signal.data["command"])
 		if("blank")
 			mode = SD_BLANK
-			set_message(null, null)
-		if("shuttle")
-			mode = SD_EMERGENCY
 			set_message(null, null)
 		if("message")
 			mode = SD_MESSAGE
