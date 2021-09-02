@@ -731,7 +731,7 @@ Traitors and the like can also be revived with the previous role mostly intact.
 
 	SSblackbox.record_feedback("nested tally", "admin_toggle", 1, list("Change View Range", "[view]")) //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
-/client/proc/admin_call_shuttle()
+/client/proc/admin_initiate_jump()
 	set category = "Admin.Events"
 	set name = "Initiate Jump"
 	if(!check_rights(R_ADMIN))
@@ -749,9 +749,9 @@ Traitors and the like can also be revived with the previous role mostly intact.
 	log_admin("[key_name(usr)] admin-initiated a bluespace jump.")
 	message_admins("<span class='adminnotice'>[key_name_admin(usr)] admin-initiated a bluespace jump.</span>")
 
-/client/proc/admin_cancel_shuttle()
+/client/proc/admin_cancel_jump()
 	set category = "Admin.Events"
-	set name = "Cancel Shuttle"
+	set name = "Cancel Jump"
 	if(!check_rights(0))
 		return
 

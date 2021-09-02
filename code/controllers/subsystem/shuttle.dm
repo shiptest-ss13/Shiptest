@@ -119,6 +119,7 @@ SUBSYSTEM_DEF(shuttle)
 		return
 	deltimer(jump_timer)
 	jump_mode = BS_JUMP_IDLE
+	priority_announce("Bluespace jump cancelled.", null, null, "Priority")
 
 /datum/controller/subsystem/shuttle/proc/initiate_jump()
 	jump_mode = BS_JUMP_INITIATED
@@ -128,7 +129,7 @@ SUBSYSTEM_DEF(shuttle)
 		M.on_emergency_launch()
 
 	priority_announce("Jump initiated. ETA: [emergencyEscapeTime / 600] minutes.", null, null, "Priority")
-	addtimer(VARSET_CALLBACK(src, jump_mode, BS_JUMP_COMPLETED), emergencyEscapeTime)
+	jump_timer = addtimer(VARSET_CALLBACK(src, jump_mode, BS_JUMP_COMPLETED), emergencyEscapeTime)
 
 /datum/controller/subsystem/shuttle/proc/moveShuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock, timed)
 	if(!port)
