@@ -15,6 +15,7 @@
 	icon_state = "capsule"
 	icon = 'icons/obj/mining.dmi'
 	w_class = WEIGHT_CLASS_TINY
+	custom_price = 400
 	var/template_id = "shelter_alpha"
 	var/datum/map_template/shelter/template
 	var/used = FALSE
@@ -70,12 +71,14 @@
 	name = "luxury bluespace shelter capsule"
 	desc = "An exorbitantly expensive luxury suite stored within a pocket of bluespace."
 	template_id = "shelter_beta"
+	custom_price = 3500
 
 /obj/item/survivalcapsule/luxuryelite
 	name = "luxury elite bar capsule"
 	desc = "A luxury bar in a capsule. Bartender required and not included."
 	template_id = "shelter_charlie"
-
+	custom_price = 5000
+	custom_premium_price = 10000
 //Pod objects
 
 //Window
