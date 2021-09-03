@@ -252,11 +252,6 @@
 	admin_notes = "RIP AND TEAR."
 	credit_cost = 10000
 
-/datum/map_template/shuttle/emergency/arena/prerequisites_met()
-	if(SHUTTLE_UNLOCK_BUBBLEGUM in SSshuttle.shuttle_purchase_requirements_met)
-		return TRUE
-	return FALSE
-
 /datum/map_template/shuttle/emergency/birdboat
 	file_name = "emergency_birdboat"
 	name = "Birdboat Station Emergency Shuttle"
@@ -462,11 +457,6 @@
 	It seems strange and alien, you may need a special technology to access the signal.."
 	admin_notes = "Has alien surgery tools, and a void core that provides unlimited power."
 	credit_cost = 8000
-
-/datum/map_template/shuttle/emergency/zeta/prerequisites_met()
-	if(SHUTTLE_UNLOCK_ALIENTECH in SSshuttle.shuttle_purchase_requirements_met)
-		return TRUE
-	return FALSE
 
 /datum/map_template/shuttle/arrival/box
 	file_name = "arrival_box"

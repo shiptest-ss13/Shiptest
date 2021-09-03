@@ -69,7 +69,6 @@
 	if (obj_flags & EMAGGED)
 		return
 	obj_flags |= EMAGGED
-	SSshuttle.shuttle_purchase_requirements_met |= SHUTTLE_UNLOCK_EMAGGED //WS Edit - Makes shuttles from Emag list purchaseable
 	if (authenticated)
 		authorize_access = get_all_accesses()
 	to_chat(user, "<span class='danger'>You scramble the communication routing circuits!</span>")

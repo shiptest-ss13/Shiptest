@@ -7,9 +7,11 @@ SUBSYSTEM_DEF(shuttle)
 	flags = SS_KEEP_TIMING|SS_NO_TICK_CHECK
 	runlevels = RUNLEVEL_SETUP | RUNLEVEL_GAME
 
+	/// List of all instantiated /obj/item/docking_port/mobile in existence
 	var/list/mobile = list()
+	/// List of all instantiated /obj/item/docking_port/stationary in existence
 	var/list/stationary = list()
-	var/list/beacons = list()
+	/// List of all instantiated /obj/item/docking_port/stationary/transit in existence
 	var/list/transit = list()
 
 	var/list/transit_requesters = list()
@@ -17,22 +19,21 @@ SUBSYSTEM_DEF(shuttle)
 
 	/// Timer ID of the timer used for telling which stage of an endround "jump" the ships are in
 	var/jump_timer
-
 	/// Current state of the jump
 	var/jump_mode = BS_JUMP_IDLE
+	/// Time taken for bluespace jump to begin after it is requested (in deciseconds)
+	var/jump_request_time = 6000
+	/// Time taken for a bluespace jump to complete after it initiates (in deciseconds)
+	var/jump_completion_time = 1200
 
-	var/emergencyCallTime = 6000	//time taken for emergency shuttle to reach the station when called (in deciseconds)
-	var/emergencyDockTime = 1800	//time taken for emergency shuttle to leave again once it has docked (in deciseconds)
-	var/emergencyEscapeTime = 1200	//time taken for emergency shuttle to reach a safe distance after leaving station (in deciseconds)
-	var/area/emergencyLastCallLoc
 	var/supplyBlocked = FALSE
 
-		//supply shuttle stuff
+	//supply shuttle stuff
 	var/obj/docking_port/mobile/supply/supply
 	var/obj/docking_port/stationary/supply_home_port
 	var/obj/docking_port/stationary/supply_away_port
-	var/ordernum = 1					//order number given to next order
-	var/points = 5000					//number of trade-points we have
+	/// Order number given to next cargo order
+	var/ordernum = 1
 	var/centcom_message = ""			//Remarks from CentCom on how well you checked the last order.
 
 	var/list/supply_packs = list()
@@ -40,16 +41,16 @@ SUBSYSTEM_DEF(shuttle)
 	var/list/requestlist = list()
 	var/list/orderhistory = list()
 
-	var/shuttle_purchased = FALSE //If the station has purchased a replacement escape shuttle this round
-	var/list/shuttle_purchase_requirements_met = list() //For keeping track of ingame events that would unlock new shuttles, such as defeating a boss or discovering a secret item
+	/// Stops ALL shuttles from being able to move
+	var/lockdown = FALSE
 
-	var/lockdown = FALSE	//disallow transit after nuke goes off
-
+	/// The shuttle manipulator's currently selected shuttle
 	var/datum/map_template/shuttle/selected
-
+	/// The shuttle manipulator's currently loaded preview shuttle
 	var/obj/docking_port/mobile/preview_shuttle
+	/// The template of the shuttle manipulator's currently loaded preview shuttle
 	var/datum/map_template/shuttle/preview_template
-
+	/// The turf reservation that the preview shuttle is loaded into
 	var/datum/turf_reservation/preview_reservation
 
 /datum/controller/subsystem/shuttle/Initialize(timeofday)
@@ -62,9 +63,6 @@ SUBSYSTEM_DEF(shuttle)
 		supply_packs[P.type] = P
 
 	initial_load()
-
-	if(!supply)
-		WARNING("No /obj/docking_port/mobile/supply placed on the map!")
 	return ..()
 
 /datum/controller/subsystem/shuttle/proc/initial_load()
@@ -111,8 +109,8 @@ SUBSYSTEM_DEF(shuttle)
 
 /datum/controller/subsystem/shuttle/proc/request_jump(modifier = 1)
 	jump_mode = BS_JUMP_CALLED
-	jump_timer = addtimer(CALLBACK(src, .proc/initiate_jump), emergencyCallTime * modifier, TIMER_STOPPABLE)
-	priority_announce("Preparing for jump. ETD: [emergencyCallTime * modifier / 600] minutes.", null, null, "Priority")
+	jump_timer = addtimer(CALLBACK(src, .proc/initiate_jump), jump_request_time * modifier, TIMER_STOPPABLE)
+	priority_announce("Preparing for jump. ETD: [jump_request_time * modifier / 600] minutes.", null, null, "Priority")
 
 /datum/controller/subsystem/shuttle/proc/cancel_jump()
 	if(jump_mode != BS_JUMP_CALLED)
@@ -128,8 +126,8 @@ SUBSYSTEM_DEF(shuttle)
 		M.hyperspace_sound(HYPERSPACE_WARMUP, M.shuttle_areas)
 		M.on_emergency_launch()
 
-	priority_announce("Jump initiated. ETA: [emergencyEscapeTime / 600] minutes.", null, null, "Priority")
-	jump_timer = addtimer(VARSET_CALLBACK(src, jump_mode, BS_JUMP_COMPLETED), emergencyEscapeTime)
+	priority_announce("Jump initiated. ETA: [jump_completion_time / 600] minutes.", null, null, "Priority")
+	jump_timer = addtimer(VARSET_CALLBACK(src, jump_mode, BS_JUMP_COMPLETED), jump_completion_time)
 
 /datum/controller/subsystem/shuttle/proc/moveShuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock, timed)
 	if(!port)
@@ -258,13 +256,8 @@ SUBSYSTEM_DEF(shuttle)
 	if (istype(SSshuttle.orderhistory))
 		orderhistory = SSshuttle.orderhistory
 
-	if (istype(SSshuttle.shuttle_purchase_requirements_met))
-		shuttle_purchase_requirements_met = SSshuttle.shuttle_purchase_requirements_met
-
-	var/datum/bank_account/D = SSeconomy.get_dep_account(ACCOUNT_CAR)
 	centcom_message = SSshuttle.centcom_message
 	ordernum = SSshuttle.ordernum
-	points = D.account_balance
 	lockdown = SSshuttle.lockdown
 
 	selected = SSshuttle.selected
