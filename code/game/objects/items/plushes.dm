@@ -703,7 +703,7 @@
 
 /obj/item/toy/plush/spider/attackby(obj/item/I, mob/living/user, params)
 	. = ..()
-	if(istype(I, /obj/item/stack/sheet/plastic))
+	if(istype(I, /obj/item/stack/sheet/plastic)) // Om nom
 		if(spraycharges >= max_spraycharges)
 			to_chat(user, "<span class='notice'>[src] is already stuffed full!")
 			return
