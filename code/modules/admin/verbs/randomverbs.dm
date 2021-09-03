@@ -759,7 +759,7 @@ Traitors and the like can also be revived with the previous role mostly intact.
 	if(confirm != "Yes")
 		return
 
-	if(SSshuttle.jump_mode > BS_JUMP_IDLE)
+	if(SSshuttle.jump_mode != BS_JUMP_CALLED)
 		return
 
 	SSshuttle.cancel_jump()
