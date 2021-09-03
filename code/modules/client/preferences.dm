@@ -1440,6 +1440,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	if(href_list["preference"] == "gear")
 		if(href_list["purchase_gear"])
 			var/datum/gear/TG = GLOB.gear_datums[href_list["purchase_gear"]]
+			/*		### Disabled loadout purchases while metacoins are still being balanced ###
 			if(TG.cost < user.client.get_metabalance())
 				purchased_gear += TG.display_name
 				TG.purchase(user.client)
@@ -1447,6 +1448,12 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				save_preferences()
 			else
 				to_chat(user, "<span class='warning'>You don't have enough [CONFIG_GET(string/metacurrency_name)]s to purchase \the [TG.display_name]!</span>")
+					### To re-enable replace the marked code below with this comment block ### */
+			// START LOADOUT FREEDOM
+			purchased_gear += TG.display_name
+			TG.purchase(user.client)
+			save_preferences()
+			// END LOADOUT FREEDOM
 		if(href_list["toggle_gear"])
 			var/datum/gear/TG = GLOB.gear_datums[href_list["toggle_gear"]]
 			if(TG.display_name in equipped_gear)
