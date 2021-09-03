@@ -358,7 +358,7 @@
 	fill_icon_thresholds = list(1, 40, 60, 80, 100)
 	spillable = TRUE
 
-/obj/item/reagent_containers/glass/filter/afterattack(obj/target, mob/user, proximity)
+/obj/item/reagent_containers/glass/filter/afterattack(obj/target, mob/user, proximity) //overrides the standard version of this, only difference is that it only transfers one chem at a time
 	if((!proximity) || !check_allowed_items(target,target_self=1))
 		return
 

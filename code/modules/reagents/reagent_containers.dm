@@ -204,7 +204,7 @@
 /obj/item/reagent_containers/temperature_expose(datum/gas_mixture/air, exposed_temperature, exposed_volume)
 	reagents.expose_temperature(exposed_temperature)
 
-/obj/item/reagent_containers/attackby(obj/item/I, mob/user, params)
+/obj/item/reagent_containers/attackby(obj/item/I, mob/user, params) //procs dip_object any time an object is used on a container, makes the noises if any reagent returned true
 	var/success = FALSE
 	if(!src.cap_on)
 		for(var/datum/reagent/R in reagents.reagent_list)

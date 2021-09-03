@@ -829,16 +829,6 @@
 	category = CAT_CLOTHING
 */
 
-/datum/crafting_recipe/filter
-	name = "Filtered Beaker"
-	time = 15
-	reqs = list(
-		   /obj/item/stack/cable_coil = 1,
-		   /obj/item/reagent_containers/glass/beaker/large = 1,
-		   /obj/item/paper = 1)
-	result = /obj/item/reagent_containers/glass/filter
-	category = CAT_MISC
-
 /datum/crafting_recipe/ipickaxe
 	name = "Improvised Pickaxe"
 	reqs = list(
@@ -857,4 +847,14 @@
 		   /obj/item/stack/cable_coil = 5,
 		   /obj/item/stock_parts/scanning_module = 1)
 	result = /obj/item/reagent_scanner
+	category = CAT_MISC
+
+/datum/crafting_recipe/filter
+	name = "Filtered Beaker"
+	time = 15
+	reqs = list(
+		   /obj/item/stack/cable_coil = 1,
+		   /obj/item/reagent_containers/glass/beaker/large = 1,
+		   /obj/item/paper = 1)
+	result = /obj/item/reagent_containers/glass/filter
 	category = CAT_MISC
