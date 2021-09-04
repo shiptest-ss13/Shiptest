@@ -71,6 +71,7 @@
 /area/ship/crew)
 "al" = (
 /obj/effect/decal/remains/human,
+/obj/item/reagent_containers/glass/bottle/chloralhydrate,
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/science{
 	name = "Labratory"
@@ -151,6 +152,7 @@
 /obj/machinery/light/small/built{
 	dir = 4
 	},
+/obj/structure/fans/tiny,
 /turf/open/floor/plating,
 /area/ship/hallway/central)
 "aA" = (
@@ -818,6 +820,7 @@
 /obj/structure/frame/machine{
 	anchored = 1
 	},
+/obj/structure/window/reinforced/survival_pod,
 /turf/open/floor/plasteel/white,
 /area/ship/science{
 	name = "Labratory"
@@ -1266,9 +1269,6 @@
 /obj/effect/turf_decal/delivery/white,
 /obj/effect/turf_decal/trimline/purple/filled/line{
 	dir = 5
-	},
-/obj/structure/frame/machine{
-	anchored = 1
 	},
 /turf/open/floor/plasteel/dark{
 	dir = 8
@@ -2226,12 +2226,11 @@
 /obj/structure/window/reinforced/survival_pod{
 	dir = 4
 	},
-/obj/machinery/door/window/southright{
-	dir = 1;
-	name = "containment cell door"
-	},
 /obj/effect/decal/cleanable/cobweb/cobweb2,
 /obj/effect/decal/cleanable/xenoblood/xgibs/down,
+/obj/machinery/door/window/survival_pod{
+	dir = 1
+	},
 /turf/open/floor/pod/light,
 /area/ship/science{
 	name = "Labratory"
@@ -2379,6 +2378,7 @@
 /obj/effect/turf_decal/trimline/blue/filled/line{
 	dir = 5
 	},
+/obj/structure/window/reinforced/survival_pod,
 /turf/open/floor/plasteel/white,
 /area/ship/science{
 	name = "Labratory"
@@ -2387,14 +2387,14 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/shovel,
 /obj/item/pickaxe,
-/obj/item/mining_scanner,
 /obj/effect/turf_decal/box,
-/obj/item/mining_scanner,
 /obj/effect/spawner/lootdrop/maintenance,
 /obj/structure/closet/crate/miningcar,
-/obj/item/mining_scanner,
 /obj/item/storage/bag/ore,
 /obj/item/storage/bag/ore,
+/obj/item/t_scanner/adv_mining_scanner/lesser,
+/obj/item/t_scanner/adv_mining_scanner/lesser,
+/obj/item/t_scanner/adv_mining_scanner/lesser,
 /turf/open/floor/plasteel,
 /area/ship/cargo)
 "nv" = (
@@ -2436,6 +2436,7 @@
 	dir = 6
 	},
 /obj/item/stack/sheet/mineral/titanium/twenty,
+/obj/item/construction/rcd/loaded,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "oo" = (
@@ -2502,6 +2503,7 @@
 	},
 /obj/item/reagent_containers/syringe,
 /obj/effect/turf_decal/trimline/blue/filled/end,
+/obj/item/reagent_containers/glass/bottle/formaldehyde,
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "qy" = (
@@ -2737,7 +2739,24 @@
 /area/ship/hallway/central)
 "xE" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/closed/wall/mineral/titanium/nodiagonal,
+/obj/effect/turf_decal/trimline/purple/filled/corner{
+	dir = 4
+	},
+/obj/machinery/shower{
+	desc = "This evil-looking device, once used to exfoliate the Research Director's skin, now servers as the end to the lives of thousands of innocent slimic beings.";
+	dir = 4;
+	name = "xenobiological execution system"
+	},
+/obj/structure/window/reinforced/survival_pod{
+	dir = 4
+	},
+/obj/machinery/door/window/survival_pod{
+	dir = 1
+	},
+/obj/effect/turf_decal/delivery/red,
+/turf/open/floor/plasteel/dark{
+	dir = 8
+	},
 /area/ship/science{
 	name = "Labratory"
 	})
@@ -2834,7 +2853,6 @@
 /obj/item/circuitboard/machine/bepis,
 /obj/item/circuitboard/machine/smartfridge,
 /obj/item/circuitboard/machine/monkey_recycler,
-/obj/item/circuitboard/computer/xenobiology,
 /obj/item/circuitboard/machine/processor/slime,
 /obj/item/stack/sheet/rglass{
 	amount = 5
@@ -2844,6 +2862,7 @@
 	locked = 0;
 	name = "Extended Research and Development DIY Kit"
 	},
+/obj/item/stack/sheet/metal/ten,
 /turf/open/floor/plasteel/dark{
 	dir = 8
 	},
@@ -2880,9 +2899,9 @@
 	name = "Ol' Biter"
 	},
 /obj/effect/spawner/lootdrop/maintenance,
-/obj/item/clothing/glasses/material/mining/gar,
 /obj/item/clothing/glasses/meson,
 /obj/structure/closet/crate/miningcar,
+/obj/item/clothing/glasses/meson/gar,
 /turf/open/floor/plasteel,
 /area/ship/cargo)
 "AN" = (
@@ -3020,6 +3039,7 @@
 	desc = "For dealing with particularly unruly test subjects.";
 	name = "researcher's armory"
 	},
+/obj/item/reagent_containers/glass/bottle/chloralhydrate,
 /obj/item/reagent_containers/glass/bottle/chloralhydrate,
 /turf/open/floor/plasteel/dark{
 	dir = 8
@@ -3333,6 +3353,8 @@
 /obj/item/stack/marker_beacon/ten,
 /obj/effect/spawner/lootdrop/maintenance,
 /obj/structure/closet/crate/miningcar,
+/obj/item/extraction_pack,
+/obj/item/extraction_pack,
 /turf/open/floor/plasteel,
 /area/ship/cargo)
 "Mk" = (
@@ -3388,6 +3410,9 @@
 /obj/effect/decal/cleanable/cobweb/cobweb2,
 /obj/item/reagent_containers/food/snacks/spiderling,
 /obj/effect/turf_decal/trimline/purple/filled/line,
+/obj/machinery/firealarm{
+	pixel_y = 24
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/science{
 	name = "Labratory"
@@ -3523,8 +3548,8 @@
 /obj/effect/spawner/lootdrop/snowdin/dungeonlite,
 /obj/effect/spawner/lootdrop/snowdin/dungeonlite,
 /obj/effect/spawner/lootdrop/snowdin/dungeonlite,
-/obj/effect/spawner/lootdrop/snowdin/dungeonlite,
-/obj/effect/spawner/lootdrop/snowdin/dungeonlite,
+/obj/effect/spawner/lootdrop/snowdin/dungeonmid,
+/obj/effect/spawner/lootdrop/snowdin/dungeonmid,
 /obj/structure/closet/crate/secure/loot{
 	desc = "The ID-Scanner is broken, but the shaped charge inside certainly isn't. Cracking this one open will require some finesse. Has a note on the side reading "To Occultist's Boulevard, Olympus Mons on mars. Please handle with care."";
 	max_buckled_mobs = 5;
@@ -3681,7 +3706,6 @@
 /area/ship/cargo)
 "Yy" = (
 /obj/structure/frame/computer{
-	anchored = 1;
 	dir = 1
 	},
 /obj/machinery/light/broken,
