@@ -11,6 +11,7 @@ const VendingRow = (props, context) => {
     custom,
   } = props;
   const {
+    miningvendor,
     onstation,
     department,
     user,
@@ -25,6 +26,7 @@ const VendingRow = (props, context) => {
       && department === user.department
     )
   );
+  const affix = miningvendor ? ' mp' : ' cr';
   return (
     <Table.Row>
       <Table.Cell collapsing>
@@ -54,18 +56,21 @@ const VendingRow = (props, context) => {
         <Box
           color={(
             custom && 'good'
+            || product.max_amount < 0 && 'good'
             || productStock <= 0 && 'bad'
             || productStock <= (product.max_amount / 2) && 'average'
             || 'good'
           )}>
-          {productStock} in stock
+          {(!productStock && '0'
+            ||product.max_amount >= 0 && productStock
+            || product.max_amount < 0 && '∞')} in stock
         </Box>
       </Table.Cell>
       <Table.Cell collapsing textAlign="center">
         {custom && (
           <Button
             fluid
-            content={data.access ? 'FREE' : product.price + ' cr'}
+            content={data.access ? 'FREE' : product.price + affix}
             onClick={() => act('dispense', {
               'item': product.name,
             })} />
@@ -76,10 +81,11 @@ const VendingRow = (props, context) => {
               productStock === 0
               || !free && (
                 !data.user
-                || product.price > data.user.cash
+                || !miningvendor && product.price > data.user.cash
+                || miningvendor && product.price > data.user.points
               )
             )}
-            content={free ? 'FREE' : product.price + ' cr'}
+            content={free ? 'FREE' : product.price + affix}
             onClick={() => act('vend', {
               'ref': product.ref,
             })} />
@@ -94,6 +100,7 @@ export const Vending = (props, context) => {
   const {
     user,
     onstation,
+    miningvendor,
     product_records = [],
     coin_records = [],
     hidden_records = [],
@@ -134,7 +141,7 @@ export const Vending = (props, context) => {
                 {' '}
                 <b>{user.job || 'Unemployed'}</b>!
                 <br />
-                Your balance is <b>{user.cash} credits</b>.
+                Your balance is <b>{miningvendor ? user.points || 0 : user.cash || 0} {miningvendor ? "points" : "credits"}</b>.
               </Box>
             ) || (
               <Box color="light-grey">

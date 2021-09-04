@@ -149,6 +149,7 @@
 	/obj/item/toy/prize/reticence,
 	/obj/item/toy/prize/honk,
 	/obj/item/toy/plush/carpplushie,
+	/obj/item/toy/plush/spider,
 	/obj/item/toy/redbutton,
 	/obj/item/toy/windupToolbox,
 	/obj/item/clothing/head/collectable/rabbitears)

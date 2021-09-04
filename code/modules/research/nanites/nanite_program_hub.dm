@@ -22,9 +22,9 @@
 		list(name = "Protocols"),
 	)
 
-/obj/machinery/nanite_program_hub/Initialize()
+/obj/machinery/nanite_program_hub/Destroy()
+	linked_techweb = null
 	. = ..()
-	linked_techweb = SSresearch.science_tech
 
 /obj/machinery/nanite_program_hub/attackby(obj/item/I, mob/user)
 	if(istype(I, /obj/item/disk/nanite_program))
@@ -35,6 +35,13 @@
 			if(disk)
 				eject(user)
 			disk = N
+	if(istype(I, /obj/item/multitool))
+		var/obj/item/multitool/multi = I
+		if(istype(multi.buffer, /obj/machinery/rnd/server))
+			var/obj/machinery/rnd/server/serv = multi.buffer
+			linked_techweb = serv.stored_research
+			visible_message("Linked to Server!")
+		return
 	else
 		..()
 
@@ -52,6 +59,10 @@
 	return
 
 /obj/machinery/nanite_program_hub/ui_interact(mob/user, datum/tgui/ui)
+	if(!linked_techweb)
+		visible_message("Warning: no linked server!")
+		SStgui.close_uis(src)
+		return
 	ui = SStgui.try_update_ui(user, src, ui)
 	if(!ui)
 		ui = new(user, src, "NaniteProgramHub", name)

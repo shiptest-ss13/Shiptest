@@ -266,6 +266,7 @@
 	icon_state = "explorer1"
 	item_state = "explorer1"
 	w_class = WEIGHT_CLASS_BULKY
+	custom_price = 400
 
 /obj/item/storage/belt/mining/ComponentInitialize()
 	. = ..()

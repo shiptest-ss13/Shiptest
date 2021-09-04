@@ -553,15 +553,10 @@
 		toggle_ai(AI_Z_OFF)
 		return
 
-	var/cheap_search = isturf(T) && !is_station_level(T.z)
-	if (cheap_search)
-		tlist = ListTargetsLazy(T.z)
-	else
-		tlist = ListTargets()
+	tlist = ListTargetsLazy(T.z)
 
 	if(AIStatus == AI_IDLE && FindTarget(tlist, 1))
-		if(cheap_search) //Try again with full effort
-			FindTarget()
+		FindTarget() //Try again with full effort
 		toggle_ai(AI_ON)
 
 /mob/living/simple_animal/hostile/proc/ListTargetsLazy(var/_Z)//Step 1, find out what we can see

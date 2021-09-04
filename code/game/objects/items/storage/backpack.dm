@@ -218,6 +218,7 @@
 	desc = "A trendy looking satchel."
 	icon_state = "satchel-norm"
 	item_state = "satchel-norm"
+	species_exception = list(/datum/species/teshari)	//WS edit - Tesh can use satchels
 
 /obj/item/storage/backpack/satchel/leather
 	name = "leather satchel"
