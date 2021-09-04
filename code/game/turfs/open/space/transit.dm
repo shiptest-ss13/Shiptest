@@ -42,6 +42,7 @@
 	if(isliving(AM))
 		var/mob/living/poor_soul = AM			// This may not seem like much, but if you toss someone out
 		poor_soul.apply_damage_type(50, BRUTE)	// and they go through like four tiles, they're goners
+		return
 	qdel(AM)
 
 /turf/open/space/transit/CanBuildHere()
