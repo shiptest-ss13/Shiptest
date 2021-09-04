@@ -211,48 +211,6 @@
 			friendc = !friendc
 	update()
 
-
-/// Supply display which shows the status of the supply shuttle.
-/obj/machinery/status_display/supply
-	name = "supply display"
-
-/obj/machinery/status_display/supply/process()
-	if(machine_stat & NOPOWER)
-		// No power, no processing.
-		remove_display()
-		return PROCESS_KILL
-
-	var/line1
-	var/line2
-	if(!SSshuttle.supply)
-		// Might be missing in our first update on initialize before shuttles
-		// have loaded. Cross our fingers that it will soon return.
-		line1 = "CARGO"
-		line2 = "shutl?"
-	else if(SSshuttle.supply.mode == SHUTTLE_IDLE)
-		line1 = "CARGO"
-		line2 = "Docked"
-	else
-		line1 = "CARGO"
-		line2 = SSshuttle.supply.getTimerStr()
-		if(length_char(line2) > CHARS_PER_LINE)
-			line2 = "Error"
-	update_display(line1, line2)
-
-/obj/machinery/status_display/supply/examine(mob/user)
-	. = ..()
-	var/obj/docking_port/mobile/shuttle = SSshuttle.supply
-	var/shuttleMsg = null
-	if (shuttle.mode == SHUTTLE_IDLE)
-		shuttleMsg = "Docked"
-	else
-		shuttleMsg = "[shuttle.getModeStr()]: [shuttle.getTimerStr()]"
-	if (shuttleMsg)
-		. += "The display says:<br>\t<tt>[shuttleMsg]</tt>"
-	else
-		. += "The display is blank."
-
-
 /// General-purpose shuttle status display.
 /obj/machinery/status_display/shuttle
 	name = "shuttle display"

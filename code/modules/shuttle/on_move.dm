@@ -93,10 +93,12 @@ All ShuttleMove procs go here
 // returns the new move_mode (based on the old)
 // WARNING: Do not leave turf contents in beforeShuttleMove or dock() will runtime
 /atom/movable/proc/beforeShuttleMove(turf/newT, rotation, move_mode, obj/docking_port/mobile/moving_dock)
+	SHOULD_CALL_PARENT(TRUE)
 	return move_mode
 
 // Called on atoms to move the atom to the new location
 /atom/movable/proc/onShuttleMove(turf/newT, turf/oldT, list/movement_force, move_dir, obj/docking_port/stationary/old_dock, obj/docking_port/mobile/moving_dock)
+	SHOULD_CALL_PARENT(TRUE)
 	if(newT == oldT) // In case of in place shuttle rotation shenanigans.
 		return
 
@@ -110,7 +112,7 @@ All ShuttleMove procs go here
 
 // Called on atoms after everything has been moved
 /atom/movable/proc/afterShuttleMove(turf/oldT, list/movement_force, shuttle_dir, shuttle_preferred_direction, move_dir, rotation)
-
+	SHOULD_CALL_PARENT(TRUE)
 	var/turf/newT = get_turf(src)
 	if (newT.z != oldT.z)
 		onTransitZ(oldT.z, newT.z)
@@ -125,6 +127,7 @@ All ShuttleMove procs go here
 	return TRUE
 
 /atom/movable/proc/lateShuttleMove(turf/oldT, list/movement_force, move_dir)
+	SHOULD_CALL_PARENT(TRUE)
 	if(!movement_force || anchored)
 		return
 	var/throw_force = movement_force["THROW"]
@@ -368,6 +371,7 @@ All ShuttleMove procs go here
 /************************************Misc move procs************************************/
 
 /atom/movable/lighting_object/onShuttleMove()
+	SHOULD_CALL_PARENT(FALSE)
 	return FALSE
 
 /obj/docking_port/mobile/beforeShuttleMove(turf/newT, rotation, move_mode, obj/docking_port/mobile/moving_dock)
@@ -387,6 +391,7 @@ All ShuttleMove procs go here
 	. = ..()
 
 /obj/effect/abstract/proximity_checker/onShuttleMove(turf/newT, turf/oldT, list/movement_force, move_dir, obj/docking_port/stationary/old_dock, obj/docking_port/mobile/moving_dock)
+	. = ..()
 	//timer so it only happens once
 	if(!monitor)
 		qdel(src)
