@@ -192,18 +192,6 @@
 	file_name = "ruin_solgov_exploration_pod"
 	name = "SolGov Exploration Pod"
 
-/// Snowdin away mission shuttles
-/datum/map_template/shuttle/snowdin
-	category = "snowdin"
-
-/datum/map_template/shuttle/snowdin/mining
-	file_name = "snowdin_mining"
-	name = "Snowdin Mining Elevator"
-
-/datum/map_template/shuttle/snowdin/excavation
-	file_name = "snowdin_excavation"
-	name = "Snowdin Excavation Elevator"
-
 /// Escape pod map templates
 /datum/map_template/shuttle/escape_pod
 	category = "escape_pod"

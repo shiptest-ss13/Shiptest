@@ -9,8 +9,8 @@
 /turf/open/floor/mineral/titanium/blue,
 /area/shuttle/pod_1)
 "m" = (
-/obj/structure/frame/computer{
-	anchored = 1
+/obj/structure/chair/comfy/shuttle{
+	dir = 4
 	},
 /turf/open/floor/mineral/titanium/blue,
 /area/shuttle/pod_1)
@@ -39,7 +39,9 @@
 /turf/open/floor/mineral/titanium/blue,
 /area/shuttle/pod_1)
 "E" = (
-/obj/machinery/computer/shuttle,
+/obj/structure/chair/comfy/shuttle{
+	dir = 8
+	},
 /turf/open/floor/mineral/titanium/blue,
 /area/shuttle/pod_1)
 "F" = (
