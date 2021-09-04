@@ -151,6 +151,7 @@
 	mag_display = TRUE
 	weapon_weight = WEAPON_LIGHT
 	fire_rate = 4
+
 /obj/item/gun/ballistic/automatic/ZipPistol
 	name = "Makeshift Pistol"
 	desc = "A makeshift janky pistol, its a miracle it even works."
