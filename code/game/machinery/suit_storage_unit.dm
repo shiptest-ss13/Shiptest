@@ -131,6 +131,13 @@
 	helmet_type = /obj/item/clothing/head/radiation
 	storage_type = /obj/item/geiger_counter
 
+/obj/machinery/suit_storage_unit/solgov
+	name = "solgov suit storage unit"
+	suit_type = /obj/item/clothing/suit/space/solgov
+	helmet_type = /obj/item/clothing/head/helmet/space/solgov
+	mask_type = /obj/item/clothing/mask/breath
+	storage_type = /obj/item/tank/internals/emergency_oxygen/engi
+
 /obj/machinery/suit_storage_unit/open
 	state_open = TRUE
 	density = FALSE
@@ -517,3 +524,27 @@
 		I.play_tool_sound(src, 50)
 		visible_message("<span class='notice'>[usr] pries open \the [src].</span>", "<span class='notice'>You pry open \the [src].</span>")
 		open_machine()
+
+// Mapping helper unit takes whatever lies on top of it
+/obj/machinery/suit_storage_unit/inherit/Initialize(mapload)
+	. = ..()
+	wires = new /datum/wires/suit_storage_unit(src)
+	if(mapload)
+		addtimer(CALLBACK(src, .proc/inherit_contents), 0)
+
+/obj/machinery/suit_storage_unit/inherit/proc/inherit_contents()
+	var/turf/T = src.loc
+	for(var/atom/movable/AM in T)
+		if(istype(AM, /obj/item/clothing/suit/space))
+			AM.forceMove(src)
+			suit = AM
+		else if(istype(AM, /obj/item/clothing/head/helmet/space))
+			AM.forceMove(src)
+			helmet = AM
+		else if(istype(AM, /obj/item/clothing/mask))
+			AM.forceMove(src)
+			mask = AM
+		else if(istype(AM, /obj/item))
+			AM.forceMove(src)
+			storage = AM
+	update_icon()

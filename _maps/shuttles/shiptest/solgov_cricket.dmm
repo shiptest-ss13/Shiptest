@@ -1209,11 +1209,7 @@
 /area/ship/crew/dorm)
 "oN" = (
 /obj/effect/turf_decal/box,
-/obj/machinery/suit_storage_unit/open,
-/obj/item/clothing/suit/space/solgov,
-/obj/item/tank/internals/emergency_oxygen/engi,
-/obj/item/clothing/mask/breath,
-/obj/item/clothing/head/helmet/space/solgov,
+/obj/machinery/suit_storage_unit/solgov,
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/communications)
 "oY" = (
@@ -3492,6 +3488,7 @@
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "Qy" = (
+/obj/effect/spawner/lootdrop/maintenance,
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "QF" = (
