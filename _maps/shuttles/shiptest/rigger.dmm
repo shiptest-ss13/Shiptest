@@ -2011,7 +2011,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 6
 	},
-/turf/open/floor/plasteel/tech/techmaint,
+/turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "zg" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
@@ -2342,6 +2342,24 @@
 	},
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew)
+"Ds" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/effect/turf_decal/borderfloor{
+	dir = 4
+	},
+/obj/effect/turf_decal/corner/blue{
+	dir = 9
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/medical)
 "Dv" = (
 /obj/machinery/door/airlock/maintenance_hatch,
 /obj/structure/cable{
@@ -2431,9 +2449,6 @@
 "EC" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/bridge)
-"EE" = (
-/turf/open/floor/plasteel/mono,
-/area/ship/hallway/central)
 "EF" = (
 /obj/machinery/airalarm/all_access{
 	dir = 4;
@@ -2579,6 +2594,9 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel/white,
+/area/ship/hallway/central)
+"FV" = (
+/turf/open/floor/plasteel/mono,
 /area/ship/hallway/central)
 "Ge" = (
 /obj/machinery/atmospherics/components/binary/valve/digital{
@@ -3621,7 +3639,7 @@
 	dir = 6
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/turf/open/floor/plasteel/tech/techmaint,
+/turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "TP" = (
 /obj/machinery/power/apc/auto_name/east,
@@ -4208,24 +4226,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/crew/office)
-"ZQ" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 4
-	},
-/obj/effect/turf_decal/borderfloor{
-	dir = 4
-	},
-/obj/effect/turf_decal/corner/blue{
-	dir = 9
-	},
-/turf/open/floor/plasteel/dark,
-/area/ship/medical)
 "ZT" = (
 /obj/item/radio/intercom{
 	pixel_x = -28
@@ -4746,7 +4746,7 @@ SA
 ZT
 Mp
 rM
-EE
+FV
 oK
 dg
 MA
@@ -4880,9 +4880,9 @@ Xa
 yi
 HC
 Qq
-EE
-EE
-EE
+FV
+FV
+FV
 CK
 nm
 bb
@@ -5186,7 +5186,7 @@ NU
 As
 sH
 IX
-ZQ
+Ds
 DD
 Qw
 ON
