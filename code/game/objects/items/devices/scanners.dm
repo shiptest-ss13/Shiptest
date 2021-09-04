@@ -826,7 +826,7 @@ GENE SCANNER
 	var/returned_target = selected_target
 	return returned_target
 
-/obj/item/reagent_scanner //essentially just the code from the PDA reagent scanner, but shoved into this object, and specifies amount
+/obj/item/reagent_scanner //essentially just the code from the PDA reagent scanner, but shoved into this object, and specifies amount.
 	name = "reagent scanner"
 	icon = 'icons/obj/device.dmi'
 	icon_state = "reagent"
