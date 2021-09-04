@@ -164,6 +164,7 @@
 	name = "Scrap Armor"
 	result = /obj/item/clothing/suit/armor/vest/scraparmor
 	time = 60
-	reqs = list(/obj/item/stack/sheet/metal = 10,
+	reqs = list(
+		/obj/item/stack/sheet/metal = 10,
 				/obj/item/stack/cable_coil = 20)
 	category = CAT_CLOTHING
