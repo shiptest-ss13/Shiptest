@@ -555,11 +555,8 @@ All effects don't start immediately, but rather get worse over time; the rate is
 			adjustToxLoss(1)
 			adjustOrganLoss(ORGAN_SLOT_BRAIN, 0.4)
 			if(prob(20) && !stat)
-				if(SSshuttle.emergency.mode == SHUTTLE_DOCKED && is_station_level(z)) //QoL mainly
-					to_chat(src, "<span class='warning'>You're so tired... but you can't miss that shuttle...</span>")
-				else
-					to_chat(src, "<span class='warning'>Just a quick nap...</span>")
-					Sleeping(900)
+				to_chat(src, "<span class='warning'>Just a quick nap...</span>")
+				Sleeping(900)
 
 		if(drunkenness >= 101)
 			adjustToxLoss(2) //Let's be honest you shouldn't be alive by now

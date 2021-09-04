@@ -1,4 +1,4 @@
-// DM Environment file for tgstation.dme.
+g// DM Environment file for tgstation.dme.
 // All manual changes should be made outside the BEGIN_ and END_ blocks.
 // New source code should be placed in .dm files: choose File/New --> Code File.
 // BEGIN_INTERNALS
@@ -2859,6 +2859,7 @@
 #include "code\modules\reagents\reagent_containers\hypospray.dm"
 #include "code\modules\reagents\reagent_containers\maunamug.dm"
 #include "code\modules\reagents\reagent_containers\medigel.dm"
+#include "code\modules\reagents\reagent_containers\mortar.dm"
 #include "code\modules\reagents\reagent_containers\patch.dm"
 #include "code\modules\reagents\reagent_containers\pill.dm"
 #include "code\modules\reagents\reagent_containers\spray.dm"
@@ -3539,4 +3540,5 @@
 #include "whitesands\code\modules\surgery\organs\tongue.dm"
 #include "whitesands\code\modules\uplink\uplink_items.dm"
 #include "whitesands\code\modules\vehicles\pimpin_ride.dm"
+#include "whitesands\code\modules\vending\mining_equipment.dm"
 // END_INCLUDE

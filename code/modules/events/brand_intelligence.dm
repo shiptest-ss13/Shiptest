@@ -33,8 +33,6 @@
 
 /datum/round_event/brand_intelligence/start()
 	for(var/obj/machinery/vending/V in GLOB.machines)
-		if(!is_station_level(V.z))
-			continue
 		vendingMachines.Add(V)
 	if(!vendingMachines.len)
 		kill()

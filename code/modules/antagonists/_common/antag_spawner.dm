@@ -233,9 +233,6 @@
 
 
 /obj/item/antag_spawner/slaughter_demon/attack_self(mob/user)
-	if(!is_station_level(user.z))
-		to_chat(user, "<span class='warning'>You should probably wait until you reach the station.</span>")
-		return
 	if(used)
 		return
 	var/list/candidates = pollCandidatesForMob("Do you want to play as a [initial(demon_type.name)]?", ROLE_ALIEN, null, ROLE_ALIEN, 50, src)

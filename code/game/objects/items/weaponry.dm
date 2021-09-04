@@ -628,6 +628,12 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	force = 12
 	throwforce = 15
 
+/obj/item/melee/baseball_bat/bone
+	name = "bone club"
+	desc = "A long and hard shaft of rock solid bone." // I am the master of comedy
+	icon_state = "baseball_bat_bone"
+	item_state = "baseball_bat_bone"
+
 /obj/item/melee/baseball_bat/ablative/IsReflect()//some day this will reflect thrown items instead of lasers
 	var/picksound = rand(1,2)
 	var/turf = get_turf(src)

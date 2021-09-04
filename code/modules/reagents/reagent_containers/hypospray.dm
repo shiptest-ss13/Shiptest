@@ -214,6 +214,7 @@
 	else
 		icon_state = "[initial(icon_state)]0"
 
+/* Replaced with variant in whitesands/code/modules/reagents/reagent_containers/hypospray.dm
 /obj/item/reagent_containers/hypospray/medipen/survival
 	name = "survival medipen"
 	desc = "A medipen for surviving in the harshest of environments, heals and protects from environmental hazards. WARNING: Do not inject more than one pen in quick succession."
@@ -222,7 +223,7 @@
 	volume = 57
 	amount_per_transfer_from_this = 58
 	list_reagents = list(/datum/reagent/medicine/salbutamol = 10, /datum/reagent/medicine/leporazine = 15, /datum/reagent/medicine/bicaridinep = 8, /datum/reagent/medicine/dermaline = 8, /datum/reagent/medicine/epinephrine = 10, /datum/reagent/medicine/lavaland_extract = 2, /datum/reagent/medicine/omnizine = 5)
-
+*/
 /obj/item/reagent_containers/hypospray/medipen/atropine
 	name = "atropine autoinjector"
 	desc = "A rapid way to save a person from a critical injury state!"

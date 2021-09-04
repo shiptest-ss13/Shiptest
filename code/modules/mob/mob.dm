@@ -1359,3 +1359,7 @@
 	SEND_SIGNAL(src, COMSIG_MOB_STATCHANGE, new_stat)
 	. = stat
 	stat = new_stat
+
+/// Used for typing indicator, relevant on /living level
+/mob/proc/set_typing_indicator(state)
+	return
