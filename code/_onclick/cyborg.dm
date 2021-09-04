@@ -37,6 +37,9 @@
 		CtrlClickOn(A)
 		return
 
+	if(typing_indicator)
+		set_typing_indicator(FALSE)
+
 	if(next_move >= world.time)
 		return
 

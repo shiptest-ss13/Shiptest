@@ -149,7 +149,6 @@ GLOBAL_PROTECT(admin_verbs_debug)
 	/client/proc/SDQL2_query,
 	/client/proc/test_movable_UI,
 	/client/proc/test_snap_UI,
-	/client/proc/debugNatureMapGenerator,
 	/client/proc/check_bomb_impacts,
 	/proc/machine_upgrade,
 	/client/proc/populate_world,

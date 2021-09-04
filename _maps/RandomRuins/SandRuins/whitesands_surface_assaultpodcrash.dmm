@@ -6,6 +6,10 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/mineral/plastitanium/red,
 /area/whitesands/surface/outdoors)
+"d" = (
+/obj/item/ammo_casing/spent,
+/turf/closed/wall/mineral/plastitanium,
+/area/whitesands/surface/outdoors)
 "e" = (
 /obj/structure/barricade/wooden,
 /obj/machinery/door/airlock/centcom{
@@ -59,9 +63,16 @@
 /turf/open/floor/mineral/plastitanium/red,
 /area/whitesands/surface/outdoors)
 "o" = (
-/obj/item/ammo_casing/shotgun/buckshot{
-	pixel_x = -5;
-	pixel_y = 2
+/obj/item/ammo_casing/spent,
+/obj/item/ammo_casing/spent{
+	dir = 5;
+	pixel_x = -8;
+	pixel_y = 4
+	},
+/obj/item/ammo_casing/spent{
+	dir = 1;
+	pixel_x = 7;
+	pixel_y = 4
 	},
 /turf/open/floor/plating/asteroid/whitesands,
 /area/whitesands/surface/outdoors)
@@ -86,6 +97,7 @@
 	name = "Assault Pod";
 	req_access_txt = "150"
 	},
+/obj/item/ammo_casing/spent,
 /turf/closed/mineral/random/whitesands,
 /area/whitesands/surface/outdoors)
 "u" = (
@@ -98,6 +110,10 @@
 	pixel_y = 1
 	},
 /turf/open/floor/mineral/plastitanium/red,
+/area/whitesands/surface/outdoors)
+"v" = (
+/obj/item/ammo_casing/spent,
+/turf/closed/mineral/random/whitesands,
 /area/whitesands/surface/outdoors)
 "w" = (
 /turf/open/floor/mineral/plastitanium/red,
@@ -196,13 +212,15 @@
 /turf/closed/mineral/random/whitesands,
 /area/whitesands/surface/outdoors)
 "X" = (
-/obj/item/ammo_casing/shotgun/buckshot{
-	pixel_x = -4;
-	pixel_y = 3
+/obj/item/ammo_casing/spent{
+	dir = 1;
+	pixel_x = -3;
+	pixel_y = -2
 	},
-/obj/item/ammo_casing/shotgun/buckshot{
-	pixel_x = 11;
-	pixel_y = -6
+/obj/item/ammo_casing/spent{
+	dir = 9;
+	pixel_x = 7;
+	pixel_y = 7
 	},
 /mob/living/simple_animal/hostile/asteroid/goliath/beast{
 	dir = 8
@@ -225,11 +243,11 @@ O
 O
 O
 V
-V
-V
-V
+v
+v
+v
 t
-h
+d
 h
 B
 "}

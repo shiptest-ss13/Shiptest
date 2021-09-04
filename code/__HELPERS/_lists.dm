@@ -611,3 +611,16 @@
 	for(var/key in l)
 		ret += l[key]
 	return ret
+
+/proc/to_list_string(list/l)
+	. = "list("
+	var/first_entry = TRUE
+	for(var/item in l)
+		if(!first_entry)
+			. += ", "
+		if(l[item])
+			. += sanitize_simple("[item] = [l[item]]", list("{"="", "}"="", "\""="", ";"="", ","=""))
+		else
+			. += sanitize_simple("[item]", list("{"="", "}"="", "\""="", ";"="", ","=""))
+		first_entry = FALSE
+	. += ")"
