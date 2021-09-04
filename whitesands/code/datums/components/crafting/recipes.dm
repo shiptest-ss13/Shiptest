@@ -166,5 +166,6 @@
 	time = 60
 	reqs = list(
 		/obj/item/stack/sheet/metal = 10,
-				/obj/item/stack/cable_coil = 20)
+		/obj/item/stack/cable_coil = 20,
+	)
 	category = CAT_CLOTHING
