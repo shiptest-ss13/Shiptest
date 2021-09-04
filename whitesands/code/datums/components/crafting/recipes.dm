@@ -146,7 +146,7 @@
 	tools = list(TOOL_SCREWDRIVER, TOOL_WIRECUTTER)
 	category = CAT_MISC
 
-/datum/crafting_recipe/ZipPistol
+/datum/crafting_recipe/Zip_Pistol
 	name = "Zip Pistol"
 	result = /obj/item/gun/ballistic/automatic/ZipPistol
 	reqs = list(/obj/item/stack/rods = 4,
@@ -160,7 +160,7 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
 
-/datum/crafting_recipe/ScrapArmor
+/datum/crafting_recipe/Scrap_Armor
 	name = "Scrap Armor"
 	result = /obj/item/clothing/suit/armor/vest/scraparmor
 	time = 60
