@@ -54,39 +54,7 @@ GLOBAL_VAR_INIT(normal_ooc_colour, "#002eb8")
 		return
 
 	mob.log_talk(raw_msg, LOG_OOC)
-	msg = process_chat_markup(msg) //WS edit - Chat markup
-
-	var/keyname = key
-	if(prefs.unlock_content)
-		if(prefs.toggles & MEMBER_PUBLIC)
-			keyname = "<font color='[prefs.ooccolor ? prefs.ooccolor : GLOB.normal_ooc_colour]'>[icon2html('icons/member_content.dmi', world, "blag")][keyname]</font>"
-	if(prefs.custom_ooc)
-		keyname = "<font color='[prefs.ooccolor ? prefs.ooccolor : GLOB.normal_ooc_colour]'>[keyname]</font>"
-	//The linkify span classes and linkify=TRUE below make ooc text get clickable chat href links if you pass in something resembling a url
-	for(var/client/C in GLOB.clients)
-		if(C.prefs.chat_toggles & CHAT_OOC)
-			if(holder?.fakekey in C.prefs.ignoring)
-				continue
-			if(holder)
-				if(!holder.fakekey || C.holder)
-					if(check_rights_for(src, R_ADMIN))
-						to_chat(C, "<span class='adminooc'>[CONFIG_GET(flag/allow_admin_ooccolor) && prefs.ooccolor ? "<font color=[prefs.ooccolor]>" :"" ]<span class='prefix'>OOC:</span> <EM>[keyname][holder.fakekey ? "/([holder.fakekey])" : ""]:</EM> <span class='message linkify'>[msg]</span></span></font>")
-					else
-						to_chat(C, "<span class='adminobserverooc'><span class='prefix'>OOC:</span> <EM>[keyname][holder.fakekey ? "/([holder.fakekey])" : ""]:</EM> <span class='message linkify'>[msg]</span></span>")
-				else
-					if(GLOB.OOC_COLOR)
-						to_chat(C, "<font color='[GLOB.OOC_COLOR]'><b><span class='prefix'>OOC:</span> <EM>[holder.fakekey ? holder.fakekey : key]:</EM> <span class='message linkify'>[msg]</span></b></font>")
-					else
-						to_chat(C, "<span class='ooc'><span class='prefix'>OOC:</span> <EM>[holder.fakekey ? holder.fakekey : key]:</EM> <span class='message linkify'>[msg]</span></span>")
-
-			else if(!(key in C.prefs.ignoring))
-				if(GLOB.OOC_COLOR)
-					if(check_mentor())
-						to_chat(C, "<font color='["#00b40f"]'><b><span class='prefix'>OOC:</span> <EM>[keyname]:</EM> <span class='message linkify'>[msg]</span></b></font>")
-					else
-						to_chat(C, "<font color='[GLOB.OOC_COLOR]'><b><span class='prefix'>OOC:</span> <EM>[keyname]:</EM> <span class='message linkify'>[msg]</span></b></font>")
-				else
-					to_chat(C, "<span class='ooc'><span class='prefix'>OOC:</span> <EM>[keyname]:</EM> <span class='message linkify'>[msg]</span></span>")
+	world.ooc(src, msg)
 
 /proc/toggle_ooc(toggle = null)
 	if(toggle != null) //if we're specifically en/disabling ooc
@@ -156,6 +124,41 @@ GLOBAL_VAR_INIT(normal_ooc_colour, "#002eb8")
 
 		prefs.ooccolor = initial(prefs.ooccolor)
 		prefs.save_preferences()
+
+/world/proc/ooc(client/client, msg)
+	SHIPTEST_OOC
+	msg = process_chat_markup(msg)
+	var/keyname = client.key
+	if(client.prefs.unlock_content)
+		if(client.prefs.toggles & MEMBER_PUBLIC)
+			keyname = "<font color='[client.prefs.ooccolor ? client.prefs.ooccolor : GLOB.normal_ooc_colour]'>[icon2html('icons/member_content.dmi', world, "blag")][keyname]</font>"
+	if(client.prefs.custom_ooc)
+		keyname = "<font color='[client.prefs.ooccolor ? client.prefs.ooccolor : GLOB.normal_ooc_colour]'>[keyname]</font>"
+	//The linkify span classes and linkify=TRUE below make ooc text get clickable chat href links if you pass in something resembling a url
+	for(var/client/C in GLOB.clients)
+		if(C.prefs.chat_toggles & CHAT_OOC)
+			if(client.holder?.fakekey in C.prefs.ignoring)
+				continue
+			if(client.holder)
+				if(!client.holder.fakekey || C.holder)
+					if(check_rights_for(src, R_ADMIN))
+						to_chat(C, "<span class='adminooc'>[CONFIG_GET(flag/allow_admin_ooccolor) && client.prefs.ooccolor ? "<font color=[client.prefs.ooccolor]>" :"" ]<span class='prefix'>OOC:</span> <EM>[keyname][client.holder.fakekey ? "/([client.holder.fakekey])" : ""]:</EM> <span class='message linkify'>[msg]</span></span></font>")
+					else
+						to_chat(C, "<span class='adminobserverooc'><span class='prefix'>OOC:</span> <EM>[keyname][client.holder.fakekey ? "/([client.holder.fakekey])" : ""]:</EM> <span class='message linkify'>[msg]</span></span>")
+				else
+					if(GLOB.OOC_COLOR)
+						to_chat(C, "<font color='[GLOB.OOC_COLOR]'><b><span class='prefix'>OOC:</span> <EM>[client.holder.fakekey ? client.holder.fakekey : client.key]:</EM> <span class='message linkify'>[msg]</span></b></font>")
+					else
+						to_chat(C, "<span class='ooc'><span class='prefix'>OOC:</span> <EM>[client.holder.fakekey ? client.holder.fakekey : client.key]:</EM> <span class='message linkify'>[msg]</span></span>")
+
+			else if(!(client.key in C.prefs.ignoring))
+				if(GLOB.OOC_COLOR)
+					if(check_mentor())
+						to_chat(C, "<font color='["#00b40f"]'><b><span class='prefix'>OOC:</span> <EM>[keyname]:</EM> <span class='message linkify'>[msg]</span></b></font>")
+					else
+						to_chat(C, "<font color='[GLOB.OOC_COLOR]'><b><span class='prefix'>OOC:</span> <EM>[keyname]:</EM> <span class='message linkify'>[msg]</span></b></font>")
+				else
+					to_chat(C, "<span class='ooc'><span class='prefix'>OOC:</span> <EM>[keyname]:</EM> <span class='message linkify'>[msg]</span></span>")
 
 //Checks admin notice
 /client/verb/admin_notice()
