@@ -8,8 +8,8 @@
 	select_name = "kill"
 
 /obj/item/ammo_casing/energy/laser/smg //WS edit: fun
-	projectile_type = /obj/projectile/beam/weak
-	e_cost = 800
+	projectile_type = /obj/projectile/beam/laser/weak/negative_ap
+	e_cost = 799 //12 shots with a normal power cell, 25 with an upgraded
 	select_name = "kill"
 
 /obj/item/ammo_casing/energy/lasergun/old
@@ -30,6 +30,12 @@
 	pellets = 5
 	variance = 25
 	select_name = "scatter"
+
+/obj/item/ammo_casing/energy/laser/ultima
+	projectile_type = /obj/projectile/beam/laser/weak/negative_ap
+	pellets = 3
+	e_cost = 2000
+	select_name = "kill"
 
 /obj/item/ammo_casing/energy/laser/heavy
 	projectile_type = /obj/projectile/beam/laser/heavylaser
