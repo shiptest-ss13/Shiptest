@@ -280,14 +280,20 @@ const ShipControlContent = (props, context) => {
   return (
     <Section
       title="Navigation"
-      buttons={(
+      buttons={(<>
         <Button
           tooltip="Undock"
           tooltipPosition="left"
           icon="sign-out-alt"
           disabled={data.state !== 'idle'}
           onClick={() => act('undock')} />
-      )}>
+        <Button
+          tooltip="Bluespace Jump"
+          tooltipPosition="left"
+          icon="sign-out-alt"
+          disabled={data.state !== 'flying'}
+          onClick={()=> act('bluespace_jump')} />
+      </>)}>
       {data.state === 'idle' && (
         <div className="NoticeBox">
           Ship Docked.

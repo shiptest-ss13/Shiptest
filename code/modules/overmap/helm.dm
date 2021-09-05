@@ -1,3 +1,10 @@
+#define JUMP_STATE_OFF 0
+#define JUMP_STATE_CHARGING 1
+#define JUMP_STATE_IONIZING 2
+#define JUMP_STATE_FIRING 3
+#define JUMP_STATE_FINALIZED 4
+#define JUMP_CHARGE_DELAY (20 SECONDS)
+
 /obj/machinery/computer/helm
 	name = "helm control console"
 	desc = "Used to view or control the ship."
@@ -6,11 +13,66 @@
 	circuit = /obj/item/circuitboard/computer/shuttle/helm
 	light_color = LIGHT_COLOR_FLARE
 
-	///The ship
-	var/obj/structure/overmap/current_ship
+	/// The ship we reside on for ease of access
+	var/obj/structure/overmap/ship/simulated/current_ship
+	/// All users currently using this
 	var/list/concurrent_users = list()
-	///Is this for viewing only?
+	/// Is this console view only? I.E. cant dock/etc
 	var/viewer = FALSE
+	/// When are we allowed to jump, a value of -1 means never
+	var/jump_allowed = 0
+	/// Current state of our jump
+	var/jump_state = JUMP_STATE_OFF
+
+/datum/config_entry/number/bluespace_jump_wait
+	default = 1
+
+/obj/machinery/computer/helm/Initialize(mapload, obj/item/circuitboard/C)
+	. = ..()
+	if(jump_allowed != -1)
+		jump_allowed = world.time + CONFIG_GET(number/bluespace_jump_wait)
+	addtimer(CALLBACK(src, .proc/reload_ship), 5)
+
+/obj/machinery/computer/helm/proc/process_jump(inline = FALSE)
+	if(jump_allowed < 0)
+		say("Bluespace Jump Calibration offline. Please contact your systems administrator.")
+		return
+	if(current_ship.state != OVERMAP_SHIP_FLYING)
+		say("Bluespace Jump Calibration detected interference in the local area.")
+		return
+	if(world.time < jump_allowed)
+		var/jump_wait = DisplayTimeText(jump_allowed - world.time)
+		say("Bluespace Jump Calibration is currently recharging. ETA: [jump_wait].")
+		return
+
+	if(jump_state != JUMP_STATE_OFF && !inline)
+		return // This exists to prefent Href exploits to call process_jump more than once by a client
+
+	switch(jump_state)
+		if(JUMP_STATE_OFF)
+			jump_state = JUMP_STATE_CHARGING
+			SStgui.close_uis(src)
+			priority_announce("Bluespace Jump Calibration is now in progress.", sender_override="Bluespace Pylon", zlevel=get_virtual_z_level())
+
+		if(JUMP_STATE_CHARGING)
+			jump_state = JUMP_STATE_IONIZING
+			priority_announce("Bluespace Jump Calibration completed. Ionizing Bluespace Pylon.", sender_override="Bluespace Pylon", zlevel=get_virtual_z_level())
+
+		if(JUMP_STATE_IONIZING)
+			jump_state = JUMP_STATE_FIRING
+			priority_announce("Bluespace Ionization finalized; preparing to fire Bluespace Pylon.", sender_override="Bluespace Pylon", zlevel=get_virtual_z_level())
+
+		if(JUMP_STATE_FIRING)
+			jump_state = JUMP_STATE_FINALIZED
+			priority_announce("Bluespace Pylon launched.", sender_override="Bluespace Pylon", sound='sound/magic/lightning_chargeup.ogg', zlevel=get_virtual_z_level())
+			addtimer(CALLBACK(src, .proc/do_jump), 10 SECONDS)
+			return
+
+	addtimer(CALLBACK(src, .proc/process_jump, TRUE), JUMP_CHARGE_DELAY)
+
+/obj/machinery/computer/helm/proc/do_jump()
+	priority_announce("Bluespace Jump Initiated", sender_override="Bluespace Pylon", sound='sound/magic/lightningbolt.ogg', zlevel=get_virtual_z_level())
+	current_ship.shuttle.intoTheSunset()
 
 /obj/machinery/computer/helm/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock)
 	current_ship = port.current_ship
@@ -25,6 +87,9 @@
 		return TRUE
 
 /obj/machinery/computer/helm/ui_interact(mob/user, datum/tgui/ui)
+	if(jump_state != JUMP_STATE_OFF)
+		say("Bluespace Jump in progress. Controls suspended.")
+		return
 	// Update UI
 	if(!current_ship && !reload_ship())
 		return
@@ -168,6 +233,11 @@
 					S.current_autopilot_target = null
 					S.burn_engines()
 					return
+				if("bluespace_jump")
+					if(tgui_alert(usr, "WARNING: ONCE STARTED A BLUESPACE JUMP CANNOT BE CANCELLED. ARE YOU SURE?", "Jump Confirmation", list("Yes", "No")) != "Yes")
+						return
+					process_jump()
+					return
 		if(OVERMAP_SHIP_IDLE)
 			if(action == "undock")
 				S.calculate_avg_fuel()
@@ -196,3 +266,10 @@
 	layer = SIGN_LAYER
 	density = FALSE
 	viewer = TRUE
+
+#undef JUMP_STATE_OFF
+#undef JUMP_STATE_CHARGING
+#undef JUMP_STATE_IONIZING
+#undef JUMP_STATE_FIRING
+#undef JUMP_STATE_FINALIZED
+#undef JUMP_CHARGE_DELAY
