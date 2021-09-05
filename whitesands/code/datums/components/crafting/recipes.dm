@@ -146,7 +146,7 @@
 	tools = list(TOOL_SCREWDRIVER, TOOL_WIRECUTTER)
 	category = CAT_MISC
 
-/datum/crafting_recipe/Zip_Pistol
+/datum/crafting_recipe/zip_pistol
 	name = "Zip Pistol"
 	result = /obj/item/gun/ballistic/automatic/ZipPistol
 	reqs = list(/obj/item/stack/rods = 4,
