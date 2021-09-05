@@ -237,17 +237,19 @@
 		if("power")
 			if(!is_funmin)
 				return
+			var/result = input(holder, "Please choose what Z level to power. Specify none to power all Zs.","Power") as null|num
 			SSblackbox.record_feedback("nested tally", "admin_secrets_fun_used", 1, list("Power All APCs"))
 			log_admin("[key_name(holder)] made all areas powered", 1)
 			message_admins("<span class='adminnotice'>[key_name_admin(holder)] made all areas powered</span>")
-			power_restore()
+			power_restore(result)
 		if("unpower")
 			if(!is_funmin)
 				return
+			var/result = input(holder, "Please choose what Z level to depower. Specify none to power all Zs.","Unpower") as null|num
 			SSblackbox.record_feedback("nested tally", "admin_secrets_fun_used", 1, list("Depower All APCs"))
 			log_admin("[key_name(holder)] made all areas unpowered", 1)
 			message_admins("<span class='adminnotice'>[key_name_admin(holder)] made all areas unpowered</span>")
-			power_failure()
+			power_failure(result)
 		if("quickpower")
 			if(!is_funmin)
 				return
@@ -320,7 +322,8 @@
 				return
 			SSblackbox.record_feedback("nested tally", "admin_secrets_fun_used", 1, list("Egalitarian Station"))
 			for(var/obj/machinery/door/airlock/W in GLOB.machines)
-				if(is_station_level(W.z) && !istype(get_area(W), /area/ship/bridge) && !istype(get_area(W), /area/ship/crew) && !istype(get_area(W), /area/ship/security/prison))
+				var/area/airlock_area = get_area(W)
+				if(istype(airlock_area, /area/ship) && !istype(airlock_area, /area/ship/bridge) && !istype(airlock_area, /area/ship/crew) && !istype(airlock_area, /area/ship/security/prison))
 					W.req_access = list()
 			message_admins("[key_name_admin(holder)] activated Egalitarian Station mode")
 			priority_announce("CentCom airlock control override activated. Please take this time to get acquainted with your coworkers.", null, 'sound/ai/commandreport.ogg')

@@ -454,10 +454,6 @@
 	if(target == src)
 		return
 
-	if(!is_station_level(z) && !is_mining_level(z))
-		to_chat(src, "<span class='warning'>Our bluespace transceiver cannot locate a viable bluespace link, our teleportation abilities are useless in this area.</span>")
-		return
-
 	to_chat(src, "<span class='info'>Attempting to remove this being from our presence.</span>")
 
 	if(!do_mob(src, target, 30))

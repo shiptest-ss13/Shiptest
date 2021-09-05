@@ -12,6 +12,7 @@
 	throw_speed = 3
 	throw_range = 5
 	slot_flags = ITEM_SLOT_BELT
+	custom_price = 700
 
 /obj/item/wormhole_jaunter/attack_self(mob/user)
 	user.visible_message("<span class='notice'>[user.name] activates the [src.name]!</span>")
@@ -29,8 +30,7 @@
 	var/list/destinations = list()
 
 	for(var/obj/item/beacon/B in GLOB.teleportbeacons)
-		var/turf/T = get_turf(B)
-		if(is_station_level(T.z))
+		if(B.get_virtual_z_level() == get_virtual_z_level())
 			destinations += B
 
 	return destinations

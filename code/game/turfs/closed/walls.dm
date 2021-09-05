@@ -31,8 +31,6 @@
 
 /turf/closed/wall/Initialize(mapload)
 	. = ..()
-	if(is_station_level(z))
-		GLOB.station_turfs += src
 	if(smoothing_flags & SMOOTH_DIAGONAL_CORNERS && fixed_underlay) //Set underlays for the diagonal walls.
 		var/mutable_appearance/underlay_appearance = mutable_appearance(layer = TURF_LAYER, plane = FLOOR_PLANE)
 		if(fixed_underlay["space"])
@@ -44,13 +42,6 @@
 			underlay_appearance.icon_state = fixed_underlay["icon_state"]
 		fixed_underlay = string_assoc_list(fixed_underlay)
 		underlays += underlay_appearance
-
-
-/turf/closed/wall/Destroy()
-	if(is_station_level(z))
-		GLOB.station_turfs -= src
-	..()
-
 
 /turf/closed/wall/examine(mob/user)
 	. += ..()

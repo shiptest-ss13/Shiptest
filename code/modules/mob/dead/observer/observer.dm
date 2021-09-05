@@ -945,11 +945,14 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 	var/list/possessible = list()
 
 	for(var/mob/living/simple_animal/mouse/M in GLOB.alive_mob_list)
-		if(M.stat != CONSCIOUS) continue
-		if(M.key) continue
-		if(M in GLOB.player_list) continue
-		if(M.mind) continue
-		if(!is_station_level(M.z)) continue
+		if(M.stat != CONSCIOUS)
+			continue
+		if(M.key)
+			continue
+		if(M in GLOB.player_list)
+			continue
+		if(M.mind)
+			continue
 
 		possessible += M
 

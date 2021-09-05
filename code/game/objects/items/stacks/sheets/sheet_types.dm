@@ -91,6 +91,7 @@ GLOBAL_LIST_INIT(metal_recipes, list ( \
 	new/datum/stack_recipe("iron door", /obj/structure/mineral_door/iron, 20, one_per_turf = TRUE, on_floor = TRUE), \
 	new/datum/stack_recipe("floodlight frame", /obj/structure/floodlight_frame, 5, one_per_turf = TRUE, on_floor = TRUE), \
 	new/datum/stack_recipe("voting box", /obj/structure/votebox, 15, time = 50), \
+	new/datum/stack_recipe("mortar", /obj/item/reagent_containers/glass/mortar/metal, 3), \
 	new/datum/stack_recipe("pestle", /obj/item/pestle, 1, time = 50), \
 	new/datum/stack_recipe("hygienebot assembly", /obj/item/bot_assembly/hygienebot, 2, time = 50)
 ))
@@ -546,9 +547,8 @@ GLOBAL_LIST_INIT(runed_metal_recipes, list ( \
 	if(!iscultist(user))
 		to_chat(user, "<span class='warning'>Only one with forbidden knowledge could hope to work this metal...</span>")
 		return
-	var/turf/T = get_turf(user) //we may have moved. adjust as needed...
 	var/area/A = get_area(user)
-	if((!is_station_level(T.z) && !is_mining_level(T.z)) || (A && !(A.flags_1 & CULT_PERMITTED_1)))
+	if(A && !(A.flags_1 & CULT_PERMITTED_1))
 		to_chat(user, "<span class='warning'>The veil is not weak enough here.</span>")
 		return FALSE
 	return ..()
@@ -643,6 +643,13 @@ GLOBAL_LIST_INIT(bronze_recipes, list ( \
 	/*
  * Bones
  */
+
+GLOBAL_LIST_INIT(bone_recipes, list( \
+	new /datum/stack_recipe("mortar", /obj/item/reagent_containers/glass/mortar/bone, 3), \
+	new /datum/stack_recipe("bone armor", /obj/item/clothing/suit/armor/bone, 6), \
+	new /datum/stack_recipe("skull helmet", /obj/item/clothing/head/helmet/skull, 4), \
+	new /datum/stack_recipe("bone dagger", /obj/item/kitchen/knife/combat/bone, 2), \
+	new /datum/stack_recipe("club", /obj/item/melee/baseball_bat/bone, 6)))
 /obj/item/stack/sheet/bone
 	name = "bones"
 	icon = 'icons/obj/mining.dmi'
@@ -660,6 +667,10 @@ GLOBAL_LIST_INIT(bronze_recipes, list ( \
 	grind_results = list(/datum/reagent/calcium = 10)		//WS Edit - Fuck
 	merge_type = /obj/item/stack/sheet/bone
 	material_type = /datum/material/bone
+
+/obj/item/stack/sheet/bone/get_main_recipes()
+	. = ..()
+	. += GLOB.bone_recipes
 
 GLOBAL_LIST_INIT(plastic_recipes, list(
 	new /datum/stack_recipe("plastic floor tile", /obj/item/stack/tile/plastic, 1, 4, 20), \

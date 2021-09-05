@@ -559,7 +559,7 @@ GLOBAL_LIST_EMPTY(species_list)
 //Returns a list of unslaved cyborgs
 /proc/active_free_borgs()
 	. = list()
-	for(var/mob/living/silicon/robot/R in GLOB.alive_mob_list)
+	for(var/mob/living/silicon/robot/R in GLOB.silicon_mobs)
 		if(R.connected_ai || R.shell)
 			continue
 		if(R.stat == DEAD)
@@ -569,9 +569,9 @@ GLOBAL_LIST_EMPTY(species_list)
 		. += R
 
 //Returns a list of AI's
-/proc/active_ais(check_mind=FALSE, var/z = null)
+/proc/active_ais(check_mind=FALSE, z = null)
 	. = list()
-	for(var/mob/living/silicon/ai/A in GLOB.alive_mob_list)
+	for(var/mob/living/silicon/ai/A as anything in GLOB.ai_list)
 		if(A.stat == DEAD)
 			continue
 		if(A.control_disabled)
@@ -579,7 +579,7 @@ GLOBAL_LIST_EMPTY(species_list)
 		if(check_mind)
 			if(!A.mind)
 				continue
-		if(z && !(z == A.z) && (!is_station_level(z) || !is_station_level(A.z))) //if a Z level was specified, AND the AI is not on the same level, AND either is off the station...
+		if(z && A.get_virtual_z_level() != z) //if a Z level was specified, AND the AI is not on the same level
 			continue
 		. += A
 	return .
