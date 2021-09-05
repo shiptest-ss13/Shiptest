@@ -152,7 +152,7 @@
 	weapon_weight = WEAPON_LIGHT
 	fire_rate = 4
 
-/obj/item/gun/ballistic/automatic/ZipPistol
+/obj/item/gun/ballistic/automatic/zip_pistol
 	name = "Makeshift Pistol"
 	desc = "A makeshift janky pistol, its a miracle it even works."
 	icon = 'whitesands/icons/obj/guns/projectile.dmi'
