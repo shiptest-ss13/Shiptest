@@ -236,6 +236,9 @@
 				if("bluespace_jump")
 					if(tgui_alert(usr, "WARNING: ONCE STARTED A BLUESPACE JUMP CANNOT BE CANCELLED. ARE YOU SURE?", "Jump Confirmation", list("Yes", "No")) != "Yes")
 						return
+					if(tgui_alert(usr, "ARE YOU SURE YOU WANT TO BLUESPACE JUMP?", "Jump Confirmation", list("Yes", "No")) != "Yes")
+						return
+					message_admins("[usr.client] has initiated a bluespace jump. [ADMIN_JMP(usr)]")
 					process_jump()
 					return
 		if(OVERMAP_SHIP_IDLE)
