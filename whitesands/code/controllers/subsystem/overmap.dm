@@ -173,11 +173,7 @@ SUBSYSTEM_DEF(overmap)
 			spawn_event_cluster(type, T, chance / 2)
 
 /datum/controller/subsystem/overmap/proc/spawn_initial_ships()
-#ifdef TESTING
 	var/datum/map_template/shuttle/selected_template = SSmapping.maplist[pick(SSmapping.maplist)]
-#else
-	var/datum/map_template/shuttle/selected_template = SSmapping.maplist[pick(SSmapping.maplist)]
-#endif
 	INIT_ANNOUNCE("Loading [selected_template.name]...")
 	SSshuttle.action_load(selected_template)
 	if(SSdbcore.Connect())
