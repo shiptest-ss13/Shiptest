@@ -843,9 +843,9 @@
 	time = 30
 	tools = list(TOOL_WIRECUTTER, TOOL_SCREWDRIVER)
 	reqs = list(
-		   /obj/item/healthanalyzer = 1,
-		   /obj/item/stack/cable_coil = 5,
-		   /obj/item/stock_parts/scanning_module = 1)
+		/obj/item/healthanalyzer = 1,
+		/obj/item/stack/cable_coil = 5,
+		/obj/item/stock_parts/scanning_module = 1)
 	result = /obj/item/reagent_scanner
 	category = CAT_MISC
 
@@ -853,8 +853,8 @@
 	name = "Filtered Beaker"
 	time = 15
 	reqs = list(
-		   /obj/item/stack/cable_coil = 1,
-		   /obj/item/reagent_containers/glass/beaker/large = 1,
-		   /obj/item/paper = 1)
+		/obj/item/stack/cable_coil = 1,
+		/obj/item/reagent_containers/glass/beaker/large = 1,
+		/obj/item/paper = 1)
 	result = /obj/item/reagent_containers/glass/filter
 	category = CAT_MISC
