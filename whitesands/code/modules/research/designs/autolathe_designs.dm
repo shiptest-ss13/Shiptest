@@ -8,7 +8,7 @@
 	category = list("initial","Tools","Tool Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SERVICE
 
-/datum/design/ZipAmmo9mm
+/datum/design/zip_ammo_9mm
 	name = "Budget pistol 9mm magazine"
 	id = "ZipAmmo9mm"
 	build_type = AUTOLATHE
