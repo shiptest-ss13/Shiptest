@@ -19,18 +19,17 @@
 	var/list/concurrent_users = list()
 	/// Is this console view only? I.E. cant dock/etc
 	var/viewer = FALSE
-	/// When are we allowed to jump, a value of -1 means never
-	var/jump_allowed = 0
+	/// When are we allowed to jump
+	var/jump_allowed
 	/// Current state of our jump
 	var/jump_state = JUMP_STATE_OFF
 
 /datum/config_entry/number/bluespace_jump_wait
-	default = 1
+	default = 30 MINUTES
 
 /obj/machinery/computer/helm/Initialize(mapload, obj/item/circuitboard/C)
 	. = ..()
-	if(jump_allowed != -1)
-		jump_allowed = world.time + CONFIG_GET(number/bluespace_jump_wait)
+	jump_allowed = world.time + CONFIG_GET(number/bluespace_jump_wait)
 	addtimer(CALLBACK(src, .proc/reload_ship), 5)
 
 /obj/machinery/computer/helm/proc/process_jump(inline = FALSE)
