@@ -1,7 +1,17 @@
 /obj/structure/flora
 	resistance_flags = FLAMMABLE
-	max_integrity = 150
+	max_integrity = 40
 	anchored = TRUE
+
+/obj/structure/flora/play_attack_sound(damage_amount, damage_type = BRUTE, damage_flag = 0)
+	switch(damage_type)
+		if(BRUTE)
+			if(damage_amount)
+				playsound(src, 'sound/weapons/slash.ogg', 50, TRUE)
+			else
+				playsound(src, 'sound/weapons/fwoosh.ogg', 50, TRUE)
+		if(BURN)
+			playsound(src.loc, 'sound/items/welder.ogg', 100, TRUE)
 
 //trees
 /obj/structure/flora/tree
@@ -373,6 +383,7 @@
 	icon = 'icons/obj/flora/rocks.dmi'
 	resistance_flags = FIRE_PROOF
 	density = TRUE
+	max_integrity = 100
 	var/obj/item/stack/mineResult = /obj/item/stack/ore/glass/basalt
 
 /obj/structure/flora/rock/Initialize()
@@ -390,6 +401,16 @@
 				qdel(src)
 			return
 	return ..()
+
+/obj/structure/flora/rock/play_attack_sound(damage_amount, damage_type = BRUTE, damage_flag = 0)
+	switch(damage_type)
+		if(BRUTE)
+			if(damage_amount)
+				playsound(src, 'sound/effects/hit_stone.ogg', 50, TRUE)
+			else
+				playsound(src, 'sound/weapons/tap.ogg', 50, TRUE)
+		if(BURN)
+			playsound(src.loc, 'sound/items/welder.ogg', 100, TRUE)
 
 /obj/structure/flora/rock/pile
 	icon_state = "lavarocks"
