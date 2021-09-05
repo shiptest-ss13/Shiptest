@@ -148,7 +148,7 @@
 
 /datum/crafting_recipe/zip_pistol
 	name = "Zip Pistol"
-	result = /obj/item/gun/ballistic/automatic/ZipPistol
+	result = /obj/item/gun/ballistic/automatic/zip_pistol
 	reqs = list(/obj/item/stack/rods = 4,
 			/obj/item/pipe = 1,
 			/obj/item/stack/cable_coil = 15,
@@ -162,7 +162,7 @@
 
 /datum/crafting_recipe/scrap_armor
 	name = "Scrap Armor"
-	result = /obj/item/clothing/suit/armor/vest/scraparmor
+	result = /obj/item/clothing/suit/armor/vest/scrap_armor
 	time = 60
 	reqs = list(
 		/obj/item/stack/sheet/metal = 10,

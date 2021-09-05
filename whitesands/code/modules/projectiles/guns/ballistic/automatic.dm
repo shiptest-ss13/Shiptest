@@ -160,7 +160,7 @@
 	lefthand_file = 'whitesands/icons/mob/inhands/weapons/guns_left.dmi'
 	righthand_file = 'whitesands/icons/mob/inhands/weapons/guns_right.dmi'
 	item_state = "ZipPistol"
-	mag_type = /obj/item/ammo_box/magazine/ZipAmmo9mm
+	mag_type = /obj/item/ammo_box/magazine/zip_ammo_9mm
 	can_suppress = FALSE
 	actions_types = list()
 	can_bayonet = FALSE
