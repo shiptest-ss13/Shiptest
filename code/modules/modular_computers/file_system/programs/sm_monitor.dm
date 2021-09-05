@@ -47,7 +47,7 @@
 		return
 	for(var/obj/machinery/power/supermatter_crystal/S in GLOB.machines)
 		// Delaminating, not within coverage, not on a tile.
-		if (!isturf(S.loc) || !(is_station_level(S.z) || is_mining_level(S.z) || S.get_virtual_z_level() == T.get_virtual_z_level()))
+		if (!isturf(S.loc) || !S.get_virtual_z_level() == T.get_virtual_z_level())
 			continue
 		supermatters.Add(S)
 

@@ -5,6 +5,7 @@
 	icon_state = "bottle19"
 	desc = "Inject certain types of monster organs with this stabilizer to preserve their healing powers indefinitely."
 	w_class = WEIGHT_CLASS_TINY
+	custom_price = 400
 
 /obj/item/hivelordstabilizer/afterattack(obj/item/organ/M, mob/user, proximity)
 	. = ..()
@@ -114,6 +115,19 @@
 /obj/item/organ/regenerative_core/legion
 	desc = "A strange rock that crackles with power. It can be used to heal completely, but it will rapidly decay into uselessness."
 	icon_state = "legion_soul"
+	grind_results = list(/datum/reagent/ash = 30)
+
+/obj/item/organ/regenerative_core/legion/grind_requirements(obj/machinery/reagentgrinder/R)
+	return !inert
+
+/obj/item/organ/regenerative_core/legion/on_grind()
+	if(inert) // Sanity check
+		return -1
+	if (preserved)
+		grind_results = list(/datum/reagent/medicine/soulus = rand(5, 30), /datum/reagent/ash = 30)
+	else
+		grind_results = list(/datum/reagent/medicine/soulus = 30, /datum/reagent/blood = rand(5, 15))
+	. = ..()
 
 /obj/item/organ/regenerative_core/legion/Initialize()
 	. = ..()

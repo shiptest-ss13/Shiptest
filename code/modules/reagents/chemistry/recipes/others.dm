@@ -618,6 +618,10 @@ WS End */
 	results = list(/datum/reagent/mutationtoxin/abductor = 1)
 	required_reagents  = list(/datum/reagent/mutationtoxin/unstable = 1, /datum/reagent/medicine/morphine = 10, /datum/reagent/toxin/mutetoxin = 10)
 
+/datum/chemical_reaction/mutationtoxin/tesh
+	results = list(/datum/reagent/mutationtoxin/tesh = 1)
+	required_reagents  = list(/datum/reagent/mutationtoxin/unstable = 1, /datum/reagent/ammonia = 25)
+
 /datum/chemical_reaction/mutationtoxin/squid
 	results = list(/datum/reagent/mutationtoxin/squid = 1)
 	required_reagents  = list(/datum/reagent/mutationtoxin/unstable = 1, /datum/reagent/consumable/sodiumchloride = 10, /datum/reagent/water = 20)

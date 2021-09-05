@@ -23,7 +23,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	var/sexes = TRUE
 
 	///Clothing offsets. If a species has a different body than other species, you can offset clothing so they look less weird.
-	var/list/offset_features = list(OFFSET_UNIFORM = list(0,0), OFFSET_ID = list(0,0), OFFSET_GLOVES = list(0,0), OFFSET_GLASSES = list(0,0), OFFSET_EARS = list(0,0), OFFSET_SHOES = list(0,0), OFFSET_S_STORE = list(0,0), OFFSET_FACEMASK = list(0,0), OFFSET_HEAD = list(0,0), OFFSET_FACE = list(0,0), OFFSET_BELT = list(0,0), OFFSET_BACK = list(0,0), OFFSET_SUIT = list(0,0), OFFSET_NECK = list(0,0))
+	var/list/offset_features = list(OFFSET_UNIFORM = list(0,0), OFFSET_ID = list(0,0), OFFSET_GLOVES = list(0,0), OFFSET_GLASSES = list(0,0), OFFSET_EARS = list(0,0), OFFSET_SHOES = list(0,0), OFFSET_S_STORE = list(0,0), OFFSET_FACEMASK = list(0,0), OFFSET_HEAD = list(0,0), OFFSET_FACE = list(0,0), OFFSET_BELT = list(0,0), OFFSET_BACK = list(0,0), OFFSET_SUIT = list(0,0), OFFSET_NECK = list(0,0), OFFSET_ACCESSORY = list(0, 0))
 
 	///This allows races to have specific hair colors. If null, it uses the H's hair/facial hair colors. If "mutcolor", it uses the H's mutant_color. If "fixedmutcolor", it uses fixedmutcolor
 	var/hair_color
@@ -109,6 +109,8 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	var/species_gibs = "human"
 	///Can this species use numbers in its name?
 	var/allow_numbers_in_name
+	///Does this species have a special set of overlay clothing, and if so, what is the name of the folder under .../clothing/species that contains them?
+	var/species_clothing_path
 
 	///Is this species a flying species? Used as an easy check for some things
 	var/flying_species = FALSE
@@ -151,6 +153,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 
 	//Do NOT remove by setting to null. use OR make a RESPECTIVE TRAIT (removing stomach? add the NOSTOMACH trait to your species)
 	//why does it work this way? because traits also disable the downsides of not having an organ, removing organs but not having the trait will make your species die
+	//shut up you're not my mother
 
 	///Replaces default brain with a different organ
 	var/obj/item/organ/brain/mutantbrain = /obj/item/organ/brain
@@ -291,6 +294,11 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 
 		var/obj/item/organ/oldorgan = C.getorganslot(slot) //used in removing
 		var/obj/item/organ/neworgan = slot_mutantorgans[slot] //used in adding
+
+		if(isnull(neworgan)) //If null is specified, just delete the old organ and call it a day
+			QDEL_NULL(oldorgan)
+			continue
+
 		var/used_neworgan = FALSE
 		neworgan = new neworgan()
 		var/should_have = neworgan.get_availability(src) //organ proc that points back to a species trait (so if the species is supposed to have this organ)

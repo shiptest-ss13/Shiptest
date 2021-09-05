@@ -1,4 +1,3 @@
-
 /obj/item/reagent_containers/glass
 	name = "glass"
 	amount_per_transfer_from_this = 10
@@ -282,6 +281,7 @@
 		slot_equipment_priority.Insert(index, ITEM_SLOT_HEAD)
 		return
 	return ..()
+<<<<<<< HEAD
 
 /obj/item/pestle
 	name = "pestle"
@@ -396,3 +396,5 @@
 								"<span class='notice'>You splash the contents of [src] onto [target].</span>")
 			reagents.expose(target, TOUCH)
 			reagents.clear_reagents()
+=======
+>>>>>>> 9693b436ac8eb8d68349b284df72bb252209581f

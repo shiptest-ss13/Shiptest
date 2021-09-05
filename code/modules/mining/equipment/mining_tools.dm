@@ -48,6 +48,7 @@
 	toolspeed = 0.3 //mines faster than a normal pickaxe, bought from mining vendor
 	desc = "A silver-plated pickaxe that mines slightly faster than standard-issue."
 	force = 17
+	custom_price = 1000
 
 /obj/item/pickaxe/diamond
 	name = "diamond-tipped pickaxe"
@@ -56,6 +57,8 @@
 	toolspeed = 0.2
 	desc = "A pickaxe with a diamond pick head. Extremely robust at cracking rock walls and digging up dirt."
 	force = 19
+	custom_price = 1500
+	custom_premium_price = 2000
 
 /obj/item/pickaxe/drill
 	name = "mining drill"

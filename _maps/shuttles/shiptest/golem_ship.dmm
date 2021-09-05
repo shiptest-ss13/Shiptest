@@ -664,6 +664,17 @@
 /obj/structure/closet/secure_closet/personal,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
+"kd" = (
+/obj/machinery/atmospherics/pipe/manifold/orange/visible{
+	dir = 8
+	},
+/obj/structure/closet/crate,
+/obj/item/vending_refill/mining_equipment,
+/obj/item/pickaxe/rusted,
+/obj/item/card/mining_point_card,
+/obj/item/candle,
+/turf/open/floor/plating,
+/area/ship/engineering)
 "kg" = (
 /obj/machinery/light,
 /obj/effect/decal/cleanable/dirt,
@@ -1273,7 +1284,6 @@
 /turf/open/floor/mineral/plastitanium,
 /area/ship/bridge)
 "vv" = (
-/obj/machinery/mineral/equipment_vendor/golem,
 /obj/effect/turf_decal/bot,
 /obj/effect/turf_decal/trimline/yellow/line,
 /obj/effect/turf_decal/tile/neutral{
@@ -1285,6 +1295,7 @@
 /obj/effect/turf_decal/tile/neutral{
 	dir = 4
 	},
+/obj/machinery/vending/mining_equipment,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/cargo)
 "vz" = (
@@ -3577,7 +3588,7 @@ Ia
 DM
 DM
 Ia
-TE
+kd
 TE
 TQ
 Jf
