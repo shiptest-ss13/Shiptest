@@ -198,6 +198,7 @@
 /obj/item/gun/ballistic/automatic/ar
 	name = "\improper NT-ARG 'Boarder'"
 	desc = "A robust assault rifle used by Nanotrasen fighting forces."
+	fire_sound = 'sound/weapons/gun/rifle/shot.ogg'
 	icon_state = "arg"
 	item_state = "arg"
 	slot_flags = 0

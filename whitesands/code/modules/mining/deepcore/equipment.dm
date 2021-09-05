@@ -4,6 +4,8 @@
 	icon = 'whitesands/icons/obj/mining.dmi'
 	icon_state = "capsule_dcm"
 	w_class = WEIGHT_CLASS_TINY
+	custom_price = 2000
+	custom_premium_price = 2500
 	var/to_deploy = /obj/machinery/deepcore/drill
 
 /obj/item/deepcorecapsule/attack_self()

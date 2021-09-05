@@ -52,11 +52,6 @@ GLOBAL_LIST_INIT(blacklisted_cargo_types, typecacheof(list(
 	. = ..()
 	SSshuttle.supply = src
 
-/obj/docking_port/mobile/supply/canMove()
-	if(is_station_level(z))
-		return check_blacklist(shuttle_areas)
-	return ..()
-
 /obj/docking_port/mobile/supply/proc/check_blacklist(areaInstances)
 	for(var/place in areaInstances)
 		var/area/shuttle/shuttle_area = place
