@@ -3,7 +3,7 @@
 	desc = "Contains less-than-lethal ammunition."
 	ammo_type = /obj/item/ammo_casing/c9mm/rubbershot
 
-/obj/item/ammo_box/magazine/ZipAmmo9mm
+/obj/item/ammo_box/magazine/zip_ammo_9mm
 	name = "Budget pistol magazine(9mm)"
 	desc = "A commander magazine can only hold 8 rounds due to budget cuts."
 	icon = 'whitesands/icons/obj/ammo.dmi'
