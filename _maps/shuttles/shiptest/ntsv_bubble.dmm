@@ -413,15 +413,15 @@
 /area/ship/hallway/central)
 "wy" = (
 /obj/machinery/suit_storage_unit/mining/eva,
-/obj/effect/turf_decal/lumos/tile/brown/half{
-	dir = 4
-	},
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
 /obj/machinery/power/apc/auto_name/east,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 1
+	},
+/obj/effect/turf_decal/corner/brown{
+	dir = 6
 	},
 /turf/open/floor/plasteel,
 /area/ship/cargo)
@@ -703,9 +703,6 @@
 /turf/open/floor/plating,
 /area/ship/bridge)
 "Jt" = (
-/obj/effect/turf_decal/lumos/tile/brown/half{
-	dir = 8
-	},
 /obj/structure/rack,
 /obj/item/storage/bag/ore,
 /obj/item/pickaxe,
@@ -716,6 +713,9 @@
 /obj/machinery/firealarm{
 	dir = 4;
 	pixel_x = -24
+	},
+/obj/effect/turf_decal/corner/brown{
+	dir = 9
 	},
 /turf/open/floor/plasteel,
 /area/ship/cargo)
