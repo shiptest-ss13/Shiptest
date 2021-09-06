@@ -1,7 +1,7 @@
-#define ONLY_RULESET       1
+#define ONLY_RULESET 1
 #define HIGHLANDER_RULESET 2
-#define TRAITOR_RULESET    4
-#define MINOR_RULESET      8
+#define TRAITOR_RULESET 4
+#define MINOR_RULESET 8
 
 #define RULESET_STOP_PROCESSING 1
 

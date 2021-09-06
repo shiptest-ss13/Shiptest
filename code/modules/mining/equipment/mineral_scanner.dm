@@ -40,6 +40,7 @@
 	w_class = WEIGHT_CLASS_SMALL
 	flags_1 = CONDUCT_1
 	slot_flags = ITEM_SLOT_BELT
+	custom_price = 800
 	var/cooldown = 35
 	var/current_cooldown = 0
 	var/range = 7

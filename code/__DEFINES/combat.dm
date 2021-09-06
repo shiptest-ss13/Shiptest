@@ -127,19 +127,19 @@ GLOBAL_LIST_INIT(shove_disarming_types, typecacheof(list(
 //Combat object defines
 
 //Embedded objects
-#define EMBEDDED_PAIN_CHANCE 15 //Chance for embedded objects to cause pain (damage user)
-#define EMBEDDED_ITEM_FALLOUT 5 //Chance for embedded object to fall out (causing pain but removing the object)
-#define EMBED_CHANCE 45 //Chance for an object to embed into somebody when thrown (if it's sharp)
-#define EMBEDDED_PAIN_MULTIPLIER 2 //Coefficient of multiplication for the damage the item does while embedded (this*item.w_class)
-#define EMBEDDED_FALL_PAIN_MULTIPLIER 5 //Coefficient of multiplication for the damage the item does when it falls out (this*item.w_class)
-#define EMBEDDED_IMPACT_PAIN_MULTIPLIER 4 //Coefficient of multiplication for the damage the item does when it first embeds (this*item.w_class)
-#define EMBED_THROWSPEED_THRESHOLD 4 //The minimum value of an item's throw_speed for it to embed (Unless it has embedded_ignore_throwspeed_threshold set to 1)
-#define EMBEDDED_UNSAFE_REMOVAL_PAIN_MULTIPLIER 8 //Coefficient of multiplication for the damage the item does when removed without a surgery (this*item.w_class)
-#define EMBEDDED_UNSAFE_REMOVAL_TIME 30 //A Time in ticks, total removal time = (this*item.w_class)
-#define EMBEDDED_JOSTLE_CHANCE 5 //Chance for embedded objects to cause pain every time they move (jostle)
-#define EMBEDDED_JOSTLE_PAIN_MULTIPLIER 1 //Coefficient of multiplication for the damage the item does while
-#define EMBEDDED_PAIN_STAM_PCT 0.0 //This percentage of all pain will be dealt as stam damage rather than brute (0-1)
-#define EMBED_CHANCE_TURF_MOD -15 //You are this many percentage points less likely to embed into a turf (good for things glass shards and spears vs walls)
+#define EMBEDDED_PAIN_CHANCE 15	//Chance for embedded objects to cause pain (damage user)
+#define EMBEDDED_ITEM_FALLOUT 5	//Chance for embedded object to fall out (causing pain but removing the object)
+#define EMBED_CHANCE 45	//Chance for an object to embed into somebody when thrown (if it's sharp)
+#define EMBEDDED_PAIN_MULTIPLIER 2	//Coefficient of multiplication for the damage the item does while embedded (this*item.w_class)
+#define EMBEDDED_FALL_PAIN_MULTIPLIER 5	//Coefficient of multiplication for the damage the item does when it falls out (this*item.w_class)
+#define EMBEDDED_IMPACT_PAIN_MULTIPLIER 4	//Coefficient of multiplication for the damage the item does when it first embeds (this*item.w_class)
+#define EMBED_THROWSPEED_THRESHOLD 4	//The minimum value of an item's throw_speed for it to embed (Unless it has embedded_ignore_throwspeed_threshold set to 1)
+#define EMBEDDED_UNSAFE_REMOVAL_PAIN_MULTIPLIER 8	//Coefficient of multiplication for the damage the item does when removed without a surgery (this*item.w_class)
+#define EMBEDDED_UNSAFE_REMOVAL_TIME 30	//A Time in ticks, total removal time = (this*item.w_class)
+#define EMBEDDED_JOSTLE_CHANCE 5	//Chance for embedded objects to cause pain every time they move (jostle)
+#define EMBEDDED_JOSTLE_PAIN_MULTIPLIER 1	//Coefficient of multiplication for the damage the item does while
+#define EMBEDDED_PAIN_STAM_PCT 0.0	//This percentage of all pain will be dealt as stam damage rather than brute (0-1)
+#define EMBED_CHANCE_TURF_MOD -15	//You are this many percentage points less likely to embed into a turf (good for things glass shards and spears vs walls)
 
 #define EMBED_HARMLESS list("pain_mult" = 0, "jostle_pain_mult" = 0, "ignore_throwspeed_threshold" = TRUE)
 #define EMBED_HARMLESS_SUPERIOR list("pain_mult" = 0, "jostle_pain_mult" = 0, "ignore_throwspeed_threshold" = TRUE, "embed_chance" = 100, "fall_chance" = 0.1)
@@ -156,16 +156,16 @@ GLOBAL_LIST_INIT(shove_disarming_types, typecacheof(list(
 #define TRIGGER_GUARD_NORMAL 1
 //Gun bolt types
 ///Gun has a bolt, it stays closed while not cycling. The gun must be racked to have a bullet chambered when a mag is inserted.
-///  Example: c20, shotguns, m90
+/// Example: c20, shotguns, m90
 #define BOLT_TYPE_STANDARD 1
 ///Gun has a bolt, it is open when ready to fire. The gun can never have a chambered bullet with no magazine, but the bolt stays ready when a mag is removed.
-///  Example: Some SMGs, the L6
+/// Example: Some SMGs, the L6
 #define BOLT_TYPE_OPEN 2
 ///Gun has no moving bolt mechanism, it cannot be racked. Also dumps the entire contents when emptied instead of a magazine.
-///  Example: Break action shotguns, revolvers
+/// Example: Break action shotguns, revolvers
 #define BOLT_TYPE_NO_BOLT 3
 ///Gun has a bolt, it locks back when empty. It can be released to chamber a round if a magazine is in.
-///  Example: Pistols with a slide lock, some SMGs
+/// Example: Pistols with a slide lock, some SMGs
 #define BOLT_TYPE_LOCKING 4
 //Sawn off nerfs
 ///accuracy penalty of sawn off guns

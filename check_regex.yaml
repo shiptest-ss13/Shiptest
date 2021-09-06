@@ -1,0 +1,43 @@
+# There are two ways to configure/add standard cases to test:
+# Short:
+# - method: [num, 'name/message', 'regex pattern']
+#
+# Verbose:
+# - target:
+#     method: num
+#   message: name/message
+#   pattern: regex pattern
+#
+# Short requires quotation marks for the strings, the verbose must not have quotation marks
+# else the pattern and name/message will be parsed wrong and can break the script.
+# Single-quotes are recommended because they allow special characters and won't parse escapes
+#
+# Verbose is more extensible and flexible, while short is not and is a fixed pattern as
+# shown above.
+#
+# There are currently only two methods:
+#   exactly: result == target -- fail otherwise
+#   no_more: result <= target -- warn when below target, fail otherwise
+#
+
+standards:
+  - exactly: [8, 'escapes', '\\\\(red|blue|green|black|b|i[^mc])']
+  - exactly: [9, 'Del()s', '\WDel\(']
+
+  - exactly: [0, '/atom text paths', '"/atom']
+  - exactly: [1, '/area text paths', '"/area']
+  - exactly: [16, '/datum text paths', '"/datum']
+  - exactly: [4, '/mob text paths', '"/mob']
+  - exactly: [53, '/obj text paths', '"/obj']
+  - exactly: [0, '/turf text paths', '"/turf']
+  - exactly: [126, 'text2path uses', 'text2path']
+
+  - exactly: [22, 'world<< uses', 'world[ \t]*<<']
+  - exactly: [0, 'world.log<< uses', 'world.log[ \t]*<<']
+
+  - exactly: [306, 'non-bitwise << uses', '(?<!\d)(?<!\d\s)(?<!<)<<(?!=|\s\d|\d|<|\/)']
+  - exactly: [0, 'incorrect indentations', '^(?:  +)(?!\*)']
+  - exactly: [0, 'superflous whitespace', '[ \t]+$']
+  - exactly: [36, 'mixed indentation', '^( +\t+|\t+ +)']
+
+  - no_more: [0, 'indentions inside defines', '^(\s*)#define (\w*)( {2,}| ?\t+)(?!(\/\/|\/\*))']

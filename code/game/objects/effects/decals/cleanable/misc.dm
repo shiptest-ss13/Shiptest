@@ -240,3 +240,10 @@
 	desc = "Torn pieces of cardboard and paper, left over from a package."
 	icon = 'icons/obj/objects.dmi'
 	icon_state = "paper_shreds"
+
+/obj/effect/decal/cleanable/sprayweb
+	name = "silly string"
+	desc = "Liquid plastic strung about from the aftermath of some festive occasion."
+	icon = 'icons/effects/effects.dmi'
+	icon_state = "stickyweb1"
+	random_icon_states = list("stickyweb1", "stickyweb2")

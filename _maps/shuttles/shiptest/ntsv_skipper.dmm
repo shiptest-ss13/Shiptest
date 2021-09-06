@@ -104,8 +104,7 @@
 "aP" = (
 /obj/structure/table/reinforced,
 /obj/machinery/door/window/brigdoor/southright{
-	name = "Personnel Office";
-	opacity = 1
+	name = "Personnel Office"
 	},
 /obj/machinery/door/window/northleft{
 	name = "Personnel Office Exterior"
@@ -337,6 +336,7 @@
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
+/obj/machinery/holopad/emergency/command,
 /turf/open/floor/wood,
 /area/ship/crew/solgov)
 "dz" = (
@@ -448,6 +448,13 @@
 /obj/machinery/airalarm/directional/south,
 /turf/open/floor/plasteel,
 /area/ship/engineering/engine)
+"fd" = (
+/obj/effect/turf_decal/lumos/tile/brown/half{
+	dir = 1
+	},
+/obj/machinery/selling_pad,
+/turf/open/floor/plasteel,
+/area/ship/cargo)
 "fg" = (
 /obj/effect/turf_decal/lumos/tile/blue/fulltile,
 /obj/structure/cable{
@@ -727,6 +734,7 @@
 /obj/effect/turf_decal/bot,
 /obj/effect/spawner/lootdrop/maintenance/three,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/item/vending_refill/mining_equipment,
 /turf/open/floor/plasteel,
 /area/ship/cargo)
 "jL" = (
@@ -796,6 +804,17 @@
 "ks" = (
 /obj/machinery/airalarm/directional/west,
 /obj/structure/window/reinforced,
+/obj/structure/closet/secure_closet{
+	icon_state = "armory";
+	name = "armor locker"
+	},
+/obj/item/gun/energy/e_gun/mini,
+/obj/item/gun/energy/e_gun/mini,
+/obj/item/stock_parts/cell/gun/mini,
+/obj/item/stock_parts/cell/gun/mini,
+/obj/item/gun/ballistic/automatic/pistol/commander/no_mag,
+/obj/item/ammo_box/magazine/co9mm,
+/obj/item/ammo_box/magazine/co9mm,
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew)
 "kE" = (
@@ -1507,6 +1526,7 @@
 	pixel_y = 1
 	},
 /obj/item/areaeditor/shuttle,
+/obj/machinery/recharger,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "te" = (
@@ -2031,6 +2051,7 @@
 /area/ship/crew/canteen)
 "zR" = (
 /obj/structure/closet/secure_closet/captains,
+/obj/item/stock_parts/cell/gun,
 /turf/open/floor/carpet/royalblue,
 /area/ship/crew)
 "Aa" = (
@@ -2949,6 +2970,7 @@
 /obj/effect/turf_decal/lumos/tile/brown/fullcorner{
 	dir = 8
 	},
+/obj/machinery/computer/selling_pad_control,
 /turf/open/floor/plasteel,
 /area/ship/cargo)
 "LC" = (
@@ -3272,7 +3294,9 @@
 /obj/effect/turf_decal/lumos/tile/yellow/checker{
 	dir = 4
 	},
-/obj/structure/chair/stool/bar,
+/obj/structure/chair/stool/bar{
+	dir = 4
+	},
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
 "PG" = (
@@ -3315,6 +3339,8 @@
 /obj/structure/window/reinforced{
 	dir = 8
 	},
+/obj/item/storage/box/gloves,
+/obj/item/storage/belt/medical,
 /turf/open/floor/plasteel/showroomfloor,
 /area/ship/medical)
 "PT" = (
@@ -3559,6 +3585,21 @@
 /obj/machinery/air_sensor/atmos/air_tank,
 /turf/open/floor/engine/air,
 /area/ship/engineering/atmospherics)
+"TT" = (
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/obj/effect/turf_decal/stripes/line{
+	dir = 4
+	},
+/obj/effect/turf_decal/lumos/tile/brown/half{
+	dir = 4
+	},
+/obj/machinery/computer/cargo/express{
+	dir = 1
+	},
+/turf/open/floor/plasteel,
+/area/ship/cargo)
 "Uj" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -3631,6 +3672,7 @@
 /obj/item/radio/intercom{
 	pixel_x = 28
 	},
+/obj/machinery/pipedispenser,
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/atmospherics)
 "Vg" = (
@@ -4434,7 +4476,7 @@ ov
 GF
 HN
 Rd
-FA
+fd
 Kf
 Kf
 Kf
@@ -4467,7 +4509,7 @@ KN
 Rd
 Lz
 CQ
-CQ
+TT
 vQ
 oC
 uQ

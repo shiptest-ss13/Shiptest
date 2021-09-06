@@ -1108,8 +1108,8 @@
 /turf/closed/wall/mineral/titanium,
 /area/ship/crew/dorm)
 "oN" = (
-/obj/machinery/suit_storage_unit/ce,
 /obj/effect/turf_decal/box,
+/obj/machinery/suit_storage_unit/engine,
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/communications)
 "oY" = (
@@ -2490,7 +2490,7 @@
 /turf/open/floor/carpet/nanoweave/orange,
 /area/ship/hallway/aft)
 "GD" = (
-/obj/machinery/mineral/equipment_vendor,
+/obj/machinery/vending/mining_equipment,
 /turf/open/floor/plasteel,
 /area/ship/cargo)
 "GK" = (
@@ -3399,7 +3399,7 @@
 /turf/open/floor/plasteel,
 /area/ship/storage)
 "RA" = (
-/obj/machinery/holopad/emergency,
+/obj/machinery/holopad,
 /turf/open/floor/wood,
 /area/ship/crew/solgov)
 "RC" = (
@@ -3866,7 +3866,7 @@
 /obj/docking_port/mobile{
 	dir = 2;
 	launch_status = 0;
-	port_direction = 8;
+	port_direction = 8
 	},
 /obj/machinery/door/firedoor/heavy,
 /turf/open/floor/plasteel/dark,

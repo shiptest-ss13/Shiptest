@@ -382,6 +382,7 @@
 "gX" = (
 /obj/effect/turf_decal/bot,
 /obj/machinery/portable_atmospherics/pump,
+/obj/machinery/atmospherics/components/unary/portables_connector/layer4,
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "hd" = (
@@ -1537,6 +1538,7 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/atmospherics/components/binary/valve/digital/on/layer2,
+/obj/machinery/atmospherics/pipe/simple/yellow/visible/layer4,
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "uI" = (
@@ -1828,6 +1830,7 @@
 "xY" = (
 /obj/effect/turf_decal/bot,
 /obj/machinery/portable_atmospherics/scrubber,
+/obj/machinery/atmospherics/components/unary/portables_connector/layer4,
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "xZ" = (
@@ -2510,6 +2513,7 @@
 /obj/machinery/atmospherics/pipe/simple/green/visible{
 	dir = 4
 	},
+/obj/machinery/atmospherics/pipe/simple/yellow/visible/layer4,
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "GN" = (
@@ -2923,6 +2927,7 @@
 	icon_state = "0-8"
 	},
 /obj/machinery/atmospherics/components/binary/valve/digital,
+/obj/machinery/atmospherics/pipe/simple/yellow/visible/layer4,
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "MS" = (
@@ -2972,6 +2977,7 @@
 /area/ship/engineering/communications)
 "Nz" = (
 /obj/effect/turf_decal/bot,
+/obj/machinery/atmospherics/components/binary/valve/digital/layer4,
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "NF" = (
@@ -3049,6 +3055,7 @@
 	pixel_x = -28
 	},
 /obj/effect/spawner/lootdrop/maintenance/three,
+/obj/item/vending_refill/mining_equipment,
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "OM" = (
@@ -3314,6 +3321,7 @@
 /obj/machinery/atmospherics/pipe/simple/green/visible{
 	dir = 10
 	},
+/obj/machinery/atmospherics/pipe/simple/yellow/visible/layer4,
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "RW" = (
