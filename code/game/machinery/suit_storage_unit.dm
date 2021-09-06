@@ -528,23 +528,23 @@
 // Mapping helper unit takes whatever lies on top of it
 /obj/machinery/suit_storage_unit/inherit/Initialize(mapload)
 	. = ..()
-	wires = new /datum/wires/suit_storage_unit(src)
 	if(mapload)
-		addtimer(CALLBACK(src, .proc/inherit_contents), 0)
+		return INITIALIZE_HINT_LATELOAD
 
-/obj/machinery/suit_storage_unit/inherit/proc/inherit_contents()
+/obj/machinery/suit_storage_unit/inherit/LateInitialize()
+	. = ..()
 	var/turf/T = src.loc
 	for(var/atom/movable/AM in T)
-		if(istype(AM, /obj/item/clothing/suit/space))
+		if(istype(AM, /obj/item/clothing/suit/space) && !suit)
 			AM.forceMove(src)
 			suit = AM
-		else if(istype(AM, /obj/item/clothing/head/helmet/space))
+		else if(istype(AM, /obj/item/clothing/head/helmet/space) && !helmet)
 			AM.forceMove(src)
 			helmet = AM
-		else if(istype(AM, /obj/item/clothing/mask))
+		else if(istype(AM, /obj/item/clothing/mask) && !mask)
 			AM.forceMove(src)
 			mask = AM
-		else if(istype(AM, /obj/item))
+		else if(istype(AM, /obj/item) && !storage)
 			AM.forceMove(src)
 			storage = AM
 	update_icon()
