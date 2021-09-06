@@ -214,7 +214,7 @@ WS End*/
 
 /******OXY******/
 /*Suffix: -mol*/
-#define	CONVERMOL_RATIO 5		//# Oxygen damage to result in 1 tox
+#define CONVERMOL_RATIO 5		//# Oxygen damage to result in 1 tox
 
 /datum/reagent/medicine/C2/convermol
 	name = "Convermol"

@@ -1,7 +1,7 @@
 
-#define A_BIG_NUMBER			9999999
-#define STATE_COUNT_NORMAL		4
-#define STATE_COUNT_DIAGONAL	7
+#define A_BIG_NUMBER 9999999
+#define STATE_COUNT_NORMAL 4
+#define STATE_COUNT_DIAGONAL 7
 
 
 /mob/verb/ChooseDMI(dmi as file)
