@@ -248,7 +248,7 @@
 
 /obj/item/organ/brain/mmi_holder/Insert(mob/living/carbon/C, special = 0, no_id_transfer = FALSE)
 	if(special)
-		return
+		return ..()
 	if(!stored_mmi)
 		qdel(src)
 		return
@@ -257,7 +257,7 @@
 
 /obj/item/organ/brain/mmi_holder/Remove(mob/living/user, special = 0)
 	if(special)
-		return
+		return ..()
 	if(!stored_mmi)
 		. = ..()
 		qdel(src)
