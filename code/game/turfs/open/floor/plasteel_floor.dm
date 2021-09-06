@@ -105,6 +105,7 @@
 	icon = 'whitesands/icons/turf/floors.dmi'
 	icon_state = "lino"
 	tiled_dirt = FALSE
+	floor_tile = /obj/item/stack/tile/plasteel/grimy
 
 /turf/open/floor/plasteel/cult
 	icon_state = "cult"

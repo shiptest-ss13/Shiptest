@@ -377,10 +377,17 @@
 	turf_type = /turf/open/floor/plastic
 
 /obj/item/stack/tile/plasteel/dark
+	name = "dark tile"
 	turf_type = /turf/open/floor/plasteel/dark
-
+	merge_type = /obj/item/stack/tile/plasteel/dark
 /obj/item/stack/tile/plasteel/white
+	name = "white tile"
 	turf_type = /turf/open/floor/plasteel/white
+	merge_type = /obj/item/stack/tile/plasteel/white
+/obj/item/stack/tile/plasteel/grimy
+	name = "grimy floor tile"
+	turf_type = /turf/open/floor/plasteel/grimy
+	merge_type = /obj/item/stack/tile/plasteel/grimy
 
 /obj/item/stack/tile/material
 	name = "floor tile"
