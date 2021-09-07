@@ -1,4 +1,4 @@
-//HUD styles.  Index order defines how they are cycled in F12.
+//HUD styles. Index order defines how they are cycled in F12.
 /// Standard hud
 #define HUD_STYLE_STANDARD 1
 /// Reduced hud (just hands and intent switcher)

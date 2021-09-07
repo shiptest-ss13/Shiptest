@@ -20,7 +20,7 @@
 		return FALSE
 	var/count = 0
 	for(var/obj/machinery/power/apc/C in GLOB.apcs_list)
-		if(C.cell && is_station_level(C.z))
+		if(C.cell)
 			if(C.malfai == aiOwner.current)
 				count++;
 

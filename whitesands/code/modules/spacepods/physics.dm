@@ -41,10 +41,10 @@
 				continue
 			drag += 0.001
 			var/floating = FALSE
-			if(T.has_gravity() && !brakes && velocity_mag > 0.1 && cell && cell.use((is_mining_level(z) ? 3 : 15) * time))
+			if(T.has_gravity() && !brakes && velocity_mag > 0.1 && cell && cell.use(10 * time))
 				floating = TRUE // want to fly this shit on the station? Have fun draining your battery.
 			if((!floating && T.has_gravity()) || brakes) // brakes are a kind of magboots okay?
-				drag += is_mining_level(z) ? 0.1 : 0.5 // some serious drag. Damn. Except lavaland, it has less gravity or something
+				drag += 0.25 // some serious drag. Damn.
 				if(velocity_mag > 5 && prob(velocity_mag * 4) && istype(T, /turf/open/floor))
 					var/turf/open/floor/TF = T
 					TF.make_plating() // pull up some floor tiles. Stop going so fast, ree.

@@ -28,6 +28,7 @@
 	attack_verb_simple = "drill"
 	attack_sound = 'sound/weapons/circsawhit.ogg'
 	sentience_type = SENTIENCE_MINEBOT
+	custom_price = 800
 	speak_emote = list("states")
 	wanted_objects = list(
 		/obj/item/stack/ore/diamond, /obj/item/stack/ore/gold, /obj/item/stack/ore/silver,
@@ -307,6 +308,7 @@
 	icon_state = "door_electronics"
 	icon = 'icons/obj/module.dmi'
 	sentience_type = SENTIENCE_MINEBOT
+	custom_price = 1000
 	var/base_health_add = 5 //sentient minebots are penalized for beign sentient; they have their stats reset to normal plus these values
 	var/base_damage_add = 1 //this thus disables other minebot upgrades
 	var/base_speed_add = 1

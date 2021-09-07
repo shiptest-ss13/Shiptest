@@ -217,6 +217,7 @@
 	icon_state = "brute"
 	item_state = "firstaid-brute"
 	damagetype_healed = BRUTE
+	custom_price = 600
 
 /obj/item/storage/firstaid/brute/suicide_act(mob/living/carbon/user)
 	user.visible_message("<span class='suicide'>[user] begins beating [user.p_them()]self over the head with \the [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")

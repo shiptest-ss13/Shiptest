@@ -10,7 +10,7 @@
 
 #define NANITE_CLOUD_TOGGLE 1
 #define NANITE_CLOUD_DISABLE 2
-#define NANITE_CLOUD_ENABLE	3
+#define NANITE_CLOUD_ENABLE 3
 
 ///Nanite Protocol types
 #define NANITE_PROTOCOL_REPLICATION "nanite_replication"

@@ -274,20 +274,13 @@
 	category = list("Research Machinery")
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
 
-/datum/design/board/rdservercontrol
-	name = "Computer Design (R&D Server Control Console Board)"
-	desc = "The circuit board for an R&D Server Control Console."
-	id = "rdservercontrol"
-	build_path = /obj/item/circuitboard/computer/rdservercontrol
-	category = list("Research Machinery")
-	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
-
 /datum/design/board/rdserver
 	name = "Machine Design (R&D Server Board)"
 	desc = "The circuit board for an R&D Server."
 	id = "rdserver"
+	build_type = AUTOLATHE | IMPRINTER
 	build_path = /obj/item/circuitboard/machine/rdserver
-	category = list("Research Machinery")
+	category = list("Research Machinery", "initial", "Equipment")
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/board/mechfab
@@ -479,7 +472,7 @@
 	name = "Machine Design (Mining Rewards Vendor Board)"
 	desc = "The circuit board for a Mining Rewards Vendor."
 	id = "mining_equipment_vendor"
-	build_path = /obj/item/circuitboard/machine/mining_equipment_vendor
+	build_path = /obj/item/circuitboard/machine/vending/mining_equipment
 	category = list ("Misc. Machinery")
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE | DEPARTMENTAL_FLAG_CARGO
 
@@ -585,6 +578,14 @@
 	id = "ore_silo"
 	build_path = /obj/item/circuitboard/machine/ore_silo
 	category = list ("Research Machinery")
+	departmental_flags = DEPARTMENTAL_FLAG_CARGO
+
+/datum/design/board/selling_pad
+	name = "Machine Design (Cargo Hold Pad)"
+	desc = "The circuit board for a Cargo Hold Pad."
+	id = "selling_pad"
+	build_path = /obj/item/circuitboard/machine/selling_pad
+	category = list ("Misc. Machinery")
 	departmental_flags = DEPARTMENTAL_FLAG_CARGO
 
 /datum/design/board/paystand

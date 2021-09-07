@@ -279,10 +279,7 @@
 			if(!D.onCentCom())
 				return FALSE
 		else //Otherwise disk is safe when on station
-			var/turf/T = get_turf(D)
-			if(!T || !is_station_level(T.z))
-				return FALSE
-	return TRUE
+			return FALSE
 
 /datum/team/nuclear/proc/operatives_dead()
 	for(var/I in members)

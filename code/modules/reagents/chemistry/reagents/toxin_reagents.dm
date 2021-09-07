@@ -50,7 +50,7 @@
 	C.apply_effect(5,EFFECT_IRRADIATE,0)
 	return ..()
 
-#define	LIQUID_PLASMA_BP (50+T0C)
+#define LIQUID_PLASMA_BP (50+T0C)
 
 /datum/reagent/toxin/plasma
 	name = "Plasma"

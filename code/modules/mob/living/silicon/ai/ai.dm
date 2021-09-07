@@ -163,7 +163,6 @@
 		/mob/living/silicon/ai/proc/set_automatic_say_channel))
 
 	GLOB.ai_list += src
-	GLOB.shuttle_caller_list += src
 
 	builtInCamera = new (src)
 	builtInCamera.network = list("ss13")
@@ -194,8 +193,6 @@
 
 /mob/living/silicon/ai/Destroy()
 	GLOB.ai_list -= src
-	GLOB.shuttle_caller_list -= src
-	SSshuttle.autoEvac()
 	qdel(eyeobj) // No AI, no Eye
 	malfhack = null
 
@@ -333,7 +330,7 @@
 	if(!target)
 		return
 
-	if ((ai.get_virtual_z_level() != target.get_virtual_z_level()) && !is_station_level(ai.z))
+	if (ai.get_virtual_z_level() != target.get_virtual_z_level())
 		return FALSE
 
 	if (istype(loc, /obj/item/aicard))
@@ -579,9 +576,9 @@
 
 	var/mob/living/silicon/ai/U = usr
 
-	for (var/obj/machinery/camera/C in GLOB.cameranet.cameras)
+	for (var/obj/machinery/camera/C as anything in GLOB.cameranet.cameras)
 		var/list/tempnetwork = C.network
-		if(!(is_station_level(C.z) || is_mining_level(C.z) || ("ss13" in tempnetwork)))
+		if(!(C.get_virtual_z_level() == get_virtual_z_level() || ("ss13" in tempnetwork)))
 			continue
 		if(!C.can_use())
 			continue
@@ -600,7 +597,7 @@
 	if(isnull(network))
 		network = old_network // If nothing is selected
 	else
-		for(var/obj/machinery/camera/C in GLOB.cameranet.cameras)
+		for(var/obj/machinery/camera/C as anything in GLOB.cameranet.cameras)
 			if(!C.can_use())
 				continue
 			if(network in C.network)

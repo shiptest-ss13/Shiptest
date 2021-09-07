@@ -53,7 +53,7 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/pod/light,
 /area/ship/bridge)
-"br" = (
+"bq" = (
 /obj/effect/turf_decal/bot,
 /obj/structure/closet/crate/critter{
 	name = "DANGER: DO NOT OPEN"
@@ -388,6 +388,11 @@
 	},
 /turf/open/floor/engine/hull,
 /area/ship/external)
+"pb" = (
+/obj/effect/turf_decal/box,
+/obj/machinery/selling_pad,
+/turf/open/floor/pod/light,
+/area/ship/cargo)
 "pm" = (
 /obj/effect/turf_decal/stripes/end{
 	dir = 1
@@ -1249,16 +1254,6 @@
 /obj/machinery/mineral/ore_redemption,
 /turf/open/floor/pod/light,
 /area/ship/cargo)
-"Ks" = (
-/obj/machinery/computer/piratepad_control,
-/obj/effect/turf_decal/bot,
-/turf/open/floor/pod/light,
-/area/ship/cargo)
-"KD" = (
-/obj/machinery/piratepad,
-/obj/effect/turf_decal/box,
-/turf/open/floor/pod/light,
-/area/ship/cargo)
 "KS" = (
 /obj/machinery/button/door{
 	id = "piratecargo";
@@ -1429,6 +1424,11 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/mineral/plastitanium,
+/area/ship/cargo)
+"Pd" = (
+/obj/effect/turf_decal/bot,
+/obj/machinery/computer/selling_pad_control,
+/turf/open/floor/pod/light,
 /area/ship/cargo)
 "Pf" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
@@ -2174,7 +2174,7 @@ Ko
 Nz
 Sj
 WC
-br
+bq
 dD
 fd
 "}
@@ -2197,7 +2197,7 @@ Cj
 Ey
 FF
 HU
-Ks
+Pd
 NN
 Sw
 WK
@@ -2224,7 +2224,7 @@ Cx
 EG
 FF
 Id
-KD
+pb
 NS
 SA
 WZ
