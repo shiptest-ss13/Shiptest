@@ -18,7 +18,7 @@
 	var/list/conferred_embed = EMBED_HARMLESS
 	var/overwrite_existing = FALSE
 
-/obj/item/stack/tape/merge(obj/item/stack/S) //Because we have unique childern, we need to add an additional fail case
+/obj/item/stack/tape/merge(obj/item/stack/S) //Because we have unique children, we need to add an additional fail case
 	if(src.type != S.type)
 		return
 	. = ..()
