@@ -33,13 +33,13 @@
 	var/toolbox = /obj/item/storage/toolbox/mechanical
 	var/toolbox_color = ""
 
-	#define HULL_BREACH		1
-	#define LINE_SPACE_MODE		2
-	#define FIX_TILE		3
-	#define AUTO_TILE		4
-	#define PLACE_TILE		5
-	#define REPLACE_TILE		6
-	#define TILE_EMAG		7
+	#define HULL_BREACH 1
+	#define LINE_SPACE_MODE 2
+	#define FIX_TILE 3
+	#define AUTO_TILE 4
+	#define PLACE_TILE 5
+	#define REPLACE_TILE 6
+	#define TILE_EMAG 7
 
 /mob/living/simple_animal/bot/floorbot/Initialize(mapload, new_toolbox_color)
 	. = ..()

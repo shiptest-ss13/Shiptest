@@ -10,6 +10,7 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	force = 15
 	throwforce = 10
+	custom_price = 800
 	var/burst_time = 30
 	var/fieldlimit = 4
 	var/list/fields = list()
@@ -22,6 +23,8 @@
 	item_state = "resonator_u"
 	fieldlimit = 6
 	quick_burst_mod = 1
+	custom_price = 2000
+	custom_premium_price = 2500
 
 /obj/item/resonator/attack_self(mob/user)
 	if(burst_time == 50)

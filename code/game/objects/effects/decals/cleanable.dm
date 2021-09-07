@@ -28,14 +28,10 @@
 
 	addtimer(CALLBACK(src, /datum.proc/_AddComponent, list(/datum/component/beauty, beauty)), 0)
 
-	var/turf/T = get_turf(src)
-	if(T && is_station_level(T.z))
-		SSblackbox.record_feedback("tally", "station_mess_created", 1, name)
+	SSblackbox.record_feedback("tally", "station_mess_created", 1, name)
 
 /obj/effect/decal/cleanable/Destroy()
-	var/turf/T = get_turf(src)
-	if(T && is_station_level(T.z))
-		SSblackbox.record_feedback("tally", "station_mess_destroyed", 1, name)
+	SSblackbox.record_feedback("tally", "station_mess_destroyed", 1, name)
 	return ..()
 
 /obj/effect/decal/cleanable/proc/replace_decal(obj/effect/decal/cleanable/C) // Returns true if we should give up in favor of the pre-existing decal

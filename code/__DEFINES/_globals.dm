@@ -1,20 +1,20 @@
 //See also controllers/globals.dm
 
 /// Creates a global initializer with a given InitValue expression, do not use
-#define GLOBAL_MANAGED(X, InitValue)\
-/datum/controller/global_vars/proc/InitGlobal##X(){\
-	##X = ##InitValue;\
-	gvars_datum_init_order += #X;\
+#define GLOBAL_MANAGED(X, InitValue) \
+/datum/controller/global_vars/proc/InitGlobal##X(){ \
+	##X = ##InitValue; \
+	gvars_datum_init_order += #X; \
 }
 /// Creates an empty global initializer, do not use
 #define GLOBAL_UNMANAGED(X) /datum/controller/global_vars/proc/InitGlobal##X() { return; }
 
 /// Prevents a given global from being VV'd
 #ifndef TESTING
-#define GLOBAL_PROTECT(X)\
-/datum/controller/global_vars/InitGlobal##X(){\
-	..();\
-	gvars_datum_protected_varlist[#X] = TRUE;\
+#define GLOBAL_PROTECT(X) \
+/datum/controller/global_vars/InitGlobal##X(){ \
+	..(); \
+	gvars_datum_protected_varlist[#X] = TRUE; \
 }
 #else
 #define GLOBAL_PROTECT(X)

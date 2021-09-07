@@ -1,7 +1,7 @@
 /client/proc/one_click_antag()
 	set name = "Create Antagonist"
 	set desc = "Auto-create an antagonist of your choice"
-	set category = "Admin - Events"
+	set category = "Admin.Events"
 
 	if(holder)
 		holder.one_click_antag()
@@ -27,15 +27,11 @@
 	popup.set_content(dat)
 	popup.open()
 
-/datum/admins/proc/isReadytoRumble(mob/living/carbon/human/applicant, targetrole, onstation = TRUE, conscious = TRUE)
+/datum/admins/proc/isReadytoRumble(mob/living/carbon/human/applicant, targetrole, conscious = TRUE)
 	if(applicant.mind.special_role)
 		return FALSE
 	if(!(targetrole in applicant.client.prefs.be_special))
 		return FALSE
-	if(onstation)
-		var/turf/T = get_turf(applicant)
-		if(!is_station_level(T.z))
-			return FALSE
 	if(conscious && applicant.stat) //incase you don't care about a certain antag being unconcious when made, ie if they have selfhealing abilities.
 		return FALSE
 	if(!considered_alive(applicant.mind) || considered_afk(applicant.mind)) //makes sure the player isn't a zombie, brain, or just afk all together

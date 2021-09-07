@@ -114,6 +114,14 @@
 //ATTACK HAND IGNORING PARENT RETURN VALUE
 /mob/living/carbon/attack_hand(mob/living/carbon/human/user)
 
+	for(var/datum/surgery/S in surgeries)
+		if(body_position != LYING_DOWN && S.lying_required)
+			continue
+		if(!S.self_operable && user == src)
+			continue
+		if(S.next_step(user, user.a_intent))
+			return TRUE
+
 	for(var/thing in diseases)
 		var/datum/disease/D = thing
 		if(D.spread_flags & DISEASE_SPREAD_CONTACT_SKIN)
