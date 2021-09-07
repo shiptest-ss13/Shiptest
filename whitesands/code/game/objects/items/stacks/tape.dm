@@ -21,7 +21,7 @@
 /obj/item/stack/tape/merge(obj/item/stack/S) //Because we have unique children, we need to add an additional fail case
 	if(src.type != S.type)
 		return
-	. = ..()
+	return ..()
 
 /obj/item/stack/tape/attack(mob/living/carbon/C, mob/living/user)
 	if(!istype(C))
