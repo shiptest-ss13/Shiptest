@@ -70,8 +70,6 @@
 	if (!T)
 		return FALSE
 	var/area/A = T.loc
-	if (is_station_level(T.z))
-		return TRUE
 	if (is_centcom_level(T.z))
 		if (is_type_in_typecache(A, disallowed_centcom_areas))
 			return FALSE

@@ -107,6 +107,8 @@
 	var/obj/item/tank/jetpack/suit/jetpack = null
 	var/hardsuit_type
 	pocket_storage_component_path = FALSE //WS Edit - Exowear Pockets
+	greyscale_colors = list(list(10, 20), list(14, 15), list(22, 12))
+	greyscale_icon_state = "hardsuit"
 
 
 /obj/item/clothing/suit/space/hardsuit/Initialize()
@@ -278,6 +280,7 @@
 	allowed = list(/obj/item/flashlight, /obj/item/tank/internals, /obj/item/storage/bag/ore, /obj/item/pickaxe)
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/mining
 	heat_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
+	custom_price = 2000
 
 /obj/item/clothing/suit/space/hardsuit/mining/Initialize()
 	. = ..()

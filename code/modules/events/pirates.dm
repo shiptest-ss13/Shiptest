@@ -108,15 +108,12 @@
 
 /obj/machinery/shuttle_scrambler/process()
 	if(active)
-		if(is_station_level(z))
-			var/datum/bank_account/D = SSeconomy.get_dep_account(ACCOUNT_CAR)
-			if(D)
-				var/siphoned = min(D.account_balance,siphon_per_tick)
-				D.adjust_money(-siphoned)
-				credits_stored += siphoned
-			interrupt_research()
-		else
-			return
+		var/datum/bank_account/D = SSeconomy.get_dep_account(ACCOUNT_CAR)
+		if(D)
+			var/siphoned = min(D.account_balance,siphon_per_tick)
+			D.adjust_money(-siphoned)
+			credits_stored += siphoned
+		interrupt_research()
 	else
 		STOP_PROCESSING(SSobj,src)
 
@@ -414,9 +411,7 @@
 
 /datum/export/pirate/parrot/find_loot()
 	for(var/mob/living/simple_animal/parrot/P in GLOB.alive_mob_list)
-		var/turf/T = get_turf(P)
-		if(T && is_station_level(T.z))
-			return P
+		return P
 
 /datum/export/pirate/cash
 	cost = 1

@@ -41,10 +41,6 @@
 	/// The last lines used for changing the status display
 	var/static/last_status_display
 
-/obj/machinery/computer/communications/Initialize()
-	. = ..()
-	GLOB.shuttle_caller_list += src
-
 /// Are we NOT a silicon, AND we're logged in as the captain?
 /obj/machinery/computer/communications/proc/authenticated_as_non_silicon_captain(mob/user)
 	if (issilicon(user))
@@ -450,7 +446,7 @@
 /obj/machinery/computer/communications/proc/has_communication()
 	var/turf/current_turf = get_turf(src)
 	var/z_level = current_turf.z
-	return is_station_level(z_level) || is_centcom_level(z_level) || is_reserved_level(z_level)
+	return istype(get_area(src), /area/ship) || is_centcom_level(z_level) || is_reserved_level(z_level)
 
 /obj/machinery/computer/communications/proc/set_state(mob/user, new_state)
 	if (issilicon(user))
@@ -507,11 +503,6 @@
 			status_signal.data["picture_state"] = data1
 
 	frequency.post_signal(src, status_signal)
-
-/obj/machinery/computer/communications/Destroy()
-	GLOB.shuttle_caller_list -= src
-	SSshuttle.autoEvac()
-	return ..()
 
 /// Override the cooldown for special actions
 /// Used in places such as CentCom messaging back so that the crew can answer right away

@@ -239,9 +239,8 @@
 		line1 = "CARGO"
 		line2 = "shutl?"
 	else if(SSshuttle.supply.mode == SHUTTLE_IDLE)
-		if(is_station_level(SSshuttle.supply.z))
-			line1 = "CARGO"
-			line2 = "Docked"
+		line1 = "CARGO"
+		line2 = "Docked"
 	else
 		line1 = "CARGO"
 		line2 = SSshuttle.supply.getTimerStr()
@@ -254,8 +253,7 @@
 	var/obj/docking_port/mobile/shuttle = SSshuttle.supply
 	var/shuttleMsg = null
 	if (shuttle.mode == SHUTTLE_IDLE)
-		if (is_station_level(shuttle.z))
-			shuttleMsg = "Docked"
+		shuttleMsg = "Docked"
 	else
 		shuttleMsg = "[shuttle.getModeStr()]: [shuttle.getTimerStr()]"
 	if (shuttleMsg)

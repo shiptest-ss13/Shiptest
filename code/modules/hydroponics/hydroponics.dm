@@ -1,6 +1,6 @@
 #define TRAY_NAME_UPDATE name = myseed ? "[initial(name)] ([myseed.plantname])" : initial(name)
 #define CYCLE_DELAY_DEFAULT 200			//About 10 seconds / cycle
-#define CYCLE_DELAY_SLOW    500			//About 25 seconds / cycle
+#define CYCLE_DELAY_SLOW 500			//About 25 seconds / cycle
 
 /obj/machinery/hydroponics
 	name = "hydroponics tray"

@@ -1,30 +1,30 @@
 //update_state
-#define UPSTATE_CELL_IN		(1<<0)
-#define UPSTATE_OPENED1		(1<<1)
-#define UPSTATE_OPENED2		(1<<2)
-#define UPSTATE_MAINT		(1<<3)
-#define UPSTATE_BROKE		(1<<4)
-#define UPSTATE_BLUESCREEN	(1<<5)
-#define UPSTATE_WIREEXP		(1<<6)
-#define UPSTATE_ALLGOOD		(1<<7)
+#define UPSTATE_CELL_IN (1<<0)
+#define UPSTATE_OPENED1 (1<<1)
+#define UPSTATE_OPENED2 (1<<2)
+#define UPSTATE_MAINT (1<<3)
+#define UPSTATE_BROKE (1<<4)
+#define UPSTATE_BLUESCREEN (1<<5)
+#define UPSTATE_WIREEXP (1<<6)
+#define UPSTATE_ALLGOOD (1<<7)
 
 #define APC_RESET_EMP "emp"
 
 //update_overlay
-#define APC_UPOVERLAY_CHARGEING0	(1<<0)
-#define APC_UPOVERLAY_CHARGEING1	(1<<1)
-#define APC_UPOVERLAY_CHARGEING2	(1<<2)
-#define APC_UPOVERLAY_EQUIPMENT0	(1<<3)
-#define APC_UPOVERLAY_EQUIPMENT1	(1<<4)
-#define APC_UPOVERLAY_EQUIPMENT2	(1<<5)
-#define APC_UPOVERLAY_LIGHTING0		(1<<6)
-#define APC_UPOVERLAY_LIGHTING1		(1<<7)
-#define APC_UPOVERLAY_LIGHTING2		(1<<8)
-#define APC_UPOVERLAY_ENVIRON0		(1<<9)
-#define APC_UPOVERLAY_ENVIRON1		(1<<10)
-#define APC_UPOVERLAY_ENVIRON2		(1<<11)
-#define APC_UPOVERLAY_LOCKED		(1<<12)
-#define APC_UPOVERLAY_OPERATING		(1<<13)
+#define APC_UPOVERLAY_CHARGEING0 (1<<0)
+#define APC_UPOVERLAY_CHARGEING1 (1<<1)
+#define APC_UPOVERLAY_CHARGEING2 (1<<2)
+#define APC_UPOVERLAY_EQUIPMENT0 (1<<3)
+#define APC_UPOVERLAY_EQUIPMENT1 (1<<4)
+#define APC_UPOVERLAY_EQUIPMENT2 (1<<5)
+#define APC_UPOVERLAY_LIGHTING0 (1<<6)
+#define APC_UPOVERLAY_LIGHTING1 (1<<7)
+#define APC_UPOVERLAY_LIGHTING2 (1<<8)
+#define APC_UPOVERLAY_ENVIRON0 (1<<9)
+#define APC_UPOVERLAY_ENVIRON1 (1<<10)
+#define APC_UPOVERLAY_ENVIRON2 (1<<11)
+#define APC_UPOVERLAY_LOCKED (1<<12)
+#define APC_UPOVERLAY_OPERATING (1<<13)
 
 #define APC_ELECTRONICS_MISSING 0 // None
 #define APC_ELECTRONICS_INSTALLED 1 // Installed but not secured
@@ -1143,8 +1143,6 @@
 		return
 	if(!malf.can_shunt)
 		to_chat(malf, "<span class='warning'>You cannot shunt!</span>")
-		return
-	if(!is_station_level(z))
 		return
 	occupier = new /mob/living/silicon/ai(src, malf.laws, malf) //DEAR GOD WHY?	//IKR????
 	occupier.adjustOxyLoss(malf.getOxyLoss())

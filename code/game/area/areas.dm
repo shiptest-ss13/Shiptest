@@ -110,7 +110,7 @@ GLOBAL_LIST_EMPTY(teleportlocs)
 		if (!AR.contents.len)
 			continue
 		var/turf/picked = AR.contents[1]
-		if (picked && is_station_level(picked.z))
+		if (picked)
 			GLOB.teleportlocs[AR.name] = AR
 
 	sortTim(GLOB.teleportlocs, /proc/cmp_text_asc)
