@@ -12,7 +12,8 @@
 	///Is this for viewing only?
 	var/viewer = FALSE
 	// DEBUG REMOVE
-	var/interp_test = TRUE
+	var/reset_system_on_every_load = FALSE
+	var/system_genmode = SYS_GENMODE_NORMAL
 	var/zoom_level = 1
 
 /obj/machinery/computer/helm/Initialize(mapload)
@@ -55,20 +56,21 @@
 
 		// Open UI
 		ui = new(user, src, "OvermapView", name)
+		// DEBUG REMOVE
+		if(reset_system_on_every_load)
+			QDEL_NULL(SSovermap.primary_system)
 		ui.open()
 
 /obj/machinery/computer/helm/ui_data(mob/user)
 	. = list()
-	// DEBUG BEGIN
 	if(!SSovermap.primary_system)
-		SSovermap.primary_system = new /datum/overmap_system()
+		SSovermap.primary_system = new /datum/overmap_system(system_genmode)
 
-	.["interp_test"] = interp_test
 	.["zoom_level"] = zoom_level
-	.["body_information"] = SSovermap.primary_system.get_data_for_user(user)
+	.["body_information"] = SSovermap.primary_system.get_map_data_for_user(user)
+	.["focused_body"] = REF(SSovermap.primary_system.all_children[3])
 
-	// DEBUG END
-	/*
+/*
 	.["integrity"] = current_ship.integrity
 	.["otherInfo"] = list()
 	for (var/object in current_ship.close_overmap_objects)
@@ -115,10 +117,10 @@
 				ref = REF(E)
 			)
 		.["engineInfo"] += list(engine_data)
-	*/
+*/
 
 /obj/machinery/computer/helm/ui_static_data(mob/user)
-	. = list()
+	/*
 	.["isViewer"] = viewer
 	.["mapRef"] = current_ship.map_name
 
@@ -133,7 +135,7 @@
 	)
 	if(class_name == "Ship")
 		.["canFly"] = TRUE
-
+	*/
 
 /obj/machinery/computer/helm/ui_act(action, list/params, datum/tgui/ui, datum/ui_state/state)
 	. = ..()

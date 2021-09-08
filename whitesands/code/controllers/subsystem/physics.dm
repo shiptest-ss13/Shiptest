@@ -52,6 +52,7 @@ SUBSYSTEM_DEF(physics)
 
 	last_realtime = current_realtime
 
+// DEBUG FIX -- move this out of here
 /datum/component/physics_processing
 	/// used to "parent" this component's physics location to another, such that the "true" pos / vel / acc are offset by those of the pos_parent.
 	var/datum/component/physics_processing/pos_parent
@@ -59,7 +60,7 @@ SUBSYSTEM_DEF(physics)
 	/// Bool. Whether this physics object is affected by the gravity of its pos_parent.
 	var/pulled_by_grav = TRUE
 	/// Number; the mass of this object, as used for physics calculations.
-	var/mass = 0.00003
+	var/mass = 0.00003*SOLAR_MASS
 
 	// position relative to position parent
 	var/pos_x = 0
@@ -109,6 +110,7 @@ SUBSYSTEM_DEF(physics)
 /datum/component/physics_processing/UnregisterFromParent()
 	return
 
+// DEBUG FIX -- clean up all datums with this as a pos_parent
 /datum/component/physics_processing/Destroy()
 	STOP_PROCESSING(SSphysics, src)
 	return ..()
@@ -186,7 +188,7 @@ SUBSYSTEM_DEF(physics)
 
 	var/speed = sqrt(NORM_GRAV_CONSTANT*pos_parent.mass * ((2/distance)-(1/s_m_axis)))
 	// gets the angle as measured from the center of the ellipse instead of the locus
-	var/central_angle = arctan(norm_dist*sin(true_anomaly)/(norm_dist*cos(true_anomaly) + eccentricity))
+	var/central_angle = arctan(norm_dist*cos(true_anomaly) + eccentricity, norm_dist*sin(true_anomaly))
 	// offsets the central angle by the argument of periapsis, gets the perpendicular vel. unit vector by adding 90, and inverts if we're clockwise
 	var/vel_angle = (counterclockwise ? 1 : -1)*(90 + central_angle + arg_of_periapsis)
 

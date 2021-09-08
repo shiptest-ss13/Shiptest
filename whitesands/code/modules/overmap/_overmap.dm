@@ -1,10 +1,19 @@
 /datum/overmap_system
+	var/name = "System"
+	// DEBUG REMOVE
+	var/system_genmode
 	var/list/datum/overmap_obj/all_children = list()
 
-// DEBUG FIX -- move this somewhere else. make it better too
-/datum/overmap_system/New()
+/datum/overmap_system/New(genmode)
+	. = ..()
+	populate_system(genmode)
+
+/datum/overmap_system/Destroy()
+	clear_system()
 	. = ..()
 
+// DEBUG FIX -- move this somewhere else maybe? make it better too
+/datum/overmap_system/proc/populate_system(genmode)
 	var/datum/sun = new /datum/overmap_obj/sun()
 	var/sun_component = sun.AddComponent(/datum/component/physics_processing, null, FALSE, 1)
 	all_children.Add(sun)
@@ -14,6 +23,7 @@
 
 	var/datum/overmap_obj/planet/cur_planet
 	var/datum/component/physics_processing/cur_component
+
 	while(num_planets < desired_planets)
 		cur_planet = new()
 		cur_component = cur_planet.AddComponent(/datum/component/physics_processing, sun_component, TRUE)
@@ -25,23 +35,78 @@
 		var/ecc = rand(0, 400) / 1000
 		var/ccwise = prob(50)
 		var/arg_of_p = rand(0, 359)
+		var/anomaly = rand(0, 359) // note that this technically unfairly biases start locations near periapsis
+
+		// DEBUG REMOVE: ALL THE GENMODE STUFF
+		if(genmode & SYS_GENMODE_OCWISE)
+			ccwise = FALSE
+		else if(genmode & SYS_GENMODE_OCCWISE)
+			ccwise = TRUE
+
+		if(genmode & SYS_GENMODE_ZEROPER)
+			arg_of_p = 0
+
+		if(genmode & SYS_GENMODE_PERIAP)
+			anomaly = 0
+
 		cur_planet.orbit_s_m_axis = s_m
 		cur_planet.orbit_eccentricity = ecc
 		cur_planet.orbit_counterclockwise = ccwise
 		cur_planet.orbit_arg_of_periapsis = arg_of_p
 
-		// note that this technically unfairly biases start locations near periapsis
-		cur_component.set_up_orbit(s_m, ecc, ccwise, arg_of_p, rand(0, 359))
+		cur_component.set_up_orbit(s_m, ecc, ccwise, arg_of_p, anomaly)
 		all_children.Add(cur_planet)
 		num_planets++
 
-/datum/overmap_system/proc/get_data_for_user(user)
-	var/list/data = list()
+/datum/overmap_system/proc/clear_system()
+	for(var/child in all_children)
+		all_children.Remove(child)
+		qdel(child)
+
+/*
+console -> {
+	...console_info
+	systems_info: {
+		REF(system): system -> {
+			name: blahblahblah
+			color: blahblahblah
+			body_info: {
+				REF(body): body -> {
+					position
+					velocity
+					appearance
+				}
+			}
+		}
+		REF(system2): system2 -> {
+			name: foofoofoo
+			color: barbarbar
+			etc.
+		}
+	}
+}
+merging vs. separation of static vs. dynamic data
+	merging:
+		+consistent with functional paradigm
+		+well-encapsulated: JS doesn't "know" static data from dynamic data
+		-maybe perf heavy
+		-have to write
+	separation:
+		+maybe easier on the DM end?
+		+allows us to do pseudo-diffing -- "static" data always resets, "dynamic" data always merges
+		-interferes with functional paradgim
+*/
+
+/datum/overmap_system/proc/get_map_data_for_user(user, list/options)
+	. = list()
+
 	for(var/C in all_children)
 		var/datum/overmap_obj/child = C
-		if(child.is_visible_to_user(user))
-			data.Add(list(child.serialize_list())) // this proc returns a list, but in order to add a list to a list we need to wrap it in another fucking list
-	return data
+		var/child_data = child.get_map_data_for_user(user, options)
+		if(!child_data) // child_data might be falsey, such as if the child isn't known to the user; if so, it is omitted entirely.
+			continue	// if we don't omit, then the client might "know" about bodies the user hasn't detected. this is bad and insecure
+		.[REF(child)] = child_data
+
 
 /datum/overmap_obj
 	/// The name of the overmap object as communicated to the player. Need not be unique; should not be treated as such.
@@ -64,25 +129,30 @@
 	var/orbit_arg_of_periapsis
 
 // DEBUG FIX: maybe add functionality to this, explain why it's here
-/datum/overmap_obj/proc/is_visible_to_user(user)
+/datum/overmap_obj/proc/is_known_to_user(user)
 	return TRUE
 
-/datum/overmap_obj/serialize_list(list/options)
+/datum/overmap_obj/proc/get_map_data_for_user(user, list/options)
+	if(!is_known_to_user(user))
+		return FALSE
 	. = list()
-	.["name"] = name
-	.["ref"] = REF(src)
-	.["color"] = display_color
-	.["size"] = display_size
-
 	var/datum/component/physics_processing/phys_comp = GetComponent(/datum/component/physics_processing)
+
+	.["name"] = name
 	.["parent_ref"] = phys_comp.pos_parent ? REF(phys_comp.pos_parent.parent) : null
+
+	/* POSITION DATA */
 	// the overmap display thinks +y is down, while the physics system thinks +y is up.
 	// thus, we invert the y on the numbers we said it, so code there doesn't have to worry much.
 	.["position"] = list(phys_comp.pos_x, -phys_comp.pos_y)
-	// the physics system uses deciseconds as its native units, but that's inconvenient for the display.
-	// to compensate, we convert velocity and acceleration to their respective values in seconds
+	// the physics system uses deciseconds as its native units; the display does not.
+	// to compensate, we convert velocity and acceleration to their respective values in seconds (and invert the y as before)
 	.["velocity"] = list(phys_comp.vel_x SECONDS, -phys_comp.vel_y SECONDS)
 	.["acceleration"] = list(phys_comp.acc_x SECONDS SECONDS, -phys_comp.acc_y SECONDS SECONDS)
+
+	/* APPEARANCE DATA */
+	.["color"] = display_color
+	.["size"] = display_size
 
 	.["show_orbit"] = show_orbit
 	.["o_semimajor"] = orbit_s_m_axis

@@ -1,5 +1,5 @@
 import { Component, createRef } from 'inferno';
-import { Application, Graphics, Matrix, Container, ObservablePoint, LineStyle, utils} from 'pixi.js';
+import { Application, Graphics, Matrix, Container, ObservablePoint, LineStyle, utils, Text} from 'pixi.js';
 import { useBackend, useLocalState } from '../backend';
 import { Button, ByondUi, LabeledList, Knob, Input, Section, Grid, Box, ProgressBar, Slider, AnimatedNumber, Tooltip } from '../components';
 import { vecAdd, vecScale } from 'common/vector';
@@ -7,75 +7,68 @@ import { refocusLayout, Window } from '../layouts';
 import { Table } from '../components/Table';
 import { ButtonInput } from '../components/Button';
 import { createLogger } from '../logging';
+import { classes } from 'common/react';
 
-/* TODO: redo data loading and parenting, culling (both due to omission and due to OOB), post-unmount cleanup, orbits are slightly fucked for some reason, */
-/* TODO: orbit line updating + disabling, escape orbits, movable camera, variable window size, text + popups, effects, sprites, a nice grid, Rest Of The Fucking UI */
+// TODO: redo data loading and parenting, OOB culling for perf, orbits are slightly fucked for some reason, orbit line updating + disabling,
+// TODO: escape orbits, movable camera, text + popups, effects, sprites, a nice grid, Rest Of The Fucking UI
 const logger = createLogger('backend');
 
-/* make this higher if you want circles / orbits to be less pointy; explanation in OvermapBody.updateAppearance() */
-const dummyRadius = 25;
+// make this higher if you want circles / orbits to be less pointy; explanation in OvermapBody.updateAppearance()
+const DUMMY_RADIUS = 25;
 
-const bodyLayer = 0;
-const orbitLayer = -1;
+const LAYER_UI = 2;
+const LAYER_SHIP = 1;
+const LAYER_BODY = 0;
+const LAYER_ORBIT = -1;
 
 class OvermapBody {
   constructor(bodyData) {
-    /* TODO: maybe move the initialization here somewhere else? */
+    // TODO: maybe move the initialization here somewhere else?
     this.visContainer = new Graphics();
-    this.bodySize = null;
-    this.bodyColor = null;
-    this.parentRef = null;
-    this.velocity = null;
-    this.acceleration = null;
+    this.visContainer.sortableChildren = true; // enable layers on it
+    this.visContainer.zIndex = LAYER_BODY;
 
-    /* TODO: maybe move the initialization here somewhere else? */
-    /* orbit vars */
+    // TODO: maybe move the initialization here somewhere else?
     this.orbitContainer = new Graphics();
-    this.showOrbit = null; /* TODO: make this matter */
-    this.oSemiMajor = null;
-    this.oEccentricity = null;
-    this.oCounterclockwise = null;
-    this.oArgOfPeriapsis = null;
+    this.orbitContainer.zIndex = LAYER_ORBIT;
+
+    /* // TODO: use text
+    this.testText = new Text("Test", {
+      fontSize: 10,
+      fill: 0xFF00FF,
+      align: 'center'
+    });
+    this.testText.zIndex = 4;
+    this.testText.anchor.set(0.5);
+    */
 
     this.loadFromData(bodyData);
     return;
   }
 
-  /* TODO: this is ass. maybe try "..."? of course, that means defining the variables out-of-code... ugh*/
   loadFromData(bodyData) {
-    /* most updates are just going to be physics updates, so normally redrawing isn't necessary */
-    let redrawAppearance = false;
-    if (this.bodySize !== bodyData["size"] ||
-        this.bodyColor !== utils.string2hex(bodyData["color"])
-      ) {
-      redrawAppearance = true;
-    }
-    this.bodySize = bodyData["size"];
-    this.bodyColor = utils.string2hex(bodyData["color"]);
-    if (redrawAppearance) {
-      this.updateAppearance();
-    }
-
     this.parentRef = bodyData["parent_ref"];
-    /* we just load the position data directly into the container itself */
+
+    // load the position directly into the vis container
     this.visContainer.x = bodyData["position"][0];
     this.visContainer.y = bodyData["position"][1];
     this.velocity = bodyData["velocity"];
     this.acceleration = bodyData["acceleration"];
 
+    this.bodySize = bodyData["size"];
+    this.bodyColor = utils.string2hex(bodyData["color"]);
+    this.updateAppearance();
+
+    // TODO: figure out a sensible understanding of what showOrbit means
+    this.showOrbit = !!bodyData["show_orbit"];
     this.oSemiMajor = bodyData["o_semimajor"];
     this.oEccentricity = bodyData["o_eccentricity"];
     this.oCounterclockwise = bodyData["o_counterclockwise"];
     this.oArgOfPeriapsis = bodyData["o_arg_of_periapsis"];
-    if (this.showOrbit !== !!bodyData["show_orbit"]) {
-      this.showOrbit = !!bodyData["show_orbit"];
-      this.updateOrbit();
-    }
+    this.updateOrbit();
   }
 
   updateAppearance() {
-    this.visContainer.sortableChildren = true;
-    this.visContainer.zIndex = bodyLayer;
     this.visContainer.clear();
     this.visContainer.beginFill(this.bodyColor);
     /*
@@ -85,29 +78,72 @@ class OvermapBody {
     BE a circle. instead, we draw a circle with a larger radius, and use a matrix to scale down the drawing and ONLY the drawing.
     this way we have multiple zoom levels without either redrawing the circle for every zoom level or altering the coordinate system.
     */
-    const scaleMatrix = new Matrix(this.bodySize/dummyRadius, 0, 0, this.bodySize/dummyRadius);
+    const scaleMatrix = new Matrix(this.bodySize/DUMMY_RADIUS, 0, 0, this.bodySize/DUMMY_RADIUS);
     this.visContainer.setMatrix(scaleMatrix);
-    this.visContainer.drawCircle(0, 0, dummyRadius);
+    this.visContainer.drawCircle(0, 0, DUMMY_RADIUS);
     this.visContainer.endFill();
   }
 
   updateOrbit() {
-    /* TODO: escape trajectory visualization */
+    if (!this.showOrbit) {
+      return;
+    }
+
+    // TODO: escape trajectory visualization
     if (this.oEccentricity >= 1) {
       return;
     }
 
-    this.orbitContainer.zIndex = orbitLayer;
     this.orbitContainer.clear();
-    this.orbitContainer.lineStyle(0.011, 0x00FFFF, 1);
-    /* we've gotta do the same scaling fuckery as in updateAppearance */
-    const scaleMatrix = new Matrix(1/dummyRadius, 0, 0, 1/dummyRadius);
+    // this width gets overridden in updateZoom (but if it's 0 the line hides)
+    this.orbitContainer.lineStyle({width: 1, color: 0x00FFFF, alpha: 1});
+    // we've gotta do the same scaling fuckery as in updateAppearance
+    const scaleMatrix = new Matrix(1/DUMMY_RADIUS, 0, 0, 1/DUMMY_RADIUS);
     this.orbitContainer.setMatrix(scaleMatrix);
-    /* draws the orbit's ellipse, with the focus of the orbit (the attractor) at 0,0 */
+
+    // draws the orbit's ellipse, with the focus of the orbit (the attractor) at 0,0
     const semiMinor = Math.sqrt(Math.pow(this.oSemiMajor, 2)*(1-Math.pow(this.oEccentricity, 2)));
-    this.orbitContainer.drawEllipse(-this.oEccentricity*this.oSemiMajor*dummyRadius, 0, this.oSemiMajor*dummyRadius, semiMinor*dummyRadius);
+    this.orbitContainer.drawEllipse(-this.oEccentricity*this.oSemiMajor*DUMMY_RADIUS, 0, this.oSemiMajor*DUMMY_RADIUS, semiMinor*DUMMY_RADIUS);
 
     this.orbitContainer.angle = (this.oCounterclockwise ? -1*this.oArgOfPeriapsis : this.oArgOfPeriapsis);
+  }
+
+  parentToContainer(parentContainer) {
+    parentContainer.addChild(this.visContainer);
+    // TODO: better orbit parenting maybe?
+    if (this.showOrbit) {
+      parentContainer.addChild(this.orbitContainer);
+    }
+    // TODO: use text
+    //this.visContainer.addChild(this.testText);
+
+  }
+
+  cleanUp() {
+    if (!!this.visContainer.parent) {
+      this.visContainer.parent.removeChild(this.visContainer);
+    }
+    if (!!this.orbitContainer.parent) {
+      this.orbitContainer.parent.removeChild(this.orbitContainer);
+    }
+    /* // TODO: use text
+    if (!!this.testText.parent) {
+      this.testText.parent.removeChild(this.testText);
+    }
+    this.testText.destroy();
+    this.testText = null;
+    */
+    this.visContainer.destroy();
+    this.visContainer = null;
+    this.orbitContainer.destroy();
+    this.orbitContainer = null;
+  }
+
+  updateZoom(zoomLevel) {
+    // we scale the line width of each orbit down by the zoom level, so the width stays constant regardless of system zoom
+    this.orbitContainer.geometry.graphicsData.forEach(graphics => graphics.lineStyle.width = 1.625/zoomLevel);
+    // TODO: use the text
+    //this.testText.scale.set(1/zoomLevel);
   }
 
   runTick(dT) {
@@ -125,8 +161,9 @@ class OvermapDisplay extends Component {
     super(props);
     this.canvasRef = createRef();
     this.pixiApp = null;
-    /* collection of all OvermapBodys, keyed by the ref used in the corresponding body data array */
-    this.bodies = {}
+    this.focusedBody = null;
+    // collection of all OvermapBodys, keyed by the ref used to identify the body
+    this.bodies = {};
   }
 
   componentDidMount() {
@@ -136,18 +173,28 @@ class OvermapDisplay extends Component {
   }
 
   componentDidUpdate(prevProps, prevState, snapshot) {
-    this.props.bodyInformation.forEach(bodyData => this._processBodyData(bodyData));
+    const zoomLevel = this.props.zoomLevel * this.pixiApp.screen.width / 4;
+    this.pixiApp.stage.scale.set(zoomLevel);
+
+    for (const ref in this.props.bodyInformation) {
+      const bodyData = this.props.bodyInformation[ref];
+      if (!this.bodies[ref]) {
+        this.bodies[ref] = new OvermapBody(bodyData);
+        continue;
+      }
+      this.bodies[ref].loadFromData(bodyData);
+    }
 
     for (const ref in this.bodies) {
       this._processBodyParent(this.bodies[ref]);
+      if (!this.props.bodyInformation[ref]) {
+        this.bodies[ref].cleanUp();
+        delete this.bodies[ref];
+        continue;
+      }
+      this.bodies[ref].updateZoom(zoomLevel);
     }
-
-    this.pixiApp.stage.x = this.props.width / 2
-    this.pixiApp.stage.y = this.props.height / 2
-
-    const zoomLevel = this.props.zoomLevel * this.props.width / 4;
-
-    this.pixiApp.stage.scale.set(zoomLevel);
+    //this.focusedBody = this.bodies[this.props.focused];
     return;
   }
 
@@ -156,10 +203,16 @@ class OvermapDisplay extends Component {
     return;
   }
 
+  // TODO: move the styling info into CSS
   render() {
     return (
       <canvas
         ref={this.canvasRef}
+        style={{
+          'display': 'flex',
+          'width': '100%',
+          'height': '100%'
+        }}
         {...this.props}>
         Canvas failed to render.
       </canvas>
@@ -169,64 +222,65 @@ class OvermapDisplay extends Component {
   _initDisplay() {
     this.pixiApp = new Application({
       view: this.canvasRef.current,
-      backgroundColor: 0x000000,
-      width: this.props.width,
-      height: this.props.height,
+      resizeTo: this.canvasRef.current,
+      backgroundColor: 0x000020,
       antialias: true
     });
-    this.pixiApp.ticker.add(this._runPhysics, this);
+    this.pixiApp.ticker.add(this._runTick, this);
     return;
   }
 
-  _shutDown() {
-    this.pixiApp.ticker.remove(this._runPhysics, this)
-  }
-
-  _processBodyData(bodyData) {
-    let bodyObject = this.bodies[bodyData["ref"]];
-    if (!bodyObject) {
-      bodyObject = new OvermapBody(bodyData);
-      this.bodies[bodyData["ref"]] = bodyObject;
-      return;
-    }
-    bodyObject.loadFromData(bodyData);
-  }
-
-  /* we can't do this in _processBodyData, because we need to be sure that every body has been initialized */
+  // we can't do this earlier, because we need to be sure that every body has been initialized
   _processBodyParent(body) {
-    /* TODO: reparenting */
+    // TODO: reparenting
     if (!!body.visContainer.parent) {
       return;
     }
-    /* no parent ref; the body is basal, and as such should be parented to the stage */
-    if (body.parentRef === null) {
-      this.pixiApp.stage.addChild(body.visContainer);
-      return;
+    // default container is the stage
+    let parentContainer = this.pixiApp.stage;
+    // if we have an actual parent, use it instead
+    if (body.parentRef !== null) {
+      parentContainer = this.bodies[body.parentRef].visContainer;
     }
-    const referredBody = this.bodies[body.parentRef];
-    /* the parent body couldn't be found, so we can't really place the child anywhere */
-    if (!referredBody) {
-      return;
-    }
-    referredBody.visContainer.addChild(body.visContainer);
-    /* TODO: better orbit parenting */
-    if(body.showOrbit) {
-      referredBody.visContainer.addChild(body.orbitContainer);
-    }
+    body.parentToContainer(parentContainer);
   }
 
-  _runPhysics() {
-    if (!this.props.interpolation) {
-      return;
-    }
+  _runTick() {
     const dT = this.pixiApp.ticker.deltaMS / 1000;
     for (const ref in this.bodies) {
       this.bodies[ref].runTick(dT);
     }
+    // TODO: use a listener so it doesn't have to update every single frame
+    this._updateCamera();
+  }
+
+  _updateCamera() {
+    const centerPoint = {x:this.pixiApp.screen.width / 2, y:this.pixiApp.screen.height / 2};
+    if (!!this.focusedBody) {
+      // TODO: this feels very roundabout. please torture yourself again and try to figure out how toGlobal and toLocal work. i'm sorry
+      const focusedScreenPos = this.focusedBody.visContainer.toGlobal({x:0, y:0});
+      const stagePos = this.pixiApp.stage.toGlobal({x:0, y:0});
+      this.pixiApp.stage.position.copyFrom({x: centerPoint.x+stagePos.x-focusedScreenPos.x, y: centerPoint.y+stagePos.y-focusedScreenPos.y});
+    } else {
+      // nothing focused, just center the stage
+      this.pixiApp.stage.position.copyFrom(centerPoint);
+    }
+  }
+
+  _shutDown() {
+    this.pixiApp.ticker.remove(this._runTick, this);
+    this.focusedBody = null;
+    for (const ref in this.bodies) {
+      this.bodies[ref].cleanUp();
+      delete this.bodies[ref];
+    }
+    this.pixiApp.destroy(false, {
+      children: true
+    });
   }
 }
 
-const displaySize = 600
+const displaySize = 600;
 export const OvermapView = (props, context) => {
   const { act, data, config } = useBackend(context);
   return (
@@ -235,11 +289,9 @@ export const OvermapView = (props, context) => {
       height={displaySize+50}
       resizable>
       <OvermapDisplay
-        width={displaySize}
-        height={displaySize}
-        interpolation={data.interp_test}
         zoomLevel={data.zoom_level}
-        bodyInformation={data.body_information}/>
+        bodyInformation={data.body_information}
+        focused={data.focused_body}/>
     </Window>
   );
 };
