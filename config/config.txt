@@ -254,25 +254,28 @@ CHECK_RANDOMIZER
 # SERVER ss13.example.com:2506
 
 ## forum address
-# FORUMURL https://discord.gg/Zuv47eNuhE
+# FORUMURL https://shiptest.net/discord
 
 ## Wiki address
-# WIKIURL https://shiptest.ga/wiki/
+# WIKIURL https://shiptest.net/wiki/
 
 ## Rules address
-# RULESURL https://shiptest.ga/wiki/Rules
+# RULESURL https://shiptest.net/wiki/Rules
 
 ## Github address
 # GITHUBURL https://github.com/Shiptest-SS13/Shiptest
 
 ## Discord address
-# DISCORDURL https://discord.gg/Zuv47eNuhE
+# DISCORDURL https://shiptest.net/discord
+
+## Map viewer address, will have `?=[map_short_name]` appended to it
+# MAPVIEWERURL https://shiptest.net/map
 
 ## Round specific stats address
 ## Link to round specific parsed logs; IE statbus. It is appended with the RoundID automatically by ticker/Reboot()
 ## This will take priority over the game logs address during reboot.
-## Example: https://shiptest.ga/stats/rounds/
-# ROUNDSTATSURL https://shiptest.ga/stats/rounds/
+## Example: https://shiptest.net/stats/rounds/
+# ROUNDSTATSURL https://shiptest.net/stats/rounds/
 
 ## Game Logs address
 ## Incase you don't have a fancy parsing system, but still want players to be able to find where you keep your server's logs.
