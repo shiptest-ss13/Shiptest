@@ -46,6 +46,8 @@ GLOBAL_LIST_EMPTY(ipc_chassis_list)
 GLOBAL_LIST_EMPTY(spider_legs_list)
 GLOBAL_LIST_EMPTY(spider_spinneret_list)
 GLOBAL_LIST_EMPTY(spider_mandibles_list)
+GLOBAL_LIST_EMPTY(teshari_feathers_list)
+GLOBAL_LIST_EMPTY(teshari_body_feathers_list)
 
 GLOBAL_LIST_INIT(color_list_ethereal, list(
 	"Red" = "ff4d4d",
