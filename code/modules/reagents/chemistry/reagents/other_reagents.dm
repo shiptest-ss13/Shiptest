@@ -195,9 +195,9 @@
 /datum/reagent/water/dip_object(obj/item/I, mob/user, obj/item/reagent_containers/H)
 	. = ..()
 	if(istype(I, /obj/item/stock_parts/capacitor))
-		var/removed = H.reagents.remove_reagent(/datum/reagent/water, 1*I.get_part_rating())
-		H.reagents.add_reagent(/datum/reagent/oxygen, removed)
-		H.reagents.add_reagent(/datum/reagent/hydrogen, removed*2)
+		var/removed = H.reagents.remove_reagent(/datum/reagent/water, 5*I.get_part_rating())
+		H.reagents.add_reagent(/datum/reagent/oxygen, removed/3)
+		H.reagents.add_reagent(/datum/reagent/hydrogen, (removed/3)*2)
 		return TRUE
 	return
 
