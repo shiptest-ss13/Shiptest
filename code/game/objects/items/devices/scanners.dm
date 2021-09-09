@@ -833,7 +833,7 @@ GENE SCANNER
 	item_state = "reagentanalyzer"
 	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
-	desc = "A hand-held item capable of analyzing the reagents in a container, including complex, meat-based containers such as humans.'"
+	desc = "A hand-held item capable of analyzing the reagents in a container, including complex, meat-based containers such as humans."
 	flags_1 = CONDUCT_1
 	item_flags = NOBLUDGEON
 	slot_flags = ITEM_SLOT_BELT
@@ -855,7 +855,7 @@ GENE SCANNER
 			for (var/re in A.reagents.reagent_list)
 				var/datum/reagent/R = re
 				var/amount = R.volume
-				to_chat(user, "<span class='notice'>\t [re], [amount] units.</span>")
+				to_chat(user, "<span class='notice'>\t [amount] units of [re].</span>")
 		else
 			to_chat(user, "<span class='notice'>No active chemical agents found in [A].</span>")
 	else

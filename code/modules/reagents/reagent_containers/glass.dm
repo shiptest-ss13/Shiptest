@@ -283,7 +283,7 @@
 	return ..()
 
 /obj/item/reagent_containers/glass/filter
-	name = "Filtered Beaker"
+	name = "filtered beaker"
 	desc = "What seems to be a standard lab beaker with a coffee filter taped to it. It would probably be useful for seperating reagents."
 	icon = 'icons/obj/chemical.dmi'
 	icon_state = "beakerfilter"
