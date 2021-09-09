@@ -850,11 +850,11 @@
 	category = CAT_MISC
 
 /datum/crafting_recipe/filter
-	name = "Filtered Beaker"
-	time = 15
+	name = "Seperatory Funnel"
+	time = 40
+	tools = list(TOOL_WELDER, TOOL_WIRECUTTER)
 	reqs = list(
 		/obj/item/stack/cable_coil = 1,
-		/obj/item/reagent_containers/glass/beaker/large = 1,
-		/obj/item/paper = 1)
+		/obj/item/reagent_containers/glass/beaker = 3)
 	result = /obj/item/reagent_containers/glass/filter
 	category = CAT_MISC

@@ -283,8 +283,8 @@
 	return ..()
 
 /obj/item/reagent_containers/glass/filter
-	name = "filtered beaker"
-	desc = "What seems to be a standard lab beaker with a coffee filter taped to it. It would probably be useful for seperating reagents."
+	name = "seperatory funnel"
+	desc = "A crude tool created by welding several beakers together. It would probably be useful for seperating reagents."
 	icon = 'icons/obj/chemical.dmi'
 	icon_state = "beakerfilter"
 	item_state = "beaker"
@@ -292,7 +292,9 @@
 	amount_per_transfer_from_this = 10
 	possible_transfer_amounts = list(5, 10, 15, 20, 25, 30, 50, 100)
 	fill_icon_thresholds = list(1, 40, 60, 80, 100)
-	spillable = TRUE
+	can_have_cap = TRUE
+	cap_icon_state = "beakerfilter_cap"
+	cap_on = TRUE
 
 /obj/item/reagent_containers/glass/filter/afterattack(obj/target, mob/user, proximity) //overrides the standard version of this, only difference is that it only transfers one chem at a time
 	if((!proximity) || !check_allowed_items(target,target_self=1))
@@ -309,7 +311,7 @@
 		if(target.reagents.holder_full())
 			to_chat(user, "<span class='warning'>[target] is full.</span>")
 			return
-		to_chat(user, "<span class='notice'>You begin to filter off something from [src].")
+		to_chat(user, "<span class='notice'>You begin to drain something from [src].")
 		if(do_after(user, 25, target = src))
 			var/trans = reagents.trans_id_to(target, reagents.get_master_reagent_id(), amount_per_transfer_from_this,)
 			to_chat(user, "<span class='notice'>You filter off [trans] unit\s of the solution into [target].</span>")
