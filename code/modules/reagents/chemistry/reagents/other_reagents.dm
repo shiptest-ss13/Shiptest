@@ -920,7 +920,7 @@
 				else
 					H.reagents.add_reagent(/datum/reagent/phosphorus, base)
 					H.reagents.add_reagent(/datum/reagent/hydrogen, hydrogen)
-					break
+					return FALSE
 			return TRUE
 	return
 
