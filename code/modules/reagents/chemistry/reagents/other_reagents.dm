@@ -912,16 +912,19 @@
 	. = ..()
 	if(istype(I, /obj/item/stock_parts/micro_laser)) //using a laser instead of a manipulator here, because honestly, i have no idea what will happen if this reaction was called on both the silicon and phosphorus at once, and i dont want to find out.
 		if(holder.has_reagent(/datum/reagent/hydrogen))
-			for(var/i = 1; i <= I.get_part_rating()*5; i++)
-				var/hydrogen = H.reagents.remove_reagent(/datum/reagent/hydrogen, 1)
-				var/base = H.reagents.remove_reagent(/datum/reagent/phosphorus, 1)
-				if((hydrogen >= 1) && (base >= 1))
-					H.reagents.add_reagent(/datum/reagent/sulfur, 1)
-				else
-					H.reagents.add_reagent(/datum/reagent/phosphorus, base)
-					H.reagents.add_reagent(/datum/reagent/hydrogen, hydrogen)
-					return FALSE
-			return TRUE
+			var/hydrogen = H.reagents.remove_reagent(/datum/reagent/hydrogen, 5*I.get_part_rating())
+			var/base = H.reagents.remove_reagent(/datum/reagent/phosphorus, 5*I.get_part_rating())
+			if(hydrogen == base)
+				H.reagents.add_reagent(/datum/reagent/sulfur, base)
+				return TRUE
+			if(hydrogen < base)
+				H.reagents.add_reagent(/datum/reagent/sulfur, hydrogen)
+				H.reagents.add_reagent(/datum/reagent/phosphorus, (base-hydrogen))
+				return TRUE
+			if(base < hydrogen)
+				H.reagents.add_reagent(/datum/reagent/sulfur, base)
+				H.reagents.add_reagent(/datum/reagent/hydrogen, (hydrogen-base))
+				return TRUE
 	return
 
 /datum/reagent/lithium
@@ -1096,20 +1099,22 @@
 
 /datum/reagent/silicon/dip_object(obj/item/I, mob/user, obj/item/reagent_containers/H)
 	. = ..()
-	if(istype(I, /obj/item/stock_parts/manipulator))
+	if(istype(I, /obj/item/stock_parts/manipulator)) //using a laser instead of a manipulator here, because honestly, i have no idea what will happen if this reaction was called on both the silicon and phosphorus at once, and i dont want to find out.
 		if(holder.has_reagent(/datum/reagent/hydrogen))
-			for(var/i = 1; i <= I.get_part_rating()*5; i++)
-				var/hydrogen = H.reagents.remove_reagent(/datum/reagent/hydrogen, 1)
-				var/base = H.reagents.remove_reagent(/datum/reagent/silicon, 1)
-				if((hydrogen >= 1) && (base >= 1))
-					H.reagents.add_reagent(/datum/reagent/phosphorus, 1)
-				else
-					H.reagents.add_reagent(/datum/reagent/silicon, base)
-					H.reagents.add_reagent(/datum/reagent/hydrogen, hydrogen)
-					break
-			return TRUE
+			var/hydrogen = H.reagents.remove_reagent(/datum/reagent/hydrogen, 5*I.get_part_rating())
+			var/base = H.reagents.remove_reagent(/datum/reagent/silicon, 5*I.get_part_rating())
+			if(hydrogen == base)
+				H.reagents.add_reagent(/datum/reagent/phosphorus, base)
+				return TRUE
+			if(hydrogen < base)
+				H.reagents.add_reagent(/datum/reagent/phosphorus, hydrogen)
+				H.reagents.add_reagent(/datum/reagent/silicon, (base-hydrogen))
+				return TRUE
+			if(base < hydrogen)
+				H.reagents.add_reagent(/datum/reagent/phosphorus, base)
+				H.reagents.add_reagent(/datum/reagent/hydrogen, (hydrogen-base))
+				return TRUE
 	return
-
 /datum/reagent/fuel
 	name = "Welding fuel"
 	description = "Required for welders. Flammable."
