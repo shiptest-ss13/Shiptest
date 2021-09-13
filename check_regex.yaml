@@ -21,6 +21,7 @@
 #
 
 standards:
+  - exactly: [0, 'mangled characters', '[\u0000\uFFFF\uFFFD]']
   - exactly: [8, 'escapes', '\\\\(red|blue|green|black|b|i[^mc])']
   - exactly: [9, 'Del()s', '\WDel\(']
 
