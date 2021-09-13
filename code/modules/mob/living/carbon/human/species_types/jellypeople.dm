@@ -25,8 +25,9 @@
 	loreblurb = "Alien beings made of a gelatinous substance. It's relatively common to be transformed into a jellyperson from another species due to the mutagenic properties of less intelligent slime beings, but many truly alien jelly people also exist. Their blood is toxic, and the properties of poisonous and poison-healing substances are inverted for them."
 
 /datum/species/jelly/on_species_loss(mob/living/carbon/C)
-	if(regenerate_limbs || humanoid_customization)
+	if(regenerate_limbs)
 		regenerate_limbs.Remove(C)
+	if(humanoid_customization)
 		humanoid_customization.Remove(C)
 	..()
 
