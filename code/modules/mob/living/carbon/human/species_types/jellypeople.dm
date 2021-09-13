@@ -131,11 +131,9 @@
 			var/new_color = input(owner, "Select your new color.", "Color Change", "#"+H.dna.features["mcolor"]) as color|null
 			if(new_color)
 				var/temp_hsv = RGBtoHSV(new_color)
-				ReadHSV(temp_hsv)[3] >= ReadHSV("#7F7F7F")[3]
-				H.dna.features["mcolor"] = sanitize_hexcolor(new_color, 6) //color needs to be bright
+				H.dna.features["mcolor"] = sanitize_hexcolor(new_color, 6)
 				H.update_body()
 				H.update_hair()
-			to_chat("<span class='notice'>Invalid color. Your color is not bright enough.</span>")
 
 		if("Hair Style")
 			//facial hair
@@ -150,6 +148,8 @@
 			if(new_style)
 				H.hairstyle = new_style
 				H.update_hair()
+
+		if("Ears")
 
 ////////////////////////////////////////////////////////SLIMEPEOPLE///////////////////////////////////////////////////////////////////
 
