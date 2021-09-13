@@ -130,7 +130,6 @@
 		if("Body Color")
 			var/new_color = input(owner, "Select your new color.", "Color Change", "#"+H.dna.features["mcolor"]) as color|null
 			if(new_color)
-				var/temp_hsv = RGBtoHSV(new_color)
 				H.dna.features["mcolor"] = sanitize_hexcolor(new_color, 6)
 				H.update_body()
 				H.update_hair()
