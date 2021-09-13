@@ -118,16 +118,15 @@
 	icon_icon = 'icons/mob/actions/actions_slime.dmi' //also placeholder
 	background_icon_state = "bg_alien"
 
-/datum/action/innate/ability/humanoid_customization/Activate()
-	if(..())
+/datum/action/innate/humanoid_customization/Activate()
 		var/mob/living/carbon/human/H = owner
 		H.visible_message("<span class='notice'>[owner] gains a look of concentration while standing perfectly still.")
 		change_form()
 
-/datum/action/innate/ability/humanoid_customization/proc/change_form()
+/datum/action/innate/humanoid_customization/proc/change_form()
 	var/mob/living/carbon/human/H = owner
 	var/select_alteration = input(owner, "Select what part of your form to alter.", "Form Alteration", "cancel") in list("Body Color", "Hair Style", "Ears", "Cancel") //Select what you want to alter
-	switch(select_alteration)
+	switch(select_alteration) //fuck you i like readability
 		if("Body Color")
 			var/new_color = input(owner, "Select your new color.", "Color Change", "#"+H.dna.features["mcolor"]) as color|null
 			if(new_color)
