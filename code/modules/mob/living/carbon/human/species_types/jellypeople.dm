@@ -125,7 +125,7 @@
 
 /datum/action/innate/humanoid_customization/proc/change_form()
 	var/mob/living/carbon/human/H = owner
-	var/select_alteration = input(owner, "Select what part of your form to alter.", "Form Alteration", "cancel") in list("Body Color", "Hair Style", "Cancel") //Select what you want to alter
+	var/select_alteration = input(owner, "Select what part of your form to alter.", "Form Alteration", "cancel") in list("Body Color", "Hair Style", "Ears", "Cancel") //Select what you want to alter
 	switch(select_alteration) //fuck you i like readability
 		if("Body Color")
 			var/new_color = input(owner, "Select your new color.", "Color Change", "#"+H.dna.features["mcolor"]) as color|null
@@ -147,6 +147,16 @@
 			if(new_style)
 				H.hairstyle = new_style
 				H.update_hair()
+		if("Ears")
+			var/selected_ears = input(owner, "Select your desired ears.", "Ear Alteration") as null|anything in GLOB.ears_list
+			if(selected_ears == "None")
+				H.dna.features["ears"] = "None"
+				H.dna.species.mutant_bodyparts -= "ears"
+				H.update_body()
+			else
+				H.dna.species.mutant_bodyparts |= "ears"
+				H.dna.features["ears"] = "Cat"
+				H.update_body()
 
 ////////////////////////////////////////////////////////SLIMEPEOPLE///////////////////////////////////////////////////////////////////
 
