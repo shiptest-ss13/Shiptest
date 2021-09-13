@@ -13,6 +13,7 @@
 	exotic_blood = /datum/reagent/toxin/slimejelly
 	damage_overlay_type = ""
 	var/datum/action/innate/regenerate_limbs/regenerate_limbs
+	var/datum/action/innate/humanoid_customization/humanoid_customization
 	liked_food = MEAT
 	coldmod = 6   // = 3x cold damage
 	heatmod = 0.5 // = 1/4x heat damage
@@ -24,8 +25,9 @@
 	loreblurb = "Alien beings made of a gelatinous substance. It's relatively common to be transformed into a jellyperson from another species due to the mutagenic properties of less intelligent slime beings, but many truly alien jelly people also exist. Their blood is toxic, and the properties of poisonous and poison-healing substances are inverted for them."
 
 /datum/species/jelly/on_species_loss(mob/living/carbon/C)
-	if(regenerate_limbs)
+	if(regenerate_limbs || humanoid_customization)
 		regenerate_limbs.Remove(C)
+		humanoid_customization.Remove(C)
 	..()
 
 /datum/species/jelly/on_species_gain(mob/living/carbon/C, datum/species/old_species)
@@ -33,6 +35,8 @@
 	if(ishuman(C))
 		regenerate_limbs = new
 		regenerate_limbs.Grant(C)
+		humanoid_customization = new
+		humanoid_customization.Grant(C)
 
 /datum/species/jelly/spec_life(mob/living/carbon/human/H)
 	if(H.stat == DEAD) //can't farm slime jelly from a dead slime/jelly person indefinitely
@@ -106,6 +110,47 @@
 		to_chat(H, "<span class='warning'>...but there is not enough of you to fix everything! You must attain more mass to heal completely!</span>")
 		return
 	to_chat(H, "<span class='warning'>...but there is not enough of you to go around! You must attain more mass to heal!</span>")
+
+/datum/action/innate/humanoid_customization //oh boy this will be fun to do <-- clueless
+	name = "Alter Form"
+	check_flags = AB_CHECK_CONSCIOUS
+	button_icon_state = "slimeheal" //placeholder
+	icon_icon = 'icons/mob/actions/actions_slime.dmi' //also placeholder
+	background_icon_state = "bg_alien"
+
+/datum/action/innate/ability/humanoid_customization/Activate()
+	if(..())
+		var/mob/living/carbon/human/H = owner
+		H.visible_message("<span class='notice'>[owner] gains a look of concentration while standing perfectly still.")
+		change_form()
+
+/datum/action/innate/ability/humanoid_customization/proc/change_form()
+	var/mob/living/carbon/human/H = owner
+	var/select_alteration = input(owner, "Select what part of your form to alter.", "Form Alteration", "cancel") in list("Body Color", "Hair Style", "Ears", "Cancel") //Select what you want to alter
+	switch(select_alteration)
+		if("Body Color")
+			var/new_color = input(owner, "Select your new color.", "Color Change", "#"+H.dna.features["mcolor"]) as color|null
+			if(new_color)
+				var/temp_hsv = RGBtoHSV(new_color)
+				ReadHSV(temp_hsv)[3] >= ReadHSV("#7F7F7F")[3]
+				H.dna.features["mcolor"] = sanitize_hexcolor(new_color, 6) //color needs to be bright
+				H.update_body()
+				H.update_hair()
+			to_chat("<span class='notice'>Invalid color. Your color is not bright enough.</span>")
+
+		if("Hair Style")
+			//facial hair
+			if(H.gender == MALE)
+				var/new_style = input(owner, "Select a facial hair style.", "Facial Hair Alterations") as null|anything in GLOB.facial_hairstyles_list
+				if(new_style)
+					H.facial_hairstyle = new_style
+			else
+				H.facial_hairstyle = "Shaved" //Female characters can't have beards
+			//normal hair
+			var/new_style = input(owner, "Select your hair style.", "Hair Style Alterations") as null|anything in GLOB.hairstyles_list
+			if(new_style)
+				H.hairstyle = new_style
+				H.update_hair()
 
 ////////////////////////////////////////////////////////SLIMEPEOPLE///////////////////////////////////////////////////////////////////
 
