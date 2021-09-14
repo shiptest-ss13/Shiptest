@@ -159,7 +159,7 @@
 						H.update_body()
 					if("Cat")
 						H.dna.species.mutant_bodyparts |= "ears"
-						H.dna.features["ears"] = "Cat"
+						H.dna.features["ears"] = "Slimecat"
 						H.update_body()
 
 ////////////////////////////////////////////////////////SLIMEPEOPLE///////////////////////////////////////////////////////////////////

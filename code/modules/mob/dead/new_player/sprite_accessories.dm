@@ -1779,6 +1779,12 @@
 	hasinner = 1
 	color_src = HAIR
 
+/datum/sprite_accessory/ears/cat/slime
+	name = "Slimecat"
+	icon_state = "catslime"
+	hasinner = 1
+	color_src = HAIR
+
 /datum/sprite_accessory/wings/none
 	name = "None"
 	icon_state = "none"
