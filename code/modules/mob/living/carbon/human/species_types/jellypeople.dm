@@ -148,16 +148,19 @@
 			if(new_style)
 				H.hairstyle = new_style
 				H.update_hair()
+				//Ears
 		if("Ears")
-			var/selected_ears = input(owner, "Select your desired ears.", "Ear Alteration") as null|anything in GLOB.ears_list
-			if(selected_ears == "None")
-				H.dna.features["ears"] = "None"
-				H.dna.species.mutant_bodyparts -= "ears"
-				H.update_body()
-			else
-				H.dna.species.mutant_bodyparts |= "ears"
-				H.dna.features["ears"] = "Cat"
-				H.update_body()
+			var/selected_ears = input(owner, "Select your desired ears.", "Ear Alteration") in list("None", "Cat") //easily expandable in case we ever have more ears
+			if(selected_ears)
+				switch(selected_ears)
+					if("None")
+						H.dna.features["ears"] = "None"
+						H.dna.species.mutant_bodyparts -= "ears"
+						H.update_body()
+					if("Cat")
+						H.dna.species.mutant_bodyparts |= "ears"
+						H.dna.features["ears"] = "Cat"
+						H.update_body()
 
 ////////////////////////////////////////////////////////SLIMEPEOPLE///////////////////////////////////////////////////////////////////
 
