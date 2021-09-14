@@ -66,7 +66,7 @@
 	var/color_choice = input(usr, "What color will you change to?", "Color Change") as null | color
 	if (color_choice)
 		var/temp_hsv = RGBtoHSV(color_choice)
-		if (ReadHSV(temp_hsv)[3] >= ReadHSV("#7f7f7f")[3])
+		if (ReadHSV(temp_hsv)[3] >= ReadHSV("#191919")[3])
 			H.dna.species.fixed_mut_color = sanitize_hexcolor(color_choice)
 			H.update_body()
 		else
