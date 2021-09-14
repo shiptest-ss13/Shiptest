@@ -21,6 +21,7 @@
 #
 
 standards:
+  - exactly: [0, 'mangled characters', '[\u0000\uFFFF\uFFFD]']
   - exactly: [8, 'escapes', '\\\\(red|blue|green|black|b|i[^mc])']
   - exactly: [9, 'Del()s', '\WDel\(']
 
@@ -28,7 +29,7 @@ standards:
   - exactly: [1, '/area text paths', '"/area']
   - exactly: [16, '/datum text paths', '"/datum']
   - exactly: [4, '/mob text paths', '"/mob']
-  - exactly: [49, '/obj text paths', '"/obj']
+  - exactly: [53, '/obj text paths', '"/obj']
   - exactly: [0, '/turf text paths', '"/turf']
   - exactly: [126, 'text2path uses', 'text2path']
 
@@ -40,4 +41,4 @@ standards:
   - exactly: [0, 'superflous whitespace', '[ \t]+$']
   - exactly: [36, 'mixed indentation', '^( +\t+|\t+ +)']
 
-  - no_more: [2243, 'indentions inside defines', '^(\s*)#define (\w*)( {2,}| ?\t+)(?!(\/\/|\/\*))']
+  - no_more: [0, 'indentions inside defines', '^(\s*)#define (\w*)( {2,}| ?\t+)(?!(\/\/|\/\*))']

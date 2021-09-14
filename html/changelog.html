@@ -25,8 +25,8 @@
 		<td valign='top'>
 			<div align='center'><font size='3'><b>White Sands 13 Development Changelog</b></font></div>
 
-			<p><div align='center'><font size='3'><a href="https://shiptest.ga/wiki">Wiki</a> | <a href="https://github.com/Shiptest-SS13/Shiptest">Source Code</a></font></div></p>
-			<font size='2'><b>Join our <a href="https://discord.gg/Zuv47eNuhE">Discord!</a></b></font>
+			<p><div align='center'><font size='3'><a href="https://shiptest.net/wiki">Wiki</a> | <a href="https://github.com/Shiptest-SS13/Shiptest">Source Code</a></font></div></p>
+			<font size='2'><b>Join our <a href="https://shiptest.net/discord">Discord!</a></b></font>
 			</td>
 	</tr>
 </table>
@@ -50,10 +50,100 @@
 		-->
 		<div class="commit sansserif">
 
+			<h2 class="date">13 September 2021</h2>
+			<h3 class="author">MarkSuckerberg updated:</h3>
+			<ul class="changes bgimages16">
+				<li class="rscadd">Many more randomgen ship names.</li>
+				<li class="bugfix">Critically damaged ships are no longer invisible.</li>
+				<li class="tweak">Small ships such as the kilo now qualify for names and full ship icons. Sorry pill-class "users," you don't get nice things.</li>
+			</ul>
+
+			<h2 class="date">12 September 2021</h2>
+			<h3 class="author">Bokkiewokkie updated:</h3>
+			<ul class="changes bgimages16">
+				<li class="admin">Fixed a security issue with the advanced proccall</li>
+			</ul>
+
+			<h2 class="date">10 September 2021</h2>
+			<h3 class="author">BigManMassive updated:</h3>
+			<ul class="changes bgimages16">
+				<li class="rscadd">Added makeshift pistol that can be crafted</li>
+				<li class="rscadd">Added makeshift armor that can be crafted</li>
+			</ul>
+			<h3 class="author">retlaw34 updated:</h3>
+			<ul class="changes bgimages16">
+				<li class="bugfix">erin fixes a ruin</li>
+				<li class="rscadd">Adds more wall closets.</li>
+			</ul>
+
+			<h2 class="date">08 September 2021</h2>
+			<h3 class="author">fighterslam updated:</h3>
+			<ul class="changes bgimages16">
+				<li class="rscadd">adds oxygen to the bubble-class</li>
+			</ul>
+
+			<h2 class="date">07 September 2021</h2>
+			<h3 class="author">AsciiSquid updated:</h3>
+			<ul class="changes bgimages16">
+				<li class="rscadd">added suit storage mapping helper</li>
+				<li class="tweak">tweaked design of the cricket-class</li>
+				<li class="bugfix">corrected stacking errors regarding duct tapes</li>
+				<li class="refactor">refactored /obj/item/stack/sticky_tape to the more generic /obj/item/stack/tape</li>
+			</ul>
+			<h3 class="author">Bokkiewokkie updated:</h3>
+			<ul class="changes bgimages16">
+				<li class="bugfix">fixes powernet jank at least somewhat</li>
+			</ul>
+			<h3 class="author">MarkSuckerberg updated:</h3>
+			<ul class="changes bgimages16">
+				<li class="rscadd">Adds a new blackbox entry for shuttle purchases to see ship popularity.</li>
+			</ul>
+			<h3 class="author">PetMudstone updated:</h3>
+			<ul class="changes bgimages16">
+				<li class="balance">Wolves and watchers are now incapable of destroying artificial walls and may only destroy mineable walls.</li>
+			</ul>
+			<h3 class="author">PrefabQuasar updated:</h3>
+			<ul class="changes bgimages16">
+				<li class="tweak">swapped the sounds played by flora when hit to something more appropriate</li>
+				<li class="soundadd">made a modified version of the rockbreaking sound to use for the above change</li>
+			</ul>
+			<h3 class="author">retlaw34 updated:</h3>
+			<ul class="changes bgimages16">
+				<li class="tweak">slightly updates defib sprite</li>
+			</ul>
+
+			<h2 class="date">06 September 2021</h2>
+			<h3 class="author">MarkSuckerberg updated:</h3>
+			<ul class="changes bgimages16">
+				<li class="bugfix">IPCs can actually be revived and ahealed again. Probably.</li>
+			</ul>
+			<h3 class="author">PrefabQuasar updated:</h3>
+			<ul class="changes bgimages16">
+				<li class="bugfix">Foam pistol now displays the correct sprite.</li>
+			</ul>
+
 			<h2 class="date">04 September 2021</h2>
 			<h3 class="author">AsciiSquid updated:</h3>
 			<ul class="changes bgimages16">
 				<li class="rscadd">Added a cute spider plush.</li>
+			</ul>
+			<h3 class="author">Azarak updated:</h3>
+			<ul class="changes bgimages16">
+				<li class="bugfix">fixed runechat messages not showing from things within lockers</li>
+			</ul>
+			<h3 class="author">MarkSuckerberg updated:</h3>
+			<ul class="changes bgimages16">
+				<li class="bugfix">Hyperspace doesn't delete you, but for real this time</li>
+			</ul>
+			<h3 class="author">PowerfulBacon, Mark Suckerberg updated:</h3>
+			<ul class="changes bgimages16">
+				<li class="code_imp">Removes old, deprecated map generator code</li>
+				<li class="code_imp">Removes unused, broken minimap code</li>
+				<li class="refactor">Refactors map exporting code to export to TGM and not lag as much</li>
+				<li class="bugfix">The `map exp` build mode module now actually works again</li>
+				<li class="rscadd">Adds option selection to the `map exp` build mode module, accessible by right clicking it</li>
+				<li class="rscdel">Minimap code (was broken anyways)</li>
+				<li class="rscdel">Old procedural generation code (wasn't used anyways)</li>
 			</ul>
 			<h3 class="author">PrefabQuasar updated:</h3>
 			<ul class="changes bgimages16">
@@ -434,113 +524,6 @@
 			<ul class="changes bgimages16">
 				<li class="bugfix">Spam-clicking the dock/undock button no longer breaks everything</li>
 				<li class="tweak">There is now a cooldown to renaming ships</li>
-			</ul>
-
-			<h2 class="date">13 July 2021</h2>
-			<h3 class="author">tiramisuapimancer updated:</h3>
-			<ul class="changes bgimages16">
-				<li class="rscdel">Radi Shipscorch</li>
-				<li class="tweak">mothperson plush description globally altered so as to no longer reference tgstation static "Hugbug"</li>
-				<li class="rscadd">more moths to Kugel</li>
-			</ul>
-
-			<h2 class="date">09 July 2021</h2>
-			<h3 class="author">1glitchycent updated:</h3>
-			<ul class="changes bgimages16">
-				<li class="imageadd">new bloodred sprite</li>
-			</ul>
-			<h3 class="author">MarkSuckerberg updated:</h3>
-			<ul class="changes bgimages16">
-				<li class="rscadd">NTSV Skipper, a pretty basic all-around ship.</li>
-				<li class="refactor">All ship areas are now pathed under /area/ship.</li>
-				<li class="code_imp">ALL SHUTTLES THAT USE THE /area/shuttle PATH WILL NO LONGER WORK. THEY NEED TO BE CHANGED TO THE NEW /area/ship PATHS.</li>
-				<li class="bugfix">Helm-breaking bug when overmap objects are deleted or removed</li>
-				<li class="code_imp">The process for making ship maps has been streamlined.</li>
-				<li class="tweak">The main "station" zlevel no longer exists.</li>
-				<li class="rscadd">Basic way to end rounds IC</li>
-				<li class="rscadd">Priority announcements can now be sent to only one z-level if specified to do so</li>
-				<li class="bugfix">Powernets are now properly rebuilt on shuttle move</li>
-				<li class="code_imp">Fixes issues found by SpacemanDMM linter</li>
-				<li class="tweak">APCs/air alarms no longer require any access to unlock</li>
-				<li class="rscadd">Star names are more interesting, names totally not stolen from starsector</li>
-				<li class="tweak">Makes the overmap slightly bigger.</li>
-				<li class="tweak">Raises event total cap</li>
-				<li class="bugfix">Stationary docking ports with roundstart templates defined will now spawn those templates when loaded in via map template.</li>
-				<li class="tweak">Diagonal movement now takes √2 as long instead of twice as long as orthogonal movement</li>
-				<li class="bugfix">You can throw items on all space ruins now</li>
-				<li class="bugfix">Overmap icons for ships now show the correct heading.</li>
-				<li class="bugfix">encounter ruin spawns no longer can be busted through to space</li>
-			</ul>
-			<h3 class="author">Swifterjackie updated:</h3>
-			<ul class="changes bgimages16">
-				<li class="rscadd">engineer gaming</li>
-			</ul>
-			<h3 class="author">TheNeoGamer42 updated:</h3>
-			<ul class="changes bgimages16">
-				<li class="rscadd">some cryo place thats now inhabited by carps</li>
-			</ul>
-			<h3 class="author">TripleZeta, tgstation development team updated:</h3>
-			<ul class="changes bgimages16">
-				<li class="imageadd">Updated some sprites to modern TG</li>
-				<li class="imageadd">New lab coats! CMO's color palette has been updated to compensate</li>
-			</ul>
-			<h3 class="author">Vorak2 updated:</h3>
-			<ul class="changes bgimages16">
-				<li class="bugfix">Reported problems with midway</li>
-			</ul>
-			<h3 class="author">martinlyra & swifterjackie & triplezeta updated:</h3>
-			<ul class="changes bgimages16">
-				<li class="rscadd">Added among plushies</li>
-				<li class="refactor">Moved Whitesands' plushies to Whitesands folder</li>
-			</ul>
-			<h3 class="author">retlaw34 updated:</h3>
-			<ul class="changes bgimages16">
-				<li class="rscadd">Adds a new line of posters, retro posters.</li>
-				<li class="rscadd">Adds some suspicious signs and posters</li>
-				<li class="tweak">Replacess the science's poster icon</li>
-				<li class="rscadd">The syndicate's old staging area for their operatives has been reported on Icemoon. The location is unknown, however.</li>
-				<li class="rscadd">Adds new gun sounds</li>
-			</ul>
-			<h3 class="author">tiramisuapimancer updated:</h3>
-			<ul class="changes bgimages16">
-				<li class="rscadd">new pet, soda dispenser and orion trail board, cryo pod console, on mining shuttle</li>
-				<li class="tweak">moved the SMES on mining shuttle and rewired to match, theres only one smes now but who cares we never used the second one. this should fix some bullshit with the ion thruster</li>
-				<li class="bugfix">plating put under two things on mining shuttle so that landing on planets would stop eating the wires and killing the solarpanels</li>
-				<li class="rscadd">Jellypeople have a lore blurb finally</li>
-				<li class="tweak">Jellypeople can have hair now</li>
-				<li class="tweak">edited or fully rewrote most of the roundstart species lore blurbs</li>
-				<li class="config">jellypeople default to roundstart in config in the repo now, they already were on serverside config though</li>
-				<li class="rscadd">Bunchof new socks</li>
-				<li class="bugfix">fixed some weird sprite errors on the backstates of a bunch of stocking sprites</li>
-				<li class="tweak">Ethereals can wear underclothes</li>
-				<li class="admin">added way to automatically ban people for being cringe</li>
-				<li class="bugfix">the whiteships are theoretically playable without admin intervention now, besides the fact that admins still have to spawn them in</li>
-				<li class="tweak">Dwayne now comes with more gear to make it have slightly better mining capacity than other ships</li>
-			</ul>
-			<h3 class="author">triplezeta updated:</h3>
-			<ul class="changes bgimages16">
-				<li class="rscadd">New space suit for use in space ruins and or by SolGov</li>
-				<li class="rscdel">The deathsquad enlistment poster has been commented out</li>
-				<li class="spellcheck">the hardsuits in the modularized hardsuit file are now improper nouns</li>
-				<li class="bugfix">ETAR SMG overlay wont show up on random guns now</li>
-				<li class="bugfix">All mainline ships should be able to be loaded in with the shuttle manipulator now</li>
-				<li class="imageadd">new surgical tool sprites</li>
-				<li class="rscadd">shetland has holopad in the bridge now</li>
-				<li class="balance">RND server boards can no longer be printed</li>
-				<li class="bugfix">shetland atmos should work better now</li>
-				<li class="bugfix">shetland has an IV drip and defib now too</li>
-				<li class="rscadd">one new icemoon ruin and three new jungle ruins</li>
-				<li class="bugfix">caravan raid and the solgov exploration pod ruin should work for real now</li>
-				<li class="rscadd">Utility jumpsuit and skirt, available for 1 metacoin.</li>
-				<li class="bugfix">shetland</li>
-			</ul>
-			<h3 class="author">triplezeta & untrius updated:</h3>
-			<ul class="changes bgimages16">
-				<li class="rscadd">nanoweave carpets</li>
-			</ul>
-			<h3 class="author">untrius updated:</h3>
-			<ul class="changes bgimages16">
-				<li class="bugfix">Royal moth wings display properly</li>
 			</ul>
 		</div>
 

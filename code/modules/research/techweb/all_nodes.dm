@@ -1162,9 +1162,9 @@
 
 /datum/techweb_node/sticky_advanced
 	id = "sticky_advanced"
-	display_name = "Advanced Sticky Technology"
-	description = "Taking a good joke too far? Nonsense!"
-	design_ids = list("super_sticky_tape", "pointy_tape")
+	display_name = "Advanced Tapenology"
+	description = "The absolute pinnacle of engineering!"
+	design_ids = list("electric_tape", "super_tape")
 
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 	export_price = 2500

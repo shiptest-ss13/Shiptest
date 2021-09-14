@@ -1133,9 +1133,17 @@
 	category = list("initial", "Misc")
 
 /datum/design/sticky_tape
-	name = "Sticky Tape"
+	name = "Sticky Packing Tape"
 	id = "sticky_tape"
 	build_type = AUTOLATHE
+	materials = list(/datum/material/plastic = 200)
+	build_path = /obj/item/stack/tape
+	category = list("initial", "Misc")
+
+/datum/design/duct_tape
+	name = "Duct Tape"
+	id = "duct_tape"
+	build_type = AUTOLATHE
 	materials = list(/datum/material/plastic = 500)
-	build_path = /obj/item/stack/sticky_tape
+	build_path = /obj/item/stack/tape/industrial
 	category = list("initial", "Misc")

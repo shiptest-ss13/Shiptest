@@ -1,1 +1,1 @@
-#define LANGUAGE_DWARF	"dwarf"
+#define LANGUAGE_DWARF "dwarf"
