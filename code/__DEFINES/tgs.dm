@@ -75,7 +75,7 @@
 #define TGS_EVENT_BYOND_INSTALL_START 5
 /// When a BYOND install operation fails. Parameters: Error message
 #define TGS_EVENT_BYOND_INSTALL_FAIL 6
-/// When the active BYOND version changes. Parameters: (Nullable) [/datum/tgs_version] of the current BYOND, [/datum/tgs_version] of the new BYOND
+/// When the active BYOND version changes.  Parameters: (Nullable) [/datum/tgs_version] of the current BYOND, [/datum/tgs_version] of the new BYOND
 #define TGS_EVENT_BYOND_ACTIVE_VERSION_CHANGE 7
 /// When the compiler starts running. Parameters: Game directory path, origin commit SHA
 #define TGS_EVENT_COMPILE_START 8

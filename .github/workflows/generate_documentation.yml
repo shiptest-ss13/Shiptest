@@ -20,7 +20,7 @@ jobs:
         run: |
           ~/dmdoc
           touch dmdoc/.nojekyll
-          echo codedocs.shiptest.ga > dmdoc/CNAME
+          echo codedocs.shiptest.net > dmdoc/CNAME
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@3.7.1
         with:

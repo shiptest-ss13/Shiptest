@@ -815,7 +815,7 @@
 	name = "Improvised Gripper Gloves"
 	reqs = list(
 			/obj/item/clothing/gloves/fingerless = 1,
-			/obj/item/stack/sticky_tape = 1)
+			/obj/item/stack/tape = 1)
 	result = /obj/item/clothing/gloves/tackler/offbrand
 	category = CAT_CLOTHING
 
@@ -834,6 +834,6 @@
 	reqs = list(
 		   /obj/item/crowbar = 1,
 		   /obj/item/kitchen/knife = 1,
-		   /obj/item/stack/sticky_tape = 1)
+		   /obj/item/stack/tape = 1)
 	result = /obj/item/pickaxe/improvised
 	category = CAT_MISC

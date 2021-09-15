@@ -107,6 +107,8 @@ GLOBAL_LIST_INIT(common_loot, list( //common: basic items
 		/obj/item/stack/sheet/metal/twenty = 1,
 		/obj/item/stack/sheet/mineral/plasma = 1,
 		/obj/item/sign = 1,
+		/obj/item/stack/tape/industrial = 1,
+		/obj/item/stack/tape/industrial/electrical = 1,
 
 		//assemblies
 		/obj/item/assembly/infra = 1,
@@ -142,7 +144,7 @@ GLOBAL_LIST_INIT(common_loot, list( //common: basic items
 		/obj/item/bodybag = 1,
 		/obj/item/grenade/smokebomb = 1,
 		/obj/item/stack/spacecash/c10 = 1,
-		/obj/item/stack/sticky_tape = 1,
+		/obj/item/stack/tape = 1,
 
 		//light sources
 		/obj/item/flashlight = 1,
