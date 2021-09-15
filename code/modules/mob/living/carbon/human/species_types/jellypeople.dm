@@ -74,31 +74,31 @@
 	H.blood_volume += 20
 
 /datum/species/jelly/spec_death(gibbed, mob/living/carbon/human/H)
-    if(H)
-        stop_wagging_tail(H)
+	if(H)
+		stop_wagging_tail(H)
 
 /datum/species/jelly/spec_stun(mob/living/carbon/human/H,amount)
-    if(H)
-        stop_wagging_tail(H)
-    . = ..()
+	if(H)
+		stop_wagging_tail(H)
+	. = ..()
 
 /datum/species/jelly/can_wag_tail(mob/living/carbon/human/H)
-    return ("tail_human" in mutant_bodyparts) || ("waggingtail_human" in mutant_bodyparts)
+	return ("tail_human" in mutant_bodyparts) || ("waggingtail_human" in mutant_bodyparts)
 
 /datum/species/jelly/is_wagging_tail(mob/living/carbon/human/H)
-    return ("waggingtail_human" in mutant_bodyparts)
+	return ("waggingtail_human" in mutant_bodyparts)
 
 /datum/species/jelly/start_wagging_tail(mob/living/carbon/human/H)
-    if("tail_human" in mutant_bodyparts)
-        mutant_bodyparts -= "tail_human"
-        mutant_bodyparts |= "waggingtail_human"
-    H.update_body()
+	if("tail_human" in mutant_bodyparts)
+		mutant_bodyparts -= "tail_human"
+		mutant_bodyparts |= "waggingtail_human"
+	H.update_body()
 
 /datum/species/jelly/stop_wagging_tail(mob/living/carbon/human/H)
-    if("waggingtail_human" in mutant_bodyparts)
-        mutant_bodyparts -= "waggingtail_human"
-        mutant_bodyparts |= "tail_human"
-    H.update_body()
+	if("waggingtail_human" in mutant_bodyparts)
+		mutant_bodyparts -= "waggingtail_human"
+		mutant_bodyparts |= "tail_human"
+	H.update_body()
 
 /datum/action/innate/regenerate_limbs
 	name = "Regenerate Limbs"
