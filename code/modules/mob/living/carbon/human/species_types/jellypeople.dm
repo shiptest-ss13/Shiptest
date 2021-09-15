@@ -73,6 +73,33 @@
 	qdel(consumed_limb)
 	H.blood_volume += 20
 
+/datum/species/jelly/spec_death(gibbed, mob/living/carbon/human/H)
+    if(H)
+        stop_wagging_tail(H)
+
+/datum/species/jelly/spec_stun(mob/living/carbon/human/H,amount)
+    if(H)
+        stop_wagging_tail(H)
+    . = ..()
+
+/datum/species/jelly/can_wag_tail(mob/living/carbon/human/H)
+    return ("tail_human" in mutant_bodyparts) || ("waggingtail_human" in mutant_bodyparts)
+
+/datum/species/jelly/is_wagging_tail(mob/living/carbon/human/H)
+    return ("waggingtail_human" in mutant_bodyparts)
+
+/datum/species/jelly/start_wagging_tail(mob/living/carbon/human/H)
+    if("tail_human" in mutant_bodyparts)
+        mutant_bodyparts -= "tail_human"
+        mutant_bodyparts |= "waggingtail_human"
+    H.update_body()
+
+/datum/species/jelly/stop_wagging_tail(mob/living/carbon/human/H)
+    if("waggingtail_human" in mutant_bodyparts)
+        mutant_bodyparts -= "waggingtail_human"
+        mutant_bodyparts |= "tail_human"
+    H.update_body()
+
 /datum/action/innate/regenerate_limbs
 	name = "Regenerate Limbs"
 	check_flags = AB_CHECK_CONSCIOUS
@@ -126,7 +153,7 @@
 
 /datum/action/innate/humanoid_customization/proc/change_form()
 	var/mob/living/carbon/human/H = owner
-	var/select_alteration = input(owner, "Select what part of your form to alter.", "Form Alteration", "cancel") in list("Body Color", "Hair Style", "Ears", "Cancel") //Select what you want to alter
+	var/select_alteration = input(owner, "Select what part of your form to alter.", "Form Alteration", "Cancel") in list("Body Color", "Hair Style", "Ears", "Tail") //Select what you want to alter
 	switch(select_alteration) //fuck you i like readability
 		if("Body Color")
 			var/new_color = input(owner, "Select your new color.", "Color Change", "#"+H.dna.features["mcolor"]) as color|null
@@ -160,6 +187,19 @@
 					if("Cat")
 						H.dna.species.mutant_bodyparts |= "ears"
 						H.dna.features["ears"] = "Slimecat"
+						H.update_body()
+				//Tails
+		if("Tail")
+			var/selected_tail = input(owner, "Select your desired tail.", "Tail Alteration") in list("None", "Cat") //lizard tails and/or horns to follow eventually
+			if(selected_tail)
+				switch(selected_tail)
+					if("None")
+						H.dna.features["tail_human"] = "None"
+						H.dna.species.mutant_bodyparts -= "tail_human"
+						H.update_body()
+					if("Cat")
+						H.dna.species.mutant_bodyparts |= "tail_human"
+						H.dna.features["tail_human"] = "Slimecat"
 						H.update_body()
 
 ////////////////////////////////////////////////////////SLIMEPEOPLE///////////////////////////////////////////////////////////////////

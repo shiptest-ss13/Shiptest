@@ -1720,6 +1720,16 @@
 	icon_state = "cat"
 	color_src = HAIR
 
+/datum/sprite_accessory/tails/human/cat/slime
+	name = "Slimecat"
+	icon_state = "catslime"
+	color_src = HAIR
+
+/datum/sprite_accessory/tails_animated/human/cat/slime
+	name = "Slimecat"
+	icon_state = "catslime"
+	color_src = HAIR
+
 /datum/sprite_accessory/snouts
 	icon = 'icons/mob/mutant_bodyparts.dmi'
 
