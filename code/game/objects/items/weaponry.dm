@@ -238,7 +238,7 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	var/list/nemesis_factions = list("mining", "boss")
 	var/faction_bonus_force = 25//Even with the highest damage of any practically accessible weapon, it still can't reliably kill some fauna without putting people into crit. Just mining balance I guess
 
-/obj/item/immortality_talisman/examine(mob/user)
+/obj/item/katana/cursed/examine(mob/user)
 	. = ..()
 	. += "<span class='notice'>To cut into the flesh of your enemies with this weapon is to wager your very soul. Take from the blood of your enemies what you have lost.</span>"
 
