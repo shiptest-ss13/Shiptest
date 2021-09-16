@@ -230,13 +230,13 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 /obj/item/katana/cursed
 	name = "ominous katana"
 	desc = "An ancient single-edged weapon, possessing a flawless sheen despite it's clear age. The blade seems almost too perfect, and passes through most substances like water. <span class='warning'><b>Something is wrong.</b></span>."
-	force = 50
+	force = 35
 	armour_penetration = 30
 	max_integrity = 500
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	var/hunger = 0//Fill your blade to get a bonus(If I can safely implement this I will nerf the damage slightly, and boost the selfdam)
 	var/list/nemesis_factions = list("mining", "boss")
-	var/faction_bonus_force = 15//Even with the highest damage of any practically accessible weapon, it still can't reliably kill some fauna without putting people into crit. Just mining balance I guess
+	var/faction_bonus_force = 25//Even with the highest damage of any practically accessible weapon, it still can't reliably kill some fauna without putting people into crit. Just mining balance I guess
 
 /obj/item/immortality_talisman/examine(mob/user)
 	. = ..()
