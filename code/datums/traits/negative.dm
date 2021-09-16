@@ -290,8 +290,6 @@
 				glasses_type = /obj/item/clothing/glasses/hud/health/prescription
 			if("Medical Doctor")
 				glasses_type = /obj/item/clothing/glasses/hud/health/prescription
-			if("Chemist")
-				glasses_type = /obj/item/clothing/glasses/hud/health/prescription
 			//Meson
 			if("Chief Engineer")
 				glasses_type = /obj/item/clothing/glasses/meson/prescription
