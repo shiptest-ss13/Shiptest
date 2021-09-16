@@ -260,6 +260,8 @@
 	name = "Nearsighted"
 	desc = "You are nearsighted without prescription glasses, but spawn with a pair."
 	value = -1
+	var/obj/item/glasses
+	var/where
 	gain_text = "<span class='danger'>Things far away from you start looking blurry.</span>"
 	lose_text = "<span class='notice'>You start seeing faraway things normally again.</span>"
 	medical_record_text = "Patient requires prescription glasses in order to counteract nearsightedness."
@@ -303,10 +305,22 @@
 
 	if(!glasses_type)
 		glasses_type = /obj/item/clothing/glasses/regular
-	glasses_type = new(get_turf(H))
-		if(!H.equip_to_slot_if_possible(glasses_type, ITEM_SLOT_EYES, bypass_equip_delay_self = TRUE))
-		H.put_in_hands(glasses_type)
-	H.regenerate_icons()
+	glasses = new glasses_type(get_turf(quirk_holder))
+	var/list/slots = list(
+		"on your face, silly!" = ITEM_SLOT_EYES,
+		"in your left pocket." = ITEM_SLOT_LPOCKET,
+		"in your right pocket." = ITEM_SLOT_RPOCKET,
+		"in your backpack." = ITEM_SLOT_BACKPACK,
+		"in your hands." = ITEM_SLOT_HANDS
+	)
+	where = H.equip_in_one_of_slots(glasses, slots, FALSE) || "at your feet, don't drop them next time!"
+
+/datum/quirk/nearsighted/post_add()
+	if(where == "in your backpack.")
+		var/mob/living/carbon/human/H = quirk_holder
+		SEND_SIGNAL(H.back, COMSIG_TRY_STORAGE_SHOW, H)
+
+	to_chat(quirk_holder, "<span class='notice'>There is a set of profession-assigned prescription glasses [where] These are valuable equipment for someone nearsighted like you. Keep them safe and clean! It's unlikely there are any spares.</span>")
 
 /datum/quirk/nyctophobia
 	name = "Nyctophobia"
