@@ -13,7 +13,7 @@
 	desc = "It's watching you suspiciously."
 
 /obj/structure/closet/crate/necropolis/tendril/PopulateContents()
-	var/loot = rand(1,27)
+	var/loot = rand(1,26)
 	switch(loot)
 		if(1)
 			new /obj/item/shared_storage/red(src)
@@ -43,13 +43,17 @@
 		if(12)
 			new /obj/item/clothing/suit/space/hardsuit/ert/paranormal/berserker(src)
 		if(13)
-			new /obj/item/jacobs_ladder(src)
+			new /obj/item/borg/upgrade/modkit/lifesteal(src)
+			new /obj/item/bedsheet/cult(src)
 		if(14)
-			new /obj/item/nullrod/scythe/talking(src)
+			new /obj/item/nullrod/scythe/talking/necro(src)
 		if(15)
 			new /obj/item/nullrod/armblade(src)
 		if(16)
-			new /obj/item/guardiancreator/miner(src)
+			if(prob(75))
+				new /obj/item/guardiancreator/miner(src)
+			else
+				new /obj/item/guardiancreator/miner/choose (src)
 		if(17)
 			if(prob(50))
 				new /obj/item/disk/design_disk/modkit_disc/mob_and_turf_aoe(src)
@@ -74,9 +78,6 @@
 			new /obj/item/book/granter/spell/summonitem(src)
 		if(26)
 			new /obj/item/book_of_babel(src)
-		if(27)
-			new /obj/item/borg/upgrade/modkit/lifesteal(src)
-			new /obj/item/bedsheet/cult(src)
 
 //KA modkit design discs
 /obj/item/disk/design_disk/modkit_disc
@@ -461,27 +462,42 @@
 	damage = 0
 	stamina = 40
 
-//Immortality Talisman
+//Immortality Talisman: Now with state-of-the-art panic button technology
 /obj/item/immortality_talisman
 	name = "\improper Immortality Talisman"
-	desc = "A dread talisman that can render you completely invulnerable."
+	desc = "A dread talisman, connecting to a plane of total emptiness. It can render you completely invulnerable."
 	icon = 'icons/obj/lavaland/artefacts.dmi'
 	icon_state = "talisman"
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
-	actions_types = list(/datum/action/item_action/immortality)
+	actions_types = list(/datum/action/item_action/hands_free/immortality)
 	var/cooldown = 0
+	w_class = 2
+	var/warcry = "DOOOOOM"
+
+/obj/item/immortality_talisman/examine(mob/user)
+	. = ..()
+	. += "<span class='notice'>Alt-click to set your activation wail.</span>"
+
+/obj/item/immortality_talisman/AltClick(mob/user)
+	if(user.canUseTopic(src, BE_CLOSE))
+		..()
+		if(istype(user) && loc == user)
+			var/input = stripped_input(user,"What do you wish to bellow when dragged into the abyss? (Capitalization provides best impact)", ,"", 50)
+			if(input)
+				src.warcry = input
 
 /obj/item/immortality_talisman/Initialize()
 	. = ..()
 	AddComponent(/datum/component/anti_magic, TRUE, TRUE, TRUE)
 
-/datum/action/item_action/immortality
+/datum/action/item_action/hands_free/immortality
 	name = "Immortality"
 
 /obj/item/immortality_talisman/attack_self(mob/user)
 	if(cooldown < world.time)
 		SSblackbox.record_feedback("amount", "immortality_talisman_uses", 1)
-		cooldown = world.time + 600
+		cooldown = world.time + 900
+		user.say("[warcry]!!!", forced="talisman warcry")
 		new /obj/effect/immortality_talisman(get_turf(user), user)
 	else
 		to_chat(user, "<span class='warning'>[src] is not ready yet!</span>")
@@ -506,12 +522,12 @@
 	setDir(user.dir)
 
 	user.forceMove(src)
-	user.notransform = TRUE
+	user.notransform = FALSE
 	user.status_flags |= GODMODE
 
 	can_destroy = FALSE
 
-	addtimer(CALLBACK(src, .proc/unvanish, user), 10 SECONDS)
+	addtimer(CALLBACK(src, .proc/unvanish, user), 15 SECONDS)
 
 /obj/effect/immortality_talisman/proc/unvanish(mob/user)
 	user.status_flags &= ~GODMODE
