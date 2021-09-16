@@ -235,12 +235,29 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	max_integrity = 500
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	var/hunger = 0//Fill your blade to get a bonus(If I can safely implement this I will nerf the damage slightly, and boost the selfdam)
-	faction_bonus_force = 15//Even with the highest damage of any practically accessible weapon, it still can't reliably kill some fauna without putting people into crit. Just mining balance I guess
-	nemesis_factions = list("mining", "boss")
+	var/list/nemesis_factions = list("mining", "boss")
+	var/faction_bonus_force = 15//Even with the highest damage of any practically accessible weapon, it still can't reliably kill some fauna without putting people into crit. Just mining balance I guess
 
 /obj/item/immortality_talisman/examine(mob/user)
 	. = ..()
 	. += "<span class='notice'>To cut into the flesh of your enemies with this weapon is to wager your very soul. Take from the blood of your enemies what you have lost.</span>"
+
+//Transplanted almost directly from the transforming.dm nemesis code. This is how I lost my medical coding license.
+/obj/item/katana/cursed/attack(mob/living/target, mob/living/carbon/human/user)
+	var/nemesis_faction = FALSE
+	if(LAZYLEN(nemesis_factions))
+		for(var/F in target.faction)
+			if(F in nemesis_factions)
+				nemesis_faction = TRUE
+				force += faction_bonus_force
+				nemesis_effects(user, target)
+				break
+	. = ..()
+	if(nemesis_faction)
+		force -= faction_bonus_force
+
+/obj/item/katana/cursed/proc/nemesis_effects(mob/living/user, mob/living/target)
+	return
 
 /obj/item/katana/cursed/attack(mob/target, mob/living/carbon/human/user)
 	if(user.mind && user.owns_soul() && !is_devil(user))
