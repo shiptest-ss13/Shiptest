@@ -13,7 +13,7 @@
 	desc = "It's watching you suspiciously."
 
 /obj/structure/closet/crate/necropolis/tendril/PopulateContents()
-	var/loot = rand(1,26)
+	var/loot = rand(1,25)
 	switch(loot)
 		if(1)
 			new /obj/item/shared_storage/red(src)
@@ -48,7 +48,7 @@
 		if(14)
 			new /obj/item/nullrod/scythe/talking/necro(src)
 		if(15)
-			new /obj/item/nullrod/armblade(src)
+			new /obj/item/book_of_babel(src)
 		if(16)
 			if(prob(75))
 				new /obj/item/guardiancreator/miner(src)
@@ -76,8 +76,6 @@
 			new /obj/item/clothing/suit/space/hardsuit/ert/paranormal/inquisitor(src)
 		if(25)
 			new /obj/item/book/granter/spell/summonitem(src)
-		if(26)
-			new /obj/item/book_of_babel(src)
 
 //KA modkit design discs
 /obj/item/disk/design_disk/modkit_disc
