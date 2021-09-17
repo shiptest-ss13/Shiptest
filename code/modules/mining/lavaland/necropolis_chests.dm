@@ -13,7 +13,7 @@
 	desc = "It's watching you suspiciously."
 
 /obj/structure/closet/crate/necropolis/tendril/PopulateContents()
-	var/loot = rand(1,25)
+	var/loot = rand(1,26)
 	switch(loot)
 		if(1)
 			new /obj/item/shared_storage/red(src)
@@ -76,6 +76,8 @@
 			new /obj/item/clothing/suit/space/hardsuit/ert/paranormal/inquisitor(src)
 		if(25)
 			new /obj/item/book/granter/spell/summonitem(src)
+		if(26)
+			new /obj/item/clothing/gloves/gauntlets(src)
 
 //KA modkit design discs
 /obj/item/disk/design_disk/modkit_disc
@@ -649,6 +651,48 @@
 		C.emote("scream")
 	..()
 
+//jackhammer gauntlets
+/obj/item/clothing/gloves/gauntlets
+	name = "concussive gauntlets"
+	desc = "Buried deep beneath the earth, these ancient gauntlets absorbed the tectonic power of earthquakes./ "
+	icon = 'icons/obj/lavaland/artefacts.dmi'
+	icon_state = "concussive_gauntlets"
+	mob_overlay_icon = 'icons/mob/clothing/hands.dmi'
+	mob_overlay_state = "concussive_gauntlets"
+	toolspeed = 0.1
+	strip_delay = 40
+	equip_delay_other = 20
+	cold_protection = HANDS
+	min_cold_protection_temperature = GLOVES_MIN_TEMP_PROTECT
+	heat_protection = HANDS
+	max_heat_protection_temperature = GLOVES_MAX_TEMP_PROTECT
+	resistance_flags = LAVA_PROOF | FIRE_PROOF //they are from lavaland after all
+	armor = list(melee = 25, bullet = 25, laser = 15, energy = 25, bomb = 100, bio = 0, rad = 0, fire = 100, acid = 30)
+
+/obj/item/clothing/gloves/gauntlets/equipped(mob/user, slot)
+	. = ..()
+	if(slot == ITEM_SLOT_GLOVES)
+		tool_behaviour = TOOL_MINING
+		RegisterSignal(user, COMSIG_HUMAN_EARLY_UNARMED_ATTACK, .proc/rocksmash)
+		RegisterSignal(user, COMSIG_MOVABLE_BUMP, .proc/rocksmash)
+	else
+		stopmining(user)
+
+/obj/item/clothing/gloves/gauntlets/dropped(mob/user)
+	. = ..()
+	stopmining(user)
+
+/obj/item/clothing/gloves/gauntlets/proc/stopmining(mob/user)
+	tool_behaviour = initial(tool_behaviour)
+	UnregisterSignal(user, COMSIG_HUMAN_EARLY_UNARMED_ATTACK)
+	UnregisterSignal(user, COMSIG_MOVABLE_BUMP)
+
+/obj/item/clothing/gloves/gauntlets/proc/rocksmash(mob/living/carbon/human/H, atom/A, proximity)
+	SIGNAL_HANDLER
+	if(!istype(A, /turf/closed/mineral))
+		return
+	A.attackby(src, H)
+	return COMPONENT_NO_ATTACK_OBJ
 
 /obj/item/jacobs_ladder
 	name = "jacob's ladder"
