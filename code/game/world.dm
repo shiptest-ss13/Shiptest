@@ -176,7 +176,7 @@ GLOBAL_VAR(restart_counter)
 
 /world/Topic(T, addr, master, key)
 	TGS_TOPIC	//redirect to server tools if necessary
-	SHIPTEST_TOPIC	//redirect to shiptest bot if applicable
+	SHIPBOT_TOPIC	//redirect to shiptest bot if applicable
 
 	var/static/list/topic_handlers = TopicHandlers()
 

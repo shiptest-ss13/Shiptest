@@ -1,11 +1,12 @@
-SUBSYSTEM_DEF(shiptest)
-	name = "Shiptest Bot"
+SUBSYSTEM_DEF(shipbot)
+	name = "ShipBot Controller"
 	init_order = INIT_ORDER_TICKER
 	flags = SS_NO_FIRE
 
 	var/enabled = FALSE
 	var/export_address
 	var/pinging = FALSE
+	var/ping_fails = 0
 	var/static/list/reserved_keys = list("commkey", "command", "args")
 	var/static/list/reserved_chars = list(
 		"?" = "%3F",
@@ -22,7 +23,12 @@ SUBSYSTEM_DEF(shiptest)
 		" " = "%20",
 	)
 
-/proc/shipbot_encode(message)
+/datum/controller/subsystem/shipbot/stat_entry(msg)
+	if(pinging)
+		return "Initializing (Pinging)"
+	return enabled ? "Ready" : "Disabled ([ping_fails] Ping Fails)"
+
+/datum/controller/subsystem/shipbot/proc/shipbot_encode(message)
 	for(var/reserved in reserved_chars)
 		if(findtext_char(message, reserved))
 			if(!reserved_chars[reserved])
@@ -30,26 +36,27 @@ SUBSYSTEM_DEF(shiptest)
 			message = replacetext_char(message, reserved, reserved_chars[reserved])
 	return message
 
-/proc/shipbot_decode(message)
+/datum/controller/subsystem/shipbot/proc/shipbot_decode(message)
 	for(var/reserved in reserved_chars)
 		var/looking = reserved_chars[reserved]
 		if(findtext_char(message, looking))
 			message = replacetext_char(message, looking, reserved)
 	return message
 
-/datum/config_entry/string/shiptest_address
-/datum/config_entry/string/shiptest_commkey
+/datum/config_entry/string/shipbot_address
+/datum/config_entry/string/shipbot_commkey
+/datum/config_entry/string/shipbot_botkey
 
-/datum/controller/subsystem/shiptest/Initialize(start_timeofday)
+/datum/controller/subsystem/shipbot/Initialize(start_timeofday)
 	. = ..()
-	var/address = CONFIG_GET(string/shiptest_address)
-	var/comms_key = CONFIG_GET(string/shiptest_commkey)
+	var/address = CONFIG_GET(string/shipbot_address)
+	var/comms_key = CONFIG_GET(string/shipbot_commkey)
 	if(!address || !comms_key)
 		return
 	export_address = "http://[address]/?commkey=[comms_key]"
 	addtimer(CALLBACK(src, .proc/do_ping), 0)
 
-/datum/controller/subsystem/shiptest/proc/do_ping()
+/datum/controller/subsystem/shipbot/proc/do_ping()
 	if(!export_address)
 		enabled = FALSE
 		return
@@ -59,37 +66,59 @@ SUBSYSTEM_DEF(shiptest)
 
 	pinging = world.timeofday
 	enabled = do_export_get("ping") == "pong"
+	if(!enabled)
+		ping_fails++
+		if(ping_fails < 3)
+			addtimer(CALLBACK(src, .proc/do_ping), 2 SECONDS)
 	pinging = FALSE
 
 	if(do_export_get("check") == "kill")
 		del world
 
 
-/datum/controller/subsystem/shiptest/proc/do_topic(topic)
+/datum/controller/subsystem/shipbot/proc/do_topic(topic)
+	stack_trace("topic")
 	if(!enabled)
 		return
-	if(findtext(topic, "SHIPTEST-") != 1)
+	if(findtext(topic, "SHIPBOT-") != 1)
 		return
 	var/list/split = splittext(topic, "-")
-	var/command = split[2]
-	var/list/_args = split.Copy(3)
+	var/botkey = split[2]
+	var/expected = CONFIG_GET(string/shipbot_botkey)
+	if(botkey != expected)
+		CRASH("Invalid Botkey!")
+	var/command = split[3]
+	var/list/_args = split.Copy(4)
 	var/list/parameters = new
 	for(var/arg in _args)
 		parameters += shipbot_decode(arg)
-	to_chat(world, "Shiptest Topic ran with: [command] and [length(parameters)] args")
+	to_chat(world, "Shipbot Topic ran with: [command] and [length(parameters)] args")
 
+	. = SHIPBOT_TOPIC_RESPONSE_BAD_COMMAND
 
-	if(command == SHIPTEST_TOPIC_PING)
+	if(command == SHIPBOT_TOPIC_PING)
 		return "PONG"
 
-	if(command == SHIPTEST_TOPIC_OOC_RELAY)
-		ooc_relay_get(parameters[0], parameters[1])
-		return SHIPTEST_TOPIC_RESPONSE_GOOD
+	if(command == SHIPBOT_TOPIC_RELAY_OOC)
+		for(var/client/client in GLOB.clients)
+			if(!(client.prefs.chat_toggles & CHAT_OOC))
+				continue
+			to_chat(client, "<span class='ooc'><span class='prefix'>RELAY:</span> <EM>[parameters[1]]:</EM> <span class='message linkify'>[parameters[2]]</span></span>")
+		return SHIPBOT_TOPIC_RESPONSE_GOOD
 
-	return SHIPTEST_TOPIC_RESPONSE_BAD_COMMAND
+	if(command == SHIPBOT_TOPIC_RELAY_ADMIN_SAY)
+		to_chat(GLOB.admins, "<span class='adminsay'>ASAY-RELAY: [parameters[1]]: [parameters[2]]</span>")
+		return SHIPBOT_TOPIC_RESPONSE_GOOD
 
-/// Send a GET request to the shiptest bot with the given command and data.
-/datum/controller/subsystem/shiptest/proc/do_export_get(command, list/data)
+	if(command == SHIPBOT_TOPIC_RELAY_ADMIN_PM)
+		var/client/target = get_mob_by_ckey(lowertext(parameters[3]))
+		if(!target)
+			return SHIPBOT_TOPIC_RESPONSE_FAIL
+		to_chat(target, "<span class='adminhelp'>Admin PM from '[parameters[1]]': [parameters[2]]</span>")
+		return SHIPBOT_TOPIC_RESPONSE_GOOD
+
+/// Send a GET request to the shipbot daemon with the given command and data.
+/datum/controller/subsystem/shipbot/proc/do_export_get(command, list/data)
 	if(!enabled && !pinging)
 		return FALSE
 
@@ -116,16 +145,47 @@ SUBSYSTEM_DEF(shiptest)
 		return file2text(response["CONTENT"])
 	return
 
-/datum/controller/subsystem/shiptest/proc/ooc_relay_send(client/client, message)
+/datum/controller/subsystem/shipbot/proc/relay_ooc(client/client, message)
 	if(!enabled)
 		return
-	do_export_get("ooc-relay", list(
+	do_export_get("relay_ooc", list(
 		"client" = client.key,
 		"message" = message,
 	))
 
-/datum/controller/subsystem/shiptest/proc/ooc_relay_get(name, message)
-	for(var/client/client in GLOB.clients)
-		if(!(client.prefs.chat_toggles & CHAT_OOC))
-			continue
-		to_chat(client, "<span class='ooc'><span class='prefix'>RELAY:</span> <EM>[name]:</EM> <span class='message linkify'>[message]</span></span>")
+/datum/controller/subsystem/shipbot/proc/relay_admin_say(client/client, message)
+	if(!enabled)
+		return
+	do_export_get("relay_admin_say", list(
+		"client" = client.key,
+		"message" = message,
+	))
+
+/datum/controller/subsystem/shipbot/proc/relay_mentor_say(client/client, message)
+	if(!enabled)
+		return
+	do_export_get("relay_mentor_say", list(
+		"client" = client.key,
+		"message" = message
+	))
+
+/datum/controller/subsystem/shipbot/proc/relay_admin_help(datum/admin_help/ahelp, message)
+	if(!enabled)
+		return
+	var/list/adm = get_admin_counts(R_BAN)
+	var/list/activemins = adm["present"]
+	if(!activemins.len)
+		do_export_get("relay_admin_help", list(
+			"client" = ahelp.initiator.key,
+			"message" = message,
+		))
+		to_chat(ahelp.initiator, "<span class='adminhelp'>Your admin help has been sent to Discord.</span>")
+
+/datum/controller/subsystem/shipbot/proc/relay_mentor_help(client/client, message)
+	if(!enabled)
+		return
+	do_export_get("relay_mentor_help", list(
+		"client" = client.key,
+		"message" = message,
+	))
+	to_chat(client, "<span class='mentor'>Your mentor help has been sent to Discord.</span>")

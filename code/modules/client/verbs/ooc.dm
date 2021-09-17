@@ -126,7 +126,7 @@ GLOBAL_VAR_INIT(normal_ooc_colour, "#002eb8")
 		prefs.save_preferences()
 
 /world/proc/ooc(client/client, msg)
-	SSshiptest.ooc_relay_send(client, msg)
+	SSshipbot.relay_ooc(client, msg)
 	msg = process_chat_markup(msg)
 	var/keyname = client.key
 	if(client.prefs.unlock_content)
