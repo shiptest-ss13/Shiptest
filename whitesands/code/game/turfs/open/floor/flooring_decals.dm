@@ -42,13 +42,13 @@
 		icon_state = "bordercolormonofull";				\
 	}													\
 	/obj/effect/turf_decal/corner/##color_name/bordercorner { \
-		icon_state = "bordercolormonofull";				\
+		icon_state = "bordercolorcorner";				\
 	}													\
 	/obj/effect/turf_decal/corner/##color_name/borderfull { \
 		icon_state = "bordercolorfull";					\
 	}													\
 	/obj/effect/turf_decal/corner/##color_name/bordercee { \
-		icon_state = "bordercolormonofull";				\
+		icon_state = "bordercolorcee";				\
 	}													\
 	/obj/effect/turf_decal/trimline/##color_name {		\
 		color = ##tile_color;							\
