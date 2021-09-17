@@ -21,5 +21,31 @@
 	"workbench.editorAssociations": {
 		"*.dmi": "imagePreview.previewEditor"
 	},
-	"gitlens.advanced.blame.customArguments": ["-w"]
+	"gitlens.advanced.blame.customArguments": ["-w"],
+
+	"[python]": {
+		"gitlens.codeLens.symbolScopes": [
+			"!Module"
+		],
+		"editor.wordBasedSuggestions": false,
+		"editor.insertSpaces": true,
+		"editor.tabSize": 4
+	},
+	"[yaml]": {
+		"editor.insertSpaces": true,
+		"editor.tabSize": 2,
+		"editor.autoIndent": "advanced",
+		"gitlens.codeLens.scopes": [
+			"document"
+		]
+	},
+	"[json]": {
+		"editor.quickSuggestions": {
+			"strings": true
+		},
+		"editor.suggest.insertMode": "replace",
+		"gitlens.codeLens.scopes": [
+			"document"
+		]
+	}
 }

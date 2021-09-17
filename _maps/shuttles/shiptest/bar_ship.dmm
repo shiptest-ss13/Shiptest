@@ -918,6 +918,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/machinery/vending/hydroseeds,
 /turf/open/floor/wood,
 /area/ship/crew)
 "ud" = (
@@ -954,7 +955,9 @@
 /area/ship/bridge)
 "up" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
-/obj/structure/chair/stool/bar,
+/obj/structure/chair/stool/bar{
+	dir = 1
+	},
 /turf/open/floor/wood,
 /area/ship/crew/canteen)
 "us" = (
@@ -1119,6 +1122,12 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/carpet/nanoweave,
+/area/ship/crew/canteen)
+"xW" = (
+/obj/structure/chair/stool/bar{
+	dir = 1
+	},
+/turf/open/floor/wood,
 /area/ship/crew/canteen)
 "xX" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -1614,12 +1623,14 @@
 /turf/open/floor/plasteel,
 /area/ship/bridge)
 "Gz" = (
-/obj/structure/chair/stool/bar,
 /obj/effect/turf_decal/tile/neutral{
 	dir = 1
 	},
 /obj/effect/turf_decal/tile/neutral{
 	dir = 8
+	},
+/obj/structure/chair/stool/bar{
+	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
@@ -2327,38 +2338,12 @@
 /turf/open/floor/plasteel/freezer,
 /area/ship/storage)
 "Vz" = (
-/obj/item/seeds/tomato,
-/obj/item/seeds/tomato,
-/obj/item/seeds/tomato,
-/obj/structure/closet/crate/hydroponics,
-/obj/item/seeds/wheat,
-/obj/item/seeds/wheat,
-/obj/item/seeds/wheat,
-/obj/item/seeds/garlic,
-/obj/item/seeds/potato,
-/obj/item/seeds/potato,
-/obj/item/seeds/apple,
-/obj/item/seeds/pineapple,
-/obj/item/seeds/sugarcane,
-/obj/item/seeds/cabbage,
-/obj/item/seeds/banana,
-/obj/item/seeds/chili,
-/obj/item/seeds/random,
-/obj/item/seeds/wheat/rice,
-/obj/item/seeds/wheat/rice,
-/obj/effect/turf_decal/tile/neutral{
-	dir = 1
-	},
 /obj/effect/turf_decal/tile/neutral{
 	dir = 4
 	},
-/obj/effect/turf_decal/box,
-/obj/item/seeds/cotton,
-/obj/item/seeds/pumpkin,
-/obj/item/seeds/pumpkin,
-/obj/item/seeds/peas,
-/obj/item/seeds/peas,
-/obj/item/seeds/peas,
+/obj/effect/turf_decal/tile/neutral{
+	dir = 1
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/hydroponics)
 "VO" = (
@@ -2381,12 +2366,14 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
 	},
-/obj/structure/chair/stool/bar,
 /obj/effect/turf_decal/tile/neutral{
 	dir = 1
 	},
 /obj/effect/turf_decal/tile/neutral{
 	dir = 8
+	},
+/obj/structure/chair/stool/bar{
+	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
@@ -2543,9 +2530,11 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 8
 	},
-/obj/structure/chair/stool/bar,
 /obj/structure/cable{
 	icon_state = "1-2"
+	},
+/obj/structure/chair/stool/bar{
+	dir = 4
 	},
 /turf/open/floor/wood,
 /area/ship/crew/canteen)
@@ -2557,6 +2546,18 @@
 	dir = 6
 	},
 /turf/open/floor/plasteel/showroomfloor,
+/area/ship/crew/canteen)
+"ZW" = (
+/obj/structure/chair/stool/bar{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/neutral{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/neutral{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
 
 (1,1,1) = {"
@@ -2841,7 +2842,7 @@ BF
 Qa
 gv
 dq
-Qa
+xW
 xp
 ER
 uK
@@ -2864,7 +2865,7 @@ Gz
 Gz
 Gz
 Wo
-Gz
+ZW
 Kp
 if
 UU

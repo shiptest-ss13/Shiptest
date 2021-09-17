@@ -6,8 +6,8 @@
 
 #define SQRT_2 1.414214
 
-#define PI						3.1416
-#define INFINITY				1e31	//closer then enough
+#define PI 3.1416
+#define INFINITY 1e31	//closer then enough
 
 #define SHORT_REAL_LIMIT 16777216
 
@@ -223,5 +223,5 @@
 
 // )
 /// Gives the number of pixels in an orthogonal line of tiles.
-#define TILES_TO_PIXELS(tiles)			(tiles * PIXELS)
+#define TILES_TO_PIXELS(tiles) (tiles * PIXELS)
 // )

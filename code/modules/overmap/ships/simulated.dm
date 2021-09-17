@@ -1,8 +1,8 @@
 //Threshold above which it uses the ship sprites instead of the shuttle sprites
-#define SHIP_SIZE_THRESHOLD		300
+#define SHIP_SIZE_THRESHOLD 150
 
 //How long it takes to regain 1% integrity while docked
-#define SHIP_DOCKED_REPAIR_TIME	2 SECONDS
+#define SHIP_DOCKED_REPAIR_TIME 2 SECONDS
 
 /**
   * # Simulated overmap ship
@@ -41,7 +41,6 @@
 	if(!shuttle)
 		CRASH("Simulated overmap ship created without associated shuttle!")
 	name = shuttle.name
-	job_slots = shuttle.source_template.job_slots
 	calculate_mass()
 	initial_name()
 	refresh_engines()

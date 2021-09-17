@@ -1,9 +1,9 @@
 /datum/species/ipc // im fucking lazy mk2 and cant get sprites to normally work
 	name = "IPC" //inherited from the real species, for health scanners and things
 	id = "ipc"
+	sexes = FALSE
 	say_mod = "states" //inherited from a user's real species
-	sexes = 0
-	species_traits = list(NOTRANSSTING,NOEYESPRITES,NO_DNA_COPY,NOBLOOD,TRAIT_EASYDISMEMBER,ROBOTIC_LIMBS,NOZOMBIE,MUTCOLORS,REVIVESBYHEALING,NOHUSK,NOMOUTH,NO_BONES) //all of these + whatever we inherit from the real species
+	species_traits = list(AGENDER,NOTRANSSTING,NOEYESPRITES,NO_DNA_COPY,NOBLOOD,TRAIT_EASYDISMEMBER,ROBOTIC_LIMBS,NOZOMBIE,MUTCOLORS,REVIVESBYHEALING,NOHUSK,NOMOUTH,NO_BONES) //all of these + whatever we inherit from the real species
 	inherent_traits = list(TRAIT_RESISTCOLD,TRAIT_VIRUSIMMUNE,TRAIT_NOBREATH,TRAIT_RADIMMUNE,TRAIT_GENELESS,TRAIT_LIMBATTACHMENT)
 	inherent_biotypes = list(MOB_ROBOTIC, MOB_HUMANOID)
 	mutantbrain = /obj/item/organ/brain/mmi_holder/posibrain
@@ -12,12 +12,14 @@
 	mutantliver = /obj/item/organ/liver/cybernetic/upgraded/ipc
 	mutantstomach = /obj/item/organ/stomach/cell
 	mutantears = /obj/item/organ/ears/robot
+	mutantlungs = null //no more collecting change for you
+	mutantappendix = null
 	mutant_organs = list(/obj/item/organ/cyberimp/arm/power_cord)
 	mutant_bodyparts = list("ipc_screen", "ipc_antenna", "ipc_chassis")
 	default_features = list("mcolor" = "#7D7D7D", "ipc_screen" = "Static", "ipc_antenna" = "None", "ipc_chassis" = "Morpheus Cyberkinetics(Greyscale)")
 	meat = /obj/item/stack/sheet/plasteel{amount = 5}
 	skinned_type = /obj/item/stack/sheet/metal{amount = 10}
-	exotic_blood = "oil"
+	exotic_blood = /datum/reagent/fuel/oil
 	damage_overlay_type = "synth"
 	limbs_id = "synth"
 	mutant_bodyparts = list("ipc_screen", "ipc_antenna", "ipc_chassis")
@@ -31,16 +33,13 @@
 	attack_sound = 'sound/items/trayhit1.ogg'
 	allow_numbers_in_name = TRUE
 	deathsound = "sound/voice/borg_deathsound.ogg"
-	var/saved_screen //for saving the screen when they die
-	var/list/initial_species_traits //for getting these values back for assume_disguise()
-	var/list/initial_inherent_traits
-	changesource_flags = MIRROR_BADMIN | WABBAJACK
+	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | ERT_SPAWN | RACE_SWAP | SLIME_EXTRACT
 	loreblurb = "Integrated Positronic Chassis or \"IPC\" for short, are synthetic lifeforms composed of an Artificial \
 	Intelligence program encased in a bipedal robotic shell. They are fragile, allergic to EMPs, and the butt of endless toaster jokes. \
 	Just as easy to repair as they are to destroy, they might just get their last laugh in as you're choking on neurotoxins. Beep Boop."
 	ass_image = 'icons/ass/assmachine.png'
-
-
+	/// The last screen used when the IPC died.
+	var/saved_screen
 	var/datum/action/innate/change_screen/change_screen
 
 /datum/species/ipc/random_name(unique)
@@ -49,9 +48,6 @@
 
 /datum/species/ipc/on_species_gain(mob/living/carbon/C) // Let's make that IPC actually robotic.
 	. = ..()
-	var/obj/item/organ/appendix/appendix = C.getorganslot("appendix") // Easiest way to remove it.
-	appendix.Remove(C)
-	QDEL_NULL(appendix)
 	if(ishuman(C) && !change_screen)
 		change_screen = new
 		change_screen.Grant(C)
@@ -80,7 +76,11 @@
 	saved_screen = C.dna.features["ipc_screen"]
 	C.dna.features["ipc_screen"] = "BSOD"
 	C.update_body()
-	sleep(3 SECONDS)
+	addtimer(CALLBACK(src, .proc/post_death, C), 5 SECONDS)
+
+/datum/species/ipc/proc/post_death(mob/living/carbon/C)
+	if(C.stat < DEAD)
+		return
 	C.dna.features["ipc_screen"] = null // Turns off their monitor on death.
 	C.update_body()
 
@@ -163,16 +163,16 @@
 			to_chat(H, "<span class='warning'>Alert: Internal temperature regulation systems offline; thermal damage sustained. Shutdown imminent.</span>")
 			H.visible_message("[H]'s cooling system fans stutter and stall. There is a faint, yet rapid beeping coming from inside their chassis.")
 
+
 /datum/species/ipc/spec_revival(mob/living/carbon/human/H)
 	H.dna.features["ipc_screen"] = "BSOD"
 	H.update_body()
 	H.say("Reactivating [pick("core systems", "central subroutines", "key functions")]...")
-	sleep(3 SECONDS)
-	H.say("Reinitializing [pick("personality matrix", "behavior logic", "morality subsystems")]...")
-	sleep(3 SECONDS)
-	H.say("Finalizing setup...")
-	sleep(3 SECONDS)
+	addtimer(CALLBACK(src, .proc/post_revival, H), 6 SECONDS)
+
+/datum/species/ipc/proc/post_revival(mob/living/carbon/human/H)
+	if(H.stat < DEAD)
+		return
 	H.say("Unit [H.real_name] is fully functional. Have a nice day.")
 	H.dna.features["ipc_screen"] = saved_screen
 	H.update_body()
-	return

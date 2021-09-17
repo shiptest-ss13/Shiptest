@@ -3,6 +3,7 @@
 	desc = "The end result of 12 years of work by SolarGarrison's R&D division. Chambered in 4.73×33mm caseless ammunition."
 	icon_state = "solar"
 	icon = 'whitesands/icons/obj/guns/projectile.dmi'
+	fire_sound = 'sound/weapons/gun/rifle/shot.ogg'
 	item_state = "arg"
 	mag_type = /obj/item/ammo_box/magazine/rifle47x33mm
 	can_suppress = FALSE
@@ -90,6 +91,7 @@
 	perfect for colonists on a budget looking to license firearms for local manufacture.
 	"}
 	icon = 'whitesands/icons/obj/guns/projectile.dmi'
+	fire_sound = 'sound/weapons/gun/rifle/shot.ogg'
 	icon_state = "aks74u"
 	fire_rate = 10
 	lefthand_file = 'whitesands/icons/mob/inhands/weapons/guns_left.dmi'
@@ -97,13 +99,13 @@
 	item_state = "aks74u"
 	weapon_weight = WEAPON_MEDIUM
 	w_class = WEIGHT_CLASS_NORMAL
-	pin = /obj/item/firing_pin/explorer
 	mag_type = /obj/item/ammo_box/magazine/aks74u
 
 /obj/item/gun/ballistic/automatic/ak47
 	name = "AK-47"
 	desc = {"A favorite among both the soldiers of the Russian Colonial Army and civilians out on the edges of explored space, the AK-47 is a reliable rifle designed and sold by a Space Russian company and remains one of the most common automatic rifles in the known galaxy."}
 	icon = 'whitesands/icons/obj/guns/48x32guns.dmi'
+	fire_sound = 'sound/weapons/gun/rifle/shot.ogg'
 	icon_state = "ak47"
 	item_state = "arg"
 	fire_rate = 2
@@ -128,6 +130,7 @@
 	name = "M514 EBR"
 	desc = {"A cheap, reliable rifle often found in the hands of low-ranking Syndicate personnel. It's known for rather high stopping power and mild armor-piercing capabilities."}
 	icon = 'whitesands/icons/obj/guns/48x32guns.dmi'
+	fire_sound = 'sound/weapons/gun/rifle/shot.ogg'
 	icon_state = "ebr"
 	item_state = "ebr"
 	fire_rate = 2
@@ -148,3 +151,19 @@
 	mag_display = TRUE
 	weapon_weight = WEAPON_LIGHT
 	fire_rate = 4
+
+/obj/item/gun/ballistic/automatic/zip_pistol
+	name = "Makeshift Pistol"
+	desc = "A makeshift janky pistol, its a miracle it even works."
+	icon = 'whitesands/icons/obj/guns/projectile.dmi'
+	icon_state = "ZipPistol"
+	lefthand_file = 'whitesands/icons/mob/inhands/weapons/guns_left.dmi'
+	righthand_file = 'whitesands/icons/mob/inhands/weapons/guns_right.dmi'
+	item_state = "ZipPistol"
+	mag_type = /obj/item/ammo_box/magazine/zip_ammo_9mm
+	can_suppress = FALSE
+	actions_types = list()
+	can_bayonet = FALSE
+	mag_display = TRUE
+	weapon_weight = WEAPON_LIGHT
+	fire_rate = 3

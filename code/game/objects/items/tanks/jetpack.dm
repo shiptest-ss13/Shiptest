@@ -189,6 +189,7 @@
 	slot_flags = null
 	gas_type = null
 	full_speed = FALSE
+	custom_price = 2000
 	var/datum/gas_mixture/temp_air_contents
 	var/obj/item/tank/internals/tank = null
 	var/mob/living/carbon/human/cur_user

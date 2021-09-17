@@ -58,6 +58,22 @@ const TARGET_SPECIES_LIST = [
     name: 'Arachnid',
     value: 'rachnid',
   },
+  {
+    name: 'IPC',
+    value: 'ipc',
+  },
+  {
+    name: 'Squidperson',
+    value: 'squid',
+  },
+  {
+    name: 'Ethereal',
+    value: 'ethereal',
+  },
+  {
+    name: 'Teshari',
+    value: 'tesh',
+  },
 ];
 
 const TARGET_NUTRITION_LIST = [

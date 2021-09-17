@@ -384,7 +384,7 @@
 	for(var/obj/machinery/atmospherics/components/unary/vent_pump/temp_vent in GLOB.machines)
 		if(QDELETED(temp_vent))
 			continue
-		if(is_station_level(temp_vent.loc.z) && !temp_vent.welded)
+		if(istype(get_area(temp_vent), /area/ship) && !temp_vent.welded)
 			var/datum/pipeline/temp_vent_parent = temp_vent.parents[1]
 			if(!temp_vent_parent)
 				continue // No parent vent

@@ -9,7 +9,7 @@
 	desc = "A spacefaring vessel."
 	icon = 'whitesands/icons/effects/overmap.dmi'
 	icon_state = "ship"
-	///Prefix of all the icons used by the ship. ([base_icon_state]_moving and [base_icon_state]_damaged)
+	///Prefix of all the icons used by the ship. (ex. [base_icon_state]_moving)
 	base_icon_state = "ship"
 
 	///Timer ID of the looping movement timer
@@ -257,5 +257,3 @@
 		dir = get_heading()
 	else
 		icon_state = base_icon_state
-	if(integrity < initial(integrity) / 4)
-		icon_state = "[icon_state]_damaged"

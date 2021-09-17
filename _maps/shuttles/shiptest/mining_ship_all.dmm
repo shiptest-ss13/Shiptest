@@ -326,6 +326,9 @@
 	},
 /obj/item/book/manual/wiki/surgery,
 /obj/item/storage/backpack/duffelbag/med/surgery,
+/obj/item/clothing/mask/surgical,
+/obj/item/clothing/suit/apron/surgical,
+/obj/item/clothing/gloves/color/latex/nitrile,
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "ie" = (
@@ -364,6 +367,7 @@
 /obj/item/circuitboard/machine/chem_dispenser/drinks,
 /obj/item/circuitboard/computer/arcade/orion_trail,
 /obj/item/kinetic_crusher,
+/obj/item/vending_refill/mining_equipment,
 /turf/open/floor/plasteel,
 /area/ship/cargo)
 "jD" = (
@@ -961,6 +965,7 @@
 /obj/structure/cable{
 	icon_state = "2-4"
 	},
+/mob/living/simple_animal/turtle,
 /turf/open/floor/plasteel,
 /area/ship/cargo)
 "zT" = (
@@ -1306,6 +1311,10 @@
 	},
 /turf/open/floor/plasteel,
 /area/ship/crew)
+"Gi" = (
+/obj/item/vending_refill/mining_equipment,
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ship/engineering)
 "Gk" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/structure/cable/yellow{
@@ -1996,6 +2005,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
+/obj/item/storage/belt/medical,
 /turf/open/floor/plasteel/dark,
 /area/ship/medical)
 "Wd" = (
@@ -2268,7 +2278,7 @@ OJ
 "}
 (6,1,1) = {"
 OJ
-Yy
+Gi
 jD
 go
 pL
