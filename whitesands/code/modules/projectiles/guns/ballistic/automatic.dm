@@ -127,9 +127,11 @@
 	mag_display = TRUE
 
 /obj/item/gun/ballistic/automatic/ebr
-	name = "M514 EBR"
+	name = "\improper M514 EBR"
 	desc = {"A cheap, reliable rifle often found in the hands of low-ranking Syndicate personnel. It's known for rather high stopping power and mild armor-piercing capabilities."}
 	icon = 'whitesands/icons/obj/guns/48x32guns.dmi'
+	lefthand_file = 'whitesands/icons/mob/inhands/weapons/64x_guns_left.dmi'
+	righthand_file = 'whitesands/icons/mob/inhands/weapons/64x_guns_right.dmi'
 	fire_sound = 'sound/weapons/gun/rifle/shot.ogg'
 	icon_state = "ebr"
 	item_state = "ebr"
