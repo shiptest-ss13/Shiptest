@@ -1,0 +1,14 @@
+author: PrefabQuasar
+delete-after: true
+changes:
+  - rscadd: Added the ability to dip stock parts into certain reagents, converting
+      them into other reagents
+  - rscadd: Added the reagent analyzer, craftable from a health analyzer, and the
+      seperatory funnel, craftable from 3 small beakers
+  - rscadd: Added two new "medicine" reagents, which convert between brute and burn,
+      however, unlike convermol, total damage will INCREASE, making them only situationally
+      useful
+  - tweak: made the electrolysis reaction use less liquid electricity to convert the
+      same amount of water
+  - balance: Chemistry can now be done without chemistry machines
+  - imageadd: Added icons for the reagent analyzer, and the seperatory funnel
