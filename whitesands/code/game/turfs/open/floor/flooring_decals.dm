@@ -112,7 +112,7 @@
 		icon_state = "spline_fancy_corner"				\
 	}
 
-HELPER(neutral, COLOR_TILE_GRAY, 90)
+HELPER(neutral, null, 75)
 HELPER(black, COLOR_TILE_GRAY, 255)
 HELPER(blue, COLOR_BLUE_GRAY, 255)
 HELPER(green, COLOR_GREEN_GRAY, 255)

@@ -445,7 +445,6 @@
 /obj/structure/closet/emcloset/wall{
 	pixel_x = 32
 	},
-/obj/effect/turf_decal/lumos/shower,
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/aft)
 "eE" = (
@@ -1638,7 +1637,6 @@
 /obj/structure/window/reinforced/tinted/frosted{
 	dir = 8
 	},
-/obj/effect/turf_decal/lumos/shower,
 /obj/item/soap,
 /turf/open/floor/plasteel/white,
 /area/ship/crew/dorm)
@@ -2128,7 +2126,7 @@
 /obj/machinery/door/airlock/external{
 	name = "server room airlock"
 	},
-/obj/effect/turf_decal/lumos/tile/blue/checker,
+/obj/effect/turf_decal/corner/blue/diagonal,
 /obj/effect/turf_decal/industrial/warning,
 /obj/structure/fans/tiny,
 /obj/structure/cable/blue{
@@ -2679,9 +2677,6 @@
 "Em" = (
 /obj/structure/cable{
 	icon_state = "1-4"
-	},
-/obj/effect/turf_decal/lumos/loading_area{
-	dir = 4
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/cargo)
@@ -3531,7 +3526,7 @@
 /obj/machinery/door/firedoor,
 /obj/item/paper_bin,
 /obj/item/stamp/qm,
-/obj/effect/turf_decal/lumos/tile/brown/fulltile,
+/obj/effect/turf_decal/corner/brown/full,
 /turf/open/floor/plasteel,
 /area/ship/cargo)
 "OR" = (
@@ -3543,7 +3538,7 @@
 	id = "sgcargodesk"
 	},
 /obj/machinery/door/firedoor,
-/obj/effect/turf_decal/lumos/tile/brown/fulltile,
+/obj/effect/turf_decal/corner/brown/full,
 /turf/open/floor/plasteel,
 /area/ship/cargo)
 "OU" = (
@@ -3552,7 +3547,7 @@
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "sgcargodesk"
 	},
-/obj/effect/turf_decal/lumos/tile/brown/fulltile,
+/obj/effect/turf_decal/corner/brown/full,
 /turf/open/floor/plasteel,
 /area/ship/cargo)
 "OY" = (
