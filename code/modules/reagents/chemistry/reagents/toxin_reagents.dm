@@ -100,6 +100,14 @@
 		return
 	..()
 
+/datum/reagent/toxin/plasma/dip_object(obj/item/I, mob/user, obj/item/reagent_containers/H)
+	. = ..()
+	if(istype(I, /obj/item/stock_parts/manipulator))
+		H.reagents.add_reagent(/datum/reagent/stable_plasma, (H.reagents.remove_reagent(/datum/reagent/toxin/plasma, 10*I.get_part_rating())))
+		return TRUE
+	return
+
+
 /datum/reagent/toxin/hot_ice
 	name = "Hot Ice Slush"
 	description = "Frozen plasma. To the right people, it's worth its weight in gold"

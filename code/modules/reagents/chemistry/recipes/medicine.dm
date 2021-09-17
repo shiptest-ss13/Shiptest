@@ -197,3 +197,12 @@ WS End */
 	for(var/i = 1, i <= created_volume, i++)
 		new /obj/item/stack/medical/mesh/advanced(location)
 
+/datum/chemical_reaction/converbital
+	results = list(/datum/reagent/medicine/converbital = 3)
+	required_reagents = list(/datum/reagent/fuel = 1, /datum/reagent/acetone = 1, /datum/reagent/medicine/kelotane = 1)
+	mix_message = "The mixture spits and steams as it settles into a reddish-black paste"
+
+/datum/chemical_reaction/convuri
+	results = list(/datum/reagent/medicine/convuri = 3)
+	required_reagents = list(/datum/reagent/fuel = 1, /datum/reagent/ash =1, /datum/reagent/medicine/bicaridine = 1)
+	mix_message = "the mixture rapidly dries into an orange powder"
