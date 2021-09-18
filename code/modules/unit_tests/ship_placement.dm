@@ -3,6 +3,6 @@
 		try
 			SSshuttle.action_load(map)
 		catch(var/exception/e)
-			stack_trace("Error loading ship type ([map.name]): [e] on [e.file]:[e.line]")
+			Fail("Runtime error loading ship type ([map.name]): [e] on [e.file]:[e.line]")
 		//shuttle.jumpToNullSpace() //Causes runtimes currently, so until we figure that out this should remained commented
 
