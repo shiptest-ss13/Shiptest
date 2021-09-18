@@ -25,6 +25,9 @@
 	name = "chapel floor"
 	icon_state = "chapel"
 
+/turf/open/floor/holofloor/dark
+	icon_state = "dark"
+
 /turf/open/floor/holofloor/chapel/bottom_left
 	direction = WEST
 
