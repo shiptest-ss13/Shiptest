@@ -216,7 +216,8 @@
 	var/obj/effect/landmark/observer_start/O = locate(/obj/effect/landmark/observer_start) in GLOB.landmarks_list
 	to_chat(src, "<span class='notice'>Now teleporting.</span>")
 	if (O)
-		observer.forceMove(O.loc)	observer.key = key
+		observer.forceMove(O.loc)
+	observer.key = key
 	observer.client = client
 	observer.set_ghost_appearance()
 	if(observer.client && observer.client.prefs)

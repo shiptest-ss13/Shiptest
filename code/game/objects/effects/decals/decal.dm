@@ -35,7 +35,6 @@
 	icon = 'whitesands/icons/turf/decals.dmi'
 	icon_state = "warningline"
 	layer = TURF_DECAL_LAYER
-	appearance_flags = RESET_COLOR
 	var/detail_overlay
 	var/detail_color
 
