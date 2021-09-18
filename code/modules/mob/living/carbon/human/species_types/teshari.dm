@@ -22,14 +22,3 @@
 	bodytemp_cold_damage_limit = (BODYTEMP_COLD_DAMAGE_LIMIT - 30)
 	exotic_blood = /datum/reagent/ammonia
 	no_equip = list(ITEM_SLOT_BACK)
-
-/datum/species/teshari/can_equip(obj/item/I, slot, disable_warning, mob/living/carbon/human/H, bypass_equip_delay_self, swap)
-	if(slot == ITEM_SLOT_MASK)
-		if(H.wear_mask && !swap)
-			return FALSE
-		if(I.w_class > WEIGHT_CLASS_SMALL)
-			return FALSE
-		if(!H.get_bodypart(BODY_ZONE_HEAD))
-			return FALSE
-		return equip_delay_self_check(I, H, bypass_equip_delay_self)
-	. = ..()
