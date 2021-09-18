@@ -35,7 +35,7 @@
 			cached_map = parsed
 	return bounds
 
-/datum/map_template/proc/initTemplateBounds(list/bounds)
+/datum/map_template/proc/initTemplateBounds(list/bounds, init_atmos = TRUE)
 	if (!bounds) //something went wrong
 		stack_trace("[name] template failed to initialize correctly!")
 		return
@@ -78,6 +78,9 @@
 	SSmachines.setup_template_powernets(cables)
 	SSair.setup_template_machinery(atmos_machines)
 
+	if(!init_atmos)
+		return
+
 	//calculate all turfs inside the border
 	var/list/template_and_bordering_turfs = block(
 		locate(
@@ -115,7 +118,7 @@
 
 	return level
 
-/datum/map_template/proc/load(turf/T, centered = FALSE)
+/datum/map_template/proc/load(turf/T, centered = FALSE, init_atmos = TRUE)
 	if(centered)
 		T = locate(T.x - round(width/2) , T.y - round(height/2) , T.z)
 	if(!T)
@@ -150,7 +153,7 @@
 		repopulate_sorted_areas()
 
 	//initialize things that are normally initialized after map load
-	initTemplateBounds(bounds)
+	initTemplateBounds(bounds, init_atmos)
 
 	log_game("[name] loaded at [T.x],[T.y],[T.z]")
 	return bounds
