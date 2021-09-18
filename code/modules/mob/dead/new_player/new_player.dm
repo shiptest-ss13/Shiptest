@@ -216,11 +216,7 @@
 	var/obj/effect/landmark/observer_start/O = locate(/obj/effect/landmark/observer_start) in GLOB.landmarks_list
 	to_chat(src, "<span class='notice'>Now teleporting.</span>")
 	if (O)
-		observer.forceMove(O.loc)
-	else
-		to_chat(src, "<span class='notice'>Teleporting failed. Ahelp an admin please</span>")
-		stack_trace("There's no freaking observer landmark available on this map or you're making observers before the map is initialised")
-	observer.key = key
+		observer.forceMove(O.loc)	observer.key = key
 	observer.client = client
 	observer.set_ghost_appearance()
 	if(observer.client && observer.client.prefs)
