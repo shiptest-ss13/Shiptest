@@ -37,3 +37,14 @@
 /datum/species/teshari/on_species_loss(mob/living/carbon/human/C, datum/species/new_species, pref_load)
 	. = ..()
 	C.can_be_held = FALSE
+
+/datum/species/teshari/can_equip(obj/item/I, slot, disable_warning, mob/living/carbon/human/H, bypass_equip_delay_self, swap)
+	if(slot == ITEM_SLOT_MASK)
+		if(H.wear_mask && !swap)
+			return FALSE
+		if(I.w_class > WEIGHT_CLASS_SMALL)
+			return FALSE
+		if(!H.get_bodypart(BODY_ZONE_HEAD))
+			return FALSE
+		return equip_delay_self_check(I, H, bypass_equip_delay_self)
+	. = ..()
