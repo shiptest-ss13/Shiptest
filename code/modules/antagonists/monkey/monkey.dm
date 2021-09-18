@@ -30,11 +30,11 @@
 		QDEL_NULL(D)
 
 /datum/antagonist/monkey/greet()
-	to_chat(owner, "<b>You are a monkey now!</b>")
-	to_chat(owner, "<b>Bite humans to infect them, follow the orders of the monkey leaders, and help fellow monkeys!</b>")
-	to_chat(owner, "<b>Ensure at least one infected monkey escapes on the Emergency Shuttle!</b>")
-	to_chat(owner, "<b><i>As an intelligent monkey, you know how to use technology and how to ventcrawl while wearing things.</i></b>")
-	to_chat(owner, "<b>You can use :k to talk to fellow monkeys!</b>")
+	to_chat(owner, "<b>You are a monkey now! Welcome to the jungle!</b>")
+	to_chat(owner, "<b>Bite humans to infect them with that jungle rhythm, follow the orders of the monkey in the middles, and help fellow monkeys!</b>")
+	to_chat(owner, "<b>Ensure at least one infected monkey escapes the sector!</b>")
+	to_chat(owner, "<b><i>As an intellectual among primates, you know how to use technology and how to ventcrawl while wearing things.</i></b>")
+	to_chat(owner, "<b>You can use :k to talk shop with your fellow monkeys!</b>")
 	SEND_SOUND(owner.current, sound('sound/ambience/antag/monkey.ogg'))
 
 /datum/antagonist/monkey/on_removal()
@@ -81,7 +81,7 @@
 	. = ..()
 
 /datum/antagonist/monkey/leader
-	name = "Monkey Leader"
+	name = "monkey in the middle"
 	monkey_only = FALSE
 
 /datum/antagonist/monkey/leader/admin_add(datum/mind/new_owner,mob/admin)
@@ -98,15 +98,15 @@
 			else
 				return
 	new_owner.add_antag_datum(src)
-	log_admin("[key_name(admin)] made [key_name(new_owner)] a monkey leader!")
-	message_admins("[key_name_admin(admin)] made [key_name_admin(new_owner)] a monkey leader!")
+	log_admin("[key_name(admin)] made [key_name(new_owner)] a monkey in the middle!")
+	message_admins("[key_name_admin(admin)] made [key_name_admin(new_owner)] a monkey in the middle!")
 
 /datum/antagonist/monkey/leader/on_gain()
 	. = ..()
 	var/obj/item/organ/heart/freedom/F = new
 	F.Insert(owner.current, drop_if_replaced = FALSE)
 	SSticker.mode.ape_leaders += owner
-	owner.special_role = "Monkey Leader"
+	owner.special_role = "monkey in the middle"
 
 /datum/antagonist/monkey/leader/on_removal()
 	SSticker.mode.ape_leaders -= owner
@@ -120,9 +120,9 @@
 	to_chat(owner, "<b>You have been planted onto this station by the Animal Rights Consortium.</b>")
 	to_chat(owner, "<b>Soon the disease will transform you into an ape. Afterwards, you will be able spread the infection to others with a bite.</b>")
 	to_chat(owner, "<b>While your infection strain is undetectable by scanners, any other infectees will show up on medical equipment.</b>")
-	to_chat(owner, "<b>Your mission will be deemed a success if any of the live infected monkeys reach CentCom.</b>")
+	to_chat(owner, "<b>Your mission will be deemed a success if any of the live infected monkeys escape the sector.</b>")
 	to_chat(owner, "<b>As an initial infectee, you will be considered a 'leader' by your fellow monkeys.</b>")
-	to_chat(owner, "<b>You can use :k to talk to fellow monkeys!</b>")
+	to_chat(owner, "<b>You can use :k to talk shop with your fellow monkeys!</b>")
 	SEND_SOUND(owner.current, sound('sound/ambience/antag/monkey.ogg'))
 
 /datum/objective/monkey
@@ -134,7 +134,7 @@
 /datum/objective/monkey/check_completion()
 	var/datum/disease/D = new /datum/disease/transformation/jungle_fever()
 	for(var/mob/living/carbon/monkey/M in GLOB.alive_mob_list)
-		if (M.HasDisease(D) && (M.onCentCom() || M.onSyndieBase()))
+		if (M.HasDisease(D) && (	M.onCentCom() || M.onSyndieBase()))
 			escaped_monkeys++
 	if(escaped_monkeys >= monkeys_to_win)
 		return TRUE
@@ -191,23 +191,23 @@
 	switch(get_result())
 		if(MONKEYS_ESCAPED)
 			parts += "<span class='greentext big'><B>Monkey Major Victory!</B></span>"
-			parts += "<span class='greentext'><B>Central Command and [station_name()] were taken over by the monkeys! Ook ook!</B></span>"
+			parts += "<span class='greentext'><B>Central Command and [station_name()] were forced to obey the laws of the jungle! Ook ook!</B></span>"
 		if(MONKEYS_LIVED)
 			parts += "<FONT size = 3><B>Monkey Minor Victory!</B></FONT>"
 			parts += "<span class='greentext'><B>[station_name()] was taken over by the monkeys! Ook ook!</B></span>"
 		if(DISEASE_LIVED)
 			parts += "<span class='redtext big'><B>Monkey Minor Defeat!</B></span>"
-			parts += "<span class='redtext'><B>All the monkeys died, but the disease lives on! The future is uncertain.</B></span>"
+			parts += "<span class='redtext'><B>All the monkeys died, but the fever lives on! The future of funk is uncertain.</B></span>"
 		if(MONKEYS_DIED)
 			parts += "<span class='redtext big'><B>Monkey Major Defeat!</B></span>"
-			parts += "<span class='redtext'><B>All the monkeys died, and Jungle Fever was wiped out!</B></span>"
+			parts += "<span class='redtext'><B>All the monkeys died! Nobody is left to feel the Jungle Fever!</B></span>"
 	var/list/leaders = get_antag_minds(/datum/antagonist/monkey/leader, TRUE)
 	var/list/monkeys = get_antag_minds(/datum/antagonist/monkey, TRUE)
 
 	if(LAZYLEN(leaders))
-		parts += "<span class='header'>The monkey leaders were:</span>"
+		parts += "<span class='header'>The monkeys in the middle were:</span>"
 		parts += printplayerlist(SSticker.mode.ape_leaders)
 	if(LAZYLEN(monkeys))
-		parts += "<span class='header'>The monkeys were:</span>"
+		parts += "<span class='header'>Those who monkeyed around:</span>"
 		parts += printplayerlist(SSticker.mode.ape_infectees)
 	return "<div class='panel redborder'>[parts.Join("<br>")]</div>"
