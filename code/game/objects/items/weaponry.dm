@@ -229,18 +229,32 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 
 /obj/item/katana/cursed
 	name = "ominous katana"
-	desc = "An ancient single-edged weapon, possessing a flawless sheen despite it's clear age. The blade seems almost too perfect, and passes through most substances like water. <span class='warning'><b>Something is wrong.</b></span>."
+	desc = "A japanese single-edged blade, once used to contain an ancient evil. The being within is grateful for being released, but beware: <b>generosity has a price.</b></span>"
+	icon_state = "ominous_katana"
+	item_state = "ominous_katana"
+	icon = 'icons/obj/lavaland/artefacts.dmi'
+	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
 	force = 35
 	armour_penetration = 30
 	max_integrity = 500
 	resistance_flags = FIRE_PROOF | ACID_PROOF
-	var/hunger = 0//Fill your blade to get a bonus(If I can safely implement this I will nerf the damage slightly, and boost the selfdam)
+	var/essence = 0//Used for blade abilities, mainly heals(If I can safely implement this I will nerf the damage slightly, and boost the selfdam)
 	var/list/nemesis_factions = list("mining", "boss")
-	var/faction_bonus_force = 25//Even with the highest damage of any practically accessible weapon, it still can't reliably kill some fauna without putting people into crit. Just mining balance I guess
+	var/faction_bonus_force = 25
+
+/obj/item/katana/cursed/suicide_act(mob/user)
+	user.visible_message("<span class='suicide'>[user] is surrendering to the entity within [src]! It looks like [user.p_theyre()] trying to commit seppuku!</span>")
+	return(FIRELOSS)
 
 /obj/item/katana/cursed/examine(mob/user)
 	. = ..()
-	. += "<span class='notice'>To cut into the flesh of your enemies with this weapon is to wager your very soul. Take from the blood of your enemies what you have lost.</span>"
+	. += "<span class='notice'>To cut into the flesh of your target with this weapon is to feed the gluttonous emptiness within. Burn the blood of your enemies to replenish your own spent essence.</span>"
+
+/obj/item/katana/cursed/attack(mob/living/target, mob/living/user)
+	. = ..()
+	if(isliving(target) && target.stat != DEAD)
+		essence += rand(15, 20)
 
 //Transplanted almost directly from the transforming.dm nemesis code. This is how I lost my medical coding license.
 /obj/item/katana/cursed/attack(mob/living/target, mob/living/carbon/human/user)
