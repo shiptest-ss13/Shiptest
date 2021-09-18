@@ -30,7 +30,7 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
 "bq" = (
-/turf/closed/wall,
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/storage)
 "bM" = (
 /obj/machinery/airalarm/all_access{
@@ -64,7 +64,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
 "ch" = (
-/turf/closed/wall/r_wall,
+/turf/closed/wall/r_wall/syndicate/nodiagonal,
 /area/ship/maintenance)
 "cl" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
@@ -191,12 +191,12 @@
 	},
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/airlock/vault{
-	req_access = list(25)
+	req_one_access = list(25,1)
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
 "fb" = (
-/turf/closed/wall,
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/maintenance)
 "fc" = (
 /obj/machinery/atmospherics/components/binary/pump/on/layer2{
@@ -227,7 +227,7 @@
 	dir = 8
 	},
 /obj/machinery/door/airlock/vault{
-	req_access = list(25)
+	req_one_access = list(25,1)
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
@@ -347,7 +347,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "hQ" = (
-/obj/machinery/vending/cigarette,
+/obj/structure/chair/stool,
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/canteen)
 "ie" = (
@@ -374,7 +374,7 @@
 /area/ship/cargo)
 "jb" = (
 /obj/machinery/status_display/shuttle,
-/turf/closed/wall/r_wall,
+/turf/closed/wall/r_wall/syndicate/nodiagonal,
 /area/ship/bridge)
 "jh" = (
 /obj/machinery/door/airlock/external,
@@ -433,7 +433,7 @@
 /area/ship/crew/canteen)
 "jK" = (
 /obj/machinery/status_display/shuttle,
-/turf/closed/wall,
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/cargo)
 "jL" = (
 /obj/structure/table/reinforced,
@@ -454,6 +454,10 @@
 	},
 /turf/open/floor/pod/dark,
 /area/ship/cargo)
+"jY" = (
+/obj/machinery/vending/cigarette,
+/turf/open/floor/plasteel/tech,
+/area/ship/crew/canteen)
 "kg" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 8
@@ -475,7 +479,7 @@
 /obj/item/paper{
 	info = "PROPERTY OF THE SYNDICATE - RETURN IF LOST"
 	},
-/turf/open/floor/carpet/nanoweave/red,
+/turf/open/floor/plating,
 /area/ship/cargo)
 "kH" = (
 /obj/structure/cable{
@@ -529,9 +533,6 @@
 /area/ship/storage)
 "lg" = (
 /obj/structure/table/reinforced,
-/obj/item/syndicatedetonator{
-	desc = "This gaudy button can be used to instantly detonate syndicate bombs that have been activated on the station. It is also fun to press."
-	},
 /turf/open/floor/wood,
 /area/ship/crew/canteen)
 "lm" = (
@@ -575,7 +576,7 @@
 /obj/item/t_scanner/adv_mining_scanner/lesser,
 /obj/item/t_scanner/adv_mining_scanner/lesser,
 /obj/item/gps{
-	gpstag = "NTREC1";
+	gpstag = "SYNTROOPSHIP1";
 	pixel_x = -9;
 	pixel_y = 7
 	},
@@ -739,6 +740,21 @@
 /obj/item/clothing/shoes/laceup,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
+"oF" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/catwalk/over,
+/obj/structure/table/wood/reinforced,
+/obj/item/stack/spacecash/c100,
+/turf/open/floor/plating,
+/area/ship/cargo)
 "oO" = (
 /obj/structure/chair/wood,
 /turf/open/floor/plasteel/tech,
@@ -764,6 +780,16 @@
 	},
 /turf/open/floor/plating,
 /area/ship/crew/canteen)
+"pm" = (
+/obj/item/stack/sheet/mineral/gold/fifty,
+/obj/structure/closet/secure_closet/wall{
+	icon_state = "sec_wall";
+	name = "safe";
+	pixel_y = -31;
+	req_one_access = list(25,1)
+	},
+/turf/open/floor/mineral/plastitanium/red,
+/area/ship/cargo)
 "pt" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/structure/cable{
@@ -847,7 +873,7 @@
 /turf/open/floor/mineral/plastitanium,
 /area/ship/crew)
 "qB" = (
-/turf/closed/wall,
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/cargo)
 "qU" = (
 /obj/machinery/atmospherics/pipe/simple/orange/hidden{
@@ -899,10 +925,12 @@
 /turf/closed/wall,
 /area/ship/storage)
 "sy" = (
-/obj/effect/turf_decal/industrial/outline,
 /obj/item/stack/sheet/mineral/gold/fifty,
-/obj/structure/closet/crate/secure/gear{
-	req_one_access = list(25)
+/obj/structure/closet/secure_closet/wall{
+	icon_state = "sec_wall";
+	name = "safe";
+	pixel_y = 31;
+	req_one_access = list(25,1)
 	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/ship/cargo)
@@ -957,6 +985,14 @@
 	pixel_x = 24;
 	pixel_y = -24
 	},
+/obj/structure/closet/secure_closet/freezer/wall{
+	pixel_y = -31
+	},
+/obj/item/storage/box/ingredients/wildcard,
+/obj/item/storage/box/ingredients/wildcard,
+/obj/item/storage/box/ingredients/wildcard,
+/obj/item/storage/box/ingredients/wildcard,
+/obj/item/seeds/wheat,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "vf" = (
@@ -968,6 +1004,9 @@
 	},
 /obj/structure/cable{
 	icon_state = "0-4"
+	},
+/obj/machinery/hydroponics/constructable{
+	anchored = 0
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance)
@@ -996,11 +1035,16 @@
 /turf/open/floor/carpet/nanoweave/red,
 /area/ship/crew)
 "vv" = (
-/turf/closed/wall/r_wall,
+/turf/closed/wall/r_wall/syndicate/nodiagonal,
 /area/ship/bridge)
 "vZ" = (
 /turf/template_noop,
 /area/template_noop)
+"wb" = (
+/obj/structure/chair/stool,
+/obj/structure/chair/stool,
+/turf/open/floor/plasteel/tech,
+/area/ship/crew/canteen)
 "wc" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 8
@@ -1046,7 +1090,7 @@
 /turf/open/floor/wood,
 /area/ship/crew/canteen)
 "xe" = (
-/turf/closed/wall,
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/bridge)
 "xh" = (
 /obj/structure/window/reinforced/spawner/west,
@@ -1104,13 +1148,14 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "yH" = (
-/obj/machinery/light,
-/obj/effect/turf_decal/industrial/outline,
 /obj/item/stack/sheet/mineral/gold/fifty,
-/obj/structure/closet/crate/secure/gear{
-	req_one_access = list(25)
-	},
 /obj/effect/spawner/lootdrop/maintenance/six,
+/obj/structure/closet/secure_closet/wall{
+	icon_state = "sec_wall";
+	name = "safe";
+	pixel_y = -31;
+	req_one_access = list(25,1)
+	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/ship/cargo)
 "yJ" = (
@@ -1191,7 +1236,7 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/canteen)
 "Bd" = (
-/turf/closed/wall/r_wall,
+/turf/closed/wall/r_wall/syndicate/nodiagonal,
 /area/ship/crew)
 "Bg" = (
 /obj/structure/chair/wood{
@@ -1241,7 +1286,8 @@
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
-/turf/open/floor/plasteel/dark,
+/obj/machinery/biogenerator,
+/turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
 "Cv" = (
 /obj/item/radio,
@@ -1363,18 +1409,20 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
 "EE" = (
-/turf/closed/wall/r_wall,
+/turf/closed/wall/r_wall/syndicate/nodiagonal,
 /area/ship/storage)
 "ES" = (
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "Fl" = (
-/obj/effect/turf_decal/industrial/outline,
 /obj/item/stack/sheet/mineral/gold/fifty,
-/obj/structure/closet/crate/secure/gear{
-	req_one_access = list(25)
-	},
 /obj/effect/spawner/lootdrop/maintenance/six,
+/obj/structure/closet/secure_closet/wall{
+	icon_state = "sec_wall";
+	name = "safe";
+	pixel_y = 31;
+	req_one_access = list(25,1)
+	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/ship/cargo)
 "Fm" = (
@@ -1459,7 +1507,7 @@
 "GU" = (
 /obj/machinery/door/window{
 	dir = 4;
-	req_access_txt = "150"
+	req_one_access_txt = "150"
 	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/ship/cargo)
@@ -1529,8 +1577,10 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/machinery/holopad,
 /obj/structure/catwalk/over,
+/obj/structure/table/wood/reinforced,
+/obj/machinery/light/floor,
+/obj/item/toy/redbutton,
 /turf/open/floor/plating,
 /area/ship/cargo)
 "Ia" = (
@@ -1586,7 +1636,10 @@
 /obj/item/gun/ballistic/shotgun/bulldog/unrestricted{
 	spawnwithmagazine = 0
 	},
-/obj/item/ammo_box/magazine/m12g/stun,
+/obj/item/ammo_box/magazine/m12g{
+	ammo_type = /obj/item/ammo_casing/shotgun/beanbag;
+	name = "shotgun magazine (12g beanbag slugs)"
+	},
 /turf/open/floor/wood,
 /area/ship/crew/canteen)
 "JF" = (
@@ -1621,8 +1674,22 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
+"JN" = (
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/crew/canteen)
+"JX" = (
+/obj/effect/spawner/lootdrop/maintenance/six,
+/obj/structure/closet/secure_closet/wall{
+	icon_state = "sec_wall";
+	name = "safe";
+	pixel_y = -31;
+	req_one_access = list(25,1)
+	},
+/obj/item/stack/sheet/mineral/gold/fifty,
+/turf/open/floor/mineral/plastitanium/red,
+/area/ship/cargo)
 "Kh" = (
-/turf/closed/wall/r_wall,
+/turf/closed/wall/r_wall/syndicate/nodiagonal,
 /area/ship/crew/canteen)
 "Kq" = (
 /obj/structure/table/reinforced,
@@ -1756,6 +1823,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 8
 	},
+/obj/structure/table/reinforced,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "Of" = (
@@ -1863,6 +1931,9 @@
 /obj/item/reagent_containers/food/condiment/flour,
 /obj/item/reagent_containers/food/condiment/rice,
 /obj/item/reagent_containers/glass/beaker/large,
+/obj/item/storage/box/ingredients/wildcard,
+/obj/item/storage/box/ingredients/wildcard,
+/obj/item/storage/box/ingredients/wildcard,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
 "PV" = (
@@ -1881,6 +1952,9 @@
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/crew)
+"Qk" = (
+/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/area/ship/cargo)
 "Qn" = (
 /obj/machinery/airalarm/all_access{
 	dir = 1;
@@ -1948,7 +2022,7 @@
 /area/ship/maintenance)
 "Rf" = (
 /obj/machinery/status_display/shuttle,
-/turf/closed/wall/r_wall,
+/turf/closed/wall/r_wall/syndicate/nodiagonal,
 /area/ship/storage)
 "Rh" = (
 /obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer2,
@@ -1958,12 +2032,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/machinery/shuttle_manipulator{
-	desc = "A holographic display of the cruise shuttle we're on right now.";
-	layer = 2.7;
-	max_integrity = 99999;
-	name = "shuttle holographic display"
-	},
+/obj/structure/table/reinforced,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "Rm" = (
@@ -1985,7 +2054,7 @@
 /area/ship/crew)
 "Rx" = (
 /obj/machinery/status_display/shuttle,
-/turf/closed/wall,
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/crew/canteen)
 "RS" = (
 /obj/effect/turf_decal/industrial/warning{
@@ -2040,7 +2109,7 @@
 /area/ship/cargo)
 "SW" = (
 /obj/structure/sign/warning/chemdiamond,
-/turf/closed/wall,
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/maintenance)
 "Tc" = (
 /obj/machinery/power/terminal{
@@ -2209,12 +2278,9 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/storage)
 "Vl" = (
-/turf/closed/wall,
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/crew)
 "Vm" = (
-/obj/machinery/door/window{
-	req_access_txt = "150"
-	},
 /obj/machinery/vending/games,
 /turf/open/floor/carpet/nanoweave/red,
 /area/ship/cargo)
@@ -2265,11 +2331,13 @@
 /area/ship/cargo)
 "WP" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
-/obj/effect/turf_decal/industrial/outline,
-/obj/structure/closet/crate/secure/gear{
-	req_one_access = list(25)
-	},
 /obj/item/stack/sheet/mineral/gold/fifty,
+/obj/structure/closet/secure_closet/wall{
+	icon_state = "sec_wall";
+	name = "safe";
+	pixel_y = 31;
+	req_one_access = list(25,1)
+	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/ship/cargo)
 "WU" = (
@@ -2293,8 +2361,8 @@
 /obj/item/radio/intercom{
 	pixel_y = 20
 	},
-/obj/machinery/computer/vaultcontroller,
 /obj/item/card/id/departmental_budget/car,
+/obj/machinery/computer/bank_machine,
 /turf/open/floor/mineral/plastitanium/red,
 /area/ship/cargo)
 "Xg" = (
@@ -2346,7 +2414,7 @@
 /area/ship/crew/canteen)
 "Yj" = (
 /obj/machinery/status_display/shuttle,
-/turf/closed/wall,
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/maintenance)
 "Ym" = (
 /obj/effect/turf_decal/industrial/warning{
@@ -2366,6 +2434,8 @@
 	icon_state = "1-8"
 	},
 /obj/structure/catwalk/over,
+/obj/structure/table/wood/reinforced,
+/obj/item/stack/spacecash/c100,
 /turf/open/floor/plating,
 /area/ship/cargo)
 "Yr" = (
@@ -2410,15 +2480,17 @@
 /turf/open/floor/carpet/nanoweave/red,
 /area/ship/crew)
 "ZE" = (
-/obj/effect/turf_decal/industrial/outline,
 /obj/item/gun/ballistic/automatic/pistol{
 	spawnwithmagazine = 0
 	},
 /obj/item/stack/sheet/mineral/gold/fifty,
-/obj/structure/closet/crate/secure/gear{
-	req_one_access = list(25)
-	},
 /obj/effect/spawner/lootdrop/maintenance/six,
+/obj/structure/closet/secure_closet/wall{
+	icon_state = "sec_wall";
+	name = "safe";
+	pixel_y = -31;
+	req_one_access = list(25,1)
+	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/ship/cargo)
 "ZF" = (
@@ -2487,7 +2559,7 @@ Kh
 dN
 Sa
 ji
-mx
+JN
 pl
 we
 ch
@@ -2517,7 +2589,7 @@ me
 me
 xh
 xh
-fb
+ch
 tM
 ch
 yi
@@ -2526,12 +2598,12 @@ yi
 vZ
 vZ
 Kh
-mx
+JN
 DK
 ZH
 Rx
-mx
-mx
+JN
+JN
 fb
 vf
 HD
@@ -2550,7 +2622,7 @@ aa
 Sa
 OI
 Sa
-mx
+JN
 QK
 og
 fb
@@ -2571,7 +2643,7 @@ aa
 In
 xX
 BF
-mx
+JN
 dI
 DI
 fb
@@ -2592,9 +2664,9 @@ Sa
 In
 TL
 Qn
-mx
+JN
 lm
-mx
+JN
 fb
 fb
 mH
@@ -2613,7 +2685,7 @@ Aw
 In
 BE
 AT
-mx
+JN
 Yg
 gc
 Of
@@ -2634,10 +2706,10 @@ cY
 mx
 hG
 pg
-mx
+JN
 ce
-mx
-mx
+JN
+JN
 fb
 fb
 fb
@@ -2780,7 +2852,7 @@ aa
 Sa
 IW
 Sa
-Sa
+wb
 DO
 jq
 lg
@@ -2800,7 +2872,7 @@ vZ
 Kh
 dl
 IW
-Sa
+jY
 hQ
 wF
 xO
@@ -2818,7 +2890,7 @@ vZ
 "}
 (18,1,1) = {"
 vZ
-Ap
+Qk
 SQ
 Pk
 qB
@@ -2839,7 +2911,7 @@ vZ
 "}
 (19,1,1) = {"
 vZ
-Ap
+Qk
 SB
 mb
 fC
@@ -2854,13 +2926,13 @@ vv
 Vm
 Wv
 ZI
-Fl
-Ap
+JX
+Qk
 vZ
 "}
 (20,1,1) = {"
 yi
-Ap
+Qk
 iP
 wh
 FW
@@ -2876,7 +2948,7 @@ Ap
 Fl
 QH
 ZE
-Ap
+Qk
 vZ
 "}
 (21,1,1) = {"
@@ -2895,9 +2967,9 @@ ES
 Cs
 Ap
 sy
-QH
-sy
-Ap
+oF
+pm
+Qk
 vZ
 "}
 (22,1,1) = {"
@@ -2917,8 +2989,8 @@ jn
 Ap
 WP
 HY
-Fl
-Ap
+yH
+Qk
 vZ
 "}
 (23,1,1) = {"
@@ -2939,7 +3011,7 @@ eZ
 Xg
 Yn
 yH
-Ap
+Qk
 vZ
 "}
 (24,1,1) = {"
@@ -2956,16 +3028,16 @@ Ob
 MA
 ES
 vb
-Ap
+Qk
 Fl
 GG
-sy
-Ap
+pm
+Qk
 vZ
 "}
 (25,1,1) = {"
 yi
-Ap
+Qk
 RS
 qq
 Xv
@@ -2977,19 +3049,19 @@ wB
 ES
 ES
 bl
-Ap
+Qk
 Xd
 Rm
 GU
-Ap
+Qk
 vZ
 "}
 (26,1,1) = {"
 vZ
-Ap
+Qk
 rj
-Ap
-Ap
+Qk
+Qk
 jb
 om
 ES
@@ -2998,18 +3070,18 @@ Po
 ES
 ES
 Eu
-Ap
-Ap
-Ap
+Qk
+Qk
+Qk
 kD
-Ap
+Qk
 vZ
 "}
 (27,1,1) = {"
 vZ
-Ap
+Qk
 OD
-Ap
+Qk
 vZ
 vv
 vv
@@ -3021,9 +3093,9 @@ Hb
 vv
 vv
 vZ
-Ap
-Ap
-Ap
+Qk
+Qk
+Qk
 vZ
 "}
 (28,1,1) = {"
