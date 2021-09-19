@@ -347,13 +347,16 @@
 /turf/open/floor/plasteel/dark,
 /area/shuttle/pirate)
 "aC" = (
-/obj/machinery/shuttle_scrambler,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/corner/red{
 	dir = 1
 	},
 /obj/effect/turf_decal/corner/red,
 /obj/effect/turf_decal/corner/red{
+	dir = 4
+	},
+/obj/structure/frame/computer{
+	anchored = 1;
 	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
@@ -466,17 +469,13 @@
 "aQ" = (
 /obj/machinery/porta_turret/syndicate/energy{
 	dir = 1;
-	faction = list("pirate");
-	icon_state = "standard_lethal";
-	mode = 1
+	faction = list("pirate")
 	},
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/shuttle/pirate)
 "aR" = (
 /obj/machinery/porta_turret/syndicate/energy{
-	faction = list("pirate");
-	icon_state = "standard_lethal";
-	mode = 1
+	faction = list("pirate")
 	},
 /turf/closed/wall/mineral/plastitanium,
 /area/shuttle/pirate)
@@ -878,16 +877,12 @@
 	dir = 1
 	},
 /obj/docking_port/mobile/pirate{
-	callTime = 100;
-	dheight = 0;
-	dir = 1;
 	dwidth = 11;
 	height = 16;
 	launch_status = 0;
 	movement_force = list("KNOCKDOWN" = 0, "THROW" = 0);
 	name = "Pirate Ship";
 	port_direction = 2;
-	preferred_direction = 1;
 	width = 17
 	},
 /obj/machinery/door/firedoor/border_only{
@@ -899,9 +894,7 @@
 "df" = (
 /obj/machinery/porta_turret/syndicate/energy{
 	dir = 4;
-	faction = list("pirate");
-	icon_state = "standard_lethal";
-	mode = 1
+	faction = list("pirate")
 	},
 /turf/closed/wall/mineral/plastitanium,
 /area/shuttle/pirate)
@@ -1117,9 +1110,7 @@
 "wR" = (
 /obj/machinery/porta_turret/syndicate/energy{
 	dir = 8;
-	faction = list("pirate");
-	icon_state = "standard_lethal";
-	mode = 1
+	faction = list("pirate")
 	},
 /turf/closed/wall/mineral/plastitanium,
 /area/shuttle/pirate)
