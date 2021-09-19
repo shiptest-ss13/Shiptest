@@ -27,11 +27,13 @@
 	if(active)
 		return
 
+	var/turf/src_turf = get_turf(src)
+
 	var/my_z = "[get_virtual_z_level()]"
 	if(z_active[my_z])
-		src.visible_message("<span class='warning'>Warning: interference detected in current sector</span>")
 		flick(icon_state + "-corrupted", src)
 		playsound(src, 'sound/machines/buzz-sigh.ogg', 20)
+		src_turf.visible_message("<span class='warning'>Warning: interference detected in current sector</span>")
 		return
 
 	if(!z_history[my_z])
@@ -39,7 +41,6 @@
 
 	active = TRUE
 	z_active[my_z] = TRUE
-	var/turf/src_turf = get_turf(src)
 	while(user.get_active_held_item() == src)
 		to_chat(user, "<span class='notice'>You begin to scan your surroundings with [src].</span>")
 
