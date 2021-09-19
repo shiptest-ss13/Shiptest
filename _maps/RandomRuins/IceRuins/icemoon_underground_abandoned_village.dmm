@@ -27,7 +27,13 @@
 "cj" = (
 /obj/structure/table,
 /obj/item/reagent_containers/food/snacks/fishandchips,
-/turf/open/floor/plasteel/checker,
+/obj/effect/turf_decal/corner/black{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/black{
+	dir = 2
+	},
+/turf/open/floor/plasteel,
 /area/ruin/powered)
 "cB" = (
 /obj/effect/decal/cleanable/blood,
@@ -188,7 +194,13 @@
 /obj/item/reagent_containers/food/condiment/pack/ketchup,
 /obj/item/reagent_containers/food/condiment/pack/ketchup,
 /obj/item/reagent_containers/food/condiment/pack/ketchup,
-/turf/open/floor/plasteel/checker,
+/obj/effect/turf_decal/corner/black{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/black{
+	dir = 2
+	},
+/turf/open/floor/plasteel,
 /area/ruin/powered)
 "sG" = (
 /obj/effect/decal/cleanable/vomit,
@@ -203,7 +215,13 @@
 	pixel_x = -12
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/checker,
+/obj/effect/turf_decal/corner/black{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/black{
+	dir = 2
+	},
+/turf/open/floor/plasteel,
 /area/ruin/powered)
 "tg" = (
 /obj/structure/fence{

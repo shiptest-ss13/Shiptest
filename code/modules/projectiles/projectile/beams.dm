@@ -45,6 +45,10 @@
 /obj/projectile/beam/weak/penetrator
 	armour_penetration = 50
 
+/obj/projectile/beam/laser/weak/negative_ap
+	damage = 15
+	armour_penetration = -30
+
 /obj/projectile/beam/practice
 	name = "practice laser"
 	damage = 0
@@ -86,6 +90,9 @@
 
 /obj/projectile/beam/disabler/weak
 	damage = 15
+
+/obj/projectile/beam/disabler/weak/negative_ap
+	armour_penetration = -30
 
 /obj/projectile/beam/pulse
 	name = "pulse"

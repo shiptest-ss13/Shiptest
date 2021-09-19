@@ -129,7 +129,13 @@
 /obj/machinery/firealarm{
 	pixel_y = 26
 	},
-/turf/open/floor/plasteel/cafeteria,
+/obj/effect/turf_decal/corner/white{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/white{
+	dir = 2
+	},
+/turf/open/floor/plasteel,
 /area/ruin/space/has_grav/deepstorage/kitchen)
 "aw" = (
 /obj/effect/baseturf_helper/asteroid/airless,
@@ -147,7 +153,13 @@
 /obj/machinery/airalarm/away{
 	pixel_y = 24
 	},
-/turf/open/floor/plasteel/cafeteria,
+/obj/effect/turf_decal/corner/white{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/white{
+	dir = 2
+	},
+/turf/open/floor/plasteel,
 /area/ruin/space/has_grav/deepstorage/kitchen)
 "az" = (
 /obj/structure/table,
@@ -157,7 +169,13 @@
 	pixel_y = 4
 	},
 /obj/item/kitchen/knife,
-/turf/open/floor/plasteel/cafeteria,
+/obj/effect/turf_decal/corner/white{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/white{
+	dir = 2
+	},
+/turf/open/floor/plasteel,
 /area/ruin/space/has_grav/deepstorage/kitchen)
 "aA" = (
 /obj/machinery/gibber,
@@ -193,7 +211,13 @@
 "aF" = (
 /obj/machinery/atmospherics/pipe/simple/supplymain/hidden/layer1,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
-/turf/open/floor/plasteel/cafeteria,
+/obj/effect/turf_decal/corner/white{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/white{
+	dir = 2
+	},
+/turf/open/floor/plasteel,
 /area/ruin/space/has_grav/deepstorage/kitchen)
 "aG" = (
 /obj/structure/closet/cardboard,
@@ -203,7 +227,7 @@
 /obj/item/stack/sheet/mineral/silver,
 /obj/item/stack/sheet/mineral/gold,
 /obj/item/stack/sheet/mineral/gold,
-/obj/effect/turf_decal/delivery,
+/obj/effect/turf_decal/industrial/hatch/yellow,
 /obj/machinery/light{
 	dir = 1
 	},
@@ -217,7 +241,7 @@
 /obj/item/storage/box/monkeycubes,
 /obj/item/storage/toolbox/drone,
 /obj/item/storage/toolbox/drone,
-/obj/effect/turf_decal/delivery,
+/obj/effect/turf_decal/industrial/hatch/yellow,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/deepstorage/storage)
@@ -228,7 +252,7 @@
 /obj/item/stack/sheet/mineral/wood,
 /obj/item/stack/sheet/mineral/wood,
 /obj/item/stack/packageWrap,
-/obj/effect/turf_decal/delivery,
+/obj/effect/turf_decal/industrial/hatch/yellow,
 /obj/machinery/airalarm/away{
 	pixel_y = 24
 	},
@@ -242,7 +266,7 @@
 /obj/item/storage/box/drinkingglasses,
 /obj/item/storage/box/zipties,
 /obj/item/switchblade,
-/obj/effect/turf_decal/delivery,
+/obj/effect/turf_decal/industrial/hatch/yellow,
 /obj/item/gps{
 	gpstag = "DEEP"
 	},
@@ -271,7 +295,7 @@
 /obj/item/stack/rods/fifty,
 /obj/item/stack/rods/fifty,
 /obj/item/stack/rods/fifty,
-/obj/effect/turf_decal/delivery,
+/obj/effect/turf_decal/industrial/hatch/yellow,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/deepstorage/storage)
@@ -295,7 +319,7 @@
 	},
 /obj/item/clothing/shoes/combat,
 /obj/item/clothing/shoes/combat,
-/obj/effect/turf_decal/delivery,
+/obj/effect/turf_decal/industrial/hatch/yellow,
 /obj/machinery/light{
 	dir = 1
 	},
@@ -357,7 +381,7 @@
 /obj/item/pickaxe/drill,
 /obj/item/pickaxe/drill,
 /obj/item/pickaxe/drill,
-/obj/effect/turf_decal/delivery,
+/obj/effect/turf_decal/industrial/hatch/yellow,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/deepstorage/storage)
@@ -374,7 +398,7 @@
 /obj/item/extinguisher,
 /obj/item/clothing/glasses/night,
 /obj/item/clothing/glasses/night,
-/obj/effect/turf_decal/delivery,
+/obj/effect/turf_decal/industrial/hatch/yellow,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/deepstorage/storage)
@@ -388,7 +412,7 @@
 /obj/item/storage/box/bodybags,
 /obj/item/clothing/glasses/meson/engine,
 /obj/item/clothing/glasses/meson/engine,
-/obj/effect/turf_decal/delivery,
+/obj/effect/turf_decal/industrial/hatch/yellow,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/deepstorage/storage)
@@ -399,7 +423,7 @@
 /obj/item/cultivator,
 /obj/item/hatchet,
 /obj/item/kitchen/rollingpin,
-/obj/effect/turf_decal/delivery,
+/obj/effect/turf_decal/industrial/hatch/yellow,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/deepstorage/storage)
@@ -407,13 +431,13 @@
 /obj/structure/closet/cardboard,
 /obj/item/defibrillator,
 /obj/item/storage/box/medipens,
-/obj/effect/turf_decal/delivery,
+/obj/effect/turf_decal/industrial/hatch/yellow,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/deepstorage/storage)
 "aW" = (
 /obj/structure/closet/cardboard,
-/obj/effect/turf_decal/delivery,
+/obj/effect/turf_decal/industrial/hatch/yellow,
 /obj/item/ammo_box/magazine/pistolm9mm{
 	pixel_x = -3;
 	pixel_y = 3
@@ -433,7 +457,13 @@
 	},
 /obj/item/storage/box/cups,
 /obj/item/reagent_containers/glass/beaker,
-/turf/open/floor/plasteel/cafeteria,
+/obj/effect/turf_decal/corner/white{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/white{
+	dir = 2
+	},
+/turf/open/floor/plasteel,
 /area/ruin/space/has_grav/deepstorage/kitchen)
 "aY" = (
 /obj/structure/table,
@@ -465,12 +495,24 @@
 /obj/structure/sink/kitchen{
 	pixel_y = 24
 	},
-/turf/open/floor/plasteel/cafeteria,
+/obj/effect/turf_decal/corner/white{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/white{
+	dir = 2
+	},
+/turf/open/floor/plasteel,
 /area/ruin/space/has_grav/deepstorage/kitchen)
 "bd" = (
 /obj/structure/table,
 /obj/machinery/microwave,
-/turf/open/floor/plasteel/cafeteria,
+/obj/effect/turf_decal/corner/white{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/white{
+	dir = 2
+	},
+/turf/open/floor/plasteel,
 /area/ruin/space/has_grav/deepstorage/kitchen)
 "be" = (
 /obj/machinery/hydroponics/constructable,
@@ -507,11 +549,23 @@
 	req_access = null
 	},
 /obj/item/storage/box/drinkingglasses,
-/turf/open/floor/plasteel/cafeteria,
+/obj/effect/turf_decal/corner/white{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/white{
+	dir = 2
+	},
+/turf/open/floor/plasteel,
 /area/ruin/space/has_grav/deepstorage/kitchen)
 "bj" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer1,
-/turf/open/floor/plasteel/cafeteria,
+/obj/effect/turf_decal/corner/white{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/white{
+	dir = 2
+	},
+/turf/open/floor/plasteel,
 /area/ruin/space/has_grav/deepstorage/kitchen)
 "bk" = (
 /obj/effect/decal/cleanable/dirt,
@@ -540,14 +594,26 @@
 	dir = 4;
 	icon_state = "scrub_map_on-3"
 	},
-/turf/open/floor/plasteel/cafeteria,
+/obj/effect/turf_decal/corner/white{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/white{
+	dir = 2
+	},
+/turf/open/floor/plasteel,
 /area/ruin/space/has_grav/deepstorage/kitchen)
 "bo" = (
 /obj/machinery/atmospherics/pipe/simple/supplymain/hidden/layer1,
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden{
 	dir = 4
 	},
-/turf/open/floor/plasteel/cafeteria,
+/obj/effect/turf_decal/corner/white{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/white{
+	dir = 2
+	},
+/turf/open/floor/plasteel,
 /area/ruin/space/has_grav/deepstorage/kitchen)
 "bp" = (
 /obj/machinery/atmospherics/pipe/simple/supplymain/hidden/layer1{
@@ -584,7 +650,13 @@
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/deepstorage/storage)
 "bu" = (
-/turf/open/floor/plasteel/cafeteria,
+/obj/effect/turf_decal/corner/white{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/white{
+	dir = 2
+	},
+/turf/open/floor/plasteel,
 /area/ruin/space/has_grav/deepstorage/kitchen)
 "bv" = (
 /obj/structure/cable/yellow{
@@ -596,7 +668,13 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 6
 	},
-/turf/open/floor/plasteel/cafeteria,
+/obj/effect/turf_decal/corner/white{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/white{
+	dir = 2
+	},
+/turf/open/floor/plasteel,
 /area/ruin/space/has_grav/deepstorage/kitchen)
 "bw" = (
 /obj/structure/cable/yellow{
@@ -608,7 +686,13 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
 	},
-/turf/open/floor/plasteel/cafeteria,
+/obj/effect/turf_decal/corner/white{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/white{
+	dir = 2
+	},
+/turf/open/floor/plasteel,
 /area/ruin/space/has_grav/deepstorage/kitchen)
 "bx" = (
 /obj/structure/table,
@@ -617,7 +701,13 @@
 	dir = 4;
 	pixel_x = 24
 	},
-/turf/open/floor/plasteel/cafeteria,
+/obj/effect/turf_decal/corner/white{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/white{
+	dir = 2
+	},
+/turf/open/floor/plasteel,
 /area/ruin/space/has_grav/deepstorage/kitchen)
 "by" = (
 /obj/structure/cable/yellow{
@@ -639,7 +729,13 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 9
 	},
-/turf/open/floor/plasteel/cafeteria,
+/obj/effect/turf_decal/corner/white{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/white{
+	dir = 2
+	},
+/turf/open/floor/plasteel,
 /area/ruin/space/has_grav/deepstorage/kitchen)
 "bA" = (
 /obj/machinery/door/firedoor,
@@ -682,7 +778,13 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supplymain/hidden/layer1,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
-/turf/open/floor/plasteel/cafeteria,
+/obj/effect/turf_decal/corner/white{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/white{
+	dir = 2
+	},
+/turf/open/floor/plasteel,
 /area/ruin/space/has_grav/deepstorage/kitchen)
 "bF" = (
 /obj/machinery/door/airlock/public/glass{
@@ -711,7 +813,13 @@
 /obj/item/storage/box/ingredients/wildcard,
 /obj/item/storage/box/ingredients/wildcard,
 /obj/item/storage/box/ingredients/wildcard,
-/turf/open/floor/plasteel/cafeteria,
+/obj/effect/turf_decal/corner/white{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/white{
+	dir = 2
+	},
+/turf/open/floor/plasteel,
 /area/ruin/space/has_grav/deepstorage/kitchen)
 "bJ" = (
 /obj/machinery/atmospherics/pipe/simple/supplymain/hidden/layer1{
@@ -746,12 +854,24 @@
 	name = "Kitchen APC";
 	pixel_y = -24
 	},
-/turf/open/floor/plasteel/cafeteria,
+/obj/effect/turf_decal/corner/white{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/white{
+	dir = 2
+	},
+/turf/open/floor/plasteel,
 /area/ruin/space/has_grav/deepstorage/kitchen)
 "bO" = (
 /obj/machinery/light,
 /obj/machinery/vending/dinnerware,
-/turf/open/floor/plasteel/cafeteria,
+/obj/effect/turf_decal/corner/white{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/white{
+	dir = 2
+	},
+/turf/open/floor/plasteel,
 /area/ruin/space/has_grav/deepstorage/kitchen)
 "bP" = (
 /obj/structure/cable/yellow{
@@ -785,7 +905,7 @@
 /turf/open/floor/light,
 /area/ruin/space/has_grav/deepstorage/hydroponics)
 "bT" = (
-/obj/effect/turf_decal/delivery,
+/obj/effect/turf_decal/industrial/hatch/yellow,
 /obj/item/reagent_containers/food/snacks/canned/beans{
 	pixel_x = -5;
 	pixel_y = 3
@@ -818,7 +938,7 @@
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/deepstorage/storage)
 "bU" = (
-/obj/effect/turf_decal/delivery,
+/obj/effect/turf_decal/industrial/hatch/yellow,
 /obj/item/reagent_containers/food/snacks/canned/beans{
 	pixel_x = -5;
 	pixel_y = 3
@@ -863,8 +983,8 @@
 /obj/structure/sign/barsign{
 	pixel_y = 32
 	},
-/obj/effect/turf_decal/tile/bar,
-/obj/effect/turf_decal/tile/bar{
+/obj/effect/turf_decal/corner/bar,
+/obj/effect/turf_decal/corner/bar{
 	dir = 1
 	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on{
@@ -879,8 +999,8 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/obj/effect/turf_decal/tile/bar,
-/obj/effect/turf_decal/tile/bar{
+/obj/effect/turf_decal/corner/bar,
+/obj/effect/turf_decal/corner/bar{
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
@@ -900,8 +1020,8 @@
 /obj/machinery/airalarm/away{
 	pixel_y = 24
 	},
-/obj/effect/turf_decal/tile/bar,
-/obj/effect/turf_decal/tile/bar{
+/obj/effect/turf_decal/corner/bar,
+/obj/effect/turf_decal/corner/bar{
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
@@ -982,8 +1102,8 @@
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
 	},
-/obj/effect/turf_decal/tile/bar,
-/obj/effect/turf_decal/tile/bar{
+/obj/effect/turf_decal/corner/bar,
+/obj/effect/turf_decal/corner/bar{
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/supplymain/hidden/layer1,
@@ -994,8 +1114,8 @@
 /area/ruin/space/has_grav/deepstorage)
 "ci" = (
 /obj/structure/closet/crate/bin,
-/obj/effect/turf_decal/tile/bar,
-/obj/effect/turf_decal/tile/bar{
+/obj/effect/turf_decal/corner/bar,
+/obj/effect/turf_decal/corner/bar{
 	dir = 1
 	},
 /turf/open/floor/plasteel,
@@ -1089,8 +1209,8 @@
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
 	},
-/obj/effect/turf_decal/tile/bar,
-/obj/effect/turf_decal/tile/bar{
+/obj/effect/turf_decal/corner/bar,
+/obj/effect/turf_decal/corner/bar{
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/supplymain/hidden/layer1,
@@ -1109,8 +1229,8 @@
 /area/ruin/space/has_grav/deepstorage/hydroponics)
 "cu" = (
 /obj/machinery/vending/coffee,
-/obj/effect/turf_decal/tile/bar,
-/obj/effect/turf_decal/tile/bar{
+/obj/effect/turf_decal/corner/bar,
+/obj/effect/turf_decal/corner/bar{
 	dir = 1
 	},
 /turf/open/floor/plasteel,
@@ -1158,7 +1278,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/deepstorage/armory)
 "cB" = (
-/obj/effect/turf_decal/delivery,
+/obj/effect/turf_decal/industrial/hatch/yellow,
 /obj/structure/closet/crate{
 	name = "food crate"
 	},
@@ -1213,8 +1333,8 @@
 /obj/structure/chair{
 	dir = 1
 	},
-/obj/effect/turf_decal/tile/bar,
-/obj/effect/turf_decal/tile/bar{
+/obj/effect/turf_decal/corner/bar,
+/obj/effect/turf_decal/corner/bar{
 	dir = 1
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer1{
@@ -1227,8 +1347,8 @@
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
 	},
-/obj/effect/turf_decal/tile/bar,
-/obj/effect/turf_decal/tile/bar{
+/obj/effect/turf_decal/corner/bar,
+/obj/effect/turf_decal/corner/bar{
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/manifold/supplymain/hidden/layer1{
@@ -1243,8 +1363,8 @@
 	dir = 4;
 	pixel_x = 24
 	},
-/obj/effect/turf_decal/tile/bar,
-/obj/effect/turf_decal/tile/bar{
+/obj/effect/turf_decal/corner/bar,
+/obj/effect/turf_decal/corner/bar{
 	dir = 1
 	},
 /turf/open/floor/plasteel,
@@ -1253,16 +1373,16 @@
 /obj/structure/chair{
 	dir = 4
 	},
-/obj/effect/turf_decal/tile/bar,
-/obj/effect/turf_decal/tile/bar{
+/obj/effect/turf_decal/corner/bar,
+/obj/effect/turf_decal/corner/bar{
 	dir = 1
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/deepstorage)
 "cI" = (
 /obj/structure/table,
-/obj/effect/turf_decal/tile/bar,
-/obj/effect/turf_decal/tile/bar{
+/obj/effect/turf_decal/corner/bar,
+/obj/effect/turf_decal/corner/bar{
 	dir = 1
 	},
 /turf/open/floor/plasteel,
@@ -1270,8 +1390,8 @@
 "cJ" = (
 /obj/structure/table,
 /obj/item/kitchen/fork,
-/obj/effect/turf_decal/tile/bar,
-/obj/effect/turf_decal/tile/bar{
+/obj/effect/turf_decal/corner/bar,
+/obj/effect/turf_decal/corner/bar{
 	dir = 1
 	},
 /turf/open/floor/plasteel,
@@ -1334,8 +1454,8 @@
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/deepstorage)
 "cT" = (
-/obj/effect/turf_decal/tile/bar,
-/obj/effect/turf_decal/tile/bar{
+/obj/effect/turf_decal/corner/bar,
+/obj/effect/turf_decal/corner/bar{
 	dir = 1
 	},
 /turf/open/floor/plasteel,
@@ -1601,7 +1721,7 @@
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/deepstorage)
 "dw" = (
-/obj/effect/turf_decal/delivery,
+/obj/effect/turf_decal/industrial/hatch/yellow,
 /obj/structure/closet/crate{
 	name = "food crate"
 	},
@@ -1643,7 +1763,7 @@
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/deepstorage/storage)
 "dx" = (
-/obj/effect/turf_decal/delivery,
+/obj/effect/turf_decal/industrial/hatch/yellow,
 /obj/structure/closet/crate{
 	name = "food crate"
 	},
@@ -1688,7 +1808,7 @@
 	name = "Main Area APC";
 	pixel_y = -24
 	},
-/obj/effect/turf_decal/stripes/corner,
+/obj/effect/turf_decal/industrial/warning/corner,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/supplymain/hidden/layer1{
 	dir = 4
@@ -1699,7 +1819,7 @@
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/deepstorage)
 "dz" = (
-/obj/effect/turf_decal/stripes/line,
+/obj/effect/turf_decal/industrial/warning,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/manifold/supplymain/hidden/layer1{
 	dir = 1
@@ -1713,7 +1833,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "1-4"
 	},
-/obj/effect/turf_decal/stripes/line,
+/obj/effect/turf_decal/industrial/warning,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/manifold/supplymain/hidden/layer1,
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden,
@@ -1726,7 +1846,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
-/obj/effect/turf_decal/stripes/corner{
+/obj/effect/turf_decal/industrial/warning/corner{
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -1814,7 +1934,7 @@
 /obj/machinery/door/poddoor{
 	id = "bunkerinterior"
 	},
-/obj/effect/turf_decal/delivery,
+/obj/effect/turf_decal/industrial/hatch/yellow,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/supplymain/hidden/layer1,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
@@ -1927,7 +2047,7 @@
 /obj/machinery/light/small{
 	dir = 8
 	},
-/obj/effect/turf_decal/stripes/line{
+/obj/effect/turf_decal/industrial/warning{
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -2096,7 +2216,7 @@
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/deepstorage/dorm)
 "el" = (
-/obj/effect/turf_decal/stripes/line,
+/obj/effect/turf_decal/industrial/warning,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/supplymain/hidden/layer1,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
@@ -2134,7 +2254,7 @@
 /obj/machinery/door/poddoor{
 	id = "bunkerinterior"
 	},
-/obj/effect/turf_decal/delivery,
+/obj/effect/turf_decal/industrial/hatch/yellow,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/deepstorage/airlock)
@@ -2145,7 +2265,7 @@
 /obj/machinery/door/poddoor{
 	id = "bunkerexterior"
 	},
-/obj/effect/turf_decal/delivery,
+/obj/effect/turf_decal/industrial/hatch/yellow,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/supplymain/hidden/layer1,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
@@ -2186,7 +2306,7 @@
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/deepstorage/dorm)
 "ew" = (
-/obj/effect/turf_decal/stripes/line{
+/obj/effect/turf_decal/industrial/warning{
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -2215,14 +2335,14 @@
 /turf/open/floor/wood,
 /area/ruin/space/has_grav/deepstorage/dorm)
 "ez" = (
-/obj/effect/turf_decal/stripes/line{
+/obj/effect/turf_decal/industrial/warning{
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/deepstorage/airlock)
 "eA" = (
-/obj/effect/turf_decal/stripes/line{
+/obj/effect/turf_decal/industrial/warning{
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -2239,7 +2359,7 @@
 /obj/structure/sign/warning/securearea{
 	pixel_y = 32
 	},
-/obj/effect/turf_decal/stripes/corner{
+/obj/effect/turf_decal/industrial/warning/corner{
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -2287,7 +2407,7 @@
 /obj/machinery/light/small{
 	dir = 4
 	},
-/obj/effect/turf_decal/delivery,
+/obj/effect/turf_decal/industrial/hatch/yellow,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/deepstorage)
 "eF" = (
@@ -2434,7 +2554,7 @@
 /area/ruin/space/has_grav/deepstorage/power)
 "eR" = (
 /obj/machinery/portable_atmospherics/canister/air,
-/obj/effect/turf_decal/delivery,
+/obj/effect/turf_decal/industrial/hatch/yellow,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/deepstorage)
 "eS" = (
@@ -2537,7 +2657,7 @@
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/deepstorage/power)
 "fc" = (
-/obj/effect/turf_decal/stripes/line{
+/obj/effect/turf_decal/industrial/warning{
 	dir = 4
 	},
 /obj/structure/cable/yellow{
@@ -2564,7 +2684,7 @@
 /area/ruin/space/has_grav/deepstorage/power)
 "ff" = (
 /obj/machinery/portable_atmospherics/canister/nitrous_oxide,
-/obj/effect/turf_decal/delivery,
+/obj/effect/turf_decal/industrial/hatch/yellow,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/deepstorage)
 "fg" = (
@@ -2649,7 +2769,7 @@
 /obj/machinery/light/small{
 	dir = 4
 	},
-/obj/effect/turf_decal/delivery,
+/obj/effect/turf_decal/industrial/hatch/yellow,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/deepstorage)
 "fr" = (
@@ -2672,7 +2792,7 @@
 /obj/machinery/light/small{
 	dir = 4
 	},
-/obj/effect/turf_decal/stripes/line,
+/obj/effect/turf_decal/industrial/warning,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/deepstorage/airlock)
@@ -2775,7 +2895,7 @@
 /obj/machinery/door/poddoor{
 	id = "bunkerexterior"
 	},
-/obj/effect/turf_decal/delivery,
+/obj/effect/turf_decal/industrial/hatch/yellow,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/deepstorage/airlock)
@@ -2786,7 +2906,7 @@
 /obj/structure/sign/warning/securearea{
 	pixel_y = 32
 	},
-/obj/effect/turf_decal/stripes/corner{
+/obj/effect/turf_decal/industrial/warning/corner{
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -2880,7 +3000,7 @@
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/deepstorage/power)
 "fS" = (
-/obj/effect/turf_decal/stripes/line,
+/obj/effect/turf_decal/industrial/warning,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer1{
 	dir = 1;
@@ -2964,7 +3084,7 @@
 /obj/machinery/power/terminal{
 	dir = 8
 	},
-/obj/effect/turf_decal/stripes/line{
+/obj/effect/turf_decal/industrial/warning{
 	dir = 4
 	},
 /obj/structure/cable/yellow{
@@ -2984,7 +3104,7 @@
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/deepstorage/power)
 "gm" = (
-/obj/effect/turf_decal/stripes/line,
+/obj/effect/turf_decal/industrial/warning,
 /obj/structure/closet/crate/bin{
 	name = "laundry bin"
 	},

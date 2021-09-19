@@ -13,17 +13,12 @@
 
 	item_state = "electronic"
 
-	var/static/list/star_directions = list("north", "northeast", "east", "southeast", "south", "southwest", "west", "northwest")
-	var/static/list/cardinal_directions = list("north", "east", "south", "west")
 	var/list/allowed_directions = list("south")
 
 	var/static/list/allowed_states = list(
-		"floor", "white", "cafeteria", "whitehall", "whitecorner", "stairs-old",
-		"stairs", "stairs-l", "stairs-m", "stairs-r", "grimy", "yellowsiding",
-		"yellowcornersiding", "chapel", "pinkblack", "darkfull", "checker",
-		"dark", "darkcorner", "solarpanel", "freezerfloor", "showroomfloor","elevatorshaft",
-		"recharge_floor", "sepia"
-		)
+		"steel", "dark", "white", "freezer", "tile_full", "cargo_one_full",
+		"kafel_full", "steel_monofloor", "monotile", "grid", "ridged"
+	)
 
 /obj/item/floor_painter/afterattack(var/atom/A, var/mob/user, proximity, params)
 	if(!proximity)
@@ -31,14 +26,11 @@
 
 	var/turf/open/floor/plasteel/F = A
 	if(!istype(F))
-		to_chat(user, "<span class='warning'>\The [src] can only be used on station flooring.</span>")
+		to_chat(user, "<span class='warning'>\The [src] can only be used on plasteel flooring.</span>")
 		return
 
-	if(F.dir == floor_dir && F.icon_state == floor_state && F.icon_regular_floor == floor_state)
-		return //No point wasting ink
-
 	F.icon_state = floor_state
-	F.icon_regular_floor = floor_state
+	F.base_icon_state = floor_state
 	F.dir = floor_dir
 	playsound(src.loc, 'sound/effects/spray2.ogg', 50, TRUE)
 
@@ -51,7 +43,7 @@
 
 /obj/item/floor_painter/interact(mob/user as mob) //TODO: Make TGUI for this because ouch
 	if(!floor_icon)
-		floor_icon = icon('icons/turf/floors.dmi', floor_state, floor_dir)
+		floor_icon = icon('whitesands/icons/turf/floors/tiles.dmi', floor_state, floor_dir)
 	user << browse_rsc(floor_icon, "floor.png")
 	var/dat = {"
 		<center>
@@ -115,18 +107,18 @@
 		floor_state = allowed_states[index]
 		check_directional_tile()
 
-	floor_icon = icon('icons/turf/floors.dmi', floor_state, floor_dir)
+	floor_icon = icon('whitesands/icons/turf/floors/tiles.dmi', floor_state, floor_dir)
 	if(usr)
 		attack_self(usr)
 
 /obj/item/floor_painter/proc/check_directional_tile()
-	var/icon/current = icon('icons/turf/floors.dmi', floor_state, NORTHWEST)
+	var/icon/current = icon('whitesands/icons/turf/floors/tiles.dmi', floor_state, NORTHWEST)
 	if(current.GetPixel(1,1) != null)
-		allowed_directions = star_directions
+		allowed_directions = GLOB.alldirs
 	else
-		current = icon('icons/turf/floors.dmi', floor_state, WEST)
+		current = icon('whitesands/icons/turf/floors/tiles.dmi', floor_state, WEST)
 		if(current.GetPixel(1,1) != null)
-			allowed_directions = cardinal_directions
+			allowed_directions = GLOB.cardinals
 		else
 			allowed_directions = list("south")
 
