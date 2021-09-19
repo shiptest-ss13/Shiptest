@@ -3,8 +3,8 @@
 	desc = "A small tool designed for quick and inefficient data collection about your local star sector."
 	icon = 'icons/obj/item/survey_handheld.dmi'
 	icon_state = "survey"
-	var/static/list/z_active = list() // TODO: ONLY ONE ACTIVE PER VIRTUAL Z
-	var/static/list/z_history = list() // TODO: DEPRECIATION BY VIRTUAL Z
+	var/static/list/z_active = list()
+	var/static/list/z_history = list()
 	var/active = FALSE
 	var/survey_value = 50
 	var/survey_delay = 4 SECONDS
