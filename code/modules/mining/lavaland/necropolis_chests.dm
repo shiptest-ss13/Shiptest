@@ -13,14 +13,14 @@
 	desc = "It's watching you suspiciously."
 
 /obj/structure/closet/crate/necropolis/tendril/PopulateContents()
-	var/loot = rand(1,26)
+	var/loot = rand(1,27)
 	switch(loot)
 		if(1)
 			new /obj/item/shared_storage/red(src)
 		if(2)
 			new /obj/item/clothing/suit/space/hardsuit/cult(src)
 		if(3)
-			new /obj/item/soulstone/anybody(src)
+			new /obj/item/necromantic_stone/lava(src)
 		if(4)
 			new /obj/item/katana/cursed(src)
 		if(5)
@@ -78,6 +78,9 @@
 			new /obj/item/book/granter/spell/summonitem(src)
 		if(26)
 			new /obj/item/clothing/gloves/gauntlets(src)
+		if(27)
+			new /obj/item/clothing/under/drip(src)
+			new /obj/item/clothing/shoes/drip(src)
 
 //KA modkit design discs
 /obj/item/disk/design_disk/modkit_disc
@@ -141,6 +144,56 @@
 	build_path = /obj/item/borg/upgrade/modkit/bounty
 
 //Spooky special loot
+
+//drip
+/obj/item/clothing/under/drip
+	name = "incredibly fashionable outfit"
+	desc = "Why don't you go test some shi-"
+	icon = 'icons/obj/clothing/under/suits.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/under/suits.dmi'
+	mob_overlay_state = "drippy"
+	icon_state = "drippy"
+	item_state = "drippy"
+	armor = list("melee" = 10, "bullet" = 10, "laser" = 10,"energy" = 10, "bomb" = 10, "bio" = 10, "rad" = 10, "fire" = 100, "acid" = 100)
+	resistance_flags = FIRE_PROOF | ACID_PROOF | LAVA_PROOF//the unbreakable fashion
+	can_adjust = FALSE
+
+/obj/item/clothing/shoes/drip
+	name = "fashionable shoes"
+	desc = "Expensive-looking designer sneakers. Loud, ostentatious, agressively attractive. The elaborate design on the sole could probably give you some decent traction."
+	icon = 'icons/obj/clothing/shoes.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/feet.dmi'
+	mob_overlay_state = "dripshoes"
+	icon_state = "dripshoes"
+	item_state = "dripshoes"
+	clothing_flags = NOSLIP_ICE | NOSLIP
+	armor = list("melee" = 25, "bullet" = 25, "laser" = 25, "energy" = 25, "bomb" = 50, "bio" = 10, "rad" = 0, "fire" = 100, "acid" = 100)
+	resistance_flags = FIRE_PROOF | ACID_PROOF | LAVA_PROOF
+	strip_delay = 40
+	resistance_flags = NONE
+	permeability_coefficient = 0.05 //Thick soles, and covers the ankle
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/shoes
+	lace_time = 35 SECONDS//nike shoelace art joke
+
+/obj/item/clothing/under/drip/equipped(mob/user, slot)
+	. = ..()
+	if(slot == ITEM_SLOT_ICLOTHING)
+		SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT, "drippy", /datum/mood_event/drippy)
+
+/obj/item/clothing/under/drip/dropped(mob/user)
+	. = ..()
+	SEND_SIGNAL(user, COMSIG_CLEAR_MOOD_EVENT, "drippy")
+
+/obj/item/clothing/shoes/drip/equipped(mob/user, slot)
+	. = ..()
+	if(slot == ITEM_SLOT_FEET)
+		SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT, "dripjordan", /datum/mood_event/dripjordan)
+		SEND_SIGNAL(user, COMSIG_CLEAR_MOOD_EVENT, "nojordans", /datum/mood_event/dripjordan)
+
+/obj/item/clothing/shoes/drip/dropped(mob/user)
+	. = ..()
+	SEND_SIGNAL(user, COMSIG_CLEAR_MOOD_EVENT, "dripjordan")
+	SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT, "nojordans", /datum/mood_event/nojordans)
 
 //Rod of Asclepius
 /obj/item/rod_of_asclepius
@@ -651,10 +704,89 @@
 		C.emote("scream")
 	..()
 
-//jackhammer gauntlets
+//nerfed necrostone
+/obj/item/necromantic_stone/lava
+	name = "cracked medallion"
+	desc = "A damaged stone medallion, with a glowing gem set in it's center. You could probably resurrect people as skeletons with it. The controlling spirit seems to be malfunctioning."
+	icon = 'icons/obj/wizard.dmi'
+	icon_state = "necrostone"
+	item_state = "electronic"
+	lefthand_file = 'icons/mob/inhands/misc/devices_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/misc/devices_righthand.dmi'
+	w_class = WEIGHT_CLASS_TINY
+	var/list/skeletons = list()
+	var/nolimit = 0
+
+/obj/item/necromantic_stone/lava/nolimit
+	nolimit = 1
+
+/obj/item/necromantic_stone/lava/attack(mob/living/carbon/human/M, mob/living/carbon/human/user)
+	if(!istype(M))
+		return ..()
+
+	if(!istype(user) || !user.canUseTopic(M, BE_CLOSE))
+		return
+
+	if(M.stat != DEAD)
+		to_chat(user, "<span class='warning'>This artifact can only affect the dead! Come on. Look, you're going to have to do that part yourself.</span>")
+		return
+
+	for(var/mob/dead/observer/ghost in GLOB.dead_mob_list) //excludes new players
+		if(ghost.mind && ghost.mind.current == M && ghost.client)  //the dead mobs list can contain clientless mobs
+			ghost.reenter_corpse()
+			break
+
+	if(!M.mind || !M.client)
+		to_chat(user, "<span class='warning'>There is no soul connected to this body... Could you put me in it? Just for a day. I swear I'll come back.</span>")
+		return
+
+	check_skele()//clean out/refresh the list
+	if(skeletons.len >= 5 && !nolimit)
+		to_chat(user, "<span class='warning'>This artifact can only affect five undead at a time! Greedy guts.</span>")
+		return
+
+	M.set_species(/datum/species/skeleton, icon_update=0)
+	M.revive(full_heal = TRUE, admin_revive = TRUE)
+	skeletons |= M
+	to_chat(M, "<span class='userdanger'>You have been returned from death by </span><B>[user.real_name]!</B>")
+	to_chat(M, "<span class='userdanger'>[user.p_theyre(TRUE)] technically your master now, I guess. Help [user.p_them()] or something? I don't know. I'm not your dad. </span>")
+
+	arm_skeleton(M)
+
+	desc = "A damaged stone medallion, with a glowing gem set in it's center. You could probably resurrect people as skeletons with it. The controlling spirit seems to be malfunctioning. Remember to strip targets[nolimit ? "." : ", [skeletons.len]/5 active skeletons."]"
+
+/obj/item/necromantic_stone/lava/proc/check_skele()
+	if(nolimit) //no point, the list isn't used.
+		return
+
+	for(var/X in skeletons)
+		if(!ishuman(X))
+			skeletons.Remove(X)
+			continue
+		var/mob/living/carbon/human/H = X
+		if(H.stat == DEAD)
+			H.dust(TRUE)
+			skeletons.Remove(X)
+			continue
+	listclearnulls(skeletons)
+
+//Funny gimmick, skeletons always seem to wear roman/ancient armour
+/obj/item/necromantic_stone/lava/proc/arm_skeleton(mob/living/carbon/human/H)
+	for(var/obj/item/I in H)
+		H.dropItemToGround(I)
+
+	var/hat = pick(/obj/item/clothing/head/helmet/roman, /obj/item/clothing/head/helmet/roman/legionnaire)
+	H.equip_to_slot_or_del(new hat(H), ITEM_SLOT_HEAD)
+	H.equip_to_slot_or_del(new /obj/item/clothing/under/costume/roman(H), ITEM_SLOT_ICLOTHING)
+	H.equip_to_slot_or_del(new /obj/item/clothing/shoes/roman(H), ITEM_SLOT_FEET)
+	H.put_in_hands(new /obj/item/shield/riot/roman(H), TRUE)
+	H.put_in_hands(new /obj/item/claymore(H), TRUE)
+	H.equip_to_slot_or_del(new /obj/item/spear(H), ITEM_SLOT_BACK)
+
+//earthquake gauntlets
 /obj/item/clothing/gloves/gauntlets
 	name = "concussive gauntlets"
-	desc = "Buried deep beneath the earth, these ancient gauntlets absorbed the tectonic power of earthquakes./ "
+	desc = "Buried deep beneath the earth, these ancient gauntlets absorbed the tectonic power of earthquakes. "
 	icon = 'icons/obj/lavaland/artefacts.dmi'
 	icon_state = "concussive_gauntlets"
 	mob_overlay_icon = 'icons/mob/clothing/hands.dmi'
