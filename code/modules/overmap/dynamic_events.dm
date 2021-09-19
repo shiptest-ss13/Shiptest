@@ -23,6 +23,13 @@
 	. = ..()
 	choose_level_type()
 
+/obj/structure/overmap/dynamic/attack_ghost(mob/user)
+	if(reserve_dock)
+		user.forceMove(get_turf(reserve_dock))
+		return TRUE
+	else
+		return
+
 /obj/structure/overmap/dynamic/Destroy()
 	. = ..()
 	QDEL_NULL(reserve)

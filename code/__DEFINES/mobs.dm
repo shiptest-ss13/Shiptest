@@ -81,7 +81,9 @@
 
 /*see __DEFINES/inventory.dm for bodypart bitflag defines*/
 
-// Health/damage defines for carbon mobs
+// Health/damage defines
+#define MAX_LIVING_HEALTH 100
+
 #define HUMAN_MAX_OXYLOSS 3
 #define HUMAN_CRIT_MAX_OXYLOSS (SSmobs.wait/30)
 
@@ -242,8 +244,9 @@
 //determines if a mob can smash through it
 #define ENVIRONMENT_SMASH_NONE 0
 #define ENVIRONMENT_SMASH_STRUCTURES (1<<0) //crates, lockers, ect
-#define ENVIRONMENT_SMASH_WALLS (1<<1) //walls
-#define ENVIRONMENT_SMASH_RWALLS (1<<2)	//rwalls
+#define ENVIRONMENT_SMASH_MINERALS (1<<1) //minable walls
+#define ENVIRONMENT_SMASH_WALLS (1<<2) //walls
+#define ENVIRONMENT_SMASH_RWALLS (1<<3) //rwalls
 
 #define NO_SLIP_WHEN_WALKING (1<<0)
 #define SLIDE (1<<1)

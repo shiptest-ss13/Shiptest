@@ -1,4 +1,5 @@
 /obj/machinery/atmospherics/pipe
+	plane = FLOOR_PLANE
 	damage_deflection = 12
 	var/datum/gas_mixture/air_temporary //used when reconstructing a pipeline that broke
 	var/volume = 0

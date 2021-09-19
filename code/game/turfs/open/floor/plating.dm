@@ -29,7 +29,7 @@
 		. += "<span class='notice'>It looks like the dents could be <i>welded</i> smooth.</span>"
 		return
 	if(attachment_holes)
-		. += "<span class='notice'>There are a few attachment holes for a new <i>tile</i> or reinforcement <i>rods</i>.</span>"
+		. += "<span class='notice'>There are a few attachment holes for a new <i>tile</i>, catwalk <i>rods</i>, or reinforcement <i>sheets</i>.</span>"
 	else
 		. += "<span class='notice'>You might be able to build ontop of it with some <i>tiles</i>...</span>"
 
@@ -53,24 +53,34 @@
 /turf/open/floor/plating/attackby(obj/item/C, mob/user, params)
 	if(..())
 		return
-	if(istype(C, /obj/item/stack/rods) && attachment_holes)
+	if(attachment_holes)
 		if(broken || burnt)
 			to_chat(user, "<span class='warning'>Repair the plating first!</span>")
 			return
-		var/obj/item/stack/rods/R = C
-		if (R.get_amount() < 2)
-			to_chat(user, "<span class='warning'>You need two rods to make a reinforced floor!</span>")
-			return
-		else
+		if(istype(C, /obj/item/stack/rods))
+			var/obj/item/stack/rods/R = C
+			if(locate(/obj/structure/catwalk/over, src))
+				return
+			if(R.get_amount() < 2)
+				to_chat(user, "<span class='warning'>You need two rods to make a catwalk!</span>")
+				return
+			else
+				R.use(2)
+				to_chat(user, "<span class='notice'>You lay down the catwalk.</span>")
+				playsound(src, 'sound/weapons/Genhit.ogg', 50, 1)
+				new /obj/structure/catwalk/over(src)
+				return
+		if(istype(C, /obj/item/stack/sheet/metal))
+			var/obj/item/stack/sheet/metal/R = C
 			to_chat(user, "<span class='notice'>You begin reinforcing the floor...</span>")
 			if(do_after(user, 30, target = src))
-				if (R.get_amount() >= 2 && !istype(src, /turf/open/floor/engine))
+				if (R.get_amount() >= 1 && !istype(src, /turf/open/floor/engine))
 					PlaceOnTop(/turf/open/floor/engine, flags = CHANGETURF_INHERIT_AIR)
 					playsound(src, 'sound/items/deconstruct.ogg', 80, TRUE)
-					R.use(2)
+					R.use(1)
 					to_chat(user, "<span class='notice'>You reinforce the floor.</span>")
 				return
-	else if(istype(C, /obj/item/stack/tile))
+	if(istype(C, /obj/item/stack/tile))
 		if(!broken && !burnt)
 			for(var/obj/O in src)
 				for(var/M in O.buckled_mobs)

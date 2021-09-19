@@ -127,6 +127,13 @@
 		to_chat(H, "<span class='notice'>Your sense of balance comes back to you.</span>")
 		H.RemoveElement(/datum/element/waddling)
 
+/obj/item/organ/ears/cat/slime //Not adding insert code since only slimepeople should ever get this through change_form()
+	name = "slimy cat ears"
+	desc = "Some slimy cat-shaped ears."
+	icon = 'icons/obj/clothing/hats.dmi'
+	icon_state = "kitty"
+	alpha = 150
+
 /obj/item/organ/ears/bronze
 	name = "tin ears"
 	desc = "The robust ears of a bronze golem. "

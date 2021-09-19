@@ -28,6 +28,8 @@
 	var/nextstate = null
 	var/boltslocked = TRUE
 	var/list/affecting_areas
+	var/door_open_sound = 'sound/effects/firedoor_open.ogg'
+	var/door_close_sound = 'sound/effects/firedoor_open.ogg'
 
 /obj/machinery/door/firedoor/Initialize()
 	. = ..()
@@ -217,10 +219,13 @@
 		. += "welded_open"
 
 /obj/machinery/door/firedoor/open()
+	playsound(loc, door_open_sound, 90, TRUE)
 	. = ..()
 	latetoggle()
 
+
 /obj/machinery/door/firedoor/close()
+	playsound(loc, door_close_sound, 90, TRUE)
 	. = ..()
 	latetoggle()
 

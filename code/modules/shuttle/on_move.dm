@@ -339,9 +339,9 @@ All ShuttleMove procs go here
 	if(. & MOVE_AREA)
 		. |= MOVE_CONTENTS
 
-/obj/structure/cable/beforeShuttleMove(turf/newT, rotation, move_mode, obj/docking_port/mobile/moving_dock)
+/obj/structure/cable/afterShuttleMove(turf/oldT, list/movement_force, shuttle_dir, shuttle_preferred_direction, move_dir, rotation)
 	. = ..()
-	cut_cable_from_powernet(FALSE)
+	qdel(powernet)
 
 /obj/structure/cable/lateShuttleMove(turf/oldT, list/movement_force, shuttle_dir, shuttle_preferred_direction, move_dir, rotation)
 	. = ..()
