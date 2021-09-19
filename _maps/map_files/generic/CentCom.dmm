@@ -1623,7 +1623,7 @@
 /turf/closed/indestructible/riveted,
 /area/centcom/prison)
 "aiN" = (
-/obj/machinery/status_display/supply,
+/obj/machinery/status_display,
 /turf/closed/indestructible/riveted,
 /area/centcom/supply)
 "aiS" = (
@@ -8105,7 +8105,7 @@
 /turf/open/floor/plasteel,
 /area/centcom/control)
 "aOo" = (
-/obj/machinery/computer/emergency_shuttle{
+/obj/machinery/computer{
 	dir = 1
 	},
 /obj/machinery/newscaster/security_unit{
@@ -12913,11 +12913,11 @@
 /turf/open/floor/plasteel/white,
 /area/centcom/holding)
 "aYH" = (
-/obj/machinery/computer/helm{
-	dir = 4
-	},
 /obj/effect/turf_decal/industrial/warning{
 	dir = 6
+	},
+/obj/machinery/computer{
+	dir = 4
 	},
 /turf/open/floor/plasteel,
 /area/centcom/ferry)
@@ -14443,10 +14443,10 @@
 /turf/open/floor/plasteel/dark,
 /area/ctf)
 "fvP" = (
-/obj/machinery/computer/helm,
 /obj/effect/turf_decal/industrial/warning{
 	dir = 10
 	},
+/obj/machinery/computer,
 /turf/open/floor/plasteel,
 /area/centcom/ferry)
 "fyS" = (
@@ -15760,10 +15760,10 @@
 /turf/open/floor/holofloor,
 /area/holodeck/rec_center/pet_lounge)
 "lnt" = (
-/obj/machinery/computer/helm,
 /obj/effect/turf_decal/industrial/warning{
 	dir = 6
 	},
+/obj/machinery/computer,
 /turf/open/floor/plasteel,
 /area/centcom/ferry)
 "lvT" = (
