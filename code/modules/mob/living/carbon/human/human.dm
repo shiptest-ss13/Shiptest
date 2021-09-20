@@ -1057,6 +1057,10 @@
 	if(pulling != target || grab_state != GRAB_AGGRESSIVE || stat != CONSCIOUS || a_intent != INTENT_GRAB)
 		return ..()
 
+	//If they can be picked up, and we can't (prevents recursion), try to pick the target mob up as an item.
+	if(target.can_be_held && !can_be_held)
+		if(target.mob_try_pickup(user))
+			return
 	//If they dragged themselves and we're currently aggressively grabbing them try to piggyback
 	if(user == target)
 		if(can_piggyback(target))

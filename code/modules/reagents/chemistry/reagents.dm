@@ -160,6 +160,10 @@ GLOBAL_LIST_INIT(name2reagent, build_name2reagent())
 /datum/reagent/proc/on_ex_act(severity)
 	return
 
+///Called when an object is used on the container, return true if a reaction occurs
+/datum/reagent/proc/dip_object(obj/item/I, mob/user, obj/item/reagent_containers/H)
+	return FALSE
+
 /// Called if the reagent has passed the overdose threshold and is set to be triggering overdose effects
 /datum/reagent/proc/overdose_process(mob/living/M)
 	return
