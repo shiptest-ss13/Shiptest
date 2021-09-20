@@ -1,4 +1,4 @@
-//datum/crew_manifest
+/datum/crew_manifest
 
 /datum/crew_manifest/ui_state(mob/user)
 	return GLOB.always_state
