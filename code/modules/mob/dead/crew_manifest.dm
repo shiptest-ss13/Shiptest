@@ -1,4 +1,4 @@
-/datum/crew_manifest
+//datum/crew_manifest
 
 /datum/crew_manifest/ui_state(mob/user)
 	return GLOB.always_state
@@ -11,6 +11,11 @@
 	if (!ui)
 		ui = new(user, src, "CrewManifest")
 		ui.open()
+
+/datum/crew_manifest/ui_act(action, list/params, datum/tgui/ui, datum/ui_state/state)
+	. = ..()
+	if(.)
+		return
 
 /datum/crew_manifest/ui_static_data(mob/user)
 	return list(
