@@ -13,7 +13,7 @@
 	desc = "It's watching you suspiciously."
 
 /obj/structure/closet/crate/necropolis/tendril/PopulateContents()
-	var/loot = rand(1,27)
+	var/loot = rand(1,28)
 	switch(loot)
 		if(1)
 			new /obj/item/shared_storage/red(src)
@@ -81,6 +81,8 @@
 		if(27)
 			new /obj/item/clothing/under/drip(src)
 			new /obj/item/clothing/shoes/drip(src)
+		if(28)
+			new /obj/item/freeze_cube(src)
 
 //KA modkit design discs
 /obj/item/disk/design_disk/modkit_disc
@@ -174,6 +176,7 @@
 	permeability_coefficient = 0.05 //Thick soles, and covers the ankle
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/shoes
 	lace_time = 35 SECONDS//nike shoelace art joke
+	slowdown = -0.5
 
 /obj/item/clothing/under/drip/equipped(mob/user, slot)
 	. = ..()
@@ -444,7 +447,7 @@
 //Meat Hook
 /obj/item/gun/magic/hook
 	name = "meat hook"
-	desc = "Mid or feed."
+	desc = "A light hooked blade, attached by the handle to a long chain. Can be used to make quick strikes in hand, or thrown at enemies, magically dragging them to the user. <b>Get over here!</b>"
 	ammo_type = /obj/item/ammo_casing/magic/hook
 	icon_state = "hook"
 	item_state = "hook"
@@ -452,8 +455,19 @@
 	righthand_file = 'icons/mob/inhands/weapons/melee_righthand.dmi'
 	fire_sound = 'sound/weapons/batonextend.ogg'
 	max_charges = 1
-	item_flags = NEEDS_PERMIT | NOBLUDGEON
-	force = 18
+	item_flags = NEEDS_PERMIT
+	force = 15
+	block_chance = 25//A pittance, but might be worth something in a scuffle
+	hitsound = 'sound/weapons/chainhit.ogg'
+
+
+/obj/item/gun/magic/hook/melee_attack_chain(mob/user, atom/target, params)
+	..()
+	user.changeNext_move(CLICK_CD_MELEE * 0.5)//quick to swing. 15 force can be quite something with this attack frequency.
+
+/obj/item/gun/magic/hook/Initialize()
+	. = ..()
+	AddComponent(/datum/component/butchering, 15, 125, 0, hitsound)
 
 /obj/item/ammo_casing/magic/hook
 	name = "hook"
@@ -782,6 +796,53 @@
 	H.put_in_hands(new /obj/item/shield/riot/roman(H), TRUE)
 	H.put_in_hands(new /obj/item/claymore(H), TRUE)
 	H.equip_to_slot_or_del(new /obj/item/spear(H), ITEM_SLOT_BACK)
+
+//ice cube
+/obj/item/freeze_cube
+	name = "freeze cube"
+	desc = "A block of semi-clear ice, enchanted by an ancient wizard to keep his drinks cold forever. \
+		Unfortunately, it appears to be malfunctioning, and now encases those it impacts with a cube of frost."
+	icon = 'icons/obj/lavaland/artefacts.dmi'
+	icon_state = "freeze_cube"
+	throwforce = 10
+	damtype = BURN
+	var/cooldown_time = 5 SECONDS
+	COOLDOWN_DECLARE(freeze_cooldown)
+
+/obj/item/freeze_cube/examine(mob/user)
+	. = ..()
+	. += ("<span class= 'danger'>Throw this at objects or creatures to freeze them, it will boomerang back so be cautious!</span>")
+
+/obj/item/freeze_cube/throw_at(atom/target, range, speed, mob/thrower, spin=1, diagonals_first = 0, datum/callback/callback, quickstart = TRUE)
+	. = ..()
+	if(!.)
+		return
+	icon_state = "freeze_cube_thrown"
+	addtimer(VARSET_CALLBACK(src, icon_state, initial(icon_state)), 1 SECONDS)
+
+/obj/item/freeze_cube/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)
+	icon_state = initial(icon_state)
+	var/caught = hit_atom.hitby(src, FALSE, FALSE, throwingdatum=throwingdatum)
+	var/mob/thrown_by = thrownby
+	if(ismovable(hit_atom) && !caught && (!thrown_by || thrown_by && COOLDOWN_FINISHED(src, freeze_cooldown)))
+		freeze(hit_atom)
+	if(thrown_by && !caught)
+		addtimer(CALLBACK(src, /atom/movable.proc/throw_at, thrown_by, throw_range+2, throw_speed, null, TRUE), 1)
+
+/obj/item/freeze_cube/proc/freeze(atom/movable/hit_atom)
+	playsound(src, 'sound/effects/glassbr3.ogg', 50, TRUE)
+	COOLDOWN_START(src, freeze_cooldown, cooldown_time)
+	if(isobj(hit_atom))
+		var/obj/hit_object = hit_atom
+		if(hit_object.resistance_flags & FREEZE_PROOF)
+			hit_object.visible_message("<span class='warning'>[hit_object] is freeze-proof! </span>")
+			return
+		if(!(hit_object.obj_flags & FROZEN))
+			hit_object.make_frozen_visual()
+	else if(isliving(hit_atom))
+		var/mob/living/hit_mob = hit_atom
+		walk(hit_mob, 0) //stops them mid pathing even if they're stunimmune
+		hit_mob.apply_status_effect(/datum/status_effect/ice_block_talisman, 5 SECONDS)
 
 //earthquake gauntlets
 /obj/item/clothing/gloves/gauntlets
