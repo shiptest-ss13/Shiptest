@@ -11,21 +11,28 @@
 	throw_speed = 3
 	throw_range = 7
 	max_amount = 60
-	var/turf_type = null
-	var/mineralType = null
 	novariants = TRUE
-	var/human_maxHealth = 100
+	/// What type of turf does this tile produce.
+	var/turf_type = null
+	/// Determines certain welder interactions.
+	var/mineralType = null
+	/// Cached associative lazy list to hold the radial options for tile reskinning. See tile_reskinning.dm for more information. Pattern: list[type] -> image
+	var/list/tile_reskin_types
+
 
 /obj/item/stack/tile/Initialize(mapload, amount)
 	. = ..()
 	pixel_x = rand(-3, 3)
 	pixel_y = rand(-3, 3) //randomize a little
+	if(tile_reskin_types)
+		tile_reskin_types = tile_reskin_list(tile_reskin_types)
+
 
 /obj/item/stack/tile/examine(mob/user)
 	. = ..()
 	if(throwforce && !is_cyborg) //do not want to divide by zero or show the message to borgs who can't throw
 		var/verb
-		switch(CEILING(human_maxHealth / throwforce, 1)) //throws to crit a human
+		switch(CEILING(MAX_LIVING_HEALTH / throwforce, 1)) //throws to crit a human
 			if(1 to 3)
 				verb = "superb"
 			if(4 to 6)
@@ -39,6 +46,7 @@
 		if(!verb)
 			return
 		. += "<span class='notice'>Those could work as a [verb] throwing weapon.</span>"
+
 
 /obj/item/stack/tile/attackby(obj/item/W, mob/user, params)
 
@@ -361,6 +369,7 @@
 	mineralType = "metal"
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 70)
 	resistance_flags = FIRE_PROOF
+	color = COLOR_FLOORTILE_GRAY
 
 /obj/item/stack/tile/plasteel/cyborg
 	custom_materials = null // All other Borg versions of items have no Metal or Glass - RR
@@ -374,6 +383,19 @@
 	icon_state = "tile_plastic"
 	custom_materials = list(/datum/material/plastic=500)
 	turf_type = /turf/open/floor/plastic
+
+/obj/item/stack/tile/plasteel/dark
+	name = "dark tile"
+	turf_type = /turf/open/floor/plasteel/dark
+	merge_type = /obj/item/stack/tile/plasteel/dark
+/obj/item/stack/tile/plasteel/white
+	name = "white tile"
+	turf_type = /turf/open/floor/plasteel/white
+	merge_type = /obj/item/stack/tile/plasteel/white
+/obj/item/stack/tile/plasteel/grimy
+	name = "grimy floor tile"
+	turf_type = /turf/open/floor/plasteel/grimy
+	merge_type = /obj/item/stack/tile/plasteel/grimy
 
 /obj/item/stack/tile/material
 	name = "floor tile"

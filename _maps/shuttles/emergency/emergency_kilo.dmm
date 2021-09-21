@@ -16,17 +16,17 @@
 /turf/open/floor/mineral/plastitanium,
 /area/shuttle/escape)
 "ae" = (
-/obj/effect/turf_decal/bot,
+/obj/effect/turf_decal/industrial/outline/yellow,
 /obj/machinery/computer/communications,
 /turf/open/floor/mineral/plastitanium,
 /area/shuttle/escape)
 "af" = (
-/obj/effect/turf_decal/bot,
+/obj/effect/turf_decal/industrial/outline/yellow,
 /obj/machinery/computer/emergency_shuttle,
 /turf/open/floor/mineral/plastitanium,
 /area/shuttle/escape)
 "ag" = (
-/obj/effect/turf_decal/bot,
+/obj/effect/turf_decal/industrial/outline/yellow,
 /obj/machinery/computer/crew,
 /turf/open/floor/mineral/plastitanium,
 /area/shuttle/escape)
@@ -63,8 +63,8 @@
 /area/shuttle/escape)
 "au" = (
 /obj/structure/table/reinforced,
-/obj/effect/turf_decal/tile/neutral,
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/corner/neutral,
+/obj/effect/turf_decal/corner/neutral{
 	dir = 1
 	},
 /obj/item/folder/red{
@@ -80,14 +80,14 @@
 	dir = 8
 	},
 /obj/structure/closet/emcloset/anchored,
-/obj/effect/turf_decal/bot,
+/obj/effect/turf_decal/industrial/outline/yellow,
 /turf/open/floor/mineral/plastitanium,
 /area/shuttle/escape)
 "aA" = (
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/corner/neutral{
 	dir = 1
 	},
-/obj/effect/turf_decal/tile/neutral,
+/obj/effect/turf_decal/corner/neutral,
 /turf/open/floor/mineral/plastitanium/red/brig,
 /area/shuttle/escape)
 "aD" = (
@@ -96,15 +96,15 @@
 /area/shuttle/escape)
 "aF" = (
 /obj/structure/table/reinforced,
-/obj/effect/turf_decal/tile/neutral,
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/corner/neutral,
+/obj/effect/turf_decal/corner/neutral{
 	dir = 1
 	},
 /obj/item/storage/fancy/donut_box,
 /turf/open/floor/mineral/plastitanium,
 /area/shuttle/escape)
 "aH" = (
-/obj/effect/turf_decal/delivery,
+/obj/effect/turf_decal/industrial/hatch/yellow,
 /obj/machinery/door/airlock/shuttle{
 	name = "External Shuttle Airlock"
 	},
@@ -114,7 +114,7 @@
 /turf/open/floor/mineral/plastitanium,
 /area/shuttle/escape)
 "aJ" = (
-/obj/effect/turf_decal/delivery,
+/obj/effect/turf_decal/industrial/hatch/yellow,
 /obj/machinery/door/airlock/security/glass{
 	name = "Holding Area";
 	req_one_access_txt = "19"
@@ -125,14 +125,14 @@
 /obj/structure/chair/comfy/shuttle{
 	dir = 1
 	},
-/obj/effect/turf_decal/tile/neutral,
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/corner/neutral,
+/obj/effect/turf_decal/corner/neutral{
 	dir = 1
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/shuttle/escape)
 "aN" = (
-/obj/effect/turf_decal/stripes/line,
+/obj/effect/turf_decal/industrial/warning,
 /obj/machinery/door/airlock/command{
 	name = "Shuttle Control";
 	req_one_access_txt = "19"
@@ -140,7 +140,7 @@
 /turf/open/floor/mineral/plastitanium,
 /area/shuttle/escape)
 "aO" = (
-/obj/effect/turf_decal/delivery,
+/obj/effect/turf_decal/industrial/hatch/yellow,
 /turf/open/floor/mineral/plastitanium,
 /area/shuttle/escape)
 "aR" = (
@@ -175,11 +175,11 @@
 	pixel_y = 9
 	},
 /obj/structure/closet/crate/internals,
-/obj/effect/turf_decal/delivery,
+/obj/effect/turf_decal/industrial/hatch/yellow,
 /turf/open/floor/mineral/plastitanium,
 /area/shuttle/escape)
 "ba" = (
-/obj/effect/turf_decal/bot,
+/obj/effect/turf_decal/industrial/outline/yellow,
 /obj/structure/chair/comfy/shuttle{
 	dir = 8
 	},
@@ -197,14 +197,14 @@
 /turf/closed/wall/mineral/titanium,
 /area/shuttle/escape)
 "bl" = (
-/obj/effect/turf_decal/bot,
+/obj/effect/turf_decal/industrial/outline/yellow,
 /obj/structure/chair/comfy/shuttle{
 	dir = 8
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/shuttle/escape)
 "bm" = (
-/obj/effect/turf_decal/delivery,
+/obj/effect/turf_decal/industrial/hatch/yellow,
 /obj/machinery/door/airlock/security/glass{
 	name = "Holding Area";
 	req_access_txt = "2"
@@ -212,7 +212,7 @@
 /turf/open/floor/mineral/plastitanium,
 /area/shuttle/escape)
 "bn" = (
-/obj/effect/turf_decal/bot,
+/obj/effect/turf_decal/industrial/outline/yellow,
 /obj/structure/closet/emcloset,
 /turf/open/floor/mineral/plastitanium,
 /area/shuttle/escape)
@@ -238,7 +238,7 @@
 /turf/open/floor/mineral/plastitanium,
 /area/shuttle/escape)
 "bu" = (
-/obj/effect/turf_decal/bot,
+/obj/effect/turf_decal/industrial/outline/yellow,
 /obj/structure/chair/comfy/shuttle,
 /turf/open/floor/mineral/plastitanium,
 /area/shuttle/escape)
@@ -249,7 +249,7 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/obj/effect/turf_decal/bot,
+/obj/effect/turf_decal/industrial/outline/yellow,
 /obj/structure/chair/comfy/shuttle,
 /turf/open/floor/mineral/plastitanium,
 /area/shuttle/escape)
@@ -260,12 +260,12 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/obj/effect/turf_decal/bot,
+/obj/effect/turf_decal/industrial/outline/yellow,
 /obj/structure/chair/comfy/shuttle,
 /turf/open/floor/mineral/plastitanium,
 /area/shuttle/escape)
 "bB" = (
-/obj/effect/turf_decal/bot,
+/obj/effect/turf_decal/industrial/outline/yellow,
 /obj/structure/chair/comfy/shuttle{
 	dir = 4
 	},
@@ -275,7 +275,7 @@
 /turf/open/floor/mineral/plastitanium,
 /area/shuttle/escape)
 "bH" = (
-/obj/effect/turf_decal/bot,
+/obj/effect/turf_decal/industrial/outline/yellow,
 /obj/structure/chair/comfy/shuttle{
 	dir = 8
 	},
@@ -285,14 +285,14 @@
 /turf/open/floor/mineral/plastitanium,
 /area/shuttle/escape)
 "bI" = (
-/obj/effect/turf_decal/bot,
+/obj/effect/turf_decal/industrial/outline/yellow,
 /obj/structure/chair/comfy/shuttle{
 	dir = 4
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/shuttle/escape)
 "bK" = (
-/obj/effect/turf_decal/bot,
+/obj/effect/turf_decal/industrial/outline/yellow,
 /obj/structure/chair/comfy/shuttle{
 	dir = 1
 	},
@@ -326,7 +326,7 @@
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/shuttle/escape)
 "bZ" = (
-/obj/effect/turf_decal/bot,
+/obj/effect/turf_decal/industrial/outline/yellow,
 /obj/structure/chair/comfy/shuttle{
 	dir = 1
 	},
@@ -337,10 +337,10 @@
 /turf/open/floor/mineral/plastitanium,
 /area/shuttle/escape)
 "cb" = (
-/obj/effect/turf_decal/tile/blue{
+/obj/effect/turf_decal/corner/blue{
 	dir = 1
 	},
-/obj/effect/turf_decal/tile/blue,
+/obj/effect/turf_decal/corner/blue,
 /turf/open/floor/mineral/titanium/white,
 /area/shuttle/escape)
 "cg" = (
@@ -356,8 +356,8 @@
 /turf/open/floor/mineral/plastitanium,
 /area/shuttle/escape)
 "cj" = (
-/obj/effect/turf_decal/tile/brown,
-/obj/effect/turf_decal/tile/brown{
+/obj/effect/turf_decal/corner/brown,
+/obj/effect/turf_decal/corner/brown{
 	dir = 1
 	},
 /turf/open/floor/mineral/titanium/yellow,
@@ -379,7 +379,7 @@
 /obj/item/crowbar,
 /obj/item/wrench,
 /obj/item/radio,
-/obj/effect/turf_decal/bot,
+/obj/effect/turf_decal/industrial/outline/yellow,
 /turf/open/floor/mineral/plastitanium,
 /area/shuttle/escape)
 "cm" = (
@@ -387,7 +387,7 @@
 /turf/closed/wall/mineral/titanium,
 /area/shuttle/escape)
 "cn" = (
-/obj/effect/turf_decal/delivery,
+/obj/effect/turf_decal/industrial/hatch/yellow,
 /obj/machinery/door/airlock/medical/glass{
 	name = "Shuttle Infirmary"
 	},
@@ -395,11 +395,11 @@
 /area/shuttle/escape)
 "co" = (
 /obj/structure/rack,
-/obj/effect/turf_decal/bot,
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/industrial/outline/yellow,
+/obj/effect/turf_decal/corner/neutral{
 	dir = 1
 	},
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/corner/neutral{
 	dir = 4
 	},
 /obj/item/radio{
@@ -431,7 +431,7 @@
 	pixel_y = 3
 	},
 /obj/item/lazarus_injector,
-/obj/effect/turf_decal/bot,
+/obj/effect/turf_decal/industrial/outline/yellow,
 /mob/living/simple_animal/bot/medbot{
 	name = "\improper emergency medibot";
 	pixel_x = -3;
@@ -440,12 +440,12 @@
 /turf/open/floor/mineral/plastitanium,
 /area/shuttle/escape)
 "cz" = (
-/obj/effect/turf_decal/delivery,
+/obj/effect/turf_decal/industrial/hatch/yellow,
 /obj/machinery/recharge_station,
 /turf/open/floor/mineral/plastitanium,
 /area/shuttle/escape)
 "cC" = (
-/obj/effect/turf_decal/delivery,
+/obj/effect/turf_decal/industrial/hatch/yellow,
 /obj/structure/reagent_dispensers/watertank,
 /turf/open/floor/mineral/plastitanium,
 /area/shuttle/escape)
@@ -462,15 +462,15 @@
 	pixel_x = 3;
 	pixel_y = -5
 	},
-/obj/effect/turf_decal/bot,
+/obj/effect/turf_decal/industrial/outline/yellow,
 /obj/machinery/light{
 	dir = 4
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/shuttle/escape)
 "cG" = (
-/obj/effect/turf_decal/tile/blue,
-/obj/effect/turf_decal/tile/blue{
+/obj/effect/turf_decal/corner/blue,
+/obj/effect/turf_decal/corner/blue{
 	dir = 1
 	},
 /turf/open/floor/mineral/titanium/white,
@@ -507,7 +507,7 @@
 	pixel_y = 9
 	},
 /obj/structure/closet/crate/internals,
-/obj/effect/turf_decal/delivery,
+/obj/effect/turf_decal/industrial/hatch/yellow,
 /obj/machinery/light{
 	dir = 8
 	},
@@ -524,7 +524,7 @@
 /area/shuttle/escape)
 "cM" = (
 /obj/machinery/vending/medical,
-/obj/effect/turf_decal/bot,
+/obj/effect/turf_decal/industrial/outline/yellow,
 /obj/machinery/light{
 	dir = 8
 	},
@@ -547,7 +547,7 @@
 /area/shuttle/escape)
 "cT" = (
 /obj/structure/shuttle/engine/propulsion,
-/obj/effect/turf_decal/stripes/line,
+/obj/effect/turf_decal/industrial/warning,
 /turf/open/floor/plating/airless,
 /area/shuttle/escape)
 "cU" = (
@@ -592,12 +592,12 @@
 /obj/machinery/computer/operating{
 	dir = 1
 	},
-/obj/effect/turf_decal/bot,
+/obj/effect/turf_decal/industrial/outline/yellow,
 /turf/open/floor/mineral/plastitanium,
 /area/shuttle/escape)
 "da" = (
 /obj/structure/table/optable,
-/obj/effect/turf_decal/bot,
+/obj/effect/turf_decal/industrial/outline/yellow,
 /turf/open/floor/mineral/plastitanium,
 /area/shuttle/escape)
 "db" = (
@@ -611,27 +611,27 @@
 /obj/structure/window/reinforced{
 	dir = 1
 	},
-/obj/effect/turf_decal/stripes/line{
+/obj/effect/turf_decal/industrial/warning{
 	dir = 1
 	},
 /turf/open/floor/plating/airless,
 /area/shuttle/escape)
 "dd" = (
 /obj/structure/shuttle/engine/propulsion/left,
-/obj/effect/turf_decal/stripes/line,
+/obj/effect/turf_decal/industrial/warning,
 /turf/open/floor/plating/airless,
 /area/shuttle/escape)
 "de" = (
 /obj/structure/shuttle/engine/propulsion/right,
-/obj/effect/turf_decal/stripes/line,
+/obj/effect/turf_decal/industrial/warning,
 /turf/open/floor/plating/airless,
 /area/shuttle/escape)
 "eL" = (
 /obj/structure/chair/comfy/shuttle{
 	dir = 4
 	},
-/obj/effect/turf_decal/tile/neutral,
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/corner/neutral,
+/obj/effect/turf_decal/corner/neutral{
 	dir = 1
 	},
 /obj/machinery/light{
@@ -643,8 +643,8 @@
 /turf/open/floor/mineral/plastitanium,
 /area/shuttle/escape)
 "fu" = (
-/obj/effect/turf_decal/tile/neutral,
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/corner/neutral,
+/obj/effect/turf_decal/corner/neutral{
 	dir = 1
 	},
 /obj/item/kirbyplants{
@@ -654,8 +654,8 @@
 /area/shuttle/escape)
 "gc" = (
 /obj/effect/turf_decal/box/corners,
-/obj/effect/turf_decal/tile/neutral,
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/corner/neutral,
+/obj/effect/turf_decal/corner/neutral{
 	dir = 1
 	},
 /turf/open/floor/mineral/plastitanium,
@@ -664,20 +664,20 @@
 /obj/structure/chair/comfy/shuttle{
 	dir = 4
 	},
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/corner/neutral{
 	dir = 1
 	},
-/obj/effect/turf_decal/tile/neutral,
+/obj/effect/turf_decal/corner/neutral,
 /obj/machinery/light{
 	dir = 8
 	},
 /turf/open/floor/mineral/plastitanium/red/brig,
 /area/shuttle/escape)
 "hE" = (
-/obj/effect/turf_decal/tile/blue{
+/obj/effect/turf_decal/corner/blue{
 	dir = 1
 	},
-/obj/effect/turf_decal/tile/blue,
+/obj/effect/turf_decal/corner/blue,
 /obj/structure/sink{
 	dir = 8;
 	pixel_x = 11
@@ -686,19 +686,19 @@
 /area/shuttle/escape)
 "is" = (
 /obj/structure/table,
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/corner/neutral{
 	dir = 1
 	},
-/obj/effect/turf_decal/tile/neutral,
+/obj/effect/turf_decal/corner/neutral,
 /obj/machinery/recharger,
 /turf/open/floor/mineral/plastitanium/red/brig,
 /area/shuttle/escape)
 "iu" = (
 /obj/structure/table,
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/corner/neutral{
 	dir = 1
 	},
-/obj/effect/turf_decal/tile/neutral,
+/obj/effect/turf_decal/corner/neutral,
 /obj/item/storage/box/zipties{
 	pixel_y = 4
 	},
@@ -707,13 +707,13 @@
 /turf/open/floor/mineral/plastitanium/red/brig,
 /area/shuttle/escape)
 "jb" = (
-/obj/effect/turf_decal/delivery,
+/obj/effect/turf_decal/industrial/hatch/yellow,
 /obj/machinery/stasis,
 /turf/open/floor/mineral/plastitanium,
 /area/shuttle/escape)
 "kS" = (
-/obj/effect/turf_decal/delivery,
-/obj/effect/turf_decal/stripes/line{
+/obj/effect/turf_decal/industrial/hatch/yellow,
+/obj/effect/turf_decal/industrial/warning{
 	dir = 1
 	},
 /obj/machinery/door/airlock/shuttle{
@@ -724,10 +724,10 @@
 /turf/open/floor/mineral/plastitanium,
 /area/shuttle/escape)
 "lX" = (
-/obj/effect/turf_decal/tile/blue{
+/obj/effect/turf_decal/corner/blue{
 	dir = 1
 	},
-/obj/effect/turf_decal/tile/blue,
+/obj/effect/turf_decal/corner/blue,
 /obj/machinery/light{
 	dir = 8
 	},
@@ -737,8 +737,8 @@
 /obj/structure/chair/comfy/shuttle{
 	dir = 4
 	},
-/obj/effect/turf_decal/tile/neutral,
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/corner/neutral,
+/obj/effect/turf_decal/corner/neutral{
 	dir = 1
 	},
 /turf/open/floor/mineral/plastitanium,
@@ -752,15 +752,15 @@
 /area/shuttle/escape)
 "rN" = (
 /obj/structure/chair/comfy/shuttle,
-/obj/effect/turf_decal/tile/neutral,
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/corner/neutral,
+/obj/effect/turf_decal/corner/neutral{
 	dir = 1
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/shuttle/escape)
 "sV" = (
-/obj/effect/turf_decal/tile/brown,
-/obj/effect/turf_decal/tile/brown{
+/obj/effect/turf_decal/corner/brown,
+/obj/effect/turf_decal/corner/brown{
 	dir = 1
 	},
 /obj/structure/sign/warning/vacuum/external{
@@ -769,8 +769,8 @@
 /turf/open/floor/mineral/titanium/yellow,
 /area/shuttle/escape)
 "tw" = (
-/obj/effect/turf_decal/tile/neutral,
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/corner/neutral,
+/obj/effect/turf_decal/corner/neutral{
 	dir = 1
 	},
 /obj/item/kirbyplants{
@@ -789,23 +789,23 @@
 /turf/open/floor/mineral/plastitanium,
 /area/shuttle/escape)
 "ub" = (
-/obj/effect/turf_decal/tile/blue{
+/obj/effect/turf_decal/corner/blue{
 	dir = 1
 	},
-/obj/effect/turf_decal/tile/blue,
+/obj/effect/turf_decal/corner/blue,
 /obj/machinery/light{
 	dir = 4
 	},
 /turf/open/floor/mineral/titanium/white,
 /area/shuttle/escape)
 "vm" = (
-/obj/effect/turf_decal/bot,
+/obj/effect/turf_decal/industrial/outline/yellow,
 /obj/machinery/suit_storage_unit/standard_unit,
 /turf/open/floor/mineral/plastitanium,
 /area/shuttle/escape)
 "vC" = (
-/obj/effect/turf_decal/tile/brown,
-/obj/effect/turf_decal/tile/brown{
+/obj/effect/turf_decal/corner/brown,
+/obj/effect/turf_decal/corner/brown{
 	dir = 1
 	},
 /obj/item/kirbyplants{
@@ -817,15 +817,15 @@
 /obj/structure/chair/comfy/shuttle{
 	dir = 1
 	},
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/corner/neutral{
 	dir = 1
 	},
-/obj/effect/turf_decal/tile/neutral,
+/obj/effect/turf_decal/corner/neutral,
 /turf/open/floor/mineral/plastitanium/red/brig,
 /area/shuttle/escape)
 "yO" = (
-/obj/effect/turf_decal/tile/neutral,
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/corner/neutral,
+/obj/effect/turf_decal/corner/neutral{
 	dir = 1
 	},
 /turf/open/floor/mineral/plastitanium,
@@ -834,8 +834,8 @@
 /obj/effect/turf_decal/box/corners{
 	dir = 4
 	},
-/obj/effect/turf_decal/tile/neutral,
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/corner/neutral,
+/obj/effect/turf_decal/corner/neutral{
 	dir = 1
 	},
 /turf/open/floor/mineral/plastitanium,
@@ -844,8 +844,8 @@
 /obj/structure/chair/comfy/shuttle{
 	dir = 8
 	},
-/obj/effect/turf_decal/tile/neutral,
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/corner/neutral,
+/obj/effect/turf_decal/corner/neutral{
 	dir = 1
 	},
 /turf/open/floor/mineral/plastitanium,
@@ -862,37 +862,37 @@
 /obj/structure/chair/comfy/shuttle{
 	dir = 8
 	},
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/corner/neutral{
 	dir = 1
 	},
-/obj/effect/turf_decal/tile/neutral,
+/obj/effect/turf_decal/corner/neutral,
 /turf/open/floor/mineral/plastitanium/red/brig,
 /area/shuttle/escape)
 "GK" = (
-/obj/effect/turf_decal/tile/blue{
+/obj/effect/turf_decal/corner/blue{
 	dir = 1
 	},
-/obj/effect/turf_decal/tile/blue,
+/obj/effect/turf_decal/corner/blue,
 /obj/item/kirbyplants{
 	icon_state = "plant-21"
 	},
 /turf/open/floor/mineral/titanium/white,
 /area/shuttle/escape)
 "Jb" = (
-/obj/effect/turf_decal/tile/brown,
-/obj/effect/turf_decal/tile/brown{
+/obj/effect/turf_decal/corner/brown,
+/obj/effect/turf_decal/corner/brown{
 	dir = 1
 	},
-/obj/effect/turf_decal/loading_area{
+/obj/effect/turf_decal/industrial/loading{
 	dir = 4
 	},
 /turf/open/floor/mineral/titanium/yellow,
 /area/shuttle/escape)
 "Lf" = (
-/obj/effect/turf_decal/tile/blue{
+/obj/effect/turf_decal/corner/blue{
 	dir = 1
 	},
-/obj/effect/turf_decal/tile/blue,
+/obj/effect/turf_decal/corner/blue,
 /obj/structure/chair/office/light,
 /turf/open/floor/mineral/titanium/white,
 /area/shuttle/escape)
@@ -900,25 +900,25 @@
 /obj/structure/chair/comfy/shuttle{
 	dir = 4
 	},
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/corner/neutral{
 	dir = 1
 	},
-/obj/effect/turf_decal/tile/neutral,
+/obj/effect/turf_decal/corner/neutral,
 /turf/open/floor/mineral/plastitanium/red/brig,
 /area/shuttle/escape)
 "NB" = (
 /obj/structure/table,
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/corner/neutral{
 	dir = 1
 	},
-/obj/effect/turf_decal/tile/neutral,
+/obj/effect/turf_decal/corner/neutral,
 /obj/item/crowbar/red,
 /obj/item/storage/lockbox/loyalty,
 /turf/open/floor/mineral/plastitanium/red/brig,
 /area/shuttle/escape)
 "Qm" = (
-/obj/effect/turf_decal/tile/blue,
-/obj/effect/turf_decal/tile/blue{
+/obj/effect/turf_decal/corner/blue,
+/obj/effect/turf_decal/corner/blue{
 	dir = 1
 	},
 /obj/item/kirbyplants{
@@ -930,8 +930,8 @@
 /obj/structure/chair/comfy/shuttle{
 	dir = 8
 	},
-/obj/effect/turf_decal/tile/neutral,
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/corner/neutral,
+/obj/effect/turf_decal/corner/neutral{
 	dir = 1
 	},
 /obj/machinery/light{
@@ -946,14 +946,14 @@
 /obj/machinery/door/airlock/shuttle{
 	name = "Emergency Shuttle Airlock"
 	},
-/obj/effect/turf_decal/tile/brown,
-/obj/effect/turf_decal/tile/brown{
+/obj/effect/turf_decal/corner/brown,
+/obj/effect/turf_decal/corner/brown{
 	dir = 1
 	},
 /turf/open/floor/mineral/titanium/yellow,
 /area/shuttle/escape)
 "Ui" = (
-/obj/effect/turf_decal/delivery,
+/obj/effect/turf_decal/industrial/hatch/yellow,
 /obj/machinery/sleeper,
 /turf/open/floor/mineral/plastitanium,
 /area/shuttle/escape)
@@ -961,25 +961,25 @@
 /obj/effect/turf_decal/box/corners{
 	dir = 1
 	},
-/obj/effect/turf_decal/tile/neutral,
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/corner/neutral,
+/obj/effect/turf_decal/corner/neutral{
 	dir = 1
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/shuttle/escape)
 "Vm" = (
 /obj/structure/chair/comfy/shuttle,
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/corner/neutral{
 	dir = 1
 	},
-/obj/effect/turf_decal/tile/neutral,
+/obj/effect/turf_decal/corner/neutral,
 /turf/open/floor/mineral/plastitanium/red/brig,
 /area/shuttle/escape)
 "Vy" = (
-/obj/effect/turf_decal/tile/blue{
+/obj/effect/turf_decal/corner/blue{
 	dir = 1
 	},
-/obj/effect/turf_decal/tile/blue,
+/obj/effect/turf_decal/corner/blue,
 /obj/machinery/shower{
 	dir = 4
 	},
@@ -989,20 +989,20 @@
 /obj/structure/chair/comfy/shuttle{
 	dir = 8
 	},
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/corner/neutral{
 	dir = 1
 	},
-/obj/effect/turf_decal/tile/neutral,
+/obj/effect/turf_decal/corner/neutral,
 /obj/machinery/light{
 	dir = 1
 	},
 /turf/open/floor/mineral/plastitanium/red/brig,
 /area/shuttle/escape)
 "Xd" = (
-/obj/effect/turf_decal/tile/blue{
+/obj/effect/turf_decal/corner/blue{
 	dir = 1
 	},
-/obj/effect/turf_decal/tile/blue,
+/obj/effect/turf_decal/corner/blue,
 /obj/item/kirbyplants{
 	icon_state = "applebush"
 	},
@@ -1019,8 +1019,8 @@
 /obj/effect/turf_decal/box/corners{
 	dir = 8
 	},
-/obj/effect/turf_decal/tile/neutral,
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/corner/neutral,
+/obj/effect/turf_decal/corner/neutral{
 	dir = 1
 	},
 /turf/open/floor/mineral/plastitanium,
