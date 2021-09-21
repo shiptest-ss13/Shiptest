@@ -10,7 +10,7 @@
 		return
 
 	mob.log_talk(msg, LOG_MSAY)
-	SSshipbot.relay_mentor_say(src, msg)
+	SSshipbot.relay_mentor_say(ckey, msg)
 
 	msg = "<span class='[check_rights(R_ADMIN, 0) ? "mentoradmin" : "mentor"]'><span class='boldnotice'>MENTOR:</span> <EM>[key_name(usr, 0, 0)]</EM>: <span class='message'>[msg]</span></span>"
 	to_chat(GLOB.mentors,

@@ -22,6 +22,16 @@ SUBSYSTEM_DEF(shipbot)
 		"!" = "%21",
 		" " = "%20",
 	)
+	/// KEEP THIS UP TO DATE. IF YOU ADD NEW ONES ADD IT HERE
+	var/static/list/channel_keys = list(
+		"admin",
+		"admin-round",
+		"admin-ban",
+		"admin-permission",
+		"admin-server",
+		"admin-fax",
+		"round",
+	)
 
 /datum/controller/subsystem/shipbot/stat_entry(msg)
 	if(pinging)
@@ -117,6 +127,23 @@ SUBSYSTEM_DEF(shipbot)
 		to_chat(target, "<span class='adminhelp'>Admin PM from '[parameters[1]]': [parameters[2]]</span>")
 		return SHIPBOT_TOPIC_RESPONSE_GOOD
 
+	if(command == SHIPBOT_TOPIC_RELAY_MENTOR_SAY)
+		to_chat(GLOB.mentors, "<span class='mentor'>MSAY-RELAY: [parameters[1]]: [parameters[2]]</span>")
+		return SHIPBOT_TOPIC_RESPONSE_GOOD
+
+	if(command == SHIPBOT_TOPIC_RELAY_MENTOR_PM)
+		var/client/target = get_mob_by_ckey(lowertext(parameters[3]))
+		if(!target)
+			return SHIPBOT_TOPIC_RESPONSE_FAIL
+		to_chat(target, "<span class='mentor'>Mentor PM from '[parameters[1]]': [parameters[2]]</span>")
+		return SHIPBOT_TOPIC_RESPONSE_GOOD
+
+	if(command == SHIPBOT_TOPIC_RELAY_CHANNEL_LIST)
+		var/message = channel_keys[1]
+		for(var/channel in channel_keys[2..])
+			message += "|[channel]"
+		return message
+
 /// Send a GET request to the shipbot daemon with the given command and data.
 /datum/controller/subsystem/shipbot/proc/do_export_get(command, list/data)
 	if(!enabled && !pinging)
@@ -145,47 +172,61 @@ SUBSYSTEM_DEF(shipbot)
 		return file2text(response["CONTENT"])
 	return
 
-/datum/controller/subsystem/shipbot/proc/relay_ooc(client/client, message)
+/datum/controller/subsystem/shipbot/proc/relay_ooc(client, message)
 	if(!enabled)
 		return
 	do_export_get("relay_ooc", list(
-		"client" = client.key,
+		"client" = client,
 		"message" = message,
 	))
 
-/datum/controller/subsystem/shipbot/proc/relay_admin_say(client/client, message)
+/datum/controller/subsystem/shipbot/proc/relay_admin_say(client, message)
 	if(!enabled)
 		return
 	do_export_get("relay_admin_say", list(
-		"client" = client.key,
+		"client" = client,
 		"message" = message,
 	))
 
-/datum/controller/subsystem/shipbot/proc/relay_mentor_say(client/client, message)
+/datum/controller/subsystem/shipbot/proc/relay_mentor_say(client, message)
 	if(!enabled)
 		return
 	do_export_get("relay_mentor_say", list(
-		"client" = client.key,
+		"client" = client,
 		"message" = message
 	))
 
 /datum/controller/subsystem/shipbot/proc/relay_admin_help(datum/admin_help/ahelp, message)
 	if(!enabled)
 		return
-	var/list/adm = get_admin_counts(R_BAN)
-	var/list/activemins = adm["present"]
-	if(!activemins.len)
-		do_export_get("relay_admin_help", list(
-			"client" = ahelp.initiator.key,
-			"message" = message,
-		))
-		to_chat(ahelp.initiator, "<span class='adminhelp'>Your admin help has been sent to Discord.</span>")
+	do_export_get("relay_admin_help", list(
+		"client" = ahelp.initiator.key,
+		"message" = message,
+	))
 
-/datum/controller/subsystem/shipbot/proc/relay_mentor_help(client/client, message)
+/datum/controller/subsystem/shipbot/proc/relay_mentor_help(client, message)
 	if(!enabled)
 		return
 	do_export_get("relay_mentor_help", list(
-		"client" = client.key,
+		"client" = client,
 		"message" = message,
 	))
-	to_chat(client, "<span class='mentor'>Your mentor help has been sent to Discord.</span>")
+
+/// Used to send miscellaneous stuff that doesnt make sense to have a dedicated proc
+/datum/controller/subsystem/shipbot/proc/relay_channel(channel_key, message)
+	if(!enabled)
+		return
+	do_export_get("relay_channel", list(
+		"channel" = channel_key,
+		"message" = "[channel_key]: [message]",
+	))
+
+/// Set the state of a flag, :shrug:
+/datum/controller/subsystem/shipbot/proc/relay_flag(flag_key, state)
+	if(!enabled)
+		return
+	// We use !!state here to prevent some chucklefuck sending a non boolean number
+	do_export_get("relay_flag", list(
+		"flag" = flag_key,
+		"state" = !!state,
+	))

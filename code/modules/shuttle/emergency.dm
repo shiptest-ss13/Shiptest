@@ -420,8 +420,6 @@
 				mode = SHUTTLE_DOCKED
 				setTimer(SSshuttle.emergencyDockTime)
 				send2tgs("Server", "The Emergency Shuttle has docked with the station.")
-				SSredbot.send_discord_message("admin", "The escape shuttle has docked with the station.","round ending event")
-				SSredbot.send_discord_message("newround", "The escape shuttle has docked with the station. New round imminent!")
 				priority_announce("[SSshuttle.emergency] has docked with the station. You have [timeLeft(600)] minutes to board the Emergency Shuttle.", null, 'sound/ai/shuttledock.ogg', "Priority")
 				ShuttleDBStuff()
 

@@ -238,7 +238,7 @@ GLOBAL_LIST_INIT(malf_modules, subtypesof(/datum/AI_Module))
 		return
 	priority_announce("Hostile runtimes detected in all station systems, please deactivate your AI to prevent possible damage to its morality core.", "Anomaly Alert", 'sound/ai/aimalf.ogg')
 	set_security_level("delta")
-	SSredbot.send_discord_message("admin","An AI has armed a doomsday device: [owner.ckey] as [owner.real_name] the AI.","round ending event")
+	SSshipbot.relay_channel("round-admin", "An AI\[[owner.ckey]\] has armed a doomsday device as [owner.real_name] the AI.")
 	var/obj/machinery/doomsday_device/DOOM = new(owner_AI)
 	owner_AI.nuking = TRUE
 	owner_AI.doomsday_device = DOOM

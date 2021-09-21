@@ -47,7 +47,7 @@ its mentors, not actual dangerous perms
 			query_add_mentor.Execute()
 			message_admins("[key_name(usr)] made [newguy] a mentor.")
 			log_admin("[key_name(usr)] made [newguy] a mentor.")
-			SSredbot.send_discord_message("mentor","[newguy] is now a mentor.","mentor")
+			SSshipbot.relay_channel("admin-permission","[newguy] is now a mentor.")
 			return
 
 		if(href_list["mentor_edit"] == "remove")
@@ -56,5 +56,5 @@ its mentors, not actual dangerous perms
 			query_remove_mentor.Execute()
 			message_admins("[key_name(usr)] de-mentored [href_list["mentor_ckey"]]")
 			log_admin("[key_name(usr)] de-mentored [href_list["mentor_ckey"]]")
-			SSredbot.send_discord_message("mentor","[href_list["mentor_ckey"]] has been de-mentored.","mentor")
+			SSshipbot.relay_channel("admin-permission","[href_list["mentor_ckey"]] is no longer a mentor.")
 			return

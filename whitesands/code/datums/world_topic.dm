@@ -8,9 +8,8 @@
 
 	var/message = input["message"]
 
-	SSredbot.send_discord_message("ooc", "**[input["sender"]]:** [message]")
-
 	message = copytext_char(sanitize(message), 1, MAX_MESSAGE_LEN)
+	SSshipbot.relay_ooc(input["sender"], message)
 
 	message = emoji_parse(message)
 

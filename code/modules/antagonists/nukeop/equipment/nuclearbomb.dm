@@ -418,7 +418,7 @@
 		previous_level = get_security_level()
 		detonation_timer = world.time + (timer_set * 10)
 		countdown.start()
-		SSredbot.send_discord_message("admin","A nuclear device has been set to explode in [timing] seconds!","round ending event")
+		SSshipbot.relay_channel("admin-round", "A nuclear device has been set to explode in [timing] seconds!")
 		set_security_level("delta")
 	else
 		detonation_timer = null
@@ -486,7 +486,7 @@
 		SSshuttle.registerHostileEnvironment(src)
 		SSshuttle.lockdown = TRUE
 
-	SSredbot.send_discord_message("admin","A nuclear device has destroyed the station.","round ending event")
+	SSshipbot.relay_channel("admin-round", "A nuclear device has destroyed the station.")
 
 	//Cinematic
 	SSticker.mode.OnNukeExplosion(off_station)

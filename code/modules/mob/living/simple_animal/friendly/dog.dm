@@ -433,11 +433,7 @@
 /mob/living/simple_animal/pet/dog/corgi/Ian/death()
 	if(!memory_saved)
 		Write_Memory(TRUE)
-	if(lastattacker)
-		SSredbot.send_discord_message("admin","Ian has been killed: Last attacked by [lastattacker]([lastattackerckey]) in [get_area_name(src)].")
-	else
-		SSredbot.send_discord_message("admin","Ian has been killed in [get_area_name(src)].")
-	..()
+	return ..()
 
 /mob/living/simple_animal/pet/dog/corgi/Ian/proc/Read_Memory()
 	if(fexists("data/npc_saves/Ian.sav")) //legacy compatability to convert old format to new

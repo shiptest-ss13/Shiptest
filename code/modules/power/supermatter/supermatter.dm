@@ -400,7 +400,7 @@ GLOBAL_DATUM(main_supermatter_engine, /obj/machinery/power/supermatter_crystal)
 			SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "delam", /datum/mood_event/delam)
 	if(combined_gas > MOLE_PENALTY_THRESHOLD)
 		investigate_log("has collapsed into a singularity.", INVESTIGATE_SUPERMATTER)
-		SSredbot.send_discord_message("admin","The supermatter has collapsed into a singularity.","round ending event")
+		SSshipbot.relay_channel("admin-round", "The supermatter has collapsed into a singularity.")
 		if(T) //If something fucks up we blow anyhow. This fix is 4 years old and none ever said why it's here. help.
 			var/obj/singularity/S = new(T)
 			S.energy = 800
@@ -411,7 +411,7 @@ GLOBAL_DATUM(main_supermatter_engine, /obj/machinery/power/supermatter_crystal)
 		if(T)
 			var/obj/singularity/energy_ball/E = new(T)
 			E.energy = power
-	SSredbot.send_discord_message("admin","The supermatter has exploded.","round ending event")
+	SSshipbot.relay_channel("admin-round", "The supermatter has exploded.")
 	investigate_log("has exploded.", INVESTIGATE_SUPERMATTER)
 	explosion(get_turf(T), explosion_power * max(gasmix_power_ratio, 0.205) * 0.5 , explosion_power * max(gasmix_power_ratio, 0.205) + 2, explosion_power * max(gasmix_power_ratio, 0.205) + 4 , explosion_power * max(gasmix_power_ratio, 0.205) + 6, 1, 1)
 	qdel(src)

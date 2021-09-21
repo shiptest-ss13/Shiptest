@@ -49,7 +49,7 @@
 				if(usr.job == "Chaplain")
 					SEND_SOUND(C, sound('sound/effects/pray.ogg'))
 	to_chat(usr, "<span class='info'>You pray to the gods: \"[msg_tmp]\"</span>", confidential = TRUE)
-	SSredbot.send_discord_message("admin", "Prayer from [src.key]/([src.name]): [msg]")
+	SSshipbot.relay_channel("admin-pray", "Prayer from [src.key]/([src.name]): [msg]")
 
 	SSblackbox.record_feedback("tally", "admin_verb", 1, "Prayer") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 	//log_admin("HELP: [key_name(src)]: [msg]")

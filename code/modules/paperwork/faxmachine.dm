@@ -274,7 +274,7 @@ GLOBAL_LIST_EMPTY(alldepartments)
 	var/msg = "<span class='boldnotice'><font color='[font_colour]'>[faxname]: </font> [ADMIN_LOOKUP(sender)] | REPLY: [ADMIN_CENTCOM_REPLY(sender)] [ADMIN_FAX(sender, src, faxtype, sent)] [ADMIN_SM(sender)] | REJECT: (<A HREF='?_src_=holder;[HrefToken(TRUE)];FaxReplyTemplate=[REF(sender)];originfax=[REF(src)]'>TEMPLATE</A>) [ADMIN_SMITE(sender)] (<A HREF='?_src_=holder;[HrefToken(TRUE)];EvilFax=[REF(sender)];originfax=[REF(src)]'>EVILFAX</A>) </span>: Receiving '[sent.name]' via secure connection... <a href='?_src_=holder;[HrefToken(TRUE)];AdminFaxView=[REF(sent)]'>view message</a>"
 	if(istype(sent, /obj/item/paper))
 		var/obj/item/paper/paper = sent
-		SSredbot.send_discord_message("admin", "New [faxname]  ([paper.name]) Sent by [sender]: [strip_booktext(paper.info, 30)]")
+		SSshipbot.relay_channel("admin-fax", "New [faxname]  ([paper.name]) Sent by [sender]: [strip_booktext(paper.info, 30)]")
 	else
-		SSredbot.send_discord_message("admin", "New [faxname] ([sent.name]) Sent by [sender].")
+		SSshipbot.relay_channel("admin-fax", "New [faxname] ([sent.name]) Sent by [sender].")
 	message_admins(msg)

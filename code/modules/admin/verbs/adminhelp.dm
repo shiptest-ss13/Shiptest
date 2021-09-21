@@ -206,12 +206,12 @@ GLOBAL_DATUM_INIT(ahelp_tickets, /datum/admin_help_tickets, new)
 	else
 		MessageNoRecipient(msg)
 
-		SSshipbot.relay_admin_help(src, msg)
 		//send it to TGS if nobody is on and tell us how many were on
 		var/admin_number_present = send2tgs_adminless_only(initiator_ckey, "Ticket #[id]: [msg]")
 		log_admin_private("Ticket #[id]: [key_name(initiator)]: [name] - heard by [admin_number_present] non-AFK admins who have +BAN.")
 		if(admin_number_present <= 0)
-			to_chat(C, "<span class='notice'>No active admins are online, your adminhelp was sent through TGS to admins who are available. This may use IRC or Discord.</span>", confidential = TRUE)
+			SSshipbot.relay_admin_help(src, msg)
+			to_chat(C, "<span class='redbold'>No active admins are online, your adminhelp was sent through Shipbot.</span>")
 			heard_by_no_admins = TRUE
 	GLOB.ahelp_tickets.active_tickets += src
 
@@ -587,19 +587,7 @@ GLOBAL_DATUM_INIT(ahelp_tickets, /datum/admin_help_tickets, new)
 /proc/send2tgs_adminless_only(source, msg, requiredflags = R_BAN)
 	var/list/adm = get_admin_counts(requiredflags)
 	var/list/activemins = adm["present"]
-	. = activemins.len
-	if(. <= 0)
-		var/final = ""
-		var/list/afkmins = adm["afk"]
-		var/list/stealthmins = adm["stealth"]
-		var/list/powerlessmins = adm["noflags"]
-		var/list/allmins = adm["total"]
-		if(!afkmins.len && !stealthmins.len && !powerlessmins.len)
-			final = "[msg] - No admins online"
-		else
-			final = "[msg] - All admins stealthed\[[english_list(stealthmins)]\], AFK\[[english_list(afkmins)]\], or lacks +BAN\[[english_list(powerlessmins)]\]! Total: [allmins.len] "
-		send2tgs(source,final)
-		send2otherserver(source,final)
+	return activemins.len
 
 
 /proc/send2tgs(msg,msg2)
