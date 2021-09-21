@@ -263,16 +263,64 @@
 	gain_text = "<span class='danger'>Things far away from you start looking blurry.</span>"
 	lose_text = "<span class='notice'>You start seeing faraway things normally again.</span>"
 	medical_record_text = "Patient requires prescription glasses in order to counteract nearsightedness."
+	var/obj/item/glasses
+	var/where
 
 /datum/quirk/nearsighted/add()
 	quirk_holder.become_nearsighted(ROUNDSTART_TRAIT)
 
 /datum/quirk/nearsighted/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
-	var/obj/item/clothing/glasses/regular/glasses = new(get_turf(H))
-	H.put_in_hands(glasses)
-	H.equip_to_slot(glasses, ITEM_SLOT_EYES)
-	H.regenerate_icons() //this is to remove the inhand icon, which persists even if it's not in their hands
+	var/obj/item/glasses_type
+
+	switch(quirk_holder.mind.assigned_role)
+		//Security
+		if("Head of Security")
+			glasses_type = /obj/item/clothing/glasses/hud/security/prescription
+		if("Warden")
+			glasses_type = /obj/item/clothing/glasses/hud/security/prescription
+		if("Security Officer")
+			glasses_type = /obj/item/clothing/glasses/hud/security/prescription
+		//Science
+		if("Research Director")
+			glasses_type = /obj/item/clothing/glasses/science/prescription
+		if("Scientist")
+			glasses_type = /obj/item/clothing/glasses/science/prescription
+		if("Chemist")
+			glasses_type = /obj/item/clothing/glasses/science/prescription
+		//Health
+		if("Chief Medical Officer")
+			glasses_type = /obj/item/clothing/glasses/hud/health/prescription
+		if("Medical Doctor")
+			glasses_type = /obj/item/clothing/glasses/hud/health/prescription
+		//Meson
+		if("Chief Engineer")
+			glasses_type = /obj/item/clothing/glasses/meson/prescription
+		if("Station Engineer")
+			glasses_type = /obj/item/clothing/glasses/meson/prescription
+		if("Atmospheric Technician")
+			glasses_type = /obj/item/clothing/glasses/meson/prescription
+		if("Shaft Miner")
+			glasses_type = /obj/item/clothing/glasses/meson/prescription
+
+	if(!glasses_type)
+		glasses_type = /obj/item/clothing/glasses/regular
+	glasses = new glasses_type(get_turf(quirk_holder))
+	var/list/slots = list(
+		"on your face, silly!" = ITEM_SLOT_EYES,
+		"in your left pocket." = ITEM_SLOT_LPOCKET,
+		"in your right pocket." = ITEM_SLOT_RPOCKET,
+		"in your backpack." = ITEM_SLOT_BACKPACK,
+		"in your hands." = ITEM_SLOT_HANDS
+	)
+	where = H.equip_in_one_of_slots(glasses, slots, FALSE) || "at your feet, don't drop them next time!"
+
+/datum/quirk/nearsighted/post_add()
+	if(where == "in your backpack.")
+		var/mob/living/carbon/human/H = quirk_holder
+		SEND_SIGNAL(H.back, COMSIG_TRY_STORAGE_SHOW, H)
+
+	to_chat(quirk_holder, "<span class='notice'>There is a set of profession-assigned prescription glasses [where] These are valuable equipment for someone nearsighted like you. Keep them safe and clean! It's unlikely there are any spares.</span>")
 
 /datum/quirk/nyctophobia
 	name = "Nyctophobia"

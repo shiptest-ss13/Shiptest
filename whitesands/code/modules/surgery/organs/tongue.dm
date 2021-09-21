@@ -42,3 +42,25 @@
 		message = felinid_nya.Replace(message, "$1$3y$2$4")
 		message = felinid_NYA.Replace(message, "$1Y$2")
 	speech_args[SPEECH_MESSAGE] = message
+
+/obj/item/organ/tongue/teshari
+	say_mod = "chirps"
+	var/static/list/languages_possible_tesh = typecacheof(list(
+		/datum/language/common,
+		/datum/language/draconic,
+		/datum/language/codespeak,
+		/datum/language/monkey,
+		/datum/language/narsie,
+		/datum/language/beachbum,
+		/datum/language/aphasia,
+		/datum/language/piratespeak,
+		/datum/language/moffic,
+		/datum/language/sylvan,
+		/datum/language/shadowtongue,
+		/datum/language/terrum,
+		/datum/language/schechi
+	))
+
+/obj/item/organ/tongue/teshari/Initialize(mapload)
+	. = ..()
+	languages_possible = languages_possible_tesh

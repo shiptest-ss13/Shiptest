@@ -339,6 +339,8 @@
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_combined_w_class = 30
+	LAZYINITLIST(STR.exception_hold) // This code allows you to fit one mob holder into a duffel bag
+	STR.exception_hold += typecacheof(/obj/item/clothing/head/mob_holder)
 
 /obj/item/storage/backpack/duffelbag/captain
 	name = "captain's duffel bag"

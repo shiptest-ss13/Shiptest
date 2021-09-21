@@ -50,6 +50,13 @@
 	. = ..()
 	SSovermap.simulated_ships -= src
 
+/obj/structure/overmap/ship/simulated/attack_ghost(mob/user)
+	if(shuttle)
+		user.forceMove(get_turf(shuttle))
+		return TRUE
+	else
+		return
+
 /obj/structure/overmap/ship/simulated/proc/initial_name()
 	if(mass < SHIP_SIZE_THRESHOLD)
 		return //You don't DESERVE a name >:(

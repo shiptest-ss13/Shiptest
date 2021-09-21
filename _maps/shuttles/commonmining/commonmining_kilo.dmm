@@ -20,7 +20,7 @@
 /turf/open/floor/mineral/plastitanium,
 /area/shuttle/mining)
 "f" = (
-/obj/effect/turf_decal/stripes/end{
+/obj/effect/turf_decal/industrial/warning/cee{
 	dir = 8
 	},
 /turf/open/floor/mineral/titanium/yellow,
@@ -29,16 +29,16 @@
 /obj/structure/chair/comfy/shuttle{
 	dir = 1
 	},
-/obj/effect/turf_decal/stripes/line{
+/obj/effect/turf_decal/industrial/warning{
 	dir = 1
 	},
-/obj/effect/turf_decal/stripes/corner{
+/obj/effect/turf_decal/industrial/warning/corner{
 	dir = 8
 	},
 /turf/open/floor/mineral/titanium/yellow,
 /area/shuttle/mining)
 "h" = (
-/obj/effect/turf_decal/stripes/line{
+/obj/effect/turf_decal/industrial/warning{
 	dir = 5
 	},
 /turf/open/floor/mineral/titanium/yellow,
@@ -60,7 +60,7 @@
 /obj/machinery/atmospherics/pipe/simple/general/visible{
 	dir = 4
 	},
-/obj/effect/turf_decal/stripes/line{
+/obj/effect/turf_decal/industrial/warning{
 	dir = 10
 	},
 /obj/structure/cable{
@@ -69,8 +69,8 @@
 /turf/open/floor/mineral/titanium/yellow,
 /area/shuttle/mining)
 "l" = (
-/obj/effect/turf_decal/stripes/line,
-/obj/effect/turf_decal/stripes/corner{
+/obj/effect/turf_decal/industrial/warning,
+/obj/effect/turf_decal/industrial/warning/corner{
 	dir = 4
 	},
 /obj/machinery/atmospherics/components/binary/valve{
@@ -105,12 +105,12 @@
 /obj/structure/chair/comfy/shuttle{
 	dir = 1
 	},
-/obj/effect/turf_decal/bot,
+/obj/effect/turf_decal/industrial/outline/yellow,
 /turf/open/floor/mineral/plastitanium,
 /area/shuttle/mining)
 "o" = (
 /obj/structure/closet/crate,
-/obj/effect/turf_decal/delivery,
+/obj/effect/turf_decal/industrial/hatch/yellow,
 /obj/machinery/airalarm{
 	dir = 4;
 	pixel_x = -24
@@ -139,7 +139,7 @@
 /area/shuttle/mining)
 "q" = (
 /obj/structure/ore_box,
-/obj/effect/turf_decal/delivery,
+/obj/effect/turf_decal/industrial/hatch/yellow,
 /turf/open/floor/mineral/plastitanium,
 /area/shuttle/mining)
 "r" = (
@@ -161,14 +161,14 @@
 /obj/structure/chair/comfy/shuttle{
 	dir = 1
 	},
-/obj/effect/turf_decal/bot,
+/obj/effect/turf_decal/industrial/outline/yellow,
 /obj/machinery/power/terminal,
 /obj/structure/cable,
 /turf/open/floor/mineral/plastitanium,
 /area/shuttle/mining)
 "S" = (
 /obj/machinery/computer/shuttle,
-/obj/effect/turf_decal/bot,
+/obj/effect/turf_decal/industrial/outline/yellow,
 /turf/open/floor/mineral/plastitanium,
 /area/shuttle/mining)
 
