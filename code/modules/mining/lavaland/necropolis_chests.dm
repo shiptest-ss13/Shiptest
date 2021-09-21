@@ -84,7 +84,7 @@
 		if(28)
 			new /obj/item/freeze_cube(src)
 		if(29)
-			new /obj/item/gun/energy/spur (src)
+			new /obj/item/gun/energy/spur(src)
 
 //KA modkit design discs
 /obj/item/disk/design_disk/modkit_disc
@@ -889,7 +889,7 @@
 	A.attackby(src, H)
 	return COMPONENT_NO_ATTACK_OBJ
 
-//A version of the Cave Story refrence that a deranged scientist got their hands on. Better? Not really/ Different? Definitely.
+//A version of the Cave Story refrence that a deranged scientist got their hands on. Better? Not really. Different? Definitely.
 /obj/item/gun/energy/spur
 	name = "Slowpoke"
 	desc = "The work of a truly genius gunsmith, altered and \"improved\" by a truly deranged Nanotransen scientist, using components from a kinetic accelerator and beam rifle. Draw, partner!"
