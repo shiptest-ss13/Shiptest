@@ -17,7 +17,7 @@
 /obj/item/pod_parts/armor{
 	pod_integrity = 400
 	},
-/obj/effect/turf_decal/bot{
+/obj/effect/turf_decal/industrial/outline/yellow{
 	dir = 1
 	},
 /turf/open/floor/plasteel/dark,
@@ -27,11 +27,11 @@
 /turf/open/floor/plasteel,
 /area/awaymission/speedway/track)
 "aR" = (
-/obj/effect/turf_decal/tile/blue,
-/obj/effect/turf_decal/tile/blue{
+/obj/effect/turf_decal/corner/blue,
+/obj/effect/turf_decal/corner/blue{
 	dir = 4
 	},
-/obj/effect/turf_decal/tile/blue{
+/obj/effect/turf_decal/corner/blue{
 	dir = 8
 	},
 /obj/structure/closet{
@@ -65,31 +65,33 @@
 /turf/open/floor/wood,
 /area/awaymission/speedway/lounge)
 "bk" = (
-/obj/effect/turf_decal/tile/neutral,
+/obj/effect/turf_decal/corner/neutral,
 /turf/open/floor/plasteel/dark,
 /area/awaymission/speedway/maintenance)
 "bt" = (
 /turf/closed/indestructible/riveted/plastinum,
 /area/awaymission/speedway/lounge)
 "bK" = (
-/obj/effect/turf_decal/tile/blue{
+/obj/effect/turf_decal/corner/blue{
 	dir = 1
 	},
 /turf/open/floor/plasteel/dark,
 /area/awaymission/speedway/maintenance)
 "ct" = (
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/corner/neutral{
 	dir = 1
 	},
 /turf/open/floor/plasteel/dark,
 /area/awaymission/speedway/maintenance)
 "cH" = (
-/turf/open/floor/plasteel/dark/side{
+/obj/effect/turf_decal/corner/black,
+/obj/effect/turf_decal/corner/black{
 	dir = 4
 	},
+/turf/open/floor/plasteel,
 /area/awaymission/speedway/lounge)
 "cI" = (
-/obj/effect/turf_decal/stripes/line{
+/obj/effect/turf_decal/industrial/warning{
 	dir = 9
 	},
 /turf/open/floor/engine,
@@ -99,7 +101,7 @@
 /turf/open/floor/plating,
 /area/awaymission/speedway/lounge)
 "df" = (
-/obj/effect/turf_decal/stripes/line{
+/obj/effect/turf_decal/industrial/warning{
 	dir = 4
 	},
 /turf/open/floor/engine,
@@ -125,7 +127,7 @@
 /turf/open/floor/plasteel,
 /area/awaymission/speedway/track)
 "dy" = (
-/obj/effect/turf_decal/tile/blue{
+/obj/effect/turf_decal/corner/blue{
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
@@ -135,13 +137,19 @@
 /turf/open/floor/plating,
 /area/awaymission/speedway/track)
 "dD" = (
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/corner/neutral{
 	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
 /area/awaymission/speedway/garage)
 "dM" = (
-/turf/open/floor/plasteel/checker,
+/obj/effect/turf_decal/corner/black{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/black{
+	dir = 2
+	},
+/turf/open/floor/plasteel,
 /area/awaymission/speedway/lounge)
 "dO" = (
 /obj/structure/table/wood/poker,
@@ -160,12 +168,12 @@
 	pixel_y = -1
 	},
 /obj/item/stock_parts/cell/bluespace,
-/obj/effect/turf_decal/delivery,
+/obj/effect/turf_decal/industrial/hatch/yellow,
 /obj/item/clothing/glasses/meson,
 /turf/open/floor/plasteel/dark,
 /area/awaymission/speedway/garage)
 "dX" = (
-/obj/effect/turf_decal/stripes/line{
+/obj/effect/turf_decal/industrial/warning{
 	dir = 1
 	},
 /turf/open/floor/engine,
@@ -181,12 +189,24 @@
 /area/awaymission/speedway/garage)
 "ew" = (
 /obj/machinery/vending/boozeomat,
-/turf/open/floor/plasteel/checker,
+/obj/effect/turf_decal/corner/black{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/black{
+	dir = 2
+	},
+/turf/open/floor/plasteel,
 /area/awaymission/speedway/lounge)
 "ex" = (
 /obj/structure/table,
 /obj/machinery/chem_dispenser/drinks,
-/turf/open/floor/plasteel/checker,
+/obj/effect/turf_decal/corner/black{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/black{
+	dir = 2
+	},
+/turf/open/floor/plasteel,
 /area/awaymission/speedway/lounge)
 "eR" = (
 /obj/machinery/door/window/westright{
@@ -227,7 +247,7 @@
 /obj/item/pod_parts/armor/security/red{
 	pod_integrity = 400
 	},
-/obj/effect/turf_decal/bot{
+/obj/effect/turf_decal/industrial/outline/yellow{
 	dir = 1
 	},
 /turf/open/floor/plasteel/dark,
@@ -235,15 +255,17 @@
 "gE" = (
 /obj/structure/table/reinforced,
 /obj/item/book/manual/wiki/barman_recipes,
-/turf/open/floor/plasteel/dark/side{
+/obj/effect/turf_decal/corner/black,
+/obj/effect/turf_decal/corner/black{
 	dir = 4
 	},
+/turf/open/floor/plasteel,
 /area/awaymission/speedway/lounge)
 "gL" = (
 /turf/closed/indestructible/riveted/supermatter,
 /area/space)
 "gM" = (
-/obj/effect/turf_decal/stripes/line{
+/obj/effect/turf_decal/industrial/warning{
 	dir = 4
 	},
 /turf/open/floor/engine,
@@ -260,7 +282,7 @@
 /turf/open/floor/carpet/royalblack,
 /area/awaymission/speedway/lounge)
 "ht" = (
-/obj/effect/turf_decal/stripes/line{
+/obj/effect/turf_decal/industrial/warning{
 	dir = 8
 	},
 /turf/open/floor/engine,
@@ -280,10 +302,10 @@
 /obj/machinery/sleeper{
 	dir = 8
 	},
-/obj/effect/turf_decal/tile/blue{
+/obj/effect/turf_decal/corner/blue{
 	dir = 1
 	},
-/obj/effect/turf_decal/tile/blue{
+/obj/effect/turf_decal/corner/blue{
 	dir = 4
 	},
 /obj/machinery/vending/wallmed{
@@ -292,13 +314,13 @@
 /turf/open/floor/plasteel/white,
 /area/awaymission/speedway/lounge)
 "hU" = (
-/obj/effect/turf_decal/tile/blue{
+/obj/effect/turf_decal/corner/blue{
 	dir = 1
 	},
-/obj/effect/turf_decal/tile/blue{
+/obj/effect/turf_decal/corner/blue{
 	dir = 4
 	},
-/obj/effect/turf_decal/tile/blue{
+/obj/effect/turf_decal/corner/blue{
 	dir = 8
 	},
 /obj/machinery/defibrillator_mount{
@@ -311,7 +333,7 @@
 /area/awaymission/speedway/track)
 "ih" = (
 /obj/machinery/portable_atmospherics/canister/oxygen,
-/obj/effect/turf_decal/bot,
+/obj/effect/turf_decal/industrial/outline/yellow,
 /turf/open/floor/plating,
 /area/awaymission/speedway/maintenance)
 "in" = (
@@ -336,7 +358,7 @@
 	pixel_y = -1
 	},
 /obj/item/stock_parts/cell/bluespace,
-/obj/effect/turf_decal/delivery,
+/obj/effect/turf_decal/industrial/hatch/yellow,
 /obj/item/clothing/glasses/meson,
 /turf/open/floor/plasteel/dark,
 /area/awaymission/speedway/garage)
@@ -353,7 +375,7 @@
 /obj/item/pod_parts/pod_frame/aft_starboard,
 /obj/item/pod_parts/pod_frame/aft_starboard,
 /obj/item/pod_parts/pod_frame/aft_starboard,
-/obj/effect/turf_decal/bot{
+/obj/effect/turf_decal/industrial/outline/yellow{
 	dir = 1
 	},
 /turf/open/floor/plasteel/dark,
@@ -366,14 +388,14 @@
 /area/awaymission/speedway/lounge)
 "jr" = (
 /obj/effect/turf_decal/bot_white/right,
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/corner/neutral{
 	dir = 1
 	},
-/obj/effect/turf_decal/tile/neutral,
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/corner/neutral,
+/obj/effect/turf_decal/corner/neutral{
 	dir = 4
 	},
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/corner/neutral{
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
@@ -401,15 +423,18 @@
 	name = "Bar Door";
 	req_one_access_txt = "0"
 	},
-/turf/open/floor/plasteel/dark/side{
-	dir = 8
+/obj/effect/turf_decal/corner/black{
+	dir = 1
 	},
+/obj/effect/turf_decal/corner/black,
 /area/awaymission/speedway/lounge)
 "lF" = (
 /obj/structure/chair/stool/bar,
-/turf/open/floor/plasteel/dark/side{
+/obj/effect/turf_decal/corner/black,
+/obj/effect/turf_decal/corner/black{
 	dir = 4
 	},
+/turf/open/floor/plasteel,
 /area/awaymission/speedway/lounge)
 "lZ" = (
 /obj/structure/railing/corner{
@@ -423,9 +448,13 @@
 /area/awaymission/speedway/lounge)
 "nb" = (
 /obj/structure/chair/stool/bar,
-/turf/open/floor/plasteel/dark/side{
+/obj/effect/turf_decal/corner/black{
 	dir = 1
 	},
+/obj/effect/turf_decal/corner/black{
+	dir = 4
+	},
+/turf/open/floor/plasteel,
 /area/awaymission/speedway/lounge)
 "nd" = (
 /turf/open/floor/engine,
@@ -435,28 +464,28 @@
 /turf/open/floor/plasteel,
 /area/awaymission/speedway/track)
 "nk" = (
-/obj/effect/turf_decal/stripes/line{
+/obj/effect/turf_decal/industrial/warning{
 	dir = 8
 	},
 /turf/open/floor/plasteel/bluespace,
 /area/awaymission/speedway/track)
 "nm" = (
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/corner/neutral{
 	dir = 1
 	},
-/obj/effect/turf_decal/tile/neutral,
+/obj/effect/turf_decal/corner/neutral,
 /turf/open/floor/plasteel/dark,
 /area/awaymission/speedway/garage)
 "os" = (
 /obj/effect/turf_decal/bot_white/left,
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/corner/neutral{
 	dir = 1
 	},
-/obj/effect/turf_decal/tile/neutral,
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/corner/neutral,
+/obj/effect/turf_decal/corner/neutral{
 	dir = 4
 	},
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/corner/neutral{
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
@@ -483,16 +512,17 @@
 /turf/open/floor/plasteel/dark,
 /area/awaymission/speedway/garage)
 "rb" = (
-/obj/effect/turf_decal/stripes/corner{
+/obj/effect/turf_decal/industrial/warning/corner{
 	dir = 1
 	},
 /turf/open/floor/wood,
 /area/awaymission/speedway/lounge)
 "rA" = (
 /obj/structure/table/reinforced,
-/turf/open/floor/plasteel/dark/side{
-	dir = 8
+/obj/effect/turf_decal/corner/black{
+	dir = 1
 	},
+/obj/effect/turf_decal/corner/black,
 /area/awaymission/speedway/lounge)
 "rE" = (
 /obj/machinery/gateway/away{
@@ -501,14 +531,14 @@
 /turf/open/floor/plasteel/dark,
 /area/awaymission/speedway/lounge)
 "rT" = (
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/corner/neutral{
 	dir = 1
 	},
-/obj/effect/turf_decal/tile/neutral,
+/obj/effect/turf_decal/corner/neutral,
 /turf/open/floor/plasteel/dark,
 /area/awaymission/speedway/maintenance)
 "rV" = (
-/obj/effect/turf_decal/stripes/line{
+/obj/effect/turf_decal/industrial/warning{
 	dir = 8
 	},
 /obj/machinery/button/door{
@@ -540,13 +570,17 @@
 	pixel_y = -1
 	},
 /obj/item/stock_parts/cell/bluespace,
-/obj/effect/turf_decal/delivery,
+/obj/effect/turf_decal/industrial/hatch/yellow,
 /obj/item/clothing/glasses/meson,
 /turf/open/floor/plasteel/dark,
 /area/awaymission/speedway/garage)
 "sD" = (
 /obj/structure/table/reinforced,
-/turf/open/floor/plasteel/dark/side,
+/obj/effect/turf_decal/corner/black,
+/obj/effect/turf_decal/corner/black{
+	dir = 8
+	},
+/turf/open/floor/plasteel,
 /area/awaymission/speedway/lounge)
 "sV" = (
 /obj/structure/chair/wood{
@@ -555,7 +589,7 @@
 /turf/open/floor/carpet/royalblack,
 /area/awaymission/speedway/lounge)
 "tF" = (
-/obj/effect/turf_decal/loading_area{
+/obj/effect/turf_decal/industrial/loading{
 	dir = 4
 	},
 /turf/open/floor/plasteel,
@@ -564,14 +598,20 @@
 /obj/structure/sink/kitchen{
 	pixel_y = 28
 	},
-/turf/open/floor/plasteel/checker,
+/obj/effect/turf_decal/corner/black{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/black{
+	dir = 2
+	},
+/turf/open/floor/plasteel,
 /area/awaymission/speedway/lounge)
 "tR" = (
 /turf/open/floor/plasteel/stairs/medium,
 /area/awaymission/speedway/lounge)
 "tV" = (
 /obj/machinery/door/airlock/glass_large,
-/obj/effect/turf_decal/caution/stand_clear,
+/obj/effect/turf_decal/industrial/stand_clear,
 /turf/open/floor/plasteel/bluespace,
 /area/awaymission/speedway/track)
 "tY" = (
@@ -614,9 +654,10 @@
 /turf/closed/indestructible/riveted/plastinum,
 /area/awaymission/speedway/maintenance)
 "wq" = (
-/turf/open/floor/plasteel/dark/corner{
+/obj/effect/turf_decal/corner/black{
 	dir = 4
 	},
+/turf/open/floor/plasteel,
 /area/awaymission/speedway/lounge)
 "wr" = (
 /obj/structure/lattice,
@@ -650,7 +691,11 @@
 "ya" = (
 /obj/structure/table/reinforced,
 /obj/item/lighter/clockwork,
-/turf/open/floor/plasteel/dark/side,
+/obj/effect/turf_decal/corner/black,
+/obj/effect/turf_decal/corner/black{
+	dir = 8
+	},
+/turf/open/floor/plasteel,
 /area/awaymission/speedway/lounge)
 "yH" = (
 /obj/machinery/door/airlock/command{
@@ -664,10 +709,10 @@
 /turf/open/floor/wood,
 /area/awaymission/speedway/lounge)
 "zw" = (
-/obj/effect/turf_decal/tile/blue{
+/obj/effect/turf_decal/corner/blue{
 	dir = 1
 	},
-/obj/effect/turf_decal/tile/blue{
+/obj/effect/turf_decal/corner/blue{
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
@@ -707,15 +752,16 @@
 	pixel_y = -1
 	},
 /obj/item/stock_parts/cell/bluespace,
-/obj/effect/turf_decal/delivery,
+/obj/effect/turf_decal/industrial/hatch/yellow,
 /obj/item/clothing/glasses/meson,
 /turf/open/floor/plasteel/dark,
 /area/awaymission/speedway/garage)
 "Az" = (
 /obj/structure/chair/stool/bar,
-/turf/open/floor/plasteel/dark/side{
-	dir = 8
+/obj/effect/turf_decal/corner/black{
+	dir = 1
 	},
+/obj/effect/turf_decal/corner/black,
 /area/awaymission/speedway/lounge)
 "AB" = (
 /obj/structure/rack,
@@ -728,7 +774,7 @@
 /obj/structure/window/reinforced{
 	dir = 4
 	},
-/obj/effect/turf_decal/bot{
+/obj/effect/turf_decal/industrial/outline/yellow{
 	dir = 1
 	},
 /turf/open/floor/plasteel/dark,
@@ -749,7 +795,7 @@
 /turf/open/floor/plasteel/dark,
 /area/awaymission/speedway/announcer)
 "Bu" = (
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/corner/neutral{
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
@@ -766,7 +812,7 @@
 	pixel_y = -1
 	},
 /obj/item/stock_parts/cell/bluespace,
-/obj/effect/turf_decal/delivery,
+/obj/effect/turf_decal/industrial/hatch/yellow,
 /obj/item/clothing/glasses/meson,
 /turf/open/floor/plasteel/dark,
 /area/awaymission/speedway/garage)
@@ -784,7 +830,7 @@
 /turf/open/floor/wood,
 /area/awaymission/speedway/lounge)
 "CT" = (
-/obj/effect/turf_decal/tile/neutral,
+/obj/effect/turf_decal/corner/neutral,
 /turf/open/floor/plasteel/dark,
 /area/awaymission/speedway/garage)
 "DF" = (
@@ -795,7 +841,7 @@
 /obj/item/pod_parts/pod_frame/fore_port,
 /obj/item/pod_parts/pod_frame/fore_port,
 /obj/item/pod_parts/pod_frame/fore_port,
-/obj/effect/turf_decal/bot{
+/obj/effect/turf_decal/industrial/outline/yellow{
 	dir = 1
 	},
 /turf/open/floor/plasteel/dark,
@@ -809,9 +855,10 @@
 /turf/open/floor/wood,
 /area/awaymission/speedway/lounge)
 "Et" = (
-/turf/open/floor/plasteel/dark/corner{
+/obj/effect/turf_decal/corner/black{
 	dir = 1
 	},
+/turf/open/floor/plasteel,
 /area/awaymission/speedway/lounge)
 "Ew" = (
 /obj/structure/fans/tiny,
@@ -823,7 +870,7 @@
 /turf/open/floor/carpet/royalblack,
 /area/awaymission/speedway/lounge)
 "FD" = (
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/corner/neutral{
 	dir = 1
 	},
 /turf/open/floor/plasteel/dark,
@@ -838,14 +885,14 @@
 /area/awaymission/speedway/lounge)
 "Gw" = (
 /obj/effect/turf_decal/bot_white,
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/corner/neutral{
 	dir = 1
 	},
-/obj/effect/turf_decal/tile/neutral,
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/corner/neutral,
+/obj/effect/turf_decal/corner/neutral{
 	dir = 4
 	},
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/corner/neutral{
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
@@ -872,7 +919,7 @@
 /turf/open/space/basic,
 /area/awaymission/speedway/track)
 "He" = (
-/obj/effect/turf_decal/bot,
+/obj/effect/turf_decal/industrial/outline/yellow,
 /obj/machinery/portable_atmospherics/canister/oxygen,
 /turf/open/floor/plasteel/dark,
 /area/awaymission/speedway/garage)
@@ -885,13 +932,13 @@
 /obj/item/pod_parts/armor/gold{
 	pod_integrity = 400
 	},
-/obj/effect/turf_decal/bot{
+/obj/effect/turf_decal/industrial/outline/yellow{
 	dir = 1
 	},
 /turf/open/floor/plasteel/dark,
 /area/awaymission/speedway/garage)
 "Id" = (
-/obj/effect/turf_decal/stripes/line{
+/obj/effect/turf_decal/industrial/warning{
 	dir = 8
 	},
 /turf/open/floor/engine,
@@ -902,13 +949,23 @@
 "Ix" = (
 /obj/structure/table/reinforced,
 /obj/item/reagent_containers/glass/rag,
-/turf/open/floor/plasteel/dark/side,
+/obj/effect/turf_decal/corner/black,
+/obj/effect/turf_decal/corner/black{
+	dir = 8
+	},
+/turf/open/floor/plasteel,
 /area/awaymission/speedway/lounge)
 "IB" = (
 /obj/structure/table,
 /obj/machinery/reagentgrinder,
 /obj/item/reagent_containers/food/drinks/shaker,
-/turf/open/floor/plasteel/checker,
+/obj/effect/turf_decal/corner/black{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/black{
+	dir = 2
+	},
+/turf/open/floor/plasteel,
 /area/awaymission/speedway/lounge)
 "Ja" = (
 /obj/structure/fans/tiny,
@@ -930,7 +987,7 @@
 /turf/open/space/basic,
 /area/awaymission/speedway/track)
 "JM" = (
-/obj/effect/turf_decal/stripes/line{
+/obj/effect/turf_decal/industrial/warning{
 	dir = 5
 	},
 /turf/open/floor/engine,
@@ -957,13 +1014,13 @@
 /obj/item/pod_parts/armor/black{
 	pod_integrity = 400
 	},
-/obj/effect/turf_decal/bot{
+/obj/effect/turf_decal/industrial/outline/yellow{
 	dir = 1
 	},
 /turf/open/floor/plasteel/dark,
 /area/awaymission/speedway/garage)
 "Lv" = (
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/corner/neutral{
 	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
@@ -972,11 +1029,11 @@
 /turf/closed/indestructible/riveted/plastinum,
 /area/awaymission/speedway/announcer)
 "Mn" = (
-/obj/effect/turf_decal/tile/blue,
-/obj/effect/turf_decal/tile/blue{
+/obj/effect/turf_decal/corner/blue,
+/obj/effect/turf_decal/corner/blue{
 	dir = 8
 	},
-/obj/effect/turf_decal/tile/blue{
+/obj/effect/turf_decal/corner/blue{
 	dir = 1
 	},
 /turf/open/floor/plasteel/white,
@@ -989,7 +1046,7 @@
 /obj/machinery/door/airlock/glass_large{
 	name = "Speedway Observer Deck"
 	},
-/obj/effect/turf_decal/caution/stand_clear,
+/obj/effect/turf_decal/industrial/stand_clear,
 /turf/open/floor/plasteel/bluespace,
 /area/awaymission/speedway/track)
 "Ov" = (
@@ -1001,7 +1058,7 @@
 /obj/item/pod_parts/pod_frame/fore_starboard,
 /obj/item/pod_parts/pod_frame/fore_starboard,
 /obj/structure/window/reinforced,
-/obj/effect/turf_decal/bot{
+/obj/effect/turf_decal/industrial/outline/yellow{
 	dir = 1
 	},
 /turf/open/floor/plasteel/dark,
@@ -1011,10 +1068,10 @@
 /turf/open/floor/plasteel/dark,
 /area/awaymission/speedway/maintenance)
 "OX" = (
-/obj/effect/turf_decal/tile/yellow{
+/obj/effect/turf_decal/corner/yellow{
 	dir = 4
 	},
-/obj/effect/turf_decal/tile/yellow,
+/obj/effect/turf_decal/corner/yellow,
 /turf/open/floor/plasteel/dark,
 /area/awaymission/speedway/maintenance)
 "Pq" = (
@@ -1042,7 +1099,7 @@
 	pixel_y = -1
 	},
 /obj/item/stock_parts/cell/bluespace,
-/obj/effect/turf_decal/delivery,
+/obj/effect/turf_decal/industrial/hatch/yellow,
 /obj/item/clothing/glasses/meson,
 /turf/open/floor/plasteel/dark,
 /area/awaymission/speedway/garage)
@@ -1097,7 +1154,13 @@
 /area/awaymission/speedway/maintenance)
 "To" = (
 /obj/structure/reagent_dispensers/beerkeg,
-/turf/open/floor/plasteel/checker,
+/obj/effect/turf_decal/corner/black{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/black{
+	dir = 2
+	},
+/turf/open/floor/plasteel,
 /area/awaymission/speedway/lounge)
 "Ts" = (
 /obj/structure/railing{
@@ -1107,7 +1170,7 @@
 /area/awaymission/speedway/lounge)
 "Tt" = (
 /obj/structure/reagent_dispensers/watertank,
-/obj/effect/turf_decal/bot,
+/obj/effect/turf_decal/industrial/outline/yellow,
 /turf/open/floor/plasteel/dark,
 /area/awaymission/speedway/garage)
 "TK" = (
@@ -1123,7 +1186,13 @@
 "Uu" = (
 /obj/structure/table,
 /obj/machinery/chem_dispenser/drinks/beer,
-/turf/open/floor/plasteel/checker,
+/obj/effect/turf_decal/corner/black{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/black{
+	dir = 2
+	},
+/turf/open/floor/plasteel,
 /area/awaymission/speedway/lounge)
 "Uw" = (
 /obj/structure/rack,
@@ -1134,13 +1203,19 @@
 /obj/item/pod_parts/armor/industrial{
 	pod_integrity = 400
 	},
-/obj/effect/turf_decal/bot{
+/obj/effect/turf_decal/industrial/outline/yellow{
 	dir = 1
 	},
 /turf/open/floor/plasteel/dark,
 /area/awaymission/speedway/garage)
 "UB" = (
-/turf/open/floor/plasteel/cafeteria,
+/obj/effect/turf_decal/corner/white{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/white{
+	dir = 2
+	},
+/turf/open/floor/plasteel,
 /area/awaymission/speedway/track)
 "UF" = (
 /obj/effect/landmark/awaystart,
@@ -1163,13 +1238,13 @@
 /obj/item/pod_parts/armor/security{
 	pod_integrity = 400
 	},
-/obj/effect/turf_decal/bot{
+/obj/effect/turf_decal/industrial/outline/yellow{
 	dir = 1
 	},
 /turf/open/floor/plasteel/dark,
 /area/awaymission/speedway/garage)
 "VY" = (
-/obj/effect/turf_decal/caution/stand_clear,
+/obj/effect/turf_decal/industrial/stand_clear,
 /turf/open/floor/plasteel/bluespace,
 /area/awaymission/speedway/track)
 "Wu" = (
@@ -1183,26 +1258,26 @@
 /turf/open/floor/wood,
 /area/awaymission/speedway/lounge)
 "WF" = (
-/obj/effect/turf_decal/stripes/line{
+/obj/effect/turf_decal/industrial/warning{
 	dir = 1
 	},
 /turf/open/floor/wood,
 /area/awaymission/speedway/lounge)
 "WW" = (
-/obj/effect/turf_decal/stripes/corner{
+/obj/effect/turf_decal/industrial/warning/corner{
 	dir = 4
 	},
 /turf/open/floor/wood,
 /area/awaymission/speedway/lounge)
 "Xl" = (
-/obj/effect/turf_decal/stripes/line{
+/obj/effect/turf_decal/industrial/warning{
 	dir = 4
 	},
 /turf/open/floor/plasteel/bluespace,
 /area/awaymission/speedway/track)
 "Xq" = (
 /obj/structure/reagent_dispensers/fueltank,
-/obj/effect/turf_decal/bot,
+/obj/effect/turf_decal/industrial/outline/yellow,
 /turf/open/floor/plasteel/dark,
 /area/awaymission/speedway/garage)
 "XN" = (
@@ -1216,9 +1291,11 @@
 /area/awaymission/speedway/announcer)
 "Yb" = (
 /obj/structure/table/reinforced,
-/turf/open/floor/plasteel/dark/side{
+/obj/effect/turf_decal/corner/black,
+/obj/effect/turf_decal/corner/black{
 	dir = 4
 	},
+/turf/open/floor/plasteel,
 /area/awaymission/speedway/lounge)
 "YW" = (
 /obj/structure/table/reinforced,

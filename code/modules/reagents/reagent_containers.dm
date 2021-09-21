@@ -25,6 +25,8 @@
 
 /obj/item/reagent_containers/Initialize(mapload, vol)
 	. = ..()
+	if(can_have_cap && cap_icon_state)
+		cap_overlay = mutable_appearance(icon, cap_icon_state)
 	if(isnum(vol) && vol > 0)
 		volume = vol
 	create_reagents(volume, reagent_flags)
@@ -53,14 +55,9 @@
 	if(value_to_set)
 		cap_on = TRUE
 		spillable = FALSE
-		if(!cap_overlay)
-			cap_overlay = mutable_appearance(icon, cap_icon_state)
-		add_overlay(cap_overlay, TRUE)
 	else
 		cap_on = FALSE
 		spillable = TRUE
-		if(cap_overlay)
-			cut_overlay(cap_overlay, TRUE)
 
 	update_icon()
 
@@ -204,11 +201,23 @@
 /obj/item/reagent_containers/temperature_expose(datum/gas_mixture/air, exposed_temperature, exposed_volume)
 	reagents.expose_temperature(exposed_temperature)
 
+/obj/item/reagent_containers/attackby(obj/item/I, mob/user, params) //procs dip_object any time an object is used on a container, makes the noises if any reagent returned true
+	var/success = FALSE
+	if(!src.cap_on)
+		for(var/datum/reagent/R in reagents.reagent_list)
+			if(R.dip_object(I, user, src))
+				success = TRUE
+		if(success)
+			to_chat(user, "<span class='notice'>You dip [I] into [src], and the solution begins to bubble.</span>")
+			playsound(src, 'sound/effects/bubbles.ogg', 80, TRUE)
+
 /obj/item/reagent_containers/on_reagent_change(changetype)
 	update_icon()
 
 /obj/item/reagent_containers/update_overlays()
 	. = ..()
+	if(cap_on)
+		. += cap_overlay
 	if(!fill_icon_thresholds)
 		return
 	if(reagents.total_volume)

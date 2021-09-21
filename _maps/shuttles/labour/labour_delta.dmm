@@ -67,10 +67,10 @@
 	name = "Labor Shuttle Airlock";
 	req_access_txt = "2"
 	},
-/obj/effect/turf_decal/stripes/line{
+/obj/effect/turf_decal/industrial/warning{
 	dir = 8
 	},
-/obj/effect/turf_decal/stripes/line{
+/obj/effect/turf_decal/industrial/warning{
 	dir = 4
 	},
 /obj/machinery/door/firedoor/border_only{
@@ -86,7 +86,7 @@
 	name = "Labor Shuttle Airlock";
 	req_access_txt = "2"
 	},
-/obj/effect/turf_decal/stripes/line,
+/obj/effect/turf_decal/industrial/warning,
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
 	},
@@ -101,18 +101,18 @@
 	input_dir = 2;
 	output_dir = 1
 	},
-/obj/effect/turf_decal/stripes/line,
+/obj/effect/turf_decal/industrial/warning,
 /turf/open/floor/plasteel/white,
 /area/shuttle/labor)
 "n" = (
-/obj/effect/turf_decal/stripes/line{
+/obj/effect/turf_decal/industrial/warning{
 	dir = 9
 	},
 /turf/open/floor/plasteel,
 /area/shuttle/labor)
 "o" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/stripes/line{
+/obj/effect/turf_decal/industrial/warning{
 	dir = 1
 	},
 /obj/machinery/light{
@@ -126,7 +126,7 @@
 	pixel_x = 30
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/stripes/line{
+/obj/effect/turf_decal/industrial/warning{
 	dir = 5
 	},
 /turf/open/floor/plasteel,
@@ -135,13 +135,13 @@
 /obj/structure/chair/comfy/shuttle{
 	dir = 4
 	},
-/obj/effect/turf_decal/stripes/line{
+/obj/effect/turf_decal/industrial/warning{
 	dir = 10
 	},
 /turf/open/floor/plasteel,
 /area/shuttle/labor)
 "r" = (
-/obj/effect/turf_decal/stripes/line,
+/obj/effect/turf_decal/industrial/warning,
 /turf/open/floor/plasteel,
 /area/shuttle/labor)
 "s" = (
@@ -152,7 +152,7 @@
 	id = "gulagshuttleflasher";
 	pixel_x = 25
 	},
-/obj/effect/turf_decal/stripes/line{
+/obj/effect/turf_decal/industrial/warning{
 	dir = 6
 	},
 /turf/open/floor/plasteel,
@@ -235,7 +235,7 @@
 	},
 /obj/structure/closet/crate/internals,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/delivery,
+/obj/effect/turf_decal/industrial/hatch/yellow,
 /obj/machinery/power/terminal,
 /obj/structure/cable{
 	icon_state = "0-4"
@@ -244,14 +244,14 @@
 /area/shuttle/labor)
 "u" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/bot,
+/obj/effect/turf_decal/industrial/outline/yellow,
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
 /turf/open/floor/plasteel,
 /area/shuttle/labor)
 "v" = (
-/obj/effect/turf_decal/bot,
+/obj/effect/turf_decal/industrial/outline/yellow,
 /obj/machinery/power/terminal,
 /obj/structure/cable{
 	icon_state = "0-4"
@@ -274,10 +274,10 @@
 	port_direction = 4;
 	width = 9
 	},
-/obj/effect/turf_decal/stripes/line{
+/obj/effect/turf_decal/industrial/warning{
 	dir = 8
 	},
-/obj/effect/turf_decal/stripes/line{
+/obj/effect/turf_decal/industrial/warning{
 	dir = 4
 	},
 /obj/machinery/door/firedoor/border_only{
@@ -292,7 +292,7 @@
 /turf/open/floor/plating,
 /area/shuttle/labor)
 "y" = (
-/obj/effect/turf_decal/stripes/line,
+/obj/effect/turf_decal/industrial/warning,
 /obj/machinery/power/shuttle/engine/electric{
 	dir = 1
 	},
@@ -300,7 +300,7 @@
 /turf/open/floor/plating/airless,
 /area/shuttle/labor)
 "P" = (
-/obj/effect/turf_decal/stripes/line,
+/obj/effect/turf_decal/industrial/warning,
 /obj/machinery/power/smes/shuttle/precharged{
 	dir = 1
 	},
@@ -316,7 +316,7 @@
 /turf/open/floor/plating,
 /area/shuttle/labor)
 "Q" = (
-/obj/effect/turf_decal/stripes/line,
+/obj/effect/turf_decal/industrial/warning,
 /obj/machinery/power/smes/shuttle/precharged{
 	dir = 1
 	},

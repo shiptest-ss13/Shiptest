@@ -401,6 +401,8 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	READ_FILE(S["feature_ipc_screen"], features["ipc_screen"])
 	READ_FILE(S["feature_ipc_antenna"], features["ipc_antenna"])
 	READ_FILE(S["feature_ipc_chassis"], features["ipc_chassis"])
+	READ_FILE(S["feature_teshari_feathers"], features["teshari_feathers"])
+	READ_FILE(S["feature_teshari_body_feathers"], features["teshari_body_feathers"])
 	READ_FILE(S["alt_titles_preferences"], alt_titles_preferences)
 
 	alt_titles_preferences = SANITIZE_LIST(alt_titles_preferences)
@@ -514,6 +516,8 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	features["ipc_screen"]	= sanitize_inlist(features["ipc_screen"], GLOB.ipc_screens_list)
 	features["ipc_antenna"]	 = sanitize_inlist(features["ipc_antenna"], GLOB.ipc_antennas_list)
 	features["ipc_chassis"]	 = sanitize_inlist(features["ipc_chassis"], GLOB.ipc_chassis_list)
+	features["teshari_feathers"] = sanitize_inlist(features["teshari_feathers"], GLOB.teshari_feathers_list, "Plain")
+	features["teshari_body_feathers"] = sanitize_inlist(features["teshari_body_feathers"], GLOB.teshari_body_feathers_list, "Plain")
 	features["flavor_text"]		= sanitize_text(features["flavor_text"], initial(features["flavor_text"]))
 
 	joblessrole	= sanitize_integer(joblessrole, 1, 3, initial(joblessrole))
@@ -582,6 +586,8 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["feature_ipc_screen"]			, features["ipc_screen"])
 	WRITE_FILE(S["feature_ipc_antenna"]			, features["ipc_antenna"])
 	WRITE_FILE(S["feature_ipc_chassis"]			, features["ipc_chassis"])
+	WRITE_FILE(S["feature_teshari_feathers"]	, features["teshari_feathers"])
+	WRITE_FILE(S["feature_teshari_body_feathers"], features["teshari_body_feathers"])
 
 	//Alternate job titles
 	WRITE_FILE(S["alt_titles_preferences"]		,alt_titles_preferences)

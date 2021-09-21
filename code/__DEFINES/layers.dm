@@ -37,6 +37,8 @@
 #define WIRE_LAYER 2.4
 //#define WIRE_BRIDGE_LAYER 2.44 //WS - Smartwire Revert - I went slightly insane adding all these comments
 #define WIRE_TERMINAL_LAYER 2.45
+#define UNDER_CATWALK 2.454
+#define CATWALK_LAYER 2.455
 #define GAS_SCRUBBER_LAYER 2.46
 #define GAS_PIPE_VISIBLE_LAYER 2.47
 #define GAS_FILTER_LAYER 2.48
