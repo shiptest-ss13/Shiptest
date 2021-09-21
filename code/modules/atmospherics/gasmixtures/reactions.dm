@@ -533,18 +533,18 @@
 	var/result = G.react()
 	if(result != REACTING)
 		return list("success" = FALSE, "message" = "Reaction didn't go at all!")
-	if(abs(G.analyzer_results["fusion"] - 3) > 0.01)
+	if(abs(G.analyzer_results["fusion"] - 2.66) > 0.01)
 		var/instability = G.analyzer_results["fusion"]
-		return list("success" = FALSE, "message" = "Fusion is not calculating analyzer results correctly, should be 3.000000045, is instead [instability]")
-	if(abs(G.get_moles(GAS_PLASMA) - 850.616) > 0.5)
+		return list("success" = FALSE, "message" = "Fusion is not calculating analyzer results correctly, should be 2.66699, is instead [instability]")
+	if(abs(G.get_moles(GAS_PLASMA) - 458.531) > 0.5)
 		var/plas = G.get_moles(GAS_PLASMA)
-		return list("success" = FALSE, "message" = "Fusion is not calculating plasma correctly, should be 850.616, is instead [plas]")
-	if(abs(G.get_moles(GAS_CO2) - 1699.384) > 0.5)
+		return list("success" = FALSE, "message" = "Fusion is not calculating plasma correctly, should be 458.531, is instead [plas]")
+	if(abs(G.get_moles(GAS_CO2) - 505.078) > 0.5)
 		var/co2 = G.get_moles(GAS_CO2)
-		return list("success" = FALSE, "message" = "Fusion is not calculating co2 correctly, should be 1699.384, is instead [co2]")
-	if(abs(G.return_temperature() - 27600) > 200) // calculating this manually sucks dude
+		return list("success" = FALSE, "message" = "Fusion is not calculating co2 correctly, should be 505.078, is instead [co2]")
+	if(abs(G.return_temperature() - 112232) > 200) // calculating this manually sucks dude
 		var/temp = G.return_temperature()
-		return list("success" = FALSE, "message" = "Fusion is not calculating temperature correctly, should be around 27600, is instead [temp]")
+		return list("success" = FALSE, "message" = "Fusion is not calculating temperature correctly, should be around 112232, is instead [temp]")
 	return ..()
 
 /datum/gas_reaction/nitrousformation //formationn of n2o, esothermic, requires bz as catalyst
