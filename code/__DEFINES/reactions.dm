@@ -5,9 +5,9 @@
 #define PLASMA_BURN_RATE_DELTA 9
 #define PLASMA_MINIMUM_OXYGEN_NEEDED 2
 #define PLASMA_MINIMUM_OXYGEN_PLASMA_RATIO 30
-#define FIRE_CARBON_ENERGY_RELEASED 100000	//Amount of heat released per mole of burnt carbon into the tile
+#define FIRE_CARBON_ENERGY_RELEASED 100000 //Amount of heat released per mole of burnt carbon into the tile
 #define FIRE_HYDROGEN_ENERGY_RELEASED 280000 //Amount of heat released per mole of burnt hydrogen and/or tritium(hydrogen isotope)
-#define FIRE_PLASMA_ENERGY_RELEASED 3000000	//Amount of heat released per mole of burnt plasma into the tile
+#define FIRE_PLASMA_ENERGY_RELEASED 3000000 //Amount of heat released per mole of burnt plasma into the tile
 //General assmos defines.
 #define WATER_VAPOR_FREEZE 200
 //freon reaction
@@ -48,11 +48,11 @@
 #define FUSION_TEMPERATURE_THRESHOLD 10000
 #define PARTICLE_CHANCE_CONSTANT (-20000000)
 #define FUSION_INSTABILITY_ENDOTHERMALITY 2
-#define FUSION_SCALE_DIVISOR				10		//! Used to be Pi
-#define FUSION_MINIMAL_SCALE				50
-#define FUSION_SLOPE_DIVISOR				1250	//! This number is probably the safest number to change
-#define FUSION_ENERGY_TRANSLATION_EXPONENT	1.25	//! This number is probably the most dangerous number to change
-#define FUSION_BASE_TEMPSCALE				6       //! This number is responsible for orchestrating fusion temperatures
-#define FUSION_RAD_MIDPOINT					15		//! If you decrease this by one, the fusion rads will *triple* and vice versa
-#define FUSION_MIDDLE_ENERGY_REFERENCE		1e6		//! This number is deceptively dangerous; sort of tied to TOROID_CALCULATED_THRESHOLD
-#define FUSION_BUFFER_DIVISOR				1		//! Increase this to cull unrobust fusions faster
+#define FUSION_SCALE_DIVISOR 10 //! Used to be Pi
+#define FUSION_MINIMAL_SCALE 50
+#define FUSION_SLOPE_DIVISOR 1250 //! This number is probably the safest number to change
+#define FUSION_ENERGY_TRANSLATION_EXPONENT 1.25 //! This number is probably the most dangerous number to change
+#define FUSION_BASE_TEMPSCALE 6 //! This number is responsible for orchestrating fusion temperatures
+#define FUSION_RAD_MIDPOINT 15 //! If you decrease this by one, the fusion rads will *triple* and vice versa
+#define FUSION_MIDDLE_ENERGY_REFERENCE 1e6 //! This number is deceptively dangerous; sort of tied to TOROID_CALCULATED_THRESHOLD
+#define FUSION_BUFFER_DIVISOR 1 //! Increase this to cull unrobust fusions faster
