@@ -25,7 +25,8 @@
 						/obj/item/gun/magic/staff/honk,
 						/obj/item/kitchen/knife/envy,
 						/obj/item/gun/ballistic/revolver/russian/soul,
-						/obj/item/veilrender/vealrender)
+						/obj/item/veilrender/vealrender,
+						/obj/item/nullrod/scythe/talking/necro)
 
 /datum/export/lavaland/major //valuable chest/ruin loot and staff of storms
 	cost = 20000
@@ -34,7 +35,12 @@
 						/obj/item/rod_of_asclepius,
 						/obj/item/clothing/suit/space/hardsuit/ert/paranormal,
 						/obj/item/prisoncube,
-						/obj/item/staff/storm)
+						/obj/item/staff/storm,
+						/obj/item/freeze_cube,
+						/obj/item/clothing/gloves/gauntlets,
+						/obj/item/necromantic_stone/lava,
+						/obj/item/clothing/under/drip,
+						/obj/item/clothing/shoes/drip)
 
 //Megafauna loot, except for ash drakes and legion
 
@@ -47,6 +53,7 @@
 						/obj/machinery/anomalous_crystal,
 						/obj/item/mayhem,
 						/obj/item/blood_contract,
+						/obj/item/guardiancreator/miner/choose,//this is basically the most valulable mining loot so good luck getting a miner to part ways
 						/obj/item/gun/magic/staff/spellblade)
 
 /datum/export/lavaland/megafauna/total_printout(datum/export_report/ex, notes = TRUE) //in the unlikely case a miner feels like selling megafauna loot
