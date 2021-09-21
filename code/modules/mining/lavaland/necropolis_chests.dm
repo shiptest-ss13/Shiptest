@@ -83,6 +83,8 @@
 			new /obj/item/clothing/shoes/drip(src)
 		if(28)
 			new /obj/item/freeze_cube(src)
+		if(29)
+			new /obj/item/gun/energy/spur (src)
 
 //KA modkit design discs
 /obj/item/disk/design_disk/modkit_disc
@@ -886,6 +888,169 @@
 		return
 	A.attackby(src, H)
 	return COMPONENT_NO_ATTACK_OBJ
+
+//A version of the Cave Story refrence that a deranged scientist got their hands on. Better? Not really/ Different? Definitely.
+/obj/item/gun/energy/spur
+	name = "Slowpoke"
+	desc = "The work of a truly genius gunsmith, altered and \"improved\" by a truly deranged Nanotransen scientist, using components from a kinetic accelerator and beam rifle. Draw, partner!"
+	icon = 'icons/obj/guns/energy.dmi'
+	lefthand_file = 'icons/mob/inhands/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/weapons/guns_righthand.dmi'
+	icon_state = "spur"
+	item_state = "spur"
+	fire_delay = 0.5 //BRATATAT! This is a cowboy's six-shooter after all.
+	selfcharge = 1
+	slot_flags = ITEM_SLOT_BELT
+	fire_delay = 1
+	recoil = 1
+	cell_type = /obj/item/stock_parts/cell/gun
+	ammo_type = list(/obj/item/ammo_casing/energy/spur)
+	var/chargesound
+
+/obj/item/gun/energy/spur/examine(mob/user)
+	. = ..()
+	. += "<span class='notice'>This weapon contains a gradual heat accelerator that increases shot power as the weapon's energy stores are depleted. Shots at low power are significantly stronger, but also have incredibly short range.</span>"
+
+/obj/item/gun/energy/spur/update_icon()
+	var/maxcharge = cell.maxcharge
+	var/charge = cell.charge
+
+	var/oldsound = chargesound
+	var/obj/item/ammo_casing/energy/AC = ammo_type[select]
+	if(charge >= ((maxcharge/3) * 2)) // 2 third charged
+		chargesound = 'sound/weapons/spur_chargehigh.ogg'
+		recoil = 0
+		fire_sound = 'sound/weapons/spur_low.ogg'
+	else if(charge >= ((maxcharge/3) * 1)) // 1 third charged
+		chargesound = 'sound/weapons/spur_chargemed.ogg'
+		recoil = 0
+		fire_sound = 'sound/weapons/spur_medium.ogg'
+	else if(charge >= AC.e_cost) // less than that
+		chargesound = 'sound/weapons/spur_chargehigh.ogg'
+		recoil = 0
+		fire_sound = 'sound/weapons/spur_high.ogg'
+	else
+		chargesound = null
+		recoil = 1
+		fire_sound = 'sound/weapons/spur_high.ogg'
+
+	if(chargesound != oldsound)
+		playsound(src, chargesound, 100)
+		return
+
+/obj/item/ammo_casing/energy/spur
+	projectile_type = /obj/projectile/bullet/spur
+	select_name = "polar star lens"
+	e_cost = 1000
+	fire_sound = null
+	harmful = TRUE
+
+/obj/projectile/bullet/spur
+	name = "sparkling repulsor"
+	range = 20
+	damage = 30
+	damage_type = BRUTE
+	icon = 'icons/obj/projectiles.dmi'
+	icon_state = "spur_high"
+	var/skip = FALSE //this is the hackiest thing ive ever done but i dont know any other solution other than deparent the spur projectile
+
+/obj/projectile/bullet/spur/fire(angle, atom/direct_target)
+	if(!fired_from || !istype(fired_from,/obj/item/gun/energy) || skip)
+		return ..()
+
+	var/obj/item/gun/energy/spur/fired_gun = fired_from
+	var/maxcharge = fired_gun.cell.maxcharge
+	var/charge = fired_gun.cell.charge
+
+	if(charge >= ((maxcharge/3) * 2)) // 2 third charged
+		icon_state = "spur_low"
+		damage = 15
+		armour_penetration = 10
+		range = 10
+		homing = TRUE
+		speed = 0.5
+		stamina = 10
+	else if(charge >= ((maxcharge/3) * 1)) // 1 third charged
+		icon_state = "spur_medium"
+		damage = 20
+		armour_penetration = 10
+		range = 5
+	else
+		icon_state = "spur_high"//when you're regularly firing these from a dry clip, they're basically shotgun slugs.
+		damage = 35
+		armour_penetration = 20
+		range = 2
+	..()
+
+/obj/projectile/bullet/spur/on_range()
+	if(!loc)
+		return
+	var/turf/T = loc
+	var/image/impact = image('icons/obj/projectiles.dmi',T,"spur_range")
+	impact.layer = ABOVE_MOB_LAYER
+	T.overlays += impact
+	sleep(2)
+	T.overlays -= impact
+	qdel(impact)
+	..()
+
+/obj/projectile/bullet/spur/on_hit(atom/target, blocked)
+	. = ..()
+	var/impact_icon = null
+	var/impact_sound = null
+
+	if(ismob(target))
+		impact_icon = "spur_hitmob"
+		impact_sound = 'sound/weapons/spur_hitmob.ogg'
+	else
+		impact_icon = "spur_hitwall"
+		impact_sound = 'sound/weapons/spur_hitwall.ogg'
+
+	var/image/impact = image('icons/obj/projectiles.dmi',target,impact_icon)
+	target.overlays += impact
+	spawn(30)
+		target.overlays -= impact
+	playsound(loc, impact_sound, 30)
+	if(istype(target,/turf/closed/mineral))
+		var/turf/closed/mineral/M = target
+		M.gets_drilled()
+	..()
+
+/obj/item/ammo_casing/energy/spur/spur
+	projectile_type = /obj/projectile/bullet/spur
+	select_name = "spur lens"
+
+
+/obj/projectile/bullet/spur/spur
+	name = "spur bullet"
+	range = 20
+	damage = 40
+	damage_type = BRUTE
+	icon = 'icons/obj/projectiles.dmi'
+	icon_state = "spur_high"
+	skip = TRUE
+
+/obj/projectile/bullet/spur/spur/fire(angle, atom/direct_target)
+	if(!fired_from || !istype(fired_from,/obj/item/gun/energy))
+		return ..()
+
+	var/obj/item/gun/energy/spur/fired_gun = fired_from
+	var/maxcharge = fired_gun.cell.maxcharge
+	var/charge = fired_gun.cell.charge
+
+	if(charge >= ((maxcharge/3) * 2)) // 2 third charged
+		icon_state = "spur_high"
+		damage = 40
+		range = 20
+	else if(charge >= ((maxcharge/3) * 1)) // 1 third charged
+		icon_state = "spur_medium"
+		damage = 30
+		range = 13
+	else
+		icon_state = "spur_low"
+		damage = 20
+		range = 7
+	..()
 
 /obj/item/jacobs_ladder
 	name = "jacob's ladder"

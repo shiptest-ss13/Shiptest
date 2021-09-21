@@ -36,6 +36,7 @@
 						/obj/item/clothing/suit/space/hardsuit/ert/paranormal,
 						/obj/item/prisoncube,
 						/obj/item/staff/storm,
+						/obj/item/gun/energy/spur,
 						/obj/item/freeze_cube,
 						/obj/item/clothing/gloves/gauntlets,
 						/obj/item/necromantic_stone/lava,
