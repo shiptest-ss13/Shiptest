@@ -208,8 +208,7 @@
 
 /turf/proc/handle_decompression_floor_rip()
 /turf/open/floor/handle_decompression_floor_rip(sum)
-	if(sum > 20 && prob(clamp(sum / 10, 0, 30)))
-		remove_tile()
+	remove_tile()
 
 /turf/open/process_cell(fire_count)
 
@@ -263,7 +262,7 @@
 			if(throw_target && (get_dir(src, throw_target) & direction))
 				throw_turf = get_turf(throw_target)
 			var/throw_speed = clamp(round(move_force / 3000), 1, 10)
-			throw_at(throw_turf, move_force / 3000, throw_speed)
+			throw_at(throw_turf, move_force / 3000, throw_speed, quickstart = FALSE)
 		else if(move_force > 0)
 			step(src, direction)
 		last_high_pressure_movement_air_cycle = SSair.times_fired

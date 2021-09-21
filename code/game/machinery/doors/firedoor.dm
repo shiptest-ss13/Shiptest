@@ -34,6 +34,7 @@
 /obj/machinery/door/firedoor/Initialize()
 	. = ..()
 	CalculateAffectingAreas()
+	update_registration()
 
 /obj/machinery/door/firedoor/examine(mob/user)
 	. = ..()
@@ -69,13 +70,23 @@
 /obj/machinery/door/firedoor/Destroy()
 	remove_from_areas()
 	affecting_areas.Cut()
+	update_registration()
 	return ..()
 
 /obj/machinery/door/firedoor/Bumped(atom/movable/AM)
 	if(panel_open || operating || welded || (machine_stat & NOPOWER))
 		return
-	if(!density)
-		return ..()
+	if(ismob(AM))
+		var/mob/user = AM
+		if(allow_hand_open(user))
+			add_fingerprint(user)
+			open()
+			return TRUE
+	if(ismecha(AM))
+		var/obj/mecha/M = AM
+		if(M.occupant && allow_hand_open(M.occupant))
+			open()
+			return TRUE
 	return FALSE
 
 
@@ -88,6 +99,10 @@
 	if(.)
 		return
 	if(!welded && !operating && !(machine_stat & NOPOWER) && (!density || allow_hand_open(user)))
+		user.visible_message("[user] tries to open \the [src] manually.",
+								"You operate the manual lever on \the [src].")
+		if (!do_after(user, 30, TRUE, src))
+			return FALSE
 		add_fingerprint(user)
 		if(density)
 			emergency_close_timer = world.time + 30 // prevent it from instaclosing again if in space
@@ -676,6 +691,32 @@
 
 /obj/structure/firelock_frame/window/update_icon()
 	return
+
+//these are hooked by auxtools
+/turf/proc/register_firelocks()
+/turf/proc/unregister_firelocks()
+
+//updates registration status for firelocks in auxtools
+/obj/machinery/door/firedoor/proc/update_registration()
+	var/turf/open/terf = get_turf(src)
+	if(!locate(/obj/machinery/door/firedoor) in terf)
+		terf.unregister_firelocks()
+	else
+		terf.register_firelocks()
+
+/obj/machinery/door/firedoor/Moved(atom/OldLoc, Dir)
+	. = ..()
+	var/turf/open/old_turf = OldLoc //if this isn't a turf for some reaosn feel free to yell at me but that ain't gonna happen
+	var/turf/open/new_turf = get_turf(src)
+	new_turf.register_firelocks()
+	if(!locate(/obj/machinery/door/firedoor) in old_turf)
+		old_turf.unregister_firelocks()
+
+/obj/machinery/door/firedoor/afterShuttleMove(turf/oldT, list/movement_force, shuttle_dir, shuttle_preferred_direction, move_dir, rotation)
+	. = ..()
+	var/turf/open/new_turf = get_turf(src)
+	oldT.unregister_firelocks()
+	new_turf.register_firelocks()
 
 #undef CONSTRUCTION_COMPLETE
 #undef CONSTRUCTION_PANEL_OPEN
