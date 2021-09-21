@@ -900,6 +900,7 @@
 	item_state = "spur"
 	fire_delay = 0.5 //BRATATAT! This is a cowboy's six-shooter after all.
 	selfcharge = 1
+	charge_delay = 1
 	slot_flags = ITEM_SLOT_BELT
 	fire_delay = 1
 	recoil = 1
@@ -941,7 +942,7 @@
 /obj/item/ammo_casing/energy/spur
 	projectile_type = /obj/projectile/bullet/spur
 	select_name = "polar star lens"
-	e_cost = 1000
+	e_cost = 1200
 	fire_sound = null
 	harmful = TRUE
 
