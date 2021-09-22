@@ -17,29 +17,6 @@
 /obj/machinery/computer/communications,
 /turf/open/floor/carpet/stellar,
 /area/ship/bridge)
-"ae" = (
-/obj/machinery/light{
-	dir = 8
-	},
-/obj/structure/table/wood/fancy/royalblue,
-/obj/item/book/granter/spell/charge{
-	pixel_y = 4
-	},
-/obj/item/gun/energy/e_gun/mini{
-	desc = "The small and submissive wand of wizards-in-training, firing bursts of raw magical energy to disable or kill foes. Comes with built-in nightlight!";
-	gunlight_state = "nothingwand";
-	icon = 'icons/obj/guns/magic.dmi';
-	icon_state = "nothingwand";
-	name = "acolyte's training wand of duality";
-	pixel_x = -2;
-	pixel_y = 2
-	},
-/obj/machinery/power/apc/auto_name/west,
-/obj/structure/cable{
-	icon_state = "0-4"
-	},
-/turf/open/floor/carpet/stellar,
-/area/ship/bridge)
 "af" = (
 /obj/structure/chair/bronze{
 	dir = 1
@@ -56,20 +33,6 @@
 	pixel_y = 31
 	},
 /obj/machinery/airalarm/directional/east,
-/turf/open/floor/carpet/stellar,
-/area/ship/bridge)
-"ah" = (
-/obj/structure/table/wood/fancy/royalblue,
-/obj/item/areaeditor/shuttle,
-/obj/item/clothing/shoes/sandal/magic{
-	pixel_y = -7
-	},
-/obj/item/clothing/suit/wizrobe/magusblue{
-	pixel_y = 5
-	},
-/obj/item/clothing/head/wizard/magus{
-	pixel_y = 11
-	},
 /turf/open/floor/carpet/stellar,
 /area/ship/bridge)
 "ai" = (
@@ -97,10 +60,6 @@
 	},
 /turf/open/floor/carpet/stellar,
 /area/ship/bridge)
-"al" = (
-/obj/structure/bookcase/random/reference,
-/turf/open/floor/carpet/orange,
-/area/ship/crew/library)
 "am" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -120,10 +79,6 @@
 /obj/structure/chair/wood/wings,
 /turf/open/floor/carpet/royalblack,
 /area/ship/hallway/starboard)
-"ap" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/carpet/orange,
-/area/ship/crew/library)
 "aq" = (
 /obj/structure/chair/wood/wings{
 	dir = 4
@@ -180,16 +135,6 @@
 	},
 /turf/open/floor/carpet/royalblack,
 /area/ship/hallway/starboard)
-"aw" = (
-/obj/machinery/power/apc/auto_name/west,
-/obj/structure/cable{
-	icon_state = "0-2"
-	},
-/turf/open/floor/carpet/orange,
-/area/ship/crew/library)
-"ax" = (
-/turf/open/floor/carpet/orange,
-/area/ship/crew/library)
 "ay" = (
 /turf/closed/indestructible/riveted/uranium,
 /area/ship/hallway/central)
@@ -223,20 +168,6 @@
 	},
 /turf/open/floor/carpet/royalblack,
 /area/ship/hallway/starboard)
-"aD" = (
-/obj/machinery/computer/bookmanagement{
-	pixel_y = 1
-	},
-/obj/structure/table/wood/fancy/royalblack,
-/turf/open/floor/carpet/orange,
-/area/ship/crew/library)
-"aE" = (
-/obj/item/statuebust{
-	pixel_y = 12
-	},
-/obj/structure/table/wood/fancy/royalblack,
-/turf/open/floor/carpet/orange,
-/area/ship/crew/library)
 "aF" = (
 /obj/machinery/vending/snack/random,
 /turf/open/floor/wood,
@@ -245,14 +176,6 @@
 /obj/machinery/vending/cola/random,
 /turf/open/floor/wood,
 /area/ship/hallway/central)
-"aH" = (
-/obj/item/storage/pill_bottle/dice{
-	icon_state = "magicdicebag";
-	pixel_y = 4
-	},
-/obj/structure/table/wood/fancy/green,
-/turf/open/floor/carpet/royalblack,
-/area/ship/hallway/starboard)
 "aI" = (
 /obj/machinery/light,
 /turf/open/floor/carpet/royalblack,
@@ -297,23 +220,6 @@
 /obj/item/soulstone/anybody,
 /turf/open/floor/engine/cult,
 /area/ship/science)
-"aN" = (
-/obj/structure/closet/cabinet,
-/obj/item/gun/ballistic/shotgun/doublebarrel{
-	desc = "Despite the fact you're on a ship meant for wizards, with spells and all that, a bartender is still never far from a double-barreled twelve-gauge shotgun.";
-	sawn_desc = "Gooblamaphous's coming!"
-	},
-/obj/item/storage/box/beanbag,
-/obj/item/clothing/suit/armor/vest/alt,
-/obj/item/clothing/glasses/sunglasses/reagent,
-/obj/item/clothing/head/wizard/black{
-	desc = "Strange-looking black hat-wear that most certainly belongs to a real bartender.";
-	name = "beer wizard hat"
-	},
-/obj/item/roulette_wheel_beacon,
-/obj/item/etherealballdeployer,
-/turf/open/floor/carpet/purple,
-/area/ship/crew/canteen)
 "aO" = (
 /obj/machinery/light{
 	dir = 1
@@ -326,13 +232,6 @@
 /area/ship/crew/canteen)
 "aP" = (
 /turf/open/floor/carpet/purple,
-/area/ship/crew/canteen)
-"aQ" = (
-/obj/machinery/light{
-	dir = 1
-	},
-/obj/machinery/jukebox,
-/turf/open/floor/wood,
 /area/ship/crew/canteen)
 "aR" = (
 /obj/machinery/vending/coffee,
@@ -372,10 +271,6 @@
 	},
 /turf/open/floor/carpet/purple,
 /area/ship/crew/canteen)
-"aX" = (
-/obj/structure/table/wood/fancy/purple,
-/turf/open/floor/carpet/purple,
-/area/ship/crew/canteen)
 "aY" = (
 /obj/structure/chair/stool/bar{
 	dir = 8
@@ -403,24 +298,10 @@
 /obj/structure/spider/stickyweb,
 /turf/open/floor/engine/cult,
 /area/ship/science)
-"bc" = (
-/obj/machinery/chem_dispenser/drinks/beer{
-	dir = 4
-	},
-/obj/structure/table/wood/fancy/purple,
-/turf/open/floor/carpet/purple,
-/area/ship/crew/canteen)
 "bd" = (
 /obj/item/kirbyplants/random,
 /turf/open/floor/wood,
 /area/ship/hallway/central)
-"be" = (
-/obj/structure/table/wood/fancy/purple,
-/obj/item/clothing/head/collectable/wizard{
-	pixel_y = 3
-	},
-/turf/open/floor/carpet/purple,
-/area/ship/crew/canteen)
 "bf" = (
 /obj/machinery/door/airlock{
 	icon = 'icons/obj/doors/airlocks/station/uranium.dmi';
@@ -471,18 +352,6 @@
 	},
 /turf/open/floor/wood,
 /area/ship/crew/canteen/kitchen)
-"bj" = (
-/obj/machinery/chem_dispenser/drinks{
-	dir = 4
-	},
-/obj/structure/table/wood/fancy/purple,
-/turf/open/floor/carpet/purple,
-/area/ship/crew/canteen)
-"bk" = (
-/obj/item/reagent_containers/food/drinks/shaker,
-/obj/structure/table/wood/fancy/purple,
-/turf/open/floor/carpet/purple,
-/area/ship/crew/canteen)
 "bl" = (
 /obj/effect/decal/cleanable/blood/gibs/down,
 /turf/open/floor/wood,
@@ -519,46 +388,16 @@
 /obj/machinery/vending/cigarette,
 /turf/open/floor/wood,
 /area/ship/crew/canteen)
-"br" = (
-/obj/machinery/processor,
-/turf/open/floor/wood,
-/area/ship/crew/canteen/kitchen)
 "bs" = (
 /obj/machinery/vending/dinnerware,
-/turf/open/floor/wood,
-/area/ship/crew/canteen/kitchen)
-"bt" = (
-/obj/structure/closet/secure_closet/freezer/kitchen,
-/obj/item/reagent_containers/food/condiment/enzyme,
 /turf/open/floor/wood,
 /area/ship/crew/canteen/kitchen)
 "bu" = (
 /obj/structure/closet/secure_closet/freezer/fridge,
 /turf/open/floor/wood,
 /area/ship/crew/canteen/kitchen)
-"bv" = (
-/obj/structure/sign/poster/random,
-/turf/closed/indestructible/riveted/uranium,
-/area/ship/crew/library)
-"bx" = (
-/mob/living/simple_animal/hostile/carp/ranged{
-	desc = "A wizard's favorite familiar, the Magicarp!";
-	faction = list("neutral");
-	name = "Melchom"
-	},
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/bed/dogbed/cayenne{
-	name = "Melchom's bed"
-	},
-/turf/open/floor/wood,
-/area/ship/hallway/aft)
 "by" = (
 /turf/open/floor/carpet/royalblue,
-/area/ship/hallway/aft)
-"bz" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/vending/autodrobe/all_access,
-/turf/open/floor/wood,
 /area/ship/hallway/aft)
 "bA" = (
 /obj/machinery/door/airlock{
@@ -621,24 +460,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/ship/storage)
-"bE" = (
-/obj/structure/closet/cabinet,
-/obj/item/clothing/head/wizard/yellow,
-/obj/item/clothing/head/wizard/red,
-/obj/item/clothing/head/wizard/marisa,
-/obj/item/clothing/head/wizard/black,
-/obj/item/clothing/head/wizard,
-/obj/item/clothing/suit/wizrobe/yellow,
-/obj/item/clothing/suit/wizrobe/red,
-/obj/item/clothing/suit/wizrobe/marisa,
-/obj/item/clothing/suit/wizrobe/black,
-/obj/item/clothing/suit/wizrobe,
-/obj/machinery/power/apc/auto_name/north,
-/obj/structure/cable{
-	icon_state = "0-4"
-	},
-/turf/open/floor/carpet/royalblue,
-/area/ship/crew/dorm)
 "bF" = (
 /obj/machinery/computer/cryopod{
 	pixel_y = 27
@@ -802,12 +623,6 @@
 /obj/machinery/airalarm/directional/west,
 /turf/open/floor/carpet/royalblue,
 /area/ship/crew/dorm)
-"bS" = (
-/obj/item/storage/bag/tray,
-/obj/item/reagent_containers/food/snacks/burger/spell,
-/obj/structure/table/wood/fancy/cyan,
-/turf/open/floor/carpet/royalblue,
-/area/ship/crew/dorm)
 "bT" = (
 /obj/machinery/shower{
 	dir = 1
@@ -936,20 +751,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/aft)
-"ci" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/light/small{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
-	dir = 1
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
-	dir = 1
-	},
-/obj/structure/reagent_dispensers/fueltank,
-/turf/open/floor/plating,
-/area/ship/maintenance/aft)
 "cj" = (
 /obj/machinery/atmospherics/components/unary/tank/air{
 	dir = 1;
@@ -1010,6 +811,10 @@
 	},
 /turf/open/floor/wood,
 /area/ship/hallway/aft)
+"dd" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/carpet/orange,
+/area/ship/crew/library)
 "do" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -1022,12 +827,6 @@
 	},
 /turf/open/floor/wood,
 /area/ship/crew/canteen)
-"dG" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/turf/open/floor/wood,
-/area/ship/crew/library)
 "dH" = (
 /turf/open/floor/wood,
 /area/ship/crew/canteen)
@@ -1073,10 +872,18 @@
 	},
 /turf/open/floor/carpet/royalblue,
 /area/ship/hallway/aft)
-"fR" = (
-/obj/structure/bookcase/random,
-/turf/open/floor/carpet/orange,
-/area/ship/crew/library)
+"gz" = (
+/mob/living/simple_animal/hostile/carp/ranged{
+	desc = "A wizard's favorite familiar, the Magicarp!";
+	faction = list("neutral");
+	name = "Melchom"
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/bed/dogbed/cayenne{
+	name = "Melchom's bed"
+	},
+/turf/open/floor/wood,
+/area/ship/hallway/aft)
 "gB" = (
 /obj/item/kirbyplants/random,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
@@ -1137,6 +944,12 @@
 	},
 /turf/open/floor/carpet/royalblue,
 /area/ship/hallway/aft)
+"if" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/wood,
+/area/ship/crew/library)
 "io" = (
 /obj/structure/chair/bronze{
 	dir = 1
@@ -1150,6 +963,10 @@
 /obj/structure/sign/poster/contraband/shamblers_juice,
 /turf/closed/indestructible/riveted/uranium,
 /area/ship/crew/canteen)
+"iT" = (
+/obj/structure/bookcase/random/reference,
+/turf/open/floor/carpet/orange,
+/area/ship/crew/library)
 "iU" = (
 /mob/living/carbon/monkey/punpun,
 /obj/structure/cable{
@@ -1211,15 +1028,11 @@
 	},
 /turf/open/floor/wood,
 /area/ship/hallway/aft)
-"kS" = (
+"kO" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/libraryscanner,
+/obj/machinery/vending/autodrobe/all_access,
 /turf/open/floor/wood,
-/area/ship/crew/library)
-"lp" = (
-/obj/structure/sign/plaques/kiddie/library,
-/turf/closed/indestructible/riveted/uranium,
-/area/ship/hallway/central)
+/area/ship/hallway/aft)
 "lq" = (
 /obj/structure/chair/wood/wings{
 	dir = 1
@@ -1251,14 +1064,9 @@
 "ni" = (
 /turf/closed/indestructible/riveted/uranium,
 /area/ship/hallway/starboard)
-"no" = (
-/obj/item/reagent_containers/food/snacks/pizzaslice/dank{
-	pixel_x = -1;
-	pixel_y = 4
-	},
-/obj/structure/table/wood/fancy/purple,
-/turf/open/floor/carpet/purple,
-/area/ship/crew/canteen)
+"nl" = (
+/turf/closed/indestructible/riveted/uranium,
+/area/ship/crew/library)
 "nC" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
@@ -1266,6 +1074,13 @@
 	},
 /turf/open/floor/wood,
 /area/ship/crew/canteen/kitchen)
+"nQ" = (
+/obj/structure/table/wood/fancy/purple,
+/obj/item/clothing/head/collectable/wizard{
+	pixel_y = 3
+	},
+/turf/open/floor/carpet/purple,
+/area/ship/crew/canteen)
 "oz" = (
 /turf/open/floor/wood,
 /area/ship/crew/canteen/kitchen)
@@ -1289,15 +1104,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/aft)
-"oQ" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
-	dir = 6
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
-	dir = 5
-	},
-/turf/open/floor/wood,
-/area/ship/crew/library)
 "pf" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -1367,12 +1173,42 @@
 	},
 /turf/open/floor/plating,
 /area/ship/science)
-"rf" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/bookcase/random/religion,
-/obj/structure/spider/stickyweb,
-/turf/open/floor/engine/cult,
-/area/ship/science)
+"qU" = (
+/obj/machinery/power/apc/auto_name/west,
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/turf/open/floor/carpet/orange,
+/area/ship/crew/library)
+"qY" = (
+/obj/item/reagent_containers/food/snacks/pizzaslice/dank{
+	pixel_x = -1;
+	pixel_y = 4
+	},
+/obj/structure/table/wood/fancy/purple,
+/turf/open/floor/carpet/purple,
+/area/ship/crew/canteen)
+"rg" = (
+/obj/structure/closet/secure_closet/freezer/kitchen,
+/obj/item/reagent_containers/food/condiment/enzyme,
+/turf/open/floor/wood,
+/area/ship/crew/canteen/kitchen)
+"rh" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/small,
+/obj/structure/table/wood/fancy/royalblack,
+/obj/item/paper_bin/bundlenatural{
+	pixel_y = 5
+	},
+/turf/open/floor/wood,
+/area/ship/crew/library)
+"rp" = (
+/obj/machinery/computer/bookmanagement{
+	pixel_y = 1
+	},
+/obj/structure/table/wood/fancy/royalblack,
+/turf/open/floor/carpet/orange,
+/area/ship/crew/library)
 "rH" = (
 /obj/structure/spider/stickyweb,
 /obj/item/relic,
@@ -1384,10 +1220,6 @@
 	},
 /turf/open/floor/engine/cult,
 /area/ship/science)
-"rN" = (
-/obj/machinery/bookbinder,
-/turf/open/floor/carpet/orange,
-/area/ship/crew/library)
 "sJ" = (
 /obj/structure/sign/poster/contraband/power,
 /turf/closed/indestructible/riveted/uranium,
@@ -1412,6 +1244,13 @@
 	},
 /turf/open/floor/engine/cult,
 /area/ship/science)
+"ui" = (
+/obj/machinery/light{
+	dir = 1
+	},
+/obj/machinery/jukebox,
+/turf/open/floor/wood,
+/area/ship/crew/canteen)
 "vk" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable/yellow{
@@ -1450,6 +1289,14 @@
 /obj/effect/decal/cleanable/blood,
 /turf/open/floor/wood,
 /area/ship/crew/canteen/kitchen)
+"zn" = (
+/obj/machinery/processor,
+/turf/open/floor/wood,
+/area/ship/crew/canteen/kitchen)
+"zA" = (
+/obj/structure/sign/plaques/kiddie/library,
+/turf/closed/indestructible/riveted/uranium,
+/area/ship/hallway/central)
 "zN" = (
 /obj/machinery/light,
 /obj/effect/decal/cleanable/dirt,
@@ -1472,6 +1319,12 @@
 	},
 /turf/open/floor/engine/cult,
 /area/ship/science)
+"An" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
+	dir = 1
+	},
+/turf/open/floor/wood,
+/area/ship/crew/library)
 "Ar" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
@@ -1479,15 +1332,33 @@
 	},
 /turf/open/floor/bronze,
 /area/ship/cargo)
-"Cr" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/light/small,
-/obj/structure/table/wood/fancy/royalblack,
-/obj/item/paper_bin/bundlenatural{
-	pixel_y = 5
-	},
-/turf/open/floor/wood,
+"Cc" = (
+/obj/item/reagent_containers/food/drinks/shaker,
+/obj/structure/table/wood/fancy/purple,
+/turf/open/floor/carpet/purple,
+/area/ship/crew/canteen)
+"Cq" = (
+/obj/structure/sign/poster/official/fruit_bowl,
+/turf/closed/indestructible/riveted/uranium,
 /area/ship/crew/library)
+"Cy" = (
+/obj/structure/closet/cabinet,
+/obj/item/clothing/head/wizard/yellow,
+/obj/item/clothing/head/wizard/red,
+/obj/item/clothing/head/wizard/marisa,
+/obj/item/clothing/head/wizard/black,
+/obj/item/clothing/head/wizard,
+/obj/item/clothing/suit/wizrobe/yellow,
+/obj/item/clothing/suit/wizrobe/red,
+/obj/item/clothing/suit/wizrobe/marisa,
+/obj/item/clothing/suit/wizrobe/black,
+/obj/item/clothing/suit/wizrobe,
+/obj/machinery/power/apc/auto_name/north,
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/turf/open/floor/carpet/royalblue,
+/area/ship/crew/dorm)
 "CF" = (
 /turf/closed/indestructible/riveted/uranium,
 /area/ship/crew/toilet)
@@ -1545,6 +1416,16 @@
 	},
 /turf/open/floor/carpet/royalblack,
 /area/ship/hallway/starboard)
+"El" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/airalarm/directional/north,
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4,
+/obj/machinery/light/small{
+	dir = 8
+	},
+/obj/item/kirbyplants/random,
+/turf/open/floor/wood,
+/area/ship/crew/library)
 "Es" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable{
@@ -1559,8 +1440,24 @@
 /turf/open/floor/wood,
 /area/ship/hallway/aft)
 "Eu" = (
-/obj/structure/sign/poster/official/fruit_bowl,
-/turf/closed/indestructible/riveted/uranium,
+/obj/structure/table/wood/fancy/purple,
+/turf/open/floor/carpet/purple,
+/area/ship/crew/canteen)
+"Ez" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 6
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 5
+	},
+/turf/open/floor/wood,
+/area/ship/crew/library)
+"Fu" = (
+/obj/item/statuebust{
+	pixel_y = 12
+	},
+/obj/structure/table/wood/fancy/royalblack,
+/turf/open/floor/carpet/orange,
 /area/ship/crew/library)
 "FQ" = (
 /obj/structure/chair/stool/bar{
@@ -1612,10 +1509,27 @@
 /obj/item/trash/candy,
 /turf/open/floor/wood,
 /area/ship/hallway/aft)
+"GM" = (
+/turf/open/floor/carpet/orange,
+/area/ship/crew/library)
 "HS" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/carpet/purple,
 /area/ship/crew/canteen)
+"HV" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/small{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 1
+	},
+/obj/structure/reagent_dispensers/fueltank,
+/turf/open/floor/plating,
+/area/ship/maintenance/aft)
 "Ia" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
@@ -1651,10 +1565,6 @@
 	},
 /turf/open/floor/engine/cult,
 /area/ship/science)
-"IM" = (
-/obj/item/trash/popcorn,
-/turf/open/floor/carpet/orange,
-/area/ship/crew/library)
 "IN" = (
 /turf/closed/indestructible/riveted/uranium,
 /area/ship/hallway/aft)
@@ -1684,19 +1594,23 @@
 	},
 /turf/open/floor/wood,
 /area/ship/hallway/central)
+"JB" = (
+/obj/structure/sign/poster/random,
+/turf/closed/indestructible/riveted/uranium,
+/area/ship/crew/library)
+"JP" = (
+/obj/item/storage/bag/tray,
+/obj/item/reagent_containers/food/snacks/burger/spell,
+/obj/structure/table/wood/fancy/cyan,
+/turf/open/floor/carpet/royalblue,
+/area/ship/crew/dorm)
 "JS" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood,
 /area/ship/crew/canteen)
-"Kc" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/airalarm/directional/north,
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4,
-/obj/machinery/light/small{
-	dir = 8
-	},
-/obj/item/kirbyplants/random,
-/turf/open/floor/wood,
+"Ke" = (
+/obj/item/trash/popcorn,
+/turf/open/floor/carpet/orange,
 /area/ship/crew/library)
 "Ki" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -1742,18 +1656,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/aft)
-"LG" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
-	dir = 4
-	},
-/turf/open/floor/wood,
-/area/ship/crew/library)
-"LQ" = (
-/turf/closed/indestructible/riveted/uranium,
-/area/ship/crew/library)
 "LZ" = (
 /obj/structure/sign/poster/contraband/random,
 /turf/closed/indestructible/riveted/uranium,
@@ -1791,6 +1693,20 @@
 	},
 /turf/open/floor/carpet/royalblue,
 /area/ship/hallway/aft)
+"Mn" = (
+/obj/structure/table/wood/fancy/royalblue,
+/obj/item/areaeditor/shuttle,
+/obj/item/clothing/shoes/sandal/magic{
+	pixel_y = -7
+	},
+/obj/item/clothing/suit/wizrobe/magusblue{
+	pixel_y = 5
+	},
+/obj/item/clothing/head/wizard/magus{
+	pixel_y = 11
+	},
+/turf/open/floor/carpet/stellar,
+/area/ship/bridge)
 "Mq" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -1802,6 +1718,13 @@
 	dir = 1
 	},
 /turf/open/floor/wood,
+/area/ship/crew/canteen)
+"MA" = (
+/obj/machinery/chem_dispenser/drinks/beer{
+	dir = 4
+	},
+/obj/structure/table/wood/fancy/purple,
+/turf/open/floor/carpet/purple,
 /area/ship/crew/canteen)
 "MB" = (
 /obj/effect/turf_decal/bot,
@@ -1840,10 +1763,6 @@
 	},
 /turf/open/floor/carpet/green,
 /area/ship/hallway/central)
-"Nr" = (
-/obj/structure/chair/comfy/black,
-/turf/open/floor/carpet/orange,
-/area/ship/crew/library)
 "Ny" = (
 /obj/structure/cable{
 	icon_state = "1-4"
@@ -1856,6 +1775,13 @@
 	},
 /turf/open/floor/bronze,
 /area/ship/cargo)
+"NF" = (
+/obj/machinery/chem_dispenser/drinks{
+	dir = 4
+	},
+/obj/structure/table/wood/fancy/purple,
+/turf/open/floor/carpet/purple,
+/area/ship/crew/canteen)
 "NI" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable{
@@ -1872,6 +1798,44 @@
 	},
 /turf/open/floor/wood,
 /area/ship/crew/canteen)
+"NN" = (
+/obj/structure/bookcase/random,
+/turf/open/floor/carpet/orange,
+/area/ship/crew/library)
+"Ot" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/bookcase/random/religion,
+/obj/structure/spider/stickyweb,
+/turf/open/floor/engine/cult,
+/area/ship/science)
+"OC" = (
+/obj/machinery/light{
+	dir = 8
+	},
+/obj/structure/table/wood/fancy/royalblue,
+/obj/item/book/granter/spell/charge{
+	pixel_y = 4
+	},
+/obj/item/gun/energy/e_gun/mini{
+	desc = "The small and submissive wand of wizards-in-training, firing bursts of raw magical energy to disable or kill foes. Comes with built-in nightlight!";
+	gunlight_state = "nothingwand";
+	icon = 'icons/obj/guns/magic.dmi';
+	icon_state = "nothingwand";
+	name = "acolyte's training wand of duality";
+	pixel_x = -2;
+	pixel_y = 2
+	},
+/obj/machinery/power/apc/auto_name/west,
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/turf/open/floor/carpet/stellar,
+/area/ship/bridge)
+"OQ" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/libraryscanner,
+/turf/open/floor/wood,
+/area/ship/crew/library)
 "Pc" = (
 /obj/effect/turf_decal/stripes/line,
 /obj/structure/closet/crate,
@@ -1891,6 +1855,10 @@
 /obj/structure/curtain/cloth/fancy,
 /turf/open/floor/plating,
 /area/ship/maintenance/aft)
+"Ql" = (
+/obj/machinery/bookbinder,
+/turf/open/floor/carpet/orange,
+/area/ship/crew/library)
 "QD" = (
 /obj/machinery/atmospherics/components/unary/outlet_injector/on/layer2{
 	dir = 1
@@ -1905,6 +1873,15 @@
 /obj/structure/curtain/cloth/fancy,
 /turf/open/floor/plating,
 /area/ship/crew/canteen/kitchen)
+"RE" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 4
+	},
+/turf/open/floor/wood,
+/area/ship/crew/library)
 "Sc" = (
 /obj/machinery/door/airlock{
 	icon = 'icons/obj/doors/airlocks/station/uranium.dmi';
@@ -1950,6 +1927,10 @@
 	},
 /turf/open/floor/wood,
 /area/ship/hallway/aft)
+"St" = (
+/obj/structure/chair/comfy/black,
+/turf/open/floor/carpet/orange,
+/area/ship/crew/library)
 "SC" = (
 /obj/machinery/airalarm/directional/north,
 /obj/structure/cable{
@@ -2023,6 +2004,31 @@
 "Vy" = (
 /turf/open/floor/wood,
 /area/ship/hallway/aft)
+"VC" = (
+/obj/structure/closet/cabinet,
+/obj/item/gun/ballistic/shotgun/doublebarrel{
+	desc = "Despite the fact you're on a ship meant for wizards, with spells and all that, a bartender is still never far from a double-barreled twelve-gauge shotgun.";
+	sawn_desc = "Gooblamaphous's coming!"
+	},
+/obj/item/storage/box/beanbag,
+/obj/item/clothing/suit/armor/vest/alt,
+/obj/item/clothing/glasses/sunglasses/reagent,
+/obj/item/clothing/head/wizard/black{
+	desc = "Strange-looking black hat-wear that most certainly belongs to a real bartender.";
+	name = "beer wizard hat"
+	},
+/obj/item/roulette_wheel_beacon,
+/obj/item/etherealballdeployer,
+/turf/open/floor/carpet/purple,
+/area/ship/crew/canteen)
+"VP" = (
+/obj/item/storage/pill_bottle/dice{
+	icon_state = "magicdicebag";
+	pixel_y = 4
+	},
+/obj/structure/table/wood/fancy/green,
+/turf/open/floor/carpet/royalblack,
+/area/ship/hallway/starboard)
 "VR" = (
 /obj/machinery/suit_storage_unit/open,
 /obj/item/tank/internals/emergency_oxygen/engi,
@@ -2035,12 +2041,6 @@
 /obj/structure/sign/poster/contraband/random,
 /turf/closed/indestructible/riveted/uranium,
 /area/ship/hallway/aft)
-"Wm" = (
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
-	dir = 1
-	},
-/turf/open/floor/wood,
-/area/ship/crew/library)
 "Wp" = (
 /obj/effect/decal/cleanable/blood/old,
 /obj/item/cigbutt/cigarbutt,
@@ -2220,9 +2220,9 @@ No
 No
 No
 No
-LQ
-LQ
-LQ
+nl
+nl
+nl
 So
 aL
 aT
@@ -2252,10 +2252,10 @@ No
 No
 No
 No
-LQ
-Eu
-aw
-dG
+nl
+Cq
+qU
+if
 aJ
 Va
 rH
@@ -2284,11 +2284,11 @@ No
 No
 No
 No
-LQ
-bv
-fR
-ax
-kS
+nl
+JB
+NN
+GM
+OQ
 So
 bm
 uh
@@ -2316,16 +2316,16 @@ No
 No
 No
 No
-LQ
-LQ
-Kc
-oQ
-Wm
-Cr
+nl
+nl
+El
+Ez
+An
+rh
 sJ
 aM
 aU
-rf
+Ot
 hq
 bn
 IN
@@ -2349,12 +2349,12 @@ No
 No
 No
 No
-LQ
-fR
-ap
-LG
-Nr
-aD
+nl
+NN
+dd
+RE
+St
+rp
 So
 So
 So
@@ -2383,16 +2383,16 @@ Tt
 Tt
 Tt
 Tt
-al
-IM
-LG
-rN
-aE
+iT
+Ke
+RE
+Ql
+Fu
 Yx
-aN
+VC
 aW
-bc
-bj
+MA
+NF
 bo
 IN
 Vy
@@ -2413,11 +2413,11 @@ No
 (8,1,1) = {"
 Tt
 Tt
-ae
-ah
+OC
+Mn
 Tt
 ay
-lp
+zA
 at
 ay
 ay
@@ -2456,16 +2456,16 @@ az
 aF
 Uu
 WV
-no
-be
-bk
-aX
+qY
+nQ
+Cc
+Eu
 IN
 Ix
 Sq
 TQ
 tv
-bE
+Cy
 bL
 bR
 jC
@@ -2533,7 +2533,7 @@ Vy
 tv
 bF
 bM
-bS
+JP
 jC
 vk
 gL
@@ -2554,7 +2554,7 @@ au
 ay
 ay
 iu
-aQ
+ui
 Me
 iU
 wT
@@ -2570,7 +2570,7 @@ CF
 jC
 cc
 Ia
-ci
+HV
 cj
 ee
 QD
@@ -2585,7 +2585,7 @@ an
 aq
 Ek
 aB
-aH
+VP
 Yx
 aR
 dH
@@ -2593,7 +2593,7 @@ cr
 JS
 bq
 IN
-bx
+gz
 Ge
 Vy
 CF
@@ -2657,7 +2657,7 @@ aS
 cA
 jA
 oz
-br
+zn
 IN
 Vy
 Vy
@@ -2694,7 +2694,7 @@ bs
 IN
 Vy
 by
-bz
+kO
 IN
 CF
 ud
@@ -2723,7 +2723,7 @@ Gf
 ba
 bh
 bl
-bt
+rg
 IN
 KS
 XG
