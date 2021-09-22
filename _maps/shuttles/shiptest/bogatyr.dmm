@@ -312,9 +312,6 @@
 /obj/machinery/door/airlock/medical{
 	name = "Infirmary"
 	},
-/obj/effect/turf_decal/lumos/tile/blue/half{
-	dir = 4
-	},
 /obj/structure/cable{
 	icon_state = "5-8"
 	},
@@ -417,7 +414,7 @@
 /obj/structure/grille,
 /obj/structure/window/reinforced/fulltile,
 /obj/machinery/door/poddoor{
-	id = bogatyr_windows
+	id = "bogatyr_windows"
 	},
 /turf/open/floor/plating,
 /area/ship/medical)
