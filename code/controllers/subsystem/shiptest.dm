@@ -85,7 +85,6 @@ SUBSYSTEM_DEF(shipbot)
 	if(do_export_get("check") == "kill")
 		del world
 
-
 /datum/controller/subsystem/shipbot/proc/do_topic(topic)
 	stack_trace("topic")
 	if(!enabled)
@@ -140,7 +139,7 @@ SUBSYSTEM_DEF(shipbot)
 
 	if(command == SHIPBOT_TOPIC_RELAY_CHANNEL_LIST)
 		var/message = channel_keys[1]
-		for(var/channel in channel_keys[2..])
+		for(var/channel in _list_copy(channel_keys, 2))
 			message += "|[channel]"
 		return message
 
