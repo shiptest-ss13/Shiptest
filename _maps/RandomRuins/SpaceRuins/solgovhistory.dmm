@@ -3,6 +3,18 @@
 /obj/structure/lattice,
 /turf/template_noop,
 /area/template_noop)
+"bt" = (
+/obj/structure/table/wood/fancy/red,
+/obj/structure/statue/petrified,
+/obj/item/clothing/under/costume/gladiator/ash_walker,
+/obj/item/clothing/head/helmet/gladiator{
+	pixel_y = 14
+	},
+/obj/structure/sign/poster/contraband/syndicate{
+	pixel_y = -32
+	},
+/turf/open/floor/grass/fakebasalt,
+/area/ruin/unpowered)
 "bu" = (
 /obj/structure/railing{
 	dir = 1
@@ -14,6 +26,17 @@
 	icon_state = "platingdmg3"
 	},
 /area/template_noop)
+"bw" = (
+/obj/structure/window/reinforced/spawner{
+	dir = 1
+	},
+/obj/item/fireaxe/boneaxe,
+/obj/item/paper{
+	pixel_x = 10;
+	pixel_y = -7
+	},
+/turf/open/floor/grass/fakebasalt,
+/area/ruin/unpowered)
 "bz" = (
 /obj/structure/railing{
 	dir = 1
@@ -33,18 +56,6 @@
 "dE" = (
 /turf/open/floor/plating/airless,
 /area/template_noop)
-"dV" = (
-/obj/structure/window/reinforced/spawner{
-	dir = 4
-	},
-/obj/structure/table/wood/fancy/red,
-/obj/item/ammo_box/a762,
-/obj/item/paper{
-	pixel_x = 10;
-	pixel_y = -7
-	},
-/turf/open/floor/grass/fakebasalt,
-/area/ruin/unpowered)
 "es" = (
 /turf/open/floor/plating/airless{
 	icon_state = "platingdmg1"
@@ -64,25 +75,23 @@
 	},
 /turf/open/floor/plating/airless,
 /area/template_noop)
-"fH" = (
-/obj/structure/table/glass,
-/obj/item/storage/firstaid/fire{
-	icon = 'icons/obj/storage.dmi'
-	},
-/obj/item/paper{
-	pixel_x = 10;
-	pixel_y = -7
-	},
-/turf/open/floor/plastic,
-/area/ruin/unpowered)
-"gt" = (
+"fk" = (
 /obj/structure/window/reinforced/spawner{
 	dir = 8
 	},
-/obj/item/circular_saw{
-	icon = 'icons/obj/surgery.dmi'
+/obj/structure/window/reinforced/spawner{
+	dir = 1
 	},
-/turf/open/floor/plastic,
+/turf/open/floor/fakepit,
+/area/ruin/unpowered)
+"fM" = (
+/obj/structure/window/reinforced/spawner{
+	dir = 1
+	},
+/obj/structure/window/reinforced/spawner{
+	dir = 4
+	},
+/turf/open/floor/fakepit,
 /area/ruin/unpowered)
 "gv" = (
 /turf/open/floor/plating/airless{
@@ -106,11 +115,16 @@
 /obj/effect/turf_decal/industrial/warning,
 /turf/open/floor/plating/airless,
 /area/template_noop)
-"hI" = (
-/obj/structure/sign/poster/official/solgov_enlist{
-	pixel_y = -32
+"hf" = (
+/obj/structure/table/glass,
+/obj/item/storage/firstaid/fire{
+	icon = 'icons/obj/storage.dmi'
 	},
-/turf/open/floor/carpet/nanoweave/purple,
+/obj/item/paper{
+	pixel_x = 10;
+	pixel_y = -7
+	},
+/turf/open/floor/plastic,
 /area/ruin/unpowered)
 "ic" = (
 /obj/structure/railing{
@@ -123,20 +137,6 @@
 	icon_state = "platingdmg1"
 	},
 /area/template_noop)
-"ig" = (
-/obj/structure/table/glass,
-/obj/item/storage/firstaid/toxin{
-	icon = 'icons/obj/storage.dmi'
-	},
-/obj/item/paper{
-	pixel_x = 10;
-	pixel_y = -7
-	},
-/obj/structure/sign/poster/retro/pdaancient{
-	pixel_x = 32
-	},
-/turf/open/floor/plastic,
-/area/ruin/unpowered)
 "il" = (
 /obj/structure/railing{
 	dir = 1
@@ -156,6 +156,18 @@
 	initial_gas_mix = "TEMP=2.7"
 	},
 /area/template_noop)
+"kc" = (
+/obj/structure/window/reinforced/spawner{
+	dir = 8
+	},
+/obj/structure/table/wood/fancy/red,
+/obj/item/flashlight/lantern,
+/obj/item/paper{
+	pixel_x = 10;
+	pixel_y = -7
+	},
+/turf/open/floor/grass/fakebasalt,
+/area/ruin/unpowered)
 "kj" = (
 /obj/structure/railing{
 	dir = 5
@@ -200,17 +212,6 @@
 	icon_state = "platingdmg1"
 	},
 /area/template_noop)
-"oo" = (
-/obj/structure/window/reinforced/spawner{
-	dir = 1
-	},
-/obj/item/gun/ballistic/rifle/boltaction,
-/obj/item/paper{
-	pixel_x = 10;
-	pixel_y = -7
-	},
-/turf/open/floor/grass/fakebasalt,
-/area/ruin/unpowered)
 "ou" = (
 /obj/structure/fluff/broken_flooring{
 	dir = 8;
@@ -222,18 +223,6 @@
 "ov" = (
 /obj/structure/door_assembly/door_assembly_sgv,
 /turf/open/floor/plating/airless,
-/area/ruin/unpowered)
-"pe" = (
-/obj/structure/table/wood/fancy/red,
-/obj/structure/statue/petrified,
-/obj/item/clothing/under/costume/gladiator/ash_walker,
-/obj/item/clothing/head/helmet/gladiator{
-	pixel_y = 14
-	},
-/obj/structure/sign/poster/contraband/syndicate{
-	pixel_y = -32
-	},
-/turf/open/floor/grass/fakebasalt,
 /area/ruin/unpowered)
 "pH" = (
 /turf/closed/wall,
@@ -265,6 +254,14 @@
 	},
 /turf/template_noop,
 /area/template_noop)
+"rl" = (
+/obj/structure/window/reinforced/spawner,
+/obj/structure/window/reinforced/spawner{
+	dir = 8
+	},
+/obj/structure/table/optable,
+/turf/open/floor/plastic,
+/area/ruin/unpowered)
 "rv" = (
 /obj/structure/lattice,
 /obj/structure/fluff/broken_flooring,
@@ -298,6 +295,32 @@
 "ue" = (
 /turf/open/floor/carpet/nanoweave/purple,
 /area/template_noop)
+"ui" = (
+/obj/structure/table/wood/fancy/red,
+/obj/item/seeds/lavaland/cactus,
+/obj/item/paper{
+	pixel_x = 10;
+	pixel_y = -7
+	},
+/turf/open/floor/grass/fakebasalt,
+/area/ruin/unpowered)
+"uq" = (
+/turf/template_noop,
+/area/space)
+"uE" = (
+/obj/structure/table/glass,
+/obj/item/storage/firstaid/toxin{
+	icon = 'icons/obj/storage.dmi'
+	},
+/obj/item/paper{
+	pixel_x = 10;
+	pixel_y = -7
+	},
+/obj/structure/sign/poster/retro/pdaancient{
+	pixel_x = 32
+	},
+/turf/open/floor/plastic,
+/area/ruin/unpowered)
 "uU" = (
 /obj/structure/fluff/broken_flooring{
 	dir = 4;
@@ -346,31 +369,6 @@
 /obj/structure/table,
 /turf/open/floor/plasteel/airless,
 /area/ruin/unpowered)
-"xU" = (
-/obj/structure/table/wood/fancy/red,
-/obj/item/ammo_box/magazine/ak47,
-/obj/item/paper{
-	pixel_x = 10;
-	pixel_y = -7
-	},
-/turf/open/floor/grass/fakebasalt,
-/area/ruin/unpowered)
-"zh" = (
-/obj/structure/table/wood/fancy/orange,
-/obj/item/spear/grey_tide,
-/obj/item/paper{
-	pixel_x = 10;
-	pixel_y = -7
-	},
-/obj/structure/sign/poster/official/pda_ad{
-	pixel_x = -32
-	},
-/turf/open/floor/grass/fakebasalt{
-	icon = 'whitesands/icons/turf/floors/whitesands/ws_floors.dmi';
-	icon_plating = "sand";
-	icon_state = "sand"
-	},
-/area/ruin/unpowered)
 "zk" = (
 /obj/structure/table/wood/reinforced,
 /obj/item/paper_bin/carbon,
@@ -380,18 +378,6 @@
 "zu" = (
 /obj/structure/table/wood/reinforced,
 /turf/open/floor/carpet/nanoweave/beige,
-/area/ruin/unpowered)
-"zX" = (
-/obj/structure/window/reinforced/spawner{
-	dir = 8
-	},
-/obj/structure/table/wood/fancy/red,
-/obj/item/flashlight/lantern,
-/obj/item/paper{
-	pixel_x = 10;
-	pixel_y = -7
-	},
-/turf/open/floor/grass/fakebasalt,
 /area/ruin/unpowered)
 "Ap" = (
 /obj/structure/fluff/broken_flooring,
@@ -405,6 +391,15 @@
 	icon_state = "platingdmg1"
 	},
 /area/template_noop)
+"Bm" = (
+/obj/structure/window/reinforced/spawner{
+	dir = 8
+	},
+/obj/item/circular_saw{
+	icon = 'icons/obj/surgery.dmi'
+	},
+/turf/open/floor/plastic,
+/area/ruin/unpowered)
 "BK" = (
 /obj/structure/fluff/broken_flooring{
 	dir = 1;
@@ -413,14 +408,6 @@
 /obj/structure/lattice,
 /turf/template_noop,
 /area/template_noop)
-"BS" = (
-/obj/structure/window/reinforced/spawner,
-/obj/structure/window/reinforced/spawner{
-	dir = 8
-	},
-/obj/structure/table/optable,
-/turf/open/floor/plastic,
-/area/ruin/unpowered)
 "BZ" = (
 /obj/structure/table/wood/reinforced,
 /obj/item/desk_flag/solgov,
@@ -433,14 +420,38 @@
 	},
 /turf/template_noop,
 /area/template_noop)
-"Cy" = (
+"Cx" = (
+/obj/structure/window/reinforced/spawner,
 /obj/structure/window/reinforced/spawner{
-	dir = 8
+	dir = 4
 	},
+/obj/structure/statue{
+	desc = "A lifelike statue of a horrifying monster.";
+	dir = 4;
+	icon = 'icons/mob/lavaland/lavaland_monsters.dmi';
+	icon_state = "legion";
+	name = "legion"
+	},
+/obj/item/paper{
+	pixel_x = 10;
+	pixel_y = -7
+	},
+/turf/open/floor/grass/fakebasalt{
+	icon = 'whitesands/icons/turf/floors/whitesands/ws_floors.dmi';
+	icon_plating = "sand";
+	icon_state = "sand"
+	},
+/area/ruin/unpowered)
+"Dz" = (
 /obj/structure/window/reinforced/spawner{
 	dir = 1
 	},
-/turf/open/floor/fakepit,
+/obj/item/gun/ballistic/rifle/boltaction,
+/obj/item/paper{
+	pixel_x = 10;
+	pixel_y = -7
+	},
+/turf/open/floor/grass/fakebasalt,
 /area/ruin/unpowered)
 "DA" = (
 /obj/structure/rack,
@@ -467,28 +478,6 @@
 "Ee" = (
 /turf/closed/wall/r_wall,
 /area/ruin/unpowered)
-"Em" = (
-/obj/structure/window/reinforced/spawner,
-/obj/structure/window/reinforced/spawner{
-	dir = 4
-	},
-/obj/structure/statue{
-	desc = "A lifelike statue of a horrifying monster.";
-	dir = 4;
-	icon = 'icons/mob/lavaland/lavaland_monsters.dmi';
-	icon_state = "legion";
-	name = "legion"
-	},
-/obj/item/paper{
-	pixel_x = 10;
-	pixel_y = -7
-	},
-/turf/open/floor/grass/fakebasalt{
-	icon = 'whitesands/icons/turf/floors/whitesands/ws_floors.dmi';
-	icon_plating = "sand";
-	icon_state = "sand"
-	},
-/area/ruin/unpowered)
 "Ev" = (
 /obj/machinery/door/airlock/solgov,
 /obj/effect/mapping_helpers/airlock/locked,
@@ -499,6 +488,19 @@
 /turf/open/floor/plating/airless{
 	icon_state = "platingdmg2"
 	},
+/area/ruin/unpowered)
+"GV" = (
+/obj/structure/window/reinforced/spawner{
+	dir = 1
+	},
+/obj/item/gun/ballistic/automatic/ak47{
+	pixel_x = -6
+	},
+/obj/item/paper{
+	pixel_x = 10;
+	pixel_y = -7
+	},
+/turf/open/floor/grass/fakebasalt,
 /area/ruin/unpowered)
 "Hl" = (
 /obj/structure/window/reinforced/spawner{
@@ -524,14 +526,22 @@
 	icon_state = "sand"
 	},
 /area/ruin/unpowered)
-"HR" = (
-/obj/structure/window/reinforced/spawner{
-	dir = 1
+"Hm" = (
+/obj/structure/table/wood/fancy/red,
+/obj/structure/statue/petrified,
+/obj/item/clothing/head/helmet/rus_ushanka{
+	pixel_y = 11
 	},
-/obj/item/fireaxe/boneaxe,
-/obj/item/paper{
-	pixel_x = 10;
-	pixel_y = -7
+/obj/item/clothing/under/syndicate/camo{
+	pixel_y = -2
+	},
+/obj/item/clothing/shoes/russian{
+	pixel_x = -1;
+	pixel_y = -11
+	},
+/obj/item/clothing/suit/armor/vest/alt,
+/obj/structure/sign/poster/contraband/communist_state{
+	pixel_y = -32
 	},
 /turf/open/floor/grass/fakebasalt,
 /area/ruin/unpowered)
@@ -599,6 +609,18 @@
 	},
 /turf/open/floor/carpet/royalblue,
 /area/ruin/unpowered)
+"IY" = (
+/obj/structure/window/reinforced/spawner{
+	dir = 4
+	},
+/obj/structure/table/wood/fancy/red,
+/obj/item/ammo_box/a762,
+/obj/item/paper{
+	pixel_x = 10;
+	pixel_y = -7
+	},
+/turf/open/floor/grass/fakebasalt,
+/area/ruin/unpowered)
 "Ji" = (
 /obj/structure/statue/petrified,
 /obj/structure/sign/plaques/kiddie{
@@ -630,30 +652,11 @@
 /obj/structure/table/wood/fancy/blue,
 /turf/open/floor/carpet/royalblue,
 /area/ruin/unpowered)
-"KG" = (
-/obj/structure/table/wood/fancy/red,
-/obj/structure/statue/petrified,
-/obj/item/clothing/head/helmet/rus_ushanka{
-	pixel_y = 11
-	},
-/obj/item/clothing/under/syndicate/camo{
-	pixel_y = -2
-	},
-/obj/item/clothing/shoes/russian{
-	pixel_x = -1;
-	pixel_y = -11
-	},
-/obj/item/clothing/suit/armor/vest/alt,
-/obj/structure/sign/poster/contraband/communist_state{
-	pixel_y = -32
-	},
-/turf/open/floor/grass/fakebasalt,
-/area/ruin/unpowered)
 "Ld" = (
 /obj/effect/turf_decal/arrows,
 /turf/open/floor/carpet/nanoweave/purple,
 /area/ruin/unpowered)
-"NI" = (
+"Ma" = (
 /obj/structure/window/reinforced/spawner{
 	dir = 1
 	},
@@ -711,6 +714,12 @@
 /obj/item/desk_flag/solgov,
 /turf/open/floor/carpet/royalblue,
 /area/ruin/unpowered)
+"Qv" = (
+/obj/structure/sign/poster/official/solgov_enlist{
+	pixel_y = -32
+	},
+/turf/open/floor/carpet/nanoweave/purple,
+/area/ruin/unpowered)
 "QH" = (
 /obj/structure/window/reinforced/spawner,
 /obj/item/gun/ballistic/automatic/pistol/solgov,
@@ -727,11 +736,11 @@
 /area/ruin/unpowered)
 "RC" = (
 /obj/structure/window/reinforced/spawner,
-/obj/item/gun/energy/laser/terra,
 /obj/item/paper{
 	pixel_x = 10;
 	pixel_y = -7
 	},
+/obj/item/gun/ballistic/automatic/ar,
 /turf/open/floor/carpet/royalblue,
 /area/ruin/unpowered)
 "RQ" = (
@@ -779,39 +788,6 @@
 	},
 /turf/template_noop,
 /area/ruin/unpowered)
-"Ux" = (
-/obj/structure/window/reinforced/spawner{
-	dir = 1
-	},
-/obj/item/gun/ballistic/automatic/ak47{
-	pixel_x = -6
-	},
-/obj/item/paper{
-	pixel_x = 10;
-	pixel_y = -7
-	},
-/turf/open/floor/grass/fakebasalt,
-/area/ruin/unpowered)
-"Uy" = (
-/obj/structure/table/wood/fancy/red,
-/obj/structure/statue/petrified,
-/obj/item/clothing/under/costume/soviet{
-	pixel_y = -2
-	},
-/obj/item/clothing/suit/armor/vest/russian,
-/obj/item/clothing/head/ushanka{
-	pixel_x = 1;
-	pixel_y = 12
-	},
-/obj/structure/sign/poster/retro/nanotrasen_logo_80s{
-	pixel_y = -32
-	},
-/obj/item/clothing/shoes/jackboots{
-	pixel_x = -3;
-	pixel_y = -9
-	},
-/turf/open/floor/grass/fakebasalt,
-/area/ruin/unpowered)
 "UM" = (
 /obj/structure/table/wood/fancy/orange,
 /obj/structure/statue/petrified,
@@ -832,7 +808,43 @@
 	icon_state = "sand"
 	},
 /area/ruin/unpowered)
-"Vr" = (
+"UO" = (
+/obj/structure/table/wood/fancy/red,
+/obj/structure/statue/petrified,
+/obj/item/clothing/under/costume/soviet{
+	pixel_y = -2
+	},
+/obj/item/clothing/suit/armor/vest/russian,
+/obj/item/clothing/head/ushanka{
+	pixel_x = 1;
+	pixel_y = 12
+	},
+/obj/structure/sign/poster/retro/nanotrasen_logo_80s{
+	pixel_y = -32
+	},
+/obj/item/clothing/shoes/jackboots{
+	pixel_x = -3;
+	pixel_y = -9
+	},
+/turf/open/floor/grass/fakebasalt,
+/area/ruin/unpowered)
+"Vg" = (
+/obj/structure/table/wood/fancy/orange,
+/obj/item/spear/grey_tide,
+/obj/item/paper{
+	pixel_x = 10;
+	pixel_y = -7
+	},
+/obj/structure/sign/poster/official/pda_ad{
+	pixel_x = -32
+	},
+/turf/open/floor/grass/fakebasalt{
+	icon = 'whitesands/icons/turf/floors/whitesands/ws_floors.dmi';
+	icon_plating = "sand";
+	icon_state = "sand"
+	},
+/area/ruin/unpowered)
+"VX" = (
 /obj/structure/fluff/broken_flooring,
 /turf/open/floor/plating/airless{
 	icon_state = "platingdmg3"
@@ -880,18 +892,6 @@
 	icon_state = "sand"
 	},
 /area/ruin/unpowered)
-"Xj" = (
-/obj/structure/window/reinforced/spawner{
-	dir = 1
-	},
-/obj/structure/window/reinforced/spawner{
-	dir = 4
-	},
-/turf/open/floor/fakepit,
-/area/ruin/unpowered)
-"Xp" = (
-/turf/template_noop,
-/area/space)
 "Xx" = (
 /obj/structure/sign/plaques/kiddie{
 	desc = "TODAY: KEPLER 453B";
@@ -907,6 +907,15 @@
 	},
 /turf/open/floor/carpet/nanoweave/purple,
 /area/ruin/unpowered)
+"XS" = (
+/obj/structure/table/wood/fancy/red,
+/obj/item/ammo_box/magazine/ak47,
+/obj/item/paper{
+	pixel_x = 10;
+	pixel_y = -7
+	},
+/turf/open/floor/grass/fakebasalt,
+/area/ruin/unpowered)
 "YF" = (
 /obj/structure/window/reinforced/spawner{
 	dir = 8
@@ -915,15 +924,6 @@
 	icon = 'icons/obj/surgery.dmi'
 	},
 /turf/open/floor/plastic,
-/area/ruin/unpowered)
-"YJ" = (
-/obj/structure/table/wood/fancy/red,
-/obj/item/seeds/lavaland/cactus,
-/obj/item/paper{
-	pixel_x = 10;
-	pixel_y = -7
-	},
-/turf/open/floor/grass/fakebasalt,
 /area/ruin/unpowered)
 "ZH" = (
 /turf/template_noop,
@@ -981,7 +981,7 @@ GF
 OB
 UM
 WO
-zh
+Vg
 Ee
 Ee
 "}
@@ -1010,7 +1010,7 @@ Pd
 Pd
 Pd
 Pd
-Em
+Cx
 Ee
 "}
 (4,1,1) = {"
@@ -1066,7 +1066,7 @@ sW
 sW
 sW
 sW
-hI
+Qv
 Ee
 "}
 (6,1,1) = {"
@@ -1121,8 +1121,8 @@ Ia
 Pu
 sW
 sW
-Cy
-zX
+fk
+kc
 Ee
 "}
 (8,1,1) = {"
@@ -1149,8 +1149,8 @@ Ik
 QH
 sW
 XC
-HR
-pe
+bw
+bt
 Ee
 "}
 (9,1,1) = {"
@@ -1177,8 +1177,8 @@ Ip
 QK
 sW
 sW
-NI
-YJ
+Ma
+ui
 Ee
 "}
 (10,1,1) = {"
@@ -1205,8 +1205,8 @@ IH
 RC
 sW
 XC
-Ux
-KG
+GV
+Hm
 Ee
 "}
 (11,1,1) = {"
@@ -1233,8 +1233,8 @@ Ip
 QK
 sW
 sW
-NI
-xU
+Ma
+XS
 Ee
 "}
 (12,1,1) = {"
@@ -1261,8 +1261,8 @@ Ji
 RQ
 sW
 XC
-oo
-Uy
+Dz
+UO
 Ee
 "}
 (13,1,1) = {"
@@ -1289,8 +1289,8 @@ JR
 So
 sW
 sW
-Xj
-dV
+fM
+IY
 Ee
 "}
 (14,1,1) = {"
@@ -1346,7 +1346,7 @@ Ld
 Ld
 sW
 sW
-hI
+Qv
 Ee
 "}
 (16,1,1) = {"
@@ -1401,8 +1401,8 @@ NM
 TK
 Wk
 YF
-gt
-BS
+Bm
+rl
 Ee
 "}
 (18,1,1) = {"
@@ -1428,8 +1428,8 @@ wd
 Ee
 TR
 Wp
-fH
-ig
+hf
+uE
 Ee
 Ee
 "}
@@ -1487,7 +1487,7 @@ rv
 qH
 tO
 dE
-Xp
+uq
 "}
 (21,1,1) = {"
 ZH
@@ -1512,10 +1512,10 @@ ZH
 ZH
 dE
 qH
-Vr
+VX
 eu
 ZH
-Xp
+uq
 "}
 (22,1,1) = {"
 ZH
@@ -1542,6 +1542,6 @@ qJ
 ZH
 dE
 bq
-Xp
-Xp
+uq
+uq
 "}
