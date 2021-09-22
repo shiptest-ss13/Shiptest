@@ -908,8 +908,10 @@
 	dir = 1
 	},
 /obj/structure/window/reinforced,
-/obj/structure/table,
 /obj/machinery/door/window/brigdoor/eastright,
+/obj/machinery/computer/upload/ai{
+	dir = 4
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/ancientstation/deltaai)
 "cA" = (
@@ -1068,7 +1070,8 @@
 "cY" = (
 /obj/effect/decal/cleanable/robot_debris,
 /obj/machinery/porta_turret/syndicate/energy{
-	dir = 1
+	dir = 1;
+	faction = list("hivebot")
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/ancientstation/deltaai)
@@ -5631,7 +5634,6 @@
 /obj/effect/turf_decal/industrial/warning/corner{
 	dir = 4
 	},
-/obj/item/shuttle_creator,
 /obj/structure/rack,
 /obj/item/circuitboard/computer/shuttle/helm,
 /obj/item/circuitboard/machine/shuttle/engine/electric,
@@ -6651,9 +6653,6 @@
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/ancientstation/deltacorridor)
 "ow" = (
-/obj/item/kirbyplants{
-	icon_state = "plant-25"
-	},
 /obj/effect/decal/cleanable/cobweb,
 /obj/machinery/light/small/broken{
 	dir = 8
@@ -6667,6 +6666,7 @@
 /obj/effect/turf_decal/corner/blue{
 	dir = 4
 	},
+/obj/machinery/sleeper,
 /turf/open/floor/plasteel/airless{
 	initial_gas_mix = "ICEMOON_ATMOS"
 	},
@@ -7766,6 +7766,18 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/ancientstation)
+"Co" = (
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/structure/window/reinforced{
+	dir = 1
+	},
+/obj/structure/window/reinforced,
+/obj/machinery/door/window/brigdoor/eastright,
+/obj/machinery/rnd/server,
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/ancientstation/deltaai)
 "Cq" = (
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/ancientstation/betacorridor)
@@ -12245,8 +12257,8 @@ gk
 cC
 bh
 cz
-cz
-cz
+Co
+Co
 ad
 ad
 lg
