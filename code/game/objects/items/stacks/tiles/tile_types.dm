@@ -1,417 +1,307 @@
-/obj/item/stack/tile
-	name = "broken tile"
-	singular_name = "broken tile"
-	desc = "A broken tile. This should not exist."
-	lefthand_file = 'icons/mob/inhands/misc/tiles_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/misc/tiles_righthand.dmi'
-	icon = 'icons/obj/tiles.dmi'
-	w_class = WEIGHT_CLASS_NORMAL
-	force = 1
-	throwforce = 1
-	throw_speed = 3
-	throw_range = 7
-	max_amount = 60
-	novariants = TRUE
-	/// What type of turf does this tile produce.
-	var/turf_type = null
-	/// Determines certain welder interactions.
-	var/mineralType = null
-	/// Cached associative lazy list to hold the radial options for tile reskinning. See tile_reskinning.dm for more information. Pattern: list[type] -> image
-	var/list/tile_reskin_types
 
+/turf/open/floor/plating/airless
+	icon_state = "plating"
+	initial_gas_mix = AIRLESS_ATMOS
 
-/obj/item/stack/tile/Initialize(mapload, amount)
+/turf/open/floor/plating/lowpressure
+	initial_gas_mix = OPENTURF_LOW_PRESSURE
+	baseturfs = /turf/open/floor/plating/lowpressure
+
+/turf/open/floor/plating/abductor
+	name = "alien floor"
+	icon_state = "alienpod1"
+	tiled_dirt = FALSE
+
+/turf/open/floor/plating/abductor/Initialize()
 	. = ..()
-	pixel_x = rand(-3, 3)
-	pixel_y = rand(-3, 3) //randomize a little
-	if(tile_reskin_types)
-		tile_reskin_types = tile_reskin_list(tile_reskin_types)
+	icon_state = "alienpod[rand(1,9)]"
 
 
-/obj/item/stack/tile/examine(mob/user)
+/turf/open/floor/plating/abductor2
+	name = "alien plating"
+	icon_state = "alienplating"
+	tiled_dirt = FALSE
+
+/turf/open/floor/plating/abductor2/break_tile()
+	return //unbreakable
+
+/turf/open/floor/plating/abductor2/burn_tile()
+	return //unburnable
+
+/turf/open/floor/plating/abductor2/try_replace_tile(obj/item/stack/tile/T, mob/user, params)
+	return
+
+/turf/open/floor/plating/astplate
+	icon_state = "asteroidplating"
+
+/turf/open/floor/plating/airless/astplate
+	icon_state = "asteroidplating"
+
+
+/turf/open/floor/plating/ashplanet
+	icon = 'icons/turf/mining.dmi'
+	gender = PLURAL
+	name = "ash"
+	icon_state = "ash"
+	base_icon_state = "ash"
+	smoothing_flags = SMOOTH_BITMASK | SMOOTH_BORDER
+	desc = "The ground is covered in volcanic ash."
+	baseturfs = /turf/open/floor/plating/ashplanet/wateryrock //I assume this will be a chasm eventually, once this becomes an actual surface
+	initial_gas_mix = LAVALAND_DEFAULT_ATMOS
+	planetary_atmos = TRUE
+	attachment_holes = FALSE
+	footstep = FOOTSTEP_SAND
+	barefootstep = FOOTSTEP_SAND
+	clawfootstep = FOOTSTEP_SAND
+	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
+	tiled_dirt = FALSE
+	var/smooth_icon = 'icons/turf/floors/ash.dmi'
+
+
+/turf/open/floor/plating/ashplanet/Initialize()
 	. = ..()
-	if(throwforce && !is_cyborg) //do not want to divide by zero or show the message to borgs who can't throw
-		var/verb
-		switch(CEILING(MAX_LIVING_HEALTH / throwforce, 1)) //throws to crit a human
-			if(1 to 3)
-				verb = "superb"
-			if(4 to 6)
-				verb = "great"
-			if(7 to 9)
-				verb = "good"
-			if(10 to 12)
-				verb = "fairly decent"
-			if(13 to 15)
-				verb = "mediocre"
-		if(!verb)
-			return
-		. += "<span class='notice'>Those could work as a [verb] throwing weapon.</span>"
+	if(smoothing_flags & SMOOTH_BITMASK)
+		var/matrix/M = new
+		M.Translate(-4, -4)
+		transform = M
+		icon = smooth_icon
+		icon_state = "[icon_state]-[smoothing_junction]"
 
 
-/obj/item/stack/tile/attackby(obj/item/W, mob/user, params)
+/turf/open/floor/plating/ashplanet/try_replace_tile(obj/item/stack/tile/T, mob/user, params)
+	return
 
-	if (W.tool_behaviour == TOOL_WELDER)
-		if(get_amount() < 4)
-			to_chat(user, "<span class='warning'>You need at least four tiles to do this!</span>")
-			return
+/turf/open/floor/plating/ashplanet/break_tile()
+	return
 
-		if(!mineralType)
-			to_chat(user, "<span class='warning'>You can not reform this!</span>")
-			return
+/turf/open/floor/plating/ashplanet/burn_tile()
+	return
 
-		if(W.use_tool(src, user, 0, volume=40))
-			if(mineralType == "plasma")
-				atmos_spawn_air("plasma=5;TEMP=1000")
-				user.visible_message("<span class='warning'>[user.name] sets the plasma tiles on fire!</span>", \
-									"<span class='warning'>You set the plasma tiles on fire!</span>")
-				qdel(src)
-				return
+/turf/open/floor/plating/ashplanet/ash
+	smoothing_groups = list(SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_FLOOR_ASH)
+	canSmoothWith = list(SMOOTH_GROUP_FLOOR_ASH, SMOOTH_GROUP_CLOSED_TURFS)
+	layer = HIGH_TURF_LAYER
+	slowdown = 1
 
-			if (mineralType == "metal")
-				var/obj/item/stack/sheet/metal/new_item = new(user.loc)
-				user.visible_message(
-					"<span class='notice'>[user.name] shaped [src] into metal with the welding tool.</span>",
-					"<span class='notice'>You shaped [src] into metal with the welding tool.</span>",
-					"<span class='hear'>You hear welding.</span>"
-				)
-				var/obj/item/stack/rods/R = src
-				src = null
-				var/replace = (user.get_inactive_held_item()==R)
-				R.use(4)
-				if (!R && replace)
-					user.put_in_hands(new_item)
+/turf/open/floor/plating/ashplanet/rocky
+	gender = PLURAL
+	name = "rocky ground"
+	icon_state = "rockyash"
+	base_icon_state = "rocky_ash"
+	smooth_icon = 'icons/turf/floors/rocky_ash.dmi'
+	layer = MID_TURF_LAYER
+	smoothing_groups = list(SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_FLOOR_ASH_ROCKY)
+	canSmoothWith = list(SMOOTH_GROUP_FLOOR_ASH_ROCKY, SMOOTH_GROUP_CLOSED_TURFS)
+	footstep = FOOTSTEP_FLOOR
+	barefootstep = FOOTSTEP_HARD_BAREFOOT
+	clawfootstep = FOOTSTEP_HARD_CLAW
+	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
 
-			else
-				var/sheet_type = text2path("/obj/item/stack/sheet/mineral/[mineralType]")
-				var/obj/item/stack/sheet/mineral/new_item = new sheet_type(user.loc)
-				user.visible_message(
-					"<span class='notice'>[user.name] shaped [src] into a sheet with the welding tool.</span>",
-					"<span class='notice'>You shaped [src] into a sheet with the welding tool.</span>",
-					"<span class='hear'>You hear welding.</span>"
-				)
-				var/obj/item/stack/rods/R = src
-				src = null
-				var/replace = (user.get_inactive_held_item()==R)
-				R.use(4)
-				if (!R && replace)
-					user.put_in_hands(new_item)
-	else
-		return ..()
+/turf/open/floor/plating/ashplanet/wateryrock
+	gender = PLURAL
+	name = "wet rocky ground"
+	smoothing_flags = NONE
+	icon_state = "wateryrock"
+	slowdown = 2
+	footstep = FOOTSTEP_FLOOR
+	barefootstep = FOOTSTEP_HARD_BAREFOOT
+	clawfootstep = FOOTSTEP_HARD_CLAW
+	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
 
-//Grass
-/obj/item/stack/tile/grass
-	name = "grass tile"
-	singular_name = "grass floor tile"
-	desc = "A patch of grass like they use on space golf courses."
-	icon_state = "tile_grass"
-	item_state = "tile-grass"
-	turf_type = /turf/open/floor/grass
-	resistance_flags = FLAMMABLE
-
-//Fairygrass
-/obj/item/stack/tile/fairygrass
-	name = "fairygrass tile"
-	singular_name = "fairygrass floor tile"
-	desc = "A patch of odd, glowing blue grass."
-	icon_state = "tile_fairygrass"
-	item_state = "tile-fairygrass"
-	turf_type = /turf/open/floor/grass/fairy
-	resistance_flags = FLAMMABLE
-
-//Wood
-/obj/item/stack/tile/wood
-	name = "wood floor tile"
-	singular_name = "wood floor tile"
-	desc = "An easy to fit wood floor tile."
-	icon_state = "tile-wood"
-	item_state = "tile-wood"
-	turf_type = /turf/open/floor/wood
-	resistance_flags = FLAMMABLE
-
-//Basalt
-/obj/item/stack/tile/basalt
-	name = "basalt tile"
-	singular_name = "basalt floor tile"
-	desc = "Artificially made ashy soil themed on a hostile environment."
-	icon_state = "tile_basalt"
-	item_state = "tile-basalt"
-	turf_type = /turf/open/floor/grass/fakebasalt
-
-//Carpets
-/obj/item/stack/tile/carpet
-	name = "carpet"
-	singular_name = "carpet"
-	desc = "A piece of carpet. It is the same size as a floor tile."
-	icon_state = "tile-carpet"
-	item_state = "tile-carpet"
-	turf_type = /turf/open/floor/carpet
-	resistance_flags = FLAMMABLE
-	tableVariant = /obj/structure/table/wood/fancy
-
-/obj/item/stack/tile/carpet/black
-	name = "black carpet"
-	icon_state = "tile-carpet-black"
-	item_state = "tile-carpet-black"
-	turf_type = /turf/open/floor/carpet/black
-	tableVariant = /obj/structure/table/wood/fancy/black
-
-/obj/item/stack/tile/carpet/blue
-	name = "blue carpet"
-	icon_state = "tile-carpet-blue"
-	item_state = "tile-carpet-blue"
-	turf_type = /turf/open/floor/carpet/blue
-	tableVariant = /obj/structure/table/wood/fancy/blue
-
-/obj/item/stack/tile/carpet/cyan
-	name = "cyan carpet"
-	icon_state = "tile-carpet-cyan"
-	item_state = "tile-carpet-cyan"
-	turf_type = /turf/open/floor/carpet/cyan
-	tableVariant = /obj/structure/table/wood/fancy/cyan
-
-/obj/item/stack/tile/carpet/green
-	name = "green carpet"
-	icon_state = "tile-carpet-green"
-	item_state = "tile-carpet-green"
-	turf_type = /turf/open/floor/carpet/green
-	tableVariant = /obj/structure/table/wood/fancy/green
-
-/obj/item/stack/tile/carpet/orange
-	name = "orange carpet"
-	icon_state = "tile-carpet-orange"
-	item_state = "tile-carpet-orange"
-	turf_type = /turf/open/floor/carpet/orange
-	tableVariant = /obj/structure/table/wood/fancy/orange
-
-/obj/item/stack/tile/carpet/purple
-	name = "purple carpet"
-	icon_state = "tile-carpet-purple"
-	item_state = "tile-carpet-purple"
-	turf_type = /turf/open/floor/carpet/purple
-	tableVariant = /obj/structure/table/wood/fancy/purple
-
-/obj/item/stack/tile/carpet/red
-	name = "red carpet"
-	icon_state = "tile-carpet-red"
-	item_state = "tile-carpet-red"
-	turf_type = /turf/open/floor/carpet/red
-	tableVariant = /obj/structure/table/wood/fancy/red
-
-/obj/item/stack/tile/carpet/royalblack
-	name = "royal black carpet"
-	icon_state = "tile-carpet-royalblack"
-	item_state = "tile-carpet-royalblack"
-	turf_type = /turf/open/floor/carpet/royalblack
-	tableVariant = /obj/structure/table/wood/fancy/royalblack
-
-/obj/item/stack/tile/carpet/royalblue
-	name = "royal blue carpet"
-	icon_state = "tile-carpet-royalblue"
-	item_state = "tile-carpet-royalblue"
-	turf_type = /turf/open/floor/carpet/royalblue
-	tableVariant = /obj/structure/table/wood/fancy/royalblue
-
-/obj/item/stack/tile/carpet/executive
-	name = "executive carpet"
-	icon_state = "tile_carpet_executive"
-	item_state = "tile-carpet-royalblue"
-	turf_type = /turf/open/floor/carpet/executive
-
-/obj/item/stack/tile/carpet/stellar
-	name = "stellar carpet"
-	icon_state = "tile_carpet_stellar"
-	item_state = "tile-carpet-royalblue"
-	turf_type = /turf/open/floor/carpet/stellar
-
-/obj/item/stack/tile/carpet/donk
-	name = "donk co promotional carpet"
-	icon_state = "tile_carpet_donk"
-	item_state = "tile-carpet-orange"
-	turf_type = /turf/open/floor/carpet/donk
-
-/obj/item/stack/tile/carpet/fifty
-	amount = 50
-
-/obj/item/stack/tile/carpet/black/fifty
-	amount = 50
-
-/obj/item/stack/tile/carpet/blue/fifty
-	amount = 50
-
-/obj/item/stack/tile/carpet/cyan/fifty
-	amount = 50
-
-/obj/item/stack/tile/carpet/green/fifty
-	amount = 50
-
-/obj/item/stack/tile/carpet/orange/fifty
-	amount = 50
-
-/obj/item/stack/tile/carpet/purple/fifty
-	amount = 50
-
-/obj/item/stack/tile/carpet/red/fifty
-	amount = 50
-
-/obj/item/stack/tile/carpet/royalblack/fifty
-	amount = 50
-
-/obj/item/stack/tile/carpet/royalblue/fifty
-	amount = 50
+/turf/open/floor/plating/ashplanet/wateryrock/Initialize()
+	icon_state = "[icon_state][rand(1, 9)]"
+	. = ..()
 
 
-/obj/item/stack/tile/fakespace
-	name = "astral carpet"
-	singular_name = "astral carpet"
-	desc = "A piece of carpet with a convincing star pattern."
-	icon_state = "tile_space"
-	item_state = "tile-space"
-	turf_type = /turf/open/floor/fakespace
-	resistance_flags = FLAMMABLE
-	merge_type = /obj/item/stack/tile/fakespace
+/turf/open/floor/plating/beach
+	name = "beach"
+	icon = 'icons/misc/beach.dmi'
+	flags_1 = NONE
+	attachment_holes = FALSE
+	bullet_bounce_sound = null
+	footstep = FOOTSTEP_SAND
+	barefootstep = FOOTSTEP_SAND
+	clawfootstep = FOOTSTEP_SAND
+	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
 
-/obj/item/stack/tile/fakespace/loaded
-	amount = 30
+/turf/open/floor/plating/beach/try_replace_tile(obj/item/stack/tile/T, mob/user, params)
+	return
 
-/obj/item/stack/tile/fakepit
-	name = "fake pits"
-	singular_name = "fake pit"
-	desc = "A piece of carpet with a forced perspective illusion of a pit. No way this could fool anyone!"
-	icon_state = "tile_pit"
-	item_state = "tile-basalt"
-	turf_type = /turf/open/floor/fakepit
-	resistance_flags = FLAMMABLE
-	merge_type = /obj/item/stack/tile/fakepit
+/turf/open/floor/plating/beach/ex_act(severity, target)
+	contents_explosion(severity, target)
 
-/obj/item/stack/tile/fakepit/loaded
-	amount = 30
+/turf/open/floor/plating/beach/sand
+	gender = PLURAL
+	name = "sand"
+	desc = "Surf's up."
+	icon_state = "sand"
+	baseturfs = /turf/open/floor/plating/beach/sand
 
-//High-traction
-/obj/item/stack/tile/noslip
-	name = "high-traction floor tile"
-	singular_name = "high-traction floor tile"
-	desc = "A high-traction floor tile. It feels rubbery in your hand."
-	icon_state = "tile_noslip"
-	item_state = "tile-noslip"
-	turf_type = /turf/open/floor/noslip
-	merge_type = /obj/item/stack/tile/noslip
+/turf/open/floor/plating/beach/coastline_t
+	name = "coastline"
+	desc = "Tide's high tonight. Charge your batons."
+	icon_state = "sandwater_t"
+	baseturfs = /turf/open/floor/plating/beach/coastline_t
 
-/obj/item/stack/tile/noslip/thirty
-	amount = 30
+/turf/open/floor/plating/beach/coastline_b //need to make this water subtype.
+	name = "coastline"
+	icon_state = "sandwater_b"
+	baseturfs = /turf/open/floor/plating/beach/coastline_b
+	footstep = FOOTSTEP_LAVA
+	barefootstep = FOOTSTEP_LAVA
+	clawfootstep = FOOTSTEP_LAVA
+	heavyfootstep = FOOTSTEP_LAVA
 
-//Circuit
-/obj/item/stack/tile/circuit
-	name = "blue circuit tile"
-	singular_name = "blue circuit tile"
-	desc = "A blue circuit tile."
-	icon_state = "tile_bcircuit"
-	item_state = "tile-bcircuit"
-	turf_type = /turf/open/floor/circuit
-	custom_materials = list(/datum/material/iron = 500, /datum/material/glass = 500) // WS Edit - Item Materials
+/turf/open/floor/plating/beach/water
+	gender = PLURAL
+	name = "water"
+	desc = "You get the feeling that nobody's bothered to actually make this water functional..."
+	icon_state = "water"
+	baseturfs = /turf/open/floor/plating/beach/water
+	footstep = FOOTSTEP_LAVA //placeholder, kinda.
+	barefootstep = FOOTSTEP_LAVA
+	clawfootstep = FOOTSTEP_LAVA
+	heavyfootstep = FOOTSTEP_LAVA
 
-/obj/item/stack/tile/circuit/green
-	name = "green circuit tile"
-	singular_name = "green circuit tile"
-	desc = "A green circuit tile."
-	icon_state = "tile_gcircuit"
-	item_state = "tile-gcircuit"
-	turf_type = /turf/open/floor/circuit/green
+/turf/open/floor/plating/beach/coastline_t/sandwater_inner
+	icon_state = "sandwater_inner"
+	baseturfs = /turf/open/floor/plating/beach/coastline_t/sandwater_inner
 
-/obj/item/stack/tile/circuit/green/anim
-	turf_type = /turf/open/floor/circuit/green/anim
+/turf/open/floor/plating/ironsand
+	gender = PLURAL
+	name = "iron sand"
+	desc = "Like sand, but more <i>metal</i>."
+	footstep = FOOTSTEP_SAND
+	barefootstep = FOOTSTEP_SAND
+	clawfootstep = FOOTSTEP_SAND
+	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
 
-/obj/item/stack/tile/circuit/red
-	name = "red circuit tile"
-	singular_name = "red circuit tile"
-	desc = "A red circuit tile."
-	icon_state = "tile_rcircuit"
-	item_state = "tile-rcircuit"
-	turf_type = /turf/open/floor/circuit/red
+/turf/open/floor/plating/ironsand/Initialize()
+	. = ..()
+	icon_state = "ironsand[rand(1,15)]"
 
-/obj/item/stack/tile/circuit/red/anim
-	turf_type = /turf/open/floor/circuit/red/anim
+/turf/open/floor/plating/ironsand/burn_tile()
+	return
 
-//Pod floor
-/obj/item/stack/tile/pod
-	name = "pod floor tile"
-	singular_name = "pod floor tile"
-	desc = "A grooved floor tile."
-	icon_state = "tile_pod"
-	item_state = "tile-pod"
-	turf_type = /turf/open/floor/pod
+/turf/open/floor/plating/ironsand/try_replace_tile(obj/item/stack/tile/T, mob/user, params)
+	return
 
-/obj/item/stack/tile/pod/light
-	name = "light pod floor tile"
-	singular_name = "light pod floor tile"
-	desc = "A lightly colored grooved floor tile."
-	icon_state = "tile_podlight"
-	turf_type = /turf/open/floor/pod/light
+/turf/open/floor/plating/ice
+	name = "ice sheet"
+	desc = "A sheet of solid ice. Looks slippery."
+	icon = 'icons/turf/floors/ice_turf.dmi'
+	icon_state = "ice_turf-0"
+	initial_gas_mix = FROZEN_ATMOS
+	initial_temperature = 180
+	planetary_atmos = TRUE
+	baseturfs = /turf/open/floor/plating/ice
+	slowdown = 1
+	attachment_holes = FALSE
+	bullet_sizzle = TRUE
+	footstep = FOOTSTEP_FLOOR
+	barefootstep = FOOTSTEP_HARD_BAREFOOT
+	clawfootstep = FOOTSTEP_HARD_CLAW
+	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
 
-/obj/item/stack/tile/pod/dark
-	name = "dark pod floor tile"
-	singular_name = "dark pod floor tile"
-	desc = "A darkly colored grooved floor tile."
-	icon_state = "tile_poddark"
-	turf_type = /turf/open/floor/pod/dark
+/turf/open/floor/plating/ice/Initialize()
+	. = ..()
+	MakeSlippery(TURF_WET_PERMAFROST, INFINITY, 0, INFINITY, TRUE)
 
-//Plasteel (normal)
-/obj/item/stack/tile/plasteel
-	name = "floor tile"
-	singular_name = "floor tile"
-	desc = "The ground you walk on."
-	icon_state = "tile"
-	item_state = "tile"
-	force = 6
-	custom_materials = list(/datum/material/iron=500)
-	throwforce = 10
-	flags_1 = CONDUCT_1
-	turf_type = /turf/open/floor/plasteel
-	mineralType = "metal"
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 70)
-	resistance_flags = FIRE_PROOF
-	color = COLOR_FLOORTILE_GRAY
+/turf/open/floor/plating/ice/try_replace_tile(obj/item/stack/tile/T, mob/user, params)
+	return
 
-/obj/item/stack/tile/plasteel/cyborg
-	custom_materials = null // All other Borg versions of items have no Metal or Glass - RR
-	is_cyborg = 1
-	cost = 125
+/turf/open/floor/plating/ice/smooth
+	icon_state = "ice_turf-255"
+	base_icon_state = "ice_turf"
+	smoothing_flags = SMOOTH_BITMASK | SMOOTH_BORDER
+	smoothing_groups = list(SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_FLOOR_ICE)
+	canSmoothWith = list(SMOOTH_GROUP_FLOOR_ICE)
 
-/obj/item/stack/tile/plastic
-	name = "plastic tile"
-	singular_name = "plastic floor tile"
-	desc = "A tile of cheap, flimsy plastic flooring."
-	icon_state = "tile_plastic"
-	custom_materials = list(/datum/material/plastic=500)
-	turf_type = /turf/open/floor/plastic
+/turf/open/floor/plating/ice/colder
+	initial_temperature = 140
 
-/obj/item/stack/tile/plasteel/dark
-	name = "dark tile"
-	turf_type = /turf/open/floor/plasteel/dark
-	merge_type = /obj/item/stack/tile/plasteel/dark
-/obj/item/stack/tile/plasteel/white
-	name = "white tile"
-	turf_type = /turf/open/floor/plasteel/white
-	merge_type = /obj/item/stack/tile/plasteel/white
-/obj/item/stack/tile/plasteel/grimy
-	name = "grimy floor tile"
-	turf_type = /turf/open/floor/plasteel/grimy
-	merge_type = /obj/item/stack/tile/plasteel/grimy
+/turf/open/floor/plating/ice/temperate
+	initial_temperature = 255.37
 
-/obj/item/stack/tile/material
-	name = "floor tile"
-	singular_name = "floor tile"
-	desc = "The ground you walk on."
-	throwforce = 10
-	icon_state = "material_tile"
-	turf_type = /turf/open/floor/material
-	material_flags = MATERIAL_ADD_PREFIX | MATERIAL_COLOR | MATERIAL_AFFECT_STATISTICS
+/turf/open/floor/plating/ice/break_tile()
+	return
 
-/obj/item/stack/tile/eighties
-	name = "retro tile"
-	singular_name = "retro floor tile"
-	desc = "A stack of floor tiles that remind you of an age of funk."
-	icon_state = "tile_eighties"
-	turf_type = /turf/open/floor/eighties
+/turf/open/floor/plating/ice/burn_tile()
+	return
 
-/obj/item/stack/tile/eighties/loaded
-	amount = 15
+/turf/open/floor/plating/ice/icemoon
+	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
+
+/turf/open/floor/plating/snowed
+	name = "snowed-over plating"
+	desc = "A section of heated plating, helps keep the snow from stacking up too high."
+	icon = 'icons/turf/snow.dmi'
+	icon_state = "snowplating"
+	initial_gas_mix = FROZEN_ATMOS
+	initial_temperature = 180
+	attachment_holes = FALSE
+	planetary_atmos = TRUE
+	footstep = FOOTSTEP_SAND
+	barefootstep = FOOTSTEP_SAND
+	clawfootstep = FOOTSTEP_SAND
+	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
+
+/turf/open/floor/plating/snowed/cavern
+	initial_gas_mix = "o2=0;n2=82;plasma=24;TEMP=120"
+
+/turf/open/floor/plating/snowed/smoothed
+	icon = 'icons/turf/floors/snow_turf.dmi'
+	icon_state = "snow_turf-0"
+	base_icon_state = "snow_turf"
+	smoothing_flags = SMOOTH_BITMASK | SMOOTH_BORDER
+	smoothing_groups = list(SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_FLOOR_SNOWED)
+	canSmoothWith = list(SMOOTH_GROUP_FLOOR_SNOWED)
+	planetary_atmos = TRUE
+
+/turf/open/floor/plating/snowed/colder
+	initial_temperature = 140
+
+/turf/open/floor/plating/snowed/temperatre
+	initial_temperature = 255.37
+
+/turf/open/floor/plating/snowed/smoothed/icemoon
+	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
+
+/turf/open/floor/plating/grass
+	name = "grass"
+	desc = "A patch of grass."
+	icon_state = "grass0"
+	base_icon_state = "grass"
+	bullet_bounce_sound = null
+	footstep = FOOTSTEP_GRASS
+	barefootstep = FOOTSTEP_GRASS
+	clawfootstep = FOOTSTEP_GRASS
+	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
+	smoothing_flags = SMOOTH_BITMASK
+	smoothing_groups = list(SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_FLOOR_GRASS)
+	canSmoothWith = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_FLOOR_GRASS)
+	layer = HIGH_TURF_LAYER
+	var/smooth_icon = 'icons/turf/floors/grass.dmi'
+
+/turf/open/floor/plating/grass/Initialize()
+	. = ..()
+	if(smoothing_flags)
+		var/matrix/translation = new
+		translation.Translate(-9, -9)
+		transform = translation
+		icon = smooth_icon
+
+/turf/open/floor/plating/grass/lavaland
+	initial_gas_mix = LAVALAND_DEFAULT_ATMOS
+
+/turf/open/floor/plating/sandy_dirt
+	gender = PLURAL
+	name = "dirt"
+	desc = "Upon closer examination, it's still dirt."
+	icon_state = "sand"
+	bullet_bounce_sound = null
+	footstep = FOOTSTEP_SAND
+	barefootstep = FOOTSTEP_SAND
+	clawfootstep = FOOTSTEP_SAND
+	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
+	tiled_dirt = FALSE
