@@ -1,19 +1,21 @@
 
 /turf/open/floor/plating/airless
+	icon_state = "plating"
 	initial_gas_mix = AIRLESS_ATMOS
 
 /turf/open/floor/plating/lowpressure
 	initial_gas_mix = OPENTURF_LOW_PRESSURE
 	baseturfs = /turf/open/floor/plating/lowpressure
 
-/turf/open/floor/plating/icemoon
-	icon_state = "plating"
-	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
-
 /turf/open/floor/plating/abductor
 	name = "alien floor"
 	icon_state = "alienpod1"
 	tiled_dirt = FALSE
+
+/turf/open/floor/plating/abductor/Initialize()
+	. = ..()
+	icon_state = "alienpod[rand(1,9)]"
+
 
 /turf/open/floor/plating/abductor2
 	name = "alien plating"
@@ -41,6 +43,7 @@
 	gender = PLURAL
 	name = "ash"
 	icon_state = "ash"
+	base_icon_state = "ash"
 	smoothing_flags = SMOOTH_BITMASK | SMOOTH_BORDER
 	desc = "The ground is covered in volcanic ash."
 	baseturfs = /turf/open/floor/plating/ashplanet/wateryrock //I assume this will be a chasm eventually, once this becomes an actual surface
@@ -84,6 +87,7 @@
 	gender = PLURAL
 	name = "rocky ground"
 	icon_state = "rockyash"
+	base_icon_state = "rocky_ash"
 	smooth_icon = 'icons/turf/floors/rocky_ash.dmi'
 	layer = MID_TURF_LAYER
 	smoothing_groups = list(SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_FLOOR_ASH_ROCKY)
@@ -167,7 +171,6 @@
 	gender = PLURAL
 	name = "iron sand"
 	desc = "Like sand, but more <i>metal</i>."
-	icon_state = "ironsand1"
 	footstep = FOOTSTEP_SAND
 	barefootstep = FOOTSTEP_SAND
 	clawfootstep = FOOTSTEP_SAND
@@ -209,6 +212,7 @@
 
 /turf/open/floor/plating/ice/smooth
 	icon_state = "ice_turf-255"
+	base_icon_state = "ice_turf"
 	smoothing_flags = SMOOTH_BITMASK | SMOOTH_BORDER
 	smoothing_groups = list(SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_FLOOR_ICE)
 	canSmoothWith = list(SMOOTH_GROUP_FLOOR_ICE)
@@ -227,7 +231,6 @@
 
 /turf/open/floor/plating/ice/icemoon
 	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
-	slowdown = 0
 
 /turf/open/floor/plating/snowed
 	name = "snowed-over plating"
@@ -244,14 +247,12 @@
 	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
 
 /turf/open/floor/plating/snowed/cavern
-	initial_gas_mix = "n2=82;plasma=24;TEMP=120"
-
-/turf/open/floor/plating/snowed/icemoon
-	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
+	initial_gas_mix = "o2=0;n2=82;plasma=24;TEMP=120"
 
 /turf/open/floor/plating/snowed/smoothed
 	icon = 'icons/turf/floors/snow_turf.dmi'
 	icon_state = "snow_turf-0"
+	base_icon_state = "snow_turf"
 	smoothing_flags = SMOOTH_BITMASK | SMOOTH_BORDER
 	smoothing_groups = list(SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_FLOOR_SNOWED)
 	canSmoothWith = list(SMOOTH_GROUP_FLOOR_SNOWED)
@@ -270,7 +271,7 @@
 	name = "grass"
 	desc = "A patch of grass."
 	icon_state = "grass0"
-	baseturfs = /turf/open/floor/plating/sandy_dirt
+	base_icon_state = "grass"
 	bullet_bounce_sound = null
 	footstep = FOOTSTEP_GRASS
 	barefootstep = FOOTSTEP_GRASS
