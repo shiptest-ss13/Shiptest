@@ -1067,8 +1067,8 @@
 	mob_overlay_icon = 'icons/mob/clothing/suit.dmi'
 	mob_overlay_state = "brittle_master"
 	equip_delay_other = 80
-	strip_delay = 150//to prevent hotswapping in battle
-	equip_delay_other = 20
+	strip_delay = 100//to prevent hotswapping in battle
+	equip_delay_other = 10
 	slowdown =  -0.3
 	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
 	allowed = list(/obj/item/flashlight, /obj/item/tank/internals)
@@ -1082,7 +1082,7 @@
 	armor = list(melee = -75, bullet = -15, laser = -75, energy = -55, bomb = -55, bio = 0, rad = 100, fire = 100, acid = -45)//bio causes negative chem effects to be multiplied. Bad times.
 	var/current_charges = 3
 	var/max_charges = 3 //How many charges total the shielding has
-	var/recharge_delay = 35 //How long after we've been shot before we can start recharging. 3 seconds here
+	var/recharge_delay = 45 //How long after we've been shot before we can start recharging. 3 seconds here
 	var/recharge_cooldown = 0 //Time since we've last been shot
 	var/recharge_rate = 3 //How quickly the shield recharges once it starts charging
 	var/shield_state = "shimmerair"
@@ -1103,7 +1103,7 @@
 		if(recharge_rate)
 			START_PROCESSING(SSobj, src)
 		if(current_charges <= 1)
-			to_chat(owner, "<span class='warning'>Your [src]'s defensive wind is failing!</span>")
+			to_chat(owner, "<span class='warning'>The defensive wind is faltering!</span>")
 		if(current_charges <= 0)
 			owner.visible_message("<span class='warning'>The desert storm protecting [owner] fades away, leaving only ionized sparks!</span>")
 			playsound(loc, 'sound/weather/ashstorm/inside/weak_end.ogg', 100, TRUE)
@@ -1121,6 +1121,7 @@
 		current_charges = clamp((current_charges + recharge_rate), 0, max_charges)
 		playsound(loc, 'sound/effects/magic.ogg', 40, TRUE)
 		if(current_charges == max_charges)
+			visible_message("<span class='warning'>The strange wind returns to full strength!</span>")
 			STOP_PROCESSING(SSobj, src)
 		shield_state = "[shield_on]"
 		if(ishuman(loc))
