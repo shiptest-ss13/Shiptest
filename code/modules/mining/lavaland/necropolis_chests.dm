@@ -1085,8 +1085,8 @@
 	var/recharge_delay = 35 //How long after we've been shot before we can start recharging. 3 seconds here
 	var/recharge_cooldown = 0 //Time since we've last been shot
 	var/recharge_rate = 3 //How quickly the shield recharges once it starts charging
-	var/shield_state = "shield-old"
-	var/shield_on = "shield-old"
+	var/shield_state = "shimmerair"
+	var/shield_on = "shimmerair"
 
 /obj/item/clothing/suit/ascetic/examine(mob/user)
 	. = ..()
@@ -1130,7 +1130,7 @@
 /obj/item/clothing/suit/ascetic/worn_overlays(isinhands)
 	. = list()
 	if(!isinhands)
-		. += mutable_appearance('icons/effects/effects.dmi', shield_state, MOB_LAYER + 0.01)
+		. += mutable_appearance('icons/effects/effects.dmi', shield_state, MOB_LAYER - 0.01)
 
 /obj/item/jacobs_ladder
 	name = "jacob's ladder"

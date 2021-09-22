@@ -63,7 +63,7 @@
 	name = "mysterious boat"
 	desc = "This boat moves where you will it, forever pushing off a perfect phantom current. The tough underbelly it boasts protects against all variety of strange terrain."
 	icon_state = "dragon_boat"
-	var/allowed_turfdrag = list(/turf/open/lava, /turf/open/space, /turf/water)
+	var/allowed_turfdrag = list(/turf/open/lava, /turf/open/space, /turf/open/water)
 
 /obj/vehicle/ridden/lavaboat/dragon/Initialize()
 	. = ..()
