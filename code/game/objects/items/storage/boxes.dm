@@ -388,6 +388,7 @@
 	name = "boxed tracking implant kit"
 	desc = "For finding those who have died on the accursed lavaworld."
 	illustration = "implant"
+	custom_price = 600
 
 /obj/item/storage/box/minertracker/PopulateContents()
 	var/static/items_inside = list(

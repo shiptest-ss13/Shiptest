@@ -40,8 +40,7 @@
 	update_icon_nopipes()
 
 	underlays.Cut()
-
-	plane = showpipe ? GAME_PLANE : FLOOR_PLANE
+	plane = showpipe ? FLOOR_PLANE : FLOOR_PLANE
 
 	if(!showpipe)
 		return
@@ -172,7 +171,6 @@
 	for(var/i in 1 to device_type)
 		var/datum/pipeline/parent = parents[i]
 		if(!parent)
-			WARNING("Component is missing a pipenet! Rebuilding...")
 			SSair.add_to_rebuild_queue(src)
 			continue
 		parent.update = 1

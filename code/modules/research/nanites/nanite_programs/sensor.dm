@@ -277,6 +277,9 @@
 		"Fly" = /datum/species/fly,
 		"Felinid" = /datum/species/human/felinid,
 		"Jelly" = /datum/species/jelly,
+		"IPC" = /datum/species/ipc,
+		"Squid" = /datum/species/squid,
+		"Teshari" = /datum/species/teshari,
 		"Arachnid" = /datum/species/spider
 	)
 

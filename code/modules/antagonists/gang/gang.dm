@@ -340,44 +340,6 @@
 					return TRUE
 	return FALSE
 
-
-/datum/antagonist/gang/dutch
-	name = "Dutch van der Linde's Gang"
-	roundend_category = "Dutch's outlaws"
-	gang_name = "Dutch van der Linde's Gang"
-	gang_id = "VDL"
-	acceptable_clothes = list(/obj/item/clothing/head/soft/black,
-							/obj/item/clothing/under/costume/dutch,
-							/obj/item/clothing/suit/dutch,
-							/obj/item/clothing/head/bowler,
-							/obj/item/clothing/mask/bandana/black)
-	free_clothes = list(/obj/item/clothing/under/costume/dutch,
-						/obj/item/clothing/head/bowler,
-						/obj/item/clothing/suit/dutch,
-						/obj/item/toy/crayon/spraycan)
-	gang_objective = "Listen here, fellas. I have a plan. Just one more score on this crappy little po-dunk station. Gold bars, friends. Get all the gold out of the silos, and leave nothing behind! Spread the gold amongst yourselves for the escape plan, make sure everyone has at least 1 bar. After this, it'll be space mangos at Tahiti. You just gotta have a little faith."
-	antag_hud_name = "Dutch"
-
-/datum/antagonist/gang/dutch/check_gang_objective()
-	var/datum/game_mode/gang/F = SSticker.mode
-	for(var/M in F.gangbangers)
-		var/datum/mind/MI = M
-		if(MI.has_antag_datum(src.type))
-			if(!considered_alive(MI.current))
-				continue // dead people cant really do the objective lol
-			var/list/items_to_check = MI.current.GetAllContents()
-			for(var/I in items_to_check)
-				var/obj/IT = I
-				if(istype(IT, /obj/item/stack/sheet/mineral/gold))
-					continue
-			return FALSE // didnt pass the bar check, no point in continuing to loop
-	var/obj/machinery/ore_silo/S = GLOB.ore_silo_default
-	var/datum/component/material_container/mat_container = S.GetComponent(/datum/component/material_container)
-	if(mat_container.materials[SSmaterials.GetMaterialRef(/datum/material/gold)] >= 2000) // if theres at least 1 bar of gold left in the silo, they've failed to heist all of it
-		return FALSE
-	return TRUE
-
-
 /datum/team/gang
 	var/points = 0
 	var/gang_id = "LLJK"

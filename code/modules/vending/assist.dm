@@ -5,7 +5,7 @@
 		/obj/item/assembly/signaler = 4,
 		/obj/item/wirecutters = 1,
 		/obj/item/cartridge/signal = 4,
-		/obj/item/stack/sticky_tape = 4,
+		/obj/item/stack/tape = 4,
 		/obj/item/stock_parts/matter_bin = 3,
 		/obj/item/stock_parts/manipulator = 3,
 		/obj/item/stock_parts/micro_laser = 3,
@@ -17,6 +17,7 @@
 		/obj/item/assembly/health = 2,
 		/obj/item/stock_parts/cell/high = 1)
 	premium = list(
+		/obj/item/stack/tape/industrial = 2,
 		/obj/item/price_tagger = 3,
 		/obj/item/vending_refill/custom = 3,
 		/obj/item/circuitboard/machine/vendor = 3)

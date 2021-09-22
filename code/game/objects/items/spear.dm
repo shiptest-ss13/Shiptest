@@ -18,6 +18,7 @@
 	sharpness = IS_SHARP
 	max_integrity = 200
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 30)
+	species_exception = list(/datum/species/teshari)	//WS edit - Tesh can use satchels
 	var/war_cry = "AAAAARGH!!!"
 	var/icon_prefix = "spearglass"
 

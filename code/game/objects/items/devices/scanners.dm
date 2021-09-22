@@ -12,10 +12,10 @@ GENE SCANNER
 */
 
 // Describes the two modes of scanning available for health analyzers
-#define SCANMODE_HEALTH		0
-#define SCANMODE_CHEMICAL 	1
-#define SCANNER_CONDENSED 	0
-#define SCANNER_VERBOSE 	1
+#define SCANMODE_HEALTH 0
+#define SCANMODE_CHEMICAL 1
+#define SCANNER_CONDENSED 0
+#define SCANNER_VERBOSE 1
 
 /obj/item/t_scanner
 	name = "\improper T-ray scanner"
@@ -825,6 +825,41 @@ GENE SCANNER
 /obj/item/scanner_wand/proc/return_patient()
 	var/returned_target = selected_target
 	return returned_target
+
+/obj/item/reagent_scanner //essentially just the code from the PDA reagent scanner, but shoved into this object, and specifies amount
+	name = "reagent scanner"
+	icon = 'icons/obj/device.dmi'
+	icon_state = "reagent"
+	item_state = "reagentanalyzer"
+	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
+	desc = "A hand-held item capable of analyzing the reagents in a container, including complex, meat-based containers such as humans."
+	flags_1 = CONDUCT_1
+	item_flags = NOBLUDGEON
+	slot_flags = ITEM_SLOT_BELT
+	throwforce = 3
+	w_class = WEIGHT_CLASS_TINY
+	throw_speed = 3
+	throw_range = 7
+	custom_materials = list(/datum/material/iron=200)
+
+/obj/item/reagent_scanner/afterattack(atom/A as mob|obj|turf|area, mob/user, proximity)
+	. = ..()
+	flick("[icon_state]-scan", src)
+	if(!proximity)
+		return
+	if(!isnull(A.reagents))
+		if(A.reagents.reagent_list.len > 0)
+			var/reagents_length = A.reagents.reagent_list.len
+			to_chat(user, "<span class='notice'>[reagents_length] chemical agent[reagents_length > 1 ? "s" : ""] found.</span>")
+			for (var/re in A.reagents.reagent_list)
+				var/datum/reagent/R = re
+				var/amount = R.volume
+				to_chat(user, "<span class='notice'>\t [amount] units of [re].</span>")
+		else
+			to_chat(user, "<span class='notice'>No active chemical agents found in [A].</span>")
+	else
+		to_chat(user, "<span class='notice'>No significant chemical agents found in [A].</span>")
 
 #undef SCANMODE_HEALTH
 #undef SCANMODE_CHEMICAL

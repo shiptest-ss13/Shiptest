@@ -28,9 +28,6 @@
 	if(locate(/obj/effect/rune) in T)
 		to_chat(owner, "<span class='cult'>There is already a rune here.</span>")
 		return FALSE
-	if(!is_station_level(T.z) && !is_mining_level(T.z))
-		to_chat(owner, "<span class='warning'>The veil is not weak enough here.</span>")
-		return FALSE
 	return TRUE
 
 

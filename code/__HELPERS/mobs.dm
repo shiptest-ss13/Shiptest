@@ -91,8 +91,10 @@
 		init_sprite_accessory_subtypes(/datum/sprite_accessory/spider_spinneret, GLOB.spider_spinneret_list)
 	if(!GLOB.spider_mandibles_list.len)
 		init_sprite_accessory_subtypes(/datum/sprite_accessory/spider_mandibles, GLOB.spider_mandibles_list)
+	if(!GLOB.teshari_feathers_list.len)
+		init_sprite_accessory_subtypes(/datum/sprite_accessory/teshari_feathers, GLOB.teshari_feathers_list)
 	//For now we will always return none for tail_human and ears.
-	return(list("mcolor" = pick("FFFFFF","7F7F7F", "7FFF7F", "7F7FFF", "FF7F7F", "7FFFFF", "FF7FFF", "FFFF7F"),"ethcolor" = GLOB.color_list_ethereal[pick(GLOB.color_list_ethereal)], "tail_lizard" = pick(GLOB.tails_list_lizard), "tail_human" = "None", "wings" = "None", "snout" = pick(GLOB.snouts_list), "horns" = pick(GLOB.horns_list), "ears" = "None", "frills" = pick(GLOB.frills_list), "spines" = pick(GLOB.spines_list), "body_markings" = pick(GLOB.body_markings_list), "legs" = "Normal Legs", "caps" = pick(GLOB.caps_list), "moth_wings" = pick(GLOB.moth_wings_list), "moth_fluff" = pick(GLOB.moth_fluff_list), "moth_markings" = pick(GLOB.moth_markings_list), "squid_face" = pick(GLOB.squid_face_list), "ipc_screen" = pick(GLOB.ipc_screens_list), "ipc_antenna" = pick(GLOB.ipc_antennas_list),"ipc_chassis" = pick(GLOB.ipc_chassis_list), "spider_legs" = pick(GLOB.spider_legs_list), "spider_spinneret" = pick(GLOB.spider_spinneret_list), "spider_mandibles" = pick(GLOB.spider_mandibles_list),  "flavor_text" = ""))
+	return(list("mcolor" = pick("FFFFFF","7F7F7F", "7FFF7F", "7F7FFF", "FF7F7F", "7FFFFF", "FF7FFF", "FFFF7F"),"ethcolor" = GLOB.color_list_ethereal[pick(GLOB.color_list_ethereal)], "tail_lizard" = pick(GLOB.tails_list_lizard), "tail_human" = "None", "wings" = "None", "snout" = pick(GLOB.snouts_list), "horns" = pick(GLOB.horns_list), "ears" = "None", "frills" = pick(GLOB.frills_list), "spines" = pick(GLOB.spines_list), "body_markings" = pick(GLOB.body_markings_list), "legs" = "Normal Legs", "caps" = pick(GLOB.caps_list), "moth_wings" = pick(GLOB.moth_wings_list), "moth_fluff" = pick(GLOB.moth_fluff_list), "moth_markings" = pick(GLOB.moth_markings_list), "squid_face" = pick(GLOB.squid_face_list), "ipc_screen" = pick(GLOB.ipc_screens_list), "ipc_antenna" = pick(GLOB.ipc_antennas_list),"ipc_chassis" = pick(GLOB.ipc_chassis_list), "spider_legs" = pick(GLOB.spider_legs_list), "spider_spinneret" = pick(GLOB.spider_spinneret_list), "spider_mandibles" = pick(GLOB.spider_mandibles_list), "teshari_feathers" = pick(GLOB.teshari_feathers_list), "teshari_body_feathers" = pick(GLOB.teshari_body_feathers_list), "flavor_text" = ""))
 
 /proc/random_hairstyle(gender)
 	switch(gender)
@@ -559,7 +561,7 @@ GLOBAL_LIST_EMPTY(species_list)
 //Returns a list of unslaved cyborgs
 /proc/active_free_borgs()
 	. = list()
-	for(var/mob/living/silicon/robot/R in GLOB.alive_mob_list)
+	for(var/mob/living/silicon/robot/R in GLOB.silicon_mobs)
 		if(R.connected_ai || R.shell)
 			continue
 		if(R.stat == DEAD)
@@ -569,9 +571,9 @@ GLOBAL_LIST_EMPTY(species_list)
 		. += R
 
 //Returns a list of AI's
-/proc/active_ais(check_mind=FALSE, var/z = null)
+/proc/active_ais(check_mind=FALSE, z = null)
 	. = list()
-	for(var/mob/living/silicon/ai/A in GLOB.alive_mob_list)
+	for(var/mob/living/silicon/ai/A as anything in GLOB.ai_list)
 		if(A.stat == DEAD)
 			continue
 		if(A.control_disabled)
@@ -579,7 +581,7 @@ GLOBAL_LIST_EMPTY(species_list)
 		if(check_mind)
 			if(!A.mind)
 				continue
-		if(z && !(z == A.z) && (!is_station_level(z) || !is_station_level(A.z))) //if a Z level was specified, AND the AI is not on the same level, AND either is off the station...
+		if(z && A.get_virtual_z_level() != z) //if a Z level was specified, AND the AI is not on the same level
 			continue
 		. += A
 	return .

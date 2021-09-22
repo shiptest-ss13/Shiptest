@@ -17,7 +17,6 @@
 
 /obj/machinery/computer/operating/Initialize()
 	. = ..()
-	linked_techweb = SSresearch.science_tech
 	find_table()
 
 /obj/machinery/computer/operating/Destroy()
@@ -29,6 +28,7 @@
 			sbed = locate(/obj/machinery/stasis) in get_step(src, direction)
 			if(sbed && sbed.op_computer == src)
 				sbed.op_computer = null
+	linked_techweb = null
 	. = ..()
 
 /obj/machinery/computer/operating/attackby(obj/item/O, mob/user, params)
@@ -40,9 +40,22 @@
 		if(do_after(user, 10, target = src))
 			advanced_surgeries |= D.surgeries
 		return TRUE
+
+	if(istype(O, /obj/item/multitool))
+		var/obj/item/multitool/multi = O
+		if(istype(multi.buffer, /obj/machinery/rnd/server))
+			var/obj/machinery/rnd/server/serv = multi.buffer
+			linked_techweb = serv.stored_research
+			visible_message("Linked to Server!")
+		return
+
 	return ..()
 
 /obj/machinery/computer/operating/proc/sync_surgeries()
+	if(!linked_techweb)
+		visible_message("Warning: no linked server!")
+		return
+
 	for(var/i in linked_techweb.researched_designs)
 		var/datum/design/surgery/D = SSresearch.techweb_design_by_id(i)
 		if(!istype(D))

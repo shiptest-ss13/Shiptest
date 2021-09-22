@@ -6,7 +6,7 @@
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
-/obj/effect/turf_decal/delivery,
+/obj/effect/turf_decal/industrial/hatch/yellow,
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "aT" = (
@@ -172,7 +172,7 @@
 /obj/machinery/cryopod/latejoin{
 	dir = 4
 	},
-/obj/effect/turf_decal/stripes/line{
+/obj/effect/turf_decal/industrial/warning{
 	dir = 9
 	},
 /obj/machinery/computer/cryopod{
@@ -263,7 +263,7 @@
 /turf/open/floor/plasteel/showroomfloor,
 /area/ship/medical)
 "go" = (
-/obj/effect/turf_decal/lumos/tile/red/fulltile,
+/obj/effect/turf_decal/corner/red/full,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
@@ -288,7 +288,7 @@
 /area/ship/hallway/aft)
 "hq" = (
 /obj/structure/tank_dispenser/oxygen,
-/obj/effect/turf_decal/delivery,
+/obj/effect/turf_decal/industrial/hatch/yellow,
 /turf/open/floor/plasteel,
 /area/ship/storage)
 "hv" = (
@@ -337,7 +337,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/effect/turf_decal/stripes/line,
+/obj/effect/turf_decal/industrial/warning,
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "iA" = (
@@ -1032,7 +1032,7 @@
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "xa" = (
-/obj/effect/turf_decal/lumos/tile/red/fulltile,
+/obj/effect/turf_decal/corner/red/full,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 1
 	},
@@ -1102,7 +1102,7 @@
 /obj/machinery/atmospherics/components/unary/tank/air{
 	piping_layer = 2
 	},
-/obj/effect/turf_decal/delivery,
+/obj/effect/turf_decal/industrial/hatch/yellow,
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "Aj" = (
@@ -1124,7 +1124,7 @@
 /turf/closed/wall/mineral/titanium,
 /area/ship/hallway/aft)
 "Bl" = (
-/obj/effect/turf_decal/lumos/tile/red/fulltile,
+/obj/effect/turf_decal/corner/red/full,
 /turf/open/floor/plasteel,
 /area/ship/hallway/aft)
 "BK" = (
@@ -1186,9 +1186,11 @@
 	name = "\proper Deuce"
 	},
 /obj/structure/bed/dogbed{
+	anchored = 1;
 	desc = "A comfy-looking... snake bed? There's bits of shed scales stuck in the bedding...";
 	name = "snake bed"
 	},
+/obj/item/clothing/glasses/hud/health,
 /turf/open/floor/carpet/nanoweave/red,
 /area/ship/bridge)
 "DH" = (
@@ -1264,7 +1266,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/effect/turf_decal/stripes/line,
+/obj/effect/turf_decal/industrial/warning,
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "Go" = (
@@ -1277,7 +1279,7 @@
 /obj/machinery/atmospherics/components/unary/tank/air{
 	piping_layer = 2
 	},
-/obj/effect/turf_decal/delivery,
+/obj/effect/turf_decal/industrial/hatch/yellow,
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "GP" = (
@@ -1360,7 +1362,7 @@
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "IG" = (
-/obj/effect/turf_decal/lumos/tile/red/fulltile,
+/obj/effect/turf_decal/corner/red/full,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 1
 	},
@@ -1410,7 +1412,7 @@
 	},
 /obj/machinery/power/terminal,
 /obj/structure/cable,
-/obj/effect/turf_decal/stripes/line,
+/obj/effect/turf_decal/industrial/warning,
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "Ki" = (
@@ -1519,7 +1521,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "0-2"
 	},
-/obj/effect/turf_decal/delivery,
+/obj/effect/turf_decal/industrial/hatch/yellow,
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "MP" = (
@@ -1527,7 +1529,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "0-2"
 	},
-/obj/effect/turf_decal/delivery,
+/obj/effect/turf_decal/industrial/hatch/yellow,
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "MW" = (
@@ -1689,7 +1691,7 @@
 "QQ" = (
 /obj/machinery/door/airlock/external,
 /obj/structure/fans/tiny,
-/obj/effect/turf_decal/delivery,
+/obj/effect/turf_decal/industrial/hatch/yellow,
 /turf/open/floor/plating,
 /area/ship/storage)
 "QU" = (
@@ -1712,7 +1714,7 @@
 	},
 /obj/machinery/power/terminal,
 /obj/structure/cable,
-/obj/effect/turf_decal/stripes/line,
+/obj/effect/turf_decal/industrial/warning,
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "Rh" = (
@@ -2038,6 +2040,9 @@
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)

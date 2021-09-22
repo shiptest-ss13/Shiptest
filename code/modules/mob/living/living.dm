@@ -1825,3 +1825,33 @@
 /mob/living/proc/on_handsblocked_end()
 	REMOVE_TRAIT(src, TRAIT_UI_BLOCKED, TRAIT_HANDS_BLOCKED)
 	REMOVE_TRAIT(src, TRAIT_PULL_BLOCKED, TRAIT_HANDS_BLOCKED)
+
+/// Special key down handling of /living mobs, currently only used for typing indicator
+/mob/living/key_down(_key, client/user)
+	if(!typing_indicator && stat == CONSCIOUS)
+		for(var/kb_name in user.prefs.key_bindings[_key])
+			switch(kb_name)
+				if("Say")
+					set_typing_indicator(TRUE)
+					break
+				if("Me")
+					set_typing_indicator(TRUE)
+					break
+	return ..()
+
+/// Used for setting typing indicator on/off. Checking the state should be done not on the proc to avoid overhead.
+/mob/living/set_typing_indicator(state)
+	typing_indicator = state
+	var/state_of_bubble = bubble_icon? "[bubble_icon]0" : "default0"
+	var/mutable_appearance/bubble_overlay = mutable_appearance('icons/mob/talk.dmi', state_of_bubble, plane = RUNECHAT_PLANE)
+	bubble_overlay.appearance_flags = RESET_COLOR | RESET_TRANSFORM | TILE_BOUND | PIXEL_SCALE
+	if(typing_indicator)
+		add_overlay(bubble_overlay)
+	else
+		cut_overlay(bubble_overlay)
+
+/mob/living/remove_air(amount) //To prevent those in contents suffocating
+	return loc ? loc.remove_air(amount) : null
+
+/mob/living/remove_air_ratio(ratio)
+	return loc ? loc.remove_air_ratio(ratio) : null

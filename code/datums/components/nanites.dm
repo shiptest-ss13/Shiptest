@@ -16,11 +16,13 @@
 	var/start_time = 0 ///Timestamp to when the nanites were first inserted in the host
 	var/stealth = FALSE //if TRUE, does not appear on HUDs and health scans
 	var/diagnostics = TRUE //if TRUE, displays program list when scanned by nanite scanners
+	var/datum/techweb/linked_techweb
 
-/datum/component/nanites/Initialize(amount = 100, cloud = 0)
+/datum/component/nanites/Initialize(datum/techweb/linked_techweb, amount = 100, cloud = 0)
 	if(!isliving(parent) && !istype(parent, /datum/nanite_cloud_backup))
 		return COMPONENT_INCOMPATIBLE
 
+	src.linked_techweb = linked_techweb
 	nanite_volume = amount
 	cloud_id = cloud
 
@@ -99,6 +101,7 @@
 		set_nanite_bar(TRUE)
 		host_mob.hud_set_nanite_indicator()
 	host_mob = null
+	linked_techweb = null
 	return ..()
 
 /datum/component/nanites/InheritComponent(datum/component/nanites/new_nanites, i_am_original, amount, cloud)
@@ -340,7 +343,7 @@
 		research_value *= 0.5
 	if(host_mob.stat == DEAD)
 		research_value *= 0.75
-	SSresearch.science_tech.add_point_list(list(TECHWEB_POINT_TYPE_NANITES = research_value))
+	linked_techweb?.add_point_list(list(TECHWEB_POINT_TYPE_NANITES = research_value))
 
 /datum/component/nanites/proc/nanite_scan(datum/source, mob/user, full_scan)
 	SIGNAL_HANDLER

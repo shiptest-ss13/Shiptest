@@ -18,6 +18,11 @@
 	var/list/conferred_embed = EMBED_HARMLESS
 	var/overwrite_existing = FALSE
 
+/obj/item/stack/tape/merge(obj/item/stack/S) //Because we have unique children, we need to add an additional fail case
+	if(src.type != S.type)
+		return
+	return ..()
+
 /obj/item/stack/tape/attack(mob/living/carbon/C, mob/living/user)
 	if(!istype(C))
 		return
@@ -32,7 +37,7 @@
 		return
 
 	//Mouth taping and tapecuffs
-	if(user.a_intent == INTENT_DISARM)
+	if(user.a_intent == INTENT_DISARM || user.a_intent == INTENT_HARM)
 		if(user.zone_selected == BODY_ZONE_PRECISE_MOUTH) //mouth tape
 			if(C.is_mouth_covered() || C.is_muzzled())
 				to_chat(user, "<span class='warning'>There is something covering [C]s mouth!</span>")
