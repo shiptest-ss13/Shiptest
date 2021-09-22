@@ -104,7 +104,7 @@
 	var/last_pump = 0
 	var/add_colour = TRUE //So we're not constantly recreating colour datums
 	var/pump_delay = 40 //you can pump 1 second early, for lag, but no more (otherwise you could spam heal)
-	var/blood_loss = 50 //600 blood is human default, so 5 failures (below 122 blood is where humans die because reasons?)
+	var/blood_loss = 75 //600 blood is human default, so 5 failures (below 122 blood is where humans die because reasons?)
 
 	//How much to heal per pump, negative numbers would HURT the player
 	var/heal_brute = 0

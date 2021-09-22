@@ -61,8 +61,9 @@
 
 /obj/vehicle/ridden/lavaboat/dragon
 	name = "mysterious boat"
-	desc = "This boat moves where you will it, without the need for an oar."
+	desc = "This boat moves where you will it, forever pushing off a perfect phantom current. The tough underbelly it boasts protects against all variety of strange terrain."
 	icon_state = "dragon_boat"
+	var/allowed_turfdrag = list(/turf/open/lava, /turf/open/space, /turf/water)
 
 /obj/vehicle/ridden/lavaboat/dragon/Initialize()
 	. = ..()
@@ -70,3 +71,6 @@
 	D.vehicle_move_delay = 1
 	D.set_riding_offsets(RIDING_OFFSET_ALL, list(TEXT_NORTH = list(1, 2), TEXT_SOUTH = list(1, 2), TEXT_EAST = list(1, 2), TEXT_WEST = list( 1, 2)))
 	D.keytype = null
+	D.allowed_turf_typecache = typecacheof(allowed_turfdrag)
+	D.override_allow_spacemove = TRUE
+
