@@ -677,6 +677,7 @@
 	important_info = "Command your fellow survivors and do not abandon them."
 	head = /obj/item/clothing/head/caphat/nt
 	uniform = /obj/item/clothing/under/rank/command/captain/nt
+	suit = /obj/item/clothing/suit/armor/vest/capcarapace
 	shoes = /obj/item/clothing/shoes/jackboots
 	id = /obj/item/card/id/away/old/cap
 	back = /obj/item/storage/backpack
