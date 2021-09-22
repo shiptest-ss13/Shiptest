@@ -482,6 +482,7 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
 	dir = 4
 	},
+/obj/item/ammo_box/a762,
 /turf/open/floor/mineral/plastitanium/red,
 /area/ship/security)
 "sx" = (
@@ -1401,6 +1402,7 @@
 /area/ship/science)
 "Ux" = (
 /obj/machinery/button/door{
+	id = "blastdoors";
 	name = "cargo bay blast doors";
 	pixel_x = -24
 	},
