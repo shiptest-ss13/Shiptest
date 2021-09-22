@@ -1057,7 +1057,7 @@
 
 //ascetic's robe, provides quickly-recovering layers of total damage immunity, causes massive damage vulnerability when shield is down. Increases speed slightly.
 /obj/item/clothing/suit/ascetic
-	name = "dunewalker's robes"
+	name = "dunewalker's garb"
 	desc = "Sand-bitten robes of roughspun cloth, fit for the hardy life of a travelling hermit. There's a strange aura about them- like a fragile desert haze."
 	icon = 'icons/obj/clothing/suits.dmi'
 	icon_state = "britte_master"//suffering
@@ -1079,7 +1079,7 @@
 	armor = list(melee = -75, bullet = -15, laser = -75, energy = -55, bomb = -55, bio = 0, rad = 100, fire = 100, acid = -45)//bio causes negative chem effects to be multiplied. Bad times.
 	var/current_charges = 3
 	var/max_charges = 3 //How many charges total the shielding has
-	var/recharge_delay = 20 //How long after we've been shot before we can start recharging. 3 seconds here
+	var/recharge_delay = 35 //How long after we've been shot before we can start recharging. 3 seconds here
 	var/recharge_cooldown = 0 //Time since we've last been shot
 	var/recharge_rate = 3 //How quickly the shield recharges once it starts charging
 	var/shield_state = "shield-old"
