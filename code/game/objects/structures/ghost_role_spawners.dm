@@ -684,7 +684,7 @@
 	backpack_contents = list(/obj/item/gun/ballistic/automatic/pistol/deagle)
 	assignedrole = "Ancient Crew"
 
-/obj/effect/mob_spawn/human/oldsci/Destroy()
+/obj/effect/mob_spawn/human/oldcap/Destroy()
 	new/obj/structure/showcase/machinery/oldpod/used(drop_location())
 	return ..()
 
