@@ -7,7 +7,7 @@
 	icon_state = "tendril"
 
 	faction = list("mining")
-	max_mobs = 5//shiptest edit, boosted power and health
+	max_mobs = 5
 	max_integrity = 450
 	mob_types = list(/mob/living/simple_animal/hostile/asteroid/basilisk/watcher/tendril)
 
