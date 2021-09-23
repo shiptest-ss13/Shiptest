@@ -255,7 +255,9 @@ GLOBAL_LIST_INIT(ore_probability, list(
 
 		if(30)
 			new /mob/living/simple_animal/hostile/syndicate/ranged/smg/space(loc)
-			new /mob/living/simple_animal/hostile/syndicate/melee/sword/space(loc)
-			new /obj/item/robot_module/syndicate(loc)
-			new /obj/item/card/emag(loc)
+			new /mob/living/simple_animal/hostile/syndicate/ranged/smg/space(loc)
+			if(prob(50))
+				new /obj/item/robot_module/syndicate(loc)
+			else
+				new /obj/item/card/emag(loc)
 
