@@ -20,7 +20,7 @@
 	mob_overlay_icon = 'whitesands/icons/mob/clothing/suits.dmi'
 
 /obj/item/clothing/head/helmet/space/hardsuit/quixote
-	name = "\improper Quixote metaspace hardsuit helmet"
+	name = "\improper Quixote mobility hardsuit helmet"
 	desc = "The integrated helmet of a Quixote mobility hardsuit."
 	icon_state = "hardsuit0-quixote"
 	item_state = "quixote-helm"
@@ -32,8 +32,8 @@
 	mob_overlay_icon = 'whitesands/icons/mob/clothing/head.dmi'
 
 /obj/item/clothing/suit/space/hardsuit/quixote
-	name = "\improper Quixote metaspace hardsuit"
-	desc = "The Quixote metaspacial mobility suit is the magnum opus of Dimensional Corps equipment, combining durable composite armor with high mobility thrusters designed for uncommon splines of space and gravity."
+	name = "\improper Quixote mobility hardsuit"
+	desc = "The Quixote mobility suit is the magnum opus of Phorsman equipment, combining durable composite armor with high mobility thrusters."
 	icon_state = "quixotesuit"
 	item_state = "quixotesuit"
 	max_integrity = 300
@@ -71,3 +71,14 @@
 		jump.Activate()
 	else
 		return ..()
+
+/obj/item/clothing/head/helmet/space/hardsuit/quixote/dimensional
+	name = "Quixote metaspacial hardsuit helmet"
+	desc = "The integrated helmet of a Quixote metaspace navigation hardsuit."
+	armor = list("melee" = 50, "bullet" = 40, "laser" = 40, "energy" = 35, "bomb" = 50, "bio" = 100, "rad" = 100, "fire" = 100, "acid" = 100)
+
+/obj/item/clothing/suit/space/hardsuit/quixote/dimensional
+	name = "Quixote metaspacial hardsuit"
+	armor = list("melee" = 50, "bullet" = 40, "laser" = 40, "energy" = 35, "bomb" = 50, "bio" = 100, "rad" = 100, "fire" = 100, "acid" = 100)
+	desc = "The Quixote metaspacial mobility suit is the magnum opus of dimensional navigation equipment, combining durable composite armor with high mobility thrusters and defensive plating rated for all manner of exotic particles."
+	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/quixote/dimensional

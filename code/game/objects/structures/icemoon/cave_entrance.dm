@@ -145,8 +145,9 @@ GLOBAL_LIST_INIT(ore_probability, list(
 			new /obj/item/reagent_containers/glass/bottle/potion/flight(loc)
 		if(4)
 			new /obj/item/organ/heart/cursed/wizard(loc)
+			new /obj/item/gun/magic/wand/fireball/inert(loc)
 		if(5)
-			new /obj/item/clothing/suit/space/hardsuit/quixote(loc)
+			new /obj/item/clothing/suit/space/hardsuit/quixote/dimensional(loc)
 			new /mob/living/simple_animal/hostile/netherworld/blankbody(loc)
 		if(6)
 			new /obj/item/rod_of_asclepius(loc)
@@ -243,7 +244,15 @@ GLOBAL_LIST_INIT(ore_probability, list(
 		if(28)
 			new /mob/living/simple_animal/hostile/megafauna/blood_drunk_miner/doom(loc)
 		if(29)
-			new /mob/living/simple_animal/hostile/megafauna/swarmer_swarm_beacon(loc)//god help you
+			new /mob/living/simple_animal/hostile/swarmer/ai(loc)//god help you
+			new /mob/living/simple_animal/hostile/swarmer/ai(loc)
+			new /mob/living/simple_animal/hostile/swarmer/ai(loc)
+			new /mob/living/simple_animal/hostile/swarmer/ai(loc)
+			new /mob/living/simple_animal/hostile/swarmer/ai(loc)
+			new /obj/item/construction/rcd/loaded(loc)
+			new /obj/effect/mob_spawn/human/engineer(loc)
+			new /obj/item/storage/toolbox/infiltrator(loc)
+
 		if(30)
 			new /mob/living/simple_animal/hostile/syndicate/ranged/smg/space(loc)
 			new /mob/living/simple_animal/hostile/syndicate/melee/sword/space(loc)
