@@ -154,7 +154,6 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/item/storage/bag/ore,
 /obj/item/storage/bag/ore,
-/obj/machinery/light/broken,
 /turf/open/floor/mineral/titanium/yellow,
 /area/ship/cargo)
 "fA" = (
@@ -207,6 +206,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 4
 	},
+/obj/structure/reagent_dispensers/fueltank,
 /turf/open/floor/mineral/titanium/yellow,
 /area/ship/cargo)
 "iN" = (
@@ -551,6 +551,9 @@
 /obj/item/reagent_containers/spray/cleaner,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 4
+	},
+/obj/machinery/light{
+	dir = 1
 	},
 /turf/open/floor/mineral/titanium/yellow,
 /area/ship/cargo)
@@ -1185,6 +1188,7 @@
 /obj/item/reagent_containers/food/drinks/bottle/vodka,
 /obj/item/reagent_containers/food/drinks/bottle/vodka,
 /obj/item/reagent_containers/food/drinks/bottle/vodka/badminka,
+/obj/machinery/light/broken,
 /turf/open/floor/mineral/titanium/yellow,
 /area/ship/cargo)
 "NC" = (
