@@ -104,7 +104,7 @@
 	var/last_pump = 0
 	var/add_colour = TRUE //So we're not constantly recreating colour datums
 	var/pump_delay = 40 //you can pump 1 second early, for lag, but no more (otherwise you could spam heal)
-	var/blood_loss = 75 //600 blood is human default, so 5 failures (below 122 blood is where humans die because reasons?)
+	var/blood_loss = 50 //600 blood is human default, so 10 failures (below 122 blood is where humans die because reasons?)
 
 	//How much to heal per pump, negative numbers would HURT the player
 	var/heal_brute = 0
@@ -162,7 +162,7 @@
 		var/mob/living/carbon/human/H = owner
 		if(istype(H))
 			if(H.dna && !(NOBLOOD in H.dna.species.species_traits))
-				H.blood_volume = min(H.blood_volume + cursed_heart.blood_loss*0.5, BLOOD_VOLUME_MAXIMUM)
+				H.blood_volume = min(H.blood_volume + cursed_heart.blood_loss*1.0, BLOOD_VOLUME_MAXIMUM)
 				H.remove_client_colour(/datum/client_colour/cursed_heart_blood)
 				cursed_heart.add_colour = TRUE
 				H.adjustBruteLoss(-cursed_heart.heal_brute)
