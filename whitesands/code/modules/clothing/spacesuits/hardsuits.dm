@@ -20,7 +20,7 @@
 	mob_overlay_icon = 'whitesands/icons/mob/clothing/suits.dmi'
 
 /obj/item/clothing/head/helmet/space/hardsuit/quixote
-	name = "\improper Quixote mobility hardsuit helmet"
+	name = "\improper Quixote metaspace hardsuit helmet"
 	desc = "The integrated helmet of a Quixote mobility hardsuit."
 	icon_state = "hardsuit0-quixote"
 	item_state = "quixote-helm"
@@ -32,8 +32,8 @@
 	mob_overlay_icon = 'whitesands/icons/mob/clothing/head.dmi'
 
 /obj/item/clothing/suit/space/hardsuit/quixote
-	name = "\improper Quixote mobility hardsuit"
-	desc = "The Quixote mobility suit is the magnum opus of Phorsman equipment, combining durable composite armor with high mobility thrusters."
+	name = "\improper Quixote metaspace hardsuit"
+	desc = "The Quixote metaspacial mobility suit is the magnum opus of Dimensional Corps equipment, combining durable composite armor with high mobility thrusters designed for uncommon splines of space and gravity."
 	icon_state = "quixotesuit"
 	item_state = "quixotesuit"
 	max_integrity = 300
