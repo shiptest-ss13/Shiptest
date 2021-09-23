@@ -35,10 +35,11 @@
 	fire_sound = 'sound/weapons/taser.ogg'
 
 /obj/item/ammo_casing/energy/disabler/scatter/ultima
-	projectile_type = /obj/projectile/beam/disabler/weak
-	pellets = 5
+	projectile_type = /obj/projectile/beam/disabler/weak/negative_ap
+	pellets = 4
+	variance = 35
 	e_cost = 2000
 
-/obj/item/ammo_casing/energy/disabler/weak
-	projectile_type = /obj/projectile/beam/disabler/weak
+/obj/item/ammo_casing/energy/disabler/smg
+	projectile_type = /obj/projectile/beam/disabler/weak/negative_ap
 	e_cost = 330

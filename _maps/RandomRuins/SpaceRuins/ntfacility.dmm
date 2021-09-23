@@ -53,7 +53,13 @@
 "bZ" = (
 /obj/machinery/door/airlock/vault,
 /obj/effect/mapping_helpers/airlock/locked,
-/turf/open/floor/plasteel/checker,
+/obj/effect/turf_decal/corner/black{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/black{
+	dir = 2
+	},
+/turf/open/floor/plasteel,
 /area/ruin/powered)
 "cc" = (
 /obj/machinery/door/airlock/research,
@@ -172,7 +178,7 @@
 /obj/machinery/door/poddoor{
 	id = "medical_lock_medlock"
 	},
-/obj/effect/turf_decal/stripes/end,
+/obj/effect/turf_decal/industrial/warning/cee,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/white,
 /area/ruin/powered)
@@ -182,16 +188,22 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/checker,
-/area/ruin/powered)
-"fe" = (
-/obj/effect/turf_decal/tile/blue{
-	dir = 8
-	},
-/obj/effect/turf_decal/tile/blue{
+/obj/effect/turf_decal/corner/black{
 	dir = 1
 	},
-/obj/effect/turf_decal/tile/blue{
+/obj/effect/turf_decal/corner/black{
+	dir = 2
+	},
+/turf/open/floor/plasteel,
+/area/ruin/powered)
+"fe" = (
+/obj/effect/turf_decal/corner/blue{
+	dir = 8
+	},
+/obj/effect/turf_decal/corner/blue{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/blue{
 	dir = 4
 	},
 /obj/effect/mob_spawn/human/corpse/damaged{
@@ -243,10 +255,10 @@
 /turf/open/floor/plating,
 /area/ruin/powered)
 "gi" = (
-/obj/effect/turf_decal/tile/blue{
+/obj/effect/turf_decal/corner/blue{
 	dir = 8
 	},
-/obj/effect/turf_decal/tile/blue{
+/obj/effect/turf_decal/corner/blue{
 	dir = 1
 	},
 /obj/machinery/harvester,
@@ -292,7 +304,7 @@
 /turf/open/floor/plating,
 /area/ruin/powered)
 "gY" = (
-/obj/effect/turf_decal/tile/blue,
+/obj/effect/turf_decal/corner/blue,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/white,
@@ -398,7 +410,13 @@
 /mob/living/simple_animal/hostile/zombie,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/checker,
+/obj/effect/turf_decal/corner/black{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/black{
+	dir = 2
+	},
+/turf/open/floor/plasteel,
 /area/ruin/powered)
 "jW" = (
 /obj/machinery/door/poddoor/preopen,
@@ -492,7 +510,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/powered)
 "nR" = (
-/obj/effect/turf_decal/tile/blue{
+/obj/effect/turf_decal/corner/blue{
 	dir = 8
 	},
 /obj/machinery/sleeper{
@@ -630,7 +648,13 @@
 /obj/machinery/door/poddoor/shutters{
 	id = "celock"
 	},
-/turf/open/floor/plasteel/checker,
+/obj/effect/turf_decal/corner/black{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/black{
+	dir = 2
+	},
+/turf/open/floor/plasteel,
 /area/ruin/powered)
 "so" = (
 /obj/machinery/computer/card{
@@ -654,7 +678,7 @@
 /turf/open/floor/mineral/titanium/blue,
 /area/ruin/powered)
 "tQ" = (
-/obj/effect/turf_decal/tile/blue{
+/obj/effect/turf_decal/corner/blue{
 	dir = 4
 	},
 /obj/effect/gibspawner/human,
@@ -951,16 +975,16 @@
 /turf/open/floor/plating,
 /area/ruin/powered)
 "BS" = (
-/obj/effect/turf_decal/tile/blue{
+/obj/effect/turf_decal/corner/blue{
 	dir = 8
 	},
-/obj/effect/turf_decal/tile/blue{
+/obj/effect/turf_decal/corner/blue{
 	dir = 1
 	},
-/obj/effect/turf_decal/tile/blue{
+/obj/effect/turf_decal/corner/blue{
 	dir = 4
 	},
-/obj/effect/turf_decal/tile/blue,
+/obj/effect/turf_decal/corner/blue,
 /obj/machinery/medical_kiosk,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -1017,7 +1041,13 @@
 /obj/machinery/door/poddoor{
 	id = "medical_lock_medlock"
 	},
-/turf/open/floor/plasteel/checker,
+/obj/effect/turf_decal/corner/black{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/black{
+	dir = 2
+	},
+/turf/open/floor/plasteel,
 /area/ruin/powered)
 "Ea" = (
 /obj/item/shard{
@@ -1143,7 +1173,13 @@
 /obj/item/kirbyplants/random,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/checker,
+/obj/effect/turf_decal/corner/black{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/black{
+	dir = 2
+	},
+/turf/open/floor/plasteel,
 /area/ruin/powered)
 "Gf" = (
 /obj/machinery/door/poddoor/preopen,
@@ -1166,7 +1202,13 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/checker,
+/obj/effect/turf_decal/corner/black{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/black{
+	dir = 2
+	},
+/turf/open/floor/plasteel,
 /area/ruin/powered)
 "GQ" = (
 /obj/effect/decal/cleanable/blood/tracks{
@@ -1177,10 +1219,10 @@
 /turf/open/floor/plating,
 /area/ruin/powered)
 "GY" = (
-/obj/effect/turf_decal/tile/blue{
+/obj/effect/turf_decal/corner/blue{
 	dir = 4
 	},
-/obj/effect/turf_decal/tile/blue{
+/obj/effect/turf_decal/corner/blue{
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -1201,7 +1243,7 @@
 /obj/machinery/door/poddoor{
 	id = "medical_lock_medlock"
 	},
-/obj/effect/turf_decal/stripes/end{
+/obj/effect/turf_decal/industrial/warning/cee{
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -1231,7 +1273,7 @@
 /turf/open/floor/plating,
 /area/ruin/powered)
 "Iw" = (
-/obj/effect/turf_decal/tile/blue{
+/obj/effect/turf_decal/corner/blue{
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -1252,10 +1294,10 @@
 /obj/machinery/door/poddoor{
 	id = "medical_lock_medlock"
 	},
-/obj/effect/turf_decal/stripes/line{
+/obj/effect/turf_decal/industrial/warning{
 	dir = 4
 	},
-/obj/effect/turf_decal/stripes/line{
+/obj/effect/turf_decal/industrial/warning{
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -1285,7 +1327,13 @@
 /obj/item/shard,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/checker,
+/obj/effect/turf_decal/corner/black{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/black{
+	dir = 2
+	},
+/turf/open/floor/plasteel,
 /area/ruin/powered)
 "Jh" = (
 /obj/effect/decal/cleanable/blood/tracks{
@@ -1325,10 +1373,10 @@
 /turf/open/floor/plasteel,
 /area/ruin/powered)
 "JM" = (
-/obj/effect/turf_decal/tile/blue{
+/obj/effect/turf_decal/corner/blue{
 	dir = 1
 	},
-/obj/effect/turf_decal/tile/blue{
+/obj/effect/turf_decal/corner/blue{
 	dir = 8
 	},
 /obj/structure/table/glass,
@@ -1415,7 +1463,7 @@
 /turf/open/floor/wood,
 /area/ruin/powered)
 "KQ" = (
-/obj/effect/turf_decal/tile/blue{
+/obj/effect/turf_decal/corner/blue{
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -1455,13 +1503,19 @@
 "LI" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/checker,
-/area/ruin/powered)
-"LO" = (
-/obj/effect/turf_decal/tile/blue{
+/obj/effect/turf_decal/corner/black{
 	dir = 1
 	},
-/obj/effect/turf_decal/tile/blue{
+/obj/effect/turf_decal/corner/black{
+	dir = 2
+	},
+/turf/open/floor/plasteel,
+/area/ruin/powered)
+"LO" = (
+/obj/effect/turf_decal/corner/blue{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/blue{
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -1517,11 +1571,11 @@
 /turf/open/floor/carpet/royalblue,
 /area/ruin/powered)
 "OE" = (
-/obj/effect/turf_decal/tile/blue,
-/obj/effect/turf_decal/tile/blue{
+/obj/effect/turf_decal/corner/blue,
+/obj/effect/turf_decal/corner/blue{
 	dir = 8
 	},
-/obj/effect/turf_decal/tile/blue{
+/obj/effect/turf_decal/corner/blue{
 	dir = 1
 	},
 /obj/effect/gibspawner/human,
@@ -1650,7 +1704,7 @@
 /turf/open/floor/vault,
 /area/ruin/powered)
 "Sm" = (
-/obj/effect/turf_decal/tile/blue,
+/obj/effect/turf_decal/corner/blue,
 /obj/structure/table/glass,
 /obj/item/defibrillator/loaded,
 /obj/effect/decal/cleanable/dirt,
@@ -1698,7 +1752,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/powered)
 "Uv" = (
-/obj/effect/turf_decal/tile/blue{
+/obj/effect/turf_decal/corner/blue{
 	dir = 4
 	},
 /obj/structure/sign/poster/retro/nanotrasen_logo_80s{
@@ -1746,7 +1800,13 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/checker,
+/obj/effect/turf_decal/corner/black{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/black{
+	dir = 2
+	},
+/turf/open/floor/plasteel,
 /area/ruin/powered)
 "Vh" = (
 /obj/structure/toilet{
@@ -1773,7 +1833,13 @@
 /obj/structure/table/reinforced,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/checker,
+/obj/effect/turf_decal/corner/black{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/black{
+	dir = 2
+	},
+/turf/open/floor/plasteel,
 /area/ruin/powered)
 "VV" = (
 /obj/structure/bed,
@@ -1820,7 +1886,13 @@
 /obj/machinery/door/poddoor/shutters{
 	id = "captain_lock"
 	},
-/turf/open/floor/plasteel/checker,
+/obj/effect/turf_decal/corner/black{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/black{
+	dir = 2
+	},
+/turf/open/floor/plasteel,
 /area/ruin/powered)
 "Xw" = (
 /obj/machinery/computer{
@@ -1828,7 +1900,13 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/checker,
+/obj/effect/turf_decal/corner/black{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/black{
+	dir = 2
+	},
+/turf/open/floor/plasteel,
 /area/ruin/powered)
 "Xx" = (
 /obj/structure/table/glass,
@@ -1874,13 +1952,13 @@
 /turf/open/floor/vault,
 /area/ruin/powered)
 "XG" = (
-/obj/effect/turf_decal/tile/blue{
+/obj/effect/turf_decal/corner/blue{
 	dir = 1
 	},
-/obj/effect/turf_decal/tile/blue{
+/obj/effect/turf_decal/corner/blue{
 	dir = 8
 	},
-/obj/effect/turf_decal/tile/blue,
+/obj/effect/turf_decal/corner/blue,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/white,
@@ -1905,10 +1983,10 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/powered)
 "Yl" = (
-/obj/effect/turf_decal/tile/blue{
+/obj/effect/turf_decal/corner/blue{
 	dir = 4
 	},
-/obj/effect/turf_decal/tile/blue,
+/obj/effect/turf_decal/corner/blue,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/white,

@@ -1849,3 +1849,9 @@
 		add_overlay(bubble_overlay)
 	else
 		cut_overlay(bubble_overlay)
+
+/mob/living/remove_air(amount) //To prevent those in contents suffocating
+	return loc ? loc.remove_air(amount) : null
+
+/mob/living/remove_air_ratio(ratio)
+	return loc ? loc.remove_air_ratio(ratio) : null

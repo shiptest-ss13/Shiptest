@@ -173,7 +173,7 @@ distance_multiplier - Can be used to multiply the distance at which the sound is
 			S.y = dy
 		else
 			S.y = 1	//To make sure the mono sound doesn't make you feel like you're dying.
-		S.falloff = max_distance || 0 //use max_distance, else just use 0 as we are a direct sound so falloff isnt relevant.
+		S.falloff = max_distance || 1
 
 		if(S.environment == SOUND_ENVIRONMENT_NONE)
 			if(sound_environment_override != SOUND_ENVIRONMENT_NONE)

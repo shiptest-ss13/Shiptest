@@ -1,0 +1,68 @@
+/obj/structure/lattice/catwalk : /obj/structure/catwalk {dir=@SKIP}
+/turf/open/floor/plasteel/yellowsiding : /obj/effect/turf_decal/spline/plain/yellow {dir=@OLD} , /turf/open/floor/plasteel {@OLD;dir=@SKIP}
+/turf/open/floor/plasteel/yellowsiding/corner : /obj/effect/turf_decal/spline/plain/yellow {dir=@OLD} , /turf/open/floor/plasteel {@OLD;dir=@SKIP}
+/turf/open/floor/plasteel/recharge_floor : /obj/effect/turf_decal/rechargefloor , /turf/open/floor/plasteel {@OLD;dir=@SKIP}
+
+/obj/effect/turf_decal/tile/blue : /obj/effect/turf_decal/corner/blue {dir=@OLD}
+/obj/effect/turf_decal/tile/green : /obj/effect/turf_decal/corner/green {dir=@OLD}
+/obj/effect/turf_decal/tile/yellow : /obj/effect/turf_decal/corner/yellow {dir=@OLD}
+/obj/effect/turf_decal/tile/red : /obj/effect/turf_decal/corner/red {dir=@OLD}
+/obj/effect/turf_decal/tile/bar : /obj/effect/turf_decal/corner/bar {dir=@OLD}
+/obj/effect/turf_decal/tile/purple : /obj/effect/turf_decal/corner/purple {dir=@OLD}
+/obj/effect/turf_decal/tile/brown : /obj/effect/turf_decal/corner/brown {dir=@OLD}
+/obj/effect/turf_decal/tile/neutral : /obj/effect/turf_decal/corner/neutral {dir=@OLD}
+
+/obj/effect/turf_decal/stripes/asteroid/line : /obj/effect/turf_decal/industrial/warning/dust {dir=@OLD}
+/obj/effect/turf_decal/stripes/line : /obj/effect/turf_decal/industrial/warning {dir=@OLD}
+/obj/effect/turf_decal/bot : /obj/effect/turf_decal/industrial/outline/yellow {dir=@OLD}
+/obj/effect/turf_decal/bot : /obj/effect/turf_decal/industrial/outline/yellow {dir=@OLD}
+/obj/effect/turf_decal/stripes/corner : /obj/effect/turf_decal/industrial/warning/corner {dir=@OLD}
+/obj/effect/turf_decal/stripes/end : /obj/effect/turf_decal/industrial/warning/cee {dir=@OLD}
+/obj/effect/turf_decal/loading_area : /obj/effect/turf_decal/industrial/loading {dir=@OLD}
+/obj/effect/turf_decal/caution/stand_clear : /obj/effect/turf_decal/industrial/stand_clear {dir=@OLD}
+/obj/effect/turf_decal/delivery : /obj/effect/turf_decal/industrial/hatch/yellow {dir=@OLD}
+
+/turf/open/floor/plasteel/dark/side {dir=1} : /obj/effect/turf_decal/corner/black {dir=1} , /obj/effect/turf_decal/corner/black {dir=4} , /turf/open/floor/plasteel {@OLD;dir=@SKIP}
+/turf/open/floor/plasteel/dark/side {dir=@UNSET} : /obj/effect/turf_decal/corner/black , /obj/effect/turf_decal/corner/black {dir=8} , /turf/open/floor/plasteel {@OLD;dir=@SKIP}
+/turf/open/floor/plasteel/dark/side {dir=2} : /obj/effect/turf_decal/corner/black , /obj/effect/turf_decal/corner/black {dir=8} , /turf/open/floor/plasteel {@OLD;dir=@SKIP}
+/turf/open/floor/plasteel/dark/side {dir=4} : /obj/effect/turf_decal/corner/black , /obj/effect/turf_decal/corner/black {dir=4} , /turf/open/floor/plasteel {@OLD;dir=@SKIP}
+/turf/open/floor/plasteel/dark/side {dir=5} : /obj/effect/turf_decal/corner/black {dir=1} , /obj/effect/turf_decal/corner/black , /obj/effect/turf_decal/corner/black {dir=4} , /turf/open/floor/plasteel {@OLD;dir=@SKIP}
+/turf/open/floor/plasteel/dark/side {dir=6} : /obj/effect/turf_decal/corner/black , /obj/effect/turf_decal/corner/black {dir=4} , /obj/effect/turf_decal/corner/black {dir=8} , /turf/open/floor/plasteel {@OLD;dir=@SKIP}
+/turf/open/floor/plasteel/dark/side {dir=8} : /obj/effect/turf_decal/corner/black {dir=1} , /obj/effect/turf_decal/corner/black {dir=8} /turf/open/floor/plasteel {@OLD;dir=@SKIP}
+/turf/open/floor/plasteel/dark/side {dir=9} : /obj/effect/turf_decal/corner/black {dir=1} , /obj/effect/turf_decal/corner/black {dir=4} , /obj/effect/turf_decal/corner/black {dir=8} , /turf/open/floor/plasteel {@OLD;dir=@SKIP}
+/turf/open/floor/plasteel/dark/side {dir=10} : /obj/effect/turf_decal/corner/black {dir=1} , /obj/effect/turf_decal/corner/black , /obj/effect/turf_decal/corner/black {dir=8} , /turf/open/floor/plasteel {@OLD;dir=@SKIP}
+/turf/open/floor/plasteel/dark/corner : /obj/effect/turf_decal/corner/black {dir=@OLD} , /turf/open/floor/plasteel {@OLD;dir=@SKIP}
+/turf/open/floor/plasteel/checker : /obj/effect/turf_decal/corner/black {dir=1} , /obj/effect/turf_decal/corner/black {dir=2} , /turf/open/floor/plasteel {@OLD;dir=@SKIP}
+
+/turf/open/floor/plasteel/airless/white : /turf/open/floor/plasteel/white/airless {@OLD;dir=@SKIP}
+/turf/open/floor/plasteel/airless/white/side {dir=1} : /obj/effect/turf_decal/corner/white {dir=1} , /obj/effect/turf_decal/corner/white {dir=4} , /turf/open/floor/plasteel/airless {@OLD;dir=@SKIP}
+/turf/open/floor/plasteel/airless/white/side {dir=@UNSET} : /obj/effect/turf_decal/corner/white , /obj/effect/turf_decal/corner/white {dir=8} , /turf/open/floor/plasteel/airless {@OLD;dir=@SKIP}
+/turf/open/floor/plasteel/airless/white/side {dir=2} : /obj/effect/turf_decal/corner/white , /obj/effect/turf_decal/corner/white {dir=8} , /turf/open/floor/plasteel/airless {@OLD;dir=@SKIP}
+/turf/open/floor/plasteel/airless/white/side {dir=4} : /obj/effect/turf_decal/corner/white , /obj/effect/turf_decal/corner/white {dir=4} , /turf/open/floor/plasteel/airless {@OLD;dir=@SKIP}
+/turf/open/floor/plasteel/airless/white/side {dir=5} : /obj/effect/turf_decal/corner/white {dir=1} , /obj/effect/turf_decal/corner/white , /obj/effect/turf_decal/corner/white {dir=4} , /turf/open/floor/plasteel/airless {@OLD;dir=@SKIP}
+/turf/open/floor/plasteel/airless/white/side {dir=6} : /obj/effect/turf_decal/corner/white , /obj/effect/turf_decal/corner/white {dir=4} , /obj/effect/turf_decal/corner/white {dir=8} , /turf/open/floor/plasteel/airless {@OLD;dir=@SKIP}
+/turf/open/floor/plasteel/airless/white/side {dir=8} : /obj/effect/turf_decal/corner/white {dir=1} , /obj/effect/turf_decal/corner/white {dir=8} /turf/open/floor/plasteel {@OLD;dir=@SKIP}
+/turf/open/floor/plasteel/airless/white/side {dir=9} : /obj/effect/turf_decal/corner/white {dir=1} , /obj/effect/turf_decal/corner/white {dir=4} , /obj/effect/turf_decal/corner/white {dir=8} , /turf/open/floor/plasteel/airless {@OLD;dir=@SKIP}
+/turf/open/floor/plasteel/airless/white/side {dir=10} : /obj/effect/turf_decal/corner/white {dir=1} , /obj/effect/turf_decal/corner/white , /obj/effect/turf_decal/corner/white {dir=8} , /turf/open/floor/plasteel/airless {@OLD;dir=@SKIP}
+/turf/open/floor/plasteel/airless/white/corner : /obj/effect/turf_decal/corner/white {dir=@OLD} , /turf/open/floor/plasteel/airless {@OLD;dir=@SKIP}
+
+/turf/open/floor/plasteel/white/side {dir=1} : /obj/effect/turf_decal/corner/white {dir=1} , /obj/effect/turf_decal/corner/white {dir=4} , /turf/open/floor/plasteel {@OLD;dir=@SKIP}
+/turf/open/floor/plasteel/white/side {dir=@UNSET} : /obj/effect/turf_decal/corner/white , /obj/effect/turf_decal/corner/white {dir=8} , /turf/open/floor/plasteel {@OLD;dir=@SKIP}
+/turf/open/floor/plasteel/white/side {dir=2} : /obj/effect/turf_decal/corner/white , /obj/effect/turf_decal/corner/white {dir=8} , /turf/open/floor/plasteel {@OLD;dir=@SKIP}
+/turf/open/floor/plasteel/white/side {dir=4} : /obj/effect/turf_decal/corner/white , /obj/effect/turf_decal/corner/white {dir=4} , /turf/open/floor/plasteel {@OLD;dir=@SKIP}
+/turf/open/floor/plasteel/white/side {dir=5} : /obj/effect/turf_decal/corner/white {dir=1} , /obj/effect/turf_decal/corner/white , /obj/effect/turf_decal/corner/white {dir=4} , /turf/open/floor/plasteel {@OLD;dir=@SKIP}
+/turf/open/floor/plasteel/white/side {dir=6} : /obj/effect/turf_decal/corner/white , /obj/effect/turf_decal/corner/white {dir=4} , /obj/effect/turf_decal/corner/white {dir=8} , /turf/open/floor/plasteel {@OLD;dir=@SKIP}
+/turf/open/floor/plasteel/white/side {dir=8} : /obj/effect/turf_decal/corner/white {dir=1} , /obj/effect/turf_decal/corner/white {dir=8} , /turf/open/floor/plasteel {@OLD;dir=@SKIP}
+/turf/open/floor/plasteel/white/side {dir=9} : /obj/effect/turf_decal/corner/white {dir=1} , /obj/effect/turf_decal/corner/white {dir=4} , /obj/effect/turf_decal/corner/white {dir=8} , /turf/open/floor/plasteel {@OLD;dir=@SKIP}
+/turf/open/floor/plasteel/white/side {dir=10} : /obj/effect/turf_decal/corner/white {dir=1} , /obj/effect/turf_decal/corner/white , /obj/effect/turf_decal/corner/white {dir=8} , /turf/open/floor/plasteel {@OLD;dir=@SKIP}
+/turf/open/floor/plasteel/white/corner : /obj/effect/turf_decal/corner/white {dir=@OLD} , /turf/open/floor/plasteel {@OLD;dir=@SKIP}
+/turf/open/floor/plasteel/cafeteria : /obj/effect/turf_decal/corner/white {dir=1} , /obj/effect/turf_decal/corner/white {dir=2} , /turf/open/floor/plasteel {@OLD;dir=@SKIP}
+/turf/open/floor/plasteel/airless/cafeteria : /obj/effect/turf_decal/corner/white {dir=1} , /obj/effect/turf_decal/corner/white {dir=2} , /turf/open/floor/plasteel/airless {@OLD;dir=@SKIP}
+
+/turf/open/floor/plasteel/chapel : /obj/effect/turf_decal/chapel {dir=@OLD} , /turf/open/floor/plasteel/dark {@OLD;dir=@SKIP}
+/turf/open/floor/plasteel/airless/showroomfloor : /turf/open/floor/plasteel/showroomfloor/airless {@OLD;dir=@SKIP}
+
+/turf/open/floor/plasteel/solarpanel : /obj/effect/turf_decal/solarpanel , /turf/open/floor/plasteel
+/turf/open/floor/plasteel/airless/solarpanel : /obj/effect/turf_decal/solarpanel , /turf/open/floor/plasteel/airless
+
+/turf/open/floor/plasteel/airless/dark : /turf/open/floor/plasteel/dark/airless {dir=@SKIP}

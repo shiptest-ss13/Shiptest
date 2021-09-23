@@ -56,11 +56,11 @@
 	pixel_y = 9
 	},
 /obj/structure/closet/crate/internals,
-/obj/effect/turf_decal/delivery,
+/obj/effect/turf_decal/industrial/hatch/yellow,
 /turf/open/floor/mineral/plastitanium,
 /area/shuttle/arrival)
 "j" = (
-/obj/effect/turf_decal/bot,
+/obj/effect/turf_decal/industrial/outline/yellow,
 /obj/structure/chair/comfy/shuttle,
 /obj/machinery/light{
 	dir = 1;
@@ -69,12 +69,12 @@
 /turf/open/floor/mineral/plastitanium,
 /area/shuttle/arrival)
 "k" = (
-/obj/effect/turf_decal/bot,
+/obj/effect/turf_decal/industrial/outline/yellow,
 /obj/structure/chair/comfy/shuttle,
 /turf/open/floor/mineral/plastitanium,
 /area/shuttle/arrival)
 "l" = (
-/obj/effect/turf_decal/bot,
+/obj/effect/turf_decal/industrial/outline/yellow,
 /obj/structure/chair/comfy/shuttle,
 /obj/machinery/status_display/evac{
 	pixel_y = 32
@@ -89,7 +89,7 @@
 /obj/structure/shuttle/engine/propulsion/left{
 	dir = 8
 	},
-/obj/effect/turf_decal/stripes/line{
+/obj/effect/turf_decal/industrial/warning{
 	dir = 8
 	},
 /turf/open/floor/plating/airless,
@@ -114,21 +114,21 @@
 /obj/machinery/door/airlock/shuttle{
 	name = "Arrival Shuttle Airlock"
 	},
-/obj/effect/turf_decal/delivery,
+/obj/effect/turf_decal/industrial/hatch/yellow,
 /turf/open/floor/mineral/plastitanium,
 /area/shuttle/arrival)
 "s" = (
-/obj/effect/turf_decal/tile/blue{
+/obj/effect/turf_decal/corner/blue{
 	dir = 1
 	},
-/obj/effect/turf_decal/tile/blue,
+/obj/effect/turf_decal/corner/blue,
 /turf/open/floor/mineral/titanium/white,
 /area/shuttle/arrival)
 "u" = (
 /obj/structure/shuttle/engine/propulsion{
 	dir = 8
 	},
-/obj/effect/turf_decal/stripes/line{
+/obj/effect/turf_decal/industrial/warning{
 	dir = 8
 	},
 /obj/docking_port/mobile{
@@ -139,11 +139,11 @@
 /area/shuttle/arrival)
 "v" = (
 /obj/structure/rack,
-/obj/effect/turf_decal/bot,
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/industrial/outline/yellow,
+/obj/effect/turf_decal/corner/neutral{
 	dir = 1
 	},
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/corner/neutral{
 	dir = 4
 	},
 /obj/item/radio{
@@ -160,7 +160,7 @@
 /turf/open/floor/mineral/plastitanium,
 /area/shuttle/arrival)
 "x" = (
-/obj/effect/turf_decal/bot,
+/obj/effect/turf_decal/industrial/outline/yellow,
 /obj/structure/chair/comfy/shuttle{
 	dir = 1
 	},
@@ -190,7 +190,7 @@
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/shuttle/arrival)
 "B" = (
-/obj/effect/turf_decal/bot,
+/obj/effect/turf_decal/industrial/outline/yellow,
 /obj/structure/chair/comfy/shuttle{
 	dir = 1
 	},
@@ -201,8 +201,8 @@
 /turf/open/floor/mineral/plastitanium,
 /area/shuttle/arrival)
 "F" = (
-/obj/effect/turf_decal/tile/blue,
-/obj/effect/turf_decal/tile/blue{
+/obj/effect/turf_decal/corner/blue,
+/obj/effect/turf_decal/corner/blue{
 	dir = 1
 	},
 /turf/open/floor/mineral/titanium/white,
@@ -211,7 +211,7 @@
 /obj/structure/shuttle/engine/propulsion/right{
 	dir = 8
 	},
-/obj/effect/turf_decal/stripes/line{
+/obj/effect/turf_decal/industrial/warning{
 	dir = 8
 	},
 /turf/open/floor/plating/airless,
@@ -223,10 +223,10 @@
 /turf/open/floor/mineral/plastitanium,
 /area/shuttle/arrival)
 "I" = (
-/obj/effect/turf_decal/tile/blue{
+/obj/effect/turf_decal/corner/blue{
 	dir = 1
 	},
-/obj/effect/turf_decal/tile/blue,
+/obj/effect/turf_decal/corner/blue,
 /obj/item/radio/intercom{
 	pixel_x = 28
 	},
@@ -237,14 +237,14 @@
 /turf/closed/wall/mineral/titanium,
 /area/shuttle/arrival)
 "N" = (
-/obj/effect/turf_decal/bot,
+/obj/effect/turf_decal/industrial/outline/yellow,
 /obj/structure/chair/comfy/shuttle{
 	dir = 1
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/shuttle/arrival)
 "O" = (
-/obj/effect/turf_decal/bot,
+/obj/effect/turf_decal/industrial/outline/yellow,
 /obj/structure/chair/comfy/shuttle,
 /obj/machinery/light/small{
 	dir = 8
@@ -255,15 +255,15 @@
 /obj/machinery/door/airlock/shuttle{
 	name = "Arrival Shuttle Airlock"
 	},
-/obj/effect/turf_decal/stripes/line,
-/obj/effect/turf_decal/stripes/line{
+/obj/effect/turf_decal/industrial/warning,
+/obj/effect/turf_decal/industrial/warning{
 	dir = 1
 	},
 /obj/structure/fans/tiny,
 /turf/open/floor/mineral/plastitanium,
 /area/shuttle/arrival)
 "W" = (
-/obj/effect/turf_decal/bot,
+/obj/effect/turf_decal/industrial/outline/yellow,
 /obj/structure/chair/comfy/shuttle{
 	dir = 1
 	},
