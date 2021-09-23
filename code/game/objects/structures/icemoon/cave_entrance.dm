@@ -151,7 +151,7 @@ GLOBAL_LIST_INIT(ore_probability, list(
 			new /mob/living/simple_animal/hostile/netherworld/blankbody(loc)
 		if(6)
 			new /obj/item/rod_of_asclepius(loc)
-			new /obj.effect/mob_spawn/human/doctor(loc)
+			new /obj/effect/mob_spawn/human/doctor(loc)
 			new /obj/item/storage/firstaid/regular(loc)
 		if(7)
 			new /obj/item/warp_cube/red(loc)
