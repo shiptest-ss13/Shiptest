@@ -33,11 +33,11 @@
 	deathsound = 'sound/magic/curse.ogg'
 	footstep_type = FOOTSTEP_MOB_HEAVY
 	attack_action_types = list(/datum/action/innate/megafauna_attack/blood_dash,
-							   /datum/action/innate/megafauna_attack/teleport_b,
-							   /datum/action/innate/megafauna_attack/runic_blast,
-							   /datum/action/innate/megafauna_attack/infernal_summon,
-							   /datum/action/innate/megafauna_attack/blast,
-							   /datum/action/innate/megafauna_attack/rapid_fire)
+								/datum/action/innate/megafauna_attack/teleport_b,
+								/datum/action/innate/megafauna_attack/runic_blast,
+								/datum/action/innate/megafauna_attack/infernal_summon,
+								/datum/action/innate/megafauna_attack/blast,
+								/datum/action/innate/megafauna_attack/rapid_fire)
 	move_force = MOVE_FORCE_NORMAL
 	var/turf/starting
 	var/obj/item/claymore/cursed/mob/weapon
