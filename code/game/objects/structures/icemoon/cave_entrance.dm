@@ -1,6 +1,6 @@
 GLOBAL_LIST_INIT(ore_probability, list(
 	/obj/item/stack/ore/uranium = 50,
-	/obj/item/stack/ore/iron = 100,
+	/obj/item/stack/ore/iron = 50,
 	/obj/item/stack/ore/plasma = 75,
 	/obj/item/stack/ore/silver = 50,
 	/obj/item/stack/ore/gold = 50,
@@ -176,6 +176,7 @@ GLOBAL_LIST_INIT(ore_probability, list(
 			new /mob/living/simple_animal/hostile/netherworld/migo(loc)
 		if(10)
 			new /obj/item/book/granter/spell/summonitem(loc)
+			new /obj/item/upgradescroll(loc)
 			new /mob/living/simple_animal/hostile/wizard(loc)
 		if(11)
 			new /obj/item/clothing/neck/necklace/memento_mori(loc)
