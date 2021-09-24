@@ -447,6 +447,9 @@ GLOBAL_LIST_INIT(adamantine_recipes, list(
 	. = ..()
 	. += GLOB.adamantine_recipes
 
+/obj/item/stack/sheet/mineral/adamantine/text2num(T, Radix)
+	amount = 10
+
 /*
  * Runite
  */
@@ -461,6 +464,8 @@ GLOBAL_LIST_INIT(adamantine_recipes, list(
 	merge_type = /obj/item/stack/sheet/mineral/runite
 	material_type = /datum/material/runite
 
+/obj/item/stack/sheet/mineral/runite/text2num(T, Radix)
+	amount = 10
 
 /*
  * Mythril
@@ -473,6 +478,9 @@ GLOBAL_LIST_INIT(adamantine_recipes, list(
 	novariants = TRUE
 	custom_materials = list(/datum/material/mythril=MINERAL_MATERIAL_AMOUNT)
 	merge_type = /obj/item/stack/sheet/mineral/mythril
+
+/obj/item/stack/sheet/mineral/mythril/text2num(T, Radix)
+	amount = 10
 
 /*
  * Alien Alloy
