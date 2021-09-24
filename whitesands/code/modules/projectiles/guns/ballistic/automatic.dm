@@ -127,9 +127,11 @@
 	mag_display = TRUE
 
 /obj/item/gun/ballistic/automatic/ebr
-	name = "M514 EBR"
+	name = "\improper M514 EBR"
 	desc = {"A cheap, reliable rifle often found in the hands of low-ranking Syndicate personnel. It's known for rather high stopping power and mild armor-piercing capabilities."}
 	icon = 'whitesands/icons/obj/guns/48x32guns.dmi'
+	lefthand_file = 'whitesands/icons/mob/inhands/weapons/64x_guns_left.dmi'
+	righthand_file = 'whitesands/icons/mob/inhands/weapons/64x_guns_right.dmi'
 	fire_sound = 'sound/weapons/gun/rifle/shot.ogg'
 	icon_state = "ebr"
 	item_state = "ebr"
@@ -151,3 +153,19 @@
 	mag_display = TRUE
 	weapon_weight = WEAPON_LIGHT
 	fire_rate = 4
+
+/obj/item/gun/ballistic/automatic/zip_pistol
+	name = "Makeshift Pistol"
+	desc = "A makeshift janky pistol, its a miracle it even works."
+	icon = 'whitesands/icons/obj/guns/projectile.dmi'
+	icon_state = "ZipPistol"
+	lefthand_file = 'whitesands/icons/mob/inhands/weapons/guns_left.dmi'
+	righthand_file = 'whitesands/icons/mob/inhands/weapons/guns_right.dmi'
+	item_state = "ZipPistol"
+	mag_type = /obj/item/ammo_box/magazine/zip_ammo_9mm
+	can_suppress = FALSE
+	actions_types = list()
+	can_bayonet = FALSE
+	mag_display = TRUE
+	weapon_weight = WEAPON_LIGHT
+	fire_rate = 3

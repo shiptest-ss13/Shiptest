@@ -86,16 +86,6 @@
 	var/mob/living/silicon/ai/AI = usr
 	AI.announcement()
 
-/atom/movable/screen/ai/call_shuttle
-	name = "Call Emergency Shuttle"
-	icon_state = "call_shuttle"
-
-/atom/movable/screen/ai/call_shuttle/Click()
-	if(..())
-		return
-	var/mob/living/silicon/ai/AI = usr
-	AI.ai_call_shuttle()
-
 /atom/movable/screen/ai/state_laws
 	name = "State Laws"
 	icon_state = "state_laws"
@@ -240,12 +230,6 @@
 //Announcement
 	using = new /atom/movable/screen/ai/announcement()
 	using.screen_loc = ui_ai_announcement
-	using.hud = src
-	static_inventory += using
-
-//Shuttle
-	using = new /atom/movable/screen/ai/call_shuttle()
-	using.screen_loc = ui_ai_shuttle
 	using.hud = src
 	static_inventory += using
 

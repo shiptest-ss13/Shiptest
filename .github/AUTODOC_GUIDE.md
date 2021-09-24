@@ -1,5 +1,5 @@
 # dmdoc
-[DOCUMENTATION]: https://codedocs.shiptest.ga/
+[DOCUMENTATION]: https://codedocs.shiptest.net/
 
 [BYOND]: https://secure.byond.com/
 
@@ -89,7 +89,7 @@ that will also be rendered and added to the modules tree. The structure for
 these is deliberately not defined, so you can be as freeform and as wheeling as
 you would like.
 
-[Here is a representative example of what you might write](https://codedocs.shiptest.ga/code/game/atoms.html)
+[Here is a representative example of what you might write](https://codedocs.shiptest.net/code/game/atoms.html)
 
 ## Special variables
 You can use certain special template variables in DM DOC comments and they will be expanded

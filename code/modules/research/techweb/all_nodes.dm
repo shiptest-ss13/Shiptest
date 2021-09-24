@@ -256,7 +256,7 @@
 	display_name = "Regulated Bluespace Research"
 	description = "Bluespace technology using stable and balanced procedures. Required by galactic convention for public use."
 	prereq_ids = list("base")
-	design_ids = list("spaceship_navigation_beacon")
+	design_ids = list()
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 	export_price = 2500
 
@@ -400,8 +400,6 @@
 	description = "Computers and how they work."
 	prereq_ids = list("datatheory")
 	design_ids = list(
-		"cargo",
-		"cargorequest",
 		"comconsole",
 		"crewconsole",
 		"idcard",
@@ -1041,9 +1039,6 @@
 	hidden = TRUE
 	design_ids = list("alienalloy")
 
-/datum/techweb_node/alientech/on_research() //Unlocks the Zeta shuttle for purchase
-		SSshuttle.shuttle_purchase_requirements_met |= SHUTTLE_UNLOCK_ALIENTECH
-
 /datum/techweb_node/alien_bio
 	id = "alien_bio"
 	display_name = "Alien Biological Tools"
@@ -1162,9 +1157,9 @@
 
 /datum/techweb_node/sticky_advanced
 	id = "sticky_advanced"
-	display_name = "Advanced Sticky Technology"
-	description = "Taking a good joke too far? Nonsense!"
-	design_ids = list("super_sticky_tape", "pointy_tape")
+	display_name = "Advanced Tapenology"
+	description = "The absolute pinnacle of engineering!"
+	design_ids = list("electric_tape", "super_tape")
 
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 	export_price = 2500

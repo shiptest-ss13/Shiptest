@@ -446,8 +446,8 @@ WS End */
 
 //water electrolysis
 /datum/chemical_reaction/electrolysis
-	results = list(/datum/reagent/oxygen = 10, /datum/reagent/hydrogen = 20)
-	required_reagents = list(/datum/reagent/consumable/liquidelectricity = 1, /datum/reagent/water = 5)
+	results = list(/datum/reagent/oxygen = 20, /datum/reagent/hydrogen = 40)
+	required_reagents = list(/datum/reagent/consumable/liquidelectricity = 1, /datum/reagent/water = 10)
 
 //butterflium
 /datum/chemical_reaction/butterflium

@@ -22,41 +22,22 @@ GLOBAL_VAR_INIT(security_level, SEC_LEVEL_GREEN)
 		switch(level)
 			if(SEC_LEVEL_GREEN)
 				minor_announce(CONFIG_GET(string/alert_green), "Attention! Security level lowered to green:")
-				if(SSshuttle.emergency.mode == SHUTTLE_CALL || SSshuttle.emergency.mode == SHUTTLE_RECALL)
-					if(GLOB.security_level >= SEC_LEVEL_RED)
-						SSshuttle.emergency.modTimer(4)
-					else
-						SSshuttle.emergency.modTimer(2)
 				GLOB.security_level = SEC_LEVEL_GREEN
 			if(SEC_LEVEL_BLUE)
 				if(GLOB.security_level < SEC_LEVEL_BLUE)
 					minor_announce(CONFIG_GET(string/alert_blue_upto), "Attention! Security level elevated to blue:",1)
-					if(SSshuttle.emergency.mode == SHUTTLE_CALL || SSshuttle.emergency.mode == SHUTTLE_RECALL)
-						SSshuttle.emergency.modTimer(0.5)
 				else
 					minor_announce(CONFIG_GET(string/alert_blue_downto), "Attention! Security level lowered to blue:")
-					if(SSshuttle.emergency.mode == SHUTTLE_CALL || SSshuttle.emergency.mode == SHUTTLE_RECALL)
-						SSshuttle.emergency.modTimer(2)
 				GLOB.security_level = SEC_LEVEL_BLUE
 			if(SEC_LEVEL_RED)
 				if(GLOB.security_level < SEC_LEVEL_RED)
 					minor_announce(CONFIG_GET(string/alert_red_upto), "Attention! Code red!",1)
-					if(SSshuttle.emergency.mode == SHUTTLE_CALL || SSshuttle.emergency.mode == SHUTTLE_RECALL)
-						if(GLOB.security_level == SEC_LEVEL_GREEN)
-							SSshuttle.emergency.modTimer(0.25)
-						else
-							SSshuttle.emergency.modTimer(0.5)
 				else
 					minor_announce(CONFIG_GET(string/alert_red_downto), "Attention! Code red!")
 				GLOB.security_level = SEC_LEVEL_RED
 
 			if(SEC_LEVEL_DELTA)
 				minor_announce(CONFIG_GET(string/alert_delta), "Attention! Delta security level reached!",1)
-				if(SSshuttle.emergency.mode == SHUTTLE_CALL || SSshuttle.emergency.mode == SHUTTLE_RECALL)
-					if(GLOB.security_level == SEC_LEVEL_GREEN)
-						SSshuttle.emergency.modTimer(0.25)
-					else if(GLOB.security_level == SEC_LEVEL_BLUE)
-						SSshuttle.emergency.modTimer(0.5)
 				GLOB.security_level = SEC_LEVEL_DELTA
 		if(level >= SEC_LEVEL_RED)
 			for(var/obj/machinery/door/D in GLOB.machines)

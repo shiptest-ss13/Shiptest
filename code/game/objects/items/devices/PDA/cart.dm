@@ -1,17 +1,17 @@
-#define CART_SECURITY	(1<<0)
-#define CART_ENGINE	(1<<1)
-#define CART_ATMOS	(1<<2)
-#define CART_MEDICAL	(1<<3)
-#define CART_CLOWN	(1<<5)
-#define CART_MIME	(1<<6)
-#define CART_JANITOR	(1<<7)
-#define CART_REAGENT_SCANNER	(1<<8)
-#define CART_NEWSCASTER			(1<<9)
-#define CART_REMOTE_DOOR		(1<<10)
-#define CART_STATUS_DISPLAY		(1<<11)
-#define CART_QUARTERMASTER		(1<<12)
-#define CART_HYDROPONICS		(1<<13)
-#define CART_DRONEPHONE			(1<<14)
+#define CART_SECURITY (1<<0)
+#define CART_ENGINE (1<<1)
+#define CART_ATMOS (1<<2)
+#define CART_MEDICAL (1<<3)
+#define CART_CLOWN (1<<5)
+#define CART_MIME (1<<6)
+#define CART_JANITOR (1<<7)
+#define CART_REAGENT_SCANNER (1<<8)
+#define CART_NEWSCASTER (1<<9)
+#define CART_REMOTE_DOOR (1<<10)
+#define CART_STATUS_DISPLAY (1<<11)
+#define CART_QUARTERMASTER (1<<12)
+#define CART_HYDROPONICS (1<<13)
+#define CART_DRONEPHONE (1<<14)
 
 
 /obj/item/cartridge
@@ -406,21 +406,6 @@ Code:
 
 			menu += "<br>"
 
-		if (47) //quartermaster order records
-			menu = "<h4>[PDAIMG(crate)] Supply Record Interlink</h4>"
-
-			menu += "<BR>Current approved orders: <BR><ol>"
-			for(var/S in SSshuttle.shoppinglist)
-				var/datum/supply_order/SO = S
-				menu += "<li>#[SO.id] - [SO.pack.name] approved by [SO.orderer] [SO.reason ? "([SO.reason])":""]</li>"
-			menu += "</ol>"
-
-			menu += "Current requests: <BR><ol>"
-			for(var/S in SSshuttle.requestlist)
-				var/datum/supply_order/SO = S
-				menu += "<li>#[SO.id] - [SO.pack.name] requested by [SO.orderer]</li>"
-			// menu += "</ol><font size=\"-3\">Upgrade NOW to Space Parts & Space Vendors PLUS for full remote order control and inventory management." DOESNT EXIST, SO COMMENTED OUT
-
 		if (49) //janitorial locator
 			menu = "<h4>[PDAIMG(bucket)] Persistent Custodial Object Locator</h4>"
 
@@ -585,9 +570,6 @@ Code:
 			var/pnum = text2num(href_list["target"])
 			powmonitor = powermonitors[pnum]
 			host_pda.mode = 433
-
-		if("Supply Orders")
-			host_pda.mode =47
 
 		if("Newscaster Access")
 			host_pda.mode = 53

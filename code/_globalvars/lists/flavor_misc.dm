@@ -46,6 +46,8 @@ GLOBAL_LIST_EMPTY(ipc_chassis_list)
 GLOBAL_LIST_EMPTY(spider_legs_list)
 GLOBAL_LIST_EMPTY(spider_spinneret_list)
 GLOBAL_LIST_EMPTY(spider_mandibles_list)
+GLOBAL_LIST_EMPTY(teshari_feathers_list)
+GLOBAL_LIST_EMPTY(teshari_body_feathers_list)
 
 GLOBAL_LIST_INIT(color_list_ethereal, list(
 	"Red" = "ff4d4d",
@@ -179,9 +181,9 @@ GLOBAL_LIST_INIT(jumpsuitlist, list(PREF_SUIT, PREF_SKIRT, PREF_ALTSUIT, PREF_GR
 GLOBAL_LIST_INIT(exowearlist, list(PREF_NOEXOWEAR, PREF_EXOWEAR, PREF_ALTEXOWEAR, PREF_COATEXOWEAR))
 
 //Uplink spawn loc
-#define UPLINK_PDA		"PDA"
-#define UPLINK_RADIO	"Radio"
-#define UPLINK_PEN		"Pen" //like a real spy!
+#define UPLINK_PDA "PDA"
+#define UPLINK_RADIO "Radio"
+#define UPLINK_PEN "Pen" //like a real spy!
 GLOBAL_LIST_INIT(uplink_spawn_loc_list, list(UPLINK_PDA, UPLINK_RADIO, UPLINK_PEN))
 
 	//Female Uniforms

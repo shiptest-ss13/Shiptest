@@ -1,6 +1,6 @@
-#define LIMBGROWER_MAIN_MENU       1
-#define LIMBGROWER_CATEGORY_MENU   2
-#define LIMBGROWER_CHEMICAL_MENU   3
+#define LIMBGROWER_MAIN_MENU 1
+#define LIMBGROWER_CATEGORY_MENU 2
+#define LIMBGROWER_CHEMICAL_MENU 3
 //use these for the menu system
 
 

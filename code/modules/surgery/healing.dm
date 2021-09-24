@@ -1,4 +1,4 @@
-#define PER_ITERATION_XP_CAP	MEDICAL_SKILL_MEDIUM //TW XP gain scales with repeated iterations so we cap it.
+#define PER_ITERATION_XP_CAP MEDICAL_SKILL_MEDIUM //TW XP gain scales with repeated iterations so we cap it.
 
 /datum/surgery/healing
 	steps = list(/datum/surgery_step/incise,

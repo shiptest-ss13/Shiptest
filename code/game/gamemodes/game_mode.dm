@@ -160,13 +160,6 @@
 
 	replacementmode = pickweight(usable_modes)
 
-	switch(SSshuttle.emergency.mode) //Rounds on the verge of ending don't get new antags, they just run out
-		if(SHUTTLE_STRANDED, SHUTTLE_ESCAPE)
-			return 1
-		if(SHUTTLE_CALL)
-			if(SSshuttle.emergency.timeLeft(1) < initial(SSshuttle.emergencyCallTime)*0.5)
-				return 1
-
 	var/matc = CONFIG_GET(number/midround_antag_time_check)
 	if(world.time >= (matc * 600))
 		message_admins("Convert_roundtype failed due to round length. Limit is [matc] minutes.")
@@ -242,7 +235,6 @@
 				message_admins("The roundtype ([config_tag]) has no antagonists, continuous round has been defaulted to on and midround_antag has been defaulted to off.")
 				continuous[config_tag] = TRUE
 				midround_antag[config_tag] = FALSE
-				SSshuttle.clearHostileEnvironment(src)
 				return 0
 
 
@@ -631,12 +623,6 @@
 //Set result and news report here
 /datum/game_mode/proc/set_round_result()
 	SSticker.mode_result = "undefined"
-	if(station_was_nuked)
-		SSticker.news_report = STATION_DESTROYED_NUKE
-	if(EMERGENCY_ESCAPED_OR_ENDGAMED)
-		SSticker.news_report = STATION_EVACUATED
-		if(SSshuttle.emergency.is_hijacked())
-			SSticker.news_report = SHUTTLE_HIJACK
 
 /// Mode specific admin panel.
 /datum/game_mode/proc/admin_panel()

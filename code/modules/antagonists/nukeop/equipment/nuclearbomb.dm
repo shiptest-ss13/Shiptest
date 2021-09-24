@@ -483,7 +483,6 @@
 		off_station = NUKE_MISS_STATION
 
 	if(off_station < 2)
-		SSshuttle.registerHostileEnvironment(src)
 		SSshuttle.lockdown = TRUE
 
 	SSshipbot.relay_channel("admin-round", "A nuclear device has destroyed the station.")

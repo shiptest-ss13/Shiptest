@@ -266,7 +266,6 @@ GLOBAL_LIST_INIT(malf_modules, subtypesof(/datum/AI_Module))
 /obj/machinery/doomsday_device/Destroy()
 	QDEL_NULL(countdown)
 	STOP_PROCESSING(SSfastprocess, src)
-	SSshuttle.clearHostileEnvironment(src)
 	SSmapping.remove_nuke_threat(src)
 	for(var/A in GLOB.ai_list)
 		var/mob/living/silicon/ai/AI = A
@@ -280,7 +279,6 @@ GLOBAL_LIST_INIT(malf_modules, subtypesof(/datum/AI_Module))
 	timing = TRUE
 	countdown.start()
 	START_PROCESSING(SSfastprocess, src)
-	SSshuttle.registerHostileEnvironment(src)
 	SSmapping.add_nuke_threat(src) //This causes all blue "circuit" tiles on the map to change to animated red icon state.
 
 /obj/machinery/doomsday_device/proc/seconds_remaining()

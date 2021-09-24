@@ -104,7 +104,6 @@
 	revolution.update_objectives()
 	revolution.update_heads()
 
-	SSshuttle.registerHostileEnvironment(src)
 	..()
 
 
@@ -131,8 +130,6 @@
 ///////////////////////////////
 /datum/game_mode/revolution/check_finished()
 	if(CONFIG_GET(keyed_list/continuous)["revolution"])
-		if(finished)
-			SSshuttle.clearHostileEnvironment(src)
 		return ..()
 	if(finished != 0 && end_when_heads_dead)
 		return TRUE

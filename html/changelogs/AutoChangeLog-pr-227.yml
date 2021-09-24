@@ -1,0 +1,27 @@
+author: MarkSuckerberg
+delete-after: true
+changes:
+  - admin: The call-shuttle and cancel-shuttle verbs have been replaced with initiate_jump
+      and cancel_jump respectively.
+  - admin: You can actually open check-antagonists again to delay the round \o/
+  - rscdel: Emergency shuttle code
+  - rscdel: Personal objectives. I am quite sure this was broken already anyways.
+  - rscdel: Lots of unrelated shuttle map files and templates.
+  - rscdel: A lot of antagonist objective code has been removed (as it didn't work
+      at all already)
+  - rscdel: AIs can no longer randomly initiate a shuttle call
+  - rscdel: Normal cargo shuttle consoles have been removed, as they do not work.
+      Express consoles remain.
+  - rscdel: The old and deprecated shuttle consoles have been removed as they do not
+      work.
+  - rscdel: Bluespace gigabeacons have been removed since they do not work.
+  - rscdel: Emergency shuttle purchasing has been removed. Not that it worked at all
+      anyways.
+  - rscdel: Removed unbuyable shuttle config for obvious reasons seen in the entry
+      above.
+  - tweak: Express cargo consoles no longer require you to unlock them.
+  - tweak: Express cargo consoles' "cargo bay" option will now actually send pods
+      to your current ship's cargo bay.
+  - tweak: Export scanners no longer need to be "linked" to a cargo shuttle console.
+  - tweak: Moved whiteship map files into the shiptest directory as they're normal
+      ships now.

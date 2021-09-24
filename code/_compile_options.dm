@@ -1,7 +1,7 @@
-//#define TESTING				//By using the testing("message") proc you can create debug-feedback for people with this
+//#define TESTING //By using the testing("message") proc you can create debug-feedback for people with this
 								//uncommented, but not visible in the release version)
 
-//#define DATUMVAR_DEBUGGING_MODE	//Enables the ability to cache datum vars and retrieve later for debugging which vars changed.
+//#define DATUMVAR_DEBUGGING_MODE //Enables the ability to cache datum vars and retrieve later for debugging which vars changed.
 
 // Comment this out if you are debugging problems that might be obscured by custom error handling in world/Error
 #ifdef DEBUG
@@ -23,13 +23,13 @@
 
 #endif //ifdef REFERENCE_TRACKING
 
-//#define VISUALIZE_ACTIVE_TURFS	//Highlights atmos active turfs in green
+//#define VISUALIZE_ACTIVE_TURFS //Highlights atmos active turfs in green
 #endif //ifdef TESTING
 
-//#define UNIT_TESTS			//Enables unit tests via TEST_RUN_PARAMETER
+//#define UNIT_TESTS //Enables unit tests via TEST_RUN_PARAMETER
 
 #ifndef PRELOAD_RSC				//set to:
-#define PRELOAD_RSC	2			//	0 to allow using external resources or on-demand behaviour;
+#define PRELOAD_RSC 2			//	0 to allow using external resources or on-demand behaviour;
 #endif							//	1 to use the default behaviour;
 								//	2 for preloading absolutely everything;
 

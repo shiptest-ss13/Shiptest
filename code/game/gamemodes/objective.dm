@@ -59,7 +59,7 @@ GLOBAL_LIST_EMPTY(objectives)
 		return TRUE
 	if(SSticker.force_ending || SSticker.mode.station_was_nuked) // Just let them win.
 		return TRUE
-	if(SSshuttle.emergency.mode != SHUTTLE_ENDGAME)
+	if(SSshuttle.jump_mode != BS_JUMP_COMPLETED)
 		return FALSE
 	var/turf/location = get_turf(M.current)
 	if(!location || istype(location, /turf/open/floor/mineral/plastitanium/red/brig)) // Fails if they are in the shuttle brig
@@ -352,13 +352,7 @@ GLOBAL_LIST_EMPTY(objectives)
 	var/hijack_speed_override = 1
 
 /datum/objective/hijack/check_completion() // Requires all owners to escape.
-	if(SSshuttle.emergency.mode != SHUTTLE_ENDGAME)
-		return FALSE
-	var/list/datum/mind/owners = get_owners()
-	for(var/datum/mind/M in owners)
-		if(!considered_alive(M) || !SSshuttle.emergency.shuttle_areas[get_area(M.current)])
-			return FALSE
-	return SSshuttle.emergency.is_hijacked()
+	return FALSE // PLACEHOLDER
 
 /datum/objective/elimination
 	name = "elimination"
@@ -367,26 +361,14 @@ GLOBAL_LIST_EMPTY(objectives)
 	martyr_compatible = FALSE
 
 /datum/objective/elimination/check_completion()
-	if(SSshuttle.emergency.mode != SHUTTLE_ENDGAME)
-		return FALSE
-	var/list/datum/mind/owners = get_owners()
-	for(var/datum/mind/M in owners)
-		if(!considered_alive(M, enforce_human = FALSE) || !SSshuttle.emergency.shuttle_areas[get_area(M.current)])
-			return FALSE
-	return SSshuttle.emergency.elimination_hijack()
+	return FALSE // PLACEHOLDER
 
 /datum/objective/elimination/highlander
 	name="highlander elimination"
 	explanation_text = "Escape on the shuttle alone. Ensure that nobody else makes it out."
 
 /datum/objective/elimination/highlander/check_completion()
-	if(SSshuttle.emergency.mode != SHUTTLE_ENDGAME)
-		return FALSE
-	var/list/datum/mind/owners = get_owners()
-	for(var/datum/mind/M in owners)
-		if(!considered_alive(M, enforce_human = FALSE) || !SSshuttle.emergency.shuttle_areas[get_area(M.current)])
-			return FALSE
-	return SSshuttle.emergency.elimination_hijack(filter_by_human = FALSE, solo_hijack = TRUE)
+	return FALSE // PLACEHOLDER
 
 /datum/objective/block
 	name = "no organics on shuttle"
@@ -394,13 +376,7 @@ GLOBAL_LIST_EMPTY(objectives)
 	martyr_compatible = 1
 
 /datum/objective/block/check_completion()
-	if(SSshuttle.emergency.mode != SHUTTLE_ENDGAME)
-		return TRUE
-	for(var/mob/living/player in GLOB.player_list)
-		if(player.mind && player.stat != DEAD && !issilicon(player))
-			if(get_area(player) in SSshuttle.emergency.shuttle_areas)
-				return FALSE
-	return TRUE
+	return FALSE // PLACEHOLDER
 
 /datum/objective/purge
 	name = "no mutants on shuttle"
@@ -408,14 +384,7 @@ GLOBAL_LIST_EMPTY(objectives)
 	martyr_compatible = 1
 
 /datum/objective/purge/check_completion()
-	if(SSshuttle.emergency.mode != SHUTTLE_ENDGAME)
-		return TRUE
-	for(var/mob/living/player in GLOB.player_list)
-		if((get_area(player) in SSshuttle.emergency.shuttle_areas) && player.mind && player.stat != DEAD && ishuman(player))
-			var/mob/living/carbon/human/H = player
-			if(H.dna.species.id != "human")
-				return FALSE
-	return TRUE
+	return FALSE // PLACEHOLDER
 
 /datum/objective/robot_army
 	name = "robot army"

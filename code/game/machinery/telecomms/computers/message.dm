@@ -3,12 +3,12 @@
 	Lets you read PDA and request console messages.
 */
 
-#define LINKED_SERVER_NONRESPONSIVE  (!linkedServer || (linkedServer.machine_stat & (NOPOWER|BROKEN)))
+#define LINKED_SERVER_NONRESPONSIVE (!linkedServer || (linkedServer.machine_stat & (NOPOWER|BROKEN)))
 
-#define MSG_MON_SCREEN_MAIN 		0
-#define MSG_MON_SCREEN_LOGS 		1
-#define MSG_MON_SCREEN_HACKED 		2
-#define MSG_MON_SCREEN_CUSTOM_MSG 	3
+#define MSG_MON_SCREEN_MAIN 0
+#define MSG_MON_SCREEN_LOGS 1
+#define MSG_MON_SCREEN_HACKED 2
+#define MSG_MON_SCREEN_CUSTOM_MSG 3
 #define MSG_MON_SCREEN_REQUEST_LOGS 4
 
 // The monitor itself.
