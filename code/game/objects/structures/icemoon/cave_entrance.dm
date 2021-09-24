@@ -282,7 +282,7 @@ GLOBAL_LIST_INIT(ore_probability, list(
 			new /obj/item/stack/sheet/mineral/adamantine/ten(loc)
 			new /obj/item/stack/sheet/mineral/runite/ten(loc)
 			new /obj/item/stack/sheet/mineral/mythril/ten(loc)
-			new /obj/item/stack/sheet/mineral/metal/fifty(loc)
+			new /obj/item/stack/sheet/metal/fifty(loc)
 			new /mob/living/simple_animal/hostile/hivebot(loc)
 			new /mob/living/simple_animal/hostile/hivebot(loc)
 			new /mob/living/simple_animal/hostile/hivebot/strong(loc)
