@@ -1209,6 +1209,13 @@
 	},
 /turf/open/floor/plating,
 /area/ship/science)
+"qT" = (
+/obj/structure/sign/poster/official/no_erp,
+/turf/closed/wall/mineral/uranium/safe{
+	desc = "A wall plated with emerald.";
+	name = "emerald wall"
+	},
+/area/ship/crew/toilet)
 "qU" = (
 /obj/machinery/power/apc/auto_name/west,
 /obj/structure/cable{
@@ -2114,6 +2121,7 @@
 	},
 /obj/item/roulette_wheel_beacon,
 /obj/item/etherealballdeployer,
+/obj/item/storage/belt/bandolier,
 /turf/open/floor/carpet/purple,
 /area/ship/crew/canteen)
 "VP" = (
@@ -2664,7 +2672,7 @@ IN
 KW
 XS
 Vy
-CF
+qT
 CF
 CF
 CF
