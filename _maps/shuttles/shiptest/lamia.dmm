@@ -391,6 +391,9 @@
 /area/ship/crew/canteen)
 "bp" = (
 /obj/machinery/light,
+/obj/item/radio/intercom{
+	pixel_y = -31
+	},
 /turf/open/floor/carpet/purple,
 /area/ship/crew/canteen)
 "bq" = (
@@ -604,6 +607,7 @@
 /obj/effect/turf_decal/stripes/line,
 /obj/structure/closet/crate/science,
 /obj/item/storage/box/rndboards{
+	desc = "A box containing a gift for worthy wizards.";
 	name = "\proper the archmagus's legacy"
 	},
 /obj/machinery/airalarm/directional/west,
@@ -867,6 +871,9 @@
 /obj/structure/chair/wood/wings{
 	dir = 8
 	},
+/obj/item/radio/intercom{
+	pixel_y = 26
+	},
 /turf/open/floor/carpet/royalblack,
 /area/ship/hallway/starboard)
 "fx" = (
@@ -969,6 +976,10 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/item/radio/intercom/wideband{
+	pixel_x = -29;
+	pixel_y = 25
+	},
 /turf/open/floor/carpet/stellar,
 /area/ship/bridge)
 "iu" = (
@@ -1043,6 +1054,9 @@
 	},
 /obj/machinery/light{
 	dir = 4
+	},
+/obj/item/radio/intercom{
+	pixel_x = 29
 	},
 /turf/open/floor/bronze,
 /area/ship/cargo)
@@ -1250,6 +1264,9 @@
 	pixel_y = 1
 	},
 /obj/structure/table/wood/fancy/royalblack,
+/obj/item/radio/intercom{
+	pixel_y = -31
+	},
 /turf/open/floor/carpet/orange,
 /area/ship/crew/library)
 "rH" = (
