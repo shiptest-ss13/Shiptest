@@ -12,8 +12,8 @@
 	speak_emote = list("growls")
 	speed = 12
 	move_to_delay = 12
-	maxHealth = 300
-	health = 300
+	maxHealth = 200
+	health = 200
 	obj_damage = 40
 	melee_damage_lower = 25
 	melee_damage_upper = 25

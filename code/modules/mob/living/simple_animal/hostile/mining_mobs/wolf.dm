@@ -12,8 +12,8 @@
 	speak_emote = list("howls")
 	speed = 5
 	move_to_delay = 5
-	maxHealth = 130
-	health = 130
+	maxHealth = 90
+	health = 90
 	obj_damage = 15
 	environment_smash = ENVIRONMENT_SMASH_MINERALS
 	melee_damage_lower = 7.5
