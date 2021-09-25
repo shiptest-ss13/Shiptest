@@ -29,11 +29,19 @@
 	open_sound = 'sound/machines/gate.ogg'
 	close_sound = 'sound/machines/gate.ogg'
 	glass = TRUE
+	opacity = FALSE
 
 /obj/machinery/door/poddoor/gates/indestructible
 	name = "hardened gates"
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
 
-/obj/machinery/door/poddoor/shutters/preopen
+/obj/machinery/door/poddoor/gates/indestructible/preopen
+	icon_state = "open"
+	density = FALSE
+	opacity = FALSE
+
+/obj/machinery/door/poddoor/gates/preopen
 	icon_state = "open"
 	glass = TRUE
+	density = FALSE
+	opacity = FALSE

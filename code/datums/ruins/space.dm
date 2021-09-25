@@ -277,14 +277,6 @@
 	name = "Cleric's Den"
 	description = "Once part of a larger monastery, this holy order of long dead clerics practiced far less non-violence than they preached. Appears to have been untouched by looters, however. Odd."
 
-/datum/map_template/ruin/space/kinggoatarena
-	id = "kinggoatarena"
-	suffix = "kinggoatarena.dmm"
-	name = "King Goat Arena"
-	description = "Well wish you luck."
-	allow_duplicates = FALSE
-	unpickable = TRUE
-
 /datum/map_template/ruin/space/forgottenship
 	id = "forgottenship"
 	suffix = "forgottenship.dmm"
@@ -308,3 +300,9 @@
 	suffix = "syndicatewreck01.dmm"
 	name = "Syndicate Station Wreckage"
 	description = "An old wreck, made of plastitanium. Somehow, it looks more filled than it ever was..."
+
+/datum/map_template/ruin/space/cult_templar
+	id = "cult_templar"
+	suffix = "chaosmarine.dmm"
+	name = "Bloody Lair"
+	description = "A seemingly abandoned blood cult base in space, but why was it abandoned?"

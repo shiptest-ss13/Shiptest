@@ -4,8 +4,8 @@
 /mob/living/simple_animal/hostile/megafauna/cult_templar
 	name = "cult templar"
 	desc = "Forever a servant of the Nar'sie, this cultist has gone more insane than what is considered the normal insanity for cultist. They forever seek battle, waiting for sacrifices to battle them."
-	health = 2400
-	maxHealth = 2400
+	health = 2000
+	maxHealth = 2000
 	icon_state = "cult_templar"
 	icon_living = "cult_templar"
 	icon = 'icons/mob/simple_human.dmi'
@@ -20,7 +20,7 @@
 	projectilesound = 'sound/weapons/gun/l6/shot.ogg'
 	ranged = TRUE
 	ranged_cooldown_time = 20
-	rapid_melee = 2
+	move_to_delay = 4
 	vision_range = 10
 	damage_coeff = list(BRUTE = 1, BURN = 0.5, TOX = 0.5, CLONE = 0.5, STAMINA = 0, OXY = 0.5)
 	loot = list(/obj/item/claymore/cursed, /obj/item/clothing/suit/space/hardsuit/cult/enchanted)
@@ -150,17 +150,17 @@
 /mob/living/simple_animal/hostile/megafauna/cult_templar/proc/adjustCMspeed()
 	if(health <= maxHealth*0.25)
 		speed = 4
-		dash_mod = 0.3
+		dash_mod = 0.4
 		dash_num = 5
 		rapid_melee = 3.5
 	else if(health <= maxHealth*0.5)
 		speed = 4.8
-		dash_mod = 0.5
+		dash_mod = 0.6
 		dash_num = 4
-		rapid_melee = 3
+		rapid_melee = 2.5
 	else if(health <= maxHealth*0.75)
 		speed = 5.4
-		dash_mod = 0.7
+		dash_mod = 1.5
 		dash_num = initial(dash_num)
 		rapid_melee = 2
 	else if(health > maxHealth*0.75)
@@ -236,6 +236,10 @@
 	exit.id = "cult_templar_exit"
 	exit.add_atom_colour(COLOR_RED_LIGHT, ADMIN_COLOUR_PRIORITY)
 	exit.set_light(15, 1, COLOR_RED)
+	//open all cult templar gates
+	for(var/obj/machinery/door/poddoor/D in GLOB.machines)
+		if(D.id == "templar_dead")
+			D.open()
 	return ..()
 
 /mob/living/simple_animal/hostile/megafauna/cult_templar/proc/blood_dash(target)
@@ -294,6 +298,7 @@
 	layer = 3
 	SLEEP_CHECK_DEATH(3)
 	new /obj/effect/temp_visual/cult/blood(S)
+	SLEEP_CHECK_DEATH(1)
 	new /obj/effect/temp_visual/cult/blood/out(T)
 	SLEEP_CHECK_DEATH(2)
 	forceMove(T)
@@ -404,7 +409,7 @@
 	playsound(src, 'sound/magic/clockwork/narsie_attack.ogg', 200, TRUE)
 
 /mob/living/simple_animal/hostile/megafauna/cult_templar/proc/cmempower()
-	damage_coeff = list(BRUTE = 0.5, BURN = 0.2, TOX = 0.2, CLONE = 0.2, STAMINA = 0, OXY = 0.2)
+	damage_coeff = list(BRUTE = 0.6, BURN = 0.2, TOX = 0.2, CLONE = 0.2, STAMINA = 0, OXY = 0.2)
 	add_atom_colour(newcolor, TEMPORARY_COLOUR_PRIORITY)
 	new /obj/effect/temp_visual/cult/sparks(get_turf(src))
 
@@ -430,7 +435,7 @@
 	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
 	resistance_flags = FIRE_PROOF | LAVA_PROOF
 
-/obj/item/clothing/suit/space/hardsuit/ert/paranormal/berserker/cult/enchanted/process()
+/obj/item/clothing/head/helmet/space/hardsuit/cult/enchanted/process()
 	. = ..()
 	var/mob/living/carbon/C = loc
 	if(istype(C) && prob(4))
@@ -462,8 +467,8 @@
 	attack_sound = 'sound/magic/demon_attack1.ogg'
 	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
 	faction = list("cult")
-	maxHealth = 80
-	health = 80
+	maxHealth = 60
+	health = 60
 	vision_range = 16
 	environment_smash = ENVIRONMENT_SMASH_NONE
 	mob_size = MOB_SIZE_HUGE
@@ -486,8 +491,8 @@
 	melee_damage_lower = 10
 	melee_damage_upper = 14
 	light_range = 4
-	maxHealth = 140
-	health = 140
+	maxHealth = 125
+	health = 125
 
 /mob/living/simple_animal/hostile/cult_demon/ex_act(severity, target)
 	return //Resistant to explosions
