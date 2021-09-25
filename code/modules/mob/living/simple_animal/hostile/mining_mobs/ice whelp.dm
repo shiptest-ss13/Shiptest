@@ -13,7 +13,7 @@
 	speed = 20
 	move_to_delay = 20
 	ranged = TRUE
-	ranged_cooldown_time = 50
+	ranged_cooldown_time = 200
 	maxHealth = 300
 	health = 300
 	obj_damage = 15
@@ -37,7 +37,7 @@
 	robust_searching = TRUE
 	footstep_type = FOOTSTEP_MOB_CLAW
 	/// How far the whelps fire can go
-	var/fire_range = 3
+	var/fire_range = 5
 
 /mob/living/simple_animal/hostile/asteroid/ice_whelp/OpenFire()
 	var/turf/T = get_ranged_target_turf_direct(src, target, fire_range)
