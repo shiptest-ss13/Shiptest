@@ -43,7 +43,8 @@
 /obj/item/spear,
 /mob/living/simple_animal/hostile/retaliate/goat{
 	health = 0;
-	icon_state = "goat_dead"
+	icon_state = "goat_dead";
+	stat = 4
 	},
 /turf/open/floor/wood,
 /area/ruin/powered)
@@ -70,7 +71,8 @@
 /obj/structure/stone_tile/slab/cracked,
 /mob/living/simple_animal/hostile/retaliate/goat{
 	health = 0;
-	icon_state = "goat_dead"
+	icon_state = "goat_dead";
+	stat = 4
 	},
 /turf/open/lava/smooth/lava_land_surface,
 /area/lavaland/surface/outdoors/explored)
@@ -111,18 +113,20 @@
 /obj/effect/decal/cleanable/blood/old,
 /mob/living/simple_animal/hostile/retaliate/goat{
 	health = 0;
-	icon_state = "goat_dead"
+	icon_state = "goat_dead";
+	stat = 4
 	},
 /turf/open/floor/carpet/red,
 /area/ruin/powered)
 "qo" = (
 /obj/effect/decal/cleanable/blood/old,
-/mob/living/simple_animal/hostile/retaliate/goat/guard{
-	health = 0;
-	icon_state = "goat_guard_dead"
-	},
 /obj/effect/turf_decal/industrial/warning{
 	dir = 5
+	},
+/mob/living/simple_animal/hostile/retaliate/goat/guard{
+	health = 0;
+	icon_state = "goat_guard_dead";
+	stat = 4
 	},
 /turf/open/floor/carpet/red,
 /area/ruin/powered/kinggoat_arena)
@@ -178,7 +182,8 @@
 /obj/effect/decal/cleanable/blood/old,
 /mob/living/simple_animal/hostile/retaliate/goat{
 	health = 0;
-	icon_state = "goat_dead"
+	icon_state = "goat_dead";
+	stat = 4
 	},
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors/explored)
@@ -203,6 +208,7 @@
 /turf/open/floor/mineral/gold,
 /area/ruin/powered)
 "zH" = (
+/obj/machinery/light/floor,
 /turf/open/indestructible{
 	icon_state = "diamond"
 	},
@@ -276,12 +282,13 @@
 /area/lavaland/surface/outdoors/explored)
 "FN" = (
 /obj/effect/decal/cleanable/blood/old,
-/mob/living/simple_animal/hostile/retaliate/goat/guard{
-	health = 0;
-	icon_state = "goat_guard_dead"
-	},
 /obj/structure/lattice/lava{
 	icon = 'whitesands/icons/obj/smooth_structures/catwalk.dmi'
+	},
+/mob/living/simple_animal/hostile/retaliate/goat/guard{
+	health = 0;
+	icon_state = "goat_guard_dead";
+	stat = 4
 	},
 /turf/open/lava,
 /area/ruin/powered/kinggoat_arena)
@@ -354,7 +361,8 @@
 /obj/effect/decal/cleanable/blood/old,
 /mob/living/simple_animal/hostile/retaliate/goat/guard{
 	health = 0;
-	icon_state = "goat_guard_dead"
+	icon_state = "goat_guard_dead";
+	stat = 4
 	},
 /turf/open/floor/carpet/red,
 /area/ruin/powered)
@@ -380,6 +388,18 @@
 /obj/structure/mineral_door/iron,
 /turf/open/floor/carpet/red,
 /area/ruin/powered)
+"Ol" = (
+/obj/effect/decal/cleanable/blood/old,
+/mob/living/simple_animal/hostile/retaliate/goat/guard{
+	health = 0;
+	icon_state = "goat_guard_dead";
+	stat = 4
+	},
+/obj/structure/lattice/lava{
+	icon = 'whitesands/icons/obj/smooth_structures/catwalk.dmi'
+	},
+/turf/open/lava,
+/area/ruin/powered/kinggoat_arena)
 "Oz" = (
 /obj/machinery/door/poddoor/gates/indestructible{
 	glass = 0;
@@ -391,13 +411,20 @@
 /obj/effect/decal/cleanable/blood/old,
 /mob/living/simple_animal/hostile/retaliate/goat/guard{
 	health = 0;
-	icon_state = "goat_guard_dead"
+	icon_state = "goat_guard_dead";
+	stat = 4
 	},
 /turf/open/floor/mineral/diamond,
 /area/ruin/powered)
 "Pk" = (
 /obj/structure/bed,
 /obj/item/bedsheet/red,
+/turf/open/floor/carpet/red{
+	initial_gas_mix = "o2=14;n2=30;TEMP=293.15"
+	},
+/area/ruin/powered/kinggoat_arena)
+"Qk" = (
+/obj/machinery/light/floor,
 /turf/open/floor/carpet/red{
 	initial_gas_mix = "o2=14;n2=30;TEMP=293.15"
 	},
@@ -430,7 +457,8 @@
 /obj/effect/decal/cleanable/blood/old,
 /mob/living/simple_animal/hostile/retaliate/goat/guard{
 	health = 0;
-	icon_state = "goat_guard_dead"
+	icon_state = "goat_guard_dead";
+	stat = 4
 	},
 /turf/open/floor/carpet/cyan,
 /area/ruin/powered)
@@ -798,6 +826,7 @@ HK
 EN
 ly
 FT
+Qk
 SF
 SF
 SF
@@ -805,8 +834,7 @@ SF
 SF
 SF
 SF
-SF
-SF
+Qk
 FT
 DT
 oF
@@ -1119,7 +1147,7 @@ AH
 AH
 AH
 FT
-FN
+Ol
 ak
 bQ
 ko
@@ -1308,7 +1336,7 @@ jG
 ly
 EN
 FT
-SF
+Qk
 rf
 Pk
 Pk
@@ -1316,7 +1344,7 @@ Zo
 SF
 SF
 SF
-SF
+Qk
 FT
 DT
 oF
