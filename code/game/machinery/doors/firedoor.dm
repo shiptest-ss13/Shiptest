@@ -34,7 +34,8 @@
 /obj/machinery/door/firedoor/Initialize()
 	. = ..()
 	CalculateAffectingAreas()
-	update_registration()
+	var/turf/current_turf = get_turf(src)
+	current_turf.update_firelock_registration()
 
 /obj/machinery/door/firedoor/examine(mob/user)
 	. = ..()
@@ -70,7 +71,8 @@
 /obj/machinery/door/firedoor/Destroy()
 	remove_from_areas()
 	affecting_areas.Cut()
-	update_registration()
+	var/turf/current_turf = get_turf(src)
+	current_turf.update_firelock_registration()
 	return ..()
 
 /obj/machinery/door/firedoor/Bumped(atom/movable/AM)
@@ -697,26 +699,26 @@
 /turf/proc/unregister_firelocks()
 
 //updates registration status for firelocks in auxtools
-/obj/machinery/door/firedoor/proc/update_registration()
-	var/turf/open/terf = get_turf(src)
-	if(!locate(/obj/machinery/door/firedoor) in terf)
-		terf.unregister_firelocks()
+/turf/proc/update_firelock_registration()
+	if(SSair.thread_running())
+		SSadjacent_air.firelock_queue[src] = 1
+		return
+	if(!locate(/obj/machinery/door/firedoor) in src)
+		unregister_firelocks()
 	else
-		terf.register_firelocks()
+		register_firelocks()
 
-/obj/machinery/door/firedoor/Moved(atom/OldLoc, Dir)
+/obj/machinery/door/firedoor/Moved(turf/old_turf, Dir)
 	. = ..()
-	var/turf/open/old_turf = OldLoc //if this isn't a turf for some reaosn feel free to yell at me but that ain't gonna happen
-	var/turf/open/new_turf = get_turf(src)
-	new_turf.register_firelocks()
-	if(!locate(/obj/machinery/door/firedoor) in old_turf)
-		old_turf.unregister_firelocks()
+	var/turf/new_turf = get_turf(src)
+	new_turf.update_firelock_registration()
+	old_turf.update_firelock_registration()
 
-/obj/machinery/door/firedoor/afterShuttleMove(turf/oldT, list/movement_force, shuttle_dir, shuttle_preferred_direction, move_dir, rotation)
+/obj/machinery/door/firedoor/afterShuttleMove(turf/old_turf, list/movement_force, shuttle_dir, shuttle_preferred_direction, move_dir, rotation)
 	. = ..()
-	var/turf/open/new_turf = get_turf(src)
-	oldT.unregister_firelocks()
-	new_turf.register_firelocks()
+	var/turf/new_turf = get_turf(src)
+	new_turf.update_firelock_registration()
+	old_turf.update_firelock_registration()
 
 #undef CONSTRUCTION_COMPLETE
 #undef CONSTRUCTION_PANEL_OPEN
