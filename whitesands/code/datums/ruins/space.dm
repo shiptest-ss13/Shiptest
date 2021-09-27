@@ -31,13 +31,14 @@
 
 /datum/map_template/ruin/space/transport18
 	id = "transport18"
-	suffix = "transport_18.dmm"
+	suffix = "transport18.dmm"
 	name = "Booze Cruise"
 	description = "A freighter, damaged beyond repair and surrounded by a cloud of aluminum and... beer foam?"
 
 /datum/map_template/ruin/space/fueldepot
 	id = "fueldepot"
-	suffix = "fuel_depot.dmm"
+	suffix = "fueldepot.dmm"
+	name = "Fuel Depot"
 	description = "An orbital refueling station with the remains of a ship lodged among the debris."
 
 /datum/map_template/ruin/space/nuclear_dump
