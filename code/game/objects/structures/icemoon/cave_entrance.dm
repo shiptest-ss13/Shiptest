@@ -617,7 +617,7 @@ GLOBAL_LIST_INIT(ore_probability, list(
 				new /obj/item/slime_extract/gold(loc)
 			if(prob(10))
 				new /obj/item/slimepotion/slime/renaming(loc)
-				new /mob/living/simple_animal/slime/random(loc
+				new /mob/living/simple_animal/slime/random(loc)
 			if(prob(15))
 				new /obj/item/slimepotion/slime/sentience(loc)
 				new /mob/living/simple_animal/slime/random(loc)
@@ -637,7 +637,7 @@ GLOBAL_LIST_INIT(ore_probability, list(
 				new /obj/item/storage/box/monkeycubes(loc)
 				new /mob/living/simple_animal/slime/random(loc)
 			if(prob(10))
-				new /obj/item/slimepotion/speed(loc
+				new /obj/item/slimepotion/speed(loc)
 				new /mob/living/simple_animal/slime/random(loc)
 			if(prob(15))
 				new /obj/item/slimepotion/slime/slimeradio(loc)
