@@ -271,3 +271,17 @@
 	light_power = 1
 	light_color = "#4785a4"
 	w_class = WEIGHT_CLASS_SMALL
+
+/obj/item/choice_beacon/ouija
+	name = "spirit board delivery beacon"
+	desc = "Ghost communication on demand! It is unclear how this thing is still operational."
+
+/obj/item/choice_beacon/ouija/generate_display_names()
+	var/static/list/ouija_spaghetti_list
+	if(!ouija_spaghetti_list)
+		ouija_spaghetti_list = list()
+		var/list/templist = list(/obj/structure/spirit_board)
+		for(var/V in templist)
+			var/atom/A = V
+			ouija_spaghetti_list[initial(A.name)] = A
+	return ouija_spaghetti_list
