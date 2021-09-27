@@ -73,8 +73,27 @@
 	name = "Cursed Buisnessman's Mask"
 	icon_state = "big_shot"
 	item_state = "big_shot"
-	desc = "The porcelain mask of a now-forgotten buisness mogul. Are you big enough to wear it?"
+	desc = "The porcelain mask of a now-forgotten buisness mogul, said to have made an impossible fortune long ago. Are you big enough to wear it?"
 	modifies_speech = TRUE
+	actions_types = list(/datum/action/item_action/lifesavings)
+
+/datum/action/item_action/lifesavings
+	name = "LIFE_SAVINGS"
+	desc = "Shipping and handling not included."
+
+/obj/item/clothing/mask/spamton/attack_self(mob/user)
+	if(cooldown < world.time)
+		SSblackbox.record_feedback("amount", "saving_uses", 1)
+		cooldown = world.time + 1600
+		var/mob/living/U = user
+		U.apply_damage(25, BRUTE, pick(BODY_ZONE_L_ARM, BODY_ZONE_R_ARM))
+		to_chat(user, "<span class='warning'>BLOOD PRICE ACCEPTED. WITHDRAWING KRONOR FROM OFFSHORE FUND...</span>")
+		var/obj = pick(
+						new /obj/item/stack/spacecash/c1000(user.drop_location()),
+						new /obj/item/stack/spacecash/c500(user.drop_location()),
+						new /obj/item/holochip(user.drop_location(), 5000))
+	else
+		to_chat(user, "<span class='warning'>[src]'s savings account can't yet be accessed!</span>")
 
 /obj/item/clothing/mask/spamton/handle_speech(datum/source, list/speech_args)
 	var/message = speech_args[SPEECH_MESSAGE]
