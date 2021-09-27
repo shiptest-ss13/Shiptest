@@ -39,19 +39,10 @@ SUBSYSTEM_DEF(shipbot)
 	return enabled ? "Ready" : "Disabled ([ping_fails] Ping Fails)"
 
 /datum/controller/subsystem/shipbot/proc/shipbot_encode(message)
-	for(var/reserved in reserved_chars)
-		if(findtext_char(message, reserved))
-			if(!reserved_chars[reserved])
-				stack_trace("Removing illegal topic splitter from message.")
-			message = replacetext_char(message, reserved, reserved_chars[reserved])
-	return message
+	return url_encode(message)
 
 /datum/controller/subsystem/shipbot/proc/shipbot_decode(message)
-	for(var/reserved in reserved_chars)
-		var/looking = reserved_chars[reserved]
-		if(findtext_char(message, looking))
-			message = replacetext_char(message, looking, reserved)
-	return message
+	return url_decode(message)
 
 /datum/config_entry/string/shipbot_address
 /datum/config_entry/string/shipbot_commkey
