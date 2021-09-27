@@ -234,8 +234,8 @@
 
 //Legion that spawns Legions
 /mob/living/simple_animal/hostile/big_legion
-	name = "legion"
-	desc = "One of many."
+	name = "Legate"
+	desc = "A rare and incredibly dangerous legion mutation, forming from several legion joined in union around a necropolis spire. It's looking particularly self-confident."
 	icon = 'icons/mob/lavaland/64x64megafauna.dmi'
 	icon_state = "legion"
 	icon_living = "legion"
@@ -243,25 +243,27 @@
 	health_doll_icon = "legion"
 	health = 450
 	maxHealth = 450
-	melee_damage_lower = 20
-	melee_damage_upper = 20
+	melee_damage_lower = 25
+	melee_damage_upper = 25
 	anchored = FALSE
 	AIStatus = AI_ON
 	stop_automated_movement = FALSE
 	wander = TRUE
 	maxbodytemp = INFINITY
+	attack_verb_continuous = "brutally slams"
+	attack_verb_simple = "brutally slam"
 	layer = MOB_LAYER
 	del_on_death = TRUE
 	sentience_type = SENTIENCE_BOSS
-	loot = list(/obj/item/organ/regenerative_core/legion = 3, /obj/effect/mob_spawn/human/corpse/damaged/legioninfested = 5)
-	move_to_delay = 14
-	vision_range = 5
+	loot = list(/obj/item/organ/regenerative_core/legion = 3, /obj/effect/mob_spawn/human/corpse/damaged/legioninfested = 5, /obj/item/reagent_containers/glass/bottle/necropolis_seed)
+	move_to_delay = 5
+	vision_range = 9
 	aggro_vision_range = 9
-	speed = 3
+	speed = 5
 	faction = list("mining")
 	weather_immunities = list("lava","ash")
 	obj_damage = 30
-	environment_smash = ENVIRONMENT_SMASH_STRUCTURES
+	environment_smash = ENVIRONMENT_SMASH_WALLS
 	see_in_dark = 8
 	lighting_alpha = LIGHTING_PLANE_ALPHA_MOSTLY_INVISIBLE
 
