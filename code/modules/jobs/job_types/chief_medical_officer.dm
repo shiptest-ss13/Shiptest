@@ -15,6 +15,9 @@
 	exp_type_department = EXP_TYPE_MEDICAL
 	wiki_page = "Chief_Medical_Officer"
 
+	skills = list(/datum/skill/healing = SKILL_EXP_JOURNEYMAN)
+	minimal_skills = list(/datum/skill/healing = SKILL_EXP_JOURNEYMAN)
+
 	outfit = /datum/outfit/job/cmo
 
 	access = list(ACCESS_MEDICAL, ACCESS_PSYCHOLOGY, ACCESS_MORGUE, ACCESS_GENETICS, ACCESS_CLONING, ACCESS_PHARMACY, ACCESS_HEADS, ACCESS_MINERAL_STOREROOM, //WS edit - Gen/Sci Split
@@ -43,7 +46,7 @@
 	alt_suit = /obj/item/clothing/suit/toggle/labcoat/mad //WS Edit - Alt-Job Titles
 	dcoat = /obj/item/clothing/suit/hooded/wintercoat/medical //WS Edit - Alt Uniforms
 	l_hand = /obj/item/storage/firstaid/medical
-	suit_store = /obj/item/flashlight/pen
+	suit_store = /obj/item/flashlight/pen/paramedic
 	backpack_contents = list(/obj/item/melee/classic_baton/telescopic=1)
 
 	backpack = /obj/item/storage/backpack/medic
@@ -60,7 +63,7 @@
 	mask = /obj/item/clothing/mask/breath/medical
 	suit = /obj/item/clothing/suit/space/hardsuit/medical/cmo
 	suit_store = /obj/item/tank/internals/oxygen
-	r_pocket = /obj/item/flashlight/pen
+	r_pocket = /obj/item/flashlight/pen/paramedic
 
 /datum/outfit/job/cmo/medicaldirector
 	name = "Chief Medical Officer (Medical Director)"

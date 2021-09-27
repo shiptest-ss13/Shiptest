@@ -10,6 +10,9 @@
 	exp_requirements = 60
 	wiki_page = "Guide_to_Genetics" //WS Edit - Wikilinks
 
+	skills = list(/datum/skill/healing = SKILL_EXP_NOVICE)
+	minimal_skills = list(/datum/skill/healing = SKILL_EXP_APPRENTICE)
+
 	outfit = /datum/outfit/job/geneticist
 
 	access = list(ACCESS_MEDICAL, ACCESS_MORGUE, ACCESS_CHEMISTRY, ACCESS_GENETICS, ACCESS_CLONING, ACCESS_MECH_MEDICAL, ACCESS_RESEARCH, ACCESS_XENOBIOLOGY, ACCESS_ROBOTICS, ACCESS_MINERAL_STOREROOM, ACCESS_TECH_STORAGE, ACCESS_EVA) //WS edit - Gen/Sci Split

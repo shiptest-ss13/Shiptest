@@ -64,7 +64,7 @@
 	hitsound = null
 	attack_verb_on = list("slipped")
 	clumsy_check = FALSE
-	sharpness = IS_BLUNT
+	sharpness = SHARP_NONE
 	sword_color = "yellow"
 	heat = 0
 	light_color = COLOR_YELLOW
@@ -205,7 +205,7 @@
 	icon_state = "moustacheg"
 	clumsy_check = GRENADE_NONCLUMSY_FUMBLE
 
-/obj/item/grenade/chem_grenade/teargas/moustache/prime()
+/obj/item/grenade/chem_grenade/teargas/moustache/prime(mob/living/lanced_by)
 	var/myloc = get_turf(src)
 	. = ..()
 	for(var/mob/living/carbon/M in view(6, myloc))

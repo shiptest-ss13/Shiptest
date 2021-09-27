@@ -3,7 +3,7 @@
 	name = "Yuggolith"
 	id = "squid"
 	default_color = "#268074"
-	species_traits = list(MUTCOLORS, EYECOLOR, NO_BONES)
+	species_traits = list(MUTCOLORS, EYECOLOR)
 	inherent_traits = list(TRAIT_NOSLIPALL)
 	mutant_bodyparts = list("squid_face")
 	default_features = list("mcolor" = "189", "squid_face" = "Squidward")

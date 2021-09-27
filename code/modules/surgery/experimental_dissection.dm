@@ -83,7 +83,7 @@
 		hand_dossier.merge(the_dossier)
 
 	var/obj/item/bodypart/L = target.get_bodypart(BODY_ZONE_CHEST)
-	target.apply_damage(80, BRUTE, L)
+	target.apply_damage(80, BRUTE, L, wound_bonus=CANT_WOUND)
 	ADD_TRAIT(target, TRAIT_DISSECTED, "[surgery.name]")
 	repeatable = FALSE
 	experience_given = max(points_earned/(BASE_HUMAN_REWARD/MEDICAL_SKILL_MEDIUM),1)
@@ -99,7 +99,7 @@
 		hand_dossier.merge(the_dossier)
 
 	var/obj/item/bodypart/L = target.get_bodypart(BODY_ZONE_CHEST)
-	target.apply_damage(80, BRUTE, L)
+	target.apply_damage(80, BRUTE, L, wound_bonus=CANT_WOUND)
 	return TRUE
 
 /datum/surgery/advanced/experimental_dissection/adv

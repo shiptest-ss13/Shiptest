@@ -357,6 +357,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 		if(newtype)
 			pref_species = new newtype
 
+
 	//Character
 	READ_FILE(S["real_name"], real_name)
 	READ_FILE(S["gender"], gender)
@@ -387,6 +388,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	READ_FILE(S["feature_lizard_legs"], features["legs"])
 	READ_FILE(S["feature_moth_wings"], features["moth_wings"])
 	READ_FILE(S["feature_moth_markings"], features["moth_markings"])
+	READ_FILE(S["persistent_scars"], persistent_scars)
 
 	//WS Begin
 
@@ -512,6 +514,8 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	features["spider_spinneret"] = sanitize_inlist(features["spider_spinneret"], GLOB.spider_spinneret_list, "Plain")
 	features["spider_mandibles"]	= sanitize_inlist(features["spider_mandibles"], GLOB.spider_mandibles_list, "Plain")
 	features["moth_markings"] 	= sanitize_inlist(features["moth_markings"], GLOB.moth_markings_list, "None")
+
+	persistent_scars = sanitize_integer(persistent_scars)
 	features["squid_face"]	= sanitize_inlist(features["squid_face"], GLOB.squid_face_list, "Squidward")
 	features["ipc_screen"]	= sanitize_inlist(features["ipc_screen"], GLOB.ipc_screens_list)
 	features["ipc_antenna"]	 = sanitize_inlist(features["ipc_antenna"], GLOB.ipc_antennas_list)
@@ -572,7 +576,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["feature_lizard_legs"]			, features["legs"])
 	WRITE_FILE(S["feature_moth_wings"]			, features["moth_wings"])
 	WRITE_FILE(S["feature_moth_markings"]		, features["moth_markings"])
-
+	WRITE_FILE(S["persistent_scars"]			, persistent_scars)
 	//WS begin
 	WRITE_FILE(S["jumpsuit_style"]				, jumpsuit_style)
 	WRITE_FILE(S["exowear"]						, exowear)

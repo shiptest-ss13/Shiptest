@@ -20,9 +20,12 @@
 	light_color = LIGHT_COLOR_ELECTRIC_GREEN
 	light_on = FALSE
 	attack_verb = list("attacked", "slashed", "stabbed", "sliced", "tore", "lacerated", "ripped", "diced", "cut")
+	block_chance = 75
 	max_integrity = 200
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 70)
 	resistance_flags = FIRE_PROOF
+	wound_bonus = -10
+	bare_wound_bonus = 20
 	var/w_class_on = WEIGHT_CLASS_BULKY
 	var/saber_color = "green"
 	var/two_hand_force = 34
@@ -44,7 +47,7 @@
 			to_chat(user, "<span class='warning'>You lack the grace to wield this!</span>")
 			return COMPONENT_TWOHANDED_BLOCK_WIELD
 	wielded = TRUE
-	sharpness = IS_SHARP
+	sharpness = SHARP_EDGED
 	w_class = w_class_on
 	hitsound = 'sound/weapons/blade1.ogg'
 	START_PROCESSING(SSobj, src)

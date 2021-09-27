@@ -1249,6 +1249,21 @@
 	small_item = TRUE
 	contains = list(/obj/item/storage/firstaid/fire)
 
+/datum/supply_pack/medical/medipen_variety
+	name = "Medipen Variety-Pak"
+	desc = "Contains eight different medipens in three different varieties, to assist in quickly treating seriously injured patients."
+	cost = 2000
+	contains = list(/obj/item/reagent_containers/hypospray/medipen/,
+					/obj/item/reagent_containers/hypospray/medipen/,
+					/obj/item/reagent_containers/hypospray/medipen/ekit,
+					/obj/item/reagent_containers/hypospray/medipen/ekit,
+					/obj/item/reagent_containers/hypospray/medipen/ekit,
+					/obj/item/reagent_containers/hypospray/medipen/blood_loss,
+					/obj/item/reagent_containers/hypospray/medipen/blood_loss,
+					/obj/item/reagent_containers/hypospray/medipen/blood_loss
+)
+	crate_name = "medipen crate"
+
 /datum/supply_pack/medical/chemical
 	name = "Chemical Starter Kit Crate"
 	desc = "Contains thirteen different chemicals, for all the fun experiments you can make."
@@ -1318,6 +1333,8 @@
 					/obj/item/reagent_containers/blood/OMinus,
 					/obj/item/storage/pill_bottle/mining,
 					/obj/item/reagent_containers/pill/neurine,
+					/obj/item/stack/medical/bone_gel,
+					/obj/item/stack/medical/bone_gel,
 					/obj/item/vending_refill/medical)
 	crate_name = "medical supplies crate"
 

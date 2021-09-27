@@ -101,31 +101,6 @@
 			disabled += zone
 	return disabled
 
-/mob/proc/get_broken_limbs()
-	return 0
-
-///Gets a list of broken bodyparts
-/mob/living/carbon/get_broken_limbs()
-	var/list/full = list(BODY_ZONE_HEAD, BODY_ZONE_CHEST, BODY_ZONE_R_ARM, BODY_ZONE_L_ARM, BODY_ZONE_R_LEG, BODY_ZONE_L_LEG)
-	var/list/broken = list()
-	for(var/zone in full)
-		var/obj/item/bodypart/affecting = get_bodypart(zone)
-		if(affecting && affecting.bone_status == BONE_FLAG_BROKEN)
-			broken += zone
-	return broken
-
-///Gets how many legs are broken (of the two possible.) Used for slowdown calculation.
-/mob/proc/get_broken_legs()
-	return 0
-
-/mob/living/carbon/get_broken_legs()
-	var/brokenlegs = 0
-	for(var/obj/item/bodypart/X in bodyparts)
-		if(X && X.bone_status == BONE_FLAG_BROKEN || X.bone_status == BONE_FLAG_SPLINTED)
-			if(X.body_part == LEG_RIGHT || X.body_part == LEG_LEFT)
-				brokenlegs++
-	return brokenlegs
-
 ///Remove a specific embedded item from the carbon mob
 /mob/living/carbon/proc/remove_embedded_object(obj/item/I)
 	SEND_SIGNAL(src, COMSIG_CARBON_EMBED_REMOVAL, I)

@@ -314,6 +314,9 @@
 			to_chat(humanc, "<span class='userdanger'><i>THERE CAN BE ONLY ONE!!!</i></span>")
 			humanc.make_scottish()
 
+		humanc.increment_scar_slot()
+		humanc.load_persistent_scars()
+
 		if(GLOB.summon_guns_triggered)
 			give_guns(humanc)
 		if(GLOB.summon_magic_triggered)
@@ -426,12 +429,16 @@
 		is_antag = TRUE
 
 	client.prefs.copy_to(H, antagonist = is_antag)
+
+	client.prefs.copy_to(H, antagonist = is_antag)
 	H.dna.update_dna_identity()
 	if(mind)
 		if(transfer_after)
 			mind.late_joiner = TRUE
-		mind.active = 0					//we wish to transfer the key manually
+		mind.active = FALSE					//we wish to transfer the key manually
+		mind.original_character_slot_index = client.prefs.default_slot
 		mind.transfer_to(H)					//won't transfer key since the mind is not active
+		mind.original_character = H
 
 	H.name = real_name
 	client.init_verbs()

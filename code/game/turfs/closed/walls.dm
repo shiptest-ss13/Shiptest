@@ -148,6 +148,7 @@
 		playsound(src, 'sound/effects/meteorimpact.ogg', 100, TRUE)
 		user.say(pick(";RAAAAAAAARGH!", ";HNNNNNNNNNGGGGGGH!", ";GWAAAAAAAARRRHHH!", "NNNNNNNNGGGGGGGGHH!", ";AAAAAAARRRGH!" ), forced = "hulk")
 		dismantle_wall(1)
+
 	else
 		playsound(src, 'sound/effects/bang.ogg', 50, TRUE)
 		add_dent(WALL_DENT_HIT)

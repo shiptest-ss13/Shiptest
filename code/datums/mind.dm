@@ -109,6 +109,7 @@
 	return language_holder
 
 /datum/mind/proc/transfer_to(mob/new_character, force_key_move = 0)
+	original_character = null
 	if(current)	// remove ourself from our old body's mind variable
 		current.mind = null
 		UnregisterSignal(current, COMSIG_MOB_DEATH)

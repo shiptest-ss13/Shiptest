@@ -13,7 +13,9 @@
 	px_y = -8
 	stam_damage_coeff = 1
 	max_stamina_damage = 100
-	bone_break_threshold = 35 // Beefier bones
+	wound_resistance = 5
+	disabled_wound_penalty = 25
+	scars_covered_by_clothes = FALSE
 
 	var/mob/living/brain/brainmob = null //The current occupant.
 	var/obj/item/organ/brain/brain = null //The brain organ
@@ -93,7 +95,7 @@
 
 
 /obj/item/bodypart/head/can_dismember(obj/item/I)
-	if(owner && owner.stat <= HARD_CRIT)
+	if(owner.stat < HARD_CRIT)
 		return FALSE
 	return ..()
 

@@ -10,5 +10,4 @@
 	throwforce = 2
 	toolspeed = 0.8
 	attack_verb = list("bashed", "bludgeoned", "spooned", "scooped")
-	sharpness = IS_BLUNT
-
+	wound_bonus = 5

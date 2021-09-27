@@ -80,6 +80,14 @@
 #define ADMIN_PUNISHMENT_SUPPLYPOD "Supply Pod"
 #define ADMIN_PUNISHMENT_MAZING "Puzzle"
 #define ADMIN_PUNISHMENT_IMMERSE "Fully Immerse"
+#define ADMIN_PUNISHMENT_FAT "Fatten up"
+#define ADMIN_PUNISHMENT_FAKEBWOINK "Fake bwoink"
+#define ADMIN_PUNISHMENT_NUGGET "Nugget"
+#define ADMIN_PUNISHMENT_CRACK ":B:oneless"
+#define ADMIN_PUNISHMENT_BLEED ":B:loodless"
+#define ADMIN_PUNISHMENT_PERFORATE ":B:erforate"
+#define ADMIN_PUNISHMENT_SCARIFY "Scarify"
+#define ADMIN_PUNISHMENT_SHOES "Knot Shoes"
 #define ADMIN_PUNISHMENT_NYA "Neko"//WS Edit - Admin Punishment: Cat Tongue
 
 #define AHELP_ACTIVE 1

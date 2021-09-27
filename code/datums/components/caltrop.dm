@@ -75,7 +75,7 @@
 				)
 
 			cooldown = world.time
-		H.apply_damage(damage, BRUTE, picked_def_zone)
+		H.apply_damage(damage, BRUTE, picked_def_zone, wound_bonus = CANT_WOUND)
 		if(!haslightstep)
 			H.Paralyze(60) //EndWS edit - caltrops don't paralyze people with light step
 		if(H.pulledby)								//WS Edit Begin - Being pulled over caltrops is logged

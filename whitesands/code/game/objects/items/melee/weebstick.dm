@@ -10,7 +10,7 @@
 	obj_flags = UNIQUE_RENAME
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = ITEM_SLOT_BACK
-	sharpness = IS_SHARP_ACCURATE
+	sharpness = SHARP_EDGED
 	force = 25
 	throw_speed = 4
 	throw_range = 5

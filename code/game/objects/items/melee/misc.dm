@@ -20,6 +20,8 @@
 	slot_flags = ITEM_SLOT_BELT
 	force = 10
 	throwforce = 7
+	wound_bonus = 15
+	bare_wound_bonus = 10
 	w_class = WEIGHT_CLASS_NORMAL
 	attack_verb = list("flogged", "whipped", "lashed", "disciplined")
 	hitsound = 'sound/weapons/chainhit.ogg'
@@ -41,8 +43,8 @@
 	force = 20
 	throwforce = 10
 	hitsound = 'sound/weapons/bladeslice.ogg'
-	attack_verb = list("attacked", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
-	sharpness = IS_SHARP
+	attack_verb = list("attacked", "slashed", "stabbed", "sliced", "tore", "lacerated", "ripped", "diced", "cut")
+	sharpness = SHARP_EDGED
 
 /obj/item/melee/synthetic_arm_blade/Initialize()
 	. = ..()
@@ -62,10 +64,12 @@
 	w_class = WEIGHT_CLASS_BULKY
 	block_chance = 50
 	armour_penetration = 75
-	sharpness = IS_SHARP
+	sharpness = SHARP_EDGED
 	attack_verb = list("slashed", "cut")
 	hitsound = 'sound/weapons/rapierhit.ogg'
 	custom_materials = list(/datum/material/iron = 1000)
+	wound_bonus = 10
+	bare_wound_bonus = 25
 
 /obj/item/melee/sabre/Initialize()
 	. = ..()
@@ -140,7 +144,7 @@
 	slot_flags = ITEM_SLOT_BELT
 	force = 5
 	w_class = WEIGHT_CLASS_BULKY
-	sharpness = IS_SHARP
+	sharpness = SHARP_EDGED
 	throwforce = 10
 	block_chance = 20
 	armour_penetration = 65
@@ -191,6 +195,8 @@
 	var/force_on // Damage when on - not stunning
 	var/force_off // Damage when off - not stunning
 	var/weight_class_on // What is the new size class when turned on
+
+	wound_bonus = 15
 
 // Description for trying to stun when still on cooldown.
 /obj/item/melee/classic_baton/proc/get_wait_description()
@@ -338,6 +344,7 @@
 	force_on = 10
 	force_off = 0
 	weight_class_on = WEIGHT_CLASS_BULKY
+	bare_wound_bonus = 5
 
 /obj/item/melee/classic_baton/telescopic/suicide_act(mob/user)
 	var/mob/living/carbon/human/H = user

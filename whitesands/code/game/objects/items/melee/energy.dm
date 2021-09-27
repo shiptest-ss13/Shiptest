@@ -5,7 +5,7 @@
 	icon_state = "plasmasword0"
 	lefthand_file = 'whitesands/icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'whitesands/icons/mob/inhands/weapons/swords_righthand.dmi'
-	sharpness = IS_SHARP
+	sharpness = SHARP_EDGED
 	armour_penetration = 200
 	block_chance = 0
 	force = 0

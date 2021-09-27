@@ -17,6 +17,9 @@
 
 	display_order = JOB_DISPLAY_ORDER_PSYCHOLOGIST
 
+	skills = list(/datum/skill/healing = SKILL_EXP_NONE)
+	minimal_skills = list(/datum/skill/healing = SKILL_EXP_NONE)
+
 /datum/outfit/job/psychologist
 	name = "Psychologist"
 	jobtype = /datum/job/psychologist

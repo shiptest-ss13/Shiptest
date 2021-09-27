@@ -8,6 +8,9 @@
 	selection_color = "#ffeef0"
 	wiki_page = "Guide_to_Medicine"
 
+	skills = list(/datum/skill/healing = SKILL_EXP_JOURNEYMAN)
+	minimal_skills = list(/datum/skill/healing = SKILL_EXP_JOURNEYMAN)
+
 	outfit = /datum/outfit/job/doctor
 
 	access = list(ACCESS_MEDICAL, ACCESS_MORGUE, ACCESS_SURGERY, ACCESS_PHARMACY, ACCESS_CHEMISTRY, ACCESS_GENETICS, ACCESS_CLONING, ACCESS_VIROLOGY, ACCESS_MECH_MEDICAL, ACCESS_MINERAL_STOREROOM, ACCESS_EVA) //WS edit - Gen/Sci Split

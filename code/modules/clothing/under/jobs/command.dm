@@ -9,6 +9,7 @@
 	random_sensor = FALSE
 	icon = 'icons/obj/clothing/under/captain.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/under/captain.dmi'
+	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0, "wound" = 15)
 
 /obj/item/clothing/under/rank/command/captain/skirt
 	name = "captain's jumpskirt"

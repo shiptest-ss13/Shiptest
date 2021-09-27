@@ -14,7 +14,7 @@
 	block_chance = 30
 	attack_verb = list("struck", "slashed", "mall-ninjad", "tided", "multi-shanked", "shredded")
 	custom_materials = list(/datum/material/iron = 1420)
-	sharpness = IS_SHARP
+	sharpness = SHARP_EDGED
 
 	var/prick_chance = 50
 	var/prick_chems = list(

@@ -10,17 +10,19 @@
 	slot_flags = ITEM_SLOT_BACK
 	throwforce = 20
 	throw_speed = 4
-	embedding = list("impact_pain_mult" = 3)
+	embedding = list("impact_pain_mult" = 2, "remove_pain_mult" = 4, "jostle_chance" = 2.5)
 	armour_penetration = 10
 	custom_materials = list(/datum/material/iron=1150, /datum/material/glass=2075)
 	hitsound = 'sound/weapons/bladeslice.ogg'
-	attack_verb = list("attacked", "poked", "jabbed", "torn", "gored")
-	sharpness = IS_SHARP
+	attack_verb = list("attacked", "poked", "jabbed", "tore", "lacerated", "gored")
+	sharpness = SHARP_EDGED // i know the whole point of spears is that they're pointy, but edged is more devastating at the moment so
 	max_integrity = 200
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 30)
 	species_exception = list(/datum/species/teshari)	//WS edit - Tesh can use satchels
 	var/war_cry = "AAAAARGH!!!"
 	var/icon_prefix = "spearglass"
+	wound_bonus = -15
+	bare_wound_bonus = 15
 
 /obj/item/spear/ComponentInitialize()
 	. = ..()
@@ -127,7 +129,7 @@
 	if(wielded)
 		user.say("[war_cry]", forced="spear warcry")
 		explosive.forceMove(AM)
-		explosive.prime()
+		explosive.prime(lanced_by=user)
 		qdel(src)
 
 //GREY TIDE

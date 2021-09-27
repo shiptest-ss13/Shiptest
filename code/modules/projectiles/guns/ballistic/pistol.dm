@@ -54,6 +54,7 @@
 	icon_state = "deagle"
 	force = 14
 	mag_type = /obj/item/ammo_box/magazine/m50
+	w_class
 	can_suppress = FALSE
 	mag_display = TRUE
 	fire_sound = 'sound/weapons/gun/rifle/shot_alt.ogg'

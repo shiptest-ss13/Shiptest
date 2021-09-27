@@ -8,6 +8,9 @@
 	selection_color = "#ffeef0"
 	wiki_page = "Paramedic"
 
+	skills = list(/datum/skill/healing = SKILL_EXP_APPRENTICE)
+	minimal_skills = list(/datum/skill/healing = SKILL_EXP_JOURNEYMAN)
+
 	outfit = /datum/outfit/job/paramedic
 
 	access = list(ACCESS_MEDICAL, ACCESS_MORGUE, ACCESS_SURGERY, ACCESS_GENETICS, ACCESS_CLONING, ACCESS_MECH_MEDICAL, ACCESS_MINERAL_STOREROOM, ACCESS_MAINT_TUNNELS, ACCESS_EVA) //WS edit - Gen/Sci Split + Reduces Paramed access
@@ -33,7 +36,7 @@
 	belt = /obj/item/storage/belt/medical/paramedic
 	id = /obj/item/card/id
 	l_pocket = /obj/item/pda/medical
-	suit_store = /obj/item/flashlight/pen
+	suit_store = /obj/item/flashlight/pen/paramedic
 	backpack_contents = list(/obj/item/roller=1)
 	pda_slot = ITEM_SLOT_LPOCKET
 

@@ -1,4 +1,4 @@
-//Hulk turns your skin green, and allows you to punch through walls.
+//Hulk turns your skin green, makes you strong, and allows you to shrug off stun effect.
 /datum/mutation/human/hulk
 	name = "Hulk"
 	desc = "A poorly understood genome that causes the holder's muscles to expand, inhibit speech and gives the person a bad skin condition."
@@ -40,6 +40,7 @@
 		log_combat(source, target, "punched", "hulk powers")
 		source.do_attack_animation(target, ATTACK_EFFECT_SMASH)
 		source.changeNext_move(CLICK_CD_MELEE)
+
 		return COMPONENT_NO_ATTACK_HAND
 
 /datum/mutation/human/hulk/on_life()

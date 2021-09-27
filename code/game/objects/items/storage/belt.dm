@@ -161,6 +161,7 @@
 		/obj/item/clothing/mask/breath/medical,
 		/obj/item/scalpel,
 		/obj/item/circular_saw,
+		/obj/item/bonesetter,
 		/obj/item/surgicaldrill,
 		/obj/item/retractor,
 		/obj/item/cautery,
@@ -184,7 +185,8 @@
 		/obj/item/construction/plumbing,
 		/obj/item/plunger,
 		/obj/item/reagent_containers/spray,
-		/obj/item/shears
+		/obj/item/shears,
+		/obj/item/stack/sticky_tape //surgical tape
 		))
 
 /obj/item/storage/belt/medical/paramedic/PopulateContents()
@@ -192,7 +194,8 @@
 	new /obj/item/pinpointer/crew/prox(src)
 	new /obj/item/stack/medical/gauze/twelve(src)
 	new /obj/item/reagent_containers/syringe(src)
-	new /obj/item/reagent_containers/glass/bottle/epinephrine(src)
+	new /obj/item/stack/medical/bone_gel(src)
+	new /obj/item/stack/sticky_tape/surgical(src)
 	new /obj/item/reagent_containers/glass/bottle/formaldehyde(src)
 	update_icon()
 

@@ -4,7 +4,7 @@
 	id = "jelly"
 	default_color = "00FF90"
 	say_mod = "chirps"
-	species_traits = list(MUTCOLORS,EYECOLOR,NOBLOOD,NO_BONES,HAIR,FACEHAIR)
+	species_traits = list(MUTCOLORS,EYECOLOR,NOBLOOD,HAIR,FACEHAIR)
 	inherent_traits = list(TRAIT_TOXINLOVER)
 	hair_color = "mutcolor"
 	hair_alpha = 150

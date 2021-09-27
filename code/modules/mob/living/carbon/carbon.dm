@@ -13,6 +13,10 @@
 	QDEL_LIST(internal_organs)
 	QDEL_LIST(bodyparts)
 	QDEL_LIST(implants)
+	for(var/wound in all_wounds) // these LAZYREMOVE themselves when deleted so no need to remove the list here
+		qdel(wound)
+	for(var/scar in all_scars)
+		qdel(scar)
 	remove_from_all_data_huds()
 	QDEL_NULL(dna)
 	GLOB.carbon_list -= src
@@ -55,27 +59,40 @@
 	else
 		mode() // Activate held item
 
+/mob/living/carbon/attackby(obj/item/I, mob/user, params)
+	if(!all_wounds || !(user.a_intent == INTENT_HELP || user == src))
+		return ..()
+
+	for(var/i in shuffle(all_wounds))
+		var/datum/wound/W = i
+		if(W.try_treating(I, user))
+			return 1
+
 
 /mob/living/carbon/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)
 	. = ..()
 	var/hurt = TRUE
+	var/extra_speed = 0
+	if(throwingdatum.thrower != src)
+		extra_speed = min(max(0, throwingdatum.speed - initial(throw_speed)), 3)
+
 	if(istype(throwingdatum, /datum/thrownthing))
 		hurt = !throwingdatum.gentle
 	if(hit_atom.density && isturf(hit_atom))
 		if(hurt)
 			Paralyze(20)
-			take_bodypart_damage(10,check_armor = TRUE)
+			take_bodypart_damage(10 + 5 * extra_speed, check_armor = TRUE, wound_bonus = extra_speed * 5)
 	if(iscarbon(hit_atom) && hit_atom != src)
 		var/mob/living/carbon/victim = hit_atom
 		if(victim.movement_type & FLYING)
 			return
 		if(hurt)
-			victim.take_bodypart_damage(10,check_armor = TRUE)
-			take_bodypart_damage(10,check_armor = TRUE)
+			victim.take_bodypart_damage(10 + 5 * extra_speed, check_armor = TRUE, wound_bonus = extra_speed * 5)
+			take_bodypart_damage(10 + 5 * extra_speed, check_armor = TRUE, wound_bonus = extra_speed * 5)
 			victim.Paralyze(20)
 			Paralyze(20)
-			visible_message("<span class='danger'>[src] crashes into [victim], knocking them both over!</span>",\
-				"<span class='userdanger'>You violently crash into [victim]!</span>")
+			visible_message("<span class='danger'>[src] crashes into [victim] [extra_speed ? "really hard" : ""], knocking them both over!</span>",\
+				"<span class='userdanger'>You violently crash into [victim] [extra_speed ? "extra hard" : ""]!</span>")
 		playsound(src,'sound/weapons/punch1.ogg',50,TRUE)
 
 
@@ -128,16 +145,22 @@
 		thrown_thing = I.on_thrown(src, target)
 
 	if(thrown_thing)
+
 		if(isliving(thrown_thing))
 			var/turf/start_T = get_turf(loc) //Get the start and target tile for the descriptors
 			var/turf/end_T = get_turf(target)
 			if(start_T && end_T)
 				log_combat(src, thrown_thing, "thrown", addition="grab from tile in [AREACOORD(start_T)] towards tile at [AREACOORD(end_T)]")
-		visible_message("<span class='danger'>[src] throws [thrown_thing].</span>", \
-						"<span class='danger'>You throw [thrown_thing].</span>")
-		log_message("has thrown [thrown_thing]", LOG_ATTACK)
+		var/power_throw = 0
+		if(HAS_TRAIT(src, TRAIT_HULK))
+			power_throw++
+		if(pulling && grab_state >= GRAB_NECK)
+			power_throw++
+		visible_message("<span class='danger'>[src] throws [thrown_thing][power_throw ? " really hard!" : "."]</span>", \
+						"<span class='danger'>You throw [thrown_thing][power_throw ? " really hard!" : "."]</span>")
+		log_message("has thrown [thrown_thing] [power_throw ? "really hard" : ""]", LOG_ATTACK)
 		newtonian_move(get_dir(target, src))
-		thrown_thing.safe_throw_at(target, thrown_thing.throw_range, thrown_thing.throw_speed, src, null, null, null, move_force)
+		thrown_thing.safe_throw_at(target, thrown_thing.throw_range, thrown_thing.throw_speed + power_throw, src, null, null, null, move_force)
 
 
 /mob/living/carbon/proc/canBeHandcuffed()
@@ -821,6 +844,9 @@
 		var/datum/disease/D = thing
 		if(D.severity != DISEASE_SEVERITY_POSITIVE)
 			D.cure(FALSE)
+	for(var/thing in all_wounds)
+		var/datum/wound/W = thing
+		W.remove_wound()
 	if(admin_revive)
 		suiciding = FALSE
 		regenerate_limbs()
@@ -832,7 +858,6 @@
 		if(reagents)
 			reagents.addiction_list = list()
 	cure_all_traumas(TRAUMA_RESILIENCE_MAGIC)
-	mend_fractures()
 	..()
 	// heal ears after healing traits, since ears check TRAIT_DEAF trait
 	// when healing.
@@ -944,6 +969,10 @@
 				. *= 1.25
 			if(SANITY_NEUTRAL to INFINITY)
 				. *= 0.90
+
+	for(var/i in status_effects)
+		var/datum/status_effect/S = i
+		. *= S.interact_speed_modifier()
 
 /mob/living/carbon/proc/create_internal_organs()
 	for(var/X in internal_organs)
@@ -1136,6 +1165,50 @@
 		update_inv_gloves()
 		. = TRUE
 
+/// if any of our bodyparts are bleeding
+/mob/living/carbon/proc/is_bleeding()
+	for(var/i in bodyparts)
+		var/obj/item/bodypart/BP = i
+		if(BP.get_bleed_rate())
+			return TRUE
+
+/// get our total bleedrate
+/mob/living/carbon/proc/get_total_bleed_rate()
+	var/total_bleed_rate = 0
+	for(var/i in bodyparts)
+		var/obj/item/bodypart/BP = i
+		total_bleed_rate += BP.get_bleed_rate()
+
+	return total_bleed_rate
+
+/**
+  * generate_fake_scars()- for when you want to scar someone, but you don't want to hurt them first. These scars don't count for temporal scarring (hence, fake)
+  *
+  * If you want a specific wound scar, pass that wound type as the second arg, otherwise you can pass a list like WOUND_LIST_SLASH to generate a random cut scar.
+  *
+  * Arguments:
+  * * num_scars- A number for how many scars you want to add
+  * * forced_type- Which wound or category of wounds you want to choose from, WOUND_LIST_BLUNT, WOUND_LIST_SLASH, or WOUND_LIST_BURN (or some combination). If passed a list, picks randomly from the listed wounds. Defaults to all 3 types
+  */
+/mob/living/carbon/proc/generate_fake_scars(num_scars, forced_type)
+	for(var/i in 1 to num_scars)
+		var/datum/scar/scaries = new
+		var/obj/item/bodypart/scar_part = pick(bodyparts)
+
+		var/wound_type
+		if(forced_type)
+			if(islist(forced_type))
+				wound_type = pick(forced_type)
+			else
+				wound_type = forced_type
+		else
+			wound_type = pick(GLOB.global_all_wound_types)
+
+		var/datum/wound/phantom_wound = new wound_type
+		scaries.generate(scar_part, phantom_wound)
+		scaries.fake = TRUE
+		QDEL_NULL(phantom_wound)
+
 /mob/living/carbon/proc/update_flavor_text_feature(new_text)
 	if(!dna)
 		return
@@ -1163,6 +1236,14 @@
 
 /mob/living/carbon/is_face_visible()
 	return !(wear_mask?.flags_inv & HIDEFACE) && !(head?.flags_inv & HIDEFACE)
+
+/**
+  * get_biological_state is a helper used to see what kind of wounds we roll for. By default we just assume carbons (read:monkeys) are flesh and bone, but humans rely on their species datums
+  *
+  * go look at the species def for more info [/datum/species/proc/get_biological_state]
+  */
+/mob/living/carbon/proc/get_biological_state()
+	return BIO_FLESH_BONE
 
 /// Modifies the handcuffed value if a different value is passed, returning FALSE otherwise. The variable should only be changed through this proc.
 /mob/living/carbon/proc/set_handcuffed(new_value)

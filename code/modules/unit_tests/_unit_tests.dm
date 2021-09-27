@@ -29,6 +29,7 @@
 #include "emoting.dm"
 #include "keybinding_init.dm"
 #include "machine_disassembly.dm"
+#include "medical_wounds.dm"
 #include "outfit_sanity.dm"
 #include "overmap.dm"
 #include "pills.dm"

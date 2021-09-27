@@ -288,6 +288,8 @@
 		apply_overlay(BODYPARTS_LAYER)
 	update_damage_overlays()
 
+/*
+
 /mob/living/carbon/proc/update_inv_splints()
 	remove_overlay(SPLINT_LAYER)
 	var/list/standing = list()
@@ -298,3 +300,4 @@
 
 	overlays_standing[SPLINT_LAYER] = standing
 	apply_overlay(SPLINT_LAYER)
+*/

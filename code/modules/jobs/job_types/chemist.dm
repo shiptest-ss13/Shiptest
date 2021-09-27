@@ -10,6 +10,9 @@
 	exp_requirements = 60
 	wiki_page = "Guide_to_Chemistry" //WS Edit - Wikilinks/Warning
 
+	skills = list(/datum/skill/healing = SKILL_EXP_APPRENTICE)
+	minimal_skills = list(/datum/skill/healing = SKILL_EXP_NOVICE)
+
 	outfit = /datum/outfit/job/chemist
 
 	access = list(ACCESS_MEDICAL, ACCESS_MORGUE, ACCESS_SURGERY, ACCESS_CHEMISTRY, ACCESS_PHARMACY, ACCESS_VIROLOGY, ACCESS_GENETICS, ACCESS_MECH_MEDICAL, ACCESS_MINERAL_STOREROOM, ACCESS_EVA) //WS Edit - Gen/Sci Split

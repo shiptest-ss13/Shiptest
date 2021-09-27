@@ -329,6 +329,16 @@ SUBSYSTEM_DEF(ticker)
 		else
 			stack_trace("[S] [S.type] found in start landmarks list, which isn't a start landmark!")
 
+	// handle persistence stuff that requires ckeys, in this case temporal scarring
+	for(var/i in GLOB.player_list)
+		if(!ishuman(i))
+			continue
+		var/mob/living/carbon/human/iter_human = i
+
+		iter_human.increment_scar_slot()
+		iter_human.load_persistent_scars()
+
+
 //These callbacks will fire after roundstart key transfer
 /datum/controller/subsystem/ticker/proc/OnRoundstart(datum/callback/cb)
 	if(!HasRoundStarted())

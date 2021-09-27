@@ -232,8 +232,9 @@
 		return
 	var/static/items_inside = list(
 		/obj/item/healthanalyzer = 1,
-		/obj/item/reagent_containers/pill/patch/styptic = 2,
+		/obj/item/reagent_containers/pill/patch/styptic = 1,
 		/obj/item/storage/pill_bottle/trophazole = 1,
+		/obj/item/gauze_injector = 1,
 		/obj/item/stack/medical/gauze = 1,
 		/obj/item/stack/medical/splint = 1,
 		/obj/item/reagent_containers/hypospray/medipen/salacid = 1)

@@ -164,6 +164,8 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_PARALYSIS_R_ARM "para-r-arm"
 #define TRAIT_PARALYSIS_L_LEG "para-l-leg"
 #define TRAIT_PARALYSIS_R_LEG "para-r-leg"
+#define TRAIT_EASILY_WOUNDED		"easy_limb_wound"
+#define TRAIT_HARDLY_WOUNDED		"hard_limb_wound"
 #define TRAIT_CANNOT_OPEN_PRESENTS "cannot-open-presents"
 #define TRAIT_PRESENT_VISION "present-vision"
 #define TRAIT_DISK_VERIFIER "disk-verifier"
@@ -209,6 +211,8 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 //non-mob traits
 /// Used for limb-based paralysis, where replacing the limb will fix it.
 #define TRAIT_PARALYSIS "paralysis"
+/// Used for limbs.
+#define TRAIT_DISABLED_BY_WOUND		"disabled-by-wound"
 
 #define TRAIT_KEEP_TOGETHER "keep-together"
 

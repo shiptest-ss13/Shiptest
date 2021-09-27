@@ -82,12 +82,18 @@
 			L.adjustOxyLoss(-50)// do CPR first
 			if(L.blood_volume <= 500) //bandage them up and give em some blood if they're bleeding
 				L.blood_volume += 30
-				L.suppress_bloodloss(1800)
+				for(var/i in L.all_wounds)
+					var/datum/wound/bleeder = i
+					bleeder.blood_flow = 0
+
 			if(L.getBruteLoss() >= 50)// first, did we beat them into crit? if so, heal that
 				var/healing = min(L.getBruteLoss(), 120)
 				L.adjustBruteLoss(-healing)
-				L.suppress_bloodloss(1800)//bandage their ass
+				for(var/i in L.all_wounds)
+					var/datum/wound/bleeder = i
+					bleeder.blood_flow = 0
 				return
+				
 			else if(L.getFireLoss() >= 50) // are they still down from other damage? fix it, but not as fast as the burns
 				var/healing = min(L.getFireLoss(), 50)
 				L.adjustFireLoss(-healing)

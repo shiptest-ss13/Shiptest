@@ -107,7 +107,7 @@
 	if(user.a_intent != INTENT_HELP)
 		return ..()
 
-	if(I.sharpness == IS_SHARP_ACCURATE)
+	if(I.sharpness == SHARP_EDGED)
 		if(last_act + 50 > world.time)	//prevents message spam
 			return
 		last_act = world.time

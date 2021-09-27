@@ -91,6 +91,7 @@
 	desc = "The <span class='danger'>glowing</span> nettle incites <span class='boldannounce'>rage</span> in you just from looking at it!"
 	icon_state = "deathnettle"
 	force = 30
+	wound_bonus = CANT_WOUND
 	throwforce = 15
 	wine_power = 50
 	wine_flavor = "burning rage" //WS edit: new wine flavors
