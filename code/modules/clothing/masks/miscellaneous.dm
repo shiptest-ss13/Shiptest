@@ -88,7 +88,7 @@
 		var/mob/living/U = user
 		U.apply_damage(25, BRUTE, pick(BODY_ZONE_L_ARM, BODY_ZONE_R_ARM))
 		to_chat(user, "<span class='warning'>BLOOD PRICE ACCEPTED. WITHDRAWING KRONOR FROM OFFSHORE FUND...</span>")
-		var/obj = pick(
+		pick(
 						new /obj/item/stack/spacecash/c1000(user.drop_location()),
 						new /obj/item/stack/spacecash/c500(user.drop_location()),
 						new /obj/item/holochip(user.drop_location(), 5000))
