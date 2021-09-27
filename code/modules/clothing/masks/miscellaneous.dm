@@ -69,6 +69,34 @@
 	desc = "Express your happiness or hide your sorrows with this laughing face with crying tears of joy cutout."
 	icon_state = "joy"
 
+/obj/item/clothing/mask/spamton
+	name = "Cursed Buisnessman's Mask"
+	icon_state = "big_shot"
+	item_state = "big_shot"
+	desc = "The porcelain mask of a now-forgotten buisness mogul. Are you big enough to wear it?"
+	modifies_speech = TRUE
+
+/obj/item/clothing/mask/spamton/handle_speech(datum/source, list/speech_args)
+	var/message = speech_args[SPEECH_MESSAGE]
+	if(message[1] != "*")
+		message = " [message]"
+		var/list/spamton_words = strings("spamton_replacement.json", "spamton")
+
+		for(var/key in spamton_words)
+			var/value = spamton_words[key]
+			if(islist(value))
+				value = pick(value)
+
+			message = replacetextEx(message, " [uppertext(key)]", " [uppertext(value)]")
+			message = replacetextEx(message, " [capitalize(key)]", " [capitalize(value)]")
+			message = replacetextEx(message, " [key]", " [value]")
+
+	speech_args[SPEECH_MESSAGE] = trim(message)
+
+/obj/item/clothing/mask/spamton/Initialize()
+	. = ..()
+	ADD_TRAIT(src, TRAIT_NODROP, CURSED_MASK_TRAIT)
+
 /obj/item/clothing/mask/pig
 	name = "pig mask"
 	desc = "A rubber pig mask with a built-in voice modulator."
