@@ -673,7 +673,7 @@ GLOBAL_LIST_INIT(ore_probability, list(
 				new /mob/living/simple_animal/hostile/asteroid/polarbear(loc)
 			new /obj/structure/fluff/iced_abductor(loc)
 			new /mob/living/simple_animal/hostile/asteroid/polarbear(loc)
-			new /obj/turf/open/floor/mineral/abductor(loc)
+			new /turf/open/floor/mineral/abductor(loc)
 		if(21)//hey, free elite tumor!
 			visible_message("<span class='userdanger'>A large, pulsating structure falls through the portal.</span>")
 			new /obj/structure/elite_tumor(loc)
