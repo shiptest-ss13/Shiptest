@@ -54,4 +54,7 @@
 	move_force = MOVE_FORCE_DEFAULT
 	move_resist = MOVE_RESIST_DEFAULT
 	pull_force = PULL_FORCE_DEFAULT
+	if(prob(10))
+		new /obj/item/gem/amber(loc)
 	return ..()
+

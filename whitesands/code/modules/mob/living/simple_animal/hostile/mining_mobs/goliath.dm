@@ -69,6 +69,14 @@
 	move_resist = MOVE_RESIST_DEFAULT
 	pull_force = PULL_FORCE_DEFAULT
 	..(gibbed)
+	if(prob(1))//goliaths eat rocks and thus have a tiny chance to contain a number of gems
+		new /obj/item/gem/rupee(loc)
+	if(prob(1))
+		new /obj/item/gem/fdiamond(loc)
+	if(prob(1))
+		new /obj/item/gem/void(loc)
+	if(prob(1))
+		new /obj/item/gem/phoron(loc)
 
 /mob/living/simple_animal/hostile/asteroid/goliath/OpenFire()
 	var/tturf = get_turf(target)

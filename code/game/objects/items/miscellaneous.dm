@@ -216,3 +216,58 @@
 /obj/item/virgin_mary/proc/manual_suicide(mob/living/user)
 	user.adjustOxyLoss(200)
 	user.death(0)
+
+//rare and valulable gems- designed to eventually be used for archeology, or to be given as opposed to money as loot. Auctioned off at export, or kept as a trophy.
+/obj/item/gem/rupee
+	name = "\improper Ruperium Crystal"
+	desc = "An exotic crystalline compound rarely found all over the frontier of known space. Has few practical uses, but the resonating properties it possesses make it highly valued in the creation of designer instruments."
+	icon = 'icons/obj/gems.dmi'
+	icon_state = "rupee"
+	w_class = WEIGHT_CLASS_SMALL
+
+/obj/item/gem/fdiamond
+	name = "\improper Frost Diamond"
+	desc = "A rare form of crystalline carbon, most commonly found in the inner stone of crashed comets. Though asteroid mining long devalued more common forms of diamond, this one remains exclusive."
+	icon = 'icons/obj/gems.dmi'
+	icon_state = "diamond"
+	w_class = WEIGHT_CLASS_SMALL
+
+/obj/item/gem/amber
+	name = "\improper Draconic Amber"
+	desc = "The final decompositional result of a dragon's white-hot blood. Cherished by inner-world gemcutters for its soft warmth and faint glow."
+	icon = 'icons/obj/gems.dmi'
+	icon_state = "amber"
+	light_range = 2
+	light_power = 2
+	light_color = "#FFBF00"
+	w_class = WEIGHT_CLASS_SMALL
+
+/obj/item/gem/bloodstone
+	name = "\improper Ichorium"
+	desc = "A strange substance, known to coalesce in the presence of otherwordly phenomena. Could probably fetch a good price for this."
+	icon = 'icons/obj/gems.dmi'
+	icon_state = "ruby"
+	light_range = 2
+	light_power = 3
+	light_color = "#800000"
+	w_class = WEIGHT_CLASS_SMALL
+
+/obj/item/gem/phoron
+	name = "\improper Stabilized Phoron"
+	desc = "When under incredible pressure during formation, plasma crystal is occasionally known to transform into this substance. Famed both for exceptional durability and uncommon beauty."
+	icon = 'icons/obj/gems.dmi'
+	icon_state = "phoron"
+	light_range = 2
+	light_power = 2
+	light_color = "#62326a"
+	w_class = WEIGHT_CLASS_SMALL
+
+/obj/item/gem/void
+	name = "\improper Null Crystal"
+	desc = "A shard of stellar energy, shaped into crystal. These strange objects occasionally appear spontaneously in the deepest, darkest depths of space. Despite it's incredible value, it seems far lighter than it should be."
+	icon = 'icons/obj/gems.dmi'
+	icon_state ="void"
+	light_range = 2
+	light_power = 1
+	light_color = "#4785a4"
+	w_class = WEIGHT_CLASS_SMALL

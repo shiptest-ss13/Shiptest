@@ -81,4 +81,6 @@
 	new /obj/item/stack/ore/bluespace_crystal(loc, 3)
 	if(prob(5))
 		new /obj/item/assembly/signaler/anomaly/bluespace(loc)
+	if(prob(5))
+		new /obj/item/gem/fdiamond(loc)
 	return ..()

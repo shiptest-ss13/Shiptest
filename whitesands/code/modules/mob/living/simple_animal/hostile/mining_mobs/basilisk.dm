@@ -204,6 +204,14 @@
 	search_objects = 1
 	wanted_objects = list(/obj/item/pen/survival, /obj/item/stack/ore/diamond)
 
+/mob/living/simple_animal/hostile/asteroid/basilisk/watcher/death(gibbed)
+	move_force = MOVE_FORCE_DEFAULT
+	move_resist = MOVE_RESIST_DEFAULT
+	pull_force = PULL_FORCE_DEFAULT
+	..(gibbed)
+	if(prob(5))
+		new /obj/item/gem/fdiamond(loc)
+
 /mob/living/simple_animal/hostile/asteroid/basilisk/watcher/Life()
 	. = ..()
 	if(stat == CONSCIOUS)

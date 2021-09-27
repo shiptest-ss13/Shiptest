@@ -1,8 +1,9 @@
 //Tendril chest artifacts and ruin loot. Includes ash drake loot since they drop two sets of armor + random item
 //Consumable or one-use items like the magic D20 and gluttony's blessing are omitted
+//no more 999999 currency after one frost world, sorry
 
 /datum/export/lavaland/minor
-	cost = 10000
+	cost = 5000
 	unit_name = "minor lava planet artifact"
 	export_types = list(/obj/item/immortality_talisman,
 						/obj/item/book_of_babel,
@@ -28,7 +29,7 @@
 						/obj/item/veilrender/vealrender)
 
 /datum/export/lavaland/major //valuable chest/ruin loot and staff of storms
-	cost = 20000
+	cost = 10000
 	unit_name = "lava planet artifact"
 	export_types = list(/obj/item/guardiancreator,
 						/obj/item/rod_of_asclepius,
@@ -63,3 +64,34 @@
 	cost = 10000
 	unit_name = "H.E.C.K. helmet"
 	export_types = list(/obj/item/clothing/head/helmet/space/hostile_environment)
+
+//not technically lavaland but this had a useful infrastructure to store them under
+/datum/export/lavaland/gems/diamond
+	cost = 3500
+	unit_name = "Ruperium Auction"
+	export_types = list(/obj/item/gem/rupee)
+
+/datum/export/lavaland/gems/diamond
+	cost = 5500
+	unit_name = "Frost Diamond Auction"
+	export_types = list(/obj/item/gem/fdiamond)
+
+/datum/export/lavaland/gems/amber
+	cost = 7500
+	unit_name = "Draconic Amber Auction"
+	export_types = list(/obj/item/gem/amber)
+
+/datum/export/lavaland/gems/plasma
+	cost = 12000
+	unit_name = "Metastable Phoron Auction"
+	export_types = list(/obj/item/gem/phoron)
+
+/datum/export/lavaland/gems/void
+	cost = 23000
+	unit_name = "Null Crystal Auction"
+	export_types = list(/obj/item/gem/void)
+
+/datum/export/lavaland/gems/blood
+	unit_name = "Ichorium Crystal Auction"
+	cost = 13000
+	export_types = list(/obj/item/gem/bloodstone)
