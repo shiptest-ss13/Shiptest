@@ -59,6 +59,7 @@ Difficulty: Medium
 	guaranteed_butcher_results = list(/obj/item/stack/sheet/animalhide/ashdrake = 10)
 	var/swooping = NONE
 	var/player_cooldown = 0
+	var/dungeon = FALSE //if true, on death will spawn a ghost role at a lank mark and open blast doors with a certain id
 	gps_name = "Fiery Signal"
 	achievement_type = /datum/award/achievement/boss/drake_kill
 	crusher_achievement_type = /datum/award/achievement/boss/drake_crusher
@@ -72,6 +73,9 @@ Difficulty: Medium
 		/datum/action/innate/megafauna_attack/mass_fire,
 		/datum/action/innate/megafauna_attack/lava_swoop)
 	small_sprite_type = /datum/action/small_sprite/megafauna/drake
+
+/mob/living/simple_animal/hostile/megafauna/dragon/icemoon
+	dungeon = TRUE
 
 /datum/action/innate/megafauna_attack/fire_cone
 	name = "Fire Cone"
@@ -386,6 +390,41 @@ Difficulty: Medium
 	SetRecoveryTime(swoop_cooldown)
 	if(!lava_success)
 		arena_escape_enrage()
+
+/mob/living/simple_animal/hostile/megafauna/dragon/death()
+	//open all ashdrake gates
+	if(dungeon)
+		for(var/obj/machinery/door/poddoor/D in GLOB.machines)
+			if(D.id == "ash_drake_dead")
+				D.open()
+		for(var/obj/effect/landmark/ashdrake_ghost_spawn/L in GLOB.landmarks_list)
+			L.create_roles()
+
+	..()
+
+/obj/effect/landmark/ashdrake_ghost_spawn //spawn a random ghost role if ash drake is killed
+	name = "ash drake ghost role spawner"
+	var/picked
+
+/obj/effect/landmark/ashdrake_ghost_spawn/proc/create_roles()
+	picked = pick(1,2,3,4,5,6,7) //picks 1-7
+	switch(picked) //then picks out of 7 ghost roles to spawn
+		if(1)
+			new /obj/effect/mob_spawn/human/doctor/alive/lost(get_turf(loc))
+		if(2)
+			new /obj/effect/mob_spawn/human/lostcentcom(get_turf(loc))
+		if(3)
+			new /obj/effect/mob_spawn/human/lostshaftminer(get_turf(loc))
+		if(4)
+			new /obj/effect/mob_spawn/human/lostashwalker_heir(get_turf(loc))
+		if(5)
+			new /obj/effect/mob_spawn/human/lostassistant(get_turf(loc))
+		if(6)
+			new /obj/effect/mob_spawn/human/lostsyndicate(get_turf(loc))
+		if(7)
+			new /obj/effect/mob_spawn/human/lostsolgov(get_turf(loc))
+
+	qdel(src) //no spawning people twice
 
 /mob/living/simple_animal/hostile/megafauna/dragon/ex_act(severity, target)
 	if(severity == EXPLODE_LIGHT)
