@@ -137,6 +137,7 @@
 	H.physiology.pressure_mod = initial(H.physiology.pressure_mod)
 	H.physiology.cold_mod = initial(H.physiology.cold_mod)
 	H.physiology.tox_mod = initial (H.physiology.tox_mod)
+	H.physiology.heat_mod = initial (H.physiology.heat_mod)
 
 /mob/living/carbon/human/proc/earthquake_help()
 	set name = "Commune with the earth"
