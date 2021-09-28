@@ -8,7 +8,7 @@
 	desc = "An airlock painter, reprogramed to use a different style of paint in order to apply decals for floor tiles as well, in addition to repainting doors. Decals break when the floor tiles are removed. Use it inhand to change the design, and Ctrl-Click to switch to decal-painting mode."
 
 	var/floor_icon
-	var/floor_state = "floor"
+	var/floor_state = "steel"
 	var/floor_dir = SOUTH
 
 	item_state = "electronic"
@@ -25,7 +25,7 @@
 		return
 
 	var/turf/open/floor/plasteel/F = A
-	if(!istype(F))
+	if(!istype(F) || istype(F, /turf/open/floor/plasteel/tech))
 		to_chat(user, "<span class='warning'>\The [src] can only be used on plasteel flooring.</span>")
 		return
 

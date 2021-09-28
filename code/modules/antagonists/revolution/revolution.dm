@@ -379,7 +379,6 @@
 	else
 		return
 
-	SSshuttle.clearHostileEnvironment(src)
 	save_members()
 
 	// Remove everyone as a revolutionary
