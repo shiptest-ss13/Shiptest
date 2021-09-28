@@ -1,5 +1,13 @@
-#define OVERMAP_GENERATOR_SOLAR "solar_system"
-#define OVERMAP_GENERATOR_RANDOM "random"
+
+// These must be kept in sync with the constants in tgui/packages/tgui/components/overmap/BodyAppearance.js
+// If they fall out of sync, the overmap display will break.
+#define OVERMAP_BODY_CIRCLE "circle"
+#define OVERMAP_BODY_RECTANGLE "rectangle"
+#define OVERMAP_BODY_SPRITE "sprite"
+
+
+
+
 
 //Add new star types here
 #define SMALLSTAR 1
@@ -9,7 +17,7 @@
 
 //Star classes
 #define STARO 1 //Extremely bright blue main sequence star or (super)giant
-#define STARB 2 //Bright blue main sequence star or (super)giant 
+#define STARB 2 //Bright blue main sequence star or (super)giant
 #define STARA 3 //Light blue main sequence star
 #define STARF 4 //White main sequence star
 #define STARG 5 //Yellow main sequence star or supergiant

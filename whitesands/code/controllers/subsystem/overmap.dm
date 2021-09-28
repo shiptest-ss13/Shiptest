@@ -7,8 +7,6 @@ SUBSYSTEM_DEF(overmap)
 
 	//The type of star this system will have
 	var/startype
-	///Defines which generator to use for the overmap
-	var/generator_type = OVERMAP_GENERATOR_RANDOM
 
 	// DEBUG FIX -- modularize this to a list
 	var/datum/overmap_system/primary_system
@@ -25,53 +23,37 @@ SUBSYSTEM_DEF(overmap)
 	///Map of tiles at each radius (represented by index) around the sun
 	var/list/list/radius_tiles
 
-	///The main station or ship
-	var/obj/structure/overmap/main
-
 	///Width/height of the overmap "zlevel"
 	var/size = 25
-	///Should events be processed
-	var/events_enabled = TRUE
-
-	///Cooldown on dynamically loading encounters
-	var/encounter_cooldown = 0
 
 /**
   * Creates an overmap object for shuttles, triggers initialization procs for ships and helms
   */
 /datum/controller/subsystem/overmap/Initialize(start_timeofday)
-	generator_type = CONFIG_GET(string/overmap_generator_type)
-	if (!generator_type)
-		generator_type = OVERMAP_GENERATOR_RANDOM
+	var/obj/structure/overmap/star/center
+	var/turf/center_loc = locate(size / 2, size / 2, 1)
+	startype = pick(SMALLSTAR,MEDSTAR,BIGSTAR,TWOSTAR)
 
-	if (generator_type == OVERMAP_GENERATOR_SOLAR)
-		var/obj/structure/overmap/star/center
-		startype = pick(SMALLSTAR,TWOSTAR,MEDSTAR,BIGSTAR)
-		if(startype == SMALLSTAR)
-			center = new(locate(size / 2, size / 2, 1))
-		if(startype == TWOSTAR)
-			var/obj/structure/overmap/star/big/binary/S
-			S = new(locate(size / 2, size / 2, 1))
-			center = S
-		if(startype == MEDSTAR)
-			var/obj/structure/overmap/star/medium/S
-			S = new(locate(size / 2, size / 2, 1))
-			center = S
-		if(startype == BIGSTAR)
-			var/obj/structure/overmap/star/big/S
-			S = new(locate(size / 2, size / 2, 1))
-			center = S
-		var/list/unsorted_turfs = get_areatype_turfs(/area/overmap)
-		// SSovermap.size - 2 = area of the overmap w/o borders
-		radius_tiles = list()
-		for(var/i in 1 to (size - 2) / 2)
-			radius_tiles += list(list()) // gift-wrapped list for you <3
-			for(var/turf/T in unsorted_turfs)
-				var/dist = round(sqrt((T.x - center.x) ** 2 + (T.y - center.y) ** 2))
-				if (dist != i)
-					continue
-				radius_tiles[i] += T
-				unsorted_turfs -= T
+	if(startype == SMALLSTAR)
+		center = new(center_loc)
+	if(startype == MEDSTAR)
+		center = new /obj/structure/overmap/star/medium(center_loc)
+	if(startype == BIGSTAR)
+		center = new /obj/structure/overmap/star/big(center_loc)
+	if(startype == TWOSTAR)
+		center = new /obj/structure/overmap/star/big/binary(center_loc)
+
+	var/list/unsorted_turfs = get_areatype_turfs(/area/overmap)
+	// SSovermap.size - 2 = area of the overmap w/o borders
+	radius_tiles = list()
+	for(var/i in 1 to (size - 2) / 2)
+		radius_tiles += list(list()) // gift-wrapped list for you <3
+		for(var/turf/T in unsorted_turfs)
+			var/dist = round(sqrt((T.x - center.x) ** 2 + (T.y - center.y) ** 2))
+			if (dist != i)
+				continue
+			radius_tiles[i] += T
+			unsorted_turfs -= T
 
 	create_map()
 
@@ -89,10 +71,17 @@ SUBSYSTEM_DEF(overmap)
 	return ..()
 
 /datum/controller/subsystem/overmap/fire()
-	if(events_enabled)
-		for(var/obj/structure/overmap/event/E as anything in events)
-			if(E?.affect_multiple_times && E?.close_overmap_objects)
-				E.apply_effect()
+	for(var/obj/structure/overmap/event/E as anything in events)
+		if(E?.affect_multiple_times && E?.close_overmap_objects)
+			E.apply_effect()
+
+/**
+  * The proc that creates all the objects on the overmap, split into seperate procs for redundancy.
+  */
+/datum/controller/subsystem/overmap/proc/create_map()
+	spawn_events_in_orbits()
+	spawn_ruin_levels_in_orbits()
+	spawn_initial_ships()
 
 /**
   * Creates an overmap ship object for the provided mobile docking port if one does not already exist.
@@ -114,27 +103,6 @@ SUBSYSTEM_DEF(overmap)
 		CRASH("Shuttle created in unknown location, unable to create overmap ship!")
 
 	shuttle.current_ship = new_ship
-
-/**
-  * The proc that creates all the objects on the overmap, split into seperate procs for redundancy.
-  */
-/datum/controller/subsystem/overmap/proc/create_map()
-	if (generator_type == OVERMAP_GENERATOR_SOLAR)
-		spawn_events_in_orbits()
-		spawn_ruin_levels_in_orbits()
-	else
-		spawn_events()
-		spawn_ruin_levels()
-
-	spawn_initial_ships()
-
-/**
-  * VERY Simple random generation for overmap events, spawns the event in a random turf and sometimes spreads it out similar to ores
-  */
-/datum/controller/subsystem/overmap/proc/spawn_events()
-	var/max_clusters = CONFIG_GET(number/max_overmap_event_clusters)
-	for(var/i=1, i<=max_clusters, i++)
-		spawn_event_cluster(pick(subtypesof(/obj/structure/overmap/event)), get_unused_overmap_square())
 
 /datum/controller/subsystem/overmap/proc/spawn_events_in_orbits()
 	var/list/orbits = list()
@@ -164,22 +132,11 @@ SUBSYSTEM_DEF(overmap)
 			new event_type(U)
 
 /**
-  * See [/datum/controller/subsystem/overmap/proc/spawn_events], spawns "veins" (like ores) of events
+  * Creates an overmap object for each ruin level, making them accessible.
   */
-/datum/controller/subsystem/overmap/proc/spawn_event_cluster(obj/structure/overmap/event/type, turf/location, chance)
-	if(CONFIG_GET(number/max_overmap_events) <= LAZYLEN(events))
-		return
-	var/obj/structure/overmap/event/E = new type(location)
-	if(!chance)
-		chance = E.spread_chance
-	for(var/dir in GLOB.cardinals)
-		if(prob(chance))
-			var/turf/T = get_step(E, dir)
-			if(!istype(get_area(T), /area/overmap))
-				continue
-			if(locate(/obj/structure/overmap/event) in T)
-				continue
-			spawn_event_cluster(type, T, chance / 2)
+/datum/controller/subsystem/overmap/proc/spawn_ruin_levels_in_orbits()
+	for(var/i in 1 to CONFIG_GET(number/max_overmap_dynamic_events))
+		new /obj/structure/overmap/dynamic(get_unused_overmap_square_in_radius())
 
 /datum/controller/subsystem/overmap/proc/spawn_initial_ships()
 	var/datum/map_template/shuttle/selected_template = SSmapping.maplist[pick(SSmapping.maplist)]
@@ -191,17 +148,6 @@ SUBSYSTEM_DEF(overmap)
 		"}, list("map_name" = selected_template.name, "round_id" = GLOB.round_id))
 		query_round_map_name.Execute()
 		qdel(query_round_map_name)
-
-/**
-  * Creates an overmap object for each ruin level, making them accessible.
-  */
-/datum/controller/subsystem/overmap/proc/spawn_ruin_levels()
-	for(var/i in 1 to CONFIG_GET(number/max_overmap_dynamic_events))
-		new /obj/structure/overmap/dynamic(get_unused_overmap_square())
-
-/datum/controller/subsystem/overmap/proc/spawn_ruin_levels_in_orbits()
-	for(var/i in 1 to CONFIG_GET(number/max_overmap_dynamic_events))
-		new /obj/structure/overmap/dynamic(get_unused_overmap_square_in_radius())
 
 /**
   * Reserves a square dynamic encounter area, and spawns a ruin in it if one is supplied.
@@ -299,7 +245,7 @@ SUBSYSTEM_DEF(overmap)
 		. = null
 
 /**
-  * Returns a random turf in a radius from the star, or a random empty turf if OVERMAP_GENERATOR_RANDOM is the active generator.
+  * Returns a random turf in a radius from the star.
   * * thing_to_not_have - The thing you don't want to be in the found tile, for example, an overmap event [/obj/structure/overmap/event].
   * * tries - How many attempts it will try before giving up finding an unused tile..
   * * radius - The distance from the star to search for an empty tile.
@@ -316,17 +262,6 @@ SUBSYSTEM_DEF(overmap)
 
 	if(!force)
 		. = null
-
-/datum/controller/subsystem/overmap/proc/get_nearest_unused_square_in_radius(adjacent, radius, max_range, thing_to_not_have = /obj/structure/overmap)
-	var/turf/target = adjacent
-	var/ret_dist = INFINITY
-	for(var/turf/T as anything in radius_tiles[radius])
-		if (locate(thing_to_not_have) in T)
-			continue
-		var/dist = round(sqrt((T.x - target.x) ** 2 + (T.y - target.y) ** 2))
-		if (dist < max_range && dist < ret_dist)
-			. = T
-			ret_dist = dist
 
 /**
   * Gets the corresponding overmap object that shares the provided z level

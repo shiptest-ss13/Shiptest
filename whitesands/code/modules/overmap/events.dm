@@ -7,7 +7,7 @@
 	var/chance_to_affect = 0
 	///Chance to spread to nearby tiles if spawned
 	var/spread_chance = 0
-	///How many additional tiles to spawn at once in the selected orbit. Used with OVERMAP_GENERATOR_SOLAR.
+	///How many additional tiles to spawn at once in the selected orbit.
 	var/chain_rate = 0
 	///The event to run when the station gets hit by an event
 	var/datum/round_event_control/station_event
@@ -190,10 +190,7 @@
 	if(_other_wormhole)
 		other_wormhole = _other_wormhole
 	if(!other_wormhole)
-		if(SSovermap.generator_type == OVERMAP_GENERATOR_SOLAR)
-			other_wormhole = new(SSovermap.get_unused_overmap_square_in_radius(), src)
-		else
-			other_wormhole = new(SSovermap.get_unused_overmap_square(), src)
+		other_wormhole = new(SSovermap.get_unused_overmap_square_in_radius(), src)
 
 /obj/structure/overmap/event/wormhole/affect_ship(obj/structure/overmap/ship/simulated/S)
 	if(!other_wormhole)

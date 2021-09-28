@@ -97,8 +97,6 @@
 /obj/structure/overmap/dynamic/proc/load_level(obj/docking_port/mobile/visiting_shuttle)
 	if(reserve)
 		return
-	if(!COOLDOWN_FINISHED(SSovermap, encounter_cooldown))
-		return "WARNING! Stellar interference is restricting flight in this area. Interference should pass in [COOLDOWN_TIMELEFT(SSovermap, encounter_cooldown) / 10] seconds."
 	var/list/dynamic_encounter_values = SSovermap.spawn_dynamic_encounter(planet, TRUE, ruin_type = template)
 	reserve = dynamic_encounter_values[1]
 	if(!reserve)
@@ -178,10 +176,7 @@
 			return //Don't fuck over stranded people
 
 	if(reserve)
-		if(SSovermap.generator_type == OVERMAP_GENERATOR_SOLAR)
-			forceMove(SSovermap.get_unused_overmap_square_in_radius())
-		else
-			forceMove(SSovermap.get_unused_overmap_square())
+		forceMove(SSovermap.get_unused_overmap_square_in_radius())
 		choose_level_type()
 		QDEL_NULL(reserve)
 

@@ -1,7 +1,5 @@
 /datum/overmap_system
 	var/name = "System"
-	// DEBUG REMOVE
-	var/system_genmode
 	var/list/datum/overmap_obj/all_children = list()
 
 /datum/overmap_system/New(genmode)
@@ -15,10 +13,10 @@
 // DEBUG FIX -- move this somewhere else maybe? make it better too
 /datum/overmap_system/proc/populate_system(genmode)
 	var/datum/sun = new /datum/overmap_obj/sun()
-	var/sun_component = sun.AddComponent(/datum/component/physics_processing, null, FALSE, 1)
+	var/sun_component = sun.AddComponent(/datum/component/physics_processing, 1)
 	all_children.Add(sun)
 
-	var/desired_planets = 5
+	var/desired_planets = 3
 	var/num_planets = 0
 
 	var/datum/overmap_obj/planet/cur_planet
@@ -26,7 +24,7 @@
 
 	while(num_planets < desired_planets)
 		cur_planet = new()
-		cur_component = cur_planet.AddComponent(/datum/component/physics_processing, sun_component, TRUE)
+		cur_component = cur_planet.AddComponent(/datum/component/physics_processing)
 
 		// DEBUG FIX -- update these to more interesting and varied possibilities
 		var/s_m = pick(list(0.3871, 0.7233, 1, 1.5273))
@@ -54,7 +52,7 @@
 		cur_planet.orbit_counterclockwise = ccwise
 		cur_planet.orbit_arg_of_periapsis = arg_of_p
 
-		cur_component.set_up_orbit(s_m, ecc, ccwise, arg_of_p, anomaly)
+		cur_component.set_up_orbit(sun_component, s_m, ecc, ccwise, arg_of_p, anomaly)
 		all_children.Add(cur_planet)
 		num_planets++
 
@@ -112,10 +110,13 @@ merging vs. separation of static vs. dynamic data
 	/// The name of the overmap object as communicated to the player. Need not be unique; should not be treated as such.
 	var/name = "overmap object"
 
+	/// The radius of the overmap object.
+	var/radius
+
+	/// The appearance type of the overmap object, used by the overmap display.
+	var/appearance_type = OVERMAP_BODY_CIRCLE
 	/// The color associated with this object.
-	var/display_color
-	/// Used to determine the relative size of the object on certain displays. Usually radius.
-	var/display_size
+	var/display_color = "#FFFFFF"
 
 	/// Whether orbit information should be sent to applicable displays for orbit line display.
 	var/show_orbit = TRUE
@@ -128,7 +129,7 @@ merging vs. separation of static vs. dynamic data
 	/// The semi-major axis of the object's orbit, used for orbit lines. Does not affect movement.
 	var/orbit_arg_of_periapsis
 
-// DEBUG FIX: maybe add functionality to this, explain why it's here
+// DEBUG FIX -- maybe add functionality to this, explain why it's here
 /datum/overmap_obj/proc/is_known_to_user(user)
 	return TRUE
 
@@ -139,7 +140,6 @@ merging vs. separation of static vs. dynamic data
 	var/datum/component/physics_processing/phys_comp = GetComponent(/datum/component/physics_processing)
 
 	.["name"] = name
-	.["parent_ref"] = phys_comp.pos_parent ? REF(phys_comp.pos_parent.parent) : null
 
 	/* POSITION DATA */
 	// the overmap display thinks +y is down, while the physics system thinks +y is up.
@@ -151,8 +151,9 @@ merging vs. separation of static vs. dynamic data
 	.["acceleration"] = list(phys_comp.acc_x SECONDS SECONDS, -phys_comp.acc_y SECONDS SECONDS)
 
 	/* APPEARANCE DATA */
+	.["appearance_type"] = appearance_type
+	.["radius"] = radius
 	.["color"] = display_color
-	.["size"] = display_size
 
 	.["show_orbit"] = show_orbit
 	.["o_semimajor"] = orbit_s_m_axis
@@ -163,14 +164,14 @@ merging vs. separation of static vs. dynamic data
 // DEBUG REMOVE: figure out a better approach than "sun" and "planet"
 /datum/overmap_obj/sun
 	name = "Sun"
+	radius = 0.25*ONE_AU
 	display_color = "#F6DE01"
-	display_size = 0.25*ONE_AU
 	show_orbit = FALSE
 
 /datum/overmap_obj/planet
 	name = "Planet"
+	radius = 0.06*ONE_AU
 	display_color = COLOR_SILVER
-	display_size = 0.06*ONE_AU
 
 /* OVERMAP TURFS */
 /turf/open/overmap

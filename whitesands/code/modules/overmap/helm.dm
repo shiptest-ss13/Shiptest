@@ -14,7 +14,6 @@
 	// DEBUG REMOVE
 	var/reset_system_on_every_load = FALSE
 	var/system_genmode = SYS_GENMODE_NORMAL
-	var/zoom_level = 1
 
 /obj/machinery/computer/helm/Initialize(mapload)
 	. = ..()
@@ -66,9 +65,8 @@
 	if(!SSovermap.primary_system)
 		SSovermap.primary_system = new /datum/overmap_system(system_genmode)
 
-	.["zoom_level"] = zoom_level
 	.["body_information"] = SSovermap.primary_system.get_map_data_for_user(user)
-	.["focused_body"] = REF(SSovermap.primary_system.all_children[3])
+	.["focused_body"] = null
 
 /*
 	.["integrity"] = current_ship.integrity

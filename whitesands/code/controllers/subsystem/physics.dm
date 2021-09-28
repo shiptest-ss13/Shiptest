@@ -29,7 +29,9 @@ SUBSYSTEM_DEF(physics)
 		currentrun = processing.Copy()
 		// we only reset the current_realtime if we're starting a new tick; this keeps objects moving at consistent-ish rates, even if they're jumpy
 		current_realtime = REALTIMEOFDAY
+#ifndef DEBUG
 	var/delta_time = current_realtime - last_realtime
+#endif
 
 	//cache for sanic speed (lists are references anyways)
 	var/list/current_run = currentrun
@@ -54,41 +56,33 @@ SUBSYSTEM_DEF(physics)
 
 // DEBUG FIX -- move this out of here
 /datum/component/physics_processing
-	/// used to "parent" this component's physics location to another, such that the "true" pos / vel / acc are offset by those of the pos_parent.
-	var/datum/component/physics_processing/pos_parent
-
-	/// Bool. Whether this physics object is affected by the gravity of its pos_parent.
-	var/pulled_by_grav = TRUE
+	/// Reference to the physics processing component whose gravity acts upon ourself. Can be null.
+	var/datum/component/physics_processing/attractor = null
 	/// Number; the mass of this object, as used for physics calculations.
 	var/mass = 0.00003*SOLAR_MASS
 
-	// position relative to position parent
+	// position
 	var/pos_x = 0
 	var/pos_y = 0
-	// velocity relative to position parent (uses deciseconds)
+	// velocity (uses deciseconds)
 	var/vel_x = 0
 	var/vel_y = 0
-	// acceleration relative to position parent (uses deciseconds)
+	// acceleration (uses deciseconds)
 	var/acc_x = 0
 	var/acc_y = 0
 
+
 /datum/component/physics_processing/Initialize(
-		datum/component/physics_processing/_pos_parent = null,
-		_pulled_by_grav = null,
 		_mass = null,
 		list/pos_list = null,
 		list/vel_list = null,
 		list/acc_list = null)
 
-	// if physics parent isn't falsey, but isn't a physics processing component either -- our is ourself
-	if(_pos_parent && !istype(_pos_parent) || src == _pos_parent)
-		WARNING("Physics processing component initialized with invalid position parent! Cancelling component creation.")
+	// change this if you need to use this component on some other type
+	if(!istype(parent, /datum/overmap_obj))
 		return COMPONENT_INCOMPATIBLE
 
-	pos_parent = _pos_parent
 	// these might be null; if they're not, we use them
-	if(_pulled_by_grav != null)
-		pulled_by_grav = _pulled_by_grav
 	if(_mass != null)
 		mass = _mass
 	if(pos_list)
@@ -103,14 +97,13 @@ SUBSYSTEM_DEF(physics)
 
 	START_PROCESSING(SSphysics, src)
 
-// DEBUG REMOVE -- finish these up
+// DEBUG FIX -- finish these up
 /datum/component/physics_processing/RegisterWithParent()
 	return
 
 /datum/component/physics_processing/UnregisterFromParent()
 	return
 
-// DEBUG FIX -- clean up all datums with this as a pos_parent
 /datum/component/physics_processing/Destroy()
 	STOP_PROCESSING(SSphysics, src)
 	return ..()
@@ -133,42 +126,48 @@ SUBSYSTEM_DEF(physics)
 
 // DEBUG FIX -- update this to use a signal that attached objects can pick up on to return the forces affecting the body, instead of just gravity
 /datum/component/physics_processing/proc/get_forces()
-	if(!pulled_by_grav)
+	if(!attractor)
 		return list(0, 0)
 
-	var/distance = dist_to_pos_parent()
-	var/force_of_grav = NORM_GRAV_CONSTANT*pos_parent.mass*mass / (distance * distance)
+	var/distance = dist_to_body(attractor)
+	var/force_of_grav = NORM_GRAV_CONSTANT*attractor.mass*mass / (distance * distance)
 
-	// gravity is parallel and opposite to the offset from the attracting parent
-	return list(-1*(pos_x/distance)*force_of_grav, -1*(pos_y/distance)*force_of_grav)
+	// gravity is parallel and opposite to the offset from the attractor
+	// note that the orbiter's pos is subtracted from the attractor's pos, not vice-versa; this gives us the opposite of the offset vector
+	var/f_x = force_of_grav*((attractor.pos_x - pos_x)/distance)
+	var/f_y = force_of_grav*((attractor.pos_y - pos_y)/distance)
 
-/datum/component/physics_processing/proc/dist_to_pos_parent()
-	return sqrt(pos_x**2 + pos_y**2)
+	// get the attractor's forces and combine them with our own;
+	var/att_forces = attractor.get_forces()
+
+	return list(f_x + att_forces[1], f_y + att_forces[2])
+
+/datum/component/physics_processing/proc/dist_to_body(datum/component/physics_processing/other_body)
+	return sqrt((pos_x - other_body.pos_x)**2 + (pos_y - other_body.pos_y)**2)
 
 /**
-  * Places the physics component in an orbit around its pos_parent according to the arguments passed; no return value.
+  * Places the physics component in an orbit around another component according to the arguments passed; no return value.
   *
-  * Sets the component's position, velocity, and acceleration around the pos_parent, according to their correct values
-  * for the orbit given. Will throw an error if the component does not have a pos_parent (and thus cannot orbit it), or if eccentricity < 0.
-  * This proc still runs if the component's do_grav variable is false; the component will fly off into space.
+  * Sets the component's position, velocity, and acceleration around the attractor, according to the correct
+  * values for the orbit given. This proc still runs if the component's pulled_by_grav variable is false;
+  * the component will fly off into space. Will throw an error if eccentricity < 0. Does not preserve current position.
   * No return value.
   *
   * Arguments:
+  * * _attractor - The component to orbit around. The called-upon component's "attractor" will be set to this.
   * * s_m_axis - Semi-major axis of the orbit, default ONE_AU.
   * * eccentricity - Orbital eccentricity, default 0. e=0 - circular orbit, 0<e<1 - elliptic orbit, 1<=e - escape orbit. eccentricity < 0 will raise an error.
   * * counterclockwise - Bool; orbit is counterclockwise if TRUE and clockwise if FALSE, default TRUE.
-  * * arg_of_periapsis - Measurement in degrees of the angle PERIAPSIS-PARENT-X AXIS, default 0. Measured according to arg "counterclockwise".
-  * * true_anomaly - Measurement in degrees of the angle OBJECT-PARENT-PERIAPSIS, default 0. Measured according to arg "counterclockwise".
+  * * arg_of_periapsis - Measurement in degrees of the angle PERIAPSIS-ATTRACTOR-X AXIS, default 0. Measured according to arg "counterclockwise".
+  * * true_anomaly - Measurement in degrees of the angle OBJECT-ATTRACTOR-PERIAPSIS, default 0. Measured according to arg "counterclockwise".
   */
 /datum/component/physics_processing/proc/set_up_orbit(
+		datum/component/physics_processing/_attractor = null,
 		s_m_axis = ONE_AU,
 		eccentricity = 0,
 		counterclockwise = TRUE,
 		arg_of_periapsis = 0,
 		true_anomaly = 0)
-
-	if(!pos_parent)
-		CRASH("Tried to set up the orbit of a physics processing component without a pos_parent!")
 
 	if(eccentricity < 0)
 		WARNING("Unsupported eccentricity [eccentricity] passed to set_up_orbit()! Eccentricity must be >=0. Assuming 0.")
@@ -178,21 +177,31 @@ SUBSYSTEM_DEF(physics)
 	if(eccentricity >= 1)
 		CRASH("I haven't implemented this yet. Fuck.")
 
+	attractor = _attractor
+
+	// copying over variables from the attractor; we'll then offset these, but we need them as a base
+	pos_x = attractor.pos_x
+	pos_y = attractor.pos_y
+	vel_x = attractor.vel_x
+	vel_y = attractor.vel_y
+	// note that we don't need to copy over acceleration, as that gets handled in update_acceleration
+
 	var/norm_dist = (1 - eccentricity**2) / (1 + eccentricity*cos(true_anomaly))
 
 	var/distance = s_m_axis*norm_dist
 	// here's where we factor in clockwiseness
 	var/pos_angle = (counterclockwise ? 1 : -1)*(true_anomaly + arg_of_periapsis)
-	pos_x = cos(pos_angle)*distance
-	pos_y = sin(pos_angle)*distance
+	pos_x += cos(pos_angle)*distance
+	pos_y += sin(pos_angle)*distance
 
-	var/speed = sqrt(NORM_GRAV_CONSTANT*pos_parent.mass * ((2/distance)-(1/s_m_axis)))
-	// gets the angle as measured from the center of the ellipse instead of the locus
-	var/central_angle = arctan(norm_dist*cos(true_anomaly) + eccentricity, norm_dist*sin(true_anomaly))
-	// offsets the central angle by the argument of periapsis, gets the perpendicular vel. unit vector by adding 90, and inverts if we're clockwise
-	var/vel_angle = (counterclockwise ? 1 : -1)*(90 + central_angle + arg_of_periapsis)
+	var/speed = sqrt(NORM_GRAV_CONSTANT*attractor.mass * ((2/distance)-(1/s_m_axis)))
+	// gets the angle tangent to the ellipse
+	var/mi_over_ma = sqrt(1-(eccentricity**2))
+	var/tangent_angle = arctan(-norm_dist*sin(true_anomaly)/mi_over_ma, mi_over_ma*(norm_dist*cos(true_anomaly)+eccentricity))
+	// offsets the tangent angle by the argument of periapsis and inverts if we're clockwise
+	var/vel_angle = (counterclockwise ? 1 : -1)*(tangent_angle + arg_of_periapsis)
 
-	vel_x = cos(vel_angle)*speed
-	vel_y = sin(vel_angle)*speed
+	vel_x += cos(vel_angle)*speed
+	vel_y += sin(vel_angle)*speed
 
 	update_acceleration()
