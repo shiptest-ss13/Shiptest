@@ -310,3 +310,27 @@
 	melee_damage_upper = 20
 	armour_penetration = 30
 	environment_smash = ENVIRONMENT_SMASH_WALLS//no escape
+
+/mob/living/simple_animal/hostile/clown/stacked
+	name = "Clownmind"
+	desc = "You can hear them humming circus music in perfect chorus."
+	icon_state = "clowns"
+	icon_living = "clowns"
+	turns_per_move = 1
+	speed = 1
+	speak_chance = 10
+	speak_emote = "collectively squeaks"
+	maxHealth = 125
+	health = 125
+	deathmessage = "collapses into a heap of inanimate clown dolls!"
+	speak = list("honkhonkhonkhonkhonk", "join the fun!join the fun!join the fun!join in the fun!", "joinus!joinus!joinus!joinus!")
+	emote_see = list("does a circus trick.", "forms a hoop and jumps through it.", "vibrates ominously.")
+	harm_intent_damage = 20
+	melee_damage_lower = 20
+	melee_damage_upper = 24
+	attack_verb_continuous = "collectively strikes"
+	attack_verb_simple = "collectively strike"
+	response_harm_continuous = "swats away one of"
+	response_harm_simple = "swat away one of"
+	pixel_x = -20
+	loot = list(/obj/item/toy/figure/clown = 5)
