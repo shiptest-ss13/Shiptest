@@ -292,7 +292,7 @@ const ShipControlContent = (props, context) => {
           <Button
             tooltip={calibrating ? "Cancel Jump" : "Bluespace Jump"}
             tooltipPosition="left"
-            icon={calibrating ? "times" : "sign-out-alt"}
+            icon={calibrating ? "times" : "angle-double-right"}
 			color={calibrating ? "bad" : undefined}
             disabled={data.state !== 'flying'}
             onClick={() => act('bluespace_jump')} />
