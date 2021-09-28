@@ -82,7 +82,7 @@
 		LAZYADD(myarea.cameras, src)
 	proximity_monitor = new(src, 1)
 
-	if(mapload && is_station_level(z) && prob(3) && !start_active)
+	if(mapload && prob(3) && !start_active)
 		toggle_cam()
 	else //this is handled by toggle_camera, so no need to update it twice.
 		update_icon()
@@ -96,16 +96,16 @@
 	if(can_use())
 		toggle_cam(null, 0) //kick anyone viewing out and remove from the camera chunks
 	GLOB.cameranet.cameras -= src
+	cancelCameraAlarm()
 	if(isarea(myarea))
-		LAZYREMOVE(myarea.cameras, src)
+		myarea.clear_camera(src)
 	QDEL_NULL(assembly)
 	QDEL_NULL(emp_component)
 	if(bug)
-		bug.bugged_cameras -= src.c_tag
+		bug.bugged_cameras -= c_tag
 		if(bug.current == src)
 			bug.current = null
 		bug = null
-	cancelCameraAlarm()
 	return ..()
 
 /obj/machinery/camera/examine(mob/user)

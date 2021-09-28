@@ -21,7 +21,7 @@ SUBSYSTEM_DEF(statpanels)
 		)
 
 		if(SSshuttle.jump_mode != BS_JUMP_IDLE)
-			global_data += "Jump: [SSshuttle.jump_mode] [round(timeleft(SSshuttle.jump_timer)/10)]"
+			global_data += "Jump: [round(timeleft(SSshuttle.jump_timer)/10)]s"
 		encoded_global_data = url_encode(json_encode(global_data))
 		src.currentrun = GLOB.clients.Copy()
 		mc_data_encoded = null
@@ -38,6 +38,7 @@ SUBSYSTEM_DEF(statpanels)
 		if(!target.holder)
 			target << output("", "statbrowser:remove_admin_tabs")
 		else
+			target << output("[!!(target.prefs.toggles & SPLIT_ADMIN_TABS)]", "statbrowser:update_split_admin_tabs")
 			if(!("MC" in target.panel_tabs) || !("Tickets" in target.panel_tabs))
 				target << output("[url_encode(target.holder.href_token)]", "statbrowser:add_admin_tabs")
 			if(target.stat_tab == "MC")
@@ -49,7 +50,6 @@ SUBSYSTEM_DEF(statpanels)
 			if(target.stat_tab == "Tickets")
 				var/list/ahelp_tickets = GLOB.ahelp_tickets.stat_entry()
 				target << output("[url_encode(json_encode(ahelp_tickets))];", "statbrowser:update_tickets")
-			if(target.stat_tab == "Interviews")
 				var/datum/interview_manager/m = GLOB.interviews
 
 				// get open interview count
@@ -194,4 +194,10 @@ SUBSYSTEM_DEF(statpanels)
 	set hidden = TRUE
 
 	statbrowser_ready = TRUE
+	init_verbs()
+
+/client/verb/update_verbs()
+	set name = "Update Verbs"
+	set hidden = TRUE
+
 	init_verbs()

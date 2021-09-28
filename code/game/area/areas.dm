@@ -110,7 +110,7 @@ GLOBAL_LIST_EMPTY(teleportlocs)
 		if (!AR.contents.len)
 			continue
 		var/turf/picked = AR.contents[1]
-		if (picked && is_station_level(picked.z))
+		if (picked)
 			GLOB.teleportlocs[AR.name] = AR
 
 	sortTim(GLOB.teleportlocs, /proc/cmp_text_asc)
@@ -387,6 +387,18 @@ GLOBAL_LIST_EMPTY(teleportlocs)
 		p.cancelAlarm("Fire", src, source)
 
 	STOP_PROCESSING(SSobj, src)
+
+///Get rid of any dangling camera refs
+/area/proc/clear_camera(obj/machinery/camera/cam)
+	LAZYREMOVE(cameras, cam)
+	for (var/mob/living/silicon/aiPlayer as anything in GLOB.silicon_mobs)
+		aiPlayer.freeCamera(src, cam)
+	for (var/obj/machinery/computer/station_alert/comp as anything in GLOB.alert_consoles)
+		comp.freeCamera(src, cam)
+	for (var/mob/living/simple_animal/drone/drone_on as anything in GLOB.drones_list)
+		drone_on.freeCamera(src, cam)
+	for(var/datum/computer_file/program/alarm_monitor/monitor as anything in GLOB.alarmdisplay)
+		monitor.freeCamera(src, cam)
 
 /**
   * If 100 ticks has elapsed, toggle all the firedoors closed again

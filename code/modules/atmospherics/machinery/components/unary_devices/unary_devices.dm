@@ -7,7 +7,7 @@
 	construction_type = /obj/item/pipe/directional
 	var/uid
 	var/static/gl_uid = 1
-	
+
 	FASTDMM_PROP(\
 		pipe_type = PIPE_TYPE_NODE,\
 		pipe_interference_group = "atmos-[piping_layer]"\

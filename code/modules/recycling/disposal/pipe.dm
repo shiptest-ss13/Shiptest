@@ -10,6 +10,7 @@
 	dir = NONE			// dir will contain dominant direction for junction pipes
 	max_integrity = 200
 	armor = list("melee" = 25, "bullet" = 10, "laser" = 10, "energy" = 100, "bomb" = 0, "bio" = 100, "rad" = 100, "fire" = 90, "acid" = 30)
+	plane = FLOOR_PLANE
 	layer = DISPOSAL_PIPE_LAYER			// slightly lower than wires and other pipes
 	flags_1 = RAD_PROTECT_CONTENTS_1 | RAD_NO_CONTAMINATE_1
 	damage_deflection = 10

@@ -40,9 +40,9 @@
 #define VENT_SIPHONING 0		// Removes air from the airlock
 #define VENT_RELEASE 1			// Adds air back in
 
-#define VENT_EXT_BOUND	1		// Only this one is used, but I'm leaving the others in
-#define VENT_INT_BOUND	2
-#define VENT_NO_BOUND	3
+#define VENT_EXT_BOUND 1		// Only this one is used, but I'm leaving the others in
+#define VENT_INT_BOUND 2
+#define VENT_NO_BOUND 3
 
 #define BUILD_NO_CIRCUIT 0		// See var/buildstage declaration
 #define BUILD_NO_WIRES 1
@@ -79,9 +79,9 @@
 		set_instance_vars(\
 			pixel_x = (dir & 3)? INSTANCE_VAR_DEFAULT : (dir == 4 ? -24 : 24),\
 			pixel_y = (dir & 3)? (dir == 1 ? -24 : 24) : INSTANCE_VAR_DEFAULT\
-        ),\
+		),\
 		dir_amount = 4\
-    )
+	)
 
 	var/cyclestate = AIRLOCK_CYCLESTATE_INOPEN
 	var/interior_pressure = ONE_ATMOSPHERE

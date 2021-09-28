@@ -388,6 +388,7 @@
 	name = "boxed tracking implant kit"
 	desc = "For finding those who have died on the accursed lavaworld."
 	illustration = "implant"
+	custom_price = 600
 
 /obj/item/storage/box/minertracker/PopulateContents()
 	var/static/items_inside = list(
@@ -474,8 +475,8 @@
 	var/donktype = /obj/item/reagent_containers/food/snacks/donkpocket
 
 /obj/item/storage/box/donkpockets/PopulateContents()
-    for(var/i in 1 to 6)
-        new donktype(src)
+	for(var/i in 1 to 6)
+		new donktype(src)
 
 /obj/item/storage/box/donkpockets/ComponentInitialize()
 	. = ..()
@@ -1011,20 +1012,21 @@
 
 /obj/item/storage/box/ingredients/wildcard/PopulateContents()
 	for(var/i in 1 to 7)
-		var/randomFood = pick(/obj/item/reagent_containers/food/snacks/grown/chili,
-							  /obj/item/reagent_containers/food/snacks/grown/tomato,
-							  /obj/item/reagent_containers/food/snacks/grown/carrot,
-							  /obj/item/reagent_containers/food/snacks/grown/potato,
-							  /obj/item/reagent_containers/food/snacks/grown/potato/sweet,
-							  /obj/item/reagent_containers/food/snacks/grown/apple,
-							  /obj/item/reagent_containers/food/snacks/chocolatebar,
-							  /obj/item/reagent_containers/food/snacks/grown/cherries,
-							  /obj/item/reagent_containers/food/snacks/grown/banana,
-							  /obj/item/reagent_containers/food/snacks/grown/cabbage,
-							  /obj/item/reagent_containers/food/snacks/grown/soybeans,
-							  /obj/item/reagent_containers/food/snacks/grown/corn,
-							  /obj/item/reagent_containers/food/snacks/grown/mushroom/plumphelmet,
-							  /obj/item/reagent_containers/food/snacks/grown/mushroom/chanterelle)
+		var/randomFood = pick(
+			/obj/item/reagent_containers/food/snacks/grown/chili,
+			/obj/item/reagent_containers/food/snacks/grown/tomato,
+			/obj/item/reagent_containers/food/snacks/grown/carrot,
+			/obj/item/reagent_containers/food/snacks/grown/potato,
+			/obj/item/reagent_containers/food/snacks/grown/potato/sweet,
+			/obj/item/reagent_containers/food/snacks/grown/apple,
+			/obj/item/reagent_containers/food/snacks/chocolatebar,
+			/obj/item/reagent_containers/food/snacks/grown/cherries,
+			/obj/item/reagent_containers/food/snacks/grown/banana,
+			/obj/item/reagent_containers/food/snacks/grown/cabbage,
+			/obj/item/reagent_containers/food/snacks/grown/soybeans,
+			/obj/item/reagent_containers/food/snacks/grown/corn,
+			/obj/item/reagent_containers/food/snacks/grown/mushroom/plumphelmet,
+			/obj/item/reagent_containers/food/snacks/grown/mushroom/chanterelle)
 		new randomFood(src)
 
 /obj/item/storage/box/ingredients/fiesta

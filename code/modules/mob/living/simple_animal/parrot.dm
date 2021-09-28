@@ -15,15 +15,15 @@
 
 //Only a maximum of one action and one intent should be active at any given time.
 //Actions
-#define PARROT_PERCH	(1<<0)	//Sitting/sleeping, not moving
-#define PARROT_SWOOP	(1<<1)	//Moving towards or away from a target
-#define PARROT_WANDER	(1<<2)	//Moving without a specific target in mind
+#define PARROT_PERCH (1<<0)	//Sitting/sleeping, not moving
+#define PARROT_SWOOP (1<<1)	//Moving towards or away from a target
+#define PARROT_WANDER (1<<2)	//Moving without a specific target in mind
 
 //Intents
-#define PARROT_STEAL	(1<<3)	//Flying towards a target to steal it/from it
-#define PARROT_ATTACK	(1<<4)	//Flying towards a target to attack it
-#define PARROT_RETURN	(1<<5)	//Flying towards its perch
-#define PARROT_FLEE		(1<<6)	//Flying away from its attacker
+#define PARROT_STEAL (1<<3)	//Flying towards a target to steal it/from it
+#define PARROT_ATTACK (1<<4)	//Flying towards a target to attack it
+#define PARROT_RETURN (1<<5)	//Flying towards its perch
+#define PARROT_FLEE (1<<6)	//Flying away from its attacker
 
 
 /mob/living/simple_animal/parrot
@@ -114,12 +114,13 @@
 
 	parrot_sleep_dur = parrot_sleep_max //In case someone decides to change the max without changing the duration var
 
-	add_verb(src, list(/mob/living/simple_animal/parrot/proc/steal_from_ground, \
-			  /mob/living/simple_animal/parrot/proc/steal_from_mob, \
-			  /mob/living/simple_animal/parrot/verb/drop_held_item_player, \
-			  /mob/living/simple_animal/parrot/proc/perch_player, \
-			  /mob/living/simple_animal/parrot/proc/toggle_mode,
-			  /mob/living/simple_animal/parrot/proc/perch_mob_player))
+	add_verb(src, list(
+		/mob/living/simple_animal/parrot/proc/steal_from_ground,
+		/mob/living/simple_animal/parrot/proc/steal_from_mob,
+		/mob/living/simple_animal/parrot/verb/drop_held_item_player,
+		/mob/living/simple_animal/parrot/proc/perch_player,
+		/mob/living/simple_animal/parrot/proc/toggle_mode,
+		/mob/living/simple_animal/parrot/proc/perch_mob_player))
 
 
 /mob/living/simple_animal/parrot/examine(mob/user)
@@ -376,9 +377,11 @@
 
 
 //-----SPEECH
-	/* Parrot speech mimickry!
-	   Phrases that the parrot Hear()s get added to speach_buffer.
-	   Every once in a while, the parrot picks one of the lines from the buffer and replaces an element of the 'speech' list. */
+/*
+* Parrot speech mimickry!
+* Phrases that the parrot Hear()s get added to speach_buffer.
+* Every once in a while, the parrot picks one of the lines from the buffer and replaces an element of the 'speech' list.
+*/
 /mob/living/simple_animal/parrot/handle_automated_speech()
 	..()
 	if(speech_buffer.len && prob(speech_shuffle_rate)) //shuffle out a phrase and add in a new one

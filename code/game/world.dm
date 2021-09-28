@@ -31,8 +31,6 @@ GLOBAL_VAR(restart_counter)
 /world/New()
 	//Keep the auxtools stuff at the top
 	AUXTOOLS_CHECK(AUXMOS)
-	//Early profile for auto-profiler - will be stopped on profiler init if necessary.
-	world.Profile(PROFILE_START)
 
 	enable_debugger()
 
@@ -308,7 +306,7 @@ GLOBAL_VAR(restart_counter)
 
 	s += "<b>[station_name()]</b>";
 	s += " ("
-	s += "<a href=\"https://discord.gg/Zuv47eNuhE\">" //Change this to wherever you want the hub to link to.
+	s += "<a href=\"https://shiptest.net/discord\">" //Change this to wherever you want the hub to link to.
 	s += "Discord"  //Replace this with something else. Or ever better, delete it and uncomment the game version.
 	s += "</a>"
 	s += ")"

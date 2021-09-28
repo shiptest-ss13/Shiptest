@@ -91,6 +91,7 @@ GLOBAL_LIST_INIT(metal_recipes, list ( \
 	new/datum/stack_recipe("iron door", /obj/structure/mineral_door/iron, 20, one_per_turf = TRUE, on_floor = TRUE), \
 	new/datum/stack_recipe("floodlight frame", /obj/structure/floodlight_frame, 5, one_per_turf = TRUE, on_floor = TRUE), \
 	new/datum/stack_recipe("voting box", /obj/structure/votebox, 15, time = 50), \
+	new/datum/stack_recipe("mortar", /obj/item/reagent_containers/glass/mortar/metal, 3), \
 	new/datum/stack_recipe("pestle", /obj/item/pestle, 1, time = 50), \
 	new/datum/stack_recipe("hygienebot assembly", /obj/item/bot_assembly/hygienebot, 2, time = 50)
 ))
@@ -288,6 +289,20 @@ GLOBAL_LIST_INIT(bamboo_recipes, list ( \
 /*
  * Cloth
  */
+
+/obj/item/stack/sheet/cotton
+	name = "raw cotton bundle"
+	desc = "A bundle of raw cotton ready to be spun on the loom."
+	singular_name = "raw cotton ball"
+	icon_state = "sheet-cotton"
+	resistance_flags = FLAMMABLE
+	force = 0
+	throwforce = 0
+	merge_type = /obj/item/stack/sheet/cotton
+	var/pull_effort = 30
+	var/loom_result = /obj/item/stack/sheet/cotton/cloth
+	grind_results = list(/datum/reagent/cellulose = 20)
+
 GLOBAL_LIST_INIT(cloth_recipes, list ( \
 	new/datum/stack_recipe("white jumpskirt", /obj/item/clothing/under/color/jumpskirt/white, 3), /*Ladies first*/ \
 	new/datum/stack_recipe("white jumpsuit", /obj/item/clothing/under/color/white, 3), \
@@ -321,7 +336,7 @@ GLOBAL_LIST_INIT(cloth_recipes, list ( \
 	new/datum/stack_recipe("23x23 canvas", /obj/item/canvas/twentythreeXtwentythree, 5), \
 	))
 
-/obj/item/stack/sheet/cloth
+/obj/item/stack/sheet/cotton/cloth
 	name = "cloth"
 	desc = "Is it cotton? Linen? Denim? Burlap? Canvas? You can't tell."
 	singular_name = "cloth roll"
@@ -330,20 +345,44 @@ GLOBAL_LIST_INIT(cloth_recipes, list ( \
 	resistance_flags = FLAMMABLE
 	force = 0
 	throwforce = 0
-	merge_type = /obj/item/stack/sheet/cloth
+	merge_type = /obj/item/stack/sheet/cotton/cloth
+	pull_effort = 90
+	loom_result = /obj/item/stack/sheet/silk
 	drop_sound = 'sound/items/handling/cloth_drop.ogg'
 	pickup_sound =  'sound/items/handling/cloth_pickup.ogg'
 	grind_results = list(/datum/reagent/cellulose = 20)
 
-/obj/item/stack/sheet/cloth/get_main_recipes()
+/obj/item/stack/sheet/cotton/cloth/get_main_recipes()
 	. = ..()
 	. += GLOB.cloth_recipes
 
-/obj/item/stack/sheet/cloth/ten
+/obj/item/stack/sheet/cotton/cloth/ten
 	amount = 10
 
-/obj/item/stack/sheet/cloth/five
+/obj/item/stack/sheet/cotton/cloth/five
 	amount = 5
+
+
+/*
+ * Silk
+ */
+
+GLOBAL_LIST_INIT(silk_recipes, list ( \
+	new/datum/stack_recipe("silk string", /obj/item/weaponcrafting/silkstring, 2, time = 40)
+	))
+
+/obj/item/stack/sheet/silk
+	name = "silk"
+	desc = "A long soft material. This one is made from cotton rather than spidersilk."
+	singular_name = "Silk Sheet"
+	icon = 'whitesands/icons/obj/stack_objects.dmi'
+	icon_state = "sheet-silk"
+	novariants = TRUE
+	merge_type = /obj/item/stack/sheet/silk
+
+/obj/item/stack/sheet/silk/get_main_recipes()
+	. = ..()
+	. +=  GLOB.silk_recipes
 
 GLOBAL_LIST_INIT(durathread_recipes, list ( \
 	new/datum/stack_recipe("durathread jumpsuit", /obj/item/clothing/under/misc/durathread, 4, time = 40),
@@ -368,19 +407,6 @@ GLOBAL_LIST_INIT(durathread_recipes, list ( \
 /obj/item/stack/sheet/durathread/get_main_recipes()
 	. = ..()
 	. += GLOB.durathread_recipes
-
-/obj/item/stack/sheet/cotton
-	name = "raw cotton bundle"
-	desc = "A bundle of raw cotton ready to be spun on the loom."
-	singular_name = "raw cotton ball"
-	icon_state = "sheet-cotton"
-	resistance_flags = FLAMMABLE
-	force = 0
-	throwforce = 0
-	merge_type = /obj/item/stack/sheet/cotton
-	var/pull_effort = 30
-	var/loom_result = /obj/item/stack/sheet/cloth
-	grind_results = list(/datum/reagent/cellulose = 20)
 
 /obj/item/stack/sheet/cotton/durathread
 	name = "raw durathread bundle"
@@ -521,9 +547,8 @@ GLOBAL_LIST_INIT(runed_metal_recipes, list ( \
 	if(!iscultist(user))
 		to_chat(user, "<span class='warning'>Only one with forbidden knowledge could hope to work this metal...</span>")
 		return
-	var/turf/T = get_turf(user) //we may have moved. adjust as needed...
 	var/area/A = get_area(user)
-	if((!is_station_level(T.z) && !is_mining_level(T.z)) || (A && !(A.flags_1 & CULT_PERMITTED_1)))
+	if(A && !(A.flags_1 & CULT_PERMITTED_1))
 		to_chat(user, "<span class='warning'>The veil is not weak enough here.</span>")
 		return FALSE
 	return ..()
@@ -618,6 +643,13 @@ GLOBAL_LIST_INIT(bronze_recipes, list ( \
 	/*
  * Bones
  */
+
+GLOBAL_LIST_INIT(bone_recipes, list( \
+	new /datum/stack_recipe("mortar", /obj/item/reagent_containers/glass/mortar/bone, 3), \
+	new /datum/stack_recipe("bone armor", /obj/item/clothing/suit/armor/bone, 6), \
+	new /datum/stack_recipe("skull helmet", /obj/item/clothing/head/helmet/skull, 4), \
+	new /datum/stack_recipe("bone dagger", /obj/item/kitchen/knife/combat/bone, 2), \
+	new /datum/stack_recipe("club", /obj/item/melee/baseball_bat/bone, 6)))
 /obj/item/stack/sheet/bone
 	name = "bones"
 	icon = 'icons/obj/mining.dmi'
@@ -635,6 +667,10 @@ GLOBAL_LIST_INIT(bronze_recipes, list ( \
 	grind_results = list(/datum/reagent/calcium = 10)		//WS Edit - Fuck
 	merge_type = /obj/item/stack/sheet/bone
 	material_type = /datum/material/bone
+
+/obj/item/stack/sheet/bone/get_main_recipes()
+	. = ..()
+	. += GLOB.bone_recipes
 
 GLOBAL_LIST_INIT(plastic_recipes, list(
 	new /datum/stack_recipe("plastic floor tile", /obj/item/stack/tile/plastic, 1, 4, 20), \

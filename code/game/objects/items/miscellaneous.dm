@@ -119,6 +119,20 @@
 	new /obj/item/kitchen/knife/hunting(src)
 	new /obj/item/storage/box/papersack/meat(src)
 
+/obj/item/storage/box/hero/ghostbuster
+	name = "Spectre Inspector - 1980's."
+
+/obj/item/storage/box/hero/ghostbuster/PopulateContents()
+	new /obj/item/choice_beacon/ouija(src)
+	new /obj/item/clothing/glasses/welding/ghostbuster(src)
+	new /obj/item/storage/belt/fannypack/bustin(src)
+	new /obj/item/clothing/gloves/color/black(src)
+	new /obj/item/clothing/shoes/jackboots(src)
+	new /obj/item/clothing/under/color/khaki/buster(src)
+	new /obj/item/grenade/chem_grenade/ghostbuster(src)
+	new /obj/item/grenade/chem_grenade/ghostbuster(src)
+	new /obj/item/grenade/chem_grenade/ghostbuster(src)
+
 /obj/item/choice_beacon/augments
 	name = "augment beacon"
 	desc = "Summons augmentations. Can be used 3 times!"
@@ -170,7 +184,7 @@
 	///List of mobs that have already been mobbed.
 	var/static/list/mob_mobs = list()
 
-#define NICKNAME_CAP	(MAX_NAME_LEN/2)
+#define NICKNAME_CAP (MAX_NAME_LEN/2)
 /obj/item/virgin_mary/attackby(obj/item/W, mob/user, params)
 	. = ..()
 	if(resistance_flags & ON_FIRE)
@@ -216,3 +230,17 @@
 /obj/item/virgin_mary/proc/manual_suicide(mob/living/user)
 	user.adjustOxyLoss(200)
 	user.death(0)
+
+/obj/item/choice_beacon/ouija
+	name = "spirit board delivery beacon"
+	desc = "Ghost communication on demand! It is unclear how this thing is still operational."
+
+/obj/item/choice_beacon/ouija/generate_display_names()
+	var/static/list/ouija_spaghetti_list
+	if(!ouija_spaghetti_list)
+		ouija_spaghetti_list = list()
+		var/list/templist = list(/obj/structure/spirit_board)
+		for(var/V in templist)
+			var/atom/A = V
+			ouija_spaghetti_list[initial(A.name)] = A
+	return ouija_spaghetti_list

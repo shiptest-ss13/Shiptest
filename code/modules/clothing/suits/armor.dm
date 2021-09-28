@@ -10,6 +10,8 @@
 	max_integrity = 250
 	resistance_flags = NONE
 	armor = list("melee" = 35, "bullet" = 30, "laser" = 30, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
+	greyscale_colors = list(list(14, 18))
+	greyscale_icon_state = "armor"
 
 /obj/item/clothing/suit/armor/Initialize()
 	. = ..()
@@ -131,6 +133,8 @@
 /obj/item/clothing/suit/armor/bone
 	name = "bone armor"
 	desc = "A tribal armor plate, crafted from animal bone."
+	icon = 'whitesands/icons/obj/clothing/suits.dmi'
+	mob_overlay_icon = 'whitesands/icons/mob/clothing/suits.dmi'
 	icon_state = "bonearmor"
 	item_state = "bonearmor"
 	blood_overlay_type = "armor"

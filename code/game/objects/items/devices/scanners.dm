@@ -12,10 +12,10 @@ GENE SCANNER
 */
 
 // Describes the two modes of scanning available for health analyzers
-#define SCANMODE_HEALTH		0
-#define SCANMODE_CHEMICAL 	1
-#define SCANNER_CONDENSED 	0
-#define SCANNER_VERBOSE 	1
+#define SCANMODE_HEALTH 0
+#define SCANMODE_CHEMICAL 1
+#define SCANNER_CONDENSED 0
+#define SCANNER_VERBOSE 1
 
 /obj/item/t_scanner
 	name = "\improper T-ray scanner"
@@ -113,9 +113,9 @@ GENE SCANNER
 		user.visible_message("<span class='warning'>[user] analyzes the floor's vitals!</span>", \
 							"<span class='notice'>You stupidly try to analyze the floor's vitals!</span>")
 		to_chat(user, "<span class='info'>Analyzing results for The floor:\n\tOverall status: <b>Healthy</b></span>\
-					 \n<span class='info'>Key: <font color='blue'>Suffocation</font>/<font color='green'>Toxin</font>/<font color='#FF8000'>Burn</font>/<font color='red'>Brute</font></span>\
-					 \n<span class='info'>\tDamage specifics: <font color='blue'>0</font>-<font color='green'>0</font>-<font color='#FF8000'>0</font>-<font color='red'>0</font></span>\
-					 \n<span class='info'>Body temperature: ???</span>")
+					\n<span class='info'>Key: <font color='blue'>Suffocation</font>/<font color='green'>Toxin</font>/<font color='#FF8000'>Burn</font>/<font color='red'>Brute</font></span>\
+					\n<span class='info'>\tDamage specifics: <font color='blue'>0</font>-<font color='green'>0</font>-<font color='#FF8000'>0</font>-<font color='red'>0</font></span>\
+					\n<span class='info'>Body temperature: ???</span>")
 		return
 
 	user.visible_message("<span class='notice'>[user] analyzes [M]'s vitals.</span>", \
@@ -454,7 +454,7 @@ GENE SCANNER
 	var/total_moles = environment.total_moles()
 
 	render_list += "<span class='info'><B>Results:</B></span>\
-				 \n<span class='[abs(pressure - ONE_ATMOSPHERE) < 10 ? "info" : "alert"]'>Pressure: [round(pressure, 0.01)] kPa</span>\n"
+		\n<span class='[abs(pressure - ONE_ATMOSPHERE) < 10 ? "info" : "alert"]'>Pressure: [round(pressure, 0.01)] kPa</span>\n"
 	if(total_moles)
 		var/o2_concentration = environment.get_moles(GAS_O2)/total_moles
 		var/n2_concentration = environment.get_moles(GAS_N2)/total_moles
@@ -588,7 +588,7 @@ GENE SCANNER
 
 			for(var/id in air_contents.get_gases())
 				var/gas_concentration = air_contents.get_moles(id)/total_moles
-				render_list += "<span class='notice'>[GLOB.gas_data.names[id]]]: [round(gas_concentration*100, 0.01)] % ([round(air_contents.get_moles(id), 0.01)] mol)</span>"  //WS Edit -- Atmos Analyzer Reformat (Issue #419)
+				render_list += "<span class='notice'>[GLOB.gas_data.names[id]]: [round(gas_concentration*100, 0.01)] % ([round(air_contents.get_moles(id), 0.01)] mol)</span>"  //WS Edit -- Atmos Analyzer Reformat (Issue #419)
 
 		else
 			render_list += airs.len > 1 ? "<span class='notice'>This node is empty!</span>" : "<span class='notice'>[target] is empty!</span>"
@@ -825,6 +825,41 @@ GENE SCANNER
 /obj/item/scanner_wand/proc/return_patient()
 	var/returned_target = selected_target
 	return returned_target
+
+/obj/item/reagent_scanner //essentially just the code from the PDA reagent scanner, but shoved into this object, and specifies amount
+	name = "reagent scanner"
+	icon = 'icons/obj/device.dmi'
+	icon_state = "reagent"
+	item_state = "reagentanalyzer"
+	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
+	desc = "A hand-held item capable of analyzing the reagents in a container, including complex, meat-based containers such as humans."
+	flags_1 = CONDUCT_1
+	item_flags = NOBLUDGEON
+	slot_flags = ITEM_SLOT_BELT
+	throwforce = 3
+	w_class = WEIGHT_CLASS_TINY
+	throw_speed = 3
+	throw_range = 7
+	custom_materials = list(/datum/material/iron=200)
+
+/obj/item/reagent_scanner/afterattack(atom/A as mob|obj|turf|area, mob/user, proximity)
+	. = ..()
+	flick("[icon_state]-scan", src)
+	if(!proximity)
+		return
+	if(!isnull(A.reagents))
+		if(A.reagents.reagent_list.len > 0)
+			var/reagents_length = A.reagents.reagent_list.len
+			to_chat(user, "<span class='notice'>[reagents_length] chemical agent[reagents_length > 1 ? "s" : ""] found.</span>")
+			for (var/re in A.reagents.reagent_list)
+				var/datum/reagent/R = re
+				var/amount = R.volume
+				to_chat(user, "<span class='notice'>\t [amount] units of [re].</span>")
+		else
+			to_chat(user, "<span class='notice'>No active chemical agents found in [A].</span>")
+	else
+		to_chat(user, "<span class='notice'>No significant chemical agents found in [A].</span>")
 
 #undef SCANMODE_HEALTH
 #undef SCANMODE_CHEMICAL

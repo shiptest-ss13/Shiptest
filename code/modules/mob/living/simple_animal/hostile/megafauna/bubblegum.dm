@@ -69,10 +69,11 @@ Difficulty: Hard
 
 	deathmessage = "sinks into a pool of blood, fleeing the battle. You've won, for now... "
 	deathsound = 'sound/magic/enter_blood.ogg'
-	attack_action_types = list(/datum/action/innate/megafauna_attack/triple_charge,
-							   /datum/action/innate/megafauna_attack/hallucination_charge,
-							   /datum/action/innate/megafauna_attack/hallucination_surround,
-							   /datum/action/innate/megafauna_attack/blood_warp)
+	attack_action_types = list(
+		/datum/action/innate/megafauna_attack/triple_charge,
+		/datum/action/innate/megafauna_attack/hallucination_charge,
+		/datum/action/innate/megafauna_attack/hallucination_surround,
+		/datum/action/innate/megafauna_attack/blood_warp)
 	small_sprite_type = /datum/action/small_sprite/megafauna/bubblegum
 
 /datum/action/innate/megafauna_attack/triple_charge
@@ -398,11 +399,6 @@ Difficulty: Hard
 
 /obj/effect/decal/cleanable/blood/gibs/bubblegum/can_bloodcrawl_in()
 	return TRUE
-
-/mob/living/simple_animal/hostile/megafauna/bubblegum/grant_achievement(medaltype,scoretype)
-	. = ..()
-	if(.)
-		SSshuttle.shuttle_purchase_requirements_met |= SHUTTLE_UNLOCK_BUBBLEGUM
 
 /mob/living/simple_animal/hostile/megafauna/bubblegum/do_attack_animation(atom/A, visual_effect_icon)
 	if(!charging)

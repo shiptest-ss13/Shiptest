@@ -6,11 +6,12 @@
 	var/coverage_goal = 500
 
 /datum/station_goal/station_shield/get_report()
-	return {"The station is located in a zone full of space debris.
-			 We have a prototype shielding system you must deploy to reduce collision-related accidents.
+	return {"
+	The station is located in a zone full of space debris.
+	We have a prototype shielding system you must deploy to reduce collision-related accidents.
 
-			 You can order the satellites and control systems at cargo.
-			 "}
+	You can order the satellites and control systems at cargo.
+	"}
 
 
 /datum/station_goal/station_shield/on_report()
@@ -31,7 +32,7 @@
 /datum/station_goal/proc/get_coverage()
 	var/list/coverage = list()
 	for(var/obj/machinery/satellite/meteor_shield/A in GLOB.machines)
-		if(!A.active || !is_station_level(A.z))
+		if(!A.active)
 			continue
 		coverage |= view(A.kill_range,A)
 	return coverage.len

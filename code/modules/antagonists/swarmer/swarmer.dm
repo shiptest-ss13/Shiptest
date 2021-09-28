@@ -248,11 +248,11 @@
 		var/area/A = get_area(T)
 		if(isspaceturf(T) || (!isonshuttle && (istype(A, /area/shuttle) || istype(A, /area/space))) || (isonshuttle && !istype(A, /area/shuttle)))
 			to_chat(S, "<span class='warning'>Destroying this object has the potential to cause a hull breach. Aborting.</span>")
-			S.target = null
+			S.LoseTarget()
 			return FALSE
 		else if(istype(A, /area/ship/engineering/engine))
 			to_chat(S, "<span class='warning'>Disrupting the containment of a supermatter crystal would not be to our benefit. Aborting.</span>")
-			S.target = null
+			S.LoseTarget()
 			return FALSE
 	S.DisIntegrate(src)
 	return TRUE
@@ -329,11 +329,11 @@
 		var/area/A = get_area(T)
 		if(isspaceturf(T) || (!isonshuttle && (istype(A, /area/shuttle) || istype(A, /area/space))) || (isonshuttle && !istype(A, /area/shuttle)))
 			to_chat(S, "<span class='warning'>Destroying this object has the potential to cause a hull breach. Aborting.</span>")
-			S.target = null
+			S.LoseTarget()
 			return TRUE
 		else if(istype(A, /area/ship/engineering/engine))
 			to_chat(S, "<span class='warning'>Disrupting the containment of a supermatter crystal would not be to our benefit. Aborting.</span>")
-			S.target = null
+			S.LoseTarget()
 			return TRUE
 	return ..()
 
@@ -343,11 +343,11 @@
 		var/area/A = get_area(T)
 		if(isspaceturf(T) || (!isonshuttle && (istype(A, /area/shuttle) || istype(A, /area/space))) || (isonshuttle && !istype(A, /area/shuttle)))
 			to_chat(S, "<span class='warning'>Destroying this object has the potential to cause a hull breach. Aborting.</span>")
-			S.target = null
+			S.LoseTarget()
 			return TRUE
 		else if(istype(A, /area/ship/engineering/engine))
 			to_chat(S, "<span class='warning'>Disrupting the containment of a supermatter crystal would not be to our benefit. Aborting.</span>")
-			S.target = null
+			S.LoseTarget()
 			return TRUE
 	return ..()
 
@@ -452,10 +452,6 @@
 
 /mob/living/simple_animal/hostile/swarmer/proc/DisperseTarget(mob/living/target)
 	if(target == src)
-		return
-
-	if(!is_station_level(z) && !is_mining_level(z))
-		to_chat(src, "<span class='warning'>Our bluespace transceiver cannot locate a viable bluespace link, our teleportation abilities are useless in this area.</span>")
 		return
 
 	to_chat(src, "<span class='info'>Attempting to remove this being from our presence.</span>")

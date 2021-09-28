@@ -446,8 +446,8 @@ WS End */
 
 //water electrolysis
 /datum/chemical_reaction/electrolysis
-	results = list(/datum/reagent/oxygen = 10, /datum/reagent/hydrogen = 20)
-	required_reagents = list(/datum/reagent/consumable/liquidelectricity = 1, /datum/reagent/water = 5)
+	results = list(/datum/reagent/oxygen = 20, /datum/reagent/hydrogen = 40)
+	required_reagents = list(/datum/reagent/consumable/liquidelectricity = 1, /datum/reagent/water = 10)
 
 //butterflium
 /datum/chemical_reaction/butterflium
@@ -617,6 +617,10 @@ WS End */
 /datum/chemical_reaction/mutationtoxin/abductor
 	results = list(/datum/reagent/mutationtoxin/abductor = 1)
 	required_reagents  = list(/datum/reagent/mutationtoxin/unstable = 1, /datum/reagent/medicine/morphine = 10, /datum/reagent/toxin/mutetoxin = 10)
+
+/datum/chemical_reaction/mutationtoxin/tesh
+	results = list(/datum/reagent/mutationtoxin/tesh = 1)
+	required_reagents  = list(/datum/reagent/mutationtoxin/unstable = 1, /datum/reagent/ammonia = 25)
 
 /datum/chemical_reaction/mutationtoxin/squid
 	results = list(/datum/reagent/mutationtoxin/squid = 1)

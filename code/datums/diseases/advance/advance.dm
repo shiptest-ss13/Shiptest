@@ -415,7 +415,7 @@
 		var/datum/disease/advance/D2 = pick(diseases)
 		D2.Mix(D1)
 
-	 // Should be only 1 entry left, but if not let's only return a single entry
+	// Should be only 1 entry left, but if not let's only return a single entry
 	var/datum/disease/advance/to_return = pick(diseases)
 	to_return.Refresh(TRUE)
 	return to_return
@@ -477,8 +477,6 @@
 			for(var/human in shuffle(GLOB.human_list))
 				H = human
 				var/found = FALSE
-				if(!is_station_level(H.z))
-					continue
 				if(!H.HasDisease(D))
 					found = H.ForceContractDisease(D)
 					break

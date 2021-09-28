@@ -48,6 +48,11 @@
 	id = "SCIENCE"
 	organization = "Nanotrasen"
 
+/datum/techweb/ship/New(ship_name)
+	id = ship_name
+	organization = ship_name
+	return ..()
+
 /datum/techweb/bepis	//Should contain only 1 BEPIS tech selected at random.
 	id = "EXPERIMENTAL"
 	organization = "Nanotrasen R&D"

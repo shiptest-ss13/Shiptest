@@ -19,8 +19,6 @@
   * Ghostizes the client attached to this mob
   *
   * Parent call
-  *
-  * Returns QDEL_HINT_HARDDEL (don't change this)
   */
 /mob/Destroy()//This makes sure that mobs with clients/keys are not just deleted from the game.
 	remove_from_mob_list()
@@ -39,8 +37,8 @@
 	qdel(hud_used)
 	QDEL_LIST(client_colours)
 	ghostize()
-	..()
-	return QDEL_HINT_HARDDEL
+	return ..()
+
 
 /**
   * Intialize a mob
@@ -701,9 +699,25 @@
 
 	if (CONFIG_GET(flag/norespawn))
 		return
+
 	if ((stat != DEAD || !( SSticker )))
 		to_chat(usr, "<span class='boldnotice'>You must be dead to use this!</span>")
 		return
+
+	var/respawn_timer = CONFIG_GET(number/respawn_timer)
+	if(respawn_timer)
+		if(!SSticker.respawn_timer[client])
+			to_chat(usr, "<span class='boldnotice'>You have begun your respawn timer. You will be allowed to Respawn in [DisplayTimeText(respawn_timer)]</span>")
+			SSticker.respawn_timer[client] = world.time + respawn_timer
+			return
+
+		var/left = round(SSticker.respawn_timer[client] - world.time)
+		if(left > 0)
+			to_chat(usr, "<span class='boldnotice'>You still have [DisplayTimeText(left)] left before you can respawn.</span>")
+			return
+
+		// Their timer is up, let them through
+		SSticker.respawn_timer -= client
 
 	log_game("[key_name(usr)] used abandon mob.")
 
@@ -1345,3 +1359,7 @@
 	SEND_SIGNAL(src, COMSIG_MOB_STATCHANGE, new_stat)
 	. = stat
 	stat = new_stat
+
+/// Used for typing indicator, relevant on /living level
+/mob/proc/set_typing_indicator(state)
+	return

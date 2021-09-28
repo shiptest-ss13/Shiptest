@@ -269,14 +269,17 @@
 	trigger_cooldown = 5
 
 	var/list/static/allowed_species = list(
-    	"Human" = /datum/species/human,
-    	"lizard" = /datum/species/lizard,
+		"Human" = /datum/species/human,
+		"lizard" = /datum/species/lizard,
 		"Moth" = /datum/species/moth,
 		"Ethereal" = /datum/species/ethereal,
 		"Pod" = /datum/species/pod,
 		"Fly" = /datum/species/fly,
 		"Felinid" = /datum/species/human/felinid,
 		"Jelly" = /datum/species/jelly,
+		"IPC" = /datum/species/ipc,
+		"Squid" = /datum/species/squid,
+		"Teshari" = /datum/species/teshari,
 		"Arachnid" = /datum/species/spider
 	)
 

@@ -9,6 +9,8 @@
 	equip_delay_other = 25
 	resistance_flags = NONE
 	custom_materials = list(/datum/material/glass = 250)
+	greyscale_colors = list(list(14, 26), list(17, 26))
+	greyscale_icon_state = "glasses"
 	var/vision_flags = 0
 	var/darkness_view = 2//Base human is 2
 	var/invis_view = SEE_INVISIBLE_LIVING	//admin only for now
@@ -276,6 +278,16 @@
 /obj/item/clothing/glasses/welding/attack_self(mob/user)
 	weldingvisortoggle(user)
 
+/obj/item/clothing/glasses/welding/ghostbuster
+	name = "optical ecto-scanner"
+	desc = "A bulky pair of unwieldy glasses that lets you see things best left unseen. Obscures vision, but also gives a bit of eye protection"
+	icon_state = "bustin-g"
+	item_state = "bustin-g"
+	invis_view = SEE_INVISIBLE_OBSERVER
+	invis_override = null
+	flash_protect = 1
+	visor_vars_to_toggle = VISOR_FLASHPROTECT | VISOR_TINT | VISOR_INVISVIEW
+	glass_colour_type = /datum/client_colour/glass_colour/green
 
 /obj/item/clothing/glasses/blindfold
 	name = "blindfold"

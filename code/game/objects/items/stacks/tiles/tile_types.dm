@@ -11,21 +11,28 @@
 	throw_speed = 3
 	throw_range = 7
 	max_amount = 60
-	var/turf_type = null
-	var/mineralType = null
 	novariants = TRUE
-	var/human_maxHealth = 100
+	/// What type of turf does this tile produce.
+	var/turf_type = null
+	/// Determines certain welder interactions.
+	var/mineralType = null
+	/// Cached associative lazy list to hold the radial options for tile reskinning. See tile_reskinning.dm for more information. Pattern: list[type] -> image
+	var/list/tile_reskin_types
+
 
 /obj/item/stack/tile/Initialize(mapload, amount)
 	. = ..()
 	pixel_x = rand(-3, 3)
 	pixel_y = rand(-3, 3) //randomize a little
+	if(tile_reskin_types)
+		tile_reskin_types = tile_reskin_list(tile_reskin_types)
+
 
 /obj/item/stack/tile/examine(mob/user)
 	. = ..()
 	if(throwforce && !is_cyborg) //do not want to divide by zero or show the message to borgs who can't throw
 		var/verb
-		switch(CEILING(human_maxHealth / throwforce, 1)) //throws to crit a human
+		switch(CEILING(MAX_LIVING_HEALTH / throwforce, 1)) //throws to crit a human
 			if(1 to 3)
 				verb = "superb"
 			if(4 to 6)
@@ -39,6 +46,7 @@
 		if(!verb)
 			return
 		. += "<span class='notice'>Those could work as a [verb] throwing weapon.</span>"
+
 
 /obj/item/stack/tile/attackby(obj/item/W, mob/user, params)
 
@@ -61,9 +69,11 @@
 
 			if (mineralType == "metal")
 				var/obj/item/stack/sheet/metal/new_item = new(user.loc)
-				user.visible_message("<span class='notice'>[user.name] shaped [src] into metal with the welding tool.</span>", \
-							 "<span class='notice'>You shaped [src] into metal with the welding tool.</span>", \
-							 "<span class='hear'>You hear welding.</span>")
+				user.visible_message(
+					"<span class='notice'>[user.name] shaped [src] into metal with the welding tool.</span>",
+					"<span class='notice'>You shaped [src] into metal with the welding tool.</span>",
+					"<span class='hear'>You hear welding.</span>"
+				)
 				var/obj/item/stack/rods/R = src
 				src = null
 				var/replace = (user.get_inactive_held_item()==R)
@@ -74,9 +84,11 @@
 			else
 				var/sheet_type = text2path("/obj/item/stack/sheet/mineral/[mineralType]")
 				var/obj/item/stack/sheet/mineral/new_item = new sheet_type(user.loc)
-				user.visible_message("<span class='notice'>[user.name] shaped [src] into a sheet with the welding tool.</span>", \
-							 "<span class='notice'>You shaped [src] into a sheet with the welding tool.</span>", \
-							 "<span class='hear'>You hear welding.</span>")
+				user.visible_message(
+					"<span class='notice'>[user.name] shaped [src] into a sheet with the welding tool.</span>",
+					"<span class='notice'>You shaped [src] into a sheet with the welding tool.</span>",
+					"<span class='hear'>You hear welding.</span>"
+				)
 				var/obj/item/stack/rods/R = src
 				src = null
 				var/replace = (user.get_inactive_held_item()==R)
@@ -199,6 +211,23 @@
 	turf_type = /turf/open/floor/carpet/royalblue
 	tableVariant = /obj/structure/table/wood/fancy/royalblue
 
+/obj/item/stack/tile/carpet/executive
+	name = "executive carpet"
+	icon_state = "tile_carpet_executive"
+	item_state = "tile-carpet-royalblue"
+	turf_type = /turf/open/floor/carpet/executive
+
+/obj/item/stack/tile/carpet/stellar
+	name = "stellar carpet"
+	icon_state = "tile_carpet_stellar"
+	item_state = "tile-carpet-royalblue"
+	turf_type = /turf/open/floor/carpet/stellar
+
+/obj/item/stack/tile/carpet/donk
+	name = "donk co promotional carpet"
+	icon_state = "tile_carpet_donk"
+	item_state = "tile-carpet-orange"
+	turf_type = /turf/open/floor/carpet/donk
 
 /obj/item/stack/tile/carpet/fifty
 	amount = 50
@@ -279,6 +308,11 @@
 	item_state = "tile-bcircuit"
 	turf_type = /turf/open/floor/circuit
 	custom_materials = list(/datum/material/iron = 500, /datum/material/glass = 500) // WS Edit - Item Materials
+	tile_reskin_types = list(
+		/obj/item/stack/tile/circuit,
+		/obj/item/stack/tile/circuit/green,
+		/obj/item/stack/tile/circuit/red
+		)
 
 /obj/item/stack/tile/circuit/green
 	name = "green circuit tile"
@@ -310,6 +344,11 @@
 	icon_state = "tile_pod"
 	item_state = "tile-pod"
 	turf_type = /turf/open/floor/pod
+	tile_reskin_types = list(
+		/obj/item/stack/tile/pod,
+		/obj/item/stack/tile/pod/light,
+		/obj/item/stack/tile/pod/dark
+		)
 
 /obj/item/stack/tile/pod/light
 	name = "light pod floor tile"
@@ -340,6 +379,15 @@
 	mineralType = "metal"
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 70)
 	resistance_flags = FIRE_PROOF
+	color = COLOR_FLOORTILE_GRAY
+	tile_reskin_types = list(
+		/obj/item/stack/tile/plasteel,
+		/obj/item/stack/tile/plasteel/dark,
+		/obj/item/stack/tile/plasteel/white,
+		/obj/item/stack/tile/plasteel/tech,
+		/obj/item/stack/tile/plasteel/tech/grid,
+		/obj/item/stack/tile/plasteel/tech/techmaint
+		)
 
 /obj/item/stack/tile/plasteel/cyborg
 	custom_materials = null // All other Borg versions of items have no Metal or Glass - RR
@@ -353,6 +401,36 @@
 	icon_state = "tile_plastic"
 	custom_materials = list(/datum/material/plastic=500)
 	turf_type = /turf/open/floor/plastic
+
+/obj/item/stack/tile/plasteel/dark
+	name = "dark tile"
+	icon_state = "fr_tile"
+	turf_type = /turf/open/floor/plasteel/dark
+	merge_type = /obj/item/stack/tile/plasteel/dark
+/obj/item/stack/tile/plasteel/white
+	name = "white tile"
+	icon_state = "tile-bluespace"
+	turf_type = /turf/open/floor/plasteel/white
+	merge_type = /obj/item/stack/tile/plasteel/white
+/obj/item/stack/tile/plasteel/grimy
+	name = "grimy floor tile"
+	turf_type = /turf/open/floor/plasteel/grimy
+	merge_type = /obj/item/stack/tile/plasteel/grimy
+/obj/item/stack/tile/plasteel/tech
+	name = "techfloor tile"
+	icon_state = "tile_podlight"
+	turf_type = /turf/open/floor/plasteel/tech
+	merge_type = /obj/item/stack/tile/plasteel/tech
+/obj/item/stack/tile/plasteel/tech/grid
+	name = "techfloor grid tile"
+	icon_state = "tile_poddark"
+	turf_type = /turf/open/floor/plasteel/tech/grid
+	merge_type = /obj/item/stack/tile/plasteel/tech/grid
+/obj/item/stack/tile/plasteel/tech/techmaint
+	name = "techmaint tile"
+	icon_state = "tile_pod"
+	turf_type = /turf/open/floor/plasteel/tech/techmaint
+	merge_type = /obj/item/stack/tile/plasteel/tech/techmaint
 
 /obj/item/stack/tile/material
 	name = "floor tile"

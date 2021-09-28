@@ -1,7 +1,7 @@
 import { Graphics, Sprite, Matrix } from 'pixi.js';
 
 
-// These must be kept in sync with the #DEFINEs in whitesands/code/__DEFINES/overmap.dm
+// These must be kept in sync with the #DEFINEs in code/__DEFINES/overmap.dm
 // If they fall out of sync, overmap bodies will break.
 const OVERMAP_BODY_CIRCLE = "circle";
 const OVERMAP_BODY_RECTANGLE = "rectangle";

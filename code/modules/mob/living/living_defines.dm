@@ -12,8 +12,10 @@
 	var/lastattackerckey = null
 
 	//Health and life related vars
-	var/maxHealth = 100 ///Maximum health that should be possible.
-	var/health = 100 	///A mob's health
+	/// Maximum health that should be possible.
+	var/maxHealth = MAX_LIVING_HEALTH
+	/// The mob's current health.
+	var/health = MAX_LIVING_HEALTH
 
 	//Damage related vars, NOTE: THESE SHOULD ONLY BE MODIFIED BY PROCS
 	var/bruteloss = 0	///Brutal damage caused by brute force (punching, being clubbed by a toolbox ect... this also accounts for pressure damage)
@@ -49,11 +51,11 @@
 	var/timeofdeath = 0
 
 	/**
-	  * Allows mobs to move through dense areas without restriction. For instance, in space or out of holder objects.
-	  *
-	  * FALSE is off, [INCORPOREAL_MOVE_BASIC] is normal, [INCORPOREAL_MOVE_SHADOW] is for ninjas
-	  * and [INCORPOREAL_MOVE_JAUNT] is blocked by holy water/salt
-	  */
+	* Allows mobs to move through dense areas without restriction. For instance, in space or out of holder objects.
+	*
+	* FALSE is off, [INCORPOREAL_MOVE_BASIC] is normal, [INCORPOREAL_MOVE_SHADOW] is for ninjas
+	* and [INCORPOREAL_MOVE_JAUNT] is blocked by holy water/salt
+	*/
 	var/incorporeal_move = FALSE
 
 	var/list/roundstart_quirks = list()

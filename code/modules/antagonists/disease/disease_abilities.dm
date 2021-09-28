@@ -76,7 +76,7 @@ new /datum/disease_ability/symptom/powerful/youth
 			resistance += initial(S.resistance)
 			stage_speed += initial(S.stage_speed)
 			transmittable += initial(S.transmittable)
-			threshold_block += initial(S.threshold_descs) 
+			threshold_block += initial(S.threshold_descs)
 			stat_block = "Resistance: [resistance]<br>Stealth: [stealth]<br>Stage Speed: [stage_speed]<br>Transmissibility: [transmittable]<br><br>"
 			if(symptoms.len == 1) //lazy boy's dream
 				name = initial(S.name)

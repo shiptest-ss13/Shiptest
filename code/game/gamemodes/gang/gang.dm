@@ -148,7 +148,6 @@ GLOBAL_VAR_INIT(deaths_during_shift, 0)
 		to_chat(gangbanger.current, "<B>As you're the first gangster, your uniform and spraycan are in your inventory!</B>")
 	addtimer(CALLBACK(src, .proc/announce_gang_locations), 5 MINUTES)
 	addtimer(CALLBACK(src, .proc/five_minute_warning), time_to_end - 5 MINUTES)
-	SSshuttle.registerHostileEnvironment(src)
 	gamemode_ready = TRUE
 	..()
 
@@ -380,12 +379,7 @@ GLOBAL_VAR_INIT(deaths_during_shift, 0)
 			numagents--
 	cops_arrived = TRUE
 	update_wanted_level() //Will make sure our icon updates properly
-	addtimer(CALLBACK(src, .proc/end_hostile_sit), 10 MINUTES)
 	return TRUE
-
-/datum/game_mode/gang/proc/end_hostile_sit()
-	SSshuttle.clearHostileEnvironment(src)
-
 
 /datum/game_mode/gang/proc/check_tagged_turfs()
 	for(var/T in GLOB.gang_tags)

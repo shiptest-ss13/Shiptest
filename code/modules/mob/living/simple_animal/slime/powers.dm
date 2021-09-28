@@ -1,9 +1,9 @@
-#define SIZE_DOESNT_MATTER 	-1
-#define BABIES_ONLY			0
-#define ADULTS_ONLY			1
+#define SIZE_DOESNT_MATTER -1
+#define BABIES_ONLY 0
+#define ADULTS_ONLY 1
 
-#define NO_GROWTH_NEEDED	0
-#define GROWTH_NEEDED		1
+#define NO_GROWTH_NEEDED 0
+#define GROWTH_NEEDED 1
 
 /datum/action/innate/slime
 	check_flags = AB_CHECK_CONSCIOUS
@@ -203,7 +203,7 @@
 				SSblackbox.record_feedback("tally", "slime_babies_born", 1, M.colour)
 
 				if(original_nanites)
-					M.AddComponent(/datum/component/nanites, original_nanites.nanite_volume*0.25)
+					M.AddComponent(/datum/component/nanites, original_nanites.linked_techweb, original_nanites.nanite_volume*0.25)
 					SEND_SIGNAL(M, COMSIG_NANITE_SYNC, original_nanites, TRUE, TRUE) //The trues are to copy activation as well
 
 			var/mob/living/simple_animal/slime/new_slime = pick(babies)

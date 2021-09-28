@@ -9,9 +9,11 @@
 	var/list/datum/nanite_cloud_backup/cloud_backups = list()
 	var/current_view = 0 //0 is the main menu, any other number is the page of the backup with that ID
 	var/new_backup_id = 1
+	var/datum/techweb/linked_techweb
 
 /obj/machinery/computer/nanite_cloud_controller/Destroy()
 	QDEL_LIST(cloud_backups) //rip backups
+	linked_techweb = null
 	eject()
 	return ..()
 
@@ -24,6 +26,13 @@
 			if(disk)
 				eject(user)
 			disk = N
+	if(istype(I, /obj/item/multitool))
+		var/obj/item/multitool/multi = I
+		if(istype(multi.buffer, /obj/machinery/rnd/server))
+			var/obj/machinery/rnd/server/serv = multi.buffer
+			linked_techweb = serv.stored_research
+			visible_message("Linked to Server!")
+		return
 	else
 		..()
 
@@ -52,7 +61,7 @@
 		return
 
 	var/datum/nanite_cloud_backup/backup = new(src)
-	var/datum/component/nanites/cloud_copy = backup.AddComponent(/datum/component/nanites)
+	var/datum/component/nanites/cloud_copy = backup.AddComponent(/datum/component/nanites, linked_techweb)
 	backup.cloud_id = cloud_id
 	backup.nanites = cloud_copy
 	investigate_log("[key_name(user)] created a new nanite cloud backup with id #[cloud_id]", INVESTIGATE_NANITES)

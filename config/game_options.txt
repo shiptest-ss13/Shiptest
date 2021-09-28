@@ -456,6 +456,7 @@ ROUNDSTART_RACES plasmaman
 ROUNDSTART_RACES ipc
 ROUNDSTART_RACES felinid
 ROUNDSTART_RACES squid
+ROUNDSTART_RACES teshari
 
 ## Races that are better than humans in some ways, but worse in others
 ROUNDSTART_RACES ethereal
@@ -613,3 +614,7 @@ MAX_OVERMAP_EVENTS 150
 
 ## Put the maximum amount of dynamic (runtime loaded) overmap locations here
 MAX_OVERMAP_DYNAMIC_EVENTS 10
+
+## The time required before a ship is allowed to bluespace jump. -1 disables it entirely
+## In deciseconds, valid values are -1 to INFINITY
+BLUESPACE_JUMP_WAIT 12000

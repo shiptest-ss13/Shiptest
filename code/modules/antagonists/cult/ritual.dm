@@ -74,8 +74,8 @@ This file contains the cult dagger and rune list code
 	A = get_area(src)
 	if(!src || QDELETED(src) || !Adjacent(user) || user.incapacitated() || !check_rune_turf(Turf, user))
 		return
-	if(ispath(rune_to_scribe, /obj/effect/rune/summon) && (!is_station_level(Turf.z) || initial(A.name) == "Space"))
-		to_chat(user, "<span class='cultitalic'><b>The veil is not weak enough here to summon a cultist, you must be on station!</b></span>")
+	if(ispath(rune_to_scribe, /obj/effect/rune/summon) && initial(A.name) == "Space")
+		to_chat(user, "<span class='cultitalic'><b>The veil is not weak enough here to summon a cultist!</b></span>")
 		return
 	if(ispath(rune_to_scribe, /obj/effect/rune/apocalypse))
 		if((world.time - SSticker.round_start_time) <= 6000)
@@ -117,8 +117,9 @@ This file contains the cult dagger and rune list code
 		for(var/B in spiral_range_turfs(1, user, 1))
 			var/obj/structure/emergency_shield/sanguine/N = new(B)
 			shields += N
-	user.visible_message("<span class='warning'>[user] [user.blood_volume ? "cuts open [user.p_their()] arm and begins writing in [user.p_their()] own blood":"begins sketching out a strange design"]!</span>", \
-						 "<span class='cult'>You [user.blood_volume ? "slice open your arm and ":""]begin drawing a sigil of the Geometer.</span>")
+	user.visible_message(
+		"<span class='warning'>[user] [user.blood_volume ? "cuts open [user.p_their()] arm and begins writing in [user.p_their()] own blood":"begins sketching out a strange design"]!</span>", \
+		"<span class='cult'>You [user.blood_volume ? "slice open your arm and ":""]begin drawing a sigil of the Geometer.</span>")
 	if(user.blood_volume)
 		user.apply_damage(initial(rune_to_scribe.scribe_damage), BRUTE, pick(BODY_ZONE_L_ARM, BODY_ZONE_R_ARM))
 	var/scribe_mod = initial(rune_to_scribe.scribe_delay)
@@ -132,8 +133,9 @@ This file contains the cult dagger and rune list code
 		return
 	if(!check_rune_turf(Turf, user))
 		return
-	user.visible_message("<span class='warning'>[user] creates a strange circle[user.blood_volume ? " in [user.p_their()] own blood":""].</span>", \
-						 "<span class='cult'>You finish drawing the arcane markings of the Geometer.</span>")
+	user.visible_message(
+		"<span class='warning'>[user] creates a strange circle[user.blood_volume ? " in [user.p_their()] own blood":""].</span>", \
+		"<span class='cult'>You finish drawing the arcane markings of the Geometer.</span>")
 	for(var/V in shields)
 		var/obj/structure/emergency_shield/S = V
 		if(S && !QDELETED(S))
@@ -151,7 +153,7 @@ This file contains the cult dagger and rune list code
 		to_chat(user, "<span class='cult'>There is already a rune here.</span>")
 		return FALSE
 	var/area/A = get_area(T)
-	if((!is_station_level(T.z) && !is_mining_level(T.z)) || (A && !(A.flags_1 & CULT_PERMITTED_1)))
+	if(A && !(A.flags_1 & CULT_PERMITTED_1))
 		to_chat(user, "<span class='warning'>The veil is not weak enough here.</span>")
 		return FALSE
 	return TRUE

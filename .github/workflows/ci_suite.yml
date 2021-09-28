@@ -12,6 +12,9 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v2
+        with:
+          ref: master
+      - uses: actions/checkout@v2
       - name: Setup cache
         id: cache-spacemandmm
         uses: actions/cache@v2
@@ -36,9 +39,14 @@ jobs:
           find . -name "*.json" -not -path "*/node_modules/*" -print0 | xargs -0 python3 ./tools/json_verifier.py
           tgui/bin/tgui --lint
           bash tools/ci/check_grep.sh
+          tools/bootstrap/python -m ci.check_regex --log-changes-only
           tools/bootstrap/python -m dmi.test
           tools/bootstrap/python -m mapmerge2.dmm_test
           ~/dreamchecker > ${GITHUB_WORKSPACE}/output-annotations.txt 2>&1
+      - name: Annotate Regex Matches
+        if: always()
+        run: |
+          cat check_regex_output.txt
       - name: Annotate Lints
         uses: yogstation13/DreamAnnotate@v1
         if: always()
@@ -51,7 +59,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Setup cache
-        id: cache-byond-install
+        id: cache-byond
         uses: actions/cache@v2
         with:
           path: ~/BYOND
@@ -80,7 +88,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Setup cache
-        id: cache-byond-install
+        id: cache-byond
         uses: actions/cache@v2
         with:
           path: ~/BYOND

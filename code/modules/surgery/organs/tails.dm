@@ -18,6 +18,12 @@
 	desc = "A severed cat tail. Who's wagging now?"
 	tail_type = "Cat"
 
+/obj/item/organ/tail/cat/slime
+	name = "slimy cat tail"
+	desc = "A slimy looking severed cat tail."
+	tail_type = "Slimecat"
+	alpha = 150
+
 /obj/item/organ/tail/cat/Insert(mob/living/carbon/human/H, special = 0, drop_if_replaced = TRUE)
 	..()
 	if(istype(H))

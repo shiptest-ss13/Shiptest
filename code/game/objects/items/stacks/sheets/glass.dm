@@ -280,16 +280,11 @@ GLOBAL_LIST_INIT(plastitaniumglass_recipes, list(
 	if (icon_prefix)
 		icon_state = "[icon_prefix][icon_state]"
 
-	var/turf/T = get_turf(src)
-	if(T && is_station_level(T.z))
-		SSblackbox.record_feedback("tally", "station_mess_created", 1, name)
+	SSblackbox.record_feedback("tally", "station_mess_created", 1, name)
 
 /obj/item/shard/Destroy()
 	. = ..()
-
-	var/turf/T = get_turf(src)
-	if(T && is_station_level(T.z))
-		SSblackbox.record_feedback("tally", "station_mess_destroyed", 1, name)
+	SSblackbox.record_feedback("tally", "station_mess_destroyed", 1, name)
 
 /obj/item/shard/afterattack(atom/A as mob|obj, mob/user, proximity)
 	. = ..()
@@ -315,8 +310,8 @@ GLOBAL_LIST_INIT(plastitaniumglass_recipes, list(
 	if(istype(I, /obj/item/lightreplacer))
 		var/obj/item/lightreplacer/L = I
 		L.attackby(src, user)
-	else if(istype(I, /obj/item/stack/sheet/cloth))
-		var/obj/item/stack/sheet/cloth/C = I
+	else if(istype(I, /obj/item/stack/sheet/cotton/cloth))
+		var/obj/item/stack/sheet/cotton/cloth/C = I
 		to_chat(user, "<span class='notice'>You begin to wrap the [C] around the [src]...</span>")
 		if(do_after(user, 35, target = src))
 			var/obj/item/kitchen/knife/shiv/S = new /obj/item/kitchen/knife/shiv

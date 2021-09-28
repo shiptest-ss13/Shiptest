@@ -40,8 +40,7 @@
 	update_icon_nopipes()
 
 	underlays.Cut()
-
-	plane = showpipe ? GAME_PLANE : FLOOR_PLANE
+	plane = showpipe ? FLOOR_PLANE : FLOOR_PLANE
 
 	if(!showpipe)
 		return
@@ -101,12 +100,12 @@
 	reference.other_atmosmch -= src
 
 	/**
-	 *  We explicitly qdel pipeline when this particular pipeline
-	 *  is projected to have no member and cause GC problems.
-	 *  We have to do this because components don't qdel pipelines
-	 *  while pipes must and will happily wreck and rebuild everything
-	 *	again every time they are qdeleted.
-	 */
+	*  We explicitly qdel pipeline when this particular pipeline
+	*  is projected to have no member and cause GC problems.
+	*  We have to do this because components don't qdel pipelines
+	*  while pipes must and will happily wreck and rebuild everything
+	*	again every time they are qdeleted.
+	*/
 
 	if(!length(reference.other_atmosmch) && !length(reference.members))
 		if(QDESTROYING(reference))
@@ -172,7 +171,6 @@
 	for(var/i in 1 to device_type)
 		var/datum/pipeline/parent = parents[i]
 		if(!parent)
-			WARNING("Component is missing a pipenet! Rebuilding...")
 			SSair.add_to_rebuild_queue(src)
 			continue
 		parent.update = 1

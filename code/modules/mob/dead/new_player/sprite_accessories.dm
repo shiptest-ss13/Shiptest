@@ -776,6 +776,57 @@
 	name = "Wisp"
 	icon_state = "hair_wisp"
 
+/*
+/////////////////////////////////////
+/  =---------------------------=    /
+/  == Gradient Hair Definitions ==  /
+/  =---------------------------=    /
+/////////////////////////////////////
+*/
+
+/datum/sprite_accessory/hair_gradient
+	icon = 'icons/mob/hair_gradients.dmi'
+
+/datum/sprite_accessory/hair_gradient/none
+	name = "None"
+	icon_state = "none"
+
+/datum/sprite_accessory/hair_gradient/fadeup
+	name = "Fade Up"
+	icon_state = "fadeup"
+
+/datum/sprite_accessory/hair_gradient/fadedown
+	name = "Fade Down"
+	icon_state = "fadedown"
+
+/datum/sprite_accessory/hair_gradient/vertical_split
+	name = "Vertical Split"
+	icon_state = "vsplit"
+
+/datum/sprite_accessory/hair_gradient/_split
+	name = "Horizontal Split"
+	icon_state = "bottomflat"
+
+/datum/sprite_accessory/hair_gradient/reflected
+	name = "Reflected"
+	icon_state = "reflected_high"
+
+/datum/sprite_accessory/hair_gradient/reflected_inverse
+	name = "Reflected Inverse"
+	icon_state = "reflected_inverse_high"
+
+/datum/sprite_accessory/hair_gradient/wavy
+	name = "Wavy"
+	icon_state = "wavy"
+
+/datum/sprite_accessory/hair_gradient/long_fade_up
+	name = "Long Fade Up"
+	icon_state = "long_fade_up"
+
+/datum/sprite_accessory/hair_gradient/long_fade_down
+	name = "Long Fade Down"
+	icon_state = "long_fade_down"
+
 /////////////////////////////
 // Facial Hair Definitions //
 /////////////////////////////
@@ -1669,6 +1720,16 @@
 	icon_state = "cat"
 	color_src = HAIR
 
+/datum/sprite_accessory/tails/human/cat/slime
+	name = "Slimecat"
+	icon_state = "catslime"
+	color_src = HAIR
+
+/datum/sprite_accessory/tails_animated/human/cat/slime
+	name = "Slimecat"
+	icon_state = "catslime"
+	color_src = HAIR
+
 /datum/sprite_accessory/snouts
 	icon = 'icons/mob/mutant_bodyparts.dmi'
 
@@ -1725,6 +1786,12 @@
 /datum/sprite_accessory/ears/cat
 	name = "Cat"
 	icon_state = "cat"
+	hasinner = 1
+	color_src = HAIR
+
+/datum/sprite_accessory/ears/cat/slime
+	name = "Slimecat"
+	icon_state = "catslime"
 	hasinner = 1
 	color_src = HAIR
 
@@ -2410,5 +2477,79 @@
 /datum/sprite_accessory/spider_mandibles/spiky
 	name = "Spiky"
 	icon_state = "spiky"
+
+/datum/sprite_accessory/teshari_feathers
+	color_src = HAIR
+	icon = 'icons/mob/teshari_parts.dmi'
+
+/datum/sprite_accessory/teshari_feathers/none
+	name = "None"
+
+/datum/sprite_accessory/teshari_feathers/plain
+	name = "Plain"
+	icon_state = "plain"
+
+/datum/sprite_accessory/teshari_feathers/spiky
+	name = "Spiky"
+	icon_state = "spiky"
+
+/datum/sprite_accessory/teshari_feathers/bushy
+	name = "Bushy"
+	icon_state = "bushy"
+
+/datum/sprite_accessory/teshari_feathers/mohawk
+	name = "Mohawk"
+	icon_state = "mohawk"
+
+/datum/sprite_accessory/teshari_feathers/pointy
+	name = "Pointy"
+	icon_state = "pointy"
+
+/datum/sprite_accessory/teshari_feathers/upright
+	name = "Upright"
+	icon_state = "upright"
+
+/datum/sprite_accessory/teshari_feathers/mane
+	name = "Mane"
+	icon_state = "mane"
+
+/datum/sprite_accessory/teshari_feathers/droopy
+	name = "Droopy"
+	icon_state = "droopy"
+
+/datum/sprite_accessory/teshari_feathers/mushroom
+	name = "Mushroom"
+	icon_state = "mushroom"
+
+/datum/sprite_accessory/teshari_feathers/backstrafe
+	name = "Backstrafe"
+	icon_state = "backstrafe"
+
+/datum/sprite_accessory/teshari_feathers/longway
+	name = "Longway"
+	icon_state = "longway"
+
+/datum/sprite_accessory/teshari_feathers/tree
+	name = "Tree"
+	icon_state = "tree"
+
+/datum/sprite_accessory/teshari_feathers/thin_mohawk
+	name = "Thin Mohawk"
+	icon_state = "thinmohawk"
+
+/datum/sprite_accessory/teshari_feathers/twies
+	name = "Twies"
+	icon_state = "twies"
+
+/datum/sprite_accessory/teshari_body_feathers
+	color_src = FACEHAIR
+	icon = 'icons/mob/teshari_parts.dmi'
+
+/datum/sprite_accessory/teshari_body_feathers/plain
+	name = "Plain"
+	icon_state = "plain"
+
+/datum/sprite_accessory/teshari_body_feathers/none
+	name = "None"
 
 //ENDWS

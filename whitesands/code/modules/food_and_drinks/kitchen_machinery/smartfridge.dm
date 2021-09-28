@@ -15,7 +15,7 @@
 	return FALSE
 
 /obj/machinery/smartfridge/bloodbank/update_icon_state()
-    return
+	return
 
 /obj/machinery/smartfridge/bloodbank/preloaded
 	initial_contents = list(

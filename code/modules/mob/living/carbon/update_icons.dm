@@ -130,7 +130,7 @@
 
 	if(wear_neck)
 		if(!(ITEM_SLOT_NECK in check_obscured_slots()))
-			overlays_standing[NECK_LAYER] = wear_neck.build_worn_icon(default_layer = NECK_LAYER, default_icon_file = 'icons/mob/clothing/neck.dmi')
+			overlays_standing[NECK_LAYER] = wear_neck.build_worn_icon(default_layer = NECK_LAYER, default_icon_file = 'icons/mob/clothing/neck.dmi', species = dna?.species.species_clothing_path)
 		update_hud_neck(wear_neck)
 
 	apply_overlay(NECK_LAYER)
@@ -296,5 +296,5 @@
 			var/mutable_appearance/some_overlay_thing = mutable_appearance('icons/mob/splints.dmi', B.body_zone, SPLINT_LAYER)
 			standing += some_overlay_thing
 
- 	overlays_standing[SPLINT_LAYER] = standing
+	overlays_standing[SPLINT_LAYER] = standing
 	apply_overlay(SPLINT_LAYER)

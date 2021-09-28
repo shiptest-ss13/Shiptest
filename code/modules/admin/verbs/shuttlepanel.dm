@@ -1,5 +1,5 @@
 /datum/admins/proc/open_shuttlepanel()
-	set category = "Admin - Events"
+	set category = "Admin.Events"
 	set name = "Shuttle Manipulator"
 	set desc = "Opens the shuttle manipulator UI."
 
@@ -47,6 +47,3 @@
 		else
 			if(options[selection])
 				request(options[selection])
-
-/obj/docking_port/mobile/emergency/admin_fly_shuttle(mob/user)
-	return  // use the existing verbs for this

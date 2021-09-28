@@ -4,11 +4,11 @@
 
 [![forthebadge](https://forthebadge.com/images/badges/built-with-resentment.svg)](https://forthebadge.com) [![forthebadge](https://forthebadge.com/images/badges/contains-technical-debt.svg)](https://user-images.githubusercontent.com/8171642/50290880-ffef5500-043a-11e9-8270-a2e5b697c86c.png) [![forinfinityandbyond](https://user-images.githubusercontent.com/5211576/29499758-4efff304-85e6-11e7-8267-62919c3688a9.gif)](https://www.reddit.com/r/SS13/comments/5oplxp/what_is_the_main_problem_with_byond_as_an_engine/dclbu1a)
 
-* **Website:** <https://shiptest.ga>
-* **Forums:** <https://forum.shiptest.ga>
-* **Wiki:** <https://wiki.shiptest.ga>
-* **Code Docs:** <https://codedocs.shiptest.ga/>
-* **Discord:** <https://discord.gg/Zuv47eNuhE>
+* **Website:** <https://shiptest.net>
+* **Patreon:** <https://www.patreon.com/shiptest_ss13>
+* **Wiki:** <https://shiptest.net/wiki>
+* **Code Docs:** <https://codedocs.shiptest.net>
+* **Discord:** <https://shiptest.net/discord>
 * **Coderbus Discord:** <https://discord.gg/Vh8TJp9>
 
 This is the codebase for the Ship-based Shiptest flavoured fork of SpaceStation 13.
@@ -37,8 +37,9 @@ Shiptest is a thrill-packed round-based exploration and roleplaying game set aga
 * /tg/, for the original codebase of the original codebase
 * BeeStation, for the many QoL changes
 * Oracle, for the inspiration and wonderful features and sprites
-* Interstation for bridging the gap between Oracle and Modern /tg/
-* YogStation for multiple different features
+* Interstation, for bridging the gap between Oracle and Modern /tg/
+* YogStation, for multiple different features
+* Baystation, for the initial overmap concept and sprites
 
 And thank you to any other codebase not mentioned here that has been used in the code. Your wonderful contributions are known.
 

@@ -9,13 +9,13 @@
 #define DRONE_NET_DISCONNECT "<span class='danger'>DRONE NETWORK: [name] is not responding.</span>"
 
 /// Maintenance Drone icon_state (multiple colors)
-#define MAINTDRONE	"drone_maint"
+#define MAINTDRONE "drone_maint"
 /// Repair Drone icon_state
-#define REPAIRDRONE	"drone_repair"
+#define REPAIRDRONE "drone_repair"
 /// Scout Drone icon_state
-#define SCOUTDRONE	"drone_scout"
+#define SCOUTDRONE "drone_scout"
 /// Clockwork Drone icon_state
-#define CLOCKDRONE	"drone_clock"
+#define CLOCKDRONE "drone_clock"
 
 /// [MAINTDRONE] hacked icon_state
 #define MAINTDRONE_HACKED "drone_maint_red"
@@ -99,15 +99,15 @@
 	/// Default [/mob/living/simple_animal/drone/var/head] item
 	var/obj/item/default_hatmask
 	/**
-	  * icon_state of drone from icons/mobs/drone.dmi
-	  *
-	  * Possible states are:
-	  *
-	  * - [MAINTDRONE]
-	  * - [REPAIRDRONE]
-	  * - [SCOUTDRONE]
-	  * - [CLOCKDRONE]
-	  */
+	* icon_state of drone from icons/mobs/drone.dmi
+	*
+	* Possible states are:
+	*
+	* - [MAINTDRONE]
+	* - [REPAIRDRONE]
+	* - [SCOUTDRONE]
+	* - [CLOCKDRONE]
+	*/
 	var/visualAppearance = MAINTDRONE
 	/// Hacked state, see [/mob/living/simple_animal/drone/proc/update_drone_hack]
 	var/hacked = FALSE
@@ -261,20 +261,26 @@
   * * O - unused argument, see [/mob/living/silicon/robot/triggerAlarm]
   * * alarmsource - [/atom] source of the alarm
   */
-/mob/living/simple_animal/drone/proc/triggerAlarm(class, area/A, O, obj/alarmsource)
-	if(alarmsource.get_virtual_z_level() != get_virtual_z_level())
+/mob/living/simple_animal/drone/proc/triggerAlarm(class, area/home, cameras, obj/source)
+	if(source.get_virtual_z_level() != get_virtual_z_level())
 		return
-	if(stat != DEAD)
-		var/list/L = src.alarms[class]
-		for (var/I in L)
-			if (I == A.name)
-				var/list/alarm = L[I]
-				var/list/sources = alarm[2]
-				if (!(alarmsource in sources))
-					sources += alarmsource
-				return
-		L[A.name] = list(A, list(alarmsource))
-		to_chat(src, "--- [class] alarm detected in [A.name]!")
+	if(stat == DEAD)
+		return
+	var/list/our_sort = alarms[class]
+	for(var/areaname in our_sort)
+		if (areaname == home.name)
+			var/list/alarm = our_sort[areaname]
+			var/list/sources = alarm[3]
+			if (!(source in sources))
+				sources += source
+			return TRUE
+
+	our_sort[home.name] = list(home, list(source))
+	to_chat(src, "--- [class] alarm detected in [home.name]!")
+
+///This isn't currently needed since drones do jack shit with cameras. I hate this code so much
+/mob/living/simple_animal/drone/proc/freeCamera(area/home, obj/machinery/camera/cam)
+	return
 
 /**
   * Clears alarm and alerts drones
@@ -325,4 +331,4 @@
 
 /mob/living/simple_animal/drone/get_bank_account(hand_first)
 	return SSeconomy.get_dep_account(ACCOUNT_CIV)
-	
+

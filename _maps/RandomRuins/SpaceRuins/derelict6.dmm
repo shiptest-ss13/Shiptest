@@ -157,8 +157,8 @@
 /area/ruin/unpowered)
 "aD" = (
 /obj/item/stack/sheet/metal,
-/obj/effect/turf_decal/tile/bar,
-/obj/effect/turf_decal/tile/bar{
+/obj/effect/turf_decal/corner/bar,
+/obj/effect/turf_decal/corner/bar{
 	dir = 1
 	},
 /turf/open/floor/plating/airless{
@@ -173,8 +173,8 @@
 /area/ruin/unpowered)
 "aF" = (
 /obj/machinery/door/airlock/public/glass,
-/obj/effect/turf_decal/tile/bar,
-/obj/effect/turf_decal/tile/bar{
+/obj/effect/turf_decal/corner/bar,
+/obj/effect/turf_decal/corner/bar{
 	dir = 1
 	},
 /turf/open/floor/plasteel/airless,
@@ -183,8 +183,8 @@
 /obj/structure/door_assembly/door_assembly_public{
 	name = "broken airlock"
 	},
-/obj/effect/turf_decal/tile/bar,
-/obj/effect/turf_decal/tile/bar{
+/obj/effect/turf_decal/corner/bar,
+/obj/effect/turf_decal/corner/bar{
 	dir = 1
 	},
 /turf/open/floor/plasteel/airless,
@@ -195,43 +195,67 @@
 "aI" = (
 /obj/structure/table,
 /obj/machinery/microwave,
-/turf/open/floor/plasteel/airless/cafeteria,
+/obj/effect/turf_decal/corner/white{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/white{
+	dir = 2
+	},
+/turf/open/floor/plasteel/airless,
 /area/ruin/unpowered)
 "aJ" = (
 /obj/structure/table,
 /obj/item/storage/box/drinkingglasses,
-/turf/open/floor/plasteel/airless/cafeteria,
+/obj/effect/turf_decal/corner/white{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/white{
+	dir = 2
+	},
+/turf/open/floor/plasteel/airless,
 /area/ruin/unpowered)
 "aK" = (
 /obj/structure/closet/secure_closet/freezer/fridge/open,
 /obj/machinery/light/broken{
 	dir = 1
 	},
-/turf/open/floor/plasteel/airless/cafeteria,
+/obj/effect/turf_decal/corner/white{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/white{
+	dir = 2
+	},
+/turf/open/floor/plasteel/airless,
 /area/ruin/unpowered)
 "aL" = (
 /obj/structure/closet/secure_closet/freezer/kitchen,
-/turf/open/floor/plasteel/airless/cafeteria,
+/obj/effect/turf_decal/corner/white{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/white{
+	dir = 2
+	},
+/turf/open/floor/plasteel/airless,
 /area/ruin/unpowered)
 "aM" = (
-/obj/effect/turf_decal/tile/bar,
-/obj/effect/turf_decal/tile/bar{
+/obj/effect/turf_decal/corner/bar,
+/obj/effect/turf_decal/corner/bar{
 	dir = 1
 	},
 /turf/open/floor/plasteel/airless,
 /area/ruin/unpowered)
 "aN" = (
 /obj/item/trash/plate,
-/obj/effect/turf_decal/tile/bar,
-/obj/effect/turf_decal/tile/bar{
+/obj/effect/turf_decal/corner/bar,
+/obj/effect/turf_decal/corner/bar{
 	dir = 1
 	},
 /turf/open/floor/plasteel/airless,
 /area/ruin/unpowered)
 "aO" = (
 /obj/item/chair,
-/obj/effect/turf_decal/tile/bar,
-/obj/effect/turf_decal/tile/bar{
+/obj/effect/turf_decal/corner/bar,
+/obj/effect/turf_decal/corner/bar{
 	dir = 1
 	},
 /turf/open/floor/plasteel/airless,
@@ -249,16 +273,28 @@
 /turf/open/floor/plating/airless,
 /area/ruin/unpowered)
 "aR" = (
-/turf/open/floor/plasteel/airless/cafeteria,
+/obj/effect/turf_decal/corner/white{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/white{
+	dir = 2
+	},
+/turf/open/floor/plasteel/airless,
 /area/ruin/unpowered)
 "aS" = (
 /obj/structure/table_frame,
-/turf/open/floor/plasteel/airless/cafeteria,
+/obj/effect/turf_decal/corner/white{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/white{
+	dir = 2
+	},
+/turf/open/floor/plasteel/airless,
 /area/ruin/unpowered)
 "aT" = (
 /obj/item/kitchen/fork,
-/obj/effect/turf_decal/tile/bar,
-/obj/effect/turf_decal/tile/bar{
+/obj/effect/turf_decal/corner/bar,
+/obj/effect/turf_decal/corner/bar{
 	dir = 1
 	},
 /turf/open/floor/plasteel/airless,
@@ -279,12 +315,18 @@
 /area/ruin/unpowered)
 "aW" = (
 /obj/structure/table,
-/turf/open/floor/plasteel/airless/cafeteria,
+/obj/effect/turf_decal/corner/white{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/white{
+	dir = 2
+	},
+/turf/open/floor/plasteel/airless,
 /area/ruin/unpowered)
 "aX" = (
 /obj/item/chair/stool/bar,
-/obj/effect/turf_decal/tile/bar,
-/obj/effect/turf_decal/tile/bar{
+/obj/effect/turf_decal/corner/bar,
+/obj/effect/turf_decal/corner/bar{
 	dir = 1
 	},
 /turf/open/floor/plasteel/airless,
@@ -301,21 +343,39 @@
 /area/space/nearstation)
 "ba" = (
 /mob/living/simple_animal/hostile/retaliate/ghost,
-/turf/open/floor/plasteel/airless/cafeteria,
+/obj/effect/turf_decal/corner/white{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/white{
+	dir = 2
+	},
+/turf/open/floor/plasteel/airless,
 /area/ruin/unpowered)
 "bb" = (
 /obj/item/reagent_containers/food/snacks/donkpocket,
-/turf/open/floor/plasteel/airless/cafeteria,
+/obj/effect/turf_decal/corner/white{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/white{
+	dir = 2
+	},
+/turf/open/floor/plasteel/airless,
 /area/ruin/unpowered)
 "bc" = (
 /obj/structure/table,
 /obj/item/shard,
-/turf/open/floor/plasteel/airless/cafeteria,
+/obj/effect/turf_decal/corner/white{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/white{
+	dir = 2
+	},
+/turf/open/floor/plasteel/airless,
 /area/ruin/unpowered)
 "bd" = (
 /obj/structure/chair/stool/bar,
-/obj/effect/turf_decal/tile/bar,
-/obj/effect/turf_decal/tile/bar{
+/obj/effect/turf_decal/corner/bar,
+/obj/effect/turf_decal/corner/bar{
 	dir = 1
 	},
 /turf/open/floor/plasteel/airless,
@@ -336,7 +396,13 @@
 	dir = 8
 	},
 /obj/structure/table_frame,
-/turf/open/floor/plasteel/airless/cafeteria,
+/obj/effect/turf_decal/corner/white{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/white{
+	dir = 2
+	},
+/turf/open/floor/plasteel/airless,
 /area/ruin/unpowered)
 "bi" = (
 /obj/item/stack/sheet/metal,
@@ -348,7 +414,13 @@
 "bj" = (
 /obj/item/trash/plate,
 /obj/effect/decal/remains/human,
-/turf/open/floor/plasteel/airless/cafeteria,
+/obj/effect/turf_decal/corner/white{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/white{
+	dir = 2
+	},
+/turf/open/floor/plasteel/airless,
 /area/ruin/unpowered)
 "bk" = (
 /obj/structure/table_frame/wood,

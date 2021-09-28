@@ -295,11 +295,6 @@
 	name = "R&D Console Production Only (Computer Board)"
 	build_path = /obj/machinery/computer/rdconsole/production
 
-/obj/item/circuitboard/computer/rdservercontrol
-	name = "R&D Server Control (Computer Board)"
-	icon_state = "science"
-	build_path = /obj/machinery/computer/rdservercontrol
-
 /obj/item/circuitboard/computer/research
 	name = "Research Monitor (Computer Board)"
 	icon_state = "science"
@@ -397,11 +392,12 @@
 		to_chat(user, "<span class='notice'>You change the routing protocols, allowing the Drop Pod to land anywhere on the station.</span>")
 		obj_flags |= EMAGGED
 
-/obj/item/circuitboard/computer/cargo/request
-	name = "Supply Request Console (Computer Board)"
-	build_path = /obj/machinery/computer/cargo/request
-
 /obj/item/circuitboard/computer/mining
 	name = "Outpost Status Display (Computer Board)"
 	icon_state = "supply"
 	build_path = /obj/machinery/computer/security/mining
+
+/obj/item/circuitboard/computer/selling_pad_control
+	name = "Cargo hold control terminal (Computer Board)"
+	icon_state = "supply"
+	build_path = /obj/machinery/computer/selling_pad_control

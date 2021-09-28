@@ -153,7 +153,7 @@
 	new /obj/item/clothing/head/helmet/sec(src)
 	new /obj/item/radio/headset/headset_sec(src)
 	new /obj/item/radio/headset/headset_sec/alt(src)
- 	//WS begin - Prescription HUDs
+	//WS begin - Prescription HUDs
 	if(prob(75))
 		new /obj/item/clothing/glasses/hud/security/sunglasses(src)
 	else

@@ -66,10 +66,11 @@ Difficulty: Medium
 	deathmessage = "collapses into a pile of bones, its flesh sloughing away."
 	deathsound = 'sound/magic/demon_dies.ogg'
 	footstep_type = FOOTSTEP_MOB_HEAVY
-	attack_action_types = list(/datum/action/innate/megafauna_attack/fire_cone,
-							   /datum/action/innate/megafauna_attack/fire_cone_meteors,
-							   /datum/action/innate/megafauna_attack/mass_fire,
-							   /datum/action/innate/megafauna_attack/lava_swoop)
+	attack_action_types = list(
+		/datum/action/innate/megafauna_attack/fire_cone,
+		/datum/action/innate/megafauna_attack/fire_cone_meteors,
+		/datum/action/innate/megafauna_attack/mass_fire,
+		/datum/action/innate/megafauna_attack/lava_swoop)
 	small_sprite_type = /datum/action/small_sprite/megafauna/drake
 
 /datum/action/innate/megafauna_attack/fire_cone
@@ -297,7 +298,7 @@ Difficulty: Medium
 	if(stat || swooping)
 		return
 	if(manual_target)
-		target = manual_target
+		GiveTarget(manual_target)
 	if(!target)
 		return
 	stop_automated_movement = TRUE

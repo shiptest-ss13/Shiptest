@@ -268,22 +268,6 @@
 		O.team = src
 		objectives += O
 
-/datum/team/nuclear/proc/disk_rescued()
-	for(var/obj/item/disk/nuclear/D in GLOB.poi_list)
-		//If emergency shuttle is in transit disk is only safe on it
-		if(SSshuttle.emergency.mode == SHUTTLE_ESCAPE)
-			if(!SSshuttle.emergency.is_in_shuttle_bounds(D))
-				return FALSE
-		//If shuttle escaped check if it's on centcom side
-		else if(SSshuttle.emergency.mode == SHUTTLE_ENDGAME)
-			if(!D.onCentCom())
-				return FALSE
-		else //Otherwise disk is safe when on station
-			var/turf/T = get_turf(D)
-			if(!T || !is_station_level(T.z))
-				return FALSE
-	return TRUE
-
 /datum/team/nuclear/proc/operatives_dead()
 	for(var/I in members)
 		var/datum/mind/operative_mind = I
@@ -292,8 +276,6 @@
 	return TRUE
 
 /datum/team/nuclear/proc/get_result()
-	var/evacuation = EMERGENCY_ESCAPED_OR_ENDGAMED
-	var/disk_rescued = disk_rescued()
 	var/station_was_nuked = SSticker.mode.station_was_nuked
 	var/nuke_off_station = SSticker.mode.nuke_off_station
 
@@ -301,16 +283,6 @@
 		return NUKE_RESULT_FLUKE
 	else if(station_was_nuked)
 		return NUKE_RESULT_NUKE_WIN
-	else if (!disk_rescued && !station_was_nuked && nuke_off_station)
-		return NUKE_RESULT_WRONG_STATION
-	else if ((disk_rescued && evacuation) && operatives_dead())
-		return NUKE_RESULT_CREW_WIN_SYNDIES_DEAD
-	else if (disk_rescued)
-		return NUKE_RESULT_CREW_WIN
-	else if (!disk_rescued && operatives_dead())
-		return NUKE_RESULT_DISK_LOST
-	else if (!disk_rescued && evacuation)
-		return NUKE_RESULT_DISK_STOLEN
 	else
 		return	//Undefined result
 

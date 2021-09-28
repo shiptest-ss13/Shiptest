@@ -1,0 +1,3625 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"aT" = (
+/obj/machinery/button/door{
+	id = "a";
+	name = "door lock";
+	pixel_x = -24;
+	pixel_y = -7
+	},
+/obj/machinery/button/door{
+	id = "medical_lock_cmo";
+	name = "door lock";
+	pixel_x = -24;
+	pixel_y = 9
+	},
+/obj/machinery/button/door{
+	id = "medical_lock_medlock";
+	name = "door lock";
+	pixel_x = -24;
+	pixel_y = 1
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/dark,
+/area/ruin/powered)
+"bb" = (
+/obj/machinery/computer/security{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/dark,
+/area/ruin/powered)
+"bx" = (
+/obj/machinery/computer/operating,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/dark,
+/area/ruin/powered)
+"bL" = (
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 9
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating,
+/area/ruin/powered)
+"bO" = (
+/obj/structure/table,
+/obj/machinery/recharger,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/dark,
+/area/ruin/powered)
+"bZ" = (
+/obj/machinery/door/airlock/vault,
+/obj/effect/mapping_helpers/airlock/locked,
+/obj/effect/turf_decal/corner/black{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/black{
+	dir = 2
+	},
+/turf/open/floor/plasteel,
+/area/ruin/powered)
+"cc" = (
+/obj/machinery/door/airlock/research,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/door/poddoor/shutters{
+	id = "rd4"
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/powered)
+"cd" = (
+/obj/effect/spawner/structure/window/plasma/reinforced,
+/turf/open/floor/plating,
+/area/ruin/powered)
+"cy" = (
+/obj/item/crowbar/power,
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/carpet/blue,
+/area/ruin/powered)
+"cI" = (
+/obj/effect/decal/cleanable/blood,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/dark,
+/area/ruin/powered)
+"dg" = (
+/obj/machinery/cryopod{
+	dir = 4
+	},
+/obj/effect/mob_spawn/human/corpse/assistant{
+	outfit = /datum/outfit/job/cmo
+	},
+/mob/living/simple_animal/hostile/zombie,
+/turf/open/floor/mineral/titanium/blue,
+/area/ruin/powered)
+"dh" = (
+/obj/structure/table,
+/obj/item/reagent_containers/glass/bottle/romerol{
+	desc = "A serum that restart a patients heart without the use of a defibilator. Although it deals tissue damage when its in a alive patient, it heals organ damage. The more badly damaged a a patient is, the more resucator is needed.";
+	name = "resuscator bottle"
+	},
+/obj/item/reagent_containers/syringe,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/dark,
+/area/ruin/powered)
+"dj" = (
+/obj/effect/spawner/structure/window/reinforced,
+/obj/machinery/door/poddoor/shutters{
+	id = "celock"
+	},
+/turf/open/floor/plating,
+/area/ruin/powered)
+"dm" = (
+/mob/living/simple_animal/hostile/zombie,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/dark,
+/area/ruin/powered)
+"dv" = (
+/mob/living/simple_animal/hostile/zombie,
+/obj/effect/decal/cleanable/blood/drip,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/carpet/royalblue,
+/area/ruin/powered)
+"dS" = (
+/obj/machinery/door/airlock/command/glass{
+	id_tag = list(103);
+	name = "Chief Engineer's Office"
+	},
+/obj/machinery/door/poddoor/shutters{
+	id = "celock"
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating,
+/area/ruin/powered)
+"dV" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel,
+/area/ruin/powered)
+"ek" = (
+/obj/effect/turf_decal/arrows/white{
+	dir = 1
+	},
+/turf/open/floor/plating,
+/area/ruin/powered)
+"eo" = (
+/obj/effect/decal/cleanable/blood/splatter,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/dark,
+/area/ruin/powered)
+"eD" = (
+/obj/machinery/door/airlock/maintenance_hatch,
+/turf/open/floor/plating,
+/area/ruin/powered)
+"eP" = (
+/obj/effect/gibspawner/human,
+/obj/item/bodypart/head,
+/obj/item/clothing/head/beret/chem,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating,
+/area/ruin/powered)
+"eQ" = (
+/obj/structure/table/wood/reinforced,
+/obj/item/storage/fancy/cigarettes/cigars/havana,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/carpet/royalblue,
+/area/ruin/powered)
+"eX" = (
+/obj/machinery/door/poddoor{
+	id = "medical_lock_medlock"
+	},
+/obj/effect/turf_decal/industrial/warning/cee,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/white,
+/area/ruin/powered)
+"fd" = (
+/obj/item/shard{
+	icon_state = "small"
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/corner/black{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/black{
+	dir = 2
+	},
+/turf/open/floor/plasteel,
+/area/ruin/powered)
+"fe" = (
+/obj/effect/turf_decal/corner/blue{
+	dir = 8
+	},
+/obj/effect/turf_decal/corner/blue{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/blue{
+	dir = 4
+	},
+/obj/effect/mob_spawn/human/corpse/damaged{
+	disease = /datum/disease/brainrot;
+	outfit = /datum/outfit/job/assistant
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/white,
+/area/ruin/powered)
+"fj" = (
+/obj/machinery/suit_storage_unit/rd,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/dark,
+/area/ruin/powered)
+"fq" = (
+/obj/machinery/door/airlock/medical/glass,
+/obj/machinery/door/poddoor/shutters{
+	id = "medical_lock_lobby"
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/powered)
+"fQ" = (
+/obj/effect/turf_decal/number/two{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/dark,
+/area/ruin/powered)
+"fW" = (
+/obj/machinery/power/emitter/welded{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating,
+/area/ruin/powered)
+"gb" = (
+/mob/living/simple_animal/hostile/zombie,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/dark,
+/area/ruin/powered)
+"gg" = (
+/obj/effect/spawner/structure/window/reinforced,
+/obj/machinery/door/poddoor/shutters{
+	id = "rd1"
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating,
+/area/ruin/powered)
+"gi" = (
+/obj/effect/turf_decal/corner/blue{
+	dir = 8
+	},
+/obj/effect/turf_decal/corner/blue{
+	dir = 1
+	},
+/obj/machinery/harvester,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/white,
+/area/ruin/powered)
+"gk" = (
+/obj/effect/spawner/structure/window/reinforced,
+/obj/machinery/door/poddoor/shutters{
+	id = "rd4"
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating,
+/area/ruin/powered)
+"gE" = (
+/obj/structure/table,
+/obj/item/folder,
+/obj/item/reagent_containers/glass/beaker,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/dark,
+/area/ruin/powered)
+"gJ" = (
+/obj/machinery/modular_computer/console/preset/engineering{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/dark,
+/area/ruin/powered)
+"gP" = (
+/obj/item/shard{
+	icon_state = "tiny"
+	},
+/obj/item/shard,
+/obj/item/shard{
+	icon_state = "small"
+	},
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "rd3"
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating,
+/area/ruin/powered)
+"gY" = (
+/obj/effect/turf_decal/corner/blue,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/white,
+/area/ruin/powered)
+"hk" = (
+/obj/machinery/door/airlock/maintenance_hatch,
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 8
+	},
+/turf/open/floor/plating,
+/area/ruin/powered)
+"hC" = (
+/obj/machinery/light/small,
+/obj/machinery/door/poddoor/preopen,
+/obj/machinery/door/firedoor/heavy,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/button/door{
+	id = "a";
+	name = "door lock";
+	pixel_x = -8;
+	pixel_y = -23
+	},
+/obj/machinery/button/door{
+	id = "b";
+	name = "door lock";
+	pixel_x = 1;
+	pixel_y = -23
+	},
+/obj/machinery/button/door{
+	id = "c";
+	name = "door lock";
+	pixel_x = 10;
+	pixel_y = -23
+	},
+/turf/open/floor/vault,
+/area/ruin/powered)
+"hI" = (
+/mob/living/simple_animal/hostile/zombie,
+/mob/living/simple_animal/hostile/zombie,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating,
+/area/ruin/powered)
+"ii" = (
+/obj/structure/chair/office{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/carpet/blue,
+/area/ruin/powered)
+"it" = (
+/obj/machinery/door/poddoor/preopen,
+/obj/machinery/door/firedoor/heavy,
+/obj/effect/spawner/lootdrop/maintenance/five,
+/obj/structure/closet/crate,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/vault,
+/area/ruin/powered)
+"iu" = (
+/obj/structure/table/glass,
+/obj/item/toy/figure/cmo,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/dark,
+/area/ruin/powered)
+"iA" = (
+/obj/machinery/atmospherics/components/unary/portables_connector,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/engine,
+/area/ruin/powered)
+"iH" = (
+/turf/open/floor/plasteel/airless,
+/area/ruin/powered)
+"iN" = (
+/obj/machinery/door/window,
+/turf/open/floor/carpet/blue,
+/area/ruin/powered)
+"jq" = (
+/obj/structure/table/wood/reinforced,
+/obj/item/cigbutt/cigarbutt,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/carpet/royalblue,
+/area/ruin/powered)
+"jA" = (
+/obj/machinery/door/airlock/external/glass,
+/obj/structure/fans/tiny,
+/turf/open/floor/plating,
+/area/ruin/powered)
+"jI" = (
+/obj/machinery/button/door{
+	id = "medical_lock_lobby";
+	name = "door lock";
+	pixel_x = -8;
+	pixel_y = 24
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/white,
+/area/ruin/powered)
+"jP" = (
+/mob/living/simple_animal/hostile/zombie,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/corner/black{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/black{
+	dir = 2
+	},
+/turf/open/floor/plasteel,
+/area/ruin/powered)
+"jW" = (
+/obj/machinery/door/poddoor/preopen,
+/obj/effect/gibspawner/human,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating,
+/area/ruin/powered)
+"kl" = (
+/obj/machinery/portable_atmospherics/canister/nitrogen,
+/obj/machinery/atmospherics/components/unary/portables_connector{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/engine,
+/area/ruin/powered)
+"kq" = (
+/obj/structure/chair/office{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/blood/drip,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/carpet/blue,
+/area/ruin/powered)
+"ku" = (
+/obj/machinery/atmospherics/pipe/manifold/brown/visible,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/engine,
+/area/ruin/powered)
+"kB" = (
+/obj/effect/decal/cleanable/blood,
+/obj/item/bodypart/l_arm,
+/obj/item/clothing/gloves/color/yellow,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/carpet/blue,
+/area/ruin/powered)
+"kX" = (
+/obj/effect/gibspawner/human,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/dark,
+/area/ruin/powered)
+"lu" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/dark,
+/area/ruin/powered)
+"lL" = (
+/obj/machinery/door/airlock/engineering/glass/critical,
+/turf/open/floor/plating,
+/area/ruin/powered)
+"lR" = (
+/obj/machinery/door/poddoor/preopen,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating,
+/area/ruin/powered)
+"lZ" = (
+/obj/structure/sink{
+	dir = 4;
+	pixel_x = -12
+	},
+/obj/effect/gibspawner/human,
+/mob/living/simple_animal/hostile/zombie,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/dark,
+/area/ruin/powered)
+"mS" = (
+/obj/machinery/power/terminal{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel,
+/area/ruin/powered)
+"nc" = (
+/obj/item/shard{
+	icon_state = "tiny"
+	},
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "rd3"
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating,
+/area/ruin/powered)
+"ng" = (
+/obj/effect/gibspawner/human,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/dark,
+/area/ruin/powered)
+"nR" = (
+/obj/effect/turf_decal/corner/blue{
+	dir = 8
+	},
+/obj/machinery/sleeper{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/white,
+/area/ruin/powered)
+"nV" = (
+/obj/item/shard{
+	icon_state = "tiny"
+	},
+/obj/item/shard,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "rd3"
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating,
+/area/ruin/powered)
+"os" = (
+/obj/item/mop,
+/obj/structure/mopbucket,
+/obj/effect/spawner/lootdrop/maintenance,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating,
+/area/ruin/powered)
+"oP" = (
+/obj/machinery/light/small{
+	dir = 1
+	},
+/obj/machinery/door/poddoor/preopen,
+/obj/machinery/door/firedoor/heavy,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/vault,
+/area/ruin/powered)
+"oV" = (
+/obj/item/kirbyplants/random,
+/obj/machinery/door/poddoor{
+	id = "medical_lock_medlock"
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/white,
+/area/ruin/powered)
+"po" = (
+/obj/machinery/door/airlock/maintenance_hatch,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating,
+/area/ruin/powered)
+"pM" = (
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ruin/powered)
+"pO" = (
+/obj/machinery/power/supermatter_crystal/shard,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/engine,
+/area/ruin/powered)
+"pP" = (
+/obj/structure/chair/office,
+/turf/open/floor/carpet/blue,
+/area/ruin/powered)
+"qd" = (
+/obj/machinery/door/poddoor{
+	id = "medical_lock_medlock"
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/white,
+/area/ruin/powered)
+"qm" = (
+/obj/machinery/light/small{
+	dir = 4
+	},
+/obj/machinery/door/poddoor/preopen,
+/obj/machinery/door/firedoor/heavy,
+/obj/effect/decal/cleanable/blood/splatter,
+/obj/structure/sign/poster/retro/nanotrasen_logo_70s{
+	pixel_x = 32
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/vault,
+/area/ruin/powered)
+"qs" = (
+/obj/machinery/door/airlock/research,
+/obj/machinery/door/poddoor/shutters{
+	id = "rd1"
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/dark,
+/area/ruin/powered)
+"qW" = (
+/obj/structure/table/reinforced,
+/obj/item/toy/figure/ce,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/dark,
+/area/ruin/powered)
+"rK" = (
+/turf/closed/wall/mineral/titanium,
+/area/ruin/powered)
+"rO" = (
+/obj/machinery/door/airlock/research,
+/obj/effect/mapping_helpers/airlock/abandoned,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "rd3"
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/dark,
+/area/ruin/powered)
+"rS" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/high_volume/on{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/engine,
+/area/ruin/powered)
+"rX" = (
+/obj/machinery/door/poddoor,
+/turf/open/floor/plating/airless,
+/area/ruin/powered)
+"rY" = (
+/obj/effect/mob_spawn/human/corpse/assistant{
+	outfit = /datum/outfit/job/doctor/surgeon
+	},
+/obj/effect/decal/cleanable/blood,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/dark,
+/area/ruin/powered)
+"sd" = (
+/obj/machinery/door/airlock/vault,
+/obj/machinery/door/poddoor/shutters{
+	id = "celock"
+	},
+/obj/effect/turf_decal/corner/black{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/black{
+	dir = 2
+	},
+/turf/open/floor/plasteel,
+/area/ruin/powered)
+"so" = (
+/obj/machinery/computer/card{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/dark,
+/area/ruin/powered)
+"sA" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/carpet/blue,
+/area/ruin/powered)
+"sE" = (
+/obj/effect/spawner/structure/window/shuttle,
+/turf/open/floor/plating,
+/area/ruin/powered)
+"tv" = (
+/obj/machinery/door/airlock/external/glass,
+/turf/open/floor/mineral/titanium/blue,
+/area/ruin/powered)
+"tQ" = (
+/obj/effect/turf_decal/corner/blue{
+	dir = 4
+	},
+/obj/effect/gibspawner/human,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/white,
+/area/ruin/powered)
+"tW" = (
+/obj/machinery/door/airlock/external/glass,
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 8
+	},
+/obj/structure/fans/tiny,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating,
+/area/ruin/powered)
+"tZ" = (
+/obj/machinery/door/poddoor/preopen,
+/obj/machinery/door/firedoor/heavy,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/vault,
+/area/ruin/powered)
+"ue" = (
+/obj/machinery/suit_storage_unit/ce,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/dark,
+/area/ruin/powered)
+"uq" = (
+/obj/effect/spawner/structure/window/reinforced,
+/obj/effect/spawner/structure/window/reinforced,
+/obj/machinery/door/poddoor/shutters{
+	id = "rd1"
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating,
+/area/ruin/powered)
+"uF" = (
+/obj/structure/table/optable,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/dark,
+/area/ruin/powered)
+"uG" = (
+/obj/machinery/door/airlock/engineering/glass/critical,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/engine,
+/area/ruin/powered)
+"uL" = (
+/obj/item/shard{
+	icon_state = "small"
+	},
+/obj/structure/table,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/dark,
+/area/ruin/powered)
+"uM" = (
+/obj/effect/turf_decal/number/four{
+	dir = 4
+	},
+/mob/living/simple_animal/hostile/zombie,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/dark,
+/area/ruin/powered)
+"vb" = (
+/obj/machinery/door/poddoor/ert{
+	id = "b"
+	},
+/turf/open/floor/plating,
+/area/ruin/powered)
+"vO" = (
+/obj/structure/table/optable,
+/obj/effect/mob_spawn/human/corpse/assistant/brainrot_infection,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/dark,
+/area/ruin/powered)
+"vP" = (
+/obj/machinery/atmospherics/pipe/simple/brown/visible{
+	dir = 6
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/engine,
+/area/ruin/powered)
+"vU" = (
+/obj/structure/table/wood/reinforced,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/carpet/royalblue,
+/area/ruin/powered)
+"vW" = (
+/obj/structure/bed,
+/obj/item/bedsheet/captain,
+/turf/open/floor/carpet/royalblue,
+/area/ruin/powered)
+"wa" = (
+/obj/machinery/door/airlock/maintenance_hatch,
+/turf/open/floor/plating/airless,
+/area/ruin/powered)
+"wb" = (
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/carpet/royalblue,
+/area/ruin/powered)
+"wx" = (
+/obj/machinery/atmospherics/components/unary/thermomachine/freezer/on{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/engine,
+/area/ruin/powered)
+"xf" = (
+/obj/machinery/door/poddoor/preopen,
+/obj/machinery/door/firedoor/heavy,
+/obj/effect/decal/cleanable/blood/splatter,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/vault,
+/area/ruin/powered)
+"xO" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/white,
+/area/ruin/powered)
+"yC" = (
+/obj/machinery/door/poddoor/ert{
+	id = "a"
+	},
+/turf/open/floor/plating,
+/area/ruin/powered)
+"yE" = (
+/obj/structure/bed,
+/obj/item/bedsheet/dorms,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/dark,
+/area/ruin/powered)
+"yG" = (
+/obj/structure/toilet{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/dark,
+/area/ruin/powered)
+"yP" = (
+/obj/structure/closet/secure_closet{
+	icon_state = "rd";
+	name = "chief doctor's locker";
+	req_access = list(103)
+	},
+/obj/item/storage/box/hypospray/CMO,
+/obj/item/storage/photo_album/CMO,
+/obj/item/melee/classic_baton,
+/obj/item/storage/firstaid/ancient,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/dark,
+/area/ruin/powered)
+"yQ" = (
+/obj/machinery/door/poddoor/preopen,
+/obj/machinery/door/firedoor/heavy,
+/obj/item/ammo_box/magazine/pistolm9mm{
+	start_empty = 1
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/vault,
+/area/ruin/powered)
+"yR" = (
+/obj/structure/chair/office{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/carpet/royalblue,
+/area/ruin/powered)
+"yX" = (
+/obj/structure/chair/office{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/carpet/blue,
+/area/ruin/powered)
+"zk" = (
+/obj/effect/decal/cleanable/blood/splatter,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/carpet/blue,
+/area/ruin/powered)
+"zn" = (
+/obj/machinery/door/airlock/research,
+/obj/machinery/door/poddoor/shutters{
+	id = "rd2"
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/dark,
+/area/ruin/powered)
+"zx" = (
+/obj/machinery/door/poddoor/preopen,
+/obj/machinery/door/firedoor/heavy,
+/obj/effect/decal/cleanable/blood/gibs/core,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/vault,
+/area/ruin/powered)
+"zZ" = (
+/obj/machinery/door/airlock/medical{
+	name = "OR"
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/powered)
+"Ae" = (
+/obj/machinery/button/door{
+	id = "b";
+	name = "door lock";
+	pixel_x = -24;
+	pixel_y = 10
+	},
+/obj/machinery/button/door{
+	id = "captain_lock";
+	name = "door lock";
+	pixel_x = -24;
+	pixel_y = 1
+	},
+/turf/open/floor/carpet/blue,
+/area/ruin/powered)
+"Aj" = (
+/obj/structure/marker_beacon,
+/turf/open/floor/plating,
+/area/ruin/powered)
+"An" = (
+/turf/closed/indestructible/reinforced,
+/area/ruin/powered)
+"As" = (
+/obj/effect/spawner/structure/window/reinforced/shutters,
+/turf/open/floor/plating,
+/area/ruin/powered)
+"AR" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating{
+	icon_state = "platingdmg2";
+	initial_gas_mix = "o2=22;n2=82;TEMP=503.15"
+	},
+/area/ruin/powered)
+"AT" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/dark,
+/area/ruin/powered)
+"Bk" = (
+/obj/structure/table/wood/reinforced,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/carpet/royalblue,
+/area/ruin/powered)
+"Bl" = (
+/obj/structure/sink{
+	dir = 4;
+	pixel_x = -12
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/dark,
+/area/ruin/powered)
+"Bm" = (
+/obj/structure/table/wood,
+/obj/machinery/door/window,
+/turf/open/floor/wood,
+/area/ruin/powered)
+"BD" = (
+/obj/effect/decal/cleanable/blood/splatter,
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 6
+	},
+/mob/living/simple_animal/hostile/zombie,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating,
+/area/ruin/powered)
+"BG" = (
+/mob/living/simple_animal/hostile/zombie,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel,
+/area/ruin/powered)
+"BO" = (
+/obj/effect/spawner/structure/window/reinforced,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/door/poddoor/shutters{
+	id = "rd4"
+	},
+/turf/open/floor/plating,
+/area/ruin/powered)
+"BS" = (
+/obj/effect/turf_decal/corner/blue{
+	dir = 8
+	},
+/obj/effect/turf_decal/corner/blue{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/blue{
+	dir = 4
+	},
+/obj/effect/turf_decal/corner/blue,
+/obj/machinery/medical_kiosk,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/white,
+/area/ruin/powered)
+"Ca" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/engine,
+/area/ruin/powered)
+"CJ" = (
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 9
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/powered)
+"CO" = (
+/obj/machinery/atmospherics/pipe/simple/brown/visible{
+	dir = 5
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/engine,
+/area/ruin/powered)
+"Dn" = (
+/obj/structure/shuttle/engine/propulsion/burst{
+	dir = 4
+	},
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ruin/powered)
+"Dp" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating,
+/area/ruin/powered)
+"DF" = (
+/obj/structure/table/wood/reinforced,
+/obj/item/toy/redbutton,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/carpet/royalblue,
+/area/ruin/powered)
+"DU" = (
+/obj/structure/window/plasma/reinforced/spawner{
+	dir = 1
+	},
+/obj/machinery/power/rad_collector/anchored,
+/obj/machinery/atmospherics/pipe/simple/brown/visible,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/engine,
+/area/ruin/powered)
+"DW" = (
+/obj/machinery/door/airlock/vault,
+/obj/machinery/door/poddoor{
+	id = "medical_lock_medlock"
+	},
+/obj/effect/turf_decal/corner/black{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/black{
+	dir = 2
+	},
+/turf/open/floor/plasteel,
+/area/ruin/powered)
+"Ea" = (
+/obj/item/shard{
+	icon_state = "tiny"
+	},
+/obj/item/shard{
+	icon_state = "medium"
+	},
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "rd3"
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating,
+/area/ruin/powered)
+"Ee" = (
+/obj/structure/table/optable,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/dark,
+/area/ruin/powered)
+"Ey" = (
+/obj/machinery/door/poddoor/preopen,
+/obj/machinery/door/firedoor/heavy,
+/obj/item/storage/backpack/duffelbag/syndie/c4,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/vault,
+/area/ruin/powered)
+"Ez" = (
+/turf/open/floor/plating/airless,
+/area/ruin/powered)
+"EH" = (
+/turf/closed/wall/r_wall,
+/area/ruin/powered)
+"EJ" = (
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/carpet/blue,
+/area/ruin/powered)
+"EL" = (
+/obj/structure/window/reinforced,
+/obj/structure/table/wood,
+/obj/machinery/computer/card{
+	dir = 8
+	},
+/turf/open/floor/wood,
+/area/ruin/powered)
+"EN" = (
+/obj/structure/toilet{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/dark,
+/area/ruin/powered)
+"Fk" = (
+/obj/structure/closet/secure_closet{
+	icon_state = "ce";
+	name = "chief engineer's locker";
+	req_access = list(103)
+	},
+/obj/item/clothing/under/rank/engineering/chief_engineer,
+/obj/item/weldingtool/hugetank,
+/obj/item/clothing/mask/gas/welding,
+/obj/item/clothing/gloves/combat,
+/obj/item/clothing/glasses/meson/engine,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/dark,
+/area/ruin/powered)
+"Fn" = (
+/obj/item/gun/ballistic/derringer,
+/obj/item/ammo_casing{
+	dir = 5;
+	pixel_x = 10
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/dark,
+/area/ruin/powered)
+"Fq" = (
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/powered)
+"FE" = (
+/obj/machinery/computer/rdconsole/production{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/dark,
+/area/ruin/powered)
+"FI" = (
+/turf/template_noop,
+/area/template_noop)
+"FO" = (
+/obj/structure/table/glass,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/dark,
+/area/ruin/powered)
+"FQ" = (
+/obj/machinery/door/poddoor/preopen,
+/obj/machinery/door/firedoor/heavy,
+/obj/machinery/light/small{
+	brightness = 3;
+	dir = 8
+	},
+/obj/structure/sign/poster/retro/nanotrasen_logo_70s{
+	pixel_x = -32
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/vault,
+/area/ruin/powered)
+"Gb" = (
+/obj/item/kirbyplants/random,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/corner/black{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/black{
+	dir = 2
+	},
+/turf/open/floor/plasteel,
+/area/ruin/powered)
+"Gf" = (
+/obj/machinery/door/poddoor/preopen,
+/turf/open/floor/plating/airless,
+/area/ruin/powered)
+"Gx" = (
+/obj/structure/table/glass,
+/obj/item/modular_computer/laptop/preset/civilian,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/dark,
+/area/ruin/powered)
+"GH" = (
+/obj/item/clothing/head/hardhat/white,
+/turf/template_noop,
+/area/template_noop)
+"GO" = (
+/obj/item/shard{
+	icon_state = "medium"
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/corner/black{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/black{
+	dir = 2
+	},
+/turf/open/floor/plasteel,
+/area/ruin/powered)
+"GQ" = (
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating,
+/area/ruin/powered)
+"GY" = (
+/obj/effect/turf_decal/corner/blue{
+	dir = 4
+	},
+/obj/effect/turf_decal/corner/blue{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/white,
+/area/ruin/powered)
+"Hc" = (
+/obj/structure/bed,
+/obj/item/bedsheet/dorms,
+/obj/effect/mob_spawn/human/corpse/damaged{
+	disease = null;
+	outfit = /datum/outfit/job/assistant
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/dark,
+/area/ruin/powered)
+"Hf" = (
+/obj/machinery/door/poddoor{
+	id = "medical_lock_medlock"
+	},
+/obj/effect/turf_decal/industrial/warning/cee{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/white,
+/area/ruin/powered)
+"Hx" = (
+/obj/machinery/door/poddoor/preopen,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/dark,
+/area/ruin/powered)
+"HA" = (
+/obj/machinery/atmospherics/pipe/manifold/brown/visible{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/engine,
+/area/ruin/powered)
+"Ib" = (
+/obj/machinery/door/poddoor/shutters{
+	id = "medical_lock_lobby"
+	},
+/obj/effect/spawner/structure/window/reinforced,
+/turf/open/floor/plating,
+/area/ruin/powered)
+"If" = (
+/obj/structure/grille,
+/turf/open/floor/plating,
+/area/ruin/powered)
+"Iw" = (
+/obj/effect/turf_decal/corner/blue{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/white,
+/area/ruin/powered)
+"IA" = (
+/obj/structure/displaycase/captain{
+	start_showpiece_type = /obj/item/gun/energy/laser/hitscanpistol
+	},
+/obj/machinery/door/poddoor/preopen,
+/obj/machinery/door/firedoor/heavy,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/vault,
+/area/ruin/powered)
+"IH" = (
+/obj/machinery/door/poddoor{
+	id = "medical_lock_medlock"
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 4
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/white,
+/area/ruin/powered)
+"IM" = (
+/obj/structure/chair/office,
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/carpet/royalblue,
+/area/ruin/powered)
+"IS" = (
+/obj/machinery/door/firedoor/window{
+	density = 1;
+	icon_state = "door_closed";
+	opacity = 1
+	},
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 1
+	},
+/turf/open/floor/plating,
+/area/ruin/powered)
+"IV" = (
+/obj/item/shard,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/corner/black{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/black{
+	dir = 2
+	},
+/turf/open/floor/plasteel,
+/area/ruin/powered)
+"Jh" = (
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 6
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating,
+/area/ruin/powered)
+"Jm" = (
+/obj/machinery/door/poddoor/preopen,
+/obj/structure/sign/poster/retro/nanotrasen_logo_80s{
+	pixel_x = -32
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating,
+/area/ruin/powered)
+"Ju" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/engine,
+/area/ruin/powered)
+"JH" = (
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/dark,
+/area/ruin/powered)
+"JI" = (
+/turf/open/floor/carpet/blue,
+/area/ruin/powered)
+"JJ" = (
+/obj/structure/tank_dispenser,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel,
+/area/ruin/powered)
+"JM" = (
+/obj/effect/turf_decal/corner/blue{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/blue{
+	dir = 8
+	},
+/obj/structure/table/glass,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/white,
+/area/ruin/powered)
+"JP" = (
+/obj/effect/decal/cleanable/blood/drip,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/carpet/blue,
+/area/ruin/powered)
+"Kd" = (
+/turf/closed/wall,
+/area/ruin/powered)
+"Kk" = (
+/obj/item/reagent_containers/glass/mortar,
+/obj/item/pestle,
+/obj/effect/gibspawner/human,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/dark,
+/area/ruin/powered)
+"Ko" = (
+/obj/item/ammo_casing{
+	dir = 9;
+	pixel_y = 11
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/dark,
+/area/ruin/powered)
+"Kp" = (
+/obj/machinery/power/smes,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel,
+/area/ruin/powered)
+"Kw" = (
+/obj/effect/mob_spawn/human/corpse/damaged{
+	disease = /datum/disease/brainrot;
+	outfit = /datum/outfit/job/assistant
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/dark,
+/area/ruin/powered)
+"KF" = (
+/obj/machinery/atmospherics/pipe/simple/brown/visible{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/engine,
+/area/ruin/powered)
+"KG" = (
+/obj/machinery/door/airlock/command/glass{
+	id_tag = list(103);
+	name = "Chief Doctor's Office"
+	},
+/obj/machinery/door/poddoor/shutters{
+	id = "medical_lock_cmo"
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/powered)
+"KJ" = (
+/obj/item/gun/ballistic/revolver/detective{
+	spawnwithmagazine = 0
+	},
+/obj/effect/decal/cleanable/blood,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/carpet/royalblue,
+/area/ruin/powered)
+"KK" = (
+/obj/structure/table/wood,
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/structure/window/reinforced,
+/obj/machinery/computer/communications{
+	dir = 1
+	},
+/turf/open/floor/wood,
+/area/ruin/powered)
+"KQ" = (
+/obj/effect/turf_decal/corner/blue{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/white,
+/area/ruin/powered)
+"Lt" = (
+/obj/machinery/button/door{
+	id = "celock";
+	name = "door lock";
+	pixel_x = 6;
+	pixel_y = 24
+	},
+/obj/machinery/button/door{
+	id = "c";
+	name = "door lock";
+	pixel_x = -6;
+	pixel_y = 24
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/dark,
+/area/ruin/powered)
+"LA" = (
+/obj/structure/chair/office{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/dark,
+/area/ruin/powered)
+"LD" = (
+/mob/living/simple_animal/hostile/zombie,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/carpet/royalblue,
+/area/ruin/powered)
+"LI" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/corner/black{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/black{
+	dir = 2
+	},
+/turf/open/floor/plasteel,
+/area/ruin/powered)
+"LO" = (
+/obj/effect/turf_decal/corner/blue{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/blue{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/white,
+/area/ruin/powered)
+"Mk" = (
+/obj/effect/spawner/structure/window/reinforced,
+/obj/machinery/door/poddoor/shutters{
+	id = "celock"
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating,
+/area/ruin/powered)
+"Ml" = (
+/obj/structure/sink{
+	dir = 8;
+	pixel_x = 13
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/dark,
+/area/ruin/powered)
+"ML" = (
+/obj/machinery/door/poddoor/preopen,
+/obj/machinery/door/firedoor/heavy,
+/obj/structure/closet/crate,
+/obj/effect/spawner/lootdrop/maintenance/five,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/vault,
+/area/ruin/powered)
+"Nq" = (
+/obj/structure/closet/secure_closet/chemical,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/dark,
+/area/ruin/powered)
+"NH" = (
+/obj/structure/window/plasma/reinforced/spawner,
+/obj/machinery/power/rad_collector/anchored,
+/obj/machinery/atmospherics/pipe/simple/brown/visible,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/engine,
+/area/ruin/powered)
+"NM" = (
+/obj/machinery/door/poddoor,
+/turf/open/floor/plasteel/airless,
+/area/ruin/powered)
+"NU" = (
+/obj/structure/table/wood/reinforced,
+/obj/item/flashlight/lamp/green,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/carpet/royalblue,
+/area/ruin/powered)
+"OE" = (
+/obj/effect/turf_decal/corner/blue,
+/obj/effect/turf_decal/corner/blue{
+	dir = 8
+	},
+/obj/effect/turf_decal/corner/blue{
+	dir = 1
+	},
+/obj/effect/gibspawner/human,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/white,
+/area/ruin/powered)
+"OJ" = (
+/obj/machinery/computer/crew{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/dark,
+/area/ruin/powered)
+"OV" = (
+/obj/structure/table/reinforced,
+/obj/item/paper_bin/carbon,
+/obj/item/pen,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/dark,
+/area/ruin/powered)
+"OX" = (
+/obj/structure/table,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/dark,
+/area/ruin/powered)
+"Pe" = (
+/obj/effect/decal/cleanable/blood/splatter,
+/obj/item/clothing/head/hopcap{
+	desc = "It's good to be the king.";
+	icon = 'icons/obj/clothing/hats.dmi';
+	mob_overlay_icon = 'icons/mob/clothing/head.dmi';
+	name = "captains's cap";
+	pixel_x = 5;
+	pixel_y = -4
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/carpet/blue,
+/area/ruin/powered)
+"Pn" = (
+/obj/machinery/door/poddoor/preopen,
+/obj/machinery/door/firedoor/heavy,
+/obj/effect/mob_spawn/human/corpse/syndicatesoldier,
+/obj/effect/decal/cleanable/blood,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/vault,
+/area/ruin/powered)
+"PC" = (
+/obj/machinery/door/airlock/maintenance_hatch,
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating,
+/area/ruin/powered)
+"Qz" = (
+/obj/structure/window/reinforced,
+/obj/structure/table/wood,
+/turf/open/floor/wood,
+/area/ruin/powered)
+"QI" = (
+/obj/item/kirbyplants/random,
+/obj/machinery/door/poddoor{
+	id = "medical_lock_medlock"
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/white,
+/area/ruin/powered)
+"QM" = (
+/obj/structure/table/glass,
+/obj/item/paper_bin/carbon,
+/obj/item/pen,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/dark,
+/area/ruin/powered)
+"QP" = (
+/obj/structure/filingcabinet/chestdrawer,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/dark,
+/area/ruin/powered)
+"QQ" = (
+/obj/structure/closet/secure_closet{
+	icon_state = "cap";
+	name = "captain's locker";
+	req_access = list(103)
+	},
+/obj/item/ammo_box/c38,
+/obj/item/melee/sabre,
+/obj/item/clothing/suit/hooded/wintercoat/captain,
+/obj/item/clothing/head/beret/captain,
+/obj/item/card/id/captains_spare,
+/turf/open/floor/carpet/royalblue,
+/area/ruin/powered)
+"QW" = (
+/obj/effect/gibspawner/human,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating,
+/area/ruin/powered)
+"Rs" = (
+/obj/machinery/light/small{
+	dir = 4
+	},
+/obj/machinery/door/poddoor/preopen,
+/obj/machinery/door/firedoor/heavy,
+/obj/structure/sign/poster/retro/nanotrasen_logo_70s{
+	pixel_x = 32
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/vault,
+/area/ruin/powered)
+"Rw" = (
+/obj/machinery/door/poddoor/preopen,
+/obj/machinery/door/firedoor/heavy,
+/obj/structure/closet/crate,
+/obj/effect/spawner/lootdrop/maintenance/five,
+/obj/item/camera_bug,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/vault,
+/area/ruin/powered)
+"Sm" = (
+/obj/effect/turf_decal/corner/blue,
+/obj/structure/table/glass,
+/obj/item/defibrillator/loaded,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/white,
+/area/ruin/powered)
+"SR" = (
+/obj/machinery/door/poddoor{
+	id = "medical_lock_medlock"
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/white,
+/area/ruin/powered)
+"SU" = (
+/obj/structure/table/reinforced,
+/obj/item/pipe_dispenser,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/dark,
+/area/ruin/powered)
+"Tb" = (
+/obj/effect/turf_decal/number/one{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/dark,
+/area/ruin/powered)
+"Tr" = (
+/obj/machinery/computer/crew{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/dark,
+/area/ruin/powered)
+"TB" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/carpet/royalblue,
+/area/ruin/powered)
+"TD" = (
+/obj/effect/gibspawner/human,
+/mob/living/simple_animal/hostile/zombie,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/dark,
+/area/ruin/powered)
+"Uv" = (
+/obj/effect/turf_decal/corner/blue{
+	dir = 4
+	},
+/obj/structure/sign/poster/retro/nanotrasen_logo_80s{
+	pixel_x = -32
+	},
+/obj/structure/table/glass,
+/obj/item/storage/firstaid/ancient,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/white,
+/area/ruin/powered)
+"UL" = (
+/turf/closed/wall/rust,
+/area/ruin/powered)
+"UR" = (
+/obj/effect/gibspawner/human,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/carpet/royalblue,
+/area/ruin/powered)
+"UU" = (
+/obj/machinery/button/door{
+	id = "rd4";
+	name = "door lock";
+	pixel_x = 6;
+	pixel_y = 29
+	},
+/obj/machinery/button/door{
+	id = "rd3";
+	name = "door lock";
+	pixel_x = -6;
+	pixel_y = 29
+	},
+/obj/machinery/button/door{
+	id = "rd1";
+	name = "door lock";
+	pixel_x = -6;
+	pixel_y = 38
+	},
+/obj/machinery/button/door{
+	id = "rd2";
+	name = "door lock";
+	pixel_x = 6;
+	pixel_y = 38
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/corner/black{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/black{
+	dir = 2
+	},
+/turf/open/floor/plasteel,
+/area/ruin/powered)
+"Vh" = (
+/obj/structure/toilet{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/dark,
+/area/ruin/powered)
+"Vj" = (
+/turf/closed/wall/r_wall/rust,
+/area/ruin/powered)
+"Vk" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/dark,
+/area/ruin/powered)
+"VE" = (
+/mob/living/simple_animal/hostile/zombie,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/dark,
+/area/ruin/powered)
+"VN" = (
+/obj/structure/table/reinforced,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/corner/black{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/black{
+	dir = 2
+	},
+/turf/open/floor/plasteel,
+/area/ruin/powered)
+"VV" = (
+/obj/structure/bed,
+/obj/item/bedsheet/dorms,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/dark,
+/area/ruin/powered)
+"Wl" = (
+/obj/item/shard{
+	icon_state = "tiny"
+	},
+/obj/item/shard{
+	icon_state = "medium"
+	},
+/obj/item/shard{
+	icon_state = "small"
+	},
+/obj/item/shard,
+/obj/effect/gibspawner/human,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "rd3"
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating,
+/area/ruin/powered)
+"WU" = (
+/obj/effect/spawner/lootdrop/maintenance,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating,
+/area/ruin/powered)
+"Xb" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/powered)
+"Xc" = (
+/obj/item/kirbyplants/random,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel,
+/area/ruin/powered)
+"Xg" = (
+/obj/machinery/door/airlock/vault,
+/obj/machinery/door/poddoor/shutters{
+	id = "captain_lock"
+	},
+/obj/effect/turf_decal/corner/black{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/black{
+	dir = 2
+	},
+/turf/open/floor/plasteel,
+/area/ruin/powered)
+"Xw" = (
+/obj/machinery/computer{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/corner/black{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/black{
+	dir = 2
+	},
+/turf/open/floor/plasteel,
+/area/ruin/powered)
+"Xx" = (
+/obj/structure/table/glass,
+/obj/item/storage/backpack/duffelbag/med/surgery,
+/obj/item/reagent_containers/medigel/sterilizine,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/dark,
+/area/ruin/powered)
+"Xz" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating{
+	icon_state = "panelscorched"
+	},
+/area/ruin/powered)
+"XA" = (
+/obj/structure/curtain,
+/turf/open/floor/carpet/royalblue,
+/area/ruin/powered)
+"XB" = (
+/mob/living/simple_animal/hostile/zombie,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating,
+/area/ruin/powered)
+"XC" = (
+/obj/machinery/door/airlock/command/glass{
+	id_tag = list(103);
+	name = "Captain's Office"
+	},
+/obj/machinery/door/poddoor/shutters{
+	id = "captain_lock"
+	},
+/turf/open/floor/carpet/blue,
+/area/ruin/powered)
+"XF" = (
+/obj/machinery/door/poddoor/preopen,
+/obj/machinery/door/firedoor/heavy,
+/obj/item/gun/ballistic/automatic/pistol/no_mag,
+/obj/effect/decal/cleanable/blood/gibs,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/vault,
+/area/ruin/powered)
+"XG" = (
+/obj/effect/turf_decal/corner/blue{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/blue{
+	dir = 8
+	},
+/obj/effect/turf_decal/corner/blue,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/white,
+/area/ruin/powered)
+"XH" = (
+/obj/item/kirbyplants/random,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/dark,
+/area/ruin/powered)
+"XK" = (
+/obj/machinery/atmospherics/pipe/simple/brown/visible{
+	dir = 10
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/engine,
+/area/ruin/powered)
+"XN" = (
+/obj/structure/filingcabinet/filingcabinet,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/dark,
+/area/ruin/powered)
+"Yl" = (
+/obj/effect/turf_decal/corner/blue{
+	dir = 4
+	},
+/obj/effect/turf_decal/corner/blue,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/white,
+/area/ruin/powered)
+"YM" = (
+/obj/machinery/door/poddoor/ert{
+	id = "c"
+	},
+/turf/open/floor/plating,
+/area/ruin/powered)
+"Zt" = (
+/obj/effect/spawner/structure/window/reinforced,
+/obj/machinery/door/poddoor/shutters{
+	id = "rd2"
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating,
+/area/ruin/powered)
+"Zu" = (
+/obj/machinery/door/poddoor/preopen,
+/mob/living/simple_animal/hostile/zombie,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/dark,
+/area/ruin/powered)
+"ZQ" = (
+/obj/effect/spawner/structure/window/reinforced,
+/turf/open/floor/plating,
+/area/ruin/powered)
+"ZW" = (
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating,
+/area/ruin/powered)
+
+(1,1,1) = {"
+FI
+FI
+FI
+FI
+FI
+FI
+FI
+FI
+FI
+FI
+FI
+Vj
+NM
+rX
+rX
+Gf
+EH
+FI
+FI
+FI
+FI
+FI
+FI
+FI
+FI
+FI
+FI
+FI
+FI
+FI
+FI
+FI
+FI
+FI
+FI
+FI
+FI
+FI
+FI
+"}
+(2,1,1) = {"
+FI
+FI
+FI
+FI
+FI
+FI
+FI
+FI
+FI
+FI
+FI
+EH
+Ez
+iH
+Ez
+iH
+EH
+FI
+FI
+FI
+FI
+FI
+FI
+FI
+FI
+FI
+FI
+FI
+FI
+FI
+FI
+FI
+FI
+FI
+FI
+FI
+FI
+FI
+FI
+"}
+(3,1,1) = {"
+FI
+FI
+FI
+FI
+FI
+FI
+FI
+FI
+FI
+FI
+FI
+Vj
+Ez
+iH
+Ez
+Ez
+Vj
+FI
+FI
+FI
+FI
+FI
+FI
+FI
+FI
+FI
+FI
+FI
+FI
+FI
+FI
+FI
+FI
+FI
+FI
+FI
+FI
+FI
+FI
+"}
+(4,1,1) = {"
+FI
+FI
+FI
+FI
+FI
+FI
+FI
+FI
+FI
+FI
+FI
+EH
+Ib
+fq
+fq
+Ib
+EH
+FI
+FI
+FI
+FI
+FI
+FI
+FI
+FI
+FI
+FI
+FI
+FI
+Aj
+FI
+Aj
+Aj
+FI
+Aj
+Aj
+FI
+Aj
+FI
+"}
+(5,1,1) = {"
+FI
+FI
+FI
+FI
+FI
+FI
+FI
+FI
+FI
+FI
+FI
+Vj
+jI
+xO
+xO
+xO
+Vj
+FI
+FI
+FI
+FI
+FI
+FI
+FI
+FI
+FI
+FI
+FI
+FI
+Aj
+FI
+Aj
+Aj
+FI
+Aj
+Aj
+FI
+Aj
+FI
+"}
+(6,1,1) = {"
+FI
+FI
+FI
+FI
+FI
+FI
+FI
+FI
+FI
+FI
+Vj
+EH
+Hf
+IH
+IH
+eX
+EH
+Vj
+Vj
+Vj
+Vj
+Vj
+EH
+Vj
+Vj
+EH
+Vj
+Vj
+FI
+rK
+sE
+rK
+Aj
+FI
+Aj
+Aj
+FI
+Aj
+FI
+"}
+(7,1,1) = {"
+FI
+FI
+FI
+FI
+FI
+FI
+Vj
+Vj
+Vj
+Vj
+Vj
+QI
+gY
+Yl
+xO
+Sm
+Uv
+oV
+ZQ
+aT
+iu
+lu
+Tr
+EH
+If
+WU
+If
+Vj
+FI
+pM
+dg
+pM
+Aj
+FI
+Aj
+Aj
+FI
+Aj
+FI
+"}
+(8,1,1) = {"
+FI
+FI
+FI
+FI
+FI
+FI
+Vj
+Xx
+lu
+FO
+UL
+qd
+KQ
+OE
+fe
+XG
+LO
+SR
+ZQ
+lu
+Gx
+LA
+fj
+wa
+Dp
+Dp
+Vj
+EH
+Vj
+Dn
+tv
+Dn
+Aj
+FI
+Aj
+Aj
+FI
+Aj
+FI
+"}
+(9,1,1) = {"
+FI
+FI
+FI
+FI
+FI
+FI
+Vj
+Ee
+rY
+cI
+zZ
+qd
+gY
+Iw
+XG
+tQ
+xO
+SR
+KG
+lu
+QM
+Fn
+yP
+EH
+If
+Dp
+Dp
+If
+EH
+EH
+jA
+Vj
+EH
+tW
+EH
+Vj
+jA
+EH
+Vj
+"}
+(10,1,1) = {"
+FI
+FI
+FI
+FI
+FI
+FI
+Vj
+bx
+gb
+FO
+UL
+QI
+nR
+gi
+JM
+BS
+GY
+oV
+ZQ
+Kw
+lu
+Ko
+Vj
+Vj
+EH
+Vj
+Dp
+Dp
+EH
+Xb
+Dp
+Xb
+Dp
+ZW
+Dp
+Dp
+Xb
+Dp
+EH
+"}
+(11,1,1) = {"
+FI
+FI
+FI
+EH
+Vj
+Vj
+Vj
+Vj
+Kd
+Vj
+Vj
+EH
+Vj
+EH
+Vj
+EH
+DW
+Vj
+EH
+Vj
+EH
+EH
+Vj
+Nq
+eP
+EH
+EH
+WU
+Vj
+CJ
+GQ
+Fq
+GQ
+Jh
+Xb
+Xb
+Dp
+Dp
+Vj
+"}
+(12,1,1) = {"
+FI
+FI
+FI
+EH
+gJ
+Fk
+ue
+Kd
+ek
+Vj
+Vj
+Dp
+Vk
+Dp
+Vk
+Jm
+dm
+lR
+Vk
+Dp
+Dp
+Vk
+EH
+EH
+Kk
+TD
+eD
+Dp
+EH
+ZW
+Dp
+Xb
+Xb
+Xb
+Dp
+Dp
+Xb
+Xb
+EH
+"}
+(13,1,1) = {"
+FI
+FI
+FI
+Vj
+Lt
+Vk
+Vk
+Vk
+EH
+EH
+Hx
+XB
+Dp
+Dp
+kX
+Hx
+Dp
+lR
+Dp
+Vk
+Dp
+Dp
+lR
+Vj
+EH
+Vj
+EH
+Dp
+EH
+PC
+Vj
+Vj
+Dp
+Dp
+Xb
+Dp
+Dp
+Xb
+Vj
+"}
+(14,1,1) = {"
+FI
+FI
+FI
+Vj
+qW
+OV
+SU
+Vk
+Vj
+Dp
+QW
+lR
+Dp
+Vj
+EH
+An
+yC
+An
+EH
+EH
+Vk
+Zu
+Vk
+Dp
+EH
+If
+WU
+Dp
+bL
+BD
+WU
+EH
+Dp
+Xb
+Dp
+Dp
+Xb
+Dp
+Vj
+"}
+(15,1,1) = {"
+FI
+FI
+FI
+EH
+Vk
+Vk
+Vk
+Vk
+EH
+Dp
+Dp
+Vk
+Vj
+If
+If
+Vj
+vb
+An
+If
+If
+Vj
+Vk
+Dp
+Dp
+Vj
+EH
+Vj
+Vj
+hk
+Vj
+EH
+EH
+Vj
+EH
+EH
+ZQ
+ZQ
+ZQ
+Vj
+"}
+(16,1,1) = {"
+EH
+Vj
+EH
+Vj
+Mk
+dS
+Mk
+dj
+Vj
+Vk
+Dp
+EH
+If
+An
+An
+An
+YM
+An
+An
+An
+If
+EH
+Dp
+Vk
+EH
+XH
+AT
+eo
+JH
+FE
+OJ
+QP
+Vj
+Vj
+FI
+FI
+FI
+FI
+FI
+"}
+(17,1,1) = {"
+Vj
+Xc
+dV
+dV
+dV
+dV
+dV
+JJ
+Vj
+dm
+Dp
+Vj
+If
+An
+ML
+FQ
+xf
+FQ
+ML
+An
+If
+Vj
+Dp
+Dp
+Vj
+sA
+zk
+sA
+EJ
+JP
+kq
+sA
+sA
+As
+FI
+FI
+FI
+FI
+FI
+"}
+(18,1,1) = {"
+EH
+Kp
+mS
+dV
+BG
+dV
+dV
+dV
+EH
+lR
+Hx
+Vj
+An
+An
+oP
+tZ
+tZ
+tZ
+hC
+An
+An
+An
+lR
+Hx
+EH
+TB
+dv
+LD
+wb
+NU
+Bk
+Bk
+TB
+As
+FI
+FI
+FI
+FI
+FI
+"}
+(19,1,1) = {"
+Vj
+Kp
+mS
+dV
+dV
+BG
+dV
+dV
+sd
+Vk
+Dp
+yC
+vb
+YM
+yQ
+Pn
+IA
+zx
+tZ
+YM
+vb
+yC
+Vk
+Vk
+Xg
+UR
+TB
+TB
+IM
+vU
+DF
+Bk
+yR
+As
+FI
+FI
+FI
+FI
+FI
+"}
+(20,1,1) = {"
+Vj
+Xc
+dV
+dV
+dV
+dV
+dV
+Xc
+EH
+lR
+Hx
+An
+Vj
+An
+oP
+XF
+Ey
+tZ
+hC
+An
+Vj
+An
+Hx
+lR
+EH
+TB
+TB
+TB
+KJ
+jq
+eQ
+Bk
+TB
+As
+FI
+FI
+GH
+FI
+FI
+"}
+(21,1,1) = {"
+Vj
+cd
+cd
+cd
+lL
+cd
+cd
+cd
+Vj
+Vk
+Dp
+Vj
+If
+An
+it
+qm
+tZ
+Rs
+Rw
+An
+If
+EH
+Vk
+Dp
+Vj
+sA
+sA
+zk
+ii
+Pe
+yX
+kB
+cy
+IS
+FI
+FI
+FI
+FI
+FI
+"}
+(22,1,1) = {"
+EH
+Ju
+Ju
+Ju
+Ju
+Ju
+Ju
+Ju
+EH
+hI
+Vk
+Vj
+If
+An
+An
+An
+YM
+An
+An
+An
+If
+Vj
+Dp
+Dp
+EH
+XH
+AT
+AT
+VE
+so
+bb
+XN
+EH
+EH
+FI
+FI
+FI
+FI
+FI
+"}
+(23,1,1) = {"
+EH
+vP
+kl
+EH
+uG
+EH
+iA
+CO
+Vj
+Vk
+Dp
+Vk
+Vj
+If
+If
+Vj
+vb
+An
+If
+If
+EH
+Vk
+Dp
+Vk
+Vj
+Vj
+EH
+XC
+EH
+Vj
+Vj
+eD
+EH
+FI
+FI
+FI
+FI
+FI
+FI
+"}
+(24,1,1) = {"
+Vj
+HA
+kl
+EH
+Ju
+EH
+iA
+ku
+EH
+Dp
+Dp
+jW
+Vk
+EH
+Vj
+An
+yC
+Vj
+Vj
+EH
+Vk
+lR
+Dp
+Dp
+Vj
+Ae
+KK
+JI
+Vj
+Dp
+Dp
+Dp
+Vj
+FI
+FI
+FI
+FI
+FI
+FI
+"}
+(25,1,1) = {"
+Vj
+KF
+EH
+EH
+uG
+EH
+EH
+KF
+Vj
+Vj
+Hx
+Dp
+Dp
+XB
+Vk
+lR
+Vk
+lR
+Dp
+kX
+XB
+Dp
+Hx
+EH
+Vj
+pP
+Bm
+JI
+Vj
+WU
+If
+If
+EH
+FI
+FI
+FI
+FI
+FI
+FI
+"}
+(26,1,1) = {"
+EH
+HA
+NH
+rS
+Ju
+Ca
+DU
+ku
+Vj
+If
+EH
+Vk
+Vk
+Dp
+Dp
+lR
+Vk
+Zu
+Vk
+Dp
+Dp
+Vk
+EH
+Vj
+EH
+JI
+Qz
+JI
+Vj
+Dp
+Dp
+Vj
+Vj
+FI
+FI
+FI
+FI
+FI
+FI
+"}
+(27,1,1) = {"
+Vj
+HA
+NH
+rS
+pO
+Ca
+DU
+ku
+EH
+Vj
+Vj
+EH
+Vj
+Vj
+Vj
+EH
+bZ
+EH
+EH
+EH
+EH
+EH
+Vj
+vW
+XA
+JI
+iN
+JI
+Vj
+EH
+Dp
+Vj
+FI
+FI
+FI
+FI
+FI
+FI
+FI
+"}
+(28,1,1) = {"
+EH
+XK
+NH
+rS
+Ju
+Ca
+DU
+ku
+Vj
+EH
+VV
+yG
+Vk
+Bl
+gg
+Gb
+LI
+Gb
+Ea
+lZ
+Vh
+yE
+Vj
+QQ
+XA
+JI
+EL
+JI
+Vj
+If
+Dp
+Vj
+FI
+FI
+FI
+FI
+FI
+FI
+FI
+"}
+(29,1,1) = {"
+Vj
+Vj
+EH
+EH
+eD
+Vj
+EH
+wx
+EH
+Vj
+Vk
+Vk
+Vk
+dh
+gg
+LI
+LI
+GO
+Ea
+uL
+ng
+lu
+EH
+EH
+Vj
+Vj
+EH
+eD
+EH
+EH
+WU
+Vj
+FI
+FI
+FI
+FI
+FI
+FI
+FI
+"}
+(30,1,1) = {"
+FI
+FI
+Vj
+WU
+WU
+If
+Vj
+EH
+If
+EH
+vO
+Vk
+Tb
+gE
+gg
+LI
+LI
+jP
+nV
+OX
+uM
+gb
+Ee
+EH
+Dp
+If
+EH
+Dp
+If
+Dp
+Dp
+EH
+FI
+FI
+FI
+FI
+FI
+FI
+FI
+"}
+(31,1,1) = {"
+FI
+FI
+EH
+If
+Dp
+WU
+WU
+Vj
+If
+Vj
+gg
+gg
+qs
+gg
+uq
+LI
+LI
+IV
+nc
+Wl
+rO
+Ea
+gP
+EH
+Dp
+WU
+Dp
+WU
+Dp
+Dp
+EH
+Vj
+FI
+FI
+FI
+FI
+FI
+FI
+FI
+"}
+(32,1,1) = {"
+FI
+EH
+Vj
+Dp
+Dp
+EH
+Vj
+EH
+Vj
+EH
+Gb
+LI
+LI
+LI
+LI
+LI
+LI
+fd
+jP
+LI
+LI
+LI
+Gb
+Vj
+If
+If
+Dp
+If
+EH
+Vj
+Vj
+FI
+FI
+FI
+FI
+FI
+FI
+FI
+FI
+"}
+(33,1,1) = {"
+FI
+Vj
+If
+Dp
+fW
+If
+Vj
+Dp
+Dp
+po
+LI
+LI
+jP
+LI
+LI
+jP
+LI
+LI
+LI
+LI
+LI
+GO
+LI
+eD
+WU
+XB
+Dp
+EH
+EH
+FI
+FI
+FI
+FI
+FI
+FI
+FI
+FI
+FI
+FI
+"}
+(34,1,1) = {"
+FI
+EH
+If
+WU
+Vj
+EH
+EH
+WU
+EH
+Vj
+Gb
+LI
+LI
+LI
+LI
+LI
+LI
+LI
+LI
+jP
+LI
+LI
+Gb
+Vj
+EH
+EH
+EH
+Vj
+FI
+FI
+FI
+FI
+FI
+FI
+FI
+FI
+FI
+FI
+FI
+"}
+(35,1,1) = {"
+FI
+Vj
+EH
+Dp
+Vj
+os
+Vj
+Dp
+If
+EH
+Zt
+Zt
+zn
+Zt
+Zt
+LI
+LI
+LI
+gk
+BO
+cc
+BO
+BO
+EH
+FI
+FI
+FI
+FI
+FI
+FI
+FI
+FI
+FI
+FI
+FI
+FI
+FI
+FI
+FI
+"}
+(36,1,1) = {"
+FI
+FI
+Vj
+Dp
+EH
+po
+EH
+Dp
+If
+Vj
+uF
+Vk
+fQ
+gE
+Zt
+jP
+jP
+LI
+BO
+Xz
+Xz
+Xz
+Xz
+EH
+FI
+FI
+FI
+FI
+FI
+FI
+FI
+FI
+FI
+FI
+FI
+FI
+FI
+FI
+FI
+"}
+(37,1,1) = {"
+FI
+FI
+Vj
+WU
+Dp
+Dp
+Dp
+WU
+If
+EH
+Vk
+Vk
+Vk
+bO
+Zt
+VN
+UU
+VN
+BO
+Xz
+Xz
+AR
+Xz
+Vj
+FI
+FI
+FI
+FI
+FI
+FI
+FI
+FI
+FI
+FI
+FI
+FI
+FI
+FI
+FI
+"}
+(38,1,1) = {"
+FI
+FI
+EH
+Vj
+Vj
+WU
+If
+Dp
+Dp
+EH
+Hc
+EN
+Vk
+Ml
+Zt
+Xw
+Xw
+Xw
+BO
+Xz
+Xz
+Xz
+Xz
+EH
+FI
+FI
+FI
+FI
+FI
+FI
+FI
+FI
+FI
+FI
+FI
+FI
+FI
+FI
+FI
+"}
+(39,1,1) = {"
+FI
+FI
+FI
+FI
+EH
+Vj
+EH
+Vj
+EH
+Vj
+EH
+Vj
+Vj
+Vj
+EH
+Vj
+Vj
+EH
+Vj
+EH
+EH
+Vj
+EH
+EH
+FI
+FI
+FI
+FI
+FI
+FI
+FI
+FI
+FI
+FI
+FI
+FI
+FI
+FI
+FI
+"}

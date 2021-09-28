@@ -31,6 +31,11 @@
 	var/list/user_vars_to_edit //VARNAME = VARVALUE eg: "name" = "butts"
 	var/list/user_vars_remembered //Auto built by the above + dropped() + equipped()
 
+	/// Needs to follow this syntax: either a list() with the x and y coordinates of the pixel you want to get the colour from, or a hexcolour. Colour one replaces red, two replaces blue, and three replaces green in the icon state.
+	var/list/greyscale_colors[3]
+	/// Needs to be a RGB-greyscale format icon state in all species' clothing icon files.
+	var/greyscale_icon_state
+
 	var/pocket_storage_component_path
 
 	//These allow head/mask items to dynamically alter the user's hair
@@ -44,6 +49,8 @@
 	var/list/armor_list = list()
 	///These are armor values that protect the clothing, taken from its armor datum. List updates on examine because it's currently only used to print armor ratings to chat in Topic().
 	var/list/durability_list = list()
+	/// If this can be eaten by a moth
+	var/moth_edible = TRUE
 
 /obj/item/clothing/Initialize()
 	if((clothing_flags & VOICEBOX_TOGGLABLE))
@@ -72,7 +79,7 @@
 	foodtype = CLOTH
 
 /obj/item/clothing/attack(mob/M, mob/user, def_zone)
-	if(user.a_intent != INTENT_HARM && ismoth(M))
+	if(user.a_intent != INTENT_HARM && moth_edible && ismoth(M))
 		var/obj/item/reagent_containers/food/snacks/clothing/clothing_as_food = new
 		clothing_as_food.name = name
 		if(clothing_as_food.attack(M, user, def_zone))
@@ -87,12 +94,12 @@
 			return
 		playsound(src.loc, 'sound/items/poster_ripped.ogg', 100, TRUE)
 		to_chat(user, "<span class='notice'>You cut the [src] into strips with [W].</span>")
-		var/obj/item/stack/sheet/cloth/C = new (get_turf(src), clothamnt)
+		var/obj/item/stack/sheet/cotton/cloth/C = new (get_turf(src), clothamnt)
 		user.put_in_hands(C)
 		qdel(src)
 
-	if(damaged_clothes && istype(W, /obj/item/stack/sheet/cloth))
-		var/obj/item/stack/sheet/cloth/C = W
+	if(damaged_clothes && istype(W, /obj/item/stack/sheet/cotton/cloth))
+		var/obj/item/stack/sheet/cotton/cloth/C = W
 		C.use(1)
 		update_clothes_damaged_state(FALSE)
 		obj_integrity = max_integrity
@@ -259,11 +266,18 @@
 		var/mob/M = loc
 		to_chat(M, "<span class='warning'>Your [name] starts to fall apart!</span>")
 
+//This mostly exists so subtypes can call appriopriate update icon calls on the wearer.
 /obj/item/clothing/proc/update_clothes_damaged_state(damaging = TRUE)
-	var/index = "[REF(initial(icon))]-[initial(icon_state)]"
-	var/static/list/damaged_clothes_icons = list()
 	if(damaging)
 		damaged_clothes = 1
+	else
+		damaged_clothes = 0
+
+/obj/item/clothing/update_overlays()
+	. = ..()
+	if(damaged_clothes)
+		var/index = "[REF(initial(icon))]-[initial(icon_state)]"
+		var/static/list/damaged_clothes_icons = list()
 		var/icon/damaged_clothes_icon = damaged_clothes_icons[index]
 		if(!damaged_clothes_icon)
 			damaged_clothes_icon = icon(initial(icon), initial(icon_state), , 1)	//we only want to apply damaged effect to the initial icon_state for each object
@@ -271,20 +285,16 @@
 			damaged_clothes_icon.Blend(icon('icons/effects/item_damage.dmi', "itemdamaged"), ICON_MULTIPLY) //adds damage effect and the remaining white areas become transparant
 			damaged_clothes_icon = fcopy_rsc(damaged_clothes_icon)
 			damaged_clothes_icons[index] = damaged_clothes_icon
-		add_overlay(damaged_clothes_icon, 1)
-	else
-		damaged_clothes = 0
-		cut_overlay(damaged_clothes_icons[index], TRUE)
-
+		. += damaged_clothes_icon
 
 /*
-SEE_SELF  // can see self, no matter what
-SEE_MOBS  // can see all mobs, no matter what
-SEE_OBJS  // can see all objs, no matter what
-SEE_TURFS // can see all turfs (and areas), no matter what
-SEE_PIXELS// if an object is located on an unlit area, but some of its pixels are
-          // in a lit area (via pixel_x,y or smooth movement), can see those pixels
-BLIND     // can't see anything
+* SEE_SELF  // can see self, no matter what
+* SEE_MOBS  // can see all mobs, no matter what
+* SEE_OBJS  // can see all objs, no matter what
+* SEE_TURFS // can see all turfs (and areas), no matter what
+* SEE_PIXELS// if an object is located on an unlit area, but some of its pixels are
+*           // in a lit area (via pixel_x,y or smooth movement), can see those pixels
+* BLIND     // can't see anything
 */
 
 /proc/generate_female_clothing(index,t_color,icon,type)
@@ -293,6 +303,29 @@ BLIND     // can't see anything
 	female_clothing_icon.Blend(female_s, ICON_MULTIPLY)
 	female_clothing_icon 			= fcopy_rsc(female_clothing_icon)
 	GLOB.female_clothing_icons[index] = female_clothing_icon
+
+/obj/item/clothing/proc/generate_species_clothing(file2use, state2use, species)
+	var/icon/human_clothing_icon = icon(file2use, state2use)
+
+	if(!greyscale_colors || !greyscale_icon_state)
+		GLOB.species_clothing_icons[species]["[file2use]-[state2use]"] = human_clothing_icon
+		return
+
+	var/icon/species_icon = icon(species, greyscale_icon_state)
+	var/list/final_list = list()
+	for(var/i in 1 to 3)
+		if(length(greyscale_colors) < i)
+			final_list += "#00000000"
+			continue
+		var/color = greyscale_colors[i]
+		if(islist(color))
+			final_list += human_clothing_icon.GetPixel(color[1], color[2]) || "#00000000"
+		else if(istext(color))
+			final_list += color
+
+	species_icon.MapColors(final_list[1], final_list[2], final_list[3])
+	species_icon = fcopy_rsc(species_icon)
+	GLOB.species_clothing_icons[species]["[file2use]-[state2use]"] = species_icon
 
 /obj/item/clothing/under/verb/toggle()
 	set name = "Adjust Suit Sensors"

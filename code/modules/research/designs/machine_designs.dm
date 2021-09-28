@@ -274,20 +274,13 @@
 	category = list("Research Machinery")
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
 
-/datum/design/board/rdservercontrol
-	name = "Computer Design (R&D Server Control Console Board)"
-	desc = "The circuit board for an R&D Server Control Console."
-	id = "rdservercontrol"
-	build_path = /obj/item/circuitboard/computer/rdservercontrol
-	category = list("Research Machinery")
-	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
-
 /datum/design/board/rdserver
 	name = "Machine Design (R&D Server Board)"
 	desc = "The circuit board for an R&D Server."
 	id = "rdserver"
+	build_type = AUTOLATHE | IMPRINTER
 	build_path = /obj/item/circuitboard/machine/rdserver
-	category = list("Research Machinery")
+	category = list("Research Machinery", "initial", "Equipment")
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/board/mechfab
@@ -479,7 +472,7 @@
 	name = "Machine Design (Mining Rewards Vendor Board)"
 	desc = "The circuit board for a Mining Rewards Vendor."
 	id = "mining_equipment_vendor"
-	build_path = /obj/item/circuitboard/machine/mining_equipment_vendor
+	build_path = /obj/item/circuitboard/machine/vending/mining_equipment
 	category = list ("Misc. Machinery")
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE | DEPARTMENTAL_FLAG_CARGO
 
@@ -587,6 +580,14 @@
 	category = list ("Research Machinery")
 	departmental_flags = DEPARTMENTAL_FLAG_CARGO
 
+/datum/design/board/selling_pad
+	name = "Machine Design (Cargo Hold Pad)"
+	desc = "The circuit board for a Cargo Hold Pad."
+	id = "selling_pad"
+	build_path = /obj/item/circuitboard/machine/selling_pad
+	category = list ("Misc. Machinery")
+	departmental_flags = DEPARTMENTAL_FLAG_CARGO
+
 /datum/design/board/paystand
 	name = "Machine Design (Pay Stand)"
 	desc = "The circuit board for a paystand."
@@ -618,14 +619,6 @@
 	build_path = /obj/item/circuitboard/machine/autodoc
 	category = list("Medical Machinery")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
-
-/datum/design/board/spaceship_navigation_beacon
-	name = "Machine Design (Bluespace Navigation Gigabeacon)"
-	desc = "The circuit board for a Bluespace Navigation Gigabeacon."
-	id = "spaceship_navigation_beacon"
-	build_path = /obj/item/circuitboard/machine/spaceship_navigation_beacon
-	category = list ("Teleportation Machinery")
-	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/board/medical_kiosk
 	name = "Machine Design (Medical Kiosk)"

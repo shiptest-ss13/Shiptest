@@ -46,13 +46,13 @@
 	addtimer(CALLBACK(src, .proc/return_control, src.loc), delay)
 
 /mob/living/captive_brain/proc/return_control(mob/living/simple_animal/borer/B)
-    if(!B || !B.controlling)
-        return
+	if(!B || !B.controlling)
+		return
 
-    B.victim.adjustOrganLoss(ORGAN_SLOT_BRAIN, rand(5, 10))
-    to_chat(src, "<span class='danger'>With an immense exertion of will, you regain control of your body!</span>")
-    to_chat(B, "<span class='danger'>You feel control of the host brain ripped from your grasp, and retract your probosci before the wild neural impulses can damage you.</span>")
-    B.detatch()
+	B.victim.adjustOrganLoss(ORGAN_SLOT_BRAIN, rand(5, 10))
+	to_chat(src, "<span class='danger'>With an immense exertion of will, you regain control of your body!</span>")
+	to_chat(B, "<span class='danger'>You feel control of the host brain ripped from your grasp, and retract your probosci before the wild neural impulses can damage you.</span>")
+	B.detatch()
 
 GLOBAL_LIST_EMPTY(borers)
 GLOBAL_VAR_INIT(total_borer_hosts_needed, 3)

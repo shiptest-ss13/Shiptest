@@ -1,16 +1,16 @@
-#define GUILLOTINE_BLADE_MAX_SHARP  10 // This is maxiumum sharpness and will decapitate without failure
-#define GUILLOTINE_DECAP_MIN_SHARP  7  // Minimum amount of sharpness for decapitation. Any less and it will just do severe brute damage
+#define GUILLOTINE_BLADE_MAX_SHARP 10 // This is maxiumum sharpness and will decapitate without failure
+#define GUILLOTINE_DECAP_MIN_SHARP 7  // Minimum amount of sharpness for decapitation. Any less and it will just do severe brute damage
 #define GUILLOTINE_ANIMATION_LENGTH 9 // How many deciseconds the animation is
-#define GUILLOTINE_BLADE_RAISED     1
-#define GUILLOTINE_BLADE_MOVING     2
-#define GUILLOTINE_BLADE_DROPPED    3
+#define GUILLOTINE_BLADE_RAISED 1
+#define GUILLOTINE_BLADE_MOVING 2
+#define GUILLOTINE_BLADE_DROPPED 3
 #define GUILLOTINE_BLADE_SHARPENING 4
-#define GUILLOTINE_HEAD_OFFSET      16 // How much we need to move the player to center their head
-#define GUILLOTINE_LAYER_DIFF       1.2 // How much to increase/decrease a head when it's buckled/unbuckled
-#define GUILLOTINE_ACTIVATE_DELAY   30 // Delay for executing someone
-#define GUILLOTINE_WRENCH_DELAY     10
-#define GUILLOTINE_ACTION_INUSE      5
-#define GUILLOTINE_ACTION_WRENCH     6
+#define GUILLOTINE_HEAD_OFFSET 16 // How much we need to move the player to center their head
+#define GUILLOTINE_LAYER_DIFF 1.2 // How much to increase/decrease a head when it's buckled/unbuckled
+#define GUILLOTINE_ACTIVATE_DELAY 30 // Delay for executing someone
+#define GUILLOTINE_WRENCH_DELAY 10
+#define GUILLOTINE_ACTION_INUSE 5
+#define GUILLOTINE_ACTION_WRENCH 6
 
 /obj/structure/guillotine
 	name = "guillotine"
@@ -84,8 +84,9 @@
 		if (GUILLOTINE_BLADE_RAISED)
 			if (LAZYLEN(buckled_mobs))
 				if (user.a_intent == INTENT_HARM)
-					user.visible_message("<span class='warning'>[user] begins to pull the lever!</span>",
-						                 "<span class='warning'>You begin to the pull the lever.</span>")
+					user.visible_message(
+						"<span class='warning'>[user] begins to pull the lever!</span>",
+						"<span class='warning'>You begin to the pull the lever.</span>")
 					current_action = GUILLOTINE_ACTION_INUSE
 
 					if (do_after(user, GUILLOTINE_ACTIVATE_DELAY, target = src) && blade_status == GUILLOTINE_BLADE_RAISED)
@@ -172,8 +173,9 @@
 				blade_status = GUILLOTINE_BLADE_SHARPENING
 				if(do_after(user, 7, target = src))
 					blade_status = GUILLOTINE_BLADE_RAISED
-					user.visible_message("<span class='notice'>[user] sharpens the large blade of the guillotine.</span>",
-						                 "<span class='notice'>You sharpen the large blade of the guillotine.</span>")
+					user.visible_message(
+						"<span class='notice'>[user] sharpens the large blade of the guillotine.</span>",
+						"<span class='notice'>You sharpen the large blade of the guillotine.</span>")
 					blade_sharpness += 1
 					playsound(src, 'sound/items/unsheath.ogg', 100, TRUE)
 					return

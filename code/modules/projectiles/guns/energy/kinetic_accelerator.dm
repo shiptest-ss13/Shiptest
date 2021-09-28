@@ -16,6 +16,7 @@
 	knife_x_offset = 20
 	knife_y_offset = 12
 	internal_cell = TRUE //prevents you from giving it an OP cell - WS Edit
+	custom_price = 750
 	var/overheat_time = 16
 	var/holds_charge = FALSE
 	var/unique_frequency = FALSE // modified by KA modkits
@@ -316,6 +317,7 @@
 	desc = "Increases the range of a kinetic accelerator when installed."
 	modifier = 1
 	cost = 25
+	custom_price = 1000
 
 /obj/item/borg/upgrade/modkit/range/modify_projectile(obj/projectile/kinetic/K)
 	K.range += modifier
@@ -326,6 +328,7 @@
 	name = "damage increase"
 	desc = "Increases the damage of kinetic accelerator when installed."
 	modifier = 10
+	custom_price = 1000
 
 /obj/item/borg/upgrade/modkit/damage/modify_projectile(obj/projectile/kinetic/K)
 	K.damage += modifier
@@ -337,6 +340,7 @@
 	desc = "Decreases the cooldown of a kinetic accelerator. Not rated for minebot use."
 	modifier = 3.2
 	minebot_upgrade = FALSE
+	custom_price = 1000
 
 /obj/item/borg/upgrade/modkit/cooldown/install(obj/item/gun/energy/kinetic_accelerator/KA, mob/user)
 	. = ..()
@@ -364,6 +368,7 @@
 	modifier = 0
 	var/turf_aoe = FALSE
 	var/stats_stolen = FALSE
+	custom_price = 2000
 
 /obj/item/borg/upgrade/modkit/aoe/install(obj/item/gun/energy/kinetic_accelerator/KA, mob/user)
 	. = ..()
@@ -552,6 +557,7 @@
 	desc = "Makes your KA yellow. All the fun of having a more powerful KA without actually having a more powerful KA."
 	cost = 0
 	denied_type = /obj/item/borg/upgrade/modkit/chassis_mod
+	custom_price = 200
 	var/chassis_icon = "kineticgun_u"
 	var/chassis_name = "super-kinetic accelerator"
 
@@ -571,6 +577,7 @@
 	desc = "Makes your KA orange. All the fun of having explosive blasts without actually having explosive blasts."
 	chassis_icon = "kineticgun_h"
 	chassis_name = "hyper-kinetic accelerator"
+	custom_premium_price = 300
 
 /obj/item/borg/upgrade/modkit/tracer
 	name = "white tracer bolts"
@@ -586,6 +593,7 @@
 /obj/item/borg/upgrade/modkit/tracer/adjustable
 	name = "adjustable tracer bolts"
 	desc = "Causes kinetic accelerator bolts to have an adjustable-colored tracer trail and explosion. Use in-hand to change color."
+	custom_price = 150
 
 /obj/item/borg/upgrade/modkit/tracer/adjustable/attack_self(mob/user)
 	bolt_color = input(user,"","Choose Color",bolt_color) as color|null

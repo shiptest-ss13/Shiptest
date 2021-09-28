@@ -30,6 +30,7 @@
 	var/bitcoinmining = FALSE
 	///research points stored
 	var/stored_research = 0
+	var/datum/techweb/linked_techweb
 
 /obj/machinery/power/rad_collector/anchored/Initialize()
 	. = ..()
@@ -40,12 +41,8 @@
 	req_access = list(ACCESS_ENGINE_EQUIP, ACCESS_ATMOSPHERICS)
 
 /obj/machinery/power/rad_collector/Destroy()
+	linked_techweb = null
 	return ..()
-
-/*WS Edit - Smartwire Revert
-/obj/machinery/power/rad_collector/should_have_node()
-	return anchored
-*/
 
 /obj/machinery/power/rad_collector/process()
 	if(!loaded_tank)
@@ -63,7 +60,7 @@
 			var/power_produced = RAD_COLLECTOR_OUTPUT
 			add_avail(power_produced)
 			stored_energy-=power_produced
-	else if(is_station_level(z) && SSresearch.science_tech)
+	else if(linked_techweb)
 		if(!loaded_tank.air_contents.get_moles(GAS_TRITIUM) || !loaded_tank.air_contents.get_moles(GAS_O2))
 			playsound(src, 'sound/machines/ding.ogg', 50, TRUE)
 			eject()
@@ -77,7 +74,7 @@
 			if(D)
 				D.adjust_money(bitcoins_mined*RAD_COLLECTOR_MINING_CONVERSION_RATE)
 			stored_research += bitcoins_mined*RAD_COLLECTOR_MINING_CONVERSION_RATE*PRIVATE_TECHWEB_GAIN
-			SSresearch.science_tech.add_point_type(TECHWEB_POINT_TYPE_DEFAULT, bitcoins_mined*RAD_COLLECTOR_MINING_CONVERSION_RATE*PUBLIC_TECHWEB_GAIN)
+			linked_techweb.add_point_type(TECHWEB_POINT_TYPE_DEFAULT, bitcoins_mined*RAD_COLLECTOR_MINING_CONVERSION_RATE*PUBLIC_TECHWEB_GAIN)
 			stored_energy-=bitcoins_mined
 
 /obj/machinery/power/rad_collector/interact(mob/user)
@@ -170,15 +167,18 @@
 	return TRUE
 
 /obj/machinery/power/rad_collector/multitool_act(mob/living/user, obj/item/I)
-	if(!is_station_level(z) && !SSresearch.science_tech)
-		to_chat(user, "<span class='warning'>[src] isn't linked to a research system!</span>")
-		return TRUE
 	if(locked)
 		to_chat(user, "<span class='warning'>[src] is locked!</span>")
 		return TRUE
 	if(active)
 		to_chat(user, "<span class='warning'>[src] is currently active, producing [bitcoinmining ? "research points":"power"].</span>")
 		return TRUE
+	var/obj/item/multitool/multi = I
+	if(istype(multi.buffer, /obj/machinery/rnd/server))
+		var/obj/machinery/rnd/server/serv = multi.buffer
+		linked_techweb = serv.stored_research
+		visible_message("Linked to Server!")
+		return
 	bitcoinmining = !bitcoinmining
 	to_chat(user, "<span class='warning'>You [bitcoinmining ? "enable":"disable"] the research point production feature of [src].</span>")
 	return TRUE

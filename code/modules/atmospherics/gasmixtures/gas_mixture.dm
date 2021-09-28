@@ -3,12 +3,14 @@ What are the archived variables for?
 	Calculations are done using the archived variables with the results merged into the regular variables.
 	This prevents race conditions that arise based on the order of tile processing.
 */
-#define MINIMUM_HEAT_CAPACITY	0.0003
-#define MINIMUM_MOLE_COUNT		0.01
+#define MINIMUM_HEAT_CAPACITY 0.0003
+#define MINIMUM_MOLE_COUNT 0.01
 #define QUANTIZE(variable)		(round(variable,0.0000001))/*I feel the need to document what happens here. Basically this is used to catch most rounding errors, however it's previous value made it so that
 															once gases got hot enough, most procedures wouldnt occur due to the fact that the mole counts would get rounded away. Thus, we lowered it a few orders of magnititude */
 
 /datum/gas_mixture
+	/// Never ever set this variable, hooked into vv_get_var for view variables viewing.
+	var/gas_list_view_only
 	var/initial_volume = CELL_VOLUME //liters
 	var/list/reaction_results
 	var/list/analyzer_results //used for analyzer feedback - not initialized until its used
@@ -26,6 +28,76 @@ GLOBAL_LIST_INIT(auxtools_atmos_initialized, FALSE)
 		GLOB.auxtools_atmos_initialized = TRUE
 	__gasmixture_register()
 	reaction_results = new
+
+/datum/gas_mixture/vv_edit_var(var_name, var_value)
+	if(var_name == NAMEOF(src, _extools_pointer_gasmixture))
+		return FALSE // please no. segfaults bad.
+	if(var_name == NAMEOF(src, gas_list_view_only))
+		return FALSE
+	return ..()
+
+/datum/gas_mixture/vv_get_var(var_name)
+	. = ..()
+	if(var_name == NAMEOF(src, gas_list_view_only))
+		var/list/dummy = get_gases()
+		for(var/gas in dummy)
+			dummy[gas] = get_moles(gas)
+		return debug_variable("gases (READ ONLY)", dummy, 0, src)
+
+/datum/gas_mixture/vv_get_dropdown()
+	. = ..()
+	VV_DROPDOWN_OPTION("", "---")
+	VV_DROPDOWN_OPTION(VV_HK_PARSE_GASSTRING, "Parse Gas String")
+	VV_DROPDOWN_OPTION(VV_HK_EMPTY, "Empty")
+	VV_DROPDOWN_OPTION(VV_HK_SET_MOLES, "Set Moles")
+	VV_DROPDOWN_OPTION(VV_HK_SET_TEMPERATURE, "Set Temperature")
+	VV_DROPDOWN_OPTION(VV_HK_SET_VOLUME, "Set Volume")
+
+/datum/gas_mixture/vv_do_topic(list/href_list)
+	. = ..()
+	if(!.)
+		return
+	if(href_list[VV_HK_PARSE_GASSTRING])
+		var/gasstring = input(usr, "Input Gas String (WARNING: Advanced. Don't use this unless you know how these work.", "Gas String Parse") as text|null
+		if(!istext(gasstring))
+			return
+		log_admin("[key_name(usr)] modified gas mixture [REF(src)]: Set to gas string [gasstring].")
+		message_admins("[key_name(usr)] modified gas mixture [REF(src)]: Set to gas string [gasstring].")
+		parse_gas_string(gasstring)
+	if(href_list[VV_HK_EMPTY])
+		log_admin("[key_name(usr)] emptied gas mixture [REF(src)].")
+		message_admins("[key_name(usr)] emptied gas mixture [REF(src)].")
+		clear()
+	if(href_list[VV_HK_SET_MOLES])
+		var/list/gases = get_gases()
+		for(var/gas in gases)
+			gases[gas] = get_moles(gas)
+		var/gasid = input(usr, "What kind of gas?", "Set Gas") as null|anything in GLOB.gas_data.ids
+		if(!gasid)
+			return
+		var/amount = input(usr, "Input amount", "Set Gas", gases[gasid] || 0) as num|null
+		if(!isnum(amount))
+			return
+		amount = max(0, amount)
+		log_admin("[key_name(usr)] modified gas mixture [REF(src)]: Set gas [gasid] to [amount] moles.")
+		message_admins("[key_name(usr)] modified gas mixture [REF(src)]: Set gas [gasid] to [amount] moles.")
+		set_moles(gasid, amount)
+	if(href_list[VV_HK_SET_TEMPERATURE])
+		var/temp = input(usr, "Set the temperature of this mixture to?", "Set Temperature", return_temperature()) as num|null
+		if(!isnum(temp))
+			return
+		temp = max(2.7, temp)
+		log_admin("[key_name(usr)] modified gas mixture [REF(src)]: Changed temperature to [temp].")
+		message_admins("[key_name(usr)] modified gas mixture [REF(src)]: Changed temperature to [temp].")
+		set_temperature(temp)
+	if(href_list[VV_HK_SET_VOLUME])
+		var/volume = input(usr, "Set the volume of this mixture to?", "Set Volume", return_volume()) as num|null
+		if(!isnum(volume))
+			return
+		volume = max(0, volume)
+		log_admin("[key_name(usr)] modified gas mixture [REF(src)]: Changed volume to [volume].")
+		message_admins("[key_name(usr)] modified gas mixture [REF(src)]: Changed volume to [volume].")
+		set_volume(volume)
 
 /*
 we use a hook instead
@@ -81,6 +153,19 @@ we use a hook instead
 /datum/gas_mixture/proc/get_moles(gas_type)
 /datum/gas_mixture/proc/set_moles(gas_type, moles)
 /datum/gas_mixture/proc/scrub_into(datum/gas_mixture/target, ratio, list/gases)
+
+// VV WRAPPERS - EXTOOLS HOOKED PROCS DO NOT TAKE ARGUMENTS FROM CALL() FOR SOME REASON.
+/datum/gas_mixture/proc/vv_set_moles(gas_type, moles)
+	return set_moles(gas_type, moles)
+/datum/gas_mixture/proc/vv_get_moles(gas_type)
+	return get_moles(gas_type)
+/datum/gas_mixture/proc/vv_set_temperature(new_temp)
+	return set_temperature(new_temp)
+/datum/gas_mixture/proc/vv_set_volume(new_volume)
+	return set_volume(new_volume)
+/datum/gas_mixture/proc/vv_react(datum/holder)
+	return react(holder)
+
 /datum/gas_mixture/proc/mark_immutable()
 /datum/gas_mixture/proc/mark_vacuum()
 /datum/gas_mixture/proc/get_gases()

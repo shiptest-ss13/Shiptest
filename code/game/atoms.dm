@@ -38,15 +38,13 @@
 	var/explosion_block = 0
 
 	/**
-	  * used to store the different colors on an atom
-	  *
-	  * its inherent color, the colored paint applied on it, special color effect etc...
-	  */
+	* used to store the different colors on an atom
+	*
+	* its inherent color, the colored paint applied on it, special color effect etc...
+	*/
 	var/list/atom_colours
 
 
-	///overlays that should remain on top and not normally removed when using cut_overlay functions, like c4.
-	var/list/priority_overlays
 	/// a very temporary list of overlays to remove
 	var/list/remove_overlays
 	/// a very temporary list of overlays to add
@@ -227,6 +225,10 @@
 			smoothing_flags |= SMOOTH_OBJ
 		SET_BITFLAG_LIST(canSmoothWith)
 
+	var/area/ship/current_ship_area = get_area(src)
+	if(!mapload && istype(current_ship_area) && current_ship_area.mobile_port)
+		connect_to_shuttle(current_ship_area.mobile_port, current_ship_area.mobile_port.get_docked())
+
 	var/temp_list = list()
 	for(var/i in custom_materials)
 		temp_list[SSmaterials.GetMaterialRef(i)] = custom_materials[i] //Get the proper instanced version
@@ -273,12 +275,12 @@
 			AA.remove_from_hud(src)
 
 	if(reagents)
-		qdel(reagents)
+		QDEL_NULL(reagents)
 
 	orbiters = null // The component is attached to us normaly and will be deleted elsewhere
 
 	LAZYCLEARLIST(overlays)
-	LAZYCLEARLIST(priority_overlays)
+	LAZYCLEARLIST(managed_overlays)
 
 	for(var/i in targeted_by)
 		var/mob/M = i

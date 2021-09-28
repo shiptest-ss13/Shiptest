@@ -12,13 +12,14 @@
 	var/list/obj/machinery/vending/vendingMachines = list()
 	var/list/obj/machinery/vending/infectedMachines = list()
 	var/obj/machinery/vending/originMachine
-	var/list/rampant_speeches = list("Try our aggressive new marketing strategies!", \
-									 "You should buy products to feed your lifestyle obsession!", \
-									 "Consume!", \
-									 "Your money can buy happiness!", \
-									 "Engage direct marketing!", \
-									 "Advertising is legalized lying! But don't let that put you off our great deals!", \
-									 "You don't want to buy anything? Yeah, well, I didn't want to buy your mom either.")
+	var/list/rampant_speeches = list(
+		"Try our aggressive new marketing strategies!",
+		"You should buy products to feed your lifestyle obsession!",
+		"Consume!",
+		"Your money can buy happiness!",
+		"Engage direct marketing!",
+		"Advertising is legalized lying! But don't let that put you off our great deals!",
+		"You don't want to buy anything? Yeah, well, I didn't want to buy your mom either.")
 
 
 /datum/round_event/brand_intelligence/announce(fake)
@@ -32,8 +33,6 @@
 
 /datum/round_event/brand_intelligence/start()
 	for(var/obj/machinery/vending/V in GLOB.machines)
-		if(!is_station_level(V.z))
-			continue
 		vendingMachines.Add(V)
 	if(!vendingMachines.len)
 		kill()

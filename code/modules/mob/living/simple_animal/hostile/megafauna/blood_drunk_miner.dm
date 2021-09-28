@@ -58,9 +58,10 @@ Difficulty: Medium
 	deathmessage = "falls to the ground, decaying into glowing particles."
 	deathsound = "bodyfall"
 	footstep_type = FOOTSTEP_MOB_HEAVY
-	attack_action_types = list(/datum/action/innate/megafauna_attack/dash,
-							   /datum/action/innate/megafauna_attack/kinetic_accelerator,
-							   /datum/action/innate/megafauna_attack/transform_weapon)
+	attack_action_types = list(
+		/datum/action/innate/megafauna_attack/dash,
+		/datum/action/innate/megafauna_attack/kinetic_accelerator,
+		/datum/action/innate/megafauna_attack/transform_weapon)
 
 /mob/living/simple_animal/hostile/megafauna/blood_drunk_miner/Initialize()
 	. = ..()
@@ -156,11 +157,10 @@ Difficulty: Medium
 		if(L.stat == DEAD)
 			visible_message("<span class='danger'>[src] butchers [L]!</span>",
 			"<span class='userdanger'>You butcher [L], restoring your health!</span>")
-			if(!is_station_level(z) || client) //NPC monsters won't heal while on station
-				if(guidance)
-					adjustHealth(-L.maxHealth)
-				else
-					adjustHealth(-(L.maxHealth * 0.5))
+			if(guidance)
+				adjustHealth(-L.maxHealth)
+			else
+				adjustHealth(-(L.maxHealth * 0.5))
 			L.gib()
 			return TRUE
 	changeNext_move(CLICK_CD_MELEE)
