@@ -811,3 +811,144 @@
 	id = /obj/item/card/id/syndicate_command/captain_id
 	backpack_contents = list(/obj/item/documents/syndicate/red, /obj/item/paper/fluff/ruins/forgottenship/password)
 	implants = list(/obj/item/implant/weapons_auth)
+
+//ashdrake lair ghost roles
+/obj/effect/mob_spawn/human/doctor/alive/lost
+	name = "old cryogenics pod"
+	desc = "A sleeper designed to put its occupant into a deep coma."
+	mob_name = "a lost vet"
+	short_desc = "You are a animal doctor who just woke up in..?"
+	flavour_text = "What...? Where are you? Where are the others? This isn't the animal hospital anymore, where the hell are you? \
+	Where is everyone? Where did they go? What happened to the hospital? And is that <i>smoke</i> you smell? \
+	One of the cats scratched you just a few minutes ago. That's why you were asleep - to heal the scratch. The scabs are still fresh."
+	assignedrole = "Lost Vet"
+
+/obj/effect/mob_spawn/human/doctor/alive/lost/Initialize(mapload)
+	var/area/A = get_area(src)
+	if(A)
+		notify_ghosts("Someone has defeated a ash drake! A prisoner has been freed in \the [A.name]!", source = src, action=NOTIFY_ATTACK, flashwindow = FALSE)
+
+/obj/effect/mob_spawn/human/lostcentcom
+	icon = 'icons/obj/machines/sleeper.dmi'
+	icon_state = "sleeper"
+	name = "old cryogenics pod"
+	desc = "A sleeper designed to put its occupant into a deep coma."
+	short_desc = "You are a CentCom Official."
+	flavour_text = "Central Command is sending you to... wait, where the hell even are you?"
+	assignedrole = "Lost CentCom Official"
+	death = FALSE
+	roundstart = FALSE
+	random = TRUE
+	outfit = /datum/outfit/centcom/centcom_official
+
+/obj/effect/mob_spawn/human/lostcentcom/Initialize(mapload)
+	var/area/A = get_area(src)
+	if(A)
+		notify_ghosts("Someone has defeated a ash drake! A prisoner has been freed in \the [A.name]!", source = src, action=NOTIFY_ATTACK, flashwindow = FALSE)
+
+/obj/effect/mob_spawn/human/lostshaftminer
+	icon = 'icons/obj/machines/sleeper.dmi'
+	icon_state = "sleeper"
+	name = "old cryogenics pod"
+	desc = "A sleeper designed to put its occupant into a deep coma."
+	short_desc = "You are a Shaft Miner."
+	flavour_text = "You were mining peacefully, then a ash drake suddenly attacked, then you have died... or so you thought?\
+	You have no idea where you now, but you are glad to be alive."
+	assignedrole = "Lost Shaft Miner"
+	death = FALSE
+	roundstart = FALSE
+	random = TRUE
+	outfit = /datum/outfit/job/miner/equipped
+
+/obj/effect/mob_spawn/human/lostshaftminer/Initialize(mapload)
+	var/area/A = get_area(src)
+	if(A)
+		notify_ghosts("Someone has defeated a ash drake! A prisoner has been freed in \the [A.name]!", source = src, action=NOTIFY_ATTACK, flashwindow = FALSE)
+
+/obj/effect/mob_spawn/human/lostashwalker_heir
+	icon = 'icons/obj/machines/sleeper.dmi'
+	icon_state = "sleeper"
+	name = "old cryogenics pod"
+	desc = "A sleeper designed to put its occupant into a deep coma."
+	short_desc = "You are the heir to a Ash Kingdom."
+	flavour_text = "You are the heir to a great kingdom in the area. You were sent on a diplomatic mission to another kingdom and... wait where are you?"
+	assignedrole = "Lost Ash Kingdom Heir"
+	death = FALSE
+	roundstart = FALSE
+	random = TRUE
+	mob_species = /datum/species/lizard/ashwalker/kobold
+	outfit = /datum/outfit/ashwalker/heir
+
+/datum/outfit/ashwalker/heir
+	name ="Ashwalker Heir"
+	head = /obj/item/clothing/head/hopcap
+	neck = /obj/item/clothing/neck/cloak/head_of_personnel
+	uniform = /obj/item/clothing/under/color/brown
+	belt = /obj/item/storage/belt/sabre
+
+/obj/effect/mob_spawn/human/lostashwalker_heir/Initialize(mapload)
+	var/area/A = get_area(src)
+	if(A)
+		notify_ghosts("Someone has defeated a ash drake! A prisoner has been freed in \the [A.name]!", source = src, action=NOTIFY_ATTACK, flashwindow = FALSE)
+
+/obj/effect/mob_spawn/human/lostassistant
+	icon = 'icons/obj/machines/sleeper.dmi'
+	icon_state = "sleeper"
+	name = "old cryogenics pod"
+	desc = "A sleeper designed to put its occupant into a deep coma."
+	short_desc = "You are a Assistant."
+	flavour_text = "You are an assistant on a state of the art station. Except you aren't, really. You aren't even lost either. You are simply here to see the cool dragon.\
+	When you saw it, you thought \"What a cool dragon\" When it saw you, it thought \"What a cool snack\". You have no idea why it hasn't eaten you yet, but you are now\
+	an assistant in an very much not state-of-the-art ashdrake prison."
+	assignedrole = "Lost Assistant"
+	important_info = "You are very much obsessed with the dragon. Do NOT stop thinking about the dragon."
+	death = FALSE
+	roundstart = FALSE
+	random = TRUE
+	outfit = /datum/outfit/job/assistant
+	mob_species = /datum/species/ipc
+
+/obj/effect/mob_spawn/human/lostassistant/Initialize(mapload)
+	var/area/A = get_area(src)
+	if(A)
+		notify_ghosts("Someone has defeated a ash drake! A prisoner has been freed in \the [A.name]!", source = src, action=NOTIFY_ATTACK, flashwindow = FALSE)
+
+/obj/effect/mob_spawn/human/lostsyndicate
+	icon = 'icons/obj/machines/sleeper.dmi'
+	icon_state = "sleeper"
+	name = "old cryogenics pod"
+	desc = "A sleeper designed to put its occupant into a deep coma."
+	short_desc = "You are a Syndicate Operative."
+	flavour_text = "You are a nuclear agent! Your objective is- wait where the hell are you? This isn't the base, so where are you?"
+	assignedrole = "Lost Syndicate"
+	death = FALSE
+	roundstart = FALSE
+	random = TRUE
+	outfit = /datum/outfit/syndicate/lost
+
+/datum/outfit/syndicate/lost
+	name = "Syndicate Operative - Lost"
+	tc = 10
+
+/obj/effect/mob_spawn/human/lostsyndicate/Initialize(mapload)
+	var/area/A = get_area(src)
+	if(A)
+		notify_ghosts("Someone has defeated a ash drake! A prisoner has been freed in \the [A.name]!", source = src, action=NOTIFY_ATTACK, flashwindow = FALSE)
+
+/obj/effect/mob_spawn/human/lostsolgov
+	icon = 'icons/obj/machines/sleeper.dmi'
+	icon_state = "sleeper"
+	name = "old cryogenics pod"
+	desc = "A sleeper designed to put its occupant into a deep coma."
+	short_desc = "You are a SolGov Commander."
+	flavour_text = "You are being sent in to stop a treat. Your objective is- wait where the hell are you? You still have your gear but... you have no idea where you are?"
+	assignedrole = "Lost SolGov Commander"
+	death = FALSE
+	roundstart = FALSE
+	random = TRUE
+	outfit = /datum/outfit/solgov/commander
+
+/obj/effect/mob_spawn/human/lostsolgov/Initialize(mapload)
+	var/area/A = get_area(src)
+	if(A)
+		notify_ghosts("Someone has defeated a ash drake! A prisoner has been freed in \the [A.name]!", source = src, action=NOTIFY_ATTACK, flashwindow = FALSE)
