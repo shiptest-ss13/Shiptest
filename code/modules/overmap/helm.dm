@@ -52,7 +52,7 @@
 		return
 	if(jump_state != JUMP_STATE_OFF && !inline)
 		return // This exists to prefent Href exploits to call process_jump more than once by a client
-	message_admins("[ADMIN_LOOKUPFLW(usr)] has initiated a bluespace jump in [ADMIN_VERBOSEJMP(src)] [ADMIN_JMP(usr)]")
+	message_admins("[ADMIN_LOOKUPFLW(usr)] has initiated a bluespace jump in [ADMIN_VERBOSEJMP(src)]")
 	jump_timer = addtimer(CALLBACK(src, .proc/jump_sequence, TRUE), JUMP_CHARGEUP_TIME, TIMER_STOPPABLE)
 	priority_announce("Bluespace jump calibration initialized. Calibration completion in [JUMP_CHARGEUP_TIME/600] minutes.", sender_override="[ship_name] Bluespace Pylon", zlevel=get_virtual_z_level())	
 	calibrating = TRUE
