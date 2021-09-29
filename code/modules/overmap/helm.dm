@@ -60,7 +60,7 @@
 
 /obj/machinery/computer/helm/proc/cancel_jump()
 	var/ship_name = current_ship.name
-	priority_announce("Bluespace Pylon spooling down. Jump calibration aborted.", sender_override="[ship_name] Bluespace Pylon", zlevel=get_virtual_z_level())	
+	priority_announce("Bluespace Pylon spooling down. Jump calibration aborted.", sender_override="[ship_name] Bluespace Pylon", zlevel=get_virtual_z_level())
 	calibrating = FALSE
 	deltimer(jump_timer)
 
