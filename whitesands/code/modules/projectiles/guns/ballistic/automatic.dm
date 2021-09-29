@@ -94,8 +94,8 @@
 	fire_sound = 'sound/weapons/gun/rifle/shot.ogg'
 	icon_state = "aks74u"
 	fire_rate = 10
-	lefthand_file = 'whitesands/icons/mob/inhands/weapons/guns_left.dmi'
-	righthand_file = 'whitesands/icons/mob/inhands/weapons/guns_right.dmi'
+	lefthand_file = 'whitesands/icons/mob/inhands/weapons/64x_guns_left.dmi'
+	righthand_file = 'whitesands/icons/mob/inhands/weapons/64x_guns_right.dmi'
 	item_state = "aks74u"
 	weapon_weight = WEAPON_MEDIUM
 	w_class = WEIGHT_CLASS_NORMAL
@@ -103,16 +103,65 @@
 
 /obj/item/gun/ballistic/automatic/ak47
 	name = "AK-47"
-	desc = {"A favorite among both the soldiers of the Russian Colonial Army and civilians out on the edges of explored space, the AK-47 is a reliable rifle designed and sold by a Space Russian company and remains one of the most common automatic rifles in the known galaxy."}
+	desc = "An old assault rifle, dating back to 20th century. It is commonly used by various bandits, pirates and colonists thanks to its reliability and ease of maintenance."
 	icon = 'whitesands/icons/obj/guns/48x32guns.dmi'
 	fire_sound = 'sound/weapons/gun/rifle/shot.ogg'
 	icon_state = "ak47"
-	item_state = "arg"
-	fire_rate = 2
+	item_state = "ak47"
+	lefthand_file = 'whitesands/icons/mob/inhands/weapons/64x_guns_left.dmi'
+	righthand_file = 'whitesands/icons/mob/inhands/weapons/64x_guns_right.dmi'
+	fire_rate = 5
 	mag_display = TRUE
 	weapon_weight = WEAPON_MEDIUM
 	w_class = WEIGHT_CLASS_BULKY
 	mag_type = /obj/item/ammo_box/magazine/ak47
+
+/obj/item/gun/ballistic/automatic/ak47/nt
+	name = "NT-AK"
+	desc = "A cheap rip-off of a already cheap rifle. Comes with a foldable stock for easy storage, although accuracy is questionable when folded. Control click to toggle the stock."
+	icon = 'whitesands/icons/obj/guns/48x32guns.dmi'
+	fire_sound = 'sound/weapons/gun/rifle/shot.ogg'
+	icon_state = "ak47_nt"
+	item_state = "ntak"
+	fire_rate = 4
+	mag_display = TRUE
+	weapon_weight = WEAPON_MEDIUM
+	w_class = WEIGHT_CLASS_BULKY
+	mag_type = /obj/item/ammo_box/magazine/aknt
+	var/folded = FALSE
+	var/unfolded_spread = 2
+	var/unfolded_recoil = 0
+	var/folded_spread = 7
+	var/folded_recoil = 0.50
+
+/obj/item/gun/ballistic/automatic/ak47/nt/CtrlClick(mob/user)
+	. = ..()
+	if((!ishuman(user) || user.stat))
+		return
+	fold(user)
+
+/obj/item/gun/ballistic/automatic/ak47/nt/proc/fold(mob/user)
+	if(folded)
+		to_chat(user, "<span class='notice'>You unfold the stock on the [src].</span>")
+		spread = unfolded_spread
+		recoil = unfolded_recoil
+		w_class = WEIGHT_CLASS_BULKY
+	else
+		to_chat(user, "<span class='notice'>You fold the stock on the [src].</span>")
+		spread = folded_spread
+		recoil = folded_recoil
+	folded = !folded
+	playsound(src.loc, 'sound/weapons/empty.ogg', 100, 1)
+	update_overlays()
+
+/obj/item/gun/ballistic/automatic/ak47/nt/update_overlays()
+	. = ..()
+	var/mutable_appearance/stock
+	if(folded)
+		stock = mutable_appearance(icon, "ak47_nt_stock")
+	else
+		stock = mutable_appearance(icon, null)
+	. += stock
 
 /obj/item/gun/ballistic/automatic/pistol/tec9
 	name = "TEC9 Machine Pistol"
