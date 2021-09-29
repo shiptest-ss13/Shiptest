@@ -84,17 +84,17 @@
 		if(seed)
 			for(var/datum/plant_gene/trait/T in seed.genes)
 				T.on_attackby(src, O, user)
-				
+
 //Ghetto Seed Extraction
 /obj/item/reagent_containers/food/snacks/grown/attackby(obj/item/W, mob/user, params)
 	if(W.get_sharpness())
 		playsound(loc, 'sound/weapons/slice.ogg', 50, TRUE, -1)
 		user.visible_message("<span class='notice'>[user] starts slicing apart \the [src].</span>", "<span class='notice'>You start slicing apart \the [src]...</span>", "<span class='hear'>You hear the sound of a sharp object slicing some plant matter.</span>")
 		if(do_after(user, 50, target = src))
-			to_chat(user, "<span class='notice'>You slice apart this [src.singular_name].</span>")
+			to_chat(user, "<span class='notice'>You slice apart this [src].</span>")
 		/*	new /obj/item/reagent_containers/food/snacks/grown/sliced(user.drop_location(), 1)
 			use(1) */
-			seedify(O, 1)
+			seedify(src, 1)
 	else
 		return ..()
 
