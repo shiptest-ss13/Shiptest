@@ -87,16 +87,47 @@
 
 //Ghetto Seed Extraction
 /obj/item/reagent_containers/food/snacks/grown/attackby(obj/item/W, mob/user, params)
-	if(W.get_sharpness())
-		playsound(loc, 'sound/weapons/slice.ogg', 50, TRUE, -1)
-		user.visible_message("<span class='notice'>[user] starts slicing apart \the [src].</span>", "<span class='notice'>You start slicing apart \the [src]...</span>", "<span class='hear'>You hear the sound of a sharp object slicing some plant matter.</span>")
-		if(do_after(user, 50, target = src))
-			to_chat(user, "<span class='notice'>You slice apart this [src].</span>")
-		/*	new /obj/item/reagent_containers/food/snacks/grown/sliced(user.drop_location(), 1)
-			use(1) */
-			seedify(src, 1)
-	else
-		return ..()
+	switch(W)
+		if(W.get_sharpness())
+			playsound(loc, 'sound/weapons/slice.ogg', 50, TRUE, -1)
+			user.visible_message("<span class='notice'>[user] starts slicing apart \the [src].</span>", "<span class='notice'>You start slicing apart \the [src]...</span>", "<span class='hear'>You hear the sound of a sharp object slicing some plant matter.</span>")
+			if(do_after(user, 50, target = src))
+				to_chat(user, "<span class='notice'>You slice apart the [src]! You went too far and the tiny remaining scraps are worthless!</span>")
+			/*	new /obj/item/reagent_containers/food/snacks/grown/sliced(user.drop_location(), 1)
+				use(1) */
+				seedify(src, 1)
+		if(W.tool_behaviour == TOOL_SCREWDRIVER)
+			playsound(loc, 'sound/weapons/bite.ogg', 50, TRUE, -1)
+			user.visible_message("<span class='notice'>[user] starts digging into \the [src].</span>", "<span class='notice'>You start digging into \the [src]...</span>", "<span class='hear'>You hear the sound of a sharp object penetrating some plant matter.</span>")
+			if(do_after(user, 50, target = src))
+				to_chat(user, "<span class='notice'>You dig into the [src] to collect it's seeds! It's all gross and unusuable now, ew!</span>")
+			/*	new /obj/item/reagent_containers/food/snacks/grown/chipped(user.drop_location(), 1)
+				use(1) */
+				seedify(src, 1)
+		if(W.tool_behaviour == TOOL_WIRECUTTER)
+			playsound(loc, 'sound/weapons/bite.ogg', 50, TRUE, -1)
+			user.visible_message("<span class='notice'>[user] starts chipping into \the [src].</span>", "<span class='notice'>You start chipping into \the [src]...</span>", "<span class='hear'>You hear the sound of a sharp object penetrating some plant matter.</span>")
+			if(do_after(user, 50, target = src))
+				to_chat(user, "<span class='notice'>You dig into the [src] to collect it's seeds! It's all gross and unusuable now, ew!</span>")
+				seedify(src, 1)
+		if(W.tool_behaviour == TOOL_CROWBAR)
+			playsound(loc, 'sound/weapons/slice.ogg', 50, TRUE, -1)
+			user.visible_message("<span class='notice'>[user] starts splitting \the [src].</span>", "<span class='notice'>You dig into \the [src] and start to split it...</span>", "<span class='hear'>You hear the sound of a sharp object digging into some plant matter.</span>")
+			if(do_after(user, 50, target = src))
+				to_chat(user, "<span class='notice'>You split apart the [src]! Sadly you put too much force and it's remains are unusable, but hey, you got your seeds!</span>")
+			/*	new /obj/item/reagent_containers/food/snacks/grown/split(user.drop_location(), 1)
+				use(1) */
+				seedify(src, 1)
+		if(W.tool_behaviour == TOOL_WRENCH)
+			playsound(loc, 'sound/weapons/smash.ogg', 50, TRUE, -1)
+			user.visible_message("<span class='notice'>[user] starts wackng \the [src].</span>", "<span class='notice'>You start wacking \the [src]...</span>", "<span class='hear'>You hear the sound of a plant being wacked violently.</span>")
+			if(do_after(user, 50, target = src))
+				to_chat(user, "<span class='notice'>You smash [src]! Sadly there's nothing left of it other than the seeds.</span>")
+			/*	new /obj/item/reagent_containers/food/snacks/grown/smacked(user.drop_location(), 1)
+					use(1) */
+				seedify(src, 1)
+		else
+			return ..()
 
 // Various gene procs
 /obj/item/reagent_containers/food/snacks/grown/attack_self(mob/user)
