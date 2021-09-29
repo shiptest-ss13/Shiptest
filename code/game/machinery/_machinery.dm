@@ -165,7 +165,7 @@ Class Procs:
 	. = ..()
 	power_change()
 	RegisterSignal(src, COMSIG_ENTER_AREA, .proc/power_change)
-	
+
 /obj/machinery/Destroy()
 	GLOB.machines.Remove(src)
 	end_processing()
