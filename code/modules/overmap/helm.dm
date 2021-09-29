@@ -39,7 +39,6 @@
 	addtimer(CALLBACK(src, .proc/reload_ship), 5)
 
 /obj/machinery/computer/helm/proc/calibrate_jump(inline = FALSE)
-	var/ship_name = current_ship.name
 	if(jump_allowed < 0)
 		say("Bluespace Jump Calibration offline. Please contact your system administrator.")
 		return
@@ -54,38 +53,35 @@
 		return // This exists to prefent Href exploits to call process_jump more than once by a client
 	message_admins("[ADMIN_LOOKUPFLW(usr)] has initiated a bluespace jump in [ADMIN_VERBOSEJMP(src)]")
 	jump_timer = addtimer(CALLBACK(src, .proc/jump_sequence, TRUE), JUMP_CHARGEUP_TIME, TIMER_STOPPABLE)
-	priority_announce("Bluespace jump calibration initialized. Calibration completion in [JUMP_CHARGEUP_TIME/600] minutes.", sender_override="[ship_name] Bluespace Pylon", zlevel=get_virtual_z_level())	
+	priority_announce("Bluespace jump calibration initialized. Calibration completion in [JUMP_CHARGEUP_TIME/600] minutes.", sender_override="[current_ship.name] Bluespace Pylon", zlevel=get_virtual_z_level())	
 	calibrating = TRUE
 	return TRUE
 
 /obj/machinery/computer/helm/proc/cancel_jump()
-	var/ship_name = current_ship.name
-	priority_announce("Bluespace Pylon spooling down. Jump calibration aborted.", sender_override="[ship_name] Bluespace Pylon", zlevel=get_virtual_z_level())
+	priority_announce("Bluespace Pylon spooling down. Jump calibration aborted.", sender_override="[current_ship.name] Bluespace Pylon", zlevel=get_virtual_z_level())
 	calibrating = FALSE
 	deltimer(jump_timer)
 
 /obj/machinery/computer/helm/proc/jump_sequence()
-	var/ship_name = current_ship.name
 	switch(jump_state)
 		if(JUMP_STATE_OFF)
 			jump_state = JUMP_STATE_CHARGING
 			SStgui.close_uis(src)
 		if(JUMP_STATE_CHARGING)
 			jump_state = JUMP_STATE_IONIZING
-			priority_announce("Bluespace Jump Calibration completed. Ionizing Bluespace Pylon.", sender_override="[ship_name] Bluespace Pylon", zlevel=get_virtual_z_level())
+			priority_announce("Bluespace Jump Calibration completed. Ionizing Bluespace Pylon.", sender_override="[current_ship.name] Bluespace Pylon", zlevel=get_virtual_z_level())
 		if(JUMP_STATE_IONIZING)
 			jump_state = JUMP_STATE_FIRING
-			priority_announce("Bluespace Ionization finalized; preparing to fire Bluespace Pylon.", sender_override="[ship_name] Bluespace Pylon", zlevel=get_virtual_z_level())
+			priority_announce("Bluespace Ionization finalized; preparing to fire Bluespace Pylon.", sender_override="[current_ship.name] Bluespace Pylon", zlevel=get_virtual_z_level())
 		if(JUMP_STATE_FIRING)
 			jump_state = JUMP_STATE_FINALIZED
-			priority_announce("Bluespace Pylon launched.", sender_override="[ship_name] Bluespace Pylon", sound='sound/magic/lightning_chargeup.ogg', zlevel=get_virtual_z_level())
+			priority_announce("Bluespace Pylon launched.", sender_override="[current_ship.name] Bluespace Pylon", sound='sound/magic/lightning_chargeup.ogg', zlevel=get_virtual_z_level())
 			addtimer(CALLBACK(src, .proc/do_jump), 10 SECONDS)
 			return
 	addtimer(CALLBACK(src, .proc/jump_sequence, TRUE), JUMP_CHARGE_DELAY)
 
 /obj/machinery/computer/helm/proc/do_jump()
-	var/ship_name = current_ship.name
-	priority_announce("Bluespace Jump Initiated.", sender_override="[ship_name] Bluespace Pylon", sound='sound/magic/lightningbolt.ogg', zlevel=get_virtual_z_level())
+	priority_announce("Bluespace Jump Initiated.", sender_override="[current_ship.name] Bluespace Pylon", sound='sound/magic/lightningbolt.ogg', zlevel=get_virtual_z_level())
 	current_ship.shuttle.intoTheSunset()
 
 /obj/machinery/computer/helm/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock)
