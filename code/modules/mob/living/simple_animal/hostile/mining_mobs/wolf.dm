@@ -68,7 +68,7 @@
 	denied_type = /obj/item/crusher_trophy/wolf_ear
 
 /obj/item/crusher_trophy/wolf_ear/effect_desc()
-	return "mark detonation to give the user a slight speed boost"
+	return "waveform collapse to give the user a slight speed boost"
 
 /obj/item/crusher_trophy/wolf_ear/on_mark_detonation(mob/living/target, mob/living/user)
 	user.apply_status_effect(/datum/status_effect/speed_boost, 3 SECONDS)

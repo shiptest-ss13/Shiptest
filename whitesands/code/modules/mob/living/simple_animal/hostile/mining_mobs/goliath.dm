@@ -237,7 +237,7 @@
 
 /mob/living/simple_animal/hostile/asteroid/goliath/beast/random/Initialize()
 	. = ..()
-	if(prob(1))
+	if(prob(15))
 		new /mob/living/simple_animal/hostile/asteroid/goliath/beast/ancient(loc)
 		return INITIALIZE_HINT_QDEL
 
@@ -248,16 +248,16 @@
 	icon_living = "Goliath"
 	icon_aggro = "Goliath_alert"
 	icon_dead = "Goliath_dead"
-	maxHealth = 400
-	health = 400
+	maxHealth = 500
+	health = 500
 	speed = 4
+	crusher_loot = /obj/item/crusher_trophy/elder_tentacle
 	pre_attack_icon = "Goliath_preattack"
 	throw_message = "does nothing to the rocky hide of the"
 	guaranteed_butcher_results = list()
-	crusher_drop_mod = 30
+	crusher_drop_mod = 75
 	wander = FALSE
-	tame_chance = 0
-	bonus_tame_chance = 5
+	bonus_tame_chance = 10
 	var/list/cached_tentacle_turfs
 	var/turf/last_location
 	var/tentacle_recheck_cooldown = 100

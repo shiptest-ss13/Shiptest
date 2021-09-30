@@ -6,8 +6,9 @@
 	lefthand_file = 'icons/mob/inhands/weapons/hammers_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/hammers_righthand.dmi'
 	name = "proto-kinetic crusher"
-	desc = "An early design of the proto-kinetic accelerator, it is little more than a combination of various mining tools cobbled together, forming a high-tech club. \
-	While it is an effective mining tool, it did little to aid any but the most skilled and/or suicidal miners against local fauna."
+	desc = "During the early conception of the Kinetic Accelerator, a great deal of money and time was invested in magnetic distruption technology. \
+	Though ultimately not used in the concussion-based KA, the ever-practical NT scientific division designed a second mining tool, capable of tearing apart rock with magnetic force. \
+	Concerns about safety during mining operations prompted the addition of a large chopping blade to the front of the tool- when an intern eventually suggested tuning the metal edge to the magnetic current, the Kinetic Crusher was born."
 	force = 0 //You can't hit stuff unless wielded
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = ITEM_SLOT_BACK
@@ -55,7 +56,7 @@
 
 /obj/item/kinetic_crusher/examine(mob/living/user)
 	. = ..()
-	. += "<span class='notice'>Mark a large creature with the destabilizing force, then hit them in melee to do <b>[force + detonation_damage]</b> damage.</span>"
+	. += "<span class='notice'>Induce magnetism in an enemy by striking them with a magnetospheric wave, then hit them in melee to force a waveform collapse for <b>[force + detonation_damage]</b> damage.</span>"
 	. += "<span class='notice'>Does <b>[force + detonation_damage + backstab_bonus]</b> damage if the target is backstabbed, instead of <b>[force + detonation_damage]</b>.</span>"
 	for(var/t in trophies)
 		var/obj/item/crusher_trophy/T = t
@@ -163,7 +164,7 @@
 
 //destablizing force
 /obj/projectile/destabilizer
-	name = "destabilizing force"
+	name = "magnetic wave"
 	icon_state = "pulse1"
 	nodamage = TRUE
 	damage = 0 //We're just here to mark people. This is still a melee weapon.
@@ -243,15 +244,36 @@
 	desc = "A sliced-off goliath tentacle. Suitable as a trophy for a kinetic crusher."
 	icon_state = "goliath_tentacle"
 	denied_type = /obj/item/crusher_trophy/goliath_tentacle
-	bonus_value = 2
+	bonus_value = 5
 	var/missing_health_ratio = 0.1
 	var/missing_health_desc = 10
 
 /obj/item/crusher_trophy/goliath_tentacle/effect_desc()
-	return "mark detonation to do <b>[bonus_value]</b> more damage for every <b>[missing_health_desc]</b> health you are missing"
+	return "waveform collapse to do <b>[bonus_value]</b> more damage for every <b>[missing_health_desc]</b> health you are missing"
 
 /obj/item/crusher_trophy/goliath_tentacle/on_mark_detonation(mob/living/target, mob/living/user)
-	var/missing_health = user.health - user.maxHealth
+	var/missing_health = user.maxHealth - user.health
+	missing_health *= missing_health_ratio //bonus is active at all times, even if you're above 90 health
+	missing_health *= bonus_value //multiply the remaining amount by bonus_value
+	if(missing_health > 0)
+		target.adjustBruteLoss(missing_health) //and do that much damage
+
+//ancient goliath
+/obj/item/crusher_trophy/elder_tentacle
+	name = "elder tentacle"
+	desc = "The barbed tip of a tentacle sliced from an incredibly ancient goliath. A powerful kinetic crusher trophy, coveted by worthy hunters."
+	icon_state = "elder_tentacle"
+	denied_type = /obj/item/crusher_trophy/elder_tentacle
+	bonus_value = 3
+	var/missing_health_ratio = 0.1
+	var/missing_health_desc = 5
+	icon = 'icons/obj/lavaland/elite_trophies.dmi'
+
+/obj/item/crusher_trophy/elder_tentacle/effect_desc()
+	return "waveform collapse to do <b>[bonus_value]</b> more damage for every <b>[missing_health_desc]</b> health you are missing"
+
+/obj/item/crusher_trophy/elder_tentacle/on_mark_detonation(mob/living/target, mob/living/user)
+	var/missing_health = user.maxHealth - user.health
 	missing_health *= missing_health_ratio //bonus is active at all times, even if you're above 90 health
 	missing_health *= bonus_value //multiply the remaining amount by bonus_value
 	if(missing_health > 0)
@@ -266,7 +288,7 @@
 	bonus_value = 5
 
 /obj/item/crusher_trophy/watcher_wing/effect_desc()
-	return "mark detonation to prevent certain creatures from using certain attacks for <b>[bonus_value*0.1]</b> second\s"
+	return "waveform collapse to prevent certain creatures from using certain attacks for <b>[bonus_value*0.1]</b> second\s"
 
 /obj/item/crusher_trophy/watcher_wing/on_mark_detonation(mob/living/target, mob/living/user)
 	if(ishostile(target))
@@ -278,30 +300,53 @@
 				H.ranged_cooldown = bonus_value + world.time
 
 //magmawing watcher
-/obj/item/crusher_trophy/blaster_tubes/magma_wing
-	name = "magmawing watcher wing"
-	desc = "A still-searing wing from a magmawing watcher. Suitable as a trophy for a kinetic crusher."
+/obj/item/crusher_trophy/magma_wing
+	name = "magmatic sinew"
+	desc = "A fuming organ, dropped by beings hotter then lava. Suitable as a trophy for a kinetic crusher."
 	icon_state = "magma_wing"
+	denied_type = /obj/item/crusher_trophy/magma_wing
 	gender = NEUTER
 	bonus_value = 5
+	var/deadly_shot = FALSE
 
-/obj/item/crusher_trophy/blaster_tubes/magma_wing/effect_desc()
-	return "mark detonation to make the next destabilizer shot deal <b>[bonus_value]</b> damage"
+/obj/item/crusher_trophy/magma_wing/effect_desc()
+	return "waveform collapse to make the next magnetic pulse deal <b>[bonus_value]</b> damage"
 
-/obj/item/crusher_trophy/blaster_tubes/magma_wing/on_projectile_fire(obj/projectile/destabilizer/marker, mob/living/user)
+/obj/item/crusher_trophy/magma_wing/on_projectile_fire(obj/projectile/destabilizer/marker, mob/living/user)
 	if(deadly_shot)
-		marker.name = "heated [marker.name]"
+		marker.name = "superheated [marker.name]"
 		marker.icon_state = "lava"
 		marker.damage = bonus_value
 		marker.nodamage = FALSE
+		marker.speed = 2
 		deadly_shot = FALSE
 
+/obj/item/crusher_trophy/magma_wing/on_mark_detonation(mob/living/target, mob/living/user)
+	deadly_shot = TRUE
+	addtimer(CALLBACK(src, .proc/reset_deadly_shot), 300, TIMER_UNIQUE|TIMER_OVERRIDE)
+
+/obj/item/crusher_trophy/magma_wing/proc/reset_deadly_shot()
+	deadly_shot = FALSE
+
 //icewing watcher
-/obj/item/crusher_trophy/watcher_wing/ice_wing
-	name = "icewing watcher wing"
-	desc = "A carefully preserved frozen wing from an icewing watcher. Suitable as a trophy for a kinetic crusher."
+/obj/item/crusher_trophy/ice_wing
+	name = "frigid sinew"
+	desc = "A carefully-preserved freezing organ, dropped by chilling beings. Suitable as a trophy for a kinetic crusher."
 	icon_state = "ice_wing"
 	bonus_value = 8
+	denied_type = /obj/item/crusher_trophy/ice_wing
+
+/obj/item/crusher_trophy/ice_wing/effect_desc()
+	return "waveform collapse to prevent certain creatures from using certain attacks for <b>[bonus_value*0.1]</b> second\s"
+
+/obj/item/crusher_trophy/ice_wing/on_mark_detonation(mob/living/target, mob/living/user)
+	if(ishostile(target))
+		var/mob/living/simple_animal/hostile/H = target
+		if(H.ranged) //briefly delay ranged attacks
+			if(H.ranged_cooldown >= world.time)
+				H.ranged_cooldown += bonus_value
+			else
+				H.ranged_cooldown = bonus_value + world.time
 
 //legion
 /obj/item/crusher_trophy/legion_skull
@@ -324,6 +369,28 @@
 	if(.)
 		H.charge_time += bonus_value
 
+//dwarf legion
+/obj/item/crusher_trophy/dwarf_skull
+	name = "shrunken skull"
+	desc = "Looks like someone hasn't been drinking their milk. Suitable as a trophy for a kinetic crusher."
+	icon = 'icons/obj/lavaland/elite_trophies.dmi'
+	icon_state = "shrunk_skull"
+	denied_type = /obj/item/crusher_trophy/legion_skull
+	bonus_value = 6
+
+/obj/item/crusher_trophy/dwarf_skull/effect_desc()
+	return "a kinetic crusher to recharge <b>[bonus_value*0.1]</b> second\s faster"
+
+/obj/item/crusher_trophy/dwarf_skull/add_to(obj/item/kinetic_crusher/H, mob/living/user)
+	. = ..()
+	if(.)
+		H.charge_time -= bonus_value
+
+/obj/item/crusher_trophy/dwarf_skull/remove_from(obj/item/kinetic_crusher/H, mob/living/user)
+	. = ..()
+	if(.)
+		H.charge_time += bonus_value
+
 //blood-drunk hunter
 /obj/item/crusher_trophy/miner_eye
 	name = "eye of a blood-drunk hunter"
@@ -332,19 +399,19 @@
 	denied_type = /obj/item/crusher_trophy/miner_eye
 
 /obj/item/crusher_trophy/miner_eye/effect_desc()
-	return "mark detonation to grant stun immunity and <b>90%</b> damage reduction for <b>1</b> second"
+	return "waveform collapse to grant stun immunity and <b>90%</b> damage reduction for <b>1</b> second"
 
 /obj/item/crusher_trophy/miner_eye/on_mark_detonation(mob/living/target, mob/living/user)
 	user.apply_status_effect(STATUS_EFFECT_BLOODDRUNK)
 
-//ash drake
+//whelp
 /obj/item/crusher_trophy/tail_spike
-	desc = "A spike taken from an ash drake's tail. Suitable as a trophy for a kinetic crusher."
+	desc = "A spike taken from a young dragon's tail. Suitable as a trophy for a kinetic crusher."
 	denied_type = /obj/item/crusher_trophy/tail_spike
 	bonus_value = 5
 
 /obj/item/crusher_trophy/tail_spike/effect_desc()
-	return "mark detonation to do <b>[bonus_value]</b> damage to nearby creatures and push them back"
+	return "waveform collapse to do <b>[bonus_value]</b> damage to nearby creatures and push them back"
 
 /obj/item/crusher_trophy/tail_spike/on_mark_detonation(mob/living/target, mob/living/user)
 	for(var/mob/living/L in oview(2, user))
@@ -359,6 +426,30 @@
 	if(!QDELETED(target) && !QDELETED(user) && (!target.anchored || ismegafauna(target))) //megafauna will always be pushed
 		step(target, get_dir(user, target))
 
+//ash drake
+/obj/item/crusher_trophy/ash_spike
+	desc = "A molten spike taken from an ash drake's tail. Suitable as a trophy for a kinetic crusher."
+	icon = 'icons/obj/lavaland/elite_trophies.dmi'
+	icon_state = "ash_spike"
+	denied_type = /obj/item/crusher_trophy/ash_spike
+	bonus_value = 15
+
+/obj/item/crusher_trophy/ash_spike/effect_desc()
+	return "waveform collapse to do <b>[bonus_value]</b> damage to nearby creatures and push them back"
+
+/obj/item/crusher_trophy/ash_spike/on_mark_detonation(mob/living/target, mob/living/user)
+	for(var/mob/living/L in oview(2, user))
+		if(L.stat == DEAD)
+			continue
+		playsound(L, 'sound/magic/fireball.ogg', 20, TRUE)
+		new /obj/effect/temp_visual/fire(L.loc)
+		addtimer(CALLBACK(src, .proc/pushback, L, user), 1) //no free backstabs, we push AFTER module stuff is done
+		L.adjustFireLoss(bonus_value, forced = TRUE)
+
+/obj/item/crusher_trophy/ash_spike/proc/pushback(mob/living/target, mob/living/user)
+	if(!QDELETED(target) && !QDELETED(user) && (!target.anchored || ismegafauna(target))) //megafauna will always be pushed
+		step(target, get_dir(user, target))
+
 //bubblegum
 /obj/item/crusher_trophy/demon_claws
 	name = "demon claws"
@@ -370,7 +461,7 @@
 	var/static/list/damage_heal_order = list(BRUTE, BURN, OXY)
 
 /obj/item/crusher_trophy/demon_claws/effect_desc()
-	return "melee hits to do <b>[bonus_value * 0.2]</b> more damage and heal you for <b>[bonus_value * 0.1]</b>, with <b>5X</b> effect on mark detonation"
+	return "melee hits to do <b>[bonus_value * 0.2]</b> more damage and heal you for <b>[bonus_value * 0.1]</b>, with <b>5X</b> effect on waveform collapse"
 
 /obj/item/crusher_trophy/demon_claws/add_to(obj/item/kinetic_crusher/H, mob/living/user)
 	. = ..()
@@ -403,11 +494,11 @@
 	var/deadly_shot = FALSE
 
 /obj/item/crusher_trophy/blaster_tubes/effect_desc()
-	return "mark detonation to make the next destabilizer shot deal <b>[bonus_value]</b> damage but move slower"
+	return "waveform collapse to make the next magnetic pulse deal <b>[bonus_value]</b> damage but move slower"
 
 /obj/item/crusher_trophy/blaster_tubes/on_projectile_fire(obj/projectile/destabilizer/marker, mob/living/user)
 	if(deadly_shot)
-		marker.name = "deadly [marker.name]"
+		marker.name = "ominous [marker.name]"
 		marker.icon_state = "chronobolt"
 		marker.damage = bonus_value
 		marker.nodamage = FALSE
@@ -429,7 +520,7 @@
 	denied_type = /obj/item/crusher_trophy/vortex_talisman
 
 /obj/item/crusher_trophy/vortex_talisman/effect_desc()
-	return "mark detonation to create a barrier you can pass"
+	return "waveform collapse to create a barrier you can pass"
 
 /obj/item/crusher_trophy/vortex_talisman/on_mark_detonation(mob/living/target, mob/living/user)
 	var/turf/current_location = get_turf(user)
@@ -449,6 +540,7 @@
 /obj/effect/temp_visual/hierophant/wall/crusher
 	duration = 75
 
+//I am afraid of this code. It also does not function(in terms of doing damage to enemies) as of my last test.
 /obj/item/crusher_trophy/king_goat
 	name = "king goat hoof"
 	desc = "A hoof from the king of all goats, it still glows with a fraction of its original power... Suitable as a trophy for a kinetic crusher."
@@ -456,7 +548,7 @@
 	denied_type = /obj/item/crusher_trophy/king_goat
 
 /obj/item/crusher_trophy/king_goat/effect_desc()
-	return "you also passively recharge markers 5x as fast while this is equipped and do a decent amount of damage at the cost of dulling the blade"
+	return "you also passively recharge pulses 5x as fast while this is equipped and do a decent amount of damage at the cost of dulling the blade"
 
 /obj/item/crusher_trophy/king_goat/on_projectile_fire(obj/projectile/destabilizer/marker, mob/living/user)
 	marker.damage = 10 //in my testing only does damage to simple mobs so should be fine to have it high

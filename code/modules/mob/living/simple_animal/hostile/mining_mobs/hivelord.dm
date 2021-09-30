@@ -124,7 +124,7 @@
 
 /mob/living/simple_animal/hostile/asteroid/hivelord/legion/random/Initialize()
 	. = ..()
-	if(prob(5))
+	if(prob(15))
 		new /mob/living/simple_animal/hostile/asteroid/hivelord/legion/dwarf(loc)
 		return INITIALIZE_HINT_QDEL
 
@@ -138,7 +138,7 @@
 	maxHealth = 60
 	health = 60
 	speed = 2 //faster!
-	crusher_drop_mod = 20
+	crusher_drop_mod = 75
 	dwarf_mob = TRUE
 
 /mob/living/simple_animal/hostile/asteroid/hivelord/legion/death(gibbed)

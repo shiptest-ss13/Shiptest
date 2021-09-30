@@ -247,7 +247,7 @@
 
 /mob/living/simple_animal/hostile/asteroid/basilisk/watcher/random/Initialize()
 	. = ..()
-	if(prob(1))
+	if(prob(15))
 		if(prob(75))
 			new /mob/living/simple_animal/hostile/asteroid/basilisk/watcher/magmawing(loc)
 		else
@@ -267,8 +267,8 @@
 	light_power = 2.5
 	light_color = LIGHT_COLOR_LAVA
 	projectiletype = /obj/projectile/temp/basilisk/magmawing
-	crusher_loot = /obj/item/crusher_trophy/blaster_tubes/magma_wing
-	crusher_drop_mod = 60
+	crusher_loot = /obj/item/crusher_trophy/magma_wing
+	crusher_drop_mod = 75
 
 /mob/living/simple_animal/hostile/asteroid/basilisk/watcher/icewing
 	name = "icewing watcher"
@@ -282,8 +282,8 @@
 	ranged_cooldown_time = 20
 	projectiletype = /obj/projectile/temp/basilisk/icewing
 	butcher_results = list(/obj/item/stack/ore/diamond = 5, /obj/item/stack/sheet/bone = 1) //No sinew; the wings are too fragile to be usable
-	crusher_loot = /obj/item/crusher_trophy/watcher_wing/ice_wing
-	crusher_drop_mod = 30
+	crusher_loot = /obj/item/crusher_trophy/ice_wing
+	crusher_drop_mod = 75
 
 /obj/projectile/temp/basilisk/magmawing
 	name = "scorching blast"
@@ -302,7 +302,7 @@
 			L.IgniteMob()
 
 /obj/projectile/temp/basilisk/icewing
-	damage = 5
+	damage = 15
 	damage_type = BURN
 	nodamage = FALSE
 
