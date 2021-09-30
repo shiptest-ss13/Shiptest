@@ -91,8 +91,8 @@
 	attack_verb_simple = "CQB"
 	speed = 7
 	move_to_delay = 7
-	maxHealth = 350
-	health = 350
+	maxHealth = 400
+	health = 400
 	obj_damage = 60
 	icon_state = "warbear"
 	icon_living = "warbear"

@@ -106,8 +106,8 @@
 	ranged_cooldown_time = 15
 	minimum_distance = 3
 	retreat_distance = 1
-	maxHealth = 250
-	health = 250
+	maxHealth = 300
+	health = 300
 	obj_damage = 100
 	environment_smash = ENVIRONMENT_SMASH_WALLS
 	melee_damage_lower = 25

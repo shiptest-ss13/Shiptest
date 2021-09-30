@@ -248,8 +248,8 @@
 	icon_living = "Goliath"
 	icon_aggro = "Goliath_alert"
 	icon_dead = "Goliath_dead"
-	maxHealth = 500
-	health = 500
+	maxHealth = 550
+	health = 550
 	speed = 4
 	crusher_loot = /obj/item/crusher_trophy/elder_tentacle
 	pre_attack_icon = "Goliath_preattack"
@@ -260,7 +260,7 @@
 	bonus_tame_chance = 10
 	var/list/cached_tentacle_turfs
 	var/turf/last_location
-	var/tentacle_recheck_cooldown = 100
+	var/tentacle_recheck_cooldown = 70
 
 /mob/living/simple_animal/hostile/asteroid/goliath/beast/ancient/Life()
 	. = ..()

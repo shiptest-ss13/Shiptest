@@ -130,14 +130,16 @@
 
 /mob/living/simple_animal/hostile/asteroid/hivelord/legion/dwarf
 	name = "dwarf legion"
-	desc = "You can still see what was once a rather small human under the shifting mass of corruption."
+	desc = "You can still see what was once a rather small human under the shifting mass of corruption. It seems quick on its feet."
 	icon_state = "dwarf_legion"
 	icon_living = "dwarf_legion"
 	icon_aggro = "dwarf_legion"
 	icon_dead = "dwarf_legion"
-	maxHealth = 60
-	health = 60
-	speed = 2 //faster!
+	crusher_loot = /obj/item/crusher_trophy/dwarf_skull
+	maxHealth = 150
+	health = 150
+	move_to_delay = 2
+	speed = 1 //much faster!
 	crusher_drop_mod = 75
 	dwarf_mob = TRUE
 
