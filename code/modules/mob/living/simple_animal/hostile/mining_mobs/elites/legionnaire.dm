@@ -288,7 +288,7 @@
 	bonus_value = 20
 
 /obj/item/crusher_trophy/legionnaire_spine/effect_desc()
-	return "mark detonation to have a <b>[bonus_value]%</b> chance to summon a loyal legion skull"
+	return "waveform collapse to have a <b>[bonus_value]%</b> chance to summon a loyal legion skull"
 
 /obj/item/crusher_trophy/legionnaire_spine/on_mark_detonation(mob/living/target, mob/living/user)
 	if(!rand(1, 100) <= bonus_value || target.stat == DEAD)

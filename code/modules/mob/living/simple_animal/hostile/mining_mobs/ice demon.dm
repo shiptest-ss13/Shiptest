@@ -122,7 +122,7 @@
 	pull_force = MOVE_FORCE_VERY_STRONG
 	del_on_death = TRUE
 	loot = list()
-	crusher_loot = /obj/item/crusher_trophy/ice_wing
+	crusher_loot = /obj/item/crusher_trophy/ice_crystal
 	deathmessage = "screeches in rage as it falls back into nullspace."
 	deathsound = 'sound/magic/demon_dies.ogg'
 	stat_attack = HARD_CRIT
@@ -131,7 +131,7 @@
 	footstep_type = FOOTSTEP_MOB_CLAW
 	/// Distance the demon will teleport from the target
 	var/teleport_distance = 3
-	crusher_drop_modifier = 75
+	crusher_drop_mod = 75
 
 /obj/projectile/temp/basilisk/ice
 	name = "ice blast"
@@ -179,3 +179,49 @@
 	if(prob(15))
 		new /mob/living/simple_animal/hostile/asteroid/old_demon(loc)
 		return INITIALIZE_HINT_QDEL
+
+/obj/item/crusher_trophy/ice_crystal
+	name = "frost gem"
+	icon = 'icons/obj/lavaland/elite_trophies.dmi'
+	desc = "The glowing remnant of an ancient ice demon- so cold that it hurts to touch."
+	icon_state = "ice_crystal"
+	denied_type = /obj/item/crusher_trophy/ice_crystal
+
+/obj/item/crusher_trophy/ice_crystal/effect_desc()
+	return "waveform collapse to freeze a creature in a block of ice for a period, preventing them from moving"
+
+/obj/item/crusher_trophy/ice_crystal/on_mark_detonation(mob/living/target, mob/living/user)
+	target.apply_status_effect(/datum/status_effect/ice_crystal)
+
+/datum/status_effect/ice_crystal
+	id = "ice_crystal"
+	duration = 20
+	status_type = STATUS_EFFECT_REFRESH
+	alert_type = /atom/movable/screen/alert/status_effect/ice_crystal
+	/// Stored icon overlay for the hit mob, removed when effect is removed
+	var/icon/cube
+
+/atom/movable/screen/alert/status_effect/ice_crystal
+	name = "Frozen Solid"
+	desc = "You're frozen inside an ice cube, and cannot move!"
+	icon_state = "frozen"
+
+/datum/status_effect/ice_crystal/on_apply()
+	RegisterSignal(owner, COMSIG_MOVABLE_PRE_MOVE, .proc/owner_moved)
+	if(!owner.stat)
+		to_chat(owner, "<span class='userdanger'>You become frozen in a cube!</span>")
+	cube = icon('icons/effects/freeze.dmi', "ice_cube")
+	var/icon/size_check = icon(owner.icon, owner.icon_state)
+	cube.Scale(size_check.Width(), size_check.Height())
+	owner.add_overlay(cube)
+	return ..()
+
+/// Blocks movement from the status effect owner
+/datum/status_effect/ice_crystal/proc/owner_moved()
+	return COMPONENT_MOVABLE_BLOCK_PRE_MOVE
+
+/datum/status_effect/ice_crystal/on_remove()
+	if(!owner.stat)
+		to_chat(owner, "<span class='notice'>The cube melts!</span>")
+	owner.cut_overlay(cube)
+	UnregisterSignal(owner, COMSIG_MOVABLE_PRE_MOVE)
