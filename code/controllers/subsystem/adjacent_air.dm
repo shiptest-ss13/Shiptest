@@ -6,6 +6,7 @@ SUBSYSTEM_DEF(adjacent_air)
 	priority = FIRE_PRIORITY_ATMOS_ADJACENCY
 	var/list/queue = list()
 	var/list/firelock_queue = list()
+	var/list/disable_queue = list()
 
 /datum/controller/subsystem/adjacent_air/stat_entry(msg)
 #ifdef TESTING
@@ -46,6 +47,20 @@ SUBSYSTEM_DEF(adjacent_air)
 		firelock_queue.Cut(1, 2)
 
 		currT.update_firelock_registration()
+
+		if(mc_check)
+			if(MC_TICK_CHECK)
+				return
+		else
+			CHECK_TICK
+
+	var/list/disable_queue = src.disable_queue
+
+	while (length(disable_queue))
+		var/turf/currT = disable_queue[1]
+		disable_queue.Cut(1,2)
+
+		currT.ImmediateDisableAdjacency()
 
 		if(mc_check)
 			if(MC_TICK_CHECK)
