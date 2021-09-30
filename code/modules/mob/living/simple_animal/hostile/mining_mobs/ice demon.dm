@@ -9,14 +9,14 @@
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
 	mouse_opacity = MOUSE_OPACITY_ICON
 	speak_emote = list("telepathically cries")
-	speed = 5
-	move_to_delay = 5
+	speed = 7
+	move_to_delay = 7
 	projectiletype = /obj/projectile/temp/basilisk/ice
 	projectilesound = 'sound/weapons/pierce.ogg'
 	ranged = TRUE
 	ranged_message = "manifests ice"
 	ranged_cooldown_time = 30
-	minimum_distance = 3
+	minimum_distance = 4
 	retreat_distance = 1
 	maxHealth = 150
 	health = 150
@@ -84,3 +84,98 @@
 	if(prob(5))
 		new /obj/item/gem/fdiamond(loc)
 	return ..()
+
+/mob/living/simple_animal/hostile/asteroid/old_demon
+	name = "primordial demon"
+	desc = "At the beginning, there was nothing but emptiness. \
+	Emptiness, and monsters."
+	icon = 'icons/mob/icemoon/icemoon_monsters.dmi'
+	icon_state = "old_demon"
+	icon_living = "old_demon"
+	icon_dead = "ice_demon_dead"
+	icon_gib = "syndicate_gib"
+	mob_biotypes = MOB_ORGANIC|MOB_BEAST
+	mouse_opacity = MOUSE_OPACITY_ICON
+	speak_emote = list("telepathically cries")
+	speed = 2
+	move_to_delay = 2
+	projectiletype = /obj/projectile/temp/basilisk/ice
+	projectilesound = 'sound/weapons/pierce.ogg'
+	ranged = TRUE
+	ranged_message = "manifests ice"
+	ranged_cooldown_time = 15
+	minimum_distance = 3
+	retreat_distance = 1
+	maxHealth = 250
+	health = 250
+	obj_damage = 100
+	environment_smash = ENVIRONMENT_SMASH_WALLS
+	melee_damage_lower = 25
+	melee_damage_upper = 25
+	attack_verb_continuous = "cleaves"
+	attack_verb_simple = "cleave"
+	attack_sound = 'sound/weapons/bladeslice.ogg'
+	vision_range = 8
+	aggro_vision_range = 8
+	move_force = MOVE_FORCE_VERY_STRONG
+	move_resist = MOVE_FORCE_VERY_STRONG
+	pull_force = MOVE_FORCE_VERY_STRONG
+	del_on_death = TRUE
+	loot = list()
+	crusher_loot = /obj/item/crusher_trophy/ice_wing
+	deathmessage = "screeches in rage as it falls back into nullspace."
+	deathsound = 'sound/magic/demon_dies.ogg'
+	stat_attack = HARD_CRIT
+	movement_type = FLYING
+	robust_searching = TRUE
+	footstep_type = FOOTSTEP_MOB_CLAW
+	/// Distance the demon will teleport from the target
+	var/teleport_distance = 3
+	crusher_drop_modifier = 75
+
+/obj/projectile/temp/basilisk/ice
+	name = "ice blast"
+	damage = 10
+	nodamage = FALSE
+	temperature = -75
+
+/mob/living/simple_animal/hostile/asteroid/ice_demon/OpenFire()
+	// Sentient ice demons teleporting has been linked to server crashes
+	if(client)
+		return ..()
+	if(teleport_distance <= 0)
+		return ..()
+	var/list/possible_ends = list()
+	for(var/turf/T in view(teleport_distance, target.loc) - view(teleport_distance - 1, target.loc))
+		if(isclosedturf(T))
+			continue
+		possible_ends |= T
+	if(!possible_ends.len)
+		return ..()
+	var/turf/end = pick(possible_ends)
+	do_teleport(src, end, 0,  channel=TELEPORT_CHANNEL_BLUESPACE, forced = TRUE)
+	SLEEP_CHECK_DEATH(8)
+	return ..()
+
+/mob/living/simple_animal/hostile/asteroid/ice_demon/Life()
+	. = ..()
+	if(!. || target)
+		return
+	adjustHealth(-maxHealth*0.025)
+
+/mob/living/simple_animal/hostile/asteroid/ice_demon/death(gibbed)
+	move_force = MOVE_FORCE_DEFAULT
+	move_resist = MOVE_RESIST_DEFAULT
+	pull_force = PULL_FORCE_DEFAULT
+	new /obj/item/stack/ore/bluespace_crystal(loc, 10)
+	if(prob(20))
+		new /obj/item/assembly/signaler/anomaly/bluespace(loc)
+	if(prob(20))
+		new /obj/item/gem/fdiamond(loc)
+	return ..()
+
+/mob/living/simple_animal/hostile/asteroid/ice_demon/random/Initialize()
+	. = ..()
+	if(prob(15))
+		new /mob/living/simple_animal/hostile/asteroid/old_demon(loc)
+		return INITIALIZE_HINT_QDEL
