@@ -85,7 +85,7 @@
 			for(var/datum/plant_gene/trait/T in seed.genes)
 				T.on_attackby(src, O, user)
 
-/proc/flamingmoai(obj/item/O, t_max, mob/living/user)
+/proc/flamingmoai(obj/item/O, t_max, mob/living/user, var/d_item)
 	var/t_amount = 0
 	var/list/seeds = list()
 
@@ -103,7 +103,8 @@
 				seeds.Add(t_prod)
 				t_prod.forceMove(seedloc)
 				t_amount++
-			qdel(O)
+			if(d_item == TRUE)
+				qdel(O)
 			return seeds
 //Ghetto Seed Extraction
 /obj/item/reagent_containers/food/snacks/grown/attackby(obj/item/W, mob/user, params)
@@ -114,7 +115,7 @@
 			to_chat(user, "<span class='notice'>You slice apart the [src]! You went too far and the tiny remaining scraps are worthless!</span>")
 			/*	new /obj/item/reagent_containers/food/snacks/grown/sliced(user.drop_location(), 1)
 			use(1) */
-			flamingmoai(src, 1, user)
+			flamingmoai(src, 1, user, TRUE)
 	else
 		switch(W.tool_behaviour)
 			if(TOOL_SCREWDRIVER)
@@ -124,7 +125,7 @@
 					to_chat(user, "<span class='notice'>You dig into the [src] to collect it's seeds! It's all gross and unusuable now, ew!</span>")
 					/*	new /obj/item/reagent_containers/food/snacks/grown/chipped(user.drop_location(), 1)
 					use(1) */
-					flamingmoai(src, 1, user)
+					flamingmoai(src, 1, user, TRUE)
 			if(TOOL_HEMOSTAT)
 				playsound(loc, 'sound/weapons/bite.ogg', 50, TRUE, -1)
 				user.visible_message("<span class='notice'>[user] starts digging into \the [src].</span>", "<span class='notice'>You start digging into \the [src]...</span>", "<span class='hear'>You hear the sound of a sharp object penetrating some plant matter.</span>")
@@ -132,13 +133,13 @@
 					to_chat(user, "<span class='notice'>You dig into the [src] to collect it's seeds! It's all gross and unusuable now, ew!</span>")
 					/*	new /obj/item/reagent_containers/food/snacks/grown/chipped(user.drop_location(), 1)
 					use(1) */
-					flamingmoai(src, 1, user)
+					flamingmoai(src, 1, user, TRUE)
 			if(TOOL_WIRECUTTER)
 				playsound(loc, 'sound/weapons/bite.ogg', 50, TRUE, -1)
 				user.visible_message("<span class='notice'>[user] starts chipping into \the [src].</span>", "<span class='notice'>You start chipping into \the [src]...</span>", "<span class='hear'>You hear the sound of a sharp object penetrating some plant matter.</span>")
 				if(do_after(user, 50, target = src))
 					to_chat(user, "<span class='notice'>You dig into the [src] to collect it's seeds! It's all gross and unusuable now, ew!</span>")
-					flamingmoai(src, 1, user)
+					flamingmoai(src, 1, user, TRUE)
 			if(TOOL_CROWBAR)
 				playsound(loc, 'sound/weapons/slice.ogg', 50, TRUE, -1)
 				user.visible_message("<span class='notice'>[user] starts splitting \the [src].</span>", "<span class='notice'>You dig into \the [src] and start to split it...</span>", "<span class='hear'>You hear the sound of a sharp object digging into some plant matter.</span>")
@@ -146,15 +147,17 @@
 					to_chat(user, "<span class='notice'>You split apart the [src]! Sadly you put too much force and it's remains are unusable, but hey, you got your seeds!</span>")
 					/*	new /obj/item/reagent_containers/food/snacks/grown/split(user.drop_location(), 1)
 					use(1) */
-					flamingmoai(src, 1, user)
+					flamingmoai(src, 1, user, FALSE)
+					squash(user)
 			if(TOOL_WRENCH)
 				playsound(loc, 'sound/weapons/smash.ogg', 50, TRUE, -1)
 				user.visible_message("<span class='notice'>[user] starts wackng \the [src].</span>", "<span class='notice'>You start wacking \the [src]...</span>", "<span class='hear'>You hear the sound of a plant being wacked violently.</span>")
 				if(do_after(user, 50, target = src))
-					to_chat(user, "<span class='notice'>You smash [src]! Sadly there's nothing left of it other than the seeds.</span>")
+					to_chat(user, "<span class='notice'>You smash [src]! Sadly there's nothing left of it other than the seeds and some junk.</span>")
 					/*	new /obj/item/reagent_containers/food/snacks/grown/smacked(user.drop_location(), 1)
 					use(1) */
-					flamingmoai(src, 1, user)
+					flamingmoai(src, 1, user, FALSE)
+					squash(user)
 			else
 				return ..()
 
