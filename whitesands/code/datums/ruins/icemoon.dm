@@ -16,3 +16,9 @@
 	id = "drake-lair"
 	description = "\"First the creature’s Flame breathed from beneath the stone, Hot battle-fumes, and the earth rumbled.\""
 	suffix = "icemoon_underground_drakelair.dmm"
+
+/datum/map_template/ruin/icemoon/burnies_lair
+	name = "Burnies's Lair"
+	id = "burnies-lair"
+	description = "Some sort of shack. Who the hell is Burnie?"
+	suffix = "icemoon_underground_burnies_lair.dmm"

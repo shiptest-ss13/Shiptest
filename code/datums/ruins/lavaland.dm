@@ -285,3 +285,9 @@
 	id = "colossus-cross"
 	description = "The almighty one, here in this chunk of rock called lavaland."
 	suffix = "colossus_ruin.dmm"
+
+/datum/map_template/ruin/lavaland/ashwalker_shrine
+	name = "Ashwalker shrine"
+	id = "ashwalker_shrine"
+	description = "A destroyed ashwalker village. What even happened here?"
+	suffix = "ashwalker_shrine.dmm"
