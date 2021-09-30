@@ -29,13 +29,11 @@ SUBSYSTEM_DEF(job)
 	var/datum/job/new_overflow = GetJob(new_overflow_role)
 	var/cap = CONFIG_GET(number/overflow_cap)
 
-	new_overflow.allow_bureaucratic_error = FALSE
 	new_overflow.spawn_positions = cap
 	new_overflow.total_positions = cap
 
 	if(new_overflow_role != overflow_role)
 		var/datum/job/old_overflow = GetJob(overflow_role)
-		old_overflow.allow_bureaucratic_error = initial(old_overflow.allow_bureaucratic_error)
 		old_overflow.spawn_positions = initial(old_overflow.spawn_positions)
 		old_overflow.total_positions = initial(old_overflow.total_positions)
 		overflow_role = new_overflow_role
@@ -69,6 +67,8 @@ SUBSYSTEM_DEF(job)
 /datum/controller/subsystem/job/proc/GetJob(rank)
 	if(!occupations.len)
 		SetupOccupations()
+	if(istype(rank, /datum/job))
+		return rank
 	return name_occupations[rank]
 
 /datum/controller/subsystem/job/proc/GetJobType(jobtype)
@@ -471,14 +471,7 @@ SUBSYSTEM_DEF(job)
 
 		to_chat(M, "<b>As the [display_rank] you answer directly to [job.supervisors]. Special circumstances may change this.</b>")
 		job.radio_help_message(M)
-		if(job.req_admin_notify)
-			to_chat(M, "<b>You are playing a job that is important for Game Progression. If you have to disconnect, please notify the admins via adminhelp.</b>")
-		if(CONFIG_GET(number/minimal_access_threshold))
-			to_chat(M, "<span class='notice'><B>As this station was initially staffed with a [CONFIG_GET(flag/jobs_have_minimal_access) ? "full crew, only your job's necessities" : "skeleton crew, additional access may"] have been added to your ID card.</B></span>")
-
-		//WS Begin - Wikilinks and Special notice
-		if(job.special_notice)
-			to_chat(M, "<span class='danger'>[job.special_notice]</span>")
+		//WS Begin - Wikilinks
 		if(job.wiki_page)
 			to_chat(M, "<span class='notice'><a href=[CONFIG_GET(string/wikiurl)]/[job.wiki_page]>Wiki Page</a></span>")
 		//WS End
@@ -707,3 +700,31 @@ SUBSYSTEM_DEF(job)
 			))
 
 	return manifest_out
+
+/datum/controller/subsystem/job/proc/get_manifest_html(monochrome = FALSE)
+	var/list/manifest = get_manifest()
+	var/dat = {"
+	<head><style>
+		.manifest {border-collapse:collapse;}
+		.manifest td, th {border:1px solid [monochrome?"black":"#DEF; background-color:white; color:black"]; padding:.25em}
+		.manifest th {height: 2em; [monochrome?"border-top-width: 3px":"background-color: #48C; color:white"]}
+		.manifest tr.head th { [monochrome?"border-top-width: 1px":"background-color: #488;"] }
+		.manifest tr.alt td {[monochrome?"border-top-width: 2px":"background-color: #DEF"]}
+	</style></head>
+	<table class="manifest" width='350px'>
+	<tr class='head'><th>Name</th><th>Rank</th></tr>
+	"}
+	for(var/department in manifest)
+		var/list/entries = manifest[department]
+		dat += "<tr><th colspan=3>[department]</th></tr>"
+		//JUST
+		var/even = FALSE
+		for(var/entry in entries)
+			var/list/entry_list = entry
+			dat += "<tr[even ? " class='alt'" : ""]><td>[entry_list["name"]]</td><td>[entry_list["rank"]]</td></tr>"
+			even = !even
+
+	dat += "</table>"
+	dat = replacetext(dat, "\n", "")
+	dat = replacetext(dat, "\t", "")
+	return dat

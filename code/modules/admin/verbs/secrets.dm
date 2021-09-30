@@ -147,12 +147,7 @@
 			else
 				alert("For some reason there's a SSticker, but not a game mode")
 		if("manifest")
-			var/dat = "<B>Showing Crew Manifest.</B><HR>"
-			dat += "<table cellspacing=5><tr><th>Name</th><th>Position</th></tr>"
-			for(var/datum/data/record/t in GLOB.data_core.general)
-				dat += "<tr><td>[t.fields["name"]]</td><td>[t.fields["rank"]]</td></tr>"
-			dat += "</table>"
-			holder << browse(dat, "window=manifest;size=440x410")
+			GLOB.crew_manifest_tgui.ui_interact(holder)
 		if("dna")
 			var/dat = "<B>Showing DNA from blood.</B><HR>"
 			dat += "<table cellspacing=5><tr><th>Name</th><th>DNA</th><th>Blood Type</th></tr>"

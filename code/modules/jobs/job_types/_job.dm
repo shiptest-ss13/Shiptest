@@ -34,9 +34,6 @@
 	var/selection_color = "#ffffff"
 
 
-	//If this is set to 1, a text is printed to the player when jobs are assigned, telling him that he should let admins know that he has to disconnect.
-	var/req_admin_notify
-
 	//If you have the use_age_restriction_for_jobs config option enabled and the database set up, this option will add a requirement for players to be at least minimal_player_age days old. (meaning they first signed in at least that many days before.)
 	var/minimal_player_age = 0
 
@@ -47,10 +44,7 @@
 	var/exp_type = ""
 	var/exp_type_department = ""
 
-	//A special, very large and noticeable message for certain roles reminding them of something important. Ex: "Blueshields are not security"
-	var/special_notice = ""
-
-	// A link to the relevant wiki related to the job. Ex: "Space_law" would link to wiki.blah/Space_law
+	/// A link to the relevant wiki related to the job. Ex: "Space_law" would link to wiki.blah/Space_law
 	var/wiki_page = ""
 
 	//The amount of good boy points playing this role will earn you towards a higher chance to roll antagonist next round
@@ -67,22 +61,6 @@
 
 	///Levels unlocked at roundstart in physiology
 	var/list/roundstart_experience
-	/// Should this job be allowed to be picked for the bureaucratic error event?
-	var/allow_bureaucratic_error = TRUE
-
-/datum/job/New()
-	. = ..()
-	var/list/jobs_changes = GetMapChanges()
-	if(!jobs_changes)
-		return
-	if(isnum(jobs_changes["additional_access"]))
-		access += jobs_changes["additional_access"]
-	if(isnum(jobs_changes["additional_minimal_access"]))
-		minimal_access += jobs_changes["additional_minimal_access"]
-	if(isnum(jobs_changes["spawn_positions"]))
-		spawn_positions = jobs_changes["spawn_positions"]
-	if(isnum(jobs_changes["total_positions"]))
-		total_positions = jobs_changes["total_positions"]
 
 //Only override this proc
 //H is usually a human unless an /equip override transformed it

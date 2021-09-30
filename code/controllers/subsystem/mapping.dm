@@ -236,7 +236,18 @@ SUBSYSTEM_DEF(mapping)
 		if(istext(data["map_short_name"]))
 			S.short_name = data["map_short_name"]
 		if(islist(data["job_slots"]))
-			S.job_slots = data["job_slots"]
+			S.job_slots = list()
+			var/list/job_slot_list = data["job_slots"]
+			for(var/job in job_slot_list)
+				var/datum/job/job_slot
+				var/slots
+				if(istext(job))
+					job_slot = SSjob.GetJob(job)
+					slots = job_slot_list["job"]
+				else(islist(job))
+					job_slot = new /datum/job(job["name"], text2path(job["outfit"]), job["exp_requirements"], job["wiki_page"])
+
+				S.job_slots[job_slot] = slots
 		if(isnum(data["cost"]))
 			ship_purchase_list[S] = data["cost"]
 
