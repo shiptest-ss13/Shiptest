@@ -184,7 +184,7 @@
 	mood_change = 5
 
 /datum/mood_event/nojordans
-	description = "<span class='warning'>They're gone... my fasion is ruined. I can feel my self esteem decaying... </span>\n"
+	description = "<span class='warning'>They're gone... my fashion is ruined. I can feel my self esteem decaying... </span>\n"
 	mood_change = -10
 
 /datum/mood_event/nanite_happiness
