@@ -45,65 +45,47 @@
 		return 0
 	..()
 
-//////////////
-//QUADVOLGUE//
-//////////////
-/obj/item/gun/ballistic/shotgun/doublebarrel/quad
-	name = "quadvolgue shotgun"
-	desc = "I've got my quad damage right here!"
-	icon_state = "qshotgun"
-	icon = 'whitesands/icons/obj/guns/projectile.dmi'
+//god fucking bless brazil
+/obj/item/gun/ballistic/shotgun/doublebarrel/brazil
+	name = "six-barreled \"PUTA\" shotgun"
+	desc = "Dear fucking god, what the fuck even is this!? Theres a green flag with a blue circle and a yellow diamond around it. Some text in the circle says: \"ORDEM E PROGRESSO.\""
+	icon_state = "shotgun_brazil"
+	icon = 'whitesands/icons/obj/guns/48x32guns.dmi'
 	lefthand_file = 'whitesands/icons/mob/inhands/weapons/64x_guns_left.dmi'
 	righthand_file = 'whitesands/icons/mob/inhands/weapons/64x_guns_right.dmi'
 	item_state = "shotgun_qb"
 	w_class = WEIGHT_CLASS_BULKY
-	force = 14 //blunt edge and really heavy
+	force = 15 //blunt edge and really heavy
 	attack_verb = list("bludgeoned", "smashed")
-	mag_type = /obj/item/ammo_box/magazine/internal/shot/quad
-	burst_size = 4
-	pb_knockback = 6
+	mag_type = /obj/item/ammo_box/magazine/internal/shot/sex
+	burst_size = 6
+	pb_knockback = 12
 	unique_reskin = null
-	recoil = 1
+	recoil = 10
 	weapon_weight = WEAPON_LIGHT
 	fire_sound = 'whitesands/sound/weapons/gun/shotgun/quadfire.ogg'
-	rack_sound = "whitesands/sound/weapons/gun/shotgun/quadrack.ogg"
-	load_sound = "whitesands/sound/weapons/gun/shotgun/quadinsert.ogg"
-	fire_sound_volume = 35
-	rack_sound_volume = 50
-
-/obj/item/gun/ballistic/shotgun/doublebarrel/quad/sawn
-	name = "sawn-off quadvolgue shotgun"
-	desc = "I've got my quad damage right here! Now with backpacks!"
-	icon_state = "qshotgun_sawn"
-	item_state = "shotgun_qb_sawn"
-	w_class = WEIGHT_CLASS_NORMAL
-	sawn_off = TRUE
-	slot_flags = ITEM_SLOT_BELT
-
-/obj/item/gun/ballistic/shotgun/doublebarrel/quad/sawoff(mob/user)
-	update_icon()
-
-/obj/item/gun/ballistic/shotgun/doublebarrel/quad/gold
-	name = "golden quadvolgue shotgun"
-	desc = "It looks heavily worn-down, as if it has been used extensively for many years."
-	icon_state = "qshotgungold"
-	item_state = "shotgun_qbgold"
-	burst_size = 2
-	pb_knockback = 4
-	fire_sound_volume = 45
-
-/obj/item/gun/ballistic/shotgun/doublebarrel/quad/gold/sawn
-	icon_state = "qshotgungold_sawn"
-	item_state = "shotgun_qbgold_sawn"
-	desc = "All miracles require sacrifices."
-
-/obj/item/gun/ballistic/shotgun/doublebarrel/quad/dual
-	name = "dual quadvolgue shotgun"
-	desc = "You think God stays in heaven, because he too, lives in fear of what he's created here on Earth?"
-	icon_state = "qshotgun_dual"
-	item_state = "shotgun_qb_dual"
-	mag_type = /obj/item/ammo_box/magazine/internal/shot/quad/dual
-	burst_size = 8
-	pb_knockback = 12
-	recoil = 2
+	rack_sound = 'whitesands/sound/weapons/gun/shotgun/quadrack.ogg'
+	load_sound = 'whitesands/sound/weapons/gun/shotgun/quadinsert.ogg'
 	fire_sound_volume = 50
+	rack_sound_volume = 50
+	can_be_sawn_off = FALSE
+
+/obj/item/gun/ballistic/shotgun/doublebarrel/brazil/process_fire(atom/target, mob/living/user, message = TRUE, params = null, zone_override = "", bonus_spread = 0)
+	if(prob(0 + (magazine.ammo_count() * 10)))	//minimum probability of 10, maximum of 60 only procs if theres more than 4 shells
+//		playsound(user, fire_sound, fire_sound_volume, vary_fire_sound)
+		if(prob(50))
+			to_chat(user, "<span class='userdanger'>Holy shit! [src] hurts your hand from trying to control it!</span>")
+			user.take_bodypart_damage(0,50)
+			..()
+		else
+			if(prob(10))
+				to_chat(user, "<span class='userdanger'>Something isn't right. \the [src] doesn't fire for a brief moment. Then, the following words come to mind: \
+				Ó Pátria amada, \
+				Idolatrada, \
+				Salve! Salve!</span>")
+				explosion(src, 0, 2, 4, 6, TRUE, TRUE)
+				user.gib()
+			else
+				to_chat(user, "<span class='userdanger'>[src] flies out of your hand!</span>")
+				user.dropItemToGround(src)
+	..()
