@@ -748,5 +748,5 @@ GLOBAL_LIST_EMPTY(parasites) //all currently existing/living guardians
 	random = FALSE
 	name = "glimmering shard"
 	desc = "Seems to be a very old rock, may have originated from a strange meteor. <b>This one looks exceptionally pure.</b>"
-	possible_guardians = list("Assassin", "Chaos", "Charger", "Dextrous", "Explosive", "Lightning", "Protector", "Ranged", "Standard", "Support	")
+	possible_guardians = list("Assassin", "Chaos", "Charger", "Dextrous", "Explosive", "Lightning", "Protector", "Ranged", "Standard", "Support")
 	allowmultiple = TRUE//if you *somehow* get the extremely rare minerchoose guardian(25% chance to spawn, for an item in a table of around 30 options) while you already have a guardian, you can stack it. The ultimate gamble.
