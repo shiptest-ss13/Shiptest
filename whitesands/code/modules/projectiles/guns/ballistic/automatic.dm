@@ -118,7 +118,7 @@
 
 /obj/item/gun/ballistic/automatic/ak47/nt
 	name = "NT-AK"
-	desc = "A cheap rip-off of a already cheap rifle. Comes with a foldable stock for easy storage, although accuracy is questionable when folded. Control click to toggle the stock."
+	desc = "A cheap rip-off of an already cheap rifle. Comes with a foldable stock for easy storage, although accuracy is questionable when folded. Control click to toggle the stock."
 	icon = 'whitesands/icons/obj/guns/48x32guns.dmi'
 	fire_sound = 'sound/weapons/gun/rifle/shot.ogg'
 	icon_state = "ak47_nt"
