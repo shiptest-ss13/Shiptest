@@ -44,7 +44,7 @@
 		sell_account.adjust_money(value)
 		to_chat(user, "<span class='notice'>You deposit [I]. The Vessel Budget is now [sell_account.account_balance] cr.</span>")
 		qdel(I)
-		return
+		return TRUE
 	return ..()
 
 /obj/machinery/computer/selling_pad_control/multitool_act(mob/living/user, obj/item/multitool/I)
