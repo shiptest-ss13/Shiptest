@@ -164,13 +164,10 @@
 /turf/open/floor/plating,
 /area/whitesands/surface/outdoors)
 "hm" = (
-/mob/living/simple_animal/hostile/whitesands/survivor,
+/mob/living/simple_animal/hostile/whitesands/survivor{
+	faction = list("saloon")
+	},
 /turf/open/floor/plating,
-/area/whitesands/surface/outdoors)
-"il" = (
-/obj/structure/lattice,
-/mob/living/simple_animal/hostile/whitesands/survivor,
-/turf/template_noop,
 /area/whitesands/surface/outdoors)
 "iu" = (
 /obj/machinery/chem_dispenser/drinks/beer{
@@ -280,7 +277,8 @@
 /area/whitesands/surface/outdoors)
 "oV" = (
 /mob/living/simple_animal/hostile/whitesands/ranged/gunslinger{
-	desc = "One of the few survivors on the planet with working weaponry. Doesn't seem as friendly as the bartenders you're used to."
+	desc = "One of the few survivors on the planet with working weaponry. Doesn't seem as friendly as the bartenders you're used to.";
+	faction = list("saloon")
 	},
 /turf/open/floor/wood{
 	icon_state = "wood-broken5"
@@ -421,7 +419,9 @@
 	},
 /area/whitesands/surface/outdoors)
 "vR" = (
-/mob/living/simple_animal/hostile/whitesands/survivor,
+/mob/living/simple_animal/hostile/whitesands/survivor{
+	faction = list("saloon")
+	},
 /turf/open/floor/plasteel/dark,
 /area/whitesands/surface/outdoors)
 "wy" = (
@@ -432,7 +432,9 @@
 /area/whitesands/surface/outdoors)
 "wL" = (
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/whitesands/survivor,
+/mob/living/simple_animal/hostile/whitesands/survivor{
+	faction = list("saloon")
+	},
 /turf/open/floor/plating,
 /area/whitesands/surface/outdoors)
 "wP" = (
@@ -619,7 +621,9 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 10
 	},
-/mob/living/simple_animal/hostile/whitesands/ranged/gunslinger,
+/mob/living/simple_animal/hostile/whitesands/ranged/gunslinger{
+	faction = list("saloon")
+	},
 /turf/open/floor/plating{
 	icon_state = "panelscorched"
 	},
@@ -760,12 +764,6 @@
 /turf/open/floor/plating{
 	icon_state = "platingdmg1"
 	},
-/area/whitesands/surface/outdoors)
-"KJ" = (
-/obj/structure/lattice,
-/obj/structure/lattice,
-/mob/living/simple_animal/hostile/whitesands/survivor,
-/turf/template_noop,
 /area/whitesands/surface/outdoors)
 "KZ" = (
 /obj/structure/cable{
@@ -1106,6 +1104,14 @@
 	},
 /turf/open/floor/wood,
 /area/whitesands/surface/outdoors)
+"ZU" = (
+/mob/living/simple_animal/hostile/whitesands/survivor{
+	faction = list("saloon")
+	},
+/turf/open/floor/plating{
+	icon_state = "platingdmg1"
+	},
+/area/whitesands/surface/outdoors)
 
 (1,1,1) = {"
 Wv
@@ -1144,7 +1150,7 @@ Wv
 (3,1,1) = {"
 Wv
 Wv
-KJ
+Np
 Fc
 cP
 cP
@@ -1152,7 +1158,7 @@ fj
 fj
 cP
 cP
-il
+fj
 fj
 fj
 Wv
@@ -1163,7 +1169,7 @@ Wv
 fj
 IX
 Wu
-Ar
+hm
 ZL
 gX
 qy
@@ -1186,7 +1192,7 @@ bV
 LS
 NH
 Ai
-yU
+ZU
 cP
 Ax
 fj
