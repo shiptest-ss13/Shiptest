@@ -113,8 +113,6 @@
 		user.visible_message("<span class='notice'>[user] starts slicing apart \the [src].</span>", "<span class='notice'>You start slicing apart \the [src]...</span>", "<span class='hear'>You hear the sound of a sharp object slicing some plant matter.</span>")
 		if(do_after(user, 50, target = src))
 			to_chat(user, "<span class='notice'>You slice apart the [src]! You went too far and the tiny remaining scraps are worthless!</span>")
-			/*	new /obj/item/reagent_containers/food/snacks/grown/sliced(user.drop_location(), 1)
-			use(1) */
 			flamingmoai(src, 1, user, TRUE)
 	else
 		switch(W.tool_behaviour)
@@ -123,16 +121,12 @@
 				user.visible_message("<span class='notice'>[user] starts digging into \the [src].</span>", "<span class='notice'>You start digging into \the [src]...</span>", "<span class='hear'>You hear the sound of a sharp object penetrating some plant matter.</span>")
 				if(do_after(user, 45, target = src))
 					to_chat(user, "<span class='notice'>You dig into the [src] to collect it's seeds! It's all gross and unusuable now, ew!</span>")
-					/*	new /obj/item/reagent_containers/food/snacks/grown/chipped(user.drop_location(), 1)
-					use(1) */
 					flamingmoai(src, 1, user, TRUE)
 			if(TOOL_HEMOSTAT)
 				playsound(loc, 'sound/weapons/bite.ogg', 50, TRUE, -1)
 				user.visible_message("<span class='notice'>[user] starts digging into \the [src].</span>", "<span class='notice'>You start digging into \the [src]...</span>", "<span class='hear'>You hear the sound of a sharp object penetrating some plant matter.</span>")
 				if(do_after(user, 40, target = src))
 					to_chat(user, "<span class='notice'>You dig into the [src] to collect it's seeds! It's all gross and unusuable now, ew!</span>")
-					/*	new /obj/item/reagent_containers/food/snacks/grown/chipped(user.drop_location(), 1)
-					use(1) */
 					flamingmoai(src, 1, user, TRUE)
 			if(TOOL_WIRECUTTER)
 				playsound(loc, 'sound/weapons/bite.ogg', 50, TRUE, -1)
@@ -145,8 +139,6 @@
 				user.visible_message("<span class='notice'>[user] starts splitting \the [src].</span>", "<span class='notice'>You dig into \the [src] and start to split it...</span>", "<span class='hear'>You hear the sound of a sharp object digging into some plant matter.</span>")
 				if(do_after(user, 20, target = src))
 					to_chat(user, "<span class='notice'>You split apart the [src]! Sadly you put too much force and it's remains are unusable, but hey, you got your seeds!</span>")
-					/*	new /obj/item/reagent_containers/food/snacks/grown/split(user.drop_location(), 1)
-					use(1) */
 					flamingmoai(src, 1, user, FALSE)
 					squash(user)
 			if(TOOL_WRENCH)
@@ -154,8 +146,6 @@
 				user.visible_message("<span class='notice'>[user] starts wackng \the [src].</span>", "<span class='notice'>You start wacking \the [src]...</span>", "<span class='hear'>You hear the sound of a plant being wacked violently.</span>")
 				if(do_after(user, 15, target = src))
 					to_chat(user, "<span class='notice'>You smash [src]! Sadly there's nothing left of it other than the seeds and some junk.</span>")
-					/*	new /obj/item/reagent_containers/food/snacks/grown/smacked(user.drop_location(), 1)
-					use(1) */
 					flamingmoai(src, 1, user, FALSE)
 					squash(user)
 			else
