@@ -1,6 +1,6 @@
 /mob/living/simple_animal/hostile/asteroid/wolf
 	name = "white wolf"
-	desc = "A beast that survives by feasting on weaker opponents, they're much stronger with numbers."
+	desc = "A beast that survives by feasting on weaker opponents, they're much stronger with numbers. Watch out for the lunge!"
 	icon = 'icons/mob/icemoon/icemoon_monsters.dmi'
 	icon_state = "whitewolf"
 	icon_living = "whitewolf"
@@ -10,8 +10,8 @@
 	friendly_verb_continuous = "howls at"
 	friendly_verb_simple = "howl at"
 	speak_emote = list("howls")
-	speed = 5
-	move_to_delay = 5
+	speed = 8
+	move_to_delay = 8
 	maxHealth = 90
 	health = 90
 	obj_damage = 15
@@ -33,6 +33,9 @@
 	loot = list()
 	crusher_loot = /obj/item/crusher_trophy/wolf_ear
 	stat_attack = HARD_CRIT
+	charger = TRUE
+	charge_distance = 10
+	charge_frequency = 12 SECONDS
 	robust_searching = TRUE
 	footstep_type = FOOTSTEP_MOB_CLAW
 	/// Message for when the wolf decides to start running away

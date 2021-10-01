@@ -88,7 +88,7 @@
 /mob/living/simple_animal/hostile/asteroid/old_demon
 	name = "primordial demon"
 	desc = "At the beginning, there was nothing but emptiness. \
-	Emptiness, and monsters."
+	From the emptiness, there came monsters."
 	icon = 'icons/mob/icemoon/icemoon_monsters.dmi'
 	icon_state = "old_demon"
 	icon_living = "old_demon"
@@ -96,7 +96,7 @@
 	icon_gib = "syndicate_gib"
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
 	mouse_opacity = MOUSE_OPACITY_ICON
-	speak_emote = list("telepathically cries")
+	speak_emote = list("telepathically shrieks")
 	speed = 2
 	move_to_delay = 2
 	projectiletype = /obj/projectile/temp/basilisk/ice

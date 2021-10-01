@@ -37,17 +37,19 @@
 
 /mob/living/simple_animal/hostile/asteroid/polarbear/adjustHealth(amount, updating_health = TRUE, forced = FALSE)
 	. = ..()
-	if(health > maxHealth*0.5)
+	if(health > maxHealth*0.3)
 		rapid_melee = initial(rapid_melee)
 		return
 	if(!aggressive_message_said && target)
-		visible_message("<span class='danger'>The [name] gets an enraged look at [target]!</span>")
+		visible_message("<span class='danger'>The [name] looks at [target] with an expression of rage!</span>")
 		aggressive_message_said = TRUE
 	rapid_melee = 2
+	speed = 7
+	move_to_delay = 7
 
 /mob/living/simple_animal/hostile/asteroid/polarbear/Life()
 	. = ..()
-	if(!. || target)
+	if(target)
 		return
 	adjustHealth(-maxHealth*0.025)
 	aggressive_message_said = FALSE
@@ -84,15 +86,15 @@
 //elite bear
 /mob/living/simple_animal/hostile/asteroid/polarbear/warrior
 	name = "polar warbear"
-	desc = "An aggressive animal that defends it's territory with incredible power. This one appears to be a remnant of the short-lived Wojtek-Aleph program."
+	desc = "An aggressive animal that defends its territory with incredible power. This one appears to be a remnant of the short-lived Wojtek-Aleph program."
 	melee_damage_lower = 35
 	melee_damage_upper = 35
 	attack_verb_continuous = "CQB's"
 	attack_verb_simple = "CQB"
 	speed = 7
 	move_to_delay = 7
-	maxHealth = 400
-	health = 400
+	maxHealth = 300
+	health = 300
 	obj_damage = 60
 	icon_state = "warbear"
 	icon_living = "warbear"
