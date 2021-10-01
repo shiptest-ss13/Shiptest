@@ -744,7 +744,7 @@
 					R.generate_trash(get_turf(user))
 			visi_msg="[user] composts [reagent_source], spreading it through [target]"
 			transfer_amount = reagent_source.reagents.total_volume
-			if(istype(reagent_source, /obj/item/reagent_containers/food/snacks/grown) && prob(48))
+			if(istype(reagent_source, /obj/item/reagent_containers/food/snacks/grown) && prob(25))
 				var/obj/item/reagent_containers/food/snacks/grown/R = reagent_source
 				var/obj/item/seeds/temp_seed = R.seed.Copy()
 				if(istype(temp_seed, /obj/item/seeds) && !istype(temp_seed, /obj/item/seeds/sample))
