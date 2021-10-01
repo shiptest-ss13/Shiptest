@@ -58,15 +58,6 @@
 /obj/effect/turf_decal/stripes/red/full
 	icon_state = "warn_full_red"
 
-/obj/effect/turf_decal/delivery
-	icon_state = "delivery"
-
-/obj/effect/turf_decal/delivery/white
-	icon_state = "delivery_white"
-
-/obj/effect/turf_decal/delivery/red
-	icon_state = "delivery_red"
-
 /obj/effect/turf_decal/bot
 	icon_state = "bot"
 
