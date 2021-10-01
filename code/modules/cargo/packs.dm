@@ -674,7 +674,7 @@
 
 /datum/supply_pack/security/armory/akntammo
 	name = "Nanotrasen Brand Kalashnikov Ammo Crate"
-	desc = "Contains 2 30 round properitary magazines for the NT-AK."
+	desc = "Contains two 30 round proprietary magazines for the NT-AK."
 	cost = 5000
 	contains = list(/obj/item/ammo_box/magazine/aknt,
 					/obj/item/ammo_box/magazine/aknt)
