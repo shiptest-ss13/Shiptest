@@ -422,10 +422,6 @@
 			else
 				mind.announce_objectives()
 
-		for (var/job_name in GLOB.command_positions + GLOB.security_positions)
-			var/datum/job/job = SSjob.GetJob(job_name)
-			job.total_positions = 0
-
 		if (revs_win_injection_amount)
 			var/datum/game_mode/dynamic/dynamic = SSticker.mode
 			dynamic.create_threat(revs_win_injection_amount)

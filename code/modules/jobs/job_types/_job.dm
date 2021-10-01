@@ -62,6 +62,12 @@
 	///Levels unlocked at roundstart in physiology
 	var/list/roundstart_experience
 
+/datum/job/New(new_title, datum/outfit/new_outfit, new_exp_requirements, new_wiki_page)
+	title = new_title
+	outfit = new_outfit
+	exp_requirements = new_exp_requirements
+	wiki_page = new_wiki_page
+
 //Only override this proc
 //H is usually a human unless an /equip override transformed it
 //do actions on H but send messages to M as the key may not have been transferred_yet

@@ -5,7 +5,6 @@
 	total_positions = 2
 	spawn_positions = 2
 	supervisors = "the head of personnel"
-	special_notice = "You are not a security officer. However, you represent the law and can defend those who are mishandled by security in court." //WS Edit - Wikilinks/Warning
 	wiki_page = "Lawyer" //WS Edit - Wikilinks/Warning
 	selection_color = "#bbe291"
 	var/lawyers = 0 //Counts lawyer amount

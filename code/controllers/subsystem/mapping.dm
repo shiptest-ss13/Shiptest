@@ -244,8 +244,9 @@ SUBSYSTEM_DEF(mapping)
 				if(istext(job))
 					job_slot = SSjob.GetJob(job)
 					slots = job_slot_list["job"]
-				else(islist(job))
+				else if(islist(job))
 					job_slot = new /datum/job(job["name"], text2path(job["outfit"]), job["exp_requirements"], job["wiki_page"])
+					slots = job["slots"]
 
 				S.job_slots[job_slot] = slots
 		if(isnum(data["cost"]))
