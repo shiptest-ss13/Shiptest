@@ -47,7 +47,7 @@
 
 //god fucking bless brazil
 /obj/item/gun/ballistic/shotgun/doublebarrel/brazil
-	name = "six-barreled \"PUTA\" shotgun"
+	name = "six-barreled \"TRABUCO\" shotgun"
 	desc = "Dear fucking god, what the fuck even is this!? Theres a green flag with a blue circle and a yellow diamond around it. Some text in the circle says: \"ORDEM E PROGRESSO.\""
 	icon_state = "shotgun_brazil"
 	icon = 'whitesands/icons/obj/guns/48x32guns.dmi'
