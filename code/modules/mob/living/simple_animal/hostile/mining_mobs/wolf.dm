@@ -10,14 +10,14 @@
 	friendly_verb_continuous = "howls at"
 	friendly_verb_simple = "howl at"
 	speak_emote = list("howls")
-	speed = 8
-	move_to_delay = 8
+	speed = 7
+	move_to_delay = 7
 	maxHealth = 90
 	health = 90
 	obj_damage = 15
 	environment_smash = ENVIRONMENT_SMASH_MINERALS
-	melee_damage_lower = 7.5
-	melee_damage_upper = 7.5
+	melee_damage_lower = 7
+	melee_damage_upper = 7
 	rapid_melee = 2 // every second attack
 	dodging = TRUE
 	dodge_prob = 50
@@ -35,7 +35,7 @@
 	stat_attack = HARD_CRIT
 	charger = TRUE
 	charge_distance = 10
-	charge_frequency = 12 SECONDS
+	charge_frequency = 8 SECONDS
 	robust_searching = TRUE
 	footstep_type = FOOTSTEP_MOB_CLAW
 	/// Message for when the wolf decides to start running away

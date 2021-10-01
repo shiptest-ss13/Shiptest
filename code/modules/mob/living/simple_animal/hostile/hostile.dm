@@ -602,6 +602,7 @@
 	if(!can_charge_target(target))
 		return FALSE
 	Shake(15, 15, 1 SECONDS)
+	target.visible_message("<span class='danger'>[src] prepares to pounce!</span>")
 	addtimer(CALLBACK(src, .proc/handle_charge_target, target), 1.5 SECONDS, TIMER_STOPPABLE)
 
 /**
@@ -645,7 +646,7 @@
 				if(H.check_shields(src, 0, "the [name]", attack_type = LEAP_ATTACK))
 					blocked = TRUE
 			if(!blocked)
-				L.visible_message(("<span class='danger'>[src] charges on [L]!</span>"), ("<span class='userdanger'>[src] charges into you!</span>"))
+				L.visible_message(("<span class='danger'>[src] pounces onto[L]!</span>"), ("<span class='userdanger'>[src] pounces on you!</span>"))
 				L.Knockdown(knockdown_time)
 			else
 				Stun((knockdown_time * 2), ignore_canstun = TRUE)
