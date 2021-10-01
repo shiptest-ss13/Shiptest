@@ -121,6 +121,12 @@
 	///Used for changing icon states for different base sprites.
 	var/base_icon_state
 
+		///The config type to use for greyscaled sprites. Both this and greyscale_colors must be assigned to work.
+	var/greyscale_config
+	///A string of hex format colors to be used by greyscale sprites, ex: "#0054aa#badcff"
+	var/greyscale_colors
+
+
 	///Icon-smoothing behavior.
 	var/smoothing_flags = NONE
 	///What directions this is currently smoothing with. IMPORTANT: This uses the smoothing direction flags as defined in icon_smoothing.dm, instead of the BYOND flags.
@@ -648,6 +654,14 @@
 		update_icon_state()
 		. = TRUE
 
+		if(updates & UPDATE_GREYSCALE)
+		var/list/colors = update_greyscale()
+		// Updating the greyscale config in update_greyscale() is fine or we would check this earlier
+		if(greyscale_config)
+			icon = SSgreyscale.GetColoredIconByType(greyscale_config, colors)
+		. |= UPDATE_GREYSCALE
+
+
 	if(!(signalOut & COMSIG_ATOM_NO_UPDATE_OVERLAYS))
 		var/list/new_overlays = update_overlays()
 		if(managed_overlays)
@@ -662,6 +676,16 @@
 
 /// Updates the icon state of the atom
 /atom/proc/update_icon_state()
+
+// Updates the greyscale of the atom
+/atom/proc/update_greyscale()
+	SHOULD_CALL_PARENT(TRUE)
+	. = list()
+	var/list/raw_rgb = splittext(greyscale_colors, "#")
+	for(var/i in 2 to length(raw_rgb))
+		. += "#[raw_rgb[i]]"
+	SEND_SIGNAL(src, COMSIG_ATOM_UPDATE_GREYSCALE, .)
+
 
 /// Updates the overlays of the atom
 /atom/proc/update_overlays()
@@ -1062,6 +1086,8 @@
 	VV_DROPDOWN_OPTION(VV_HK_TRIGGER_EXPLOSION, "Explosion")
 	VV_DROPDOWN_OPTION(VV_HK_RADIATE, "Radiate")
 	VV_DROPDOWN_OPTION(VV_HK_EDIT_FILTERS, "Edit Filters")
+	if(greyscale_colors)
+		VV_DROPDOWN_OPTION(VV_HK_MODIFY_GREYSCALE, "Modify greyscale colors"
 
 /atom/vv_do_topic(list/href_list)
 	. = ..()
