@@ -541,12 +541,33 @@
 				/obj/item/stack/sheet/sinew = 1)
 	category = CAT_PRIMAL
 
+/datum/crafting_recipe/bonenecklace
+	name = "Hunter's Necklace"
+	result = /obj/item/clothing/accessory/wolftalisman
+	time = 35
+	reqs = list(/obj/item/stack/sheet/bone = 2,
+				/obj/item/stack/sheet/sinew = 3,
+				/obj/item/crusher_trophy/wolf_ear = 2,
+				/obj/item/crusher_trophy/fang = 1)
+	category = CAT_PRIMAL
+
 /datum/crafting_recipe/bonecodpiece
 	name = "Skull Codpiece"
 	result = /obj/item/clothing/accessory/skullcodpiece
 	time = 20
 	reqs = list(/obj/item/stack/sheet/bone = 2,
+				/obj/item/crusher_trophy/legion_skull = 1,
 				/obj/item/stack/sheet/animalhide/goliath_hide = 1)
+	category = CAT_PRIMAL
+
+/datum/crafting_recipe/bonestaff
+	name = "Legion Staff"
+	result = /obj/item/legion_staff
+	time = 35
+	reqs = list(/obj/item/stack/sheet/bone = 2,
+				/obj/item/crusher_trophy/legion_skull = 2,\
+				/obj/item/crusher_trophy/dwarf_skull = 1,
+				/obj/item/organ/regenerative_core/legion = 1)
 	category = CAT_PRIMAL
 
 /datum/crafting_recipe/skilt

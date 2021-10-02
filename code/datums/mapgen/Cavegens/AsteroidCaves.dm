@@ -10,12 +10,11 @@
 		SPAWN_MEGAFAUNA = 4, /mob/living/simple_animal/hostile/asteroid/goldgrub = 10)
 	flora_spawn_list = list(/obj/structure/flora/ash/space/voidmelon = 2)
 
-	initial_closed_chance = 50
+	initial_closed_chance = 55
 	smoothing_iterations = 50
 	birth_limit = 4
 	death_limit = 3
-	mob_spawn_chance = 7
-
+	mob_spawn_chance = 6
 
 /datum/map_generator/cave_generator/asteroid/generate_terrain(list/turfs)
 	var/maxx

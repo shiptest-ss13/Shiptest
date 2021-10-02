@@ -113,7 +113,6 @@
 	speak_emote = list("echoes")
 	attack_sound = 'sound/weapons/pierce.ogg'
 	throw_message = "bounces harmlessly off of"
-	crusher_loot = /obj/item/crusher_trophy/legion_skull
 	loot = list(/obj/item/organ/regenerative_core/legion)
 	brood_type = /mob/living/simple_animal/hostile/asteroid/hivelordbrood/legion
 	del_on_death = 1
@@ -122,10 +121,21 @@
 	var/dwarf_mob = FALSE
 	var/mob/living/carbon/human/stored_mob
 
+/mob/living/simple_animal/hostile/asteroid/hivelord/legion/gib()
+	move_force = MOVE_FORCE_DEFAULT
+	move_resist = MOVE_RESIST_DEFAULT
+	pull_force = PULL_FORCE_DEFAULT
+	if(prob(15))
+		new /obj/item/crusher_trophy/legion_skull(loc)
+		visible_message("<span class='warning'>One of the [src]'s skulls looks intact.</span>")
+	..()
+
 /mob/living/simple_animal/hostile/asteroid/hivelord/legion/random/Initialize()
 	. = ..()
 	if(prob(15))
 		new /mob/living/simple_animal/hostile/asteroid/hivelord/legion/dwarf(loc)
+	if(prob(5))
+		new /mob/living/simple_animal/hostile/big_legion
 		return INITIALIZE_HINT_QDEL
 
 /mob/living/simple_animal/hostile/asteroid/hivelord/legion/dwarf
@@ -135,12 +145,10 @@
 	icon_living = "dwarf_legion"
 	icon_aggro = "dwarf_legion"
 	icon_dead = "dwarf_legion"
-	crusher_loot = /obj/item/crusher_trophy/dwarf_skull
 	maxHealth = 150
 	health = 150
 	move_to_delay = 2
 	speed = 1 //much faster!
-	crusher_drop_mod = 75
 	dwarf_mob = TRUE
 
 /mob/living/simple_animal/hostile/asteroid/hivelord/legion/death(gibbed)
@@ -160,6 +168,15 @@
 
 /mob/living/simple_animal/hostile/asteroid/hivelord/legion/tendril
 	fromtendril = TRUE
+
+/mob/living/simple_animal/hostile/asteroid/hivelord/legion/dwarf/gib()
+	move_force = MOVE_FORCE_DEFAULT
+	move_resist = MOVE_RESIST_DEFAULT
+	pull_force = PULL_FORCE_DEFAULT
+	if(prob(75))
+		new /obj/item/crusher_trophy/dwarf_skull(loc)
+		visible_message("<span class='warning'>One of the [src]'s skulls looks like it survived.</span>")
+	..()
 
 //Legion skull
 /mob/living/simple_animal/hostile/asteroid/hivelordbrood/legion
@@ -221,6 +238,8 @@
 
 //Advanced Legion is slightly tougher to kill and can raise corpses (revive other legions)
 /mob/living/simple_animal/hostile/asteroid/hivelord/legion/advanced
+	name = "Signifer"
+	desc = "A shrunken legion, carring the remnants of a mouldering battle standard. The cadre of lackeys surrounding it seem particularly attentive."
 	stat_attack = DEAD
 	maxHealth = 120
 	health = 120
@@ -237,7 +256,7 @@
 //Legion that spawns Legions
 /mob/living/simple_animal/hostile/big_legion
 	name = "Legate"
-	desc = "A rare and incredibly dangerous legion mutation, forming from several legion joined in union around a necropolis spire. It's looking particularly self-confident."
+	desc = "A rare and incredibly dangerous legion mutation, forming from a plethora of legion joined in union around a young necropolis spire. It's looking particularly self-confident."
 	icon = 'icons/mob/lavaland/64x64megafauna.dmi'
 	icon_state = "legion"
 	icon_living = "legion"
@@ -249,6 +268,7 @@
 	melee_damage_upper = 25
 	anchored = FALSE
 	AIStatus = AI_ON
+	obj_damage = 150
 	stop_automated_movement = FALSE
 	wander = TRUE
 	maxbodytemp = INFINITY
@@ -264,11 +284,18 @@
 	speed = 5
 	faction = list("mining")
 	weather_immunities = list("lava","ash")
-	obj_damage = 30
-	environment_smash = ENVIRONMENT_SMASH_WALLS
+	environment_smash = ENVIRONMENT_SMASH_RWALLS
 	see_in_dark = 8
 	lighting_alpha = LIGHTING_PLANE_ALPHA_MOSTLY_INVISIBLE
 
+/mob/living/simple_animal/hostile/big_legion/death(gibbed)
+	move_force = MOVE_FORCE_DEFAULT
+	move_resist = MOVE_RESIST_DEFAULT
+	pull_force = PULL_FORCE_DEFAULT
+	..(gibbed)
+	visible_message("<span class='userwarning'>[src] falls over with a mighty crash, the remaining legions within it boiling away!</span>")
+	new /obj/item/crusher_trophy/legion_skull(loc)
+	new /obj/item/crusher_trophy/legion_skull(loc)
 
 /mob/living/simple_animal/hostile/big_legion/Initialize()
 	.=..()

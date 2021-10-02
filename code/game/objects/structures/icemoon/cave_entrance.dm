@@ -538,7 +538,7 @@ GLOBAL_LIST_INIT(ore_probability, list(
 				new /obj/item/reagent_containers/food/snacks/carpmeat(loc)
 				new /obj/item/reagent_containers/food/snacks/carpmeat(loc)
 			if(prob(25))
-				new /obj/item/guardiancreator/carp/choose
+				new /obj/item/guardiancreator/carp/choose(loc)
 				new /mob/living/simple_animal/hostile/carp/megacarp(loc)
 			new /mob/living/simple_animal/hostile/carp/megacarp(loc)
 			new /mob/living/simple_animal/hostile/carp(loc)

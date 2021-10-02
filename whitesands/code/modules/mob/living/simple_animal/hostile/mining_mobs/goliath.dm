@@ -65,19 +65,23 @@
 		pull_force = MOVE_FORCE_VERY_STRONG
 		. = 1
 
-/mob/living/simple_animal/hostile/asteroid/goliath/death(gibbed)
+/mob/living/simple_animal/hostile/asteroid/goliath/gib()
 	move_force = MOVE_FORCE_DEFAULT
 	move_resist = MOVE_RESIST_DEFAULT
 	pull_force = PULL_FORCE_DEFAULT
-	..(gibbed)
 	if(prob(1))//goliaths eat rocks and thus have a tiny chance to contain a number of gems
 		new /obj/item/gem/rupee(loc)
+		visible_message("<span class='warning'>A glittering object falls out of [src]'s hide!</span>")
 	if(prob(1))
 		new /obj/item/gem/fdiamond(loc)
+		visible_message("<span class='warning'>A glittering object falls out of [src]'s hide!</span>")
 	if(prob(1))
 		new /obj/item/gem/void(loc)
+		visible_message("<span class='warning'>A glittering object falls out of [src]'s hide!</span>")
 	if(prob(1))
 		new /obj/item/gem/phoron(loc)
+		visible_message("<span class='warning'>A glittering object falls out of [src]'s hide!</span>")
+	..()
 
 /mob/living/simple_animal/hostile/asteroid/goliath/OpenFire()
 	var/tturf = get_turf(target)
