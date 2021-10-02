@@ -223,7 +223,7 @@
 	if(usr.incapacitated())
 		return
 	for(var/obj/item/O in contents)
-		seedify(O, 1, FALSE, src, user, TRUE)
+		seedify(O, 1, FALSE, nonefuckyou, user, TRUE)
 
 // -----------------------------
 //        Sheet Snatcher
