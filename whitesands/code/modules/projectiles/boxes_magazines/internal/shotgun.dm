@@ -13,3 +13,7 @@
 	max_ammo = 6
 	ammo_type = /obj/item/ammo_casing/shotgun/buckshot
 
+/obj/item/ammo_box/magazine/internal/shot/hundred
+	name = "hundred-barrel shotgun internal magazine"
+	max_ammo = 100
+	ammo_type = /obj/item/ammo_casing/shotgun/buckshot

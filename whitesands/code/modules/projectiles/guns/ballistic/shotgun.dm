@@ -89,3 +89,13 @@
 				to_chat(user, "<span class='userdanger'>[src] flies out of your hand!</span>")
 				user.dropItemToGround(src)
 	..()
+
+/obj/item/gun/ballistic/shotgun/doublebarrel/brazil/death
+	name = "Force of Nature"
+	desc = "So you have chosen death."
+	icon_state = "shotgun_e"
+	burst_size = 100
+	pb_knockback = 40
+	recoil = 100
+	fire_sound_volume = 100
+	mag_type = /obj/item/ammo_box/magazine/internal/shot/hundred
