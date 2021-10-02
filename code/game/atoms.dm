@@ -654,14 +654,14 @@
 		update_icon_state()
 		. = TRUE
 
-	if(updates & UPDATE_GREYSCALE)
+	if(!(signalOut & UPDATE_GREYSCALE))
 		var/list/colors = update_greyscale()
 		// Updating the greyscale config in update_greyscale() is fine or we would check this earlier
 		if(greyscale_config)
 			icon = SSgreyscale.GetColoredIconByType(greyscale_config, colors)
 		. |= UPDATE_GREYSCALE
 
-	if(updates & UPDATE_OVERLAYS)
+	if(!(signalOut & UPDATE_OVERLAYS))
 		if(LAZYLEN(managed_vis_overlays))
 			SSvis_overlays.remove_vis_overlay(src, managed_vis_overlays)
 
