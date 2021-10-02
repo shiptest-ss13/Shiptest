@@ -683,6 +683,13 @@
 	result = /obj/structure/headpike
 	category = CAT_PRIMAL
 
+/datum/crafting_recipe/tribal_torch
+	name = "Tribal Torch"
+	result = /obj/item/candle/tribal_torch
+	time = 30
+	reqs = list(/obj/item/stack/sheet/mineral/wood = 4)
+	category = CAT_PRIMAL
+
 /datum/crafting_recipe/headpikebone
 	name = "Spike Head (Bone Spear)"
 	time = 65

@@ -354,7 +354,28 @@
 	name = "vending"
 
 /datum/asset/spritesheet/vending/register()
-	for (var/k in GLOB.vending_products)
+	var/list/vendor_type_list = typesof(/obj/machinery/vending)
+	var/list/vending_products = list()
+
+	for(var/vendor_type in vendor_type_list)
+		var/obj/machinery/vending/V = new vendor_type()
+		if (V.products)
+			for(var/typepath in V.products)
+				vending_products[typepath] = 1
+		if (V.contraband)
+			for(var/typepath in V.contraband)
+				vending_products[typepath] = 1
+		if (V.premium)
+			for(var/typepath in V.premium)
+				vending_products[typepath] = 1
+		qdel(V)
+
+	var/obj/machinery/mineral/equipment_vendor/V = new /obj/machinery/mineral/equipment_vendor()
+	for(var/typepath in V.prize_list)
+		vending_products[typepath] = 1
+	qdel(V)
+
+	for (var/k in vending_products)
 		var/atom/item = k
 		if (!ispath(item, /atom))
 			continue
