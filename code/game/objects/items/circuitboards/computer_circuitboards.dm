@@ -392,10 +392,6 @@
 		to_chat(user, "<span class='notice'>You change the routing protocols, allowing the Drop Pod to land anywhere on the station.</span>")
 		obj_flags |= EMAGGED
 
-/obj/item/circuitboard/computer/cargo/request
-	name = "Supply Request Console (Computer Board)"
-	build_path = /obj/machinery/computer/cargo/request
-
 /obj/item/circuitboard/computer/mining
 	name = "Outpost Status Display (Computer Board)"
 	icon_state = "supply"

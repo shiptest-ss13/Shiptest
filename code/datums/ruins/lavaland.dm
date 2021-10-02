@@ -257,7 +257,7 @@
 	name = "Syndicate Comm Outpost"
 	id = "commoutpost"
 	description = "A forgotten outpost home to only a tragic tale."
-	suffix = "lavaland_surface_comm_outpost"
+	suffix = "lavaland_surface_comm_outpost.dmm"
 	allow_duplicates = FALSE
 	cost = 5
 
@@ -265,7 +265,7 @@
 	name = "Legion infested Dwarf Fortress"
 	id = "dwarffortress"
 	description = "A forgotten fortress home to only a tragic tale and infested corpses."
-	suffix = "lavaland_surface_dwarffortress"
+	suffix = "lavaland_surface_dwarffortress.dmm"
 	allow_duplicates = FALSE
 
 /datum/map_template/ruin/lavaland/boss/bubblegum

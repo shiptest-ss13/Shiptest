@@ -299,11 +299,9 @@ const PageMain = (props, context) => {
   const {
     alertLevel,
     alertLevelTick,
-    callShuttleReasonMinLength,
     canBuyShuttles,
     canMakeAnnouncement,
     canMessageAssociates,
-    canRecallShuttles,
     canRequestNuke,
     canSendToSectors,
     canSetAlertLevel,
@@ -312,15 +310,8 @@ const PageMain = (props, context) => {
     emergencyAccess,
     importantActionReady,
     sectors,
-    shuttleCalled,
-    shuttleCalledPreviously,
-    shuttleCanEvacOrFailReason,
-    shuttleLastCalled,
-    shuttleRecallable,
   } = data;
 
-  const [callingShuttle, setCallingShuttle] = useLocalState(
-    context, "calling_shuttle", false);
   const [messagingAssociates, setMessagingAssociates] = useLocalState(
     context, "messaging_associates", false);
   const [messagingSector, setMessagingSector] = useLocalState(
@@ -335,49 +326,6 @@ const PageMain = (props, context) => {
 
   return (
     <Box>
-      <Section title="Emergency Shuttle">
-        {shuttleCalled && (
-          <Button.Confirm
-            icon="space-shuttle"
-            content="Recall Emergency Shuttle"
-            color="bad"
-            disabled={!canRecallShuttles || !shuttleRecallable}
-            tooltip={(
-              canRecallShuttles && (
-                !shuttleRecallable && "It's too late for the emergency shuttle to be recalled."
-              ) || (
-                "You do not have permission to recall the emergency shuttle."
-              )
-            )}
-            tooltipPosition="bottom-right"
-            onClick={() => act("recallShuttle")}
-          />
-        ) || (
-          <Button
-            icon="space-shuttle"
-            content="Call Emergency Shuttle"
-            disabled={shuttleCanEvacOrFailReason !== 1}
-            tooltip={
-              shuttleCanEvacOrFailReason !== 1
-                ? shuttleCanEvacOrFailReason
-                : undefined
-            }
-            tooltipPosition="bottom-right"
-            onClick={() => setCallingShuttle(true)}
-          />
-        )}
-        {!!shuttleCalledPreviously && (
-          shuttleLastCalled && (
-            <Box>
-              Most recent shuttle call/recall traced to:
-              {" "}<b>{shuttleLastCalled}</b>
-            </Box>
-          ) || (
-            <Box>Unable to trace most recent shuttle/recall signal.</Box>
-          )
-        )}
-      </Section>
-
       {!!canSetAlertLevel && (
         <Section title="Alert Level">
           <Flex justify="space-between">
@@ -488,20 +436,6 @@ const PageMain = (props, context) => {
         onSubmit={reason => {
           setRequestingNukeCodes(false);
           act("requestNukeCodes", {
-            reason,
-          });
-        }}
-      />}
-
-      {!!callingShuttle && <MessageModal
-        label="Nature of emergency"
-        icon="space-shuttle"
-        buttonText="Call Shuttle"
-        minLength={callShuttleReasonMinLength}
-        onBack={() => setCallingShuttle(false)}
-        onSubmit={reason => {
-          setCallingShuttle(false);
-          act("callShuttle", {
             reason,
           });
         }}

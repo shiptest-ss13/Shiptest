@@ -296,30 +296,6 @@
 	viewalerts = 1
 	src << browse(dat, "window=aialerts&can_close=0")
 
-/mob/living/silicon/ai/proc/ai_call_shuttle()
-	if(control_disabled)
-		to_chat(usr, "<span class='warning'>Wireless control is disabled!</span>")
-		return
-
-	var/can_evac_or_fail_reason = SSshuttle.canEvac(src)
-	if(can_evac_or_fail_reason != TRUE)
-		to_chat(usr, "<span class='alert'>[can_evac_or_fail_reason]</span>")
-		return
-
-	var/reason = input(src, "What is the nature of your emergency? ([CALL_SHUTTLE_REASON_LENGTH] characters required.)", "Confirm Shuttle Call") as null|text
-
-	if(incapacitated())
-		return
-
-	if(trim(reason))
-		SSshuttle.requestEvac(src, reason)
-
-	// hack to display shuttle timer
-	if(!EMERGENCY_IDLE_OR_RECALLED)
-		var/obj/machinery/computer/communications/C = locate() in GLOB.machines
-		if(C)
-			C.post_status("shuttle")
-
 /mob/living/silicon/ai/can_interact_with(atom/A)
 	. = ..()
 	var/turf/ai = get_turf(src)
