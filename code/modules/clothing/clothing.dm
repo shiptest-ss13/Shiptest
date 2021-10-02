@@ -32,7 +32,7 @@
 	var/list/user_vars_remembered //Auto built by the above + dropped() + equipped()
 
 	/// Needs to follow this syntax: either a list() with the x and y coordinates of the pixel you want to get the colour from, or a hexcolour. Colour one replaces red, two replaces blue, and three replaces green in the icon state.
-	var/list/greyscale_colors[3]
+	//var/list/greyscale_colors[3]
 	/// Needs to be a RGB-greyscale format icon state in all species' clothing icon files.
 	var/greyscale_icon_state
 
