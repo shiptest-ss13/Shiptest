@@ -250,7 +250,7 @@
 	icon = 'icons/obj/lavaland/elite_trophies.dmi'
 	icon_state = "herald_cloak"
 	body_parts_covered = CHEST|GROIN|ARMS
-	hit_reaction_chance = 10
+	hit_reaction_chance = 25
 
 /obj/item/clothing/neck/cloak/herald_cloak/proc/reactionshot(mob/living/carbon/owner)
 	var/static/list/directional_shot_angles = list(0, 45, 90, 135, 180, 225, 270, 315)
