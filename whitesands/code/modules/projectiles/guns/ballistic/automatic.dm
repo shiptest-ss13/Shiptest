@@ -123,7 +123,7 @@
 	fire_sound = 'sound/weapons/gun/rifle/shot.ogg'
 	icon_state = "ak47_nt"
 	item_state = "ntak"
-	fire_rate = 4
+	fire_rate = 5
 	mag_display = TRUE
 	weapon_weight = WEAPON_MEDIUM
 	w_class = WEIGHT_CLASS_BULKY
@@ -150,6 +150,8 @@
 		to_chat(user, "<span class='notice'>You fold the stock on the [src].</span>")
 		spread = folded_spread
 		recoil = folded_recoil
+		w_class = WEIGHT_CLASS_NORMAL
+
 	folded = !folded
 	playsound(src.loc, 'sound/weapons/empty.ogg', 100, 1)
 	update_overlays()
@@ -157,11 +159,12 @@
 /obj/item/gun/ballistic/automatic/ak47/nt/update_overlays()
 	. = ..()
 	var/mutable_appearance/stock
-	if(folded)
+	if(!folded)
 		stock = mutable_appearance(icon, "ak47_nt_stock")
 	else
 		stock = mutable_appearance(icon, null)
 	. += stock
+	update_icon()
 
 /obj/item/gun/ballistic/automatic/pistol/tec9
 	name = "TEC9 Machine Pistol"
