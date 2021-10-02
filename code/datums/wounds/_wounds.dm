@@ -156,7 +156,7 @@
 
 		victim.skill_message(msg, "<span class='userdanger'>Your [limb.name] [occur_text]!</span>", vision_distance = vis_dist, skill = /datum/skill/healing, skill_level = SKILL_LEVEL_JOURNEYMAN)
 		if(sound_effect)
-			skillsound(L.owner, sound_effect, 70 + 20 * severity, TRUE, skill = /datum/skill/healing, skill_level = SKILL_LEVEL_JOURNEYMAN)
+			playsound(L.owner, sound_effect, 70 + 20 * severity, TRUE)
 
 	if(!demoted)
 		wound_injury(old_wound)
