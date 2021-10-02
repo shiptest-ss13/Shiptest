@@ -2,63 +2,77 @@
 "a" = (
 /turf/template_noop,
 /area/template_noop)
-"c" = (
-/obj/structure/flora/grass/both,
-/turf/open/floor/plating/asteroid/snow/icemoon,
-/area/icemoon/surface/outdoors)
-"f" = (
-/mob/living/simple_animal/hostile/whitesands/ranged/hunter,
-/turf/open/floor/wood,
-/area/ruin/unpowered)
-"k" = (
-/obj/structure/barricade/sandbags,
-/turf/open/floor/wood,
-/area/ruin/unpowered)
-"n" = (
+"b" = (
 /obj/structure/sign/solgov_flag,
 /obj/structure/flora/grass/both,
 /turf/open/floor/plating/asteroid/snow/icemoon,
 /area/icemoon/surface/outdoors)
-"o" = (
-/obj/structure/sign/solgov_flag/right,
+"c" = (
 /obj/structure/barricade/wooden/snowed,
 /turf/open/floor/plating/asteroid/snow/icemoon,
 /area/icemoon/surface/outdoors)
-"q" = (
-/obj/structure/barricade/wooden/snowed,
-/turf/open/floor/plating/asteroid/snow/icemoon,
-/area/icemoon/surface/outdoors)
-"u" = (
-/obj/structure/barricade/wooden/crude,
-/turf/open/floor/wood,
+"d" = (
+/mob/living/simple_animal/hostile/whitesands/survivor{
+	faction = list("brazillian")
+	},
+/turf/open/floor/carpet,
 /area/ruin/unpowered)
-"v" = (
-/turf/closed/wall/mineral/wood/nonmetal,
-/area/ruin/unpowered)
-"z" = (
+"f" = (
 /obj/structure/barricade/wooden/crude/snow,
 /turf/open/floor/plating/asteroid/snow/icemoon,
 /area/icemoon/surface/outdoors)
-"A" = (
+"g" = (
+/obj/structure/barricade/sandbags,
 /turf/open/floor/plating/asteroid/snow/icemoon,
 /area/icemoon/surface/outdoors)
-"B" = (
-/obj/structure/table/wood,
-/obj/item/storage/box/lethalshot,
-/turf/open/floor/wood,
-/area/ruin/unpowered)
-"C" = (
-/obj/structure/flora/tree/pine,
-/turf/open/floor/plating/asteroid/snow/icemoon,
-/area/icemoon/surface/outdoors)
-"D" = (
+"h" = (
 /obj/machinery/door/airlock/wood,
 /obj/structure/fans/tiny,
 /turf/open/floor/wood,
 /area/ruin/unpowered)
-"F" = (
+"i" = (
+/obj/structure/sign/solgov_flag/right,
+/obj/structure/barricade/wooden/snowed,
+/turf/open/floor/plating/asteroid/snow/icemoon,
+/area/icemoon/surface/outdoors)
+"j" = (
+/obj/structure/sign/solgov_flag,
+/turf/open/floor/plating/asteroid/snow/icemoon,
+/area/icemoon/surface/outdoors)
+"l" = (
+/turf/open/floor/carpet,
+/area/ruin/unpowered)
+"n" = (
 /obj/structure/table/wood,
 /obj/item/reagent_containers/food/drinks/mug/coco,
+/turf/open/floor/wood,
+/area/ruin/unpowered)
+"o" = (
+/turf/closed/wall/mineral/wood/nonmetal,
+/area/ruin/unpowered)
+"p" = (
+/obj/structure/barricade/sandbags,
+/turf/open/floor/wood,
+/area/ruin/unpowered)
+"t" = (
+/obj/structure/barricade/sandbags,
+/turf/open/floor/carpet,
+/area/ruin/unpowered)
+"v" = (
+/obj/structure/fireplace,
+/mob/living/simple_animal/hostile/whitesands/ranged/gunslinger{
+	faction = list("brazillian")
+	},
+/turf/open/floor/wood,
+/area/ruin/unpowered)
+"x" = (
+/mob/living/simple_animal/hostile/whitesands/ranged/hunter{
+	faction = list("brazillian")
+	},
+/turf/open/floor/wood,
+/area/ruin/unpowered)
+"C" = (
+/obj/structure/bookcase/random,
 /turf/open/floor/wood,
 /area/ruin/unpowered)
 "G" = (
@@ -66,15 +80,10 @@
 /turf/open/floor/plating/asteroid/snow/icemoon,
 /area/icemoon/surface/outdoors)
 "H" = (
-/obj/structure/barricade/sandbags,
-/turf/open/floor/carpet,
-/area/ruin/unpowered)
-"I" = (
-/obj/structure/table/wood,
-/obj/item/reagent_containers/food/snacks/cookie,
+/obj/structure/barricade/wooden/crude,
 /turf/open/floor/wood,
 /area/ruin/unpowered)
-"M" = (
+"L" = (
 /obj/structure/table/wood,
 /obj/item/gun/ballistic/shotgun/doublebarrel/brazil{
 	pixel_x = -10
@@ -82,36 +91,33 @@
 /turf/open/floor/wood,
 /area/ruin/unpowered)
 "O" = (
-/obj/structure/fireplace,
-/mob/living/simple_animal/hostile/whitesands/ranged/gunslinger,
+/obj/structure/table/wood,
+/obj/item/storage/box/lethalshot,
 /turf/open/floor/wood,
 /area/ruin/unpowered)
-"Q" = (
-/obj/structure/barricade/sandbags,
+"P" = (
+/obj/structure/flora/tree/pine,
 /turf/open/floor/plating/asteroid/snow/icemoon,
 /area/icemoon/surface/outdoors)
-"R" = (
-/mob/living/simple_animal/hostile/whitesands/survivor,
-/turf/open/floor/carpet,
-/area/ruin/unpowered)
-"S" = (
+"Q" = (
 /obj/structure/sign/solgov_flag/right,
 /turf/open/floor/plating/asteroid/snow/icemoon,
 /area/icemoon/surface/outdoors)
-"W" = (
-/obj/structure/sign/solgov_flag,
+"R" = (
 /turf/open/floor/plating/asteroid/snow/icemoon,
 /area/icemoon/surface/outdoors)
-"X" = (
+"U" = (
 /turf/open/floor/wood,
 /area/ruin/unpowered)
 "Y" = (
-/obj/structure/bookcase/random,
+/obj/structure/table/wood,
+/obj/item/reagent_containers/food/snacks/cookie,
 /turf/open/floor/wood,
 /area/ruin/unpowered)
 "Z" = (
-/turf/open/floor/carpet,
-/area/ruin/unpowered)
+/obj/structure/flora/grass/both,
+/turf/open/floor/plating/asteroid/snow/icemoon,
+/area/icemoon/surface/outdoors)
 
 (1,1,1) = {"
 a
@@ -125,10 +131,10 @@ a
 a
 a
 a
-z
-A
-q
-q
+f
+R
+c
+c
 a
 a
 a
@@ -148,200 +154,200 @@ a
 a
 a
 G
-A
-A
-Q
+R
+R
+g
 a
 a
 a
 "}
 (3,1,1) = {"
 a
-v
-v
-v
-v
-v
-v
-v
-v
-v
-v
-v
-v
-v
-n
-A
-A
-q
+o
+o
+o
+o
+o
+o
+o
+o
+o
+o
+o
+o
+o
+b
+R
+R
+c
 a
 "}
 (4,1,1) = {"
-v
-v
-Y
-Y
-Y
-Y
-Y
-Y
-Y
-Y
-Y
-Y
-Y
-v
 o
-z
-A
-A
+o
+C
+C
+C
+C
+C
+C
+C
+C
+C
+C
+C
+o
+i
+f
+R
+R
 a
 "}
 (5,1,1) = {"
-v
-X
-k
-X
-X
-k
-X
-X
-X
-X
-u
-X
-X
-v
-A
-A
-A
-C
+o
+U
+p
+U
+U
+p
+U
+U
+U
+U
+H
+U
+U
+o
+R
+R
+R
+P
 a
 "}
 (6,1,1) = {"
-v
-X
-B
-F
-X
-H
+o
+U
+O
+n
+U
+t
+d
+l
+l
+l
+t
+d
+l
+o
+f
+Z
 R
-Z
-Z
-Z
-H
-R
-Z
-v
-z
-c
-A
-Q
+g
 a
 "}
 (7,1,1) = {"
+o
 v
-O
-M
-I
-f
-H
-Z
-Z
-Z
-Z
-H
-Z
-Z
-D
-A
-A
-q
-Q
+L
+Y
+x
+t
+l
+l
+l
+l
+t
+l
+l
+h
+R
+R
+c
+g
 a
 "}
 (8,1,1) = {"
-v
-X
-B
-F
-X
-H
-R
-Z
-Z
-Z
-H
-R
-Z
-v
-q
-A
+o
+U
+O
+n
+U
+t
+d
+l
+l
+l
+t
+d
+l
+o
 c
-A
-z
+R
+Z
+R
+f
 "}
 (9,1,1) = {"
-v
-X
-k
-X
-X
-k
-X
-X
-X
-X
-u
-X
-X
-v
-A
-A
-A
-q
-A
+o
+U
+p
+U
+U
+p
+U
+U
+U
+U
+H
+U
+U
+o
+R
+R
+R
+c
+R
 "}
 (10,1,1) = {"
-v
-v
-Y
-Y
-Y
-Y
-Y
-Y
-Y
-Y
-Y
-Y
-Y
-v
-W
+o
+o
 C
-Q
-A
+C
+C
+C
+C
+C
+C
+C
+C
+C
+C
+o
+j
+P
+g
+R
 a
 "}
 (11,1,1) = {"
 a
-v
-v
-v
-v
-v
-v
-v
-v
-v
-v
-v
-v
-v
-S
-A
-A
-z
+o
+o
+o
+o
+o
+o
+o
+o
+o
+o
+o
+o
+o
+Q
+R
+R
+f
 a
 "}
 (12,1,1) = {"
@@ -356,13 +362,13 @@ a
 a
 a
 a
-Q
-A
-A
-A
-A
-A
-A
+g
+R
+R
+R
+R
+R
+R
 a
 "}
 (13,1,1) = {"
@@ -376,13 +382,13 @@ a
 a
 a
 a
-c
-Q
-A
-z
-A
-z
-A
+Z
+g
+R
+f
+R
+f
+R
 a
 a
 "}
@@ -398,9 +404,9 @@ a
 a
 a
 a
-Q
-A
-A
+g
+R
+R
 G
 a
 a
