@@ -113,7 +113,7 @@
 			to_chat(user, "<span class='notice'>There are no seeds in \the [O.name].</span>")
 		return
 
-	else if(seedify(O,-1, FALSE, src, user, TRUE))
+	else if(seedify(O,-1, FALSE, TRUE, src, user))
 		to_chat(user, "<span class='notice'>You extract some seeds.</span>")
 		return
 	else if (istype(O, /obj/item/seeds))
