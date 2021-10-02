@@ -10,12 +10,12 @@
   * * O - Object containing the seed, can be the loc of the dumping of seeds
   * * t_max - Amount of seed copies to dump, -1 is ranomized
   * * l_user - If true, sets the location to drop under the user rather than the extractor
+  * * d_item - If true, deletes the item after the proc is done
   * * extractor - Seed Extractor, used as the dumping loc for the seeds and seed multiplier
   * * user - Checks if we can remove the object from the inventory
-  * * d_item - If true, deletes the item after the proc is done
   * *
   */
-/proc/seedify(obj/item/O, t_max, var/l_user, obj/machinery/seed_extractor/extractor, mob/living/user, var/d_item)
+/proc/seedify(obj/item/O, t_max, var/l_user, var/d_item, obj/machinery/seed_extractor/extractor, mob/living/user)
 	var/t_amount = 0
 	var/list/seeds = list()
 	if(t_max == -1)
