@@ -1060,7 +1060,8 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 		to_chat(user, "<span class='warning'><b>You need to wait longer to use this again.</b></span>")
 		return
 	user.visible_message("<span class='warning'>[user] raises the [src] and summons a legion skull!</span>")
-	var/mob/living/simple_animal/hostile/asteroid/hivelordbrood/legion/LegionSkull = new /mob/living/simple_animal/hostile/asteroid/hivelordbrood/legion(user.loc)
-	LegionSkull.friends += user
-	LegionSkull.faction = user.faction.Copy()
-	next_use_time = world.time + 2 SECONDS
+	for(var/i in 1 to 3)
+		var/mob/living/simple_animal/hostile/asteroid/hivelordbrood/legion/LegionSkull = new /mob/living/simple_animal/hostile/asteroid/hivelordbrood/legion(user.loc)
+		LegionSkull.faction = user.faction.Copy()
+		LegionSkull.friends += user
+	next_use_time = world.time + 6 SECONDS
