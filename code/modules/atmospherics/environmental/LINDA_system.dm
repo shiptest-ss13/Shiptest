@@ -70,7 +70,7 @@
 
 /turf/proc/ImmediateDisableAdjacency(disable_adjacent = TRUE)
 	if(SSair.thread_running())
-		SSadjacent_air.disable_queue[src] = 1
+		SSadjacent_air.disable_queue[src] = disable_adjacent
 		return
 	if(disable_adjacent)
 		for(var/direction in GLOB.cardinals_multiz)
@@ -83,6 +83,18 @@
 			T.__update_auxtools_turf_adjacency_info(isspaceturf(T.get_z_base_turf()), -1)
 	LAZYCLEARLIST(atmos_adjacent_turfs)
 	__update_auxtools_turf_adjacency_info(isspaceturf(get_z_base_turf()))
+
+/turf/proc/ImmediateSetSleep()
+	if(SSair.thread_running())
+		SSadjacent_air.sleep_queue[src] = 1
+		return
+	set_sleeping(TRUE)
+
+/turf/proc/ImmediateUpdateAirRef(value)
+	if(SSair.thread_running())
+		SSadjacent_air.ref_update_queue[src] = value
+		return
+	update_air_ref(value)
 
 /turf/proc/set_sleeping(should_sleep)
 

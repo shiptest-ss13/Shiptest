@@ -34,8 +34,7 @@
 /obj/machinery/door/firedoor/Initialize()
 	. = ..()
 	CalculateAffectingAreas()
-	var/turf/current_turf = get_turf(src)
-	current_turf.update_firelock_registration()
+	SSair.firelocks += src
 
 /obj/machinery/door/firedoor/examine(mob/user)
 	. = ..()
@@ -71,8 +70,7 @@
 /obj/machinery/door/firedoor/Destroy()
 	remove_from_areas()
 	affecting_areas.Cut()
-	var/turf/current_turf = get_turf(src)
-	current_turf.update_firelock_registration()
+	SSair.firelocks -= src
 	return ..()
 
 /obj/machinery/door/firedoor/Bumped(atom/movable/AM)
@@ -694,31 +692,6 @@
 /obj/structure/firelock_frame/window/update_icon()
 	return
 
-//these are hooked by auxtools
-/turf/proc/register_firelocks()
-/turf/proc/unregister_firelocks()
-
-//updates registration status for firelocks in auxtools
-/turf/proc/update_firelock_registration()
-	if(SSair.thread_running())
-		SSadjacent_air.firelock_queue[src] = 1
-		return
-	if(!locate(/obj/machinery/door/firedoor) in src)
-		unregister_firelocks()
-	else
-		register_firelocks()
-
-/obj/machinery/door/firedoor/Moved(turf/old_turf, Dir)
-	. = ..()
-	var/turf/new_turf = get_turf(src)
-	new_turf.update_firelock_registration()
-	old_turf.update_firelock_registration()
-
-/obj/machinery/door/firedoor/afterShuttleMove(turf/old_turf, list/movement_force, shuttle_dir, shuttle_preferred_direction, move_dir, rotation)
-	. = ..()
-	var/turf/new_turf = get_turf(src)
-	new_turf.update_firelock_registration()
-	old_turf.update_firelock_registration()
 
 #undef CONSTRUCTION_COMPLETE
 #undef CONSTRUCTION_PANEL_OPEN

@@ -56,27 +56,12 @@ All ShuttleMove procs go here
 		CRASH("A turf queued to move via shuttle somehow had no skipover in baseturfs. [src]([type]):[loc]")
 	var/depth = baseturfs.len - shuttle_boundary + 1
 
-	if(isopenturf(src))
-		var/turf/open/src_turf = src
-		newT.CopyOnTop(src, 1, depth, TRUE)
-		var/turf/open/new_turf = newT
-		new_turf.update_visuals()
-		newT.update_air_ref(src_turf.planetary_atmos ? 1 : 2)
-	else if(isopenturf(newT))
-		newT.update_air_ref(-1)
-		newT.CopyOnTop(src, 1, depth, TRUE)
-	else
-		newT.CopyOnTop(src, 1, depth, TRUE)
-
-	if(isopenturf(src))
-		var/turf/open/after_src_turf = src
-		after_src_turf.update_visuals()
-		update_air_ref(isspaceturf(src) ? 0 : (after_src_turf.planetary_atmos ? 1 : 2))
-	else
-		update_air_ref(-1)
+	newT.CopyOnTop(src, 1, depth, TRUE)
 
 	//Air stuff
+	newT.blocks_air = TRUE
 	newT.air_update_turf(TRUE)
+	blocks_air = TRUE
 	air_update_turf(TRUE)
 	if(isopenturf(newT))
 		var/turf/open/new_open = newT

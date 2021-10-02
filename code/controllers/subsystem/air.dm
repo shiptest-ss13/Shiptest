@@ -63,6 +63,9 @@ SUBSYSTEM_DEF(air)
 	// Excited group processing will try to equalize groups with total pressure difference less than this amount.
 	var/excited_group_pressure_goal = 1
 
+	/// Firelocks list to be accessed by auxtools
+	var/list/firelocks = list()
+
 /datum/controller/subsystem/air/stat_entry(msg)
 	msg += "C:{"
 	msg += "HP:[round(cost_highpressure,1)]|"

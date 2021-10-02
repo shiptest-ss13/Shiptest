@@ -5,8 +5,9 @@ SUBSYSTEM_DEF(adjacent_air)
 	wait = 10
 	priority = FIRE_PRIORITY_ATMOS_ADJACENCY
 	var/list/queue = list()
-	var/list/firelock_queue = list()
+	var/list/sleep_queue = list()
 	var/list/disable_queue = list()
+	var/list/ref_update_queue = list()
 
 /datum/controller/subsystem/adjacent_air/stat_entry(msg)
 #ifdef TESTING
@@ -40,13 +41,13 @@ SUBSYSTEM_DEF(adjacent_air)
 		else
 			CHECK_TICK
 
-	var/list/firelock_queue = src.firelock_queue
+	var/list/sleep_queue = src.sleep_queue
 
-	while (length(firelock_queue))
-		var/turf/currT = firelock_queue[1]
-		firelock_queue.Cut(1, 2)
+	while (length(sleep_queue))
+		var/turf/currT = sleep_queue[1]
+		sleep_queue.Cut(1, 2)
 
-		currT.update_firelock_registration()
+		currT.ImmediateSetSleep()
 
 		if(mc_check)
 			if(MC_TICK_CHECK)
@@ -58,9 +59,21 @@ SUBSYSTEM_DEF(adjacent_air)
 
 	while (length(disable_queue))
 		var/turf/currT = disable_queue[1]
+		currT.ImmediateDisableAdjacency(disable_queue[currT])
 		disable_queue.Cut(1,2)
 
-		currT.ImmediateDisableAdjacency()
+		if(mc_check)
+			if(MC_TICK_CHECK)
+				return
+		else
+			CHECK_TICK
+
+	var/list/ref_update_queue = src.ref_update_queue
+
+	while (length(ref_update_queue))
+		var/turf/currT = ref_update_queue[1]
+		currT.ImmediateUpdateAirRef(ref_update_queue[currT])
+		ref_update_queue.Cut(1,2)
 
 		if(mc_check)
 			if(MC_TICK_CHECK)
