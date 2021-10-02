@@ -22,3 +22,9 @@
 	id = "burnies-lair"
 	description = "Some sort of shack. Who the hell is Burnie?"
 	suffix = "icemoon_underground_burnies_lair.dmm"
+
+/datum/map_template/ruin/icemoon/brazillian_lab
+	name = "Baracaded Shack"
+	id = "brazillian-lab"
+	description = "Who knows why this is baracaded? Nothing of importance is inside anyways..."
+	suffix = "icemoon_underground_brazillianlab.dmm"
