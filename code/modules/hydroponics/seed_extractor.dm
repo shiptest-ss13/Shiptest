@@ -15,7 +15,7 @@
   * * d_item - If true, deletes the item after the proc is done
   * *
   */
-/proc/seedify(obj/item/O, t_max, var/a_manual, obj/machinery/seed_extractor/extractor, mob/living/user, var/d_item)
+/proc/seedify(obj/item/O, t_max, var/l_user, obj/machinery/seed_extractor/extractor, mob/living/user, var/d_item)
 	var/t_amount = 0
 	var/list/seeds = list()
 	if(t_max == -1)
