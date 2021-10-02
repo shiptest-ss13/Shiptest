@@ -1063,4 +1063,4 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	var/mob/living/simple_animal/hostile/asteroid/hivelordbrood/legion/LegionSkull = new /mob/living/simple_animal/hostile/asteroid/hivelordbrood/legion(user.loc)
 	LegionSkull.friends += user
 	LegionSkull.faction = user.faction.Copy()
-	next_use_time = world.time + 3 SECONDS
+	next_use_time = world.time + 2 SECONDS
