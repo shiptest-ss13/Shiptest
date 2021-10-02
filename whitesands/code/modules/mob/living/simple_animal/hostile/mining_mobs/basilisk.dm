@@ -263,8 +263,8 @@
 	icon_living = "watcher_magmawing"
 	icon_aggro = "watcher_magmawing"
 	icon_dead = "watcher_magmawing_dead"
-	maxHealth = 215 //Compensate for the lack of slowdown on projectiles with a bit of extra health
-	health = 215
+	maxHealth = 250 //Compensate for the lack of slowdown on projectiles with a bit of extra health
+	health = 250
 	light_range = 3
 	light_power = 2.5
 	light_color = LIGHT_COLOR_LAVA
@@ -290,10 +290,10 @@
 /obj/projectile/temp/basilisk/magmawing
 	name = "scorching blast"
 	icon_state = "lava"
-	damage = 5
+	damage = 10
 	damage_type = BURN
 	nodamage = FALSE
-	temperature = 200 // Heats you up! per hit!
+	temperature = 250 // Heats you up! per hit!
 
 /obj/projectile/temp/basilisk/magmawing/on_hit(atom/target, blocked = FALSE)
 	. = ..()
