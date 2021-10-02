@@ -13,10 +13,19 @@
 /obj/item/ammo_box/magazine/aks74u
 	name = "AKS-74U Magazine (5.45x39mm cartridge)"
 	icon = 'whitesands/icons/obj/ammo.dmi'
-	icon_state = "aks74u_mag"
+	icon_state = "ak47_mag"
 	ammo_type = /obj/item/ammo_casing/ballistic/a545_39
 	caliber = "5.45x39mm"
 	max_ammo = 30
+
+/obj/item/ammo_box/magazine/aks74u/update_icon()
+	..()
+	var/hasammo
+	if(ammo_count())
+		hasammo = 1
+	else
+		hasammo = 0
+	icon_state = "ak47_mag-[hasammo]"
 
 /obj/item/ammo_box/magazine/aknt
 	name = "NT AK Magazine (4.6x30mm))"

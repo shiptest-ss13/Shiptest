@@ -694,8 +694,8 @@
 	name = "Kalashnikov Ammo Crate"
 	desc = "You ran out of ammo? We have solution, yes! Order 2 spare magazines for the shiny rifle of yours, and continue doing, whatever you do with your rifle!"
 	cost = 7000
-	contains = list(/obj/item/ammo_box/magazine/aknt,
-					/obj/item/ammo_box/magazine/aknt)
+	contains = list(/obj/item/ammo_box/magazine/ak47,
+					/obj/item/ammo_box/magazine/ak47)
 	crate_name = "rifle crate"
 	dangerous = TRUE
 
