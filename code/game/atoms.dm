@@ -1085,7 +1085,7 @@
 	VV_DROPDOWN_OPTION(VV_HK_RADIATE, "Radiate")
 	VV_DROPDOWN_OPTION(VV_HK_EDIT_FILTERS, "Edit Filters")
 	if(greyscale_colors)
-		VV_DROPDOWN_OPTION(VV_HK_MODIFY_GREYSCALE, "Modify greyscale colors"
+		VV_DROPDOWN_OPTION(VV_HK_MODIFY_GREYSCALE, "Modify greyscale colors")
 
 /atom/vv_do_topic(list/href_list)
 	. = ..()
