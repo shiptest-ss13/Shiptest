@@ -71,6 +71,7 @@
 	can_be_sawn_off = FALSE
 
 /obj/item/gun/ballistic/shotgun/doublebarrel/brazil/process_fire(atom/target, mob/living/user, message = TRUE, params = null, zone_override = "", bonus_spread = 0)
+/*	//doesn't work properly
 	if(prob(0 + (magazine.ammo_count() * 10)))	//minimum probability of 10, maximum of 60 only procs if theres more than 4 shells
 //		playsound(user, fire_sound, fire_sound_volume, vary_fire_sound)
 		if(prob(50))
@@ -89,7 +90,16 @@
 				to_chat(user, "<span class='userdanger'>[src] flies out of your hand!</span>")
 				user.dropItemToGround(src)
 	..()
-
+*/
+	if(prob(0 + (magazine.ammo_count() * 10)))
+		if(prob(10))
+			to_chat(user, "<span class='userdanger'>Something isn't right. \the [src] doesn't fire for a brief moment. Then, the following words come to mind: \
+			Ó Pátria amada, \
+			Idolatrada, \
+			Salve! Salve!</span>")
+			explosion(src, 0, 2, 4, 6, TRUE, TRUE)
+			user.gib()
+	..()
 /obj/item/gun/ballistic/shotgun/doublebarrel/brazil/death
 	name = "Force of Nature"
 	desc = "So you have chosen death."
