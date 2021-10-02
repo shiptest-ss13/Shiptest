@@ -70,12 +70,12 @@
 	icon_state = "joy"
 
 /obj/item/clothing/mask/spamton
-	name = "Cursed Buisnessman's Mask"
+	name = "Cursed Businessman's Mask"
 	icon_state = "big_shot"
 	item_state = "big_shot"
 	clothing_flags = ALLOWINTERNALS
 	visor_flags = ALLOWINTERNALS
-	desc = "The porcelain mask of a now-forgotten buisness mogul, said to have made an impossible fortune long ago. Are you big enough to wear it?"
+	desc = "The porcelain mask of a now-forgotten business mogul, said to have made an impossible fortune long ago. Are you big enough to wear it?"
 	modifies_speech = TRUE
 	actions_types = list(/datum/action/item_action/lifesavings)
 
