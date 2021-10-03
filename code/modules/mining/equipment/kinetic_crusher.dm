@@ -351,7 +351,7 @@
 //legion
 /obj/item/crusher_trophy/legion_skull
 	name = "legion skull"
-	desc = "A dead and lifeless legion skull. Suitable as a trophy for a kinetic crusher."
+	desc = "A dead and lifeless legion skull. Suitable as a trophy for a kinetic crusher, or for use in crafting."
 	icon_state = "legion_skull"
 	denied_type = /obj/item/crusher_trophy/legion_skull
 	bonus_value = 3
@@ -372,7 +372,7 @@
 //dwarf legion
 /obj/item/crusher_trophy/dwarf_skull
 	name = "shrunken skull"
-	desc = "Looks like someone hasn't been drinking their milk. Suitable as a trophy for a kinetic crusher."
+	desc = "Looks like someone hasn't been drinking their milk. Suitable as a trophy for a kinetic crusher, or for use in crafting."
 	icon = 'icons/obj/lavaland/elite_trophies.dmi'
 	icon_state = "shrunk_skull"
 	denied_type = /obj/item/crusher_trophy/legion_skull

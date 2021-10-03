@@ -245,6 +245,17 @@
 			ouija_spaghetti_list[initial(A.name)] = A
 	return ouija_spaghetti_list
 
+/obj/structure/legionpike
+	name = "legion on a stick"
+	desc = "EXTREME interior decorating. You can feel it watching you."
+	icon = 'icons/obj/structures.dmi'
+	icon_state = "headpike-legion"
+	density = FALSE
+	anchored = TRUE
+	light_color = "#8B0000"
+	light_power = 2
+	light_range = 2
+
 //rare and valulable gems- designed to eventually be used for archeology, or to be given as opposed to money as loot. Auctioned off at export, or kept as a trophy.
 /obj/item/gem/rupee
 	name = "\improper Ruperium Crystal"

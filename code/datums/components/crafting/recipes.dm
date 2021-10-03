@@ -683,6 +683,15 @@
 	result = /obj/structure/headpike
 	category = CAT_PRIMAL
 
+/datum/crafting_recipe/legionpike
+	name = "Legion Head (Glass Spear)"
+	time = 55
+	reqs = list(/obj/item/spear = 1,
+				/obj/item/organ/regenerative_core = 1,
+				/obj/item/crusher_trophy/legion_skull = 2)
+	result = /obj/structure/legionpike
+	category = CAT_PRIMAL
+
 /datum/crafting_recipe/tribal_torch
 	name = "Tribal Torch"
 	result = /obj/item/candle/tribal_torch
