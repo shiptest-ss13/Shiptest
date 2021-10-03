@@ -45,8 +45,8 @@
 /turf/open/floor/plating,
 /area/whitesands/surface/outdoors)
 "dl" = (
-/obj/structure/table/wood/bar,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/table/wood/bar,
 /turf/open/floor/wood{
 	icon_state = "wood-broken2"
 	},
@@ -76,12 +76,12 @@
 /turf/open/floor/carpet/nanoweave,
 /area/whitesands/surface/outdoors)
 "eh" = (
-/obj/structure/table/wood/bar,
 /obj/item/toy/figure/bartender{
 	desc = "you feel like you recognize this...";
 	name = "Familiar Bartender action figure";
 	toysay = "What can I get ya?"
 	},
+/obj/structure/table/wood/bar,
 /turf/open/floor/wood{
 	icon_state = "wood-broken"
 	},
@@ -236,9 +236,9 @@
 	pixel_y = 5
 	},
 /obj/item/reagent_containers/food/condiment/peppermill,
-/obj/structure/table/wood/bar,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/glass,
+/obj/structure/table/wood/bar,
 /turf/open/floor/wood{
 	icon_state = "wood-broken3"
 	},
@@ -323,7 +323,6 @@
 	},
 /obj/item/reagent_containers/food/condiment/enzyme,
 /obj/structure/table/wood/bar,
-/obj/item/ammo_box/magazine/ak47,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating,
 /area/whitesands/surface/outdoors)
@@ -541,9 +540,6 @@
 /area/whitesands/surface/outdoors)
 "BQ" = (
 /obj/structure/table/wood/bar,
-/obj/item/gun/ballistic/automatic/ak47,
-/obj/item/ammo_box/magazine/ak47,
-/obj/item/ammo_box/magazine/ak47,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating,
 /area/whitesands/surface/outdoors)
@@ -1024,7 +1020,7 @@
 /area/whitesands/surface/outdoors)
 "Wv" = (
 /turf/template_noop,
-/area/space)
+/area/template_noop)
 "WV" = (
 /obj/machinery/power/terminal{
 	dir = 8
@@ -1067,10 +1063,10 @@
 /obj/machinery/firealarm{
 	pixel_y = -28
 	},
-/obj/structure/table/wood/bar,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/table/wood/bar,
 /turf/open/floor/wood{
 	icon_state = "wood-broken4"
 	},
