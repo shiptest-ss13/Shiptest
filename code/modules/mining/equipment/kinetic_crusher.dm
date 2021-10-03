@@ -429,6 +429,7 @@
 	throw_speed = 4
 	sharpness = IS_SHARP
 	attack_verb = list("cut", "sliced", "diced")
+	hitsound = 'sound/weapons/bladeslice.ogg'
 
 /obj/item/crusher_trophy/tail_spike/effect_desc()
 	return "waveform collapse to do <b>[bonus_value]</b> damage to nearby creatures and push them back"
@@ -457,7 +458,8 @@
 	throwforce = 20
 	throw_speed = 4
 	sharpness = IS_SHARP
-	attack_verb = list("cut", "sliced", "diced")
+	attack_verb = list("cut", "braised", "singed")
+	hitsound = 'sound/weapons/bladeslice.ogg'
 
 /obj/item/crusher_trophy/ash_spike/effect_desc()
 	return "waveform collapse to do <b>[bonus_value]</b> damage to nearby creatures and push them back"
