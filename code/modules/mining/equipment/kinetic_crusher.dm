@@ -7,8 +7,7 @@
 	righthand_file = 'icons/mob/inhands/weapons/hammers_righthand.dmi'
 	name = "proto-kinetic crusher"
 	desc = "During the early conception of the Kinetic Accelerator, a great deal of money and time was invested in magnetic distruption technology. \
-	Though ultimately not used in the concussion-based KA, the ever-practical NT scientific division designed a second mining tool, capable of tearing apart rock with magnetic force and a chopping edge.. \
-	When an intern eventually suggested tuning the metal edge to the magnetic current, the Kinetic Crusher was born."
+	Though ultimately replaced with concussive explosions, the ever-practical NT scientific division designed a second mining tool, capable of tearing apart rock with magnetic force and a chopping edge." \
 	force = 0 //You can't hit stuff unless wielded
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = ITEM_SLOT_BACK
