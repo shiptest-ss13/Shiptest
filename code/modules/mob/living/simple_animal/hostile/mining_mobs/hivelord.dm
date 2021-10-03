@@ -115,6 +115,7 @@
 	throw_message = "bounces harmlessly off of"
 	loot = list(/obj/item/organ/regenerative_core/legion)
 	brood_type = /mob/living/simple_animal/hostile/asteroid/hivelordbrood/legion
+	crusher_loot = /obj/item/crusher_trophy/legion_skull
 	del_on_death = 1
 	stat_attack = HARD_CRIT
 	robust_searching = 1
@@ -145,6 +146,7 @@
 	icon_living = "dwarf_legion"
 	icon_aggro = "dwarf_legion"
 	icon_dead = "dwarf_legion"
+	crusher_loot = /obj/item/crusher_trophy/dwarf_skull
 	maxHealth = 150
 	health = 150
 	move_to_delay = 2
@@ -318,7 +320,7 @@
 	H.dna.add_mutation(DWARFISM)
 
 /obj/effect/mob_spawn/human/corpse/damaged/legioninfested/Initialize()
-	var/type = pickweight(list("Miner" = 66, "Ashwalker" = 5, "Kobold" = 5, "Golem" = 10,"Clown" = 10, pick(list("Shadow", "YeOlde","Operative", "Cultist")) = 4)) //WS Edit - Kobold
+	var/type = pickweight(list("Miner" = 51, "Waldo" = 5, "Ashwalker" = 5, "Soldier" = 10, "Kobold" = 5, "Golem" = 10,"Clown" = 10, pick(list("Shadow", "YeOlde","Operative", "Cultist")) = 4)) //WS Edit - Kobold
 	switch(type)
 		if("Miner")
 			mob_species = pickweight(list(/datum/species/human = 70, /datum/species/lizard = 26, /datum/species/fly = 2, /datum/species/plasmaman = 2))
@@ -358,9 +360,36 @@
 			if(prob(10))
 				belt = /obj/item/storage/belt/mining/primitive
 			if(prob(30))
-				r_pocket = /obj/item/kitchen/knife/combat/bone
+				r_pocket = /obj/item/restraints/legcuffs/bola/watcher
 			if(prob(30))
 				l_pocket = /obj/item/kitchen/knife/combat/bone
+		if("Soldier")
+			mob_species = /datum/species/human
+			if(prob(85))
+				uniform = /obj/item/clothing/under/solgov
+				suit = /obj/item/clothing/suit/armor/vest/solgov
+				shoes = /obj/item/clothing/shoes/jackboots
+				gloves = /obj/item/clothing/gloves/color/grey
+				mask = /obj/item/clothing/mask/gas/sechailer
+				head = /obj/item/clothing/head/helmet/solgov
+				id = /obj/item/card/id/solgov
+			else
+				uniform = /obj/item/clothing/under/solgov/elite
+				suit = /obj/item/clothing/suit/space/hardsuit/solgov
+				shoes = /obj/item/clothing/shoes/combat
+				gloves = /obj/item/clothing/gloves/combat
+				mask = /obj/item/clothing/mask/gas/sechailer/swat
+				id = /obj/item/card/id/solgov/elite
+			if(prob(5))
+				back = pickweight(list(/obj/item/storage/backpack = 95, /obj/item/gun/ballistic/shotgun/automatic = 5))
+			if(prob(25))
+				belt = /obj/item/storage/belt/military
+			if(prob(50))
+				r_pocket = pickweight(list(/obj/item/reagent_containers/hypospray/medipen/stimpack/traitor = 1, /obj/item/kitchen/knife/combat = 4, /obj/item/radio/off = 4, /obj/item/grenade/syndieminibomb/concussion = 1, /obj/item/melee/transforming/energy/ctf/solgov = 1))
+			if(prob(50))
+				l_pocket = pickweight(list(/obj/item/reagent_containers/hypospray/medipen/stimpack/traitor = 1, /obj/item/kitchen/knife/combat = 4, /obj/item/radio/off = 4, /obj/item/grenade/syndieminibomb/concussion = 1, /obj/item/melee/transforming/energy/ctf/solgov = 1))
+			if(prob(70))
+				glasses = pickweight(list(/obj/item/clothing/glasses/sunglasses = 4, /obj/item/clothing/glasses/hud/health = 3, /obj/item/clothing/glasses/hud/health/night = 1, /obj/item/clothing/glasses/night = 2))
 		//WS Edit Start - Kobold
 		if("Kobold")
 			mob_species = /datum/species/lizard/ashwalker/kobold
@@ -417,6 +446,18 @@
 		if("Operative")
 			id_job = "Operative"
 			outfit = /datum/outfit/syndicatecommandocorpse
+		if("Waldo")//WE FINALLY FOUND HIM
+			name = "Waldo"
+			uniform = /obj/item/clothing/under/pants/jeans
+			suit = /obj/item/clothing/suit/striped_sweater
+			head = /obj/item/clothing/head/beanie/waldo
+			shoes = /obj/item/clothing/shoes/sneakers/brown
+			ears = /obj/item/radio/headset
+			glasses = /obj/item/clothing/glasses/regular/circle
+			if(prob(35))
+				r_pocket = pick(list(/obj/item/book/granter/spell/knock = 1, /obj/item/dnainjector/chameleonmut = 1))
+			if(prob(35))
+				l_pocket = /obj/item/chameleon
 		if("Shadow")
 			mob_species = /datum/species/shadow
 			r_pocket = /obj/item/reagent_containers/pill/shadowtoxin

@@ -684,7 +684,7 @@
 	category = CAT_PRIMAL
 
 /datum/crafting_recipe/legionpike
-	name = "Legion Head (Glass Spear)"
+	name = "Legion on a Spear"
 	time = 55
 	reqs = list(/obj/item/spear = 1,
 				/obj/item/organ/regenerative_core = 1,

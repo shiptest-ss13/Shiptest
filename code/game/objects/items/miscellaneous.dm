@@ -246,7 +246,7 @@
 	return ouija_spaghetti_list
 
 /obj/structure/legionpike
-	name = "legion on a stick"
+	name = "legion on a spear"
 	desc = "EXTREME interior decorating. You can feel it watching you."
 	icon = 'icons/obj/structures.dmi'
 	icon_state = "headpike-legion"

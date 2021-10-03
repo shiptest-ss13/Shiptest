@@ -109,6 +109,7 @@
 	charge_frequency = 5 SECONDS
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab = 2, /obj/item/stack/sheet/sinew/wolf = 2, /obj/item/stack/sheet/sinew/wolf = 2, /obj/item/stack/sheet/bone = 2)
 	loot = list()
+	crusher_loot = /obj/item/crusher_trophy/fang
 
 /mob/living/simple_animal/hostile/asteroid/wolf/alpha/gib()
 	move_force = MOVE_FORCE_DEFAULT
