@@ -410,19 +410,19 @@ Difficulty: Medium
 	picked = pick(1,2,3,4,5,6,7) //picks 1-7
 	switch(picked) //then picks out of 7 ghost roles to spawn
 		if(1)
-			new /obj/effect/mob_spawn/human/doctor/alive/lost(get_turf(loc))
+			new /obj/effect/mob_spawn/human/lost/doctor(get_turf(loc))
 		if(2)
-			new /obj/effect/mob_spawn/human/lostcentcom(get_turf(loc))
+			new /obj/effect/mob_spawn/human/lost/centcom(get_turf(loc))
 		if(3)
-			new /obj/effect/mob_spawn/human/lostshaftminer(get_turf(loc))
+			new /obj/effect/mob_spawn/human/lost/shaftminer(get_turf(loc))
 		if(4)
-			new /obj/effect/mob_spawn/human/lostashwalker_heir(get_turf(loc))
+			new /obj/effect/mob_spawn/human/lost/ashwalker_heir(get_turf(loc))
 		if(5)
-			new /obj/effect/mob_spawn/human/lostassistant(get_turf(loc))
+			new /obj/effect/mob_spawn/human/lost/assistant(get_turf(loc))
 		if(6)
-			new /obj/effect/mob_spawn/human/lostsyndicate(get_turf(loc))
+			new /obj/effect/mob_spawn/human/lost/syndicate(get_turf(loc))
 		if(7)
-			new /obj/effect/mob_spawn/human/lostsolgov(get_turf(loc))
+			new /obj/effect/mob_spawn/human/lost/solgov(get_turf(loc))
 
 	qdel(src) //no spawning people twice
 
