@@ -819,7 +819,7 @@
 	random = TRUE
 
 /obj/effect/mob_spawn/human/lost/Initialize(mapload)
-	..()
+. = ..()
 	var/area/A = get_area(src)
 	if(A)
 		notify_ghosts("Someone has defeated a ash drake! A prisoner has been freed in \the [A.name]!", source = src, action=NOTIFY_ATTACK, flashwindow = FALSE)
