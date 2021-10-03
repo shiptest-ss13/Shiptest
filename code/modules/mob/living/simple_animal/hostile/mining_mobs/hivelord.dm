@@ -445,7 +445,10 @@
 			mask = /obj/item/clothing/mask/breath
 		if("Operative")
 			id_job = "Operative"
-			outfit = /datum/outfit/syndicatecommandocorpse
+			if(prob(5))
+				outfit = /datum/outfit/syndicatestormtroopercorpse
+			else
+				outfit = /datum/outfit/syndicatecommandocorpse
 		if("Waldo")//WE FINALLY FOUND HIM
 			name = "Waldo"
 			uniform = /obj/item/clothing/under/pants/jeans

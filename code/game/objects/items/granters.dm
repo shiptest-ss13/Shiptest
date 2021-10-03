@@ -265,7 +265,7 @@
 	spellname = "shapechange"
 	icon_state ="bookshapechange"
 	desc = "Half of the book is slash fiction about some kind of young adult novel."
-	remarks = list("There's a beast inside all of us.", "What's an animorph?", "There are rats in the walls. Join them.", "This could be worse than useless, or amazing...", "Why the dumb stance? It's just a flick of the hand...", "The pages feel a little furry.", "Can you hear the jungle rhythm?")
+	remarks = list("There's a beast inside all of us.", "What's an animorph?", "There are rats in the walls. Join them.", "This could be worse than useless, or amazing...", "Run in the fields, hide through the forest...", "The pages feel a little furry.", "Can you hear the jungle rhythm?")
 
 /obj/item/book/granter/spell/shapechange/recoil(mob/living/carbon/user)
 	..()
