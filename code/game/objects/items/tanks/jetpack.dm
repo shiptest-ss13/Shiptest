@@ -181,7 +181,8 @@
 /obj/item/tank/jetpack/suit
 	name = "hardsuit jetpack upgrade"
 	desc = "A modular, compact set of thrusters designed to integrate with a hardsuit. It is fueled by a tank inserted into the suit's storage compartment."
-	icon_state = "jetpack-mining"
+	icon = 'icons/obj/items_and_weapons.dmi'
+	icon_state = "jetpack_upgrade"
 	item_state = "jetpack-black"
 	w_class = WEIGHT_CLASS_NORMAL
 	actions_types = list(/datum/action/item_action/toggle_jetpack, /datum/action/item_action/jetpack_stabilization)

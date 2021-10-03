@@ -7,7 +7,7 @@
 	righthand_file = 'icons/mob/inhands/weapons/hammers_righthand.dmi'
 	name = "proto-kinetic crusher"
 	desc = "During the early conception of the Kinetic Accelerator, a great deal of money and time was invested in magnetic distruption technology. \
-	Though ultimately replaced with concussive explosions, the ever-practical NT scientific division designed a second mining tool, capable of tearing apart rock with magnetic force and a chopping edge." \
+	Though ultimately replaced with concussive explosions, the ever-practical NT scientific division designed a second mining tool, capable of tearing apart rock with magnetic force and a chopping edge."
 	force = 0 //You can't hit stuff unless wielded
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = ITEM_SLOT_BACK
@@ -421,9 +421,14 @@
 
 //whelp
 /obj/item/crusher_trophy/tail_spike
-	desc = "A spike taken from a young dragon's tail."
+	desc = "A spike taken from a young dragon's tail. Sharp enough to stab someone with."
 	denied_type = /obj/item/crusher_trophy/tail_spike
 	bonus_value = 5
+	force = 10
+	throwforce = 15
+	throw_speed = 4
+	sharpness = IS_SHARP
+	attack_verb = list("cut", "sliced", "diced")
 
 /obj/item/crusher_trophy/tail_spike/effect_desc()
 	return "waveform collapse to do <b>[bonus_value]</b> damage to nearby creatures and push them back"
@@ -443,7 +448,7 @@
 
 //ash drake
 /obj/item/crusher_trophy/ash_spike
-	desc = "A molten spike taken from an ash drake's tail. It's extremely sharp- you could probably use it as an improvised dagger."
+	desc = "A molten spike taken from an ash drake's tail. Hot to the touch and extremely sharp."
 	icon = 'icons/obj/lavaland/elite_trophies.dmi'
 	icon_state = "ash_spike"
 	denied_type = /obj/item/crusher_trophy/ash_spike
