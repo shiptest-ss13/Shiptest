@@ -353,7 +353,6 @@
 	for(var/obj/structure/carp_rift/rift in rift_list)
 		rift.carp_stored = 999999
 	sleep(50)
-	SSshuttle.emergency.request(null, set_coefficient = 0.3)
 
 /datum/action/innate/space_dragon
 	background_icon_state = "bg_default"

@@ -9,11 +9,13 @@
 	max_integrity = 200
 	integrity_failure = 0.5
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 40, "acid" = 20)
+	clicksound = "keyboard"
 	var/brightness_on = 1
 	var/icon_keyboard = "generic_key"
 	var/icon_screen = "generic"
 	var/time_to_screwdrive = 20
 	var/authenticated = 0
+
 
 /obj/machinery/computer/Initialize(mapload, obj/item/circuitboard/C)
 	. = ..()

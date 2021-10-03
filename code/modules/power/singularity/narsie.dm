@@ -89,7 +89,6 @@
 	priority_announce("Simulations on acausal dimensional event complete. Deploying solution package now. Deployment ETA: ONE MINUTE. ","Central Command Higher Dimensional Affairs")
 	sleep(50)
 	set_security_level("delta")
-	SSshuttle.registerHostileEnvironment(GLOB.cult_narsie)
 	SSshuttle.lockdown = TRUE
 	sleep(600)
 	if(QDELETED(GLOB.cult_narsie)) // tres
@@ -97,7 +96,6 @@
 		GLOB.cult_narsie = null
 		sleep(20)
 		set_security_level("red")
-		SSshuttle.clearHostileEnvironment()
 		SSshuttle.lockdown = FALSE
 		INVOKE_ASYNC(GLOBAL_PROC, .proc/cult_ending_helper, 2)
 		return

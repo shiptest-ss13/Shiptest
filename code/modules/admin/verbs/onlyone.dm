@@ -20,7 +20,6 @@ GLOBAL_VAR_INIT(highlander, FALSE)
 
 	message_admins("<span class='adminnotice'>[key_name_admin(usr)] used THERE CAN BE ONLY ONE!</span>")
 	log_admin("[key_name(usr)] used THERE CAN BE ONLY ONE.")
-	addtimer(CALLBACK(SSshuttle.emergency, /obj/docking_port/mobile/emergency.proc/request, null, 1), 50)
 
 /client/proc/only_one_delayed()
 	send_to_playing_players("<span class='userdanger'>Bagpipes begin to blare. You feel Scottish pride coming over you.</span>")

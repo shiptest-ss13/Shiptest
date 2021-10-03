@@ -265,6 +265,7 @@ const ShipContent = (props, context) => {
 // Arrow directional controls
 const ShipControlContent = (props, context) => {
   const { act, data } = useBackend(context);
+  const { calibrating } = data;
   let flyable = (data.state === 'flying');
   //  DIRECTIONS const idea from Lyra as part of their Haven-Urist project
   const DIRECTIONS = {
@@ -289,9 +290,10 @@ const ShipControlContent = (props, context) => {
             disabled={data.state !== 'idle'}
             onClick={() => act('undock')} />
           <Button
-            tooltip="Bluespace Jump"
+            tooltip={calibrating ? "Cancel Jump" : "Bluespace Jump"}
             tooltipPosition="left"
-            icon="sign-out-alt"
+            icon={calibrating ? "times" : "angle-double-right"}
+            color={calibrating ? "bad" : undefined}
             disabled={data.state !== 'flying'}
             onClick={() => act('bluespace_jump')} />
         </>
