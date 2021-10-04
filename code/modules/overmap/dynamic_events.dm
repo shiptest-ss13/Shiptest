@@ -59,7 +59,14 @@
   */
 /obj/structure/overmap/dynamic/proc/choose_level_type()
 	if(!probabilities)
-		probabilities = list(DYNAMIC_WORLD_LAVA = length(SSmapping.lava_ruins_templates), DYNAMIC_WORLD_ICE = length(SSmapping.ice_ruins_templates), DYNAMIC_WORLD_JUNGLE = length(SSmapping.jungle_ruins_templates), DYNAMIC_WORLD_SAND = length(SSmapping.sand_ruins_templates), DYNAMIC_WORLD_SPACERUIN = length(SSmapping.space_ruins_templates), DYNAMIC_WORLD_ASTEROID = 30)
+		probabilities = list(DYNAMIC_WORLD_LAVA = length(SSmapping.lava_ruins_templates),
+		DYNAMIC_WORLD_ICE = length(SSmapping.ice_ruins_templates),
+		DYNAMIC_WORLD_JUNGLE = length(SSmapping.jungle_ruins_templates),
+		DYNAMIC_WORLD_SAND = length(SSmapping.sand_ruins_templates),
+		DYNAMIC_WORLD_SPACERUIN = length(SSmapping.space_ruins_templates),
+		DYNAMIC_WORLD_ROCKPLANET = length(SSmapping.rock_ruins_templates),
+		DYNAMIC_WORLD_ASTEROID = 30)
+
 	var/chosen = pickweight(probabilities)
 	mass = rand(50, 100) * 1000000 //50 to 100 million tonnes //this was a stupid feature
 	switch(chosen)
@@ -87,6 +94,12 @@
 			planet = DYNAMIC_WORLD_SAND
 			icon_state = "globe"
 			color = COLOR_GRAY
+		if(DYNAMIC_WORLD_ROCKPLANET)
+			name = "strange rock planet"
+			desc = "A very weak energy signal originating from a dwarf planet with signs of abandoned buildings."
+			planet = DYNAMIC_WORLD_ROCKPLANET
+			icon_state = "globe"
+			color = COLOR_BROWN
 		if(DYNAMIC_WORLD_ASTEROID)
 			name = "large asteroid"
 			desc = "A large asteroid with significant traces of minerals."
@@ -236,3 +249,7 @@
 /area/overmap_encounter/planetoid/jungle
 	name = "\improper Jungle Planetoid"
 	sound_environment = SOUND_ENVIRONMENT_FOREST
+
+/area/overmap_encounter/planetoid/rockplanet
+	name = "\improper Rocky Planetoid"
+	sound_environment = SOUND_ENVIRONMENT_HANGAR

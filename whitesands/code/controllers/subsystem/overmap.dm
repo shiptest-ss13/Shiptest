@@ -230,6 +230,11 @@ SUBSYSTEM_DEF(overmap)
 			if(DYNAMIC_WORLD_ASTEROID)
 				ruin_list = null
 				mapgen = new /datum/map_generator/cave_generator/asteroid
+			if(DYNAMIC_WORLD_ROCKPLANET)
+				ruin_list = SSmapping.rock_ruins_templates
+				mapgen = new /datum/map_generator/cave_generator/rockplanet
+				target_area = /area/overmap_encounter/planetoid/rockplanet
+				surface = /turf/open/floor/plating/asteroid
 
 	if(ruin && ruin_list && !ruin_type)
 		ruin_type = ruin_list[pick(ruin_list)]

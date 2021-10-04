@@ -34,6 +34,9 @@
 	deathsound = 'sound/voice/hiss6.ogg'
 	deathmessage = "lets out a waning guttural screech, green blood bubbling from its maw..."
 
+/mob/living/simple_animal/hostile/alien/asteroid
+	faction = list("mining")
+
 /mob/living/simple_animal/hostile/alien/Initialize()
 	. = ..()
 	AddComponent(/datum/component/footstep, FOOTSTEP_MOB_CLAW)

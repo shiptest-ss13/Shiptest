@@ -6,6 +6,7 @@
 #define DYNAMIC_WORLD_ICE "ice"
 #define DYNAMIC_WORLD_SAND "sand"
 #define DYNAMIC_WORLD_JUNGLE "jungle"
+#define DYNAMIC_WORLD_ROCKPLANET "rockplanet"
 #define DYNAMIC_WORLD_ASTEROID "asteroid"
 #define DYNAMIC_WORLD_SPACERUIN "space"
 

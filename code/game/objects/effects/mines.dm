@@ -55,6 +55,15 @@
 /obj/effect/mine/shrapnel/mineEffect(mob/victim)
 	AddComponent(/datum/component/pellet_cloud, projectile_type=shrapnel_type, magnitude=shrapnel_magnitude)
 
+/obj/effect/mine/shrapnel/human_only
+	name = "sophisticated shrapnel mine"
+	desc = "A deadly mine, this one seems to be modified to trigger for humans only?"
+
+/obj/effect/mine/shrapnel/human_only/Crossed(atom/movable/AM)
+	if(!ishuman(AM))
+		return
+	. = ..()
+
 /obj/effect/mine/shrapnel/sting
 	name = "stinger mine"
 	shrapnel_type = /obj/projectile/bullet/pellet/stingball

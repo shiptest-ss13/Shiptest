@@ -247,3 +247,11 @@
 	icon = 'icons/effects/effects.dmi'
 	icon_state = "stickyweb1"
 	random_icon_states = list("stickyweb1", "stickyweb2")
+
+/obj/effect/decal/cleanable/garbage
+	name = "decomposing garbage"
+	desc = "A split open garbage bag, its stinking content seems to be partially liquified. Yuck!"
+	icon = 'icons/obj/objects.dmi'
+	icon_state = "garbage"
+	layer = OBJ_LAYER //To display the decal over wires.
+	beauty = -150
