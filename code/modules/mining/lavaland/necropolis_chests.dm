@@ -1904,7 +1904,6 @@
 	var/mark_treshold = 10
 	var/detonation_damage = 10
 	var/backstab_bonus = 10
-	var/list/souls_reaped = list()
 
 /obj/item/blood_blessing/Initialize()
 	. = ..()
@@ -1919,8 +1918,8 @@
 
 /obj/item/blood_blessing/examine(mob/living/user)
 	. = ..()
-	. += "<span class='notice'>Shackle a large creature with the unholy force, then hit them in melee to do <b>[force + detonation_damage + (souls_reaped[L] * soul_power)]</b> damage.</span>"
-	. += "<span class='notice'>Does <b>[force + detonation_damage + backstab_bonus + (souls_reaped[L] * soul_power)]</b> damage if the target is backstabbed, instead of <b>[force + detonation_damage + (souls_reaped[L] * soul_power]</b>.</span>"
+	. += "<span class='notice'>Shackle a large creature with the unholy force, then hit them in melee to do <b>[force + detonation_damage + (souls_reaped * soul_power)]</b> damage.</span>"
+	. += "<span class='notice'>Does <b>[force + detonation_damage + backstab_bonus + (souls_reaped * soul_power)]</b> damage if the target is backstabbed, instead of <b>[force + detonation_damage + (souls_reaped * soul_power)]</b>.</span>"
 	for(var/t in markings)
 		var/obj/item/blood_marking/T = t
 		. += "<span class='notice'>It has \a [T] attached, which causes [T.effect_desc()].</span>"
@@ -1960,10 +1959,10 @@
 		souls_reaped[L.type] = min(bonus_mod, mark_treshold)
 	else
 		souls_reaped[L.type] = min(souls_reaped[L.type] + bonus_mod, mark_treshold)
-	if(!souls_reaped[L])
-		souls_reaped[L] = min(bonus_mod, maximum_souls)
+	if(!souls_reaped)
+		souls_reaped = min(bonus_mod, maximum_souls)
 	else
-		souls_reaped[L] = min(souls_reaped[L] + bonus_mod, maximum_souls)
+		souls_reaped = min(souls_reaped + bonus_mod, maximum_souls)
 
 
 /obj/item/blood_blessing/afterattack(atom/target, mob/living/user, proximity_flag, clickparams)
@@ -2003,13 +2002,13 @@
 			var/def_check = L.getarmor(type = "bomb")
 			if((user.dir & backstab_dir) && (L.dir & backstab_dir))
 				if(!QDELETED(C))
-					C.total_damage += detonation_damage + backstab_bonus + (souls_reaped[L] * soul_power //cheat a little and add the total before killing it, so certain mobs don't have much lower chances of giving an item
-				L.apply_damage(detonation_damage + backstab_bonus + (souls_reaped[L] * soul_power, BRUTE, blocked = def_check)
+					C.total_damage += detonation_damage + backstab_bonus + (souls_reaped * soul_power) //cheat a little and add the total before killing it, so certain mobs don't have much lower chances of giving an item
+				L.apply_damage(detonation_damage + backstab_bonus + (souls_reaped * soul_power), BRUTE, blocked = def_check)
 				playsound(user, 'sound/weapons/kenetic_accel.ogg', 100, TRUE) //Seriously who spelled it wrong
 			else
 				if(!QDELETED(C))
-					C.total_damage += detonation_damage + (souls_reaped[L] * soul_power
-				L.apply_damage(detonation_damage + (souls_reaped[L] * soul_power, BRUTE, blocked = def_check)
+					C.total_damage += detonation_damage + (souls_reaped * soul_power)
+				L.apply_damage(detonation_damage + (souls_reaped * soul_power), BRUTE, blocked = def_check)
 
 /obj/item/blood_blessing/proc/Recharge()
 	if(!charged)
