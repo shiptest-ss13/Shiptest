@@ -21,6 +21,7 @@
 		/obj/structure/flora/ash/cap_shroom = 2,
 		/obj/structure/flora/ash/stem_shroom = 2,
 		/obj/structure/flora/ash/cacti = 1,
+		/obj/structure/mecha_wreckage/ripley = 0.25,
 		/obj/structure/flora/ash/tall_shroom = 2)
 	feature_spawn_list = list(/obj/structure/geyser/random = 1, /obj/effect/mine/shrapnel/human_only = 1)
 
@@ -29,7 +30,7 @@
 	birth_limit = 4
 	death_limit = 3
 
-/turf/closed/mineral/random/stationside/asteroid/rockplanet
+/turf/closed/mineral/random/stationside/asteroid/rockplanet //i didn't know where to put this
 	initial_gas_mix = OPENTURF_DEFAULT_ATMOS
 	turf_type = /turf/open/floor/plating/asteroid
 	mineralSpawnChanceList = list(/obj/item/stack/ore/uranium = 5, /obj/item/stack/ore/diamond = 1, /obj/item/stack/ore/gold = 10,

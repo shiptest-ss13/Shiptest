@@ -30,7 +30,7 @@
 /area/rockplanet/surface/outdoors)
 "fC" = (
 /obj/structure/rack,
-/obj/effect/spawner/lootdrop/food_packaging,
+/obj/item/stack/wrapping_paper,
 /obj/effect/spawner/lootdrop/gambling,
 /obj/effect/decal/cleanable/cobweb,
 /turf/open/floor/plating/rust,
@@ -58,9 +58,9 @@
 /turf/open/floor/plating/asteroid,
 /area/rockplanet/surface/outdoors)
 "kf" = (
-/obj/effect/turf_decal/stripes/full,
 /obj/structure/ore_box,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/industrial/warning/full,
 /turf/open/floor/plating/asteroid,
 /area/rockplanet/surface/outdoors)
 "kF" = (
@@ -84,7 +84,7 @@
 /turf/open/floor/plating/asteroid,
 /area/rockplanet/surface/outdoors)
 "mK" = (
-/obj/structure/marker_beacon/burgundy,
+/obj/structure/marker_beacon,
 /turf/open/floor/plating/rust,
 /area/rockplanet/surface/outdoors)
 "np" = (
@@ -105,7 +105,7 @@
 /turf/closed/wall,
 /area/rockplanet/surface/outdoors)
 "pc" = (
-/obj/structure/marker_beacon/burgundy,
+/obj/structure/marker_beacon,
 /turf/open/floor/plating,
 /area/rockplanet/surface/outdoors)
 "pl" = (
@@ -120,13 +120,13 @@
 /area/rockplanet/surface/outdoors)
 "sT" = (
 /obj/structure/rack,
-/obj/effect/spawner/lootdrop/food_packaging,
+/obj/item/stack/wrapping_paper,
 /turf/open/floor/plating/rust,
 /area/rockplanet/surface/outdoors)
 "sW" = (
 /obj/structure/rack,
 /obj/effect/spawner/lootdrop/gambling,
-/obj/effect/spawner/lootdrop/garbage_spawner,
+/obj/effect/decal/cleanable/garbage,
 /turf/open/floor/plating,
 /area/rockplanet/surface/outdoors)
 "tl" = (
@@ -145,9 +145,9 @@
 /turf/open/floor/pod/light,
 /area/rockplanet/surface/outdoors)
 "tU" = (
-/obj/structure/closet/crate/decorations,
-/obj/effect/turf_decal/stripes/full,
+/obj/structure/closet/crate,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/industrial/warning/full,
 /turf/open/floor/plating/asteroid,
 /area/rockplanet/surface/outdoors)
 "uc" = (
@@ -182,7 +182,7 @@
 /turf/open/floor/pod/light,
 /area/rockplanet/surface/outdoors)
 "zY" = (
-/obj/structure/closet/crate/maint,
+/obj/structure/closet/crate,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/pod/light,
 /area/rockplanet/surface/outdoors)
@@ -192,7 +192,7 @@
 /area/rockplanet/surface/outdoors)
 "AK" = (
 /obj/structure/closet/crate,
-/obj/effect/turf_decal/stripes/full,
+/obj/effect/turf_decal/industrial/warning/full,
 /turf/open/floor/plating/asteroid,
 /area/rockplanet/surface/outdoors)
 "Ba" = (
@@ -207,13 +207,13 @@
 /area/rockplanet/surface/outdoors)
 "Cf" = (
 /obj/structure/rack,
-/obj/effect/spawner/lootdrop/food_packaging,
-/obj/effect/spawner/lootdrop/garbage_spawner,
+/obj/item/stack/wrapping_paper,
+/obj/effect/decal/cleanable/garbage,
 /turf/open/floor/plating,
 /area/rockplanet/surface/outdoors)
 "Cl" = (
-/obj/effect/turf_decal/stripes/full,
-/obj/vehicle/sealed/mecha/working/ripley,
+/obj/mecha/working/ripley/cargo,
+/obj/effect/turf_decal/industrial/warning/full,
 /turf/open/floor/plating/asteroid,
 /area/rockplanet/surface/outdoors)
 "CC" = (
@@ -223,11 +223,6 @@
 "De" = (
 /turf/template_noop,
 /area/template_noop)
-"Fh" = (
-/obj/structure/closet/crate/decorations,
-/obj/effect/turf_decal/stripes/full,
-/turf/open/floor/plating/asteroid,
-/area/rockplanet/surface/outdoors)
 "Ga" = (
 /obj/effect/decal/cleanable/blood/old,
 /turf/open/floor/plating,
@@ -261,7 +256,7 @@
 /turf/open/floor/carpet/red,
 /area/rockplanet/surface/outdoors)
 "LG" = (
-/obj/effect/turf_decal/stripes/full,
+/obj/effect/turf_decal/industrial/warning/full,
 /turf/open/floor/plating/asteroid,
 /area/rockplanet/surface/outdoors)
 "Ma" = (
@@ -295,15 +290,14 @@
 /area/rockplanet/surface/outdoors)
 "PS" = (
 /obj/structure/rack,
-/obj/effect/spawner/lootdrop/arcade_boards,
-/obj/effect/spawner/lootdrop/arcade_boards,
-/obj/effect/spawner/lootdrop/garbage_spawner,
+/obj/effect/decal/cleanable/garbage,
+/obj/item/circuitboard/machine/thermomachine,
 /turf/open/floor/plating,
 /area/rockplanet/surface/outdoors)
 "QD" = (
 /obj/structure/rack,
 /obj/effect/spawner/lootdrop/gambling,
-/obj/effect/spawner/lootdrop/garbage_spawner,
+/obj/effect/decal/cleanable/garbage,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/wrench,
 /turf/open/floor/plating,
@@ -336,8 +330,8 @@
 /turf/open/floor/plating,
 /area/rockplanet/surface/outdoors)
 "TB" = (
-/obj/effect/turf_decal/stripes/full,
 /obj/structure/closet/crate/miningcar,
+/obj/effect/turf_decal/industrial/warning/full,
 /turf/open/floor/plating/asteroid,
 /area/rockplanet/surface/outdoors)
 "Ue" = (
@@ -577,7 +571,7 @@ gA
 Ya
 Ya
 tU
-Fh
+AK
 AK
 TB
 Ya

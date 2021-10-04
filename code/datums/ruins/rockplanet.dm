@@ -65,8 +65,32 @@
 	description = "Wizards have reached all the ways out here too."
 	suffix = "rockplanet_wizard.dmm"
 
+/datum/map_template/ruin/rockplanet/house
+	name = "baracaded house"
+	id = "house"
+	description = "Some sort of house, baracaded in. It must be baracaded for a reason.."
+	suffix = "rockplanet_house.dmm"
 
+/datum/map_template/ruin/rockplanet/moth
+	name = "Storage Facility"
+	id = "rockstorage"
+	description = "Some sort of warehouse. It looks like somwhere down the line a ship full of moth plushes blew up."
+	suffix = "rockplanet_moth.dmm"
 
+/datum/map_template/ruin/rockplanet/daniel
+	name = "Oh Hi Daniel"
+	id = "daniel"
+	description = "Mistakes were made.."
+	suffix = "rockplanet_daniel.dmm"
 
+/datum/map_template/ruin/rockplanet/mining_expedition
+	name = "Mining Expedition"
+	id = "expedition"
+	description = "A mining operation gone wrong."
+	suffix = "rockplanet_miningexpedition.dmm"
 
-
+/datum/map_template/ruin/rockplanet/fortress
+	name = "Fortress of Solitude"
+	id = "solitude"
+	description = "A fortress, although one you are probably more familiar with.."
+	suffix = "rockplanet_fortress_of_solitide.dmm"
