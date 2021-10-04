@@ -2065,7 +2065,7 @@
 
 //markings
 /obj/item/blood_marking
-	name = "mark of the pit"
+	name = "mark of grand heating"
 	desc = "Nothing at all."
 	icon = 'icons/obj/lavaland/artefacts.dmi'
 	icon_state = "tail_spike"
@@ -2118,13 +2118,12 @@
 	return "Your shackles immobilize the target for <b>[bonus_value*0.1]</b> second, and their snare deals [souls_reaped*soul_power] damage."
 
 /obj/item/blood_marking/tentacle_mark/on_projectile_fire(obj/projectile/shackler/marker, mob/living/user)
-	if(deadly_shot)
-		marker.name = "thorny [marker.name]"
-		marker.icon_state = "chronobolt"
-		marker.damage = bonus_value
-		marker.nodamage = FALSE
-		marker.speed = 6
-		deadly_shot = FALSE
+	marker.name = "thorny [marker.name]"
+	marker.icon_state = "chronobolt"
+	marker.damage = bonus_value
+	marker.nodamage = FALSE
+	marker.speed = 6
+	deadly_shot = FALSE
 
 //watcher
 /obj/item/blood_marking/watcher_wing
@@ -2149,7 +2148,7 @@
 //magmawing watcher
 /obj/item/blood_marking/blaster_tubes/magma_wing
 	name = "mark of heating"
-	desc = "A still-searing wing from a magmawing watcher. Suitable as a trophy for a kinetic crusher."
+	desc = "A mark depicting the burning eye of a magmawing."
 	icon_state = "magma_wing"
 	gender = NEUTER
 	bonus_value = 5
@@ -2168,14 +2167,14 @@
 //icewing watcher
 /obj/item/blood_marking/watcher_wing/ice_wing
 	name = "mark of grand freezing"
-	desc = "A carefully preserved frozen wing from an icewing watcher. Suitable as a trophy for a kinetic crusher."
+	desc = "A mark depicting the bone-freezing stare of a icewing."
 	icon_state = "ice_wing"
 	bonus_value = 8
 
 //legion
 /obj/item/blood_marking/legion_skull
 	name = "mark of the skull"
-	desc = "A dead and lifeless legion skull. Suitable as a trophy for a kinetic crusher."
+	desc = "A mark depicting a vile skull of the legion."
 	icon_state = "legion_skull"
 	denied_type = /obj/item/blood_marking/legion_skull
 	bonus_value = 3
@@ -2196,7 +2195,7 @@
 //blood-drunk hunter
 /obj/item/blood_marking/miner_eye
 	name = "mark of bloodlust"
-	desc = "Its pupil is collapsed and turned to mush. Suitable as a trophy for a kinetic crusher."
+	desc = "A mark depicting a droplet of blood, for which you lust."
 	icon_state = "hunter_eye"
 	denied_type = /obj/item/blood_marking/miner_eye
 
@@ -2208,12 +2207,12 @@
 
 //ash drake
 /obj/item/blood_marking/tail_spike
-	desc = "A spike taken from an ash drake's tail. Suitable as a trophy for a kinetic crusher."
+	desc = "A mark depicting the searing breath of the ash drake."
 	denied_type = /obj/item/blood_marking/tail_spike
 	bonus_value = 5
 
 /obj/item/blood_marking/tail_spike/effect_desc()
-	return "mark detonation to do <b>[bonus_value]</b> damage to nearby creatures and push them back"
+	return "Breaking the shackles causes them to lash out and burst into flames when burrowing, dealing <b>[bonus_value]</b> damage to nearby creatures and pushing them back"
 
 /obj/item/blood_marking/tail_spike/on_mark_detonation(mob/living/target, mob/living/user)
 	for(var/mob/living/L in oview(2, user))
@@ -2231,57 +2230,44 @@
 //bubblegum
 /obj/item/blood_marking/demon_claws
 	name = "mark of demons"
-	desc = "A set of blood-drenched claws from a massive demon's hand. Suitable as a trophy for a kinetic crusher."
+	desc = "A mark depicting the claws of a vile demon, which some say is king."
 	icon_state = "demon_claws"
 	gender = PLURAL
 	denied_type = /obj/item/blood_marking/demon_claws
-	bonus_value = 10
-	var/static/list/damage_heal_order = list(BRUTE, BURN, OXY)
+	bonus_value = 5
 
 /obj/item/blood_marking/demon_claws/effect_desc()
-	return "melee hits to do <b>[bonus_value * 0.2]</b> more damage and heal you for <b>[bonus_value * 0.1]</b>, with <b>5X</b> effect on mark detonation"
+	return "Your claws sharpen, dealing <b>[bonus_value]</b> more damage and allowing you to attack faster."
 
 /obj/item/blood_marking/demon_claws/add_to(obj/item/blood_blessing/H, mob/living/user)
 	. = ..()
 	if(.)
-		H.force += bonus_value * 0.2
-		H.detonation_damage += bonus_value * 0.8
-		AddComponent(/datum/component/two_handed, force_wielded=(20 + bonus_value * 0.2))
+		H.force += bonus_value
 
 /obj/item/blood_marking/demon_claws/remove_from(obj/item/blood_blessing/H, mob/living/user)
 	. = ..()
 	if(.)
-		H.force -= bonus_value * 0.2
-		H.detonation_damage -= bonus_value * 0.8
-		AddComponent(/datum/component/two_handed, force_wielded=20)
-
-/obj/item/blood_marking/demon_claws/on_melee_hit(mob/living/target, mob/living/user)
-	user.heal_ordered_damage(bonus_value * 0.1, damage_heal_order)
-
-/obj/item/blood_marking/demon_claws/on_mark_detonation(mob/living/target, mob/living/user)
-	user.heal_ordered_damage(bonus_value * 0.4, damage_heal_order)
+		H.force -= bonus_value
 
 //colossus
 /obj/item/blood_marking/blaster_tubes
-	name = "mark of breath"
-	desc = "The blaster tubes from a colossus's arm. Suitable as a trophy for a kinetic crusher."
+	name = "mark of godhood"
+	desc = "A mark depicting something you can't quite figure out."
 	icon_state = "blaster_tubes"
 	gender = PLURAL
 	denied_type = /obj/item/blood_marking/blaster_tubes
-	bonus_value = 15
+	bonus_value = 5
 	var/deadly_shot = FALSE
+	var/static/list/damage_heal_order = list(BRUTE, BURN, OXY)
 
 /obj/item/blood_marking/blaster_tubes/effect_desc()
-	return "mark detonation to make the next shackler shot deal <b>[bonus_value]</b> damage but move slower"
+	return "Attacking your prey satiates your unholy lust, healing you for [bonus_value*0.2], breaking the shackles heals you for <b>[bonus_value]</b> damage."
 
-/obj/item/blood_marking/blaster_tubes/on_projectile_fire(obj/projectile/shackler/marker, mob/living/user)
-	if(deadly_shot)
-		marker.name = "deadly [marker.name]"
-		marker.icon_state = "chronobolt"
-		marker.damage = bonus_value
-		marker.nodamage = FALSE
-		marker.speed = 2
-		deadly_shot = FALSE
+/obj/item/blood_marking/demon_claws/on_melee_hit(mob/living/target, mob/living/user)
+	user.heal_ordered_damage(bonus_value * 0.2, damage_heal_order)
+
+/obj/item/blood_marking/demon_claws/on_mark_detonation(mob/living/target, mob/living/user)
+	user.heal_ordered_damage(bonus_value * 0.8, damage_heal_order)
 
 /obj/item/blood_marking/blaster_tubes/on_mark_detonation(mob/living/target, mob/living/user)
 	deadly_shot = TRUE
@@ -2293,12 +2279,12 @@
 //hierophant
 /obj/item/blood_marking/vortex_talisman
 	name = "mark of vortex"
-	desc = "A glowing trinket that was originally the Hierophant's beacon. Suitable as a trophy for a kinetic crusher."
+	desc = "A mark depicting twisted ancient technology, long forgotten."
 	icon_state = "vortex_talisman"
 	denied_type = /obj/item/blood_marking/vortex_talisman
 
 /obj/item/blood_marking/vortex_talisman/effect_desc()
-	return "mark detonation to create a barrier you can pass"
+	return "Breaking the shackles creates a barrier you can pass."
 
 /obj/item/blood_marking/vortex_talisman/on_mark_detonation(mob/living/target, mob/living/user)
 	var/turf/current_location = get_turf(user)
@@ -2320,7 +2306,7 @@
 
 /obj/item/blood_marking/king_goat
 	name = "mark of the king"
-	desc = "A hoof from the king of all goats, it still glows with a fraction of its original power... Suitable as a trophy for a kinetic crusher."
+	desc = "A mark depicting the king of all goats."
 	icon_state = "goat_hoof" //needs a better sprite but I cant sprite .
 	denied_type = /obj/item/blood_marking/king_goat
 
