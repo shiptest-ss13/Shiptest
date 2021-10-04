@@ -1957,9 +1957,9 @@
 	if(ismegafauna(L)) //megafauna reward
 		bonus_mod = 10
 	if(!kills_tracked[L.type])
-		kills_tracked[L.type] = min(bonus_mod, mark_treshold)
+		kills_tracked[L.type] = bonus_mod
 	else
-		kills_tracked[L.type] = min(kills_tracked[L.type] + bonus_mod, mark_treshold)
+		kills_tracked[L.type] = kills_tracked[L.type] + bonus_mod
 	if(!souls_reaped)
 		souls_reaped = min(bonus_mod, maximum_souls)
 	else
@@ -2065,8 +2065,8 @@
 
 //markings
 /obj/item/blood_marking
-	name = "tail spike"
-	desc = "A strange spike with no usage."
+	name = "mark of the pit"
+	desc = "Nothing at all."
 	icon = 'icons/obj/lavaland/artefacts.dmi'
 	icon_state = "tail_spike"
 	var/bonus_value = 10 //if it has a bonus effect, this is how much that effect is
@@ -2074,7 +2074,7 @@
 
 /obj/item/blood_marking/examine(mob/living/user)
 	. = ..()
-	. += "<span class='notice'>Causes [effect_desc()] when attached to a kinetic crusher.</span>"
+	. += "<span class='notice'>Grants the following boon: [effect_desc()].</span>"
 
 /obj/item/blood_marking/proc/effect_desc()
 	return "errors"
@@ -2089,12 +2089,11 @@
 	for(var/t in H.markings)
 		var/obj/item/blood_marking/T = t
 		if(istype(T, denied_type) || istype(src, T.denied_type))
-			to_chat(user, "<span class='warning'>You can't seem to attach [src] to [H]. Maybe remove a few markings?</span>")
 			return FALSE
 	if(!user.transferItemToLoc(src, H))
 		return
 	H.markings += src
-	to_chat(user, "<span class='notice'>You attach [src] to [H].</span>")
+	to_chat(user, "<span class='notice'>You feel a sharp pain as [src] appears on your accursed arm!</span>")
 	return TRUE
 
 /obj/item/blood_marking/proc/remove_from(obj/item/blood_blessing/H, mob/living/user)
@@ -2109,34 +2108,34 @@
 
 //goliath
 /obj/item/blood_marking/goliath_tentacle
-	name = "goliath tentacle"
-	desc = "A sliced-off goliath tentacle. Suitable as a trophy for a kinetic crusher."
+	name = "mark of the tentacle"
+	desc = "A mark depicting the snaring tentacles of a goliath."
 	icon_state = "goliath_tentacle"
 	denied_type = /obj/item/blood_marking/goliath_tentacle
-	bonus_value = 2
-	var/missing_health_ratio = 0.1
-	var/missing_health_desc = 10
+	bonus_value = 10
 
-/obj/item/blood_marking/goliath_tentacle/effect_desc()
-	return "mark detonation to do <b>[bonus_value]</b> more damage for every <b>[missing_health_desc]</b> health you are missing"
+/obj/item/blood_marking/tentacle_mark/effect_desc()
+	return "Your shackles immobilize the target for <b>[bonus_value*0.1]</b> second, and their snare deals [souls_reaped*soul_power] damage."
 
-/obj/item/blood_marking/goliath_tentacle/on_mark_detonation(mob/living/target, mob/living/user)
-	var/missing_health = user.health - user.maxHealth
-	missing_health *= missing_health_ratio //bonus is active at all times, even if you're above 90 health
-	missing_health *= bonus_value //multiply the remaining amount by bonus_value
-	if(missing_health > 0)
-		target.adjustBruteLoss(missing_health) //and do that much damage
+/obj/item/blood_marking/tentacle_mark/on_projectile_fire(obj/projectile/shackler/marker, mob/living/user)
+	if(deadly_shot)
+		marker.name = "thorny [marker.name]"
+		marker.icon_state = "chronobolt"
+		marker.damage = bonus_value
+		marker.nodamage = FALSE
+		marker.speed = 6
+		deadly_shot = FALSE
 
 //watcher
 /obj/item/blood_marking/watcher_wing
-	name = "watcher wing"
-	desc = "A wing ripped from a watcher. Suitable as a trophy for a kinetic crusher."
+	name = "mark of freezing"
+	desc = "A mark depicting the freezing stare of a watcher."
 	icon_state = "watcher_wing"
 	denied_type = /obj/item/blood_marking/watcher_wing
 	bonus_value = 5
 
 /obj/item/blood_marking/watcher_wing/effect_desc()
-	return "mark detonation to prevent certain creatures from using certain attacks for <b>[bonus_value*0.1]</b> second\s"
+	return "Shackles prevent certain creatures from using certain attacks for <b>[bonus_value*0.1]</b> second\s"
 
 /obj/item/blood_marking/watcher_wing/on_mark_detonation(mob/living/target, mob/living/user)
 	if(ishostile(target))
@@ -2149,7 +2148,7 @@
 
 //magmawing watcher
 /obj/item/blood_marking/blaster_tubes/magma_wing
-	name = "magmawing watcher wing"
+	name = "mark of heating"
 	desc = "A still-searing wing from a magmawing watcher. Suitable as a trophy for a kinetic crusher."
 	icon_state = "magma_wing"
 	gender = NEUTER
@@ -2168,14 +2167,14 @@
 
 //icewing watcher
 /obj/item/blood_marking/watcher_wing/ice_wing
-	name = "icewing watcher wing"
+	name = "mark of grand freezing"
 	desc = "A carefully preserved frozen wing from an icewing watcher. Suitable as a trophy for a kinetic crusher."
 	icon_state = "ice_wing"
 	bonus_value = 8
 
 //legion
 /obj/item/blood_marking/legion_skull
-	name = "legion skull"
+	name = "mark of the skull"
 	desc = "A dead and lifeless legion skull. Suitable as a trophy for a kinetic crusher."
 	icon_state = "legion_skull"
 	denied_type = /obj/item/blood_marking/legion_skull
@@ -2196,7 +2195,7 @@
 
 //blood-drunk hunter
 /obj/item/blood_marking/miner_eye
-	name = "eye of a blood-drunk hunter"
+	name = "mark of bloodlust"
 	desc = "Its pupil is collapsed and turned to mush. Suitable as a trophy for a kinetic crusher."
 	icon_state = "hunter_eye"
 	denied_type = /obj/item/blood_marking/miner_eye
@@ -2231,7 +2230,7 @@
 
 //bubblegum
 /obj/item/blood_marking/demon_claws
-	name = "demon claws"
+	name = "mark of demons"
 	desc = "A set of blood-drenched claws from a massive demon's hand. Suitable as a trophy for a kinetic crusher."
 	icon_state = "demon_claws"
 	gender = PLURAL
@@ -2264,7 +2263,7 @@
 
 //colossus
 /obj/item/blood_marking/blaster_tubes
-	name = "blaster tubes"
+	name = "mark of breath"
 	desc = "The blaster tubes from a colossus's arm. Suitable as a trophy for a kinetic crusher."
 	icon_state = "blaster_tubes"
 	gender = PLURAL
@@ -2293,7 +2292,7 @@
 
 //hierophant
 /obj/item/blood_marking/vortex_talisman
-	name = "vortex talisman"
+	name = "mark of vortex"
 	desc = "A glowing trinket that was originally the Hierophant's beacon. Suitable as a trophy for a kinetic crusher."
 	icon_state = "vortex_talisman"
 	denied_type = /obj/item/blood_marking/vortex_talisman
@@ -2320,7 +2319,7 @@
 	duration = 75
 
 /obj/item/blood_marking/king_goat
-	name = "king goat hoof"
+	name = "mark of the king"
 	desc = "A hoof from the king of all goats, it still glows with a fraction of its original power... Suitable as a trophy for a kinetic crusher."
 	icon_state = "goat_hoof" //needs a better sprite but I cant sprite .
 	denied_type = /obj/item/blood_marking/king_goat
