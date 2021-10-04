@@ -109,7 +109,7 @@
 	export_types = list(/obj/item/clothing/head/helmet/space/hostile_environment)
 
 //not technically lavaland but this had a useful infrastructure to store them under
-/datum/export/lavaland/gems/diamond
+/datum/export/lavaland/gems/rupee
 	cost = 3500
 	unit_name = "Ruperium Auction"
 	export_types = list(/obj/item/gem/rupee)
