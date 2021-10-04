@@ -50,7 +50,7 @@
 
 /datum/status_effect/blood_mark
 	id = "blood_mark"
-	duration = 50
+	duration = 5
 	status_type = STATUS_EFFECT_MULTIPLE
 	alert_type = null
 	on_remove_on_mob_delete = TRUE
