@@ -351,6 +351,39 @@
 	owner.underlays -= marked_underlay //if this is being called, we should have an owner at this point.
 	..()
 
+/datum/status_effect/blood_shackle
+	id = "blood_shackle"
+	duration = 300 //if you leave for 30 seconds you lose the mark, deal with it
+	status_type = STATUS_EFFECT_REPLACE
+	alert_type = null
+	var/mutable_appearance/marked_underlay
+	var/obj/item/blood_blessing/blood_shackled
+
+/datum/status_effect/blood_shackle/on_creation(mob/living/new_owner, obj/item/blood_blessing/new_blood_shackled)
+	. = ..()
+	if(.)
+		blood_shackled = new_blood_shackled
+
+/datum/status_effect/blood_shackle/on_apply()
+	if(owner.mob_size >= MOB_SIZE_LARGE)
+		marked_underlay = mutable_appearance('icons/effects/effects.dmi', "shield2")
+		marked_underlay.pixel_x = -owner.pixel_x
+		marked_underlay.pixel_y = -owner.pixel_y
+		owner.underlays += marked_underlay
+		return TRUE
+	return FALSE
+
+/datum/status_effect/blood_shackle/Destroy()
+	blood_shackled = null
+	if(owner)
+		owner.underlays -= marked_underlay
+	QDEL_NULL(marked_underlay)
+	return ..()
+
+/datum/status_effect/blood_shackle/be_replaced()
+	owner.underlays -= marked_underlay //if this is being called, we should have an owner at this point.
+	..()
+
 /datum/status_effect/stacking/saw_bleed
 	id = "saw_bleed"
 	tick_interval = 6

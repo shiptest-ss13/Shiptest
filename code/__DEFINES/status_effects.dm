@@ -70,6 +70,8 @@
 
 #define STATUS_EFFECT_CRUSHERMARK /datum/status_effect/crusher_mark //if struck with a proto-kinetic crusher, takes a ton of damage
 
+#define STATUS_EFFECT_BLOODSHACKLE /datum/status_effect/blood_shackle //if struck with a proto-kinetic crusher, takes a ton of damage
+
 #define STATUS_EFFECT_SAWBLEED /datum/status_effect/stacking/saw_bleed //if the bleed builds up enough, takes a ton of damage
 
 #define STATUS_EFFECT_NECKSLICE /datum/status_effect/neck_slice //Creates the flavor messages for the neck-slice
@@ -108,6 +110,8 @@
 #define STATUS_EFFECT_CRUSHERDAMAGETRACKING /datum/status_effect/crusher_damage //tracks total kinetic crusher damage on a target
 
 #define STATUS_EFFECT_SYPHONMARK /datum/status_effect/syphon_mark //tracks kills for the KA death syphon module
+
+#define STATUS_EFFECT_BLOODMARK /datum/status_effect/blood_mark //tracks kills for the Blood Blessing
 
 #define STATUS_EFFECT_INLOVE /datum/status_effect/in_love //Displays you as being in love with someone else, and makes hearts appear around them.
 

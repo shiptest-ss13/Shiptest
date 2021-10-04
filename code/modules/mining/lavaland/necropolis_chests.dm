@@ -1880,7 +1880,7 @@
 	name = "blood blessing"
 	desc = "A dangerous arm alteration given by a particularly twisted deity of death, should you take the deal. \
 	You can feel it's lust for blood overtaking your thoughts, it hungers."
-	force = 10
+	force = 15
 	w_class = WEIGHT_CLASS_NORMAL
 	slot_flags = ITEM_SLOT_BACK
 	throwforce = 10
@@ -1895,11 +1895,16 @@
 	light_system = MOVABLE_LIGHT
 	light_range = 5
 	light_on = FALSE
+	var/list/souls_reaped = list()
 	var/list/markings = list()
 	var/charged = TRUE
 	var/charge_time = 12
+	var/maximum_souls = 60
+	var/soul_power = 0.25
+	var/mark_treshold = 10
 	var/detonation_damage = 10
-	var/backstab_bonus = 15
+	var/backstab_bonus = 10
+	var/list/souls_reaped = list()
 
 /obj/item/blood_blessing/Initialize()
 	. = ..()
@@ -1914,23 +1919,14 @@
 
 /obj/item/blood_blessing/examine(mob/living/user)
 	. = ..()
-	. += "<span class='notice'>Shackle a large creature with the unholy force, then hit them in melee to do <b>[force + detonation_damage]</b> damage.</span>"
-	. += "<span class='notice'>Does <b>[force + detonation_damage + backstab_bonus]</b> damage if the target is backstabbed, instead of <b>[force + detonation_damage]</b>.</span>"
+	. += "<span class='notice'>Shackle a large creature with the unholy force, then hit them in melee to do <b>[force + detonation_damage + (souls_reaped[L] * soul_power)]</b> damage.</span>"
+	. += "<span class='notice'>Does <b>[force + detonation_damage + backstab_bonus + (souls_reaped[L] * soul_power)]</b> damage if the target is backstabbed, instead of <b>[force + detonation_damage + (souls_reaped[L] * soul_power]</b>.</span>"
 	for(var/t in markings)
 		var/obj/item/blood_marking/T = t
 		. += "<span class='notice'>It has \a [T] attached, which causes [T.effect_desc()].</span>"
 
 /obj/item/blood_blessing/attackby(obj/item/I, mob/living/user)
-	if(I.tool_behaviour == TOOL_SCALPEL)
-		if(LAZYLEN(markings))
-			to_chat(user, "<span class='notice'>You painfully remove [src]'s blessed markings.</span>")
-			I.play_tool_sound(src)
-			for(var/t in markings)
-				var/obj/item/blood_marking/T = t
-				T.remove_from(src, user)
-		else
-			to_chat(user, "<span class='warning'>There are no markings on [src].</span>")
-	else if(istype(I, /obj/item/blood_marking))
+	if(istype(I, /obj/item/blood_marking))
 		var/obj/item/blood_marking/T = I
 		T.add_to(src, user)
 	else
@@ -1946,6 +1942,29 @@
 			T.on_melee_hit(target, user)
 	if(!QDELETED(C) && !QDELETED(target))
 		C.total_damage += target_health - target.health //we did some damage, but let's not assume how much we did
+	if(isliving(target))
+		var/mob/living/L = target
+		var/list/existing_marks = L.has_status_effect_list(STATUS_EFFECT_BLOODMARK)
+		for(var/i in existing_marks)
+			var/datum/status_effect/blood_mark/BM = i
+			if(BM.reward_target == src)
+				BM.reward_target = null
+				qdel(BM)
+		L.apply_status_effect(STATUS_EFFECT_BLOODMARK, src)
+
+/obj/item/blood_blessing/proc/get_souls(mob/living/L)
+	var/bonus_mod = 1
+	if(ismegafauna(L)) //megafauna reward
+		bonus_mod = 10
+	if(!souls_reaped[L.type])
+		souls_reaped[L.type] = min(bonus_mod, mark_treshold)
+	else
+		souls_reaped[L.type] = min(souls_reaped[L.type] + bonus_mod, mark_treshold)
+	if(!souls_reaped[L])
+		souls_reaped[L] = min(bonus_mod, maximum_souls)
+	else
+		souls_reaped[L] = min(souls_reaped[L] + bonus_mod, maximum_souls)
+
 
 /obj/item/blood_blessing/afterattack(atom/target, mob/living/user, proximity_flag, clickparams)
 	. = ..()
@@ -1959,7 +1978,7 @@
 			T.on_projectile_fire(D, user)
 		D.preparePixelProjectile(target, user, clickparams)
 		D.firer = user
-		D.hammer_synced = src
+		D.blood_shackled = src
 		playsound(user, 'sound/weapons/plasma_cutter.ogg', 100, TRUE)
 		D.fire()
 		charged = FALSE
@@ -1968,8 +1987,8 @@
 		return
 	if(proximity_flag && isliving(target))
 		var/mob/living/L = target
-		var/datum/status_effect/crusher_mark/CM = L.has_status_effect(STATUS_EFFECT_CRUSHERMARK)
-		if(!CM || CM.hammer_synced != src || !L.remove_status_effect(STATUS_EFFECT_CRUSHERMARK))
+		var/datum/status_effect/blood_shackle/CM = L.has_status_effect(STATUS_EFFECT_BLOODSHACKLE)
+		if(!CM || CM.blood_shackled != src || !L.remove_status_effect(STATUS_EFFECT_BLOODSHACKLE))
 			return
 		var/datum/status_effect/crusher_damage/C = L.has_status_effect(STATUS_EFFECT_CRUSHERDAMAGETRACKING)
 		var/target_health = L.health
@@ -1984,13 +2003,13 @@
 			var/def_check = L.getarmor(type = "bomb")
 			if((user.dir & backstab_dir) && (L.dir & backstab_dir))
 				if(!QDELETED(C))
-					C.total_damage += detonation_damage + backstab_bonus //cheat a little and add the total before killing it, so certain mobs don't have much lower chances of giving an item
-				L.apply_damage(detonation_damage + backstab_bonus, BRUTE, blocked = def_check)
+					C.total_damage += detonation_damage + backstab_bonus + (souls_reaped[L] * soul_power //cheat a little and add the total before killing it, so certain mobs don't have much lower chances of giving an item
+				L.apply_damage(detonation_damage + backstab_bonus + (souls_reaped[L] * soul_power, BRUTE, blocked = def_check)
 				playsound(user, 'sound/weapons/kenetic_accel.ogg', 100, TRUE) //Seriously who spelled it wrong
 			else
 				if(!QDELETED(C))
-					C.total_damage += detonation_damage
-				L.apply_damage(detonation_damage, BRUTE, blocked = def_check)
+					C.total_damage += detonation_damage + (souls_reaped[L] * soul_power
+				L.apply_damage(detonation_damage + (souls_reaped[L] * soul_power, BRUTE, blocked = def_check)
 
 /obj/item/blood_blessing/proc/Recharge()
 	if(!charged)
@@ -2012,7 +2031,7 @@
 	if(light_on)
 		. += "[icon_state]_lit"
 
-//destablizing force
+//shackling chains
 /obj/projectile/shackler
 	name = "shackling chains"
 	icon_state = "pulse1"
@@ -2022,19 +2041,19 @@
 	flag = "bomb"
 	range = 6
 	log_override = TRUE
-	var/obj/item/blood_blessing/hammer_synced
+	var/obj/item/blood_blessing/blood_shackled
 
 /obj/projectile/shackler/Destroy()
-	hammer_synced = null
+	blood_shackled = null
 	return ..()
 
 /obj/projectile/shackler/on_hit(atom/target, blocked = FALSE)
 	if(isliving(target))
 		var/mob/living/L = target
-		var/had_effect = (L.has_status_effect(STATUS_EFFECT_CRUSHERMARK)) //used as a boolean
-		var/datum/status_effect/crusher_mark/CM = L.apply_status_effect(STATUS_EFFECT_CRUSHERMARK, hammer_synced)
-		if(hammer_synced)
-			for(var/t in hammer_synced.markings)
+		var/had_effect = (L.has_status_effect(STATUS_EFFECT_BLOODSHACKLE)) //used as a boolean
+		var/datum/status_effect/blood_shackle/CM = L.apply_status_effect(STATUS_EFFECT_BLOODSHACKLE, blood_shackled)
+		if(blood_shackled)
+			for(var/t in blood_shackled.markings)
 				var/obj/item/blood_marking/T = t
 				T.on_mark_application(target, CM, had_effect)
 	var/target_turf = get_turf(target)
@@ -2085,7 +2104,7 @@
 
 /obj/item/blood_marking/proc/on_melee_hit(mob/living/target, mob/living/user) //the target and the user
 /obj/item/blood_marking/proc/on_projectile_fire(obj/projectile/shackler/marker, mob/living/user) //the projectile fired and the user
-/obj/item/blood_marking/proc/on_mark_application(mob/living/target, datum/status_effect/crusher_mark/mark, had_mark) //the target, the mark applied, and if the target had a mark before
+/obj/item/blood_marking/proc/on_mark_application(mob/living/target, datum/status_effect/blood_shackle/mark, had_mark) //the target, the mark applied, and if the target had a mark before
 /obj/item/blood_marking/proc/on_mark_detonation(mob/living/target, mob/living/user) //the target and the user
 
 //goliath
@@ -2322,4 +2341,4 @@
 	. = ..()
 	if(.)
 		H.charge_time = 12
-		H.force = 10
+		H.force = 15
