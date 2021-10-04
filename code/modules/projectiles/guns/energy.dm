@@ -215,12 +215,6 @@
 		return
 	var/overlay_icon_state = "[icon_state]_charge"
 	var/ratio = get_charge_ratio()
-	if(!shaded_charge)
-		var/mutable_appearance/charge_overlay = mutable_appearance(icon, overlay_icon_state)
-		for(var/i = ratio, i >= 1, i--)
-			charge_overlay.pixel_x = ammo_x_offset * (i - 1)
-			charge_overlay.pixel_y = ammo_y_offset * (i - 1)
-			. += new /mutable_appearance(charge_overlay)
 	if(ratio == 0)
 		if(modifystate)
 			var/obj/item/ammo_casing/energy/shot = ammo_type[select]
@@ -228,6 +222,12 @@
 			. += "[icon_state]_[shot.select_name]"
 		. += "[icon_state]_empty"
 	else
+		if(!shaded_charge)
+			var/mutable_appearance/charge_overlay = mutable_appearance(icon, overlay_icon_state)
+			for(var/i = ratio, i >= 1, i--)
+				charge_overlay.pixel_x = ammo_x_offset * (i - 1)
+				charge_overlay.pixel_y = ammo_y_offset * (i - 1)
+				. += new /mutable_appearance(charge_overlay)
 		if(modifystate)
 			var/obj/item/ammo_casing/energy/shot = ammo_type[select]
 			. += "[icon_state]_charge[ratio]_[shot.select_name]" //:drooling_face:
