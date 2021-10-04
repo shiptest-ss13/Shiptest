@@ -1895,7 +1895,7 @@
 	light_system = MOVABLE_LIGHT
 	light_range = 5
 	light_on = FALSE
-	var/list/souls_reaped = list()
+	var/list/kills_tracked = list()
 	var/list/markings = list()
 	var/charged = TRUE
 	var/charge_time = 12
@@ -1904,6 +1904,7 @@
 	var/mark_treshold = 10
 	var/detonation_damage = 10
 	var/backstab_bonus = 10
+	var/souls_reaped = 0
 
 /obj/item/blood_blessing/Initialize()
 	. = ..()
@@ -1955,10 +1956,10 @@
 	var/bonus_mod = 1
 	if(ismegafauna(L)) //megafauna reward
 		bonus_mod = 10
-	if(!souls_reaped[L.type])
-		souls_reaped[L.type] = min(bonus_mod, mark_treshold)
+	if(!kills_tracked[L.type])
+		kills_tracked[L.type] = min(bonus_mod, mark_treshold)
 	else
-		souls_reaped[L.type] = min(souls_reaped[L.type] + bonus_mod, mark_treshold)
+		kills_tracked[L.type] = min(kills_tracked[L.type] + bonus_mod, mark_treshold)
 	if(!souls_reaped)
 		souls_reaped = min(bonus_mod, maximum_souls)
 	else
