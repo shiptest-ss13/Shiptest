@@ -895,3 +895,13 @@
 		/obj/item/reagent_containers/glass/beaker = 3)
 	result = /obj/item/reagent_containers/glass/filter
 	category = CAT_MISC
+
+/datum/crafting_recipe/dragonspear
+	name = "Dragonslayer's Spear"
+	result = /obj/item/spear/dragonspear
+	time = 45
+	reqs = list(/obj/item/crusher_trophy/ash_spike = 1,
+				/obj/item/crusher_trophy/tail_spike = 2,
+				/obj/item/stack/sheet/bone = 5,
+				/obj/item/stack/sheet/sinew = 3)
+	category = CAT_PRIMAL

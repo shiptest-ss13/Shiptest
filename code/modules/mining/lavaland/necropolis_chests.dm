@@ -464,9 +464,9 @@
 	max_charges = 1
 	item_flags = NEEDS_PERMIT
 	force = 15
+	sharpness = IS_SHARP
 	block_chance = 25//A pittance, but might be worth something in a scuffle
 	hitsound = 'sound/weapons/chainhit.ogg'
-
 
 /obj/item/gun/magic/hook/melee_attack_chain(mob/user, atom/target, params)
 	..()
@@ -474,7 +474,7 @@
 
 /obj/item/gun/magic/hook/Initialize()
 	. = ..()
-	AddComponent(/datum/component/butchering, 15, 125, 0, hitsound)
+	AddComponent(/datum/component/butchering, 15, 130, 0, hitsound)
 
 /obj/item/ammo_casing/magic/hook
 	name = "hook"
@@ -498,7 +498,7 @@
 
 /obj/projectile/hook/fire(setAngle)
 	if(firer)
-		chain = firer.Beam(src, icon_state = "chain", time = INFINITY, maxdistance = INFINITY)
+		chain = firer.Beam(src, icon_state = "chain")
 	..()
 	//TODO: root the firer until the chain returns
 
