@@ -57,9 +57,57 @@
 	display_name = "tie, blue"
 	path =  /obj/item/clothing/neck/tie/blue
 
+/datum/gear/accessory/tie/rainbow
+	display_name = "tie, rainbow"
+	path = /obj/item/clothing/neck/tie/rainbow
+
 /datum/gear/accessory/tie/horrible
 	display_name = "tie, horrible"
 	path = /obj/item/clothing/neck/tie/horrible
+
+/datum/gear/accessory/tie/trans
+	display_name = "tie, transgender"
+	path = /obj/item/clothing/neck/tie/trans
+
+/datum/gear/accessory/tie/horrible
+	display_name = "tie, pansexual"
+	path = /obj/item/clothing/neck/tie/pan
+
+/datum/gear/accessory/tie/enby
+	display_name = "tie, nonbinary"
+	path = /obj/item/clothing/neck/tie/enby
+
+/datum/gear/accessory/tie/bi
+	display_name = "tie, bisexual"
+	path = /obj/item/clothing/neck/tie/bi
+
+/datum/gear/accessory/tie/bi
+	display_name = "tie, horrible"
+	path = /obj/item/clothing/neck/tie/horrible
+
+/datum/gear/accessory/tie/lesbian
+	display_name = "tie, lesbian"
+	path = /obj/item/clothing/neck/tie/lesbian
+
+/datum/gear/accessory/tie/interesx
+	display_name = "tie, interesx"
+	path = /obj/item/clothing/neck/tie/intersex
+
+/datum/gear/accessory/tie/gay
+	display_name = "tie, gay"
+	path = /obj/item/clothing/neck/tie/gay
+
+/datum/gear/accessory/tie/gay/genderfluid
+	display_name = "tie, genderfluid"
+	path = /obj/item/clothing/neck/tie/genderfluid
+
+/datum/gear/accessory/tie/asexual
+	display_name = "tie, asexual"
+	path = /obj/item/clothing/neck/tie/asexual
+
+/datum/gear/accessory/tie/genderfae
+	display_name = "tie, genderfae"
+	path = /obj/item/clothing/neck/tie/genderfae
 
 //Misc
 

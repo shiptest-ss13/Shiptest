@@ -42,6 +42,10 @@
 	name = "black tie"
 	icon_state = "blacktie"
 
+/obj/item/clothing/neck/tie/rainbow
+	name = "rainbow tie"
+	icon_state = "rainbow"
+
 /obj/item/clothing/neck/tie/horrible
 	name = "horrible tie"
 	desc = "A neosilk clip-on tie. This one is disgusting."
@@ -96,10 +100,6 @@
 	name = "asexual tie"
 	desc = "A neosilk clip-on tie. This one is in the colors of the asexual flag."
 	icon_state = "asexual"
-
-/obj/item/clothing/neck/tie/rainbow
-	name = "rainbow tie"
-	icon_state = "rainbow"
 
 /obj/item/clothing/neck/tie/genderfae
 	name = "genderfae tie"
