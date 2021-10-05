@@ -252,9 +252,6 @@
 	id = "kinggoatboss"
 	description = "Abandon All Hope Ye Who Enter Here."
 	suffix = "kinggoatboss.dmm"
-	always_place = TRUE
-	allow_duplicates = FALSE
-	always_spawn_with = list(/datum/map_template/ruin/space/kinggoatarena = PLACE_RESERVED)
 
 /datum/map_template/ruin/lavaland/comm_outpost
 	name = "Syndicate Comm Outpost"
@@ -288,3 +285,9 @@
 	id = "colossus-cross"
 	description = "The almighty one, here in this chunk of rock called lavaland."
 	suffix = "colossus_ruin.dmm"
+
+/datum/map_template/ruin/lavaland/ashwalker_shrine
+	name = "Ashwalker shrine"
+	id = "ashwalker_shrine"
+	description = "A destroyed ashwalker village. What even happened here?"
+	suffix = "ashwalker_shrine.dmm"
