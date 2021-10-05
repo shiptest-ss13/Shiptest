@@ -116,6 +116,20 @@
 	suffix = "whitesands_surface_onlyaspoonful.dmm"
 	allow_duplicates = FALSE
 
+/datum/map_template/ruin/whitesands/onlyaspoonful
+	name = "Abandoned Spacepod Garage"
+	id = "ws-spacepod"
+	description = "A old abandoned spacepod garage. What must it have been used for?"
+	suffix = "whitesands_surface_spacepod_garage.dmm"
+	allow_duplicates = FALSE
+
+/datum/map_template/ruin/whitesands/chokepoint
+	name = "Chokepoint"
+	id = "ws-chokepoint"
+	description = "Some sort of survivors, brandishing old nanotrasen security gear."
+	suffix = "whitesands_surface_chokepoint.dmm"
+	allow_duplicates = FALSE
+
 //////////OUTSIDE SETTLEMENTS/RUINS//////////
 /datum/map_template/ruin/whitesands/survivors
 	name = "Survivor Camp"

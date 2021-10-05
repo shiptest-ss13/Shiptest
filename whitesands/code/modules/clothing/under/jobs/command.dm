@@ -19,7 +19,7 @@
 //Captain
 
 /obj/item/clothing/under/rank/command/captain
-	desc = "It's a blue jumpsuit with some gold markings denoting the rank of \"Captain\"."
+	desc = "It's a white jumpsuit with some gold markings denoting the rank of \"Captain\"."
 	name = "captain's jumpsuit"
 	icon_state = "captain"
 	sensor_mode = SENSOR_COORDS
@@ -27,7 +27,7 @@
 
 /obj/item/clothing/under/rank/command/captain/skirt
 	name = "captain's jumpskirt"
-	desc = "It's a blue jumpskirt with some gold markings denoting the rank of \"Captain\"."
+	desc = "It's a white jumpskirt with some gold markings denoting the rank of \"Captain\"."
 	icon_state = "captain_skirt"
 	body_parts_covered = CHEST|GROIN|ARMS
 	can_adjust = FALSE
@@ -80,3 +80,8 @@
 	body_parts_covered = CHEST|GROIN|ARMS
 	can_adjust = FALSE
 	fitted = FEMALE_UNIFORM_TOP
+
+/obj/item/clothing/under/rank/command/captain/nt
+	desc = "It's a blue jumpsuit with some gold markings denoting the rank of \"Captain\"."
+	icon_state = "captain_nt"
+	item_state = "captain_nt"
