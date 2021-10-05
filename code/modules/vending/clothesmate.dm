@@ -43,7 +43,7 @@
 		/obj/item/clothing/neck/tie/blue = 3,
 		/obj/item/clothing/neck/tie/red = 3,
 		/obj/item/clothing/neck/tie/black = 3,
-		/obj/item/clothing/neck/tie/rainbow
+		/obj/item/clothing/neck/tie/rainbow = 3,
 		/obj/item/clothing/neck/tie/horrible = 3,
 		/obj/item/clothing/neck/tie/trans = 3,
 		/obj/item/clothing/neck/tie/pan = 3,
