@@ -2083,7 +2083,7 @@
 			for(var/t in blood_shackled.markings)
 				var/obj/item/blood_marking/T = t
 				T.on_mark_application(target, CM, had_effect)
-		if(isliving(target))
+	if(isliving(target))
 		var/mob/living/L = target
 		var/list/existing_marks = L.has_status_effect_list(STATUS_EFFECT_BLOODMARK)
 		for(var/i in existing_marks)
