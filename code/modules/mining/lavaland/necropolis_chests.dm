@@ -1896,6 +1896,7 @@
 	light_range = 5
 	light_on = FALSE
 	var/list/kills_tracked = list()
+	var/list/total_type_kills = list()
 	var/list/markings = list()
 	var/charged = TRUE
 	var/charge_time = 12
@@ -1923,7 +1924,7 @@
 	. += "<span class='notice'>Does <b>[force + detonation_damage + backstab_bonus + (souls_reaped * soul_power)]</b> damage if the target is backstabbed, instead of <b>[force + detonation_damage + (souls_reaped * soul_power)]</b>.</span>"
 	for(var/t in markings)
 		var/obj/item/blood_marking/T = t
-		. += "<span class='notice'>It has \a [T] attached, which causes [T.effect_desc()].</span>"
+		. += "<span class='notice'>It has \a [T] inscribed, which grants the following boon: [T.effect_desc()].</span>"
 
 /obj/item/blood_blessing/attackby(obj/item/I, mob/living/user)
 	if(istype(I, /obj/item/blood_marking))
@@ -1954,6 +1955,8 @@
 
 /obj/item/blood_blessing/proc/get_souls(mob/living/L)
 	var/bonus_mod = 1
+	if(ishostile(L))
+		bonus_mod = 1
 	if(ismegafauna(L)) //megafauna reward
 		bonus_mod = 10
 	if(!kills_tracked[L.type])
@@ -1964,7 +1967,31 @@
 		souls_reaped = min(bonus_mod, maximum_souls)
 	else
 		souls_reaped = min(souls_reaped + bonus_mod, maximum_souls)
-
+	if(istype(L, /mob/living/simple_animal/hostile/asteroid/goliath))
+		if(!total_type_kills["goliath"])
+			total_type_kills["goliath"] = bonus_mod
+		else
+			total_type_kills["goliath"] = total_type_kills["goliath"] + bonus_mod
+	if(istype(L, /mob/living/simple_animal/hostile/asteroid/basilisk))
+		if(!total_type_kills["watcher"])
+			total_type_kills["watcher"] = bonus_mod
+		else
+			total_type_kills["watcher"] = total_type_kills["watcher"] + bonus_mod
+	if(istype(L, /mob/living/simple_animal/hostile/asteroid/polarbear))
+		if(!total_type_kills["bear"])
+			total_type_kills["bear"] = bonus_mod
+		else
+			total_type_kills["bear"] = total_type_kills["bear"] + bonus_mod
+	if(istype(L, /mob/living/simple_animal/hostile/asteroid/hivelord))
+		if(!total_type_kills["legion"])
+			total_type_kills["legion"] = bonus_mod
+		else
+			total_type_kills["legion"] = total_type_kills["legion"] + bonus_mod
+	if(istype(L, /mob/living/simple_animal/hostile/asteroid/wolf))
+		if(!total_type_kills["wolf"])
+			total_type_kills["wolf"] = bonus_mod
+		else
+			total_type_kills["wolf"] = total_type_kills["wolf"] + bonus_mod
 
 /obj/item/blood_blessing/afterattack(atom/target, mob/living/user, proximity_flag, clickparams)
 	. = ..()
@@ -2056,6 +2083,15 @@
 			for(var/t in blood_shackled.markings)
 				var/obj/item/blood_marking/T = t
 				T.on_mark_application(target, CM, had_effect)
+		if(isliving(target))
+		var/mob/living/L = target
+		var/list/existing_marks = L.has_status_effect_list(STATUS_EFFECT_BLOODMARK)
+		for(var/i in existing_marks)
+			var/datum/status_effect/blood_mark/BM = i
+			if(BM.reward_target == src)
+				BM.reward_target = null
+				qdel(BM)
+		L.apply_status_effect(STATUS_EFFECT_BLOODMARK, src)
 	var/target_turf = get_turf(target)
 	if(ismineralturf(target_turf))
 		var/turf/closed/mineral/M = target_turf
@@ -2093,7 +2129,7 @@
 	if(!user.transferItemToLoc(src, H))
 		return
 	H.markings += src
-	to_chat(user, "<span class='notice'>You feel a sharp pain as [src] appears on your accursed arm!</span>")
+	to_chat(user, "<span class='notice'>You feel a sharp pain as [src] is inscribed on your accursed arm!</span>")
 	return TRUE
 
 /obj/item/blood_marking/proc/remove_from(obj/item/blood_blessing/H, mob/living/user)
@@ -2282,7 +2318,7 @@
 	desc = "A mark depicting something you can't quite figure out."
 	icon_state = "blaster_tubes"
 	gender = PLURAL
-	denied_type = /obj/item/blood_marking/blaster_tubes
+	denied_type = /obj/item/blood_marking/healing
 	bonus_value = 5
 	var/static/list/damage_heal_order = list(BRUTE, BURN, OXY)
 
