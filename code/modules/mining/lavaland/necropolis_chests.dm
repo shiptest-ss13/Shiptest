@@ -1878,7 +1878,7 @@
 	lefthand_file = 'icons/mob/inhands/weapons/hammers_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/hammers_righthand.dmi'
 	name = "blood blessing"
-	desc = "A dangerous arm alteration given by a particularly twisted deity of death, should you take the deal. \
+	desc = "A dangerous arm alteration given by a particularly twisted deity of death, your deal was struck, impurity lingers. \
 	You can feel it's lust for blood overtaking your thoughts, it hungers."
 	force = 15
 	w_class = WEIGHT_CLASS_NORMAL
@@ -1919,7 +1919,7 @@
 
 /obj/item/blood_blessing/examine(mob/living/user)
 	. = ..()
-	. += "<span class='notice'>Shackle a large creature with the unholy force, then hit them in melee to do <b>[force + detonation_damage + (souls_reaped * soul_power)]</b> damage.</span>"
+	. += "<span class='notice'>Shackle a large creature with the unholy force, then rip apart their shackles in melee to do <b>[force + detonation_damage + (souls_reaped * soul_power)]</b> damage.</span>"
 	. += "<span class='notice'>Does <b>[force + detonation_damage + backstab_bonus + (souls_reaped * soul_power)]</b> damage if the target is backstabbed, instead of <b>[force + detonation_damage + (souls_reaped * soul_power)]</b>.</span>"
 	for(var/t in markings)
 		var/obj/item/blood_marking/T = t
@@ -2107,23 +2107,23 @@
 /obj/item/blood_marking/proc/on_mark_detonation(mob/living/target, mob/living/user) //the target and the user
 
 //goliath
-/obj/item/blood_marking/goliath_tentacle
+/obj/item/blood_marking/tentacle_mark
 	name = "mark of the tentacle"
 	desc = "A mark depicting the snaring tentacles of a goliath."
 	icon_state = "goliath_tentacle"
-	denied_type = /obj/item/blood_marking/goliath_tentacle
+	denied_type = /obj/item/blood_marking/tentacle_mark
 	bonus_value = 10
 
 /obj/item/blood_marking/tentacle_mark/effect_desc()
-	return "Your shackles immobilize the target for <b>[bonus_value*0.1]</b> second, and their snare deals [souls_reaped*soul_power] damage."
+	return "Your shackles immobilize the target for <b>[bonus_value*0.1]</b> second, and their snare deals [bonus_value] damage."
 
 /obj/item/blood_marking/tentacle_mark/on_projectile_fire(obj/projectile/shackler/marker, mob/living/user)
 	marker.name = "thorny [marker.name]"
 	marker.icon_state = "chronobolt"
 	marker.damage = bonus_value
 	marker.nodamage = FALSE
-	marker.speed = 6
-	deadly_shot = FALSE
+
+//Ancient goliath should further increase damage and give a little dash/teleport available for a bit after breaking the shackles
 
 //watcher
 /obj/item/blood_marking/watcher_wing
@@ -2146,23 +2146,33 @@
 				H.ranged_cooldown = bonus_value + world.time
 
 //magmawing watcher
-/obj/item/blood_marking/blaster_tubes/magma_wing
+/obj/item/blood_marking/magma_wing
 	name = "mark of heating"
 	desc = "A mark depicting the burning eye of a magmawing."
 	icon_state = "magma_wing"
 	gender = NEUTER
 	bonus_value = 5
+	var/deadly_shot = FALSE
 
-/obj/item/blood_marking/blaster_tubes/magma_wing/effect_desc()
+/obj/item/blood_marking/magma_wing/effect_desc()
 	return "mark detonation to make the next shackler shot deal <b>[bonus_value]</b> damage"
 
-/obj/item/blood_marking/blaster_tubes/magma_wing/on_projectile_fire(obj/projectile/shackler/marker, mob/living/user)
+/obj/item/blood_marking/magma_wing/on_projectile_fire(obj/projectile/shackler/marker, mob/living/user)
 	if(deadly_shot)
 		marker.name = "heated [marker.name]"
 		marker.icon_state = "lava"
 		marker.damage = bonus_value
 		marker.nodamage = FALSE
 		deadly_shot = FALSE
+
+/obj/item/blood_marking/magma_wing/on_mark_detonation(mob/living/target, mob/living/user)
+	deadly_shot = TRUE
+	addtimer(CALLBACK(src, .proc/reset_deadly_shot), 300, TIMER_UNIQUE|TIMER_OVERRIDE)
+
+/obj/item/blood_marking/magma_wing/proc/reset_deadly_shot()
+	deadly_shot = FALSE
+
+//Probably getting changed, unsure
 
 //icewing watcher
 /obj/item/blood_marking/watcher_wing/ice_wing
@@ -2177,20 +2187,37 @@
 	desc = "A mark depicting a vile skull of the legion."
 	icon_state = "legion_skull"
 	denied_type = /obj/item/blood_marking/legion_skull
-	bonus_value = 3
+	bonus_value = 1
+	var/missing_health_ratio = 0.1
+	var/missing_health_desc = 10
 
 /obj/item/blood_marking/legion_skull/effect_desc()
-	return "a kinetic crusher to recharge <b>[bonus_value*0.1]</b> second\s faster"
+	return "Allows you to harness the power of the legion the more you are hurt, recharging your shackles <b>[bonus_value*0.1]</b> second\s faster and dealing <b>[bonus_value]</b> more damage when breaking them for every <b>[missing_health_desc]</b> health you are missing."
 
 /obj/item/blood_marking/legion_skull/add_to(obj/item/blood_blessing/H, mob/living/user)
 	. = ..()
 	if(.)
-		H.charge_time -= bonus_value
+		var/missing_health = user.health - user.maxHealth
+		missing_health *= missing_health_ratio //bonus is active at all times, even if you're above 90 health
+		missing_health *= bonus_value
+		H.charge_time -= missing_health
 
 /obj/item/blood_marking/legion_skull/remove_from(obj/item/blood_blessing/H, mob/living/user)
 	. = ..()
 	if(.)
-		H.charge_time += bonus_value
+		var/missing_health = user.health - user.maxHealth
+		missing_health *= missing_health_ratio //bonus is active at all times, even if you're above 90 health
+		missing_health *= bonus_value
+		H.charge_time += missing_health
+
+/obj/item/blood_marking/legion_skull/on_mark_detonation(mob/living/target, mob/living/user)
+	var/missing_health = user.health - user.maxHealth
+	missing_health *= missing_health_ratio //bonus is active at all times, even if you're above 90 health
+	missing_health *= bonus_value //multiply the remaining amount by bonus_value
+	if(missing_health > 0)
+		target.adjustBruteLoss(missing_health) //and do that much damage
+
+//Funny dorf: Speeds you up based on missing health too, at least enough to negate damage slowdown, might get op so I dunno
 
 //blood-drunk hunter
 /obj/item/blood_marking/miner_eye
@@ -2200,7 +2227,7 @@
 	denied_type = /obj/item/blood_marking/miner_eye
 
 /obj/item/blood_marking/miner_eye/effect_desc()
-	return "mark detonation to grant stun immunity and <b>90%</b> damage reduction for <b>1</b> second"
+	return "Breaking the shackles further fuels your lust, granting stun immunity and <b>90%</b> damage reduction for <b>1</b> second."
 
 /obj/item/blood_marking/miner_eye/on_mark_detonation(mob/living/target, mob/living/user)
 	user.apply_status_effect(STATUS_EFFECT_BLOODDRUNK)
@@ -2250,31 +2277,23 @@
 		H.force -= bonus_value
 
 //colossus
-/obj/item/blood_marking/blaster_tubes
+/obj/item/blood_marking/healing
 	name = "mark of godhood"
 	desc = "A mark depicting something you can't quite figure out."
 	icon_state = "blaster_tubes"
 	gender = PLURAL
 	denied_type = /obj/item/blood_marking/blaster_tubes
 	bonus_value = 5
-	var/deadly_shot = FALSE
 	var/static/list/damage_heal_order = list(BRUTE, BURN, OXY)
 
-/obj/item/blood_marking/blaster_tubes/effect_desc()
+/obj/item/blood_marking/healing/effect_desc()
 	return "Attacking your prey satiates your unholy lust, healing you for [bonus_value*0.2], breaking the shackles heals you for <b>[bonus_value]</b> damage."
 
-/obj/item/blood_marking/demon_claws/on_melee_hit(mob/living/target, mob/living/user)
+/obj/item/blood_marking/healing/on_melee_hit(mob/living/target, mob/living/user)
 	user.heal_ordered_damage(bonus_value * 0.2, damage_heal_order)
 
-/obj/item/blood_marking/demon_claws/on_mark_detonation(mob/living/target, mob/living/user)
+/obj/item/blood_marking/healing/on_mark_detonation(mob/living/target, mob/living/user)
 	user.heal_ordered_damage(bonus_value * 0.8, damage_heal_order)
-
-/obj/item/blood_marking/blaster_tubes/on_mark_detonation(mob/living/target, mob/living/user)
-	deadly_shot = TRUE
-	addtimer(CALLBACK(src, .proc/reset_deadly_shot), 300, TIMER_UNIQUE|TIMER_OVERRIDE)
-
-/obj/item/blood_marking/blaster_tubes/proc/reset_deadly_shot()
-	deadly_shot = FALSE
 
 //hierophant
 /obj/item/blood_marking/vortex_talisman
