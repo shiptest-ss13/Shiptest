@@ -1926,16 +1926,16 @@
 		to_chat(itemUser, failText)
 		return
 	to_chat(itemUser, "<span class='notice'>You feel dark energy overtaking your body for a few moments, as your arm twists itself, becoming more muscular and growing big sharp claws...</span>")
-	var/datum/status_effect/huntersOath/effect = itemUser.apply_status_effect(STATUS_EFFECT_HIPPOCRATIC_OATH)
+	var/datum/status_effect/huntersOath/effect = itemUser.apply_status_effect(STATUS_EFFECT_HUNTERS_OATH)
 	effect.hand = usedHand
 	activated(itemUser)
 
 /obj/item/blood_blessing/proc/activated(mob/living/user)
 	src = new /obj/item/blood_blessing/activated
-	item_flags = DROPDEL
+	src.item_flags = DROPDEL
 	ADD_TRAIT(src, TRAIT_NODROP, CURSED_ITEM_TRAIT)
-	curse_owner = user
-
+	src.curse_owner = user
+	src.activated = TRUE
 
 /obj/item/blood_blessing/activated
 	icon = 'icons/obj/mining.dmi'
@@ -2076,19 +2076,19 @@
 			total_type_kills["wolf"] = total_type_kills["wolf"] + bonus_mod
 	if(total_type_kills["goliath"] >= mark_treshold)
 		var/obj/item/blood_marking/MA = new /obj/item/blood_marking/tentacle_mark/
-		add_mark(MA, user)
+		add_mark(MA, curse_owner)
 	if(total_type_kills["legion"] >= mark_treshold)
 		var/obj/item/blood_marking/MA = new /obj/item/blood_marking/legion_skull/
-		add_mark(MA, user)
+		add_mark(MA, curse_owner)
 	if(total_type_kills["watcher"] >= mark_treshold)
 		var/obj/item/blood_marking/MA = new /obj/item/blood_marking/watcher_wing/
-		add_mark(MA, user)
+		add_mark(MA, curse_owner)
 	if(total_type_kills["watcher"] >= 3 * mark_treshold)
 		var/obj/item/blood_marking/MA = new /obj/item/blood_marking/watcher_wing/ice_wing
-		add_mark(MA, user)
+		add_mark(MA, curse_owner)
 	if(total_type_kills["bear"] >= mark_treshold)
 		var/obj/item/blood_marking/MA = new /obj/item/blood_marking/demon_claws/
-		add_mark(MA, user)
+		add_mark(MA, curse_owner)
 	if(total_type_kills["wolf"] >= mark_treshold)
 		var/obj/item/blood_marking/MA = new /obj/item/blood_marking/magma_wing/
 		add_mark(MA, curse_owner)
