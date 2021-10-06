@@ -70,7 +70,7 @@
 
 #define STATUS_EFFECT_CRUSHERMARK /datum/status_effect/crusher_mark //if struck with a proto-kinetic crusher, takes a ton of damage
 
-#define STATUS_EFFECT_BLOODSHACKLE /datum/status_effect/blood_shackle //if struck with a proto-kinetic crusher, takes a ton of damage
+#define STATUS_EFFECT_BLOODSHACKLE /datum/status_effect/blood_shackle //if struck by a blood blessed arm, takes a lot more damage
 
 #define STATUS_EFFECT_SAWBLEED /datum/status_effect/stacking/saw_bleed //if the bleed builds up enough, takes a ton of damage
 

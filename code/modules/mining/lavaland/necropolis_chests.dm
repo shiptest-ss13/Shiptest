@@ -1948,16 +1948,34 @@
 		var/list/existing_marks = L.has_status_effect_list(STATUS_EFFECT_BLOODMARK)
 		for(var/i in existing_marks)
 			var/datum/status_effect/blood_mark/BM = i
+			if(BM.user != user)
+				BM.user = user
 			if(BM.reward_target == src)
 				BM.reward_target = null
 				qdel(BM)
 		L.apply_status_effect(STATUS_EFFECT_BLOODMARK, src)
 
-/obj/item/blood_blessing/proc/get_souls(mob/living/L)
+/obj/item/blood_blessing/proc/add_mark(obj/item/blood_marking/MA, mob/living/user)
+	for(var/t in markings)
+		var/obj/item/blood_marking/T = t
+		if(istype(T, MA.denied_type) || istype(MA, T.denied_type))
+			if(!istype(T, MA.upgrade_type))
+				return FALSE
+	if(user)
+		if(!user.transferItemToLoc(MA, src))
+			return FALSE
+		to_chat (user, "<span class='notice'>You feel a mark painfully inscribe itself to your arm.</span>")
+	else
+		MA.forceMove(src)
+	markings += MA
+	return TRUE
+/obj/item/blood_blessing/proc/get_souls(mob/living/L, mob/living/user)
 	var/bonus_mod = 1
 	if(ishostile(L))
 		bonus_mod = 1
-	if(ismegafauna(L)) //megafauna reward
+	if(istype(L, /mob/living/simple_animal/hostile/asteroid/goliath/beast/ancient) || istype(L, /mob/living/simple_animal/hostile/asteroid/basilisk/watcher/icewing) || istype(L, /mob/living/simple_animal/hostile/asteroid/basilisk/watcher/magmawing) || istype(L, /mob/living/simple_animal/hostile/asteroid/hivelord/legion/dwarf)) //Elite reward
+		bonus_mod = 3
+	if(ismegafauna(L)) //Megafauna reward
 		bonus_mod = 10
 	if(!kills_tracked[L.type])
 		kills_tracked[L.type] = bonus_mod
@@ -1992,6 +2010,24 @@
 			total_type_kills["wolf"] = bonus_mod
 		else
 			total_type_kills["wolf"] = total_type_kills["wolf"] + bonus_mod
+	if(total_type_kills["goliath"] >= mark_treshold)
+		var/obj/item/blood_marking/MA = new /obj/item/blood_marking/tentacle_mark/
+		add_mark(MA, user)
+	if(total_type_kills["legion"] >= mark_treshold)
+		var/obj/item/blood_marking/MA = new /obj/item/blood_marking/legion_skull/
+		add_mark(MA, user)
+	if(total_type_kills["watcher"] >= mark_treshold)
+		var/obj/item/blood_marking/MA = new /obj/item/blood_marking/watcher_wing/
+		add_mark(MA, user)
+	if(total_type_kills["watcher"] >= 3 * mark_treshold)
+		var/obj/item/blood_marking/MA = new /obj/item/blood_marking/watcher_wing/ice_wing
+		add_mark(MA, user)
+	if(total_type_kills["bear"] >= mark_treshold)
+		var/obj/item/blood_marking/MA = new /obj/item/blood_marking/demon_claws/
+		add_mark(MA, user)
+	if(total_type_kills["wolf"] >= mark_treshold)
+		var/obj/item/blood_marking/MA = new /obj/item/blood_marking/magma_wing/
+		add_mark(MA, user)
 
 /obj/item/blood_blessing/afterattack(atom/target, mob/living/user, proximity_flag, clickparams)
 	. = ..()
@@ -2083,15 +2119,6 @@
 			for(var/t in blood_shackled.markings)
 				var/obj/item/blood_marking/T = t
 				T.on_mark_application(target, CM, had_effect)
-	if(isliving(target))
-		var/mob/living/L = target
-		var/list/existing_marks = L.has_status_effect_list(STATUS_EFFECT_BLOODMARK)
-		for(var/i in existing_marks)
-			var/datum/status_effect/blood_mark/BM = i
-			if(BM.reward_target == src)
-				BM.reward_target = null
-				qdel(BM)
-		L.apply_status_effect(STATUS_EFFECT_BLOODMARK, src)
 	var/target_turf = get_turf(target)
 	if(ismineralturf(target_turf))
 		var/turf/closed/mineral/M = target_turf
@@ -2107,6 +2134,16 @@
 	icon_state = "tail_spike"
 	var/bonus_value = 10 //if it has a bonus effect, this is how much that effect is
 	var/denied_type = /obj/item/blood_marking
+	var/upgrade_type = /obj/item/blood_marking/upgrade
+
+/obj/item/blood_marking/upgrade
+	name = "mark of grandest heating"
+	desc = "Nothing at all."
+	icon = 'icons/obj/lavaland/artefacts.dmi'
+	icon_state = "tail_spike"
+	bonus_value = 10
+	denied_type = /obj/item/blood_marking/upgrade
+	upgrade_type = null
 
 /obj/item/blood_marking/examine(mob/living/user)
 	. = ..()
@@ -2167,6 +2204,7 @@
 	desc = "A mark depicting the freezing stare of a watcher."
 	icon_state = "watcher_wing"
 	denied_type = /obj/item/blood_marking/watcher_wing
+	upgrade_type = /obj/item/blood_marking/watcher_wing/ice_wing
 	bonus_value = 5
 
 /obj/item/blood_marking/watcher_wing/effect_desc()
