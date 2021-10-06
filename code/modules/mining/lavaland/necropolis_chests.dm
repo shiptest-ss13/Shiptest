@@ -36,7 +36,14 @@
 			else
 				new /obj/item/disk/design_disk/modkit_disc/rapid_repeater(src)
 		if(9)
-			new /obj/item/rod_of_asclepius(src)
+			if(prob(25))
+				new /obj/item/rod_of_asclepius(src)
+				new /obj/item/blood_blessing(src)
+			else
+				if(prob(50))
+					new /obj/item/rod_of_asclepius(src)
+				else
+					new /obj/item/blood_blessing(src)
 		if(10)
 			new /obj/item/organ/heart/cursed/wizard(src)
 		if(11)
@@ -224,6 +231,9 @@
 	usedHand = itemUser.get_held_index_of_item(src)
 	if(itemUser.has_status_effect(STATUS_EFFECT_HIPPOCRATIC_OATH))
 		to_chat(user, "<span class='warning'>You can't possibly handle the responsibility of more than one rod!</span>")
+		return
+	if(itemUser.has_status_effect(STATUS_EFFECT_HUNTERS_OATH))
+		to_chat(user, "<span class='warning'>The dark being refuses to involve itself with one whose oath is to protect and heal!</span>")
 		return
 	var/failText = "<span class='warning'>The snake seems unsatisfied with your incomplete oath and returns to its previous place on the rod, returning to its dormant, wooden state. You must stand still while completing your oath!</span>"
 	to_chat(itemUser, "<span class='notice'>The wooden snake that was carved into the rod seems to suddenly come alive and begins to slither down your arm! The compulsion to help others grows abnormally strong...</span>")
@@ -1870,8 +1880,64 @@
 		if(3)
 			new /obj/item/prisoncube(src)
 
-
 /obj/item/blood_blessing
+	name = "\improper Bloody Scroll"
+	desc = "A scroll depicting a twisted deal offered by some dark greater being, promising great power should you take it."
+	icon = 'icons/obj/lavaland/artefacts.dmi'
+	icon_state = "asclepius_dormant"
+	var/activated = FALSE
+	var/usedHand
+	var/mob/curse_owner
+
+/obj/item/blood_blessing/attack_self(mob/user)
+	if(activated)
+		return
+	if(!iscarbon(user))
+		to_chat(user, "<span class='warning'>The dark being refuses you!</span>")
+		return
+	var/mob/living/carbon/itemUser = user
+	usedHand = itemUser.get_held_index_of_item(src)
+	if(itemUser.has_status_effect(STATUS_EFFECT_HIPPOCRATIC_OATH))
+		to_chat(user, "<span class='warning'>You can't possibly handle the conflicting oath!</span>")
+		return
+	if(itemUser.has_status_effect(STATUS_EFFECT_HUNTERS_OATH))
+		to_chat(user, "<span class='warning'>The dark being refuses to further empower you, go hunt for blood!</span>")
+		return
+	var/failText = "<span class='warning'>The snake seems unsatisfied with your incomplete oath and returns to its previous place on the rod, returning to its dormant, wooden state. You must stand still while completing your oath!</span>"
+	to_chat(itemUser, "<span class='notice'>The wooden snake that was carved into the rod seems to suddenly come alive and begins to slither down your arm! The compulsion to help others grows abnormally strong...</span>")
+	if(do_after(itemUser, 40, target = itemUser))
+		itemUser.say("I swear to fulfill, to the best of my ability and judgment, this covenant:", forced = "hippocratic oath")
+	else
+		to_chat(itemUser, failText)
+		return
+	if(do_after(itemUser, 20, target = itemUser))
+		itemUser.say("I will apply, for the benefit of the sick, all measures that are required, avoiding those twin traps of overtreatment and therapeutic nihilism.", forced = "hippocratic oath")
+	else
+		to_chat(itemUser, failText)
+		return
+	if(do_after(itemUser, 30, target = itemUser))
+		itemUser.say("I will remember that I remain a member of society, with special obligations to all my fellow human beings, those sound of mind and body as well as the infirm.", forced = "hippocratic oath")
+	else
+		to_chat(itemUser, failText)
+		return
+	if(do_after(itemUser, 30, target = itemUser))
+		itemUser.say("If I do not violate this oath, may I enjoy life and art, respected while I live and remembered with affection thereafter. May I always act so as to preserve the finest traditions of my calling and may I long experience the joy of healing those who seek my help.", forced = "hippocratic oath")
+	else
+		to_chat(itemUser, failText)
+		return
+	to_chat(itemUser, "<span class='notice'>You feel dark energy overtaking your body for a few moments, as your arm twists itself, becoming more muscular and growing big sharp claws...</span>")
+	var/datum/status_effect/huntersOath/effect = itemUser.apply_status_effect(STATUS_EFFECT_HIPPOCRATIC_OATH)
+	effect.hand = usedHand
+	activated(itemUser)
+
+/obj/item/blood_blessing/proc/activated(mob/living/user)
+	src = new /obj/item/blood_blessing/activated
+	item_flags = DROPDEL
+	ADD_TRAIT(src, TRAIT_NODROP, CURSED_ITEM_TRAIT)
+	curse_owner = user
+
+
+/obj/item/blood_blessing/activated
 	icon = 'icons/obj/mining.dmi'
 	icon_state = "crusher"
 	item_state = "crusher0"
@@ -1907,18 +1973,18 @@
 	var/backstab_bonus = 10
 	var/souls_reaped = 0
 
-/obj/item/blood_blessing/Initialize()
+/obj/item/blood_blessing/activated/Initialize()
 	. = ..()
 
-/obj/item/blood_blessing/ComponentInitialize()
+/obj/item/blood_blessing/activated/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/butchering, 60, 110)
 
-/obj/item/blood_blessing/Destroy()
+/obj/item/blood_blessing/activated/Destroy()
 	QDEL_LIST(markings)
 	return ..()
 
-/obj/item/blood_blessing/examine(mob/living/user)
+/obj/item/blood_blessing/activated/examine(mob/living/user)
 	. = ..()
 	. += "<span class='notice'>Shackle a large creature with the unholy force, then rip apart their shackles in melee to do <b>[force + detonation_damage + (souls_reaped * soul_power)]</b> damage.</span>"
 	. += "<span class='notice'>Does <b>[force + detonation_damage + backstab_bonus + (souls_reaped * soul_power)]</b> damage if the target is backstabbed, instead of <b>[force + detonation_damage + (souls_reaped * soul_power)]</b>.</span>"
@@ -1926,14 +1992,14 @@
 		var/obj/item/blood_marking/T = t
 		. += "<span class='notice'>It has \a [T] inscribed, which grants the following boon: [T.effect_desc()].</span>"
 
-/obj/item/blood_blessing/attackby(obj/item/I, mob/living/user)
+/obj/item/blood_blessing/activated/attackby(obj/item/I, mob/living/user)
 	if(istype(I, /obj/item/blood_marking))
 		var/obj/item/blood_marking/T = I
 		T.add_to(src, user)
 	else
 		return ..()
 
-/obj/item/blood_blessing/attack(mob/living/target, mob/living/carbon/user)
+/obj/item/blood_blessing/activated/attack(mob/living/target, mob/living/carbon/user)
 	var/datum/status_effect/crusher_damage/C = target.has_status_effect(STATUS_EFFECT_CRUSHERDAMAGETRACKING)
 	var/target_health = target.health
 	..()
@@ -1948,14 +2014,12 @@
 		var/list/existing_marks = L.has_status_effect_list(STATUS_EFFECT_BLOODMARK)
 		for(var/i in existing_marks)
 			var/datum/status_effect/blood_mark/BM = i
-			if(BM.user != user)
-				BM.user = user
 			if(BM.reward_target == src)
 				BM.reward_target = null
 				qdel(BM)
 		L.apply_status_effect(STATUS_EFFECT_BLOODMARK, src)
 
-/obj/item/blood_blessing/proc/add_mark(obj/item/blood_marking/MA, mob/living/user)
+/obj/item/blood_blessing/activated/proc/add_mark(obj/item/blood_marking/MA, mob/living/user)
 	for(var/t in markings)
 		var/obj/item/blood_marking/T = t
 		if(istype(T, MA.denied_type) || istype(MA, T.denied_type))
@@ -1969,7 +2033,7 @@
 		MA.forceMove(src)
 	markings += MA
 	return TRUE
-/obj/item/blood_blessing/proc/get_souls(mob/living/L, mob/living/user)
+/obj/item/blood_blessing/activated/proc/get_souls(mob/living/L, mob/living/user)
 	var/bonus_mod = 1
 	if(ishostile(L))
 		bonus_mod = 1
@@ -2027,9 +2091,9 @@
 		add_mark(MA, user)
 	if(total_type_kills["wolf"] >= mark_treshold)
 		var/obj/item/blood_marking/MA = new /obj/item/blood_marking/magma_wing/
-		add_mark(MA, user)
+		add_mark(MA, curse_owner)
 
-/obj/item/blood_blessing/afterattack(atom/target, mob/living/user, proximity_flag, clickparams)
+/obj/item/blood_blessing/activated/afterattack(atom/target, mob/living/user, proximity_flag, clickparams)
 	. = ..()
 	if(!proximity_flag && charged)//Mark a target, or mine a tile.
 		var/turf/proj_turf = user.loc
@@ -2074,20 +2138,20 @@
 					C.total_damage += detonation_damage + (souls_reaped * soul_power)
 				L.apply_damage(detonation_damage + (souls_reaped * soul_power), BRUTE, blocked = def_check)
 
-/obj/item/blood_blessing/proc/Recharge()
+/obj/item/blood_blessing/activated/proc/Recharge()
 	if(!charged)
 		charged = TRUE
 		update_icon()
 		playsound(src.loc, 'sound/weapons/kenetic_reload.ogg', 60, TRUE)
 
-/obj/item/blood_blessing/ui_action_click(mob/user, actiontype)
+/obj/item/blood_blessing/activated/ui_action_click(mob/user, actiontype)
 	set_light_on(!light_on)
 	playsound(user, 'sound/weapons/empty.ogg', 100, TRUE)
 	update_icon()
 
 
 
-/obj/item/blood_blessing/update_overlays()
+/obj/item/blood_blessing/activated/update_overlays()
 	. = ..()
 	if(!charged)
 		. += "[icon_state]_uncharged"
@@ -2104,7 +2168,7 @@
 	flag = "bomb"
 	range = 6
 	log_override = TRUE
-	var/obj/item/blood_blessing/blood_shackled
+	var/obj/item/blood_blessing/activated/blood_shackled
 
 /obj/projectile/shackler/Destroy()
 	blood_shackled = null
@@ -2134,16 +2198,7 @@
 	icon_state = "tail_spike"
 	var/bonus_value = 10 //if it has a bonus effect, this is how much that effect is
 	var/denied_type = /obj/item/blood_marking
-	var/upgrade_type = /obj/item/blood_marking/upgrade
-
-/obj/item/blood_marking/upgrade
-	name = "mark of grandest heating"
-	desc = "Nothing at all."
-	icon = 'icons/obj/lavaland/artefacts.dmi'
-	icon_state = "tail_spike"
-	bonus_value = 10
-	denied_type = /obj/item/blood_marking/upgrade
-	upgrade_type = null
+	var/upgrade_type
 
 /obj/item/blood_marking/examine(mob/living/user)
 	. = ..()
@@ -2153,12 +2208,12 @@
 	return "errors"
 
 /obj/item/blood_marking/attackby(obj/item/A, mob/living/user)
-	if(istype(A, /obj/item/blood_blessing))
+	if(istype(A, /obj/item/blood_blessing/activated))
 		add_to(A, user)
 	else
 		..()
 
-/obj/item/blood_marking/proc/add_to(obj/item/blood_blessing/H, mob/living/user)
+/obj/item/blood_marking/proc/add_to(obj/item/blood_blessing/activated/H, mob/living/user)
 	for(var/t in H.markings)
 		var/obj/item/blood_marking/T = t
 		if(istype(T, denied_type) || istype(src, T.denied_type))
@@ -2169,7 +2224,7 @@
 	to_chat(user, "<span class='notice'>You feel a sharp pain as [src] is inscribed on your accursed arm!</span>")
 	return TRUE
 
-/obj/item/blood_marking/proc/remove_from(obj/item/blood_blessing/H, mob/living/user)
+/obj/item/blood_marking/proc/remove_from(obj/item/blood_blessing/activated/H, mob/living/user)
 	forceMove(get_turf(H))
 	H.markings -= src
 	return TRUE
@@ -2268,7 +2323,7 @@
 /obj/item/blood_marking/legion_skull/effect_desc()
 	return "Allows you to harness the power of the legion the more you are hurt, recharging your shackles <b>[bonus_value*0.1]</b> second\s faster and dealing <b>[bonus_value]</b> more damage when breaking them for every <b>[missing_health_desc]</b> health you are missing."
 
-/obj/item/blood_marking/legion_skull/add_to(obj/item/blood_blessing/H, mob/living/user)
+/obj/item/blood_marking/legion_skull/add_to(obj/item/blood_blessing/activated/H, mob/living/user)
 	. = ..()
 	if(.)
 		var/missing_health = user.health - user.maxHealth
@@ -2276,7 +2331,7 @@
 		missing_health *= bonus_value
 		H.charge_time -= missing_health
 
-/obj/item/blood_marking/legion_skull/remove_from(obj/item/blood_blessing/H, mob/living/user)
+/obj/item/blood_marking/legion_skull/remove_from(obj/item/blood_blessing/activated/H, mob/living/user)
 	. = ..()
 	if(.)
 		var/missing_health = user.health - user.maxHealth
@@ -2340,12 +2395,12 @@
 /obj/item/blood_marking/demon_claws/effect_desc()
 	return "Your claws sharpen, dealing <b>[bonus_value]</b> more damage and allowing you to attack faster."
 
-/obj/item/blood_marking/demon_claws/add_to(obj/item/blood_blessing/H, mob/living/user)
+/obj/item/blood_marking/demon_claws/add_to(obj/item/blood_blessing/activated/H, mob/living/user)
 	. = ..()
 	if(.)
 		H.force += bonus_value
 
-/obj/item/blood_marking/demon_claws/remove_from(obj/item/blood_blessing/H, mob/living/user)
+/obj/item/blood_marking/demon_claws/remove_from(obj/item/blood_blessing/activated/H, mob/living/user)
 	. = ..()
 	if(.)
 		H.force -= bonus_value
@@ -2409,13 +2464,13 @@
 /obj/item/blood_marking/king_goat/on_projectile_fire(obj/projectile/shackler/marker, mob/living/user)
 	marker.damage = 10 //in my testing only does damage to simple mobs so should be fine to have it high
 
-/obj/item/blood_marking/king_goat/add_to(obj/item/blood_blessing/H, mob/living/user)
+/obj/item/blood_marking/king_goat/add_to(obj/item/blood_blessing/activated/H, mob/living/user)
 	. = ..()
 	if(.)
 		H.charge_time = 3
 		H.force = 5
 
-/obj/item/blood_marking/king_goat/remove_from(obj/item/blood_blessing/H, mob/living/user)
+/obj/item/blood_marking/king_goat/remove_from(obj/item/blood_blessing/activated/H, mob/living/user)
 	. = ..()
 	if(.)
 		H.charge_time = 12

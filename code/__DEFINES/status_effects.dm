@@ -30,6 +30,8 @@
 
 #define STATUS_EFFECT_HIPPOCRATIC_OATH /datum/status_effect/hippocraticOath //Gives you an aura of healing as well as regrowing the Rod of Asclepius if lost
 
+#define STATUS_EFFECT_HUNTERS_OATH /datum/status_effect/huntersOath //Removes pacifism, gives a medhud, allows tracking who's cursed by the item, regrows the curse and transforms users on deah.
+
 #define STATUS_EFFECT_GOOD_MUSIC /datum/status_effect/good_music
 
 #define STATUS_EFFECT_REGENERATIVE_CORE /datum/status_effect/regenerative_core

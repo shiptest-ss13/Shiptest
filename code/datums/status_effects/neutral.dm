@@ -54,14 +54,12 @@
 	status_type = STATUS_EFFECT_MULTIPLE
 	alert_type = null
 	on_remove_on_mob_delete = TRUE
-	var/obj/item/blood_blessing/reward_target
-	var/mob/living/user
+	var/obj/item/blood_blessing/activated/reward_target
 
-/datum/status_effect/blood_mark/on_creation(mob/living/new_owner, obj/item/blood_blessing/new_reward_target, mob/living/new_user)
+/datum/status_effect/blood_mark/on_creation(mob/living/new_owner, obj/item/blood_blessing/activated/new_reward_target)
 	. = ..()
 	if(.)
 		reward_target = new_reward_target
-		user = new_user
 
 /datum/status_effect/blood_mark/on_apply()
 	if(owner.stat == DEAD)
@@ -70,15 +68,15 @@
 
 /datum/status_effect/blood_mark/proc/get_souls()
 	if(!QDELETED(reward_target))
-		reward_target.get_souls(owner, user)
+		reward_target.get_souls(owner)
 
 /datum/status_effect/blood_mark/tick()
 	if(owner.stat == DEAD)
-		get_souls(owner, user)
+		get_souls()
 		qdel(src)
 
 /datum/status_effect/blood_mark/on_remove()
-	get_souls(owner, user)
+	get_souls()
 	. = ..()
 
 /atom/movable/screen/alert/status_effect/in_love

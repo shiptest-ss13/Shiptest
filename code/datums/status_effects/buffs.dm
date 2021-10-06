@@ -358,6 +358,82 @@
 	. = ..()
 	STOP_PROCESSING(SSprocessing, src)
 
+//Hippocratic Oath: Applied when the Blood Blessing is activated.
+/datum/status_effect/huntersOath
+	id = "Hunters Oath"
+	status_type = STATUS_EFFECT_UNIQUE
+	duration = -1
+	tick_interval = 25
+	examine_text = "<span class='notice'>They seem to have an aura of violence and death within them, with one of their arms dark and twisted.</span>"
+	alert_type = null
+	var/hand
+	var/deathTick = 0
+	var/pacifist
+
+/datum/status_effect/huntersOath/on_apply()
+	//Makes the user no longer pacifist, their oath is to hunt and kill.
+	if(HAS_TRAIT(owner, TRAIT_PACIFISM))
+		REMOVE_TRAIT(owner, TRAIT_PACIFISM, "huntersOath")
+		pacifist = TRUE
+	var/datum/atom_hud/H = GLOB.huds[DATA_HUD_MEDICAL_ADVANCED]
+	H.add_hud_to(owner)
+	return ..()
+
+/datum/status_effect/huntersOath/on_remove()
+	if(pacifist == TRUE)
+		ADD_TRAIT(owner, TRAIT_PACIFISM, "huntersOath")
+	var/datum/atom_hud/H = GLOB.huds[DATA_HUD_MEDICAL_ADVANCED]
+	H.remove_hud_from(owner)
+
+/datum/status_effect/huntersOath/tick()
+	if(owner.stat == DEAD)
+		if(deathTick < 4)
+			deathTick += 1
+		else
+			consume_owner()
+	else
+		if(iscarbon(owner))
+			var/mob/living/carbon/itemUser = owner
+			var/obj/item/heldItem = itemUser.get_item_for_held_index(hand)
+			if(heldItem == null || heldItem.type != /obj/item/blood_blessing) //Checks to make sure the rod is still in their hand
+				var/obj/item/blood_blessing/newRod = new(itemUser.loc)
+				newRod.activated()
+				if(!itemUser.has_hand_for_held_index(hand))
+					//If user does not have the corresponding hand anymore, give them one and return curse to their arm
+					if(((hand % 2) == 0))
+						var/obj/item/bodypart/L = itemUser.newBodyPart(BODY_ZONE_R_ARM, FALSE, FALSE)
+						if(L.attach_limb(itemUser))
+							itemUser.put_in_hand(newRod, hand, forced = TRUE)
+						else
+							qdel(L)
+							consume_owner() //we can't regrow, abort abort
+							return
+					else
+						var/obj/item/bodypart/L = itemUser.newBodyPart(BODY_ZONE_L_ARM, FALSE, FALSE)
+						if(L.attach_limb(itemUser))
+							itemUser.put_in_hand(newRod, hand, forced = TRUE)
+						else
+							qdel(L)
+							consume_owner() //see above comment
+							return
+					to_chat(itemUser, "<span class='notice'>Your accursed arm suddenly grows back!</span>")
+				else
+					//Otherwise get rid of whatever else is in their hand and return the rod to said hand
+					itemUser.put_in_hand(newRod, hand, forced = TRUE)
+					to_chat(itemUser, "<span class='notice'>The curse returns to your arm!</span>")
+
+/datum/status_effect/huntersOath/proc/consume_owner()
+	owner.visible_message("<span class='notice'>[owner]'s soul is absorbed by their master, releasing a shade from what they once were.</span>")
+	var/mob/living/simple_animal/hostile/retaliate/poison/snake/healSnake = new(owner.loc)
+	var/list/chems = list(/datum/reagent/medicine/sal_acid, /datum/reagent/medicine/C2/convermol, /datum/reagent/medicine/oxandrolone)
+	healSnake.poison_type = pick(chems)
+	healSnake.name = "[owner]'s' Shade"
+	healSnake.real_name = "[owner]'s Shade"
+	healSnake.desc = "The shade of one who once held the curse of blood."
+	new /obj/effect/decal/cleanable/ash(owner.loc)
+	new /obj/item/blood_blessing(owner.loc)
+	qdel(owner) //To assign the proper mob and shit
+
 //Hippocratic Oath: Applied when the Rod of Asclepius is activated.
 /datum/status_effect/hippocraticOath
 	id = "Hippocratic Oath"
@@ -457,7 +533,6 @@
 	new /obj/effect/decal/cleanable/ash(owner.loc)
 	new /obj/item/rod_of_asclepius(owner.loc)
 	qdel(owner)
-
 
 /datum/status_effect/good_music
 	id = "Good Music"
