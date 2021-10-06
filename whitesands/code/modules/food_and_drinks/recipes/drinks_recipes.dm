@@ -24,6 +24,6 @@
 	mix_message = "The mixture bubbles intensely before settling in the glass."
 
 /datum/chemical_reaction/out_of_lime
-	results = list(/datum/reagent/consumable/ethanol/out_of_lime = 8)
-	required_reagents = list(/datum/reagent/consumable/ethanol/ginfizz = 1, /datum/reagent/consumable/ethanol/crevice_spike = 1, /datum/reagent/consumable/ethanol/fanciulli = 1, /datum/reagent/consumable/ethanol/fanciulli = 1)
-	mix_message = "The mixture bubbles intensely before settling in the glass."
+	results = list(/datum/reagent/consumable/ethanol/out_of_lime = 4)
+	required_reagents = list(/datum/reagent/consumable/lemonade = 1, /datum/reagent/consumable/ethanol/beer/green = 1, /datum/reagent/consumable/orangejuice = 1, /datum/reagent/consumable/ethanol/out_of_touch = 1)
+	mix_message = "The glass cycles through different colors before settling on one."
