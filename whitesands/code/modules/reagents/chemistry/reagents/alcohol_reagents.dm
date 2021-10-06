@@ -131,13 +131,12 @@
 	glass_desc = "A spin on the classic. Artists and street fighters swear by this stuff."
 	var/list/potential_colors = list("0ad","a0f","f73","d14","d14","0b5","0ad","f73","fc2","084","05e","d22","fa0")
 	
-/datum/reagent/out_of_lime/New()
+/datum/reagent/consumable/ethanol/out_of_limeNew()
 	SSticker.OnRoundstart(CALLBACK(src,.proc/UpdateColor))
 
-/datum/reagent/out_of_lime/proc/UpdateColor()
+/datum/reagent/consumable/ethanol/out_of_lime/proc/UpdateColor()
 	color = pick(potential_colors)
-
-/datum/reagent/out_of_lime/expose_mob(mob/living/M, method=INGEST, reac_volume)
+/datum/reagent/consumable/ethanol/out_of_lime/expose_mob(mob/living/M, method=INGEST, reac_volume)
 	if(method == INGEST || method == TOUCH)
 		if(M && ishuman(M))
 			var/mob/living/carbon/human/H = M
