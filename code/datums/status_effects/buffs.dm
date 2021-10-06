@@ -397,7 +397,7 @@
 			var/obj/item/heldItem = itemUser.get_item_for_held_index(hand)
 			if(heldItem == null || heldItem.type != /obj/item/blood_blessing/activated) //Checks to make sure the rod is still in their hand
 				var/obj/item/blood_blessing/activated/newRod = new(itemUser.loc)
-				newRod.activated(owner)
+				newRod.activated(itemUser)
 				if(!itemUser.has_hand_for_held_index(hand))
 					//If user does not have the corresponding hand anymore, give them one and return curse to their arm
 					if(((hand % 2) == 0))
