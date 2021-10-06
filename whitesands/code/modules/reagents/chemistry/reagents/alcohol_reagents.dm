@@ -79,6 +79,7 @@
 	glass_icon_state = "darkest_chocolate"
 	glass_name = "Darkest Chocolate"
 	glass_desc = "Darkness within darkness awaits you, spaceman!"
+	var/obj/effect/light_holder
 	
 /datum/reagent/consumable/ethanol/darkest_chocolate/on_mob_metabolize(mob/living/M)
 	to_chat(M, "<span class='notice'>You feel endless night enveloping you!</span>")
