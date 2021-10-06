@@ -60,6 +60,7 @@
 	glass_icon_state = "out_of_touch"
 	glass_name = "Out of Touch"
 	glass_desc = "Perfect for when you're out of time."
+	shot_glass_icon_state = "shotglassoot"
 	
 /datum/reagent/consumable/ethanol/out_of_touch/expose_obj(obj/O, reac_volume)
 	if(istype(O, /obj/item/stack/sheet/metal))
@@ -78,6 +79,11 @@
 	glass_icon_state = "darkest_chocolate"
 	glass_name = "Darkest Chocolate"
 	glass_desc = "Darkness within darkness awaits you, spaceman!"
+	
+/datum/reagent/consumable/ethanol/darkest_chocolate/on_mob_metabolize(mob/living/M)
+	to_chat(M, "<span class='notice'>You feel endless night enveloping you!</span>")
+	light_holder = new(M)
+	light_holder.set_light(3, 0.7, "#110f0f")
 
 /datum/reagent/consumable/ethanol/archmagus_brew
 	name = "Archmagus' Brew"
@@ -89,6 +95,17 @@
 	glass_icon_state = "archmagus_brew"
 	glass_name = "Archmagus' Brew"
 	glass_desc = "Said to have been requested by a great Archmagus, hence the name. Tastes like tough love."
+	
+/datum/reagent/consumable/ethanol/archmagus_brew/on_mob_life(mob/living/carbon/human/M)
+	var/oxycalc = 2.5*REM*current_cycle
+	if(!overdosed)
+		oxycalc = min(oxycalc,M.getOxyLoss()+0.5) //if NOT overdosing, we lower our toxdamage to only the damage we actually healed with a minimum of 0.1*current_cycle. IE if we only heal 10 oxygen damage but we COULD have healed 20, we will only take toxdamage for the 10. We would take the toxdamage for the extra 10 if we were overdosing.
+	M.adjustOxyLoss(-oxycalc, 0)
+	M.adjustToxLoss(oxycalc/CONVERMOL_RATIO, 0)
+	if(prob(current_cycle) && M.losebreath)
+		M.losebreath--
+	..()
+	return TRUE
 
 /datum/reagent/consumable/ethanol/out_of_lime
 	name = "Out of Lime"
@@ -100,3 +117,18 @@
 	glass_icon_state = "out_of_lime"
 	glass_name = "Out of Lime"
 	glass_desc = "A spin on the classic. Artists and street fighters swear by this stuff."
+	var/list/potential_colors = list("0ad","a0f","f73","d14","d14","0b5","0ad","f73","fc2","084","05e","d22","fa0")
+	
+/datum/reagent/out_of_lime/New()
+	SSticker.OnRoundstart(CALLBACK(src,.proc/UpdateColor))
+
+/datum/reagent/out_of_lime/proc/UpdateColor()
+	color = pick(potential_colors)
+
+/datum/reagent/out_of_lime/expose_mob(mob/living/M, method=INGEST, reac_volume)
+	if(method == INGEST || method == TOUCH)
+		if(M && ishuman(M))
+			var/mob/living/carbon/human/H = M
+			H.hair_color = pick(potential_colors)
+			H.facial_hair_color = pick(potential_colors)
+			H.update_hair()
