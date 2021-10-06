@@ -84,6 +84,17 @@
 	to_chat(M, "<span class='notice'>You feel endless night enveloping you!</span>")
 	light_holder = new(M)
 	light_holder.set_light(3, 0.7, "#110f0f")
+	
+/datum/reagent/consumable/ethanol/darkest_chocolate/on_mob_life(mob/living/carbon/M)
+	if(QDELETED(light_holder))
+		M.reagents.del_reagent(/datum/reagent/consumable/ethanol/darkest_chocolate)
+	else if(light_holder.loc != M)
+		light_holder.forceMove(M)
+	return ..()
+
+/datum/reagent/consumable/ethanol/darkest_chocolate/on_mob_end_metabolize(mob/living/M)
+	to_chat(M, "<span class='notice'>The darkness subsides.</span>")
+	QDEL_NULL(light_holder)
 
 /datum/reagent/consumable/ethanol/archmagus_brew
 	name = "Archmagus' Brew"
