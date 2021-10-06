@@ -97,11 +97,11 @@
 	glass_desc = "Said to have been requested by a great Archmagus, hence the name. Tastes like tough love."
 	
 /datum/reagent/consumable/ethanol/archmagus_brew/on_mob_life(mob/living/carbon/human/M)
-	var/oxycalc = 2.5*REM*current_cycle
+	var/clonecalc = 2.5*REM*current_cycle
 	if(!overdosed)
-		oxycalc = min(oxycalc,M.getOxyLoss()+0.5) //if NOT overdosing, we lower our toxdamage to only the damage we actually healed with a minimum of 0.1*current_cycle. IE if we only heal 10 oxygen damage but we COULD have healed 20, we will only take toxdamage for the 10. We would take the toxdamage for the extra 10 if we were overdosing.
-	M.adjustOxyLoss(-oxycalc, 0)
-	M.adjustToxLoss(oxycalc/CONVERMOL_RATIO, 0)
+		clonecalc = min(clonecalc,M.getCloneLoss()+0.5)
+	M.adjustCloneLoss(-clonecalc, 0)
+	M.adjustBruteLoss(clonecalc/2, 0)
 	if(prob(current_cycle) && M.losebreath)
 		M.losebreath--
 	..()
