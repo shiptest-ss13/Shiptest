@@ -1,6 +1,6 @@
 /datum/language/calcic
 	name = "Calcic"
-	desc = "The disjointed and staccato language of plasmamen. Also understood by skeletons."
+	desc = "A disjointed and staccato language made through the rattling of bones, innate to all skeltal and spooky."
 	speech_verb = "rattles"
 	ask_verb = "queries"
 	exclaim_verb = "screeches"
