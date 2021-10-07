@@ -136,10 +136,9 @@
 
 /datum/reagent/consumable/ethanol/out_of_lime/proc/UpdateColor()
 	color = pick(potential_colors)
-/datum/reagent/consumable/ethanol/out_of_lime/expose_mob(mob/living/M, method=INGEST, reac_volume)
+/datum/reagent/consumable/ethanol/out_of_lime/expose_mob(mob/living/carbon/human/consumer, method=INGEST, reac_volume)
 	if(method == INGEST || method == TOUCH)
-		if(M && ishuman(M))
-			var/mob/living/carbon/human/H = M
-			H.hair_color = pick(potential_colors)
-			H.facial_hair_color = pick(potential_colors)
-			H.update_hair()
+		if(istype(consumer))
+			consumer.hair_color = pick(potential_colors)
+			consumer.facial_hair_color = pick(potential_colors)
+			consumer.update_hair()
