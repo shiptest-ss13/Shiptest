@@ -132,7 +132,7 @@
 	var/list/potential_colors = list("0ad","a0f","f73","d14","d14","0b5","0ad","f73","fc2","084","05e","d22","fa0")
 	
 /datum/reagent/consumable/ethanol/out_of_limeNew()
-	SSticker.OnRoundstart(CALLBACK(src,.proc/UpdateColor))
+	SSticker.OnRoundstart(CALLBACK(src,.proc/update_color))
 
 /datum/reagent/consumable/ethanol/out_of_lime/proc/UpdateColor()
 	color = pick(potential_colors)
