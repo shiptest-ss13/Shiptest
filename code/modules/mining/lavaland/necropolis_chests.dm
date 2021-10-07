@@ -2041,7 +2041,7 @@
 	if(!kill_tracker["Total Souls"])
 		kill_tracker["Total Souls"] = bonus_mod
 	else
-		kill_tracker["Total Souls"] =+ bonus_mod
+		kill_tracker["Total Souls"] += bonus_mod
 	if(!kill_tracker["Total"])
 		kill_tracker["Total"] = 1
 	else
@@ -2050,27 +2050,27 @@
 		if(!kill_tracker["Goliath"])
 			kill_tracker["Goliath"] = bonus_mod
 		else
-			kill_tracker["Goliath"] =+ bonus_mod
+			kill_tracker["Goliath"] += bonus_mod
 	if(istype(L, /mob/living/simple_animal/hostile/asteroid/hivelord))
 		if(!kill_tracker["Legion"])
 			kill_tracker["Legion"] = bonus_mod
 		else
-			kill_tracker["Legion"] =+ bonus_mod
+			kill_tracker["Legion"] += bonus_mod
 	if(istype(L, /mob/living/simple_animal/hostile/asteroid/basilisk))
 		if(!kill_tracker["Watcher"])
 			kill_tracker["Watcher"] = bonus_mod
 		else
-			kill_tracker["Watcher"] = kill_tracker["Watcher"] + bonus_mod
+			kill_tracker["Watcher"] += bonus_mod
 	if(istype(L, /mob/living/simple_animal/hostile/asteroid/polarbear))
 		if(!kill_tracker["Polar Bear"])
 			kill_tracker["Polar Bear"] = bonus_mod
 		else
-			kill_tracker["Polar Bear"] =+ bonus_mod
+			kill_tracker["Polar Bear"] += bonus_mod
 	if(istype(L, /mob/living/simple_animal/hostile/asteroid/wolf))
 		if(!kill_tracker["Wolf"])
 			kill_tracker["Wolf"] = bonus_mod
 		else
-			kill_tracker["Wolf"] =+ bonus_mod
+			kill_tracker["Wolf"] += bonus_mod
 	if(kill_tracker["Goliath"] >= mark_treshold)
 		var/obj/item/blood_marking/MA = new /obj/item/blood_marking/tentacle_mark/
 		add_mark(MA, curse_owner)
@@ -2113,7 +2113,7 @@
 	if(kill_tracker["Total Souls"] >= 500)
 		block_chance = 50
 	if(kill_tracker["Total Souls"] >= 750)
-		var/obj/item/blood_marking/MA = new /obj/item/blood_marking/goat_king/
+		var/obj/item/blood_marking/MA = new /obj/item/blood_marking/king_goat/
 		add_mark(MA, curse_owner)
 
 /obj/item/blood_blessing/activated/afterattack(atom/target, mob/living/user, proximity_flag, clickparams)

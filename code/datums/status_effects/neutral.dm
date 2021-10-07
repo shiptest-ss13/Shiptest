@@ -41,7 +41,7 @@
 		reward_target.get_soulrewards(owner)
 
 /datum/status_effect/blessing_damage/tick()
-	if((owner.max_health / total_damage) >= 70 && owner.stat == DEAD)
+	if((owner.maxHealth / total_damage) >= 70 && owner.stat == DEAD)
 		get_souls()
 		qdel(src)
 
