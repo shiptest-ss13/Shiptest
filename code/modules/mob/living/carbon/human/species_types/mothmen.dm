@@ -19,7 +19,7 @@
 	mutanttongue = /obj/item/organ/tongue/moth //WS Edit - Insectoid language
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | ERT_SPAWN | RACE_SWAP | SLIME_EXTRACT
 	species_language_holder = /datum/language_holder/moth
-	loreblurb = "Horrifying giant bug monsters, or possibly cute and fluffy cuddlebugs, depending on who you ask. Astoundingly common in every corner of space, their origin is typically assumed to be misdirected gene modification or mutation of regular Sol moths. Their wings, while pretty, are non-functional in standard gravity levels."
+	loreblurb = "Bug-mammal hybrids resembling Sol's lepidopterans. They share the least DNA with baseline humans of any human-derived geneline, being significant portions insect and modified whole-cloth DNA. Their classification as another human geneline or as something else is highly debated. All evidence that would point to their origin– which is presumably a genelab somewhere– has seemingly disappeared into thin air. Mothpeople themselves have no centralized culture or homeworld, leading to a fractured existence amongst the stars."
 	wings_icons = list("Megamoth", "Mothra")
 	has_innate_wings = TRUE
 
