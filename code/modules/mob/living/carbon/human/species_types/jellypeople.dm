@@ -22,7 +22,7 @@
 	inherent_factions = list("slime")
 	species_language_holder = /datum/language_holder/jelly
 	ass_image = 'icons/ass/assslime.png'
-	loreblurb = "Alien beings made of a gelatinous substance. It's relatively common to be transformed into a jellyperson from another species due to the mutagenic properties of less intelligent slime beings, but many truly alien jelly people also exist. Their blood is toxic, and the properties of poisonous and poison-healing substances are inverted for them."
+	loreblurb = "Slime, itself a slime-mold like organism of unknown origin, is capable of both mutating existing biological organisms into slime, retaining most of the structure and mind of the original, and forming quick-learning gestalts capable of mimicking existing beings, including animals and humanoids. The blood of slimepeople is toxic, and the properties of poisonous and poison-healing substances are inverted for them."
 
 /datum/species/jelly/on_species_loss(mob/living/carbon/C)
 	if(regenerate_limbs)
