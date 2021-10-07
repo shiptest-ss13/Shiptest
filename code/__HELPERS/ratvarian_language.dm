@@ -1,7 +1,7 @@
 /*
 The Ratvarian Language
 In the lore of the Servants of Ratvar, the Ratvarian tongue is a timeless language and full of power. It sounds like gibberish, much like Nar'Sie's language, but is in fact derived from
-aforementioned language, and may induce miracles when spoken in the correct way with an amplifying tool (similar to runes used by the Nar'Sian cult).
+aforementioned language.
 
 While the canon states that the language of Ratvar and his servants is incomprehensible to the unenlightened as it is a derivative of the most ancient known language, in reality it is
 actually very simple. To translate a plain English sentence to Ratvar's tongue, simply move all of the letters thirteen places ahead, starting from "a" if the end of the alphabet is reached.
@@ -22,8 +22,6 @@ List of nuances:
 - Where the WORD "and" appears it is linked to all surrounding words by hyphens, i.e; "Sword-and-shield"
 - Where the WORD "to" appears, it is linked to the following word by a hyphen, i.e; "to-use"
 - Where the WORD "my" appears, it is linked to the following word by a hyphen, i.e; "my-light"
-- Although "Ratvar" translates to "Engine" in English, the word "Ratvar" is used regardless of language as it is a proper noun.
-- The same rule applies to Ratvar's four generals: Nezbere (Armorer), Sevtug (Fright), Nzcrentr (Amperage), and Inath-neq (Vangu-Ard)
 */
 
 //Regexes used to alter english to ratvarian style
@@ -95,16 +93,3 @@ List of nuances:
 	text 		= replacetext(text, 		REVERSE_RATVAR_HYPHEN_TE_MATCH,			REVERSE_RATVAR_HYPHEN_TE_REPLACEMENT)
 	text 		= replacetext(text, 		REVERSE_RATVAR_HYPHEN_ET_MATCH,			REVERSE_RATVAR_HYPHEN_ET_REPLACEMENT)
 	return replacetext(text, 				REVERSE_RATVAR_HYPHEN_OF_MATCH,			REVERSE_RATVAR_HYPHEN_OF_REPLACEMENT)
-
-//Causes the mob or AM in question to speak a message; it assumes that the message is already translated to ratvar speech using text2ratvar()
-/proc/clockwork_say(atom/movable/AM, message, whisper=FALSE)
-	var/list/spans = list(SPAN_ROBOT)
-
-	if(isliving(AM))
-		var/mob/living/L = AM
-		if(!whisper)
-			L.say(message, "clock", spans, language=/datum/language/common, ignore_spam = TRUE)
-		else
-			L.whisper(message, "clock", spans, language=/datum/language/common)
-	else
-		AM.say(message, language=/datum/language/common)
