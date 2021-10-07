@@ -2016,10 +2016,12 @@
 		if(istype(T, MA.denied_type) || istype(MA, T.denied_type))
 			if(!istype(T, MA.upgrade_type))
 				return FALSE
+			else
+				qdel(T)
 	if(user)
 		if(!user.transferItemToLoc(MA, src))
 			return FALSE
-		to_chat (user, "<span class='notice'>You feel a mark painfully inscribe itself to your arm.</span>")
+		to_chat (user, "<span class='notice'>You feel a [MA] painfully inscribe itself to your arm.</span>")
 	else
 		MA.forceMove(src)
 	markings += MA
@@ -2320,7 +2322,7 @@
 /obj/item/blood_marking/magma_wing/proc/reset_deadly_shot()
 	deadly_shot = FALSE
 
-//Probably getting changed, unsure
+//Probably getting changed or removed, unsure
 
 //icewing watcher
 /obj/item/blood_marking/watcher_wing/ice_wing
@@ -2328,6 +2330,7 @@
 	desc = "A mark depicting the bone-freezing stare of a icewing."
 	icon_state = "ice_wing"
 	bonus_value = 8
+	denied_type = /obj/item/blood_marking/watcher_wing/ice_wing
 
 //legion
 /obj/item/blood_marking/legion_skull
