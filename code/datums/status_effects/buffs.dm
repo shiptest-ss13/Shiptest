@@ -396,14 +396,14 @@
 			var/mob/living/carbon/itemUser = owner
 			var/obj/item/heldItem = itemUser.get_item_for_held_index(hand)
 			if(heldItem == null || heldItem.type != /obj/item/blood_blessing/activated) //Checks to make sure the rod is still in their hand
-				var/obj/item/blood_blessing/activated/newRod = new(itemUser.loc)
-				newRod.activated(itemUser)
+				var/obj/item/blood_blessing/activated/new_curse = new(itemUser.loc)
+				new_curse.activated(itemUser)
 				if(!itemUser.has_hand_for_held_index(hand))
 					//If user does not have the corresponding hand anymore, give them one and return curse to their arm
 					if(((hand % 2) == 0))
 						var/obj/item/bodypart/L = itemUser.newBodyPart(BODY_ZONE_R_ARM, FALSE, FALSE)
 						if(L.attach_limb(itemUser))
-							itemUser.put_in_hand(newRod, hand, forced = TRUE)
+							itemUser.put_in_hand(new_curse, hand, forced = TRUE)
 						else
 							qdel(L)
 							consume_owner() //we can't regrow, abort abort
@@ -411,7 +411,7 @@
 					else
 						var/obj/item/bodypart/L = itemUser.newBodyPart(BODY_ZONE_L_ARM, FALSE, FALSE)
 						if(L.attach_limb(itemUser))
-							itemUser.put_in_hand(newRod, hand, forced = TRUE)
+							itemUser.put_in_hand(new_curse, hand, forced = TRUE)
 						else
 							qdel(L)
 							consume_owner() //see above comment
@@ -419,7 +419,7 @@
 					to_chat(itemUser, "<span class='warning'>Your accursed arm forms anew!</span>")
 				else
 					//Otherwise get rid of whatever else is in their hand and return the rod to said hand
-					itemUser.put_in_hand(newRod, hand, forced = TRUE)
+					itemUser.put_in_hand(new_curse, hand, forced = TRUE)
 					to_chat(itemUser, "<span class='warning'>After a few moments of painful transformation, your arm reforms itself, growing sharp claws and it's skin becoming twisted!</span>")
 
 /datum/status_effect/hunters_oath/proc/consume_owner()

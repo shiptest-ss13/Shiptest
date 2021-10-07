@@ -20,7 +20,7 @@
 /datum/status_effect/blessing_damage //tracks the damage dealt to this mob by a blood blessing
 	id = "blessing_damage"
 	duration = -1
-	status_type = STATUS_EFFECT_UNIQUE
+	status_type = STATUS_EFFECT_MULTIPLE
 	alert_type = null
 	var/total_damage = 0
 	on_remove_on_mob_delete = TRUE

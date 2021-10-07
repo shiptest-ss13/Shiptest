@@ -1928,14 +1928,13 @@
 	to_chat(itemUser, "<span class='notice'>You feel dark energy overtaking your body for a few moments, as your arm twists itself, becoming more muscular and growing big sharp claws...</span>")
 	var/datum/status_effect/hunters_oath/effect = itemUser.apply_status_effect(STATUS_EFFECT_HUNTERS_OATH)
 	effect.hand = usedHand
-	activated(itemUser)
+	qdel(src)
 
 /obj/item/blood_blessing/proc/activated(mob/living/user)
-	src = new /obj/item/blood_blessing/activated
-	src.item_flags = DROPDEL
+	item_flags = DROPDEL
 	ADD_TRAIT(src, TRAIT_NODROP, CURSED_ITEM_TRAIT)
-	src.curse_owner = user
-	src.activated = TRUE
+	curse_owner = user
+	activated = TRUE
 
 /obj/item/blood_blessing/activated
 	icon = 'icons/obj/mining.dmi'
@@ -1986,7 +1985,7 @@
 /obj/item/blood_blessing/activated/examine(mob/living/user)
 	. = ..()
 	. += "<span class='notice'>Shackle a large creature with the unholy force, then rip apart their shackles in melee to do <b>[force + detonation_damage + (souls_reaped * soul_power)]</b> damage.</span>"
-	. += "<span class='notice'>Does <b>[force + detonation_damage + backstab_bonus + (souls_reaped * soul_power)]</b> damage if the target is backstabbed, instead of <b>[force + detonation_damage + (kill_tracker * soul_power)]</b>.</span>"
+	. += "<span class='notice'>Does <b>[force + detonation_damage + backstab_bonus + (souls_reaped * soul_power)]</b> damage if the target is backstabbed, instead of <b>[force + detonation_damage + (souls_reaped * soul_power)]</b>.</span>"
 	for(var/t in markings)
 		var/obj/item/blood_marking/T = t
 		. += "<span class='notice'>It has \a [T] inscribed, which grants the following boon: [T.effect_desc()].</span>"
@@ -1999,15 +1998,28 @@
 		return ..()
 
 /obj/item/blood_blessing/activated/attack(mob/living/target, mob/living/carbon/user)
-	var/datum/status_effect/crusher_damage/C = target.has_status_effect(STATUS_EFFECT_BLESSINGDAMAGETRACKING)
 	var/target_health = target.health
+	var/list/existing_marks = target.has_status_effect_list(STATUS_EFFECT_BLESSINGDAMAGETRACKING)
+	var/right_tracker
+	for(var/i in existing_marks)
+		var/datum/status_effect/blessing_damage/SM = i
+		if(SM.reward_target == src)
+			right_tracker = SM
+			return
+	if(!right_tracker)
+		target.apply_status_effect(STATUS_EFFECT_BLESSINGDAMAGETRACKING, src)
+	for(var/i in existing_marks)
+		var/datum/status_effect/blessing_damage/SM = i
+		if(!right_tracker && SM.reward_target == src)
+			right_tracker = SM
+		if(right_tracker ==SM && !QDELETED(SM) && !QDELETED(target))
+			SM.total_damage += target_health - target.health
+			return
 	..()
 	for(var/t in markings)
 		if(!QDELETED(target))
 			var/obj/item/blood_marking/T = t
 			T.on_melee_hit(target, user)
-	if(!QDELETED(C) && !QDELETED(target))
-		C.total_damage += target_health - target.health //we did some damage, but let's not assume how much we did
 
 /obj/item/blood_blessing/activated/proc/add_mark(obj/item/blood_marking/MA, mob/living/user)
 	for(var/t in markings)
@@ -2026,9 +2038,9 @@
 	markings += MA
 	return TRUE
 /obj/item/blood_blessing/activated/proc/get_soulrewards(mob/living/L)
-	var/bonus_mod = 1
+	var/bonus_mod = 0
 	souls_reaped = min(kill_tracker["Total Souls"], maximum_souls)
-	if(ishostile(L))
+	if(istype(L, /mob/living/simple_animal/hostile/asteroid))
 		bonus_mod = 1
 	if(istype(L, /mob/living/simple_animal/hostile/asteroid/goliath/beast/ancient) || istype(L, /mob/living/simple_animal/hostile/asteroid/basilisk/watcher/icewing) || istype(L, /mob/living/simple_animal/hostile/asteroid/basilisk/watcher/magmawing) || istype(L, /mob/living/simple_animal/hostile/asteroid/hivelord/legion/dwarf)) //Elite reward
 		bonus_mod = 3
@@ -2137,28 +2149,33 @@
 		return
 	if(proximity_flag && isliving(target))
 		var/mob/living/L = target
+		var/target_health = L.health
+		var/list/existing_marks = L.has_status_effect_list(STATUS_EFFECT_BLESSINGDAMAGETRACKING)
 		var/datum/status_effect/blood_shackle/CM = L.has_status_effect(STATUS_EFFECT_BLOODSHACKLE)
 		if(!CM || CM.blood_shackled != src || !L.remove_status_effect(STATUS_EFFECT_BLOODSHACKLE))
 			return
-		var/datum/status_effect/crusher_damage/C = L.has_status_effect(STATUS_EFFECT_BLESSINGDAMAGETRACKING)
-		var/target_health = L.health
+		for(var/i in existing_marks)
+			var/datum/status_effect/blessing_damage/SM = i
+			if(SM.reward_target == src && !QDELETED(L) && !QDELETED(SM))
+				SM.total_damage += target_health - L.health
+				new /obj/effect/temp_visual/kinetic_blast(get_turf(L))
+				var/backstab_dir = get_dir(user, L)
+				var/def_check = L.getarmor(type = "bomb")
+				if((user.dir & backstab_dir) && (L.dir & backstab_dir))
+					SM.total_damage += detonation_damage + backstab_bonus + (souls_reaped * soul_power)
+				else
+					SM.total_damage += detonation_damage + (souls_reaped * soul_power)
 		for(var/t in markings)
 			var/obj/item/blood_marking/T = t
 			T.on_mark_detonation(target, user)
 		if(!QDELETED(L))
-			if(!QDELETED(C))
-				C.total_damage += target_health - L.health //we did some damage, but let's not assume how much we did
 			new /obj/effect/temp_visual/kinetic_blast(get_turf(L))
 			var/backstab_dir = get_dir(user, L)
 			var/def_check = L.getarmor(type = "bomb")
 			if((user.dir & backstab_dir) && (L.dir & backstab_dir))
-				if(!QDELETED(C))
-					C.total_damage += detonation_damage + backstab_bonus + (souls_reaped * soul_power) //cheat a little and add the total before killing it, so certain mobs don't have much lower chances of giving an item
 				L.apply_damage(detonation_damage + backstab_bonus + (souls_reaped * soul_power), BRUTE, blocked = def_check)
 				playsound(user, 'sound/weapons/kenetic_accel.ogg', 100, TRUE) //Seriously who spelled it wrong
 			else
-				if(!QDELETED(C))
-					C.total_damage += detonation_damage + (souls_reaped * soul_power)
 				L.apply_damage(detonation_damage + (souls_reaped * soul_power), BRUTE, blocked = def_check)
 
 /obj/item/blood_blessing/activated/proc/Recharge()
@@ -2260,19 +2277,59 @@
 //goliath
 /obj/item/blood_marking/tentacle_mark
 	name = "Mark of the Tentacle"
-	desc = "A mark depicting the snaring tentacles of a goliath."
+	desc = "A mark depicting the snaring tentacle of a goliath."
 	icon_state = "goliath_tentacle"
 	denied_type = /obj/item/blood_marking/tentacle_mark
-	bonus_value = 10
+	upgrade_type = /obj/item/blood_marking/tentacle_mark/ancient
+	bonus_value = 5
 
 /obj/item/blood_marking/tentacle_mark/effect_desc()
-	return "Your shackles immobilize the target for <b>[bonus_value*0.1]</b> second, and their snare deals [bonus_value] damage."
+	return "Your shackles hold the target in place for <b>[bonus_value*0.1]</b> seconds before weakening, and their snare deals [bonus_value] damage."
 
 /obj/item/blood_marking/tentacle_mark/on_projectile_fire(obj/projectile/shackler/marker, mob/living/user)
 	marker.name = "thorny [marker.name]"
 	marker.icon_state = "chronobolt"
 	marker.damage = bonus_value
 	marker.nodamage = FALSE
+
+/obj/item/blood_marking/tentacle_mark/on_mark_application(mob/living/target, datum/status_effect/blood_shackle/mark, had_mark)
+	if(target.anchored == FALSE && had_mark == FALSE)
+		target.anchored = TRUE
+		addtimer(CALLBACK(target.anchored = FALSE), bonus_value)
+
+/obj/item/blood_marking/tentacle_mark/ancient
+	name = "Mark of the Many Tentacles"
+	desc = "A mark depicting the several tentacles of an ancient goliath."
+	icon_state = "goliath_tentacle"
+	bonus_value = 10
+	denied_type = /obj/item/blood_marking/tentacle_mark/ancient
+	upgrade_type = null
+
+/obj/item/blood_marking/tentacle_mark/ancient/effect_desc()
+	return "Your shackles hold the target in place for <b>[bonus_value*0.1]</b> second before weakening, and their snare deals [bonus_value] damage. Destroying the shackles has a chance to transfer them to nearby enemies."
+
+/obj/item/blood_marking/tentacle_mark/ancient/on_mark_detonation(mob/living/target, mob/living/user)
+	var/chance = 25
+	bonus_value *= 2
+	for(var/mob/living/L in oview(4, user))
+		if(L.stat == DEAD)
+			if(chance < 85)
+				chance += 20
+			continue
+		if(prob(chance) && target.anchored == FALSE)
+			var/mutable_appearance/marked_underlay
+			marked_underlay = mutable_appearance('icons/effects/effects.dmi', "shield2")
+			marked_underlay.pixel_x = -target.pixel_x
+			marked_underlay.pixel_y = -target.pixel_y
+			target.underlays += marked_underlay
+			target.anchored = TRUE
+			addtimer(CALLBACK(target.anchored = FALSE), bonus_value)
+			chance = 25
+		else
+			if(chance < 85)
+				chance += 20
+	bonus_value /= 2
+
 
 //Ancient goliath should further increase damage and give a little dash/teleport available for a bit after breaking the shackles
 
@@ -2333,6 +2390,7 @@
 	icon_state = "ice_wing"
 	bonus_value = 8
 	denied_type = /obj/item/blood_marking/watcher_wing/ice_wing
+	upgrade_type = null
 
 //legion
 /obj/item/blood_marking/legion_skull
@@ -2340,6 +2398,7 @@
 	desc = "A mark depicting a vile skull of the legion."
 	icon_state = "legion_skull"
 	denied_type = /obj/item/blood_marking/legion_skull
+	upgrade_type = /obj/item/blood_marking/legion_skull/dwarf
 	bonus_value = 1
 	var/missing_health_ratio = 0.1
 	var/missing_health_desc = 10
@@ -2369,6 +2428,14 @@
 	missing_health *= bonus_value //multiply the remaining amount by bonus_value
 	if(missing_health > 0)
 		target.adjustBruteLoss(missing_health) //and do that much damage
+
+/obj/item/blood_marking/legion_skull/dwarf
+	name = "Mark of the Greater Skull"
+	desc = "A mark depicting the vile skull of the legion."
+	icon_state = "legion_skull"
+	denied_type = /obj/item/blood_marking/legion_skull/dwarf
+	upgrade_type = null
+	bonus_value = 2
 
 //Funny dorf: Speeds you up based on missing health too, at least enough to negate damage slowdown, might get op so I dunno
 
