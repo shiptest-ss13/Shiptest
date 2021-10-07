@@ -17,8 +17,8 @@
 	alert_type = null
 	var/total_damage = 0
 
-/datum/status_effect/blessing_damage //tracks the damage dealt to this mob by kinetic crushers
-	id = "crusher_damage"
+/datum/status_effect/blessing_damage //tracks the damage dealt to this mob by a blood blessing
+	id = "blessing_damage"
 	duration = -1
 	status_type = STATUS_EFFECT_UNIQUE
 	alert_type = null

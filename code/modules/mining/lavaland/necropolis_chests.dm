@@ -258,7 +258,7 @@
 		to_chat(itemUser, failText)
 		return
 	to_chat(itemUser, "<span class='notice'>The snake, satisfied with your oath, attaches itself and the rod to your forearm with an inseparable grip. Your thoughts seem to only revolve around the core idea of helping others, and harm is nothing more than a distant, wicked memory...</span>")
-	var/datum/status_effect/hippocraticOath/effect = itemUser.apply_status_effect(STATUS_EFFECT_HIPPOCRATIC_OATH)
+	var/datum/status_effect/hunters_oath/effect = itemUser.apply_status_effect(STATUS_EFFECT_HIPPOCRATIC_OATH)
 	effect.hand = usedHand
 	activated()
 
@@ -1926,7 +1926,7 @@
 		to_chat(itemUser, failText)
 		return
 	to_chat(itemUser, "<span class='notice'>You feel dark energy overtaking your body for a few moments, as your arm twists itself, becoming more muscular and growing big sharp claws...</span>")
-	var/datum/status_effect/huntersOath/effect = itemUser.apply_status_effect(STATUS_EFFECT_HUNTERS_OATH)
+	var/datum/status_effect/hunters_oath/effect = itemUser.apply_status_effect(STATUS_EFFECT_HUNTERS_OATH)
 	effect.hand = usedHand
 	activated(itemUser)
 
@@ -1961,7 +1961,6 @@
 	light_system = MOVABLE_LIGHT
 	light_range = 5
 	light_on = FALSE
-	var/list/kill_tracker = list()
 	var/list/kill_tracker = list()
 	var/list/markings = list()
 	var/charged = TRUE
@@ -2151,13 +2150,13 @@
 			var/def_check = L.getarmor(type = "bomb")
 			if((user.dir & backstab_dir) && (L.dir & backstab_dir))
 				if(!QDELETED(C))
-					C.total_damage += detonation_damage + backstab_bonus + (kill_tracker * soul_power) //cheat a little and add the total before killing it, so certain mobs don't have much lower chances of giving an item
-				L.apply_damage(detonation_damage + backstab_bonus + (kill_tracker * soul_power), BRUTE, blocked = def_check)
+					C.total_damage += detonation_damage + backstab_bonus + (souls_reaped * soul_power) //cheat a little and add the total before killing it, so certain mobs don't have much lower chances of giving an item
+				L.apply_damage(detonation_damage + backstab_bonus + (souls_reaped * soul_power), BRUTE, blocked = def_check)
 				playsound(user, 'sound/weapons/kenetic_accel.ogg', 100, TRUE) //Seriously who spelled it wrong
 			else
 				if(!QDELETED(C))
-					C.total_damage += detonation_damage + (kill_tracker * soul_power)
-				L.apply_damage(detonation_damage + (kill_tracker * soul_power), BRUTE, blocked = def_check)
+					C.total_damage += detonation_damage + (souls_reaped * soul_power)
+				L.apply_damage(detonation_damage + (souls_reaped * soul_power), BRUTE, blocked = def_check)
 
 /obj/item/blood_blessing/activated/proc/Recharge()
 	if(!charged)
