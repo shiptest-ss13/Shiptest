@@ -134,8 +134,9 @@
 /datum/reagent/consumable/ethanol/out_of_limeNew()
 	SSticker.OnRoundstart(CALLBACK(src,.proc/update_color))
 
-/datum/reagent/consumable/ethanol/out_of_lime/proc/UpdateColor()
+/datum/reagent/consumable/ethanol/out_of_lime/proc/update_color()
 	color = pick(potential_colors)
+
 /datum/reagent/consumable/ethanol/out_of_lime/expose_mob(mob/living/carbon/human/consumer, method=INGEST, reac_volume)
 	if(method == INGEST || method == TOUCH)
 		if(istype(consumer))
