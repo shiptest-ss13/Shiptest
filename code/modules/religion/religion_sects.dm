@@ -203,7 +203,6 @@
 	desired_items = list(/obj/item/stack/sheet/metal)
 	rites_list = list(/datum/religion_rites/transmute_brass)
 	altar_icon_state = "convertaltar-red"
-	//altar_icon_state = "convertaltar-gear"
 
 /datum/religion_sect/clockwork/on_conversion(mob/living/L)
 	..()
@@ -219,11 +218,6 @@
 	L.visible_message("<span class='notice'>[user] blesses [L] with the power of [GLOB.deity]!</span>")
 	playsound(user, 'sound/effects/bang.ogg', 25, TRUE, -1)
 	SEND_SIGNAL(L, COMSIG_ADD_MOOD_EVENT, "blessing", /datum/mood_event/blessing)
-	return TRUE
-
-/datum/religion_sect/clockwork/can_sacrifice(obj/item/I, mob/living/L)
-	if(!..())
-		return FALSE
 	return TRUE
 
 /datum/religion_sect/clockwork/on_sacrifice(obj/item/I, mob/living/L)
