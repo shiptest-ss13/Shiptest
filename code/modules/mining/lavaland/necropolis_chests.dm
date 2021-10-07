@@ -2160,7 +2160,6 @@
 				SM.total_damage += target_health - L.health
 				new /obj/effect/temp_visual/kinetic_blast(get_turf(L))
 				var/backstab_dir = get_dir(user, L)
-				var/def_check = L.getarmor(type = "bomb")
 				if((user.dir & backstab_dir) && (L.dir & backstab_dir))
 					SM.total_damage += detonation_damage + backstab_bonus + (souls_reaped * soul_power)
 				else
