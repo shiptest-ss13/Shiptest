@@ -1961,8 +1961,8 @@
 	light_system = MOVABLE_LIGHT
 	light_range = 5
 	light_on = FALSE
-	var/list/kills_tracked = list()
-	var/list/total_type_kills = list()
+	var/list/kill_tracker = list()
+	var/list/kill_tracker = list()
 	var/list/markings = list()
 	var/charged = TRUE
 	var/charge_time = 12
@@ -1987,7 +1987,7 @@
 /obj/item/blood_blessing/activated/examine(mob/living/user)
 	. = ..()
 	. += "<span class='notice'>Shackle a large creature with the unholy force, then rip apart their shackles in melee to do <b>[force + detonation_damage + (souls_reaped * soul_power)]</b> damage.</span>"
-	. += "<span class='notice'>Does <b>[force + detonation_damage + backstab_bonus + (souls_reaped * soul_power)]</b> damage if the target is backstabbed, instead of <b>[force + detonation_damage + (souls_reaped * soul_power)]</b>.</span>"
+	. += "<span class='notice'>Does <b>[force + detonation_damage + backstab_bonus + (souls_reaped * soul_power)]</b> damage if the target is backstabbed, instead of <b>[force + detonation_damage + (kill_tracker * soul_power)]</b>.</span>"
 	for(var/t in markings)
 		var/obj/item/blood_marking/T = t
 		. += "<span class='notice'>It has \a [T] inscribed, which grants the following boon: [T.effect_desc()].</span>"
@@ -2000,7 +2000,7 @@
 		return ..()
 
 /obj/item/blood_blessing/activated/attack(mob/living/target, mob/living/carbon/user)
-	var/datum/status_effect/crusher_damage/C = target.has_status_effect(STATUS_EFFECT_CRUSHERDAMAGETRACKING)
+	var/datum/status_effect/crusher_damage/C = target.has_status_effect(STATUS_EFFECT_BLESSINGDAMAGETRACKING)
 	var/target_health = target.health
 	..()
 	for(var/t in markings)
@@ -2009,15 +2009,6 @@
 			T.on_melee_hit(target, user)
 	if(!QDELETED(C) && !QDELETED(target))
 		C.total_damage += target_health - target.health //we did some damage, but let's not assume how much we did
-	if(isliving(target))
-		var/mob/living/L = target
-		var/list/existing_marks = L.has_status_effect_list(STATUS_EFFECT_BLOODMARK)
-		for(var/i in existing_marks)
-			var/datum/status_effect/blood_mark/BM = i
-			if(BM.reward_target == src)
-				BM.reward_target = null
-				qdel(BM)
-		L.apply_status_effect(STATUS_EFFECT_BLOODMARK, src)
 
 /obj/item/blood_blessing/activated/proc/add_mark(obj/item/blood_marking/MA, mob/living/user)
 	for(var/t in markings)
@@ -2033,64 +2024,92 @@
 		MA.forceMove(src)
 	markings += MA
 	return TRUE
-/obj/item/blood_blessing/activated/proc/get_souls(mob/living/L, mob/living/user)
+/obj/item/blood_blessing/activated/proc/get_soulrewards(mob/living/L)
 	var/bonus_mod = 1
+	souls_reaped = min(kill_tracker["Total Souls"], maximum_souls)
 	if(ishostile(L))
 		bonus_mod = 1
 	if(istype(L, /mob/living/simple_animal/hostile/asteroid/goliath/beast/ancient) || istype(L, /mob/living/simple_animal/hostile/asteroid/basilisk/watcher/icewing) || istype(L, /mob/living/simple_animal/hostile/asteroid/basilisk/watcher/magmawing) || istype(L, /mob/living/simple_animal/hostile/asteroid/hivelord/legion/dwarf)) //Elite reward
 		bonus_mod = 3
 	if(ismegafauna(L)) //Megafauna reward
 		bonus_mod = 10
-	if(!kills_tracked[L.type])
-		kills_tracked[L.type] = bonus_mod
+	if(!kill_tracker[L.type])
+		kill_tracker[L.type] = bonus_mod
 	else
-		kills_tracked[L.type] = kills_tracked[L.type] + bonus_mod
-	if(!souls_reaped)
-		souls_reaped = min(bonus_mod, maximum_souls)
+		kill_tracker[L.type] = kill_tracker[L.type] + bonus_mod
+	if(!kill_tracker["Total Souls"])
+		kill_tracker["Total Souls"] = bonus_mod
 	else
-		souls_reaped = min(souls_reaped + bonus_mod, maximum_souls)
+		kill_tracker["Total Souls"] = kill_tracker["Total Souls"] + bonus_mod
+	if(!kill_tracker["Total"])
+		kill_tracker["Total"] = 1
+	else
+		kill_tracker["Total"]++
 	if(istype(L, /mob/living/simple_animal/hostile/asteroid/goliath))
-		if(!total_type_kills["goliath"])
-			total_type_kills["goliath"] = bonus_mod
+		if(!kill_tracker["Goliath"])
+			kill_tracker["Goliath"] = bonus_mod
 		else
-			total_type_kills["goliath"] = total_type_kills["goliath"] + bonus_mod
-	if(istype(L, /mob/living/simple_animal/hostile/asteroid/basilisk))
-		if(!total_type_kills["watcher"])
-			total_type_kills["watcher"] = bonus_mod
-		else
-			total_type_kills["watcher"] = total_type_kills["watcher"] + bonus_mod
-	if(istype(L, /mob/living/simple_animal/hostile/asteroid/polarbear))
-		if(!total_type_kills["bear"])
-			total_type_kills["bear"] = bonus_mod
-		else
-			total_type_kills["bear"] = total_type_kills["bear"] + bonus_mod
+			kill_tracker["Goliath"] = kill_tracker["Goliath"] + bonus_mod
 	if(istype(L, /mob/living/simple_animal/hostile/asteroid/hivelord))
-		if(!total_type_kills["legion"])
-			total_type_kills["legion"] = bonus_mod
+		if(!kill_tracker["Legion"])
+			kill_tracker["Legion"] = bonus_mod
 		else
-			total_type_kills["legion"] = total_type_kills["legion"] + bonus_mod
+			kill_tracker["Legion"] = kill_tracker["Legion"] + bonus_mod
+	if(istype(L, /mob/living/simple_animal/hostile/asteroid/basilisk))
+		if(!kill_tracker["Watcher"])
+			kill_tracker["Watcher"] = bonus_mod
+		else
+			kill_tracker["Watcher"] = kill_tracker["Watcher"] + bonus_mod
+	if(istype(L, /mob/living/simple_animal/hostile/asteroid/polarbear))
+		if(!kill_tracker["Polar Bear"])
+			kill_tracker["Polar Bear"] = bonus_mod
+		else
+			kill_tracker["Polar Bear"] = kill_tracker["Polar Bear"] + bonus_mod
 	if(istype(L, /mob/living/simple_animal/hostile/asteroid/wolf))
-		if(!total_type_kills["wolf"])
-			total_type_kills["wolf"] = bonus_mod
+		if(!kill_tracker["Wolf"])
+			kill_tracker["Wolf"] = bonus_mod
 		else
-			total_type_kills["wolf"] = total_type_kills["wolf"] + bonus_mod
-	if(total_type_kills["goliath"] >= mark_treshold)
+			kill_tracker["Wolf"] = kill_tracker["Wolf"] + bonus_mod
+	if(kill_tracker["Goliath"] >= mark_treshold)
 		var/obj/item/blood_marking/MA = new /obj/item/blood_marking/tentacle_mark/
 		add_mark(MA, curse_owner)
-	if(total_type_kills["legion"] >= mark_treshold)
+	if(kill_tracker["Legion"] >= mark_treshold)
 		var/obj/item/blood_marking/MA = new /obj/item/blood_marking/legion_skull/
 		add_mark(MA, curse_owner)
-	if(total_type_kills["watcher"] >= mark_treshold)
+	if(kill_tracker["Watcher"] >= mark_treshold)
 		var/obj/item/blood_marking/MA = new /obj/item/blood_marking/watcher_wing/
 		add_mark(MA, curse_owner)
-	if(total_type_kills["watcher"] >= 3 * mark_treshold)
+	if(kill_tracker["Watcher"] >= 30)
 		var/obj/item/blood_marking/MA = new /obj/item/blood_marking/watcher_wing/ice_wing
 		add_mark(MA, curse_owner)
-	if(total_type_kills["bear"] >= mark_treshold)
+	if(kill_tracker["Polar Bear"] >= mark_treshold)
 		var/obj/item/blood_marking/MA = new /obj/item/blood_marking/demon_claws/
 		add_mark(MA, curse_owner)
-	if(total_type_kills["wolf"] >= mark_treshold)
+	if(kill_tracker["Wolf"] >= mark_treshold)
 		var/obj/item/blood_marking/MA = new /obj/item/blood_marking/magma_wing/
+		add_mark(MA, curse_owner)
+	if(kill_tracker["Total Souls"] >= 100)
+		var/obj/item/blood_marking/MA = new /obj/item/blood_marking/demon_claws/
+		add_mark(MA, curse_owner)
+	if(kill_tracker["Total Souls"] >= 120)
+		var/obj/item/blood_marking/MA = new /obj/item/blood_marking/healing/
+		add_mark(MA, curse_owner)
+	if(kill_tracker["Total Souls"] >= 130)
+		var/obj/item/blood_marking/MA = new /obj/item/blood_marking/tail_spike/
+		add_mark(MA, curse_owner)
+	if(kill_tracker["Total Souls"] >= 150)
+		var/obj/item/blood_marking/MA = new /obj/item/blood_marking/vortex_talisman/
+		add_mark(MA, curse_owner)
+	if(kill_tracker["Total Souls"] >= 200)
+		block_chance = 20
+	if(kill_tracker["Total Souls"] >= 300)
+		block_chance = 30
+	if(kill_tracker["Total Souls"] >= 400)
+		block_chance = 40
+	if(kill_tracker["Total Souls"] >= 500)
+		block_chance = 50
+	if(kill_tracker["Total Souls"] >= 750)
+		var/obj/item/blood_marking/MA = new /obj/item/blood_marking/vortex_talisman/
 		add_mark(MA, curse_owner)
 
 /obj/item/blood_blessing/activated/afterattack(atom/target, mob/living/user, proximity_flag, clickparams)
@@ -2117,7 +2136,7 @@
 		var/datum/status_effect/blood_shackle/CM = L.has_status_effect(STATUS_EFFECT_BLOODSHACKLE)
 		if(!CM || CM.blood_shackled != src || !L.remove_status_effect(STATUS_EFFECT_BLOODSHACKLE))
 			return
-		var/datum/status_effect/crusher_damage/C = L.has_status_effect(STATUS_EFFECT_CRUSHERDAMAGETRACKING)
+		var/datum/status_effect/crusher_damage/C = L.has_status_effect(STATUS_EFFECT_BLESSINGDAMAGETRACKING)
 		var/target_health = L.health
 		for(var/t in markings)
 			var/obj/item/blood_marking/T = t
@@ -2130,13 +2149,13 @@
 			var/def_check = L.getarmor(type = "bomb")
 			if((user.dir & backstab_dir) && (L.dir & backstab_dir))
 				if(!QDELETED(C))
-					C.total_damage += detonation_damage + backstab_bonus + (souls_reaped * soul_power) //cheat a little and add the total before killing it, so certain mobs don't have much lower chances of giving an item
-				L.apply_damage(detonation_damage + backstab_bonus + (souls_reaped * soul_power), BRUTE, blocked = def_check)
+					C.total_damage += detonation_damage + backstab_bonus + (kill_tracker * soul_power) //cheat a little and add the total before killing it, so certain mobs don't have much lower chances of giving an item
+				L.apply_damage(detonation_damage + backstab_bonus + (kill_tracker * soul_power), BRUTE, blocked = def_check)
 				playsound(user, 'sound/weapons/kenetic_accel.ogg', 100, TRUE) //Seriously who spelled it wrong
 			else
 				if(!QDELETED(C))
-					C.total_damage += detonation_damage + (souls_reaped * soul_power)
-				L.apply_damage(detonation_damage + (souls_reaped * soul_power), BRUTE, blocked = def_check)
+					C.total_damage += detonation_damage + (kill_tracker * soul_power)
+				L.apply_damage(detonation_damage + (kill_tracker * soul_power), BRUTE, blocked = def_check)
 
 /obj/item/blood_blessing/activated/proc/Recharge()
 	if(!charged)
@@ -2160,7 +2179,7 @@
 
 //shackling chains
 /obj/projectile/shackler
-	name = "shackling chains"
+	name = "Shackling Chains"
 	icon_state = "pulse1"
 	nodamage = TRUE
 	damage = 0 //We're just here to mark people. This is still a melee weapon.
@@ -2192,7 +2211,7 @@
 
 //markings
 /obj/item/blood_marking
-	name = "mark of grand heating"
+	name = "Mark of Grand Heating"
 	desc = "Nothing at all."
 	icon = 'icons/obj/lavaland/artefacts.dmi'
 	icon_state = "tail_spike"
@@ -2236,7 +2255,7 @@
 
 //goliath
 /obj/item/blood_marking/tentacle_mark
-	name = "mark of the tentacle"
+	name = "Mark of the Tentacle"
 	desc = "A mark depicting the snaring tentacles of a goliath."
 	icon_state = "goliath_tentacle"
 	denied_type = /obj/item/blood_marking/tentacle_mark
@@ -2255,7 +2274,7 @@
 
 //watcher
 /obj/item/blood_marking/watcher_wing
-	name = "mark of freezing"
+	name = "Mark of Freezing"
 	desc = "A mark depicting the freezing stare of a watcher."
 	icon_state = "watcher_wing"
 	denied_type = /obj/item/blood_marking/watcher_wing
@@ -2276,7 +2295,7 @@
 
 //magmawing watcher
 /obj/item/blood_marking/magma_wing
-	name = "mark of heating"
+	name = "Mark of Heating"
 	desc = "A mark depicting the burning eye of a magmawing."
 	icon_state = "magma_wing"
 	gender = NEUTER
@@ -2305,14 +2324,14 @@
 
 //icewing watcher
 /obj/item/blood_marking/watcher_wing/ice_wing
-	name = "mark of grand freezing"
+	name = "Mark of Grand Freezing"
 	desc = "A mark depicting the bone-freezing stare of a icewing."
 	icon_state = "ice_wing"
 	bonus_value = 8
 
 //legion
 /obj/item/blood_marking/legion_skull
-	name = "mark of the skull"
+	name = "Mark of the Skull"
 	desc = "A mark depicting a vile skull of the legion."
 	icon_state = "legion_skull"
 	denied_type = /obj/item/blood_marking/legion_skull
@@ -2350,7 +2369,7 @@
 
 //blood-drunk hunter
 /obj/item/blood_marking/miner_eye
-	name = "mark of bloodlust"
+	name = "Mark of Bloodlust"
 	desc = "A mark depicting a droplet of blood, for which you lust."
 	icon_state = "hunter_eye"
 	denied_type = /obj/item/blood_marking/miner_eye
@@ -2385,10 +2404,9 @@
 
 //bubblegum
 /obj/item/blood_marking/demon_claws
-	name = "mark of demons"
+	name = "Mark of Demons"
 	desc = "A mark depicting the claws of a vile demon, which some say is king."
 	icon_state = "demon_claws"
-	gender = PLURAL
 	denied_type = /obj/item/blood_marking/demon_claws
 	bonus_value = 5
 
@@ -2407,10 +2425,9 @@
 
 //colossus
 /obj/item/blood_marking/healing
-	name = "mark of godhood"
+	name = "Mark of Godhood"
 	desc = "A mark depicting something you can't quite figure out."
 	icon_state = "blaster_tubes"
-	gender = PLURAL
 	denied_type = /obj/item/blood_marking/healing
 	bonus_value = 5
 	var/static/list/damage_heal_order = list(BRUTE, BURN, OXY)
@@ -2426,7 +2443,7 @@
 
 //hierophant
 /obj/item/blood_marking/vortex_talisman
-	name = "mark of vortex"
+	name = "Mark of the Vortex"
 	desc = "A mark depicting twisted ancient technology, long forgotten."
 	icon_state = "vortex_talisman"
 	denied_type = /obj/item/blood_marking/vortex_talisman
@@ -2453,25 +2470,26 @@
 	duration = 75
 
 /obj/item/blood_marking/king_goat
-	name = "mark of the king"
+	name = "Mark of the King"
 	desc = "A mark depicting the king of all goats."
 	icon_state = "goat_hoof" //needs a better sprite but I cant sprite .
 	denied_type = /obj/item/blood_marking/king_goat
 
 /obj/item/blood_marking/king_goat/effect_desc()
-	return "you also passively recharge markers 4x as fast while this is equipped and do a decent amount of damage at the cost of dulling the blade"
+	return "It signifies your absolute power, making launching shackles instant, deal 10 more damage, and strengthening and sharpening your arm, making it deal 15 more damage!"
 
 /obj/item/blood_marking/king_goat/on_projectile_fire(obj/projectile/shackler/marker, mob/living/user)
-	marker.damage = 10 //in my testing only does damage to simple mobs so should be fine to have it high
+	marker.nodamage = FALSE
+	marker.damage += 10
 
 /obj/item/blood_marking/king_goat/add_to(obj/item/blood_blessing/activated/H, mob/living/user)
 	. = ..()
 	if(.)
-		H.charge_time = 3
-		H.force = 5
+		H.charge_time = 0
+		H.force += 15
 
 /obj/item/blood_marking/king_goat/remove_from(obj/item/blood_blessing/activated/H, mob/living/user)
 	. = ..()
 	if(.)
 		H.charge_time = 12
-		H.force = 15
+		H.force -= 15

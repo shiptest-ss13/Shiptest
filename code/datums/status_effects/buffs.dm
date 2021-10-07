@@ -416,11 +416,11 @@
 							qdel(L)
 							consume_owner() //see above comment
 							return
-					to_chat(itemUser, "<span class='notice'>Your accursed arm suddenly grows back!</span>")
+					to_chat(itemUser, "<span class='warning'>Your accursed arm forms anew!</span>")
 				else
 					//Otherwise get rid of whatever else is in their hand and return the rod to said hand
 					itemUser.put_in_hand(newRod, hand, forced = TRUE)
-					to_chat(itemUser, "<span class='notice'>The curse returns to your arm!</span>")
+					to_chat(itemUser, "<span class='warning'>After a few moments of painful transformation, your arm reforms itself, growing sharp claws and it's skin becoming twisted!</span>")
 
 /datum/status_effect/huntersOath/proc/consume_owner()
 	owner.visible_message("<span class='notice'>[owner]'s soul is absorbed by their master, releasing a shade from what they once were.</span>")
