@@ -2008,12 +2008,12 @@
 			return
 	if(!right_tracker)
 		target.apply_status_effect(STATUS_EFFECT_BLESSINGDAMAGETRACKING, src)
-	for(var/i in existing_marks)
 	..()
 	for(var/t in markings)
 		if(!QDELETED(target))
 			var/obj/item/blood_marking/T = t
 			T.on_melee_hit(target, user)
+	for(var/i in existing_marks)
 		var/datum/status_effect/blessing_damage/SM = i
 		if(!right_tracker && SM.reward_target == src)
 			right_tracker = SM
