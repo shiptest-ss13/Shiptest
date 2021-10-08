@@ -2351,8 +2351,8 @@
 		for(var/i in existing_marks)
 			var/datum/status_effect/blessing_damage/SM = i
 			if(!right_tracker && SM.reward_target == blood_shackled)
-			right_tracker = SM
-			if(right_tracker == SM && !QDELETED(SM) && !QDELETED(target))
+				right_tracker = SM
+			if(right_tracker == SM && !QDELETED(SM) && !QDELETED(L))
 				SM.total_damage += target_health - L.health
 				return
 	var/target_turf = get_turf(target)
