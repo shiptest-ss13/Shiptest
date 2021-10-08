@@ -129,17 +129,10 @@
 	glass_icon_state = "out_of_lime"
 	glass_name = "Out of Lime"
 	glass_desc = "A spin on the classic. Artists and street fighters swear by this stuff."
-	var/list/potential_colors = list("0ad","a0f","f73","d14","d14","0b5","0ad","f73","fc2","084","05e","d22","fa0")
-	
-/datum/reagent/consumable/ethanol/out_of_lime/New()
-	SSticker.OnRoundstart(CALLBACK(src,.proc/update_color))
-
-/datum/reagent/consumable/ethanol/out_of_lime/proc/update_color()
-	color = pick(potential_colors)
 
 /datum/reagent/consumable/ethanol/out_of_lime/expose_mob(mob/living/carbon/human/consumer, method=INGEST, reac_volume)
 	if(method == INGEST || method == TOUCH)
 		if(istype(consumer))
-			consumer.hair_color = pick(potential_colors)
-			consumer.facial_hair_color = pick(potential_colors)
+			consumer.hair_color = pick("0ad","a0f","f73","d14","d14","0b5","0ad","f73","fc2","084","05e","d22","fa0")
+			consumer.facial_hair_color = pick("0ad","a0f","f73","d14","d14","0b5","0ad","f73","fc2","084","05e","d22","fa0")
 			consumer.update_hair()
