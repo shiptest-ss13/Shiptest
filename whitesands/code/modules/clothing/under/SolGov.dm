@@ -14,6 +14,7 @@
 	desc = "It's a jumpsuit for SolGov's elite officers. Designed to be comfortable in heavy armor."
 	icon_state = "elite"
 	item_state = "elite"
+	armor = list("melee" = 15, "bullet" = 10, "laser" = 5,"energy" = 5, "bomb" = 10, "bio" = 0, "rad" = 0, "fire" = 30, "acid" = 30)
 
 /obj/item/clothing/under/solgov/formal
 	name = "\improper SolGov formal uniform"
