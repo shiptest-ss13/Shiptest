@@ -180,8 +180,8 @@
 	if(!..())
 		return FALSE
 	var/obj/item/stock_parts/cell/the_cell = I
-	if(the_cell.charge < 3000)
-		to_chat("<span class='notice'>[GLOB.deity] does not accept pity amounts of power.</span>")
+	if(the_cell.charge < 3000)   // stops people from grabbing cells out of APCs
+		to_chat(L, "<span class='notice'>[GLOB.deity] does not accept pity amounts of power.</span>")
 		return FALSE
 	return TRUE
 
@@ -190,6 +190,6 @@
 	if(!is_type_in_typecache(I, desired_items_typecache))
 		return
 	var/obj/item/stock_parts/cell/the_cell = I
-	adjust_favor(round(the_cell.charge/3000), L)
+	adjust_favor(round(the_cell.charge/500), L)
 	to_chat(L, "<span class='notice'>You offer [the_cell]'s power to [GLOB.deity], pleasing them.</span>")
 	qdel(I)
