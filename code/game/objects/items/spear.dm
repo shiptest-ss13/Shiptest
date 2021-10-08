@@ -177,3 +177,50 @@
 
 /obj/item/spear/bonespear/update_icon_state()
 	icon_state = "bone_spear0"
+
+/obj/item/spear/dragonspear//version of the bone spear crafted from the trophy dropped by the Ash Drake. High damage, high ap, burns.
+	name = "dragonslayer's spear"
+	desc = "A bone spear crafted from the leading spine of a fully-grown drake, razor-sharp and hotter then magma. Wielded by the deranged, pyromaniacs, and champions of lavaland."
+	icon = 'icons/obj/items_and_weapons.dmi'
+	lefthand_file = 'icons/mob/inhands/weapons/polearms_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/weapons/polearms_righthand.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/back.dmi'
+	force = 20
+	throwforce = 25
+	block_chance = 15//lol,lmao
+	armour_penetration = 30
+	embedding = list("impact_pain_mult" = 5)
+	icon_prefix = "dragon_spear"
+	var/list/nemesis_factions = list("mining", "boss")
+	var/faction_bonus_force = 25
+	attack_verb = list("seared", "braided", "impaled", "smote", "gored")
+	hitsound = 'sound/weapons/sear.ogg'
+	var/cooldown_time = 0 SECONDS
+	COOLDOWN_DECLARE(freeze_cooldown)
+
+/obj/item/spear/dragonspear/attack(mob/living/target, mob/living/carbon/human/user)
+	var/nemesis_faction = FALSE
+	if(LAZYLEN(nemesis_factions))
+		for(var/F in target.faction)
+			if(F in nemesis_factions)
+				nemesis_faction = TRUE
+				force += faction_bonus_force
+				throwforce += faction_bonus_force
+				nemesis_effects(user, target)
+				break
+	. = ..()
+	if(nemesis_faction)
+		force -= faction_bonus_force
+		throwforce -= faction_bonus_force
+
+/obj/item/spear/dragonspear/proc/nemesis_effects(mob/living/user, mob/living/target)
+	return
+
+/obj/item/spear/dragonspear/ComponentInitialize()
+	. = ..()
+	AddComponent(/datum/component/two_handed, force_unwielded=20, force_wielded=25, icon_wielded="[icon_prefix]1")
+	AddComponent(/datum/component/butchering, 60, 150)
+	icon_state = "[icon_prefix]0"
+
+/obj/item/spear/dragonspear/update_icon_state()
+	icon_state = "[icon_prefix]0"

@@ -178,7 +178,7 @@
 	path = /obj/item/toy/balloon/corgi
 	cost = 2500
 
-/datum/gear/mask/surgical
+/datum/gear/surgical_mask
 	display_name = "surgical mask"
 	path = /obj/item/clothing/mask/surgical
 	cost = 1200

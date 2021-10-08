@@ -241,9 +241,6 @@ PROTECT_ROLES_FROM_ANTAGONIST
 ## If non-human species are barred from joining as a head of staff
 #ENFORCE_HUMAN_AUTHORITY
 
-## If late-joining players have a chance to become a traitor/changeling
-ALLOW_LATEJOIN_ANTAGONISTS
-
 ## Comment this out to disable the antagonist reputation system. This system rewards players who participate in the game instead of greytiding by giving them slightly higher odds to
 ## roll antagonist in subsequent rounds until they get it.
 ##
@@ -588,21 +585,6 @@ ECONOMY
 
 ## Put the name of your custom currency here
 METACURRENCY_NAME Metacoin
-
-## Crew objectives
-ALLOW_CREW_OBJECTIVES
-
-## Choose which Engine to start the round with. Weight is after the comma. Setting the weight to 0 removes the engine from rotation.
-BOX_RANDOM_ENGINE Box SM,3
-BOX_RANDOM_ENGINE Box Tesla,3
-BOX_RANDOM_ENGINE Box Singulo,3
-BOX_RANDOM_ENGINE Box SM 1x3,1
-BOX_RANDOM_ENGINE Box SM 5x5,1
-BOX_RANDOM_ENGINE Box SM 3x,0
-BOX_RANDOM_ENGINE Box TEG,3
-BOX_RANDOM_ENGINE Box Empty,0
-BOX_RANDOM_ENGINE Box Antimatter,1
-BOX_RANDOM_ENGINE Box P.A.C.M.A.N,1
 
 ## Overmap Settings ##
 

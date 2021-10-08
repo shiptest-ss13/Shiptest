@@ -345,12 +345,14 @@
 		to_chat(user, "<span class='notice'>You release the wisp. It begins to bob around your head.</span>")
 		icon_state = "lantern"
 		wisp.orbit(user, 20)
+		ADD_TRAIT(user, ORBITED_TRAIT, "orbited")
 		SSblackbox.record_feedback("tally", "wisp_lantern", 1, "Freed")
 
 	else
 		to_chat(user, "<span class='notice'>You return the wisp to the lantern.</span>")
 		icon_state = "lantern-blue"
 		wisp.forceMove(src)
+		REMOVE_TRAIT(user, ORBITED_TRAIT, "orbited")
 		SSblackbox.record_feedback("tally", "wisp_lantern", 1, "Returned")
 
 /obj/item/wisp_lantern/Initialize()
@@ -474,9 +476,9 @@
 	max_charges = 1
 	item_flags = NEEDS_PERMIT
 	force = 15
+	sharpness = IS_SHARP
 	block_chance = 25//A pittance, but might be worth something in a scuffle
 	hitsound = 'sound/weapons/chainhit.ogg'
-
 
 /obj/item/gun/magic/hook/melee_attack_chain(mob/user, atom/target, params)
 	..()
@@ -484,7 +486,7 @@
 
 /obj/item/gun/magic/hook/Initialize()
 	. = ..()
-	AddComponent(/datum/component/butchering, 15, 125, 0, hitsound)
+	AddComponent(/datum/component/butchering, 15, 130, 0, hitsound)
 
 /obj/item/ammo_casing/magic/hook
 	name = "hook"
@@ -508,7 +510,7 @@
 
 /obj/projectile/hook/fire(setAngle)
 	if(firer)
-		chain = firer.Beam(src, icon_state = "chain", time = INFINITY, maxdistance = INFINITY)
+		chain = firer.Beam(src, icon_state = "chain")
 	..()
 	//TODO: root the firer until the chain returns
 
@@ -1285,7 +1287,7 @@
 
 /obj/structure/closet/crate/necropolis/dragon/crusher/PopulateContents()
 	..()
-	new /obj/item/crusher_trophy/tail_spike(src)
+	new /obj/item/crusher_trophy/ash_spike(src)
 
 /obj/item/melee/ghost_sword
 	name = "\improper spectral blade"
