@@ -193,3 +193,37 @@
 	adjust_favor(round(the_cell.charge/500), L)
 	to_chat(L, "<span class='notice'>You offer [the_cell]'s power to [GLOB.deity], pleasing them.</span>")
 	qdel(I)
+
+
+/datum/religion_sect/clockwork
+	name = "Clockwork"
+	desc = "A sect oriented around gears and brass."
+	convert_opener = "Build for his honor, acolyte.<br>Bibles now teach the tongue of the Clockwork Justiciar. You can now sacrifice metal for favor."
+	alignment = ALIGNMENT_NEUT
+	desired_items = list(/obj/item/stack/sheet/metal)
+	rites_list = list(/datum/religion_rites/transmute_brass)
+	altar_icon_state = "convertaltar-red"
+
+/datum/religion_sect/clockwork/on_conversion(mob/living/L)
+	..()
+	L.grant_language(/datum/language/ratvar, TRUE, TRUE, LANGUAGE_MIND)
+	to_chat(L, "<span class='boldnotice'>The words of [GLOB.deity] fill your head!</span>")
+
+/datum/religion_sect/clockwork/sect_bless(mob/living/L, mob/living/user)
+	if(!L.has_language(/datum/language/ratvar, TRUE))
+		L.grant_language(/datum/language/ratvar, TRUE, TRUE, LANGUAGE_MIND)
+		L.visible_message("<span class='notice'>[user] enlightens [L] with the power of [GLOB.deity]!</span>")
+		to_chat(L, "<span class='boldnotice'>The words of [GLOB.deity] fill your head!</span>")
+
+	L.visible_message("<span class='notice'>[user] blesses [L] with the power of [GLOB.deity]!</span>")
+	playsound(user, 'sound/effects/bang.ogg', 25, TRUE, -1)
+	SEND_SIGNAL(L, COMSIG_ADD_MOOD_EVENT, "blessing", /datum/mood_event/blessing)
+	return TRUE
+
+/datum/religion_sect/clockwork/on_sacrifice(obj/item/I, mob/living/L)
+	if(!is_type_in_typecache(I, desired_items_typecache))
+		return
+	var/obj/item/stack/sheet/sheets = I
+	adjust_favor(sheets.amount, L)
+	to_chat(L, "<span class='notice'>You offer [sheets] to [GLOB.deity], pleasing them.</span>")
+	qdel(I)
