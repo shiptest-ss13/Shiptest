@@ -121,7 +121,6 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/powered)
 "dv" = (
-/mob/living/simple_animal/hostile/zombie,
 /obj/effect/decal/cleanable/blood/drip,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -144,10 +143,7 @@
 /turf/open/floor/plasteel,
 /area/ruin/powered)
 "ek" = (
-/obj/effect/turf_decal/arrows/white{
-	dir = 1
-	},
-/turf/open/floor/plating,
+/turf/closed/wall,
 /area/ruin/powered)
 "eo" = (
 /obj/effect/decal/cleanable/blood/splatter,
@@ -681,14 +677,6 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/white,
-/area/ruin/powered)
-"tS" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/decal/cleanable/dirt,
-/obj/item/paper/crumpled{
-	info = "the buttons... open the doors... did i ever mention how the buttons open the doors?"
-	},
-/turf/open/floor/vault,
 /area/ruin/powered)
 "tW" = (
 /obj/machinery/door/airlock/external/glass,
@@ -1384,7 +1372,7 @@
 /turf/open/floor/carpet/blue,
 /area/ruin/powered)
 "Kd" = (
-/turf/closed/wall,
+/turf/open/floor/plating,
 /area/ruin/powered)
 "Kk" = (
 /obj/item/reagent_containers/glass/mortar,
@@ -1625,6 +1613,11 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
 /area/ruin/powered)
+"PJ" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/vault,
+/area/ruin/powered)
 "Qz" = (
 /obj/structure/window/reinforced,
 /obj/structure/table/wood,
@@ -1854,11 +1847,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating,
 /area/ruin/powered)
-"Wz" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/vault,
-/area/ruin/powered)
 "WU" = (
 /obj/effect/spawner/lootdrop/maintenance,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -1968,10 +1956,12 @@
 /turf/open/floor/engine,
 /area/ruin/powered)
 "XN" = (
-/obj/structure/filingcabinet/filingcabinet,
-/obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plasteel/dark,
+/obj/effect/decal/cleanable/dirt,
+/obj/item/paper/crumpled{
+	info = "the buttons... open the doors... did i ever mention how the buttons open the doors?"
+	},
+/turf/open/floor/vault,
 /area/ruin/powered)
 "Yl" = (
 /obj/effect/turf_decal/corner/blue{
@@ -2729,8 +2719,8 @@ An
 An
 oP
 tZ
-tS
-Wz
+XN
+PJ
 hC
 An
 An
@@ -2812,7 +2802,7 @@ An
 oP
 XF
 Ey
-Wz
+PJ
 hC
 An
 Vj
@@ -2908,7 +2898,7 @@ AT
 VE
 so
 bb
-XN
+AT
 EH
 EH
 FI
@@ -3013,7 +3003,7 @@ Vj
 Hx
 Dp
 Dp
-XB
+Dp
 Vk
 lR
 Vk
@@ -3058,7 +3048,7 @@ Dp
 Dp
 lR
 Vk
-Zu
+Hx
 Vk
 Dp
 Dp
@@ -3466,7 +3456,7 @@ Vk
 fQ
 gE
 Zt
-jP
+LI
 jP
 LI
 BO
