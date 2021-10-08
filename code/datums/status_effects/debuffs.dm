@@ -365,7 +365,9 @@
 		blood_shackled = new_blood_shackled
 
 /datum/status_effect/blood_shackle/on_apply()
-	if(owner.mob_size >= MOB_SIZE_LARGE)
+	if(istype(owner, /mob/living/simple_animal/hostile/asteroid))
+		var/mob/living/simple_animal/L = owner
+		L.speed /= 3
 		marked_underlay = mutable_appearance('icons/effects/effects.dmi', "shield2")
 		marked_underlay.pixel_x = -owner.pixel_x
 		marked_underlay.pixel_y = -owner.pixel_y
@@ -376,6 +378,9 @@
 /datum/status_effect/blood_shackle/Destroy()
 	blood_shackled = null
 	if(owner)
+		if(istype(owner, /mob/living/simple_animal/hostile/asteroid))
+			var/mob/living/simple_animal/L = owner
+			L.speed *= 3
 		owner.underlays -= marked_underlay
 	QDEL_NULL(marked_underlay)
 	return ..()

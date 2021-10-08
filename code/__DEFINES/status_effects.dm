@@ -111,7 +111,7 @@
 
 #define STATUS_EFFECT_CRUSHERDAMAGETRACKING /datum/status_effect/crusher_damage //tracks total kinetic crusher damage on a target
 
-#define STATUS_EFFECT_BLESSINGDAMAGETRACKING /datum/status_effect/blessing_damage //tracks total Blood Blessing damage on a target and total kills
+#define STATUS_EFFECT_BLESSINGDAMAGETRACKING /datum/status_effect/blessing_damage //tracks total Blood Blessing damage on a target and helps it track total kills
 
 #define STATUS_EFFECT_SYPHONMARK /datum/status_effect/syphon_mark //tracks kills for the KA death syphon module
 
