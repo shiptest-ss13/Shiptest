@@ -247,6 +247,32 @@
 	user.Stun(40, ignore_canstun = TRUE)
 	user.petrify(30)
 
+/obj/item/book/granter/spell/cards
+	spell = /obj/effect/proc_holder/spell/aimed/spell_cards
+	spellname = "spellcards"
+	icon_state ="bookspellcards"
+	desc = "The ultimate card trick, for users ten and up."
+	remarks = list("It's all about the razzmataz.", "...I don't think I'll actually be sawing anyone in half", "These are pretty flimsy, most armor would defeat them.", "They do burn damage? Weird.", "Why the dumb stance? It's just a flick of the hand...", "Are these cards? They feel stiffer then pages.", "Best performed using a top hat...")
+
+/obj/item/book/granter/spell/cards/recoil(mob/living/user)
+	..()
+	to_chat(user,"<span class='warning'>The cards are against you!</span>")
+	user.Stun(40, ignore_canstun = TRUE)
+	user.petrify(30)
+
+/obj/item/book/granter/spell/shapechange
+	spell = /obj/effect/proc_holder/spell/targeted/shapeshift
+	spellname = "shapechange"
+	icon_state ="bookshapechange"
+	desc = "Half of the book is slash fiction about some kind of young adult novel."
+	remarks = list("There's a beast inside all of us.", "What's an animorph?", "There are rats in the walls. Join them.", "This could be worse than useless, or amazing...", "Run in the fields, hide through the forest...", "The pages feel a little furry.", "Can you hear the jungle rhythm?")
+
+/obj/item/book/granter/spell/shapechange/recoil(mob/living/carbon/user)
+	..()
+	to_chat(user,"<span class='warning'>You're feeling a little primitive...</span>")
+	user.Stun(40, ignore_canstun = TRUE)
+	user.monkeyize(TR_KEEPITEMS | TR_KEEPIMPLANTS | TR_KEEPORGANS | TR_KEEPDAMAGE | TR_KEEPVIRUS | TR_KEEPSTUNS | TR_KEEPREAGENTS | TR_KEEPSE)
+
 /obj/item/book/granter/spell/knock
 	spell = /obj/effect/proc_holder/spell/aoe_turf/knock
 	spellname = "knock"

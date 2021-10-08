@@ -291,7 +291,8 @@ Difficulty: Medium
 	desc = "A miner destined to hop across dimensions for all eternity, hunting anomalous creatures."
 	speed = 8
 	move_to_delay = 8
-	ranged_cooldown_time = 8
-	dash_cooldown = 8
+	ranged_cooldown_time = 15
+	dash_cooldown = 15
+	aggro_vision_range = 3
 
 #undef MINER_DASH_RANGE

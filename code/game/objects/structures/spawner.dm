@@ -1,3 +1,25 @@
+GLOBAL_LIST_INIT(astroloot, list(
+	/obj/item/stack/ore/uranium = 50,
+	/obj/item/stack/ore/iron = 50,
+	/obj/item/stack/ore/plasma = 75,
+	/obj/item/stack/ore/silver = 50,
+	/obj/item/stack/ore/gold = 50,
+	/obj/item/stack/ore/diamond = 25,
+	/obj/item/stack/ore/bananium = 5,
+	/obj/item/stack/ore/titanium = 75,
+	/obj/item/stack/ore/bluespace_crystal = 10,
+	/obj/item/pickaxe/diamond = 5,
+	/obj/item/t_scanner/adv_mining_scanner/lesser = 5,
+	/obj/item/kinetic_crusher = 5,
+	/obj/effect/mob_spawn/human/corpse/damaged/legioninfested = 5,
+	/obj/item/tank/jetpack/suit = 5,
+	/obj/item/survivalcapsule = 5,
+	/obj/item/reagent_containers/hypospray/medipen/survival = 5,
+	/obj/item/card/mining_point_card = 5,
+	/obj/item/extraction_pack = 5,
+	/obj/item/reagent_containers/food/drinks/beer = 5,
+	))
+
 /obj/structure/spawner
 	name = "monster nest"
 	icon = 'icons/mob/animal.dmi'
@@ -57,6 +79,10 @@
 	spawn_text = "climbs out of"
 	faction = list("clown")
 
+/obj/structure/spawner/mining/proc/adestroy_effect()
+	playsound(loc,'sound/effects/explosionfar.ogg', 200, TRUE)
+	visible_message("<span class='boldannounce'>[src] collapses, sealing everything inside!</span>\n<span class='warning'>Ores fall out of the cave as it is destroyed!</span>")
+
 /obj/structure/spawner/mining
 	name = "monster den"
 	desc = "A hole dug into the ground, harboring all kinds of monsters found within most caves or mining asteroids."
@@ -67,6 +93,18 @@
 	spawn_text = "crawls out of"
 	mob_types = list(/mob/living/simple_animal/hostile/asteroid/goldgrub, /mob/living/simple_animal/hostile/asteroid/goliath, /mob/living/simple_animal/hostile/asteroid/hivelord, /mob/living/simple_animal/hostile/asteroid/basilisk, /mob/living/simple_animal/hostile/asteroid/fugu)
 	faction = list("mining")
+
+/obj/structure/spawner/mining/deconstruct(disassembled)
+	adestroy_effect()
+	drop_astroloot()
+	return ..()
+
+/obj/structure/spawner/mining/proc/drop_astroloot()
+	for(var/type in GLOB.astroloot)
+		var/chance = GLOB.astroloot[type]
+		if(!prob(chance))
+			continue
+		new type(loc, rand(5, 17))
 
 /obj/structure/spawner/mining/goldgrub
 	name = "goldgrub den"
