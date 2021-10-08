@@ -378,7 +378,7 @@
 /datum/status_effect/blood_shackle/Destroy()
 	blood_shackled = null
 	if(owner)
-		if(istype(owner, /mob/living/simple_animal/hostile/asteroid || istype(owner, /mob/living/simple_animal/hostile/megafauna))
+		if(istype(owner, /mob/living/simple_animal/hostile/asteroid) || istype(owner, /mob/living/simple_animal/hostile/megafauna))
 			var/mob/living/simple_animal/L = owner
 			L.speed *= 3
 		owner.underlays -= marked_underlay
