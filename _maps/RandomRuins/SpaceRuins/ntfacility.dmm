@@ -319,7 +319,6 @@
 "hC" = (
 /obj/machinery/light/small,
 /obj/machinery/door/poddoor/preopen,
-/obj/machinery/door/firedoor/heavy,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/button/door{
@@ -358,7 +357,6 @@
 /area/ruin/powered)
 "it" = (
 /obj/machinery/door/poddoor/preopen,
-/obj/machinery/door/firedoor/heavy,
 /obj/effect/spawner/lootdrop/maintenance/five,
 /obj/structure/closet/crate,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -544,7 +542,6 @@
 	dir = 1
 	},
 /obj/machinery/door/poddoor/preopen,
-/obj/machinery/door/firedoor/heavy,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/vault,
@@ -587,7 +584,6 @@
 	dir = 4
 	},
 /obj/machinery/door/poddoor/preopen,
-/obj/machinery/door/firedoor/heavy,
 /obj/effect/decal/cleanable/blood/splatter,
 /obj/structure/sign/poster/retro/nanotrasen_logo_70s{
 	pixel_x = 32
@@ -686,6 +682,14 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/white,
 /area/ruin/powered)
+"tS" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt,
+/obj/item/paper/crumpled{
+	info = "the buttons... open the doors... did i ever mention how the buttons open the doors?"
+	},
+/turf/open/floor/vault,
+/area/ruin/powered)
 "tW" = (
 /obj/machinery/door/airlock/external/glass,
 /obj/effect/decal/cleanable/blood/tracks{
@@ -696,10 +700,11 @@
 /turf/open/floor/plating,
 /area/ruin/powered)
 "tZ" = (
-/obj/machinery/door/poddoor/preopen,
-/obj/machinery/door/firedoor/heavy,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt,
+/obj/item/ammo_box/magazine/m10mm{
+	start_empty = 1
+	},
 /turf/open/floor/vault,
 /area/ruin/powered)
 "ue" = (
@@ -794,7 +799,6 @@
 /area/ruin/powered)
 "xf" = (
 /obj/machinery/door/poddoor/preopen,
-/obj/machinery/door/firedoor/heavy,
 /obj/effect/decal/cleanable/blood/splatter,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt,
@@ -840,10 +844,6 @@
 /area/ruin/powered)
 "yQ" = (
 /obj/machinery/door/poddoor/preopen,
-/obj/machinery/door/firedoor/heavy,
-/obj/item/ammo_box/magazine/pistolm9mm{
-	start_empty = 1
-	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/vault,
@@ -879,8 +879,6 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/powered)
 "zx" = (
-/obj/machinery/door/poddoor/preopen,
-/obj/machinery/door/firedoor/heavy,
 /obj/effect/decal/cleanable/blood/gibs/core,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt,
@@ -1070,8 +1068,6 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/powered)
 "Ey" = (
-/obj/machinery/door/poddoor/preopen,
-/obj/machinery/door/firedoor/heavy,
 /obj/item/storage/backpack/duffelbag/syndie/c4,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt,
@@ -1157,7 +1153,6 @@
 /area/ruin/powered)
 "FQ" = (
 /obj/machinery/door/poddoor/preopen,
-/obj/machinery/door/firedoor/heavy,
 /obj/machinery/light/small{
 	brightness = 3;
 	dir = 8
@@ -1284,8 +1279,6 @@
 /obj/structure/displaycase/captain{
 	start_showpiece_type = /obj/item/gun/energy/laser/hitscanpistol
 	},
-/obj/machinery/door/poddoor/preopen,
-/obj/machinery/door/firedoor/heavy,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/vault,
@@ -1540,7 +1533,6 @@
 /area/ruin/powered)
 "ML" = (
 /obj/machinery/door/poddoor/preopen,
-/obj/machinery/door/firedoor/heavy,
 /obj/structure/closet/crate,
 /obj/effect/spawner/lootdrop/maintenance/five,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -1619,8 +1611,6 @@
 /turf/open/floor/carpet/blue,
 /area/ruin/powered)
 "Pn" = (
-/obj/machinery/door/poddoor/preopen,
-/obj/machinery/door/firedoor/heavy,
 /obj/effect/mob_spawn/human/corpse/syndicatesoldier,
 /obj/effect/decal/cleanable/blood,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -1685,7 +1675,6 @@
 	dir = 4
 	},
 /obj/machinery/door/poddoor/preopen,
-/obj/machinery/door/firedoor/heavy,
 /obj/structure/sign/poster/retro/nanotrasen_logo_70s{
 	pixel_x = 32
 	},
@@ -1695,7 +1684,6 @@
 /area/ruin/powered)
 "Rw" = (
 /obj/machinery/door/poddoor/preopen,
-/obj/machinery/door/firedoor/heavy,
 /obj/structure/closet/crate,
 /obj/effect/spawner/lootdrop/maintenance/five,
 /obj/item/camera_bug,
@@ -1866,6 +1854,11 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating,
 /area/ruin/powered)
+"Wz" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/vault,
+/area/ruin/powered)
 "WU" = (
 /obj/effect/spawner/lootdrop/maintenance,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -1943,8 +1936,6 @@
 /turf/open/floor/carpet/blue,
 /area/ruin/powered)
 "XF" = (
-/obj/machinery/door/poddoor/preopen,
-/obj/machinery/door/firedoor/heavy,
 /obj/item/gun/ballistic/automatic/pistol/no_mag,
 /obj/effect/decal/cleanable/blood/gibs,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -2738,8 +2729,8 @@ An
 An
 oP
 tZ
-tZ
-tZ
+tS
+Wz
 hC
 An
 An
@@ -2781,7 +2772,7 @@ yQ
 Pn
 IA
 zx
-tZ
+yQ
 YM
 vb
 yC
@@ -2821,7 +2812,7 @@ An
 oP
 XF
 Ey
-tZ
+Wz
 hC
 An
 Vj
@@ -2861,7 +2852,7 @@ If
 An
 it
 qm
-tZ
+yQ
 Rs
 Rw
 An
