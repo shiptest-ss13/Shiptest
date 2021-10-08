@@ -20,10 +20,27 @@
 				. += mutable_appearance('icons/effects/blood.dmi', "maskblood")
 
 /obj/item/clothing/neck/tie
-	name = "tie"
-	desc = "A neosilk clip-on tie."
+	name = "recolorable tie"
+	desc = "A neosilk clip-on tie. Special material allows it to be reskinned by Alt-clicking it."
 	icon = 'icons/obj/clothing/neck.dmi'
-	icon_state = "bluetie"
+	unique_reskin = list("blue tie" = "bluetie",
+						"red tie" = "redtie",
+						"blue hypovial" = "hypovial-d",
+						"black tie" = "blacktie",
+						"rainbow tie" = "rainbow_tie",
+						"horrible tie" = "horribletie",
+						"transgender tie" = "transgender",
+						"pansexual tie" = "pansexual",
+						"nonbinary tie" = "nonbinary",
+						"bisexual tie" = "bisexual",
+						"lesbian tie" = "lesbian",
+						"intersex tie" = "intersex",
+						"gay tie" = "gay",
+						"genderfluid tie" = "genderfluid",
+						"asexual tie" = "asexual",
+						"genderfae tie" = "genderfae"
+						)
+	icon_state = "rainbow_tie"
 	item_state = ""	//no inhands
 	w_class = WEIGHT_CLASS_SMALL
 	custom_price = 60
@@ -44,7 +61,7 @@
 
 /obj/item/clothing/neck/tie/rainbow
 	name = "rainbow tie"
-	icon_state = "rainbow"
+	icon_state = "rainbow_tie"
 
 /obj/item/clothing/neck/tie/horrible
 	name = "horrible tie"
@@ -55,6 +72,7 @@
 	name = "loose tie"
 	desc = "A loosely tied necktie, a perfect accessory for the over-worked detective."
 	icon_state = "detective"
+	unique_reskin = null
 
 /obj/item/clothing/neck/tie/trans
 	name = "transgender tie"
