@@ -131,7 +131,7 @@
 	glass_desc = "A spin on the classic. Artists and street fighters swear by this stuff."
 	var/list/potential_colors = list("0ad","a0f","f73","d14","d14","0b5","0ad","f73","fc2","084","05e","d22","fa0")
 	
-/datum/reagent/consumable/ethanol/out_of_limeNew()
+/datum/reagent/consumable/ethanol/out_of_lime/New()
 	SSticker.OnRoundstart(CALLBACK(src,.proc/update_color))
 
 /datum/reagent/consumable/ethanol/out_of_lime/proc/update_color()
