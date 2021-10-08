@@ -25,7 +25,7 @@
 	icon = 'icons/obj/clothing/neck.dmi'
 	unique_reskin = list("blue tie" = "bluetie",
 						"red tie" = "redtie",
-						"blue hypovial" = "hypovial-d",
+						"blue tie" = "hypovial-d",
 						"black tie" = "blacktie",
 						"rainbow tie" = "rainbow_tie",
 						"horrible tie" = "horribletie",
