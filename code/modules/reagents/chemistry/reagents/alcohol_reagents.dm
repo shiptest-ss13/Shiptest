@@ -2241,12 +2241,12 @@ All effects don't start immediately, but rather get worse over time; the rate is
 /datum/reagent/consumable/ethanol/mudders_milk
 	name = "mudder's milk"
 	color = "#dfc794"
-	description = "all the protein, vitamins and carbs of your grandma's best turkey dinner, plus 15 percent alcohol."
+	description = "All the protein, vitamins and carbs of your grandma's best turkey dinner, plus 15 percent alcohol."
 	boozepwr = 15
 	taste_description = "thick, nutty milk, with a boozy kick"
 	glass_icon_state = "muddersmilk"
-	glass_name = "mudder's milk"
-	glass_desc = "all the protein, vitamins and carbs of your grandma's best turkey dinner, plus 15 percent alcohol."
+	glass_name = "Mudder's Milk"
+	glass_desc = "All the protein, vitamins and carbs of your grandma's best turkey dinner, plus 15 percent alcohol."
 
 /datum/reagent/consumable/ethanol/mudders_milk/on_mob_life(mob/living/carbon/M)
 	if(prob(1))
