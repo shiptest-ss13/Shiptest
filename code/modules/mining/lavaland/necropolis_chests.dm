@@ -1287,7 +1287,7 @@
 
 /obj/structure/closet/crate/necropolis/dragon/crusher/PopulateContents()
 	..()
-	new /obj/item/crusher_trophy/tail_spike(src)
+	new /obj/item/crusher_trophy/ash_spike(src)
 
 /obj/item/melee/ghost_sword
 	name = "\improper spectral blade"
