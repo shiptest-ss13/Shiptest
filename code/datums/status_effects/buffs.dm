@@ -165,6 +165,136 @@
 	deathrattle()
 	. = ..()
 
+/datum/status_effect/bloodlusty
+	id = "bloodlusty"
+	duration = 10
+	tick_interval = 0
+	alert_type = /atom/movable/screen/alert/status_effect/bloodlusty
+	var/last_health = 0
+	var/last_bruteloss = 0
+	var/last_fireloss = 0
+	var/last_toxloss = 0
+	var/last_oxyloss = 0
+	var/last_cloneloss = 0
+	var/last_staminaloss = 0
+	var/health_multiplier = 100
+
+/atom/movable/screen/alert/status_effect/bloodlusty
+	name = "Lust Blood"
+	desc = "Your cursed arm is satiated and strengthens you, making you more resistant!" //not true, and the item description mentions its actual effect
+	icon_state = "blooddrunk"
+
+/datum/status_effect/bloodlusty/on_apply(var/new_damage_percentile)
+	if(new_damage_percentile == 0)
+		return FALSE
+	. = ..()
+	if(.)
+		health_multiplier /= new_damage_percentile
+		ADD_TRAIT(owner, TRAIT_IGNOREDAMAGESLOWDOWN, "bloodlust")
+		owner.maxHealth *= health_multiplier
+		owner.bruteloss *= health_multiplier
+		owner.fireloss *= health_multiplier
+		if(iscarbon(owner))
+			var/mob/living/carbon/C = owner
+			for(var/X in C.bodyparts)
+				var/obj/item/bodypart/BP = X
+				BP.max_damage *= health_multiplier
+				BP.brute_dam *= health_multiplier
+				BP.burn_dam *= health_multiplier
+		owner.toxloss *= health_multiplier
+		owner.oxyloss *= health_multiplier
+		owner.cloneloss *= health_multiplier
+		owner.staminaloss *= health_multiplier
+		owner.updatehealth()
+		last_health = owner.health
+		last_bruteloss = owner.getBruteLoss()
+		last_fireloss = owner.getFireLoss()
+		last_toxloss = owner.getToxLoss()
+		last_oxyloss = owner.getOxyLoss()
+		last_cloneloss = owner.getCloneLoss()
+		last_staminaloss = owner.getStaminaLoss()
+		owner.log_message("gained bloodlust stun immunity", LOG_ATTACK)
+		owner.add_stun_absorption("bloodlusty", INFINITY, 4)
+		owner.playsound_local(get_turf(owner), 'sound/effects/singlebeat.ogg', 40, 1, use_reverb = FALSE)
+
+/datum/status_effect/bloodlusty/tick() //multiply the effect of healing by 10
+	if(owner.health > last_health)
+		var/needs_health_update = FALSE
+		var/new_bruteloss = owner.getBruteLoss()
+		if(new_bruteloss < last_bruteloss)
+			var/heal_amount = (new_bruteloss - last_bruteloss) * health_multiplier
+			owner.adjustBruteLoss(heal_amount, updating_health = FALSE)
+			new_bruteloss = owner.getBruteLoss()
+			needs_health_update = TRUE
+		last_bruteloss = new_bruteloss
+
+		var/new_fireloss = owner.getFireLoss()
+		if(new_fireloss < last_fireloss)
+			var/heal_amount = (new_fireloss - last_fireloss) * health_multiplier
+			owner.adjustFireLoss(heal_amount, updating_health = FALSE)
+			new_fireloss = owner.getFireLoss()
+			needs_health_update = TRUE
+		last_fireloss = new_fireloss
+
+		var/new_toxloss = owner.getToxLoss()
+		if(new_toxloss < last_toxloss)
+			var/heal_amount = (new_toxloss - last_toxloss) * health_multiplier
+			owner.adjustToxLoss(heal_amount, updating_health = FALSE)
+			new_toxloss = owner.getToxLoss()
+			needs_health_update = TRUE
+		last_toxloss = new_toxloss
+
+		var/new_oxyloss = owner.getOxyLoss()
+		if(new_oxyloss < last_oxyloss)
+			var/heal_amount = (new_oxyloss - last_oxyloss) * health_multiplier
+			owner.adjustOxyLoss(heal_amount, updating_health = FALSE)
+			new_oxyloss = owner.getOxyLoss()
+			needs_health_update = TRUE
+		last_oxyloss = new_oxyloss
+
+		var/new_cloneloss = owner.getCloneLoss()
+		if(new_cloneloss < last_cloneloss)
+			var/heal_amount = (new_cloneloss - last_cloneloss) * health_multiplier
+			owner.adjustCloneLoss(heal_amount, updating_health = FALSE)
+			new_cloneloss = owner.getCloneLoss()
+			needs_health_update = TRUE
+		last_cloneloss = new_cloneloss
+
+		var/new_staminaloss = owner.getStaminaLoss()
+		if(new_staminaloss < last_staminaloss)
+			var/heal_amount = (new_staminaloss - last_staminaloss) * health_multiplier
+			owner.adjustStaminaLoss(heal_amount, updating_health = FALSE)
+			new_staminaloss = owner.getStaminaLoss()
+			needs_health_update = TRUE
+		last_staminaloss = new_staminaloss
+
+		if(needs_health_update)
+			owner.updatehealth()
+			owner.playsound_local(get_turf(owner), 'sound/effects/singlebeat.ogg', 40, 1)
+	last_health = owner.health
+
+/datum/status_effect/bloodlusty/on_remove()
+	tick()
+	owner.maxHealth /= health_multiplier
+	owner.bruteloss /= health_multiplier
+	owner.fireloss /= health_multiplier
+	if(iscarbon(owner))
+		var/mob/living/carbon/C = owner
+		for(var/X in C.bodyparts)
+			var/obj/item/bodypart/BP = X
+			BP.brute_dam /= health_multiplier
+			BP.burn_dam /= health_multiplier
+			BP.max_damage /= health_multiplier
+	owner.toxloss /= health_multiplier
+	owner.oxyloss /= health_multiplier
+	owner.cloneloss /= health_multiplier
+	owner.staminaloss /= health_multiplier
+	owner.updatehealth()
+	owner.log_message("lost bloodlust stun immunity", LOG_ATTACK)
+	REMOVE_TRAIT(owner, TRAIT_IGNOREDAMAGESLOWDOWN, "bloodlusty");
+	if(islist(owner.stun_absorption) && owner.stun_absorption["bloodlusty"])
+		owner.stun_absorption -= "bloodlusty"
+
 /datum/status_effect/blooddrunk
 	id = "blooddrunk"
 	duration = 10

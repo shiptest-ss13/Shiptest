@@ -1911,7 +1911,7 @@
 	var/mob/living/carbon/itemUser = user
 	var/prev_select = user.zone_selected
 	targetHand = itemUser.get_held_index_of_item(!src)
-	itemUser.zone_selected = targetHand
+	user.zone_selected = targetHand
 	if(itemUser.has_status_effect(STATUS_EFFECT_HIPPOCRATIC_OATH))
 		to_chat(user, "<span class='warning'>You can't possibly handle the conflicting oath!</span>")
 		return
@@ -1950,7 +1950,7 @@
 	var/datum/status_effect/hunters_oath/effect = itemUser.apply_status_effect(STATUS_EFFECT_HUNTERS_OATH)
 	effect.hand = targetHand
 	qdel(src)
-	itemUser.zone_selected = prev_select
+	user.zone_selected = prev_select
 
 //Ritual procs
 /obj/item/blood_blessing/proc/stab_self(mob/living/user)
@@ -1988,6 +1988,7 @@
 	light_on = FALSE
 	var/list/kill_tracker = list()
 	var/list/markings = list()
+	var/speedy = FALSE
 	var/charged = TRUE
 	var/charge_time = 12
 	var/maximum_souls = 50
@@ -2089,6 +2090,11 @@
 				playsound(user, 'sound/weapons/kenetic_accel.ogg', 100, TRUE)
 			else
 				L.apply_damage(detonation_damage + (souls_reaped * soul_power), BRUTE, blocked = def_check)
+
+/obj/item/blood_blessing/activated/melee_attack_chain(mob/user, atom/target, params)
+	..()
+	if(speedy == TRUE)
+		user.changeNext_move(CLICK_CD_MELEE * 0.75)
 
 //Overlays and light
 /obj/item/blood_blessing/activated/proc/Recharge()
@@ -2203,6 +2209,16 @@
 			kill_tracker["Magmawing Watcher Kills"] = 1
 		else
 			kill_tracker["Magmawing Watcher Kills"] += 1
+	if(istype(L, /mob/living/simple_animal/hostile/asteroid/polarbear/warrior))
+		if(!kill_tracker["Polar Warbear Kills"])
+			kill_tracker["Polar Warbear Kills"] = 1
+		else
+			kill_tracker["Polar Warbear Kills"] += 1
+	if(istype(L, /mob/living/simple_animal/hostile/asteroid/wolf/alpha))
+		if(!kill_tracker["Alpha Wolf Kills"])
+			kill_tracker["Alpha Wolf Kills"] = 1
+		else
+			kill_tracker["Alpha Wolf Kills"] += 1
 //Elite Trackers
 	if(istype(L, /mob/living/simple_animal/hostile/asteroid/elite/broodmother))
 		if(!kill_tracker["Goliath Broodmother Kills"])
@@ -2253,10 +2269,10 @@
 		var/obj/item/blood_marking/MA = new /obj/item/blood_marking/freezing_mark/
 		add_mark(MA, curse_owner)
 	if(kill_tracker["Polar Bear"] >= reward_minimum_multiplier * 10)
-		var/obj/item/blood_marking/MA = new /obj/item/blood_marking/demon_mark/
+		var/obj/item/blood_marking/MA = new /obj/item/blood_marking/bloodlust_mark
 		add_mark(MA, curse_owner)
 	if(kill_tracker["Wolf"] >= reward_minimum_multiplier * 10)
-		var/obj/item/blood_marking/MA = new /obj/item/blood_marking/heating_mark/
+		var/obj/item/blood_marking/MA = new /obj/item/blood_marking/bloodrush_mark
 		add_mark(MA, curse_owner)
 //Soul upgrades
 	if(kill_tracker["Goliath Souls"] >= reward_minimum_multiplier * 30)
@@ -2268,13 +2284,19 @@
 	if(kill_tracker["Watcher Souls"] >= reward_minimum_multiplier* 3)
 		var/obj/item/blood_marking/MA = new /obj/item/blood_marking/freezing_mark/icewing/
 		add_mark(MA, curse_owner)
+	if(kill_tracker["Polar Bear"] >= reward_minimum_multiplier * 30)
+		var/obj/item/blood_marking/MA = new /obj/item/blood_marking/bloodlust_mark/warbear
+		add_mark(MA, curse_owner)
+	if(kill_tracker["Wolf"] >= reward_minimum_multiplier * 30)
+		var/obj/item/blood_marking/MA = new /obj/item/blood_marking/bloodrush_mark/alpha
+		add_mark(MA, curse_owner)
 	if(kill_tracker["Goliath Souls"] >= reward_minimum_multiplier * 50)
 		var/obj/item/blood_marking/MA = new /obj/item/blood_marking/tentacle_mark/ancient/broodmother/
 		add_mark(MA, curse_owner)
 	if(kill_tracker["Legion Souls"] >= reward_minimum_multiplier * 50)
 		var/obj/item/blood_marking/MA = new /obj/item/blood_marking/skull_mark/dwarf/legionnaire/
 		add_mark(MA, curse_owner)
-	if(kill_tracker["Watcher Souls"] >= reward_minimum_multiplier * 6)
+	if(kill_tracker["Watcher Souls"] >= reward_minimum_multiplier * 50)
 		var/obj/item/blood_marking/MA = new /obj/item/blood_marking/heating_mark/
 		add_mark(MA, curse_owner)
 //Rare kill rewards
@@ -2290,6 +2312,12 @@
 	if(kill_tracker["Magmawing Watcher Kills"] >= reward_minimum_multiplier)
 		var/obj/item/blood_marking/MA = new /obj/item/blood_marking/heating_mark/
 		add_mark(MA, curse_owner)
+	if(kill_tracker["Polar Warbear Kills"] >= reward_minimum_multiplier)
+		var/obj/item/blood_marking/MA = new /obj/item/blood_marking/bloodlust_mark/warbear
+		add_mark(MA, curse_owner)
+	if(kill_tracker["Alpha Wolf Kills"] >= reward_minimum_multiplier)
+		var/obj/item/blood_marking/MA = new /obj/item/blood_marking/bloodrush_mark/alpha
+		add_mark(MA, curse_owner)
 //Elite kill rewards
 	if(kill_tracker["Goliath Broodmother Kills"] >= reward_minimum_multiplier)
 		var/obj/item/blood_marking/MA = new /obj/item/blood_marking/tentacle_mark/ancient/broodmother/
@@ -2302,7 +2330,7 @@
 		var/obj/item/blood_marking/MA = new /obj/item/blood_marking/vortex_mark/
 		add_mark(MA, curse_owner)
 	if(kill_tracker["Blood-drunk Miner Kills"] >= reward_minimum_multiplier)
-		var/obj/item/blood_marking/MA = new /obj/item/blood_marking/bloodlust_mark/
+		var/obj/item/blood_marking/MA = new /obj/item/blood_marking/bloodlust_mark/warbear/miner/
 		add_mark(MA, curse_owner)
 	if(kill_tracker["Bubblegum Kills"] >= reward_minimum_multiplier)
 		var/obj/item/blood_marking/MA = new /obj/item/blood_marking/demon_mark/
@@ -2328,7 +2356,7 @@
 		add_mark(MA, curse_owner)
 	if(kill_tracker["Total Souls"] >= reward_minimum_multiplier * 400)
 		block_chance = 40
-		var/obj/item/blood_marking/MA = new /obj/item/blood_marking/bloodlust_mark/
+		var/obj/item/blood_marking/MA = new /obj/item/blood_marking/bloodlust_mark/warbear/miner/
 		add_mark(MA, curse_owner)
 	if(kill_tracker["Total Souls"] >= reward_minimum_multiplier * 500)
 		block_chance = 50
@@ -2390,7 +2418,7 @@
 		..()
 
 
-//Markings, make sure to add their treshold to add_mark if they are intended to be obtainable normally.
+//Markings, make sure to add their treshold to add_mark if they are intended to be obtainable normally, all marks should be obtainable normally, do not add ones that conflict with regular marks, if you must add conflicting ones make them individually removeable and not conflicting with any of the regular ones.
 /obj/item/blood_marking
 	name = "Mark of Blankness"
 	desc = "Nothing at all."
@@ -2457,6 +2485,7 @@
 		target.anchored = TRUE
 		addtimer(CALLBACK(target.anchored = FALSE), bonus_value)
 
+//Ancient Goliath
 /obj/item/blood_marking/tentacle_mark/ancient
 	name = "Mark of Tentacles"
 	desc = "A mark depicting the several tentacles of an ancient goliath."
@@ -2465,12 +2494,13 @@
 	upgrade_type = /obj/item/blood_marking/tentacle_mark/ancient/broodmother
 
 /obj/item/blood_marking/tentacle_mark/ancient/effect_desc()
-	return "Your shackles hold the target in place for <b>[bonus_value*0.1]</b> second before weakening, and their snare deals [bonus_value] damage. Breaking the shackles has a chance to hold nearby enemies in place."
+	return "Your shackles hold the target in place for <b>[bonus_value*0.1]</b> seconds before weakening, and their snare deals [bonus_value] damage. Breaking the shackles has a chance to hold nearby enemies in place."
 
 /obj/item/blood_marking/tentacle_mark/ancient/on_mark_detonation(mob/living/target, mob/living/user)
 	if(target.stat != DEAD && prob(10))
 		new /obj/effect/temp_visual/goliath_tentacle/original(get_turf(target), user)
 
+//Goliath Broodmother
 /obj/item/blood_marking/tentacle_mark/ancient/broodmother
 	name = "Mark of Many Tentacles"
 	desc = "A mark depicting a goliath broodmother."
@@ -2550,6 +2580,74 @@
 		T = get_step(T, i)
 		new /obj/effect/temp_visual/goliath_tentacle/broodmother(T, spawner) */
 //TODO: Redo these to use as the effect.
+
+//Legion
+/obj/item/blood_marking/skull_mark
+	name = "Mark of the Skull"
+	desc = "A mark depicting a vile skull of the legion."
+	icon_state = "legion_skull"
+	denied_type = /obj/item/blood_marking/skull_mark
+	upgrade_type = /obj/item/blood_marking/skull_mark/dwarf
+	bonus_value = 1
+	var/missing_health_ratio = 0.1
+	var/missing_health_desc = 10
+
+/obj/item/blood_marking/skull_mark/effect_desc()
+	return "Allows you to harness the power of the legion the more you are hurt, recharging your shackles <b>[bonus_value*0.1]</b> second\s faster and dealing <b>[bonus_value]</b> more damage when breaking them for every <b>[missing_health_desc]</b> health you are missing."
+
+/obj/item/blood_marking/skull_mark/add_to(obj/item/blood_blessing/activated/H, mob/living/user)
+	. = ..()
+	if(.)
+		var/missing_health = user.maxHealth - user.health
+		missing_health *= missing_health_ratio
+		missing_health *= bonus_value
+		H.charge_time = max(H.charge_time - missing_health, 2)
+
+/obj/item/blood_marking/skull_mark/remove_from(obj/item/blood_blessing/activated/H, mob/living/user)
+	. = ..()
+	if(.)
+		var/missing_health = user.maxHealth - user.health
+		missing_health *= missing_health_ratio
+		missing_health *= bonus_value
+		H.charge_time = max(H.charge_time + missing_health, 2)
+
+/obj/item/blood_marking/skull_mark/on_mark_detonation(mob/living/target, mob/living/user)
+	var/missing_health = user.maxHealth - user.health
+	missing_health *= missing_health_ratio
+	missing_health *= bonus_value
+	if(missing_health > 0)
+		target.adjustBruteLoss(missing_health)
+
+//Dwarf Legion
+/obj/item/blood_marking/skull_mark/dwarf
+	name = "Mark of the Dwarf's Skull"
+	desc = "A mark depicting a smaller legion."
+	icon_state = "legion_skull"
+	upgrade_type = /obj/item/blood_marking/skull_mark/dwarf/legionnaire
+	bonus_value = 2
+
+//Legionnaire
+/obj/item/blood_marking/skull_mark/dwarf/legionnaire
+	name = "Mark of the Greater Skull"
+	desc = "A mark depicting the imposing legionnaire."
+	icon_state = "legion_skull"
+	upgrade_type = null
+	bonus_value = 3
+
+/obj/item/blood_marking/skull_mark/dwarf/legionnaire/effect_desc()
+	return "Allows you to harness the power of the legion the more you are hurt, recharging your shackles faster the more health you are missing and dealing <b>[bonus_value]</b> more damage when breaking them for every <b>[missing_health_desc]</b> health you are missing, alongside that, it has a chance to cause you to attack again, which is higher the lower your health, up to a maximum of <b>90%</b>."
+
+/obj/item/blood_marking/skull_mark/dwarf/legionnaire/on_mark_detonation(mob/living/target, mob/living/user)
+	var/missing_health = user.maxHealth - user.health
+	var/chance_for_attack = min(missing_health, 90)
+	missing_health *= missing_health_ratio
+	missing_health *= bonus_value
+	if(missing_health > 0)
+		target.adjustBruteLoss(missing_health)
+	if(prob(chance_for_attack))
+		var/obj/item/blood_blessing/activated/ARM = user.get_active_held_item()
+		ARM.attack(target, user)
+
 //Watcher
 /obj/item/blood_marking/freezing_mark
 	name = "Mark of Freezing"
@@ -2570,7 +2668,6 @@
 				H.ranged_cooldown += bonus_value
 			else
 				H.ranged_cooldown = bonus_value + world.time
-
 
 //Icewing Watcher
 /obj/item/blood_marking/freezing_mark/icewing
@@ -2605,83 +2702,61 @@
 	if(!QDELETED(target) && !QDELETED(user) && (!target.anchored || ismegafauna(target))) //megafauna will always be pushed
 		step(target, get_dir(user, target))
 
-//Legion
-/obj/item/blood_marking/skull_mark
-	name = "Mark of the Skull"
-	desc = "A mark depicting a vile skull of the legion."
-	icon_state = "legion_skull"
-	denied_type = /obj/item/blood_marking/skull_mark
-	upgrade_type = /obj/item/blood_marking/skull_mark/dwarf
-	bonus_value = 1
-	var/missing_health_ratio = 0.1
-	var/missing_health_desc = 10
-
-/obj/item/blood_marking/skull_mark/effect_desc()
-	return "Allows you to harness the power of the legion the more you are hurt, recharging your shackles <b>[bonus_value*0.1]</b> second\s faster and dealing <b>[bonus_value]</b> more damage when breaking them for every <b>[missing_health_desc]</b> health you are missing."
-
-/obj/item/blood_marking/skull_mark/add_to(obj/item/blood_blessing/activated/H, mob/living/user)
-	. = ..()
-	if(.)
-		var/missing_health = user.health - user.maxHealth
-		missing_health *= missing_health_ratio
-		missing_health *= bonus_value
-		H.charge_time = max(H.charge_time - missing_health, 2)
-
-/obj/item/blood_marking/skull_mark/remove_from(obj/item/blood_blessing/activated/H, mob/living/user)
-	. = ..()
-	if(.)
-		var/missing_health = user.health - user.maxHealth
-		missing_health *= missing_health_ratio
-		missing_health *= bonus_value
-		H.charge_time = max(H.charge_time + missing_health, 2)
-
-/obj/item/blood_marking/skull_mark/on_mark_detonation(mob/living/target, mob/living/user)
-	var/missing_health = user.health - user.maxHealth
-	missing_health *= missing_health_ratio
-	missing_health *= bonus_value
-	if(missing_health > 0)
-		target.adjustBruteLoss(missing_health)
-
-/obj/item/blood_marking/skull_mark/dwarf
-	name = "Mark of the Dwarf's Skull"
-	desc = "A mark depicting a smaller legion."
-	icon_state = "legion_skull"
-	upgrade_type = /obj/item/blood_marking/skull_mark/dwarf/legionnaire
-	bonus_value = 2
-
-/obj/item/blood_marking/skull_mark/dwarf/legionnaire
-	name = "Mark of the Greater Skull"
-	desc = "A mark depicting the imposing legionnaire."
-	icon_state = "legion_skull"
-	upgrade_type = null
-	bonus_value = 3
-
-/obj/item/blood_marking/skull_mark/dwarf/legionnaire/effect_desc()
-	return "Allows you to harness the power of the legion the more you are hurt, recharging your shackles faster the more health you are missing and dealing <b>[bonus_value]</b> more damage when breaking them for every <b>[missing_health_desc]</b> health you are missing, alongside that, it has a chance to cause you to attack again, which is higher the lower your health, up to a maximum of 90%."
-
-/obj/item/blood_marking/skull_mark/dwarf/legionnaire/on_mark_detonation(mob/living/target, mob/living/user)
-	var/missing_health = user.health - user.maxHealth
-	var/chance_for_attack = min(missing_health, 90)
-	missing_health *= missing_health_ratio
-	missing_health *= bonus_value
-	if(missing_health > 0)
-		target.adjustBruteLoss(missing_health)
-	if(prob(chance_for_attack))
-		var/obj/item/blood_blessing/activated/ARM = user.get_active_held_item()
-		ARM.attack(target, user)
-
-//Blood-Drunk Miner
+//Polar Bear
 /obj/item/blood_marking/bloodlust_mark
 	name = "Mark of Bloodlust"
 	desc = "A mark depicting a droplet of blood, for which you lust."
 	icon_state = "hunter_eye"
 	denied_type = /obj/item/blood_marking/bloodlust_mark
+	upgrade_type = /obj/item/blood_marking/bloodlust_mark/warbear
+	var/damage_percentile = 50
 
 /obj/item/blood_marking/bloodlust_mark/effect_desc()
-	return "Breaking the shackles further fuels your lust, granting stun immunity and <b>90%</b> damage reduction for <b>1</b> second."
+	return "Breaking the shackles further fuels your lust, granting stun immunity and causes you to only take <b>[damage_percentile]%</b> damage for <b>1</b> second."
 
 /obj/item/blood_marking/bloodlust_mark/on_mark_detonation(mob/living/target, mob/living/user)
-	user.apply_status_effect(STATUS_EFFECT_BLOODDRUNK)
+	user.apply_status_effect(STATUS_EFFECT_BLOODLUSTY, damage_percentile)
+
+//Polar Warbear
+/obj/item/blood_marking/bloodlust_mark/warbear
+	name = "Mark of Bloodlust"
+	desc = "A mark depicting a puddle of blood, for which you lust."
+	icon_state = "hunter_eye"
+	upgrade_type = /obj/item/blood_marking/bloodlust_mark/warbear/miner
+	damage_percentile = 30
+
+//Wolf
+/obj/item/blood_marking/bloodrush_mark
+	name = "Mark of Bloodrush"
+	desc = "A mark depicting a beating heart, it somehow beats."
+	icon = 'icons/obj/lavaland/elite_trophies.dmi'
+	icon_state = "torn_ear"
+	bonus_value = 3
+	denied_type = /obj/item/blood_marking/bloodrush_mark
+	upgrade_type = /obj/item/blood_marking/bloodrush_mark/alpha
+
+/obj/item/blood_marking/bloodrush_mark/effect_desc()
+	return "Breaking the shackles to increase your movement speed slightly."
+
+/obj/item/blood_marking/bloodrush_mark/on_mark_detonation(mob/living/target, mob/living/user)
+	user.apply_status_effect(/datum/status_effect/speed_boost, bonus_value SECONDS)
+
+//Alpha Wolf
+/obj/item/blood_marking/bloodrush_mark/alpha
+	name = "Mark of Greater Bloodrush"
+	desc = "A mark depicting a beating heart, it somehow beats and does so quite fast."
+	icon = 'icons/obj/lavaland/elite_trophies.dmi'
+	icon_state = "torn_ear"
+	bonus_value = 5
+	upgrade_type = null
+
+//Blood-Drunk Miner
+/obj/item/blood_marking/bloodlust_mark/warbear/miner
+	name = "Mark of Greater Bloodlust"
+	desc = "A mark depicting a river of blood, for which you lust."
+	icon_state = "hunter_eye"
+	upgrade_type = null
+	damage_percentile = 10
 
 //Ash Drake
 /obj/item/blood_marking/heating_mark/drake
@@ -2717,12 +2792,14 @@
 	. = ..()
 	if(.)
 		H.force += bonus_value
+		H.speedy = TRUE
 		to_chat(user, "<span class='notice'>You feel your claws sharpen and lengthen!</span>")
 
 /obj/item/blood_marking/demon_mark/remove_from(obj/item/blood_blessing/activated/H, mob/living/user)
 	. = ..()
 	if(.)
 		H.force -= bonus_value
+		H.speedy = FALSE
 		to_chat(user, "<span class='warning'>You feel your claws shorten and become duller.</span>")
 
 //Colossus
