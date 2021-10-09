@@ -3,7 +3,6 @@
 
 /datum/outfit/whitesands/survivor
 	name = "Whitesands Survivor"
-	head = /obj/item/clothing/head/hooded/survivor_hood
 	uniform = /obj/item/clothing/under/color/random
 	back = /obj/item/storage/backpack
 	shoes = /obj/item/clothing/shoes/workboots/mining

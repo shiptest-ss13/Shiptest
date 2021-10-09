@@ -373,7 +373,8 @@
 		"Kodiak - 'Arachne'" = image(icon = 'whitesands/icons/mob/robots.dmi', icon_state = "arachne"),
 		"Noble" = image(icon = 'whitesands/icons/mob/robots.dmi', icon_state = "Noble-MED"),
 		"R34 - MED6a 'Gibbs'" = image(icon = 'whitesands/icons/mob/robots.dmi', icon_state = "gibbs"),
-		"Booty" = image(icon = 'whitesands/icons/mob/robots.dmi', icon_state = "booty-white")
+		"Booty" = image(icon = 'whitesands/icons/mob/robots.dmi', icon_state = "booty-white"),
+		"Qualified Doctor" = image(icon = 'icons/mob/robots.dmi', icon_state = "qualified_doctor")
 		)
 		med_icons = sortList(med_icons)
 	var/med_borg_icon = show_radial_menu(R, R , med_icons, custom_check = CALLBACK(src, .proc/check_menu, R), radius = 42, require_near = TRUE)
@@ -424,6 +425,10 @@
 			cyborg_base_icon = "booty-white"
 			cyborg_icon_override = 'whitesands/icons/mob/robots.dmi'
 			special_light_key = "booty-white"
+		if("Qualified Doctor")
+			cyborg_base_icon = "qualified-doctor"
+			cyborg_icon_override = 'whitesands/icons/mob/robots.dmi'
+			special_light_key = "qualified-doctor"
 		else
 			return FALSE
 	return ..()
