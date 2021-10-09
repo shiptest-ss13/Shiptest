@@ -1,7 +1,8 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "a" = (
 /obj/effect/turf_decal/stripes/asteroid/line{
-	dir = 10
+	dir = 10;
+	icon = 'icons/turf/decals.dmi'
 	},
 /turf/open/floor/plating/rust,
 /area/rockplanet/surface/outdoors)
@@ -14,7 +15,8 @@
 /area/mine/rockplanet_nanotrasen)
 "e" = (
 /obj/effect/turf_decal/stripes/asteroid/line{
-	dir = 9
+	dir = 9;
+	icon = 'icons/turf/decals.dmi'
 	},
 /turf/open/floor/plating/rust,
 /area/rockplanet/surface/outdoors)
@@ -28,12 +30,16 @@
 /turf/open/floor/plating/asteroid,
 /area/rockplanet/surface/outdoors)
 "h" = (
-/obj/effect/turf_decal/stripes/asteroid/line,
+/obj/effect/turf_decal/stripes/asteroid/line{
+	icon = 'icons/turf/decals.dmi'
+	},
 /turf/open/floor/plating/rust,
 /area/rockplanet/surface/outdoors)
 "i" = (
 /obj/machinery/power/apc/auto_name/north,
-/obj/structure/cable,
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
 /turf/open/floor/plasteel,
 /area/mine/rockplanet_nanotrasen)
 "k" = (
@@ -46,8 +52,11 @@
 /turf/open/floor/plating/rust,
 /area/mine/rockplanet_nanotrasen)
 "m" = (
-/obj/machinery/computer/shuttle/mining{
-	dir = 4
+/obj/machinery/light/small{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "6-8"
 	},
 /turf/open/floor/plasteel,
 /area/mine/rockplanet_nanotrasen)
@@ -57,17 +66,20 @@
 /turf/open/floor/plating/asteroid,
 /area/rockplanet/surface/outdoors)
 "p" = (
-/obj/structure/closet/crate/maint,
+/obj/structure/closet/crate,
 /obj/item/stack/sheet/mineral/plasma,
 /turf/open/floor/plasteel,
 /area/mine/rockplanet_nanotrasen)
 "q" = (
-/obj/effect/turf_decal/stripes/asteroid/corner,
+/obj/effect/turf_decal/stripes/asteroid/corner{
+	icon = 'icons/turf/decals.dmi'
+	},
 /turf/open/floor/plating/rust,
 /area/rockplanet/surface/outdoors)
 "r" = (
 /obj/effect/turf_decal/stripes/asteroid/corner{
-	dir = 4
+	dir = 4;
+	icon = 'icons/turf/decals.dmi'
 	},
 /turf/open/floor/plating/rust,
 /area/rockplanet/surface/outdoors)
@@ -79,7 +91,7 @@
 /turf/open/floor/plasteel,
 /area/mine/rockplanet_nanotrasen)
 "u" = (
-/obj/structure/closet/crate/maint,
+/obj/structure/closet/crate,
 /obj/item/stack/sheet/mineral/plasma,
 /turf/open/floor/plating/rust,
 /area/mine/rockplanet_nanotrasen)
@@ -98,7 +110,8 @@
 /area/mine/rockplanet_nanotrasen)
 "y" = (
 /obj/effect/turf_decal/stripes/asteroid/line{
-	dir = 5
+	dir = 5;
+	icon = 'icons/turf/decals.dmi'
 	},
 /turf/open/floor/plating/rust,
 /area/rockplanet/surface/outdoors)
@@ -120,16 +133,13 @@
 /obj/item/stack/sheet/mineral/plasma,
 /turf/open/floor/plating/rust,
 /area/mine/rockplanet_nanotrasen)
-"E" = (
-/obj/structure/cable,
-/turf/open/floor/plasteel,
-/area/mine/rockplanet_nanotrasen)
 "F" = (
 /turf/closed/wall/rust,
 /area/mine/rockplanet_nanotrasen)
 "G" = (
 /obj/effect/turf_decal/stripes/asteroid/line{
-	dir = 6
+	dir = 6;
+	icon = 'icons/turf/decals.dmi'
 	},
 /turf/open/floor/plating/rust,
 /area/rockplanet/surface/outdoors)
@@ -140,8 +150,10 @@
 /turf/open/floor/plating/rust,
 /area/mine/rockplanet_nanotrasen)
 "I" = (
-/obj/structure/cable,
 /obj/machinery/power/port_gen/pacman,
+/obj/structure/cable{
+	icon_state = "0-9"
+	},
 /turf/open/floor/plasteel,
 /area/mine/rockplanet_nanotrasen)
 "K" = (
@@ -155,24 +167,15 @@
 /area/mine/rockplanet_nanotrasen)
 "M" = (
 /obj/effect/turf_decal/stripes/asteroid/line{
-	dir = 4
-	},
-/turf/open/floor/plating/rust,
-/area/rockplanet/surface/outdoors)
-"N" = (
-/obj/docking_port/stationary{
-	dir = 8;
-	dwidth = 3;
-	height = 10;
-	id = "mining_away";
-	name = "Abandoned Planet LZ2";
-	width = 7
+	dir = 4;
+	icon = 'icons/turf/decals.dmi'
 	},
 /turf/open/floor/plating/rust,
 /area/rockplanet/surface/outdoors)
 "O" = (
 /obj/effect/turf_decal/stripes/asteroid/line{
-	dir = 1
+	dir = 1;
+	icon = 'icons/turf/decals.dmi'
 	},
 /turf/open/floor/plating/rust,
 /area/rockplanet/surface/outdoors)
@@ -214,7 +217,8 @@
 /area/mine/rockplanet_nanotrasen)
 "W" = (
 /obj/effect/turf_decal/stripes/asteroid/line{
-	dir = 8
+	dir = 8;
+	icon = 'icons/turf/decals.dmi'
 	},
 /turf/open/floor/plating/rust,
 /area/rockplanet/surface/outdoors)
@@ -301,7 +305,7 @@ M
 M
 M
 r
-N
+b
 q
 M
 M
@@ -368,7 +372,7 @@ p
 F
 t
 P
-m
+t
 t
 x
 F
@@ -376,7 +380,7 @@ F
 (12,1,1) = {"
 F
 i
-E
+t
 t
 Y
 t
@@ -388,8 +392,8 @@ F
 "}
 (13,1,1) = {"
 F
-k
-E
+m
+t
 l
 F
 v
