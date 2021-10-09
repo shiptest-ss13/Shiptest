@@ -229,8 +229,8 @@
 	required_reagents = list(/datum/reagent/consumable/ethanol/creme_de_coconut = 1, /datum/reagent/consumable/pineapplejuice = 3, /datum/reagent/consumable/ethanol/rum = 1, /datum/reagent/consumable/limejuice = 1)
 
 /datum/chemical_reaction/mudders_milk
-	results = list(/datum/reagent/consumable/ethanol/mudders_milk = 5)
-	required_reagents = list(/datum/reagent/consumable/sugar = 1, /datum/reagent/consumable/cream = 2, /datum/reagent/consumable/ethanol/whiskey = 1, /datum/reagent/consumable/ethanol/beer = 1)
+	results = list(/datum/reagent/consumable/ethanol/mudders_milk = 6)
+	required_reagents = list(/datum/reagent/consumable/sugar = 1, /datum/reagent/consumable/irish_cream = 3, /datum/reagent/consumable/ethanol/beer = 2)
 	required_catalysts = list(/datum/reagent/consumable/ethanol/creme_de_cacao = 1)
 
 ////DRINKS THAT REQUIRED IMPROVED SPRITES BELOW:: -Agouri/////
