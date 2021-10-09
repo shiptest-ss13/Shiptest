@@ -37,7 +37,7 @@
 	dangerous = TRUE
 
 /datum/supply_pack/Armory/m10mm_ammo
-	name = "9mm Commander Ammo Crate"
+	name = "10mm Makarov Ammo Crate"
 	desc = "Contains five eight-round magazines for the Makarov pistol. Requires Armory access to open."
 	contains = list(/obj/item/ammo_box/magazine/m10mm,
 					/obj/item/ammo_box/magazine/m10mm,
