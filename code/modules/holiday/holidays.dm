@@ -639,7 +639,7 @@
 	begin_day = 18
 
 /datum/holiday/jaynesday/greet()
-	return ""
+	return "Today is Jaynesday!"
 
 /datum/holiday/jaynseday/getStationPrefix()
 	return pick("Mudder", "Canton", "Jayne", "Cobb")
