@@ -223,7 +223,8 @@
 		. += "[icon_state]_empty"
 	else
 		if(!shaded_charge)
-			if (modifystate)
+			if(modifystate)
+				. += "[icon_state]_[shot.select_name]"
 				overlay_icon_state += "_[shot.select_name]"
 			var/mutable_appearance/charge_overlay = mutable_appearance(icon, overlay_icon_state)
 			for(var/i = ratio, i >= 1, i--)
