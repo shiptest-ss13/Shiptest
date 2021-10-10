@@ -249,7 +249,7 @@
 "IU" = (/obj/structure/table/reinforced,/obj/effect/turf_decal/siding/white{dir = 5},/turf/open/floor/carpet/nanoweave,/area/ship/bridge)
 "Jh" = (/obj/structure/cable{icon_state = "1-2"},/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{dir = 8},/turf/open/floor/wood/maple,/area/ship/crew)
 "Jr" = (/obj/machinery/power/terminal,/obj/structure/cable{icon_state = "0-8"},/obj/structure/cable{icon_state = "4-8"},/turf/open/floor/plating,/area/ship/engineering)
-"Js" = (/obj/machinery/door/airlock/external,/obj/effect/mapping_helpers/airlock/cyclelink_helper{dir = 8},/turf/open/floor/plating,/area/ship/hallway/starboard)
+"Js" = (/obj/machinery/door/airlock/external,/obj/effect/mapping_helpers/airlock/cyclelink_helper{dir = 8},/obj/docking_port/mobile{dir = 4; launch_status = 0; port_direction = 4},/turf/open/floor/plating,/area/ship/hallway/starboard)
 "JC" = (/obj/effect/spawner/structure/window/reinforced,/turf/open/floor/plating,/area/ship/crew/office)
 "JE" = (/turf/closed/wall/r_wall,/area/ship/cargo)
 "JI" = (/obj/effect/spawner/structure/window/reinforced,/turf/open/floor/plating,/area/ship/crew)
