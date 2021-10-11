@@ -1922,13 +1922,13 @@
 	to_chat(item_user, "<span class='warning'>You begin to carve symbols on your arm as a strange voice on your head orders you...</span>")
 	stab_self(item_user)
 	if(do_after(item_user, 40, target = item_user))
-		itemUser.say("With the pouring blood from my arm I offer a deal, oh grand hunter of blood.", forced = "hunter's oath")
+		item_user.say("With the pouring blood from my arm I offer a deal, oh grand hunter of blood.", forced = "hunter's oath")
 	else
 		to_chat(item_user, failText)
 		stab_self(item_user)
 		return
 	if(do_after(item_user, 20, target = item_user))
-		itemUser.say("I seek to make my enemies bleed and die, may we share in their suffering, hunt together as one.", forced = "hunter's oath")
+		item_user.say("I seek to make my enemies bleed and die, may we share in their suffering, hunt together as one.", forced = "hunter's oath")
 	else
 		to_chat(item_user, failText)
 		stab_self(item_user)
@@ -1941,7 +1941,7 @@
 		stab_self(item_user)
 		return
 	if(do_after(item_user, 30, target = item_user))
-		itemUser.say("Should I die, hunting or not, my soul shall join you in the land of blood, my mangled body taken elsewhere.", forced = "hunter's oath")
+		item_user.say("Should I die, hunting or not, my soul shall join you in the land of blood, my mangled body taken elsewhere.", forced = "hunter's oath")
 	else
 		to_chat(item_user, failText)
 		return
@@ -2023,7 +2023,7 @@
 	var/list/existing_marks = target.has_status_effect_list(STATUS_EFFECT_DAMAGEANDKILLTRACKING)
 	var/right_tracker
 	for(var/i in existing_marks)
-		var/datum/status_effect/blessing_damage/SM = i
+		var/datum/status_effect/damage_kill_track/SM = i
 		if(SM.reward_target == src)
 			right_tracker = SM
 			return
@@ -2035,7 +2035,7 @@
 			var/obj/item/blood_marking/T = t
 			T.on_melee_hit(target, user)
 	for(var/i in existing_marks)
-		var/datum/status_effect/blessing_damage/SM = i
+		var/datum/status_effect/damage_kill_track/SM = i
 		if(!right_tracker && SM.reward_target == src)
 			right_tracker = SM
 		if(right_tracker == SM && !QDELETED(SM) && !QDELETED(target))
@@ -2069,7 +2069,7 @@
 		if(!CM || CM.blood_shackled != src || !L.remove_status_effect(STATUS_EFFECT_BLOODSHACKLE))
 			return
 		for(var/i in existing_marks)
-			var/datum/status_effect/blessing_damage/SM = i
+			var/datum/status_effect/damage_kill_track/SM = i
 			if(SM.reward_target == src && !QDELETED(L) && !QDELETED(SM))
 				SM.total_damage += target_health - L.health
 				new /obj/effect/temp_visual/kinetic_blast(get_turf(L))
@@ -2393,7 +2393,7 @@
 		var/had_effect = (L.has_status_effect(STATUS_EFFECT_BLOODSHACKLE)) //used as a boolean
 		var/datum/status_effect/blood_shackle/CM = L.apply_status_effect(STATUS_EFFECT_BLOODSHACKLE, blood_shackled)
 		for(var/i in existing_marks)
-			var/datum/status_effect/blessing_damage/SM = i
+			var/datum/status_effect/damage_kill_track/SM = i
 			if(SM.reward_target == src)
 				right_tracker = SM
 				return
@@ -2405,7 +2405,7 @@
 				T.on_mark_application(target, CM, had_effect)
 		..()
 		for(var/i in existing_marks)
-			var/datum/status_effect/blessing_damage/SM = i
+			var/datum/status_effect/damage_kill_track/SM = i
 			if(!right_tracker && SM.reward_target == blood_shackled)
 				right_tracker = SM
 			if(right_tracker == SM && !QDELETED(SM) && !QDELETED(L))
