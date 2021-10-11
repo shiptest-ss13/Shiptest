@@ -31,7 +31,7 @@
 	. = ..()
 	if(.)
 		reward_target = new_reward_target
-		if(new_reward_treshold != reward treshold && new_reward_treshold != null)
+		if(new_reward_treshold != reward_treshold && new_reward_treshold != null)
 			reward_treshold = new_reward_treshold
 
 /datum/status_effect/damage_kill_track/on_apply()
