@@ -17,19 +17,22 @@
 	alert_type = null
 	var/total_damage = 0
 
-/datum/status_effect/blessing_damage //tracks the damage dealt to this mob by a blood blessing
-	id = "blessing_damage"
+/datum/status_effect/damage_kill_track //tracks the damage dealt to this mob by a blood blessing
+	id = "damage_kill_track"
 	duration = -1
 	status_type = STATUS_EFFECT_MULTIPLE
 	alert_type = null
 	var/total_damage = 0
 	on_remove_on_mob_delete = TRUE
 	var/obj/item/blood_blessing/activated/reward_target
+	var/reward_treshold = 50
 
-/datum/status_effect/blessing_damage/on_creation(mob/living/new_owner, obj/item/blood_blessing/activated/new_reward_target)
+/datum/status_effect/blessing_damage/on_creation(mob/living/new_owner, obj/item/blood_blessing/activated/new_reward_target, var/new_reward_treshold)
 	. = ..()
 	if(.)
 		reward_target = new_reward_target
+		if(new_reward_treshold != reward treshold && new_reward_treshold != null)
+			reward_treshold = new_reward_treshold
 
 /datum/status_effect/blessing_damage/on_apply()
 	if(owner.stat == DEAD)
@@ -41,7 +44,7 @@
 		reward_target.get_soulrewards(owner)
 
 /datum/status_effect/blessing_damage/tick()
-	if(total_damage > 0 && (owner.maxHealth / total_damage) >= 70 && owner.stat == DEAD)
+	if(total_damage > 0 && (owner.maxHealth / total_damage) >= reward_treshold && owner.stat == DEAD)
 		get_souls()
 		qdel(src)
 
