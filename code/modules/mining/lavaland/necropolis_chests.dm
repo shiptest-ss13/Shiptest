@@ -2020,7 +2020,7 @@
 //Attack stuff
 /obj/item/blood_blessing/activated/attack(mob/living/target, mob/living/carbon/user)
 	var/target_health = target.health
-	var/list/existing_marks = target.has_status_effect_list(STATUS_EFFECT_BLESSINGDAMAGETRACKING)
+	var/list/existing_marks = target.has_status_effect_list(STATUS_EFFECT_DAMAGEANDKILLTRACKING)
 	var/right_tracker
 	for(var/i in existing_marks)
 		var/datum/status_effect/blessing_damage/SM = i
@@ -2028,7 +2028,7 @@
 			right_tracker = SM
 			return
 	if(!right_tracker)
-		target.apply_status_effect(STATUS_EFFECT_BLESSINGDAMAGETRACKING, src, 70)
+		target.apply_status_effect(STATUS_EFFECT_DAMAGEANDKILLTRACKING, src, 70)
 	..()
 	for(var/t in markings)
 		if(!QDELETED(target))
@@ -2064,7 +2064,7 @@
 	if(proximity_flag && isliving(target))
 		var/mob/living/L = target
 		var/target_health = L.health
-		var/list/existing_marks = L.has_status_effect_list(STATUS_EFFECT_BLESSINGDAMAGETRACKING)
+		var/list/existing_marks = L.has_status_effect_list(STATUS_EFFECT_DAMAGEANDKILLTRACKING)
 		var/datum/status_effect/blood_shackle/CM = L.has_status_effect(STATUS_EFFECT_BLOODSHACKLE)
 		if(!CM || CM.blood_shackled != src || !L.remove_status_effect(STATUS_EFFECT_BLOODSHACKLE))
 			return
@@ -2388,7 +2388,7 @@
 	if(isliving(target))
 		var/mob/living/L = target
 		var/target_health = L.health
-		var/list/existing_marks = L.has_status_effect_list(STATUS_EFFECT_BLESSINGDAMAGETRACKING)
+		var/list/existing_marks = L.has_status_effect_list(STATUS_EFFECT_DAMAGEANDKILLTRACKING)
 		var/right_tracker
 		var/had_effect = (L.has_status_effect(STATUS_EFFECT_BLOODSHACKLE)) //used as a boolean
 		var/datum/status_effect/blood_shackle/CM = L.apply_status_effect(STATUS_EFFECT_BLOODSHACKLE, blood_shackled)
@@ -2398,7 +2398,7 @@
 				right_tracker = SM
 				return
 		if(!right_tracker)
-			L.apply_status_effect(STATUS_EFFECT_BLESSINGDAMAGETRACKING, blood_shackled, 50)
+			L.apply_status_effect(STATUS_EFFECT_DAMAGEANDKILLTRACKING, blood_shackled, 70)
 		if(blood_shackled)
 			for(var/t in blood_shackled.markings)
 				var/obj/item/blood_marking/T = t
