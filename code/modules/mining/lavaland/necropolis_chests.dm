@@ -2499,7 +2499,7 @@
 
 /obj/item/blood_marking/tentacle_mark/ancient/on_mark_detonation(mob/living/target, mob/living/user)
 	if(target.stat != DEAD && prob(10))
-		new /obj/effect/temp_visual/bloody_shackles/ancient(get_turf(target), user)
+		new /obj/effect/temp_visual/goliath_tentacle/original(get_turf(target), user)
 
 //Goliath Broodmother
 /obj/item/blood_marking/tentacle_mark/ancient/broodmother
@@ -2509,6 +2509,7 @@
 	bonus_value = 7.5
 	upgrade_type = null
 
+/*
 /obj/effect/temp_visual/bloody_shackles/Initialize(mapload, mob/living/new_spawner)
 	. = ..()
 	for(var/obj/effect/temp_visual/bloody_shackles/T in loc)
@@ -2570,7 +2571,7 @@
 	for(var/i in directions)
 		var/turf/T = get_step(get_turf(src), i)
 		T = get_step(T, i)
-		new obj/effect/bloody_shackles/broodmother(T, spawner)
+		new obj/effect/bloody_shackles/broodmother(T, spawner) */
 //TODO: Redo these to use as the effect.
 
 //Legion
