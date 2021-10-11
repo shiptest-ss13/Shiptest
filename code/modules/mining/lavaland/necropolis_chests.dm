@@ -219,7 +219,7 @@
 	icon = 'icons/obj/lavaland/artefacts.dmi'
 	icon_state = "asclepius_dormant"
 	var/activated = FALSE
-	var/usedHand
+	var/used_hand
 
 /obj/item/rod_of_asclepius/attack_self(mob/user)
 	if(activated)
@@ -227,39 +227,39 @@
 	if(!iscarbon(user))
 		to_chat(user, "<span class='warning'>The snake carving seems to come alive, if only for a moment, before returning to its dormant state, almost as if it finds you incapable of holding its oath.</span>")
 		return
-	var/mob/living/carbon/itemUser = user
-	usedHand = itemUser.get_held_index_of_item(src)
-	if(itemUser.has_status_effect(STATUS_EFFECT_HIPPOCRATIC_OATH))
+	var/mob/living/carbon/item_user = user
+	used_hand = item_user.get_held_index_of_item(src)
+	if(item_user.has_status_effect(STATUS_EFFECT_HIPPOCRATIC_OATH))
 		to_chat(user, "<span class='warning'>You can't possibly handle the responsibility of more than one rod!</span>")
 		return
-	if(itemUser.has_status_effect(STATUS_EFFECT_HUNTERS_OATH))
+	if(item_user.has_status_effect(STATUS_EFFECT_HUNTERS_OATH))
 		to_chat(user, "<span class='warning'>The dark being refuses to involve itself with one whose oath is to protect and heal!</span>")
 		return
 	var/failText = "<span class='warning'>The snake seems unsatisfied with your incomplete oath and returns to its previous place on the rod, returning to its dormant, wooden state. You must stand still while completing your oath!</span>"
-	to_chat(itemUser, "<span class='notice'>The wooden snake that was carved into the rod seems to suddenly come alive and begins to slither down your arm! The compulsion to help others grows abnormally strong...</span>")
-	if(do_after(itemUser, 40, target = itemUser))
-		itemUser.say("I swear to fulfill, to the best of my ability and judgment, this covenant:", forced = "hippocratic oath")
+	to_chat(item_user, "<span class='notice'>The wooden snake that was carved into the rod seems to suddenly come alive and begins to slither down your arm! The compulsion to help others grows abnormally strong...</span>")
+	if(do_after(item_user, 40, target = item_user))
+		item_user.say("I swear to fulfill, to the best of my ability and judgment, this covenant:", forced = "hippocratic oath")
 	else
-		to_chat(itemUser, failText)
+		to_chat(item_user, failText)
 		return
-	if(do_after(itemUser, 20, target = itemUser))
-		itemUser.say("I will apply, for the benefit of the sick, all measures that are required, avoiding those twin traps of overtreatment and therapeutic nihilism.", forced = "hippocratic oath")
+	if(do_after(item_user, 20, target = item_user))
+		item_user.say("I will apply, for the benefit of the sick, all measures that are required, avoiding those twin traps of overtreatment and therapeutic nihilism.", forced = "hippocratic oath")
 	else
-		to_chat(itemUser, failText)
+		to_chat(item_user, failText)
 		return
-	if(do_after(itemUser, 30, target = itemUser))
-		itemUser.say("I will remember that I remain a member of society, with special obligations to all my fellow human beings, those sound of mind and body as well as the infirm.", forced = "hippocratic oath")
+	if(do_after(item_user, 30, target = item_user))
+		item_user.say("I will remember that I remain a member of society, with special obligations to all my fellow human beings, those sound of mind and body as well as the infirm.", forced = "hippocratic oath")
 	else
-		to_chat(itemUser, failText)
+		to_chat(item_user, failText)
 		return
-	if(do_after(itemUser, 30, target = itemUser))
-		itemUser.say("If I do not violate this oath, may I enjoy life and art, respected while I live and remembered with affection thereafter. May I always act so as to preserve the finest traditions of my calling and may I long experience the joy of healing those who seek my help.", forced = "hippocratic oath")
+	if(do_after(item_user, 30, target = item_user))
+		item_user.say("If I do not violate this oath, may I enjoy life and art, respected while I live and remembered with affection thereafter. May I always act so as to preserve the finest traditions of my calling and may I long experience the joy of healing those who seek my help.", forced = "hippocratic oath")
 	else
-		to_chat(itemUser, failText)
+		to_chat(item_user, failText)
 		return
-	to_chat(itemUser, "<span class='notice'>The snake, satisfied with your oath, attaches itself and the rod to your forearm with an inseparable grip. Your thoughts seem to only revolve around the core idea of helping others, and harm is nothing more than a distant, wicked memory...</span>")
-	var/datum/status_effect/hippocratic_oath/effect = itemUser.apply_status_effect(STATUS_EFFECT_HIPPOCRATIC_OATH)
-	effect.hand = usedHand
+	to_chat(item_user, "<span class='notice'>The snake, satisfied with your oath, attaches itself and the rod to your forearm with an inseparable grip. Your thoughts seem to only revolve around the core idea of helping others, and harm is nothing more than a distant, wicked memory...</span>")
+	var/datum/status_effect/hippocratic_oath/effect = item_user.apply_status_effect(STATUS_EFFECT_HIPPOCRATIC_OATH)
+	effect.hand = used_hand
 	activated()
 
 /obj/item/rod_of_asclepius/proc/activated()
@@ -1889,7 +1889,7 @@
 	desc = "A bloodied dagger with mysterious runes, just looking at it makes you angrier."
 	icon = 'icons/obj/lavaland/artefacts.dmi'
 	icon_state = "asclepius_dormant"
-	force = 5
+	force = 10
 	w_class = WEIGHT_CLASS_SMALL
 	throwforce = 10
 	throw_speed = 6
@@ -1899,8 +1899,8 @@
 	attack_verb = list("stabbed", "slashed", "cut")
 	sharpness = IS_SHARP_ACCURATE
 	var/activated = FALSE
-	var/targetHand
-	var/mob/curse_owner
+	var/target_hand
+	var/mob/curse_owner //Only enables mark awarding if there's a curse owner, which is assigned upon binding the item.
 
 /obj/item/blood_blessing/attack_self(mob/user)
 	if(activated)
@@ -1908,47 +1908,47 @@
 	if(!iscarbon(user))
 		to_chat(user, "<span class='warning'>The dark being refuses you!</span>")
 		return
-	var/mob/living/carbon/itemUser = user
+	var/mob/living/carbon/item_user = user
 	var/prev_select = user.zone_selected
-	targetHand = itemUser.get_held_index_of_item(!src)
-	user.zone_selected = targetHand
-	if(itemUser.has_status_effect(STATUS_EFFECT_HIPPOCRATIC_OATH))
+	target_hand = item_user.get_held_index_of_item(!src)
+	user.zone_selected = target_hand
+	if(item_user.has_status_effect(STATUS_EFFECT_HIPPOCRATIC_OATH))
 		to_chat(user, "<span class='warning'>You can't possibly handle the conflicting oath!</span>")
 		return
-	if(itemUser.has_status_effect(STATUS_EFFECT_HUNTERS_OATH))
+	if(item_user.has_status_effect(STATUS_EFFECT_HUNTERS_OATH))
 		to_chat(user, "<span class='warning'>The dark being refuses to further empower you, go hunt for blood!</span>")
 		return
 	var/failText = "<span class='warning'>You must show full commitment to seal the deal, don't move!</span>"
-	to_chat(itemUser, "<span class='warning'>You begin to carve symbols on your arm as a strange voice on your head orders you...</span>")
-	stab_self(itemUser)
-	if(do_after(itemUser, 40, target = itemUser))
+	to_chat(item_user, "<span class='warning'>You begin to carve symbols on your arm as a strange voice on your head orders you...</span>")
+	stab_self(item_user)
+	if(do_after(item_user, 40, target = item_user))
 		itemUser.say("With the pouring blood from my arm I offer a deal, oh grand hunter of blood.", forced = "hunter's oath")
 	else
-		to_chat(itemUser, failText)
-		stab_self(itemUser)
+		to_chat(item_user, failText)
+		stab_self(item_user)
 		return
-	if(do_after(itemUser, 20, target = itemUser))
+	if(do_after(item_user, 20, target = item_user))
 		itemUser.say("I seek to make my enemies bleed and die, may we share in their suffering, hunt together as one.", forced = "hunter's oath")
 	else
-		to_chat(itemUser, failText)
-		stab_self(itemUser)
+		to_chat(item_user, failText)
+		stab_self(item_user)
 		return
-	if(do_after(itemUser, 30, target = itemUser))
-		itemUser.say("I offer to you this arm, carved and bleeding, made a vessel for you, make it stronger than ever before.", forced = "hunter's oath")
+	if(do_after(item_user, 30, target = item_user))
+		item_user.say("I offer to you this arm, carved and bleeding, made a vessel for you, make it stronger than ever before.", forced = "hunter's oath")
 
 	else
-		to_chat(itemUser, failText)
-		stab_self(itemUser)
+		to_chat(item_user, failText)
+		stab_self(item_user)
 		return
-	if(do_after(itemUser, 30, target = itemUser))
+	if(do_after(item_user, 30, target = item_user))
 		itemUser.say("Should I die, hunting or not, my soul shall join you in the land of blood, my mangled body taken elsewhere.", forced = "hunter's oath")
 	else
-		to_chat(itemUser, failText)
+		to_chat(item_user, failText)
 		return
-	stab_self(itemUser)
-	to_chat(itemUser, "<span class='warning'>As you stab your arm a final time, the dagger melts into dark energy and enters it, healing your arm! You feel a surge of power for a moment as your spirit is bound to the Blood Hunter!</span>")
-	var/datum/status_effect/hunters_oath/effect = itemUser.apply_status_effect(STATUS_EFFECT_HUNTERS_OATH)
-	effect.hand = targetHand
+	stab_self(item_user)
+	to_chat(item_user, "<span class='warning'>As you stab your arm a final time, the dagger melts into dark energy and enters it, healing your arm! You feel a surge of power for a moment as your spirit is bound to the Blood Hunter!</span>")
+	var/datum/status_effect/hunters_oath/effect = item_user.apply_status_effect(STATUS_EFFECT_HUNTERS_OATH)
+	effect.hand = target_hand
 	qdel(src)
 	user.zone_selected = prev_select
 
@@ -1967,7 +1967,7 @@
 	curse_owner = user
 	activated = TRUE
 
-//The actual weapon, product of the effect, don't spawn it alone please.
+//The actual weapon, product of the effect.
 /obj/item/blood_blessing/activated
 	icon = 'icons/obj/mining.dmi'
 	icon_state = "crusher"
@@ -2028,7 +2028,7 @@
 			right_tracker = SM
 			return
 	if(!right_tracker)
-		target.apply_status_effect(STATUS_EFFECT_BLESSINGDAMAGETRACKING, src)
+		target.apply_status_effect(STATUS_EFFECT_BLESSINGDAMAGETRACKING, src, 70)
 	..()
 	for(var/t in markings)
 		if(!QDELETED(target))
@@ -2126,7 +2126,7 @@
 	for(var/t in markings)
 		var/obj/item/blood_marking/T = t
 		if(istype(T, MA.denied_type) || istype(MA, T.denied_type))
-			if(istype(T, MA.upgrade_type) == FALSE)
+			if(istype(T, MA.upgrade_type) == FALSE) //Allows upgrading marks to the next tier
 				return FALSE
 			else
 				qdel(T)
@@ -2138,6 +2138,7 @@
 		MA.forceMove(src)
 	markings += MA
 	return TRUE
+
 /obj/item/blood_blessing/activated/proc/get_soulrewards(mob/living/L)
 //The bread and butter of the item, please only add lists needed to get new marks to not overbloat this further.
 	var/bonus_mod = 0
@@ -2397,7 +2398,7 @@
 				right_tracker = SM
 				return
 		if(!right_tracker)
-			L.apply_status_effect(STATUS_EFFECT_BLESSINGDAMAGETRACKING, blood_shackled)
+			L.apply_status_effect(STATUS_EFFECT_BLESSINGDAMAGETRACKING, blood_shackled, 50)
 		if(blood_shackled)
 			for(var/t in blood_shackled.markings)
 				var/obj/item/blood_marking/T = t
@@ -2498,7 +2499,7 @@
 
 /obj/item/blood_marking/tentacle_mark/ancient/on_mark_detonation(mob/living/target, mob/living/user)
 	if(target.stat != DEAD && prob(10))
-		new /obj/effect/temp_visual/goliath_tentacle/original(get_turf(target), user)
+		new /obj/effect/temp_visual/bloody_shackles/ancient(get_turf(target), user)
 
 //Goliath Broodmother
 /obj/item/blood_marking/tentacle_mark/ancient/broodmother
@@ -2508,9 +2509,9 @@
 	bonus_value = 7.5
 	upgrade_type = null
 
-/*/obj/effect/temp_visual/goliath_tentacle/Initialize(mapload, mob/living/new_spawner)
+/obj/effect/temp_visual/bloody_shackles/Initialize(mapload, mob/living/new_spawner)
 	. = ..()
-	for(var/obj/effect/temp_visual/goliath_tentacle/T in loc)
+	for(var/obj/effect/temp_visual/bloody_shackles/T in loc)
 		if(T != src)
 			return INITIALIZE_HINT_QDEL
 	if(!QDELETED(new_spawner))
@@ -2521,28 +2522,28 @@
 	deltimer(timerid)
 	timerid = addtimer(CALLBACK(src, .proc/tripanim), 7, TIMER_STOPPABLE)
 
-/obj/effect/temp_visual/goliath_tentacle/original/Initialize(mapload, new_spawner)
+/obj/effect/temp_visual/bloody_shackles/ancient/Initialize(mapload, new_spawner)
 	. = ..()
 	var/list/directions = GLOB.cardinals.Copy()
 	for(var/i in 1 to 3)
 		var/spawndir = pick_n_take(directions)
 		var/turf/T = get_step(src, spawndir)
 		if(T)
-			new /obj/effect/temp_visual/goliath_tentacle(T, spawner)
+			new /obj/effect/temp_visual/bloody_shackles(T, spawner)
 
-/obj/effect/temp_visual/goliath_tentacle/proc/tripanim()
+/obj/effect/temp_visual/bloody_shackles/proc/tripanim()
 	icon_state = "Goliath_tentacle_wiggle"
 	deltimer(timerid)
 	timerid = addtimer(CALLBACK(src, .proc/trip), 3, TIMER_STOPPABLE)
 
-/obj/effect/temp_visual/goliath_tentacle/proc/trip()
+/obj/effect/temp_visual/bloody_shackles/proc/trip()
 	var/latched = FALSE
 	for(var/mob/living/L in loc)
 		if((!QDELETED(spawner) && spawner.faction_check_mob(L)) || L.stat == DEAD)
 			continue
 		visible_message("<span class='danger'>[src] grabs hold of [L]!</span>")
-		L.Stun(100)
-		L.adjustBruteLoss(rand(1,3))
+		L.Stun(20)
+		L.adjustBruteLoss(2)
 		latched = TRUE
 	if(!latched)
 		retract()
@@ -2550,35 +2551,26 @@
 		deltimer(timerid)
 		timerid = addtimer(CALLBACK(src, .proc/retract), 10, TIMER_STOPPABLE)
 
-/obj/effect/temp_visual/goliath_tentacle/proc/retract()
+/obj/effect/temp_visual/bloody_shackles/proc/retract()
 	icon_state = "Goliath_tentacle_retract"
 	deltimer(timerid)
 	timerid = QDEL_IN(src, 7)
- /obj/effect/temp_visual/goliath_tentacle/broodmother/trip()
-	var/latched = FALSE
-	for(var/mob/living/L in loc)
-		if((!QDELETED(spawner) && spawner.faction_check_mob(L)) || L.stat == DEAD)
-			continue
-		visible_message("<span class='danger'>[src] grabs hold of [L]!</span>")
-		L.Stun(10)
-		L.adjustBruteLoss(rand(30,35))
-		latched = TRUE
 	if(!latched)
 		retract()
 	else
 		deltimer(timerid)
 		timerid = addtimer(CALLBACK(src, .proc/retract), 10, TIMER_STOPPABLE)
 
-/obj/effect/temp_visual/goliath_tentacle/broodmother/patch/Initialize(mapload, new_spawner)
+/obj/effect/temp_visual/bloody_shackles/broodmother/Initialize(mapload, new_spawner)
 	. = ..()
 	var/tentacle_locs = spiral_range_turfs(1, get_turf(src))
 	for(var/T in tentacle_locs)
-		new /obj/effect/temp_visual/goliath_tentacle/broodmother(T, spawner)
+		new /obj/effect/temp_visual/bloody_shackles/broodmother(T, spawner)
 	var/list/directions = GLOB.cardinals.Copy()
 	for(var/i in directions)
 		var/turf/T = get_step(get_turf(src), i)
 		T = get_step(T, i)
-		new /obj/effect/temp_visual/goliath_tentacle/broodmother(T, spawner) */
+		new obj/effect/bloody_shackles/broodmother(T, spawner)
 //TODO: Redo these to use as the effect.
 
 //Legion
@@ -2783,7 +2775,7 @@
 	desc = "A mark depicting the claws of a vile demon, which some say is king."
 	icon_state = "demon_claws"
 	denied_type = /obj/item/blood_marking/demon_mark
-	bonus_value = 2
+	bonus_value = 5
 
 /obj/item/blood_marking/demon_mark/effect_desc()
 	return "Your claws sharpen, dealing <b>[bonus_value]</b> more damage and allowing you to attack faster."
