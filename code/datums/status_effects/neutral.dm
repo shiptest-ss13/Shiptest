@@ -27,28 +27,28 @@
 	var/obj/item/blood_blessing/activated/reward_target
 	var/reward_treshold = 50
 
-/datum/status_effect/blessing_damage/on_creation(mob/living/new_owner, obj/item/blood_blessing/activated/new_reward_target, var/new_reward_treshold)
+/datum/status_effect/damage_kill_track/on_creation(mob/living/new_owner, obj/item/blood_blessing/activated/new_reward_target, var/new_reward_treshold)
 	. = ..()
 	if(.)
 		reward_target = new_reward_target
 		if(new_reward_treshold != reward treshold && new_reward_treshold != null)
 			reward_treshold = new_reward_treshold
 
-/datum/status_effect/blessing_damage/on_apply()
+/datum/status_effect/damage_kill_track/on_apply()
 	if(owner.stat == DEAD)
 		return FALSE
 	return ..()
 
-/datum/status_effect/blessing_damage/proc/get_souls()
+/datum/status_effect/damage_kill_track/proc/get_souls()
 	if(!QDELETED(reward_target))
 		reward_target.get_soulrewards(owner)
 
-/datum/status_effect/blessing_damage/tick()
+/datum/status_effect/damage_kill_track/tick()
 	if(total_damage > 0 && (owner.maxHealth / total_damage) >= reward_treshold && owner.stat == DEAD)
 		get_souls()
 		qdel(src)
 
-/datum/status_effect/blessing_damage/on_remove()
+/datum/status_effect/damage_kill_track/on_remove()
 	get_souls()
 	. = ..()
 
