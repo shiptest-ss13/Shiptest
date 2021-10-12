@@ -78,19 +78,16 @@
 	glass_name = "Darkest Chocolate"
 	glass_desc = "Darkness within darkness awaits you, spaceman!"
 	var/obj/effect/light_holder
-	
 /datum/reagent/consumable/ethanol/darkest_chocolate/on_mob_metabolize(mob/living/M)
 	to_chat(M, "<span class='notice'>You feel endless night enveloping you!</span>")
 	light_holder = new(M)
 	light_holder.set_light(3, 0.7, "#110f0f")
-	
 /datum/reagent/consumable/ethanol/darkest_chocolate/on_mob_life(mob/living/carbon/M)
 	if(QDELETED(light_holder))
 		M.reagents.del_reagent(/datum/reagent/consumable/ethanol/darkest_chocolate)
 	else if(light_holder.loc != M)
 		light_holder.forceMove(M)
 	return ..()
-
 /datum/reagent/consumable/ethanol/darkest_chocolate/on_mob_end_metabolize(mob/living/M)
 	to_chat(M, "<span class='notice'>The darkness subsides.</span>")
 	QDEL_NULL(light_holder)
@@ -104,7 +101,6 @@
 	glass_icon_state = "archmagus_brew"
 	glass_name = "Archmagus' Brew"
 	glass_desc = "Said to have been requested by a great Archmagus, hence the name. Tastes like tough love."
-	
 /datum/reagent/consumable/ethanol/archmagus_brew/on_mob_life(mob/living/carbon/human/M)
 	var/clonecalc = 2.5*REM*current_cycle
 	if(!overdosed)
@@ -125,7 +121,6 @@
 	glass_icon_state = "out_of_lime"
 	glass_name = "Out of Lime"
 	glass_desc = "A spin on the classic. Artists and street fighters swear by this stuff."
-
 /datum/reagent/consumable/ethanol/out_of_lime/expose_mob(mob/living/carbon/human/consumer, method=INGEST, reac_volume)
 	if(method == INGEST || method == TOUCH)
 		if(istype(consumer))
