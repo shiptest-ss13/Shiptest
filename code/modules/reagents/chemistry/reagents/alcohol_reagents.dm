@@ -2243,7 +2243,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	color = "#dfc794"
 	description = "All the protein, vitamins and carbs of your grandma's best turkey dinner, plus 15 percent alcohol."
 	boozepwr = 15
-	taste_description = "thick, nutty milk, with a boozy kick"
+	taste_description = "thick, nutty milk with a boozy kick"
 	glass_icon_state = "muddersmilk"
 	glass_name = "Mudder's Milk"
 	glass_desc = "All the protein, vitamins and carbs of your grandma's best turkey dinner, plus 15 percent alcohol."
