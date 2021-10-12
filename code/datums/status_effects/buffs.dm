@@ -499,6 +499,8 @@
 	var/hand
 	var/deathTick = 0
 	var/pacifist
+	var/last_kill
+	var/blood_thirst
 
 /datum/status_effect/hunters_oath/on_apply()
 	//Makes the user no longer pacifist, their oath is to hunt and kill.
@@ -551,6 +553,24 @@
 					//Otherwise get rid of whatever else is in their hand and return the rod to said hand
 					itemUser.put_in_hand(new_curse, hand, forced = TRUE)
 					to_chat(itemUser, "<span class='warning'>After a few moments of painful transformation, your arm reforms itself, growing sharp claws and it's skin becoming twisted!</span>")
+			if(last_kill >= (world.time + 2 MINUTES))
+				blood_thirst += 1
+			switch(blood_thirst)
+				if(10)
+					to_chat(itemUser, pick("<span class='warning'>The thirst returns, you yearn for blood!</span>"))
+				if(60)
+					to_chat(itemUser, pick("<span class='warning'>You hear the hunter whispering painful words in your head!</span>"))
+				if(100)
+					to_chat(itemUser, pick("<span class='warning'>You should probably go kill something!</span>"))
+				if(200)
+					to_chat(itemUser, pick("<span class='warning'>Feast on them, kill them.</span>"))
+				if(300)
+					to_chat(itemUser, pick("<span class='warning'>Their end is your purpose.</span>"))
+				if(400)
+					to_chat(itemUser, pick("<span class='warning'>Pain lingers in this world, you should end it.</span>"))
+				if(500)
+					to_chat(itemUser, pick("<span class='warning'>Tear them apart, or yourself, it matters not, the deal remains.</span>"))
+
 
 /datum/status_effect/hunters_oath/proc/consume_owner()
 	owner.visible_message("<span class='notice'>[owner]'s soul is absorbed by their master, releasing a shade from what they once were.</span>")

@@ -1900,7 +1900,7 @@
 	sharpness = IS_SHARP_ACCURATE
 	var/activated = FALSE
 	var/target_hand
-	var/mob/curse_owner //Only enables mark awarding if there's a curse owner, which is assigned upon binding the item.
+	var/mob/living/carbon/curse_owner //Only enables mark awarding if there's a curse owner, which is assigned upon binding the item.
 
 /obj/item/blood_blessing/attack_self(mob/user)
 	if(activated)
@@ -2141,6 +2141,9 @@
 
 /obj/item/blood_blessing/activated/proc/get_soulrewards(mob/living/L)
 //The bread and butter of the item, please only add lists needed to get new marks to not overbloat this further.
+	var/datum/status_effect/hunters_oath/effect = curse_owner.has_status_effect(STATUS_EFFECT_HUNTERS_OATH)
+	effect.last_kill = world.time
+	effect.blood_thirst = 0
 	var/bonus_mod = 0
 	if(istype(L, /mob/living/simple_animal/hostile/asteroid || ismegafauna(L))) //Excludes anything else
 		bonus_mod = 1
