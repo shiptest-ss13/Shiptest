@@ -154,7 +154,7 @@
 
 	folded = !folded
 	playsound(src.loc, 'sound/weapons/empty.ogg', 100, 1)
-	update_overlays()
+	update_icon()
 
 /obj/item/gun/ballistic/automatic/ak47/nt/update_overlays()
 	. = ..()
@@ -164,7 +164,6 @@
 	else
 		stock = mutable_appearance(icon, null)
 	. += stock
-	update_icon()
 
 /obj/item/gun/ballistic/automatic/pistol/tec9
 	name = "TEC9 Machine Pistol"
