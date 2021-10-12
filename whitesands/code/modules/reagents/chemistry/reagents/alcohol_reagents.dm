@@ -49,7 +49,6 @@
 	M.adjustFireLoss(-0.2, 0)
 	..()
 	. = 1
-
 /datum/reagent/consumable/ethanol/out_of_touch
 	name = "Out of Touch"
 	description = "Perfect for when you're out of time."
@@ -68,7 +67,6 @@
 		reac_volume = min(reac_volume, M.amount)
 		new/obj/item/stack/tile/bronze(get_turf(M), reac_volume)
 		M.use(reac_volume)
-
 /datum/reagent/consumable/ethanol/darkest_chocolate
 	name = "Darkest Chocolate"
 	description = "Darkness within darkness awaits you, spaceman!"
@@ -96,7 +94,6 @@
 /datum/reagent/consumable/ethanol/darkest_chocolate/on_mob_end_metabolize(mob/living/M)
 	to_chat(M, "<span class='notice'>The darkness subsides.</span>")
 	QDEL_NULL(light_holder)
-
 /datum/reagent/consumable/ethanol/archmagus_brew
 	name = "Archmagus' Brew"
 	description = "Said to have been requested by a great Archmagus, hence the name. Tastes like tough love."
@@ -118,7 +115,6 @@
 		M.losebreath--
 	..()
 	return TRUE
-
 /datum/reagent/consumable/ethanol/out_of_lime
 	name = "Out of Lime"
 	description = "A spin on the classic. Artists and street fighters swear by this stuff."
