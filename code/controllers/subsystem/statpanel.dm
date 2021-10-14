@@ -21,7 +21,7 @@ SUBSYSTEM_DEF(statpanels)
 		)
 
 		if(SSshuttle.jump_mode != BS_JUMP_IDLE)
-			global_data += "Jump: [SSshuttle.jump_mode] [round(timeleft(SSshuttle.jump_timer)/10)]"
+			global_data += "Jump: [round(timeleft(SSshuttle.jump_timer)/10)]s"
 		encoded_global_data = url_encode(json_encode(global_data))
 		src.currentrun = GLOB.clients.Copy()
 		mc_data_encoded = null

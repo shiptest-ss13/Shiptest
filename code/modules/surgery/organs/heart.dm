@@ -100,11 +100,11 @@
 	icon_state = "cursedheart-off"
 	icon_base = "cursedheart"
 	decay_factor = 0
-	actions_types = list(/datum/action/item_action/organ_action/cursed_heart)
+	actions_types = list(/datum/action/item_action/hands_free/organ_action/cursed_heart)
 	var/last_pump = 0
 	var/add_colour = TRUE //So we're not constantly recreating colour datums
-	var/pump_delay = 30 //you can pump 1 second early, for lag, but no more (otherwise you could spam heal)
-	var/blood_loss = 100 //600 blood is human default, so 5 failures (below 122 blood is where humans die because reasons?)
+	var/pump_delay = 40 //you can pump 1 second early, for lag, but no more (otherwise you could spam heal)
+	var/blood_loss = 50 //600 blood is human default, so 10 failures (below 122 blood is where humans die because reasons?)
 
 	//How much to heal per pump, negative numbers would HURT the player
 	var/heal_brute = 0
@@ -142,11 +142,11 @@
 	..()
 	M.remove_client_colour(/datum/client_colour/cursed_heart_blood)
 
-/datum/action/item_action/organ_action/cursed_heart
+/datum/action/item_action/hands_free/organ_action/cursed_heart
 	name = "Pump your blood"
 
 //You are now brea- pumping blood manually
-/datum/action/item_action/organ_action/cursed_heart/Trigger()
+/datum/action/item_action/hands_free/organ_action/cursed_heart/Trigger()
 	. = ..()
 	if(. && istype(target, /obj/item/organ/heart/cursed))
 		var/obj/item/organ/heart/cursed/cursed_heart = target
@@ -162,7 +162,7 @@
 		var/mob/living/carbon/human/H = owner
 		if(istype(H))
 			if(H.dna && !(NOBLOOD in H.dna.species.species_traits))
-				H.blood_volume = min(H.blood_volume + cursed_heart.blood_loss*0.5, BLOOD_VOLUME_MAXIMUM)
+				H.blood_volume = min(H.blood_volume + cursed_heart.blood_loss*1.0, BLOOD_VOLUME_MAXIMUM)
 				H.remove_client_colour(/datum/client_colour/cursed_heart_blood)
 				cursed_heart.add_colour = TRUE
 				H.adjustBruteLoss(-cursed_heart.heal_brute)

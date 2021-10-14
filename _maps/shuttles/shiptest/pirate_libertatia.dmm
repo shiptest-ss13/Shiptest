@@ -231,7 +231,7 @@
 /turf/open/floor/mineral/plastitanium,
 /area/ship/security)
 "ml" = (
-/obj/effect/turf_decal/caution/stand_clear{
+/obj/effect/turf_decal/industrial/stand_clear{
 	dir = 4
 	},
 /obj/machinery/door/window/westleft,
@@ -328,7 +328,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
-/obj/effect/turf_decal/caution/stand_clear{
+/obj/effect/turf_decal/industrial/stand_clear{
 	dir = 8
 	},
 /obj/machinery/door/window/eastright,
@@ -516,9 +516,8 @@
 /obj/machinery/light/small{
 	dir = 8
 	},
-/obj/effect/turf_decal/caution/stand_clear{
-	dir = 1;
-	pixel_x = 10
+/obj/effect/turf_decal/industrial/stand_clear{
+	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/turf_decal/industrial/warning{
@@ -1923,9 +1922,8 @@
 /obj/machinery/light/small{
 	dir = 4
 	},
-/obj/effect/turf_decal/caution/stand_clear{
-	dir = 1;
-	pixel_x = -10
+/obj/effect/turf_decal/industrial/stand_clear{
+	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/turf_decal/industrial/warning{

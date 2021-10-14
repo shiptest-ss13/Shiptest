@@ -643,15 +643,6 @@
 	armor = list("melee" = 30, "bullet" = 5, "laser" = 10, "energy" = 20, "bomb" = 10, "bio" = 100, "rad" = 75, "fire" = 60, "acid" = 30)
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/clown
 
-/obj/item/clothing/suit/space/hardsuit/clown/mob_can_equip(mob/M, slot)
-	if(!..() || !ishuman(M))
-		return FALSE
-	var/mob/living/carbon/human/H = M
-	if(H.mind.assigned_role == "Clown")
-		return TRUE
-	else
-		return FALSE
-
 	//Old Prototype
 /obj/item/clothing/head/helmet/space/hardsuit/ancient
 	name = "prototype RIG hardsuit helmet"

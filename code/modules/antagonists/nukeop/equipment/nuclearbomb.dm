@@ -483,7 +483,6 @@
 		off_station = NUKE_MISS_STATION
 
 	if(off_station < 2)
-		SSshuttle.registerHostileEnvironment(src)
 		SSshuttle.lockdown = TRUE
 
 	SSredbot.send_discord_message("admin","A nuclear device has destroyed the station.","round ending event")

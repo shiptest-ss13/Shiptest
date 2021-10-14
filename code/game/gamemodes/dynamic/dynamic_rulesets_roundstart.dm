@@ -390,7 +390,6 @@
 	if(revolution.members.len)
 		revolution.update_objectives()
 		revolution.update_heads()
-		SSshuttle.registerHostileEnvironment(revolution)
 		return TRUE
 	log_game("DYNAMIC: [ruletype] [name] failed to get any eligible headrevs. Refunding [cost] threat.")
 	return FALSE
@@ -567,7 +566,7 @@
 	return TRUE
 
 /datum/dynamic_ruleset/roundstart/monkey/proc/check_monkey_victory()
-	if(SSshuttle.emergency.mode != SHUTTLE_ENDGAME)
+	if(SSshuttle.jump_mode != BS_JUMP_COMPLETED)
 		return FALSE
 	var/datum/disease/D = new /datum/disease/transformation/jungle_fever()
 	for(var/mob/living/carbon/monkey/M in GLOB.alive_mob_list)

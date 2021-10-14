@@ -504,6 +504,30 @@
 	tool_behaviour = TOOL_SAW
 	toolspeed = 0.5 //faster than normal saw
 
+/obj/item/nullrod/scythe/talking/necro
+	desc = "An ancient weapon flush with the souls of the fallen. The blood of the necropolis has suffused it over time immemorial, granting a toothy bite."
+	force = 35
+	block_chance = 35
+	hitsound = 'sound/weapons/pierce_slow.ogg'
+	armour_penetration = 20// lower ap than the original possessed sword, go figure. The justification is that this has a serrated blade
+	chaplain_spawnable = FALSE
+	attack_verb = list("gnawed", "munched on", "chewed", "rended", "chomped")
+	name = "possessed greatsword"
+	var/bleed_stacks_per_hit = 2 //this effect has rapid scaling and is an instant down pretty much, I'll crib it since it can trigger on non-fauna
+	resistance_flags = FIRE_PROOF | ACID_PROOF
+
+/obj/item/nullrod/scythe/talking/necro/examine(mob/user)
+	. = ..()
+	. += "<span class='notice'>This weapon applies a growing blood curse on attack. Though it slowly fades, fully manifesting it causes your target's blood to violently explode, creating a lethal burst of damage.</span>"
+
+/obj/item/nullrod/scythe/talking/necro/attack(mob/living/target)
+	..()
+	var/datum/status_effect/stacking/saw_bleed/B = target.has_status_effect(STATUS_EFFECT_SAWBLEED)
+	if(!B)
+		target.apply_status_effect(STATUS_EFFECT_SAWBLEED,bleed_stacks_per_hit)
+	else
+		B.add_stacks(bleed_stacks_per_hit)
+
 /obj/item/nullrod/hammmer
 	icon_state = "hammeron"
 	item_state = "hammeron"

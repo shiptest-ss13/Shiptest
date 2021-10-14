@@ -204,6 +204,16 @@
 	search_objects = 1
 	wanted_objects = list(/obj/item/pen/survival, /obj/item/stack/ore/diamond)
 
+/mob/living/simple_animal/hostile/asteroid/basilisk/watcher/gib()
+	move_force = MOVE_FORCE_DEFAULT
+	move_resist = MOVE_RESIST_DEFAULT
+	pull_force = PULL_FORCE_DEFAULT
+
+	if(prob(5))
+		new /obj/item/gem/fdiamond(loc)
+		visible_message("<span class='warning'>The focusing diamond in [src]'s eye looks intact!</span>")
+	..()
+
 /mob/living/simple_animal/hostile/asteroid/basilisk/watcher/Life()
 	. = ..()
 	if(stat == CONSCIOUS)
@@ -239,7 +249,7 @@
 
 /mob/living/simple_animal/hostile/asteroid/basilisk/watcher/random/Initialize()
 	. = ..()
-	if(prob(1))
+	if(prob(15))
 		if(prob(75))
 			new /mob/living/simple_animal/hostile/asteroid/basilisk/watcher/magmawing(loc)
 		else
@@ -253,14 +263,14 @@
 	icon_living = "watcher_magmawing"
 	icon_aggro = "watcher_magmawing"
 	icon_dead = "watcher_magmawing_dead"
-	maxHealth = 215 //Compensate for the lack of slowdown on projectiles with a bit of extra health
-	health = 215
+	maxHealth = 250 //Compensate for the lack of slowdown on projectiles with a bit of extra health
+	health = 250
 	light_range = 3
 	light_power = 2.5
 	light_color = LIGHT_COLOR_LAVA
 	projectiletype = /obj/projectile/temp/basilisk/magmawing
-	crusher_loot = /obj/item/crusher_trophy/blaster_tubes/magma_wing
-	crusher_drop_mod = 60
+	crusher_loot = /obj/item/crusher_trophy/magma_wing
+	crusher_drop_mod = 75
 
 /mob/living/simple_animal/hostile/asteroid/basilisk/watcher/icewing
 	name = "icewing watcher"
@@ -274,16 +284,16 @@
 	ranged_cooldown_time = 20
 	projectiletype = /obj/projectile/temp/basilisk/icewing
 	butcher_results = list(/obj/item/stack/ore/diamond = 5, /obj/item/stack/sheet/bone = 1) //No sinew; the wings are too fragile to be usable
-	crusher_loot = /obj/item/crusher_trophy/watcher_wing/ice_wing
-	crusher_drop_mod = 30
+	crusher_loot = /obj/item/crusher_trophy/ice_wing
+	crusher_drop_mod = 75
 
 /obj/projectile/temp/basilisk/magmawing
 	name = "scorching blast"
 	icon_state = "lava"
-	damage = 5
+	damage = 10
 	damage_type = BURN
 	nodamage = FALSE
-	temperature = 200 // Heats you up! per hit!
+	temperature = 250 // Heats you up! per hit!
 
 /obj/projectile/temp/basilisk/magmawing/on_hit(atom/target, blocked = FALSE)
 	. = ..()
@@ -294,7 +304,7 @@
 			L.IgniteMob()
 
 /obj/projectile/temp/basilisk/icewing
-	damage = 5
+	damage = 15
 	damage_type = BURN
 	nodamage = FALSE
 

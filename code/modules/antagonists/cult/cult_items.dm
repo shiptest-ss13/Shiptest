@@ -454,60 +454,6 @@
 	cap_icon_state = null
 	cap_on = FALSE
 
-/obj/item/shuttle_curse
-	name = "cursed orb"
-	desc = "You peer within this smokey orb and glimpse terrible fates befalling the escape shuttle."
-	icon = 'icons/obj/cult.dmi'
-	icon_state ="shuttlecurse"
-	var/static/curselimit = 0
-
-/obj/item/shuttle_curse/attack_self(mob/living/user)
-	if(!iscultist(user))
-		user.dropItemToGround(src, TRUE)
-		user.Paralyze(100)
-		to_chat(user, "<span class='warning'>A powerful force shoves you away from [src]!</span>")
-		return
-	if(curselimit > 1)
-		to_chat(user, "<span class='notice'>We have exhausted our ability to curse the shuttle.</span>")
-		return
-	if(locate(/obj/singularity/narsie) in GLOB.poi_list)
-		to_chat(user, "<span class='warning'>Nar'Sie is already on this plane, there is no delaying the end of all things.</span>")
-		return
-
-	if(SSshuttle.emergency.mode == SHUTTLE_CALL)
-		var/cursetime = 1800
-		var/timer = SSshuttle.emergency.timeLeft(1) + cursetime
-		var/security_num = seclevel2num(get_security_level())
-		var/set_coefficient = 1
-		switch(security_num)
-			if(SEC_LEVEL_GREEN)
-				set_coefficient = 2
-			if(SEC_LEVEL_BLUE)
-				set_coefficient = 1
-			else
-				set_coefficient = 0.5
-		var/surplus = timer - (SSshuttle.emergencyCallTime * set_coefficient)
-		SSshuttle.emergency.setTimer(timer)
-		if(surplus > 0)
-			SSshuttle.block_recall(surplus)
-		to_chat(user, "<span class='danger'>You shatter the orb! A dark essence spirals into the air, then disappears.</span>")
-		playsound(user.loc, 'sound/effects/glassbr1.ogg', 50, TRUE)
-		qdel(src)
-		sleep(20)
-		var/static/list/curses
-		if(!curses)
-			curses = list("A fuel technician just slit his own throat and begged for death.",
-			"The shuttle's navigation programming was replaced by a file containing just two words: IT COMES.",
-			"The shuttle's custodian was found washing the windows with their own blood.",
-			"A shuttle engineer began screaming 'DEATH IS NOT THE END' and ripped out wires until an arc flash seared off her flesh.",
-			"A shuttle inspector started laughing madly over the radio and then threw herself into an engine turbine.",
-			"The shuttle dispatcher was found dead with bloody symbols carved into their flesh.",
-			"The shuttle's transponder is emitting the encoded message 'FEAR THE OLD BLOOD' in lieu of its assigned identification signal.")
-		var/message = pick_n_take(curses)
-		message += " The shuttle will be delayed by three minutes."
-		priority_announce("[message]", "System Failure", 'sound/misc/notice1.ogg')
-		curselimit++
-
 /obj/item/cult_shift
 	name = "veil shifter"
 	desc = "This relic instantly teleports you, and anything you're pulling, forward by a moderate distance."

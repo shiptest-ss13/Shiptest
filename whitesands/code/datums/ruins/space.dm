@@ -31,13 +31,14 @@
 
 /datum/map_template/ruin/space/transport18
 	id = "transport18"
-	suffix = "transport_18.dmm"
+	suffix = "transport18.dmm"
 	name = "Booze Cruise"
 	description = "A freighter, damaged beyond repair and surrounded by a cloud of aluminum and... beer foam?"
 
 /datum/map_template/ruin/space/fueldepot
 	id = "fueldepot"
-	suffix = "fuel_depot.dmm"
+	suffix = "fueldepot.dmm"
+	name = "Fuel Depot"
 	description = "An orbital refueling station with the remains of a ship lodged among the debris."
 
 /datum/map_template/ruin/space/nuclear_dump
@@ -51,3 +52,9 @@
 	suffix = "ntfacility.dmm"
 	name = "Abandoned Facility"
 	description = "A NT research station. Something has gone horribly wrong here."
+
+/datum/map_template/ruin/space/solgovhistory
+	id = "solgovhistory"
+	suffix = "solgovhistory.dmm"
+	name = "Abandoned Museum"
+	description = "A abandoned musuem dedicated to the long history of SolGov. Who the hell puts live bullets in a musuem is beyond anyone, but the salvagers aren't complaining."

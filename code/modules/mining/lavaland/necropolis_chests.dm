@@ -13,14 +13,14 @@
 	desc = "It's watching you suspiciously."
 
 /obj/structure/closet/crate/necropolis/tendril/PopulateContents()
-	var/loot = rand(1,27)
+	var/loot = rand(1,31)
 	switch(loot)
 		if(1)
 			new /obj/item/shared_storage/red(src)
 		if(2)
 			new /obj/item/clothing/suit/space/hardsuit/cult(src)
 		if(3)
-			new /obj/item/soulstone/anybody(src)
+			new /obj/item/necromantic_stone/lava(src)
 		if(4)
 			new /obj/item/katana/cursed(src)
 		if(5)
@@ -29,6 +29,7 @@
 			new /obj/item/reagent_containers/glass/bottle/potion/flight(src)
 		if(7)
 			new /obj/item/pickaxe/diamond(src)
+			new /obj/item/t_scanner/adv_mining_scanner(src)
 		if(8)
 			if(prob(50))
 				new /obj/item/disk/design_disk/modkit_disc/resonator_blast(src)
@@ -43,13 +44,17 @@
 		if(12)
 			new /obj/item/clothing/suit/space/hardsuit/ert/paranormal/berserker(src)
 		if(13)
-			new /obj/item/jacobs_ladder(src)
+			new /obj/item/borg/upgrade/modkit/lifesteal(src)
+			new /obj/item/bedsheet/cult(src)
 		if(14)
-			new /obj/item/nullrod/scythe/talking(src)
+			new /obj/item/nullrod/scythe/talking/necro(src)
 		if(15)
-			new /obj/item/nullrod/armblade(src)
+			new /obj/item/book_of_babel(src)
 		if(16)
-			new /obj/item/guardiancreator/miner(src)
+			if(prob(75))
+				new /obj/item/guardiancreator/miner(src)
+			else
+				new /obj/item/guardiancreator/miner/choose (src)
 		if(17)
 			if(prob(50))
 				new /obj/item/disk/design_disk/modkit_disc/mob_and_turf_aoe(src)
@@ -73,10 +78,18 @@
 		if(25)
 			new /obj/item/book/granter/spell/summonitem(src)
 		if(26)
-			new /obj/item/book_of_babel(src)
+			new /obj/item/clothing/gloves/gauntlets(src)
 		if(27)
-			new /obj/item/borg/upgrade/modkit/lifesteal(src)
-			new /obj/item/bedsheet/cult(src)
+			new /obj/item/clothing/under/drip(src)
+			new /obj/item/clothing/shoes/drip(src)
+		if(28)
+			new /obj/item/freeze_cube(src)
+		if(29)
+			new /obj/item/gun/energy/spur(src)
+		if(30)
+			new /obj/item/clothing/suit/ascetic(src)
+		if(31)
+			new /obj/item/kitchen/knife/envy(src)
 
 //KA modkit design discs
 /obj/item/disk/design_disk/modkit_disc
@@ -140,6 +153,57 @@
 	build_path = /obj/item/borg/upgrade/modkit/bounty
 
 //Spooky special loot
+
+//drip
+/obj/item/clothing/under/drip
+	name = "incredibly fashionable outfit"
+	desc = "Why don't you go test some shi-"
+	icon = 'icons/obj/clothing/under/suits.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/under/suits.dmi'
+	mob_overlay_state = "drippy"
+	icon_state = "drippy"
+	item_state = "drippy"
+	armor = list("melee" = 10, "bullet" = 10, "laser" = 10,"energy" = 10, "bomb" = 10, "bio" = 10, "rad" = 10, "fire" = 100, "acid" = 100)
+	resistance_flags = FIRE_PROOF | ACID_PROOF | LAVA_PROOF//the unbreakable fashion
+	can_adjust = FALSE
+
+/obj/item/clothing/shoes/drip
+	name = "fashionable shoes"
+	desc = "Expensive-looking designer sneakers. Loud, ostentatious, agressively attractive. The elaborate design on the sole could probably give you some decent traction."
+	icon = 'icons/obj/clothing/shoes.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/feet.dmi'
+	mob_overlay_state = "dripshoes"
+	icon_state = "dripshoes"
+	item_state = "dripshoes"
+	clothing_flags = NOSLIP_ICE | NOSLIP
+	armor = list("melee" = 25, "bullet" = 25, "laser" = 25, "energy" = 25, "bomb" = 50, "bio" = 10, "rad" = 0, "fire" = 100, "acid" = 100)
+	resistance_flags = FIRE_PROOF | ACID_PROOF | LAVA_PROOF
+	strip_delay = 40
+	resistance_flags = NONE
+	permeability_coefficient = 0.05 //Thick soles, and covers the ankle
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/shoes
+	lace_time = 35 SECONDS//nike shoelace art joke
+	slowdown = -0.2
+
+/obj/item/clothing/under/drip/equipped(mob/user, slot)
+	. = ..()
+	if(slot == ITEM_SLOT_ICLOTHING)
+		SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT, "drippy", /datum/mood_event/drippy)
+
+/obj/item/clothing/under/drip/dropped(mob/user)
+	. = ..()
+	SEND_SIGNAL(user, COMSIG_CLEAR_MOOD_EVENT, "drippy")
+
+/obj/item/clothing/shoes/drip/equipped(mob/user, slot)
+	. = ..()
+	if(slot == ITEM_SLOT_FEET)
+		SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT, "dripjordan", /datum/mood_event/dripjordan)
+		SEND_SIGNAL(user, COMSIG_CLEAR_MOOD_EVENT, "nojordans", /datum/mood_event/dripjordan)
+
+/obj/item/clothing/shoes/drip/dropped(mob/user)
+	. = ..()
+	SEND_SIGNAL(user, COMSIG_CLEAR_MOOD_EVENT, "dripjordan")
+	SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT, "nojordans", /datum/mood_event/nojordans)
 
 //Rod of Asclepius
 /obj/item/rod_of_asclepius
@@ -271,12 +335,14 @@
 		to_chat(user, "<span class='notice'>You release the wisp. It begins to bob around your head.</span>")
 		icon_state = "lantern"
 		wisp.orbit(user, 20)
+		ADD_TRAIT(user, ORBITED_TRAIT, "orbited")
 		SSblackbox.record_feedback("tally", "wisp_lantern", 1, "Freed")
 
 	else
 		to_chat(user, "<span class='notice'>You return the wisp to the lantern.</span>")
 		icon_state = "lantern-blue"
 		wisp.forceMove(src)
+		REMOVE_TRAIT(user, ORBITED_TRAIT, "orbited")
 		SSblackbox.record_feedback("tally", "wisp_lantern", 1, "Returned")
 
 /obj/item/wisp_lantern/Initialize()
@@ -390,7 +456,7 @@
 //Meat Hook
 /obj/item/gun/magic/hook
 	name = "meat hook"
-	desc = "Mid or feed."
+	desc = "A light hooked blade, attached by the handle to a long chain. Can be used to make quick strikes in hand, or thrown at enemies, magically dragging them to the user. <b>Get over here!</b>"
 	ammo_type = /obj/item/ammo_casing/magic/hook
 	icon_state = "hook"
 	item_state = "hook"
@@ -398,8 +464,19 @@
 	righthand_file = 'icons/mob/inhands/weapons/melee_righthand.dmi'
 	fire_sound = 'sound/weapons/batonextend.ogg'
 	max_charges = 1
-	item_flags = NEEDS_PERMIT | NOBLUDGEON
-	force = 18
+	item_flags = NEEDS_PERMIT
+	force = 15
+	sharpness = IS_SHARP
+	block_chance = 25//A pittance, but might be worth something in a scuffle
+	hitsound = 'sound/weapons/chainhit.ogg'
+
+/obj/item/gun/magic/hook/melee_attack_chain(mob/user, atom/target, params)
+	..()
+	user.changeNext_move(CLICK_CD_MELEE * 0.5)//quick to swing. 15 force can be quite something with this attack frequency.
+
+/obj/item/gun/magic/hook/Initialize()
+	. = ..()
+	AddComponent(/datum/component/butchering, 15, 130, 0, hitsound)
 
 /obj/item/ammo_casing/magic/hook
 	name = "hook"
@@ -423,7 +500,7 @@
 
 /obj/projectile/hook/fire(setAngle)
 	if(firer)
-		chain = firer.Beam(src, icon_state = "chain", time = INFINITY, maxdistance = INFINITY)
+		chain = firer.Beam(src, icon_state = "chain")
 	..()
 	//TODO: root the firer until the chain returns
 
@@ -461,27 +538,42 @@
 	damage = 0
 	stamina = 40
 
-//Immortality Talisman
+//Immortality Talisman: Now with state-of-the-art panic button technology
 /obj/item/immortality_talisman
 	name = "\improper Immortality Talisman"
-	desc = "A dread talisman that can render you completely invulnerable."
+	desc = "A dread talisman, connecting to a plane of total emptiness. It can render you completely invulnerable."
 	icon = 'icons/obj/lavaland/artefacts.dmi'
 	icon_state = "talisman"
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
-	actions_types = list(/datum/action/item_action/immortality)
+	actions_types = list(/datum/action/item_action/hands_free/immortality)
 	var/cooldown = 0
+	w_class = 2
+	var/warcry = "DOOOOOM"
+
+/obj/item/immortality_talisman/examine(mob/user)
+	. = ..()
+	. += "<span class='notice'>Alt-click to set your activation wail.</span>"
+
+/obj/item/immortality_talisman/AltClick(mob/user)
+	if(user.canUseTopic(src, BE_CLOSE))
+		..()
+		if(istype(user) && loc == user)
+			var/input = stripped_input(user,"What do you wish to bellow when dragged into the abyss? (Capitalization provides best impact)", ,"", 50)
+			if(input)
+				src.warcry = input
 
 /obj/item/immortality_talisman/Initialize()
 	. = ..()
 	AddComponent(/datum/component/anti_magic, TRUE, TRUE, TRUE)
 
-/datum/action/item_action/immortality
+/datum/action/item_action/hands_free/immortality
 	name = "Immortality"
 
 /obj/item/immortality_talisman/attack_self(mob/user)
 	if(cooldown < world.time)
 		SSblackbox.record_feedback("amount", "immortality_talisman_uses", 1)
-		cooldown = world.time + 600
+		cooldown = world.time + 900
+		user.say("[warcry]!!!", forced="talisman warcry")
 		new /obj/effect/immortality_talisman(get_turf(user), user)
 	else
 		to_chat(user, "<span class='warning'>[src] is not ready yet!</span>")
@@ -506,12 +598,12 @@
 	setDir(user.dir)
 
 	user.forceMove(src)
-	user.notransform = TRUE
+	user.notransform = FALSE
 	user.status_flags |= GODMODE
 
 	can_destroy = FALSE
 
-	addtimer(CALLBACK(src, .proc/unvanish, user), 10 SECONDS)
+	addtimer(CALLBACK(src, .proc/unvanish, user), 15 SECONDS)
 
 /obj/effect/immortality_talisman/proc/unvanish(mob/user)
 	user.status_flags &= ~GODMODE
@@ -545,9 +637,11 @@
 /obj/item/shared_storage
 	name = "paradox bag"
 	desc = "Somehow, it's in two places at once."
-	icon = 'icons/obj/storage.dmi'
-	icon_state = "cultpack"
-	slot_flags = ITEM_SLOT_BACK
+	icon = 'icons/obj/lavaland/artefacts.dmi'
+	icon_state = "paradox_bag"
+	mob_overlay_icon = 'icons/mob/clothing/belt.dmi'
+	mob_overlay_state = "paradoxbag"
+	slot_flags = ITEM_SLOT_BELT
 	resistance_flags = INDESTRUCTIBLE
 
 /obj/item/shared_storage/red
@@ -558,7 +652,7 @@
 	. = ..()
 	var/datum/component/storage/STR = AddComponent(/datum/component/storage/concrete)
 	STR.max_w_class = WEIGHT_CLASS_NORMAL
-	STR.max_combined_w_class = 60
+	STR.max_combined_w_class = 35
 	STR.max_items = 21
 	new /obj/item/shared_storage/blue(drop_location(), STR)
 
@@ -568,7 +662,7 @@
 		return INITIALIZE_HINT_QDEL
 	var/datum/component/storage/STR = AddComponent(/datum/component/storage, master)
 	STR.max_w_class = WEIGHT_CLASS_NORMAL
-	STR.max_combined_w_class = 60
+	STR.max_combined_w_class = 35
 	STR.max_items = 21
 
 //Book of Babel
@@ -633,6 +727,413 @@
 		C.emote("scream")
 	..()
 
+//nerfed necrostone
+/obj/item/necromantic_stone/lava
+	name = "cracked medallion"
+	desc = "A damaged stone medallion, with a glowing gem set in it's center. You could probably resurrect people as skeletons with it. The controlling spirit seems to be malfunctioning."
+	icon = 'icons/obj/wizard.dmi'
+	icon_state = "necrostone"
+	item_state = "electronic"
+	lefthand_file = 'icons/mob/inhands/misc/devices_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/misc/devices_righthand.dmi'
+	w_class = WEIGHT_CLASS_TINY
+	var/list/skeletons = list()
+	var/nolimit = 0
+
+/obj/item/necromantic_stone/lava/nolimit
+	nolimit = 1
+
+/obj/item/necromantic_stone/lava/attack(mob/living/carbon/human/M, mob/living/carbon/human/user)
+	if(!istype(M))
+		return ..()
+
+	if(!istype(user) || !user.canUseTopic(M, BE_CLOSE))
+		return
+
+	if(M.stat != DEAD)
+		to_chat(user, "<span class='warning'>This artifact can only affect the dead! Come on. Look, you're going to have to do that part yourself.</span>")
+		return
+
+	for(var/mob/dead/observer/ghost in GLOB.dead_mob_list) //excludes new players
+		if(ghost.mind && ghost.mind.current == M && ghost.client)  //the dead mobs list can contain clientless mobs
+			ghost.reenter_corpse()
+			break
+
+	if(!M.mind || !M.client)
+		to_chat(user, "<span class='warning'>There is no soul connected to this body... Could you put me in it? Just for a day. I swear I'll come back.</span>")
+		return
+
+	check_skele()//clean out/refresh the list
+	if(skeletons.len >= 5 && !nolimit)
+		to_chat(user, "<span class='warning'>This artifact can only affect five undead at a time! Greedy guts.</span>")
+		return
+
+	M.set_species(/datum/species/skeleton, icon_update=0)
+	M.revive(full_heal = TRUE, admin_revive = TRUE)
+	skeletons |= M
+	to_chat(M, "<span class='userdanger'>You have been returned from death by </span><B>[user.real_name]!</B>")
+	to_chat(M, "<span class='userdanger'>[user.p_theyre(TRUE)] technically your master now, I guess. Help [user.p_them()] or something? I don't know. I'm not your dad. </span>")
+
+	arm_skeleton(M)
+
+	desc = "A damaged stone medallion, with a glowing gem set in it's center. You could probably resurrect people as skeletons with it. The controlling spirit seems to be malfunctioning. Remember to strip targets[nolimit ? "." : ", [skeletons.len]/5 active skeletons."]"
+
+/obj/item/necromantic_stone/lava/proc/check_skele()
+	if(nolimit) //no point, the list isn't used.
+		return
+
+	for(var/X in skeletons)
+		if(!ishuman(X))
+			skeletons.Remove(X)
+			continue
+		var/mob/living/carbon/human/H = X
+		if(H.stat == DEAD)
+			H.dust(TRUE)
+			skeletons.Remove(X)
+			continue
+	listclearnulls(skeletons)
+
+//Funny gimmick, skeletons always seem to wear roman/ancient armour
+/obj/item/necromantic_stone/lava/proc/arm_skeleton(mob/living/carbon/human/H)
+	for(var/obj/item/I in H)
+		H.dropItemToGround(I)
+
+	var/hat = pick(/obj/item/clothing/head/helmet/roman, /obj/item/clothing/head/helmet/roman/legionnaire)
+	H.equip_to_slot_or_del(new hat(H), ITEM_SLOT_HEAD)
+	H.equip_to_slot_or_del(new /obj/item/clothing/under/costume/roman(H), ITEM_SLOT_ICLOTHING)
+	H.equip_to_slot_or_del(new /obj/item/clothing/shoes/roman(H), ITEM_SLOT_FEET)
+	H.put_in_hands(new /obj/item/shield/riot/roman(H), TRUE)
+	H.put_in_hands(new /obj/item/claymore(H), TRUE)
+	H.equip_to_slot_or_del(new /obj/item/spear(H), ITEM_SLOT_BACK)
+
+//ice cube
+/obj/item/freeze_cube
+	name = "freeze cube"
+	desc = "A block of semi-clear ice, enchanted by an ancient wizard to keep his drinks cold forever. \
+		Unfortunately, it appears to be malfunctioning, and now encases those it impacts with a cube of frost."
+	icon = 'icons/obj/lavaland/artefacts.dmi'
+	icon_state = "freeze_cube"
+	throwforce = 10
+	damtype = BURN
+	var/cooldown_time = 5 SECONDS
+	COOLDOWN_DECLARE(freeze_cooldown)
+
+/obj/item/freeze_cube/examine(mob/user)
+	. = ..()
+	. += ("<span class= 'danger'>Throw this at objects or creatures to freeze them, it will boomerang back so be cautious!</span>")
+
+/obj/item/freeze_cube/throw_at(atom/target, range, speed, mob/thrower, spin=1, diagonals_first = 0, datum/callback/callback, quickstart = TRUE)
+	. = ..()
+	if(!.)
+		return
+	icon_state = "freeze_cube_thrown"
+	addtimer(VARSET_CALLBACK(src, icon_state, initial(icon_state)), 1 SECONDS)
+
+/obj/item/freeze_cube/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)
+	icon_state = initial(icon_state)
+	var/caught = hit_atom.hitby(src, FALSE, FALSE, throwingdatum=throwingdatum)
+	var/mob/thrown_by = thrownby
+	if(ismovable(hit_atom) && !caught && (!thrown_by || thrown_by && COOLDOWN_FINISHED(src, freeze_cooldown)))
+		freeze(hit_atom)
+	if(thrown_by && !caught)
+		addtimer(CALLBACK(src, /atom/movable.proc/throw_at, thrown_by, throw_range+2, throw_speed, null, TRUE), 1)
+
+/obj/item/freeze_cube/proc/freeze(atom/movable/hit_atom)
+	playsound(src, 'sound/effects/glassbr3.ogg', 50, TRUE)
+	COOLDOWN_START(src, freeze_cooldown, cooldown_time)
+	if(isobj(hit_atom))
+		var/obj/hit_object = hit_atom
+		if(hit_object.resistance_flags & FREEZE_PROOF)
+			hit_object.visible_message("<span class='warning'>[hit_object] is freeze-proof! </span>")
+			return
+		if(!(hit_object.obj_flags & FROZEN))
+			hit_object.make_frozen_visual()
+	else if(isliving(hit_atom))
+		var/mob/living/hit_mob = hit_atom
+		walk(hit_mob, 0) //stops them mid pathing even if they're stunimmune
+		hit_mob.apply_status_effect(/datum/status_effect/ice_block_talisman, 5 SECONDS)
+
+//earthquake gauntlets
+/obj/item/clothing/gloves/gauntlets
+	name = "concussive gauntlets"
+	desc = "Buried deep beneath the earth, these ancient gauntlets absorbed the tectonic power of earthquakes. "
+	icon = 'icons/obj/lavaland/artefacts.dmi'
+	icon_state = "concussive_gauntlets"
+	mob_overlay_icon = 'icons/mob/clothing/hands.dmi'
+	mob_overlay_state = "concussive_gauntlets"
+	toolspeed = 0.1
+	strip_delay = 40
+	equip_delay_other = 20
+	cold_protection = HANDS
+	min_cold_protection_temperature = GLOVES_MIN_TEMP_PROTECT
+	heat_protection = HANDS
+	max_heat_protection_temperature = GLOVES_MAX_TEMP_PROTECT
+	resistance_flags = LAVA_PROOF | FIRE_PROOF //they are from lavaland after all
+	armor = list(melee = 25, bullet = 25, laser = 15, energy = 25, bomb = 100, bio = 0, rad = 0, fire = 100, acid = 30)
+
+/obj/item/clothing/gloves/gauntlets/equipped(mob/user, slot)
+	. = ..()
+	if(slot == ITEM_SLOT_GLOVES)
+		tool_behaviour = TOOL_MINING
+		RegisterSignal(user, COMSIG_HUMAN_EARLY_UNARMED_ATTACK, .proc/rocksmash)
+		RegisterSignal(user, COMSIG_MOVABLE_BUMP, .proc/rocksmash)
+	else
+		stopmining(user)
+
+/obj/item/clothing/gloves/gauntlets/dropped(mob/user)
+	. = ..()
+	stopmining(user)
+
+/obj/item/clothing/gloves/gauntlets/proc/stopmining(mob/user)
+	tool_behaviour = initial(tool_behaviour)
+	UnregisterSignal(user, COMSIG_HUMAN_EARLY_UNARMED_ATTACK)
+	UnregisterSignal(user, COMSIG_MOVABLE_BUMP)
+
+/obj/item/clothing/gloves/gauntlets/proc/rocksmash(mob/living/carbon/human/H, atom/A, proximity)
+	SIGNAL_HANDLER
+	if(!istype(A, /turf/closed/mineral))
+		return
+	A.attackby(src, H)
+	return COMPONENT_NO_ATTACK_OBJ
+
+//A version of the Cave Story refrence that a deranged scientist got their hands on. Better? Not really. Different? Definitely.
+/obj/item/gun/energy/spur
+	name = "Slowpoke"
+	desc = "The work of a truly genius gunsmith, altered and \"improved\" by a truly deranged Nanotransen scientist, using components from a kinetic accelerator and beam rifle. Draw, partner!"
+	icon = 'icons/obj/guns/energy.dmi'
+	lefthand_file = 'icons/mob/inhands/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/weapons/guns_righthand.dmi'
+	icon_state = "spur"
+	item_state = "spur"
+	fire_delay = 0.5 //BRATATAT! This is a cowboy's six-shooter after all.
+	selfcharge = 1
+	charge_delay = 1
+	slot_flags = ITEM_SLOT_BELT
+	fire_delay = 1
+	recoil = 1
+	cell_type = /obj/item/stock_parts/cell/gun
+	ammo_type = list(/obj/item/ammo_casing/energy/spur)
+	var/chargesound
+
+/obj/item/gun/energy/spur/examine(mob/user)
+	. = ..()
+	. += "<span class='notice'>This weapon contains a gradual heat accelerator that increases shot power as the weapon's energy stores are depleted. Shots at low power are significantly stronger, but also have incredibly short range.</span>"
+
+/obj/item/gun/energy/spur/update_icon()
+	var/maxcharge = cell.maxcharge
+	var/charge = cell.charge
+
+	var/oldsound = chargesound
+	var/obj/item/ammo_casing/energy/AC = ammo_type[select]
+	if(charge >= ((maxcharge/3) * 2)) // 2 third charged
+		chargesound = 'sound/weapons/spur_chargehigh.ogg'
+		recoil = 0
+		fire_sound = 'sound/weapons/spur_low.ogg'
+	else if(charge >= ((maxcharge/3) * 1)) // 1 third charged
+		chargesound = 'sound/weapons/spur_chargemed.ogg'
+		recoil = 0
+		fire_sound = 'sound/weapons/spur_medium.ogg'
+	else if(charge >= AC.e_cost) // less than that
+		chargesound = 'sound/weapons/spur_chargehigh.ogg'
+		recoil = 0
+		fire_sound = 'sound/weapons/spur_high.ogg'
+	else
+		chargesound = null
+		recoil = 1
+		fire_sound = 'sound/weapons/spur_high.ogg'
+
+	if(chargesound != oldsound)
+		playsound(src, chargesound, 100)
+		return
+
+/obj/item/ammo_casing/energy/spur
+	projectile_type = /obj/projectile/bullet/spur
+	select_name = "polar star lens"
+	e_cost = 1300
+	fire_sound = null
+	harmful = TRUE
+
+/obj/projectile/bullet/spur
+	name = "sparkling repulsor"
+	range = 20
+	damage = 30
+	damage_type = BRUTE
+	icon = 'icons/obj/projectiles.dmi'
+	icon_state = "spur_high"
+	var/skip = FALSE //this is the hackiest thing ive ever done but i dont know any other solution other than deparent the spur projectile
+
+/obj/projectile/bullet/spur/fire(angle, atom/direct_target)
+	if(!fired_from || !istype(fired_from,/obj/item/gun/energy) || skip)
+		return ..()
+
+	var/obj/item/gun/energy/spur/fired_gun = fired_from
+	var/maxcharge = fired_gun.cell.maxcharge
+	var/charge = fired_gun.cell.charge
+
+	if(charge >= ((maxcharge/3) * 2)) // 2 third charged
+		icon_state = "spur_low"
+		damage = 15
+		armour_penetration = 10
+		range = 10
+		homing = TRUE
+		speed = 0.5
+		stamina = 10
+	else if(charge >= ((maxcharge/3) * 1)) // 1 third charged
+		icon_state = "spur_medium"
+		damage = 20
+		armour_penetration = 10
+		range = 5
+	else
+		icon_state = "spur_high"//when you're regularly firing these from a dry clip, they're basically shotgun slugs.
+		damage = 35
+		armour_penetration = 20
+		range = 2
+	..()
+
+/obj/projectile/bullet/spur/on_range()
+	if(!loc)
+		return
+	var/turf/T = loc
+	var/image/impact = image('icons/obj/projectiles.dmi',T,"spur_range")
+	impact.layer = ABOVE_MOB_LAYER
+	T.overlays += impact
+	sleep(2)
+	T.overlays -= impact
+	qdel(impact)
+	..()
+
+/obj/projectile/bullet/spur/on_hit(atom/target, blocked)
+	. = ..()
+	var/impact_icon = null
+	var/impact_sound = null
+
+	if(ismob(target))
+		impact_icon = "spur_hitmob"
+		impact_sound = 'sound/weapons/spur_hitmob.ogg'
+	else
+		impact_icon = "spur_hitwall"
+		impact_sound = 'sound/weapons/spur_hitwall.ogg'
+
+	var/image/impact = image('icons/obj/projectiles.dmi',target,impact_icon)
+	target.overlays += impact
+	spawn(15)
+		target.overlays -= impact
+	playsound(loc, impact_sound, 30)
+	if(istype(target,/turf/closed/mineral))
+		var/turf/closed/mineral/M = target
+		M.gets_drilled()
+	..()
+
+/obj/item/ammo_casing/energy/spur/spur
+	projectile_type = /obj/projectile/bullet/spur
+	select_name = "spur lens"
+
+
+/obj/projectile/bullet/spur/spur
+	name = "spur bullet"
+	range = 20
+	damage = 40
+	damage_type = BRUTE
+	icon = 'icons/obj/projectiles.dmi'
+	icon_state = "spur_high"
+	skip = TRUE
+
+/obj/projectile/bullet/spur/spur/fire(angle, atom/direct_target)
+	if(!fired_from || !istype(fired_from,/obj/item/gun/energy))
+		return ..()
+
+	var/obj/item/gun/energy/spur/fired_gun = fired_from
+	var/maxcharge = fired_gun.cell.maxcharge
+	var/charge = fired_gun.cell.charge
+
+	if(charge >= ((maxcharge/3) * 2)) // 2 third charged
+		icon_state = "spur_high"
+		damage = 40
+		range = 20
+	else if(charge >= ((maxcharge/3) * 1)) // 1 third charged
+		icon_state = "spur_medium"
+		damage = 30
+		range = 13
+	else
+		icon_state = "spur_low"
+		damage = 20
+		range = 7
+	..()
+
+//ascetic's robe, provides quickly-recovering layers of total damage immunity, causes massive damage vulnerability when shield is down. Increases speed slightly.
+/obj/item/clothing/suit/ascetic
+	name = "dunewalker's garb"
+	desc = "Sand-bitten robes of roughspun cloth, fit for the hardy life of a travelling hermit. There's a strange aura about them- like a fragile desert haze."
+	icon = 'icons/obj/clothing/suits.dmi'
+	icon_state = "britte_master"//suffering
+	mob_overlay_icon = 'icons/mob/clothing/suit.dmi'
+	mob_overlay_state = "brittle_master"
+	equip_delay_other = 80
+	strip_delay = 100//to prevent hotswapping in battle
+	equip_delay_other = 10
+	slowdown =  -0.3
+	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
+	allowed = list(/obj/item/flashlight, /obj/item/tank/internals)
+	resistance_flags = FIRE_PROOF
+	w_class = WEIGHT_CLASS_BULKY
+	flags_inv = HIDEGLOVES|HIDESHOES|HIDEJUMPSUIT
+	cold_protection = CHEST | GROIN | LEGS | FEET | ARMS | HANDS
+	min_cold_protection_temperature = SPACE_SUIT_MIN_TEMP_PROTECT
+	heat_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
+	max_heat_protection_temperature = SPACE_SUIT_MAX_TEMP_PROTECT
+	armor = list(melee = -75, bullet = -15, laser = -75, energy = -55, bomb = -55, bio = 0, rad = 100, fire = 100, acid = -45)//bio causes negative chem effects to be multiplied. Bad times.
+	var/current_charges = 3
+	var/max_charges = 3 //How many charges total the shielding has
+	var/recharge_delay = 45 //How long after we've been shot before we can start recharging. 3 seconds here
+	var/recharge_cooldown = 0 //Time since we've last been shot
+	var/recharge_rate = 3 //How quickly the shield recharges once it starts charging
+	var/shield_state = "shimmerair"
+	var/shield_on = "shimmerair"
+
+/obj/item/clothing/suit/ascetic/examine(mob/user)
+	. = ..()
+	. += "<span class='notice'>The ascetic's magic woven into this robe increases the owner's speed and deflects harm from their person- however, once it's mirages have melted away, it causes significantly more damage to be taken. The magic can withstand three attacks before it must recover, but it begins regenerating quickly.</span>"
+
+/obj/item/clothing/suit/ascetic/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
+	recharge_cooldown = world.time + recharge_delay
+	if(current_charges > 0)
+		var/datum/effect_system/spark_spread/s = new
+		s.set_up(2, 1, src)
+		s.start()
+		owner.visible_message("<span class='danger'>The air seems to shift and boil around [owner]'s body, causing the [attack_text] to fly uselessly past!</span>")
+		current_charges--
+		if(recharge_rate)
+			START_PROCESSING(SSobj, src)
+		if(current_charges <= 1)
+			to_chat(owner, "<span class='warning'>The defensive wind is faltering!</span>")
+		if(current_charges <= 0)
+			owner.visible_message("<span class='warning'>The desert storm protecting [owner] fades away, leaving only ionized sparks!</span>")
+			playsound(loc, 'sound/weather/ashstorm/inside/weak_end.ogg', 100, TRUE)
+			shield_state = "broken"
+			owner.update_inv_wear_suit()
+		return 1
+	return 0
+
+/obj/item/clothing/suit/ascetic/Destroy()
+	STOP_PROCESSING(SSobj, src)
+	return ..()
+
+/obj/item/clothing/suit/ascetic/process()
+	if(world.time > recharge_cooldown && current_charges < max_charges)
+		current_charges = clamp((current_charges + recharge_rate), 0, max_charges)
+		playsound(loc, 'sound/effects/magic.ogg', 40, TRUE)
+		if(current_charges == max_charges)
+			visible_message("<span class='warning'>The strange wind returns to full strength!</span>")
+			STOP_PROCESSING(SSobj, src)
+		shield_state = "[shield_on]"
+		if(ishuman(loc))
+			var/mob/living/carbon/human/C = loc
+			C.update_inv_wear_suit()
+
+/obj/item/clothing/suit/ascetic/worn_overlays(isinhands)
+	. = list()
+	if(!isinhands)
+		. += mutable_appearance('icons/effects/effects.dmi', shield_state, MOB_LAYER - 0.01)
 
 /obj/item/jacobs_ladder
 	name = "jacob's ladder"
@@ -776,7 +1277,7 @@
 
 /obj/structure/closet/crate/necropolis/dragon/crusher/PopulateContents()
 	..()
-	new /obj/item/crusher_trophy/tail_spike(src)
+	new /obj/item/crusher_trophy/ash_spike(src)
 
 /obj/item/melee/ghost_sword
 	name = "\improper spectral blade"

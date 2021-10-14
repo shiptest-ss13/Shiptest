@@ -853,16 +853,6 @@
 		else
 			return FALSE // hmm
 
-/obj/docking_port/mobile/emergency/in_flight()
-	switch(mode)
-		if(SHUTTLE_ESCAPE)
-			return TRUE
-		if(SHUTTLE_STRANDED,SHUTTLE_ENDGAME)
-			return FALSE
-		else
-			return ..()
-
-
 //Called when emergency shuttle leaves the station
 /obj/docking_port/mobile/proc/on_emergency_launch()
 	if(launch_status == UNLAUNCHED) //Pods will not launch from the mine/planet, and other ships won't launch unless we tell them to.
