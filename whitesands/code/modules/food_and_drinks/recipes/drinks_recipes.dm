@@ -14,6 +14,7 @@
 	results = list(/datum/reagent/consumable/ethanol/darkest_chocolate = 5)
 	required_reagents = list(/datum/reagent/consumable/ethanol/black_russian = 2, /datum/reagent/consumable/ethanol/creme_de_cacao = 2, /datum/reagent/consumable/ethanol/irishcarbomb = 1)
 	mix_message = "The area around the glass seems to darken as the mixture forms!"
+
 /datum/chemical_reaction/archmagus_brew
 	results = list(/datum/reagent/consumable/ethanol/archmagus_brew = 4)
 	required_reagents = list(/datum/reagent/consumable/ethanol/wizz_fizz = 2, /datum/reagent/consumable/ethanol/crevice_spike = 1, /datum/reagent/consumable/ethanol/stinger = 1)
