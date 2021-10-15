@@ -10,6 +10,7 @@
 	results = list(/datum/reagent/consumable/ethanol/out_of_touch = 3)
 	required_reagents = list(/datum/reagent/consumable/ethanol/screwdrivercocktail = 2, /datum/reagent/consumable/ethanol/margarita = 1)
 	mix_message = "The solution seems to settle just in time to be a tasty drink."
+
 /datum/chemical_reaction/darkest_chocolate
 	results = list(/datum/reagent/consumable/ethanol/darkest_chocolate = 5)
 	required_reagents = list(/datum/reagent/consumable/ethanol/black_russian = 2, /datum/reagent/consumable/ethanol/creme_de_cacao = 2, /datum/reagent/consumable/ethanol/irishcarbomb = 1)
