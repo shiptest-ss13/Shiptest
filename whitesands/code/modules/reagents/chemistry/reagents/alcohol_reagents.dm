@@ -101,6 +101,7 @@
 	glass_icon_state = "archmagus_brew"
 	glass_name = "Archmagus' Brew"
 	glass_desc = "Said to have been requested by a great Archmagus, hence the name. Tastes like tough love."
+
 /datum/reagent/consumable/ethanol/archmagus_brew/on_mob_life(mob/living/carbon/human/M)
 	var/clonecalc = 2.5*REM*current_cycle
 	if(!overdosed)
