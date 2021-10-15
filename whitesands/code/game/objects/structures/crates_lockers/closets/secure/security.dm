@@ -36,3 +36,21 @@
 	new /obj/item/clothing/suit/solgov_trenchcoat(src)
 	new /obj/item/clothing/accessory/waistcoat/solgov(src)
 	new /obj/item/clothing/shoes/laceup(src)
+
+/obj/structure/closet/secure_closet/true_lieutenant
+	name = "\proper lieutenant's locker"
+	req_access = list(ACCESS_HEADS)
+	icon_state = "blueshield"
+
+/obj/structure/closet/secure_closet/true_lieutenant/PopulateContents()
+	..()
+	new /obj/item/clothing/head/beret/lt(src)
+	new /obj/item/storage/briefcase(src)
+	new	/obj/item/storage/firstaid/regular(src)
+	new /obj/item/storage/belt/security/full(src)
+	new /obj/item/clothing/glasses/sunglasses(src)
+	new /obj/item/clothing/suit/armor/vest/lieutenant(src)
+	new /obj/item/clothing/suit/lieutenant(src)
+	new /obj/item/clothing/suit/lieutenant/alt(src)
+	new /obj/item/clothing/accessory/holster/lieutenant(src)
+	new /obj/item/clothing/shoes/jackboots(src)

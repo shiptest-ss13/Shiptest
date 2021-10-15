@@ -455,3 +455,31 @@
 	var/obj/item/card/id/W = H.wear_id
 	W.registered_name = H.real_name
 	W.update_label()
+
+/datum/outfit/job/lieutenant
+	name = "Lieutenant"
+	//jobtype = /datum/job/lieutenant
+
+	id = /obj/item/card/id/silver
+	head = /obj/item/clothing/head/beret/lt
+	uniform = /obj/item/clothing/under/rank/command/lieutenant
+	alt_uniform = /obj/item/clothing/under/rank/command
+	suit = /obj/item/clothing/suit/lieutenant
+	alt_suit = /obj/item/clothing/suit/lieutenant/alt
+	dcoat = /obj/item/clothing/suit/hooded/wintercoat/captain
+	gloves = /obj/item/clothing/gloves/combat
+	shoes = /obj/item/clothing/shoes/jackboots
+	ears = /obj/item/radio/headset/heads/lieutenant/alt
+	glasses = /obj/item/clothing/glasses/hud/health/sunglasses
+	belt = /obj/item/pda/lieutenant
+
+	implants = list(/obj/item/implant/mindshield)
+
+	backpack = /obj/item/storage/backpack/security
+	satchel = /obj/item/storage/backpack/satchel/sec
+	duffelbag = /obj/item/storage/backpack/duffelbag/sec
+	courierbag = /obj/item/storage/backpack/messenger/sec
+
+	backpack_contents = list(
+		/obj/item/gun/energy/e_gun/adv_stopping = 1
+		)
