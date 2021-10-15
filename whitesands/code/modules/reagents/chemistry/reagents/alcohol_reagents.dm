@@ -41,7 +41,6 @@
 	glass_icon_state = "freezer_burn"
 	glass_name = "Freezer Burn"
 	glass_desc = "Fire and ice combine in your mouth! Drinking slowly recommended."
-	
 /datum/reagent/consumable/freezer_burn/on_mob_life(mob/living/carbon/M)
 	M.adjustFireLoss(-0.2, 0)
 	..()
