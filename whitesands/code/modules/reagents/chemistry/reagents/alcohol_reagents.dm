@@ -31,9 +31,6 @@
 /datum/reagent/consumable/ethanol/spriters_bane/expose_atom(atom/A, volume)
 	A.AddComponent(/datum/component/outline)
 	..()
-	
-	//edwrb custom mixes begin here
-
 /datum/reagent/consumable/ethanol/freezer_burn
 	name = "Freezer Burn"
 	description = "Fire and ice combine in your mouth! Drinking slowly recommended."
