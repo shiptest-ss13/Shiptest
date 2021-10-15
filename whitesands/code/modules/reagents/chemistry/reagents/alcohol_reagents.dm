@@ -112,6 +112,7 @@
 		M.losebreath--
 	..()
 	return TRUE
+
 /datum/reagent/consumable/ethanol/out_of_lime
 	name = "Out of Lime"
 	description = "A spin on the classic. Artists and street fighters swear by this stuff."
