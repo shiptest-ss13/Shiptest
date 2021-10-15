@@ -62,6 +62,7 @@
 		reac_volume = min(reac_volume, M.amount)
 		new/obj/item/stack/tile/bronze(get_turf(M), reac_volume)
 		M.use(reac_volume)
+
 /datum/reagent/consumable/ethanol/darkest_chocolate
 	name = "Darkest Chocolate"
 	description = "Darkness within darkness awaits you, spaceman!"
