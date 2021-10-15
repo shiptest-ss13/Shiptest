@@ -86,6 +86,7 @@
 	else if(light_holder.loc != M)
 		light_holder.forceMove(M)
 	return ..()
+
 /datum/reagent/consumable/ethanol/darkest_chocolate/on_mob_end_metabolize(mob/living/M)
 	to_chat(M, "<span class='notice'>The darkness subsides.</span>")
 	QDEL_NULL(light_holder)
