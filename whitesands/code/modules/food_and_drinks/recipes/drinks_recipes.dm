@@ -6,6 +6,7 @@
 	results = list(/datum/reagent/consumable/ethanol/freezer_burn = 2)
 	required_reagents = list(/datum/reagent/consumable/ethanol/sbiten = 1, /datum/reagent/consumable/ethanol/mojito = 1)
 	mix_message = "The glass heats up and cools down at the same time!"
+
 /datum/chemical_reaction/out_of_touch
 	results = list(/datum/reagent/consumable/ethanol/out_of_touch = 3)
 	required_reagents = list(/datum/reagent/consumable/ethanol/screwdrivercocktail = 2, /datum/reagent/consumable/ethanol/margarita = 1)
