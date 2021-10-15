@@ -90,6 +90,7 @@
 /datum/reagent/consumable/ethanol/darkest_chocolate/on_mob_end_metabolize(mob/living/M)
 	to_chat(M, "<span class='notice'>The darkness subsides.</span>")
 	QDEL_NULL(light_holder)
+
 /datum/reagent/consumable/ethanol/archmagus_brew
 	name = "Archmagus' Brew"
 	description = "Said to have been requested by a great Archmagus, hence the name. Tastes like tough love."
