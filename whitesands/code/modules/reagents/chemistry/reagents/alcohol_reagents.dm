@@ -56,7 +56,6 @@
 	glass_name = "Out of Touch"
 	glass_desc = "Perfect for when you're out of time."
 	shot_glass_icon_state = "shotglassoot"
-	
 /datum/reagent/consumable/ethanol/out_of_touch/expose_obj(obj/O, reac_volume)
 	if(istype(O, /obj/item/stack/sheet/metal))
 		var/obj/item/stack/sheet/metal/M = O
