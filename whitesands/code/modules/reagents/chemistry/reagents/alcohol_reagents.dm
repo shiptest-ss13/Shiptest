@@ -121,6 +121,7 @@
 	glass_icon_state = "out_of_lime"
 	glass_name = "Out of Lime"
 	glass_desc = "A spin on the classic. Artists and street fighters swear by this stuff."
+
 /datum/reagent/consumable/ethanol/out_of_lime/expose_mob(mob/living/carbon/human/consumer, method=INGEST, reac_volume)
 	if(method == INGEST || method == TOUCH)
 		if(istype(consumer))
