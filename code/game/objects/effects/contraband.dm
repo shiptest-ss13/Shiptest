@@ -602,7 +602,7 @@
 	name = "Enlist" // but I thought deathsquad was never acknowledged
 	desc = "Enlist in the Nanotrasen Deathsquadron reserves today!"
 	icon_state = "poster29_legit" */ // I refuse to acknowledge this bullshit - Zeta
-
+// :trold:
 /obj/structure/sign/poster/official/solgov_enlist //much better.
 	name = "Enlist"
 	desc = "Enlist to be a part of the SolGov Peacekeeping Operations today!"
@@ -642,7 +642,7 @@
 //shiptest stuff, retro posters. very inspired by the early apple logos and 70s-90s tech logos.
 /obj/structure/sign/poster/retro
 	poster_item_name = "retro poster"
-	poster_item_desc = "A really old Nanotrasen poster, that probably sells for a lot now days. It comes with adhesive backing, for easy pinning to any vertical surface."
+	poster_item_desc = "A really old Nanotrasen poster that probably sells for a lot now days. It comes with adhesive backing, for easy pinning to any vertical surface."
 	poster_item_icon_state = "rolled_legit"
 
 /obj/structure/sign/poster/retro/random
@@ -695,14 +695,38 @@
 	icon_state = "poster-pda70_retro"
 /obj/structure/sign/poster/retro/lasergun
 	name = "Retro Laser Gun"
-	desc = "A poster advertising the retro laser gun, back when it was new and called the L-204. It has a nice aesthetic."
+	desc = "A poster advertising the retro laser gun, back when it was new and called the L-102. This thing is ancient."
 	icon = 'whitesands/icons/obj/contraband.dmi'
-	icon_state = "poster-l204_retro"
+	icon_state = "poster-l102_retro"
+
+/obj/structure/sign/poster/retro/lasergun_new
+	name = "Old Laser Gun"
+	desc = "A poster advertising a older version of the L-704, the L-204 model. It has a nice aesthetic."
+	icon = 'whitesands/icons/obj/contraband.dmi'
+	icon_state = "poster-newl204_retro"
 
 /obj/structure/sign/poster/retro/emag
 	name = "Cryptographic Sequencer"
 	desc = "A poster advertising a Nanotrasen beginner hacker tool. It was shelved due to not taking any skill to use. You wonder how it worked out for them. It has a nice aesthetic."
 	icon = 'whitesands/icons/obj/contraband.dmi'
 	icon_state = "poster-emag_retro"
+
+/obj/structure/sign/poster/retro/telecrystal
+	name = "Telecrystals"
+	desc = "A poster advertising a teleportation alternative to bluespace. It was notable for not requiring massive machinery to use, and can even work in a handheld PDA. It was shelved due to high costs. It has a nice aesthetic."
+	icon = 'whitesands/icons/obj/contraband.dmi'
+	icon_state = "poster-tc-retro"
+
+/obj/structure/sign/poster/retro/telecrystal
+	name = "Telecrystals"
+	desc = "A poster advertising a teleportation alternative to bluespace. It was notable for not requiring massive machinery to use, and can even work in a handheld PDA. It was shelved due to high costs and low sales. It has a nice aesthetic."
+	icon = 'whitesands/icons/obj/contraband.dmi'
+	icon_state = "poster-tc-retro"
+
+/obj/structure/sign/poster/retro/telecrystal
+	name = "Radio"
+	desc = "A poster advertising one of Nanotrasen's earliest products, a radio. One of its main selling points was a integrated OS, and dual langauge support for Galactic Common, and Draconic, which made it a smash hit. This thing is ancient."
+	icon = 'whitesands/icons/obj/contraband.dmi'
+	icon_state = "poster-tc-retro"
 
 #undef PLACE_SPEED
