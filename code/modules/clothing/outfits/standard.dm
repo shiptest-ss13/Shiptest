@@ -464,8 +464,8 @@
 	head = /obj/item/clothing/head/beret/lt
 	uniform = /obj/item/clothing/under/rank/command/lieutenant
 	alt_uniform = /obj/item/clothing/under/rank/command
-	suit = /obj/item/clothing/suit/lieutenant
-	alt_suit = /obj/item/clothing/suit/lieutenant/alt
+	suit = /obj/item/clothing/suit/toggle/lieutenant
+	alt_suit = /obj/item/clothing/suit/lieutenant_trenchcoat
 	dcoat = /obj/item/clothing/suit/hooded/wintercoat/captain
 	gloves = /obj/item/clothing/gloves/combat
 	shoes = /obj/item/clothing/shoes/jackboots

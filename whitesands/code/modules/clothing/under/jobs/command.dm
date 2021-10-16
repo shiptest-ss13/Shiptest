@@ -90,14 +90,14 @@
 
 /obj/item/clothing/under/rank/command/lieutenant
 	desc = "A standard command jumpsuit in the colours of the Lieutenant."
-	name = "\improper Command Uniform"
+	name = "\improper lieutenant jumpsuit"
 	icon_state = "lt"
 	item_state = "lt"
 	can_adjust = FALSE
 
 /obj/item/clothing/under/rank/command/lieutenant/skirt
 	desc = "A command jumpskirt in the colours of the Lieutenant."
-	name = "\improper Command Uniform"
+	name = "\improper lieutenant jumpskirt"
 	icon_state = "lt_skirt"
 	item_state = "lt_skirt"
 	body_parts_covered = CHEST|GROIN|ARMS
@@ -106,13 +106,13 @@
 
 /obj/item/clothing/under/rank/command/lieutenant/blue
 	desc = "A standard command jumpsuit in the colours of the Lieutenant."
-	name = "\improper Command Uniform"
+	name = "\improper lieutenant blue jumpsuit"
 	icon_state = "lt_blue"
 	item_state = "lt_blue"
 
 /obj/item/clothing/under/rank/command/lieutenant/blue/skirt
 	desc = "A command jumpskirt in the colours of the Lieutenant."
-	name = "\improper Command Uniform"
+	name = "\improper lieutenant blue jumpskirt"
 	icon_state = "lt_blue_skirt"
 	item_state = "lt_blue_skirt"
 	body_parts_covered = CHEST|GROIN|ARMS
