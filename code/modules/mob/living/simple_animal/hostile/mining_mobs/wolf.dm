@@ -14,8 +14,8 @@
 	move_to_delay = 25
 	ranged = 1
 	ranged_cooldown_time = 90
-	maxHealth = 100
-	health = 100
+	maxHealth = 75
+	health = 75
 	obj_damage = 15
 	environment_smash = ENVIRONMENT_SMASH_MINERALS
 	melee_damage_lower = 7
@@ -145,8 +145,8 @@
 	move_to_delay = 15
 	vision_range = 4
 	aggro_vision_range = 12
-	maxHealth = 120
-	health = 120
+	maxHealth = 100
+	health = 100
 	melee_damage_lower = 10
 	melee_damage_upper = 10
 	dodging = TRUE
