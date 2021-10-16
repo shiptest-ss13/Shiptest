@@ -23,8 +23,8 @@
 	attack_verb_continuous = "chomps"
 	attack_verb_simple = "chomp"
 	attack_sound = 'sound/magic/demon_attack1.ogg'
-	vision_range = 8
-	aggro_vision_range = 8
+	vision_range = 7
+	aggro_vision_range = 7
 	move_force = MOVE_FORCE_VERY_STRONG
 	move_resist = MOVE_FORCE_VERY_STRONG
 	pull_force = MOVE_FORCE_VERY_STRONG
