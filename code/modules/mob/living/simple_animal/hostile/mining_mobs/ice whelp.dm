@@ -37,7 +37,7 @@
 	robust_searching = TRUE
 	footstep_type = FOOTSTEP_MOB_CLAW
 	/// How far the whelps fire can go
-	var/fire_range = 5
+	var/fire_range = 3
 
 /mob/living/simple_animal/hostile/asteroid/ice_whelp/OpenFire()
 	var/turf/T = get_ranged_target_turf_direct(src, target, fire_range)
