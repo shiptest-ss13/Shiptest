@@ -181,7 +181,7 @@
 
 	var/list/decal_eight_dirs = list(
 	"warning","stripe","spline_fancy","spline_plain","danger","techfloor_edges",
-	"techfloor_orange_edges","steel_decals1","steel_decals3","steel_decals4",
+	"techfloororange_edges","steel_decals1","steel_decals3","steel_decals4",
 	"steel_decals6","steel_decals7","steel_decals10","bordercolor","bordercolorcorner2",
 	"borderfloor_white","siding_line","siding_thinplating_line","siding_wideplating_line",
 	"siding_wood_line","trimline","trimline_fill","trimline_arrow_cw","trimline_arrow_ccw",
