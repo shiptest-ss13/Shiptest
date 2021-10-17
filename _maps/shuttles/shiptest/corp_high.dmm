@@ -195,12 +195,12 @@
 /turf/template_noop,
 /area/ship/external)
 "dK" = (
-/obj/machinery/door/airlock/glass_large{
-	name = "Reception"
-	},
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
+	},
+/obj/machinery/door/airlock/command{
+	name = "Reception"
 	},
 /turf/open/floor/wood/maple,
 /area/ship/crew)
@@ -268,6 +268,11 @@
 	},
 /turf/open/floor/plating,
 /area/ship/cargo)
+"eB" = (
+/obj/machinery/light/floor,
+/obj/structure/filingcabinet,
+/turf/open/floor/wood/maple,
+/area/ship/crew)
 "eD" = (
 /obj/machinery/airalarm/directional/west,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
@@ -567,6 +572,9 @@
 	},
 /obj/structure/cable{
 	icon_state = "0-4"
+	},
+/obj/structure/cable{
+	icon_state = "0-8"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
@@ -1288,6 +1296,9 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 4
 	},
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "vp" = (
@@ -1446,10 +1457,6 @@
 /area/ship/engineering)
 "xL" = (
 /obj/structure/table/wood,
-/obj/structure/filingcabinet{
-	pixel_x = 10;
-	pixel_y = 30
-	},
 /obj/item/paper_bin{
 	pixel_y = 4
 	},
@@ -1477,6 +1484,9 @@
 /area/ship/engineering)
 "xV" = (
 /obj/machinery/power/smes/engineering,
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "yl" = (
@@ -2042,6 +2052,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/door/airlock/command{
+	name = "Reception"
+	},
 /turf/open/floor/wood/maple,
 /area/ship/crew)
 "HV" = (
@@ -2234,6 +2247,7 @@
 /area/ship/crew/office)
 "Ko" = (
 /obj/effect/turf_decal/industrial/outline/yellow,
+/obj/machinery/mineral/ore_redemption,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/cargo)
 "Kp" = (
@@ -3539,7 +3553,7 @@ FX
 YK
 SA
 Fu
-FO
+eB
 WK
 BJ
 uO
