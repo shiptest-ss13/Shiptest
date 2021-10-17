@@ -61,6 +61,13 @@
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/aft)
+"cm" = (
+/obj/structure/table/wood,
+/obj/item/reagent_containers/food/snacks/soup/clownstears{
+	pixel_y = 5
+	},
+/turf/open/floor/wood,
+/area/ship/hallway/central)
 "cr" = (
 /obj/machinery/modular_computer/console/preset/command{
 	dir = 8
@@ -123,6 +130,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "1-10"
 	},
 /turf/open/floor/wood,
 /area/ship/hallway/central)
@@ -214,14 +224,20 @@
 /area/ship/crew/toilet)
 "hz" = (
 /obj/structure/table/wood,
+/obj/item/reagent_containers/food/drinks/drinkingglass{
+	list_reagents = list(/datum/reagent/consumable/ethanol/sugar_rush = 30);
+	pixel_x = 3;
+	pixel_y = 4
+	},
 /turf/open/floor/wood,
 /area/ship/hallway/central)
 "hO" = (
-/obj/structure/closet/crate/wooden/toy,
 /obj/machinery/power/apc/auto_name/north,
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
+/obj/item/stack/sheet/glass,
+/obj/structure/closet/crate/wooden/toy,
 /turf/open/floor/wood,
 /area/ship/storage)
 "hP" = (
@@ -252,6 +268,13 @@
 	},
 /turf/open/floor/carpet/nanoweave/beige,
 /area/ship/crew/office)
+"iG" = (
+/obj/machinery/jukebox,
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/turf/open/floor/wood,
+/area/ship/hallway/central)
 "iP" = (
 /obj/machinery/power/apc/auto_name/north,
 /obj/structure/cable{
@@ -347,6 +370,11 @@
 	},
 /turf/open/floor/carpet/red,
 /area/ship/hallway/central)
+"kw" = (
+/obj/structure/table/wood,
+/obj/item/reagent_containers/food/snacks/burger/cheese,
+/turf/open/floor/wood,
+/area/ship/hallway/central)
 "kA" = (
 /turf/closed/wall,
 /area/ship/bridge)
@@ -427,6 +455,9 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 5
 	},
+/obj/item/radio/intercom/wideband{
+	pixel_y = 26
+	},
 /turf/open/floor/carpet/blue,
 /area/ship/bridge)
 "li" = (
@@ -436,6 +467,11 @@
 	},
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
 	dir = 4
+	},
+/obj/item/reagent_containers/food/drinks/drinkingglass{
+	list_reagents = list(/datum/reagent/consumable/ethanol/whiskey = 30);
+	pixel_x = -2;
+	pixel_y = 4
 	},
 /turf/open/floor/wood,
 /area/ship/hallway/central)
@@ -589,6 +625,11 @@
 /obj/structure/cable,
 /turf/open/floor/plating,
 /area/ship/maintenance/aft)
+"oN" = (
+/obj/item/pizzabox/mushroom,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/wood,
+/area/ship/storage)
 "pa" = (
 /obj/structure/bed,
 /obj/item/bedsheet/random,
@@ -1040,6 +1081,7 @@
 /obj/machinery/light{
 	dir = 1
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood,
 /area/ship/hallway/central)
 "Cr" = (
@@ -1333,6 +1375,9 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 9
 	},
+/obj/item/reagent_containers/food/snacks/cheesewedge{
+	pixel_y = 5
+	},
 /turf/open/floor/wood,
 /area/ship/hallway/central)
 "KT" = (
@@ -1366,6 +1411,7 @@
 /obj/machinery/light{
 	dir = 8
 	},
+/obj/structure/musician/piano/unanchored,
 /turf/open/floor/wood,
 /area/ship/storage)
 "LN" = (
@@ -1644,6 +1690,10 @@
 	},
 /turf/open/floor/carpet/nanoweave/beige,
 /area/ship/crew/office)
+"Sl" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/wood,
+/area/ship/hallway/central)
 "SS" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -2018,7 +2068,7 @@ FA
 nB
 IL
 Fc
-hz
+cm
 qH
 Cr
 hz
@@ -2088,7 +2138,7 @@ zb
 iY
 zb
 bs
-bs
+Sl
 CP
 Xt
 gP
@@ -2105,7 +2155,7 @@ Ud
 rt
 lO
 IL
-bs
+iG
 eq
 cW
 Pn
@@ -2150,7 +2200,7 @@ lJ
 NE
 IL
 yr
-hz
+kw
 NC
 KT
 kt
@@ -2284,7 +2334,7 @@ uz
 YG
 lV
 yu
-rC
+oN
 av
 Rh
 nV
