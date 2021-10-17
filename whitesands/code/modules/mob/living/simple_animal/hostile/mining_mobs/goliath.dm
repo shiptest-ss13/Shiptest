@@ -258,7 +258,7 @@
 	crusher_loot = /obj/item/crusher_trophy/elder_tentacle
 	pre_attack_icon = "Goliath_preattack"
 	throw_message = "does nothing to the rocky hide of the"
-	guaranteed_butcher_results = list()
+	guaranteed_butcher_results = list(/obj/item/stack/sheet/animalhide/goliath_hide = 4)
 	crusher_drop_mod = 75
 	wander = FALSE
 	bonus_tame_chance = 10

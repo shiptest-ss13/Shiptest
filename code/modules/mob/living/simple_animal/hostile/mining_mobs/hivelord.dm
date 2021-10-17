@@ -365,7 +365,7 @@
 				l_pocket = /obj/item/kitchen/knife/combat/bone
 		if("Soldier")
 			mob_species = /datum/species/human
-			if(prob(85))
+			if(prob(75))
 				uniform = /obj/item/clothing/under/solgov
 				suit = /obj/item/clothing/suit/armor/vest/solgov
 				shoes = /obj/item/clothing/shoes/jackboots
@@ -380,8 +380,7 @@
 				gloves = /obj/item/clothing/gloves/combat
 				mask = /obj/item/clothing/mask/gas/sechailer/swat
 				id = /obj/item/card/id/solgov/elite
-			if(prob(5))
-				back = pickweight(list(/obj/item/storage/backpack = 95, /obj/item/gun/ballistic/shotgun/automatic = 5))
+			back = pickweight(list(/obj/item/storage/backpack = 95, /obj/item/gun/ballistic/shotgun/automatic = 5))
 			if(prob(25))
 				belt = /obj/item/storage/belt/military
 			if(prob(50))
