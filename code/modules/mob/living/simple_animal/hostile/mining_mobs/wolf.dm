@@ -174,7 +174,7 @@
 	icon = 'icons/obj/lavaland/elite_trophies.dmi'
 	icon_state = "fang"
 	denied_type = /obj/item/crusher_trophy/fang
-	var/bleed_stacks_per_hit = 3
+	var/bleed_stacks_per_hit = 5
 
 /obj/item/crusher_trophy/fang/effect_desc()
 	return "waveform collapse to build up a small stack of bleeding, causing a burst of damage if applied repeatedly."
