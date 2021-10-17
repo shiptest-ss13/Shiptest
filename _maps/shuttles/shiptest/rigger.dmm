@@ -14,7 +14,6 @@
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "az" = (
-/obj/structure/table/wood/bar,
 /obj/item/folder/red,
 /obj/item/stamp/hos{
 	pixel_x = 8;
@@ -30,6 +29,7 @@
 /obj/item/storage/fancy/cigarettes{
 	pixel_x = -10
 	},
+/obj/structure/table/wood,
 /turf/open/floor/plasteel/grimy,
 /area/ship/security)
 "aC" = (
@@ -58,7 +58,6 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/medical)
 "aJ" = (
-/obj/structure/table/wood/bar,
 /obj/item/flashlight/lamp/green{
 	pixel_x = -6;
 	pixel_y = 10
@@ -68,6 +67,7 @@
 	dir = 1;
 	pixel_y = -24
 	},
+/obj/structure/table/wood,
 /turf/open/floor/plasteel/grimy,
 /area/ship/security)
 "aN" = (
@@ -2713,12 +2713,12 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/communications)
 "GQ" = (
-/obj/structure/table/wood/bar,
 /obj/item/flashlight/lamp/green{
 	pixel_x = -6;
 	pixel_y = 10
 	},
 /obj/item/folder,
+/obj/structure/table/wood,
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew/office)
 "GT" = (
@@ -3531,7 +3531,7 @@
 /obj/effect/turf_decal/corner/neutral{
 	dir = 8
 	},
-/turf/open/space/basic,
+/turf/open/floor/plasteel/dark,
 /area/ship/engineering/communications)
 "Rz" = (
 /obj/structure/grille,
@@ -4021,12 +4021,12 @@
 /turf/open/floor/plasteel/mono,
 /area/ship/crew/office)
 "Xw" = (
-/obj/structure/table/wood/bar,
 /obj/item/storage/fancy/donut_box,
 /obj/machinery/firealarm{
 	dir = 4;
 	pixel_x = 28
 	},
+/obj/structure/table/wood,
 /turf/open/floor/carpet,
 /area/ship/crew/office)
 "XD" = (

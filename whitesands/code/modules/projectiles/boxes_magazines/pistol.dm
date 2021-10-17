@@ -14,3 +14,30 @@
 	. = ..()
 	var/datum/design/ammo/colt_1911_magazine/M = new
 	blueprints[1] = M
+
+/datum/design/disposable_gun
+	name = "Disposable Gun"
+	id = "disposable"
+	build_type = AUTOLATHE
+	materials = list(/datum/material/plastic = 4000)
+	build_path = /obj/item/gun/ballistic/automatic/pistol/disposable
+	category = list("Imported")
+
+/datum/design/pizza_disposable_gun
+	name = "Pizza Disposable Gun"
+	id = "disposable_pizza"
+	build_type = AUTOLATHE
+	materials = list(/datum/material/pizza = 4000)
+	build_path = /obj/item/gun/ballistic/automatic/pistol/disposable/pizza
+	category = list("Imported")
+
+/obj/item/disk/design_disk/disposable_gun
+	name = "Design Disk - Disposable Gun"
+	desc = "A design disk containing designs for a cheap and disposable gun."
+
+/obj/item/disk/design_disk/disposable_gun/Initialize()
+	. = ..()
+	var/datum/design/disposable_gun/G = new
+	var/datum/design/pizza_disposable_gun/P = new
+	blueprints[1] = G
+	blueprints[2] = P

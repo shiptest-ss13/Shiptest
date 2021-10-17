@@ -632,6 +632,17 @@
 /datum/holiday/hotdogday/greet()
 	return "Happy National Hot Dog Day!"
 
+/datum/holiday/jaynesday
+	name = "Jaynesday"
+	begin_month = OCTOBER
+	begin_day = 18
+
+/datum/holiday/jaynesday/greet()
+	return "Today is Jaynesday!"
+
+/datum/holiday/jaynseday/getStationPrefix()
+	return pick("Mudder", "Canton", "Jayne", "Cobb")
+
 /datum/holiday/hebrew
 	name = "If you see this the Hebrew holiday calendar code is broken"
 
