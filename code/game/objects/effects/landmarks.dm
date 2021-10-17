@@ -421,8 +421,8 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 /obj/effect/landmark/event_spawn/Destroy()
 	GLOB.generic_event_spawns -= src
 	return ..()
-
-/obj/effect/landmark/ruin
+//generic ruin
+/obj/effect/landmark/ruin                     // given the fact that ruins are only split into minor/major now, this might be depreciated
 	var/datum/map_template/ruin/ruin_template
 
 /obj/effect/landmark/ruin/New(loc, my_ruin_template)
@@ -435,6 +435,37 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 	GLOB.ruin_landmarks -= src
 	ruin_template = null
 	. = ..()
+
+//minor ruin gen
+/obj/effect/landmark/ruin/minor
+	var/datum/map_template/ruin/minor/minor_ruin_template
+
+/obj/effect/landmark/ruin/minor/New(loc, my_ruin_template)
+	name = "ruin_[GLOB.ruin_landmarks.len + 1]"
+	..(loc)
+	minor_ruin_template = my_ruin_template
+	GLOB.ruin_landmarks |= src
+
+/obj/effect/landmark/ruin/minor/Destroy()
+	GLOB.ruin_landmarks -= src
+	minor_ruin_template = null
+	. = ..()
+
+//major ruin gen
+/obj/effect/landmark/ruin/major
+	var/datum/map_template/ruin/major/major_ruin_template
+
+/obj/effect/landmark/ruin/major/New(loc, my_ruin_template)
+	name = "ruin_[GLOB.ruin_landmarks.len + 1]"
+	..(loc)
+	major_ruin_template = my_ruin_template
+	GLOB.ruin_landmarks |= src
+
+/obj/effect/landmark/ruin/major/Destroy()
+	GLOB.ruin_landmarks -= src
+	major_ruin_template = null
+	. = ..()
+
 
 // handled in portals.dm, id connected to one-way portal
 /obj/effect/landmark/portal_exit

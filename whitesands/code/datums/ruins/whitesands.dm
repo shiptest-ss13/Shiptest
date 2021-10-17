@@ -3,7 +3,14 @@
 /datum/map_template/ruin/whitesands
 	prefix = "_maps/RandomRuins/SandRuins/"
 
-/datum/map_template/ruin/whitesands/solgov_crash
+/datum/map_template/ruin/minor/whitesands
+	prefix = "_maps/RandomRuins/SandRuins/"
+
+/datum/map_template/ruin/major/whitesands
+	prefix = "_maps/RandomRuins/SandRuins/"
+
+//map start
+/datum/map_template/ruin/minor/whitesands/solgov_crash
 	name = "Crashed SolGov Transport"
 	id = "solgov-crash"
 	description = "Not too long ago, a SolGov transporter shuttle needed to get from point A to point B, and not too long after getting near, someone decided \
@@ -12,7 +19,7 @@
 	cost = 10
 	allow_duplicates = FALSE
 
-/datum/map_template/ruin/whitesands/hermit
+/datum/map_template/ruin/minor/whitesands/hermit
 	name = "Sandstone Cave"
 	id = "hermitsandcave"
 	description = "A place of shelter for a lone hermit, scraping by to live another day."
@@ -20,7 +27,7 @@
 	allow_duplicates = FALSE
 	cost = 10
 
-/datum/map_template/ruin/whitesands/abductor_crash
+/datum/map_template/ruin/minor/whitesands/abductor_crash
 	name = "Crashed Abductor Ship"
 	id = "ws-abductor-crash"
 	description = "Turns out that keeping your abductees unconscious is really important. Who knew?"
@@ -28,7 +35,7 @@
 	allow_duplicates = FALSE
 	cost = 5
 
-/datum/map_template/ruin/whitesands/blood_drunk_miner
+/datum/map_template/ruin/minor/whitesands/blood_drunk_miner
 	name = "Blood-Drunk Miner"
 	id = "blooddrunk"
 	description = "A strange arrangement of stone tiles and an insane, beastly miner contemplating them."
@@ -36,15 +43,15 @@
 	cost = 0
 	allow_duplicates = FALSE //will only spawn one variant of the ruin
 
-/datum/map_template/ruin/whitesands/blood_drunk_miner/guidance
+/datum/map_template/ruin/minor/whitesands/blood_drunk_miner/guidance
 	name = "Blood-Drunk Miner (Guidance)"
 	suffix = "whitesands_surface_blooddrunk2.dmm"
 
-/datum/map_template/ruin/whitesands/blood_drunk_miner/hunter
+/datum/map_template/ruin/minor/whitesands/blood_drunk_miner/hunter
 	name = "Blood-Drunk Miner (Hunter)"
 	suffix = "whitesands_surface_blooddrunk3.dmm"
 
-/datum/map_template/ruin/whitesands/seed_vault
+/datum/map_template/ruin/minor/whitesands/seed_vault
 	name = "Seed Vault"
 	id = "seed-vault"
 	description = "The creators of these vaults were a highly advanced and benevolent race, and launched many into the stars, hoping to aid fledgling civilizations. \
@@ -53,77 +60,77 @@
 	cost = 10
 	allow_duplicates = FALSE
 
-/datum/map_template/ruin/whitesands/sin/envy
+/datum/map_template/ruin/major/whitesands/sin/envy
 	name = "Ruin of Envy"
 	id = "envy"
 	description = "When you get what they have, then you'll finally be happy."
 	suffix = "whitesands_surface_envy.dmm"
 	allow_duplicates = FALSE
 
-/datum/map_template/ruin/whitesands/water
+/datum/map_template/ruin/major/whitesands/water
 	name = "Abandoned Water Extraction Facility"
 	id = "waterplant"
 	description = "An abandoned building that seems to have once used prisoner labour to extract water for a colony."
 	suffix = "whitesands_surface_waterplant.dmm"
 	allow_duplicates = FALSE
 
-/datum/map_template/ruin/whitesands/starfury_crash
+/datum/map_template/ruin/major/whitesands/starfury_crash
 	name = "Starfury Crash"
 	id = "starfurycrash"
 	description = "The remains of an unidentified syndicate battleship has crashed here."
 	suffix = "whitesands_surface_starfurycrash.dmm"
 	allow_duplicates = FALSE
 
-/datum/map_template/ruin/whitesands/golem_hijack
+/datum/map_template/ruin/major/whitesands/golem_hijack
 	name = "Crashed Golem Ship"
 	id = "golemcrash"
 	description = "The remains of a mysterious ship, inhabited by strange lizardpeople and golems of some sort. Who knows what happened here."
 	suffix = "whitesands_surface_golemhijack.dmm"
 	allow_duplicates = FALSE
 
-/datum/map_template/ruin/whitesands/medipen_plant
+/datum/map_template/ruin/major/whitesands/medipen_plant //holy hell I never realized how insane this ruin was. rework if persistance is added. ~VF 2021
 	name = "Abandoned Medipen Factory"
 	id = "medipenplant"
 	description = "A once prosperous autoinjector manufacturing plant."
 	suffix = "whitesands_surface_medipen_plant.dmm"
 	allow_duplicates = FALSE
 
-/datum/map_template/ruin/whitesands/youreinsane
+/datum/map_template/ruin/minor/whitesands/youreinsane
 	name = "Lost Engine"
 	id = "ws-youreinsane"
 	description = "Nanotrasen would like to remind all employees that the Pi\[REDACTED\]er is not real."
 	suffix = "whitesands_surface_youreinsane.dmm"
 	allow_duplicates = FALSE
 
-/datum/map_template/ruin/whitesands/assaultpodcrash
+/datum/map_template/ruin/minor/whitesands/assaultpodcrash
 	name = "Crashed Syndicate Assault Drop Pod"
 	id = "ws-assaultpodcrash"
 	description = "The fauna of desert planets can be deadly even to equipped Syndicate Operatives."
 	suffix = "whitesands_surface_assaultpodcrash.dmm"
 	allow_duplicates = FALSE
 
-/datum/map_template/ruin/whitesands/conveniencestore
+/datum/map_template/ruin/minor/whitesands/conveniencestore
 	name = "Conveniently Abandoned Convenience Store"
 	id = "ws-conveniencestore"
 	description = "Pretty convenient that they have a convenience store out here, huh?"
 	suffix = "whitesands_surface_conveniencestore.dmm"
 	allow_duplicates = FALSE
 
-/datum/map_template/ruin/whitesands/onlyaspoonful
+/datum/map_template/ruin/minor/whitesands/onlyaspoonful
 	name = "Abandoned Spoon Factory"
 	id = "ws-onlyaspoonful"
 	description = "Literally a fucking spoon factory"
 	suffix = "whitesands_surface_onlyaspoonful.dmm"
 	allow_duplicates = FALSE
 
-/datum/map_template/ruin/whitesands/onlyaspoonful
+/datum/map_template/ruin/minor/whitesands/onlyaspoonful
 	name = "Abandoned Spacepod Garage"
 	id = "ws-spacepod"
 	description = "A old abandoned spacepod garage. What must it have been used for?"
 	suffix = "whitesands_surface_spacepod_garage.dmm"
 	allow_duplicates = FALSE
 
-/datum/map_template/ruin/whitesands/chokepoint
+/datum/map_template/ruin/minor/whitesands/chokepoint
 	name = "Chokepoint"
 	id = "ws-chokepoint"
 	description = "Some sort of survivors, brandishing old nanotrasen security gear."
@@ -131,7 +138,7 @@
 	allow_duplicates = FALSE
 
 //////////OUTSIDE SETTLEMENTS/RUINS//////////
-/datum/map_template/ruin/whitesands/survivors
+/datum/map_template/ruin/minor/whitesands/survivors
 	name = "Survivor Camp"
 	id = "ws-survivors"
 	description = "A small encampment of nomadic survivors of the First Colony, and their descendants. By all accounts, feral and without allegance to anyone but themselves."
@@ -140,7 +147,7 @@
 	placement_weight = 1.2
 	always_place = TRUE
 
-/datum/map_template/ruin/whitesands/survivors/hunters
+/datum/map_template/ruin/minor/whitesands/survivors/hunters
 	name = "Hunter Camp"
 	id = "ws-survivors-hunter"
 	description = "A small encampment of nomadic hunters of the First Colony, and their descendants. It's worth steering wide of these guys."
@@ -148,7 +155,7 @@
 	cost = 3
 	placement_weight = 0.8
 
-/datum/map_template/ruin/whitesands/survivors/gunslingers
+/datum/map_template/ruin/minor/whitesands/survivors/gunslingers
 	name = "Mercenary Camp"
 	id = "ws-survivors-gunslingers"
 	description = "A small encampment of nomadic warriors of the First Colony, and their descendants. They might have the only working automatics on the planet."
@@ -156,7 +163,7 @@
 	cost = 5
 	placement_weight = 0.7
 
-/datum/map_template/ruin/whitesands/survivors/adobe
+/datum/map_template/ruin/minor/whitesands/survivors/adobe
 	name = "Native Adobe"
 	id = "ws-survivors-adobe"
 	description = "A semi-permanent settlement of survivors of the First Colony, and their descendants. Places like this often stash gear and supplies for their bretheren."
@@ -165,7 +172,7 @@
 	placement_weight = 0.5
 	allow_duplicates = FALSE
 
-/datum/map_template/ruin/whitesands/survivors/farm
+/datum/map_template/ruin/minor/whitesands/survivors/farm
 	name = "Abandoned Farm"
 	id = "ws-farm"
 	description = "A abandoned farm, destroyed from years of shootouts and lack of maintenance."
@@ -174,7 +181,7 @@
 	suffix = "whitesands_surface_camp_farm.dmm"
 	allow_duplicates = FALSE
 
-/datum/map_template/ruin/whitesands/survivors/drugstore
+/datum/map_template/ruin/minor/whitesands/survivors/drugstore
 	name = "Abandoned Store"
 	id = "ws-drugstore"
 	description = "A store that once sold a variety of items and equipment."
@@ -183,7 +190,7 @@
 	suffix = "whitesands_surface_camp_drugstore.dmm"
 	allow_duplicates = FALSE
 
-/datum/map_template/ruin/whitesands/survivors/saloon
+/datum/map_template/ruin/minor/whitesands/survivors/saloon
 	name = "Abandoned Saloon"
 	id = "ws-saloon"
 	description = "A western style saloon that has not been touched in years"
@@ -193,25 +200,25 @@
 	allow_duplicates = FALSE
 
 //Crashed Shiptests//
-/datum/map_template/ruin/whitesands/crash_kitchen
+/datum/map_template/ruin/minor/whitesands/crash_kitchen
 	name = "Crashed Kitchen"
 	description = "A crashed part of some unlucky ship."
 	id = "crash-kitchen"
 	suffix = "crash_kitchen.dmm"
 
-/datum/map_template/ruin/whitesands/crash_bar
+/datum/map_template/ruin/minor/whitesands/crash_bar
 	name = "Crashed Bar"
 	description = "A crashed part of some unlucky ship. Was once a bar."
 	id = "crash-bar"
 	suffix = "crash_bar.dmm"
 
-/datum/map_template/ruin/whitesands/crash_cargo
+/datum/map_template/ruin/major/whitesands/crash_cargo
 	name = "Crashed Cargo Bay"
 	description = "A crashed part of some unlucky ship. Has been taken over by pirates"
 	id = "crash-cargo"
 	suffix = "crash_cargo.dmm"
 
-/datum/map_template/ruin/whitesands/crash_cult
+/datum/map_template/ruin/major/whitesands/crash_cult
 	name = "Crashed Cult Ship"
 	description = "A crashed part of some unlucky ship. Has been occupied by a cult."
 	id = "crash-cult"
