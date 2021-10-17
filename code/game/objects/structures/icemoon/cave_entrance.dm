@@ -223,7 +223,7 @@ GLOBAL_LIST_INIT(ore_probability, list(
 			new /turf/open/indestructible/necropolis(loc)
 		if(3)//skeleton/religion association, now accepting YOUR BONES
 			visible_message("<span class='userdanger'>Bones rattle and strained voices chant a forgotten god's name.</span>")
-			playsound(loc,'sound/creatures/rattle.ogg', 200, FALSE, 50, TRUE, TRUE)
+			playsound(loc,'sound/ambience/ambiholy.ogg', 100, FALSE, 50, TRUE, TRUE)
 			if(prob(50))
 				new /obj/item/reagent_containers/glass/bottle/potion/flight(loc)
 			else
@@ -256,8 +256,8 @@ GLOBAL_LIST_INIT(ore_probability, list(
 				new /obj/item/shield/riot/roman(loc)
 				new /mob/living/simple_animal/hostile/skeleton(loc)
 			if(prob(25))
-				new /obj/item/clothing/suit/armor/plate(loc)
-				new /obj/item/clothing/head/helmet/plate(loc)
+				new /obj/item/clothing/suit/armor/riot/knight/blue(loc)
+				new /obj/item/clothing/head/helmet/knight/blue(loc)
 				new /mob/living/simple_animal/hostile/skeleton(loc)
 			if(prob(35))
 				new /obj/item/disk/design_disk/adv/knight_gear
