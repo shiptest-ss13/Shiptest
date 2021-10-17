@@ -5,7 +5,3 @@
 		catch(var/exception/e)
 			Fail("Runtime error loading ship type ([map.name]): [e] on [e.file]:[e.line]")
 		//shuttle.jumpToNullSpace() //Causes runtimes currently, so until we figure that out this should remained commented
-
-/datum/unit_test/ship_config_check/Run()
-	
-
