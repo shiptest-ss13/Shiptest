@@ -35,19 +35,6 @@
 
 	chameleon_extras = /obj/item/stamp/law
 
-
-/datum/outfit/job/lawyer/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
-	..()
-	if(visualsOnly)
-		return
-
-	var/datum/job/lawyer/J = SSjob.GetJobType(jobtype)
-	J.lawyers++
-	if(J.lawyers>1)
-		uniform = /obj/item/clothing/under/rank/civilian/lawyer/purpsuit
-		suit = /obj/item/clothing/suit/toggle/lawyer/purple
-
-
 /datum/outfit/job/lawyer/corporaterepresentative
 	uniform = /obj/item/clothing/under/suit/black
 	suit = /obj/item/clothing/suit/toggle/lawyer/black

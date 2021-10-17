@@ -296,8 +296,6 @@ GLOBAL_LIST_EMPTY(cryopod_computers)
 
 	if(mob_occupant.mind && mob_occupant.mind.assigned_role)
 		//Handle job slot/tater cleanup.
-		var/job = mob_occupant.mind.assigned_role
-		SSjob.FreeRole(job)
 		if(LAZYLEN(mob_occupant.mind.objectives))
 			mob_occupant.mind.objectives.Cut()
 			mob_occupant.mind.special_role = null
@@ -406,16 +404,14 @@ GLOBAL_LIST_EMPTY(cryopod_computers)
 /obj/machinery/cryopod/latejoin
 	var/obj/docking_port/mobile/linked_ship
 
-/obj/machinery/cryopod/latejoin/Initialize()
-	. = ..()
-	new /obj/effect/landmark/latejoin(src)
-
 /obj/machinery/cryopod/latejoin/despawn_occupant()
 	if(!linked_ship)
 		return ..()
 	var/mob/living/mob_occupant = occupant
 	if(mob_occupant.job in linked_ship.current_ship.job_slots)
 		linked_ship.current_ship.job_slots[mob_occupant.job]++
+	if(mob_occupant.real_name in linked_ship.current_ship.manifest)
+		linked_ship.current_ship.manifest -= mob_occupant.real_name
 	return ..()
 
 /obj/machinery/cryopod/latejoin/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock, idnum, override)
@@ -424,6 +420,5 @@ GLOBAL_LIST_EMPTY(cryopod_computers)
 	linked_ship.spawn_points += src
 
 /obj/machinery/cryopod/latejoin/Destroy()
-	SSjob.latejoin_trackers -= src
 	linked_ship?.spawn_points -= src
 	. = ..()

@@ -32,16 +32,6 @@
 	mask = /obj/item/clothing/mask/fakemoustache/italian
 	backpack_contents = list(/obj/item/sharpener = 1)
 
-/datum/outfit/job/cook/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
-	..()
-	var/datum/job/cook/J = SSjob.GetJobType(jobtype)
-	if(J) // Fix for runtime caused by invalid job being passed
-		if(J.cooks>0)//Cooks
-			suit = /obj/item/clothing/suit/apron/chef
-			head = /obj/item/clothing/head/soft/mime
-		if(!visualsOnly)
-			J.cooks++
-
 /datum/outfit/job/cook/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
 	if(visualsOnly)

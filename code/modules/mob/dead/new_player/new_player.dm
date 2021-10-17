@@ -284,11 +284,9 @@
 	SSjob.AssignRole(src, job, 1)
 
 	var/mob/living/character = create_character(TRUE)	//creates the human and transfers vars and mind
-	var/equip = SSjob.EquipRank(character, rank, TRUE)
+	var/equip = job.EquipRank(character)
 	if(isliving(equip))	//Borgs get borged in the equip, so we need to make sure we handle the new mob.
 		character = equip
-
-	var/datum/job/job = SSjob.GetJob(rank)
 
 	if(job && !job.override_latejoin_spawn(character))
 		SSjob.SendToLateJoin(character, destination = pick(ship.shuttle.spawn_points))
@@ -307,12 +305,12 @@
 	if(humanc)	//These procs all expect humans
 		ship.manifest_inject(humanc, client)
 		GLOB.data_core.manifest_inject(humanc, client)
-		AnnounceArrival(humanc, rank)
+		AnnounceArrival(humanc, job.title, ship)
 		AddEmploymentContract(humanc)
+
 		if(GLOB.highlander)
 			to_chat(humanc, "<span class='userdanger'><i>THERE CAN BE ONLY ONE!!!</i></span>")
 			humanc.make_scottish()
-
 		if(GLOB.summon_guns_triggered)
 			give_guns(humanc)
 		if(GLOB.summon_magic_triggered)
@@ -325,7 +323,10 @@
 	if(humanc && CONFIG_GET(flag/roundstart_traits))
 		SSquirks.AssignQuirks(humanc, humanc.client, TRUE)
 
-	log_manifest(character.mind.key,character.mind,character,latejoin = TRUE)
+	log_manifest(character.mind.key, character.mind, character, TRUE)
+
+	if(ship.job_slots[1] == job) // if it's the "captain" equivalent job of the ship
+		minor_announce("[job.title] [character.real_name] on deck!", zlevel = ship.shuttle.get_virtual_z_level())
 
 /mob/dead/new_player/proc/AddEmploymentContract(mob/living/carbon/human/employee)
 	//TODO:  figure out a way to exclude wizards/nukeops/demons from this.
@@ -368,12 +369,12 @@
 		return
 
 	var/list/job_choices = list()
-	for(var/job in selected_ship.job_slots)
+	for(var/datum/job/job as anything in selected_ship.job_slots)
 		if(selected_ship.job_slots[job] < 1)
 			continue
-		job_choices["[job] ([selected_ship.job_slots[job]] positions)"] = job
+		job_choices["[job.title] ([selected_ship.job_slots[job]] positions)"] = job
 
-	var/selected_job = job_choices[tgui_input_list(src, "Select job.", "Welcome, [client.prefs.real_name].", job_choices)]
+	var/datum/job/selected_job = job_choices[tgui_input_list(src, "Select job.", "Welcome, [client.prefs.real_name].", job_choices)]
 	if(!selected_job)
 		return LateChoices() //Send them back to shuttle selection
 

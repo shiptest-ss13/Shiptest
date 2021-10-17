@@ -212,6 +212,7 @@ SUBSYSTEM_DEF(mapping)
 	ship_purchase_list = list()
 	var/list/filelist = flist("_maps/configs/")
 	for(var/filename in filelist)
+		if()
 		var/file = file("_maps/configs/" + filename)
 		if(!file)
 			log_world("Could not open map config: [filename]")
@@ -240,13 +241,24 @@ SUBSYSTEM_DEF(mapping)
 			var/list/job_slot_list = data["job_slots"]
 			for(var/job in job_slot_list)
 				var/datum/job/job_slot
+				var/value = job_slot_list[job]
 				var/slots
-				if(istext(job))
+				if(isnum(value))
 					job_slot = SSjob.GetJob(job)
-					slots = job_slot_list["job"]
-				else if(islist(job))
-					job_slot = new /datum/job(job["name"], text2path(job["outfit"]), job["exp_requirements"], job["wiki_page"])
-					slots = job["slots"]
+					slots = value
+				else if(islist(value))
+					var/datum/outfit/job_outfit = text2path(value["outfit"])
+					if(isnull(job_outfit))
+						stack_trace("Invalid job outfit! [value["outfit"]] on [S.name]'s config! Defaulting to assistant clothing.")
+						job_outfit = /datum/outfit/job/assistant
+					job_slot = new /datum/job(job, job_outfit)
+					job_slot.wiki_page = value["wiki_page"]
+					job_slot.exp_requirements = value["exp_requirements"]
+					slots = value["slots"]
+
+				if(!job_slot || !slots)
+					stack_trace("Invalid job slot entry! [job]: [value] on [S.name]'s config! Excluding job.")
+					break
 
 				S.job_slots[job_slot] = slots
 		if(isnum(data["cost"]))

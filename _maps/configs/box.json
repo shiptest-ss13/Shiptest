@@ -1,18 +1,9 @@
 {
 	"map_name": "Box-class Hospital Ship",
 	"map_short_name": "Box-class",
-	"map_path": "_maps/shuttles/whiteship/whiteship_box.dmm",
+	"map_path": "_maps/shuttles/shiptest/whiteship_box.dmm",
 	"map_id": "whiteship_box",
-	"description": "There is a special place in hell for those who can manage to survive this accursed vessel. Surprisingly, it's much nicer than the ship is.",
-	"species_whitelist": [
-		"plasmaman"
-	],
 	"job_slots": {
-		"Navigator": {
-			"Outfit": "/datum/outfit/navigator",
-			"Officer": true,
-			"Slots": 1
-		},
 		"Chief Medical Officer": 1,
 		"Medical Doctor": 3,
 		"Paramedic": 2,

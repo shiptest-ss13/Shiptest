@@ -14,24 +14,13 @@
 	var/do_special_check = TRUE
 	wiki_page = "AI" //WS Edit - Wikilinks/Warning
 
-/datum/job/ai/equip(mob/living/carbon/human/H, visualsOnly, announce, latejoin, datum/outfit/outfit_override, client/preference_source = null)
+/datum/job/ai/equip(mob/living/carbon/human/H, visualsOnly, announce, datum/outfit/outfit_override, client/preference_source = null)
 	if(visualsOnly)
 		CRASH("dynamic preview is unsupported")
-	. = H.AIize(latejoin,preference_source)
+	. = H.AIize(TRUE, preference_source)
 
-/datum/job/ai/after_spawn(mob/H, mob/M, latejoin)
+/datum/job/ai/after_spawn(mob/H, mob/M)
 	. = ..()
-	if(latejoin)
-		var/obj/structure/AIcore/latejoin_inactive/lateJoinCore
-		for(var/obj/structure/AIcore/latejoin_inactive/P in GLOB.latejoin_ai_cores)
-			if(P.is_available())
-				lateJoinCore = P
-				GLOB.latejoin_ai_cores -= P
-				break
-		if(lateJoinCore)
-			lateJoinCore.available = FALSE
-			H.forceMove(lateJoinCore.loc)
-			qdel(lateJoinCore)
 	var/mob/living/silicon/ai/AI = H
 	if(SSticker.anonymousnames)
 		AI.fully_replace_character_name(AI.real_name, anonymous_ai_name(is_ai = TRUE))
@@ -44,9 +33,6 @@
 		for(var/mob/living/silicon/robot/R in GLOB.silicon_mobs)
 			if(!R.connected_ai)
 				R.TryConnectToAI()
-
-	if(latejoin)
-		announce(AI)
 
 /datum/job/ai/override_latejoin_spawn()
 	return TRUE
