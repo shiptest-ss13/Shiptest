@@ -717,16 +717,10 @@
 	icon = 'whitesands/icons/obj/contraband.dmi'
 	icon_state = "poster-tc-retro"
 
-/obj/structure/sign/poster/retro/telecrystal
-	name = "Telecrystals"
-	desc = "A poster advertising a teleportation alternative to bluespace. It was notable for not requiring massive machinery to use, and can even work in a handheld PDA. It was shelved due to high costs and low sales. It has a nice aesthetic."
-	icon = 'whitesands/icons/obj/contraband.dmi'
-	icon_state = "poster-tc-retro"
-
-/obj/structure/sign/poster/retro/telecrystal
+/obj/structure/sign/poster/retro/radio
 	name = "Radio"
 	desc = "A poster advertising one of Nanotrasen's earliest products, a radio. One of its main selling points was a integrated OS, and dual langauge support for Galactic Common, and Draconic, which made it a smash hit. This thing is ancient."
 	icon = 'whitesands/icons/obj/contraband.dmi'
-	icon_state = "poster-tc-retro"
+	icon_state = "poster-radio70_retro"
 
 #undef PLACE_SPEED
