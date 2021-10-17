@@ -78,7 +78,7 @@
 	move_force = MOVE_FORCE_DEFAULT
 	move_resist = MOVE_RESIST_DEFAULT
 	pull_force = PULL_FORCE_DEFAULT
-	new /obj/item/stack/ore/bluespace_crystal(loc, 3)
+	new /obj/item/stack/ore/bluespace_crystal(loc, 5)
 	if(prob(5))
 		new /obj/item/assembly/signaler/anomaly/bluespace(loc)
 	if(prob(5))
@@ -163,7 +163,7 @@
 		return
 	adjustHealth(-maxHealth*0.025)
 
-/mob/living/simple_animal/hostile/asteroid/ice_demon/death(gibbed)
+/mob/living/simple_animal/hostile/asteroid/old_demon/death(gibbed)
 	move_force = MOVE_FORCE_DEFAULT
 	move_resist = MOVE_RESIST_DEFAULT
 	pull_force = PULL_FORCE_DEFAULT
