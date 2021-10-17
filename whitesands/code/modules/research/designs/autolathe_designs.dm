@@ -9,7 +9,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SERVICE
 
 /datum/design/zip_ammo_9mm
-	name = "Budget pistol 9mm magazine"
+	name = "Budget Pistol 9mm Magazine"
 	id = "ZipAmmo9mm"
 	build_type = AUTOLATHE
 	materials = list(/datum/material/iron = 20000)
