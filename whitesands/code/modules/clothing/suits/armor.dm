@@ -8,7 +8,7 @@
 
 /obj/item/clothing/suit/armor/vest/solgov/Initialize()
 	. = ..()
-	allowed |= list(/obj/item/gun/energy/laser/terra, /obj/item/gun/energy/pulse/terra)
+	allowed |= list(/obj/item/gun/energy/laser/terra, /obj/item/gun/energy/pulse/terra, /obj/item/tank)
 
 /obj/item/clothing/suit/armor/vest/solgov/rep
 	name = "\improper SolGov Inspector armor vest"

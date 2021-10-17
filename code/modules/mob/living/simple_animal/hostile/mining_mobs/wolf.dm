@@ -14,8 +14,8 @@
 	move_to_delay = 25
 	ranged = 1
 	ranged_cooldown_time = 90
-	maxHealth = 75
-	health = 75
+	maxHealth = 100
+	health = 100
 	obj_damage = 15
 	environment_smash = ENVIRONMENT_SMASH_MINERALS
 	melee_damage_lower = 7
