@@ -42,7 +42,6 @@
 	glass_icon_state = "cogchamp"
 	glass_name = "CogChamp"
 	glass_desc = "Not one of Ratvar's Four Generals could withstand this!  Qevax Jryy!"
-	value = 8.13
 
 /datum/reagent/consumable/ethanol/cogchamp/on_mob_life(mob/living/carbon/M)
 	M.clockcultslurring = min(M.clockcultslurring + 3, 3)
