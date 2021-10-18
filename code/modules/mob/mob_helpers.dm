@@ -153,8 +153,6 @@
 		. += newletter
 	return sanitize(.)
 
-//Ratvarian Slurring!
-
 #define CLOCK_CULT_SLUR(phrase) sanitize(text2ratvar(phrase))
 
 ///Adds stuttering to the message passed in
