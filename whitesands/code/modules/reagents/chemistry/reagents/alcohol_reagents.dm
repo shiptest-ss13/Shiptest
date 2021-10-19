@@ -46,7 +46,7 @@
 /datum/reagent/consumable/ethanol/freezer_burn/on_mob_life(mob/living/carbon/M)
 	M.adjustFireLoss(-0.2, 0)
 	..()
-	. = 1
+	return TRUE
 
 /datum/reagent/consumable/ethanol/out_of_touch
 	name = "Out of Touch"
@@ -107,15 +107,15 @@
 	glass_desc = "Said to have been requested by a great Archmagus, hence the name. Tastes like tough love."
 
 /datum/reagent/consumable/ethanol/archmagus_brew/on_mob_life(mob/living/carbon/human/M)
-	var/clonecalc = 2.5*REM*current_cycle
-	if(!overdosed)
-		clonecalc = min(clonecalc,M.getCloneLoss()+0.5)
-	M.adjustCloneLoss(-clonecalc, 0)
-	M.adjustBruteLoss(clonecalc/2, 0)
-	if(prob(current_cycle) && M.losebreath)
-		M.losebreath--
-	..()
-	return TRUE
+	if(M.mind && M.mind.spell_list.len != 0)
+		var/spell_improved = FALSE
+		for(var/obj/effect/proc_holder/spell/S in M.mind.spell_list)
+			if(S.clothes_req)
+				S.clothes_req = 0
+				spell_improved = TRUE
+		if(spell_improved)
+			to_chat(M, "<span class='notice'>You suddenly feel like you never needed those garish robes in the first place...</span>")
+	return ..()
 
 /datum/reagent/consumable/ethanol/out_of_lime
 	name = "Out of Lime"
