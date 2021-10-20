@@ -148,6 +148,9 @@
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
+/obj/structure/cable/yellow{
+	icon_state = "4-6"
+	},
 /turf/open/floor/engine,
 /area/ship/engineering/engine)
 "ee" = (
@@ -172,9 +175,6 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/green/visible{
 	dir = 6
-	},
-/obj/structure/cable/yellow{
-	icon_state = "2-8"
 	},
 /turf/open/floor/engine,
 /area/ship/engineering/engine)
@@ -221,10 +221,11 @@
 /area/ship/engineering/atmospherics)
 "fQ" = (
 /obj/machinery/atmospherics/components/trinary/filter/flipped{
-	dir = 8
+	dir = 8;
+	filter_type = n2
 	},
 /obj/structure/cable/yellow{
-	icon_state = "1-10"
+	icon_state = "9-10"
 	},
 /turf/open/floor/engine,
 /area/ship/engineering/engine)
@@ -637,7 +638,8 @@
 /area/ship/bridge)
 "qU" = (
 /obj/machinery/atmospherics/components/trinary/filter{
-	dir = 4
+	dir = 4;
+	filter_type = plasma
 	},
 /obj/structure/cable{
 	icon_state = "2-4"
