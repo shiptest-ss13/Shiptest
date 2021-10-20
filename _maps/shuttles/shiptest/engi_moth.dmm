@@ -146,10 +146,7 @@
 /area/ship/engineering/engine)
 "ed" = (
 /obj/structure/cable/yellow{
-	icon_state = "2-4"
-	},
-/obj/structure/cable/yellow{
-	icon_state = "2-8"
+	icon_state = "4-8"
 	},
 /turf/open/floor/engine,
 /area/ship/engineering/engine)
@@ -175,6 +172,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/green/visible{
 	dir = 6
+	},
+/obj/structure/cable/yellow{
+	icon_state = "2-8"
 	},
 /turf/open/floor/engine,
 /area/ship/engineering/engine)
@@ -205,10 +205,6 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/box,
-/obj/structure/cable/yellow{
-	icon_state = "1-2"
-	},
-/obj/structure/cable/yellow,
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
@@ -226,6 +222,9 @@
 "fQ" = (
 /obj/machinery/atmospherics/components/trinary/filter/flipped{
 	dir = 8
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-10"
 	},
 /turf/open/floor/engine,
 /area/ship/engineering/engine)
@@ -300,9 +299,6 @@
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/engineering/electrical)
 "ja" = (
-/obj/structure/cable/yellow{
-	icon_state = "1-2"
-	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 6
 	},
@@ -310,6 +306,9 @@
 	dir = 6
 	},
 /obj/machinery/holopad/emergency/engineering,
+/obj/structure/cable/yellow{
+	icon_state = "2-5"
+	},
 /turf/open/floor/engine,
 /area/ship/engineering/engine)
 "jq" = (
@@ -763,6 +762,9 @@
 /obj/machinery/atmospherics/pipe/simple/orange/hidden/layer1,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
 /turf/open/floor/engine,
 /area/ship/engineering/engine)
 "vg" = (
