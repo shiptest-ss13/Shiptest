@@ -8,20 +8,6 @@ SUBSYSTEM_DEF(shipbot)
 	var/pinging = FALSE
 	var/ping_fails = 0
 	var/static/list/reserved_keys = list("commkey", "command", "args")
-	var/static/list/reserved_chars = list(
-		"?" = "%3F",
-		"&" = "%26",
-		"#" = "%23",
-		"%" = "%25",
-		"|" = "%7C",
-		"/" = "%2F",
-		"=" = "%3D",
-		"<" = "%3C",
-		">" = "%3E",
-		"\"" = "%22",
-		"!" = "%21",
-		" " = "%20",
-	)
 	/// KEEP THIS UP TO DATE. IF YOU ADD NEW ONES ADD IT HERE
 	var/static/list/channel_keys = list(
 		"admin",
