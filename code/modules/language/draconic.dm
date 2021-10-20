@@ -1,6 +1,6 @@
 /datum/language/draconic
-	name = "Draconic"
-	desc = "The common language of Sarathi, composed of sibilant hisses and rattles."
+	name = "Kalixcian Common"
+	desc = "The most prevalent language to come out of Kalixcis, and generally understood by all those native to it."
 	speech_verb = "hisses"
 	ask_verb = "hisses"
 	exclaim_verb = "roars"
