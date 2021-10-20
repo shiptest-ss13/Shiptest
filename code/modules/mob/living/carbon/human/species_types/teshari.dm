@@ -1,5 +1,5 @@
 /datum/species/teshari
-	name = "Teshari"
+	name = "Kepori"
 	id = "teshari"
 	default_color = "6060FF"
 	species_traits = list(MUTCOLORS, EYECOLOR, NO_UNDERWEAR)
@@ -9,7 +9,7 @@
 	disliked_food = GRAIN | GROSS
 	liked_food = MEAT
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | ERT_SPAWN | RACE_SWAP | SLIME_EXTRACT
-	loreblurb = "Teshari are a raptor-like species vaguely reminiscent of Sol’s extinct troodontidae. Small and covered in feathers, they are nimble but frail due to their hollow bones. Teshari are adapted to colder climates but are able to tolerate room temperature environments. Those found on non-Teshari ships are typically clanless societal outcasts known as rollaways."	
+	loreblurb = "Kepori are a raptor-like species covered in feathers vaguely reminiscent of earth’s extinct troodontidae. They’re small and sometimes seen as weak by other species due to their hollow bones but make up for that in speed and reflexes. Those found in space usually lack a clutch, commonly known as rollaways."	
 	say_mod = "chirps"
 	attack_verb = "slash"
 	attack_sound = 'sound/weapons/slash.ogg'

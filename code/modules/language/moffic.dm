@@ -1,6 +1,6 @@
 /datum/language/moffic
-	name = "Moffic"
-	desc = "A babbling-like pidgin, composed from the proto-languages developed by the isolated origin groups of mothpeople prior to their discovery, and slowly developed into something more formal."
+	name = "Proto-Moth Pidgin"
+	desc = "A babbling-like language, composed from the proto-languages developed by the isolated origin groups of mothpeople prior to their discovery, and slowly developed into something more formal."
 	speech_verb = "flutters"
 	ask_verb = "fluffs"
 	exclaim_verb = "floofs"

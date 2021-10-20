@@ -270,17 +270,16 @@
 
 	var/list/static/allowed_species = list(
 		"Human" = /datum/species/human,
-		"lizard" = /datum/species/lizard,
+		"Sarathi" = /datum/species/lizard,
 		"Moth" = /datum/species/moth,
-		"Ethereal" = /datum/species/ethereal,
+		"Elzuose" = /datum/species/ethereal,
 		"Pod" = /datum/species/pod,
 		"Fly" = /datum/species/fly,
 		"Felinid" = /datum/species/human/felinid,
 		"Jelly" = /datum/species/jelly,
 		"IPC" = /datum/species/ipc,
-		"Squid" = /datum/species/squid,
-		"Teshari" = /datum/species/teshari,
-		"Arachnid" = /datum/species/spider
+		"Kepori" = /datum/species/teshari,
+		"Rachnid" = /datum/species/spider
 	)
 
 /datum/nanite_program/sensor/species/register_extra_settings()

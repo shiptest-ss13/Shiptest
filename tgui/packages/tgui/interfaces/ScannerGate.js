@@ -19,7 +19,7 @@ const TARGET_SPECIES_LIST = [
     value: 'human',
   },
   {
-    name: 'lizard',
+    name: 'Sarathi',
     value: 'lizard',
   },
   {
@@ -55,7 +55,7 @@ const TARGET_SPECIES_LIST = [
     value: 'zombie',
   },
   {
-    name: 'Arachnid',
+    name: 'Rachnid',
     value: 'rachnid',
   },
   {
@@ -63,15 +63,11 @@ const TARGET_SPECIES_LIST = [
     value: 'ipc',
   },
   {
-    name: 'Squidperson',
-    value: 'squid',
-  },
-  {
-    name: 'Ethereal',
+    name: 'Elzuose',
     value: 'ethereal',
   },
   {
-    name: 'Teshari',
+    name: 'Kepori',
     value: 'tesh',
   },
 ];

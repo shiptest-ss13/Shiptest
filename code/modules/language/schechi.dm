@@ -1,6 +1,6 @@
 /datum/language/schechi
 	name = "Schechi"
-	desc = "The common language of the Teshari, consisting of miscellaneous chirps."
+	desc = "The common language of the Kepori, consisting of miscellaneous chirps."
 	speech_verb = "chirps"
 	ask_verb = "chirps"
 	key = "f"
