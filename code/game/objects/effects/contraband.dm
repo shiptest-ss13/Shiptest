@@ -602,7 +602,7 @@
 	name = "Enlist" // but I thought deathsquad was never acknowledged
 	desc = "Enlist in the Nanotrasen Deathsquadron reserves today!"
 	icon_state = "poster29_legit" */ // I refuse to acknowledge this bullshit - Zeta
-// :trold:
+
 /obj/structure/sign/poster/official/solgov_enlist //much better.
 	name = "Enlist"
 	desc = "Enlist to be a part of the SolGov Peacekeeping Operations today!"
