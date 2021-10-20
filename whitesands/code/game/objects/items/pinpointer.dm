@@ -1,5 +1,5 @@
-#define SCANMODE_SURFACE 0
-#define SCANMODE_DEEPCORE 1
+#define SCANMODE_SURFACE 0 //scans ore, old mining scanner behavior
+#define SCANMODE_DEEPCORE 1 //scans for deepcore mining spots, old deeep core scanner behavior
 
 /obj/item/pinpointer/deepcore
 	name = "dual mining scanner"
@@ -17,12 +17,12 @@
 
 /obj/item/pinpointer/deepcore/examine(mob/user)
 	. = ..()
-	. += "<span class='notice'>It is currently set to [scanmode ? "scan underground " : "scan the surface"].</span>"
+	. += "<span class='notice'>It is currently set to [scanmode ? "scan underground" : "scan the surface"].</span>"
 
 /obj/item/pinpointer/deepcore/AltClick(mob/user) //switching modes
 	..()
 	if(user.canUseTopic(src, BE_CLOSE))
-		if(scanning_surface||active)
+		if(scanning_surface||active) //prevents swithcing modes when active
 			to_chat(user, "<span class='warning'>You have to turn the [src] off first before switching modes!</span>")
 		else
 			scanmode = !scanmode
@@ -59,13 +59,17 @@
 
 
 /obj/item/pinpointer/deepcore/process()
-	. = ..()
-	if(!scanning_surface)
-		STOP_PROCESSING(SSobj, src)
-		return null
-	scan_minerals()
+	switch(scanmode)
+		if(SCANMODE_DEEPCORE)
+			. = ..() //returns pinpointer code if its scanning for deepcore spots
 
-/obj/item/pinpointer/deepcore/proc/scan_minerals()
+		if(SCANMODE_SURFACE)
+			if(!scanning_surface)
+				STOP_PROCESSING(SSobj, src)
+				return null
+			scan_minerals()
+
+/obj/item/pinpointer/deepcore/proc/scan_minerals() //used by the surface mining mode
 	if(current_cooldown <= world.time)
 		current_cooldown = world.time + cooldown
 		var/turf/t = get_turf(src)
