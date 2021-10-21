@@ -27,3 +27,9 @@
 	results = list(/datum/reagent/consumable/ethanol/out_of_lime = 4)
 	required_reagents = list(/datum/reagent/consumable/lemonade = 1, /datum/reagent/consumable/ethanol/beer/green = 1, /datum/reagent/consumable/orangejuice = 1, /datum/reagent/consumable/ethanol/out_of_touch = 1)
 	mix_message = "The glass cycles through different colors before settling on one."
+
+/datum/chemical_reaction/cogchamp
+	results = list(/datum/reagent/consumable/ethanol/cogchamp = 3)
+	required_reagents = list(/datum/reagent/consumable/ethanol/cognac = 1, /datum/reagent/fuel = 1, /datum/reagent/consumable/ethanol/screwdrivercocktail = 1)
+	mix_message = "You hear faint sounds of gears turning as it mixes."
+	mix_sound = 'sound/effects/clockcult_gateway_closing.ogg'

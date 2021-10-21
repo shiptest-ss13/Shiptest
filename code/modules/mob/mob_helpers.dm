@@ -153,6 +153,8 @@
 		. += newletter
 	return sanitize(.)
 
+#define CLOCK_CULT_SLUR(phrase) sanitize(text2ratvar(phrase))
+
 ///Adds stuttering to the message passed in
 /proc/stutter(phrase)
 	phrase = html_decode(phrase)
