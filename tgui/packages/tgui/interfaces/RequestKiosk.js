@@ -7,8 +7,7 @@ export const RequestKiosk = (props, context) => {
   return (
     <Window
       width={550}
-      height={600}
-      resizable>
+      height={600}>
       <Window.Content scrollable>
         <RequestKioskContent />
       </Window.Content>
@@ -122,12 +121,11 @@ export const RequestKioskContent = (props, context) => {
             <Section>
               <TextArea
                 fluid
-                value={bountyText}
                 height="250px"
                 width="200px"
                 backgroundColor="black"
                 textColor="white"
-                onInput={(e, value) => act('bountyText', {
+                onChange={(e, value) => act('bountyText', {
                   bountytext: value,
                 })} />
               <Box>

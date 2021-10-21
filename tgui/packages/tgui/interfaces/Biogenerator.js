@@ -16,8 +16,7 @@ export const Biogenerator = (props, context) => {
   return (
     <Window
       width={550}
-      height={380}
-      resizable>
+      height={420}>
       {!!processing && (
         <Dimmer fontSize="32px">
           <Icon name="cog" spin={1} />
@@ -79,13 +78,14 @@ export const BiogeneratorContent = (props, context) => {
         <>
           Search
           <Input
+            autoFocus
             value={searchText}
             onInput={(e, value) => setSearchText(value)}
             mx={1} />
           <Button
             icon="eject"
             content="Eject"
-            onClick={() => act('detach')} />
+            onClick={() => act('eject')} />
           <Button
             icon="cog"
             content="Activate"

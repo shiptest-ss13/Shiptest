@@ -305,11 +305,6 @@ em {
   font-weight: bold;
 }
 
-.looc {
-  color: #002eb8;
-  font-weight: bold;
-}
-
 .adminobserverooc {
   color: #0099cc;
   font-weight: bold;
@@ -334,7 +329,7 @@ em {
   font-weight: bold;
 }
 
-.say, .emote, .infoplain {
+.say, .emote, .infoplain, .oocplain, .warningplain {
 }
 
 .deadsay {
@@ -392,16 +387,12 @@ em {
   color: #6d3f40;
 }
 
+.gangradio {
+  color: #ac2ea1;
+}
+
 .centcomradio {
   color: #686868;
-}
-
-.solgovradio {
-  color: #444e5f;
-}
-
-.widebandradio {
-  color: #508166;
 }
 
 .aiprivradio {
@@ -414,6 +405,14 @@ em {
 
 .blueteamradio {
   color: #0000ff;
+}
+
+.greenteamradio {
+  color: #00ff00;
+}
+
+.yellowteamradio {
+  color: #d1ba22;
 }
 
 .yell {
@@ -503,6 +502,11 @@ h1.alert, h2.alert {
 
 .tinynotice {
   color: #000099;
+  font-size: 85%;
+}
+
+.tinynoticeital {
+  color: #000099;
   font-style: italic;
   font-size: 85%;
 }
@@ -564,40 +568,40 @@ h1.alert, h2.alert {
 }
 
 .cult {
-  color: #960000;
+  color: #973e3b;
 }
 
 .cultitalic {
-  color: #960000;
+  color: #973e3b;
   font-style: italic;
 }
 
 .cultbold {
-  color: #960000;
+  color: #973e3b;
   font-style: italic;
   font-weight: bold;
 }
 
 .cultboldtalic {
-  color: #960000;
+  color: #973e3b;
   font-weight: bold;
   font-size: 185%;
 }
 
 .cultlarge {
-  color: #960000;
+  color: #973e3b;
   font-weight: bold;
   font-size: 185%;
 }
 
 .narsie {
-  color: #960000;
+  color: #973e3b;
   font-weight: bold;
   font-size: 925%;
 }
 
 .narsiesmall {
-  color: #960000;
+  color: #973e3b;
   font-weight: bold;
   font-size: 370%;
 }
@@ -714,6 +718,11 @@ h1.alert, h2.alert {
   font-family: "Courier New", cursive, sans-serif;
 }
 
+.tape_recorder {
+  color: #800000;
+  font-family: "Courier New", cursive, sans-serif;
+}
+
 .command_headset {
   font-weight: bold;
   font-size: 160%;
@@ -815,6 +824,10 @@ h1.alert, h2.alert {
 .icon {
   height: 1em;
   width: auto;
+}
+
+.bigicon {
+  font-size: 2.5em;
 }
 
 .memo {

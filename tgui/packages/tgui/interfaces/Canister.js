@@ -1,6 +1,6 @@
 import { toFixed } from 'common/math';
 import { useBackend } from '../backend';
-import { AnimatedNumber, Box, Button, Flex, Icon, Knob, LabeledControls, LabeledList, RoundGauge, Section, Tooltip } from '../components';
+import { Box, Button, Flex, Icon, Knob, LabeledControls, LabeledList, RoundGauge, Section, Tooltip } from '../components';
 import { formatSiUnit } from '../format';
 import { Window } from '../layouts';
 
@@ -20,6 +20,7 @@ export const Canister = (props, context) => {
     defaultReleasePressure,
     minReleasePressure,
     maxReleasePressure,
+    pressureLimit,
     valveOpen,
     isPrototype,
     hasHoldingTank,
@@ -59,14 +60,18 @@ export const Canister = (props, context) => {
                 <LabeledControls.Item
                   minWidth="66px"
                   label="Pressure">
-                  <AnimatedNumber
+                  <RoundGauge
+                    size={1.75}
                     value={tankPressure}
-                    format={value => {
-                      if (value < 10000) {
-                        return toFixed(value) + ' kPa';
-                      }
-                      return formatSiUnit(value * 1000, 1, 'Pa');
-                    }} />
+                    minValue={0}
+                    maxValue={pressureLimit}
+                    alertAfter={pressureLimit * 0.70}
+                    ranges={{
+                      "good": [0, pressureLimit * 0.70],
+                      "average": [pressureLimit * 0.70, pressureLimit * 0.85],
+                      "bad": [pressureLimit * 0.85, pressureLimit],
+                    }}
+                    format={formatPressure} />
                 </LabeledControls.Item>
                 <LabeledControls.Item label="Regulator">
                   <Box
@@ -121,17 +126,19 @@ export const Canister = (props, context) => {
                 <LabeledControls.Item
                   mr={1}
                   label="Port">
-                  <Box position="relative">
-                    <Icon
-                      size={1.25}
-                      name={portConnected ? 'plug' : 'times'}
-                      color={portConnected ? 'good' : 'bad'} />
-                    <Tooltip
-                      content={portConnected
-                        ? 'Connected'
-                        : 'Disconnected'}
-                      position="top" />
-                  </Box>
+                  <Tooltip
+                    content={portConnected
+                      ? 'Connected'
+                      : 'Disconnected'}
+                    position="top"
+                  >
+                    <Box position="relative">
+                      <Icon
+                        size={1.25}
+                        name={portConnected ? 'plug' : 'times'}
+                        color={portConnected ? 'good' : 'bad'} />
+                    </Box>
+                  </Tooltip>
                 </LabeledControls.Item>
               </LabeledControls>
             </Section>

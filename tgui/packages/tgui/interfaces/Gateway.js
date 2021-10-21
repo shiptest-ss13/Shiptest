@@ -4,7 +4,7 @@ import { Window } from '../layouts';
 
 export const Gateway = () => {
   return (
-    <Window resizable>
+    <Window>
       <Window.Content scrollable>
         <GatewayContent />
       </Window.Content>
@@ -65,7 +65,7 @@ const GatewayContent = (props, context) => {
         <Section
           key={dest.ref}
           title={dest.name}>
-          {dest.availible && (
+          {dest.available && (
             <Button
               fluid
               onClick={() => act('activate', {

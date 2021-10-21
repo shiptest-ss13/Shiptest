@@ -42,9 +42,10 @@ export const Photocopier = (props, context) => {
   );
 };
 
-export const Toner = (props, context) => {
+const Toner = (props, context) => {
   const { act, data } = useBackend(context);
   const {
+    has_toner,
     max_toner,
     current_toner,
   } = data;
@@ -57,7 +58,7 @@ export const Toner = (props, context) => {
       title="Toner"
       buttons={
         <Button
-          disabled={!current_toner}
+          disabled={!has_toner}
           onClick={() => act('remove_toner')}
           icon="eject">
           Eject
@@ -76,7 +77,7 @@ export const Toner = (props, context) => {
   );
 };
 
-export const Options = (props, context) => {
+const Options = (props, context) => {
   const { act, data } = useBackend(context);
   const {
     color_mode,
@@ -161,7 +162,7 @@ export const Options = (props, context) => {
   );
 };
 
-export const AIOptions = (props, context) => {
+const AIOptions = (props, context) => {
   const { act, data } = useBackend(context);
   const { can_AI_print } = data;
 

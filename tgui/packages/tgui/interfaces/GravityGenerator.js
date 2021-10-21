@@ -8,21 +8,10 @@ export const GravityGenerator = (props, context) => {
     charging_state,
     operational,
   } = data;
-
-  if (!operational) {
-    return (
-      <Section>
-        <NoticeBox textAlign="center">
-          No data available
-        </NoticeBox>
-      </Section>
-    );
-  }
-
   return (
     <Window
       width={400}
-      height={165}>
+      height={155}>
       <Window.Content>
         {!operational && (
           <NoticeBox>

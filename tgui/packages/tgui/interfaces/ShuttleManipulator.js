@@ -10,7 +10,7 @@ export const ShuttleManipulator = (props, context) => {
       title="Shuttle Manipulator"
       width={800}
       height={600}
-      resizable>
+      theme="admin">
       <Window.Content scrollable>
         <Tabs>
           <Tabs.Tab
@@ -119,7 +119,7 @@ export const ShuttleManipulatorTemplates = (props, context) => {
                 key={templateId}
                 selected={selectedTemplateId === templateId}
                 onClick={() => setSelectedTemplateId(templateId)}>
-                {template.category}
+                {template.port_id}
               </Tabs.Tab>
             ))(templateObject)}
           </Tabs>
@@ -127,20 +127,20 @@ export const ShuttleManipulatorTemplates = (props, context) => {
         <Flex.Item grow={1} basis={0}>
           {actualTemplates.map(actualTemplate => {
             const isSelected = (
-              actualTemplate.file_name === selected.file_name
+              actualTemplate.shuttle_id === selected.shuttle_id
             );
             // Whoever made the structure being sent is an asshole
             return (
               <Section
                 title={actualTemplate.name}
                 level={2}
-                key={actualTemplate.file_name}
+                key={actualTemplate.shuttle_id}
                 buttons={(
                   <Button
                     content={isSelected ? 'Selected' : 'Select'}
                     selected={isSelected}
                     onClick={() => act('select_template', {
-                      file_name: actualTemplate.file_name,
+                      shuttle_id: actualTemplate.shuttle_id,
                     })} />
                 )}>
                 {(!!actualTemplate.description
@@ -171,6 +171,7 @@ export const ShuttleManipulatorTemplates = (props, context) => {
 export const ShuttleManipulatorModification = (props, context) => {
   const { act, data } = useBackend(context);
   const selected = data.selected || {};
+  const existingShuttle = data.existing_shuttle || {};
   return (
     <Section>
       {selected ? (
@@ -193,19 +194,54 @@ export const ShuttleManipulatorModification = (props, context) => {
               </LabeledList>
             )}
           </Section>
+          {existingShuttle ? (
+            <Section
+              level={2}
+              title={'Existing Shuttle: ' + existingShuttle.name}>
+              <LabeledList>
+                <LabeledList.Item
+                  label="Status"
+                  buttons={(
+                    <Button
+                      content="Jump To"
+                      onClick={() => act('jump_to', {
+                        type: 'mobile',
+                        id: existingShuttle.id,
+                      })} />
+                  )}>
+                  {existingShuttle.status}
+                  {!!existingShuttle.timer && (
+                    <>
+                      ({existingShuttle.timeleft})
+                    </>
+                  )}
+                </LabeledList.Item>
+              </LabeledList>
+            </Section>
+          ) : (
+            <Section
+              level={2}
+              title="Existing Shuttle: None" />
+          )}
           <Section
             level={2}
             title="Status">
             <Button
-              content="Preview"
-              onClick={() => act('preview', {
-                file_name: selected.file_name,
+              content="Load"
+              color="good"
+              onClick={() => act('load', {
+                shuttle_id: selected.shuttle_id,
               })} />
             <Button
-              content="Load"
+              content="Preview"
+              onClick={() => act('preview', {
+                shuttle_id: selected.shuttle_id,
+              })} />
+            <Button
+              content="Replace"
               color="bad"
-              onClick={() => act('load', {
-                file_name: selected.file_name,
+              onClick={() => act('replace', {
+                shuttle_id: selected.shuttle_id,
               })} />
           </Section>
         </>
