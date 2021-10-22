@@ -19,9 +19,7 @@
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "corpseclockdown"
 	},
-/obj/item/reagent_containers/food/drinks/mug{
-	pixel_x = 8
-	},
+/obj/machinery/recharger,
 /turf/open/floor/carpet/nanoweave/red,
 /area/ship/security)
 "aN" = (
@@ -1184,6 +1182,7 @@
 /area/ship/crew/office)
 "tr" = (
 /obj/structure/table/reinforced,
+/obj/machinery/cell_charger,
 /turf/open/floor/carpet,
 /area/ship/bridge)
 "tt" = (
@@ -1867,6 +1866,9 @@
 	},
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "corpseclockdown"
+	},
+/obj/item/reagent_containers/food/drinks/mug{
+	pixel_x = 8
 	},
 /turf/open/floor/carpet/nanoweave/red,
 /area/ship/security)
