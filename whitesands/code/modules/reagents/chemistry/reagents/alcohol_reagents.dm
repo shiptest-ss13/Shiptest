@@ -134,3 +134,19 @@
 			consumer.hair_color = pick("0ad","a0f","f73","d14","0b5","fc2","084","05e","d22","fa0")
 			consumer.facial_hair_color = pick("0ad","a0f","f73","d14","0b5","fc2","084","05e","d22","fa0")
 			consumer.update_hair()
+
+/datum/reagent/consumable/ethanol/cogchamp
+	name = "CogChamp"
+	description = "Now you can fill yourself with the power of Ratvar!"
+	color = rgb(255, 201, 49)
+	boozepwr = 10
+	quality = DRINK_FANTASTIC
+	taste_description = "a brass taste with a hint of oil"
+	glass_icon_state = "cogchamp"
+	glass_name = "CogChamp"
+	glass_desc = "Not one of Ratvar's Four Generals could withstand this!  Qevax Jryy!"
+
+/datum/reagent/consumable/ethanol/cogchamp/on_mob_life(mob/living/carbon/M)
+	M.clockcultslurring = min(M.clockcultslurring + 3, 3)
+	M.stuttering = min(M.stuttering + 3, 3)
+	..()

@@ -15,6 +15,23 @@
 	. = ..()
 	AddComponent(/datum/component/wearertargeting/earprotection, list(ITEM_SLOT_EARS))
 
+//Lieutenant
+/obj/item/radio/headset/heads/lieutenant
+	name = "\proper the lieutenant's headset"
+	desc = "The headset of the Lieutenant."
+	icon_state = "com_headset"
+	keyslot = new /obj/item/encryptionkey/heads/lieutenant
+
+/obj/item/radio/headset/heads/lieutenant/alt
+	name = "\proper the lieutenant's bowman headset"
+	desc = "The headset of the Lieutenant. Protects ears from flashbangs."
+	icon_state = "com_headset_alt"
+	keyslot = new /obj/item/encryptionkey/heads/lieutenant
+
+/obj/item/radio/headset/heads/lieutenant/alt/ComponentInitialize()
+	. = ..()
+	AddComponent(/datum/component/wearertargeting/earprotection, list(ITEM_SLOT_EARS))
+
 //Brig Phys
 /obj/item/radio/headset/headset_medsec
 	name = "medical-security radio headset"
