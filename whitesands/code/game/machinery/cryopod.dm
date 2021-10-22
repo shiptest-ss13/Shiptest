@@ -316,6 +316,11 @@ GLOBAL_LIST_EMPTY(cryopod_computers)
 			announce_rank = G.fields["rank"]
 			qdel(G)
 
+	// Regardless of what ship you spawned in you need to be removed from it.
+	// This covers scenarios where you spawn in one ship but cryo in another.
+	for(var/obj/structure/overmap/ship/simulated/sim_ship as anything in SSovermap.simulated_ships)
+		sim_ship.manifest -= mob_occupant.real_name
+
 	//Make an announcement and log the person entering storage.
 	if(control_computer)
 		control_computer.frozen_crew += "[mob_occupant.real_name]"
