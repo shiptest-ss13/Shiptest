@@ -193,6 +193,7 @@
 /obj/machinery/atmospherics/pipe/simple/cyan/visible{
 	dir = 4
 	},
+/obj/item/stack/sheet/metal/five,
 /turf/open/floor/plating,
 /area/ship/maintenance/aft)
 "gQ" = (
@@ -333,6 +334,10 @@
 "jM" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 9
+	},
+/obj/item/ammo_casing/c38/hotshot{
+	dir = 9;
+	pixel_x = -6
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/aft)
@@ -533,7 +538,7 @@
 /area/ship/maintenance/aft)
 "mW" = (
 /obj/machinery/cryopod/latejoin{
-	dir = 8
+	dir = 1
 	},
 /turf/open/floor/carpet/nanoweave/purple,
 /area/ship/crew/dorm)
@@ -808,10 +813,10 @@
 /turf/open/floor/carpet/nanoweave/beige,
 /area/ship/crew/law_office)
 "vC" = (
-/obj/machinery/light/small{
-	dir = 1
-	},
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
+	dir = 8
+	},
+/obj/machinery/light/small{
 	dir = 8
 	},
 /turf/open/floor/plating,
@@ -858,12 +863,6 @@
 	},
 /turf/open/floor/carpet/nanoweave/beige,
 /area/ship/crew/office)
-"wH" = (
-/obj/machinery/cryopod/latejoin{
-	dir = 4
-	},
-/turf/open/floor/carpet/nanoweave/purple,
-/area/ship/crew/dorm)
 "wR" = (
 /obj/structure/sign/warning/enginesafety,
 /turf/closed/wall,
@@ -1275,6 +1274,7 @@
 /turf/open/floor/carpet/nanoweave/beige,
 /area/ship/crew/office)
 "Iw" = (
+/obj/effect/decal/cleanable/oil/streak,
 /turf/open/floor/plating,
 /area/ship/maintenance/aft)
 "Iz" = (
@@ -1612,15 +1612,24 @@
 /obj/structure/closet/cabinet{
 	name = "captain's cabinet"
 	},
+/obj/item/clothing/shoes/laceup{
+	desc = "What was once a nice, polished pair of dress shoes is now a receptacle of the sweet smell of cigarette ash.";
+	name = "gumshoe shoes"
+	},
 /obj/item/clothing/under/rank/security/detective,
 /obj/item/clothing/suit/det_suit,
 /obj/item/clothing/head/fedora/det_hat{
 	name = "hard-worn fedora"
 	},
+/obj/item/areaeditor/shuttle,
+/obj/item/book/manual/wiki/detective,
+/obj/item/storage/box/gum/nicotine{
+	desc = "A brand of gum made BY detectives, FOR detectives, pal!";
+	name = "Gumshoe's Gum"
+	},
 /obj/item/clothing/accessory/holster/detective{
 	name = "shoulder holster"
 	},
-/obj/item/areaeditor/shuttle,
 /obj/effect/turf_decal/siding/wood{
 	dir = 9
 	},
@@ -1741,6 +1750,9 @@
 /obj/structure/table,
 /obj/item/paper_bin{
 	pixel_y = 3
+	},
+/obj/item/stamp/law{
+	pixel_y = 4
 	},
 /turf/open/floor/carpet/nanoweave/beige,
 /area/ship/crew/office)
@@ -1877,6 +1889,7 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 9
 	},
+/obj/structure/filingcabinet/chestdrawer,
 /turf/open/floor/carpet/nanoweave/beige,
 /area/ship/crew/office)
 "WY" = (
@@ -2339,7 +2352,7 @@ av
 Rh
 nV
 zD
-wH
+mW
 Rh
 gQ
 gQ
