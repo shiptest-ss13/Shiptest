@@ -10,10 +10,24 @@ SUBSYSTEM_DEF(mapping)
 
 	var/list/ruins_templates = list()
 	var/list/space_ruins_templates = list()
+
 	var/list/lava_ruins_templates = list()
+	var/list/lava_ruins_minor_templates = list()
+	var/list/lava_ruins_major_templates = list()
+
 	var/list/ice_ruins_templates = list()
+	var/list/ice_ruins_minor_templates = list()
+	var/list/ice_ruins_major_templates = list()
+
 	var/list/sand_ruins_templates = list()
+	var/list/sand_ruins_minor_templates = list()
+	var/list/sand_ruins_major_templates = list()
+
 	var/list/jungle_ruins_templates = list()
+	var/list/jungle_ruins_minor_templates = list()
+	var/list/jungle_ruins_major_templates = list()
+
+
 
 	var/list/maplist
 	var/list/ship_purchase_list
@@ -173,6 +187,7 @@ SUBSYSTEM_DEF(mapping)
 
 	for(var/item in sortList(subtypesof(/datum/map_template/ruin), /proc/cmp_ruincost_priority))
 		var/datum/map_template/ruin/ruin_type = item
+
 		// screen out the abstract subtypes
 		if(!initial(ruin_type.id))
 			continue
@@ -183,7 +198,7 @@ SUBSYSTEM_DEF(mapping)
 
 		map_templates[R.name] = R
 		ruins_templates[R.name] = R
-
+//ruin
 		if(istype(R, /datum/map_template/ruin/lavaland))
 			lava_ruins_templates[R.name] = R
 		else if(istype(R, /datum/map_template/ruin/whitesands))
@@ -194,6 +209,24 @@ SUBSYSTEM_DEF(mapping)
 			ice_ruins_templates[R.name] = R
 		else if(istype(R, /datum/map_template/ruin/space))
 			space_ruins_templates[R.name] = R
+//minor ruin
+		if(istype(R, /datum/map_template/ruin/minor/lavaland)) //what you call copy and pasted code I call..... copy and pasted code
+			lava_ruins_minor_templates[R.name] = R
+		else if(istype(R, /datum/map_template/ruin/minor/whitesands))
+			sand_ruins_minor_templates[R.name] = R
+		else if(istype(R, /datum/map_template/ruin/minor/jungle))
+			jungle_ruins_minor_templates[R.name] = R
+		else if(istype(R, /datum/map_template/ruin/minor/icemoon))
+			ice_ruins_minor_templates[R.name] = R
+//major ruin
+		if(istype(R, /datum/map_template/ruin/major/lavaland))
+			lava_ruins_major_templates[R.name] = R
+		else if(istype(R, /datum/map_template/ruin/major/whitesands))
+			sand_ruins_major_templates[R.name] = R
+		else if(istype(R, /datum/map_template/ruin/major/jungle))
+			jungle_ruins_major_templates[R.name] = R
+		else if(istype(R, /datum/map_template/ruin/major/icemoon))
+			ice_ruins_major_templates[R.name] = R
 
 /datum/controller/subsystem/mapping/proc/preloadShuttleTemplates()
 	for(var/item in subtypesof(/datum/map_template/shuttle))
