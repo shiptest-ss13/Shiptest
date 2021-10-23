@@ -106,6 +106,12 @@
 	},
 /turf/open/floor/wood,
 /area/ship/hallway/central)
+"dM" = (
+/obj/structure/rack,
+/obj/item/storage/briefcase/lawyer,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/carpet/nanoweave/purple,
+/area/ship/crew/dorm)
 "dO" = (
 /obj/structure/chair/wood{
 	dir = 1
@@ -221,6 +227,7 @@
 "hp" = (
 /obj/item/soap/deluxe,
 /obj/item/plunger,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plastic,
 /area/ship/crew/toilet)
 "hz" = (
@@ -339,6 +346,8 @@
 	dir = 9;
 	pixel_x = -6
 	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/item/cigbutt,
 /turf/open/floor/plating,
 /area/ship/maintenance/aft)
 "jP" = (
@@ -373,6 +382,7 @@
 /obj/machinery/light{
 	dir = 4
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/carpet/red,
 /area/ship/hallway/central)
 "kw" = (
@@ -403,6 +413,7 @@
 	dir = 6
 	},
 /obj/machinery/airalarm/directional/north,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plastic,
 /area/ship/crew/toilet)
 "kE" = (
@@ -564,6 +575,7 @@
 	dir = 4;
 	pixel_x = -12
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plastic,
 /area/ship/crew/toilet)
 "nG" = (
@@ -894,6 +906,7 @@
 /obj/structure/toilet{
 	dir = 1
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plastic,
 /area/ship/crew/toilet)
 "yr" = (
@@ -988,7 +1001,6 @@
 /obj/docking_port/mobile{
 	dir = 4;
 	launch_status = 0;
-	movement_force = list("KNOCKDOWN" = 3, "THROW" = 1);
 	port_direction = 2
 	},
 /turf/open/floor/plating,
@@ -1102,6 +1114,7 @@
 	pixel_x = 4
 	},
 /obj/item/trash/chips,
+/obj/item/cigbutt,
 /obj/item/trash/semki,
 /obj/machinery/airalarm/directional/south,
 /turf/open/floor/wood,
@@ -1483,11 +1496,12 @@
 	name = "emergency supplies"
 	},
 /obj/item/storage/toolbox/emergency/shuttle/electric,
-/obj/item/pickaxe/emergency,
-/obj/item/clothing/suit/space/orange,
-/obj/item/stock_parts/matter_bin,
-/obj/item/clothing/head/helmet/space/orange,
+/obj/item/storage/firstaid/regular,
 /obj/item/mining_scanner,
+/obj/item/pickaxe/emergency,
+/obj/item/stock_parts/matter_bin,
+/obj/item/clothing/suit/space/orange,
+/obj/item/clothing/head/helmet/space/orange,
 /obj/machinery/advanced_airlock_controller{
 	pixel_x = 24
 	},
@@ -1574,6 +1588,10 @@
 	},
 /turf/open/floor/wood,
 /area/ship/hallway/central)
+"Pv" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/carpet/red,
+/area/ship/hallway/central)
 "PA" = (
 /obj/machinery/holopad/emergency/command,
 /obj/structure/cable{
@@ -1627,6 +1645,8 @@
 	desc = "A brand of gum made BY detectives, FOR detectives, pal!";
 	name = "Gumshoe's Gum"
 	},
+/obj/item/storage/fancy/cigarettes/cigpack_candy,
+/obj/item/binoculars,
 /obj/item/clothing/accessory/holster/detective{
 	name = "shoulder holster"
 	},
@@ -1817,6 +1837,9 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
 	},
+/obj/item/cigbutt{
+	pixel_x = 6
+	},
 /turf/open/floor/carpet/nanoweave/beige,
 /area/ship/crew/law_office)
 "Vo" = (
@@ -1892,6 +1915,13 @@
 /obj/structure/filingcabinet/chestdrawer,
 /turf/open/floor/carpet/nanoweave/beige,
 /area/ship/crew/office)
+"WU" = (
+/obj/item/cigbutt{
+	pixel_x = 3;
+	pixel_y = 2
+	},
+/turf/open/floor/wood,
+/area/ship/hallway/central)
 "WY" = (
 /obj/machinery/door/airlock/external/glass,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -2107,7 +2137,7 @@ eB
 QO
 ZZ
 dI
-bs
+WU
 AZ
 Xt
 JQ
@@ -2196,7 +2226,7 @@ NC
 KT
 wy
 wy
-wy
+Pv
 BJ
 UO
 fZ
@@ -2262,7 +2292,7 @@ LE
 Np
 bD
 Rh
-iZ
+dM
 Oa
 iZ
 Rh
