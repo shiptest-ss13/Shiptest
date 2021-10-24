@@ -1,9 +1,8 @@
 import { Fragment } from 'inferno';
-import { useBackend, useLocalState } from '../backend';
-import { Button, ByondUi, LabeledList, Knob, Input, Section, Grid, Box, ProgressBar, Slider, AnimatedNumber, Tooltip } from '../components';
-import { refocusLayout, Window } from '../layouts';
+import { useBackend } from '../backend';
+import { Button, ByondUi, LabeledList, Section, ProgressBar, AnimatedNumber } from '../components';
+import { Window } from '../layouts';
 import { Table } from '../components/Table';
-import { ButtonInput } from '../components/Button';
 
 export const HelmConsole = (props, context) => {
   const { act, data, config } = useBackend(context);

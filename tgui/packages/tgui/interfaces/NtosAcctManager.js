@@ -1,7 +1,7 @@
 import { useBackend, useLocalState } from '../backend';
 import { createSearch } from 'common/string';
 import { Fragment } from 'inferno';
-import { AnimatedNumber, Button, Dropdown, Flex, Input, LabeledList, NumberInput, Section, Table, Tabs } from '../components';
+import { AnimatedNumber, Button, Dropdown, Input, LabeledList, NumberInput, Section, Table, Tabs } from '../components';
 import { NtosWindow } from '../layouts';
 
 export const NtosAcctManager = (props, context) => {
