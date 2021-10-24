@@ -325,7 +325,7 @@
 
 	log_manifest(character.mind.key, character.mind, character, TRUE)
 
-	if(ship.job_slots[1] == job) // if it's the "captain" equivalent job of the ship
+	if(length(ship.job_slots) > 1 && ship.job_slots[1] == job) // if it's the "captain" equivalent job of the ship. checks to make sure it's not a one-job ship
 		minor_announce("[job.title] [character.real_name] on deck!", zlevel = ship.shuttle.get_virtual_z_level())
 
 /mob/dead/new_player/proc/AddEmploymentContract(mob/living/carbon/human/employee)
