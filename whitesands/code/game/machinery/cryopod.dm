@@ -410,8 +410,6 @@ GLOBAL_LIST_EMPTY(cryopod_computers)
 	var/mob/living/mob_occupant = occupant
 	if(mob_occupant.job in linked_ship.current_ship.job_slots)
 		linked_ship.current_ship.job_slots[mob_occupant.job]++
-	if(mob_occupant.real_name in linked_ship.current_ship.manifest)
-		linked_ship.current_ship.manifest -= mob_occupant.real_name
 	return ..()
 
 /obj/machinery/cryopod/latejoin/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock, idnum, override)
