@@ -7,6 +7,7 @@
 	force = 7
 	ammo_type = list(/obj/item/ammo_casing/energy/disabler/hos, /obj/item/ammo_casing/energy/laser/hos, /obj/item/ammo_casing/energy/trap)
 	ammo_x_offset = 1
+	shaded_charge = TRUE
 
 /obj/item/gun/energy/e_gun/smg
 	name = "\improper E-TAR SMG"
