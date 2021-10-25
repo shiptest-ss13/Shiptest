@@ -77,7 +77,7 @@
 /area/ruin/space/has_grav/astraeus/disposals
 	name = "Disposals"
 	icon_state = "yellow"
-	
+
 /area/ruin/space/has_grav/astraeus/custodial
 	name = "Custodial Closet"
 	icon_state = "green"
