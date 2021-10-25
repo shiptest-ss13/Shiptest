@@ -13,10 +13,6 @@
 /obj/item/instrument/banjo,
 /turf/open/floor/plating/asteroid,
 /area/ruin/space/way_home)
-"f" = (
-/obj/structure/fans/tiny/invisible,
-/turf/open/floor/plating/asteroid,
-/area/ruin/space/way_home)
 "h" = (
 /obj/structure/flora/tree/jungle{
 	icon_state = "tree8";
@@ -29,6 +25,10 @@
 	icon_state = "tree7";
 	randomize_icon = 0
 	},
+/turf/open/floor/plating/asteroid,
+/area/ruin/space/way_home)
+"r" = (
+/obj/structure/fans/tiny/invisible,
 /turf/open/floor/plating/asteroid,
 /area/ruin/space/way_home)
 "v" = (
@@ -56,25 +56,28 @@
 /area/ruin/space/way_home)
 "F" = (
 /obj/item/melee/roastingstick,
-/turf/open/floor/plating/asteroid,
+/turf/open/floor/grass,
 /area/ruin/space/way_home)
 "J" = (
 /obj/structure/chair/wood{
 	dir = 4
 	},
 /obj/item/instrument/piano_synth,
-/turf/open/floor/plating/asteroid,
+/turf/open/floor/grass,
 /area/ruin/space/way_home)
 "M" = (
 /obj/structure/bonfire/prelit,
-/turf/open/floor/plating/asteroid,
+/turf/open/floor/grass,
 /area/ruin/space/way_home)
 "R" = (
-/obj/structure/flora/stump,
-/turf/open/floor/plating/asteroid,
+/turf/open/floor/grass,
 /area/ruin/space/way_home)
 "S" = (
 /obj/item/trash/can/food/beans,
+/turf/open/floor/grass,
+/area/ruin/space/way_home)
+"T" = (
+/obj/structure/flora/stump,
 /turf/open/floor/plating/asteroid,
 /area/ruin/space/way_home)
 "Z" = (
@@ -262,9 +265,9 @@ b
 b
 b
 b
-f
-f
-f
+r
+r
+r
 a
 a
 a
@@ -292,9 +295,9 @@ c
 c
 i
 c
-f
-f
-f
+r
+r
+r
 a
 a
 a
@@ -322,8 +325,8 @@ c
 c
 c
 c
-f
-f
+r
+r
 a
 a
 a
@@ -350,7 +353,7 @@ c
 c
 c
 c
-f
+r
 a
 a
 a
@@ -373,12 +376,12 @@ C
 c
 c
 J
-c
+R
 c
 c
 h
 c
-f
+r
 a
 a
 "}
@@ -399,13 +402,13 @@ c
 c
 c
 S
+R
+R
+R
 c
 c
 c
-c
-c
-c
-f
+r
 a
 a
 "}
@@ -425,14 +428,14 @@ c
 c
 c
 d
-c
+R
 M
 F
 D
 c
 c
 c
-f
+r
 a
 b
 "}
@@ -449,12 +452,12 @@ c
 c
 c
 c
+T
+c
+c
 R
-c
-c
-c
-c
-c
+R
+R
 c
 c
 c
@@ -473,14 +476,14 @@ b
 b
 b
 b
-f
-f
+r
+r
 c
 c
 c
 c
 Z
-c
+R
 v
 c
 c
@@ -502,9 +505,9 @@ b
 b
 a
 a
-f
-f
-f
+r
+r
+r
 c
 c
 c
@@ -532,9 +535,9 @@ a
 a
 a
 a
-f
-f
-f
+r
+r
+r
 i
 c
 b
@@ -562,8 +565,8 @@ a
 a
 a
 a
-f
-f
+r
+r
 c
 b
 b
@@ -591,7 +594,7 @@ a
 a
 a
 a
-f
+r
 b
 b
 b

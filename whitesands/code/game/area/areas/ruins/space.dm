@@ -55,3 +55,8 @@
 /area/ruin/space/has_grav/scav_mining/dorm
 	name = "Asteroid mine dorm"
 	icon_state = "blue"
+
+/area/ruin/space/has_grav/glade
+	name = "\improper Dark Glade"
+	icon_state = "away"
+	always_unpowered = FALSE

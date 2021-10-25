@@ -135,17 +135,17 @@
 
 /obj/structure/flora/tree/jungle
 	name = "tree"
+	icon = 'icons/obj/flora/jungletrees.dmi'
 	icon_state = "tree"
 	desc = "It's seriously hampering your view of the jungle."
-	icon = 'icons/obj/flora/jungletrees.dmi'
 	var/randomize_icon = TRUE
 	pixel_x = -48
 	pixel_y = -20
 
 /obj/structure/flora/tree/jungle/Initialize()
+	. = ..()
 	if(randomize_icon) //prevents varedited trees changing
 		icon_state = "[icon_state][rand(1, 10)]"
-	. = ..()
 
 /obj/structure/flora/tree/jungle/small
 	pixel_y = 0
