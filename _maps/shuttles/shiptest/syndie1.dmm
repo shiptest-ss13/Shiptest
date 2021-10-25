@@ -5,6 +5,13 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/space)
+"aK" = (
+/obj/machinery/door/poddoor/shutters,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel,
+/area/space)
 "ba" = (
 /obj/effect/turf_decal/techfloor/orange{
 	dir = 8
@@ -42,6 +49,9 @@
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
 	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/space)
 "cN" = (
@@ -61,9 +71,11 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 10
 	},
-/obj/machinery/door/poddoor/shutters,
 /obj/machinery/atmospherics/components/binary/pump/on{
 	dir = 8
+	},
+/obj/machinery/door/poddoor/shutters{
+	id = "Lcargotide"
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/space)
@@ -118,6 +130,12 @@
 "fJ" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/space)
+"fU" = (
+/obj/structure/cable{
+	icon_state = "1-10"
+	},
+/turf/open/floor/plating,
+/area/space)
 "gh" = (
 /obj/effect/turf_decal/techfloor/orange{
 	dir = 8
@@ -141,7 +159,9 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 6
 	},
-/obj/machinery/door/poddoor/shutters,
+/obj/machinery/door/poddoor/shutters{
+	id = "LMcargotide"
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/space)
 "gX" = (
@@ -154,6 +174,11 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/purple/hidden{
 	dir = 6
+	},
+/obj/machinery/button/door{
+	id = "Lcargotide";
+	pixel_x = 23;
+	pixel_y = 32
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/space)
@@ -205,6 +230,10 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/space)
+"ju" = (
+/obj/structure/rack,
+/turf/open/floor/plasteel,
+/area/space)
 "jC" = (
 /obj/effect/turf_decal/techfloor{
 	dir = 9
@@ -212,9 +241,6 @@
 /obj/machinery/power/terminal,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 4
-	},
-/obj/structure/cable{
-	icon_state = "0-4"
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/space)
@@ -267,12 +293,6 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 9
 	},
-/obj/structure/cable/yellow{
-	icon_state = "0-4"
-	},
-/obj/machinery/power/port_gen/pacman,
-/obj/item/stack/sheet/mineral/plasma/twenty,
-/obj/item/wrench,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/space)
 "lQ" = (
@@ -285,7 +305,9 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/machinery/door/firedoor/border_only,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/space)
 "lY" = (
@@ -318,9 +340,15 @@
 	dir = 4
 	},
 /obj/structure/cable{
-	icon_state = "2-8"
+	icon_state = "1-2"
 	},
 /turf/open/floor/plasteel/tech/grid,
+/area/space)
+"mN" = (
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/turf/open/floor/plating,
 /area/space)
 "nd" = (
 /obj/effect/turf_decal/techfloor{
@@ -333,21 +361,12 @@
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
+/obj/machinery/power/apc/auto_name/north,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/space)
 "no" = (
 /obj/effect/turf_decal/techfloor{
 	dir = 6
-	},
-/obj/structure/cable/yellow,
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/machinery/power/terminal{
-	dir = 8
-	},
-/obj/structure/cable/yellow{
-	icon_state = "0-8"
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/space)
@@ -362,7 +381,9 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 10
 	},
-/obj/machinery/door/poddoor/shutters,
+/obj/machinery/door/poddoor/shutters{
+	id = "RMcargotide"
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/space)
 "nG" = (
@@ -374,6 +395,36 @@
 	},
 /obj/structure/cable{
 	icon_state = "0-4"
+	},
+/obj/machinery/power/apc/auto_name/north,
+/turf/open/floor/plasteel/tech/grid,
+/area/space)
+"nY" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plating,
+/area/space)
+"og" = (
+/obj/effect/turf_decal/techfloor/orange{
+	dir = 8
+	},
+/obj/effect/turf_decal/techfloor/orange{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/button/door{
+	id = "RMcargotide";
+	pixel_x = 23;
+	pixel_y = 32
+	},
+/obj/machinery/button/door{
+	id = "LMcargotide";
+	pixel_x = -23;
+	pixel_y = 32
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/space)
@@ -428,9 +479,6 @@
 "pB" = (
 /obj/effect/turf_decal/techfloor{
 	dir = 5
-	},
-/obj/structure/cable/yellow{
-	icon_state = "2-8"
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/space)
@@ -573,7 +621,9 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 5
 	},
-/obj/machinery/door/poddoor/shutters,
+/obj/machinery/door/poddoor/shutters{
+	id = "LMcargotide"
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/space)
 "vq" = (
@@ -589,7 +639,9 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 9
 	},
-/obj/machinery/door/poddoor/shutters,
+/obj/machinery/door/poddoor/shutters{
+	id = "RMcargotide"
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/space)
 "vT" = (
@@ -606,6 +658,15 @@
 	dir = 6
 	},
 /obj/machinery/atmospherics/components/unary/tank/toxins,
+/turf/open/floor/plasteel/tech/techmaint,
+/area/space)
+"we" = (
+/obj/structure/cable/yellow{
+	icon_state = "0-4"
+	},
+/obj/machinery/power/port_gen/pacman,
+/obj/item/stack/sheet/mineral/plasma/twenty,
+/obj/item/wrench,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/space)
 "wN" = (
@@ -648,9 +709,6 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/purple/hidden{
 	dir = 10
-	},
-/obj/structure/cable{
-	icon_state = "2-8"
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -757,13 +815,6 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 10
 	},
-/obj/structure/cable{
-	icon_state = "0-4"
-	},
-/obj/machinery/power/smes/engineering,
-/obj/structure/cable/yellow{
-	icon_state = "0-4"
-	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/space)
 "DF" = (
@@ -800,6 +851,7 @@
 /obj/structure/cable{
 	icon_state = "0-6"
 	},
+/obj/machinery/power/apc/auto_name/north,
 /turf/open/floor/plating,
 /area/space)
 "Fi" = (
@@ -855,7 +907,9 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 9
 	},
-/obj/machinery/door/poddoor/shutters,
+/obj/machinery/door/poddoor/shutters{
+	id = "Lcargotide"
+	},
 /obj/machinery/atmospherics/components/binary/pump/on{
 	dir = 8
 	},
@@ -867,6 +921,9 @@
 	},
 /obj/effect/turf_decal/techfloor/orange{
 	dir = 5
+	},
+/obj/structure/cable{
+	icon_state = "2-5"
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/space)
@@ -881,6 +938,12 @@
 /area/space)
 "JA" = (
 /turf/open/floor/plasteel/tech/grid,
+/area/space)
+"JE" = (
+/obj/structure/cable/yellow{
+	icon_state = "2-8"
+	},
+/turf/open/floor/plasteel/tech/techmaint,
 /area/space)
 "Kg" = (
 /obj/machinery/atmospherics/pipe/simple/general/hidden/layer2{
@@ -920,7 +983,19 @@
 /obj/effect/turf_decal/techfloor/orange{
 	dir = 4
 	},
+/obj/machinery/button/door{
+	id = "Rcargotide";
+	pixel_x = -23;
+	pixel_y = 32
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plasteel/tech/grid,
+/area/space)
+"KI" = (
+/obj/machinery/ore_silo,
+/turf/open/floor/plasteel,
 /area/space)
 "KP" = (
 /obj/effect/turf_decal/techfloor/orange,
@@ -940,6 +1015,7 @@
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
+/obj/machinery/power/apc/auto_name/north,
 /turf/open/floor/plasteel,
 /area/space)
 "Lq" = (
@@ -988,6 +1064,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/machinery/power/apc/auto_name/north,
 /turf/open/floor/plasteel/tech/grid,
 /area/space)
 "Qd" = (
@@ -1061,6 +1138,19 @@
 /obj/item/reagent_containers/food/drinks/waterbottle,
 /turf/open/floor/plasteel,
 /area/space)
+"Tc" = (
+/obj/structure/cable/yellow,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/power/terminal{
+	dir = 8
+	},
+/obj/structure/cable/yellow{
+	icon_state = "0-8"
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/space)
 "UC" = (
 /obj/effect/turf_decal/techfloor{
 	dir = 6
@@ -1095,6 +1185,16 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/space)
+"VV" = (
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/machinery/power/smes/engineering,
+/obj/structure/cable/yellow{
+	icon_state = "0-4"
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/space)
 "VX" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 4
@@ -1102,6 +1202,7 @@
 /obj/structure/cable{
 	icon_state = "0-5"
 	},
+/obj/machinery/power/apc/auto_name/south,
 /turf/open/floor/plasteel,
 /area/space)
 "Wa" = (
@@ -1114,9 +1215,6 @@
 	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 1
-	},
-/obj/structure/cable{
-	icon_state = "1-8"
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/space)
@@ -1512,7 +1610,7 @@ vT
 Lq
 Ko
 jU
-Zu
+og
 Zu
 ba
 sl
@@ -1633,10 +1731,10 @@ Lf
 AO
 Si
 jg
-Fi
-Fi
+we
+VV
 AO
-Fi
+KI
 jg
 NW
 fJ
@@ -1665,10 +1763,10 @@ Lf
 AO
 Si
 jg
-Fi
-Fi
+JE
+Tc
 bN
-Fi
+ju
 jg
 NW
 fJ
@@ -1698,7 +1796,7 @@ BH
 Si
 AO
 jg
-jg
+aK
 bN
 AO
 fJ
@@ -1730,10 +1828,10 @@ bN
 Si
 Si
 Si
-Si
-Si
-Si
-Si
+mN
+nY
+nY
+fU
 Si
 fJ
 fJ
