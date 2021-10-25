@@ -12,13 +12,11 @@ const VendingRow = (props, context) => {
   } = props;
   const {
     miningvendor,
-    onstation,
     department,
     user,
   } = data;
   const free = (
-    !onstation
-    || product.price === 0
+    product.price === 0
     || (
       !product.premium
       && department
@@ -99,7 +97,6 @@ export const Vending = (props, context) => {
   const { act, data } = useBackend(context);
   const {
     user,
-    onstation,
     miningvendor,
     product_records = [],
     coin_records = [],
@@ -133,8 +130,7 @@ export const Vending = (props, context) => {
       height={600}
       resizable>
       <Window.Content scrollable>
-        {!!onstation && (
-          <Section title="User">
+        {<Section title="User">
             {user && (
               <Box>
                 Welcome, <b>{user.name}</b>,
@@ -150,7 +146,7 @@ export const Vending = (props, context) => {
               </Box>
             )}
           </Section>
-        )}
+        }
         <Section title="Products">
           <Table>
             {inventory.map(product => (

@@ -142,14 +142,6 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 	var/extra_price = 50
 	///Whether our age check is currently functional
 	var/age_restrictions = TRUE
-	/**
-	* Is this item on station or not
-	*
-	* if it doesn't originate from off-station during mapload, everything is free
-	*/
-	var/onstation = TRUE //if it doesn't originate from off-station during mapload, everything is free
-	///A variable to change on a per instance basis on the map that allows the instance to force cost and ID requirements
-	var/onstation_override = FALSE //change this on the object on the map to override the onstation check. DO NOT APPLY THIS GLOBALLY.
 
 	///ID's that can load this vending machine wtih refills
 	var/list/canload_access_list
@@ -172,17 +164,11 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 	var/obj/item/radio/Radio
 
 /obj/item/circuitboard
-	///determines if the circuit board originated from a vendor off station or not.
-	var/onstation = TRUE
 
 /**
 	* Initialize the vending machine
 	*
 	* Builds the vending machine inventory, sets up slogans and other such misc work
-	*
-	* This also sets the onstation var to:
-	* * FALSE - if the machine was maploaded on a zlevel that doesn't pass the is_station_level check
-	* * TRUE - all other cases
 	*/
 /obj/machinery/vending/Initialize(mapload)
 	var/build_inv = FALSE
@@ -203,13 +189,6 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 	last_slogan = world.time + rand(0, slogan_delay)
 	power_change()
 
-	onstation = FALSE
-	if(circuit)
-		circuit.onstation = onstation //sync up the circuit so the pricing schema is carried over if it's reconstructed.
-	else if(circuit && (circuit.onstation != onstation)) //check if they're not the same to minimize the amount of edited values.
-		onstation = circuit.onstation //if it was constructed outside mapload, sync the vendor up with the circuit's var so you can't bypass price requirements by moving / reconstructing it off station.
-	if(onstation_override) //overrides the checks if true.
-		onstation = TRUE
 	Radio = new /obj/item/radio(src)
 	Radio.listening = 0
 
@@ -691,7 +670,6 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 
 /obj/machinery/vending/ui_static_data(mob/user)
 	. = list()
-	.["onstation"] = onstation
 	.["miningvendor"] = mining_point_vendor
 	.["department"] = payment_department
 	.["product_records"] = list()
@@ -788,7 +766,7 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 				flick(icon_deny,src)
 				vend_ready = TRUE
 				return
-			if(onstation && ishuman(usr))
+			if(ishuman(usr))
 				var/mob/living/carbon/human/H = usr
 				var/obj/item/card/id/C = H.get_idcard(TRUE)
 
