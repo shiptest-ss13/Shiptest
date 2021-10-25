@@ -37,8 +37,7 @@
 "fo" = (/turf/open/floor/plasteel/airless,/area/ruin/space/has_grav/astraeus/custodial)
 "fu" = (/obj/item/stack/sheet/plasteel,/turf/template_noop,/area/space)
 "fv" = (/obj/structure/catwalk,/obj/structure/cable{icon_state = "1-4"},/obj/structure/lattice,/turf/template_noop,/area/space/nearstation)
-"fU" = (/obj/effect/decal/cleanable/dirt,/obj/machinery/portable_atmospherics/canister/toxins,/turf/open/floor/plasteel/airless,/area/ruin/space/has_grav/astraeus/munitions)
-"gb" = (/obj/structure/table,/obj/item/disk/design_disk/ammo_1911,/turf/open/floor/plasteel,/area/ruin/space/has_grav/astraeus/munitions)
+"gb" = (/obj/structure/table,/obj/item/circuitboard/machine/circuit_imprinter{pixel_x = -5; pixel_y = 7},/obj/item/disk/design_disk/ammo_1911,/turf/open/floor/plasteel,/area/ruin/space/has_grav/astraeus/munitions)
 "gg" = (/obj/effect/turf_decal/industrial/warning{dir = 8},/obj/effect/decal/cleanable/dirt,/turf/open/floor/plasteel/airless,/area/ruin/space/has_grav/astraeus/munitions)
 "gr" = (/obj/structure/catwalk,/obj/structure/lattice,/turf/template_noop,/area/space/nearstation)
 "gx" = (/obj/machinery/atmospherics/components/unary/vent_pump/on,/turf/open/floor/plasteel/airless,/area/ruin/space/has_grav/astraeus/munitions)
@@ -151,7 +150,7 @@
 "yc" = (/obj/structure/cable{icon_state = "4-8"},/turf/open/floor/plasteel/airless,/area/ruin/space/has_grav/astraeus/hallway)
 "yd" = (/obj/structure/reagent_dispensers/fueltank,/turf/open/floor/plasteel/airless,/area/ruin/space/has_grav/astraeus/munitions)
 "yq" = (/obj/structure/lattice,/obj/item/stack/tile/plasteel,/turf/template_noop,/area/space/nearstation)
-"yy" = (/obj/item/clothing/shoes/clown_shoes,/obj/machinery/airalarm/directional/south,/turf/open/floor/plasteel/airless,/area/ruin/space/has_grav/astraeus/munitions)
+"yy" = (/obj/item/clothing/shoes/clown_shoes{pixel_x = -3; pixel_y = 12},/obj/machinery/airalarm/directional/south,/obj/item/storage/crayons{pixel_y = -6},/turf/open/floor/plasteel/airless,/area/ruin/space/has_grav/astraeus/munitions)
 "yJ" = (/obj/structure/grille/broken,/obj/item/stack/rods,/obj/machinery/door/poddoor/preopen,/turf/open/floor/plating/airless,/area/ruin/space/has_grav/astraeus/bridge)
 "zd" = (/turf/open/floor/plasteel/airless,/area/ruin/space/has_grav/astraeus/munitions)
 "zq" = (/turf/closed/mineral/random,/area/ruin/unpowered)
@@ -240,8 +239,6 @@
 "Nj" = (/obj/structure/lattice,/obj/structure/disposalpipe/trunk{dir = 8},/turf/template_noop,/area/space/nearstation)
 "Nk" = (/obj/effect/decal/cleanable/dirt,/obj/structure/cable{icon_state = "1-2"},/turf/open/floor/plating/airless,/area/ruin/space/has_grav/astraeus/bridge)
 "NI" = (/obj/machinery/door/airlock/command{name = "Conference Room"},/turf/open/floor/plasteel/airless,/area/ruin/space/has_grav/astraeus/dorms_med)
-"NW" = (/obj/effect/decal/cleanable/dirt,/obj/item/circuitboard/machine/circuit_imprinter,/turf/open/floor/plasteel/airless,/area/ruin/space/has_grav/astraeus/munitions)
-"Oo" = (/obj/effect/decal/cleanable/dirt,/obj/structure/frame/machine,/turf/open/floor/plasteel/airless,/area/ruin/space/has_grav/astraeus/munitions)
 "Ot" = (/obj/item/stack/sheet/metal/five,/turf/open/floor/plating/airless,/area/ruin/space/has_grav/astraeus/disposals)
 "Ov" = (/obj/structure/cable{icon_state = "4-8"},/obj/structure/disposalpipe/segment{dir = 4},/turf/open/floor/plasteel/airless,/area/ruin/space/has_grav/astraeus/dorms_med)
 "OD" = (/obj/effect/turf_decal/industrial/hatch/yellow,/obj/structure/closet,/obj/effect/spawner/lootdrop/maintenance{lootcount = 2; name = "2maintenance loot spawner"},/turf/open/floor/plasteel/airless,/area/ruin/space/has_grav/astraeus/hallway)
@@ -250,7 +247,7 @@
 "Pe" = (/obj/effect/turf_decal/corner/blue{dir = 5},/obj/effect/decal/cleanable/dirt,/turf/open/floor/plasteel/dark/airless,/area/ruin/space/has_grav/astraeus/bridge)
 "Pg" = (/obj/effect/decal/cleanable/dirt,/obj/effect/turf_decal/industrial/hatch/yellow,/obj/effect/turf_decal/industrial/warning{dir = 9},/turf/open/floor/plasteel/airless,/area/ruin/space/has_grav/astraeus/munitions)
 "Pn" = (/obj/effect/turf_decal/industrial/warning{dir = 10},/obj/effect/decal/cleanable/dirt,/obj/structure/chair/stool,/turf/open/floor/plasteel/airless,/area/ruin/space/has_grav/astraeus/munitions)
-"Pp" = (/obj/structure/table,/obj/effect/turf_decal/industrial/warning{dir = 1},/obj/effect/decal/cleanable/dirt,/obj/item/storage/crayons{pixel_y = 6},/obj/item/paper{info = "<b><center><u><large>NSV Astraeus Ammunition Inventory</large></b></center></u><br><br><b>Current Time:</b>18:30<br><b>Shipment Number:</b>04<br><br><b>Equipment in this shipment:</b><br><small>Leave blank or write 0 if none</small><br><br>Shells: HE - x15,<br>Shells: Shield Piercing - x8,<br>Shells: Smart Homing - x5, <br><br><li><del>Clown: Hilarious -  x1</li></del><br><br><b>Master At Arms' signature:</b>"; name = "paper - Munitions Inventory"; pixel_x = 7},/turf/open/floor/plasteel/airless,/area/ruin/space/has_grav/astraeus/munitions)
+"Pp" = (/obj/structure/table,/obj/effect/turf_decal/industrial/warning{dir = 1},/obj/effect/decal/cleanable/dirt,/obj/item/paper{info = "<b><center><u><large>NSV Astraeus Ammunition Inventory</large></b></center></u><br><br><b>Current Time:</b>18:30<br><b>Shipment Number:</b>04<br><br><b>Equipment in this shipment:</b><br><small>Leave blank or write 0 if none</small><br><br>Shells: HE - x15,<br>Shells: Shield Piercing - x8,<br>Shells: Smart Homing - x5, <br><br><li><del>Clown: Hilarious -  x1</li></del><br><br><b>Master At Arms' signature:</b>"; name = "paper - Munitions Inventory"; pixel_x = 7},/obj/item/book/manual/wiki/engineering_hacking{pixel_x = -6},/turf/open/floor/plasteel/airless,/area/ruin/space/has_grav/astraeus/munitions)
 "PJ" = (/obj/structure/table/reinforced,/obj/effect/turf_decal/corner/blue/full,/obj/effect/decal/cleanable/dirt,/obj/item/cigbutt/cigarbutt,/turf/open/floor/plasteel/dark/airless,/area/ruin/space/has_grav/astraeus/bridge)
 "Qw" = (/obj/effect/turf_decal/corner/blue{dir = 6},/mob/living/simple_animal/hostile/carp,/turf/open/floor/plasteel/dark/airless,/area/ruin/space/has_grav/astraeus/bridge)
 "QJ" = (/obj/structure/table/reinforced,/obj/effect/turf_decal/corner/blue/full,/obj/item/pen,/turf/open/floor/plasteel/dark/airless,/area/ruin/space/has_grav/astraeus/bridge)
@@ -322,11 +319,11 @@ acacacacacacacFxaoaoyqaeXDXDXDXDXDaoaoboaolGaoXDacXDXDXDSCXDacacacacacacacacacac
 acacacacFxacxdXDXDSCXDXDboaoarTSararVxulararXDXDXDXDFxweacyqacacacacacacacacacacacacacacacacac
 acacaclsacqOccFmFmpwpwpwpwpwpwpwFmFmFmFmkqcRcPcRcPcPcRcRcTcRlzamacacacacacacacacacacacacacacac
 acacFxXDSJddccjTjTjTjTjTjTEtjTjTjTbxjTPgdjcRbuholtltdkdmdpcRdqdAdQacacacacacacacacacacacacacac
-acacacbveyuHbLbVcVkOpwxsxsgxxsxsfUpwgbFdDKcRltltTAhsJkhtJwcRhAihOtacacacacacacacacacacacacacac
+acacacbveyuHbLbVcVkOpwxsxsgxxsxsxspwgbFdDKcRltltTAhsJkhtJwcRhAihOtacacacacacacacacacacacacacac
 lTacacXDQZitccAyjOjTjIjIjTkfpwkqpwpwRhggZlcRTAlzbualJHmMrUcPpshMkzacacacaceqacacacacacacacacac
 acaclTXDmQtnccpwpwpwpwpwpwoCpwtYPprcrjGTxscRurloKZRKloLGlocRmAxEcPacacacacacacacacacacacacacac
-acacvlspfosvcctmtrpwTztyHDHltYAENWxsxsxszdiPmgzydmlTXDHsacacamacacacacacacacacacacacacacacacac
-acacvlvevlJxccwFGvvQXDZlxwAlybyyWJOochTVydcRcRcRcRacXDacacacacacacacacacamzqzqzqacacacacacacac
+acacvlspfosvcctmtrpwTztyHDHltYAExsxsxsxszdiPmgzydmlTXDHsacacamacacacacacacacacacacacacacacacac
+acacvlvevlJxccwFGvvQXDZlxwAlybyyWJxschTVydcRcRcRcRacXDacacacacacacacacacamzqzqzqacacacacacacac
 acaoXDrWVxzBLmVTxskqXDGjVhAlPnmsmspwpwpwpwFmFmFmFmgrgracacacacacaclTzqzqzqzqzqzqzqzqacacacacac
 acaoXDWlLzBeLmAsYFpwacBMDcGBVYDdBODdDdDdDdDdDdBODdXDacacacacacacaczqzqzqzqzqzqzqzqzqzqacacacac
 acacXDXDmeODLmpwpwmsDJacmsSqpwJyWhWhWhWhWhWhWhWhFmgrgracacacacaczqzqzqFBFVzqzqGVzqzqzqzqacacac
