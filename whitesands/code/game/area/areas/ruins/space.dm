@@ -55,7 +55,7 @@
 /area/ruin/space/has_grav/scav_mining/dorm
 	name = "Asteroid mine dorm"
 	icon_state = "blue"
-	
+
 //astraeus
 
 /area/ruin/space/has_grav/astraeus/hallway
