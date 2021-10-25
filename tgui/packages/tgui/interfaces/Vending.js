@@ -130,23 +130,22 @@ export const Vending = (props, context) => {
       height={600}
       resizable>
       <Window.Content scrollable>
-        {<Section title="User">
-            {user && (
-              <Box>
-                Welcome, <b>{user.name}</b>,
-                {' '}
-                <b>{user.job || 'Unemployed'}</b>!
-                <br />
-                Your balance is <b>{miningvendor ? user.points || 0 : user.cash || 0} {miningvendor ? "points" : "credits"}</b>.
-              </Box>
-            ) || (
-              <Box color="light-grey">
-                No registered ID card!<br />
-                Please contact your local HoP!
-              </Box>
-            )}
-          </Section>
-        }
+        <Section title="User">
+          {user && (
+            <Box>
+              Welcome, <b>{user.name}</b>,
+              {' '}
+              <b>{user.job || 'Unemployed'}</b>!
+              <br />
+              Your balance is <b>{miningvendor ? user.points || 0 : user.cash || 0} {miningvendor ? "points" : "credits"}</b>.
+            </Box>
+          ) || (
+            <Box color="light-grey">
+              No registered ID card!<br />
+              Please contact your local HoP!
+            </Box>
+          )}
+        </Section>
         <Section title="Products">
           <Table>
             {inventory.map(product => (
