@@ -4,33 +4,40 @@
 /area/template_noop)
 "b" = (
 /turf/closed/mineral/random,
-/area/ruin/space/way_home)
+/area/ruin/space/has_grav/glade)
 "c" = (
+/obj/item/toy/plush/goatplushie,
 /turf/open/floor/plating/asteroid,
-/area/ruin/space/way_home)
+/area/ruin/space/has_grav/glade)
 "d" = (
 /obj/structure/chair/wood,
-/obj/item/instrument/banjo,
+/obj/item/instrument/banjo{
+	pixel_y = -22
+	},
 /turf/open/floor/plating/asteroid,
-/area/ruin/space/way_home)
+/area/ruin/space/has_grav/glade)
+"f" = (
+/obj/item/grown/log/tree,
+/turf/open/floor/plating/asteroid,
+/area/ruin/space/has_grav/glade)
 "h" = (
 /obj/structure/flora/tree/jungle{
 	icon_state = "tree8";
 	randomize_icon = 0
 	},
 /turf/open/floor/plating/asteroid,
-/area/ruin/space/way_home)
+/area/ruin/space/has_grav/glade)
 "i" = (
 /obj/structure/flora/tree/jungle{
 	icon_state = "tree7";
 	randomize_icon = 0
 	},
 /turf/open/floor/plating/asteroid,
-/area/ruin/space/way_home)
+/area/ruin/space/has_grav/glade)
 "r" = (
 /obj/structure/fans/tiny/invisible,
 /turf/open/floor/plating/asteroid,
-/area/ruin/space/way_home)
+/area/ruin/space/has_grav/glade)
 "v" = (
 /obj/structure/chair/wood{
 	dir = 8
@@ -40,53 +47,61 @@
 	pixel_y = -12
 	},
 /turf/open/floor/plating/asteroid,
-/area/ruin/space/way_home)
+/area/ruin/space/has_grav/glade)
 "C" = (
 /obj/structure/flora/tree/jungle{
 	icon_state = "tree9";
 	randomize_icon = 0
 	},
 /turf/open/floor/plating/asteroid,
-/area/ruin/space/way_home)
+/area/ruin/space/has_grav/glade)
 "D" = (
 /obj/structure/chair/wood{
 	dir = 1
 	},
 /turf/open/floor/plating/asteroid,
-/area/ruin/space/way_home)
+/area/ruin/space/has_grav/glade)
 "F" = (
 /obj/item/melee/roastingstick,
 /turf/open/floor/grass,
-/area/ruin/space/way_home)
+/area/ruin/space/has_grav/glade)
 "J" = (
+/obj/item/instrument/piano_synth{
+	pixel_x = 18
+	},
 /obj/structure/chair/wood{
 	dir = 4
 	},
-/obj/item/instrument/piano_synth,
 /turf/open/floor/grass,
-/area/ruin/space/way_home)
+/area/ruin/space/has_grav/glade)
 "M" = (
 /obj/structure/bonfire/prelit,
 /turf/open/floor/grass,
-/area/ruin/space/way_home)
+/area/ruin/space/has_grav/glade)
+"P" = (
+/turf/open/floor/plating/asteroid,
+/area/ruin/space/has_grav/glade)
 "R" = (
 /turf/open/floor/grass,
-/area/ruin/space/way_home)
+/area/ruin/space/has_grav/glade)
 "S" = (
 /obj/item/trash/can/food/beans,
 /turf/open/floor/grass,
-/area/ruin/space/way_home)
+/area/ruin/space/has_grav/glade)
 "T" = (
 /obj/structure/flora/stump,
 /turf/open/floor/plating/asteroid,
-/area/ruin/space/way_home)
+/area/ruin/space/has_grav/glade)
 "Z" = (
 /obj/structure/chair/wood{
 	dir = 8
 	},
-/obj/item/instrument/harmonica,
+/obj/item/instrument/harmonica{
+	pixel_x = -17;
+	pixel_y = 9
+	},
 /turf/open/floor/plating/asteroid,
-/area/ruin/space/way_home)
+/area/ruin/space/has_grav/glade)
 
 (1,1,1) = {"
 a
@@ -291,10 +306,10 @@ b
 b
 b
 b
-c
-c
+P
+P
 i
-c
+P
 r
 r
 r
@@ -317,14 +332,14 @@ b
 b
 b
 b
-c
-c
-c
-c
-c
-c
-c
-c
+P
+P
+P
+P
+P
+P
+P
+P
 r
 r
 a
@@ -344,15 +359,15 @@ b
 b
 b
 b
-c
-c
-c
-c
-c
-c
-c
-c
-c
+P
+P
+P
+P
+P
+P
+P
+P
+P
 r
 a
 a
@@ -370,17 +385,17 @@ b
 b
 b
 b
-c
-c
+P
+P
 C
-c
-c
+P
+P
 J
 R
-c
-c
+P
+P
 h
-c
+P
 r
 a
 a
@@ -397,17 +412,17 @@ b
 b
 b
 b
-c
-c
-c
-c
+P
+P
+P
+P
 S
 R
 R
 R
-c
-c
-c
+P
+P
+P
 r
 a
 a
@@ -422,19 +437,19 @@ b
 b
 b
 b
-c
-c
-c
-c
-c
+P
+P
+P
+P
+P
 d
 R
 M
 F
 D
-c
-c
-c
+P
+P
+P
 r
 a
 b
@@ -449,19 +464,19 @@ b
 b
 b
 c
-c
-c
-c
+P
+h
+P
 T
-c
-c
+P
+P
 R
 R
 R
-c
-c
-c
-c
+P
+P
+P
+P
 b
 b
 b
@@ -477,16 +492,16 @@ b
 b
 b
 r
-r
-c
-c
-c
-c
+P
+P
+f
+P
+P
 Z
 R
 v
-c
-c
+P
+P
 b
 b
 b
@@ -504,15 +519,15 @@ b
 b
 b
 a
-a
 r
-r
-r
-c
-c
-c
-c
-c
+P
+P
+P
+P
+P
+P
+P
+P
 b
 b
 b
@@ -532,14 +547,14 @@ b
 b
 a
 a
-a
-a
-a
 r
 r
 r
+P
+P
+P
 i
-c
+P
 b
 b
 b
@@ -562,12 +577,12 @@ a
 a
 a
 a
-a
-a
-a
 r
 r
-c
+r
+P
+P
+P
 b
 b
 b
@@ -592,8 +607,8 @@ a
 a
 a
 a
-a
-a
+r
+r
 r
 b
 b
