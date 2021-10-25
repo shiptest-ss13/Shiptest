@@ -54,9 +54,9 @@
 /obj/effect/turf_decal/delivery/red : /obj/effect/turf_decal/industrial/hatch/red {dir=@OLD}
 /obj/effect/turf_decal/delivery/white : /obj/effect/turf_decal/industrial/hatch {dir=@OLD}
 
-/obj/effect/turf_decal/loading_area : /obj/effect/turf_decal/industrial/loading_area {dir=@OLD}
-/obj/effect/turf_decal/loading_area/red : /obj/effect/turf_decal/industrial/loading_area/red {dir=@OLD}
-/obj/effect/turf_decal/loading_area/white : /obj/effect/turf_decal/industrial/loading_area/white {dir=@OLD}
+/obj/effect/turf_decal/loading_area : /obj/effect/turf_decal/industrial/loading {dir=@OLD}
+/obj/effect/turf_decal/loading_area/red : /obj/effect/turf_decal/industrial/loading/red {dir=@OLD}
+/obj/effect/turf_decal/loading_area/white : /obj/effect/turf_decal/industrial/loading/white {dir=@OLD}
 
 /turf/open/floor/plasteel/dark/side {dir=1} : /obj/effect/turf_decal/corner/black {dir=1} , /obj/effect/turf_decal/corner/black {dir=4} , /turf/open/floor/plasteel {@OLD;dir=@SKIP}
 /turf/open/floor/plasteel/dark/side {dir=@UNSET} : /obj/effect/turf_decal/corner/black , /obj/effect/turf_decal/corner/black {dir=8} , /turf/open/floor/plasteel {@OLD;dir=@SKIP}
