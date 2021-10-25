@@ -108,8 +108,9 @@
 /area/ship/hallway/central)
 "dM" = (
 /obj/structure/rack,
-/obj/item/storage/briefcase/lawyer,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/item/book/manual/wiki/security_space_law,
+/obj/item/storage/briefcase/lawyer,
 /turf/open/floor/carpet/nanoweave/purple,
 /area/ship/crew/dorm)
 "dO" = (
@@ -244,6 +245,7 @@
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
+/obj/item/clothing/head/helmet/justice,
 /obj/item/stack/sheet/glass,
 /obj/structure/closet/crate/wooden/toy,
 /turf/open/floor/wood,
@@ -274,6 +276,7 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 8
 	},
+/obj/structure/reagent_dispensers/water_cooler,
 /turf/open/floor/carpet/nanoweave/beige,
 /area/ship/crew/office)
 "iG" = (
@@ -302,6 +305,7 @@
 /area/ship/hallway/central)
 "iZ" = (
 /obj/structure/rack,
+/obj/item/book/manual/wiki/security_space_law,
 /obj/item/storage/briefcase/lawyer,
 /turf/open/floor/carpet/nanoweave/purple,
 /area/ship/crew/dorm)
@@ -533,6 +537,7 @@
 /obj/structure/cable{
 	icon_state = "4-10"
 	},
+/obj/structure/spirit_board,
 /turf/open/floor/wood,
 /area/ship/storage)
 "mj" = (
@@ -567,6 +572,15 @@
 "nB" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 10
+	},
+/obj/structure/table/wood,
+/obj/item/paper/pamphlet{
+	pixel_x = -5;
+	pixel_y = 2
+	},
+/obj/item/newspaper{
+	pixel_x = 3;
+	pixel_y = 1
 	},
 /turf/open/floor/carpet/nanoweave/beige,
 /area/ship/crew/office)
@@ -640,6 +654,7 @@
 /obj/effect/decal/cleanable/glass,
 /obj/machinery/power/apc/auto_name/south,
 /obj/structure/cable,
+/obj/item/bot_assembly/secbot,
 /turf/open/floor/plating,
 /area/ship/maintenance/aft)
 "oN" = (
@@ -681,6 +696,7 @@
 "qE" = (
 /obj/structure/table/wood,
 /obj/item/picket_sign,
+/obj/effect/spawner/lootdrop/minor/kittyears_or_rabbitears,
 /turf/open/floor/wood,
 /area/ship/storage)
 "qH" = (
@@ -873,6 +889,10 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
 	},
+/obj/structure/noticeboard/staff{
+	name = "Notice Board";
+	pixel_y = 31
+	},
 /turf/open/floor/carpet/nanoweave/beige,
 /area/ship/crew/office)
 "wR" = (
@@ -899,7 +919,12 @@
 /area/ship/bridge)
 "xU" = (
 /obj/structure/table/wood,
-/obj/item/toy/dummy,
+/obj/item/toy/dummy{
+	pixel_x = -6
+	},
+/obj/item/toy/figure/lawyer{
+	pixel_x = 5
+	},
 /turf/open/floor/wood,
 /area/ship/storage)
 "yg" = (
@@ -1001,6 +1026,7 @@
 /obj/docking_port/mobile{
 	dir = 4;
 	launch_status = 0;
+	movement_force = list("KNOCKDOWN" = 3, "THROW" = 1);
 	port_direction = 2
 	},
 /turf/open/floor/plating,
@@ -1153,6 +1179,10 @@
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/aft)
+"Ey" = (
+/obj/structure/dresser,
+/turf/open/floor/carpet/nanoweave/purple,
+/area/ship/crew/dorm)
 "EI" = (
 /obj/structure/table,
 /obj/item/phone,
@@ -1388,8 +1418,8 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 9
 	},
-/obj/item/reagent_containers/food/snacks/cheesewedge{
-	pixel_y = 5
+/obj/item/reagent_containers/food/snacks/spaghetti/spesslaw{
+	pixel_y = 4
 	},
 /turf/open/floor/wood,
 /area/ship/hallway/central)
@@ -1552,6 +1582,9 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 5
 	},
+/obj/item/storage/box/fountainpens{
+	pixel_y = 5
+	},
 /turf/open/floor/carpet/nanoweave/beige,
 /area/ship/crew/office)
 "Oe" = (
@@ -1645,8 +1678,9 @@
 	desc = "A brand of gum made BY detectives, FOR detectives, pal!";
 	name = "Gumshoe's Gum"
 	},
-/obj/item/storage/fancy/cigarettes/cigpack_candy,
 /obj/item/binoculars,
+/obj/item/holosign_creator/security,
+/obj/item/storage/fancy/cigarettes/cigpack_candy,
 /obj/item/clothing/accessory/holster/detective{
 	name = "shoulder holster"
 	},
@@ -1992,12 +2026,12 @@
 /area/ship/crew/law_office)
 "Ze" = (
 /obj/structure/table,
-/obj/item/storage/box/evidence{
-	pixel_y = 4
-	},
 /obj/machinery/airalarm/directional/south,
 /obj/effect/turf_decal/siding/wood{
 	dir = 10
+	},
+/obj/item/book/manual/wiki/security_space_law{
+	pixel_y = 4
 	},
 /turf/open/floor/carpet/blue,
 /area/ship/bridge)
@@ -2338,7 +2372,7 @@ Ri
 Rh
 FX
 Dk
-Vy
+Ey
 Rh
 gQ
 gQ
