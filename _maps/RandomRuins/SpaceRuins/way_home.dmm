@@ -9,11 +9,79 @@
 /turf/open/floor/plating/asteroid,
 /area/ruin/space/way_home)
 "d" = (
-/obj/structure/signpost/salvation,
+/obj/structure/chair/wood,
+/obj/item/instrument/banjo,
+/turf/open/floor/plating/asteroid,
+/area/ruin/space/way_home)
+"f" = (
+/obj/structure/fans/tiny/invisible,
+/turf/open/floor/plating/asteroid,
+/area/ruin/space/way_home)
+"h" = (
+/obj/structure/flora/tree/jungle{
+	icon_state = "tree8";
+	randomize_icon = 0
+	},
+/turf/open/floor/plating/asteroid,
+/area/ruin/space/way_home)
+"i" = (
+/obj/structure/flora/tree/jungle{
+	icon_state = "tree7";
+	randomize_icon = 0
+	},
+/turf/open/floor/plating/asteroid,
+/area/ruin/space/way_home)
+"v" = (
+/obj/structure/chair/wood{
+	dir = 8
+	},
+/obj/item/instrument/violin{
+	pixel_x = -16;
+	pixel_y = -12
+	},
 /turf/open/floor/plating/asteroid,
 /area/ruin/space/way_home)
 "C" = (
-/obj/structure/fans/tiny/invisible,
+/obj/structure/flora/tree/jungle{
+	icon_state = "tree9";
+	randomize_icon = 0
+	},
+/turf/open/floor/plating/asteroid,
+/area/ruin/space/way_home)
+"D" = (
+/obj/structure/chair/wood{
+	dir = 1
+	},
+/turf/open/floor/plating/asteroid,
+/area/ruin/space/way_home)
+"F" = (
+/obj/item/melee/roastingstick,
+/turf/open/floor/plating/asteroid,
+/area/ruin/space/way_home)
+"J" = (
+/obj/structure/chair/wood{
+	dir = 4
+	},
+/obj/item/instrument/piano_synth,
+/turf/open/floor/plating/asteroid,
+/area/ruin/space/way_home)
+"M" = (
+/obj/structure/bonfire/prelit,
+/turf/open/floor/plating/asteroid,
+/area/ruin/space/way_home)
+"R" = (
+/obj/structure/flora/stump,
+/turf/open/floor/plating/asteroid,
+/area/ruin/space/way_home)
+"S" = (
+/obj/item/trash/can/food/beans,
+/turf/open/floor/plating/asteroid,
+/area/ruin/space/way_home)
+"Z" = (
+/obj/structure/chair/wood{
+	dir = 8
+	},
+/obj/item/instrument/harmonica,
 /turf/open/floor/plating/asteroid,
 /area/ruin/space/way_home)
 
@@ -194,9 +262,9 @@ b
 b
 b
 b
-a
-a
-a
+f
+f
+f
 a
 a
 a
@@ -220,13 +288,13 @@ b
 b
 b
 b
-a
-a
-a
-a
-a
-a
-a
+c
+c
+i
+c
+f
+f
+f
 a
 a
 a
@@ -246,16 +314,16 @@ b
 b
 b
 b
-C
-a
-a
-a
-a
-a
-a
-a
-a
-a
+c
+c
+c
+c
+c
+c
+c
+c
+f
+f
 a
 a
 a
@@ -274,15 +342,15 @@ b
 b
 b
 c
-C
-a
-a
-a
-a
-a
-a
-a
-a
+c
+c
+c
+c
+c
+c
+c
+c
+f
 a
 a
 a
@@ -302,15 +370,15 @@ b
 c
 c
 C
-a
-a
-a
-a
-a
-a
-a
-a
-a
+c
+c
+J
+c
+c
+c
+h
+c
+f
 a
 a
 "}
@@ -329,15 +397,15 @@ b
 c
 c
 c
-C
-C
-C
-a
-a
-a
-a
-a
-a
+c
+S
+c
+c
+c
+c
+c
+c
+f
 a
 a
 "}
@@ -353,18 +421,18 @@ b
 b
 c
 c
-C
-C
 c
 c
 c
+d
 c
-C
-C
-a
-a
-a
-a
+M
+F
+D
+c
+c
+c
+f
 a
 b
 "}
@@ -379,19 +447,19 @@ b
 b
 c
 c
-C
-a
-a
-C
 c
-d
+c
+R
 c
 c
 c
-C
-C
-C
-a
+c
+c
+c
+c
+c
+c
+b
 b
 b
 "}
@@ -405,15 +473,15 @@ b
 b
 b
 b
-C
-a
-a
-a
-a
-C
+f
+f
 c
 c
 c
+c
+Z
+c
+v
 c
 c
 b
@@ -434,14 +502,14 @@ b
 b
 a
 a
-a
-a
-a
-a
-C
+f
+f
+f
 c
 c
-b
+c
+c
+c
 b
 b
 b
@@ -464,10 +532,10 @@ a
 a
 a
 a
-a
-a
-C
-c
+f
+f
+f
+i
 c
 b
 b
@@ -494,8 +562,8 @@ a
 a
 a
 a
-C
-C
+f
+f
 c
 b
 b
@@ -523,7 +591,7 @@ a
 a
 a
 a
-C
+f
 b
 b
 b
