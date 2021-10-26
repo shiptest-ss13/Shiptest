@@ -147,8 +147,8 @@
 	icon_aggro = "dwarf_legion"
 	icon_dead = "dwarf_legion"
 	crusher_loot = /obj/item/crusher_trophy/dwarf_skull
-	maxHealth = 150
-	health = 150
+	maxHealth = 120
+	health = 120
 	move_to_delay = 2
 	speed = 1 //much faster!
 	dwarf_mob = TRUE
