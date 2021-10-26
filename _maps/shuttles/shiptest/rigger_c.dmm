@@ -353,8 +353,9 @@
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
 	},
-/obj/machinery/door/airlock/public/glass{
-	name = "Communications"
+/obj/machinery/door/airlock/security{
+	name = "Armory";
+	req_one_access_txt = "1"
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/hallway/central)
@@ -3208,8 +3209,9 @@
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
 	},
-/obj/machinery/door/airlock/glass{
-	name = "Canteen"
+/obj/machinery/door/airlock/security{
+	name = "Brig";
+	req_one_access_txt = "1"
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security/prison)
@@ -3327,9 +3329,6 @@
 /turf/open/floor/carpet/nanoweave,
 /area/ship/security)
 "LV" = (
-/obj/machinery/door/airlock/glass{
-	name = "Canteen"
-	},
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -3341,6 +3340,10 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
+	},
+/obj/machinery/door/airlock/security{
+	name = "Brig";
+	req_one_access_txt = "1"
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security/prison)
@@ -4915,7 +4918,7 @@ qd
 qd
 Te
 js
-GN
+fS
 fS
 js
 iO
