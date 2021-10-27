@@ -781,6 +781,7 @@
 	codes_txt = "patrol;next_patrol=bridge";
 	location = "canteen"
 	},
+/obj/machinery/navbeacon/wayfinding/kitchen,
 /turf/open/floor/wood,
 /area/ship/crew/canteen)
 "fS" = (
@@ -3242,6 +3243,7 @@
 	codes_txt = "patrol;next_patrol=canteen";
 	location = "med"
 	},
+/obj/machinery/navbeacon/wayfinding/med,
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "xV" = (
@@ -4888,6 +4890,9 @@
 	dir = 8
 	},
 /obj/machinery/navbeacon/wayfinding/janitor,
+/obj/machinery/navbeacon{
+	location = "janitor"
+	},
 /turf/open/floor/plasteel,
 /area/ship/crew/janitor)
 "JF" = (
@@ -4959,6 +4964,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/structure/disposalpipe/segment{
+	dir = 10
+	},
 /turf/open/floor/plasteel,
 /area/ship/cargo)
 "JU" = (
