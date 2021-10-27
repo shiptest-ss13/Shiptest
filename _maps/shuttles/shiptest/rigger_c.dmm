@@ -2918,11 +2918,12 @@
 /area/ship/engineering)
 "GQ" = (
 /obj/structure/rack,
-/obj/item/ammo_box/magazine/ak47{
-	pixel_y = -4
-	},
-/obj/item/ammo_box/magazine/ak47{
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/item/ammo_box/magazine/aknt{
 	pixel_y = 4
+	},
+/obj/item/ammo_box/magazine/aknt{
+	pixel_y = -4
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/carpet/nanoweave/red,
@@ -2950,6 +2951,7 @@
 /obj/machinery/light/small{
 	dir = 4
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
 /area/ship/security)
 "Hg" = (
@@ -4219,10 +4221,13 @@
 /obj/machinery/status_display/shuttle{
 	pixel_x = -32
 	},
-/obj/item/gun/ballistic/automatic/ak47{
+/obj/structure/rack,
+/obj/item/gun/ballistic/automatic/ak47/nt{
+	pixel_x = -12;
 	pixel_y = 7
 	},
-/obj/structure/rack,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/carpet/nanoweave/red,
 /area/ship/security)
 "VS" = (
