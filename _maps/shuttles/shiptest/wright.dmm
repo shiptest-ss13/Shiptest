@@ -553,8 +553,11 @@
 /turf/open/floor/plating,
 /area/ship/maintenance/aft)
 "mW" = (
-/obj/machinery/cryopod/latejoin{
-	dir = 1
+/obj/machinery/cryopod/latejoin/reskinnable{
+	close_state = "sleeper_clockwork";
+	dir = 4;
+	icon_state = "sleeper_clockwork-open";
+	open_state = "sleeper_clockwork-open"
 	},
 /turf/open/floor/carpet/nanoweave/purple,
 /area/ship/crew/dorm)
@@ -1026,7 +1029,6 @@
 /obj/docking_port/mobile{
 	dir = 4;
 	launch_status = 0;
-	movement_force = list("KNOCKDOWN" = 3, "THROW" = 1);
 	port_direction = 2
 	},
 /turf/open/floor/plating,
@@ -1077,6 +1079,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "0-9"
 	},
 /turf/open/floor/wood,
 /area/ship/hallway/central)
@@ -1375,6 +1380,15 @@
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/aft)
+"Kg" = (
+/obj/machinery/cryopod/latejoin/reskinnable{
+	close_state = "sleeper_clockwork";
+	dir = 8;
+	icon_state = "sleeper_clockwork-open";
+	open_state = "sleeper_clockwork-open"
+	},
+/turf/open/floor/carpet/nanoweave/purple,
+/area/ship/crew/dorm)
 "Ki" = (
 /obj/structure/mineral_door/wood{
 	name = "Restroom"
@@ -1846,6 +1860,9 @@
 "UE" = (
 /obj/structure/cable{
 	icon_state = "5-10"
+	},
+/obj/structure/cable{
+	icon_state = "5-6"
 	},
 /turf/open/floor/wood,
 /area/ship/hallway/central)
@@ -2372,7 +2389,7 @@ Ri
 Rh
 FX
 Dk
-Ey
+Kg
 Rh
 gQ
 gQ
@@ -2394,7 +2411,7 @@ Vw
 aK
 cv
 QP
-mW
+Ey
 Rh
 gQ
 gQ
