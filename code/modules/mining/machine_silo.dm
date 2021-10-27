@@ -1,4 +1,3 @@
-GLOBAL_DATUM(ore_silo_default, /obj/machinery/ore_silo)
 GLOBAL_LIST_EMPTY(silo_access_logs)
 
 /obj/machinery/ore_silo
@@ -29,15 +28,9 @@ GLOBAL_LIST_EMPTY(silo_access_logs)
 		/datum/material/bluespace,
 		/datum/material/plastic,
 		)
-	var/datum/component/material_container/materials = AddComponent(/datum/component/material_container, materials_list, INFINITY, allowed_types=/obj/item/stack, _disable_attackby=TRUE)
-	if (!GLOB.ore_silo_default && mapload && is_station_level(z))
-		GLOB.ore_silo_default = src
-		materials.linked_account = SSeconomy.get_dep_account(ACCOUNT_CAR)
+	AddComponent(/datum/component/material_container, materials_list, INFINITY, allowed_types=/obj/item/stack, _disable_attackby=TRUE)
 
 /obj/machinery/ore_silo/Destroy()
-	if (GLOB.ore_silo_default == src)
-		GLOB.ore_silo_default = null
-
 	for(var/C in connected)
 		var/datum/component/remote_materials/mats = C
 		mats.disconnect_from(src)
@@ -90,9 +83,10 @@ GLOBAL_LIST_EMPTY(silo_access_logs)
 					if(threshold)
 						materials.refund_minimum = threshold
 		else if(!materials.linked_account && I.registered_account)
-			user.visible_message("[user] swipes [I] on [src], registering it's linked account for material payments.", \
-			 					 "You swipe [I] on [src], registering it's linked account for material payments.", \
-								 "You hear a someone sliding a card, and then a quiet beep.")
+			user.visible_message(
+				"[user] swipes [I] on [src], registering it's linked account for material payments.",
+				"You swipe [I] on [src], registering it's linked account for material payments.",
+				"You hear a someone sliding a card, and then a quiet beep.")
 			materials.linked_account = I.registered_account
 		return TRUE
 	return ..()
@@ -223,6 +217,20 @@ GLOBAL_LIST_EMPTY(silo_access_logs)
 /obj/machinery/ore_silo/examine(mob/user)
 	. = ..()
 	. += "<span class='notice'>[src] can be linked to techfabs, circuit printers and protolathes with a multitool.</span>"
+
+/obj/machinery/ore_silo/on_object_saved(var/depth = 0)
+	if(depth >= 10)
+		return ""
+	var/dat
+	var/datum/component/material_container/material_holder = GetComponent(/datum/component/material_container)
+	for(var/each in material_holder.materials)
+		var/amount = material_holder.materials[each] / MINERAL_MATERIAL_AMOUNT
+		var/datum/material/material_datum = each
+		while(amount > 0)
+			var/amount_in_stack = max(1, min(50, amount))
+			amount -= amount_in_stack
+			dat += "[dat ? ",\n" : ""][material_datum.sheet_type]{\n\tamount = [amount_in_stack]\n\t}"
+	return dat
 
 /datum/ore_silo_log
 	var/name  // for VV

@@ -15,7 +15,7 @@
 
 /datum/pipeline/Destroy()
 	SSair.networks -= src
-	if(air?.return_volume())
+	if(air && air.return_volume())
 		temporarily_store_air()
 	for(var/obj/machinery/atmospherics/pipe/P in members)
 		P.parent = null
@@ -43,10 +43,10 @@
 	if(!air)
 		air = new
 	var/list/possible_expansions = list(base)
-	while(possible_expansions.len)
+	while(possible_expansions.len>0)
 		for(var/obj/machinery/atmospherics/borderline in possible_expansions)
 			var/list/result = borderline.pipeline_expansion(src)
-			if(result && result.len)
+			if(result?.len > 0)
 				for(var/obj/machinery/atmospherics/P in result)
 					if(istype(P, /obj/machinery/atmospherics/pipe))
 						var/obj/machinery/atmospherics/pipe/item = P
@@ -78,10 +78,11 @@
 
 /datum/pipeline/proc/addMachineryMember(obj/machinery/atmospherics/components/C)
 	other_atmosmch |= C
-	var/datum/gas_mixture/G = C.returnPipenetAir(src)
-	if(!G)
-		stack_trace("addMachineryMember: Null gasmix added to pipeline datum from [C] which is of type [C.type]. Nearby: ([C.x], [C.y], [C.z])")
-	other_airs |= G
+	var/list/returned_airs = C.returnPipenetAirs(src)
+	if (!length(returned_airs) || (null in returned_airs))
+		stack_trace("addMachineryMember: Nonexistent (empty list) or null machinery gasmix added to pipeline datum from [C] \
+		which is of type [C.type]. Nearby: ([C.x], [C.y], [C.z])")
+	other_airs |= returned_airs
 
 /datum/pipeline/proc/addMember(obj/machinery/atmospherics/A, obj/machinery/atmospherics/N)
 	if(istype(A, /obj/machinery/atmospherics/pipe))
@@ -112,8 +113,8 @@
 	air.merge(E.air)
 	for(var/obj/machinery/atmospherics/components/C in E.other_atmosmch)
 		C.replacePipenet(E, src)
-	other_atmosmch.Add(E.other_atmosmch)
-	other_airs.Add(E.other_airs)
+	other_atmosmch |= E.other_atmosmch
+	other_airs |= E.other_airs
 	E.members.Cut()
 	E.other_atmosmch.Cut()
 	update = TRUE
@@ -192,7 +193,7 @@
 
 	else
 		if((target.heat_capacity>0) && (partial_heat_capacity>0))
-			var/delta_temperature = air.return_temperature() - target.temperature
+			var/delta_temperature = air.return_temperature() - target.return_temperature()
 
 			var/heat = thermal_conductivity*delta_temperature* \
 				(partial_heat_capacity*target.heat_capacity/(partial_heat_capacity+target.heat_capacity))
@@ -203,10 +204,14 @@
 /datum/pipeline/proc/return_air()
 	. = other_airs + air
 	if(null in .)
-		stack_trace("[src] has one or more null gas mixtures, which may cause bugs. Null mixtures will not be considered in reconcile_air().")
-		return removeNullsFromList(.)
+		stack_trace("[src]([REF(src)]) has one or more null gas mixtures, which may cause bugs. Null mixtures will not be considered in reconcile_air().")
+		listclearnulls(.)
 
-/datum/pipeline/proc/reconcile_air()
+/datum/pipeline/proc/empty()
+	for(var/datum/gas_mixture/GM in get_all_connected_airs())
+		GM.clear()
+
+/datum/pipeline/proc/get_all_connected_airs()
 	var/list/datum/gas_mixture/GL = list()
 	var/list/datum/pipeline/PL = list()
 	PL += src
@@ -215,8 +220,7 @@
 		var/datum/pipeline/P = PL[i]
 		if(!P)
 			continue
-		GL += P.other_airs
-		GL += P.air
+		GL += P.return_air()
 		for(var/atmosmch in P.other_atmosmch)
 			if (istype(atmosmch, /obj/machinery/atmospherics/components/binary/valve))
 				var/obj/machinery/atmospherics/components/binary/valve/V = atmosmch
@@ -233,19 +237,9 @@
 			else if (istype(atmosmch, /obj/machinery/atmospherics/components/unary/portables_connector))
 				var/obj/machinery/atmospherics/components/unary/portables_connector/C = atmosmch
 				if(C.connected_device)
-					GL += C.connected_device.air_contents
+					GL += C.connected_device.return_air()
+	return GL
 
-	var/datum/gas_mixture/total_gas_mixture = new(0)
-	var/total_volume = 0
-
-	for(var/i in GL)
-		var/datum/gas_mixture/G = i
-		total_gas_mixture.merge(G)
-		total_volume += G.return_volume()
-
-	if(total_volume > 0)
-		//Update individual gas_mixtures by volume ratio
-		for(var/i in GL)
-			var/datum/gas_mixture/G = i
-			G.copy_from(total_gas_mixture)
-			G.multiply(G.return_volume()/total_volume)
+/datum/pipeline/proc/reconcile_air()
+	var/list/datum/gas_mixture/GL = get_all_connected_airs()
+	equalize_all_gases_in_list(GL)

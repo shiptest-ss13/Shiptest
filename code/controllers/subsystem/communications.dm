@@ -20,17 +20,17 @@ SUBSYSTEM_DEF(communications)
 	if(!can_announce(user, is_silicon))
 		return FALSE
 	if(is_silicon)
-		minor_announce(html_decode(input),"[user.name] Announces:")
+		minor_announce(html_decode(input),"[user.name] Announces:", from = user, zlevel = user.get_virtual_z_level())
 		silicon_message_cooldown = world.time + COMMUNICATION_COOLDOWN_AI
 	else
-		priority_announce(html_decode(user.treat_message(input)), null, 'sound/misc/announce.ogg', "Captain", null, auth_id) //WS Edit - Name on announcements & Make cap's announcement use logged-in name
+		priority_announce(html_decode(user.treat_message(input)), null, 'sound/misc/announce.ogg', "Captain", null, auth_id, user.get_virtual_z_level()) //WS Edit - Name on announcements & Make cap's announcement use logged-in name
 		nonsilicon_message_cooldown = world.time + COMMUNICATION_COOLDOWN
 	user.log_talk(input, LOG_SAY, tag="priority announcement")
 	message_admins("[ADMIN_LOOKUPFLW(user)] has made a priority announcement.")
 
 /datum/controller/subsystem/communications/proc/send_message(datum/comm_message/sending,print = TRUE,unique = FALSE)
 	for(var/obj/machinery/computer/communications/C in GLOB.machines)
-		if(!(C.machine_stat & (BROKEN|NOPOWER)) && is_station_level(C.z))
+		if(!(C.machine_stat & (BROKEN|NOPOWER)))
 			if(unique)
 				C.add_message(sending)
 			else //We copy the message for each console, answers and deletions won't be shared

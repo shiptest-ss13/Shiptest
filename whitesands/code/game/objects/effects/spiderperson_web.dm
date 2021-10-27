@@ -1,10 +1,10 @@
 /obj/structure/spider_player
-    name = "large web"
-    icon = 'icons/effects/effects.dmi'
-    desc = "It's stringy and sticky, but the threads are larger than what spiderlings could produce."
-    anchored = TRUE
-    density = FALSE
-    max_integrity = 20
+	name = "large web"
+	icon = 'icons/effects/effects.dmi'
+	desc = "It's stringy and sticky, but the threads are larger than what spiderlings could produce."
+	anchored = TRUE
+	density = FALSE
+	max_integrity = 20
 
 /obj/structure/spider_player/New()
 	..()

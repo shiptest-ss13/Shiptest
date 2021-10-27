@@ -15,7 +15,7 @@
 			pixel_y = dir & NORTH ? 23 : (dir & SOUTH ? -23 : INSTANCE_VAR_DEFAULT)\
 		),\
 		dir_amount = 8\
-    )
+	)
 
 /obj/machinery/light_switch/Initialize()
 	. = ..()
@@ -52,6 +52,7 @@
 	. = ..()
 
 	area.lightswitch = !area.lightswitch
+	play_click_sound("switch")
 	area.update_icon()
 
 	for(var/obj/machinery/light_switch/L in area)

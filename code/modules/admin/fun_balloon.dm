@@ -64,15 +64,6 @@
 		body.key = C.key
 		new /obj/effect/temp_visual/gravpush(get_turf(body))
 
-/obj/effect/fun_balloon/sentience/emergency_shuttle
-	name = "shuttle sentience fun balloon"
-	var/trigger_time = 60
-
-/obj/effect/fun_balloon/sentience/emergency_shuttle/check()
-	. = FALSE
-	if(SSshuttle.emergency && (SSshuttle.emergency.timeLeft() <= trigger_time) && (SSshuttle.emergency.mode == SHUTTLE_CALL))
-		. = TRUE
-
 /obj/effect/fun_balloon/scatter
 	name = "scatter fun balloon"
 	desc = "When this pops, you're not going to be around here anymore."
@@ -84,24 +75,6 @@
 		new /obj/effect/temp_visual/gravpush(get_turf(M))
 		M.forceMove(T)
 		to_chat(M, "<span class='notice'>Pop!</span>", confidential = TRUE)
-
-/obj/effect/station_crash
-	name = "station crash"
-	desc = "With no survivors!"
-	icon = 'icons/obj/items_and_weapons.dmi'
-	icon_state = "syndballoon"
-	anchored = TRUE
-
-/obj/effect/station_crash/Initialize()
-	..()
-	for(var/S in SSshuttle.stationary)
-		var/obj/docking_port/stationary/SM = S
-		if(SM.id == "emergency_home")
-			var/new_dir = turn(SM.dir, 180)
-			SM.forceMove(get_ranged_target_turf(SM, new_dir, rand(3,15)))
-			break
-	return INITIALIZE_HINT_QDEL
-
 
 //Arena
 

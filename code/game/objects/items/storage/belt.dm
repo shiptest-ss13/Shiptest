@@ -266,6 +266,7 @@
 	icon_state = "explorer1"
 	item_state = "explorer1"
 	w_class = WEIGHT_CLASS_BULKY
+	custom_price = 400
 
 /obj/item/storage/belt/mining/ComponentInitialize()
 	. = ..()
@@ -311,6 +312,8 @@
 		/obj/item/wormhole_jaunter,
 		/obj/item/storage/bag/plants,
 		/obj/item/stack/marker_beacon,
+		/obj/item/restraints/legcuffs/bola/watcher,
+		/obj/item/claymore/bone,
 		/obj/item/key/lasso
 		))
 
@@ -644,6 +647,12 @@
 	name = "yellow fannypack"
 	icon_state = "fannypack_yellow"
 	item_state = "fannypack_yellow"
+
+/obj/item/storage/belt/fannypack/bustin
+	name = "exterminator's belt"
+	desc = " "
+	icon_state = "bustinbelt"
+	item_state = "bustinbelt"
 
 /obj/item/storage/belt/sabre
 	name = "sabre sheath"

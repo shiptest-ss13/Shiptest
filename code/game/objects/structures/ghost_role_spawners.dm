@@ -474,55 +474,113 @@
 /datum/outfit/syndicate_empty/post_equip(mob/living/carbon/human/H)
 	H.faction |= ROLE_SYNDICATE
 
+//shiptest edit start, adding egors updated starfury roles, this should theoritacly not fuck with shit since this code is unused anyways
 /obj/effect/mob_spawn/human/syndicate/battlecruiser
 	name = "Syndicate Battlecruiser Ship Operative"
-	short_desc = "You are a crewmember aboard the syndicate flagship: the SBC Starfury."
-	flavour_text = "Your job is to follow your captain's orders, maintain the ship, and keep the engine running. If you are not familiar with how the supermatter engine functions: do not attempt to start it."
-	important_info = "The armory is not a candy store, and your role is not to assault the station directly, leave that work to the assault operatives."
-	outfit = /datum/outfit/syndicate_empty/SBC
+	short_desc = "You are a crewmember aboard the Syndicate flagship <i>Starfury</i>."
+	flavour_text = "Your job is to follow your higher-ranking operatives' orders, assisting in pretty much anything that might need your help."
+	important_info = "While you don't have a strict role, you are supposed to obey orders given by anyone on the ship, including medical, engineering and assault operatives."
+	outfit = /datum/outfit/syndicate_empty/sbc
+	assignedrole = "Battlecruiser Operative"
+	mob_name = "syndicate operative"
+	id_job = "Syndicate Operative"
+	random = TRUE
+	roundstart = FALSE
+	death = FALSE
+	anchored = TRUE
+	density = FALSE
 
-/datum/outfit/syndicate_empty/SBC
+/datum/outfit/syndicate_empty/sbc
 	name = "Syndicate Battlecruiser Ship Operative"
+	gloves = /obj/item/clothing/gloves/combat
 	l_pocket = /obj/item/gun/ballistic/automatic/pistol
 	r_pocket = /obj/item/kitchen/knife/combat/survival
 	belt = /obj/item/storage/belt/military/assault
+	id = /obj/item/card/id/syndicate_command/crew_id
+	backpack_contents = list(/obj/item/storage/box/survival/syndie=1)
+
+/obj/effect/mob_spawn/human/syndicate/battlecruiser/engineering
+	name = "Syndicate Battlecruiser Ship Engineer"
+	short_desc = "You are an engineer aboard the Syndicate flagship <i>Starfury</i>."
+	flavour_text = "Your job is to maintain the ship, and keep the engine running. If you are unfamiliar with how the supermatter engine functions, do not attempt to start it alone; ask a fellow crewman for help."
+	important_info = "While your role means you can help in the assault with your tools,  you must first and foremost keep the cruiser and engine in a working state."
+	outfit = /datum/outfit/syndicate_empty/sbc/engi
+	assignedrole = "Battlecruiser Engineer"
+	mob_name = "syndicate engineer"
+	id_job = "Syndicate Engineer"
+
+/datum/outfit/syndicate_empty/sbc/engi
+	name = "Syndicate Battlecruiser Ship Engineer"
+	glasses = /obj/item/clothing/glasses/meson/night
+	r_pocket = /obj/item/analyzer
+	l_pocket = /obj/item/gun/ballistic/automatic/pistol
+	belt = /obj/item/storage/belt/utility/syndicate
+	back = /obj/item/storage/backpack/industrial
+	backpack_contents = list(/obj/item/storage/box/survival/syndie=1, /obj/item/construction/rcd/combat, /obj/item/rcd_ammo/large, /obj/item/stack/sheet/mineral/plastitanium=50)
+
+/obj/effect/mob_spawn/human/syndicate/battlecruiser/medical
+	name = "Syndicate Battlecruiser Ship Medical Doctor"
+	short_desc = "You are a medical doctor aboard the Syndicate flagship: the SBC Starfury."
+	flavour_text = "Your job is to maintain the crew's physical health and keep your comrades alive at all cost."
+	important_info = "The armory has nothing to help you with your job, and your role is to assist assault operatives, not to do their work for them."
+	outfit = /datum/outfit/syndicate_empty/sbc/med
+	assignedrole = "Battlecruiser Medical Doctor"
+	mob_name = "syndicate medic"
+	id_job = "Syndicate Medical Doctor"
+
+/datum/outfit/syndicate_empty/sbc/med
+	name = "Syndicate Battlecruiser Ship Medical Doctor"
+	uniform = /obj/item/clothing/under/syndicate/intern
+	glasses = /obj/item/clothing/glasses/hud/health/night
+	l_pocket = /obj/item/gun/ballistic/automatic/pistol
+	r_pocket = /obj/item/kitchen/knife/combat/survival
+	belt = /obj/item/defibrillator/compact/combat/loaded
+	back = /obj/item/storage/backpack/duffelbag/syndie/med
+	r_hand = /obj/item/gun/medbeam
+	backpack_contents = list(/obj/item/storage/box/survival/syndie=1, /obj/item/storage/firstaid/medical, /obj/item/storage/firstaid/tactical, /obj/item/storage/box/medipens=3)
 
 /obj/effect/mob_spawn/human/syndicate/battlecruiser/assault
 	name = "Syndicate Battlecruiser Assault Operative"
-	short_desc = "You are an assault operative aboard the syndicate flagship: the SBC Starfury."
+	short_desc = "You are an assault operative aboard the syndicate flagship <i>Starfury</i>."
 	flavour_text = "Your job is to follow your captain's orders, keep intruders out of the ship, and assault Space Station 13. There is an armory, multiple assault ships, and beam cannons to attack the station with."
 	important_info = "Work as a team with your fellow operatives and work out a plan of attack. If you are overwhelmed, escape back to your ship!"
-	outfit = /datum/outfit/syndicate_empty/SBC/assault
+	outfit = /datum/outfit/syndicate_empty/sbc/assault
+	assignedrole = "Battlecruiser Assault Operative"
+	mob_name = "syndicate assault operative"
+	id_job = "Syndicate Assault Operative"
 
-/datum/outfit/syndicate_empty/SBC/assault
+/datum/outfit/syndicate_empty/sbc/assault
 	name = "Syndicate Battlecruiser Assault Operative"
 	uniform = /obj/item/clothing/under/syndicate/combat
 	l_pocket = /obj/item/ammo_box/magazine/m10mm
 	r_pocket = /obj/item/kitchen/knife/combat/survival
+	glasses = /obj/item/clothing/glasses/night
 	belt = /obj/item/storage/belt/military
+	back = /obj/item/storage/backpack/duffelbag/syndie
 	suit = /obj/item/clothing/suit/armor/vest
 	suit_store = /obj/item/gun/ballistic/automatic/pistol
-	back = /obj/item/storage/backpack/security
 	mask = /obj/item/clothing/mask/gas/syndicate
 
 /obj/effect/mob_spawn/human/syndicate/battlecruiser/captain
 	name = "Syndicate Battlecruiser Captain"
-	short_desc = "You are the captain aboard the syndicate flagship: the SBC Starfury."
+	short_desc = "You are the captain aboard the Syndicate flagship <i>Starfury</i>."
 	flavour_text = "Your job is to oversee your crew, defend the ship, and destroy Space Station 13. The ship has an armory, multiple ships, beam cannons, and multiple crewmembers to accomplish this goal."
 	important_info = "As the captain, this whole operation falls on your shoulders. You do not need to nuke the station, causing sufficient damage and preventing your ship from being destroyed will be enough."
-	outfit = /datum/outfit/syndicate_empty/SBC/assault/captain
+	outfit = /datum/outfit/syndicate_empty/sbc/assault/captain
 	id_access_list = list(150,151)
+	id_job = "Syndicate Captain"
+	assignedrole = "Battlecruiser Captain"
+	mob_name = "syndicate captain"
 
-/datum/outfit/syndicate_empty/SBC/assault/captain
+/datum/outfit/syndicate_empty/sbc/assault/captain
 	name = "Syndicate Battlecruiser Captain"
 	l_pocket = /obj/item/melee/transforming/energy/sword/saber/red
 	r_pocket = /obj/item/melee/classic_baton/telescopic
 	suit = /obj/item/clothing/suit/armor/vest/capcarapace/syndicate
 	suit_store = /obj/item/gun/ballistic/revolver/mateba
-	back = /obj/item/storage/backpack/satchel/leather
 	head = /obj/item/clothing/head/HoS/syndicate
 	mask = /obj/item/clothing/mask/cigarette/cigar/havana
-	glasses = /obj/item/clothing/glasses/thermal/eyepatch
+	glasses = /obj/item/clothing/glasses/hud/security/sunglasses/eyepatch
 
 //Ancient cryogenic sleepers. Players become NT crewmen from a hundred year old space station, now on the verge of collapse.
 /obj/effect/mob_spawn/human/oldsec
@@ -599,6 +657,35 @@
 	assignedrole = "Ancient Crew"
 
 /obj/effect/mob_spawn/human/oldsci/Destroy()
+	new/obj/structure/showcase/machinery/oldpod/used(drop_location())
+	return ..()
+
+/obj/effect/mob_spawn/human/oldcap
+	name = "old cryogenics pod"
+	desc = "A humming cryo pod. You can barely recognise a science uniform underneath the built up ice. The machine is attempting to wake up its occupant."
+	mob_name = "a captain"
+	icon = 'icons/obj/machines/sleeper.dmi'
+	icon_state = "sleeper"
+	roundstart = FALSE
+	death = FALSE
+	random = TRUE
+	mob_species = /datum/species/human
+	short_desc = "You are a officer of Nanotrasen, onboard your state of the art research station."
+	flavour_text = "You vaguely recall rushing into a cryogenics pod due to an oncoming radiation storm. \
+	The last thing you remember is the station's Artificial Program telling you that you would only be asleep for eight hours. As you open \
+	your eyes, everything seems rusted and broken, a dark feeling swells in your gut as you climb out of your pod."
+	important_info = "Command your fellow survivors and do not abandon them."
+	head = /obj/item/clothing/head/caphat/nt
+	uniform = /obj/item/clothing/under/rank/command/captain/nt
+	suit = /obj/item/clothing/suit/armor/vest/capcarapace
+	shoes = /obj/item/clothing/shoes/jackboots
+	id = /obj/item/card/id/away/old/cap
+	back = /obj/item/storage/backpack
+	l_pocket = /obj/item/melee/classic_baton/telescopic
+	backpack_contents = list(/obj/item/gun/ballistic/automatic/pistol/deagle)
+	assignedrole = "Ancient Crew"
+
+/obj/effect/mob_spawn/human/oldcap/Destroy()
 	new/obj/structure/showcase/machinery/oldpod/used(drop_location())
 	return ..()
 
@@ -724,3 +811,110 @@
 	id = /obj/item/card/id/syndicate_command/captain_id
 	backpack_contents = list(/obj/item/documents/syndicate/red, /obj/item/paper/fluff/ruins/forgottenship/password)
 	implants = list(/obj/item/implant/weapons_auth)
+
+//ashdrake lair ghost roles
+/obj/effect/mob_spawn/human/lost
+	death = FALSE
+	roundstart = FALSE
+	random = TRUE
+
+/obj/effect/mob_spawn/human/lost/Initialize(mapload)
+	. = ..()
+	var/area/A = get_area(src)
+	if(A)
+		notify_ghosts("Someone has defeated a ash drake! A prisoner has been freed in \the [A.name]!", source = src, action=NOTIFY_ATTACK, flashwindow = FALSE)
+
+/obj/effect/mob_spawn/human/lost/doctor
+	name = "old cryogenics pod"
+	desc = "A sleeper designed to put its occupant into a deep coma."
+	mob_name = "a lost vet"
+	short_desc = "You are a animal doctor who just woke up in..?"
+	flavour_text = "What...? Where are you? Where are the others? This isn't the animal hospital anymore, where the hell are you? \
+	Where is everyone? Where did they go? What happened to the hospital? And is that <i>smoke</i> you smell? \
+	One of the cats scratched you just a few minutes ago. That's why you were asleep - to heal the scratch. The scabs are still fresh."
+	assignedrole = "Lost Vet"
+	outfit = /datum/outfit/job/doctor
+
+
+/obj/effect/mob_spawn/human/lost/centcom
+	icon = 'icons/obj/machines/sleeper.dmi'
+	icon_state = "sleeper"
+	name = "old cryogenics pod"
+	desc = "A sleeper designed to put its occupant into a deep coma."
+	short_desc = "You are a CentCom Official."
+	flavour_text = "Central Command is sending you to... wait, where the hell even are you?"
+	assignedrole = "Lost CentCom Official"
+	outfit = /datum/outfit/centcom/centcom_official
+
+/obj/effect/mob_spawn/human/lost/shaftminer
+	icon = 'icons/obj/machines/sleeper.dmi'
+	icon_state = "sleeper"
+	name = "old cryogenics pod"
+	desc = "A sleeper designed to put its occupant into a deep coma."
+	short_desc = "You are a Shaft Miner."
+	flavour_text = "You were mining peacefully, then a ash drake suddenly attacked, then you have died... or so you thought?\
+	You have no idea where you now, but you are glad to be alive."
+	assignedrole = "Lost Shaft Miner"
+	outfit = /datum/outfit/job/miner/equipped
+
+/obj/effect/mob_spawn/human/lost/ashwalker_heir
+	icon = 'icons/obj/machines/sleeper.dmi'
+	icon_state = "sleeper"
+	name = "old cryogenics pod"
+	desc = "A sleeper designed to put its occupant into a deep coma."
+	short_desc = "You are the heir to a Ash Kingdom."
+	flavour_text = "You are the heir to a great kingdom in the area. You were sent on a diplomatic mission to another kingdom and... wait where are you?"
+	assignedrole = "Lost Ash Kingdom Heir"
+	mob_species = /datum/species/lizard/ashwalker/kobold
+	outfit = /datum/outfit/ashwalker/heir
+
+/datum/outfit/ashwalker/heir
+	name ="Ashwalker Heir"
+	head = /obj/item/clothing/head/hopcap
+	neck = /obj/item/clothing/neck/cloak/head_of_personnel
+	uniform = /obj/item/clothing/under/color/brown
+	belt = /obj/item/storage/belt/sabre
+
+/obj/effect/mob_spawn/human/lost/assistant
+	icon = 'icons/obj/machines/sleeper.dmi'
+	icon_state = "sleeper"
+	name = "old cryogenics pod"
+	desc = "A sleeper designed to put its occupant into a deep coma."
+	short_desc = "You are a Assistant."
+	flavour_text = "You are an assistant on a state of the art station. Except you aren't, really. You aren't even lost either. You are simply here to see the cool dragon.\
+	When you saw it, you thought \"What a cool dragon\" When it saw you, it thought \"What a cool snack\". You have no idea why it hasn't eaten you yet, but you are now\
+	an assistant in an very much not state-of-the-art ashdrake prison."
+	assignedrole = "Lost Assistant"
+	important_info = "You are very much obsessed with the dragon. Do NOT stop thinking about the dragon."
+	outfit = /datum/outfit/job/assistant
+	mob_species = /datum/species/ipc
+
+/obj/effect/mob_spawn/human/lostassistant/Initialize(mapload)
+	..()
+	var/area/A = get_area(src)
+	if(A)
+		notify_ghosts("Someone has defeated a ash drake! A prisoner has been freed in \the [A.name]!", source = src, action=NOTIFY_ATTACK, flashwindow = FALSE)
+
+/obj/effect/mob_spawn/human/lost/syndicate
+	icon = 'icons/obj/machines/sleeper.dmi'
+	icon_state = "sleeper"
+	name = "old cryogenics pod"
+	desc = "A sleeper designed to put its occupant into a deep coma."
+	short_desc = "You are a Syndicate Operative."
+	flavour_text = "You are a nuclear agent! Your objective is- wait where the hell are you? This isn't the base, so where are you?"
+	assignedrole = "Lost Syndicate"
+	outfit = /datum/outfit/syndicate/lost
+
+/datum/outfit/syndicate/lost
+	name = "Syndicate Operative - Lost"
+	tc = 10
+
+/obj/effect/mob_spawn/human/lost/solgov
+	icon = 'icons/obj/machines/sleeper.dmi'
+	icon_state = "sleeper"
+	name = "old cryogenics pod"
+	desc = "A sleeper designed to put its occupant into a deep coma."
+	short_desc = "You are a SolGov Commander."
+	flavour_text = "You are being sent in to stop a treat. Your objective is- wait where the hell are you? You still have your gear but... you have no idea where you are?"
+	assignedrole = "Lost SolGov Commander"
+	outfit = /datum/outfit/solgov/commander

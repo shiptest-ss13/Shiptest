@@ -23,17 +23,17 @@
 //WS end
 
 /obj/item/toy/plush/among //Shiptest begin, with our debut plushy
-    name = "amoung pequeño"
-    desc = "A little pill shaped guy, with a price tag of 3€."
-    icon = 'whitesands/icons/obj/plushes.dmi'
-    icon_state = "plushie_among"
-    attack_verb = list("killed","stabbed","shot","slapped","stung", "ejected")
-    squeak_override = list('whitesands/sound/hornetnoises/agoguskill.ogg')
-    var/random_among = TRUE //if the (among) uses random coloring
-    var/rare_among = 1 //chance for rare color variant
+	name = "amoung pequeño"
+	desc = "A little pill shaped guy, with a price tag of 3€."
+	icon = 'whitesands/icons/obj/plushes.dmi'
+	icon_state = "plushie_among"
+	attack_verb = list("killed","stabbed","shot","slapped","stung", "ejected")
+	squeak_override = list('whitesands/sound/hornetnoises/agoguskill.ogg')
+	var/random_among = TRUE //if the (among) uses random coloring
+	var/rare_among = 1 //chance for rare color variant
 
 
-    var/static/list/among_colors = list(\
+	var/static/list/among_colors = list(\
 		"red" = "#c51111",
 		"blue" = "#123ed1",
 		"green" = "#117f2d",
@@ -46,30 +46,30 @@
 		"brown" = "#71491e",
 		"cyan" = "#39FEDD",
 		"lime" = "#4EEF38",
-    )
-    var/static/list/among_colors_rare = list(\
-    	"puce" = "#CC8899",
-    )
+	)
+	var/static/list/among_colors_rare = list(\
+		"puce" = "#CC8899",
+	)
 
 /obj/item/toy/plush/among/Initialize(mapload)
-    . = ..()
-    among_randomify(rare_among)
+	. = ..()
+	among_randomify(rare_among)
 
 /obj/item/toy/plush/among/proc/among_randomify(rare_among)
-    if(random_among)
-        var/among_color
-        if(prob(rare_among))
-            among_color = pick(among_colors_rare)
-            add_atom_colour(among_colors_rare[among_color], FIXED_COLOUR_PRIORITY)
-        else
-            among_color = pick(among_colors)
-            add_atom_colour(among_colors[among_color], FIXED_COLOUR_PRIORITY)
-        add_among_overlay()
+	if(random_among)
+		var/among_color
+		if(prob(rare_among))
+			among_color = pick(among_colors_rare)
+			add_atom_colour(among_colors_rare[among_color], FIXED_COLOUR_PRIORITY)
+		else
+			among_color = pick(among_colors)
+			add_atom_colour(among_colors[among_color], FIXED_COLOUR_PRIORITY)
+		add_among_overlay()
 
 /obj/item/toy/plush/among/proc/add_among_overlay()
-    if(!random_among)
-        return
-    cut_overlays()
-    var/mutable_appearance/base_overlay_among = mutable_appearance(icon, "plushie_among_visor")
-    base_overlay_among.appearance_flags = RESET_COLOR
-    add_overlay(base_overlay_among)
+	if(!random_among)
+		return
+	cut_overlays()
+	var/mutable_appearance/base_overlay_among = mutable_appearance(icon, "plushie_among_visor")
+	base_overlay_among.appearance_flags = RESET_COLOR
+	add_overlay(base_overlay_among)

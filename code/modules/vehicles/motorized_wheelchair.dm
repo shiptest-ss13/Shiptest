@@ -6,7 +6,7 @@
 	var/power_efficiency = 1
 	var/power_usage = 100
 	var/panel_open = FALSE
-	var/list/required_parts = list(/obj/item/stock_parts/manipulator, 
+	var/list/required_parts = list(/obj/item/stock_parts/manipulator,
 							/obj/item/stock_parts/manipulator,
 							/obj/item/stock_parts/capacitor)
 	var/obj/item/stock_parts/cell/power_cell
@@ -41,7 +41,7 @@
 			canmove = FALSE
 			addtimer(VARSET_CALLBACK(src, canmove, TRUE), 20)
 			return FALSE
-		if(power_cell.charge < power_usage / max(power_efficiency, 1))			
+		if(power_cell.charge < power_usage / max(power_efficiency, 1))
 			to_chat(user, "<span class='warning'>The display on [src] blinks 'Out of Power'.</span>")
 			canmove = FALSE
 			addtimer(VARSET_CALLBACK(src, canmove, TRUE), 20)
@@ -73,7 +73,7 @@
 		to_chat(user, "<span class='notice'>You remove the power cell from [src].</span>")
 		return
 	return ..()
-	
+
 /obj/vehicle/ridden/wheelchair/motorized/attackby(obj/item/I, mob/user, params)
 	if(I.tool_behaviour == TOOL_SCREWDRIVER)
 		I.play_tool_sound(src)

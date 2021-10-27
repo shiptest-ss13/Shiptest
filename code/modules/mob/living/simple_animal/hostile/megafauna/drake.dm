@@ -55,10 +55,11 @@ Difficulty: Medium
 	pixel_x = -16
 	crusher_loot = list(/obj/structure/closet/crate/necropolis/dragon/crusher)
 	loot = list(/obj/structure/closet/crate/necropolis/dragon)
-	butcher_results = list(/obj/item/stack/ore/diamond = 5, /obj/item/stack/sheet/sinew = 5, /obj/item/stack/sheet/bone = 30)
-	guaranteed_butcher_results = list(/obj/item/stack/sheet/animalhide/ashdrake = 10)
+	butcher_results = list(/obj/item/gem/amber = 1, /obj/item/stack/ore/diamond = 5, /obj/item/stack/sheet/sinew = 5, /obj/item/stack/sheet/bone = 30)
+	guaranteed_butcher_results = list(/obj/item/stack/sheet/animalhide/ashdrake = 10, /obj/item/crusher_trophy/ash_spike = 1)
 	var/swooping = NONE
 	var/player_cooldown = 0
+	var/dungeon = FALSE //if true, on death will spawn a ghost role at a lank mark and open blast doors with a certain id
 	gps_name = "Fiery Signal"
 	achievement_type = /datum/award/achievement/boss/drake_kill
 	crusher_achievement_type = /datum/award/achievement/boss/drake_crusher
@@ -66,11 +67,15 @@ Difficulty: Medium
 	deathmessage = "collapses into a pile of bones, its flesh sloughing away."
 	deathsound = 'sound/magic/demon_dies.ogg'
 	footstep_type = FOOTSTEP_MOB_HEAVY
-	attack_action_types = list(/datum/action/innate/megafauna_attack/fire_cone,
-							   /datum/action/innate/megafauna_attack/fire_cone_meteors,
-							   /datum/action/innate/megafauna_attack/mass_fire,
-							   /datum/action/innate/megafauna_attack/lava_swoop)
+	attack_action_types = list(
+		/datum/action/innate/megafauna_attack/fire_cone,
+		/datum/action/innate/megafauna_attack/fire_cone_meteors,
+		/datum/action/innate/megafauna_attack/mass_fire,
+		/datum/action/innate/megafauna_attack/lava_swoop)
 	small_sprite_type = /datum/action/small_sprite/megafauna/drake
+
+/mob/living/simple_animal/hostile/megafauna/dragon/icemoon
+	dungeon = TRUE
 
 /datum/action/innate/megafauna_attack/fire_cone
 	name = "Fire Cone"
@@ -297,7 +302,7 @@ Difficulty: Medium
 	if(stat || swooping)
 		return
 	if(manual_target)
-		target = manual_target
+		GiveTarget(manual_target)
 	if(!target)
 		return
 	stop_automated_movement = TRUE
@@ -385,6 +390,41 @@ Difficulty: Medium
 	SetRecoveryTime(swoop_cooldown)
 	if(!lava_success)
 		arena_escape_enrage()
+
+/mob/living/simple_animal/hostile/megafauna/dragon/death()
+	//open all ashdrake gates
+	if(dungeon)
+		for(var/obj/machinery/door/poddoor/D in GLOB.machines)
+			if(D.id == "ash_drake_dead")
+				D.open()
+		for(var/obj/effect/landmark/ashdrake_ghost_spawn/L in GLOB.landmarks_list)
+			L.create_roles()
+
+	..()
+
+/obj/effect/landmark/ashdrake_ghost_spawn //spawn a random ghost role if ash drake is killed
+	name = "ash drake ghost role spawner"
+	var/picked
+
+/obj/effect/landmark/ashdrake_ghost_spawn/proc/create_roles()
+	picked = pick(1,2,3,4,5,6,7) //picks 1-7
+	switch(picked) //then picks out of 7 ghost roles to spawn
+		if(1)
+			new /obj/effect/mob_spawn/human/lost/doctor(get_turf(loc))
+		if(2)
+			new /obj/effect/mob_spawn/human/lost/centcom(get_turf(loc))
+		if(3)
+			new /obj/effect/mob_spawn/human/lost/shaftminer(get_turf(loc))
+		if(4)
+			new /obj/effect/mob_spawn/human/lost/ashwalker_heir(get_turf(loc))
+		if(5)
+			new /obj/effect/mob_spawn/human/lost/assistant(get_turf(loc))
+		if(6)
+			new /obj/effect/mob_spawn/human/lost/syndicate(get_turf(loc))
+		if(7)
+			new /obj/effect/mob_spawn/human/lost/solgov(get_turf(loc))
+
+	qdel(src) //no spawning people twice
 
 /mob/living/simple_animal/hostile/megafauna/dragon/ex_act(severity, target)
 	if(severity == EXPLODE_LIGHT)

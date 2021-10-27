@@ -22,10 +22,9 @@
 
 	//WS Begin - Gun Cells
 	var/internal_cell = FALSE ///if the gun's cell cannot be replaced
-	var/small_gun = FALSE ///if the gun is small and can only fit batteries that have less than a certain max charge
+	var/small_gun = FALSE ///if the gun is small and can only fit the small gun cell
 	var/big_gun = FALSE ///if the gun is big and can fit the comically large gun cell
-	var/max_charge = 10000 ///if the gun is small, this is the highest amount of charge can be in a battery for it
-	var/unscrewing_time = 20 ///Time it takes to unscrew the internal cell
+	var/unscrewing_time = 20 ///Time it takes to unscrew the cell
 
 	var/load_sound = 'sound/weapons/gun/general/magazine_insert_full.ogg' //Sound when inserting magazine. UPDATE PLEASE
 	var/eject_sound = 'sound/weapons/gun/general/magazine_remove_full.ogg' //Sound of ejecting a cell. UPDATE PLEASE
@@ -101,19 +100,14 @@
 		update_icon()
 
 /obj/item/gun/energy/attackby(obj/item/A, mob/user, params)
-	. = ..()
-	if (.)
-		return
 	if (!internal_cell && istype(A, /obj/item/stock_parts/cell/gun))
 		var/obj/item/stock_parts/cell/gun/C = A
 		if (!cell)
 			insert_cell(user, C)
+	return ..()
 
 /obj/item/gun/energy/proc/insert_cell(mob/user, obj/item/stock_parts/cell/gun/C)
 	if(small_gun && !istype(C, /obj/item/stock_parts/cell/gun/mini))
-		to_chat(user, "<span class='warning'>\The [C] doesn't seem to fit into \the [src]...</span>")
-		return FALSE
-	if(!small_gun && istype(C, /obj/item/stock_parts/cell/gun/mini))
 		to_chat(user, "<span class='warning'>\The [C] doesn't seem to fit into \the [src]...</span>")
 		return FALSE
 	if(!big_gun && istype(C, /obj/item/stock_parts/cell/gun/large))
@@ -133,18 +127,18 @@
 	playsound(src, load_sound, sound_volume, load_sound_vary)
 	cell.forceMove(drop_location())
 	var/obj/item/stock_parts/cell/gun/old_cell = cell
-	if (insert_cell(user, tac_load))
+	/*if(insert_cell(user, tac_load))
 		to_chat(user, "<span class='notice'>You perform a tactical reload on \the [src].</span>")
 	else
-		to_chat(user, "<span class='warning'>You dropped the old cell, but the new one doesn't fit. How embarassing.</span>")
-		cell = null
+		to_chat(user, "<span class='warning'>You dropped the old cell, but the new one doesn't fit. How embarassing.</span>")*/
+	cell = null
 	user.put_in_hands(old_cell)
 	old_cell.update_icon()
 	to_chat(user, "<span class='notice'>You pull the cell out of \the [src].</span>")
 	update_icon()
 
 /obj/item/gun/energy/screwdriver_act(mob/living/user, obj/item/I)
-	if(cell && !internal_cell && !gun_light && !bayonet)
+	if(cell && !internal_cell && !bayonet && (!gun_light || !can_flashlight))
 		to_chat(user, "<span class='notice'>You begin unscrewing and pulling out the cell...</span>")
 		if(I.use_tool(src, user, unscrewing_time, volume=100))
 			to_chat(user, "<span class='notice'>You remove the power cell.</span>")
@@ -219,26 +213,29 @@
 	. = ..()
 	if(!automatic_charge_overlays)
 		return
+	// Every time I see code this "flexible", a kitten fucking dies
 	var/overlay_icon_state = "[icon_state]_charge"
+	var/obj/item/ammo_casing/energy/shot = ammo_type[modifystate ? select : 1]
 	var/ratio = get_charge_ratio()
-	if(modifystate)
-		var/obj/item/ammo_casing/energy/shot = ammo_type[select]
-		overlay_icon_state += "_[shot.select_name]"
-		. += "[icon_state]_[shot.select_name]"
 	if(ratio == 0)
+		if(modifystate)
+			. += "[icon_state]_[shot.select_name]"
 		. += "[icon_state]_empty"
 	else
 		if(!shaded_charge)
+			if(modifystate)
+				. += "[icon_state]_[shot.select_name]"
+				overlay_icon_state += "_[shot.select_name]"
 			var/mutable_appearance/charge_overlay = mutable_appearance(icon, overlay_icon_state)
 			for(var/i = ratio, i >= 1, i--)
 				charge_overlay.pixel_x = ammo_x_offset * (i - 1)
 				charge_overlay.pixel_y = ammo_y_offset * (i - 1)
 				. += new /mutable_appearance(charge_overlay)
 		else
-			. += "[icon_state]_charge[ratio]"
 			if(modifystate)
-				var/obj/item/ammo_casing/energy/shot = ammo_type[select]
 				. += "[icon_state]_charge[ratio]_[shot.select_name]" //:drooling_face:
+			else
+				. += "[icon_state]_charge[ratio]"
 
 ///Used by update_icon_state() and update_overlays()
 /obj/item/gun/energy/proc/get_charge_ratio()

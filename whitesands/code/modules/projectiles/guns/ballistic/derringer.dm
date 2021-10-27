@@ -4,7 +4,7 @@
 	icon = 'whitesands/icons/obj/guns/projectile.dmi'
 	icon_state = "derringer"
 	mag_type = /obj/item/ammo_box/magazine/internal/derr38
-	fire_sound = 'sound/weapons/gun/revolver/shot_alt.ogg'
+	fire_sound = 'sound/weapons/gun/revolver/shot.ogg'
 	load_sound = 'sound/weapons/gun/revolver/load_bullet.ogg'
 	eject_sound = 'sound/weapons/gun/revolver/empty.ogg'
 	fire_sound_volume = 60

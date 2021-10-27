@@ -64,7 +64,7 @@
 			var/mob/living/L = cult_mind.current
 			L.narsie_act()
 	for(var/mob/living/player in GLOB.player_list)
-		if(player.stat != DEAD && player.loc && is_station_level(player.loc.z) && !iscultist(player) && !isanimal(player))
+		if(player.stat != DEAD && player.loc && !iscultist(player) && !isanimal(player))
 			souls_needed[player] = TRUE
 	soul_goal = round(1 + LAZYLEN(souls_needed) * 0.75)
 	SSredbot.send_discord_message("admin","Nar'sie has been summoned.","round ending event")
@@ -89,7 +89,6 @@
 	priority_announce("Simulations on acausal dimensional event complete. Deploying solution package now. Deployment ETA: ONE MINUTE. ","Central Command Higher Dimensional Affairs")
 	sleep(50)
 	set_security_level("delta")
-	SSshuttle.registerHostileEnvironment(GLOB.cult_narsie)
 	SSshuttle.lockdown = TRUE
 	sleep(600)
 	if(QDELETED(GLOB.cult_narsie)) // tres
@@ -97,7 +96,6 @@
 		GLOB.cult_narsie = null
 		sleep(20)
 		set_security_level("red")
-		SSshuttle.clearHostileEnvironment()
 		SSshuttle.lockdown = FALSE
 		INVOKE_ASYNC(GLOBAL_PROC, .proc/cult_ending_helper, 2)
 		return

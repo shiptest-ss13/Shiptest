@@ -4,9 +4,7 @@
 #define NUKE_RESULT_CREW_WIN_SYNDIES_DEAD 3
 #define NUKE_RESULT_DISK_LOST 4
 #define NUKE_RESULT_DISK_STOLEN 5
-#define NUKE_RESULT_NOSURVIVORS 6
-#define NUKE_RESULT_WRONG_STATION 7
-#define NUKE_RESULT_WRONG_STATION_DEAD 8
+#define NUKE_RESULT_WRONG_STATION 6
 
 //fugitive end results
 #define FUGITIVE_RESULT_BADASS_HUNTER 0
@@ -36,7 +34,7 @@
 
 //ERT Types
 #define ERT_BLUE "Blue"
-#define ERT_RED  "Red"
+#define ERT_RED "Red"
 #define ERT_AMBER "Amber"
 #define ERT_DEATHSQUAD "Deathsquad"
 

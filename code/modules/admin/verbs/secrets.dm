@@ -3,7 +3,7 @@
 /client/proc/secrets() //Creates a verb for admins to open up the ui
 	set name = "Secrets"
 	set desc = "Abuse harder than you ever have before with this handy dandy semi-misc stuff menu"
-	set category = "Admin - Game"
+	set category = "Admin.Game"
 	SSblackbox.record_feedback("tally", "admin_verb", 1, "Secrets Panel") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 	var/datum/secrets_menu/tgui  = new(usr)//create the datum
 	tgui.ui_interact(usr)//datum has a tgui component, here we open the window
@@ -205,26 +205,6 @@
 			log_admin("[key_name(holder)] reset the station name.")
 			message_admins("<span class='adminnotice'>[key_name_admin(holder)] reset the station name.</span>")
 			priority_announce("[command_name()] has renamed the station to \"[new_name]\".")
-		if("moveferry")
-			SSblackbox.record_feedback("nested tally", "admin_secrets_fun_used", 1, list("Send CentCom Ferry"))
-			if(!SSshuttle.toggleShuttle("ferry","ferry_home","ferry_away"))
-				message_admins("[key_name_admin(holder)] moved the CentCom ferry")
-				log_admin("[key_name(holder)] moved the CentCom ferry")
-		if("togglearrivals")
-			var/obj/docking_port/mobile/arrivals/A = SSshuttle.arrivals
-			if(A)
-				var/new_perma = !A.perma_docked
-				A.perma_docked = new_perma
-				SSblackbox.record_feedback("nested tally", "admin_toggle", 1, list("Permadock Arrivals Shuttle", "[new_perma ? "Enabled" : "Disabled"]"))
-				message_admins("[key_name_admin(holder)] [new_perma ? "stopped" : "started"] the arrivals shuttle")
-				log_admin("[key_name(holder)] [new_perma ? "stopped" : "started"] the arrivals shuttle")
-			else
-				to_chat(holder, "<span class='admin'>There is no arrivals shuttle.</span>", confidential = TRUE)
-		if("movelaborshuttle")
-			SSblackbox.record_feedback("nested tally", "admin_secrets_fun_used", 1, list("Send Labor Shuttle"))
-			if(!SSshuttle.toggleShuttle("laborcamp","laborcamp_home","laborcamp_away"))
-				message_admins("[key_name_admin(holder)] moved labor shuttle")
-				log_admin("[key_name(holder)] moved the labor shuttle")
 		//!fun! buttons.
 		if("virus")
 			if(!is_funmin)
@@ -257,17 +237,19 @@
 		if("power")
 			if(!is_funmin)
 				return
+			var/result = input(holder, "Please choose what Z level to power. Specify none to power all Zs.","Power") as null|num
 			SSblackbox.record_feedback("nested tally", "admin_secrets_fun_used", 1, list("Power All APCs"))
 			log_admin("[key_name(holder)] made all areas powered", 1)
 			message_admins("<span class='adminnotice'>[key_name_admin(holder)] made all areas powered</span>")
-			power_restore()
+			power_restore(result)
 		if("unpower")
 			if(!is_funmin)
 				return
+			var/result = input(holder, "Please choose what Z level to depower. Specify none to power all Zs.","Unpower") as null|num
 			SSblackbox.record_feedback("nested tally", "admin_secrets_fun_used", 1, list("Depower All APCs"))
 			log_admin("[key_name(holder)] made all areas unpowered", 1)
 			message_admins("<span class='adminnotice'>[key_name_admin(holder)] made all areas unpowered</span>")
-			power_failure()
+			power_failure(result)
 		if("quickpower")
 			if(!is_funmin)
 				return
@@ -340,7 +322,8 @@
 				return
 			SSblackbox.record_feedback("nested tally", "admin_secrets_fun_used", 1, list("Egalitarian Station"))
 			for(var/obj/machinery/door/airlock/W in GLOB.machines)
-				if(is_station_level(W.z) && !istype(get_area(W), /area/ship/bridge) && !istype(get_area(W), /area/ship/crew) && !istype(get_area(W), /area/ship/security/prison))
+				var/area/airlock_area = get_area(W)
+				if(istype(airlock_area, /area/ship) && !istype(airlock_area, /area/ship/bridge) && !istype(airlock_area, /area/ship/crew) && !istype(airlock_area, /area/ship/security/prison))
 					W.req_access = list()
 			message_admins("[key_name_admin(holder)] activated Egalitarian Station mode")
 			priority_announce("CentCom airlock control override activated. Please take this time to get acquainted with your coworkers.", null, 'sound/ai/commandreport.ogg')

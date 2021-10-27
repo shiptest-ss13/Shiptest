@@ -1,6 +1,6 @@
 #define TRAY_NAME_UPDATE name = myseed ? "[initial(name)] ([myseed.plantname])" : initial(name)
 #define CYCLE_DELAY_DEFAULT 200			//About 10 seconds / cycle
-#define CYCLE_DELAY_SLOW    500			//About 25 seconds / cycle
+#define CYCLE_DELAY_SLOW 500			//About 25 seconds / cycle
 
 /obj/machinery/hydroponics
 	name = "hydroponics tray"
@@ -744,6 +744,28 @@
 					R.generate_trash(get_turf(user))
 			visi_msg="[user] composts [reagent_source], spreading it through [target]"
 			transfer_amount = reagent_source.reagents.total_volume
+			if(istype(reagent_source, /obj/item/reagent_containers/food/snacks/grown) && prob(25))
+				var/obj/item/reagent_containers/food/snacks/grown/R = reagent_source
+				var/obj/item/seeds/temp_seed = R.seed.Copy()
+				if(istype(temp_seed, /obj/item/seeds) && !istype(temp_seed, /obj/item/seeds/sample))
+					if(!myseed)
+						if(istype(temp_seed, /obj/item/seeds/kudzu))
+							investigate_log("had Kudzu planted in it by [key_name(user)] at [AREACOORD(src)]","kudzu")
+						if(!user.transferItemToLoc(temp_seed, src))
+							return
+						var/obj/item/seeds/S = temp_seed
+						if(S.get_gene(/datum/plant_gene/trait/plant_type/crystal))
+							cycledelay = CYCLE_DELAY_SLOW
+						else
+							cycledelay = CYCLE_DELAY_DEFAULT
+						to_chat(user, "<span class='notice'>The composted plant starts blooming!</span>")
+						dead = 0
+						myseed = temp_seed
+						TRAY_NAME_UPDATE
+						age = 1
+						plant_health = myseed.endurance
+						lastcycle = world.time
+						update_icon()
 		else
 			transfer_amount = reagent_source.amount_per_transfer_from_this
 			if(istype(reagent_source, /obj/item/reagent_containers/syringe/))

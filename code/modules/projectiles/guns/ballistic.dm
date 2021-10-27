@@ -61,7 +61,7 @@
 	var/special_mags = FALSE
 	///The bolt type of the gun, affects quite a bit of functionality, see combat.dm defines for bolt types: BOLT_TYPE_STANDARD; BOLT_TYPE_LOCKING; BOLT_TYPE_OPEN; BOLT_TYPE_NO_BOLT
 	var/bolt_type = BOLT_TYPE_STANDARD
- 	///Used for locking bolt and open bolt guns. Set a bit differently for the two but prevents firing when true for both.
+	///Used for locking bolt and open bolt guns. Set a bit differently for the two but prevents firing when true for both.
 	var/bolt_locked = FALSE
 	///Whether the gun has to be racked each shot or not.
 	var/semi_auto = TRUE
@@ -363,9 +363,7 @@
 			CB.forceMove(drop_location())
 			CB.bounce_away(FALSE, NONE)
 			num_unloaded++
-			var/turf/T = get_turf(drop_location())
-			if(T && is_station_level(T.z))
-				SSblackbox.record_feedback("tally", "station_mess_created", 1, CB.name)
+			SSblackbox.record_feedback("tally", "station_mess_created", 1, CB.name)
 		if (num_unloaded)
 			to_chat(user, "<span class='notice'>You unload [num_unloaded] [cartridge_wording]\s from [src].</span>")
 			playsound(user, eject_sound, eject_sound_volume, eject_sound_vary)

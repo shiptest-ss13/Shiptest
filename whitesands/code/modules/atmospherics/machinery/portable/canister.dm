@@ -5,7 +5,7 @@
 	. = ..()
 	if(machine_stat & BROKEN)
 		return
-	var/pressure = air_contents.return_pressure()
+	var/pressure = air_contents?.return_pressure()
 	var/pressure_display = round(pressure / 500)
 	if(pressure_display > 10)
 		pressure_display = 10

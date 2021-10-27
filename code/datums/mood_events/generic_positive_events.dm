@@ -175,6 +175,18 @@
 	description = "<span class='nicegreen'>What a peculiar emblem.  It makes me feel hopeful for my future.</span>\n"
 	mood_change = 5
 
+/datum/mood_event/drippy
+	description = "<span class='nicegreen'>My self confidence, unstopping. My style, unbreakable.</span>\n"
+	mood_change = 5
+
+/datum/mood_event/dripjordan
+	description = "<span class='nicegreen'>These shoes make me feel like I could really push myself to victory!</span>\n"
+	mood_change = 5
+
+/datum/mood_event/nojordans
+	description = "<span class='warning'>They're gone... my fashion is ruined. I can feel my self esteem decaying... </span>\n"
+	mood_change = -10
+
 /datum/mood_event/nanite_happiness
 	description = "<span class='nicegreen robot'>+++++++HAPPINESS ENHANCEMENT+++++++</span>\n"
 	mood_change = 7

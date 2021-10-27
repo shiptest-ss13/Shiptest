@@ -23,6 +23,7 @@
 	armor = list("melee" = 10, "bullet" = 15, "laser" = 10, "energy" = 10, "bomb" = 10, "bio" = 10, "rad" = 10, "fire" = 10, "acid" = 10)
 	harm_intent_damage = 0
 	obj_damage = 100
+	environment_smash = ENVIRONMENT_SMASH_MINERALS
 	melee_damage_lower = 12
 	melee_damage_upper = 20
 	attack_verb_continuous = "pulverizes"
@@ -64,11 +65,23 @@
 		pull_force = MOVE_FORCE_VERY_STRONG
 		. = 1
 
-/mob/living/simple_animal/hostile/asteroid/goliath/death(gibbed)
+/mob/living/simple_animal/hostile/asteroid/goliath/gib()
 	move_force = MOVE_FORCE_DEFAULT
 	move_resist = MOVE_RESIST_DEFAULT
 	pull_force = PULL_FORCE_DEFAULT
-	..(gibbed)
+	if(prob(1))//goliaths eat rocks and thus have a tiny chance to contain a number of gems
+		new /obj/item/gem/rupee(loc)
+		visible_message("<span class='warning'>A glittering object falls out of [src]'s hide!</span>")
+	if(prob(1))
+		new /obj/item/gem/fdiamond(loc)
+		visible_message("<span class='warning'>A glittering object falls out of [src]'s hide!</span>")
+	if(prob(1))
+		new /obj/item/gem/void(loc)
+		visible_message("<span class='warning'>A glittering object falls out of [src]'s hide!</span>")
+	if(prob(1))
+		new /obj/item/gem/phoron(loc)
+		visible_message("<span class='warning'>A glittering object falls out of [src]'s hide!</span>")
+	..()
 
 /mob/living/simple_animal/hostile/asteroid/goliath/OpenFire()
 	var/tturf = get_turf(target)
@@ -228,7 +241,7 @@
 
 /mob/living/simple_animal/hostile/asteroid/goliath/beast/random/Initialize()
 	. = ..()
-	if(prob(1))
+	if(prob(15))
 		new /mob/living/simple_animal/hostile/asteroid/goliath/beast/ancient(loc)
 		return INITIALIZE_HINT_QDEL
 
@@ -239,19 +252,19 @@
 	icon_living = "Goliath"
 	icon_aggro = "Goliath_alert"
 	icon_dead = "Goliath_dead"
-	maxHealth = 400
-	health = 400
+	maxHealth = 550
+	health = 550
 	speed = 4
+	crusher_loot = /obj/item/crusher_trophy/elder_tentacle
 	pre_attack_icon = "Goliath_preattack"
 	throw_message = "does nothing to the rocky hide of the"
 	guaranteed_butcher_results = list()
-	crusher_drop_mod = 30
+	crusher_drop_mod = 75
 	wander = FALSE
-	tame_chance = 0
-	bonus_tame_chance = 5
+	bonus_tame_chance = 10
 	var/list/cached_tentacle_turfs
 	var/turf/last_location
-	var/tentacle_recheck_cooldown = 100
+	var/tentacle_recheck_cooldown = 70
 
 /mob/living/simple_animal/hostile/asteroid/goliath/beast/ancient/Life()
 	. = ..()

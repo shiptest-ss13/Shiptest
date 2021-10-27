@@ -51,7 +51,6 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 /area/asteroid
 	name = "Asteroid"
 	icon_state = "asteroid"
-	requires_power = FALSE
 	has_gravity = STANDARD_GRAVITY
 	area_flags = UNIQUE_AREA | CAVES_ALLOWED | MOB_SPAWN_ALLOWED
 	ambientsounds = MINING
@@ -93,7 +92,7 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 /area/ship/proc/link_to_shuttle(obj/docking_port/mobile/M)
 	mobile_port = M
 
-/area/ship/get_virtual_z()
+/area/ship/get_virtual_z_level()
 	if(mobile_port)
 		return mobile_port.get_virtual_z_level()
 	return ..()
@@ -148,6 +147,10 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	flags_1 = NONE
 	sound_environment = SOUND_AREA_LARGE_ENCLOSED
 
+/area/ship/crew/chapel/office
+	name = "Chapel Office"
+	icon_state = "chapeloffice"
+	sound_environment = SOUND_AREA_SMALL_SOFTFLOOR
 /area/ship/crew/library
 	name = "Library"
 	icon_state = "library"
@@ -188,6 +191,11 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 /area/ship/medical/surgery
 	name = "Surgical Bay"
 	icon_state = "surgery"
+
+/area/ship/medical/morgue
+	name = "Morgue"
+	icon_state = "morgue"
+	ambientsounds = SPOOKY
 
 /// Science Lab ///
 /area/ship/science
@@ -326,6 +334,5 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 /// External Areas ///
 /area/ship/external
 	name = "External"
-	requires_power = FALSE
 	dynamic_lighting = DYNAMIC_LIGHTING_IFSTARLIGHT
 	icon_state = "space_near"

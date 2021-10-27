@@ -311,14 +311,8 @@
 		if(NUKE_RESULT_NUKE_WIN)
 			SSticker.mode_result = "win - syndicate nuke"
 			SSticker.news_report = STATION_NUKED
-		if(NUKE_RESULT_NOSURVIVORS)
-			SSticker.mode_result = "halfwin - syndicate nuke - did not evacuate in time"
-			SSticker.news_report = STATION_NUKED
 		if(NUKE_RESULT_WRONG_STATION)
 			SSticker.mode_result = "halfwin - blew wrong station"
-			SSticker.news_report = NUKE_MISS
-		if(NUKE_RESULT_WRONG_STATION_DEAD)
-			SSticker.mode_result = "halfwin - blew wrong station - did not evacuate in time"
 			SSticker.news_report = NUKE_MISS
 		if(NUKE_RESULT_CREW_WIN_SYNDIES_DEAD)
 			SSticker.mode_result = "loss - evacuation - disk secured - syndi team dead"
@@ -396,7 +390,6 @@
 	if(revolution.members.len)
 		revolution.update_objectives()
 		revolution.update_heads()
-		SSshuttle.registerHostileEnvironment(revolution)
 		return TRUE
 	log_game("DYNAMIC: [ruletype] [name] failed to get any eligible headrevs. Refunding [cost] threat.")
 	return FALSE
@@ -415,8 +408,7 @@
 
 /// Checks for revhead loss conditions and other antag datums.
 /datum/dynamic_ruleset/roundstart/revs/proc/check_eligible(var/datum/mind/M)
-	var/turf/T = get_turf(M.current)
-	if(!considered_afk(M) && considered_alive(M) && is_station_level(T.z) && !M.antag_datums?.len && !HAS_TRAIT(M, TRAIT_MINDSHIELD))
+	if(!considered_afk(M) && considered_alive(M) && !M.antag_datums?.len && !HAS_TRAIT(M, TRAIT_MINDSHIELD))
 		return TRUE
 	return FALSE
 
@@ -574,7 +566,7 @@
 	return TRUE
 
 /datum/dynamic_ruleset/roundstart/monkey/proc/check_monkey_victory()
-	if(SSshuttle.emergency.mode != SHUTTLE_ENDGAME)
+	if(SSshuttle.jump_mode != BS_JUMP_COMPLETED)
 		return FALSE
 	var/datum/disease/D = new /datum/disease/transformation/jungle_fever()
 	for(var/mob/living/carbon/monkey/M in GLOB.alive_mob_list)

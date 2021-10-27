@@ -104,7 +104,6 @@
 	revolution.update_objectives()
 	revolution.update_heads()
 
-	SSshuttle.registerHostileEnvironment(src)
 	..()
 
 
@@ -131,8 +130,6 @@
 ///////////////////////////////
 /datum/game_mode/revolution/check_finished()
 	if(CONFIG_GET(keyed_list/continuous)["revolution"])
-		if(finished)
-			SSshuttle.clearHostileEnvironment(src)
 		return ..()
 	if(finished != 0 && end_when_heads_dead)
 		return TRUE
@@ -162,8 +159,7 @@
 /////////////////////////////
 /datum/game_mode/revolution/proc/check_heads_victory()
 	for(var/datum/mind/rev_mind in revolution.head_revolutionaries())
-		var/turf/T = get_turf(rev_mind.current)
-		if(!considered_afk(rev_mind) && considered_alive(rev_mind) && is_station_level(T.z))
+		if(!considered_afk(rev_mind) && considered_alive(rev_mind))
 			if(ishuman(rev_mind.current) || ismonkey(rev_mind.current))
 				return FALSE
 	return TRUE

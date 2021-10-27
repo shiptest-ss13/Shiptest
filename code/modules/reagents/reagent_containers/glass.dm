@@ -1,4 +1,3 @@
-
 /obj/item/reagent_containers/glass
 	name = "glass"
 	amount_per_transfer_from_this = 10
@@ -283,65 +282,55 @@
 		return
 	return ..()
 
-/obj/item/pestle
-	name = "pestle"
-	desc = "An ancient, simple tool used in conjunction with a mortar to grind or juice items."
-	w_class = WEIGHT_CLASS_SMALL
+/obj/item/reagent_containers/glass/filter
+	name = "seperatory funnel"
+	desc = "A crude tool created by welding several beakers together. It would probably be useful for seperating reagents."
 	icon = 'icons/obj/chemical.dmi'
-	icon_state = "pestle"
-	force = 7
-
-/obj/item/reagent_containers/glass/mortar
-	name = "mortar"
-	desc = "A specially formed bowl of ancient design. It is possible to crush or juice items placed in it using a pestle; however the process, unlike modern methods, is slow and physically exhausting. Alt click to eject the item."
-	icon = 'icons/obj/chemical.dmi'
-	icon_state = "mortar"
+	icon_state = "beakerfilter"
+	item_state = "beaker"
+	volume = 100
 	amount_per_transfer_from_this = 10
 	possible_transfer_amounts = list(5, 10, 15, 20, 25, 30, 50, 100)
-	volume = 100
-	custom_materials = list(/datum/material/wood = MINERAL_MATERIAL_AMOUNT)
-	reagent_flags = OPENCONTAINER
-	spillable = TRUE
-	var/obj/item/grinded
+	fill_icon_thresholds = list(1, 40, 60, 80, 100)
+	can_have_cap = TRUE
+	cap_icon_state = "beakerfilter_cap"
+	cap_on = TRUE
 
-/obj/item/reagent_containers/glass/mortar/AltClick(mob/user)
-	if(grinded)
-		grinded.forceMove(drop_location())
-		grinded = null
-		to_chat(user, "<span class='notice'>You eject the item inside.</span>")
+/obj/item/reagent_containers/glass/filter/afterattack(obj/target, mob/user, proximity) //overrides the standard version of this, only difference is that it only transfers one chem at a time
+	if((!proximity) || !check_allowed_items(target,target_self=1))
+		return
 
-/obj/item/reagent_containers/glass/mortar/attackby(obj/item/I, mob/living/carbon/human/user)
-	..()
-	if(istype(I,/obj/item/pestle))
-		if(grinded)
-			if(user.getStaminaLoss() > 50)
-				to_chat(user, "<span class='warning'>You are too tired to work!</span>")
-				return
-			to_chat(user, "<span class='notice'>You start grinding...</span>")
-			if((do_after(user, 25, target = src)) && grinded)
-				user.adjustStaminaLoss(40)
-				if(grinded.juice_results) //prioritize juicing
-					grinded.on_juice()
-					reagents.add_reagent_list(grinded.juice_results)
-					to_chat(user, "<span class='notice'>You juice [grinded] into a fine liquid.</span>")
-					QDEL_NULL(grinded)
-					return
-				grinded.on_grind()
-				reagents.add_reagent_list(grinded.grind_results)
-				if(grinded.reagents) //food and pills
-					grinded.reagents.trans_to(src, grinded.reagents.total_volume, transfered_by = user)
-				to_chat(user, "<span class='notice'>You break [grinded] into powder.</span>")
-				QDEL_NULL(grinded)
-				return
-			return
-		else
-			to_chat(user, "<span class='warning'>There is nothing to grind!</span>")
-			return
-	if(grinded)
-		to_chat(user, "<span class='warning'>There is something inside already!</span>")
+	if(!spillable)
 		return
-	if(I.juice_results || I.grind_results)
-		I.forceMove(src)
-		grinded = I
-		return
-	to_chat(user, "<span class='warning'>You can't grind this!</span>")
+
+	if(target.is_refillable()) //Something like a glass. Player probably wants to transfer TO it.
+		if(!reagents.total_volume)
+			to_chat(user, "<span class='warning'>[src] is empty!</span>")
+			return
+
+		if(target.reagents.holder_full())
+			to_chat(user, "<span class='warning'>[target] is full.</span>")
+			return
+		to_chat(user, "<span class='notice'>You begin to drain something from [src].")
+		if(do_after(user, 25, target = src))
+			var/trans = reagents.trans_id_to(target, reagents.get_master_reagent_id(), amount_per_transfer_from_this,)
+			to_chat(user, "<span class='notice'>You filter off [trans] unit\s of the solution into [target].</span>")
+
+	else if(target.is_drainable()) //A dispenser. Transfer FROM it TO us.
+		if(!target.reagents.total_volume)
+			to_chat(user, "<span class='warning'>[target] is empty and can't be refilled!</span>")
+			return
+
+		if(reagents.holder_full())
+			to_chat(user, "<span class='warning'>[src] is full.</span>")
+			return
+
+		var/trans = target.reagents.trans_to(src, amount_per_transfer_from_this, transfered_by = user)
+		to_chat(user, "<span class='notice'>You fill [src] with [trans] unit\s of the contents of [target].</span>")
+
+	else if(reagents.total_volume)
+		if(user.a_intent == INTENT_HARM)
+			user.visible_message("<span class='danger'>[user] splashes the contents of [src] onto [target]!</span>", \
+								"<span class='notice'>You splash the contents of [src] onto [target].</span>")
+			reagents.expose(target, TOUCH)
+			reagents.clear_reagents()

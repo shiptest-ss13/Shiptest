@@ -9,7 +9,7 @@
 	icon_state = ""
 	layer = BELOW_MOB_LAYER //so it isn't hidden behind objects when on the floor
 	var/mob/living/carbon/owner = null
-	var/mob/living/carbon/original_owner = null
+	var/datum/weakref/original_owner = null
 	var/status = BODYPART_ORGANIC
 	var/needs_processing = FALSE
 
@@ -236,6 +236,10 @@
 			update_disabled()
 		if(updating_health)
 			owner.updatehealth()
+		if(owner.dna?.species && (REVIVESBYHEALING in owner.dna.species.species_traits))
+			if(owner.health > 0 && !owner.hellbound)
+				owner.revive(FALSE)
+				owner.cure_husk() // If it has REVIVESBYHEALING, it probably can't be cloned. No husk cure.
 	cremation_progress = min(0, cremation_progress - ((brute_dam + burn_dam)*(100/max_damage)))
 	return update_bodypart_damage_state()
 
@@ -468,7 +472,7 @@
 			original_owner = source
 	else
 		C = owner
-		if(original_owner && owner != original_owner) //Foreign limb
+		if(original_owner && original_owner != owner) //Foreign limb
 			no_update = TRUE
 		else
 			no_update = FALSE
@@ -633,7 +637,7 @@
 // BROKEN BONE PROCS //
 /obj/item/bodypart/proc/can_break_bone()
 	// Do they have bones, are the bones not broken, is the limb not robotic? If yes to all, return 1
-    return (bone_status && bone_status != BONE_FLAG_BROKEN && status != BODYPART_ROBOTIC)
+	return (bone_status && bone_status != BONE_FLAG_BROKEN && status != BODYPART_ROBOTIC)
 
 /obj/item/bodypart/proc/break_bone()
 	if(!can_break_bone())

@@ -400,20 +400,14 @@
 	results = list(/datum/reagent/colorful_reagent = 5)
 	required_reagents = list(/datum/reagent/stable_plasma = 1, /datum/reagent/uranium/radium = 1, /datum/reagent/drug/space_drugs = 1, /datum/reagent/medicine/cryoxadone = 1, /datum/reagent/consumable/triple_citrus = 1)
 
-/*WS Begin - No CobbyChems
-
 /datum/chemical_reaction/life
-	required_reagents = list(/datum/reagent/medicine/strange_reagent = 1, /datum/reagent/medicine/C2/instabitaluri = 1, /datum/reagent/blood = 1)
-	required_temp = 374
+	required_reagents = list(/datum/reagent/medicine/strange_reagent = 1, /datum/reagent/medicine/synthflesh = 1, /datum/reagent/blood = 1)
 
 /datum/chemical_reaction/life/on_reaction(datum/reagents/holder, created_volume)
 	chemical_mob_spawn(holder, rand(1, round(created_volume, 1)), "Life (hostile)") //defaults to HOSTILE_SPAWN
 
 /datum/chemical_reaction/life_friendly
-	required_reagents = list(/datum/reagent/medicine/strange_reagent = 1, /datum/reagent/medicine/C2/instabitaluri = 1, /datum/reagent/consumable/sugar = 1)
-	required_temp = 374
-
-WS End */
+	required_reagents = list(/datum/reagent/medicine/strange_reagent = 1, /datum/reagent/medicine/synthflesh = 1, /datum/reagent/consumable/sugar = 1)
 
 /datum/chemical_reaction/life_friendly/on_reaction(datum/reagents/holder, created_volume)
 	chemical_mob_spawn(holder, rand(1, round(created_volume, 1)), "Life (friendly)", FRIENDLY_SPAWN)
@@ -446,8 +440,8 @@ WS End */
 
 //water electrolysis
 /datum/chemical_reaction/electrolysis
-	results = list(/datum/reagent/oxygen = 10, /datum/reagent/hydrogen = 20)
-	required_reagents = list(/datum/reagent/consumable/liquidelectricity = 1, /datum/reagent/water = 5)
+	results = list(/datum/reagent/oxygen = 20, /datum/reagent/hydrogen = 40)
+	required_reagents = list(/datum/reagent/consumable/liquidelectricity = 1, /datum/reagent/water = 10)
 
 //butterflium
 /datum/chemical_reaction/butterflium
@@ -617,6 +611,10 @@ WS End */
 /datum/chemical_reaction/mutationtoxin/abductor
 	results = list(/datum/reagent/mutationtoxin/abductor = 1)
 	required_reagents  = list(/datum/reagent/mutationtoxin/unstable = 1, /datum/reagent/medicine/morphine = 10, /datum/reagent/toxin/mutetoxin = 10)
+
+/datum/chemical_reaction/mutationtoxin/tesh
+	results = list(/datum/reagent/mutationtoxin/tesh = 1)
+	required_reagents  = list(/datum/reagent/mutationtoxin/unstable = 1, /datum/reagent/ammonia = 25)
 
 /datum/chemical_reaction/mutationtoxin/squid
 	results = list(/datum/reagent/mutationtoxin/squid = 1)

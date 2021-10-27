@@ -95,59 +95,60 @@
 			effect.start()
 
 // Safe location finder
-/proc/find_safe_turf(zlevel, list/zlevels, extended_safety_checks = FALSE)
-	if(!zlevels)
-		if (zlevel)
-			zlevels = list(zlevel)
-		else
-			zlevels = SSmapping.levels_by_trait(ZTRAIT_STATION)
-	var/cycles = 1000
-	for(var/cycle in 1 to cycles)
-		// DRUNK DIALLING WOOOOOOOOO
-		var/x = rand(1, world.maxx)
-		var/y = rand(1, world.maxy)
-		var/z = pick(zlevels)
-		var/random_location = locate(x,y,z)
-
-		if(!isfloorturf(random_location))
+/proc/find_safe_turf(list/zlevels, extended_safety_checks = FALSE)
+	var/list/potential_targets = list()
+	for(var/obj/structure/overmap/ship/simulated/possible_ship as anything in SSovermap.simulated_ships)
+		if(!zlevels)
+			potential_targets += possible_ship.shuttle
 			continue
-		var/turf/open/floor/F = random_location
-		if(!F.air)
-			continue
+		if((possible_ship.z in zlevels) || (possible_ship.get_virtual_z_level() in zlevels))
+			potential_targets += possible_ship.shuttle.shuttle_areas
 
-		var/datum/gas_mixture/A = F.air
-		var/trace_gases
-		for(var/id in A.get_gases())
-			if(id in GLOB.hardcoded_gases)
+	if(!length(potential_targets))
+		CRASH("No safe ship turfs found!")
+
+	for(var/cycle in 1 to length(potential_targets))
+		var/obj/docking_port/mobile/selected_ship = pick_n_take(potential_targets)
+		for(var/turf/potential_turf in pick(selected_ship.shuttle_areas))
+			if(!isfloorturf(potential_turf))
 				continue
-			trace_gases = TRUE
-			break
+			var/turf/open/floor/potential_floor = potential_turf
+			if(!potential_floor.air)
+				continue
 
-		// Can most things breathe?
-		if(trace_gases)
-			continue
-		if(A.get_moles(/datum/gas/oxygen) < 16)
-			continue
-		if(A.get_moles(/datum/gas/plasma))
-			continue
-		if(A.get_moles(/datum/gas/carbon_dioxide) >= 10)
-			continue
-
-		// Aim for goldilocks temperatures and pressure
-		if((A.return_temperature() <= 270) || (A.return_temperature() >= 360))
-			continue
-		var/pressure = A.return_pressure()
-		if((pressure <= 20) || (pressure >= 550))
-			continue
-
-		if(extended_safety_checks)
-			if(islava(F)) //chasms aren't /floor, and so are pre-filtered
-				var/turf/open/lava/L = F
-				if(!L.is_safe())
+			var/datum/gas_mixture/floor_gas_mix = potential_floor.air
+			var/trace_gases
+			for(var/id in floor_gas_mix.get_gases())
+				if(id in GLOB.hardcoded_gases)
 					continue
+				trace_gases = TRUE
+				break
 
-		// DING! You have passed the gauntlet, and are "probably" safe.
-		return F
+			// Can most things breathe?
+			if(trace_gases)
+				continue
+			if(floor_gas_mix.get_moles(GAS_O2) < 16)
+				continue
+			if(floor_gas_mix.get_moles(GAS_PLASMA))
+				continue
+			if(floor_gas_mix.get_moles(GAS_CO2) >= 10)
+				continue
+
+			// Aim for goldilocks temperatures and pressure
+			if((floor_gas_mix.return_temperature() <= 270) || (floor_gas_mix.return_temperature() >= 360))
+				continue
+			var/pressure = floor_gas_mix.return_pressure()
+			if((pressure <= 20) || (pressure >= 550))
+				continue
+
+			if(extended_safety_checks)
+				if(islava(potential_floor)) //chasms aren't /floor, and so are pre-filtered
+					var/turf/open/lava/potential_lava_floor = potential_floor
+					if(!potential_lava_floor.is_safe())
+						continue
+
+			// DING! You have passed the gauntlet, and are "probably" safe.
+			return potential_floor
 
 /proc/get_teleport_turfs(turf/center, precision = 0)
 	if(!precision)

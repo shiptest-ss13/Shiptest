@@ -18,6 +18,24 @@
 	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
 	tiled_dirt = FALSE
 
+/turf/open/floor/wood/mahogany
+	color = WOOD_COLOR_RICH
+
+/turf/open/floor/wood/maple
+	color = WOOD_COLOR_PALE
+
+/turf/open/floor/wood/ebony
+	color = WOOD_COLOR_BLACK
+
+/turf/open/floor/wood/walnut
+	color = WOOD_COLOR_CHOCOLATE
+
+/turf/open/floor/wood/bamboo
+	color = WOOD_COLOR_PALE2
+
+/turf/open/floor/wood/yew
+	color = WOOD_COLOR_YELLOW
+
 /turf/open/floor/wood/examine(mob/user)
 	. = ..()
 	. += "<span class='notice'>There's a few <b>screws</b> and a <b>small crack</b> visible.</span>"
@@ -62,7 +80,7 @@
 	return make_plating()
 
 /turf/open/floor/wood/cold
-	temperature = 255.37
+	initial_temperature = 255.37
 
 /turf/open/floor/wood/airless
 	initial_gas_mix = AIRLESS_ATMOS
@@ -289,6 +307,33 @@
 	floor_tile = /obj/item/stack/tile/carpet/royalblue
 	smoothing_groups = list(SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_CARPET_ROYAL_BLUE)
 	canSmoothWith = list(SMOOTH_GROUP_CARPET_ROYAL_BLUE)
+
+/turf/open/floor/carpet/executive
+	name = "executive carpet"
+	icon = 'icons/turf/floors/carpet_executive.dmi'
+	icon_state = "executive_carpet-255"
+	base_icon_state = "executive_carpet"
+	floor_tile = /obj/item/stack/tile/carpet/executive
+	smoothing_groups = list(SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_CARPET_EXECUTIVE)
+	canSmoothWith = list(SMOOTH_GROUP_CARPET_EXECUTIVE)
+
+/turf/open/floor/carpet/stellar
+	name = "stellar carpet"
+	icon = 'icons/turf/floors/carpet_stellar.dmi'
+	icon_state = "stellar_carpet-255"
+	base_icon_state = "stellar_carpet"
+	floor_tile = /obj/item/stack/tile/carpet/stellar
+	smoothing_groups = list(SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_CARPET_STELLAR)
+	canSmoothWith = list(SMOOTH_GROUP_CARPET_STELLAR)
+
+/turf/open/floor/carpet/donk
+	name = "Donk Co. carpet"
+	icon = 'icons/turf/floors/carpet_donk.dmi'
+	icon_state = "donk_carpet-255"
+	base_icon_state = "donk_carpet"
+	floor_tile = /obj/item/stack/tile/carpet/donk
+	smoothing_groups = list(SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_CARPET_DONK)
+	canSmoothWith = list(SMOOTH_GROUP_CARPET_DONK)
 
 //*****Airless versions of all of the above.*****
 /turf/open/floor/carpet/airless

@@ -114,10 +114,10 @@ GLOBAL_LIST_INIT(spider_last, world.file2list("strings/names/spider_last.txt"))
 	SW?.Remove(H)
 
 /datum/action/innate/spin_web
-    name = "Spin Web"
-    check_flags = AB_CHECK_HANDS_BLOCKED|AB_CHECK_IMMOBILE|AB_CHECK_CONSCIOUS
-    icon_icon = 'icons/mob/actions/actions_animal.dmi'
-    button_icon_state = "lay_web"
+	name = "Spin Web"
+	check_flags = AB_CHECK_HANDS_BLOCKED|AB_CHECK_IMMOBILE|AB_CHECK_CONSCIOUS
+	icon_icon = 'icons/mob/actions/actions_animal.dmi'
+	button_icon_state = "lay_web"
 
 /datum/action/innate/spin_cocoon
 	name = "Spin Cocoon"
@@ -142,7 +142,7 @@ GLOBAL_LIST_INIT(spider_last, world.file2list("strings/names/spider_last.txt"))
 	if(W || W2)
 		to_chat(H, "<span class='warning'>There's already a web here!</span>")
 		return
-	 // Should have some minimum amount of food before trying to activate
+	// Should have some minimum amount of food before trying to activate
 	var/nutrition_threshold = NUTRITION_LEVEL_FED
 	if (H.nutrition >= nutrition_threshold)
 		to_chat(H, "<i>You begin spinning some web...</i>")
@@ -177,8 +177,8 @@ GLOBAL_LIST_INIT(spider_last, world.file2list("strings/names/spider_last.txt"))
 		return
 	var/nutrition_threshold = NUTRITION_LEVEL_FED
 	if (H.nutrition >= nutrition_threshold)
-		to_chat(H, "<span class='warning'>You pull out a strand from your spinneret, ready to wrap a target. <BR>\
-		 (Press ALT+CLICK or MMB on the target to start wrapping.)</span>")
+		to_chat(H, "<span class='warning'>You pull out a strand from your spinneret, ready to wrap a target. <BR> \
+		(Press ALT+CLICK or MMB on the target to start wrapping.)</span>")
 		H.adjust_nutrition(E.spinner_rate * -0.5)
 		addtimer(VARSET_CALLBACK(E, web_ready, TRUE), E.web_cooldown)
 		RegisterSignal(H, list(COMSIG_MOB_MIDDLECLICKON, COMSIG_MOB_ALTCLICKON), .proc/cocoonAtom)

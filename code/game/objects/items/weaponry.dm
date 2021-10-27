@@ -223,12 +223,64 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 50)
 	resistance_flags = FIRE_PROOF
 
-/obj/item/katana/cursed
-	slot_flags = null
-
 /obj/item/katana/suicide_act(mob/user)
 	user.visible_message("<span class='suicide'>[user] is slitting [user.p_their()] stomach open with [src]! It looks like [user.p_theyre()] trying to commit seppuku!</span>")
 	return(BRUTELOSS)
+
+/obj/item/katana/cursed
+	name = "ominous katana"
+	desc = "A japanese single-edged blade, once used to contain an ancient evil. The being within is grateful for being released, but beware: <b>generosity has a price.</b></span>"
+	icon_state = "ominous_katana"
+	item_state = "ominous_katana"
+	icon = 'icons/obj/lavaland/artefacts.dmi'
+	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
+	force = 35
+	armour_penetration = 30
+	max_integrity = 500
+	resistance_flags = FIRE_PROOF | ACID_PROOF
+	var/essence = 0//Used for blade abilities, mainly heals(If I can safely implement this I will nerf the damage slightly, and boost the selfdam)
+	var/list/nemesis_factions = list("mining", "boss")
+	var/faction_bonus_force = 25
+
+/obj/item/katana/cursed/suicide_act(mob/user)
+	user.visible_message("<span class='suicide'>[user] is surrendering to the entity within [src]! It looks like [user.p_theyre()] trying to commit seppuku!</span>")
+	return(FIRELOSS)
+
+/obj/item/katana/cursed/examine(mob/user)
+	. = ..()
+	. += "<span class='notice'>To cut into the flesh of your target with this weapon is to feed the gluttonous emptiness within. Burn the blood of your enemies to replenish your own spent essence.</span>"
+
+/obj/item/katana/cursed/attack(mob/living/target, mob/living/user)
+	. = ..()
+	if(isliving(target) && target.stat != DEAD)
+		essence += rand(15, 20)
+
+//Transplanted almost directly from the transforming.dm nemesis code. This is how I lost my medical coding license.
+/obj/item/katana/cursed/attack(mob/living/target, mob/living/carbon/human/user)
+	var/nemesis_faction = FALSE
+	if(LAZYLEN(nemesis_factions))
+		for(var/F in target.faction)
+			if(F in nemesis_factions)
+				nemesis_faction = TRUE
+				force += faction_bonus_force
+				nemesis_effects(user, target)
+				break
+	. = ..()
+	if(nemesis_faction)
+		force -= faction_bonus_force
+
+/obj/item/katana/cursed/proc/nemesis_effects(mob/living/user, mob/living/target)
+	return
+
+/obj/item/katana/cursed/attack(mob/target, mob/living/carbon/human/user)
+	if(user.mind && user.owns_soul() && !is_devil(user))
+		to_chat(user, "<span class='warning'>You feel a terrible chill as the emptiness within [src] devours on your life force!</span>")
+		user.apply_damage(rand(2,3), BURN, pick(BODY_ZONE_L_ARM, BODY_ZONE_R_ARM, BODY_ZONE_CHEST, BODY_ZONE_HEAD, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG, BODY_ZONE_PRECISE_GROIN))
+		user.apply_damage(rand(2,3), BURN, pick(BODY_ZONE_L_ARM, BODY_ZONE_R_ARM, BODY_ZONE_CHEST, BODY_ZONE_HEAD, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG, BODY_ZONE_PRECISE_GROIN))
+		user.apply_damage(rand(3,4), BURN, pick(BODY_ZONE_L_ARM, BODY_ZONE_R_ARM, BODY_ZONE_CHEST, BODY_ZONE_HEAD, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG, BODY_ZONE_PRECISE_GROIN))
+		user.apply_damage(rand(3,4), BURN, pick(BODY_ZONE_L_ARM, BODY_ZONE_R_ARM, BODY_ZONE_CHEST, BODY_ZONE_HEAD, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG, BODY_ZONE_PRECISE_GROIN))
+	..()
 
 /obj/item/wirerod
 	name = "wired rod"
@@ -579,7 +631,7 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	item_state = "baseball_bat"
 	lefthand_file = 'icons/mob/inhands/weapons/melee_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/melee_righthand.dmi'
-	force = 10
+	force = 12
 	throwforce = 12
 	attack_verb = list("beat", "smacked")
 	custom_materials = list(/datum/material/wood = MINERAL_MATERIAL_AMOUNT * 3.5)
@@ -618,7 +670,7 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 		homerun_ready = 0
 		return
 	else if(!target.anchored)
-		target.throw_at(throw_target, rand(1,2), 7, user)
+		target.throw_at(throw_target, rand(1,2), 2, user, gentle = TRUE)
 
 /obj/item/melee/baseball_bat/ablative
 	name = "metal baseball bat"
@@ -627,6 +679,12 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	item_state = "baseball_bat_metal"
 	force = 12
 	throwforce = 15
+
+/obj/item/melee/baseball_bat/bone
+	name = "bone club"
+	desc = "A long and hard shaft of rock solid bone." // I am the master of comedy
+	icon_state = "baseball_bat_bone"
+	item_state = "baseball_bat_bone"
 
 /obj/item/melee/baseball_bat/ablative/IsReflect()//some day this will reflect thrown items instead of lasers
 	var/picksound = rand(1,2)
@@ -978,3 +1036,32 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 				owner.visible_message("<span class='danger'>[owner] parries [attack_text] with [src]!</span>")
 				return 1
 	return 0
+
+/obj/item/legion_staff
+	icon_state = "legion_staff"
+	lefthand_file = 'icons/mob/inhands/weapons/staves_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/weapons/staves_righthand.dmi'
+	name = "legionnaire staff"
+	desc = "The remnants of a legionnaire, reconstructed around a pole of bone. The skulls it produces are loyal to the wielder, seeming to recognize them as their host body. "
+	icon = 'icons/obj/guns/magic.dmi'
+	block_chance = 25
+	force = 15
+	throwforce = 10
+	throw_speed = 4
+	attack_verb = list("bit", "gnawed", "chomped")
+	w_class = WEIGHT_CLASS_NORMAL
+	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_BELT
+	hitsound = 'sound/weapons/bite.ogg'
+	var/next_use_time
+
+/obj/item/legion_staff/attack_self(mob/user)
+	if(next_use_time > world.time)
+		user.visible_message("<span class='warning'>[src] rattles in [user]'s hands, but nothing happens...</span>")
+		to_chat(user, "<span class='warning'><b>You need to wait longer to use this again.</b></span>")
+		return
+	user.visible_message("<span class='warning'>[user] raises the [src] and summons a legion skull!</span>")
+	for(var/i in 1 to 3)
+		var/mob/living/simple_animal/hostile/asteroid/hivelordbrood/legion/LegionSkull = new /mob/living/simple_animal/hostile/asteroid/hivelordbrood/legion(user.loc)
+		LegionSkull.faction = user.faction.Copy()
+		LegionSkull.friends += user
+	next_use_time = world.time + 6 SECONDS

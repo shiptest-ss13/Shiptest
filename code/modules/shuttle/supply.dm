@@ -33,9 +33,9 @@ GLOBAL_LIST_INIT(blacklisted_cargo_types, typecacheof(list(
 		/obj/item/gps
 	)))
 
+/*
 /obj/docking_port/mobile/supply
 	name = "supply shuttle"
-	id = "supply"
 	callTime = 600
 
 	dir = WEST
@@ -53,11 +53,6 @@ GLOBAL_LIST_INIT(blacklisted_cargo_types, typecacheof(list(
 	. = ..()
 	SSshuttle.supply = src
 
-/obj/docking_port/mobile/supply/canMove()
-	if(is_station_level(z))
-		return check_blacklist(shuttle_areas)
-	return ..()
-
 /obj/docking_port/mobile/supply/proc/check_blacklist(areaInstances)
 	for(var/place in areaInstances)
 		var/area/shuttle/shuttle_area = place
@@ -73,13 +68,14 @@ GLOBAL_LIST_INIT(blacklisted_cargo_types, typecacheof(list(
 		return 2
 	return ..()
 
+
 /obj/docking_port/mobile/supply/initiate_docking()
-	if(getDockedId() == "supply_away") // Buy when we leave home.
+	if(get_docked() == SSshuttle.supply_away_port) // Buy when we leave home.
 		buy()
 	. = ..() // Fly/enter transit.
 	if(. != DOCKING_SUCCESS)
 		return
-	if(getDockedId() == "supply_away") // Sell when we get home
+	if(get_docked() == SSshuttle.supply_away_port) // Sell when we get home
 		sell()
 
 /obj/docking_port/mobile/supply/proc/buy()
@@ -200,3 +196,4 @@ GLOBAL_LIST_INIT(blacklisted_cargo_types, typecacheof(list(
 
 	SSshuttle.centcom_message = msg
 	investigate_log("Shuttle contents sold for [D.account_balance - presale_points] credits. Contents: [ex.exported_atoms ? ex.exported_atoms.Join(",") + "." : "none."] Message: [SSshuttle.centcom_message || "none."]", INVESTIGATE_CARGO)
+*/

@@ -30,6 +30,7 @@
 	var/bitcoinmining = FALSE
 	///research points stored
 	var/stored_research = 0
+	var/datum/techweb/linked_techweb
 
 /obj/machinery/power/rad_collector/anchored/Initialize()
 	. = ..()
@@ -40,44 +41,40 @@
 	req_access = list(ACCESS_ENGINE_EQUIP, ACCESS_ATMOSPHERICS)
 
 /obj/machinery/power/rad_collector/Destroy()
+	linked_techweb = null
 	return ..()
-
-/*WS Edit - Smartwire Revert
-/obj/machinery/power/rad_collector/should_have_node()
-	return anchored
-*/
 
 /obj/machinery/power/rad_collector/process()
 	if(!loaded_tank)
 		return
 	if(!bitcoinmining)
-		if(loaded_tank.air_contents.get_moles(/datum/gas/plasma) < 0.0001)
+		if(loaded_tank.air_contents.get_moles(GAS_PLASMA) < 0.0001)
 			investigate_log("<font color='red'>out of fuel</font>.", INVESTIGATE_SINGULO)
 			playsound(src, 'sound/machines/ding.ogg', 50, TRUE)
 			eject()
 		else
-			var/gasdrained = min(powerproduction_drain*drainratio,loaded_tank.air_contents.get_moles(/datum/gas/plasma))
-			loaded_tank.air_contents.adjust_moles(/datum/gas/plasma, -gasdrained)
-			loaded_tank.air_contents.adjust_moles(/datum/gas/tritium, gasdrained)
+			var/gasdrained = min(powerproduction_drain*drainratio,loaded_tank.air_contents.get_moles(GAS_PLASMA))
+			loaded_tank.air_contents.adjust_moles(GAS_PLASMA, -gasdrained)
+			loaded_tank.air_contents.adjust_moles(GAS_TRITIUM, gasdrained)
 
 			var/power_produced = RAD_COLLECTOR_OUTPUT
 			add_avail(power_produced)
 			stored_energy-=power_produced
-	else if(is_station_level(z) && SSresearch.science_tech)
-		if(!loaded_tank.air_contents.get_moles(/datum/gas/tritium) || !loaded_tank.air_contents.get_moles(/datum/gas/oxygen))
+	else if(linked_techweb)
+		if(!loaded_tank.air_contents.get_moles(GAS_TRITIUM) || !loaded_tank.air_contents.get_moles(GAS_O2))
 			playsound(src, 'sound/machines/ding.ogg', 50, TRUE)
 			eject()
 		else
 			var/gasdrained = bitcoinproduction_drain*drainratio
-			loaded_tank.air_contents.adjust_moles(/datum/gas/tritium, -gasdrained)
-			loaded_tank.air_contents.adjust_moles(/datum/gas/oxygen, -gasdrained)
-			loaded_tank.air_contents.adjust_moles(/datum/gas/carbon_dioxide, gasdrained*2)
+			loaded_tank.air_contents.adjust_moles(GAS_TRITIUM, -gasdrained)
+			loaded_tank.air_contents.adjust_moles(GAS_O2, -gasdrained)
+			loaded_tank.air_contents.adjust_moles(GAS_CO2, gasdrained*2)
 			var/bitcoins_mined = RAD_COLLECTOR_OUTPUT
 			var/datum/bank_account/D = SSeconomy.get_dep_account(ACCOUNT_ENG)
 			if(D)
 				D.adjust_money(bitcoins_mined*RAD_COLLECTOR_MINING_CONVERSION_RATE)
 			stored_research += bitcoins_mined*RAD_COLLECTOR_MINING_CONVERSION_RATE*PRIVATE_TECHWEB_GAIN
-			SSresearch.science_tech.add_point_type(TECHWEB_POINT_TYPE_DEFAULT, bitcoins_mined*RAD_COLLECTOR_MINING_CONVERSION_RATE*PUBLIC_TECHWEB_GAIN)
+			linked_techweb.add_point_type(TECHWEB_POINT_TYPE_DEFAULT, bitcoins_mined*RAD_COLLECTOR_MINING_CONVERSION_RATE*PUBLIC_TECHWEB_GAIN)
 			stored_energy-=bitcoins_mined
 
 /obj/machinery/power/rad_collector/interact(mob/user)
@@ -86,7 +83,8 @@
 			toggle_power()
 			user.visible_message("<span class='notice'>[user.name] turns the [src.name] [active? "on":"off"].</span>", \
 			"<span class='notice'>You turn the [src.name] [active? "on":"off"].</span>")
-			investigate_log("turned [active?"<font color='green'>on</font>":"<font color='red'>off</font>"] by [key_name(user)]. [loaded_tank?"Fuel: [round((loaded_tank.air_contents.get_moles(/datum/gas/plasma))/0.29)]%":"<font color='red'>It is empty</font>"].", INVESTIGATE_SINGULO)
+			var/fuel = loaded_tank?.air_contents.get_moles(GAS_PLASMA)
+			investigate_log("turned [active?"<font color='green'>on</font>":"<font color='red'>off</font>"] by [key_name(user)]. [loaded_tank?"Fuel: [round(fuel/0.29)]%":"<font color='red'>It is empty</font>"].", INVESTIGATE_SUPERMATTER)
 			return
 		else
 			to_chat(user, "<span class='warning'>The controls are locked!</span>")
@@ -169,15 +167,18 @@
 	return TRUE
 
 /obj/machinery/power/rad_collector/multitool_act(mob/living/user, obj/item/I)
-	if(!is_station_level(z) && !SSresearch.science_tech)
-		to_chat(user, "<span class='warning'>[src] isn't linked to a research system!</span>")
-		return TRUE
 	if(locked)
 		to_chat(user, "<span class='warning'>[src] is locked!</span>")
 		return TRUE
 	if(active)
 		to_chat(user, "<span class='warning'>[src] is currently active, producing [bitcoinmining ? "research points":"power"].</span>")
 		return TRUE
+	var/obj/item/multitool/multi = I
+	if(istype(multi.buffer, /obj/machinery/rnd/server))
+		var/obj/machinery/rnd/server/serv = multi.buffer
+		linked_techweb = serv.stored_research
+		visible_message("Linked to Server!")
+		return
 	bitcoinmining = !bitcoinmining
 	to_chat(user, "<span class='warning'>You [bitcoinmining ? "enable":"disable"] the research point production feature of [src].</span>")
 	return TRUE

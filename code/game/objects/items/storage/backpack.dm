@@ -218,6 +218,7 @@
 	desc = "A trendy looking satchel."
 	icon_state = "satchel-norm"
 	item_state = "satchel-norm"
+	species_exception = list(/datum/species/teshari)	//WS edit - Tesh can use satchels
 
 /obj/item/storage/backpack/satchel/leather
 	name = "leather satchel"
@@ -338,6 +339,8 @@
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_combined_w_class = 30
+	LAZYINITLIST(STR.exception_hold) // This code allows you to fit one mob holder into a duffel bag
+	STR.exception_hold += typecacheof(/obj/item/clothing/head/mob_holder)
 
 /obj/item/storage/backpack/duffelbag/captain
 	name = "captain's duffel bag"

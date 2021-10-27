@@ -34,15 +34,15 @@
 	impact_area = findEventArea()
 	if(!impact_area)
 		CRASH("No valid areas for anomaly found.")
-	var/list/turf_test = get_areatype_turfs(impact_area)
+	var/list/turf_test = get_area_turfs(impact_area)
 	if(!turf_test.len)
 		CRASH("Anomaly : No valid turfs found for [impact_area] - [impact_area.type]")
 
 /datum/round_event/anomaly/announce(fake)
-	priority_announce("Localized energetic flux wave detected on long range scanners. Expected location of impact: [impact_area.name].", "Anomaly Alert")
+	priority_announce("Localized energetic flux wave detected on long range scanners. Expected location of impact: [impact_area.name].", "Anomaly Alert", zlevel = impact_area.get_virtual_z_level())
 
 /datum/round_event/anomaly/start()
-	var/turf/T = pick(get_areatype_turfs(impact_area))
+	var/turf/T = pick(get_area_turfs(impact_area))
 	var/newAnomaly
 	if(T)
 		newAnomaly = new anomaly_path(T)

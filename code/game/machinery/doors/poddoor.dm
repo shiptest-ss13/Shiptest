@@ -15,9 +15,10 @@
 	resistance_flags = FIRE_PROOF
 	damage_deflection = 70
 	poddoor = TRUE
-
-/obj/machinery/door/poddoor/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock, idnum, override=FALSE)
-	id = "[idnum][id]"
+	var/open_sound = 'sound/machines/blastdoor.ogg'
+	var/close_sound = 'sound/machines/blastdoor.ogg'
+/obj/machinery/door/poddoor/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock)
+	id = "[REF(port)][id]"
 
 /obj/machinery/door/poddoor/preopen
 	icon_state = "open"
@@ -77,10 +78,10 @@
 	switch(animation)
 		if("opening")
 			flick("opening", src)
-			playsound(src, 'sound/machines/blastdoor.ogg', 30, TRUE)
+			playsound(src, open_sound, 30, TRUE)
 		if("closing")
 			flick("closing", src)
-			playsound(src, 'sound/machines/blastdoor.ogg', 30, TRUE)
+			playsound(src, close_sound, 30, TRUE)
 
 /obj/machinery/door/poddoor/update_icon_state()
 	if(density)

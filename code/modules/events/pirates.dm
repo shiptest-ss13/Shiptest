@@ -90,111 +90,8 @@
 
 	priority_announce("Unidentified armed ship detected near the station.")
 
-//Shuttle equipment
-
-/obj/machinery/shuttle_scrambler
-	name = "Data Siphon"
-	desc = "This heap of machinery steals credits and data from unprotected systems and locks down cargo shuttles."
-	icon = 'icons/obj/machines/dominator.dmi'
-	icon_state = "dominator"
-	density = TRUE
-	var/active = FALSE
-	var/credits_stored = 0
-	var/siphon_per_tick = 5
-
-/obj/machinery/shuttle_scrambler/Initialize(mapload)
-	. = ..()
-	update_icon()
-
-/obj/machinery/shuttle_scrambler/process()
-	if(active)
-		if(is_station_level(z))
-			var/datum/bank_account/D = SSeconomy.get_dep_account(ACCOUNT_CAR)
-			if(D)
-				var/siphoned = min(D.account_balance,siphon_per_tick)
-				D.adjust_money(-siphoned)
-				credits_stored += siphoned
-			interrupt_research()
-		else
-			return
-	else
-		STOP_PROCESSING(SSobj,src)
-
-/obj/machinery/shuttle_scrambler/proc/toggle_on(mob/user)
-	SSshuttle.registerTradeBlockade(src)
-	AddComponent(/datum/component/gps, "Nautical Signal")
-	active = TRUE
-	to_chat(user,"<span class='notice'>You toggle [src] [active ? "on":"off"].</span>")
-	to_chat(user,"<span class='warning'>The scrambling signal can be now tracked by GPS.</span>")
-	START_PROCESSING(SSobj,src)
-
-/obj/machinery/shuttle_scrambler/interact(mob/user)
-	if(!active)
-		if(alert(user, "Turning the scrambler on will make the shuttle trackable by GPS. Are you sure you want to do it?", "Scrambler", "Yes", "Cancel") == "Cancel")
-			return
-		if(active || !user.canUseTopic(src, BE_CLOSE))
-			return
-		toggle_on(user)
-		update_icon()
-		send_notification()
-	else
-		dump_loot(user)
-
-//interrupt_research
-/obj/machinery/shuttle_scrambler/proc/interrupt_research()
-	for(var/obj/machinery/rnd/server/S in GLOB.machines)
-		if(S.machine_stat & (NOPOWER|BROKEN))
-			continue
-		S.emp_act(1)
-		new /obj/effect/temp_visual/emp(get_turf(S))
-
-/obj/machinery/shuttle_scrambler/proc/dump_loot(mob/user)
-	if(credits_stored)	// Prevents spamming empty holochips
-		new /obj/item/holochip(drop_location(), credits_stored)
-		to_chat(user,"<span class='notice'>You retrieve the siphoned credits!</span>")
-		credits_stored = 0
-	else
-		to_chat(user,"<span class='notice'>There's nothing to withdraw.</span>")
-
-/obj/machinery/shuttle_scrambler/proc/send_notification()
-	priority_announce("Data theft signal detected, source registered on local gps units.")
-
-/obj/machinery/shuttle_scrambler/proc/toggle_off(mob/user)
-	SSshuttle.clearTradeBlockade(src)
-	active = FALSE
-	STOP_PROCESSING(SSobj,src)
-
-/obj/machinery/shuttle_scrambler/update_icon_state()
-	if(active)
-		icon_state = "dominator-blue"
-	else
-		icon_state = "dominator"
-
-/obj/machinery/shuttle_scrambler/Destroy()
-	toggle_off()
-	return ..()
-
-/obj/machinery/computer/shuttle/pirate
-	name = "pirate shuttle console"
-	shuttleId = "pirateship"
-	icon_screen = "syndishuttle"
-	icon_keyboard = "syndie_key"
-	light_color = COLOR_SOFT_RED
-	possible_destinations = "pirateship_away;pirateship_home;pirateship_custom"
-
-/obj/machinery/computer/camera_advanced/shuttle_docker/syndicate/pirate
-	name = "pirate shuttle navigation computer"
-	desc = "Used to designate a precise transit location for the pirate shuttle."
-	shuttleId = "pirateship"
-	lock_override = CAMERA_LOCK_STATION
-	shuttlePortId = "pirateship_custom"
-	x_offset = 9
-	y_offset = 0
-	see_hidden = FALSE
-
 /obj/docking_port/mobile/pirate
 	name = "pirate shuttle"
-	id = "pirateship"
 	rechargeTime = 3 MINUTES
 
 /obj/machinery/suit_storage_unit/pirate
@@ -433,9 +330,7 @@
 
 /datum/export/pirate/parrot/find_loot()
 	for(var/mob/living/simple_animal/parrot/P in GLOB.alive_mob_list)
-		var/turf/T = get_turf(P)
-		if(T && is_station_level(T.z))
-			return P
+		return P
 
 /datum/export/pirate/cash
 	cost = 1

@@ -13,22 +13,43 @@
 		All sales are near instantaneous - please choose carefully"
 	icon_screen = "supply_express"
 	circuit = /obj/item/circuitboard/computer/cargo/express
-	blockade_warning = "Bluespace instability detected. Delivery impossible."
-	req_access = list(ACCESS_QM)
+	var/blockade_warning = "Bluespace instability detected. Delivery impossible."
 
 	var/message
-	var/printed_beacons = 0 //number of beacons printed. Used to determine beacon names.
+	/// Number of beacons printed. Used to determine beacon names.
+	var/printed_beacons = 0
 	var/list/meme_pack_data
-	var/obj/item/supplypod_beacon/beacon //the linked supplypod beacon
-	var/area/landingzone = /area/ship/cargo //where we droppin boys
+	/// The currently linked supplypod beacon
+	var/obj/item/supplypod_beacon/beacon
+	/// Area instance that cargo pods are sent to
+	var/area/landingzone
+	/// The pod type used to deliver orders
 	var/podType = /obj/structure/closet/supplypod
-	var/cooldown = 0 //cooldown to prevent printing supplypod beacon spam
-	var/locked = TRUE //is the console locked? unlock with ID
-	var/usingBeacon = FALSE //is the console in beacon mode? exists to let beacon know when a pod may come in
+	/// Cooldown to prevent printing supplypod beacon spam
+	var/cooldown = 0
+	/// Is the console in beacon mode? exists to let beacon know when a pod may come in
+	var/usingBeacon = FALSE
+	/// The account to charge purchases to, defaults to the cargo budget
+	var/datum/bank_account/charge_account
 
 /obj/machinery/computer/cargo/express/Initialize()
 	. = ..()
 	packin_up()
+
+/obj/machinery/computer/cargo/express/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock)
+	. = ..()
+	reconnect(port)
+
+/obj/machinery/computer/cargo/express/proc/reconnect(obj/docking_port/mobile/port)
+	if(!port)
+		var/area/ship/current_area = get_area(src)
+		if(!istype(current_area))
+			return
+		port = current_area.mobile_port
+	if(!port)
+		return
+	charge_account = port.current_ship?.ship_account
+	landingzone = locate(/area/ship/cargo) in port.shuttle_areas
 
 /obj/machinery/computer/cargo/express/Destroy()
 	if(beacon)
@@ -36,11 +57,7 @@
 	return ..()
 
 /obj/machinery/computer/cargo/express/attackby(obj/item/W, mob/living/user, params)
-	if((istype(W, /obj/item/card/id) || istype(W, /obj/item/pda)) && allowed(user))
-		locked = !locked
-		to_chat(user, "<span class='notice'>You [locked ? "lock" : "unlock"] the interface.</span>")
-		return
-	else if(istype(W, /obj/item/disk/cargo/bluespace_pod))
+	if(istype(W, /obj/item/disk/cargo/bluespace_pod))
 		podType = /obj/structure/closet/supplypod/bluespacepod//doesnt effect circuit board, making reversal possible
 		to_chat(user, "<span class='notice'>You insert the disk into [src], allowing for advanced supply delivery vehicles.</span>")
 		qdel(W)
@@ -91,19 +108,19 @@
 	if(!ui)
 		ui = new(user, src, "CargoExpress", name)
 		ui.open()
+		if(!charge_account)
+			reconnect()
 
 /obj/machinery/computer/cargo/express/ui_data(mob/user)
 	var/canBeacon = beacon && (isturf(beacon.loc) || ismob(beacon.loc))//is the beacon in a valid location?
 	var/list/data = list()
-	var/datum/bank_account/D = SSeconomy.get_dep_account(ACCOUNT_CAR)
-	if(D)
-		data["points"] = D.account_balance
-	data["locked"] = locked//swipe an ID to unlock
+	if(charge_account)
+		data["points"] = charge_account.account_balance
 	data["siliconUser"] = user.has_unlimited_silicon_privilege
 	data["beaconzone"] = beacon ? get_area(beacon) : ""//where is the beacon located? outputs in the tgui
 	data["usingBeacon"] = usingBeacon //is the mode set to deliver to the beacon or the cargobay?
 	data["canBeacon"] = !usingBeacon || canBeacon //is the mode set to beacon delivery, and is the beacon in a valid location?
-	data["canBuyBeacon"] = cooldown <= 0 && D.account_balance >= BEACON_COST
+	data["canBuyBeacon"] = cooldown <= 0 && charge_account.account_balance >= BEACON_COST
 	data["beaconError"] = usingBeacon && !canBeacon ? "(BEACON ERROR)" : ""//changes button text to include an error alert if necessary
 	data["hasBeacon"] = beacon != null//is there a linked beacon?
 	data["beaconName"] = beacon ? beacon.name : "No Beacon Found"
@@ -142,15 +159,12 @@
 			if (beacon)
 				beacon.update_status(SP_READY) //turns on the beacon's ready light
 		if("printBeacon")
-			var/datum/bank_account/D = SSeconomy.get_dep_account(ACCOUNT_CAR)
-			if(D)
-				if(D.adjust_money(-BEACON_COST))
-					cooldown = 10//a ~ten second cooldown for printing beacons to prevent spam
-					var/obj/item/supplypod_beacon/C = new /obj/item/supplypod_beacon(drop_location())
-					C.link_console(src, usr)//rather than in beacon's Initialize(), we can assign the computer to the beacon by reusing this proc)
-					printed_beacons++//printed_beacons starts at 0, so the first one out will be called beacon # 1
-					beacon.name = "Supply Pod Beacon #[printed_beacons]"
-
+			if(charge_account?.adjust_money(-BEACON_COST))
+				cooldown = 10//a ~ten second cooldown for printing beacons to prevent spam
+				var/obj/item/supplypod_beacon/C = new /obj/item/supplypod_beacon(drop_location())
+				C.link_console(src, usr)//rather than in beacon's Initialize(), we can assign the computer to the beacon by reusing this proc)
+				printed_beacons++//printed_beacons starts at 0, so the first one out will be called beacon # 1
+				beacon.name = "Supply Pod Beacon #[printed_beacons]"
 
 		if("add")//Generate Supply Order first
 			var/id = text2path(params["id"])
@@ -171,9 +185,8 @@
 			var/list/empty_turfs
 			var/datum/supply_order/SO = new(pack, name, rank, ckey, reason)
 			var/points_to_check
-			var/datum/bank_account/D = SSeconomy.get_dep_account(ACCOUNT_CAR)
-			if(D)
-				points_to_check = D.account_balance
+			if(charge_account)
+				points_to_check = charge_account.account_balance
 			if(!(obj_flags & EMAGGED))
 				if(SO.pack.cost <= points_to_check)
 					var/LZ
@@ -181,9 +194,10 @@
 						LZ = get_turf(beacon)
 						beacon.update_status(SP_LAUNCH)
 					else if (!usingBeacon)//find a suitable supplypod landing zone in cargobay
-						landingzone = GLOB.areas_by_type[/area/ship/cargo]
+						if(!landingzone)
+							reconnect()
 						if (!landingzone)
-							WARNING("[src] couldnt find a Ship/Cargo (aka cargobay) area on the station, and as such it has set the supplypod landingzone to the area it resides in.")
+							WARNING("[src] couldnt find a Ship/Cargo (aka cargobay) area on a ship, and as such it has set the supplypod landingzone to the area it resides in.")
 							landingzone = get_area(src)
 						for(var/turf/open/floor/T in landingzone.contents)//uses default landing zone
 							if(T.is_blocked_turf())
@@ -193,7 +207,7 @@
 						if(empty_turfs && empty_turfs.len)
 							LZ = pick(empty_turfs)
 					if (SO.pack.cost <= points_to_check && LZ)//we need to call the cost check again because of the CHECK_TICK call
-						D.adjust_money(-SO.pack.cost)
+						charge_account.adjust_money(-SO.pack.cost)
 						new /obj/effect/DPtarget(LZ, podType, SO)
 						. = TRUE
 						update_icon()
@@ -205,7 +219,7 @@
 						LAZYADD(empty_turfs, T)
 						CHECK_TICK
 					if(empty_turfs && empty_turfs.len)
-						D.adjust_money(-(SO.pack.cost * (0.72*MAX_EMAG_ROCKETS)))
+						charge_account.adjust_money(-(SO.pack.cost * (0.72*MAX_EMAG_ROCKETS)))
 
 						SO.generateRequisition(get_turf(src))
 						for(var/i in 1 to MAX_EMAG_ROCKETS)

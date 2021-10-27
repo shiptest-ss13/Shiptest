@@ -34,7 +34,7 @@
 /area/shuttle/proc/link_to_shuttle(obj/docking_port/mobile/M)
 	mobile_port = M
 
-/area/shuttle/get_virtual_z()
+/area/shuttle/get_virtual_z_level()
 	if(mobile_port)
 		return mobile_port.get_virtual_z_level()
 	return ..()
@@ -180,9 +180,6 @@
 
 /area/shuttle/transport
 	name = "Transport Shuttle"
-
-/area/shuttle/assault_pod
-	name = "Steel Rain"
 
 /area/shuttle/sbc_starfury
 	name = "SBC Starfury"

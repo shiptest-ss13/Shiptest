@@ -227,7 +227,7 @@ But you can call procs that are of type /mob/living/carbon/human/proc/ for that 
 	message_admins("<span class='adminnotice'>[key_name_admin(usr)] has granted [M.key] full access.</span>")
 
 /client/proc/cmd_assume_direct_control(mob/M in GLOB.mob_list)
-	set category = "Admin - Game"
+	set category = "Admin.Game"
 	set name = "Assume direct control"
 	set desc = "Direct intervention"
 
@@ -248,7 +248,7 @@ But you can call procs that are of type /mob/living/carbon/human/proc/ for that 
 	SSblackbox.record_feedback("tally", "admin_verb", 1, "Assume Direct Control") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 /client/proc/cmd_give_direct_control(mob/M in GLOB.mob_list)
-	set category = "Admin - Game"
+	set category = "Admin.Game"
 	set name = "Give direct control"
 
 	if(!M)
@@ -309,7 +309,7 @@ But you can call procs that are of type /mob/living/carbon/human/proc/ for that 
 	popup.set_content(dat.Join())
 	popup.open()
 
-/client/proc/cmd_admin_areatest(on_station)
+/client/proc/cmd_admin_areatest()
 	set category = "Mapping"
 	set name = "Test Areas"
 
@@ -323,33 +323,15 @@ But you can call procs that are of type /mob/living/carbon/human/proc/ for that 
 	var/list/areas_with_LS = list()
 	var/list/areas_with_intercom = list()
 	var/list/areas_with_camera = list()
-	var/list/station_areas_blacklist = typecacheof(list(/area/shuttle, /area/ship/engineering/engine, /area/space, /area/solar, /area/mine, /area/ruin, /area/asteroid))
-
 	if(SSticker.current_state == GAME_STATE_STARTUP)
 		to_chat(usr, "Game still loading, please hold!", confidential = TRUE)
 		return
 
-	var/log_message
-	if(on_station)
-		dat += "<b>Only checking areas on station z-levels.</b><br><br>"
-		log_message = "station z-levels"
-	else
-		log_message = "all z-levels"
-
-	message_admins("<span class='adminnotice'>[key_name_admin(usr)] used the Test Areas debug command checking [log_message].</span>")
-	log_admin("[key_name(usr)] used the Test Areas debug command checking [log_message].")
+	message_admins("<span class='adminnotice'>[key_name_admin(usr)] used the Test Areas debug command checking all z-levels.</span>")
+	log_admin("[key_name(usr)] used the Test Areas debug command checking z-levels.")
 
 	for(var/area/A in world)
-		if(on_station)
-			var/list/area_turfs = get_area_turfs(A)
-			if (!length(area_turfs))
-				continue
-			var/turf/picked = pick(area_turfs)
-			if(is_station_level(picked.z))
-				if(!(A.type in areas_all) && !is_type_in_typecache(A, station_areas_blacklist))
-					areas_all.Add(A.type)
-		else if(!(A.type in areas_all))
-			areas_all.Add(A.type)
+		areas_all.Add(A.type)
 		CHECK_TICK
 
 	for(var/obj/machinery/power/apc/APC in GLOB.apcs_list)
@@ -492,7 +474,7 @@ But you can call procs that are of type /mob/living/carbon/human/proc/ for that 
 	cmd_admin_areatest(FALSE)
 
 /client/proc/cmd_admin_dress(mob/M in GLOB.mob_list)
-	set category = "Admin - Events"
+	set category = "Admin.Events"
 	set name = "Select equipment"
 	if(!(ishuman(M) || isobserver(M)))
 		alert("Invalid mob")
@@ -624,7 +606,7 @@ But you can call procs that are of type /mob/living/carbon/human/proc/ for that 
 		if(Rad.anchored)
 			if(!Rad.loaded_tank)
 				var/obj/item/tank/internals/plasma/Plasma = new/obj/item/tank/internals/plasma(Rad)
-				Plasma.air_contents.set_moles(/datum/gas/plasma, 70)
+				Plasma.air_contents.set_moles(GAS_PLASMA, 70)
 				Rad.drainratio = 0
 				Rad.loaded_tank = Plasma
 				Plasma.forceMove(Rad)
@@ -763,15 +745,9 @@ But you can call procs that are of type /mob/living/carbon/human/proc/ for that 
 	names += "---- Ice Ruins ----"
 	for(var/name in SSmapping.ice_ruins_templates)
 		names[name] = list(SSmapping.ice_ruins_templates[name], ZTRAIT_ICE_RUINS, list(/area/icemoon/surface/outdoors/unexplored, /area/icemoon/underground/unexplored))
-	names += "---- Ice Underground Ruins ----"
-	for(var/name in SSmapping.ice_ruins_underground_templates)
-		names[name] = list(SSmapping.ice_ruins_underground_templates[name], ZTRAIT_ICE_RUINS_UNDERGROUND, list(/area/icemoon/underground/unexplored))
 	names += "---- Sand Ruins ----"
 	for(var/name in SSmapping.sand_ruins_templates)
 		names[name] = list(SSmapping.sand_ruins_templates[name], ZTRAIT_SAND_RUINS, list(/area/whitesands/surface/outdoors/unexplored))
-	names += "---- Sand Mob Camps ----"
-	for(var/name in SSmapping.sand_camps_templates)
-		names[name] = list(SSmapping.sand_camps_templates[name], ZTRAIT_SAND_RUINS, list(/area/whitesands/surface/outdoors/explored))
 
 	var/ruinname = input("Select ruin", "Spawn Ruin") as null|anything in sortList(names)
 	var/data = names[ruinname]

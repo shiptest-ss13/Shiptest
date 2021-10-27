@@ -37,7 +37,7 @@
 
 /obj/machinery/computer/cargo/Destroy()
 	QDEL_NULL(radio)
-	..()
+	return ..()
 
 /obj/machinery/computer/cargo/proc/get_export_categories()
 	. = EXPORT_CARGO
@@ -74,11 +74,9 @@
 	var/datum/bank_account/D = SSeconomy.get_dep_account(ACCOUNT_CAR)
 	if(D)
 		data["points"] = D.account_balance
-	data["away"] = SSshuttle.supply.getDockedId() == "supply_away"
+	data["away"] = SSshuttle.supply.get_docked() == SSshuttle.supply_away_port
 	data["self_paid"] = self_paid
 	data["docked"] = SSshuttle.supply.mode == SHUTTLE_IDLE
-	data["loan"] = !!SSshuttle.shuttle_loan
-	data["loan_dispatched"] = SSshuttle.shuttle_loan && SSshuttle.shuttle_loan.dispatched
 	var/message = "Remember to stamp and send back the supply manifests."
 	if(SSshuttle.centcom_message)
 		message = SSshuttle.centcom_message
@@ -142,33 +140,19 @@
 			if(SSshuttle.supplyBlocked)
 				say(blockade_warning)
 				return
-			if(SSshuttle.supply.getDockedId() == "supply_home")
+			if(SSshuttle.supply.get_docked() == SSshuttle.supply_home_port)
 				SSshuttle.supply.export_categories = get_export_categories()
-				SSshuttle.moveShuttle("supply", "supply_away", TRUE)
+				SSshuttle.moveShuttle(SSshuttle.supply, SSshuttle.supply_away_port, TRUE)
 				say("The supply shuttle is departing.")
 				investigate_log("[key_name(usr)] sent the supply shuttle away.", INVESTIGATE_CARGO)
 			else
 				investigate_log("[key_name(usr)] called the supply shuttle.", INVESTIGATE_CARGO)
 				say("The supply shuttle has been called and will arrive in [SSshuttle.supply.timeLeft(600)] minutes.")
-				SSshuttle.moveShuttle("supply", "supply_home", TRUE)
+				SSshuttle.moveShuttle(SSshuttle.supply, SSshuttle.supply_home_port, TRUE)
 			. = TRUE
-		if("loan")
-			if(!SSshuttle.shuttle_loan)
-				return
-			if(SSshuttle.supplyBlocked)
-				say(blockade_warning)
-				return
-			else if(SSshuttle.supply.mode != SHUTTLE_IDLE)
-				return
-			else if(SSshuttle.supply.getDockedId() != "supply_away")
-				return
-			else
-				SSshuttle.shuttle_loan.loan_shuttle()
-				say("The supply shuttle has been loaned to CentCom.")
-				investigate_log("[key_name(usr)] accepted a shuttle loan event.", INVESTIGATE_CARGO)
-				log_game("[key_name(usr)] accepted a shuttle loan event.")
-				. = TRUE
 		if("add")
+			if(istype(src, /obj/machinery/computer/cargo/express))
+				return
 			var/id = text2path(params["id"])
 			var/datum/supply_pack/pack = SSshuttle.supply_packs[id]
 			if(!istype(pack))

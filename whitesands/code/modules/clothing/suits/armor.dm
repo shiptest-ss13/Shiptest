@@ -1,3 +1,11 @@
+/obj/item/clothing/suit/armor/vest/lieutenant
+	name = "lieutenant's armor"
+	desc = "An armored vest with the lieutenant's insignia imprinted on it."
+	icon = 'whitesands/icons/obj/clothing/suits.dmi'
+	mob_overlay_icon = 'whitesands/icons/mob/clothing/suits.dmi'
+	icon_state = "blueshield"
+	item_state = "blueshield"
+
 /obj/item/clothing/suit/armor/vest/solgov
 	name = "\improper SolGov armor vest"
 	desc = "A standard armor vest fielded for SolGov's infantry."
@@ -32,3 +40,11 @@
 	icon_state = "syndiearmor"
 	item_state = "syndiearmor"
 
+/obj/item/clothing/suit/armor/vest/scrap_armor
+	name = "\improper Scrap Armor"
+	desc = "Who thought this is a good idea for armor?"
+	icon = 'whitesands/icons/obj/clothing/suits.dmi'
+	mob_overlay_icon = 'whitesands/icons/mob/clothing/suits.dmi'
+	icon_state = "scraparmor"
+	item_state = "scraparmor"
+	armor = list(melee = 5)

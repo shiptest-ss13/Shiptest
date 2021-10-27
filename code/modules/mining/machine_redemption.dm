@@ -9,7 +9,6 @@
 	density = TRUE
 	input_dir = NORTH
 	output_dir = SOUTH
-	req_access = list(ACCESS_MINERAL_STOREROOM)
 	layer = BELOW_OBJ_LAYER
 	circuit = /obj/item/circuitboard/machine/ore_redemption
 	needs_item_input = TRUE
@@ -18,8 +17,6 @@
 	var/points = 0
 	var/ore_multiplier = 1
 	var/point_upgrade = 1
-	/// Variable that holds a timer which is used for callbacks to `send_console_message()`. Used for preventing multiple calls to this proc while the ORM is eating a stack of ores.
-	var/console_notify_timer
 	var/datum/techweb/stored_research
 	var/obj/item/disk/design_disk/inserted_disk
 	var/datum/component/remote_materials/materials
@@ -109,37 +106,6 @@
 	for(var/ore in ores_to_process)
 		smelt_ore(ore)
 
-/obj/machinery/mineral/ore_redemption/proc/send_console_message()
-	var/datum/component/material_container/mat_container = materials.mat_container
-	if(!mat_container || !is_station_level(z))
-		return
-
-	console_notify_timer = null
-
-	var/area/A = get_area(src)
-	var/msg = "Now available in [A]:<br>"
-
-	var/has_minerals = FALSE
-
-	for(var/mat in mat_container.materials)
-		var/datum/material/M = mat
-		var/mineral_amount = mat_container.materials[mat] / MINERAL_MATERIAL_AMOUNT
-		if(mineral_amount)
-			has_minerals = TRUE
-		msg += "[capitalize(M.name)]: [mineral_amount] sheets<br>"
-
-	if(!has_minerals)
-		return
-
-	var/datum/signal/subspace/messaging/rc/signal = new(src, list(
-		"ore_update" = TRUE,
-		"sender" = "Ore Redemption Machine",
-		"message" = msg,
-		"verified" = "<font color='green'><b>Verified by Ore Redemption Machine</b></font>",
-		"priority" = REQ_NORMAL_MESSAGE_PRIORITY
-	))
-	signal.send_to_receivers()
-
 /obj/machinery/mineral/ore_redemption/pickup_item(datum/source, atom/movable/target, atom/oldLoc)
 	if(QDELETED(target))
 		return
@@ -154,10 +120,6 @@
 		smelt_ore(O)
 	else
 		return
-
-	if(!console_notify_timer)
-		// gives 5 seconds for a load of ores to be sucked up by the ORM before it sends out request console notifications. This should be enough time for most deposits that people make
-		console_notify_timer = addtimer(CALLBACK(src, .proc/send_console_message), 5 SECONDS)
 
 /obj/machinery/mineral/ore_redemption/default_unfasten_wrench(mob/user, obj/item/I)
 	. = ..()

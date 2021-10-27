@@ -252,6 +252,42 @@
 	id = "kinggoatboss"
 	description = "Abandon All Hope Ye Who Enter Here."
 	suffix = "kinggoatboss.dmm"
-	always_place = TRUE
+
+/datum/map_template/ruin/lavaland/comm_outpost
+	name = "Syndicate Comm Outpost"
+	id = "commoutpost"
+	description = "A forgotten outpost home to only a tragic tale."
+	suffix = "lavaland_surface_comm_outpost.dmm"
 	allow_duplicates = FALSE
-	always_spawn_with = list(/datum/map_template/ruin/space/kinggoatarena = PLACE_RESERVED)
+	cost = 5
+
+/datum/map_template/ruin/lavaland/dwarffortress
+	name = "Legion infested Dwarf Fortress"
+	id = "dwarffortress"
+	description = "A forgotten fortress home to only a tragic tale and infested corpses."
+	suffix = "lavaland_surface_dwarffortress.dmm"
+	allow_duplicates = FALSE
+
+/datum/map_template/ruin/lavaland/boss/bubblegum
+	name = "Bubblegum Ritual"
+	id = "bubblegum-ritual"
+	description = "A giant hulking flesh monster, cartoonishly named 'Bubblegum', has recently awoken here."
+	suffix = "bubblegum_ruin.dmm"
+
+/datum/map_template/ruin/lavaland/boss/drake
+	name = "Dragon Cave"
+	id = "dragon-cave"
+	description = "A dragon has taken lodging in this here cave, storing its riches and valuables."
+	suffix = "drake_ruin.dmm"
+
+/datum/map_template/ruin/lavaland/boss/colossus
+	name = "Colossus Cross"
+	id = "colossus-cross"
+	description = "The almighty one, here in this chunk of rock called lavaland."
+	suffix = "colossus_ruin.dmm"
+
+/datum/map_template/ruin/lavaland/ashwalker_shrine
+	name = "Ashwalker shrine"
+	id = "ashwalker_shrine"
+	description = "A destroyed ashwalker village. What even happened here?"
+	suffix = "ashwalker_shrine.dmm"

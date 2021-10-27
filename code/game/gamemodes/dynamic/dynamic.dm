@@ -1,7 +1,7 @@
-#define ONLY_RULESET       1
+#define ONLY_RULESET 1
 #define HIGHLANDER_RULESET 2
-#define TRAITOR_RULESET    4
-#define MINOR_RULESET      8
+#define TRAITOR_RULESET 4
+#define MINOR_RULESET 8
 
 #define RULESET_STOP_PROCESSING 1
 
@@ -60,13 +60,13 @@ GLOBAL_VAR_INIT(dynamic_forced_threat_level, -1)
 	/// List of midround rules used for selecting the rules.
 	var/list/midround_rules = list()
 	/** # Pop range per requirement.
-	  * If the value is five the range is:
-	  * 0-4, 5-9, 10-14, 15-19, 20-24, 25-29, 30-34, 35-39, 40-54, 45+
-	  * If it is six the range is:
-	  * 0-5, 6-11, 12-17, 18-23, 24-29, 30-35, 36-41, 42-47, 48-53, 54+
-	  * If it is seven the range is:
-	  * 0-6, 7-13, 14-20, 21-27, 28-34, 35-41, 42-48, 49-55, 56-62, 63+
-	  */
+	* If the value is five the range is:
+	* 0-4, 5-9, 10-14, 15-19, 20-24, 25-29, 30-34, 35-39, 40-54, 45+
+	* If it is six the range is:
+	* 0-5, 6-11, 12-17, 18-23, 24-29, 30-35, 36-41, 42-47, 48-53, 54+
+	* If it is seven the range is:
+	* 0-6, 7-13, 14-20, 21-27, 28-34, 35-41, 42-48, 49-55, 56-62, 63+
+	*/
 	var/pop_per_requirement = 6
 	/// The requirement used for checking if a second rule should be selected. Index based on pop_per_requirement.
 	var/list/second_rule_req = list(100, 100, 80, 70, 60, 50, 30, 20, 10, 0)
@@ -248,7 +248,7 @@ GLOBAL_VAR_INIT(dynamic_forced_threat_level, -1)
 		return FALSE
 	if(replacementmode && round_converted == 2)
 		return replacementmode.check_finished()
-	if(SSshuttle.emergency && (SSshuttle.emergency.mode == SHUTTLE_ENDGAME))
+	if(SSshuttle.jump_mode == BS_JUMP_COMPLETED)
 		return TRUE
 	if(station_was_nuked)
 		return TRUE
@@ -627,7 +627,7 @@ GLOBAL_VAR_INIT(dynamic_forced_threat_level, -1)
 		midround_injection_cooldown = (round(clamp(EXP_DISTRIBUTION(midround_injection_cooldown_middle), GLOB.dynamic_midround_delay_min, GLOB.dynamic_midround_delay_max)) + world.time)
 
 		// Time to inject some threat into the round
-		if(EMERGENCY_ESCAPED_OR_ENDGAMED) // Unless the shuttle is gone
+		if(SSshuttle.jump_mode >= BS_JUMP_INITIATED) // Unless the shuttle is gone
 			return
 
 		message_admins("DYNAMIC: Checking for midround injection.")
@@ -699,7 +699,7 @@ GLOBAL_VAR_INIT(dynamic_forced_threat_level, -1)
 /datum/game_mode/dynamic/make_antag_chance(mob/living/carbon/human/newPlayer)
 	if (GLOB.dynamic_forced_extended)
 		return
-	if(EMERGENCY_ESCAPED_OR_ENDGAMED) // No more rules after the shuttle has left
+	if(SSshuttle.jump_mode >= BS_JUMP_INITIATED) // No more rules after the shuttle has left
 		return
 
 	if (forced_latejoin_rule)

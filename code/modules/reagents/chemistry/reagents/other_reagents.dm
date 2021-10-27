@@ -192,6 +192,15 @@
 		M.ExtinguishMob()
 	..()
 
+/datum/reagent/water/dip_object(obj/item/I, mob/user, obj/item/reagent_containers/H)
+	. = ..()
+	if(istype(I, /obj/item/stock_parts/capacitor))
+		var/removed = H.reagents.remove_reagent(/datum/reagent/water, 5*I.get_part_rating())
+		H.reagents.add_reagent(/datum/reagent/oxygen, removed/3)
+		H.reagents.add_reagent(/datum/reagent/hydrogen, (removed/3)*2)
+		return TRUE
+	return
+
 /datum/reagent/water/holywater
 	name = "Holy Water"
 	description = "Water blessed by some deity."
@@ -422,7 +431,7 @@
 							newcolor += ascii2text(ascii+31)	//letters B to F - translates to lowercase
 						else
 							break
-				if(ReadHSV(newcolor)[3] >= ReadHSV("#7F7F7F")[3])
+				if(ReadHSV(newcolor)[3] >= ReadHSV("#191919")[3])
 					N.dna.features["mcolor"] = newcolor
 			N.regenerate_icons()
 
@@ -639,6 +648,12 @@
 	race = /datum/species/squid
 	process_flags = ORGANIC | SYNTHETIC
 
+/datum/reagent/mutationtoxin/tesh //crying
+	name = "Teshari Mutation Toxin"
+	description = "A feathery toxin."
+	race = /datum/species/teshari
+	process_flags = ORGANIC | SYNTHETIC
+
 //BLACKLISTED RACES
 /datum/reagent/mutationtoxin/skeleton
 	name = "Skeleton Mutation Toxin"
@@ -852,6 +867,13 @@
 	. = 1
 	..()
 
+/datum/reagent/chlorine/dip_object(obj/item/I, mob/user, obj/item/reagent_containers/H)
+	. = ..()
+	if(istype(I, /obj/item/stock_parts/scanning_module))
+		H.reagents.add_reagent(/datum/reagent/fluorine, (H.reagents.remove_reagent(/datum/reagent/chlorine, 5*I.get_part_rating())))
+		return TRUE
+	return
+
 /datum/reagent/fluorine
 	name = "Fluorine"
 	description = "A comically-reactive chemical element. The universe does not want this stuff to exist in this form in the slightest."
@@ -872,12 +894,38 @@
 	color = "#808080" // rgb: 128, 128, 128
 	taste_description = "salty metal"
 
+/datum/reagent/sodium/dip_object(obj/item/I, mob/user, obj/item/reagent_containers/H)
+	. = ..()
+	if(istype(I, /obj/item/stock_parts/micro_laser))
+		H.reagents.add_reagent(/datum/reagent/potassium, (H.reagents.remove_reagent(/datum/reagent/sodium, 10*I.get_part_rating())) /2)//halved volume on refinement
+		return TRUE
+	return
+
 /datum/reagent/phosphorus
 	name = "Phosphorus"
 	description = "A ruddy red powder that burns readily. Though it comes in many colors, the general theme is always the same."
 	reagent_state = SOLID
 	color = "#832828" // rgb: 131, 40, 40
 	taste_description = "vinegar"
+
+/datum/reagent/phosphorus/dip_object(obj/item/I, mob/user, obj/item/reagent_containers/H)
+	. = ..()
+	if(istype(I, /obj/item/stock_parts/micro_laser)) //using a laser instead of a manipulator here, because honestly, i have no idea what will happen if this reaction was called on both the silicon and phosphorus at once, and i dont want to find out.
+		if(holder.has_reagent(/datum/reagent/hydrogen))
+			var/hydrogen = H.reagents.remove_reagent(/datum/reagent/hydrogen, 5*I.get_part_rating())
+			var/base = H.reagents.remove_reagent(/datum/reagent/phosphorus, 5*I.get_part_rating())
+			if(hydrogen == base)
+				H.reagents.add_reagent(/datum/reagent/sulfur, base)
+				return TRUE
+			if(hydrogen < base)
+				H.reagents.add_reagent(/datum/reagent/sulfur, hydrogen)
+				H.reagents.add_reagent(/datum/reagent/phosphorus, (base-hydrogen))
+				return TRUE
+			if(base < hydrogen)
+				H.reagents.add_reagent(/datum/reagent/sulfur, base)
+				H.reagents.add_reagent(/datum/reagent/hydrogen, (hydrogen-base))
+				return TRUE
+	return
 
 /datum/reagent/lithium
 	name = "Lithium"
@@ -892,6 +940,13 @@
 	if(prob(5))
 		M.emote(pick("twitch","drool","moan"))
 	..()
+
+/datum/reagent/lithium/dip_object(obj/item/I, mob/user, obj/item/reagent_containers/H)
+	. = ..()
+	if(istype(I, /obj/item/stock_parts/micro_laser))
+		H.reagents.add_reagent(/datum/reagent/sodium, (H.reagents.remove_reagent(/datum/reagent/lithium, 10*I.get_part_rating()))/2)//halved volume on refinement
+		return TRUE
+	return
 
 /datum/reagent/glycerol
 	name = "Glycerol"
@@ -979,6 +1034,13 @@
 			if(!QDELETED(GG))
 				GG.reagents.add_reagent(type, reac_volume)
 
+/datum/reagent/uranium/dip_object(obj/item/I, mob/user, obj/item/reagent_containers/H)
+	. = ..()
+	if(istype(I, /obj/item/stock_parts/micro_laser))
+		H.reagents.add_reagent(/datum/reagent/uranium/radium, (H.reagents.remove_reagent(/datum/reagent/uranium, 10*I.get_part_rating())) /2)///refining the uranium halves its volume, for reasons
+		return TRUE
+	return
+
 /datum/reagent/uranium/radium
 	name = "Radium"
 	description = "Radium is an alkaline earth metal. It is extremely radioactive."
@@ -988,6 +1050,9 @@
 	irradiation_level = 2*REM
 	process_flags = ORGANIC | SYNTHETIC //WS Edit - IPCs
 	material = null
+
+/datum/reagent/uranium/radium/dip_object(obj/item/I, mob/user, obj/item/reagent_containers/H)
+	return FALSE
 
 /datum/reagent/bluespace
 	name = "Bluespace Dust"
@@ -1032,6 +1097,24 @@
 	taste_mult = 0
 	material = /datum/material/glass
 
+/datum/reagent/silicon/dip_object(obj/item/I, mob/user, obj/item/reagent_containers/H)
+	. = ..()
+	if(istype(I, /obj/item/stock_parts/manipulator)) //using a laser instead of a manipulator here, because honestly, i have no idea what will happen if this reaction was called on both the silicon and phosphorus at once, and i dont want to find out.
+		if(holder.has_reagent(/datum/reagent/hydrogen))
+			var/hydrogen = H.reagents.remove_reagent(/datum/reagent/hydrogen, 5*I.get_part_rating())
+			var/base = H.reagents.remove_reagent(/datum/reagent/silicon, 5*I.get_part_rating())
+			if(hydrogen == base)
+				H.reagents.add_reagent(/datum/reagent/phosphorus, base)
+				return TRUE
+			if(hydrogen < base)
+				H.reagents.add_reagent(/datum/reagent/phosphorus, hydrogen)
+				H.reagents.add_reagent(/datum/reagent/silicon, (base-hydrogen))
+				return TRUE
+			if(base < hydrogen)
+				H.reagents.add_reagent(/datum/reagent/phosphorus, base)
+				H.reagents.add_reagent(/datum/reagent/hydrogen, (hydrogen-base))
+				return TRUE
+	return
 /datum/reagent/fuel
 	name = "Welding fuel"
 	description = "Required for welders. Flammable."
@@ -1492,6 +1575,13 @@
 	color = "#BC8A00"
 	taste_description = "metal"
 
+/datum/reagent/iodine/dip_object(obj/item/I, mob/user, obj/item/reagent_containers/H)
+	. = ..()
+	if(istype(I, /obj/item/stock_parts/scanning_module))
+		H.reagents.add_reagent(/datum/reagent/bromine, (H.reagents.remove_reagent(/datum/reagent/iodine, 5*I.get_part_rating())))
+		return TRUE
+	return
+
 /datum/reagent/carpet
 	name = "Carpet"
 	description = "For those that need a more creative way to roll out a red carpet."
@@ -1594,6 +1684,13 @@
 	color = "#D35415"
 	taste_description = "chemicals"
 
+/datum/reagent/bromine/dip_object(obj/item/I, mob/user, obj/item/reagent_containers/H)
+	. = ..()
+	if(istype(I, /obj/item/stock_parts/scanning_module))
+		H.reagents.add_reagent(/datum/reagent/chlorine, (H.reagents.remove_reagent(/datum/reagent/bromine, 5*I.get_part_rating())))
+		return TRUE
+	return
+
 /datum/reagent/pentaerythritol
 	name = "Pentaerythritol"
 	description = "Slow down, it ain't no spelling bee!"
@@ -1637,6 +1734,13 @@
 	reagent_state = LIQUID
 	color = "#515151"
 	taste_description = "ash"
+
+/datum/reagent/ash/dip_object(obj/item/I, mob/user, obj/item/reagent_containers/H)
+	. = ..()
+	if(istype(I, /obj/item/stock_parts/scanning_module))
+		H.reagents.add_reagent(/datum/reagent/carbon, (H.reagents.remove_reagent(/datum/reagent/ash, 10*I.get_part_rating())/3)) ///consistent with the amount of carbon used to make ash
+		return TRUE
+	return
 
 /datum/reagent/acetone
 	name = "Acetone"

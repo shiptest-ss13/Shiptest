@@ -24,11 +24,11 @@
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/storage/materials2)
 "ag" = (
-/obj/item/storage/pill_bottle,
 /obj/effect/decal/cleanable/blood/footprints{
 	dir = 4;
 	icon_state = "blood1"
 	},
+/obj/item/storage/pill_bottle/floorpill/full,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/storage/materials2)
 "ah" = (
@@ -57,9 +57,9 @@
 /area/ruin/space/has_grav/storage/materials2)
 "an" = (
 /obj/structure/closet/crate/secure/weapon,
-/obj/item/ammo_box/magazine/smgm9mm,
-/obj/item/ammo_box/magazine/smgm9mm/ap,
-/obj/item/ammo_box/magazine/smgm9mm,
+/obj/item/ammo_box/magazine/co9mm,
+/obj/item/ammo_box/magazine/co9mm,
+/obj/item/ammo_box/magazine/co9mm,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/storage/materials2)
 "ao" = (
@@ -105,7 +105,7 @@
 /area/ruin/space/has_grav/storage/materials2)
 "ay" = (
 /obj/machinery/doorButtons/access_button,
-/turf/closed/wall/r_wall,
+/turf/closed/indestructible/reinforced,
 /area/ruin/space/has_grav/storage/materials2)
 "aA" = (
 /obj/effect/decal/cleanable/blood/tracks{
@@ -156,13 +156,13 @@
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/storage/materials2)
 "aM" = (
-/turf/closed/wall/r_wall,
+/turf/closed/indestructible/reinforced,
 /area/ruin/space/has_grav/storage/power1)
 "aR" = (
-/turf/closed/wall/r_wall,
+/turf/closed/indestructible/reinforced,
 /area/ruin/space/has_grav/storage/power2)
 "aS" = (
-/turf/closed/wall/r_wall,
+/turf/closed/indestructible/reinforced,
 /area/ruin/space/has_grav/storage/power3)
 "aT" = (
 /obj/structure/closet/crate/secure/loot,
@@ -237,7 +237,7 @@
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/storage/power2)
 "bk" = (
-/turf/closed/wall/r_wall,
+/turf/closed/indestructible/reinforced,
 /area/ruin/space/has_grav/storage/central2)
 "bl" = (
 /turf/closed/wall,
@@ -258,6 +258,7 @@
 /obj/structure/closet/crate,
 /obj/effect/spawner/lootdrop/maintenance/two,
 /obj/effect/decal/cleanable/cobweb,
+/obj/effect/spawner/lootdrop/minor/kittyears_or_rabbitears,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/storage/central)
 "bs" = (
@@ -276,7 +277,7 @@
 /obj/structure/cable{
 	icon_state = "1-4"
 	},
-/turf/closed/wall/r_wall,
+/turf/closed/indestructible/reinforced,
 /area/ruin/space/has_grav/storage/power2)
 "by" = (
 /obj/effect/decal/cleanable/cobweb/cobweb2,
@@ -293,7 +294,6 @@
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/storage/central2)
 "bD" = (
-/obj/structure/table/wood/fancy/red,
 /obj/structure/table/wood/fancy/cyan,
 /obj/item/storage/lockbox/dueling{
 	req_access = null
@@ -312,13 +312,8 @@
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/storage/power3)
 "bH" = (
-/obj/machinery/door/airlock/highsecurity,
 /obj/effect/mapping_helpers/airlock/locked,
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/storage/central2)
-"bI" = (
-/obj/machinery/door/airlock/vault,
-/obj/effect/mapping_helpers/airlock/locked,
+/obj/machinery/door/airlock/vault/derelict,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/storage/central2)
 "bQ" = (
@@ -330,7 +325,9 @@
 /area/ruin/space/has_grav/storage/power2)
 "bS" = (
 /obj/structure/table/wood/fancy/royalblue,
-/obj/item/reagent_containers/hypospray,
+/obj/item/storage/box/hypospray{
+	pixel_y = 4
+	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/storage/central2)
 "bT" = (
@@ -347,7 +344,7 @@
 /area/ruin/space/has_grav/storage/materials2)
 "bZ" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/closed/wall/r_wall,
+/turf/closed/indestructible/reinforced,
 /area/ruin/space/has_grav/storage/materials2)
 "ca" = (
 /obj/effect/mob_spawn/human/corpse/cargo_tech,
@@ -364,7 +361,9 @@
 /area/ruin/space/has_grav/storage/power2)
 "cd" = (
 /obj/structure/table/wood/fancy/red,
-/obj/item/gun/ballistic/automatic/proto/unrestricted,
+/obj/item/gun/ballistic/automatic/pistol/commissar{
+	pixel_y = 2
+	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/storage/central2)
 "ce" = (
@@ -385,7 +384,7 @@
 /area/ruin/space/has_grav/storage/central)
 "cj" = (
 /obj/structure/table/wood/fancy/orange,
-/obj/item/construction/rcd/combat,
+/obj/item/construction/rcd,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/storage/central2)
 "ck" = (
@@ -394,9 +393,10 @@
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/storage/central2)
 "cl" = (
-/obj/structure/table/wood/fancy/blue,
 /obj/structure/table/wood/fancy/purple,
-/obj/item/assembly/signaler/anomaly,
+/obj/item/assembly/signaler/anomaly{
+	pixel_y = 7
+	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/storage/central2)
 "cm" = (
@@ -534,6 +534,7 @@
 /obj/item/bedsheet/nanotrasen,
 /obj/item/bedsheet/centcom,
 /obj/item/bedsheet/syndie,
+/obj/item/toy/plush/moth,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/storage/power1)
 "cV" = (
@@ -609,7 +610,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/turf/closed/wall/r_wall,
+/turf/closed/indestructible/reinforced,
 /area/ruin/space/has_grav/storage/power2)
 "kA" = (
 /obj/structure/cable{
@@ -666,9 +667,14 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/storage/power1)
+"ob" = (
+/turf/closed/indestructible/reinforced,
+/area/ruin/space/has_grav/storage/materials3)
+"oo" = (
+/turf/closed/wall,
+/area/ship/hallway/central)
 "oT" = (
-/obj/machinery/door/airlock/hatch,
-/obj/structure/fans/tiny,
+/obj/machinery/door/airlock/external,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/storage/central)
 "rc" = (
@@ -678,11 +684,14 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/storage/materials1)
+"rf" = (
+/turf/open/floor/plating,
+/area/ship/hallway/central)
 "up" = (
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/turf/closed/wall/r_wall,
+/turf/closed/indestructible/reinforced,
 /area/ruin/space/has_grav/storage/power2)
 "uu" = (
 /obj/effect/decal/cleanable/blood/footprints{
@@ -753,11 +762,20 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/storage/power2)
+"xl" = (
+/turf/closed/indestructible/reinforced,
+/area/ruin/space/has_grav/storage/central)
+"ye" = (
+/mob/living/simple_animal/hostile/carp/megacarp{
+	desc = "A ferocious, fang bearing creature that resembles a shark. You get the feeling his name would be George."
+	},
+/turf/open/space/basic,
+/area/space)
 "Af" = (
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
-/turf/closed/wall/r_wall,
+/turf/closed/indestructible/reinforced,
 /area/ruin/space/has_grav/storage/central2)
 "Ao" = (
 /obj/effect/decal/cleanable/ash,
@@ -770,13 +788,18 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/turf/closed/wall/r_wall,
+/turf/closed/indestructible/reinforced,
 /area/ruin/space/has_grav/storage/central2)
 "CD" = (
 /obj/effect/decal/cleanable/glass,
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/storage/central)
+"CT" = (
+/obj/effect/radiation,
+/obj/effect/decal/cleanable/greenglow,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/storage/central)
 "Im" = (
@@ -806,12 +829,18 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/storage/power2)
+"JO" = (
+/turf/closed/indestructible/reinforced,
+/area/ruin/space/has_grav/storage/materials2)
 "KY" = (
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/storage/power1)
+"LV" = (
+/turf/closed/indestructible/reinforced,
+/area/ruin/space/has_grav/storage/materials1)
 "Mg" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -911,22 +940,23 @@
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
-/turf/closed/wall/r_wall,
+/turf/closed/indestructible/reinforced,
 /area/ruin/space/has_grav/storage/central)
 "VV" = (
-/turf/open/floor/plating/asteroid/airless,
-/area/ruin/space/has_grav)
+/obj/machinery/door/airlock/external,
+/turf/open/floor/plating,
+/area/ship/hallway/central)
 "VX" = (
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/turf/closed/wall/r_wall,
+/turf/closed/indestructible/reinforced,
 /area/ruin/space/has_grav/storage/central)
 "Zz" = (
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
-/turf/closed/wall/r_wall,
+/turf/closed/indestructible/reinforced,
 /area/ruin/space/has_grav/storage/power2)
 
 (1,1,1) = {"
@@ -945,9 +975,9 @@ aa
 aa
 ah
 ah
-ah
+oo
 VV
-ah
+oo
 ah
 ah
 ah
@@ -977,9 +1007,9 @@ aa
 ah
 ah
 ah
-ah
-VV
-ah
+oo
+rf
+oo
 ah
 ah
 ah
@@ -987,7 +1017,7 @@ ah
 ah
 aa
 aa
-aa
+ye
 aa
 aa
 aa
@@ -1164,17 +1194,17 @@ ac
 ac
 ac
 ac
-ab
-aY
-aY
-aY
-aY
-aY
+ob
+xl
+xl
+xl
+xl
+xl
 Im
-aY
-aY
-aY
-aY
+xl
+xl
+xl
+xl
 aT
 bG
 bG
@@ -1206,7 +1236,7 @@ fd
 bp
 bp
 bp
-aY
+xl
 aU
 aU
 cR
@@ -1238,7 +1268,7 @@ fd
 cN
 cO
 bp
-aY
+xl
 aU
 aU
 aU
@@ -1260,7 +1290,7 @@ ab
 au
 ab
 ab
-ab
+ob
 bd
 bm
 bt
@@ -1270,7 +1300,7 @@ aW
 bp
 bp
 bp
-aY
+xl
 aS
 aS
 ku
@@ -1292,9 +1322,9 @@ vJ
 bh
 aq
 aq
-ai
-ai
-ai
+LV
+LV
+LV
 cy
 bp
 bp
@@ -1356,11 +1386,11 @@ kA
 bT
 ch
 aI
-ai
+LV
 aq
 ai
 gD
-bp
+CT
 bp
 ca
 cN
@@ -1388,9 +1418,9 @@ lG
 aA
 aq
 aq
-ai
+LV
 be
-aY
+xl
 cA
 bp
 cB
@@ -1413,16 +1443,16 @@ aa
 aa
 ah
 ah
-ad
-ad
-ad
-ad
+JO
+JO
+JO
+JO
 aB
 ad
 bZ
-ad
-ad
-aY
+JO
+JO
+xl
 by
 bs
 bp
@@ -1445,23 +1475,23 @@ aa
 aa
 ah
 ah
-ad
+JO
 af
 ak
 av
 aC
-ad
+JO
 aJ
 am
 bf
-aY
-aY
-aY
-aY
+xl
+xl
+xl
+xl
 bp
-aY
-aY
-aY
+xl
+xl
+xl
 VX
 ba
 bi
@@ -1477,12 +1507,12 @@ aa
 aa
 ah
 ah
-ad
+JO
 al
 am
-ad
+JO
 am
-ad
+JO
 am
 am
 bf
@@ -1509,7 +1539,7 @@ aa
 aa
 ah
 ah
-ad
+JO
 af
 ad
 ad
@@ -1541,20 +1571,20 @@ aa
 aa
 ah
 ah
-ad
+JO
 af
 ad
 aw
 bX
 aH
 aK
-ad
+JO
 cw
 bk
 bk
 bk
 bk
-bI
+bH
 bk
 bk
 bk
@@ -1573,14 +1603,14 @@ aa
 aa
 ah
 ah
-ad
+JO
 ao
 ad
-ax
+am
 am
 ax
 ad
-ad
+JO
 cx
 bk
 bk
@@ -1605,14 +1635,14 @@ aa
 ah
 ah
 ah
-ad
+JO
 af
 ad
 ax
 am
-ax
+am
 ad
-ad
+JO
 am
 bk
 bk
@@ -1637,14 +1667,14 @@ aa
 aa
 ah
 ah
-ad
+JO
 af
 ad
-ad
+JO
 bZ
+JO
 ad
-ad
-ad
+JO
 am
 bk
 bk
@@ -1669,7 +1699,7 @@ aa
 aa
 ah
 ah
-ad
+JO
 ag
 ad
 am
@@ -1701,14 +1731,14 @@ aa
 aa
 ah
 ah
-ad
+JO
 an
 ad
 am
 am
 cq
 cq
-ad
+JO
 In
 bk
 bk
@@ -1733,14 +1763,14 @@ aa
 aa
 ah
 ah
-ad
-ad
-ad
+JO
+JO
+JO
 ay
-ad
-ad
-ad
-ad
+JO
+JO
+JO
+JO
 Af
 Bq
 Bq

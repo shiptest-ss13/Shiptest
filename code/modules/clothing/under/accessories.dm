@@ -128,8 +128,9 @@
 			if(user == M)
 				delay = 0
 			else
-				user.visible_message("<span class='notice'>[user] is trying to pin [src] on [M]'s chest.</span>", \
-									 "<span class='notice'>You try to pin [src] on [M]'s chest.</span>")
+				user.visible_message(
+					"<span class='notice'>[user] is trying to pin [src] on [M]'s chest.</span>", \
+					"<span class='notice'>You try to pin [src] on [M]'s chest.</span>")
 			var/input
 			if(!commended && user != M)
 				input = stripped_input(user,"Please input a reason for this commendation, it will be recorded by Nanotrasen.", ,"", 140)
@@ -138,8 +139,9 @@
 					if(user == M)
 						to_chat(user, "<span class='notice'>You attach [src] to [U].</span>")
 					else
-						user.visible_message("<span class='notice'>[user] pins \the [src] on [M]'s chest.</span>", \
-											 "<span class='notice'>You pin \the [src] on [M]'s chest.</span>")
+						user.visible_message(
+							"<span class='notice'>[user] pins \the [src] on [M]'s chest.</span>", \
+							"<span class='notice'>You pin \the [src] on [M]'s chest.</span>")
 						if(input)
 							SSblackbox.record_feedback("associative", "commendation", 1, list("commender" = "[user.real_name]", "commendee" = "[M.real_name]", "medal" = "[src]", "reason" = input))
 							GLOB.commendations += "[user.real_name] awarded <b>[M.real_name]</b> the <span class='medaltext'>[name]</span>! \n- [input]"
@@ -368,14 +370,23 @@
 	desc = "A hunter's talisman, some say the old gods smile on those who wear it."
 	icon_state = "talisman"
 	armor = list("melee" = 5, "bullet" = 5, "laser" = 5, "energy" = 5, "bomb" = 20, "bio" = 20, "rad" = 5, "fire" = 0, "acid" = 25)
-	attachment_slot = null
+	attachment_slot = ARMS
+	above_suit = TRUE
+
+/obj/item/clothing/accessory/wolftalisman
+	name = "hunter's necklace"
+	desc = "A thick necklace woven from sinew and bits of wolfhide, adorned with a carved fang. Slaying such beasts is rumoured to elate the gods of old, and such an item proves your worth."
+	icon_state = "wolf_talisman"
+	armor = list("melee" = 15	, "bullet" = 15, "laser" = 10, "energy" = 10, "bomb" = 20, "bio" = 20, "rad" = 5, "fire" = 25, "acid" = 25)
+	attachment_slot = CHEST
+	above_suit = TRUE
 
 /obj/item/clothing/accessory/skullcodpiece
 	name = "skull codpiece"
-	desc = "A skull shaped ornament, intended to protect the important things in life."
+	desc = "A legion skull fitted to a codpiece, intended to protect the important things in life."
 	icon_state = "skull"
 	above_suit = TRUE
-	armor = list("melee" = 5, "bullet" = 5, "laser" = 5, "energy" = 5, "bomb" = 20, "bio" = 20, "rad" = 5, "fire" = 0, "acid" = 25)
+	armor = list("melee" = 10, "bullet" = 10, "laser" = 5, "energy" = 5, "bomb" = 20, "bio" = 20, "rad" = 5, "fire" = 40, "acid" = 40)
 	attachment_slot = GROIN
 
 /obj/item/clothing/accessory/skilt

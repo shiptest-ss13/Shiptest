@@ -1,4 +1,5 @@
 /obj/machinery/atmospherics/pipe
+	plane = FLOOR_PLANE
 	damage_deflection = 12
 	var/datum/gas_mixture/air_temporary //used when reconstructing a pipeline that broke
 	var/volume = 0
@@ -45,6 +46,7 @@
 		air_update_turf()
 
 /obj/machinery/atmospherics/pipe/return_air()
+	build_network()
 	return parent.air
 
 /obj/machinery/atmospherics/pipe/return_analyzable_air()
@@ -52,6 +54,9 @@
 
 /obj/machinery/atmospherics/pipe/remove_air(amount)
 	return parent.air.remove(amount)
+
+/obj/machinery/atmospherics/pipe/remove_air_ratio(ratio)
+	return parent.air.remove_ratio(ratio)
 
 /obj/machinery/atmospherics/pipe/attackby(obj/item/W, mob/user, params)
 	if(istype(W, /obj/item/pipe_meter))

@@ -6,7 +6,7 @@ SUBSYSTEM_DEF(garbage)
 	runlevels = RUNLEVELS_DEFAULT | RUNLEVEL_LOBBY
 	init_order = INIT_ORDER_GARBAGE
 
-	var/list/collection_timeout = list(0, 2 MINUTES, 10 SECONDS)	// deciseconds to wait before moving something up in the queue to the next level
+	var/list/collection_timeout = list(5 MINUTES, 10 SECONDS) // deciseconds to wait before moving something up in the queue to the next level
 
 	//Stat tracking
 	var/delslasttick = 0			// number of del()'s we've done this tick
@@ -24,7 +24,7 @@ SUBSYSTEM_DEF(garbage)
 
 	//Queue
 	var/list/queues
-	#ifdef LEGACY_REFERENCE_TRACKING
+	#ifdef REFERENCE_TRACKING
 	var/list/reference_find_on_fail = list()
 	#endif
 
@@ -116,18 +116,21 @@ SUBSYSTEM_DEF(garbage)
 
 	lastlevel = level
 
-	for (var/refID in queue)
-		if (!refID)
+	//We do this rather then for(var/refID in queue) because that sort of for loop copies the whole list.
+	//Normally this isn't expensive, but the gc queue can grow to 40k items, and that gets costly/causes overrun.
+	for (var/i in 1 to length(queue))
+		var/list/L = queue[i]
+		if (length(L) < 2)
 			count++
 			if (MC_TICK_CHECK)
 				return
 			continue
 
-		var/GCd_at_time = queue[refID]
+		var/GCd_at_time = L[1]
 		if(GCd_at_time > cut_off_time)
 			break // Everything else is newer, skip them
 		count++
-
+		var/refID = L[2]
 		var/datum/D
 		D = locate(refID)
 
@@ -135,7 +138,7 @@ SUBSYSTEM_DEF(garbage)
 			++gcedlasttick
 			++totalgcs
 			pass_counts[level]++
-			#ifdef LEGACY_REFERENCE_TRACKING
+			#ifdef REFERENCE_TRACKING
 			reference_find_on_fail -= refID	//It's deleted we don't care anymore.
 			#endif
 			if (MC_TICK_CHECK)
@@ -147,13 +150,11 @@ SUBSYSTEM_DEF(garbage)
 		switch (level)
 			if (GC_QUEUE_CHECK)
 				#ifdef REFERENCE_TRACKING
-				D.find_references()
-				#elif defined(LEGACY_REFERENCE_TRACKING)
 				if(reference_find_on_fail[refID])
-					D.find_references_legacy()
+					D.find_references()
 				#ifdef GC_FAILURE_HARD_LOOKUP
 				else
-					D.find_references_legacy()
+					D.find_references()
 				#endif
 				reference_find_on_fail -= refID
 				#endif
@@ -167,10 +168,6 @@ SUBSYSTEM_DEF(garbage)
 						continue
 					to_chat(admin, "## TESTING: GC: -- [ADMIN_VV(D)] | [type] was unable to be GC'd --")
 				testing("GC: -- \ref[src] | [type] was unable to be GC'd --")
-				#endif
-				#ifdef REFERENCE_TRACKING
-				GLOB.deletion_failures += D //It should no longer be bothered by the GC, manual deletion only.
-				continue
 				#endif
 				I.failures++
 			if (GC_QUEUE_HARDDELETE)
@@ -198,10 +195,8 @@ SUBSYSTEM_DEF(garbage)
 
 	D.gc_destroyed = gctime
 	var/list/queue = queues[level]
-	if (queue[refid])
-		queue -= refid // Removing any previous references that were GC'd so that the current object will be at the end of the list.
 
-	queue[refid] = gctime
+	queue[++queue.len] = list(gctime, refid) // not += for byond reasons
 
 //this is mainly to separate things profile wise.
 /datum/controller/subsystem/garbage/proc/HardDelete(datum/D)
@@ -259,14 +254,20 @@ SUBSYSTEM_DEF(garbage)
 // Should be treated as a replacement for the 'del' keyword.
 // Datums passed to this will be given a chance to clean up references to allow the GC to collect them.
 /proc/qdel(datum/D, force=FALSE, ...)
+	if(isweakref(D))
+		var/datum/weakref/weakref = D
+		D = weakref.resolve()
+		if(!D)
+			return
+
 	if(!istype(D))
 		del(D)
 		return
+
 	var/datum/qdel_item/I = SSgarbage.items[D.type]
 	if (!I)
 		I = SSgarbage.items[D.type] = new /datum/qdel_item(D.type)
 	I.qdels++
-
 
 	if(isnull(D.gc_destroyed))
 		if (SEND_SIGNAL(D, COMSIG_PARENT_PREQDELETED, force)) // Give the components a chance to prevent their parent from being deleted
@@ -309,10 +310,10 @@ SUBSYSTEM_DEF(garbage)
 				SSgarbage.Queue(D, GC_QUEUE_HARDDELETE)
 			if (QDEL_HINT_HARDDEL_NOW)	//qdel should assume this object won't gc, and hard del it post haste.
 				SSgarbage.HardDelete(D)
-			#ifdef LEGACY_REFERENCE_TRACKING
-			if (QDEL_HINT_FINDREFERENCE) //qdel will, if LEGACY_REFERENCE_TRACKING is enabled, display all references to this object, then queue the object for deletion.
+			#ifdef REFERENCE_TRACKING
+			if (QDEL_HINT_FINDREFERENCE) //qdel will, if REFERENCE_TRACKING is enabled, display all references to this object, then queue the object for deletion.
 				SSgarbage.Queue(D)
-				D.find_references_legacy()
+				D.find_references()
 			if (QDEL_HINT_IFFAIL_FINDREFERENCE)
 				SSgarbage.Queue(D)
 				SSgarbage.reference_find_on_fail[REF(D)] = TRUE

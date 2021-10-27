@@ -85,7 +85,7 @@
 
 
 /obj/throw_at(atom/target, range, speed, mob/thrower, spin=1, diagonals_first = 0, datum/callback/callback, force, gentle = FALSE, quickstart = TRUE)
-	..()
+	. = ..()
 	if(obj_flags & FROZEN)
 		visible_message("<span class='danger'>[src] shatters into a million pieces!</span>")
 		qdel(src)
@@ -97,9 +97,39 @@
 	else
 		return null
 
+/obj/assume_air_moles(datum/gas_mixture/giver, moles)
+	if(loc)
+		return loc.assume_air_moles(giver, moles)
+	else
+		return null
+
+/obj/assume_air_ratio(datum/gas_mixture/giver, ratio)
+	if(loc)
+		return loc.assume_air_ratio(giver, ratio)
+	else
+		return null
+
+/obj/transfer_air(datum/gas_mixture/taker, moles)
+	if(loc)
+		return loc.transfer_air(taker, moles)
+	else
+		return null
+
+/obj/transfer_air_ratio(datum/gas_mixture/taker, ratio)
+	if(loc)
+		return loc.transfer_air_ratio(taker, ratio)
+	else
+		return null
+
 /obj/remove_air(amount)
 	if(loc)
 		return loc.remove_air(amount)
+	else
+		return null
+
+/obj/remove_air_ratio(ratio)
+	if(loc)
+		return loc.remove_air_ratio(ratio)
 	else
 		return null
 
@@ -117,8 +147,7 @@
 
 	if(breath_request>0)
 		var/datum/gas_mixture/environment = return_air()
-		var/breath_percentage = BREATH_VOLUME / environment.return_volume()
-		return remove_air(environment.total_moles() * breath_percentage)
+		return remove_air_ratio(BREATH_VOLUME / environment.return_volume())
 	else
 		return null
 
@@ -175,18 +204,21 @@
 	ui_interact(user)
 
 /mob/proc/unset_machine()
-	if(machine)
-		machine.on_unset_machine(src)
-		machine = null
+	if(!machine)
+		return
+	UnregisterSignal(machine, COMSIG_PARENT_QDELETING)
+	machine.on_unset_machine(src)
+	machine = null
 
 //called when the user unsets the machine.
 /atom/movable/proc/on_unset_machine(mob/user)
 	return
 
 /mob/proc/set_machine(obj/O)
-	if(src.machine)
+	if(machine)
 		unset_machine()
-	src.machine = O
+	machine = O
+	RegisterSignal(O, COMSIG_PARENT_QDELETING, .proc/unset_machine)
 	if(istype(O))
 		O.obj_flags |= IN_USE
 
@@ -238,15 +270,17 @@
 		if (islist(result))
 			if (result["button"] != 2) // If the user pressed the cancel button
 				// text2num conveniently returns a null on invalid values
-				armor = armor.setRating(melee = text2num(result["values"]["melee"]),\
-			                  bullet = text2num(result["values"]["bullet"]),\
-			                  laser = text2num(result["values"]["laser"]),\
-			                  energy = text2num(result["values"]["energy"]),\
-			                  bomb = text2num(result["values"]["bomb"]),\
-			                  bio = text2num(result["values"]["bio"]),\
-			                  rad = text2num(result["values"]["rad"]),\
-			                  fire = text2num(result["values"]["fire"]),\
-			                  acid = text2num(result["values"]["acid"]))
+				armor = armor.setRating(
+					melee = text2num(result["values"]["melee"]),
+					bullet = text2num(result["values"]["bullet"]),
+					laser = text2num(result["values"]["laser"]),
+					energy = text2num(result["values"]["energy"]),
+					bomb = text2num(result["values"]["bomb"]),
+					bio = text2num(result["values"]["bio"]),
+					rad = text2num(result["values"]["rad"]),
+					fire = text2num(result["values"]["fire"]),
+					acid = text2num(result["values"]["acid"])
+				)
 				log_admin("[key_name(usr)] modified the armor on [src] ([type]) to melee: [armor.melee], bullet: [armor.bullet], laser: [armor.laser], energy: [armor.energy], bomb: [armor.bomb], bio: [armor.bio], rad: [armor.rad], fire: [armor.fire], acid: [armor.acid]")
 				message_admins("<span class='notice'>[key_name_admin(usr)] modified the armor on [src] ([type]) to melee: [armor.melee], bullet: [armor.bullet], laser: [armor.laser], energy: [armor.energy], bomb: [armor.bomb], bio: [armor.bio], rad: [armor.rad], fire: [armor.fire], acid: [armor.acid]</span>")
 	if(href_list[VV_HK_MASS_DEL_TYPE])
@@ -348,3 +382,35 @@
 	for(var/reagent in reagents)
 		var/datum/reagent/R = reagent
 		. |= R.expose_obj(src, reagents[R])
+
+/**
+* For returning special data when the object is saved
+*For example, or silos will return a list of their materials which will be dumped on top of them
+*Can be customised if you have something that contains something you want saved
+*If you put an incorrect format it will break outputting, so don't use this if you don't know what you are doing
+* NOTE: Contents is automatically saved, so if you store your things in the contents var, don't worry about this
+* ====Output Format Examples====:
+* ===Single Object===
+*	"/obj/item/folder/blue"
+* ===Multiple Objects===
+*	"/obj/item/folder/blue,\n
+*	/obj/item/folder/red"
+* ===Single Object with metadata===
+*	"/obj/item/folder/blue{\n
+*	\tdir = 8;\n
+*	\tname = "special folder"\n
+*	\t}"
+* ===Multiple Objects with metadata===
+*	"/obj/item/folder/blue{\n
+*	\tdir = 8;\n
+*	\tname = "special folder"\n
+*	\t},\n
+*	/obj/item/folder/red"
+* ====How to save easily====:
+*	return "[thing.type][generate_tgm_metadata(thing)]"
+* Where thing is the additional thing you want to same (For example ores inside an ORM)
+* Just add ,\n between each thing
+* generate_tgm_metadata(thing) handles everything inside the {} for you
+**/
+/obj/proc/on_object_saved(var/depth = 0)
+	return ""

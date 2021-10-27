@@ -241,9 +241,6 @@ PROTECT_ROLES_FROM_ANTAGONIST
 ## If non-human species are barred from joining as a head of staff
 #ENFORCE_HUMAN_AUTHORITY
 
-## If late-joining players have a chance to become a traitor/changeling
-ALLOW_LATEJOIN_ANTAGONISTS
-
 ## Comment this out to disable the antagonist reputation system. This system rewards players who participate in the game instead of greytiding by giving them slightly higher odds to
 ## roll antagonist in subsequent rounds until they get it.
 ##
@@ -456,6 +453,7 @@ ROUNDSTART_RACES plasmaman
 ROUNDSTART_RACES ipc
 ROUNDSTART_RACES felinid
 ROUNDSTART_RACES squid
+ROUNDSTART_RACES teshari
 
 ## Races that are better than humans in some ways, but worse in others
 ROUNDSTART_RACES ethereal
@@ -543,16 +541,6 @@ LAVALAND_BUDGET 60
 ## Space Ruin Budged
 Space_Budget 16
 
-## Time in ds from when a player latejoins till the arrival shuttle docks at the station
-## Must be at least 30. At least 55 recommended to be visually/aurally appropriate
-ARRIVALS_SHUTTLE_DOCK_WINDOW 55
-
-## Uncomment to require the arrivals shuttle to be in flight (if it can fly) before late join players can join
-#ARRIVALS_SHUTTLE_REQUIRE_UNDOCKED
-
-## Uncomment to prevent late join players from spawning if the arrivals shuttle is depressurized
-#ARRIVALS_SHUTTLE_REQUIRE_SAFE_LATEJOIN
-
 ## How many wirechewing rodents you want to spawn on exposed maintenane wires at the start of the round. You may wish to set this to 0 if you're testing powernets.
 
 MICE_ROUNDSTART 10
@@ -598,21 +586,6 @@ ECONOMY
 ## Put the name of your custom currency here
 METACURRENCY_NAME Metacoin
 
-## Crew objectives
-ALLOW_CREW_OBJECTIVES
-
-## Choose which Engine to start the round with. Weight is after the comma. Setting the weight to 0 removes the engine from rotation.
-BOX_RANDOM_ENGINE Box SM,3
-BOX_RANDOM_ENGINE Box Tesla,3
-BOX_RANDOM_ENGINE Box Singulo,3
-BOX_RANDOM_ENGINE Box SM 1x3,1
-BOX_RANDOM_ENGINE Box SM 5x5,1
-BOX_RANDOM_ENGINE Box SM 3x,0
-BOX_RANDOM_ENGINE Box TEG,3
-BOX_RANDOM_ENGINE Box Empty,0
-BOX_RANDOM_ENGINE Box Antimatter,1
-BOX_RANDOM_ENGINE Box P.A.C.M.A.N,1
-
 ## Overmap Settings ##
 
 ## Put max amount of different event clusters you want to spawn here
@@ -627,3 +600,7 @@ MAX_OVERMAP_DYNAMIC_EVENTS 10
 ## Which overmap generator to use
 ## Valid values are: "random", "solar_system"
 OVERMAP_GENERATOR_TYPE solar_system
+
+## The time required before a ship is allowed to bluespace jump. -1 disables it entirely
+## In deciseconds, valid values are -1 to INFINITY
+BLUESPACE_JUMP_WAIT 12000

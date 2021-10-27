@@ -130,16 +130,14 @@
 /datum/export/large/gas_canister/get_cost(obj/O)
 	var/obj/machinery/portable_atmospherics/canister/C = O
 	var/worth = 10
-	var/gases = C.air_contents.gases
-	C.air_contents.assert_gases(/datum/gas/bz,/datum/gas/stimulum,/datum/gas/hypernoblium,/datum/gas/miasma,/datum/gas/tritium,/datum/gas/pluoxium,/datum/gas/freon)
 
-	worth += gases[/datum/gas/bz][MOLES]*4
-	worth += gases[/datum/gas/stimulum][MOLES]*100
-	worth += gases[/datum/gas/hypernoblium][MOLES]*1000
-	worth += gases[/datum/gas/miasma][MOLES]*10
-	worth += gases[/datum/gas/tritium][MOLES]*5
-	worth += gases[/datum/gas/pluoxium][MOLES]*5
-	worth += gases[/datum/gas/freon][MOLES]*15
+	worth += C.air_contents.get_moles(GAS_BZ)*4
+	worth += C.air_contents.get_moles(GAS_STIMULUM)*100
+	worth += C.air_contents.get_moles(GAS_HYPERNOB)*1000
+	worth += C.air_contents.get_moles(GAS_MIASMA)*10
+	worth += C.air_contents.get_moles(GAS_TRITIUM)*5
+	worth += C.air_contents.get_moles(GAS_PLUOXIUM)*5
+	worth += C.air_contents.get_moles(GAS_FREON)*5
 	return worth
 
 WS end */

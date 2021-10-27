@@ -178,11 +178,11 @@
 		return
 	var/static/items_inside = list(
 		/obj/item/healthanalyzer = 1,
-    	/obj/item/storage/pill_bottle/charcoal/less = 1,
+		/obj/item/storage/pill_bottle/charcoal/less = 1,
 		/obj/item/reagent_containers/syringe/thializid = 3,
 		/obj/item/storage/pill_bottle/potassiodide = 1,
 		/obj/item/reagent_containers/hypospray/medipen/penacid = 1,
-		)
+	)
 	generate_items_inside(items_inside,src)
 
 /obj/item/storage/firstaid/o2
@@ -217,6 +217,7 @@
 	icon_state = "brute"
 	item_state = "firstaid-brute"
 	damagetype_healed = BRUTE
+	custom_price = 600
 
 /obj/item/storage/firstaid/brute/suicide_act(mob/living/carbon/user)
 	user.visible_message("<span class='suicide'>[user] begins beating [user.p_them()]self over the head with \the [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")

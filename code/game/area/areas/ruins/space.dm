@@ -350,3 +350,16 @@
 	name = "Hell Factory Office"
 	icon_state = "red"
 	area_flags = VALID_TERRITORY | BLOBS_ALLOWED | UNIQUE_AREA | NOTELEPORT
+
+//Ruin of Transport 18
+/area/ruin/space/has_grav/transport18fore
+	name = "Booze Cruise Fore"
+	icon_state = "crew_quarters"
+
+/area/ruin/space/has_grav/transport18mid
+	name = "Booze Cruise Hold"
+	icon_state = "cargo_bay"
+
+/area/ruin/space/transport18aft
+	name = "Booze Cruise Aft"
+	icon_state = "engine"

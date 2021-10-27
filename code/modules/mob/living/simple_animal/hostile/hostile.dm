@@ -3,6 +3,7 @@
 	stop_automated_movement_when_pulled = 0
 	obj_damage = 40
 	environment_smash = ENVIRONMENT_SMASH_STRUCTURES //Bitflags. Set to ENVIRONMENT_SMASH_STRUCTURES to break closets,tables,racks, etc; ENVIRONMENT_SMASH_WALLS for walls; ENVIRONMENT_SMASH_RWALLS for rwalls
+	///The current target of our attacks, use GiveTarget and LoseTarget to set this var
 	var/atom/target
 	var/ranged = FALSE
 	var/rapid = 0 //How many shots per volley.
@@ -46,22 +47,38 @@
 	var/stat_attack = CONSCIOUS
 	var/stat_exclusive = FALSE //Mobs with this set to TRUE will exclusively attack things defined by stat_attack, stat_attack DEAD means they will only attack corpses
 	var/attack_same = 0 //Set us to 1 to allow us to attack our own faction
+	//Use set_targets_from to modify this var
 	var/atom/targets_from = null //all range/attack/etc. calculations should be done from this atom, defaults to the mob itself, useful for Vehicles and such
 	var/attack_all_objects = FALSE //if true, equivalent to having a wanted_objects list containing ALL objects.
 
 	var/lose_patience_timer_id //id for a timer to call LoseTarget(), used to stop mobs fixating on a target they can't reach
 	var/lose_patience_timeout = 300 //30 seconds by default, so there's no major changes to AI behaviour, beyond actually bailing if stuck forever
 
+///When a target is found, will the mob attempt to charge at it's target?
+	var/charger = FALSE
+	///Tracks if the target is actively charging.
+	var/charge_state = FALSE
+	///In a charge, how many tiles will the charger travel?
+	var/charge_distance = 3
+	///How often can the charging mob actually charge? Effects the cooldown between charges.
+	var/charge_frequency = 6 SECONDS
+	///If the mob is charging, how long will it stun it's target on success, and itself on failure?
+	var/knockdown_time = 3 SECONDS
+	///Declares a cooldown for potential charges right off the bat.
+	COOLDOWN_DECLARE(charge_cooldown)
+
 /mob/living/simple_animal/hostile/Initialize()
 	. = ..()
 
 	if(!targets_from)
-		targets_from = src
+		set_targets_from(src)
 	wanted_objects = typecacheof(wanted_objects)
 
 
 /mob/living/simple_animal/hostile/Destroy()
-	targets_from = null
+	set_targets_from(null)
+	//We can't use losetarget here because fucking cursed blobs override it to do nothing the motherfuckers
+	GiveTarget(null)
 	return ..()
 
 /mob/living/simple_animal/hostile/Life()
@@ -238,12 +255,12 @@
 	return FALSE
 
 /mob/living/simple_animal/hostile/proc/GiveTarget(new_target)//Step 4, give us our selected target
-	target = new_target
+	add_target(new_target)
 	LosePatience()
 	if(target != null)
 		GainPatience()
 		Aggro()
-		return 1
+		return TRUE
 
 //What we do after closing in
 /mob/living/simple_animal/hostile/proc/MeleeAction(patience = TRUE)
@@ -275,6 +292,9 @@
 		if(ranged) //We ranged? Shoot at em
 			if(!target.Adjacent(targets_from) && ranged_cooldown <= world.time) //But make sure they're not in range for a melee attack and our range attack is off cooldown
 				OpenFire(target)
+		if(charger && (target_distance > minimum_distance) && (target_distance <= charge_distance))//Attempt to close the distance with a charge.
+			enter_charge(target)
+			return TRUE
 		if(!Process_Spacemove()) //Drifting
 			walk(src,0)
 			return 1
@@ -319,7 +339,7 @@
 	. = ..()
 	if(!ckey && !stat && search_objects < 3 && . > 0)//Not unconscious, and we don't ignore mobs
 		if(search_objects)//Turn off item searching and ignore whatever item we were looking at, we're more concerned with fight or flight
-			target = null
+			LoseTarget()
 			LoseSearchObjects()
 		if(AIStatus != AI_ON && AIStatus != AI_OFF)
 			toggle_ai(AI_ON)
@@ -336,7 +356,7 @@
 /mob/living/simple_animal/hostile/proc/Aggro()
 	vision_range = aggro_vision_range
 	if(target && emote_taunt.len && prob(taunt_chance))
-		emote("[pick(emote_taunt)] at [target].")
+		manual_emote("[pick(emote_taunt)] at [target].")
 		taunt_chance = max(taunt_chance-7,2)
 
 
@@ -346,7 +366,7 @@
 	taunt_chance = initial(taunt_chance)
 
 /mob/living/simple_animal/hostile/proc/LoseTarget()
-	target = null
+	GiveTarget(null)
 	approaching_target = FALSE
 	in_melee = FALSE
 	walk(src, 0)
@@ -491,7 +511,7 @@
 
 /mob/living/simple_animal/hostile/RangedAttack(atom/A, params) //Player firing
 	if(ranged && ranged_cooldown <= world.time)
-		target = A
+		GiveTarget(A)
 		OpenFire(A)
 	..()
 
@@ -549,15 +569,10 @@
 		toggle_ai(AI_Z_OFF)
 		return
 
-	var/cheap_search = isturf(T) && !is_station_level(T.z)
-	if (cheap_search)
-		tlist = ListTargetsLazy(T.z)
-	else
-		tlist = ListTargets()
+	tlist = ListTargetsLazy(T.z)
 
 	if(AIStatus == AI_IDLE && FindTarget(tlist, 1))
-		if(cheap_search) //Try again with full effort
-			FindTarget()
+		FindTarget() //Try again with full effort
 		toggle_ai(AI_ON)
 
 /mob/living/simple_animal/hostile/proc/ListTargetsLazy(var/_Z)//Step 1, find out what we can see
@@ -577,3 +592,94 @@
 		friends = fren
 		faction = fren.faction.Copy()
 	return ..()
+
+/**
+ * Proc that handles a charge attack windup for a mob.
+ */
+/mob/living/simple_animal/hostile/proc/enter_charge(atom/target)
+	if(charge_state || !(COOLDOWN_FINISHED(src, charge_cooldown)))
+		return FALSE
+	if(!can_charge_target(target))
+		return FALSE
+	Shake(15, 15, 1 SECONDS)
+	target.visible_message("<span class='danger'>[src] prepares to pounce!</span>")
+	addtimer(CALLBACK(src, .proc/handle_charge_target, target), 1.5 SECONDS, TIMER_STOPPABLE)
+
+/**
+ * Proc that checks if the mob can charge attack.
+ */
+/mob/living/simple_animal/hostile/proc/can_charge_target(atom/target)
+	if(stat == DEAD || body_position == LYING_DOWN || HAS_TRAIT(src, TRAIT_IMMOBILIZED) || !has_gravity() || !target.has_gravity())
+		return FALSE
+	return TRUE
+
+/**
+ * Proc that throws the mob at the target after the windup.
+ */
+/mob/living/simple_animal/hostile/proc/handle_charge_target(atom/target)
+	if(!can_charge_target(target))
+		return FALSE
+	charge_state = TRUE
+	throw_at(target, charge_distance, 1, src, FALSE, TRUE, callback = CALLBACK(src, .proc/charge_end))
+	COOLDOWN_START(src, charge_cooldown, charge_frequency)
+	return TRUE
+
+/**
+ * Proc that handles a charge attack after it's concluded.
+ */
+/mob/living/simple_animal/hostile/proc/charge_end()
+	charge_state = FALSE
+
+/**
+ * Proc that handles the charge impact of the charging mob.
+ */
+/mob/living/simple_animal/hostile/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)
+	if(!charge_state)
+		return ..()
+
+	if(hit_atom)
+		if(isliving(hit_atom))
+			var/mob/living/L = hit_atom
+			var/blocked = FALSE
+			if(ishuman(hit_atom))
+				var/mob/living/carbon/human/H = hit_atom
+				if(H.check_shields(src, 0, "the [name]", attack_type = LEAP_ATTACK))
+					blocked = TRUE
+			if(!blocked)
+				L.visible_message(("<span class='danger'>[src] pounces onto[L]!</span>"), ("<span class='userdanger'>[src] pounces on you!</span>"))
+				L.Knockdown(knockdown_time)
+			else
+				Stun((knockdown_time * 2), ignore_canstun = TRUE)
+			charge_end()
+		else if(hit_atom.density && !hit_atom.CanPass(src, get_dir(hit_atom, src)))
+			visible_message(("<span class='danger'>[src] smashes into [hit_atom]!</span>"))
+			Stun((knockdown_time * 2), ignore_canstun = TRUE)
+
+		if(charge_state)
+			charge_state = FALSE
+			update_icons()
+
+/mob/living/simple_animal/hostile/proc/set_targets_from(atom/target_from)
+	if(targets_from)
+		UnregisterSignal(targets_from, COMSIG_PARENT_QDELETING)
+	targets_from = target_from
+	if(targets_from)
+		RegisterSignal(targets_from, COMSIG_PARENT_QDELETING, .proc/handle_targets_from_del)
+
+/mob/living/simple_animal/hostile/proc/handle_targets_from_del(datum/source)
+	SIGNAL_HANDLER
+	if(targets_from != src)
+		set_targets_from(src)
+
+/mob/living/simple_animal/hostile/proc/handle_target_del(datum/source)
+	SIGNAL_HANDLER
+	UnregisterSignal(target, COMSIG_PARENT_QDELETING)
+	target = null
+	LoseTarget()
+
+/mob/living/simple_animal/hostile/proc/add_target(new_target)
+	if(target)
+		UnregisterSignal(target, COMSIG_PARENT_QDELETING)
+	target = new_target
+	if(target)
+		RegisterSignal(target, COMSIG_PARENT_QDELETING, .proc/handle_target_del, TRUE)

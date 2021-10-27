@@ -236,6 +236,7 @@ GLOBAL_LIST_INIT(plasma_recipes, list ( \
 	walltype = /turf/closed/wall/mineral/gold
 
 GLOBAL_LIST_INIT(gold_recipes, list ( \
+	new/datum/stack_recipe("mortar", /obj/item/reagent_containers/glass/mortar/gold, 3), \
 	new/datum/stack_recipe("golden door", /obj/structure/mineral_door/gold, 10, one_per_turf = 1, on_floor = 1), \
 	new/datum/stack_recipe("gold tile", /obj/item/stack/tile/mineral/gold, 1, 4, 20), \
 	new/datum/stack_recipe("blank plaque", /obj/item/plaque, 1), \
@@ -446,6 +447,9 @@ GLOBAL_LIST_INIT(adamantine_recipes, list(
 	. = ..()
 	. += GLOB.adamantine_recipes
 
+/obj/item/stack/sheet/mineral/adamantine/ten
+	amount = 10
+
 /*
  * Runite
  */
@@ -460,6 +464,8 @@ GLOBAL_LIST_INIT(adamantine_recipes, list(
 	merge_type = /obj/item/stack/sheet/mineral/runite
 	material_type = /datum/material/runite
 
+/obj/item/stack/sheet/mineral/runite/ten
+	amount = 10
 
 /*
  * Mythril
@@ -472,6 +478,9 @@ GLOBAL_LIST_INIT(adamantine_recipes, list(
 	novariants = TRUE
 	custom_materials = list(/datum/material/mythril=MINERAL_MATERIAL_AMOUNT)
 	merge_type = /obj/item/stack/sheet/mineral/mythril
+
+/obj/item/stack/sheet/mineral/mythril/ten
+	amount = 10
 
 /*
  * Alien Alloy

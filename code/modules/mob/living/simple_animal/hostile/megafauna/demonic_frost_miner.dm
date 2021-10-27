@@ -39,9 +39,10 @@ Difficulty: Extremely Hard
 	deathmessage = "falls to the ground, decaying into plasma particles."
 	deathsound = "bodyfall"
 	footstep_type = FOOTSTEP_MOB_HEAVY
-	attack_action_types = list(/datum/action/innate/megafauna_attack/frost_orbs,
-							   /datum/action/innate/megafauna_attack/snowball_machine_gun,
-							   /datum/action/innate/megafauna_attack/ice_shotgun)
+	attack_action_types = list(
+		/datum/action/innate/megafauna_attack/frost_orbs,
+		/datum/action/innate/megafauna_attack/snowball_machine_gun,
+		/datum/action/innate/megafauna_attack/ice_shotgun)
 	/// Modifies the speed of the projectiles the demonic frost miner shoots out
 	var/projectile_speed_multiplier = 1
 	/// If the demonic frost miner is in its enraged state
@@ -329,7 +330,7 @@ Difficulty: Extremely Hard
 	denied_type = /obj/item/crusher_trophy/ice_block_talisman
 
 /obj/item/crusher_trophy/ice_block_talisman/effect_desc()
-	return "mark detonation to freeze a creature in a block of ice for a period, preventing them from moving"
+	return "waveform collapse to freeze a creature in a block of ice for a period, preventing them from moving"
 
 /obj/item/crusher_trophy/ice_block_talisman/on_mark_detonation(mob/living/target, mob/living/user)
 	target.apply_status_effect(/datum/status_effect/ice_block_talisman)

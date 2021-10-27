@@ -10,17 +10,17 @@ $include atmos_mix.txt
 
 # You can use the @ character at the beginning of a config option to lock it from being edited in-game
 # Example usage:
-# @SERVERNAME White Sands
+# @SERVERNAME Shiptest
 # Which sets the SERVERNAME, and disallows admins from being able to change it using View Variables.
 # @LOG_TWITTER 0
 # Which explicitly disables LOG_TWITTER, as well as locking it.
 # There are various options which are hard-locked for security reasons.
 
-## Server name: This appears at the top of the screen in-game and in the BYOND hub. Uncomment and replace 'White Sands' with the name of your choice.
-# SERVERNAME White Sands
+## Server name: This appears at the top of the screen in-game and in the BYOND hub. Uncomment and replace 'Shiptest' with the name of your choice.
+# SERVERNAME Shiptest
 
 ## Server SQL name: This is the name used to identify the server to the SQL DB, distinct from SERVERNAME as it must be at most 32 characters.
-# SERVERSQLNAME whitesands
+# SERVERSQLNAME shiptest
 
 ## Station name: The name of the station as it is referred to in-game. If commented out, the game will generate a random name instead.
 STATIONNAME Space Station 13
@@ -254,25 +254,28 @@ CHECK_RANDOMIZER
 # SERVER ss13.example.com:2506
 
 ## forum address
-# FORUMURL https://forum.white-sands.space
+# FORUMURL https://shiptest.net/discord
 
 ## Wiki address
-# WIKIURL https://wiki.white-sands.space
+# WIKIURL https://shiptest.net/wiki/
 
 ## Rules address
-# RULESURL https://wiki.white-sands.space/Rules
+# RULESURL https://shiptest.net/wiki/Rules
 
 ## Github address
-# GITHUBURL https://github.com/Whitesands13/Whitesands
+# GITHUBURL https://github.com/Shiptest-SS13/Shiptest
 
 ## Discord address
-# DISCORDURL https://discord.gg/BUM8uRc
+# DISCORDURL https://shiptest.net/discord
+
+## Map viewer address, will have `?=[map_short_name]` appended to it
+# MAPVIEWERURL https://shiptest.net/map
 
 ## Round specific stats address
 ## Link to round specific parsed logs; IE statbus. It is appended with the RoundID automatically by ticker/Reboot()
 ## This will take priority over the game logs address during reboot.
-## Example: https://atlantaned.space/statbus/round.php?round=
-# ROUNDSTATSURL
+## Example: https://shiptest.net/stats/rounds/
+# ROUNDSTATSURL https://shiptest.net/stats/rounds/
 
 ## Game Logs address
 ## Incase you don't have a fancy parsing system, but still want players to be able to find where you keep your server's logs.
@@ -529,10 +532,6 @@ DEFAULT_VIEW 21x15
 ## You probably shouldn't ever be changing this, but it's here if you want to.
 DEFAULT_VIEW_SQUARE 15x15
 
-## Custom shuttle spam prevention. Changine these numbers allows you to change the maxsize and amount of custom shuttles.
-MAX_SHUTTLE_COUNT 6
-MAX_SHUTTLE_SIZE 300
-
 
 ## Enable automatic profiling - Byond 513.1506 and newer only.
 AUTO_PROFILE
@@ -552,9 +551,6 @@ AUTO_PROFILE
 ## Uncomment to enable discord auto-roling when users link their BYOND and Discord accounts
 #ENABLE_DISCORD_AUTOROLE
 
-## Set to a value greater than zero to require a user to have at least this many hours of living role time to be assigned the role
-REQUIRED_LIVING_HOURS 0
-
 ## Add your discord bot token here. Make sure it has the ability to manage roles
 #DISCORD_TOKEN someDiscordToken
 
@@ -563,3 +559,8 @@ REQUIRED_LIVING_HOURS 0
 
 ## Add the ID of the role you want assigning here
 #DISCORD_ROLEID 000000000000000000
+
+## Respawn Timer for Respawn in deciseconds
+## Setting it to 0 disables the respawn timer.
+## THIS CONFIG DOES NOT OVERRIDE THE NORESPAWN FLAG
+RESPAWN_TIMER 600

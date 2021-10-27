@@ -5,21 +5,17 @@ SUBSYSTEM_DEF(overmap)
 	flags = SS_KEEP_TIMING|SS_NO_TICK_CHECK
 	runlevels = RUNLEVEL_SETUP | RUNLEVEL_GAME
 
+	//The type of star this system will have
+	var/startype
 	///Defines which generator to use for the overmap
 	var/generator_type = OVERMAP_GENERATOR_RANDOM
 
-	///List of all overmap objects, keys are their respective IDs
+	///List of all overmap objects.
 	var/list/overmap_objects
-	///List of all active, simulated ships
+	///List of all simulated ships
 	var/list/simulated_ships
-	///List of all helms, to be adjusted
-	var/list/helms
-	///List of all nav computers to initialize
-	var/list/navs
 	///List of all events
 	var/list/events
-	///List of all autopilot consoles
-	var/list/autopilots
 
 	///Map of tiles at each radius (represented by index) around the sun
 	var/list/list/radius_tiles
@@ -36,15 +32,34 @@ SUBSYSTEM_DEF(overmap)
 	var/encounter_cooldown = 0
 
 /**
-  * Creates an overmap object for shuttles, triggers initialization procs for ships and helms
+  * Creates an overmap object for shuttles, triggers initialization procs for ships
   */
 /datum/controller/subsystem/overmap/Initialize(start_timeofday)
+	overmap_objects = list()
+	simulated_ships = list()
+	events = list()
+
 	generator_type = CONFIG_GET(string/overmap_generator_type)
 	if (!generator_type)
 		generator_type = OVERMAP_GENERATOR_RANDOM
 
 	if (generator_type == OVERMAP_GENERATOR_SOLAR)
-		var/obj/structure/overmap/star/center = new(locate(size / 2, size / 2, 1))
+		var/obj/structure/overmap/star/center
+		startype = pick(SMALLSTAR,TWOSTAR,MEDSTAR,BIGSTAR)
+		if(startype == SMALLSTAR)
+			center = new(locate(size / 2, size / 2, 1))
+		if(startype == TWOSTAR)
+			var/obj/structure/overmap/star/big/binary/S
+			S = new(locate(size / 2, size / 2, 1))
+			center = S
+		if(startype == MEDSTAR)
+			var/obj/structure/overmap/star/medium/S
+			S = new(locate(size / 2, size / 2, 1))
+			center = S
+		if(startype == BIGSTAR)
+			var/obj/structure/overmap/star/big/S
+			S = new(locate(size / 2, size / 2, 1))
+			center = S
 		var/list/unsorted_turfs = get_areatype_turfs(/area/overmap)
 		// SSovermap.size - 2 = area of the overmap w/o borders
 		radius_tiles = list()
@@ -60,24 +75,7 @@ SUBSYSTEM_DEF(overmap)
 	create_map()
 
 	for(var/obj/docking_port/mobile/M as anything in SSshuttle.mobile)
-		if(istype(M, /obj/docking_port/mobile/arrivals))
-			continue
 		setup_shuttle_ship(M)
-
-	for(var/obj/structure/overmap/ship/simulated/S as anything in simulated_ships)
-		S.initial_load()
-
-	for(var/obj/machinery/computer/helm/H as anything in helms)
-		H.set_ship()
-	qdel(helms)
-
-	for(var/obj/machinery/computer/camera_advanced/shuttle_docker/nav/N as anything in navs)
-		N.link_shuttle()
-	qdel(navs)
-
-	for(var/obj/machinery/computer/autopilot/A as anything in autopilots)
-		A.initial_load()
-	qdel(autopilots)
 
 	return ..()
 
@@ -95,14 +93,14 @@ SUBSYSTEM_DEF(overmap)
 	var/docked_object = get_overmap_object_by_z(shuttle.get_virtual_z_level())
 	var/obj/structure/overmap/ship/simulated/new_ship
 	if(docked_object)
-		new_ship = new(docked_object, shuttle.id, shuttle)
+		new_ship = new(docked_object, shuttle)
 		if(shuttle.undock_roundstart)
 			new_ship.undock()
 	else if(is_reserved_level(shuttle.z))
-		new_ship = new(get_unused_overmap_square(), shuttle.id, shuttle)
+		new_ship = new(get_unused_overmap_square(), shuttle)
 		new_ship.state = OVERMAP_SHIP_FLYING
 	else if(is_centcom_level(shuttle.z))
-		new_ship = new(null, shuttle.id, shuttle)
+		new_ship = new(null, shuttle)
 	else
 		CRASH("Shuttle created in unknown location, unable to create overmap ship!")
 
@@ -175,17 +173,13 @@ SUBSYSTEM_DEF(overmap)
 			spawn_event_cluster(type, T, chance / 2)
 
 /datum/controller/subsystem/overmap/proc/spawn_initial_ships()
-	if(!(SSmapping.config.shuttle_id in SSmapping.shuttle_templates))
-		INIT_ANNOUNCE("WARNING! The following shuttle datum with the ID of [SSmapping.config.shuttle_id] was not found! Fix your configs!")
-		SSshuttle.action_load(SSmapping.shuttle_templates[initial(SSmapping.config.shuttle_id)])
-		return
-	var/datum/map_template/shuttle/selected_template = SSmapping.shuttle_templates[SSmapping.config.shuttle_id]
-	INIT_ANNOUNCE("Loading [SSmapping.config.map_name]...")
+	var/datum/map_template/shuttle/selected_template = SSmapping.maplist[pick(SSmapping.maplist)]
+	INIT_ANNOUNCE("Loading [selected_template.name]...")
 	SSshuttle.action_load(selected_template)
 	if(SSdbcore.Connect())
 		var/datum/DBQuery/query_round_map_name = SSdbcore.NewQuery({"
 			UPDATE [format_table_name("round")] SET map_name = :map_name WHERE id = :round_id
-		"}, list("map_name" = SSmapping.config.map_name, "round_id" = GLOB.round_id))
+		"}, list("map_name" = selected_template.name, "round_id" = GLOB.round_id))
 		query_round_map_name.Execute()
 		qdel(query_round_map_name)
 
@@ -204,34 +198,35 @@ SUBSYSTEM_DEF(overmap)
   * Reserves a square dynamic encounter area, and spawns a ruin in it if one is supplied.
   * * on_planet - If the encounter should be on a generated planet. Required, as it will be otherwise inaccessible.
   * * target - The ruin to spawn, if any
-  * * dock_id - The id of the stationary docking port that will be spawned in the encounter. The primary and secondary prefixes will be applied, so do not include them.
   * * ruin_type - The ruin to spawn. Don't pass this argument if you want it to randomly select based on planet type.
   */
-/datum/controller/subsystem/overmap/proc/spawn_dynamic_encounter(planet_type, ruin = TRUE, dock_id, ignore_cooldown = FALSE, datum/map_template/ruin/ruin_type)
-	if(!dock_id)
-		CRASH("Encounter spawner tried spawning an encounter without a docking port ID!")
-
+/datum/controller/subsystem/overmap/proc/spawn_dynamic_encounter(planet_type, ruin = TRUE, ignore_cooldown = FALSE, datum/map_template/ruin/ruin_type)
 	var/list/ruin_list = SSmapping.space_ruins_templates
 	var/datum/map_generator/mapgen
 	var/area/target_area
+	var/turf/surface = /turf/open/space
 	if(planet_type)
 		switch(planet_type)
 			if(DYNAMIC_WORLD_LAVA)
 				ruin_list = SSmapping.lava_ruins_templates
 				mapgen = new /datum/map_generator/cave_generator/lavaland
 				target_area = /area/overmap_encounter/planetoid/lava
+				surface = /turf/open/floor/plating/asteroid/basalt/lava_land_surface
 			if(DYNAMIC_WORLD_ICE)
 				ruin_list = SSmapping.ice_ruins_templates
-				mapgen = new /datum/map_generator/cave_generator/icemoon/surface
+				mapgen = new /datum/map_generator/cave_generator/icemoon
 				target_area = /area/overmap_encounter/planetoid/ice
+				surface = /turf/open/floor/plating/asteroid/snow/icemoon
 			if(DYNAMIC_WORLD_SAND)
 				ruin_list = SSmapping.sand_ruins_templates
 				mapgen = new /datum/map_generator/cave_generator/whitesands
 				target_area = /area/overmap_encounter/planetoid/sand
+				surface = /turf/open/floor/plating/asteroid/whitesands
 			if(DYNAMIC_WORLD_JUNGLE)
 				ruin_list = SSmapping.jungle_ruins_templates
 				mapgen = new /datum/map_generator/jungle_generator
 				target_area = /area/overmap_encounter/planetoid/jungle
+				surface = /turf/open/floor/plating/dirt/jungle
 			if(DYNAMIC_WORLD_ASTEROID)
 				ruin_list = null
 				mapgen = new /datum/map_generator/cave_generator/asteroid
@@ -242,7 +237,7 @@ SUBSYSTEM_DEF(overmap)
 			ruin_type = new ruin_type
 
 	var/datum/turf_reservation/fixed/encounter_reservation = SSmapping.request_fixed_reservation()
-	encounter_reservation.fill_in(border_turf_type = /turf/closed/indestructible/blank, area_override = target_area)
+	encounter_reservation.fill_in(surface, /turf/closed/indestructible/blank, target_area)
 
 	if(ruin_type) // loaded in after the reservation so we can place inside the reservation
 		var/turf/ruin_turf = locate(rand(encounter_reservation.bottom_left_coords[1]+6,encounter_reservation.top_right_coords[1]-ruin_type.width-6),
@@ -254,40 +249,31 @@ SUBSYSTEM_DEF(overmap)
 		mapgen.generate_terrain(encounter_reservation.get_non_border_turfs())
 
 	// locates the first dock in the bottom left, accounting for padding and the border
-	var/turf/primary_docking_turf = locate(encounter_reservation.bottom_left_coords[1]+SHUTTLE_DOCK_DEFAULT_PADDING+1,
-										   encounter_reservation.bottom_left_coords[2]+SHUTTLE_DOCK_DEFAULT_PADDING+1,
-										   encounter_reservation.bottom_left_coords[3])
+	var/turf/primary_docking_turf = locate(
+		encounter_reservation.bottom_left_coords[1]+RESERVE_DOCK_DEFAULT_PADDING+1,
+		encounter_reservation.bottom_left_coords[2]+RESERVE_DOCK_DEFAULT_PADDING+1,
+		encounter_reservation.bottom_left_coords[3])
 	// now we need to offset to account for the first dock
-	var/turf/secondary_docking_turf = locate(primary_docking_turf.x+SHUTTLE_MAX_SIZE_LONG+SHUTTLE_DOCK_DEFAULT_PADDING, primary_docking_turf.y, primary_docking_turf.z)
+	var/turf/secondary_docking_turf = locate(primary_docking_turf.x+RESERVE_DOCK_MAX_SIZE_LONG+RESERVE_DOCK_DEFAULT_PADDING, primary_docking_turf.y, primary_docking_turf.z)
 
 	//This check exists because docking ports don't like to be deleted.
-	var/obj/docking_port/stationary/primary_dock = SSshuttle.getDock("[PRIMARY_OVERMAP_DOCK_PREFIX]_[dock_id]")
-	if(!primary_dock)
-		primary_dock = new(primary_docking_turf)
-	else
-		primary_dock.forceMove(primary_docking_turf)
+	var/obj/docking_port/stationary/primary_dock = new(primary_docking_turf)
 	primary_dock.dir = NORTH
 	primary_dock.name = "\improper Uncharted Space"
-	primary_dock.id = "[PRIMARY_OVERMAP_DOCK_PREFIX]_[dock_id]"
-	primary_dock.height = SHUTTLE_MAX_SIZE_SHORT
-	primary_dock.width = SHUTTLE_MAX_SIZE_LONG
+	primary_dock.height = RESERVE_DOCK_MAX_SIZE_SHORT
+	primary_dock.width = RESERVE_DOCK_MAX_SIZE_LONG
 	primary_dock.dheight = 0
 	primary_dock.dwidth = 0
 
-	var/obj/docking_port/stationary/secondary_dock = SSshuttle.getDock("[SECONDARY_OVERMAP_DOCK_PREFIX]_[dock_id]")
-	if(!secondary_dock)
-		secondary_dock = new(secondary_docking_turf)
-	else
-		secondary_dock.forceMove(secondary_docking_turf)
+	var/obj/docking_port/stationary/secondary_dock = new(secondary_docking_turf)
 	secondary_dock.dir = NORTH
 	secondary_dock.name = "\improper Uncharted Space"
-	secondary_dock.id = "[SECONDARY_OVERMAP_DOCK_PREFIX]_[dock_id]"
-	secondary_dock.height = SHUTTLE_MAX_SIZE_LONG
-	secondary_dock.width = SHUTTLE_MAX_SIZE_SHORT
+	secondary_dock.height = RESERVE_DOCK_MAX_SIZE_SHORT
+	secondary_dock.width = RESERVE_DOCK_MAX_SIZE_LONG
 	secondary_dock.dheight = 0
 	secondary_dock.dwidth = 0
 
-	return encounter_reservation
+	return list(encounter_reservation, primary_dock, secondary_dock)
 
 /**
   * Returns a random, usually empty turf in the overmap
@@ -335,31 +321,17 @@ SUBSYSTEM_DEF(overmap)
 			ret_dist = dist
 
 /**
-  * Gets the corresponding overmap object that shares the provided ID
-  * * id - ID of the overmap object you want to find
-  */
-/datum/controller/subsystem/overmap/proc/get_overmap_object_by_id(id)
-	if(id in overmap_objects)
-		return overmap_objects[id]
-
-/**
   * Gets the corresponding overmap object that shares the provided z level
   * * zlevel - The Z-level of the overmap object you want to find
   */
 /datum/controller/subsystem/overmap/proc/get_overmap_object_by_z(zlevel)
-	for(var/id in overmap_objects)
-		if(istype(overmap_objects[id], /obj/structure/overmap/level))
-			var/obj/structure/overmap/level/L = overmap_objects[id]
-			if(zlevel in L.linked_levels)
-				return L
-		if(istype(overmap_objects[id], /obj/structure/overmap/dynamic))
-			var/obj/structure/overmap/dynamic/D = overmap_objects[id]
+	for(var/O in overmap_objects)
+		if(istype(O, /obj/structure/overmap/dynamic))
+			var/obj/structure/overmap/dynamic/D = O
 			if(zlevel == D.virtual_z_level)
 				return D
 
 /datum/controller/subsystem/overmap/Recover()
-	if(istype(SSovermap.simulated_ships))
-		simulated_ships = SSovermap.simulated_ships
 	if(istype(SSovermap.events))
 		events = SSovermap.events
 	if(istype(SSovermap.radius_tiles))

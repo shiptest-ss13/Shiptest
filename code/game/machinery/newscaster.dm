@@ -209,7 +209,7 @@ GLOBAL_LIST_EMPTY(allCasters)
 			pixel_y = dir == NORTH ? 30 : (dir == SOUTH ? -30 : INSTANCE_VAR_DEFAULT)\
 		),\
 		dir_amount = 4\
-    )
+	)
 
 /obj/machinery/newscaster/security_unit
 	name = "security newscaster"
@@ -608,7 +608,7 @@ GLOBAL_LIST_EMPTY(allCasters)
 				var/choice = alert("Please confirm Wanted Issue [(input_param==1) ? ("creation.") : ("edit.")]","Network Security Handler","Confirm","Cancel")
 				if(choice=="Confirm")
 					scan_user(usr)
-					if(input_param==1)          //If input_param == 1 we're submitting a new wanted issue. At 2 we're just editing an existing one.
+					if(input_param==1)		  //If input_param == 1 we're submitting a new wanted issue. At 2 we're just editing an existing one.
 						GLOB.news_network.submitWanted(channel_name, msg, scanned_user, picture, 0 , 1)
 						screen = 15
 					else

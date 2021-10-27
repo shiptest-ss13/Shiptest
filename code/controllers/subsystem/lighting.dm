@@ -2,7 +2,6 @@ SUBSYSTEM_DEF(lighting)
 	name = "Lighting"
 	wait = 2
 	init_order = INIT_ORDER_LIGHTING
-	flags = SS_TICKER
 	var/static/list/sources_queue = list() // List of lighting sources queued for update.
 	var/static/list/corners_queue = list() // List of lighting corners queued for update.
 	var/static/list/objects_queue = list() // List of lighting objects queued for update.
@@ -55,8 +54,9 @@ SUBSYSTEM_DEF(lighting)
 	for (i in 1 to length(queue))
 		var/datum/lighting_corner/C = queue[i]
 
+		C.needs_update = FALSE //update_objects() can call qdel if the corner is storing no data
 		C.update_objects()
-		C.needs_update = FALSE
+
 		if(init_tick_checks)
 			CHECK_TICK
 		else if (MC_TICK_CHECK)

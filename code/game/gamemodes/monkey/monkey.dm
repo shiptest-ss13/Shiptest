@@ -56,7 +56,7 @@
 	return ..()
 
 /datum/game_mode/monkey/check_finished()
-	if((SSshuttle.emergency.mode == SHUTTLE_ENDGAME) || station_was_nuked)
+	if(SSshuttle.jump_mode == BS_JUMP_COMPLETED)
 		return TRUE
 
 	if(!round_converted)
@@ -67,8 +67,6 @@
 
 		var/datum/disease/D = new /datum/disease/transformation/jungle_fever() //ugly but unfortunately needed
 		for(var/mob/living/carbon/human/H in GLOB.alive_mob_list)
-			if(!is_station_level(H.z))
-				continue
 			if(H.mind && H.client && H.stat != DEAD)
 				if(H.HasDisease(D))
 					return FALSE
@@ -76,7 +74,7 @@
 	return ..()
 
 /datum/game_mode/monkey/proc/check_monkey_victory()
-	if(SSshuttle.emergency.mode != SHUTTLE_ENDGAME)
+	if(SSshuttle.jump_mode != BS_JUMP_COMPLETED)
 		return FALSE
 	var/datum/disease/D = new /datum/disease/transformation/jungle_fever()
 	for(var/mob/living/carbon/monkey/M in GLOB.alive_mob_list)

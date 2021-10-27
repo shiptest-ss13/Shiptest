@@ -326,7 +326,7 @@
 		/obj/item/stack/sheet/glass = 1)
 
 #define PATH_FREEZER /obj/machinery/atmospherics/components/unary/thermomachine/freezer
-#define PATH_HEATER  /obj/machinery/atmospherics/components/unary/thermomachine/heater
+#define PATH_HEATER /obj/machinery/atmospherics/components/unary/thermomachine/heater
 
 /obj/item/circuitboard/machine/thermomachine/Initialize()
 	. = ..()
@@ -620,6 +620,39 @@
 	def_components = list(/obj/item/stock_parts/cell = /obj/item/stock_parts/cell/high)
 	needs_anchored = FALSE
 
+/obj/item/circuitboard/machine/chem_dispenser/fullupgrade
+	build_path = /obj/machinery/chem_dispenser/fullupgrade
+	req_components = list(
+		/obj/item/stock_parts/matter_bin/bluespace = 2,
+		/obj/item/stock_parts/capacitor/quadratic = 2,
+		/obj/item/stock_parts/manipulator/femto = 2,
+		/obj/item/stack/sheet/glass = 1,
+		/obj/item/stock_parts/cell/bluespace = 1,
+	)
+
+/obj/item/circuitboard/machine/chem_dispenser/mutagensaltpeter
+	build_path = /obj/machinery/chem_dispenser/mutagensaltpeter
+	req_components = list(
+		/obj/item/stock_parts/matter_bin/bluespace = 2,
+		/obj/item/stock_parts/capacitor/quadratic = 2,
+		/obj/item/stock_parts/manipulator/femto = 2,
+		/obj/item/stack/sheet/glass = 1,
+		/obj/item/stock_parts/cell/bluespace = 1,
+	)
+
+/obj/item/circuitboard/machine/chem_dispenser/abductor
+	name = "Reagent Synthesizer (Abductor Machine Board)"
+	icon_state = "abductor_mod"
+	build_path = /obj/machinery/chem_dispenser/abductor
+	req_components = list(
+		/obj/item/stock_parts/matter_bin/bluespace = 2,
+		/obj/item/stock_parts/capacitor/quadratic = 2,
+		/obj/item/stock_parts/manipulator/femto = 2,
+		/obj/item/stack/sheet/glass = 1,
+		/obj/item/stock_parts/cell/bluespace = 1,
+	)
+	needs_anchored = FALSE
+
 /obj/item/circuitboard/machine/chem_heater
 	name = "Chemical Heater (Machine Board)"
 	icon_state = "medical"
@@ -906,11 +939,31 @@ WS End */
 
 /obj/item/circuitboard/machine/rdserver
 	name = "R&D Server (Machine Board)"
+	var/server_id = "default-server"
+	var/static/list/all_ids = list()
 	icon_state = "science"
 	build_path = /obj/machinery/rnd/server
 	req_components = list(
 		/obj/item/stack/cable_coil = 2,
 		/obj/item/stock_parts/scanning_module = 1)
+
+/obj/item/circuitboard/machine/rdserver/multitool_act(mob/living/user)
+	. = ..()
+	var/new_id = input("Set the server ID", "ServerID ID", server_id) as text|null
+	new_id = replacetext(new_id, " ", "-")
+	if(!new_id || (loc != user))
+		to_chat(user, "<span class='warning'>You must hold the circuitboard to change its Server ID!</span>")
+		return
+
+	if(new_id in all_ids)
+		to_chat(user, "<span class='warning'>Server ID already in use!</span>")
+		return
+
+	if(server_id != initial(server_id))
+		all_ids -= server_id
+
+	server_id = new_id
+	all_ids |= server_id
 
 /obj/item/circuitboard/machine/techfab/department/science
 	name = "\improper Departmental Techfab (Machine Board) - Science"
@@ -983,10 +1036,30 @@ WS End */
 	icon_state = "service"
 	build_path = /obj/machinery/chem_dispenser/drinks
 
+/obj/item/circuitboard/machine/chem_dispenser/drinks/fullupgrade
+	build_path = /obj/machinery/chem_dispenser/drinks/fullupgrade
+	req_components = list(
+		/obj/item/stock_parts/matter_bin/bluespace = 2,
+		/obj/item/stock_parts/capacitor/quadratic = 2,
+		/obj/item/stock_parts/manipulator/femto = 2,
+		/obj/item/stack/sheet/glass = 1,
+		/obj/item/stock_parts/cell/bluespace = 1,
+	)
+
 /obj/item/circuitboard/machine/chem_dispenser/drinks/beer
 	name = "Booze Dispenser (Machine Board)"
 	icon_state = "service"
 	build_path = /obj/machinery/chem_dispenser/drinks/beer
+
+/obj/item/circuitboard/machine/chem_dispenser/drinks/beer/fullupgrade
+	build_path = /obj/machinery/chem_dispenser/drinks/beer/fullupgrade
+	req_components = list(
+		/obj/item/stock_parts/matter_bin/bluespace = 2,
+		/obj/item/stock_parts/capacitor/quadratic = 2,
+		/obj/item/stock_parts/manipulator/femto = 2,
+		/obj/item/stack/sheet/glass = 1,
+		/obj/item/stock_parts/cell/bluespace = 1,
+	)
 
 /obj/item/circuitboard/machine/chem_master/condi
 	name = "CondiMaster 3000 (Machine Board)"
@@ -1182,6 +1255,17 @@ WS End */
 	name = "\improper Departmental Techfab (Machine Board) - Cargo"
 	icon_state = "supply"
 	build_path = /obj/machinery/rnd/production/techfab/department/cargo
+
+/obj/item/circuitboard/machine/selling_pad
+	name = "Cargo hold pad (Machine Board)"
+	icon_state = "supply"
+	build_path = /obj/machinery/selling_pad
+	req_components = list(
+		/obj/item/stock_parts/subspace/amplifier = 2,
+		/obj/item/stock_parts/subspace/transmitter = 2,
+		/obj/item/stock_parts/subspace/crystal = 1,
+		/obj/item/stock_parts/scanning_module = 2,
+		/obj/item/stock_parts/micro_laser = 2)
 
 //Misc
 /obj/item/circuitboard/machine/sheetifier

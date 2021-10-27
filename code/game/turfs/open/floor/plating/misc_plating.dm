@@ -7,6 +7,10 @@
 	initial_gas_mix = OPENTURF_LOW_PRESSURE
 	baseturfs = /turf/open/floor/plating/lowpressure
 
+/turf/open/floor/plating/icemoon
+	icon_state = "plating"
+	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
+
 /turf/open/floor/plating/abductor
 	name = "alien floor"
 	icon_state = "alienpod1"
@@ -192,7 +196,7 @@
 	icon = 'icons/turf/floors/ice_turf.dmi'
 	icon_state = "ice_turf-0"
 	initial_gas_mix = FROZEN_ATMOS
-	temperature = 180
+	initial_temperature = 180
 	planetary_atmos = TRUE
 	baseturfs = /turf/open/floor/plating/ice
 	slowdown = 1
@@ -218,10 +222,10 @@
 	canSmoothWith = list(SMOOTH_GROUP_FLOOR_ICE)
 
 /turf/open/floor/plating/ice/colder
-	temperature = 140
+	initial_temperature = 140
 
 /turf/open/floor/plating/ice/temperate
-	temperature = 255.37
+	initial_temperature = 255.37
 
 /turf/open/floor/plating/ice/break_tile()
 	return
@@ -238,7 +242,7 @@
 	icon = 'icons/turf/snow.dmi'
 	icon_state = "snowplating"
 	initial_gas_mix = FROZEN_ATMOS
-	temperature = 180
+	initial_temperature = 180
 	attachment_holes = FALSE
 	planetary_atmos = TRUE
 	footstep = FOOTSTEP_SAND
@@ -259,10 +263,10 @@
 	planetary_atmos = TRUE
 
 /turf/open/floor/plating/snowed/colder
-	temperature = 140
+	initial_temperature = 140
 
 /turf/open/floor/plating/snowed/temperatre
-	temperature = 255.37
+	initial_temperature = 255.37
 
 /turf/open/floor/plating/snowed/smoothed/icemoon
 	initial_gas_mix = ICEMOON_DEFAULT_ATMOS

@@ -107,6 +107,8 @@
 	var/obj/item/tank/jetpack/suit/jetpack = null
 	var/hardsuit_type
 	pocket_storage_component_path = FALSE //WS Edit - Exowear Pockets
+	greyscale_colors = list(list(10, 20), list(14, 15), list(22, 12))
+	greyscale_icon_state = "hardsuit"
 
 
 /obj/item/clothing/suit/space/hardsuit/Initialize()
@@ -278,6 +280,7 @@
 	allowed = list(/obj/item/flashlight, /obj/item/tank/internals, /obj/item/storage/bag/ore, /obj/item/pickaxe)
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/mining
 	heat_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
+	custom_price = 2000
 
 /obj/item/clothing/suit/space/hardsuit/mining/Initialize()
 	. = ..()
@@ -639,15 +642,6 @@
 	item_state = "clown_hardsuit"
 	armor = list("melee" = 30, "bullet" = 5, "laser" = 10, "energy" = 20, "bomb" = 10, "bio" = 100, "rad" = 75, "fire" = 60, "acid" = 30)
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/clown
-
-/obj/item/clothing/suit/space/hardsuit/clown/mob_can_equip(mob/M, slot)
-	if(!..() || !ishuman(M))
-		return FALSE
-	var/mob/living/carbon/human/H = M
-	if(H.mind.assigned_role == "Clown")
-		return TRUE
-	else
-		return FALSE
 
 	//Old Prototype
 /obj/item/clothing/head/helmet/space/hardsuit/ancient

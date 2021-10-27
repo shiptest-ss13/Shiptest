@@ -4,8 +4,8 @@
 	name = "\proper space"
 	intact = 0
 
-	temperature = TCMB
-	thermal_conductivity = OPEN_HEAT_TRANSFER_COEFFICIENT
+	initial_temperature = TCMB
+	thermal_conductivity = 0
 	heat_capacity = 700000
 	initial_gas_mix = AIRLESS_ATMOS
 
@@ -17,7 +17,7 @@
 	var/destination_x
 	var/destination_y
 
-	var/static/datum/gas_mixture/immutable/space/space_gas = new
+	var/static/datum/gas_mixture/immutable/space/space_gas
 	plane = PLANE_SPACE
 	layer = SPACE_LAYER
 	light_power = 0.25
@@ -38,8 +38,10 @@
 /turf/open/space/Initialize()
 	SHOULD_CALL_PARENT(FALSE)
 	icon_state = SPACE_ICON_STATE
+	if(!space_gas)
+		space_gas = new
 	air = space_gas
-	update_air_ref()
+	update_air_ref(0)
 	vis_contents.Cut() //removes inherited overlays
 	visibilityChanged()
 
@@ -59,9 +61,6 @@
 	var/area/A = loc
 	if(!IS_DYNAMIC_LIGHTING(src) && IS_DYNAMIC_LIGHTING(A))
 		add_overlay(/obj/effect/fullbright)
-
-	if(requires_activation)
-		SSair.add_to_active(src)
 
 	if (light_system == STATIC_LIGHT && light_power && light_range)
 		update_light()
@@ -101,6 +100,13 @@
 /turf/open/space/Assimilate_Air()
 	return
 
+//IT SHOULD RETURN NULL YOU MONKEY, WHY IN TARNATION WHAT THE FUCKING FUCK
+/turf/open/space/remove_air(amount)
+	return null
+
+/turf/open/space/remove_air_ratio(amount)
+	return null
+
 /turf/open/space/proc/update_starlight()
 	if(CONFIG_GET(flag/starlight))
 		for(var/t in RANGE_TURFS(1,src)) //RANGE_TURFS is in code\__HELPERS\game.dm
@@ -127,7 +133,7 @@
 	if(istype(C, /obj/item/stack/rods))
 		var/obj/item/stack/rods/R = C
 		var/obj/structure/lattice/L = locate(/obj/structure/lattice, src)
-		var/obj/structure/lattice/catwalk/W = locate(/obj/structure/lattice/catwalk, src)
+		var/obj/structure/catwalk/W = locate(/obj/structure/catwalk, src)
 		if(W)
 			to_chat(user, "<span class='warning'>There is already a catwalk here!</span>")
 			return
@@ -135,7 +141,7 @@
 			if(R.use(1))
 				to_chat(user, "<span class='notice'>You construct a catwalk.</span>")
 				playsound(src, 'sound/weapons/genhit.ogg', 50, TRUE)
-				new/obj/structure/lattice/catwalk(src)
+				new/obj/structure/catwalk(src)
 			else
 				to_chat(user, "<span class='warning'>You need two rods to build a catwalk!</span>")
 			return
@@ -213,7 +219,7 @@
 	return
 
 /turf/open/space/can_have_cabling()
-	if(locate(/obj/structure/lattice/catwalk, src))
+	if(locate(/obj/structure/catwalk, src))
 		return 1
 	return 0
 

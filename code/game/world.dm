@@ -29,13 +29,10 @@ GLOBAL_VAR(restart_counter)
   *			All atoms in both compiled and uncompiled maps are initialized()
   */
 /world/New()
-	var/extools = world.GetConfig("env", "EXTOOLS_DLL") || (world.system_type == MS_WINDOWS ? "./byond-extools.dll" : "./libbyond-extools.so")
-	if (fexists(extools))
-		call(extools, "maptick_initialize")()
+	//Keep the auxtools stuff at the top
+	AUXTOOLS_CHECK(AUXMOS)
+
 	enable_debugger()
-#ifdef REFERENCE_TRACKING
-	enable_reference_tracking()
-#endif
 
 	log_world("World loaded at [time_stamp()]!")
 
@@ -273,15 +270,15 @@ GLOBAL_VAR(restart_counter)
 
 	log_world("World rebooted at [time_stamp()]")
 	shutdown_logging() // Past this point, no logging procs can be used, at risk of data loss.
+	AUXTOOLS_SHUTDOWN(AUXMOS)
 	..()
 
 /world/Del()
-	// memory leaks bad
-	var/num_deleted = 0
-	for(var/datum/gas_mixture/GM)
-		GM.__gasmixture_unregister()
-		num_deleted++
-	log_world("Deallocated [num_deleted] gas mixtures")
+	shutdown_logging() // makes sure the thread is closed before end, else we terminate
+	AUXTOOLS_SHUTDOWN(AUXMOS)
+	var/debug_server = world.GetConfig("env", "AUXTOOLS_DEBUG_DLL")
+	if (debug_server)
+		call(debug_server, "auxtools_shutdown")()
 	..()
 
 /world/proc/update_status()
@@ -309,13 +306,13 @@ GLOBAL_VAR(restart_counter)
 
 	s += "<b>[station_name()]</b>";
 	s += " ("
-	s += "<a href=\"https://discord.gg/BUM8uRc\">" //Change this to wherever you want the hub to link to.
+	s += "<a href=\"https://shiptest.net/discord\">" //Change this to wherever you want the hub to link to.
 	s += "Discord"  //Replace this with something else. Or ever better, delete it and uncomment the game version.
 	s += "</a>"
 	s += ")"
 	s += " ("
-	s += "<a href=\"https://github.com/Whitesands13/Whitesands\">" //Change this to wherever you want the hub to link to.
-	s += "Github"  //Replace this with something else. Or ever better, delete it and uncomment the game version.
+	s += "<a href=\"https://github.com/shiptest-ss13/Shiptest\">"
+	s += "Github"
 	s += "</a>"
 	s += ")"
 

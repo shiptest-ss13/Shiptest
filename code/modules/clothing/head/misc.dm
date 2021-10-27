@@ -516,3 +516,15 @@
 	icon_state = "JackFrostHat"
 	item_state = "JackFrostHat"
 
+/obj/item/clothing/head/aclfcap
+	name = "2nd Battlegroup peaked cap"
+	desc = "A cap worn by officers of the Gorlex Marauders 2nd Battlegroup, or as they say, the ACLF."
+	icon = 'whitesands/icons/obj/clothing/hats.dmi'
+	mob_overlay_icon = 'whitesands/icons/mob/clothing/head.dmi'
+	icon_state = "aclfcap"
+	item_state = "aclfcap"
+	flags_inv = 0
+	armor = list("melee" = 25, "bullet" = 15, "laser" = 25, "energy" = 35, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
+	strip_delay = 60
+
+

@@ -38,6 +38,12 @@
 	prefix = "_maps/RandomRuins/AnywhereRuins/"
 	suffix = "fountain_hall.dmm"
 
+/datum/map_template/ruin/icemoon/slimerancher //Shiptest edit
+	name = "Slime Ranch"
+	id = "slimerancher"
+	description = "Slime ranchin with the bud."
+	suffix = "icemoon_surface_slimerancher.dmm"
+
 // above and below ground together
 
 /datum/map_template/ruin/icemoon/mining_site
@@ -46,69 +52,60 @@
 	description = "Ruins of a site where people once mined with primitive tools for ore."
 	suffix = "icemoon_surface_mining_site.dmm"
 	always_place = TRUE
-	always_spawn_with = list(/datum/map_template/ruin/icemoon/underground/mining_site_below = PLACE_BELOW)
-
-/datum/map_template/ruin/icemoon/underground/mining_site_below
-	name = "Mining Site Underground"
-	id = "miningsite-underground"
-	description = "Who knew ladders could be so useful?"
-	suffix = "icemoon_underground_mining_site.dmm"
-	unpickable = TRUE
-
 // below ground only
 
-/datum/map_template/ruin/icemoon/underground
+/datum/map_template/ruin/icemoon
 	name = "underground ruin"
 
-/datum/map_template/ruin/icemoon/underground/abandonedvillage
+/datum/map_template/ruin/icemoon/abandonedvillage
 	name = "Abandoned Village"
 	id = "abandonedvillage"
 	description = "Who knows what lies within?"
 	suffix = "icemoon_underground_abandoned_village.dmm"
 
-/datum/map_template/ruin/icemoon/underground/library
+/datum/map_template/ruin/icemoon/library
 	name = "Buried Library"
 	id = "buriedlibrary"
 	description = "A once grand library, now lost to the confines of the Ice Moon."
 	suffix = "icemoon_underground_library.dmm"
 
-/datum/map_template/ruin/icemoon/underground/wrath
+/datum/map_template/ruin/icemoon/wrath
 	name = "Ruin of Wrath"
 	id = "wrath"
 	description = "You'll fight and fight and just keep fighting."
 	suffix = "icemoon_underground_wrath.dmm"
 
-/datum/map_template/ruin/icemoon/underground/hermit
+/datum/map_template/ruin/icemoon/hermit
 	name = "Frozen Shack"
 	id = "hermitshack"
 	description = "A place of shelter for a lone hermit, scraping by to live another day."
 	suffix = "icemoon_underground_hermit.dmm"
 
-/datum/map_template/ruin/icemoon/underground/lavaland
+/datum/map_template/ruin/icemoon/lavaland
 	name = "Lavaland Site"
 	id = "lavalandsite"
 	description = "I guess we never really left you huh?"
 	suffix = "icemoon_underground_lavaland.dmm"
 
-/datum/map_template/ruin/icemoon/underground/puzzle
+/datum/map_template/ruin/icemoon/puzzle
 	name = "Ancient Puzzle"
 	id = "puzzle"
 	description = "Mystery to be solved."
 	suffix = "icemoon_underground_puzzle.dmm"
 
-/datum/map_template/ruin/icemoon/underground/bathhouse
+/datum/map_template/ruin/icemoon/bathhouse
 	name = "Bath House"
 	id = "bathhouse"
 	description = "A warm, safe place."
 	suffix = "icemoon_underground_bathhouse.dmm"
 
-/datum/map_template/ruin/icemoon/underground/wendigo_cave
+/datum/map_template/ruin/icemoon/wendigo_cave
 	name = "Wendigo Cave"
 	id = "wendigocave"
 	description = "Into the jaws of the beast."
 	suffix = "icemoon_underground_wendigo_cave.dmm"
 
-/datum/map_template/ruin/icemoon/underground/free_golem
+/datum/map_template/ruin/icemoon/free_golem
 	name = "Free Golem Ship"
 	id = "golem-ship"
 	description = "Lumbering humanoids, made out of precious metals, move inside this ship. They frequently leave to mine more minerals, which they somehow turn into more of them. \

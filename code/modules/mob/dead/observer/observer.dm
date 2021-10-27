@@ -117,7 +117,7 @@ GLOBAL_VAR_INIT(observer_default_invisibility, INVISIBILITY_OBSERVER)
 	update_icon()
 
 	if(!T)
-		var/list/turfs = get_areatype_turfs(/area/shuttle/arrival)
+		var/list/turfs = get_areatype_turfs(/area/overmap)
 		if(turfs.len)
 			T = pick(turfs)
 		else
@@ -420,15 +420,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 	if(!thearea)
 		return
 
-	var/list/L = list()
-	for(var/turf/T in get_areatype_turfs(thearea.type))
-		L+=T
-
-	if(!L || !L.len)
-		to_chat(usr, "<span class='warning'>No area available.</span>")
-		return
-
-	usr.forceMove(pick(L))
+	usr.forceMove(pick(get_area_turfs(thearea)))
 	update_parallax_contents()
 
 /mob/dead/observer/verb/follow()
@@ -665,11 +657,10 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 		return
 	client.crew_manifest_delay = world.time + (1 SECONDS)
 
-	var/dat
-	dat += "<h4>Crew Manifest</h4>"
-	dat += GLOB.data_core.get_manifest_html()
+	if(!GLOB.crew_manifest_tgui)
+		GLOB.crew_manifest_tgui = new /datum/crew_manifest(src)
 
-	src << browse(dat, "window=manifest;size=387x420;can_close=1")
+	GLOB.crew_manifest_tgui.ui_interact(src)
 
 //this is called when a ghost is drag clicked to something.
 /mob/dead/observer/MouseDrop(atom/over)
@@ -954,11 +945,14 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 	var/list/possessible = list()
 
 	for(var/mob/living/simple_animal/mouse/M in GLOB.alive_mob_list)
-		if(M.stat != CONSCIOUS) continue
-		if(M.key) continue
-		if(M in GLOB.player_list) continue
-		if(M.mind) continue
-		if(!is_station_level(M.z)) continue
+		if(M.stat != CONSCIOUS)
+			continue
+		if(M.key)
+			continue
+		if(M in GLOB.player_list)
+			continue
+		if(M.mind)
+			continue
 
 		possessible += M
 

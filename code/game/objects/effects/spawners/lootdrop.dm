@@ -349,7 +349,7 @@
 				/obj/item/circuitboard/machine/autolathe,
 				/obj/item/circuitboard/computer/mining,
 				/obj/item/circuitboard/machine/ore_redemption,
-				/obj/item/circuitboard/machine/mining_equipment_vendor,
+				/obj/item/circuitboard/machine/vending/mining_equipment,
 				/obj/item/circuitboard/machine/microwave,
 				/obj/item/circuitboard/machine/chem_dispenser/drinks,
 				/obj/item/circuitboard/machine/chem_dispenser/drinks/beer,

@@ -43,4 +43,5 @@
 	strip_delay = 80
 	equip_delay_other = 80
 	resistance_flags = NONE
-
+	greyscale_colors = list(list(10, 20))
+	greyscale_icon_state = "spacesuit"

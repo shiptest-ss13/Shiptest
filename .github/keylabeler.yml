@@ -2,54 +2,54 @@
 matchTitle: true
 
 # Determines if we search the body (optional). Defaults to true.
-matchBody: true
+matchBody: false
 
 # Determines if label matching is case sensitive (optional). Defaults to true.
 caseSensitive: false
 
 # Explicit keyword mappings to labels. Form of match:label. Required.
 labelMappings:
-    fix: &fix_type Fix
-    fixes: *fix_type
-    bugfix: *fix_type
+    "fix:": &fix_type Fix
+    "fixes:": *fix_type
+    "bugfix:": *fix_type
     "[critical]": *fix_type
     "[fix]": *fix_type
     "[bugfix]": *fix_type
     "[runtime]": *fix_type
     "[bug]": Bug
-    rsctweak: &tweak_type Tweak
-    tweak: *tweak_type
-    tweaks: *tweak_type
-    soundadd: Sound
-    sounddel: Sound
-    add: &add_type Feature
-    adds: *add_type
-    rscadd: *add_type
+    "rsctweak:": &tweak_type Tweak
+    "tweak:": *tweak_type
+    "tweaks:": *tweak_type
+    "soundadd:": Sound
+    "sounddel:": Sound
+    "add:": &add_type Feature
+    "adds:": *add_type
+    "rscadd:": *add_type
     "[enhancement]": *add_type
     "[qol]": *add_type
     "[feature]": *add_type
-    del: &del_type Removal
-    dels: *del_type
-    rscdel: *del_type
+    "del:": &del_type Removal
+    "dels:": *del_type
+    "rscdel:": *del_type
     "[removal]": *del_type
     "[revert]": *del_type
-    imageadd: Sprites
-    imagedel: Sprites
-    typo: &typo_type Grammar and Formatting
-    spellcheck: *typo_type
-    balance: &balance_type Balance/Rebalance
-    rebalance: *balance_type
+    "imageadd:": Sprites
+    "imagedel:": Sprites
+    "typo:": &typo_type Grammar and Formatting
+    "spellcheck:": *typo_type
+    "balance:": &balance_type Balance/Rebalance
+    "rebalance:": *balance_type
     "[rebalance]": *balance_type
     "[balance]": *balance_type
-    tgs: &tgs_type TGS
+    "tgs:": &tgs_type TGS
     "[tgs]": *tgs_type
     "[dmapi]": *tgs_type
-    code_imp: &code_type Code Improvement
-    code: *code_type
-    refactor: Refactor
-    config: Config Update
-    admin: Administration
-    server: server
+    "code_imp:": &code_type Code Improvement
+    "code:": *code_type
+    "refactor:": Refactor
+    "config:": Config Update
+    "admin:": Administration
+    "server:": server
     "[dnm]": &dnm_type Do not merge
     "[do not merge]": *dnm_type
     "[tgui]": &ui_type tgui

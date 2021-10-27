@@ -93,10 +93,12 @@ All ShuttleMove procs go here
 // returns the new move_mode (based on the old)
 // WARNING: Do not leave turf contents in beforeShuttleMove or dock() will runtime
 /atom/movable/proc/beforeShuttleMove(turf/newT, rotation, move_mode, obj/docking_port/mobile/moving_dock)
+	SHOULD_CALL_PARENT(TRUE)
 	return move_mode
 
 // Called on atoms to move the atom to the new location
 /atom/movable/proc/onShuttleMove(turf/newT, turf/oldT, list/movement_force, move_dir, obj/docking_port/stationary/old_dock, obj/docking_port/mobile/moving_dock)
+	SHOULD_CALL_PARENT(TRUE)
 	if(newT == oldT) // In case of in place shuttle rotation shenanigans.
 		return
 
@@ -110,7 +112,7 @@ All ShuttleMove procs go here
 
 // Called on atoms after everything has been moved
 /atom/movable/proc/afterShuttleMove(turf/oldT, list/movement_force, shuttle_dir, shuttle_preferred_direction, move_dir, rotation)
-
+	SHOULD_CALL_PARENT(TRUE)
 	var/turf/newT = get_turf(src)
 	if (newT.z != oldT.z)
 		onTransitZ(oldT.z, newT.z)
@@ -125,6 +127,7 @@ All ShuttleMove procs go here
 	return TRUE
 
 /atom/movable/proc/lateShuttleMove(turf/oldT, list/movement_force, move_dir)
+	SHOULD_CALL_PARENT(TRUE)
 	if(!movement_force || anchored)
 		return
 	var/throw_force = movement_force["THROW"]
@@ -216,8 +219,7 @@ All ShuttleMove procs go here
 
 /obj/machinery/computer/auxillary_base/afterShuttleMove(turf/oldT, list/movement_force, shuttle_dir, shuttle_preferred_direction, move_dir, rotation)
 	. = ..()
-	if(is_mining_level(z)) //Avoids double logging and landing on other Z-levels due to badminnery
-		SSblackbox.record_feedback("associative", "colonies_dropped", 1, list("x" = x, "y" = y, "z" = z))
+	SSblackbox.record_feedback("associative", "colonies_dropped", 1, list("x" = x, "y" = y, "z" = z))
 
 /obj/machinery/gravity_generator/main/beforeShuttleMove(turf/newT, rotation, move_mode, obj/docking_port/mobile/moving_dock)
 	. = ..()
@@ -275,6 +277,14 @@ All ShuttleMove procs go here
 		GLOB.deliverybeacons += src
 		GLOB.deliverybeacontags += location
 
+/obj/machinery/mineral/beforeShuttleMove(turf/newT, rotation, move_mode, obj/docking_port/mobile/moving_dock)
+	unregister_input_turf()
+	return ..()
+
+/obj/machinery/mineral/afterShuttleMove(turf/oldT, list/movement_force, shuttle_dir, shuttle_preferred_direction, move_dir, rotation)
+	. = ..()
+	register_input_turf()
+
 /************************************Item move procs************************************/
 
 /obj/item/storage/pod/afterShuttleMove(turf/oldT, list/movement_force, shuttle_dir, shuttle_preferred_direction, move_dir, rotation)
@@ -329,11 +339,11 @@ All ShuttleMove procs go here
 	if(. & MOVE_AREA)
 		. |= MOVE_CONTENTS
 
-/obj/structure/cable/beforeShuttleMove(turf/newT, rotation, move_mode, obj/docking_port/mobile/moving_dock)
-	. = ..()
-	cut_cable_from_powernet(FALSE)
-
 /obj/structure/cable/afterShuttleMove(turf/oldT, list/movement_force, shuttle_dir, shuttle_preferred_direction, move_dir, rotation)
+	. = ..()
+	qdel(powernet)
+
+/obj/structure/cable/lateShuttleMove(turf/oldT, list/movement_force, shuttle_dir, shuttle_preferred_direction, move_dir, rotation)
 	. = ..()
 	propagate_if_no_network()
 
@@ -361,6 +371,7 @@ All ShuttleMove procs go here
 /************************************Misc move procs************************************/
 
 /atom/movable/lighting_object/onShuttleMove()
+	SHOULD_CALL_PARENT(FALSE)
 	return FALSE
 
 /obj/docking_port/mobile/beforeShuttleMove(turf/newT, rotation, move_mode, obj/docking_port/mobile/moving_dock)
@@ -379,9 +390,10 @@ All ShuttleMove procs go here
 		return FALSE
 	. = ..()
 
-/obj/docking_port/stationary/public_mining_dock/onShuttleMove(turf/newT, turf/oldT, list/movement_force, move_dir, obj/docking_port/stationary/old_dock, obj/docking_port/mobile/moving_dock)
-	id = "mining_public" //It will not move with the base, but will become enabled as a docking point.
-
 /obj/effect/abstract/proximity_checker/onShuttleMove(turf/newT, turf/oldT, list/movement_force, move_dir, obj/docking_port/stationary/old_dock, obj/docking_port/mobile/moving_dock)
+	. = ..()
 	//timer so it only happens once
+	if(!monitor)
+		qdel(src)
+		return
 	addtimer(CALLBACK(monitor, /datum/proximity_monitor/proc/SetRange, monitor.current_range, TRUE), 0, TIMER_UNIQUE)

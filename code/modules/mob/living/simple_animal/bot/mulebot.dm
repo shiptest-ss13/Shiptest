@@ -776,9 +776,6 @@
 	new /obj/effect/decal/cleanable/oil(loc)
 	..()
 
-/mob/living/simple_animal/bot/mulebot/remove_air(amount) //To prevent riders suffocating
-	return loc ? loc.remove_air(amount) : null
-
 /mob/living/simple_animal/bot/mulebot/resist()
 	..()
 	if(load)

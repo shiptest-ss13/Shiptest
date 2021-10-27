@@ -47,7 +47,7 @@
 		return
 	for(var/obj/machinery/power/supermatter_crystal/S in GLOB.machines)
 		// Delaminating, not within coverage, not on a tile.
-		if (!isturf(S.loc) || !(is_station_level(S.z) || is_mining_level(S.z) || S.get_virtual_z_level() == T.get_virtual_z_level()))
+		if (!isturf(S.loc) || !S.get_virtual_z_level() == T.get_virtual_z_level())
 			continue
 		supermatters.Add(S)
 
@@ -137,13 +137,13 @@
 		if(air.total_moles())
 			for(var/gasid in air.get_gases())
 				gasdata.Add(list(list(
-				"name"= GLOB.meta_gas_info[gasid][META_GAS_NAME],
+				"name"= GLOB.gas_data.names[gasid],
 				"amount" = round(100*air.get_moles(gasid)/air.total_moles(),0.01))))
 
 		else
 			for(var/gasid in air.get_gases())
 				gasdata.Add(list(list(
-					"name"= GLOB.meta_gas_info[gasid][META_GAS_NAME],
+					"name"= GLOB.gas_data.names[gasid],
 					"amount" = 0)))
 
 		data["gases"] = gasdata

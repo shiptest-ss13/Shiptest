@@ -74,7 +74,7 @@
 			records -= record
 			return TRUE
 		if("print_record")
-			var/datum/data/tachyon_record/record  = locate(params["ref"]) in records
+			var/datum/data/tachyon_record/record = locate(params["ref"]) in records
 			if(!records || !(record in records))
 				return
 			print(usr, record)
@@ -160,9 +160,11 @@
 	R.factual_radius["outer_radius"] = heavy_impact_range
 	R.factual_radius["shockwave_radius"] = light_impact_range
 
-	var/list/messages = list("Explosive disturbance detected.",
-							 "Epicenter at: grid ([epicenter.x], [epicenter.y]). Temporal displacement of tachyons: [took] seconds.",
-							 "Factual: Epicenter radius: [devastation_range]. Outer radius: [heavy_impact_range]. Shockwave radius: [light_impact_range].")
+	var/list/messages = list(
+		"Explosive disturbance detected.",
+		"Epicenter at: grid ([epicenter.x], [epicenter.y]). Temporal displacement of tachyons: [took] seconds.",
+		"Factual: Epicenter radius: [devastation_range]. Outer radius: [heavy_impact_range]. Shockwave radius: [light_impact_range]."
+	)
 
 	// If the bomb was capped, say its theoretical size.
 	if(devastation_range < orig_dev_range || heavy_impact_range < orig_heavy_range || light_impact_range < orig_light_range)
@@ -195,6 +197,20 @@
 	name = "tachyon-doppler research array"
 	desc = "A specialized tachyon-doppler bomb detection array that uses the results of the highest yield of explosions for research."
 	var/datum/techweb/linked_techweb
+
+/obj/machinery/doppler_array/research/Destroy()
+	linked_techweb = null
+	. = ..()
+
+/obj/machinery/doppler_array/research/attackby(obj/item/I, mob/user, params)
+	. = ..()
+	if(istype(I, /obj/item/multitool))
+		var/obj/item/multitool/multi = I
+		if(istype(multi.buffer, /obj/machinery/rnd/server))
+			var/obj/machinery/rnd/server/serv = multi.buffer
+			linked_techweb = serv.stored_research
+			visible_message("Linked to Server!")
+		return
 
 /obj/machinery/doppler_array/research/sense_explosion(datum/source, turf/epicenter, devastation_range, heavy_impact_range, light_impact_range,
 		took, orig_dev_range, orig_heavy_range, orig_light_range) //probably needs a way to ignore admin explosives later on
@@ -234,9 +250,5 @@
 	else //you've made smaller bombs
 		say("Data already captured. Aborting.")
 		return
-
-/obj/machinery/doppler_array/research/science/Initialize()
-	. = ..()
-	linked_techweb = SSresearch.science_tech
 
 #undef PRINTER_TIMEOUT

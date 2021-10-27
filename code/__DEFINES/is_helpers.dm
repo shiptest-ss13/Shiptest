@@ -71,6 +71,7 @@ GLOBAL_LIST_INIT(turfs_without_ground, typecacheof(list(
 #define isethereal(A) (is_species(A, /datum/species/ethereal))
 #define isvampire(A) (is_species(A,/datum/species/vampire))
 #define isdullahan(A) (is_species(A, /datum/species/dullahan))
+#define isteshari(A) (is_species(A, /datum/species/teshari))
 
 //WS Begin - Custom Species
 #define issquidperson(A) (is_species(A, /datum/species/squid))

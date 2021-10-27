@@ -11,27 +11,18 @@
 	///The linked overmap shuttle
 	var/obj/structure/overmap/ship/simulated/ship
 
-/obj/machinery/computer/autopilot/Initialize(mapload, obj/item/circuitboard/C)
-	. = ..()
-	if(SSovermap.initialized)
-		initial_load()
-	else
-		LAZYADD(SSovermap.autopilots, src)
+/obj/machinery/computer/autopilot/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock)
+	ship = port.current_ship
 
-/obj/machinery/computer/autopilot/proc/initial_load()
-	if(ship_id)
-		ship = SSovermap.get_overmap_object_by_id(ship_id)
-	if(ship)
-		return
-	var/obj/docking_port/mobile/M = SSshuttle.get_containing_shuttle(src)
-	if(!M)
-		return
-	if(M.current_ship)
-		ship = M.current_ship
-	else
-		ship = SSovermap.get_overmap_object_by_id(M.id)
+/obj/machinery/computer/autopilot/proc/reload_ship()
+	var/obj/docking_port/mobile/port = SSshuttle.get_containing_shuttle(src)
+	if(port?.current_ship)
+		ship = port.current_ship
+		return TRUE
 
 /obj/machinery/computer/autopilot/ui_interact(mob/user, datum/tgui/ui)
+	if(!ship && !reload_ship())
+		return
 	ui = SStgui.try_update_ui(user, src, ui)
 	if(!ui)
 		ui = new(user, src, "ShuttleConsole", name)

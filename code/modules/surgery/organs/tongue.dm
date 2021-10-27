@@ -22,6 +22,7 @@
 		/datum/language/sylvan,
 		/datum/language/shadowtongue,
 		/datum/language/terrum,
+		/datum/language/ratvar
 	))
 
 /obj/item/organ/tongue/Initialize(mapload)
@@ -87,7 +88,8 @@
 		/datum/language/sylvan,
 		/datum/language/shadowtongue,
 		/datum/language/terrum,
-		/datum/language/buzzwords
+		/datum/language/buzzwords,
+		/datum/language/ratvar
 	))
 
 /obj/item/organ/tongue/fly/handle_speech(datum/source, list/speech_args)
@@ -223,7 +225,8 @@
 		/datum/language/sylvan,
 		/datum/language/shadowtongue,
 		/datum/language/terrum,
-		/datum/language/calcic
+		/datum/language/calcic,
+		/datum/language/ratvar
 	))
 
 /obj/item/organ/tongue/bone/Initialize()
@@ -293,7 +296,8 @@
 		/datum/language/aphasia,
 		/datum/language/narsie,
 		/datum/language/monkey,
-		/datum/language/shadowtongue
+		/datum/language/shadowtongue,
+		/datum/language/ratvar
 		))
 
 /obj/item/organ/tongue/squid/Initialize(mapload)
@@ -320,7 +324,8 @@
 		/datum/language/sylvan,
 		/datum/language/shadowtongue,
 		/datum/language/terrum,
-		/datum/language/voltaic
+		/datum/language/voltaic,
+		/datum/language/ratvar
 	))
 
 /obj/item/organ/tongue/ethereal/Initialize(mapload)

@@ -11,11 +11,7 @@
 
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
 	anchored = TRUE
-	/// The identifier of the port or ship.
-	/// This will be used in numerous other places like the console,
-	/// stationary ports and whatnot to tell them your ship's mobile
-	/// port can be used in these places, or the docking port is compatible, etc.
-	var/id
+
 	///Common standard is for this to point -away- from the dockingport door, ie towards the ship
 	dir = NORTH
 	///size of covered area, perpendicular to dir. You shouldn't modify this for mobile dockingports, set automatically.
@@ -28,8 +24,6 @@
 	var/dheight = 0
 
 	var/area_type
-	///are we invisible to shuttle navigation computers?
-	var/hidden = FALSE
 
 	///Delete this port after ship fly off.
 	var/delete_after = FALSE
@@ -143,11 +137,6 @@
 /obj/docking_port/proc/get_docked()
 	return locate(/obj/docking_port/stationary) in loc
 
-/obj/docking_port/proc/getDockedId()
-	var/obj/docking_port/P = get_docked()
-	if(P)
-		return P.id
-
 /obj/docking_port/proc/is_in_shuttle_bounds(atom/A)
 	var/turf/T = get_turf(A)
 	if(T?.z != z)
@@ -174,8 +163,6 @@
 /obj/docking_port/stationary/Initialize(mapload)
 	. = ..()
 	SSshuttle.stationary += src
-	if(!id)
-		id = "[SSshuttle.stationary.len]"
 	if(name == "dock")
 		name = "dock[SSshuttle.stationary.len]"
 	if(!area_type)
@@ -206,7 +193,7 @@
 
 /obj/docking_port/stationary/proc/load_roundstart()
 	if(roundstart_template) // passed a PATH
-		var/sid = "[initial(roundstart_template.port_id)]_[initial(roundstart_template.suffix)]"
+		var/sid = "[initial(roundstart_template.file_name)]"
 
 		roundstart_template = SSmapping.shuttle_templates[sid]
 		if(!roundstart_template)
@@ -219,14 +206,18 @@
 	. = locate(/obj/docking_port/mobile) in loc
 
 /obj/docking_port/stationary/transit
-	name = "In Transit"
+	name = "transit dock"
+
 	var/datum/turf_reservation/reserved_area
 	var/area/shuttle/transit/assigned_area
 	var/obj/docking_port/mobile/owner
 
 /obj/docking_port/stationary/transit/Initialize()
+	var/static/transit_dock_counter = 0
 	. = ..()
 	SSshuttle.transit += src
+	transit_dock_counter++
+	name = "transit dock [transit_dock_counter]"
 
 /obj/docking_port/stationary/transit/Destroy(force=FALSE)
 	if(force)
@@ -294,6 +285,10 @@
 
 	///The linked overmap object, if there is one
 	var/obj/structure/overmap/ship/simulated/current_ship
+	///The map template the shuttle was spawned from, if it was indeed created from a template
+	var/datum/map_template/shuttle/source_template
+	///List of spawn points on the ship
+	var/list/atom/spawn_points = list()
 
 /obj/docking_port/mobile/proc/register()
 	SSshuttle.mobile += src
@@ -301,6 +296,8 @@
 /obj/docking_port/mobile/Destroy(force)
 	if(force)
 		SSshuttle.mobile -= src
+		if(current_ship)
+			qdel(current_ship)
 		destination = null
 		previous = null
 		QDEL_NULL(assigned_transit)		//don't need it where we're goin'!
@@ -308,13 +305,9 @@
 		remove_ripples()
 	. = ..()
 
-/obj/docking_port/mobile/Initialize(mapload, _id)
+/obj/docking_port/mobile/Initialize(mapload)
 	. = ..()
 
-	if(_id)
-		id = _id
-	if(!id)
-		id = "[SSshuttle.mobile.len]"
 	if(name == "shuttle")
 		name = "shuttle[SSshuttle.mobile.len]"
 
@@ -345,19 +338,12 @@
 
 // Called after the shuttle is loaded from template
 /obj/docking_port/mobile/proc/linkup(datum/map_template/shuttle/template, obj/docking_port/stationary/dock)
-	var/list/static/shuttle_id = list()
-	var/idnum = ++shuttle_id[template]
-	if(idnum > 1)
-		if(id == initial(id))
-			id = "[id][idnum]"
-		if(name == initial(name))
-			name = "[name] [idnum]"
 	for(var/place in shuttle_areas)
 		var/area/area = place
-		area.connect_to_shuttle(src, dock, idnum, FALSE)
+		area.connect_to_shuttle(src, dock)
 		for(var/each in place)
 			var/atom/atom = each
-			atom.connect_to_shuttle(src, dock, idnum, FALSE)
+			atom.connect_to_shuttle(src, dock)
 
 
 //this is a hook for custom behaviour. Maybe at some point we could add checks to see if engines are intact
@@ -452,7 +438,7 @@
 	mode = SHUTTLE_RECALL
 
 /obj/docking_port/mobile/proc/enterTransit()
-	if((SSshuttle.lockdown && is_station_level(z)) || !canMove())	//emp went off, no escape
+	if((SSshuttle.lockdown) || !canMove())	//emp went off, no escape
 		mode = SHUTTLE_IDLE
 		return
 	previous = null
@@ -463,14 +449,14 @@
 	var/obj/docking_port/stationary/S1 = assigned_transit
 	if(S1)
 		if(initiate_docking(S1) != DOCKING_SUCCESS)
-			WARNING("shuttle \"[id]\" could not enter transit space. Docked at [S0 ? S0.id : "null"]. Transit dock [S1 ? S1.id : "null"].")
+			WARNING("shuttle \"[name]\" could not enter transit space. Docked at [S0 ? S0.name : "null"]. Transit dock [S1 ? S1.name : "null"].")
 		else
 			if(S0.delete_after)
 				qdel(S0, TRUE)
 			else
 				previous = S0
 	else
-		WARNING("shuttle \"[id]\" could not enter transit space. S0=[S0 ? S0.id : "null"] S1=[S1 ? S1.id : "null"]")
+		WARNING("shuttle \"[name]\" could not enter transit space. S0=[S0 ? S0.name : "null"] S1=[S1 ? S1.name : "null"]")
 
 
 /obj/docking_port/mobile/proc/jumpToNullSpace()
@@ -514,7 +500,7 @@
 		var/turf/T = t
 		for(var/mob/living/M in T.GetAllContents())
 			// If they have a mind and they're not in the brig, they escaped
-			if(M.mind && !istype(t, /turf/open/floor/plasteel/shuttle/red) && !istype(t, /turf/open/floor/mineral/plastitanium/red/brig))
+			if(M.mind && !istype(t, /turf/open/floor/mineral/plastitanium/red/brig))
 				M.mind.force_escaped = TRUE
 			// Ghostize them and put them in nullspace stasis (for stat & possession checks)
 			M.notransform = TRUE
@@ -554,20 +540,6 @@
 /obj/docking_port/mobile/proc/check_poddoors()
 	for(var/obj/machinery/door/poddoor/shuttledock/pod in GLOB.airlocks)
 		pod.check()
-
-/obj/docking_port/mobile/proc/dock_id(id)
-	var/port = SSshuttle.getDock(id)
-	if(port)
-		. = initiate_docking(port)
-	else
-		. = null
-
-/obj/effect/landmark/shuttle_import
-	name = "Shuttle Import"
-
-// Never move the shuttle import landmark, otherwise things get WEIRD
-/obj/effect/landmark/shuttle_import/onShuttleMove()
-	return FALSE
 
 //used by shuttle subsystem to check timers
 /obj/docking_port/mobile/proc/check()
@@ -770,23 +742,13 @@
 		else
 			dst = destination
 		if(dst)
-			. = "(transit to) [dst.name || dst.id]"
+			. = "(transit to) [dst.name]"
 		else
 			. = "(transit to) nowhere"
 	else if(dockedAt)
-		. = dockedAt.name || dockedAt.id
+		. = dockedAt.name
 	else
 		. = "unknown"
-
-
-// attempts to locate /obj/machinery/computer/shuttle with matching ID inside the shuttle
-/obj/docking_port/mobile/proc/getControlConsole()
-	for(var/place in shuttle_areas)
-		var/area/shuttle/shuttle_area = place
-		for(var/obj/machinery/computer/shuttle/S in shuttle_area)
-			if(S.shuttleId == id)
-				return S
-	return null
 
 /obj/docking_port/mobile/proc/hyperspace_sound(phase, list/areas)
 	var/selected_sound
@@ -891,16 +853,6 @@
 		else
 			return FALSE // hmm
 
-/obj/docking_port/mobile/emergency/in_flight()
-	switch(mode)
-		if(SHUTTLE_ESCAPE)
-			return TRUE
-		if(SHUTTLE_STRANDED,SHUTTLE_ENDGAME)
-			return FALSE
-		else
-			return ..()
-
-
 //Called when emergency shuttle leaves the station
 /obj/docking_port/mobile/proc/on_emergency_launch()
 	if(launch_status == UNLAUNCHED) //Pods will not launch from the mine/planet, and other ships won't launch unless we tell them to.
@@ -915,11 +867,6 @@
 	//Mapping a new docking point for each ship mappers could potentially want docking with centcom would take up lots of space, just let them keep flying off into the sunset for their greentext
 	if(launch_status == ENDGAME_LAUNCHED)
 		launch_status = ENDGAME_TRANSIT
-
-/obj/docking_port/mobile/pod/on_emergency_dock()
-	if(launch_status == ENDGAME_LAUNCHED)
-		initiate_docking(SSshuttle.getDock("[id]_away")) //Escape pods dock at centcom
-		mode = SHUTTLE_ENDGAME
 
 /obj/docking_port/mobile/emergency/on_emergency_dock()
 	return

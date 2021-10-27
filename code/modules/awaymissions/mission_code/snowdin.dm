@@ -135,24 +135,12 @@
 /area/shuttle/snowdin/elevator2
 	name = "Mining Elevator"
 
-//shuttle console for elevators//
-
-/obj/machinery/computer/shuttle/snowdin/mining
-	name = "shuttle console"
-	desc = "A shuttle control computer."
-	icon_screen = "shuttle"
-	icon_keyboard = "tech_key"
-	light_color = LIGHT_COLOR_CYAN
-	shuttleId = "snowdin_mining"
-	possible_destinations = "snowdin_mining_top;snowdin_mining_down"
-
-
 //liquid plasma!!!!!!//
 
 /turf/open/floor/plasteel/dark/snowdin
 	initial_gas_mix = FROZEN_ATMOS
 	planetary_atmos = 1
-	temperature = 180
+	initial_temperature = 180
 
 /turf/open/lava/plasma
 	name = "liquid plasma"
@@ -238,13 +226,15 @@
 							NB.species_id = "plasmaman"//change the species_id of the limb to that of a plasmaman
 							NB.no_update = TRUE
 							NB.change_bodypart_status()
-							PP.visible_message("<span class='warning'>[L] screams in pain as [L.p_their()] [NB] melts down to the bone!</span>", \
-											  "<span class='userdanger'>You scream out in pain as your [NB] melts down to the bone, leaving an eerie plasma-like glow where flesh used to be!</span>")
+							PP.visible_message(
+								"<span class='warning'>[L] screams in pain as [L.p_their()] [NB] melts down to the bone!</span>",
+								"<span class='userdanger'>You scream out in pain as your [NB] melts down to the bone, leaving an eerie plasma-like glow where flesh used to be!</span>")
 						if(!plasma_parts.len && !robo_parts.len) //a person with no potential organic limbs left AND no robotic limbs, time to turn them into a plasmaman
 							PP.IgniteMob()
 							PP.set_species(/datum/species/plasmaman)
-							PP.visible_message("<span class='warning'>[L] bursts into a brilliant purple flame as [L.p_their()] entire body is that of a skeleton!</span>", \
-											  "<span class='userdanger'>Your senses numb as all of your remaining flesh is turned into a purple slurry, sloshing off your body and leaving only your bones to show in a vibrant purple!</span>")
+							PP.visible_message(
+								"<span class='warning'>[L] bursts into a brilliant purple flame as [L.p_their()] entire body is that of a skeleton!</span>",
+								"<span class='userdanger'>Your senses numb as all of your remaining flesh is turned into a purple slurry, sloshing off your body and leaving only your bones to show in a vibrant purple!</span>")
 
 
 /obj/vehicle/ridden/lavaboat/plasma

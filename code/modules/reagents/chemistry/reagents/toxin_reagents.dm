@@ -50,7 +50,7 @@
 	C.apply_effect(5,EFFECT_IRRADIATE,0)
 	return ..()
 
-#define	LIQUID_PLASMA_BP (50+T0C)
+#define LIQUID_PLASMA_BP (50+T0C)
 
 /datum/reagent/toxin/plasma
 	name = "Plasma"
@@ -99,6 +99,14 @@
 		M.adjust_fire_stacks(reac_volume / 5)
 		return
 	..()
+
+/datum/reagent/toxin/plasma/dip_object(obj/item/I, mob/user, obj/item/reagent_containers/H)
+	. = ..()
+	if(istype(I, /obj/item/stock_parts/manipulator))
+		H.reagents.add_reagent(/datum/reagent/stable_plasma, (H.reagents.remove_reagent(/datum/reagent/toxin/plasma, 10*I.get_part_rating())))
+		return TRUE
+	return
+
 
 /datum/reagent/toxin/hot_ice
 	name = "Hot Ice Slush"

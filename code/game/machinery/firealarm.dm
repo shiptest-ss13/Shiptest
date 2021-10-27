@@ -44,7 +44,7 @@
 			pixel_y = dir == NORTH ? 26 : (dir == SOUTH ? -26 : INSTANCE_VAR_DEFAULT)\
 		),\
 		dir_amount = 4\
-    )
+	)
 
 /obj/machinery/firealarm/Initialize(mapload, dir, building)
 	. = ..()
@@ -60,6 +60,7 @@
 	LAZYADD(myarea.firealarms, src)
 
 /obj/machinery/firealarm/Destroy()
+	myarea.firereset(src)
 	LAZYREMOVE(myarea.firealarms, src)
 	return ..()
 
@@ -83,14 +84,9 @@
 
 	. += "fire_overlay"
 
-	if(is_station_level(z))
-		. += "fire_[GLOB.security_level]"
-		SSvis_overlays.add_vis_overlay(src, icon, "fire_[GLOB.security_level]", layer, plane, dir)
-		SSvis_overlays.add_vis_overlay(src, icon, "fire_[GLOB.security_level]", layer, EMISSIVE_PLANE, dir)
-	else
-		. += "fire_[SEC_LEVEL_GREEN]"
-		SSvis_overlays.add_vis_overlay(src, icon, "fire_[SEC_LEVEL_GREEN]", layer, plane, dir)
-		SSvis_overlays.add_vis_overlay(src, icon, "fire_[SEC_LEVEL_GREEN]", layer, EMISSIVE_PLANE, dir)
+	. += "fire_[SEC_LEVEL_GREEN]"
+	SSvis_overlays.add_vis_overlay(src, icon, "fire_[SEC_LEVEL_GREEN]", layer, plane, dir)
+	SSvis_overlays.add_vis_overlay(src, icon, "fire_[SEC_LEVEL_GREEN]", layer, EMISSIVE_PLANE, dir)
 
 	var/area/A = get_area(src)
 
@@ -145,7 +141,7 @@
 	if(!is_operational())
 		return
 	var/area/A = get_area(src)
-	A.firereset(src)
+	A.firereset()
 	if(user)
 		log_game("[user] reset a fire alarm at [COORD(src)]")
 
@@ -153,6 +149,7 @@
 	if(buildstage != 2)
 		return ..()
 	add_fingerprint(user)
+	play_click_sound("button")
 	var/area/A = get_area(src)
 	if(A.fire)
 		reset(user)
@@ -253,15 +250,19 @@
 					var/obj/item/electroadaptive_pseudocircuit/P = W
 					if(!P.adapt_circuit(user, 15))
 						return
-					user.visible_message("<span class='notice'>[user] fabricates a circuit and places it into [src].</span>", \
-					"<span class='notice'>You adapt a fire alarm circuit and slot it into the assembly.</span>")
+					user.visible_message(
+						"<span class='notice'>[user] fabricates a circuit and places it into [src].</span>",
+						"<span class='notice'>You adapt a fire alarm circuit and slot it into the assembly.</span>"
+					)
 					buildstage = 1
 					update_icon()
 					return
 
 				else if(W.tool_behaviour == TOOL_WRENCH)
-					user.visible_message("<span class='notice'>[user] removes the fire alarm assembly from the wall.</span>", \
-										 "<span class='notice'>You remove the fire alarm assembly from the wall.</span>")
+					user.visible_message(
+						"<span class='notice'>[user] removes the fire alarm assembly from the wall.</span>",
+						"<span class='notice'>You remove the fire alarm assembly from the wall.</span>"
+					)
 					var/obj/item/wallframe/firealarm/frame = new /obj/item/wallframe/firealarm()
 					frame.forceMove(user.drop_location())
 					W.play_tool_sound(src)
@@ -278,8 +279,10 @@
 /obj/machinery/firealarm/rcd_act(mob/user, obj/item/construction/rcd/the_rcd, passed_mode)
 	switch(passed_mode)
 		if(RCD_UPGRADE_SIMPLE_CIRCUITS)
-			user.visible_message("<span class='notice'>[user] fabricates a circuit and places it into [src].</span>", \
-			"<span class='notice'>You adapt a fire alarm circuit and slot it into the assembly.</span>")
+			user.visible_message(
+				"<span class='notice'>[user] fabricates a circuit and places it into [src].</span>",
+				"<span class='notice'>You adapt a fire alarm circuit and slot it into the assembly.</span>"
+			)
 			buildstage = 1
 			update_icon()
 			return TRUE
@@ -316,7 +319,7 @@
 
 /obj/machinery/firealarm/proc/update_fire_light(fire)
 	if(fire == !!light_power)
-		return  // do nothing if we're already active
+		return // do nothing if we're already active
 	if(fire)
 		set_light(l_power = 0.8)
 	else

@@ -75,15 +75,6 @@
 	src.equipment_path = path
 	src.cost = cost
 
-/obj/machinery/mineral/equipment_vendor/Initialize()
-	. = ..()
-	build_inventory()
-
-/obj/machinery/mineral/equipment_vendor/proc/build_inventory()
-	for(var/p in prize_list)
-		var/datum/data/mining_equipment/M = p
-		GLOB.vending_products[M.equipment_path] = 1
-
 /obj/machinery/mineral/equipment_vendor/update_icon_state()
 	if(powered())
 		icon_state = initial(icon_state)
@@ -241,6 +232,7 @@
 	name = "mining points card"
 	desc = "A small card preloaded with mining points. Swipe your ID card over it to transfer the points, then discard."
 	icon_state = "data_1"
+	custom_price = 500
 	var/points = 500
 
 /obj/item/card/mining_point_card/attackby(obj/item/I, mob/user, params)
@@ -279,6 +271,7 @@
 /obj/item/storage/backpack/duffelbag/mining_conscript
 	name = "mining conscription kit"
 	desc = "A kit containing everything a crewmember needs to support a shaft miner in the field."
+	custom_price = 1500
 
 /obj/item/storage/backpack/duffelbag/mining_conscript/PopulateContents()
 	new /obj/item/clothing/glasses/meson(src)

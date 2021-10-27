@@ -100,7 +100,7 @@ GLOBAL_LIST_INIT(malf_modules, subtypesof(/datum/AI_Module))
 
 /// The actual ranged proc holder.
 /obj/effect/proc_holder/ranged_ai
- 	/// Appears when the user activates the ability
+	/// Appears when the user activates the ability
 	var/enable_text = "<span class='notice'>Hello World!</span>"
 	/// Appears when the user deactivates the ability
 	var/disable_text = "<span class='danger'>Goodbye Cruel World!</span>"
@@ -165,10 +165,6 @@ GLOBAL_LIST_INIT(malf_modules, subtypesof(/datum/AI_Module))
 	auto_use_uses = FALSE
 
 /datum/action/innate/ai/nuke_station/Activate()
-	var/turf/T = get_turf(owner)
-	if(!istype(T) || !is_station_level(T.z))
-		to_chat(owner, "<span class='warning'>You cannot activate the doomsday device while off-station!</span>")
-		return
 	if(alert(owner, "Send arming signal? (true = arm, false = cancel)", "purge_all_life()", "confirm = TRUE;", "confirm = FALSE;") != "confirm = TRUE;")
 		return
 	if (active)
@@ -270,7 +266,6 @@ GLOBAL_LIST_INIT(malf_modules, subtypesof(/datum/AI_Module))
 /obj/machinery/doomsday_device/Destroy()
 	QDEL_NULL(countdown)
 	STOP_PROCESSING(SSfastprocess, src)
-	SSshuttle.clearHostileEnvironment(src)
 	SSmapping.remove_nuke_threat(src)
 	for(var/A in GLOB.ai_list)
 		var/mob/living/silicon/ai/AI = A
@@ -284,19 +279,12 @@ GLOBAL_LIST_INIT(malf_modules, subtypesof(/datum/AI_Module))
 	timing = TRUE
 	countdown.start()
 	START_PROCESSING(SSfastprocess, src)
-	SSshuttle.registerHostileEnvironment(src)
 	SSmapping.add_nuke_threat(src) //This causes all blue "circuit" tiles on the map to change to animated red icon state.
 
 /obj/machinery/doomsday_device/proc/seconds_remaining()
 	. = max(0, (round((detonation_timer - world.time) / 10)))
 
 /obj/machinery/doomsday_device/process()
-	var/turf/T = get_turf(src)
-	if(!T || !is_station_level(T.z))
-		minor_announce("DOOMSDAY DEVICE OUT OF STATION RANGE, ABORTING", "ERROR ER0RR $R0RRO$!R41.%%!!(%$^^__+ @#F0E4", TRUE)
-		SSshuttle.clearHostileEnvironment(src)
-		qdel(src)
-		return
 	if(!timing)
 		STOP_PROCESSING(SSfastprocess, src)
 		return
@@ -313,9 +301,6 @@ GLOBAL_LIST_INIT(malf_modules, subtypesof(/datum/AI_Module))
 	sleep(100)
 	for(var/i in GLOB.mob_living_list)
 		var/mob/living/L = i
-		var/turf/T = get_turf(L)
-		if(!T || !is_station_level(T.z))
-			continue
 		if(issilicon(L))
 			continue
 		to_chat(L, "<span class='userdanger'>The blast wave from [src] tears you atom from atom!</span>")
@@ -342,8 +327,6 @@ GLOBAL_LIST_INIT(malf_modules, subtypesof(/datum/AI_Module))
 
 /datum/action/innate/ai/lockdown/Activate()
 	for(var/obj/machinery/door/D in GLOB.airlocks)
-		if(!is_station_level(D.z))
-			continue
 		INVOKE_ASYNC(D, /obj/machinery/door.proc/hostile_lockdown, owner)
 		addtimer(CALLBACK(D, /obj/machinery/door.proc/disable_lockdown), 900)
 
@@ -620,8 +603,6 @@ GLOBAL_LIST_INIT(malf_modules, subtypesof(/datum/AI_Module))
 
 /datum/action/innate/ai/break_air_alarms/Activate()
 	for(var/obj/machinery/airalarm/AA in GLOB.machines)
-		if(!is_station_level(AA.z))
-			continue
 		AA.obj_flags |= EMAGGED
 	to_chat(owner, "<span class='notice'>All air alarm safeties on the station have been overridden. Air alarms may now use the Flood environmental mode.</span>")
 	owner.playsound_local(owner, 'sound/machines/terminal_off.ogg', 50, 0)
@@ -644,8 +625,6 @@ GLOBAL_LIST_INIT(malf_modules, subtypesof(/datum/AI_Module))
 
 /datum/action/innate/ai/break_fire_alarms/Activate()
 	for(var/obj/machinery/firealarm/F in GLOB.machines)
-		if(!is_station_level(F.z))
-			continue
 		F.obj_flags |= EMAGGED
 		F.update_icon()
 	to_chat(owner, "<span class='notice'>All thermal sensors on the station have been disabled. Fire alerts will no longer be recognized.</span>")
@@ -669,9 +648,8 @@ GLOBAL_LIST_INIT(malf_modules, subtypesof(/datum/AI_Module))
 
 /datum/action/innate/ai/emergency_lights/Activate()
 	for(var/obj/machinery/light/L in GLOB.machines)
-		if(is_station_level(L.z))
-			L.no_emergency = TRUE
-			INVOKE_ASYNC(L, /obj/machinery/light/.proc/update, FALSE)
+		L.no_emergency = TRUE
+		INVOKE_ASYNC(L, /obj/machinery/light/.proc/update, FALSE)
 		CHECK_TICK
 	to_chat(owner, "<span class='notice'>Emergency light connections severed.</span>")
 	owner.playsound_local(owner, 'sound/effects/light_flicker.ogg', 50, FALSE)

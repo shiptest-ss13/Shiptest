@@ -1,10 +1,10 @@
 #define HOLOPAD_MAX_DIAL_TIME 200
 
-#define HOLORECORD_DELAY	"delay"
-#define HOLORECORD_SAY		"say"
-#define HOLORECORD_SOUND	"sound"
-#define HOLORECORD_LANGUAGE	"lang"
-#define HOLORECORD_PRESET	"preset"
+#define HOLORECORD_DELAY "delay"
+#define HOLORECORD_SAY "say"
+#define HOLORECORD_SOUND "sound"
+#define HOLORECORD_LANGUAGE "lang"
+#define HOLORECORD_PRESET "preset"
 #define HOLORECORD_RENAME "rename"
 
 #define HOLORECORD_MAX_LENGTH 200
@@ -32,7 +32,6 @@
 	var/datum/action/innate/end_holocall/hangup	//hangup action
 
 	var/call_start_time
-	var/head_call = FALSE //calls from a head of staff autoconnect, if the recieving pad is not secure.
 
 //creates a holocall made by `caller` from `calling_pad` to `callees`
 /datum/holocall/New(mob/living/caller, obj/machinery/holopad/calling_pad, list/callees, elevated_access = FALSE)
@@ -40,21 +39,13 @@
 	user = caller
 	calling_pad.outgoing_call = src
 	calling_holopad = calling_pad
-	head_call = elevated_access
 	dialed_holopads = list()
 
 	for(var/I in callees)
 		var/obj/machinery/holopad/H = I
 		if(!QDELETED(H) && H.is_operational())
 			dialed_holopads += H
-			if(head_call)
-				if(H.secure)
-					calling_pad.say("Auto-connection refused, falling back to call mode.")
-					H.say("Incoming call.")
-				else
-					H.say("Incoming connection.")
-			else
-				H.say("Incoming call.")
+			H.say("Incoming call.")
 			LAZYADD(H.holo_calls, src)
 
 	if(!dialed_holopads.len)

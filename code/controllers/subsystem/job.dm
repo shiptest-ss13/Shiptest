@@ -17,7 +17,6 @@ SUBSYSTEM_DEF(job)
 	var/list/level_order = list(JP_HIGH,JP_MEDIUM,JP_LOW)
 
 /datum/controller/subsystem/job/Initialize(timeofday)
-	SSmapping.HACK_LoadMapConfig()
 	if(!occupations.len)
 		SetupOccupations()
 	if(CONFIG_GET(flag/load_jobs_from_txt))
@@ -631,8 +630,11 @@ SUBSYSTEM_DEF(job)
 		return
 	..()
 
-/datum/controller/subsystem/job/proc/SendToLateJoin(mob/M, buckle = TRUE)
-	var/atom/destination
+/datum/controller/subsystem/job/proc/SendToLateJoin(mob/M, buckle = TRUE, atom/destination)
+	if(destination)
+		destination.JoinPlayerHere(M, buckle)
+		return TRUE
+
 	if(M.mind && M.mind.assigned_role && length(GLOB.jobspawn_overrides[M.mind.assigned_role])) //We're doing something special today.
 		destination = pick(GLOB.jobspawn_overrides[M.mind.assigned_role])
 		destination.JoinPlayerHere(M, FALSE)
@@ -691,3 +693,17 @@ SUBSYSTEM_DEF(job)
 
 /datum/controller/subsystem/job/proc/JobDebug(message)
 	log_job_debug(message)
+
+/datum/controller/subsystem/job/proc/get_manifest()
+	var/list/manifest_out = list()
+	for(var/obj/structure/overmap/ship/simulated/ship as anything in SSovermap.simulated_ships)
+		if(!length(ship.manifest))
+			continue
+		manifest_out["[ship.name] ([ship.shuttle.source_template.short_name])"] = list()
+		for(var/crewmember in ship.manifest)
+			manifest_out["[ship.name] ([ship.shuttle.source_template.short_name])"] += list(list(
+				"name" = crewmember,
+				"rank" = ship.manifest[crewmember]
+			))
+
+	return manifest_out
