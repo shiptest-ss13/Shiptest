@@ -214,8 +214,8 @@
 		open_machine()
 
 /obj/machinery/sleeper/ui_interact(mob/user, datum/tgui/ui)
-	if(src.contains(user) && controls_inside)
-		continue
+	if(src.contains(user) && !controls_inside)
+		return
 	ui = SStgui.try_update_ui(user, src, ui)
 	if(!ui)
 		ui = new(user, src, "Sleeper", name)
@@ -242,8 +242,8 @@
 	open_machine()
 
 /obj/machinery/sleeper/ui_data(mob/user)
-	if(src.contains(user) && controls_inside)
-		continue
+	if(src.contains(user) && !controls_inside)
+		return
 	var/list/data = list()
 	data["occupied"] = occupant ? 1 : 0
 	data["open"] = state_open
