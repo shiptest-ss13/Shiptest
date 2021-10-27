@@ -38,12 +38,12 @@
 		if(9)
 			if(prob(10))
 				new /obj/item/rod_of_asclepius(src)
-				new /obj/item/blood_blessing(src)
+				new /obj/item/tracked/blood_blessing(src)
 			else
 				if(prob(50))
 					new /obj/item/rod_of_asclepius(src)
 				else
-					new /obj/item/blood_blessing(src)
+					new /obj/item/tracked/blood_blessing(src)
 		if(10)
 			new /obj/item/organ/heart/cursed/wizard(src)
 		if(11)
@@ -1882,9 +1882,42 @@
 		if(3)
 			new /obj/item/prisoncube(src)
 
+//I WILL MOVE THIS EVENTUALLY, base tracked item.
+/obj/item/tracked
+	name = "killstreak item"
+	force = 1
+	desc = "Current kills: Some number."
+	var/list/kill_tracker = list()
+	var/reward_treshold = 100
+
+/obj/item/tracked/attack(mob/living/target, mob/living/carbon/user)
+	var/target_health = target.health
+	var/list/existing_trackers = target.has_status_effect_list(STATUS_EFFECT_DAMAGEANDKILLTRACKING)
+	var/right_tracker
+	for(var/i in existing_trackers)
+		var/datum/status_effect/damage_kill_track/SM = i
+		if(SM.reward_target == src)
+			right_tracker = SM
+			return
+	if(!right_tracker)
+		target.apply_status_effect(STATUS_EFFECT_DAMAGEANDKILLTRACKING, src, reward_treshold)
+	..()
+	for(var/i in existing_trackers)
+		var/datum/status_effect/damage_kill_track/SM = i
+		if(!right_tracker && SM.reward_target == src)
+			right_tracker = SM
+		if(right_tracker == SM && !QDELETED(SM) && !QDELETED(target))
+			SM.total_damage += target_health - target.health
+			return
+
+/obj/item/tracked/proc/get_kills_tracked(mob/living/L)
+	if(!kill_tracker["Total"])
+		kill_tracker["Total"] = 1
+	else
+		kill_tracker["Total"] += 1
 
 //Hunter's Curse
-/obj/item/blood_blessing
+/obj/item/tracked/blood_blessing
 	name = "Bloody Dagger"
 	desc = "A bloodied dagger with mysterious runes, just looking at it makes you angrier."
 	icon = 'icons/obj/lavaland/artefacts.dmi'
@@ -1902,7 +1935,7 @@
 	var/target_hand
 	var/mob/living/carbon/curse_owner //Only enables mark awarding if there's a curse owner, which is assigned upon binding the item.
 
-/obj/item/blood_blessing/attack_self(mob/user)
+/obj/item/tracked/blood_blessing/attack_self(mob/user)
 	if(activated)
 		return
 	if(!iscarbon(user))
@@ -1953,7 +1986,7 @@
 	user.zone_selected = prev_select
 
 //Ritual procs
-/obj/item/blood_blessing/proc/stab_self(mob/living/user)
+/obj/item/tracked/blood_blessing/proc/stab_self(mob/living/user)
 	var/prev_intent = user.a_intent
 	user.a_intent = INTENT_HARM
 	to_chat(user, "<span class='warning'>You stab your arm!</span>")
@@ -1961,14 +1994,14 @@
 	user.ClickOn(user)
 	user.a_intent = prev_intent
 
-/obj/item/blood_blessing/proc/activated(mob/living/user)
+/obj/item/tracked/blood_blessing/proc/activated(mob/living/user)
 	item_flags = DROPDEL
 	ADD_TRAIT(src, TRAIT_NODROP, CURSED_ITEM_TRAIT)
 	curse_owner = user
 	activated = TRUE
 
 //The actual weapon, product of the effect.
-/obj/item/blood_blessing/activated
+/obj/item/tracked/blood_blessing/activated
 	icon = 'icons/obj/mining.dmi'
 	icon_state = "crusher"
 	item_state = "crusher0"
@@ -1986,7 +2019,7 @@
 	light_system = MOVABLE_LIGHT
 	light_range = 5
 	light_on = FALSE
-	var/list/kill_tracker = list()
+	reward_treshold = 60
 	var/list/markings = list()
 	var/speedy = FALSE
 	var/charged = TRUE
@@ -1998,18 +2031,18 @@
 	var/backstab_bonus = 10
 	var/souls_reaped = 0
 
-/obj/item/blood_blessing/activated/Initialize()
+/obj/item/tracked/blood_blessing/activated/Initialize()
 	. = ..()
 
-/obj/item/blood_blessing/activated/ComponentInitialize()
+/obj/item/tracked/blood_blessing/activated/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/butchering, 60, 110)
 
-/obj/item/blood_blessing/activated/Destroy()
+/obj/item/tracked/blood_blessing/activated/Destroy()
 	QDEL_LIST(markings)
 	return ..()
 
-/obj/item/blood_blessing/activated/examine(mob/living/user)
+/obj/item/tracked/blood_blessing/activated/examine(mob/living/user)
 	. = ..()
 	. += "<span class='notice'>Shackle a large creature with the unholy force, then rip apart their shackles in melee to do <b>[force + detonation_damage + (souls_reaped * soul_power)]</b> damage.</span>"
 	. += "<span class='notice'>Does <b>[force + detonation_damage + backstab_bonus + (souls_reaped * soul_power)]</b> damage if the target is backstabbed, instead of <b>[force + detonation_damage + (souls_reaped * soul_power)]</b>.</span>"
@@ -2018,31 +2051,14 @@
 		. += "<span class='notice'>It has \a [T] inscribed, which grants the following boon: [T.effect_desc()].</span>"
 
 //Attack stuff
-/obj/item/blood_blessing/activated/attack(mob/living/target, mob/living/carbon/user)
-	var/target_health = target.health
-	var/list/existing_marks = target.has_status_effect_list(STATUS_EFFECT_DAMAGEANDKILLTRACKING)
-	var/right_tracker
-	for(var/i in existing_marks)
-		var/datum/status_effect/damage_kill_track/SM = i
-		if(SM.reward_target == src)
-			right_tracker = SM
-			return
-	if(!right_tracker)
-		target.apply_status_effect(STATUS_EFFECT_DAMAGEANDKILLTRACKING, src, 70)
+/obj/item/tracked/blood_blessing/activated/attack(mob/living/target, mob/living/carbon/user)
 	..()
 	for(var/t in markings)
 		if(!QDELETED(target))
 			var/obj/item/blood_marking/T = t
 			T.on_melee_hit(target, user)
-	for(var/i in existing_marks)
-		var/datum/status_effect/damage_kill_track/SM = i
-		if(!right_tracker && SM.reward_target == src)
-			right_tracker = SM
-		if(right_tracker == SM && !QDELETED(SM) && !QDELETED(target))
-			SM.total_damage += target_health - target.health
-			return
 
-/obj/item/blood_blessing/activated/afterattack(atom/target, mob/living/user, proximity_flag, clickparams)
+/obj/item/tracked/blood_blessing/activated/afterattack(atom/target, mob/living/user, proximity_flag, clickparams)
 	. = ..()
 	if(!proximity_flag && charged)//Mark a target, or mine a tile.
 		var/turf/proj_turf = user.loc
@@ -2064,11 +2080,11 @@
 	if(proximity_flag && isliving(target))
 		var/mob/living/L = target
 		var/target_health = L.health
-		var/list/existing_marks = L.has_status_effect_list(STATUS_EFFECT_DAMAGEANDKILLTRACKING)
+		var/list/existing_trackers = L.has_status_effect_list(STATUS_EFFECT_DAMAGEANDKILLTRACKING)
 		var/datum/status_effect/blood_shackle/CM = L.has_status_effect(STATUS_EFFECT_BLOODSHACKLE)
 		if(!CM || CM.blood_shackled != src || !L.remove_status_effect(STATUS_EFFECT_BLOODSHACKLE))
 			return
-		for(var/i in existing_marks)
+		for(var/i in existing_trackers)
 			var/datum/status_effect/damage_kill_track/SM = i
 			if(SM.reward_target == src && !QDELETED(L) && !QDELETED(SM))
 				SM.total_damage += target_health - L.health
@@ -2091,24 +2107,24 @@
 			else
 				L.apply_damage(detonation_damage + (souls_reaped * soul_power), BRUTE, blocked = def_check)
 
-/obj/item/blood_blessing/activated/melee_attack_chain(mob/user, atom/target, params)
+/obj/item/tracked/blood_blessing/activated/melee_attack_chain(mob/user, atom/target, params)
 	..()
 	if(speedy == TRUE)
 		user.changeNext_move(CLICK_CD_MELEE * 0.75)
 
 //Overlays and light
-/obj/item/blood_blessing/activated/proc/Recharge()
+/obj/item/tracked/blood_blessing/activated/proc/Recharge()
 	if(!charged)
 		charged = TRUE
 		update_icon()
 		playsound(src.loc, 'sound/weapons/kenetic_reload.ogg', 60, TRUE)
 
-/obj/item/blood_blessing/activated/ui_action_click(mob/user, actiontype)
+/obj/item/tracked/blood_blessing/activated/ui_action_click(mob/user, actiontype)
 	set_light_on(!light_on)
 	playsound(user, 'sound/weapons/empty.ogg', 100, TRUE)
 	update_icon()
 
-/obj/item/blood_blessing/activated/update_overlays()
+/obj/item/tracked/blood_blessing/activated/update_overlays()
 	. = ..()
 	if(!charged)
 		. += "[icon_state]_uncharged"
@@ -2116,13 +2132,13 @@
 		. += "[icon_state]_lit"
 
 //Mark management
-/obj/item/blood_blessing/activated/attackby(obj/item/I, mob/living/user)
+/obj/item/tracked/blood_blessing/activated/attackby(obj/item/I, mob/living/user)
 	if(istype(I, /obj/item/blood_marking))
 		var/obj/item/blood_marking/T = I
 		T.add_to(src, user)
 	else
 		return ..()
-/obj/item/blood_blessing/activated/proc/add_mark(obj/item/blood_marking/MA, mob/living/user)
+/obj/item/tracked/blood_blessing/activated/proc/add_mark(obj/item/blood_marking/MA, mob/living/user)
 	for(var/t in markings)
 		var/obj/item/blood_marking/T = t
 		if(istype(T, MA.denied_type) || istype(MA, T.denied_type))
@@ -2139,7 +2155,7 @@
 	markings += MA
 	return TRUE
 
-/obj/item/blood_blessing/activated/proc/get_soulrewards(mob/living/L)
+/obj/item/tracked/blood_blessing/activated/get_kills_tracked(mob/living/L)
 //The bread and butter of the item, please only add lists needed to get new marks to not overbloat this further.
 	var/datum/status_effect/hunters_oath/effect = curse_owner.has_status_effect(STATUS_EFFECT_HUNTERS_OATH)
 	effect.last_kill = world.time
@@ -2158,10 +2174,7 @@
 	if(istype(L, /mob/living/simple_animal/hostile/asteroid/hivelordbrood) || istype(L, /mob/living/simple_animal/hostile/asteroid/goldgrub)) // Not counting any that are worthless
 		return
 //Total trackers
-	if(!kill_tracker["Total"])
-		kill_tracker["Total"] = 1
-	else
-		kill_tracker["Total"] += 1
+	..()
 	if(!kill_tracker["Total Souls"])
 		kill_tracker["Total Souls"] = bonus_mod
 	else
@@ -2381,7 +2394,7 @@
 	flag = "bomb"
 	range = 6
 	log_override = TRUE
-	var/obj/item/blood_blessing/activated/blood_shackled
+	var/obj/item/tracked/blood_blessing/activated/blood_shackled
 
 /obj/projectile/shackler/Destroy()
 	blood_shackled = null
@@ -2391,23 +2404,23 @@
 	if(isliving(target))
 		var/mob/living/L = target
 		var/target_health = L.health
-		var/list/existing_marks = L.has_status_effect_list(STATUS_EFFECT_DAMAGEANDKILLTRACKING)
+		var/list/existing_trackers = L.has_status_effect_list(STATUS_EFFECT_DAMAGEANDKILLTRACKING)
 		var/right_tracker
 		var/had_effect = (L.has_status_effect(STATUS_EFFECT_BLOODSHACKLE)) //used as a boolean
 		var/datum/status_effect/blood_shackle/CM = L.apply_status_effect(STATUS_EFFECT_BLOODSHACKLE, blood_shackled)
-		for(var/i in existing_marks)
+		for(var/i in existing_trackers)
 			var/datum/status_effect/damage_kill_track/SM = i
 			if(SM.reward_target == src)
 				right_tracker = SM
 				return
 		if(!right_tracker)
-			L.apply_status_effect(STATUS_EFFECT_DAMAGEANDKILLTRACKING, blood_shackled, 70)
+			L.apply_status_effect(STATUS_EFFECT_DAMAGEANDKILLTRACKING, blood_shackled, blood_shackled.reward_treshold)
 		if(blood_shackled)
 			for(var/t in blood_shackled.markings)
 				var/obj/item/blood_marking/T = t
 				T.on_mark_application(target, CM, had_effect)
 		..()
-		for(var/i in existing_marks)
+		for(var/i in existing_trackers)
 			var/datum/status_effect/damage_kill_track/SM = i
 			if(!right_tracker && SM.reward_target == blood_shackled)
 				right_tracker = SM
@@ -2440,12 +2453,12 @@
 	return "errors."
 
 /obj/item/blood_marking/attackby(obj/item/A, mob/living/user)
-	if(istype(A, /obj/item/blood_blessing/activated))
+	if(istype(A, /obj/item/tracked/blood_blessing/activated))
 		add_to(A, user)
 	else
 		..()
 
-/obj/item/blood_marking/proc/add_to(obj/item/blood_blessing/activated/H, mob/living/user)
+/obj/item/blood_marking/proc/add_to(obj/item/tracked/blood_blessing/activated/H, mob/living/user)
 	for(var/t in H.markings)
 		var/obj/item/blood_marking/T = t
 		if(istype(T, denied_type) || istype(src, T.denied_type))
@@ -2456,7 +2469,7 @@
 	to_chat(user, "<span class='notice'>You feel a sharp pain as you inscribe the [src] on your accursed arm!</span>")
 	return TRUE
 
-/obj/item/blood_marking/proc/remove_from(obj/item/blood_blessing/activated/H, mob/living/user)
+/obj/item/blood_marking/proc/remove_from(obj/item/tracked/blood_blessing/activated/H, mob/living/user)
 	forceMove(get_turf(H))
 	H.markings -= src
 	return TRUE
@@ -2591,7 +2604,7 @@
 /obj/item/blood_marking/skull_mark/effect_desc()
 	return "Allows you to harness the power of the legion the more you are hurt, recharging your shackles <b>[bonus_value*0.1]</b> second\s faster and dealing <b>[bonus_value]</b> more damage when breaking them for every <b>[missing_health_desc]</b> health you are missing."
 
-/obj/item/blood_marking/skull_mark/add_to(obj/item/blood_blessing/activated/H, mob/living/user)
+/obj/item/blood_marking/skull_mark/add_to(obj/item/tracked/blood_blessing/activated/H, mob/living/user)
 	. = ..()
 	if(.)
 		var/missing_health = user.maxHealth - user.health
@@ -2599,7 +2612,7 @@
 		missing_health *= bonus_value
 		H.charge_time = max(H.charge_time - missing_health, 2)
 
-/obj/item/blood_marking/skull_mark/remove_from(obj/item/blood_blessing/activated/H, mob/living/user)
+/obj/item/blood_marking/skull_mark/remove_from(obj/item/tracked/blood_blessing/activated/H, mob/living/user)
 	. = ..()
 	if(.)
 		var/missing_health = user.maxHealth - user.health
@@ -2641,7 +2654,7 @@
 	if(missing_health > 0)
 		target.adjustBruteLoss(missing_health)
 	if(prob(chance_for_attack))
-		var/obj/item/blood_blessing/activated/ARM = user.get_active_held_item()
+		var/obj/item/tracked/blood_blessing/activated/ARM = user.get_active_held_item()
 		ARM.attack(target, user)
 
 //Watcher
@@ -2784,14 +2797,14 @@
 /obj/item/blood_marking/demon_mark/effect_desc()
 	return "Your claws sharpen, dealing <b>[bonus_value]</b> more damage and allowing you to attack faster."
 
-/obj/item/blood_marking/demon_mark/add_to(obj/item/blood_blessing/activated/H, mob/living/user)
+/obj/item/blood_marking/demon_mark/add_to(obj/item/tracked/blood_blessing/activated/H, mob/living/user)
 	. = ..()
 	if(.)
 		H.force += bonus_value
 		H.speedy = TRUE
 		to_chat(user, "<span class='notice'>You feel your claws sharpen and lengthen!</span>")
 
-/obj/item/blood_marking/demon_mark/remove_from(obj/item/blood_blessing/activated/H, mob/living/user)
+/obj/item/blood_marking/demon_mark/remove_from(obj/item/tracked/blood_blessing/activated/H, mob/living/user)
 	. = ..()
 	if(.)
 		H.force -= bonus_value
@@ -2858,13 +2871,13 @@
 	marker.nodamage = FALSE
 	marker.damage += 10
 
-/obj/item/blood_marking/king_mark/add_to(obj/item/blood_blessing/activated/H, mob/living/user)
+/obj/item/blood_marking/king_mark/add_to(obj/item/tracked/blood_blessing/activated/H, mob/living/user)
 	. = ..()
 	if(.)
 		H.charge_time = 0
 		H.force += 15
 
-/obj/item/blood_marking/king_mark/remove_from(obj/item/blood_blessing/activated/H, mob/living/user)
+/obj/item/blood_marking/king_mark/remove_from(obj/item/tracked/blood_blessing/activated/H, mob/living/user)
 	. = ..()
 	if(.)
 		H.charge_time = 12

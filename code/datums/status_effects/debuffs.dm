@@ -357,9 +357,9 @@
 	status_type = STATUS_EFFECT_REPLACE
 	alert_type = null
 	var/mutable_appearance/marked_underlay
-	var/obj/item/blood_blessing/blood_shackled
+	var/obj/item/tracked/blood_blessing/blood_shackled
 
-/datum/status_effect/blood_shackle/on_creation(mob/living/new_owner, obj/item/blood_blessing/new_blood_shackled)
+/datum/status_effect/blood_shackle/on_creation(mob/living/new_owner, obj/item/tracked/blood_blessing/new_blood_shackled)
 	. = ..()
 	if(.)
 		blood_shackled = new_blood_shackled

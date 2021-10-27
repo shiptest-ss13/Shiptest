@@ -525,64 +525,62 @@
 			consume_owner()
 	else
 		if(iscarbon(owner))
-			var/mob/living/carbon/itemUser = owner
-			var/obj/item/heldItem = itemUser.get_item_for_held_index(hand)
-			if(heldItem == null || heldItem.type != /obj/item/blood_blessing/activated) //Checks to make sure the rod is still in their hand
-				var/obj/item/blood_blessing/activated/new_curse = new(itemUser.loc)
-				new_curse.activated(itemUser)
-				if(!itemUser.has_hand_for_held_index(hand))
+			var/mob/living/carbon/item_user = owner
+			var/obj/item/held_item = item_user.get_item_for_held_index(hand)
+			if(held_item == null || held_item.type != /obj/item/tracked/blood_blessing/activated) //Checks to make sure the rod is still in their hand
+				var/obj/item/tracked/blood_blessing/activated/new_curse = new(item_user.loc)
+				new_curse.activated(item_user)
+				if(!item_user.has_hand_for_held_index(hand))
 					//If user does not have the corresponding hand anymore, give them one and return curse to their arm
 					if(((hand % 2) == 0))
-						var/obj/item/bodypart/L = itemUser.newBodyPart(BODY_ZONE_R_ARM, FALSE, FALSE)
-						if(L.attach_limb(itemUser))
-							itemUser.put_in_hand(new_curse, hand, forced = TRUE)
+						var/obj/item/bodypart/L = item_user.newBodyPart(BODY_ZONE_R_ARM, FALSE, FALSE)
+						if(L.attach_limb(item_user))
+							item_user.put_in_hand(new_curse, hand, forced = TRUE)
 						else
 							qdel(L)
 							consume_owner() //we can't regrow, abort abort
 							return
 					else
-						var/obj/item/bodypart/L = itemUser.newBodyPart(BODY_ZONE_L_ARM, FALSE, FALSE)
-						if(L.attach_limb(itemUser))
-							itemUser.put_in_hand(new_curse, hand, forced = TRUE)
+						var/obj/item/bodypart/L = item_user.newBodyPart(BODY_ZONE_L_ARM, FALSE, FALSE)
+						if(L.attach_limb(item_user))
+							item_user.put_in_hand(new_curse, hand, forced = TRUE)
 						else
 							qdel(L)
 							consume_owner() //see above comment
 							return
-					to_chat(itemUser, "<span class='warning'>Your accursed arm forms anew!</span>")
+					to_chat(item_user, "<span class='warning'>Your accursed arm forms anew!</span>")
 				else
 					//Otherwise get rid of whatever else is in their hand and return the rod to said hand
-					itemUser.put_in_hand(new_curse, hand, forced = TRUE)
-					to_chat(itemUser, "<span class='warning'>After a few moments of painful transformation, your arm reforms itself, growing sharp claws and it's skin becoming twisted!</span>")
+					item_user.put_in_hand(new_curse, hand, forced = TRUE)
+					to_chat(item_user, "<span class='warning'>After a few moments of painful transformation, your arm reforms itself, growing sharp claws and it's skin becoming twisted!</span>")
 			if(last_kill >= (world.time + 2 MINUTES))
 				blood_thirst += 1
 			switch(blood_thirst)
 				if(10)
-					to_chat(itemUser, pick("<span class='warning'>The thirst returns, you yearn for blood!</span>"))
+					to_chat(item_user, pick("<span class='warning'>The thirst returns, you yearn for blood!</span>"))
 				if(60)
-					to_chat(itemUser, pick("<span class='warning'>You hear the hunter whispering painful words in your head!</span>"))
+					to_chat(item_user, pick("<span class='warning'>You hear the hunter whispering painful words in your head!</span>"))
 				if(100)
-					to_chat(itemUser, pick("<span class='warning'>You should probably go kill something!</span>"))
+					to_chat(item_user, pick("<span class='warning'>You should probably go kill something!</span>"))
 				if(200)
-					to_chat(itemUser, pick("<span class='warning'>Feast on them, kill them.</span>"))
+					to_chat(item_user, pick("<span class='warning'>Feast on them, kill them.</span>"))
 				if(300)
-					to_chat(itemUser, pick("<span class='warning'>Their end is your purpose.</span>"))
+					to_chat(item_user, pick("<span class='warning'>Their end is your purpose.</span>"))
 				if(400)
-					to_chat(itemUser, pick("<span class='warning'>Pain lingers in this world, you should end it.</span>"))
+					to_chat(item_user, pick("<span class='warning'>Pain lingers in this world, you should end it.</span>"))
 				if(500)
-					to_chat(itemUser, pick("<span class='warning'>Tear them apart, or yourself, it matters not, the deal remains.</span>"))
+					to_chat(item_user, pick("<span class='warning'>Tear them apart, or yourself, it matters not, the deal remains.</span>"))
 
 
 /datum/status_effect/hunters_oath/proc/consume_owner()
 	owner.visible_message("<span class='notice'>[owner]'s soul is absorbed by their master, releasing a shade from what they once were.</span>")
-	var/mob/living/simple_animal/hostile/retaliate/poison/snake/healSnake = new(owner.loc)
-	var/list/chems = list(/datum/reagent/medicine/sal_acid, /datum/reagent/medicine/C2/convermol, /datum/reagent/medicine/oxandrolone)
-	healSnake.poison_type = pick(chems)
-	healSnake.name = "[owner]'s' Shade"
-	healSnake.real_name = "[owner]'s Shade"
-	healSnake.desc = "The shade of one who once held the curse of blood."
+	var/mob/living/simple_animal/hostile/retaliate/ghost/owner_shade = new(owner.loc)
+	owner_shade.name = "[owner]'s' Shade"
+	owner_shade.real_name = "[owner]'s Shade"
+	owner_shade.desc = "The shade of one who once held the curse of blood."
 	new /obj/effect/decal/cleanable/ash(owner.loc)
-	new /obj/item/blood_blessing(owner.loc)
-	qdel(owner) //To assign the proper mob and shit
+	new /obj/item/tracked/blood_blessing(owner.loc)
+	qdel(owner)
 
 //Hippocratic Oath: Applied when the Rod of Asclepius is activated.
 /datum/status_effect/hippocratic_oath
@@ -615,44 +613,44 @@
 			consume_owner()
 	else
 		if(iscarbon(owner))
-			var/mob/living/carbon/itemUser = owner
-			var/obj/item/heldItem = itemUser.get_item_for_held_index(hand)
-			if(heldItem == null || heldItem.type != /obj/item/rod_of_asclepius) //Checks to make sure the rod is still in their hand
-				var/obj/item/rod_of_asclepius/newRod = new(itemUser.loc)
-				newRod.activated()
-				if(!itemUser.has_hand_for_held_index(hand))
+			var/mob/living/carbon/item_user = owner
+			var/obj/item/held_item = item_user.get_item_for_held_index(hand)
+			if(held_item == null || held_item.type != /obj/item/rod_of_asclepius) //Checks to make sure the rod is still in their hand
+				var/obj/item/rod_of_asclepius/new_rod = new(item_user.loc)
+				new_rod.activated()
+				if(!item_user.has_hand_for_held_index(hand))
 					//If user does not have the corresponding hand anymore, give them one and return the rod to their hand
 					if(((hand % 2) == 0))
-						var/obj/item/bodypart/L = itemUser.newBodyPart(BODY_ZONE_R_ARM, FALSE, FALSE)
-						if(L.attach_limb(itemUser))
-							itemUser.put_in_hand(newRod, hand, forced = TRUE)
+						var/obj/item/bodypart/L = item_user.newBodyPart(BODY_ZONE_R_ARM, FALSE, FALSE)
+						if(L.attach_limb(item_user))
+							item_user.put_in_hand(new_rod, hand, forced = TRUE)
 						else
 							qdel(L)
 							consume_owner() //we can't regrow, abort abort
 							return
 					else
-						var/obj/item/bodypart/L = itemUser.newBodyPart(BODY_ZONE_L_ARM, FALSE, FALSE)
-						if(L.attach_limb(itemUser))
-							itemUser.put_in_hand(newRod, hand, forced = TRUE)
+						var/obj/item/bodypart/L = item_user.newBodyPart(BODY_ZONE_L_ARM, FALSE, FALSE)
+						if(L.attach_limb(item_user))
+							item_user.put_in_hand(new_rod, hand, forced = TRUE)
 						else
 							qdel(L)
 							consume_owner() //see above comment
 							return
-					to_chat(itemUser, "<span class='notice'>Your arm suddenly grows back with the Rod of Asclepius still attached!</span>")
+					to_chat(item_user, "<span class='notice'>Your arm suddenly grows back with the Rod of Asclepius still attached!</span>")
 				else
 					//Otherwise get rid of whatever else is in their hand and return the rod to said hand
-					itemUser.put_in_hand(newRod, hand, forced = TRUE)
-					to_chat(itemUser, "<span class='notice'>The Rod of Asclepius suddenly grows back out of your arm!</span>")
+					item_user.put_in_hand(new_rod, hand, forced = TRUE)
+					to_chat(item_user, "<span class='notice'>The Rod of Asclepius suddenly grows back out of your arm!</span>")
 			//Because a servant of medicines stops at nothing to help others, lets keep them on their toes and give them an additional boost.
-			if(itemUser.health < itemUser.maxHealth)
-				new /obj/effect/temp_visual/heal(get_turf(itemUser), "#375637")
-			itemUser.adjustBruteLoss(-1.5)
-			itemUser.adjustFireLoss(-1.5)
-			itemUser.adjustToxLoss(-1.5, forced = TRUE) //Because Slime People are people too
-			itemUser.adjustOxyLoss(-1.5)
-			itemUser.adjustStaminaLoss(-1.5)
-			itemUser.adjustOrganLoss(ORGAN_SLOT_BRAIN, -1.5)
-			itemUser.adjustCloneLoss(-0.5) //Becasue apparently clone damage is the bastion of all health
+			if(item_user.health < item_user.maxHealth)
+				new /obj/effect/temp_visual/heal(get_turf(item_user), "#375637")
+			item_user.adjustBruteLoss(-1.5)
+			item_user.adjustFireLoss(-1.5)
+			item_user.adjustToxLoss(-1.5, forced = TRUE) //Because Slime People are people too
+			item_user.adjustOxyLoss(-1.5)
+			item_user.adjustStaminaLoss(-1.5)
+			item_user.adjustOrganLoss(ORGAN_SLOT_BRAIN, -1.5)
+			item_user.adjustCloneLoss(-0.5) //Becasue apparently clone damage is the bastion of all health
 		//Heal all those around you, unbiased
 		for(var/mob/living/L in view(7, owner))
 			if(L.health < L.maxHealth)
@@ -674,12 +672,12 @@
 
 /datum/status_effect/hippocratic_oath/proc/consume_owner()
 	owner.visible_message("<span class='notice'>[owner]'s soul is absorbed into the rod, relieving the previous snake of its duty.</span>")
-	var/mob/living/simple_animal/hostile/retaliate/poison/snake/healSnake = new(owner.loc)
+	var/mob/living/simple_animal/hostile/retaliate/poison/snake/heal_snake = new(owner.loc)
 	var/list/chems = list(/datum/reagent/medicine/sal_acid, /datum/reagent/medicine/C2/convermol, /datum/reagent/medicine/oxandrolone)
-	healSnake.poison_type = pick(chems)
-	healSnake.name = "Asclepius's Snake"
-	healSnake.real_name = "Asclepius's Snake"
-	healSnake.desc = "A mystical snake previously trapped upon the Rod of Asclepius, now freed of its burden. Unlike the average snake, its bites contain chemicals with minor healing properties."
+	heal_snake.poison_type = pick(chems)
+	heal_snake.name = "Asclepius's Snake"
+	heal_snake.real_name = "Asclepius's Snake"
+	heal_snake.desc = "A mystical snake previously trapped upon the Rod of Asclepius, now freed of its burden. Unlike the average snake, its bites contain chemicals with minor healing properties."
 	new /obj/effect/decal/cleanable/ash(owner.loc)
 	new /obj/item/rod_of_asclepius(owner.loc)
 	qdel(owner)

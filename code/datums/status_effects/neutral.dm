@@ -24,15 +24,18 @@
 	alert_type = null
 	var/total_damage = 0
 	on_remove_on_mob_delete = TRUE
-	var/obj/item/blood_blessing/activated/reward_target
+	var/obj/item/tracked/reward_target
 	var/reward_treshold = 50
 
-/datum/status_effect/damage_kill_track/on_creation(mob/living/new_owner, obj/item/blood_blessing/activated/new_reward_target, var/new_reward_treshold)
+/datum/status_effect/damage_kill_track/on_creation(mob/living/new_owner, obj/item/tracked/new_reward_target, var/new_reward_treshold)
 	. = ..()
 	if(.)
 		reward_target = new_reward_target
 		if(new_reward_treshold != reward_treshold && new_reward_treshold != null)
-			reward_treshold = new_reward_treshold
+			if(new_reward_treshold <= 100)
+				reward_treshold = new_reward_treshold
+			else
+				reward_treshold = 100
 
 /datum/status_effect/damage_kill_track/on_apply()
 	if(owner.stat == DEAD)
@@ -41,12 +44,19 @@
 
 /datum/status_effect/damage_kill_track/proc/get_souls()
 	if(!QDELETED(reward_target))
-		reward_target.get_soulrewards(owner)
+		reward_target.get_kills_tracked(owner)
 
 /datum/status_effect/damage_kill_track/tick()
-	if(total_damage > 0 && (owner.maxHealth / total_damage) >= reward_treshold && owner.stat == DEAD)
-		get_souls()
-		qdel(src)
+	if(owner.stat == DEAD)
+		if(reward_treshold == 0)
+			get_souls()
+			qdel(src)
+		else
+			if(total_damage > 0 && (owner.maxHealth / total_damage) >= reward_treshold)
+				get_souls()
+				qdel(src)
+			else
+				qdel(src)
 
 /datum/status_effect/damage_kill_track/on_remove()
 	get_souls()
