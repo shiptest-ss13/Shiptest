@@ -116,7 +116,7 @@ jobs:
         run: |
           source $HOME/BYOND/byond/bin/byondsetup
           tgui/bin/tgui --build
-          bash tools/ci/dm.sh -DCIBUILDING tgstation.dme
+          bash tools/ci/dm.sh -DCIBUILDING shiptest.dme
           bash tools/ci/run_server.sh
 
   test_windows:
