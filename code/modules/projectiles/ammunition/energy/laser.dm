@@ -34,6 +34,7 @@
 /obj/item/ammo_casing/energy/laser/ultima
 	projectile_type = /obj/projectile/beam/laser/weak/negative_ap
 	pellets = 3
+	variance = 35
 	e_cost = 2000
 	select_name = "kill"
 
