@@ -497,6 +497,16 @@
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/hallway/starboard)
+"dg" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 5
+	},
+/obj/structure/cable/orange{
+	icon_state = "0-8"
+	},
+/obj/machinery/power/port_gen/pacman/super,
+/turf/open/floor/plating,
+/area/ship/engineering/engine)
 "dj" = (
 /obj/machinery/button/door{
 	id = "ospreydoors";
@@ -638,6 +648,10 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
+"ev" = (
+/obj/effect/turf_decal/industrial/warning,
+/turf/open/floor/plating,
+/area/ship/engineering/engine)
 "ex" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -673,12 +687,6 @@
 	pixel_y = -24
 	},
 /turf/open/floor/plasteel/patterned/grid,
-/area/ship/engineering/engine)
-"eO" = (
-/obj/effect/turf_decal/industrial/warning{
-	dir = 10
-	},
-/turf/open/floor/plating,
 /area/ship/engineering/engine)
 "eY" = (
 /obj/structure/cable{
@@ -1262,12 +1270,6 @@
 /obj/machinery/suit_storage_unit/standard_unit,
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/fore)
-"ko" = (
-/obj/effect/turf_decal/industrial/warning{
-	dir = 4
-	},
-/turf/open/floor/plating,
-/area/ship/engineering/engine)
 "kp" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
@@ -1312,12 +1314,6 @@
 	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/construction)
-"kN" = (
-/obj/item/paper{
-	info = "Greetings valued contractor! Due to budget constraints, this vessel has been delivered without its standard-issue cold fusion reactor. We apologize for the inconvenience, and encourage you to try our wide range of high-impact engineering solutions as a replacement."
-	},
-/turf/open/floor/plating,
-/area/ship/engineering/engine)
 "kO" = (
 /obj/machinery/door/airlock/engineering{
 	name = "Engineering"
@@ -2058,6 +2054,12 @@
 /obj/effect/spawner/structure/window/shuttle,
 /turf/open/floor/plating,
 /area/ship/crew/dorm)
+"pL" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 8
+	},
+/turf/open/floor/plating,
+/area/ship/engineering/engine)
 "pO" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/hallway/aft)
@@ -2353,9 +2355,6 @@
 "rM" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/maintenance/port)
-"rO" = (
-/turf/open/floor/plating,
-/area/ship/engineering/engine)
 "rW" = (
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/firedoor/border_only{
@@ -3022,7 +3021,7 @@
 /obj/item/clothing/under/color/grey,
 /obj/item/clothing/under/color/grey,
 /obj/structure/closet/wall{
-	icon_door = "grey_wall_door";
+	icon_door = "grey_wall";
 	pixel_y = 28
 	},
 /turf/open/floor/plasteel/grimy,
@@ -3170,6 +3169,12 @@
 /obj/effect/turf_decal/corner/neutral/border,
 /turf/open/floor/plasteel,
 /area/ship/hallway/aft)
+"xg" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 10
+	},
+/turf/open/floor/plating,
+/area/ship/engineering/engine)
 "xh" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/engineering/engine)
@@ -3299,10 +3304,6 @@
 /obj/effect/turf_decal/corner/neutral/border,
 /turf/open/floor/plasteel,
 /area/ship/hallway/central)
-"yF" = (
-/obj/effect/turf_decal/industrial/warning,
-/turf/open/floor/plating,
-/area/ship/engineering/engine)
 "yG" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/storage)
@@ -3395,10 +3396,6 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/science)
-"zr" = (
-/obj/structure/cable/yellow,
-/turf/open/floor/plating,
-/area/ship/engineering/engine)
 "zv" = (
 /obj/effect/turf_decal/corner/white/mono,
 /obj/effect/turf_decal/corner/blue/border{
@@ -3815,12 +3812,6 @@
 /obj/structure/disposalpipe/segment,
 /turf/open/floor/plasteel,
 /area/ship/hallway/central)
-"Cw" = (
-/obj/effect/turf_decal/industrial/warning{
-	dir = 6
-	},
-/turf/open/floor/plating,
-/area/ship/engineering/engine)
 "Cz" = (
 /obj/effect/turf_decal/caution{
 	dir = 8
@@ -3868,6 +3859,12 @@
 	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/engineering/atmospherics)
+"CM" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/ship/engineering/engine)
 "CQ" = (
 /obj/effect/turf_decal/borderfloor,
 /obj/effect/turf_decal/corner/brown{
@@ -4030,6 +4027,9 @@
 /obj/effect/spawner/structure/window/shuttle,
 /turf/open/floor/plating,
 /area/ship/medical)
+"Ef" = (
+/turf/open/floor/plating,
+/area/ship/engineering/engine)
 "Ei" = (
 /obj/effect/turf_decal/borderfloor{
 	dir = 8
@@ -4058,16 +4058,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/ship/hallway/aft)
-"El" = (
-/obj/effect/turf_decal/industrial/warning{
-	dir = 5
-	},
-/obj/structure/cable/orange{
-	icon_state = "0-8"
-	},
-/obj/machinery/power/port_gen/pacman/super,
-/turf/open/floor/plating,
-/area/ship/engineering/engine)
 "Ep" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
@@ -4337,7 +4327,7 @@
 	},
 /obj/structure/closet/wall{
 	dir = 1;
-	icon_door = "white_wall_door";
+	icon_door = "white_wall";
 	name = "culinary equipment closet";
 	pixel_y = -28
 	},
@@ -4500,12 +4490,6 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
-"Ha" = (
-/obj/effect/turf_decal/industrial/warning{
-	dir = 8
-	},
-/turf/open/floor/plating,
-/area/ship/engineering/engine)
 "Hb" = (
 /obj/machinery/atmospherics/pipe/simple/orange/hidden{
 	dir = 8
@@ -5302,6 +5286,12 @@
 /obj/machinery/computer/communications,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
+"Nn" = (
+/obj/item/paper{
+	info = "Greetings valued contractor! Due to budget constraints, this vessel has been delivered without its standard-issue cold fusion reactor. We apologize for the inconvenience, and encourage you to try our wide range of high-impact engineering solutions as a replacement."
+	},
+/turf/open/floor/plating,
+/area/ship/engineering/engine)
 "Nr" = (
 /obj/structure/table,
 /obj/item/reagent_containers/glass/bucket,
@@ -5842,6 +5832,12 @@
 	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/engineering/atmospherics)
+"QK" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 6
+	},
+/turf/open/floor/plating,
+/area/ship/engineering/engine)
 "QT" = (
 /obj/structure/table/glass,
 /obj/item/storage/backpack/duffelbag/med/surgery{
@@ -6897,6 +6893,10 @@
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
+"YO" = (
+/obj/structure/cable/yellow,
+/turf/open/floor/plating,
+/area/ship/engineering/engine)
 "YS" = (
 /obj/effect/spawner/structure/window/shuttle,
 /turf/open/floor/plating,
@@ -7799,9 +7799,9 @@ ds
 aC
 aC
 ml
-Ha
-Ha
-eO
+pL
+pL
+xg
 xh
 XU
 XU
@@ -7857,9 +7857,9 @@ ds
 UY
 aC
 Ve
-rO
-rO
-yF
+Ef
+Ef
+ev
 xh
 XU
 XU
@@ -7915,9 +7915,9 @@ ds
 FG
 jU
 aB
-zr
-rO
-yF
+YO
+Ef
+ev
 xh
 XU
 XU
@@ -7973,9 +7973,9 @@ ds
 aC
 xm
 Wu
-kN
-rO
-yF
+Nn
+Ef
+ev
 xh
 XU
 XU
@@ -8030,10 +8030,10 @@ Ro
 ds
 aC
 xm
-El
-ko
-ko
-Cw
+dg
+CM
+CM
+QK
 xh
 XU
 XU
