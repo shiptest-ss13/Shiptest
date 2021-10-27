@@ -75,7 +75,6 @@ other types of metals and chemistry for reagents).
 	custom_materials = list(/datum/material/iron =300, /datum/material/glass =100)
 	var/list/blueprints = list()
 	var/max_blueprints = 1
-	var/license = -1 //shiptest edit: cev eris
 
 /obj/item/disk/design_disk/Initialize()
 	. = ..()

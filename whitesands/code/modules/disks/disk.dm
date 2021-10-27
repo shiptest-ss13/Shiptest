@@ -21,7 +21,7 @@
 		"yellow" = "#ffe366"
 	)
 
-obj/item/disk/Initialize()
+/obj/item/disk/Initialize()
 	. = ..()
 	icon_state = "disk"
 	if(random_color) //random colors!
@@ -57,10 +57,13 @@ obj/item/disk/Initialize()
 
 /obj/item/disk/nuclear
 	random_color = FALSE
-	icon_state = "disk_map"
+	icon_state = "nuke_disk_map"
 	color = "#4ED57C"
-	illustration = "nuke_useless"
+	illustration = "nuke_new"
 	desc = "The authentication disk of a nuclear bomb. This is probably useless."
+
+/obj/item/disk/nuclear/fake/obvious
+	illustration = "nuke_retro"
 
 /obj/item/disk/tech_disk/major
 	icon_state = "disk_map"
@@ -92,6 +95,9 @@ obj/item/disk/Initialize()
 /obj/item/disk/design_disk/golem_shell
 	illustration = "poyo"
 
+/obj/item/disk/nanite_program
+	illustration = "nanite"
+/*
 //security
 /obj/item/disk/design_disk/sec
 	name = "security design disk"
@@ -119,7 +125,7 @@ obj/item/disk/Initialize()
 	name = "Disabler disk"
 	illustration = "gun"
 
-/obj/item/disk/design_disk/sec/combatshotgun
+/obj/item/disk/design_disk/sec/liberator
 	name = "Liberator Disposable pistol"
 	illustration = "gun"
 
@@ -266,3 +272,4 @@ obj/item/disk/Initialize()
 	materials = list(/datum/material/plastic = 6000)
 	build_path = /obj/item/toy/plush/among
 	category = list("Imported")
+*/
