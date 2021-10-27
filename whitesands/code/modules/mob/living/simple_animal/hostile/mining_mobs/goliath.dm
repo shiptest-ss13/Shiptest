@@ -72,9 +72,6 @@
 	..()
 
 /mob/living/simple_animal/hostile/asteroid/goliath/gib()
-	move_force = MOVE_FORCE_DEFAULT
-	move_resist = MOVE_RESIST_DEFAULT
-	pull_force = PULL_FORCE_DEFAULT
 	if(prob(1))//goliaths eat rocks and thus have a tiny chance to contain a number of gems
 		new /obj/item/gem/rupee(loc)
 		visible_message("<span class='warning'>A glittering object falls out of [src]'s hide!</span>")
