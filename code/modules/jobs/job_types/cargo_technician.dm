@@ -56,5 +56,5 @@
 /datum/outfit/job/cargo_tech/solgov/pilot
 	name = "Pilot (SolGov)"
 
-	ears = /obj/item/radio/headset/headset_sec/alt/department_supply
+	ears = /obj/item/radio/headset/headset_sec/alt/department/supply
 	suit = /obj/item/clothing/suit/jacket

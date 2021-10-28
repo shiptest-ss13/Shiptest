@@ -106,5 +106,5 @@
 	uniform = /obj/item/clothing/under/solgov
 	accessory = /obj/item/clothing/accessory/armband/medblue
 	shoes = /obj/item/clothing/shoes/sneakers/white
-	hat = /obj/item/clothing/head/beret/solgov
+	head = /obj/item/clothing/head/beret/solgov
 	suit =  /obj/item/clothing/suit/toggle/labcoat

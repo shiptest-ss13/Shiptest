@@ -116,5 +116,5 @@
 
 	uniform = /obj/item/clothing/under/solgov
 	accessory = /obj/item/clothing/accessory/armband/engine
-	hat = /obj/item/clothing/head/hardhat/orange
+	head = /obj/item/clothing/head/hardhat/orange
 	suit =  /obj/item/clothing/suit/hazardvest

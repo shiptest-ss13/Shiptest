@@ -68,5 +68,5 @@
 /datum/outfit/job/head_of_personnel/solgov
 	name = "First Officer (SolGov)"
 	uniform = /obj/item/clothing/under/rank/command/lieutenant
-	hat = /obj/item/clothing/head/solgov
+	head = /obj/item/clothing/head/solgov
 	shoes = /obj/item/clothing/shoes/laceup
