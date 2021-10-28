@@ -318,6 +318,9 @@
 	dir = 4
 	},
 /obj/machinery/power/port_gen/pacman,
+/obj/machinery/light/small{
+	dir = 1
+	},
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "cf" = (
@@ -3415,6 +3418,9 @@
 /obj/structure/sign/poster/contraband/random{
 	pixel_y = 32
 	},
+/obj/machinery/light/small{
+	dir = 1
+	},
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "zA" = (
@@ -3777,9 +3783,6 @@
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
-	},
-/obj/machinery/light/small{
-	dir = 1
 	},
 /obj/effect/spawner/lootdrop/maintenance,
 /obj/effect/spawner/lootdrop/maintenance,
@@ -4344,6 +4347,9 @@
 /obj/machinery/airalarm/all_access{
 	dir = 4;
 	pixel_x = -24
+	},
+/obj/machinery/light/small{
+	dir = 8
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
@@ -5635,6 +5641,9 @@
 	pixel_x = 24
 	},
 /obj/effect/spawner/lootdrop/maintenance,
+/obj/machinery/light/small{
+	dir = 4
+	},
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "Po" = (
@@ -6483,12 +6492,12 @@
 	name = "\proper head of personnel's locker"
 	},
 /obj/item/storage/backpack,
-/obj/item/clothing/under/rank/command/head_of_personnel,
+/obj/item/clothing/under/rank/command/lieutenant/blue,
 /obj/item/clothing/gloves/color/white,
 /obj/item/clothing/shoes/laceup,
-/obj/item/clothing/head/hopcap,
-/obj/item/clothing/glasses/sunglasses,
 /obj/item/clothing/suit/armor/vest/hop,
+/obj/item/clothing/head/collectable/HoP,
+/obj/item/clothing/glasses/sunglasses,
 /obj/item/assembly/flash,
 /obj/item/storage/box/PDAs,
 /obj/item/storage/box/PDAs,
@@ -6894,9 +6903,6 @@
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
-	},
-/obj/machinery/light/small{
-	dir = 1
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
