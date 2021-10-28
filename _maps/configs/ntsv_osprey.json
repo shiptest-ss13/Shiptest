@@ -9,14 +9,18 @@
 			"officer": true,
 			"slots": 1
 		},
-		"Executive Officer": {
+		"First Officer": {
 			"outfit": "/datum/outfit/job/head_of_personnel/nt",
+			"officer": true,
 			"slots": 1
 		},
 		"Scientist": 2,
 		"Medical Doctor": 1,
 		"Paramedic": 1,
-		"Station Engineer": 1,
+		"Ship Engineer": {
+			"outfit": "/datum/outfit/job/engineer",
+			"slots": 1
+		},
 		"Atmospherics Technician": 1,
 		"Quartermaster": 1,
 		"Cargo Technician": 1,
