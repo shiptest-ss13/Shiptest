@@ -555,7 +555,9 @@
 	},
 /obj/structure/closet/secure_closet{
 	icon_state = "armory";
-	name = "armory locker"
+	locked = 0;
+	name = "armory locker";
+	req_access_txt = "1"
 	},
 /obj/item/clothing/suit/armor/vest,
 /obj/item/stock_parts/cell/gun,
@@ -6489,7 +6491,8 @@
 "Vi" = (
 /obj/structure/closet/secure_closet{
 	icon_state = "hop";
-	name = "\proper head of personnel's locker"
+	name = "\proper head of personnel's locker";
+	req_access_txt = "57"
 	},
 /obj/item/storage/backpack,
 /obj/item/clothing/under/rank/command/lieutenant/blue,
@@ -6823,7 +6826,8 @@
 "XS" = (
 /obj/structure/closet/secure_closet{
 	icon_state = "cap";
-	name = "\proper captain's locker"
+	name = "\proper captain's locker";
+	req_access_txt = "20"
 	},
 /obj/item/storage/backpack/captain,
 /obj/item/clothing/under/rank/command/captain/nt,
