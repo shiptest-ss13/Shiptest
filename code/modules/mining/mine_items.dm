@@ -56,7 +56,7 @@
 	new /obj/item/flashlight/seclite(src)
 	new /obj/item/storage/bag/plants(src)
 	new /obj/item/storage/bag/ore(src)
-	new /obj/item/t_scanner/adv_mining_scanner/lesser(src)
+	new /obj/item/pinpointer/deepcore(src)
 	new /obj/item/gun/energy/kinetic_accelerator(src)
 	new /obj/item/clothing/glasses/meson/prescription(src) //WS edit - Prescription HUDs
 	new /obj/item/clothing/glasses/meson(src)
