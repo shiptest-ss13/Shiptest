@@ -74,3 +74,30 @@ Assistant
 /datum/outfit/job/assistant/engineeringspecialist
 	name = "Assistant (Deckhand)"
 	accessory = /obj/item/clothing/accessory/armband/cargo
+
+/datum/outfit/job/assistant/intern
+	name = "Assistant (Intern)"
+	uniform = /obj/item/clothing/under/suit/black
+	neck = /obj/item/clothing/neck/tie
+	shoes = /obj/item/clothing/shoes/laceup
+	r_pocket = /obj/item/pen/fountain
+
+/datum/outfit/job/assistant/receptionist
+	name = "Assistant (Receptionist)"
+	uniform = /obj/item/clothing/under/suit/beige
+	glasses = /obj/item/clothing/glasses/regular/hipster
+	shoes = /obj/item/clothing/shoes/laceup
+	r_pocket = /obj/item/pen/fourcolor
+	l_pocket = /obj/item/clipboard
+
+/datum/outfit/job/assistant/receptionist/pre_equip(mob/living/carbon/human/H)
+	..()
+	switch(H.jumpsuit_style)
+		if(PREF_SUIT)
+			uniform = initial(uniform)
+		if(PREF_ALTSUIT)
+			uniform = /obj/item/clothing/under/suit/blacktwopiece
+		if(PREF_SKIRT)
+			uniform = /obj/item/clothing/under/dress/skirt/plaid
+		else
+			uniform = /obj/item/clothing/under/suit/beige

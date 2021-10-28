@@ -1,10 +1,15 @@
 {
 	"map_name": "Tide-class Salvage Ship",
 	"map_short_name": "Tide-class",
-	"map_path": "_maps/shuttles/shiptest/isv_roberts.dmm",
-	"map_id": "isv_roberts",
+	"map_path": "_maps/shuttles/shiptest/ISV_Roberts.dmm",
+	"map_id": "ISV_Roberts",
 	"job_slots": {
-		"Assistant": 6
+		"Assistant" {
+			"outfit": "datum/outfit/job/assistant",
+			"officer": true,
+			"slots": 1
+		},
+		"Assistant": 5
 	},
 	"cost": 300
 }

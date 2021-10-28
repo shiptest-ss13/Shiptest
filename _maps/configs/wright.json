@@ -4,11 +4,22 @@
 	"map_path": "_maps/shuttles/shiptest/wright.dmm",
 	"map_id": "wright",
 	"job_slots": {
-		"Detective": 1,
+		"Detective": {
+			"outfit": "/datum/outfit/job/detective",
+			"officer": true,
+			"slots" 1
+		},
 		"Lawyer": 2,
 		"Clown": 1,
 		"Mime": 1,
-		"Assistant": 4
+		"Secretary": {
+			"outfit": "/datum/outfit/job/assistant/intern",
+			"slots": 1
+		},
+		"Intern": {
+			"outfit": "/datum/outfit/job/assistant/intern",
+			"slots": 4
+		}
 	},
-	"cost": 499
+	"cost": 426
 }
