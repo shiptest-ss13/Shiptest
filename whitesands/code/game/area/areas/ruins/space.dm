@@ -55,3 +55,29 @@
 /area/ruin/space/has_grav/scav_mining/dorm
 	name = "Asteroid mine dorm"
 	icon_state = "blue"
+
+//astraeus
+
+/area/ruin/space/has_grav/astraeus/hallway
+	name = "Hallway"
+	icon_state = "hallC"
+
+/area/ruin/space/has_grav/astraeus/munitions
+	name = "Munitions Bay"
+	icon_state = "engine"
+
+/area/ruin/space/has_grav/astraeus/dorms_med
+	name = "Conference Room"
+	icon_state = "Sleep"
+
+/area/ruin/space/has_grav/astraeus/bridge
+	name = "Bridge"
+	icon_state = "bridge"
+
+/area/ruin/space/has_grav/astraeus/disposals
+	name = "Disposals"
+	icon_state = "yellow"
+
+/area/ruin/space/has_grav/astraeus/custodial
+	name = "Custodial Closet"
+	icon_state = "green"
