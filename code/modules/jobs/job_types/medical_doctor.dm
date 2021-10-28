@@ -99,3 +99,12 @@
 
 	backpack_contents = list(/obj/item/clipboard=1, /obj/item/folder/white=1, /obj/item/taperecorder=1)
 //WS Edit End - Alt-Job Titles
+
+/datum/outfit/job/doctor/solgov
+	name = "Medical Doctor (SolGov)"
+
+	uniform = /obj/item/clothing/under/solgov
+	accessory = /obj/item/clothing/accessory/armband/medblue
+	shoes = /obj/item/clothing/shoes/sneakers/white
+	hat = /obj/item/clothing/head/beret/solgov
+	suit =  /obj/item/clothing/suit/toggle/labcoat
