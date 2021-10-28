@@ -3509,12 +3509,6 @@
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/construction)
 "Au" = (
-/obj/structure/cable{
-	icon_state = "2-4"
-	},
-/obj/structure/cable{
-	icon_state = "2-8"
-	},
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
 	},
@@ -3524,6 +3518,9 @@
 /obj/machinery/firealarm{
 	dir = 1;
 	pixel_y = 28
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
 	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/engineering/engine)
@@ -5568,9 +5565,6 @@
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
 	},
@@ -6829,7 +6823,6 @@
 /obj/item/clothing/head/caphat/nt,
 /obj/item/clothing/glasses/sunglasses,
 /obj/item/clothing/suit/armor/vest/capcarapace/alt,
-/obj/item/melee/sabre,
 /obj/item/storage/belt/sabre,
 /obj/structure/sign/poster/official/random{
 	pixel_x = 32

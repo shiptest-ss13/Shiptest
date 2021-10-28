@@ -4,8 +4,15 @@
 	"map_path": "_maps/shuttles/shiptest/ntsv_osprey.dmm",
 	"map_id": "ntsv_osprey",
 	"job_slots": {
-		"Captain": 1,
-		"Head of Personnel": 1,
+		"Captain": {
+			"outfit": "/datum/outfit/job/captain/nt",
+			"officer": true,
+			"slots": 1
+		},
+		"Executive Officer": {
+			"outfit": "/datum/outfit/job/head_of_personnel/nt",
+			"slots": 1
+		},
 		"Scientist": 2,
 		"Medical Doctor": 1,
 		"Paramedic": 1,
