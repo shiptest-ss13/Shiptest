@@ -14,10 +14,6 @@
 	return ..()
 
 /datum/round_event/ghost_role/devil/spawn_role()
-	//selecting a spawn_loc
-	if(!SSjob.latejoin_trackers.len)
-		return MAP_ERROR
-
 	//selecting a candidate player
 	var/list/candidates = get_candidates(ROLE_DEVIL, null, ROLE_DEVIL)
 	if(!candidates.len)
