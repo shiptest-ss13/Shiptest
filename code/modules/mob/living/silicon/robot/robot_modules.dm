@@ -373,7 +373,8 @@
 		"Kodiak - 'Arachne'" = image(icon = 'whitesands/icons/mob/robots.dmi', icon_state = "arachne"),
 		"Noble" = image(icon = 'whitesands/icons/mob/robots.dmi', icon_state = "Noble-MED"),
 		"R34 - MED6a 'Gibbs'" = image(icon = 'whitesands/icons/mob/robots.dmi', icon_state = "gibbs"),
-		"Booty" = image(icon = 'whitesands/icons/mob/robots.dmi', icon_state = "booty-white")
+		"Booty" = image(icon = 'whitesands/icons/mob/robots.dmi', icon_state = "booty-white"),
+		"Qualified Doctor" = image(icon = 'icons/mob/robots.dmi', icon_state = "qualified_doctor")
 		)
 		med_icons = sortList(med_icons)
 	var/med_borg_icon = show_radial_menu(R, R , med_icons, custom_check = CALLBACK(src, .proc/check_menu, R), radius = 42, require_near = TRUE)
@@ -424,6 +425,10 @@
 			cyborg_base_icon = "booty-white"
 			cyborg_icon_override = 'whitesands/icons/mob/robots.dmi'
 			special_light_key = "booty-white"
+		if("Qualified Doctor")
+			cyborg_base_icon = "qualified-doctor"
+			cyborg_icon_override = 'whitesands/icons/mob/robots.dmi'
+			special_light_key = "qualified-doctor"
 		else
 			return FALSE
 	return ..()
@@ -1019,6 +1024,38 @@
 	Syndi.faction  -= "silicon" //ai turrets
 
 /obj/item/robot_module/syndicate/remove_module(obj/item/I, delete_after)
+	..()
+	var/mob/living/silicon/robot/Syndi = loc
+	Syndi.faction += "silicon" //ai is your bff now!
+
+/obj/item/robot_module/syndicateproto
+	name = "Brigador-type Prototype Commando"
+	basic_modules = list(
+		/obj/item/pickaxe/drill/cyborg,
+		/obj/item/construction/rcd/borg/syndicate,
+		/obj/item/weldingtool/largetank/cyborg,
+		/obj/item/assembly/flash/cyborg,
+		/obj/item/melee/transforming/energy/sword/cyborg,
+		/obj/item/gun/energy/printer,
+		/obj/item/gun/ballistic/revolver/grenadelauncher/cyborg,
+		/obj/item/card/emag,
+		/obj/item/crowbar/cyborg,
+		/obj/item/reagent_containers/borghypo/syndicate,
+		/obj/item/healthanalyzer,
+		/obj/item/gps/cyborg,
+		/obj/item/extinguisher/mini)
+
+	cyborg_base_icon = "synd_sec"
+	moduleselect_icon = "malf"
+	can_be_pushed = FALSE
+	hat_offset = 3
+
+/obj/item/robot_module/syndicateproto/rebuild_modules()
+	..()
+	var/mob/living/silicon/robot/Syndi = loc
+	Syndi.faction  -= "silicon" //ai turrets
+
+/obj/item/robot_module/syndicateproto/remove_module(obj/item/I, delete_after)
 	..()
 	var/mob/living/silicon/robot/Syndi = loc
 	Syndi.faction += "silicon" //ai is your bff now!

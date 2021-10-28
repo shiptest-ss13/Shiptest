@@ -113,32 +113,44 @@
 	speak_emote = list("echoes")
 	attack_sound = 'sound/weapons/pierce.ogg'
 	throw_message = "bounces harmlessly off of"
-	crusher_loot = /obj/item/crusher_trophy/legion_skull
 	loot = list(/obj/item/organ/regenerative_core/legion)
 	brood_type = /mob/living/simple_animal/hostile/asteroid/hivelordbrood/legion
+	crusher_loot = /obj/item/crusher_trophy/legion_skull
 	del_on_death = 1
 	stat_attack = HARD_CRIT
 	robust_searching = 1
 	var/dwarf_mob = FALSE
 	var/mob/living/carbon/human/stored_mob
 
+/mob/living/simple_animal/hostile/asteroid/hivelord/legion/death(gibbed)
+	move_force = MOVE_FORCE_DEFAULT
+	move_resist = MOVE_RESIST_DEFAULT
+	pull_force = PULL_FORCE_DEFAULT
+	if(prob(15))
+		new /obj/item/crusher_trophy/legion_skull(loc)
+		visible_message("<span class='warning'>One of the [src]'s skulls looks intact.</span>")
+	..()
+
 /mob/living/simple_animal/hostile/asteroid/hivelord/legion/random/Initialize()
 	. = ..()
-	if(prob(5))
+	if(prob(15))
 		new /mob/living/simple_animal/hostile/asteroid/hivelord/legion/dwarf(loc)
+	if(prob(5))
+		new /mob/living/simple_animal/hostile/big_legion
 		return INITIALIZE_HINT_QDEL
 
 /mob/living/simple_animal/hostile/asteroid/hivelord/legion/dwarf
 	name = "dwarf legion"
-	desc = "You can still see what was once a rather small human under the shifting mass of corruption."
+	desc = "You can still see what was once a rather small human under the shifting mass of corruption. It seems quick on its feet."
 	icon_state = "dwarf_legion"
 	icon_living = "dwarf_legion"
 	icon_aggro = "dwarf_legion"
 	icon_dead = "dwarf_legion"
-	maxHealth = 60
-	health = 60
-	speed = 2 //faster!
-	crusher_drop_mod = 20
+	crusher_loot = /obj/item/crusher_trophy/dwarf_skull
+	maxHealth = 150
+	health = 150
+	move_to_delay = 2
+	speed = 1 //much faster!
 	dwarf_mob = TRUE
 
 /mob/living/simple_animal/hostile/asteroid/hivelord/legion/death(gibbed)
@@ -158,6 +170,15 @@
 
 /mob/living/simple_animal/hostile/asteroid/hivelord/legion/tendril
 	fromtendril = TRUE
+
+/mob/living/simple_animal/hostile/asteroid/hivelord/legion/dwarf/death(gibbed)
+	move_force = MOVE_FORCE_DEFAULT
+	move_resist = MOVE_RESIST_DEFAULT
+	pull_force = PULL_FORCE_DEFAULT
+	if(prob(75))
+		new /obj/item/crusher_trophy/dwarf_skull(loc)
+		visible_message("<span class='warning'>One of the [src]'s skulls looks like it survived.</span>")
+	..()
 
 //Legion skull
 /mob/living/simple_animal/hostile/asteroid/hivelordbrood/legion
@@ -219,6 +240,8 @@
 
 //Advanced Legion is slightly tougher to kill and can raise corpses (revive other legions)
 /mob/living/simple_animal/hostile/asteroid/hivelord/legion/advanced
+	name = "Signifer"
+	desc = "A shrunken legion, carring the remnants of a mouldering battle standard. The cadre of lackeys surrounding it seem particularly attentive."
 	stat_attack = DEAD
 	maxHealth = 120
 	health = 120
@@ -234,8 +257,8 @@
 
 //Legion that spawns Legions
 /mob/living/simple_animal/hostile/big_legion
-	name = "legion"
-	desc = "One of many."
+	name = "Legate"
+	desc = "A rare and incredibly dangerous legion mutation, forming from a plethora of legion joined in union around a young necropolis spire. It's looking particularly self-confident."
 	icon = 'icons/mob/lavaland/64x64megafauna.dmi'
 	icon_state = "legion"
 	icon_living = "legion"
@@ -243,28 +266,38 @@
 	health_doll_icon = "legion"
 	health = 450
 	maxHealth = 450
-	melee_damage_lower = 20
-	melee_damage_upper = 20
+	melee_damage_lower = 25
+	melee_damage_upper = 25
 	anchored = FALSE
 	AIStatus = AI_ON
+	obj_damage = 150
 	stop_automated_movement = FALSE
 	wander = TRUE
 	maxbodytemp = INFINITY
+	attack_verb_continuous = "brutally slams"
+	attack_verb_simple = "brutally slam"
 	layer = MOB_LAYER
 	del_on_death = TRUE
 	sentience_type = SENTIENCE_BOSS
-	loot = list(/obj/item/organ/regenerative_core/legion = 3, /obj/effect/mob_spawn/human/corpse/damaged/legioninfested = 5)
-	move_to_delay = 14
-	vision_range = 5
+	loot = list(/obj/item/organ/regenerative_core/legion = 3, /obj/effect/mob_spawn/human/corpse/damaged/legioninfested = 5, /obj/item/reagent_containers/glass/bottle/necropolis_seed)
+	move_to_delay = 5
+	vision_range = 9
 	aggro_vision_range = 9
-	speed = 3
+	speed = 5
 	faction = list("mining")
 	weather_immunities = list("lava","ash")
-	obj_damage = 30
-	environment_smash = ENVIRONMENT_SMASH_STRUCTURES
+	environment_smash = ENVIRONMENT_SMASH_RWALLS
 	see_in_dark = 8
 	lighting_alpha = LIGHTING_PLANE_ALPHA_MOSTLY_INVISIBLE
 
+/mob/living/simple_animal/hostile/big_legion/death(gibbed)
+	move_force = MOVE_FORCE_DEFAULT
+	move_resist = MOVE_RESIST_DEFAULT
+	pull_force = PULL_FORCE_DEFAULT
+	..(gibbed)
+	visible_message("<span class='userwarning'>[src] falls over with a mighty crash, the remaining legions within it boiling away!</span>")
+	new /obj/item/crusher_trophy/legion_skull(loc)
+	new /obj/item/crusher_trophy/legion_skull(loc)
 
 /mob/living/simple_animal/hostile/big_legion/Initialize()
 	.=..()
@@ -287,7 +320,7 @@
 	H.dna.add_mutation(DWARFISM)
 
 /obj/effect/mob_spawn/human/corpse/damaged/legioninfested/Initialize()
-	var/type = pickweight(list("Miner" = 66, "Ashwalker" = 5, "Kobold" = 5, "Golem" = 10,"Clown" = 10, pick(list("Shadow", "YeOlde","Operative", "Cultist")) = 4)) //WS Edit - Kobold
+	var/type = pickweight(list("Miner" = 51, "Waldo" = 5, "Ashwalker" = 5, "Soldier" = 10, "Kobold" = 5, "Golem" = 10,"Clown" = 10, pick(list("Shadow", "YeOlde","Operative", "Cultist")) = 4)) //WS Edit - Kobold
 	switch(type)
 		if("Miner")
 			mob_species = pickweight(list(/datum/species/human = 70, /datum/species/lizard = 26, /datum/species/fly = 2, /datum/species/plasmaman = 2))
@@ -327,9 +360,35 @@
 			if(prob(10))
 				belt = /obj/item/storage/belt/mining/primitive
 			if(prob(30))
-				r_pocket = /obj/item/kitchen/knife/combat/bone
+				r_pocket = /obj/item/restraints/legcuffs/bola/watcher
 			if(prob(30))
 				l_pocket = /obj/item/kitchen/knife/combat/bone
+		if("Soldier")
+			mob_species = /datum/species/human
+			if(prob(60))
+				uniform = /obj/item/clothing/under/solgov
+				suit = /obj/item/clothing/suit/armor/vest/solgov
+				shoes = /obj/item/clothing/shoes/jackboots
+				gloves = /obj/item/clothing/gloves/color/grey
+				mask = /obj/item/clothing/mask/gas/sechailer
+				head = /obj/item/clothing/head/helmet/solgov
+				id = /obj/item/card/id/solgov
+			else
+				uniform = /obj/item/clothing/under/solgov/elite
+				suit = /obj/item/clothing/suit/space/hardsuit/solgov
+				shoes = /obj/item/clothing/shoes/combat
+				gloves = /obj/item/clothing/gloves/combat
+				mask = /obj/item/clothing/mask/gas/sechailer/swat
+				id = /obj/item/card/id/solgov/elite
+			back = pickweight(list(/obj/item/storage/backpack = 85, /obj/item/gun/ballistic/shotgun/automatic = 5, /obj/item/gun/energy/laser/terra = 10))
+			if(prob(25))
+				belt = /obj/item/storage/belt/military
+			if(prob(50))
+				r_pocket = pickweight(list(/obj/item/reagent_containers/hypospray/medipen/stimpack/traitor = 1, /obj/item/kitchen/knife/combat = 3, /obj/item/radio/off = 3, /obj/item/grenade/syndieminibomb/concussion = 1, /obj/item/melee/transforming/energy/ctf/solgov = 1))
+			if(prob(50))
+				l_pocket = pickweight(list(/obj/item/reagent_containers/hypospray/medipen/stimpack/traitor = 1, /obj/item/kitchen/knife/combat = 3, /obj/item/radio/off = 3, /obj/item/grenade/syndieminibomb/concussion = 1, /obj/item/melee/transforming/energy/ctf/solgov = 1))
+			if(prob(70))
+				glasses = pickweight(list(/obj/item/clothing/glasses/sunglasses = 3, /obj/item/clothing/glasses/hud/health = 3, /obj/item/clothing/glasses/hud/health/night = 1, /obj/item/clothing/glasses/night = 2))
 		//WS Edit Start - Kobold
 		if("Kobold")
 			mob_species = /datum/species/lizard/ashwalker/kobold
@@ -385,7 +444,22 @@
 			mask = /obj/item/clothing/mask/breath
 		if("Operative")
 			id_job = "Operative"
-			outfit = /datum/outfit/syndicatecommandocorpse
+			if(prob(5))
+				outfit = /datum/outfit/syndicatestormtroopercorpse
+			else
+				outfit = /datum/outfit/syndicatecommandocorpse
+		if("Waldo")//WE FINALLY FOUND HIM
+			name = "Waldo"
+			uniform = /obj/item/clothing/under/pants/jeans
+			suit = /obj/item/clothing/suit/striped_sweater
+			head = /obj/item/clothing/head/beanie/waldo
+			shoes = /obj/item/clothing/shoes/sneakers/brown
+			ears = /obj/item/radio/headset
+			glasses = /obj/item/clothing/glasses/regular/circle
+			if(prob(35))
+				r_pocket = pick(list(/obj/item/book/granter/spell/knock = 1, /obj/item/dnainjector/chameleonmut = 1))
+			if(prob(35))
+				l_pocket = /obj/item/chameleon
 		if("Shadow")
 			mob_species = /datum/species/shadow
 			r_pocket = /obj/item/reagent_containers/pill/shadowtoxin

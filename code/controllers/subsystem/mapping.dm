@@ -196,16 +196,12 @@ SUBSYSTEM_DEF(mapping)
 			space_ruins_templates[R.name] = R
 
 /datum/controller/subsystem/mapping/proc/preloadShuttleTemplates()
-	var/list/unbuyable = generateMapList("[global.config.directory]/unbuyableshuttles.txt")
-
 	for(var/item in subtypesof(/datum/map_template/shuttle))
 		var/datum/map_template/shuttle/shuttle_type = item
 		if(!(initial(shuttle_type.file_name)))
 			continue
 
 		var/datum/map_template/shuttle/S = new shuttle_type()
-		if(unbuyable.Find(S.mappath))
-			S.can_be_bought = FALSE
 
 		shuttle_templates[S.file_name] = S
 		map_templates[S.file_name] = S
@@ -240,7 +236,30 @@ SUBSYSTEM_DEF(mapping)
 		if(istext(data["map_short_name"]))
 			S.short_name = data["map_short_name"]
 		if(islist(data["job_slots"]))
-			S.job_slots = data["job_slots"]
+			S.job_slots = list()
+			var/list/job_slot_list = data["job_slots"]
+			for(var/job in job_slot_list)
+				var/datum/job/job_slot
+				var/value = job_slot_list[job]
+				var/slots
+				if(isnum(value))
+					job_slot = SSjob.GetJob(job)
+					slots = value
+				else if(islist(value))
+					var/datum/outfit/job_outfit = text2path(value["outfit"])
+					if(isnull(job_outfit))
+						stack_trace("Invalid job outfit! [value["outfit"]] on [S.name]'s config! Defaulting to assistant clothing.")
+						job_outfit = /datum/outfit/job/assistant
+					job_slot = new /datum/job(job, job_outfit)
+					job_slot.wiki_page = value["wiki_page"]
+					job_slot.exp_requirements = value["exp_requirements"]
+					slots = value["slots"]
+
+				if(!job_slot || !slots)
+					stack_trace("Invalid job slot entry! [job]: [value] on [S.name]'s config! Excluding job.")
+					break
+
+				S.job_slots[job_slot] = slots
 		if(isnum(data["cost"]))
 			ship_purchase_list[S] = data["cost"]
 

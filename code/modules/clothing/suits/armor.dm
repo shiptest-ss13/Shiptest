@@ -262,12 +262,13 @@
 	item_state = "knight_red"
 
 /obj/item/clothing/suit/armor/riot/knight/greyscale
-	name = "knight armour"
-	desc = "A classic suit of armour, able to be made from many different materials."
+	name = "heavy plate armour"
+	desc = "A suit of magical plate armour, able to be made from many different materials. The thick armor is far lighter than it otherwise would be."
 	icon_state = "knight_greyscale"
 	item_state = "knight_greyscale"
 	material_flags = MATERIAL_ADD_PREFIX | MATERIAL_COLOR | MATERIAL_AFFECT_STATISTICS//Can change color and add prefix
-	armor = list("melee" = 30, "bullet" = 10, "laser" = 10, "energy" = 20, "bomb" = 30, "bio" = 10, "rad" = 10, "fire" = 40, "acid" = 40)
+	armor = list("melee" = 45, "bullet" = 20, "laser" = 20, "energy" = 25, "bomb" = 35, "bio" = 10, "rad" = 10, "fire" = 40, "acid" = 40)
+	slowdown = 0
 
 /obj/item/clothing/suit/armor/vest/durathread
 	name = "durathread vest"

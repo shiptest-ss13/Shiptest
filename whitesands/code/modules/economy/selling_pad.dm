@@ -32,6 +32,21 @@
 	. = ..()
 	sell_account = port.current_ship?.ship_account
 
+/obj/machinery/computer/selling_pad_control/attackby(obj/item/I, mob/user)
+	var/value = 0
+	if(istype(I, /obj/item/stack/spacecash))
+		var/obj/item/stack/spacecash/C = I
+		value = C.value * C.amount
+	else if(istype(I, /obj/item/holochip))
+		var/obj/item/holochip/H = I
+		value = H.credits
+	if(value)
+		sell_account.adjust_money(value)
+		to_chat(user, "<span class='notice'>You deposit [I]. The Vessel Budget is now [sell_account.account_balance] cr.</span>")
+		qdel(I)
+		return TRUE
+	return ..()
+
 /obj/machinery/computer/selling_pad_control/multitool_act(mob/living/user, obj/item/multitool/I)
 	. = ..()
 	if (istype(I.buffer, /obj/machinery/selling_pad))

@@ -526,8 +526,8 @@
 /obj/structure/table/optable
 	name = "operating table"
 	desc = "Used for advanced medical procedures."
-	icon = 'icons/obj/surgery.dmi'
-	icon_state = "optable"
+	icon = 'goon/icons/obj/surgery.dmi'
+	icon_state = "table1"
 	buildstack = /obj/item/stack/sheet/mineral/silver
 	smoothing_flags = NONE
 	smoothing_groups = null

@@ -541,12 +541,33 @@
 				/obj/item/stack/sheet/sinew = 1)
 	category = CAT_PRIMAL
 
+/datum/crafting_recipe/bonenecklace
+	name = "Hunter's Necklace"
+	result = /obj/item/clothing/accessory/wolftalisman
+	time = 35
+	reqs = list(/obj/item/stack/sheet/bone = 2,
+				/obj/item/stack/sheet/sinew = 3,
+				/obj/item/crusher_trophy/wolf_ear = 2,
+				/obj/item/crusher_trophy/fang = 1)
+	category = CAT_PRIMAL
+
 /datum/crafting_recipe/bonecodpiece
 	name = "Skull Codpiece"
 	result = /obj/item/clothing/accessory/skullcodpiece
 	time = 20
 	reqs = list(/obj/item/stack/sheet/bone = 2,
+				/obj/item/crusher_trophy/legion_skull = 1,
 				/obj/item/stack/sheet/animalhide/goliath_hide = 1)
+	category = CAT_PRIMAL
+
+/datum/crafting_recipe/bonestaff
+	name = "Legion Staff"
+	result = /obj/item/legion_staff
+	time = 35
+	reqs = list(/obj/item/stack/sheet/bone = 2,
+				/obj/item/crusher_trophy/legion_skull = 2,\
+				/obj/item/crusher_trophy/dwarf_skull = 1,
+				/obj/item/organ/regenerative_core/legion = 1)
 	category = CAT_PRIMAL
 
 /datum/crafting_recipe/skilt
@@ -660,6 +681,22 @@
 			/obj/item/spear = 1)
 	blacklist = list(/obj/item/spear/explosive, /obj/item/spear/bonespear)
 	result = /obj/structure/headpike
+	category = CAT_PRIMAL
+
+/datum/crafting_recipe/legionpike
+	name = "Legion on a Spear"
+	time = 55
+	reqs = list(/obj/item/spear = 1,
+				/obj/item/organ/regenerative_core = 1,
+				/obj/item/crusher_trophy/legion_skull = 2)
+	result = /obj/structure/legionpike
+	category = CAT_PRIMAL
+
+/datum/crafting_recipe/tribal_torch
+	name = "Tribal Torch"
+	result = /obj/item/candle/tribal_torch
+	time = 30
+	reqs = list(/obj/item/stack/sheet/mineral/wood = 4)
 	category = CAT_PRIMAL
 
 /datum/crafting_recipe/headpikebone
@@ -858,3 +895,13 @@
 		/obj/item/reagent_containers/glass/beaker = 3)
 	result = /obj/item/reagent_containers/glass/filter
 	category = CAT_MISC
+
+/datum/crafting_recipe/dragonspear
+	name = "Dragonslayer's Spear"
+	result = /obj/item/spear/dragonspear
+	time = 45
+	reqs = list(/obj/item/crusher_trophy/ash_spike = 1,
+				/obj/item/crusher_trophy/tail_spike = 2,
+				/obj/item/stack/sheet/bone = 5,
+				/obj/item/stack/sheet/sinew = 3)
+	category = CAT_PRIMAL

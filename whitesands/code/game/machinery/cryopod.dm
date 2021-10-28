@@ -296,8 +296,6 @@ GLOBAL_LIST_EMPTY(cryopod_computers)
 
 	if(mob_occupant.mind && mob_occupant.mind.assigned_role)
 		//Handle job slot/tater cleanup.
-		var/job = mob_occupant.mind.assigned_role
-		SSjob.FreeRole(job)
 		if(LAZYLEN(mob_occupant.mind.objectives))
 			mob_occupant.mind.objectives.Cut()
 			mob_occupant.mind.special_role = null
@@ -315,6 +313,11 @@ GLOBAL_LIST_EMPTY(cryopod_computers)
 		if((G.fields["name"] == mob_occupant.real_name))
 			announce_rank = G.fields["rank"]
 			qdel(G)
+
+	// Regardless of what ship you spawned in you need to be removed from it.
+	// This covers scenarios where you spawn in one ship but cryo in another.
+	for(var/obj/structure/overmap/ship/simulated/sim_ship as anything in SSovermap.simulated_ships)
+		sim_ship.manifest -= mob_occupant.real_name
 
 	//Make an announcement and log the person entering storage.
 	if(control_computer)
@@ -406,10 +409,6 @@ GLOBAL_LIST_EMPTY(cryopod_computers)
 /obj/machinery/cryopod/latejoin
 	var/obj/docking_port/mobile/linked_ship
 
-/obj/machinery/cryopod/latejoin/Initialize()
-	. = ..()
-	new /obj/effect/landmark/latejoin(src)
-
 /obj/machinery/cryopod/latejoin/despawn_occupant()
 	if(!linked_ship)
 		return ..()
@@ -424,6 +423,5 @@ GLOBAL_LIST_EMPTY(cryopod_computers)
 	linked_ship.spawn_points += src
 
 /obj/machinery/cryopod/latejoin/Destroy()
-	SSjob.latejoin_trackers -= src
 	linked_ship?.spawn_points -= src
 	. = ..()
