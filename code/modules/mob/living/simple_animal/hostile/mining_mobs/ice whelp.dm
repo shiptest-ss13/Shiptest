@@ -23,8 +23,8 @@
 	attack_verb_continuous = "chomps"
 	attack_verb_simple = "chomp"
 	attack_sound = 'sound/magic/demon_attack1.ogg'
-	vision_range = 8
-	aggro_vision_range = 8
+	vision_range = 7
+	aggro_vision_range = 7
 	move_force = MOVE_FORCE_VERY_STRONG
 	move_resist = MOVE_FORCE_VERY_STRONG
 	pull_force = MOVE_FORCE_VERY_STRONG
@@ -37,7 +37,7 @@
 	robust_searching = TRUE
 	footstep_type = FOOTSTEP_MOB_CLAW
 	/// How far the whelps fire can go
-	var/fire_range = 5
+	var/fire_range = 3
 
 /mob/living/simple_animal/hostile/asteroid/ice_whelp/OpenFire()
 	var/turf/T = get_ranged_target_turf_direct(src, target, fire_range)

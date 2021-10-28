@@ -81,7 +81,6 @@
 	desc = "It's like a normal wrench but edgier. Can be found on the battlefield."
 	icon_state = "wrench_combat"
 	item_state = "wrench_combat"
-	attack_verb = list("devastated", "brutalized", "committed a war crime against", "obliterated", "humiliated")
 	tool_behaviour = null
 	toolspeed = null
 	var/on = FALSE
@@ -97,16 +96,19 @@
 		w_class = initial(w_class)
 		throwforce = initial(throwforce)
 		tool_behaviour = initial(tool_behaviour)
+		attack_verb = list("bopped")
 		toolspeed = initial(toolspeed)
 		playsound(user, 'sound/weapons/saberoff.ogg', 5, TRUE)
 		to_chat(user, "<span class='warning'>[src] can now be kept at bay.</span>")
 	else
 		on = TRUE
-		force = 6
+		force = 15
 		w_class = WEIGHT_CLASS_NORMAL
-		throwforce = 8
+		throwforce = 10
 		tool_behaviour = TOOL_WRENCH
+		attack_verb = list("devastated", "brutalized", "committed a war crime against", "obliterated", "humiliated")
 		toolspeed = 1
+		hitsound = 'sound/weapons/blade1.ogg'
 		playsound(user, 'sound/weapons/saberon.ogg', 5, TRUE)
 		to_chat(user, "<span class='warning'>[src] is now active. Woe onto your enemies!</span>")
 	update_icon()

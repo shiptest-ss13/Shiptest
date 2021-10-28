@@ -1028,6 +1028,38 @@
 	var/mob/living/silicon/robot/Syndi = loc
 	Syndi.faction += "silicon" //ai is your bff now!
 
+/obj/item/robot_module/syndicateproto
+	name = "Brigador-type Prototype Commando"
+	basic_modules = list(
+		/obj/item/pickaxe/drill/cyborg,
+		/obj/item/construction/rcd/borg/syndicate,
+		/obj/item/weldingtool/largetank/cyborg,
+		/obj/item/assembly/flash/cyborg,
+		/obj/item/melee/transforming/energy/sword/cyborg,
+		/obj/item/gun/energy/printer,
+		/obj/item/gun/ballistic/revolver/grenadelauncher/cyborg,
+		/obj/item/card/emag,
+		/obj/item/crowbar/cyborg,
+		/obj/item/reagent_containers/borghypo/syndicate,
+		/obj/item/healthanalyzer,
+		/obj/item/gps/cyborg,
+		/obj/item/extinguisher/mini)
+
+	cyborg_base_icon = "synd_sec"
+	moduleselect_icon = "malf"
+	can_be_pushed = FALSE
+	hat_offset = 3
+
+/obj/item/robot_module/syndicateproto/rebuild_modules()
+	..()
+	var/mob/living/silicon/robot/Syndi = loc
+	Syndi.faction  -= "silicon" //ai turrets
+
+/obj/item/robot_module/syndicateproto/remove_module(obj/item/I, delete_after)
+	..()
+	var/mob/living/silicon/robot/Syndi = loc
+	Syndi.faction += "silicon" //ai is your bff now!
+
 /obj/item/robot_module/syndicate_medical
 	name = "Syndicate Medical"
 	basic_modules = list(

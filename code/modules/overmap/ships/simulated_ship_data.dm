@@ -3,7 +3,7 @@
 
 /obj/structure/overmap/ship/simulated
 	///Assoc list of remaining open job slots (job = remaining slots)
-	var/list/job_slots = list("Assistant" = 5, "Captain" = 1)
+	var/list/job_slots = list("Captain" = 1, "Assistant" = 5)
 	///Manifest list of people on the ship
 	var/list/manifest = list()
 	///Shipwide bank account
