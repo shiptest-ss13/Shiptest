@@ -99,7 +99,6 @@
 			delay = (delay SECONDS)
 		else
 			delay = (4 MINUTES) //default to 4 minutes if the delay isn't defined.
-		addtimer(CALLBACK(GLOBAL_PROC, .proc/reopen_roundstart_suicide_roles), delay)
 
 	if(SSdbcore.Connect())
 		var/list/to_set = list()
@@ -458,54 +457,6 @@
 	for(var/mob/living/silicon/player in GLOB.mob_list)
 		if(player.mind && (player.mind.assigned_role in GLOB.nonhuman_positions))
 			. |= player.mind
-
-/proc/reopen_roundstart_suicide_roles()
-	var/list/valid_positions = list()
-	valid_positions += GLOB.engineering_positions
-	valid_positions += GLOB.medical_positions
-	valid_positions += GLOB.science_positions
-	valid_positions += GLOB.supply_positions
-	valid_positions += GLOB.service_positions
-	valid_positions += GLOB.security_positions
-	if(CONFIG_GET(flag/reopen_roundstart_suicide_roles_command_positions))
-		valid_positions += GLOB.command_positions //add any remaining command positions
-	else
-		valid_positions -= GLOB.command_positions //remove all command positions that were added from their respective department positions lists.
-
-	var/list/reopened_jobs = list()
-	for(var/X in GLOB.suicided_mob_list)
-		if(!isliving(X))
-			continue
-		var/mob/living/L = X
-		if(L.job in valid_positions)
-			var/datum/job/J = SSjob.GetJob(L.job)
-			if(!J)
-				continue
-			J.current_positions = max(J.current_positions-1, 0)
-			reopened_jobs += L.job
-
-	if(CONFIG_GET(flag/reopen_roundstart_suicide_roles_command_report))
-		if(reopened_jobs.len)
-			var/reopened_job_report_positions
-			for(var/dead_dudes_job in reopened_jobs)
-				reopened_job_report_positions = "[reopened_job_report_positions ? "[reopened_job_report_positions]\n":""][dead_dudes_job]"
-
-			var/suicide_command_report = "<font size = 3><b>Central Command Human Resources Board</b><br>\
-								Notice of Personnel Change</font><hr>\
-								To personnel management staff aboard [station_name()]:<br><br>\
-								Our medical staff have detected a series of anomalies in the vital sensors \
-								of some of the staff aboard your station.<br><br>\
-								Further investigation into the situation on our end resulted in us discovering \
-								a series of rather... unforturnate decisions that were made on the part of said staff.<br><br>\
-								As such, we have taken the liberty to automatically reopen employment opportunities for the positions of the crew members \
-								who have decided not to partake in our research. We will be forwarding their cases to our employment review board \
-								to determine their eligibility for continued service with the company (and of course the \
-								continued storage of cloning records within the central medical backup server.)<br><br>\
-								<i>The following positions have been reopened on our behalf:<br><br>\
-								[reopened_job_report_positions]</i>"
-
-			print_command_report(suicide_command_report, "Central Command Personnel Update")
-
 
 //////////////////////////
 //Reports player logouts//
