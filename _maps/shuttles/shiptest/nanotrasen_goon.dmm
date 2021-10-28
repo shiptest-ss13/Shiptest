@@ -119,6 +119,7 @@
 	},
 /obj/structure/window/reinforced,
 /obj/item/storage/firstaid/regular,
+/obj/item/storage/firstaid/regular,
 /turf/open/floor/mineral/titanium/yellow,
 /area/ship/bridge)
 "fH" = (
@@ -582,11 +583,10 @@
 /turf/open/floor/mineral/titanium/purple,
 /area/ship/crew)
 "BV" = (
-/obj/machinery/atmospherics/pipe/simple/purple/visible,
-/obj/machinery/suit_storage_unit/engine,
 /obj/machinery/atmospherics/components/binary/volume_pump{
 	dir = 8
 	},
+/obj/structure/reagent_dispensers/fueltank,
 /turf/open/floor/mineral/titanium/yellow,
 /area/ship/engineering)
 "CW" = (
@@ -706,9 +706,8 @@
 /area/ship/crew)
 "JH" = (
 /obj/structure/table/reinforced,
-/obj/item/storage/firstaid/regular,
 /obj/structure/window/reinforced,
-/obj/item/storage/firstaid/regular,
+/obj/item/areaeditor/shuttle,
 /turf/open/floor/mineral/titanium/yellow,
 /area/ship/bridge)
 "JP" = (
