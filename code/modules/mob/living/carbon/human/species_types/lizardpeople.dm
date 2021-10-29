@@ -68,8 +68,8 @@
 	if(..())
 		var/mob/living/carbon/human/H = owner
 		if(H.reagents && H.reagents.has_reagent(/datum/reagent/fuel,4))
-			return 1
-		return 0
+			return TRUE
+		return FALSE
 
 /// Lizards are cold blooded and do not stabilize body temperature naturally
 /datum/species/lizard/natural_bodytemperature_stabilization(datum/gas_mixture/environment, mob/living/carbon/human/H)
