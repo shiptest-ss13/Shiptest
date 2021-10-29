@@ -221,6 +221,11 @@
 		ui = new(user, src, "Sleeper", name)
 		ui.open()
 
+/obj/machinery/sleeper/ui_state(mob/user)
+	if(controls_inside)
+		return GLOB.notcontained_state
+	return GLOB.default_state
+
 /obj/machinery/sleeper/AltClick(mob/user)
 	if(!user.canUseTopic(src, !issilicon(user)))
 		return
