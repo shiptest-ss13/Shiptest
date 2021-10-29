@@ -253,6 +253,9 @@
 							return
 						calibrate_jump()
 						return
+				if("dock_empty")
+					say(S.dock_in_empty_space(usr))
+					return
 		if(OVERMAP_SHIP_IDLE)
 			if(action == "undock")
 				S.calculate_avg_fuel()
