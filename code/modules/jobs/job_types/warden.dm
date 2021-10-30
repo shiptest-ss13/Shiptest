@@ -58,7 +58,7 @@
 	chameleon_extras = /obj/item/gun/ballistic/shotgun/automatic/combat/compact
 
 /datum/outfit/job/warden/solgov
-	name = "Sergeant (SolGov)"
+	name = "Brig Officer (SolGov)"
 
 	uniform = /obj/item/clothing/under/solgov
 	accessory = /obj/item/clothing/accessory/armband
