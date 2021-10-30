@@ -78,7 +78,7 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 4
 	},
-/obj/machinery/computer/secure_data{
+/obj/machinery/modular_computer/console/preset/command{
 	dir = 1
 	},
 /turf/open/floor/carpet/nanoweave,
@@ -519,12 +519,6 @@
 /obj/item/ammo_box/magazine/pistol556mm,
 /turf/open/floor/plating,
 /area/ship/construction)
-"iI" = (
-/obj/structure/window/reinforced/spawner/west{
-	dir = 4
-	},
-/turf/open/floor/plasteel/dark,
-/area/ship/engineering)
 "jm" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -641,6 +635,20 @@
 /obj/item/clothing/gloves/color/latex/nitrile,
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
+"kt" = (
+/obj/structure/closet/wall{
+	icon_door = "white_wall";
+	name = "culinary closet";
+	pixel_y = 28
+	},
+/obj/item/clothing/shoes/sneakers/black,
+/obj/item/clothing/under/rank/civilian/bartender,
+/obj/item/clothing/under/rank/civilian/chef,
+/obj/item/clothing/suit/toggle/chef,
+/obj/item/clothing/head/chefhat,
+/obj/item/clothing/accessory/waistcoat,
+/turf/open/floor/carpet/nanoweave/purple,
+/area/ship/crew/canteen)
 "kA" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -2599,6 +2607,12 @@
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
+"Gm" = (
+/obj/structure/window/reinforced/spawner/west{
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/engineering)
 "Gv" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 4
@@ -2859,20 +2873,6 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
-"Jn" = (
-/obj/structure/closet/wall{
-	icon_door = "white_wall";
-	name = "culinary closet";
-	pixel_y = 28
-	},
-/obj/item/clothing/shoes/sneakers/black,
-/obj/item/clothing/under/rank/civilian/bartender,
-/obj/item/clothing/under/rank/civilian/chef,
-/obj/item/clothing/suit/toggle/chef,
-/obj/item/clothing/head/chefhat,
-/obj/item/clothing/accessory/waistcoat,
-/turf/open/floor/carpet/nanoweave/purple,
-/area/ship/crew/canteen)
 "Jq" = (
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/item/radio/intercom{
@@ -4826,7 +4826,7 @@ sC
 jX
 Tq
 nj
-iI
+Gm
 wF
 WL
 Tq
@@ -4885,7 +4885,7 @@ yZ
 TK
 mp
 YG
-Jn
+kt
 TU
 FI
 qn

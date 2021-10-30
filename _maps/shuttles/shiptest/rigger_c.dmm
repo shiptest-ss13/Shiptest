@@ -96,6 +96,9 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/modular_computer/console/preset/command{
+	dir = 1
+	},
 /turf/open/floor/carpet/nanoweave,
 /area/ship/bridge)
 "bB" = (
@@ -1707,6 +1710,21 @@
 	color = "#E58E2D"
 	},
 /area/ship/maintenance/port)
+"uY" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/closet/wall{
+	icon_door = "white_wall";
+	name = "culinary closet";
+	pixel_y = 28
+	},
+/obj/item/clothing/shoes/sneakers/black,
+/obj/item/clothing/under/rank/civilian/bartender,
+/obj/item/clothing/under/rank/civilian/chef,
+/obj/item/clothing/suit/toggle/chef,
+/obj/item/clothing/head/chefhat,
+/obj/item/clothing/accessory/waistcoat,
+/turf/open/floor/plating,
+/area/ship/crew/canteen)
 "va" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 8
@@ -3294,21 +3312,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating,
 /area/ship/cargo)
-"KZ" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/closet/wall{
-	icon_door = "white_wall";
-	name = "culinary closet";
-	pixel_y = 28
-	},
-/obj/item/clothing/shoes/sneakers/black,
-/obj/item/clothing/under/rank/civilian/bartender,
-/obj/item/clothing/under/rank/civilian/chef,
-/obj/item/clothing/suit/toggle/chef,
-/obj/item/clothing/head/chefhat,
-/obj/item/clothing/accessory/waistcoat,
-/turf/open/floor/plating,
-/area/ship/crew/canteen)
 "Lo" = (
 /obj/item/reagent_containers/glass/bucket,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
@@ -5296,7 +5299,7 @@ yZ
 TK
 mp
 YG
-KZ
+uY
 TU
 FI
 qn
