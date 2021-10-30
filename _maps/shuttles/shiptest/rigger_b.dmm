@@ -306,9 +306,8 @@
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
 	},
-/obj/machinery/door/airlock/security{
-	name = "Armory";
-	req_one_access_txt = "0"
+/obj/machinery/door/airlock/security/glass{
+	name = "Armory"
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/hallway/central)
@@ -520,6 +519,12 @@
 /obj/item/ammo_box/magazine/pistol556mm,
 /turf/open/floor/plating,
 /area/ship/construction)
+"iI" = (
+/obj/structure/window/reinforced/spawner/west{
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/engineering)
 "jm" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -2526,12 +2531,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/construction)
-"FB" = (
-/obj/structure/window/reinforced/spawner/west{
-	dir = 4
-	},
-/turf/open/floor/plasteel/dark,
-/area/ship/engineering)
 "FC" = (
 /obj/item/clothing/shoes/combat,
 /obj/item/clothing/under/solgov,
@@ -2860,6 +2859,20 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
+"Jn" = (
+/obj/structure/closet/wall{
+	icon_door = "white_wall";
+	name = "culinary closet";
+	pixel_y = 28
+	},
+/obj/item/clothing/shoes/sneakers/black,
+/obj/item/clothing/under/rank/civilian/bartender,
+/obj/item/clothing/under/rank/civilian/chef,
+/obj/item/clothing/suit/toggle/chef,
+/obj/item/clothing/head/chefhat,
+/obj/item/clothing/accessory/waistcoat,
+/turf/open/floor/carpet/nanoweave/purple,
+/area/ship/crew/canteen)
 "Jq" = (
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/item/radio/intercom{
@@ -2902,9 +2915,8 @@
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
 	},
-/obj/machinery/door/airlock/security{
-	name = "Brig";
-	req_one_access_txt = "0"
+/obj/machinery/door/airlock/security/glass{
+	name = "Brig"
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security/prison)
@@ -3014,9 +3026,8 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
-/obj/machinery/door/airlock/security{
-	name = "Brig";
-	req_one_access_txt = "0"
+/obj/machinery/door/airlock/security/glass{
+	name = "Brig"
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security/prison)
@@ -3900,20 +3911,6 @@
 /obj/machinery/light,
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
-"Wn" = (
-/obj/structure/closet/wall{
-	icon_door = "white_wall";
-	name = "culinary closet";
-	pixel_y = 28
-	},
-/obj/item/clothing/shoes/sneakers/black,
-/obj/item/clothing/under/rank/civilian/bartender,
-/obj/item/clothing/under/rank/civilian/chef,
-/obj/item/clothing/suit/toggle/chef,
-/obj/item/clothing/head/chefhat,
-/obj/item/clothing/accessory/waistcoat,
-/turf/open/floor/carpet/nanoweave/purple,
-/area/ship/crew/canteen)
 "WG" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -4829,7 +4826,7 @@ sC
 jX
 Tq
 nj
-FB
+iI
 wF
 WL
 Tq
@@ -4888,7 +4885,7 @@ yZ
 TK
 mp
 YG
-Wn
+Jn
 TU
 FI
 qn
