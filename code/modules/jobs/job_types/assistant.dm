@@ -81,3 +81,9 @@ Assistant
 	uniform = /obj/item/clothing/under/solgov
 	shoes = /obj/item/clothing/shoes/combat
 	head = /obj/item/clothing/head/beret/solgov/plain
+
+/datum/outfit/job/assistant/pirate
+	name = "Assistant (Pirate)"
+
+	uniform = /obj/item/clothing/under/costume/sailor
+	shoes = /obj/item/clothing/shoes/jackboots

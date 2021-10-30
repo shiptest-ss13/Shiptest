@@ -137,6 +137,13 @@ GLOBAL_LIST_INIT(available_depts, list(SEC_DEPT_ENGINEERING, SEC_DEPT_MEDICAL, S
 
 	backpack = /obj/item/storage/backpack/ert/security
 
+/datum/outfit/job/security/pirate
+	name = "Buccaneer (Pirate)"
+
+	uniform = /obj/item/clothing/under/syndicate/camo
+	shoes = /obj/item/clothing/shoes/jackboots
+	head = /obj/item/clothing/head/bandana
+	suit = /obj/item/clothing/suit/armor/vest
 
 /obj/item/radio/headset/headset_sec/alt/department/Initialize()
 	. = ..()

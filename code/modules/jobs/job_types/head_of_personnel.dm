@@ -70,3 +70,10 @@
 	uniform = /obj/item/clothing/under/rank/command/lieutenant
 	head = /obj/item/clothing/head/solgov
 	shoes = /obj/item/clothing/shoes/laceup
+
+/datum/outfit/job/head_of_personnel/pirate
+	name = "First Mate (Pirate)"
+	uniform = /obj/item/clothing/under/costume/russian_officer
+	shoes = /obj/item/clothing/shoes/jackboots
+	head = /obj/item/clothing/head/pirate
+	suit = /obj/item/clothing/suit/pirate

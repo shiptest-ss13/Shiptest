@@ -108,3 +108,9 @@
 	shoes = /obj/item/clothing/shoes/sneakers/white
 	head = /obj/item/clothing/head/beret/solgov
 	suit =  /obj/item/clothing/suit/toggle/labcoat
+
+/datum/outfit/job/doctor/pirate
+	name = "Ship's Doctor (Pirate)"
+
+	uniform = /obj/item/clothing/under/costume/sailor
+	shoes = /obj/item/clothing/shoes/jackboots

@@ -186,7 +186,7 @@
 	if(preserve_level)
 		return
 
-	for(var/mob/living/L in GLOB.mob_living_list)
+	for(var/mob/living/L as anything in GLOB.mob_living_list)
 		if(!L.mind)
 			continue
 		if(SSmapping.get_turf_reservation_at_coords(L.x, L.y, L.z) == reserve)
@@ -206,6 +206,27 @@
 	if(reserve_dock_secondary)
 		qdel(reserve_dock_secondary, TRUE)
 		reserve_dock_secondary = null
+
+/obj/structure/overmap/dynamic/empty
+	name = "Empty Space"
+	desc = "A ship appears to be docked here."
+	icon_state = "object"
+
+/obj/structure/overmap/dynamic/empty/choose_level_type()
+	return
+
+/obj/structure/overmap/dynamic/empty/unload_level()
+	if(preserve_level)
+		return
+
+	for(var/mob/living/L as anything in GLOB.mob_living_list)
+		if(!L.mind)
+			continue
+		if(SSmapping.get_turf_reservation_at_coords(L.x, L.y, L.z) == reserve)
+			return //Don't fuck over stranded people
+
+	QDEL_NULL(reserve)
+	qdel(src)
 
 /area/overmap_encounter
 	name = "\improper Overmap Encounter"

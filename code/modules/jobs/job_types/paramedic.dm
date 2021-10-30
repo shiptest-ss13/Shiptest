@@ -61,3 +61,10 @@
 	ears = /obj/item/radio/headset/headset_medsec/alt
 
 	backpack = /obj/item/storage/backpack/security
+
+/datum/outfit/job/paramedic/traumateam
+	name = "Paramedic (Trauma Team Technician)"
+
+	uniform = /obj/item/clothing/under/rank/security/brig_phys
+	shoes = /obj/item/clothing/shoes/combat
+	backpack = /obj/item/storage/backpack/ert/medical
