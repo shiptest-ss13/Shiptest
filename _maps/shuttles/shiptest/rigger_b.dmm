@@ -101,6 +101,20 @@
 "bC" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/crew)
+"bE" = (
+/obj/structure/closet/wall{
+	icon_door = "white_wall";
+	name = "culinary closet";
+	pixel_y = 28
+	},
+/obj/item/clothing/shoes/sneakers/black,
+/obj/item/clothing/under/rank/civilian/bartender,
+/obj/item/clothing/under/rank/civilian/chef,
+/obj/item/clothing/suit/toggle/chef,
+/obj/item/clothing/head/chefhat,
+/obj/item/clothing/accessory/waistcoat,
+/turf/open/floor/carpet/nanoweave/purple,
+/area/ship/crew/canteen)
 "bO" = (
 /obj/item/radio/intercom{
 	pixel_x = -26
@@ -148,6 +162,10 @@
 /area/ship/crew/canteen)
 "cp" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
+/obj/effect/turf_decal/solgov{
+	dir = 8;
+	icon_state = "bottom-left"
+	},
 /turf/open/floor/carpet/nanoweave/beige,
 /area/ship/hallway/central)
 "cV" = (
@@ -264,6 +282,10 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
+/obj/effect/turf_decal/solgov{
+	dir = 8;
+	icon_state = "top-center"
+	},
 /turf/open/floor/carpet/nanoweave/beige,
 /area/ship/hallway/central)
 "eQ" = (
@@ -336,20 +358,6 @@
 	},
 /turf/open/floor/wood,
 /area/ship/crew)
-"gi" = (
-/obj/structure/closet/wall{
-	icon_door = "white_wall";
-	name = "culinary closet";
-	pixel_y = 28
-	},
-/obj/item/clothing/shoes/sneakers/black,
-/obj/item/clothing/under/rank/civilian/bartender,
-/obj/item/clothing/under/rank/civilian/chef,
-/obj/item/clothing/suit/toggle/chef,
-/obj/item/clothing/head/chefhat,
-/obj/item/clothing/accessory/waistcoat,
-/turf/open/floor/carpet/nanoweave/purple,
-/area/ship/crew/canteen)
 "gX" = (
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/machinery/portable_atmospherics/pump,
@@ -1312,6 +1320,12 @@
 /obj/item/tank/jetpack/carbondioxide,
 /turf/open/floor/carpet/nanoweave/beige,
 /area/ship/hallway/central)
+"rh" = (
+/obj/structure/window/reinforced/spawner/west{
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/engineering)
 "rl" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
@@ -1356,6 +1370,13 @@
 /obj/machinery/recharger,
 /turf/open/floor/carpet/nanoweave/red,
 /area/ship/security)
+"ry" = (
+/obj/effect/turf_decal/solgov{
+	dir = 8;
+	icon_state = "center-right"
+	},
+/turf/open/floor/carpet/nanoweave/beige,
+/area/ship/hallway/central)
 "rJ" = (
 /obj/machinery/airalarm/all_access{
 	pixel_y = 24
@@ -1463,6 +1484,10 @@
 "ti" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/effect/turf_decal/solgov{
+	dir = 8;
+	icon_state = "center-left"
+	},
 /turf/open/floor/carpet/nanoweave/beige,
 /area/ship/hallway/central)
 "tq" = (
@@ -1805,6 +1830,7 @@
 	dir = 5
 	},
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
+/obj/effect/turf_decal/solgov,
 /turf/open/floor/carpet/nanoweave/beige,
 /area/ship/hallway/central)
 "xE" = (
@@ -2023,6 +2049,13 @@
 /obj/machinery/light/small,
 /turf/open/floor/plating,
 /area/ship/construction)
+"zP" = (
+/obj/effect/turf_decal/solgov{
+	dir = 8;
+	icon_state = "bottom-right"
+	},
+/turf/open/floor/carpet/nanoweave/beige,
+/area/ship/hallway/central)
 "zS" = (
 /obj/machinery/atmospherics/pipe/simple/orange/visible{
 	dir = 10
@@ -2227,6 +2260,10 @@
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 1
+	},
+/obj/effect/turf_decal/solgov{
+	dir = 8;
+	icon_state = "top-left"
 	},
 /turf/open/floor/carpet/nanoweave/beige,
 /area/ship/hallway/central)
@@ -2913,6 +2950,10 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 5
 	},
+/obj/effect/turf_decal/solgov{
+	dir = 8;
+	icon_state = "bottom-center"
+	},
 /turf/open/floor/carpet/nanoweave/beige,
 /area/ship/hallway/central)
 "Kk" = (
@@ -2927,6 +2968,13 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security/prison)
+"Kp" = (
+/obj/effect/turf_decal/solgov{
+	dir = 8;
+	icon_state = "top-right"
+	},
+/turf/open/floor/carpet/nanoweave/beige,
+/area/ship/hallway/central)
 "Kr" = (
 /obj/effect/turf_decal/corner/neutral/half{
 	dir = 1
@@ -3314,12 +3362,6 @@
 	color = "#E58E2D"
 	},
 /area/ship/security/prison)
-"Py" = (
-/obj/structure/window/reinforced/spawner/west{
-	dir = 4
-	},
-/turf/open/floor/plasteel/dark,
-/area/ship/engineering)
 "PV" = (
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
@@ -4601,7 +4643,7 @@ Te
 YQ
 cp
 JW
-YQ
+zP
 xG
 uN
 cV
@@ -4635,7 +4677,7 @@ Fe
 QB
 ti
 xD
-YQ
+ry
 Rc
 Tq
 Dv
@@ -4669,7 +4711,7 @@ uy
 Ns
 CH
 eH
-YQ
+Kp
 rg
 Tq
 Ho
@@ -4843,7 +4885,7 @@ sC
 jX
 Tq
 nj
-Py
+rh
 wF
 WL
 Tq
@@ -4902,7 +4944,7 @@ yZ
 TK
 mp
 YG
-gi
+bE
 TU
 FI
 qn
