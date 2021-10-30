@@ -3391,8 +3391,30 @@
 /turf/open/floor/carpet/nanoweave/purple,
 /area/ship/crew/canteen)
 "QU" = (
+/obj/structure/closet/crate{
+	name = "food crate"
+	},
+/obj/item/storage/cans/sixbeer,
+/obj/machinery/light/small{
+	dir = 8
+	},
+/obj/effect/turf_decal/box/corners{
+	dir = 1
+	},
 /obj/item/reagent_containers/food/snacks/canned/beans{
-	pixel_x = -5;
+	pixel_x = 2;
+	pixel_y = 3
+	},
+/obj/item/reagent_containers/food/snacks/canned/beans{
+	pixel_x = 2;
+	pixel_y = 3
+	},
+/obj/item/reagent_containers/food/snacks/canned/beans{
+	pixel_x = 2;
+	pixel_y = 3
+	},
+/obj/item/reagent_containers/food/snacks/canned/beans{
+	pixel_x = 2;
 	pixel_y = 3
 	},
 /obj/item/reagent_containers/food/snacks/canned/beans{
@@ -3402,20 +3424,23 @@
 /obj/item/reagent_containers/food/drinks/waterbottle/large{
 	pixel_x = 5
 	},
-/obj/structure/closet/crate{
-	name = "food crate"
+/obj/item/reagent_containers/food/drinks/waterbottle/large{
+	pixel_x = 5
 	},
-/obj/item/storage/cans/sixbeer,
+/obj/item/reagent_containers/food/drinks/waterbottle/large{
+	pixel_x = 5
+	},
+/obj/item/reagent_containers/food/drinks/waterbottle/large{
+	pixel_x = 5
+	},
+/obj/item/reagent_containers/food/drinks/waterbottle/large{
+	pixel_x = 5
+	},
 /obj/item/reagent_containers/food/snacks/rationpack,
-/obj/machinery/light/small{
-	dir = 8
-	},
-/obj/effect/turf_decal/box/corners{
-	dir = 1
-	},
-/obj/item/paper{
-	info = "Only 1 day of food left. Only eat if you think you're going to die of starvation."
-	},
+/obj/item/reagent_containers/food/snacks/rationpack,
+/obj/item/reagent_containers/food/snacks/rationpack,
+/obj/item/reagent_containers/food/snacks/rationpack,
+/obj/item/reagent_containers/food/snacks/rationpack,
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "QV" = (
