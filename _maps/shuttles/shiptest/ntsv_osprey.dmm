@@ -79,7 +79,7 @@
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "aC" = (
-/obj/structure/catwalk/over/plated_catwalk,
+/obj/structure/catwalk/over,
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "aF" = (
@@ -1228,7 +1228,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "2-4"
 	},
-/obj/structure/catwalk/over/plated_catwalk,
+/obj/structure/catwalk/over,
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "jV" = (
@@ -1282,7 +1282,8 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
-/turf/open/floor/plasteel/tech/techmaint,
+/obj/structure/catwalk/over,
+/turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "kq" = (
 /obj/effect/turf_decal/corner/grey/mono,
@@ -2187,7 +2188,8 @@
 	dir = 1;
 	pixel_y = -28
 	},
-/turf/open/floor/plasteel/tech/techmaint,
+/obj/structure/catwalk/over,
+/turf/open/floor/plating,
 /area/ship/maintenance/port)
 "qK" = (
 /obj/effect/turf_decal/siding/wood{
@@ -2585,7 +2587,8 @@
 /obj/item/radio/intercom{
 	pixel_y = -28
 	},
-/turf/open/floor/plasteel/tech/techmaint,
+/obj/structure/catwalk/over,
+/turf/open/floor/plating,
 /area/ship/maintenance/port)
 "tr" = (
 /obj/structure/cable{
@@ -3191,7 +3194,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
-/obj/structure/catwalk/over/plated_catwalk,
+/obj/structure/catwalk/over,
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "xp" = (
@@ -3839,7 +3842,8 @@
 /obj/item/radio/intercom{
 	pixel_y = -28
 	},
-/turf/open/floor/plasteel/tech/techmaint,
+/obj/structure/catwalk/over,
+/turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "CA" = (
 /obj/effect/spawner/structure/window/shuttle,
@@ -4006,7 +4010,8 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
-/turf/open/floor/plasteel/tech/techmaint,
+/obj/structure/catwalk/over,
+/turf/open/floor/plating,
 /area/ship/maintenance/port)
 "DG" = (
 /obj/machinery/atmospherics/pipe/manifold/orange/visible,
@@ -4187,7 +4192,7 @@
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
-/obj/structure/catwalk/over/plated_catwalk,
+/obj/structure/catwalk/over,
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "ES" = (
@@ -4297,12 +4302,12 @@
 	name = "fuel locker";
 	pixel_y = 28
 	},
-/obj/structure/catwalk/over/plated_catwalk,
 /obj/machinery/navbeacon{
 	location = "engineering"
 	},
 /obj/machinery/navbeacon/wayfinding/engineering,
 /obj/item/stack/sheet/mineral/uranium/twenty,
+/obj/structure/catwalk/over,
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "FL" = (
@@ -4542,8 +4547,8 @@
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
-/obj/structure/catwalk/over/plated_catwalk,
 /obj/machinery/light,
+/obj/structure/catwalk/over,
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "Hp" = (
@@ -5084,8 +5089,8 @@
 /turf/open/floor/plating,
 /area/ship/construction)
 "KV" = (
-/obj/structure/catwalk/over/plated_catwalk,
 /obj/machinery/light,
+/obj/structure/catwalk/over,
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "Lk" = (
@@ -6458,7 +6463,7 @@
 /obj/structure/sign/warning/enginesafety{
 	pixel_y = 32
 	},
-/obj/structure/catwalk/over/plated_catwalk,
+/obj/structure/catwalk/over,
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "Va" = (
@@ -6476,7 +6481,8 @@
 	dir = 1;
 	pixel_y = -28
 	},
-/turf/open/floor/plasteel/tech/techmaint,
+/obj/structure/catwalk/over,
+/turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "Ve" = (
 /obj/machinery/light{
@@ -6637,7 +6643,6 @@
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "Wy" = (
-/obj/structure/frame,
 /obj/effect/turf_decal/corner/purple/border{
 	dir = 1
 	},
@@ -6648,6 +6653,7 @@
 	dir = 1;
 	pixel_y = 28
 	},
+/obj/structure/frame/machine,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/construction)
 "WJ" = (
