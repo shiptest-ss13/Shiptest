@@ -1502,20 +1502,21 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
-/obj/structure/closet/wall/orange{
-	name = "equipment locker";
+/obj/item/storage/backpack/industrial,
+/obj/item/storage/backpack/industrial,
+/obj/item/clothing/shoes/combat,
+/obj/item/clothing/shoes/combat,
+/obj/item/clothing/under/solgov,
+/obj/item/clothing/under/solgov,
+/obj/item/clothing/head/hardhat/orange,
+/obj/item/clothing/head/hardhat/orange,
+/obj/item/clothing/accessory/armband/engine,
+/obj/item/clothing/accessory/armband/engine,
+/obj/structure/closet/wall{
+	icon_door = "yellow_wall";
+	name = "engineering closet";
 	pixel_y = 28
 	},
-/obj/item/storage/backpack/industrial,
-/obj/item/storage/backpack/industrial,
-/obj/item/clothing/shoes/combat,
-/obj/item/clothing/shoes/combat,
-/obj/item/clothing/under/solgov,
-/obj/item/clothing/under/solgov,
-/obj/item/clothing/head/hardhat/orange,
-/obj/item/clothing/head/hardhat/orange,
-/obj/item/clothing/accessory/armband/engine,
-/obj/item/clothing/accessory/armband/engine,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "uu" = (
@@ -2316,10 +2317,6 @@
 	dir = 5
 	},
 /obj/effect/turf_decal/corner/green/full,
-/obj/structure/closet/secure_closet{
-	icon_state = "med";
-	name = "medicine locker"
-	},
 /obj/item/storage/firstaid/brute,
 /obj/item/storage/firstaid/fire,
 /obj/item/storage/firstaid/toxin,
@@ -2335,6 +2332,11 @@
 	pixel_y = 13
 	},
 /obj/item/reagent_containers/syringe,
+/obj/structure/closet/wall/white/med{
+	dir = 8;
+	name = "medicine locker";
+	pixel_x = 28
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "DE" = (
@@ -2802,11 +2804,6 @@
 /obj/machinery/light{
 	dir = 4
 	},
-/obj/structure/closet/wall/white/med{
-	dir = 8;
-	name = "equipment closet";
-	pixel_x = 28
-	},
 /obj/item/clothing/under/solgov,
 /obj/item/clothing/shoes/combat,
 /obj/item/clothing/head/beret/solgov,
@@ -2814,6 +2811,12 @@
 /obj/item/clothing/accessory/armband/medblue,
 /obj/item/storage/backpack/medic,
 /obj/item/radio/headset/headset_medsec/alt,
+/obj/structure/closet/wall{
+	dir = 8;
+	icon_door = "white_wall";
+	name = "medical closet";
+	pixel_x = 28
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "Ja" = (
