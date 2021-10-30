@@ -161,6 +161,9 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/sign/donk{
+	pixel_y = 32
+	},
 /turf/open/floor/plating,
 /area/ship/crew/canteen)
 "cp" = (
@@ -946,6 +949,7 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/catwalk/over,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "mC" = (
@@ -969,6 +973,10 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/sink{
+	dir = 4;
+	pixel_x = -12
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "mJ" = (
@@ -1471,6 +1479,7 @@
 	pixel_y = 24
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/catwalk/over,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "rT" = (
@@ -1578,6 +1587,20 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/carpet/nanoweave/red,
 /area/ship/security/prison)
+"tx" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/closet/wall{
+	icon_door = "white_wall";
+	name = "culinary closet";
+	pixel_y = 28
+	},
+/obj/item/clothing/shoes/sneakers/black,
+/obj/item/clothing/under/rank/civilian/bartender,
+/obj/item/clothing/under/rank/civilian/chef,
+/obj/item/clothing/suit/toggle/chef,
+/obj/item/clothing/head/chefhat,
+/turf/open/floor/plating,
+/area/ship/crew/canteen)
 "tA" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 1
@@ -1655,6 +1678,7 @@
 	name = "engineering closet";
 	pixel_y = 28
 	},
+/obj/structure/catwalk/over,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "uu" = (
@@ -2028,13 +2052,16 @@
 	dir = 4
 	},
 /obj/structure/table,
-/obj/item/storage/bag/tray,
-/obj/item/kitchen/knife,
-/obj/item/reagent_containers/food/condiment/enzyme,
-/obj/item/reagent_containers/food/drinks/shaker,
-/obj/item/reagent_containers/glass/rag,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/item/reagent_containers/glass/beaker/large{
+	pixel_x = 6;
+	pixel_y = 6
+	},
+/obj/machinery/reagentgrinder{
+	pixel_x = -2;
+	pixel_y = 2
+	},
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
 "yi" = (
@@ -2697,7 +2724,7 @@
 	},
 /obj/effect/landmark/start/station_engineer,
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plating,
+/turf/open/floor/plasteel/dark,
 /area/ship/engineering)
 "EF" = (
 /obj/machinery/airalarm/all_access{
@@ -2849,10 +2876,8 @@
 	dir = 4
 	},
 /obj/structure/table,
-/obj/item/reagent_containers/food/condiment/flour,
-/obj/item/reagent_containers/food/condiment/rice,
-/obj/item/reagent_containers/food/condiment/flour,
-/obj/item/reagent_containers/food/condiment/rice,
+/obj/effect/spawner/lootdrop/donkpockets,
+/obj/effect/spawner/lootdrop/donkpockets,
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
 "Ge" = (
@@ -3609,6 +3634,7 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/catwalk/over,
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
 "Pj" = (
@@ -3714,10 +3740,15 @@
 	dir = 4
 	},
 /obj/machinery/door/window/eastright,
-/obj/structure/sign/donk{
-	pixel_y = 32
-	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/closet/wall/white{
+	name = "freezer";
+	pixel_y = 28
+	},
+/obj/item/reagent_containers/food/condiment/flour,
+/obj/item/reagent_containers/food/condiment/flour,
+/obj/item/reagent_containers/food/condiment/rice,
+/obj/item/reagent_containers/food/condiment/rice,
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
 "Qv" = (
@@ -3918,6 +3949,11 @@
 /obj/structure/window/reinforced/spawner,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
+/obj/item/storage/bag/tray,
+/obj/item/kitchen/knife,
+/obj/item/reagent_containers/food/condiment/enzyme,
+/obj/item/reagent_containers/food/drinks/shaker,
+/obj/item/reagent_containers/glass/rag,
 /turf/open/floor/plating,
 /area/ship/crew/canteen)
 "SH" = (
@@ -4575,14 +4611,9 @@
 /obj/effect/turf_decal/corner/bar/diagonal{
 	dir = 4
 	},
-/obj/structure/table,
-/obj/machinery/reagentgrinder{
-	pixel_x = -2;
-	pixel_y = 2
-	},
-/obj/item/reagent_containers/glass/beaker/large{
-	pixel_x = 6;
-	pixel_y = 6
+/obj/structure/sink/kitchen{
+	dir = 4;
+	pixel_x = -12
 	},
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
@@ -5261,7 +5292,7 @@ yZ
 TK
 mp
 YG
-BH
+tx
 TU
 FI
 qn
