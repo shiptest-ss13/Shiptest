@@ -222,6 +222,10 @@
 /area/ship/crew/canteen)
 "dZ" = (
 /obj/machinery/vending/security,
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/machinery/power/apc/auto_name/south,
 /turf/open/floor/carpet/nanoweave/red,
 /area/ship/security/prison)
 "eb" = (
@@ -681,7 +685,8 @@
 /obj/structure/closet/wall/red{
 	dir = 8;
 	name = "equipment closet";
-	pixel_x = 28
+	pixel_x = 28;
+	req_access_txt = "1"
 	},
 /turf/open/floor/plating,
 /area/ship/security/prison)
@@ -1595,7 +1600,9 @@
 /obj/machinery/light{
 	dir = 4
 	},
-/obj/structure/closet/secure_closet/lieutenant,
+/obj/structure/closet/secure_closet/lieutenant{
+	req_access_txt = "90"
+	},
 /obj/item/radio/headset/solgov/alt,
 /obj/item/pet_carrier,
 /obj/item/taperecorder,
@@ -2309,8 +2316,8 @@
 "AW" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/structure/table/wood/bar,
 /obj/item/reagent_containers/food/snacks/rationpack,
+/obj/structure/table/wood,
 /turf/open/floor/plating,
 /area/ship/crew/canteen)
 "Bh" = (
@@ -2637,7 +2644,8 @@
 	dir = 8;
 	icon_state = "solgov_wall";
 	name = "captain's closet";
-	pixel_x = 28
+	pixel_x = 28;
+	req_access_txt = "20"
 	},
 /obj/item/clothing/gloves/color/captain,
 /obj/item/megaphone/command,
@@ -3012,9 +3020,9 @@
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
-/obj/structure/table/wood/bar,
 /obj/machinery/light,
 /obj/item/reagent_containers/food/snacks/rationpack,
+/obj/structure/table/wood,
 /turf/open/floor/plating,
 /area/ship/crew/canteen)
 "HG" = (
@@ -3306,7 +3314,8 @@
 /obj/structure/closet/wall/red{
 	dir = 8;
 	name = "equipment closet";
-	pixel_x = 28
+	pixel_x = 28;
+	req_access_txt = "1"
 	},
 /turf/open/floor/carpet/nanoweave/red,
 /area/ship/security/prison)
@@ -3546,7 +3555,8 @@
 /obj/structure/closet/wall/red{
 	dir = 8;
 	name = "equipment closet";
-	pixel_x = 28
+	pixel_x = 28;
+	req_access_txt = "1"
 	},
 /turf/open/floor/carpet/nanoweave/red,
 /area/ship/security/prison)
@@ -3709,7 +3719,6 @@
 /area/ship/crew/canteen)
 "Qv" = (
 /obj/structure/closet/crate,
-/obj/item/circuitboard/computer/rdconsole,
 /obj/effect/spawner/lootdrop/maintenance/three,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
@@ -3738,9 +3747,9 @@
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
-/obj/structure/table/wood/bar,
 /obj/item/reagent_containers/food/snacks/rationpack,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/table/wood,
 /turf/open/floor/carpet/nanoweave/purple,
 /area/ship/crew/canteen)
 "QU" = (
@@ -3935,10 +3944,11 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
 "SU" = (
-/obj/structure/sign/poster/official/random{
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/door_timer{
+	id = "Cell 2";
 	pixel_y = 32
 	},
-/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating,
 /area/ship/security/prison)
 "Te" = (
@@ -3964,8 +3974,9 @@
 /obj/structure/closet/wall/blue{
 	dir = 4;
 	icon_state = "solgov_wall";
-	name = "first officer's closet";
-	pixel_x = -28
+	name = "XO's closet";
+	pixel_x = -28;
+	req_access_txt = "57"
 	},
 /obj/item/clothing/under/solgov/formal,
 /obj/item/clothing/suit/toggle/solgov,
@@ -4085,11 +4096,14 @@
 /turf/open/floor/carpet/nanoweave/red,
 /area/ship/security/prison)
 "Uv" = (
-/obj/machinery/power/apc/auto_name/south,
-/obj/structure/cable{
-	icon_state = "0-4"
-	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/door_timer{
+	id = "Cell 1";
+	pixel_y = -32
+	},
 /turf/open/floor/carpet/nanoweave/red,
 /area/ship/security/prison)
 "UC" = (
