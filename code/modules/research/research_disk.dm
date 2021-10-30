@@ -2,7 +2,9 @@
 /obj/item/disk/tech_disk
 	name = "technology disk"
 	desc = "A disk for storing technology data for further research."
-	icon_state = "datadisk0"
+	random_color = FALSE
+	icon_state = "disk_map"
+	color = "#973328"
 	custom_materials = list(/datum/material/iron=300, /datum/material/glass=100)
 	var/datum/techweb/stored_research
 
@@ -15,6 +17,7 @@
 /obj/item/disk/tech_disk/debug
 	name = "\improper CentCom technology disk"
 	desc = "A debug item for research"
+	illustration = "nt_n"
 	custom_materials = null
 
 /obj/item/disk/tech_disk/debug/Initialize()
@@ -24,7 +27,9 @@
 /obj/item/disk/tech_disk/major
 	name = "Reformatted technology disk"
 	desc = "A disk containing a new, completed tech from the B.E.P.I.S. Upload the disk to an R&D Console to redeem the tech."
-	icon_state = "rndmajordisk"
+	icon_state = "disk_map"
+	color = "#FFBAFF"
+	illustration = "bepis"
 	custom_materials = list(/datum/material/iron=300, /datum/material/glass=100)
 
 /obj/item/disk/tech_disk/major/Initialize()

@@ -9,6 +9,7 @@
 /obj/item/disk/design_disk/ammo_1911
 	name = "Design Disk - 1911 Magazine"
 	desc = "A design disk containing the pattern for the classic 1911's seven round .45ACP magazine."
+	illustration = "ammo"
 
 /obj/item/disk/design_disk/ammo_1911/Initialize()
 	. = ..()
@@ -34,6 +35,7 @@
 /obj/item/disk/design_disk/disposable_gun
 	name = "Design Disk - Disposable Gun"
 	desc = "A design disk containing designs for a cheap and disposable gun."
+	illustration = "gun"
 
 /obj/item/disk/design_disk/disposable_gun/Initialize()
 	. = ..()

@@ -1,7 +1,5 @@
-//this code is not final
-
 /obj/item/disk
-	icon = 'whitesands/icons/obj/diskette.dmi'
+	icon = 'icons/obj/diskette.dmi'
 	w_class = WEIGHT_CLASS_TINY
 	item_state = "card-id"
 	lefthand_file = 'icons/mob/inhands/equipment/idcards_lefthand.dmi'
@@ -12,13 +10,13 @@
 	var/random_color = TRUE
 	var/illustration = "generic"
 	var/static/list/random_disk_colors = list(
-		"blue" = "#8080ff",
-		"red" = "#ff666e",
-		"pink" = "#fd99ff",
-		"brown" = "#b38459",
-		"green" = "#9fe3a9",
-		"cyan" = "#96ffef",
-		"yellow" = "#ffe366"
+		"blue" = rgb(24, 97, 213),
+		"red" = rgb(255, 0, 0),
+		"pink" = rgb(213, 24, 141),
+		"brown" = rgb(160, 82, 18),
+		"green" = rgb(14, 127, 27),
+		"cyan" = rgb(24, 162, 213),
+		"yellow" = rgb(255, 165, 0)
 	)
 
 /obj/item/disk/Initialize()
@@ -45,59 +43,8 @@
 		writing.appearance_flags = RESET_COLOR
 		. += writing
 
-/obj/item/disk/design_disk
-	random_color = FALSE
-	icon_state = "disk_map"
-	color = "#3C2798"
 
-/obj/item/disk/tech_disk
-	random_color = FALSE
-	icon_state = "disk_map"
-	color = "#973328"
-
-/obj/item/disk/nuclear
-	random_color = FALSE
-	icon_state = "nuke_disk_map"
-	color = "#4ED57C"
-	illustration = "nuke_new"
-	desc = "The authentication disk of a nuclear bomb. This is probably useless."
-
-/obj/item/disk/nuclear/fake/obvious
-	illustration = "nuke_retro"
-
-/obj/item/disk/tech_disk/major
-	icon_state = "disk_map"
-	color = "#FFBAFF"
-	illustration = "bepis"
-
-/obj/item/disk/holodisk
-	random_color = FALSE
-	icon_state = "disk_map"
-	color = "#A7A3A6"
-	illustration = "holo"
-
-/obj/item/disk/data
-	icon_state = "disk_map"
-	illustration = "dna"
-
-/obj/item/disk/design_disk/modkit_disc
-	illustration = "accel"
-
-/obj/item/disk/design_disk/ammo_1911
-	illustration = "ammo"
-
-/obj/item/disk/design_disk/adv/knight_gear
-	illustration = "sword"
-
-/obj/item/disk/design_disk/adv/cleric_mace
-	illustration = "sword"
-
-/obj/item/disk/design_disk/golem_shell
-	illustration = "poyo"
-
-/obj/item/disk/nanite_program
-	illustration = "nanite"
-/*
+/*	//unfotunately now is not the time for this
 //security
 /obj/item/disk/design_disk/sec
 	name = "security design disk"
@@ -134,7 +81,7 @@
 	illustration = "ammo"
 
 /obj/item/disk/design_disk/sec/shotshelnotllethal
-	name = "Shotgun Shell disk"
+	name = "Beanbag shell disk"
 	illustration = "ammo"
 
 /obj/item/disk/design_disk/sec/standard

@@ -217,7 +217,10 @@
 /obj/item/disk/holodisk
 	name = "holorecord disk"
 	desc = "Stores recorder holocalls."
-	icon_state = "holodisk"
+	random_color = FALSE
+	icon_state = "disk_map"
+	color = "#A7A3A6"
+	illustration = "holo"
 	obj_flags = UNIQUE_RENAME
 	custom_materials = list(/datum/material/iron = 100, /datum/material/glass = 100)
 	var/datum/holorecord/record
