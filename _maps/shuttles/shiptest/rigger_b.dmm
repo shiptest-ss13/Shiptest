@@ -308,7 +308,7 @@
 	},
 /obj/machinery/door/airlock/security{
 	name = "Armory";
-	req_one_access_txt = "1"
+	req_one_access_txt = "0"
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/hallway/central)
@@ -1489,20 +1489,6 @@
 /obj/item/taperecorder,
 /turf/open/floor/wood,
 /area/ship/crew/solgov)
-"ud" = (
-/obj/structure/closet/wall{
-	icon_door = "white_wall";
-	name = "culinary closet";
-	pixel_y = 28
-	},
-/obj/item/clothing/shoes/sneakers/black,
-/obj/item/clothing/under/rank/civilian/bartender,
-/obj/item/clothing/under/rank/civilian/chef,
-/obj/item/clothing/suit/toggle/chef,
-/obj/item/clothing/head/chefhat,
-/obj/item/clothing/accessory/waistcoat,
-/turf/open/floor/carpet/nanoweave/purple,
-/area/ship/crew/canteen)
 "ue" = (
 /obj/machinery/power/smes/shuttle/precharged{
 	dir = 1
@@ -2540,6 +2526,12 @@
 	},
 /turf/open/floor/plating,
 /area/ship/construction)
+"FB" = (
+/obj/structure/window/reinforced/spawner/west{
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/engineering)
 "FC" = (
 /obj/item/clothing/shoes/combat,
 /obj/item/clothing/under/solgov,
@@ -2791,12 +2783,6 @@
 	color = "#E58E2D"
 	},
 /area/ship/cargo)
-"IO" = (
-/obj/structure/window/reinforced/spawner/west{
-	dir = 4
-	},
-/turf/open/floor/plasteel/dark,
-/area/ship/engineering)
 "IQ" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -2918,7 +2904,7 @@
 	},
 /obj/machinery/door/airlock/security{
 	name = "Brig";
-	req_one_access_txt = "1"
+	req_one_access_txt = "0"
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security/prison)
@@ -3030,7 +3016,7 @@
 	},
 /obj/machinery/door/airlock/security{
 	name = "Brig";
-	req_one_access_txt = "1"
+	req_one_access_txt = "0"
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security/prison)
@@ -3914,6 +3900,20 @@
 /obj/machinery/light,
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
+"Wn" = (
+/obj/structure/closet/wall{
+	icon_door = "white_wall";
+	name = "culinary closet";
+	pixel_y = 28
+	},
+/obj/item/clothing/shoes/sneakers/black,
+/obj/item/clothing/under/rank/civilian/bartender,
+/obj/item/clothing/under/rank/civilian/chef,
+/obj/item/clothing/suit/toggle/chef,
+/obj/item/clothing/head/chefhat,
+/obj/item/clothing/accessory/waistcoat,
+/turf/open/floor/carpet/nanoweave/purple,
+/area/ship/crew/canteen)
 "WG" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -4829,7 +4829,7 @@ sC
 jX
 Tq
 nj
-IO
+FB
 wF
 WL
 Tq
@@ -4888,7 +4888,7 @@ yZ
 TK
 mp
 YG
-ud
+Wn
 TU
 FI
 qn

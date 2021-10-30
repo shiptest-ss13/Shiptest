@@ -362,7 +362,7 @@
 	},
 /obj/machinery/door/airlock/security{
 	name = "Armory";
-	req_one_access_txt = "1"
+	req_one_access_txt = "0"
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/hallway/central)
@@ -1590,21 +1590,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/carpet/nanoweave/red,
 /area/ship/security/prison)
-"tt" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/closet/wall{
-	icon_door = "white_wall";
-	name = "culinary closet";
-	pixel_y = 28
-	},
-/obj/item/clothing/shoes/sneakers/black,
-/obj/item/clothing/under/rank/civilian/bartender,
-/obj/item/clothing/under/rank/civilian/chef,
-/obj/item/clothing/suit/toggle/chef,
-/obj/item/clothing/head/chefhat,
-/obj/item/clothing/accessory/waistcoat,
-/turf/open/floor/plating,
-/area/ship/crew/canteen)
 "tA" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 1
@@ -2900,6 +2885,21 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
+"Gp" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/closet/wall{
+	icon_door = "white_wall";
+	name = "culinary closet";
+	pixel_y = 28
+	},
+/obj/item/clothing/shoes/sneakers/black,
+/obj/item/clothing/under/rank/civilian/bartender,
+/obj/item/clothing/under/rank/civilian/chef,
+/obj/item/clothing/suit/toggle/chef,
+/obj/item/clothing/head/chefhat,
+/obj/item/clothing/accessory/waistcoat,
+/turf/open/floor/plating,
+/area/ship/crew/canteen)
 "Gv" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 4
@@ -3240,7 +3240,7 @@
 	},
 /obj/machinery/door/airlock/security{
 	name = "Brig";
-	req_one_access_txt = "1"
+	req_one_access_txt = "0"
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security/prison)
@@ -3373,7 +3373,7 @@
 	},
 /obj/machinery/door/airlock/security{
 	name = "Brig";
-	req_one_access_txt = "1"
+	req_one_access_txt = "0"
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security/prison)
@@ -5299,7 +5299,7 @@ yZ
 TK
 mp
 YG
-tt
+Gp
 TU
 FI
 qn
