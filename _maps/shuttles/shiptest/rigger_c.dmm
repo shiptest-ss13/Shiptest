@@ -558,7 +558,6 @@
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
 	dir = 8
 	},
-/obj/structure/window/reinforced/spawner/west,
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
 	},
@@ -1024,6 +1023,10 @@
 /obj/structure/sign/warning/nosmoking{
 	pixel_y = 32
 	},
+/obj/machinery/door/window/westleft{
+	dir = 4;
+	name = "Mining Room"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "nm" = (
@@ -1239,17 +1242,7 @@
 	delivery_icon = "solgovcloset";
 	icon_state = "solgov"
 	},
-/obj/item/clothing/under/solgov,
-/obj/item/clothing/under/solgov,
-/obj/item/clothing/under/solgov,
-/obj/item/clothing/under/solgov,
-/obj/item/clothing/under/solgov,
 /obj/effect/decal/cleanable/dirt,
-/obj/item/clothing/head/beret/solgov/plain,
-/obj/item/clothing/head/beret/solgov/plain,
-/obj/item/clothing/head/beret/solgov/plain,
-/obj/item/clothing/head/beret/solgov/plain,
-/obj/item/clothing/head/beret/solgov/plain,
 /obj/item/clothing/shoes/combat,
 /obj/item/clothing/shoes/combat,
 /obj/item/clothing/shoes/combat,
@@ -1260,6 +1253,16 @@
 /obj/item/radio/headset,
 /obj/item/radio/headset,
 /obj/item/radio/headset,
+/obj/item/clothing/under/syndicate/camo,
+/obj/item/clothing/under/syndicate/camo,
+/obj/item/clothing/under/syndicate/camo,
+/obj/item/clothing/under/syndicate/camo,
+/obj/item/clothing/under/syndicate/camo,
+/obj/item/clothing/head/beret/solgov/terragov/plain,
+/obj/item/clothing/head/beret/solgov/terragov/plain,
+/obj/item/clothing/head/beret/solgov/terragov/plain,
+/obj/item/clothing/head/beret/solgov/terragov/plain,
+/obj/item/clothing/head/beret/solgov/terragov/plain,
 /turf/open/floor/carpet/nanoweave,
 /area/ship/crew)
 "pT" = (
@@ -1587,20 +1590,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/carpet/nanoweave/red,
 /area/ship/security/prison)
-"tx" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/closet/wall{
-	icon_door = "white_wall";
-	name = "culinary closet";
-	pixel_y = 28
-	},
-/obj/item/clothing/shoes/sneakers/black,
-/obj/item/clothing/under/rank/civilian/bartender,
-/obj/item/clothing/under/rank/civilian/chef,
-/obj/item/clothing/suit/toggle/chef,
-/obj/item/clothing/head/chefhat,
-/turf/open/floor/plating,
-/area/ship/crew/canteen)
 "tA" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 1
@@ -1667,8 +1656,6 @@
 /obj/item/storage/backpack/industrial,
 /obj/item/clothing/shoes/combat,
 /obj/item/clothing/shoes/combat,
-/obj/item/clothing/under/solgov,
-/obj/item/clothing/under/solgov,
 /obj/item/clothing/head/hardhat/orange,
 /obj/item/clothing/head/hardhat/orange,
 /obj/item/clothing/accessory/armband/engine,
@@ -1679,6 +1666,8 @@
 	pixel_y = 28
 	},
 /obj/structure/catwalk/over,
+/obj/item/clothing/under/syndicate/camo,
+/obj/item/clothing/under/syndicate/camo,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "uu" = (
@@ -1869,6 +1858,9 @@
 	},
 /obj/structure/tank_dispenser,
 /obj/structure/window/reinforced,
+/obj/structure/window/reinforced/spawner/west{
+	dir = 4
+	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "wH" = (
@@ -2184,9 +2176,6 @@
 /obj/effect/turf_decal/caution{
 	pixel_y = -11
 	},
-/obj/machinery/door/window/westright{
-	name = "Generator Room"
-	},
 /obj/effect/turf_decal/industrial/warning{
 	dir = 10
 	},
@@ -2265,7 +2254,6 @@
 	dir = 8
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/structure/window/reinforced/spawner/west,
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
 	},
@@ -2683,10 +2671,10 @@
 /obj/item/clothing/shoes/laceup,
 /obj/item/clothing/under/rank/command/captain,
 /obj/item/clothing/head/caphat,
-/obj/item/clothing/suit/toggle/solgov,
 /obj/item/clothing/glasses/sunglasses,
 /obj/item/stamp/captain,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/item/clothing/suit/toggle/solgov/terragov,
 /turf/open/floor/plating,
 /area/ship/bridge)
 "DN" = (
@@ -3137,9 +3125,7 @@
 /obj/machinery/light{
 	dir = 4
 	},
-/obj/item/clothing/under/solgov,
 /obj/item/clothing/shoes/combat,
-/obj/item/clothing/head/beret/solgov,
 /obj/item/clothing/glasses/hud/health,
 /obj/item/clothing/accessory/armband/medblue,
 /obj/item/storage/backpack/medic,
@@ -3152,6 +3138,8 @@
 	name = "medical closet";
 	pixel_x = 28
 	},
+/obj/item/clothing/under/syndicate/camo,
+/obj/item/clothing/head/beret/solgov/terragov,
 /turf/open/floor/plating,
 /area/ship/medical)
 "Ja" = (
@@ -3325,9 +3313,6 @@
 /obj/machinery/light/small{
 	dir = 4
 	},
-/obj/item/clothing/under/solgov,
-/obj/item/clothing/under/solgov,
-/obj/item/clothing/under/solgov,
 /obj/item/clothing/shoes/combat,
 /obj/item/clothing/shoes/combat,
 /obj/item/clothing/shoes/combat,
@@ -3345,6 +3330,9 @@
 	pixel_x = 28;
 	req_access_txt = "1"
 	},
+/obj/item/clothing/under/syndicate/camo,
+/obj/item/clothing/under/syndicate/camo,
+/obj/item/clothing/under/syndicate/camo,
 /turf/open/floor/carpet/nanoweave/red,
 /area/ship/security/prison)
 "Ly" = (
@@ -3627,9 +3615,6 @@
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
-/obj/machinery/door/window/westleft{
-	name = "Mining Room"
-	},
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
 	},
@@ -3734,6 +3719,20 @@
 	},
 /turf/open/floor/plating,
 /area/ship/construction)
+"Qo" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/closet/wall{
+	icon_door = "white_wall";
+	name = "culinary closet";
+	pixel_y = 28
+	},
+/obj/item/clothing/shoes/sneakers/black,
+/obj/item/clothing/under/rank/civilian/bartender,
+/obj/item/clothing/under/rank/civilian/chef,
+/obj/item/clothing/suit/toggle/chef,
+/obj/item/clothing/head/chefhat,
+/turf/open/floor/plating,
+/area/ship/crew/canteen)
 "Qq" = (
 /obj/effect/turf_decal/corner/white/diagonal,
 /obj/effect/turf_decal/corner/bar/diagonal{
@@ -4017,13 +4016,13 @@
 	pixel_x = -28;
 	req_access_txt = "57"
 	},
-/obj/item/clothing/under/solgov/formal,
-/obj/item/clothing/suit/toggle/solgov,
-/obj/item/clothing/head/solgov,
 /obj/item/clothing/shoes/laceup,
 /obj/item/clothing/glasses/sunglasses,
 /obj/item/radio/headset/heads/head_of_personnel,
 /obj/item/gun/energy/e_gun/mini,
+/obj/item/clothing/under/solgov/formal/terragov,
+/obj/item/clothing/suit/toggle/solgov/terragov,
+/obj/item/clothing/head/solgov/terragov,
 /turf/open/floor/plating,
 /area/ship/bridge)
 "TG" = (
@@ -4296,6 +4295,9 @@
 /area/ship/engineering)
 "Wy" = (
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/window/reinforced/spawner/west{
+	dir = 4
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
 "WG" = (
@@ -4336,6 +4338,10 @@
 	pixel_y = -32
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/door/window/westright{
+	dir = 4;
+	name = "Generator Room"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
 "WM" = (
@@ -5292,7 +5298,7 @@ yZ
 TK
 mp
 YG
-tx
+Qo
 TU
 FI
 qn
