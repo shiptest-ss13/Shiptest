@@ -684,3 +684,8 @@
 		var/obj/item/borg/apparatus/beaker/extra/E = locate() in R.module.modules
 		if (E)
 			R.module.remove_module(E, TRUE)
+
+/obj/item/borg/upgrade/transform/commando
+	desc = "A module picking system, capable of using stored matter to build itself out into a fresh cyborg configuration. This one has no serial number, and no identifying marks, save a single piece of tape with the module's classification written in sharpie."
+	name = "MODPICK!1(BRIGADOR)PROTOTYPE"
+	new_module = /obj/item/robot_module/syndicateproto

@@ -289,6 +289,12 @@ const ShipControlContent = (props, context) => {
             disabled={data.state !== 'idle'}
             onClick={() => act('undock')} />
           <Button
+            tooltip="Dock in Empty Space"
+            tooltipPosition="left"
+            icon="sign-in-alt"
+            disabled={data.state !== 'flying'}
+            onClick={() => act('dock_empty')} />
+          <Button
             tooltip={calibrating ? "Cancel Jump" : "Bluespace Jump"}
             tooltipPosition="left"
             icon={calibrating ? "times" : "angle-double-right"}

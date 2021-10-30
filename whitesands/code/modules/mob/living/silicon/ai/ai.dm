@@ -15,8 +15,6 @@
 		var/obj/machinery/announcement_system/announcer = pick(GLOB.announcement_systems)
 		announcer.announce("AIWIPE", real_name, mind.assigned_role, list())
 
-	SSjob.FreeRole(mind.assigned_role)
-
 	if(mind.objectives.len)
 		mind.objectives.Cut()
 		mind.special_role = null

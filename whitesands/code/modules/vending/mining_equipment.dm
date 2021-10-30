@@ -35,7 +35,6 @@
 		/obj/item/wormhole_jaunter = 3,
 		/obj/item/kinetic_crusher = 1,
 		/obj/item/gun/energy/kinetic_accelerator = 3,
-		/obj/item/t_scanner/adv_mining_scanner = 5,
 		/obj/item/pinpointer/deepcore = 5,		// WS edit - Deepcore
 		/obj/item/pinpointer/deepcore/advanced = 2,		// WS edit - Deepcore
 		/obj/item/deepcorecapsule = 3,		// WS edit - Deepcore

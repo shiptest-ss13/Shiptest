@@ -34,9 +34,6 @@
 	var/selection_color = "#ffffff"
 
 
-	//If this is set to 1, a text is printed to the player when jobs are assigned, telling him that he should let admins know that he has to disconnect.
-	var/req_admin_notify
-
 	//If you have the use_age_restriction_for_jobs config option enabled and the database set up, this option will add a requirement for players to be at least minimal_player_age days old. (meaning they first signed in at least that many days before.)
 	var/minimal_player_age = 0
 
@@ -47,10 +44,7 @@
 	var/exp_type = ""
 	var/exp_type_department = ""
 
-	//A special, very large and noticeable message for certain roles reminding them of something important. Ex: "Blueshields are not security"
-	var/special_notice = ""
-
-	// A link to the relevant wiki related to the job. Ex: "Space_law" would link to wiki.blah/Space_law
+	/// A link to the relevant wiki related to the job. Ex: "Space_law" would link to wiki.blah/Space_law
 	var/wiki_page = ""
 
 	//The amount of good boy points playing this role will earn you towards a higher chance to roll antagonist next round
@@ -67,27 +61,16 @@
 
 	///Levels unlocked at roundstart in physiology
 	var/list/roundstart_experience
-	/// Should this job be allowed to be picked for the bureaucratic error event?
-	var/allow_bureaucratic_error = TRUE
 
-/datum/job/New()
-	. = ..()
-	var/list/jobs_changes = GetMapChanges()
-	if(!jobs_changes)
-		return
-	if(isnum(jobs_changes["additional_access"]))
-		access += jobs_changes["additional_access"]
-	if(isnum(jobs_changes["additional_minimal_access"]))
-		minimal_access += jobs_changes["additional_minimal_access"]
-	if(isnum(jobs_changes["spawn_positions"]))
-		spawn_positions = jobs_changes["spawn_positions"]
-	if(isnum(jobs_changes["total_positions"]))
-		total_positions = jobs_changes["total_positions"]
+/datum/job/New(new_title, datum/outfit/new_outfit)
+	if(new_title)
+		title = new_title
+		outfit = new_outfit
 
 //Only override this proc
 //H is usually a human unless an /equip override transformed it
 //do actions on H but send messages to M as the key may not have been transferred_yet
-/datum/job/proc/after_spawn(mob/living/H, mob/M, latejoin = FALSE)
+/datum/job/proc/after_spawn(mob/living/H, mob/M)
 	//do actions on H but send messages to M as the key may not have been transferred_yet
 	if(mind_traits)
 		for(var/t in mind_traits)
@@ -181,8 +164,55 @@
 	if(. == null)
 		return antag_rep
 
+
+//Gives the player the stuff he should have with his rank
+/datum/job/proc/EquipRank(mob/living/living_mob)
+	living_mob.job = title
+
+	SEND_SIGNAL(living_mob, COMSIG_JOB_RECEIVED, living_mob.job)
+
+	if(living_mob.mind)
+		living_mob.mind.assigned_role = title
+
+	var/display_rank = title
+	if(living_mob.client.prefs && living_mob.client.prefs.alt_titles_preferences[title])
+		display_rank = living_mob.client.prefs.alt_titles_preferences[title]
+
+	to_chat(living_mob, "<b>You are the [display_rank].</b>")
+
+	var/new_mob = equip(living_mob, null, null, null, living_mob.client)//silicons override this proc to return a mob
+	if(ismob(new_mob))
+		living_mob = new_mob
+
+	SSpersistence.antag_rep_change[living_mob.client.ckey] += GetAntagRep()
+
+	if(living_mob.client.holder)
+		if(CONFIG_GET(flag/auto_deadmin_players) || (living_mob.client.prefs?.toggles & DEADMIN_ALWAYS))
+			living_mob.client.holder.auto_deadmin()
+		else
+			SSjob.handle_auto_deadmin_roles(living_mob.client, title)
+
+	to_chat(living_mob, "<b>As the [display_rank] you answer directly to [supervisors]. Special circumstances may change this.</b>")
+	radio_help_message(living_mob)
+	//WS Begin - Wikilinks
+	if(wiki_page)
+		to_chat(living_mob, "<span class='notice'><a href=[CONFIG_GET(string/wikiurl)]/[wiki_page]>Wiki Page</a></span>")
+	//WS End
+
+	var/related_policy = get_policy(title)
+	if(related_policy)
+		to_chat(living_mob,related_policy)
+	if(ishuman(living_mob))
+		var/mob/living/carbon/human/wageslave = living_mob
+		living_mob.add_memory("Your account ID is [wageslave.account_id].")
+	if(living_mob)
+		after_spawn(living_mob, living_mob) // note: this happens before the mob has a key! living_mob will always have a client, H might not.
+
+	return living_mob
+
+
 //Don't override this unless the job transforms into a non-human (Silicons do this for example)
-/datum/job/proc/equip(mob/living/carbon/human/H, visualsOnly = FALSE, announce = TRUE, latejoin = FALSE, datum/outfit/outfit_override = null, client/preference_source)
+/datum/job/proc/equip(mob/living/carbon/human/H, visualsOnly = FALSE, announce = TRUE, datum/outfit/outfit_override = null, client/preference_source)
 	if(!H)
 		return FALSE
 	if(CONFIG_GET(flag/enforce_human_authority) && (title in GLOB.command_positions))

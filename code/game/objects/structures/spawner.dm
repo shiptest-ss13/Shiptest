@@ -7,17 +7,22 @@ GLOBAL_LIST_INIT(astroloot, list(
 	/obj/item/stack/ore/diamond = 25,
 	/obj/item/stack/ore/bananium = 5,
 	/obj/item/stack/ore/titanium = 75,
-	/obj/item/stack/ore/bluespace_crystal = 10,
-	/obj/item/pickaxe/diamond = 5,
-	/obj/item/t_scanner/adv_mining_scanner/lesser = 5,
-	/obj/item/kinetic_crusher = 5,
-	/obj/effect/mob_spawn/human/corpse/damaged/legioninfested = 5,
-	/obj/item/tank/jetpack/suit = 5,
-	/obj/item/survivalcapsule = 5,
-	/obj/item/reagent_containers/hypospray/medipen/survival = 5,
-	/obj/item/card/mining_point_card = 5,
-	/obj/item/extraction_pack = 5,
-	/obj/item/reagent_containers/food/drinks/beer = 5,
+	/obj/item/pickaxe/diamond = 15,
+	/obj/item/borg/upgrade/modkit/cooldown = 5,
+	/obj/item/borg/upgrade/modkit/damage = 5,
+	/obj/item/borg/upgrade/modkit/range = 5,
+	/obj/item/t_scanner/adv_mining_scanner/lesser = 15,
+	/obj/item/kinetic_crusher = 15,
+	/obj/effect/mob_spawn/human/corpse/damaged/legioninfested = 25,
+	/obj/effect/mob_spawn/human/corpse/damaged/legioninfested = 25,
+	/obj/effect/mob_spawn/human/corpse/damaged/legioninfested = 25,
+	/obj/item/tank/jetpack/suit = 10,
+	/obj/item/survivalcapsule = 15,
+	/obj/item/reagent_containers/hypospray/medipen/survival = 15,
+	/obj/item/card/mining_point_card = 15,
+	/obj/item/gps/mining = 10,
+	/obj/item/extraction_pack = 10,
+	/obj/item/reagent_containers/food/drinks/beer = 15,
 	))
 
 /obj/structure/spawner
@@ -87,7 +92,6 @@ GLOBAL_LIST_INIT(astroloot, list(
 	name = "monster den"
 	desc = "A hole dug into the ground, harboring all kinds of monsters found within most caves or mining asteroids."
 	icon_state = "hole"
-	max_integrity = 200
 	max_mobs = 3
 	icon = 'icons/mob/nest.dmi'
 	spawn_text = "crawls out of"
