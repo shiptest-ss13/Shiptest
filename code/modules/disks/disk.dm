@@ -183,12 +183,13 @@
 //solgov
 /obj/item/disk/design_disk/solgov
 	name = "solgov design disk"
-	desc = "A design disk for use in a autolathe. Includes designs from Solgov."
+	desc = "A design disk for use in a autolathe. Includes designs from SolGov."
 	color = "#4C5B76"
 	illustration = "solgov"
+
 /obj/item/disk/design_disk/solgov_old
 	name = "solgov design disk"
-	desc = "A design disk for use in a autolathe. Includes old designs from Solgov."
+	desc = "A design disk for use in a autolathe. Includes old designs from SolGov."
 	color = "#00AC56"
 	illustration = "solgov_old"
 
