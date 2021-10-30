@@ -66,7 +66,7 @@
 		undershirt = /datum/sprite_accessory/undershirt/ian
 
 /datum/outfit/job/head_of_personnel/solgov
-	name = "First Officer (SolGov)"
+	name = "Executive Officer (SolGov)"
 	uniform = /obj/item/clothing/under/rank/command/lieutenant
 	head = /obj/item/clothing/head/solgov
 	shoes = /obj/item/clothing/shoes/laceup
