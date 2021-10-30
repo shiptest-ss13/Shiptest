@@ -1031,6 +1031,21 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
+"nk" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/closet/wall{
+	icon_door = "white_wall";
+	name = "culinary closet";
+	pixel_y = 28
+	},
+/obj/item/clothing/shoes/sneakers/black,
+/obj/item/clothing/under/rank/civilian/bartender,
+/obj/item/clothing/under/rank/civilian/chef,
+/obj/item/clothing/suit/toggle/chef,
+/obj/item/clothing/head/chefhat,
+/obj/item/clothing/accessory/waistcoat,
+/turf/open/floor/plating,
+/area/ship/crew/canteen)
 "nm" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
@@ -1497,6 +1512,10 @@
 	name = "Cargo Bay"
 	},
 /obj/effect/decal/cleanable/blood/tracks,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/obj/machinery/door/firedoor/border_only,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
 "sj" = (
@@ -1614,13 +1633,14 @@
 /obj/machinery/light{
 	dir = 4
 	},
-/obj/structure/closet/secure_closet/lieutenant{
-	req_access_txt = "90"
-	},
 /obj/item/radio/headset/solgov/alt,
 /obj/item/pet_carrier,
 /obj/item/taperecorder,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/closet/secure_closet/lieutenant{
+	name = "signal officer's locker";
+	req_access_txt = "90"
+	},
 /turf/open/floor/wood,
 /area/ship/crew/office)
 "tT" = (
@@ -1710,21 +1730,6 @@
 	color = "#E58E2D"
 	},
 /area/ship/maintenance/port)
-"uY" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/closet/wall{
-	icon_door = "white_wall";
-	name = "culinary closet";
-	pixel_y = 28
-	},
-/obj/item/clothing/shoes/sneakers/black,
-/obj/item/clothing/under/rank/civilian/bartender,
-/obj/item/clothing/under/rank/civilian/chef,
-/obj/item/clothing/suit/toggle/chef,
-/obj/item/clothing/head/chefhat,
-/obj/item/clothing/accessory/waistcoat,
-/turf/open/floor/plating,
-/area/ship/crew/canteen)
 "va" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 8
@@ -2053,6 +2058,9 @@
 /obj/effect/decal/cleanable/blood/tracks{
 	dir = 8
 	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/medical)
 "yd" = (
@@ -2379,12 +2387,16 @@
 "Bo" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/machinery/door/airlock/solgov{
-	name = "SolGov Office"
-	},
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/machinery/door/airlock/solgov/glass{
+	name = "Signals Office"
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/obj/machinery/door/firedoor/border_only,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/crew/office)
 "Br" = (
@@ -5299,7 +5311,7 @@ yZ
 TK
 mp
 YG
-uY
+nk
 TU
 FI
 qn

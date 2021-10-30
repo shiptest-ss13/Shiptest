@@ -34,11 +34,15 @@
 "aI" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/machinery/door/airlock/solgov{
-	name = "SolGov Office"
-	},
 /obj/structure/cable{
 	icon_state = "1-2"
+	},
+/obj/machinery/door/airlock/solgov/glass{
+	name = "Signals Office"
+	},
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/crew/solgov)
@@ -437,6 +441,20 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
+"hZ" = (
+/obj/structure/closet/wall{
+	icon_door = "white_wall";
+	name = "culinary closet";
+	pixel_y = 28
+	},
+/obj/item/clothing/shoes/sneakers/black,
+/obj/item/clothing/under/rank/civilian/bartender,
+/obj/item/clothing/under/rank/civilian/chef,
+/obj/item/clothing/suit/toggle/chef,
+/obj/item/clothing/head/chefhat,
+/obj/item/clothing/accessory/waistcoat,
+/turf/open/floor/carpet/nanoweave/purple,
+/area/ship/crew/canteen)
 "ie" = (
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/firedoor/border_only{
@@ -635,20 +653,6 @@
 /obj/item/clothing/gloves/color/latex/nitrile,
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
-"kt" = (
-/obj/structure/closet/wall{
-	icon_door = "white_wall";
-	name = "culinary closet";
-	pixel_y = 28
-	},
-/obj/item/clothing/shoes/sneakers/black,
-/obj/item/clothing/under/rank/civilian/bartender,
-/obj/item/clothing/under/rank/civilian/chef,
-/obj/item/clothing/suit/toggle/chef,
-/obj/item/clothing/head/chefhat,
-/obj/item/clothing/accessory/waistcoat,
-/turf/open/floor/carpet/nanoweave/purple,
-/area/ship/crew/canteen)
 "kA" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -1495,6 +1499,7 @@
 	dir = 4
 	},
 /obj/structure/closet/secure_closet/lieutenant{
+	name = "signal officer's locker";
 	req_access_txt = "90"
 	},
 /obj/item/radio/headset/solgov/alt,
@@ -1871,6 +1876,9 @@
 	},
 /obj/machinery/door/airlock/virology/glass{
 	name = "Infirmary"
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/medical)
@@ -2539,6 +2547,12 @@
 	},
 /turf/open/floor/plating,
 /area/ship/construction)
+"Fu" = (
+/obj/structure/window/reinforced/spawner/west{
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/engineering)
 "FC" = (
 /obj/item/clothing/shoes/combat,
 /obj/item/clothing/under/solgov,
@@ -2607,12 +2621,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
-"Gm" = (
-/obj/structure/window/reinforced/spawner/west{
-	dir = 4
-	},
-/turf/open/floor/plasteel/dark,
-/area/ship/engineering)
 "Gv" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 4
@@ -3582,6 +3590,10 @@
 	},
 /obj/machinery/door/airlock/mining/glass{
 	name = "Cargo Bay"
+	},
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
@@ -4826,7 +4838,7 @@ sC
 jX
 Tq
 nj
-Gm
+Fu
 wF
 WL
 Tq
@@ -4885,7 +4897,7 @@ yZ
 TK
 mp
 YG
-kt
+hZ
 TU
 FI
 qn
