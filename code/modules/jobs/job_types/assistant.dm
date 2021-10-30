@@ -101,3 +101,9 @@ Assistant
 			uniform = /obj/item/clothing/under/dress/skirt/plaid
 		else
 			uniform = /obj/item/clothing/under/suit/beige
+
+/datum/outfit/job/assistant/pirate
+	name = "Assistant (Pirate)"
+
+	uniform = /obj/item/clothing/under/costume/sailor
+	shoes = /obj/item/clothing/shoes/jackboots

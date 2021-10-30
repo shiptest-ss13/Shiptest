@@ -110,3 +110,10 @@
 	head = /obj/item/clothing/head/hardhat/dblue
 
 //WS Edit End - Alt-Job Titles
+
+/datum/outfit/job/engineer/pirate
+	name = "Ship's Engineer (Pirate)"
+
+	uniform = /obj/item/clothing/under/costume/sailor
+	head = /obj/item/clothing/head/bandana
+	shoes = /obj/item/clothing/shoes/jackboots
