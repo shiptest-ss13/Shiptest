@@ -62,3 +62,12 @@
 	mask = /obj/item/clothing/mask/gas/atmos/captain
 	suit = /obj/item/clothing/suit/space/hardsuit/swat/captain
 	suit_store = /obj/item/tank/internals/oxygen
+
+/datum/outfit/job/captain/solgov
+	name = "Captain (SolGov)"
+	shoes = /obj/item/clothing/shoes/laceup
+	suit = /obj/item/clothing/suit/toggle/solgov
+
+/datum/outfit/job/captain/solgov
+	name = "Captain (Deserter)"
+	suit = /obj/item/clothing/suit/toggle/solgov/terragov

@@ -1489,6 +1489,20 @@
 /obj/item/taperecorder,
 /turf/open/floor/wood,
 /area/ship/crew/solgov)
+"ud" = (
+/obj/structure/closet/wall{
+	icon_door = "white_wall";
+	name = "culinary closet";
+	pixel_y = 28
+	},
+/obj/item/clothing/shoes/sneakers/black,
+/obj/item/clothing/under/rank/civilian/bartender,
+/obj/item/clothing/under/rank/civilian/chef,
+/obj/item/clothing/suit/toggle/chef,
+/obj/item/clothing/head/chefhat,
+/obj/item/clothing/accessory/waistcoat,
+/turf/open/floor/carpet/nanoweave/purple,
+/area/ship/crew/canteen)
 "ue" = (
 /obj/machinery/power/smes/shuttle/precharged{
 	dir = 1
@@ -4186,19 +4200,6 @@
 /obj/item/clothing/head/helmet/solgov,
 /turf/open/floor/carpet/nanoweave/red,
 /area/ship/security)
-"ZQ" = (
-/obj/structure/closet/wall{
-	icon_door = "white_wall";
-	name = "culinary closet";
-	pixel_y = 28
-	},
-/obj/item/clothing/shoes/sneakers/black,
-/obj/item/clothing/under/rank/civilian/bartender,
-/obj/item/clothing/under/rank/civilian/chef,
-/obj/item/clothing/suit/toggle/chef,
-/obj/item/clothing/head/chefhat,
-/turf/open/floor/carpet/nanoweave/purple,
-/area/ship/crew/canteen)
 "ZT" = (
 /obj/item/radio/intercom{
 	pixel_x = -28
@@ -4887,7 +4888,7 @@ yZ
 TK
 mp
 YG
-ZQ
+ud
 TU
 FI
 qn

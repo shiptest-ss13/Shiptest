@@ -53,3 +53,10 @@ SolGov Representative
 	backpack_contents = list(
 		/obj/item/kitchen/knife/letter_opener = 1
 	)
+
+/datum/outfit/job/solgov/rebel
+	name = "Signal Officer (Deserter)"
+	head = /obj/item/clothing/head/solgov/terragov
+	uniform = /obj/item/clothing/under/solgov/formal/terragov
+	accessory = /obj/item/clothing/accessory/waistcoat
+	suit = /obj/item/clothing/suit/toggle/solgov/terragov
