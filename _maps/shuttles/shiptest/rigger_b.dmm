@@ -101,20 +101,6 @@
 "bC" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/crew)
-"bE" = (
-/obj/structure/closet/wall{
-	icon_door = "white_wall";
-	name = "culinary closet";
-	pixel_y = 28
-	},
-/obj/item/clothing/shoes/sneakers/black,
-/obj/item/clothing/under/rank/civilian/bartender,
-/obj/item/clothing/under/rank/civilian/chef,
-/obj/item/clothing/suit/toggle/chef,
-/obj/item/clothing/head/chefhat,
-/obj/item/clothing/accessory/waistcoat,
-/turf/open/floor/carpet/nanoweave/purple,
-/area/ship/crew/canteen)
 "bO" = (
 /obj/item/radio/intercom{
 	pixel_x = -26
@@ -968,6 +954,13 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /turf/open/floor/plasteel/patterned,
 /area/ship/crew)
+"nt" = (
+/obj/effect/turf_decal/solgov{
+	dir = 8;
+	icon_state = "bottom-right"
+	},
+/turf/open/floor/carpet/nanoweave/beige,
+/area/ship/hallway/central)
 "nz" = (
 /turf/closed/wall/mineral/titanium,
 /area/ship/medical)
@@ -1320,12 +1313,6 @@
 /obj/item/tank/jetpack/carbondioxide,
 /turf/open/floor/carpet/nanoweave/beige,
 /area/ship/hallway/central)
-"rh" = (
-/obj/structure/window/reinforced/spawner/west{
-	dir = 4
-	},
-/turf/open/floor/plasteel/dark,
-/area/ship/engineering)
 "rl" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
@@ -1370,13 +1357,6 @@
 /obj/machinery/recharger,
 /turf/open/floor/carpet/nanoweave/red,
 /area/ship/security)
-"ry" = (
-/obj/effect/turf_decal/solgov{
-	dir = 8;
-	icon_state = "center-right"
-	},
-/turf/open/floor/carpet/nanoweave/beige,
-/area/ship/hallway/central)
 "rJ" = (
 /obj/machinery/airalarm/all_access{
 	pixel_y = 24
@@ -1490,6 +1470,20 @@
 	},
 /turf/open/floor/carpet/nanoweave/beige,
 /area/ship/hallway/central)
+"tl" = (
+/obj/structure/closet/wall{
+	icon_door = "white_wall";
+	name = "culinary closet";
+	pixel_y = 28
+	},
+/obj/item/clothing/shoes/sneakers/black,
+/obj/item/clothing/under/rank/civilian/bartender,
+/obj/item/clothing/under/rank/civilian/chef,
+/obj/item/clothing/suit/toggle/chef,
+/obj/item/clothing/head/chefhat,
+/obj/item/clothing/accessory/waistcoat,
+/turf/open/floor/carpet/nanoweave/purple,
+/area/ship/crew/canteen)
 "tq" = (
 /obj/structure/cable{
 	icon_state = "1-8"
@@ -1830,7 +1824,9 @@
 	dir = 5
 	},
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
-/obj/effect/turf_decal/solgov,
+/obj/effect/turf_decal/solgov{
+	dir = 8
+	},
 /turf/open/floor/carpet/nanoweave/beige,
 /area/ship/hallway/central)
 "xE" = (
@@ -2049,13 +2045,6 @@
 /obj/machinery/light/small,
 /turf/open/floor/plating,
 /area/ship/construction)
-"zP" = (
-/obj/effect/turf_decal/solgov{
-	dir = 8;
-	icon_state = "bottom-right"
-	},
-/turf/open/floor/carpet/nanoweave/beige,
-/area/ship/hallway/central)
 "zS" = (
 /obj/machinery/atmospherics/pipe/simple/orange/visible{
 	dir = 10
@@ -2166,6 +2155,13 @@
 /obj/structure/table/wood,
 /turf/open/floor/carpet/nanoweave/purple,
 /area/ship/crew/canteen)
+"Bf" = (
+/obj/effect/turf_decal/solgov{
+	dir = 8;
+	icon_state = "center-right"
+	},
+/turf/open/floor/carpet/nanoweave/beige,
+/area/ship/hallway/central)
 "Bh" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 9
@@ -2968,13 +2964,6 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security/prison)
-"Kp" = (
-/obj/effect/turf_decal/solgov{
-	dir = 8;
-	icon_state = "top-right"
-	},
-/turf/open/floor/carpet/nanoweave/beige,
-/area/ship/hallway/central)
 "Kr" = (
 /obj/effect/turf_decal/corner/neutral/half{
 	dir = 1
@@ -3119,6 +3108,13 @@
 /obj/effect/landmark/start/assistant,
 /turf/open/floor/carpet/nanoweave/purple,
 /area/ship/crew/canteen)
+"MI" = (
+/obj/effect/turf_decal/solgov{
+	dir = 8;
+	icon_state = "top-right"
+	},
+/turf/open/floor/carpet/nanoweave/beige,
+/area/ship/hallway/central)
 "MP" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -3348,6 +3344,12 @@
 "Pj" = (
 /turf/open/floor/wood,
 /area/ship/crew/solgov)
+"Pp" = (
+/obj/structure/window/reinforced/spawner/west{
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/engineering)
 "Ps" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
@@ -4643,7 +4645,7 @@ Te
 YQ
 cp
 JW
-zP
+nt
 xG
 uN
 cV
@@ -4677,7 +4679,7 @@ Fe
 QB
 ti
 xD
-ry
+Bf
 Rc
 Tq
 Dv
@@ -4711,7 +4713,7 @@ uy
 Ns
 CH
 eH
-Kp
+MI
 rg
 Tq
 Ho
@@ -4885,7 +4887,7 @@ sC
 jX
 Tq
 nj
-rh
+Pp
 wF
 WL
 Tq
@@ -4944,7 +4946,7 @@ yZ
 TK
 mp
 YG
-bE
+tl
 TU
 FI
 qn
