@@ -233,7 +233,7 @@ Code:
 <a href='byond://?src=[REF(src)];choice=Send Signal'>Send Signal</A><BR>"}
 		if (41) //crew manifest
 			menu = "<h4>[PDAIMG(notes)] Crew Manifest</h4>"
-			menu += "<center>[GLOB.data_core.get_manifest_html(monochrome=TRUE)]</center>"
+			menu += "<center>[SSjob.get_manifest_html()]</center>"
 
 
 		if (42) //status displays

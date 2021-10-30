@@ -224,3 +224,15 @@
 
 /obj/item/spear/dragonspear/update_icon_state()
 	icon_state = "[icon_prefix]0"
+
+/obj/item/spear/dragonspear/attack(atom/target, blocked = FALSE)
+	if(iscarbon(target))
+		var/mob/living/carbon/M = target
+		M.adjust_fire_stacks(3)
+		M.IgniteMob()
+		M.apply_damage(5, BURN)
+		M.adjust_bodytemperature(150)
+	if(isanimal(target))
+		var/mob/living/simple_animal/M = target
+		M.apply_damage(15, BURN)
+	..()
