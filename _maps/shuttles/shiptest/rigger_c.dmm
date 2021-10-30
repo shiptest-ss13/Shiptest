@@ -60,6 +60,21 @@
 	color = "#E58E2D"
 	},
 /area/ship/construction)
+"aW" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/closet/wall{
+	icon_door = "white_wall";
+	name = "culinary closet";
+	pixel_y = 28
+	},
+/obj/item/clothing/shoes/sneakers/black,
+/obj/item/clothing/under/rank/civilian/bartender,
+/obj/item/clothing/under/rank/civilian/chef,
+/obj/item/clothing/suit/toggle/chef,
+/obj/item/clothing/head/chefhat,
+/obj/item/clothing/accessory/waistcoat,
+/turf/open/floor/plating,
+/area/ship/crew/canteen)
 "bb" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
@@ -1031,21 +1046,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
-"nk" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/closet/wall{
-	icon_door = "white_wall";
-	name = "culinary closet";
-	pixel_y = 28
-	},
-/obj/item/clothing/shoes/sneakers/black,
-/obj/item/clothing/under/rank/civilian/bartender,
-/obj/item/clothing/under/rank/civilian/chef,
-/obj/item/clothing/suit/toggle/chef,
-/obj/item/clothing/head/chefhat,
-/obj/item/clothing/accessory/waistcoat,
-/turf/open/floor/plating,
-/area/ship/crew/canteen)
 "nm" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
@@ -2390,13 +2390,13 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/machinery/door/airlock/solgov/glass{
-	name = "Signals Office"
-	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
 	},
 /obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/airlock/solgov{
+	name = "Signals Office"
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/crew/office)
 "Br" = (
@@ -5311,7 +5311,7 @@ yZ
 TK
 mp
 YG
-nk
+aW
 TU
 FI
 qn
