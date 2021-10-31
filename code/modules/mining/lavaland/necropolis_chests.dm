@@ -2544,9 +2544,6 @@
 	marker.nodamage = FALSE
 
 /obj/item/blood_marking/tentacle_mark/on_mark_application(mob/living/target, datum/status_effect/blood_shackle/mark, had_mark)
-	if(target.anchored == FALSE && had_mark == FALSE)
-		target.anchored = TRUE
-		addtimer(CALLBACK(target.anchored = FALSE), bonus_value)
 
 //Ancient Goliath
 /obj/item/blood_marking/tentacle_mark/ancient
@@ -2669,7 +2666,7 @@
 	desc = "A mark depicting the freezing stare of a watcher."
 	icon_state = "watcher_wing"
 	denied_type = /obj/item/blood_marking/freezing_mark
-	upgrade_type = /obj/item/blood_marking/freezing_mark/icedemon/icewing
+	upgrade_type = /obj/item/blood_marking/freezing_mark/icedemon
 	bonus_value = 5
 
 /obj/item/blood_marking/freezing_mark/effect_desc()
