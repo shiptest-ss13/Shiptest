@@ -218,7 +218,6 @@
 	name = "holorecord disk"
 	desc = "Stores recorder holocalls."
 	random_color = FALSE
-	icon_state = "disk_map"
 	color = "#A7A3A6"
 	illustration = "holo"
 	obj_flags = UNIQUE_RENAME

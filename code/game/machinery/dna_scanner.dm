@@ -148,7 +148,6 @@
 //Just for transferring between genetics machines.
 /obj/item/disk/data
 	name = "DNA data disk"
-	icon_state = "disk_map"
 	illustration = "dna"
 	var/list/genetic_makeup_buffer = list()
 	var/list/mutations = list()
