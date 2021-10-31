@@ -370,9 +370,6 @@ Possible to do for anyone motivated enough:
 			if(force_answer_call && world.time > (HC.call_start_time + (HOLOPAD_MAX_DIAL_TIME / 2)))
 				HC.Answer(src)
 				break
-			if(HC.head_call && !secure)
-				HC.Answer(src)
-				break
 			if(outgoing_call)
 				HC.Disconnect(src)//can't answer calls while calling
 			else

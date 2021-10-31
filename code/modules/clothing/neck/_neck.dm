@@ -20,10 +20,26 @@
 				. += mutable_appearance('icons/effects/blood.dmi', "maskblood")
 
 /obj/item/clothing/neck/tie
-	name = "tie"
-	desc = "A neosilk clip-on tie."
+	name = "recolorable tie"
+	desc = "A neosilk clip-on tie. Special material allows it to be reskinned by Alt-clicking it."
 	icon = 'icons/obj/clothing/neck.dmi'
-	icon_state = "bluetie"
+	unique_reskin = list("blue tie" = "bluetie",
+						"red tie" = "redtie",
+						"black tie" = "blacktie",
+						"rainbow tie" = "rainbow_tie",
+						"horrible tie" = "horribletie",
+						"transgender tie" = "transgender",
+						"pansexual tie" = "pansexual",
+						"nonbinary tie" = "nonbinary",
+						"bisexual tie" = "bisexual",
+						"lesbian tie" = "lesbian",
+						"intersex tie" = "intersex",
+						"gay tie" = "gay",
+						"genderfluid tie" = "genderfluid",
+						"asexual tie" = "asexual",
+						"genderfae tie" = "genderfae"
+						)
+	icon_state = "rainbow_tie"
 	item_state = ""	//no inhands
 	w_class = WEIGHT_CLASS_SMALL
 	custom_price = 60
@@ -42,6 +58,10 @@
 	name = "black tie"
 	icon_state = "blacktie"
 
+/obj/item/clothing/neck/tie/rainbow
+	name = "rainbow tie"
+	icon_state = "rainbow_tie"
+
 /obj/item/clothing/neck/tie/horrible
 	name = "horrible tie"
 	desc = "A neosilk clip-on tie. This one is disgusting."
@@ -51,6 +71,57 @@
 	name = "loose tie"
 	desc = "A loosely tied necktie, a perfect accessory for the over-worked detective."
 	icon_state = "detective"
+	unique_reskin = null
+
+/obj/item/clothing/neck/tie/trans
+	name = "transgender tie"
+	desc = "A neosilk clip-on tie. This one is in the colors of the trans flag."
+	icon_state = "transgender"
+
+/obj/item/clothing/neck/tie/pan
+	name = "pansexual tie"
+	desc = "A neosilk clip-on tie. This one is in the colors of the pansexual flag."
+	icon_state = "pansexual"
+
+/obj/item/clothing/neck/tie/enby
+	name = "nonbinary tie"
+	desc = "A neosilk clip-on tie. This one is in the colors of the nonbinary flag."
+	icon_state = "nonbinary"
+
+/obj/item/clothing/neck/tie/bi
+	name = "bisexual tie"
+	desc = "A neosilk clip-on tie. This one is in the colors of the bisexual flag."
+	icon_state = "bisexual"
+
+/obj/item/clothing/neck/tie/lesbian
+	name = "lesbian tie"
+	desc = "A neosilk clip-on tie. This one is in the colors of the lesbian flag."
+	icon_state = "lesbian"
+
+/obj/item/clothing/neck/tie/intersex
+	name = "intersex tie"
+	desc = "A neosilk clip-on tie. This one is in the colors of the intersex flag."
+	icon_state = "intersex"
+
+/obj/item/clothing/neck/tie/gay
+	name = "gay tie"
+	desc = "A neosilk clip-on tie. This one is in the colors of the gay flag."
+	icon_state = "gay"
+
+/obj/item/clothing/neck/tie/genderfluid
+	name = "genderfluid tie"
+	desc = "A neosilk clip-on tie. This one is in the colors of the genderfluid flag."
+	icon_state = "genderfluid"
+
+/obj/item/clothing/neck/tie/asexual
+	name = "asexual tie"
+	desc = "A neosilk clip-on tie. This one is in the colors of the asexual flag."
+	icon_state = "asexual"
+
+/obj/item/clothing/neck/tie/genderfae
+	name = "genderfae tie"
+	desc = "A neosilk clip-on tie. This one is in the colors of the genderfae flag."
+	icon_state = "genderfae"
 
 /obj/item/clothing/neck/stethoscope
 	name = "stethoscope"
