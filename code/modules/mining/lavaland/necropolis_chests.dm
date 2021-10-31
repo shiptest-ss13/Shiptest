@@ -2543,8 +2543,6 @@
 	marker.damage = bonus_value
 	marker.nodamage = FALSE
 
-/obj/item/blood_marking/tentacle_mark/on_mark_application(mob/living/target, datum/status_effect/blood_shackle/mark, had_mark)
-
 //Ancient Goliath
 /obj/item/blood_marking/tentacle_mark/ancient
 	name = "Mark of Tentacles"
