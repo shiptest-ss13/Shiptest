@@ -46,9 +46,10 @@
 	move_force = MOVE_FORCE_DEFAULT
 	move_resist = MOVE_RESIST_DEFAULT
 	pull_force = PULL_FORCE_DEFAULT
-	..(gibbed)
 	if(prob(15))
 		new /obj/item/crusher_trophy/shiny(loc)
+		visible_message("<span class='warning'>You notice a glimmering nugget of shiny metal.</span>")
+	..()
 
 /mob/living/simple_animal/hostile/asteroid/whitesands/survivor
 	name = "Hermit Wanderer"
@@ -87,6 +88,7 @@
 	icon_state = "survivor_gunslinger"
 	icon_living = "survivor_gunslinger"
 	projectilesound = 'sound/weapons/gun/smg/shot.ogg'
+	speed = 10
 	rapid = 4
 	rapid_fire_delay = 3
 	casingtype = /obj/item/ammo_casing/ballistic/a545_39/recycled

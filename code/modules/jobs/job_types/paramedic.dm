@@ -49,3 +49,10 @@
 	name = "Paramedic (Emergency Medical Technician)"
 
 	uniform = /obj/item/clothing/under/rank/medical/paramedic/emt
+
+/datum/outfit/job/paramedic/traumateam
+	name = "Paramedic (Trauma Team Technician)"
+
+	uniform = /obj/item/clothing/under/rank/security/brig_phys
+	shoes = /obj/item/clothing/shoes/combat
+	backpack = /obj/item/storage/backpack/ert/medical

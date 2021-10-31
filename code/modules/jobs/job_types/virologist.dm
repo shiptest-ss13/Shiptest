@@ -9,7 +9,6 @@
 	exp_type = EXP_TYPE_CREW
 	exp_requirements = 60
 	wiki_page = "Infections" //WS Edit - Wikilinks/Warning
-	special_notice = "Don't release viruses, harmful or not, without the CMO's permission." //WS Edit - Wikilinks/Warning
 
 	outfit = /datum/outfit/job/virologist
 

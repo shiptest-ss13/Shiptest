@@ -10,14 +10,13 @@
 	exp_requirements = 120
 	exp_type = EXP_TYPE_CREW
 	wiki_page = "Cyborg" //WS Edit - Wikilinks/Warning
-	special_notice = "Your laws take precedence over everything, including space law and past objectives. Do NOT break them." //WS Edit - Wikilinks/Warning
 
 	display_order = JOB_DISPLAY_ORDER_CYBORG
 
-/datum/job/cyborg/equip(mob/living/carbon/human/H, visualsOnly = FALSE, announce = TRUE, latejoin = FALSE, datum/outfit/outfit_override = null, client/preference_source = null)
+/datum/job/cyborg/equip(mob/living/carbon/human/H, visualsOnly = FALSE, announce = TRUE, datum/outfit/outfit_override = null, client/preference_source = null)
 	if(visualsOnly)
 		CRASH("dynamic preview is unsupported")
-	return H.Robotize(FALSE, latejoin)
+	return H.Robotize(FALSE, TRUE)
 
 /datum/job/cyborg/after_spawn(mob/living/silicon/robot/R, mob/M)
 	R.updatename(M.client)
