@@ -36,6 +36,7 @@
 	move_resist = MOVE_FORCE_VERY_STRONG
 	pull_force = MOVE_FORCE_VERY_STRONG
 	gender = MALE //lavaland elite goliath says that it s female and i s stronger because of sexual dimorphism, so normal goliaths should be male
+	var/can_charge = TRUE
 	var/pre_attack = 0
 	var/pre_attack_icon = "Goliath_preattack"
 	var/tentacle_type = /obj/effect/temp_visual/goliath_tentacle
@@ -215,7 +216,7 @@
 		ranged_cooldown = world.time + ranged_cooldown_time
 		icon_state = icon_aggro
 		pre_attack = 0
-	else if(dist <= charge_range)		//Screen range check, so you can't get charged offscreen
+	else if(dist <= charge_range && can_charge)		//Screen range check, so you can't get charged offscreen
 		charge()
 
 /mob/living/simple_animal/hostile/asteroid/goliath/beast/attackby(obj/item/O, mob/user, params)
@@ -374,7 +375,7 @@
 
 /mob/living/simple_animal/hostile/asteroid/goliath/beast/ancient/crystal
 	name = "crystal goliath"
-	desc = "Deformed, twisted, misshaped. Once it was a goliath now it is an abomination composed of dead goliath flesh and crystals that sprouted throught it's decomposing body."
+	desc = "Once it was a goliath now it is an abomination composed of dead goliath flesh and crystals that sprouted throught it's decomposing body."
 	icon = 'icons/mob/lavaland/lavaland_monsters.dmi'
 	icon_state = "crystal_goliath"
 	icon_living = "crystal_goliath"
@@ -385,6 +386,7 @@
 	tentacle_type = /obj/effect/temp_visual/goliath_tentacle/crystal
 	tentacle_recheck_cooldown = 50
 	speed = 2
+	can_charge = FALSE
 
 /mob/living/simple_animal/hostile/asteroid/goliath/beast/ancient/crystal/OpenFire()
 	. = ..()

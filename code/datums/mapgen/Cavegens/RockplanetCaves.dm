@@ -9,14 +9,16 @@
 	mob_spawn_chance = 3
 	flora_spawn_chance = 6
 
-	mob_spawn_list = list(/mob/living/simple_animal/hostile/asteroid/goliath = 20,
-		/mob/living/simple_animal/hostile/netherworld/asteroid = 10,
-//		/mob/living/simple_animal/hostile/ooze/grapes/asteroid = 20,
+	mob_spawn_list = list(
+		//'regular' fauna, not too difficult
+		/mob/living/simple_animal/hostile/netherworld/asteroid = 30,
 		/mob/living/simple_animal/hostile/asteroid/fugu = 30,
-		/mob/living/simple_animal/hostile/asteroid/basilisk = 40,
-		/mob/living/simple_animal/hostile/asteroid/hivelord = 50,
-		/mob/living/simple_animal/hostile/netherworld/migo/asteroid = 10,
-		/mob/living/simple_animal/hostile/alien/asteroid = 20,
+		/mob/living/simple_animal/hostile/netherworld/migo/asteroid = 20, //mariuce
+		//crystal mobs, very difficult
+		/mob/living/simple_animal/hostile/asteroid/goliath/beast/ancient/crystal = 5,
+		/mob/living/simple_animal/hostile/asteroid/basilisk/watcher/forgotten = 5,
+		/mob/living/simple_animal/hostile/asteroid/hivelord/legion/crystal = 5,
+		//bots, are hostile
 		/mob/living/simple_animal/bot/medbot/rockplanet = 5,
 		/mob/living/simple_animal/bot/secbot/ed209/rockplanet = 5,
 		/mob/living/simple_animal/bot/floorbot/rockplanet = 5)

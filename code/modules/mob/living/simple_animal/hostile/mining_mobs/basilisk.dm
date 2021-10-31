@@ -13,7 +13,7 @@
 	icon_gib = "syndicate_gib"
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
 	move_to_delay = 20
-	projectiletype = /obj/projectile/temp/basilisk_cold
+	projectiletype = /obj/projectile/temp/basilisk
 	projectilesound = 'sound/weapons/pierce.ogg'
 	ranged = 1
 	ranged_message = "stares"
@@ -39,7 +39,7 @@
 	var/lava_drinker = TRUE
 	var/warmed_up = FALSE
 
-/obj/projectile/temp/basilisk_cold
+/obj/projectile/temp/basilisk
 	name = "freezing blast"
 	icon_state = "ice_2"
 	damage = 0
@@ -48,32 +48,22 @@
 	flag = "energy"
 	temperature = -50 // Cools you down! per hit!
 
-/obj/projectile/temp/basilisk_cold/on_hit(atom/target, blocked = 0)
+/obj/projectile/temp/basilisk/super
+	temperature = -100
+
+/obj/projectile/temp/basilisk/super/on_hit(atom/target, blocked)
 	. = ..()
 	if(isliving(target))
-		var/mob/living/M = target
-		M.apply_status_effect(STATUS_EFFECT_METAB_FROZEN)
+		var/mob/living/living_target = target
+		living_target.Jitter(5)
 
-/obj/projectile/temp/basilisk_heat
+/obj/projectile/temp/basilisk/heated
 	name = "energy blast"
 	icon_state= "chronobolt"
 	damage = 40
 	damage_type = BRUTE
 	nodamage = FALSE
-	flag = "energy"
-	temperature = 50
-
-/obj/projectile/temp/basilisk_heat/on_hit(atom/target, blocked)
-	. = ..()
-	if(ishuman(target))
-		var/mob/living/carbon/human/H = target
-		for(var/vir in H.diseases)
-			var/datum/disease/D = vir
-			if(D.type == LEGIONVIRUS_TYPE)
-				D.cure()
-				break
-
-
+	temperature = 0
 
 /mob/living/simple_animal/hostile/asteroid/basilisk/GiveTarget(new_target)
 	if(..()) //we have a target
@@ -99,7 +89,7 @@
 			icon_state = "Basilisk_alert"
 			set_varspeed(0)
 			warmed_up = TRUE
-			projectiletype = /obj/projectile/temp/basilisk_heat
+			projectiletype = /obj/projectile/temp/basilisk/heated
 			addtimer(CALLBACK(src, .proc/cool_down), 3000)
 
 /mob/living/simple_animal/hostile/asteroid/basilisk/proc/cool_down()
@@ -108,7 +98,7 @@
 		icon_state = "Basilisk"
 	set_varspeed(3)
 	warmed_up = FALSE
-	projectiletype = /obj/projectile/temp/basilisk_cold
+	projectiletype = /obj/projectile/temp/basilisk
 
 /******************************************
 		New whitesands varient
@@ -168,7 +158,7 @@
 
 /mob/living/simple_animal/hostile/asteroid/basilisk/whitesands/heat
 	name = "glowing basilisk"
-	projectiletype = /obj/projectile/temp/basilisk_heat
+	projectiletype = /obj/projectile/temp/basilisk/heated
 
 #undef BULLET_SHELL_DAMAGE
 #undef LEGIONVIRUS_TYPE
@@ -320,7 +310,7 @@
 
 /mob/living/simple_animal/hostile/asteroid/basilisk/watcher/forgotten
 	name = "forgotten watcher"
-	desc = "Corrupted, twisted, slaughtered, this watcher has seen the comet in it's full glory forever scarring it and deforming it into this twisted form."
+	desc = "This watcher has a cancerous crystal growth on it, forever scarring it and deforming it into this twisted form."
 	icon_state = "forgotten"
 	icon_living = "forgotten"
 	icon_aggro = "forgotten"

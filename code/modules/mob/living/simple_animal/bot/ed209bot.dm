@@ -29,14 +29,15 @@
 	remote_disabled = 1
 	locked = TRUE
 
+/mob/living/simple_animal/bot/secbot/ed209/rockplanet/stun_attack(atom/A)
+	if(!on)
+		return
+	shootAt(A)
+
 /mob/living/simple_animal/bot/secbot/ed209/Initialize(mapload)
 	. = ..()
 	set_weapon()
 
-/mob/living/simple_animal/bot/secbot/ed209/rockplanet/UnarmedAttack(atom/A)
-	if(!on)
-		return
-	shootAt(A)
 
 /mob/living/simple_animal/bot/secbot/ed209/bot_reset()
 	..()
