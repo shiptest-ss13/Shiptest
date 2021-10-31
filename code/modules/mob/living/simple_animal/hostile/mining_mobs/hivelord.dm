@@ -33,15 +33,17 @@
 	pass_flags = PASSTABLE
 	loot = list(/obj/item/organ/regenerative_core)
 	var/brood_type = /mob/living/simple_animal/hostile/asteroid/hivelordbrood
+	var/difficulty = 1
 
 /mob/living/simple_animal/hostile/asteroid/hivelord/OpenFire(the_target)
 	if(world.time >= ranged_cooldown)
-		var/mob/living/simple_animal/hostile/asteroid/hivelordbrood/A = new brood_type(src.loc)
+		for(var/i in 1 to difficulty)
+			var/mob/living/simple_animal/hostile/asteroid/hivelordbrood/A = new brood_type(get_turf(src),src)
 
-		A.flags_1 |= (flags_1 & ADMIN_SPAWNED_1)
-		A.GiveTarget(target)
-		A.friends = friends
-		A.faction = faction.Copy()
+			A.flags_1 |= (flags_1 & ADMIN_SPAWNED_1)
+			A.GiveTarget(target)
+			A.friends = friends
+			A.faction = faction.Copy()
 		ranged_cooldown = world.time + ranged_cooldown_time
 
 /mob/living/simple_animal/hostile/asteroid/hivelord/AttackingTarget()
@@ -87,9 +89,11 @@
 	pass_flags = PASSTABLE | PASSMOB
 	density = FALSE
 	del_on_death = 1
+	var/mob/source
 
-/mob/living/simple_animal/hostile/asteroid/hivelordbrood/Initialize()
+/mob/living/simple_animal/hostile/asteroid/hivelordbrood/Initialize(_source)
 	. = ..()
+	source = source
 	addtimer(CALLBACK(src, .proc/death), 100)
 	AddComponent(/datum/component/swarming)
 
@@ -503,3 +507,30 @@
 	icon_living = "snowlegion_head"
 	icon_aggro = "snowlegion_head"
 	icon_dead = "snowlegion_head"
+
+/mob/living/simple_animal/hostile/asteroid/hivelord/legion/crystal
+	name = "disfigured legion"
+	desc = "Disfifured, contorted, corrupted. This thing was once part of the legion, now it has a diffrent vile and twisted allegiance."
+	icon_state = "disfigured_legion"
+	icon_living = "disfigured_legion"
+	icon_aggro = "disfigured_legion"
+	icon_dead = "disfigured_legion"
+	difficulty = 2
+	brood_type = /mob/living/simple_animal/hostile/asteroid/hivelordbrood/legion/crystal
+
+/mob/living/simple_animal/hostile/asteroid/hivelordbrood/legion/crystal
+	name = "disfigured legion"
+	desc = "Once of none."
+	icon_state = "disfigured_legion_head"
+	icon_living = "disfigured_legion_head"
+	icon_aggro = "disfigured_legion_head"
+	icon_dead = "disfigured_legion_head"
+
+
+/mob/living/simple_animal/hostile/asteroid/hivelordbrood/legion/crystal/death(gibbed)
+	for(var/i in 0 to 5)
+		var/obj/projectile/P = new /obj/projectile/goliath(get_turf(src))
+		P.preparePixelProjectile(get_step(src, pick(GLOB.alldirs)), get_turf(src))
+		P.firer = source
+		P.fire(i*(360/5))
+	return ..()
