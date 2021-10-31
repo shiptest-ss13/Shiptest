@@ -34,6 +34,7 @@
 	Confusing them with Ash Walkers (the similarly lizard-like natives of the Lavaland Wastes) might lead to having a spear lodged in your skull."
 
 	ass_image = 'icons/ass/asslizard.png'
+	var/datum/action/innate/lizlighter/lizlighter
 
 /datum/species/lizard/on_species_loss(mob/living/carbon/C)
 	if(lizlighter)
