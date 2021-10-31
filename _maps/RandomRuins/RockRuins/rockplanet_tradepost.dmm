@@ -15,9 +15,10 @@
 /turf/open/floor/plating/rust,
 /area/rockplanet/surface/outdoors)
 "cL" = (
-/obj/structure/cable,
-/obj/effect/decal/fakelattice,
-/turf/open/floor/plating/asteroid,
+/obj/structure/cable{
+	icon_state = "2-5"
+	},
+/turf/open/floor/plating,
 /area/rockplanet/surface/outdoors)
 "em" = (
 /obj/structure/chair/plastic,
@@ -65,7 +66,6 @@
 /area/rockplanet/surface/outdoors)
 "kF" = (
 /obj/structure/closet/crate/bin,
-/obj/structure/cable,
 /turf/open/floor/plating,
 /area/rockplanet/surface/outdoors)
 "kU" = (
@@ -171,8 +171,17 @@
 /obj/item/bot_assembly/medbot,
 /turf/open/floor/plating/asteroid,
 /area/rockplanet/surface/outdoors)
+"yd" = (
+/obj/structure/statue/sandstone/assistant,
+/obj/structure/cable{
+	icon_state = "4-9"
+	},
+/turf/open/floor/plating/asteroid,
+/area/rockplanet/surface/outdoors)
 "ze" = (
-/obj/structure/cable,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plating,
 /area/rockplanet/surface/outdoors)
 "zq" = (
@@ -197,12 +206,16 @@
 /area/rockplanet/surface/outdoors)
 "Ba" = (
 /obj/structure/door_assembly/door_assembly_highsecurity,
-/obj/structure/cable,
+/obj/structure/cable{
+	icon_state = "6-8"
+	},
 /turf/open/floor/plating/rust,
 /area/rockplanet/surface/outdoors)
 "BE" = (
 /obj/structure/door_assembly/door_assembly_hatch,
-/obj/structure/cable,
+/obj/structure/cable{
+	icon_state = "1-6"
+	},
 /turf/open/floor/plating,
 /area/rockplanet/surface/outdoors)
 "Cf" = (
@@ -245,6 +258,13 @@
 /obj/structure/window/shuttle,
 /turf/open/floor/pod/light,
 /area/rockplanet/surface/outdoors)
+"IU" = (
+/obj/machinery/power/floodlight,
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/turf/open/floor/plating/asteroid,
+/area/rockplanet/surface/outdoors)
 "IZ" = (
 /obj/effect/decal/cleanable/robot_debris,
 /turf/open/floor/plating/asteroid,
@@ -285,7 +305,9 @@
 /turf/open/floor/plating,
 /area/rockplanet/surface/outdoors)
 "OZ" = (
-/obj/structure/cable,
+/obj/structure/cable{
+	icon_state = "4-10"
+	},
 /turf/open/floor/plating/rust,
 /area/rockplanet/surface/outdoors)
 "PS" = (
@@ -311,8 +333,10 @@
 /turf/open/floor/carpet/red,
 /area/rockplanet/surface/outdoors)
 "RE" = (
-/obj/structure/cable,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/cable{
+	icon_state = "2-9"
+	},
 /turf/open/floor/plating,
 /area/rockplanet/surface/outdoors)
 "Sn" = (
@@ -479,10 +503,10 @@ De
 Ue
 em
 nw
-Sn
+cL
 ze
 BE
-cL
+Hm
 Hm
 Tk
 Lm
@@ -496,10 +520,10 @@ De
 Ue
 tm
 OZ
-RE
+MR
 kF
 nV
-iy
+yd
 Ya
 Tk
 Lm
@@ -516,7 +540,7 @@ Ba
 nV
 nV
 nV
-np
+IU
 Ya
 CC
 Lm
@@ -529,7 +553,7 @@ De
 (11,1,1) = {"
 Ue
 gy
-ze
+Sn
 RE
 en
 nV

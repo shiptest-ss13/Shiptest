@@ -77,6 +77,13 @@
 "kh" = (
 /turf/closed/wall/mineral/wood,
 /area/ruin/unpowered)
+"lv" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
+/turf/open/floor/wood,
+/area/ruin/unpowered)
 "lN" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/stairs/east,
@@ -272,6 +279,9 @@
 /area/ruin/unpowered)
 "PI" = (
 /obj/structure/closet/crate/secure/weapon,
+/obj/item/gun/energy/laser,
+/obj/item/gun/energy/laser,
+/obj/item/gun/energy/laser,
 /turf/open/floor/wood,
 /area/ruin/unpowered)
 "Qq" = (
@@ -283,6 +293,10 @@
 /area/ruin/unpowered)
 "Sk" = (
 /obj/structure/safe,
+/obj/item/gun/ballistic/shotgun/lethal,
+/obj/item/gun/ballistic/shotgun/lethal,
+/obj/item/gun/ballistic/shotgun/lethal,
+/obj/item/gun/grenadelauncher,
 /turf/open/floor/wood,
 /area/ruin/unpowered)
 "SA" = (
@@ -330,6 +344,7 @@
 "Wk" = (
 /obj/structure/closet/crate/critter,
 /obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/parrot/Poly,
 /turf/open/floor/wood,
 /area/ruin/unpowered)
 "Wp" = (
@@ -420,7 +435,7 @@ Kl
 Qq
 "}
 (4,1,1) = {"
-rc
+lv
 rc
 tw
 tG

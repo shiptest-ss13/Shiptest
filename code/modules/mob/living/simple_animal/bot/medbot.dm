@@ -74,6 +74,14 @@
 	skin = "bezerk"
 	heal_amount = 10
 
+/mob/living/simple_animal/bot/medbot/rockplanet
+	name = "\improper Abandoned Medibot"
+	desc = "A little medical robot. They look like they have some sort of bloodlust in their eyes."
+	skin = "evil"
+	emagged = 2
+	remote_disabled = 1
+	locked = TRUE
+
 /mob/living/simple_animal/bot/medbot/derelict
 	name = "\improper Old Medibot"
 	desc = "Looks like it hasn't been modified since the late 2080s."
@@ -106,7 +114,8 @@
 	access_card.access += J.get_access()
 	prev_access = access_card.access
 	qdel(J)
-	skin = new_skin
+	if(new_skin)
+		skin = new_skin
 	update_icon()
 
 /mob/living/simple_animal/bot/medbot/Destroy()
