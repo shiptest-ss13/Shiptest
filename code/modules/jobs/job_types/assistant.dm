@@ -74,3 +74,9 @@ Assistant
 /datum/outfit/job/assistant/engineeringspecialist
 	name = "Assistant (Deckhand)"
 	accessory = /obj/item/clothing/accessory/armband/cargo
+
+/datum/outfit/job/assistant/pirate
+	name = "Assistant (Pirate)"
+
+	uniform = /obj/item/clothing/under/costume/sailor
+	shoes = /obj/item/clothing/shoes/jackboots

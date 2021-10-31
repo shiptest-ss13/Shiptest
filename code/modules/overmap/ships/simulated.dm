@@ -99,6 +99,7 @@
 /**
   * Docks the shuttle by requesting a port at the requested spot.
   * * to_dock - The [/obj/structure/overmap] to dock to.
+  * * dock_to_use - The [/obj/docking_port/mobile] to dock to.
   */
 /obj/structure/overmap/ship/simulated/proc/dock(obj/structure/overmap/to_dock, obj/docking_port/stationary/dock_to_use)
 	shuttle.request(dock_to_use)
@@ -127,6 +128,18 @@
 	addtimer(CALLBACK(src, .proc/complete_dock), shuttle.ignitionTime + 1 SECONDS)
 	state = OVERMAP_SHIP_UNDOCKING
 	return "Beginning undocking procedures..."
+
+/**
+  * Docks to an empty dynamic encounter. Used for intership interaction, structural modifications, and such
+  * * user - The user that initiated the action
+  */
+/obj/structure/overmap/ship/simulated/proc/dock_in_empty_space(mob/user)
+	var/obj/structure/overmap/dynamic/empty/E
+	E = locate() in get_turf(src)
+	if(!E)
+		E = new(get_turf(src))
+	if(E)
+		return overmap_object_act(user, E)
 
 /obj/structure/overmap/ship/simulated/burn_engines(n_dir = null, percentage = 100)
 	if(state != OVERMAP_SHIP_FLYING)

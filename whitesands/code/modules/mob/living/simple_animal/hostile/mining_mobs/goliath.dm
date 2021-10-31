@@ -35,7 +35,7 @@
 	move_force = MOVE_FORCE_VERY_STRONG
 	move_resist = MOVE_FORCE_VERY_STRONG
 	pull_force = MOVE_FORCE_VERY_STRONG
-	gender = MALE//lavaland elite goliath says that i'''' 't s female and i ''t s stronger because of sexual dimorphism, so normal goliaths should be male
+	gender = MALE//lavaland elite goliath says that it's female and it's stronger because of sexual dimorphism, so normal goliaths should be male
 	var/pre_attack = 0
 	var/pre_attack_icon = "Goliath_preattack"
 	loot = list(/obj/item/stack/sheet/animalhide/goliath_hide)
@@ -65,10 +65,13 @@
 		pull_force = MOVE_FORCE_VERY_STRONG
 		. = 1
 
-/mob/living/simple_animal/hostile/asteroid/goliath/gib()
+/mob/living/simple_animal/hostile/asteroid/goliath/death(gibbed)
 	move_force = MOVE_FORCE_DEFAULT
 	move_resist = MOVE_RESIST_DEFAULT
 	pull_force = PULL_FORCE_DEFAULT
+	..()
+
+/mob/living/simple_animal/hostile/asteroid/goliath/gib()
 	if(prob(1))//goliaths eat rocks and thus have a tiny chance to contain a number of gems
 		new /obj/item/gem/rupee(loc)
 		visible_message("<span class='warning'>A glittering object falls out of [src]'s hide!</span>")
@@ -258,7 +261,7 @@
 	crusher_loot = /obj/item/crusher_trophy/elder_tentacle
 	pre_attack_icon = "Goliath_preattack"
 	throw_message = "does nothing to the rocky hide of the"
-	guaranteed_butcher_results = list()
+	guaranteed_butcher_results = list(/obj/item/stack/sheet/animalhide/goliath_hide = 4)
 	crusher_drop_mod = 75
 	wander = FALSE
 	bonus_tame_chance = 10

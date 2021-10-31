@@ -31,12 +31,12 @@ standards:
   - exactly: [4, '/mob text paths', '"/mob']
   - exactly: [53, '/obj text paths', '"/obj']
   - exactly: [0, '/turf text paths', '"/turf']
-  - exactly: [126, 'text2path uses', 'text2path']
+  - exactly: [127, 'text2path uses', 'text2path']
 
   - exactly: [22, 'world<< uses', 'world[ \t]*<<']
   - exactly: [0, 'world.log<< uses', 'world.log[ \t]*<<']
 
-  - exactly: [307, 'non-bitwise << uses', '(?<!\d)(?<!\d\s)(?<!<)<<(?!=|\s\d|\d|<|\/)']
+  - exactly: [306, 'non-bitwise << uses', '(?<!\d)(?<!\d\s)(?<!<)<<(?!=|\s\d|\d|<|\/)']
   - exactly: [0, 'incorrect indentations', '^(?:  +)(?!\*)']
   - exactly: [0, 'superflous whitespace', '[ \t]+$']
   - exactly: [36, 'mixed indentation', '^( +\t+|\t+ +)']
