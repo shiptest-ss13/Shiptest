@@ -2170,8 +2170,6 @@
 /obj/item/tracked/blood_blessing/activated/get_kills_tracked(mob/living/L)
 //The bread and butter of the item, please only add lists needed to get new marks to not overbloat this further.
 	var/datum/status_effect/hunters_oath/effect = curse_owner.has_status_effect(STATUS_EFFECT_HUNTERS_OATH)
-	effect.last_kill = world.time
-	effect.blood_thirst = 0
 	var/bonus_mod = 0
 	if(istype(L, /mob/living/simple_animal/hostile/asteroid) || ismegafauna(L) && !istype(L, /mob/living/simple_animal/hostile/asteroid/hivelordbrood) && !istype(L, /mob/living/simple_animal/hostile/asteroid/goldgrub)) //Excludes anything else
 		bonus_mod = 1
