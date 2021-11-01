@@ -156,11 +156,13 @@
 	name = "Strange Ship"
 	description = "A ship seemingly lost, drifting along the stars. This thing looks like it belongs in ancient times."
 
+/* shiptest: Replaced with dark_glade ruin
 /datum/map_template/ruin/space/way_home
 	id = "way-home"
 	suffix = "way_home.dmm"
 	name = "Salvation"
 	description = "In the darkest times, we will find our way home."
+*/
 
 /datum/map_template/ruin/space/djstation
 	id = "djstation"

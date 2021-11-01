@@ -126,7 +126,7 @@
 	var/dwarf_mob = FALSE
 	var/mob/living/carbon/human/stored_mob
 
-/mob/living/simple_animal/hostile/asteroid/hivelord/legion/gib()
+/mob/living/simple_animal/hostile/asteroid/hivelord/legion/death(gibbed)
 	move_force = MOVE_FORCE_DEFAULT
 	move_resist = MOVE_RESIST_DEFAULT
 	pull_force = PULL_FORCE_DEFAULT
@@ -175,7 +175,7 @@
 /mob/living/simple_animal/hostile/asteroid/hivelord/legion/tendril
 	fromtendril = TRUE
 
-/mob/living/simple_animal/hostile/asteroid/hivelord/legion/dwarf/gib()
+/mob/living/simple_animal/hostile/asteroid/hivelord/legion/dwarf/death(gibbed)
 	move_force = MOVE_FORCE_DEFAULT
 	move_resist = MOVE_RESIST_DEFAULT
 	pull_force = PULL_FORCE_DEFAULT
@@ -369,7 +369,7 @@
 				l_pocket = /obj/item/kitchen/knife/combat/bone
 		if("Soldier")
 			mob_species = /datum/species/human
-			if(prob(85))
+			if(prob(60))
 				uniform = /obj/item/clothing/under/solgov
 				suit = /obj/item/clothing/suit/armor/vest/solgov
 				shoes = /obj/item/clothing/shoes/jackboots
@@ -384,16 +384,15 @@
 				gloves = /obj/item/clothing/gloves/combat
 				mask = /obj/item/clothing/mask/gas/sechailer/swat
 				id = /obj/item/card/id/solgov/elite
-			if(prob(5))
-				back = pickweight(list(/obj/item/storage/backpack = 95, /obj/item/gun/ballistic/shotgun/automatic = 5))
+			back = pickweight(list(/obj/item/storage/backpack = 85, /obj/item/gun/ballistic/shotgun/automatic = 5, /obj/item/gun/energy/laser/terra = 10))
 			if(prob(25))
 				belt = /obj/item/storage/belt/military
 			if(prob(50))
-				r_pocket = pickweight(list(/obj/item/reagent_containers/hypospray/medipen/stimpack/traitor = 1, /obj/item/kitchen/knife/combat = 4, /obj/item/radio/off = 4, /obj/item/grenade/syndieminibomb/concussion = 1, /obj/item/melee/transforming/energy/ctf/solgov = 1))
+				r_pocket = pickweight(list(/obj/item/reagent_containers/hypospray/medipen/stimpack/traitor = 1, /obj/item/kitchen/knife/combat = 3, /obj/item/radio/off = 3, /obj/item/grenade/syndieminibomb/concussion = 1, /obj/item/melee/transforming/energy/ctf/solgov = 1))
 			if(prob(50))
-				l_pocket = pickweight(list(/obj/item/reagent_containers/hypospray/medipen/stimpack/traitor = 1, /obj/item/kitchen/knife/combat = 4, /obj/item/radio/off = 4, /obj/item/grenade/syndieminibomb/concussion = 1, /obj/item/melee/transforming/energy/ctf/solgov = 1))
+				l_pocket = pickweight(list(/obj/item/reagent_containers/hypospray/medipen/stimpack/traitor = 1, /obj/item/kitchen/knife/combat = 3, /obj/item/radio/off = 3, /obj/item/grenade/syndieminibomb/concussion = 1, /obj/item/melee/transforming/energy/ctf/solgov = 1))
 			if(prob(70))
-				glasses = pickweight(list(/obj/item/clothing/glasses/sunglasses = 4, /obj/item/clothing/glasses/hud/health = 3, /obj/item/clothing/glasses/hud/health/night = 1, /obj/item/clothing/glasses/night = 2))
+				glasses = pickweight(list(/obj/item/clothing/glasses/sunglasses = 3, /obj/item/clothing/glasses/hud/health = 3, /obj/item/clothing/glasses/hud/health/night = 1, /obj/item/clothing/glasses/night = 2))
 		//WS Edit Start - Kobold
 		if("Kobold")
 			mob_species = /datum/species/lizard/ashwalker/kobold
