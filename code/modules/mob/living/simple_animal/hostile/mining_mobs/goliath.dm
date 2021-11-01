@@ -67,10 +67,13 @@
 		pull_force = MOVE_FORCE_VERY_STRONG
 		. = 1
 
-/mob/living/simple_animal/hostile/asteroid/goliath/gib()
+/mob/living/simple_animal/hostile/asteroid/goliath/death(gibbed)
 	move_force = MOVE_FORCE_DEFAULT
 	move_resist = MOVE_RESIST_DEFAULT
 	pull_force = PULL_FORCE_DEFAULT
+	..()
+
+/mob/living/simple_animal/hostile/asteroid/goliath/gib()
 	if(prob(1))//goliaths eat rocks and thus have a tiny chance to contain a number of gems
 		new /obj/item/gem/rupee(loc)
 		visible_message("<span class='warning'>A glittering object falls out of [src]'s hide!</span>")
@@ -157,7 +160,7 @@
 	pre_attack_icon = "goliath2"
 	crusher_loot = /obj/item/crusher_trophy/goliath_tentacle
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/goliath = 2, /obj/item/stack/sheet/bone = 2, /obj/item/stack/sheet/sinew = 2, /obj/item/stack/ore/silver = 10)
-	guaranteed_butcher_results = list(/obj/item/stack/sheet/animalhide/goliath_hide = 1)
+	guaranteed_butcher_results = list(/obj/item/stack/sheet/animalhide/goliath_hide = 4)
 	loot = list()
 	stat_attack = UNCONSCIOUS
 	robust_searching = 1
