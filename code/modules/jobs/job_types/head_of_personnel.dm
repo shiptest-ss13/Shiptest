@@ -71,6 +71,12 @@
 	shoes = /obj/item/clothing/shoes/laceup
 	head = /obj/item/clothing/head/collectable/HoP
 
+/datum/outfit/job/head_of_personnel/solgov
+	name = "Executive Officer (SolGov)"
+	uniform = /obj/item/clothing/under/rank/command/lieutenant
+	head = /obj/item/clothing/head/solgov
+	shoes = /obj/item/clothing/shoes/laceup
+
 /datum/outfit/job/head_of_personnel/pirate
 	name = "First Mate (Pirate)"
 	uniform = /obj/item/clothing/under/costume/russian_officer

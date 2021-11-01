@@ -476,7 +476,11 @@
 /obj/machinery/computer/cryopod{
 	pixel_y = 27
 	},
-/obj/machinery/cryopod/latejoin,
+/obj/machinery/cryopod/latejoin/reskinnable{
+	close_state = "bscanner_green";
+	icon_state = "bscanner_open";
+	open_state = "bscanner_open"
+	},
 /turf/open/floor/carpet/royalblue,
 /area/ship/crew/dorm)
 "bG" = (

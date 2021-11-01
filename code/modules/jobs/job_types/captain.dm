@@ -64,6 +64,11 @@
 	shoes = /obj/item/clothing/shoes/laceup
 	head = /obj/item/clothing/head/caphat/nt
 
+/datum/outfit/job/captain/solgov
+	name = "Captain (SolGov)"
+	shoes = /obj/item/clothing/shoes/laceup
+	suit = /obj/item/clothing/suit/toggle/solgov
+
 /datum/outfit/job/captain/pirate
 	name = "Captain (Pirate)"
 	uniform = /obj/item/clothing/under/costume/russian_officer
