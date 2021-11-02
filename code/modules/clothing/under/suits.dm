@@ -92,14 +92,14 @@
 /obj/item/clothing/under/suit/navy
 	name = "navy suit"
 	desc = "A navy suit and red tie, intended for the station's finest."
-	icon_state = "navy_suit"
-	item_state = "navy_suit"
+	icon_state = "navysuit"
+	item_state = "navysuit"
 
 /obj/item/clothing/under/suit/burgundy
 	name = "burgundy suit"
 	desc = "A burgundy suit and black tie. Somewhat formal."
 	icon_state = "burgundysuit"
-	item_state = "burgundy_uit"
+	item_state = "burgundysuit"
 
 /obj/item/clothing/under/suit/checkered
 	name = "checkered suit"
