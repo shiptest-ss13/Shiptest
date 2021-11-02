@@ -65,6 +65,7 @@
 		DYNAMIC_WORLD_SAND = length(SSmapping.sand_ruins_templates),
 		DYNAMIC_WORLD_SPACERUIN = length(SSmapping.space_ruins_templates),
 		DYNAMIC_WORLD_ROCKPLANET = length(SSmapping.rock_ruins_templates),
+		DYNAMIC_WORLD_REEBE = length(SSmapping.yellow_ruins_templates), //todo: set to a very low number once it gets ruins
 		DYNAMIC_WORLD_ASTEROID = 30)
 
 	var/chosen = pickweight(probabilities)
@@ -96,10 +97,16 @@
 			color = COLOR_GRAY
 		if(DYNAMIC_WORLD_ROCKPLANET)
 			name = "strange rock planet"
-			desc = "A very weak energy signal originating from a dwarf planet with signs of abandoned buildings."
+			desc = "A very weak energy signal originating from a abandoned industrial planet."
 			planet = DYNAMIC_WORLD_ROCKPLANET
 			icon_state = "globe"
 			color = COLOR_BROWN
+		if(DYNAMIC_WORLD_REEBE)
+			name = "???"
+			desc = "A energy signal. Theres not identification, it looks like a bluespace anomaly"
+			planet = DYNAMIC_WORLD_REEBE
+			icon_state = "strange_event"
+			color = COLOR_YELLOW
 		if(DYNAMIC_WORLD_ASTEROID)
 			name = "large asteroid"
 			desc = "A large asteroid with significant traces of minerals."
@@ -274,3 +281,15 @@
 /area/overmap_encounter/planetoid/rockplanet
 	name = "\improper Rocky Planetoid"
 	sound_environment = SOUND_ENVIRONMENT_HANGAR
+
+/area/overmap_encounter/planetoid/reebe
+	name = "\improper Yellow Space"
+	sound_environment = SOUND_ENVIRONMENT_MOUNTAINS
+	ambientsounds = REEBE
+
+/area/overmap_encounter/planetoid/reebe/Entered(atom/movable/AM)
+	. = ..()
+	if(ismob(AM))
+		var/mob/M = AM
+		if(M.client)
+			addtimer(CALLBACK(M.client, /client/proc/play_reebe_ambience), 900)

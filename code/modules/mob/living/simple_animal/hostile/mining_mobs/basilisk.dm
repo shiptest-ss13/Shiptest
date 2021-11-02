@@ -50,6 +50,8 @@
 
 /obj/projectile/temp/basilisk/super
 	temperature = -100
+	damage = 5
+	nodamage = FALSE
 
 /obj/projectile/temp/basilisk/super/on_hit(atom/target, blocked)
 	. = ..()

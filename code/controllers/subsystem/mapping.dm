@@ -15,6 +15,7 @@ SUBSYSTEM_DEF(mapping)
 	var/list/sand_ruins_templates = list()
 	var/list/jungle_ruins_templates = list()
 	var/list/rock_ruins_templates = list()
+	var/list/yellow_ruins_templates = list()
 
 	var/list/maplist
 	var/list/ship_purchase_list
@@ -197,6 +198,9 @@ SUBSYSTEM_DEF(mapping)
 			space_ruins_templates[R.name] = R
 		else if(istype(R, /datum/map_template/ruin/rockplanet))
 			rock_ruins_templates[R.name] = R
+		else if(istype(R, /datum/map_template/ruin/reebe))
+			yellow_ruins_templates[R.name] = R
+
 
 /datum/controller/subsystem/mapping/proc/preloadShuttleTemplates()
 	for(var/item in subtypesof(/datum/map_template/shuttle))
