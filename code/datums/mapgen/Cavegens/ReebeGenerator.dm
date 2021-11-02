@@ -1,51 +1,18 @@
 #define REEBE_DEFAULT_ATMOS "n2=100;TEMP=100.00"
 
-/area/reebe
-	name = "Reebe"
-	icon_state = "yellow"
-	requires_power = FALSE
-	has_gravity = STANDARD_GRAVITY
+//AREAS
+/area/ruin/reebe
 	ambientsounds = REEBE
-	outdoors = TRUE
-	area_flags = FLORA_ALLOWED | VALID_TERRITORY | BLOBS_ALLOWED | UNIQUE_AREA
-	always_unpowered = TRUE
-	poweralm = FALSE
-	power_environ = FALSE
-	power_equip = FALSE
-	power_light = FALSE
-	requires_power = TRUE
+	always_unpowered = FALSE
 
-
-/area/reebe/city_of_cogs
-	name = "Reebe - City of Cogs Ruins"
-	icon_state = "purple"
-	var/playing_ambience = FALSE
-	area_flags = FLORA_ALLOWED | VALID_TERRITORY | BLOBS_ALLOWED
-
-/turf/open/floor/grass/fairy/reebe
-	desc = "Strangely glowing grass."
-	slowdown = 0.25
-	initial_gas_mix = REEBE_DEFAULT_ATMOS
-
-/area/reebe/Entered(atom/movable/AM)
+/area/ruin/reebe/Entered(atom/movable/AM)
 	. = ..()
 	if(ismob(AM))
 		var/mob/M = AM
 		if(M.client)
 			addtimer(CALLBACK(M.client, /client/proc/play_reebe_ambience), 900)
 
-//Reebe ambience replay
-/client/proc/play_reebe_ambience()
-	var/area/A = get_area(mob)
-	if(!istype(A, /area/reebe))
-		return
-	var/sound = pick(REEBE)
-	if(!played)
-		SEND_SOUND(src, sound(sound, repeat = 0, wait = 0, volume = 25, channel = CHANNEL_AMBIENCE))
-		played = TRUE
-		addtimer(CALLBACK(src, /client/proc/ResetAmbiencePlayed), 600)
-	addtimer(CALLBACK(src, /client/proc/play_reebe_ambience), 900)
-
+//TURFS
 /turf/open/chasm/reebe_void
 	name = "void"
 	desc = "A endless void. You can't really see the bottom, if there really is one."
@@ -73,6 +40,24 @@
 	. = ..()
 	icon_state = "reebegame"
 
+/turf/open/floor/bronze/light
+	light_range = 2
+	light_power = 0.6
+	light_color = COLOR_VERY_LIGHT_GRAY
+	initial_gas_mix = REEBE_DEFAULT_ATMOS
+
+/turf/open/floor/grass/fairy/reebe
+	desc = "Strangely glowing grass."
+	initial_gas_mix = REEBE_DEFAULT_ATMOS
+	light_range = 2
+	light_power = 0.6
+	light_color = COLOR_VERY_LIGHT_GRAY
+	baseturfs = /turf/open/chasm/reebe_void
+
+/turf/closed/mineral/random/reebe
+	baseturfs = /turf/open/floor/grass/fairy/reebe
+	initial_gas_mix = REEBE_DEFAULT_ATMOS
+//LATICES
 /obj/structure/lattice/clockwork
 	name = "cog lattice"
 	desc = "A lightweight support lattice. These hold the Justicar's station together."
@@ -87,6 +72,20 @@
 	smoothing_flags = SMOOTH_BITMASK
 	smoothing_groups = list(SMOOTH_GROUP_LATTICE, SMOOTH_GROUP_CATWALK, SMOOTH_GROUP_OPEN_FLOOR)
 	canSmoothWith = list(SMOOTH_GROUP_CATWALK)
+
+//Reebe ambience replay
+/client/proc/play_reebe_ambience()
+	var/area/A = get_area(mob)
+	if((!istype(A, /area/ruin/reebe)) && (!istype(A, /area/overmap_encounter/planetoid/reebe)))
+		return
+	var/sound = pick(REEBE)
+	if(!played)
+		SEND_SOUND(src, sound(sound, repeat = 0, wait = 0, volume = 25, channel = CHANNEL_AMBIENCE))
+		played = TRUE
+		addtimer(CALLBACK(src, /client/proc/ResetAmbiencePlayed), 600)
+	addtimer(CALLBACK(src, /client/proc/play_reebe_ambience), 900)
+
+
 
 //actual gen
 /datum/map_generator/cave_generator/reebe
@@ -103,10 +102,9 @@
 
 	flora_spawn_list = list(
 		/obj/machinery/power/supermatter_crystal/shard/hugbox = 1,
+		/obj/item/nuke_core/supermatter_sliver = 5,
 		/obj/structure/lattice/clockwork = 60,
 		/obj/structure/lattice/catwalk/clockwork = 60)
-//		/obj/structure/radioactive/supermatter = 1, //cant make these rare for some reason
-//		/obj/machinery/power/supermatter_crystal/shard = 1) //we do a slight bit of tomfoolery
 	feature_spawn_list = null
 
 	initial_closed_chance = 0

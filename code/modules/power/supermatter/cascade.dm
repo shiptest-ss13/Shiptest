@@ -39,7 +39,7 @@
 		select_direction = pick(try_directions)
 		try_directions -= select_direction
 		var/turf/try_movement = get_step(src, select_direction)
-		if(istype(try_movement, /turf/open/indestructible/supermatter_cascade))
+		if(istype(try_movement, /turf/open/indestructible/supermatter_cascade) || istype(try_movement, /turf/open/space/transit) || istype(try_movement, /turf/closed/indestructible/blank))
 			continue
 		try_movement.ChangeTurf(/turf/open/indestructible/supermatter_cascade)
 		break
@@ -172,5 +172,5 @@
 	qdel(consumed_object)
 
 /turf/open/indestructible/supermatter_cascade/stationary
-	desc = "The remainants of a decayed supermatter. It is said to only appear if something shatters a supermatter shard, then spreads like a tumor on reality."
+	desc = "The remainants of a destroyed supermatter. It is said to only appear if something shatters a supermatter shard."
 	spread = FALSE

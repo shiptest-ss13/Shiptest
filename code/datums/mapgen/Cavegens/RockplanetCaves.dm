@@ -11,17 +11,17 @@
 
 	mob_spawn_list = list(
 		//'regular' fauna, not too difficult
-		/mob/living/simple_animal/hostile/netherworld/asteroid = 30,
-		/mob/living/simple_animal/hostile/asteroid/fugu = 30,
-		/mob/living/simple_animal/hostile/netherworld/migo/asteroid = 20, //mariuce
+		/mob/living/simple_animal/hostile/netherworld/asteroid = 60,
+		/mob/living/simple_animal/hostile/asteroid/fugu = 60,
+		/mob/living/simple_animal/hostile/netherworld/migo/asteroid = 40, //mariuce
 		//crystal mobs, very difficult
-		/mob/living/simple_animal/hostile/asteroid/goliath/beast/ancient/crystal = 5,
-		/mob/living/simple_animal/hostile/asteroid/basilisk/watcher/forgotten = 5,
-		/mob/living/simple_animal/hostile/asteroid/hivelord/legion/crystal = 5,
+		/mob/living/simple_animal/hostile/asteroid/goliath/beast/ancient/crystal = 1,
+		/mob/living/simple_animal/hostile/asteroid/basilisk/watcher/forgotten = 1,
+		/mob/living/simple_animal/hostile/asteroid/hivelord/legion/crystal = 1,
 		//bots, are hostile
-		/mob/living/simple_animal/bot/medbot/rockplanet = 5,
-		/mob/living/simple_animal/bot/secbot/ed209/rockplanet = 5,
-		/mob/living/simple_animal/bot/floorbot/rockplanet = 5)
+		/mob/living/simple_animal/bot/medbot/rockplanet = 10,
+		/mob/living/simple_animal/bot/secbot/ed209/rockplanet = 10,
+		/mob/living/simple_animal/bot/floorbot/rockplanet = 10)
 
 	flora_spawn_list = list(/obj/structure/mecha_wreckage/ripley = 5,
 		/obj/structure/mecha_wreckage/ripley/firefighter = 3,
