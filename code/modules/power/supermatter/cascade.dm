@@ -167,10 +167,10 @@
 		message_admins("[src] has consumed [key_name_admin(consumed_mob)] [ADMIN_JMP(src)].")
 		investigate_log("has consumed [key_name(consumed_mob)].", INVESTIGATE_SUPERMATTER)
 		consumed_mob.dust(force = TRUE)
-		radiation_pulse(src, 3000, 2, TRUE)
+		//radiation_pulse(src, 3000, 2, TRUE)
 		return
 	qdel(consumed_object)
 
-/turf/open/indestructible/supermatter_cascade/stationary
+/turf/open/indestructible/supermatter_cascade/stationary //for mapmakers wanting x-tra lethal ruins
 	desc = "The remainants of a destroyed supermatter. It is said to only appear if something shatters a supermatter shard."
 	spread = FALSE
