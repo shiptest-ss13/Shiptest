@@ -56,3 +56,8 @@
 	path = /obj/item/clothing/suit/apron/overalls
 	cost = 750
 
+/datum/gear/suit/raincoat
+	display_name = "raincoat"
+	path = /obj/item/clothing/suit/raincoat
+	cost = 1000
+
