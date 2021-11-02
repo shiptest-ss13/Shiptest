@@ -108,6 +108,10 @@
 	display_name = "suit, burgundy"
 	path = /obj/item/clothing/under/suit/burgundy
 
+/datum/gear/uniform/suit/charcoal
+	display_name = "suit, charcoal"
+	path = /obj/item/clothing/under/suit/charcoal
+
 /datum/gear/uniform/suit/galaxy
 	display_name = "suit, galaxy"
 	path = /obj/item/clothing/under/rank/civilian/lawyer/galaxy
