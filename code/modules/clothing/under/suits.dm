@@ -86,8 +86,8 @@
 /obj/item/clothing/under/suit/charcoal
 	name = "charcoal suit"
 	desc = "A charcoal suit and red tie. Very professional."
-	icon_state = "charcoal_suit"
-	item_state = "charcoal_suit"
+	icon_state = "charcoalsuit"
+	item_state = "charcoalsuit"
 
 /obj/item/clothing/under/suit/navy
 	name = "navy suit"
@@ -98,8 +98,8 @@
 /obj/item/clothing/under/suit/burgundy
 	name = "burgundy suit"
 	desc = "A burgundy suit and black tie. Somewhat formal."
-	icon_state = "burgundy_suit"
-	item_state = "burgundy_suit"
+	icon_state = "burgundysuit"
+	item_state = "burgundy_uit"
 
 /obj/item/clothing/under/suit/checkered
 	name = "checkered suit"
