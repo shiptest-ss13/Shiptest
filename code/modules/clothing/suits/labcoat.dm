@@ -50,7 +50,7 @@
 	desc = "A suit that protects against minor chemical spills. Has a purple stripe on the shoulder."
 	icon_state = "labcoat_tox"
 	
-/obj/item/clothing/suit/labcoat/raincoat
+/obj/item/clothing/suit/toggle/labcoat/raincoat
 	name = "Cybersun raincoat"
 	desc = {"
     A translucent, uniquely designed labcoat worn by the designers of Cybersun Solutions. It's made from a special material that actively repels fluids.   
