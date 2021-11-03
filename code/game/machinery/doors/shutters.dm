@@ -82,6 +82,12 @@
 	desc = "A machine that presses materials into plates. This one seems to be still functioning."
 	var/is_open = FALSE //because it doesnt even track it on machinery/door
 
+/obj/machinery/door/poddoor/crusher/automatic/preopen
+	icon_state = "open"
+	is_open = FALSE
+	density = FALSE
+	opacity = FALSE
+
 /obj/machinery/door/poddoor/crusher/automatic/Initialize(mapload)
 	. = ..()
 	START_PROCESSING(SSobj, src)

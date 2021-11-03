@@ -90,7 +90,13 @@
 	suffix = "rockplanet_miningexpedition.dmm"
 
 /datum/map_template/ruin/rockplanet/fortress
-	name = "Fortress of Solitude"
+	name = "Fortress of Solitide"
 	id = "solitude"
-	description = "A fortress, although one you are probably more familiar with.."
+	description = "A fortress, although one you are probably more familiar with."
 	suffix = "rockplanet_fortress_of_solitide.dmm"
+
+/datum/map_template/ruin/rockplanet/oreprocess
+	name = "Ore Processing Facility"
+	id = "oreprocess"
+	description = "A fortress, although one you are probably more familiar with.."
+	suffix = "rockplanet_ore_proccessing_facility.dmm"
