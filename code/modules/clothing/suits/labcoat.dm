@@ -61,4 +61,3 @@
     "}
 	icon_state = "raincoat"
 	item_state = "raincoat"
-	body_parts_covered = ARMS
