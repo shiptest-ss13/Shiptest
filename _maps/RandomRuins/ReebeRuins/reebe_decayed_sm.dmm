@@ -21,17 +21,15 @@
 /obj/machinery/door/airlock/bronze,
 /turf/open/floor/bronze,
 /area/ruin/reebe)
-"w" = (
-/turf/open/indestructible/supermatter_cascade,
-/area/ruin/reebe)
 "x" = (
-/obj/item/hand_tele,
+/obj/item/construction/rcd/combat,
 /turf/open/floor/bronze,
 /area/ruin/reebe)
 "y" = (
 /obj/structure/window/bronze{
 	dir = 8
 	},
+/obj/item/hand_tele,
 /turf/open/floor/bronze,
 /area/ruin/reebe)
 "z" = (
@@ -46,13 +44,16 @@
 /turf/open/floor/bronze,
 /area/ruin/reebe)
 "C" = (
-/obj/item/construction/rcd/combat,
-/turf/open/floor/bronze,
+/turf/open/indestructible/supermatter_cascade/stationary,
 /area/ruin/reebe)
 "E" = (
 /obj/structure/lattice/clockwork,
 /turf/template_noop,
 /area/template_noop)
+"H" = (
+/obj/item/stack/spacecash/c10000,
+/turf/open/floor/engine,
+/area/ruin/reebe)
 "O" = (
 /turf/closed/wall/mineral/bronze,
 /area/ruin/reebe)
@@ -79,10 +80,10 @@ a
 (2,1,1) = {"
 Y
 Y
-Y
-Y
-Y
-Y
+C
+C
+x
+C
 d
 E
 a
@@ -92,9 +93,9 @@ a
 E
 O
 z
+C
 z
-z
-O
+C
 O
 O
 a
@@ -104,8 +105,8 @@ o
 Y
 O
 e
-e
-e
+C
+C
 O
 Y
 O
@@ -116,8 +117,8 @@ E
 Y
 B
 e
-w
-e
+C
+H
 v
 Z
 v
@@ -127,9 +128,9 @@ a
 (6,1,1) = {"
 Y
 O
-e
-e
-e
+C
+C
+C
 O
 Y
 O
@@ -138,10 +139,10 @@ a
 "}
 (7,1,1) = {"
 Y
-O
+C
 y
-y
-y
+C
+C
 O
 O
 O
@@ -151,7 +152,7 @@ a
 (8,1,1) = {"
 E
 Y
-Y
+C
 Y
 Y
 Y
@@ -161,7 +162,7 @@ a
 a
 "}
 (9,1,1) = {"
-x
+Y
 Y
 E
 E
