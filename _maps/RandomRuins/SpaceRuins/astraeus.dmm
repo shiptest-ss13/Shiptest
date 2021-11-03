@@ -1,7 +1,7 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "ac" = (
 /turf/template_noop,
-/area/space)
+/area/template_noop)
 "ae" = (
 /obj/structure/lattice,
 /mob/living/simple_animal/hostile/carp,
@@ -16,7 +16,7 @@
 "am" = (
 /obj/item/stack/sheet/metal,
 /turf/template_noop,
-/area/space)
+/area/template_noop)
 "ao" = (
 /turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/astraeus/hallway)
@@ -182,7 +182,7 @@
 "eq" = (
 /mob/living/simple_animal/hostile/carp,
 /turf/template_noop,
-/area/space)
+/area/template_noop)
 "es" = (
 /obj/effect/decal/cleanable/glass,
 /turf/open/floor/plasteel/airless,
@@ -215,7 +215,7 @@
 "fu" = (
 /obj/item/stack/sheet/plasteel,
 /turf/template_noop,
-/area/space)
+/area/template_noop)
 "fv" = (
 /obj/structure/catwalk,
 /obj/structure/cable{
@@ -279,7 +279,7 @@
 	dir = 4
 	},
 /turf/template_noop,
-/area/space)
+/area/template_noop)
 "ho" = (
 /obj/effect/spawner/lootdrop/maintenance,
 /turf/open/floor/plating/airless,
@@ -420,7 +420,7 @@
 	icon_state = "pile"
 	},
 /turf/template_noop,
-/area/space)
+/area/template_noop)
 "lt" = (
 /obj/item/stack/conveyor,
 /turf/open/floor/plating/airless,
@@ -443,7 +443,7 @@
 "lT" = (
 /obj/item/stack/rods,
 /turf/template_noop,
-/area/space)
+/area/template_noop)
 "md" = (
 /obj/effect/turf_decal/corner/blue{
 	dir = 10
@@ -587,7 +587,7 @@
 	icon_state = "singular"
 	},
 /turf/template_noop,
-/area/space)
+/area/template_noop)
 "pU" = (
 /obj/structure/grille/broken,
 /obj/effect/decal/cleanable/glass,
@@ -842,7 +842,7 @@
 "we" = (
 /obj/item/stack/tile/plasteel,
 /turf/template_noop,
-/area/space)
+/area/template_noop)
 "wf" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
@@ -870,7 +870,7 @@
 "wD" = (
 /obj/item/stack/tile/carpet,
 /turf/template_noop,
-/area/space)
+/area/template_noop)
 "wF" = (
 /obj/structure/chair{
 	dir = 1
@@ -1155,7 +1155,7 @@
 "EG" = (
 /obj/item/shard,
 /turf/template_noop,
-/area/space)
+/area/template_noop)
 "EJ" = (
 /obj/structure/cable{
 	icon_state = "2-4"
@@ -1190,7 +1190,7 @@
 	amount = 2
 	},
 /turf/template_noop,
-/area/space)
+/area/template_noop)
 "Fz" = (
 /obj/structure/table_frame/wood,
 /obj/structure/cable{
@@ -1265,13 +1265,13 @@
 	amount = 2
 	},
 /turf/template_noop,
-/area/space)
+/area/template_noop)
 "Hs" = (
 /obj/item/shard{
 	icon_state = "medium"
 	},
 /turf/template_noop,
-/area/space)
+/area/template_noop)
 "HD" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 5
@@ -1499,6 +1499,10 @@
 	},
 /turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/astraeus/bridge)
+"Ns" = (
+/mob/living/simple_animal/hostile/asteroid/basilisk,
+/turf/open/floor/plating/asteroid/airless,
+/area/ruin/unpowered)
 "NI" = (
 /obj/machinery/door/airlock/command{
 	name = "Conference Room"
@@ -1894,11 +1898,11 @@
 "XM" = (
 /obj/item/stack/tile/wood,
 /turf/template_noop,
-/area/space)
+/area/template_noop)
 "XO" = (
 /obj/item/chair,
 /turf/template_noop,
-/area/space)
+/area/template_noop)
 "YF" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/components/unary/vent_pump/on{
@@ -3173,7 +3177,7 @@ GV
 GV
 zq
 FB
-FB
+Ns
 GV
 GV
 GV
