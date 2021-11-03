@@ -58,6 +58,6 @@
 
 /datum/gear/suit/raincoat
 	display_name = "raincoat"
-	path = /obj/item/clothing/suit/raincoat
+	path = /obj/item/clothing/suit/labcoat/raincoat
 	cost = 1000
 
