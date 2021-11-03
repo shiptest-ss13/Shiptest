@@ -57,7 +57,8 @@
 	cost = 750
 
 /datum/gear/suit/raincoat
-	display_name = "raincoat"
+	display_name = "Cybersun labcoat"
+	description = "Designer lab safety equipment. You're pretty sure this is just a raincoat."
 	path = /obj/item/clothing/suit/labcoat/raincoat
 	cost = 1000
 
