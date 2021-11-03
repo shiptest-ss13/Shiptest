@@ -799,7 +799,7 @@
 
 /obj/item/clothing/suit/raincoat
 	name = "raincoat"
-	desc = "A white translucent raincoat. Hey Paul!"
+	desc = "Wearing a raincoat inside is like wearing sunglasses at night. Someone like you probably does both."
 	icon_state = "raincoat"
 	item_state = "raincoat"
 	body_parts_covered = ARMS
