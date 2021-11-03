@@ -796,11 +796,3 @@
 	icon_state = "DutchJacket"
 	item_state = "DutchJacket"
 	body_parts_covered = ARMS
-
-/obj/item/clothing/suit/raincoat
-	name = "raincoat"
-	desc = "Wearing a raincoat inside is like wearing sunglasses at night. Someone like you probably does both."
-	icon_state = "raincoat"
-	item_state = "raincoat"
-	body_parts_covered = ARMS
-
