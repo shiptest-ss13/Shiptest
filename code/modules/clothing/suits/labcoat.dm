@@ -53,7 +53,7 @@
 /obj/item/clothing/suit/labcoat/raincoat
 	name = "Cybersun raincoat"
 	desc = {"
-    A translucent, uniquely designed labcoat worn by the designers of Cybersun Solutions. It's made from a special material that actively repulses fluids.   
+    A translucent, uniquely designed labcoat worn by the designers of Cybersun Solutions. It's made from a special material that actively repels fluids.   
     
     You're pretty sure this is just a raincoat.
     
