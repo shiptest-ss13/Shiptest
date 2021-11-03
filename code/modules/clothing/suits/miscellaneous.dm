@@ -796,11 +796,3 @@
 	icon_state = "DutchJacket"
 	item_state = "DutchJacket"
 	body_parts_covered = ARMS
-
-/obj/item/clothing/suit/raincoat
-	name = "raincoat"
-	desc = "A white translucent raincoat. Hey Paul!"
-	icon_state = "raincoat"
-	item_state = "raincoat"
-	body_parts_covered = ARMS
-
