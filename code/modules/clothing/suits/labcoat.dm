@@ -49,3 +49,16 @@
 	name = "scientist labcoat"
 	desc = "A suit that protects against minor chemical spills. Has a purple stripe on the shoulder."
 	icon_state = "labcoat_tox"
+	
+/obj/item/clothing/suit/labcoat/raincoat
+	name = "Cybersun raincoat"
+	desc = {"
+    A translucent, uniquely designed labcoat worn by the designers of Cybersun Solutions. It's made from a special material that actively repulses fluids.   
+    
+    You're pretty sure this is just a raincoat.
+    
+    <i>Wearing a raincoat inside is like wearing sunglasses at night. A good Cybersun exec does both.</i>
+    "}
+	icon_state = "raincoat"
+	item_state = "raincoat"
+	body_parts_covered = ARMS
