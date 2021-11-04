@@ -224,3 +224,13 @@
 	SIGNAL_HANDLER
 
 	SEND_SIGNAL(quirk_holder, COMSIG_ADD_MOOD_EVENT, "bad_hair_day", /datum/mood_event/bald)
+
+/datum/quirk/vampire
+	name = "Vampire"
+	desc = "You're a bloodsuckig vampire."
+	value = 0
+	mob_trait = TRAIT_BALD
+	gain_text = "<span class='notice'>Lazy.</span>"
+	lose_text = "<span class='notice'>Lazy.</span>"
+	medical_record_text = "Patient is a vampire."
+	allowed_species = list("fly", "human", "moth", "felinid", "lizard")
