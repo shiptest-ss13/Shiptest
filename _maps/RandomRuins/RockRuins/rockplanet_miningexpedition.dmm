@@ -17,13 +17,6 @@
 /obj/structure/sign/poster/contraband/steppyflag,
 /turf/closed/wall/r_wall/rust,
 /area/ruin/unpowered)
-"cC" = (
-/mob/living/simple_animal/hostile/faithless{
-	desc = "What seems to be the remnants of what was once a human.";
-	name = "Turned"
-	},
-/turf/open/floor/plating/asteroid/lowpressure,
-/area/rockplanet/surface/outdoors)
 "dk" = (
 /obj/structure/ore_box,
 /turf/open/floor/plating/asteroid/lowpressure,
@@ -45,14 +38,6 @@
 "gN" = (
 /obj/structure/sign/poster/contraband/tools,
 /turf/closed/wall/r_wall/rust,
-/area/ruin/unpowered)
-"hb" = (
-/mob/living/simple_animal/hostile/faithless{
-	desc = "What seems to be the remnants of what was once a human.";
-	dir = 8;
-	name = "Turned"
-	},
-/turf/open/floor/plasteel/grimy,
 /area/ruin/unpowered)
 "lg" = (
 /obj/structure/table,
@@ -88,9 +73,8 @@
 /turf/open/floor/plasteel/rockvault,
 /area/ruin/unpowered)
 "qj" = (
-/mob/living/simple_animal/hostile/faithless{
+/mob/living/simple_animal/hostile/netherworld/blankbody{
 	desc = "What seems to be the remnants of what was once a human.";
-	dir = 4;
 	name = "Turned"
 	},
 /turf/open/floor/plating/asteroid/lowpressure,
@@ -108,7 +92,7 @@
 /turf/closed/wall/r_wall/rust,
 /area/ruin/unpowered)
 "rY" = (
-/mob/living/simple_animal/hostile/faithless{
+/mob/living/simple_animal/hostile/netherworld/blankbody{
 	desc = "What seems to be the remnants of what was once a human.";
 	name = "Turned"
 	},
@@ -126,6 +110,10 @@
 /area/ruin/unpowered)
 "sM" = (
 /obj/structure/flora/rock/pile,
+/turf/open/floor/plating/asteroid/lowpressure,
+/area/rockplanet/surface/outdoors)
+"sP" = (
+/mob/living/simple_animal/hostile/skeleton/plasmaminer,
 /turf/open/floor/plating/asteroid/lowpressure,
 /area/rockplanet/surface/outdoors)
 "tN" = (
@@ -216,11 +204,11 @@
 /turf/open/floor/plasteel/grimy,
 /area/ruin/unpowered)
 "Jz" = (
-/mob/living/simple_animal/hostile/faithless{
+/obj/effect/decal/cleanable/blood,
+/mob/living/simple_animal/hostile/netherworld/blankbody{
 	desc = "What seems to be the remnants of what was once a human.";
 	name = "Turned"
 	},
-/obj/effect/decal/cleanable/blood,
 /turf/open/floor/plating/asteroid/lowpressure,
 /area/rockplanet/surface/outdoors)
 "JC" = (
@@ -505,7 +493,7 @@ mk
 mk
 SC
 sJ
-hb
+rY
 CL
 Vw
 Vw
@@ -671,7 +659,7 @@ tN
 YW
 YW
 rc
-tN
+sP
 tN
 tN
 ll
@@ -1038,7 +1026,7 @@ NV
 CL
 ll
 tN
-cC
+qj
 tN
 tN
 fL
