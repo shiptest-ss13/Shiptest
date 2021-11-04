@@ -109,7 +109,7 @@
 	medical_record_text = "Patient is afflicted with almost complete color blindness."
 
 /datum/quirk/monochromatic/add()
-	quirk_holder.add_client_colour(/datum/client_colour/monochrome)
+	quirk_holder.add_client_colour(/datum/client_colour/monochrome/blind/permanent)
 
 /datum/quirk/monochromatic/post_add()
 	if(quirk_holder.mind.assigned_role == "Detective")
