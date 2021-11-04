@@ -770,6 +770,7 @@
 /obj/machinery/power/shuttle/engine/electric{
 	dir = 1
 	},
+/obj/structure/cable/yellow,
 /turf/open/floor/plating,
 /area/ship/maintenance/central)
 "Dn" = (
@@ -786,6 +787,9 @@
 /obj/structure/window/reinforced/spawner,
 /obj/machinery/power/smes/shuttle/precharged{
 	dir = 1
+	},
+/obj/structure/cable/yellow{
+	icon_state = "0-2"
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/central)
@@ -869,6 +873,9 @@
 /obj/structure/window/reinforced/spawner,
 /obj/machinery/power/smes/shuttle/precharged{
 	dir = 1
+	},
+/obj/structure/cable/yellow{
+	icon_state = "0-2"
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/central)
