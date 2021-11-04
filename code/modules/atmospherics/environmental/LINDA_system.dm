@@ -84,17 +84,7 @@
 	LAZYCLEARLIST(atmos_adjacent_turfs)
 	__update_auxtools_turf_adjacency_info(isspaceturf(get_z_base_turf()))
 
-/turf/proc/ImmediateSetSleep()
-	if(SSair.thread_running())
-		SSadjacent_air.sleep_queue[src] = 1
-		return
-	set_sleeping(TRUE)
-
-/turf/proc/ImmediateUpdateAirRef(value)
-	if(SSair.thread_running())
-		SSadjacent_air.ref_update_queue[src] = value
-		return
-	update_air_ref(value)
+/obj/machinery/atmospherics/components/trinary/nuclear_reactor/process()
 
 /turf/proc/set_sleeping(should_sleep)
 

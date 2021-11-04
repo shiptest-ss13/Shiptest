@@ -41,7 +41,7 @@
 	if(!space_gas)
 		space_gas = new
 	air = space_gas
-	ImmediateUpdateAirRef(0)
+	update_air_ref(0)
 	vis_contents.Cut() //removes inherited overlays
 	visibilityChanged()
 

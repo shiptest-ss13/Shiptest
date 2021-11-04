@@ -4,6 +4,8 @@
 #define CONSTRUCTION_GUTTED 3 //Wires are removed, circuit ready to remove
 #define CONSTRUCTION_NOCIRCUIT 4 //Circuit board removed, can safely weld apart
 
+/datum/var/__auxtools_weakref_id
+
 /obj/machinery/door/firedoor
 	name = "firelock"
 	desc = "Apply crowbar."
@@ -35,6 +37,7 @@
 	. = ..()
 	CalculateAffectingAreas()
 	SSair.firelocks += src
+	SSair.firelocks_requires_updates = TRUE
 
 /obj/machinery/door/firedoor/examine(mob/user)
 	. = ..()
@@ -71,6 +74,7 @@
 	remove_from_areas()
 	affecting_areas.Cut()
 	SSair.firelocks -= src
+	SSair.firelocks_requires_updates = TRUE
 	return ..()
 
 /obj/machinery/door/firedoor/Bumped(atom/movable/AM)
@@ -293,11 +297,10 @@
 				T.ImmediateCalculateAdjacentTurfs()
 
 /obj/machinery/door/firedoor/proc/emergency_pressure_stop(consider_timer = TRUE)
-	set waitfor = 0
 	if(density || operating || welded)
 		return
 	if(world.time >= emergency_close_timer || !consider_timer)
-		close()
+		emergency_pressure_close()
 
 /obj/machinery/door/firedoor/deconstruct(disassembled = TRUE)
 	if(!(flags_1 & NODECONSTRUCT_1))
@@ -403,6 +406,43 @@
 		return !density
 	else
 		return TRUE
+
+/obj/machinery/door/firedoor/Moved(atom/OldLoc, Dir)
+	. = ..()
+	SSair.firelocks_requires_updates = TRUE
+
+/obj/machinery/door/firedoor/afterShuttleMove(turf/oldT, list/movement_force, shuttle_dir, shuttle_preferred_direction, move_dir, rotation)
+	. = ..()
+	SSair.firelocks_requires_updates = TRUE
+
+/obj/machinery/door/firedoor/proc/emergency_pressure_close()
+	if(density)
+		return
+	if(operating || welded)
+		return
+
+	density = TRUE
+	air_update_turf(1)
+
+	operating = TRUE
+
+	do_animate("closing")
+	layer = closingLayer
+
+	sleep(8)
+
+	update_icon()
+	if(visible && !glass)
+		set_opacity(1)
+
+	operating = FALSE
+
+	update_freelook_sight()
+	if(safe)
+		CheckForMobs()
+	else if(!(flags_1 & ON_BORDER_1))
+		crush()
+	latetoggle()
 
 /obj/machinery/door/firedoor/heavy
 	name = "heavy firelock"

@@ -65,6 +65,8 @@ SUBSYSTEM_DEF(air)
 
 	/// Firelocks list to be accessed by auxtools
 	var/list/firelocks = list()
+	var/firelocks_requires_updates = TRUE
+	var/slow_decomp_threshold = 200
 
 /datum/controller/subsystem/air/stat_entry(msg)
 	msg += "C:{"

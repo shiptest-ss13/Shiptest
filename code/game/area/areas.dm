@@ -321,7 +321,7 @@ GLOBAL_LIST_EMPTY(teleportlocs)
 			if(cont && D.is_operational())
 				if(D.operating)
 					D.nextstate = opening ? FIREDOOR_OPEN : FIREDOOR_CLOSED
-				else if(!(D.density ^ opening))
+				else if(!(D.density ^ opening) && !D.is_holding_pressure())
 					INVOKE_ASYNC(D, (opening ? /obj/machinery/door/firedoor.proc/open : /obj/machinery/door/firedoor.proc/close))
 
 /**
