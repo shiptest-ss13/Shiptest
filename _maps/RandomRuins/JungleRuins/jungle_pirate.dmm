@@ -216,9 +216,12 @@
 /turf/open/floor/wood,
 /area/ruin/unpowered)
 "Ew" = (
-/mob/living/simple_animal/parrot,
 /obj/structure/table/wood/poker,
 /obj/effect/decal/cleanable/cobweb/cobweb2,
+/mob/living/simple_animal/parrot{
+	faction = list("pirate");
+	name = "Pegwing"
+	},
 /turf/open/floor/wood,
 /area/ruin/unpowered)
 "Ic" = (
@@ -344,7 +347,9 @@
 "Wk" = (
 /obj/structure/closet/crate/critter,
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/parrot/Poly,
+/mob/living/simple_animal/parrot{
+	faction = list("pirate")
+	},
 /turf/open/floor/wood,
 /area/ruin/unpowered)
 "Wp" = (
