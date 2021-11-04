@@ -79,12 +79,12 @@
 		to_chat(user, "<span class='cultlarge'>\"I wouldn't advise that.\"</span>")
 
 /obj/item/cult_bastard
-	name = "bloody bastard sword"
-	desc = "An enormous sword used by Nar'Sien cultists to rapidly harvest the souls of non-believers."
+	name = "geometric bastard sword"
+	desc = "An enormous sword, once used by Nar'Sien cultists to rapidly harvest the souls of non-believers. It still yet hungers to taste inpure blood."
 	w_class = WEIGHT_CLASS_HUGE
 	block_chance = 50
 	throwforce = 20
-	force = 35
+	force = 30
 	armour_penetration = 45
 	throw_speed = 1
 	throw_range = 3
@@ -92,7 +92,7 @@
 	light_system = MOVABLE_LIGHT
 	light_range = 4
 	light_color = COLOR_RED
-	attack_verb = list("cleaved", "slashed", "tore", "lacerated", "hacked", "ripped", "diced", "carved")
+	attack_verb = list("cleaved", "bisected", "tore", "brutalized", "smashed", "ripped", "diced", "carved")
 	icon_state = "cultbastard"
 	item_state = "cultbastard"
 	hitsound = 'sound/weapons/bladeslice.ogg'
@@ -107,17 +107,37 @@
 	var/spinning = FALSE
 	var/spin_cooldown = 250
 	var/dash_toggled = TRUE
+	var/list/nemesis_factions = list("mining", "boss")
+	var/faction_bonus_force = 25
 
 /obj/item/cult_bastard/Initialize()
 	. = ..()
 	jaunt = new(src)
 	linked_action = new(src)
-	AddComponent(/datum/component/butchering, 50, 80)
+	AddComponent(/datum/component/butchering, 50, 120)
 	AddComponent(/datum/component/two_handed, require_twohands=TRUE)
 
+/obj/item/cult_bastard/attack(mob/living/target, mob/living/carbon/human/user)
+	var/nemesis_faction = FALSE
+	if(LAZYLEN(nemesis_factions))
+		for(var/F in target.faction)
+			if(F in nemesis_factions)
+				nemesis_faction = TRUE
+				force += faction_bonus_force
+				throwforce += faction_bonus_force
+				nemesis_effects(user, target)
+				break
+	. = ..()
+	if(nemesis_faction)
+		force -= faction_bonus_force
+		throwforce -= faction_bonus_force
+
+/obj/item/cult_bastard/proc/nemesis_effects(mob/living/user, mob/living/target)
+	return
 
 /obj/item/cult_bastard/examine(mob/user)
 	. = ..()
+	. += "<span class='notice'>This weapon will absorb the souls of unconscious human foes.</span>"
 	if(contents.len)
 		. += "<b>There are [contents.len] souls trapped within the sword's core.</b>"
 	else
@@ -135,10 +155,6 @@
 
 /obj/item/cult_bastard/pickup(mob/living/user)
 	. = ..()
-	if(!iscultist(user))
-		to_chat(user, "<span class='cultlarge'>\"I wouldn't advise that.\"</span>")
-		force = 5
-		return
 	force = initial(force)
 	jaunt.Grant(user, src)
 	linked_action.Grant(user, src)
@@ -178,12 +194,12 @@
 		if(ishuman(target))
 			var/mob/living/carbon/human/H = target
 			if(H.stat != CONSCIOUS)
-				var/obj/item/soulstone/SS = new /obj/item/soulstone(src)
+				var/obj/item/soulstone/anybody/SS = new /obj/item/soulstone/anybody(src)
 				SS.attack(H, user)
 				if(!LAZYLEN(SS.contents))
 					qdel(SS)
 		if(istype(target, /obj/structure/constructshell) && contents.len)
-			var/obj/item/soulstone/SS = contents[1]
+			var/obj/item/soulstone/anybody/SS = contents[1]
 			if(istype(SS))
 				SS.transfer_soul("CONSTRUCT",target,user)
 				qdel(SS)
@@ -200,7 +216,7 @@
 	phaseout = /obj/effect/temp_visual/dir_setting/cult/phase/out
 
 /datum/action/innate/dash/cult/IsAvailable()
-	if(iscultist(holder) && current_charges)
+	if(current_charges)
 		return TRUE
 	else
 		return FALSE
@@ -222,7 +238,7 @@
 	holder = user
 
 /datum/action/innate/cult/spin2win/IsAvailable()
-	if(iscultist(holder) && cooldown <= world.time)
+	if(cooldown <= world.time)
 		return TRUE
 	else
 		return FALSE
@@ -282,7 +298,7 @@
 	icon_state = "cultrobes"
 	item_state = "cultrobes"
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS
-	allowed = list(/obj/item/tome, /obj/item/melee/cultblade)
+	allowed = list(/obj/item/tome, /obj/item/melee/cultblade, /obj/item/tank)
 	armor = list("melee" = 40, "bullet" = 30, "laser" = 40,"energy" = 40, "bomb" = 25, "bio" = 10, "rad" = 0, "fire" = 10, "acid" = 10)
 	flags_inv = HIDEJUMPSUIT
 	cold_protection = CHEST|GROIN|LEGS|ARMS
@@ -436,12 +452,14 @@
 
 /obj/item/clothing/glasses/hud/health/night/cultblind/equipped(mob/living/user, slot)
 	..()
-	if(!iscultist(user))
+	if(prob(30))
 		to_chat(user, "<span class='cultlarge'>\"You want to be blind, do you?\"</span>")
 		user.dropItemToGround(src, TRUE)
 		user.Dizzy(30)
 		user.Paralyze(100)
 		user.blind_eyes(30)
+	else
+		return
 
 /obj/item/reagent_containers/glass/beaker/unholywater
 	name = "flask of unholy water"
@@ -478,11 +496,6 @@
 /obj/item/cult_shift/attack_self(mob/user)
 	if(!uses || !iscarbon(user))
 		to_chat(user, "<span class='warning'>\The [src] is dull and unmoving in your hands.</span>")
-		return
-	if(!iscultist(user))
-		user.dropItemToGround(src, TRUE)
-		step(src, pick(GLOB.alldirs))
-		to_chat(user, "<span class='warning'>\The [src] flickers out of your hands, your connection to this dimension is too strong!</span>")
 		return
 
 	var/mob/living/carbon/C = user

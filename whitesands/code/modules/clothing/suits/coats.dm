@@ -47,6 +47,18 @@
 	mob_overlay_icon = 'whitesands/icons/mob/clothing/suits.dmi'
 	icon_state = "labcoat_side_chem"
 
+/obj/item/clothing/suit/toggle/lieutenant
+	name = "lieutenant's coat"
+	desc = "Surplus from some military. You finally have your own coat."
+	icon = 'whitesands/icons/obj/clothing/suits.dmi'
+	mob_overlay_icon = 'whitesands/icons/mob/clothing/suits.dmi'
+	mob_overlay_icon = 'whitesands/icons/mob/clothing/suits.dmi'
+	icon_state = "blueshield_coat"
+	item_state = "blueshield_coat"
+	allowed = list(/obj/item/gun/energy, /obj/item/reagent_containers/spray/pepper, /obj/item/ammo_box, /obj/item/ammo_casing,/obj/item/melee/baton, /obj/item/restraints/handcuffs, /obj/item/flashlight/seclite, /obj/item/melee/classic_baton)
+	armor = list("melee" = 35, "bullet" = 30, "laser" = 30, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
+	body_parts_covered = CHEST|GROIN|ARMS|HANDS
+
 /obj/item/clothing/suit/toggle/solgov
 	name = "\improper SolGov coat"
 	desc = "An armored coat worn for special occasions. This one is dyed in SolGov blue."

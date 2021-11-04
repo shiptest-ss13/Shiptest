@@ -6,13 +6,35 @@
 	"roundstart": true,
 	"job_slots": {
 		"Captain": 1,
-		"Head of Personnel": 1,
-		"Medical Doctor": 1,
-		"Station Engineer": 2,
-		"Shaft Miner": 2,
-		"Roboticist": 1,
-		"Security Officer": 1,
-		"Assistant": 4
+		"First Mate": {
+			"outfit": "/datum/outfit/job/head_of_personnel",
+			"officer": true,
+			"slots": 1
+		},
+		"Ship's Doctor": {
+			"outfit": "/datum/outfit/job/doctor",
+			"slots": 1
+			},
+		"Machinist's Mate": {
+			"outfit": "/datum/outfit/job/engineer",
+			"slots": 2
+		},
+		"Asteroid Miner": {
+			"outfit": "/datum/outfit/job/miner",
+			"slots": 2
+		},
+		"Mech Engineer": {
+			"outfit": "/datum/outfit/job/roboticist",
+			"slots": 1
+		},
+		"Security Specialist": {
+			"outfit": "/datum/outfit/job/security",
+			"slots": 1
+		},
+		"Deckhand": {
+			"outfit": "/datum/outfit/job/assistant",
+			"slots": 4
+		}
 	},
 	"cost": 750
 }

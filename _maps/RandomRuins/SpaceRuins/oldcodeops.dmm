@@ -12,12 +12,14 @@
 	},
 /turf/open/floor/oldshuttle,
 /area/ruin/powered)
+"bP" = (
+/turf/closed/wall,
+/area/template_noop)
 "cP" = (
 /obj/machinery/door/window{
 	base_state = "right";
 	dir = 8;
-	icon_state = "right";
-	req_access_txt = "25"
+	icon_state = "right"
 	},
 /turf/open/floor/oldshuttle,
 /area/ruin/powered)
@@ -29,8 +31,7 @@
 /area/ruin/powered)
 "fl" = (
 /obj/machinery/door/window{
-	dir = 4;
-	req_access_txt = "25"
+	dir = 4
 	},
 /turf/open/floor/oldshuttle,
 /area/ruin/powered)
@@ -46,6 +47,7 @@
 	icon_state = "oldcloset";
 	name = "strange closet"
 	},
+/obj/item/ammo_box/magazine/m50,
 /turf/open/floor/oldshuttle,
 /area/ruin/powered)
 "fO" = (
@@ -133,12 +135,9 @@
 /turf/open/floor/oldshuttle,
 /area/ruin/powered)
 "rQ" = (
-/obj/structure/chair/old{
-	dir = 8
-	},
-/mob/living/simple_animal/hostile/syndicate/melee/sword/space/oldcode,
-/turf/open/floor/oldshuttle,
-/area/ruin/powered)
+/obj/structure/lattice,
+/turf/template_noop,
+/area/template_noop)
 "tZ" = (
 /turf/closed/indestructible/oldshuttle/corner,
 /area/ruin/powered)
@@ -155,8 +154,7 @@
 /turf/template_noop,
 /area/template_noop)
 "wf" = (
-/mob/living/simple_animal/hostile/syndicate/melee/sword/space/oldcode,
-/turf/template_noop,
+/turf/open/floor/plating/airless,
 /area/template_noop)
 "wH" = (
 /obj/machinery/microwave,
@@ -217,6 +215,7 @@
 /area/ruin/powered)
 "KA" = (
 /obj/structure/table/greyscale,
+/obj/item/grenade/c4,
 /obj/item/grenade/c4,
 /turf/open/floor/oldshuttle,
 /area/ruin/powered)
@@ -322,9 +321,12 @@
 /turf/open/floor/oldshuttle,
 /area/ruin/powered)
 "Xm" = (
+/obj/structure/chair/old{
+	dir = 4
+	},
 /mob/living/simple_animal/hostile/syndicate/ranged/space/oldcode,
-/turf/template_noop,
-/area/template_noop)
+/turf/open/floor/oldshuttle,
+/area/ruin/powered)
 "XT" = (
 /obj/machinery/cell_charger,
 /obj/item/clothing/gloves/color/yellow,
@@ -386,7 +388,7 @@ vk
 vk
 vk
 vk
-wf
+vk
 vk
 vk
 Td
@@ -424,7 +426,7 @@ zH
 iW
 iW
 iW
-iW
+pM
 iW
 Mb
 Bf
@@ -478,7 +480,7 @@ vk
 vk
 "}
 (7,1,1) = {"
-mW
+Td
 iW
 iW
 pM
@@ -502,13 +504,13 @@ jz
 vk
 "}
 (8,1,1) = {"
-mW
+Td
 Ua
 iW
 iW
 Td
 qQ
-fg
+Xm
 fg
 fg
 fg
@@ -526,7 +528,7 @@ Bf
 vk
 "}
 (9,1,1) = {"
-mW
+Td
 KT
 VQ
 iW
@@ -540,8 +542,8 @@ iW
 iW
 iW
 iW
-zH
 iW
+pM
 iW
 Ge
 JB
@@ -550,7 +552,7 @@ Bf
 vk
 "}
 (10,1,1) = {"
-mW
+Td
 NL
 iW
 iW
@@ -558,10 +560,10 @@ Td
 qQ
 MY
 MY
-rQ
+MY
 MY
 iW
-iW
+zH
 iW
 iW
 iW
@@ -574,7 +576,7 @@ Bf
 vk
 "}
 (11,1,1) = {"
-mW
+Td
 iW
 iW
 pM
@@ -595,7 +597,7 @@ Td
 Td
 Td
 Sn
-Xm
+vk
 "}
 (12,1,1) = {"
 Td
@@ -632,7 +634,7 @@ vk
 vk
 vk
 FQ
-iW
+pM
 iW
 iW
 Td
@@ -675,8 +677,8 @@ vk
 vk
 vk
 vk
-vk
-vk
+rQ
+bP
 vk
 vk
 tZ
@@ -696,10 +698,10 @@ Bf
 (16,1,1) = {"
 vk
 vk
-Xm
 vk
 vk
-vk
+rQ
+rQ
 vk
 vk
 vk
@@ -723,8 +725,8 @@ vk
 vk
 vk
 vk
-vk
-vk
+wf
+rQ
 vk
 vk
 vk

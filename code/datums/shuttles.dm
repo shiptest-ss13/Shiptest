@@ -4,14 +4,12 @@
 	var/file_name
 
 	var/description
-	var/prerequisites
 	var/admin_notes
 
 	var/list/movement_force // If set, overrides default movement_force on shuttle
 
 	var/port_x_offset
 	var/port_y_offset
-	var/extra_desc = ""
 	var/short_name = ""
 	var/list/job_slots = list()
 

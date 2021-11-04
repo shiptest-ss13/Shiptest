@@ -1,16 +1,56 @@
 /datum/supply_pack/security/taser
 	name = "Hybrid Taser Crate"
 	desc = "Two disabler-taser hybrid weapons. Requires Security access to open."
-	cost = 4000
+	cost = 12000
 	contains = list(/obj/item/gun/energy/e_gun/advtaser,
 					/obj/item/gun/energy/e_gun/advtaser)
 	crate_name = "hybrid taser crate"
 	dangerous = TRUE
 
+/datum/supply_pack/armory/armory/commanders
+	name = "Commander pistol crate"
+	desc = "Contains two modified M1911 'Commander' pistols, produced by Nanotrasen. Requires Armory access to open."
+	cost = 7500
+	contains = list(/obj/item/gun/ballistic/automatic/pistol/commander,
+					/obj/item/gun/ballistic/automatic/pistol/commander,
+					/obj/item/gun/ballistic/automatic/pistol/commander)
+	dangerous = TRUE
+
+/datum/supply_pack/security/co9mm_ammo
+	name = "9mm Commander Ammo Crate"
+	desc = "Contains five modified M1911 eight-round magazines for the standard-issue Commander pistol. Requires Security access to open."
+	contains = list(/obj/item/ammo_box/magazine/co9mm,
+					/obj/item/ammo_box/magazine/co9mm,
+					/obj/item/ammo_box/magazine/co9mm,
+					/obj/item/ammo_box/magazine/co9mm,
+					/obj/item/ammo_box/magazine/co9mm)
+	cost = 5000
+	dangerous = TRUE
+
+/datum/supply_pack/armory/armory/makarovs
+	name = "Makarov pistol crate"
+	desc = "Contains three concealable soviet-era Makarov pistols, produced by the Gorlex Marauders. Requires Armory access to open."
+	cost = 9500
+	contains = list(/obj/item/gun/ballistic/automatic/pistol,
+					/obj/item/gun/ballistic/automatic/pistol,
+					/obj/item/gun/ballistic/automatic/pistol)
+	dangerous = TRUE
+
+/datum/supply_pack/Armory/m10mm_ammo
+	name = "10mm Makarov Ammo Crate"
+	desc = "Contains five eight-round magazines for the Makarov pistol. Requires Armory access to open."
+	contains = list(/obj/item/ammo_box/magazine/m10mm,
+					/obj/item/ammo_box/magazine/m10mm,
+					/obj/item/ammo_box/magazine/m10mm,
+					/obj/item/ammo_box/magazine/m10mm,
+					/obj/item/ammo_box/magazine/m10mm)
+	cost = 5000
+	dangerous = TRUE
+
 /datum/supply_pack/security/armory/riot_shotgun_single
 	name = "Riot Shotgun Single-Pack"
 	desc = "When you simply just want Butch to step aside. Requires Armory level access to open."
-	cost = 2500
+	cost = 7500
 	small_item = TRUE
 	contains = list(/obj/item/gun/ballistic/shotgun/riot,
 					/obj/item/storage/belt/bandolier)
@@ -19,7 +59,7 @@
 /datum/supply_pack/security/armory/riot_shotgun
 	name = "Riot Shotguns Crate"
 	desc = "For when the greytide gets out of hand. Contains 3 pump shotguns and shotgun ammo bandoliers to go with. Requires Armory level access to open."
-	cost = 6000
+	cost = 18000
 	contains = list(/obj/item/gun/ballistic/shotgun/riot,
 					/obj/item/gun/ballistic/shotgun/riot,
 					/obj/item/gun/ballistic/shotgun/riot,
@@ -223,21 +263,9 @@
 /datum/supply_pack/security/armory/cool_wt550_ammo
 	name = "WT-550 Auto Rifle Exotic Ammo Crate"
 	desc = "Contains one magazine of armor-piercing and one magazine of incendiary ammunition for the WT-550 Auto Rifle. Each magazine is designed to facilitate rapid tactical reloads. Requires Armory access to open. Sadly, our manufacturer discontinued the uranium-tipped bullets."
-	contraband = TRUE
 	cost = 2500
 	contains = list(/obj/item/ammo_box/magazine/wt550m9/wtap,
 					/obj/item/ammo_box/magazine/wt550m9/wtic)
-	dangerous = TRUE
-
-/datum/supply_pack/security/co9mm_ammo
-	name = "9mm Commander Ammo Crate"
-	desc = "Contains five modified M1911 eight-round magazines for the standard-issue Commander pistol. Requires Security access to open."
-	contains = list(/obj/item/ammo_box/magazine/co9mm,
-					/obj/item/ammo_box/magazine/co9mm,
-					/obj/item/ammo_box/magazine/co9mm,
-					/obj/item/ammo_box/magazine/co9mm,
-					/obj/item/ammo_box/magazine/co9mm)
-	cost = 2000
 	dangerous = TRUE
 
 /datum/supply_pack/security/shotgun_ammo_nonlethal
@@ -289,7 +317,6 @@
 					/obj/item/ammo_box/magazine/ak47,
 					/obj/item/ammo_box/foambox/riot)
 	dangerous = TRUE
-	contraband = TRUE
 	crate_type = /obj/structure/closet/crate/wooden
 
 /datum/supply_pack/misc/contraband_ammo/fill(obj/structure/closet/crate/C)
@@ -397,7 +424,6 @@
 	name = "Felinid-Style Grilling Kit"
 	desc = "Command recieved a request for \"Nic catgrill gf plz\", we're pretty sure this is what that meant."
 	cost = 12000
-	contraband = TRUE
 	crate_type = /obj/structure/closet/crate/trashcart
 	contains = list(/obj/item/stack/sheet/mineral/coal/five,
 					/obj/machinery/grill/cat,
