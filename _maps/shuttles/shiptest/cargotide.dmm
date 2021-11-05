@@ -90,7 +90,13 @@
 "em" = (
 /obj/effect/turf_decal/industrial/warning,
 /obj/structure/fans/tiny,
-/obj/docking_port/mobile,
+/obj/docking_port/mobile{
+	can_move_docking_ports = 1;
+	launch_status = 0;
+	name = "CSV Chunky";
+	port_direction = 4;
+	undock_roundstart = 1
+	},
 /turf/open/floor/plating,
 /area/ship/cargo)
 "eC" = (
