@@ -229,7 +229,6 @@
 	name = "Vampire"
 	desc = "You're a bloodsuckig vampire."
 	value = 0
-	mob_trait = TRAIT_BALD
 	gain_text = "<span class='notice'>Lazy.</span>"
 	lose_text = "<span class='notice'>Lazy.</span>"
 	medical_record_text = "Patient is a vampire."
