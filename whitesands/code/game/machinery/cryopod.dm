@@ -296,8 +296,6 @@ GLOBAL_LIST_EMPTY(cryopod_computers)
 
 	if(mob_occupant.mind && mob_occupant.mind.assigned_role)
 		//Handle job slot/tater cleanup.
-		var/job = mob_occupant.mind.assigned_role
-		SSjob.FreeRole(job)
 		if(LAZYLEN(mob_occupant.mind.objectives))
 			mob_occupant.mind.objectives.Cut()
 			mob_occupant.mind.special_role = null
@@ -411,10 +409,6 @@ GLOBAL_LIST_EMPTY(cryopod_computers)
 /obj/machinery/cryopod/latejoin
 	var/obj/docking_port/mobile/linked_ship
 
-/obj/machinery/cryopod/latejoin/Initialize()
-	. = ..()
-	new /obj/effect/landmark/latejoin(src)
-
 /obj/machinery/cryopod/latejoin/despawn_occupant()
 	if(!linked_ship)
 		return ..()
@@ -429,6 +423,36 @@ GLOBAL_LIST_EMPTY(cryopod_computers)
 	linked_ship.spawn_points += src
 
 /obj/machinery/cryopod/latejoin/Destroy()
-	SSjob.latejoin_trackers -= src
 	linked_ship?.spawn_points -= src
 	. = ..()
+
+/obj/machinery/cryopod/latejoin/reskinnable
+	var/open_state = "cryopod-open"
+	var/close_state = "cryopod"
+
+/obj/machinery/cryopod/latejoin/reskinnable/Initialize()
+	..()
+	icon_state = open_state
+
+/obj/machinery/cryopod/latejoin/reskinnable/close_machine(mob/user, exiting = FALSE)
+	if(!control_computer)
+		find_control_computer(TRUE)
+	if((isnull(user) || istype(user)) && state_open && !panel_open)
+		..(user)
+		if(exiting && istype(user, /mob/living/carbon))
+			var/mob/living/carbon/C = user
+			C.SetSleeping(50)
+			to_chat(occupant, "<span class='boldnotice'>You begin to wake from cryosleep...</span>")
+			icon_state = close_state
+			return
+		var/mob/living/mob_occupant = occupant
+		if(mob_occupant && mob_occupant.stat != DEAD)
+			to_chat(occupant, "<span class='boldnotice'>You feel cool air surround you. You go numb as your senses turn inward.</span>")
+		addtimer(CALLBACK(src, .proc/try_despawn_occupant, mob_occupant), mob_occupant.client ? time_till_despawn * 0.1 : time_till_despawn) // If they're logged in, reduce the timer
+	icon_state = close_state
+
+/obj/machinery/cryopod/latejoin/reskinnable/open_machine()
+	..()
+	icon_state = open_state
+	density = TRUE
+	name = initial(name)
