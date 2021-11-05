@@ -413,4 +413,4 @@
 	config_entry_value = 20
 
 /datum/config_entry/number/max_shuttle_size
-	config_entry_value = 250
+	config_entry_value = 300
