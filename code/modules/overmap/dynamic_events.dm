@@ -18,6 +18,8 @@
 	var/virtual_z_level
 	///List of probabilities for each type of planet.
 	var/static/list/probabilities
+	///The planet that will be forced to load
+	var/force_encounter
 
 /obj/structure/overmap/dynamic/Initialize(mapload)
 	. = ..()
@@ -58,6 +60,7 @@
   * Chooses a type of level for the dynamic level to use.
   */
 /obj/structure/overmap/dynamic/proc/choose_level_type()
+	var/chosen
 	if(!probabilities)
 		probabilities = list(DYNAMIC_WORLD_LAVA = length(SSmapping.lava_ruins_templates),
 		DYNAMIC_WORLD_ICE = length(SSmapping.ice_ruins_templates),
@@ -68,7 +71,10 @@
 		DYNAMIC_WORLD_REEBE = length(SSmapping.yellow_ruins_templates), //todo: set to a very low number once it gets ruins
 		DYNAMIC_WORLD_ASTEROID = 30)
 
-	var/chosen = pickweight(probabilities)
+	if(force_encounter)
+		chosen = force_encounter
+	else
+		chosen = pickweight(probabilities)
 	mass = rand(50, 100) * 1000000 //50 to 100 million tonnes //this was a stupid feature
 	switch(chosen)
 		if(DYNAMIC_WORLD_LAVA)
@@ -103,7 +109,7 @@
 			color = COLOR_BROWN
 		if(DYNAMIC_WORLD_REEBE)
 			name = "???"
-			desc = "A energy signal. Theres not identification, it looks like a bluespace anomaly"
+			desc = "A strong energy signal. Theres no identification of what this is."
 			planet = DYNAMIC_WORLD_REEBE
 			icon_state = "strange_event"
 			color = COLOR_YELLOW
@@ -247,6 +253,36 @@
 
 	QDEL_NULL(reserve)
 	qdel(src)
+
+/obj/structure/overmap/dynamic/lava
+	force_encounter = DYNAMIC_WORLD_LAVA
+
+/*
+/obj/structure/overmap/dynamic/lava/bubblegum
+	force_encounter = DYNAMIC_WORLD_LAVA
+	map_template = /datum/map_template/ruin/special/castle_bubblegum
+*/
+
+/obj/structure/overmap/dynamic/ice
+	force_encounter = DYNAMIC_WORLD_ICE
+
+/obj/structure/overmap/dynamic/sand
+	force_encounter = DYNAMIC_WORLD_SAND
+
+/obj/structure/overmap/dynamic/jungle
+	force_encounter = DYNAMIC_WORLD_JUNGLE
+
+/obj/structure/overmap/dynamic/rock
+	force_encounter = DYNAMIC_WORLD_ROCKPLANET
+
+/obj/structure/overmap/dynamic/reebe
+	force_encounter = DYNAMIC_WORLD_REEBE
+
+/obj/structure/overmap/dynamic/asteroid
+	force_encounter = DYNAMIC_WORLD_ASTEROID
+
+/obj/structure/overmap/dynamic/energy_signal
+	force_encounter = DYNAMIC_WORLD_SPACERUIN
 
 /area/overmap_encounter
 	name = "\improper Overmap Encounter"
