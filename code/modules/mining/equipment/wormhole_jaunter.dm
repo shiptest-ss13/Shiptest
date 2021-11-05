@@ -39,12 +39,15 @@
 	if(!turf_check(user))
 		return
 
-	var/list/L = get_destinations(user)
-	if(!L.len)
-		to_chat(user, "<span class='notice'>The [src.name] found no beacons in the world to anchor a wormhole to.</span>")
-		return
-	var/chosen_beacon = pick(L)
-	var/obj/effect/portal/jaunt_tunnel/J = new (get_turf(src), 100, null, FALSE, get_turf(chosen_beacon))
+	var/turf/targetturf = find_safe_turf()
+	if(!targetturf)
+		if(GLOB.blobstart.len > 0)
+			targetturf = get_turf(pick(GLOB.blobstart))
+		else
+			CRASH("Unable to find a blobstart landmark")
+	var/obj/effect/portal/jaunt_tunnel/J = new (get_turf(src), 100, null, FALSE, targetturf)
+	log_game("[user] Has jaunted to [loc_name(targetturf)].")
+	message_admins("[user] Has jaunted to [ADMIN_VERBOSEJMP(targetturf)].")
 	if(adjacent)
 		try_move_adjacent(J)
 	playsound(src,'sound/effects/sparks4.ogg',50,TRUE)
