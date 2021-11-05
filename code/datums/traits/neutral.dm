@@ -233,4 +233,4 @@
 	gain_text = "<span class='notice'>Lazy.</span>"
 	lose_text = "<span class='notice'>Lazy.</span>"
 	medical_record_text = "Patient is a vampire."
-	allowed_species = list("fly", "human", "moth", "felinid", "lizard")
+	allowed_species = list("fly" = "fly", "human" = "human", "moth" = "moth", "felinid" = "felinid", "lizard" = "lizard")
