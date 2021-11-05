@@ -425,3 +425,34 @@ GLOBAL_LIST_EMPTY(cryopod_computers)
 /obj/machinery/cryopod/latejoin/Destroy()
 	linked_ship?.spawn_points -= src
 	. = ..()
+
+/obj/machinery/cryopod/latejoin/reskinnable
+	var/open_state = "cryopod-open"
+	var/close_state = "cryopod"
+
+/obj/machinery/cryopod/latejoin/reskinnable/Initialize()
+	..()
+	icon_state = open_state
+
+/obj/machinery/cryopod/latejoin/reskinnable/close_machine(mob/user, exiting = FALSE)
+	if(!control_computer)
+		find_control_computer(TRUE)
+	if((isnull(user) || istype(user)) && state_open && !panel_open)
+		..(user)
+		if(exiting && istype(user, /mob/living/carbon))
+			var/mob/living/carbon/C = user
+			C.SetSleeping(50)
+			to_chat(occupant, "<span class='boldnotice'>You begin to wake from cryosleep...</span>")
+			icon_state = close_state
+			return
+		var/mob/living/mob_occupant = occupant
+		if(mob_occupant && mob_occupant.stat != DEAD)
+			to_chat(occupant, "<span class='boldnotice'>You feel cool air surround you. You go numb as your senses turn inward.</span>")
+		addtimer(CALLBACK(src, .proc/try_despawn_occupant, mob_occupant), mob_occupant.client ? time_till_despawn * 0.1 : time_till_despawn) // If they're logged in, reduce the timer
+	icon_state = close_state
+
+/obj/machinery/cryopod/latejoin/reskinnable/open_machine()
+	..()
+	icon_state = open_state
+	density = TRUE
+	name = initial(name)

@@ -57,9 +57,21 @@
 	suit = /obj/item/clothing/suit/space/hardsuit/swat/captain
 	suit_store = /obj/item/tank/internals/oxygen
 
+/datum/outfit/job/captain/solgov
+	name = "Captain (SolGov)"
+	shoes = /obj/item/clothing/shoes/laceup
+	suit = /obj/item/clothing/suit/toggle/solgov
+
 /datum/outfit/job/captain/pirate
 	name = "Captain (Pirate)"
 	uniform = /obj/item/clothing/under/costume/russian_officer
 	shoes = /obj/item/clothing/shoes/jackboots
 	head = /obj/item/clothing/head/pirate/captain
 	suit = /obj/item/clothing/suit/pirate/captain
+
+/datum/outfit/job/captain/corporate
+	name = "Captain (Corporate)"
+	uniform = /obj/item/clothing/under/suit/navy
+	shoes = /obj/item/clothing/shoes/laceup
+	glasses = /obj/item/clothing/glasses/sunglasses
+	gloves = null

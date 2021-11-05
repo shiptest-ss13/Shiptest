@@ -111,9 +111,24 @@
 
 //WS Edit End - Alt-Job Titles
 
+/datum/outfit/job/engineer/solgov
+	name = "Ship Engineer (SolGov)"
+
+	uniform = /obj/item/clothing/under/solgov
+	accessory = /obj/item/clothing/accessory/armband/engine
+	head = /obj/item/clothing/head/hardhat/orange
+	suit =  /obj/item/clothing/suit/hazardvest
+
 /datum/outfit/job/engineer/pirate
 	name = "Ship's Engineer (Pirate)"
 
 	uniform = /obj/item/clothing/under/costume/sailor
 	head = /obj/item/clothing/head/bandana
+	shoes = /obj/item/clothing/shoes/jackboots
+
+/datum/outfit/job/engineer/corporate
+	name = "Ship's Engineer (Corporate)"
+
+	uniform = /obj/item/clothing/under/rank/engineering/engineer/maintenance_tech
+	glasses = /obj/item/clothing/glasses/sunglasses
 	shoes = /obj/item/clothing/shoes/jackboots
