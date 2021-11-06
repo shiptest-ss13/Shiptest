@@ -96,11 +96,8 @@
 	var/bonus_damage = 60 // if a simplemob then do this much extra
 
 /obj/projectile/bullet/c38/hunting/on_hit(atom/target, blocked = FALSE)
-	if(isanimal(target))
-		if(istype(target, /mob/living/simple_animal/hostile/syndicate))
-			return
-		else
-			damage += bonus_damage
+	if(istype(target, /mob/living/simple_animal/hostile/asteroid/))
+		damage += bonus_damage
 	..()
 
 // .357 (Syndie Revolver)
