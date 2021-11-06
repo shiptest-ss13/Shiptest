@@ -132,3 +132,11 @@
 	uniform = /obj/item/clothing/under/rank/engineering/engineer/maintenance_tech
 	glasses = /obj/item/clothing/glasses/sunglasses
 	shoes = /obj/item/clothing/shoes/jackboots
+
+/datum/outfit/job/engineer/western
+	name = "Ship's Engineer (Western)"
+
+	uniform = /obj/item/clothing/under/rank/engineering/engineer/hazard
+	head = /obj/item/clothing/head/hardhat
+	suit = /obj/item/clothing/suit/hazardvest
+

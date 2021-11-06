@@ -75,3 +75,11 @@
 	shoes = /obj/item/clothing/shoes/laceup
 	glasses = /obj/item/clothing/glasses/sunglasses
 	gloves = null
+
+/datum/outfit/job/captain/western
+	name = "Captain (Western)"
+	uniform = /obj/item/clothing/under/suit/white
+	shoes = /obj/item/clothing/shoes/cowboy/white
+	head = /obj/item/clothing/head/caphat/cowboy
+	eyes = /obj/item/clothing/glasses/sunglasses
+	suit = /obj/item/clothing/suit/armor/hos/trenchcoat
