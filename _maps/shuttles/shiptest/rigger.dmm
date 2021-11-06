@@ -118,13 +118,12 @@
 /turf/open/floor/plating,
 /area/ship/crew/canteen)
 "bo" = (
-/obj/machinery/computer/mech_bay_power_console{
-	dir = 1
-	},
 /obj/machinery/status_display/shuttle{
 	pixel_y = -32
 	},
-/turf/open/floor/plasteel,
+/obj/structure/reagent_dispensers/fueltank,
+/obj/effect/turf_decal/industrial/outline/yellow,
+/turf/open/floor/plasteel/tech/techmaint,
 /area/ship/cargo)
 "bx" = (
 /obj/structure/chair/office{
@@ -172,7 +171,12 @@
 	name = "science closet";
 	pixel_y = 28
 	},
-/obj/item/clothing/under/rank/engineering/chief_engineer,
+/obj/item/storage/backpack/satchel/eng,
+/obj/item/clothing/shoes/workboots,
+/obj/item/clothing/under/rank/rnd/roboticist/mech_engineer,
+/obj/item/clothing/suit/apron/overalls,
+/obj/item/clothing/glasses/hud/diagnostic,
+/obj/item/clothing/head/welding,
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/central)
 "bL" = (
@@ -210,7 +214,13 @@
 "cx" = (
 /obj/structure/window/reinforced,
 /obj/effect/turf_decal/industrial/outline/yellow,
-/obj/machinery/suit_storage_unit/mining/eva,
+/obj/structure/rack,
+/obj/item/pickaxe,
+/obj/item/pickaxe,
+/obj/item/storage/bag/ore,
+/obj/item/storage/bag/ore,
+/obj/item/mining_scanner,
+/obj/item/mining_scanner,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
 "cD" = (
@@ -767,7 +777,7 @@
 /area/ship/security)
 "jZ" = (
 /obj/machinery/mech_bay_recharge_port{
-	dir = 8
+	dir = 1
 	},
 /turf/open/floor/plasteel,
 /area/ship/cargo)
@@ -839,14 +849,6 @@
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel/mono,
 /area/ship/engineering/communications)
-"lu" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/structure/tank_dispenser,
-/turf/open/floor/plating,
-/area/ship/engineering)
 "lx" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -1284,20 +1286,11 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/atmospherics)
 "rb" = (
-/obj/effect/turf_decal/industrial/outline/yellow,
 /obj/item/radio/intercom{
 	pixel_x = 27
 	},
-/obj/structure/table,
-/obj/item/storage/toolbox/electrical{
-	pixel_x = 3;
-	pixel_y = 7
-	},
-/obj/item/storage/toolbox/mechanical{
-	pixel_x = -2
-	},
-/obj/item/clothing/head/welding,
-/turf/open/floor/plasteel/tech/techmaint,
+/obj/structure/mecha_wreckage/ripley,
+/turf/open/floor/mech_bay_recharge_floor,
 /area/ship/cargo)
 "rl" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
@@ -1615,6 +1608,7 @@
 /obj/item/clothing/suit/hazardvest,
 /obj/item/clothing/suit/hazardvest,
 /obj/item/clothing/head/hardhat,
+/obj/item/clothing/head/hardhat,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "uq" = (
@@ -1772,8 +1766,17 @@
 /turf/open/floor/plating,
 /area/ship/construction)
 "vZ" = (
-/obj/structure/mecha_wreckage/ripley,
-/turf/open/floor/mech_bay_recharge_floor,
+/obj/effect/turf_decal/industrial/outline/yellow,
+/obj/structure/table,
+/obj/item/storage/toolbox/electrical{
+	pixel_x = 3;
+	pixel_y = 7
+	},
+/obj/item/storage/toolbox/mechanical{
+	pixel_x = -2
+	},
+/obj/item/clothing/head/welding,
+/turf/open/floor/plasteel/tech/techmaint,
 /area/ship/cargo)
 "wg" = (
 /obj/machinery/atmospherics/components/unary/shuttle/heater{
@@ -1840,7 +1843,7 @@
 /area/ship/engineering)
 "wZ" = (
 /obj/item/analyzer,
-/turf/open/floor/plasteel/tech/techmaint,
+/turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "xg" = (
 /obj/machinery/atmospherics/components/unary/tank/air{
@@ -2323,13 +2326,7 @@
 "CG" = (
 /obj/structure/window/reinforced,
 /obj/effect/turf_decal/industrial/outline/yellow,
-/obj/structure/rack,
-/obj/item/pickaxe,
-/obj/item/pickaxe,
-/obj/item/storage/bag/ore,
-/obj/item/storage/bag/ore,
-/obj/item/mining_scanner,
-/obj/item/mining_scanner,
+/obj/machinery/suit_storage_unit/mining/eva,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "CL" = (
@@ -2702,7 +2699,7 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/industrial/outline/yellow,
-/obj/machinery/suit_storage_unit/mining/eva,
+/obj/structure/tank_dispenser,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "Ge" = (
@@ -2878,7 +2875,7 @@
 /turf/open/floor/plasteel/mono,
 /area/ship/hallway/central)
 "Hy" = (
-/turf/open/floor/plasteel/tech/techmaint,
+/turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "Hz" = (
 /obj/effect/turf_decal/corner_steel_grid{
@@ -3000,7 +2997,10 @@
 /obj/machinery/light/small{
 	dir = 4
 	},
-/turf/open/floor/plasteel/tech/techmaint,
+/obj/machinery/computer/mech_bay_power_console{
+	dir = 8
+	},
+/turf/open/floor/plasteel,
 /area/ship/cargo)
 "Jz" = (
 /obj/structure/cable{
@@ -3500,7 +3500,7 @@
 /area/ship/construction)
 "QT" = (
 /obj/item/mecha_parts/mecha_equipment/drill,
-/turf/open/floor/plasteel/tech/techmaint,
+/turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "QV" = (
 /obj/item/radio/intercom{
@@ -3630,15 +3630,7 @@
 "Su" = (
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/structure/window/reinforced,
-/obj/structure/rack,
-/obj/item/clothing/suit/hazardvest,
-/obj/item/clothing/suit/hazardvest,
-/obj/item/clothing/suit/hazardvest,
-/obj/item/clothing/suit/hazardvest,
-/obj/item/clothing/head/hardhat/mining,
-/obj/item/clothing/head/hardhat/mining,
-/obj/item/clothing/head/hardhat/mining,
-/obj/item/clothing/head/hardhat/mining,
+/obj/machinery/suit_storage_unit/mining/eva,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "SE" = (
@@ -3997,13 +3989,23 @@
 	dir = 4
 	},
 /obj/structure/catwalk/over,
-/obj/item/storage/backpack/explorer,
-/obj/item/storage/backpack/explorer,
 /obj/structure/closet/wall{
 	icon_door = "orange_wall";
 	name = "mining closet";
 	pixel_y = 28
 	},
+/obj/item/storage/backpack/explorer,
+/obj/item/storage/backpack/explorer,
+/obj/item/clothing/shoes/workboots/mining,
+/obj/item/clothing/shoes/workboots/mining,
+/obj/item/clothing/under/rank/cargo/miner/hazard,
+/obj/item/clothing/under/rank/cargo/miner/hazard,
+/obj/item/clothing/suit/hazardvest,
+/obj/item/clothing/suit/hazardvest,
+/obj/item/clothing/gloves/color/black,
+/obj/item/clothing/gloves/color/black,
+/obj/item/clothing/head/hardhat/mining,
+/obj/item/clothing/head/hardhat/mining,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "WM" = (
@@ -4772,7 +4774,7 @@ sV
 FY
 Tq
 Ho
-lu
+vn
 BC
 GC
 kC

@@ -71,3 +71,9 @@
 	name = "Shaft Miner (Equipment + Hardsuit)"
 	suit = /obj/item/clothing/suit/space/hardsuit/mining
 	mask = /obj/item/clothing/mask/breath
+
+//Shiptest Outfits
+
+/datum/outfit/job/miner/western
+	name = "Asteroid Miner (Western)"
+	under = /obj/item/clothing/under/rank/cargo/miner/hazard

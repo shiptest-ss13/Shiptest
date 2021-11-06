@@ -111,6 +111,8 @@
 
 //WS Edit End - Alt-Job Titles
 
+//Shiptest Outfits
+
 /datum/outfit/job/engineer/solgov
 	name = "Ship Engineer (SolGov)"
 

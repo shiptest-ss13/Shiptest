@@ -71,3 +71,8 @@
 	neck = /obj/item/clothing/neck/tie/black
 
 	backpack_contents = list(/obj/item/storage/belt/utility/full=1)
+
+//Shiptest Outfits
+
+/datum/outfit/job/roboticist/western
+	name = "Mech Technician (Western)"
