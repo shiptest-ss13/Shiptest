@@ -32,6 +32,7 @@
 "az" = (
 /obj/item/folder/red,
 /obj/item/stamp/hos{
+	name = "security specialist's rubber stamp";
 	pixel_x = 8;
 	pixel_y = 12
 	},
@@ -71,6 +72,7 @@
 	pixel_x = 10
 	},
 /obj/item/stamp/cmo{
+	name = "ship's doctor's rubber stamp";
 	pixel_x = -1;
 	pixel_y = 12
 	},
@@ -175,7 +177,7 @@
 /obj/item/clothing/shoes/workboots,
 /obj/item/clothing/under/rank/rnd/roboticist/mech_engineer,
 /obj/item/clothing/suit/apron/overalls,
-/obj/item/clothing/glasses/hud/diagnostic,
+/obj/item/clothing/gloves/color/black,
 /obj/item/clothing/head/welding,
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/central)
@@ -624,6 +626,10 @@
 	pixel_x = 28
 	},
 /obj/item/storage/backpack/satchel/med,
+/obj/item/clothing/shoes/sneakers/white,
+/obj/item/clothing/under/rank/medical/doctor,
+/obj/item/clothing/suit/toggle/labcoat,
+/obj/item/borg/sight/hud/med,
 /turf/open/floor/plasteel/dark,
 /area/ship/medical)
 "iU" = (
@@ -2318,7 +2324,7 @@
 /obj/item/storage/backpack/security,
 /obj/item/clothing/gloves/fingerless,
 /obj/item/clothing/shoes/jackboots,
-/obj/item/clothing/under/rank/security/officer,
+/obj/item/clothing/under/rank/security/officer/beatcop,
 /obj/item/clothing/glasses/hud/security/sunglasses,
 /obj/item/clothing/head/cowboy/sec,
 /turf/open/floor/plasteel/grimy,
@@ -4032,6 +4038,9 @@
 	},
 /obj/item/paper_bin{
 	pixel_x = -10
+	},
+/obj/item/clothing/glasses/hud/diagnostic{
+	pixel_x = 6
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/central)

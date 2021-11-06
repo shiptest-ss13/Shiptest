@@ -76,3 +76,13 @@
 
 /datum/outfit/job/roboticist/western
 	name = "Mech Technician (Western)"
+	uniform = /obj/item/clothing/under/rank/rnd/roboticist/mech_engineer
+	shoes = /obj/item/clothing/shoes/workboots
+	suit = /obj/item/clothing/suit/apron/overalls
+	alt_suit = /obj/item/clothing/suit/hazardvest
+	ears = /obj/item/radio/headset/headset_rob
+
+	backpack = /obj/item/storage/backpack/industrial
+	satchel = /obj/item/storage/backpack/satchel/eng
+	duffelbag = /obj/item/storage/backpack/duffelbag/engineering
+	courierbag = /obj/item/storage/backpack/messenger/engi
