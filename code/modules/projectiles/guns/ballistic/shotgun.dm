@@ -296,7 +296,7 @@
 	lefthand_file = 'whitesands/icons/mob/inhands/weapons/64x_guns_left.dmi'
 	righthand_file = 'whitesands/icons/mob/inhands/weapons/64x_guns_right.dmi'
 	icon_state = "winchester"
-	item_state = "moistnugget"
+	item_state = "winchester"
 	inhand_x_dimension = 32
 	inhand_y_dimension = 32
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/winchester
