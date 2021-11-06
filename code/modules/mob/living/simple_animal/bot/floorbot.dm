@@ -49,6 +49,7 @@
 	emagged = 2
 	remote_disabled = 1
 	locked = TRUE
+	faction = list("mining", "silicon" , "turret")
 
 /mob/living/simple_animal/bot/floorbot/Initialize(mapload, new_toolbox_color)
 	. = ..()

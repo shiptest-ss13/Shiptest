@@ -23,6 +23,8 @@
 	var/is_phased = FALSE
 
 /mob/living/simple_animal/hostile/netherworld/asteroid
+	health = 40
+	maxHealth = 40
 	faction = list("mining")
 
 /mob/living/simple_animal/hostile/netherworld/Initialize()

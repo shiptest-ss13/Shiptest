@@ -18,8 +18,8 @@
 	speak_emote = list("bellows")
 	speed = 3
 	throw_deflection = 10
-	maxHealth = 300
-	health = 300
+	maxHealth = 200
+	health = 200
 	armor = list("melee" = 10, "bullet" = 15, "laser" = 10, "energy" = 10, "bomb" = 10, "bio" = 10, "rad" = 10, "fire" = 10, "acid" = 10)
 	harm_intent_damage = 0
 	obj_damage = 100
@@ -257,8 +257,8 @@
 	icon_living = "Goliath"
 	icon_aggro = "Goliath_alert"
 	icon_dead = "Goliath_dead"
-	maxHealth = 550
-	health = 550
+	maxHealth = 350
+	health = 350
 	speed = 4
 	crusher_loot = /obj/item/crusher_trophy/elder_tentacle
 	pre_attack_icon = "Goliath_preattack"

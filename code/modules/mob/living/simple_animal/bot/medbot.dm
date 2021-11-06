@@ -81,6 +81,7 @@
 	emagged = 2
 	remote_disabled = 1
 	locked = TRUE
+	faction = list("mining", "silicon" , "turret")
 
 /mob/living/simple_animal/bot/medbot/derelict
 	name = "\improper Old Medibot"

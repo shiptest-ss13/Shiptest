@@ -24,10 +24,11 @@
 	desc = "A security robot. It looks like they have a loose trigger finger."
 	icon_state = "red209"
 	shoot_sound = 'sound/weapons/laser.ogg'
-	projectile = /obj/projectile/beam
+	projectile = /obj/projectile/beam/scatter
 	emagged = 2
 	remote_disabled = 1
 	locked = TRUE
+	faction = list("mining", "silicon" , "turret")
 
 /mob/living/simple_animal/bot/secbot/ed209/rockplanet/stun_attack(atom/A)
 	if(!on)
