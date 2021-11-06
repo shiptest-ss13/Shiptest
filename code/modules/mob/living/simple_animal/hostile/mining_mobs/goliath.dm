@@ -20,7 +20,7 @@
 	throw_deflection = 10
 	maxHealth = 200
 	health = 200
-	armor = list("melee" = 10, "bullet" = 15, "laser" = 10, "energy" = 10, "bomb" = 10, "bio" = 10, "rad" = 10, "fire" = 10, "acid" = 10)
+	armor = list("melee" = 30, "bullet" = 15, "laser" = 10, "energy" = 10, "bomb" = 10, "bio" = 10, "rad" = 10, "fire" = 10, "acid" = 10)
 	harm_intent_damage = 0
 	obj_damage = 100
 	environment_smash = ENVIRONMENT_SMASH_MINERALS

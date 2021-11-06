@@ -60,17 +60,15 @@
 	check_friendly_fire = FALSE
 
 /obj/effect/spawner/lootdrop/minebot
-	loot = list(
-	/obj/item/borg/upgrade/modkit/minebot_passthrough = 20
-	/obj/item/borg/upgrade/modkit/chassis_mod = 20
-	/obj/item/borg/upgrade/modkit/tracer = 20
-	/obj/item/borg/upgrade/modkit/cooldown = 5
-	/obj/item/borg/upgrade/modkit/damage = 5
-	/obj/item/borg/upgrade/modkit/range = 5
-	/obj/item/borg/upgrade/modkit/aoe/mobs = 5
-	/obj/item/borg/upgrade/modkit/aoe/tufs = 5
-	/obj/item/borg/upgrade/modkit/trigger_guard = 5
-	)
+	loot = list(/obj/item/borg/upgrade/modkit/minebot_passthrough = 20,
+				/obj/item/borg/upgrade/modkit/chassis_mod = 20,
+				/obj/item/borg/upgrade/modkit/tracer = 20,
+				/obj/item/borg/upgrade/modkit/cooldown = 5,
+				/obj/item/borg/upgrade/modkit/damage = 5,
+				/obj/item/borg/upgrade/modkit/range = 5,
+				/obj/item/borg/upgrade/modkit/aoe/mobs = 5,
+				/obj/item/borg/upgrade/modkit/aoe/turfs = 5,
+				/obj/item/borg/upgrade/modkit/trigger_guard = 5)
 
 
 /mob/living/simple_animal/hostile/mining_drone/Initialize()
