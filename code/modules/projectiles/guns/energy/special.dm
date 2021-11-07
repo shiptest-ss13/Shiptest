@@ -1,7 +1,6 @@
 /obj/item/gun/energy/ionrifle
 	name = "ion rifle"
 	desc = "A man-portable anti-armor weapon designed to disable mechanical threats at range."
-	icon = 'whitesands/icons/obj/guns/energy.dmi' //WS edit
 	icon_state = "ionrifle"
 	item_state = null	//so the human update icon uses the icon_state instead.
 	shaded_charge = FALSE
@@ -313,7 +312,6 @@
 
 /obj/item/gun/energy/temperature
 	name = "temperature gun"
-	icon = 'whitesands/icons/obj/guns/energy.dmi' //WS edit
 	icon_state = "freezegun"
 	desc = "A gun that changes temperatures."
 	ammo_type = list(/obj/item/ammo_casing/energy/temp, /obj/item/ammo_casing/energy/temp/hot)

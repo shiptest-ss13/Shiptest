@@ -6,6 +6,5 @@
 	internal_cell = TRUE //prevents you from giving it an OP cell - WS Edit
 	cell_type = /obj/item/stock_parts/cell/gun/SolGov
 	selfcharge = 1
-	icon = 'whitesands/icons/obj/guns/energy.dmi'
 	charge_delay = 0.5 //50 seconds to recharge the clip
 	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_BELT

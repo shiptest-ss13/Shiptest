@@ -93,7 +93,7 @@
 /obj/projectile/bullet/c38/hunting //bonus damage to simplemobs
 	name = ".38 hunting"
 	damage = 15
-	var/bonus_damage = 60 // if a simplemob then do this much extra
+	var/bonus_damage = 30 // if a simplemob then do this much extra
 
 /obj/projectile/bullet/c38/hunting/on_hit(atom/target, blocked = FALSE)
 	if(istype(target, /mob/living/simple_animal/hostile/asteroid/))
