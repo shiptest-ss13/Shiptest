@@ -787,6 +787,10 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/firealarm{
+	dir = 4;
+	pixel_x = 28
+	},
 /turf/open/floor/carpet/nanoweave/blue,
 /area/ship/bridge)
 "mn" = (
@@ -1778,6 +1782,7 @@
 	pixel_y = 32
 	},
 /obj/structure/catwalk/over,
+/obj/item/multitool,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "wT" = (
@@ -2542,15 +2547,28 @@
 /turf/open/floor/plating,
 /area/ship/bridge)
 "Fl" = (
-/obj/machinery/light{
-	dir = 4
+/obj/structure/closet/wall/blue{
+	dir = 8;
+	icon_state = "solgov_wall";
+	name = "captain's closet";
+	pixel_x = 28;
+	req_access_txt = "20"
 	},
-/obj/machinery/firealarm{
-	dir = 4;
-	pixel_x = 28
-	},
+/obj/item/clothing/gloves/color/captain,
+/obj/item/megaphone/command,
+/obj/item/gun/energy/e_gun,
+/obj/item/radio/headset/heads/captain/alt,
+/obj/item/clothing/shoes/laceup,
+/obj/item/clothing/under/rank/command/captain,
+/obj/item/clothing/head/caphat,
+/obj/item/clothing/glasses/sunglasses,
+/obj/item/stamp/captain,
+/obj/item/clothing/suit/toggle/solgov/terragov,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 10
+	},
+/obj/machinery/light{
+	dir = 4
 	},
 /turf/open/floor/carpet/nanoweave/blue,
 /area/ship/bridge)
@@ -2774,6 +2792,10 @@
 	icon_state = "2-4"
 	},
 /obj/structure/catwalk/over,
+/obj/machinery/firealarm{
+	dir = 1;
+	pixel_y = 28
+	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "Hx" = (
@@ -3993,18 +4015,32 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/machinery/firealarm{
-	dir = 1;
-	pixel_y = 28
-	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
-/obj/item/multitool,
 /obj/structure/catwalk/over,
+/obj/structure/closet/wall{
+	icon_door = "orange_wall";
+	name = "mining closet";
+	pixel_y = 28
+	},
+/obj/item/storage/backpack/explorer,
+/obj/item/storage/backpack/explorer,
+/obj/item/clothing/shoes/workboots/mining,
+/obj/item/clothing/shoes/workboots/mining,
+/obj/item/clothing/under/solgov,
+/obj/item/clothing/under/solgov,
+/obj/item/clothing/accessory/armband/cargo,
+/obj/item/clothing/accessory/armband/cargo,
+/obj/item/clothing/suit/hazardvest,
+/obj/item/clothing/suit/hazardvest,
+/obj/item/clothing/gloves/color/black,
+/obj/item/clothing/gloves/color/black,
+/obj/item/clothing/head/hardhat/mining,
+/obj/item/clothing/head/hardhat/mining,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "WL" = (
