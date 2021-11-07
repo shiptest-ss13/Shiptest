@@ -85,6 +85,8 @@
 	suit = /obj/item/clothing/suit/space/hardsuit/mining
 	mask = /obj/item/clothing/mask/breath
 
+//Shiptest outfits
+
 /datum/outfit/job/miner/solgov
 	name = "Field Engineer (SolGov)"
 
