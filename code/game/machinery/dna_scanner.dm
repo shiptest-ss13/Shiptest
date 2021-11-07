@@ -154,13 +154,6 @@
 	var/max_mutations = 6
 	var/read_only = FALSE //Well,it's still a floppy disk
 
-/obj/item/disk/data/Initialize()
-	. = ..()
-	/*shiptest edit : it conflicts with the new disks!!
-	icon_state = "datadisk[rand(0,6)]"
-	add_overlay("datadisk_gene")
-	*/
-
 /obj/item/disk/data/attack_self(mob/user)
 	read_only = !read_only
 	to_chat(user, "<span class='notice'>You flip the write-protect tab to [read_only ? "protected" : "unprotected"].</span>")
