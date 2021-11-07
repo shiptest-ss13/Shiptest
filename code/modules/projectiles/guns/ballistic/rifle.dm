@@ -55,10 +55,10 @@
 	sawn_desc = "An extremely sawn-off Mosin Nagant, popularly known as an \"obrez\". There was probably a reason it wasn't manufactured this short to begin with."
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
-	icon = 'whitesands/icons/obj/guns/48x32guns.dmi'
-	mob_overlay_icon = 'whitesands/icons/mob/clothing/back.dmi'
-	lefthand_file = 'whitesands/icons/mob/inhands/weapons/64x_guns_left.dmi'
-	righthand_file = 'whitesands/icons/mob/inhands/weapons/64x_guns_right.dmi'
+	icon = 'icons/obj/guns/48x32guns.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/back.dmi'
+	lefthand_file = 'icons/mob/inhands/weapons/64x_guns_left.dmi'
+	righthand_file = 'icons/mob/inhands/weapons/64x_guns_right.dmi'
 	icon_state = "moistnugget"
 	item_state = "moistnugget"
 	slot_flags = ITEM_SLOT_BACK

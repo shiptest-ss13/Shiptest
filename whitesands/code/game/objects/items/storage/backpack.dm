@@ -7,7 +7,7 @@
 	name = "messenger bag"
 	desc = "A sturdy backpack worn over one shoulder."
 	icon = 'whitesands/icons/obj/storage.dmi'
-	mob_overlay_icon = 'whitesands/icons/mob/clothing/back.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/back.dmi'
 	icon_state = "courierbag"
 	item_state = "courierbag"
 
