@@ -259,9 +259,11 @@
 	attack_verb = list("beeped", "booped")
 	modifies_speech = TRUE
 	taste_sensitivity = 25 // not as good as an organic tongue
+	var/static/list/languages_possible_robot = typecacheof(subtypesof(/datum/language))
 
-/obj/item/organ/tongue/robot/can_speak_language(language)
-	return TRUE // THE MAGIC OF ELECTRONICS
+/obj/item/organ/tongue/robot/Initialize(mapload)
+	. = ..()
+	languages_possible = languages_possible_robot
 
 /obj/item/organ/tongue/robot/emp_act(severity)
 	owner.apply_effect(EFFECT_STUTTER, 120)

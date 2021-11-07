@@ -1,7 +1,7 @@
 /obj/item/radio/intercom
 	name = "station intercom"
 	desc = "Talk through this."
-	icon = 'whitesands/icons/obj/radio.dmi'
+	icon = 'icons/obj/radio.dmi'
 	icon_state = "intercom"
 	anchored = TRUE
 	w_class = WEIGHT_CLASS_BULKY

@@ -59,3 +59,9 @@
 	desc = "A .38 Iceblox bullet casing."
 	caliber = "38"
 	projectile_type = /obj/projectile/bullet/c38/iceblox
+
+/obj/item/ammo_casing/c38/hunting
+	name = ".38 hunting casing"
+	desc = "A .38 hunting casing."
+	caliber = "38"
+	projectile_type = /obj/projectile/bullet/c38/hunting

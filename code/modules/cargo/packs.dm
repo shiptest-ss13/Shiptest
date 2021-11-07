@@ -663,6 +663,33 @@
 		var/item = pick(contains)
 		new item(C)
 
+/datum/supply_pack/security/armory/winchester
+	name = "Winchester Lever Action Rifle Crate"
+	desc = "Contains two lever action rifles intended for hunting wildlife or no-go-doers."
+	cost = 9000
+	contains = list(/obj/item/gun/ballistic/shotgun/winchester,
+					/obj/item/gun/ballistic/shotgun/winchester)
+	crate_name = "rifle crate"
+	dangerous = TRUE
+
+/datum/supply_pack/security/armory/winchester_ammo
+	name = "Winchester and Detective Special .38 Ammo Boxes"
+	desc = "Contains two 30 round ammo boxes for refilling .38 weapons."
+	cost = 5000
+	contains = list(/obj/item/ammo_box/c38_box,
+					/obj/item/ammo_box/c38_box)
+	crate_name = "ammo crate"
+	dangerous = TRUE
+
+/datum/supply_pack/security/armory/winchester_hunting_ammo
+	name = "Winchester and Detective Special .38 Hunting Ammo Boxes"
+	desc = "Contains two  30 round .38 ammo boxes which deal extra damage to wildlife."
+	cost = 2000
+	contains = list(/obj/item/ammo_box/c38_box/hunting,
+					/obj/item/ammo_box/c38_box/hunting)
+	crate_name = "ammo crate"
+	dangerous = TRUE
+
 /datum/supply_pack/security/armory/aknt
 	name = "Nanotrasen Brand Kalashnikov Rifle Crate"
 	desc = "Contains two cheaply made reproductions of the AK-47 by Nanotrasen, the NT-AK."
