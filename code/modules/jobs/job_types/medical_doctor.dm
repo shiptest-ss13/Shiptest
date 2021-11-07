@@ -100,6 +100,8 @@
 	backpack_contents = list(/obj/item/clipboard=1, /obj/item/folder/white=1, /obj/item/taperecorder=1)
 //WS Edit End - Alt-Job Titles
 
+//Shiptest outfits
+
 /datum/outfit/job/doctor/solgov
 	name = "Medical Doctor (SolGov)"
 
@@ -114,3 +116,9 @@
 
 	uniform = /obj/item/clothing/under/syndicate/camo
 	head = /obj/item/clothing/head/beret/solgov/terragov
+
+/datum/outfit/job/doctor/pirate
+	name = "Ship's Doctor (Pirate)"
+
+	uniform = /obj/item/clothing/under/costume/sailor
+	shoes = /obj/item/clothing/shoes/jackboots

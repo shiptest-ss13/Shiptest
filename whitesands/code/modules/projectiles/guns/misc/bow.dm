@@ -6,7 +6,7 @@
 	icon = 'whitesands/icons/obj/guns/projectile.dmi'
 	lefthand_file = 'whitesands/icons/mob/inhands/weapons/guns_left.dmi'
 	righthand_file = 'whitesands/icons/mob/inhands/weapons/guns_right.dmi'
-	mob_overlay_icon = 'whitesands/icons/mob/clothing/back.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/back.dmi'
 	force = 8
 
 /obj/item/gun/ballistic/bow/pipe
@@ -16,7 +16,7 @@
 	icon = 'whitesands/icons/obj/guns/projectile.dmi'
 	lefthand_file = 'whitesands/icons/mob/inhands/weapons/guns_left.dmi'
 	righthand_file = 'whitesands/icons/mob/inhands/weapons/guns_right.dmi'
-	mob_overlay_icon = 'whitesands/icons/mob/clothing/back.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/back.dmi'
 	force = 7
 
 /obj/item/storage/bag/quiver/empty

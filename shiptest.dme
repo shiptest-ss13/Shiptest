@@ -1,4 +1,4 @@
-g// DM Environment file for tgstation.dme.
+g// DM Environment file for shiptest.dme.
 // All manual changes should be made outside the BEGIN_ and END_ blocks.
 // New source code should be placed in .dm files: choose File/New --> Code File.
 // BEGIN_INTERNALS
@@ -3042,6 +3042,7 @@ g// DM Environment file for tgstation.dme.
 #include "code\modules\surgery\dental_implant.dm"
 #include "code\modules\surgery\experimental_dissection.dm"
 #include "code\modules\surgery\eye_surgery.dm"
+#include "code\modules\surgery\gastrectomy.dm"
 #include "code\modules\surgery\healing.dm"
 #include "code\modules\surgery\hepatectomy.dm"
 #include "code\modules\surgery\implant_removal.dm"
@@ -3467,7 +3468,6 @@ g// DM Environment file for tgstation.dme.
 #include "whitesands\code\modules\projectiles\guns\ballistic\automatic.dm"
 #include "whitesands\code\modules\projectiles\guns\ballistic\derringer.dm"
 #include "whitesands\code\modules\projectiles\guns\ballistic\rifle.dm"
-#include "whitesands\code\modules\projectiles\guns\ballistic\shotgun.dm"
 #include "whitesands\code\modules\projectiles\guns\energy\energy_gun.dm"
 #include "whitesands\code\modules\projectiles\guns\energy\laser.dm"
 #include "whitesands\code\modules\projectiles\guns\energy\pulse.dm"
