@@ -76,4 +76,4 @@
 
 /datum/outfit/job/miner/western
 	name = "Asteroid Miner (Western)"
-	under = /obj/item/clothing/under/rank/cargo/miner/hazard
+	uniform = /obj/item/clothing/under/rank/cargo/miner/hazard
