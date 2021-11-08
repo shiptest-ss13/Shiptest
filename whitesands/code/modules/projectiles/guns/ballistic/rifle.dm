@@ -10,5 +10,3 @@
 	weapon_weight = WEAPON_MEDIUM
 	w_class = WEIGHT_CLASS_NORMAL
 	mag_type = /obj/item/ammo_box/magazine/internal/boltaction/polymer
-	lefthand_file = 'whitesands/icons/mob/inhands/weapons/guns_left.dmi'
-	righthand_file = 'whitesands/icons/mob/inhands/weapons/guns_right.dmi'

@@ -40,6 +40,12 @@
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | ACID_PROOF
 	weapon_weight = WEAPON_LIGHT
 
+/obj/item/gun/energy/laser/captain/brazil
+	icon_state = "capgun_brazil"
+	item_state = "caplaser"
+	desc = "This is an antique laser gun. It seems all the high quality materials it was once made of are now scratched up and torn. The nuclear power cell has been removed, and will no longer automaticly recharge."
+	selfcharge = 0
+
 /obj/item/gun/energy/laser/captain/scattershot
 	name = "scatter shot laser rifle"
 	icon_state = "lasercannon"

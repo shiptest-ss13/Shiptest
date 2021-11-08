@@ -63,6 +63,29 @@
 	shaded_charge = TRUE
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | ACID_PROOF
 
+/obj/item/gun/energy/e_gun/hos/brazil
+	name = "modified antique laser gun"
+	desc = "It's somehow modified to have more firemodes."
+	icon_state = "capgun_brazil_hos"
+	item_state = "hoslaser"
+
+/obj/item/gun/energy/e_gun/hos/brazil/true
+	desc = "By using a original antique laser gun with a intact nuclear power cell, it is truly one of the finest weapons in this area of space."
+	icon_state = "capgun_hos"
+	item_state = "hoslaser"
+	selfcharge = 1
+
+/obj/item/gun/energy/e_gun/hop
+	name = "\improper X-02 \"Bureaucracy\" Energy Gun"
+	desc = "The successor to the X-01. It trades many of the  modes to be cheaper and mass produceable. The rest of the modes have been upgraded as compensation."
+	cell_type = /obj/item/stock_parts/cell/gun
+	icon_state = "hoprifle"
+	item_state = "energydisable3"
+	shaded_charge = TRUE
+	force = 5
+	ammo_type = list(/obj/item/ammo_casing/energy/disabler/hitscan, /obj/item/ammo_casing/energy/disabler/scatter/ultima/alt, /obj/item/ammo_casing/energy/laser/ultima/alt)
+	ammo_x_offset = 2
+
 /obj/item/gun/energy/e_gun/dragnet
 	name = "\improper DRAGnet"
 	desc = "The \"Dynamic Rapid-Apprehension of the Guilty\" net is a revolution in law enforcement technology."
@@ -153,3 +176,14 @@
 				. += "[icon_state]_fail_1"
 			if(151 to INFINITY)
 				. += "[icon_state]_fail_2"
+
+/obj/item/gun/energy/e_gun/rdgun
+	name = "research director's PDW"
+	desc = "A energy revolver made from the power of science, but more importantly booze. Only has 6 shots."
+	icon_state = "rdpdw"
+	item_state = "gun"
+	ammo_x_offset = 2
+	charge_sections = 6
+	small_gun = TRUE
+	ammo_type = list(/obj/item/ammo_casing/energy/disabler/hitscan, /obj/item/ammo_casing/energy/ion/cheap)
+	cell_type = /obj/item/stock_parts/cell/gun/mini

@@ -109,8 +109,6 @@
 /obj/item/gun/ballistic/automatic/m90
 	name = "\improper M-90gl Carbine"
 	desc = "A three-round burst 5.56 toploading carbine, designated 'M-90gl'. Has an attached underbarrel grenade launcher which can be toggled on and off."
-	lefthand_file = 'whitesands/icons/mob/inhands/weapons/guns_left.dmi'
-	righthand_file = 'whitesands/icons/mob/inhands/weapons/guns_right.dmi'
 	icon_state = "m90"
 	item_state = "m90"
 	mag_type = /obj/item/ammo_box/magazine/m556

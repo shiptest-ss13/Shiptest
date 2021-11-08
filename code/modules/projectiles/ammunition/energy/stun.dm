@@ -40,6 +40,10 @@
 	variance = 35
 	e_cost = 2000
 
+/obj/item/ammo_casing/energy/disabler/scatter/ultima/alt
+
+	select_name = "blast"
+
 /obj/item/ammo_casing/energy/disabler/smg
 	projectile_type = /obj/projectile/beam/disabler/weak/negative_ap
 	e_cost = 330

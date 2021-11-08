@@ -3,8 +3,6 @@
 	desc = "Some sort of primitive projectile weapon made of bone and wrapped sinew."
 	icon_state = "ashenbow"
 	item_state = "ashenbow"
-	lefthand_file = 'whitesands/icons/mob/inhands/weapons/guns_left.dmi'
-	righthand_file = 'whitesands/icons/mob/inhands/weapons/guns_right.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/back.dmi'
 	force = 8
 
@@ -12,9 +10,6 @@
 	name = "Pipe Bow"
 	desc = "A crude projectile weapon made from silk string, pipe and lots of bending."
 	icon_state = "pipebow"
-
-	lefthand_file = 'whitesands/icons/mob/inhands/weapons/guns_left.dmi'
-	righthand_file = 'whitesands/icons/mob/inhands/weapons/guns_right.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/back.dmi'
 	force = 7
 

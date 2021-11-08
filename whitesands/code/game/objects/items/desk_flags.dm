@@ -13,3 +13,8 @@
 	name = "solgov flag"
 	desc = "The blue and gold flag of the Sol Government."
 	icon_state = "solgov"
+
+/obj/item/desk_flag/trans
+	name = "vampire flag"
+	desc = "The blue, cyan, and white flag of the transylvanian society of vampires."
+	icon_state = "trans"
