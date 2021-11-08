@@ -166,10 +166,6 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 	/// used for narcing on underages
 	var/obj/item/radio/Radio
 
-/obj/item/circuitboard
-	///allows the circuit board to remember if items should be free.
-	var/all_items_free = FALSE
-
 /**
 	* Initialize the vending machine
 	*
@@ -193,10 +189,6 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 	// so if slogantime is 10 minutes, it will say it at somewhere between 10 and 20 minutes after the machine is crated.
 	last_slogan = world.time + rand(0, slogan_delay)
 	power_change()
-
-	if(mapload)
-		if(circuit)
-			circuit.all_items_free = all_items_free //sync up the circuit so the pricing schema is carried over if it's reconstructed.
 
 	Radio = new /obj/item/radio(src)
 	Radio.listening = 0
