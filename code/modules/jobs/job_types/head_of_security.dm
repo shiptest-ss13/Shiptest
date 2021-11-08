@@ -74,8 +74,7 @@
 /datum/outfit/job/hos/Sergeant
 	name = "Sergeant (Head of Security)"
 
-	head = /obj/item/clothing/head/HoS/beret/syndicate
-	suit_store = /obj/item/melee/transforming/energy/sword
-	backpack_contents = list(/obj/item/melee/baton/loaded=1,
 	uniform = /obj/item/clothing/under/syndicate/gorlex
-
+	suit_store = /obj/item/melee/transforming/energy/sword
+	head = /obj/item/clothing/head/HoS/beret/syndicate
+	backpack_contents = list(/obj/item/melee/baton/loaded=1)
