@@ -100,3 +100,9 @@
 	id = "oreprocess"
 	description = "A fortress, although one you are probably more familiar with.."
 	suffix = "rockplanet_ore_proccessing_facility.dmm"
+
+/datum/map_template/ruin/rockplanet/oreprocess
+	name = "Weapons testing facility"
+	id = "guntested"
+	description = "A abandoned Nanotrasen weapons facility, presumably the place where the X-01 was manufactured."
+	suffix = "rockplanet_lab.dmm"
