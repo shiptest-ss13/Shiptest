@@ -106,3 +106,9 @@
 	id = "guntested"
 	description = "A abandoned Nanotrasen weapons facility, presumably the place where the X-01 was manufactured."
 	suffix = "rockplanet_lab.dmm"
+
+/datum/map_template/ruin/rockplanet/radiation
+	name = "Honorable deeds storage"
+	id = "rockplanet radiation"
+	description = "A dumping ground for nuclear waste."
+	suffix = "rockplanet_unhonorable.dmm"
