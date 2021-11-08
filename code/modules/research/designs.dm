@@ -71,7 +71,8 @@ other types of metals and chemistry for reagents).
 /obj/item/disk/design_disk
 	name = "Component Design Disk"
 	desc = "A disk for storing device design data for construction in lathes."
-	icon_state = "datadisk1"
+	random_color = FALSE
+	color = "#3C2798"
 	custom_materials = list(/datum/material/iron =300, /datum/material/glass =100)
 	var/list/blueprints = list()
 	var/max_blueprints = 1
