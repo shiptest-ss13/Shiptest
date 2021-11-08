@@ -114,3 +114,10 @@
 
 	uniform = /obj/item/clothing/under/costume/sailor
 	shoes = /obj/item/clothing/shoes/jackboots
+
+/datum/outfit/job/doctor/cybersun
+	name = "Operations Assistant (Medical Doctor)"
+
+	uniform = /obj/item/clothing/under/syndicate/cybersun
+	accessory = /obj/item/clothing/accessory/armband/medblue
+	shoes = /obj/item/clothing/shoes/jackboots

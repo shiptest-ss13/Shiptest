@@ -4,12 +4,28 @@
 	"map_path": "_maps/shuttles/shiptest/voulgier.dmm",
 	"map_id": "voulgier",
 	"job_slots": {
-		"Captain": 1,
+		"Captain": {
+			"outfit": "/datum/outfit/job/captain/aclf",
+			"officer": true,
+			"slots": 1
+		},
 		"Head of Personnel": 1,
-		"Medical Doctor": 2,
-		"Station Engineer": 2,
-		"Head of Security": 1,
-		"Assistant": 3
+		"Operations Assistant": {
+			"outfit": "/datum/outfit/job/doctor/cybersun",
+			"slots": 2
+		},
+		"Ship Technician": {
+			"outfit": "/datum/outfit/job/doctor/cybersun",
+			"slots": 2
+		},
+		"Sergeant": {
+			"outfit": "/datum/outfit/job/hos/Sergeant",
+			"slots": 1
+		},
+		"Operative": {
+			"outfit": "/datum/outfit/job/assistant/operative",
+			"slots": 3
+		}
 	},
 	"cost": 1250
 }

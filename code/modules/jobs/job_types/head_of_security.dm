@@ -71,3 +71,10 @@
 	suit_store = /obj/item/tank/internals/oxygen
 	backpack_contents = list(/obj/item/melee/baton/loaded=1, /obj/item/gun/energy/e_gun=1, /obj/item/ammo_box/magazine/co9mm=1) //WS edit - free lethals
 
+/datum/outfit/job/hos/Sergeant
+	name = "Sergeant (Head of Security)"
+
+	suit_store = /obj/item/melee/transforming/energy/sword
+	backpack_contents = list(/obj/item/melee/baton/loaded=1,
+	uniform = /obj/item/clothing/under/syndicate/gorlex
+	head = /obj/item/clothing/head/HoS/beret/syndicate
