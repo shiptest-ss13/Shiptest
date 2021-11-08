@@ -197,9 +197,6 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 	if(mapload)
 		if(circuit)
 			circuit.all_items_free = all_items_free //sync up the circuit so the pricing schema is carried over if it's reconstructed.
-	else
-		if(circuit && (circuit.all_items_free != all_items_free)) //check if they're not the same to minimize the amount of edited values.
-			all_items_free = circuit.all_items_free //if it was constructed outside mapload, sync the vendor up with the circuit's var so you can't bypass price requirements by moving / reconstructing it off station.
 
 	Radio = new /obj/item/radio(src)
 	Radio.listening = 0
