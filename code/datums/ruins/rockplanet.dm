@@ -118,3 +118,9 @@
 	id = "Abandoned science wing"
 	description = "A chunk of a station that broke off.."
 	suffix = "rockplanet_boxsci.dmm"
+
+/datum/map_template/ruin/rockplanet/cult_templar
+	id = "cult_templar"
+	suffix = "rockplanet_chaosmarine.dmm"
+	name = "Bloody Lair"
+	description = "Some old base. Besides the rust, it looks almost perfectly intact. But why was it abandoned?"

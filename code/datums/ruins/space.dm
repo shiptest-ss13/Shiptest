@@ -302,9 +302,3 @@
 	suffix = "syndicatewreck01.dmm"
 	name = "Syndicate Station Wreckage"
 	description = "An old wreck, made of plastitanium. Somehow, it looks more filled than it ever was..."
-
-/datum/map_template/ruin/space/cult_templar
-	id = "cult_templar"
-	suffix = "chaosmarine.dmm"
-	name = "Bloody Lair"
-	description = "A seemingly abandoned blood cult base in space, but why was it abandoned?"
