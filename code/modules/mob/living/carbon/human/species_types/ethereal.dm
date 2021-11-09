@@ -1,7 +1,7 @@
 #define ETHEREAL_EMAG_COLORS list("#00ffff", "#ffc0cb", "#9400D3", "#4B0082", "#0000FF", "#00FF00", "#FFFF00", "#FF7F00", "#FF0000") //WS Edit -- Multitool Color Change
 
 /datum/species/ethereal
-	name = "Ethereal"
+	name = "Elzuose"
 	id = "ethereal"
 	attack_verb = "burn"
 	attack_sound = 'sound/weapons/etherealhit.ogg'
@@ -31,7 +31,7 @@
 	var/EMPeffect = FALSE
 	var/emag_effect = FALSE                          //WS Edit -- Multitool Color Change
 	var/static/unhealthy_color = rgb(237, 164, 149)  //WS Edit -- Multitool Color Change
-	loreblurb = "Ethereals are organic humanoid beings with a blood that has strange luminiscent and electrical properties. They require electricity to survive, rather than food, and cast bright, colorful light from their bodies."
+	loreblurb = "Elzuosa are an uncommon and unusual species best described as crystalline, electrically-powered plantpeople. They hail from the warm planet Kalixcis, where they evolved alongside the Sarathi. Kalixcian culture places no importance on blood-bonds, and those from it tend to consider their family anyone they are sufficiently close to, and choose their own names."
 	var/drain_time = 0 //used to keep ethereals from spam draining power sources
 	var/obj/effect/dummy/lighting_obj/ethereal_light
 
@@ -235,7 +235,7 @@
 			H.visible_message("<span class='danger'>[H]'s EM frequency is scrambled to a random color.</span>")
 		else
 			// select new color
-			var/new_etherealcolor = input(user, "Choose your ethereal color", "Character Preference") as null|anything in GLOB.color_list_ethereal
+			var/new_etherealcolor = input(user, "Choose your Elzuosa color", "Character Preference") as null|anything in GLOB.color_list_ethereal
 			if(new_etherealcolor)
 				default_color = "#" + GLOB.color_list_ethereal[new_etherealcolor]
 				current_color = health_adjusted_color(H, default_color)
