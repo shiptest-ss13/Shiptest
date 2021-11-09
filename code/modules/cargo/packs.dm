@@ -55,7 +55,6 @@
 	name = "Biker Gang Kit" //TUNNEL SNAKES OWN THIS TOWN
 	desc = "TUNNEL SNAKES OWN THIS TOWN. Contains an unbranded All Terrain Vehicle, and a complete gang outfit -- consists of black gloves, a menacing skull bandanna, and a SWEET leather overcoat!"
 	cost = 2000
-	contraband = TRUE
 	contains = list(/obj/vehicle/ridden/atv,
 					/obj/item/key,
 					/obj/item/clothing/suit/jacket/leather/overcoat,
@@ -405,7 +404,6 @@
 	name = "Standard Justice Enforcer Crate"
 	desc = "This is it. The Bee's Knees. The Creme of the Crop. The Pick of the Litter. The best of the best of the best. The Crown Jewel of Nanotrasen. The Alpha and the Omega of security headwear. Guaranteed to strike fear into the hearts of each and every criminal aboard the station. Also comes with a security gasmask. Requires extended Security access to open."
 	cost = 6000 //justice comes at a price. An expensive, noisy price.
-	contraband = TRUE
 	contains = list(/obj/item/clothing/head/helmet/justice,
 					/obj/item/clothing/mask/gas/sechailer)
 	crate_name = "security clothing crate"
@@ -434,7 +432,6 @@
 	name = "Traditional Equipment Crate"
 	desc = "Spare equipment found in a warehouse."
 	cost = 1100
-	contraband = TRUE
 	contains = list(/obj/item/clothing/under/rank/security/constable,
 					/obj/item/clothing/head/helmet/constable,
 					/obj/item/clothing/gloves/color/white,
@@ -496,7 +493,7 @@
 /datum/supply_pack/security/armory/ballistic_single
 	name = "Combat Shotgun Single-Pack"
 	desc = "For when the enemy absolutely needs to be replaced with lead. Contains one Aussec-designed Combat Shotgun, and one Shotgun Bandolier. Requires Armory access to open."
-	cost = 3200
+	cost = 9600
 	small_item = TRUE
 	contains = list(/obj/item/gun/ballistic/shotgun/automatic/combat,
 					/obj/item/storage/belt/bandolier)
@@ -505,7 +502,7 @@
 /datum/supply_pack/security/armory/ballistic
 	name = "Combat Shotguns Crate"
 	desc = "For when the enemy absolutely needs to be replaced with lead. Contains three Aussec-designed Combat Shotguns, and three Shotgun Bandoliers. Requires Armory access to open."
-	cost = 8000
+	cost = 24000
 	contains = list(/obj/item/gun/ballistic/shotgun/automatic/combat,
 					/obj/item/gun/ballistic/shotgun/automatic/combat,
 					/obj/item/gun/ballistic/shotgun/automatic/combat,
@@ -518,16 +515,25 @@
 /datum/supply_pack/security/armory/dragnet
 	name = "DRAGnet Crate"
 	desc = "Contains three \"Dynamic Rapid-Apprehension of the Guilty\" netting devices, a recent breakthrough in law enforcement prisoner management technology. Requires armory access to open."
-	cost = 1500
+	cost = 4500
 	contains = list(/obj/item/gun/energy/e_gun/dragnet,
 					/obj/item/gun/energy/e_gun/dragnet,
 					/obj/item/gun/energy/e_gun/dragnet)
 	crate_name = "\improper DRAGnet crate"
 
+/datum/supply_pack/security/armory/disposable
+	name = "Disposable Guns Crate"
+	desc = "Contains three disposable guns, for civillian use. Requires Armory access to open."
+	cost = 4500
+	contains = list(/obj/item/gun/ballistic/automatic/pistol/disposable,
+					/obj/item/gun/ballistic/automatic/pistol/disposable,
+					/obj/item/gun/ballistic/automatic/pistol/disposable)
+	dangerous = TRUE
+
 /datum/supply_pack/security/armory/energy_single
 	name = "Energy Guns Single-Pack"
 	desc = "Contains one Energy Gun, capable of firing both nonlethal and lethal blasts of light. Requires Armory access to open."
-	cost = 1500
+	cost = 4500
 	small_item = TRUE
 	contains = list(/obj/item/gun/energy/e_gun)
 	dangerous = TRUE
@@ -535,7 +541,7 @@
 /datum/supply_pack/security/armory/energy
 	name = "Energy Guns Crate"
 	desc = "Contains two Energy Guns, capable of firing both nonlethal and lethal blasts of light. Requires Armory access to open."
-	cost = 2500
+	cost = 7500
 	contains = list(/obj/item/gun/energy/e_gun,
 					/obj/item/gun/energy/e_gun)
 	crate_name = "energy gun crate"
@@ -552,7 +558,7 @@
 /datum/supply_pack/security/armory/fire
 	name = "Incendiary Weapons Crate"
 	desc = "Burn, baby burn. Contains three incendiary grenades, three plasma canisters, and a flamethrower. Requires Armory access to open."
-	cost = 1500
+	cost = 4500
 	access = ACCESS_HEADS
 	contains = list(/obj/item/flamethrower/full,
 					/obj/item/tank/internals/plasma,
@@ -568,7 +574,7 @@
 /datum/supply_pack/security/armory/energy
 	name = "Ion Rifle Crate"
 	desc = "Contains a single Mk.I Ion Projector, a special anti-tank rifle designed to disable electronic threats at range. Requires Armory level access to open."
-	cost = 5500
+	cost = 16500
 	contains = list(/obj/item/gun/energy/ionrifle)
 	crate_name = "ion rifle crate"
 	crate_type = /obj/structure/closet/crate/secure/plasma
@@ -634,11 +640,9 @@
 /datum/supply_pack/security/armory/russian
 	name = "Russian Surplus Crate"
 	desc = "Hello Comrade, we have the most modern russian military equipment the black market can offer, for the right price of course. Sadly we couldnt remove the lock so it requires Armory access to open."
-	cost = 8000
-	contraband = TRUE
+	cost = 10500
 	contains = list(/obj/item/reagent_containers/food/snacks/rationpack,
 					/obj/item/ammo_box/a762,
-					/obj/item/ammo_box/magazine/ak47, //WS edit: gun
 					/obj/item/storage/toolbox/ammo,
 					/obj/item/clothing/suit/armor/vest/russian,
 					/obj/item/clothing/head/helmet/rus_helmet,
@@ -649,7 +653,6 @@
 					/obj/item/clothing/mask/russian_balaclava,
 					/obj/item/clothing/head/helmet/rus_ushanka,
 					/obj/item/clothing/suit/armor/vest/russian_coat,
-					/obj/item/gun/ballistic/automatic/ak47, //WS edit: gun
 					/obj/item/gun/ballistic/rifle/boltaction,
 					/obj/item/gun/ballistic/rifle/boltaction)
 	crate_name = "surplus military crate"
@@ -660,10 +663,73 @@
 		var/item = pick(contains)
 		new item(C)
 
+/datum/supply_pack/security/armory/winchester
+	name = "Winchester Lever Action Rifle Crate"
+	desc = "Contains two lever action rifles intended for hunting wildlife or no-go-doers."
+	cost = 9000
+	contains = list(/obj/item/gun/ballistic/shotgun/winchester,
+					/obj/item/gun/ballistic/shotgun/winchester)
+	crate_name = "rifle crate"
+	dangerous = TRUE
+
+/datum/supply_pack/security/armory/winchester_ammo
+	name = "Winchester and Detective Special .38 Ammo Boxes"
+	desc = "Contains two 30 round ammo boxes for refilling .38 weapons."
+	cost = 5000
+	contains = list(/obj/item/ammo_box/c38_box,
+					/obj/item/ammo_box/c38_box)
+	crate_name = "ammo crate"
+	dangerous = TRUE
+
+/datum/supply_pack/security/armory/winchester_hunting_ammo
+	name = "Winchester and Detective Special .38 Hunting Ammo Boxes"
+	desc = "Contains two  30 round .38 ammo boxes which deal extra damage to wildlife."
+	cost = 2000
+	contains = list(/obj/item/ammo_box/c38_box/hunting,
+					/obj/item/ammo_box/c38_box/hunting)
+	crate_name = "ammo crate"
+	dangerous = TRUE
+
+/datum/supply_pack/security/armory/aknt
+	name = "Nanotrasen Brand Kalashnikov Rifle Crate"
+	desc = "Contains two cheaply made reproductions of the AK-47 by Nanotrasen, the NT-AK."
+	cost = 12000
+	contains = list(/obj/item/gun/ballistic/automatic/ak47/nt,
+					/obj/item/gun/ballistic/automatic/ak47/nt)
+	crate_name = "rifle crate"
+	dangerous = TRUE
+
+/datum/supply_pack/security/armory/akntammo
+	name = "Nanotrasen Brand Kalashnikov Ammo Crate"
+	desc = "Contains two 30 round proprietary magazines for the NT-AK."
+	cost = 5000
+	contains = list(/obj/item/ammo_box/magazine/aknt,
+					/obj/item/ammo_box/magazine/aknt)
+	crate_name = "rifle crate"
+	dangerous = TRUE
+
+/datum/supply_pack/security/armory/ak47
+	name = "Kalashnikov Rifle Crate"
+	desc = "Hello Comrade, this here is our most famous product! It is easily maintainable, and more afordable than any other rifle, yes! If product stops working, just apply tape!"
+	cost = 20000
+	contains = list(/obj/item/gun/ballistic/automatic/ak47,
+					/obj/item/gun/ballistic/automatic/ak47)
+	crate_name = "rifle crate"
+	dangerous = TRUE
+
+/datum/supply_pack/security/armory/ak47ammo
+	name = "Kalashnikov Ammo Crate"
+	desc = "You ran out of ammo? We have solution, yes! Order 2 spare magazines for the shiny rifle of yours, and continue doing, whatever you do with your rifle!"
+	cost = 7000
+	contains = list(/obj/item/ammo_box/magazine/ak47,
+					/obj/item/ammo_box/magazine/ak47)
+	crate_name = "rifle crate"
+	dangerous = TRUE
+
 /datum/supply_pack/security/armory/swat
 	name = "SWAT Crate"
 	desc = "Contains two fullbody sets of tough, fireproof, pressurized suits designed in a joint effort by IS-ERI and Nanotrasen. Each set contains a suit, helmet, mask, combat belt, and combat gloves. Requires Armory access to open."
-	cost = 6000
+	cost = 12000
 	contains = list(/obj/item/clothing/head/helmet/swat/nanotrasen,
 					/obj/item/clothing/head/helmet/swat/nanotrasen,
 					/obj/item/clothing/suit/space/swat,
@@ -680,7 +746,7 @@
 /datum/supply_pack/security/armory/wt550_single
 	name = "WT-550 Auto Rifle Single-Pack"
 	desc = "Contains one high-powered, semiautomatic rifles chambered in 4.6x30mm. Requires Armory access to open."
-	cost = 2000
+	cost = 6000
 	contains = list(/obj/item/gun/ballistic/automatic/wt550)
 	small_item = TRUE
 	dangerous = TRUE
@@ -688,7 +754,7 @@
 /datum/supply_pack/security/armory/wt550
 	name = "WT-550 Auto Rifle Crate"
 	desc = "Contains two high-powered, semiautomatic rifles chambered in 4.6x30mm. Requires Armory access to open."
-	cost = 3500
+	cost = 10500
 	contains = list(/obj/item/gun/ballistic/automatic/wt550,
 					/obj/item/gun/ballistic/automatic/wt550)
 	crate_name = "auto rifle crate"
@@ -1821,7 +1887,6 @@
 	cost = 6000
 	contains = list(/obj/item/storage/backpack/duffelbag/clown/cream_pie)
 	crate_name = "party equipment crate"
-	contraband = TRUE
 	access = ACCESS_THEATRE
 	crate_type = /obj/structure/closet/crate/secure
 
@@ -1985,7 +2050,6 @@
 /datum/supply_pack/critter/butterfly
 	name = "Butterflies Crate"
 	desc = "Not a very dangerous insect, but they do give off a better image than, say, flies or cockroaches."//is that a motherfucking worm reference
-	contraband = TRUE
 	cost = 5000
 	contains = list(/mob/living/simple_animal/butterfly)
 	crate_name = "entomology samples crate"
@@ -2141,7 +2205,6 @@
 /datum/supply_pack/costumes_toys/randomised/contraband
 	name = "Contraband Crate"
 	desc = "Psst.. bud... want some contraband? I can get you a poster, some nice cigs, dank, even some sponsored items...you know, the good stuff. Just keep it away from the cops, kay?"
-	contraband = TRUE
 	cost = 3000
 	num_contained = 7
 	contains = list(/obj/item/poster/random_contraband,
@@ -2182,7 +2245,6 @@
 /datum/supply_pack/costumes_toys/foamforce/bonus
 	name = "Foam Force Pistols Crate"
 	desc = "Psst.. hey bud... remember those old foam force pistols that got discontinued for being too cool? Well I got two of those right here with your name on em. I'll even throw in a spare mag for each, waddya say?"
-	contraband = TRUE
 	cost = 4000
 	contains = list(/obj/item/gun/ballistic/automatic/toy/pistol,
 					/obj/item/gun/ballistic/automatic/toy/pistol,
@@ -2228,7 +2290,6 @@
 	name = "Hilarious Firing Pin Crate"
 	desc = "I uh... I'm not really sure what this does. Wanna buy it?"
 	cost = 5000
-	contraband = TRUE
 	contains = list(/obj/item/firing_pin/clown)
 	crate_name = "toy crate" // It's /technically/ a toy. For the clown, at least.
 	crate_type = /obj/structure/closet/crate/wooden
@@ -2261,7 +2322,6 @@
 	name = "Laser Tag Firing Pins Crate"
 	desc = "Three laser tag firing pins used in laser-tag units to ensure users are wearing their vests."
 	cost = 3000
-	contraband = TRUE
 	contains = list(/obj/item/storage/box/lasertagpins)
 	crate_name = "laser tag crate"
 
@@ -2423,7 +2483,6 @@
 	desc = "This crate contains everything you need to set up your own ethnicity-based racketeering operation."
 	cost = 1000
 	contains = list()
-	contraband = TRUE
 
 /datum/supply_pack/costumes_toys/mafia/fill(obj/structure/closet/crate/C)
 	for(var/i in 1 to 4)
@@ -2584,7 +2643,6 @@
 	name = "Black Market LTSRBT"
 	desc = "Need a faster and better way of transporting your illegal goods from and to the station? Fear not, the Long-To-Short-Range-Bluespace-Transceiver (LTSRBT for short) is here to help. Contains a LTSRBT circuit, two bluespace crystals, and one ansible."
 	cost = 10000
-	contraband = TRUE
 	contains = list(
 		/obj/item/circuitboard/machine/ltsrbt,
 		/obj/item/stack/ore/bluespace_crystal/artificial,

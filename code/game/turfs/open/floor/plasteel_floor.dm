@@ -54,14 +54,17 @@
 	icon = 'whitesands/icons/turf/floors/techfloor.dmi'
 	icon_state = "techfloor_gray"
 	base_icon_state = "techfloor_gray"
+	floor_tile = /obj/item/stack/tile/plasteel/tech
 	color = null
 
 /turf/open/floor/plasteel/tech/grid
 	icon_state = "techfloor_grid"
 	base_icon_state = "techfloor_grid"
+	floor_tile = /obj/item/stack/tile/plasteel/tech/grid
 /turf/open/floor/plasteel/tech/techmaint
 	icon_state = "techmaint"
 	base_icon_state = "techmaint"
+	floor_tile = /obj/item/stack/tile/plasteel/tech/techmaint
 /turf/open/floor/plasteel/patterned
 	icon_state = "tile_full"
 	base_icon_state = "tile_full"

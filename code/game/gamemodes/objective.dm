@@ -59,7 +59,7 @@ GLOBAL_LIST_EMPTY(objectives)
 		return TRUE
 	if(SSticker.force_ending || SSticker.mode.station_was_nuked) // Just let them win.
 		return TRUE
-	if(SSshuttle.emergency.mode != SHUTTLE_ENDGAME)
+	if(SSshuttle.jump_mode != BS_JUMP_COMPLETED)
 		return FALSE
 	var/turf/location = get_turf(M.current)
 	if(!location || istype(location, /turf/open/floor/mineral/plastitanium/red/brig)) // Fails if they are in the shuttle brig
@@ -94,12 +94,7 @@ GLOBAL_LIST_EMPTY(objectives)
 	return target
 
 /datum/objective/proc/get_crewmember_minds()
-	. = list()
-	for(var/V in GLOB.data_core.locked)
-		var/datum/data/record/R = V
-		var/datum/mind/M = R.fields["mindref"]
-		if(M)
-			. += M
+	return SSticker.minds
 
 //dupe_search_range is a list of antag datums / minds / teams
 /datum/objective/proc/find_target(dupe_search_range, blacklist)
@@ -352,13 +347,7 @@ GLOBAL_LIST_EMPTY(objectives)
 	var/hijack_speed_override = 1
 
 /datum/objective/hijack/check_completion() // Requires all owners to escape.
-	if(SSshuttle.emergency.mode != SHUTTLE_ENDGAME)
-		return FALSE
-	var/list/datum/mind/owners = get_owners()
-	for(var/datum/mind/M in owners)
-		if(!considered_alive(M) || !SSshuttle.emergency.shuttle_areas[get_area(M.current)])
-			return FALSE
-	return SSshuttle.emergency.is_hijacked()
+	return FALSE // PLACEHOLDER
 
 /datum/objective/elimination
 	name = "elimination"
@@ -367,26 +356,14 @@ GLOBAL_LIST_EMPTY(objectives)
 	martyr_compatible = FALSE
 
 /datum/objective/elimination/check_completion()
-	if(SSshuttle.emergency.mode != SHUTTLE_ENDGAME)
-		return FALSE
-	var/list/datum/mind/owners = get_owners()
-	for(var/datum/mind/M in owners)
-		if(!considered_alive(M, enforce_human = FALSE) || !SSshuttle.emergency.shuttle_areas[get_area(M.current)])
-			return FALSE
-	return SSshuttle.emergency.elimination_hijack()
+	return FALSE // PLACEHOLDER
 
 /datum/objective/elimination/highlander
 	name="highlander elimination"
 	explanation_text = "Escape on the shuttle alone. Ensure that nobody else makes it out."
 
 /datum/objective/elimination/highlander/check_completion()
-	if(SSshuttle.emergency.mode != SHUTTLE_ENDGAME)
-		return FALSE
-	var/list/datum/mind/owners = get_owners()
-	for(var/datum/mind/M in owners)
-		if(!considered_alive(M, enforce_human = FALSE) || !SSshuttle.emergency.shuttle_areas[get_area(M.current)])
-			return FALSE
-	return SSshuttle.emergency.elimination_hijack(filter_by_human = FALSE, solo_hijack = TRUE)
+	return FALSE // PLACEHOLDER
 
 /datum/objective/block
 	name = "no organics on shuttle"
@@ -394,13 +371,7 @@ GLOBAL_LIST_EMPTY(objectives)
 	martyr_compatible = 1
 
 /datum/objective/block/check_completion()
-	if(SSshuttle.emergency.mode != SHUTTLE_ENDGAME)
-		return TRUE
-	for(var/mob/living/player in GLOB.player_list)
-		if(player.mind && player.stat != DEAD && !issilicon(player))
-			if(get_area(player) in SSshuttle.emergency.shuttle_areas)
-				return FALSE
-	return TRUE
+	return FALSE // PLACEHOLDER
 
 /datum/objective/purge
 	name = "no mutants on shuttle"
@@ -408,14 +379,7 @@ GLOBAL_LIST_EMPTY(objectives)
 	martyr_compatible = 1
 
 /datum/objective/purge/check_completion()
-	if(SSshuttle.emergency.mode != SHUTTLE_ENDGAME)
-		return TRUE
-	for(var/mob/living/player in GLOB.player_list)
-		if((get_area(player) in SSshuttle.emergency.shuttle_areas) && player.mind && player.stat != DEAD && ishuman(player))
-			var/mob/living/carbon/human/H = player
-			if(H.dna.species.id != "human")
-				return FALSE
-	return TRUE
+	return FALSE // PLACEHOLDER
 
 /datum/objective/robot_army
 	name = "robot army"
@@ -962,163 +926,6 @@ GLOBAL_LIST_EMPTY(possible_items_special)
 
 /datum/objective/changeling_team_objective/proc/prepare()
 	return FALSE
-
-//Impersonate department
-//Picks as many people as it can from a department (Security,Engineer,Medical,Science)
-//and tasks the lings with killing and replacing them
-/datum/objective/changeling_team_objective/impersonate_department
-	explanation_text = "Ensure X department are killed, impersonated, and replaced by Changelings"
-	var/command_staff_only = FALSE //if this is true, it picks command staff instead
-	var/list/department_minds = list()
-	var/list/department_real_names = list()
-	var/department_string = ""
-
-
-/datum/objective/changeling_team_objective/impersonate_department/prepare()
-	var/result = FALSE
-	if(command_staff_only)
-		result = get_heads()
-	else
-		result = get_department_staff()
-	if(result)
-		update_explanation_text()
-		return TRUE
-	else
-		return FALSE
-
-
-/datum/objective/changeling_team_objective/impersonate_department/proc/get_department_staff()
-	department_minds = list()
-	department_real_names = list()
-
-	var/list/departments = list("Head of Security","Research Director","Chief Engineer","Chief Medical Officer")
-	var/department_head = pick(departments)
-	switch(department_head)
-		if("Head of Security")
-			department_string = "security"
-		if("Research Director")
-			department_string = "science"
-		if("Chief Engineer")
-			department_string = "engineering"
-		if("Chief Medical Officer")
-			department_string = "medical"
-
-	var/list/lings = get_antag_minds(/datum/antagonist/changeling,TRUE)
-	var/ling_count = lings.len
-
-	for(var/datum/mind/M in SSticker.minds)
-		if(M in lings)
-			continue
-		if(department_head in get_department_heads(M.assigned_role))
-			if(ling_count)
-				ling_count--
-				department_minds += M
-				department_real_names += M.current.real_name
-			else
-				break
-
-	if(!department_minds.len)
-		log_game("[type] has failed to find department staff, and has removed itself. the round will continue normally")
-		return FALSE
-	return TRUE
-
-
-/datum/objective/changeling_team_objective/impersonate_department/proc/get_heads()
-	department_minds = list()
-	department_real_names = list()
-
-	//Needed heads is between min_lings and the maximum possible amount of command roles
-	//So at the time of writing, rand(3,6), it's also capped by the amount of lings there are
-	//Because you can't fill 6 head roles with 3 lings
-	var/list/lings = get_antag_minds(/datum/antagonist/changeling,TRUE)
-	var/needed_heads = rand(min_lings,GLOB.command_positions.len)
-	needed_heads = min(lings.len,needed_heads)
-
-	var/list/heads = SSjob.get_living_heads()
-	for(var/datum/mind/head in heads)
-		if(head in lings) //Looking at you HoP.
-			continue
-		if(needed_heads)
-			department_minds += head
-			department_real_names += head.current.real_name
-			needed_heads--
-		else
-			break
-
-	if(!department_minds.len)
-		log_game("[type] has failed to find department heads, and has removed itself. the round will continue normally")
-		return FALSE
-	return TRUE
-
-
-/datum/objective/changeling_team_objective/impersonate_department/update_explanation_text()
-	..()
-	if(!department_real_names.len || !department_minds.len)
-		explanation_text = "Free Objective"
-		return  //Something fucked up, give them a win
-
-	if(command_staff_only)
-		explanation_text = "Ensure changelings impersonate and escape as the following heads of staff: "
-	else
-		explanation_text = "Ensure changelings impersonate and escape as the following members of \the [department_string] department: "
-
-	var/first = 1
-	for(var/datum/mind/M in department_minds)
-		var/string = "[M.name] the [M.assigned_role]"
-		if(!first)
-			string = ", [M.name] the [M.assigned_role]"
-		else
-			first--
-		explanation_text += string
-
-	if(command_staff_only)
-		explanation_text += ", while the real heads are dead. This is a team objective."
-	else
-		explanation_text += ", while the real members are dead. This is a team objective."
-
-
-/datum/objective/changeling_team_objective/impersonate_department/check_completion()
-	if(!department_real_names.len || !department_minds.len)
-		return TRUE //Something fucked up, give them a win
-
-	var/list/check_names = department_real_names.Copy()
-
-	//Check each department member's mind to see if any of them made it to centcom alive, if they did it's an automatic fail
-	for(var/datum/mind/M in department_minds)
-		if(M.has_antag_datum(/datum/antagonist/changeling)) //Lings aren't picked for this, but let's be safe
-			continue
-
-		if(M.current)
-			var/turf/mloc = get_turf(M.current)
-			if(mloc.onCentCom() && (M.current.stat != DEAD))
-				return FALSE //A Non-ling living target got to centcom, fail
-
-	//Check each staff member has been replaced, by cross referencing changeling minds, changeling current dna, the staff minds and their original DNA names
-	var/success = 0
-	changelings:
-		for(var/datum/mind/changeling in get_antag_minds(/datum/antagonist/changeling,TRUE))
-			if(success >= department_minds.len) //We did it, stop here!
-				return TRUE
-			if(ishuman(changeling.current))
-				var/mob/living/carbon/human/H = changeling.current
-				var/turf/cloc = get_turf(changeling.current)
-				if(cloc && cloc.onCentCom() && (changeling.current.stat != DEAD)) //Living changeling on centcom....
-					for(var/name in check_names) //Is he (disguised as) one of the staff?
-						if(H.dna.real_name == name)
-							check_names -= name //This staff member is accounted for, remove them, so the team don't succeed by escape as 7 of the same engineer
-							success++ //A living changeling staff member made it to centcom
-							continue changelings
-
-	if(success >= department_minds.len)
-		return TRUE
-	return FALSE
-
-//A subtype of impersonate_department
-//This subtype always picks as many command staff as it can (HoS,HoP,Cap,CE,CMO,RD)
-//and tasks the lings with killing and replacing them
-/datum/objective/changeling_team_objective/impersonate_department/impersonate_heads
-	explanation_text = "Have X or more heads of staff escape on the shuttle disguised as heads, while the real heads are dead"
-	command_staff_only = TRUE
 
 //Ideally this would be all of them but laziness and unusual subtypes
 /proc/generate_admin_objective_list()

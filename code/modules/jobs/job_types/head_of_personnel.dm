@@ -8,7 +8,6 @@
 	spawn_positions = 1
 	supervisors = "the captain"
 	selection_color = "#ddddff"
-	req_admin_notify = 1
 	minimal_player_age = 10
 	exp_requirements = 180
 	wiki_page = "Head_of_Personnel" //WS Edit - Wikilinks/Warning
@@ -66,3 +65,15 @@
 	if(locate(/datum/holiday/ianbirthday) in SSevents.holidays)
 		undershirt = /datum/sprite_accessory/undershirt/ian
 
+/datum/outfit/job/head_of_personnel/solgov
+	name = "Executive Officer (SolGov)"
+	uniform = /obj/item/clothing/under/rank/command/lieutenant
+	head = /obj/item/clothing/head/solgov
+	shoes = /obj/item/clothing/shoes/laceup
+
+/datum/outfit/job/head_of_personnel/pirate
+	name = "First Mate (Pirate)"
+	uniform = /obj/item/clothing/under/costume/russian_officer
+	shoes = /obj/item/clothing/shoes/jackboots
+	head = /obj/item/clothing/head/pirate
+	suit = /obj/item/clothing/suit/pirate

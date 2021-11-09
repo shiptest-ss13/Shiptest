@@ -233,7 +233,7 @@ Code:
 <a href='byond://?src=[REF(src)];choice=Send Signal'>Send Signal</A><BR>"}
 		if (41) //crew manifest
 			menu = "<h4>[PDAIMG(notes)] Crew Manifest</h4>"
-			menu += "<center>[GLOB.data_core.get_manifest_html(monochrome=TRUE)]</center>"
+			menu += "<center>[SSjob.get_manifest_html()]</center>"
 
 
 		if (42) //status displays
@@ -406,21 +406,6 @@ Code:
 
 			menu += "<br>"
 
-		if (47) //quartermaster order records
-			menu = "<h4>[PDAIMG(crate)] Supply Record Interlink</h4>"
-
-			menu += "<BR>Current approved orders: <BR><ol>"
-			for(var/S in SSshuttle.shoppinglist)
-				var/datum/supply_order/SO = S
-				menu += "<li>#[SO.id] - [SO.pack.name] approved by [SO.orderer] [SO.reason ? "([SO.reason])":""]</li>"
-			menu += "</ol>"
-
-			menu += "Current requests: <BR><ol>"
-			for(var/S in SSshuttle.requestlist)
-				var/datum/supply_order/SO = S
-				menu += "<li>#[SO.id] - [SO.pack.name] requested by [SO.orderer]</li>"
-			// menu += "</ol><font size=\"-3\">Upgrade NOW to Space Parts & Space Vendors PLUS for full remote order control and inventory management." DOESNT EXIST, SO COMMENTED OUT
-
 		if (49) //janitorial locator
 			menu = "<h4>[PDAIMG(bucket)] Persistent Custodial Object Locator</h4>"
 
@@ -585,9 +570,6 @@ Code:
 			var/pnum = text2num(href_list["target"])
 			powmonitor = powermonitors[pnum]
 			host_pda.mode = 433
-
-		if("Supply Orders")
-			host_pda.mode =47
 
 		if("Newscaster Access")
 			host_pda.mode = 53

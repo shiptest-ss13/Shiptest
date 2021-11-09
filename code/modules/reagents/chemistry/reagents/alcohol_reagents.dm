@@ -2237,3 +2237,26 @@ All effects don't start immediately, but rather get worse over time; the rate is
 /datum/reagent/consumable/ethanol/pruno/on_mob_life(mob/living/carbon/M)
 	M.adjust_disgust(5)
 	..()
+
+/datum/reagent/consumable/ethanol/mudders_milk
+	name = "mudder's milk"
+	color = "#dfc794"
+	description = "All the protein, vitamins and carbs of your grandma's best turkey dinner, plus 15 percent alcohol."
+	boozepwr = 15
+	taste_description = "thick, nutty milk with a boozy kick"
+	glass_icon_state = "muddersmilk"
+	glass_name = "Mudder's Milk"
+	glass_desc = "All the protein, vitamins and carbs of your grandma's best turkey dinner, plus 15 percent alcohol."
+
+/datum/reagent/consumable/ethanol/mudders_milk/on_mob_life(mob/living/carbon/M)
+	if(prob(1))
+		var/drink_message = pick("You feel rugged.", "You feel strong.", "You feel nourished.")
+		to_chat(M, "<span class='notice'>[drink_message]</span>")
+	if(prob(15))
+		holder.add_reagent(/datum/reagent/consumable/nutriment, 1)
+	M.AdjustStun(-0.5)
+	M.AdjustKnockdown(-0.5)
+	M.AdjustUnconscious(-0.5)
+	M.AdjustParalyzed(-0.5)
+	M.AdjustImmobilized(-0.5)
+	..()

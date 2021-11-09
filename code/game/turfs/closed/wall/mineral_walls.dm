@@ -101,6 +101,21 @@
 	radiate()
 	..()
 
+/turf/closed/wall/mineral/uranium/safe
+	article = "a"
+	name = "wall"
+	desc = "A wall with uranium plating. Seems completely safe."
+	icon = 'icons/turf/walls/uranium_wall.dmi'
+	icon_state = "uranium_wall-0"
+	base_icon_state = "uranium_wall"
+	sheet_type = /obj/item/stack/sheet/mineral/uranium
+	smoothing_flags = SMOOTH_BITMASK
+	smoothing_groups = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_WALLS, SMOOTH_GROUP_URANIUM_WALLS)
+	canSmoothWith = list(SMOOTH_GROUP_URANIUM_WALLS)
+
+/turf/closed/wall/mineral/uranium/safe/radiate()
+	return
+
 /turf/closed/wall/mineral/plasma
 	name = "plasma wall"
 	desc = "A wall with plasma plating. This is definitely a bad idea."

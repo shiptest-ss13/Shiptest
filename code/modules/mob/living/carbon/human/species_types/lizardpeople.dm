@@ -31,6 +31,43 @@
 	loreblurb = "The Sarathi are a cold-blooded reptilian species originating from the planet Kalixcis, where they evolved alongside the Elzuosa. Kalixcian culture places no importance on blood-bonds, and those from it tend to consider their family anyone they are sufficiently close to, and choose their own names."
 
 	ass_image = 'icons/ass/asslizard.png'
+	var/datum/action/innate/lizlighter/lizlighter
+
+/datum/species/lizard/on_species_loss(mob/living/carbon/C)
+	if(lizlighter)
+		lizlighter.Remove(C)
+	..()
+
+/datum/species/lizard/on_species_gain(mob/living/carbon/C, datum/species/old_species)
+	..()
+	if(ishuman(C))
+		lizlighter = new
+		lizlighter.Grant(C)
+
+/datum/action/innate/lizlighter
+	name = "Ignite"
+	desc = "(Requires you to drink welding fuel beforehand)"
+	check_flags = AB_CHECK_CONSCIOUS
+	button_icon_state = "fire"
+	icon_icon = 'icons/effects/fire.dmi'
+	background_icon_state = "bg_alien"
+
+/datum/action/innate/lizlighter/Activate()
+	var/mob/living/carbon/human/H = owner
+	var/obj/item/lighter/liz/N = new(H)
+	if(H.put_in_hands(N))
+		to_chat(H, "<span class='notice'>You ignite a small flame in your mouth.</span>")
+		H.reagents.del_reagent(/datum/reagent/fuel,4)
+	else
+		qdel(N)
+		to_chat(H, "<span class='warning'>You don't have any free hands.</span>")
+
+/datum/action/innate/lizlighter/IsAvailable()
+	if(..())
+		var/mob/living/carbon/human/H = owner
+		if(H.reagents && H.reagents.has_reagent(/datum/reagent/fuel,4))
+			return TRUE
+		return FALSE
 
 /// Lizards are cold blooded and do not stabilize body temperature naturally
 /datum/species/lizard/natural_bodytemperature_stabilization(datum/gas_mixture/environment, mob/living/carbon/human/H)

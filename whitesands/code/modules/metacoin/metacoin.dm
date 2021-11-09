@@ -45,13 +45,7 @@
 	var/mob/M = mob
 	if(M.mind && !isnewplayer(M))
 		if(M.stat != DEAD && !isbrain(M))
-			if(EMERGENCY_ESCAPED_OR_ENDGAMED)
-				if(!M.onCentCom() && !M.onSyndieBase())
-					inc_metabalance(METACOIN_SURVIVE_REWARD(is_speed_round, round_duration), reason="Survived the shift.")
-				else
-					inc_metabalance(METACOIN_ESCAPE_REWARD(is_speed_round, round_duration), reason="Survived the shift and escaped!")
-			else
-				inc_metabalance(METACOIN_ESCAPE_REWARD(is_speed_round, round_duration), reason="Survived the shift.")
+			inc_metabalance(METACOIN_ESCAPE_REWARD(is_speed_round, round_duration), reason="Survived the shift.")
 		else
 			inc_metabalance(METACOIN_NOTSURVIVE_REWARD, reason="You tried.")
 

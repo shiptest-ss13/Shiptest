@@ -69,14 +69,13 @@
 	if (obj_flags & EMAGGED)
 		return
 	obj_flags |= EMAGGED
-	SSshuttle.shuttle_purchase_requirements_met |= SHUTTLE_UNLOCK_EMAGGED //WS Edit - Makes shuttles from Emag list purchaseable
 	if (authenticated)
 		authorize_access = get_all_accesses()
 	to_chat(user, "<span class='danger'>You scramble the communication routing circuits!</span>")
 	playsound(src, 'sound/machines/terminal_alert.ogg', 50, FALSE)
 
 /obj/machinery/computer/communications/ui_act(action, list/params)
-	var/static/list/approved_states = list(STATE_BUYING_SHUTTLE, STATE_CHANGING_STATUS, STATE_MAIN, STATE_MESSAGES)
+	var/static/list/approved_states = list(STATE_CHANGING_STATUS, STATE_MAIN, STATE_MESSAGES)
 	var/static/list/approved_status_pictures = list("biohazard", "blank", "default", "lockdown", "redalert", "shuttle")
 
 	. = ..()
@@ -108,14 +107,6 @@
 				return
 			message.answered = answer_index
 			message.answer_callback.InvokeAsync()
-		if ("callShuttle")
-			if (!authenticated(usr))
-				return
-			var/reason = trim(params["reason"], MAX_MESSAGE_LEN)
-			if (length(reason) < CALL_SHUTTLE_REASON_LENGTH)
-				return
-			SSshuttle.requestEvac(usr, reason)
-			post_status("shuttle")
 		if ("changeSecurityLevel")
 			if (!authenticated_as_silicon_or_captain(usr))
 				return
@@ -182,36 +173,6 @@
 			usr.log_talk(message, LOG_SAY, tag = "message to [associates]")
 			deadchat_broadcast(" has messaged [associates], \"[message]\" at <span class='name'>[get_area_name(usr, TRUE)]</span>.", "<span class='name'>[usr.real_name]</span>", usr, message_type = DEADCHAT_ANNOUNCEMENT)
 			COOLDOWN_START(src, important_action_cooldown, IMPORTANT_ACTION_COOLDOWN)
-		if ("purchaseShuttle")
-			var/can_buy_shuttles_or_fail_reason = can_buy_shuttles(usr)
-			if (can_buy_shuttles_or_fail_reason != TRUE)
-				if (can_buy_shuttles_or_fail_reason != FALSE)
-					to_chat(usr, "<span class='alert'>[can_buy_shuttles_or_fail_reason]</span>")
-				return
-			var/list/shuttles = flatten_list(SSmapping.shuttle_templates)
-			var/datum/map_template/shuttle/shuttle = locate(params["shuttle"]) in shuttles
-			if (!istype(shuttle))
-				return
-			if (!shuttle.prerequisites_met())
-				to_chat(usr, "<span class='alert'>You have not met the requirements for purchasing this shuttle.</span>")
-				return
-			var/datum/bank_account/bank_account = SSeconomy.get_dep_account(ACCOUNT_CAR)
-			if (bank_account.account_balance < shuttle.credit_cost)
-				return
-			SSshuttle.shuttle_purchased = TRUE
-			SSshuttle.unload_preview()
-			SSshuttle.action_load(shuttle, old_shuttle = SSshuttle.emergency)
-			bank_account.adjust_money(-shuttle.credit_cost)
-			minor_announce("[usr.real_name] has purchased [shuttle.name] for [shuttle.credit_cost] credits.[shuttle.extra_desc ? " [shuttle.extra_desc]" : ""]" , "Shuttle Purchase")
-			message_admins("[ADMIN_LOOKUPFLW(usr)] purchased [shuttle.name].")
-			log_shuttle("[key_name(usr)] has purchased [shuttle.name].")
-			SSblackbox.record_feedback("text", "shuttle_purchase", 1, shuttle.name)
-			state = STATE_MAIN
-		if ("recallShuttle")
-			// AIs cannot recall the shuttle
-			if (!authenticated(usr) || issilicon(usr))
-				return
-			SSshuttle.cancelEvac(usr)
 		if ("requestNukeCodes")
 			if (!authenticated_as_non_silicon_captain(usr))
 				return
@@ -264,8 +225,6 @@
 			if (!authenticated(usr))
 				return
 			if (!(params["state"] in approved_states))
-				return
-			if (state == STATE_BUYING_SHUTTLE && can_buy_shuttles(usr) != TRUE)
 				return
 			set_state(usr, params["state"])
 			playsound(src, "terminal_type", 50, FALSE)
@@ -343,22 +302,17 @@
 
 		switch (ui_state)
 			if (STATE_MAIN)
-				data["canBuyShuttles"] = can_buy_shuttles(user)
 				data["canMakeAnnouncement"] = FALSE
 				data["canMessageAssociates"] = FALSE
-				data["canRecallShuttles"] = !issilicon(user)
 				data["canRequestNuke"] = FALSE
 				data["canSendToSectors"] = FALSE
 				data["canSetAlertLevel"] = FALSE
 				data["canToggleEmergencyAccess"] = FALSE
 				data["importantActionReady"] = COOLDOWN_FINISHED(src, important_action_cooldown)
-				data["shuttleCalled"] = FALSE
-				data["shuttleLastCalled"] = FALSE
 
 				data["alertLevel"] = get_security_level()
 				data["authorizeName"] = authorize_name
 				data["canLogOut"] = !issilicon(user)
-				data["shuttleCanEvacOrFailReason"] = SSshuttle.canEvac(user)
 
 				if (authenticated_as_non_silicon_captain(user))
 					data["canMessageAssociates"] = TRUE
@@ -384,15 +338,6 @@
 					data["alertLevelTick"] = alert_level_tick
 					data["canMakeAnnouncement"] = TRUE
 					data["canSetAlertLevel"] = issilicon(user) ? "NO_SWIPE_NEEDED" : "SWIPE_NEEDED"
-
-				if (SSshuttle.emergency.mode != SHUTTLE_IDLE && SSshuttle.emergency.mode != SHUTTLE_RECALL)
-					data["shuttleCalled"] = TRUE
-					data["shuttleRecallable"] = SSshuttle.canRecall()
-
-				if (SSshuttle.emergencyCallAmount)
-					data["shuttleCalledPreviously"] = TRUE
-					if (SSshuttle.emergencyLastCallLoc)
-						data["shuttleLastCalled"] = format_text(SSshuttle.emergencyLastCallLoc.name)
 			if (STATE_MESSAGES)
 				data["messages"] = list()
 
@@ -405,31 +350,10 @@
 							"title" = message.title,
 							"possibleAnswers" = message.possible_answers,
 						))
-			if (STATE_BUYING_SHUTTLE)
-				var/datum/bank_account/bank_account = SSeconomy.get_dep_account(ACCOUNT_CAR)
-				var/list/shuttles = list()
-
-				for (var/shuttle_id in SSmapping.shuttle_templates)
-					var/datum/map_template/shuttle/shuttle_template = SSmapping.shuttle_templates[shuttle_id]
-					if (!shuttle_template.can_be_bought || shuttle_template.credit_cost == INFINITY)
-						continue
-					shuttles += list(list(
-						"name" = shuttle_template.name,
-						"description" = shuttle_template.description,
-						"creditCost" = shuttle_template.credit_cost,
-						"prerequisites" = shuttle_template.prerequisites,
-						"ref" = REF(shuttle_template),
-					))
-
-				data["budget"] = bank_account.account_balance
-				data["shuttles"] = shuttles
-			if (STATE_CHANGING_STATUS)
-				data["lineOne"] = last_status_display ? last_status_display[1] : ""
-				data["lineTwo"] = last_status_display ? last_status_display[2] : ""
-
 	return data
 
 /obj/machinery/computer/communications/ui_interact(mob/user, datum/tgui/ui)
+	play_click_sound(user)
 	ui = SStgui.try_update_ui(user, src, ui)
 	if (!ui)
 		ui = new(user, src, "CommunicationsConsole")
@@ -453,17 +377,6 @@
 		cyborg_state = new_state
 	else
 		state = new_state
-
-/// Returns TRUE if the user can buy shuttles.
-/// If they cannot, returns FALSE or a string detailing why.
-/obj/machinery/computer/communications/proc/can_buy_shuttles(mob/user)
-	if (!authenticated_as_non_silicon_captain(user))
-		return FALSE
-	if (SSshuttle.emergency.mode != SHUTTLE_RECALL && SSshuttle.emergency.mode != SHUTTLE_IDLE)
-		return "The shuttle is already in transit."
-	if (SSshuttle.shuttle_purchased)
-		return "A replacement shuttle has already been purchased."
-	return TRUE
 
 /obj/machinery/computer/communications/proc/can_send_messages_to_other_sectors(mob/user)
 	if (!authenticated_as_non_silicon_captain(user))

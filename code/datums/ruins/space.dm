@@ -156,11 +156,13 @@
 	name = "Strange Ship"
 	description = "A ship seemingly lost, drifting along the stars. This thing looks like it belongs in ancient times."
 
+/* shiptest: Replaced with dark_glade ruin
 /datum/map_template/ruin/space/way_home
 	id = "way-home"
 	suffix = "way_home.dmm"
 	name = "Salvation"
 	description = "In the darkest times, we will find our way home."
+*/
 
 /datum/map_template/ruin/space/djstation
 	id = "djstation"
@@ -233,13 +235,6 @@
 	description = "There seems to be a pair of buses that pulled over for repairs. What were they doing...? Their shipment sure  seems to be filled with a strange mix. \
 	Anyway, it looks like some people tried to fix it up for a long time but didn't really get anywhere..."
 
-/datum/map_template/ruin/space/oldstation
-	id = "oldstation"
-	suffix = "oldstation.dmm"
-	name = "Ancient Space Station"
-	description = "The crew of a space station awaken one hundred years after a crisis. Awaking to a derelict space station on the verge of collapse, and a hostile force of invading \
-	hivebots. Can the surviving crew overcome the odds and survive and rebuild, or will the cold embrace of the stars become their new home?"
-
 /datum/map_template/ruin/space/gondoland
 	id = "gondolaasteroid"
 	suffix = "gondolaasteroid.dmm"
@@ -284,14 +279,6 @@
 	name = "Cleric's Den"
 	description = "Once part of a larger monastery, this holy order of long dead clerics practiced far less non-violence than they preached. Appears to have been untouched by looters, however. Odd."
 
-/datum/map_template/ruin/space/kinggoatarena
-	id = "kinggoatarena"
-	suffix = "kinggoatarena.dmm"
-	name = "King Goat Arena"
-	description = "Well wish you luck."
-	allow_duplicates = FALSE
-	unpickable = TRUE
-
 /datum/map_template/ruin/space/forgottenship
 	id = "forgottenship"
 	suffix = "forgottenship.dmm"
@@ -315,3 +302,9 @@
 	suffix = "syndicatewreck01.dmm"
 	name = "Syndicate Station Wreckage"
 	description = "An old wreck, made of plastitanium. Somehow, it looks more filled than it ever was..."
+
+/datum/map_template/ruin/space/cult_templar
+	id = "cult_templar"
+	suffix = "chaosmarine.dmm"
+	name = "Bloody Lair"
+	description = "A seemingly abandoned blood cult base in space, but why was it abandoned?"

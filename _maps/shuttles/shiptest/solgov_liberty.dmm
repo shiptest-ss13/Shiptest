@@ -17,10 +17,6 @@
 	dir = 8;
 	pixel_y = -10
 	},
-/obj/structure/closet/wall{
-	name = "captain's locker";
-	pixel_x = -32
-	},
 /obj/item/clothing/under/rank/command/captain,
 /obj/item/radio/headset/heads/captain/alt,
 /obj/item/storage/backpack/captain,
@@ -40,11 +36,16 @@
 /obj/item/clothing/glasses/sunglasses,
 /obj/item/clothing/shoes/laceup,
 /obj/item/gun/energy/e_gun,
-/obj/item/melee/sabre,
 /obj/item/storage/belt/sabre,
 /obj/item/folder/blue{
 	pixel_x = -1;
 	pixel_y = 8
+	},
+/obj/structure/closet/wall{
+	dir = 4;
+	icon_door = "blue_wall";
+	name = "captain's closet";
+	pixel_x = -28
 	},
 /turf/open/floor/carpet/nanoweave/blue,
 /area/ship/bridge)
@@ -87,7 +88,7 @@
 /turf/closed/wall/mineral/titanium,
 /area/ship/external)
 "dD" = (
-/obj/effect/turf_decal/stripes/line,
+/obj/effect/turf_decal/industrial/warning,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/cargo)
 "eV" = (
@@ -117,10 +118,6 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 6
 	},
-/obj/structure/closet/wall{
-	name = "first officer's locker";
-	pixel_x = -32
-	},
 /obj/item/radio/headset/solgov/alt,
 /obj/item/clothing/shoes/laceup,
 /obj/item/clothing/under/solgov/formal,
@@ -141,6 +138,12 @@
 	},
 /obj/item/pen/solgov{
 	pixel_x = 5
+	},
+/obj/structure/closet/wall{
+	dir = 4;
+	icon_door = "blue_wall";
+	name = "XO's closet";
+	pixel_x = -28
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
@@ -227,14 +230,14 @@
 /turf/open/floor/mineral/plastitanium,
 /area/ship/security)
 "ml" = (
-/obj/effect/turf_decal/caution/stand_clear{
+/obj/effect/turf_decal/industrial/stand_clear{
 	dir = 4
 	},
 /obj/machinery/door/window/westleft,
-/obj/effect/turf_decal/stripes/line{
+/obj/effect/turf_decal/industrial/warning{
 	dir = 8
 	},
-/obj/effect/turf_decal/stripes/line{
+/obj/effect/turf_decal/industrial/warning{
 	dir = 4
 	},
 /obj/machinery/button/massdriver{
@@ -296,6 +299,7 @@
 /obj/structure/fireaxecabinet{
 	pixel_y = 32
 	},
+/obj/effect/landmark/start/depsec,
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "nB" = (
@@ -315,14 +319,14 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
-/obj/effect/turf_decal/caution/stand_clear{
+/obj/effect/turf_decal/industrial/stand_clear{
 	dir = 8
 	},
 /obj/machinery/door/window/eastright,
-/obj/effect/turf_decal/stripes/line{
+/obj/effect/turf_decal/industrial/warning{
 	dir = 4
 	},
-/obj/effect/turf_decal/stripes/line{
+/obj/effect/turf_decal/industrial/warning{
 	dir = 8
 	},
 /obj/machinery/button/massdriver{
@@ -362,11 +366,11 @@
 /turf/open/floor/plating,
 /area/ship/security)
 "oo" = (
-/obj/effect/turf_decal/bot,
+/obj/effect/turf_decal/industrial/outline/yellow,
 /obj/structure/sign/poster/official/solgov_enlist{
 	pixel_x = 32
 	},
-/obj/structure/reagent_dispensers/watertank,
+/obj/machinery/autolathe,
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
 "oQ" = (
@@ -376,21 +380,22 @@
 /turf/open/floor/engine/hull,
 /area/ship/external)
 "pm" = (
-/obj/effect/turf_decal/stripes/end{
+/obj/effect/turf_decal/industrial/warning/cee{
 	dir = 1
 	},
 /obj/machinery/light/small{
 	dir = 8;
 	pixel_y = 12
 	},
-/obj/structure/closet/wall{
-	name = "suit locker";
-	pixel_x = -32
-	},
-/obj/item/clothing/suit/space/solgov,
-/obj/item/clothing/head/helmet/space/solgov,
+/obj/item/clothing/suit/space/hardsuit/solgov,
 /obj/item/clothing/mask/gas/sechailer/swat/spacepol,
 /obj/item/tank/jetpack/oxygen,
+/obj/structure/closet/wall/red{
+	dir = 4;
+	name = "suit locker";
+	pixel_x = -28;
+	req_one_access_txt = "1"
+	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/security)
 "pA" = (
@@ -404,58 +409,60 @@
 /turf/open/floor/plasteel/stairs,
 /area/ship/security)
 "pH" = (
-/obj/effect/turf_decal/stripes/line{
+/obj/effect/turf_decal/industrial/warning{
 	dir = 9
 	},
-/obj/structure/table/reinforced,
-/obj/machinery/recharger,
-/obj/item/screwdriver{
-	pixel_x = 6;
-	pixel_y = 6
-	},
+/obj/machinery/vending/security,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/security)
 "pS" = (
-/obj/effect/turf_decal/stripes/line{
+/obj/effect/turf_decal/industrial/warning{
 	dir = 5
 	},
 /obj/machinery/light/small{
 	dir = 4;
 	pixel_y = 12
 	},
-/obj/structure/closet/wall{
+/obj/item/clothing/under/solgov/elite,
+/obj/item/clothing/under/solgov/elite,
+/obj/item/clothing/accessory/armband,
+/obj/item/clothing/accessory/armband,
+/obj/item/clothing/head/beret/solgov/plain,
+/obj/item/clothing/head/beret/solgov/plain,
+/obj/item/clothing/head/beret/solgov/plain,
+/obj/item/clothing/glasses/hud/security/night,
+/obj/item/clothing/glasses/hud/security/night,
+/obj/item/clothing/glasses/hud/security/night,
+/obj/item/clothing/shoes/combat/swat,
+/obj/item/clothing/shoes/combat/swat,
+/obj/item/clothing/shoes/combat/swat,
+/obj/item/clothing/gloves/tackler/combat,
+/obj/item/clothing/gloves/tackler/combat,
+/obj/item/clothing/gloves/tackler/combat,
+/obj/structure/closet/wall/red{
+	dir = 8;
 	name = "armory locker";
-	pixel_x = 32
+	pixel_x = 28;
+	req_one_access_txt = "1"
 	},
-/obj/item/clothing/under/solgov/elite,
-/obj/item/clothing/under/solgov/elite,
-/obj/item/clothing/accessory/armband,
-/obj/item/clothing/accessory/armband,
-/obj/item/clothing/gloves/color/black,
-/obj/item/clothing/gloves/color/black,
-/obj/item/clothing/shoes/combat,
-/obj/item/clothing/shoes/combat,
-/obj/item/clothing/head/beret/solgov/plain,
-/obj/item/clothing/head/beret/solgov/plain,
-/obj/item/clothing/glasses/hud/security/sunglasses,
-/obj/item/clothing/glasses/hud/security/sunglasses,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/security)
 "pW" = (
-/obj/effect/turf_decal/stripes/line{
+/obj/effect/turf_decal/industrial/warning{
 	dir = 8
 	},
-/obj/effect/turf_decal/stripes/line{
+/obj/effect/turf_decal/industrial/warning{
 	dir = 4
 	},
-/obj/structure/closet/wall{
-	name = "suit locker";
-	pixel_x = -32
-	},
-/obj/item/clothing/suit/space/solgov,
-/obj/item/clothing/head/helmet/space/solgov,
+/obj/item/clothing/suit/space/hardsuit/solgov,
 /obj/item/clothing/mask/gas/sechailer/swat/spacepol,
 /obj/item/tank/jetpack/oxygen,
+/obj/structure/closet/wall/red{
+	dir = 4;
+	name = "suit locker";
+	pixel_x = -28;
+	req_one_access_txt = "1"
+	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/security)
 "qP" = (
@@ -477,46 +484,46 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 8
 	},
-/obj/effect/turf_decal/stripes/line{
+/obj/effect/turf_decal/industrial/warning{
 	dir = 8
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/security)
 "rF" = (
-/obj/effect/turf_decal/stripes/line{
+/obj/effect/turf_decal/industrial/warning{
 	dir = 4
 	},
-/obj/structure/closet/wall{
-	name = "armory locker";
-	pixel_x = 32
-	},
-/obj/item/gun/energy/disabler,
-/obj/item/gun/energy/disabler,
-/obj/item/melee/baton,
-/obj/item/melee/baton,
-/obj/item/storage/box/teargas,
+/obj/item/kitchen/knife/combat,
+/obj/item/kitchen/knife/combat,
+/obj/item/kitchen/knife/combat,
+/obj/item/gun/energy/e_gun/stun,
+/obj/item/gun/energy/e_gun/stun,
+/obj/item/gun/energy/e_gun/stun,
+/obj/item/stock_parts/cell/gun,
+/obj/item/stock_parts/cell/gun,
+/obj/item/stock_parts/cell/gun,
 /obj/item/storage/box/zipties{
 	pixel_x = 7;
 	pixel_y = 3
 	},
-/obj/item/storage/box/flashes{
-	pixel_x = -1;
-	pixel_y = 14
+/obj/item/storage/box/flashbangs,
+/obj/structure/closet/wall/red{
+	dir = 8;
+	name = "armory locker";
+	pixel_x = 28;
+	req_one_access_txt = "1"
 	},
-/obj/item/restraints/legcuffs/bola/energy,
-/obj/item/restraints/legcuffs/bola/energy,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/security)
 "rL" = (
-/obj/effect/turf_decal/stripes/line{
+/obj/effect/turf_decal/industrial/warning{
 	dir = 10
 	},
 /obj/machinery/light/small{
 	dir = 8
 	},
-/obj/effect/turf_decal/caution/stand_clear{
-	dir = 1;
-	pixel_x = 10
+/obj/effect/turf_decal/industrial/stand_clear{
+	dir = 1
 	},
 /obj/machinery/button/door{
 	id = "piratecargo";
@@ -527,19 +534,20 @@
 /turf/open/floor/mineral/plastitanium,
 /area/ship/cargo)
 "sc" = (
-/obj/effect/turf_decal/stripes/end,
-/obj/structure/closet/wall{
-	name = "suit locker";
-	pixel_x = -32
-	},
+/obj/effect/turf_decal/industrial/warning/cee,
 /obj/machinery/airalarm/all_access{
 	dir = 1;
 	pixel_y = -24
 	},
-/obj/item/clothing/suit/space/solgov,
-/obj/item/clothing/head/helmet/space/solgov,
+/obj/item/clothing/suit/space/hardsuit/solgov,
 /obj/item/clothing/mask/gas/sechailer/swat/spacepol,
 /obj/item/tank/jetpack/oxygen,
+/obj/structure/closet/wall/red{
+	dir = 4;
+	name = "suit locker";
+	pixel_x = -28;
+	req_one_access_txt = "1"
+	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/security)
 "sv" = (
@@ -556,42 +564,55 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 8
 	},
-/obj/effect/turf_decal/stripes/line{
+/obj/effect/turf_decal/industrial/warning{
 	dir = 10
 	},
-/obj/machinery/autolathe,
 /obj/machinery/status_display/shuttle{
 	pixel_y = -32
 	},
 /obj/machinery/light/small{
 	pixel_x = -12
 	},
+/obj/structure/table/reinforced,
+/obj/machinery/recharger,
+/obj/item/screwdriver{
+	pixel_x = 6;
+	pixel_y = 6
+	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/security)
 "sI" = (
-/obj/effect/turf_decal/stripes/line{
+/obj/effect/turf_decal/industrial/warning{
 	dir = 6
-	},
-/obj/structure/closet/wall{
-	name = "armory locker";
-	pixel_x = 32
 	},
 /obj/machinery/firealarm{
 	dir = 1;
 	pixel_y = -24
 	},
-/obj/item/radio/headset/headset_sec/alt,
-/obj/item/radio/headset/headset_sec/alt,
-/obj/item/storage/backpack/security,
-/obj/item/storage/backpack/security,
-/obj/item/storage/belt/security/webbing,
-/obj/item/storage/belt/security/webbing,
+/obj/item/clothing/head/helmet/solgov,
 /obj/item/clothing/head/helmet/solgov,
 /obj/item/clothing/head/helmet/solgov,
 /obj/item/clothing/suit/armor/vest/solgov,
 /obj/item/clothing/suit/armor/vest/solgov,
+/obj/item/clothing/suit/armor/vest/solgov,
 /obj/item/clothing/mask/gas/sechailer/swat/spacepol,
 /obj/item/clothing/mask/gas/sechailer/swat/spacepol,
+/obj/item/clothing/mask/gas/sechailer/swat/spacepol,
+/obj/item/storage/belt/security/webbing,
+/obj/item/storage/belt/security/webbing,
+/obj/item/storage/belt/security/webbing,
+/obj/item/radio/headset/headset_sec/alt,
+/obj/item/radio/headset/headset_sec/alt,
+/obj/item/radio/headset/headset_sec/alt,
+/obj/item/storage/backpack/ert/security,
+/obj/item/storage/backpack/ert/security,
+/obj/item/storage/backpack/ert/security,
+/obj/structure/closet/wall/red{
+	dir = 8;
+	name = "armory locker";
+	pixel_x = 28;
+	req_one_access_txt = "1"
+	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/security)
 "tD" = (
@@ -642,7 +663,7 @@
 /obj/structure/sign/warning/vacuum/external{
 	pixel_y = 32
 	},
-/obj/effect/turf_decal/stripes/line{
+/obj/effect/turf_decal/industrial/warning{
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
@@ -655,12 +676,12 @@
 	dir = 4
 	},
 /obj/structure/closet/emcloset/wall{
-	pixel_y = 32
+	pixel_y = 28
 	},
 /obj/machinery/advanced_airlock_controller{
 	pixel_y = -24
 	},
-/obj/effect/turf_decal/stripes/line{
+/obj/effect/turf_decal/industrial/warning{
 	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
@@ -822,10 +843,6 @@
 /turf/open/floor/carpet/nanoweave/beige,
 /area/ship/crew)
 "Bw" = (
-/obj/structure/closet/wall{
-	name = "wardrobe";
-	pixel_x = 32
-	},
 /obj/machinery/light{
 	dir = 4
 	},
@@ -849,6 +866,11 @@
 /obj/item/radio/headset,
 /obj/item/radio/headset,
 /obj/item/radio/headset,
+/obj/structure/closet/wall{
+	dir = 8;
+	icon_door = "grey_wall";
+	pixel_x = 28
+	},
 /turf/open/floor/carpet/nanoweave/beige,
 /area/ship/crew)
 "By" = (
@@ -856,18 +878,19 @@
 /obj/item/radio/headset/headset_medsec/alt,
 /obj/item/clothing/accessory/armband/medblue,
 /obj/item/clothing/head/beret/solgov,
-/obj/item/clothing/under/rank/security/brig_phys,
 /obj/item/clothing/suit/armor/vest/solgov/rep{
 	name = "\proper slim SolGov armor vest"
-	},
-/obj/structure/closet/wall{
-	name = "brig physician's locker";
-	pixel_x = -32
 	},
 /obj/item/clothing/glasses/hud/health,
 /obj/item/clothing/shoes/sneakers/white,
 /obj/item/storage/belt/medical,
 /obj/item/storage/backpack/security,
+/obj/item/clothing/under/solgov,
+/obj/structure/closet/wall/white/med{
+	dir = 4;
+	name = "medical locker";
+	pixel_x = -28
+	},
 /turf/open/floor/plasteel/showroomfloor,
 /area/ship/crew)
 "Cd" = (
@@ -882,10 +905,10 @@
 /obj/effect/turf_decal/siding{
 	dir = 4
 	},
-/obj/effect/landmark/start/brig_phys,
 /obj/structure/cable{
 	icon_state = "2-4"
 	},
+/obj/effect/landmark/start/paramedic,
 /turf/open/floor/plasteel/showroomfloor,
 /area/ship/crew)
 "Cg" = (
@@ -935,7 +958,7 @@
 /turf/open/floor/plating,
 /area/ship/hallway/starboard)
 "Df" = (
-/obj/effect/turf_decal/bot,
+/obj/effect/turf_decal/industrial/outline/yellow,
 /obj/structure/sign/warning/nosmoking{
 	pixel_x = -32
 	},
@@ -981,7 +1004,6 @@
 	pixel_y = 8
 	},
 /obj/structure/table/reinforced,
-/obj/effect/turf_decal/bot_white,
 /obj/machinery/defibrillator_mount/loaded{
 	pixel_y = -32
 	},
@@ -1129,10 +1151,11 @@
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
+/obj/structure/grille,
 /turf/open/floor/plating,
 /area/ship/cargo)
 "HY" = (
-/obj/effect/turf_decal/stripes/line{
+/obj/effect/turf_decal/industrial/warning{
 	dir = 8
 	},
 /turf/open/floor/mineral/plastitanium,
@@ -1162,7 +1185,7 @@
 /turf/closed/wall/mineral/titanium,
 /area/ship/hallway/port)
 "IV" = (
-/obj/effect/turf_decal/bot,
+/obj/effect/turf_decal/industrial/outline/yellow,
 /obj/structure/cable/yellow{
 	icon_state = "0-2"
 	},
@@ -1170,7 +1193,7 @@
 /turf/open/floor/plating,
 /area/ship/hallway/port)
 "Ji" = (
-/obj/effect/turf_decal/bot,
+/obj/effect/turf_decal/industrial/outline/yellow,
 /obj/machinery/atmospherics/components/unary/tank/air{
 	piping_layer = 2
 	},
@@ -1186,10 +1209,6 @@
 	},
 /obj/machinery/light{
 	dir = 8
-	},
-/obj/structure/closet/wall{
-	name = "warden's locker";
-	pixel_x = -32
 	},
 /obj/item/storage/belt/security,
 /obj/item/storage/backpack/security,
@@ -1207,6 +1226,12 @@
 /obj/item/ammo_box/magazine/pistol556mm,
 /obj/item/ammo_box/magazine/pistol556mm,
 /obj/item/melee/classic_baton/telescopic,
+/obj/structure/closet/wall{
+	dir = 4;
+	icon_door = "red_wall";
+	name = "brig officer's closet";
+	pixel_x = -28
+	},
 /turf/open/floor/carpet/nanoweave/red,
 /area/ship/cargo)
 "Jx" = (
@@ -1296,14 +1321,14 @@
 /turf/open/floor/plating,
 /area/ship/hallway/port)
 "LD" = (
-/obj/effect/turf_decal/bot,
+/obj/effect/turf_decal/industrial/outline/yellow,
 /obj/machinery/atmospherics/components/unary/tank/air{
 	piping_layer = 2
 	},
 /turf/open/floor/plating,
 /area/ship/hallway/starboard)
 "LU" = (
-/obj/effect/turf_decal/bot,
+/obj/effect/turf_decal/industrial/outline/yellow,
 /obj/structure/cable/yellow{
 	icon_state = "0-2"
 	},
@@ -1314,7 +1339,8 @@
 /obj/structure/cable/yellow,
 /obj/machinery/power/terminal,
 /obj/structure/closet/firecloset/wall{
-	pixel_x = -32
+	dir = 4;
+	pixel_x = -28
 	},
 /turf/open/floor/plating,
 /area/ship/hallway/port)
@@ -1381,6 +1407,7 @@
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
+/obj/structure/grille,
 /turf/open/floor/plating,
 /area/ship/cargo)
 "Ol" = (
@@ -1396,7 +1423,8 @@
 /obj/machinery/power/terminal,
 /obj/item/wrench,
 /obj/structure/closet/firecloset/wall{
-	pixel_x = 32
+	dir = 8;
+	pixel_x = 28
 	},
 /turf/open/floor/plating,
 /area/ship/hallway/starboard)
@@ -1410,7 +1438,7 @@
 /turf/open/floor/plating,
 /area/ship/hallway/port)
 "OO" = (
-/obj/effect/turf_decal/stripes/line{
+/obj/effect/turf_decal/industrial/warning{
 	dir = 4
 	},
 /turf/open/floor/mineral/plastitanium,
@@ -1449,7 +1477,7 @@
 /turf/open/floor/plating,
 /area/ship/hallway/port)
 "Qj" = (
-/obj/effect/turf_decal/stripes/line{
+/obj/effect/turf_decal/industrial/warning{
 	dir = 8
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -1597,7 +1625,7 @@
 /turf/open/floor/engine/hull/interior,
 /area/ship/cargo)
 "TT" = (
-/obj/effect/turf_decal/stripes/line{
+/obj/effect/turf_decal/industrial/warning{
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -1694,7 +1722,7 @@
 /turf/open/floor/plating,
 /area/ship/hallway/port)
 "VO" = (
-/obj/effect/turf_decal/bot,
+/obj/effect/turf_decal/industrial/outline/yellow,
 /obj/machinery/airalarm/all_access{
 	dir = 4;
 	pixel_x = -24
@@ -1706,13 +1734,13 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 1
 	},
-/obj/effect/turf_decal/stripes/line{
+/obj/effect/turf_decal/industrial/warning{
 	dir = 9
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/cargo)
 "WC" = (
-/obj/effect/turf_decal/stripes/line{
+/obj/effect/turf_decal/industrial/warning{
 	dir = 1
 	},
 /obj/structure/closet/crate{
@@ -1743,7 +1771,7 @@
 /obj/item/tank/internals/oxygen/red,
 /obj/item/tank/internals/oxygen/red,
 /obj/item/tank/internals/oxygen/red,
-/obj/effect/turf_decal/stripes/line{
+/obj/effect/turf_decal/industrial/warning{
 	dir = 1
 	},
 /obj/item/pickaxe/emergency,
@@ -1770,13 +1798,13 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 1
 	},
-/obj/effect/turf_decal/stripes/line{
+/obj/effect/turf_decal/industrial/warning{
 	dir = 5
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/cargo)
 "Xx" = (
-/obj/effect/turf_decal/bot,
+/obj/effect/turf_decal/industrial/outline/yellow,
 /obj/structure/extinguisher_cabinet{
 	pixel_x = 32
 	},
@@ -1841,15 +1869,14 @@
 /turf/open/floor/plating,
 /area/ship/hallway/port)
 "ZB" = (
-/obj/effect/turf_decal/stripes/line{
+/obj/effect/turf_decal/industrial/warning{
 	dir = 6
 	},
 /obj/machinery/light/small{
 	dir = 4
 	},
-/obj/effect/turf_decal/caution/stand_clear{
-	dir = 1;
-	pixel_x = -10
+/obj/effect/turf_decal/industrial/stand_clear{
+	dir = 1
 	},
 /obj/machinery/button/door{
 	id = "piratecargo";

@@ -73,6 +73,5 @@ GLOBAL_LIST_INIT(special_roles, list(
 )) //WS Edit - Borers
 
 //Job defines for what happens when you fail to qualify for any job during job selection
-#define BEOVERFLOW 1
-#define BERANDOMJOB 2
-#define RETURNTOLOBBY 3
+#define BERANDOMJOB 1
+#define RETURNTOLOBBY 2

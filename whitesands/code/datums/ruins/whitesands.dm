@@ -116,6 +116,20 @@
 	suffix = "whitesands_surface_onlyaspoonful.dmm"
 	allow_duplicates = FALSE
 
+/datum/map_template/ruin/whitesands/onlyaspoonful
+	name = "Abandoned Spacepod Garage"
+	id = "ws-spacepod"
+	description = "A old abandoned spacepod garage. What must it have been used for?"
+	suffix = "whitesands_surface_spacepod_garage.dmm"
+	allow_duplicates = FALSE
+
+/datum/map_template/ruin/whitesands/chokepoint
+	name = "Chokepoint"
+	id = "ws-chokepoint"
+	description = "Some sort of survivors, brandishing old nanotrasen security gear."
+	suffix = "whitesands_surface_chokepoint.dmm"
+	allow_duplicates = FALSE
+
 //////////OUTSIDE SETTLEMENTS/RUINS//////////
 /datum/map_template/ruin/whitesands/survivors
 	name = "Survivor Camp"
@@ -177,3 +191,28 @@
 	placement_weight = 0.5
 	suffix = "whitesands_surface_camp_saloon.dmm"
 	allow_duplicates = FALSE
+
+//Crashed Shiptests//
+/datum/map_template/ruin/whitesands/crash_kitchen
+	name = "Crashed Kitchen"
+	description = "A crashed part of some unlucky ship."
+	id = "crash-kitchen"
+	suffix = "crash_kitchen.dmm"
+
+/datum/map_template/ruin/whitesands/crash_bar
+	name = "Crashed Bar"
+	description = "A crashed part of some unlucky ship. Was once a bar."
+	id = "crash-bar"
+	suffix = "crash_bar.dmm"
+
+/datum/map_template/ruin/whitesands/crash_cargo
+	name = "Crashed Cargo Bay"
+	description = "A crashed part of some unlucky ship. Has been taken over by pirates"
+	id = "crash-cargo"
+	suffix = "crash_cargo.dmm"
+
+/datum/map_template/ruin/whitesands/crash_cult
+	name = "Crashed Cult Ship"
+	description = "A crashed part of some unlucky ship. Has been occupied by a cult."
+	id = "crash-cult"
+	suffix = "crash_cult.dmm"

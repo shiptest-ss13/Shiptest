@@ -7,7 +7,6 @@
 	supervisors = "the head of personnel"
 	selection_color = "#d7b088"
 	wiki_page = "Quartermaster" //WS Edit - Wikilinks/Warning
-	special_notice = "You are not a head of staff. You answer to the Head of Personnel." //WS Edit - Wikilinks/Warning
 	exp_type_department = EXP_TYPE_SUPPLY // This is so the jobs menu can work properly
 
 	outfit = /datum/outfit/job/quartermaster
@@ -49,3 +48,4 @@
 	neck = /obj/item/clothing/neck/tie/brown
 	head = /obj/item/clothing/head/supply_chief
 	backpack_contents = list(/obj/item/modular_computer/tablet/preset/cargo=1, /obj/item/clipboard=1)
+

@@ -311,9 +311,6 @@ GLOBAL_LIST_INIT(devil_suffix, list(" the Red", " the Soulless", " the Master", 
 	if(A)
 		notify_ghosts("An arch devil has ascended in \the [A.name]. Reach out to the devil to be given a new shell for your soul.", source = owner.current, action=NOTIFY_ATTACK)
 	sleep(50)
-	if(!SSticker.mode.devil_ascended)
-		SSshuttle.emergency.request(null, set_coefficient = 0.3)
-	SSticker.mode.devil_ascended++
 	form = ARCH_DEVIL
 
 /datum/antagonist/devil/proc/remove_spells()

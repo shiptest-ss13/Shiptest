@@ -45,21 +45,9 @@
 	subtype_path = /datum/gear/accessory/tie
 	cost = 500
 
-/datum/gear/accessory/tie/black
-	display_name = "tie, black"
-	path =  /obj/item/clothing/neck/tie/black
-
-/datum/gear/accessory/tie/red
-	display_name = "tie, red"
-	path =  /obj/item/clothing/neck/tie/red
-
-/datum/gear/accessory/tie/blue
-	display_name = "tie, blue"
-	path =  /obj/item/clothing/neck/tie/blue
-
-/datum/gear/accessory/tie/horrible
-	display_name = "tie, horrible"
-	path = /obj/item/clothing/neck/tie/horrible
+/datum/gear/accessory/tie/recolorable
+	display_name = "tie, recolorable"
+	path =  /obj/item/clothing/neck/tie
 
 //Misc
 

@@ -99,7 +99,6 @@
 			delay = (delay SECONDS)
 		else
 			delay = (4 MINUTES) //default to 4 minutes if the delay isn't defined.
-		addtimer(CALLBACK(GLOBAL_PROC, .proc/reopen_roundstart_suicide_roles), delay)
 
 	if(SSdbcore.Connect())
 		var/list/to_set = list()
@@ -159,13 +158,6 @@
 		return null
 
 	replacementmode = pickweight(usable_modes)
-
-	switch(SSshuttle.emergency.mode) //Rounds on the verge of ending don't get new antags, they just run out
-		if(SHUTTLE_STRANDED, SHUTTLE_ESCAPE)
-			return 1
-		if(SHUTTLE_CALL)
-			if(SSshuttle.emergency.timeLeft(1) < initial(SSshuttle.emergencyCallTime)*0.5)
-				return 1
 
 	var/matc = CONFIG_GET(number/midround_antag_time_check)
 	if(world.time >= (matc * 600))
@@ -242,7 +234,6 @@
 				message_admins("The roundtype ([config_tag]) has no antagonists, continuous round has been defaulted to on and midround_antag has been defaulted to off.")
 				continuous[config_tag] = TRUE
 				midround_antag[config_tag] = FALSE
-				SSshuttle.clearHostileEnvironment(src)
 				return 0
 
 
@@ -467,54 +458,6 @@
 		if(player.mind && (player.mind.assigned_role in GLOB.nonhuman_positions))
 			. |= player.mind
 
-/proc/reopen_roundstart_suicide_roles()
-	var/list/valid_positions = list()
-	valid_positions += GLOB.engineering_positions
-	valid_positions += GLOB.medical_positions
-	valid_positions += GLOB.science_positions
-	valid_positions += GLOB.supply_positions
-	valid_positions += GLOB.service_positions
-	valid_positions += GLOB.security_positions
-	if(CONFIG_GET(flag/reopen_roundstart_suicide_roles_command_positions))
-		valid_positions += GLOB.command_positions //add any remaining command positions
-	else
-		valid_positions -= GLOB.command_positions //remove all command positions that were added from their respective department positions lists.
-
-	var/list/reopened_jobs = list()
-	for(var/X in GLOB.suicided_mob_list)
-		if(!isliving(X))
-			continue
-		var/mob/living/L = X
-		if(L.job in valid_positions)
-			var/datum/job/J = SSjob.GetJob(L.job)
-			if(!J)
-				continue
-			J.current_positions = max(J.current_positions-1, 0)
-			reopened_jobs += L.job
-
-	if(CONFIG_GET(flag/reopen_roundstart_suicide_roles_command_report))
-		if(reopened_jobs.len)
-			var/reopened_job_report_positions
-			for(var/dead_dudes_job in reopened_jobs)
-				reopened_job_report_positions = "[reopened_job_report_positions ? "[reopened_job_report_positions]\n":""][dead_dudes_job]"
-
-			var/suicide_command_report = "<font size = 3><b>Central Command Human Resources Board</b><br>\
-								Notice of Personnel Change</font><hr>\
-								To personnel management staff aboard [station_name()]:<br><br>\
-								Our medical staff have detected a series of anomalies in the vital sensors \
-								of some of the staff aboard your station.<br><br>\
-								Further investigation into the situation on our end resulted in us discovering \
-								a series of rather... unforturnate decisions that were made on the part of said staff.<br><br>\
-								As such, we have taken the liberty to automatically reopen employment opportunities for the positions of the crew members \
-								who have decided not to partake in our research. We will be forwarding their cases to our employment review board \
-								to determine their eligibility for continued service with the company (and of course the \
-								continued storage of cloning records within the central medical backup server.)<br><br>\
-								<i>The following positions have been reopened on our behalf:<br><br>\
-								[reopened_job_report_positions]</i>"
-
-			print_command_report(suicide_command_report, "Central Command Personnel Update")
-
-
 //////////////////////////
 //Reports player logouts//
 //////////////////////////
@@ -631,12 +574,6 @@
 //Set result and news report here
 /datum/game_mode/proc/set_round_result()
 	SSticker.mode_result = "undefined"
-	if(station_was_nuked)
-		SSticker.news_report = STATION_DESTROYED_NUKE
-	if(EMERGENCY_ESCAPED_OR_ENDGAMED)
-		SSticker.news_report = STATION_EVACUATED
-		if(SSshuttle.emergency.is_hijacked())
-			SSticker.news_report = SHUTTLE_HIJACK
 
 /// Mode specific admin panel.
 /datum/game_mode/proc/admin_panel()
