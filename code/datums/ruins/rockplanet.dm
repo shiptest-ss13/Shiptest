@@ -109,6 +109,12 @@
 
 /datum/map_template/ruin/rockplanet/radiation
 	name = "Honorable deeds storage"
-	id = "rockplanet radiation"
+	id = "rockplanet_radiation"
 	description = "A dumping ground for nuclear waste."
 	suffix = "rockplanet_unhonorable.dmm"
+
+/datum/map_template/ruin/rockplanet/boxsci
+	name = "Honorable deeds storage"
+	id = "Abandoned science wing"
+	description = "A chunk of a station that broke off.."
+	suffix = "rockplanet_boxsci.dmm"
