@@ -61,5 +61,5 @@
 	"}
 	icon_state = "raincoat"
 	icon = 'icons/obj/clothing/suits.dmi' // zeta is a verified dumb dumb idiothead who cannot do anything right - github review suggestion by triplezeta
-	mob_overlay_icon = 'icons/mob/clothing/suits.dmi' // same as above
+	mob_overlay_icon = 'icons/mob/clothing/suit.dmi' // same as above
 	item_state = "raincoat"
