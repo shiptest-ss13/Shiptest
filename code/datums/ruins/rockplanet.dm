@@ -35,14 +35,14 @@
 	description = "Cultists seem to have gotten here too."
 	suffix = "rockplanet_cult.dmm"
 
-/*	//TODO: REMOVE THESE TWO
+
 /datum/map_template/ruin/rockplanet/dangerpod
 	name = "Dangerous pod"
 	id = "dangerpod"
 	description = "A pod holding a dangerous threat."
 	suffix = "rockplanet_dangerpod.dmm"
 
-
+/*	//TODO: REMOVE THIS ONE
 /datum/map_template/ruin/rockplanet/pioneer
 	name = "Krusty Krab Pizza"
 	id = "pioneer"
