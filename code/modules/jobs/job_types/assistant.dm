@@ -122,7 +122,7 @@ Assistant
 	shoes = /obj/item/clothing/shoes/laceup
 	suit = /obj/item/clothing/suit/toggle/lawyer/black
 
-datum/outfit/job/assistant/operative
+/datum/outfit/job/assistant/operative
 	name = "Operative (Assistant)"
 
 	uniform = /obj/item/clothing/under/syndicate/aclfgrunt
