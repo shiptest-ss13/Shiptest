@@ -326,7 +326,6 @@
 		/datum/language/sylvan,
 		/datum/language/shadowtongue,
 		/datum/language/terrum,
-		/datum/language/voltaic,
 		/datum/language/ratvar
 	))
 
