@@ -76,5 +76,6 @@
 
 	uniform = /obj/item/clothing/under/syndicate/gorlex
 	head = /obj/item/clothing/head/HoS/beret/syndicate
+	suit = /obj/item/clothing/suit/armor/vest/syndie
 	r_pocket = /obj/item/melee/transforming/energy/sword
 	backpack_contents = list(/obj/item/melee/baton/loaded=1)
