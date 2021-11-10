@@ -93,12 +93,11 @@
 
 /obj/item/clothing/suit/toggle/hazard
 	name = "high-visibility jacket"
-	desc = "A highlighter-yellow jacket with reflective stripes and a cozy fleece lining."
+	desc = "A highlighter-yellow jacket with reflective stripes."
 	icon_state = "jacket_hazard"
 	item_state = "jacket_hazard"
 	blood_overlay_type = "coat"
 	body_parts_covered = CHEST|ARMS
-	cold_protection = CHEST|ARMS
 	togglename = "zipper"
 	allowed = list(/obj/item/flashlight, /obj/item/tank/internals/emergency_oxygen, /obj/item/tank/internals/plasmaman, /obj/item/t_scanner, /obj/item/radio)
 	resistance_flags = NONE
