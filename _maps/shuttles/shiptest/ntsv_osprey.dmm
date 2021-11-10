@@ -1089,10 +1089,10 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/medical)
 "iy" = (
-/obj/effect/turf_decal/corner/white/mono,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/structure/disposalpipe/junction/flip,
+/obj/effect/turf_decal/corner/white/mono,
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "iF" = (
@@ -1840,6 +1840,13 @@
 "nT" = (
 /turf/closed/wall/mineral/titanium,
 /area/ship/hallway/starboard)
+"oa" = (
+/obj/effect/spawner/structure/window/shuttle,
+/obj/structure/disposalpipe/segment{
+	dir = 8
+	},
+/turf/open/floor/plating,
+/area/ship/medical)
 "og" = (
 /obj/structure/chair/office{
 	dir = 4
@@ -1847,10 +1854,10 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/fore)
 "ok" = (
-/obj/effect/turf_decal/corner/white/mono,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/structure/disposalpipe/segment,
+/obj/structure/disposalpipe/junction,
+/obj/effect/turf_decal/corner/white/mono,
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "op" = (
@@ -3730,13 +3737,13 @@
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/construction)
 "Cd" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/structure/disposalpipe/segment,
 /obj/effect/turf_decal/corner/white/mono,
 /obj/effect/turf_decal/corner/blue/border{
 	dir = 6
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/structure/disposalpipe/segment,
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "Cf" = (
@@ -5440,12 +5447,12 @@
 /turf/open/floor/wood,
 /area/ship/crew/canteen)
 "NY" = (
-/obj/effect/turf_decal/corner/white/mono,
 /obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
 	dir = 4
 	},
 /obj/structure/disposalpipe/segment,
+/obj/effect/turf_decal/corner/white/mono,
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "Of" = (
@@ -5852,17 +5859,15 @@
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/engineering/atmospherics)
 "QT" = (
-/obj/structure/table/glass,
-/obj/item/storage/backpack/duffelbag/med/surgery{
-	pixel_x = -3;
-	pixel_y = 13
-	},
 /obj/effect/turf_decal/borderfloor/cee{
 	dir = 4
 	},
-/obj/item/clothing/gloves/color/latex,
 /obj/machinery/light{
 	dir = 1
+	},
+/obj/machinery/disposal/bin,
+/obj/structure/disposalpipe/trunk{
+	dir = 4
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
@@ -6217,12 +6222,12 @@
 /turf/open/floor/plasteel,
 /area/ship/hallway/starboard)
 "TA" = (
-/obj/effect/turf_decal/corner/white/mono,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
 	dir = 8
 	},
 /obj/structure/disposalpipe/segment,
+/obj/effect/turf_decal/corner/white/mono,
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "TB" = (
@@ -6526,13 +6531,13 @@
 /turf/open/floor/wood,
 /area/ship/crew/canteen)
 "Vr" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/structure/disposalpipe/segment,
 /obj/effect/turf_decal/corner/white/mono,
 /obj/effect/turf_decal/corner/blue/border{
 	dir = 5
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/structure/disposalpipe/segment,
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "Vu" = (
@@ -6870,7 +6875,6 @@
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "Yn" = (
-/obj/structure/filingcabinet/medical,
 /obj/effect/turf_decal/corner/white/mono,
 /obj/effect/turf_decal/corner/blue/border{
 	dir = 1
@@ -6878,6 +6882,12 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 10
 	},
+/obj/structure/table/glass,
+/obj/item/storage/backpack/duffelbag/med/surgery{
+	pixel_x = -3;
+	pixel_y = 13
+	},
+/obj/item/clothing/gloves/color/latex,
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "Yo" = (
@@ -7917,7 +7927,7 @@ Hq
 kU
 Ft
 DX
-Ed
+oa
 Ed
 iw
 FA
