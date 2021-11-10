@@ -2279,7 +2279,7 @@
 	description = "For when you need to push on a little more. Do NOT allow near plants."
 	reagent_state = LIQUID
 	color = "#D2FFFA"
-	metabolization_rate = 0.75 * REAGENTS_METABOLISM // 5u (WOUND_DETERMINATION_CRITICAL) will last for ~17 ticks
+	metabolization_rate = 0.75 * REAGENTS_METABOLISM
 	self_consuming = TRUE
 	taste_description = "pure determination"
 	overdose_threshold = 30

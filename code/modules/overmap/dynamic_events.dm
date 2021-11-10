@@ -109,9 +109,9 @@
 			color = COLOR_BROWN
 		if(DYNAMIC_WORLD_REEBE)
 			name = "???"
-			desc = "A strong energy signal. Theres no identification of what this is."
+			desc = "Some sort of strange portal. Theres no identification of what this is."
 			planet = DYNAMIC_WORLD_REEBE
-			icon_state = "strange_event"
+			icon_state = "wormhole"
 			color = COLOR_YELLOW
 		if(DYNAMIC_WORLD_ASTEROID)
 			name = "large asteroid"
