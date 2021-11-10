@@ -2281,6 +2281,7 @@
 	color = "#D2FFFA"
 	metabolization_rate = 0.75 * REAGENTS_METABOLISM // 5u (WOUND_DETERMINATION_CRITICAL) will last for ~17 ticks
 	self_consuming = TRUE
+	taste_description = "pure determination"
 	overdose_threshold = 30
 
 /datum/reagent/determination/on_mob_add(mob/living/M)
@@ -2289,7 +2290,7 @@
 	ADD_TRAIT(M, TRAIT_NOSOFTCRIT,type)
 
 /datum/reagent/determination/on_mob_life(mob/living/carbon/human/H)
-	if(H.health <= HEALTH_THRESHOLD_CRIT && H.health > H.crit_threshold) //we cannot save someone above our raised crit threshold.
+	if(H.health <= HEALTH_THRESHOLD_CRIT && H.health > H.crit_threshold)
 
 		H.adjustBruteLoss(-2 * REM, 0)
 		H.adjustOxyLoss(-6 * REM, 0)
@@ -2311,6 +2312,30 @@
 	. = ..()
 
 /datum/reagent/determination/overdose_process(mob/living/carbon/human/H)
+	to_chat(H,"<span class='danger'>You feel your heart rupturing in two!</span>")
+	H.adjustStaminaLoss(10)
+	H.adjustOrganLoss(ORGAN_SLOT_HEART,100)
+	H.set_heartattack(TRUE)
+
+/datum/reagent/crystal_reagent
+	name = "Crystal Reagent"
+	description = "A strange crystal substance. Heals faster than omnizine."
+	reagent_state = LIQUID
+	color = "#1B9681"
+	metabolization_rate = 0.5 * REAGENTS_METABOLISM
+	overdose_threshold = 20
+	taste_description = "rocks"
+	var/healing = 0.65
+
+/datum/reagent/crystal_reagent/on_mob_life(mob/living/carbon/M)
+	M.adjustToxLoss(-healing*REM, 0)
+	M.adjustOxyLoss(-healing*REM, 0)
+	M.adjustBruteLoss(-healing*REM, 0)
+	M.adjustFireLoss(-healing*REM, 0)
+	..()
+	. = 1
+
+/datum/reagent/crystal_reagent/overdose_process(mob/living/carbon/human/H) //TODO port bee's regen cores legioning miners, and make it only do that if overdosed on crystal
 	to_chat(H,"<span class='danger'>You feel your heart rupturing in two!</span>")
 	H.adjustStaminaLoss(10)
 	H.adjustOrganLoss(ORGAN_SLOT_HEART,100)

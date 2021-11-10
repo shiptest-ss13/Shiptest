@@ -386,6 +386,7 @@
 	icon_dead = "crystal_goliath_dead"
 	throw_message = "does nothing to the tough hide of the"
 	pre_attack_icon = "crystal_goliath2"
+	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/goliath = 2, /obj/item/stack/sheet/bone = 2, /obj/item/stack/sheet/sinew = 2, /obj/item/stack/ore/silver = 10, /obj/item/strange_crystal = 2)
 	tentacle_type = /obj/effect/temp_visual/goliath_tentacle/crystal
 	tentacle_recheck_cooldown = 50
 	speed = 2

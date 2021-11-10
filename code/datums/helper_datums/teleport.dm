@@ -64,9 +64,9 @@
 	if(!destturf || !curturf || destturf.is_transition_turf())
 		return FALSE
 
-	//var/area/A = get_area(curturf)
+	var/area/A = get_area(curturf)
 	var/area/B = get_area(destturf)
-	if(!forced && (HAS_TRAIT(teleatom, TRAIT_NO_TELEPORT) || (B.area_flags & NOTELEPORT)))
+	if(!forced && (HAS_TRAIT(teleatom, TRAIT_NO_TELEPORT) || (A.area_flags & NOTELEPORT) || (B.area_flags & NOTELEPORT)))
 		return FALSE
 
 	if(SEND_SIGNAL(destturf, COMSIG_ATOM_INTERCEPT_TELEPORT, channel, curturf, destturf))

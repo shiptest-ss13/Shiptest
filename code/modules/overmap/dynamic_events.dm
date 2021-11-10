@@ -68,7 +68,7 @@
 		DYNAMIC_WORLD_SAND = length(SSmapping.sand_ruins_templates),
 		DYNAMIC_WORLD_SPACERUIN = length(SSmapping.space_ruins_templates),
 		DYNAMIC_WORLD_ROCKPLANET = length(SSmapping.rock_ruins_templates),
-		DYNAMIC_WORLD_REEBE = length(SSmapping.yellow_ruins_templates), //todo: set to a very low number once it gets ruins
+		DYNAMIC_WORLD_REEBE = 1, //very rare because of major lack of skil
 		DYNAMIC_WORLD_ASTEROID = 30)
 
 	if(force_encounter)
@@ -257,12 +257,6 @@
 /obj/structure/overmap/dynamic/lava
 	force_encounter = DYNAMIC_WORLD_LAVA
 
-/*
-/obj/structure/overmap/dynamic/lava/bubblegum
-	force_encounter = DYNAMIC_WORLD_LAVA
-	map_template = /datum/map_template/ruin/special/castle_bubblegum
-*/
-
 /obj/structure/overmap/dynamic/ice
 	force_encounter = DYNAMIC_WORLD_ICE
 
@@ -287,7 +281,7 @@
 /area/overmap_encounter
 	name = "\improper Overmap Encounter"
 	icon_state = "away"
-	area_flags = HIDDEN_AREA | UNIQUE_AREA | CAVES_ALLOWED | FLORA_ALLOWED | MOB_SPAWN_ALLOWED | NOTELEPORT
+	area_flags = HIDDEN_AREA | UNIQUE_AREA | CAVES_ALLOWED | FLORA_ALLOWED | MOB_SPAWN_ALLOWED
 	flags_1 = CAN_BE_DIRTY_1
 	dynamic_lighting = DYNAMIC_LIGHTING_FORCED
 	sound_environment = SOUND_ENVIRONMENT_STONEROOM
