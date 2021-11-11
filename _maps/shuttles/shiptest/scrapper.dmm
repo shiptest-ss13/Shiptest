@@ -85,6 +85,9 @@
 /obj/effect/turf_decal/techfloor/orange/corner{
 	dir = 8
 	},
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
 /turf/open/floor/pod/light,
 /area/ship/storage)
 "aK" = (
@@ -473,6 +476,9 @@
 	icon_state = "4-8"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/crew/hydroponics)
 "fM" = (
@@ -552,9 +558,6 @@
 /area/ship/crew/dorm)
 "gK" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 5
@@ -1208,7 +1211,6 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 8
 	},
-/obj/machinery/power/apc/auto_name/north,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
@@ -1412,14 +1414,15 @@
 /obj/structure/cable{
 	icon_state = "2-4"
 	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
 /obj/machinery/firealarm{
 	pixel_y = 24
 	},
 /obj/effect/turf_decal/techfloor/orange{
 	dir = 9
+	},
+/obj/machinery/airalarm/all_access{
+	dir = 4;
+	pixel_x = -24
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/electrical)
@@ -1455,6 +1458,9 @@
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
 	},
 /turf/open/floor/pod/light,
 /area/ship/hallway/central)
@@ -1533,13 +1539,13 @@
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/structure/cable{
 	icon_state = "2-8"
 	},
 /obj/effect/turf_decal/techfloor{
 	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
 	},
 /turf/open/floor/pod/light,
 /area/ship/cargo)
@@ -1711,6 +1717,10 @@
 /turf/open/floor/pod/light,
 /area/ship/bridge)
 "uG" = (
+/obj/machinery/power/apc/auto_name/south,
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
 /turf/open/floor/pod/light,
 /area/ship/hallway/fore)
 "uJ" = (
@@ -1985,6 +1995,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/pod/light,
 /area/ship/cargo)
 "xS" = (
@@ -2190,6 +2203,9 @@
 	},
 /obj/structure/cable{
 	icon_state = "1-2"
+	},
+/obj/structure/cable{
+	icon_state = "1-8"
 	},
 /turf/open/floor/pod/light,
 /area/ship/hallway/fore)
@@ -2500,9 +2516,7 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 8
 	},
-/obj/machinery/computer/cargo/express{
-	dir = 4
-	},
+/obj/machinery/computer/cargo/express,
 /turf/open/floor/pod/light,
 /area/ship/cargo)
 "CX" = (
@@ -2541,6 +2555,9 @@
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 5
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
 	},
 /turf/open/floor/pod/light,
 /area/ship/storage)
@@ -3219,7 +3236,9 @@
 	dir = 1;
 	pixel_y = -24
 	},
-/obj/machinery/selling_pad,
+/obj/machinery/computer/selling_pad_control{
+	dir = 1
+	},
 /turf/open/floor/pod/light,
 /area/ship/cargo)
 "Ly" = (
@@ -3237,9 +3256,7 @@
 	dir = 1;
 	pixel_y = -24
 	},
-/obj/machinery/computer/selling_pad_control{
-	dir = 1
-	},
+/obj/machinery/selling_pad,
 /turf/open/floor/pod/light,
 /area/ship/cargo)
 "LU" = (
@@ -3301,6 +3318,16 @@
 	},
 /turf/open/floor/plating,
 /area/ship/bridge)
+"MV" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/turf/open/floor/carpet/blue,
+/area/ship/crew/canteen)
 "MW" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
 	dir = 1
@@ -3924,6 +3951,9 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 10
 	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/crew/hydroponics)
 "Td" = (
@@ -4000,6 +4030,9 @@
 /obj/machinery/power/apc/auto_name/north,
 /obj/effect/turf_decal/techfloor/orange{
 	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "0-2"
 	},
 /turf/open/floor/pod/light,
 /area/ship/storage)
@@ -4213,10 +4246,7 @@
 	dir = 4
 	},
 /obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/structure/cable{
-	icon_state = "2-4"
+	icon_state = "1-4"
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/crew/hydroponics)
@@ -4596,6 +4626,17 @@
 	},
 /turf/open/floor/pod/light,
 /area/ship/bridge)
+"ZZ" = (
+/obj/effect/turf_decal/techfloor{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/turf/open/floor/pod/light,
+/area/ship/cargo)
 
 (1,1,1) = {"
 Dw
@@ -4719,7 +4760,7 @@ pE
 zA
 wd
 Re
-Dq
+MV
 Dq
 zu
 Kq
@@ -5085,7 +5126,7 @@ ID
 Jc
 YZ
 rD
-xR
+ZZ
 oh
 yj
 GQ
