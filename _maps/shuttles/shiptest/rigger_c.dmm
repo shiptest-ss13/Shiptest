@@ -668,7 +668,8 @@
 /area/ship/construction)
 "jP" = (
 /obj/item/radio/intercom{
-	pixel_x = -28
+	dir = 4;
+	pixel_x = -22
 	},
 /turf/open/floor/plating,
 /area/ship/bridge)
@@ -681,7 +682,8 @@
 	dir = 8
 	},
 /obj/item/radio/intercom{
-	pixel_y = -28
+	dir = 1;
+	pixel_y = -22
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
@@ -712,7 +714,8 @@
 /area/ship/security/prison)
 "jX" = (
 /obj/item/radio/intercom{
-	pixel_y = -28
+	dir = 1;
+	pixel_y = -22
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/carpet/nanoweave/purple,
@@ -1126,12 +1129,14 @@
 /area/ship/engineering)
 "ou" = (
 /obj/machinery/button/door{
+	dir = 4;
 	id = "riggerdoors";
 	name = "Blast Door Control";
 	pixel_x = -24;
 	pixel_y = 5
 	},
 /obj/machinery/button/door{
+	dir = 4;
 	id = "riggerwindows";
 	name = "Window Lockdown";
 	pixel_x = -24;
@@ -1415,7 +1420,8 @@
 /area/ship/engineering/atmospherics)
 "rg" = (
 /obj/item/radio/intercom{
-	pixel_y = -28
+	dir = 1;
+	pixel_y = -22
 	},
 /obj/machinery/firealarm{
 	dir = 4;
@@ -1584,7 +1590,8 @@
 /obj/structure/table/wood,
 /obj/structure/bedsheetbin,
 /obj/item/radio/intercom{
-	pixel_x = -28
+	dir = 4;
+	pixel_x = -22
 	},
 /turf/open/floor/wood{
 	icon_state = "wood-broken"
@@ -1633,7 +1640,8 @@
 /area/ship/crew)
 "tL" = (
 /obj/machinery/newscaster{
-	pixel_y = -30
+	dir = 1;
+	pixel_y = -32
 	},
 /obj/machinery/light{
 	dir = 4
@@ -1883,7 +1891,8 @@
 /area/ship/engineering)
 "wH" = (
 /obj/item/radio/intercom{
-	pixel_x = 27
+	dir = 8;
+	pixel_x = 22
 	},
 /obj/effect/decal/cleanable/blood/gibs/body,
 /turf/open/floor/plating,
@@ -2421,7 +2430,8 @@
 /area/ship/crew/canteen)
 "BP" = (
 /obj/item/radio/intercom{
-	pixel_x = -28
+	dir = 4;
+	pixel_x = -22
 	},
 /turf/open/floor/plating,
 /area/ship/security)
@@ -2823,7 +2833,8 @@
 	dir = 4
 	},
 /obj/machinery/newscaster{
-	pixel_y = -30
+	dir = 1;
+	pixel_y = -32
 	},
 /obj/machinery/light,
 /obj/effect/decal/cleanable/dirt,
@@ -2837,7 +2848,8 @@
 	icon_state = "1-2"
 	},
 /obj/item/radio/intercom{
-	pixel_x = -28
+	dir = 4;
+	pixel_x = -22
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 1
@@ -3125,7 +3137,8 @@
 /area/ship/security)
 "IT" = (
 /obj/machinery/newscaster{
-	pixel_x = -30
+	dir = 4;
+	pixel_x = -32
 	},
 /obj/structure/frame/computer{
 	anchored = 1;
@@ -3523,6 +3536,7 @@
 /area/ship/external)
 "NW" = (
 /obj/machinery/button/door{
+	dir = 4;
 	id = "riggerdoors";
 	name = "Blast Door Control";
 	pixel_x = -24
@@ -3678,7 +3692,8 @@
 "PW" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/item/radio/intercom{
-	pixel_x = -28
+	dir = 4;
+	pixel_x = -22
 	},
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
 	dir = 8
@@ -4514,7 +4529,8 @@
 /area/ship/security/prison)
 "Yx" = (
 /obj/item/radio/intercom{
-	pixel_x = -26
+	dir = 4;
+	pixel_x = -22
 	},
 /obj/machinery/computer/crew,
 /turf/open/floor/carpet/nanoweave,
@@ -4635,7 +4651,8 @@
 /area/ship/security)
 "ZT" = (
 /obj/item/radio/intercom{
-	pixel_x = -28
+	dir = 4;
+	pixel_x = -22
 	},
 /obj/effect/turf_decal/corner/white/diagonal,
 /obj/effect/turf_decal/corner/bar/diagonal{

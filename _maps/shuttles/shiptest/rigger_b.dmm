@@ -103,7 +103,8 @@
 /area/ship/crew)
 "bO" = (
 /obj/item/radio/intercom{
-	pixel_x = -26
+	dir = 4;
+	pixel_x = -22
 	},
 /obj/machinery/computer/crew,
 /turf/open/floor/carpet/nanoweave,
@@ -470,7 +471,7 @@
 /area/ship/crew)
 "ig" = (
 /obj/item/radio/intercom{
-	pixel_y = 24
+	pixel_y = 22
 	},
 /obj/structure/reagent_dispensers/watertank,
 /obj/effect/turf_decal/industrial/outline/yellow,
@@ -593,7 +594,8 @@
 /area/ship/construction)
 "jP" = (
 /obj/item/radio/intercom{
-	pixel_x = -28
+	dir = 4;
+	pixel_x = -22
 	},
 /turf/open/floor/carpet/nanoweave/blue,
 /area/ship/bridge)
@@ -606,7 +608,8 @@
 	dir = 8
 	},
 /obj/item/radio/intercom{
-	pixel_y = -28
+	dir = 1;
+	pixel_y = -22
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
@@ -626,7 +629,8 @@
 /area/ship/security/prison)
 "jX" = (
 /obj/item/radio/intercom{
-	pixel_y = -28
+	dir = 1;
+	pixel_y = -22
 	},
 /turf/open/floor/carpet/nanoweave/purple,
 /area/ship/crew/canteen)
@@ -1034,12 +1038,14 @@
 /area/ship/security/prison)
 "ou" = (
 /obj/machinery/button/door{
+	dir = 4;
 	id = "riggerdoors";
 	name = "Blast Door Control";
 	pixel_x = -24;
 	pixel_y = 5
 	},
 /obj/machinery/button/door{
+	dir = 4;
 	id = "riggerwindows";
 	name = "Window Lockdown";
 	pixel_x = -24;
@@ -1307,7 +1313,8 @@
 /area/ship/engineering/atmospherics)
 "rg" = (
 /obj/item/radio/intercom{
-	pixel_y = -28
+	dir = 1;
+	pixel_y = -22
 	},
 /obj/machinery/firealarm{
 	dir = 4;
@@ -1461,7 +1468,8 @@
 /obj/structure/table/wood,
 /obj/structure/bedsheetbin,
 /obj/item/radio/intercom{
-	pixel_x = -28
+	dir = 4;
+	pixel_x = -22
 	},
 /turf/open/floor/wood,
 /area/ship/crew)
@@ -1521,7 +1529,8 @@
 /area/ship/crew)
 "tL" = (
 /obj/machinery/newscaster{
-	pixel_y = -30
+	dir = 1;
+	pixel_y = -32
 	},
 /obj/machinery/light{
 	dir = 4
@@ -1745,7 +1754,8 @@
 /area/ship/engineering)
 "wH" = (
 /obj/item/radio/intercom{
-	pixel_x = 27
+	dir = 8;
+	pixel_x = 22
 	},
 /obj/effect/turf_decal/box/corners,
 /turf/open/floor/plasteel/tech,
@@ -2192,7 +2202,8 @@
 /area/ship/crew/canteen)
 "BP" = (
 /obj/item/radio/intercom{
-	pixel_x = -28
+	dir = 4;
+	pixel_x = -22
 	},
 /obj/machinery/door/window/brigdoor/southleft{
 	req_access_txt = "1"
@@ -2487,7 +2498,7 @@
 /area/ship/maintenance/starboard)
 "EI" = (
 /obj/item/radio/intercom{
-	pixel_y = 24
+	pixel_y = 22
 	},
 /obj/structure/sign/warning/nosmoking{
 	pixel_x = -25
@@ -2568,7 +2579,8 @@
 	dir = 4
 	},
 /obj/machinery/newscaster{
-	pixel_y = -30
+	dir = 1;
+	pixel_y = -32
 	},
 /obj/machinery/light,
 /turf/open/floor/carpet/nanoweave,
@@ -2581,7 +2593,8 @@
 	icon_state = "1-2"
 	},
 /obj/item/radio/intercom{
-	pixel_x = -28
+	dir = 4;
+	pixel_x = -22
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 1
@@ -2859,12 +2872,13 @@
 /turf/open/floor/carpet/nanoweave/beige,
 /area/ship/security)
 "IT" = (
-/obj/machinery/newscaster{
-	pixel_x = -30
-	},
 /obj/structure/frame/computer{
 	anchored = 1;
 	dir = 4
+	},
+/obj/machinery/newscaster/security_unit{
+	dir = 4;
+	pixel_x = -32
 	},
 /turf/open/floor/carpet/nanoweave,
 /area/ship/bridge)
@@ -2929,7 +2943,7 @@
 "Jq" = (
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/item/radio/intercom{
-	pixel_y = 24
+	pixel_y = 22
 	},
 /obj/effect/spawner/lootdrop/maintenance,
 /turf/open/floor/plating,
@@ -3231,6 +3245,7 @@
 	dir = 1
 	},
 /obj/machinery/button/door{
+	dir = 4;
 	id = "riggerdoors";
 	name = "Blast Door Control";
 	pixel_x = -24
@@ -3384,7 +3399,8 @@
 "PW" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/item/radio/intercom{
-	pixel_x = -28
+	dir = 4;
+	pixel_x = -22
 	},
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
 	dir = 8
@@ -4280,7 +4296,8 @@
 /obj/item/clothing/head/helmet/solgov,
 /obj/item/clothing/head/helmet/solgov,
 /obj/machinery/newscaster/security_unit{
-	pixel_x = 28
+	dir = 8;
+	pixel_x = 32
 	},
 /obj/machinery/power/apc/auto_name/north,
 /obj/item/clothing/head/helmet/solgov,
@@ -4288,7 +4305,8 @@
 /area/ship/security)
 "ZT" = (
 /obj/item/radio/intercom{
-	pixel_x = -28
+	dir = 4;
+	pixel_x = -22
 	},
 /obj/effect/turf_decal/corner/white/diagonal,
 /obj/effect/turf_decal/corner/bar/diagonal{
