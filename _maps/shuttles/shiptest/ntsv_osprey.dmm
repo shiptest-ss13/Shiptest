@@ -245,16 +245,18 @@
 /area/ship/crew/canteen)
 "bL" = (
 /obj/machinery/button/door{
+	dir = 4;
 	id = "ospreydoors";
 	name = "Blast Door Control";
 	pixel_x = -24;
-	pixel_y = 5
+	pixel_y = 10
 	},
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/structure/reagent_dispensers/watertank,
 /obj/item/radio/intercom{
-	pixel_x = -28;
-	pixel_y = -12
+	dir = 4;
+	pixel_x = -22;
+	pixel_y = -6
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/fore)
@@ -502,18 +504,20 @@
 /area/ship/hallway/starboard)
 "dj" = (
 /obj/machinery/button/door{
+	dir = 8;
 	id = "ospreydoors";
 	name = "Blast Door Control";
 	pixel_x = 24;
-	pixel_y = 5
+	pixel_y = 10
 	},
 /obj/effect/turf_decal/industrial/hatch/yellow,
 /obj/machinery/computer/cargo/express{
 	dir = 8
 	},
 /obj/item/radio/intercom{
-	pixel_x = 28;
-	pixel_y = -12
+	dir = 8;
+	pixel_x = 22;
+	pixel_y = -6
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/fore)
@@ -544,7 +548,8 @@
 /obj/machinery/microwave,
 /obj/machinery/light,
 /obj/item/radio/intercom{
-	pixel_y = -28
+	dir = 1;
+	pixel_y = -22
 	},
 /turf/open/floor/plasteel/showroomfloor,
 /area/ship/crew/canteen)
@@ -720,7 +725,8 @@
 /obj/item/storage/belt/janitor,
 /obj/item/clothing/head/soft/purple,
 /obj/item/radio/intercom{
-	pixel_y = -28
+	dir = 1;
+	pixel_y = -22
 	},
 /turf/open/floor/plasteel,
 /area/ship/crew/janitor)
@@ -1971,7 +1977,8 @@
 	},
 /obj/effect/decal/cleanable/oil,
 /obj/item/radio/intercom{
-	pixel_x = -28
+	dir = 4;
+	pixel_x = -22
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/construction)
@@ -2374,7 +2381,8 @@
 	dir = 2
 	},
 /obj/item/radio/intercom{
-	pixel_x = -28
+	dir = 4;
+	pixel_x = -22
 	},
 /turf/open/floor/plasteel,
 /area/ship/hallway/aft)
@@ -2415,7 +2423,7 @@
 	dir = 4
 	},
 /obj/item/radio/intercom{
-	pixel_y = 28
+	pixel_y = 22
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/hallway/port)
@@ -2592,7 +2600,8 @@
 	dir = 4
 	},
 /obj/item/radio/intercom{
-	pixel_y = -28
+	dir = 1;
+	pixel_y = -22
 	},
 /obj/structure/catwalk/over,
 /turf/open/floor/plating,
@@ -2954,7 +2963,8 @@
 	},
 /obj/effect/turf_decal/borderfloor,
 /obj/machinery/newscaster{
-	pixel_y = -30
+	dir = 1;
+	pixel_y = -32
 	},
 /turf/open/floor/plasteel,
 /area/ship/hallway/central)
@@ -3182,7 +3192,8 @@
 	dir = 8
 	},
 /obj/item/radio/intercom{
-	pixel_y = -28
+	dir = 1;
+	pixel_y = -22
 	},
 /obj/effect/turf_decal/corner/grey/mono,
 /obj/effect/turf_decal/corner/neutral/border,
@@ -3267,7 +3278,7 @@
 	},
 /obj/structure/chair/sofa/left,
 /obj/item/radio/intercom{
-	pixel_y = 28
+	pixel_y = 22
 	},
 /turf/open/floor/wood,
 /area/ship/crew/canteen)
@@ -3340,7 +3351,8 @@
 	},
 /obj/structure/frame/machine,
 /obj/item/radio/intercom{
-	pixel_x = 28
+	dir = 8;
+	pixel_x = 22
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/science)
@@ -3359,7 +3371,7 @@
 	pixel_x = -32
 	},
 /obj/machinery/newscaster/security_unit{
-	pixel_y = 30
+	pixel_y = 32
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
@@ -3369,7 +3381,8 @@
 	},
 /obj/structure/filingcabinet/chestdrawer,
 /obj/item/radio/intercom{
-	pixel_x = -28
+	dir = 4;
+	pixel_x = -22
 	},
 /turf/open/floor/plasteel,
 /area/ship/cargo)
@@ -3403,6 +3416,7 @@
 	dir = 8
 	},
 /obj/machinery/button/door{
+	dir = 8;
 	id = "ospreysci";
 	name = "Shutter Control";
 	pixel_x = 24;
@@ -3587,6 +3601,7 @@
 	dir = 8
 	},
 /obj/machinery/button/door{
+	dir = 4;
 	id = "ospreycargo";
 	name = "Shutter Control";
 	pixel_x = -24;
@@ -3847,7 +3862,8 @@
 	dir = 4
 	},
 /obj/item/radio/intercom{
-	pixel_y = -28
+	dir = 1;
+	pixel_y = -22
 	},
 /obj/structure/catwalk/over,
 /turf/open/floor/plating,
@@ -4144,7 +4160,8 @@
 	dir = 8
 	},
 /obj/item/radio/intercom{
-	pixel_x = -28
+	dir = 4;
+	pixel_x = -22
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
@@ -4242,7 +4259,8 @@
 	pixel_x = -6
 	},
 /obj/item/radio/intercom{
-	pixel_y = -28
+	dir = 1;
+	pixel_y = -22
 	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/engineering/engine)
@@ -4539,7 +4557,7 @@
 	dir = 4
 	},
 /obj/item/radio/intercom{
-	pixel_y = 28
+	pixel_y = 22
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/hallway/starboard)
@@ -4582,7 +4600,7 @@
 	dir = 1
 	},
 /obj/item/radio/intercom{
-	pixel_y = 28
+	pixel_y = 22
 	},
 /turf/open/floor/plasteel,
 /area/ship/hallway/central)
@@ -4631,7 +4649,8 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/item/radio/intercom{
-	pixel_x = 28
+	dir = 8;
+	pixel_x = 22
 	},
 /turf/open/floor/plasteel,
 /area/ship/hallway/aft)
@@ -4810,7 +4829,8 @@
 	dir = 4
 	},
 /obj/machinery/newscaster{
-	pixel_x = -30
+	dir = 4;
+	pixel_x = -32
 	},
 /turf/open/floor/wood,
 /area/ship/crew/canteen)
@@ -5633,7 +5653,8 @@
 	pixel_x = -7
 	},
 /obj/item/radio/intercom{
-	pixel_x = -28
+	dir = 4;
+	pixel_x = -22
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
@@ -5642,7 +5663,8 @@
 /obj/item/folder,
 /obj/item/pen,
 /obj/machinery/newscaster{
-	pixel_y = -30
+	dir = 1;
+	pixel_y = -32
 	},
 /turf/open/floor/carpet,
 /area/ship/crew/dorm)
@@ -5690,7 +5712,8 @@
 	pixel_y = -3
 	},
 /obj/item/radio/intercom{
-	pixel_x = 28
+	dir = 8;
+	pixel_x = 22
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
@@ -5828,7 +5851,8 @@
 	dir = 4
 	},
 /obj/item/radio/intercom{
-	pixel_x = 28
+	dir = 8;
+	pixel_x = 22
 	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/engineering/atmospherics)
@@ -5865,7 +5889,9 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/obj/machinery/disposal/bin,
+/obj/machinery/disposal/bin{
+	name = "biohazard disposal unit"
+	},
 /obj/structure/disposalpipe/trunk{
 	dir = 4
 	},
@@ -6733,7 +6759,8 @@
 	dir = 4
 	},
 /obj/item/radio/intercom{
-	pixel_x = 28
+	dir = 8;
+	pixel_x = 22
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
@@ -6830,7 +6857,8 @@
 	dir = 4
 	},
 /obj/item/radio/intercom{
-	pixel_x = 28
+	dir = 8;
+	pixel_x = 22
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/storage)
@@ -6864,7 +6892,8 @@
 /obj/structure/table/wood,
 /obj/item/flashlight/lamp,
 /obj/item/radio/intercom{
-	pixel_y = -28
+	dir = 1;
+	pixel_y = -22
 	},
 /turf/open/floor/carpet,
 /area/ship/crew/dorm)
