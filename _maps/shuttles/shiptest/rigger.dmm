@@ -38,7 +38,8 @@
 	},
 /obj/item/pen/fountain,
 /obj/item/radio/intercom{
-	pixel_y = -28
+	dir = 1;
+	pixel_y = -22
 	},
 /obj/item/lighter/greyscale{
 	pixel_x = 8
@@ -284,7 +285,8 @@
 /area/ship/hallway/central)
 "eg" = (
 /obj/item/radio/intercom{
-	pixel_y = -28
+	dir = 1;
+	pixel_y = -22
 	},
 /obj/effect/turf_decal/industrial/outline/yellow,
 /turf/open/floor/plasteel/tech/techmaint,
@@ -311,7 +313,7 @@
 "ew" = (
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/item/radio/intercom{
-	pixel_y = 24
+	pixel_y = 22
 	},
 /obj/effect/spawner/lootdrop/maintenance,
 /turf/open/floor/plating,
@@ -1249,6 +1251,7 @@
 	dir = 1
 	},
 /obj/machinery/button/door{
+	dir = 4;
 	id = "riggerdoors";
 	name = "Blast Door Control";
 	pixel_x = -24
@@ -1293,7 +1296,8 @@
 /area/ship/engineering/atmospherics)
 "rb" = (
 /obj/item/radio/intercom{
-	pixel_x = 27
+	dir = 8;
+	pixel_x = 22
 	},
 /obj/structure/mecha_wreckage/ripley,
 /turf/open/floor/mech_bay_recharge_floor,
@@ -1473,7 +1477,8 @@
 /obj/structure/table/wood,
 /obj/structure/bedsheetbin,
 /obj/item/radio/intercom{
-	pixel_x = -28
+	dir = 4;
+	pixel_x = -22
 	},
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew)
@@ -1548,10 +1553,11 @@
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew)
 "tL" = (
-/obj/machinery/newscaster{
-	pixel_y = -30
-	},
 /obj/structure/filingcabinet/security,
+/obj/machinery/newscaster/security_unit{
+	dir = 1;
+	pixel_y = -32
+	},
 /turf/open/floor/plasteel/grimy,
 /area/ship/security)
 "tP" = (
@@ -1734,7 +1740,8 @@
 /obj/structure/window/reinforced/spawner,
 /obj/structure/frame/machine,
 /obj/item/radio/intercom{
-	pixel_x = -28
+	dir = 4;
+	pixel_x = -22
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/central)
@@ -2219,7 +2226,8 @@
 "Bb" = (
 /obj/structure/table,
 /obj/machinery/newscaster{
-	pixel_x = -30
+	dir = 4;
+	pixel_x = -32
 	},
 /obj/item/storage/box/cups,
 /obj/effect/turf_decal/corner/yellow/diagonal,
@@ -2255,7 +2263,8 @@
 /area/ship/engineering)
 "BP" = (
 /obj/item/radio/intercom{
-	pixel_x = -28
+	dir = 4;
+	pixel_x = -22
 	},
 /turf/open/floor/plating,
 /area/ship/crew/office)
@@ -2612,7 +2621,8 @@
 	dir = 4
 	},
 /obj/machinery/newscaster{
-	pixel_y = -30
+	dir = 1;
+	pixel_y = -32
 	},
 /obj/machinery/light,
 /turf/open/floor/carpet,
@@ -2625,7 +2635,8 @@
 	icon_state = "1-2"
 	},
 /obj/item/radio/intercom{
-	pixel_x = -28
+	dir = 4;
+	pixel_x = -22
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 1
@@ -2685,7 +2696,8 @@
 /area/ship/crew)
 "FY" = (
 /obj/item/radio/intercom{
-	pixel_y = -28
+	dir = 1;
+	pixel_y = -22
 	},
 /obj/structure/chair{
 	dir = 1
@@ -2982,6 +2994,7 @@
 	dir = 4
 	},
 /obj/machinery/newscaster/security_unit{
+	dir = 4;
 	pixel_x = -32
 	},
 /turf/open/floor/carpet/blue,
@@ -3333,7 +3346,8 @@
 /area/ship/construction)
 "OS" = (
 /obj/item/radio/intercom{
-	pixel_x = -28
+	dir = 4;
+	pixel_x = -22
 	},
 /obj/effect/turf_decal/corner/blue/border{
 	dir = 1
@@ -3411,12 +3425,14 @@
 /area/ship/security)
 "Pr" = (
 /obj/machinery/button/door{
+	dir = 4;
 	id = "riggerdoors";
 	name = "Blast Door Control";
 	pixel_x = -24;
 	pixel_y = 5
 	},
 /obj/machinery/button/door{
+	dir = 4;
 	id = "riggerwindows";
 	name = "Window Lockdown";
 	pixel_x = -24;
@@ -3449,7 +3465,8 @@
 "PW" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/item/radio/intercom{
-	pixel_x = -28
+	dir = 4;
+	pixel_x = -22
 	},
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
 	dir = 8
@@ -3510,7 +3527,7 @@
 /area/ship/cargo)
 "QV" = (
 /obj/item/radio/intercom{
-	pixel_y = 24
+	pixel_y = 22
 	},
 /obj/structure/reagent_dispensers/watertank,
 /obj/effect/turf_decal/industrial/outline/yellow,
@@ -3518,7 +3535,7 @@
 /area/ship/maintenance/port)
 "QY" = (
 /obj/item/radio/intercom/wideband{
-	pixel_y = 24
+	pixel_y = 22
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 4
@@ -3695,7 +3712,7 @@
 /area/ship/engineering/communications)
 "TC" = (
 /obj/item/radio/intercom{
-	pixel_y = 24
+	pixel_y = 22
 	},
 /obj/structure/sign/poster/official/random{
 	pixel_x = -32
@@ -3713,7 +3730,8 @@
 	dir = 8
 	},
 /obj/item/radio/intercom{
-	pixel_y = -28
+	dir = 1;
+	pixel_y = -22
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
@@ -3940,7 +3958,7 @@
 "Wh" = (
 /obj/machinery/computer/operating,
 /obj/item/radio/intercom{
-	pixel_y = 24
+	pixel_y = 22
 	},
 /obj/effect/turf_decal/borderfloor/cee,
 /turf/open/floor/plasteel/dark,
@@ -4262,7 +4280,8 @@
 "Ze" = (
 /obj/structure/table,
 /obj/item/radio/intercom{
-	pixel_x = -28
+	dir = 4;
+	pixel_x = -22
 	},
 /obj/machinery/light{
 	dir = 8
