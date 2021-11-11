@@ -16,6 +16,7 @@
 	lootcount = 3;
 	name = "3maintenance loot spawner"
 	},
+/obj/item/disk/nuclear/fake,
 /turf/open/floor/plasteel/dark,
 /area/whitesands/surface/outdoors)
 "du" = (
@@ -88,7 +89,6 @@
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
 /obj/machinery/atmospherics/pipe/simple/orange/hidden,
-/obj/item/melee/transforming/energy/axe,
 /turf/open/floor/plating,
 /area/whitesands/surface/outdoors)
 "kp" = (
@@ -150,9 +150,6 @@
 /area/whitesands/surface/outdoors)
 "nD" = (
 /obj/machinery/door/airlock/external,
-/obj/effect/mapping_helpers/airlock/cyclelink_helper{
-	dir = 8
-	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -330,9 +327,6 @@
 /area/whitesands/surface/outdoors)
 "yS" = (
 /obj/machinery/door/airlock/external,
-/obj/effect/mapping_helpers/airlock/cyclelink_helper{
-	dir = 4
-	},
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -361,6 +355,7 @@
 /obj/structure/cable,
 /obj/structure/closet/crate,
 /obj/effect/turf_decal/industrial/outline/yellow,
+/obj/item/disk/design_disk/disposable_gun,
 /turf/open/floor/plating,
 /area/whitesands/surface/outdoors)
 "BY" = (
@@ -491,9 +486,6 @@
 	},
 /obj/machinery/light/small/built{
 	dir = 1
-	},
-/obj/machinery/advanced_airlock_controller{
-	pixel_y = -24
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/layer1{
 	dir = 4
@@ -776,10 +768,6 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/airalarm/all_access{
-	dir = 4;
-	pixel_x = -24
-	},
 /obj/structure/cable{
 	icon_state = "1-2"
 	},

@@ -72,10 +72,6 @@
 /obj/structure/curtain/bounty,
 /turf/open/floor/eighties,
 /area/whitesands/surface/outdoors)
-"it" = (
-/obj/structure/girder,
-/turf/open/space/basic,
-/area/whitesands/surface/outdoors)
 "iH" = (
 /turf/template_noop,
 /area/template_noop)
@@ -120,6 +116,7 @@
 /obj/structure/table,
 /obj/structure/frame/machine,
 /obj/structure/table,
+/obj/item/circuitboard/machine/chem_dispenser/drinks/beer,
 /turf/open/floor/plating{
 	icon_state = "platingdmg2"
 	},
@@ -476,9 +473,6 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/whitesands/surface/outdoors)
 "UA" = (
-/obj/machinery/airalarm/all_access{
-	pixel_y = 24
-	},
 /obj/machinery/gibber,
 /obj/effect/turf_decal/corner/white{
 	dir = 1
@@ -577,7 +571,7 @@ yB
 TZ
 pa
 pa
-it
+Nb
 dr
 dr
 uM
