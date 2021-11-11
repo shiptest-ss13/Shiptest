@@ -39,28 +39,69 @@ RUN git init \
 # Install nodejs which is required to deploy Shiptest
 FROM base as node
 COPY dependencies.sh .
-RUN apt-get update \
-    && apt-get install curl -y \
-    && /bin/bash -c "source dependencies.sh \
-    && curl -fsSL https://deb.nodesource.com/setup_\$NODE_VERSION.x | bash -" \
-    && apt-get install -y nodejs
 
-# Build TGUI, tgfonts, and the dmb
-FROM node as dm-build
-ENV TG_BOOTSTRAP_NODE_LINUX=1
-WORKDIR /dm-build
-COPY . .
-# Required to satisfy our compile_options
-COPY --from=auxmos /build/target/i686-unknown-linux-gnu/release/libauxmos.so /dm-build/auxtools/libauxmos.so
-RUN tools/build/build \
-    && tools/deploy.sh /deploy \
-    && apt-get autoremove curl -y \
-    && rm -rf /var/lib/apt/lists/*
+RUN . ./dependencies.sh \
+    && curl "http://www.byond.com/download/build/${BYOND_MAJOR}/${BYOND_MAJOR}.${BYOND_MINOR}_byond_linux.zip" -o byond.zip \
+    && unzip byond.zip \
+    && cd byond \
+    && sed -i 's|install:|&\n\tmkdir -p $(MAN_DIR)/man6|' Makefile \
+    && make install \
+    && chmod 644 /usr/local/byond/man/man6/* \
+    && apt-get purge -y --auto-remove curl unzip make \
+    && cd .. \
+    && rm -rf byond byond.zip
 
-FROM base
+# build = byond + shiptest compiled and deployed to /deploy
+FROM byond AS build
 WORKDIR /shiptest
-COPY --from=dm-build /deploy ./
-COPY --from=rustg /build/target/i686-unknown-linux-gnu/release/librust_g.so /root/.byond/bin/rust_g
+
+RUN apt-get install -y --no-install-recommends \
+        curl
+
+COPY . .
+
+RUN env TG_BOOTSTRAP_NODE_LINUX=1 tools/build/build \
+    && tools/deploy.sh /deploy
+
+# rust = base + rustc and i686 target
+FROM base AS rust
+RUN apt-get install -y --no-install-recommends \
+        curl && \
+    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y --profile minimal \
+    && ~/.cargo/bin/rustup target add i686-unknown-linux-gnu
+
+# rust_g = base + rust_g compiled to /rust_g
+FROM rust AS rust_g
+WORKDIR /rust_g
+
+RUN apt-get install -y --no-install-recommends \
+        pkg-config:i386 \
+        libssl-dev:i386 \
+        gcc-multilib \
+        git \
+    && git init \
+    && git remote add origin https://github.com/tgstation/rust-g
+
+COPY dependencies.sh .
+
+RUN . ./dependencies.sh \
+    && git fetch --depth 1 origin "${RUST_G_VERSION}" \
+    && git checkout FETCH_HEAD \
+    && env PKG_CONFIG_ALLOW_CROSS=1 ~/.cargo/bin/cargo build --release --target i686-unknown-linux-gnu
+
+# final = byond + runtime deps + rust_g + build
+FROM byond
+WORKDIR /shiptest
+
+RUN apt-get install -y --no-install-recommends \
+        libssl1.0.0:i386 \
+        zlib1g:i386
+#auxtools fexists memes
+RUN ln -s /shiptest/auxtools/libauxmos.so /root/.byond/bin/libauxmos.so
+
+COPY --from=build /deploy ./
+COPY --from=rust_g /rust_g/target/i686-unknown-linux-gnu/release/librust_g.so ./librust_g.so
+
 VOLUME [ "/shiptest/config", "/shiptest/data" ]
-ENTRYPOINT [ "DreamDaemon", "tgstation.dmb", "-port", "1337", "-trusted", "-close", "-verbose" ]
+ENTRYPOINT [ "DreamDaemon", "shiptest.dmb", "-port", "1337", "-trusted", "-close", "-verbose" ]
 EXPOSE 1337

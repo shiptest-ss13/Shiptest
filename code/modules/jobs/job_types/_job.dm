@@ -417,12 +417,12 @@
 		C.access = J.get_access()
 		shuffle_inplace(C.access) // Shuffle access list to make NTNet passkeys less predictable
 		C.registered_name = H.real_name
-		//WS begin - Alt job titles
-		if(preference_source && preference_source.prefs && preference_source.prefs.alt_titles_preferences[J.title])
+		if(H.job)
+			C.assignment = H.job
+		else if(preference_source && preference_source.prefs && preference_source.prefs.alt_titles_preferences[J.title])
 			C.assignment = preference_source.prefs.alt_titles_preferences[J.title]
 		else
 			C.assignment = J.title
-		//WS end
 		if(H.age)
 			C.registered_age = H.age
 		C.update_label()
@@ -437,12 +437,12 @@
 	var/obj/item/pda/PDA = H.get_item_by_slot(pda_slot)
 	if(istype(PDA))
 		PDA.owner = H.real_name
-		//WS begin - Alt job titles
-		if(preference_source && preference_source.prefs && preference_source.prefs.alt_titles_preferences[J.title])
+		if(H.job)
+			PDA.ownjob = H.job
+		else if(preference_source && preference_source.prefs && preference_source.prefs.alt_titles_preferences[J.title])
 			PDA.ownjob = preference_source.prefs.alt_titles_preferences[J.title]
 		else
 			PDA.ownjob = J.title
-		//WS end
 		PDA.update_label()
 
 /datum/outfit/job/get_chameleon_disguise_info()
