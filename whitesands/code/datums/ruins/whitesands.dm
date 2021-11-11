@@ -197,22 +197,22 @@
 	name = "Crashed Kitchen"
 	description = "A crashed part of some unlucky ship."
 	id = "crash-kitchen"
-	suffix = "crash_kitchen.dmm"
+	suffix = "whitesands_surface_crash_kitchen.dmm"
 
 /datum/map_template/ruin/whitesands/crash_bar
 	name = "Crashed Bar"
 	description = "A crashed part of some unlucky ship. Was once a bar."
 	id = "crash-bar"
-	suffix = "crash_bar.dmm"
+	suffix = "whitesands_surface_crash_bar.dmm"
 
 /datum/map_template/ruin/whitesands/crash_cargo
 	name = "Crashed Cargo Bay"
 	description = "A crashed part of some unlucky ship. Has been taken over by pirates"
 	id = "crash-cargo"
-	suffix = "crash_cargo.dmm"
+	suffix = "whitesands_surface_crash_cargo.dmm"
 
 /datum/map_template/ruin/whitesands/crash_cult
 	name = "Crashed Cult Ship"
 	description = "A crashed part of some unlucky ship. Has been occupied by a cult."
 	id = "crash-cult"
-	suffix = "crash_cult.dmm"
+	suffix = "whitesands_surface_crash_cult.dmm"
