@@ -30,7 +30,91 @@
 				C.reagents.add_reagent(/datum/reagent/toxin, reac_volume * 0.5)
 			else
 				C.blood_volume = min(C.blood_volume + round(reac_volume, 0.1), BLOOD_VOLUME_MAXIMUM)
+/datum/reagent/blood/true_draculine
+	name = "True Draculine"
+	data = list("donor"=null,"viruses"=null,"blood_DNA"=null,"blood_type"="Draculine","resistances"=null,"trace_chem"=null,"mind"=null,"ckey"=null,"gender"=null,"real_name"=null,"cloneable"=null,"factions"=null,"quirks"=null)
+	description = "Slowly heals all damage types. Overdose will, after a short while, turn you into a vampire, addiction lowers your max health as your body attempts to fight off the corruption, if you're incompatible you're immune to the addiction and overdose will damage you instead."
+	metabolization_rate = 1
+	addiction_threshold = 20
+	overdose_threshold = 30
+	var/healing = 0.20
 
+/datum/reagent/blood/true_draculine/on_mob_add(mob/living/carbon/human/M)
+	if(M.dna.species.exotic_blood)
+		src.addiction_threshold = 0
+	if(M.dna.species.exotic_blood == /datum/reagent/blood/true_draculine)
+		src.overdose_threshold = 0
+	..()
+
+/datum/reagent/blood/true_draculine/on_mob_life(mob/living/carbon/human/M)
+	if(M.dna.species.exotic_blood != /datum/reagent/blood/true_draculine)
+		M.adjustToxLoss(-healing*REM, 0, TRUE)
+		M.adjustOxyLoss(-healing*REM, 0)
+		M.adjustBruteLoss(-healing*REM, 0)
+		M.adjustFireLoss(-healing*REM, 0)
+		M.Jitter(2)
+	..()
+	. = 1
+
+/datum/reagent/blood/true_draculine/overdose_process(mob/living/carbon/human/M)
+	if(M.dna.species.exotic_blood)
+		M.adjustToxLoss(1*REM, 0)
+		M.adjustOxyLoss(1*REM, 0)
+		M.adjustBruteLoss(1*REM, FALSE, FALSE, BODYPART_ORGANIC)
+		M.adjustFireLoss(1*REM, FALSE, FALSE, BODYPART_ORGANIC)
+		M.Jitter(6)
+	else
+		if(current_cycle >= 50)
+			M.reagents.remove_addiction(/datum/reagent/blood/true_draculine)
+			M.add_quirk(/datum/quirk/vampire)
+	..()
+	. = 1
+
+/datum/reagent/blood/true_draculine/addiction_act_stage1(mob/living/carbon/human/M)
+	M.dna.species.species_traits |= list(DRINKSBLOOD)
+	if(M.health > 60)
+		M.adjustToxLoss(1.5*REM, 0)
+		M.adjustOxyLoss(1.5*REM, 0)
+		M.adjustBruteLoss(1.5*REM, FALSE, FALSE, BODYPART_ORGANIC)
+		M.adjustFireLoss(1.5*REM, FALSE, FALSE, BODYPART_ORGANIC)
+		. = 1
+	M.Jitter(3)
+	..()
+
+/datum/reagent/blood/true_draculine/addiction_act_stage2(mob/living/M)
+	if(M.health > 50)
+		M.adjustToxLoss(2.5*REM, 0)
+		M.adjustOxyLoss(2.5*REM, 0)
+		M.adjustBruteLoss(2.5*REM, FALSE, FALSE, BODYPART_ORGANIC)
+		M.adjustFireLoss(2.5*REM, FALSE, FALSE, BODYPART_ORGANIC)
+		. = 1
+	M.Jitter(4)
+	..()
+
+/datum/reagent/blood/true_draculine/addiction_act_stage3(mob/living/M)
+	if(M.health > 40)
+		M.adjustToxLoss(3*REM, 0)
+		M.adjustOxyLoss(3*REM, 0)
+		M.adjustBruteLoss(3*REM, FALSE, FALSE, BODYPART_ORGANIC)
+		M.adjustFireLoss(3*REM, FALSE, FALSE, BODYPART_ORGANIC)
+		. = 1
+	M.Jitter(5)
+	..()
+
+/datum/reagent/blood/true_draculine/addiction_act_stage4(mob/living/M)
+	if(M.health > 30)
+		M.adjustToxLoss(5*REM, 0)
+		M.adjustOxyLoss(5*REM, 0)
+		M.adjustBruteLoss(5*REM, FALSE, FALSE, BODYPART_ORGANIC)
+		M.adjustFireLoss(5*REM, FALSE, FALSE, BODYPART_ORGANIC)
+		. = 1
+	M.Jitter(6)
+	..()
+
+/datum/reagent/blood/true_draculine/on_addiction_removal(mob/living/carbon/human/M)
+	if(!(/datum/quirk/vampire in M.roundstart_quirks))
+		M.dna.species.species_traits ^= list(DRINKSBLOOD)
+	..()
 
 /datum/reagent/blood/on_new(list/data)
 	if(istype(data))

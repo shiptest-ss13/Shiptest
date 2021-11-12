@@ -1307,16 +1307,21 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 		<b>Quirk balance remaining:</b> [GetQuirkBalance()]</center><br>"
 		for(var/V in SSquirks.quirks)
 			var/datum/quirk/T = SSquirks.quirks[V]
+			var/datum/quirk/Test = new T()
 			var/quirk_name = initial(T.name)
 			var/has_quirk
 			var/quirk_cost = initial(T.value) * -1
 			var/lock_reason = "This trait is unavailable."
+			var/list/allowed_species = Test.allowed_species
 			var/quirk_conflict = FALSE
 			for(var/_V in all_quirks)
 				if(_V == quirk_name)
 					has_quirk = TRUE
 			if(initial(T.mood_quirk) && CONFIG_GET(flag/disable_human_mood))
 				lock_reason = "Mood is disabled."
+				quirk_conflict = TRUE
+			if(allowed_species && !(species_looking_at in allowed_species))
+				lock_reason = "Quirk unavailable to your species."
 				quirk_conflict = TRUE
 			if(has_quirk)
 				if(quirk_conflict)
@@ -1552,6 +1557,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					features["mcolor"] = pref_species.default_color
 				user << browse(null, "window=speciespick")
 				ShowChoices(user)
+				all_quirks = list()
+				SetQuirks(user)
 				return 1
 
 			if(href_list["lookatspecies"])
