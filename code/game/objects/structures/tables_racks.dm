@@ -232,7 +232,7 @@
 	if(can_flip)
 		user.visible_message("<span class='danger'>[user] starts flipping [src]!</span>", "<span class='notice'>You start flipping over the [src]!</span>")
 		if(do_after(user, max_integrity/4))
-			var/obj/structure/flippedtable/T = new flipped_table_type(src.loc)
+			var/obj/structure/flippedtable/flipped = new flipped_table_type(src.loc)
 			T.name = "flipped [src.name]"
 			T.desc = "[src.desc] It is flipped!"
 			T.icon_state = src.base_icon_state
