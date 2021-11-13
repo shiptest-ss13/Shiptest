@@ -21,10 +21,7 @@
 		if(P.trajectory && angle2dir_cardinal(P.trajectory.angle) == dir)
 			return TRUE
 		return FALSE
-	if(attempted_dir == dir)
-		return FALSE
-	else if(attempted_dir != dir)
-		return TRUE
+	return attempted_dir != dir
 
 /obj/structure/flippedtable/CheckExit(atom/movable/O, turf/target)
 	if(table_type == /obj/structure/table/glass) //Glass table, jolly ranchers pass
