@@ -15,12 +15,14 @@
 /obj/machinery/holopad/emergency/command,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/button/door{
+	dir = 4;
 	id = "pirateshutters";
 	name = "Window Lockdown";
 	pixel_x = -24;
 	pixel_y = -5
 	},
 /obj/machinery/button/door{
+	dir = 4;
 	id = "piratecargo";
 	name = "Blast Door Control";
 	pixel_x = -24;
@@ -38,11 +40,13 @@
 	},
 /obj/structure/railing,
 /obj/item/radio/intercom/wideband{
-	pixel_x = 28;
-	pixel_y = 5
+	dir = 8;
+	pixel_x = 22;
+	pixel_y = 10
 	},
 /obj/item/radio/intercom{
-	pixel_x = 28;
+	dir = 8;
+	pixel_x = 22;
 	pixel_y = -10
 	},
 /obj/effect/landmark/start/captain,
@@ -238,7 +242,7 @@
 	pixel_y = 26
 	},
 /obj/item/radio/intercom{
-	pixel_y = 28
+	pixel_y = 22
 	},
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
@@ -331,7 +335,7 @@
 	pixel_y = 26
 	},
 /obj/item/radio/intercom{
-	pixel_y = 28
+	pixel_y = 22
 	},
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
@@ -977,7 +981,8 @@
 "Df" = (
 /obj/structure/reagent_dispensers/watertank,
 /obj/item/radio/intercom{
-	pixel_x = -28
+	dir = 4;
+	pixel_x = -22
 	},
 /turf/open/floor/pod/light,
 /area/ship/cargo)
@@ -1181,7 +1186,7 @@
 "Id" = (
 /obj/structure/railing,
 /obj/item/radio/intercom{
-	pixel_y = 28
+	pixel_y = 22
 	},
 /turf/open/floor/pod/light,
 /area/ship/cargo)
@@ -1227,6 +1232,7 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/button/door{
+	dir = 4;
 	id = "piratecargo";
 	name = "Blast Door Control";
 	pixel_x = -24;
@@ -1257,6 +1263,7 @@
 /area/ship/cargo)
 "KS" = (
 /obj/machinery/button/door{
+	dir = 8;
 	id = "piratecargo";
 	name = "Blast Door Control";
 	pixel_x = 24;
@@ -1417,7 +1424,8 @@
 	dir = 8
 	},
 /obj/item/radio/intercom{
-	pixel_x = -28
+	dir = 4;
+	pixel_x = -22
 	},
 /turf/open/floor/plating,
 /area/ship/hallway/port)
@@ -1732,7 +1740,8 @@
 	dir = 4
 	},
 /obj/item/radio/intercom{
-	pixel_x = 28
+	dir = 8;
+	pixel_x = 22
 	},
 /turf/open/floor/plating,
 /area/ship/hallway/starboard)
