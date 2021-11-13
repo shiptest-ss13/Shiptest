@@ -23,13 +23,13 @@
 		return FALSE
 	return attempted_dir != dir
 
-/obj/structure/flippedtable/CheckExit(atom/movable/O, turf/target)
+/obj/structure/flippedtable/CheckExit(atom/movable/exiter, turf/target)
 	if(table_type == /obj/structure/table/glass) //Glass table, jolly ranchers pass
-		if(istype(O) && (O.pass_flags & PASSGLASS))
+		if(istype(exiter) && (exiter.pass_flags & PASSGLASS))
 			return TRUE
-	if(istype(O, /obj/projectile))
+	if(istype(exiter, /obj/projectile))
 		return TRUE
-	if(get_dir(O.loc, target) == dir)
+	if(get_dir(exiter.loc, target) == dir)
 		return FALSE
 	return TRUE
 
