@@ -61,9 +61,9 @@
 	projectiletype = /obj/projectile/kinetic/miner
 
 /obj/effect/spawner/lootdrop/minebot
-	loot = list(/obj/item/borg/upgrade/modkit/minebot_passthrough = 10,
-				/obj/item/borg/upgrade/modkit/chassis_mod = 10,
-				/obj/item/borg/upgrade/modkit/tracer = 10,
+	loot = list(/obj/item/borg/upgrade/modkit/minebot_passthrough = 15,
+				/obj/item/borg/upgrade/modkit/chassis_mod = 15,
+				/obj/item/borg/upgrade/modkit/tracer = 15,
 				/obj/item/borg/upgrade/modkit/cooldown = 5,
 				/obj/item/borg/upgrade/modkit/damage = 5,
 				/obj/item/borg/upgrade/modkit/range = 5,
