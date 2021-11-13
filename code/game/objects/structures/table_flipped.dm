@@ -39,8 +39,8 @@
 		return FALSE
 	user.visible_message("<span class='danger'>[user] starts flipping [src]!</span>", "<span class='notice'>You start flipping over the [src]!</span>")
 	if(do_after(user, max_integrity/4))
-		var/obj/structure/table/T = new table_type(src.loc)
-		T.obj_integrity = src.obj_integrity
+		var/obj/structure/table/table_unflip = new table_type(src.loc)
+		table_unflip.obj_integrity = obj_integrity
 		user.visible_message("<span class='danger'>[user] flips over the [src]!</span>", "<span class='notice'>You flip over the [src]!</span>")
 		playsound(src, 'sound/items/trayhit2.ogg', 100)
 		qdel(src)

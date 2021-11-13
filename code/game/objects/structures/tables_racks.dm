@@ -36,7 +36,9 @@
 	smoothing_flags = SMOOTH_BITMASK
 	smoothing_groups = list(SMOOTH_GROUP_TABLES)
 	canSmoothWith = list(SMOOTH_GROUP_TABLES)
+	/// The type created when this table is flipped
 	var/flipped_table_type = /obj/structure/flippedtable
+	/// Whether or not this table can actually be flipped. TODO: Make setting flipped_table_type to null do this instead and remove this var
 	var/can_flip = TRUE
 
 /obj/structure/table/examine(mob/user)
