@@ -22,6 +22,8 @@
 /mob/living/simple_animal/bot/secbot/ed209/rockplanet
 	name = "\improper Abandoned ED-209 Robot"
 	desc = "A security robot. It looks like they have a loose trigger finger."
+	health = 80
+	maxHealth = 80
 	icon_state = "red209"
 	shoot_sound = 'sound/weapons/laser.ogg'
 	projectile = /obj/projectile/beam/scatter
