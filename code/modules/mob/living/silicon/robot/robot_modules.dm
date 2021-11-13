@@ -567,7 +567,6 @@
 		"Marina" = image(icon = 'whitesands/icons/mob/robots.dmi', icon_state = "marinaSC"),
 		"Sleek" = image(icon = 'whitesands/icons/mob/robots.dmi', icon_state = "sleeksecurity"),
 		"#9" = image(icon = 'whitesands/icons/mob/robots.dmi', icon_state = "servbot-sec"),
-		"Kodiak" = image(icon = 'whitesands/icons/mob/robots.dmi', icon_state = "kodiak-sec"),
 		"Noble" = image(icon = 'whitesands/icons/mob/robots.dmi', icon_state = "Noble-SEC"),
 		"R34 - SEC10a 'Woody'" = image(icon = 'whitesands/icons/mob/robots.dmi', icon_state = "woody"),
 		"Booty" = image(icon = 'whitesands/icons/mob/robots.dmi', icon_state = "booty-red")
@@ -1008,7 +1007,7 @@
 		/obj/item/melee/transforming/energy/sword/cyborg,
 		/obj/item/gun/energy/printer,
 		/obj/item/gun/ballistic/revolver/grenadelauncher/cyborg,
-		/obj/item/card/emag,
+		/obj/item/card/emag/borg,
 		/obj/item/crowbar/cyborg,
 		/obj/item/extinguisher/mini,
 		/obj/item/pinpointer/syndicate_cyborg)
@@ -1028,34 +1027,32 @@
 	var/mob/living/silicon/robot/Syndi = loc
 	Syndi.faction += "silicon" //ai is your bff now!
 
-/obj/item/robot_module/syndicateproto
+/obj/item/robot_module/syndieproto
 	name = "Brigador-type Prototype Commando"
 	basic_modules = list(
-		/obj/item/pickaxe/drill/cyborg,
-		/obj/item/construction/rcd/borg/syndicate,
+		/obj/item/card/emag/borg,
+		/obj/item/pickaxe/drill/jackhammer/brigador,
 		/obj/item/weldingtool/largetank/cyborg,
+		/obj/item/borg/sight/thermal,
+		/obj/item/gun/energy/printer/commando,
 		/obj/item/assembly/flash/cyborg,
-		/obj/item/melee/transforming/energy/sword/cyborg,
-		/obj/item/gun/energy/printer,
-		/obj/item/gun/ballistic/revolver/grenadelauncher/cyborg,
-		/obj/item/card/emag,
 		/obj/item/crowbar/cyborg,
 		/obj/item/reagent_containers/borghypo/syndicate,
 		/obj/item/healthanalyzer,
 		/obj/item/gps/cyborg,
 		/obj/item/extinguisher/mini)
 
-	cyborg_base_icon = "synd_sec"
+	cyborg_base_icon = "protosynd"
 	moduleselect_icon = "malf"
 	can_be_pushed = FALSE
 	hat_offset = 3
 
-/obj/item/robot_module/syndicateproto/rebuild_modules()
+/obj/item/robot_module/syndieproto/rebuild_modules()
 	..()
 	var/mob/living/silicon/robot/Syndi = loc
 	Syndi.faction  -= "silicon" //ai turrets
 
-/obj/item/robot_module/syndicateproto/remove_module(obj/item/I, delete_after)
+/obj/item/robot_module/syndieproto/remove_module(obj/item/I, delete_after)
 	..()
 	var/mob/living/silicon/robot/Syndi = loc
 	Syndi.faction += "silicon" //ai is your bff now!
@@ -1074,7 +1071,7 @@
 		/obj/item/scalpel,
 		/obj/item/melee/transforming/energy/sword/cyborg/saw,
 		/obj/item/roller/robo,
-		/obj/item/card/emag,
+		/obj/item/card/emag/borg,
 		/obj/item/crowbar/cyborg,
 		/obj/item/extinguisher/mini,
 		/obj/item/pinpointer/syndicate_cyborg,

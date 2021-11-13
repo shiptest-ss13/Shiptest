@@ -47,3 +47,4 @@
 	spear.forceMove(drop_location())
 	spear = null
 	qdel(src)
+

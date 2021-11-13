@@ -79,7 +79,6 @@
 	icon_state = "dnainjector0"
 	desc += " This one is used up."
 
-
 /obj/item/dnainjector/antihulk
 	name = "\improper DNA injector (Anti-Hulk)"
 	desc = "Cures green skin."

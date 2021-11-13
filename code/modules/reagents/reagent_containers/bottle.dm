@@ -384,3 +384,8 @@
 /obj/item/reagent_containers/glass/bottle/thermite
 	name = "thermite bottle"
 	list_reagents = list(/datum/reagent/thermite = 30)
+
+/obj/item/reagent_containers/glass/bottle/nitroglycerin
+	name = "nitroglycerin bottle"
+	desc = "A small bottle. Contains nitrated glycerol."
+	list_reagents = list(/datum/reagent/nitroglycerin = 30)

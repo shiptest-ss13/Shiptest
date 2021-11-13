@@ -119,7 +119,7 @@ GLOBAL_LIST_INIT(ore_probability, list(
 	mob_types = list(/mob/living/simple_animal/hostile/asteroid/ice_whelp)
 
 /obj/structure/spawner/ice_moon/demonic_portal/snowlegion
-	mob_types = list(/mob/living/simple_animal/hostile/asteroid/hivelord/legion/snow)
+	mob_types = list(/mob/living/simple_animal/hostile/asteroid/hivelordbrood/legion/snow/tendril)
 
 /obj/effect/collapsing_demonic_portal
 	name = "collapsing demonic portal"
@@ -302,6 +302,9 @@ GLOBAL_LIST_INIT(ore_probability, list(
 				new /obj/item/mjollnir
 				new /mob/living/simple_animal/hostile/wizard(loc)
 			if(prob(15))
+				new /obj/item/singularityhammer(loc)
+				new /mob/living/simple_animal/hostile/wizard(loc)
+			if(prob(15))
 				new /obj/item/book/granter/spell/charge(loc)
 				new /mob/living/simple_animal/hostile/wizard(loc)
 			if(prob(10))
@@ -350,7 +353,7 @@ GLOBAL_LIST_INIT(ore_probability, list(
 			if(prob(25))
 				new /obj/item/storage/fancy/cigarettes/cigpack_syndicate
 			if(prob(15))
-				new /obj/item/borg/upgrade/transform/commando(loc)//welcome, brigador.
+				new /obj/item/borg/upgrade/transform/commando(loc)
 				new /mob/living/simple_animal/hostile/syndicate/ranged/smg
 			if(prob(25))
 				new /mob/living/simple_animal/hostile/syndicate/melee/sword/space(loc)
@@ -634,7 +637,7 @@ GLOBAL_LIST_INIT(ore_probability, list(
 			new /mob/living/simple_animal/hostile/asteroid/goliath/beast(loc)
 			new /mob/living/simple_animal/hostile/asteroid/goliath/beast(loc)
 			new /mob/living/simple_animal/hostile/asteroid/goliath/beast/ancient(loc)
-			new /obj/effect/mob_spawn/human/miner(loc)
+			new /obj/effect/mob_spawn/human/miner/old(loc)
 			new /turf/open/floor/plating/asteroid/basalt(loc)
 		if(13)//sailing the ocean blue
 			visible_message("<span class='userdanger'>Water pours out of the portal, followed by a strange vessel. It's occupied.</span>")

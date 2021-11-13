@@ -24,7 +24,7 @@
 	belt = /obj/item/pda/shaftminer
 	ears = /obj/item/radio/headset/headset_cargo/mining
 	shoes = /obj/item/clothing/shoes/workboots/mining
-	gloves = /obj/item/clothing/gloves/color/black
+	gloves = /obj/item/clothing/gloves/explorer
 	uniform = /obj/item/clothing/under/rank/cargo/miner/lavaland
 	alt_uniform = /obj/item/clothing/under/rank/cargo/miner //WS Edit - Alt Uniforms
 	alt_suit = /obj/item/clothing/suit/hazardvest
@@ -71,3 +71,21 @@
 	name = "Shaft Miner (Equipment + Hardsuit)"
 	suit = /obj/item/clothing/suit/space/hardsuit/mining
 	mask = /obj/item/clothing/mask/breath
+
+/datum/outfit/job/miner/old
+	name = "Shaft Miner (Legacy)"
+	suit = /obj/item/clothing/suit/hooded/explorer/old
+	mask = /obj/item/clothing/mask/gas/explorer/old
+	glasses = /obj/item/clothing/glasses/meson
+	suit_store = /obj/item/tank/internals/oxygen
+	gloves = /obj/item/clothing/gloves/explorer/old
+	uniform = /obj/item/clothing/under/rank/cargo/miner/lavaland/old
+	internals_slot = ITEM_SLOT_SUITSTORE
+	backpack_contents = list(
+		/obj/item/flashlight/seclite=1,\
+		/obj/item/kitchen/knife/combat/survival=1,
+		/obj/item/mining_scanner=1,
+		/obj/item/reagent_containers/hypospray/medipen/survival,
+		/obj/item/reagent_containers/hypospray/medipen/survival,\
+		/obj/item/gun/energy/kinetic_accelerator/old=1,\
+		/obj/item/stack/marker_beacon/ten=1)

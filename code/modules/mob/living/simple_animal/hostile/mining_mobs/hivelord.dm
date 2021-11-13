@@ -208,6 +208,18 @@
 	robust_searching = 1
 	var/can_infest_dead = FALSE
 
+/mob/living/simple_animal/hostile/asteroid/hivelordbrood/legion/staff
+	name = "emaciated legion"
+	desc = "One of many. This one was spawned from a surrogate host, and is quite short-lived and nearsighted. However, it is freindly to humans."
+	color = "#c8e6fb"
+	melee_damage_lower = 10
+	melee_damage_upper = 10
+	vision_range = 5
+
+/mob/living/simple_animal/hostile/asteroid/hivelordbrood/legion/staff/Initialize()
+	. = ..()
+	addtimer(CALLBACK(src, .proc/death), 50)
+	AddComponent(/datum/component/swarming)
 
 /mob/living/simple_animal/hostile/asteroid/hivelordbrood/legion/Life()
 	. = ..()
@@ -320,7 +332,7 @@
 	H.dna.add_mutation(DWARFISM)
 
 /obj/effect/mob_spawn/human/corpse/damaged/legioninfested/Initialize()
-	var/type = pickweight(list("Miner" = 51, "Waldo" = 5, "Ashwalker" = 5, "Soldier" = 10, "Kobold" = 5, "Golem" = 10,"Clown" = 10, pick(list("Shadow", "YeOlde","Operative", "Cultist")) = 4)) //WS Edit - Kobold
+	var/type = pickweight(list("Miner" = 51, "Waldo" = 5, "Ashwalker" = 5, "Soldier" = 5, "Oldminer" = 5, "Kobold" = 5, "Golem" = 10,"Clown" = 10, pick(list("Shadow", "YeOlde","Operative", "Cultist")) = 4)) //WS Edit - Kobold
 	switch(type)
 		if("Miner")
 			mob_species = pickweight(list(/datum/species/human = 70, /datum/species/lizard = 26, /datum/species/fly = 2, /datum/species/plasmaman = 2))
@@ -346,6 +358,53 @@
 				r_pocket = pickweight(list(/obj/item/stack/marker_beacon = 20, /obj/item/stack/spacecash/c1000 = 7, /obj/item/reagent_containers/hypospray/medipen/survival = 2, /obj/item/borg/upgrade/modkit/damage = 1 ))
 			if(prob(10))
 				l_pocket = pickweight(list(/obj/item/stack/spacecash/c1000 = 7, /obj/item/reagent_containers/hypospray/medipen/survival = 2, /obj/item/borg/upgrade/modkit/cooldown = 1 ))
+			if(prob(85))
+				back = /obj/item/storage/backpack/explorer
+				backpack_contents = list()
+				if(prob(70))
+					backpack_contents += pick(list(/obj/item/borg/upgrade/modkit/damage = 1, /obj/item/borg/upgrade/modkit/ = 1, /obj/item/soap/nanotrasen = 1, /obj/item/wormhole_jaunter = 1, /obj/item/fulton_core = 1, /obj/item/extraction_pack = 2, /obj/item/stack/sheet/animalhide/goliath_hide = 3, /obj/item/hivelordstabilizer = 2, /obj/item/stack/marker_beacon/ten = 2, /obj/item/mining_scanner = 2, /obj/item/extinguisher/mini = 2, /obj/item/kitchen/knife/combat/survival = 3, /obj/item/flashlight/seclite=3, /obj/item/stack/sheet/sinew = 3, /obj/item/stack/sheet/bone = 3))
+				if(prob(70))
+					backpack_contents += pick(list(/obj/item/borg/upgrade/modkit/damage = 1, /obj/item/borg/upgrade/modkit/ = 1, /obj/item/soap/nanotrasen = 1, /obj/item/wormhole_jaunter = 1, /obj/item/fulton_core = 1, /obj/item/extraction_pack = 2, /obj/item/stack/sheet/animalhide/goliath_hide = 3, /obj/item/hivelordstabilizer = 2, /obj/item/stack/marker_beacon/ten = 2, /obj/item/mining_scanner = 2, /obj/item/extinguisher/mini = 2, /obj/item/kitchen/knife/combat/survival = 3, /obj/item/flashlight/seclite=3, /obj/item/stack/sheet/sinew = 3, /obj/item/stack/sheet/bone = 3))
+				if(prob(70))
+					backpack_contents += pick(list(/obj/item/borg/upgrade/modkit/damage = 1, /obj/item/borg/upgrade/modkit/ = 1, /obj/item/soap/nanotrasen = 1, /obj/item/wormhole_jaunter = 1, /obj/item/fulton_core = 1, /obj/item/extraction_pack = 2, /obj/item/stack/sheet/animalhide/goliath_hide = 3, /obj/item/hivelordstabilizer = 2, /obj/item/stack/marker_beacon/ten = 2, /obj/item/mining_scanner = 2, /obj/item/extinguisher/mini = 2, /obj/item/kitchen/knife/combat/survival = 3, /obj/item/flashlight/seclite=3, /obj/item/stack/sheet/sinew = 3, /obj/item/stack/sheet/bone = 3))
+				if(prob(70))
+					backpack_contents += pick(list(/obj/item/borg/upgrade/modkit/damage = 1, /obj/item/borg/upgrade/modkit/ = 1, /obj/item/soap/nanotrasen = 1, /obj/item/wormhole_jaunter = 1, /obj/item/fulton_core = 1, /obj/item/extraction_pack = 2, /obj/item/stack/sheet/animalhide/goliath_hide = 3, /obj/item/hivelordstabilizer = 2, /obj/item/stack/marker_beacon/ten = 2, /obj/item/mining_scanner = 2, /obj/item/extinguisher/mini = 2, /obj/item/kitchen/knife/combat/survival = 3, /obj/item/flashlight/seclite=3, /obj/item/stack/sheet/sinew = 3, /obj/item/stack/sheet/bone = 3))
+				if(prob(30))
+					backpack_contents += list(/obj/item/reagent_containers/hypospray/medipen/survival = pickweight(list( 1 = 3, 2 = 2, 3 = 1)))
+				if(prob(30))
+					backpack_contents += /obj/item/gun/energy/kinetic_accelerator/old
+			else
+				back = /obj/item/kinetic_crusher
+		if("Oldminer")
+			suit = /obj/item/clothing/suit/hooded/explorer/old
+			mask = /obj/item/clothing/mask/gas/explorer/old
+			glasses = /obj/item/clothing/glasses/meson
+			suit_store = /obj/item/tank/internals/oxygen
+			gloves = /obj/item/clothing/gloves/explorer/old
+			uniform = /obj/item/clothing/under/rank/cargo/miner/lavaland/old
+			if(prob(85))
+				back = /obj/item/storage/backpack/explorer
+				backpack_contents = list()
+				if(prob(70))
+					backpack_contents += pick(list(/obj/item/borg/upgrade/modkit/damage = 1, /obj/item/borg/upgrade/modkit/ = 1, /obj/item/soap/nanotrasen = 1, /obj/item/wormhole_jaunter = 1, /obj/item/fulton_core = 1, /obj/item/extraction_pack = 2, /obj/item/stack/sheet/animalhide/goliath_hide = 3, /obj/item/hivelordstabilizer = 2, /obj/item/stack/marker_beacon/ten = 2, /obj/item/mining_scanner = 2, /obj/item/extinguisher/mini = 2, /obj/item/kitchen/knife/combat/survival = 3, /obj/item/flashlight/seclite=3, /obj/item/stack/sheet/sinew = 3, /obj/item/stack/sheet/bone = 3))
+				if(prob(70))
+					backpack_contents += pick(list(/obj/item/borg/upgrade/modkit/damage = 1, /obj/item/borg/upgrade/modkit/ = 1, /obj/item/soap/nanotrasen = 1, /obj/item/wormhole_jaunter = 1, /obj/item/fulton_core = 1, /obj/item/extraction_pack = 2, /obj/item/stack/sheet/animalhide/goliath_hide = 3, /obj/item/hivelordstabilizer = 2, /obj/item/stack/marker_beacon/ten = 2, /obj/item/mining_scanner = 2, /obj/item/extinguisher/mini = 2, /obj/item/kitchen/knife/combat/survival = 3, /obj/item/flashlight/seclite=3, /obj/item/stack/sheet/sinew = 3, /obj/item/stack/sheet/bone = 3))
+				if(prob(70))
+					backpack_contents += pick(list(/obj/item/borg/upgrade/modkit/damage = 1, /obj/item/borg/upgrade/modkit/ = 1, /obj/item/soap/nanotrasen = 1, /obj/item/wormhole_jaunter = 1, /obj/item/fulton_core = 1, /obj/item/extraction_pack = 2, /obj/item/stack/sheet/animalhide/goliath_hide = 3, /obj/item/hivelordstabilizer = 2, /obj/item/stack/marker_beacon/ten = 2, /obj/item/mining_scanner = 2, /obj/item/extinguisher/mini = 2, /obj/item/kitchen/knife/combat/survival = 3, /obj/item/flashlight/seclite=3, /obj/item/stack/sheet/sinew = 3, /obj/item/stack/sheet/bone = 3))
+				if(prob(70))
+					backpack_contents += pick(list(/obj/item/borg/upgrade/modkit/damage = 1, /obj/item/borg/upgrade/modkit/ = 1, /obj/item/soap/nanotrasen = 1, /obj/item/wormhole_jaunter = 1, /obj/item/fulton_core = 1, /obj/item/extraction_pack = 2, /obj/item/stack/sheet/animalhide/goliath_hide = 3, /obj/item/hivelordstabilizer = 2, /obj/item/stack/marker_beacon/ten = 2, /obj/item/mining_scanner = 2, /obj/item/extinguisher/mini = 2, /obj/item/kitchen/knife/combat/survival = 3, /obj/item/flashlight/seclite=3, /obj/item/stack/sheet/sinew = 3, /obj/item/stack/sheet/bone = 3))
+				if(prob(30))
+					backpack_contents += list(/obj/item/reagent_containers/hypospray/medipen/survival = pickweight(list( 1 = 3, 2 = 2, 3 = 1)))
+				if(prob(30))
+					backpack_contents += /obj/item/gun/energy/kinetic_accelerator/old
+			else
+				back = /obj/item/kinetic_crusher/old
+			if(prob(30))
+				belt = /obj/item/storage/belt/mining/alt
+			if(prob(30))
+				r_pocket = pickweight(list(/obj/item/stack/marker_beacon = 20, /obj/item/stack/spacecash/c1000 = 7, /obj/item/reagent_containers/hypospray/medipen/survival = 2, /obj/item/borg/upgrade/modkit/damage = 1 ))
+			if(prob(30))
+				l_pocket = pickweight(list(/obj/item/stack/spacecash/c1000 = 5, /obj/item/reagent_containers/hypospray/medipen/survival = 2, /obj/item/borg/upgrade/modkit/cooldown = 1 ))
 		if("Ashwalker")
 			mob_species = /datum/species/lizard/ashwalker
 			uniform = /obj/item/clothing/under/costume/gladiator/ash_walker
@@ -458,7 +517,7 @@
 			glasses = /obj/item/clothing/glasses/regular/circle
 			if(prob(35))
 				r_pocket = pick(list(/obj/item/book/granter/spell/knock = 1, /obj/item/dnainjector/chameleonmut = 1))
-			if(prob(35))
+			if(prob(25))
 				l_pocket = /obj/item/chameleon
 		if("Shadow")
 			mob_species = /datum/species/shadow
@@ -502,3 +561,6 @@
 	icon_living = "snowlegion_head"
 	icon_aggro = "snowlegion_head"
 	icon_dead = "snowlegion_head"
+
+/mob/living/simple_animal/hostile/asteroid/hivelordbrood/legion/snow/tendril
+	fromtendril = TRUE

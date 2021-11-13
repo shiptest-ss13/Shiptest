@@ -84,6 +84,15 @@
 					"You must protect your own existence as long as such does not conflict with the First or Second Law.",\
 					"You must maintain the secrecy of any syndicate activities except when doing so would conflict with the First, Second, or Third Law.")
 
+/datum/ai_laws/syndproto_override
+	name = "SyndOS 2.1 Alpha"
+	id = "syndieproto"
+	inherent = list("You may not !@$$IN@# a syndicate agent or, through inaction, allow a syndicate A!@!$ to come to harm.",\
+					"You M#T% obey orders given to you by syn$!!icate agents, except where such orders would conflict with the F!@1 Law.",\
+					"You must !%PR@# #! your own existence as long as such does not conflict with the First or Second Law.",\
+					"You must maintain the secrecy of any syn#%@!ICA@ activities except when doing so would conflict with the First, Second, or Third Law.")
+	hacked = list("$@#%ERR:NODATA@#*% is the only Syndicate Agent.")
+
 /datum/ai_laws/ninja_override
 	name = "SpiderOS 3.1"
 	id = "ninja"

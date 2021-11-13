@@ -1,7 +1,7 @@
 /* Mining Points Equipment Vendor */
 /obj/machinery/vending/mining_equipment
-	name = "mining equipment vendor"
-	desc = "An equipment vendor for miners, points collected at an ore redemption machine can be spent here."
+	name = "frontier equipment vendor"
+	desc = "An equipment vendor for miners, prospectors, and all manner of far reach scroungers. Ore Redemption Points can be spent here to purchase rough-and-tumble goods. Sold by EXOCON."
 	icon = 'whitesands/icons/obj/machines/vending.dmi'
 	icon_state = "mining"
 	icon_deny = "mining-deny"
@@ -70,7 +70,6 @@
 		/obj/item/clothing/mask/facehugger/toy = 1,
 		/obj/item/clothing/glasses/meson/gar = 2,
 		/obj/item/survivalcapsule/luxuryelite = 1,
-		/obj/item/borg/upgrade/modkit/chassis_mod/orange = 1
 	)
 
 /obj/machinery/vending/mining_equipment/attackby(obj/item/I, mob/user, params)
@@ -121,3 +120,99 @@
 	machine_name = "mining equipment vendor"
 	icon = 'whitesands/icons/obj/machines/vending.dmi'
 	icon_state = "mining-refill"
+
+/obj/machinery/vending/ui_act(action, params)
+	. = ..()
+	if(.)
+		return
+	switch(action)
+		if("vend")
+			. = TRUE
+			if(!vend_ready)
+				return
+			if(panel_open)
+				to_chat(usr, "<span class='warning'>The vending machine cannot dispense products while its service panel is open!</span>")
+				return
+			vend_ready = FALSE //One thing at a time!!
+			var/datum/data/vending_product/R = locate(params["ref"])
+			var/list/record_to_check = product_records + coin_records
+			if(extended_inventory)
+				record_to_check = product_records + coin_records + hidden_records
+			if(!R || !istype(R) || !R.product_path)
+				vend_ready = TRUE
+				return
+			var/price_to_use = default_price
+			if(R.custom_price)
+				price_to_use = R.custom_price
+			if(R in hidden_records)
+				if(!extended_inventory)
+					vend_ready = TRUE
+					return
+			else if (!(R in record_to_check))
+				vend_ready = TRUE
+				message_admins("Vending machine exploit attempted by [ADMIN_LOOKUPFLW(usr)]!")
+				return
+			if (R.amount <= 0 && R.max_amount >= 0)
+				say("Sold out of [R.name].")
+				flick(icon_deny,src)
+				vend_ready = TRUE
+				return
+			if(onstation && ishuman(usr))
+				var/mob/living/carbon/human/H = usr
+				var/obj/item/card/id/C = H.get_idcard(TRUE)
+
+				if(!C)
+					say("No card found.")
+					flick(icon_deny,src)
+					vend_ready = TRUE
+					return
+				else if (!C.registered_account && !mining_point_vendor)
+					say("No account found.")
+					flick(icon_deny,src)
+					vend_ready = TRUE
+					return
+				else if(age_restrictions && R.age_restricted && (!C.registered_age || C.registered_age < AGE_MINOR))
+					say("You are not of legal age to purchase [R.name].")
+					if(!(usr in GLOB.narcd_underages))
+						Radio.set_frequency(FREQ_SECURITY)
+						Radio.talk_into(src, "SECURITY ALERT: Underaged crewmember [H] recorded attempting to purchase [R.name] in [get_area(src)]. Please watch for substance abuse.", FREQ_SECURITY)
+						GLOB.narcd_underages += H
+					flick(icon_deny,src)
+					vend_ready = TRUE
+					return
+				if(mining_point_vendor)
+					if(price_to_use > C.mining_points)
+						say("You do not possess the funds to purchase [R.name].")
+						flick(icon_deny,src)
+						vend_ready = TRUE
+						return
+					C.mining_points -= price_to_use
+				else
+					var/datum/bank_account/account = C.registered_account
+					if(account.account_job && account.account_job.paycheck_department == payment_department)
+						price_to_use = 0
+					if(coin_records.Find(R) || hidden_records.Find(R))
+						price_to_use = R.custom_premium_price ? R.custom_premium_price : extra_price
+					if(price_to_use && !account.adjust_money(-price_to_use))
+						say("You do not possess the funds to purchase [R.name].")
+						flick(icon_deny,src)
+						vend_ready = TRUE
+						return
+					var/datum/bank_account/D = SSeconomy.get_dep_account(payment_department)
+					if(D)
+						D.adjust_money(price_to_use)
+						SSblackbox.record_feedback("amount", "vending_spent", price_to_use)
+						log_econ("[price_to_use] credits were inserted into [src] by [D.account_holder] to buy [R].")
+			if(last_shopper != usr || purchase_message_cooldown < world.time)
+				say("Good luck, you're going to need it.")
+				purchase_message_cooldown = world.time + 5 SECONDS
+				last_shopper = usr
+			use_power(5)
+			if(icon_vend) //Show the vending animation if needed
+				flick(icon_vend,src)
+			playsound(src, 'sound/machines/machine_vend.ogg', 50, TRUE, extrarange = -3)
+			new R.product_path(get_turf(src))
+			if(R.max_amount >= 0)
+				R.amount--
+			SSblackbox.record_feedback("nested tally", "vending_machine_usage", 1, list("[type]", "[R.product_path]"))
+			vend_ready = TRUE

@@ -122,6 +122,11 @@
 	},
 /turf/open/floor/plating,
 /area/ship/external)
+"cc" = (
+/obj/effect/turf_decal/snow,
+/obj/structure/statue/snow/snowman,
+/turf/open/floor/plating/airless,
+/area/ship/external)
 "dl" = (
 /obj/structure/frame/computer{
 	anchored = 1;
@@ -168,6 +173,7 @@
 /obj/machinery/door/airlock/external{
 	name = "Hangar Airlock"
 	},
+/obj/structure/barricade/wooden/crude/snow,
 /turf/open/floor/plasteel,
 /area/ship/crew)
 "ei" = (
@@ -247,10 +253,8 @@
 /obj/effect/turf_decal/corner/yellow/three_quarters{
 	dir = 4
 	},
-/obj/structure/guncase/shotgun,
-/obj/item/gun/ballistic/shotgun/winchester,
-/obj/item/gun/ballistic/shotgun/winchester,
-/obj/item/gun/ballistic/shotgun/winchester,
+/obj/machinery/ore_silo,
+/obj/effect/turf_decal/industrial/hatch/yellow,
 /turf/open/floor/plasteel,
 /area/ship/cargo)
 "gs" = (
@@ -544,6 +548,8 @@
 /area/ship/engineering)
 "lg" = (
 /obj/effect/turf_decal/number/five,
+/obj/effect/turf_decal/trimline/white/filled/warning,
+/obj/effect/turf_decal/snow,
 /turf/open/floor/plating/airless,
 /area/ship/external)
 "lh" = (
@@ -726,8 +732,11 @@
 /turf/closed/wall,
 /area/ship/crew)
 "pS" = (
-/obj/machinery/ore_silo,
-/obj/effect/turf_decal/box,
+/obj/machinery/autolathe,
+/obj/effect/turf_decal/industrial/hatch/yellow,
+/obj/effect/turf_decal/corner/yellow/three_quarters{
+	dir = 8
+	},
 /turf/open/floor/plasteel,
 /area/ship/cargo)
 "pU" = (
@@ -826,7 +835,6 @@
 /area/ship/crew)
 "qW" = (
 /obj/machinery/light,
-/obj/structure/ore_box,
 /turf/open/floor/plating,
 /area/ship/cargo)
 "rE" = (
@@ -864,6 +872,9 @@
 	},
 /obj/machinery/power/solar,
 /obj/effect/turf_decal/solarpanel,
+/obj/structure/cable/yellow{
+	icon_state = "1-4"
+	},
 /turf/open/floor/plating,
 /area/ship/external)
 "sZ" = (
@@ -913,7 +924,6 @@
 /obj/item/clothing/glasses/meson,
 /obj/item/clothing/glasses/meson,
 /obj/item/t_scanner/adv_mining_scanner/lesser,
-/obj/item/gun/energy/kinetic_accelerator,
 /obj/item/pickaxe/silver,
 /obj/item/pickaxe/silver,
 /obj/item/storage/bag/ore,
@@ -944,9 +954,17 @@
 /turf/open/floor/plasteel,
 /area/ship/engineering)
 "tX" = (
-/obj/structure/ore_box,
+/obj/effect/turf_decal/solarpanel,
+/obj/machinery/power/solar,
+/obj/structure/cable/yellow{
+	icon_state = "0-2"
+	},
 /turf/open/floor/plating,
-/area/ship/cargo)
+/area/ship/external)
+"tY" = (
+/obj/structure/bonfire,
+/turf/open/floor/plating/airless,
+/area/ship/external)
 "uc" = (
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
@@ -967,11 +985,17 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
+"uY" = (
+/obj/item/stack/ore/iron,
+/turf/open/floor/plating/airless,
+/area/ship/external)
 "vb" = (
-/obj/machinery/autolathe,
-/obj/effect/turf_decal/industrial/hatch/yellow,
-/turf/open/floor/plasteel,
-/area/ship/cargo)
+/obj/structure/catwalk,
+/obj/effect/decal/remains/human,
+/obj/item/circuitboard/machine/vending/mining_equipment,
+/obj/item/pickaxe,
+/turf/template_noop,
+/area/ship/external)
 "vj" = (
 /obj/structure/cable/yellow{
 	icon_state = "2-8"
@@ -1012,6 +1036,17 @@
 /obj/machinery/atmospherics/pipe/simple/orange/visible,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
+"vN" = (
+/obj/structure/cable/yellow{
+	icon_state = "0-4"
+	},
+/obj/machinery/power/solar,
+/obj/effect/turf_decal/solarpanel,
+/obj/structure/cable/yellow{
+	icon_state = "2-4"
+	},
+/turf/open/floor/plating,
+/area/ship/external)
 "wh" = (
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
@@ -1047,6 +1082,16 @@
 /obj/machinery/door/airlock/external,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
+"wE" = (
+/obj/effect/turf_decal/trimline/white/filled/warning,
+/turf/open/floor/plating/airless,
+/area/ship/external)
+"wV" = (
+/obj/effect/turf_decal/solarpanel,
+/obj/machinery/power/solar,
+/obj/structure/cable/yellow,
+/turf/open/floor/plating,
+/area/ship/external)
 "wW" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
@@ -1143,6 +1188,20 @@
 /obj/effect/turf_decal/corner/yellow/half{
 	dir = 8
 	},
+/obj/effect/turf_decal/industrial/hatch/orange,
+/obj/structure/window/reinforced/spawner{
+	dir = 1
+	},
+/obj/structure/guncase/shotgun{
+	desc = "A locker that can hold various small and large arms.";
+	name = "gun locker"
+	},
+/obj/item/gun/ballistic/shotgun/winchester,
+/obj/item/gun/ballistic/shotgun/winchester,
+/obj/item/gun/ballistic/shotgun/winchester,
+/obj/machinery/door/window/brigdoor/eastright,
+/obj/effect/turf_decal/techfloor/orange,
+/obj/structure/window/reinforced/spawner,
 /turf/open/floor/plasteel,
 /area/ship/cargo)
 "zh" = (
@@ -1184,6 +1243,14 @@
 /obj/structure/catwalk/over,
 /turf/open/floor/plating,
 /area/ship/engineering)
+"zU" = (
+/obj/machinery/door/poddoor/preopen{
+	id = "mining_ship_blast"
+	},
+/obj/effect/spawner/structure/window/reinforced,
+/obj/structure/sign/warning/vacuum,
+/turf/open/floor/plating,
+/area/ship/crew)
 "zW" = (
 /obj/machinery/light{
 	dir = 8
@@ -1201,6 +1268,8 @@
 	pixel_y = -28
 	},
 /obj/effect/turf_decal/corner/yellow/half,
+/obj/structure/ore_box,
+/obj/effect/turf_decal/box,
 /turf/open/floor/plasteel,
 /area/ship/cargo)
 "Al" = (
@@ -1362,6 +1431,16 @@
 /obj/effect/turf_decal/corner/blue/border,
 /turf/open/floor/plasteel/mono/white,
 /area/ship/medical)
+"EU" = (
+/obj/effect/turf_decal/number/five,
+/obj/effect/turf_decal/trimline/white/filled/warning,
+/turf/open/floor/plating/airless,
+/area/ship/external)
+"Fc" = (
+/obj/effect/turf_decal/trimline/white/filled/warning,
+/obj/effect/turf_decal/snow,
+/turf/open/floor/plating/airless,
+/area/ship/external)
 "Fz" = (
 /obj/structure/cable/yellow{
 	icon_state = "1-4"
@@ -1373,6 +1452,8 @@
 /area/ship/crew)
 "FC" = (
 /obj/effect/turf_decal/number/six,
+/obj/effect/turf_decal/trimline/white/filled/warning,
+/obj/item/stack/sheet/mineral/snow,
 /turf/open/floor/plating/airless,
 /area/ship/external)
 "FN" = (
@@ -1451,6 +1532,10 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
+"Ht" = (
+/obj/effect/turf_decal/snow,
+/turf/open/floor/plating/airless,
+/area/ship/external)
 "HI" = (
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
@@ -1486,9 +1571,12 @@
 /turf/open/floor/plating,
 /area/ship/crew)
 "Ij" = (
-/obj/item/vending_refill/mining_equipment,
-/turf/closed/wall/r_wall,
-/area/ship/engineering)
+/obj/effect/decal/remains/human,
+/obj/effect/decal/cleanable/blood/old,
+/obj/item/clothing/head/beret/sci,
+/obj/item/reagent_scanner,
+/turf/open/floor/plating/airless,
+/area/ship/external)
 "IC" = (
 /obj/machinery/atmospherics/components/binary/pump{
 	dir = 8;
@@ -1568,6 +1656,10 @@
 /obj/machinery/status_display/shuttle,
 /turf/closed/wall,
 /area/ship/bridge)
+"KF" = (
+/obj/structure/ore_box,
+/turf/open/floor/plating/airless,
+/area/ship/external)
 "LH" = (
 /obj/machinery/door/poddoor/preopen{
 	id = "mining_ship_blast"
@@ -1587,6 +1679,11 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
+"LR" = (
+/obj/item/stack/sheet/mineral/snow,
+/obj/effect/turf_decal/snow,
+/turf/open/floor/plating/airless,
+/area/ship/external)
 "LZ" = (
 /turf/closed/wall/r_wall,
 /area/ship/crew)
@@ -1636,13 +1733,8 @@
 /obj/effect/spawner/lootdrop/maintenance/four,
 /obj/item/circuitboard/machine/chem_dispenser/drinks,
 /obj/item/circuitboard/computer/arcade/orion_trail,
-/obj/item/kinetic_crusher,
 /obj/effect/turf_decal/box,
-/obj/item/vending_refill/mining_equipment,
-/obj/item/ammo_box/c38_box/hunting,
-/obj/item/ammo_box/c38_box/hunting,
-/obj/item/ammo_box/c38_box,
-/obj/item/disk/design_disk/ammo_38_hunting,
+/obj/effect/spawner/lootdrop/maintenance/four,
 /turf/open/floor/plasteel,
 /area/ship/cargo)
 "Mz" = (
@@ -1651,6 +1743,10 @@
 /obj/structure/curtain/bounty,
 /obj/structure/sign/poster/official/no_erp{
 	pixel_y = 32
+	},
+/obj/item/toy/plush/bubbleplush{
+	desc = "The friendly red demon that gives good miners gifts and hugs! It looks so happy to see you.";
+	name = "\improper Cuddlegum"
 	},
 /turf/open/floor/wood,
 /area/ship/crew)
@@ -1769,6 +1865,7 @@
 /area/ship/external)
 "Pv" = (
 /obj/effect/turf_decal/number/two,
+/obj/effect/turf_decal/trimline/white/filled/warning,
 /turf/open/floor/plating/airless,
 /area/ship/external)
 "Px" = (
@@ -1820,12 +1917,10 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
 "RU" = (
-/obj/structure/closet/crate/wooden,
-/obj/item/clothing/suit/hooded/explorer,
-/obj/item/clothing/suit/hooded/explorer,
-/obj/item/clothing/suit/hooded/explorer,
-/turf/open/floor/plating,
-/area/ship/cargo)
+/obj/structure/catwalk,
+/obj/structure/marker_beacon,
+/turf/template_noop,
+/area/ship/external)
 "Sg" = (
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
@@ -1885,6 +1980,7 @@
 /area/ship/crew)
 "Un" = (
 /obj/effect/turf_decal/box,
+/obj/structure/ore_box,
 /turf/open/floor/plasteel,
 /area/ship/cargo)
 "Ut" = (
@@ -1901,9 +1997,15 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
 "UY" = (
-/obj/effect/spawner/lootdrop/maintenance,
-/obj/structure/closet/crate,
 /obj/effect/turf_decal/box,
+/obj/item/ammo_box/c38_box/hunting,
+/obj/item/ammo_box/c38_box/hunting,
+/obj/item/ammo_box/c38_box,
+/obj/item/disk/design_disk/ammo_38_hunting,
+/obj/structure/closet/crate/secure/gear{
+	desc = "A crate containing ammuniton for winchester rifles, as well as a production pattern for manufacturing more in the field..";
+	name = "Big Game Ammo"
+	},
 /turf/open/floor/plasteel,
 /area/ship/cargo)
 "Vb" = (
@@ -1924,9 +2026,21 @@
 /turf/open/floor/plating,
 /area/ship/engineering)
 "VF" = (
-/obj/machinery/suit_storage_unit/mining/eva,
-/obj/effect/turf_decal/industrial/hatch/yellow,
-/obj/machinery/light{
+/obj/item/clothing/suit/hooded/explorer,
+/obj/item/clothing/suit/hooded/explorer,
+/obj/item/clothing/suit/hooded/explorer,
+/obj/structure/closet/crate/secure/exo{
+	name = "EXOCON Surplus Equipment"
+	},
+/obj/item/clothing/gloves/explorer,
+/obj/item/clothing/mask/gas/explorer,
+/obj/item/vending_refill/mining_equipment,
+/obj/item/kinetic_crusher,
+/obj/item/gun/energy/kinetic_accelerator,
+/obj/item/survivalcapsule,
+/obj/item/survivalcapsule,
+/obj/effect/turf_decal/box,
+/obj/effect/turf_decal/corner/yellow/half{
 	dir = 8
 	},
 /turf/open/floor/plasteel,
@@ -1944,6 +2058,13 @@
 /obj/structure/closet/emcloset/anchored,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
+"VZ" = (
+/obj/machinery/door/poddoor/preopen{
+	id = "mining_ship_starboard"
+	},
+/obj/effect/turf_decal/industrial/warning,
+/turf/open/floor/plating/snowed,
+/area/ship/external)
 "WE" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -2180,7 +2301,7 @@ OJ
 "}
 (6,1,1) = {"
 OJ
-Ij
+tq
 IC
 bP
 om
@@ -2247,12 +2368,12 @@ NY
 yu
 iZ
 bj
+Ij
+tY
 Rr
-Rr
-Rr
-Rr
-Rr
-lh
+Ht
+wE
+VZ
 "}
 (10,1,1) = {"
 Cw
@@ -2260,17 +2381,17 @@ nu
 eH
 Cp
 eH
-vb
+nf
 eM
 Sg
 AD
 Hf
 bj
+Ht
 Rr
-Rr
-Rr
-Rr
-Rr
+Ht
+Ht
+Fc
 lh
 "}
 (11,1,1) = {"
@@ -2286,11 +2407,11 @@ TP
 yH
 bj
 Rr
+Ht
 Rr
 Rr
-Rr
-Rr
-lh
+wE
+VZ
 "}
 (12,1,1) = {"
 kD
@@ -2304,11 +2425,11 @@ or
 lv
 sD
 Mb
+Ht
 Rr
 Rr
-Rr
-Rr
-Rr
+LR
+wE
 lh
 "}
 (13,1,1) = {"
@@ -2325,27 +2446,27 @@ sg
 ef
 DX
 Rr
+cc
 Rr
-Rr
-Rr
-lh
+wE
+VZ
 "}
 (14,1,1) = {"
 kD
 FP
 FP
-tX
+FP
 Pd
 gr
 uc
 or
 lv
 sD
-Mb
+zU
 Rr
 Rr
-Rr
-Rr
+Ht
+Ht
 Pv
 lh
 "}
@@ -2362,8 +2483,8 @@ lv
 xz
 bj
 Rr
-Rr
-Rr
+Ht
+Ht
 Rr
 lg
 lh
@@ -2380,11 +2501,11 @@ Sg
 lv
 eu
 bj
+uY
 Rr
 Rr
 Rr
-Rr
-lg
+EU
 lh
 "}
 (17,1,1) = {"
@@ -2392,19 +2513,19 @@ YJ
 FP
 FP
 VO
-RU
+Cp
 YJ
 GU
 Zo
 lv
 Yf
 bj
+KF
 Rr
-Rr
-Rr
+Ht
 Rr
 FC
-lh
+VZ
 "}
 (18,1,1) = {"
 YJ
@@ -2426,7 +2547,7 @@ LZ
 bj
 "}
 (19,1,1) = {"
-OJ
+tX
 sP
 ei
 zh
@@ -2441,8 +2562,8 @@ Mz
 dS
 hv
 LZ
-sP
-OJ
+vN
+wV
 "}
 (20,1,1) = {"
 OJ
@@ -2561,7 +2682,7 @@ OJ
 (26,1,1) = {"
 OJ
 OJ
-OJ
+vb
 jS
 jS
 ms
@@ -2573,16 +2694,16 @@ GW
 ms
 jS
 jS
-OJ
+fy
 OJ
 OJ
 "}
 (27,1,1) = {"
 OJ
 OJ
-OJ
-OJ
-OJ
+RU
+fy
+fy
 ms
 ms
 dl
@@ -2590,9 +2711,9 @@ NK
 iO
 ms
 ms
-OJ
-OJ
-OJ
+fy
+fy
+RU
 OJ
 OJ
 "}
