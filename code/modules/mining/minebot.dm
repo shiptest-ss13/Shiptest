@@ -58,11 +58,12 @@
 	faction = list("mining", "silicon" , "turret")
 	loot = list(/obj/effect/decal/cleanable/robot_debris, /obj/effect/spawner/lootdrop/minebot)
 	check_friendly_fire = FALSE
+	projectiletype = /obj/projectile/kinetic/miner
 
 /obj/effect/spawner/lootdrop/minebot
-	loot = list(/obj/item/borg/upgrade/modkit/minebot_passthrough = 20,
-				/obj/item/borg/upgrade/modkit/chassis_mod = 20,
-				/obj/item/borg/upgrade/modkit/tracer = 20,
+	loot = list(/obj/item/borg/upgrade/modkit/minebot_passthrough = 10,
+				/obj/item/borg/upgrade/modkit/chassis_mod = 10,
+				/obj/item/borg/upgrade/modkit/tracer = 10,
 				/obj/item/borg/upgrade/modkit/cooldown = 5,
 				/obj/item/borg/upgrade/modkit/damage = 5,
 				/obj/item/borg/upgrade/modkit/range = 5,
