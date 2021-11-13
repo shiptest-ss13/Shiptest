@@ -21,7 +21,7 @@
 
 /obj/item/wormhole_jaunter/proc/turf_check(mob/user)
 	var/turf/device_turf = get_turf(user)
-	if(!device_turf || is_centcom_level(device_turf.z) || is_reserved_level(device_turf.z))
+	if(!device_turf)
 		to_chat(user, "<span class='notice'>You're having difficulties getting the [src.name] to work.</span>")
 		return FALSE
 	return TRUE
@@ -37,6 +37,7 @@
 
 /obj/item/wormhole_jaunter/proc/activate(mob/user, adjacent)
 	if(!turf_check(user))
+		qdel(src) //no troll physics
 		return
 
 	var/turf/targetturf = find_safe_turf()
