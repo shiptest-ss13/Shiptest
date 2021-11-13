@@ -226,10 +226,153 @@
 	SEND_SIGNAL(quirk_holder, COMSIG_ADD_MOOD_EVENT, "bad_hair_day", /datum/mood_event/bald)
 
 /datum/quirk/vampire
-	name = "Vampire"
-	desc = "You're a bloodsuckig vampire."
+	name = "Vampirism"
+	desc = "You're a bloodsucking vampire, able to suck the blood of others, heal in coffins, transfer to them your own, and you're undead, do be careful not to run out of blood or give others too much of your own, lest peril come."
 	value = 0
 	gain_text = "<span class='notice'>Lazy.</span>"
 	lose_text = "<span class='notice'>Lazy.</span>"
 	medical_record_text = "Patient is a vampire."
 	allowed_species = list("fly" = "fly", "human" = "human", "moth" = "moth", "felinid" = "felinid", "lizard" = "lizard")
+  var/old_blood
+	var/datum/action/vampire_quirk_drain/VA
+	var/datum/action/vampire_quirk_transfer/VD
+	var/list/old_traits
+
+/datum/quirk/vampire/add()
+	var/mob/living/carbon/human/H = quirk_holder
+	VA = new
+	VD = new
+	VA.Grant(H)
+	VD.Grant(H)
+	old_blood = H.dna.blood_type
+	H.dna.species.exotic_blood = /datum/reagent/blood/true_draculine
+	old_traits = H.dna.species.inherent_traits
+	H.dna.species.inherent_traits |= list(TRAIT_NOHUNGER,TRAIT_NOBREATH)
+	H.dna.species.species_traits |= list(DRINKSBLOOD)
+
+/datum/quirk/vampire/remove()
+	var/mob/living/carbon/human/H = quirk_holder
+	if(VA)
+		VA.Remove(H)
+	if(VD)
+		VD.Remove(H)
+	H.dna.species.exotic_blood = ""
+	H.dna.blood_type = old_blood
+	H.dna.species.inherent_traits = old_traits
+	H.dna.species.species_traits ^= list(DRINKSBLOOD)
+
+/datum/quirk/vampire/on_process()
+	var/mob/living/carbon/human/C = quirk_holder
+	if(istype(C.loc, /obj/structure/closet/crate/coffin))
+		C.heal_overall_damage(4,4,0, BODYPART_ORGANIC)
+		C.adjustToxLoss(-4)
+		C.adjustOxyLoss(-4)
+		C.adjustCloneLoss(-4)
+		return
+	C.blood_volume -= 0.25
+	if(C.blood_volume <= BLOOD_VOLUME_SURVIVE)
+		to_chat(C, "<span class='danger'>You ran out of blood!</span>")
+		C.dust()
+
+#define VAMP_DRAIN_AMOUNT 50
+
+/datum/action/vampire_quirk_drain
+	name = "Drain Victim"
+	desc = "Leech blood from any carbon victim you are passively grabbing."
+	check_flags = AB_CHECK_CONSCIOUS
+
+/datum/action/vampire_quirk_drain/Trigger()
+	. = ..()
+	if(iscarbon(owner))
+		var/mob/living/carbon/H = owner
+		if(H.quirk_cooldown["Vampire"] >= world.time)
+			to_chat(H, "<span class='warning'>You just drained blood, wait a few seconds!</span>")
+			return
+		if(H.pulling && iscarbon(H.pulling))
+			var/mob/living/carbon/victim = H.pulling
+			if(H.blood_volume >= BLOOD_VOLUME_MAXIMUM)
+				to_chat(H, "<span class='warning'>You're already full!</span>")
+				return
+			if(victim.stat == DEAD)
+				to_chat(H, "<span class='warning'>You need a living victim!</span>")
+				return
+			if(!victim.blood_volume || (victim.dna && ((NOBLOOD in victim.dna.species.species_traits) || victim.dna.species.exotic_blood)))
+				to_chat(H, "<span class='warning'>[victim] doesn't have blood!</span>")
+				return
+			H.quirk_cooldown["Vampire"] = world.time + 30
+			if(victim.anti_magic_check(FALSE, TRUE, FALSE, 0))
+				to_chat(victim, "<span class='warning'>[H] tries to bite you, but stops before touching you!</span>")
+				to_chat(H, "<span class='warning'>[victim] is blessed! You stop just in time to avoid catching fire.</span>")
+				return
+			if(victim?.reagents?.has_reagent(/datum/reagent/consumable/garlic))
+				to_chat(victim, "<span class='warning'>[H] tries to bite you, but recoils in disgust!</span>")
+				to_chat(H, "<span class='warning'>[victim] reeks of garlic! you can't bring yourself to drain such tainted blood.</span>")
+				return
+			if(!do_after(H, 30, target = victim))
+				return
+			var/blood_volume_difference = BLOOD_VOLUME_MAXIMUM - H.blood_volume //How much capacity we have left to absorb blood
+			var/drained_blood = min(victim.blood_volume, VAMP_DRAIN_AMOUNT, blood_volume_difference)
+			to_chat(victim, "<span class='danger'>[H] is draining your blood!</span>")
+			to_chat(H, "<span class='notice'>You drain some blood!</span>")
+			playsound(H, 'sound/items/drink.ogg', 30, TRUE, -2)
+			victim.blood_volume = clamp(victim.blood_volume - drained_blood, 0, BLOOD_VOLUME_MAXIMUM)
+			H.blood_volume = clamp(H.blood_volume + drained_blood, 0, BLOOD_VOLUME_MAXIMUM)
+			if(!victim.blood_volume)
+				to_chat(H, "<span class='notice'>You finish off [victim]'s blood supply.</span>")
+
+#undef VAMP_DRAIN_AMOUNT
+
+#define VAMP_TRANSFER_AMOUNT 10
+
+/datum/action/vampire_quirk_transfer
+	name = "Blood Transfer"
+	desc = "Transfer your own tainted blood to one from which you could feed."
+	check_flags = AB_CHECK_CONSCIOUS
+
+/datum/action/vampire_quirk_transfer/Trigger()
+	. = ..()
+	if(iscarbon(owner))
+		var/mob/living/carbon/H = owner
+		if(H.quirk_cooldown["Vampire Transfer"] >= world.time)
+			to_chat(H, "<span class='warning'>You just transfered blood, wait a few seconds!</span>")
+			return
+		if(H.pulling && iscarbon(H.pulling))
+			var/mob/living/carbon/victim = H.pulling
+			if(victim.blood_volume >= BLOOD_VOLUME_MAXIMUM)
+				to_chat(H, "<span class='warning'>They're already full!</span>")
+				return
+			if(victim.stat == DEAD)
+				to_chat(H, "<span class='warning'>You need to transfer blood to a living being!</span>")
+				return
+			if(!victim.blood_volume || (victim.dna && ((NOBLOOD in victim.dna.species.species_traits) || victim.dna.species.exotic_blood)))
+				to_chat(H, "<span class='warning'>[victim] doesn't have blood!</span>")
+				return
+			H.quirk_cooldown["Vampire Transfer"] = world.time + 20
+			if(victim.anti_magic_check(FALSE, TRUE, FALSE, 0))
+				to_chat(victim, "<span class='warning'>[H] tries to surround twist you, but stops before touching you!</span>")
+				to_chat(H, "<span class='warning'>[victim] is blessed! You stop just in time to avoid catching fire.</span>")
+				return
+			if(victim?.reagents?.has_reagent(/datum/reagent/consumable/garlic))
+				to_chat(victim, "<span class='warning'>[H] tries to twist you, but recoils in disgust!</span>")
+				to_chat(H, "<span class='warning'>[victim] reeks of garlic! you can't bring yourself to twist such tainted blood.</span>")
+				return
+			if(!do_after(H, 20, target = victim))
+				return
+			var/blood_volume_difference = BLOOD_VOLUME_MAXIMUM - victim.blood_volume //How much capacity we have left to transfer blood
+			var/transfered_blood = min(H.blood_volume, VAMP_TRANSFER_AMOUNT, blood_volume_difference)
+			to_chat(victim, "<span class='danger'>You feel darkness leaving[H] and entering you!</span>")
+			to_chat(H, "<span class='notice'>You transfer blood to [victim]!</span>")
+			playsound(H, 'sound/items/drink.ogg', 30, TRUE, -2)
+			H.blood_volume = clamp(H.blood_volume - transfered_blood, 0, BLOOD_VOLUME_MAXIMUM)
+			var/blood_id = H.get_blood_id()
+			var/list/blood_data = H.get_blood_data(blood_id)
+			victim.reagents.add_reagent(blood_id, transfered_blood, blood_data, H.bodytemperature)
+
+#undef VAMP_TRANSFER_AMOUNT
+
+
+/mob/living/carbon/get_status_tab_items()
+	. = ..()
+	var/V = has_quirk(/datum/quirk/vampire)
+	if(V)
+		. += "<span class='notice'>Current blood level: [blood_volume]/[BLOOD_VOLUME_MAXIMUM].</span>"

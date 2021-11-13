@@ -85,3 +85,5 @@
 
 	/// WS edit - moth dust when hugging
 	var/mothdust
+
+	var/list/quirk_cooldown = list()
