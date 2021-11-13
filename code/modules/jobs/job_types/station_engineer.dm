@@ -125,3 +125,10 @@
 	uniform = /obj/item/clothing/under/costume/sailor
 	head = /obj/item/clothing/head/bandana
 	shoes = /obj/item/clothing/shoes/jackboots
+
+/datum/outfit/job/engineer/corporate
+	name = "Ship's Engineer (Corporate)"
+
+	uniform = /obj/item/clothing/under/rank/engineering/engineer/maintenance_tech
+	glasses = /obj/item/clothing/glasses/sunglasses
+	shoes = /obj/item/clothing/shoes/jackboots

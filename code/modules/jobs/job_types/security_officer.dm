@@ -145,6 +145,15 @@ GLOBAL_LIST_INIT(available_depts, list(SEC_DEPT_ENGINEERING, SEC_DEPT_MEDICAL, S
 	head = /obj/item/clothing/head/bandana
 	suit = /obj/item/clothing/suit/armor/vest
 
+/datum/outfit/job/security/corporate
+	name = "Corporate Security"
+
+	uniform = /obj/item/clothing/under/syndicate/combat
+	shoes = /obj/item/clothing/shoes/jackboots
+	glasses = /obj/item/clothing/glasses/hud/security/sunglasses
+	head = /obj/item/clothing/head/beret/sec/officer
+	suit = /obj/item/clothing/suit/armor/vest/security/officer
+
 /obj/item/radio/headset/headset_sec/alt/department/Initialize()
 	. = ..()
 	wires = new/datum/wires/radio(src)

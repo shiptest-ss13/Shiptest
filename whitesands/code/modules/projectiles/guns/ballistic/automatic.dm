@@ -94,8 +94,8 @@
 	fire_sound = 'sound/weapons/gun/rifle/shot.ogg'
 	icon_state = "aks74u"
 	fire_rate = 10
-	lefthand_file = 'whitesands/icons/mob/inhands/weapons/64x_guns_left.dmi'
-	righthand_file = 'whitesands/icons/mob/inhands/weapons/64x_guns_right.dmi'
+	lefthand_file = 'icons/mob/inhands/weapons/64x_guns_left.dmi'
+	righthand_file = 'icons/mob/inhands/weapons/64x_guns_right.dmi'
 	item_state = "aks74u"
 	weapon_weight = WEAPON_MEDIUM
 	w_class = WEIGHT_CLASS_NORMAL
@@ -104,12 +104,12 @@
 /obj/item/gun/ballistic/automatic/ak47
 	name = "AK-47"
 	desc = "An old assault rifle, dating back to 20th century. It is commonly used by various bandits, pirates and colonists thanks to its reliability and ease of maintenance."
-	icon = 'whitesands/icons/obj/guns/48x32guns.dmi'
+	icon = 'icons/obj/guns/48x32guns.dmi'
 	fire_sound = 'sound/weapons/gun/rifle/shot.ogg'
 	icon_state = "ak47"
 	item_state = "ak47"
-	lefthand_file = 'whitesands/icons/mob/inhands/weapons/64x_guns_left.dmi'
-	righthand_file = 'whitesands/icons/mob/inhands/weapons/64x_guns_right.dmi'
+	lefthand_file = 'icons/mob/inhands/weapons/64x_guns_left.dmi'
+	righthand_file = 'icons/mob/inhands/weapons/64x_guns_right.dmi'
 	fire_rate = 5
 	mag_display = TRUE
 	weapon_weight = WEAPON_MEDIUM
@@ -119,7 +119,7 @@
 /obj/item/gun/ballistic/automatic/ak47/nt
 	name = "NT-AK"
 	desc = "A cheap rip-off of an already cheap rifle. Comes with a foldable stock for easy storage, although accuracy is questionable when folded. Control click to toggle the stock."
-	icon = 'whitesands/icons/obj/guns/48x32guns.dmi'
+	icon = 'icons/obj/guns/48x32guns.dmi'
 	fire_sound = 'sound/weapons/gun/rifle/shot.ogg'
 	icon_state = "ak47_nt"
 	item_state = "ntak"
@@ -180,9 +180,9 @@
 /obj/item/gun/ballistic/automatic/ebr
 	name = "\improper M514 EBR"
 	desc = {"A cheap, reliable rifle often found in the hands of low-ranking Syndicate personnel. It's known for rather high stopping power and mild armor-piercing capabilities."}
-	icon = 'whitesands/icons/obj/guns/48x32guns.dmi'
-	lefthand_file = 'whitesands/icons/mob/inhands/weapons/64x_guns_left.dmi'
-	righthand_file = 'whitesands/icons/mob/inhands/weapons/64x_guns_right.dmi'
+	icon = 'icons/obj/guns/48x32guns.dmi'
+	lefthand_file = 'icons/mob/inhands/weapons/64x_guns_left.dmi'
+	righthand_file = 'icons/mob/inhands/weapons/64x_guns_right.dmi'
 	fire_sound = 'sound/weapons/gun/rifle/shot.ogg'
 	icon_state = "ebr"
 	item_state = "ebr"

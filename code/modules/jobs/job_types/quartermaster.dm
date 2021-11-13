@@ -48,3 +48,4 @@
 	neck = /obj/item/clothing/neck/tie/brown
 	head = /obj/item/clothing/head/supply_chief
 	backpack_contents = list(/obj/item/modular_computer/tablet/preset/cargo=1, /obj/item/clipboard=1)
+

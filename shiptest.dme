@@ -1,4 +1,4 @@
-g// DM Environment file for tgstation.dme.
+g// DM Environment file for shiptest.dme.
 // All manual changes should be made outside the BEGIN_ and END_ blocks.
 // New source code should be placed in .dm files: choose File/New --> Code File.
 // BEGIN_INTERNALS
@@ -1830,6 +1830,7 @@ g// DM Environment file for tgstation.dme.
 #include "code\modules\discord\discord_link_record.dm"
 #include "code\modules\discord\tgs_commands.dm"
 #include "code\modules\discord\toggle_notify.dm"
+#include "code\modules\disks\disk.dm"
 #include "code\modules\economy\_economy.dm"
 #include "code\modules\economy\account.dm"
 #include "code\modules\economy\pay_stand.dm"
@@ -3468,7 +3469,6 @@ g// DM Environment file for tgstation.dme.
 #include "whitesands\code\modules\projectiles\guns\ballistic\automatic.dm"
 #include "whitesands\code\modules\projectiles\guns\ballistic\derringer.dm"
 #include "whitesands\code\modules\projectiles\guns\ballistic\rifle.dm"
-#include "whitesands\code\modules\projectiles\guns\ballistic\shotgun.dm"
 #include "whitesands\code\modules\projectiles\guns\energy\energy_gun.dm"
 #include "whitesands\code\modules\projectiles\guns\energy\laser.dm"
 #include "whitesands\code\modules\projectiles\guns\energy\pulse.dm"

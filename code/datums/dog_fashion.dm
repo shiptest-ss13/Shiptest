@@ -179,3 +179,8 @@
 	name = "Festive REAL_NAME"
 	desc = "Ready to party!"
 	obj_icon_state = "festive"
+
+/datum/dog_fashion/head/cowboy
+	name = "Deputy REAL_NAME"
+	desc = "He's your huckleberry."
+	emote_see = list("squints into the middle distance.", "spins his revolver.")
