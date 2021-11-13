@@ -92,6 +92,9 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
+/obj/machinery/atmospherics/components/binary/pump{
+	name = "engine fuel pump"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "bf" = (
@@ -268,7 +271,7 @@
 /obj/machinery/computer/helm/viewscreen{
 	pixel_y = 32
 	},
-/obj/machinery/space_heater,
+/obj/machinery/atmospherics/components/unary/tank/toxins,
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "cy" = (
@@ -276,7 +279,7 @@
 /turf/open/floor/pod/light,
 /area/ship/hallway/fore)
 "cI" = (
-/obj/machinery/atmospherics/pipe/simple/orange/visible,
+/obj/machinery/atmospherics/pipe/layer_manifold,
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "cW" = (
@@ -421,11 +424,11 @@
 /turf/open/floor/pod/light,
 /area/ship/hallway/fore)
 "fF" = (
-/obj/machinery/atmospherics/pipe/simple/orange/visible{
-	dir = 5
-	},
 /obj/structure/cable{
 	icon_state = "2-4"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 9
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
@@ -462,12 +465,11 @@
 /turf/open/floor/plasteel/showroomfloor,
 /area/ship/science)
 "ge" = (
-/obj/machinery/atmospherics/components/binary/pump/on/layer1,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 6
-	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
+	dir = 8
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
@@ -480,11 +482,6 @@
 /turf/open/floor/pod/light,
 /area/ship/bridge)
 "gr" = (
-/obj/structure/closet/crate/radiation{
-	name = "fuel crate"
-	},
-/obj/item/stack/sheet/mineral/plasma/fifty,
-/obj/machinery/atmospherics/pipe/layer_manifold,
 /obj/machinery/light{
 	dir = 4
 	},
@@ -492,6 +489,8 @@
 	dir = 8;
 	pixel_x = 24
 	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/space_heater,
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "gt" = (
@@ -576,7 +575,7 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/atmospherics/pipe/manifold/orange/visible{
-	dir = 1
+	dir = 8
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
@@ -1112,6 +1111,7 @@
 /turf/open/floor/pod/light,
 /area/ship/crew/dorm)
 "pt" = (
+/obj/machinery/atmospherics/pipe/simple/orange/visible,
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "py" = (
@@ -1138,6 +1138,7 @@
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "pG" = (
+/obj/machinery/atmospherics/pipe/simple/orange/visible,
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "pK" = (
@@ -1288,9 +1289,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
-/obj/machinery/atmospherics/components/binary/pump{
-	name = "engine fuel pump"
-	},
+/obj/machinery/atmospherics/components/binary/pump/on/layer1,
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "rr" = (
@@ -1523,7 +1522,7 @@
 /turf/open/floor/plasteel/showroomfloor,
 /area/ship/science)
 "uJ" = (
-/obj/machinery/atmospherics/pipe/simple/orange/visible,
+/obj/machinery/atmospherics/pipe/layer_manifold,
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "uK" = (
@@ -1923,11 +1922,10 @@
 /turf/open/floor/eighties,
 /area/ship/crew/canteen)
 "zz" = (
-/obj/machinery/atmospherics/components/binary/pump/on/layer1,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 10
-	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
 	dir = 4
 	},
 /turf/open/floor/plating,
@@ -2166,11 +2164,6 @@
 	},
 /area/ship/hallway/starboard)
 "CY" = (
-/obj/structure/closet/crate/radiation{
-	name = "fuel crate"
-	},
-/obj/item/stack/sheet/mineral/plasma/fifty,
-/obj/machinery/atmospherics/pipe/layer_manifold,
 /obj/machinery/light{
 	dir = 8
 	},
@@ -2178,6 +2171,8 @@
 	dir = 4;
 	pixel_x = -24
 	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/space_heater,
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "Df" = (
@@ -2222,17 +2217,20 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/science)
 "DH" = (
-/obj/machinery/atmospherics/pipe/manifold/orange/visible{
-	dir = 1
-	},
 /obj/structure/cable{
 	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/manifold/orange/visible{
+	dir = 4
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "DI" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
+	},
+/obj/machinery/atmospherics/components/binary/pump{
+	name = "engine fuel pump"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
@@ -2374,11 +2372,11 @@
 /turf/open/floor/pod/light,
 /area/ship/cargo)
 "EX" = (
-/obj/machinery/atmospherics/pipe/simple/orange/visible{
-	dir = 9
-	},
 /obj/structure/cable{
 	icon_state = "2-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 5
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
@@ -2588,6 +2586,10 @@
 	},
 /obj/item/stack/sheet/mineral/uranium/twenty,
 /obj/effect/spawner/lootdrop/maintenance/two,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 9
+	},
+/obj/item/stack/sheet/mineral/plasma/fifty,
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "Hh" = (
@@ -2897,9 +2899,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
-/obj/machinery/atmospherics/components/binary/pump{
-	name = "engine fuel pump"
-	},
+/obj/machinery/atmospherics/components/binary/pump/on/layer1,
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "KX" = (
@@ -3079,13 +3079,15 @@
 /area/ship/engineering/electrical)
 "Mr" = (
 /obj/effect/turf_decal/delivery,
-/obj/machinery/atmospherics/components/unary/tank/toxins,
+/obj/machinery/atmospherics/components/unary/tank/air{
+	piping_layer = 1
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "Mt" = (
 /obj/effect/turf_decal/delivery,
-/obj/machinery/atmospherics/components/unary/tank/air{
-	piping_layer = 1
+/obj/machinery/atmospherics/components/unary/thermomachine{
+	piping_layer = 2
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
@@ -3130,6 +3132,10 @@
 	name = "fuel crate"
 	},
 /obj/item/stack/sheet/mineral/uranium/twenty,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 5
+	},
+/obj/item/stack/sheet/mineral/plasma/fifty,
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "Nt" = (
@@ -3274,10 +3280,6 @@
 	},
 /obj/structure/sign/poster/official/no_erp{
 	pixel_x = 32
-	},
-/obj/machinery/airalarm/all_access{
-	dir = 1;
-	pixel_y = -24
 	},
 /obj/machinery/button/door{
 	id = "bath";
@@ -3569,6 +3571,9 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/machinery/airalarm/all_access{
+	pixel_y = 24
+	},
 /turf/open/floor/plasteel/showroomfloor,
 /area/ship/crew/toilet)
 "RQ" = (
@@ -3823,10 +3828,10 @@
 /turf/open/floor/pod/dark,
 /area/ship/cargo)
 "Ur" = (
-/obj/machinery/atmospherics/components/unary/tank/air{
-	piping_layer = 1
-	},
 /obj/effect/turf_decal/delivery,
+/obj/machinery/atmospherics/components/unary/thermomachine{
+	piping_layer = 2
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "UC" = (
@@ -4026,7 +4031,9 @@
 /area/ship/crew/canteen)
 "WR" = (
 /obj/effect/turf_decal/delivery,
-/obj/machinery/atmospherics/components/unary/tank/toxins,
+/obj/machinery/atmospherics/components/unary/tank/air{
+	piping_layer = 1
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "WZ" = (
@@ -4110,7 +4117,7 @@
 /obj/machinery/computer/helm/viewscreen{
 	pixel_y = 32
 	},
-/obj/machinery/space_heater,
+/obj/machinery/atmospherics/components/unary/tank/toxins,
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "Yu" = (
