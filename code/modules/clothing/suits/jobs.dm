@@ -113,6 +113,23 @@
 	icon_state = "suitjacket_black"
 	item_state = "ro_suit"
 
+/obj/item/clothing/suit/toggle/lawyer/burgundy
+	name = "burgundy suit jacket"
+	desc = "A burgundy suit jacket. Makes you want to psychoanalyze."
+	icon_state = "suitjacket_burgundy"
+	item_state = "suitjacket_burgundy"
+
+/obj/item/clothing/suit/toggle/lawyer/navy
+	name = "navy suit jacket"
+	desc = "An orderly dress jacket."
+	icon_state = "suitjacket_navy"
+	item_state = "suitjacket_navy"
+
+/obj/item/clothing/suit/toggle/lawyer/charcoal
+	name = "charcoal suit jacket"
+	desc = "An enterprising dress jacket."
+	icon_state = "suitjacket_charcoal"
+	item_state = "suitjacket_charcoal"
 
 //Mime
 /obj/item/clothing/suit/toggle/suspenders
