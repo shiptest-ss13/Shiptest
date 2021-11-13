@@ -311,6 +311,7 @@
 /obj/item/gun/energy/printer/emp_act()
 	return
 
+//the future of mid-range borg marksmanship. Get tactical.
 /obj/item/gun/energy/printer/commando
 	name = "integrated TAC-rifle"
 	desc = "A shoulder-mounted high-caliber ballistic weapon. Capable of supporting prolonged encounters by printing heavy rounds directly off the host cyborg's power supplies."
