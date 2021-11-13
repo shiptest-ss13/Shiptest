@@ -18,7 +18,7 @@
 	if(istype(mover, /obj/projectile))
 		var/obj/projectile/proj_obj = mover
 		//Lets through bullets shot from behind the cover of the table
-		if(P.trajectory && angle2dir_cardinal(P.trajectory.angle) == dir)
+		if(proj_obj.trajectory && angle2dir_cardinal(proj_obj.trajectory.angle) == dir)
 			return TRUE
 		return FALSE
 	return attempted_dir != dir

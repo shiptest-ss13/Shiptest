@@ -235,16 +235,16 @@
 		user.visible_message("<span class='danger'>[user] starts flipping [src]!</span>", "<span class='notice'>You start flipping over the [src]!</span>")
 		if(do_after(user, max_integrity/4))
 			var/obj/structure/flippedtable/flipped = new flipped_table_type(src.loc)
-			T.name = "flipped [src.name]"
-			T.desc = "[src.desc] It is flipped!"
-			T.icon_state = src.base_icon_state
-			var/new_dir = get_dir(user, T)
-			T.dir = new_dir
+			flipped.name = "flipped [src.name]"
+			flipped.desc = "[src.desc] It is flipped!"
+			flipped.icon_state = src.base_icon_state
+			var/new_dir = get_dir(user, flipped)
+			flipped.dir = new_dir
 			if(new_dir == NORTH)
-				T.layer = BELOW_MOB_LAYER
-			T.max_integrity = src.max_integrity
-			T.obj_integrity = src.obj_integrity
-			T.table_type = src.type
+				flipped.layer = BELOW_MOB_LAYER
+			flipped.max_integrity = src.max_integrity
+			flipped.obj_integrity = src.obj_integrity
+			flipped.table_type = src.type
 			user.visible_message("<span class='danger'>[user] flips over the [src]!</span>", "<span class='notice'>You flip over the [src]!</span>")
 			playsound(src, 'sound/items/trayhit2.ogg', 100)
 			qdel(src)
