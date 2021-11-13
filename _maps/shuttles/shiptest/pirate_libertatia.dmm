@@ -251,13 +251,13 @@
 "mJ" = (
 /obj/structure/railing,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/landmark/start/depsec,
 /obj/structure/cable{
 	icon_state = "4-6"
 	},
 /obj/structure/extinguisher_cabinet{
 	pixel_y = 32
 	},
+/obj/effect/landmark/start/security_officer,
 /turf/open/floor/pod/light,
 /area/ship/security)
 "mU" = (
@@ -313,7 +313,7 @@
 	icon_state = "0-8"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/landmark/start/depsec,
+/obj/effect/landmark/start/security_officer,
 /turf/open/floor/pod/light,
 /area/ship/security)
 "nC" = (
@@ -494,9 +494,7 @@
 /turf/open/floor/mineral/plastitanium,
 /area/ship/security)
 "rF" = (
-/obj/item/gun/ballistic/shotgun/doublebarrel{
-	pixel_y = -5
-	},
+/obj/item/gun/ballistic/shotgun/doublebarrel,
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
 	},
@@ -538,6 +536,12 @@
 /obj/item/clothing/head/helmet/space,
 /obj/effect/turf_decal/industrial/warning/corner{
 	dir = 1
+	},
+/obj/structure/closet/wall/red{
+	dir = 4;
+	name = "suit locker";
+	pixel_x = -28;
+	req_one_access_txt = "1"
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/security)
