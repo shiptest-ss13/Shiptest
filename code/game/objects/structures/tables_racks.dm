@@ -36,6 +36,8 @@
 	smoothing_flags = SMOOTH_BITMASK
 	smoothing_groups = list(SMOOTH_GROUP_TABLES)
 	canSmoothWith = list(SMOOTH_GROUP_TABLES)
+	var/flipped_table_type = /obj/structure/flippedtable
+	var/can_flip = TRUE
 
 /obj/structure/table/examine(mob/user)
 	. = ..()
@@ -221,6 +223,28 @@
 /obj/structure/table/proc/AfterPutItemOnTable(obj/item/I, mob/living/user)
 	return
 
+/obj/structure/table/CtrlShiftClick(mob/living/user) // table flipping
+	. = ..()
+	if(!istype(user) || !user.can_interact_with(src))
+		return
+	if(can_flip)
+		user.visible_message("<span class='danger'>[user] starts flipping [src]!</span>", "<span class='notice'>You start flipping over the [src]!</span>")
+		if(do_after(user, max_integrity/4))
+			var/obj/structure/flippedtable/T = new flipped_table_type(src.loc)
+			T.name = "flipped [src.name]"
+			T.desc = "[src.desc] It is flipped!"
+			T.icon_state = src.base_icon_state
+			var/new_dir = get_dir(user, T)
+			T.dir = new_dir
+			if(new_dir == NORTH)
+				T.layer = BELOW_MOB_LAYER
+			T.max_integrity = src.max_integrity
+			T.obj_integrity = src.obj_integrity
+			T.table_type = src.type
+			user.visible_message("<span class='danger'>[user] flips over the [src]!</span>", "<span class='notice'>You flip over the [src]!</span>")
+			playsound(src, 'sound/items/trayhit2.ogg', 100)
+			qdel(src)
+
 /obj/structure/table/deconstruct(disassembled = TRUE, wrench_disassembly = 0)
 	if(!(flags_1 & NODECONSTRUCT_1))
 		var/turf/T = get_turf(src)
@@ -254,6 +278,7 @@
 	canSmoothWith = null
 	icon = 'icons/obj/smooth_structures/rollingtable.dmi'
 	icon_state = "rollingtable"
+	can_flip = FALSE
 	var/list/attached_items = list()
 
 /obj/structure/table/rolling/AfterPutItemOnTable(obj/item/I, mob/living/user)
@@ -479,6 +504,7 @@
 	max_integrity = 200
 	integrity_failure = 0.25
 	armor = list("melee" = 10, "bullet" = 30, "laser" = 30, "energy" = 100, "bomb" = 20, "bio" = 0, "rad" = 0, "fire" = 80, "acid" = 70)
+	can_flip = FALSE //It's bolted to the ground mate
 
 /obj/structure/table/reinforced/deconstruction_hints(mob/user)
 	if(deconstruction_ready)
@@ -535,6 +561,7 @@
 	can_buckle = 1
 	buckle_lying = NO_BUCKLE_LYING
 	buckle_requires_restraints = TRUE
+	can_flip = FALSE
 	var/mob/living/carbon/human/patient = null
 	var/obj/machinery/computer/operating/computer = null
 
