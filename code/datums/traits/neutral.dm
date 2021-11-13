@@ -229,12 +229,11 @@
 	name = "Vampirism"
 	desc = "You're a bloodsucking vampire, able to suck the blood of others, heal in coffins, transfer to them your own, and you're undead, do be careful not to run out of blood or give others too much of your own, lest peril come."
 	value = 0
-	mob_trait = TRAIT_BALD
 	gain_text = "<span class='notice'>Lazy.</span>"
 	lose_text = "<span class='notice'>Lazy.</span>"
 	medical_record_text = "Patient is a vampire."
 	allowed_species = list("fly" = "fly", "human" = "human", "moth" = "moth", "felinid" = "felinid", "lizard" = "lizard")
-	var/old_blood
+  var/old_blood
 	var/datum/action/vampire_quirk_drain/VA
 	var/datum/action/vampire_quirk_transfer/VD
 	var/list/old_traits
