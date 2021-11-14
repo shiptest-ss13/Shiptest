@@ -233,7 +233,7 @@
 	lose_text = "<span class='notice'>Lazy.</span>"
 	medical_record_text = "Patient is a vampire."
 	allowed_species = list("fly" = "fly", "human" = "human", "moth" = "moth", "felinid" = "felinid", "lizard" = "lizard")
-  var/old_blood
+	var/old_blood
 	var/datum/action/vampire_quirk_drain/VA
 	var/datum/action/vampire_quirk_transfer/VD
 	var/list/old_traits
