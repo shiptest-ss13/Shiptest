@@ -42,7 +42,7 @@
 	description = "A pod holding a dangerous threat."
 	suffix = "rockplanet_dangerpod.dmm"
 
-/*	//TODO: REMOVE THIS ONE
+/*	//TODO: MAKE THIS A MINOR RUIN
 /datum/map_template/ruin/rockplanet/pioneer
 	name = "Krusty Krab Pizza"
 	id = "pioneer"
@@ -126,3 +126,15 @@
 	suffix = "rockplanet_chaosmarine.dmm"
 	name = "Bloody Lair"
 	description = "Some old base. Besides the rust, it looks almost perfectly intact. But why was it abandoned?"
+
+/datum/map_template/ruin/rockplanet/rd_god
+	id = "rd_god"
+	suffix = "rockplanet_rd_god.dmm"
+	name = "Science experiment"
+	description = "Research Director? The experiment to become god has fai-"
+
+/datum/map_template/ruin/rockplanet/pandora
+	id = "pandora_arena"
+	suffix = "rockplanet_pandora.dmm"
+	name = "Pandora Arena"
+	description = "Some... thing has settled here."

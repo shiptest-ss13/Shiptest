@@ -47,6 +47,10 @@
 
 	var/sing_shot_length = 8
 	var/cooldown_time = 20
+	var/dungeon = FALSE //if true then will open gates on death
+
+/mob/living/simple_animal/hostile/asteroid/elite/pandora/dungeon
+	dungeon = TRUE
 
 /datum/action/innate/elite_attack/singular_shot
 	name = "Singular Shot"
@@ -168,6 +172,15 @@
 		if(get_dist(t, T) == ring)
 			new /obj/effect/temp_visual/hierophant/blast/pandora(t, src)
 	addtimer(CALLBACK(src, .proc/aoe_squares_2, T, (ring + 1), max_size), 2)
+
+/mob/living/simple_animal/hostile/asteroid/elite/pandora/death()
+	//open all pandora gates
+	if(dungeon)
+		for(var/obj/machinery/door/poddoor/D in GLOB.machines)
+			if(D.id == "pandora_dead")
+				D.open()
+
+	..()
 
 //The specific version of hiero's squares pandora uses
 /obj/effect/temp_visual/hierophant/blast/pandora
