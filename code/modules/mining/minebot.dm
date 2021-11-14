@@ -59,6 +59,10 @@
 	check_friendly_fire = FALSE
 	projectiletype = /obj/projectile/kinetic/miner
 
+/mob/living/simple_animal/hostile/mining_drone/rockplanet/SetOffenseBehavior()
+	. = ..()
+	vision_range = 9
+
 /obj/effect/spawner/lootdrop/minebot
 	loot = list(/obj/item/borg/upgrade/modkit/minebot_passthrough = 15,
 				/obj/item/borg/upgrade/modkit/chassis_mod = 15,
