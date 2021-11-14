@@ -48,7 +48,6 @@
 	desc = "The instructions printed on the side are faded, and the only thing that remains is mechanical bloodlust."
 	mode = MINEDRONE_ATTACK
 	mode = MINEDRONE_ATTACK
-	vision_range = 7
 	search_objects = 0
 	wander = FALSE
 	ranged = TRUE
