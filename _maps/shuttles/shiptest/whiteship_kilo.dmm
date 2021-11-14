@@ -946,7 +946,6 @@
 /turf/open/floor/plating,
 /area/ship/cargo)
 "jx" = (
-/obj/effect/turf_decal/bot_white,
 /obj/machinery/status_display/evac{
 	pixel_y = 32
 	},
@@ -962,6 +961,7 @@
 /obj/machinery/status_display/evac{
 	pixel_y = 32
 	},
+/obj/item/paicard,
 /turf/open/floor/carpet,
 /area/ship/crew)
 "jU" = (
@@ -1366,6 +1366,7 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/industrial/hatch/yellow,
+/obj/machinery/portable_atmospherics/scrubber/huge,
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "AE" = (
