@@ -50,22 +50,3 @@
 
 /datum/biome/mountain
 	turf_type = /turf/closed/mineral/random/jungle
-
-//gas planet biomes
-/*
-/datum/biome/void
-	turf_type = /turf/open/chasm/reebe_void
-	flora_types = list(
-	/obj/structure/flora/grass/jungle,
-	/obj/structure/flora/grass/jungle/b,
-	/obj/structure/flora/rock/jungle,
-	/obj/structure/flora/rock/pile/largejungle
-	)
-	flora_density = 5
-
-/datum/biome/floating_island_dangerous
-	turf_type = /turf/open/indestructible/supermatter_cascade/stationary
-
-/datum/biome/floating_island
-	/turf/open/floor/grass/reebe
-*/
