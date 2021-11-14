@@ -291,3 +291,15 @@
 	id = "ashwalker_shrine"
 	description = "A destroyed ashwalker village. What even happened here?"
 	suffix = "ashwalker_shrine.dmm"
+
+/datum/map_template/ruin/lavaland/fuckedupandevilclub
+	name = "Evil Club"
+	id = "evil_club"
+	description = "A truly fucked up and evil club."
+	suffix = "fuckedupandevilclub.dmm"
+
+/datum/map_template/ruin/lavaland/spookycrash
+	name = "Spooky Crash"
+	id = "spooky_crash"
+	description = "A spooky looking crash."
+	suffix = "SPOOKYCRASH.dmm"
