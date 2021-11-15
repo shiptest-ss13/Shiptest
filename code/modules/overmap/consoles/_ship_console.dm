@@ -8,12 +8,17 @@
 	var/list/concurrent_users = list()
 	/// Is this console view only? I.E. cant dock/etc
 	var/viewer = FALSE
+	/// Does this console not function if the ship it is on is bluespace jumping?
+	var/bluespace_interferes = TRUE
+	/// The name of the TGUI Window to initialize for ui_interact. Set to null to disallow new interactions.
+	var/tgui_interface_id
 
 /obj/machinery/computer/ship/Initialize()
 	. = ..()
 	addtimer(CALLBACK(src, .proc/recursive_connect), 1)
 
 /obj/machinery/computer/ship/proc/recursive_connect()
+	SHOULD_NOT_OVERRIDE(TRUE)
 	for(var/obj/structure/overmap/ship/simulated/sim_ship as anything in SSovermap.simulated_ships)
 		for(var/area/ship_area as anything in sim_ship.shuttle.shuttle_areas)
 			if(!(src in ship_area))
@@ -21,7 +26,12 @@
 			connect_to_parent(sim_ship)
 			return
 
+/**
+ * Handles the connection to a parent ship.
+ * You probably want to call the parent BEFORE you do your logic.
+ */
 /obj/machinery/computer/ship/proc/connect_to_parent(obj/structure/overmap/ship/simulated/parent)
+	SHOULD_CALL_PARENT(TRUE)
 	if(!istype(parent))
 		CRASH("Illegal parent")
 	parent.sync_with_helms_console()
@@ -35,6 +45,16 @@
 	parent.ship_computers |= src
 	RegisterSignal(parent, COMSIG_PARENT_QDELETING, .proc/handle_parent_qdel)
 
+/**
+ * This proc handles the disconnection from a parent ship.
+ * You probably want to call the parent AFTER you do your logic.
+ */
+/obj/machinery/computer/ship/proc/disconnect_from_parent()
+	SHOULD_CALL_PARENT(TRUE)
+	UnregisterSignal(current_ship, COMSIG_PARENT_QDELETING)
+	current_ship.ship_computers -= src
+	current_ship = null
+
 /obj/machinery/computer/ship/Destroy()
 	. = ..()
 	UnregisterSignal(current_ship, COMSIG_PARENT_QDELETING)
@@ -44,24 +64,37 @@
 	current_ship = null
 
 /obj/machinery/computer/ship/ui_interact(mob/user, datum/tgui/ui)
+	SHOULD_NOT_OVERRIDE(TRUE)
 	. = ..()
 	if(!current_ship)
 		recursive_connect()
 	if(!current_ship)
-		visible_message("Warning: Connect Ship lacks a Helms console. Unable to Initalize.")
-		return FALSE
-	if(current_ship.is_jumping())
+		visible_message("Warning: Connected Ship Database lacks a Helms console. Unable to Initalize.")
+		return
+	if(bluespace_interferes && current_ship.is_jumping())
 		say("Warning: Bluespace Jump in progress. Controls are temporarily suspended.")
-		return TRUE
 	if(isliving(user))
+		if(!length(concurrent_users))
+			playsound(src, 'sound/machines/terminal_on.ogg', 25, FALSE)
+			use_power(active_power_usage)
 		concurrent_users |= user
-	if(length(concurrent_users))
-		playsound(src, 'sound/machines/terminal_on.ogg', 25, FALSE)
-		use_power(active_power_usage)
+	if(ui)
+		if(ui.interface != tgui_interface_id)
+			ui.close(FALSE)
+			ui = null
+		else
+			ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		if(!tgui_interface_id)
+			say("Console Interface error while loading from Database.")
+			return
+		ui = new(user, src, tgui_interface_id)
+		ui.autoupdate = TRUE
+	ui.open()
 
 /obj/machinery/computer/ship/ui_status(mob/user)
-	if(current_ship.is_jumping() && !user.client.holder)
-		return UI_CLOSE
+	if(bluespace_interferes && current_ship.is_jumping())
+		return UI_UPDATE
 	return ..()
 
 /obj/machinery/computer/ship/ui_close(mob/user)
@@ -71,8 +104,8 @@
 		use_power(0)
 
 /obj/machinery/computer/ship/ui_act()
+	. = ..()
 	if(viewer)
 		return TRUE
-	if(current_ship.is_jumping())
+	if(bluespace_interferes && current_ship.is_jumping())
 		return TRUE
-	return ..()
