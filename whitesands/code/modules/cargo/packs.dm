@@ -7,7 +7,7 @@
 	crate_name = "hybrid taser crate"
 	dangerous = TRUE
 
-/datum/supply_pack/armory/armory/commanders
+/datum/supply_pack/security/armory/commanders
 	name = "Commander pistol crate"
 	desc = "Contains two modified M1911 'Commander' pistols, produced by Nanotrasen. Requires Armory access to open."
 	cost = 7500
@@ -27,7 +27,7 @@
 	cost = 5000
 	dangerous = TRUE
 
-/datum/supply_pack/armory/armory/makarovs
+/datum/supply_pack/security/armory/makarovs
 	name = "Makarov pistol crate"
 	desc = "Contains three concealable soviet-era Makarov pistols, produced by the Gorlex Marauders. Requires Armory access to open."
 	cost = 9500
@@ -36,7 +36,7 @@
 					/obj/item/gun/ballistic/automatic/pistol)
 	dangerous = TRUE
 
-/datum/supply_pack/Armory/m10mm_ammo
+/datum/supply_pack/security/armory/m10mm_ammo
 	name = "10mm Makarov Ammo Crate"
 	desc = "Contains five eight-round magazines for the Makarov pistol. Requires Armory access to open."
 	contains = list(/obj/item/ammo_box/magazine/m10mm,

@@ -111,6 +111,8 @@
 
 //WS Edit End - Alt-Job Titles
 
+//Shiptest outfits
+
 /datum/outfit/job/engineer/solgov
 	name = "Ship Engineer (SolGov)"
 
@@ -118,6 +120,11 @@
 	accessory = /obj/item/clothing/accessory/armband/engine
 	head = /obj/item/clothing/head/hardhat/orange
 	suit =  /obj/item/clothing/suit/hazardvest
+
+/datum/outfit/job/engineer/solgov/rebel
+	name = "Ship Engineer (Deserter)"
+
+	uniform = /obj/item/clothing/under/syndicate/camo
 
 /datum/outfit/job/engineer/pirate
 	name = "Ship's Engineer (Pirate)"

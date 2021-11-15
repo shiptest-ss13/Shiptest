@@ -90,7 +90,10 @@
 "em" = (
 /obj/effect/turf_decal/industrial/warning,
 /obj/structure/fans/tiny,
-/obj/docking_port/mobile,
+/obj/docking_port/mobile{
+	launch_status = 0;
+	port_direction = 2
+	},
 /turf/open/floor/plating,
 /area/ship/cargo)
 "eC" = (
@@ -303,9 +306,6 @@
 	icon_state = "0-4"
 	},
 /obj/machinery/power/smes/engineering,
-/obj/structure/cable/yellow{
-	icon_state = "0-4"
-	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/tech/techmaint,
@@ -1545,9 +1545,6 @@
 	},
 /obj/machinery/power/terminal{
 	dir = 8
-	},
-/obj/structure/cable/yellow{
-	icon_state = "0-8"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,

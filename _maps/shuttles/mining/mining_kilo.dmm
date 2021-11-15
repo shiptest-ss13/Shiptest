@@ -11,7 +11,7 @@
 /obj/structure/cable,
 /obj/machinery/power/terminal,
 /turf/open/floor/plating,
-/area/shuttle/mining)
+/area/ship/bridge)
 "c" = (
 /obj/item/clothing/suit/hazardvest{
 	desc = "A high-visibility lifejacket complete with whistle and slot for oxygen tanks.";
@@ -46,7 +46,7 @@
 	pixel_x = -22
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/shuttle/mining)
+/area/ship/bridge)
 "e" = (
 /obj/item/crowbar/red,
 /obj/item/wrench,
@@ -59,7 +59,7 @@
 /obj/structure/table,
 /obj/item/storage/toolbox/emergency,
 /turf/open/floor/plating,
-/area/shuttle/mining)
+/area/ship/bridge)
 "f" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/item/stock_parts/cell/high,
@@ -72,10 +72,10 @@
 	pixel_x = 24
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/shuttle/mining)
+/area/ship/bridge)
 "h" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
-/area/shuttle/mining)
+/area/ship/bridge)
 "j" = (
 /obj/structure/sign/warning/vacuum/external{
 	pixel_x = 32
@@ -94,7 +94,7 @@
 	dir = 1
 	},
 /turf/open/floor/plating,
-/area/shuttle/mining)
+/area/ship/bridge)
 "l" = (
 /obj/effect/turf_decal/box/corners,
 /obj/structure/cable{
@@ -104,7 +104,7 @@
 	pixel_y = -32
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/shuttle/mining)
+/area/ship/bridge)
 "m" = (
 /obj/item/clothing/mask/gas{
 	pixel_x = -4;
@@ -115,7 +115,7 @@
 	},
 /obj/structure/table,
 /turf/open/floor/mineral/plastitanium,
-/area/shuttle/mining)
+/area/ship/bridge)
 "o" = (
 /obj/structure/chair/comfy/shuttle{
 	dir = 1
@@ -124,7 +124,7 @@
 	dir = 1
 	},
 /turf/open/floor/mineral/titanium/yellow,
-/area/shuttle/mining)
+/area/ship/bridge)
 "p" = (
 /obj/machinery/light/small,
 /obj/effect/decal/cleanable/dirt,
@@ -138,7 +138,7 @@
 	pixel_y = -29
 	},
 /turf/open/floor/mineral/titanium/yellow,
-/area/shuttle/mining)
+/area/ship/bridge)
 "s" = (
 /obj/structure/table,
 /obj/item/stack/ore/iron{
@@ -150,7 +150,7 @@
 	pixel_y = -8
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/shuttle/mining)
+/area/ship/bridge)
 "t" = (
 /obj/effect/turf_decal/box/corners{
 	dir = 4
@@ -163,11 +163,11 @@
 	},
 /obj/machinery/portable_atmospherics/canister/air,
 /turf/open/floor/mineral/plastitanium,
-/area/shuttle/mining)
+/area/ship/bridge)
 "v" = (
 /obj/machinery/atmospherics/pipe/manifold4w/general/hidden/layer1,
 /turf/open/floor/mineral/titanium/yellow,
-/area/shuttle/mining)
+/area/ship/bridge)
 "x" = (
 /obj/structure/chair/comfy/shuttle{
 	dir = 1
@@ -176,7 +176,7 @@
 	dir = 9
 	},
 /turf/open/floor/mineral/titanium/yellow,
-/area/shuttle/mining)
+/area/ship/bridge)
 "y" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/frame/computer{
@@ -184,14 +184,14 @@
 	},
 /obj/effect/turf_decal/industrial/outline/yellow,
 /turf/open/floor/mineral/plastitanium,
-/area/shuttle/mining)
+/area/ship/bridge)
 "z" = (
 /obj/effect/turf_decal/box/corners,
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/shuttle/mining)
+/area/ship/bridge)
 "A" = (
 /obj/machinery/light/small,
 /obj/effect/turf_decal/industrial/warning{
@@ -199,7 +199,7 @@
 	},
 /obj/effect/turf_decal/industrial/warning/corner,
 /turf/open/floor/mineral/titanium/yellow,
-/area/shuttle/mining)
+/area/ship/bridge)
 "B" = (
 /obj/machinery/power/smes/shuttle/precharged{
 	dir = 1
@@ -212,12 +212,12 @@
 	name = "Engine Access"
 	},
 /turf/open/floor/plating,
-/area/shuttle/mining)
+/area/ship/bridge)
 "C" = (
 /obj/effect/turf_decal/industrial/warning,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer1,
 /turf/open/floor/mineral/titanium/yellow,
-/area/shuttle/mining)
+/area/ship/bridge)
 "F" = (
 /obj/structure/cable{
 	icon_state = "2-4"
@@ -227,7 +227,7 @@
 	},
 /obj/machinery/atmospherics/pipe/layer_manifold,
 /turf/open/floor/mineral/titanium/yellow,
-/area/shuttle/mining)
+/area/ship/bridge)
 "G" = (
 /obj/structure/chair/comfy/shuttle{
 	dir = 1
@@ -236,7 +236,7 @@
 	dir = 5
 	},
 /turf/open/floor/mineral/titanium/yellow,
-/area/shuttle/mining)
+/area/ship/bridge)
 "H" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/ore_box,
@@ -247,7 +247,7 @@
 	pixel_x = 24
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/shuttle/mining)
+/area/ship/bridge)
 "I" = (
 /obj/effect/turf_decal/corner/neutral,
 /obj/effect/turf_decal/corner/neutral{
@@ -264,16 +264,16 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/general/hidden/layer1,
 /turf/open/floor/plasteel/dark,
-/area/shuttle/mining)
+/area/ship/bridge)
 "J" = (
 /obj/machinery/status_display/shuttle,
 /turf/closed/wall/mineral/titanium/nodiagonal,
-/area/shuttle/mining)
+/area/ship/bridge)
 "K" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/firedoor/window,
 /turf/open/floor/plating,
-/area/shuttle/mining)
+/area/ship/bridge)
 "L" = (
 /obj/machinery/door/airlock/external{
 	name = "Mining Shuttle External Airlock"
@@ -294,11 +294,11 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /turf/open/floor/plating,
-/area/shuttle/mining)
+/area/ship/bridge)
 "M" = (
 /obj/structure/sign/departments/cargo,
 /turf/closed/wall/mineral/titanium/nodiagonal,
-/area/shuttle/mining)
+/area/ship/bridge)
 "O" = (
 /obj/machinery/door/airlock/external{
 	name = "Mining Shuttle External Airlock"
@@ -316,34 +316,34 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/general/hidden/layer1,
 /turf/open/floor/plating,
-/area/shuttle/mining)
+/area/ship/bridge)
 "P" = (
 /turf/closed/wall/mineral/titanium,
-/area/shuttle/mining)
+/area/ship/bridge)
 "Q" = (
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/machinery/computer/ship/helm,
 /turf/open/floor/mineral/plastitanium,
-/area/shuttle/mining)
+/area/ship/bridge)
 "S" = (
 /obj/machinery/power/shuttle/engine/electric{
 	dir = 1
 	},
 /obj/structure/cable,
 /turf/open/floor/plating/airless,
-/area/shuttle/mining)
+/area/ship/bridge)
 "T" = (
 /obj/item/folder/yellow,
 /obj/item/pen,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/table,
 /turf/open/floor/mineral/plastitanium,
-/area/shuttle/mining)
+/area/ship/bridge)
 "U" = (
 /obj/item/storage/firstaid/regular,
 /obj/structure/table,
 /turf/open/floor/mineral/plastitanium,
-/area/shuttle/mining)
+/area/ship/bridge)
 "V" = (
 /obj/machinery/power/smes/shuttle/precharged{
 	dir = 1
@@ -356,7 +356,7 @@
 	name = "Engine Access"
 	},
 /turf/open/floor/plating,
-/area/shuttle/mining)
+/area/ship/bridge)
 "W" = (
 /obj/effect/turf_decal/box/corners{
 	dir = 8
@@ -365,7 +365,7 @@
 	icon_state = "2-4"
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/shuttle/mining)
+/area/ship/bridge)
 "X" = (
 /obj/effect/turf_decal/box/corners{
 	dir = 1
@@ -377,7 +377,7 @@
 	dir = 8
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/shuttle/mining)
+/area/ship/bridge)
 "Z" = (
 /obj/effect/turf_decal/box/corners{
 	dir = 8
@@ -389,7 +389,7 @@
 	pixel_y = -32
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/shuttle/mining)
+/area/ship/bridge)
 
 (1,1,1) = {"
 a

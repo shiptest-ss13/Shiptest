@@ -155,6 +155,9 @@
 /area/ship/hallway/central)
 "cP" = (
 /obj/machinery/power/apc/auto_name/north,
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
 /turf/open/floor/wood/bamboo,
 /area/ship/crew/dorm)
 "dq" = (
@@ -641,6 +644,17 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
+"kp" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/hallway/central)
 "ks" = (
 /obj/machinery/atmospherics/pipe/manifold/cyan/visible{
 	dir = 8
@@ -1240,6 +1254,9 @@
 /obj/structure/sign/poster/official/no_erp{
 	pixel_y = 32
 	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/wood/bamboo,
 /area/ship/crew/dorm)
 "tL" = (
@@ -1328,6 +1345,9 @@
 	},
 /obj/machinery/door/airlock/wood/glass{
 	name = "Corporate Lounge"
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
 	},
 /turf/open/floor/wood/bamboo,
 /area/ship/crew/dorm)
@@ -1572,6 +1592,9 @@
 /obj/machinery/light{
 	dir = 1
 	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/wood/bamboo,
 /area/ship/crew/dorm)
 "yS" = (
@@ -1683,6 +1706,12 @@
 	},
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/cargo)
+"Al" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/wood/bamboo,
+/area/ship/crew/dorm)
 "Aq" = (
 /turf/template_noop,
 /area/template_noop)
@@ -1783,6 +1812,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
 "BJ" = (
@@ -3756,7 +3788,7 @@ Bq
 LA
 lU
 Uk
-lU
+kp
 JT
 wQ
 Ua
@@ -3882,7 +3914,7 @@ rF
 SB
 SB
 fO
-gt
+Al
 lx
 Ml
 gt
