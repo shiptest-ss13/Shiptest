@@ -4,24 +4,17 @@
 	icon_screen = "shuttle"
 	icon_keyboard = "tech_key"
 	circuit = /obj/item/circuitboard/computer/ship/helm
+	tgui_interface_id = "HelmConsole"
 	light_color = LIGHT_COLOR_FLARE
 	clicksound = null
 
-/obj/machinery/computer/ship/helm/ui_interact(mob/user, datum/tgui/ui)
-	ui = SStgui.try_update_ui(user, src, ui)
-	if(!ui)
-		// Register map objects
-		if(current_ship)
-			user.client.register_map_obj(current_ship.cam_screen)
-			user.client.register_map_obj(current_ship.cam_plane_master)
-			user.client.register_map_obj(current_ship.cam_background)
-			current_ship.update_screen()
-
-		// Open UI
-		ui = new(user, src, "HelmConsole", name)
-		ui.open()
-
 /obj/machinery/computer/ship/helm/ui_data(mob/user)
+	// Register the current ship with the user's client's plane master everytime we want to reload the ui.
+	if(current_ship)
+		user.client.register_map_obj(current_ship.cam_screen)
+		user.client.register_map_obj(current_ship.cam_plane_master)
+		user.client.register_map_obj(current_ship.cam_background)
+		current_ship.update_screen()
 	. = list()
 	.["integrity"] = current_ship.integrity
 	.["otherInfo"] = list()
