@@ -9,7 +9,7 @@
 /obj/machinery/computer/helm
 	name = "helm control console"
 	desc = "Used to view or control the ship."
-	icon_screen = "shuttle"
+	icon_screen = "navigation"
 	icon_keyboard = "tech_key"
 	circuit = /obj/item/circuitboard/computer/shuttle/helm
 	light_color = LIGHT_COLOR_FLARE

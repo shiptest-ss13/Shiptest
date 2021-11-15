@@ -588,6 +588,7 @@ GLOBAL_VAR_INIT(time_last_changed_position, 0)
 
 /obj/machinery/computer/card/centcom
 	name = "\improper CentCom identification console"
+	icon_screen = "idcentcom"
 	circuit = /obj/item/circuitboard/computer/card/centcom
 	req_access = list(ACCESS_CENT_CAPTAIN)
 
