@@ -19,3 +19,13 @@
 #define START 9 //Methane dwarf
 #define STARY 10 //Sad lame brown dwarf
 #define STARD 11 //White dwarf
+
+// Bluespace Jump states
+#define JUMP_STATE_OFF 0
+#define JUMP_STATE_CHARGING 1
+#define JUMP_STATE_IONIZING 2
+#define JUMP_STATE_FIRING 3
+#define JUMP_STATE_FINALIZED 4
+// Bluespace Jump numbers
+#define JUMP_CHARGE_DELAY (20 SECONDS)
+#define JUMP_CHARGEUP_TIME (3 MINUTES)

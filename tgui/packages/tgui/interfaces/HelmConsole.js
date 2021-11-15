@@ -1,12 +1,10 @@
-import { Fragment } from 'inferno';
-import { useBackend, useLocalState } from '../backend';
-import { Button, ByondUi, LabeledList, Knob, Input, Section, Grid, Box, ProgressBar, Slider, AnimatedNumber, Tooltip } from '../components';
-import { refocusLayout, Window } from '../layouts';
+import { useBackend } from '../backend';
+import { Button, ByondUi, LabeledList, Section, ProgressBar, AnimatedNumber } from '../components';
+import { Window } from '../layouts';
 import { Table } from '../components/Table';
-import { ButtonInput } from '../components/Button';
 
 export const HelmConsole = (props, context) => {
-  const { act, data, config } = useBackend(context);
+  const { data } = useBackend(context);
   const { canFly, mapRef, isViewer } = data;
   return (
     <Window
@@ -265,7 +263,6 @@ const ShipContent = (props, context) => {
 // Arrow directional controls
 const ShipControlContent = (props, context) => {
   const { act, data } = useBackend(context);
-  const { calibrating } = data;
   let flyable = (data.state === 'flying');
   //  DIRECTIONS const idea from Lyra as part of their Haven-Urist project
   const DIRECTIONS = {
@@ -295,13 +292,6 @@ const ShipControlContent = (props, context) => {
             icon="sign-in-alt"
             disabled={data.state !== 'flying'}
             onClick={() => act('dock_empty')} />
-          <Button
-            tooltip={calibrating ? "Cancel Jump" : "Bluespace Jump"}
-            tooltipPosition="left"
-            icon={calibrating ? "times" : "angle-double-right"}
-            color={calibrating ? "bad" : undefined}
-            disabled={data.state !== 'flying'}
-            onClick={() => act('bluespace_jump')} />
         </>
       )}>
       {data.state === 'idle' && (

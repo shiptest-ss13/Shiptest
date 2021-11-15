@@ -469,7 +469,8 @@
 	desc = "The bare minimum amount of machine and computer boards required to create a working spacecraft."
 	cost = 8000
 	contains = list(
-		/obj/item/circuitboard/computer/shuttle/helm,
+		/obj/item/circuitboard/computer/ship/helm,
+		/obj/item/circuitboard/computer/ship/bluespace_jump,
 		/obj/item/circuitboard/machine/shuttle/smes,
 		/obj/item/circuitboard/machine/shuttle/engine/electric
 	)

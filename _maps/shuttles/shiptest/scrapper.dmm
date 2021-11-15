@@ -455,7 +455,7 @@
 /area/ship/engineering/atmospherics)
 "dl" = (
 /obj/effect/turf_decal/delivery,
-/obj/machinery/computer/helm/viewscreen{
+/obj/machinery/computer/ship/helm/viewscreen{
 	pixel_y = 32
 	},
 /obj/machinery/space_heater,
@@ -2846,7 +2846,7 @@
 	pixel_y = 28
 	},
 /obj/effect/landmark/start/assistant,
-/obj/machinery/computer/helm/viewscreen{
+/obj/machinery/computer/ship/helm/viewscreen{
 	pixel_x = 32;
 	pixel_y = 32
 	},
@@ -3303,7 +3303,7 @@
 /area/ship/maintenance/starboard)
 "IC" = (
 /obj/effect/turf_decal/delivery,
-/obj/machinery/computer/helm/viewscreen{
+/obj/machinery/computer/ship/helm/viewscreen{
 	pixel_y = 32
 	},
 /obj/machinery/space_heater,
@@ -4359,7 +4359,7 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 8
 	},
-/obj/machinery/computer/helm/viewscreen{
+/obj/machinery/computer/ship/helm/viewscreen{
 	dir = 8;
 	pixel_x = 24
 	},
@@ -4486,7 +4486,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/science/robotics)
 "TO" = (
-/obj/machinery/computer/helm,
+/obj/machinery/computer/ship/helm,
 /obj/effect/turf_decal/box,
 /obj/effect/turf_decal/techfloor{
 	dir = 1
@@ -4677,7 +4677,7 @@
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
-/obj/machinery/computer/helm/viewscreen{
+/obj/machinery/computer/ship/helm/viewscreen{
 	pixel_x = 32;
 	pixel_y = 32
 	},

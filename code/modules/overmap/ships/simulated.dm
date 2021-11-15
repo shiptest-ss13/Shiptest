@@ -32,6 +32,15 @@
 	var/obj/structure/overmap/docked
 	///The docking port of the linked shuttle
 	var/obj/docking_port/mobile/shuttle
+	/// The helm console we are linked to.
+	var/obj/machinery/computer/ship/helm/helm
+	/// All ship consoles we are linked to. Yes the helm gets its own special var, get over it.
+	var/list/obj/machinery/computer/ship/ship_computers = list()
+
+	/// The modules the ship has installed. This is an assosciative list of lists, indexed by module slot.
+	var/list/modules = null
+	/// Total modularity of this ship. aka how many modules they get to install.
+	var/modularity = -1
 
 /obj/structure/overmap/ship/simulated/Initialize(mapload, obj/docking_port/mobile/_shuttle)
 	. = ..()
@@ -42,6 +51,9 @@
 		CRASH("Simulated overmap ship created without associated shuttle!")
 	name = shuttle.name
 	calculate_mass()
+	if(!sync_with_helms_console() && mapload)
+		stack_trace("mapload ship '[src]' spawned without a helms console on the ship itself")
+		message_admins("mapload ship [ADMIN_JMP(src)] spawned without a helms console, this may require intervention!")
 	initial_name()
 	refresh_engines()
 	check_loc()
@@ -49,6 +61,11 @@
 /obj/structure/overmap/ship/simulated/Destroy()
 	. = ..()
 	SSovermap.simulated_ships -= src
+	modules = null
+	docked = null
+	shuttle = null
+	helm = null
+	ship_computers = null
 
 /obj/structure/overmap/ship/simulated/attack_ghost(mob/user)
 	if(shuttle)
@@ -56,6 +73,22 @@
 		return TRUE
 	else
 		return
+
+/obj/structure/overmap/ship/simulated/proc/is_jumping()
+	for(var/obj/machinery/computer/ship/bluespace_jump/jump_console in ship_computers)
+		if(jump_console.jump_state != JUMP_STATE_OFF)
+			return TRUE
+	return FALSE
+
+/obj/structure/overmap/ship/simulated/proc/calculate_modularity_left()
+	. = modularity
+	for(var/slot in modules)
+		for(var/datum/ship_module/module in modules[slot])
+			if(module.cost <= 0)
+				continue
+			. -= module.cost
+	// If we are less than zero, return 0; WHY THE FUCK IS A NEGATIVE NUMBER TRUTHY
+	return . <= 0 ? 0 : .
 
 /obj/structure/overmap/ship/simulated/proc/initial_name()
 	if(mass < SHIP_SIZE_THRESHOLD)
@@ -182,6 +215,15 @@
 		. += length(get_area_turfs(shuttleArea))
 	mass = .
 	update_icon_state()
+
+/// Updates this ship with a new helms console. Depending on the size of the ship this can be a very laggy process!
+/obj/structure/overmap/ship/simulated/proc/sync_with_helms_console()
+	for(var/area/area as anything in shuttle.shuttle_areas)
+		for(var/obj/machinery/computer/ship/helm/helm in area)
+			src.helm = helm
+			helm.current_ship = src
+			return TRUE
+	return FALSE
 
 /**
   * Calculates the average fuel fullness of all engines.

@@ -53,7 +53,7 @@
   * Everything visible on the overmap: stations, ships, ruins, events, and more.
   *
   * This base class should be the parent of all objects present on the overmap.
-  * For the control counterparts, see [/obj/machinery/computer/helm].
+  * For the control counterparts, see [/obj/machinery/computer/ship/helm].
   * For the shuttle counterparts (ONLY USED FOR SHIPS), see [/obj/docking_port/mobile].
   *
   */
