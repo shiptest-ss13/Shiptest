@@ -5,6 +5,7 @@
 	icon_screen = "shuttle"
 	icon_keyboard = "tech_key"
 	circuit = /obj/item/circuitboard/computer/ship/bluespace_jump
+	tgui_interface_id = "BluespaceJumpConsole"
 	/// When are we allowed to jump
 	var/jump_allowed
 	/// Current state of our jump
@@ -28,14 +29,6 @@
 	.["state"] = jump_state
 	.["state_eta"] = DisplayTimeText(timeleft(jump_timer), 1)
 	.["final_eta"] = DisplayTimeText(world.time - jump_eta, 1)
-
-/obj/machinery/computer/ship/bluespace_jump/ui_interact(mob/user, datum/tgui/ui)
-	. = ..()
-	ui = SStgui.try_update_ui(user, src, ui)
-	if(!ui)
-		ui = new(user, src, "BluespaceJumpConsole", name)
-		ui.autoupdate = TRUE
-		ui.open()
 
 /obj/machinery/computer/ship/bluespace_jump/ui_act(action)
 	. = ..()
