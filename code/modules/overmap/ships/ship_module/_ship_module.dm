@@ -74,7 +74,7 @@ GLOBAL_LIST_INIT_TYPED(ship_modules, /datum/ship_module, populate_ship_modules()
 /datum/ship_module/process()
 	for(var/ship in installed_on)
 		var/obj/structure/ship_module/structure = installed_on[ship]
-		structure.tick()
+		structure.process()
 
 /datum/ship_module/proc/is_installed(obj/structure/overmap/ship/simulated/ship)
 	return ship in installed_on
