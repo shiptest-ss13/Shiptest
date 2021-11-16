@@ -168,6 +168,9 @@
 /obj/structure/disposalpipe/segment{
 	dir = 9
 	},
+/obj/machinery/portable_atmospherics/canister/nitrogen{
+	anchored = 1
+	},
 /turf/open/floor/mineral/titanium/tiled/white,
 /area/ship/science)
 "cW" = (
@@ -569,7 +572,9 @@
 /turf/closed/wall/mineral/titanium,
 /area/ship/crew/canteen)
 "ij" = (
-/obj/machinery/atmospherics/components/unary/tank/toxins,
+/obj/machinery/atmospherics/components/unary/tank/toxins{
+	dir = 1
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/electrical)
 "im" = (
@@ -629,8 +634,8 @@
 /obj/structure/cable{
 	icon_state = "5-10"
 	},
-/obj/machinery/atmospherics/components/binary/pump{
-	dir = 8
+/obj/machinery/atmospherics/pipe/layer_manifold{
+	dir = 4
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/electrical)
@@ -743,9 +748,6 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
 	},
-/obj/machinery/atmospherics/pipe/manifold/general/hidden{
-	dir = 1
-	},
 /obj/machinery/conveyor_switch/oneway{
 	id = "slimer"
 	},
@@ -762,7 +764,11 @@
 	pixel_x = -7;
 	pixel_y = -25
 	},
-/turf/open/floor/mineral/titanium/tiled/white,
+/obj/item/stack/tile/mineral/titanium/tiled/white,
+/obj/machinery/atmospherics/pipe/manifold/general/hidden{
+	dir = 1
+	},
+/turf/open/floor/plating,
 /area/ship/science)
 "la" = (
 /obj/structure/cable{
@@ -837,7 +843,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "0-2"
 	},
-/obj/machinery/atmospherics/pipe/simple/general/hidden{
+/obj/machinery/atmospherics/pipe/simple/general/hidden/layer2{
 	dir = 6
 	},
 /turf/open/floor/plating,
@@ -1368,7 +1374,7 @@
 /turf/open/floor/mineral/titanium/tiled/purple,
 /area/ship/science/ai_chamber)
 "uP" = (
-/obj/machinery/atmospherics/components/unary/portables_connector/visible,
+/obj/machinery/atmospherics/components/unary/portables_connector/visible/layer3,
 /turf/open/floor/plating,
 /area/ship/engineering/electrical)
 "uS" = (
@@ -2156,11 +2162,11 @@
 /turf/open/floor/mineral/titanium/tiled/white,
 /area/ship/science)
 "EG" = (
-/obj/machinery/atmospherics/pipe/layer_manifold{
-	dir = 4
-	},
 /obj/machinery/light/small{
 	dir = 1
+	},
+/obj/machinery/atmospherics/components/binary/pump/layer2{
+	dir = 4
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/electrical)
@@ -2511,7 +2517,7 @@
 "Iq" = (
 /obj/machinery/power/terminal,
 /obj/structure/cable/yellow,
-/obj/machinery/atmospherics/pipe/simple/general/hidden{
+/obj/machinery/atmospherics/pipe/simple/general/hidden/layer2{
 	dir = 5
 	},
 /turf/open/floor/plating,
@@ -2837,6 +2843,7 @@
 	id = "slimelock";
 	name = "Lockdown Shutters"
 	},
+/obj/item/pipe/trinary/flippable,
 /turf/open/floor/plating,
 /area/ship/science)
 "ME" = (
