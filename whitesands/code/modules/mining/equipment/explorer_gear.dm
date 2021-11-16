@@ -1,10 +1,8 @@
 /obj/item/clothing/suit/hooded/survivor
 	name = "survivor suit"
 	desc = "A ragged makeshift suit resembling the explorer suit, covered with the emblems of a failed revolution. It's been repaired so many times it's hard to tell if it's more suit or patch. The joints have been redesigned for quicker movement."
-
 	lefthand_file = 'whitesands/icons/mob/inhands/clothing/lefthand.dmi'
 	righthand_file = 'whitesands/icons/mob/inhands/clothing/righthand.dmi'
-
 	icon_state = "survivor_suit"
 	item_state = "survivor_suit"
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS
