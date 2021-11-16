@@ -515,8 +515,10 @@
 /turf/open/floor/plating,
 /area/ship/science/robotics)
 "hH" = (
-/obj/machinery/jukebox/disco/indestructible,
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/jukebox/disco{
+	req_access = null
+	},
 /turf/open/floor/plating,
 /area/ship/storage)
 "hI" = (
@@ -760,7 +762,6 @@
 /obj/machinery/button/door{
 	id = "slimekill";
 	name = "Coldroom Release Shutter Control";
-	normaldoorcontrol = 1;
 	pixel_x = -7;
 	pixel_y = -25
 	},
