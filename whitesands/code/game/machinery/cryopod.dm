@@ -370,9 +370,7 @@ GLOBAL_LIST_EMPTY(cryopod_computers)
 		announcer.announce("CRYOSTORAGE", mob_occupant.real_name, announce_rank, list())
 		visible_message("<span class='notice'>\The [src] hums and hisses as it moves [mob_occupant.real_name] into storage.</span>")
 
-	var/list/all_mob_contents = mob_occupant.GetAllContents()
-
-	for(var/obj/item/W as anything in all_mob_contents)
+	for(var/obj/item/W as anything in mob_occupant.GetAllContents())
 		if(W.loc.loc && (( W.loc.loc == loc ) || (W.loc.loc == control_computer_obj)))
 			continue//means we already moved whatever this thing was in
 			//I'm a professional, okay
@@ -384,7 +382,7 @@ GLOBAL_LIST_EMPTY(cryopod_computers)
 			else
 				mob_occupant.transferItemToLoc(W, loc, TRUE)
 
-	for(var/obj/item/W as anything in all_mob_contents)
+	for(var/obj/item/W as anything in mob_occupant.GetAllContents())
 		qdel(W)//because we moved all items to preserve away
 		//and yes, this totally deletes their bodyparts one by one, I just couldn't bother
 
