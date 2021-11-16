@@ -10,6 +10,7 @@
 	selection_color = "#ffdddd"
 	minimal_player_age = 14
 	exp_requirements = 300
+	officer = TRUE
 	wiki_page = "Head_of_Security" //WS Edit - Wikilinks/Warning
 	exp_type = EXP_TYPE_CREW
 	exp_type_department = EXP_TYPE_SECURITY

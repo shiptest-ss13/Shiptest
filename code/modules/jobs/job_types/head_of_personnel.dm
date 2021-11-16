@@ -10,6 +10,7 @@
 	selection_color = "#ddddff"
 	minimal_player_age = 10
 	exp_requirements = 180
+	officer = TRUE
 	wiki_page = "Head_of_Personnel" //WS Edit - Wikilinks/Warning
 	exp_type = EXP_TYPE_CREW
 	exp_type_department = EXP_TYPE_SERVICE
