@@ -14,7 +14,7 @@
 	name = "Alternative Bluespace Jump Device";
 	timer_set = 180
 	},
-/turf/open/floor/carpet/nanoweave/red,
+/turf/open/floor/plasteel/tech/grid,
 /area/ship/storage)
 "b" = (
 /obj/structure/cable{
@@ -23,18 +23,11 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers{
 	dir = 8
 	},
-/obj/structure/window/reinforced/spawner,
-/obj/structure/window/reinforced/spawner{
-	dir = 1
-	},
 /obj/machinery/cryopod/latejoin{
 	density = 0
 	},
 /obj/machinery/power/apc/auto_name/west{
 	pixel_x = -6
-	},
-/obj/structure/window/reinforced/spawner{
-	dir = 8
 	},
 /obj/machinery/power/port_gen/pacman/mrs,
 /obj/item/stack/ore/diamond,
@@ -43,7 +36,14 @@
 /obj/item/stack/sheet/mineral/diamond,
 /obj/item/stack/ore/diamond,
 /obj/item/stack/ore/diamond,
-/turf/open/floor/carpet/nanoweave/red,
+/obj/structure/window/reinforced/tinted,
+/obj/structure/window/reinforced/tinted{
+	dir = 8
+	},
+/obj/structure/window/reinforced/tinted{
+	dir = 1
+	},
+/turf/open/floor/plasteel/tech/grid,
 /area/ship/storage)
 "c" = (
 /obj/item/clothing/mask/gas,
@@ -59,10 +59,6 @@
 	pixel_x = 5
 	},
 /obj/machinery/light/floor,
-/obj/structure/window/reinforced/spawner{
-	dir = 4
-	},
-/obj/structure/window/reinforced/spawner,
 /obj/structure/fans/tiny,
 /obj/machinery/door/window{
 	dir = 1
@@ -104,7 +100,12 @@
 /obj/item/reagent_containers/glass/beaker/large,
 /obj/item/reagent_containers/glass/beaker/large,
 /obj/item/reagent_containers/glass/beaker/large,
-/turf/open/floor/carpet/nanoweave/red,
+/obj/item/areaeditor/shuttle,
+/obj/structure/window/reinforced/tinted,
+/obj/structure/window/reinforced/tinted{
+	dir = 4
+	},
+/turf/open/floor/plasteel/tech/grid,
 /area/ship/storage)
 
 (1,1,1) = {"
