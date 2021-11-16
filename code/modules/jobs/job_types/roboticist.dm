@@ -59,6 +59,20 @@
 	alt_suit = null
 	dcoat = /obj/item/clothing/suit/hooded/wintercoat/science
 
+/datum/outfit/job/roboticist/engineer
+	name = "Roboticist (Engine Technician)"
+
+	belt = /obj/item/storage/belt/utility/full/engi
+	l_pocket = /obj/item/pda/toxins
+	alt_uniform = /obj/item/clothing/under/rank/rnd/roboticist/mech_engineer
+	suit = /obj/item/clothing/suit/toggle/hazard
+	alt_suit = /obj/item/clothing/suit/toggle/labcoat/science
+	shoes = /obj/item/clothing/shoes/workboots
+	head = /obj/item/clothing/head/hardhat
+	r_pocket = /obj/item/t_scanner
+
+	box = /obj/item/storage/box/survival/engineer
+
 /datum/outfit/job/roboticist/seniorroboticist
 	name = "Roboticist (Senior Roboticist)"
 

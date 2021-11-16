@@ -99,3 +99,17 @@
 	name = "Field Engineer (Deserter)"
 
 	uniform = /obj/item/clothing/under/syndicate/camo
+
+/datum/outfit/job/miner/scientist
+	name = "Minerologist"
+
+	belt = /obj/item/pda/toxins
+	uniform = /obj/item/clothing/under/rank/cargo/miner/hazard
+	alt_uniform = /obj/item/clothing/under/rank/rnd/roboticist
+	suit = /obj/item/clothing/suit/toggle/labcoat/science
+	alt_suit = /obj/item/clothing/suit/toggle/hazard
+	dcoat = /obj/item/clothing/suit/hooded/wintercoat/science
+
+	backpack = /obj/item/storage/backpack/science
+	satchel = /obj/item/storage/backpack/satchel/tox
+	courierbag = /obj/item/storage/backpack/messenger/tox
