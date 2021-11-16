@@ -34,6 +34,7 @@
 /obj/item/clothing/head/HoS/cowboy
 	name = "sheriff's hat"
 	desc = "A stalwart white stetson adorned with a sheriff's badge. A symbol of excellence, authority, and old-fashioned style."
+	icon = 'whitesands/icons/obj/clothing/hats.dmi'
 	icon_state = "cowboyhos"
 
 	dog_fashion = /datum/dog_fashion/head/cowboy

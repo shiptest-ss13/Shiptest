@@ -91,6 +91,18 @@
 	resistance_flags = NONE
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/exo/large
 
+/obj/item/clothing/suit/toggle/hazard
+	name = "high-visibility jacket"
+	desc = "A highlighter-yellow jacket with reflective stripes."
+	icon_state = "jacket_hazard"
+	item_state = "jacket_hazard"
+	blood_overlay_type = "coat"
+	body_parts_covered = CHEST|ARMS
+	togglename = "zipper"
+	allowed = list(/obj/item/flashlight, /obj/item/tank/internals/emergency_oxygen, /obj/item/tank/internals/plasmaman, /obj/item/t_scanner, /obj/item/radio)
+	resistance_flags = NONE
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/exo/large
+
 //Lawyer
 /obj/item/clothing/suit/toggle/lawyer
 	name = "blue suit jacket"
