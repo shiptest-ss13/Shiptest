@@ -28,6 +28,8 @@ GLOBAL_LIST_INIT_TYPED(ship_modules, /datum/ship_module, populate_ship_modules()
 	var/should_process = FALSE
 	/// Installed ships, for tracking purposes
 	var/list/installed_on = list()
+	/// The strucutre to spawn when a module is installed onto a ship
+	var/structure_path
 
 /datum/ship_module/New()
 	. = ..()
@@ -41,11 +43,11 @@ GLOBAL_LIST_INIT_TYPED(ship_modules, /datum/ship_module, populate_ship_modules()
 	else if(force)
 		stack_trace("FORCED QDEL ON SHIP MODULE")
 	for(var/ship in installed_on)
-		Uninstall(ship)
+		uninstall(ship)
 	STOP_PROCESSING(SSovermap, src)
 	return ..()
 
-/datum/ship_module/proc/CanInstall(obj/structure/overmap/ship/simulated/ship)
+/datum/ship_module/proc/can_install(obj/structure/overmap/ship/simulated/ship, mob/user)
 	SHOULD_CALL_PARENT(TRUE)
 	if(slot == SHIP_MODULE_NONE)
 		return FALSE
@@ -53,12 +55,18 @@ GLOBAL_LIST_INIT_TYPED(ship_modules, /datum/ship_module, populate_ship_modules()
 	var/list/slot_modules = ship_modules[slot]
 	// We are unique and modules already exist in this slot/
 	if((flags & SHIP_MODULE_UNIQUE) && length(slot_modules))
+		if(user)
+			to_chat(user, "<span class='warning'>This module conflicts with another installed module.</span>")
 		return FALSE
 	// We are infact already installed.
-	if(IsInstalled(ship))
+	if(is_installed(ship))
+		if(user)
+			to_chat(user, "<span class='warning'>This module is already installed on this ship.</span>")
 		return FALSE
 	// Ship can't afford us.
 	if(ship.calculate_modularity_left() < cost)
+		if(user)
+			to_chat(user, "<span class='warning'>This ship cannot support this module due to modularity costs.</span>")
 		return FALSE
 	// They passed all of the checks, carry on.
 	return TRUE
@@ -66,26 +74,29 @@ GLOBAL_LIST_INIT_TYPED(ship_modules, /datum/ship_module, populate_ship_modules()
 /datum/ship_module/process()
 	for(var/ship in installed_on)
 		var/obj/structure/ship_module/structure = installed_on[ship]
-		structure.Tick()
+		structure.tick()
 
-/datum/ship_module/proc/IsInstalled(obj/structure/overmap/ship/simulated/ship)
+/datum/ship_module/proc/is_installed(obj/structure/overmap/ship/simulated/ship)
 	return ship in installed_on
 
-/datum/ship_module/proc/Install(obj/structure/overmap/ship/simulated/ship, obj/structure/ship_module/structure)
+/datum/ship_module/proc/install(obj/structure/overmap/ship/simulated/ship, mob/user, turf/location)
 	SHOULD_CALL_PARENT(TRUE)
+	if(!can_install(ship, user))
+		return FALSE
+	installed_on[ship] = new structure_path(location)
 	ship.modules[slot] += src
-	installed_on[ship] = structure
-	RegisterSignal(ship, COMSIG_PARENT_QDELETING, .proc/HandleShipQDel)
-	return
+	RegisterSignal(ship, COMSIG_PARENT_QDELETING, .proc/handle_ship_qdel)
+	return TRUE
 
-/datum/ship_module/proc/Uninstall(obj/structure/overmap/ship/simulated/ship)
+/datum/ship_module/proc/uninstall(obj/structure/overmap/ship/simulated/ship)
 	SHOULD_CALL_PARENT(TRUE)
 	ship.modules[slot] -= src
+	qdel(installed_on[ship])
 	installed_on -= ship
 	UnregisterSignal(ship, COMSIG_PARENT_QDELETING)
-	return
+	return TRUE
 
-/datum/ship_module/proc/HandleShipQDel(var/ship)
+/datum/ship_module/proc/handle_ship_qdel(ship)
 	SIGNAL_HANDLER
 	UnregisterSignal(ship, COMSIG_PARENT_QDELETING)
 	installed_on -= ship

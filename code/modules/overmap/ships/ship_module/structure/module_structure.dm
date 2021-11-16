@@ -1,20 +1,17 @@
 /obj/structure/ship_module
 	name = "Broken Ship Module"
-	var/datum/ship_module/module_path
+	/// The ship we are located on
 	var/obj/structure/overmap/ship/simulated/parent = null
+	/// The instance of the module managing us
+	var/datum/ship_module/module_instance
 
-/obj/structure/ship_module/Initialize()
+/obj/structure/ship_module/Initialize(datum/ship_module/module_instance, obj/structure/overmap/ship/simulated/parent, mob/user)
 	. = ..()
-	for(var/obj/machinery/computer/ship/helm/helm in get_area(src))
-		parent = helm.current_ship
-		if(istype(parent))
-			on_creation()
-			return
-	stack_trace("Failed to obtain parent ship.")
-	return INITIALIZE_HINT_QDEL
+	src.module_instance = module_instance
+	src.parent = parent
 
-/obj/structure/ship_module/proc/on_creation()
-	return // TODO
-
-/obj/structure/ship_module/proc/Tick()
-	return
+/obj/structure/ship_module/Destroy()
+	. = ..()
+	parent = null
+	module_instance.uninstall(parent)
+	module_instance = null
