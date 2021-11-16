@@ -1,16 +1,14 @@
 /obj/item/clothing/under/rank/command
 	desc = "A standard command jumpsuit."
 	name = "command jumpsuit"
-	icon = 'whitesands/icons/obj/clothing/under/command.dmi'
-	mob_overlay_icon = 'whitesands/icons/mob/clothing/under/command.dmi'
+	icon = 'icons/obj/clothing/under/command.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/under/command.dmi'
 	icon_state = "cmd"
 	item_state = "w_suit"
 
 /obj/item/clothing/under/rank/command/skirt
 	desc = "A standard command jumpskirt."
 	name = "command jumpskirt"
-	icon = 'whitesands/icons/obj/clothing/under/command.dmi'
-	mob_overlay_icon = 'whitesands/icons/mob/clothing/under/command.dmi'
 	icon_state = "cmd_skirt"
 	body_parts_covered = CHEST|GROIN|ARMS
 	can_adjust = FALSE

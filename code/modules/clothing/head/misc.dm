@@ -1,8 +1,6 @@
 
 /obj/item/clothing/head/centhat
 	name = "\improper CentCom hat"
-	icon = 'whitesands/icons/obj/clothing/hats.dmi'
-	mob_overlay_icon = 'whitesands/icons/mob/clothing/head.dmi'
 	icon_state = "centcom"
 	desc = "It's good to be emperor."
 	item_state = "that"
@@ -519,8 +517,6 @@
 /obj/item/clothing/head/aclfcap
 	name = "2nd Battlegroup peaked cap"
 	desc = "A cap worn by officers of the Gorlex Marauders 2nd Battlegroup, or as they say, the ACLF."
-	icon = 'whitesands/icons/obj/clothing/hats.dmi'
-	mob_overlay_icon = 'whitesands/icons/mob/clothing/head.dmi'
 	icon_state = "aclfcap"
 	item_state = "aclfcap"
 	flags_inv = 0
