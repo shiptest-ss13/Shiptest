@@ -230,8 +230,8 @@
 	name = "Vampirism"
 	desc = "You're a bloodsucking vampire, able to suck the blood of others, heal in coffins, transfer to them your own, and you're undead, do be careful not to run out of blood or give others too much of your own, lest peril come."
 	value = 0
-	gain_text = "<span class='notice'>Lazy.</span>"
-	lose_text = "<span class='notice'>Lazy.</span>"
+	gain_text = "<span class='notice'>Your blood is accursed, feed on others lest you become dry and fall apart, however your blood is also helpful to others which are not vampires, and you may gift them, careful for them not to become like you.</span>"
+	lose_text = "<span class='notice'>You feel blessed, your blood no longer cursed.</span>"
 	medical_record_text = "Patient is a vampire."
 	allowed_species = list("fly" = "fly", "human" = "human", "moth" = "moth", "felinid" = "felinid", "lizard" = "lizard")
 	var/old_blood
@@ -280,7 +280,7 @@
 
 /datum/action/vampire_quirk_drain
 	name = "Drain Victim"
-	desc = "Leech blood from any carbon victim you are passively grabbing."
+	desc = "Leech blood from any compatible victim you are passively grabbing."
 	check_flags = AB_CHECK_CONSCIOUS
 	icon_icon = 'icons/effects/bleed.dmi'
 	button_icon_state = "bleed1"
