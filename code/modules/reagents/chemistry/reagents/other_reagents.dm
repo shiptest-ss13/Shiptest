@@ -53,8 +53,8 @@
 		M.adjustBruteLoss(-healing*REM, 0)
 		M.adjustFireLoss(-healing*REM, 0)
 		M.Jitter(2)
+		. = 1
 	..()
-	. = 1
 
 /datum/reagent/blood/true_draculine/overdose_process(mob/living/carbon/human/M)
 	if(M.dna.species.exotic_blood)
@@ -65,7 +65,9 @@
 		M.Jitter(6)
 	else
 		if(current_cycle >= 50)
-			M.reagents.remove_addiction(/datum/reagent/blood/true_draculine)
+			for(var/datum/reagent/addiction in M.reagents.addiction_list)
+				if(addiction.name == "True Draculine")
+					M.reagents.remove_addiction(addiction)
 			M.add_quirk(/datum/quirk/vampire)
 	..()
 	. = 1

@@ -189,11 +189,12 @@
 	RegisterSignal(H, COMSIG_CARBON_UNEQUIP_HAT, .proc/unequip_hat)
 
 /datum/quirk/bald/remove()
-	var/mob/living/carbon/human/H = quirk_holder
-	H.hairstyle = old_hair
-	H.update_hair()
-	UnregisterSignal(H, list(COMSIG_CARBON_EQUIP_HAT, COMSIG_CARBON_UNEQUIP_HAT))
-	SEND_SIGNAL(H, COMSIG_CLEAR_MOOD_EVENT, "bad_hair_day")
+	if(quirk_holder)
+		var/mob/living/carbon/human/H = quirk_holder
+		H.hairstyle = old_hair
+		H.update_hair()
+		UnregisterSignal(H, list(COMSIG_CARBON_EQUIP_HAT, COMSIG_CARBON_UNEQUIP_HAT))
+		SEND_SIGNAL(H, COMSIG_CLEAR_MOOD_EVENT, "bad_hair_day")
 
 /datum/quirk/bald/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
@@ -251,15 +252,16 @@
 	H.dna.species.species_traits |= list(DRINKSBLOOD)
 
 /datum/quirk/vampire/remove()
-	var/mob/living/carbon/human/H = quirk_holder
-	if(VA)
-		VA.Remove(H)
-	if(VD)
-		VD.Remove(H)
-	H.dna.species.exotic_blood = ""
-	H.dna.blood_type = old_blood
-	H.dna.species.inherent_traits = old_traits
-	H.dna.species.species_traits ^= list(DRINKSBLOOD)
+	if(quirk_holder)
+		var/mob/living/carbon/human/H = quirk_holder
+		if(VA)
+			VA.Remove(H)
+		if(VD)
+			VD.Remove(H)
+		H.dna.species.exotic_blood = ""
+		H.dna.blood_type = old_blood
+		H.dna.species.inherent_traits = old_traits
+		H.dna.species.species_traits ^= list(DRINKSBLOOD)
 
 /datum/quirk/vampire/on_process()
 	var/mob/living/carbon/human/C = quirk_holder
@@ -280,6 +282,8 @@
 	name = "Drain Victim"
 	desc = "Leech blood from any carbon victim you are passively grabbing."
 	check_flags = AB_CHECK_CONSCIOUS
+	icon_icon = 'icons/effects/bleed.dmi'
+	button_icon_state = "bleed1"
 
 /datum/action/vampire_quirk_drain/Trigger()
 	. = ..()
@@ -288,7 +292,7 @@
 		if(H.quirk_cooldown["Vampire"] >= world.time)
 			to_chat(H, "<span class='warning'>You just drained blood, wait a few seconds!</span>")
 			return
-		if(H.pulling && iscarbon(H.pulling))
+		if(H.pulling && iscarbon(H.pulling) && H.grab_state == GRAB_PASSIVE)
 			var/mob/living/carbon/victim = H.pulling
 			if(H.blood_volume >= BLOOD_VOLUME_MAXIMUM)
 				to_chat(H, "<span class='warning'>You're already full!</span>")
@@ -328,6 +332,8 @@
 	name = "Blood Transfer"
 	desc = "Transfer your own tainted blood to one from which you could feed."
 	check_flags = AB_CHECK_CONSCIOUS
+	icon_icon = 'icons/effects/bleed.dmi'
+	button_icon_state = "bleed9"
 
 /datum/action/vampire_quirk_transfer/Trigger()
 	. = ..()
@@ -336,7 +342,7 @@
 		if(H.quirk_cooldown["Vampire Transfer"] >= world.time)
 			to_chat(H, "<span class='warning'>You just transfered blood, wait a few seconds!</span>")
 			return
-		if(H.pulling && iscarbon(H.pulling))
+		if(H.pulling && iscarbon(H.pulling) && H.grab_state == GRAB_PASSIVE)
 			var/mob/living/carbon/victim = H.pulling
 			if(victim.blood_volume >= BLOOD_VOLUME_MAXIMUM)
 				to_chat(H, "<span class='warning'>They're already full!</span>")
