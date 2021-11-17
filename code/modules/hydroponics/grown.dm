@@ -84,16 +84,8 @@
 		if(seed)
 			for(var/datum/plant_gene/trait/T in seed.genes)
 				T.on_attackby(src, O, user)
-
 //Ghetto Seed Extraction
-/obj/item/reagent_containers/food/snacks/grown/attackby(obj/item/W, mob/user, params)
-	if(W.get_sharpness())
-		playsound(loc, 'sound/weapons/slice.ogg', 50, TRUE, -1)
-		user.visible_message("<span class='notice'>[user] starts slicing apart \the [src].</span>", "<span class='notice'>You start slicing apart \the [src]...</span>", "<span class='hear'>You hear the sound of a sharp object slicing some plant matter.</span>")
-		if(do_after(user, 30, target = src))
-			to_chat(user, "<span class='notice'>You slice apart the [src]! You went too far and the tiny remaining scraps are worthless!</span>")
-			seedify(src, 1, TRUE, TRUE, src, user)
-	else
+	if(!slice_path)
 		switch(W.tool_behaviour)
 			if(TOOL_SCREWDRIVER)
 				playsound(loc, 'sound/weapons/bite.ogg', 50, TRUE, -1)
@@ -120,14 +112,18 @@
 					seedify(src, 1, TRUE, FALSE, src, user)
 					squash(user)
 			if(TOOL_WRENCH)
-				playsound(loc, 'sound/weapons/smash.ogg', 50, TRUE, -1)
+				playsound(loc, 'sound/misc/splort.ogg', 50, TRUE, -1)
 				user.visible_message("<span class='notice'>[user] starts wackng \the [src].</span>", "<span class='notice'>You start wacking \the [src]...</span>", "<span class='hear'>You hear the sound of a plant being wacked violently.</span>")
 				if(do_after(user, 17, target = src))
 					to_chat(user, "<span class='notice'>You smash [src]! Sadly there's nothing left of it other than the seeds and some junk.</span>")
 					seedify(src, 1, TRUE, FALSE, src, user)
 					squash(user)
-			else
-				return ..()
+		if(W.get_sharpness())
+			playsound(loc, 'sound/weapons/slice.ogg', 50, TRUE, -1)
+			user.visible_message("<span class='notice'>[user] starts slicing apart \the [src].</span>", "<span class='notice'>You start slicing apart \the [src]...</span>", "<span class='hear'>You hear the sound of a sharp object slicing some plant matter.</span>")
+			if(do_after(user, 30, target = src))
+				to_chat(user, "<span class='notice'>You slice apart the [src]! You went too far and the tiny remaining scraps are worthless!</span>")
+				seedify(src, 1, TRUE, TRUE, src, user)
 
 // Various gene procs
 /obj/item/reagent_containers/food/snacks/grown/attack_self(mob/user)
