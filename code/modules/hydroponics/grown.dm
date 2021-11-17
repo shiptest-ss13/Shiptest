@@ -86,7 +86,7 @@
 				T.on_attackby(src, O, user)
 //Ghetto Seed Extraction
 	if(!slice_path)
-		switch(W.tool_behaviour)
+		switch(O.tool_behaviour)
 			if(TOOL_SCREWDRIVER)
 				playsound(loc, 'sound/weapons/bite.ogg', 50, TRUE, -1)
 				user.visible_message("<span class='notice'>[user] starts digging into \the [src].</span>", "<span class='notice'>You start digging into \the [src]...</span>", "<span class='hear'>You hear the sound of a sharp object penetrating some plant matter.</span>")
@@ -118,7 +118,7 @@
 					to_chat(user, "<span class='notice'>You smash [src]! Sadly there's nothing left of it other than the seeds and some junk.</span>")
 					seedify(src, 1, TRUE, FALSE, src, user)
 					squash(user)
-		if(W.get_sharpness())
+		if(O.get_sharpness())
 			playsound(loc, 'sound/weapons/slice.ogg', 50, TRUE, -1)
 			user.visible_message("<span class='notice'>[user] starts slicing apart \the [src].</span>", "<span class='notice'>You start slicing apart \the [src]...</span>", "<span class='hear'>You hear the sound of a sharp object slicing some plant matter.</span>")
 			if(do_after(user, 30, target = src))
