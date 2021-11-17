@@ -157,7 +157,7 @@
 	cost = 700
 
 /datum/gear/tablebell
-	display_name "table bell, brass"
+	display_name = "table bell, brass"
 	path = /obj/item/table_bell/brass
 	cost = 100000 //yes
 
