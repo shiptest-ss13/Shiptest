@@ -73,6 +73,10 @@
 	head = /obj/item/clothing/head/solgov
 	shoes = /obj/item/clothing/shoes/laceup
 
+/datum/outfit/job/head_of_personnel/solgov/rebel
+	name = "Executive Officer (Deserter)"
+	head = /obj/item/clothing/head/solgov/terragov
+
 /datum/outfit/job/head_of_personnel/pirate
 	name = "First Mate (Pirate)"
 	uniform = /obj/item/clothing/under/costume/russian_officer
@@ -83,6 +87,8 @@
 /datum/outfit/job/head_of_personnel/western
 	name = "First Mate (Western)"
 	uniform = /obj/item/clothing/under/rank/security/officer/blueshirt
+	alt_uniform = null
+	suit = null
 	shoes = /obj/item/clothing/shoes/cowboy/black
 	accessory = /obj/item/clothing/accessory/waistcoat
 	head = /obj/item/clothing/head/HoS/cowboy
