@@ -86,7 +86,7 @@ export const CryoStorageConsoleContent = (props, context) => {
             <div className="NoticeBox">
               {"On Cooldown: " + (cooldown / 10) + "s"}
             </div>
-            )}
+          )}
           <Table>
             <Table.Row header>
               <Table.Cell>
@@ -97,8 +97,8 @@ export const CryoStorageConsoleContent = (props, context) => {
               </Table.Cell>
             </Table.Row>
             {jobs.map(job => (
-              <Table.Row>
-                <Table.Cell key={job.name}>
+              <Table.Row key={job.name}>
+                <Table.Cell>
                   {job.name}
                 </Table.Cell>
                 <TableCell>
@@ -109,7 +109,7 @@ export const CryoStorageConsoleContent = (props, context) => {
                       toAdjust: job.ref,
                       delta: 1,
                     })} />
-                   {job.slots}
+                  {job.slots}
                   <Button
                     content="-"
                     disabled={cooldown > 0 || job.slots <= 0}
