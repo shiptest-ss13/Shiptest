@@ -74,9 +74,10 @@
 
 //Shiptest Outfits
 
-/datum/outfit/job/roboticist/western
-	name = "Mech Technician (Western)"
+/datum/outfit/job/roboticist/technician
+	name = "Mech Technician (Industrial)"
 	uniform = /obj/item/clothing/under/rank/rnd/roboticist/mech_engineer
+	alt_uniform = null
 	shoes = /obj/item/clothing/shoes/workboots
 	suit = /obj/item/clothing/suit/apron/overalls
 	alt_suit = /obj/item/clothing/suit/hazardvest
