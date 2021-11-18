@@ -1906,8 +1906,9 @@
 	},
 /obj/machinery/door/airlock/external/glass,
 /obj/docking_port/mobile{
-	dir = 8;
-	port_direction = 2
+	dir = 4;
+	launch_status = 0;
+	port_direction = 8
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/maintenance/port)
