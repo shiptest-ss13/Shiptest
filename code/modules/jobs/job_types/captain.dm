@@ -57,10 +57,16 @@
 	suit = /obj/item/clothing/suit/space/hardsuit/swat/captain
 	suit_store = /obj/item/tank/internals/oxygen
 
+//Shiptest outfits
+
 /datum/outfit/job/captain/solgov
 	name = "Captain (SolGov)"
 	shoes = /obj/item/clothing/shoes/laceup
 	suit = /obj/item/clothing/suit/toggle/solgov
+
+/datum/outfit/job/captain/solgov/rebel
+	name = "Captain (Deserter)"
+	suit = /obj/item/clothing/suit/toggle/solgov/terragov
 
 /datum/outfit/job/captain/pirate
 	name = "Captain (Pirate)"

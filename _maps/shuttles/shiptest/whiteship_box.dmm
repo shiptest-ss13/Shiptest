@@ -233,10 +233,10 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/effect/turf_decal/trimline/blue/filled/arrow_cw,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 9
 	},
+/obj/effect/turf_decal/corner/blue/border,
 /turf/open/floor/plasteel/white,
 /area/ship/cargo)
 "aN" = (
@@ -250,7 +250,7 @@
 /obj/item/roller{
 	pixel_y = 12
 	},
-/obj/effect/turf_decal/trimline/blue/filled/arrow_cw,
+/obj/effect/turf_decal/corner/blue/border,
 /turf/open/floor/plasteel/white,
 /area/ship/cargo)
 "aQ" = (
@@ -372,6 +372,7 @@
 	},
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/machinery/autolathe,
+/obj/item/paicard,
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
 "be" = (
@@ -670,7 +671,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 1
 	},
-/turf/open/floor/plasteel/white,
+/turf/open/floor/plasteel/mono/white,
 /area/ship/medical)
 "bS" = (
 /obj/machinery/medical_kiosk,
@@ -737,10 +738,10 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/effect/turf_decal/trimline/blue/filled/arrow_cw,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
 	},
+/obj/effect/turf_decal/corner/blue/border,
 /turf/open/floor/plasteel/white,
 /area/ship/cargo)
 "bY" = (
@@ -791,6 +792,7 @@
 	dir = 8
 	},
 /obj/structure/table/reinforced,
+/obj/item/radio/intercom/wideband,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "cc" = (
@@ -1086,8 +1088,13 @@
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/crew)
 "cG" = (
-/turf/closed/wall/mineral/titanium,
-/area/template_noop)
+/obj/structure/closet/emcloset/anchored,
+/obj/machinery/atmospherics/pipe/simple/orange/hidden{
+	dir = 4
+	},
+/obj/effect/spawner/lootdrop/maintenance/three,
+/turf/open/floor/plating,
+/area/ship/engineering)
 "cH" = (
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
@@ -1115,7 +1122,7 @@
 	icon_state = "0-8"
 	},
 /obj/machinery/power/apc/auto_name/south,
-/obj/effect/turf_decal/trimline/blue/filled/arrow_cw,
+/obj/effect/turf_decal/corner/blue/border,
 /turf/open/floor/plasteel/white,
 /area/ship/cargo)
 "cJ" = (
@@ -1440,7 +1447,7 @@
 /turf/open/floor/plasteel/white,
 /area/ship/crew)
 "dr" = (
-/turf/open/floor/plasteel/white,
+/turf/open/floor/plasteel/mono/white,
 /area/ship/medical)
 "ds" = (
 /obj/machinery/suit_storage_unit/cmo,
@@ -1497,6 +1504,7 @@
 	pixel_y = 3
 	},
 /obj/item/areaeditor/shuttle,
+/obj/effect/spawner/lootdrop/maintenance/three,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "eB" = (
@@ -1542,7 +1550,7 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on{
 	dir = 8
 	},
-/turf/open/floor/plasteel/white,
+/turf/open/floor/plasteel/mono/white,
 /area/ship/medical)
 "hi" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden{
@@ -1560,7 +1568,7 @@
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
 	dir = 8
 	},
-/turf/open/floor/plasteel/white,
+/turf/open/floor/plasteel/mono/white,
 /area/ship/medical)
 "iI" = (
 /obj/structure/cable{
@@ -1795,6 +1803,18 @@
 /obj/effect/turf_decal/corner/blue,
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
+"xA" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
+	},
+/turf/open/floor/plasteel/mono/white,
+/area/ship/medical)
 "xP" = (
 /obj/effect/turf_decal/corner/blue,
 /obj/effect/turf_decal/corner/blue{
@@ -1847,12 +1867,6 @@
 	dir = 4
 	},
 /obj/machinery/holopad/emergency/medical,
-/obj/effect/turf_decal/corner/neutral{
-	dir = 1
-	},
-/obj/effect/turf_decal/corner/neutral{
-	dir = 4
-	},
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -1860,7 +1874,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
 	},
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plasteel/mono/white,
 /area/ship/medical)
 "BE" = (
 /obj/machinery/power/smes/shuttle/precharged{
@@ -2217,7 +2231,7 @@ aa
 aa
 aa
 at
-bg
+cG
 at
 aa
 at
@@ -2310,7 +2324,7 @@ aa
 aa
 aa
 aa
-cG
+aS
 at
 dt
 at
@@ -2318,7 +2332,7 @@ BE
 at
 wh
 at
-cG
+aS
 aa
 aa
 aa
@@ -2485,7 +2499,7 @@ bU
 xz
 qX
 gE
-bs
+xA
 tE
 gi
 cF
