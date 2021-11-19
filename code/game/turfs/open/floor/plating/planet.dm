@@ -4,7 +4,6 @@
 	desc = "Upon closer examination, it's still dirt."
 	icon = 'icons/turf/floors.dmi'
 	icon_state = "dirt"
-	initial_gas_mix = OPENTURF_LOW_PRESSURE
 	planetary_atmos = TRUE
 	attachment_holes = FALSE
 	footstep = FOOTSTEP_SAND
@@ -23,7 +22,6 @@
 
 /turf/open/floor/plating/dirt/jungle
 	slowdown = 0.5
-	initial_gas_mix = OPENTURF_DEFAULT_ATMOS
 	baseturfs = /turf/open/floor/plating/dirt/jungle
 
 /turf/open/floor/plating/dirt/jungle/dark
@@ -46,7 +44,6 @@
 
 /turf/open/floor/plating/grass/jungle
 	name = "jungle grass"
-	initial_gas_mix = OPENTURF_DEFAULT_ATMOS
 	planetary_atmos = TRUE
 	desc = "Greener on the other side."
 	icon_state = "junglegrass"
