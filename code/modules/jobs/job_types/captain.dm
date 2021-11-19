@@ -81,3 +81,11 @@
 	shoes = /obj/item/clothing/shoes/laceup
 	glasses = /obj/item/clothing/glasses/sunglasses
 	gloves = null
+
+/datum/outfit/job/captain/aclf
+	name = "Captain (ACLF)"
+	uniform = /obj/item/clothing/under/syndicate/aclf
+	shoes = /obj/item/clothing/shoes/jackboots
+	head = /obj/item/clothing/head/aclfcap
+	suit = /obj/item/clothing/suit/aclf
+

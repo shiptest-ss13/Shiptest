@@ -139,3 +139,11 @@
 	uniform = /obj/item/clothing/under/rank/engineering/engineer/maintenance_tech
 	glasses = /obj/item/clothing/glasses/sunglasses
 	shoes = /obj/item/clothing/shoes/jackboots
+
+/datum/outfit/job/engineer/syndicate
+	name = "Ship Technician (Engineer)"
+
+	uniform = /obj/item/clothing/under/syndicate/aclfgrunt
+	accessory = /obj/item/clothing/accessory/armband/engine
+	glasses = /obj/item/clothing/glasses/sunglasses
+	shoes = /obj/item/clothing/shoes/jackboots
