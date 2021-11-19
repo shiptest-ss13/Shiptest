@@ -149,3 +149,10 @@
 	suit = /obj/item/clothing/suit/toggle/hazard
 	alt_suit = /obj/item/clothing/suit/hazardvest
 
+/datum/outfit/job/engineer/syndicate
+	name = "Ship Technician (Engineer)"
+
+	uniform = /obj/item/clothing/under/syndicate/aclfgrunt
+	accessory = /obj/item/clothing/accessory/armband/engine
+	glasses = /obj/item/clothing/glasses/sunglasses
+	shoes = /obj/item/clothing/shoes/jackboots
