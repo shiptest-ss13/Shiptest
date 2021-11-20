@@ -21,7 +21,7 @@
 		//bots, are hostile
 		/mob/living/simple_animal/bot/medbot/rockplanet = 15,
 		/mob/living/simple_animal/bot/firebot/rockplanet = 15,
-		/mob/living/simple_animal/bot/secbot/ed209/rockplanet = 15,
+		/mob/living/simple_animal/bot/secbot/ed209/rockplanet = 5,
 		/mob/living/simple_animal/hostile/mining_drone/rockplanet = 15,
 		/mob/living/simple_animal/bot/floorbot/rockplanet = 15)
 
