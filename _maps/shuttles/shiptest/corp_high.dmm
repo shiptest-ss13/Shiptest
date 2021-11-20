@@ -155,6 +155,9 @@
 /area/ship/hallway/central)
 "cP" = (
 /obj/machinery/power/apc/auto_name/north,
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
 /turf/open/floor/wood/bamboo,
 /area/ship/crew/dorm)
 "dq" = (
@@ -328,7 +331,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/visible,
 /obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "sgwindowshut";
+	id = "chwindow";
 	name = "external shutters"
 	},
 /turf/open/floor/plating,
@@ -572,14 +575,6 @@
 	},
 /turf/open/floor/wood/yew,
 /area/ship/crew/chapel/office)
-"iX" = (
-/obj/effect/spawner/structure/window/reinforced,
-/obj/machinery/door/poddoor/shutters/preopen{
-	id = "sgwindowshut";
-	name = "external shutters"
-	},
-/turf/open/floor/plating,
-/area/ship/bridge)
 "ji" = (
 /obj/structure/window/plasma/reinforced/spawner/east,
 /obj/machinery/atmospherics/components/unary/outlet_injector/atmos/oxygen_input,
@@ -649,6 +644,17 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
+"kp" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/hallway/central)
 "ks" = (
 /obj/machinery/atmospherics/pipe/manifold/cyan/visible{
 	dir = 8
@@ -983,7 +989,7 @@
 	},
 /obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "sgwindowshut";
+	id = "chwindow";
 	name = "external shutters"
 	},
 /turf/open/floor/plating,
@@ -1248,6 +1254,9 @@
 /obj/structure/sign/poster/official/no_erp{
 	pixel_y = 32
 	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/wood/bamboo,
 /area/ship/crew/dorm)
 "tL" = (
@@ -1336,6 +1345,9 @@
 	},
 /obj/machinery/door/airlock/wood/glass{
 	name = "Corporate Lounge"
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
 	},
 /turf/open/floor/wood/bamboo,
 /area/ship/crew/dorm)
@@ -1580,6 +1592,9 @@
 /obj/machinery/light{
 	dir = 1
 	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/wood/bamboo,
 /area/ship/crew/dorm)
 "yS" = (
@@ -1691,6 +1706,12 @@
 	},
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/cargo)
+"Al" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/wood/bamboo,
+/area/ship/crew/dorm)
 "Aq" = (
 /turf/template_noop,
 /area/template_noop)
@@ -1791,6 +1812,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
 "BJ" = (
@@ -1878,7 +1902,7 @@
 "CT" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "sgwindowshut";
+	id = "chwindow";
 	name = "external shutters"
 	},
 /turf/open/floor/plating,
@@ -2254,7 +2278,7 @@
 "IS" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "sgwindowshut";
+	id = "chwindow";
 	name = "external shutters"
 	},
 /turf/open/floor/plating,
@@ -2301,7 +2325,7 @@
 "JC" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "sgwindowshut";
+	id = "chwindow";
 	name = "external shutters"
 	},
 /turf/open/floor/plating,
@@ -2312,7 +2336,7 @@
 "JI" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "sgwindowshut";
+	id = "chwindow";
 	name = "external shutters"
 	},
 /turf/open/floor/plating,
@@ -2601,7 +2625,7 @@
 /obj/machinery/light/small{
 	dir = 1
 	},
-/obj/machinery/cryopod/latejoin{
+/obj/machinery/cryopod{
 	dir = 4
 	},
 /turf/open/floor/carpet/nanoweave/beige,
@@ -2702,7 +2726,7 @@
 /obj/machinery/light/small{
 	dir = 1
 	},
-/obj/machinery/cryopod/latejoin{
+/obj/machinery/cryopod{
 	dir = 4
 	},
 /turf/open/floor/carpet/nanoweave/beige,
@@ -2875,7 +2899,7 @@
 "Ry" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "sgwindowshut";
+	id = "chwindow";
 	name = "external shutters"
 	},
 /turf/open/floor/plating,
@@ -2946,10 +2970,6 @@
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
 	},
-/obj/machinery/door/poddoor/shutters/preopen{
-	id = "sgwindowshut";
-	name = "external shutters"
-	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "Tt" = (
@@ -2981,7 +3001,7 @@
 	},
 /obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "sgwindowshut";
+	id = "chwindow";
 	name = "external shutters"
 	},
 /turf/open/floor/plating,
@@ -3268,7 +3288,7 @@
 "YH" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "sgwindowshut";
+	id = "chwindow";
 	name = "external shutters"
 	},
 /turf/open/floor/plating,
@@ -3455,7 +3475,7 @@ Aq
 Aq
 Aq
 RP
-iX
+DH
 RP
 sr
 qj
@@ -3495,7 +3515,7 @@ Aq
 Aq
 Aq
 RP
-iX
+DH
 RP
 Eg
 xg
@@ -3660,7 +3680,7 @@ Ti
 Kt
 "}
 (9,1,1) = {"
-iX
+DH
 tr
 AJ
 oT
@@ -3702,7 +3722,7 @@ Ti
 Kt
 "}
 (10,1,1) = {"
-iX
+DH
 Vw
 eK
 bj
@@ -3744,8 +3764,8 @@ UT
 Rw
 "}
 (11,1,1) = {"
-iX
-iX
+DH
+DH
 bd
 LM
 fc
@@ -3768,7 +3788,7 @@ Bq
 LA
 lU
 Uk
-lU
+kp
 JT
 wQ
 Ua
@@ -3787,10 +3807,10 @@ We
 "}
 (12,1,1) = {"
 Aq
-iX
-iX
-iX
-iX
+DH
+DH
+DH
+DH
 IU
 BO
 Gi
@@ -3832,11 +3852,11 @@ Aq
 Aq
 Aq
 Aq
-iX
-iX
-iX
-iX
-iX
+DH
+DH
+DH
+DH
+DH
 ni
 We
 We
@@ -3894,7 +3914,7 @@ rF
 SB
 SB
 fO
-gt
+Al
 lx
 Ml
 gt

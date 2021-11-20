@@ -4,7 +4,12 @@
 	"map_path": "_maps/shuttles/shiptest/isv_roberts.dmm",
 	"map_id": "isv_roberts",
 	"job_slots": {
-		"Assistant": 6
+		"Assistant": {
+			"outfit": "datum/outfit/job/assistant",
+			"officer": true,
+			"slots": 1
+		},
+		"Assistant": 5
 	},
 	"cost": 300
 }

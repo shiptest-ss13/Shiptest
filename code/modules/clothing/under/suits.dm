@@ -2,6 +2,7 @@
 	icon = 'icons/obj/clothing/under/suits.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/under/suits.dmi'
 	can_adjust = FALSE
+	fitted = FEMALE_UNIFORM_TOP //die die die die die
 
 /obj/item/clothing/under/suit/white_on_white
 	name = "white suit"
@@ -124,6 +125,7 @@
 	desc = "An excellent light colored suit, experts in the field stress that it should not to be confused with the inferior tan suit."
 	icon_state = "beige_suit"
 	item_state = "beige_suit"
+
 /obj/item/clothing/under/suit/henchmen
 	name = "henchmen jumpsuit"
 	desc = "A very gaudy jumpsuit for a proper Henchman. Guild regulations, you understand."
