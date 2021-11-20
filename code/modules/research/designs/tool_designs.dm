@@ -102,6 +102,16 @@
 	category = list("Tool Designs")
 	departmental_flags =  DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_CARGO
 
+/datum/design/rapid_shuttle_designator
+	name = "Rapid Shuttle Designator"
+	desc = "A tool that can be used to designate a shuttle for a shuttle launch."
+	id = "rapid_shuttle_designator"
+	build_type = PROTOLATHE
+	materials = list(/datum/material/iron = 5000, /datum/material/glass = 2500, /datum/material/silver = 1500, /datum/material/titanium = 2000)
+	build_path = /obj/item/shuttle_creator
+	category = list("Tool Designs")
+	departmental_flags =  DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_CARGO
+
 /////////////////////////////////////////
 //////////////Alien Tools////////////////
 /////////////////////////////////////////
