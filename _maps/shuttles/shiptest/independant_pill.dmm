@@ -23,7 +23,7 @@
 /obj/structure/window/reinforced/spawner{
 	dir = 1
 	},
-/obj/machinery/cryopod/latejoin{
+/obj/machinery/cryopod{
 	density = 0
 	},
 /obj/machinery/power/port_gen/pacman/super{
@@ -35,6 +35,9 @@
 	},
 /obj/structure/window/reinforced/spawner{
 	dir = 8
+	},
+/obj/machinery/computer/cryopod{
+	pixel_y = 8
 	},
 /turf/open/floor/carpet/nanoweave/red,
 /area/ship/storage)

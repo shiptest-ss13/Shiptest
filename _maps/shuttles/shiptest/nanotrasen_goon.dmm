@@ -616,7 +616,10 @@
 /obj/structure/window/reinforced/survival_pod{
 	dir = 1
 	},
-/obj/machinery/cryopod/latejoin,
+/obj/machinery/cryopod,
+/obj/machinery/computer/cryopod{
+	pixel_x = 32
+	},
 /turf/open/floor/mineral/titanium/purple,
 /area/ship/crew)
 "Ej" = (
@@ -701,7 +704,7 @@
 /turf/open/floor/plating,
 /area/ship/engineering)
 "Jy" = (
-/obj/machinery/cryopod/latejoin,
+/obj/machinery/cryopod,
 /turf/open/floor/mineral/titanium/purple,
 /area/ship/crew)
 "JH" = (
@@ -858,8 +861,12 @@
 /area/ship/crew)
 "Uo" = (
 /obj/machinery/vending/wallmed,
-/turf/closed/wall/mineral/titanium,
+/turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/medical)
+"UT" = (
+/obj/machinery/vending/wallmed,
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ship/engineering)
 "VQ" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
 	dir = 8
@@ -1076,7 +1083,7 @@ TR
 Lr
 ro
 or
-yi
+UT
 TR
 "}
 (6,1,1) = {"
