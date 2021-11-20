@@ -135,6 +135,13 @@
   * * dock_to_use - The [/obj/docking_port/mobile] to dock to.
   */
 /obj/structure/overmap/ship/simulated/proc/dock(obj/structure/overmap/to_dock, obj/docking_port/stationary/dock_to_use)
+	var/signal_resp = SEND_SIGNAL(src, COMSIG_SHIP_DOCK, to_dock)
+	if((signal_resp & SHIP_FORCE_BLOCK) || ((signal_resp & SHIP_BLOCK) && !(signal_resp & SHIP_FORCE_ALLOW)))
+		return "Failed to commence docking procedures."
+	signal_resp = SEND_SIGNAL(to_dock, COMSIG_SHIP_UNDOCK, dock) // verify the dock accepts our docking
+	if((signal_resp & SHIP_FORCE_BLOCK) || ((signal_resp & SHIP_BLOCK) && !(signal_resp & SHIP_FORCE_ALLOW)))
+		return "Failed to commence undocking procedures."
+
 	shuttle.request(dock_to_use)
 
 	priority_announce("Beginning docking procedures. Completion in [(shuttle.callTime + 1 SECONDS)/10] seconds.", "Docking Announcement", sender_override = name, zlevel = shuttle.get_virtual_z_level())
@@ -154,6 +161,14 @@
 		return "Ship not docked!"
 	if(!shuttle)
 		return "Shuttle not found!"
+	var/obj/structure/overmap/dynamic/dock
+	dock = locate() in get_turf(src)
+	var/signal_resp = SEND_SIGNAL(src, COMSIG_SHIP_UNDOCK, dock) // verify the ship is allowed to dock
+	if((signal_resp & SHIP_FORCE_BLOCK) || ((signal_resp & SHIP_BLOCK) && !(signal_resp & SHIP_FORCE_ALLOW)))
+		return "Failed to commence undocking procedures."
+	signal_resp = SEND_SIGNAL(dock, COMSIG_SHIP_UNDOCK, dock) // verify the dock allows us to leave
+	if((signal_resp & SHIP_FORCE_BLOCK) || ((signal_resp & SHIP_BLOCK) && !(signal_resp & SHIP_FORCE_ALLOW)))
+		return "Failed to commence undocking procedures."
 	shuttle.destination = null
 	shuttle.mode = SHUTTLE_IGNITING
 	shuttle.setTimer(shuttle.ignitionTime)
@@ -161,6 +176,15 @@
 	addtimer(CALLBACK(src, .proc/complete_dock), shuttle.ignitionTime + 1 SECONDS)
 	state = OVERMAP_SHIP_UNDOCKING
 	return "Beginning undocking procedures..."
+
+/obj/structure/overmap/ship/simulated/Move(atom/newloc, direct) // TODO: Consider also calling the signal on the newloc so that certain overmap objects can mark a turf as unenterable
+	var/signal_resp = SEND_SIGNAL(src, COMSIG_SHIP_MOVE, newloc, loc)
+	if((signal_resp & SHIP_FORCE_BLOCK) || ((signal_resp & SHIP_BLOCK) && !(signal_resp & SHIP_FORCE_ALLOW)))
+		SEND_SIGNAL(src, COMSIG_SHIP_BLOCKED_MOVE, newloc)
+
+		get_speed()
+		decelerate(max_speed)
+	return ..()
 
 /**
   * Docks to an empty dynamic encounter. Used for intership interaction, structural modifications, and such
@@ -174,6 +198,12 @@
 	if(E)
 		return overmap_object_act(user, E)
 
+/obj/structure/overmap/ship/simulated/proc/thrust(dir)
+	var/thrust_amt = burn_engines(dir, virtual=TRUE)
+	var/signal_resp = SEND_SIGNAL(src, COMSIG_SHIP_THRUST, thrust_amt, dir)
+	if((signal_resp & SHIP_FORCE_BLOCK) || ((signal_resp & SHIP_BLOCK) && !(signal_resp & SHIP_FORCE_ALLOW)))
+		return
+	return burn_engines(dir)
 
 /obj/structure/overmap/ship/simulated/burn_engines(n_dir = null, percentage = 100, virtual = FALSE)
 	if(state != OVERMAP_SHIP_FLYING)

@@ -1,18 +1,3 @@
-#define SHIP_MODULE_NONE "None"
-#define SHIP_MODULE_UNIQUE (1<<0)
-
-GLOBAL_LIST_INIT_TYPED(ship_modules, /datum/ship_module, populate_ship_modules())
-
-/proc/populate_ship_modules()
-	if(length(GLOB.ship_modules))
-		return GLOB.ship_modules
-	. = list()
-	for(var/datum/ship_module/path in subtypesof(/datum/ship_module))
-		if(initial(path.abstract) == path)
-			continue
-		.[path] = new path
-	return .
-
 /datum/ship_module
 	/// Internal use
 	var/abstract = /datum/ship_module
@@ -21,7 +6,7 @@ GLOBAL_LIST_INIT_TYPED(ship_modules, /datum/ship_module, populate_ship_modules()
 	/// Actual modularity cost of the module, this can be NEGATIVE!!
 	var/cost = 0
 	/// The slot this module is installed into. See ship_module_defines.dm
-	var/slot = SHIP_MODULE_NONE
+	var/slot = SHIP_SLOT_NONE
 	/// The flags for this module. See ship_module_defines.dm
 	var/flags = SHIP_MODULE_UNIQUE
 	/// Should this module start processing after being Install'd
@@ -29,7 +14,9 @@ GLOBAL_LIST_INIT_TYPED(ship_modules, /datum/ship_module, populate_ship_modules()
 	/// Installed ships, for tracking purposes
 	var/list/installed_on = list()
 	/// The strucutre to spawn when a module is installed onto a ship
-	var/structure_path
+	var/structure_path = /obj/structure/ship_module
+	/// Stored data indexed by parent ship
+	var/static/list/ship_data = new
 
 /datum/ship_module/New()
 	. = ..()
@@ -42,9 +29,13 @@ GLOBAL_LIST_INIT_TYPED(ship_modules, /datum/ship_module, populate_ship_modules()
 		return QDEL_HINT_LETMELIVE
 	else if(force)
 		stack_trace("FORCED QDEL ON SHIP MODULE")
+	STOP_PROCESSING(SSovermap, src)
 	for(var/ship in installed_on)
 		uninstall(ship)
-	STOP_PROCESSING(SSovermap, src)
+	if(length(ship_data))
+		stack_trace("After uninstalling module from all ships there is leftover ship data?")
+		ship_data.Cut()
+	ship_data = null
 	return ..()
 
 /datum/ship_module/proc/can_install(obj/structure/overmap/ship/simulated/ship, mob/user)
@@ -74,7 +65,8 @@ GLOBAL_LIST_INIT_TYPED(ship_modules, /datum/ship_module, populate_ship_modules()
 /datum/ship_module/process()
 	for(var/ship in installed_on)
 		var/obj/structure/ship_module/structure = installed_on[ship]
-		structure.process()
+		if(structure.structure_process)
+			structure.process()
 
 /datum/ship_module/proc/is_installed(obj/structure/overmap/ship/simulated/ship)
 	return ship in installed_on
@@ -83,16 +75,36 @@ GLOBAL_LIST_INIT_TYPED(ship_modules, /datum/ship_module, populate_ship_modules()
 	SHOULD_CALL_PARENT(TRUE)
 	if(!can_install(ship, user))
 		return FALSE
-	installed_on[ship] = new structure_path(location)
+	installed_on[ship] = new structure_path(location, src, ship, user)
 	ship.modules[slot] += src
 	RegisterSignal(ship, COMSIG_PARENT_QDELETING, .proc/handle_ship_qdel)
+	RegisterSignal(ship, COMSIG_SHIP_DAMAGE, .proc/handle_ship_damage)
+	RegisterSignal(ship, COMSIG_SHIP_THRUST, .proc/handle_ship_thrust)
+	RegisterSignal(ship, COMSIG_SHIP_MOVE, .proc/handle_ship_move)
+	RegisterSignal(ship, COMSIG_SHIP_DOCK, .proc/handle_ship_dock)
+	RegisterSignal(ship, COMSIG_SHIP_UNDOCK, .proc/handle_ship_undock)
+	notify_modules(ship, user, "install", list("module" = src))
 	return TRUE
+
+/datum/ship_module/proc/notify_modules(obj/structure/overmap/ship/simulated/ship, mob/user, action, list/params)
+	var/static/list/alerted = new
+	if(length(alerted))
+		alerted.Cut()
+	for(var/slot in ship.modules)
+		for(var/datum/ship_module/module as anything in ship.modules[slot])
+			for(var/obj/structure/ship_module/module_structure as anything in module.installed_on[ship])
+				if(module_structure in alerted)
+					continue
+				alerted |= module_structure
+				module_structure.module_act(user, action, params)
 
 /datum/ship_module/proc/uninstall(obj/structure/overmap/ship/simulated/ship)
 	SHOULD_CALL_PARENT(TRUE)
+	notify_modules(ship, user, "uninstall", list("module" = src))
 	ship.modules[slot] -= src
 	qdel(installed_on[ship])
 	installed_on -= ship
+	ship_data -= ship
 	UnregisterSignal(ship, COMSIG_PARENT_QDELETING)
 	return TRUE
 
@@ -100,3 +112,23 @@ GLOBAL_LIST_INIT_TYPED(ship_modules, /datum/ship_module, populate_ship_modules()
 	SIGNAL_HANDLER
 	UnregisterSignal(ship, COMSIG_PARENT_QDELETING)
 	installed_on -= ship
+
+/datum/ship_module/proc/handle_ship_damage(ship, damage, damage_type, originator)
+	SIGNAL_HANDLER
+	return SHIP_ALLOW
+
+/datum/ship_module/proc/handle_ship_thrust(ship, thrust, direction)
+	SIGNAL_HANDLER
+	return SHIP_ALLOW
+
+/datum/ship_module/proc/handle_ship_move(ship, new_loc, old_loc)
+	SIGNAL_HANDLER
+	return SHIP_ALLOW
+
+/datum/ship_module/proc/handle_ship_dock(ship, dock)
+	SIGNAL_HANDLER
+	return SHIP_ALLOW
+
+/datum/ship_module/proc/handle_ship_undock(ship, dock)
+	SIGNAL_HANDLER
+	return SHIP_ALLOW

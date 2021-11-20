@@ -122,9 +122,9 @@
 					E.enabled = !E.enabled
 					S.refresh_engines()
 					return
-				if("change_heading")
-					S.current_autopilot_target = null
-					S.burn_engines(text2num(params["dir"]))
+				if("thrust")
+					if(current_ship.thrust(usr, text2num(params["dir"])))
+						S.current_autopilot_target = null
 					return
 				if("stop")
 					S.current_autopilot_target = null

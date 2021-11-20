@@ -307,7 +307,7 @@ const ShipControlContent = (props, context) => {
               iconRotation={45}
               mb={1}
               disabled={!flyable}
-              onClick={() => act('change_heading', {
+              onClick={() => act('thrust', {
                 dir: DIRECTIONS.northwest,
               })} />
           </Table.Cell>
@@ -316,7 +316,7 @@ const ShipControlContent = (props, context) => {
               icon="arrow-up"
               mb={1}
               disabled={!flyable}
-              onClick={() => act('change_heading', {
+              onClick={() => act('thrust', {
                 dir: DIRECTIONS.north,
               })} />
           </Table.Cell>
@@ -326,7 +326,7 @@ const ShipControlContent = (props, context) => {
               iconRotation={-45}
               mb={1}
               disabled={!flyable}
-              onClick={() => act('change_heading', {
+              onClick={() => act('thrust', {
                 dir: DIRECTIONS.northeast,
               })} />
           </Table.Cell>
@@ -337,7 +337,7 @@ const ShipControlContent = (props, context) => {
               icon="arrow-left"
               mb={1}
               disabled={!flyable}
-              onClick={() => act('change_heading', {
+              onClick={() => act('thrust', {
                 dir: DIRECTIONS.west,
               })} />
           </Table.Cell>
@@ -354,7 +354,7 @@ const ShipControlContent = (props, context) => {
               icon="arrow-right"
               mb={1}
               disabled={!flyable}
-              onClick={() => act('change_heading', {
+              onClick={() => act('thrust', {
                 dir: DIRECTIONS.east,
               })} />
           </Table.Cell>
@@ -366,7 +366,7 @@ const ShipControlContent = (props, context) => {
               iconRotation={-45}
               mb={1}
               disabled={!flyable}
-              onClick={() => act('change_heading', {
+              onClick={() => act('thrust', {
                 dir: DIRECTIONS.southwest,
               })} />
           </Table.Cell>
@@ -375,7 +375,7 @@ const ShipControlContent = (props, context) => {
               icon="arrow-down"
               mb={1}
               disabled={!flyable}
-              onClick={() => act('change_heading', {
+              onClick={() => act('thrust', {
                 dir: DIRECTIONS.south,
               })} />
           </Table.Cell>
@@ -385,7 +385,7 @@ const ShipControlContent = (props, context) => {
               iconRotation={45}
               mb={1}
               disabled={!flyable}
-              onClick={() => act('change_heading', {
+              onClick={() => act('thrust', {
                 dir: DIRECTIONS.southeast,
               })} />
           </Table.Cell>
