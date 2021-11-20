@@ -49,6 +49,9 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
 	},
+/obj/structure/disposalpipe/segment{
+	dir = 9
+	},
 /turf/open/floor/mineral/titanium/tiled/white,
 /area/ship/science)
 "aT" = (
@@ -82,6 +85,12 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/glass,
+/obj/structure/disposaloutlet{
+	dir = 8
+	},
+/obj/structure/disposalpipe/trunk{
+	dir = 4
+	},
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "slimelock";
 	name = "Lockdown Shutters"
@@ -116,9 +125,6 @@
 /mob/living/simple_animal/borer,
 /obj/structure/disposalpipe/segment{
 	dir = 2
-	},
-/obj/structure/disposalpipe/broken{
-	dir = 4
 	},
 /turf/open/floor/plating,
 /area/ship/science)
@@ -158,6 +164,9 @@
 	},
 /obj/machinery/atmospherics/components/unary/portables_connector/visible{
 	dir = 4
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 9
 	},
 /obj/machinery/portable_atmospherics/canister/nitrogen{
 	anchored = 1
@@ -225,17 +234,6 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /turf/open/floor/mineral/titanium/tiled/white,
 /area/ship/hallway/fore)
-"ei" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/disposalpipe/segment{
-	dir = 2
-	},
-/obj/structure/disposalpipe/trunk{
-	dir = 4
-	},
-/obj/structure/disposaloutlet,
-/turf/open/floor/plating,
-/area/ship/science)
 "ej" = (
 /obj/machinery/computer/helm,
 /turf/open/floor/mineral/titanium/tiled/blue,
@@ -341,9 +339,6 @@
 	},
 /obj/structure/disposalpipe/segment{
 	dir = 1
-	},
-/obj/structure/disposalpipe/segment{
-	dir = 4
 	},
 /turf/open/floor/plating,
 /area/ship/science)
@@ -520,10 +515,8 @@
 /turf/open/floor/plating,
 /area/ship/science/robotics)
 "hH" = (
+/obj/machinery/jukebox/disco/indestructible,
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/jukebox/disco{
-	req_access = null
-	},
 /turf/open/floor/plating,
 /area/ship/storage)
 "hI" = (
@@ -767,6 +760,7 @@
 /obj/machinery/button/door{
 	id = "slimekill";
 	name = "Coldroom Release Shutter Control";
+	normaldoorcontrol = 1;
 	pixel_x = -7;
 	pixel_y = -25
 	},
@@ -1048,6 +1042,12 @@
 /obj/effect/decal/cleanable/glass,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
+	},
+/obj/structure/disposaloutlet{
+	dir = 8
+	},
+/obj/structure/disposalpipe/trunk{
+	dir = 4
 	},
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "slimelock";
@@ -1419,9 +1419,7 @@
 /obj/effect/turf_decal/trimline/black/filled/warning{
 	dir = 8
 	},
-/obj/structure/disposalpipe/segment{
-	dir = 9
-	},
+/obj/structure/disposalpipe/segment,
 /turf/open/floor/mineral/titanium/tiled/white,
 /area/ship/science)
 "vE" = (
@@ -1516,9 +1514,7 @@
 /obj/effect/turf_decal/trimline/black/filled/warning{
 	dir = 8
 	},
-/obj/structure/disposalpipe/segment{
-	dir = 9
-	},
+/obj/structure/disposalpipe/segment,
 /turf/open/floor/mineral/titanium/tiled/white,
 /area/ship/science)
 "xu" = (
@@ -1532,9 +1528,6 @@
 	},
 /obj/structure/disposalpipe/segment{
 	dir = 1
-	},
-/obj/structure/disposalpipe/segment{
-	dir = 4
 	},
 /turf/open/floor/plating,
 /area/ship/science)
@@ -1624,6 +1617,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 9
 	},
 /turf/open/floor/mineral/titanium/tiled/white,
 /area/ship/science)
@@ -1827,9 +1823,6 @@
 	},
 /obj/structure/disposalpipe/segment{
 	dir = 1
-	},
-/obj/structure/disposalpipe/segment{
-	dir = 4
 	},
 /turf/open/floor/plating,
 /area/ship/science)
@@ -2685,9 +2678,7 @@
 /obj/effect/turf_decal/trimline/black/filled/warning{
 	dir = 8
 	},
-/obj/structure/disposalpipe/segment{
-	dir = 9
-	},
+/obj/structure/disposalpipe/segment,
 /turf/open/floor/mineral/titanium/tiled/white,
 /area/ship/science)
 "JT" = (
@@ -2918,11 +2909,8 @@
 /turf/open/floor/mineral/titanium/tiled/purple,
 /area/ship/science)
 "ND" = (
-/obj/machinery/cryopod/latejoin/reskinnable{
-	close_state = "scanner_occupied";
-	dir = 4;
-	icon_state = "scanner_open";
-	open_state = "scanner_open"
+/obj/machinery/cryopod{
+	dir = 4
 	},
 /turf/open/floor/mineral/titanium/tiled,
 /area/ship/crew/dorm)
@@ -3267,15 +3255,10 @@
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
 	},
+/obj/machinery/door/window/brigdoor/security/cell/eastleft,
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "slimelock";
 	name = "Lockdown Shutters"
-	},
-/obj/machinery/door/window/brigdoor/southleft{
-	dir = 4
-	},
-/obj/structure/disposalpipe/segment{
-	dir = 4
 	},
 /turf/open/floor/plating,
 /area/ship/science)
@@ -3431,11 +3414,11 @@
 	},
 /obj/structure/window/reinforced/spawner/north,
 /obj/structure/window/reinforced/spawner,
+/obj/machinery/door/window/brigdoor/eastright{
+	dir = 8
+	},
 /obj/structure/disposalpipe/trunk{
 	dir = 1
-	},
-/obj/machinery/door/window/brigdoor/southleft{
-	dir = 8
 	},
 /turf/open/floor/mineral/titanium/tiled/white,
 /area/ship/science)
@@ -3474,15 +3457,10 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/door/window/brigdoor/security/cell/eastleft,
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "slimelock";
 	name = "Lockdown Shutters"
-	},
-/obj/machinery/door/window/brigdoor/southleft{
-	dir = 4
-	},
-/obj/structure/disposalpipe/segment{
-	dir = 4
 	},
 /turf/open/floor/plating,
 /area/ship/science)
@@ -3592,10 +3570,6 @@
 /obj/effect/decal/cleanable/xenoblood/xsplatter,
 /obj/structure/disposalpipe/segment{
 	dir = 2
-	},
-/obj/structure/disposaloutlet,
-/obj/structure/disposalpipe/trunk{
-	dir = 4
 	},
 /turf/open/floor/plating,
 /area/ship/science)
@@ -4018,7 +3992,7 @@ uS
 cd
 Xw
 uS
-ei
+Xw
 Sj
 My
 Cr
