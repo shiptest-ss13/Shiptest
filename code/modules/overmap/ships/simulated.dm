@@ -174,7 +174,8 @@
 	if(E)
 		return overmap_object_act(user, E)
 
-/obj/structure/overmap/ship/simulated/burn_engines(n_dir = null, percentage = 100)
+
+/obj/structure/overmap/ship/simulated/burn_engines(n_dir = null, percentage = 100, virtual = FALSE)
 	if(state != OVERMAP_SHIP_FLYING)
 		return
 
@@ -186,13 +187,16 @@
 	for(var/obj/machinery/power/shuttle/engine/E in shuttle.engine_list)
 		if(!E.enabled)
 			continue
-		thrust_used += E.burn_engine(percentage)
+		thrust_used += E.burn_engine(percentage, virtual)
 	est_thrust = thrust_used //cheeky way of rechecking the thrust, check it every time it's used
 	thrust_used = thrust_used / max(mass * 100, 1) //do not know why this minimum check is here, but I clearly ran into an issue here before
+	if(virtual)
+		return thrust_used
 	if(n_dir)
 		accelerate(n_dir, thrust_used)
 	else
 		decelerate(thrust_used)
+	return thrust_used
 
 /**
   * Just double checks all the engines on the shuttle

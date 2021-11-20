@@ -118,16 +118,19 @@
   * * amount - The amount of mols of fuel to burn.
   * * gas_type - The gas type to burn.
   */
-/obj/machinery/atmospherics/components/unary/shuttle/heater/proc/consume_fuel(amount, datum/gas/gas_type)
+/obj/machinery/atmospherics/components/unary/shuttle/heater/proc/consume_fuel(amount, datum/gas/gas_type, virtual = FALSE)
 	var/datum/gas_mixture/air_contents = use_tank ? fuel_tank?.air_contents : airs[1]
 	if(!air_contents)
 		return
 	if(!gas_type)
+		if(virtual)
+			return max(air_contents.return_volume(), amount)
 		var/datum/gas_mixture/removed = air_contents.remove(amount)
 		return removed.return_volume()
 	else
 		var/starting_amt = air_contents.get_moles(gas_type)
-		air_contents.adjust_moles(gas_type, -amount)
+		if(!virtual)
+			air_contents.adjust_moles(gas_type, -amount)
 		return min(starting_amt, amount)
 
 /obj/machinery/atmospherics/components/unary/shuttle/heater/attackby(obj/item/I, mob/living/user, params)
