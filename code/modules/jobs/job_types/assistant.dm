@@ -71,11 +71,11 @@ Assistant
 	uniform = /obj/item/clothing/under/color/white
 	accessory = /obj/item/clothing/accessory/armband/science
 
-//Shiptest outfits
-
 /datum/outfit/job/assistant/engineeringspecialist
 	name = "Assistant (Deckhand)"
 	accessory = /obj/item/clothing/accessory/armband/cargo
+
+//Shiptest outfits
 
 /datum/outfit/job/assistant/solgov
 	name = "Sailor (SolGov)"

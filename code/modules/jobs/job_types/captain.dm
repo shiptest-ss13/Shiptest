@@ -57,7 +57,7 @@
 	suit = /obj/item/clothing/suit/space/hardsuit/swat/captain
 	suit_store = /obj/item/tank/internals/oxygen
 
-//Shiptest outfits
+//Shiptest Outfits
 
 /datum/outfit/job/captain/solgov
 	name = "Captain (SolGov)"
@@ -81,6 +81,16 @@
 	shoes = /obj/item/clothing/shoes/laceup
 	glasses = /obj/item/clothing/glasses/sunglasses
 	gloves = null
+
+/datum/outfit/job/captain/western
+	name = "Captain (Western)"
+	uniform = /obj/item/clothing/under/suit/white
+	alt_uniform = null
+	shoes = /obj/item/clothing/shoes/cowboy/white
+	head = /obj/item/clothing/head/caphat/cowboy
+	glasses = /obj/item/clothing/glasses/sunglasses
+	suit = /obj/item/clothing/suit/armor/hos/trenchcoat
+	alt_suit = null
 
 /datum/outfit/job/captain/aclf
 	name = "Captain (ACLF)"
