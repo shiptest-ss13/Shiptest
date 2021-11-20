@@ -70,7 +70,7 @@
 	///Integrity percentage, do NOT modify. Use [/obj/structure/overmap/proc/receive_damage] instead.
 	var/integrity = 100
 	///Armor value, reduces integrity damage taken
-	var/overmap_armor = 1
+	var/list/overmap_armor = new
 	///List of other overmap objects in the same tile
 	var/list/close_overmap_objects
 	///Vessel approximate mass
@@ -165,8 +165,27 @@
   * Reduces overmap object integrity by X amount, divided by armor
   * * amount - amount of damage to apply to the ship
   */
-/obj/structure/overmap/proc/recieve_damage(amount)
-	integrity = max(integrity - (amount / overmap_armor), 0)
+/obj/structure/overmap/proc/recieve_damage(amount, atom/source, damage_type = DAMAGE_PHYSICAL)
+	var/reduction
+	var/highest_reduction = 1
+	if(islist(damage_type))
+		for(var/dtype in damage_type)
+			if(!(type in overmap_armor))
+				continue
+			reduction = overmap_armor[dtype]
+			if(reduction > highest_reduction)
+				highest_reduction = reduction
+	else if(type in overmap_armor)
+		highest_reduction = overmap_armor[damage_type]
+	if(DAMAGE_ALL in overmap_armor)
+		reduction = overmap_armor[DAMAGE_ALL]
+		if(reduction > highest_reduction)
+			highest_reduction = reduction
+	var/damage = amount / highest_reduction
+	var/signal_resp = SEND_SIGNAL(src, COMSIG_SHIP_DAMAGE, damage, damage_type, source)
+	if((signal_resp & SHIP_FORCE_BLOCK) || ((signal_resp & SHIP_BLOCK) && !(signal_resp & SHIP_FORCE_ALLOW)))
+		return
+	integrity = max(integrity - damage, 0)
 
 /**
   * The action performed by a ship on this when the helm button is pressed. Returns nothing on success, an error string if one occurs.

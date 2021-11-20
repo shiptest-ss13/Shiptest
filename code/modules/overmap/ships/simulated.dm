@@ -100,7 +100,7 @@
 	set_ship_name(chosen_name)
 
 ///Destroy if integrity <= 0 and no concious mobs on shuttle
-/obj/structure/overmap/ship/simulated/recieve_damage(amount)
+/obj/structure/overmap/ship/simulated/recieve_damage(amount, atom/source, damage_type = DAMAGE_PHYSICAL)
 	. = ..()
 	update_icon_state()
 	if(integrity > 0)

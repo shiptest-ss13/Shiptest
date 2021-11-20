@@ -7,6 +7,17 @@
 #define MEDSTAR 3
 #define BIGSTAR 4
 
+// Ship Damage Types
+/// This only exists for use in overmap armor lists. Dealing damage with this 'type' is not supported
+#define DAMAGE_ALL "All"
+#define DAMAGE_EMP "EMP"
+#define DAMAGE_TESLA "Tesla"
+#define DAMAGE_PLASMA "Plasma"
+#define DAMAGE_PHOTON "Photon"
+#define DAMAGE_PHYSICAL "Physical"
+#define DAMAGE_EXPLOSIVE "Explosive"
+#define DAMAGE_BLOCKED_MOVE "ship-blocked-move.name" // classical localization joke, given this should NEVER BE USED AS OUTPUT
+
 //Star classes
 #define STARO 1 //Extremely bright blue main sequence star or (super)giant
 #define STARB 2 //Bright blue main sequence star or (super)giant
