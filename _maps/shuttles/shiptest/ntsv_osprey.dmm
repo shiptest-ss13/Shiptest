@@ -4328,9 +4328,6 @@
 	name = "fuel locker";
 	pixel_y = 28
 	},
-/obj/machinery/navbeacon{
-	location = "engineering"
-	},
 /obj/machinery/navbeacon/wayfinding/engineering,
 /obj/item/stack/sheet/mineral/uranium/twenty,
 /obj/structure/catwalk/over,
@@ -4931,9 +4928,6 @@
 	dir = 8
 	},
 /obj/machinery/navbeacon/wayfinding/janitor,
-/obj/machinery/navbeacon{
-	location = "janitor"
-	},
 /turf/open/floor/plasteel,
 /area/ship/crew/janitor)
 "JF" = (
@@ -5208,7 +5202,7 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
 	},
-/obj/machinery/cryopod/latejoin,
+/obj/machinery/cryopod,
 /obj/machinery/computer/cryopod{
 	pixel_y = 32
 	},
@@ -5411,7 +5405,7 @@
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "NN" = (
-/obj/machinery/cryopod/latejoin,
+/obj/machinery/cryopod,
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
 	},
@@ -6719,9 +6713,6 @@
 	},
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/visible/layer4{
 	dir = 1
-	},
-/obj/machinery/navbeacon{
-	location = "atmospherics"
 	},
 /obj/machinery/navbeacon/wayfinding/atmos,
 /turf/open/floor/plasteel/patterned/grid,
