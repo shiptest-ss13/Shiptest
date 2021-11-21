@@ -69,7 +69,6 @@
 				meat_counter++
 			visible_message("<span class='warning'>Serrated tendrils eagerly pull [H] to [src], tearing the body apart as its blood seeps over the eggs.</span>")
 			playsound(get_turf(src),'sound/magic/demon_consume.ogg', 100, TRUE)
-			var/deliverykey = H.fingerprintslast //key of whoever brought the body
 			H.gib()
 			obj_integrity = min(obj_integrity + max_integrity*0.05,max_integrity)//restores 5% hp of tendril
 			for(var/mob/living/L in view(src, 5))

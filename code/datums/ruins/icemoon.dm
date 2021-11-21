@@ -113,8 +113,3 @@
 	prefix = "_maps/RandomRuins/AnywhereRuins/"
 	suffix = "golem_ship.dmm"
 
-/datum/map_template/ruin/icemoon/castlewalkers
-	name = "Castle Ashwalkers - Icemoon"
-	id = "castlwalkers-ice"
-	description = "A castle full of advanced ashwalkers."
-	suffix = "icemoon_underground_castlewalkers.dmm"
