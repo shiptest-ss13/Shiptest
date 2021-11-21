@@ -38,7 +38,7 @@
 	var/list/obj/machinery/computer/ship/ship_computers = list()
 
 	/// The modules the ship has installed. This is an assosciative list of lists, indexed by module slot.
-	var/list/modules = null
+	var/list/modules = new
 	/// Total modularity of this ship. aka how many modules they get to install.
 	var/modularity = -1
 
@@ -138,7 +138,7 @@
 	var/signal_resp = SEND_SIGNAL(src, COMSIG_SHIP_DOCK, to_dock)
 	if((signal_resp & SHIP_FORCE_BLOCK) || ((signal_resp & SHIP_BLOCK) && !(signal_resp & SHIP_FORCE_ALLOW)))
 		return "Failed to commence docking procedures."
-	signal_resp = SEND_SIGNAL(to_dock, COMSIG_SHIP_UNDOCK, dock) // verify the dock accepts our docking
+	signal_resp = SEND_SIGNAL(to_dock, COMSIG_SHIP_UNDOCK, to_dock) // verify the dock accepts our docking
 	if((signal_resp & SHIP_FORCE_BLOCK) || ((signal_resp & SHIP_BLOCK) && !(signal_resp & SHIP_FORCE_ALLOW)))
 		return "Failed to commence undocking procedures."
 
