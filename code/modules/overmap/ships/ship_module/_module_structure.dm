@@ -1,5 +1,7 @@
 /obj/structure/ship_module
 	name = "Broken Ship Module"
+	icon = 'icons/obj/ship_modules/ship_modules.dmi'
+	icon_state = "default"
 	/// The ship we are located on
 	var/obj/structure/overmap/ship/simulated/parent = null
 	/// The instance of the module managing us
@@ -25,3 +27,23 @@
  */
 /obj/structure/ship_module/proc/module_act(mob/user, action, list/params)
 	return
+
+/obj/structure/ship_module/proc/ship_damage(ship, damage, damage_type, originator)
+	SIGNAL_HANDLER
+	return SHIP_ALLOW
+
+/obj/structure/ship_module/proc/ship_thrust(ship, thrust, direction)
+	SIGNAL_HANDLER
+	return SHIP_ALLOW
+
+/obj/structure/ship_module/proc/ship_move(ship, new_loc, old_loc)
+	SIGNAL_HANDLER
+	return SHIP_ALLOW
+
+/obj/structure/ship_module/proc/ship_dock(ship, dock)
+	SIGNAL_HANDLER
+	return SHIP_ALLOW
+
+/obj/structure/ship_module/proc/ship_undock(ship, dock)
+	SIGNAL_HANDLER
+	return SHIP_ALLOW

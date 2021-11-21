@@ -77,6 +77,8 @@ PROCESSING_SUBSYSTEM_DEF(overmap)
 	for(var/obj/docking_port/mobile/M as anything in SSshuttle.mobile)
 		setup_shuttle_ship(M)
 
+	populate_ship_modules()
+
 	return ..()
 
 /datum/controller/subsystem/processing/overmap/fire()
@@ -84,6 +86,8 @@ PROCESSING_SUBSYSTEM_DEF(overmap)
 		for(var/obj/structure/overmap/event/E as anything in events)
 			if(E?.affect_multiple_times && E?.close_overmap_objects)
 				E.apply_effect()
+	for(var/datum/child as anything in processing)
+		child.process()
 
 /**
   * Creates an overmap ship object for the provided mobile docking port if one does not already exist.
