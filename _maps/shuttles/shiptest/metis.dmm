@@ -444,6 +444,9 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 8
 	},
+/obj/machinery/camera/autoname{
+	dir = 1
+	},
 /turf/open/floor/mineral/titanium/tiled,
 /area/ship/crew/canteen)
 "gY" = (
@@ -547,6 +550,9 @@
 "hX" = (
 /obj/item/circuitboard/machine/protolathe/department/science,
 /obj/item/kirbyplants/random,
+/obj/machinery/camera/autoname{
+	dir = 1
+	},
 /turf/open/floor/mineral/titanium/tiled,
 /area/ship/science/robotics)
 "ib" = (
@@ -607,6 +613,7 @@
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
+/obj/machinery/camera/autoname,
 /turf/open/floor/circuit/green,
 /area/ship/science/ai_chamber)
 "jc" = (
@@ -666,7 +673,7 @@
 /turf/open/floor/mineral/titanium/tiled/white,
 /area/ship/hallway/aft)
 "jI" = (
-/obj/machinery/suit_storage_unit/mining,
+/obj/machinery/suit_storage_unit/standard_unit,
 /turf/open/floor/plating,
 /area/ship/hallway/aft)
 "jS" = (
@@ -701,7 +708,6 @@
 /turf/open/floor/mineral/titanium/tiled,
 /area/ship/crew/canteen)
 "kz" = (
-/obj/item/crowbar/red,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -778,6 +784,7 @@
 	secret_type = /obj/item/transfer_valve
 	},
 /obj/machinery/airalarm/directional/east,
+/obj/structure/curtain,
 /turf/open/floor/mineral/titanium/tiled,
 /area/ship/crew/toilet)
 "lu" = (
@@ -795,7 +802,7 @@
 "lx" = (
 /obj/structure/falsewall/titanium,
 /obj/structure/sign/poster/retro/science,
-/turf/closed/wall/mineral/titanium/nodiagonal,
+/turf/open/space/basic,
 /area/ship/bridge)
 "lz" = (
 /obj/structure/table/wood,
@@ -823,6 +830,13 @@
 	},
 /turf/closed/wall/mineral/titanium,
 /area/ship/science)
+"lS" = (
+/obj/effect/decal/cleanable/blood,
+/obj/machinery/camera/autoname{
+	dir = 1
+	},
+/turf/open/floor/mineral/titanium/tiled,
+/area/ship/crew/canteen)
 "mc" = (
 /obj/machinery/holopad/emergency/science,
 /obj/effect/decal/cleanable/dirt,
@@ -922,6 +936,9 @@
 "nn" = (
 /obj/structure/frame/computer,
 /obj/item/shard,
+/obj/machinery/camera/autoname{
+	dir = 8
+	},
 /turf/open/floor/mineral/titanium/tiled/blue,
 /area/ship/bridge)
 "nr" = (
@@ -1114,6 +1131,7 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 8
 	},
+/obj/structure/frame/computer,
 /turf/open/floor/mineral/titanium/tiled,
 /area/ship/crew/toilet)
 "qP" = (
@@ -1218,6 +1236,9 @@
 "rT" = (
 /obj/structure/festivus,
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/camera/autoname{
+	dir = 5
+	},
 /turf/open/floor/mineral/titanium/tiled/white,
 /area/ship/hallway/fore)
 "rY" = (
@@ -1278,6 +1299,12 @@
 	},
 /turf/open/floor/plating,
 /area/ship/storage)
+"sG" = (
+/obj/machinery/camera/autoname{
+	dir = 1
+	},
+/turf/open/floor/mineral/titanium/tiled/white,
+/area/ship/science)
 "sH" = (
 /turf/closed/wall/mineral/titanium,
 /area/ship/engineering/electrical)
@@ -1494,6 +1521,7 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 4
 	},
+/obj/machinery/camera/autoname,
 /turf/open/floor/mineral/titanium/tiled/white,
 /area/ship/science)
 "wD" = (
@@ -1688,7 +1716,6 @@
 /area/ship/crew/canteen)
 "yW" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/frame/machine,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 5
 	},
@@ -1829,6 +1856,9 @@
 /area/ship/science/robotics)
 "AG" = (
 /obj/effect/decal/cleanable/blood/gibs/up,
+/obj/machinery/camera/autoname{
+	dir = 5
+	},
 /turf/open/floor/mineral/titanium/tiled/white,
 /area/ship/science)
 "AI" = (
@@ -2153,6 +2183,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/camera/autoname{
+	dir = 4
+	},
 /turf/open/floor/mineral/titanium/tiled/white,
 /area/ship/hallway/aft)
 "Eg" = (
@@ -2359,6 +2392,9 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
 	},
+/obj/machinery/camera/autoname{
+	dir = 6
+	},
 /turf/open/floor/mineral/titanium/tiled/white,
 /area/ship/hallway/aft)
 "Gx" = (
@@ -2511,6 +2547,9 @@
 /obj/item/assembly/prox_sensor,
 /obj/item/assembly/prox_sensor,
 /obj/item/healthanalyzer,
+/obj/machinery/camera/autoname{
+	dir = 9
+	},
 /turf/open/floor/mineral/titanium/tiled,
 /area/ship/science/robotics)
 "Id" = (
@@ -2576,6 +2615,12 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
+"Iz" = (
+/obj/machinery/camera/autoname{
+	dir = 4
+	},
+/turf/open/floor/mineral/titanium/tiled/white,
+/area/ship/hallway/aft)
 "IB" = (
 /obj/structure/table,
 /obj/item/reagent_containers/food/snacks/burger/xeno,
@@ -2605,7 +2650,9 @@
 /turf/open/floor/mineral/titanium/tiled/purple,
 /area/ship/science)
 "IS" = (
-/obj/item/stack/sheet/mineral/titanium,
+/obj/item/stack/sheet/mineral/titanium{
+	amount = 2
+	},
 /obj/effect/decal/cleanable/generic,
 /obj/structure/cable{
 	icon_state = "4-9"
@@ -2681,6 +2728,9 @@
 "Js" = (
 /obj/structure/table,
 /obj/structure/bedsheetbin,
+/obj/machinery/camera/autoname{
+	dir = 6
+	},
 /turf/open/floor/mineral/titanium/tiled,
 /area/ship/crew/dorm)
 "JB" = (
@@ -2781,6 +2831,17 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/mineral/titanium/tiled/purple,
 /area/ship/science)
+"KB" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/camera/autoname{
+	dir = 8
+	},
+/turf/open/floor/mineral/titanium/tiled/white,
+/area/ship/hallway/fore)
 "KK" = (
 /obj/structure/bed/pod,
 /obj/item/bedsheet/rd,
@@ -3105,6 +3166,9 @@
 /obj/machinery/atmospherics/components/unary/relief_valve/atmos/atmos_waste{
 	dir = 1
 	},
+/obj/machinery/camera/autoname{
+	dir = 4
+	},
 /turf/open/floor/plating,
 /area/ship/external)
 "PA" = (
@@ -3226,6 +3290,9 @@
 /obj/structure/cable{
 	icon_state = "1-10"
 	},
+/obj/machinery/camera/autoname{
+	dir = 8
+	},
 /turf/open/floor/mineral/titanium/tiled/purple,
 /area/ship/science/ai_chamber)
 "QY" = (
@@ -3344,6 +3411,9 @@
 /obj/structure/disposalpipe/segment{
 	dir = 2
 	},
+/obj/machinery/camera/autoname{
+	dir = 5
+	},
 /turf/open/floor/plating,
 /area/ship/science)
 "Sp" = (
@@ -3359,6 +3429,9 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable{
 	icon_state = "1-6"
+	},
+/obj/machinery/camera/autoname{
+	dir = 4
 	},
 /turf/open/floor/mineral/titanium/tiled/purple,
 /area/ship/science/ai_chamber)
@@ -3416,6 +3489,7 @@
 /obj/machinery/light{
 	dir = 8
 	},
+/obj/item/crowbar/red,
 /turf/open/floor/mineral/titanium/tiled/white,
 /area/ship/hallway/aft)
 "TH" = (
@@ -3530,14 +3604,17 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 5
 	},
+/obj/machinery/camera/autoname{
+	dir = 1
+	},
 /turf/open/floor/carpet/purple,
 /area/ship/crew/office)
 "UL" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/item/assembly/flash,
 /obj/structure/cable{
 	icon_state = "6-8"
 	},
+/obj/item/assembly/flash/handheld,
 /turf/open/floor/mineral/titanium/tiled/purple,
 /area/ship/science/ai_chamber)
 "UZ" = (
@@ -3665,6 +3742,12 @@
 	},
 /turf/open/floor/mineral/titanium/tiled/white,
 /area/ship/science)
+"Wr" = (
+/obj/machinery/camera/autoname{
+	dir = 1
+	},
+/turf/open/floor/mineral/titanium/tiled/white,
+/area/ship/hallway/aft)
 "Ww" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor/shutters/preopen{
@@ -3705,6 +3788,9 @@
 /obj/machinery/conveyor{
 	dir = 4;
 	id = "slimer"
+	},
+/obj/machinery/camera/autoname{
+	dir = 5
 	},
 /turf/open/floor/circuit/telecomms{
 	name = "coldroom"
@@ -3760,6 +3846,9 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/disposalpipe/segment{
 	dir = 2
+	},
+/obj/machinery/camera/autoname{
+	dir = 5
 	},
 /turf/open/floor/plating,
 /area/ship/science)
@@ -3875,6 +3964,9 @@
 /obj/structure/disposalpipe/segment{
 	dir = 2
 	},
+/obj/machinery/camera/autoname{
+	dir = 5
+	},
 /turf/open/floor/plating,
 /area/ship/science)
 "Yz" = (
@@ -3898,6 +3990,9 @@
 "YG" = (
 /obj/machinery/processor/slime,
 /obj/structure/disposalpipe/segment,
+/obj/machinery/camera/autoname{
+	dir = 8
+	},
 /turf/open/floor/mineral/titanium/tiled/purple,
 /area/ship/science)
 "YO" = (
@@ -3922,6 +4017,9 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/camera/autoname{
+	dir = 4
+	},
 /turf/open/floor/mineral/titanium/tiled/white,
 /area/ship/hallway/fore)
 "YW" = (
@@ -3983,6 +4081,9 @@
 	},
 /obj/machinery/airalarm/directional/south{
 	pixel_y = -32
+	},
+/obj/machinery/camera/autoname{
+	dir = 6
 	},
 /turf/open/floor/circuit/green,
 /area/ship/science/ai_chamber)
@@ -4095,7 +4196,7 @@ vo
 ih
 Mg
 mD
-oV
+lS
 Xx
 or
 Ab
@@ -4301,7 +4402,7 @@ CZ
 Xt
 KO
 QM
-NY
+Iz
 TE
 wq
 NY
@@ -4324,7 +4425,7 @@ zr
 to
 DK
 Jg
-DK
+KB
 Qo
 sO
 BJ
@@ -4446,7 +4547,7 @@ UL
 eE
 DC
 wl
-NY
+Wr
 jd
 xg
 Fr
@@ -4718,7 +4819,7 @@ ny
 HC
 XF
 CK
-HC
+sG
 BC
 sk
 ut
