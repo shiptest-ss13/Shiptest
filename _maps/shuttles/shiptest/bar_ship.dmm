@@ -1582,6 +1582,11 @@
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance)
+"Fp" = (
+/obj/structure/table/reinforced,
+/obj/item/table_bell,
+/turf/open/floor/plasteel/dark,
+/area/ship/crew/canteen)
 "FA" = (
 /obj/machinery/door/airlock/glass,
 /obj/machinery/door/firedoor/border_only{
@@ -1854,6 +1859,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 5
 	},
+/obj/item/table_bell,
 /obj/item/reagent_containers/food/condiment/enzyme,
 /turf/open/floor/plasteel/mono/white,
 /area/ship/bridge)
@@ -2522,7 +2528,7 @@
 /turf/open/floor/carpet/nanoweave,
 /area/ship/crew/canteen)
 "Zz" = (
-/obj/machinery/cryopod/latejoin{
+/obj/machinery/cryopod{
 	dir = 1
 	},
 /turf/open/floor/wood,
@@ -2669,7 +2675,7 @@ vZ
 vZ
 xr
 xr
-In
+Fp
 xX
 kM
 sU

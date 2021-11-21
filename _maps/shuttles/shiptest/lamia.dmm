@@ -476,7 +476,7 @@
 /obj/machinery/computer/cryopod{
 	pixel_y = 27
 	},
-/obj/machinery/cryopod/latejoin/reskinnable{
+/obj/machinery/cryopod{
 	close_state = "bscanner_green";
 	icon_state = "bscanner_open";
 	open_state = "bscanner_open"
@@ -2157,6 +2157,9 @@
 	pixel_y = 4
 	},
 /obj/structure/table/wood/fancy/green,
+/obj/item/table_bell/brass{
+	pixel_x = -8
+	},
 /turf/open/floor/carpet/royalblack,
 /area/ship/hallway/starboard)
 "VR" = (

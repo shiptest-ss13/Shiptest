@@ -558,7 +558,7 @@
 /turf/open/floor/plating,
 /area/ship/maintenance/aft)
 "mW" = (
-/obj/machinery/cryopod/latejoin/reskinnable{
+/obj/machinery/cryopod{
 	close_state = "sleeper_clockwork";
 	dir = 4;
 	icon_state = "sleeper_clockwork-open";
@@ -589,6 +589,10 @@
 /obj/item/newspaper{
 	pixel_x = 3;
 	pixel_y = 1
+	},
+/obj/item/table_bell{
+	pixel_x = 8;
+	pixel_y = 8
 	},
 /turf/open/floor/carpet/nanoweave/beige,
 /area/ship/crew/office)
@@ -1386,7 +1390,7 @@
 /turf/open/floor/plating,
 /area/ship/maintenance/aft)
 "Kg" = (
-/obj/machinery/cryopod/latejoin/reskinnable{
+/obj/machinery/cryopod{
 	close_state = "sleeper_clockwork";
 	dir = 8;
 	icon_state = "sleeper_clockwork-open";

@@ -12,6 +12,7 @@ SolGov Representative
 	wiki_page = "Government_Attaché"
 	minimal_player_age = 7
 	exp_requirements = 180
+	officer = TRUE
 	exp_type = EXP_TYPE_CREW
 	exp_type_department = EXP_TYPE_SECURITY
 
