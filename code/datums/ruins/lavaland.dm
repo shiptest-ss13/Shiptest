@@ -303,9 +303,3 @@
 	id = "spooky_crash"
 	description = "A spooky looking crash."
 	suffix = "SPOOKYCRASH.dmm"
-
-/datum/map_template/ruin/lavaland/castlewalkers
-	name = "Castle Ashwalkers - Lavaland"
-	id = "castlwalkers-lava"
-	description = "A castle full of advanced ashwalkers."
-	suffix = "lavaland_surface_castlewalkers.dmm"
