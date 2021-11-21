@@ -47,7 +47,7 @@
 /obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/door/poddoor/shutters,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/space/basic,
+/turf/open/floor/plasteel/white,
 /area/ruin/unpowered)
 "et" = (
 /obj/effect/spawner/structure/window/reinforced,
@@ -130,7 +130,7 @@
 "kz" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/door/poddoor/shutters,
-/turf/open/space/basic,
+/turf/open/floor/plasteel/white,
 /area/ruin/unpowered)
 "lv" = (
 /obj/effect/decal/cleanable/dirt,
@@ -352,7 +352,7 @@
 /area/ruin/unpowered)
 "AX" = (
 /obj/machinery/door/poddoor/shutters,
-/turf/open/space/basic,
+/turf/open/floor/plasteel/white,
 /area/ruin/unpowered)
 "Cq" = (
 /turf/template_noop,
@@ -443,6 +443,7 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered)
 "KZ" = (
@@ -472,6 +473,7 @@
 	dir = 4
 	},
 /obj/machinery/conveyor_switch/oneway,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered)
 "My" = (
@@ -539,6 +541,11 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel,
+/area/ruin/unpowered)
+"Qr" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating,
 /area/ruin/unpowered)
 "QM" = (
 /obj/structure/disposalpipe/segment,
@@ -965,8 +972,8 @@ JY
 Vp
 nS
 gW
-nS
-Yd
+Qr
+gW
 tW
 lv
 oh
