@@ -44,36 +44,6 @@
 	var/obj/item/gun/energy/kinetic_accelerator/minebot/stored_gun
 
 /mob/living/simple_animal/hostile/mining_drone/rockplanet
-	name = "\improper Abandoned minebot"
-	desc = "The instructions printed on the side are faded, and the only thing that remains is mechanical bloodlust."
-	mode = MINEDRONE_ATTACK
-	mode = MINEDRONE_ATTACK
-	search_objects = 1
-	wander = FALSE
-	ranged = TRUE
-	retreat_distance = 2
-	minimum_distance = 1
-	icon_state = "mining_drone_offense"
-	faction = list("mining", "silicon" , "turret")
-	loot = list(/obj/effect/decal/cleanable/robot_debris, /obj/effect/spawner/lootdrop/minebot)
-	check_friendly_fire = FALSE
-	projectiletype = /obj/projectile/kinetic/miner
-
-/mob/living/simple_animal/hostile/mining_drone/rockplanet/SetOffenseBehavior()
-	. = ..()
-	vision_range = 9
-	projectiletype = /obj/projectile/kinetic/miner
-
-/obj/effect/spawner/lootdrop/minebot
-	loot = list(/obj/item/borg/upgrade/modkit/minebot_passthrough = 15,
-				/obj/item/borg/upgrade/modkit/chassis_mod = 15,
-				/obj/item/borg/upgrade/modkit/tracer = 15,
-				/obj/item/borg/upgrade/modkit/cooldown = 5,
-				/obj/item/borg/upgrade/modkit/damage = 5,
-				/obj/item/borg/upgrade/modkit/range = 5,
-				/obj/item/borg/upgrade/modkit/aoe/mobs = 5,
-				/obj/item/borg/upgrade/modkit/aoe/turfs = 5,
-				/obj/item/borg/upgrade/modkit/trigger_guard = 5)
 
 
 /mob/living/simple_animal/hostile/mining_drone/Initialize()
