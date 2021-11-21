@@ -40,7 +40,7 @@
 
 /datum/ship_module/proc/can_install(obj/structure/overmap/ship/simulated/ship, mob/user)
 	SHOULD_CALL_PARENT(TRUE)
-	if(slot == SHIP_MODULE_NONE)
+	if(slot == SHIP_SLOT_NONE)
 		return FALSE
 	var/list/ship_modules = ship.modules
 	var/list/slot_modules = ship_modules[slot]
@@ -100,7 +100,7 @@
 
 /datum/ship_module/proc/uninstall(obj/structure/overmap/ship/simulated/ship)
 	SHOULD_CALL_PARENT(TRUE)
-	notify_modules(ship, user, "uninstall", list("module" = src))
+	notify_modules(ship, null, "uninstall", list("module" = src))
 	ship.modules[slot] -= src
 	qdel(installed_on[ship])
 	installed_on -= ship
@@ -115,20 +115,35 @@
 
 /datum/ship_module/proc/handle_ship_damage(ship, damage, damage_type, originator)
 	SIGNAL_HANDLER
-	return SHIP_ALLOW
+	var/obj/structure/ship_module/structure = installed_on[ship]
+	if(!structure)
+		CRASH("Calling ship event handler on ship without module structure?")
+	return structure.ship_damage(ship, damage, damage_type, originator)
 
 /datum/ship_module/proc/handle_ship_thrust(ship, thrust, direction)
 	SIGNAL_HANDLER
-	return SHIP_ALLOW
+	var/obj/structure/ship_module/structure = installed_on[ship]
+	if(!structure)
+		CRASH("Calling ship event handler on ship without module structure?")
+	return structure.ship_thrust(ship, thrust, direction)
 
 /datum/ship_module/proc/handle_ship_move(ship, new_loc, old_loc)
 	SIGNAL_HANDLER
-	return SHIP_ALLOW
+	var/obj/structure/ship_module/structure = installed_on[ship]
+	if(!structure)
+		CRASH("Calling ship event handler on ship without module structure?")
+	return structure.ship_move(ship, new_loc, old_loc)
 
 /datum/ship_module/proc/handle_ship_dock(ship, dock)
 	SIGNAL_HANDLER
-	return SHIP_ALLOW
+	var/obj/structure/ship_module/structure = installed_on[ship]
+	if(!structure)
+		CRASH("Calling ship event handler on ship without module structure?")
+	return structure.ship_dock(ship, dock)
 
 /datum/ship_module/proc/handle_ship_undock(ship, dock)
 	SIGNAL_HANDLER
-	return SHIP_ALLOW
+	var/obj/structure/ship_module/structure = installed_on[ship]
+	if(!structure)
+		CRASH("Calling ship event handler on ship without module structure?")
+	return structure.ship_undock(ship, dock)
