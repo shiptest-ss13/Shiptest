@@ -58,7 +58,13 @@
 	suit = /obj/item/clothing/suit/space/hardsuit/swat/captain
 	suit_store = /obj/item/tank/internals/oxygen
 
-//Shiptest Outfits
+/datum/outfit/job/captain/nt
+	name = "Captain (Nanotrasen)"
+
+	uniform = /obj/item/clothing/under/rank/command/captain/nt
+	alt_uniform = null
+	shoes = /obj/item/clothing/shoes/laceup
+	head = /obj/item/clothing/head/caphat/nt
 
 /datum/outfit/job/captain/solgov
 	name = "Captain (SolGov)"

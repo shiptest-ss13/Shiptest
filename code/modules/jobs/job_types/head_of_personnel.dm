@@ -66,7 +66,13 @@
 	if(locate(/datum/holiday/ianbirthday) in SSevents.holidays)
 		undershirt = /datum/sprite_accessory/undershirt/ian
 
-//Shiptest Outfits
+/datum/outfit/job/head_of_personnel/nt
+	name = "First Officer (Nanotrasen)"
+	uniform = /obj/item/clothing/under/rank/command/lieutenant/blue
+	alt_uniform = null
+	alt_suit = null
+	shoes = /obj/item/clothing/shoes/laceup
+	head = /obj/item/clothing/head/collectable/HoP
 
 /datum/outfit/job/head_of_personnel/solgov
 	name = "Executive Officer (SolGov)"
