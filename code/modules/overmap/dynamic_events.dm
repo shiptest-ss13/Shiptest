@@ -292,6 +292,7 @@
 	name = "\improper Unknown Planetoid"
 	sound_environment = SOUND_ENVIRONMENT_MOUNTAINS
 	has_gravity = STANDARD_GRAVITY
+	always_unpowered = TRUE
 
 /area/overmap_encounter/planetoid/lava
 	name = "\improper Volcanic Planetoid"
