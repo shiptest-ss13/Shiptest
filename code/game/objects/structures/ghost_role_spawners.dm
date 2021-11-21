@@ -86,8 +86,8 @@
 	density = FALSE
 	short_desc = "You are an ash walker. Your tribe worships the Necropolis."
 	flavour_text = "The wastes are sacred ground, its monsters a blessed bounty. \
-	You have seen lights in the distance... they foreshadow the arrival of outsiders that seek to tear apart the Necropolis and its domain. \
-	Fresh sacrifices for your nest."
+	The invaders from the past have died long ago. You will survive until the next \
+	day, and the day after. Your way of life is important to you."
 	assignedrole = "Ash Walker"
 	var/datum/team/ashwalkers/team
 	var/obj/structure/ash_walker_eggshell/eggshell
@@ -100,7 +100,7 @@
 
 /obj/effect/mob_spawn/human/ash_walker/special(mob/living/new_spawn)
 	new_spawn.fully_replace_character_name(null,random_unique_lizard_name(gender))
-	to_chat(new_spawn, "<b>Drag the corpses of men and beasts to your nest. It will absorb them to create more of your kind. Invade the strange structure of the outsiders if you must. Do not cause unnecessary destruction, as littering the wastes with ugly wreckage is certain to not gain you favor. Glory to the Necropolis!</b>")
+	to_chat(new_spawn, "<b>Drag the corpses of beasts and the dead to your nest. It will absorb them to create more of your kind. You have never seen a outsider before, as that was before your time.</b>")
 
 	new_spawn.mind.add_antag_datum(/datum/antagonist/ashwalker, team)
 

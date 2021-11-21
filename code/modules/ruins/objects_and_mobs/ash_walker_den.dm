@@ -70,11 +70,6 @@
 			visible_message("<span class='warning'>Serrated tendrils eagerly pull [H] to [src], tearing the body apart as its blood seeps over the eggs.</span>")
 			playsound(get_turf(src),'sound/magic/demon_consume.ogg', 100, TRUE)
 			var/deliverykey = H.fingerprintslast //key of whoever brought the body
-			var/mob/living/deliverymob = get_mob_by_key(deliverykey) //mob of said key
-			//there is a 40% chance that the Lava Lizard unlocks their respawn with each sacrifice
-			if(deliverymob && (deliverymob.mind?.has_antag_datum(/datum/antagonist/ashwalker)) && (deliverykey in ashies.players_spawned) && (prob(40)))
-				to_chat(deliverymob, "<span class='warning'><b>The Necropolis is pleased with your sacrifice. You feel confident your existence after death is secure.</b></span>")
-				ashies.players_spawned -= deliverykey
 			H.gib()
 			obj_integrity = min(obj_integrity + max_integrity*0.05,max_integrity)//restores 5% hp of tendril
 			for(var/mob/living/L in view(src, 5))
