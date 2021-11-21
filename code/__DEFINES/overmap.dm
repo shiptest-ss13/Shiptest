@@ -18,12 +18,15 @@
 #define DAMAGE_EXPLOSIVE "Explosive"
 #define DAMAGE_BLOCKED_MOVE "ship-blocked-move.name" // classical localization joke, given this should NEVER BE USED AS OUTPUT
 
+#define IS_DAMAGE_TYPE(t1, t2) (islist(t1) ? (t2 in t1) : t1 == t2)
+
 // Ship COMSIGs
 #define COMSIG_SHIP_DAMAGE "ship-damage"
 #define COMSIG_SHIP_THRUST "ship-thrust"
 #define COMSIG_SHIP_MOVE "ship-move"
 #define COMSIG_SHIP_DOCK "ship-dock"
 #define COMSIG_SHIP_UNDOCK "ship-undock"
+#define COMSIG_SHIP_BLOCKED_MOVE "ship-blocked-move"
 
 // Allow the ship to perform this action
 #define SHIP_ALLOW (1<<0)
@@ -65,14 +68,13 @@
 #define SHIP_SLOT_UTILITY "Utility"
 #define SHIP_MODULE_UNIQUE (1<<0)
 
-GLOBAL_LIST_INIT_TYPED(ship_modules, /datum/ship_module, populate_ship_modules())
+GLOBAL_LIST_EMPTY_TYPED(ship_modules, /datum/ship_module)
 
 /proc/populate_ship_modules()
-	if(length(GLOB.ship_modules))
-		return GLOB.ship_modules
-	. = list()
-	for(var/datum/ship_module/path in subtypesof(/datum/ship_module))
-		if(initial(path.abstract) == path)
+	var/list/ret = new
+	for(var/path in subtypesof(/datum/ship_module))
+		var/datum/ship_module/m_path = path
+		if(initial(m_path.abstract) == path)
 			continue
-		.[path] = new path
-	return .
+		ret[path] = new path
+	GLOB.ship_modules = ret

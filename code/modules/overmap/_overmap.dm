@@ -164,6 +164,8 @@
 /**
   * Reduces overmap object integrity by X amount, divided by armor
   * * amount - amount of damage to apply to the ship
+  * * source - The source of the damage
+  * * damage_type - The damage type, or a list of types, that this damage is dealt as
   */
 /obj/structure/overmap/proc/recieve_damage(amount, atom/source, damage_type = DAMAGE_PHYSICAL)
 	var/reduction
