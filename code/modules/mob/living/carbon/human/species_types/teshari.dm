@@ -39,6 +39,11 @@
 	. = ..()
 	C.can_be_held = FALSE
 
+/datum/species/teshari/random_name(gender,unique,lastname)
+	if(unique)
+		return random_unique_kepori_name()
+	return kepori_name()
+
 /datum/species/teshari/can_equip(obj/item/I, slot, disable_warning, mob/living/carbon/human/H, bypass_equip_delay_self, swap)
 	if(slot == ITEM_SLOT_MASK)
 		if(H.wear_mask && !swap)
