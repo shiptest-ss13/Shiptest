@@ -18,8 +18,6 @@
 	icon_state = "aclfgrunt"
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 40)
 	alt_covers_chest = TRUE
-	icon = 'whitesands/icons/obj/clothing/under/syndicate.dmi'
-	mob_overlay_icon = 'whitesands/icons/mob/clothing/under/syndicate.dmi'
 
 /obj/item/clothing/under/syndicate/gorlex
 	name = "Gorlex Marauder uniform"
@@ -27,8 +25,6 @@
 	icon_state = "gorlex"
 	armor = list("melee" = 10, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 40)
 	alt_covers_chest = TRUE
-	icon = 'whitesands/icons/obj/clothing/under/syndicate.dmi'
-	mob_overlay_icon = 'whitesands/icons/mob/clothing/under/syndicate.dmi'
 
 /obj/item/clothing/under/syndicate/cybersun
 	name = "Cybersun coveralls"
@@ -36,8 +32,6 @@
 	icon_state = "cybersun"
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 60, "acid" = 100)
 	alt_covers_chest = TRUE
-	icon = 'whitesands/icons/obj/clothing/under/syndicate.dmi'
-	mob_overlay_icon = 'whitesands/icons/mob/clothing/under/syndicate.dmi'
 
 /datum/outfit/syndicate/intern
 	name = "Syndicate Operative - Intern"
