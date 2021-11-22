@@ -124,7 +124,7 @@ Nothing else in the console has ID requirements.
 	if(istype(D, /obj/item/research_notes))
 		var/obj/item/research_notes/R = D
 		stored_research.add_point_list(list(TECHWEB_POINT_TYPE_GENERIC = R.value))
-		playsound(src,'sound/machines/copier.ogg', 100, TRUE)
+		playsound(src,'sound/machines/copier.ogg', 50, TRUE)
 		qdel(R)
 		return TRUE
 

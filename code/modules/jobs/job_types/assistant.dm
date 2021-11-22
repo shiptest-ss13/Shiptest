@@ -71,11 +71,11 @@ Assistant
 	uniform = /obj/item/clothing/under/color/white
 	accessory = /obj/item/clothing/accessory/armband/science
 
-//Shiptest outfits
-
 /datum/outfit/job/assistant/engineeringspecialist
 	name = "Assistant (Deckhand)"
 	accessory = /obj/item/clothing/accessory/armband/cargo
+
+//Shiptest outfits
 
 /datum/outfit/job/assistant/solgov
 	name = "Sailor (SolGov)"
@@ -129,3 +129,9 @@ Assistant
 	uniform = /obj/item/clothing/under/suit/black
 	shoes = /obj/item/clothing/shoes/laceup
 	suit = /obj/item/clothing/suit/toggle/lawyer/black
+
+/datum/outfit/job/assistant/operative
+	name = "Operative (Assistant)"
+
+	uniform = /obj/item/clothing/under/syndicate/aclfgrunt
+	shoes = /obj/item/clothing/shoes/jackboots
