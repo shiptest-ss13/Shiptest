@@ -1003,8 +1003,8 @@
 	icon_state = "space-pilot"
 	item_state = "space-pilot"
 	desc = "A lightweight, unarmored space suit designed for mech and spacepod pilots. Special attachment points make mounting and dismounting from spacepods and mechs much easier."
-	var/delay_modifier = 2 //reduces enter and exit delay on mechs and pods by this factor
 	clothing_flags = STOPSPRESSUREDAMAGE | THICKMATERIAL | FAST_EMBARK
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/exo/large
 
 /obj/item/clothing/head/helmet/space/pilot
 	name = "pilot helmet"
