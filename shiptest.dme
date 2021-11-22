@@ -1,4 +1,4 @@
-g// DM Environment file for tgstation.dme.
+g// DM Environment file for shiptest.dme.
 // All manual changes should be made outside the BEGIN_ and END_ blocks.
 // New source code should be placed in .dm files: choose File/New --> Code File.
 // BEGIN_INTERNALS
@@ -981,6 +981,7 @@ g// DM Environment file for tgstation.dme.
 #include "code\game\objects\items\AI_modules.dm"
 #include "code\game\objects\items\airlock_painter.dm"
 #include "code\game\objects\items\apc_frame.dm"
+#include "code\game\objects\items\bell.dm"
 #include "code\game\objects\items\binoculars.dm"
 #include "code\game\objects\items\blueprints.dm"
 #include "code\game\objects\items\body_egg.dm"
@@ -1047,6 +1048,7 @@ g// DM Environment file for tgstation.dme.
 #include "code\game\objects\items\shields.dm"
 #include "code\game\objects\items\shooting_range.dm"
 #include "code\game\objects\items\shrapnel.dm"
+#include "code\game\objects\items\shuttle_creator.dm"
 #include "code\game\objects\items\signs.dm"
 #include "code\game\objects\items\singularityhammer.dm"
 #include "code\game\objects\items\spear.dm"
@@ -1243,6 +1245,7 @@ g// DM Environment file for tgstation.dme.
 #include "code\game\objects\structures\spirit_board.dm"
 #include "code\game\objects\structures\stairs.dm"
 #include "code\game\objects\structures\statues.dm"
+#include "code\game\objects\structures\table_flipped.dm"
 #include "code\game\objects\structures\table_frames.dm"
 #include "code\game\objects\structures\tables_racks.dm"
 #include "code\game\objects\structures\tank_dispenser.dm"
@@ -1830,6 +1833,7 @@ g// DM Environment file for tgstation.dme.
 #include "code\modules\discord\discord_link_record.dm"
 #include "code\modules\discord\tgs_commands.dm"
 #include "code\modules\discord\toggle_notify.dm"
+#include "code\modules\disks\disk.dm"
 #include "code\modules\economy\_economy.dm"
 #include "code\modules\economy\account.dm"
 #include "code\modules\economy\pay_stand.dm"
@@ -3042,6 +3046,7 @@ g// DM Environment file for tgstation.dme.
 #include "code\modules\surgery\dental_implant.dm"
 #include "code\modules\surgery\experimental_dissection.dm"
 #include "code\modules\surgery\eye_surgery.dm"
+#include "code\modules\surgery\gastrectomy.dm"
 #include "code\modules\surgery\healing.dm"
 #include "code\modules\surgery\hepatectomy.dm"
 #include "code\modules\surgery\implant_removal.dm"
@@ -3467,7 +3472,6 @@ g// DM Environment file for tgstation.dme.
 #include "whitesands\code\modules\projectiles\guns\ballistic\automatic.dm"
 #include "whitesands\code\modules\projectiles\guns\ballistic\derringer.dm"
 #include "whitesands\code\modules\projectiles\guns\ballistic\rifle.dm"
-#include "whitesands\code\modules\projectiles\guns\ballistic\shotgun.dm"
 #include "whitesands\code\modules\projectiles\guns\energy\energy_gun.dm"
 #include "whitesands\code\modules\projectiles\guns\energy\laser.dm"
 #include "whitesands\code\modules\projectiles\guns\energy\pulse.dm"

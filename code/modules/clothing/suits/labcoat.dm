@@ -49,3 +49,13 @@
 	name = "scientist labcoat"
 	desc = "A suit that protects against minor chemical spills. Has a purple stripe on the shoulder."
 	icon_state = "labcoat_tox"
+
+/obj/item/clothing/suit/toggle/labcoat/raincoat
+	name = "\improper Cybersun raincoat"
+	desc = {"A translucent, uniquely designed labcoat worn by the designers of Cybersun Solutions. It's made from a special material that actively repels fluids.
+You're pretty sure this is just a raincoat.
+<i>Wearing a raincoat inside is like wearing sunglasses at night. A good Cybersun exec does both.</i>"}
+	icon_state = "raincoat"
+	icon = 'icons/obj/clothing/suits.dmi' // zeta is a verified dumb dumb idiothead who cannot do anything right - github review suggestion by triplezeta
+	mob_overlay_icon = 'icons/mob/clothing/suit.dmi' // same as above
+	item_state = "raincoat"
