@@ -43,7 +43,7 @@
 
 //putting this area here until i make jungle areas.dm in another PR that i am totally making
 //did you ever make it? ~VF 2021
-/area/ruin/major/jungle/onceler/main
+/area/ruin/jungle/onceler/main //what is an area doing here
 	requires_power = FALSE
 	name = "Thneed Factory"
 	icon_state = "engine"
