@@ -96,6 +96,7 @@
 	uniform = /obj/item/clothing/under/rank/security/officer/blueshirt
 	alt_uniform = null
 	suit = null
+	alt_suit = null
 	shoes = /obj/item/clothing/shoes/cowboy/black
 	accessory = /obj/item/clothing/accessory/waistcoat
 	head = /obj/item/clothing/head/HoS/cowboy

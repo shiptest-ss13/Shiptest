@@ -124,8 +124,8 @@
 /obj/machinery/status_display/shuttle{
 	pixel_y = -32
 	},
-/obj/structure/reagent_dispensers/fueltank,
 /obj/effect/turf_decal/industrial/outline/yellow,
+/obj/machinery/suit_storage_unit/independent/pilot,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/cargo)
 "bx" = (
@@ -231,7 +231,6 @@
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
-/obj/structure/ore_box,
 /obj/effect/turf_decal/box/corners{
 	dir = 8
 	},
@@ -363,11 +362,6 @@
 /obj/effect/turf_decal/corner/blue{
 	dir = 8
 	},
-/obj/structure/closet/wall/white/med{
-	dir = 8;
-	name = "mortuary locker";
-	pixel_x = 28
-	},
 /obj/item/storage/box/bodybags{
 	pixel_x = -7;
 	pixel_y = 4
@@ -386,6 +380,14 @@
 	},
 /obj/item/reagent_containers/syringe{
 	pixel_x = 7
+	},
+/obj/structure/closet/secure_closet/wall{
+	dir = 8;
+	icon_door = "med_wall";
+	locked = 0;
+	name = "mortuary locker";
+	pixel_x = 28;
+	req_access_txt = "1"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/medical)
@@ -488,10 +490,8 @@
 /obj/structure/sign/poster/official/random{
 	pixel_y = 32
 	},
-/obj/machinery/suit_storage_unit/cmo{
-	suit_type = /obj/item/clothing/suit/space/hardsuit/medical
-	},
 /obj/structure/window/reinforced/spawner/east,
+/obj/machinery/medical_kiosk,
 /turf/open/floor/plasteel/mono,
 /area/ship/medical)
 "gI" = (
@@ -519,6 +519,17 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
+"ib" = (
+/obj/item/mecha_parts/part/ripley_left_leg{
+	pixel_x = 2;
+	pixel_y = -6
+	},
+/obj/item/mecha_parts/part/ripley_right_arm{
+	pixel_x = -7;
+	pixel_y = 6
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/cargo)
 "id" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -877,19 +888,19 @@
 /obj/effect/turf_decal/corner/blue/bordercorner{
 	dir = 8
 	},
-/obj/structure/closet/wall/blue{
-	dir = 8;
-	icon_state = "solgov_wall";
-	name = "captain's closet";
-	pixel_x = 28;
-	req_access_txt = "20"
-	},
 /obj/item/clothing/shoes/cowboy/white,
 /obj/item/clothing/under/suit/white,
 /obj/item/clothing/suit/armor/hos/trenchcoat,
 /obj/item/clothing/glasses/sunglasses,
 /obj/item/clothing/head/caphat/cowboy,
 /obj/item/gun/ballistic/automatic/pistol/m1911,
+/obj/structure/closet/secure_closet/wall{
+	dir = 8;
+	icon_state = "solgov_wall";
+	name = "captain's closet";
+	pixel_x = 28;
+	req_access_txt = "20"
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
 "lH" = (
@@ -997,12 +1008,13 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 6
 	},
-/obj/structure/closet/wall/red{
+/obj/item/gun/ballistic/revolver/detective,
+/obj/structure/closet/secure_closet/wall{
+	icon_state = "sec_wall";
 	name = "firearms locker";
 	pixel_y = 28;
 	req_access_txt = "1"
 	},
-/obj/item/gun/ballistic/revolver/detective,
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "mJ" = (
@@ -1065,7 +1077,8 @@
 /obj/effect/turf_decal/corner/red/border{
 	dir = 4
 	},
-/obj/structure/closet/wall/red{
+/obj/structure/closet/secure_closet/wall{
+	icon_state = "sec_wall";
 	name = "explosives locker";
 	pixel_y = 28;
 	req_access_txt = "1"
@@ -1299,7 +1312,10 @@
 	dir = 8;
 	pixel_x = 22
 	},
-/obj/structure/mecha_wreckage/ripley,
+/obj/item/mecha_parts/chassis/ripley,
+/obj/item/mecha_parts/mecha_equipment/drill{
+	pixel_y = -11
+	},
 /turf/open/floor/mech_bay_recharge_floor,
 /area/ship/cargo)
 "rl" = (
@@ -1487,7 +1503,7 @@
 	pixel_y = 24
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
-/obj/structure/bed/roller,
+/obj/machinery/sleeper,
 /turf/open/floor/plasteel/mono,
 /area/ship/medical)
 "tu" = (
@@ -1855,7 +1871,7 @@
 /turf/open/floor/plating,
 /area/ship/engineering)
 "wZ" = (
-/obj/item/analyzer,
+/obj/item/mecha_parts/part/ripley_torso,
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "xg" = (
@@ -1959,15 +1975,18 @@
 /obj/effect/turf_decal/corner/blue/border{
 	dir = 9
 	},
-/obj/structure/closet/wall/white/med{
-	dir = 1;
-	name = "medicine locker";
-	pixel_y = -28
-	},
 /obj/item/storage/firstaid/regular,
 /obj/item/storage/firstaid/fire{
 	pixel_x = -4;
 	pixel_y = 5
+	},
+/obj/structure/closet/secure_closet/wall{
+	dir = 1;
+	icon_door = "med_wall";
+	locked = 0;
+	name = "medical locker";
+	pixel_y = -28;
+	req_access_txt = "1"
 	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/medical)
@@ -2071,7 +2090,6 @@
 /turf/open/floor/plasteel/white,
 /area/ship/crew/canteen)
 "zn" = (
-/obj/machinery/sleeper,
 /obj/machinery/light{
 	dir = 1
 	},
@@ -2079,6 +2097,7 @@
 /obj/structure/sign/warning/nosmoking{
 	pixel_y = 32
 	},
+/obj/structure/chair,
 /turf/open/floor/plasteel/mono,
 /area/ship/medical)
 "zr" = (
@@ -2341,7 +2360,7 @@
 "CG" = (
 /obj/structure/window/reinforced,
 /obj/effect/turf_decal/industrial/outline/yellow,
-/obj/machinery/suit_storage_unit/mining/eva,
+/obj/machinery/suit_storage_unit/independent/mining/eva,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "CL" = (
@@ -2360,8 +2379,8 @@
 /turf/open/floor/plasteel/white,
 /area/ship/crew/canteen)
 "CQ" = (
-/obj/structure/closet/emcloset,
 /obj/effect/turf_decal/industrial/outline/yellow,
+/obj/structure/tank_dispenser,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/hallway/central)
 "CR" = (
@@ -2401,9 +2420,10 @@
 /obj/effect/turf_decal/corner/red{
 	dir = 8
 	},
-/obj/structure/closet/wall/red{
+/obj/structure/closet/secure_closet/wall{
 	dir = 1;
-	name = "armor locker";
+	icon_state = "sec_wall";
+	name = "firearms locker";
 	pixel_y = -28;
 	req_access_txt = "1"
 	},
@@ -2658,17 +2678,21 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 1
 	},
-/obj/item/clothing/suit/armor/vest/alt,
 /obj/effect/turf_decal/corner/red,
 /obj/effect/turf_decal/corner/red{
 	dir = 8
 	},
-/obj/structure/closet/wall/red{
+/obj/structure/closet/secure_closet/wall{
 	dir = 1;
-	name = "armor locker";
+	icon_state = "sec_wall";
+	name = "firearms locker";
 	pixel_y = -28;
 	req_access_txt = "1"
 	},
+/obj/item/clothing/accessory/holster,
+/obj/item/storage/belt/security,
+/obj/item/melee/classic_baton/telescopic,
+/obj/item/reagent_containers/spray/pepper,
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "FJ" = (
@@ -2717,7 +2741,6 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/industrial/outline/yellow,
-/obj/structure/tank_dispenser,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "Ge" = (
@@ -2893,6 +2916,10 @@
 /turf/open/floor/plasteel/mono,
 /area/ship/hallway/central)
 "Hy" = (
+/obj/item/mecha_parts/part/ripley_right_arm{
+	pixel_x = 7;
+	pixel_y = -13
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "Hz" = (
@@ -2918,16 +2945,14 @@
 /obj/effect/turf_decal/corner/red{
 	dir = 8
 	},
-/obj/structure/closet/wall/red{
+/obj/structure/closet/secure_closet/wall{
 	dir = 1;
-	name = "equipment locker";
+	icon_state = "sec_wall";
+	name = "armor locker";
 	pixel_y = -28;
 	req_access_txt = "1"
 	},
-/obj/item/reagent_containers/spray/pepper,
-/obj/item/melee/classic_baton/telescopic,
-/obj/item/storage/belt/security,
-/obj/item/clothing/accessory/holster,
+/obj/item/clothing/suit/armor/vest/alt,
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "HS" = (
@@ -3209,7 +3234,7 @@
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
-/obj/machinery/suit_storage_unit/engine,
+/obj/machinery/suit_storage_unit/independent/engineering,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
 "Nd" = (
@@ -3238,6 +3263,8 @@
 /obj/item/stamp/rd{
 	name = "mech technician's rubber stamp"
 	},
+/obj/item/circuitboard/mecha/ripley/main,
+/obj/item/circuitboard/mecha/ripley/peripherals,
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/central)
 "ND" = (
@@ -3404,10 +3431,14 @@
 /obj/effect/turf_decal/corner/blue/border{
 	dir = 5
 	},
-/obj/structure/closet/wall/white/med{
+/obj/item/roller,
+/obj/structure/closet/secure_closet/wall{
 	dir = 1;
-	name = "medicine locker";
-	pixel_y = -28
+	icon_door = "med_wall";
+	locked = 0;
+	name = "medical locker";
+	pixel_y = -28;
+	req_access_txt = "1"
 	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/medical)
@@ -3448,7 +3479,7 @@
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/crew/canteen)
 "PB" = (
-/obj/machinery/medical_kiosk,
+/obj/structure/chair,
 /turf/open/floor/plasteel/mono,
 /area/ship/medical)
 "PF" = (
@@ -3522,7 +3553,14 @@
 /turf/open/floor/plasteel,
 /area/ship/construction)
 "QT" = (
-/obj/item/mecha_parts/mecha_equipment/drill,
+/obj/item/mecha_parts/part/ripley_right_leg{
+	pixel_x = 5;
+	pixel_y = 9
+	},
+/obj/item/mecha_parts/mecha_equipment/hydraulic_clamp{
+	pixel_x = -7;
+	pixel_y = -5
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "QV" = (
@@ -3653,7 +3691,7 @@
 "Su" = (
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/structure/window/reinforced,
-/obj/machinery/suit_storage_unit/mining/eva,
+/obj/machinery/suit_storage_unit/independent/mining/eva,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "SE" = (
@@ -3677,13 +3715,13 @@
 /turf/open/floor/carpet/blue,
 /area/ship/engineering/communications)
 "Tk" = (
-/obj/structure/ore_box,
 /obj/machinery/light/small{
 	dir = 8
 	},
 /obj/effect/turf_decal/box/corners{
 	dir = 1
 	},
+/obj/structure/reagent_dispensers/fueltank,
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "Tq" = (
@@ -3694,13 +3732,6 @@
 	dir = 8
 	},
 /obj/machinery/holopad/emergency/command,
-/obj/structure/closet/wall/blue{
-	dir = 4;
-	icon_state = "solgov_wall";
-	name = "first mate's closet";
-	pixel_x = -28;
-	req_access_txt = "57"
-	},
 /obj/item/storage/backpack/captain,
 /obj/item/clothing/shoes/cowboy/black,
 /obj/item/clothing/under/rank/security/officer/blueshirt,
@@ -3708,6 +3739,13 @@
 /obj/item/clothing/glasses/sunglasses,
 /obj/item/clothing/head/HoS/cowboy,
 /obj/item/gun/energy/e_gun/mini,
+/obj/structure/closet/secure_closet/wall{
+	dir = 4;
+	icon_state = "solgov_wall";
+	name = "first mate's closet";
+	pixel_x = -28;
+	req_access_txt = "57"
+	},
 /turf/open/floor/carpet/blue,
 /area/ship/engineering/communications)
 "TC" = (
@@ -3986,20 +4024,16 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
-/obj/structure/closet/wall/red{
-	name = "ammunition locker";
-	pixel_y = 28;
-	req_access_txt = "1"
-	},
-/obj/structure/closet/wall/red{
-	name = "ammunition locker";
-	pixel_y = 28;
-	req_access_txt = "1"
-	},
 /obj/item/ammo_box/c38,
 /obj/item/stock_parts/cell/gun/mini,
 /obj/item/ammo_box/magazine/m45,
 /obj/item/ammo_box/magazine/m45,
+/obj/structure/closet/secure_closet/wall{
+	icon_state = "sec_wall";
+	name = "ammunition locker";
+	pixel_y = 28;
+	req_access_txt = "1"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "WH" = (
@@ -4078,6 +4112,7 @@
 	dir = 4;
 	pixel_x = -24
 	},
+/obj/structure/ore_box,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/cargo)
 "Xg" = (
@@ -5130,7 +5165,7 @@ yI
 sT
 hy
 QT
-Hy
+ib
 vZ
 iC
 zn
