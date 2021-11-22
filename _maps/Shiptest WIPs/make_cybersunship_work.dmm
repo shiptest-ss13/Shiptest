@@ -1,0 +1,48 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"a" = (
+/turf/open/floor/mineral/plastitanium/red,
+/area/ship/bridge)
+"g" = (
+/obj/structure/table/reinforced,
+/obj/item/areaeditor/shuttle,
+/turf/open/floor/mineral/plastitanium/red,
+/area/ship/bridge)
+"F" = (
+/obj/structure/window/plasma/reinforced/plastitanium,
+/turf/open/floor/mineral/plastitanium,
+/area/ship/bridge)
+"K" = (
+/obj/machinery/computer/helm{
+	dir = 8
+	},
+/turf/open/floor/mineral/plastitanium/red,
+/area/ship/bridge)
+"W" = (
+/obj/structure/table/reinforced,
+/turf/open/floor/mineral/plastitanium/red,
+/area/ship/bridge)
+"Z" = (
+/obj/structure/window/plasma/reinforced/plastitanium,
+/obj/docking_port/mobile{
+	can_move_docking_ports = 1;
+	dir = 8;
+	launch_status = 0
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/ship/bridge)
+
+(1,1,1) = {"
+a
+a
+a
+"}
+(2,1,1) = {"
+g
+K
+W
+"}
+(3,1,1) = {"
+F
+Z
+F
+"}
