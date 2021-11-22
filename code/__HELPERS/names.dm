@@ -19,6 +19,10 @@
 /proc/squid_name()
 	return "[pick(GLOB.squid_names)][pick("-", "", " ")][capitalize(pick(GLOB.squid_names) + pick(GLOB.squid_names))]"
 
+/proc/kepori_name()
+	var/name = "[pick(list("Ren", "Ran", "Kha", "Rha", "Jes", "Nes", "Nez", "Jas", "Eij", "Eik", "Hal", "Kal", "Ral", "Tal", "N", "K", "R", "Ein", "Nah", "Na", "Kaz", "Kas", "Eil", "Eit"))]"
+	return name + "[pick(list("an", "un", "ali", "oli", "uli", "ami", "omi", "umi", "ani", "uni", "uno", "uko", "a", "i", "o", "ala", "aka", "ako", "aku", "yo", "yu", "ii"))]"
+
 GLOBAL_VAR(command_name)
 /proc/command_name()
 	if (GLOB.command_name)
