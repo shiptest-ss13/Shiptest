@@ -238,6 +238,7 @@
 	var/datum/action/vampire_quirk_drain/VA
 	var/datum/action/vampire_quirk_transfer/VD
 	var/list/old_traits
+	var/list/old_biotypes
 
 /datum/quirk/vampire/add()
 	var/mob/living/carbon/human/H = quirk_holder
@@ -250,6 +251,7 @@
 	old_traits = H.dna.species.inherent_traits
 	H.dna.species.inherent_traits |= list(TRAIT_NOHUNGER,TRAIT_NOBREATH)
 	H.dna.species.species_traits |= list(DRINKSBLOOD)
+	H.dna.species.inherent_biotypes = MOB_UNDEAD|MOB_HUMANOID
 
 /datum/quirk/vampire/remove()
 	if(quirk_holder)
@@ -262,16 +264,17 @@
 		H.dna.blood_type = old_blood
 		H.dna.species.inherent_traits = old_traits
 		H.dna.species.species_traits ^= list(DRINKSBLOOD)
+		H.dna.species.inherent_biotypes = old_biotypes
 
 /datum/quirk/vampire/on_process()
 	var/mob/living/carbon/human/C = quirk_holder
 	if(istype(C.loc, /obj/structure/closet/crate/coffin))
-		C.heal_overall_damage(4,4,0, BODYPART_ORGANIC)
-		C.adjustToxLoss(-4)
-		C.adjustOxyLoss(-4)
-		C.adjustCloneLoss(-4)
+		C.heal_overall_damage(2,2,0, BODYPART_ORGANIC)
+		C.adjustToxLoss(-2)
+		C.adjustOxyLoss(-2)
+		C.adjustCloneLoss(-2)
 		return
-	C.blood_volume -= 0.25
+	C.blood_volume -= 0.15
 	if(C.blood_volume <= BLOOD_VOLUME_SURVIVE)
 		to_chat(C, "<span class='danger'>You ran out of blood!</span>")
 		C.dust()
