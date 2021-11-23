@@ -42,6 +42,10 @@
 	SHOULD_CALL_PARENT(TRUE)
 	if(slot == SHIP_SLOT_NONE)
 		return FALSE
+	if(!istype(ship))
+		if(IsAdminAdvancedProcCall())
+			to_chat(usr, "<span class='warning'>Invalid ship reference for manual module installation, it needs to be the overmap ship object.</span>")
+		return FALSE
 	var/list/ship_modules = ship.modules
 	var/list/slot_modules = ship_modules[slot]
 	// We are unique and modules already exist in this slot/

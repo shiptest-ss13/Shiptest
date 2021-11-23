@@ -5,9 +5,15 @@
 	should_process = TRUE
 	structure_path = /obj/structure/ship_module/shield
 
+/obj/structure/overmap/ship/simulated/proc/has_active_shield()
+	var/datum/ship_module/shield/shield_instance = GLOB.ship_modules[/datum/ship_module/shield]
+	var/obj/structure/ship_module/shield/shield_struc = shield_instance.installed_on[src]
+	return(shield_struc?.charge)
+
 /obj/structure/ship_module/shield
 	name = "Energy Shield Core"
 	icon_state = "shield_base"
+	structure_process = TRUE
 	/// The current charge of the shield
 	var/charge = 0
 	/// The charge that the shield begins with.
