@@ -78,3 +78,12 @@ GLOBAL_LIST_EMPTY_TYPED(ship_modules, /datum/ship_module)
 			continue
 		ret[path] = new path
 	GLOB.ship_modules = ret
+
+// Ship Weapon Defines
+#define WEAPON_RICHOCHET 1
+#define WEAPON_HIT 2
+#define WEAPON_MISS 3
+#define WEAPON_RICHOCHET_SELF 4
+#define WEAPON_RELOADING 5
+#define WEAPON_EMPTY 6
+#define WEAPON_BROKEN 7

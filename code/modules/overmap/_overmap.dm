@@ -186,8 +186,9 @@
 	var/damage = amount / highest_reduction
 	var/signal_resp = SEND_SIGNAL(src, COMSIG_SHIP_DAMAGE, damage, damage_type, source)
 	if((signal_resp & SHIP_FORCE_BLOCK) || ((signal_resp & SHIP_BLOCK) && !(signal_resp & SHIP_FORCE_ALLOW)))
-		return
+		return FALSE
 	integrity = max(integrity - damage, 0)
+	return damage
 
 /**
   * The action performed by a ship on this when the helm button is pressed. Returns nothing on success, an error string if one occurs.
