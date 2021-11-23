@@ -551,9 +551,7 @@
 /obj/structure/sign/poster/contraband/random{
 	pixel_x = -32
 	},
-/obj/machinery/navbeacon/wayfinding/atmos{
-	name = "navigation beacon"
-	},
+/obj/machinery/navbeacon,
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "js" = (
@@ -1241,9 +1239,8 @@
 /turf/open/floor/carpet/nanoweave/purple,
 /area/ship/crew/canteen)
 "qw" = (
-/obj/machinery/navbeacon/wayfinding/kitchen{
-	location = "Brig Cells";
-	name = "navigation beacon"
+/obj/machinery/navbeacon{
+	location = "Brig Cells"
 	},
 /obj/effect/landmark/start/security_officer,
 /turf/open/floor/carpet/nanoweave/red,
@@ -1327,9 +1324,7 @@
 "rl" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/machinery/navbeacon/wayfinding/dorms{
-	name = "navigation beacon"
-	},
+/obj/machinery/navbeacon,
 /turf/open/floor/carpet/nanoweave,
 /area/ship/crew)
 "rr" = (
@@ -1742,9 +1737,7 @@
 /area/ship/maintenance/starboard)
 "wF" = (
 /obj/effect/turf_decal/industrial/hatch/yellow,
-/obj/machinery/navbeacon/wayfinding/engineering{
-	name = "navigation beacon"
-	},
+/obj/machinery/navbeacon,
 /obj/structure/tank_dispenser,
 /obj/structure/window/reinforced,
 /obj/structure/window/reinforced/spawner/west{
@@ -2521,9 +2514,7 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 4
 	},
-/obj/machinery/navbeacon/wayfinding/cargo{
-	name = "navigation beacon"
-	},
+/obj/machinery/navbeacon,
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "ER" = (
@@ -3013,9 +3004,7 @@
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
 	dir = 1
 	},
-/obj/machinery/navbeacon/wayfinding/med{
-	name = "navigation beacon"
-	},
+/obj/machinery/navbeacon,
 /obj/effect/turf_decal/corner/green/full,
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
@@ -3192,9 +3181,8 @@
 /area/ship/medical)
 "Nl" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
-/obj/machinery/navbeacon/wayfinding/research{
-	location = "Kitchen";
-	name = "navigation beacon"
+/obj/machinery/navbeacon{
+	location = "Kitchen"
 	},
 /obj/effect/turf_decal/corner/white/diagonal,
 /obj/effect/turf_decal/corner/bar/diagonal{
@@ -4127,9 +4115,7 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 4
 	},
-/obj/machinery/navbeacon/wayfinding/bridge{
-	name = "navigation beacon"
-	},
+/obj/machinery/navbeacon,
 /turf/open/floor/carpet/nanoweave,
 /area/ship/bridge)
 "XK" = (

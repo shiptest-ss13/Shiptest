@@ -630,9 +630,7 @@
 /obj/structure/sign/poster/contraband/random{
 	pixel_x = -32
 	},
-/obj/machinery/navbeacon/wayfinding/atmos{
-	name = "navigation beacon"
-	},
+/obj/machinery/navbeacon,
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "js" = (
@@ -680,9 +678,7 @@
 /obj/structure/chair/office/light,
 /obj/effect/landmark/start/roboticist,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
-/obj/machinery/navbeacon/wayfinding/research{
-	name = "navigation beacon"
-	},
+/obj/machinery/navbeacon,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/hallway/central)
 "jI" = (
@@ -1019,9 +1015,8 @@
 "oO" = (
 /obj/structure/chair/office,
 /obj/effect/landmark/start/security_officer,
-/obj/machinery/navbeacon/wayfinding/sec{
-	location = "Armory";
-	name = "navigation beacon"
+/obj/machinery/navbeacon{
+	location = "Armory"
 	},
 /turf/open/floor/plasteel/grimy,
 /area/ship/security)
@@ -1080,9 +1075,7 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 8
 	},
-/obj/machinery/navbeacon/wayfinding/cargo{
-	name = "navigation beacon"
-	},
+/obj/machinery/navbeacon,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/cargo)
 "pP" = (
@@ -1245,9 +1238,7 @@
 "rl" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/machinery/navbeacon/wayfinding/dorms{
-	name = "navigation beacon"
-	},
+/obj/machinery/navbeacon,
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew)
 "rm" = (
@@ -1255,9 +1246,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
-/obj/machinery/navbeacon/wayfinding/med{
-	name = "navigation beacon"
-	},
+/obj/machinery/navbeacon,
 /obj/effect/turf_decal/corner/white/mono,
 /obj/effect/turf_decal/corner/blue/border{
 	dir = 10
@@ -2561,9 +2550,8 @@
 	dir = 8
 	},
 /obj/effect/landmark/start/assistant,
-/obj/machinery/navbeacon/wayfinding/kitchen{
-	location = "Canteen";
-	name = "navigation beacon"
+/obj/machinery/navbeacon{
+	location = "Canteen"
 	},
 /obj/effect/turf_decal/corner/yellow/diagonal,
 /turf/open/floor/plasteel/white,
@@ -2599,9 +2587,7 @@
 /obj/structure/window/reinforced/spawner/west,
 /obj/structure/tank_dispenser,
 /obj/effect/turf_decal/industrial/hatch/yellow,
-/obj/machinery/navbeacon/wayfinding/engineering{
-	name = "navigation beacon"
-	},
+/obj/machinery/navbeacon,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "Ge" = (
@@ -3959,9 +3945,7 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 4
 	},
-/obj/machinery/navbeacon/wayfinding/bridge{
-	name = "navigation beacon"
-	},
+/obj/machinery/navbeacon,
 /turf/open/floor/carpet/blue,
 /area/ship/bridge)
 "XK" = (
