@@ -37,7 +37,6 @@
 
 /obj/item/wormhole_jaunter/proc/activate(mob/user, adjacent)
 	if(!turf_check(user))
-		qdel(src) //no troll physics
 		return
 
 	var/turf/targetturf = find_safe_turf()

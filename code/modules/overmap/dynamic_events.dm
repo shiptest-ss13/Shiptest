@@ -68,7 +68,7 @@
 		DYNAMIC_WORLD_SAND = length(SSmapping.sand_ruins_templates),
 		DYNAMIC_WORLD_SPACERUIN = length(SSmapping.space_ruins_templates),
 		DYNAMIC_WORLD_ROCKPLANET = length(SSmapping.rock_ruins_templates),
-		DYNAMIC_WORLD_REEBE = 1, //very rare because of major lack of skil
+		//DYNAMIC_WORLD_REEBE = 1, //very rare because of major lack of skil //TODO, make removing no teleport not break things, then it can be reenabled
 		DYNAMIC_WORLD_ASTEROID = 30)
 
 	if(force_encounter)
@@ -281,7 +281,7 @@
 /area/overmap_encounter
 	name = "\improper Overmap Encounter"
 	icon_state = "away"
-	area_flags = HIDDEN_AREA | UNIQUE_AREA | CAVES_ALLOWED | FLORA_ALLOWED | MOB_SPAWN_ALLOWED
+	area_flags = HIDDEN_AREA | UNIQUE_AREA | CAVES_ALLOWED | FLORA_ALLOWED | MOB_SPAWN_ALLOWED | NOTELEPORT
 	flags_1 = CAN_BE_DIRTY_1
 	dynamic_lighting = DYNAMIC_LIGHTING_FORCED
 	sound_environment = SOUND_ENVIRONMENT_STONEROOM
