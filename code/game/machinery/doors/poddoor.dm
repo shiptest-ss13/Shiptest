@@ -78,10 +78,10 @@
 	switch(animation)
 		if("opening")
 			flick("opening", src)
-			playsound(src, open_sound, 30, TRUE)
+			playsound(src, open_sound, 30, FALSE)
 		if("closing")
 			flick("closing", src)
-			playsound(src, close_sound, 30, TRUE)
+			playsound(src, close_sound, 30, FALSE)
 
 /obj/machinery/door/poddoor/update_icon_state()
 	if(density)

@@ -161,6 +161,15 @@ GLOBAL_LIST_INIT(available_depts, list(SEC_DEPT_ENGINEERING, SEC_DEPT_MEDICAL, S
 	head = /obj/item/clothing/head/beret/sec/officer
 	suit = /obj/item/clothing/suit/armor/vest/security/officer
 
+/datum/outfit/job/security/western
+	name = "Security Specialist (Western)"
+
+	uniform = /obj/item/clothing/under/rank/security/officer/beatcop
+	alt_uniform = null
+	shoes = /obj/item/clothing/shoes/jackboots
+	glasses = /obj/item/clothing/glasses/hud/security/sunglasses
+	head = /obj/item/clothing/head/cowboy/sec
+
 //Shiptest outfits end
 
 /obj/item/radio/headset/headset_sec/alt/department/Initialize()

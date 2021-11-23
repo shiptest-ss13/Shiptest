@@ -85,7 +85,13 @@
 	suit = /obj/item/clothing/suit/space/hardsuit/mining
 	mask = /obj/item/clothing/mask/breath
 
-//Shiptest outfits
+//Shiptest Outfits
+
+/datum/outfit/job/miner/hazard
+	name = "Asteroid Miner (Hazard)"
+	uniform = /obj/item/clothing/under/rank/cargo/miner/hazard
+	alt_uniform = null
+	alt_suit = /obj/item/clothing/suit/toggle/hazard
 
 /datum/outfit/job/miner/solgov
 	name = "Field Engineer (SolGov)"
