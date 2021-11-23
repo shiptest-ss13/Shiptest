@@ -36,7 +36,6 @@
 	pixel_x = 8;
 	pixel_y = 12
 	},
-/obj/item/pen/fountain,
 /obj/item/radio/intercom{
 	dir = 1;
 	pixel_y = -22
@@ -48,6 +47,7 @@
 	pixel_x = -10
 	},
 /obj/structure/table/wood,
+/obj/item/pen,
 /turf/open/floor/plasteel/grimy,
 /area/ship/security)
 "aC" = (
@@ -477,6 +477,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 10
+	},
+/obj/structure/chair/office{
+	dir = 1
 	},
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew)
@@ -2143,7 +2146,11 @@
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "zV" = (
-/obj/machinery/vending/clothing,
+/obj/structure/table/wood,
+/obj/item/flashlight/lamp/green{
+	pixel_x = 6;
+	pixel_y = 10
+	},
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew)
 "Ad" = (
@@ -2637,7 +2644,12 @@
 	pixel_x = 8;
 	pixel_y = 7
 	},
-/obj/item/pen/fourcolor,
+/obj/item/pen/fourcolor{
+	pixel_x = -2
+	},
+/obj/item/pen/fountain{
+	pixel_x = 5
+	},
 /turf/open/floor/carpet/blue,
 /area/ship/engineering/communications)
 "Fo" = (
