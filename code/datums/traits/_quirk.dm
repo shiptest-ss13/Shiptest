@@ -9,7 +9,7 @@
 	var/lose_text
 	var/medical_record_text //This text will appear on medical records for the trait. Not yet implemented
 	var/mood_quirk = FALSE //if true, this quirk affects mood and is unavailable if moodlets are disabled
-	var/mob_trait //if applicable, apply and remove this mob trait
+	var/list/mob_traits //if applicable, apply and remove this mob trait
 	var/list/allowed_species
 	var/mob/living/quirk_holder
 
@@ -22,8 +22,8 @@
 	SSquirks.quirk_objects += src
 	to_chat(quirk_holder, gain_text)
 	quirk_holder.roundstart_quirks += src
-	if(mob_trait)
-		ADD_TRAIT(quirk_holder, mob_trait, ROUNDSTART_TRAIT)
+	for(var/T in mob_traits)
+		ADD_TRAIT(quirk_holder, T, ROUNDSTART_TRAIT)
 	START_PROCESSING(SSquirks, src)
 	add()
 	if(spawn_effects)
@@ -53,17 +53,17 @@
 	if(quirk_holder)
 		to_chat(quirk_holder, lose_text)
 		quirk_holder.roundstart_quirks -= src
-		if(mob_trait)
-			REMOVE_TRAIT(quirk_holder, mob_trait, ROUNDSTART_TRAIT)
+		for(var/T in mob_traits)
+			REMOVE_TRAIT(quirk_holder, T, ROUNDSTART_TRAIT)
 	SSquirks.quirk_objects -= src
 	return ..()
 
 /datum/quirk/proc/transfer_mob(mob/living/to_mob)
 	quirk_holder.roundstart_quirks -= src
 	to_mob.roundstart_quirks += src
-	if(mob_trait)
-		REMOVE_TRAIT(quirk_holder, mob_trait, ROUNDSTART_TRAIT)
-		ADD_TRAIT(to_mob, mob_trait, ROUNDSTART_TRAIT)
+	for(var/T in mob_traits)
+		REMOVE_TRAIT(quirk_holder, T, ROUNDSTART_TRAIT)
+		ADD_TRAIT(to_mob, T, ROUNDSTART_TRAIT)
 	quirk_holder = to_mob
 	on_transfer()
 
