@@ -5,7 +5,7 @@
 	name = "Ageusia"
 	desc = "You can't taste anything! Toxic food will still poison you."
 	value = 0
-	mob_trait = TRAIT_AGEUSIA
+	mob_traits = list(TRAIT_AGEUSIA)
 	gain_text = "<span class='notice'>You can't taste anything!</span>"
 	lose_text = "<span class='notice'>You can taste again!</span>"
 	medical_record_text = "Patient suffers from ageusia and is incapable of tasting food or reagents."
@@ -40,7 +40,7 @@
 	gain_text = "<span class='notice'>You feel like you understand what things should look like.</span>"
 	lose_text = "<span class='notice'>Well who cares about deco anyways?</span>"
 	medical_record_text = "Patient seems to be rather stuck up."
-	mob_trait = TRAIT_SNOB
+	mob_traits = list(TRAIT_SNOB)
 
 /datum/quirk/pineapple_liker
 	name = "Ananas Affinity"
@@ -173,7 +173,7 @@
 	name = "Smooth-Headed"
 	desc = "You have no hair and are quite insecure about it! Keep your wig on, or at least your head covered up."
 	value = 0
-	mob_trait = TRAIT_BALD
+	mob_traits = list(TRAIT_BALD)
 	gain_text = "<span class='notice'>Your head is as smooth as can be, it's terrible.</span>"
 	lose_text = "<span class='notice'>Your head itches, could it be... growing hair?!</span>"
 	medical_record_text = "Patient starkly refused to take off headwear during examination."
@@ -234,6 +234,7 @@
 	lose_text = "<span class='notice'>You feel blessed, your blood no longer cursed.</span>"
 	medical_record_text = "Patient is a vampire."
 	allowed_species = list("fly" = "fly", "human" = "human", "moth" = "moth", "felinid" = "felinid", "lizard" = "lizard")
+	mob_traits = list(TRAIT_NOBREATH, TRAIT_NOHUNGER)
 	var/old_blood
 	var/datum/action/vampire_quirk_drain/VA
 	var/datum/action/vampire_quirk_transfer/VD
@@ -248,8 +249,6 @@
 	VD.Grant(H)
 	old_blood = H.dna.blood_type
 	H.dna.species.exotic_blood = /datum/reagent/blood/true_draculine
-	old_traits = H.dna.species.inherent_traits
-	H.dna.species.inherent_traits |= list(TRAIT_NOHUNGER,TRAIT_NOBREATH)
 	H.dna.species.species_traits |= list(DRINKSBLOOD)
 	H.dna.species.inherent_biotypes = MOB_UNDEAD|MOB_HUMANOID
 
@@ -262,7 +261,6 @@
 			VD.Remove(H)
 		H.dna.species.exotic_blood = ""
 		H.dna.blood_type = old_blood
-		H.dna.species.inherent_traits = old_traits
 		H.dna.species.species_traits ^= list(DRINKSBLOOD)
 		H.dna.species.inherent_biotypes = old_biotypes
 
@@ -274,7 +272,7 @@
 		C.adjustOxyLoss(-2)
 		C.adjustCloneLoss(-2)
 		return
-	C.blood_volume -= 0.15
+	C.blood_volume -= 0.20
 	if(C.blood_volume <= BLOOD_VOLUME_SURVIVE)
 		to_chat(C, "<span class='danger'>You ran out of blood!</span>")
 		C.dust()
