@@ -8,7 +8,6 @@
 	id = "ripley_main"
 	build_path = /obj/item/circuitboard/mecha/ripley/main
 	category = list("Exosuit Modules")
-	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/board/ripley_peri
 	name = "APLU \"Ripley\" Peripherals Control module"
@@ -16,7 +15,6 @@
 	id = "ripley_peri"
 	build_path = /obj/item/circuitboard/mecha/ripley/peripherals
 	category = list("Exosuit Modules")
-	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/board/odysseus_main
 	name = "\"Odysseus\" Central Control module"
@@ -24,7 +22,7 @@
 	id = "odysseus_main"
 	build_path = /obj/item/circuitboard/mecha/odysseus/main
 	category = list("Exosuit Modules")
-	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
+	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
 
 /datum/design/board/odysseus_peri
 	name = "\"Odysseus\" Peripherals Control module"
@@ -32,7 +30,7 @@
 	id = "odysseus_peri"
 	build_path = /obj/item/circuitboard/mecha/odysseus/peripherals
 	category = list("Exosuit Modules")
-	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
+	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
 
 /datum/design/board/gygax_main
 	name = "\"Gygax\" Central Control module"
@@ -40,7 +38,7 @@
 	id = "gygax_main"
 	build_path = /obj/item/circuitboard/mecha/gygax/main
 	category = list("Exosuit Modules")
-	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
+	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
 /datum/design/board/gygax_peri
 	name = "\"Gygax\" Peripherals Control module"
@@ -48,7 +46,7 @@
 	id = "gygax_peri"
 	build_path = /obj/item/circuitboard/mecha/gygax/peripherals
 	category = list("Exosuit Modules")
-	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
+	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
 /datum/design/board/gygax_targ
 	name = "\"Gygax\" Weapons & Targeting Control module"
@@ -56,7 +54,7 @@
 	id = "gygax_targ"
 	build_path = /obj/item/circuitboard/mecha/gygax/targeting
 	category = list("Exosuit Modules")
-	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
+	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
 /datum/design/board/durand_main
 	name = "\"Durand\" Central Control module"
@@ -64,7 +62,7 @@
 	id = "durand_main"
 	build_path = /obj/item/circuitboard/mecha/durand/main
 	category = list("Exosuit Modules")
-	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
+	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
 /datum/design/board/durand_peri
 	name = "\"Durand\" Peripherals Control module"
@@ -72,7 +70,7 @@
 	id = "durand_peri"
 	build_path = /obj/item/circuitboard/mecha/durand/peripherals
 	category = list("Exosuit Modules")
-	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
+	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
 /datum/design/board/durand_targ
 	name = "\"Durand\" Weapons & Targeting Control module"
@@ -80,7 +78,7 @@
 	id = "durand_targ"
 	build_path = /obj/item/circuitboard/mecha/durand/targeting
 	category = list("Exosuit Modules")
-	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
+	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
 /datum/design/board/honker_main
 	name = "\"H.O.N.K\" Central Control module"
@@ -88,7 +86,6 @@
 	id = "honker_main"
 	build_path = /obj/item/circuitboard/mecha/honker/main
 	category = list("Exosuit Modules")
-	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/board/honker_peri
 	name = "\"H.O.N.K\" Peripherals Control module"
@@ -96,7 +93,6 @@
 	id = "honker_peri"
 	build_path = /obj/item/circuitboard/mecha/honker/peripherals
 	category = list("Exosuit Modules")
-	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/board/honker_targ
 	name = "\"H.O.N.K\" Weapons & Targeting Control module"
@@ -104,7 +100,6 @@
 	id = "honker_targ"
 	build_path = /obj/item/circuitboard/mecha/honker/targeting
 	category = list("Exosuit Modules")
-	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/board/phazon_main
 	name = "\"Phazon\" Central Control module"
@@ -156,7 +151,6 @@
 	materials = list(/datum/material/iron=6000)
 	construction_time = 20
 	category = list("Exosuit Ammunition", "Ammo")
-	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
 /datum/design/mech_carbine
 	name = "Exosuit Weapon (FNX-99 \"Hades\" Carbine)"
@@ -177,7 +171,6 @@
 	materials = list(/datum/material/iron=6000)
 	construction_time = 20
 	category = list("Exosuit Ammunition", "Ammo")
-	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
 /datum/design/mech_ion
 	name = "Exosuit Weapon (MKIV Ion Heavy Cannon)"
@@ -248,7 +241,6 @@
 	materials = list(/datum/material/iron=4000,/datum/material/gold=500,/datum/material/iron=500)
 	construction_time = 20
 	category = list("Exosuit Ammunition", "Ammo")
-	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
 /datum/design/mech_missile_rack
 	name = "Exosuit Weapon (BRM-6 Missile Rack)"
@@ -269,7 +261,6 @@
 	materials = list(/datum/material/iron=8000,/datum/material/gold=500,/datum/material/iron=500)
 	construction_time = 20
 	category = list("Exosuit Ammunition", "Ammo")
-	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
 /datum/design/clusterbang_launcher
 	name = "Exosuit Module (SOB-3 Clusterbang Launcher)"
@@ -290,7 +281,6 @@
 	materials = list(/datum/material/iron=6000,/datum/material/gold=1500,/datum/material/uranium=1500)
 	construction_time = 20
 	category = list("Exosuit Ammunition", "Ammo")
-	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
 /datum/design/mech_wormhole_gen
 	name = "Exosuit Module (Localized Wormhole Generator)"
@@ -431,7 +421,6 @@
 	materials = list(/datum/material/iron=4000)
 	construction_time = 20
 	category = list("Exosuit Ammunition", "Ammo")
-	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
 /datum/design/mech_sleeper
 	name = "Exosuit Medical Equipment (Mounted Sleeper)"

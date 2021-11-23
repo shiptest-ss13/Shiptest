@@ -9,7 +9,7 @@
 	materials = list(/datum/material/iron = 200)
 	build_path = /obj/item/reagent_containers/glass/bucket
 	category = list("initial","Tools","Tool Designs")
-	departmental_flags = DEPARTMENTAL_FLAG_SERVICE
+
 
 /datum/design/mop
 	name = "Mop"
@@ -18,7 +18,7 @@
 	materials = list(/datum/material/iron = 1000)
 	build_path = /obj/item/mop
 	category = list("initial","Tools","Tool Designs")
-	departmental_flags = DEPARTMENTAL_FLAG_SERVICE
+
 
 /datum/design/broom
 	name="Push Broom"
@@ -27,7 +27,7 @@
 	materials = list(/datum/material/iron = 2000)
 	build_path = /obj/item/pushbroom
 	category = list("initial","Tools","Tool Designs")
-	departmental_flags = DEPARTMENTAL_FLAG_SERVICE
+
 
 /datum/design/crowbar
 	name = "Pocket Crowbar"
@@ -36,7 +36,7 @@
 	materials = list(/datum/material/iron = 50)
 	build_path = /obj/item/crowbar
 	category = list("initial","Tools","Tool Designs")
-	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
+
 
 /datum/design/flashlight
 	name = "Flashlight"
@@ -69,7 +69,7 @@
 	materials = list(/datum/material/iron = 50, /datum/material/glass = 20)
 	build_path = /obj/item/multitool
 	category = list("initial","Tools","Tool Designs")
-	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
+
 
 /datum/design/analyzer
 	name = "Analyzer"
@@ -78,7 +78,6 @@
 	materials = list(/datum/material/iron = 30, /datum/material/glass = 20)
 	build_path = /obj/item/analyzer
 	category = list("initial","Tools","Tool Designs")
-	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING
 
 /datum/design/tscanner
 	name = "T-Ray Scanner"
@@ -87,7 +86,7 @@
 	materials = list(/datum/material/iron = 150)
 	build_path = /obj/item/t_scanner
 	category = list("initial","Tools","Tool Designs")
-	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING
+
 
 /datum/design/mini_weldingtool
 	name = "Emergency Welding Tool"
@@ -104,7 +103,7 @@
 	materials = list(/datum/material/iron = 70, /datum/material/glass = 30)
 	build_path = /obj/item/weldingtool/empty
 	category = list("initial","Tools","Tool Designs")
-	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
+
 
 /datum/design/screwdriver
 	name = "Screwdriver"
@@ -113,7 +112,6 @@
 	materials = list(/datum/material/iron = 75)
 	build_path = /obj/item/screwdriver
 	category = list("initial","Tools","Tool Designs")
-	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/wirecutters
 	name = "Wirecutters"
@@ -122,7 +120,6 @@
 	materials = list(/datum/material/iron = 80)
 	build_path = /obj/item/wirecutters
 	category = list("initial","Tools","Tool Designs")
-	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/wrench
 	name = "Wrench"
@@ -131,7 +128,6 @@
 	materials = list(/datum/material/iron = 150)
 	build_path = /obj/item/wrench
 	category = list("initial","Tools","Tool Designs")
-	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/plunger
 	name = "Plunger"
@@ -140,7 +136,7 @@
 	materials = list(/datum/material/iron = 150)
 	build_path = /obj/item/plunger
 	category = list("initial","Tools","Tool Designs")
-	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_MEDICAL
+	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_SERVICE
 
 /datum/design/welding_helmet
 	name = "Welding Helmet"
@@ -158,7 +154,6 @@
 	build_path = /obj/item/stack/cable_coil/random //WS Edit - Smartwire Revert
 	category = list("initial","Tools","Tool Designs")
 	maxstack = MAXCOIL
-	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/toolbox
 	name = "Toolbox"
@@ -184,7 +179,6 @@
 	materials = list(/datum/material/iron = 50, /datum/material/glass = 50)
 	build_path = /obj/item/electronics/airlock
 	category = list("initial", "Electronics")
-	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING
 
 /datum/design/firelock_board
 	name = "Firelock Circuitry"
@@ -193,7 +187,6 @@
 	materials = list(/datum/material/iron = 50, /datum/material/glass = 50)
 	build_path = /obj/item/electronics/firelock
 	category = list("initial", "Electronics")
-	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING
 
 /datum/design/airalarm_electronics
 	name = "Air Alarm Electronics"
@@ -262,7 +255,6 @@
 	materials = list(/datum/material/iron = 50, /datum/material/glass = 50)
 	build_path = /obj/item/airlock_painter
 	category = list("initial","Tools","Tool Designs")
-	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SERVICE
 
 /datum/design/airlock_painter/decal
 	name = "Decal Painter"
@@ -271,7 +263,6 @@
 	materials = list(/datum/material/iron = 50, /datum/material/glass = 50)
 	build_path = /obj/item/decal_painter
 	category = list("initial","Tools","Tool Designs")
-	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SERVICE
 
 /datum/design/emergency_oxygen
 	name = "Emergency Oxygen Tank"
@@ -467,7 +458,6 @@
 	materials = list(/datum/material/iron = 50)
 	build_path = /obj/item/shovel
 	category = list("initial","Misc", "Tool Designs")
-	departmental_flags = DEPARTMENTAL_FLAG_SERVICE
 
 /datum/design/spade
 	name = "Spade"
@@ -476,7 +466,6 @@
 	materials = list(/datum/material/iron = 50)
 	build_path = /obj/item/shovel/spade
 	category = list("initial","Misc", "Tool Designs")
-	departmental_flags = DEPARTMENTAL_FLAG_SERVICE
 
 /datum/design/hatchet
 	name = "Hatchet"
@@ -502,7 +491,6 @@
 	materials = list(/datum/material/iron = 4000, /datum/material/glass = 1000)
 	build_path = /obj/item/scalpel
 	category = list("initial", "Medical", "Tool Designs")
-	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/circular_saw
 	name = "Circular Saw"
@@ -529,7 +517,6 @@
 	materials = list(/datum/material/iron = 6000, /datum/material/glass = 3000)
 	build_path = /obj/item/retractor
 	category = list("initial", "Medical", "Tool Designs")
-	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/cautery
 	name = "Cautery"
@@ -538,7 +525,6 @@
 	materials = list(/datum/material/iron = 2500, /datum/material/glass = 750)
 	build_path = /obj/item/cautery
 	category = list("initial", "Medical", "Tool Designs")
-	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/hemostat
 	name = "Hemostat"
@@ -547,7 +533,7 @@
 	materials = list(/datum/material/iron = 5000, /datum/material/glass = 2500)
 	build_path = /obj/item/hemostat
 	category = list("initial", "Medical", "Tool Designs")
-	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_SCIENCE
+
 
 /datum/design/beaker
 	name = "Beaker"
@@ -556,7 +542,6 @@
 	materials = list(/datum/material/glass = 500)
 	build_path = /obj/item/reagent_containers/glass/beaker
 	category = list("initial", "Medical", "Medical Designs")
-	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_SERVICE
 
 /datum/design/large_beaker
 	name = "Large Beaker"
@@ -565,7 +550,6 @@
 	materials = list(/datum/material/glass = 2500)
 	build_path = /obj/item/reagent_containers/glass/beaker/large
 	category = list("initial", "Medical", "Medical Designs")
-	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_SERVICE
 
 /datum/design/pillbottle
 	name = "Pill Bottle"
@@ -574,7 +558,6 @@
 	materials = list(/datum/material/plastic = 20, /datum/material/glass = 100)
 	build_path = /obj/item/storage/pill_bottle
 	category = list("initial", "Medical", "Medical Designs")
-	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
 
 /datum/design/beanbag_slug
 	name = "Beanbag Slug"

@@ -483,7 +483,7 @@
 /datum/techweb_node/cloning
 	id = "cloning"
 	display_name = "Full-Body Reconstitution"
-	description = "We can rebuild him, we have the technology."
+	description = "We can rebuild him, we have the technologyx."
 	prereq_ids = list("genetics")
 	design_ids = list("clonepod", "cloning")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 7500)
@@ -652,6 +652,15 @@
 	prereq_ids = list("adv_engi", "weaponry")
 	design_ids = list("pin_loyalty","gun_cell_upgraded", "gun_cell_large")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 10000)
+	export_price = 5000
+
+/datum/techweb_node/firingpin
+	id = "firingpin"
+	display_name = "Pin Security Decompilation"
+	description = "A resource-intensive hacking operation, allowing for the creation of pins without a mindshield brake."
+	prereq_ids = list("adv_weaponry")
+	design_ids = list("pin_standard")
+	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 15000)
 	export_price = 5000
 
 /datum/techweb_node/electric_weapons

@@ -97,7 +97,6 @@
 		/datum/material/gold = 2000,
 	)
 	category = list("Tool Designs")
-	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/survey_handheld_elite
 	name = "Elite Survey Handheld"

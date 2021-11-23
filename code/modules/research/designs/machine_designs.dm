@@ -286,7 +286,6 @@
 	id = "mechfab"
 	build_path = /obj/item/circuitboard/machine/mechfab
 	category = list("Research Machinery")
-	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/board/cyborgrecharger
 	name = "Machine Design (Cyborg Recharger Board)"

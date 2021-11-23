@@ -1156,8 +1156,8 @@
 	new /obj/item/circuitboard/computer/rdconsole(src)
 
 /obj/item/storage/box/rndboards/old
-	name = "\proper Nanotransen RND Construction Kit"
-	desc = "A set of boards for constructing prototype design lathes, dating from a prewar Nanotransen labratory. These ones are unbraked, and can produce any of the designs in their database without limit."
+	name = "\proper Nanotrasen R&D Construction Kit"
+	desc = "A set of boards for constructing prototype design lathes, dating from a prewar Nanotrasen labratory. These ones are unbraked, and can produce any of the designs in their database without limit."
 
 //departmental RND kits, for shiptests.
 /obj/item/storage/box/rndmining
@@ -1173,7 +1173,7 @@
 
 /obj/item/storage/box/rndengi
 	name = "\proper QWIK-RND: A.T.L.A.S. Module"
-	desc = "A set of boards for constructing prototype design lathes. These ones are braked to only print maintnence, construction, and repair related designs."
+	desc = "A set of boards for constructing prototype design lathes. These ones are braked to only print maintenance, construction, and repair related designs."
 	illustration = "scicircuit"
 
 /obj/item/storage/box/rndengi/PopulateContents()
@@ -1194,8 +1194,8 @@
 	new /obj/item/circuitboard/computer/rdconsole(src)
 
 /obj/item/storage/box/rndsec
-	name = "\proper QWICK-RND: P.E.A.C.E. Module"
-	desc = "A set of boards for constructing prototype design lathes. These ones are braked to only print low-to-midrange military designs."
+	name = "\proper QWIK-RND: P.E.A.C.E. Module"
+	desc = "A set of boards for constructing prototype design lathes. These ones are braked to only print military designs."
 	illustration = "scicircuit"
 
 /obj/item/storage/box/rndsec/PopulateContents()
@@ -1205,7 +1205,7 @@
 	new /obj/item/circuitboard/computer/rdconsole(src)
 
 /obj/item/storage/box/rndciv
-	name = "\proper QWICK-RND: H.O.M.E. Module"
+	name = "\proper QWIK-RND: H.O.M.E. Module"
 	desc = "A set of boards for constructing prototype design lathes. These ones are braked to only print a variety of service industry designs."
 	illustration = "scicircuit"
 
@@ -1216,8 +1216,8 @@
 	new /obj/item/circuitboard/computer/rdconsole(src)
 
 /obj/item/storage/box/rndbasic
-	name = "\proper QWICK-RND: B.A.S.I.C. Module"
-	desc = "A set of boards for constructing prototype design lathes. These ones are braked to only print a variety of low-tier miscallaneous designs."
+	name = "\proper QWIK-RND: B.A.S.I.C. Module"
+	desc = "A set of boards for constructing prototype design lathes. These ones are braked to only print a variety of low-tier miscellaneous designs."
 	illustration = "scicircuit"
 
 /obj/item/storage/box/rndbasic/PopulateContents()
@@ -1227,8 +1227,8 @@
 	new /obj/item/circuitboard/computer/rdconsole(src)
 
 /obj/item/storage/box/rndsci
-	name = "\proper QWICK-RND: K.N.O.W. Module"
-	desc = "A set of boards for constructing prototype design lathes. These ones are braked to only print desgins related to high-level scientific disciplines."
+	name = "\proper QWIK-RND: K.N.O.W. Module"
+	desc = "A set of boards for constructing prototype design lathes. These ones are braked to only print designs related to high-level scientific disciplines."
 	illustration = "scicircuit"
 
 /obj/item/storage/box/rndsci/PopulateContents()
