@@ -252,6 +252,16 @@
 		/obj/item/organ/tail/lizard)
 	lootcount = 5
 
+/obj/effect/spawner/lootdrop/rnd
+	name = "random RND spawner"
+	loot = list(
+		/obj/item/storage/box/rndmining,
+		/obj/item/storage/box/rndengi,
+		/obj/item/storage/box/rndsec,
+		/obj/item/storage/box/rndciv,
+		/obj/item/storage/box/rndmed)
+	lootcount = 1
+
 /obj/effect/spawner/lootdrop/two_percent_xeno_egg_spawner
 	name = "2% chance xeno egg spawner"
 	loot = list(

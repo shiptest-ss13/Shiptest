@@ -353,10 +353,6 @@
 /turf/open/floor/plating,
 /area/ship/maintenance/central)
 "wR" = (
-/obj/item/storage/box/rndboards{
-	desc = "Smells feighntly of plastic.";
-	name = "research equipment"
-	},
 /obj/effect/spawner/lootdrop/maintenance,
 /obj/effect/decal/cleanable/dirt,
 /obj/item/trash/sosjerky,
@@ -365,6 +361,7 @@
 /obj/structure/closet/secure_closet{
 	req_access = list(11)
 	},
+/obj/effect/spawner/lootdrop/rnd,
 /turf/open/floor/plating,
 /area/ship/maintenance/aft)
 "xa" = (

@@ -474,11 +474,20 @@
 /datum/techweb_node/genetics
 	id = "genetics"
 	display_name = "Genetic Engineering"
-	description = "We have the technology to change him."
+	description = "The truest of mad sciences."
 	prereq_ids = list("biotech")
-	design_ids = list("dnascanner", "scan_console", "dna_disk", "clonepod", "cloning")
-	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
-	export_price = 5000
+	design_ids = list("dnascanner", "scan_console", "dna_disk")
+	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 1500)
+	export_price = 1500
+
+/datum/techweb_node/cloning
+	id = "cloning"
+	display_name = "Full-Body Reconstitution"
+	description = "We have the technology to rebuild him."
+	prereq_ids = list("genetics")
+	design_ids = list("clonepod", "cloning")
+	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 7500)
+	export_price = 7500
 
 /datum/techweb_node/cryotech
 	id = "cryotech"

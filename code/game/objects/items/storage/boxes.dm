@@ -1155,6 +1155,88 @@
 	new /obj/item/circuitboard/machine/circuit_imprinter(src)
 	new /obj/item/circuitboard/computer/rdconsole(src)
 
+/obj/item/storage/box/rndboards/old
+	name = "\proper Nanotransen RND Construction Kit"
+	desc = "A set of boards for constructing prototype design lathes, dating from a prewar Nanotransen labratory. These ones are unbraked, and can produce any of the designs in their database without limit."
+
+//departmental RND kits, for shiptests.
+/obj/item/storage/box/rndmining
+	name = "\proper QWIK-RND: M.I.D.A.S. Module"
+	desc = "A set of boards for constructing prototype design lathes. These ones are braked to only print resource-extraction and finance related designs."
+	illustration = "scicircuit"
+
+/obj/item/storage/box/rndmining/PopulateContents()
+	new /obj/item/circuitboard/machine/protolathe/department/cargo(src)
+	new /obj/item/circuitboard/machine/destructive_analyzer(src)
+	new /obj/item/circuitboard/machine/circuit_imprinter/department/cargo(src)
+	new /obj/item/circuitboard/computer/rdconsole(src)
+
+/obj/item/storage/box/rndengi
+	name = "\proper QWIK-RND: A.T.L.A.S. Module"
+	desc = "A set of boards for constructing prototype design lathes. These ones are braked to only print maintnence, construction, and repair related designs."
+	illustration = "scicircuit"
+
+/obj/item/storage/box/rndengi/PopulateContents()
+	new /obj/item/circuitboard/machine/protolathe/department/engineering(src)
+	new /obj/item/circuitboard/machine/destructive_analyzer(src)
+	new /obj/item/circuitboard/machine/circuit_imprinter/department/engi(src)
+	new /obj/item/circuitboard/computer/rdconsole(src)
+
+/obj/item/storage/box/rndmed
+	name = "\proper QWIK-RND: C.A.R.E. Module"
+	desc = "A set of boards for constructing prototype design lathes. These ones are braked to only print medical and pharmaceutical care related designs."
+	illustration = "scicircuit"
+
+/obj/item/storage/box/rndmed/PopulateContents()
+	new /obj/item/circuitboard/machine/protolathe/department/medical(src)
+	new /obj/item/circuitboard/machine/destructive_analyzer(src)
+	new /obj/item/circuitboard/machine/circuit_imprinter/department/med(src)
+	new /obj/item/circuitboard/computer/rdconsole(src)
+
+/obj/item/storage/box/rndsec
+	name = "\proper QWICK-RND: P.E.A.C.E. Module"
+	desc = "A set of boards for constructing prototype design lathes. These ones are braked to only print low-to-midrange military designs."
+	illustration = "scicircuit"
+
+/obj/item/storage/box/rndsec/PopulateContents()
+	new /obj/item/circuitboard/machine/protolathe/department/security(src)
+	new /obj/item/circuitboard/machine/destructive_analyzer(src)
+	new /obj/item/circuitboard/machine/circuit_imprinter/department/sec(src)
+	new /obj/item/circuitboard/computer/rdconsole(src)
+
+/obj/item/storage/box/rndciv
+	name = "\proper QWICK-RND: H.O.M.E. Module"
+	desc = "A set of boards for constructing prototype design lathes. These ones are braked to only print a variety of service industry designs."
+	illustration = "scicircuit"
+
+/obj/item/storage/box/rndciv/PopulateContents()
+	new /obj/item/circuitboard/machine/protolathe/department/service(src)
+	new /obj/item/circuitboard/machine/destructive_analyzer(src)
+	new /obj/item/circuitboard/machine/circuit_imprinter/department/civ(src)
+	new /obj/item/circuitboard/computer/rdconsole(src)
+
+/obj/item/storage/box/rndbasic
+	name = "\proper QWICK-RND: B.A.S.I.C. Module"
+	desc = "A set of boards for constructing prototype design lathes. These ones are braked to only print a variety of low-tier miscallaneous designs."
+	illustration = "scicircuit"
+
+/obj/item/storage/box/rndbasic/PopulateContents()
+	new /obj/item/circuitboard/machine/protolathe/department/basic(src)
+	new /obj/item/circuitboard/machine/destructive_analyzer(src)
+	new /obj/item/circuitboard/machine/circuit_imprinter/department/basic(src)
+	new /obj/item/circuitboard/computer/rdconsole(src)
+
+/obj/item/storage/box/rndsci
+	name = "\proper QWICK-RND: K.N.O.W. Module"
+	desc = "A set of boards for constructing prototype design lathes. These ones are braked to only print desgins related to high-level scientific disciplines."
+	illustration = "scicircuit"
+
+/obj/item/storage/box/rndsci/PopulateContents()
+	new /obj/item/circuitboard/machine/protolathe/department/science(src)
+	new /obj/item/circuitboard/machine/destructive_analyzer(src)
+	new /obj/item/circuitboard/machine/circuit_imprinter/department/science(src)
+	new /obj/item/circuitboard/computer/rdconsole(src)
+
 /obj/item/storage/box/silver_sulf
 	name = "box of silver sulfadiazine patches"
 	desc = "Contains patches used to treat burns."

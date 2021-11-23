@@ -8,7 +8,6 @@
 	id = "smes"
 	build_path = /obj/item/circuitboard/machine/smes
 	category = list ("Engineering Machinery")
-	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING
 
 /datum/design/board/circulator
 	name = "Machine Design (Circulator Board)"
@@ -104,7 +103,7 @@
 	id = "quantumpad"
 	build_path = /obj/item/circuitboard/machine/quantumpad
 	category = list ("Teleportation Machinery")
-	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
+	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/board/launchpad
 	name = "Machine Design (Bluespace Launchpad Board)"
@@ -143,7 +142,6 @@
 	desc = "The circuit board for a sleeper."
 	id = "sleeper"
 	build_path = /obj/item/circuitboard/machine/sleeper
-	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_MEDICAL
 	category = list ("Medical Machinery")
 
 /datum/design/board/chem_dispenser
@@ -190,7 +188,7 @@
 	name = "Machine Design (DNA Scanner)"
 	desc = "Allows for the construction of circuit boards used to build a Cloning Scanner."
 	id = "dnascanner"
-	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
+	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_SCIENCE
 	build_path = /obj/item/circuitboard/machine/dnascanner
 	category = list("Medical Machinery")
 
@@ -198,7 +196,7 @@
 	name = "Machine Design (Cloning Pod)"
 	desc = "An electronically-lockable pod for growing organic tissue."
 	id = "clonepod"
-	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
+	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_SCIENCE
 	build_path = /obj/item/circuitboard/machine/clonepod
 	category = list("Medical Machinery")
 
@@ -256,7 +254,7 @@
 	id = "bepis"
 	build_path = /obj/item/circuitboard/machine/bepis
 	category = list("Research Machinery")
-	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
+	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE | DEPARTMENTAL_FLAG_CARGO
 
 /datum/design/board/protolathe
 	name = "Machine Design (Protolathe Board)"
@@ -281,7 +279,6 @@
 	build_type = AUTOLATHE | IMPRINTER
 	build_path = /obj/item/circuitboard/machine/rdserver
 	category = list("Research Machinery", "initial", "Equipment")
-	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/board/mechfab
 	name = "Machine Design (Exosuit Fabricator Board)"
@@ -297,7 +294,7 @@
 	id = "cyborgrecharger"
 	build_path = /obj/item/circuitboard/machine/cyborgrecharger
 	category = list("Research Machinery")
-	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
+	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE | DEPARTMENTAL_FLAG_ENGINEERING
 
 /datum/design/board/mech_recharger
 	name = "Machine Design (Mechbay Recharger Board)"
@@ -305,7 +302,7 @@
 	id = "mech_recharger"
 	build_path = /obj/item/circuitboard/machine/mech_recharger
 	category = list("Research Machinery")
-	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
+	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE | DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_CARGO
 
 /datum/design/board/nanite_chamber
 	name = "Machine Design (Nanite Chamber Board)"
@@ -458,7 +455,6 @@
 	id = "ore_redemption"
 	build_path = /obj/item/circuitboard/machine/ore_redemption
 	category = list ("Misc. Machinery")
-	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE | DEPARTMENTAL_FLAG_CARGO | DEPARTMENTAL_FLAG_ENGINEERING
 
 /datum/design/board/bluespace_miner
 	name = "Machine Design (Bluespace Miner)"
@@ -474,7 +470,7 @@
 	id = "mining_equipment_vendor"
 	build_path = /obj/item/circuitboard/machine/vending/mining_equipment
 	category = list ("Misc. Machinery")
-	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE | DEPARTMENTAL_FLAG_CARGO
+	departmental_flags = DEPARTMENTAL_FLAG_CARGO//bruh
 
 /datum/design/board/tesla_coil
 	name = "Machine Design (Tesla Coil Board)"
@@ -602,7 +598,7 @@
 	id = "fat_sucker"
 	build_path = /obj/item/circuitboard/machine/fat_sucker
 	category = list ("Misc. Machinery")
-	departmental_flags = DEPARTMENTAL_FLAG_SERVICE
+	departmental_flags = DEPARTMENTAL_FLAG_SERVICE | DEPARTMENTAL_FLAG_MEDICAL
 
 /datum/design/board/stasis
 	name = "Machine Design (Lifeform Stasis Unit)"

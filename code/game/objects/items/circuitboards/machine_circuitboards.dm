@@ -258,7 +258,7 @@
 		/obj/item/stock_parts/capacitor = 6)
 
 /obj/item/circuitboard/machine/protolathe/department/engineering
-	name = "Departmental Protolathe (Machine Board) - Engineering"
+	name = "Protolathe (Machine Board) - Engineering"
 	icon_state = "engineering"
 	build_path = /obj/machinery/rnd/production/protolathe/department/engineering
 
@@ -393,6 +393,36 @@
 	icon_state = "generic"
 	build_path = /obj/machinery/rnd/production/circuit_imprinter/department
 
+/obj/item/circuitboard/machine/circuit_imprinter/department/cargo
+	name = "Circuit Imprinter (M.I.D.A.S)"
+	icon_state = "supply"
+	build_path = /obj/machinery/rnd/production/circuit_imprinter/department/cargo
+
+/obj/item/circuitboard/machine/circuit_imprinter/department/engi
+	name = "Circuit Imprinter (A.T.L.A.S)"
+	icon_state = "engineering"
+	build_path = /obj/machinery/rnd/production/circuit_imprinter/department/engi
+
+/obj/item/circuitboard/machine/circuit_imprinter/department/med
+	name = "Circuit Imprinter (C.A.R.E)"
+	icon_state = "medical"
+	build_path = /obj/machinery/rnd/production/circuit_imprinter/department/med
+
+/obj/item/circuitboard/machine/circuit_imprinter/department/sec
+	name = "Circuit Imprinter (P.E.A.C.E)"
+	icon_state = "security"
+	build_path = /obj/machinery/rnd/production/circuit_imprinter/department/sec
+
+/obj/item/circuitboard/machine/circuit_imprinter/department/civ
+	name = "Circuit Imprinter (H.O.M.E)"
+	icon_state = "service"
+	build_path = /obj/machinery/rnd/production/circuit_imprinter/department/civ
+
+/obj/item/circuitboard/machine/circuit_imprinter/department/basic
+	name = "Circuit Imprinter (B.A.S.I.C)"
+	icon_state = "generic"
+	build_path = /obj/machinery/rnd/production/circuit_imprinter/department/basic
+
 /obj/item/circuitboard/machine/holopad
 	name = "AI Holopad (Machine Board)"
 	icon_state = "generic"
@@ -446,6 +476,11 @@
 	name = "Departmental Protolathe (Machine Board)"
 	icon_state = "generic"
 	build_path = /obj/machinery/rnd/production/protolathe/department
+
+/obj/item/circuitboard/machine/protolathe/department/basic
+	name = "Protolathe (Basic)"
+	icon_state = "generic"
+	build_path = /obj/machinery/rnd/production/protolathe/department/basic
 
 /obj/item/circuitboard/machine/reagentgrinder
 	name = "Machine Design (All-In-One Grinder)"
@@ -752,7 +787,7 @@
 		/obj/item/stack/sheet/glass = 1)
 
 /obj/item/circuitboard/machine/protolathe/department/medical
-	name = "Departmental Protolathe (Machine Board) - Medical"
+	name = "Protolathe (Machine Board) - Medical"
 	icon_state = "medical"
 	build_path = /obj/machinery/rnd/production/protolathe/department/medical
 
@@ -901,7 +936,7 @@ WS End */
 	build_path = /obj/machinery/processor/slime
 
 /obj/item/circuitboard/machine/protolathe/department/science
-	name = "Departmental Protolathe (Machine Board) - Science"
+	name = "Protolathe (Machine Board) - Science"
 	icon_state = "science"
 	build_path = /obj/machinery/rnd/production/protolathe/department/science
 
@@ -1003,7 +1038,7 @@ WS End */
 //Security
 
 /obj/item/circuitboard/machine/protolathe/department/security
-	name = "Departmental Protolathe (Machine Board) - Security"
+	name = "Protolathe (Machine Board) - Security"
 	icon_state = "security"
 	build_path = /obj/machinery/rnd/production/protolathe/department/security
 
@@ -1164,7 +1199,7 @@ WS End */
 		return ..()
 
 /obj/item/circuitboard/machine/protolathe/department/service
-	name = "Departmental Protolathe - Service (Machine Board)"
+	name = "Protolathe - Service (Machine Board)"
 	icon_state = "service"
 	build_path = /obj/machinery/rnd/production/protolathe/department/service
 
@@ -1231,7 +1266,7 @@ WS End */
 	req_components = list()
 
 /obj/item/circuitboard/machine/protolathe/department/cargo
-	name = "Departmental Protolathe (Machine Board) - Cargo"
+	name = "Protolathe (Machine Board) - Cargo"
 	icon_state = "supply"
 	build_path = /obj/machinery/rnd/production/protolathe/department/cargo
 

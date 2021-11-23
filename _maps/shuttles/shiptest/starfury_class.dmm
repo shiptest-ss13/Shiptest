@@ -298,11 +298,14 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/engine)
 "dx" = (
-/obj/machinery/rnd/production/protolathe/department/security,
 /obj/machinery/firealarm{
 	dir = 8;
 	pixel_x = -26
 	},
+/obj/structure/closet/crate/bin{
+	name = "discarded feature disposal"
+	},
+/obj/item/storage/box/rndsec,
 /turf/open/floor/carpet/nanoweave/red,
 /area/ship/security)
 "dy" = (

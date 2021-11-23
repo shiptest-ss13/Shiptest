@@ -75,7 +75,6 @@
 	materials = list(/datum/material/iron = 500, /datum/material/glass = 500)
 	build_path = /obj/item/clothing/glasses/welding
 	category = list("Equipment")
-	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE | DEPARTMENTAL_FLAG_ENGINEERING
 
 /datum/design/welding_mask
 	name = "Welding Gas Mask"
@@ -85,7 +84,7 @@
 	materials = list(/datum/material/iron = 3000, /datum/material/glass = 1000)
 	build_path = /obj/item/clothing/mask/gas/welding
 	category = list("Equipment")
-	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE | DEPARTMENTAL_FLAG_ENGINEERING
+	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE | DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_CARGO
 
 /datum/design/bright_helmet
 	name = "Workplace-Ready Firefighter Helmet"
@@ -116,7 +115,6 @@
 	build_path = /obj/structure/table/rolling
 	category = list("Equipment")
 
-
 /datum/design/portaseeder
 	name = "Portable Seed Extractor"
 	desc = "For the enterprising botanist on the go. Less efficient than the stationary model, it creates one seed per plant."
@@ -136,7 +134,6 @@
 	build_path = /obj/item/bikehorn/airhorn
 	category = list("Equipment")
 
-
 /datum/design/mesons
 	name = "Optical Meson Scanners"
 	desc = "Used by engineering and mining staff to see basic structural and terrain layouts through walls, regardless of lighting condition."
@@ -145,7 +142,6 @@
 	materials = list(/datum/material/iron = 500, /datum/material/glass = 500)
 	build_path = /obj/item/clothing/glasses/meson
 	category = list("Equipment")
-	departmental_flags = DEPARTMENTAL_FLAG_CARGO | DEPARTMENTAL_FLAG_ENGINEERING
 
 /datum/design/engine_goggles
 	name = "Engineering Scanner Goggles"
@@ -245,7 +241,7 @@
 	materials = list(/datum/material/iron=1000, /datum/material/glass = 500, /datum/material/silver = 500)
 	build_path = /obj/item/locator
 	category = list("Equipment")
-	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
+	departmental_flags = DEPARTMENTAL_FLAG_SECURITY | DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/quantum_keycard
 	name = "Quantum Keycard"
@@ -284,7 +280,6 @@
 	materials = list(/datum/material/iron = 2000)
 	build_path = /obj/item/tank/internals/oxygen/empty
 	category = list("Equipment")
-	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/plasma_tank
 	name = "Plasma Tank"
@@ -314,7 +309,7 @@
 	materials = list(/datum/material/iron=2000, /datum/material/silver=1500, /datum/material/gold = 1000)
 	build_path = /obj/item/clothing/gloves/color/latex/engineering
 	category = list("Equipment")
-	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING
+	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_ENGINEERING
 
 /datum/design/lavarods
 	name = "Lava-Resistant Metal Rods"
@@ -386,7 +381,7 @@
 	materials = list(/datum/material/iron = 3000, /datum/material/glass = 200)
 	build_path = /obj/item/reagent_containers/spray
 	category = list("Equipment")
-	departmental_flags = DEPARTMENTAL_FLAG_SERVICE
+	departmental_flags = DEPARTMENTAL_FLAG_SERVICE | DEPARTMENTAL_FLAG_MEDICAL
 
 /datum/design/beartrap
 	name = "Bear Trap"
@@ -396,7 +391,6 @@
 	materials = list(/datum/material/iron = 5000, /datum/material/titanium = 1000)
 	build_path = /obj/item/restraints/legcuffs/beartrap
 	category = list("Equipment")
-	departmental_flags = DEPARTMENTAL_FLAG_SERVICE
 
 /////////////////////////////////////////
 /////////////Holobarriers////////////////
@@ -509,7 +503,6 @@
 	materials = list(/datum/material/iron = 2500)
 	build_path = /obj/item/flashlight/seclite
 	category = list("Equipment")
-	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
 /datum/design/detective_scanner
 	name = "Forensic Scanner"
@@ -568,7 +561,7 @@
 	materials = list(/datum/material/iron = 75000, /datum/material/glass = 37500, /datum/material/plastic = 1000)
 	build_path = /obj/item/construction/plumbing
 	category = list("Equipment")
-	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
+	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_ENGINEERING
 
 
 
