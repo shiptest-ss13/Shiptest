@@ -85,25 +85,25 @@
 /obj/item/borg/upgrade/skill/medical
 	name = "cyborg intelligence medical skill upload"
 	desc = "Used to load the medical skill database onto a cyborg."
-	skill_type = datum/skill/medical
+	skill_type = /datum/skill/medical
 	module_type = list(/obj/item/robot_module/medical)
 
 /obj/item/borg/upgrade/skill/mining
 	name = "cyborg intelligence mining skill upload"
 	desc = "Used to load the mining skill database onto a cyborg."
-	skill_type = datum/skill/mining
+	skill_type = /datum/skill/mining
 	module_type = list(/obj/item/robot_module/miner)
 
 /obj/item/borg/upgrade/skill/cleaning
 	name = "cyborg intelligence cleaning skill upload"
 	desc = "Used to load the cleaning skill database onto a cyborg."
-	skill_type = datum/skill/cleaning
+	skill_type = /datum/skill/cleaning
 	module_type = list(/obj/item/robot_module/janitor)
 
 /obj/item/borg/upgrade/skill/gaming
 	name = "cyborg intelligence gaming skill upload"
 	desc = "Used to load the gaming skill database onto a cyborg."
-	skill_type = datum/skill/gaming
+	skill_type = /datum/skill/gaming
 
 /obj/item/borg/upgrade/disablercooler
 	name = "cyborg rapid disabler cooling module"
