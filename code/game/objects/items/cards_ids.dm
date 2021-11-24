@@ -509,7 +509,7 @@ update_label()
 	access = list(ACCESS_SYNDICATE, ACCESS_ROBOTICS)
 	uses_overlays = FALSE
 
-obj/item/card/id/syndicate_command/operative
+/obj/item/card/id/syndicate_command/operative
 	name = "operative ID card"
 	id_type_name = "syndicate ID card"
 	desc = "An ID straight from the Syndicate."
