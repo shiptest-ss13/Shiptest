@@ -79,7 +79,7 @@
 	. = ..()
 	if(.)
 		if(R.mind)
-			R.mind.set_level(skill_type, 2500, TRUE)
+			R.mind.set_level(skill_type, 7, TRUE)
 			to_chat(R, "<span class='notice'>Your module's main skill has been maxxed!</span>")
 
 /obj/item/borg/upgrade/skill/medical
