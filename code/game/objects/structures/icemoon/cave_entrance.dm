@@ -196,7 +196,7 @@ GLOBAL_LIST_INIT(ore_probability, list(
 				new /obj/item/clothing/shoes/clown_shoes/banana_shoes/combat(loc)
 				new /mob/living/simple_animal/hostile/clown/fleshclown(loc)
 			if(prob(15))//you lost
-				new /obj/item/circlegame
+				new /obj/item/circlegame(loc)
 			new /obj/item/stack/sheet/mineral/bananium(loc)
 			new /turf/open/floor/mineral/bananium(loc)
 		if(2)//basic demonic incursion
@@ -266,13 +266,13 @@ GLOBAL_LIST_INIT(ore_probability, list(
 				new /obj/item/clothing/head/helmet/knight/blue(loc)
 				new /mob/living/simple_animal/hostile/skeleton(loc)
 			if(prob(35))
-				new /obj/item/disk/design_disk/adv/knight_gear
+				new /obj/item/disk/design_disk/adv/knight_gear(loc)
 				new /mob/living/simple_animal/hostile/skeleton(loc)
 			new /obj/item/instrument/trombone(loc)
-			new /obj/item/stack/sheet/bone
-			new /obj/item/stack/sheet/bone
-			new /obj/item/stack/sheet/bone
-			new /obj/item/stack/sheet/bone
+			new /obj/item/stack/sheet/bone(loc)
+			new /obj/item/stack/sheet/bone(loc)
+			new /obj/item/stack/sheet/bone(loc)
+			new /obj/item/stack/sheet/bone(loc)
 			new /mob/living/simple_animal/hostile/skeleton/templar(loc)
 			new /turf/open/floor/mineral/silver(loc)
 		if(4)//hogwart's school of witchcraft and wizardry. Featuring incredible loot at incredibly low chances
@@ -299,7 +299,7 @@ GLOBAL_LIST_INIT(ore_probability, list(
 				new /obj/item/gun/magic/staff/chaos(loc)
 				new /mob/living/simple_animal/hostile/dark_wizard(loc)
 			if(prob(15))
-				new /obj/item/mjollnir
+				new /obj/item/mjollnir(loc)
 				new /mob/living/simple_animal/hostile/wizard(loc)
 			if(prob(15))
 				new /obj/item/singularityhammer(loc)
@@ -340,7 +340,7 @@ GLOBAL_LIST_INIT(ore_probability, list(
 				new /obj/item/gun/ballistic/automatic/pistol/suppressed(loc)
 				new /obj/item/ammo_box/magazine/
 				new /mob/living/simple_animal/hostile/syndicate/melee/sword(loc)
-			if(prob(10))
+			if(prob(25))
 				new /obj/item/gun/ballistic/automatic/pistol/tec9(loc)
 				new /mob/living/simple_animal/hostile/syndicate/melee/sword(loc)
 			if(prob(25))
@@ -351,10 +351,13 @@ GLOBAL_LIST_INIT(ore_probability, list(
 				new /obj/item/storage/toolbox/syndicate(loc)
 				new /mob/living/simple_animal/hostile/syndicate/melee/sword/space(loc)
 			if(prob(25))
-				new /obj/item/storage/fancy/cigarettes/cigpack_syndicate
+				new /obj/item/storage/fancy/cigarettes/cigpack_syndicate(loc)
 			if(prob(15))
-				new /obj/item/borg/upgrade/transform/commando(loc)
-				new /mob/living/simple_animal/hostile/syndicate/ranged/smg
+				new /obj/item/borg/upgrade/transform/assault(loc)
+				new /mob/living/simple_animal/hostile/syndicate/ranged/smg(loc)
+			if(prob(15))
+				new /obj/item/antag_spawner/nuke_ops/borg_tele/commando(loc)
+				new /mob/living/simple_animal/hostile/syndicate/ranged/smg(loc)
 			if(prob(25))
 				new /mob/living/simple_animal/hostile/syndicate/melee/sword/space(loc)
 				new /obj/item/guardiancreator/tech(loc)
@@ -363,6 +366,9 @@ GLOBAL_LIST_INIT(ore_probability, list(
 				new /obj/item/storage/backpack/duffelbag/syndie/c4(loc)
 			if(prob(35))
 				new /obj/item/storage/belt/military(loc)
+			if(prob(25))
+				new /obj/item/syndie_crusher(loc)
+				new /mob/living/simple_animal/hostile/syndicate/ranged/smg(loc)
 			if(prob(25))
 				new /obj/item/card/id/syndicate/anyone(loc)
 			if(prob(25))
