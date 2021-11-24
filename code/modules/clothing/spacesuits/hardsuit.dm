@@ -938,7 +938,7 @@
 	//Security
 /obj/item/clothing/head/helmet/space/hardsuit/security/independent
 	name = "security hardsuit helmet"
-	desc = "An outdated helmet designed for work in a hazardous, low pressure environment. Has an additional layer of armor."
+	desc = "An obsolete, surplus helmet designed for work in hazardous, low pressure environments. Well-armored, if somewhat claustrophobic."
 	icon_state = "hardsuit0-independent-sec"
 	item_state = "independent_sec_helm"
 	hardsuit_type = "independent-sec"
@@ -948,7 +948,7 @@
 /obj/item/clothing/suit/space/hardsuit/security/independent
 	icon_state = "hardsuit-independent-sec"
 	name = "security hardsuit"
-	desc = "An outdated suit that protects against hazardous, low pressure environments. Has an additional layer of armor."
+	desc = "An obsolete, surplus suit that protects against hazardous, low pressure environments. Though bulky, it has significant armor protection for its age. <br> Dating from well before the war, old surplus suits such as this can be found in the service of various local police and private security organizations across known space."
 	icon_state = "hardsuit-independent-sec"
 	item_state = "independent_sec_hardsuit"
 	hardsuit_type = "independent-sec"
@@ -958,7 +958,7 @@
 	//Mining
 /obj/item/clothing/head/helmet/space/hardsuit/mining/independent
 	name = "mining hardsuit helmet"
-	desc = "An outdated helmet designed for work in a hazardous, low pressure environment. Has reinforced plating for wildlife encounters."
+	desc = "An inexpensive helmet designed for work in hazardous, low pressure environments. Its open cage design provides excellent visibility."
 	icon_state = "hardsuit0-independent-mining"
 	item_state = "independent_mining_helm"
 	hardsuit_type = "independent-mining"
@@ -966,7 +966,7 @@
 
 /obj/item/clothing/suit/space/hardsuit/mining/independent
 	name = "mining hardsuit"
-	desc = "An outdated suit that protects against hazardous, low pressure environments. Has reinforced plating for wildlife encounters and a shoulder-mounted floodlight."
+	desc = "An inexpensive, widespread suit designed for work in hazardous, low pressure environments. Equipped with extra plating against blunt impacts and other common threats as well as a powerful shoulder-mounted floodlight. <br> Suits like this are a common sight among miners on the frontier, frequently equipped with additional improvised plating."
 	icon_state = "hardsuit0-independent-mining"
 	item_state = "independent_mining_hardsuit"
 	hardsuit_type = "independent-mining"
@@ -978,8 +978,9 @@
 	name = "engineering space suit"
 	icon_state = "space-independent-eng"
 	item_state = "space-independent-eng"
-	desc = "A space suit designed for construction and salvage in hazardous, low-pressure environments. Has shielding against radiation and heat."
+	desc = "A civilian space suit designed for construction and salvage in hazardous, low-pressure environments. Has shielding against radiation and heat and abundant storage.<br>Though they lack the physical protection of more expensive hardsuits, this type of suit is extremely common wherever construction and salvage work must be done in open space."
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 20, "bomb" = 0, "bio" = 100, "rad" = 75, "fire" = 100, "acid" = 75)
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/exo/large
 	resistance_flags = FIRE_PROOF
 
 /obj/item/clothing/head/helmet/space/light/engineer
@@ -1010,7 +1011,7 @@
 	name = "pilot helmet"
 	icon_state = "space-pilot-plain"
 	item_state = "space-pilot-plain"
-	desc = "A specialized space helmet designed for mech and spacepod pilots."
+	desc = "A specialized space helmet designed for mech and spacepod pilots. Offers limited impact protection."
 	var/skin = "plain"
 	var/blurb = " Its simple design is quite ancient."
 	up = FALSE
@@ -1042,7 +1043,7 @@
 		if("corvid")
 			blurb = " It is sloppily painted with thin teal and red paint. There are some dark stains on the lining..."
 
-	desc = "A specialized space helmet with prominent breathing apparatus designed for mech and spacepod pilots.[blurb]"
+	desc = "A specialized space helmet designed for mech and spacepod pilots. Offers limited impact protection.[blurb]"
 	update_icon_state()
 
 /obj/item/clothing/head/helmet/space/pilot/random/New()
