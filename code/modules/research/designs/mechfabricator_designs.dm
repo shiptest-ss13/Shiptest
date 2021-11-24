@@ -644,6 +644,15 @@
 	construction_time = 120
 	category = list("Cyborg Upgrade Modules")
 
+/datum/design/borg_upgrade_miningskill
+	name = "Cyborg Upgrade (Mining Skill Loader)"
+	id = "borg_upgrade_miningskill"
+	build_type = MECHFAB
+	build_path = /obj/item/borg/upgrade/skill/mining
+	materials = list(/datum/material/iron = 20000 , /datum/material/glass = 5000)
+	construction_time = 80
+	category = list("Cyborg Upgrade Modules")
+
 /datum/design/borg_syndicate_module
 	name = "Cyborg Upgrade (Illegal Modules)"
 	id = "borg_syndicate_module"
@@ -651,6 +660,15 @@
 	build_path = /obj/item/borg/upgrade/syndicate
 	materials = list(/datum/material/iron = 15000, /datum/material/glass = 15000, /datum/material/diamond = 10000)
 	construction_time = 120
+	category = list("Cyborg Upgrade Modules")
+
+/datum/design/borg_upgrade_gamingskill
+	name = "Cyborg Upgrade (Gaming Skill Loader)"
+	id = "borg_upgrade_gamingskill"
+	build_type = MECHFAB
+	build_path = /obj/item/borg/upgrade/skill/gaming
+	materials = list(/datum/material/iron = 20000 , /datum/material/glass = 5000)
+	construction_time = 80
 	category = list("Cyborg Upgrade Modules")
 
 /datum/design/borg_transform_clown
@@ -707,6 +725,15 @@
 	construction_time = 40
 	category = list("Cyborg Upgrade Modules")
 
+/datum/design/borg_upgrade_medicalskill
+	name = "Cyborg Upgrade (Medical Skill Loader)"
+	id = "borg_upgrade_medicalskill"
+	build_type = MECHFAB
+	build_path = /obj/item/borg/upgrade/skill/medicine
+	materials = list(/datum/material/iron = 20000 , /datum/material/glass = 5000)
+	construction_time = 80
+	category = list("Cyborg Upgrade Modules")
+
 /datum/design/borg_upgrade_trashofholding
 	name = "Cyborg Upgrade (Trash Bag of Holding)"
 	id = "borg_upgrade_trashofholding"
@@ -723,6 +750,15 @@
 	build_path = /obj/item/borg/upgrade/amop
 	materials = list(/datum/material/iron = 2000, /datum/material/glass = 2000)
 	construction_time = 40
+	category = list("Cyborg Upgrade Modules")
+
+/datum/design/borg_upgrade_cleaningskill
+	name = "Cyborg Upgrade (Cleaning Skill Loader)"
+	id = "borg_upgrade_cleaningskill"
+	build_type = MECHFAB
+	build_path = /obj/item/borg/upgrade/skill/cleaning
+	materials = list(/datum/material/iron = 20000 , /datum/material/glass = 5000)
+	construction_time = 80
 	category = list("Cyborg Upgrade Modules")
 
 /datum/design/borg_upgrade_expand

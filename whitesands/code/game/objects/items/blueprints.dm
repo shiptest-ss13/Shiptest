@@ -184,3 +184,9 @@
 			height = new_width
 			dwidth = offset_y - 1
 			dheight = new_width - offset_x
+
+/obj/item/areaeditor/shuttle/cyborg
+	name = "digital shuttle expansion permit"
+	desc = "A digital editor that permits the expansion of flyable shuttles."
+	icon = 'icons/obj/items_and_weapons.dmi'
+	icon_state = "blueprints"

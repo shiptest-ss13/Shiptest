@@ -68,6 +68,43 @@
 	R.logevent("WARN -- System recovered from unexpected shutdown.")
 	R.logevent("System brought online.")
 
+/obj/item/borg/upgrade/skill
+	name = "cyborg intelligence skill upload"
+	desc = "Used to load a skill database onto a cyborg."
+	icon_state = "cyborg_upgrade1"
+	one_use = TRUE
+	var/skill_type
+
+/obj/item/borg/upgrade/skill/action(mob/living/silicon/robot/R, user = usr)
+	. = ..()
+	if(.)
+		if(R.mind)
+			R.mind.set_level(skill_type, 2500, TRUE)
+			to_chat(user, "<span class='notice'>Your module's main skill has been maxxed!</span>")
+
+/obj/item/borg/upgrade/skill/medical
+	name = "cyborg intelligence medical skill upload"
+	desc = "Used to load the medical skill database onto a cyborg."
+	skill_type = datum/skill/medical
+	module_type = list(/obj/item/robot_module/medical)
+
+/obj/item/borg/upgrade/skill/mining
+	name = "cyborg intelligence mining skill upload"
+	desc = "Used to load the mining skill database onto a cyborg."
+	skill_type = datum/skill/mining
+	module_type = list(/obj/item/robot_module/miner)
+
+/obj/item/borg/upgrade/skill/cleaning
+	name = "cyborg intelligence cleaning skill upload"
+	desc = "Used to load the cleaning skill database onto a cyborg."
+	skill_type = datum/skill/cleaning
+	module_type = list(/obj/item/robot_module/janitor)
+
+/obj/item/borg/upgrade/skill/gaming
+	name = "cyborg intelligence gaming skill upload"
+	desc = "Used to load the gaming skill database onto a cyborg."
+	skill_type = datum/skill/gaming
+
 /obj/item/borg/upgrade/disablercooler
 	name = "cyborg rapid disabler cooling module"
 	desc = "Used to cool a mounted disabler, increasing the potential current in it and thus its recharge rate."
