@@ -272,7 +272,7 @@
 		C.adjustOxyLoss(-2)
 		C.adjustCloneLoss(-2)
 		return
-	C.blood_volume -= 0.20
+	C.blood_volume -= 0.235
 	if(C.blood_volume <= BLOOD_VOLUME_SURVIVE)
 		to_chat(C, "<span class='danger'>You ran out of blood!</span>")
 		C.dust()
