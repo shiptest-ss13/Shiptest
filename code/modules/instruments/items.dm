@@ -304,7 +304,7 @@
 
 /obj/item/choice_beacon/rnd
 	name = "C.R.E.W.M.A.T.E type R&D Choice Beacon"
-	desc = "This aging launch beacon summons a limited production RND package from a nearby orbital sattelite, delivered via impact pod."
+	desc = "This aging launch beacon summons a limited production RND package from a nearby orbital satellite, delivered via impact pod."
 	icon_state = "gangtool-red"
 
 /obj/item/choice_beacon/rnd/generate_display_names()
