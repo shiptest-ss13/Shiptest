@@ -554,7 +554,7 @@ Difficulty: Hard
 	health = 9999
 	damage_coeff = list(BRUTE = 0.5, BURN = 0.5, TOX = 0.5, CLONE = 0.5, STAMINA = 0, OXY = 1)//unstopping
 	attack_verb_continuous = "<b>reverts the pr</b> of"
-	attack_verb_simple = "<b>revert the pr of</b>"
+	attack_verb_simple = "<b>revert the pr</b> of"
 	deathmessage = "Qdel's himself out of frustration!"
 	icon_state = "margmob"
 	icon_living = "margmob"
