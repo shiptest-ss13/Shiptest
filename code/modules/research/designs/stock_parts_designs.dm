@@ -255,7 +255,7 @@
 	materials = list(/datum/material/iron = 100, /datum/material/silver = 100)
 	build_path = /obj/item/stock_parts/subspace/ansible
 	category = list("Stock Parts")
-	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
+	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE | DEPARTMENTAL_FLAG_CARGO
 
 /datum/design/hyperwave_filter
 	name = "Hyperwave Filter"
@@ -265,7 +265,7 @@
 	materials = list(/datum/material/iron = 100, /datum/material/silver = 100)
 	build_path = /obj/item/stock_parts/subspace/filter
 	category = list("Stock Parts")
-	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
+	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE | DEPARTMENTAL_FLAG_CARGO
 
 /datum/design/subspace_amplifier
 	name = "Subspace Amplifier"
@@ -275,7 +275,7 @@
 	materials = list(/datum/material/iron = 100, /datum/material/gold = 100, /datum/material/uranium = 100)
 	build_path = /obj/item/stock_parts/subspace/amplifier
 	category = list("Stock Parts")
-	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
+	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE | DEPARTMENTAL_FLAG_CARGO
 
 /datum/design/subspace_treatment
 	name = "Subspace Treatment Disk"
@@ -285,7 +285,7 @@
 	materials = list(/datum/material/iron = 100, /datum/material/silver = 200)
 	build_path = /obj/item/stock_parts/subspace/treatment
 	category = list("Stock Parts")
-	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
+	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE | DEPARTMENTAL_FLAG_CARGO
 
 /datum/design/subspace_analyzer
 	name = "Subspace Analyzer"
@@ -295,7 +295,7 @@
 	materials = list(/datum/material/iron = 100, /datum/material/gold = 100)
 	build_path = /obj/item/stock_parts/subspace/analyzer
 	category = list("Stock Parts")
-	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
+	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE | DEPARTMENTAL_FLAG_CARGO
 
 /datum/design/subspace_crystal
 	name = "Ansible Crystal"
@@ -305,7 +305,7 @@
 	materials = list(/datum/material/glass = 800, /datum/material/silver = 100, /datum/material/gold = 100)
 	build_path = /obj/item/stock_parts/subspace/crystal
 	category = list("Stock Parts")
-	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
+	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE | DEPARTMENTAL_FLAG_CARGO
 
 /datum/design/subspace_transmitter
 	name = "Subspace Transmitter"
@@ -315,7 +315,7 @@
 	materials = list(/datum/material/glass = 100, /datum/material/silver = 100, /datum/material/uranium = 100)
 	build_path = /obj/item/stock_parts/subspace/transmitter
 	category = list("Stock Parts")
-	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
+	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE | DEPARTMENTAL_FLAG_CARGO
 
 /datum/design/card_reader
 	name = "Card Reader"
