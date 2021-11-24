@@ -85,7 +85,7 @@
 /obj/item/borg/upgrade/skill/medical
 	name = "cyborg intelligence medical skill upload"
 	desc = "Used to load the medical skill database onto a cyborg."
-	skill_type = /datum/skill/medical
+	skill_type = /datum/skill/medicine
 	module_type = list(/obj/item/robot_module/medical)
 
 /obj/item/borg/upgrade/skill/mining

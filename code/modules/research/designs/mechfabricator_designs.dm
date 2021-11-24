@@ -729,7 +729,7 @@
 	name = "Cyborg Upgrade (Medical Skill Loader)"
 	id = "borg_upgrade_medicalskill"
 	build_type = MECHFAB
-	build_path = /obj/item/borg/upgrade/skill/medicine
+	build_path = /obj/item/borg/upgrade/skill/medical
 	materials = list(/datum/material/iron = 20000 , /datum/material/glass = 5000)
 	construction_time = 80
 	category = list("Cyborg Upgrade Modules")

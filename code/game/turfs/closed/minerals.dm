@@ -93,7 +93,7 @@
 				H.mind.adjust_experience(/datum/skill/mining, initial(mineralType.mine_experience) * mineralAmt)
 			else
 				H.mind.adjust_experience(/datum/skill/mining, 4)
-		if(iscyborg(user))
+	if(iscyborg(user))
 		var/mob/living/silicon/H = user
 		if(give_exp)
 			if (mineralType && (mineralAmt > 0))
