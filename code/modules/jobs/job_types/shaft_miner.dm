@@ -88,8 +88,7 @@
 /datum/outfit/job/miner/old
 	name = "Shaft Miner (Legacy)"
 	suit = /obj/item/clothing/suit/hooded/explorer/old
-	mask = /obj/item/clothing/mask/gas/ex
-plorer/old
+	mask = /obj/item/clothing/mask/gas/explorer/old
 	glasses = /obj/item/clothing/glasses/meson
 	suit_store = /obj/item/tank/internals/oxygen
 	gloves = /obj/item/clothing/gloves/explorer/old

@@ -298,7 +298,7 @@
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/mining/heavy
 	custom_price = 4500
 
-/obj/item/clothing/head/helmet/space/hardsuit/mining
+/obj/item/clothing/head/helmet/space/hardsuit/mining/heavy
 	name = "heavy mining helmet"
 	desc = "The helmet for a heavy frontier operations hardsuit. Though somewhat cramped, it offers advanced braincase protection against a variety of dangers common to far frontier orebreaking work."
 	icon_state = "hardsuit0-hvymining"
