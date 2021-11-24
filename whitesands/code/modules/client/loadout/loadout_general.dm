@@ -118,6 +118,11 @@
 	path = /obj/item/radio
 	cost = 500
 
+/datum/gear/lizard
+	display_name = "toy, lizard plushie"
+	path = /obj/item/toy/plush/lizard
+	cost = 1500
+
 /datum/gear/moth
 	display_name = "toy, moth plushie"
 	path = /obj/item/toy/plush/moth
