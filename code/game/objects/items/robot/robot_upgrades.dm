@@ -80,7 +80,7 @@
 	if(.)
 		if(R.mind)
 			R.mind.set_level(skill_type, 2500, TRUE)
-			to_chat(user, "<span class='notice'>Your module's main skill has been maxxed!</span>")
+			to_chat(R, "<span class='notice'>Your module's main skill has been maxxed!</span>")
 
 /obj/item/borg/upgrade/skill/medical
 	name = "cyborg intelligence medical skill upload"
