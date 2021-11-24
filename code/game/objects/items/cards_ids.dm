@@ -69,6 +69,36 @@
 	righthand_file = 'icons/mob/inhands/equipment/idcards_righthand.dmi'
 	item_flags = NO_MAT_REDEMPTION | NOBLUDGEON
 	var/prox_check = TRUE //If the emag requires you to be in range
+	var/emag_on = TRUE //added to suppport multi-function tools with a deployable emag - hams
+
+//multi-purpose emag tool example- used in syndicate borgs.
+/obj/item/card/emag/borg
+	name = "/INFILTRATE/ module"
+	desc = "A cyborg subsystem of debatable legality, designed to defeat security systems and unlock backdoor functionality."
+	icon_state = "inf_emag"
+	icon = 'icons/obj/items_cyborg.dmi'
+
+/obj/item/card/emag/borg/examine()
+	. = ..()
+	. += "<span class='notice'> Capable of interchanging between electromagnetic, electrical, & screw turning functionality.</span>"
+
+/obj/item/card/emag/borg/attack_self(mob/user)
+	playsound(get_turf(user), 'sound/items/change_drill.ogg', 50, TRUE)
+	if(tool_behaviour == NONE)
+		tool_behaviour = TOOL_SCREWDRIVER
+		to_chat(user, "<span class='notice'>You extend the screwdriver within the [src].</span>")
+		icon_state = "inf_screwdriver"
+		emag_on = FALSE
+	else if(tool_behaviour == TOOL_SCREWDRIVER)
+		tool_behaviour = TOOL_MULTITOOL
+		to_chat(user, "<span class='notice'>You prime the multitool attachment of the [src].</span>")
+		icon_state = "inf_multi"
+		emag_on = FALSE
+	else
+		tool_behaviour = NONE
+		to_chat(user, "<span class='notice'>You enable the electromagnetic hacking system of the [src].</span>")
+		icon_state = "inf_emag"
+		emag_on = TRUE
 
 /obj/item/card/emag/bluespace
 	name = "bluespace cryptographic sequencer"
@@ -77,15 +107,17 @@
 	prox_check = FALSE
 
 /obj/item/card/emag/attack()
-	return
+	if(emag_on == TRUE)
+		return
 
 /obj/item/card/emag/afterattack(atom/target, mob/user, proximity)
 	. = ..()
-	var/atom/A = target
-	if(!proximity && prox_check)
-		return
-	log_combat(user, A, "attempted to emag")
-	A.emag_act(user)
+	if(emag_on == TRUE)
+		var/atom/A = target
+		if(!proximity && prox_check)
+			return
+		log_combat(user, A, "attempted to emag")
+		A.emag_act(user)
 
 /obj/item/card/emagfake
 	desc = "It's a card with a magnetic strip attached to some circuitry. Closer inspection shows that this card is a poorly made replica, with a \"DonkCo\" logo stamped on the back."

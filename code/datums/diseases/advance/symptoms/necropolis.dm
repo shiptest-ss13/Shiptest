@@ -16,7 +16,7 @@
 	var/fireproof = FALSE
 	threshold_descs = list(
 	"Resistance 15" = "The area near the host roils with paralyzing tendrils.",
-	"Resistance 20" = "Host becomes immune to heat, ash, and lava. Removes movespeed debuff.",
+	"Resistance 20" = "Host becomes immune to heat, ash, and lava. Removes movespeed debuff. Hail to the necropolis!",
 	)
 	var/list/cached_tentacle_turfs
 	var/turf/last_location
@@ -37,7 +37,7 @@
 		return
 	var/mob/living/carbon/M = A.affected_mob
 	switch(A.stage)
-		if(2)
+		if(1, 2)
 			if(tendrils)
 				tendril(A)
 			if(prob(base_message_chance))
@@ -60,6 +60,7 @@
 			M.add_movespeed_modifier(/datum/movespeed_modifier/necropolis, update=TRUE)
 			ADD_TRAIT(M, TRAIT_PIERCEIMMUNE, DISEASE_TRAIT)
 			if(fireproof)
+				to_chat(M, "<span class='notice'>[pick("You taste primordial ash.", "The necropolis whispers sweet nothings to you.", "You feel like a god.")]</span>")
 				ADD_TRAIT(M, TRAIT_RESISTHEAT, DISEASE_TRAIT)
 				ADD_TRAIT(M, TRAIT_RESISTHIGHPRESSURE, DISEASE_TRAIT)
 				M.weather_immunities |= "ash"

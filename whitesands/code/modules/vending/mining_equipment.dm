@@ -1,7 +1,8 @@
 /* Mining Points Equipment Vendor */
+/* Mining Points Equipment Vendor */
 /obj/machinery/vending/mining_equipment
-	name = "mining equipment vendor"
-	desc = "An equipment vendor for miners, points collected at an ore redemption machine can be spent here."
+	name = "frontier equipment vendor"
+	desc = "An equipment vendor for miners, prospectors, and all manner of far reach scroungers. Ore Redemption Points can be spent here to purchase rough-and-tumble goods. Sold by EXOCON."
 	icon = 'whitesands/icons/obj/machines/vending.dmi'
 	icon_state = "mining"
 	icon_deny = "mining-deny"
@@ -70,7 +71,6 @@
 		/obj/item/clothing/mask/facehugger/toy = 1,
 		/obj/item/clothing/glasses/meson/gar = 2,
 		/obj/item/survivalcapsule/luxuryelite = 1,
-		/obj/item/borg/upgrade/modkit/chassis_mod/orange = 1
 	)
 
 /obj/machinery/vending/mining_equipment/attackby(obj/item/I, mob/user, params)

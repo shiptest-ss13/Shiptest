@@ -24,7 +24,7 @@
 	belt = /obj/item/pda/shaftminer
 	ears = /obj/item/radio/headset/headset_cargo/mining
 	shoes = /obj/item/clothing/shoes/workboots/mining
-	gloves = /obj/item/clothing/gloves/color/black
+	gloves = /obj/item/clothing/gloves/explorer
 	uniform = /obj/item/clothing/under/rank/cargo/miner/lavaland
 	alt_uniform = /obj/item/clothing/under/rank/cargo/miner //WS Edit - Alt Uniforms
 	alt_suit = /obj/item/clothing/suit/hazardvest
@@ -85,23 +85,21 @@
 	suit = /obj/item/clothing/suit/space/hardsuit/mining
 	mask = /obj/item/clothing/mask/breath
 
-//Shiptest Outfits
-
-/datum/outfit/job/miner/hazard
-	name = "Asteroid Miner (Hazard)"
-	uniform = /obj/item/clothing/under/rank/cargo/miner/hazard
-	alt_uniform = null
-	alt_suit = /obj/item/clothing/suit/toggle/hazard
-
-/datum/outfit/job/miner/solgov
-	name = "Field Engineer (SolGov)"
-
-	uniform = /obj/item/clothing/under/solgov
-	accessory = /obj/item/clothing/accessory/armband/cargo
-	head = /obj/item/clothing/head/hardhat/mining
-	suit =  /obj/item/clothing/suit/hazardvest
-
-/datum/outfit/job/miner/solgov/rebel
-	name = "Field Engineer (Deserter)"
-
-	uniform = /obj/item/clothing/under/syndicate/camo
+/datum/outfit/job/miner/old
+	name = "Shaft Miner (Legacy)"
+	suit = /obj/item/clothing/suit/hooded/explorer/old
+	mask = /obj/item/clothing/mask/gas/ex
+plorer/old
+	glasses = /obj/item/clothing/glasses/meson
+	suit_store = /obj/item/tank/internals/oxygen
+	gloves = /obj/item/clothing/gloves/explorer/old
+	uniform = /obj/item/clothing/under/rank/cargo/miner/lavaland/old
+	internals_slot = ITEM_SLOT_SUITSTORE
+	backpack_contents = list(
+		/obj/item/flashlight/seclite=1,\
+		/obj/item/kitchen/knife/combat/survival=1,
+		/obj/item/mining_scanner=1,
+		/obj/item/reagent_containers/hypospray/medipen/survival,
+		/obj/item/reagent_containers/hypospray/medipen/survival,\
+		/obj/item/gun/energy/kinetic_accelerator/old=1,\
+		/obj/item/stack/marker_beacon/ten=1)

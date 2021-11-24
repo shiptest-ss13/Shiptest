@@ -3,6 +3,32 @@
 /obj/projectile/bullet/c3d
 	damage = 20
 
+/obj/projectile/bullet/ctac
+	damage = 40
+	armour_penetration = 35
+	speed = 0.4
+
+/obj/projectile/bullet/csour
+	damage = 0
+	stamina = 60
+	jitter = 30
+	stutter = 10
+	slur = 10
+	knockdown = 5
+	armour_penetration = 30
+
+/obj/projectile/bullet/csweet
+	damage = 5
+	irradiate = 250
+	speed = 1.2
+
+/obj/projectile/bullet/csweet/on_hit(atom/target, blocked = FALSE)
+	. = ..()
+	if(iscarbon(target))
+		var/mob/living/carbon/M = target
+		M.adjust_fire_stacks(8)
+		M.IgniteMob()
+
 // Mech LMG
 
 /obj/projectile/bullet/lmg
