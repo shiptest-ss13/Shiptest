@@ -120,7 +120,7 @@
 
 /datum/gear/lizard
 	display_name = "toy, lizard plushie"
-	path = /obj/item/toy/plush/lizard
+	path = /obj/item/toy/plush/lizardplushie
 	cost = 1500
 
 /datum/gear/moth
