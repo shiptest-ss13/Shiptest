@@ -13,7 +13,8 @@
 		/obj/item/storage/box/evidence = 6,
 		/obj/item/flashlight/seclite = 4,
 		/obj/item/ammo_box/c9mm/rubbershot = 3,
-		/obj/item/ammo_box/c9mm = 1)
+		/obj/item/ammo_box/c9mm = 1,
+		/obj/item/stock_parts/cell/gun = 3)
 	contraband = list(
 		/obj/item/clothing/glasses/sunglasses = 2)
 	premium = list(
@@ -77,7 +78,7 @@
 	products = list(
 		/obj/item/restraints/handcuffs = 3,
 		/obj/item/assembly/flash/handheld = 2,
-		/obj/item/flashlight/seclite = 1,
+		/obj/item/flashlight/seclite = 2,
 		/obj/item/ammo_box/magazine/m10mm = 3,
 		/obj/item/ammo_box/magazine/smgm45 = 3,
 		/obj/item/ammo_box/magazine/sniper_rounds = 3,

@@ -412,7 +412,9 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 9
 	},
-/obj/machinery/vending/security/marine/solgov,
+/obj/machinery/vending/security/marine/solgov{
+	all_items_free = 1
+	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/security)
 "pS" = (
