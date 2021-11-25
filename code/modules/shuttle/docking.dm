@@ -254,6 +254,7 @@
 			moved_object.lateShuttleMove(oldT, movement_force, movement_direction)
 		catch(var/exception/e)
 			exceptions_list += e
+
 	for(var/exception/e in exceptions_list)
 		CHECK_TICK
 		throw_exception(e)
