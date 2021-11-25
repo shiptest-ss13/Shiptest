@@ -1684,6 +1684,19 @@
 	crate_name = "EXOCON Frontier starter kit"
 	crate_type = /obj/structure/closet/crate/secure/exo
 
+/datum/supply_pack/service/hvyminer
+	name = "Heavy Mining Kit"
+	desc = "A set of supplementary premium equipment for particularly challenging frontier expeditions. Comes equipped with an enhanced mining suit, crusher, launch boots, and two emerency stimulant injectors."
+	cost = 7500
+	access = ACCESS_QM
+	crate_name = "EXOCON Heavy Operations Kit"
+	crate_type = /obj/structure/closet/crate/secure/exo
+	contains = list(/obj/item/clothing/suit/space/hardsuit/mining/heavy,
+					/obj/item/clothing/shoes/bhop,
+					/obj/item/reagent_containers/hypospray/medipen/stimpack/crisis,
+					/obj/item/reagent_containers/hypospray/medipen/stimpack/crisis,
+					/obj/item/kinetic_crusher)
+
 /datum/supply_pack/service/vending/bartending
 	name = "Booze-o-mat and Coffee Supply Crate"
 	desc = "Bring on the booze and coffee vending machine refills."
