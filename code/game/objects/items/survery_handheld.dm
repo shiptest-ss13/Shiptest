@@ -6,21 +6,21 @@
 	var/static/list/z_active = list()
 	var/static/list/z_history = list()
 	var/active = FALSE
-	var/survey_value = 50
+	var/survey_value = 200
 	var/survey_delay = 4 SECONDS
 
 /obj/item/survey_handheld/advanced
 	name = "Advanced Survey Handheld"
-	desc = "An improved version of its predecessor this tool collects large amounts of data."
+	desc = "An improved version of its predeces	sor this tool collects large amounts of data."
 	icon_state = "survey-adv"
-	survey_value = 100
+	survey_value = 300
 	survey_delay = 3 SECONDS
 
 /obj/item/survey_handheld/elite
 	name = "Experimental Survey Handheld"
 	desc = "An improvement on even the Advanced version; this handheld was designed to be extremely fast in collecting data."
 	icon_state = "survey-elite"
-	survey_value = 100
+	survey_value = 300
 	survey_delay = 2 SECONDS
 
 /obj/item/survey_handheld/attack_self(mob/user)
@@ -44,7 +44,7 @@
 	while(user.get_active_held_item() == src)
 		to_chat(user, "<span class='notice'>You begin to scan your surroundings with [src].</span>")
 
-		var/penalty = 1 - (z_history[my_z] - 1) * 0.01 // You lose one percent of value are are one percent slower
+		var/penalty = 1 - (z_history[my_z] - 1) * 0.05 // You lose five percent of value and are five percent slower
 		if(!penalty || penalty < 0.20) // If you are below 20% value, do nothing and abort
 			flick(icon_state + "-corrupted", src)
 			playsound(src, 'sound/machines/buzz-sigh.ogg', 20)
