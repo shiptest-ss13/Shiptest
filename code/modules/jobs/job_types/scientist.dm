@@ -50,6 +50,15 @@
 	alt_uniform = null
 	shoes = /obj/item/clothing/shoes/sneakers/green
 
+/datum/outfit/job/scientist/xenobiologist/fauna
+	name = "Scientist (Fauna Researcher)"
+
+	belt = /obj/item/melee/curator_whip
+	suit = /obj/item/clothing/suit/curator
+	head = /obj/item/clothing/head/fedora
+
+	pda_slot = ITEM_SLOT_LPOCKET
+
 /datum/outfit/job/scientist/naniteresearcher
 	name = "Scientist (Nanite Researcher)"
 
