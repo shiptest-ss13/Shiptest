@@ -55,6 +55,7 @@ GLOBAL_LIST_INIT(turfs_without_ground, typecacheof(list(
 
 //Human sub-species
 #define isabductor(A) (is_species(A, /datum/species/abductor))
+#define ismushroom(A) (is_species(A, /datum/species/mush))
 #define isandroid(A) (is_species(A, /datum/species/android))
 #define issynth(A) (is_species(A, /datum/species/synth))
 #define ismilsynth(A) (is_species(A, /datum/species/synth/military))

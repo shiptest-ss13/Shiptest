@@ -54,7 +54,7 @@
 				cost = (BASE_HUMAN_REWARD*14)
 			else if(isgolem(H) || iszombie(H) || isshadow(H) || isandroid(H) || issynth(H))
 				cost = (BASE_HUMAN_REWARD*11)
-			else if(isjellyperson(H) || ispodperson(H) || issquidperson(H)|| isalien(H))
+			else if(isjellyperson(H) || ispodperson(H) || issquidperson(H) || isalien(H) || ismushroom(H))
 				cost = (BASE_HUMAN_REWARD*6)
 	else
 		cost = (BASE_HUMAN_REWARD * 0.6)
