@@ -296,10 +296,10 @@
 	name = "Evil Club"
 	id = "evil_club"
 	description = "A truly fucked up and evil club."
-	suffix = "fuckedupandevilclub.dmm"
+	suffix = "lavaland_surface_fuckedupandevilclub.dmm"
 
 /datum/map_template/ruin/lavaland/spookycrash
 	name = "Spooky Crash"
 	id = "spooky_crash"
 	description = "A spooky looking crash."
-	suffix = "SPOOKYCRASH.dmm"
+	suffix = "lavaland_surface_SPOOKYCRASH.dmm"
