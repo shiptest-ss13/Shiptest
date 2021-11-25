@@ -89,45 +89,51 @@
 /obj/docking_port/mobile/proc/preflight_check(list/old_turfs, list/new_turfs, list/areas_to_move, rotation)
 	var/list/exceptions_list = list()
 	for(var/i in 1 to old_turfs.len)
-		CHECK_TICK
-		var/turf/oldT = old_turfs[i]
-		var/turf/newT = new_turfs[i]
-		if(!newT)
-			return DOCKING_NULL_DESTINATION
-		if(!oldT)
-			return DOCKING_NULL_SOURCE
-
 		try
-			var/area/old_area = oldT.loc
-			var/move_mode = old_area.beforeShuttleMove(shuttle_areas)											//areas
-		catch(var/exception/e)
-			exceptions_list += e
+			CHECK_TICK
+			var/turf/oldT = old_turfs[i]
+			var/turf/newT = new_turfs[i]
+			if(!newT)
+				return DOCKING_NULL_DESTINATION
+			if(!oldT)
+				return DOCKING_NULL_SOURCE
 
-		var/list/old_contents = oldT.contents
-		for(var/k in 1 to old_contents.len)
+			var/move_mode
+			var/area/old_area = oldT.loc
+
 			try
-				CHECK_TICK
-				var/atom/movable/moving_atom = old_contents[k]
-				if(moving_atom.loc != oldT) //fix for multi-tile objects
-					continue
-				move_mode = moving_atom.beforeShuttleMove(newT, rotation, move_mode, src)					//atoms
+				move_mode = old_area.beforeShuttleMove(shuttle_areas)											//areas
 			catch(var/exception/e)
 				exceptions_list += e
 
-		try
-			move_mode = oldT.fromShuttleMove(newT, move_mode)													//turfs
+			var/list/old_contents = oldT.contents
+			for(var/k in 1 to old_contents.len)
+				try
+					CHECK_TICK
+					var/atom/movable/moving_atom = old_contents[k]
+					if(moving_atom.loc != oldT) //fix for multi-tile objects
+						continue
+					move_mode = moving_atom.beforeShuttleMove(newT, rotation, move_mode, src)					//atoms
+				catch(var/exception/e)
+					exceptions_list += e
+
+			try
+				move_mode = oldT.fromShuttleMove(newT, move_mode)												//turfs
+			catch(var/exception/e)
+				exceptions_list += e
+
+			try
+				move_mode = newT.toShuttleMove(oldT, move_mode, src)											//turfs
+			catch(var/exception/e)
+				exceptions_list += e
+
+			if(move_mode & MOVE_AREA)
+				areas_to_move[old_area] = TRUE
+
+			old_turfs[oldT] = move_mode
+
 		catch(var/exception/e)
 			exceptions_list += e
-
-		try
-			move_mode = newT.toShuttleMove(oldT, move_mode, src)												//turfs
-		catch(var/exception/e)
-			exceptions_list += e
-
-		if(move_mode & MOVE_AREA)
-			areas_to_move[old_area] = TRUE
-
-		old_turfs[oldT] = move_mode
 
 	for(var/exception/e in exceptions_list)
 		CHECK_TICK
@@ -136,32 +142,35 @@
 /obj/docking_port/mobile/proc/takeoff(list/old_turfs, list/new_turfs, list/moved_atoms, rotation, movement_direction, old_dock, area/underlying_old_area)
 	var/list/exceptions_list = list()
 	for(var/i in 1 to old_turfs.len)
-		var/turf/oldT = old_turfs[i]
-		var/turf/newT = new_turfs[i]
-		var/move_mode = old_turfs[oldT]
-		if(move_mode & MOVE_CONTENTS)
-			for(var/k in oldT)
-				try
+		try
+			var/turf/oldT = old_turfs[i]
+			var/turf/newT = new_turfs[i]
+			var/move_mode = old_turfs[oldT]
+			if(move_mode & MOVE_CONTENTS)
+				for(var/k in oldT)
 					var/atom/movable/moving_atom = k
 					if(moving_atom.loc != oldT) //fix for multi-tile objects
 						continue
-					moving_atom.onShuttleMove(newT, oldT, movement_force, movement_direction, old_dock, src)	//atoms
-					moved_atoms[moving_atom] = oldT
+					try
+						moving_atom.onShuttleMove(newT, oldT, movement_force, movement_direction, old_dock, src)	//atoms
+						moved_atoms[moving_atom] = oldT
+					catch(var/exception/e)
+						exceptions_list += e
+
+			if(move_mode & MOVE_TURF)
+				try
+					oldT.onShuttleMove(newT, movement_force, movement_direction)									//turfs
 				catch(var/exception/e)
 					exceptions_list += e
 
-		if(move_mode & MOVE_TURF)
-			try
-				oldT.onShuttleMove(newT, movement_force, movement_direction)									//turfs
-			catch(var/exception/e)
-				exceptions_list += e
-
-		if(move_mode & MOVE_AREA)
-			try
-				var/area/shuttle_area = oldT.loc
-				shuttle_area.onShuttleMove(oldT, newT, underlying_old_area)										//areas
-			catch(var/exception/e)
-				exceptions_list += e
+			if(move_mode & MOVE_AREA)
+				try
+					var/area/shuttle_area = oldT.loc
+					shuttle_area.onShuttleMove(oldT, newT, underlying_old_area)										//areas
+				catch(var/exception/e)
+					exceptions_list += e
+		catch(var/exception/e)
+			exceptions_list += e
 
 	for(var/exception/e in exceptions_list)
 		CHECK_TICK
