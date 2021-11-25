@@ -70,15 +70,15 @@
 	dangerous = TRUE
 
 /datum/supply_pack/security/hardsuit
-	name = "Surplus Security Hardsuit Crate"
-	desc = "Contains a surplus security hardsuit for light combat duty. Requires Security access to open."
+	name = "Security Hardsuit Crate"
+	desc = "Contains a security hardsuit for light combat duty. Requires Security access to open."
 	cost = 4500
 	contains = list(/obj/item/clothing/suit/space/hardsuit/security/independent)
 	crate_name = "security hardsuit crate"
 
 /datum/supply_pack/security/hardsuit3
 	name = "Bulk Security Hardsuit Crate"
-	desc = "Contains three surplus security hardsuits for light combat duty. Requires Security access to open."
+	desc = "Contains three security hardsuits for light combat duty. Requires Security access to open."
 	cost = 11000
 	contains = list(/obj/item/clothing/suit/space/hardsuit/security/independent,
 					/obj/item/clothing/suit/space/hardsuit/security/independent,
