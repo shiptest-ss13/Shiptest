@@ -260,6 +260,7 @@ SUBSYSTEM_DEF(mapping)
 					job_slot = new /datum/job(job, job_outfit)
 					job_slot.wiki_page = value["wiki_page"]
 					job_slot.exp_requirements = value["exp_requirements"]
+					job_slot.officer = value["officer"]
 					slots = value["slots"]
 
 				if(!job_slot || !slots)
