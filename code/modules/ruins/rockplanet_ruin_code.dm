@@ -22,7 +22,7 @@
 		playsound(L, 'sound/effects/splat.ogg', 50, TRUE)
 /*
 	for(var/obj/item/stack/ore/O in get_turf(src))
-		new O.refined_type/R(src())
+		var/obj/item/stack/ore/R = new O.refined_type(src)
 		R.amount = O.amount
 		O.use(O.amount)
 */
@@ -89,8 +89,6 @@
 			qdel(target)
 			qdel(src)
 			return
-	else
-		return
 
 /obj/item/strange_crystal
 	name = "strange crystal"
