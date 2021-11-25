@@ -947,7 +947,7 @@
 
 /obj/item/clothing/suit/space/hardsuit/security/independent
 	icon_state = "hardsuit-independent-sec"
-	name = "security hardsuit"
+	name = "surplus security hardsuit"
 	desc = "An obsolete, surplus suit that protects against hazardous, low pressure environments. Though bulky, it has significant armor protection for its age. <br> Dating from well before the war, old surplus suits such as this can be found in the service of various local police and private security organizations across known space."
 	icon_state = "hardsuit-independent-sec"
 	item_state = "independent_sec_hardsuit"
