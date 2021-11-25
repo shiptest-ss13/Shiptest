@@ -135,3 +135,7 @@
 	display_name = "psychedelic suit"
 	path = /obj/item/clothing/under/misc/psyche
 	cost = 10000
+
+/datum/gear/uniform/maid
+	display_name = "maid outfit"
+	path = /obj/item/clothing/under/costume/maid
