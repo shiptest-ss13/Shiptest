@@ -44,18 +44,18 @@
 	if(isalienroyal(target))
 		cost = (BASE_HUMAN_REWARD*32)
 	else if(isalienadult(target))
-		cost = (BASE_HUMAN_REWARD*17)
+		cost = (BASE_HUMAN_REWARD*25)
 	else if(ismonkey(target))
 		cost = (BASE_HUMAN_REWARD*0.5)
 	else if(ishuman(target))
 		var/mob/living/carbon/human/H = target
 		if(H?.dna?.species)
 			if(isabductor(H) || ismilsynth(H))
-				cost = (BASE_HUMAN_REWARD*14)
+				cost = (BASE_HUMAN_REWARD*22)
 			else if(isgolem(H) || iszombie(H) || isshadow(H) || isandroid(H) || issynth(H))
-				cost = (BASE_HUMAN_REWARD*11)
+				cost = (BASE_HUMAN_REWARD*17)
 			else if(isjellyperson(H) || ispodperson(H) || issquidperson(H) || isalien(H) || ismushroom(H))
-				cost = (BASE_HUMAN_REWARD*6)
+				cost = (BASE_HUMAN_REWARD*10)
 	else
 		cost = (BASE_HUMAN_REWARD * 0.6)
 
@@ -110,13 +110,13 @@
 
 /datum/surgery/advanced/experimental_dissection/exp
 	name = "Experimental Dissection"
-	value_multiplier = 5
+	value_multiplier = 2
 	replaced_by = /datum/surgery/advanced/experimental_dissection/alien
 	requires_tech = TRUE
 
 /datum/surgery/advanced/experimental_dissection/alien
 	name = "Extraterrestrial Dissection"
-	value_multiplier = 10
+	value_multiplier = 3
 	requires_tech = TRUE
 	replaced_by = null
 
