@@ -63,6 +63,8 @@
 			remove_ripples()
 			return DOCKING_IMMOBILIZED
 
+	kill_atmos_infos(old_turfs, new_turfs)
+
 	// Moving to the new location will trample the ripples there at the exact
 	// same time any mobs there are trampled, to avoid any discrepancy where
 	// the ripples go away before it is safe.
@@ -83,6 +85,13 @@
 	remove_ripples()
 	return DOCKING_SUCCESS
 
+/obj/docking_port/mobile/proc/kill_atmos_infos(list/old_turfs, list/new_turfs)
+	for(var/i in 1 to old_turfs.len)
+		var/turf/oldT = old_turfs[i]
+		var/turf/newT = new_turfs[i]
+		oldT.set_sleeping(TRUE)
+		newT.set_sleeping(TRUE)
+
 /obj/docking_port/mobile/proc/throw_exception(var/exception/e)
 	throw e
 
@@ -101,10 +110,7 @@
 			var/move_mode
 			var/area/old_area = oldT.loc
 
-			try
-				move_mode = old_area.beforeShuttleMove(shuttle_areas)											//areas
-			catch(var/exception/e1)
-				exceptions_list += e1
+			move_mode = old_area.beforeShuttleMove(shuttle_areas)											//areas
 
 			var/list/old_contents = oldT.contents
 			for(var/k in 1 to old_contents.len)
@@ -117,15 +123,9 @@
 				catch(var/exception/e2)
 					exceptions_list += e2
 
-			try
-				move_mode = oldT.fromShuttleMove(newT, move_mode)												//turfs
-			catch(var/exception/e3)
-				exceptions_list += e3
+			move_mode = oldT.fromShuttleMove(newT, move_mode)												//turfs
 
-			try
-				move_mode = newT.toShuttleMove(oldT, move_mode, src)											//turfs
-			catch(var/exception/e4)
-				exceptions_list += e4
+			move_mode = newT.toShuttleMove(oldT, move_mode, src)											//turfs
 
 			if(move_mode & MOVE_AREA)
 				areas_to_move[old_area] = TRUE
@@ -148,27 +148,21 @@
 			var/move_mode = old_turfs[oldT]
 			if(move_mode & MOVE_CONTENTS)
 				for(var/k in oldT)
-					var/atom/movable/moving_atom = k
-					if(moving_atom.loc != oldT) //fix for multi-tile objects
-						continue
 					try
+						var/atom/movable/moving_atom = k
+						if(moving_atom.loc != oldT) //fix for multi-tile objects
+							continue
 						moving_atom.onShuttleMove(newT, oldT, movement_force, movement_direction, old_dock, src)	//atoms
 						moved_atoms[moving_atom] = oldT
 					catch(var/exception/e1)
 						exceptions_list += e1
 
 			if(move_mode & MOVE_TURF)
-				try
-					oldT.onShuttleMove(newT, movement_force, movement_direction)									//turfs
-				catch(var/exception/e2)
-					exceptions_list += e2
+				oldT.onShuttleMove(newT, movement_force, movement_direction)									//turfs
 
 			if(move_mode & MOVE_AREA)
-				try
-					var/area/shuttle_area = oldT.loc
-					shuttle_area.onShuttleMove(oldT, newT, underlying_old_area)										//areas
-				catch(var/exception/e3)
-					exceptions_list += e3
+				var/area/shuttle_area = oldT.loc
+				shuttle_area.onShuttleMove(oldT, newT, underlying_old_area)										//areas
 		catch(var/exception/e4)
 			exceptions_list += e4
 
@@ -178,10 +172,7 @@
 
 /obj/docking_port/mobile/proc/cleanup_runway(obj/docking_port/stationary/new_dock, list/old_turfs, list/new_turfs, list/areas_to_move, list/moved_atoms, rotation, movement_direction, area/underlying_old_area)
 	var/list/exceptions_list = list()
-	try
-		underlying_old_area.afterShuttleMove()
-	catch(var/exception/e1)
-		exceptions_list += e1
+	underlying_old_area.afterShuttleMove()
 
 	// Parallax handling
 	// This needs to be done before the atom after move
@@ -220,10 +211,7 @@
 
 	// lateShuttleMove (There had better be a really good reason for additional stages beyond this)
 
-	try
 		underlying_old_area.lateShuttleMove()
-	catch(var/exception/e5)
-		exceptions_list += e5
 
 	for(var/i in 1 to areas_to_move.len)
 		try

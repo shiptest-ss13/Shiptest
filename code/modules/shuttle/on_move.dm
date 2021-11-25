@@ -56,8 +56,6 @@ All ShuttleMove procs go here
 		CRASH("A turf queued to move via shuttle somehow had no skipover in baseturfs. [src]([type]):[loc]")
 	var/depth = baseturfs.len - shuttle_boundary + 1
 	newT.CopyOnTop(src, 1, depth, TRUE)
-	newT.air_update_turf(TRUE)
-	air_update_turf(TRUE)
 	return TRUE
 
 // Called on the new turf after everything has been moved
@@ -74,9 +72,7 @@ All ShuttleMove procs go here
 	return TRUE
 
 /turf/proc/lateShuttleMove(turf/oldT)
-	blocks_air = initial(blocks_air)
 	air_update_turf(TRUE)
-	oldT.blocks_air = initial(oldT.blocks_air)
 	oldT.air_update_turf(TRUE)
 
 
