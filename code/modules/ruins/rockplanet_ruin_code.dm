@@ -20,12 +20,12 @@
 		L.Paralyze(60)
 		playsound(L, 'sound/effects/blobattack.ogg', 40, TRUE)
 		playsound(L, 'sound/effects/splat.ogg', 50, TRUE)
-/*
+
 	for(var/obj/item/stack/ore/O in get_turf(src))
 		var/obj/item/stack/ore/R = new O.refined_type(src)
 		R.amount = O.amount
 		O.use(O.amount)
-*/
+
 /obj/machinery/door/poddoor/crusher/close()
 	. = ..()
 	playsound(src, 'sound/effects/bang.ogg', 30, TRUE)
