@@ -170,7 +170,7 @@
 				catch(var/exception/e3)
 					exceptions_list += e3
 		catch(var/exception/e4)
-			exceptions_list += e
+			exceptions_list += e4
 
 	for(var/exception/e5 in exceptions_list)
 		CHECK_TICK
