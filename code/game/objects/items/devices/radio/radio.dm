@@ -1,6 +1,6 @@
 /obj/item/radio
 	icon = 'icons/obj/radio.dmi'
-	name = "station bounced radio"
+	name = "shortwave radio"
 	icon_state = "walkietalkie"
 	item_state = "walkietalkie"
 	desc = "A basic handheld radio that communicates with local telecommunication networks."
@@ -99,6 +99,14 @@
 /obj/item/radio/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/empprotection, EMP_PROTECT_WIRES)
+
+/obj/item/radio/AltClick(mob/user)
+	broadcasting = !broadcasting
+	to_chat(user, "<span class='notice'>You toggle broadcasting [broadcasting ? "on" : "off"].</span>")
+
+/obj/item/radio/CtrlShiftClick(mob/user)
+	listening = !listening
+	to_chat(user, "<span class='notice'>You toggle speaker [listening ? "on" : "off"].</span>")
 
 /obj/item/radio/interact(mob/user)
 	if(unscrewed && !isAI(user))
@@ -322,6 +330,8 @@
 		. += "<span class='notice'>It can be attached and modified.</span>"
 	else
 		. += "<span class='notice'>It cannot be modified or attached.</span>"
+	if (in_range(src, user)
+		. += "<span class='info'>Ctrl-Shift-click on the [name] to toggle speaker.<br/>Alt-click on the [name] to toggle broadcasting.</span>"
 
 /obj/item/radio/attackby(obj/item/W, mob/user, params)
 	add_fingerprint(user)
