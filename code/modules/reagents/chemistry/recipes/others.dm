@@ -384,7 +384,7 @@
 
 /datum/chemical_reaction/genesis
 	results = list(/datum/reagent/genesis = 10)
-	required_reagents = list(/datum/reagent/diethylamine = 10, /datum/reagent/medicine/strange_reagent = 1, /datum/reagent/telsium = 1)
+	required_reagents = list(/datum/reagent/diethylamine = 10, /datum/reagent/medicine/strange_reagent = 1, /datum/reagent/teslium = 1)
 	mix_message = "The diethylamine sparks and is infused with the essence of vibrant life, turning a brillian green!"
 
 /datum/chemical_reaction/oil

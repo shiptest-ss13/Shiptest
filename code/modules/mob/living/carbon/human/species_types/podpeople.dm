@@ -63,7 +63,7 @@
 /datum/species/pod/handle_chemicals(datum/reagent/chem, mob/living/carbon/human/H)
 	if(chem.type == /datum/reagent/genesis)
 		H.adjustBruteLoss(-3)
-		H.adjustBurnLoss(-3)
+		H.adjustFireLoss(-3)
 		H.adjustToxLoss(-3)
 		H.reagents.remove_reagent(chem.type, REAGENTS_METABOLISM)
 		return 1
