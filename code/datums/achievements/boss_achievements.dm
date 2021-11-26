@@ -55,6 +55,12 @@
 	database_id = BOSS_MEDAL_LEGION
 	icon = "legion"
 
+/datum/award/achievement/boss/prophet_kill
+	name = "False Prophet Killer"
+	desc = "Never look back at what you've done, or you may get hypnotized."
+	database_id = BOSS_MEDAL_PROPHET
+	icon = "drake"
+
 /datum/award/achievement/boss/swarmer_beacon_kill
 	name = "Swarm Beacon Killer"
 	desc = "GET THEM OFF OF ME!"
@@ -111,6 +117,12 @@
 	name = "Legion Crusher"
 	desc = "We were many... now we are none."
 	database_id = BOSS_MEDAL_LEGION_CRUSHER
+
+/datum/award/achievement/boss/prophet_crusher
+	name = "False Prophet Crusher"
+	desc = "Never look back at what you've done, or you may get hypnotized."
+	database_id = BOSS_MEDAL_PROPHET_CRUSHER
+	icon = "drake"
 
 /datum/award/achievement/boss/swarmer_beacon_crusher
 	name = "Swarm Beacon Crusher"

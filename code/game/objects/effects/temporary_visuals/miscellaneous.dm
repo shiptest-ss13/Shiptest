@@ -493,6 +493,10 @@
 	var/status = 0
 	var/delay = 0
 
+/obj/effect/temp_visual/blip
+	icon_state = "blip"
+	duration = 6
+
 /obj/effect/constructing_effect/Initialize(mapload, rcd_delay, rcd_status)
 	. = ..()
 	status = rcd_status

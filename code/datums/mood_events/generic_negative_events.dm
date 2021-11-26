@@ -297,3 +297,8 @@
 	description = "<span class='warning'>I was forced to eat cement...</span>\n"
 	mood_change = -6
 	timeout = 4 MINUTES
+
+/datum/mood_event/prophet_hypno
+	description = "<span class='warning'>IT'S IN MY HEAD!</span>\n"
+	mood_change = -8
+	timeout = 2 MINUTES

@@ -180,3 +180,7 @@
 	desc = "Wear bear on head show little man you big man, kill bear for cloak."
 	min_cold_protection_temperature = FIRE_SUIT_MIN_TEMP_PROTECT
 	cold_protection = HEAD
+
+/obj/item/clothing/neck/cloak/prophet
+	name = "false prophet's cloak"
+	desc = "Made out of the hide of a false prophet's tail, this cloak is worn by the few who have managed to slay one of the horrible beasts."
