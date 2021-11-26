@@ -271,5 +271,18 @@
 	trash = /obj/item/seeds/random
 	bitesize_mod = 5
 	seed = null
+	bonus_reagents = list(/datum/reagent/genesis = 15)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 4, /datum/reagent/genesis= 15)
+	filling_color = "#1b961b"
+	foodtype = VEGETABLES
+
+/obj/item/reagent_containers/food/snacks/witter
+	name = "Wittel's Sprig"
+	desc = "A harvested stalk of Wittel's Reed. Contains precious wittelite."
+	icon_state = "wittel"
+	bitesize_mod = 5
+	seed = null
+	bonus_reagents = list(/datum/reagent/wittel = 15)
+	list_reagents = list(/datum/reagent/silicon = 15, /datum/reagent/wittel = 15)
 	filling_color = "#1b961b"
 	foodtype = VEGETABLES

@@ -178,6 +178,14 @@
 	build_path = /obj/effect/spawner/lootdrop/seeded
 	category = list("initial","LIFESEED_2.0")
 
+/datum/design/genesis
+	name = "GENESIS"
+	id = "genesis"
+	build_type = BIOGENERATOR
+	materials = list(/datum/material/biomass= 2500)
+	make_reagents = list(/datum/reagent/genesis = 25)
+	category = list("initial","LIFESEED_2.0")
+
 /datum/design/strangeseed
 	name = "{DATA_CORRUPT}"
 	id = "strangeseed"
@@ -186,10 +194,3 @@
 	build_path = /obj/item/seeds/random
 	category = list("initial","LIFESEED_2.0")
 
-/datum/design/genesis
-	name = "GENESIS"
-	id = "genesis"
-	build_type = BIOGENERATOR
-	materials = list(/datum/material/biomass= 5000)
-	make_reagents = list(/datum/reagent/genesis = 25)
-	category = list("initial","LIFESEED_2.0")

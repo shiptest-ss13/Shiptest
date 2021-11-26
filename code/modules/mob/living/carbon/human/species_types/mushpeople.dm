@@ -11,7 +11,7 @@
 	say_mod = "puffs" //what does a mushroom sound like
 	liked_food = GROSS//mushrooms especially enjoy nasty, rotting things
 	species_traits = list(MUTCOLORS, NOEYESPRITES, NO_UNDERWEAR)
-	inherent_traits = list(TRAIT_GIANT, TRAIT_NOBREATH, TRAIT_NOFLASH, TRAIT_RESISTHIGHPRESSURE, TRAIT_RESISTLOWPRESSURE, TRAIT_VORACIOUS)//some mushrooms can grow in space, these mushrooms are binge eaters
+	inherent_traits = list(TRAIT_NOBREATH, TRAIT_NOFLASH, TRAIT_RESISTLOWPRESSURE, TRAIT_VORACIOUS)//some mushrooms can grow in space, these mushrooms are binge eaters
 	inherent_factions = list("mushroom", "plants", "vines")
 	speedmod = 1.3 //faster than golems, not great though
 

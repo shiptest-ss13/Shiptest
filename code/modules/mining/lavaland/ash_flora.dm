@@ -428,7 +428,7 @@
 	desc = "A silicate-based reedlike plant that thrives off the rare chemical wittelite. It cannot be seeded or grown aside, but provides a reliable source of the otherwise rare chemical."
 	name = "Wittel's Reed"
 	harvested_desc = "The remnants of a bundle of Wittel's Reed, cut nearly down to the ground by some greedy chemist. It'll come back eventually."
-	harvest = /obj/item/reagent_containers/food/snacks/grown/banana
+	harvest = /obj/item/reagent_containers/food/snacks/wittel
 	harvest_amount_high = 9
 	harvest_time = 50
 	harvest_message_low = "You slice off a bundle of reeds, finding that only one is pure enough to be properly harvested."
