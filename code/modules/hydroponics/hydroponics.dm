@@ -534,6 +534,14 @@
 		mutate_yield = 0
 		adjustNutri(round(S.get_reagent_amount(/datum/reagent/plantnutriment/robustharvestnutriment) *1 ))
 
+//incredibly powerful nutriment, capable of spontaneously generating life when splashed on the ground. Supercharges plants when used to feed them.
+	if(S.has_reagent(/datum/reagent/genesis, 1))
+		yieldmod = 2.5
+		mutmod = 0
+		mutate_yield = 0
+		adjustNutri(round(S.get_reagent_amount(/datum/reagent/genesis) *5 ))
+		adjustHealth(round(S.get_reagent_amount(/datum/reagent/genesis) * 5))
+
 	// Ambrosia Gaia produces earthsblood.
 	if(S.has_reagent(/datum/reagent/medicine/earthsblood))
 		self_sufficiency_progress += S.get_reagent_amount(/datum/reagent/medicine/earthsblood)

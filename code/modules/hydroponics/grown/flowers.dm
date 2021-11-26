@@ -66,14 +66,9 @@
 	icon_grow = "spacemanstrumpet-grow"
 	icon_dead = "spacemanstrumpet-dead"
 	mutatelist = list()
-	genes = list(/datum/plant_gene/reagent/polypyr)
-	reagents_add = list(/datum/reagent/consumable/nutriment = 0.05)
+	genes = list()
+	reagents_add = list(/datum/reagent/consumable/nutriment = 0.05, /datum/reagent/medicine/polypyr = 0.15)
 	rarity = 30
-
-/obj/item/seeds/poppy/lily/trumpet/Initialize(mapload,nogenes)
-	. = ..()
-	if(!nogenes)
-		unset_mutability(/datum/plant_gene/reagent/polypyr, PLANT_GENE_EXTRACTABLE)
 
 /obj/item/reagent_containers/food/snacks/grown/trumpet
 	seed = /obj/item/seeds/poppy/lily/trumpet
@@ -84,7 +79,7 @@
 	bitesize_mod = 3
 	foodtype = VEGETABLES
 	wine_power = 40
-	wine_flavor = "Purple"  //WS edit: new wine flavors. capitalization intentional
+	wine_flavor = "Purple and Astroturf"  //WS edit: new wine flavors. capitalization intentional
 
 // Geranium
 /obj/item/seeds/poppy/geranium

@@ -9,10 +9,11 @@
 		/mob/living/simple_animal/hostile/asteroid/hivelord/legion/random = 30, /obj/structure/spawner/lavaland/legion = 3, \
 		/mob/living/simple_animal/hostile/asteroid/whitesands/survivor/random = 25, /obj/structure/spawner/lavaland/legion = 3, \
 		SPAWN_MEGAFAUNA = 4, /mob/living/simple_animal/hostile/asteroid/goldgrub = 10)
-	flora_spawn_list = list(/obj/structure/flora/ash/leaf_shroom = 4 , /obj/structure/flora/ash/cap_shroom = 4 , /obj/structure/flora/ash/stem_shroom = 4 , /obj/structure/flora/ash/cacti = 2, /obj/structure/flora/ash/tall_shroom = 4, /obj/structure/flora/ash/whitesands/fireblossom = 2, /obj/structure/flora/ash/whitesands/puce = 1)
+	flora_spawn_list = list(/obj/structure/flora/ash/leaf_shroom = 3 , /obj/structure/flora/ash/cap_shroom = 3 , /obj/structure/flora/ash/stem_shroom = 3 , /obj/structure/flora/ash/cacti = 2, /obj/structure/flora/ash/tall_shroom = 3, /obj/structure/flora/ash/whitesands/fireblossom = 2, /obj/structure/flora/ash/whitesands/puce = 1, /obj/structure/flora/ash/wittel = 1, /obj/structure/flora/ash/aloe = 3)
 
 	initial_closed_chance = 45
 	smoothing_iterations = 50
 	birth_limit = 4
 	death_limit = 3
 	mob_spawn_chance = 8
+	flora_spawn_chance = 5

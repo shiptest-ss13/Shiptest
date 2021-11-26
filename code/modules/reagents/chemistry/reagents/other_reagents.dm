@@ -1215,7 +1215,7 @@
 	name = "Nanomachines"
 	description = "Microscopic construction robots."
 	color = "#535E66" // rgb: 83, 94, 102
-	can_synth = FALSE
+	can_synth = TRUE
 	taste_description = "sludge"
 
 /datum/reagent/nanomachines/expose_mob(mob/living/L, method=TOUCH, reac_volume, show_message = 1, touch_protection = 0)
@@ -1249,7 +1249,6 @@
 	description = "Virological agent that infects the subject with Gastrolosis."
 	color = "#003300" // rgb(0, 51, 0)
 	taste_description = "goo"
-	can_synth = FALSE //special orange man request
 
 /datum/reagent/snail/expose_mob(mob/living/L, method=TOUCH, reac_volume, show_message = 1, touch_protection = 0)
 	if(method==PATCH || method==INGEST || method==INJECT || (method == VAPOR && prob(min(reac_volume,100)*(1 - touch_protection))))
@@ -1676,6 +1675,27 @@
 	color = "#5A64C8"
 	taste_description = "blueyalty" //also intentional
 	carpet_type = /turf/open/floor/carpet/royalblue
+
+//the ultimate fertilizer
+/datum/reagent/genesis
+	name = "Genesis Serum"
+	description = "A mysterious substance capable of spontaneously gestating plant life when given a surface to adhere to."
+	color = "#328242"
+	taste_description = "primordial essence"
+	reagent_state = LIQUID
+	var/ground_type = /turf/open/floor/grass
+
+/datum/reagent/genesis/expose_turf(turf/T, reac_volume)
+	if(istype(T, /turf/open/floor/grass))//prevents spamming effect via. smoke or such
+		return
+	if(isplatingturf(T) || istype(T, /turf/open/floor/plasteel))
+		var/turf/open/floor/F = T
+		playsound(T, 'sound/effects/bubbles.ogg', 50)
+		F.PlaceOnTop(ground_type, flags = CHANGETURF_INHERIT_AIR)
+		new /obj/effect/spawner/lootdrop/flower(T)
+		if(prob(75))
+			new /obj/effect/spawner/lootdrop/flora(T)
+	..()
 
 /datum/reagent/bromine
 	name = "Bromine"
@@ -2129,7 +2149,6 @@
 	description = "A highly specialized extract coming from the Australicus sector, used to create broodmother spiders."
 	color = "#ED2939"
 	taste_description = "upside down"
-	can_synth = FALSE
 
 /// Improvised reagent that induces vomiting. Created by dipping a dead mouse in welder fluid.
 /datum/reagent/yuck
@@ -2192,8 +2211,8 @@
 	can_synth = TRUE
 
 /datum/reagent/wittel
-	name = "Wittel"
-	description = "An extremely rare metallic-white substance only found on demon-class planets."
+	name = "Wittelite"
+	description = "An rare metallic-white silicate only found in areas with high levels of geothermic activity. Mildly toxic."
 	color = "#FFFFFF" // rgb: 255, 255, 255
 	taste_mult = 0 // oderless and tasteless
 

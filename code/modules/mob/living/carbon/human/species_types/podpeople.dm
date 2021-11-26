@@ -59,3 +59,11 @@
 				H.show_message("<span class='userdanger'>The radiation beam singes you!</span>")
 		if(/obj/projectile/energy/florayield)
 			H.set_nutrition(min(H.nutrition+30, NUTRITION_LEVEL_FULL))
+
+/datum/species/pod/handle_chemicals(datum/reagent/chem, mob/living/carbon/human/H)
+	if(chem.type == /datum/reagent/genesis)
+		H.adjustBruteLoss(-3)
+		H.adjustBurnLoss(-3)
+		H.adjustToxLoss(-3)
+		H.reagents.remove_reagent(chem.type, REAGENTS_METABOLISM)
+		return 1

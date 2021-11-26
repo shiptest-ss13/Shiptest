@@ -273,7 +273,7 @@
 
 /datum/reagent/medicine/skeletons_boon
 	name = "Skeleton’s Boon"
-	description = "A robust solution of minerals that greatly strengthens the bones."
+	description = "A robust solution of minerals that greatly strengthens the bones against physical strikes."
 	color = "#dbdfa2"
 	metabolization_rate = REAGENTS_METABOLISM * 0.125
 	overdose_threshold = 50

@@ -340,3 +340,100 @@
 				A.initialize_custom_food(src, S, user)
 	else
 		. = ..()
+
+/obj/structure/flora/ash/gaia
+	icon_state = "genesis"
+	name = "Gaia Tree"
+	desc = "The primordial origin shrub. It's covered in small, glowing nodules. It looks like there's one or two ready for harvest..."
+	harvested_name = "Gaia Tree"
+	harvested_desc = "The primordial origin shrub. It's covered in small, glowing nodules. It looks like any big ones have already been harvested."
+	harvest = /obj/item/reagent_containers/food/snacks/grown/shell/genesis
+	harvest_amount_high = 2
+	harvest_time = 15
+	harvest_message_low = "You pick a single seed from the tree."
+	harvest_message_med = "You pick a single seed from the tree."
+	harvest_message_high = "You manage to find two seeds worth picking!"
+	regrowth_time_low = 30 MINUTES//just go to another planet
+	regrowth_time_high = 45 MINUTES
+	needs_sharp_harvest = FALSE
+	num_sprites = 1
+
+/obj/structure/flora/ash/corpse
+	icon_state = "corpse_flower"
+	name = "Corpse Flower"
+	desc = "A large, foul smelling flower."
+	name = "Corpse Flower Stub"
+	harvested_desc = "A large, foul smelling flower- or at least, it was. Now it's little more then a tiny sprig, breaking out from the soil."
+	harvest = /obj/item/seeds/starthistle/corpse_flower
+	harvest_amount_high = 3
+	harvest_time = 40
+	harvest_message_low = "You cut away the main flower body, harvesting a single seed."
+	harvest_message_med = "You cut away the main flower body, harvesting two seeds in the process."
+	harvest_message_high = "You cut away the main flower body, harvesting a bounty of several seeds."
+	regrowth_time_low = 45 MINUTES//arguably overly harsh, but corpse flowers irl take years to grow
+	regrowth_time_high = 60 MINUTES
+	num_sprites = 1
+
+/obj/structure/flora/ash/jupiter
+	icon_state = "jupiter"
+	name = "Bed of Jupiter Cups"
+	desc = "A collection of Jupiter Cups, which use primitive electrochemical reactions to generate energy from the small flies that meet their end inside."
+	name = "Bed of Jupiter Cups"
+	harvested_desc = "A collection of fungal stubs, poking out of the soil. A lone, young cap sits banefully, having survived your harvest."
+	harvest = /obj/item/reagent_containers/food/snacks/grown/mushroom/jupitercup
+	harvest_amount_high = 6
+	harvest_time = 40
+	harvest_message_low = "You root through the jups, but many of them have rotted away. You can only find one intact, mature cup."
+	harvest_message_med = "You root through the jupiter cups, harvesting several mature cups and discarding the rest."
+	harvest_message_high = "You root through the jupiter cups, finding a large bushel of intact, mature buds."
+	regrowth_time_low = 15 MINUTES
+	regrowth_time_high = 20 MINUTES
+	num_sprites = 1
+
+/obj/structure/flora/ash/aloe
+	icon_state = "aloe"
+	name = "Aloe Vera"
+	desc = "A fleshy desert shrub, capable of going long periods of time without water."
+	name = "Aloe Vera"
+	harvested_desc = "The sorry remains of a throughly-harvested aloe plant. It'll probably grow back, eventually."
+	harvest = /obj/item/reagent_containers/food/snacks/grown/aloe
+	harvest_amount_high = 7
+	harvest_time = 40
+	harvest_message_low = "You cut away several leaves, but only manage to find one that hasn't rotted through."
+	harvest_message_med = "You cut away several leaves, finding a few intact ones and discarding the rest."
+	harvest_message_high = "You cut away the aloe's leaves, finding that most if not all are intact and perfect for harvest."
+	regrowth_time_low = 10 MINUTES
+	regrowth_time_high = 15 MINUTES
+	num_sprites = 1
+
+/obj/structure/flora/ash/banana
+	icon_state = "banana"
+	name = "Banana Tree"
+	desc = "A small tree that grows near the jungle floor. It produces large, nutritious fruits that are a favorite of primates everywhere."
+	name = "Banana Tree"//resisting the urge to put "bana-no tree"
+	harvested_desc = "A small tree which grows near the jungle floor. It appears that any bushels of banana have already been harvested."
+	harvest = /obj/item/reagent_containers/food/snacks/grown/banana
+	harvest_amount_high = 18
+	harvest_time = 50
+	harvest_message_low = "You cut away the bushel, but find only a few bananas worth taking."
+	harvest_message_med = "You cut away the bushel, finding several intact bananas and a number of rotted nanners."
+	harvest_message_high = "You cut away the bushel, finding a veritable bounty of nannerous delight."
+	regrowth_time_low = 20 MINUTES
+	regrowth_time_high = 30 MINUTES
+	num_sprites = 1
+
+/obj/structure/flora/ash/wittel
+	icon_state = "wittel"
+	name = "Wittel's Reed"
+	desc = "A silicate-based reedlike plant that thrives off the rare chemical wittelite. It cannot be seeded or grown aside, but provides a reliable source of the otherwise rare chemical."
+	name = "Wittel's Reed"
+	harvested_desc = "The remnants of a bundle of Wittel's Reed, cut nearly down to the ground by some greedy chemist. It'll come back eventually."
+	harvest = /obj/item/reagent_containers/food/snacks/grown/banana
+	harvest_amount_high = 9
+	harvest_time = 50
+	harvest_message_low = "You slice off a bundle of reeds, finding that only one is pure enough to be properly harvested."
+	harvest_message_med = "You slice off a bundle of reeds, finding several pure enough to harvest and discarding a few low concentration ones."
+	harvest_message_high = "You slice away a bundle of witterite, finding that many of the reeds within are able to be salvaged."
+	regrowth_time_low = 45 MINUTES//witterite has to absorb tiny amounts of local witterite concentration to grow
+	regrowth_time_high = 60 MINUTES
+	num_sprites = 1

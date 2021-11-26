@@ -193,7 +193,7 @@
 	growthstages = 3
 	genes = list(/datum/plant_gene/trait/plant_type/fungal_metabolism)
 	growing_icon = 'icons/obj/hydroponics/growing_mushrooms.dmi'
-	reagents_add = list(/datum/reagent/consumable/nutriment = 0.1)
+	reagents_add = list(/datum/reagent/consumable/nutriment = 0.1, /datum/reagent/consumable/nutriment/vitamin = 0.05, /datum/reagent/consumable/nutriment/vitamin = 0.04, /datum/reagent/water = 0.1)
 	mutatelist = list(/obj/item/seeds/chanter/jupitercup)
 
 /obj/item/reagent_containers/food/snacks/grown/mushroom/chanterelle
@@ -216,9 +216,9 @@
 	endurance = 8
 	yield = 4
 	growthstages = 2
-	genes = list(/datum/plant_gene/trait/plant_type/fungal_metabolism, /datum/plant_gene/reagent/liquidelectricity, /datum/plant_gene/trait/plant_type/carnivory)
+	genes = list(/datum/plant_gene/trait/plant_type/fungal_metabolism, /datum/plant_gene/trait/plant_type/carnivory)
 	growing_icon = 'icons/obj/hydroponics/growing_mushrooms.dmi'
-	reagents_add = list(/datum/reagent/consumable/nutriment = 0.1)
+	reagents_add = list(/datum/reagent/consumable/nutriment = 0.1, /datum/reagent/consumable/liquidelectricity = 0.1, /datum/reagent/teslium= 0.1, /datum/reagent/copper = 0.2)
 
 /obj/item/seeds/chanter/jupitercup/Initialize(mapload,nogenes)
 	. = ..()

@@ -1031,6 +1031,17 @@ WS End */
 		/obj/item/stack/cable_coil = 1,
 		/obj/item/stack/sheet/glass = 1)
 
+
+/obj/item/circuitboard/machine/biogenerator/vault
+	name = "Biocultivator (Machine Board)"
+	icon_state = "abductor_mod"
+	build_path = /obj/machinery/biogenerator/vault
+	req_components = list(
+		/obj/item/stock_parts/matter_bin = 1,
+		/obj/item/stock_parts/manipulator = 1,
+		/obj/item/stack/cable_coil = 1,
+		/obj/item/stack/sheet/glass = 1)
+
 /obj/item/circuitboard/machine/chem_dispenser/drinks
 	name = "Soda Dispenser (Machine Board)"
 	icon_state = "service"

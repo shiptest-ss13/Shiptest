@@ -136,7 +136,7 @@
 	if(prob(15))
 		new /mob/living/simple_animal/hostile/asteroid/hivelord/legion/dwarf(loc)
 	if(prob(5))
-		new /mob/living/simple_animal/hostile/big_legion
+		new /mob/living/simple_animal/hostile/big_legion(loc)//despair
 		return INITIALIZE_HINT_QDEL
 
 /mob/living/simple_animal/hostile/asteroid/hivelord/legion/dwarf

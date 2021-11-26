@@ -8,19 +8,18 @@
 "ac" = (
 /turf/closed/wall/r_wall,
 /area/ruin/powered/seedvault)
-"ad" = (
-/obj/machinery/vending/hydronutrients,
-/obj/effect/turf_decal/trimline/green/filled/line,
-/turf/open/floor/plasteel/dark,
-/area/ruin/powered/seedvault)
 "ae" = (
 /obj/machinery/smartfridge,
 /obj/effect/turf_decal/trimline/green/filled/line,
 /turf/open/floor/plasteel/dark,
 /area/ruin/powered/seedvault)
 "af" = (
-/obj/machinery/vending/hydroseeds,
 /obj/effect/turf_decal/trimline/green/filled/line,
+/obj/structure/closet/crate/secure/hydroponics,
+/obj/effect/spawner/lootdrop/seeded,
+/obj/effect/spawner/lootdrop/seeded,
+/obj/item/seeds/wheat,
+/obj/effect/spawner/lootdrop/seeded,
 /turf/open/floor/plasteel/dark,
 /area/ruin/powered/seedvault)
 "ag" = (
@@ -56,7 +55,8 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/turf/open/floor/plasteel/freezer,
+/obj/structure/flora/ausbushes/ppflowers,
+/turf/open/floor/plating/grass,
 /area/ruin/powered/seedvault)
 "al" = (
 /turf/open/floor/plasteel/dark,
@@ -71,11 +71,12 @@
 /obj/machinery/light{
 	dir = 8
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/dark,
 /area/ruin/powered/seedvault)
 "ao" = (
 /obj/structure/loom,
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plating/grass,
 /area/ruin/powered/seedvault)
 "ap" = (
 /obj/machinery/light{
@@ -143,6 +144,7 @@
 /obj/structure/table/glass,
 /obj/effect/turf_decal/trimline/green/filled/end,
 /obj/machinery/airalarm/directional/north,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/dark,
 /area/ruin/powered/seedvault)
 "ax" = (
@@ -151,7 +153,7 @@
 	dir = 9
 	},
 /obj/effect/turf_decal/trimline/green/filled/corner,
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plating/grass,
 /area/ruin/powered/seedvault)
 "ay" = (
 /obj/structure/reagent_dispensers/watertank/high,
@@ -176,13 +178,9 @@
 /turf/open/floor/vault,
 /area/ruin/powered/seedvault)
 "aB" = (
-/obj/effect/spawner/lootdrop/seed_vault,
-/obj/structure/closet/crate/hydroponics,
-/obj/effect/spawner/lootdrop/seed_vault,
-/obj/effect/spawner/lootdrop/seed_vault,
-/obj/item/vending_refill/hydronutrients,
-/obj/item/vending_refill/hydroseeds,
-/turf/open/floor/vault,
+/obj/effect/mob_spawn/human/seed_vault/mush,
+/obj/structure/flora/ash/tall_shroom,
+/turf/open/floor/plating/dirt/jungle,
 /area/ruin/powered/seedvault)
 "aC" = (
 /obj/structure/sink{
@@ -199,6 +197,7 @@
 	pixel_x = 11
 	},
 /obj/machinery/light,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/dark,
 /area/ruin/powered/seedvault)
 "aE" = (
@@ -238,7 +237,8 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/turf/open/floor/vault,
+/obj/structure/flora/ash/leaf_shroom,
+/turf/open/floor/plating/dirt/jungle,
 /area/ruin/powered/seedvault)
 "aJ" = (
 /obj/structure/reagent_dispensers/watertank/high,
@@ -272,7 +272,7 @@
 /obj/machinery/smartfridge/disks{
 	pixel_y = 2
 	},
-/turf/open/floor/vault,
+/turf/open/floor/plating/dirt/jungle,
 /area/ruin/powered/seedvault)
 "aN" = (
 /turf/open/floor/mineral/titanium/blue,
@@ -310,7 +310,7 @@
 /obj/effect/turf_decal/trimline/green/filled/line{
 	dir = 1
 	},
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plating/grass,
 /area/ruin/powered/seedvault)
 "aT" = (
 /obj/item/reagent_containers/glass/bucket,
@@ -325,7 +325,7 @@
 /area/ruin/powered/seedvault)
 "aU" = (
 /obj/machinery/light,
-/turf/open/floor/plasteel/freezer,
+/turf/open/floor/plating/grass,
 /area/ruin/powered/seedvault)
 "aV" = (
 /obj/effect/turf_decal/trimline/green/line,
@@ -353,14 +353,16 @@
 /obj/item/clothing/head/beekeeper_head,
 /obj/item/clothing/suit/beekeeper_suit,
 /obj/effect/decal/cleanable/cobweb,
-/turf/open/floor/vault,
+/obj/structure/flora/ash/tall_shroom,
+/turf/open/floor/plating/dirt/jungle,
 /area/ruin/powered/seedvault)
 "aY" = (
 /obj/effect/decal/cleanable/food/plant_smudge,
 /obj/machinery/atmospherics/components/unary/vent_pump/on{
 	dir = 1
 	},
-/turf/open/floor/vault,
+/obj/structure/flora/ash/leaf_shroom,
+/turf/open/floor/plating/dirt/jungle,
 /area/ruin/powered/seedvault)
 "aZ" = (
 /obj/structure/sink{
@@ -418,7 +420,6 @@
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/powered/seedvault)
 "bf" = (
-/obj/machinery/biogenerator,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/trimline/green/corner{
 	dir = 8
@@ -426,6 +427,7 @@
 /obj/effect/turf_decal/trimline/green/line{
 	dir = 5
 	},
+/obj/machinery/biogenerator/vault,
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/powered/seedvault)
 "bg" = (
@@ -513,13 +515,13 @@
 /turf/open/floor/plating/grass/whitesands,
 /area/ruin/powered/seedvault)
 "bo" = (
-/obj/machinery/chem_master/condimaster,
 /obj/effect/turf_decal/trimline/green/corner{
 	dir = 4
 	},
 /obj/effect/turf_decal/trimline/green/line{
 	dir = 10
 	},
+/obj/machinery/chem_master,
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/powered/seedvault)
 "bp" = (
@@ -634,6 +636,31 @@
 	},
 /turf/open/floor/plasteel/freezer,
 /area/ruin/powered/seedvault)
+"eA" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/freezer,
+/area/ruin/powered/seedvault)
+"fb" = (
+/obj/machinery/light{
+	dir = 1
+	},
+/obj/effect/mob_spawn/human/seed_vault,
+/obj/structure/flora/ausbushes/brflowers,
+/turf/open/floor/plating/grass,
+/area/ruin/powered/seedvault)
+"fv" = (
+/turf/open/floor/plating{
+	icon_state = "platingdmg1"
+	},
+/area/whitesands/surface/outdoors)
+"fO" = (
+/turf/open/floor/plating/grass,
+/area/ruin/powered/seedvault)
+"mk" = (
+/obj/structure/flora/ausbushes/brflowers,
+/turf/open/floor/plating/grass,
+/area/ruin/powered/seedvault)
 "nX" = (
 /turf/open/floor/plating/asteroid/whitesands,
 /area/whitesands/surface/outdoors)
@@ -655,12 +682,33 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /turf/open/floor/vault,
 /area/ruin/powered/seedvault)
+"tY" = (
+/turf/open/floor/plating{
+	icon_state = "panelscorched";
+	initial_gas_mix = "ws_atmos"
+	},
+/area/whitesands/surface/outdoors)
+"ul" = (
+/obj/structure/flora/ausbushes/ppflowers,
+/turf/open/floor/plating/grass,
+/area/ruin/powered/seedvault)
 "uK" = (
 /obj/structure/fans/tiny,
 /turf/open/floor/plasteel/dark,
 /area/ruin/powered/seedvault)
+"xY" = (
+/obj/effect/mob_spawn/human/seed_vault/mush,
+/turf/open/floor/plating/dirt/jungle,
+/area/ruin/powered/seedvault)
 "Bb" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/turf/open/floor/plasteel/freezer,
+/area/ruin/powered/seedvault)
+"CM" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/freezer,
 /area/ruin/powered/seedvault)
 "DA" = (
@@ -675,10 +723,36 @@
 	},
 /turf/open/floor/plasteel/freezer,
 /area/ruin/powered/seedvault)
+"GZ" = (
+/obj/effect/mob_spawn/human/seed_vault/mush,
+/obj/structure/flora/ash,
+/turf/open/floor/plating/dirt/jungle,
+/area/ruin/powered/seedvault)
+"Ia" = (
+/turf/closed/wall/r_wall,
+/area/whitesands/surface/outdoors)
+"Io" = (
+/obj/structure/flora/ausbushes/ywflowers,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating/grass,
+/area/ruin/powered/seedvault)
 "KF" = (
 /obj/machinery/door/airlock/titanium,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /turf/open/floor/vault,
+/area/ruin/powered/seedvault)
+"KX" = (
+/obj/machinery/light/small/broken{
+	dir = 1
+	},
+/turf/open/floor/plating{
+	icon_state = "panelscorched";
+	initial_gas_mix = "ws_atmos"
+	},
+/area/whitesands/surface/outdoors)
+"NL" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/dark,
 /area/ruin/powered/seedvault)
 "Ou" = (
 /obj/machinery/light{
@@ -693,12 +767,32 @@
 	},
 /turf/open/floor/plasteel/freezer,
 /area/ruin/powered/seedvault)
+"Qb" = (
+/obj/structure/flora/ausbushes/brflowers,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating/grass,
+/area/ruin/powered/seedvault)
 "QJ" = (
 /obj/machinery/plantgenes/seedvault{
 	pixel_y = 6
 	},
 /obj/structure/table/wood,
-/turf/open/floor/vault,
+/turf/open/floor/plating/dirt/jungle,
+/area/ruin/powered/seedvault)
+"QL" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/freezer,
+/area/ruin/powered/seedvault)
+"Ub" = (
+/obj/structure/table/wood,
+/obj/item/lighter,
+/obj/item/lighter,
+/obj/item/storage/fancy/rollingpapers,
+/obj/item/storage/fancy/rollingpapers,
+/obj/item/storage/fancy/rollingpapers,
+/obj/item/storage/fancy/rollingpapers,
+/turf/open/floor/plating/dirt/jungle,
 /area/ruin/powered/seedvault)
 "Uz" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on{
@@ -709,6 +803,23 @@
 "Vn" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on,
 /turf/open/floor/plasteel/freezer,
+/area/ruin/powered/seedvault)
+"Wr" = (
+/turf/open/floor/plating/dirt/jungle,
+/area/ruin/powered/seedvault)
+"Xm" = (
+/turf/closed/wall/r_wall/rust,
+/area/ruin/powered/seedvault)
+"YG" = (
+/turf/closed/wall/r_wall/rust,
+/area/whitesands/surface/outdoors)
+"YZ" = (
+/obj/structure/flora/ausbushes/ywflowers,
+/turf/open/floor/plating/grass,
+/area/ruin/powered/seedvault)
+"ZN" = (
+/obj/structure/flora/ash,
+/turf/open/floor/plating/dirt/jungle,
 /area/ruin/powered/seedvault)
 
 (1,1,1) = {"
@@ -746,7 +857,7 @@ aa
 aa
 aa
 aa
-ab
+Ia
 aa
 aa
 aa
@@ -767,12 +878,12 @@ aa
 aa
 aa
 aa
+nX
 ab
 ab
-ab
+Ia
 aa
-aa
-aa
+YG
 nX
 nX
 nX
@@ -781,19 +892,19 @@ nX
 aa
 ac
 ak
-ah
+YZ
 ac
 ca
 ac
 ac
 ac
 ac
+YG
+KX
 ab
 ab
+tY
 ab
-ab
-nX
-nX
 nX
 nX
 aa
@@ -802,7 +913,7 @@ aa
 (5,1,1) = {"
 aa
 ac
-ap
+fb
 ah
 as
 PH
@@ -810,13 +921,13 @@ aQ
 av
 uK
 aR
+fv
 ab
 ab
-ab
-ab
-ab
+nX
+YG
 aa
-aa
+YG
 aa
 aa
 aa
@@ -833,8 +944,8 @@ av
 Ou
 aR
 ab
-ab
-ac
+nX
+Xm
 ac
 ac
 ac
@@ -872,7 +983,7 @@ ac
 ac
 ac
 PH
-ah
+ul
 aS
 ac
 aG
@@ -894,7 +1005,7 @@ ar
 at
 az
 PH
-ah
+Io
 aT
 ac
 ac
@@ -911,13 +1022,13 @@ ac
 "}
 (10,1,1) = {"
 ac
-ad
+af
+NL
 al
 al
-al
-PH
+CM
 ah
-al
+NL
 aC
 ac
 aZ
@@ -934,13 +1045,13 @@ ac
 (11,1,1) = {"
 ac
 ae
-al
-Vn
+NL
+eA
 Bb
 pW
+QL
 Bb
-Bb
-Bb
+QL
 aH
 Bb
 DA
@@ -960,7 +1071,7 @@ am
 al
 al
 PH
-ah
+aQ
 al
 aD
 ac
@@ -1002,10 +1113,10 @@ ac
 ag
 an
 al
-al
-PH
-ah
-ah
+NL
+CM
+aQ
+mk
 au
 aA
 ac
@@ -1022,14 +1133,14 @@ aa
 (15,1,1) = {"
 ac
 ai
-al
+NL
 Vn
 Bb
 qQ
-ah
-aF
+fO
+Ub
 ac
-aA
+Wr
 ac
 ac
 ac
@@ -1044,32 +1155,32 @@ aa
 (16,1,1) = {"
 ac
 aj
-al
-al
-al
+NL
+Qb
+NL
 Eu
 ac
 ac
 ac
 aI
-aA
+ZN
 aL
 ac
 by
 bA
 ac
 ac
-ab
-ab
+aa
+aa
 aa
 "}
 (17,1,1) = {"
 ac
 ac
 ao
-al
-al
-PH
+YZ
+fO
+CM
 ac
 aX
 aE
@@ -1113,11 +1224,11 @@ aa
 ac
 ay
 aO
-ah
+aQ
 ac
 aB
-aB
-aB
+GZ
+xY
 ac
 ac
 aa

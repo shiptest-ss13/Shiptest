@@ -31,14 +31,16 @@
 // Corpse flower
 /obj/item/seeds/starthistle/corpse_flower
 	name = "pack of corpse flower seeds"
-	desc = "A species of plant that emits a horrible odor. The odor stops being produced in difficult atmospheric conditions."
+	desc = "A species of plant that emits a horrible odor using a complex bath of chemicals within. The odor stops being produced in difficult atmospheric conditions."
 	icon_state = "seed-corpse-flower"
 	species = "corpse-flower"
 	plantname = "Corpse flower"
-	production = 2
+	production = 8//corpse flowers take years to grow irl. Better switch it out once you can!
+	lifespan = 100
 	growing_icon = 'icons/obj/hydroponics/growing_flowers.dmi'
 	genes = list()
 	mutatelist = list()
+	reagents_add = list(/datum/reagent/toxin/formaldehyde = 0.01, /datum/reagent/toxin/zombiepowder = 0.01, /datum/reagent/liquidgibs = 0.2)//restores, someone must have removed them at some point
 
 /obj/item/seeds/starthistle/corpse_flower/pre_attack(obj/machinery/hydroponics/I)
 	if(istype(I, /obj/machinery/hydroponics))
@@ -261,3 +263,13 @@
 /obj/item/reagent_containers/food/snacks/grown/aloe/microwave_act(obj/machinery/microwave/M)
 	new /obj/item/stack/medical/aloe(drop_location(), 2)
 	qdel(src)
+
+/obj/item/reagent_containers/food/snacks/grown/shell/genesis
+	name = "Genesis Seed"
+	desc = "A strange, hollow shell writ in mossy green hues. Feels like it's full of potential."
+	icon_state = "genesis"
+	trash = /obj/item/seeds/random
+	bitesize_mod = 5
+	seed = null
+	filling_color = "#1b961b"
+	foodtype = VEGETABLES

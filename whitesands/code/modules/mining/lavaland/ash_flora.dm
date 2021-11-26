@@ -13,13 +13,15 @@
 	icon = 'whitesands/icons/obj/lavaland/newlavalandplants.dmi'
 
 /obj/structure/flora/ash/whitesands/fern
-	name = "cave fern"
-	desc = "A species of fern with highly fibrous leaves."
+	name = "royal fern"
+	desc = "A species of purplish fern with highly fibrous leaves, found in moisture-rich enviroments."
+	harvested_name = "fern stems"
+	harvested_desc = "A few royal fern stems, missing their leaves."
 	icon_state = "fern" //needs new sprites.
 	harvested_name = "cave fern stems"
 	harvested_desc = "A few cave fern stems, missing their leaves."
 	harvest = /obj/item/reagent_containers/food/snacks/grown/ash_flora/whitesands/fern
-	harvest_amount_high = 4
+	harvest_amount_high = 6
 	harvest_message_low = "You clip a single, suitable leaf."
 	harvest_message_med = "You clip a number of leaves, leaving a few unsuitable ones."
 	harvest_message_high = "You clip quite a lot of suitable leaves."
@@ -45,15 +47,15 @@
 
 /obj/structure/flora/ash/whitesands/puce
 	name = "Pucestal Growth"
-	desc = "A collection of puce colored crystal growths."
+	desc = "A collection of puce-colored crystal growths. This highly-invasive but surprisingly delicate \"lifeform\" can be found all over the frontier of known space."
 	icon_state = "puce"
 	harvested_name = "Pucestal fragments"
 	harvested_desc = "A few pucestal fragments, slowly regrowing."
 	harvest = /obj/item/reagent_containers/food/snacks/grown/ash_flora/whitesands/puce
 	harvest_amount_high = 6
-	harvest_message_low = "You work a crystal free."
-	harvest_message_med = "You cut a number of crystals free, leaving a few small ones."
-	harvest_message_high = "You cut free quite a lot of crystals."
+	harvest_message_low = "You work a single crystal free, discarding several impure or broken ones."
+	harvest_message_med = "You cut a number of crystals free, leaving a few small or damaged crystals behind."
+	harvest_message_high = "There are a number of large, pure crystals- you cut free quite a harvest."
 	regrowth_time_low = 10 MINUTES 				// Fast, for a crystal
 	regrowth_time_high = 20 MINUTES
 	num_sprites = 1
@@ -66,7 +68,7 @@
 
 /obj/item/reagent_containers/food/snacks/grown/ash_flora/whitesands/fern
 	name = "fern leaf"
-	desc = "A leaf from a cave fern."
+	desc = "A leaf from a royal-colored fern."
 	icon_state = "fern"
 	seed = /obj/item/seeds/lavaland/whitesands/fern
 	wine_power = 10
@@ -97,9 +99,9 @@
 	growthstages = 2
 
 /obj/item/seeds/lavaland/whitesands/fern
-	name = "pack of cave fern seeds"
-	desc = "These seeds grow into cave ferns."
-	plantname = "Cave Fern"
+	name = "pack of royal fern seeds"
+	desc = "These seeds grow into royal ferns."
+	plantname = "Royal Fern"
 	icon_state = "seed_fern"
 	species = "fern"
 	growthstages = 2

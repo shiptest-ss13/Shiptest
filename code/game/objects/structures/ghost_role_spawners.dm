@@ -4,7 +4,7 @@
 /obj/effect/mob_spawn/human/seed_vault
 	name = "preserved terrarium"
 	desc = "An ancient machine that seems to be used for storing plant matter. The glass is obstructed by a mat of vines."
-	mob_name = "a lifebringer"
+	mob_name = "Verdant Lifebringer"
 	icon = 'icons/obj/lavaland/spawners.dmi'
 	icon_state = "terrarium"
 	density = TRUE
@@ -15,11 +15,12 @@
 	flavour_text = "Your masters, benevolent as they were, created uncounted seed vaults and spread them across \
 	the universe to every planet they could chart. You are in one such seed vault. \
 	Your goal is to cultivate and spread life wherever it will go while waiting for contact from your creators. \
-	Estimated time of last contact: Deployment, 5000 millennia ago."
+	Estimated time of last contact: Deployment, 5000 millennia ago.\
+	As a Verdant Lifebringer, you feed off light and slowly regenerate when fully-fed.io Beware: Fire is not your freind, and extended time in the darkness will kill you!"
 	assignedrole = "Lifebringer"
 
 /obj/effect/mob_spawn/human/seed_vault/special(mob/living/new_spawn)
-	var/plant_name = pick("Tomato", "Potato", "Broccoli", "Carrot", "Ambrosia", "Pumpkin", "Ivy", "Kudzu", "Banana", "Moss", "Flower", "Bloom", "Root", "Bark", "Glowshroom", "Petal", "Leaf", \
+	var/plant_name = pick("Tomato", "Potato", "Broccoli", "Carrot", "Ambrosia", "Pumpkin", "Ivy", "Kudzu", "Banana", "Moss", "Flower", "Bloom", "Root", "Bark", "Rose", "Petal", "Leaf", \
 	"Venus", "Sprout","Cocoa", "Strawberry", "Citrus", "Oak", "Cactus", "Pepper", "Juniper")
 	new_spawn.fully_replace_character_name(null,plant_name)
 	if(ishuman(new_spawn))
@@ -30,6 +31,30 @@
 /obj/effect/mob_spawn/human/seed_vault/Destroy()
 	new/obj/structure/fluff/empty_terrarium(get_turf(src))
 	return ..()
+
+/obj/effect/mob_spawn/human/seed_vault/mush
+	name = "preserved fungarium"
+	desc = "An ancient machine that seems to be used for storing fungal matter. The glass is obstructed by a mat of dense lichen."
+	mob_name = "Fungal Lifebringer"
+	icon = 'icons/obj/lavaland/spawners.dmi'
+	icon_state = "terrarium"
+	mob_species = /datum/species/mush
+	short_desc = "You are a sentient fungal ecosystem, an example of the mastery over life that your creators possessed."
+	flavour_text = "Your masters, benevolent as they were, created uncounted seed vaults and spread them across \
+	the universe. Your goal, imbued by them, is to cultivate and spread life wherever it will go while waiting for contact from your creators. \
+	Estimated time of last contact: Deployment, 5000 millennia ago. \
+	As a fungal lifebringer, you must consume food often to survive, and begin healing rapidly when stuffed. Your massive fungal body is resilient to brute and stamina damage when not starving. Take caution to never go hungry, and protect your frail verdant brethren with your mighty punch!"
+	assignedrole = "Lifebringer"
+
+/obj/effect/mob_spawn/human/seed_vault/mush/special(mob/living/new_spawn)
+	var/plant_name = pick("Reishi", "Liberty Cap", "Chanterelle", "Destroying Angel", "Fly Amantia", "Glowshroom", "Jupiter Cup", "Puffball", "Plump Helmet", "Steel Cap", "Tower Cap", "Spore Toxin", "Lichen", "Portobello", "Mildew", "Truffle", "Yeast", \
+	"Toadstool", "Shittake")
+	new_spawn.fully_replace_character_name(null,plant_name)
+	if(ishuman(new_spawn))
+		var/mob/living/carbon/human/H = new_spawn
+		var/datum/martial_art/mushpunch/mush = new(null)//martial art code is a mistake
+		mush.teach(H)
+		H.update_body()
 
 //Ash walker eggs: Spawns in ash walker dens in lavaland. Ghosts become unbreathing lizards that worship the Necropolis and are advised to retrieve corpses to create more ash walkers.
 

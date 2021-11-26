@@ -489,3 +489,4 @@
 	while(islist(lootspawn))
 		lootspawn = pickweight_float(lootspawn) // WS edit - Fix various startup runtimes
 	return lootspawn
+
