@@ -24,8 +24,8 @@
 	limbs_id = "synth"
 	mutant_bodyparts = list("ipc_screen", "ipc_antenna", "ipc_chassis")
 	default_features = list("ipc_screen" = "BSOD", "ipc_antenna" = "None")
-	burnmod = 1.5
-	heatmod = 1
+	burnmod = 1
+	heatmod = 1.5
 	brutemod = 1
 	siemens_coeff = 1.5
 	reagent_tag = PROCESS_SYNTHETIC
