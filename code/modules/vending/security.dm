@@ -65,6 +65,25 @@
 	SSblackbox.record_feedback("tally", "gun_voucher_redeemed", 1, selection)
 	qdel(voucher)
 
+/obj/machinery/vending/security/wall
+	name = "\improper SecTech Lite"
+	desc = "A wall mounted security equipment vendor."
+	icon_state = "wallsec"
+	icon_deny = "wallsec-deny"
+	light_mask = "wallsec-light-mask"
+	refill_canister = /obj/item/vending_refill/wallsec
+	density = FALSE
+	tiltable = FALSE
+	products = list(
+		/obj/item/restraints/handcuffs = 5,
+		/obj/item/restraints/handcuffs/cable/zipties = 10,
+		/obj/item/stock_parts/cell/gun = 3,
+		)
+	contraband = list()
+	premium = list()
+
+/obj/item/vending_refill/wallsec
+	icon_state = "refill_sec"
 
 /obj/machinery/vending/security/marine
 	name = "\improper marine vendor"
