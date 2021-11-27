@@ -60,7 +60,12 @@ GLOBAL_LIST_EMPTY(custom_shuttle_machines)		//Machines that require updating (He
 		return
 	else if(istype(target, /obj/machinery/computer/ship/helm))
 		var/obj/machinery/computer/ship/helm/console = target
-		console.reload_ship()
+		var/obj/structure/overmap/ship/simulated/old = console.current_ship
+		console.recursive_connect()
+		if(!old || console.current_ship != old)
+			to_chat(user, "<span class='notice'>Re-Linked Helm to ship.</span>")
+		else
+			to_chat(user, "<span class='notice'>Helm already linked to ship.</span>")
 		return
 	to_chat(user, "<span class='warning'>The [src] bleeps. Select an airlock to create a docking port, or a valid machine to link.</span>")
 	return
