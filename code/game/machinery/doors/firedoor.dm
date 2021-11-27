@@ -422,7 +422,7 @@
 	anchored = FALSE
 	density = TRUE
 	var/constructionStep = CONSTRUCTION_NOCIRCUIT
-	var/reinforced = 0
+	var/firelock_type = /obj/machinery/door/firedoor
 	var/firelock_type
 
 /obj/structure/firelock_frame/examine(mob/user)
@@ -430,8 +430,9 @@
 	switch(constructionStep)
 		if(CONSTRUCTION_PANEL_OPEN)
 			. += "<span class='notice'>It is <i>unbolted</i> from the floor. A small <b>loosely connected</b> metal plate is covering the wires.</span>"
-			if(!reinforced)
+			if(type == /obj/structure/firelock_frame)
 				. += "<span class='notice'>It could be reinforced with plasteel.</span>"
+				. += "<span class='notice'>It could add reinforced glass to it.</span>"
 		if(CONSTRUCTION_WIRES_EXPOSED)
 			. += "<span class='notice'>The maintenance plate has been <i>pried away</i>, and <b>wires</b> are trailing.</span>"
 		if(CONSTRUCTION_GUTTED)
@@ -479,18 +480,16 @@
 					"<span class='notice'>[user] finishes the firelock.</span>", \
 					"<span class='notice'>You finish the firelock.</span>")
 				playsound(get_turf(src), 'sound/items/deconstruct.ogg', 50, TRUE)
-				if(reinforced)
-					new /obj/machinery/door/firedoor/heavy(get_turf(src))
-				else
-					var/obj/machinery/door/firedoor/F = new firelock_type(get_turf(src))
+				var/obj/machinery/door/firedoor/F = new firelock_type(get_turf(src))
+				if(istype(F, /obj/machinery/door/firedoor/border_only))
 					F.dir = src.dir
 					F.update_icon()
 				qdel(src)
 				return
-			if(istype(C, /obj/item/stack/sheet/plasteel))
+			if(istype(C, /obj/item/stack/sheet/plasteel) && type != /obj/structure/firelock_frame/border)
 				var/obj/item/stack/sheet/plasteel/P = C
-				if(reinforced)
-					to_chat(user, "<span class='warning'>[src] is already reinforced.</span>")
+				if(!(type == /obj/structure/firelock_frame))
+					to_chat(user, "<span class='warning'>[src] is already upgraded.</span>")
 					return
 				if(P.get_amount() < 2)
 					to_chat(user, "<span class='warning'>You need more plasteel to reinforce [src].</span>")
@@ -500,14 +499,38 @@
 					"<span class='notice'>You begin reinforcing [src]...</span>")
 				playsound(get_turf(src), 'sound/items/deconstruct.ogg', 50, TRUE)
 				if(do_after(user, 60, target = src))
-					if(constructionStep != CONSTRUCTION_PANEL_OPEN || reinforced || P.get_amount() < 2 || !P)
+					if(constructionStep != CONSTRUCTION_PANEL_OPEN || P.get_amount() < 2 || !P)
 						return
 					user.visible_message(
 						"<span class='notice'>[user] reinforces [src].</span>", \
 						"<span class='notice'>You reinforce [src].</span>")
 					playsound(get_turf(src), 'sound/items/deconstruct.ogg', 50, TRUE)
 					P.use(2)
-					reinforced = 1
+					var/obj/structure/firelock_frame/heavy/F = new /obj/structure/firelock_frame/heavy(src.loc)
+					F.constructionStep = constructionStep
+					qdel(src)
+				return
+			if(istype(C, /obj/item/stack/sheet/rglass) && type != /obj/structure/firelock_frame/border)
+				var/obj/item/stack/sheet/rglass/P = C
+				if(!(type == /obj/structure/firelock_frame))
+					to_chat(user, "<span class='warning'>[src] is already upgraded.</span>")
+					return
+				if(P.get_amount() < 2)
+					to_chat(user, "<span class='warning'>You need more reinforced glass to add glass to [src].</span>")
+					return
+				user.visible_message("<span class='notice'>[user] begins adding glass to [src]...</span>", \
+									 "<span class='notice'>You begin adding glass to [src]...</span>")
+				playsound(get_turf(src), 'sound/items/deconstruct.ogg', 50, TRUE)
+				if(do_after(user, 60, target = src))
+					if(constructionStep != CONSTRUCTION_PANEL_OPEN || P.get_amount() < 2 || !P)
+						return
+					user.visible_message("<span class='notice'>[user] adds glass to [src].</span>", \
+										 "<span class='notice'>You add glass to [src].</span>")
+					playsound(get_turf(src), 'sound/items/deconstruct.ogg', 50, TRUE)
+					P.use(2)
+					var/obj/structure/firelock_frame/window/F = new /obj/structure/firelock_frame/window(src.loc)
+					F.constructionStep = constructionStep
+					qdel(src)
 				return
 
 		if(CONSTRUCTION_WIRES_EXPOSED)
@@ -650,13 +673,13 @@
 
 /obj/structure/firelock_frame/heavy
 	name = "heavy firelock frame"
-	reinforced = TRUE
+	firelock_type = /obj/machinery/door/firedoor/heavy
 
 /obj/structure/firelock_frame/border
 	name = "firelock frame"
 	icon = 'icons/obj/doors/edge_Doorfire.dmi'
 	icon_state = "frame1"
-	firelock_type = /obj/machinery/door/firedoor/border_only/closed
+	firelock_type = /obj/machinery/door/firedoor/border_only
 	flags_1 = ON_BORDER_1
 
 /obj/structure/firelock_frame/border/ComponentInitialize()
@@ -673,6 +696,7 @@
 	name = "window firelock frame"
 	icon = 'icons/obj/doors/doorfirewindow.dmi'
 	icon_state = "door_frame"
+	firelock_type = /obj/machinery/door/firedoor/window
 
 /obj/structure/firelock_frame/window/update_icon()
 	return
