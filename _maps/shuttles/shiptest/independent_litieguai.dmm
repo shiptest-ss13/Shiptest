@@ -240,6 +240,19 @@
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
+"fn" = (
+/obj/machinery/stasis,
+/obj/effect/turf_decal/industrial/outline/red,
+/obj/machinery/firealarm{
+	dir = 8;
+	pixel_x = -28
+	},
+/obj/machinery/airalarm/all_access{
+	dir = 1;
+	pixel_y = -24
+	},
+/turf/open/floor/plasteel/showroomfloor,
+/area/ship/medical)
 "fp" = (
 /turf/closed/wall/mineral/titanium,
 /area/ship/maintenance/port)
@@ -424,6 +437,13 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/white,
+/area/ship/medical)
+"lj" = (
+/obj/structure/sink{
+	dir = 4;
+	pixel_x = -12
+	},
+/turf/open/floor/plasteel/showroomfloor,
 /area/ship/medical)
 "lF" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
@@ -634,13 +654,6 @@
 	},
 /turf/open/floor/plasteel/showroomfloor,
 /area/ship/crew/toilet)
-"pH" = (
-/obj/structure/sink{
-	dir = 4;
-	pixel_x = -12
-	},
-/turf/open/floor/plasteel/showroomfloor,
-/area/ship/medical)
 "pK" = (
 /obj/structure/table/reinforced,
 /obj/item/folder/blue,
@@ -996,19 +1009,6 @@
 /obj/effect/turf_decal/industrial/outline/red,
 /obj/machinery/smartfridge/chemistry,
 /turf/open/floor/plasteel/white,
-/area/ship/medical)
-"vH" = (
-/obj/machinery/stasis,
-/obj/effect/turf_decal/industrial/outline/red,
-/obj/machinery/firealarm{
-	dir = 8;
-	pixel_x = -28
-	},
-/obj/machinery/airalarm/all_access{
-	dir = 1;
-	pixel_y = -24
-	},
-/turf/open/floor/plasteel/showroomfloor,
 /area/ship/medical)
 "vT" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
@@ -1907,7 +1907,7 @@
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "TI" = (
-/obj/structure/bookcase/manuals/medical,
+/obj/machinery/vending/wardrobe/medi_wardrobe,
 /turf/open/floor/carpet/cyan,
 /area/ship/crew)
 "TR" = (
@@ -2481,8 +2481,8 @@ OK
 Vu
 ZN
 DU
-pH
-vH
+lj
+fn
 YM
 YM
 JA
