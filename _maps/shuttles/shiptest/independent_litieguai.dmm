@@ -77,6 +77,19 @@
 /obj/effect/turf_decal/industrial/hatch/red,
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
+"cm" = (
+/obj/machinery/stasis,
+/obj/effect/turf_decal/industrial/outline/red,
+/obj/machinery/firealarm{
+	dir = 8;
+	pixel_x = -28
+	},
+/obj/machinery/airalarm/all_access{
+	dir = 1;
+	pixel_y = -24
+	},
+/turf/open/floor/plasteel/showroomfloor,
+/area/ship/medical)
 "cn" = (
 /obj/effect/turf_decal/trimline/red/filled/warning,
 /turf/open/floor/plasteel,
@@ -1212,13 +1225,13 @@
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "DU" = (
-/obj/structure/sink{
-	dir = 4;
-	pixel_x = -12
-	},
 /obj/structure/sign/poster/official/cleanliness{
 	pixel_x = -32
 	},
+/obj/machinery/sleeper{
+	dir = 4
+	},
+/obj/effect/turf_decal/industrial/outline/red,
 /turf/open/floor/plasteel/showroomfloor,
 /area/ship/medical)
 "Ev" = (
@@ -1785,6 +1798,13 @@
 	},
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew)
+"Sx" = (
+/obj/structure/sink{
+	dir = 4;
+	pixel_x = -12
+	},
+/turf/open/floor/plasteel/showroomfloor,
+/area/ship/medical)
 "Sy" = (
 /obj/item/organ/ears,
 /obj/item/organ/ears,
@@ -1877,19 +1897,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
-"TB" = (
-/obj/machinery/stasis,
-/obj/effect/turf_decal/industrial/outline/red,
-/obj/machinery/firealarm{
-	dir = 8;
-	pixel_x = -28
-	},
-/obj/machinery/airalarm/all_access{
-	dir = 1;
-	pixel_y = -24
-	},
-/turf/open/floor/plasteel/showroomfloor,
-/area/ship/medical)
 "TI" = (
 /obj/structure/bookcase/manuals/medical,
 /turf/open/floor/carpet/cyan,
@@ -2460,8 +2467,8 @@ OK
 Vu
 ZN
 DU
-ZN
-TB
+Sx
+cm
 YM
 YM
 JA
