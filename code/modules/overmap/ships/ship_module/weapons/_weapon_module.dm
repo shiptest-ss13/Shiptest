@@ -11,7 +11,7 @@
 	var/obj/structure/ship_module/weapon/struc = installed_on[parent]
 	if(!struc.ammo)
 		return WEAPON_EMPTY
-	if(!struc.integrity)
+	if(!struc.obj_integrity)
 		return WEAPON_BROKEN
 	if(struc.reloading)
 		return WEAPON_RELOADING
