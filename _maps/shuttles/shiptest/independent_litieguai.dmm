@@ -77,19 +77,6 @@
 /obj/effect/turf_decal/industrial/hatch/red,
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
-"cm" = (
-/obj/machinery/stasis,
-/obj/effect/turf_decal/industrial/outline/red,
-/obj/machinery/firealarm{
-	dir = 8;
-	pixel_x = -28
-	},
-/obj/machinery/airalarm/all_access{
-	dir = 1;
-	pixel_y = -24
-	},
-/turf/open/floor/plasteel/showroomfloor,
-/area/ship/medical)
 "cn" = (
 /obj/effect/turf_decal/trimline/red/filled/warning,
 /turf/open/floor/plasteel,
@@ -378,6 +365,13 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
+"ks" = (
+/obj/structure/sink{
+	dir = 4;
+	pixel_x = -12
+	},
+/turf/open/floor/plasteel/showroomfloor,
+/area/ship/medical)
 "kC" = (
 /obj/machinery/door/window/brigdoor/southleft,
 /obj/item/defibrillator/compact/loaded,
@@ -536,14 +530,14 @@
 	icon_state = "med";
 	name = "medicine locker"
 	},
-/obj/item/storage/firstaid,
-/obj/item/storage/firstaid,
 /obj/item/storage/firstaid/brute,
 /obj/item/storage/firstaid/fire,
 /obj/item/storage/firstaid/o2,
 /obj/item/storage/firstaid/toxin,
 /obj/item/storage/box/medipens,
 /obj/item/storage/box/syringes,
+/obj/item/storage/firstaid/regular,
+/obj/item/storage/firstaid/regular,
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "nl" = (
@@ -1093,6 +1087,7 @@
 	pixel_x = 9
 	},
 /obj/item/clothing/neck/stethoscope,
+/obj/machinery/recharger,
 /turf/open/floor/carpet/nanoweave,
 /area/ship/bridge)
 "zS" = (
@@ -1485,6 +1480,7 @@
 	name = "Chemistry Locker";
 	pixel_y = -28
 	},
+/obj/item/storage/backpack/satchel/chem,
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "KW" = (
@@ -1565,6 +1561,7 @@
 /obj/item/radio/intercom{
 	pixel_y = -28
 	},
+/obj/machinery/cell_charger,
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew)
 "MY" = (
@@ -1600,6 +1597,8 @@
 	pixel_y = -28;
 	req_access_txt = "40"
 	},
+/obj/item/storage/backpack/satchel/med,
+/obj/item/gun/energy/e_gun/mini,
 /turf/open/floor/carpet/nanoweave,
 /area/ship/bridge)
 "Ny" = (
@@ -1798,13 +1797,6 @@
 	},
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew)
-"Sx" = (
-/obj/structure/sink{
-	dir = 4;
-	pixel_x = -12
-	},
-/turf/open/floor/plasteel/showroomfloor,
-/area/ship/medical)
 "Sy" = (
 /obj/item/organ/ears,
 /obj/item/organ/ears,
@@ -1858,6 +1850,7 @@
 /obj/item/stack/sheet/glass/fifty,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
 /obj/effect/turf_decal/industrial/hatch/red,
+/obj/item/disk/design_disk/ammo_38_hunting,
 /turf/open/floor/plasteel,
 /area/ship/storage)
 "Ti" = (
@@ -1930,6 +1923,19 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/hallway/fore)
+"Up" = (
+/obj/machinery/stasis,
+/obj/effect/turf_decal/industrial/outline/red,
+/obj/machinery/firealarm{
+	dir = 8;
+	pixel_x = -28
+	},
+/obj/machinery/airalarm/all_access{
+	dir = 1;
+	pixel_y = -24
+	},
+/turf/open/floor/plasteel/showroomfloor,
+/area/ship/medical)
 "UC" = (
 /obj/machinery/light{
 	dir = 4
@@ -1953,7 +1959,6 @@
 /obj/item/reagent_containers/food/drinks/bottle/whiskey,
 /obj/item/megaphone/command,
 /obj/item/clothing/glasses/sunglasses,
-/obj/item/gun/energy/e_gun/mini,
 /obj/item/clothing/shoes/sneakers/white,
 /obj/structure/closet/secure_closet/wall{
 	dir = 1;
@@ -1961,6 +1966,10 @@
 	name = "captain's closet";
 	pixel_y = -28;
 	req_access_txt = "20"
+	},
+/obj/item/storage/backpack/messenger/com,
+/obj/item/gun/ballistic/revolver/detective{
+	name = "\improper Colt Navy Special"
 	},
 /turf/open/floor/carpet/nanoweave,
 /area/ship/bridge)
@@ -2467,8 +2476,8 @@ OK
 Vu
 ZN
 DU
-Sx
-cm
+ks
+Up
 YM
 YM
 JA
