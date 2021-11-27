@@ -423,7 +423,6 @@
 	density = TRUE
 	var/constructionStep = CONSTRUCTION_NOCIRCUIT
 	var/firelock_type = /obj/machinery/door/firedoor
-	var/firelock_type
 
 /obj/structure/firelock_frame/examine(mob/user)
 	. = ..()
@@ -618,8 +617,10 @@
 						"<span class='notice'>You cut [src] into metal.</span>")
 					var/turf/T = get_turf(src)
 					new /obj/item/stack/sheet/metal(T, 3)
-					if(reinforced)
+					if(istype(src, /obj/structure/firelock_frame/heavy))
 						new /obj/item/stack/sheet/plasteel(T, 2)
+					if(istype(src, /obj/structure/firelock_frame/window))
+						new /obj/item/stack/sheet/rglass(T, 2)
 					qdel(src)
 				return
 			if(istype(C, /obj/item/electronics/firelock))
@@ -678,13 +679,16 @@
 /obj/structure/firelock_frame/border
 	name = "firelock frame"
 	icon = 'icons/obj/doors/edge_Doorfire.dmi'
-	icon_state = "frame1"
+	icon_state = "door_frame"
 	firelock_type = /obj/machinery/door/firedoor/border_only
 	flags_1 = ON_BORDER_1
 
 /obj/structure/firelock_frame/border/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/simple_rotation, ROTATION_ALTCLICK | ROTATION_CLOCKWISE | ROTATION_COUNTERCLOCKWISE | ROTATION_VERBS, null, CALLBACK(src, .proc/can_be_rotated))
+
+/obj/structure/firelock_frame/border/update_icon()
+	return
 
 /obj/structure/firelock_frame/border/proc/can_be_rotated(mob/user, rotation_type)
 	if (anchored)
