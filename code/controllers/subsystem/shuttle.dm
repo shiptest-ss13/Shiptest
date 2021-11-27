@@ -63,6 +63,9 @@ SUBSYSTEM_DEF(shuttle)
 	return ..()
 
 /datum/controller/subsystem/shuttle/fire()
+	if(SSair.thread_running())
+		return
+
 	for(var/obj/docking_port/mobile/mobile_port as anything in mobile)
 		if(!mobile_port)
 			mobile.Remove(mobile_port)
