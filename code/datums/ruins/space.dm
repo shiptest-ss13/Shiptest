@@ -5,6 +5,12 @@
 	cost = 1
 	allow_duplicates = FALSE
 
+/datum/map_template/ruin/space/corporate_mining
+	id = "corporate_mining"
+	suffix = "corporate_mining.dmm"
+	name = "Corporate Mining Module"
+	description = "An old and rusty mining facility, with big ore potential."
+
 /datum/map_template/ruin/space/zoo
 	id = "zoo"
 	suffix = "abandonedzoo.dmm"
