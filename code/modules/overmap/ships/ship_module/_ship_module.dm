@@ -11,7 +11,7 @@
 	var/flags = SHIP_MODULE_UNIQUE
 	/// Should this module start processing after being Install'd
 	var/should_process = FALSE
-	/// Installed ships, for tracking purposes
+	/// Installed ships, for tracking and helper proc purposes
 	var/list/installed_on = list()
 	/// The strucutre to spawn when a module is installed onto a ship
 	var/structure_path = /obj/structure/ship_module
@@ -79,37 +79,44 @@
 	SHOULD_CALL_PARENT(TRUE)
 	if(!can_install(ship, user))
 		return FALSE
-	installed_on[ship] = new structure_path(location, src, ship, user)
-	ship.modules[slot] += src
-	RegisterSignal(ship, COMSIG_PARENT_QDELETING, .proc/handle_ship_qdel)
-	RegisterSignal(ship, COMSIG_SHIP_DAMAGE, .proc/handle_ship_damage)
-	RegisterSignal(ship, COMSIG_SHIP_THRUST, .proc/handle_ship_thrust)
-	RegisterSignal(ship, COMSIG_SHIP_MOVE, .proc/handle_ship_move)
-	RegisterSignal(ship, COMSIG_SHIP_DOCK, .proc/handle_ship_dock)
-	RegisterSignal(ship, COMSIG_SHIP_UNDOCK, .proc/handle_ship_undock)
+	if(!installed_on[ship])
+		ship.modules[slot] |= src
+		installed_on[ship] = list()
+		RegisterSignal(ship, COMSIG_PARENT_QDELETING, .proc/handle_ship_qdel)
+		RegisterSignal(ship, COMSIG_SHIP_DAMAGE, .proc/handle_ship_damage)
+		RegisterSignal(ship, COMSIG_SHIP_THRUST, .proc/handle_ship_thrust)
+		RegisterSignal(ship, COMSIG_SHIP_MOVE, .proc/handle_ship_move)
+		RegisterSignal(ship, COMSIG_SHIP_DOCK, .proc/handle_ship_dock)
+		RegisterSignal(ship, COMSIG_SHIP_UNDOCK, .proc/handle_ship_undock)
+	installed_on[ship] += new structure_path(location, src, ship, user)
 	notify_modules(ship, user, "install", list("module" = src))
 	return TRUE
 
-/datum/ship_module/proc/notify_modules(obj/structure/overmap/ship/simulated/ship, mob/user, action, list/params)
+/datum/ship_module/proc/notify_modules(obj/structure/overmap/ship/simulated/ship, mob/user, action, list/params, structure_id = 0)
 	var/static/list/alerted = new
 	if(length(alerted))
 		alerted.Cut()
 	for(var/slot in ship.modules)
 		for(var/datum/ship_module/module as anything in ship.modules[slot])
 			for(var/obj/structure/ship_module/module_structure as anything in module.installed_on[ship])
+				if(structure_id && structured_id != module_structure.structure_id)
+					continue
 				if(module_structure in alerted)
 					continue
 				alerted |= module_structure
 				module_structure.module_act(user, action, params)
 
-/datum/ship_module/proc/uninstall(obj/structure/overmap/ship/simulated/ship)
+/datum/ship_module/proc/uninstall(obj/structure/overmap/ship/simulated/ship, obj/structure/ship_module/module_structure)
 	SHOULD_CALL_PARENT(TRUE)
-	notify_modules(ship, null, "uninstall", list("module" = src))
-	ship.modules[slot] -= src
-	qdel(installed_on[ship])
-	installed_on -= ship
-	ship_data -= ship
-	UnregisterSignal(ship, COMSIG_PARENT_QDELETING)
+	if(!(module_structure in installed_on[ship]))
+		CRASH("uninstall called on illegal module structure? [module_structure] not in module map")
+	notify_modules(ship, null, "uninstall", list("module" = src, "structure" = module_structure))
+	installed_on[ship] -= module_structure
+	qdel(module_structure)
+	if(!length(installed_on[ship]))
+		ship.modules[slot] -= src
+		ship_data -= ship
+		UnregisterSignal(ship, list(COMSIG_PARENT_QDELETING, COMSIG_SHIP_DAMAGE, COMSIG_SHIP_THRUST, COMSIG_SHIP_MOVE, COMSIG_SHIP_DOCK, COMSIG_SHIP_UNDOCK))
 	return TRUE
 
 /datum/ship_module/proc/handle_ship_qdel(ship)
