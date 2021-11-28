@@ -1,6 +1,8 @@
 /obj/item/clothing/under/rank/command
 	desc = "A standard command jumpsuit."
 	name = "command jumpsuit"
+	icon = 'icons/obj/clothing/under/command.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/under/command.dmi'
 	icon_state = "cmd"
 	item_state = "w_suit"
 
