@@ -7,17 +7,16 @@
 	/// The actual damage the weapon deals
 	var/damage = 0
 
-/datum/ship_module/weapon/proc/weapon_fire(obj/structure/overmap/ship/simulated/parent, obj/structure/overmap/ship/simulated/target, obj/structure/ship_module/weapon/module)
-	var/obj/structure/ship_module/weapon/struc = installed_on[parent]
+/datum/ship_module/weapon/proc/weapon_fire(obj/structure/overmap/ship/simulated/parent, obj/structure/ship_module/weapon/struc, obj/structure/overmap/ship/simulated/target)
 	if(!struc.ammo)
 		return WEAPON_EMPTY
 	if(!struc.obj_integrity)
 		return WEAPON_BROKEN
 	if(struc.reloading)
 		return WEAPON_RELOADING
-	return weapon_hit(parent, target, module, damage)
+	return weapon_hit(parent, struc, target, damage)
 
-/datum/ship_module/weapon/proc/weapon_hit(obj/structure/overmap/ship/simulated/parent, obj/structure/overmap/ship/simulated/target, obj/structure/ship_module/weapon/module, damage)
+/datum/ship_module/weapon/proc/weapon_hit(obj/structure/overmap/ship/simulated/parent, obj/structure/ship_module/weapon/struc, obj/structure/overmap/ship/simulated/target, damage)
 	if(target.recieve_damage(damage, parent, damage_types))
 		return WEAPON_HIT
 	return WEAPON_MISS

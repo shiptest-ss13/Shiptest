@@ -119,6 +119,11 @@
 		UnregisterSignal(ship, list(COMSIG_PARENT_QDELETING, COMSIG_SHIP_DAMAGE, COMSIG_SHIP_THRUST, COMSIG_SHIP_MOVE, COMSIG_SHIP_DOCK, COMSIG_SHIP_UNDOCK))
 	return TRUE
 
+/datum/ship_module/proc/get_module_structure_by_id(ship, id)
+	for(var/obj/structure/ship_module/struc as anything in installed_on[ship])
+		if(struc.structure_id == id)
+			return struc
+
 /datum/ship_module/proc/handle_ship_qdel(ship)
 	SIGNAL_HANDLER
 	UnregisterSignal(ship, COMSIG_PARENT_QDELETING)
