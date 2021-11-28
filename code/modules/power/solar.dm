@@ -429,8 +429,8 @@
 					C.forceMove(drop_location())
 				A.circuit = M
 				A.state = 4
-				A.icon_state = "4"
 				A.set_anchored(TRUE)
+				A.update_icon()
 				qdel(src)
 	else if(user.a_intent != INTENT_HARM && !(I.item_flags & NOBLUDGEON))
 		attack_hand(user)
