@@ -8,11 +8,16 @@
 	var/datum/ship_module/module_instance
 	/// Should this structure process
 	var/structure_process = FALSE
+	/// Structure ID of this module
+	var/structure_id
+	/// Static var containing the next structure id
+	var/static/structure_id_next = 0
 
 /obj/structure/ship_module/Initialize(datum/ship_module/module_instance, obj/structure/overmap/ship/simulated/parent, mob/user)
 	. = ..()
 	src.module_instance = module_instance
 	src.parent = parent
+	structure_id = ++structure_id_next
 
 /obj/structure/ship_module/Destroy()
 	. = ..()
