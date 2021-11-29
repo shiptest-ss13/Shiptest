@@ -285,13 +285,15 @@
 	obj_damage = 150
 	stop_automated_movement = FALSE
 	wander = TRUE
-	maxbodytemp = INFINITY
 	attack_verb_continuous = "brutally slams"
 	attack_verb_simple = "brutally slam"
 	layer = MOB_LAYER
 	del_on_death = TRUE
 	sentience_type = SENTIENCE_BOSS
 	loot = list(/obj/item/organ/regenerative_core/legion = 3, /obj/effect/mob_spawn/human/corpse/damaged/legioninfested = 5, /obj/item/reagent_containers/glass/bottle/necropolis_seed)
+	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
+	minbodytemp = 0
+	maxbodytemp = INFINITY
 	move_to_delay = 5
 	vision_range = 9
 	aggro_vision_range = 9
