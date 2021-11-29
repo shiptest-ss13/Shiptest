@@ -290,7 +290,7 @@
 	layer = MOB_LAYER
 	del_on_death = TRUE
 	sentience_type = SENTIENCE_BOSS
-	loot = list(/obj/item/organ/regenerative_core/legion = 3, /obj/effect/mob_spawn/human/corpse/damaged/legioninfested = 5, /obj/effect/mob_spawn/human/corpse/damaged/legioninfested = 5, /obj/effect/mob_spawn/human/corpse/damaged/legioninfested = 5, /obj/item/reagent_containers/glass/bottle/necropolis_seed)
+	loot = list(/obj/item/organ/regenerative_core/legion = 3, /obj/effect/mob_spawn/human/corpse/damaged/legioninfested = 5, /obj/effect/mob_spawn/human/corpse/damaged/legioninfested = 5, /obj/effect/mob_spawn/human/corpse/damaged/legioninfested = 5)
 	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
 	minbodytemp = 0
 	maxbodytemp = INFINITY
@@ -313,6 +313,8 @@
 	new /obj/item/crusher_trophy/legion_skull(loc)
 	new /obj/item/crusher_trophy/legion_skull(loc)
 	new /obj/item/crusher_trophy/legion_skull(loc)
+	if(prob(45))
+		new /obj/item/reagent_containers/glass/bottle/necropolis_seed(loc)
 
 /mob/living/simple_animal/hostile/big_legion/Initialize()
 	.=..()
