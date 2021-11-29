@@ -38,9 +38,9 @@
 					return
 				playsound(src, 'sound/items/deconstruct.ogg', 50, TRUE)
 				to_chat(user, "<span class='notice'>You place [P] inside the frame.</span>")
-				update_icon()
 				circuit = P
 				circuit.add_fingerprint(user)
+				update_icon()
 				return
 
 			else if(istype(P, /obj/item/circuitboard) && !circuit)
@@ -56,10 +56,10 @@
 				P.play_tool_sound(src)
 				to_chat(user, "<span class='notice'>You remove [circuit].</span>")
 				state = 1
-				update_icon()
 				circuit.forceMove(drop_location())
 				circuit.add_fingerprint(user)
 				circuit = null
+				update_icon()
 				return
 		if(2)
 			if(P.tool_behaviour == TOOL_SCREWDRIVER && circuit)
