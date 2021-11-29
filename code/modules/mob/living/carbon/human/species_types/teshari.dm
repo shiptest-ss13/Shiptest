@@ -32,14 +32,6 @@
 	mutanttongue = /obj/item/organ/tongue/teshari
 	species_language_holder = /datum/language_holder/teshari
 
-/datum/species/teshari/on_species_gain(mob/living/carbon/C, datum/species/old_species, pref_load)
-	. = ..()
-	C.can_be_held = TRUE
-
-/datum/species/teshari/on_species_loss(mob/living/carbon/human/C, datum/species/new_species, pref_load)
-	. = ..()
-	C.can_be_held = FALSE
-
 /datum/species/teshari/random_name(gender,unique,lastname)
 	if(unique)
 		return random_unique_kepori_name()
