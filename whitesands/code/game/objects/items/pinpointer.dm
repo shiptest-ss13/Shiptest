@@ -68,6 +68,7 @@
 				STOP_PROCESSING(SSobj, src)
 				return null
 			scan_minerals()
+			playsound(src, 'sound/effects/ping.ogg', 20)
 
 /obj/item/pinpointer/deepcore/proc/scan_minerals() //used by the surface mining mode
 	if(current_cooldown <= world.time)

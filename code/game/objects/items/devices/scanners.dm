@@ -107,6 +107,7 @@ GENE SCANNER
 
 /obj/item/healthanalyzer/attack(mob/living/M, mob/living/carbon/human/user)
 	flick("[icon_state]-scan", src)	//makes it so that it plays the scan animation upon scanning, including clumsy scanning
+	playsound(src, 'sound/effects/fastbeep.ogg', 20)
 
 	// Clumsiness/brain damage check
 	if ((HAS_TRAIT(user, TRAIT_CLUMSY) || HAS_TRAIT(user, TRAIT_DUMB)) && prob(50))
@@ -712,6 +713,7 @@ GENE SCANNER
 		user.visible_message("<span class='notice'>[user] analyzes [M]'s genetic sequence.</span>", \
 							"<span class='notice'>You analyze [M]'s genetic sequence.</span>")
 		gene_scan(M, user)
+		playsound(src, 'sound/effects/fastbeep.ogg', 20)
 
 	else
 		user.visible_message("<span class='notice'>[user] fails to analyze [M]'s genetic sequence.</span>", "<span class='warning'>[M] has no readable genetic sequence!</span>")
@@ -848,6 +850,7 @@ GENE SCANNER
 	flick("[icon_state]-scan", src)
 	if(!proximity)
 		return
+	playsound(src, 'sound/effects/fastbeep.ogg', 20)
 	if(!isnull(A.reagents))
 		if(A.reagents.reagent_list.len > 0)
 			var/reagents_length = A.reagents.reagent_list.len

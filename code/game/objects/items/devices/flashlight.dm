@@ -18,6 +18,8 @@
 	light_power = 0.8
 	light_on = FALSE
 	var/on = FALSE
+	var/toggle_on_sound = 'sound/items/flashlight_on.ogg'
+	var/toggle_off_sound = 'sound/items/flashlight_off.ogg'
 
 
 /obj/item/flashlight/Initialize()
@@ -38,7 +40,7 @@
 
 /obj/item/flashlight/attack_self(mob/user)
 	on = !on
-	playsound(user, on ? 'sound/weapons/magin.ogg' : 'sound/weapons/magout.ogg', 40, TRUE)
+	playsound(user, on ? toggle_on_sound : toggle_off_sound, 40, TRUE)
 	update_brightness(user)
 	for(var/X in actions)
 		var/datum/action/A = X
@@ -450,6 +452,8 @@
 	item_state = "glowstick"
 	grind_results = list(/datum/reagent/phenol = 15, /datum/reagent/hydrogen = 10, /datum/reagent/oxygen = 5) //Meth-in-a-stick
 	var/fuel = 0
+	toggle_on_sound = 'sound/effects/glowstick.ogg'
+	toggle_off_sound = 'sound/effects/glowstick.ogg'
 
 
 /obj/item/flashlight/glowstick/Initialize()

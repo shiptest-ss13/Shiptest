@@ -15,10 +15,13 @@
 	var/icon_screen = "generic"
 	var/time_to_screwdrive = 20
 	var/authenticated = 0
-
+	///Looping audio for when the computer is on
+	var/datum/looping_sound/computer/soundloop
 
 /obj/machinery/computer/Initialize(mapload, obj/item/circuitboard/C)
 	. = ..()
+
+	soundloop = new(list(src))
 	power_change()
 	if(!QDELETED(C))
 		qdel(circuit)
@@ -27,6 +30,7 @@
 
 /obj/machinery/computer/Destroy()
 	QDEL_NULL(circuit)
+	QDEL_NULL(soundloop)
 	return ..()
 
 /obj/machinery/computer/process()
@@ -53,8 +57,10 @@
 /obj/machinery/computer/power_change()
 	. = ..()
 	if(machine_stat & NOPOWER)
+		soundloop.stop()
 		set_light(0)
 	else
+		soundloop.start()
 		set_light(brightness_on)
 
 /obj/machinery/computer/screwdriver_act(mob/living/user, obj/item/I)

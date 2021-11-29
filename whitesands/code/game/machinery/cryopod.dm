@@ -196,6 +196,9 @@ GLOBAL_LIST_EMPTY(cryopod_computers)
 	var/close_state = "cryopod"
 	var/obj/docking_port/mobile/linked_ship
 
+	var/open_sound = 'sound/machines/podopen.ogg'
+	var/close_sound = 'sound/machines/podclose.ogg'
+
 /obj/machinery/cryopod/Initialize()
 	..()
 	if(!preserve_items_typecache)
@@ -240,18 +243,24 @@ GLOBAL_LIST_EMPTY(cryopod_computers)
 			C.SetSleeping(50)
 			to_chat(occupant, "<span class='boldnotice'>You begin to wake from cryosleep...</span>")
 			icon_state = close_state
+			playsound(src, 'sound/machines/hiss.ogg', 30, 1)
 			return
 		var/mob/living/mob_occupant = occupant
 		if(mob_occupant && mob_occupant.stat != DEAD)
 			to_chat(occupant, "<span class='boldnotice'>You feel cool air surround you. You go numb as your senses turn inward.</span>")
 		addtimer(CALLBACK(src, .proc/try_despawn_occupant, mob_occupant), mob_occupant.client ? time_till_despawn * 0.1 : time_till_despawn) // If they're logged in, reduce the timer
 	icon_state = close_state
+	if(close_sound)
+		playsound(src, close_sound, 40)
 
 /obj/machinery/cryopod/open_machine()
 	..()
 	icon_state = open_state
 	density = TRUE
 	name = initial(name)
+	if(open_sound)
+		playsound(src, open_sound, 40)
+
 
 /obj/machinery/cryopod/container_resist_act(mob/living/user)
 	visible_message("<span class='notice'>[occupant] emerges from [src]!</span>",
