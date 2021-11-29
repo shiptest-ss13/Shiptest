@@ -59,6 +59,20 @@
 	alt_suit = null
 	dcoat = /obj/item/clothing/suit/hooded/wintercoat/science
 
+/datum/outfit/job/roboticist/engineer
+	name = "Roboticist (Engine Technician)"
+
+	belt = /obj/item/storage/belt/utility/full/engi
+	l_pocket = /obj/item/pda/toxins
+	alt_uniform = /obj/item/clothing/under/rank/rnd/roboticist/mech_engineer
+	suit = /obj/item/clothing/suit/toggle/hazard
+	alt_suit = /obj/item/clothing/suit/toggle/labcoat/science
+	shoes = /obj/item/clothing/shoes/workboots
+	head = /obj/item/clothing/head/hardhat
+	r_pocket = /obj/item/t_scanner
+
+	box = /obj/item/storage/box/survival/engineer
+
 /datum/outfit/job/roboticist/seniorroboticist
 	name = "Roboticist (Senior Roboticist)"
 
@@ -71,3 +85,19 @@
 	neck = /obj/item/clothing/neck/tie/black
 
 	backpack_contents = list(/obj/item/storage/belt/utility/full=1)
+
+//Shiptest Outfits
+
+/datum/outfit/job/roboticist/technician
+	name = "Mech Technician (Industrial)"
+	uniform = /obj/item/clothing/under/rank/rnd/roboticist/mech_engineer
+	alt_uniform = null
+	shoes = /obj/item/clothing/shoes/workboots
+	suit = /obj/item/clothing/suit/apron/overalls
+	alt_suit = /obj/item/clothing/suit/hazardvest
+	ears = /obj/item/radio/headset/headset_rob
+
+	backpack = /obj/item/storage/backpack/industrial
+	satchel = /obj/item/storage/backpack/satchel/eng
+	duffelbag = /obj/item/storage/backpack/duffelbag/engineering
+	courierbag = /obj/item/storage/backpack/messenger/engi

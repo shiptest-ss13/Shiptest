@@ -119,6 +119,8 @@ GLOBAL_LIST_INIT(available_depts, list(SEC_DEPT_ENGINEERING, SEC_DEPT_MEDICAL, S
 	chameleon_extras = list(/obj/item/gun/energy/disabler, /obj/item/clothing/glasses/hud/security/sunglasses, /obj/item/clothing/head/helmet)
 	//The helmet is necessary because /obj/item/clothing/head/helmet/sec is overwritten in the chameleon list by the standard helmet, which has the same name and icon state
 
+//Shiptest outfits begin
+
 /datum/outfit/job/security/solgov
 	name = "Boarding Specialist (SolGov)"
 
@@ -127,6 +129,11 @@ GLOBAL_LIST_INIT(available_depts, list(SEC_DEPT_ENGINEERING, SEC_DEPT_MEDICAL, S
 	shoes = /obj/item/clothing/shoes/combat
 	head = /obj/item/clothing/head/helmet/solgov
 	suit = /obj/item/clothing/suit/armor/vest/solgov
+
+/datum/outfit/job/security/solgov/rebel
+	name = "Boarding Specialist (Deserter)"
+
+	uniform = /obj/item/clothing/under/syndicate/camo
 
 /datum/outfit/job/security/solgov/elite
 	name = "Marine (SolGov)"
@@ -153,6 +160,17 @@ GLOBAL_LIST_INIT(available_depts, list(SEC_DEPT_ENGINEERING, SEC_DEPT_MEDICAL, S
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses
 	head = /obj/item/clothing/head/beret/sec/officer
 	suit = /obj/item/clothing/suit/armor/vest/security/officer
+
+/datum/outfit/job/security/western
+	name = "Security Specialist (Western)"
+
+	uniform = /obj/item/clothing/under/rank/security/officer/beatcop
+	alt_uniform = null
+	shoes = /obj/item/clothing/shoes/jackboots
+	glasses = /obj/item/clothing/glasses/hud/security/sunglasses
+	head = /obj/item/clothing/head/cowboy/sec
+
+//Shiptest outfits end
 
 /obj/item/radio/headset/headset_sec/alt/department/Initialize()
 	. = ..()

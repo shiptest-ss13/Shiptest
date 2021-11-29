@@ -3,6 +3,7 @@
 	id = "teshari"
 	default_color = "6060FF"
 	species_traits = list(MUTCOLORS, EYECOLOR, NO_UNDERWEAR)
+	inherent_traits = list(TRAIT_HOLDABLE)
 	mutant_bodyparts = list("teshari_feathers", "teshari_body_feathers")
 	default_features = list("mcolor" = "0F0", "wings" = "None", "teshari_feathers" = "Plain", "teshari_body_feathers" = "Plain")
 	meat = /obj/item/reagent_containers/food/snacks/meat/slab/chicken

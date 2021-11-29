@@ -62,6 +62,9 @@
 	///Levels unlocked at roundstart in physiology
 	var/list/roundstart_experience
 
+	///Basically determines whether or not more of the job can be opened.
+	var/officer = FALSE
+
 /datum/job/New(new_title, datum/outfit/new_outfit)
 	if(new_title)
 		title = new_title

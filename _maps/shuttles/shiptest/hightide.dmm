@@ -231,7 +231,9 @@
 /area/ship/maintenance/fore)
 "jr" = (
 /obj/machinery/door/airlock/maintenance_hatch,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 8
+	},
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "ka" = (
@@ -647,7 +649,7 @@
 /turf/open/floor/plating,
 /area/ship/maintenance/central)
 "yw" = (
-/obj/machinery/cryopod/latejoin{
+/obj/machinery/cryopod{
 	dir = 4
 	},
 /turf/open/floor/plating,
@@ -1250,7 +1252,7 @@
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "XU" = (
-/obj/machinery/cryopod/latejoin{
+/obj/machinery/cryopod{
 	dir = 4
 	},
 /obj/item/trash/semki,

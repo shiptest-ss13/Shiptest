@@ -15,12 +15,14 @@
 /obj/machinery/holopad/emergency/command,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/button/door{
+	dir = 4;
 	id = "pirateshutters";
 	name = "Window Lockdown";
 	pixel_x = -24;
 	pixel_y = -5
 	},
 /obj/machinery/button/door{
+	dir = 4;
 	id = "piratecargo";
 	name = "Blast Door Control";
 	pixel_x = -24;
@@ -38,11 +40,13 @@
 	},
 /obj/structure/railing,
 /obj/item/radio/intercom/wideband{
-	pixel_x = 28;
-	pixel_y = 5
+	dir = 8;
+	pixel_x = 22;
+	pixel_y = 10
 	},
 /obj/item/radio/intercom{
-	pixel_x = 28;
+	dir = 8;
+	pixel_x = 22;
 	pixel_y = -10
 	},
 /obj/effect/landmark/start/captain,
@@ -238,7 +242,7 @@
 	pixel_y = 26
 	},
 /obj/item/radio/intercom{
-	pixel_y = 28
+	pixel_y = 22
 	},
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
@@ -251,13 +255,13 @@
 "mJ" = (
 /obj/structure/railing,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/landmark/start/depsec,
 /obj/structure/cable{
 	icon_state = "4-6"
 	},
 /obj/structure/extinguisher_cabinet{
 	pixel_y = 32
 	},
+/obj/effect/landmark/start/security_officer,
 /turf/open/floor/pod/light,
 /area/ship/security)
 "mU" = (
@@ -313,7 +317,7 @@
 	icon_state = "0-8"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/landmark/start/depsec,
+/obj/effect/landmark/start/security_officer,
 /turf/open/floor/pod/light,
 /area/ship/security)
 "nC" = (
@@ -331,7 +335,7 @@
 	pixel_y = 26
 	},
 /obj/item/radio/intercom{
-	pixel_y = 28
+	pixel_y = 22
 	},
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
@@ -494,9 +498,7 @@
 /turf/open/floor/mineral/plastitanium,
 /area/ship/security)
 "rF" = (
-/obj/item/gun/ballistic/shotgun/doublebarrel{
-	pixel_y = -5
-	},
+/obj/item/gun/ballistic/shotgun/doublebarrel,
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
 	},
@@ -538,6 +540,12 @@
 /obj/item/clothing/head/helmet/space,
 /obj/effect/turf_decal/industrial/warning/corner{
 	dir = 1
+	},
+/obj/structure/closet/wall/red{
+	dir = 4;
+	name = "suit locker";
+	pixel_x = -28;
+	req_one_access_txt = "1"
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/security)
@@ -741,7 +749,7 @@
 /area/ship/crew)
 "wZ" = (
 /obj/machinery/vending/boozeomat/all_access{
-	onstation = 0
+	all_items_free = 1
 	},
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/crew)
@@ -973,7 +981,8 @@
 "Df" = (
 /obj/structure/reagent_dispensers/watertank,
 /obj/item/radio/intercom{
-	pixel_x = -28
+	dir = 4;
+	pixel_x = -22
 	},
 /turf/open/floor/pod/light,
 /area/ship/cargo)
@@ -1069,7 +1078,7 @@
 /turf/open/floor/pod/light,
 /area/ship/crew)
 "EG" = (
-/obj/machinery/cryopod/latejoin{
+/obj/machinery/cryopod{
 	dir = 4
 	},
 /obj/structure/curtain/bounty,
@@ -1177,7 +1186,7 @@
 "Id" = (
 /obj/structure/railing,
 /obj/item/radio/intercom{
-	pixel_y = 28
+	pixel_y = 22
 	},
 /turf/open/floor/pod/light,
 /area/ship/cargo)
@@ -1223,6 +1232,7 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/button/door{
+	dir = 4;
 	id = "piratecargo";
 	name = "Blast Door Control";
 	pixel_x = -24;
@@ -1253,6 +1263,7 @@
 /area/ship/cargo)
 "KS" = (
 /obj/machinery/button/door{
+	dir = 8;
 	id = "piratecargo";
 	name = "Blast Door Control";
 	pixel_x = 24;
@@ -1413,7 +1424,8 @@
 	dir = 8
 	},
 /obj/item/radio/intercom{
-	pixel_x = -28
+	dir = 4;
+	pixel_x = -22
 	},
 /turf/open/floor/plating,
 /area/ship/hallway/port)
@@ -1728,7 +1740,8 @@
 	dir = 4
 	},
 /obj/item/radio/intercom{
-	pixel_x = 28
+	dir = 8;
+	pixel_x = 22
 	},
 /turf/open/floor/plating,
 /area/ship/hallway/starboard)

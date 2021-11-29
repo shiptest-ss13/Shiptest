@@ -159,8 +159,8 @@
 /obj/item/clothing/under/misc/coordinator
 	name = "coordinator jumpsuit"
 	desc = "A jumpsuit made by party people, from party people, for party people."
-	icon = 'icons/obj/clothing/under/captain.dmi'
-	mob_overlay_icon = 'icons/mob/clothing/under/captain.dmi'
+	icon = 'icons/obj/clothing/under/command.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/under/command.dmi'
 	icon_state = "captain_parade"
 	item_state = "by_suit"
 	can_adjust = FALSE

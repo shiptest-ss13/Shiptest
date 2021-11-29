@@ -44,6 +44,19 @@
 
 	chameleon_extras = /obj/item/gun/energy/kinetic_accelerator
 
+/datum/outfit/job/miner/solgov
+	name = "Pioneer (SolGov)"
+
+	uniform = /obj/item/clothing/under/solgov
+	accessory = /obj/item/clothing/accessory/armband/cargo
+	head = /obj/item/clothing/head/beret/solgov/plain
+
+/datum/outfit/job/miner/solgov/rebel
+	name = "Pioneer (Deserter)"
+
+	uniform = /obj/item/clothing/under/syndicate/camo
+	head = /obj/item/clothing/head/beret/solgov/terragov/plain
+
 /datum/outfit/job/miner/equipped
 	name = "Shaft Miner (Equipment)"
 	suit = /obj/item/clothing/suit/hooded/explorer
@@ -71,3 +84,38 @@
 	name = "Shaft Miner (Equipment + Hardsuit)"
 	suit = /obj/item/clothing/suit/space/hardsuit/mining
 	mask = /obj/item/clothing/mask/breath
+
+//Shiptest Outfits
+
+/datum/outfit/job/miner/hazard
+	name = "Asteroid Miner (Hazard)"
+	uniform = /obj/item/clothing/under/rank/cargo/miner/hazard
+	alt_uniform = null
+	alt_suit = /obj/item/clothing/suit/toggle/hazard
+
+/datum/outfit/job/miner/solgov
+	name = "Field Engineer (SolGov)"
+
+	uniform = /obj/item/clothing/under/solgov
+	accessory = /obj/item/clothing/accessory/armband/cargo
+	head = /obj/item/clothing/head/hardhat/mining
+	suit =  /obj/item/clothing/suit/hazardvest
+
+/datum/outfit/job/miner/solgov/rebel
+	name = "Field Engineer (Deserter)"
+
+	uniform = /obj/item/clothing/under/syndicate/camo
+
+/datum/outfit/job/miner/scientist
+	name = "Minerologist"
+
+	belt = /obj/item/pda/toxins
+	uniform = /obj/item/clothing/under/rank/cargo/miner/hazard
+	alt_uniform = /obj/item/clothing/under/rank/rnd/roboticist
+	suit = /obj/item/clothing/suit/toggle/labcoat/science
+	alt_suit = /obj/item/clothing/suit/toggle/hazard
+	dcoat = /obj/item/clothing/suit/hooded/wintercoat/science
+
+	backpack = /obj/item/storage/backpack/science
+	satchel = /obj/item/storage/backpack/satchel/tox
+	courierbag = /obj/item/storage/backpack/messenger/tox

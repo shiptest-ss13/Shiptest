@@ -10,6 +10,7 @@
 	selection_color = "#ddddff"
 	minimal_player_age = 10
 	exp_requirements = 180
+	officer = TRUE
 	wiki_page = "Head_of_Personnel" //WS Edit - Wikilinks/Warning
 	exp_type = EXP_TYPE_CREW
 	exp_type_department = EXP_TYPE_SERVICE
@@ -65,11 +66,23 @@
 	if(locate(/datum/holiday/ianbirthday) in SSevents.holidays)
 		undershirt = /datum/sprite_accessory/undershirt/ian
 
+/datum/outfit/job/head_of_personnel/nt
+	name = "First Officer (Nanotrasen)"
+	uniform = /obj/item/clothing/under/rank/command/lieutenant/blue
+	alt_uniform = null
+	alt_suit = null
+	shoes = /obj/item/clothing/shoes/laceup
+	head = /obj/item/clothing/head/collectable/HoP
+
 /datum/outfit/job/head_of_personnel/solgov
 	name = "Executive Officer (SolGov)"
 	uniform = /obj/item/clothing/under/rank/command/lieutenant
 	head = /obj/item/clothing/head/solgov
 	shoes = /obj/item/clothing/shoes/laceup
+
+/datum/outfit/job/head_of_personnel/solgov/rebel
+	name = "Executive Officer (Deserter)"
+	head = /obj/item/clothing/head/solgov/terragov
 
 /datum/outfit/job/head_of_personnel/pirate
 	name = "First Mate (Pirate)"
@@ -77,3 +90,12 @@
 	shoes = /obj/item/clothing/shoes/jackboots
 	head = /obj/item/clothing/head/pirate
 	suit = /obj/item/clothing/suit/pirate
+
+/datum/outfit/job/head_of_personnel/western
+	name = "First Mate (Western)"
+	uniform = /obj/item/clothing/under/rank/security/officer/blueshirt
+	alt_uniform = null
+	suit = null
+	shoes = /obj/item/clothing/shoes/cowboy/black
+	accessory = /obj/item/clothing/accessory/waistcoat
+	head = /obj/item/clothing/head/HoS/cowboy
