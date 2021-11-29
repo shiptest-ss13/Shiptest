@@ -6,7 +6,7 @@
 	stage_speed = -10
 	transmittable = -3
 	level = 9
-	base_message_chance = 5
+	base_message_chance = 3
 	severity = 0
 	symptom_delay_min = 1
 	symptom_delay_max = 1
