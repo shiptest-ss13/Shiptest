@@ -118,6 +118,8 @@
 	var/update_overlay = -1
 	var/icon_update_needed = FALSE
 	var/obj/machinery/computer/apc_control/remote_control = null
+	///Looping audio for when apc is on and sending power
+	var/datum/looping_sound/apc/soundloop
 
 /obj/machinery/power/apc/unlocked
 	locked = FALSE
@@ -210,6 +212,7 @@
 /obj/machinery/power/apc/Destroy()
 	GLOB.apcs_list -= src
 
+	QDEL_NULL(soundloop)
 	if(malfai && operating)
 		malfai.malf_picker.processing_time = clamp(malfai.malf_picker.processing_time - 10,0,1000)
 	area.power_light = FALSE
@@ -242,6 +245,7 @@
 
 /obj/machinery/power/apc/Initialize(mapload)
 	. = ..()
+	soundloop = new(list(src))
 	if(!mapload)
 		return
 	has_electronics = APC_ELECTRONICS_SECURED

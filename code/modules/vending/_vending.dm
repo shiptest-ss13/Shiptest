@@ -168,6 +168,9 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 	/// used for narcing on underages
 	var/obj/item/radio/Radio
 
+	///Looping audio for when the vending machine is powered
+	var/datum/looping_sound/vending/soundloop
+
 /**
 	* Initialize the vending machine
 	*
@@ -190,12 +193,14 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 	// The first time this machine says something will be at slogantime + this random value,
 	// so if slogantime is 10 minutes, it will say it at somewhere between 10 and 20 minutes after the machine is crated.
 	last_slogan = world.time + rand(0, slogan_delay)
+	soundloop = new(list(src))
 	power_change()
 
 	Radio = new /obj/item/radio(src)
 	Radio.listening = 0
 
 /obj/machinery/vending/Destroy()
+	QDEL_NULL(soundloop)
 	QDEL_NULL(wires)
 	QDEL_NULL(coin)
 	QDEL_NULL(bill)
@@ -867,6 +872,10 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 	. = ..()
 	if(powered())
 		START_PROCESSING(SSmachines, src)
+		soundloop.start()
+	else
+		soundloop.stop()
+
 
 //Somebody cut an important wire and now we're following a new definition of "pitch."
 /**

@@ -96,3 +96,15 @@
 	mid_length = 1.8 SECONDS
 	extra_range = 10
 	volume = 70
+
+/datum/looping_sound/vending
+	mid_sounds = list('sound/machines/vending_machine_hum.ogg'=1)
+	mid_length = 2.8 SECONDS
+	extra_range = 5
+	volume = 10
+
+/datum/looping_sound/apc
+	mid_sounds = list('sound/machines/hdd_buzz.ogg'=1)
+	mid_length = 11 SECONDS
+	extra_range = 5
+	volume = 10
