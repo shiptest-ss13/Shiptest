@@ -295,8 +295,8 @@
 	minbodytemp = 0
 	maxbodytemp = INFINITY
 	move_to_delay = 5
-	vision_range = 9
-	aggro_vision_range = 9
+	vision_range = 4
+	aggro_vision_range = 4
 	speed = 5
 	faction = list("mining")
 	weather_immunities = list("lava","ash")
