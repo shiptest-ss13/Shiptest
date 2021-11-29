@@ -68,13 +68,13 @@
 				STOP_PROCESSING(SSobj, src)
 				return null
 			scan_minerals()
-			playsound(src, 'sound/effects/ping.ogg', 20)
 
 /obj/item/pinpointer/deepcore/proc/scan_minerals() //used by the surface mining mode
 	if(current_cooldown <= world.time)
 		current_cooldown = world.time + cooldown
 		var/turf/t = get_turf(src)
 		mineral_scan_pulse(t, range)
+		playsound(src, 'sound/effects/ping.ogg', 20)
 
 /obj/item/pinpointer/deepcore/update_overlays()
 	. = ..()
