@@ -1,6 +1,4 @@
 /obj/item/clothing/shoes/magboots
-	icon = 'whitesands/icons/obj/clothing/shoes.dmi'
-	mob_overlay_icon = 'whitesands/icons/mob/clothing/feet.dmi'
 
 /obj/item/clothing/shoes/magboots/attackby(obj/item/I, mob/user, params)
 	if(I.tool_behaviour == TOOL_WELDER)
