@@ -81,3 +81,15 @@
 	gloves = null
 	neck = /obj/item/clothing/neck/tie/green
 	backpack_contents = list(/obj/item/melee/classic_baton/telescopic=1, /obj/item/modular_computer/tablet/preset/advanced=1, /obj/item/storage/belt/utility/chief/full=1, /obj/item/clothing/gloves/color/black=1)
+
+/datum/outfit/job/ce/gorlex
+	name = "Foreman (Gorlex Marauders)"
+
+	id = /obj/item/card/id/syndicate_command/crew_id
+	ears = /obj/item/radio/headset/syndicate/alt
+	uniform = /obj/item/clothing/under/syndicate/gorlex
+	alt_uniform = null
+	suit = /obj/item/clothing/suit/toggle/hazard
+	alt_suit = null
+	shoes = /obj/item/clothing/shoes/jackboots
+	gloves = /obj/item/clothing/gloves/combat

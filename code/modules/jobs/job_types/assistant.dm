@@ -135,3 +135,12 @@ Assistant
 
 	uniform = /obj/item/clothing/under/syndicate/aclfgrunt
 	shoes = /obj/item/clothing/shoes/jackboots
+
+/datum/outfit/job/assistant/operative/gorlex
+	name = "Junior Agent (Assistant)"
+
+	id = /obj/item/card/id/syndicate_command/crew_id
+	ears = /obj/item/radio/headset/syndicate
+	uniform = /obj/item/clothing/under/syndicate/gorlex
+	alt_uniform = /obj/item/clothing/under/syndicate
+

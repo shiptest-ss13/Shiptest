@@ -1,0 +1,31 @@
+{
+	"map_name": "Hyena-class Salvage Ship",
+	"map_short_name": "Hyena-class",
+	"map_path": "_maps/shuttles/shiptest/gorlex_hyena.dmm",
+	"map_id": "gorlex_hyena",
+	"job_slots": {
+		"Captain": {
+			"outfit": "/datum/outfit/job/captain/gorlex",
+			"officer": true,
+			"slots": 1
+		},
+		"Foreman": {
+			"outfit": "/datum/outfit/job/ce/gorlex",
+			"officer": true,
+			"slots": 1
+		},
+		"Mechanic": {
+			"outfit": "/datum/outfit/job/engineer/syndicate/gorlex",
+			"slots": 1
+		},
+		"Wrecker": {
+			"outfit": "/datum/outfit/job/miner/gorlex",
+			"slots": 2
+		},
+		"Junior Agent": {
+			"outfit": "/datum/outfit/job/assistant/operative/gorlex",
+			"slots": 2
+		}
+	},
+	"cost": 750
+}
