@@ -418,8 +418,8 @@
 					C.forceMove(drop_location())
 				A.circuit = M
 				A.state = 3
-				A.icon_state = "3"
 				A.set_anchored(TRUE)
+				A.update_icon()
 				qdel(src)
 			else
 				to_chat(user, "<span class='notice'>You disconnect the monitor.</span>")
@@ -430,7 +430,7 @@
 				A.circuit = M
 				A.state = 4
 				A.set_anchored(TRUE)
-				A.update_icon()
+				A.update_icon()on
 				qdel(src)
 	else if(user.a_intent != INTENT_HARM && !(I.item_flags & NOBLUDGEON))
 		attack_hand(user)
