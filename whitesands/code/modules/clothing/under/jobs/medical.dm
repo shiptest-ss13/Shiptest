@@ -3,8 +3,6 @@
 /obj/item/clothing/under/rank/medical/chemist/pharmacist
 	name = "pharmacist's jumpsuit"
 	desc = "It's made of a special fiber that gives special protection against biohazards. For those pharmacists that want to improve or worsen the station's health."
-	icon = 'whitesands/icons/obj/clothing/under/medical.dmi'
-	mob_overlay_icon = 'whitesands/icons/mob/clothing/under/medical.dmi'
 	icon_state = "pharmacist"
 	fitted = NO_FEMALE_UNIFORM
 
@@ -17,8 +15,6 @@
 /obj/item/clothing/under/rank/medical/chemist/pharmacologist
 	name = "pharmacologist's jumpsuit"
 	desc = "It's made of a special fiber that gives special protection against biohazards. For those pharmacologist one step behind to being evil."
-	icon = 'whitesands/icons/obj/clothing/under/medical.dmi'
-	mob_overlay_icon = 'whitesands/icons/mob/clothing/under/medical.dmi'
 	icon_state = "pharmacologist"
 	fitted = NO_FEMALE_UNIFORM
 
@@ -31,8 +27,6 @@
 /obj/item/clothing/under/rank/medical/chemist/junior_chemist
 	name = "junior chemist's jumpsuit"
 	desc = "It's made of a special fiber that gives special protection against biohazards. A jumpsuit for junior chemist staff."
-	icon = 'whitesands/icons/obj/clothing/under/medical.dmi'
-	mob_overlay_icon = 'whitesands/icons/mob/clothing/under/medical.dmi'
 	icon_state = "junior_chemistry"
 	fitted = NO_FEMALE_UNIFORM
 
@@ -46,8 +40,6 @@
 /obj/item/clothing/under/rank/medical/psychiatrist
 	name = "white psychiatrist's suit"
 	desc = "A turtleneck for personnel trained to deal with psychological issues, such as terrible work place incidents or the clown's bad jokes. This one has a white turtleneck."
-	icon = 'whitesands/icons/obj/clothing/under/medical.dmi'
-	mob_overlay_icon = 'whitesands/icons/mob/clothing/under/medical.dmi'
 	icon_state = "psychiatrist-white"
 
 	can_adjust = FALSE
@@ -69,8 +61,6 @@
 /obj/item/clothing/under/rank/medical/doctor/junior_doctor
 	name = "junior doctor's jumpsuit"
 	desc = "It's made of a special fiber that provides minor protection against biohazards. Worn by the junior medical personnel."
-	icon = 'whitesands/icons/obj/clothing/under/medical.dmi'
-	mob_overlay_icon = 'whitesands/icons/mob/clothing/under/medical.dmi'
 	icon_state = "junior_medical"
 	fitted = NO_FEMALE_UNIFORM
 
@@ -83,10 +73,7 @@
 /obj/item/clothing/under/suit/cmo
 	name = "medical director suit"
 	desc = "A suit with medical colors, meant to be worn by those who lead the medical department."
-	icon = 'whitesands/icons/obj/clothing/under/medical.dmi'
-	mob_overlay_icon = 'whitesands/icons/mob/clothing/under/medical.dmi'
 	icon_state = "medical_director"
-
 	permeability_coefficient = 0.5
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 10, "rad" = 0, "fire" = 0, "acid" = 0)
 	fitted = NO_FEMALE_UNIFORM
@@ -102,18 +89,13 @@
 /obj/item/clothing/under/rank/medical/chief_medical_officer/surgeon_general
 	name = "surgeon-general scrubs"
 	desc = "It's made of a special fiber that provides minor protection against biohazards. This one is meant to be worn by surgeon-generals."
-	icon = 'whitesands/icons/obj/clothing/under/medical.dmi'
-	mob_overlay_icon = 'whitesands/icons/mob/clothing/under/medical.dmi'
 	icon_state = "surgeon_general"
 	can_adjust = FALSE
 
 /obj/item/clothing/under/suit/senior_doctor
 	name = "senior doctor suit"
 	desc = "A suit with medical colors, meant to be worn by senior staff."
-	icon = 'whitesands/icons/obj/clothing/under/medical.dmi'
-	mob_overlay_icon = 'whitesands/icons/mob/clothing/under/medical.dmi'
 	icon_state = "senior_medical"
-
 	permeability_coefficient = 0.5
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 10, "rad" = 0, "fire" = 0, "acid" = 0)
 	fitted = NO_FEMALE_UNIFORM
@@ -129,10 +111,7 @@
 /obj/item/clothing/under/suit/senior_chemist
 	name = "senior chemist suit"
 	desc = "A suit with chemistry colors, meant to be worn by senior staff."
-	icon = 'whitesands/icons/obj/clothing/under/medical.dmi'
-	mob_overlay_icon = 'whitesands/icons/mob/clothing/under/medical.dmi'
 	icon_state = "senior_chemistry"
-
 	permeability_coefficient = 0.5
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 10, "rad" = 0, "fire" = 50, "acid" = 65)
 	fitted = NO_FEMALE_UNIFORM
@@ -141,17 +120,13 @@
 	name = "senior chemist suit"
 	desc = "A skirtsuit with chemistry colors, meant to be worn by senior staff."
 	icon_state = "senior_chemistry_skirt"
-
 	body_parts_covered = CHEST|GROIN|ARMS
 	can_adjust = FALSE
 
 /obj/item/clothing/under/suit/pathologist
 	name = "pathologist suit"
 	desc = "A suit with special fibers that provide minor protection against biohazards. A suit with green pants, provided to pathologists."
-	icon = 'whitesands/icons/obj/clothing/under/medical.dmi'
-	mob_overlay_icon = 'whitesands/icons/mob/clothing/under/medical.dmi'
 	icon_state = "pathologist"
-
 	permeability_coefficient = 0.5
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 10, "rad" = 0, "fire" = 0, "acid" = 0)
 	fitted = NO_FEMALE_UNIFORM
@@ -160,17 +135,13 @@
 	name = "pathologist suit"
 	desc = "A suit with special fibers that provide minor protection against biohazards. A skirtsuit with green pants, provided to pathologists."
 	icon_state = "pathologist_skirt"
-
 	body_parts_covered = CHEST|GROIN|ARMS
 	can_adjust = FALSE
 
 /obj/item/clothing/under/rank/medical/paramedic/emt
 	name = "emergency medical technician jumpsuit"
 	desc = "It's made of a special fiber that provides minor protection against biohazards. It has shorts, allowing ease of movement for EMTs."
-	icon = 'whitesands/icons/obj/clothing/under/medical.dmi'
-	mob_overlay_icon = 'whitesands/icons/mob/clothing/under/medical.dmi'
 	icon_state = "emt"
-
 	body_parts_covered = CHEST|GROIN|ARMS
 	fitted = NO_FEMALE_UNIFORM
 
@@ -178,7 +149,6 @@
 	name = "emergency medical technician jumpskirt"
 	desc = "It's made of a special fiber that provides minor protection against biohazards."
 	icon_state = "emt_skirt"
-
 	can_adjust = FALSE
 
 /obj/item/clothing/under/rank/medical/doctor/red

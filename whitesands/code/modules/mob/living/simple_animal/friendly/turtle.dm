@@ -26,12 +26,15 @@
 	maxHealth = 2500
 	speed = 4
 	glide_size = 2
-	can_be_held = TRUE
 	chat_color = "#E7D26F"
 	footstep_type = FOOTSTEP_MOB_CLAW
 
 	var/turtle_hide_max = 25 //The time spent hiding in its shell
 	var/turtle_hide_dur = 25 //Same as above, this is the var that physically counts down
+
+/mob/living/simple_animal/turtle/Initialize()
+	. = ..()
+	ADD_TRAIT(src, TRAIT_HOLDABLE, INNATE_TRAIT)
 
 /mob/living/simple_animal/turtle/handle_automated_movement()
 	if(!isturf(src.loc) || !(mobility_flags & MOBILITY_MOVE) || buckled)

@@ -16,7 +16,6 @@
 	see_in_dark = 5
 	speak_chance = 1
 	turns_per_move = 10
-	can_be_held = TRUE
 	var/turns_since_scan = 0
 	var/obj/movement_target
 
@@ -138,6 +137,7 @@
 
 /mob/living/simple_animal/pet/dog/Initialize()
 	. = ..()
+	ADD_TRAIT(src, TRAIT_HOLDABLE, INNATE_TRAIT)
 	var/dog_area = get_area(src)
 	for(var/obj/structure/bed/dogbed/D in dog_area)
 		if(!D.owner)

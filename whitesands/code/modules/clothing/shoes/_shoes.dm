@@ -11,8 +11,8 @@
 
 /obj/item/clothing/shoes/proc/digi_alt(mob/living/carbon/human/user, set_icon_to)
 	if(set_icon_to)
-		mob_overlay_icon = 'whitesands/icons/mob/clothing/digialt.dmi'
+		mob_overlay_icon = 'icons/mob/clothing/digialt.dmi'
 	else
-		mob_overlay_icon = 'whitesands/icons/mob/clothing/feet.dmi'
+		mob_overlay_icon = 'icons/mob/clothing/feet.dmi'
 	user.update_inv_shoes()
 	return

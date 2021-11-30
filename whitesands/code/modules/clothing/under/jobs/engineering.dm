@@ -3,8 +3,6 @@
 /obj/item/clothing/under/rank/engineering/engineer/junior
 	name = "junior engineer jumpsuit"
 	desc = "A jumpsuit worn by junior engineers. It has minor radiation shielding."
-	icon = 'whitesands/icons/obj/clothing/under/engineering.dmi'
-	mob_overlay_icon = 'whitesands/icons/mob/clothing/under/engineering.dmi'
 	icon_state = "junior_engineer"
 	fitted = NO_FEMALE_UNIFORM
 
@@ -18,8 +16,6 @@
 /obj/item/clothing/under/rank/engineering/engineer/electrician
 	name = "electrician jumpsuit"
 	desc = "A jumpsuit worn by electricians, made of old insulated gloves. It has minor radiation shielding."
-	icon = 'whitesands/icons/obj/clothing/under/engineering.dmi'
-	mob_overlay_icon = 'whitesands/icons/mob/clothing/under/engineering.dmi'
 	icon_state = "electrician"
 	fitted = NO_FEMALE_UNIFORM
 
@@ -33,8 +29,6 @@
 /obj/item/clothing/under/rank/engineering/engineer/maintenance_tech
 	name = "maintenance technician jumpsuit"
 	desc = "A jumpsuit worn by maintenance technicians, to easily disappear and never be seen again in the maintanance tunnels... It has minor radiation shielding."
-	icon = 'whitesands/icons/obj/clothing/under/engineering.dmi'
-	mob_overlay_icon = 'whitesands/icons/mob/clothing/under/engineering.dmi'
 	icon_state = "maintenance_tech"
 	fitted = NO_FEMALE_UNIFORM
 
@@ -48,8 +42,6 @@
 /obj/item/clothing/under/rank/engineering/engineer/telecomm_specialist
 	name = "telecommunications specialist jumpsuit"
 	desc = "A jumpsuit worn by telecomm specialist, perfect for those who had earned a space communication degree. It has minor radiation shielding."
-	icon = 'whitesands/icons/obj/clothing/under/engineering.dmi'
-	mob_overlay_icon = 'whitesands/icons/mob/clothing/under/engineering.dmi'
 	icon_state = "telecomm_specialist"
 	fitted = NO_FEMALE_UNIFORM
 
@@ -63,8 +55,6 @@
 /obj/item/clothing/under/suit/ce
 	name = "engineering coordinator suit"
 	desc = "A suit with engineering colors, worn by those who lead and have survived the engineering department."
-	icon = 'whitesands/icons/obj/clothing/under/engineering.dmi'
-	mob_overlay_icon = 'whitesands/icons/mob/clothing/under/engineering.dmi'
 	icon_state = "senior_medical"
 
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 10, "fire" = 80, "acid" = 40)
@@ -82,8 +72,6 @@
 /obj/item/clothing/under/suit/senior_engineer
 	name = "senior engineer suit"
 	desc = "A suit with engineering colors, meant to be worn by senior staff."
-	icon = 'whitesands/icons/obj/clothing/under/engineering.dmi'
-	mob_overlay_icon = 'whitesands/icons/mob/clothing/under/engineering.dmi'
 	icon_state = "senior_engineer"
 
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 10, "fire" = 60, "acid" = 20)
@@ -101,8 +89,6 @@
 /obj/item/clothing/under/suit/senior_atmos
 	name = "senior atmospheric technician suit"
 	desc = "A suit with atmospheric colors, meant to be worn by senior staff."
-	icon = 'whitesands/icons/obj/clothing/under/engineering.dmi'
-	mob_overlay_icon = 'whitesands/icons/mob/clothing/under/engineering.dmi'
 	icon_state = "senior_atmos"
 	fitted = NO_FEMALE_UNIFORM
 
@@ -117,8 +103,6 @@
 /obj/item/clothing/under/rank/engineering/atmospheric_technician/life_support_specialist
 	name = "life support specialists's jumpsuit"
 	desc = "It's a jumpsuit worn by life support specialists, who are the ones behind the fact you are able to breath and complain."
-	icon = 'whitesands/icons/obj/clothing/under/engineering.dmi'
-	mob_overlay_icon = 'whitesands/icons/mob/clothing/under/engineering.dmi'
 	icon_state = "life_support_specialist"
 	resistance_flags = NONE
 	fitted = NO_FEMALE_UNIFORM
@@ -134,8 +118,6 @@
 /obj/item/clothing/under/rank/engineering/atmospheric_technician/firefighter
 	name = "firefighter's jumpsuit"
 	desc = "It's a jumpsuit worn by firefigthers to help aid in dealing science caused fires. It is made of fire resistant materials."
-	icon = 'whitesands/icons/obj/clothing/under/engineering.dmi'
-	mob_overlay_icon = 'whitesands/icons/mob/clothing/under/engineering.dmi'
 	icon_state = "firefighter"
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 60, "acid" = 0) //Same fire number as standard engineer uniform
 	fitted = NO_FEMALE_UNIFORM
