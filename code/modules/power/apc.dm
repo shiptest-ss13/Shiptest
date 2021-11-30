@@ -401,6 +401,7 @@
 	if(operating)
 		update_overlay |= APC_UPOVERLAY_OPERATING
 
+
 	if(update_state & UPSTATE_ALLGOOD)
 		if(locked)
 			update_overlay |= APC_UPOVERLAY_LOCKED

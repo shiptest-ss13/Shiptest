@@ -82,7 +82,6 @@
 	if(machine_stat & NOPOWER)
 		return
 
-	. += "fire_overlay"
 
 	. += "fire_[SEC_LEVEL_GREEN]"
 	SSvis_overlays.add_vis_overlay(src, icon, "fire_[SEC_LEVEL_GREEN]", layer, plane, dir)

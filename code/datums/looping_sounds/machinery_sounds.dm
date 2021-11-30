@@ -104,7 +104,7 @@
 	volume = 10
 
 /datum/looping_sound/apc
-	mid_sounds = list('sound/machines/hdd_buzz.ogg'=1)
-	mid_length = 11 SECONDS
+	mid_sounds = list('sound/machines/apc/apc_mid1.ogg'=1,'sound/machines/apc/apc_mid2.ogg'=1,'sound/machines/apc/apc_mid3.ogg'=1)
+	mid_length = 2.8 SECONDS
 	extra_range = 5
 	volume = 10
