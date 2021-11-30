@@ -107,6 +107,9 @@
 		addMachineryMember(A)
 
 /datum/pipeline/proc/merge(datum/pipeline/E)
+#ifdef CITESTING
+	return
+#endif
 	if(E == src)
 		return
 	air.set_volume(air.return_volume() + E.air.return_volume())
