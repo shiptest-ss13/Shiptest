@@ -1256,6 +1256,14 @@
 		return 0
 
 /obj/machinery/power/apc/process()
+	if(operating && cell)
+		if(!(cell.charge == 0))
+			soundloop.start()
+		else
+			soundloop.stop()
+	else
+		soundloop.stop()
+
 	if(icon_update_needed)
 		update_icon()
 	if(machine_stat & (BROKEN|MAINT))
