@@ -9,6 +9,13 @@
 	w_class = WEIGHT_CLASS_SMALL
 	attack_verb = list("waved", "patriotized")
 
+/obj/item/desk_flag/Initialize()
+	. = ..()
+	if(prob(5))
+		name = "vampire flag"
+		desc = "The blue, cyan, and white flag of the transylvanian society of vampires."
+		icon_state = "trans"
+
 /obj/item/desk_flag/solgov
 	name = "solgov flag"
 	desc = "The blue and gold flag of the Sol Government."
