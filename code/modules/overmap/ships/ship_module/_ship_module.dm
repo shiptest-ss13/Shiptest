@@ -99,7 +99,7 @@
 	for(var/slot in ship.modules)
 		for(var/datum/ship_module/module as anything in ship.modules[slot])
 			for(var/obj/structure/ship_module/module_structure as anything in module.installed_on[ship])
-				if(structure_id && structured_id != module_structure.structure_id)
+				if(structure_id && structure_id != module_structure.structure_id)
 					continue
 				if(module_structure in alerted)
 					continue

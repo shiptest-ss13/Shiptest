@@ -8,6 +8,47 @@
 	clicksound = null
 	var/list/last_hit_data
 
+/obj/item/circuitboard/computer/ship/weapons
+	name = "Weapons Control (Computer Board)"
+	build_path = /obj/machinery/computer/ship/weapons
+
+/obj/machinery/computer/ship/weapons/ui_static_data(mob/user)
+	// Generate weapon data list; this really shouldnt change very often
+	var/list/wep_data = list(
+		"weapon_lookup" = list()
+	)
+	for(var/datum/ship_module/weapon/weapon as anything in current_ship.modules[SHIP_SLOT_WEAPON])
+		var/wep_ref = ref(weapon)
+		wep_data["weapon_lookup"] += wep_ref
+		wep_data["weapon_data"][wep_ref] = list(
+			"name" = weapon.name,
+			"structure_count" = length(weapon.installed_on[current_ship]),
+			"damage_types" = convert_damage_types_to_readable_string(weapon.damage_types),
+			"damage_base" = weapon.damage,
+			"damage_variance" = weapon.damage_variance,
+			"structure_lookup" = list(),
+			"structure_data" = list()
+		)
+	return wep_data
+
+/obj/machinery/computer/ship/weapons/ui_data(mob/user)
+	var/list/data = list(
+		"structure_data" = list()
+	)
+	for(var/datum/ship_module/weapon/weapon as anything in current_ship.modules[SHIP_SLOT_WEAPON])
+		for(var/obj/structure/ship_module/weapon/struc as anything in weapon.installed_on[current_ship])
+			var/struc_ref = ref(struc)
+			data["structure_data"][struc_ref] = list(
+				"name" = struc.name,
+				"ammo" = struc.ammo,
+				"ammo_max" = struc.mag_size,
+				"reloading" = !!struc.reload_timer_id,
+				"reload_time" = struc.reload_time,
+				"reload_left" = struc.reload_eta - world.time
+			)
+	data["last_hit_data"] = length(last_hit_data) ? last_hit_data : FALSE
+	return data
+
 /obj/machinery/computer/ship/weapons/ui_act(action, list/params)
 	. = ..()
 	if(.)

@@ -18,6 +18,14 @@
 #define DAMAGE_EXPLOSIVE "Explosive"
 #define DAMAGE_BLOCKED_MOVE "ship-blocked-move.name" // classical localization joke, given this should NEVER BE USED AS OUTPUT
 
+/proc/convert_damage_types_to_readable_string(list/damage_types)
+	var/ret = "("
+	for(var/d_type in damage_types)
+		ret += "[d_type],"
+	ret = copytext(ret, 1, length(ret))
+	ret += ")"
+	return ret
+
 #define IS_DAMAGE_TYPE(t1, t2) (islist(t1) ? (t2 in t1) : t1 == t2)
 
 // Ship COMSIGs

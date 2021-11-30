@@ -94,7 +94,7 @@
 
 /obj/machinery/computer/ship/ui_status(mob/user)
 	if(bluespace_interferes && current_ship.is_jumping())
-		return UI_UPDATE
+		return max(..(), UI_UPDATE)
 	return ..()
 
 /obj/machinery/computer/ship/ui_close(mob/user)
