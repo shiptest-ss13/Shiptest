@@ -102,7 +102,7 @@
 	desc = "A beautiful blue flower."
 	icon_state = "geranium"
 	filling_color = "#008B8B"
-	
+
 // Harebell
 /obj/item/seeds/harebell
 	name = "pack of harebell seeds"
