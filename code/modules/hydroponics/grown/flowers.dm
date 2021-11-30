@@ -15,7 +15,7 @@
 	icon_grow = "poppy-grow"
 	icon_dead = "poppy-dead"
 	mutatelist = list(/obj/item/seeds/poppy/geranium, /obj/item/seeds/poppy/lily)
-	reagents_add = list(/datum/reagent/medicine/bicaridine = 0.2, /datum/reagent/consumable/nutriment = 0.05)
+	reagents_add = list(/datum/reagent/medicine/bicaridine = 0.2, /datum/reagent/consumable/nutriment = 0.05, /datum/reagent/medicine/morphine = 0.1)
 
 /obj/item/reagent_containers/food/snacks/grown/poppy
 	seed = /obj/item/seeds/poppy
@@ -66,14 +66,9 @@
 	icon_grow = "spacemanstrumpet-grow"
 	icon_dead = "spacemanstrumpet-dead"
 	mutatelist = list()
-	genes = list(/datum/plant_gene/reagent/polypyr)
-	reagents_add = list(/datum/reagent/consumable/nutriment = 0.05)
+	genes = list()
+	reagents_add = list(/datum/reagent/consumable/nutriment = 0.05, /datum/reagent/medicine/polypyr = 0.15)
 	rarity = 30
-
-/obj/item/seeds/poppy/lily/trumpet/Initialize(mapload,nogenes)
-	. = ..()
-	if(!nogenes)
-		unset_mutability(/datum/plant_gene/reagent/polypyr, PLANT_GENE_EXTRACTABLE)
 
 /obj/item/reagent_containers/food/snacks/grown/trumpet
 	seed = /obj/item/seeds/poppy/lily/trumpet
@@ -84,7 +79,7 @@
 	bitesize_mod = 3
 	foodtype = VEGETABLES
 	wine_power = 40
-	wine_flavor = "Purple"  //WS edit: new wine flavors. capitalization intentional
+	wine_flavor = "Purple and Astroturf"  //WS edit: new wine flavors. capitalization intentional
 
 // Geranium
 /obj/item/seeds/poppy/geranium
@@ -94,7 +89,8 @@
 	species = "geranium"
 	plantname = "Geranium Plants"
 	product = /obj/item/reagent_containers/food/snacks/grown/poppy/geranium
-	mutatelist = list()
+	mutatelist = list(/obj/item/seeds/poppy/geranium/fraxinella)
+	reagents_add = list(/datum/reagent/medicine/tricordrazine = 0.01, /datum/reagent/consumable/nutriment = 0.1, /datum/reagent/medicine/geranidine = 0.1)
 
 /obj/item/reagent_containers/food/snacks/grown/poppy/geranium
 	seed = /obj/item/seeds/poppy/geranium
@@ -102,6 +98,30 @@
 	desc = "A beautiful blue flower."
 	icon_state = "geranium"
 	filling_color = "#008B8B"
+	wine_power = 25
+	wine_flavor = "Vibrant Flowery Hues" //geranium is edible and allegedly has particularly versatile flavour profiles
+
+/obj/item/seeds/poppy/geranium/fraxinella
+	name = "pack of fraxinella seeds"
+	desc = "These seeds grow into fraxinella."
+	icon_state = "seed-fraxinella"
+	species = "fraxinella"
+	plantname = "Fraxinella Plants"
+	product = /obj/item/reagent_containers/food/snacks/grown/poppy/geranium/fraxinella
+	mutatelist = null
+	rarity = 15
+	reagents_add = list(/datum/reagent/consumable/nutriment = 0.05, /datum/reagent/fuel/oil = 0.05, /datum/reagent/)
+	mutatelist = list(/obj/item/seeds/poppy/geranium, /obj/item/seeds/poppy/lily)
+
+///Fraxinella Flowers.
+/obj/item/reagent_containers/food/snacks/grown/poppy/geranium/fraxinella
+	seed = /obj/item/seeds/poppy/geranium/fraxinella
+	name = "fraxinella"
+	desc = "A beautiful light pink flower."
+	icon_state = "fraxinella"
+	distill_reagent = /datum/reagent/ash
+	filling_color = "#f189e7"
+
 
 // Harebell
 /obj/item/seeds/harebell
@@ -256,3 +276,5 @@
 	if(!user.gloves)
 		to_chat(user, "<span class='danger'>The [name] burns your bare hand!</span>")
 		user.adjustFireLoss(rand(1, 5))
+
+
