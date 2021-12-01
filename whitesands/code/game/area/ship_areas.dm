@@ -272,6 +272,11 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	lighting_colour_bulb = "#ffdbb8"
 	sound_environment = SOUND_AREA_LARGE_ENCLOSED
 
+/area/ship/cargo/office
+	name = "Cargo Office"
+	icon_state = "quartoffice"
+	sound_environment = SOUND_AREA_STANDARD_STATION
+
 /// Hallways ///
 /area/ship/hallway
 	name = "Hallway"

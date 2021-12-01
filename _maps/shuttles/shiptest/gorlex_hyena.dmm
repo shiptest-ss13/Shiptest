@@ -64,11 +64,9 @@
 "bV" = (
 /obj/machinery/door/poddoor/shutters{
 	id = "wreckerarmory";
-	name = "armory shutters"
+	name = "security shutters"
 	},
-/obj/effect/turf_decal/industrial/warning{
-	dir = 1
-	},
+/obj/effect/turf_decal/industrial/warning,
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
 	},
@@ -291,7 +289,7 @@
 /obj/structure/grille,
 /obj/structure/window/plasma/reinforced/plastitanium,
 /turf/open/floor/plating,
-/area/ship/crew/office)
+/area/ship/cargo/office)
 "fR" = (
 /obj/structure/grille,
 /obj/machinery/door/poddoor/shutters{
@@ -418,7 +416,7 @@
 	pixel_y = -22
 	},
 /turf/open/floor/carpet/red,
-/area/ship/crew/office)
+/area/ship/cargo/office)
 "ir" = (
 /obj/structure/window/reinforced/spawner/west,
 /obj/machinery/power/smes/shuttle/precharged{
@@ -572,7 +570,7 @@
 	pixel_y = -32
 	},
 /turf/open/floor/carpet/red,
-/area/ship/crew/office)
+/area/ship/cargo/office)
 "kr" = (
 /obj/structure/window/reinforced/spawner/west,
 /obj/machinery/atmospherics/components/unary/shuttle/heater{
@@ -1153,7 +1151,7 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/tech/grid,
-/area/ship/crew/office)
+/area/ship/cargo/office)
 "uk" = (
 /obj/machinery/vending/cigarette/syndicate,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -1271,7 +1269,7 @@
 /area/ship/crew)
 "vR" = (
 /obj/machinery/door/airlock/public/glass{
-	name = "Crew Quarters"
+	name = "Break Room"
 	},
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -1369,7 +1367,7 @@
 /area/ship/crew)
 "yn" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ship/crew/office)
+/area/ship/cargo/office)
 "yw" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 1
@@ -1633,7 +1631,7 @@
 	dir = 5
 	},
 /turf/open/floor/carpet/red,
-/area/ship/crew/office)
+/area/ship/cargo/office)
 "Bn" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -1697,13 +1695,15 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/cargo)
 "DO" = (
-/obj/machinery/door/poddoor/shutters{
-	id = "wreckerarmory";
-	name = "armory shutters"
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
 	},
 /obj/effect/turf_decal/industrial/warning,
-/obj/effect/turf_decal/industrial/warning,
 /obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/poddoor/shutters{
+	id = "wreckerarmory";
+	name = "security shutters"
+	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/security/armory)
 "DU" = (
@@ -1905,7 +1905,7 @@
 	dir = 8
 	},
 /turf/open/floor/carpet/red,
-/area/ship/crew/office)
+/area/ship/cargo/office)
 "Ic" = (
 /obj/machinery/atmospherics/pipe/manifold/orange/hidden/layer4{
 	dir = 1
@@ -2118,15 +2118,16 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
 	},
-/obj/machinery/door/poddoor/shutters{
-	id = "wreckerarmory";
-	name = "armory shutters"
-	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/door/poddoor/shutters{
+	id = "wreckerarmory";
+	name = "security shutters"
+	},
+/obj/effect/turf_decal/industrial/warning,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/security/armory)
 "KW" = (
@@ -2140,7 +2141,7 @@
 	storage_type = /obj/item/clothing/shoes/magboots/syndie
 	},
 /turf/open/floor/carpet/red,
-/area/ship/crew/office)
+/area/ship/cargo/office)
 "La" = (
 /obj/machinery/atmospherics/pipe/manifold/cyan/visible/layer2{
 	dir = 4
@@ -2168,7 +2169,7 @@
 /area/ship/crew)
 "Lj" = (
 /obj/machinery/door/airlock/hatch{
-	name = "Port Maintenance"
+	name = "Port Thrusters"
 	},
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -2356,7 +2357,7 @@
 /area/ship/storage)
 "OJ" = (
 /obj/machinery/door/airlock/grunge{
-	name = "Storage Bay"
+	name = "Locker Room"
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -2414,11 +2415,6 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security/armory)
-"Pa" = (
-/obj/structure/grille,
-/obj/structure/window/plasma/reinforced/plastitanium,
-/turf/open/floor/plating,
-/area/ship/cargo)
 "Pn" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -2472,12 +2468,15 @@
 /area/ship/hallway/central)
 "PG" = (
 /obj/effect/turf_decal/industrial/warning,
-/obj/machinery/door/poddoor/shutters{
-	id = "wreckerarmory";
-	name = "armory shutters"
-	},
 /obj/machinery/door/firedoor/border_only,
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/door/poddoor/shutters{
+	id = "wreckerarmory";
+	name = "security shutters"
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/security/armory)
 "PL" = (
@@ -2513,7 +2512,7 @@
 	name = "blast shutters"
 	},
 /turf/open/floor/plating,
-/area/ship/crew/office)
+/area/ship/cargo/office)
 "QZ" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -2743,7 +2742,7 @@
 /area/ship/crew)
 "Vx" = (
 /obj/machinery/door/airlock/hatch{
-	name = "Starboard Maintenance"
+	name = "Starboard Thrusters"
 	},
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -2854,7 +2853,7 @@
 	pixel_x = -24
 	},
 /turf/open/floor/carpet/red,
-/area/ship/crew/office)
+/area/ship/cargo/office)
 "Wc" = (
 /obj/structure/table,
 /obj/item/flashlight/lamp,
@@ -2878,11 +2877,14 @@
 /area/ship/hallway/central)
 "Wp" = (
 /obj/effect/turf_decal/industrial/warning,
+/obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/poddoor/shutters{
 	id = "wreckerarmory";
-	name = "armory shutters"
+	name = "security shutters"
 	},
-/obj/machinery/door/firedoor/border_only,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/security/armory)
 "Wt" = (
@@ -2928,7 +2930,7 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/tech,
-/area/ship/crew/dorm)
+/area/ship/crew)
 "Xj" = (
 /obj/machinery/computer/cargo/express{
 	dir = 8
@@ -2939,7 +2941,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/tech/grid,
-/area/ship/crew/office)
+/area/ship/cargo/office)
 "Xz" = (
 /obj/machinery/power/shuttle/engine/fueled/plasma{
 	dir = 4
@@ -2981,10 +2983,10 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/door/airlock/grunge{
-	name = "Office"
+	name = "Foreman's Office"
 	},
 /turf/open/floor/plasteel/tech,
-/area/ship/crew/office)
+/area/ship/cargo/office)
 "XO" = (
 /obj/effect/turf_decal/industrial/outline,
 /obj/effect/decal/cleanable/dirt,
@@ -3062,7 +3064,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/tech,
-/area/ship/cargo)
+/area/ship/crew)
 "YI" = (
 /obj/structure/grille,
 /obj/structure/window/plasma/reinforced/plastitanium,
@@ -3096,14 +3098,15 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
 	},
-/obj/machinery/door/poddoor/shutters{
-	id = "wreckerarmory";
-	name = "armory shutters"
-	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/door/poddoor/shutters{
+	id = "wreckerarmory";
+	name = "security shutters"
+	},
+/obj/effect/turf_decal/industrial/warning,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/security/armory)
 "Zi" = (
@@ -3418,8 +3421,8 @@ HJ
 HJ
 HJ
 YH
-Pa
-NF
+mX
+UX
 GV
 GV
 GV
