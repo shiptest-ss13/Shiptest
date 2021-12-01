@@ -120,7 +120,7 @@
 	satchel = /obj/item/storage/backpack/satchel/tox
 	courierbag = /obj/item/storage/backpack/messenger/tox
 
-/datum/outfit/job/miner/gorlex
+/datum/outfit/job/miner/syndicate
 	name = "Wrecker (Gorlex Marauders)"
 
 	id = /obj/item/card/id/syndicate_command/crew_id

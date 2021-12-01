@@ -494,6 +494,12 @@
 	buildstack = /obj/item/stack/tile/carpet/royalblue
 	smooth_icon = 'icons/obj/smooth_structures/fancy_table_royalblue.dmi'
 
+/obj/structure/table/wood/fancy/red_gold
+	icon_state = "fancy_table_red"
+	base_icon_state = "fancy_table_red"
+	buildstack = /obj/item/stack/tile/carpet/red_gold
+	smooth_icon = 'icons/obj/smooth_structures/fancy_table_red.dmi'
+
 /*
  * Reinforced tables
  */

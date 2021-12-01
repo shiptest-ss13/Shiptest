@@ -64,6 +64,7 @@ DEFINE_BITFIELD(smoothing_flags, list(
 #define SMOOTH_GROUP_CARPET_EXECUTIVE S_TURF(20)	///turf/open/floor/carpet/executive
 #define SMOOTH_GROUP_CARPET_STELLAR S_TURF(21)	///turf/open/floor/carpet/stellar
 #define SMOOTH_GROUP_CARPET_DONK S_TURF(22) ///turf/open/floor/carpet/donk
+#define SMOOTH_GROUP_CARPET_RED_GOLD S_TURF(23) ///turf/open/floor/carpet/red_gold
 
 #define SMOOTH_GROUP_CLOSED_TURFS S_TURF(24) ///turf/closed
 #define SMOOTH_GROUP_MATERIAL_WALLS S_TURF(25) ///turf/closed/wall/material

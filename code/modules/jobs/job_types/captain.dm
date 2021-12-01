@@ -99,26 +99,26 @@
 	suit = /obj/item/clothing/suit/armor/hos/trenchcoat
 	alt_suit = null
 
-/datum/outfit/job/captain/aclf
+/datum/outfit/job/captain/syndicate
 	name = "Captain (ACLF)"
-	uniform = /obj/item/clothing/under/syndicate/aclf
-	shoes = /obj/item/clothing/shoes/jackboots
-	head = /obj/item/clothing/head/aclfcap
-	suit = /obj/item/clothing/suit/aclf
-
-/datum/outfit/job/captain/gorlex
-	name = "Captain (Gorlex Marauders)"
-
 	id = /obj/item/card/id/syndicate_command/captain_id
 	ears = /obj/item/radio/headset/syndicate/alt
-	uniform = /obj/item/clothing/under/syndicate/combat
+	uniform = /obj/item/clothing/under/syndicate/aclf
 	shoes = /obj/item/clothing/shoes/jackboots
 	head = /obj/item/clothing/head/HoS/syndicate
 	gloves = /obj/item/clothing/gloves/combat
-	suit = null
+	suit = /obj/item/clothing/suit/armor/vest/capcarapace/syndicate
 
 	backpack = /obj/item/storage/backpack/security
 	satchel = /obj/item/storage/backpack/satchel/sec
 	duffelbag = /obj/item/storage/backpack/duffelbag/sec
 	courierbag = /obj/item/storage/backpack/messenger/sec
+
+/datum/outfit/job/captain/syndicate/gorlex
+	name = "Captain (Gorlex Marauders)"
+
+	uniform = /obj/item/clothing/under/syndicate/aclf
+	shoes = /obj/item/clothing/shoes/jackboots
+	head = /obj/item/clothing/head/aclfcap
+	suit = /obj/item/clothing/suit/aclf
 

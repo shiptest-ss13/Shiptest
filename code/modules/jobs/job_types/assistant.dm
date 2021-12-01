@@ -130,17 +130,18 @@ Assistant
 	shoes = /obj/item/clothing/shoes/laceup
 	suit = /obj/item/clothing/suit/toggle/lawyer/black
 
-/datum/outfit/job/assistant/operative
-	name = "Operative (Assistant)"
-
-	uniform = /obj/item/clothing/under/syndicate/aclfgrunt
-	shoes = /obj/item/clothing/shoes/jackboots
-
-/datum/outfit/job/assistant/operative/gorlex
+/datum/outfit/job/assistant/syndicate
 	name = "Junior Agent (Assistant)"
 
 	id = /obj/item/card/id/syndicate_command/crew_id
 	ears = /obj/item/radio/headset/syndicate
+	uniform = /obj/item/clothing/under/syndicate
+	alt_uniform = null
+	shoes = /obj/item/clothing/shoes/jackboots
+
+/datum/outfit/job/assistant/syndicate/gorlex
+	name = "Junior Agent (Gorlex Marauders)"
+
 	uniform = /obj/item/clothing/under/syndicate/gorlex
 	alt_uniform = /obj/item/clothing/under/syndicate
 
