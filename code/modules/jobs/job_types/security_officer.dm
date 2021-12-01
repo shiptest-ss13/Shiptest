@@ -164,7 +164,7 @@ GLOBAL_LIST_INIT(available_depts, list(SEC_DEPT_ENGINEERING, SEC_DEPT_MEDICAL, S
 /datum/outfit/job/security/western
 	name = "Security Specialist (Western)"
 
-	uniform = /obj/item/clothing/under/rank/security/officer/beatcop
+	uniform = /obj/item/clothing/under/rank/security/officer/blueshirt
 	alt_uniform = null
 	shoes = /obj/item/clothing/shoes/jackboots
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses
