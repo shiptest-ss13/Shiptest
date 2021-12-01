@@ -353,7 +353,7 @@
 	name = "captain's locker";
 	req_access_txt = "20"
 	},
-/obj/item/storage/backpack/satchel/sec,
+/obj/item/storage/backpack/security,
 /obj/item/clothing/under/syndicate/combat,
 /obj/item/clothing/suit/armor/vest/capcarapace/syndicate,
 /obj/item/clothing/shoes/jackboots,
@@ -382,8 +382,8 @@
 /turf/open/floor/engine,
 /area/ship/cargo)
 "ia" = (
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
-	dir = 1
+/obj/effect/turf_decal/arrows{
+	dir = 8
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
@@ -887,7 +887,9 @@
 /area/ship/bridge)
 "pP" = (
 /obj/effect/turf_decal/industrial/outline,
-/obj/machinery/mineral/ore_redemption,
+/obj/machinery/mineral/ore_redemption{
+	dir = 1
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
 "pT" = (
@@ -975,6 +977,16 @@
 /obj/machinery/power/apc/auto_name/south,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/storage)
+"rI" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/arrows{
+	dir = 8
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/cargo)
 "rM" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable/yellow{
@@ -1290,9 +1302,6 @@
 /turf/open/floor/mineral/plastitanium/red,
 /area/ship/security/armory)
 "wP" = (
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
-	dir = 1
-	},
 /obj/effect/turf_decal/industrial/outline,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/cargo)
@@ -1523,6 +1532,13 @@
 "Ap" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/bridge)
+"Aq" = (
+/obj/effect/turf_decal/industrial/outline,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 1
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/cargo)
 "Ax" = (
 /obj/effect/turf_decal/industrial/outline,
 /obj/structure/table,
@@ -1834,14 +1850,12 @@
 	dir = 4
 	},
 /obj/machinery/button/door{
+	dir = 1;
 	id = "wreckercargobay";
 	name = "cargo bay doors";
-	pixel_y = 24
+	pixel_y = -24
 	},
 /obj/machinery/light/floor,
-/obj/effect/turf_decal/arrows{
-	dir = 8
-	},
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "GV" = (
@@ -2546,9 +2560,6 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/central)
 "SE" = (
-/obj/effect/turf_decal/arrows{
-	dir = 8
-	},
 /obj/effect/decal/cleanable/oil/streak,
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
@@ -2848,7 +2859,9 @@
 /area/ship/security/armory)
 "Wt" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 1
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "Wv" = (
@@ -3543,7 +3556,7 @@ PT
 FQ
 zn
 bd
-bd
+Aq
 wP
 vv
 mL
@@ -3564,7 +3577,7 @@ iC
 Tg
 Qy
 MP
-MP
+rI
 GA
 mL
 VD
