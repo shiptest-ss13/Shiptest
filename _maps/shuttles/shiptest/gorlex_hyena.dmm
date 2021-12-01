@@ -6,7 +6,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "aI" = (
-/obj/effect/turf_decal/number/four,
+/obj/structure/sign/number/four,
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/maintenance/fore)
 "aN" = (
@@ -369,7 +369,7 @@
 /area/ship/bridge)
 "hy" = (
 /obj/structure/lattice,
-/obj/effect/turf_decal/number/eight{
+/obj/structure/sign/number/eight{
 	dir = 1
 	},
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
@@ -921,7 +921,7 @@
 /turf/open/floor/carpet/red_gold,
 /area/ship/bridge)
 "qs" = (
-/obj/effect/turf_decal/number/eight,
+/obj/structure/sign/number/eight,
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/maintenance/fore)
 "qO" = (
@@ -977,16 +977,6 @@
 /obj/machinery/power/apc/auto_name/south,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/storage)
-"rI" = (
-/obj/effect/turf_decal/industrial/warning{
-	dir = 4
-	},
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/arrows{
-	dir = 8
-	},
-/turf/open/floor/plasteel/tech,
-/area/ship/cargo)
 "rM" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable/yellow{
@@ -1026,6 +1016,13 @@
 /obj/effect/turf_decal/industrial/warning/fulltile,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
+/area/ship/cargo)
+"sA" = (
+/obj/effect/turf_decal/industrial/outline,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 1
+	},
+/turf/open/floor/plasteel/tech/techmaint,
 /area/ship/cargo)
 "sE" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
@@ -1131,6 +1128,16 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/central)
+"tS" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/arrows{
+	dir = 8
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/cargo)
 "uf" = (
 /obj/machinery/computer/selling_pad_control{
 	dir = 8
@@ -1200,7 +1207,9 @@
 	pixel_x = -5;
 	pixel_y = -5
 	},
-/obj/item/gps,
+/obj/item/gps{
+	pixel_x = 7
+	},
 /obj/effect/turf_decal/borderfloor{
 	dir = 4
 	},
@@ -1337,7 +1346,7 @@
 /turf/open/floor/carpet/red,
 /area/ship/crew)
 "xZ" = (
-/obj/effect/turf_decal/number/four{
+/obj/structure/sign/number/four{
 	dir = 1
 	},
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
@@ -1532,13 +1541,6 @@
 "Ap" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/bridge)
-"Aq" = (
-/obj/effect/turf_decal/industrial/outline,
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
-	dir = 1
-	},
-/turf/open/floor/plasteel/tech/techmaint,
-/area/ship/cargo)
 "Ax" = (
 /obj/effect/turf_decal/industrial/outline,
 /obj/structure/table,
@@ -1585,6 +1587,11 @@
 	pixel_y = 32
 	},
 /obj/item/areaeditor/shuttle,
+/obj/item/megaphone/sec{
+	name = "syndicate megaphone";
+	pixel_x = -4;
+	pixel_y = 7
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
 "AP" = (
@@ -1713,7 +1720,7 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/maintenance/starboard)
 "En" = (
-/obj/effect/turf_decal/number/nine{
+/obj/structure/sign/number/nine{
 	dir = 1
 	},
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
@@ -1809,7 +1816,6 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/cargo)
 "Gm" = (
-/obj/machinery/door/airlock/external,
 /obj/machinery/atmospherics/pipe/layer_manifold,
 /obj/effect/turf_decal/industrial/warning/fulltile,
 /obj/effect/mapping_helpers/airlock/cyclelink_helper,
@@ -1824,6 +1830,9 @@
 	preferred_direction = 4;
 	undock_roundstart = 1;
 	width = 28
+	},
+/obj/machinery/door/airlock/hatch{
+	name = "external airlock"
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/central)
@@ -2655,7 +2664,7 @@
 /area/ship/cargo)
 "TY" = (
 /obj/structure/lattice,
-/obj/effect/turf_decal/number/four{
+/obj/structure/sign/number/four{
 	dir = 1
 	},
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
@@ -2838,13 +2847,15 @@
 /turf/open/floor/carpet/red,
 /area/ship/crew/dorm)
 "Wd" = (
-/obj/machinery/door/airlock/external,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/effect/turf_decal/industrial/warning/fulltile,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
 	dir = 1
+	},
+/obj/machinery/door/airlock/hatch{
+	name = "external airlock"
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/central)
@@ -2876,11 +2887,6 @@
 	name = "captain's rubber stamp"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/item/megaphone/sec{
-	name = "syndicate megaphone";
-	pixel_x = 11;
-	pixel_y = 8
-	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
 "WN" = (
@@ -2942,9 +2948,6 @@
 /turf/open/floor/carpet/red_gold,
 /area/ship/bridge)
 "XG" = (
-/obj/machinery/door/airlock/mining/glass{
-	name = "Foreman's Office"
-	},
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
@@ -2960,6 +2963,9 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/door/airlock/grunge{
+	name = "Foreman's Office"
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/office)
 "XO" = (
@@ -3000,7 +3006,7 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "XZ" = (
-/obj/effect/turf_decal/number/nine,
+/obj/structure/sign/number/nine,
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/maintenance/fore)
 "Yf" = (
@@ -3556,7 +3562,7 @@ PT
 FQ
 zn
 bd
-Aq
+sA
 wP
 vv
 mL
@@ -3577,7 +3583,7 @@ iC
 Tg
 Qy
 MP
-rI
+tS
 GA
 mL
 VD
