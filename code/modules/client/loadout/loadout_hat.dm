@@ -117,3 +117,12 @@
 	display_name = "horse mask"
 	path = /obj/item/clothing/mask/horsehead
 	cost = 5000
+
+/datum/gear/hat/piratehat
+	display_name = "pirate hat"
+	description = "Yarr. Comes with one free pirate speak manual."
+	path = /obj/item/clothing/head/pirate
+
+/datum/gear/hat/ushanka
+	display_name = "space ushanka"
+	path = /obj/item/clothing/head/ushanka
