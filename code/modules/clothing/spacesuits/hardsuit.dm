@@ -893,7 +893,7 @@
 ///////////////Shiptest Additions////////////////////
 
 //Softsuit helmet light framework
-/obj/item/clothing/head/helmet/space/light/
+/obj/item/clothing/head/helmet/space/light
 	actions_types = list(/datum/action/item_action/toggle_helmet_light)
 	var/on = FALSE
 	light_color = "#FFCC66"
