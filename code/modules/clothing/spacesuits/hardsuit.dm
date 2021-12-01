@@ -904,10 +904,6 @@
 	light_on = FALSE
 	on = FALSE
 
-/obj/item/clothing/head/helmet/space/light/ComponentInitialize()
-	. = ..()
-	AddElement(/datum/element/update_icon_updates_onmob)
-
 /obj/item/clothing/head/helmet/space/light/attack_self(mob/living/user)
 	toggle_helmet_light(user)
 
