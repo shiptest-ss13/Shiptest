@@ -39,3 +39,19 @@
 	display_name = "Hipster Glasses"
 	path = /obj/item/clothing/glasses/regular/hipster
 	cost = 1250
+
+/datum/gear/eyewear/glasses/cold
+	display_name = "cold goggles"
+	path = /obj/item/clothing/glasses/cold
+
+/datum/gear/eyewear/glasses/heat
+	display_name = "heat goggles"
+	path = /obj/item/clothing/glasses/heat
+
+/datum/gear/eyewear/glasses/orange
+	display_name = "orange sunglasses"
+	path = /obj/item/clothing/glasses/orange
+
+/datum/gear/eyewear/glasses/red
+	display_name = "red glasses"
+	path = /obj/item/clothing/glasses/red

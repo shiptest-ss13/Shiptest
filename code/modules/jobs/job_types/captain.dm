@@ -96,7 +96,6 @@
 	shoes = /obj/item/clothing/shoes/cowboy/white
 	head = /obj/item/clothing/head/caphat/cowboy
 	glasses = /obj/item/clothing/glasses/sunglasses
-	suit = /obj/item/clothing/suit/armor/hos/trenchcoat
 	alt_suit = null
 
 /datum/outfit/job/captain/syndicate
