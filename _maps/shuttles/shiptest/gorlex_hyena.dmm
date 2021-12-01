@@ -888,17 +888,12 @@
 "pP" = (
 /obj/effect/turf_decal/industrial/outline,
 /obj/machinery/mineral/ore_redemption{
-	dir = 1
+	dir = 1;
+	output_dir = 1
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
 "pT" = (
-/obj/machinery/button/door{
-	dir = 8;
-	id = "wrecker_engine_port";
-	name = "thruster doors";
-	pixel_x = 24
-	},
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
@@ -909,6 +904,12 @@
 	},
 /obj/structure/cable{
 	icon_state = "1-8"
+	},
+/obj/machinery/button/door{
+	dir = 8;
+	id = "wrecker_engine_stbd";
+	name = "thruster doors";
+	pixel_x = 24
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/maintenance/starboard)
@@ -1442,7 +1443,7 @@
 /obj/item/clothing/head/soft/black,
 /obj/item/clothing/head/soft/black,
 /obj/structure/cable{
-	icon_state = "2-8"
+	icon_state = "1-8"
 	},
 /obj/item/radio,
 /obj/item/radio,
@@ -1616,7 +1617,7 @@
 /obj/effect/turf_decal/industrial/outline,
 /obj/machinery/button/door{
 	dir = 1;
-	id = "wrecker_engine_stbd";
+	id = "wrecker_engine_port";
 	name = "thruster doors";
 	pixel_y = -24
 	},
@@ -1923,6 +1924,7 @@
 "Ik" = (
 /obj/effect/turf_decal/industrial/hatch,
 /obj/machinery/selling_pad,
+/obj/structure/window/reinforced/spawner/east,
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "Iz" = (
