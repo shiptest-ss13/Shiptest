@@ -64,7 +64,7 @@
 /obj/structure/ship_module/weapon/proc/weapon_fire(obj/structure/overmap/ship/simulated/parent, obj/structure/ship_module/weapon/struc, obj/structure/overmap/ship/simulated/target)
 	explosion(src, 0, 0, 0, 3)
 	. = check_ammo()
-	qdel(loaded)
+	QDEL_NULL(loaded)
 
 /obj/structure/ship_module/weapon/proc/try_reload()
 	if(reload_timer_id)
