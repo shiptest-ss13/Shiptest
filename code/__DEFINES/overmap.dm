@@ -88,10 +88,19 @@ GLOBAL_LIST_EMPTY_TYPED(ship_modules, /datum/ship_module)
 	GLOB.ship_modules = ret
 
 // Ship Weapon Defines
+/// The weapon's projectile hit the enemy but did not fully impact them
 #define WEAPON_RICHOCHET 1
+/// Hit confirmed
 #define WEAPON_HIT 2
+/// The weapon's projectile did not hit the enemy or missed entirely
 #define WEAPON_MISS 3
+/// The weapon's projectile ricocheted off the enemy and hit us
 #define WEAPON_RICHOCHET_SELF 4
+/// The weapon is currently reloading
 #define WEAPON_RELOADING 5
+/// The weapon attempted to fire but has no ammo
 #define WEAPON_EMPTY 6
+/// The weapon is broken and cannot fire
 #define WEAPON_BROKEN 7
+/// The weapon failed to fire for some other reason
+#define WEAPON_FAIL 8
