@@ -40,7 +40,7 @@
 			var/struc_ref = ref(struc)
 			data["structure_data"][struc_ref] = list(
 				"name" = struc.name,
-				"ammo" = struc.ammo,
+				"loaded" = struc.check_loaded(),
 				"ammo_max" = struc.mag_size,
 				"reloading" = !!struc.reload_timer_id,
 				"reload_time" = struc.reload_time,
