@@ -126,7 +126,7 @@
 	for(var/dir in list(NORTH, SOUTH, EAST, WEST))
 		var/turf/neighbor = get_step(src, dir)
 		var/obj/structure/ship_module/shield/prop = locate() in neighbor
-		if(!prop || prop in cache)
+		if(!prop || (prop in cache))
 			continue
 		cache |= prop
 		RegisterSignal(prop, COMSIG_PARENT_QDELETING, .proc/calculate_max_shield)
