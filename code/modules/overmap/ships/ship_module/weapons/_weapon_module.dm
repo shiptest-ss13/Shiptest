@@ -16,7 +16,7 @@
 		return WEAPON_BROKEN
 	if(struc.reload_timer_id)
 		return WEAPON_RELOADING
-	if(!struc.weapon_fire(src, parent, struc, target))
+	if(!struc.weapon_fire(parent, struc, target))
 		return WEAPON_FAIL
 	if(damage_variance)
 		var/variance = rand(-damage_variance, damage_variance)
