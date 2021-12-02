@@ -55,7 +55,7 @@ All ShuttleMove procs go here
 	if(!shuttle_boundary)
 		CRASH("A turf queued to move via shuttle somehow had no skipover in baseturfs. [src]([type]):[loc]")
 	var/depth = baseturfs.len - shuttle_boundary + 1
-	newT.CopyOnTop(src, 1, depth, TRUE)
+	newT.CopyOnTop(src, 1, depth, TRUE, CHANGETURF_DEFER_CHANGE)
 	return TRUE
 
 // Called on the new turf after everything has been moved
@@ -64,7 +64,7 @@ All ShuttleMove procs go here
 	oldT.TransferComponents(src)
 	var/shuttle_boundary = baseturfs.Find(/turf/baseturf_skipover/shuttle)
 	if(shuttle_boundary)
-		oldT.ScrapeAway(baseturfs.len - shuttle_boundary + 1)
+		oldT.ScrapeAway(baseturfs.len - shuttle_boundary + 1, CHANGETURF_DEFER_CHANGE)
 
 	if(rotation)
 		shuttleRotate(rotation) //see shuttle_rotate.dm
@@ -72,8 +72,8 @@ All ShuttleMove procs go here
 	return TRUE
 
 /turf/proc/lateShuttleMove(turf/oldT)
-	air_update_turf(TRUE)
-	oldT.air_update_turf(TRUE)
+	AfterChange(CHANGETURF_RECALC_ADJACENT)
+	oldT.AfterChange(CHANGETURF_RECALC_ADJACENT)
 
 
 /////////////////////////////////////////////////////////////////////////////////////
