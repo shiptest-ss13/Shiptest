@@ -50,7 +50,6 @@
 	key_third_person = "screams"
 	message = "screams!"
 	emote_type = EMOTE_AUDIBLE
-	only_forced_audio = TRUE
 	vary = TRUE
 
 /datum/emote/living/carbon/human/scream/get_sound(mob/living/user)
@@ -70,6 +69,8 @@
 		return 'sound/voice/moth/scream_moth.ogg'
 	else if(issquidperson(H)) //WS squids go blubbblp
 		return 'whitesands/sound/voice/squid/squidscream.ogg'
+	else if(islizard(H))
+		return pick('sound/voice/lizard/lizard_scream_1.ogg', 'sound/voice/lizard/lizard_scream_2.ogg', 'sound/voice/lizard/lizard_scream_3.ogg', 'sound/voice/lizard/lizard_scream_4.ogg')
 
 
 /datum/emote/living/carbon/human/pale

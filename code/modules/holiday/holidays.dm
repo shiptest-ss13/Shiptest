@@ -178,7 +178,6 @@
 	begin_month = APRIL
 
 /datum/holiday/april_fools/celebrate()
-	SSjob.set_overflow_role("Clown")
 	SSticker.login_music = 'sound/ambience/clown.ogg'
 	for(var/i in GLOB.new_player_list)
 		var/mob/dead/new_player/P = i
@@ -632,6 +631,17 @@
 
 /datum/holiday/hotdogday/greet()
 	return "Happy National Hot Dog Day!"
+
+/datum/holiday/jaynesday
+	name = "Jaynesday"
+	begin_month = OCTOBER
+	begin_day = 18
+
+/datum/holiday/jaynesday/greet()
+	return "Today is Jaynesday!"
+
+/datum/holiday/jaynseday/getStationPrefix()
+	return pick("Mudder", "Canton", "Jayne", "Cobb")
 
 /datum/holiday/hebrew
 	name = "If you see this the Hebrew holiday calendar code is broken"

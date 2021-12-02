@@ -9,11 +9,13 @@
   * Arguments:
   * * O - Object containing the seed, can be the loc of the dumping of seeds
   * * t_max - Amount of seed copies to dump, -1 is ranomized
+  * * l_user - If true, sets the location to drop under the user rather than the extractor
+  * * d_item - If true, deletes the item after the proc is done
   * * extractor - Seed Extractor, used as the dumping loc for the seeds and seed multiplier
-  * * user - checks if we can remove the object from the inventory
+  * * user - Checks if we can remove the object from the inventory
   * *
   */
-/proc/seedify(obj/item/O, t_max, obj/machinery/seed_extractor/extractor, mob/living/user)
+/proc/seedify(obj/item/O, t_max, var/l_user, var/d_item, obj/machinery/seed_extractor/extractor, mob/living/user)
 	var/t_amount = 0
 	var/list/seeds = list()
 	if(t_max == -1)
@@ -23,8 +25,12 @@
 			t_max = rand(1,4)
 
 	var/seedloc = O.loc
-	if(extractor)
-		seedloc = extractor.loc
+	if(l_user == TRUE)
+		if(user)
+			seedloc = user.drop_location()
+	else
+		if(extractor)
+			seedloc = extractor.loc
 
 	if(istype(O, /obj/item/reagent_containers/food/snacks/grown/))
 		var/obj/item/reagent_containers/food/snacks/grown/F = O
@@ -36,7 +42,8 @@
 				seeds.Add(t_prod)
 				t_prod.forceMove(seedloc)
 				t_amount++
-			qdel(O)
+			if(d_item == TRUE)
+				qdel(O)
 			return seeds
 
 	else if(istype(O, /obj/item/grown))
@@ -106,7 +113,7 @@
 			to_chat(user, "<span class='notice'>There are no seeds in \the [O.name].</span>")
 		return
 
-	else if(seedify(O,-1, src, user))
+	else if(seedify(O,-1, FALSE, TRUE, src, user))
 		to_chat(user, "<span class='notice'>You extract some seeds.</span>")
 		return
 	else if (istype(O, /obj/item/seeds))

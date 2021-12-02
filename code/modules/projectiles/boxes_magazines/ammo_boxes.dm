@@ -51,6 +51,20 @@
 	desc = "Designed to quickly reload revolvers. Iceblox bullets contain a cryogenic payload."
 	ammo_type = /obj/item/ammo_casing/c38/iceblox
 
+/obj/item/ammo_box/c38_box
+	name = "ammo box (.38)"
+	desc = "A box of ammo."
+	icon_state = "38box"
+	ammo_type = /obj/item/ammo_casing/c38
+	max_ammo = 30
+
+/obj/item/ammo_box/c38_box/hunting
+	name = "ammo box (.38 hunting)"
+	desc = "A box of ammo."
+	icon_state = "38huntingbox"
+	ammo_type = /obj/item/ammo_casing/c38/hunting
+	max_ammo = 30
+
 /obj/item/ammo_box/c9mm
 	name = "ammo box (9mm)"
 	icon_state = "9mmbox"

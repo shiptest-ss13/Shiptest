@@ -70,7 +70,9 @@ Slimecrossing Items
 		target.AddComponent(/datum/component/dejavu, 2)
 	.=..()
 
-
+/obj/item/camera/rewind/loot
+	pictures_left = 5
+	pictures_max = 5
 
 //Timefreeze camera - Old Burning Sepia result. Kept in case admins want to spawn it
 /obj/item/camera/timefreeze

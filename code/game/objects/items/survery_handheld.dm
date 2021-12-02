@@ -58,7 +58,7 @@
 			break
 
 		flick(icon_state + "print", src)
-		playsound(src, 'sound/machines/chime.ogg', 20)
+		playsound(src, 'sound/machines/whirr_beep.ogg', 20)
 		src_turf.visible_message("<span class='notice'>Data recorded and enscribed to research packet.</span>")
 		z_history[my_z]++
 

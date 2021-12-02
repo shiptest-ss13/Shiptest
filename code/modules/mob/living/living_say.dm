@@ -334,6 +334,9 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 	if(cultslurring)
 		message = cultslur(message)
 
+	if(clockcultslurring) //Shiptest edit
+		message = CLOCK_CULT_SLUR(message)
+
 	message = strip_html_simple(message) //Get rid of any markdown that might hurt us
 
 	// check for and apply punctuation. thanks, bee

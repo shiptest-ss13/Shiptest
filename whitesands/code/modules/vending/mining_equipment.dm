@@ -35,7 +35,6 @@
 		/obj/item/wormhole_jaunter = 3,
 		/obj/item/kinetic_crusher = 1,
 		/obj/item/gun/energy/kinetic_accelerator = 3,
-		/obj/item/t_scanner/adv_mining_scanner = 5,
 		/obj/item/pinpointer/deepcore = 5,		// WS edit - Deepcore
 		/obj/item/pinpointer/deepcore/advanced = 2,		// WS edit - Deepcore
 		/obj/item/deepcorecapsule = 3,		// WS edit - Deepcore
@@ -46,7 +45,7 @@
 		/obj/item/storage/backpack/duffelbag/mining_conscript = 3,
 		/obj/item/tank/jetpack/suit = 3,
 		/obj/item/stack/spacecash/c1000 = 5,
-		/obj/item/clothing/suit/space/hardsuit/mining = 3,
+		/obj/item/clothing/suit/space/hardsuit/mining/independent = 3,
 		/obj/item/resonator/upgraded = 1,
 		/obj/item/clothing/shoes/bhop = 3,
 		/obj/item/survivalcapsule/luxury = 3,

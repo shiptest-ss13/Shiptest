@@ -551,9 +551,6 @@ AUTO_PROFILE
 ## Uncomment to enable discord auto-roling when users link their BYOND and Discord accounts
 #ENABLE_DISCORD_AUTOROLE
 
-## Set to a value greater than zero to require a user to have at least this many hours of living role time to be assigned the role
-REQUIRED_LIVING_HOURS 0
-
 ## Add your discord bot token here. Make sure it has the ability to manage roles
 #DISCORD_TOKEN someDiscordToken
 
@@ -567,3 +564,7 @@ REQUIRED_LIVING_HOURS 0
 ## Setting it to 0 disables the respawn timer.
 ## THIS CONFIG DOES NOT OVERRIDE THE NORESPAWN FLAG
 RESPAWN_TIMER 600
+
+## Custom shuttle spam prevention. Changine these numbers allows you to change the maxsize and amount of custom shuttles.
+MAX_SHUTTLE_COUNT 20
+MAX_SHUTTLE_SIZE 300

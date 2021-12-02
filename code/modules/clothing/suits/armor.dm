@@ -59,7 +59,6 @@
 /obj/item/clothing/suit/armor/hos/trenchcoat
 	name = "armored trenchcoat"
 	desc = "A trenchcoat enhanced with a special lightweight kevlar. The epitome of tactical plainclothes."
-	mob_overlay_icon = 'whitesands/icons/mob/clothing/suits.dmi'
 	icon_state = "hostrench"
 	item_state = "hostrench"
 	flags_inv = 0
@@ -68,8 +67,7 @@
 /obj/item/clothing/suit/armor/vest/security/warden
 	name = "warden's jacket"
 	desc = "A black armored jacket with silver shoulder designations and '/Warden/' stitched into one of the chest pockets."
-	icon = 'whitesands/icons/obj/clothing/suits.dmi'
-	mob_overlay_icon = 'whitesands/icons/mob/clothing/suits.dmi'
+
 	icon_state = "warden_alt"
 	item_state = "armor"
 	body_parts_covered = CHEST|GROIN|ARMS
@@ -97,8 +95,6 @@
 /obj/item/clothing/suit/armor/vest/capcarapace
 	name = "captain's carapace"
 	desc = "A fireproof armored chestpiece reinforced with ceramic plates and plasteel pauldrons to provide additional protection whilst still offering maximum mobility and flexibility. Issued only to the station's finest, although it does chafe your nipples."
-	icon = 'whitesands/icons/obj/clothing/suits.dmi'
-	mob_overlay_icon = 'whitesands/icons/mob/clothing/suits.dmi'
 	icon_state = "capcarapace"
 	item_state = "armor"
 	body_parts_covered = CHEST|GROIN
@@ -133,8 +129,6 @@
 /obj/item/clothing/suit/armor/bone
 	name = "bone armor"
 	desc = "A tribal armor plate, crafted from animal bone."
-	icon = 'whitesands/icons/obj/clothing/suits.dmi'
-	mob_overlay_icon = 'whitesands/icons/mob/clothing/suits.dmi'
 	icon_state = "bonearmor"
 	item_state = "bonearmor"
 	blood_overlay_type = "armor"
@@ -262,12 +256,13 @@
 	item_state = "knight_red"
 
 /obj/item/clothing/suit/armor/riot/knight/greyscale
-	name = "knight armour"
-	desc = "A classic suit of armour, able to be made from many different materials."
+	name = "heavy plate armour"
+	desc = "A suit of magical plate armour, able to be made from many different materials. The thick armor is far lighter than it otherwise would be."
 	icon_state = "knight_greyscale"
 	item_state = "knight_greyscale"
 	material_flags = MATERIAL_ADD_PREFIX | MATERIAL_COLOR | MATERIAL_AFFECT_STATISTICS//Can change color and add prefix
 	armor = list("melee" = 30, "bullet" = 10, "laser" = 10, "energy" = 20, "bomb" = 30, "bio" = 10, "rad" = 10, "fire" = 40, "acid" = 40, "wound" = 15)
+	slowdown = 0
 
 /obj/item/clothing/suit/armor/vest/durathread
 	name = "durathread vest"

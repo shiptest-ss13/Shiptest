@@ -1349,7 +1349,7 @@
 	var/mob/living/U = user
 	if(isliving(dropping))
 		var/mob/living/M = dropping
-		if(M.can_be_held && U.pulling == M)
+		if(HAS_TRAIT(M, TRAIT_HOLDABLE) && U.pulling == M)
 			M.mob_try_pickup(U)//blame kevinz
 			return//dont open the mobs inventory if you are picking them up
 	. = ..()

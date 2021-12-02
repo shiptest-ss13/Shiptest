@@ -1,0 +1,33 @@
+{
+	"map_name": "Osprey-class Exploration Ship",
+	"map_short_name": "Osprey-class",
+	"map_path": "_maps/shuttles/shiptest/ntsv_osprey.dmm",
+	"map_id": "ntsv_osprey",
+	"job_slots": {
+		"Captain": {
+			"outfit": "/datum/outfit/job/captain/nt",
+			"officer": true,
+			"slots": 1
+		},
+		"First Officer": {
+			"outfit": "/datum/outfit/job/head_of_personnel/nt",
+			"officer": true,
+			"slots": 1
+		},
+		"Scientist": 2,
+		"Medical Doctor": 1,
+		"Paramedic": 1,
+		"Ship Engineer": {
+			"outfit": "/datum/outfit/job/engineer",
+			"slots": 1
+		},
+		"Atmospheric Technician": 1,
+		"Quartermaster": 1,
+		"Cargo Technician": 1,
+		"Shaft Miner": 1,
+		"Cook": 1,
+		"Janitor": 1,
+		"Assistant": 5
+	},
+	"cost": 850
+}

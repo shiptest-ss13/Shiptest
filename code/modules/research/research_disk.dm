@@ -2,7 +2,8 @@
 /obj/item/disk/tech_disk
 	name = "technology disk"
 	desc = "A disk for storing technology data for further research."
-	icon_state = "datadisk0"
+	random_color = FALSE
+	color = "#973328"
 	custom_materials = list(/datum/material/iron=300, /datum/material/glass=100)
 	var/datum/techweb/stored_research
 
@@ -15,6 +16,7 @@
 /obj/item/disk/tech_disk/debug
 	name = "\improper CentCom technology disk"
 	desc = "A debug item for research"
+	illustration = "nt_n"
 	custom_materials = null
 
 /obj/item/disk/tech_disk/debug/Initialize()
@@ -24,7 +26,8 @@
 /obj/item/disk/tech_disk/major
 	name = "Reformatted technology disk"
 	desc = "A disk containing a new, completed tech from the B.E.P.I.S. Upload the disk to an R&D Console to redeem the tech."
-	icon_state = "rndmajordisk"
+	color = "#FFBAFF"
+	illustration = "bepis"
 	custom_materials = list(/datum/material/iron=300, /datum/material/glass=100)
 
 /obj/item/disk/tech_disk/major/Initialize()
@@ -93,3 +96,22 @@
 		var/obj/item/research_notes/R = I
 		merge(R)
 		return TRUE
+
+//research notes for ruins
+/obj/item/research_notes/loot
+	origin_type = "exotic particle physics"
+
+/obj/item/research_notes/loot/tiny
+	value = 250
+
+/obj/item/research_notes/loot/small
+	value = 1000
+
+/obj/item/research_notes/loot/medium
+	value = 2500
+
+/obj/item/research_notes/loot/big
+	value = 5000
+
+/obj/item/research_notes/loot/genius//have a very good reason to give this one out
+	value = 10000

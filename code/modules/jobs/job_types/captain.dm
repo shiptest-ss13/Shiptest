@@ -7,13 +7,12 @@
 	spawn_positions = 1
 	supervisors = "Nanotrasen officials and Space law"
 	selection_color = "#ccccff"
-	req_admin_notify = 1
 	minimal_player_age = 30
 	exp_requirements = 180
 	exp_type = EXP_TYPE_CREW
 	exp_type_department = EXP_TYPE_COMMAND
+	officer = TRUE
 	wiki_page = "Captain"
-	special_notice = "You may be the Captain of this station, but you are still beholden to The Corporation." //WS Edit - Wikilinks/Warning
 
 	outfit = /datum/outfit/job/captain
 
@@ -28,10 +27,6 @@
 
 /datum/job/captain/get_access()
 	return get_all_accesses()
-
-/datum/job/captain/announce(mob/living/carbon/human/H)
-	..()
-	SSticker.OnRoundstart(CALLBACK(GLOBAL_PROC, .proc/minor_announce, "Captain [H.real_name] on deck!"))
 
 /datum/outfit/job/captain
 	name = "Captain"
@@ -62,3 +57,51 @@
 	mask = /obj/item/clothing/mask/gas/atmos/captain
 	suit = /obj/item/clothing/suit/space/hardsuit/swat/captain
 	suit_store = /obj/item/tank/internals/oxygen
+
+/datum/outfit/job/captain/nt
+	name = "Captain (Nanotrasen)"
+
+	uniform = /obj/item/clothing/under/rank/command/captain/nt
+	alt_uniform = null
+	shoes = /obj/item/clothing/shoes/laceup
+	head = /obj/item/clothing/head/caphat/nt
+
+/datum/outfit/job/captain/solgov
+	name = "Captain (SolGov)"
+	shoes = /obj/item/clothing/shoes/laceup
+	suit = /obj/item/clothing/suit/toggle/solgov
+
+/datum/outfit/job/captain/solgov/rebel
+	name = "Captain (Deserter)"
+	suit = /obj/item/clothing/suit/toggle/solgov/terragov
+
+/datum/outfit/job/captain/pirate
+	name = "Captain (Pirate)"
+	uniform = /obj/item/clothing/under/costume/russian_officer
+	shoes = /obj/item/clothing/shoes/jackboots
+	head = /obj/item/clothing/head/pirate/captain
+	suit = /obj/item/clothing/suit/pirate/captain
+
+/datum/outfit/job/captain/corporate
+	name = "Captain (Corporate)"
+	uniform = /obj/item/clothing/under/suit/navy
+	shoes = /obj/item/clothing/shoes/laceup
+	glasses = /obj/item/clothing/glasses/sunglasses
+	gloves = null
+
+/datum/outfit/job/captain/western
+	name = "Captain (Western)"
+	uniform = /obj/item/clothing/under/suit/white
+	alt_uniform = null
+	shoes = /obj/item/clothing/shoes/cowboy/white
+	head = /obj/item/clothing/head/caphat/cowboy
+	glasses = /obj/item/clothing/glasses/sunglasses
+	alt_suit = null
+
+/datum/outfit/job/captain/aclf
+	name = "Captain (ACLF)"
+	uniform = /obj/item/clothing/under/syndicate/aclf
+	shoes = /obj/item/clothing/shoes/jackboots
+	head = /obj/item/clothing/head/aclfcap
+	suit = /obj/item/clothing/suit/aclf
+

@@ -588,10 +588,6 @@
 /obj/structure/railing{
 	dir = 1
 	},
-/obj/structure/closet/wall{
-	name = "bridge crew's closet";
-	pixel_x = -28
-	},
 /obj/item/clothing/shoes/laceup,
 /obj/item/clothing/shoes/laceup,
 /obj/item/clothing/suit/toggle/solgov,
@@ -600,8 +596,9 @@
 /obj/item/clothing/head/solgov,
 /obj/item/radio/headset/solgov/alt,
 /obj/item/radio/headset/solgov/alt,
+/obj/item/radio/headset/headset_com,
 /obj/item/clothing/under/solgov/formal,
-/obj/item/clothing/under/solgov/formal,
+/obj/item/clothing/under/rank/command/lieutenant,
 /obj/machinery/firealarm{
 	dir = 4;
 	pixel_x = -28;
@@ -609,6 +606,12 @@
 	},
 /obj/item/storage/box/ids{
 	pixel_x = -7
+	},
+/obj/structure/closet/wall{
+	dir = 4;
+	icon_door = "wardrobe_blue";
+	name = "bridge crew's closet";
+	pixel_x = -28
 	},
 /turf/open/floor/carpet/nanoweave,
 /area/ship/bridge)
@@ -896,7 +899,7 @@
 	pixel_y = 4
 	},
 /obj/item/stamp/hos{
-	name = "warden's rubber stamp";
+	name = "brig officer's rubber stamp";
 	pixel_x = -13;
 	pixel_y = 10
 	},
@@ -923,16 +926,11 @@
 	pixel_x = -24
 	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
-/obj/structure/closet/wall{
-	name = "pilot's closet";
-	pixel_y = 28
-	},
 /obj/item/clothing/suit/jacket,
 /obj/item/radio/headset/headset_sec/alt/department/supply{
 	name = "pilot's bowman headset"
 	},
 /obj/item/clothing/glasses/sunglasses,
-/obj/item/kitchen/knife/combat/survival,
 /obj/item/storage/belt/mining/alt,
 /obj/item/clothing/head/helmet/sec,
 /obj/item/spacepod_key/sec,
@@ -941,6 +939,11 @@
 /obj/item/clothing/under/solgov,
 /obj/item/clothing/shoes/combat,
 /obj/item/clothing/accessory/armband/cargo,
+/obj/structure/closet/wall{
+	icon_door = "orange_wall";
+	name = "aviation closet";
+	pixel_y = 28
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "pA" = (
@@ -1085,26 +1088,28 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 5
 	},
+/obj/item/clothing/gloves/color/black,
+/obj/item/clothing/gloves/color/black,
+/obj/item/clothing/gloves/color/black,
+/obj/item/clothing/gloves/color/black,
+/obj/item/clothing/under/solgov,
+/obj/item/clothing/under/solgov,
+/obj/item/clothing/under/solgov,
+/obj/item/clothing/shoes/combat,
+/obj/item/clothing/shoes/combat,
+/obj/item/clothing/shoes/combat,
+/obj/item/clothing/accessory/armband,
+/obj/item/clothing/accessory/armband,
+/obj/item/clothing/accessory/armband,
+/obj/item/clothing/head/beret/solgov/plain,
+/obj/item/clothing/head/beret/solgov/plain,
+/obj/item/clothing/head/beret/solgov/plain,
 /obj/structure/closet/wall{
+	dir = 1;
+	icon_door = "red_wall";
 	name = "equipment closet";
 	pixel_y = -28
 	},
-/obj/item/clothing/gloves/color/black,
-/obj/item/clothing/gloves/color/black,
-/obj/item/clothing/gloves/color/black,
-/obj/item/clothing/gloves/color/black,
-/obj/item/clothing/under/solgov,
-/obj/item/clothing/under/solgov,
-/obj/item/clothing/under/solgov,
-/obj/item/clothing/shoes/combat,
-/obj/item/clothing/shoes/combat,
-/obj/item/clothing/shoes/combat,
-/obj/item/clothing/accessory/armband,
-/obj/item/clothing/accessory/armband,
-/obj/item/clothing/accessory/armband,
-/obj/item/clothing/head/beret/solgov/plain,
-/obj/item/clothing/head/beret/solgov/plain,
-/obj/item/clothing/head/beret/solgov/plain,
 /turf/open/floor/plasteel/dark,
 /area/ship/security/prison)
 "rN" = (
@@ -1173,7 +1178,7 @@
 /turf/open/floor/plating,
 /area/ship/cargo)
 "sM" = (
-/obj/machinery/cryopod/latejoin{
+/obj/machinery/cryopod{
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -1367,14 +1372,15 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/structure/closet/wall{
-	name = "fuel closet";
-	pixel_x = 28
-	},
 /obj/item/stack/sheet/mineral/plasma/fifty,
 /obj/item/stack/sheet/mineral/plasma/fifty,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/closet/wall/orange{
+	dir = 8;
+	name = "fuel locker";
+	pixel_x = 28
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
 "wE" = (
@@ -1422,10 +1428,6 @@
 /turf/open/floor/plating,
 /area/ship/engineering)
 "wN" = (
-/obj/structure/closet/wall{
-	name = "engineering closet";
-	pixel_x = 28
-	},
 /obj/machinery/atmospherics/pipe/manifold/orange{
 	dir = 4
 	},
@@ -1438,9 +1440,15 @@
 /obj/item/storage/backpack/industrial,
 /obj/item/clothing/accessory/armband/engine,
 /obj/item/clothing/under/solgov,
-/obj/item/clothing/shoes/combat,
 /obj/item/clothing/head/hardhat/orange,
 /obj/item/storage/belt/utility/full/engi,
+/obj/item/clothing/shoes/workboots,
+/obj/structure/closet/wall{
+	dir = 8;
+	icon_door = "yellow_wall";
+	name = "engineering closet";
+	pixel_x = 28
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
 "wY" = (
@@ -1550,13 +1558,10 @@
 /turf/open/floor/carpet/nanoweave/beige,
 /area/ship/hallway/port)
 "yI" = (
-/obj/item/clothing/suit/space/solgov,
-/obj/item/clothing/head/helmet/space/solgov,
-/obj/item/tank/jetpack/carbondioxide,
 /obj/effect/turf_decal/box,
 /obj/effect/decal/cleanable/dirt,
-/obj/item/clothing/mask/breath,
-/obj/machinery/suit_storage_unit/open,
+/obj/machinery/suit_storage_unit/solgov,
+/obj/item/tank/jetpack/carbondioxide,
 /turf/open/floor/plasteel,
 /area/ship/maintenance/fore)
 "yJ" = (
@@ -1827,15 +1832,16 @@
 /turf/open/floor/plating,
 /area/ship/security/prison)
 "Cp" = (
-/obj/structure/closet/firecloset/wall{
-	pixel_y = -28
-	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/navbeacon/wayfinding{
 	location = "Storage Bay"
+	},
+/obj/structure/closet/firecloset/wall{
+	dir = 1;
+	pixel_y = -28
 	},
 /turf/open/floor/plasteel,
 /area/ship/storage)
@@ -1961,13 +1967,15 @@
 /obj/item/clothing/suit/toggle/solgov,
 /obj/item/clothing/glasses/sunglasses,
 /obj/structure/railing,
-/obj/structure/closet/wall{
-	name = "captain's closet";
-	pixel_x = -28
-	},
 /obj/machinery/light_switch{
 	pixel_x = -25;
 	pixel_y = 15
+	},
+/obj/structure/closet/wall{
+	dir = 4;
+	icon_door = "wardrobe_blue";
+	name = "captain's closet";
+	pixel_x = -28
 	},
 /turf/open/floor/carpet/nanoweave,
 /area/ship/bridge)
@@ -2080,13 +2088,7 @@
 /turf/open/floor/plating,
 /area/ship/storage)
 "FQ" = (
-/obj/structure/closet/wall{
-	density = 0;
-	name = "equipment closet";
-	pixel_y = -28
-	},
 /obj/item/clothing/gloves/color/latex/nitrile,
-/obj/item/radio/headset/headset_medsec/alt,
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -2101,15 +2103,11 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
-/obj/item/clothing/suit/armor/vest/solgov/rep{
-	name = "\proper slim SolGov armor vest"
-	},
 /obj/item/clothing/glasses/hud/health,
 /obj/item/storage/firstaid/advanced,
 /obj/item/defibrillator/compact/loaded,
 /obj/item/clothing/head/beret/solgov,
 /obj/item/clothing/under/solgov,
-/obj/item/clothing/shoes/combat,
 /obj/item/clothing/accessory/armband/medblue,
 /obj/item/storage/backpack/medic,
 /obj/machinery/camera/autoname{
@@ -2117,6 +2115,14 @@
 	},
 /obj/effect/turf_decal/corner/green{
 	dir = 4
+	},
+/obj/item/radio/headset/headset_med,
+/obj/item/clothing/shoes/sneakers/white,
+/obj/item/clothing/suit/toggle/labcoat,
+/obj/structure/closet/wall/white/med{
+	dir = 1;
+	name = "medical locker";
+	pixel_y = -28
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
@@ -2250,12 +2256,9 @@
 /turf/open/floor/carpet/nanoweave/red,
 /area/ship/security/prison)
 "Jo" = (
-/obj/item/clothing/suit/space/solgov,
-/obj/item/clothing/head/helmet/space/solgov,
-/obj/item/tank/jetpack/carbondioxide,
 /obj/effect/turf_decal/box,
-/obj/item/clothing/mask/breath,
-/obj/machinery/suit_storage_unit/open,
+/obj/machinery/suit_storage_unit/solgov,
+/obj/item/tank/jetpack/carbondioxide,
 /turf/open/floor/plasteel,
 /area/ship/maintenance/fore)
 "Jv" = (
@@ -2407,8 +2410,7 @@
 /area/ship/security/prison)
 "LK" = (
 /obj/structure/chair/office{
-	dir = 4;
-	name = "Warden's chair"
+	dir = 4
 	},
 /obj/machinery/button/door{
 	id = "space_cops_warden";
@@ -2489,12 +2491,13 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 9
 	},
-/obj/structure/closet/emcloset/wall{
-	pixel_y = -28
-	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 1
+	},
+/obj/structure/closet/emcloset/wall{
+	dir = 1;
+	pixel_y = -28
 	},
 /turf/open/floor/plating,
 /area/ship/medical)
@@ -2548,10 +2551,6 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 5
 	},
-/obj/structure/closet/wall{
-	name = "equipment closet";
-	pixel_y = -28
-	},
 /obj/item/radio/headset/headset_sec/alt,
 /obj/item/radio/headset/headset_sec/alt,
 /obj/item/radio/headset/headset_sec/alt,
@@ -2568,6 +2567,12 @@
 /obj/item/kitchen/knife/letter_opener,
 /obj/item/kitchen/knife/letter_opener{
 	pixel_y = 5
+	},
+/obj/structure/closet/wall{
+	dir = 1;
+	icon_door = "red_wall";
+	name = "equipment closet";
+	pixel_y = -28
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security/prison)
@@ -2709,11 +2714,6 @@
 /turf/open/floor/carpet/nanoweave,
 /area/ship/bridge)
 "Rj" = (
-/obj/structure/closet/wall{
-	density = 0;
-	name = "medicine closet";
-	pixel_y = -28
-	},
 /obj/item/storage/firstaid/toxin,
 /obj/item/storage/firstaid/toxin,
 /obj/item/storage/firstaid/regular,
@@ -2748,6 +2748,11 @@
 	},
 /obj/item/reagent_containers/glass/bottle/epinephrine{
 	pixel_x = 9
+	},
+/obj/structure/closet/wall/white/med{
+	dir = 1;
+	name = "medical locker";
+	pixel_y = -28
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
@@ -3143,13 +3148,14 @@
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
-/obj/structure/closet/firecloset/wall{
-	pixel_x = 28
-	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 9
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/closet/firecloset/wall{
+	dir = 8;
+	pixel_x = 28
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
 "Wt" = (
@@ -3389,8 +3395,6 @@
 /turf/open/floor/carpet/nanoweave/beige,
 /area/ship/hallway/central)
 "Zu" = (
-/obj/item/clothing/suit/space/solgov,
-/obj/item/clothing/head/helmet/space/solgov,
 /obj/machinery/airalarm/all_access{
 	dir = 1;
 	pixel_y = -24
@@ -3398,10 +3402,9 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 1
 	},
-/obj/item/tank/jetpack/carbondioxide,
 /obj/effect/turf_decal/box,
-/obj/item/clothing/mask/breath,
-/obj/machinery/suit_storage_unit/open,
+/obj/machinery/suit_storage_unit/solgov,
+/obj/item/tank/jetpack/carbondioxide,
 /turf/open/floor/plasteel,
 /area/ship/maintenance/fore)
 "Zy" = (

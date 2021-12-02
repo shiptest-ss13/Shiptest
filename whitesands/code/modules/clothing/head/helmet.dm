@@ -5,8 +5,6 @@
 	item_state = "helmet_terragov"
 	can_flashlight = FALSE
 	dog_fashion = null
-	icon = 'whitesands/icons/obj/clothing/hats.dmi'
-	mob_overlay_icon = 'whitesands/icons/mob/clothing/head.dmi'
 
 /obj/item/clothing/head/solgov
 	name = "\improper SolGov officer's cap"
@@ -15,8 +13,6 @@
 	icon_state = "cap_solgov"
 	item_state = "cap_solgov"
 	strip_delay = 80
-	icon = 'whitesands/icons/obj/clothing/hats.dmi'
-	mob_overlay_icon = 'whitesands/icons/mob/clothing/head.dmi'
 
 /obj/item/clothing/head/solgov/terragov
 	name = "\improper TerraGov officer's cap"
@@ -36,7 +32,9 @@
 	desc = "A robust combat helmet commonly employed by Syndicate forces, regardless of alignment."
 	icon_state = "operator"
 	item_state = "operator"
-	icon = 'whitesands/icons/obj/clothing/hats.dmi'
-	mob_overlay_icon = 'whitesands/icons/mob/clothing/head.dmi'
 
-
+/obj/item/clothing/head/helmet/alt/un
+	name = "blue bulletproof helmet"
+	desc = "A bulletproof combat helmet that excels in protecting the wearer against traditional projectile weaponry and explosives to a minor extent. This thing is probably older than your grandparents."
+	icon_state = "antichristhelm"
+	item_state = "antichristhelm"

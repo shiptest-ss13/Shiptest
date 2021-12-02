@@ -1,10 +1,26 @@
+//Lieutenant
+/obj/item/clothing/suit/lieutenant_trenchcoat
+	name = "lieutenant's trenchcoat"
+	desc = "A design taken from a war over 500 years ago. Makes you look like a badass."
+
+
+
+	icon_state = "trenchcoat_blueshield"
+	item_state = "trenchcoat_blueshield"
+	blood_overlay_type = "coat"
+	allowed = list(/obj/item/gun/energy, /obj/item/reagent_containers/spray/pepper, /obj/item/ammo_box, /obj/item/ammo_casing,/obj/item/melee/baton, /obj/item/restraints/handcuffs, /obj/item/flashlight/seclite, /obj/item/melee/classic_baton)
+	armor = list("melee" = 25, "bullet" = 10, "laser" = 25, "energy" = 10, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	body_parts_covered = CHEST|GROIN|ARMS|HANDS
+	cold_protection = CHEST|LEGS|ARMS
+	heat_protection = CHEST|LEGS|ARMS
+
 // SolGov Rep //
 
 /obj/item/clothing/suit/solgov_trenchcoat
 	name = "solgov trenchcoat"
 	desc = "A solgov official's trenchcoat. Has a lot of pockets."
-	icon = 'whitesands/icons/obj/clothing/suits.dmi'
-	mob_overlay_icon = 'whitesands/icons/mob/clothing/suits.dmi'
+
+
 	icon_state = "trenchcoat_solgov"
 	item_state = "trenchcoat_solgov"
 	body_parts_covered = CHEST|LEGS|ARMS
@@ -16,8 +32,8 @@
 // Security //
 
 /obj/item/clothing/suit/armor/vest/security
-	icon = 'whitesands/icons/obj/clothing/suits.dmi'
-	mob_overlay_icon = 'whitesands/icons/mob/clothing/suits.dmi'
+
+
 	item_state = "armor"
 	body_parts_covered = CHEST|GROIN|ARMS
 	cold_protection = CHEST|GROIN|ARMS|HANDS
@@ -58,8 +74,8 @@
 /obj/item/clothing/suit/hooded/enginseer
 	name = "enginseer regalia"
 	desc = "You hold the secrets of the Machine."
-	icon = 'whitesands/icons/obj/clothing/suits.dmi'
-	mob_overlay_icon = 'whitesands/icons/mob/clothing/suits.dmi'
+
+
 	icon_state = "enginseer"
 	item_state = "enginseer"
 	hoodtype = /obj/item/clothing/head/hooded/enginseer
@@ -70,8 +86,6 @@
 /obj/item/clothing/head/hooded/enginseer
 	name = "enginseer's hood"
 	desc = "You are honored that they require your skills."
-	icon = 'whitesands/icons/obj/clothing/hats.dmi'
-	mob_overlay_icon = 'whitesands/icons/mob/clothing/head.dmi'
 	icon_state = "enginseerhood"
 	item_state = "enginseerhood"
 	body_parts_covered = HEAD

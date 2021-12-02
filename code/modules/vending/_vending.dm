@@ -142,14 +142,9 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 	var/extra_price = 50
 	///Whether our age check is currently functional
 	var/age_restrictions = TRUE
-	/**
-	* Is this item on station or not
-	*
-	* if it doesn't originate from off-station during mapload, everything is free
-	*/
-	var/onstation = TRUE //if it doesn't originate from off-station during mapload, everything is free
-	///A variable to change on a per instance basis on the map that allows the instance to force cost and ID requirements
-	var/onstation_override = FALSE //change this on the object on the map to override the onstation check. DO NOT APPLY THIS GLOBALLY.
+
+	///A variable to change on a per instance basis on the map that allows the instance to remove cost and ID requirements
+	var/all_items_free = FALSE //change this on the object on the map. DO NOT APPLY THIS GLOBALLY.
 
 	///ID's that can load this vending machine wtih refills
 	var/list/canload_access_list
@@ -171,18 +166,10 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 	/// used for narcing on underages
 	var/obj/item/radio/Radio
 
-/obj/item/circuitboard
-	///determines if the circuit board originated from a vendor off station or not.
-	var/onstation = TRUE
-
 /**
 	* Initialize the vending machine
 	*
 	* Builds the vending machine inventory, sets up slogans and other such misc work
-	*
-	* This also sets the onstation var to:
-	* * FALSE - if the machine was maploaded on a zlevel that doesn't pass the is_station_level check
-	* * TRUE - all other cases
 	*/
 /obj/machinery/vending/Initialize(mapload)
 	var/build_inv = FALSE
@@ -203,13 +190,6 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 	last_slogan = world.time + rand(0, slogan_delay)
 	power_change()
 
-	onstation = FALSE
-	if(circuit)
-		circuit.onstation = onstation //sync up the circuit so the pricing schema is carried over if it's reconstructed.
-	else if(circuit && (circuit.onstation != onstation)) //check if they're not the same to minimize the amount of edited values.
-		onstation = circuit.onstation //if it was constructed outside mapload, sync the vendor up with the circuit's var so you can't bypass price requirements by moving / reconstructing it off station.
-	if(onstation_override) //overrides the checks if true.
-		onstation = TRUE
 	Radio = new /obj/item/radio(src)
 	Radio.listening = 0
 
@@ -293,7 +273,6 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 			if (dump_amount >= 16)
 				return
 
-GLOBAL_LIST_EMPTY(vending_products)
 /**
 	* Build the inventory of the vending machine from it's product and record lists
 	*
@@ -311,7 +290,6 @@ GLOBAL_LIST_EMPTY(vending_products)
 
 		var/atom/temp = typepath
 		var/datum/data/vending_product/R = new /datum/data/vending_product()
-		GLOB.vending_products[typepath] = 1
 		R.name = initial(temp.name)
 		if(istype(temp, /obj/item/stack)) //Include stack amount
 			var/obj/item/stack/S = temp
@@ -707,7 +685,7 @@ GLOBAL_LIST_EMPTY(vending_products)
 
 /obj/machinery/vending/ui_static_data(mob/user)
 	. = list()
-	.["onstation"] = onstation
+	.["all_items_free"] = all_items_free
 	.["miningvendor"] = mining_point_vendor
 	.["department"] = payment_department
 	.["product_records"] = list()
@@ -804,7 +782,7 @@ GLOBAL_LIST_EMPTY(vending_products)
 				flick(icon_deny,src)
 				vend_ready = TRUE
 				return
-			if(onstation && ishuman(usr))
+			if(!all_items_free && ishuman(usr))
 				var/mob/living/carbon/human/H = usr
 				var/obj/item/card/id/C = H.get_idcard(TRUE)
 

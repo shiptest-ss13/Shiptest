@@ -1,4 +1,4 @@
-/mob/living/simple_animal/hostile/whitesands
+/mob/living/simple_animal/hostile/asteroid/whitesands
 	name = "Whitesands Inhabitant"
 	desc = "If you can read this, yell at a coder!"
 	icon = 'whitesands/icons/mob/simple_human.dmi'
@@ -6,11 +6,11 @@
 	icon_living = "survivor_base"
 	icon_dead = null
 	icon_gib = "syndicate_gib"
-	mob_biotypes = MOB_ORGANIC|MOB_HUMANOID
+	mob_biotypes = MOB_ORGANIC
 	minbodytemp = 180
 	unsuitable_atmos_damage = 15
-	atmos_requirements = list("min_oxy" = 5, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 999, "min_n2" = 0, "max_n2" = 0)
-	speak_chance = 3
+	atmos_requirements = list("min_oxy" = 1, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 999, "min_n2" = 0, "max_n2" = 0)
+	speak_chance = 20
 	turns_per_move = 5
 	response_help_continuous = "pushes"
 	response_help_simple = "push"
@@ -26,30 +26,44 @@
 	a_intent = INTENT_HARM
 	unsuitable_atmos_damage = 15
 	speak_emote = list(
-		"Camping in the desert almost makes you wish for a nuclear winter.",
-		"What I would give for a donk pocket right now...",
-		"Hey you know what I don't miss? Clowns.",
-		"There's something on the horizon. I hope it's not more goddamn Muad'dib.",
-		"I am so fucking thirsty.",
-		"Who the fuck took my goliath steak!?",
-		"Even getting blackout on Pan Galactic Gargle-Blasters would be better than this.",
-		"My feet hurt.",
+		"The sun... The sun...",
+		"You'll do...",
+		"All mine...",
+		"Gg..free..",
+		"Drink.. need drink...",
+		"I can smell... you..",
+		"G-g...",
+		"Taste..the salt.",
 	)
 	loot = list(
 		/obj/effect/mob_spawn/human/corpse/whitesands/survivor,
 		/obj/effect/spawner/lootdrop/whitesands/survivor
 	)
 	del_on_death = 1
-	faction = list() // Generated at runtime based on their camp ID
+	faction = list("hermit")
 
-/mob/living/simple_animal/hostile/whitesands/survivor
-	name = "Whitesands Survivor"
-	desc = {"
-	This person might have once been a colonist, station crew, or even a tourist.
-	What they are now is something entirely different, as life on Whitesands has beat them into something new.
-	"}
+/mob/living/simple_animal/hostile/asteroid/whitesands/survivor/death(gibbed)
+	move_force = MOVE_FORCE_DEFAULT
+	move_resist = MOVE_RESIST_DEFAULT
+	pull_force = PULL_FORCE_DEFAULT
+	if(prob(15))
+		new /obj/item/crusher_trophy/shiny(loc)
+		visible_message("<span class='warning'>You notice a glimmering nugget of shiny metal.</span>")
+	..()
 
-/mob/living/simple_animal/hostile/whitesands/ranged
+/mob/living/simple_animal/hostile/asteroid/whitesands/survivor
+	name = "Hermit Wanderer"
+	desc =" A wild-eyed figure, wearing tattered mining equipment and boasting a malformed body, twisted by the heavy metals and high background radiation of the sandworlds."
+
+/mob/living/simple_animal/hostile/asteroid/whitesands/survivor/random/Initialize()
+	. = ..()
+	if(prob(35))
+		new /mob/living/simple_animal/hostile/asteroid/whitesands/ranged/hunter(loc)
+	if(prob(10))
+		new /mob/living/simple_animal/hostile/asteroid/whitesands/ranged/gunslinger(loc)
+		return INITIALIZE_HINT_QDEL
+
+/mob/living/simple_animal/hostile/asteroid/whitesands/ranged
 	icon_state = "survivor_hunter"
 	icon_living = "survivor_hunter"
 	projectiletype = null
@@ -60,26 +74,21 @@
 	retreat_distance = 5
 	minimum_distance = 5
 
-/mob/living/simple_animal/hostile/whitesands/ranged/hunter
-	name = "Whitesands Hunter"
-	desc = {"
-	One of the few survivors on the planet with working weaponry.
-	Hunting on Whitesands is dangerous, hard work, making a hunter still standing one to be feared.
-	"}
+/mob/living/simple_animal/hostile/asteroid/whitesands/ranged/hunter
+	name = "Hermit Hunter"
+	desc ="A wild-eyed figure. Watch out- he has a gun, and he remembers just enough of his old life to use it!"
 	loot = list(
 		/obj/effect/mob_spawn/human/corpse/whitesands/survivor/hunter,
 		/obj/effect/spawner/lootdrop/whitesands/survivor/hunter
 	)
 
-/mob/living/simple_animal/hostile/whitesands/ranged/gunslinger
-	name = "Whitesands Gunslinger"
-	desc = {"
-	One of the few survivors on the planet with working weaponry.
-	While the weapon they wield is ancient compared to most modern firearms, it packs a hell of a punch.
-	"}
+/mob/living/simple_animal/hostile/asteroid/whitesands/ranged/gunslinger
+	name = "Hermit Soldier"
+	desc = "The miner's rebellion, though mostly underground, recieved a few good weapon shipments from an off-sector source. You should probably start running."
 	icon_state = "survivor_gunslinger"
 	icon_living = "survivor_gunslinger"
 	projectilesound = 'sound/weapons/gun/smg/shot.ogg'
+	speed = 10
 	rapid = 4
 	rapid_fire_delay = 3
 	casingtype = /obj/item/ammo_casing/ballistic/a545_39/recycled

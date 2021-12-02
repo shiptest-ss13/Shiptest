@@ -5,9 +5,19 @@
 	"map_id": "independent_litieguai",
 	"job_slots": {
 		"Captain": 1,
-		"Chief Medical Officer": 1,
-		"Paramedic": 3,
-		"Assistant": 2
+		"Chief Medical Officer": {
+			"outfit": "/datum/outfit/job/cmo/medicaldirector",
+			"officer": true,
+			"slots": 1
+		},
+		"Trauma Team Technician": {
+			"outfit": "/datum/outfit/job/paramedic/traumateam",
+			"slots": 3
+		},
+		"Medical Intern": {
+			"outfit": "/datum/outfit/job/doctor/juniordoctor",
+			"slots": 3
+		}
 	},
 	"cost": 500
 }

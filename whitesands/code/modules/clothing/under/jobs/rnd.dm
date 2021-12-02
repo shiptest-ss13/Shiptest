@@ -3,8 +3,6 @@
 /obj/item/clothing/under/rank/rnd/scientist/junior
 	name = "junior scientist jumpsuit"
 	desc = "It's made of a special fiber that provides minor protection against explosives. It has markings that denote the wearer as a junior scientist."
-	icon = 'whitesands/icons/obj/clothing/under/rnd.dmi'
-	mob_overlay_icon = 'whitesands/icons/mob/clothing/under/rnd.dmi'
 	icon_state = "junior"
 	fitted = NO_FEMALE_UNIFORM
 
@@ -18,8 +16,6 @@
 /obj/item/clothing/under/rank/rnd/scientist/xenobiologist
 	name = "xenobiologist jumpsuit"
 	desc = "It's made of a special fiber that provides minor protection against biohzards. Worn by xenobiologist who have no qualms in creating abominations against nature."
-	icon = 'whitesands/icons/obj/clothing/under/rnd.dmi'
-	mob_overlay_icon = 'whitesands/icons/mob/clothing/under/rnd.dmi'
 	icon_state = "xenobiologist"
 
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 10, "rad" = 0, "fire" = 0, "acid" = 0)
@@ -35,8 +31,6 @@
 /obj/item/clothing/under/rank/rnd/scientist/nanite
 	name = "nanite researcher jumpsuit"
 	desc = "Worn researchers that study and applies the usage of nanites, now more microscopic things to worry about."
-	icon = 'whitesands/icons/obj/clothing/under/rnd.dmi'
-	mob_overlay_icon = 'whitesands/icons/mob/clothing/under/rnd.dmi'
 	icon_state = "nanite"
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	resistance_flags = NONE
@@ -51,8 +45,6 @@
 
 /obj/item/clothing/under/rank/rnd/roboticist/biomech_engineer
 	name = "biomechanical engineer jumpsuit"
-	icon = 'whitesands/icons/obj/clothing/under/rnd.dmi'
-	mob_overlay_icon = 'whitesands/icons/mob/clothing/under/rnd.dmi'
 	icon_state = "biomech_engineer"
 	fitted = NO_FEMALE_UNIFORM
 
@@ -65,8 +57,6 @@
 
 /obj/item/clothing/under/rank/rnd/roboticist/mech_engineer
 	name = "mechatronic engineer jumpsuit"
-	icon = 'whitesands/icons/obj/clothing/under/rnd.dmi'
-	mob_overlay_icon = 'whitesands/icons/mob/clothing/under/rnd.dmi'
 	icon_state = "mech_engineer"
 	fitted = NO_FEMALE_UNIFORM
 
@@ -80,8 +70,6 @@
 /obj/item/clothing/under/suit/senior_scientist
 	name = "senior scientist suit"
 	desc = "A suit with science colors, meant to be worn by senior staff."
-	icon = 'whitesands/icons/obj/clothing/under/rnd.dmi'
-	mob_overlay_icon = 'whitesands/icons/mob/clothing/under/rnd.dmi'
 	icon_state = "senior_science"
 
 	permeability_coefficient = 0.5
@@ -99,8 +87,6 @@
 /obj/item/clothing/under/suit/senior_roboticist
 	name = "senior roboticist suit"
 	desc = "A suit with robotics colors, meant to be worn by senior staff."
-	icon = 'whitesands/icons/obj/clothing/under/rnd.dmi'
-	mob_overlay_icon = 'whitesands/icons/mob/clothing/under/rnd.dmi'
 	icon_state = "senior_roboticist"
 
 	resistance_flags = NONE

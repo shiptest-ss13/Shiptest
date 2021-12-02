@@ -9,6 +9,11 @@
 	name = "detective's shoulder holster"
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/holster/detective
 
+/obj/item/clothing/accessory/holster/lieutenant
+	name = "lieutenant's shoulder holster"
+	desc = "A modified shoulder holster designed to fit a small egun and power cells."
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/holster/lt
+
 /obj/item/clothing/accessory/holster/detective/Initialize()
 	. = ..()
 	new /obj/item/gun/ballistic/revolver/detective(src)
@@ -53,4 +58,3 @@
 	name = "solgov waistcoat"
 	desc = "A standard issue waistcoat in solgov colors."
 	icon_state = "solgov_waistcoat"
-	icon = 'whitesands/icons/obj/clothing/accessories.dmi'

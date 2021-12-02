@@ -11,7 +11,8 @@ GLOBAL_LIST_INIT(spacepod_verb_list,  list(
 	/obj/spacepod/verb/lock_pod,
 	/obj/spacepod/verb/toggle_brakes,
 	/obj/spacepod/verb/toggleLights,
-	/obj/spacepod/verb/toggleDoors
+	/obj/spacepod/verb/toggleDoors,
+	/obj/spacepod/proc/unload_cargo
 ))
 
 /obj/spacepod
@@ -54,6 +55,9 @@ GLOBAL_LIST_INIT(spacepod_verb_list,  list(
 	var/mob/living/pilot
 	var/list/passengers = list()
 	var/max_passengers = 0
+
+	var/enter_delay = 40 //Time taken to enter the pod
+	var/exit_delay = 20 //Time taken to exit the pod
 
 	var/velocity_x = 0 // tiles per second.
 	var/velocity_y = 0
@@ -297,15 +301,13 @@ GLOBAL_LIST_INIT(spacepod_verb_list,  list(
 				else //just delete the cabin gas, we're in space or some shit
 					qdel(removed)
 
-/mob/Stat()
+/mob/living/get_status_tab_items()
 	. = ..()
-	if(isspacepod(loc) && statpanel("Status"))
+	if(isspacepod(loc))
 		var/obj/spacepod/S = loc
-		stat(null)
-		stat(null, "Spacepod Charge: [S.cell ? "[round(S.cell.charge,0.1)]/[S.cell.maxcharge] KJ" : "NONE"]")
-		stat(null, "Spacepod Integrity: [round(S.obj_integrity,0.1)]/[S.max_integrity]")
-		stat(null, "Spacepod Velocity: [round(sqrt(S.velocity_x*S.velocity_x+S.velocity_y*S.velocity_y), 0.1)] m/s")
-		stat(null)
+		. += "Spacepod Charge: [S.cell ? "[round(S.cell.charge,0.1)]/[S.cell.maxcharge] KJ" : "NONE"]"
+		. += "Spacepod Integrity: [round(S.obj_integrity,0.1)]/[S.max_integrity]"
+		. += "Spacepod Velocity: [round(sqrt(S.velocity_x*S.velocity_x+S.velocity_y*S.velocity_y), 0.1)] m/s"
 
 /obj/spacepod/ex_act(severity)
 	switch(severity)
@@ -522,8 +524,15 @@ GLOBAL_LIST_INIT(spacepod_verb_list,  list(
 		return FALSE
 
 	if(passengers.len <= max_passengers || !pilot)
+		var/final_delay = enter_delay
+		if(ishuman(user))
+			var/mob/living/carbon/human/H = user
+			if(H.wear_suit)
+				var/obj/item/clothing/suit/S = H.get_item_by_slot(ITEM_SLOT_OCLOTHING)
+				if(S.clothing_flags & FAST_EMBARK)
+					final_delay = enter_delay/2
 		visible_message("<span class='notice'>[user] starts to climb into [src].</span>")
-		if(do_after(user, 40, target = src) && construction_state == SPACEPOD_ARMOR_WELDED)
+		if(do_after(user, final_delay, target = src) && construction_state == SPACEPOD_ARMOR_WELDED)
 			var/success = add_rider(user)
 			if(!success)
 				to_chat(user, "<span class='notice'>You were too slow. Try better next time, loser.</span>")
@@ -557,8 +566,18 @@ GLOBAL_LIST_INIT(spacepod_verb_list,  list(
 		if(!do_after(usr, 1200, target = src))
 			return
 
-	if(remove_rider(usr))
-		to_chat(usr, "<span class='notice'>You climb out of [src].</span>")
+	to_chat(usr, "<span class='notice'>You begin the ejection procedure.</span>")
+	var/final_exit_delay = exit_delay
+	if(ishuman(usr))
+		var/mob/living/carbon/human/H = usr
+		if(H.wear_suit)
+			var/obj/item/clothing/suit/S = H.get_item_by_slot(ITEM_SLOT_OCLOTHING)
+			if(S.clothing_flags & FAST_EMBARK)
+				final_exit_delay = exit_delay/2
+
+	if(do_after(usr, has_gravity() ? final_exit_delay : 0 , target = src))
+		if(remove_rider(usr))
+			to_chat(usr, "<span class='notice'>You climb out of [src].</span>")
 
 /obj/spacepod/verb/lock_pod()
 	set name = "Lock Doors"

@@ -77,4 +77,49 @@
 	infinite = TRUE
 	start_lit = TRUE
 
+/obj/item/candle/tribal_torch
+	name = "tribal torch"
+	desc = "A standing torch, used to provide light in dark environments."
+	icon = 'icons/obj/candle.dmi'
+	icon_state = "torch_unlit"
+	item_state = "torch"
+	w_class = WEIGHT_CLASS_BULKY
+	light_color = LIGHT_COLOR_FIRE
+	infinite = TRUE
+	heat = 2000
+
+/obj/item/candle/tribal_torch/attackby(obj/item/W, mob/user, params)
+	..()
+	var/msg = W.ignition_effect(src, user)
+	if(msg)
+		light(msg)
+		set_light(7)
+
+/obj/item/candle/tribal_torch/fire_act(exposed_temperature, exposed_volume)
+	if(!src.lit)
+		light() //honk
+		set_light(7)
+	..()
+
+/obj/item/candle/attack_self(mob/user)
+	if(!src.lit)
+		to_chat(user, "<span class='notice'>You start pushing [src] into the ground...</span>")
+		if (do_after(user, 20, target=src))
+			qdel(src)
+			new /obj/structure/destructible/tribal_torch(get_turf(user))
+			light_color = LIGHT_COLOR_ORANGE
+			user.visible_message("<span class='notice'>[user] plants \the [src] firmly in the ground.</span>", "<span class='notice'>You plant \the [src] firmly in the ground.</span>")
+			return
+	else if(lit)
+		user.visible_message(
+			"<span class='notice'>[user] snuffs [src] out.</span>")
+		lit = FALSE
+		update_icon()
+		set_light(0)
+
+
+/obj/item/candle/tribal_torch/update_icon()
+	icon_state = "torch[lit ? "_lit" : "_unlit"]"
+	item_state = "torch[lit ? "-on" : ""]"
+
 #undef CANDLE_LUMINOSITY

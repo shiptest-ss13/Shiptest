@@ -10,7 +10,7 @@
 	name = ".50AE bullet"
 	damage = 60
 
-// .38 (Detective's Gun)
+// .38 (Detective's Gun & Winchester)
 
 /obj/projectile/bullet/c38
 	name = ".38 bullet"
@@ -100,6 +100,16 @@
 	if(isliving(target))
 		var/mob/living/M = target
 		M.adjust_bodytemperature(((100-blocked)/100)*(temperature - M.bodytemperature))
+
+/obj/projectile/bullet/c38/hunting //bonus damage to simplemobs
+	name = ".38 hunting"
+	damage = 15
+	var/bonus_damage = 60 // if a simplemob then do this much extra
+
+/obj/projectile/bullet/c38/hunting/on_hit(atom/target, blocked = FALSE)
+	if(istype(target, /mob/living/simple_animal/hostile/asteroid/))
+		damage += bonus_damage
+	..()
 
 // .357 (Syndie Revolver)
 

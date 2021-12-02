@@ -10,8 +10,8 @@
 	minimal_player_age = 7
 	exp_requirements = 300
 	exp_type = EXP_TYPE_CREW
+	officer = TRUE
 	wiki_page = "Space_Law" //WS Edit - Wikilinks/Warning
-	special_notice = "You're the Warden, not a Security Officer. Your job is in the brig processing criminals, not patrolling the station." //WS Edit - Wikilinks/Warning
 
 	outfit = /datum/outfit/job/warden
 
@@ -57,3 +57,11 @@
 	implants = list(/obj/item/implant/mindshield)
 
 	chameleon_extras = /obj/item/gun/ballistic/shotgun/automatic/combat/compact
+
+/datum/outfit/job/warden/solgov
+	name = "Brig Officer (SolGov)"
+
+	uniform = /obj/item/clothing/under/solgov
+	accessory = /obj/item/clothing/accessory/armband
+	head = /obj/item/clothing/head/beret/solgov
+	suit = /obj/item/clothing/suit/armor/vest/solgov/rep

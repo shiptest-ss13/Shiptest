@@ -252,15 +252,12 @@
 	id = "kinggoatboss"
 	description = "Abandon All Hope Ye Who Enter Here."
 	suffix = "kinggoatboss.dmm"
-	always_place = TRUE
-	allow_duplicates = FALSE
-	always_spawn_with = list(/datum/map_template/ruin/space/kinggoatarena = PLACE_RESERVED)
 
 /datum/map_template/ruin/lavaland/comm_outpost
 	name = "Syndicate Comm Outpost"
 	id = "commoutpost"
 	description = "A forgotten outpost home to only a tragic tale."
-	suffix = "lavaland_surface_comm_outpost"
+	suffix = "lavaland_surface_comm_outpost.dmm"
 	allow_duplicates = FALSE
 	cost = 5
 
@@ -268,7 +265,7 @@
 	name = "Legion infested Dwarf Fortress"
 	id = "dwarffortress"
 	description = "A forgotten fortress home to only a tragic tale and infested corpses."
-	suffix = "lavaland_surface_dwarffortress"
+	suffix = "lavaland_surface_dwarffortress.dmm"
 	allow_duplicates = FALSE
 
 /datum/map_template/ruin/lavaland/boss/bubblegum
@@ -288,3 +285,21 @@
 	id = "colossus-cross"
 	description = "The almighty one, here in this chunk of rock called lavaland."
 	suffix = "colossus_ruin.dmm"
+
+/datum/map_template/ruin/lavaland/ashwalker_shrine
+	name = "Ashwalker shrine"
+	id = "ashwalker_shrine"
+	description = "A destroyed ashwalker village. What even happened here?"
+	suffix = "ashwalker_shrine.dmm"
+
+/datum/map_template/ruin/lavaland/fuckedupandevilclub
+	name = "Evil Club"
+	id = "evil_club"
+	description = "A truly fucked up and evil club."
+	suffix = "lavaland_surface_fuckedupandevilclub.dmm"
+
+/datum/map_template/ruin/lavaland/spookycrash
+	name = "Spooky Crash"
+	id = "spooky_crash"
+	description = "A spooky looking crash."
+	suffix = "lavaland_surface_SPOOKYCRASH.dmm"

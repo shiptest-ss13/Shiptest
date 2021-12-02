@@ -32,9 +32,8 @@
 		new /datum/data/mining_equipment("Jaunter",						/obj/item/wormhole_jaunter,											750),
 		new /datum/data/mining_equipment("Kinetic Crusher",				/obj/item/kinetic_crusher,											750),
 		new /datum/data/mining_equipment("Kinetic Accelerator",			/obj/item/gun/energy/kinetic_accelerator,							750),
-		new /datum/data/mining_equipment("Advanced Scanner",			/obj/item/t_scanner/adv_mining_scanner,								800),
-		new /datum/data/mining_equipment("Deepcore Pointer",			/obj/item/pinpointer/deepcore,										200),		// WS edit - Deepcore
-		new /datum/data/mining_equipment("Advanced Pointer",			/obj/item/pinpointer/deepcore/advanced,								800),		// WS edit - Deepcore
+		new /datum/data/mining_equipment("Dual Mining Scanner",			/obj/item/pinpointer/deepcore,										200),		// WS edit - Deepcore
+		new /datum/data/mining_equipment("Advanced Dual Mining Scanner",/obj/item/pinpointer/deepcore/advanced,								800),		// WS edit - Deepcore
 		new /datum/data/mining_equipment("Drill Deployment Capsule",	/obj/item/deepcorecapsule,											2000),		// WS edit - Deepcore
 		new /datum/data/mining_equipment("Resonator",					/obj/item/resonator,												800),
 		new /datum/data/mining_equipment("Fulton Pack",					/obj/item/extraction_pack,											1000),
@@ -43,7 +42,7 @@
 		new /datum/data/mining_equipment("Mining Conscription Kit",		/obj/item/storage/backpack/duffelbag/mining_conscript,				1500),
 		new /datum/data/mining_equipment("Jetpack Upgrade",				/obj/item/tank/jetpack/suit,										2000),
 		new /datum/data/mining_equipment("Space Cash",					/obj/item/stack/spacecash/c1000,									2000),
-		new /datum/data/mining_equipment("Mining Hardsuit",				/obj/item/clothing/suit/space/hardsuit/mining,						2000),
+		new /datum/data/mining_equipment("Mining Hardsuit",				/obj/item/clothing/suit/space/hardsuit/mining/independent,			2000),
 		new /datum/data/mining_equipment("Diamond Pickaxe",				/obj/item/pickaxe/diamond,											2000),
 		new /datum/data/mining_equipment("Super Resonator",				/obj/item/resonator/upgraded,										2500),
 		new /datum/data/mining_equipment("Jump Boots",					/obj/item/clothing/shoes/bhop,										2500),
@@ -74,15 +73,6 @@
 	src.equipment_name = name
 	src.equipment_path = path
 	src.cost = cost
-
-/obj/machinery/mineral/equipment_vendor/Initialize()
-	. = ..()
-	build_inventory()
-
-/obj/machinery/mineral/equipment_vendor/proc/build_inventory()
-	for(var/p in prize_list)
-		var/datum/data/mining_equipment/M = p
-		GLOB.vending_products[M.equipment_path] = 1
 
 /obj/machinery/mineral/equipment_vendor/update_icon_state()
 	if(powered())
@@ -284,7 +274,7 @@
 
 /obj/item/storage/backpack/duffelbag/mining_conscript/PopulateContents()
 	new /obj/item/clothing/glasses/meson(src)
-	new /obj/item/t_scanner/adv_mining_scanner/lesser(src)
+	new /obj/item/pinpointer/deepcore(src)
 	new /obj/item/storage/bag/ore(src)
 	new /obj/item/clothing/suit/hooded/explorer(src)
 	new /obj/item/encryptionkey/headset_mining(src)

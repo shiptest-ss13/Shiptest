@@ -3,11 +3,17 @@
 
 /obj/structure/overmap/ship/simulated
 	///Assoc list of remaining open job slots (job = remaining slots)
-	var/list/job_slots = list("Assistant" = 5, "Captain" = 1)
+	var/list/job_slots = list("Captain" = 1, "Assistant" = 5)
 	///Manifest list of people on the ship
 	var/list/manifest = list()
 	///Shipwide bank account
 	var/datum/bank_account/ship/ship_account
+	///Whether or not new players are allowed to join the ship
+	var/join_allowed = TRUE
+	///Short memo of the ship shown to new joins
+	var/memo = ""
+	///Time that next job slot change can occur
+	var/job_slot_adjustment_cooldown = 0
 
 /obj/structure/overmap/ship/simulated/Initialize(mapload, obj/docking_port/mobile/_shuttle)
 	. = ..()

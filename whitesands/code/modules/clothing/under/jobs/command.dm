@@ -1,16 +1,14 @@
 /obj/item/clothing/under/rank/command
 	desc = "A standard command jumpsuit."
 	name = "command jumpsuit"
-	icon = 'whitesands/icons/obj/clothing/under/command.dmi'
-	mob_overlay_icon = 'whitesands/icons/mob/clothing/under/command.dmi'
+	icon = 'icons/obj/clothing/under/command.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/under/command.dmi'
 	icon_state = "cmd"
 	item_state = "w_suit"
 
 /obj/item/clothing/under/rank/command/skirt
 	desc = "A standard command jumpskirt."
 	name = "command jumpskirt"
-	icon = 'whitesands/icons/obj/clothing/under/command.dmi'
-	mob_overlay_icon = 'whitesands/icons/mob/clothing/under/command.dmi'
 	icon_state = "cmd_skirt"
 	body_parts_covered = CHEST|GROIN|ARMS
 	can_adjust = FALSE
@@ -19,7 +17,7 @@
 //Captain
 
 /obj/item/clothing/under/rank/command/captain
-	desc = "It's a blue jumpsuit with some gold markings denoting the rank of \"Captain\"."
+	desc = "It's a white jumpsuit with some gold markings denoting the rank of \"Captain\"."
 	name = "captain's jumpsuit"
 	icon_state = "captain"
 	sensor_mode = SENSOR_COORDS
@@ -27,7 +25,7 @@
 
 /obj/item/clothing/under/rank/command/captain/skirt
 	name = "captain's jumpskirt"
-	desc = "It's a blue jumpskirt with some gold markings denoting the rank of \"Captain\"."
+	desc = "It's a white jumpskirt with some gold markings denoting the rank of \"Captain\"."
 	icon_state = "captain_skirt"
 	body_parts_covered = CHEST|GROIN|ARMS
 	can_adjust = FALSE
@@ -80,3 +78,41 @@
 	body_parts_covered = CHEST|GROIN|ARMS
 	can_adjust = FALSE
 	fitted = FEMALE_UNIFORM_TOP
+
+/obj/item/clothing/under/rank/command/captain/nt
+	desc = "It's a blue jumpsuit with some gold markings denoting the rank of \"Captain\"."
+	icon_state = "captain_nt"
+	item_state = "captain_nt"
+
+//Lieutenant
+
+/obj/item/clothing/under/rank/command/lieutenant
+	desc = "A standard command jumpsuit in the colours of the Lieutenant."
+	name = "\improper lieutenant jumpsuit"
+	icon_state = "lt"
+	item_state = "lt"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/rank/command/lieutenant/skirt
+	desc = "A command jumpskirt in the colours of the Lieutenant."
+	name = "\improper lieutenant jumpskirt"
+	icon_state = "lt_skirt"
+	item_state = "lt_skirt"
+	body_parts_covered = CHEST|GROIN|ARMS
+	can_adjust = FALSE
+	fitted = FEMALE_UNIFORM_TOP
+
+/obj/item/clothing/under/rank/command/lieutenant/blue
+	desc = "A standard command jumpsuit in the colours of the Lieutenant."
+	name = "\improper lieutenant blue jumpsuit"
+	icon_state = "lt_blue"
+	item_state = "lt_blue"
+
+/obj/item/clothing/under/rank/command/lieutenant/blue/skirt
+	desc = "A command jumpskirt in the colours of the Lieutenant."
+	name = "\improper lieutenant blue jumpskirt"
+	icon_state = "lt_blue_skirt"
+	item_state = "lt_blue_skirt"
+	body_parts_covered = CHEST|GROIN|ARMS
+	fitted = FEMALE_UNIFORM_TOP
+	can_adjust = FALSE
