@@ -16,6 +16,8 @@
 		return WEAPON_BROKEN
 	if(struc.reload_timer_id)
 		return WEAPON_RELOADING
+	if(!struc.weapon_fire(src, parent, struc, target))
+		return WEAPON_FAIL
 	if(damage_variance)
 		var/variance = rand(-damage_variance, damage_variance)
 		damage += variance
@@ -35,6 +37,9 @@
 	var/reload_eta = FALSE
 	var/reload_time = 2 SECONDS
 	var/reload_timer_id
+
+/obj/structure/ship_module/weapon/proc/weapon_fire(obj/structure/overmap/ship/simulated/parent, obj/structure/ship_module/weapon/struc, obj/structure/overmap/ship/simulated/target)
+	return TRUE
 
 /obj/structure/ship_module/weapon/proc/try_reload()
 	if(reload_timer_id)
