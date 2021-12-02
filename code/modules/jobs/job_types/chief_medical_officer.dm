@@ -15,9 +15,6 @@
 	exp_type_department = EXP_TYPE_MEDICAL
 	wiki_page = "Chief_Medical_Officer"
 
-	skills = list(/datum/skill/healing = SKILL_EXP_JOURNEYMAN)
-	minimal_skills = list(/datum/skill/healing = SKILL_EXP_JOURNEYMAN)
-
 	outfit = /datum/outfit/job/cmo
 
 	access = list(ACCESS_MEDICAL, ACCESS_PSYCHOLOGY, ACCESS_MORGUE, ACCESS_GENETICS, ACCESS_CLONING, ACCESS_PHARMACY, ACCESS_HEADS, ACCESS_MINERAL_STOREROOM, //WS edit - Gen/Sci Split

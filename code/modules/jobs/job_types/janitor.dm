@@ -8,9 +8,6 @@
 	selection_color = "#bbe291"
 	wiki_page = "Janitor" //WS Edit - Wikilinks/Warning
 
-	skills = list(/datum/skill/cleaning = SKILL_EXP_JOURNEYMAN)
-	minimal_skills = list(/datum/skill/cleaning = SKILL_EXP_JOURNEYMAN)
-
 	outfit = /datum/outfit/job/janitor
 
 	access = list(ACCESS_JANITOR, ACCESS_MAINT_TUNNELS, ACCESS_MINERAL_STOREROOM)

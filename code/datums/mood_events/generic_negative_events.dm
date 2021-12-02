@@ -91,13 +91,15 @@
 	mood_change = -2
 	timeout = 2 MINUTES
 
+/* WS - For shame /TG/... for shame. // Shiptest - this should probably be removed, but this should be preserved for future iterations to see this abombination
 /datum/mood_event/table/add_effects()
 	if(isfelinid(owner))
 		var/mob/living/carbon/human/H = owner
 		H.dna.species.start_wagging_tail(H)
 		addtimer(CALLBACK(H.dna.species, /datum/species.proc/stop_wagging_tail, H), 30)
-		description = "<span class='nicegreen'>They want to play on the table!</span>\n"
+		description =  "<span class='nicegreen'>They want to play on the table!</span>\n"
 		mood_change = 2
+*/
 
 /datum/mood_event/table_limbsmash
 	description = "<span class='warning'>That fucking table, man that hurts...</span>\n"

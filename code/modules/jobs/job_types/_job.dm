@@ -98,20 +98,7 @@
 		for(var/t in mind_traits)
 			ADD_TRAIT(H.mind, t, JOB_TRAIT)
 
-	var/list/roundstart_experience
-
-	if(!ishuman(H))
-		return
-
-	if(!config)	//Needed for robots.
-		roundstart_experience = minimal_skills
-
-	if(CONFIG_GET(flag/jobs_have_minimal_access))
-		roundstart_experience = minimal_skills
-	else
-		roundstart_experience = skills
-
-	if(roundstart_experience)
+	if(roundstart_experience && ishuman(H))
 		var/mob/living/carbon/human/experiencer = H
 		for(var/i in roundstart_experience)
 			experiencer.mind.adjust_experience(i, roundstart_experience[i], TRUE)

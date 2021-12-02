@@ -20,7 +20,7 @@
 	var/use_digitigrade = NOT_DIGITIGRADE //Used for alternate legs, useless elsewhere
 	var/list/embedded_objects = list()
 	var/held_index = 0 //are we a hand? if so, which one!
-	var/render_like_organic = FALSE	// TRUE is for when you want a BODYPART_ROBOTIC to pretend to be a BODYPART_ORGANIC.	//WS edit - IPCs
+	var/render_like_organic = FALSE	// TRUE is for when you want a BODYPART_ROBOTIC to pretend to be a BODYPART_ORGANIC.
 	var/is_pseudopart = FALSE //For limbs that don't really exist, eg chainsaws
 
 	///If disabled, limb is as good as missing.
@@ -927,11 +927,11 @@
 
 	if(!bleed_rate)
 		QDEL_NULL(grasped_by)
-	
+
 	if(current_gauze)
 		seep_gauze(bleed_rate)
 		bleed_rate = 0
-	
+
 	bleed_rate += internal_bleed_rate
 
 	return bleed_rate

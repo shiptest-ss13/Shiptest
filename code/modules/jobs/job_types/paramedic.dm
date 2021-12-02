@@ -8,9 +8,6 @@
 	selection_color = "#ffeef0"
 	wiki_page = "Paramedic"
 
-	skills = list(/datum/skill/healing = SKILL_EXP_APPRENTICE)
-	minimal_skills = list(/datum/skill/healing = SKILL_EXP_JOURNEYMAN)
-
 	outfit = /datum/outfit/job/paramedic
 
 	access = list(ACCESS_MEDICAL, ACCESS_MORGUE, ACCESS_SURGERY, ACCESS_GENETICS, ACCESS_CLONING, ACCESS_MECH_MEDICAL, ACCESS_MINERAL_STOREROOM, ACCESS_MAINT_TUNNELS, ACCESS_EVA) //WS edit - Gen/Sci Split + Reduces Paramed access

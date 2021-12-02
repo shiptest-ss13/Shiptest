@@ -11,9 +11,6 @@
 	wiki_page = "Infections" //WS Edit - Wikilinks/Warning
 	special_notice = "Don't release viruses, harmful or not, without the CMO's permission." //WS Edit - Wikilinks/Warning
 
-	skills = list(/datum/skill/healing = SKILL_EXP_NOVICE)
-	minimal_skills = list(/datum/skill/healing = SKILL_EXP_APPRENTICE)
-
 	outfit = /datum/outfit/job/virologist
 
 	access = list(ACCESS_MEDICAL, ACCESS_MORGUE, ACCESS_SURGERY, ACCESS_CHEMISTRY, ACCESS_VIROLOGY, ACCESS_MECH_MEDICAL, ACCESS_GENETICS, ACCESS_CLONING, ACCESS_MINERAL_STOREROOM, ACCESS_EVA) //WS edit - Gen/Sci Split

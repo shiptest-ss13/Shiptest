@@ -8,9 +8,6 @@
 	selection_color = "#dcba97"
 	wiki_page = "Shaft_Miner" //WS Edit - Wikilinks/Warning
 
-	skills = list(/datum/skill/mining = SKILL_EXP_JOURNEYMAN)
-	minimal_skills = list(/datum/skill/mining = SKILL_EXP_JOURNEYMAN)
-
 	outfit = /datum/outfit/job/miner
 
 	access = list(ACCESS_MAINT_TUNNELS, ACCESS_MAILSORTING, ACCESS_CARGO, ACCESS_QM, ACCESS_MINING, ACCESS_MECH_MINING, ACCESS_MINING_STATION, ACCESS_MINERAL_STOREROOM)
