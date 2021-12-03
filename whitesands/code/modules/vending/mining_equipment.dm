@@ -73,6 +73,15 @@
 		/obj/item/survivalcapsule/luxuryelite = 1,
 	)
 
+	var/voucher_items = list(
+		"Survival Capsule and Explorer's Webbing" = /obj/item/storage/belt/mining/vendor,
+		"Resonator Kit" = /obj/item/resonator,
+		"Minebot Kit" = /mob/living/simple_animal/hostile/mining_drone,
+		"Extraction and Rescue Kit" = /obj/item/extraction_pack,
+		"Crusher Kit" = /obj/item/kinetic_crusher,
+		"Mining Conscription Kit" = /obj/item/storage/backpack/duffelbag/mining_conscript,
+		)
+
 /obj/machinery/vending/mining_equipment/attackby(obj/item/I, mob/user, params)
 	if(istype(I, /obj/item/mining_voucher))
 		RedeemVoucher(I, user)
@@ -80,32 +89,31 @@
 	return ..()
 
 /obj/machinery/vending/mining_equipment/proc/RedeemVoucher(obj/item/mining_voucher/voucher, mob/redeemer)
-	var/items = list("Survival Capsule and Explorer's Webbing", "Resonator Kit", "Minebot Kit", "Extraction and Rescue Kit", "Crusher Kit", "Mining Conscription Kit")
-
-	var/selection = input(redeemer, "Pick your equipment", "Mining Voucher Redemption") as null|anything in sortList(items)
+	var/selection = show_radial_menu(redeemer, src, voucher_items, require_near = TRUE, tooltips = TRUE)
 	if(!selection || !Adjacent(redeemer) || QDELETED(voucher) || voucher.loc != redeemer)
 		return
-	var/drop_location = drop_location()
-	switch(selection)
-		if("Survival Capsule and Explorer's Webbing")
-			new /obj/item/storage/belt/mining/vendor(drop_location)
-		if("Resonator Kit")
-			new /obj/item/extinguisher/mini(drop_location)
-			new /obj/item/resonator(drop_location)
-		if("Minebot Kit")
-			new /mob/living/simple_animal/hostile/mining_drone(drop_location)
-			new /obj/item/weldingtool/hugetank(drop_location)
-			new /obj/item/clothing/head/welding(drop_location)
-			new /obj/item/borg/upgrade/modkit/minebot_passthrough(drop_location)
-		if("Extraction and Rescue Kit")
-			new /obj/item/extraction_pack(drop_location)
-			new /obj/item/fulton_core(drop_location)
-			new /obj/item/stack/marker_beacon/thirty(drop_location)
-		if("Crusher Kit")
-			new /obj/item/extinguisher/mini(drop_location)
-			new /obj/item/kinetic_crusher(drop_location)
-		if("Mining Conscription Kit")
-			new /obj/item/storage/backpack/duffelbag/mining_conscript(drop_location)
+	if(voucher_items[selection])
+		var/drop_location = drop_location()
+		switch(selection)
+			if("Survival Capsule and Explorer's Webbing")
+				new /obj/item/storage/belt/mining/vendor(drop_location)
+			if("Resonator Kit")
+				new /obj/item/extinguisher/mini(drop_location)
+				new /obj/item/resonator(drop_location)
+			if("Minebot Kit")
+				new /mob/living/simple_animal/hostile/mining_drone(drop_location)
+				new /obj/item/weldingtool/hugetank(drop_location)
+				new /obj/item/clothing/head/welding(drop_location)
+				new /obj/item/borg/upgrade/modkit/minebot_passthrough(drop_location)
+			if("Extraction and Rescue Kit")
+				new /obj/item/extraction_pack(drop_location)
+				new /obj/item/fulton_core(drop_location)
+				new /obj/item/stack/marker_beacon/thirty(drop_location)
+			if("Crusher Kit")
+				new /obj/item/extinguisher/mini(drop_location)
+				new /obj/item/kinetic_crusher(drop_location)
+			if("Mining Conscription Kit")
+				new /obj/item/storage/backpack/duffelbag/mining_conscript(drop_location)
 
 	SSblackbox.record_feedback("tally", "mining_voucher_redeemed", 1, selection)
 	qdel(voucher)
