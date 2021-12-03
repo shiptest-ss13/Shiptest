@@ -68,6 +68,7 @@
 		if(W.try_treating(I, user))
 			return 1
 
+	return ..()
 
 /mob/living/carbon/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)
 	. = ..()
