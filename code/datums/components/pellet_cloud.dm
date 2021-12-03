@@ -1,7 +1,7 @@
 // the following defines are used for [/datum/component/pellet_cloud/var/list/wound_info_by_part] to store the damage, wound_bonus, and bw_bonus for each bodypart hit
-#define CLOUD_POSITION_DAMAGE	1
-#define CLOUD_POSITION_W_BONUS	2
-#define CLOUD_POSITION_BW_BONUS	3
+#define CLOUD_POSITION_DAMAGE 1
+#define CLOUD_POSITION_W_BONUS 2
+#define CLOUD_POSITION_BW_BONUS 3
 
 /*
 	* This component is used when you want to create a bunch of shrapnel or projectiles (say, shrapnel from a fragmentation grenade, or buckshot from a shotgun) from a central point,

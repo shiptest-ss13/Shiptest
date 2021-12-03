@@ -93,7 +93,7 @@
 					var/datum/wound/bleeder = i
 					bleeder.blood_flow = 0
 				return
-				
+
 			else if(L.getFireLoss() >= 50) // are they still down from other damage? fix it, but not as fast as the burns
 				var/healing = min(L.getFireLoss(), 50)
 				L.adjustFireLoss(-healing)

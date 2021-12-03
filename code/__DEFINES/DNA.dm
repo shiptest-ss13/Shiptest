@@ -102,10 +102,10 @@
 #define TR_HASHNAME (1<<3)
 #define TR_KEEPIMPLANTS (1<<4)
 /// changelings shouldn't edit the DNA's SE when turning into a monkey
-#define TR_KEEPSE		(1<<5)
-#define TR_DEFAULTMSG	(1<<6)
-#define TR_KEEPORGANS	(1<<8)
-#define TR_KEEPSTUNS	(1<<9)
+#define TR_KEEPSE (1<<5)
+#define TR_DEFAULTMSG (1<<6)
+#define TR_KEEPORGANS (1<<8)
+#define TR_KEEPSTUNS (1<<9)
 #define TR_KEEPREAGENTS	(1<<10)
 #define TR_KEEPSTAMINADAMAGE (1<<11)
 //species traits for mutantraces
@@ -138,9 +138,9 @@
 
 /// Used for determining which wounds are applicable to this species.
 /// if we have flesh (can suffer slash/piercing/burn wounds, requires they don't have NOBLOOD)
-#define HAS_FLESH	25
+#define HAS_FLESH 25
 /// if we have bones (can suffer bone wounds)
-#define HAS_BONE	26
+#define HAS_BONE 26
 
 //organ slots
 #define ORGAN_SLOT_BRAIN "brain"

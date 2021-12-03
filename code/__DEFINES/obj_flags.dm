@@ -32,7 +32,7 @@
 #define IN_STORAGE (1<<11) //is this item in the storage item, such as backpack? used for tooltips
 #define SURGICAL_TOOL (1<<12)	//Tool commonly used for surgery: won't attack targets in an active surgical operation on help intent (in case of mistakes)
 #define EYE_STAB (1<<13) /// Item can be used to eyestab
-#define HAND_ITEM				(1<<14) /// If an item is just your hand (circled hand, slapper) and shouldn't block things like riding
+#define HAND_ITEM (1<<14) /// If an item is just your hand (circled hand, slapper) and shouldn't block things like riding
 
 // Flags for the clothing_flags var on /obj/item/clothing
 
@@ -62,6 +62,6 @@
 #define ORGAN_SYNTHETIC_EMP (1<<6)	//Synthetic organ affected by an EMP. Deteriorates over time.
 
 /// Integrity defines for clothing (not flags but close enough)
-#define CLOTHING_PRISTINE	0 // We have no damage on the clothing
-#define CLOTHING_DAMAGED	1 // There's some damage on the clothing but it still has at least one functioning bodypart and can be equipped
-#define CLOTHING_SHREDDED	2 // The clothing is useless and cannot be equipped unless repaired first
+#define CLOTHING_PRISTINE 0 // We have no damage on the clothing
+#define CLOTHING_DAMAGED 1 // There's some damage on the clothing but it still has at least one functioning bodypart and can be equipped
+#define CLOTHING_SHREDDED 2 // The clothing is useless and cannot be equipped unless repaired first

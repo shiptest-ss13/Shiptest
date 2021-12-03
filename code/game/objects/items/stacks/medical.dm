@@ -203,7 +203,7 @@
 	However they provice graunular control of where the healing is directed, this makes them better for curing work-related cuts and scrapes.
 
 	The interesting limb targeting mechanic is retained and i still believe they will be a viable choice, especially when healing others in the field.
-	 */
+	*/
 
 /obj/item/stack/medical/suture
 	name = "suture"

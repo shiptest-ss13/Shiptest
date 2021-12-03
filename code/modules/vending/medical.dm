@@ -37,16 +37,16 @@
 					/obj/item/bonesetter = 2,
 					/obj/item/gauze_injector = 3)
 	contraband = list(/obj/item/reagent_containers/pill/tox = 3,
-		              /obj/item/reagent_containers/pill/morphine = 4,
-		              /obj/item/reagent_containers/pill/charcoal = 6,
-		              /obj/item/storage/box/hug/medical = 1)
+					/obj/item/reagent_containers/pill/morphine = 4,
+					/obj/item/reagent_containers/pill/charcoal = 6,
+					/obj/item/storage/box/hug/medical = 1)
 	premium = list(/obj/item/reagent_containers/medigel/synthflesh = 2,
-		        	/obj/item/storage/pill_bottle/psicodine = 2,
-		        	/obj/item/reagent_containers/hypospray/medipen = 3,
+					/obj/item/storage/pill_bottle/psicodine = 2,
+					/obj/item/reagent_containers/hypospray/medipen = 3,
 					/obj/item/clothing/glasses/hud/health = 2,
 					/obj/item/clothing/glasses/hud/health/prescription = 1,
 					/obj/item/hypospray/mkii = 1,
-		        	/obj/item/storage/belt/medical = 3,
+					/obj/item/storage/belt/medical = 3,
 					/obj/item/storage/firstaid/advanced = 2,
 					/obj/item/shears = 1,
 					/obj/item/plunger/reinforced = 2)
