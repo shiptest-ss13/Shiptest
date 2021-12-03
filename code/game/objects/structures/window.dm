@@ -190,6 +190,16 @@
 				to_chat(user, "<span class='notice'>You pry the window into the frame.</span>")
 			return
 
+	if(istype(I, /obj/item/pickaxe/drill/jackhammer))
+		to_chat(user, "<span class='notice'>You begin to smash though [src]...</span>")
+		if(do_after(user, 75, target = src))
+			if(!istype(src, /obj/structure/window))
+				return TRUE
+			I.play_tool_sound(src)
+			visible_message("<span class='warning'>[user] smashes through [src] with [I]!</span>", "<span class='italics'>You hear the shattering of glass.</span>")
+			playsound(src, 'sound/effects/glassbr1.ogg', 50, TRUE)
+			deconstruct(FALSE)
+			return TRUE
 	return ..()
 
 /obj/structure/window/set_anchored(anchorvalue)

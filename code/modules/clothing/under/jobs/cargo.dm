@@ -45,11 +45,11 @@
 	resistance_flags = NONE
 
 /obj/item/clothing/under/rank/cargo/miner/lavaland
-	desc = "A green uniform for operating in hazardous environments."
-	name = "shaft miner's jumpsuit"
+	desc = "A light uniform for operating in hazardous environments, manufactured en-masse by EXOCON for the profitable frontier prospector market. Adventurous khaki jeans included."
+	name = "prospector jumpsuit"
 	icon_state = "explorer"
 	item_state = "explorer"
-	can_adjust = FALSE
+	can_adjust = TRUE
 
 //Shiptest alt jumpsuits
 
@@ -58,3 +58,11 @@
 	name = "asteroid miner's jumpsuit"
 	icon_state = "hazard"
 	item_state = "hazard"
+
+/obj/item/clothing/under/rank/cargo/miner/lavaland/old
+	icon_state = "explorerold"
+	desc = "A standardized NT jumpsuit line, designed to protect the fragile and profitable bodies of the shaft-charting explorers Nanotransen Resource Operations favoured in the closing years of their golden age. Slightly encumbering, due to heavy protective padding."
+	name = "prototype shaft miner's jumpsuit"
+	slowdown = 0.1
+	armor = list("melee" = 15, "bullet" = 5, "laser" = 5,"energy" = 5, "bomb" = 20, "bio" = 20, "rad" = 20, "fire" = 80, "acid" = 0)
+	can_adjust = FALSE

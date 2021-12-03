@@ -102,3 +102,9 @@
 		else if(!silent)
 			to_chat(user, "<span class='warning'>[src] is broken!</span>")
 	else ..()
+
+/obj/structure/closet/crate/secure/exo
+	desc = "A lock-enabled crate used to carry EXOCON merchandise destined for export to potential buyers."
+	name = "EXOCON storage crate"
+	icon = 'icons/obj/crates.dmi'
+	icon_state = "exocrate"

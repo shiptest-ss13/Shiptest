@@ -70,11 +70,6 @@
 	reagents_add = list(/datum/reagent/consumable/nutriment = 0.05)
 	rarity = 30
 
-/obj/item/seeds/poppy/lily/trumpet/Initialize(mapload,nogenes)
-	. = ..()
-	if(!nogenes)
-		unset_mutability(/datum/plant_gene/reagent/polypyr, PLANT_GENE_EXTRACTABLE)
-
 /obj/item/reagent_containers/food/snacks/grown/trumpet
 	seed = /obj/item/seeds/poppy/lily/trumpet
 	name = "spaceman's trumpet"
@@ -85,6 +80,11 @@
 	foodtype = VEGETABLES
 	wine_power = 40
 	wine_flavor = "Purple"  //WS edit: new wine flavors. capitalization intentional
+
+/obj/item/seeds/poppy/lily/trumpet/Initialize(mapload,nogenes)
+	. = ..()
+	if(!nogenes)
+		unset_mutability(/datum/plant_gene/reagent/polypyr, PLANT_GENE_EXTRACTABLE)
 
 // Geranium
 /obj/item/seeds/poppy/geranium
