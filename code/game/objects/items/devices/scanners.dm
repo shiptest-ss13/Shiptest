@@ -435,9 +435,12 @@ GENE SCANNER
 	desc = "A hand-held body scanner able to distinguish vital signs of the subject with high accuracy."
 	advanced = TRUE
 
-/// Displays wounds with extended information on their status vs medscanners
 /proc/woundscan(mob/user, mob/living/carbon/patient, obj/item/healthanalyzer/wound/scanner)
-	if(!istype(patient))
+	if(!istype(patient) || user.incapacitated())
+		return
+
+	if(user.is_blind())
+		to_chat(user, "<span class='warning'>You realize that your scanner has no accessibility support for the blind!</span>")
 		return
 
 	var/render_list = ""

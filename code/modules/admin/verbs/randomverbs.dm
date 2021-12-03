@@ -993,11 +993,11 @@
 			var/mob/living/carbon/C = target
 			for(var/i in C.bodyparts)
 				var/obj/item/bodypart/slice_part = i
-				var/type_wound = pick(list(/datum/wound/slash/severe, /datum/wound/slash/moderate))
+				var/type_wound = pick(list(/datum/wound/slash/critical, /datum/wound/slash/moderate))
 				slice_part.force_wound_upwards(type_wound, smited=TRUE)
-				type_wound = pick(list(/datum/wound/slash/severe, /datum/wound/slash/moderate))
+				type_wound = pick(list(/datum/wound/slash/critical, /datum/wound/slash/moderate))
 				slice_part.force_wound_upwards(type_wound, smited=TRUE)
-				type_wound = pick(list(/datum/wound/slash/severe, /datum/wound/slash/moderate))
+				type_wound = pick(list(/datum/wound/slash/critical, /datum/wound/slash/moderate))
 				slice_part.force_wound_upwards(type_wound, smited=TRUE)
 		if(ADMIN_PUNISHMENT_PERFORATE)
 			if(!iscarbon(target))

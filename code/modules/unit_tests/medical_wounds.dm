@@ -13,7 +13,7 @@
 	var/list/iter_test_wound_list
 
 	for(iter_test_wound_list in list(list(/datum/wound/blunt/moderate, /datum/wound/blunt/severe),\
-										list(/datum/wound/slash/moderate, /datum/wound/slash/severe),\
+										list(/datum/wound/slash/moderate, /datum/wound/slash/critical),\
 										list(/datum/wound/pierce/moderate, /datum/wound/pierce/severe),\
 										list(/datum/wound/burn/moderate, /datum/wound/burn/severe)))
 
@@ -53,7 +53,7 @@
 	victim.dna.species.species_traits &= HAS_FLESH // take away the base human's flesh (ouchie!) ((not actually ouchie, this just affects their wounds and dismemberment handling))
 
 	for(iter_test_wound_list in list(list(/datum/wound/blunt/moderate, /datum/wound/blunt/severe),\
-										list(/datum/wound/slash/moderate, /datum/wound/slash/severe),\
+										list(/datum/wound/slash/moderate, /datum/wound/slash/critical),\
 										list(/datum/wound/pierce/moderate, /datum/wound/pierce/severe),\
 										list(/datum/wound/burn/moderate, /datum/wound/burn/severe)))
 

@@ -18,14 +18,10 @@
 #define WOUND_SEVERITY_TRIVIAL	0
 #define WOUND_SEVERITY_MODERATE	1
 #define WOUND_SEVERITY_SEVERE	2
+#define WOUND_SEVERITY_CRITICAL	3
 /// outright dismemberment of limb
-#define WOUND_SEVERITY_LOSS		3
+#define WOUND_SEVERITY_LOSS		4
 
-// WS defines - Remove scar magic numbers
-#define SCAR_VISIBILITY_MODERATE 2
-#define SCAR_VISIBILITY_SEVERE 4
-#define SCAR_VISIBILITY_LOSS 7
-// WS defines end
 
 // ~wound categories
 /// any brute weapon/attack that doesn't have sharpness. rolls for blunt bone wounds
@@ -47,20 +43,22 @@
 /// the max amount of determination you can have
 #define WOUND_DETERMINATION_MAX			10
 
+/// While someone has determination in their system, their bleed rate is slightly reduced
+#define WOUND_DETERMINATION_BLEED_MOD	0.85
 
 // ~wound global lists
 // list in order of highest severity to lowest
-GLOBAL_LIST_INIT(global_wound_types, list(WOUND_BLUNT = list(/datum/wound/blunt/severe, /datum/wound/blunt/moderate),
-		WOUND_SLASH = list(/datum/wound/slash/severe, /datum/wound/slash/moderate),
-		WOUND_PIERCE = list(/datum/wound/pierce/severe, /datum/wound/pierce/moderate),
-		WOUND_BURN = list(/datum/wound/burn/severe, /datum/wound/burn/moderate)
+GLOBAL_LIST_INIT(global_wound_types, list(WOUND_BLUNT = list(/datum/wound/blunt/critical, /datum/wound/blunt/severe, /datum/wound/blunt/moderate),
+		WOUND_SLASH = list(/datum/wound/slash/critical, /datum/wound/slash/critical, /datum/wound/slash/moderate),
+		WOUND_PIERCE = list(/datum/wound/pierce/critical, /datum/wound/pierce/severe, /datum/wound/pierce/moderate),
+		WOUND_BURN = list(/datum/wound/burn/critical, /datum/wound/burn/severe, /datum/wound/burn/moderate)
 		))
 
 // every single type of wound that can be rolled naturally, in case you need to pull a random one
-GLOBAL_LIST_INIT(global_all_wound_types, list(/datum/wound/blunt/severe, /datum/wound/blunt/moderate,
-	/datum/wound/slash/severe, /datum/wound/slash/moderate,
-	/datum/wound/pierce/severe, /datum/wound/pierce/moderate,
-	/datum/wound/burn/severe, /datum/wound/burn/moderate))
+GLOBAL_LIST_INIT(global_all_wound_types, list(/datum/wound/blunt/critical, /datum/wound/blunt/severe, /datum/wound/blunt/moderate,
+	/datum/wound/slash/critical, /datum/wound/slash/critical, /datum/wound/slash/moderate,
+	/datum/wound/pierce/critical, /datum/wound/pierce/severe, /datum/wound/pierce/moderate,
+	/datum/wound/burn/critical, /datum/wound/burn/severe, /datum/wound/burn/moderate))
 
 
 // ~burn wound infection defines
@@ -78,7 +76,7 @@ GLOBAL_LIST_INIT(global_all_wound_types, list(/datum/wound/blunt/severe, /datum/
 
 // ~random wound balance defines
 /// how quickly sanitization removes infestation and decays per tick
-#define WOUND_BURN_SANITIZATION_RATE 	0.155
+#define WOUND_BURN_SANITIZATION_RATE 	0.15
 /// how much blood you can lose per tick per slash max. 8 is a LOT of blood for one cut so don't worry about hitting it easily
 #define WOUND_SLASH_MAX_BLOODFLOW		8
 /// dead people don't bleed, but they can clot! this is the minimum amount of clotting per tick on dead people, so even critical cuts will slowly clot in dead people
@@ -147,3 +145,14 @@ GLOBAL_LIST_INIT(global_all_wound_types, list(/datum/wound/blunt/severe, /datum/
 #define SCAR_CURRENT_VERSION		3
 /// how many scar slots, per character slot, we have to cycle through for persistent scarring, if enabled in character prefs
 #define PERSISTENT_SCAR_SLOTS		3
+
+// ~blood_flow rates of change, these are used by [/datum/wound/proc/get_bleed_rate_of_change] from [/mob/living/carbon/proc/bleed_warn] to let the player know if their bleeding is getting better/worse/the same
+/// Our wound is clotting and will eventually stop bleeding if this continues
+#define BLOOD_FLOW_DECREASING	-1
+/// Our wound is bleeding but is holding steady at the same rate.
+#define BLOOD_FLOW_STEADY		0
+/// Our wound is bleeding and actively getting worse, like if we're a critical slash or if we're afflicted with heparin
+#define BLOOD_FLOW_INCREASING	1
+
+/// How often can we annoy the player about their bleeding? This duration is extended if it's not serious bleeding
+#define BLEEDING_MESSAGE_BASE_CD	10 SECONDS

@@ -948,7 +948,7 @@
   * * gauze- Just the gauze stack we're taking a sheet from to apply here
   */
 /obj/item/bodypart/proc/apply_gauze(obj/item/stack/gauze)
-	if(!istype(gauze) || !gauze.blood_capacity)
+	if(!istype(gauze) || !gauze.absorption_capacity)
 		return
 	var/newly_gauzed = FALSE
 	if(!current_gauze)
@@ -960,18 +960,18 @@
 		SEND_SIGNAL(src, COMSIG_BODYPART_GAUZED, gauze)
 
 /**
-  * seep_gauze() is for when a gauze wrapping absorbs blood or pus from wounds, lowering its absorption capacity.
-  *
-  * The passed amount of seepage is deducted from the bandage's absorption capacity, and if we reach a negative absorption capacity, the bandages fall off and we're left with nothing.
-  *
-  * Arguments:
-  * * seep_amt - How much absorption capacity we're removing from our current bandages (think, how much blood or pus are we soaking up this tick?)
-  */
+ * seep_gauze() is for when a gauze wrapping absorbs blood or pus from wounds, lowering its absorption capacity.
+ *
+ * The passed amount of seepage is deducted from the bandage's absorption capacity, and if we reach a negative absorption capacity, the bandages fall off and we're left with nothing.
+ *
+ * Arguments:
+ * * seep_amt - How much absorption capacity we're removing from our current bandages (think, how much blood or pus are we soaking up this tick?)
+ */
 /obj/item/bodypart/proc/seep_gauze(seep_amt = 0)
 	if(!current_gauze)
 		return
-	current_gauze.blood_capacity -= seep_amt
-	if(current_gauze.blood_capacity <= 0)
+	current_gauze.absorption_capacity -= seep_amt
+	if(current_gauze.absorption_capacity <= 0)
 		owner.visible_message("<span class='danger'>\The [current_gauze] on [owner]'s [name] fall away in rags.</span>", "<span class='warning'>\The [current_gauze] on your [name] fall away in rags.</span>", vision_distance=COMBAT_MESSAGE_RANGE)
 		QDEL_NULL(current_gauze)
 		SEND_SIGNAL(src, COMSIG_BODYPART_GAUZE_DESTROYED)

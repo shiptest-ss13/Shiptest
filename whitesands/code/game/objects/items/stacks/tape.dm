@@ -9,7 +9,7 @@
 	grind_results = list(/datum/reagent/cellulose = 5)
 	usesound = 'whitesands/sound/items/tape.ogg'
 
-	blood_capacity = 50
+	splint_factor = 0.8
 	var/nonorganic_heal = 5
 	var/self_delay = 30 //! Also used for the tapecuff delay/
 	var/other_delay = 10
@@ -193,7 +193,6 @@
 	desc = "This roll of silver sorcery can fix just about anything."
 	icon_state = "tape_d"
 
-	blood_capacity = 60
 	nonorganic_heal = 20
 	prefix = "super sticky"
 	conferred_embed = EMBED_HARMLESS_SUPERIOR
@@ -241,6 +240,5 @@
 	desc = "Now THIS is engineering."
 	icon_state = "tape_y"
 
-	blood_capacity = 70
 	nonorganic_heal = 30
 	prefix = "industry-standard sticky"

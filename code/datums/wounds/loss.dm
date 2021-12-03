@@ -42,15 +42,13 @@
 			if(WOUND_BURN)
 				occur_text = "is completely incinerated, falling to dust!"
 
-	victim = dismembered_part.owner
-
 	var/msg = "<span class='bolddanger'>[victim]'s [dismembered_part.name] [occur_text]!</span>"
 
 	victim.visible_message(msg, "<span class='userdanger'>Your [dismembered_part.name] [occur_text]!</span>")
 
 	set_limb(dismembered_part)
-	severity = WOUND_SEVERITY_LOSS
 	second_wind()
 	log_wound(victim, src)
 	dismembered_part.dismember(wounding_type == WOUND_BURN ? BURN : BRUTE)
 	qdel(src)
+	return TRUE
