@@ -56,7 +56,8 @@
 	name = "engineering coordinator suit"
 	desc = "A suit with engineering colors, worn by those who lead and have survived the engineering department."
 	icon_state = "senior_medical"
-
+	icon = 'icons/obj/clothing/under/engineering.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/under/engineering.dmi'
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 10, "fire" = 80, "acid" = 40)
 	resistance_flags = NONE
 	fitted = NO_FEMALE_UNIFORM
@@ -65,7 +66,6 @@
 	name = "engineering coordinator skirtsuit"
 	desc = "A skirtsuit with engineering colors, worn by those who lead and have survived the engineering department."
 	icon_state = "engineering_coordinator_skirt"
-
 	body_parts_covered = CHEST|GROIN|ARMS
 	can_adjust = FALSE
 
@@ -73,7 +73,8 @@
 	name = "senior engineer suit"
 	desc = "A suit with engineering colors, meant to be worn by senior staff."
 	icon_state = "senior_engineer"
-
+	icon = 'icons/obj/clothing/under/engineering.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/under/engineering.dmi'
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 10, "fire" = 60, "acid" = 20)
 	resistance_flags = NONE
 	fitted = NO_FEMALE_UNIFORM
@@ -89,6 +90,8 @@
 /obj/item/clothing/under/suit/senior_atmos
 	name = "senior atmospheric technician suit"
 	desc = "A suit with atmospheric colors, meant to be worn by senior staff."
+	icon = 'icons/obj/clothing/under/engineering.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/under/engineering.dmi'
 	icon_state = "senior_atmos"
 	fitted = NO_FEMALE_UNIFORM
 
