@@ -6,21 +6,21 @@
 	var/static/list/z_active = list()
 	var/static/list/z_history = list()
 	var/active = FALSE
-	var/survey_value = 200
+	var/survey_value = 300
 	var/survey_delay = 4 SECONDS
 
 /obj/item/survey_handheld/advanced
 	name = "Advanced Survey Handheld"
 	desc = "An improved version of its predeces	sor this tool collects large amounts of data."
 	icon_state = "survey-adv"
-	survey_value = 300
+	survey_value = 450
 	survey_delay = 3 SECONDS
 
 /obj/item/survey_handheld/elite
 	name = "Experimental Survey Handheld"
 	desc = "An improvement on even the Advanced version; this handheld was designed to be extremely fast in collecting data."
 	icon_state = "survey-elite"
-	survey_value = 600
+	survey_value = 650
 	survey_delay = 2 SECONDS
 
 /obj/item/survey_handheld/attack_self(mob/user)
