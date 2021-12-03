@@ -215,7 +215,7 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 /// Used for limb-based paralysis, where replacing the limb will fix it.
 #define TRAIT_PARALYSIS "paralysis"
 /// Used for limbs.
-#define TRAIT_DISABLED_BY_WOUND		"disabled-by-wound"
+#define TRAIT_DISABLED_BY_WOUND "disabled-by-wound"
 
 #define TRAIT_KEEP_TOGETHER "keep-together"
 
@@ -355,7 +355,7 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define PAI_FOLDED "pai-folded"
 /// Trait applied to brain mobs when they lack external aid for locomotion, such as being inside a mech.
 #define BRAIN_UNAIDED "brain-unaided"
-#define TRAIT_CANT_RIDE	"cant_ride"
+#define TRAIT_CANT_RIDE "cant_ride"
 #define TRAIT_BLOODY_MESS "bloody_mess" //from heparin, makes open bleeding wounds rapidly spill more blood
 #define TRAIT_COAGULATING "coagulating" //from coagulant reagents, this doesn't affect the bleeding itself but does affect the bleed warning messages
 #define TRAIT_NOBLEED "nobleed" //This carbon doesn't bleed
