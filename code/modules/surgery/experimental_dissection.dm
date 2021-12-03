@@ -20,9 +20,11 @@
 
 /datum/surgery/advanced/experimental_dissection/can_start(mob/user, mob/living/target)
 	. = ..()
-	if(HAS_TRAIT_FROM(target, TRAIT_DISSECTED,"[name]"))
+	if(HAS_TRAIT_FROM(target, TRAIT_DISSECTED, "[name]"))
 		return FALSE
 	if(target.stat != DEAD)
+		return FALSE
+	if(check_value(target, src) < 0.1)
 		return FALSE
 
 /datum/surgery_step/dissection
@@ -65,15 +67,15 @@
 
 	//now we do math for surgeries already done (no double dipping!).
 	for(var/i in typesof(/datum/surgery/advanced/experimental_dissection))
-		var/datum/surgery/advanced/experimental_dissection/cringe = i
-		if(HAS_TRAIT_FROM(target,TRAIT_DISSECTED,"[initial(cringe.name)]"))
-			multi_surgery_adjust = max(multi_surgery_adjust,initial(cringe.value_multiplier)) - 1
-
-	multi_surgery_adjust *= cost
+		var/datum/surgery/advanced/experimental_dissection/cringe = new i
+		if(HAS_TRAIT_FROM(target, TRAIT_DISSECTED, "[cringe.name]"))
+			multi_surgery_adjust = max(multi_surgery_adjust, cringe.value_multiplier)
 
 	//multiply by multiplier in surgery
+	multi_surgery_adjust *= cost
 	cost *= ED.value_multiplier
-	return (cost-multi_surgery_adjust)
+	cost -= multi_surgery_adjust
+	return (cost)
 
 /datum/surgery_step/dissection/success(mob/user, mob/living/target, target_zone, obj/item/tool, datum/surgery/surgery, default_display_results = FALSE)
 	var/points_earned = check_value(target, surgery)
