@@ -24,8 +24,6 @@
 		return FALSE
 	if(target.stat != DEAD)
 		return FALSE
-	if(check_value(target, src) < 0.1)
-		return FALSE
 
 /datum/surgery_step/dissection
 	name = "dissection"
