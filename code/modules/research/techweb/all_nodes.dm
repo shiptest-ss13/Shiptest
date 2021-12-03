@@ -67,8 +67,8 @@
 	description = "Basic medical tools and equipment."
 	design_ids = list("cybernetic_liver", "cybernetic_heart", "cybernetic_lungs", "cybernetic_stomach", "scalpel", "circular_saw", "bonesetter", "surgicaldrill", "retractor", "cautery", "hemostat",
 					"syringe", "plumbing_rcd", "beaker", "large_beaker", "xlarge_beaker", "dropper", "defibmountdefault", "surgical_tape", "portable_chem_mixer")
-e_beaker", "dropper", "defibmountdefault", "portable_chem_mixer")
-hweb_node/biotech
+
+/datum/techweb_node/biotech
 	id = "biotech"
 	display_name = "Biological Technology"
 	description = "What makes us tick."	//the MC, silly!

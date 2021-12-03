@@ -61,7 +61,7 @@
 	throwforce = 25
 	block_chance = 35
 	armour_penetration = 50
-	sharpness = IS_SHARP
+	sharpness = SHARP_EDGED
 
 /obj/item/claymore/cursed/mob
 	block_chance = 0

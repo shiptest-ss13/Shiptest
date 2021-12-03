@@ -467,7 +467,7 @@
 	max_charges = 1
 	item_flags = NEEDS_PERMIT
 	force = 15
-	sharpness = IS_SHARP
+	sharpness = SHARP_EDGED
 	block_chance = 25//A pittance, but might be worth something in a scuffle
 	hitsound = 'sound/weapons/chainhit.ogg'
 

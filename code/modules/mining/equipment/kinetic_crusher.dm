@@ -427,7 +427,7 @@
 	force = 10
 	throwforce = 15
 	throw_speed = 4
-	sharpness = IS_SHARP
+	sharpness = SHARP_POINTY
 	attack_verb = list("cut", "sliced", "diced")
 	hitsound = 'sound/weapons/bladeslice.ogg'
 
@@ -457,7 +457,7 @@
 	force = 15
 	throwforce = 20
 	throw_speed = 4
-	sharpness = IS_SHARP
+	sharpness = SHARP_POINTY
 	attack_verb = list("cut", "braised", "singed")
 	hitsound = 'sound/weapons/bladeslice.ogg'
 
