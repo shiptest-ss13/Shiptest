@@ -235,6 +235,10 @@ SUBSYSTEM_DEF(mapping)
 
 		if(istext(data["map_short_name"]))
 			S.short_name = data["map_short_name"]
+		if(istext(data["prefix"]))
+			S.prefix = data["prefix"]
+		if(islist(data["namelist"]))
+			S.name_categories = data["namelist"]
 		if(islist(data["job_slots"]))
 			S.job_slots = list()
 			var/list/job_slot_list = data["job_slots"]
@@ -262,7 +266,8 @@ SUBSYSTEM_DEF(mapping)
 
 				S.job_slots[job_slot] = slots
 		if(isnum(data["cost"]))
-			ship_purchase_list[S] = data["cost"]
+			S.cost = data["cost"]
+			ship_purchase_list["[S.name] ([S.cost] [CONFIG_GET(string/metacurrency_name)]s)"] = S
 
 		shuttle_templates[S.file_name] = S
 		map_templates[S.file_name] = S
