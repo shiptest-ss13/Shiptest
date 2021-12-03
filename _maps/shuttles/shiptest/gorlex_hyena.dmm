@@ -415,6 +415,7 @@
 	pixel_x = -5;
 	pixel_y = -22
 	},
+/obj/item/circuitboard/machine/protolathe/department/cargo,
 /turf/open/floor/carpet/red,
 /area/ship/cargo/office)
 "ir" = (
@@ -819,6 +820,9 @@
 /obj/structure/cable{
 	icon_state = "2-4"
 	},
+/obj/machinery/airalarm/all_access{
+	pixel_y = 24
+	},
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "pu" = (
@@ -1101,19 +1105,18 @@
 	},
 /obj/item/clothing/shoes/workboots/mining,
 /obj/item/clothing/under/syndicate/gorlex,
-/obj/item/storage/belt/mining,
+/obj/item/clothing/gloves/explorer,
 /obj/item/clothing/accessory/armband/cargo,
+/obj/item/storage/belt/mining,
 /obj/item/clothing/glasses/meson,
 /obj/item/clothing/glasses/welding,
 /obj/item/clothing/head/hardhat/orange,
 /obj/item/clothing/head/soft/grey,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/airalarm/all_access{
-	pixel_y = 24
-	},
 /obj/machinery/light/small{
 	dir = 1
+	},
+/obj/machinery/airalarm/all_access{
+	pixel_y = 24
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/storage)
@@ -1501,6 +1504,7 @@
 	},
 /obj/item/clothing/shoes/workboots/mining,
 /obj/item/clothing/under/syndicate/gorlex,
+/obj/item/clothing/gloves/explorer,
 /obj/item/clothing/accessory/armband/cargo,
 /obj/item/storage/belt/mining,
 /obj/item/clothing/glasses/meson,
@@ -1713,9 +1717,6 @@
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 4
-	},
-/obj/machinery/airalarm/all_access{
-	pixel_y = 24
 	},
 /obj/machinery/light/small{
 	dir = 1
