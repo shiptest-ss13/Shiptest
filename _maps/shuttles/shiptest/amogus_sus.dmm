@@ -1262,7 +1262,6 @@
 "og" = (
 /obj/machinery/door/airlock/public/glass,
 /obj/effect/turf_decal/industrial/warning/fulltile,
-/obj/machinery/door/airlock/public/glass,
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
 	},
@@ -2750,6 +2749,9 @@
 "FA" = (
 /obj/item/radio/intercom{
 	pixel_y = 32
+	},
+/obj/machinery/vending/security/wall{
+	pixel_x = 24
 	},
 /turf/open/floor/wood,
 /area/ship/security)
