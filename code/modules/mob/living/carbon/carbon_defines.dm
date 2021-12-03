@@ -90,3 +90,5 @@
 
 	/// WS edit - moth dust when hugging
 	var/mothdust
+
+	COOLDOWN_DECLARE(bleeding_message_cd)

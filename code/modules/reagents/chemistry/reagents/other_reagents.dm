@@ -2273,6 +2273,7 @@
 	color = "#623301"
 	taste_mult = 1.2
 
+ // "Second wind" reagent generated when someone suffers a wound. Epinephrine, adrenaline, and stimulants are all already taken so here we are
 /datum/reagent/determination
 	name = "Determination"
 	description = "For when you need to push on a little more. Do NOT allow near plants."
