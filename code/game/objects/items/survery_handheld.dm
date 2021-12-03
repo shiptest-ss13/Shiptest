@@ -112,3 +112,8 @@
 	)
 	category = list("Tool Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
+
+/obj/structure/anomaly
+	name = "Defaultic Bind"
+	desc = "The truly unexpected anomaly. Let a coder know if you see this!"
+	max_integrity = 300
