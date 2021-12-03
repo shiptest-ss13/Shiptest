@@ -20,7 +20,7 @@
 	name = "Experimental Survey Handheld"
 	desc = "An improvement on even the Advanced version; this handheld was designed to be extremely fast in collecting data."
 	icon_state = "survey-elite"
-	survey_value = 300
+	survey_value = 600
 	survey_delay = 2 SECONDS
 
 /obj/item/survey_handheld/attack_self(mob/user)
@@ -109,6 +109,23 @@
 		/datum/material/gold = 3000,
 		/datum/material/uranium = 3000,
 		/datum/material/diamond = 2000,
+	)
+	category = list("Tool Designs")
+	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
+
+
+/datum/design/survey_handheld_exp
+	name = "Experimental Survey Handheld"
+	id = "survey-handheld-exp"
+	build_type = PROTOLATHE
+	build_path = /obj/item/survey_handheld/elite
+	materials = list(
+		/datum/material/iron = 5000,
+		/datum/material/silver = 5000,
+		/datum/material/gold = 3000,
+		/datum/material/uranium = 3000,
+		/datum/material/diamond = 3000,
+		/datum/material/bluespace = 3000,
 	)
 	category = list("Tool Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
