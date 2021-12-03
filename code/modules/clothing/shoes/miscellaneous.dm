@@ -186,7 +186,7 @@
 
 /obj/item/clothing/shoes/workboots/mining
 	name = "mining boots"
-	desc = "Steel-toed mining boots for mining in hazardous environments. Very good at keeping toes uncrushed."
+	desc = "Steel-toed mining boots for motility in hazardous environments. Very good at keeping toes uncrushed."
 	icon_state = "explorer"
 	resistance_flags = FIRE_PROOF
 
@@ -243,7 +243,7 @@
 
 /obj/item/clothing/shoes/bhop
 	name = "jump boots"
-	desc = "A specialized pair of combat boots with a built-in propulsion system for rapid foward movement."
+	desc = "The EXOCOM's Cortez launch boot line represents a specialized pair of mining boots with a built-in propulsion system, designed for rapid foward movement."
 	icon_state = "jetboots"
 	item_state = "jetboots"
 	resistance_flags = FIRE_PROOF
@@ -252,6 +252,8 @@
 	permeability_coefficient = 0.05
 	strip_delay = 30
 	custom_price = 2500
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/shoes
+	armor = list("melee" = 25, "bullet" = 25, "laser" = 25, "energy" = 25, "bomb" = 50, "bio" = 10, "rad" = 0, "fire" = 70, "acid" = 50)
 	var/jumpdistance = 5 //-1 from to see the actual distance, e.g 4 goes over 3 tiles
 	var/jumpspeed = 3
 	var/recharging_rate = 60 //default 6 seconds between each dash

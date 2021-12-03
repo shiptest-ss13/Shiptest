@@ -14,8 +14,8 @@
  */
 
 /obj/item/clothing/under/rank/security
-	icon = 'whitesands/icons/obj/clothing/under/security.dmi'
-	mob_overlay_icon = 'whitesands/icons/mob/clothing/under/security.dmi'
+	icon = 'icons/obj/clothing/under/security.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/under/security.dmi'
 
 // Security Officer //
 /obj/item/clothing/under/rank/security/officer
@@ -189,8 +189,6 @@
 /obj/item/clothing/under/rank/prisoner/protected_custody
 	name = "protected custody jumpsuit"
 	desc = "It's standardised Nanotrasen prisoner-wear worn by those in protected custody. Its suit sensors are stuck in the \"Fully On\" position."
-	icon = 'whitesands/icons/obj/clothing/under/security.dmi'
-	mob_overlay_icon = 'whitesands/icons/mob/clothing/under/security.dmi'
 	icon_state = "protected_custody"
 	fitted = NO_FEMALE_UNIFORM
 

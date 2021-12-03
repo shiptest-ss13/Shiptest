@@ -205,6 +205,8 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_NICE_SHOT "nice_shot" //hnnnnnnnggggg..... you're pretty good....
 /// The holder of this trait has antennae or whatever that hurt a ton when noogied
 #define TRAIT_ANTENNAE "antennae"
+/// The holder of this trait can be picked up and held by another mob that does NOT have this trait.
+#define TRAIT_HOLDABLE "holdable"
 
 //non-mob traits
 /// Used for limb-based paralysis, where replacing the limb will fix it.
