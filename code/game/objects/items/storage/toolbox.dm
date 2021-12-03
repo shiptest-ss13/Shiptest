@@ -321,7 +321,7 @@
 /obj/item/storage/toolbox/surgery/ComponentInitialize()
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.max_items = 8
+	STR.max_items = 9
 
 /obj/item/storage/toolbox/surgery/PopulateContents()
 	new /obj/item/scalpel(src)
@@ -331,6 +331,6 @@
 	new /obj/item/surgicaldrill(src)
 	new /obj/item/cautery(src)
 	new /obj/item/bonesetter(src)
-	new /obj/item/bonesetter(src)
 	new /obj/item/stack/medical/bone_gel(src)
+	new /obj/item/reagent_containers/medigel/sterilizine(src)
 

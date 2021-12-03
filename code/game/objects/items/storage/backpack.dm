@@ -368,6 +368,7 @@
 	new /obj/item/bonesetter(src)
 	new /obj/item/clothing/mask/surgical(src)
 	new /obj/item/razor(src)
+	new /obj/item/stack/sticky_tape/surgical(src)
 
 /obj/item/storage/backpack/duffelbag/sec
 	name = "security duffel bag"
@@ -388,6 +389,7 @@
 	new /obj/item/surgicaldrill(src)
 	new /obj/item/cautery(src)
 	new /obj/item/clothing/mask/surgical(src)
+	new /obj/item/stack/sticky_tape/surgical(src)
 
 /obj/item/storage/backpack/duffelbag/engineering
 	name = "industrial duffel bag"
