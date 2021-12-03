@@ -210,7 +210,7 @@
 	return "errors"
 
 /obj/item/crusher_trophy/attackby(obj/item/A, mob/living/user)
-	if(istype(A, /obj/item/kinetic_crusher))
+	if(istype(A, /obj/item/kinetic_crusher | /obj/item/syndie_crusher))
 		add_to(A, user)
 	else
 		..()
