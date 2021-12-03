@@ -189,7 +189,7 @@
 
 /obj/item/mining_voucher
 	name = "mining voucher"
-	desc = "A token to redeem a piece of equipment. Use it on a mining equipment vendor."
+	desc = "A token used by EXOCOM associates to redeem a piece of free starter equipment. Use it on a mining equipment vendor."
 	icon = 'icons/obj/mining.dmi'
 	icon_state = "mining_voucher"
 	w_class = WEIGHT_CLASS_TINY
@@ -237,8 +237,8 @@
 		qdel(src)
 
 /obj/item/storage/backpack/duffelbag/mining_conscript
-	name = "mining conscription kit"
-	desc = "A kit containing everything a crewmember needs to support a shaft miner in the field."
+	name = "EXOCOM rapid deployment kit"
+	desc = "A kit containing everything an aspiring explorer needs to start up a local operation."
 	custom_price = 1500
 
 /obj/item/storage/backpack/duffelbag/mining_conscript/PopulateContents()
@@ -252,3 +252,4 @@
 	new /obj/item/gun/energy/kinetic_accelerator(src)
 	new /obj/item/kitchen/knife/combat/survival(src)
 	new /obj/item/flashlight/seclite(src)
+	new /obj/item/clothing/gloves/explorer(src)

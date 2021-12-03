@@ -56,6 +56,18 @@
 	icon_state = "robot_old"
 	density = FALSE
 
+/obj/structure/showcase/cyborg/assault
+	name = "Syndicate Assault Borg Display"
+	desc = "A gutted chassis of the Cybersun Bloodhound, a model infamous across space as the first truly successful example of a weaponized machine lifeform. An attached plaque extolls the design as a harbinger of Cybersun's rise to industry dominance in the field of combat cybernetics. "
+	icon = 'icons/obj/stationobjs.dmi'
+	icon_state = "showcase_6"
+
+/obj/structure/showcase/cyborg/old/medical
+	name = "Syndicate Mediborg Display"
+	desc = "The gutted chassis of Cybersun's iconic Valkyrie model, fitted with weak LED's where menacing red spotlights once shone. The once-mighty combat medic now lies still and unmoving, but the plaque alongside it reminds you that generations of this design have accompanied syndicate forces into battle wherever and whenever, performing whatever duties are required."
+	icon = 'icons/obj/stationobjs.dmi'
+	icon_state = "showcase_7"
+
 /obj/structure/showcase/mecha/marauder
 	name = "combat mech exhibit"
 	desc = "A stand with an empty old Nanotrasen Corporation combat mech bolted to it. It is described as the premier unit used to defend corporate interests and employees."

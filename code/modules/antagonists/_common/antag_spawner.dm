@@ -181,7 +181,11 @@
 
 /obj/item/antag_spawner/nuke_ops/borg_tele/saboteur
 	name = "syndicate saboteur teleporter"
-	borg_to_spawn = "Saboteur"
+
+/obj/item/antag_spawner/nuke_ops/borg_tele/commando
+	name = "mysterious device"
+	desc = "A dusty brick of electronics, wired to some kind of bluespace launch apparatus. A small plastic sticker on the side of the housing reads MODPICK!BRIG@DORPROTOTYPE in hastily-scrawled sharpie."
+	borg_to_spawn = "Commando"
 
 /obj/item/antag_spawner/nuke_ops/borg_tele/spawn_antag(client/C, turf/T, kind, datum/mind/user)
 	var/mob/living/silicon/robot/R
@@ -194,6 +198,8 @@
 			R = new /mob/living/silicon/robot/modules/syndicate/medical(T)
 		if("Saboteur")
 			R = new /mob/living/silicon/robot/modules/syndicate/saboteur(T)
+		if("Commando")
+			R = new /mob/living/silicon/robot/modules/syndicateproto(T)
 		else
 			R = new /mob/living/silicon/robot/modules/syndicate(T) //Assault borg by default
 

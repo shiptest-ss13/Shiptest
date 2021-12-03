@@ -1,10 +1,15 @@
 //Ranged
-/obj/projectile/guardian
+/obj/projectile/guardian//now featuring anime-accurate unpredictable richochet. Hit your master! Hit yourself! Salt in dchat when your own richochet puts you into crit.
 	name = "crystal spray"
 	icon_state = "guardian"
-	damage = 5
+	damage = 15
 	damage_type = BRUTE
 	armour_penetration = 100
+	ricochets_max = 2
+	ricochet_chance = 65
+	ricochet_auto_aim_range = 0
+	ricochet_incidence_leeway = 50
+	projectile_piercing = PASSMOB
 
 /mob/living/simple_animal/hostile/guardian/ranged
 	a_intent = INTENT_HELP
@@ -28,6 +33,7 @@
 	toggle_button_type = /atom/movable/screen/guardian/ToggleMode
 	var/list/snares = list()
 	var/toggle = FALSE
+	speed = -2//very fast!
 
 /mob/living/simple_animal/hostile/guardian/ranged/ToggleMode()
 	if(loc == summoner)

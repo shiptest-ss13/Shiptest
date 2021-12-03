@@ -1,10 +1,10 @@
 //Protector
 /mob/living/simple_animal/hostile/guardian/protector
-	melee_damage_lower = 15
-	melee_damage_upper = 15
-	range = 15 //worse for it due to how it leashes
+	melee_damage_lower = 30
+	melee_damage_upper = 30
+	range = 20
 	damage_coeff = list(BRUTE = 0.4, BURN = 0.4, TOX = 0.4, CLONE = 0.4, STAMINA = 0, OXY = 0.4)
-	playstyle_string = "<span class='holoparasite'>As a <b>protector</b> type you cause your summoner to leash to you instead of you leashing to them and have two modes; Combat Mode, where you do and take medium damage, and Protection Mode, where you do and take almost no damage, but move slightly slower.</span>"
+	playstyle_string = "<span class='holoparasite'>As a <b>protector</b> type you cause your summoner to leash to you instead of you leashing to them and have two modes; Combat Mode, where you do and take medium damage, and Protection Mode, where you take almost no damage and have reduced damage. While in protection mode, you move significantly slower, and have extremely low range.</span>"
 	magic_fluff_string = "<span class='holoparasite'>..And draw the Guardian, a stalwart protector that never leaves the side of its charge.</span>"
 	tech_fluff_string = "<span class='holoparasite'>Boot sequence complete. Protector modules loaded. Holoparasite swarm online.</span>"
 	carp_fluff_string = "<span class='holoparasite'>CARP CARP CARP! You caught one! Wait, no... it caught you! The fisher has become the fishy.</span>"
@@ -47,9 +47,10 @@
 		if(guardiancolor)
 			shield_overlay.color = guardiancolor
 		add_overlay(shield_overlay)
-		melee_damage_lower = 2
-		melee_damage_upper = 2
-		speed = 1
+		melee_damage_lower = 15
+		melee_damage_upper = 15
+		speed = 4
+		range = 5
 		damage_coeff = list(BRUTE = 0.05, BURN = 0.05, TOX = 0.05, CLONE = 0.05, STAMINA = 0, OXY = 0.05) //damage? what's damage?
 		to_chat(src, "<span class='danger'><B>You switch to protection mode.</span></B>")
 		toggle = TRUE
