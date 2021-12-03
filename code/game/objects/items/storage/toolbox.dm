@@ -311,3 +311,26 @@
 	else
 		to_chat(user, "<span class='warning'>You need 10 floor tiles to start building a floorbot!</span>")
 		return
+/obj/item/storage/toolbox/surgery
+	name = "mechanical toolbox"
+	icon_state = "surgerykit"
+	item_state = "toolbox_syndi"
+	latches = "double_latch"
+	material_flags = NONE
+
+/obj/item/storage/toolbox/surgery/ComponentInitialize()
+	. = ..()
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	STR.max_items = 8
+
+/obj/item/storage/toolbox/surgery/PopulateContents()
+	new /obj/item/scalpel(src)
+	new /obj/item/hemostat(src)
+	new /obj/item/retractor(src)
+	new /obj/item/circular_saw(src)
+	new /obj/item/surgicaldrill(src)
+	new /obj/item/cautery(src)
+	new /obj/item/bonesetter(src)
+	new /obj/item/bonesetter(src)
+	new /obj/item/stack/medical/bone_gel(src)
+
