@@ -3,7 +3,8 @@
 	name = "suit storage unit"
 	desc = "An industrial unit made to hold and decontaminate irradiated equipment. It comes with a built-in UV cauterization mechanism. A small warning label advises that organic matter should not be placed into the unit."
 	icon = 'icons/obj/machines/suit_storage.dmi'
-	icon_state = "close"
+	icon_state = "ssu_classic"
+	base_icon_state = "ssu_classic"
 	density = TRUE
 	max_integrity = 250
 
@@ -45,9 +46,10 @@
 	/// How long it takes to break out of the SSU.
 	var/breakout_time = 300
 
-/obj/machinery/suit_storage_unit/Initialize()
-	. = ..()
-	interaction_flags_machine |= INTERACT_MACHINE_OFFLINE
+/obj/machinery/suit_storage_unit/industrial
+	name = "industrial suit storage unit"
+	icon_state = "industrial"
+	base_icon_state = "industrial"
 
 /obj/machinery/suit_storage_unit/standard_unit
 	suit_type = /obj/item/clothing/suit/space/eva
@@ -187,27 +189,37 @@
 
 /obj/machinery/suit_storage_unit/update_overlays()
 	. = ..()
+	//if things arent powered, these show anyways
+	if(panel_open)
+		. += "[base_icon_state]_panel"
+	if(state_open)
+		. += "[base_icon_state]_open"
+		if(suit)
+			. += "[base_icon_state]_suit"
+		if(helmet)
+			. += "[base_icon_state]_helm"
+		if(storage)
+			. += "[base_icon_state]_storage"
+		if(uv)
+			if(uv_super)
+			. += "[base_icon_state]_super"
+	if(!(machine_stat & BROKEN || machine_stat & NOPOWER))
+		if(state_open)
+			. += "[base_icon_state]_lights_open"
+		else
+			if(uv)
+				. += "[base_icon_state]_lights_red"
+			else
+				. += "[base_icon_state]_lights_closed"
+		//top lights
+		if(uv)
+			if(uv_super)
+				. += "[base_icon_state]_uvstrong"
+			else
+				. += "[base_icon_state]_uv"
+		else
+			. += "[base_icon_state]_ready"
 
-	if(uv)
-		if(uv_super)
-			. += "super"
-		else if(occupant)
-			. += "uvhuman"
-		else
-			. += "uv"
-	else if(state_open)
-		if(machine_stat & BROKEN)
-			. += "broken"
-		else
-			. += "open"
-			if(suit)
-				. += "suit"
-			if(helmet)
-				. += "helm"
-			if(storage)
-				. += "storage"
-	else if(occupant)
-		. += "human"
 
 /obj/machinery/suit_storage_unit/power_change()
 	. = ..()
@@ -306,10 +318,12 @@
 			if (item_to_dispense)
 				vars[choice] = null
 				try_put_in_hand(item_to_dispense, user)
+				update_icon()
 			else
 				var/obj/item/in_hands = user.get_active_held_item()
 				if (in_hands)
 					attackby(in_hands, user)
+				update_icon()
 
 	interact(user)
 
@@ -522,7 +536,8 @@
 		wires.interact(user)
 		return
 	if(!state_open)
-		if(default_deconstruction_screwdriver(user, "panel", "close", I))
+		if(default_deconstruction_screwdriver(user, "[base_icon_state]", "[base_icon_state]", I))
+			update_icon()
 			return
 	if(default_pry_open(I))
 		dump_contents()
