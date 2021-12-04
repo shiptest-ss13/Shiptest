@@ -24,6 +24,9 @@
 		return FALSE
 	if(target.stat != DEAD)
 		return FALSE
+	var/datum/surgery_step/dissection/V = new /datum/surgery_step/dissection
+	if(V.check_value(target, src) < 0.01)
+		return FALSE
 
 /datum/surgery_step/dissection
 	name = "dissection"
