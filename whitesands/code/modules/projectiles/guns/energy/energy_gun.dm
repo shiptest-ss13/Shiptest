@@ -29,7 +29,6 @@
 	icon_state = "ioteshotgun"
 	item_state = "shotgun_combat"
 	shaded_charge = 1
-	icon = 'icons/obj/guns/energy.dmi' //to avoid conflicts with rockplanet
 	w_class = WEIGHT_CLASS_BULKY
 	ammo_type = list(/obj/item/ammo_casing/energy/disabler/scatter/ultima, /obj/item/ammo_casing/energy/laser/ultima)
 	var/obj/item/modular_computer/integratedNTOS
