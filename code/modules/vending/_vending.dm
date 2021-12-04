@@ -178,6 +178,7 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 	*/
 /obj/machinery/vending/Initialize(mapload)
 	var/build_inv = FALSE
+	soundloop = new(list(src))
 	if(!refill_canister)
 		circuit = null
 		build_inv = TRUE
@@ -193,7 +194,6 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 	// The first time this machine says something will be at slogantime + this random value,
 	// so if slogantime is 10 minutes, it will say it at somewhere between 10 and 20 minutes after the machine is crated.
 	last_slogan = world.time + rand(0, slogan_delay)
-	soundloop = new(list(src))
 	power_change()
 
 	Radio = new /obj/item/radio(src)
