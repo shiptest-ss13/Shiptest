@@ -20,7 +20,6 @@
 
 /obj/machinery/computer/Initialize(mapload, obj/item/circuitboard/C)
 	. = ..()
-
 	soundloop = new(list(src))
 	power_change()
 	if(!QDELETED(C))
@@ -35,7 +34,9 @@
 
 /obj/machinery/computer/process()
 	if(machine_stat & (NOPOWER|BROKEN))
+		soundloop.stop()
 		return 0
+	soundloop.start()
 	return 1
 
 /obj/machinery/computer/update_overlays()
@@ -57,10 +58,8 @@
 /obj/machinery/computer/power_change()
 	. = ..()
 	if(machine_stat & NOPOWER)
-		soundloop.stop()
 		set_light(0)
 	else
-		soundloop.start()
 		set_light(brightness_on)
 
 /obj/machinery/computer/screwdriver_act(mob/living/user, obj/item/I)

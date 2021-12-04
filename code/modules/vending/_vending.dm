@@ -837,6 +837,7 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 
 /obj/machinery/vending/process()
 	if(machine_stat & (BROKEN|NOPOWER))
+		soundloop.stop()
 		return PROCESS_KILL
 	if(!active)
 		return
@@ -852,6 +853,8 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 
 	if(shoot_inventory && prob(shoot_inventory_chance))
 		throw_item()
+
+	soundloop.start()
 /**
 	* Speak the given message verbally
 	*
@@ -872,9 +875,6 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 	. = ..()
 	if(powered())
 		START_PROCESSING(SSmachines, src)
-		soundloop.start()
-	else
-		soundloop.stop()
 
 
 //Somebody cut an important wire and now we're following a new definition of "pitch."
