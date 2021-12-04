@@ -110,7 +110,7 @@
 	volume = 10
 
 /datum/looping_sound/smes
-	mid_sounds = list('sound/machines/apc/apc_mid1.ogg'=1,'sound/machines/apc/apc_mid2.ogg'=1,'sound/machines/apc/apc_mid3.ogg'=1)
-	mid_length = 2.8 SECONDS
+	mid_sounds = list('sound/machines/smes/smes_mid1.ogg'=1,'sound/machines/smes/smes_mid2.ogg'=1,'sound/machines/smes/smes_mid3.ogg'=1,'sound/machines/smes/smes_mid4.ogg'=1,'sound/machines/smes/smes_mid5.ogg'=1,'sound/machines/smes/smes_mid6.ogg'=1,'sound/machines/smes/smes_mid7.ogg'=1)
+	mid_length = 2 SECONDS
 	extra_range = 5
 	volume = 10

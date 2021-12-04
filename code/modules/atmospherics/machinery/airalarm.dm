@@ -655,12 +655,12 @@
 			if(2)
 				emissive_state = "alarm2"
 
-		. += SSvis_overlays.add_vis_overlay(src, icon, emissive_state, layer, plane, dir)
-		. += SSvis_overlays.add_vis_overlay(src, icon, "light_emissive", EMISSIVE_LAYER, EMISSIVE_PLANE, dir, alpha)
+		. += mutable_appearance(icon, emissive_state)
+		. += mutable_appearance(icon, "light_emissive", layer, EMISSIVE_PLANE)
 
 	if(perc_danger_level) //When there's any danger level, light up the "AIR" sign too
-		. += SSvis_overlays.add_vis_overlay(src, icon, "alarm_sign", layer, plane, dir)
-		. += SSvis_overlays.add_vis_overlay(src, icon, "alarm_sign", EMISSIVE_LAYER, EMISSIVE_PLANE, dir, alpha)
+		. += mutable_appearance(icon, "alarm_sign")
+		. += mutable_appearance(icon, "alarm_sign", layer, EMISSIVE_PLANE)
 
 /obj/machinery/airalarm/process()
 	if((machine_stat & (NOPOWER|BROKEN)) || shorted)

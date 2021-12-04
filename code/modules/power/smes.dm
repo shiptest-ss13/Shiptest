@@ -40,6 +40,9 @@
 
 	var/obj/machinery/power/terminal/terminal = null
 
+	///Looping audio for when smes has power and is sending power
+	var/datum/looping_sound/smes/soundloop
+
 /obj/machinery/power/smes/examine(user)
 	. = ..()
 	if(!terminal)
@@ -47,6 +50,7 @@
 
 /obj/machinery/power/smes/Initialize()
 	. = ..()
+	soundloop = new(list(src))
 	dir_loop:
 		for(var/d in GLOB.cardinals)
 			var/turf/T = get_step(src, d)
@@ -182,6 +186,7 @@
 		cell.charge = (charge / capacity) * cell.maxcharge
 
 /obj/machinery/power/smes/Destroy()
+	QDEL_NULL(soundloop)
 	if(SSticker.IsRoundInProgress())
 		var/turf/T = get_turf(src)
 		message_admins("SMES deleted at [ADMIN_VERBOSEJMP(T)]")
@@ -283,6 +288,11 @@
 	else
 		outputting = FALSE
 
+	//playing sound loop
+	if(outputting)
+		soundloop.start()
+	else
+		soundloop.stop()
 	// only update icon if state changed
 	if(last_disp != chargedisplay() || last_chrg != inputting || last_onln != outputting)
 		update_icon()
