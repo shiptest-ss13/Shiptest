@@ -20,3 +20,19 @@
 	charge_sections = 3
 	automatic = 1
 	weapon_weight = WEAPON_LIGHT
+
+/obj/item/gun/energy/e_gun/iot
+	name = "\improper E-SG 500 Second Edition"
+	desc = "A improved version of the E-SG 255. It now includes two firing modes, disable and kill, while still keeping that sweed integrated computer. Please note that the screen is right next to the switch mode button."
+	lefthand_file = 'icons/mob/inhands/weapons/64x_guns_left.dmi'
+	righthand_file = 'icons/mob/inhands/weapons/64x_guns_right.dmi'
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	icon_state = "ioteshotgun"
+	item_state = "shotgun_combat"
+	shaded_charge = 1
+	icon = 'icons/obj/guns/energy.dmi' //to avoid conflicts with rockplanet
+	w_class = WEIGHT_CLASS_BULKY
+	ammo_type = list(/obj/item/ammo_casing/energy/disabler/scatter/ultima, /obj/item/ammo_casing/energy/laser/ultima)
+	var/obj/item/modular_computer/integratedNTOS
+	var/NTOS_type = /obj/item/modular_computer/internal
