@@ -1,5 +1,5 @@
 /obj/item/gun/energy/e_gun
-	name = "energy gun"
+	name = "energy rifle"
 	desc = "A basic hybrid energy gun with two settings: disable and kill."
 	icon_state = "energy"
 	item_state = null	//so the human update icon uses the icon_state instead.

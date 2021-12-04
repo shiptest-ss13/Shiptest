@@ -131,12 +131,35 @@
 	helmet_type = /obj/item/clothing/head/radiation
 	storage_type = /obj/item/geiger_counter
 
+//SHIPTEST suits below
+
 /obj/machinery/suit_storage_unit/solgov
 	name = "solgov suit storage unit"
 	suit_type = /obj/item/clothing/suit/space/solgov
 	helmet_type = /obj/item/clothing/head/helmet/space/solgov
 	mask_type = /obj/item/clothing/mask/breath
 	storage_type = /obj/item/tank/internals/emergency_oxygen/engi
+
+/obj/machinery/suit_storage_unit/independent/security
+	suit_type = /obj/item/clothing/suit/space/hardsuit/security/independent
+	mask_type = /obj/item/clothing/mask/gas/sechailer
+
+/obj/machinery/suit_storage_unit/independent/engineering
+	suit_type = /obj/item/clothing/suit/space/engineer
+	helmet_type = /obj/item/clothing/head/helmet/space/light/engineer
+	mask_type = /obj/item/clothing/mask/breath
+	storage_type= /obj/item/clothing/shoes/magboots
+
+/obj/machinery/suit_storage_unit/independent/mining/eva
+	suit_type = /obj/item/clothing/suit/space/hardsuit/mining/independent
+	mask_type = /obj/item/clothing/mask/breath
+
+/obj/machinery/suit_storage_unit/independent/pilot
+	suit_type = /obj/item/clothing/suit/space/pilot
+	helmet_type = /obj/item/clothing/head/helmet/space/pilot/random
+	mask_type = /obj/item/clothing/mask/breath
+
+//End shiptest suits
 
 /obj/machinery/suit_storage_unit/open
 	state_open = TRUE
