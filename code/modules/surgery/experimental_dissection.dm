@@ -24,6 +24,7 @@
 		return FALSE
 	if(target.stat != DEAD)
 		return FALSE
+
 	var/datum/surgery_step/dissection/V = new /datum/surgery_step/dissection
 	if(V.check_value(target, src) < 0.01)
 		return FALSE
@@ -45,22 +46,24 @@
 
 	//determine bonus applied
 	if(isalienroyal(target))
-		cost = (BASE_HUMAN_REWARD*32)
+		cost = (BASE_HUMAN_REWARD*38)
 	else if(isalienadult(target))
-		cost = (BASE_HUMAN_REWARD*25)
+		cost = (BASE_HUMAN_REWARD*30)
 	else if(ismonkey(target))
 		cost = (BASE_HUMAN_REWARD*0.5)
 	else if(ishuman(target))
 		var/mob/living/carbon/human/H = target
 		if(H?.dna?.species)
 			if(isabductor(H) || ismilsynth(H))
-				cost = (BASE_HUMAN_REWARD*22)
+				cost = (BASE_HUMAN_REWARD*24)
 			else if(isgolem(H) || iszombie(H) || isshadow(H) || isandroid(H) || issynth(H))
-				cost = (BASE_HUMAN_REWARD*17)
+				cost = (BASE_HUMAN_REWARD*20)
 			else if(isjellyperson(H) || ispodperson(H) || issquidperson(H) || isalien(H) || ismushroom(H))
-				cost = (BASE_HUMAN_REWARD*10)
+				cost = (BASE_HUMAN_REWARD*14)
+			else if(isskeleton(H))
+				cost = (BASE_HUMAN_REWARD * 0.5)
 	else
-		cost = (BASE_HUMAN_REWARD * 0.6)
+		cost = (BASE_HUMAN_REWARD * 0.5)
 
 
 

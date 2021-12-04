@@ -1686,7 +1686,7 @@
 
 /datum/supply_pack/service/hvyminer
 	name = "Heavy Mining Kit"
-	desc = "A set of supplementary premium equipment for particularly challenging frontier expeditions. Comes equipped with an enhanced mining suit, crusher, launch boots, and two emerency stimulant injectors."
+	desc = "A set of supplementary premium equipment for particularly challenging frontier expeditions. Comes equipped with an enhanced mining suit, crusher, launch boots, and two emergency stimulant injectors."
 	cost = 7500
 	access = ACCESS_QM
 	crate_name = "EXOCON Heavy Operations Kit"
