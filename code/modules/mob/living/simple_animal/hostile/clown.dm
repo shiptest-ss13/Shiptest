@@ -319,7 +319,7 @@
 	turns_per_move = 1
 	speed = 1
 	speak_chance = 10
-	speak_emote = "collectively squeaks"
+	speak_emote = list("collectively squeaks")
 	maxHealth = 125
 	health = 125
 	deathmessage = "collapses into a heap of inanimate clown dolls!"

@@ -47,10 +47,11 @@
 	if(src.loc == summoner)
 		if(toggle)
 			a_intent = INTENT_HARM
-			speed = 0
+			speed = -2
 			damage_coeff = list(BRUTE = 0.7, BURN = 0.7, TOX = 0.7, CLONE = 0.7, STAMINA = 0, OXY = 0.7)
-			melee_damage_lower = 15
-			melee_damage_upper = 15
+			melee_damage_lower = 5
+			melee_damage_upper = 5
+			next_move_modifier = 0.3///attack as fast as you can click, but your actual hits are basically tickle damage :))
 			to_chat(src, "<span class='danger'><B>You switch to combat mode.</span></B>")
 			toggle = FALSE
 		else

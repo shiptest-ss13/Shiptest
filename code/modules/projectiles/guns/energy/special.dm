@@ -293,8 +293,8 @@
 /* 3d printer 'pseudo guns' for borgs */
 
 /obj/item/gun/energy/printer
-	name = "cyborg lmg"
-	desc = "An LMG that fires 3D-printed flechettes. They are slowly resupplied using the cyborg's internal power source."
+	name = "integrated LMG"
+	desc = "A modified energy weapon re-designed to fire 3D-printed flechettes, pulled directly from the cyborg's internal power source."
 	icon_state = "l6_cyborg"
 	icon = 'icons/obj/guns/projectile.dmi'
 	cell_type = "/obj/item/stock_parts/cell/secborg"
@@ -309,6 +309,43 @@
 	AddElement(/datum/element/update_icon_blocker)
 
 /obj/item/gun/energy/printer/emp_act()
+	return
+
+//the future of mid-range borg marksmanship. Get tactical.
+/obj/item/gun/energy/printer/commando
+	name = "integrated TAC-rifle"
+	desc = "A shoulder-mounted high-caliber ballistic weapon. Capable of supporting prolonged encounters by printing heavy rounds directly off the host cyborg's power supplies."
+	fire_rate = 0.5
+	ammo_type = list(/obj/item/ammo_casing/energy/ctac, /obj/item/ammo_casing/energy/csour, /obj/item/ammo_casing/energy/csweet)
+	var/tac_ammo = 1
+
+/obj/item/gun/energy/printer/commando/examine()
+	. = ..()
+	. += "<span class='notice'> Can be reconfigured inhand to print different projectile designs.</span>"
+
+/obj/item/gun/energy/printer/commando/attack_self(mob/living/user as mob)
+	if(ammo_type.len > 1)
+		tac_fire(user)
+		update_icon()
+
+/obj/item/gun/energy/printer/commando/proc/tac_fire(mob/living/user)
+	select++
+	if (select > ammo_type.len)
+		select = 1
+	var/obj/item/ammo_casing/energy/shot = ammo_type[select]
+	fire_sound = shot.fire_sound
+	fire_delay = shot.delay
+	if (shot.select_name)
+		playsound(get_turf(user), 'sound/items/change_drill.ogg', 50, TRUE)
+		if(shot.select_name == "tactical")
+			to_chat(user, "<span class='notice'>You configure the [src] to fire CY-TACTICAL high-velocity impact rounds.</span>")
+		if(shot.select_name == "sweet")
+			to_chat(user, "<span class='notice'>You set your [src] to fire CY-SWEET distruptor rounds, which travel slowly and do little damage, but irradiate and ignite targets.</span>")
+		if(shot.select_name == "sour")
+			to_chat(user, "<span class='notice'>You rearm your [src] with CY-SOUR nonlethal rounds, which cause stamina damage and distrupt the focus of enemies.</span>")
+	chambered = null
+	recharge_newshot(TRUE)
+	update_icon()
 	return
 
 /obj/item/gun/energy/temperature
@@ -376,4 +413,3 @@
 	if(!firing_core)
 		return FALSE
 	return ..()
-
