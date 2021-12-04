@@ -202,7 +202,7 @@
 			. += "[base_icon_state]_storage"
 		if(uv)
 			if(uv_super)
-			. += "[base_icon_state]_super"
+				. += "[base_icon_state]_super"
 	if(!(machine_stat & BROKEN || machine_stat & NOPOWER))
 		if(state_open)
 			. += "[base_icon_state]_lights_open"
