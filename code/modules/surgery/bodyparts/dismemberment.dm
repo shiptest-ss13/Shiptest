@@ -18,7 +18,13 @@
 	var/obj/item/bodypart/affecting = C.get_bodypart(BODY_ZONE_CHEST)
 	affecting.receive_damage(clamp(brute_dam/2 * affecting.body_damage_coeff, 15, 50), clamp(burn_dam/2 * affecting.body_damage_coeff, 0, 50)) //Damage the chest based on limb's existing damage
 	C.visible_message("<span class='danger'><B>[C]'s [src.name] is violently dismembered!</B></span>")
-	INVOKE_ASYNC(C, /mob.proc/emote, "scream")
+
+	if(C.stat <= SOFT_CRIT)//No more screaming while unconsious
+		if(IS_ORGANIC_LIMB(affecting))//Chest is a good indicator for if a carbon is robotic in nature or not.
+			C.emote("scream")
+
+	SEND_SIGNAL(C, COMSIG_ADD_MOOD_EVENT, "dismembered", /datum/mood_event/dismembered)
+
 	SEND_SIGNAL(C, COMSIG_ADD_MOOD_EVENT, "dismembered", /datum/mood_event/dismembered)
 	drop_limb()
 
@@ -125,6 +131,8 @@
 			if(org_zone != body_zone)
 				continue
 			O.transfer_to_limb(src, C)
+
+	synchronize_bodytypes(C)
 
 	update_icon_dropped()
 	C.update_health_hud() //update the healthdoll
@@ -258,31 +266,29 @@
 	..()
 
 //Attach a limb to a human and drop any existing limb of that type.
-/obj/item/bodypart/proc/replace_limb(mob/living/carbon/C, special)
+/obj/item/bodypart/proc/replace_limb(mob/living/carbon/C, special, is_creating = FALSE)
 	if(!istype(C))
 		return
-	var/obj/item/bodypart/O = C.get_bodypart(body_zone) //needs to happen before attach because multiple limbs in same zone breaks helpers
-	if(!attach_limb(C, special))//we can attach this limb and drop the old after because of our robust bodyparts system. you know, just for a sec.
-		return
+	var/obj/item/bodypart/O = C.get_bodypart(body_zone)
 	if(O)
 		O.drop_limb(1)
+	attach_limb(C, special, is_creating)
 
-/obj/item/bodypart/head/replace_limb(mob/living/carbon/C, special)
+/obj/item/bodypart/head/replace_limb(mob/living/carbon/C, special, is_creating = FALSE)
 	if(!istype(C))
 		return
 	var/obj/item/bodypart/head/O = C.get_bodypart(body_zone)
-	if(!attach_limb(C, special))
-		return
 	if(O)
-		O.drop_limb(1)
+		if(!special)
+			return
+		else
+			O.drop_limb(1)
+	attach_limb(C, special, is_creating)
 
-/obj/item/bodypart/proc/attach_limb(mob/living/carbon/C, special)
-	if(SEND_SIGNAL(C, COMSIG_LIVING_ATTACH_LIMB, src, special) & COMPONENT_NO_ATTACH)
-		return FALSE
-	. = TRUE
+/obj/item/bodypart/proc/attach_limb(mob/living/carbon/C, special, is_creating = FALSE)
 	moveToNullspace()
 	owner = C
-	C.add_bodypart(src)
+	C.bodyparts += src
 	if(held_index)
 		if(held_index > C.hand_bodyparts.len)
 			C.hand_bodyparts.len = held_index
@@ -307,12 +313,14 @@
 	for(var/obj/item/organ/O in contents)
 		O.Insert(C)
 
+	synchronize_bodytypes(C)
+	if(is_creating)
+		update_limb(is_creating = TRUE)
 	update_bodypart_damage_state()
 
 	C.updatehealth()
 	C.update_body()
 	C.update_hair()
-	C.update_damage_overlays()
 
 
 /obj/item/bodypart/head/attach_limb(mob/living/carbon/C, special = FALSE, abort = FALSE)
@@ -370,6 +378,15 @@
 	C.update_hair()
 	C.update_damage_overlays()
 
+/obj/item/bodypart/proc/synchronize_bodytypes(mob/living/carbon/C)
+	if(!C.dna.species)
+		return
+	//This codeblock makes sure that the owner's bodytype flags match the flags of all of it's parts.
+	var/all_limb_flags
+	for(var/obj/item/bodypart/BP as() in C.bodyparts)
+		all_limb_flags =  all_limb_flags | BP.bodytype
+
+	C.dna.species.bodytype = all_limb_flags
 
 //Regenerates all limbs. Returns amount of limbs regenerated
 /mob/living/proc/regenerate_limbs(noheal = FALSE, list/excluded_zones = list())
@@ -391,14 +408,5 @@
 	if(get_bodypart(limb_zone))
 		return FALSE
 	L = newBodyPart(limb_zone, 0, 0)
-	if(L)
-		if(!noheal)
-			L.set_brute_dam(0)
-			L.set_burn_dam(0)
-			L.brutestate = 0
-			L.burnstate = 0
-
-		if(!L.attach_limb(src, 1))
-			qdel(L)
-			return FALSE
-		return TRUE
+	L.replace_limb(src, TRUE, TRUE)
+	return 1

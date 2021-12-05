@@ -167,7 +167,7 @@
 		affecting = get_bodypart(ran_zone(user.zone_selected, zone_hit_chance))
 	var/target_area = parse_zone(check_zone(user.zone_selected)) //our intended target
 	if(affecting)
-		if(I.force && I.damtype != STAMINA && affecting.status == BODYPART_ROBOTIC) // Bodpart_robotic sparks when hit, but only when it does real damage
+		if(I.force && I.damtype != STAMINA && (!IS_ORGANIC_LIMB(affecting))) // Bodpart_robotic sparks when hit, but only when it does real damage
 			if(I.force >= 5)
 				do_sparks(1, FALSE, loc)
 				if(prob(25))
@@ -505,7 +505,7 @@
 		return
 	var/informed = FALSE
 	for(var/obj/item/bodypart/L in src.bodyparts)
-		if(L.status == BODYPART_ROBOTIC)
+		if(!IS_ORGANIC_LIMB(L))
 			if(!informed)
 				to_chat(src, "<span class='userdanger'>You feel a sharp pain as your robotic limbs overload.</span>")
 				informed = TRUE
@@ -516,7 +516,7 @@
 				if(2)
 					L.receive_damage(0,5)
 					Paralyze(100)
-			if((TRAIT_EASYDISMEMBER in L.owner.dna.species.species_traits) && L.body_zone != "chest")
+			if(HAS_TRAIT(L, TRAIT_EASYDISMEMBER) && L.body_zone != "chest")
 				if(prob(20))
 					L.dismember(BRUTE)
 

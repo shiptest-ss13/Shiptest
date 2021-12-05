@@ -62,6 +62,7 @@
 	body_parts_covered = CHEST|GROIN|ARMS
 	can_adjust = FALSE
 	fitted = FEMALE_UNIFORM_TOP
+	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON
 
 /obj/item/clothing/under/rank/command/head_of_personnel/suit
 	name = "head of personnel's suit"
@@ -78,6 +79,7 @@
 	body_parts_covered = CHEST|GROIN|ARMS
 	can_adjust = FALSE
 	fitted = FEMALE_UNIFORM_TOP
+	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON
 
 /obj/item/clothing/under/rank/command/captain/nt
 	desc = "It's a blue jumpsuit with some gold markings denoting the rank of \"Captain\"."
@@ -101,6 +103,7 @@
 	body_parts_covered = CHEST|GROIN|ARMS
 	can_adjust = FALSE
 	fitted = FEMALE_UNIFORM_TOP
+	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON
 
 /obj/item/clothing/under/rank/command/lieutenant/blue
 	desc = "A standard command jumpsuit in the colours of the Lieutenant."
@@ -116,3 +119,4 @@
 	body_parts_covered = CHEST|GROIN|ARMS
 	fitted = FEMALE_UNIFORM_TOP
 	can_adjust = FALSE
+	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON

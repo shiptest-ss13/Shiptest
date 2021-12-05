@@ -1,6 +1,6 @@
 /datum/species/teshari
 	name = "Teshari"
-	id = "teshari"
+	id = SPECIES_TESHARI
 	default_color = "6060FF"
 	species_traits = list(MUTCOLORS, EYECOLOR, NO_UNDERWEAR)
 	inherent_traits = list(TRAIT_HOLDABLE)

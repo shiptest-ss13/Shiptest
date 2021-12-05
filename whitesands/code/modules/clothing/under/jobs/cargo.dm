@@ -37,7 +37,7 @@
 	desc = "Shorts and lost mail makes up this jumpsuit."
 	icon_state = "mailroom_technician"
 	body_parts_covered = CHEST|GROIN|ARMS
-	mutantrace_variation = NO_MUTANTRACE_VARIATION
+	// mutantrace_variation = NO_MUTANTRACE_VARIATION
 	fitted = NO_FEMALE_UNIFORM
 
 /obj/item/clothing/under/rank/cargo/tech/mailroom_technician/skirt

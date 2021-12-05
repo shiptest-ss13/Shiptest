@@ -71,6 +71,47 @@
 #define LARVA_BODYPART "larva"
 #define DEVIL_BODYPART "devil"
 
+//Bodypart change blocking flags
+#define CHANGE_SPECIES	(1<<0)
+
+//Defines for Species IDs
+#define SPECIES_ABDUCTOR "abductor"
+#define SPECIES_ANDROID "android"
+#define SPECIES_CORPORATE "corporate"
+#define SPECIES_DULLAHAN "dullahan"
+#define SPECIES_ETHEREAL "ethereal"
+#define SPECIES_FELINID "felinid"
+#define SPECIES_FLYPERSON "fly"
+#define SPECIES_HUMAN "human"
+#define SPECIES_IPC "IPC"
+#define SPECIES_JELLYPERSON "jelly_person"
+#define SPECIES_SLIMEPERSON "slime_person"
+#define SPECIES_LUMINESCENT "luminescent"
+#define SPECIES_STARGAZER "stargazer"
+#define SPECIES_LIZARD "lizard"
+#define SPECIES_ASHWALKER "ashwalker"
+#define SPECIES_KOBOLD "kobold"
+#define SPECIES_MONKEY "monkey"
+#define SPECIES_MOTH "moth"
+#define SPECIES_MUSH "mush"
+#define SPECIES_PLASMAMAN "plasmaman"
+#define SPECIES_POD "pod_person"
+#define SPECIES_SHADOW "shadow"
+#define SPECIES_SKELETON "skeleton"
+#define SPECIES_SNAIL "snail"
+#define SPECIES_SYNTH "synth"
+#define SPECIES_MILITARYSYNTH "military_synth"
+#define SPECIES_TESHARI "teshari"
+#define SPECIES_VAMPIRE "vampire"
+#define SPECIES_VOX "vox"
+#define SPECIES_ZOMBIE "zombie"
+#define SPECIES_GOOFZOMBIE "krokodil_zombie"
+#define SPECIES_STARGAZER "stargazer"
+
+#define DIGITIGRADE_NEVER 0
+#define DIGITIGRADE_OPTIONAL 1
+#define DIGITIGRADE_FORCED 2
+
 //Reagent Metabolization flags, defines the type of reagents that affect this mob
 #define PROCESS_ORGANIC 1 //Only processes reagents with "ORGANIC" or "ORGANIC | SYNTHETIC"
 #define PROCESS_SYNTHETIC 2 //Only processes reagents with "SYNTHETIC" or "ORGANIC | SYNTHETIC"
@@ -79,7 +120,25 @@
 #define ORGANIC 1
 #define SYNTHETIC 2
 
-/*see __DEFINES/inventory.dm for bodypart bitflag defines*/
+//Species bitflags, used for species_restricted. If this somehow ever gets above 23 Bee has larger problems.
+#define	FLAG_HUMAN			(1<<0)
+#define FLAG_IPC			(1<<1)
+#define FLAG_ETHEREAL		(1<<2)
+#define FLAG_PLASMAMAN		(1<<3)
+#define FLAG_MOTH			(1<<4)
+#define FLAG_LIZARD			(1<<5)
+#define FLAG_FELINID		(1<<6)
+#define FLAG_OOZELING		(1<<7)
+#define FLAG_FLY			(1<<8)
+#define FLAG_MONKEY 		(1<<9)
+
+//Bodytype defines for how things can be worn.
+#define BODYTYPE_ORGANIC		(1<<0)
+#define BODYTYPE_ROBOTIC		(1<<1)
+#define BODYTYPE_HUMANOID		(1<<2) //Everything
+#define BODYTYPE_BOXHEAD		(1<<3) //TV Head
+#define BODYTYPE_DIGITIGRADE	(1<<4) //Cancer
+#define NUMBER_OF_BODYTYPES	5 //KEEP THIS UPDATED OR SHIT WILL BREAK
 
 // Health/damage defines
 #define MAX_LIVING_HEALTH 100

@@ -1,7 +1,7 @@
 /mob/living/carbon/Initialize()
 	. = ..()
 	create_reagents(1000)
-	assign_bodypart_ownership()
+	// assign_bodypart_ownership()
 	update_body_parts() //to update the carbon's new bodyparts appearance
 	GLOB.carbon_list += src
 
@@ -998,7 +998,7 @@
 				if("augment")
 					if(ishuman(src))
 						if(BP)
-							BP.change_bodypart_status(BODYPART_ROBOTIC, TRUE, TRUE)
+							BP.change_bodypart_status(BODYTYPE_ROBOTIC, TRUE, TRUE)
 						else
 							to_chat(usr, "<span class='boldwarning'>[src] doesn't have such bodypart.</span>")
 					else

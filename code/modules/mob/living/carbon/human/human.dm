@@ -9,8 +9,11 @@
 
 	setup_human_dna()
 
+
+	prepare_huds() //Prevents a nasty runtime on human init
+
 	if(dna.species)
-		set_species(dna.species.type)
+		set_species(dna.species.type) //This generates new limbs based on the species, beware.
 
 	//initialise organs
 	create_internal_organs() //most of it is done in set_species now, this is only for parent call
@@ -198,7 +201,7 @@
 		dat += "</td></tr>"
 
 	var/obj/item/bodypart/O = get_bodypart(BODY_ZONE_CHEST)
-	if((w_uniform == null && !(dna && dna.species.nojumpsuit) && !(O && O.status == BODYPART_ROBOTIC)) || (ITEM_SLOT_ICLOTHING in obscured))
+	if((w_uniform == null && !(dna && dna.species.nojumpsuit) && !IS_ORGANIC_LIMB(O)) || (ITEM_SLOT_ICLOTHING in obscured))
 		dat += "<tr><td><font color=grey>&nbsp;&#8627;<B>Pockets:</B></font></td></tr>"
 		dat += "<tr><td><font color=grey>&nbsp;&#8627;<B>ID:</B></font></td></tr>"
 		dat += "<tr><td><font color=grey>&nbsp;&#8627;<B>Belt:</B></font></td></tr>"

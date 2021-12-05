@@ -1,6 +1,6 @@
 /datum/species/moth
-	name = "Mothman"
-	id = "moth"
+	name = "\improper Mothman"
+	id = SPECIES_MOTH
 	say_mod = "flutters"
 	default_color = "00FF00"
 	species_traits = list(LIPS, NOEYESPRITES, TRAIT_ANTENNAE)
@@ -22,6 +22,13 @@
 	loreblurb = "Horrifying giant bug monsters, or possibly cute and fluffy cuddlebugs, depending on who you ask. Astoundingly common in every corner of space, their origin is typically assumed to be misdirected gene modification or mutation of regular Sol moths. Their wings, while pretty, are non-functional in standard gravity levels."
 	wings_icons = list("Megamoth", "Mothra")
 	has_innate_wings = TRUE
+
+	species_chest = /obj/item/bodypart/chest/moth
+	species_head = /obj/item/bodypart/head/moth
+	species_l_arm = /obj/item/bodypart/l_arm/moth
+	species_r_arm = /obj/item/bodypart/r_arm/moth
+	species_l_leg = /obj/item/bodypart/l_leg/moth
+	species_r_leg = /obj/item/bodypart/r_leg/moth
 
 /datum/species/moth/regenerate_organs(mob/living/carbon/C,datum/species/old_species,replace_current=TRUE,list/excluded_zones)
 	. = ..()
