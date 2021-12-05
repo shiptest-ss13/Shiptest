@@ -365,7 +365,7 @@
 				r_pocket = pickweight(list(/obj/item/stack/marker_beacon = 20, /obj/item/stack/spacecash/c1000 = 7, /obj/item/reagent_containers/hypospray/medipen/survival = 2, /obj/item/borg/upgrade/modkit/damage = 1 ))
 			if(prob(10))
 				l_pocket = pickweight(list(/obj/item/stack/spacecash/c1000 = 7, /obj/item/reagent_containers/hypospray/medipen/survival = 2, /obj/item/borg/upgrade/modkit/cooldown = 1 ))
-			if(prob(85))
+			if(prob(95))
 				back = /obj/item/storage/backpack/explorer
 				backpack_contents = list()
 				if(prob(70))
@@ -600,5 +600,5 @@
 	icon_aggro = "snowlegion_head"
 	icon_dead = "snowlegion_head"
 
-/mob/living/simple_animal/hostile/asteroid/hivelordbrood/legion/snow/tendril
+/mob/living/simple_animal/hostile/asteroid/hivelord/legion/snow/tendril
 	fromtendril = TRUE

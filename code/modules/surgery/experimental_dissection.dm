@@ -57,7 +57,7 @@
 				cost = (BASE_HUMAN_REWARD*24)
 			else if(isgolem(H) || iszombie(H) || isshadow(H) || isandroid(H) || issynth(H))
 				cost = (BASE_HUMAN_REWARD*20)
-			else if(isjellyperson(H) || ispodperson(H) || issquidperson(H) || isalien(H) || ismushroom(H))
+			else if(isjellyperson(H) || ispodperson(H) || issquidperson(H) || isalien(H) || ismushroom(H) || isashlizard(H))
 				cost = (BASE_HUMAN_REWARD*14)
 			else if(isskeleton(H))
 				cost = (BASE_HUMAN_REWARD * 0.5)
@@ -115,13 +115,13 @@
 
 /datum/surgery/advanced/experimental_dissection/exp
 	name = "Experimental Dissection"
-	value_multiplier = 2
+	value_multiplier = 4
 	replaced_by = /datum/surgery/advanced/experimental_dissection/alien
 	requires_tech = TRUE
 
 /datum/surgery/advanced/experimental_dissection/alien
 	name = "Extraterrestrial Dissection"
-	value_multiplier = 3
+	value_multiplier = 8
 	requires_tech = TRUE
 	replaced_by = null
 
