@@ -31,6 +31,13 @@
 	mutanttongue = /obj/item/organ/tongue/teshari
 	species_language_holder = /datum/language_holder/teshari
 
+	species_chest = /obj/item/bodypart/chest/teshari
+	species_head = /obj/item/bodypart/head/teshari
+	species_l_arm = /obj/item/bodypart/l_arm/teshari
+	species_r_arm = /obj/item/bodypart/r_arm/teshari
+	species_l_leg = /obj/item/bodypart/l_leg/teshari
+	species_r_leg = /obj/item/bodypart/r_leg/teshari
+
 /datum/species/teshari/can_equip(obj/item/I, slot, disable_warning, mob/living/carbon/human/H, bypass_equip_delay_self, swap)
 	if(slot == ITEM_SLOT_MASK)
 		if(H.wear_mask && !swap)
