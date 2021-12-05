@@ -139,7 +139,7 @@
 	dir = 6
 	},
 /obj/machinery/firealarm{
-	dir = 8;
+	dir = 4;
 	pixel_x = -28
 	},
 /obj/effect/turf_decal/corner/grey/mono,
@@ -660,11 +660,14 @@
 	icon_state = "1-4"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/machinery/firealarm{
-	dir = 8;
-	pixel_x = -28
-	},
 /obj/effect/spawner/lootdrop/maintenance,
+/obj/machinery/button/door{
+	dir = 4;
+	id = "osprey_thruster_starboard";
+	name = "Blast Door Control";
+	pixel_x = -24;
+	pixel_y = 5
+	},
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "eB" = (
@@ -1056,6 +1059,10 @@
 	},
 /obj/structure/window/plasma/reinforced/spawner/east,
 /obj/structure/window/plasma/reinforced/spawner/west,
+/obj/machinery/door/poddoor{
+	id = "osprey_thruster_starboard";
+	name = "thruster blast door"
+	},
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "il" = (
@@ -1199,6 +1206,10 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
+/obj/machinery/firealarm{
+	dir = 2;
+	pixel_y = 28
+	},
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "jN" = (
@@ -1307,7 +1318,7 @@
 	},
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/machinery/firealarm{
-	dir = 8;
+	dir = 4;
 	pixel_x = -28
 	},
 /obj/structure/sign/poster/official/safety_internals{
@@ -2302,7 +2313,7 @@
 	dir = 8
 	},
 /obj/machinery/firealarm{
-	dir = 4;
+	dir = 8;
 	pixel_x = 28
 	},
 /turf/open/floor/plasteel/tech,
@@ -2442,7 +2453,7 @@
 	dir = 1
 	},
 /obj/machinery/firealarm{
-	dir = 1;
+	dir = 2;
 	pixel_y = 28
 	},
 /turf/open/floor/plasteel/tech/techmaint,
@@ -2621,6 +2632,7 @@
 /obj/structure/reagent_dispensers/foamtank,
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/machinery/firealarm{
+	dir = 1;
 	pixel_y = -28
 	},
 /turf/open/floor/plasteel/patterned/grid,
@@ -2942,7 +2954,7 @@
 /obj/structure/table,
 /obj/item/flashlight/lamp,
 /obj/machinery/firealarm{
-	dir = 1;
+	dir = 2;
 	pixel_y = 28
 	},
 /turf/open/floor/wood,
@@ -3254,7 +3266,7 @@
 	pixel_x = -7
 	},
 /obj/machinery/firealarm{
-	dir = 4;
+	dir = 8;
 	pixel_x = 28
 	},
 /turf/open/floor/plasteel/white,
@@ -3301,6 +3313,9 @@
 /obj/structure/sign/warning/nosmoking{
 	pixel_x = 32
 	},
+/obj/structure/sign/poster/contraband/random{
+	pixel_y = 32
+	},
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "yz" = (
@@ -3315,7 +3330,7 @@
 	pixel_x = 7
 	},
 /obj/machinery/firealarm{
-	dir = 8;
+	dir = 4;
 	pixel_x = -28
 	},
 /turf/open/floor/plasteel,
@@ -3457,7 +3472,7 @@
 	dir = 4
 	},
 /obj/machinery/firealarm{
-	dir = 4;
+	dir = 8;
 	pixel_x = 28
 	},
 /turf/open/floor/plasteel,
@@ -3550,7 +3565,7 @@
 	dir = 4
 	},
 /obj/machinery/firealarm{
-	dir = 1;
+	dir = 2;
 	pixel_y = 28
 	},
 /obj/structure/cable{
@@ -3980,6 +3995,10 @@
 	name = "Engine Access"
 	},
 /obj/structure/window/plasma/reinforced/spawner/west,
+/obj/machinery/door/poddoor{
+	id = "osprey_thruster_port";
+	name = "thruster blast door"
+	},
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "Do" = (
@@ -4507,7 +4526,7 @@
 	},
 /obj/item/storage/box/gloves,
 /obj/machinery/firealarm{
-	dir = 8;
+	dir = 4;
 	pixel_x = -28
 	},
 /turf/open/floor/plasteel/white,
@@ -4522,7 +4541,7 @@
 	dir = 8
 	},
 /obj/machinery/firealarm{
-	dir = 4;
+	dir = 8;
 	pixel_x = 28
 	},
 /turf/open/floor/plasteel/white,
@@ -4807,7 +4826,7 @@
 	dir = 4
 	},
 /obj/machinery/firealarm{
-	dir = 4;
+	dir = 8;
 	pixel_x = 28
 	},
 /obj/effect/turf_decal/corner/grey/mono,
@@ -4849,6 +4868,10 @@
 	name = "Engine Access"
 	},
 /obj/structure/window/plasma/reinforced/spawner/west,
+/obj/machinery/door/poddoor{
+	id = "osprey_thruster_port";
+	name = "thruster blast door"
+	},
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "Jn" = (
@@ -5105,6 +5128,10 @@
 	},
 /obj/structure/window/plasma/reinforced/spawner/east,
 /obj/structure/window/plasma/reinforced/spawner/west,
+/obj/machinery/door/poddoor{
+	id = "osprey_thruster_port";
+	name = "thruster blast door"
+	},
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "KO" = (
@@ -5179,7 +5206,7 @@
 	},
 /obj/structure/dresser,
 /obj/machinery/firealarm{
-	dir = 1;
+	dir = 2;
 	pixel_y = 28
 	},
 /turf/open/floor/plasteel/grimy,
@@ -5285,7 +5312,7 @@
 	dir = 2
 	},
 /obj/machinery/firealarm{
-	dir = 8;
+	dir = 4;
 	pixel_x = -28
 	},
 /turf/open/floor/plasteel,
@@ -5386,7 +5413,7 @@
 /obj/item/storage/box/lights/mixed,
 /obj/item/storage/box/lights/mixed,
 /obj/machinery/firealarm{
-	dir = 1;
+	dir = 2;
 	pixel_y = -24
 	},
 /turf/open/floor/plating,
@@ -6069,7 +6096,7 @@
 "Sq" = (
 /obj/machinery/pdapainter,
 /obj/machinery/firealarm{
-	dir = 8;
+	dir = 4;
 	pixel_x = -28
 	},
 /turf/open/floor/carpet/blue,
@@ -6105,7 +6132,7 @@
 	},
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/machinery/firealarm{
-	dir = 4;
+	dir = 8;
 	pixel_x = 28
 	},
 /obj/structure/sign/poster/official/safety_internals{
@@ -6428,9 +6455,12 @@
 	icon_state = "1-8"
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/machinery/firealarm{
-	dir = 4;
-	pixel_x = 28
+/obj/machinery/button/door{
+	dir = 8;
+	id = "osprey_thruster_port";
+	name = "Blast Door Control";
+	pixel_x = 24;
+	pixel_y = 5
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
@@ -6447,8 +6477,9 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
-/obj/structure/sign/poster/contraband/random{
-	pixel_y = 32
+/obj/machinery/firealarm{
+	dir = 2;
+	pixel_y = 28
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
@@ -6697,7 +6728,7 @@
 	dir = 1
 	},
 /obj/machinery/firealarm{
-	dir = 1;
+	dir = 2;
 	pixel_y = 28
 	},
 /obj/structure/frame/machine,
@@ -6986,6 +7017,10 @@
 	name = "Engine Access"
 	},
 /obj/structure/window/plasma/reinforced/spawner/east,
+/obj/machinery/door/poddoor{
+	id = "osprey_thruster_starboard";
+	name = "thruster blast door"
+	},
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "Zs" = (
@@ -7032,6 +7067,10 @@
 	name = "Engine Access"
 	},
 /obj/structure/window/plasma/reinforced/spawner/east,
+/obj/machinery/door/poddoor{
+	id = "osprey_thruster_starboard";
+	name = "thruster blast door"
+	},
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "ZK" = (
@@ -7059,7 +7098,7 @@
 	pixel_y = -24
 	},
 /obj/machinery/firealarm{
-	dir = 4;
+	dir = 8;
 	pixel_x = 28
 	},
 /turf/open/floor/plasteel/patterned,
