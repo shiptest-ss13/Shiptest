@@ -203,9 +203,6 @@
 	dir = 8
 	},
 /obj/structure/disposalpipe/junction/flip,
-/obj/structure/sign/poster/official/random{
-	pixel_x = -32
-	},
 /obj/effect/turf_decal/corner/grey/mono,
 /obj/effect/turf_decal/corner/neutral/border{
 	dir = 8
@@ -335,6 +332,10 @@
 	},
 /obj/structure/disposalpipe/trunk{
 	dir = 4
+	},
+/obj/machinery/conveyor{
+	dir = 1;
+	id = "osprey_conveyor"
 	},
 /turf/open/floor/plating,
 /area/ship/crew/janitor)
@@ -5106,9 +5107,6 @@
 /obj/structure/window/plasma/reinforced/spawner/west,
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
-"KK" = (
-/turf/open/floor/engine/hull,
-/area/ship/engineering/engine)
 "KO" = (
 /obj/effect/spawner/structure/window/shuttle,
 /turf/open/floor/plating,
@@ -5137,6 +5135,9 @@
 	},
 /obj/machinery/light/small{
 	dir = 1
+	},
+/obj/machinery/conveyor_switch/oneway{
+	id = "osprey_conveyor"
 	},
 /turf/open/floor/plating,
 /area/ship/crew/janitor)
@@ -5650,9 +5651,17 @@
 /obj/item/pen/fountain/captain{
 	pixel_x = -7
 	},
+/obj/machinery/button/door{
+	dir = 4;
+	id = "ospreydoors";
+	name = "Blast Door Control";
+	pixel_x = -24;
+	pixel_y = 10
+	},
 /obj/item/radio/intercom{
 	dir = 4;
-	pixel_x = -22
+	pixel_x = -22;
+	pixel_y = -6
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
@@ -5711,7 +5720,15 @@
 	},
 /obj/item/radio/intercom{
 	dir = 8;
-	pixel_x = 22
+	pixel_x = 22;
+	pixel_y = -6
+	},
+/obj/machinery/button/door{
+	dir = 8;
+	id = "ospreydoors";
+	name = "Blast Door Control";
+	pixel_x = 24;
+	pixel_y = 10
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
@@ -7743,7 +7760,7 @@ IS
 YA
 eM
 xh
-KK
+SS
 XU
 XU
 XU
@@ -8207,7 +8224,7 @@ OU
 fb
 eq
 xh
-KK
+SS
 XU
 XU
 XU
