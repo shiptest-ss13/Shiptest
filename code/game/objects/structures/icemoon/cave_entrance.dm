@@ -119,7 +119,7 @@ GLOBAL_LIST_INIT(ore_probability, list(
 	mob_types = list(/mob/living/simple_animal/hostile/asteroid/ice_whelp)
 
 /obj/structure/spawner/ice_moon/demonic_portal/snowlegion
-	mob_types = list(/mob/living/simple_animal/hostile/asteroid/hivelordbrood/legion/snow/tendril)
+	mob_types = list(/mob/living/simple_animal/hostile/asteroid/hivelord/legion/snow/tendril)
 
 /obj/effect/collapsing_demonic_portal
 	name = "collapsing demonic portal"
@@ -367,7 +367,7 @@ GLOBAL_LIST_INIT(ore_probability, list(
 			if(prob(35))
 				new /obj/item/storage/belt/military(loc)
 			if(prob(25))
-				new /obj/item/syndie_crusher(loc)
+				new /obj/item/kinetic_crusher/syndie_crusher(loc)
 				new /mob/living/simple_animal/hostile/syndicate/ranged/smg(loc)
 			if(prob(25))
 				new /obj/item/card/id/syndicate/anyone(loc)
