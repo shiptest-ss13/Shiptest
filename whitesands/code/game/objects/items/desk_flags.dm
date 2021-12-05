@@ -11,7 +11,7 @@
 
 /obj/item/desk_flag/Initialize()
 	. = ..()
-	if(prob(5))
+	if(prob(3))
 		name = "vampire flag"
 		desc = "The blue, cyan, and white flag of the transylvanian society of vampires."
 		icon_state = "trans"
