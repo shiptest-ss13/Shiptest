@@ -23,6 +23,7 @@
 	fire_rate = 3
 	automatic = 0
 	weapon_weight = WEAPON_LIGHT
+	pickup_sound =  'sound/items/handling/gun_pickup.ogg'
 
 /obj/item/gun/ballistic/automatic/pistol/no_mag
 	spawnwithmagazine = FALSE
