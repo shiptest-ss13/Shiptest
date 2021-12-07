@@ -12,8 +12,8 @@
 	var/port_y_offset
 
 	var/cost
-	var/short_name = ""
-	var/list/job_slots = list()
+	var/short_name
+	var/list/job_slots
 	var/list/name_categories = list("GENERAL")
 	var/prefix = "SV"
 

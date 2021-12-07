@@ -206,7 +206,8 @@ SUBSYSTEM_DEF(mapping)
 		shuttle_templates[S.file_name] = S
 		map_templates[S.file_name] = S
 
-#define CHECK_EXISTS(X) if(!istext(data[X])) { log_world("[##X] missing from json!"); continue; }
+#define CHECK_STRING_EXISTS(X) if(!istext(data[X])) { log_world("[##X] missing from json!"); continue; }
+#define CHECK_LIST_EXISTS(X) if(!islist(data[X])) { log_world("[##X] missing from json!"); continue; }
 /datum/controller/subsystem/mapping/proc/load_ship_templates()
 	maplist = list()
 	ship_purchase_list = list()
@@ -226,45 +227,47 @@ SUBSYSTEM_DEF(mapping)
 			log_world("map config is not json: [filename]")
 			continue
 
-		CHECK_EXISTS("map_name")
-		CHECK_EXISTS("map_path")
-		CHECK_EXISTS("map_id")
+		CHECK_STRING_EXISTS("map_name")
+		CHECK_STRING_EXISTS("map_path")
+		CHECK_LIST_EXISTS("job_slots")
 		var/datum/map_template/shuttle/S = new(data["map_path"], data["map_name"], TRUE)
-		S.file_name = data["map_id"]
+		S.file_name = data["map_path"]
 		S.category = "shiptest"
 
 		if(istext(data["map_short_name"]))
 			S.short_name = data["map_short_name"]
+		else
+			S.short_name = copytext(S.name, 1, 20)
 		if(istext(data["prefix"]))
 			S.prefix = data["prefix"]
 		if(islist(data["namelist"]))
 			S.name_categories = data["namelist"]
-		if(islist(data["job_slots"]))
-			S.job_slots = list()
-			var/list/job_slot_list = data["job_slots"]
-			for(var/job in job_slot_list)
-				var/datum/job/job_slot
-				var/value = job_slot_list[job]
-				var/slots
-				if(isnum(value))
-					job_slot = SSjob.GetJob(job)
-					slots = value
-				else if(islist(value))
-					var/datum/outfit/job_outfit = text2path(value["outfit"])
-					if(isnull(job_outfit))
-						stack_trace("Invalid job outfit! [value["outfit"]] on [S.name]'s config! Defaulting to assistant clothing.")
-						job_outfit = /datum/outfit/job/assistant
-					job_slot = new /datum/job(job, job_outfit)
-					job_slot.wiki_page = value["wiki_page"]
-					job_slot.exp_requirements = value["exp_requirements"]
-					job_slot.officer = value["officer"]
-					slots = value["slots"]
 
-				if(!job_slot || !slots)
-					stack_trace("Invalid job slot entry! [job]: [value] on [S.name]'s config! Excluding job.")
-					break
+		S.job_slots = list()
+		var/list/job_slot_list = data["job_slots"]
+		for(var/job in job_slot_list)
+			var/datum/job/job_slot
+			var/value = job_slot_list[job]
+			var/slots
+			if(isnum(value))
+				job_slot = SSjob.GetJob(job)
+				slots = value
+			else if(islist(value))
+				var/datum/outfit/job_outfit = text2path(value["outfit"])
+				if(isnull(job_outfit))
+					stack_trace("Invalid job outfit! [value["outfit"]] on [S.name]'s config! Defaulting to assistant clothing.")
+					job_outfit = /datum/outfit/job/assistant
+				job_slot = new /datum/job(job, job_outfit)
+				job_slot.wiki_page = value["wiki_page"]
+				job_slot.exp_requirements = value["exp_requirements"]
+				job_slot.officer = value["officer"]
+				slots = value["slots"]
 
-				S.job_slots[job_slot] = slots
+			if(!job_slot || !slots)
+				stack_trace("Invalid job slot entry! [job]: [value] on [S.name]'s config! Excluding job.")
+				continue
+
+			S.job_slots[job_slot] = slots
 		if(isnum(data["cost"]))
 			S.cost = data["cost"]
 			ship_purchase_list["[S.name] ([S.cost] [CONFIG_GET(string/metacurrency_name)]s)"] = S
@@ -273,7 +276,8 @@ SUBSYSTEM_DEF(mapping)
 		map_templates[S.file_name] = S
 		if(isnum(data["roundstart"]) && data["roundstart"])
 			maplist[S.name] = S
-#undef CHECK_EXISTS
+#undef CHECK_STRING_EXISTS
+#undef CHECK_LIST_EXISTS
 
 /datum/controller/subsystem/mapping/proc/preloadShelterTemplates()
 	for(var/item in subtypesof(/datum/map_template/shelter))
