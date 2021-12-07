@@ -135,3 +135,11 @@ Assistant
 
 	uniform = /obj/item/clothing/under/syndicate/aclfgrunt
 	shoes = /obj/item/clothing/shoes/jackboots
+
+/datum/outfit/job/assistant/ex_prisoner
+	name = "Assistant (Ex-Prisoner)"
+
+	glasses = /obj/item/clothing/glasses/sunglasses
+	uniform = /obj/item/clothing/under/rank/prisoner
+	shoes = /obj/item/clothing/shoes/sneakers/orange
+	accessory = /obj/item/clothing/accessory/armband/deputy

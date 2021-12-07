@@ -60,3 +60,12 @@
 
 	ears = /obj/item/radio/headset/headset_sec/alt/department/supply
 	suit = /obj/item/clothing/suit/jacket
+
+/datum/outfit/job/cargo_tech/pilot
+	name = "Pilot"
+
+	uniform = /obj/item/clothing/under/syndicate/camo
+	ears = /obj/item/radio/headset/headset_sec/alt/department/supply
+	suit = /obj/item/clothing/suit/jacket
+	shoes = /obj/item/clothing/shoes/combat
+	gloves = /obj/item/clothing/gloves/fingerless
