@@ -131,6 +131,9 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 10
 	},
+/obj/effect/turf_decal/corner/neutral{
+	dir = 8
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
 "cD" = (
@@ -220,6 +223,9 @@
 /obj/structure/sign/warning/vacuum/external{
 	pixel_y = 32
 	},
+/obj/item/disk/design_disk/ammo_1911,
+/obj/item/disk/design_disk/ammo_38_hunting,
+/obj/structure/rack,
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
 "dL" = (
@@ -486,6 +492,13 @@
 "id" = (
 /obj/effect/turf_decal/trimline/red/warning{
 	dir = 1
+	},
+/obj/structure/railing/corner,
+/turf/open/floor/plasteel/mono,
+/area/ship/construction)
+"ik" = (
+/obj/effect/turf_decal/trimline/red/warning{
+	dir = 9
 	},
 /obj/structure/railing/corner,
 /turf/open/floor/plasteel/mono,
@@ -889,7 +902,7 @@
 	},
 /obj/effect/turf_decal/corner/red,
 /obj/item/gun/ballistic/automatic/pistol/m1911,
-/obj/item/ammo_box/magazine/m45,
+/obj/item/gun/ballistic/automatic/pistol/m1911,
 /obj/item/ammo_box/magazine/m45,
 /obj/item/ammo_box/magazine/m45,
 /turf/open/floor/plasteel/tech/grid,
@@ -1037,7 +1050,7 @@
 	dir = 4
 	},
 /obj/item/gun/ballistic/revolver/detective,
-/obj/item/ammo_box/c38,
+/obj/item/gun/ballistic/revolver/detective,
 /obj/item/ammo_box/c38,
 /obj/item/ammo_box/c38,
 /turf/open/floor/plasteel/tech/grid,
@@ -2368,7 +2381,7 @@
 	dir = 8
 	},
 /obj/item/gun/ballistic/automatic/pistol/commander,
-/obj/item/ammo_box/magazine/co9mm,
+/obj/item/gun/ballistic/automatic/pistol/commander,
 /obj/item/ammo_box/magazine/co9mm,
 /obj/item/ammo_box/magazine/co9mm,
 /turf/open/floor/plasteel/tech/grid,
@@ -2741,6 +2754,11 @@
 /obj/effect/turf_decal/corner/orange,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security/prison)
+"QB" = (
+/obj/item/ammo_box/c38_box/hunting,
+/obj/structure/rack,
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/storage)
 "QD" = (
 /obj/effect/decal/cleanable/cobweb/cobweb2,
 /obj/structure/rack,
@@ -3189,12 +3207,12 @@
 /obj/structure/rack,
 /obj/structure/window/reinforced/survival_pod,
 /obj/item/gun/energy/e_gun/mini,
-/obj/item/stock_parts/cell/gun/mini,
-/obj/item/stock_parts/cell/gun/mini,
-/obj/item/stock_parts/cell/gun/mini,
 /obj/effect/turf_decal/corner/red{
 	dir = 1
 	},
+/obj/item/gun/energy/e_gun/mini,
+/obj/item/stock_parts/cell/gun/mini,
+/obj/item/stock_parts/cell/gun/mini,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/storage)
 "Wx" = (
@@ -4655,7 +4673,7 @@ vx
 uR
 Ml
 Me
-dL
+QB
 yx
 Pm
 Vp
@@ -4759,7 +4777,7 @@ eR
 eR
 eR
 aE
-UA
+ik
 SH
 tU
 bu
