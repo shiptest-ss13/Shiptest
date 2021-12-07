@@ -104,3 +104,33 @@ GLOBAL_LIST_EMPTY_TYPED(ship_modules, /datum/ship_module)
 #define WEAPON_BROKEN 7
 /// The weapon failed to fire for some other reason
 #define WEAPON_FAIL 8
+
+// Module Install Status Defines
+/// The module can be installed
+#define MODULE_INSTALL_GOOD 0
+/// The module cannot be installed
+#define MODULE_INSTALL_BAD_GENERIC 1
+/// The module cannot be installed due to its cost
+#define MODULE_INSTALL_BAD_COST 2
+/// The module cannot be installed due to slot conflicts
+#define MODULE_INSTALL_BAD_UNIQUE 3
+/// The module cannot be installed due to conflicting with other modules
+#define MODULE_INSTALL_BAD_CONFLICT 4
+/// The module is already installed and cannot be installed more than once
+#define MODULE_INSTALL_BAD_SINGULAR 5
+
+/proc/module_install_reason(reason_code)
+	switch(reason_code)
+		if(MODULE_INSTALL_GOOD)
+			return("Module is able to be installed.")
+		if(MODULE_INSTALL_BAD_GENERIC)
+			return("Module is unable to be installed.")
+		if(MODULE_INSTALL_BAD_COST)
+			return("Module cannot be afforded with current ship modularity.")
+		if(MODULE_INSTALL_BAD_UNIQUE)
+			return("Module cannot be installed alongside other modules.")
+		if(MODULE_INSTALL_BAD_CONFLICT)
+			return("Module cannot be installed because of conflicts existing modules already installed.")
+		if(MODULE_INSTALL_BAD_SINGULAR)
+			return("Module cannot be installed more than once.")
+	return("Coder Error: Unknown Reason Code '[reason_code]'")
