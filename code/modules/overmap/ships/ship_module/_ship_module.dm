@@ -38,39 +38,36 @@
 	ship_data = null
 	return ..()
 
-/datum/ship_module/proc/can_install(obj/structure/overmap/ship/simulated/ship, mob/user)
+/datum/ship_module/proc/can_install(obj/structure/overmap/ship/simulated/ship)
 	SHOULD_CALL_PARENT(TRUE)
 	if(slot == SHIP_SLOT_NONE)
-		return FALSE
+		return MODULE_INSTALL_BAD_GENERIC
 	if(!istype(ship))
 		if(IsAdminAdvancedProcCall())
 			to_chat(usr, "<span class='warning'>Invalid ship reference for manual module installation, it needs to be the overmap ship object.</span>")
-		return FALSE
+		return MODULE_INSTALL_BAD_GENERIC
 	var/list/ship_modules = ship.modules
 	var/list/slot_modules = ship_modules[slot]
-	// We are unique and modules already exist in this slot/
 	if((flags & SHIP_MODULE_UNIQUE) && length(slot_modules))
-		if(user)
-			to_chat(user, "<span class='warning'>This module conflicts with another installed module.</span>")
-		return FALSE
-	// We are infact already installed.
+		return MODULE_INSTALL_BAD_UNIQUE
 	if(is_installed(ship))
-		if(user)
-			to_chat(user, "<span class='warning'>This module is already installed on this ship.</span>")
-		return FALSE
-	// Ship can't afford us.
+		return MODULE_INSTALL_BAD_SINGULAR
 	if(ship.calculate_modularity_left() < cost)
-		if(user)
-			to_chat(user, "<span class='warning'>This ship cannot support this module due to modularity costs.</span>")
-		return FALSE
-	// They passed all of the checks, carry on.
-	return TRUE
+		return MODULE_INSTALL_BAD_COST
+	for(var/slot in ship.modules)
+		for(var/datum/ship_module/module as anything in ship.modules[slot])
+			if(module.install_conflicts(ship, src))
+				return MODULE_INSTALL_BAD_CONFLICT
+	return MODULE_INSTALL_GOOD
 
 /datum/ship_module/process()
 	for(var/ship in installed_on)
 		var/obj/structure/ship_module/structure = installed_on[ship]
 		if(structure.structure_process)
 			structure.process()
+
+/datum/ship_module/proc/install_conflicts(obj/structure/overmap/ship/simulated/ship, datum/ship_module/other)
+	return FALSE
 
 /datum/ship_module/proc/is_installed(obj/structure/overmap/ship/simulated/ship)
 	return ship in installed_on
