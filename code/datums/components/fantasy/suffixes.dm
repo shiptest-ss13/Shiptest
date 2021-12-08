@@ -100,7 +100,6 @@
 		// Some types to remove them and their subtypes
 		possible_mobtypes -= typecacheof(list(
 			/mob/living/carbon/human/species,
-			/mob/living/simple_animal/hostile/megafauna,
 			))
 
 	var/mob/picked_mobtype = pick(possible_mobtypes)

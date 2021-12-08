@@ -24,6 +24,7 @@
 	var/list/quirks
 	var/sampleDNA
 	var/contains_sample = FALSE
+	research = PLANT_RESEARCH_TIER_4//human life from a pod, some researchers in the core might be somewhat interested.
 
 /obj/item/seeds/replicapod/Initialize()
 	. = ..()

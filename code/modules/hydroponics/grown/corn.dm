@@ -14,6 +14,7 @@
 	icon_dead = "corn-dead" // Same for the dead icon
 	mutatelist = list(/obj/item/seeds/corn/snapcorn)
 	reagents_add = list(/datum/reagent/consumable/cornoil = 0.2, /datum/reagent/consumable/nutriment/vitamin = 0.04, /datum/reagent/consumable/nutriment = 0.1)
+	research = PLANT_RESEARCH_TIER_0
 
 /obj/item/reagent_containers/food/snacks/grown/corn
 	seed = /obj/item/seeds/corn
@@ -58,6 +59,7 @@
 	product = /obj/item/grown/snapcorn
 	mutatelist = list()
 	rarity = 10
+	research = PLANT_RESEARCH_TIER_2
 
 /obj/item/grown/snapcorn
 	seed = /obj/item/seeds/corn/snapcorn

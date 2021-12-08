@@ -26,6 +26,7 @@
 	genes = list(/datum/plant_gene/trait/repeated_harvest)
 	mutatelist = list(/obj/item/seeds/ambrosia/deus)
 	reagents_add = list(/datum/reagent/drug/space_drugs = 0.15, /datum/reagent/medicine/bicaridine = 0.1, /datum/reagent/medicine/kelotane = 0.1, /datum/reagent/consumable/nutriment/vitamin = 0.04, /datum/reagent/consumable/nutriment = 0.05, /datum/reagent/toxin = 0.1)
+	research = PLANT_RESEARCH_TIER_1
 
 /obj/item/reagent_containers/food/snacks/grown/ambrosia/vulgaris
 	seed = /obj/item/seeds/ambrosia
@@ -44,6 +45,7 @@
 	mutatelist = list(/obj/item/seeds/ambrosia/gaia)
 	reagents_add = list(/datum/reagent/medicine/omnizine = 0.15, /datum/reagent/medicine/synaptizine = 0.15, /datum/reagent/drug/space_drugs = 0.1, /datum/reagent/consumable/nutriment/vitamin = 0.04, /datum/reagent/consumable/nutriment = 0.05)
 	rarity = 40
+	research = PLANT_RESEARCH_TIER_2
 
 /obj/item/reagent_containers/food/snacks/grown/ambrosia/deus
 	seed = /obj/item/seeds/ambrosia/deus
@@ -68,6 +70,7 @@
 	genes = list()
 	weed_rate = 4
 	weed_chance = 100
+	research = PLANT_RESEARCH_TIER_3
 
 /obj/item/reagent_containers/food/snacks/grown/ambrosia/gaia
 	name = "ambrosia gaia branch"

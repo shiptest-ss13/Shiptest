@@ -14,6 +14,7 @@
 	icon_dead = "tobacco-dead"
 	mutatelist = list(/obj/item/seeds/tobacco/space)
 	reagents_add = list(/datum/reagent/drug/nicotine = 0.03, /datum/reagent/consumable/nutriment = 0.03)
+	research = PLANT_RESEARCH_TIER_1
 
 /obj/item/reagent_containers/food/snacks/grown/tobacco
 	seed = /obj/item/seeds/tobacco
@@ -34,6 +35,7 @@
 	mutatelist = list()
 	reagents_add = list(/datum/reagent/medicine/salbutamol = 0.05, /datum/reagent/drug/nicotine = 0.08, /datum/reagent/consumable/nutriment = 0.03)
 	rarity = 20
+	research = PLANT_RESEARCH_TIER_2
 
 /obj/item/reagent_containers/food/snacks/grown/tobacco/space
 	seed = /obj/item/seeds/tobacco/space
