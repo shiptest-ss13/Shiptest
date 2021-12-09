@@ -12,8 +12,7 @@
 /client/proc/erase_all_macros()
 	var/list/macro_sets = params2list(winget(src, null, "macros"))
 	var/erase_output = ""
-	for(var/i in 1 to macro_sets.len)
-		var/setname = macro_sets[i]
+	for(var/setname in macro_sets)
 		if(copytext(setname, 1, 9) == "persist_") // Don't remove macro sets not handled by input. Used in input_box.dm by create_input_window
 			continue
 		var/list/macro_set = params2list(winget(src, "[setname].*", "command")) // The third arg doesnt matter here as we're just removing them all
@@ -32,13 +31,11 @@
 	erase_all_macros()
 
 	var/list/macro_sets = SSinput.macro_sets
-	for(var/i in 1 to macro_sets.len)
-		var/setname = macro_sets[i]
+	for(var/setname in macro_sets)
 		if(setname != "default")
 			winclone(src, "default", setname)
 		var/list/macro_set = macro_sets[setname]
-		for(var/k in 1 to macro_set.len)
-			var/key = macro_set[k]
+		for(var/key in macro_set)
 			var/command = macro_set[key]
 			winset(src, "[setname]-[REF(key)]", "parent=[setname];name=[key];command=[command]")
 
