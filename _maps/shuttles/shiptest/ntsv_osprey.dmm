@@ -139,7 +139,7 @@
 	dir = 6
 	},
 /obj/machinery/firealarm{
-	dir = 8;
+	dir = 4;
 	pixel_x = -28
 	},
 /obj/effect/turf_decal/corner/grey/mono,
@@ -203,9 +203,6 @@
 	dir = 8
 	},
 /obj/structure/disposalpipe/junction/flip,
-/obj/structure/sign/poster/official/random{
-	pixel_x = -32
-	},
 /obj/effect/turf_decal/corner/grey/mono,
 /obj/effect/turf_decal/corner/neutral/border{
 	dir = 8
@@ -223,6 +220,32 @@
 /area/ship/crew/janitor)
 "bF" = (
 /obj/effect/turf_decal/siding/wood,
+/obj/structure/closet/wall{
+	dir = 1;
+	icon_door = null;
+	name = "radio locker";
+	pixel_y = -28
+	},
+/obj/item/radio,
+/obj/item/radio,
+/obj/item/radio,
+/obj/item/radio,
+/obj/item/radio,
+/obj/item/radio,
+/obj/item/radio,
+/obj/item/radio,
+/obj/item/radio,
+/obj/item/radio,
+/obj/item/radio,
+/obj/item/radio,
+/obj/item/radio,
+/obj/item/radio,
+/obj/item/radio,
+/obj/item/radio,
+/obj/item/radio,
+/obj/item/radio,
+/obj/item/radio,
+/obj/item/radio,
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew/dorm)
 "bG" = (
@@ -335,6 +358,10 @@
 	},
 /obj/structure/disposalpipe/trunk{
 	dir = 4
+	},
+/obj/machinery/conveyor{
+	dir = 1;
+	id = "osprey_conveyor"
 	},
 /turf/open/floor/plating,
 /area/ship/crew/janitor)
@@ -659,11 +686,14 @@
 	icon_state = "1-4"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/machinery/firealarm{
-	dir = 8;
-	pixel_x = -28
-	},
 /obj/effect/spawner/lootdrop/maintenance,
+/obj/machinery/button/door{
+	dir = 4;
+	id = "osprey_thruster_starboard";
+	name = "Blast Door Control";
+	pixel_x = -24;
+	pixel_y = 5
+	},
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "eB" = (
@@ -1055,6 +1085,10 @@
 	},
 /obj/structure/window/plasma/reinforced/spawner/east,
 /obj/structure/window/plasma/reinforced/spawner/west,
+/obj/machinery/door/poddoor{
+	id = "osprey_thruster_starboard";
+	name = "thruster blast door"
+	},
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "il" = (
@@ -1198,6 +1232,10 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
+/obj/machinery/firealarm{
+	dir = 2;
+	pixel_y = 28
+	},
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "jN" = (
@@ -1306,7 +1344,7 @@
 	},
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/machinery/firealarm{
-	dir = 8;
+	dir = 4;
 	pixel_x = -28
 	},
 /obj/structure/sign/poster/official/safety_internals{
@@ -1513,10 +1551,26 @@
 /area/ship/construction)
 "mb" = (
 /obj/effect/turf_decal/siding/wood,
-/obj/machinery/light/small,
-/obj/structure/extinguisher_cabinet{
+/obj/structure/closet/wall{
+	dir = 1;
+	icon_door = "grey_wall";
 	pixel_y = -28
 	},
+/obj/item/clothing/under/color/grey,
+/obj/item/clothing/under/color/grey,
+/obj/item/clothing/under/color/grey,
+/obj/item/clothing/under/color/grey,
+/obj/item/clothing/under/color/grey,
+/obj/item/clothing/shoes/sneakers/black,
+/obj/item/clothing/shoes/sneakers/black,
+/obj/item/clothing/shoes/sneakers/black,
+/obj/item/clothing/shoes/sneakers/black,
+/obj/item/clothing/shoes/sneakers/black,
+/obj/item/storage/backpack,
+/obj/item/storage/backpack,
+/obj/item/storage/backpack,
+/obj/item/storage/backpack,
+/obj/item/storage/backpack,
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew/dorm)
 "md" = (
@@ -2301,7 +2355,7 @@
 	dir = 8
 	},
 /obj/machinery/firealarm{
-	dir = 4;
+	dir = 8;
 	pixel_x = 28
 	},
 /turf/open/floor/plasteel/tech,
@@ -2441,7 +2495,7 @@
 	dir = 1
 	},
 /obj/machinery/firealarm{
-	dir = 1;
+	dir = 2;
 	pixel_y = 28
 	},
 /turf/open/floor/plasteel/tech/techmaint,
@@ -2620,6 +2674,7 @@
 /obj/structure/reagent_dispensers/foamtank,
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/machinery/firealarm{
+	dir = 1;
 	pixel_y = -28
 	},
 /turf/open/floor/plasteel/patterned/grid,
@@ -2941,7 +2996,7 @@
 /obj/structure/table,
 /obj/item/flashlight/lamp,
 /obj/machinery/firealarm{
-	dir = 1;
+	dir = 2;
 	pixel_y = 28
 	},
 /turf/open/floor/wood,
@@ -3035,24 +3090,9 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
-/obj/item/storage/backpack,
-/obj/item/storage/backpack,
-/obj/item/storage/backpack,
-/obj/item/storage/backpack,
-/obj/item/storage/backpack,
-/obj/item/clothing/shoes/sneakers/black,
-/obj/item/clothing/shoes/sneakers/black,
-/obj/item/clothing/shoes/sneakers/black,
-/obj/item/clothing/shoes/sneakers/black,
-/obj/item/clothing/shoes/sneakers/black,
-/obj/item/clothing/under/color/grey,
-/obj/item/clothing/under/color/grey,
-/obj/item/clothing/under/color/grey,
-/obj/item/clothing/under/color/grey,
-/obj/item/clothing/under/color/grey,
-/obj/structure/closet/wall{
-	icon_door = "grey_wall";
-	pixel_y = 28
+/obj/machinery/power/apc/auto_name/north,
+/obj/structure/cable{
+	icon_state = "0-2"
 	},
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew/dorm)
@@ -3253,7 +3293,7 @@
 	pixel_x = -7
 	},
 /obj/machinery/firealarm{
-	dir = 4;
+	dir = 8;
 	pixel_x = 28
 	},
 /turf/open/floor/plasteel/white,
@@ -3300,6 +3340,9 @@
 /obj/structure/sign/warning/nosmoking{
 	pixel_x = 32
 	},
+/obj/structure/sign/poster/contraband/random{
+	pixel_y = 32
+	},
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "yz" = (
@@ -3314,7 +3357,7 @@
 	pixel_x = 7
 	},
 /obj/machinery/firealarm{
-	dir = 8;
+	dir = 4;
 	pixel_x = -28
 	},
 /turf/open/floor/plasteel,
@@ -3456,7 +3499,7 @@
 	dir = 4
 	},
 /obj/machinery/firealarm{
-	dir = 4;
+	dir = 8;
 	pixel_x = 28
 	},
 /turf/open/floor/plasteel,
@@ -3502,6 +3545,9 @@
 /obj/machinery/airalarm/all_access{
 	dir = 8;
 	pixel_x = 24
+	},
+/obj/structure/extinguisher_cabinet{
+	pixel_y = -28
 	},
 /turf/open/floor/carpet,
 /area/ship/crew/dorm)
@@ -3549,7 +3595,7 @@
 	dir = 4
 	},
 /obj/machinery/firealarm{
-	dir = 1;
+	dir = 2;
 	pixel_y = 28
 	},
 /obj/structure/cable{
@@ -3979,6 +4025,10 @@
 	name = "Engine Access"
 	},
 /obj/structure/window/plasma/reinforced/spawner/west,
+/obj/machinery/door/poddoor{
+	id = "osprey_thruster_port";
+	name = "thruster blast door"
+	},
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "Do" = (
@@ -4170,6 +4220,9 @@
 /obj/effect/turf_decal/siding/wood/corner,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
 	},
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew/dorm)
@@ -4506,7 +4559,7 @@
 	},
 /obj/item/storage/box/gloves,
 /obj/machinery/firealarm{
-	dir = 8;
+	dir = 4;
 	pixel_x = -28
 	},
 /turf/open/floor/plasteel/white,
@@ -4521,7 +4574,7 @@
 	dir = 8
 	},
 /obj/machinery/firealarm{
-	dir = 4;
+	dir = 8;
 	pixel_x = 28
 	},
 /turf/open/floor/plasteel/white,
@@ -4806,7 +4859,7 @@
 	dir = 4
 	},
 /obj/machinery/firealarm{
-	dir = 4;
+	dir = 8;
 	pixel_x = 28
 	},
 /obj/effect/turf_decal/corner/grey/mono,
@@ -4848,6 +4901,10 @@
 	name = "Engine Access"
 	},
 /obj/structure/window/plasma/reinforced/spawner/west,
+/obj/machinery/door/poddoor{
+	id = "osprey_thruster_port";
+	name = "thruster blast door"
+	},
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "Jn" = (
@@ -5104,11 +5161,12 @@
 	},
 /obj/structure/window/plasma/reinforced/spawner/east,
 /obj/structure/window/plasma/reinforced/spawner/west,
+/obj/machinery/door/poddoor{
+	id = "osprey_thruster_port";
+	name = "thruster blast door"
+	},
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
-"KK" = (
-/turf/open/floor/engine/hull,
-/area/ship/engineering/engine)
 "KO" = (
 /obj/effect/spawner/structure/window/shuttle,
 /turf/open/floor/plating,
@@ -5137,6 +5195,9 @@
 	},
 /obj/machinery/light/small{
 	dir = 1
+	},
+/obj/machinery/conveyor_switch/oneway{
+	id = "osprey_conveyor"
 	},
 /turf/open/floor/plating,
 /area/ship/crew/janitor)
@@ -5178,7 +5239,7 @@
 	},
 /obj/structure/dresser,
 /obj/machinery/firealarm{
-	dir = 1;
+	dir = 2;
 	pixel_y = 28
 	},
 /turf/open/floor/plasteel/grimy,
@@ -5284,7 +5345,7 @@
 	dir = 2
 	},
 /obj/machinery/firealarm{
-	dir = 8;
+	dir = 4;
 	pixel_x = -28
 	},
 /turf/open/floor/plasteel,
@@ -5385,7 +5446,7 @@
 /obj/item/storage/box/lights/mixed,
 /obj/item/storage/box/lights/mixed,
 /obj/machinery/firealarm{
-	dir = 1;
+	dir = 2;
 	pixel_y = -24
 	},
 /turf/open/floor/plating,
@@ -5409,6 +5470,7 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
 	},
+/obj/machinery/light/small,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/crew/dorm)
 "NP" = (
@@ -5650,9 +5712,17 @@
 /obj/item/pen/fountain/captain{
 	pixel_x = -7
 	},
+/obj/machinery/button/door{
+	dir = 4;
+	id = "ospreydoors";
+	name = "Blast Door Control";
+	pixel_x = -24;
+	pixel_y = 10
+	},
 /obj/item/radio/intercom{
 	dir = 4;
-	pixel_x = -22
+	pixel_x = -22;
+	pixel_y = -6
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
@@ -5711,8 +5781,17 @@
 	},
 /obj/item/radio/intercom{
 	dir = 8;
-	pixel_x = 22
+	pixel_x = 22;
+	pixel_y = -6
 	},
+/obj/machinery/button/door{
+	dir = 8;
+	id = "ospreydoors";
+	name = "Blast Door Control";
+	pixel_x = 24;
+	pixel_y = 10
+	},
+/obj/item/taperecorder,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "PJ" = (
@@ -5732,9 +5811,8 @@
 /obj/structure/disposalpipe/segment{
 	dir = 10
 	},
-/obj/machinery/power/apc/auto_name/east,
 /obj/structure/cable{
-	icon_state = "0-8"
+	icon_state = "1-8"
 	},
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew/dorm)
@@ -6052,7 +6130,7 @@
 "Sq" = (
 /obj/machinery/pdapainter,
 /obj/machinery/firealarm{
-	dir = 8;
+	dir = 4;
 	pixel_x = -28
 	},
 /turf/open/floor/carpet/blue,
@@ -6088,7 +6166,7 @@
 	},
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/machinery/firealarm{
-	dir = 4;
+	dir = 8;
 	pixel_x = 28
 	},
 /obj/structure/sign/poster/official/safety_internals{
@@ -6268,8 +6346,6 @@
 /obj/item/storage/bag/ore,
 /obj/item/mining_scanner,
 /obj/item/mining_scanner,
-/obj/item/gps/mining,
-/obj/item/gps/mining,
 /obj/item/clothing/head/hardhat/mining,
 /obj/item/clothing/head/hardhat/mining,
 /obj/effect/turf_decal/industrial/hatch/yellow,
@@ -6411,9 +6487,12 @@
 	icon_state = "1-8"
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/machinery/firealarm{
-	dir = 4;
-	pixel_x = 28
+/obj/machinery/button/door{
+	dir = 8;
+	id = "osprey_thruster_port";
+	name = "Blast Door Control";
+	pixel_x = 24;
+	pixel_y = 5
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
@@ -6430,8 +6509,9 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
-/obj/structure/sign/poster/contraband/random{
-	pixel_y = 32
+/obj/machinery/firealarm{
+	dir = 2;
+	pixel_y = 28
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
@@ -6680,7 +6760,7 @@
 	dir = 1
 	},
 /obj/machinery/firealarm{
-	dir = 1;
+	dir = 2;
 	pixel_y = 28
 	},
 /obj/structure/frame/machine,
@@ -6969,6 +7049,10 @@
 	name = "Engine Access"
 	},
 /obj/structure/window/plasma/reinforced/spawner/east,
+/obj/machinery/door/poddoor{
+	id = "osprey_thruster_starboard";
+	name = "thruster blast door"
+	},
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "Zs" = (
@@ -7015,6 +7099,10 @@
 	name = "Engine Access"
 	},
 /obj/structure/window/plasma/reinforced/spawner/east,
+/obj/machinery/door/poddoor{
+	id = "osprey_thruster_starboard";
+	name = "thruster blast door"
+	},
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "ZK" = (
@@ -7042,7 +7130,7 @@
 	pixel_y = -24
 	},
 /obj/machinery/firealarm{
-	dir = 4;
+	dir = 8;
 	pixel_x = 28
 	},
 /turf/open/floor/plasteel/patterned,
@@ -7743,7 +7831,7 @@ IS
 YA
 eM
 xh
-KK
+SS
 XU
 XU
 XU
@@ -8207,7 +8295,7 @@ OU
 fb
 eq
 xh
-KK
+SS
 XU
 XU
 XU
