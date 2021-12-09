@@ -308,13 +308,16 @@
 	move_force = MOVE_FORCE_DEFAULT
 	move_resist = MOVE_RESIST_DEFAULT
 	pull_force = PULL_FORCE_DEFAULT
-	..(gibbed)
-	visible_message("<span class='userwarning'>[src] falls over with a mighty crash, the remaining legions within it boiling away!</span>")
+	visible_message("<span class='userwarning'>[src] falls over with a mighty crash, the remaining legions within it falling apart!</span>")
 	new /obj/item/crusher_trophy/legion_skull(loc)
 	new /obj/item/crusher_trophy/legion_skull(loc)
 	new /obj/item/crusher_trophy/legion_skull(loc)
+	new /mob/living/simple_animal/hostile/asteroid/hivelord/legion(loc)
+	new /mob/living/simple_animal/hostile/asteroid/hivelord/legion(loc)
+	new /mob/living/simple_animal/hostile/asteroid/hivelord/legion(loc)
 	if(prob(45))
 		new /obj/item/reagent_containers/glass/bottle/necropolis_seed(loc)
+	..(gibbed)
 
 /mob/living/simple_animal/hostile/big_legion/Initialize()
 	.=..()
