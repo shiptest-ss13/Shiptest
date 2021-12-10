@@ -199,7 +199,7 @@
 	. = ..()
 	if(slot == ITEM_SLOT_FEET)
 		SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT, "dripjordan", /datum/mood_event/dripjordan)
-		SEND_SIGNAL(user, COMSIG_CLEAR_MOOD_EVENT, "nojordans", /datum/mood_event/dripjordan)
+		SEND_SIGNAL(user, COMSIG_CLEAR_MOOD_EVENT, "nojordans")
 
 /obj/item/clothing/shoes/drip/dropped(mob/user)
 	. = ..()
@@ -815,6 +815,7 @@
 	icon = 'icons/obj/lavaland/artefacts.dmi'
 	icon_state = "freeze_cube"
 	throwforce = 10
+	throw_speed = 1
 	damtype = BURN
 	var/cooldown_time = 5 SECONDS
 	COOLDOWN_DECLARE(freeze_cooldown)

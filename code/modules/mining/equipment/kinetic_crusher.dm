@@ -8,7 +8,7 @@
 	name = "proto-magnetic crusher"
 	desc = "A multipurpose disembarkation and self-defense tool designed by EXOCON using an incomplete Nanotransen prototype. \
 	Found in the grime-stained hands of wannabee explorers across the frontier, it cuts rock and hews flora using magnetic osscilation and a heavy cleaving edge."
-	force = 0 //You can't hit stuff unless wielded
+	force = 1 //You can't hit stuff unless wielded
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = ITEM_SLOT_BACK
 	throwforce = 5
@@ -39,7 +39,7 @@
 /obj/item/kinetic_crusher/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/butchering, 60, 110) //technically it's huge and bulky, but this provides an incentive to use it
-	AddComponent(/datum/component/two_handed, force_unwielded=0, force_wielded=20)
+	AddComponent(/datum/component/two_handed, force_unwielded=1, force_wielded=20)
 
 /obj/item/kinetic_crusher/Destroy()
 	QDEL_LIST(trophies)

@@ -17,6 +17,7 @@
 	if(QDELETED(src) || QDELETED(target))
 		attack_qdeleted(target, user, TRUE, params)
 		return
+	user.changeNext_move(CLICK_CD_MELEE * attackspeed)
 	afterattack(target, user, TRUE, params)
 
 /// Called when the item is in the active hand, and clicked; alternately, there is an 'activate held object' verb or you can hit pagedown.
@@ -126,6 +127,37 @@
 	log_combat(user, M, "attacked", src.name, "(INTENT: [uppertext(user.a_intent)]) (DAMTYPE: [uppertext(damtype)])")
 	add_fingerprint(user)
 
+	if(burner)
+		if(iscarbon(M))
+			var/mob/living/carbon/D = M
+			D.adjust_fire_stacks(burnpower)
+			D.IgniteMob()
+			D.apply_damage(burnpower, BURN)
+			D.adjust_bodytemperature(burnpower * 60)
+		if(isanimal(M))
+			var/mob/living/simple_animal/T = M
+			T.apply_damage(burnpower * 4, BURN)
+
+	if(freezer)
+		var/datum/status_effect/stacking/saw_bleed/R = M.has_status_effect(STATUS_EFFECT_DEEPFREEZE)
+		if(!R)
+			M.apply_status_effect(STATUS_EFFECT_DEEPFREEZE, freezepower)
+		else
+			R.add_stacks(freezepower)
+		if(iscarbon(M))
+			var/mob/living/carbon/F = M
+			F.apply_damage(freezepower, BURN)//when the poke damage is sus!
+			F.adjust_bodytemperature(-freezepower * 120)
+		if(isanimal(M))
+			var/mob/living/simple_animal/T = M
+			T.apply_damage(freezepower * 8, BURN)
+
+	if(serrated)
+		var/datum/status_effect/stacking/saw_bleed/B = M.has_status_effect(STATUS_EFFECT_SAWBLEED)
+		if(!B)
+			M.apply_status_effect(STATUS_EFFECT_SAWBLEED, bleedpower)
+		else
+			B.add_stacks(bleedpower)
 
 /// The equivalent of the standard version of [/obj/item/proc/attack] but for object targets.
 /obj/item/proc/attack_obj(obj/O, mob/living/user)
@@ -213,3 +245,14 @@
 	visible_message("<span class='danger'>[attack_message]</span>",\
 		"<span class='userdanger'>[attack_message_local]</span>", null, COMBAT_MESSAGE_RANGE)
 	return 1
+
+/obj/item/afterattack(atom/target, mob/user, proximity)
+	if(poisoned == TRUE)
+		if(iscarbon(target))
+			var/mob/living/carbon/H = target
+			H.reagents.add_reagent(stabpoison, poisonpower)
+		else
+			if(isliving(target))
+				var/mob/living/D = target
+				D.adjustToxLoss(4 + poisonpower)
+

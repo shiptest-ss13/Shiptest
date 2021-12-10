@@ -369,13 +369,19 @@
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/cult
 
 /obj/item/sharpener/cult
-	name = "eldritch whetstone"
-	desc = "A block, empowered by dark magic. Sharp weapons will be enhanced when used on the stone."
+	name = "eldritch cask"
+	desc = "An etched brick of granite, forever dripping with ancient ichor. Can be drained onto an object to infuse it with a forbidden power."
 	icon_state = "cult_sharpener"
 	used = 0
-	increment = 5
-	max = 40
-	prefix = "darkened"
+	increment = 10
+	apincrement = 5
+	blockincrement = 15
+	toolincrement = -0.2
+	max = 100
+	prefix = "heretical"
+	stackable = TRUE
+	requires_sharpness = 0
+	modify_text = "bleeds"
 
 /obj/item/sharpener/cult/update_icon_state()
 	icon_state = "cult_sharpener[used ? "_used" : ""]"
