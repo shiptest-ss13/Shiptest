@@ -35,8 +35,6 @@ SUBSYSTEM_DEF(input)
 			),
 		"old_default" = list( //Unlocked Bar. Respects oldmode_keys whitelist. Full tab support. [Default]
 			"Tab" = "\".winset \\\"mainwindow.macro=old_hotkeys map.focus=true input.background-color=[COLOR_INPUT_DISABLED]\\\"\"",
-			"Ctrl+T" = "\".winset \\\"command=\\\".start_typing say\\\";command=.init_say;saywindow.is-visible=true;saywindow.input.focus=true;saywindow.input.text=\\\"\\\"\\\"\"",
-			"Ctrl+O" = "ooc",
 			"Ctrl+Escape" = "Reset-Held-Keys", //Small concession for the safety net.
 			),
 		"old_hotkeys" = list( //Unlocked Any. Supports clean switch back to unlocked. [Default]
