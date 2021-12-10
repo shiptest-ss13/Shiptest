@@ -651,7 +651,7 @@
 /datum/reagent/mutationtoxin/tesh //crying
 	name = "Kepori Mutation Toxin"
 	description = "A feathery toxin."
-	race = /datum/species/teshari
+	race = /datum/species/kepori
 	process_flags = ORGANIC | SYNTHETIC
 	taste_description = "a familiar white meat"
 
