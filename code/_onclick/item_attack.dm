@@ -8,6 +8,7 @@
   * * [/obj/item/proc/afterattack]. The return value does not matter.
   */
 /obj/item/proc/melee_attack_chain(mob/user, atom/target, params)
+	user.changeNext_move(CLICK_CD_MELEE * attackspeed)
 	if(tool_behaviour && target.tool_act(user, src, tool_behaviour))
 		return
 	if(pre_attack(target, user, params))
@@ -245,13 +246,4 @@
 		"<span class='userdanger'>[attack_message_local]</span>", null, COMBAT_MESSAGE_RANGE)
 	return 1
 
-/obj/item/afterattack(atom/target, mob/user, proximity)
-	if(poisoned == TRUE)
-		if(iscarbon(target))
-			var/mob/living/carbon/H = target
-			H.reagents.add_reagent(stabpoison, poisonpower)
-		else
-			if(isliving(target))
-				var/mob/living/D = target
-				D.adjustToxLoss(4 + poisonpower)
 
