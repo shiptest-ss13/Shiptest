@@ -110,23 +110,6 @@
 			M = user
 		return eyestab(M,user)
 
-	if(!force)
-		playsound(loc, 'sound/weapons/tap.ogg', get_clamped_volume(), TRUE, -1)
-	else if(hitsound)
-		playsound(loc, hitsound, get_clamped_volume(), TRUE, extrarange = stealthy_audio ? SILENCED_SOUND_EXTRARANGE : -1, falloff_distance = 0)
-
-	M.lastattacker = user.real_name
-	M.lastattackerckey = user.ckey
-
-	if(force && M == user && user.client)
-		user.client.give_award(/datum/award/achievement/misc/selfouch, user)
-
-	user.do_attack_animation(M)
-	M.attacked_by(src, user)
-
-	log_combat(user, M, "attacked", src.name, "(INTENT: [uppertext(user.a_intent)]) (DAMTYPE: [uppertext(damtype)])")
-	add_fingerprint(user)
-
 	if(burner)
 		if(iscarbon(M))
 			var/mob/living/carbon/D = M
@@ -158,6 +141,23 @@
 			M.apply_status_effect(STATUS_EFFECT_SAWBLEED, bleedpower)
 		else
 			B.add_stacks(bleedpower)
+
+	if(!force)
+		playsound(loc, 'sound/weapons/tap.ogg', get_clamped_volume(), TRUE, -1)
+	else if(hitsound)
+		playsound(loc, hitsound, get_clamped_volume(), TRUE, extrarange = stealthy_audio ? SILENCED_SOUND_EXTRARANGE : -1, falloff_distance = 0)
+
+	M.lastattacker = user.real_name
+	M.lastattackerckey = user.ckey
+
+	if(force && M == user && user.client)
+		user.client.give_award(/datum/award/achievement/misc/selfouch, user)
+
+	user.do_attack_animation(M)
+	M.attacked_by(src, user)
+
+	log_combat(user, M, "attacked", src.name, "(INTENT: [uppertext(user.a_intent)]) (DAMTYPE: [uppertext(damtype)])")
+	add_fingerprint(user)
 
 /// The equivalent of the standard version of [/obj/item/proc/attack] but for object targets.
 /obj/item/proc/attack_obj(obj/O, mob/living/user)
