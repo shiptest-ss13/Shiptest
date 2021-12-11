@@ -246,4 +246,13 @@
 		"<span class='userdanger'>[attack_message_local]</span>", null, COMBAT_MESSAGE_RANGE)
 	return 1
 
-
+/obj/item/afterattack(atom/target, mob/user, proximity)
+	.=..()
+	if(poisoned == TRUE)
+		if(iscarbon(target))
+			var/mob/living/carbon/H = target
+			H.reagents.add_reagent(stabpoison, poisonpower)
+		else
+			if(isliving(target))
+				var/mob/living/D = target
+				D.adjustToxLoss(4 + poisonpower)
