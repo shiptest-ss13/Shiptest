@@ -279,7 +279,7 @@
 	prefix = "whirling"
 	postfix = "of dervish"
 	requires_sharpness = 0
-	modify_text = "spiral"
+	modify_text = "suffuse"
 	use_noise = 'sound/effects/footstep/water1.ogg'
 	stackable = TRUE
 

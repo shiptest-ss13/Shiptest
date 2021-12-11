@@ -386,7 +386,7 @@
 	desc = "Looks like someone hasn't been drinking their milk. Could be used in crafting."
 	icon = 'icons/obj/lavaland/elite_trophies.dmi'
 	icon_state = "shrunk_skull"
-	denied_type = /obj/item/crusher_trophy/legion_skull
+	denied_type = /obj/item/crusher_trophy/dwarf_skull
 	bonus_value = 6
 
 /obj/item/crusher_trophy/dwarf_skull/effect_desc()
