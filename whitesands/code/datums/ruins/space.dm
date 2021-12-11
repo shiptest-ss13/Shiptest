@@ -53,12 +53,6 @@
 	name = "Abandoned Facility"
 	description = "A NT research station. Something has gone horribly wrong here."
 
-/datum/map_template/ruin/space/solgovhistory
-	id = "solgovhistory"
-	suffix = "solgovhistory.dmm"
-	name = "Abandoned Museum"
-	description = "A abandoned musuem dedicated to the long history of SolGov. Who the hell puts live bullets in a musuem is beyond anyone, but the salvagers aren't complaining."
-
 /datum/map_template/ruin/space/astraeus
 	id = "astraeus"
 	suffix = "astraeus.dmm"
