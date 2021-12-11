@@ -72,7 +72,7 @@
 	if((I.item_flags & SURGICAL_TOOL) && user.a_intent == INTENT_HELP)
 		if(attempt_initiate_surgery(I, src, user))
 			return TRUE
-	user.changeNext_move(CLICK_CD_MELEE * attackspeed)
+	user.changeNext_move(CLICK_CD_MELEE * I.attackspeed)
 	return I.attack(src, user)
 
 /mob/living/attack_hand(mob/living/user)
