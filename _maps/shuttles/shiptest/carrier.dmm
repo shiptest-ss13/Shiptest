@@ -279,8 +279,9 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/turf/closed/wall/r_wall,
-/area/ship/bridge)
+/obj/structure/window/plasma/reinforced,
+/turf/open/floor/plasteel/mono,
+/area/ship/construction)
 "eQ" = (
 /obj/structure/railing{
 	dir = 4
@@ -1843,7 +1844,7 @@
 	icon_state = "0-2"
 	},
 /obj/machinery/light/floor,
-/obj/machinery/power/tesla_coil/power,
+/obj/machinery/power/shieldwallgen/anchored,
 /turf/open/floor/circuit/red/airless,
 /area/ship/bridge)
 "BE" = (
@@ -1985,7 +1986,7 @@
 "Di" = (
 /obj/structure/cable,
 /obj/machinery/light/floor,
-/obj/machinery/power/tesla_coil/power,
+/obj/machinery/power/shieldwallgen/anchored,
 /turf/open/floor/circuit/red/airless,
 /area/ship/bridge)
 "Dm" = (
@@ -2831,6 +2832,15 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
+"Rn" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/window/plasma/reinforced{
+	dir = 1
+	},
+/turf/open/floor/plasteel/mono,
+/area/ship/construction)
 "Rq" = (
 /obj/effect/turf_decal/corner/red{
 	dir = 8
@@ -2918,7 +2928,10 @@
 	icon_state = "0-4"
 	},
 /obj/machinery/light/floor,
-/obj/machinery/power/tesla_coil/power,
+/obj/machinery/shieldgen{
+	active = 1;
+	anchored = 1
+	},
 /turf/open/floor/circuit/red/airless,
 /area/ship/construction)
 "Tb" = (
@@ -3204,7 +3217,8 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/storage)
 "Wx" = (
-/turf/closed/wall,
+/obj/machinery/door/airlock/highsecurity,
+/turf/open/floor/plasteel/mono,
 /area/ship/bridge)
 "WO" = (
 /obj/effect/turf_decal/siding/thinplating/dark/corner,
@@ -3504,8 +3518,8 @@ wv
 wv
 wv
 wv
-wv
-Ki
+Tx
+Qu
 iS
 Xt
 Np
@@ -3542,8 +3556,8 @@ wv
 wv
 wv
 wv
-wv
 Ki
+Pm
 Xt
 Bt
 nz
@@ -3552,7 +3566,7 @@ xD
 Pm
 Pm
 jh
-eI
+Rn
 CU
 Di
 Xt
@@ -3580,8 +3594,8 @@ wv
 wv
 wv
 wv
-wv
 Ki
+Pm
 rC
 Xt
 zJ
@@ -3594,7 +3608,7 @@ rG
 at
 Xt
 kV
-rz
+rG
 Pm
 Lo
 zj
@@ -3618,8 +3632,8 @@ wv
 wv
 wv
 wv
-Tx
-Qu
+Ki
+Wx
 rG
 kb
 FZ
@@ -3776,7 +3790,7 @@ xb
 rz
 rz
 rG
-Wx
+TB
 cx
 tJ
 uH
