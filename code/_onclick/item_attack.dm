@@ -8,6 +8,7 @@
   * * [/obj/item/proc/afterattack]. The return value does not matter.
   */
 /obj/item/proc/melee_attack_chain(mob/user, atom/target, params)
+	user.changeNext_move(CLICK_CD_MELEE * attackspeed)
 	if(tool_behaviour && target.tool_act(user, src, tool_behaviour))
 		return
 	if(pre_attack(target, user, params))
@@ -17,7 +18,6 @@
 	if(QDELETED(src) || QDELETED(target))
 		attack_qdeleted(target, user, TRUE, params)
 		return
-	user.changeNext_move(CLICK_CD_MELEE * attackspeed)
 	afterattack(target, user, TRUE, params)
 
 /// Called when the item is in the active hand, and clicked; alternately, there is an 'activate held object' verb or you can hit pagedown.
