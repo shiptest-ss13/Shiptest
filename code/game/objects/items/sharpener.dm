@@ -62,17 +62,18 @@
 	I.armour_penetration = clamp(I.armour_penetration + apincrement, 0, 75)
 	I.mods = clamp(I.mods + 1, 0, I.maxmodify)
 	I.toolspeed = clamp(I.toolspeed + toolincrement, 0.1, 4)
-	if(!postfix == null)
+	if(I.postfixed == TRUE)
+		if(!findtext(I.name, prefix))
+			I.name = "[prefix] [I.name]"
+	else
 		if(prob(50))
 			if(!findtext(I.name, postfix))
 				I.name = "[I.name] [postfix]"
+			I.postfixed = TRUE
 		else
 			if(!findtext(I.name, prefix))
 				I.name = "[prefix] [I.name]"
-	else
-		if(!findtext(I.name, prefix))
-			I.name = "[prefix] [I.name]"
-	name = "worn out [name]"
+	name = "used [name]"
 	desc = "[desc] At least, it used to."
 	used = 1
 	update_icon()
@@ -138,6 +139,8 @@
 //elemental and special modifications
 /obj/item/sharpener/venom
 	name = "Tsuchigumo"
+	icon = 'icons/obj/wizard.dmi'
+	icon_state = "venomphial"
 	desc = "A strange, seemingly mystical oil, once poured on the metal blades of members of the Spider Clan. In recent years, their Hoshi Ninjatsu have largely switched to energy weapons, making such vials a valulable relic."
 	apincrement = 15
 	increment = 2
@@ -147,6 +150,9 @@
 	requires_sharpness = 0
 	modify_text = "envenom"
 	use_noise = 'sound/effects/footstep/water1.ogg'
+
+/obj/item/sharpener/venom/update_icon_state()
+	icon_state = "venomphial[used ? "_used" : ""]"
 
 /obj/item/sharpener/venom/attackby(obj/item/I, mob/user, params)
 	..()
@@ -161,6 +167,8 @@
 
 /obj/item/sharpener/ghost
 	name = "Spectral Plasm"
+	icon = 'icons/obj/wizard.dmi'
+	icon_state = "ghostphial"
 	desc = "A glowing vial of oily, pale liquid, seeming to softly shimmer in a translucent dance. It beckons you to uncork it and spread it over a weapon."
 	apincrement = 15
 	increment = 10
@@ -169,7 +177,11 @@
 	postfix = "of spectres"
 	requires_sharpness = 0
 	modify_text = "haunt"
+	stackable = TRUE
 	use_noise = 'sound/effects/curse3.ogg'
+
+/obj/item/sharpener/ghost/update_icon_state()
+	icon_state = "ghostphial[used ? "_used" : ""]"
 
 /obj/item/sharpener/ghost/attackby(obj/item/I, mob/user, params)
 	..()
@@ -178,6 +190,8 @@
 
 /obj/item/sharpener/fire
 	name = "Infernum Oil"
+	icon = 'icons/obj/wizard.dmi'
+	icon_state = "firephial"
 	desc = "A softly-glowing vial of white-hot liquid, fuming and softly steaming. It beckons you to uncork it and spread it over a weapon."
 	max = 100
 	increment = 5
@@ -186,6 +200,10 @@
 	requires_sharpness = 0
 	modify_text = "kindle"
 	use_noise = 'sound/magic/fireball.ogg'
+	stackable = TRUE
+
+/obj/item/sharpener/fire/update_icon_state()
+	icon_state = "firephial[used ? "_used" : ""]"
 
 /obj/item/sharpener/fire/attackby(obj/item/I, mob/user, params)
 	..()
@@ -199,6 +217,8 @@
 /obj/item/sharpener/frost
 	name = "Extract of Boreas"
 	desc = "A softly tinkling bottle, seemingly filled with a thick fluid in which blows a mighty winter wind. It beckons you to uncork it and spread it over a weapon."
+	icon = 'icons/obj/wizard.dmi'
+	icon_state = "freezephial"
 	apincrement = 10
 	increment = 5
 	max = 100
@@ -207,6 +227,10 @@
 	requires_sharpness = 0
 	modify_text = "deep-freeze"
 	use_noise = 'sound/weather/ashstorm/inside/weak_end.ogg'
+	stackable = TRUE
+
+/obj/item/sharpener/frost/update_icon_state()
+	icon_state = "freezephial[used ? "_used" : ""]"
 
 /obj/item/sharpener/frost/attackby(obj/item/I, mob/user, params)
 	..()
@@ -220,6 +244,8 @@
 /obj/item/sharpener/bleed
 	name = "The Old Blood"
 	desc = "A dusty bottle, full of thick, maroon liquid. It beckons you to uncork it and spread it over a weapon."
+	icon = 'icons/obj/wizard.dmi'
+	icon_state = "bloodphial"
 	apincrement = 5
 	increment = 5
 	max = 100
@@ -228,6 +254,10 @@
 	requires_sharpness = 0
 	modify_text = "sanguinate"
 	use_noise = 'sound/effects/footstep/water1.ogg'
+	stackable = TRUE
+
+/obj/item/sharpener/bleed/update_icon_state()
+	icon_state = "bloodphial[used ? "_used" : ""]"
 
 /obj/item/sharpener/bleed/attackby(obj/item/I, mob/user, params)
 	..()
@@ -240,17 +270,51 @@
 
 /obj/item/sharpener/speed
 	name = "Wind of Zephyrus"
-	desc = "A phial containing a mighty wind, preserved in liquor. By pouring it over an item, you can harness it's power."
+	desc = "A phial containing a mighty wind, preserved in liquor. By pouring it over an item, you can harness it's power to make your strikes fly lighter, but far faster.."
+	icon = 'icons/obj/wizard.dmi'
+	icon_state = "windphial"
 	apincrement = -5//hits become lighter
 	increment = -10
 	max = 100
 	prefix = "whirling"
-	postfix = "of wind"
+	postfix = "of dervish"
 	requires_sharpness = 0
 	modify_text = "spiral"
 	use_noise = 'sound/effects/footstep/water1.ogg'
+	stackable = TRUE
+
+/obj/item/sharpener/speed/update_icon_state()
+	icon_state = "windphial[used ? "_used" : ""]"
 
 /obj/item/sharpener/speed/attackby(obj/item/I, mob/user, params)
 	..()
 	I.attackspeed = clamp(I.attackspeed * 0.5, 0, 2)
+	return
+
+/obj/item/sharpener/holy
+	name = "runeword"
+	desc = "A fragment of a forgotten god's true name. Could be infused upon a weapon."
+	apincrement = 5
+	increment = 15
+	blockincrement = 25
+	max = 100
+	prefix = "runed"
+	postfix = "of warding"
+	requires_sharpness = 0
+	modify_text = "inlay"
+	use_noise = 'sound/magic/smoke.ogg'
+	stackable = TRUE
+	icon = 'icons/obj/wizard.dmi'
+	icon_state = "runescroll"
+	stackable = TRUE
+
+/obj/item/sharpener/holy/update_icon_state()
+	icon_state = "runescroll[used ? "_used" : ""]"
+
+/obj/item/sharpener/holy/attackby(obj/item/I, mob/user, params)
+	..()
+	if(overlayed == FALSE)
+		I.overlayed = TRUE
+		I.effect_icon = "shield-old"
+		I.AddComponent(/datum/component/anti_magic, TRUE, TRUE, FALSE, null, null, FALSE)
 	return

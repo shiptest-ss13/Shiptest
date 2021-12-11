@@ -177,11 +177,11 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 
 	//maximum number of modifications an item can have.
 	var/maxmodify = 3
-
+	var/postfixed = FALSE//prevents more then one postfix. Prevents "burning sword of the jester of the dervish" and instead causes "burning prank sword of the dervish", see the naming part of sharpener code.
 	//weapon poison effect, injected on every stab if poisoned is TRUE. Amount is determined by poison power.
 	var/poisoned = FALSE
 	var/poisonpower = 1
-	var/stabpoison = /datum/reagent/toxin//substance injected by poisoned weapon hits.
+	var/stabpoison = /datum/reagent/toxin
 	//weapon flame effect. Ignites and burns based on burnpower if burner is TRUE
 	var/burner = FALSE
 	var/burnpower = 1
@@ -197,6 +197,10 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 
 //attack speed modification: decreases cooldown between clicks. Lower numbers are faster, higher are slower//
 	var/attackspeed = 1
+
+//causes an effect overlay to appear over your char when the item is held inhand. Most often used for "shielding" effects, see red and blue holy staves for an example.
+	var/overlayed = FALSE
+	var/effect_icon = null//pathing is under icons/effects/effects.dmi
 
 /obj/item/Initialize()
 
@@ -1119,3 +1123,9 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 		else
 			to_chat(user, "<span class='warning'>The blade is dormant. Maybe you can try again later.</span>")
 			possessed = FALSE
+
+/obj/item/worn_overlays(isinhands)
+	if(overlayed)
+		. = list()
+		if(isinhands)
+			. += mutable_appearance('icons/effects/effects.dmi', effect_icon, MOB_LAYER + 0.01)

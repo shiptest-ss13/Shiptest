@@ -13,7 +13,7 @@
 	desc = "It's watching you suspiciously."
 
 /obj/structure/closet/crate/necropolis/tendril/PopulateContents()
-	var/loot = rand(1,31)
+	var/loot = rand(1,32)
 	switch(loot)
 		if(1)
 			new /obj/item/shared_storage/red(src)
@@ -90,7 +90,8 @@
 			new /obj/item/clothing/suit/ascetic(src)
 		if(31)
 			new /obj/item/kitchen/knife/envy(src)
-
+		if(32)
+			new /obj/item/sharpener/fire(src)
 //KA modkit design discs
 /obj/item/disk/design_disk/modkit_disc
 	name = "KA Mod Disk"
