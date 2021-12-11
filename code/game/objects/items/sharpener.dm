@@ -288,7 +288,7 @@
 
 /obj/item/sharpener/speed/attackby(obj/item/I, mob/user, params)
 	..()
-	I.attackspeed = clamp(I.attackspeed * 0.7, 0, 2)
+	I.attackspeed = clamp(I.attackspeed * 0.7, 0.1, 2)
 	return
 
 /obj/item/sharpener/holy
