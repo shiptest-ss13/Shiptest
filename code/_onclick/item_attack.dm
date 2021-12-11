@@ -8,7 +8,6 @@
   * * [/obj/item/proc/afterattack]. The return value does not matter.
   */
 /obj/item/proc/melee_attack_chain(mob/user, atom/target, params)
-	user.changeNext_move(CLICK_CD_MELEE * attackspeed)
 	if(tool_behaviour && target.tool_act(user, src, tool_behaviour))
 		return
 	if(pre_attack(target, user, params))
@@ -73,7 +72,6 @@
 	if((I.item_flags & SURGICAL_TOOL) && user.a_intent == INTENT_HELP)
 		if(attempt_initiate_surgery(I, src, user))
 			return TRUE
-	user.changeNext_move(CLICK_CD_MELEE)
 	return I.attack(src, user)
 
 /mob/living/attack_hand(mob/living/user)
@@ -165,7 +163,7 @@
 		return
 	if(item_flags & NOBLUDGEON)
 		return
-	user.changeNext_move(CLICK_CD_MELEE)
+	user.changeNext_move(CLICK_CD_MELEE * attackspeed)
 	user.do_attack_animation(O)
 	O.attacked_by(src, user)
 

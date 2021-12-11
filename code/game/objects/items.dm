@@ -1099,6 +1099,7 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 		return //stops buckled message spam for the ghost.
 
 /obj/item/AltClick(mob/living/user)
+	.=..()
 //functionality for haunted items
 	if(haunted)
 		if(possessed)
