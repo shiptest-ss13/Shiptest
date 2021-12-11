@@ -1206,6 +1206,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 
 /datum/species/proc/after_equip_job(datum/job/J, mob/living/carbon/human/H)
 	H.update_mutant_bodyparts()
+	SSblackbox.record_feedback("tally", "species_spawned", 1, name)
 
 /datum/species/proc/handle_chemicals(datum/reagent/chem, mob/living/carbon/human/H)
 	if(chem.type == exotic_blood)

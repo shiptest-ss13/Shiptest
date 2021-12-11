@@ -1,6 +1,4 @@
 /obj/item/clothing/under/rank/centcom
-	icon = 'icons/obj/clothing/under/centcom.dmi'
-	mob_overlay_icon = 'whitesands/icons/mob/clothing/under/centcom.dmi'
 
 /obj/item/clothing/under/rank/centcom/officer
 	name = "\improper CentCom officer's jumpsuit"

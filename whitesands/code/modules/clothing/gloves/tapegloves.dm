@@ -1,7 +1,6 @@
 /obj/item/clothing/gloves/color/yellow/sprayon/tape
 	name = "taped-on insulated gloves"
 	desc = "This is a totally safe idea."
-	icon = 'whitesands/icons/obj/clothing/gloves.dmi'
 	icon_state = "yellowtape"
 	item_state = "ygloves"
 	shocks_remaining = 3
