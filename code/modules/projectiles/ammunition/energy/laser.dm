@@ -32,7 +32,7 @@
 	select_name = "scatter"
 
 /obj/item/ammo_casing/energy/laser/ultima
-	projectile_type = /obj/projectile/beam/laser/weak/negative_ap
+	projectile_type = /obj/projectile/beam/laser/weak/negative_ap/low_range
 	pellets = 3
 	variance = 35
 	e_cost = 2000

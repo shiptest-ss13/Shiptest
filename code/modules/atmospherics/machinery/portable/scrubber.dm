@@ -2,6 +2,7 @@
 	name = "portable air scrubber"
 	icon_state = "pscrubber:0"
 	density = TRUE
+	volume = 1000
 
 	var/on = FALSE
 	var/volume_rate = 1000

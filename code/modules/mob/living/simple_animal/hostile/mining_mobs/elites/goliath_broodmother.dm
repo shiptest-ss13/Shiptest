@@ -236,7 +236,7 @@
 	icon = 'icons/obj/lavaland/elite_trophies.dmi'
 	icon_state = "broodmother_tongue"
 	denied_type = /obj/item/crusher_trophy/broodmother_tongue
-	bonus_value = 10
+	bonus_value = 35
 
 /obj/item/crusher_trophy/broodmother_tongue/effect_desc()
 	return "waveform collapse to have a <b>[bonus_value]%</b> chance to summon a patch of goliath tentacles at the target's location"

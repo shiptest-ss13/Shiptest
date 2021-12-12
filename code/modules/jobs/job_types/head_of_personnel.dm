@@ -68,11 +68,11 @@
 
 /datum/outfit/job/head_of_personnel/nt
 	name = "First Officer (Nanotrasen)"
-	uniform = /obj/item/clothing/under/rank/command/lieutenant/blue
+	uniform = /obj/item/clothing/under/rank/command/head_of_personnel/nt
 	alt_uniform = null
 	alt_suit = null
 	shoes = /obj/item/clothing/shoes/laceup
-	head = /obj/item/clothing/head/collectable/HoP
+	head = /obj/item/clothing/head/hopcap/nt
 
 /datum/outfit/job/head_of_personnel/solgov
 	name = "Executive Officer (SolGov)"
@@ -93,9 +93,10 @@
 
 /datum/outfit/job/head_of_personnel/western
 	name = "First Mate (Western)"
-	uniform = /obj/item/clothing/under/rank/security/officer/blueshirt
+	uniform = /obj/item/clothing/under/rank/security/detective/grey
 	alt_uniform = null
 	suit = null
+	alt_suit = null
 	shoes = /obj/item/clothing/shoes/cowboy/black
 	accessory = /obj/item/clothing/accessory/waistcoat
 	head = /obj/item/clothing/head/HoS/cowboy
