@@ -1799,7 +1799,6 @@
 	color_src = HAIR
 	image_alpha = 150
 
-
 /datum/sprite_accessory/wings/none
 	name = "None"
 	icon_state = "none"
