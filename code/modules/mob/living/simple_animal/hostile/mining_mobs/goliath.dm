@@ -75,7 +75,7 @@
 
 /mob/living/simple_animal/hostile/asteroid/goliath/gib()
 	if(prob(1))//goliaths eat rocks and thus have a tiny chance to contain a number of gems
-	        var/obj/item/gem/to_drop = pick(/obj/item/gem/rupee, /obj/item/gem/fdiamond, /obj/item/gem/void, /obj/item/gem/phoron)
+		var/obj/item/gem/to_drop = pick(/obj/item/gem/rupee, /obj/item/gem/fdiamond, /obj/item/gem/void, /obj/item/gem/phoron)
 		new to_drop(loc)
 		visible_message("<span class='warning'>A glittering object falls out of [src]'s hide!</span>")
 	..()
