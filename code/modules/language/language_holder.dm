@@ -385,7 +385,7 @@ Key procs
 	spoken_languages = list(/datum/language/common = list(LANGUAGE_ATOM),
 							/datum/language/shadowtongue = list(LANGUAGE_ATOM))
 
-/datum/language_holder/teshari
+/datum/language_holder/kepori
 	understood_languages = list(/datum/language/common = list(LANGUAGE_ATOM),
 								/datum/language/schechi = list(LANGUAGE_ATOM))
 	spoken_languages = list(/datum/language/common = list(LANGUAGE_ATOM),
