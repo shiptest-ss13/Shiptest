@@ -609,7 +609,7 @@
 
 /mob/living/simple_animal/hostile/asteroid/hivelord/legion/crystal
 	name = "disfigured legion"
-	desc = "Disfifured, contorted, corrupted. This thing was once part of the legion, now it has a diffrent vile and twisted allegiance."
+	desc = "Disfigured, contorted, and corrupted. This thing was once part of the legion, now it has a different vile and twisted allegiance."
 	icon_state = "disfigured_legion"
 	icon_living = "disfigured_legion"
 	icon_aggro = "disfigured_legion"
@@ -620,7 +620,7 @@
 
 /mob/living/simple_animal/hostile/asteroid/hivelordbrood/legion/crystal
 	name = "disfigured legion"
-	desc = "Once of none."
+	desc = "One of none."
 	icon_state = "disfigured_legion_head"
 	icon_living = "disfigured_legion_head"
 	icon_aggro = "disfigured_legion_head"

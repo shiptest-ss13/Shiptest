@@ -75,16 +75,8 @@
 
 /mob/living/simple_animal/hostile/asteroid/goliath/gib()
 	if(prob(1))//goliaths eat rocks and thus have a tiny chance to contain a number of gems
-		new /obj/item/gem/rupee(loc)
-		visible_message("<span class='warning'>A glittering object falls out of [src]'s hide!</span>")
-	if(prob(1))
-		new /obj/item/gem/fdiamond(loc)
-		visible_message("<span class='warning'>A glittering object falls out of [src]'s hide!</span>")
-	if(prob(1))
-		new /obj/item/gem/void(loc)
-		visible_message("<span class='warning'>A glittering object falls out of [src]'s hide!</span>")
-	if(prob(1))
-		new /obj/item/gem/phoron(loc)
+	        var/obj/item/gem/to_drop = pick(/obj/item/gem/rupee, /obj/item/gem/fdiamond, /obj/item/gem/void, /obj/item/gem/phoron)
+		new to_drop(loc)
 		visible_message("<span class='warning'>A glittering object falls out of [src]'s hide!</span>")
 	..()
 
@@ -214,7 +206,7 @@
 	if(!isturf(tturf) || !isliving(target))
 		return
 	if(dist <= tent_range)
-		visible_message("<span class='warning'>[src] digs its tentacles under [target]!</span>")
+		visible_message("<span class='warning'>[src] digs it's tentacles under [target]!</span>")
 		new tentacle_type(tturf, src ,TRUE)
 		ranged_cooldown = world.time + ranged_cooldown_time
 		icon_state = icon_aggro
@@ -378,7 +370,7 @@
 
 /mob/living/simple_animal/hostile/asteroid/goliath/beast/ancient/crystal
 	name = "crystal goliath"
-	desc = "Once it was a goliath now it is an abomination composed of dead goliath flesh and crystals that sprouted throught it's decomposing body."
+	desc = "Once a goliath, it is now an abomination composed of undead flesh and crystals that sprout throughout it's decomposing body."
 	icon = 'icons/mob/lavaland/lavaland_monsters.dmi'
 	icon_state = "crystal_goliath"
 	icon_living = "crystal_goliath"
@@ -394,7 +386,7 @@
 
 /mob/living/simple_animal/hostile/asteroid/goliath/beast/ancient/crystal/OpenFire()
 	. = ..()
-	visible_message("<span class='warning'>[src] Expunges it's matter releasing a spray of crystalline shards!</span>")
+	visible_message("<span class='warning'>[src] expels it's matter, releasing a spray of crystalline shards!</span>")
 	INVOKE_ASYNC(src,.proc/spray_of_crystals)
 	shoot_projectile(Get_Angle(src,target) + 10)
 	shoot_projectile(Get_Angle(src,target))
