@@ -1795,10 +1795,10 @@
 /datum/sprite_accessory/ears/cat/slime
 	name = "Slimecat"
 	icon_state = "cat"
-	hasinner = 1
+	hasinner = FALSE
 	color_src = HAIR
 	image_alpha = 150
-	hasinner = FALSE
+
 
 /datum/sprite_accessory/wings/none
 	name = "None"
