@@ -1557,8 +1557,22 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					features["mcolor"] = pref_species.default_color
 				user << browse(null, "window=speciespick")
 				ShowChoices(user)
-				all_quirks = list()
-				SetQuirks(user)
+				if(all_quirks)
+					var/balance
+					for(var/datum/quirk/V in all_quirks)
+						var/datum/quirk/_V = new V
+						balance -= _V.value
+						if(_V.allowed_species && !(pref_species.id in _V.allowed_species))
+							all_quirks ^= V
+							balance += _V.value
+					while(balance < 0)
+						var/list/positive_quirks
+						for(var/datum/quirk/quirk in all_quirks)
+							if(quirk.value > 0)
+								positive_quirks |= quirk
+						var/datum/quirk/M = pick(positive_quirks)
+						all_quirks ^= M
+						balance += initial(M.value)
 				return 1
 
 			if(href_list["lookatspecies"])
