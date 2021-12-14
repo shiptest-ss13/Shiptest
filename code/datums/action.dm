@@ -720,6 +720,10 @@
 /datum/action/small_sprite/megafauna/bubblegum
 	small_icon_state = "goliath2"
 
+/datum/action/small_sprite/megafauna/marg
+	small_icon = 'icons/obj/plushes.dmi'
+	small_icon_state = "plushie_lizard"
+
 /datum/action/small_sprite/megafauna/legion
 	small_icon_state = "mega_legion"
 

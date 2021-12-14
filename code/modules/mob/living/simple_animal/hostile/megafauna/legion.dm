@@ -204,7 +204,7 @@
 		loot = list(/obj/item/staff/storm)
 		elimination = FALSE
 	else if(prob(20)) //20% chance for sick lootz.
-		loot = list(/obj/structure/closet/crate/necropolis/tendril)
+		loot = list(/obj/structure/closet/crate/necropolis/tendril/greater)
 		if(!true_spawn)
 			loot = null
 	return ..()
@@ -259,7 +259,7 @@
 	icon = 'icons/obj/guns/magic.dmi'
 	slot_flags = ITEM_SLOT_BACK
 	w_class = WEIGHT_CLASS_BULKY
-	force = 25
+	force = 30
 	damtype = BURN
 	hitsound = 'sound/weapons/sear.ogg'
 	var/storm_type = /datum/weather/ash_storm

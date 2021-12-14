@@ -44,7 +44,7 @@
 	var/multi_surgery_adjust = 0
 
 	//determine bonus applied
-	if(isalienroyal(target))
+	if(isalienqueen(target) || isalienroyal(target))
 		cost = (BASE_HUMAN_REWARD*38)
 	else if(isalienadult(target))
 		cost = (BASE_HUMAN_REWARD*30)

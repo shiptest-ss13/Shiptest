@@ -106,7 +106,7 @@
 	name = "wooden whetstone"
 	desc = "A block of soft wood, useful for crude sharpening of edged weapons."
 	color = "#8c6340"
-	increment = 1
+	increment = 2
 	max = 18
 	prefix = "crudely-sharpened"
 	requires_sharpness = 1
@@ -118,7 +118,7 @@
 	name = "bone whetstone"
 	desc = "A block of compacted bone, useful for sharpening melee weapons on the fly."
 	color = "#bfb78c"
-	increment = 2
+	increment = 4
 	max = 25
 	prefix = "bone-scraped"
 	postfix = null

@@ -957,7 +957,7 @@ GLOBAL_LIST_INIT(ore_probability, list(
 			playsound(loc,'sound/magic/knock.ogg', 100, FALSE, 50, TRUE, TRUE)
 			new /mob/living/simple_animal/hostile/big_legion(loc)
 			if(prob(75))
-				new /obj/structure/closet/crate/necropolis/tendril(loc)
+				new /obj/structure/closet/crate/necropolis/tendril/greater(loc)
 			new /turf/open/indestructible/necropolis(loc)
 		if(19)//xenobiologist's hubris
 			visible_message("<span class='userdanger'>You catch a glimpse of a wobbling sea of slimy friends. An abused-looking keeper slips through the portal.</span>")
