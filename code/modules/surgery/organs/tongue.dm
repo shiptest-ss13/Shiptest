@@ -191,6 +191,7 @@
 	var/static/list/languages_possible_alien = typecacheof(list(
 		/datum/language/xenocommon,
 		/datum/language/common,
+		/datum/language/codespeak,
 		/datum/language/draconic,
 		/datum/language/monkey))
 

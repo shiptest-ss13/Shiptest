@@ -206,7 +206,7 @@
 	/mob/living/silicon/pai = 1,
 	/mob/living/carbon/alien/humanoid/hunter = -1,
 	/mob/living/carbon/alien/humanoid/royal/praetorian = 1,
-	/mob/living/carbon/alien/humanoid/royal/queen = 3
+	/mob/living/carbon/alien/humanoid/royal/queen = 1.5
 	)
 
 /datum/config_entry/keyed_list/multiplicative_movespeed/ValidateAndSet()

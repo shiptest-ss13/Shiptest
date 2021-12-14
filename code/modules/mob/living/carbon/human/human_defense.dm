@@ -277,16 +277,16 @@
 				return 1
 			apply_damage(damage, BRUTE, affecting, armor_block)
 
-		if(M.a_intent == INTENT_DISARM) //Always drop item in hand, if no item, get stun instead.
+		if(M.a_intent == INTENT_DISARM) //heavy stamina, 50% chance to knock item out of hand
 			var/obj/item/I = get_active_held_item()
-			if(I && dropItemToGround(I))
+			if(I && dropItemToGround(I) & prob(50))
 				playsound(loc, 'sound/weapons/slash.ogg', 25, TRUE, -1)
 				visible_message("<span class='danger'>[M] disarms [src]!</span>", \
 								"<span class='userdanger'>[M] disarms you!</span>", "<span class='hear'>You hear aggressive shuffling!</span>", null, M)
 				to_chat(M, "<span class='danger'>You disarm [src]!</span>")
 			else
 				playsound(loc, 'sound/weapons/pierce.ogg', 25, TRUE, -1)
-				Paralyze(100)
+				apply_damage(40, STAMINA)
 				log_combat(M, src, "tackled")
 				visible_message("<span class='danger'>[M] tackles [src] down!</span>", \
 								"<span class='userdanger'>[M] tackles you down!</span>", "<span class='hear'>You hear aggressive shuffling followed by a loud thud!</span>", null, M)

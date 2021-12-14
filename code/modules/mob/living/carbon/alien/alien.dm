@@ -13,7 +13,7 @@
 	type_of_meat = /obj/item/reagent_containers/food/snacks/meat/slab/xeno
 
 	var/obj/item/card/id/wear_id = null // Fix for station bounced radios -- Skie
-	var/has_fine_manipulation = 0
+	var/has_fine_manipulation = TRUE
 	var/move_delay_add = 0 // movement delay to add
 
 	status_flags = CANUNCONSCIOUS|CANPUSH
@@ -35,6 +35,9 @@
 	create_internal_organs()
 
 	. = ..()
+
+/mob/living/carbon/alien/is_literate()
+	return TRUE
 
 /mob/living/carbon/alien/create_internal_organs()
 	internal_organs += new /obj/item/organ/brain/alien

@@ -234,9 +234,9 @@ Key procs
 
 
 /datum/language_holder/alien
-	understood_languages = list(/datum/language/xenocommon = list(LANGUAGE_ATOM))
+	understood_languages = list(/datum/language/common = list(LANGUAGE_ATOM),
+							/datum/language/xenocommon = list(LANGUAGE_ATOM))
 	spoken_languages = list(/datum/language/xenocommon = list(LANGUAGE_ATOM))
-	blocked_languages = list(/datum/language/common = list(LANGUAGE_ATOM))
 
 /datum/language_holder/construct
 	understood_languages = list(/datum/language/common = list(LANGUAGE_ATOM),
@@ -248,7 +248,6 @@ Key procs
 	understood_languages = list(/datum/language/drone = list(LANGUAGE_ATOM),
 								/datum/language/machine = list(LANGUAGE_ATOM))
 	spoken_languages = list(/datum/language/drone = list(LANGUAGE_ATOM))
-	blocked_languages = list(/datum/language/common = list(LANGUAGE_ATOM))
 
 /datum/language_holder/drone/syndicate
 	blocked_languages = list()
