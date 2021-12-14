@@ -84,9 +84,9 @@
 	. = modularity
 	for(var/slot in modules)
 		for(var/datum/ship_module/module in modules[slot])
-			if(module.cost <= 0)
+			if(module.modularity_cost <= 0)
 				continue
-			. -= module.cost
+			. -= module.modularity_cost
 	// If we are less than zero, return 0; WHY THE FUCK IS A NEGATIVE NUMBER TRUTHY
 	return . <= 0 ? 0 : .
 

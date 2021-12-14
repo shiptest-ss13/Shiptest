@@ -16,6 +16,24 @@
 	linked_helm = null
 	selected_module = null
 
+/obj/item/ship_module_handheld/proc/can_afford_selected()
+	if(!materials.silo)
+		return FALSE
+	var/datum/component/material_container/silo_materials = materials.silo.GetComponent(/datum/component/material_container)
+	var/list/needed = selected_module.material_cost.Copy()
+	for(var/datum/material/mat as anything in needed)
+		var/left = needed[mat] -= silo_materials.materials[mat]
+		if(left <= 0)
+			needed -= mat
+	if(length(needed))
+		return FALSE
+	return TRUE
+
+/obj/item/ship_module_handheld/proc/material_list_readable(list/mat_list)
+	. = list()
+	for(var/datum/material/mat as anything in mat_list)
+		.[mat.name] = mat_list[mat]
+
 /obj/item/ship_module_handheld/ui_static_data(mob/user)
 	. = ..()
 	var/list/module_lookup = new
@@ -23,7 +41,8 @@
 		var/datum/ship_module/module = GLOB.ship_modules[m_path]
 		var/list/m_data = new
 		m_data["name"] = module.name
-		m_data["cost"] = module.cost
+		m_data["modularity_cost"] = module.modularity_cost
+		m_data["material_cost"] = material_list_readable(module.material_cost)
 		m_data["slot"] = module.slot
 		m_data["install_allow"] = module.can_install(linked_helm.current_ship) == MODULE_INSTALL_GOOD
 		m_data["install_reason"] = module_install_reason(m_data["can_install"])
@@ -74,9 +93,12 @@
 		"name" = selected_module.name,
 		"desc" = selected_module.description,
 		"slot" = selected_module.slot,
-		"cost" = selected_module.cost
+		"modularity_cost" = selected_module.modularity_cost,
+		"material_cost" = material_list_readable(selected_module.material_cost)
+		"can_afford" = can_afford_selected()
 	)
 	.["selected_data"] = selected_data
+	.["silo_link"] = !!materials.silo
 
 /obj/item/ship_module_handheld/ui_act(action, list/params)
 	. = ..()

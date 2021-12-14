@@ -1,7 +1,11 @@
 /datum/ship_module/shield
 	name = "Energy Shield"
 	slot = SHIP_SLOT_SHIELD
-	cost = 10
+	modularity_cost = 10
+	material_cost = list(
+		/datum/material/glass = 10000,
+		/datum/material/iron = 10000
+	)
 	should_process = TRUE
 	structure_path = /obj/structure/ship_module/shield
 

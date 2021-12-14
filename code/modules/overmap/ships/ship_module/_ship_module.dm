@@ -3,8 +3,15 @@
 	var/abstract = /datum/ship_module
 	/// Name of the module
 	var/name = "Defunct Ship Module"
+	/// Description of the module; try to be at least semi-helpful
+	var/description = "Broken Module, ahelp"
 	/// Actual modularity cost of the module, this can be NEGATIVE!!
-	var/cost = 0
+	var/modularity_cost = 0
+	/// Cost of this module in material resources.
+	var/list/material_cost = list(
+		/datum/material/iron = 10000,
+		/datum/material/plasma = 10000
+	)
 	/// The slot this module is installed into. See ship_module_defines.dm
 	var/slot = SHIP_SLOT_NONE
 	/// The flags for this module. See ship_module_defines.dm
@@ -52,7 +59,7 @@
 		return MODULE_INSTALL_BAD_UNIQUE
 	if(is_installed(ship))
 		return MODULE_INSTALL_BAD_SINGULAR
-	if(ship.calculate_modularity_left() < cost)
+	if(ship.calculate_modularity_left() < modularity_cost)
 		return MODULE_INSTALL_BAD_COST
 	for(var/slot in ship.modules)
 		for(var/datum/ship_module/module as anything in ship.modules[slot])
