@@ -80,6 +80,10 @@ GLOBAL_VAR(test_log)
 /proc/RunUnitTests()
 	CHECK_TICK
 
+	///Wrap the loaded z_level into a map_zone
+	var/datum/map_zone/mapzone = new("Integration Test Mapzone")
+	new /datum/sub_map_zone("Integration Test Subzone", ZTRAITS_STATION, mapzone, 1, 1, world.maxx, world.maxy, world.maxz)
+
 	var/tests_to_run = subtypesof(/datum/unit_test)
 	for (var/_test_to_run in tests_to_run)
 		var/datum/unit_test/test_to_run = _test_to_run
@@ -111,9 +115,3 @@ GLOBAL_VAR(test_log)
 		CHECK_TICK
 
 	SSticker.force_ending = TRUE
-
-///Wrap the loaded z_level into a map_zone
-/datum/map_template/unit_tests/initTemplateBounds()
-	var/datum/map_zone/mapzone = new("Integration Test Mapzone")
-	new /datum/sub_map_zone("Integration Test Subzone", ZTRAITS_STATION, mapzone, 1, 1, world.maxx, world.maxy, world.maxz)
-	. = ..()
