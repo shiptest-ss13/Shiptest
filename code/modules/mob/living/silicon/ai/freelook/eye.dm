@@ -76,6 +76,10 @@
 		if(!force_update && (T == get_turf(src)) )
 			return //we are already here!
 		if (T)
+			if(!force_update)
+				var/datum/map_zone/mapzone = SSmapping.get_map_zone(loc)
+				if(!mapzone.is_in_bounds(T))
+					return
 			forceMove(T)
 		else
 			moveToNullspace()

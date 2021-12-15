@@ -79,9 +79,6 @@
 		stack_trace("Warning: [src]([type]) initialized multiple times!")
 	flags_1 |= INITIALIZED_1
 
-	// by default, vis_contents is inherited from the turf that was here before
-	vis_contents.Cut()
-
 	assemble_baseturfs()
 
 	levelupdate()

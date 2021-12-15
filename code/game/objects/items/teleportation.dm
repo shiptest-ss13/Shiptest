@@ -136,7 +136,7 @@
 /obj/item/hand_tele/attack_self(mob/user)
 	var/turf/current_location = get_turf(user)//What turf is the user on?
 	var/area/current_area = current_location.loc
-	if(!current_location || (current_area.area_flags & NOTELEPORT) || is_away_level(current_location.z) || !isturf(user.loc))//If turf was not found or they're on z level 2 or >7 which does not currently exist. or if user is not located on a turf
+	if(!current_location || (current_area.area_flags & NOTELEPORT) || is_away_level(current_location) || !isturf(user.loc))//If turf was not found or they're on z level 2 or >7 which does not currently exist. or if user is not located on a turf
 		to_chat(user, "<span class='notice'>\The [src] is malfunctioning.</span>")
 		return
 	var/list/L = list()
@@ -177,7 +177,7 @@
 		return
 	current_location = get_turf(user)	//Recheck.
 	current_area = current_location.loc
-	if(!current_location || (current_area.area_flags & NOTELEPORT) || is_away_level(current_location.z) || !isturf(user.loc))//If turf was not found or they're on z level 2 or >7 which does not currently exist. or if user is not located on a turf
+	if(!current_location || (current_area.area_flags & NOTELEPORT) || is_away_level(current_location) || !isturf(user.loc))//If turf was not found or they're on z level 2 or >7 which does not currently exist. or if user is not located on a turf
 		to_chat(user, "<span class='notice'>\The [src] is malfunctioning.</span>")
 		return
 	user.show_message("<span class='notice'>Locked In.</span>", MSG_AUDIBLE)
@@ -215,7 +215,7 @@
 		var/obj/item/bodypart/head/head = itemUser.get_bodypart(BODY_ZONE_HEAD)
 		if(head)
 			head.drop_limb()
-			var/list/safeLevels = SSmapping.levels_by_any_trait(list(ZTRAIT_SPACE_RUINS, ZTRAIT_LAVA_RUINS, ZTRAIT_STATION, ZTRAIT_MINING))
+			var/list/safeLevels = SSmapping.virtual_levels_by_any_trait(list(ZTRAIT_SPACE_RUINS, ZTRAIT_LAVA_RUINS, ZTRAIT_STATION, ZTRAIT_MINING))
 			head.forceMove(locate(rand(1, world.maxx), rand(1, world.maxy), pick(safeLevels)))
 			itemUser.visible_message("<span class='suicide'>The portal snaps closed taking [user]'s head with it!</span>")
 		else

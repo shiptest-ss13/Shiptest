@@ -82,6 +82,9 @@
 	///Used to decide what kind of reverb the area makes sound have
 	var/sound_environment = SOUND_ENVIRONMENT_NONE
 
+	/// Whether area is underground, important for weathers which shouldn't affect caves etc.
+	var/underground = FALSE
+
 
 /**
   * A list of teleport locations
@@ -485,11 +488,11 @@ GLOBAL_LIST_EMPTY(teleportlocs)
   * Update the icon state of the area
   *
   * Im not sure what the heck this does, somethign to do with weather being able to set icon
-  * states on areas?? where the heck would that even display?
+  * states on areas?? where the heck would that even display? //good documentation
   */
 /area/update_icon_state()
 	var/weather_icon
-	for(var/V in SSweather.processing)
+	for(var/V in SSweather.get_all_current_weather())
 		var/datum/weather/W = V
 		if(W.stage != END_STAGE && (src in W.impacted_areas))
 			W.update_areas()

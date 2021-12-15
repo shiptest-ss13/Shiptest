@@ -25,7 +25,7 @@
 	if(width < 1 || height < 1)
 		CRASH("Cannot create turf reservation of size [width] width, [height] height; both dimensions must be 1 or greater!")
 
-	for(var/z_level in SSmapping.levels_by_trait(ZTRAIT_RESERVED))
+	for(var/z_level in SSmapping.virtual_levels_by_trait(ZTRAIT_RESERVED))
 		if(reserve_on_z(z_level))
 			return TRUE
 

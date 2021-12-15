@@ -258,7 +258,7 @@
 	if (independent && (freq == FREQ_CENTCOM || freq == FREQ_SOLGOV || freq == FREQ_WIDEBAND || freq == FREQ_CTF_RED || freq == FREQ_CTF_BLUE))		//WS Edit - SolGov Rep
 		signal.data["compression"] = 0
 		signal.transmission_method = TRANSMISSION_SUPERSPACE
-		signal.levels = list(0)  // reaches all Z-levels
+		signal.map_zones = list(0)  // reaches all Z-levels
 		signal.broadcast()
 		playsound(src, "sound/effects/walkietalkie.ogg", 20, FALSE)			//WS Edit - Radio chatter
 		return
@@ -279,13 +279,14 @@
 
 /obj/item/radio/proc/backup_transmission(datum/signal/subspace/vocal/signal)
 	var/turf/T = get_turf(src)
-	if (signal.data["done"] && (T.get_virtual_z_level() in signal.levels))
+	var/datum/map_zone/mapzone = SSmapping.get_map_zone(T)
+	if (signal.data["done"] && (mapzone in signal.map_zones))
 		return
 
 	// Okay, the signal was never processed, send a mundane broadcast.
 	signal.data["compression"] = 0
 	signal.transmission_method = TRANSMISSION_RADIO
-	signal.levels = list(T.get_virtual_z_level())
+	signal.map_zones = list(mapzone)
 	signal.broadcast()
 
 /obj/item/radio/Hear(message, atom/movable/speaker, message_language, raw_message, radio_freq, list/spans, list/message_mods = list())
@@ -305,7 +306,7 @@
 	talk_into(speaker, raw_message, , spans, language=message_language)
 
 // Checks if this radio can receive on the given frequency.
-/obj/item/radio/proc/can_receive(freq, level)
+/obj/item/radio/proc/can_receive(freq, map_zones)
 	// deny checks
 	if (!on || !listening || wires.is_cut(WIRE_RX))
 		return FALSE
@@ -313,9 +314,10 @@
 		return FALSE
 	if (freq == FREQ_CENTCOM || freq == FREQ_SOLGOV)
 		return independent  // hard-ignores the z-level check
-	if (!(0 in level))
+	if (!(0 in map_zones))
 		var/turf/position = get_turf(src)
-		if(!position || !(position.get_virtual_z_level() in level))
+		var/datum/map_zone/mapzone = SSmapping.get_map_zone(position)
+		if(!position || !(mapzone in map_zones))
 			return FALSE
 
 	// allow checks: are we listening on that frequency?

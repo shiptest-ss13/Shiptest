@@ -45,9 +45,9 @@ GLOBAL_LIST_INIT(meteorsC, list(/obj/effect/meteor/dust)) //for space dust event
 	var/max_i = 10//number of tries to spawn meteor.
 	while(!isspaceturf(pickedstart))
 		var/startSide = pick(GLOB.cardinals)
-		var/startZ = pick(SSmapping.levels_by_trait(ZTRAIT_STATION))
-		pickedstart = spaceDebrisStartLoc(startSide, startZ)
-		pickedgoal = spaceDebrisFinishLoc(startSide, startZ)
+		var/startZ = pick(SSmapping.virtual_levels_by_trait(ZTRAIT_STATION))
+		pickedstart = spaceDebrisStartLoc(startSide, SSmapping.get_sub_zone(startZ))
+		pickedgoal = spaceDebrisFinishLoc(startSide, SSmapping.get_sub_zone(startZ))
 		max_i--
 		if(max_i<=0)
 			return
@@ -55,41 +55,45 @@ GLOBAL_LIST_INIT(meteorsC, list(/obj/effect/meteor/dust)) //for space dust event
 	var/obj/effect/meteor/M = new Me(pickedstart, pickedgoal)
 	M.dest = pickedgoal
 
-/proc/spaceDebrisStartLoc(startSide, Z)
+#define MAP_EDGE_PAD 5
+
+/proc/spaceDebrisStartLoc(startSide, datum/sub_map_zone/subzone, padding = MAP_EDGE_PAD)
 	var/starty
 	var/startx
 	switch(startSide)
 		if(NORTH)
-			starty = world.maxy-(TRANSITIONEDGE+1)
-			startx = rand((TRANSITIONEDGE+1), world.maxx-(TRANSITIONEDGE+1))
+			starty = subzone.high_y-(subzone.reserved_margin + padding)
+			startx = rand(subzone.low_x + (subzone.reserved_margin + padding), subzone.high_x-(subzone.reserved_margin + padding))
 		if(EAST)
-			starty = rand((TRANSITIONEDGE+1),world.maxy-(TRANSITIONEDGE+1))
-			startx = world.maxx-(TRANSITIONEDGE+1)
+			starty = rand(subzone.low_y + (subzone.reserved_margin + padding),subzone.high_y-(subzone.reserved_margin + padding))
+			startx = subzone.high_x-(subzone.reserved_margin + padding)
 		if(SOUTH)
-			starty = (TRANSITIONEDGE+1)
-			startx = rand((TRANSITIONEDGE+1), world.maxx-(TRANSITIONEDGE+1))
+			starty = (subzone.reserved_margin + padding)
+			startx = rand(subzone.low_x + (subzone.reserved_margin + padding),subzone.high_x-(subzone.reserved_margin + padding))
 		if(WEST)
-			starty = rand((TRANSITIONEDGE+1), world.maxy-(TRANSITIONEDGE+1))
-			startx = (TRANSITIONEDGE+1)
-	. = locate(startx, starty, Z)
+			starty = rand(subzone.low_y + (subzone.reserved_margin + padding), subzone.high_y-(subzone.reserved_margin + padding))
+			startx = (subzone.reserved_margin + padding)
+	. = locate(startx, starty, subzone.z_value)
 
-/proc/spaceDebrisFinishLoc(startSide, Z)
+/proc/spaceDebrisFinishLoc(startSide, datum/sub_map_zone/subzone, padding = MAP_EDGE_PAD)
 	var/endy
 	var/endx
 	switch(startSide)
 		if(NORTH)
-			endy = (TRANSITIONEDGE+1)
-			endx = rand((TRANSITIONEDGE+1), world.maxx-(TRANSITIONEDGE+1))
+			endy = (subzone.reserved_margin + padding)
+			endx = rand(subzone.low_x + (subzone.reserved_margin + padding), subzone.high_x-(subzone.reserved_margin + padding))
 		if(EAST)
-			endy = rand((TRANSITIONEDGE+1), world.maxy-(TRANSITIONEDGE+1))
-			endx = (TRANSITIONEDGE+1)
+			endy = rand(subzone.low_y + (subzone.reserved_margin + padding), subzone.high_y-(subzone.reserved_margin + padding))
+			endx = (subzone.reserved_margin + padding)
 		if(SOUTH)
-			endy = world.maxy-(TRANSITIONEDGE+1)
-			endx = rand((TRANSITIONEDGE+1), world.maxx-(TRANSITIONEDGE+1))
+			endy = subzone.high_y-(subzone.reserved_margin + padding)
+			endx = rand(subzone.low_x + (subzone.reserved_margin + padding), subzone.high_x-(subzone.reserved_margin + padding))
 		if(WEST)
-			endy = rand((TRANSITIONEDGE+1),world.maxy-(TRANSITIONEDGE+1))
-			endx = world.maxx-(TRANSITIONEDGE+1)
-	. = locate(endx, endy, Z)
+			endy = rand(subzone.low_y + (subzone.reserved_margin + padding), subzone.high_y-(subzone.reserved_margin + padding))
+			endx = subzone.high_x-(subzone.reserved_margin + padding)
+	. = locate(endx, endy, subzone.z_value)
+
+#undef MAP_EDGE_PAD
 
 ///////////////////////
 //The meteor effect

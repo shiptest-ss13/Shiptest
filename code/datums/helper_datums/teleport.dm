@@ -61,7 +61,7 @@
 	var/turf/curturf = get_turf(teleatom)
 	var/turf/destturf = get_teleport_turf(get_turf(destination), precision)
 
-	if(!destturf || !curturf || destturf.is_transition_turf())
+	if(!destturf || !curturf)
 		return FALSE
 
 	var/area/A = get_area(curturf)
@@ -153,11 +153,14 @@
 /proc/get_teleport_turfs(turf/center, precision = 0)
 	if(!precision)
 		return list(center)
+	var/datum/sub_map_zone/center_subzone = SSmapping.get_sub_zone(center)
 	var/list/posturfs = list()
 	var/current_z_level = center.get_virtual_z_level()
 	for(var/turf/T in range(precision,center))
 		if(T.is_transition_turf())
 			continue // Avoid picking these.
+		if(!center_subzone.is_in_bounds(T))
+			continue // Out of bounds of our subzone
 		if(T.get_virtual_z_level() != current_z_level)
 			continue
 		var/area/A = T.loc

@@ -1,14 +1,10 @@
+/// Physical level datum
 /datum/space_level
 	var/name = "NAME MISSING"
-	var/list/neigbours = list()
-	var/list/traits
 	var/z_value = 1 //actual z placement
-	var/linkage = SELFLOOPING
-	var/xi
-	var/yi   //imaginary placements on the grid
+	/// Sub map zones contained in this z level
+	var/list/sub_map_zones = list()
 
-/datum/space_level/New(new_z, new_name, list/new_traits = list())
+/datum/space_level/New(new_z, new_name)
 	z_value = new_z
 	name = new_name
-	traits = new_traits
-	set_linkage(new_traits[ZTRAIT_LINKAGE])

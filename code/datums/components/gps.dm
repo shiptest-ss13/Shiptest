@@ -108,8 +108,11 @@ GLOBAL_LIST_EMPTY(GPS_list)
 		return data
 
 	var/turf/curr = get_turf(parent)
+	var/datum/sub_map_zone/subzone = SSmapping.get_sub_zone(curr)
+	var/datum/map_zone/mapzone = subzone.parent_map_zone
+	var/list/coords = subzone.get_relative_coords(curr)
 	data["currentArea"] = "[get_area_name(curr, TRUE)]"
-	data["currentCoords"] = "[curr.x], [curr.y], [curr.get_virtual_z_level()]"
+	data["currentCoords"] = "[coords[1]], [coords[2]], [mapzone.id], [subzone.id]"
 
 	var/list/signals = list()
 	data["signals"] = list()
@@ -122,9 +125,12 @@ GLOBAL_LIST_EMPTY(GPS_list)
 		if(!pos || !global_mode && pos.get_virtual_z_level() != curr.get_virtual_z_level())
 			continue
 		var/list/signal = list()
+		var/datum/sub_map_zone/other_subzone = SSmapping.get_sub_zone(pos)
+		var/datum/map_zone/other_mapzone = other_subzone.parent_map_zone
+		var/list/other_coords = other_subzone.get_relative_coords(pos)
 		signal["entrytag"] = G.gpstag //Name or 'tag' of the GPS
-		signal["coords"] = "[pos.x], [pos.y], [pos.get_virtual_z_level()]"
-		if(pos.get_virtual_z_level() == curr.get_virtual_z_level()) //Distance/Direction calculations for same z-level only
+		signal["coords"] = "[other_coords[1]], [other_coords[2]], [other_mapzone.id], [other_subzone.id]"
+		if(other_subzone == subzone) //Distance/Direction calculations for same sub-zone only
 			signal["dist"] = max(get_dist(curr, pos), 0) //Distance between the src and remote GPS turfs
 			signal["degrees"] = round(Get_Angle(curr, pos)) //0-360 degree directional bearing, for more precision.
 		signals += list(signal) //Add this signal to the list of signals

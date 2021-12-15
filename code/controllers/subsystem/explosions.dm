@@ -195,7 +195,7 @@ SUBSYSTEM_DEF(explosions)
 	var/orig_max_distance = max(devastation_range, heavy_impact_range, light_impact_range, flash_range, flame_range)
 
 	//Zlevel specific bomb cap multiplier
-	var/cap_multiplier = SSmapping.level_trait(epicenter.z, ZTRAIT_BOMBCAP_MULTIPLIER)
+	var/cap_multiplier = SSmapping.virtual_level_trait(epicenter, ZTRAIT_BOMBCAP_MULTIPLIER)
 	if (isnull(cap_multiplier))
 		cap_multiplier = 1
 
@@ -235,7 +235,7 @@ SUBSYSTEM_DEF(explosions)
 		var/sound/creaking_explosion_sound = sound(get_sfx("explosion_creaking"))
 		var/sound/hull_creaking_sound = sound(get_sfx("hull_creaking"))
 		var/sound/explosion_echo_sound = sound('sound/effects/explosion_distant.ogg')
-		var/on_station = SSmapping.level_trait(epicenter.z, ZTRAIT_STATION)
+		var/on_station = SSmapping.virtual_level_trait(epicenter, ZTRAIT_STATION)
 		var/creaking_explosion = FALSE
 
 		if(prob(devastation_range*DEVASTATION_PROB+heavy_impact_range*HEAVY_IMPACT_PROB) && on_station) // Huge explosions are near guaranteed to make the station creak and whine, smaller ones might.

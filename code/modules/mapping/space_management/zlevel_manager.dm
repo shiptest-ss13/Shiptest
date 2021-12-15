@@ -13,8 +13,12 @@
 
 	for (var/I in 1 to default_map_traits.len)
 		var/list/features = default_map_traits[I]
-		var/datum/space_level/S = new(I, features[DL_NAME], features[DL_TRAITS])
+		var/name = features[DL_NAME]
+		var/list/traits = features[DL_TRAITS]
+		var/datum/space_level/S = new(I, name)
 		z_list += S
+		var/datum/map_zone/mapzone = new(name)
+		new /datum/sub_map_zone(name, traits, mapzone, 1, 1, world.maxx, world.maxy, I)
 
 /datum/controller/subsystem/mapping/proc/add_new_zlevel(name, traits = list(), z_type = /datum/space_level)
 	SEND_GLOBAL_SIGNAL(COMSIG_GLOB_NEW_Z, args)

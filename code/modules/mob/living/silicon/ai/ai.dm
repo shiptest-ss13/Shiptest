@@ -429,7 +429,7 @@
 		view_core()
 		return
 	// ok, we're alive, camera is good and in our network...
-	eyeobj.setLoc(get_turf(C))
+	eyeobj.setLoc(get_turf(C), TRUE)
 	return TRUE
 
 /mob/living/silicon/ai/proc/botcall()
@@ -577,7 +577,7 @@
 			if(!C.can_use())
 				continue
 			if(network in C.network)
-				U.eyeobj.setLoc(get_turf(C))
+				U.eyeobj.setLoc(get_turf(C), TRUE)
 				break
 	to_chat(src, "<span class='notice'>Switched to the \"[uppertext(network)]\" camera network.</span>")
 //End of code by Mord_Sith

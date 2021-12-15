@@ -107,11 +107,6 @@ require only minor tweaks.
 	DECLARE_LEVEL("CentCom", ZTRAITS_CENTCOM), \
 )
 
-// Camera lock flags
-#define CAMERA_LOCK_STATION 1
-#define CAMERA_LOCK_MINING 2
-#define CAMERA_LOCK_CENTCOM 4
-
 //Reserved turf type
 #define RESERVED_TURF_TYPE /turf/open/space/basic //What the turf is when not being used
 

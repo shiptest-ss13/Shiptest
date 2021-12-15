@@ -1136,12 +1136,13 @@
 	if(!isinhands)
 		. += mutable_appearance('icons/effects/effects.dmi', shield_state, MOB_LAYER - 0.01)
 
-/obj/item/jacobs_ladder
+/obj/item/jacobs_ladder //TODO remove
 	name = "jacob's ladder"
 	desc = "A celestial ladder that violates the laws of physics."
 	icon = 'icons/obj/structures.dmi'
 	icon_state = "ladder00"
 
+/*
 /obj/item/jacobs_ladder/attack_self(mob/user)
 	var/turf/T = get_turf(src)
 	var/ladder_x = T.x
@@ -1154,6 +1155,7 @@
 		var/turf/T2 = locate(ladder_x, ladder_y, i)
 		last_ladder = new /obj/structure/ladder/unbreakable/jacob(T2, null, last_ladder)
 	qdel(src)
+*/
 
 // Inherit from unbreakable but don't set ID, to suppress the default Z linkage
 /obj/structure/ladder/unbreakable/jacob

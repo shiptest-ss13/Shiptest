@@ -14,7 +14,7 @@
 	var/teleport_range = 7
 
 /obj/item/mecha_parts/mecha_equipment/teleporter/action(atom/target)
-	if(!action_checks(target) || is_centcom_level(loc.z))
+	if(!action_checks(target) || is_centcom_level(loc))
 		return
 	var/turf/T = get_turf(target)
 	if(T && (loc.z == T.z) && (get_dist(loc, T) <= teleport_range))
@@ -35,7 +35,7 @@
 
 
 /obj/item/mecha_parts/mecha_equipment/wormhole_generator/action(atom/target)
-	if(!action_checks(target) || is_centcom_level(loc.z))
+	if(!action_checks(target) || is_centcom_level(loc))
 		return
 	var/list/theareas = get_areas_in_range(100, chassis)
 	if(!theareas.len)

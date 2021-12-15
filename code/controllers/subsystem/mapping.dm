@@ -39,6 +39,9 @@ SUBSYSTEM_DEF(mapping)
 	var/clearing_reserved_turfs = FALSE 	// whether we're currently clearing out all the reserves
 	var/num_of_res_levels = 0				// number of z-levels for reserving
 
+	/// List of all map zones
+	var/list/map_zones = list()
+
 /datum/controller/subsystem/mapping/Initialize(timeofday)
 	if(initialized)
 		return
@@ -52,8 +55,6 @@ SUBSYSTEM_DEF(mapping)
 	// Add the transit level
 	new_reserved_level()
 	repopulate_sorted_areas()
-	// Set up Z-level transitions.
-	setup_map_transitions()
 	return ..()
 
 /* Nuke threats, for making the blue tiles on the station go RED
@@ -323,13 +324,15 @@ SUBSYSTEM_DEF(mapping)
 	initialize_reserved_level(new_reserved.z_value)
 	return new_reserved
 
-//This is not for wiping reserved levels, use wipe_reservations() for that.
+//This is not for wiping reserved levels, use wipe_reservations() for that. //todo
 /datum/controller/subsystem/mapping/proc/initialize_reserved_level(z)
 	UNTIL(!clearing_reserved_turfs)				//regardless, lets add a check just in case.
 	clearing_reserved_turfs = TRUE			//This operation will likely clear any existing reservations, so lets make sure nothing tries to make one while we're doing it.
+	/*
 	if(!level_trait(z,ZTRAIT_RESERVED))
 		clearing_reserved_turfs = FALSE
 		CRASH("Invalid z level prepared for reservations.")
+	*/
 	var/turf/A = get_turf(locate(SHUTTLE_TRANSIT_BORDER,SHUTTLE_TRANSIT_BORDER,z))
 	var/turf/B = get_turf(locate(world.maxx - SHUTTLE_TRANSIT_BORDER,world.maxy - SHUTTLE_TRANSIT_BORDER,z))
 	var/block = block(A, B)
@@ -406,3 +409,18 @@ SUBSYSTEM_DEF(mapping)
 		if(y < TR.bottom_left_coords[2] || y > TR.top_right_coords[2])
 			continue
 		return TR
+
+/datum/controller/subsystem/mapping/proc/get_map_zone_weather_controller(atom/Atom)
+	var/datum/map_zone/mapzone = get_map_zone(Atom)
+	if(!mapzone)
+		return
+	mapzone.assert_weather_controller()
+	return mapzone.weather_controller
+
+/datum/controller/subsystem/mapping/proc/get_map_zone_id(mapzone_id)
+	var/datum/map_zone/returned_mapzone
+	for(var/datum/map_zone/iterated_mapzone as anything in map_zones)
+		if(iterated_mapzone.id == mapzone_id)
+			returned_mapzone = iterated_mapzone
+			break
+	return returned_mapzone
