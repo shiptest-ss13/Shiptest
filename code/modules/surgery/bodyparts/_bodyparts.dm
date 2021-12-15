@@ -256,7 +256,13 @@
 				wounding_dmg *= (easy_dismember ? 1 : 0.75)
 			if((mangled_state & BODYPART_MANGLED_BONE) && try_dismember(wounding_type, wounding_dmg, wound_bonus, bare_wound_bonus))
 				return
-		// note that there's no handling for BIO_JUST_FLESH since we don't have any that are that right now (slimepeople maybe someday)
+		// if we're flesh only, all blunt attacks become weakened slashes in terms of wound damage
+		if(BIO_JUST_FLESH)
+			if(wounding_type == WOUND_BLUNT)
+				wounding_type = WOUND_SLASH
+				wounding_dmg *= (easy_dismember ? 1 : 0.3)
+			if((mangled_state & BODYPART_MANGLED_FLESH) && try_dismember(wounding_type, wounding_dmg, wound_bonus, bare_wound_bonus))
+				return
 		// standard humanoids
 		if(BIO_FLESH_BONE)
 			// if we've already mangled the skin (critical slash or piercing wound), then the bone is exposed, and we can damage it with sharp weapons at a reduced rate
