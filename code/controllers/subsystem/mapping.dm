@@ -320,7 +320,10 @@ SUBSYSTEM_DEF(mapping)
 
 /datum/controller/subsystem/mapping/proc/new_reserved_level()
 	num_of_res_levels += 1
-	var/datum/space_level/new_reserved = add_new_zlevel("Reserved [num_of_res_levels]", list(ZTRAIT_RESERVED = TRUE))
+	var/reserved_name = "Reserved [num_of_res_levels]"
+	var/datum/space_level/new_reserved = add_new_zlevel(reserved_name)
+	var/datum/map_zone/mapzone = new(reserved_name)
+	new /datum/sub_map_zone(reserved_name, list(ZTRAIT_RESERVED = TRUE), mapzone, 1, 1, world.maxx, world.maxy, world.maxz)
 	initialize_reserved_level(new_reserved.z_value)
 	return new_reserved
 
@@ -424,3 +427,43 @@ SUBSYSTEM_DEF(mapping)
 			returned_mapzone = iterated_mapzone
 			break
 	return returned_mapzone
+
+/datum/controller/subsystem/mapping/proc/get_free_allocation(allocation_type, size_x, size_y)
+	var/list/allocation_list
+	var/list/levels_to_check = z_list.Copy()
+	var/created_new_level = FALSE
+	while(TRUE)
+		for(var/datum/space_level/iterated_level as anything in levels_to_check)
+			if(iterated_level.allocation_type != allocation_type)
+				continue
+			allocation_list = find_allocation_in_level(iterated_level, size_x, size_y)
+			if(allocation_list)
+				return allocation_list
+
+		if(created_new_level)
+			WARNING("MAPPING: We have failed to find allocation after creating a new level just for it, something went terribly wrong")
+			return FALSE
+		/// None of the levels could faciliate a new allocation, make a new one
+		created_new_level = TRUE
+		levels_to_check.Cut()
+		levels_to_check += add_new_zlevel("assblast usa", allocation_type = allocation_type)
+
+#define ALLOCATION_FIND_JUMP_DIST 5
+
+/datum/controller/subsystem/mapping/proc/find_allocation_in_level(datum/space_level/level, size_x, size_y)
+	var/target_x = 1
+	var/target_y = 1
+	while(target_x < world.maxx)
+		while(target_y < world.maxx)
+			var/upper_target_x = target_x+size_x
+			var/upper_target_y = target_y+size_y
+
+			if((target_x < 1 || target_x > world.maxx) || (target_y < 1 || upper_target_y > world.maxy))
+				return //Out of bounds
+
+			if(!level.is_point_allocated(target_x, target_y) && !level.is_point_allocated(upper_target_x, target_y))
+				return list(target_x, target_y, level.z_value) //hallelujah we found the unallocated spot
+			target_y += ALLOCATION_FIND_JUMP_DIST
+		target_x += ALLOCATION_FIND_JUMP_DIST
+
+#undef ALLOCATION_FIND_JUMP_DIST

@@ -3,7 +3,7 @@
 	desc = "A very weak energy signal. It may not still be here if you leave it."
 	icon_state = "strange_event"
 	///The active turf reservation, if there is one
-	var/datum/turf_reservation/reserve
+	var/datum/map_zone/mapzone
 	///The preset ruin template to load, if/when it is loaded.
 	var/datum/map_template/template
 	///The docking port in the reserve
@@ -14,8 +14,6 @@
 	var/preserve_level = FALSE
 	///What kind of planet the level is, if it's a planet at all.
 	var/planet
-	///The virtual z-level the level occupies
-	var/virtual_z_level
 	///List of probabilities for each type of planet.
 	var/static/list/probabilities
 
@@ -32,7 +30,7 @@
 
 /obj/structure/overmap/dynamic/Destroy()
 	. = ..()
-	QDEL_NULL(reserve)
+	QDEL_NULL(mapzone)
 
 /obj/structure/overmap/dynamic/ship_act(mob/user, obj/structure/overmap/ship/simulated/acting)
 	var/prev_state = acting.state
@@ -108,17 +106,14 @@
   * * visiting shuttle - The docking port of the shuttle visiting the level.
   */
 /obj/structure/overmap/dynamic/proc/load_level(obj/docking_port/mobile/visiting_shuttle)
-	if(reserve)
+	if(mapzone)
 		return
 	if(!COOLDOWN_FINISHED(SSovermap, encounter_cooldown))
 		return "WARNING! Stellar interference is restricting flight in this area. Interference should pass in [COOLDOWN_TIMELEFT(SSovermap, encounter_cooldown) / 10] seconds."
 	var/list/dynamic_encounter_values = SSovermap.spawn_dynamic_encounter(planet, TRUE, ruin_type = template)
-	reserve = dynamic_encounter_values[1]
-	if(!reserve)
-		return "FATAL NAVIGATION ERROR, PLEASE TRY AGAIN LATER!"
+	mapzone = dynamic_encounter_values[1]
 	reserve_dock = dynamic_encounter_values[2]
 	reserve_dock_secondary = dynamic_encounter_values[3]
-	virtual_z_level = reserve.virtual_z_level
 
 /**
  * Alters the position and orientation of a stationary docking port to ensure that any mobile port small enough can dock within its bounds
@@ -186,19 +181,15 @@
 	if(preserve_level)
 		return
 
-	for(var/mob/living/L as anything in GLOB.mob_living_list)
-		if(!L.mind)
-			continue
-		if(SSmapping.get_turf_reservation_at_coords(L.x, L.y, L.z) == reserve)
-			return //Don't fuck over stranded people
-
-	if(reserve)
+	if(mapzone)
+		if(length(mapzone.get_alive_client_mobs()))
+			return //Dont fuck over stranded people? tbh this shouldn't be called on this condition, instead of bandaiding it inside
 		if(SSovermap.generator_type == OVERMAP_GENERATOR_SOLAR)
 			forceMove(SSovermap.get_unused_overmap_square_in_radius())
 		else
 			forceMove(SSovermap.get_unused_overmap_square())
 		choose_level_type()
-		QDEL_NULL(reserve)
+		QDEL_NULL(mapzone)
 
 	if(reserve_dock)
 		qdel(reserve_dock, TRUE)
@@ -219,13 +210,11 @@
 	if(preserve_level)
 		return
 
-	for(var/mob/living/L as anything in GLOB.mob_living_list)
-		if(!L.mind)
-			continue
-		if(SSmapping.get_turf_reservation_at_coords(L.x, L.y, L.z) == reserve)
-			return //Don't fuck over stranded people
+	// Duplicate code grrr
+	if(length(mapzone.get_alive_client_mobs()))
+		return //Dont fuck over stranded people? tbh this shouldn't be called on this condition, instead of bandaiding it inside
 
-	QDEL_NULL(reserve)
+	QDEL_NULL(mapzone)
 	qdel(src)
 
 /area/overmap_encounter

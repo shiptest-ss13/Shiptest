@@ -90,16 +90,16 @@ SUBSYSTEM_DEF(overmap)
   * * Shuttle: The docking port to create an overmap object for
   */
 /datum/controller/subsystem/overmap/proc/setup_shuttle_ship(obj/docking_port/mobile/shuttle)
-	var/docked_object = get_overmap_object_by_z(shuttle.get_virtual_z_level())
+	var/docked_object = shuttle.current_ship
 	var/obj/structure/overmap/ship/simulated/new_ship
 	if(docked_object)
 		new_ship = new(docked_object, shuttle)
 		if(shuttle.undock_roundstart)
 			new_ship.undock()
-	else if(is_reserved_level(shuttle.z))
+	else if(is_reserved_level(shuttle))
 		new_ship = new(get_unused_overmap_square(), shuttle)
 		new_ship.state = OVERMAP_SHIP_FLYING
-	else if(is_centcom_level(shuttle.z))
+	else if(is_centcom_level(shuttle))
 		new_ship = new(null, shuttle)
 	else
 		CRASH("Shuttle created in unknown location, unable to create overmap ship!")
@@ -236,6 +236,45 @@ SUBSYSTEM_DEF(overmap)
 		if(ispath(ruin_type))
 			ruin_type = new ruin_type
 
+	var/height = 125
+	var/width = 125
+
+	var/list/allocation_coords = SSmapping.get_free_allocation(ALLOCATION_QUADRANT, 125, 125)
+
+	var/encounter_name = "Super coolio encoutnero"
+	var/datum/map_zone/mapzone = new(encounter_name)
+	var/datum/sub_map_zone/subzone = new(encounter_name, list(ZTRAIT_MINING = TRUE), mapzone, allocation_coords[1], allocation_coords[1], allocation_coords[1] + width, allocation_coords[2] + height, allocation_coords[3])
+	
+	subzone.reserve_margin(5)
+
+	subzone.fill_in(surface, target_area)
+
+	if(ruin_type)
+		var/turf/ruin_turf = locate(rand(
+			subzone.low_x+6 + subzone.reserved_margin,
+			subzone.high_x-ruin_type.width-6 - subzone.reserved_margin),
+			subzone.high_y-ruin_type.height-6 - subzone.reserved_margin,
+			subzone.z_value
+			)
+		ruin_type.load(ruin_turf)
+
+	if(mapgen)
+		mapgen.generate_terrain(subzone.get_unreserved_block())
+
+	// locates the first dock in the bottom left, accounting for padding and the border
+	var/turf/primary_docking_turf = locate(
+		subzone.low_x+RESERVE_DOCK_DEFAULT_PADDING+1 + subzone.reserved_margin,
+		subzone.low_y+RESERVE_DOCK_DEFAULT_PADDING+1 + subzone.reserved_margin,
+		subzone.z_value
+		)
+	// now we need to offset to account for the first dock
+	var/turf/secondary_docking_turf = locate(
+		primary_docking_turf.x+RESERVE_DOCK_MAX_SIZE_LONG+RESERVE_DOCK_DEFAULT_PADDING, 
+		primary_docking_turf.y, 
+		primary_docking_turf.z
+		)
+
+	/*
 	var/datum/turf_reservation/fixed/encounter_reservation = SSmapping.request_fixed_reservation()
 	encounter_reservation.fill_in(surface, /turf/closed/indestructible/blank, target_area)
 
@@ -255,6 +294,7 @@ SUBSYSTEM_DEF(overmap)
 		encounter_reservation.bottom_left_coords[3])
 	// now we need to offset to account for the first dock
 	var/turf/secondary_docking_turf = locate(primary_docking_turf.x+RESERVE_DOCK_MAX_SIZE_LONG+RESERVE_DOCK_DEFAULT_PADDING, primary_docking_turf.y, primary_docking_turf.z)
+	*/
 
 	//This check exists because docking ports don't like to be deleted.
 	var/obj/docking_port/stationary/primary_dock = new(primary_docking_turf)
@@ -273,7 +313,7 @@ SUBSYSTEM_DEF(overmap)
 	secondary_dock.dheight = 0
 	secondary_dock.dwidth = 0
 
-	return list(encounter_reservation, primary_dock, secondary_dock)
+	return list(mapzone, primary_dock, secondary_dock)
 
 /**
   * Returns a random, usually empty turf in the overmap
@@ -319,17 +359,6 @@ SUBSYSTEM_DEF(overmap)
 		if (dist < max_range && dist < ret_dist)
 			. = T
 			ret_dist = dist
-
-/**
-  * Gets the corresponding overmap object that shares the provided z level
-  * * zlevel - The Z-level of the overmap object you want to find
-  */
-/datum/controller/subsystem/overmap/proc/get_overmap_object_by_z(zlevel)
-	for(var/O in overmap_objects)
-		if(istype(O, /obj/structure/overmap/dynamic))
-			var/obj/structure/overmap/dynamic/D = O
-			if(zlevel == D.virtual_z_level)
-				return D
 
 /datum/controller/subsystem/overmap/Recover()
 	if(istype(SSovermap.events))

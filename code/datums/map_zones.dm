@@ -398,6 +398,9 @@
 /datum/sub_map_zone/proc/get_block()
 	return block(locate(low_x,low_y,z_value), locate(high_x,high_y,z_value))
 
+/datum/sub_map_zone/proc/get_unreserved_block()
+	return block(locate(low_x + reserved_margin, low_y + reserved_margin, z_value), locate(high_x - reserved_margin,high_y - reserved_margin,z_value))
+
 /datum/sub_map_zone/proc/get_center()
 	return locate(round((low_x + high_x) / 2), round((low_y + high_y) / 2), z_value)
 
@@ -433,6 +436,23 @@
 		if(is_in_bounds(Mob))
 			. += Mob
 
+/datum/sub_map_zone/proc/fill_in(turf/turf_type, area/area_override)
+	var/area/area_to_use = null
+	if(area_override)
+		if(ispath(area_override))
+			area_to_use = new area_override
+		else
+			area_to_use = area_override
+
+	for(var/turf/iterated_turf as anything in get_block())
+		if(area_to_use)
+			var/area/old_area = get_area(iterated_turf)
+			area_to_use.contents += iterated_turf
+			iterated_turf.change_area(old_area, area_to_use)
+
+	for(var/turf/iterated_turf as anything in get_unreserved_block())
+		iterated_turf.ChangeTurf(turf_type, turf_type)
+
 /// Gets the sub zone that contains the passed atom
 /datum/controller/subsystem/mapping/proc/get_sub_zone(atom/Atom)
 	var/datum/space_level/level = z_list[Atom.z]
@@ -454,10 +474,8 @@
 /turf/closed/indestructible/edge
 	name = "edge"
 	desc = null
-	/*
-	icon = 'icons/overmap/overmap_turfs.dmi'
+	icon = 'icons/turf/space.dmi'
 	icon_state = "black"
-	*/
 	layer = SPACE_LAYER
 	plane = FLOOR_PLANE
 	var/destination_z

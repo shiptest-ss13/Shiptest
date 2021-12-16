@@ -9,6 +9,8 @@
 			stack_trace("Unmanaged z-level [z]! maxz = [world.maxz], z_list.len = [z_list.len]")
 			return list()
 		var/datum/sub_map_zone/zone = get_sub_zone(Atom)
+		if(!zone)
+			return
 		return zone.traits[trait]
 	else
 		var/list/default = DEFAULT_MAP_TRAITS
