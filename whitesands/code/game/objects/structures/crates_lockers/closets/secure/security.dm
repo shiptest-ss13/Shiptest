@@ -58,5 +58,5 @@
 	new /obj/item/clothing/head/beret/black(src)
 	new /obj/item/clothing/under/rank/command/lieutenant(src)
 	new /obj/item/clothing/under/rank/command/lieutenant/skirt(src)
-	new /obj/item/clothing/under/rank/command/lieutenant/blue(src)
-	new /obj/item/clothing/under/rank/command/lieutenant/blue/skirt(src)
+	new /obj/item/clothing/under/rank/command/lieutenant/nt(src)
+	new /obj/item/clothing/under/rank/command/lieutenant/nt/skirt(src)
