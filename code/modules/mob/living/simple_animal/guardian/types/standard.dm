@@ -32,4 +32,5 @@
 		playsound(loc, src.attack_sound, 50, TRUE, TRUE)
 		playsound(loc, src.attack_sound, 50, TRUE, TRUE)
 	if(isanimal(target))
-		target.apply_damage(35, BRUTE)
+		var/mob/living/C = target
+		C.apply_damage(35, BRUTE)
