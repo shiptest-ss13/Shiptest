@@ -40,7 +40,7 @@
 /mob/living/simple_animal/hostile/guardian/healer/AttackingTarget()
 	. = ..()
 	if(!toggle)//shameless jojo refrence
-		if(prob(45)
+		if(prob(45))
 			say("[hbattlecry][hbattlecry][hbattlecry][hbattlecry]!", ignore_spam = TRUE)
 		if(prob(15))
 			say("[hbattlecry]!!!", ignore_spam = TRUE)
