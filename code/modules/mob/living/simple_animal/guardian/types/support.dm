@@ -3,11 +3,12 @@
 	a_intent = INTENT_HARM
 	friendly_verb_continuous = "heals"
 	friendly_verb_simple = "heal"
+	next_move_modifier = 0.3///attack as fast as you can click, but your actual hits are basically tickle damage :))
 	speed = 0
 	damage_coeff = list(BRUTE = 0.7, BURN = 0.7, TOX = 0.7, CLONE = 0.7, STAMINA = 0, OXY = 0.7)
 	melee_damage_lower = 15
 	melee_damage_upper = 15
-	playstyle_string = "<span class='holoparasite'>As a <b>support</b> type, you may toggle your basic attacks to a healing mode. In addition, Alt-Clicking on an adjacent object or mob will warp them to your bluespace beacon after a short delay.</span>"
+	playstyle_string = "<span class='holoparasite'>As a <b>support</b> type, you may toggle your basic attacks between a rapid flurry of weak strikes and a healing mode. In addition, Alt-Clicking on an adjacent object or mob will warp them to your bluespace beacon after a short delay.</span>"
 	magic_fluff_string = "<span class='holoparasite'>..And draw the CMO, a potent force of life... and death.</span>"
 	carp_fluff_string = "<span class='holoparasite'>CARP CARP CARP! You caught a support carp. It's a kleptocarp!</span>"
 	tech_fluff_string = "<span class='holoparasite'>Boot sequence complete. Support modules active. Holoparasite swarm online.</span>"
@@ -16,6 +17,15 @@
 	var/obj/structure/receiving_pad/beacon
 	var/beacon_cooldown = 0
 	var/toggle = FALSE
+	var/hbattlecry = "MUDA"
+
+/mob/living/simple_animal/hostile/guardian/healer/verb/Battlecry()
+	set name = "Set Battlecry"
+	set category = "Guardian"
+	set desc = "Choose what you shout as you punch people."
+	var/input = stripped_input(src,"What do you want your battlecry to be? Max length of 6 characters.", ,"", 7)
+	if(input)
+		hbattlecry = input
 
 /mob/living/simple_animal/hostile/guardian/healer/Initialize()
 	. = ..()
@@ -29,12 +39,17 @@
 
 /mob/living/simple_animal/hostile/guardian/healer/AttackingTarget()
 	. = ..()
+	if(!toggle)//shameless jojo refrence
+		if(prob(45)
+			say("[hbattlecry][hbattlecry][hbattlecry][hbattlecry]!", ignore_spam = TRUE)
+		if(prob(15))
+			say("[hbattlecry]!!!", ignore_spam = TRUE)
 	if(is_deployed() && toggle && iscarbon(target))
 		var/mob/living/carbon/C = target
-		C.adjustBruteLoss(-5)
-		C.adjustFireLoss(-5)
-		C.adjustOxyLoss(-5)
-		C.adjustToxLoss(-5)
+		C.adjustBruteLoss(-7)
+		C.adjustFireLoss(-7)
+		C.adjustOxyLoss(-7)
+		C.adjustToxLoss(-7)
 		var/obj/effect/temp_visual/heal/H = new /obj/effect/temp_visual/heal(get_turf(C))
 		if(guardiancolor)
 			H.color = guardiancolor
@@ -49,8 +64,8 @@
 			a_intent = INTENT_HARM
 			speed = -2
 			damage_coeff = list(BRUTE = 0.7, BURN = 0.7, TOX = 0.7, CLONE = 0.7, STAMINA = 0, OXY = 0.7)
-			melee_damage_lower = 5
-			melee_damage_upper = 5
+			melee_damage_lower = 7
+			melee_damage_upper = 7
 			next_move_modifier = 0.3///attack as fast as you can click, but your actual hits are basically tickle damage :))
 			to_chat(src, "<span class='danger'><B>You switch to combat mode.</span></B>")
 			toggle = FALSE
