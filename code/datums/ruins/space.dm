@@ -18,6 +18,12 @@
 	description = "In case society crumbles, we will be able to restore our zoos to working order with the breeding stock kept in these 100% secure and unbreachable storage facilities. \
 	At no point has anything escaped. That's our story, and we're sticking to it."
 
+/datum/map_template/ruin/space/excavator_DK
+	id = "Excavator-DK"
+	suffix = "excavator_DK.dmm"
+	name = "Excavator DK Class"
+	description = "A heavily damaged DK class excavator"
+
 /datum/map_template/ruin/space/asteroid1
 	id = "asteroid1"
 	suffix = "asteroid1.dmm"
@@ -308,9 +314,3 @@
 	suffix = "syndicatewreck01.dmm"
 	name = "Syndicate Station Wreckage"
 	description = "An old wreck, made of plastitanium. Somehow, it looks more filled than it ever was..."
-
-/datum/map_template/ruin/space/cult_templar
-	id = "cult_templar"
-	suffix = "chaosmarine.dmm"
-	name = "Bloody Lair"
-	description = "A seemingly abandoned blood cult base in space, but why was it abandoned?"

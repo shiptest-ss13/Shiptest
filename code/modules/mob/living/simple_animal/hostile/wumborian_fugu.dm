@@ -37,6 +37,10 @@
 	var/datum/action/innate/fugu/expand/E
 	loot = list(/obj/item/fugu_gland{layer = ABOVE_MOB_LAYER})
 
+/mob/living/simple_animal/hostile/asteroid/fugu/asteroid
+	maxHealth = 40
+	health = 40
+
 /mob/living/simple_animal/hostile/asteroid/fugu/Initialize()
 	. = ..()
 	E = new

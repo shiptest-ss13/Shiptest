@@ -1,7 +1,6 @@
 /obj/item/gun/energy/e_gun/adv_stopping
 	name = "advanced stopping revolver"
 	desc = "An advanced energy revolver with the capacity to shoot both disabler and lethal lasers, as well as futuristic safari nets."
-	icon = 'whitesands/icons/obj/guns/energy.dmi'
 	icon_state = "bsgun"
 	item_state = "gun"
 	force = 7
@@ -12,7 +11,6 @@
 /obj/item/gun/energy/e_gun/smg
 	name = "\improper E-TAR SMG"
 	desc = "A dual-mode energy gun capable of discharging weaker shots at a much faster rate than the standard energy gun."
-	icon = 'whitesands/icons/obj/guns/energy.dmi'
 	icon_state = "esmg"
 	ammo_type = list(/obj/item/ammo_casing/energy/disabler/smg, /obj/item/ammo_casing/energy/laser/smg)
 	ammo_x_offset = 2
@@ -31,7 +29,6 @@
 	icon_state = "ioteshotgun"
 	item_state = "shotgun_combat"
 	shaded_charge = 1
-	icon = 'icons/obj/guns/energy.dmi' //to avoid conflicts with rockplanet
 	w_class = WEIGHT_CLASS_BULKY
 	ammo_type = list(/obj/item/ammo_casing/energy/disabler/scatter/ultima, /obj/item/ammo_casing/energy/laser/ultima)
 	var/obj/item/modular_computer/integratedNTOS
