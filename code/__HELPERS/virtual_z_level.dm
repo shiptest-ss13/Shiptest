@@ -17,5 +17,5 @@
 	if(vlevel)
 		return vlevel.id
 
-	WARNING("Tried to get a virtual z level outside of one")
+	stack_trace("Tried to get a virtual z level outside of one")
 	return 0

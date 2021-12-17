@@ -241,8 +241,8 @@ SUBSYSTEM_DEF(overmap)
 		if(ispath(ruin_type))
 			ruin_type = new ruin_type
 
-	var/height = 125
-	var/width = 125
+	var/height = 124
+	var/width = 124
 
 	var/list/allocation_coords = SSmapping.get_free_allocation(ALLOCATION_QUADRANT, width, height)
 

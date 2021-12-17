@@ -294,7 +294,7 @@ SUBSYSTEM_DEF(mapping)
 				return allocation_list
 
 		if(created_new_level)
-			WARNING("MAPPING: We have failed to find allocation after creating a new level just for it, something went terribly wrong")
+			stack_trace("MAPPING: We have failed to find allocation after creating a new level just for it, something went terribly wrong")
 			return FALSE
 		/// None of the levels could faciliate a new allocation, make a new one
 		created_new_level = TRUE
