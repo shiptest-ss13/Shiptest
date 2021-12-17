@@ -45,7 +45,7 @@ GLOBAL_VAR(test_log)
 		mapzone = new("Integration Test Mapzone")
 		var/datum/sub_map_zone/subzone = new("Integration Test Subzone", ZTRAITS_STATION, mapzone, allocation[1], allocation[2], allocation[1] + width, allocation[2] + height, allocation[3])
 		subzone.reserve_margin(2)
-		subzone.fill_in(/turf/open/floor/iron, /area/testroom)
+		subzone.fill_in(/turf/open/floor/plasteel, /area/testroom)
 
 	allocated = new
 	var/datum/sub_map_zone/subzone = mapzone.sub_map_zones[1]
