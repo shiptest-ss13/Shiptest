@@ -2273,6 +2273,13 @@
 	color = "#623301"
 	taste_mult = 1.2
 
+/datum/reagent/liquidadamantine
+	name = "Liquid Adamantine"
+	description = "A legengary lifegiving metal liquified."
+	color = "#10cca6" //RGB: 16, 204, 166
+	taste_description = "lifegiving metal"
+	can_synth = FALSE
+
  // "Second wind" reagent generated when someone suffers a wound. Epinephrine, adrenaline, and stimulants are all already taken so here we are
 /datum/reagent/determination
 	name = "Determination"

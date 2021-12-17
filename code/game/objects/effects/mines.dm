@@ -82,14 +82,6 @@
 	name = "stun mine"
 	var/stun_time = 80
 
-/obj/effect/mine/shrapnel
-	name = "shrapnel mine"
-	var/shrapnel_type = /obj/projectile/bullet/shrapnel
-	var/shrapnel_magnitude = 3
-
-/obj/effect/mine/shrapnel/mineEffect(mob/victim)
-	AddComponent(/datum/component/pellet_cloud, projectile_type=shrapnel_type, magnitude=shrapnel_magnitude)
-
 /obj/effect/mine/shrapnel/human_only
 	name = "sophisticated shrapnel mine"
 	desc = "A deadly mine, this one seems to be modified to trigger for humans only?"
@@ -277,6 +269,16 @@
 /obj/effect/mine/shrapnel/capspawn/now_armed()
 	. = ..()
 	set_light_on(TRUE)
+
+/obj/effect/mine/shrapnel/human_only
+	name = "sophisticated shrapnel mine"
+	desc = "A deadly mine, this one seems to be modified to trigger for humans only?"
+
+/obj/effect/mine/shrapnel/human_only/Crossed(atom/movable/AM)
+	if(!ishuman(AM))
+		return
+	. = ..()
+
 
 /obj/item/minespawner
 	name = "landmine deployment device"
