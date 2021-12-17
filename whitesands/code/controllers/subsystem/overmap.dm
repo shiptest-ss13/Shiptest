@@ -243,7 +243,7 @@ SUBSYSTEM_DEF(overmap)
 
 	var/encounter_name = "Super coolio encoutnero"
 	var/datum/map_zone/mapzone = new(encounter_name)
-	var/datum/sub_map_zone/subzone = new(encounter_name, list(ZTRAIT_MINING = TRUE), mapzone, allocation_coords[1], allocation_coords[1], allocation_coords[1] + width, allocation_coords[2] + height, allocation_coords[3])
+	var/datum/sub_map_zone/subzone = new(encounter_name, list(ZTRAIT_MINING = TRUE), mapzone, allocation_coords[1], allocation_coords[2], allocation_coords[1] + width, allocation_coords[2] + height, allocation_coords[3])
 	
 	subzone.reserve_margin(5)
 

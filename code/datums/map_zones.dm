@@ -36,10 +36,16 @@
 	. = ..()
 
 /datum/map_zone/Destroy()
+	SSmapping.map_zones -= src
 	QDEL_NULL(weather_controller)
-	for(var/submapzone in sub_map_zones)
-		qdel(submapzone)
+	for(var/datum/sub_map_zone/subzone as anything in sub_map_zones)
+		qdel(subzone)
 	return ..()
+
+/// Clears all of what's inside the virtual levels managed by the mapzone.
+/datum/map_zone/proc/clear_reservation()
+	for(var/datum/sub_map_zone/subzone as anything in sub_map_zones)
+		subzone.clear_reservation()
 
 ///If something requires a level to have a weather controller, use this (rad storm, wizard bus events etc, ash staff etc.)
 /datum/map_zone/proc/assert_weather_controller()
@@ -390,7 +396,8 @@
 	for(var/dir in crosslinked)
 		if(crosslinked[dir]) //Because it could be linking with itself
 			unlink(dir)
-	clear_reservation()
+	var/datum/space_level/level = SSmapping.z_list[z_value]
+	level.sub_map_zones -= src
 	parent_map_zone.remove_sub_zone(src)
 	return ..()
 

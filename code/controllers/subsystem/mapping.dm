@@ -52,8 +52,9 @@ SUBSYSTEM_DEF(mapping)
 	preloadTemplates()
 	run_map_generation()
 
-	// Add the transit level
-	new_reserved_level()
+	// Add the transit levels
+	init_reserved_levels()
+
 	repopulate_sorted_areas()
 	return ..()
 
@@ -318,14 +319,10 @@ SUBSYSTEM_DEF(mapping)
 	qdel(reservation)
 	return null
 
-/datum/controller/subsystem/mapping/proc/new_reserved_level()
-	num_of_res_levels += 1
-	var/reserved_name = "Reserved [num_of_res_levels]"
-	var/datum/space_level/new_reserved = add_new_zlevel(reserved_name)
-	var/datum/map_zone/mapzone = new(reserved_name)
-	new /datum/sub_map_zone(reserved_name, list(ZTRAIT_RESERVED = TRUE), mapzone, 1, 1, world.maxx, world.maxy, world.maxz)
-	initialize_reserved_level(new_reserved.z_value)
-	return new_reserved
+/// Creates basic physical levels so we dont have to do that during runtime every time, nothing bad will happen if this wont run, as allocation will handle adding new levels
+/datum/controller/subsystem/mapping/proc/init_reserved_levels()
+	add_new_zlevel("Free Allocation Level", allocation_type = ALLOCATION_FREE)
+	add_new_zlevel("Quadrant Allocation Level", allocation_type = ALLOCATION_QUADRANT)
 
 //This is not for wiping reserved levels, use wipe_reservations() for that. //todo
 /datum/controller/subsystem/mapping/proc/initialize_reserved_level(z)
@@ -462,7 +459,8 @@ SUBSYSTEM_DEF(mapping)
 			if((target_x < 1 || target_x > world.maxx) || (target_y < 1 || upper_target_y > world.maxy))
 				return //Out of bounds
 
-			if(!level.is_point_allocated(target_x, target_y) && !level.is_point_allocated(upper_target_x, target_y))
+			if(!level.is_point_allocated(target_x, target_y) && !level.is_point_allocated(upper_target_x, upper_target_y))
+				log_world("Passed allocation: [target_x], [target_y], [level.z_value]")
 				return list(target_x, target_y, level.z_value) //hallelujah we found the unallocated spot
 			target_y += ALLOCATION_FIND_JUMP_DIST
 		target_x += ALLOCATION_FIND_JUMP_DIST

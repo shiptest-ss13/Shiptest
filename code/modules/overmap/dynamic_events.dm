@@ -30,7 +30,12 @@
 
 /obj/structure/overmap/dynamic/Destroy()
 	. = ..()
-	QDEL_NULL(mapzone)
+	remove_mapzone()
+
+/obj/structure/overmap/dynamic/proc/remove_mapzone()
+	if(mapzone)
+		mapzone.clear_reservation()
+		QDEL_NULL(mapzone)
 
 /obj/structure/overmap/dynamic/ship_act(mob/user, obj/structure/overmap/ship/simulated/acting)
 	var/prev_state = acting.state
@@ -189,7 +194,7 @@
 		else
 			forceMove(SSovermap.get_unused_overmap_square())
 		choose_level_type()
-		QDEL_NULL(mapzone)
+		remove_mapzone()
 
 	if(reserve_dock)
 		qdel(reserve_dock, TRUE)
@@ -214,7 +219,7 @@
 	if(length(mapzone.get_alive_client_mobs()))
 		return //Dont fuck over stranded people? tbh this shouldn't be called on this condition, instead of bandaiding it inside
 
-	QDEL_NULL(mapzone)
+	remove_mapzone()
 	qdel(src)
 
 /area/overmap_encounter

@@ -29,10 +29,12 @@
 		if(reserve_on_z(z_level))
 			return TRUE
 
+	/*
 	// If we didn't return at this point, theres a good chance we ran out of room on the exisiting reserved z levels, so lets try a new one
 	var/datum/space_level/new_reserved = SSmapping.new_reserved_level()
 	if(reserve_on_z(new_reserved.z_value))
 		return TRUE
+	*/
 
 	// fuck
 	return FALSE

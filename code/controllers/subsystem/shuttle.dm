@@ -44,8 +44,8 @@ SUBSYSTEM_DEF(shuttle)
 	var/obj/docking_port/mobile/preview_shuttle
 	/// The template of the shuttle manipulator's currently loaded preview shuttle
 	var/datum/map_template/shuttle/preview_template
-	/// The turf reservation that the preview shuttle is loaded into
-	var/datum/turf_reservation/preview_reservation
+	/// The mapzone that the preview shuttle is loaded into
+	var/datum/map_zone/preview_mapzone
 
 /datum/controller/subsystem/shuttle/Initialize(timeofday)
 	ordernum = rand(1, 9000)
@@ -173,7 +173,7 @@ SUBSYSTEM_DEF(shuttle)
 
 	var/transist_name = "Transit map zone"
 	var/datum/map_zone/mapzone = new(transist_name)
-	var/datum/sub_map_zone/subzone = new(transist_name, list(ZTRAIT_RESERVED = TRUE), mapzone, allocation_coords[1], allocation_coords[1], allocation_coords[1] + transit_width, allocation_coords[2] + transit_height, allocation_coords[3])
+	var/datum/sub_map_zone/subzone = new(transist_name, list(ZTRAIT_RESERVED = TRUE), mapzone, allocation_coords[1], allocation_coords[2], allocation_coords[1] + transit_width, allocation_coords[2] + transit_height, allocation_coords[3])
 	
 	subzone.reserve_margin(TRANSIT_BORDER_RESERVE)
 	
@@ -245,7 +245,7 @@ SUBSYSTEM_DEF(shuttle)
 
 	preview_shuttle = SSshuttle.preview_shuttle
 	preview_template = SSshuttle.preview_template
-	preview_reservation = SSshuttle.preview_reservation
+	preview_mapzone = SSshuttle.preview_mapzone
 
 /datum/controller/subsystem/shuttle/proc/is_in_shuttle_bounds(atom/A)
 	var/area/param_area = get_area(A)
@@ -297,7 +297,7 @@ SUBSYSTEM_DEF(shuttle)
 		preview_shuttle.jumpToNullSpace()
 		preview_shuttle = null
 		preview_template = null
-		QDEL_NULL(preview_reservation)
+		QDEL_NULL(preview_mapzone)
 
 	if(!preview_shuttle)
 		if(load_template(loading_template))
@@ -355,18 +355,29 @@ SUBSYSTEM_DEF(shuttle)
 	preview_shuttle = null
 	preview_template = null
 	selected = null
-	QDEL_NULL(preview_reservation)
+	QDEL_NULL(preview_mapzone)
 
 /// Internal template loading proc. Do not call, instead use [/datum/controller/subsystem/shuttle/proc/action_load]
 /datum/controller/subsystem/shuttle/proc/load_template(datum/map_template/shuttle/S)
 	PRIVATE_PROC(TRUE)
 	. = FALSE
-	preview_reservation = SSmapping.request_dynamic_reservation(S.width, S.height)
-	if(!preview_reservation)
-		CRASH("failed to reserve an area for shuttle template loading")
-	preview_reservation.fill_in(turf_type = /turf/open/space/transit/south)
+	//preview_reservation = SSmapping.request_dynamic_reservation(S.width, S.height)
+	var/width = S.width
+	var/height = S.height
 
-	var/turf/BL = TURF_FROM_COORDS_LIST(preview_reservation.bottom_left_coords)
+	var/list/allocation_coords = SSmapping.get_free_allocation(ALLOCATION_FREE, width, height)
+
+	var/mapzone_name = "Preview Shuttle Zone"
+	preview_mapzone = new(mapzone_name)
+	var/datum/sub_map_zone/subzone = new(mapzone_name, list(ZTRAIT_RESERVED = TRUE), preview_mapzone, allocation_coords[1], allocation_coords[2], allocation_coords[1] + width, allocation_coords[2] + height, allocation_coords[3])
+	
+	if(!preview_mapzone) ///Shouldn't ever happen
+		CRASH("failed to reserve an area for shuttle template loading")
+	//preview_reservation.fill_in(turf_type = /turf/open/space/transit/south)
+	subzone.fill_in(/turf/open/space/transit/south)
+
+	//var/turf/BL = TURF_FROM_COORDS_LIST(preview_reservation.bottom_left_coords)
+	var/turf/BL = locate(subzone.low_x, subzone.low_y, subzone.z_value)
 	S.load(BL, centered = FALSE, register = FALSE)
 
 	var/affected = S.get_affected_turfs(BL, centered=FALSE)
