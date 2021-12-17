@@ -358,7 +358,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
 	},
-/obj/effect/turf_decal/stripes{
+/obj/effect/turf_decal/industrial/warning{
 	dir = 1
 	},
 /obj/structure/cable{
@@ -2014,7 +2014,7 @@
 /obj/structure/sign/warning/deathsposal{
 	pixel_x = 32
 	},
-/obj/effect/turf_decal/stripes/red/box,
+/obj/effect/turf_decal/industrial/fire/full,
 /obj/structure/disposalpipe/trunk{
 	dir = 1
 	},
@@ -2405,7 +2405,7 @@
 /turf/open/floor/plasteel,
 /area/ruin/unpowered/syndicate_lava_base/dormitories)
 "ip" = (
-/obj/effect/turf_decal/stripes/red/corner,
+/obj/effect/turf_decal/industrial/fire/corner,
 /turf/open/floor/plasteel,
 /area/ruin/unpowered/syndicate_lava_base/main)
 "iq" = (
@@ -2414,7 +2414,7 @@
 /area/ruin/unpowered/syndicate_lava_base/main)
 "ir" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/stripes/red/line{
+/obj/effect/turf_decal/industrial/fire{
 	dir = 9
 	},
 /obj/effect/turf_decal/corner/neutral{
@@ -2448,7 +2448,7 @@
 /area/ruin/unpowered/syndicate_lava_base/main)
 "it" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/stripes/red/line{
+/obj/effect/turf_decal/industrial/fire{
 	dir = 5
 	},
 /obj/structure/filingcabinet,
@@ -2564,10 +2564,10 @@
 /turf/open/floor/plasteel,
 /area/ruin/unpowered/syndicate_lava_base/main)
 "iH" = (
-/obj/effect/turf_decal/stripes/red/line{
+/obj/effect/turf_decal/industrial/fire{
 	dir = 4
 	},
-/obj/effect/turf_decal/caution/red{
+/obj/effect/turf_decal/industrial/caution/red{
 	dir = 8
 	},
 /turf/open/floor/plasteel,
@@ -2672,7 +2672,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/syndicate_lava_base/dormitories)
 "ja" = (
-/obj/effect/turf_decal/stripes/red/corner{
+/obj/effect/turf_decal/industrial/fire/corner{
 	dir = 4
 	},
 /obj/machinery/button/door{
@@ -2688,7 +2688,7 @@
 /area/ruin/unpowered/syndicate_lava_base/main)
 "jb" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/stripes/red/line{
+/obj/effect/turf_decal/industrial/fire{
 	dir = 10
 	},
 /obj/effect/turf_decal/corner/neutral{
@@ -2709,7 +2709,7 @@
 /area/ruin/unpowered/syndicate_lava_base/main)
 "jd" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/stripes/red/line{
+/obj/effect/turf_decal/industrial/fire{
 	dir = 6
 	},
 /obj/effect/turf_decal/corner/neutral{
@@ -3002,7 +3002,7 @@
 /obj/structure/sign/warning/radiation/rad_area{
 	pixel_y = -32
 	},
-/obj/effect/turf_decal/stripes,
+/obj/effect/turf_decal/industrial/warning,
 /obj/structure/closet/radiation,
 /turf/open/floor/plasteel,
 /area/ruin/unpowered/syndicate_lava_base/engineering)
@@ -4742,7 +4742,7 @@
 	pixel_y = -5;
 	req_access_txt = "150"
 	},
-/obj/effect/turf_decal/caution/red{
+/obj/effect/turf_decal/industrial/caution/red{
 	dir = 1
 	},
 /obj/machinery/light/small{

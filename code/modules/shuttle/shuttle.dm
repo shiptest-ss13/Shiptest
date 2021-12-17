@@ -280,13 +280,9 @@
 	///if this shuttle can move docking ports other than the one it is docked at
 	var/can_move_docking_ports = FALSE
 	var/list/hidden_turfs = list()
-	///If this shuttle should undock roundstart. Wasp edit.
-	var/undock_roundstart
 
 	///The linked overmap object, if there is one
 	var/obj/structure/overmap/ship/simulated/current_ship
-	///The map template the shuttle was spawned from, if it was indeed created from a template
-	var/datum/map_template/shuttle/source_template
 	///List of spawn points on the ship
 	var/list/atom/spawn_points = list()
 
@@ -315,7 +311,7 @@
 		load()
 
 
-/obj/docking_port/mobile/proc/load()
+/obj/docking_port/mobile/proc/load(datum/map_template/shuttle/source_template)
 	shuttle_areas = list()
 	var/list/all_turfs = return_ordered_turfs(x, y, z, dir)
 	for(var/i in 1 to all_turfs.len)
@@ -329,15 +325,14 @@
 	initial_engines = count_engines()
 	current_engines = initial_engines
 
-	if(SSovermap.initialized)
-		SSovermap.setup_shuttle_ship(src)
+	SSovermap.setup_shuttle_ship(src, source_template)
 
 	#ifdef DOCKING_PORT_HIGHLIGHT
 	highlight("#0f0")
 	#endif
 
 // Called after the shuttle is loaded from template
-/obj/docking_port/mobile/proc/linkup(datum/map_template/shuttle/template, obj/docking_port/stationary/dock)
+/obj/docking_port/mobile/proc/linkup(obj/docking_port/stationary/dock)
 	for(var/place in shuttle_areas)
 		var/area/area = place
 		area.connect_to_shuttle(src, dock)

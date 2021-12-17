@@ -28,7 +28,7 @@ GLOBAL_LIST_EMPTY(cryopod_computers)
 	/// Whether or not to store items from people going into cryosleep.
 	var/allow_items = TRUE
 	/// The ship object representing the ship that this console is on.
-	var/obj/docking_port/mobile/linked_ship
+	var/obj/structure/overmap/ship/simulated/linked_ship
 
 /obj/machinery/computer/cryopod/Initialize()
 	. = ..()
@@ -40,7 +40,7 @@ GLOBAL_LIST_EMPTY(cryopod_computers)
 
 /obj/machinery/computer/cryopod/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock, idnum, override)
 	. = ..()
-	linked_ship = port
+	linked_ship = port.current_ship
 
 /obj/machinery/computer/cryopod/ui_interact(mob/user, datum/tgui/ui)
 	. = ..()
@@ -102,44 +102,44 @@ GLOBAL_LIST_EMPTY(cryopod_computers)
 			return
 
 		if("toggleAwakening")
-			linked_ship.current_ship.join_allowed = !linked_ship.current_ship.join_allowed
+			linked_ship.join_allowed = !linked_ship.join_allowed
 			return
 
 		if("setMemo")
-			if(!("newName" in params) || params["newName"] == linked_ship.current_ship.memo)
+			if(!("newName" in params) || params["newName"] == linked_ship.memo)
 				return
-			linked_ship.current_ship.memo = params["newName"]
+			linked_ship.memo = params["newName"]
 			return
 
 		if("adjustJobSlot")
-			if(!("toAdjust" in params) || !("delta" in params) || !COOLDOWN_FINISHED(linked_ship.current_ship, job_slot_adjustment_cooldown))
+			if(!("toAdjust" in params) || !("delta" in params) || !COOLDOWN_FINISHED(linked_ship, job_slot_adjustment_cooldown))
 				return
 			var/datum/job/target_job = locate(params["toAdjust"])
 			if(!target_job)
 				return
-			if(linked_ship.current_ship.job_slots[target_job] + params["delta"] < 0 || linked_ship.current_ship.job_slots[target_job] + params["delta"] > 4)
+			if(linked_ship.job_slots[target_job] + params["delta"] < 0 || linked_ship.job_slots[target_job] + params["delta"] > 4)
 				return
-			linked_ship.current_ship.job_slots[target_job] += params["delta"]
-			linked_ship.current_ship.job_slot_adjustment_cooldown = world.time + DEFAULT_JOB_SLOT_ADJUSTMENT_COOLDOWN
+			linked_ship.job_slots[target_job] += params["delta"]
+			linked_ship.job_slot_adjustment_cooldown = world.time + DEFAULT_JOB_SLOT_ADJUSTMENT_COOLDOWN
 			update_static_data(user)
 			return
 
 /obj/machinery/computer/cryopod/ui_data(mob/user)
 	. = list()
 	.["allowItems"] = allow_items
-	.["awakening"] = linked_ship.current_ship.join_allowed
-	.["cooldown"] = linked_ship.current_ship.job_slot_adjustment_cooldown - world.time
-	.["memo"] = linked_ship.current_ship.memo
+	.["awakening"] = linked_ship.join_allowed
+	.["cooldown"] = linked_ship.job_slot_adjustment_cooldown - world.time
+	.["memo"] = linked_ship.memo
 
 /obj/machinery/computer/cryopod/ui_static_data(mob/user)
 	. = list()
 	.["jobs"] = list()
-	for(var/datum/job/J as anything in linked_ship.current_ship.job_slots)
+	for(var/datum/job/J as anything in linked_ship.job_slots)
 		if(J.officer)
 			continue
 		.["jobs"] += list(list(
 			name = J.title,
-			slots = linked_ship.current_ship.job_slots[J],
+			slots = linked_ship.job_slots[J],
 			ref = REF(J),
 			max = linked_ship.source_template.job_slots[J] * 2
 		))

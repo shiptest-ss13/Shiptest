@@ -290,11 +290,6 @@
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
-"dh" = (
-/obj/effect/turf_decal/delivery,
-/obj/machinery/atmospherics/components/binary/volume_pump,
-/turf/open/floor/plasteel/mono/dark,
-/area/ship/engineering)
 "dw" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
@@ -846,6 +841,11 @@
 /obj/machinery/computer/helm,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
+"gV" = (
+/obj/effect/turf_decal/industrial/hatch/yellow,
+/obj/machinery/atmospherics/components/binary/volume_pump,
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/engineering)
 "gY" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 10
@@ -1777,6 +1777,19 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/electrical)
+"qz" = (
+/obj/docking_port/mobile{
+	can_move_docking_ports = 1;
+	dir = 4;
+	name = "SBD starfurys revenge";
+	port_direction = 8
+	},
+/obj/structure/railing,
+/obj/structure/railing{
+	dir = 1
+	},
+/turf/open/floor/plating/airless,
+/area/ship/external)
 "qD" = (
 /obj/effect/turf_decal/corner/bar{
 	dir = 1
@@ -3672,10 +3685,6 @@
 /obj/machinery/suit_storage_unit/syndicate,
 /turf/open/floor/carpet/red,
 /area/ship/security)
-"HN" = (
-/obj/effect/turf_decal/delivery,
-/turf/open/floor/plasteel/dark,
-/area/ship/engineering)
 "HO" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -3942,11 +3951,6 @@
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
-"JO" = (
-/obj/effect/turf_decal/delivery,
-/obj/machinery/atmospherics/pipe/simple/orange/visible,
-/turf/open/floor/plasteel/mono/dark,
-/area/ship/engineering)
 "JP" = (
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
@@ -3957,6 +3961,10 @@
 	icon_state = "1-2"
 	},
 /turf/open/floor/engine,
+/area/ship/engineering)
+"JQ" = (
+/obj/effect/turf_decal/industrial/hatch/yellow,
+/turf/open/floor/plasteel/dark,
 /area/ship/engineering)
 "JV" = (
 /obj/machinery/atmospherics/pipe/layer_manifold/visible,
@@ -4102,20 +4110,6 @@
 "LG" = (
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/dorm)
-"LN" = (
-/obj/docking_port/mobile{
-	can_move_docking_ports = 1;
-	dir = 4;
-	name = "SBD starfurys revenge";
-	port_direction = 8;
-	undock_roundstart = 1
-	},
-/obj/structure/railing,
-/obj/structure/railing{
-	dir = 1
-	},
-/turf/open/floor/plating/airless,
-/area/ship/external)
 "LO" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
@@ -4198,6 +4192,11 @@
 /obj/effect/turf_decal/atmos/oxygen,
 /turf/open/floor/engine/o2,
 /area/ship/engineering/atmospherics)
+"Mg" = (
+/obj/effect/turf_decal/industrial/hatch/yellow,
+/obj/machinery/atmospherics/pipe/simple/orange/visible,
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/engineering)
 "Mk" = (
 /obj/machinery/door/airlock/engineering/glass/critical{
 	id_tag = "starfurybcsupermatter_bolt";
@@ -5904,7 +5903,7 @@ av
 av
 Xu
 Xu
-LN
+qz
 Xu
 Xu
 Xu
@@ -6605,7 +6604,7 @@ PR
 Dd
 uq
 Sl
-dh
+gV
 wW
 rH
 GW
@@ -6659,7 +6658,7 @@ HR
 Hu
 uq
 Sl
-dh
+gV
 kV
 PS
 Wi
@@ -6826,7 +6825,7 @@ EK
 Pv
 Wy
 fw
-HN
+JQ
 aG
 aG
 ZV
@@ -6983,7 +6982,7 @@ Gr
 nH
 uq
 Ys
-JO
+Mg
 Xj
 hC
 Ru
@@ -7037,7 +7036,7 @@ PR
 Dd
 uq
 Ys
-JO
+Mg
 mB
 NE
 bj

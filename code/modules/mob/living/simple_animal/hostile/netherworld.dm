@@ -22,6 +22,13 @@
 	var/datum/action/innate/creature/teleport/teleport
 	var/is_phased = FALSE
 
+/mob/living/simple_animal/hostile/netherworld/asteroid
+	health = 40
+	maxHealth = 40
+	faction = list("mining")
+	melee_damage_lower = 10
+	melee_damage_upper = 10
+
 /mob/living/simple_animal/hostile/netherworld/Initialize()
 	. = ..()
 	if(phaser)
@@ -120,6 +127,11 @@
 	deathmessage = "wails as its form turns into a pulpy mush."
 	deathsound = 'sound/voice/hiss6.ogg'
 	phaser = FALSE
+
+/mob/living/simple_animal/hostile/netherworld/migo/asteroid
+	faction = list("mining")
+	melee_damage_lower = 10
+	melee_damage_upper = 10
 
 /mob/living/simple_animal/hostile/netherworld/migo/Initialize()
 	. = ..()

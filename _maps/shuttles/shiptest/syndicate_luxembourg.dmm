@@ -75,25 +75,6 @@
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/bridge)
-"cF" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
-/obj/effect/turf_decal/stripes,
-/obj/machinery/door/poddoor/shutters{
-	id = "warehouse"
-	},
-/obj/machinery/door/firedoor/border_only,
-/obj/machinery/door/firedoor/border_only{
-	dir = 1
-	},
-/obj/effect/turf_decal/corner/brown{
-	dir = 6
-	},
-/turf/open/floor/plasteel/dark,
-/area/ship/storage)
 "cQ" = (
 /obj/structure/table,
 /obj/item/radio/intercom/wideband,
@@ -277,6 +258,24 @@
 /obj/item/clothing/suit/hooded/explorer,
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
+"ft" = (
+/obj/effect/turf_decal/industrial/warning,
+/obj/machinery/door/poddoor/shutters{
+	id = "warehouse"
+	},
+/obj/machinery/button/door{
+	id = "warehouse";
+	pixel_x = -25
+	},
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/brown{
+	dir = 9
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/storage)
 "fI" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/medical)
@@ -946,24 +945,6 @@
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer4,
 /turf/open/floor/mineral/plastitanium/red,
 /area/ship/bridge)
-"tg" = (
-/obj/effect/turf_decal/stripes,
-/obj/machinery/door/poddoor/shutters{
-	id = "warehouse"
-	},
-/obj/machinery/button/door{
-	id = "warehouse";
-	pixel_x = -25
-	},
-/obj/machinery/door/firedoor/border_only,
-/obj/machinery/door/firedoor/border_only{
-	dir = 1
-	},
-/obj/effect/turf_decal/corner/brown{
-	dir = 9
-	},
-/turf/open/floor/plasteel/dark,
-/area/ship/storage)
 "tI" = (
 /obj/machinery/light{
 	dir = 4
@@ -1180,6 +1161,16 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
+"yp" = (
+/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
+/obj/docking_port/mobile{
+	can_move_docking_ports = 1;
+	dir = 2;
+	launch_status = 0
+	},
+/obj/machinery/door/poddoor/shutters,
+/turf/open/floor/plating,
+/area/ship/bridge)
 "yC" = (
 /obj/machinery/power/shuttle/engine/fueled/plasma{
 	dir = 1
@@ -1332,6 +1323,25 @@
 /obj/machinery/door/airlock/medical/glass,
 /turf/open/floor/plasteel/dark,
 /area/ship/medical)
+"Cj" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
+/obj/effect/turf_decal/industrial/warning,
+/obj/machinery/door/poddoor/shutters{
+	id = "warehouse"
+	},
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/brown{
+	dir = 6
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/storage)
 "Ck" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -2231,17 +2241,6 @@
 	},
 /turf/open/floor/carpet/donk,
 /area/ship/crew/dorm)
-"Zn" = (
-/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
-/obj/docking_port/mobile{
-	can_move_docking_ports = 1;
-	dir = 2;
-	launch_status = 0;
-	undock_roundstart = 1
-	},
-/obj/machinery/door/poddoor/shutters,
-/turf/open/floor/plating,
-/area/ship/bridge)
 "ZH" = (
 /obj/structure/cable{
 	icon_state = "1-4"
@@ -2350,7 +2349,7 @@ Pr
 fh
 Wj
 LQ
-tg
+ft
 QF
 MX
 Ka
@@ -2379,7 +2378,7 @@ fb
 Og
 zu
 gz
-cF
+Cj
 Cu
 GU
 dc
@@ -2541,7 +2540,7 @@ vp
 vp
 "}
 (10,1,1) = {"
-Zn
+yp
 je
 bR
 TW
