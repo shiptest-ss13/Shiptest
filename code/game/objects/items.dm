@@ -237,7 +237,7 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 		m.temporarilyRemoveItemFromInventory(src, TRUE)
 	for(var/X in actions)
 		qdel(X)
-	if(possessed == TRUE)
+	if(possessed)
 		for(var/mob/living/simple_animal/shade/S in contents)
 			to_chat(S, "<span class='userdanger'>You were destroyed!</span>")
 			qdel(S)
