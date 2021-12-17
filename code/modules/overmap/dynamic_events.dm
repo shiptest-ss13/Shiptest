@@ -213,7 +213,7 @@
 		return
 
 	if(mapzone)
-		if(length(mapzone.get_alive_client_mobs()))
+		if(length(mapzone.get_mind_mobs()))
 			return //Dont fuck over stranded people? tbh this shouldn't be called on this condition, instead of bandaiding it inside
 		if(SSovermap.generator_type == OVERMAP_GENERATOR_SOLAR)
 			forceMove(SSovermap.get_unused_overmap_square_in_radius())
@@ -242,7 +242,7 @@
 		return
 
 	// Duplicate code grrr
-	if(length(mapzone.get_alive_client_mobs()))
+	if(length(mapzone.get_mind_mobs()))
 		return //Dont fuck over stranded people? tbh this shouldn't be called on this condition, instead of bandaiding it inside
 
 	remove_mapzone()

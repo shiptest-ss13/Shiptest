@@ -483,9 +483,11 @@
 
 /datum/virtual_level/proc/get_mind_mobs()
 	. = list()
-	for(var/mob/Mob as anything in SSmobs.dead_players_by_zlevel[z_value])
-		if(is_in_bounds(Mob))
-			. += Mob
+	for(var/mob/living/living_mob as anything in GLOB.mob_living_list)
+		if(!living_mob.mind)
+			continue
+		if(is_in_bounds(living_mob))
+			. += living_mob
 
 /datum/virtual_level/proc/fill_in(turf/turf_type, area/area_override)
 	var/area/area_to_use = null
