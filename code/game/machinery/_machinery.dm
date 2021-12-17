@@ -161,14 +161,9 @@ Class Procs:
 	var/datum/controller/subsystem/processing/subsystem = locate(subsystem_type) in Master.subsystems
 	STOP_PROCESSING(subsystem, src)
 
-/obj/machinery/var/late_init = 0
-
 /obj/machinery/LateInitialize()
 	. = ..()
 	power_change()
-	if(late_init)
-		stack_trace("MACHINERY ALREADY LATE INITIALIZED")
-	late_init = TRUE
 	RegisterSignal(src, COMSIG_ENTER_AREA, .proc/power_change)
 
 /obj/machinery/Destroy()
