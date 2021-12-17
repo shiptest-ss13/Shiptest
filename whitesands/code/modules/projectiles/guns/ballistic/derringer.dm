@@ -1,7 +1,6 @@
 /obj/item/gun/ballistic/derringer
 	name = ".38 Derringer"
 	desc = "A easily concealable derringer. Uses .38 ammo."
-	icon = 'whitesands/icons/obj/guns/projectile.dmi'
 	icon_state = "derringer"
 	mag_type = /obj/item/ammo_box/magazine/internal/derr38
 	fire_sound = 'sound/weapons/gun/revolver/shot.ogg'
