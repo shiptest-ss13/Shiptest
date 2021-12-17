@@ -20,6 +20,7 @@
 		var/datum/map_zone/mapzone = new(name)
 		new /datum/sub_map_zone(name, traits, mapzone, 1, 1, world.maxx, world.maxy, I)
 
+/// Adds new physical space level. DO NOT USE THIS TO LOAD SOMETHING NEW. SSmapping.get_free_allocation() will create any levels nessecary and pass you coordinates to create a new virtual level
 /datum/controller/subsystem/mapping/proc/add_new_zlevel(name, z_type = /datum/space_level, allocation_type = ALLOCATION_FREE)
 	SEND_GLOBAL_SIGNAL(COMSIG_GLOB_NEW_Z, args)
 	var/new_z = z_list.len + 1

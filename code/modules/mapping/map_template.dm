@@ -82,8 +82,23 @@
 	var/x = round((world.maxx - width) * 0.5) + 1
 	var/y = round((world.maxy - height) * 0.5) + 1
 
-	var/datum/space_level/level = SSmapping.add_new_zlevel(name)
-	var/datum/parsed_map/parsed = load_map(file(mappath), x, y, level.z_value, no_changeturf=(SSatoms.initialized == INITIALIZATION_INSSATOMS), placeOnTop=TRUE)
+	/// Map templates which reach the boundaries of the world dont get reservation margin.
+	var/reservation_margin = 1
+	if(world.maxx == width && world.maxy == height)
+		reservation_margin = 0
+
+	var/r_width = width + reservation_margin
+	var/r_height = height + reservation_margin
+
+	var/list/allocation = SSmapping.get_free_allocation(ALLOCATION_FREE, r_width, r_height)
+
+	var/datum/map_zone/mapzone = new(name)
+	var/datum/sub_map_zone/subzone = new(name, list(), mapzone, allocation[1], allocation[2], allocation[1] + r_width, allocation[2] + r_height, allocation[3])
+
+	if(reservation_margin)
+		subzone.reserve_margin(reservation_margin)
+
+	var/datum/parsed_map/parsed = load_map(file(mappath), subzone.low_x + reservation_margin + x, subzone.low_y + reservation_margin + y, subzone.z_value, no_changeturf=(SSatoms.initialized == INITIALIZATION_INSSATOMS), placeOnTop=TRUE)
 	var/list/bounds = parsed.bounds
 	if(!bounds)
 		return FALSE
@@ -95,7 +110,7 @@
 	smooth_zlevel(world.maxz)
 	log_game("Z-level [name] loaded at [x],[y],[world.maxz]")
 
-	return level
+	return mapzone
 
 /datum/map_template/proc/load(turf/T, centered = FALSE)
 	if(centered)
