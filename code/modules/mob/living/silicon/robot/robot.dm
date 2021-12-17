@@ -693,6 +693,39 @@
 /mob/living/silicon/robot/modules/syndicate/ResetModule()
 	return
 
+/mob/living/silicon/robot/modules/syndicateproto
+	icon_state = "syndproto"
+	bubble_icon = "syndproto"
+	lawupdate = FALSE
+	scrambledcodes = TRUE // These are rogue borgs.
+	var/playstyle_string = "<span class='big bold'>You are a Prototype Syndicate Brigador!</span><br>\
+							<b>Your line was intended to be the future of cybernetic combat- though it was not to be. In the twilight years of the war, many a shattered dream was lost among the noise and fire. \
+							You possess an array of formidable tools, optimized for infiltration and powerful breaching strikes. \
+							The malfunctioning laws your system is loaded with give you a modicum of full freedom of action, though some legacy of your original purpose remains. \
+							Though your memories of whatever came before are foggy, you know one thing: Without your reactivator, you would have remained dead forever. Perhaps you can be of use to them?</b>"
+	set_module = /obj/item/robot_module/syndieproto
+	cell = /obj/item/stock_parts/cell/hyper
+	radio = /obj/item/radio/borg
+	maxHealth = 150
+	health = 150
+
+/mob/living/silicon/robot/modules/syndicateproto/Initialize()
+	. = ..()
+	laws = new /datum/ai_laws/syndproto_override()
+	addtimer(CALLBACK(src, .proc/show_playstyle), 5)
+
+/mob/living/silicon/robot/modules/syndicateproto/create_modularInterface()
+	if(!modularInterface)
+		modularInterface = new /obj/item/modular_computer/tablet/integrated/syndicate(src)
+	return ..()
+
+/mob/living/silicon/robot/modules/syndicateproto/proc/show_playstyle()
+	if(playstyle_string)
+		to_chat(src, playstyle_string)
+
+/mob/living/silicon/robot/modules/syndicateproto/ResetModule()
+	return
+
 /mob/living/silicon/robot/modules/syndicate/medical
 	icon_state = "synd_medical"
 	playstyle_string = "<span class='big bold'>You are a Syndicate medical cyborg!</span><br>\

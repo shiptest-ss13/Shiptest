@@ -639,7 +639,7 @@ if __name__ == "__main__":
                 # the lists below, as each file can have more than one
                 # hunk. Which index will go back to 0 several times
                 if line.is_added:
-                    to_add[line.target_line_no] = line.value
+                    to_add[line.target_line_no - 1] = line.value
                 if line.is_removed:
                     to_remove[line.source_line_no] = line.value
 
@@ -764,20 +764,28 @@ if __name__ == "__main__":
                 list(added_matches[jj].keys()),
                 list(removed_matches[jj].keys())
             )
+        all_files = sorted(all_files)
         files_count = len(all_files)
 
         # Collect subitems first, depending on changes
         to_show = list()
         if files_count:
-            for (index, file) in enumerate(all_files):
+            for f in all_files:
                 lines = []
                 show_items = []
                 inner_prefix = ""
 
-                matches = (matched_files[file] if file in matched_files else [])
-                adds = (added_matches[jj][file] if file in added_matches[jj] else [])
-                removes = (removed_matches[jj][file] if file in removed_matches[jj] else [])
+                matches = (matched_files[f] if f in matched_files else [])
+                adds = (added_matches[jj][f] if f in added_matches[jj] else [])
+                removes = (removed_matches[jj][f] if f in removed_matches[jj] else [])
 
+                if len(adds) or len(removes):
+                    before = [
+                        line_no
+                        for line_no in matches
+                        if (not line_no in adds) or (line_no in removes)
+                    ]
+                    show_items.append("Before  (%4i): %s" % (len(before), before))
                 if len(matches):
                     show_items.append("Current (%4i): %s" % (len(matches), matches))
                 if len(adds):
@@ -787,12 +795,7 @@ if __name__ == "__main__":
                     show_items.append("------- (%4i): %s" % (len(removes), removes))
                     inner_prefix = prefix
 
-                lines.append(
-                    "%2s %s" % (
-                        "\u2500\u252C",
-                        file
-                    )
-                )
+                lines.append("%2s %s" % ("\u2500\u252C", f))
                 for nn in range(0, len(show_items)):
                     inner_branch = "\u251C" if nn < len(show_items) - 1 else "\u2514"
                     lines.append("%2s %s" % (
