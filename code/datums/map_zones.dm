@@ -5,7 +5,7 @@
 	var/next_subzone_id = 0
 	var/list/traits
 	//var/datum/overmap_object/related_overmap_object
-	var/parallax_direction_override
+	var/parallax_movedir
 	/// Weather controller for this level
 	var/datum/weather_controller/weather_controller
 	/// List of all sub map zones this map zone contains
@@ -34,6 +34,12 @@
 	next_id++
 	id = next_id
 	. = ..()
+
+/datum/map_zone/Destroy()
+	QDEL_NULL(weather_controller)
+	for(var/submapzone in sub_map_zones)
+		qdel(submapzone)
+	return ..()
 
 ///If something requires a level to have a weather controller, use this (rad storm, wizard bus events etc, ash staff etc.)
 /datum/map_zone/proc/assert_weather_controller()
@@ -64,6 +70,10 @@
 	addsub.parent_map_zone = src
 	next_subzone_id++
 	addsub.id = next_subzone_id
+
+/datum/map_zone/proc/remove_sub_zone(datum/sub_map_zone/subsub)
+	sub_map_zones -= subsub
+	subsub.parent_map_zone = null
 
 #define MAPPING_MARGIN 5
 
@@ -375,6 +385,24 @@
 	passed_map.add_sub_zone(src)
 	reserve(lx, ly, hx, hy, passed_z)
 	return ..()
+
+/datum/sub_map_zone/Destroy()
+	for(var/dir in crosslinked)
+		if(crosslinked[dir]) //Because it could be linking with itself
+			unlink(dir)
+	clear_reservation()
+	parent_map_zone.remove_sub_zone(src)
+	return ..()
+
+/datum/sub_map_zone/proc/clear_reservation()
+	var/area/space_area = GLOB.areas_by_type[/area/space]
+	for(var/turf/turf as anything in get_block())
+		//Reset turf
+		turf.empty(RESERVED_TURF_TYPE, RESERVED_TURF_TYPE, null, TRUE)
+		// Reset area
+		var/area/old_area = get_area(turf)
+		space_area.contents += turf
+		turf.change_area(old_area, space_area)
 
 /datum/sub_map_zone/proc/get_trait(trait)
 	return traits[trait]

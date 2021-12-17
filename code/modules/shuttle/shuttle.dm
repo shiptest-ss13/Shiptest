@@ -208,7 +208,7 @@
 /obj/docking_port/stationary/transit
 	name = "transit dock"
 
-	var/datum/turf_reservation/reserved_area
+	var/datum/map_zone/reserved_mapzone
 	var/area/shuttle/transit/assigned_area
 	var/obj/docking_port/mobile/owner
 
@@ -228,9 +228,9 @@
 			if(owner.assigned_transit == src)
 				owner.assigned_transit = null
 			owner = null
-		if(!QDELETED(reserved_area))
-			qdel(reserved_area)
-		reserved_area = null
+		if(!QDELETED(reserved_mapzone))
+			qdel(reserved_mapzone)
+		reserved_mapzone = null
 	return ..()
 
 /obj/docking_port/mobile

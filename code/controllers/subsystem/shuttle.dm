@@ -133,6 +133,8 @@ SUBSYSTEM_DEF(shuttle)
 	if(!(M in transit_requesters))
 		transit_requesters += M
 
+#define TRANSIT_BORDER_RESERVE 3
+
 /datum/controller/subsystem/shuttle/proc/generate_transit_dock(obj/docking_port/mobile/M)
 	// First, determine the size of the needed zone
 	// Because of shuttle rotation, the "width" of the shuttle is not
@@ -167,15 +169,25 @@ SUBSYSTEM_DEF(shuttle)
 		if(WEST)
 			transit_path = /turf/open/space/transit/west
 
-	var/datum/turf_reservation/dynamic/proposal = SSmapping.request_dynamic_reservation(transit_width, transit_height)
-	if(!istype(proposal))
-		return FALSE
+	var/list/allocation_coords = SSmapping.get_free_allocation(ALLOCATION_FREE, transit_width, transit_height)
+
+	var/transist_name = "Transit map zone"
+	var/datum/map_zone/mapzone = new(transist_name)
+	var/datum/sub_map_zone/subzone = new(transist_name, list(ZTRAIT_RESERVED = TRUE), mapzone, allocation_coords[1], allocation_coords[1], allocation_coords[1] + transit_width, allocation_coords[2] + transit_height, allocation_coords[3])
+	
+	subzone.reserve_margin(TRANSIT_BORDER_RESERVE)
+	
+	mapzone.parallax_movedir = travel_dir
 
 	var/area/shuttle/transit/transit_area = new()
-	transit_area.parallax_movedir = travel_dir
-	proposal.fill_in(turf_type = transit_path, area_override = transit_area)
 
-	var/turf/bottomleft = locate(proposal.bottom_left_coords[1], proposal.bottom_left_coords[2], proposal.bottom_left_coords[3])
+	subzone.fill_in(transit_path, transit_area)
+
+	var/turf/bottomleft = locate(
+		subzone.low_x, 
+		subzone.low_y, 
+		subzone.z_value)
+
 	// Then create a transit docking port in the middle
 	var/coords = M.return_coords(0, 0, dock_dir)
 	/*  0------2
@@ -201,7 +213,7 @@ SUBSYSTEM_DEF(shuttle)
 	if(!midpoint)
 		return FALSE
 	var/obj/docking_port/stationary/transit/new_transit_dock = new(midpoint)
-	new_transit_dock.reserved_area = proposal
+	new_transit_dock.reserved_mapzone = mapzone
 	new_transit_dock.name = "Transit for [M.name]"
 	new_transit_dock.owner = M
 	new_transit_dock.assigned_area = transit_area
@@ -211,6 +223,8 @@ SUBSYSTEM_DEF(shuttle)
 
 	M.assigned_transit = new_transit_dock
 	return new_transit_dock
+
+#undef TRANSIT_BORDER_RESERVE
 
 /datum/controller/subsystem/shuttle/Recover()
 	if (istype(SSshuttle.mobile))

@@ -239,7 +239,7 @@ SUBSYSTEM_DEF(overmap)
 	var/height = 125
 	var/width = 125
 
-	var/list/allocation_coords = SSmapping.get_free_allocation(ALLOCATION_QUADRANT, 125, 125)
+	var/list/allocation_coords = SSmapping.get_free_allocation(ALLOCATION_QUADRANT, width, height)
 
 	var/encounter_name = "Super coolio encoutnero"
 	var/datum/map_zone/mapzone = new(encounter_name)
@@ -273,28 +273,6 @@ SUBSYSTEM_DEF(overmap)
 		primary_docking_turf.y, 
 		primary_docking_turf.z
 		)
-
-	/*
-	var/datum/turf_reservation/fixed/encounter_reservation = SSmapping.request_fixed_reservation()
-	encounter_reservation.fill_in(surface, /turf/closed/indestructible/blank, target_area)
-
-	if(ruin_type) // loaded in after the reservation so we can place inside the reservation
-		var/turf/ruin_turf = locate(rand(encounter_reservation.bottom_left_coords[1]+6,encounter_reservation.top_right_coords[1]-ruin_type.width-6),
-									encounter_reservation.top_right_coords[2]-ruin_type.height-6,
-									encounter_reservation.top_right_coords[3])
-		ruin_type.load(ruin_turf)
-
-	if(mapgen) //Does AFTER the ruin is loaded so that it does not spawn flora/fauna in the ruin
-		mapgen.generate_terrain(encounter_reservation.get_non_border_turfs())
-
-	// locates the first dock in the bottom left, accounting for padding and the border
-	var/turf/primary_docking_turf = locate(
-		encounter_reservation.bottom_left_coords[1]+RESERVE_DOCK_DEFAULT_PADDING+1,
-		encounter_reservation.bottom_left_coords[2]+RESERVE_DOCK_DEFAULT_PADDING+1,
-		encounter_reservation.bottom_left_coords[3])
-	// now we need to offset to account for the first dock
-	var/turf/secondary_docking_turf = locate(primary_docking_turf.x+RESERVE_DOCK_MAX_SIZE_LONG+RESERVE_DOCK_DEFAULT_PADDING, primary_docking_turf.y, primary_docking_turf.z)
-	*/
 
 	//This check exists because docking ports don't like to be deleted.
 	var/obj/docking_port/stationary/primary_dock = new(primary_docking_turf)
