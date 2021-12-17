@@ -11,7 +11,7 @@
 
 /obj/item/survey_handheld/advanced
 	name = "Advanced Survey Handheld"
-	desc = "An improved version of its predeces	sor this tool collects large amounts of data."
+	desc = "An improved version of its predecessor this tool collects large amounts of data."
 	icon_state = "survey-adv"
 	survey_value = 450
 	survey_delay = 3 SECONDS
