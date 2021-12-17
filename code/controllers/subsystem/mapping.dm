@@ -351,7 +351,7 @@ SUBSYSTEM_DEF(mapping)
 /datum/controller/subsystem/mapping/proc/find_allocation_in_level(datum/space_level/level, size_x, size_y)
 	var/target_x = 1
 	var/target_y = 1
-	/// Not perfect, checks 2 points, but something inbetween them could be intersecting. TODO: fix
+	/// Methodical trial and error method
 	while(target_x < world.maxx)
 		while(target_y < world.maxx)
 			var/upper_target_x = target_x+size_x
