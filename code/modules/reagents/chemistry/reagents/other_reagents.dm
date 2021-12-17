@@ -2309,57 +2309,7 @@
 		M.adjustStaminaLoss(-0.25*REM) // the more wounds, the more stamina regen
 	..()
 
-/datum/reagent/liquidadamantine
-	name = "Liquid Adamantine"
-	description = "A legengary lifegiving metal liquified."
-	color = "#10cca6" //RGB: 16, 204, 166
-	taste_description = "lifegiving metal"
-	can_synth = FALSE
-
-/datum/reagent/determination //from /tg/ , but since we dont have wounds its just weaker penthrite
-	name = "Determination"
-	description = "For when you need to push on a little more. Do NOT allow near plants."
-	reagent_state = LIQUID
-	color = "#D2FFFA"
-	metabolization_rate = 0.75 * REAGENTS_METABOLISM
-	self_consuming = TRUE
-	taste_description = "pure determination"
-	overdose_threshold = 30
-
-/datum/reagent/determination/on_mob_add(mob/living/M)
-	. = ..()
-	to_chat(M,"<span class='notice'>You feel like your heart can take on the world!")
-	ADD_TRAIT(M, TRAIT_NOSOFTCRIT,type)
-
-/datum/reagent/determination/on_mob_life(mob/living/carbon/human/H)
-	if(H.health <= HEALTH_THRESHOLD_CRIT && H.health > H.crit_threshold)
-
-		H.adjustBruteLoss(-2 * REM, 0)
-		H.adjustOxyLoss(-6 * REM, 0)
-
-		H.losebreath = 0
-
-		H.adjustOrganLoss(ORGAN_SLOT_HEART,max(1,volume/10)) // your heart is barely keeping up!
-
-		H.Jitter(rand(0,2))
-		H.Dizzy(rand(0,2))
-
-
-		if(prob(33))
-			to_chat(H,"<span class='danger'>Your body is trying to give up, but your heart is still beating!</span>")
-	. = ..()
-
-/datum/reagent/determination/on_mob_end_metabolize(mob/living/M)
-	REMOVE_TRAIT(M, TRAIT_NOSOFTCRIT,type)
-	. = ..()
-
-/datum/reagent/determination/overdose_process(mob/living/carbon/human/H)
-	to_chat(H,"<span class='danger'>You feel your heart rupturing in two!</span>")
-	H.adjustStaminaLoss(10)
-	H.adjustOrganLoss(ORGAN_SLOT_HEART,100)
-	H.set_heartattack(TRUE)
-
-/datum/reagent/crystal_reagent
+/datum/reagent/crystal_reagent //todo, get someoen to add recipies for this
 	name = "Crystal Reagent"
 	description = "A strange crystal substance. Heals faster than omnizine."
 	reagent_state = LIQUID

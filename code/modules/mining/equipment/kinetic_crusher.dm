@@ -671,7 +671,7 @@
 	custom_materials = list(/datum/material/titanium=5000, /datum/material/iron=2075)
 	hitsound = 'sound/weapons/blade1.ogg'
 	attack_verb = list("sliced", "bisected", "diced", "chopped", "filleted")
-	sharpness = IS_SHARP
+	sharpness = SHARP_EDGED
 	obj_flags = UNIQUE_RENAME
 	light_color = "#fb6767"
 	light_system = MOVABLE_LIGHT
