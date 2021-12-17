@@ -67,6 +67,7 @@ SUBSYSTEM_DEF(air)
 	var/list/firelocks = list()
 	var/firelocks_requires_updates = TRUE
 	var/slow_decomp_threshold = 200
+	var/planet_equalize_enabled = TRUE
 
 /datum/controller/subsystem/air/stat_entry(msg)
 	msg += "C:{"
