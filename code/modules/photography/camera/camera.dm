@@ -1,5 +1,6 @@
 
 #define CAMERA_PICTURE_SIZE_HARD_LIMIT 21
+#define CAMERA_PICTURE_SIZE_HARD_MINIMUM 1
 
 /obj/item/camera
 	name = "camera"
@@ -147,7 +148,7 @@
 
 	icon_state = state_off
 
-	INVOKE_ASYNC(src, .proc/captureimage, target, user, flag, picture_size_x - 1, picture_size_y - 1)
+	//INVOKE_ASYNC(src, .proc/captureimage, target, user, flag, picture_size_x - 1, picture_size_y - 1)
 
 
 /obj/item/camera/proc/cooldown()
@@ -161,17 +162,19 @@
 	to_chat(user, P.desc)
 	qdel(P)
 
+
 /obj/item/camera/proc/captureimage(atom/target, mob/user, flag, size_x = 1, size_y = 1)
 	if(flash_enabled)
 		set_light_on(TRUE)
 		addtimer(CALLBACK(src, .proc/flash_end), FLASH_LIGHT_DURATION, TIMER_OVERRIDE|TIMER_UNIQUE)
+	/*
 	blending = TRUE
 	var/turf/target_turf = get_turf(target)
 	if(!isturf(target_turf))
 		blending = FALSE
 		return FALSE
-	size_x = clamp(size_x, 0, CAMERA_PICTURE_SIZE_HARD_LIMIT)
-	size_y = clamp(size_y, 0, CAMERA_PICTURE_SIZE_HARD_LIMIT)
+	size_x = clamp(size_x, CAMERA_PICTURE_SIZE_HARD_MINIMUM, CAMERA_PICTURE_SIZE_HARD_LIMIT)
+	size_y = clamp(size_y, CAMERA_PICTURE_SIZE_HARD_MINIMUM, CAMERA_PICTURE_SIZE_HARD_LIMIT)
 	var/list/desc = list("This is a photo of an area of [size_x+1] meters by [size_y+1] meters.")
 	var/list/mobs_spotted = list()
 	var/list/dead_spotted = list()
@@ -214,6 +217,7 @@
 	var/datum/picture/P = new("picture", desc.Join(" "), mobs_spotted, dead_spotted, get_icon, null, psize_x, psize_y, blueprints)
 	after_picture(user, P, flag)
 	blending = FALSE
+*/
 
 
 /obj/item/camera/proc/flash_end()

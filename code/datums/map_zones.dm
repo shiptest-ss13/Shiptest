@@ -75,7 +75,7 @@
 	sub_map_zones += addsub
 	addsub.parent_map_zone = src
 	next_subzone_id++
-	addsub.id = next_subzone_id
+	addsub.relative_id = next_subzone_id
 
 /datum/map_zone/proc/remove_sub_zone(datum/sub_map_zone/subsub)
 	sub_map_zones -= subsub
@@ -85,7 +85,9 @@
 
 /datum/sub_map_zone
 	var/name = "Sub Map Zone"
+	var/relative_id
 	var/id
+	var/static/next_id = 0
 	var/datum/map_zone/parent_map_zone
 	/// Z level which contains this sub map zone
 	var/datum/space_level/parent_level
@@ -386,6 +388,8 @@
 			nb_cur_turf.destination_z = cur_mirage_turf.z
 
 /datum/sub_map_zone/New(passed_name, list/passed_traits, datum/map_zone/passed_map, lx, ly, hx, hy, passed_z)
+	next_id++
+	id = next_id
 	name = passed_name
 	traits = passed_traits.Copy()
 	passed_map.add_sub_zone(src)

@@ -870,7 +870,3 @@
 
 /obj/docking_port/mobile/emergency/on_emergency_dock()
 	return
-
-/obj/docking_port/mobile/get_virtual_z_level()
-	var/datum/turf_reservation/TR = SSmapping.get_turf_reservation_at_coords(x, y, z)
-	return TR?.virtual_z_level || z

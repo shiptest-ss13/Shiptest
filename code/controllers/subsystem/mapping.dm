@@ -33,12 +33,6 @@ SUBSYSTEM_DEF(mapping)
 	var/list/datum/space_level/z_list
 	var/datum/space_level/empty_space
 
-	// reserve stuff
-	var/list/reservations_by_level = list()	// list of lists of turf reservations (not reserved turfs) by z level. "[zlevel_of_reserve]" = list(reserves)
-	var/list/turf/unused_turfs = list()		// turfs on reserveable z-levels that are not currently reserved but are available to be. "[zlevel_of_turf]" = list(turfs)
-	var/clearing_reserved_turfs = FALSE 	// whether we're currently clearing out all the reserves
-	var/num_of_res_levels = 0				// number of z-levels for reserving
-
 	/// List of all map zones
 	var/list/map_zones = list()
 
@@ -93,11 +87,6 @@ SUBSYSTEM_DEF(mapping)
 	shelter_templates = SSmapping.shelter_templates
 
 	z_list = SSmapping.z_list
-
-	reservations_by_level = SSmapping.reservations_by_level
-	unused_turfs = SSmapping.unused_turfs
-	clearing_reserved_turfs = SSmapping.clearing_reserved_turfs
-	num_of_res_levels = SSmapping.num_of_res_levels
 
 #define INIT_ANNOUNCE(X) to_chat(world, "<span class='boldannounce'>[X]</span>"); log_world(X)
 /datum/controller/subsystem/mapping/proc/LoadGroup(list/errorList, name, path, files, list/traits, list/default_traits, silent = FALSE)
@@ -293,81 +282,11 @@ SUBSYSTEM_DEF(mapping)
 		var/area/A = B
 		A.reg_in_areas_in_z()
 
-//////////////////
-// RESERVATIONS //
-//////////////////
-
-/datum/controller/subsystem/mapping/proc/request_fixed_reservation()
-	UNTIL(!clearing_reserved_turfs)
-	var/datum/turf_reservation/fixed/reservation = new()
-
-	var/successful_reservation = reservation.reserve()
-	if(successful_reservation)
-		return reservation
-
-	qdel(reservation)
-	return null
-
-/datum/controller/subsystem/mapping/proc/request_dynamic_reservation(width, height)
-	UNTIL(!clearing_reserved_turfs)
-	var/datum/turf_reservation/dynamic/reservation = new(width, height)
-
-	var/successful_reservation = reservation.reserve()
-	if(successful_reservation)
-		return reservation
-
-	qdel(reservation)
-	return null
-
 /// Creates basic physical levels so we dont have to do that during runtime every time, nothing bad will happen if this wont run, as allocation will handle adding new levels
 /datum/controller/subsystem/mapping/proc/init_reserved_levels()
 	add_new_zlevel("Free Allocation Level", allocation_type = ALLOCATION_FREE)
 	add_new_zlevel("Quadrant Allocation Level", allocation_type = ALLOCATION_QUADRANT)
 
-//This is not for wiping reserved levels, use wipe_reservations() for that. //todo
-/datum/controller/subsystem/mapping/proc/initialize_reserved_level(z)
-	UNTIL(!clearing_reserved_turfs)				//regardless, lets add a check just in case.
-	clearing_reserved_turfs = TRUE			//This operation will likely clear any existing reservations, so lets make sure nothing tries to make one while we're doing it.
-	/*
-	if(!level_trait(z,ZTRAIT_RESERVED))
-		clearing_reserved_turfs = FALSE
-		CRASH("Invalid z level prepared for reservations.")
-	*/
-	var/turf/A = get_turf(locate(SHUTTLE_TRANSIT_BORDER,SHUTTLE_TRANSIT_BORDER,z))
-	var/turf/B = get_turf(locate(world.maxx - SHUTTLE_TRANSIT_BORDER,world.maxy - SHUTTLE_TRANSIT_BORDER,z))
-	var/block = block(A, B)
-	for(var/t in block)
-		// No need to empty() these, because it's world init and they're
-		// already /turf/open/space/basic.
-		var/turf/T = t
-		T.flags_1 |= UNUSED_RESERVATION_TURF_1
-
-	unused_turfs["[z]"] = block
-	reservations_by_level["[z]"] = list()
-	clearing_reserved_turfs = FALSE
-
-// For wiping all reserved levels.
-/datum/controller/subsystem/mapping/proc/wipe_reservations(wipe_safety_delay = 100)
-	if(clearing_reserved_turfs || !initialized)			//in either case this is just not needed.
-		return
-	clearing_reserved_turfs = TRUE
-	SSshuttle.transit_requesters.Cut()
-	message_admins("Clearing dynamic reservation space.")
-	var/list/obj/docking_port/mobile/in_transit = list()
-	for(var/i in SSshuttle.transit)
-		var/obj/docking_port/stationary/transit/T = i
-		if(!istype(T))
-			continue
-		in_transit[T] = T.get_docked()
-	var/go_ahead = world.time + wipe_safety_delay
-	if(in_transit.len)
-		message_admins("Shuttles in transit detected. Attempting to fast travel. Timeout is [wipe_safety_delay/10] seconds.")
-	var/list/cleared = list()
-	for(var/i in in_transit)
-		INVOKE_ASYNC(src, .proc/safety_clear_transit_dock, i, in_transit[i], cleared)
-	UNTIL((go_ahead < world.time) || (cleared.len == in_transit.len))
-	do_wipe_turf_reservations()
-	clearing_reserved_turfs = FALSE
 
 /datum/controller/subsystem/mapping/proc/safety_clear_transit_dock(obj/docking_port/stationary/transit/T, obj/docking_port/mobile/M, list/returning)
 	M.setTimer(0)
@@ -375,40 +294,6 @@ SUBSYSTEM_DEF(mapping)
 	if(!error)
 		returning += M
 		qdel(T, TRUE)
-
-//DO NOT CALL THIS PROC DIRECTLY, CALL wipe_reservations().
-/datum/controller/subsystem/mapping/proc/do_wipe_turf_reservations()
-	PRIVATE_PROC(TRUE)
-	UNTIL(initialized)							//This proc is for AFTER init, before init turf reservations won't even exist and using this will likely break things.
-	for(var/z_level in reservations_by_level)
-		for(var/reserve in reservations_by_level[z_level])
-			var/datum/turf_reservation/TR = reserve
-			if(!QDELETED(TR))
-				qdel(TR, TRUE)
-	var/list/clearing = list()
-	for(var/l in unused_turfs)			//unused_turfs is a assoc list by z = list(turfs)
-		if(islist(unused_turfs[l]))
-			clearing |= unused_turfs[l]
-	unused_turfs.Cut()
-	mark_turfs_as_unused(clearing)
-
-/datum/controller/subsystem/mapping/proc/mark_turfs_as_unused(list/turfs)
-	for(var/i in turfs)
-		var/turf/T = i
-		T.empty(RESERVED_TURF_TYPE, RESERVED_TURF_TYPE, null, TRUE)
-		LAZYINITLIST(unused_turfs["[T.z]"])
-		unused_turfs["[T.z]"] |= T
-		T.flags_1 |= UNUSED_RESERVATION_TURF_1
-		GLOB.areas_by_type[world.area].contents += T
-		CHECK_TICK
-
-/datum/controller/subsystem/mapping/proc/get_turf_reservation_at_coords(x, y, z)
-	for(var/datum/turf_reservation/TR as anything in reservations_by_level["[z]"])
-		if(x < TR.bottom_left_coords[1] || x > TR.top_right_coords[1])
-			continue
-		if(y < TR.bottom_left_coords[2] || y > TR.top_right_coords[2])
-			continue
-		return TR
 
 /datum/controller/subsystem/mapping/proc/get_map_zone_weather_controller(atom/Atom)
 	var/datum/map_zone/mapzone = get_map_zone(Atom)
@@ -459,10 +344,11 @@ SUBSYSTEM_DEF(mapping)
 			if((target_x < 1 || target_x > world.maxx) || (target_y < 1 || upper_target_y > world.maxy))
 				return //Out of bounds
 
-			if(!level.is_point_allocated(target_x, target_y) && !level.is_point_allocated(upper_target_x, upper_target_y))
-				log_world("Passed allocation: [target_x], [target_y], [level.z_value]")
+			if(level.is_box_free(target_x, target_y, upper_target_x, upper_target_y))
 				return list(target_x, target_y, level.z_value) //hallelujah we found the unallocated spot
+			
 			target_y += ALLOCATION_FIND_JUMP_DIST
+		
 		target_x += ALLOCATION_FIND_JUMP_DIST
 
 #undef ALLOCATION_FIND_JUMP_DIST

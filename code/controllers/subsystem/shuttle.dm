@@ -85,19 +85,18 @@ SUBSYSTEM_DEF(shuttle)
 				qdel(transit_dock, force=TRUE)
 				continue
 
-	if(!SSmapping.clearing_reserved_turfs)
-		while(transit_requesters.len)
-			var/requester = popleft(transit_requesters)
-			var/success = generate_transit_dock(requester)
-			if(!success) // BACK OF THE QUEUE
-				transit_request_failures[requester]++
-				if(transit_request_failures[requester] < MAX_TRANSIT_REQUEST_RETRIES)
-					transit_requesters += requester
-				else
-					var/obj/docking_port/mobile/M = requester
-					M.transit_failure()
-			if(MC_TICK_CHECK)
-				break
+	while(transit_requesters.len)
+		var/requester = popleft(transit_requesters)
+		var/success = generate_transit_dock(requester)
+		if(!success) // BACK OF THE QUEUE
+			transit_request_failures[requester]++
+			if(transit_request_failures[requester] < MAX_TRANSIT_REQUEST_RETRIES)
+				transit_requesters += requester
+			else
+				var/obj/docking_port/mobile/M = requester
+				M.transit_failure()
+		if(MC_TICK_CHECK)
+			break
 
 /// Requests a bluespace jump, which, after jump_request_time deciseconds, will initiate a bluespace jump.
 /datum/controller/subsystem/shuttle/proc/request_jump(modifier = 1)

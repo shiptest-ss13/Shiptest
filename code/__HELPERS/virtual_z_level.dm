@@ -13,9 +13,9 @@
   * Note: If the user teleports to another virtual z on the same z-level they will need to have reset_virtual_z called. (Teleportations etc.)
   */
 /atom/proc/get_virtual_z_level()
-	var/datum/turf_reservation/TR = SSmapping.get_turf_reservation_at_coords(x, y, z) //Try to see if the atom is in a turf reservation, and if so, return it's virtual z level
-	if(TR)
-		return TR.virtual_z_level
+	var/datum/sub_map_zone/subzone = SSmapping.get_sub_zone(src)
+	if(subzone)
+		return subzone.id
 
-	var/area/A = get_area(src)
-	return A?.get_virtual_z_level() || z
+	WARNING("Tried to get a virtual z level outside of one")
+	return 0

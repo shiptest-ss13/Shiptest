@@ -14,6 +14,7 @@
 				UNLINT(turn_angle = C.lying_angle) // this is the only place its okay to read lying directly
 	. = ..()
 
+/*
 /obj/item/camera/proc/camera_get_icon(list/turfs, turf/center, psize_x = 96, psize_y = 96, datum/turf_reservation/clone_area, size_x, size_y, total_x, total_y)
 	var/list/atoms = list()
 	var/skip_normal = FALSE
@@ -103,3 +104,4 @@
 		QDEL_LIST(atoms)
 
 	return res
+*/

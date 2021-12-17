@@ -12,8 +12,9 @@
 	name = new_name
 	allocation_type = new_allocation_type
 
-/datum/space_level/proc/is_point_allocated(x, y)
-	. = FALSE
+/datum/space_level/proc/is_box_free(low_x, low_y, high_x, high_y)
+	. = TRUE
 	for(var/datum/sub_map_zone/subzone as anything in sub_map_zones)
-		if(subzone.is_in_bounds(locate(x, y, z_value)))
-			return TRUE
+		if(low_x < subzone.high_x && subzone.low_x < high_x && low_y < subzone.high_y && subzone.low_y < high_y)
+			. = FALSE
+			break

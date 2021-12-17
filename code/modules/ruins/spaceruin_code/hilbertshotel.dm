@@ -18,6 +18,8 @@ GLOBAL_VAR_INIT(hhmysteryRoomNumber, 1337)
 	var/ruinSpawned = FALSE
 	var/mysteryRoom
 
+/* jesus christ
+
 /obj/item/hilbertshotel/Initialize()
 	. = ..()
 	//Load templates
@@ -182,6 +184,8 @@ GLOBAL_VAR_INIT(hhmysteryRoomNumber, 1337)
 				var/turf/T = locate(_x, _y, _z)
 				A.forceMove(T)
 
+*/
+
 //Template Stuff
 /datum/map_template/hilbertshotel
 	name = "Hilbert's Hotel Room"
@@ -325,7 +329,7 @@ GLOBAL_VAR_INIT(hhmysteryRoomNumber, 1337)
 	ambientsounds = list('sound/ambience/servicebell.ogg')
 	var/roomnumber = 0
 	var/obj/item/hilbertshotel/parentSphere
-	var/datum/turf_reservation/reservation
+	//var/datum/turf_reservation/reservation
 	var/turf/storageTurf
 	var/virtual_z_value
 
@@ -362,6 +366,7 @@ GLOBAL_VAR_INIT(hhmysteryRoomNumber, 1337)
 		to_chat(M, "<span class='danger'>[H] almost implodes in upon itself, but quickly rebounds, shooting off into a random point in space!</span>")
 	H.forceMove(targetturf)
 
+/*
 /area/hilbertshotel/Exited(atom/movable/AM)
 	. = ..()
 	if(ismob(AM))
@@ -375,7 +380,8 @@ GLOBAL_VAR_INIT(hhmysteryRoomNumber, 1337)
 					break
 			if(!stillPopulated)
 				storeRoom()
-
+*/
+/*
 /area/hilbertshotel/proc/storeRoom()
 	var/roomSize = (reservation.top_right_coords[1]-reservation.bottom_left_coords[1]+1)*(reservation.top_right_coords[2]-reservation.bottom_left_coords[2]+1)
 	var/storage[roomSize]
@@ -397,6 +403,7 @@ GLOBAL_VAR_INIT(hhmysteryRoomNumber, 1337)
 	parentSphere.storedRooms["[roomnumber]"] = storage
 	parentSphere.activeRooms -= "[roomnumber]"
 	qdel(reservation)
+*/
 
 /area/hilbertshotelstorage
 	name = "Hilbert's Hotel Storage Room"

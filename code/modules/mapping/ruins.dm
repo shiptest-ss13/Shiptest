@@ -1,8 +1,6 @@
 /datum/map_template/ruin/proc/try_to_place(datum/sub_map_zone/subzone, allowed_areas, turf/forced_turf)
 	var/sanity = forced_turf ? 1 : PLACEMENT_TRIES
 	var/z = subzone.z_value
-	if(subzone.get_trait(ZTRAIT_RESERVED))
-		return place_on_isolated_level(z)
 	while(sanity > 0)
 		sanity--
 		var/width_border = subzone.mapping_margin + SPACERUIN_MAP_EDGE_PAD + round(width / 2)
@@ -45,20 +43,6 @@
 
 		new /obj/effect/landmark/ruin(central_turf, src)
 		return central_turf
-
-/datum/map_template/ruin/proc/place_on_isolated_level()
-	var/datum/turf_reservation/reservation = SSmapping.request_dynamic_reservation(width, height) //Make the new level creation work with different traits.
-	if(!reservation)
-		return
-	var/turf/placement = locate(reservation.bottom_left_coords[1],reservation.bottom_left_coords[2],reservation.bottom_left_coords[3])
-	load(placement)
-	loaded++
-	for(var/turf/T in get_affected_turfs(placement))
-		T.flags_1 |= NO_RUINS_1
-	var/turf/center = locate(placement.x + round(width/2),placement.y + round(height/2),placement.z)
-	new /obj/effect/landmark/ruin(center, src)
-	return center
-
 
 /proc/seedRuins(list/sub_map_zones, budget = 0, whitelist = list(/area/space), list/potentialRuins)
 	if(!sub_map_zones || !sub_map_zones.len)
