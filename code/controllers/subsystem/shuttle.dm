@@ -172,20 +172,20 @@ SUBSYSTEM_DEF(shuttle)
 
 	var/transist_name = "Transit map zone"
 	var/datum/map_zone/mapzone = new(transist_name)
-	var/datum/sub_map_zone/subzone = new(transist_name, list(ZTRAIT_RESERVED = TRUE), mapzone, allocation_coords[1], allocation_coords[2], allocation_coords[1] + transit_width, allocation_coords[2] + transit_height, allocation_coords[3])
+	var/datum/virtual_level/vlevel = new(transist_name, list(ZTRAIT_RESERVED = TRUE), mapzone, allocation_coords[1], allocation_coords[2], allocation_coords[1] + transit_width, allocation_coords[2] + transit_height, allocation_coords[3])
 
-	subzone.reserve_margin(TRANSIT_BORDER_RESERVE)
+	vlevel.reserve_margin(TRANSIT_BORDER_RESERVE)
 
 	mapzone.parallax_movedir = travel_dir
 
 	var/area/shuttle/transit/transit_area = new()
 
-	subzone.fill_in(transit_path, transit_area)
+	vlevel.fill_in(transit_path, transit_area)
 
 	var/turf/bottomleft = locate(
-		subzone.low_x,
-		subzone.low_y,
-		subzone.z_value
+		vlevel.low_x,
+		vlevel.low_y,
+		vlevel.z_value
 		)
 
 	// Then create a transit docking port in the middle
@@ -369,15 +369,15 @@ SUBSYSTEM_DEF(shuttle)
 
 	var/mapzone_name = "Preview Shuttle Zone"
 	preview_mapzone = new(mapzone_name)
-	var/datum/sub_map_zone/subzone = new(mapzone_name, list(ZTRAIT_RESERVED = TRUE), preview_mapzone, allocation_coords[1], allocation_coords[2], allocation_coords[1] + width, allocation_coords[2] + height, allocation_coords[3])
+	var/datum/virtual_level/vlevel = new(mapzone_name, list(ZTRAIT_RESERVED = TRUE), preview_mapzone, allocation_coords[1], allocation_coords[2], allocation_coords[1] + width, allocation_coords[2] + height, allocation_coords[3])
 
 	if(!preview_mapzone) ///Shouldn't ever happen
 		CRASH("failed to reserve an area for shuttle template loading")
 	//preview_reservation.fill_in(turf_type = /turf/open/space/transit/south)
-	subzone.fill_in(/turf/open/space/transit/south)
+	vlevel.fill_in(/turf/open/space/transit/south)
 
 	//var/turf/BL = TURF_FROM_COORDS_LIST(preview_reservation.bottom_left_coords)
-	var/turf/BL = locate(subzone.low_x, subzone.low_y, subzone.z_value)
+	var/turf/BL = locate(vlevel.low_x, vlevel.low_y, vlevel.z_value)
 	S.load(BL, centered = FALSE, register = FALSE)
 
 	var/affected = S.get_affected_turfs(BL, centered=FALSE)

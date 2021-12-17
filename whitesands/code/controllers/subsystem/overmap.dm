@@ -248,29 +248,29 @@ SUBSYSTEM_DEF(overmap)
 
 	var/encounter_name = "Super coolio encoutnero"
 	var/datum/map_zone/mapzone = new(encounter_name)
-	var/datum/sub_map_zone/subzone = new(encounter_name, list(ZTRAIT_MINING = TRUE), mapzone, allocation_coords[1], allocation_coords[2], allocation_coords[1] + width, allocation_coords[2] + height, allocation_coords[3])
+	var/datum/virtual_level/vlevel = new(encounter_name, list(ZTRAIT_MINING = TRUE), mapzone, allocation_coords[1], allocation_coords[2], allocation_coords[1] + width, allocation_coords[2] + height, allocation_coords[3])
 
-	subzone.reserve_margin(5)
+	vlevel.reserve_margin(5)
 
-	subzone.fill_in(surface, target_area)
+	vlevel.fill_in(surface, target_area)
 
 	if(ruin_type)
 		var/turf/ruin_turf = locate(rand(
-			subzone.low_x+6 + subzone.reserved_margin,
-			subzone.high_x-ruin_type.width-6 - subzone.reserved_margin),
-			subzone.high_y-ruin_type.height-6 - subzone.reserved_margin,
-			subzone.z_value
+			vlevel.low_x+6 + vlevel.reserved_margin,
+			vlevel.high_x-ruin_type.width-6 - vlevel.reserved_margin),
+			vlevel.high_y-ruin_type.height-6 - vlevel.reserved_margin,
+			vlevel.z_value
 			)
 		ruin_type.load(ruin_turf)
 
 	if(mapgen)
-		mapgen.generate_terrain(subzone.get_unreserved_block())
+		mapgen.generate_terrain(vlevel.get_unreserved_block())
 
 	// locates the first dock in the bottom left, accounting for padding and the border
 	var/turf/primary_docking_turf = locate(
-		subzone.low_x+RESERVE_DOCK_DEFAULT_PADDING+1 + subzone.reserved_margin,
-		subzone.low_y+RESERVE_DOCK_DEFAULT_PADDING+1 + subzone.reserved_margin,
-		subzone.z_value
+		vlevel.low_x+RESERVE_DOCK_DEFAULT_PADDING+1 + vlevel.reserved_margin,
+		vlevel.low_y+RESERVE_DOCK_DEFAULT_PADDING+1 + vlevel.reserved_margin,
+		vlevel.z_value
 		)
 	// now we need to offset to account for the first dock
 	var/turf/secondary_docking_turf = locate(

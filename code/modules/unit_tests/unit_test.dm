@@ -43,14 +43,14 @@ GLOBAL_VAR(test_log)
 		var/list/allocation = SSmapping.get_free_allocation(ALLOCATION_FREE, width, height)
 
 		mapzone = new("Integration Test Mapzone")
-		var/datum/sub_map_zone/subzone = new("Integration Test Subzone", ZTRAITS_STATION, mapzone, allocation[1], allocation[2], allocation[1] + width, allocation[2] + height, allocation[3])
-		subzone.reserve_margin(2)
-		subzone.fill_in(/turf/open/floor/plasteel, /area/testroom)
+		var/datum/virtual_level/vlevel = new("Integration Test Subzone", ZTRAITS_STATION, mapzone, allocation[1], allocation[2], allocation[1] + width, allocation[2] + height, allocation[3])
+		vlevel.reserve_margin(2)
+		vlevel.fill_in(/turf/open/floor/plasteel, /area/testroom)
 
 	allocated = new
-	var/datum/sub_map_zone/subzone = mapzone.sub_map_zones[1]
-	run_loc_bottom_left = subzone.get_unreserved_bottom_left_turf()
-	run_loc_top_right = subzone.get_unreserved_top_right_turf()
+	var/datum/virtual_level/vlevel = mapzone.virtual_levels[1]
+	run_loc_bottom_left = vlevel.get_unreserved_bottom_left_turf()
+	run_loc_top_right = vlevel.get_unreserved_top_right_turf()
 
 /datum/unit_test/Destroy()
 	//clear the test area

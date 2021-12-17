@@ -32,9 +32,9 @@ In my current plan for it, 'solid' will be defined as anything with density == 1
 /datum/round_event/immovable_rod/start()
 	var/datum/round_event_control/immovable_rod/C = control
 	var/startside = pick(GLOB.cardinals)
-	var/datum/sub_map_zone/subzone = pick(SSmapping.virtual_levels_by_trait(ZTRAIT_STATION))
-	var/turf/startT = spaceDebrisStartLoc(startside, subzone)
-	var/turf/endT = spaceDebrisFinishLoc(startside, subzone)
+	var/datum/virtual_level/vlevel = pick(SSmapping.virtual_levels_by_trait(ZTRAIT_STATION))
+	var/turf/startT = spaceDebrisStartLoc(startside, vlevel)
+	var/turf/endT = spaceDebrisFinishLoc(startside, vlevel)
 	var/atom/rod = new /obj/effect/immovablerod(startT, endT, C.special_target)
 	announce_to_ghosts(rod)
 

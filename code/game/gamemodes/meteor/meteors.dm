@@ -46,8 +46,8 @@ GLOBAL_LIST_INIT(meteorsC, list(/obj/effect/meteor/dust)) //for space dust event
 	while(!isspaceturf(pickedstart))
 		var/startSide = pick(GLOB.cardinals)
 		var/startZ = pick(SSmapping.virtual_levels_by_trait(ZTRAIT_STATION))
-		pickedstart = spaceDebrisStartLoc(startSide, SSmapping.get_sub_zone(startZ))
-		pickedgoal = spaceDebrisFinishLoc(startSide, SSmapping.get_sub_zone(startZ))
+		pickedstart = spaceDebrisStartLoc(startSide, SSmapping.get_virtual_level(startZ))
+		pickedgoal = spaceDebrisFinishLoc(startSide, SSmapping.get_virtual_level(startZ))
 		max_i--
 		if(max_i<=0)
 			return
@@ -57,41 +57,41 @@ GLOBAL_LIST_INIT(meteorsC, list(/obj/effect/meteor/dust)) //for space dust event
 
 #define MAP_EDGE_PAD 5
 
-/proc/spaceDebrisStartLoc(startSide, datum/sub_map_zone/subzone, padding = MAP_EDGE_PAD)
+/proc/spaceDebrisStartLoc(startSide, datum/virtual_level/vlevel, padding = MAP_EDGE_PAD)
 	var/starty
 	var/startx
 	switch(startSide)
 		if(NORTH)
-			starty = subzone.high_y-(subzone.reserved_margin + padding)
-			startx = rand(subzone.low_x + (subzone.reserved_margin + padding), subzone.high_x-(subzone.reserved_margin + padding))
+			starty = vlevel.high_y-(vlevel.reserved_margin + padding)
+			startx = rand(vlevel.low_x + (vlevel.reserved_margin + padding), vlevel.high_x-(vlevel.reserved_margin + padding))
 		if(EAST)
-			starty = rand(subzone.low_y + (subzone.reserved_margin + padding),subzone.high_y-(subzone.reserved_margin + padding))
-			startx = subzone.high_x-(subzone.reserved_margin + padding)
+			starty = rand(vlevel.low_y + (vlevel.reserved_margin + padding),vlevel.high_y-(vlevel.reserved_margin + padding))
+			startx = vlevel.high_x-(vlevel.reserved_margin + padding)
 		if(SOUTH)
-			starty = (subzone.reserved_margin + padding)
-			startx = rand(subzone.low_x + (subzone.reserved_margin + padding),subzone.high_x-(subzone.reserved_margin + padding))
+			starty = (vlevel.reserved_margin + padding)
+			startx = rand(vlevel.low_x + (vlevel.reserved_margin + padding),vlevel.high_x-(vlevel.reserved_margin + padding))
 		if(WEST)
-			starty = rand(subzone.low_y + (subzone.reserved_margin + padding), subzone.high_y-(subzone.reserved_margin + padding))
-			startx = (subzone.reserved_margin + padding)
-	. = locate(startx, starty, subzone.z_value)
+			starty = rand(vlevel.low_y + (vlevel.reserved_margin + padding), vlevel.high_y-(vlevel.reserved_margin + padding))
+			startx = (vlevel.reserved_margin + padding)
+	. = locate(startx, starty, vlevel.z_value)
 
-/proc/spaceDebrisFinishLoc(startSide, datum/sub_map_zone/subzone, padding = MAP_EDGE_PAD)
+/proc/spaceDebrisFinishLoc(startSide, datum/virtual_level/vlevel, padding = MAP_EDGE_PAD)
 	var/endy
 	var/endx
 	switch(startSide)
 		if(NORTH)
-			endy = (subzone.reserved_margin + padding)
-			endx = rand(subzone.low_x + (subzone.reserved_margin + padding), subzone.high_x-(subzone.reserved_margin + padding))
+			endy = (vlevel.reserved_margin + padding)
+			endx = rand(vlevel.low_x + (vlevel.reserved_margin + padding), vlevel.high_x-(vlevel.reserved_margin + padding))
 		if(EAST)
-			endy = rand(subzone.low_y + (subzone.reserved_margin + padding), subzone.high_y-(subzone.reserved_margin + padding))
-			endx = (subzone.reserved_margin + padding)
+			endy = rand(vlevel.low_y + (vlevel.reserved_margin + padding), vlevel.high_y-(vlevel.reserved_margin + padding))
+			endx = (vlevel.reserved_margin + padding)
 		if(SOUTH)
-			endy = subzone.high_y-(subzone.reserved_margin + padding)
-			endx = rand(subzone.low_x + (subzone.reserved_margin + padding), subzone.high_x-(subzone.reserved_margin + padding))
+			endy = vlevel.high_y-(vlevel.reserved_margin + padding)
+			endx = rand(vlevel.low_x + (vlevel.reserved_margin + padding), vlevel.high_x-(vlevel.reserved_margin + padding))
 		if(WEST)
-			endy = rand(subzone.low_y + (subzone.reserved_margin + padding), subzone.high_y-(subzone.reserved_margin + padding))
-			endx = subzone.high_x-(subzone.reserved_margin + padding)
-	. = locate(endx, endy, subzone.z_value)
+			endy = rand(vlevel.low_y + (vlevel.reserved_margin + padding), vlevel.high_y-(vlevel.reserved_margin + padding))
+			endx = vlevel.high_x-(vlevel.reserved_margin + padding)
+	. = locate(endx, endy, vlevel.z_value)
 
 #undef MAP_EDGE_PAD
 

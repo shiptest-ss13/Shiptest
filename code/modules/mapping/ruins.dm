@@ -1,11 +1,11 @@
-/datum/map_template/ruin/proc/try_to_place(datum/sub_map_zone/subzone, allowed_areas, turf/forced_turf)
+/datum/map_template/ruin/proc/try_to_place(datum/virtual_level/vlevel, allowed_areas, turf/forced_turf)
 	var/sanity = forced_turf ? 1 : PLACEMENT_TRIES
-	var/z = subzone.z_value
+	var/z = vlevel.z_value
 	while(sanity > 0)
 		sanity--
-		var/width_border = subzone.mapping_margin + SPACERUIN_MAP_EDGE_PAD + round(width / 2)
-		var/height_border = subzone.mapping_margin + SPACERUIN_MAP_EDGE_PAD + round(height / 2)
-		var/turf/central_turf = forced_turf ? forced_turf : locate(rand(subzone.low_x + width_border, subzone.high_x - width_border), rand(subzone.low_y + height_border, subzone.high_y - height_border), z)
+		var/width_border = vlevel.mapping_margin + SPACERUIN_MAP_EDGE_PAD + round(width / 2)
+		var/height_border = vlevel.mapping_margin + SPACERUIN_MAP_EDGE_PAD + round(height / 2)
+		var/turf/central_turf = forced_turf ? forced_turf : locate(rand(vlevel.low_x + width_border, vlevel.high_x - width_border), rand(vlevel.low_y + height_border, vlevel.high_y - height_border), z)
 		var/valid = TRUE
 
 		for(var/turf/check in get_affected_turfs(central_turf,1))
@@ -44,15 +44,15 @@
 		new /obj/effect/landmark/ruin(central_turf, src)
 		return central_turf
 
-/proc/seedRuins(list/sub_map_zones, budget = 0, whitelist = list(/area/space), list/potentialRuins)
-	if(!sub_map_zones || !sub_map_zones.len)
+/proc/seedRuins(list/virtual_levels, budget = 0, whitelist = list(/area/space), list/potentialRuins)
+	if(!virtual_levels || !virtual_levels.len)
 		WARNING("No Z levels provided - Not generating ruins")
 		return
 
-	for(var/datum/sub_map_zone/subzone in sub_map_zones)
-		var/turf/T = locate(1, 1, subzone.z_value)
+	for(var/datum/virtual_level/vlevel in virtual_levels)
+		var/turf/T = locate(1, 1, vlevel.z_value)
 		if(!T)
-			WARNING("Z level [subzone.z_value] does not exist - Not generating ruins")
+			WARNING("Z level [vlevel.z_value] does not exist - Not generating ruins")
 			return
 
 	var/list/ruins = potentialRuins.Copy()
@@ -95,12 +95,12 @@
 		var/placement_tries = forced_turf ? 1 : PLACEMENT_TRIES //Only try once if we target specific turf
 		var/failed_to_place = TRUE
 		var/target_z = 0
-		var/datum/sub_map_zone/picked_sub = pick(sub_map_zones)
+		var/datum/virtual_level/picked_sub = pick(virtual_levels)
 		var/turf/placed_turf //Where the ruin ended up if we succeeded
 		outer:
 			while(placement_tries > 0)
 				placement_tries--
-				picked_sub = pick(sub_map_zones)
+				picked_sub = pick(virtual_levels)
 				target_z = picked_sub.z_value
 				if(forced_z)
 					target_z = forced_z

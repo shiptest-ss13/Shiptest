@@ -908,8 +908,8 @@
 		if(ADMIN_PUNISHMENT_ROD)
 			var/turf/T = get_turf(target)
 			var/startside = pick(GLOB.cardinals)
-			var/turf/startT = spaceDebrisStartLoc(startside, SSmapping.get_sub_zone(T))
-			var/turf/endT = spaceDebrisFinishLoc(startside, SSmapping.get_sub_zone(T))
+			var/turf/startT = spaceDebrisStartLoc(startside, SSmapping.get_virtual_level(T))
+			var/turf/endT = spaceDebrisFinishLoc(startside, SSmapping.get_virtual_level(T))
 			new /obj/effect/immovablerod(startT, endT,target)
 		if(ADMIN_PUNISHMENT_SUPPLYPOD_QUICK)
 			var/target_path = input(usr,"Enter typepath of an atom you'd like to send with the pod (type \"empty\" to send an empty pod):" ,"Typepath","/obj/item/reagent_containers/food/snacks/grown/harebell") as null|text

@@ -93,12 +93,12 @@
 	var/list/allocation = SSmapping.get_free_allocation(ALLOCATION_FREE, r_width, r_height)
 
 	var/datum/map_zone/mapzone = new(name)
-	var/datum/sub_map_zone/subzone = new(name, list(), mapzone, allocation[1], allocation[2], allocation[1] + r_width, allocation[2] + r_height, allocation[3])
+	var/datum/virtual_level/vlevel = new(name, list(), mapzone, allocation[1], allocation[2], allocation[1] + r_width, allocation[2] + r_height, allocation[3])
 
 	if(reservation_margin)
-		subzone.reserve_margin(reservation_margin)
+		vlevel.reserve_margin(reservation_margin)
 
-	var/datum/parsed_map/parsed = load_map(file(mappath), subzone.low_x + reservation_margin + x, subzone.low_y + reservation_margin + y, subzone.z_value, no_changeturf=(SSatoms.initialized == INITIALIZATION_INSSATOMS), placeOnTop=TRUE)
+	var/datum/parsed_map/parsed = load_map(file(mappath), vlevel.low_x + reservation_margin + x, vlevel.low_y + reservation_margin + y, vlevel.z_value, no_changeturf=(SSatoms.initialized == INITIALIZATION_INSSATOMS), placeOnTop=TRUE)
 	var/list/bounds = parsed.bounds
 	if(!bounds)
 		return FALSE
