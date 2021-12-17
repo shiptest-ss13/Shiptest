@@ -249,7 +249,7 @@ SUBSYSTEM_DEF(overmap)
 	var/encounter_name = "Super coolio encoutnero"
 	var/datum/map_zone/mapzone = new(encounter_name)
 	var/datum/sub_map_zone/subzone = new(encounter_name, list(ZTRAIT_MINING = TRUE), mapzone, allocation_coords[1], allocation_coords[2], allocation_coords[1] + width, allocation_coords[2] + height, allocation_coords[3])
-	
+
 	subzone.reserve_margin(5)
 
 	subzone.fill_in(surface, target_area)
@@ -274,8 +274,8 @@ SUBSYSTEM_DEF(overmap)
 		)
 	// now we need to offset to account for the first dock
 	var/turf/secondary_docking_turf = locate(
-		primary_docking_turf.x+RESERVE_DOCK_MAX_SIZE_LONG+RESERVE_DOCK_DEFAULT_PADDING, 
-		primary_docking_turf.y, 
+		primary_docking_turf.x+RESERVE_DOCK_MAX_SIZE_LONG+RESERVE_DOCK_DEFAULT_PADDING,
+		primary_docking_turf.y,
 		primary_docking_turf.z
 		)
 

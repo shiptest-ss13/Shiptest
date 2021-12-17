@@ -362,9 +362,9 @@ SUBSYSTEM_DEF(mapping)
 
 			if(level.is_box_free(target_x, target_y, upper_target_x, upper_target_y))
 				return list(target_x, target_y, level.z_value) //hallelujah we found the unallocated spot
-			
+
 			target_y += ALLOCATION_FIND_JUMP_DIST
-		
+
 		target_x += ALLOCATION_FIND_JUMP_DIST
 
 #undef ALLOCATION_FIND_JUMP_DIST
