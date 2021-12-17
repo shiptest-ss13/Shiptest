@@ -339,7 +339,7 @@
 	var/list/shuttle_choices = list("Purchase ship..." = "Purchase") //Dummy for purchase option
 
 	for(var/obj/structure/overmap/ship/simulated/S in SSovermap.overmap_objects)
-		if(length(S.shuttle.spawn_points) < 1)
+		if((length(S.shuttle.spawn_points) < 1) || !S.join_allowed)
 			continue
 		shuttle_choices[S.name + " ([S.shuttle.source_template.short_name ? S.shuttle.source_template.short_name : "Unknown-class"])"] = S //Try to get the class name
 
@@ -368,11 +368,20 @@
 			new_player_panel()
 		return
 
+	if(selected_ship.memo)
+		var/memo_accept = tgui_alert(src, "Current ship memo: [selected_ship.memo]", "[selected_ship.name] Memo", list("OK", "Cancel"))
+		if(memo_accept == "Cancel")
+			return LateChoices() //Send them back to shuttle selection
+
 	var/list/job_choices = list()
 	for(var/datum/job/job as anything in selected_ship.job_slots)
 		if(selected_ship.job_slots[job] < 1)
 			continue
 		job_choices["[job.title] ([selected_ship.job_slots[job]] positions)"] = job
+
+	if(!length(job_choices))
+		to_chat(usr, "<span class='danger'>There are no jobs available on this ship!</span>")
+		return LateChoices() //Send them back to shuttle selection
 
 	var/datum/job/selected_job = job_choices[tgui_input_list(src, "Select job.", "Welcome, [client.prefs.real_name].", job_choices)]
 	if(!selected_job)

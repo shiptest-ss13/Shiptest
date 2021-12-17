@@ -126,10 +126,10 @@
 	name = "Roommates"
 	id = "roommates"
 	description = "And they were roommates."
-	suffix = "roommates.dmm"
+	suffix = "jungle_surface_roommates.dmm"
 
 /datum/map_template/ruin/jungle/ninjashrine
 	name = "Ninja Shrine"
 	id = "ninjashrine"
 	description = "A ninja shrine."
-	suffix = "ninjashrine.dmm"
+	suffix = "jungle_surface_ninjashrine.dmm"

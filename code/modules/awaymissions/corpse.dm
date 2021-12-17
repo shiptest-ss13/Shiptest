@@ -380,11 +380,28 @@
 /obj/effect/mob_spawn/human/miner/explorer
 	outfit = /datum/outfit/job/miner/equipped
 
+/obj/effect/mob_spawn/human/miner/old
+	outfit = /datum/outfit/job/miner/old
 
 /obj/effect/mob_spawn/human/plasmaman
 	mob_species = /datum/species/plasmaman
 	outfit = /datum/outfit/plasmaman
 
+/obj/effect/mob_spawn/human/botanist
+	outfit = /datum/outfit/job/botanist
+	icon_state = "corpsehuman"
+
+/obj/effect/mob_spawn/human/sec
+	outfit = /datum/outfit/job/security
+	icon_state = "corpsehuman"
+
+/obj/effect/mob_spawn/human/hop
+	outfit = /datum/outfit/job/head_of_personnel
+	icon_state = "corpsehuman"
+
+/obj/effect/mob_spawn/human/janitor
+	outfit = /datum/outfit/job/janitor
+	icon_state = "corpsehuman"
 
 /obj/effect/mob_spawn/human/bartender
 	name = "Space Bartender"

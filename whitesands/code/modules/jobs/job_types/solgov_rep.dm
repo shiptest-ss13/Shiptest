@@ -12,6 +12,7 @@ SolGov Representative
 	wiki_page = "Government_Attaché"
 	minimal_player_age = 7
 	exp_requirements = 180
+	officer = TRUE
 	exp_type = EXP_TYPE_CREW
 	exp_type_department = EXP_TYPE_SECURITY
 
@@ -52,3 +53,10 @@ SolGov Representative
 	backpack_contents = list(
 		/obj/item/kitchen/knife/letter_opener = 1
 	)
+
+/datum/outfit/job/solgov/rebel
+	name = "Signal Officer (Deserter)"
+	head = /obj/item/clothing/head/solgov/terragov
+	uniform = /obj/item/clothing/under/solgov/formal/terragov
+	accessory = /obj/item/clothing/accessory/waistcoat
+	suit = /obj/item/clothing/suit/toggle/solgov/terragov

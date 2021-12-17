@@ -2,6 +2,7 @@
 	icon = 'icons/obj/clothing/under/suits.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/under/suits.dmi'
 	can_adjust = FALSE
+	fitted = FEMALE_UNIFORM_TOP //die die die die die
 
 /obj/item/clothing/under/suit/white_on_white
 	name = "white suit"
@@ -72,10 +73,10 @@
 /obj/item/clothing/under/suit/green
 	name = "green suit"
 	desc = "A green suit and yellow necktie. Baller."
-	icon = 'icons/obj/clothing/under/captain.dmi'
+	icon = 'icons/obj/clothing/under/command.dmi'
 	icon_state = "green_suit"
 	item_state = "dg_suit"
-	mob_overlay_icon = 'icons/mob/clothing/under/captain.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/under/command.dmi'
 
 /obj/item/clothing/under/suit/red
 	name = "red suit"
@@ -86,20 +87,20 @@
 /obj/item/clothing/under/suit/charcoal
 	name = "charcoal suit"
 	desc = "A charcoal suit and red tie. Very professional."
-	icon_state = "charcoalsuit"
-	item_state = "charcoalsuit"
+	icon_state = "charcoal_suit"
+	item_state = "charcoal_suit"
 
 /obj/item/clothing/under/suit/navy
 	name = "navy suit"
 	desc = "A navy suit and red tie, intended for the station's finest."
-	icon_state = "navysuit"
-	item_state = "navysuit"
+	icon_state = "navy_suit"
+	item_state = "navy_suit"
 
 /obj/item/clothing/under/suit/burgundy
 	name = "burgundy suit"
 	desc = "A burgundy suit and black tie. Somewhat formal."
-	icon_state = "burgundysuit"
-	item_state = "burgundysuit"
+	icon_state = "burgundy_suit"
+	item_state = "burgundy_suit"
 
 /obj/item/clothing/under/suit/checkered
 	name = "checkered suit"
@@ -124,6 +125,7 @@
 	desc = "An excellent light colored suit, experts in the field stress that it should not to be confused with the inferior tan suit."
 	icon_state = "beige_suit"
 	item_state = "beige_suit"
+
 /obj/item/clothing/under/suit/henchmen
 	name = "henchmen jumpsuit"
 	desc = "A very gaudy jumpsuit for a proper Henchman. Guild regulations, you understand."

@@ -17,6 +17,7 @@
 	max_integrity = 200
 	integrity_failure = 0.25
 	armor = list("melee" = 10, "bullet" = 30, "laser" = 30, "energy" = 100, "bomb" = 20, "bio" = 0, "rad" = 0, "fire" = 80, "acid" = 70) //trolld
+	can_flip = FALSE //same as reinforced and theres no sprites for it
 
 /obj/structure/table/wood/reinforced/deconstruction_hints(mob/user)
 	if(deconstruction_ready)

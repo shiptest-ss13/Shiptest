@@ -36,15 +36,14 @@
 	var/emote_cooldown = 0
 	gold_core_spawnable = FRIENDLY_SPAWN
 	collar_type = "cat"
-	can_be_held = TRUE
 	held_state = "cat2"
 
 	footstep_type = FOOTSTEP_MOB_CLAW
 
 /mob/living/simple_animal/pet/cat/Initialize()
 	. = ..()
+	ADD_TRAIT(src, TRAIT_HOLDABLE, INNATE_TRAIT)
 	add_verb(src, /mob/living/proc/toggle_resting)
-
 
 /mob/living/simple_animal/pet/cat/space
 	desc = "It's a cat... in space!"

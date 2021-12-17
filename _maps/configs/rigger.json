@@ -5,9 +5,13 @@
 	"map_id": "rigger",
 	"roundstart": true,
 	"job_slots": {
-		"Captain": 1,
+		"Captain": {
+			"outfit": "/datum/outfit/job/captain/western",
+			"officer": true,
+			"slots": 1
+		},
 		"First Mate": {
-			"outfit": "/datum/outfit/job/head_of_personnel",
+			"outfit": "/datum/outfit/job/head_of_personnel/western",
 			"officer": true,
 			"slots": 1
 		},
@@ -16,19 +20,19 @@
 			"slots": 1
 			},
 		"Machinist's Mate": {
-			"outfit": "/datum/outfit/job/engineer",
+			"outfit": "/datum/outfit/job/engineer/hazard",
 			"slots": 2
 		},
 		"Asteroid Miner": {
-			"outfit": "/datum/outfit/job/miner",
+			"outfit": "/datum/outfit/job/miner/hazard",
 			"slots": 2
 		},
-		"Mech Engineer": {
-			"outfit": "/datum/outfit/job/roboticist",
+		"Mech Technician": {
+			"outfit": "/datum/outfit/job/roboticist/technician",
 			"slots": 1
 		},
-		"Security Specialist": {
-			"outfit": "/datum/outfit/job/security",
+		"Security Detail": {
+			"outfit": "/datum/outfit/job/security/western",
 			"slots": 1
 		},
 		"Deckhand": {

@@ -45,6 +45,8 @@
 	head = /obj/item/clothing/head/deliveries_officer
 	backpack_contents = list(/obj/item/modular_computer/tablet/preset/cargo=1, /obj/item/export_scanner=1)
 
+//Shiptest outfits
+
 /datum/outfit/job/cargo_tech/solgov
 	name = "Cargo Technician (SolGov)"
 

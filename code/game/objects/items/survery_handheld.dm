@@ -58,7 +58,7 @@
 			break
 
 		flick(icon_state + "print", src)
-		playsound(src, 'sound/machines/chime.ogg', 20)
+		playsound(src, 'sound/machines/whirr_beep.ogg', 20)
 		src_turf.visible_message("<span class='notice'>Data recorded and enscribed to research packet.</span>")
 		z_history[my_z]++
 
@@ -113,3 +113,8 @@
 	)
 	category = list("Tool Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
+
+/obj/structure/anomaly
+	name = "Defaultic Bind"
+	desc = "The truly unexpected anomaly. Let a coder know if you see this!"
+	max_integrity = 300

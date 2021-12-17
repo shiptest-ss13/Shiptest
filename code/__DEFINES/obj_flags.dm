@@ -49,6 +49,7 @@
 #define SNUG_FIT (1<<11) //Prevents knock-off from things like hat-throwing.
 #define ANTI_TINFOIL_MANEUVER (1<<12) //Hats with negative effects when worn (i.e the tinfoil hat).
 #define DANGEROUS_OBJECT (1<<13) //Clothes that cause a larger notification when placed on a person.
+#define FAST_EMBARK (1<<14) //Clothes that speed up mech and pod boarding.
 /// Flags for the organ_flags var on /obj/item/organ
 
 #define ORGAN_SYNTHETIC (1<<0)	//Synthetic organs, or cybernetic organs. Reacts to EMPs and don't deteriorate or heal

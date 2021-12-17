@@ -50,6 +50,8 @@
 
 	uniform = /obj/item/clothing/under/rank/medical/paramedic/emt
 
+//Shiptest outfits
+
 /datum/outfit/job/paramedic/solgov
 	name = "Combat Medic (SolGov)"
 

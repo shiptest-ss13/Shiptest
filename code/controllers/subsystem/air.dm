@@ -130,6 +130,10 @@ SUBSYSTEM_DEF(air)
 	fix_corrupted_atmos()
 
 /datum/controller/subsystem/air/fire(resumed = 0)
+#ifdef CITESTING
+	return
+#endif
+
 	var/timer = TICK_USAGE_REAL
 
 	if(currentpart == SSAIR_REBUILD_PIPENETS)

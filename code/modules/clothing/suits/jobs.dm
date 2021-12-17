@@ -91,6 +91,18 @@
 	resistance_flags = NONE
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/exo/large
 
+/obj/item/clothing/suit/toggle/hazard
+	name = "high-visibility jacket"
+	desc = "A highlighter-yellow jacket with reflective stripes."
+	icon_state = "jacket_hazard"
+	item_state = "jacket_hazard"
+	blood_overlay_type = "coat"
+	body_parts_covered = CHEST|ARMS
+	togglename = "zipper"
+	allowed = list(/obj/item/flashlight, /obj/item/tank/internals/emergency_oxygen, /obj/item/tank/internals/plasmaman, /obj/item/t_scanner, /obj/item/radio)
+	resistance_flags = NONE
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/exo/large
+
 //Lawyer
 /obj/item/clothing/suit/toggle/lawyer
 	name = "blue suit jacket"
@@ -113,6 +125,23 @@
 	icon_state = "suitjacket_black"
 	item_state = "ro_suit"
 
+/obj/item/clothing/suit/toggle/lawyer/burgundy
+	name = "burgundy suit jacket"
+	desc = "A burgundy suit jacket. Makes you want to psychoanalyze."
+	icon_state = "suitjacket_burgundy"
+	item_state = "suitjacket_burgundy"
+
+/obj/item/clothing/suit/toggle/lawyer/navy
+	name = "navy suit jacket"
+	desc = "An orderly dress jacket."
+	icon_state = "suitjacket_navy"
+	item_state = "suitjacket_navy"
+
+/obj/item/clothing/suit/toggle/lawyer/charcoal
+	name = "charcoal suit jacket"
+	desc = "An enterprising dress jacket."
+	icon_state = "suitjacket_charcoal"
+	item_state = "suitjacket_charcoal"
 
 //Mime
 /obj/item/clothing/suit/toggle/suspenders
@@ -125,8 +154,6 @@
 
 //Security
 /obj/item/clothing/suit/armor/vest/security
-	icon = 'whitesands/icons/obj/clothing/under/security.dmi'
-	mob_overlay_icon = 'whitesands/icons/mob/clothing/under/security.dmi'
 
 /obj/item/clothing/suit/armor/vest/security/officer
 	name = "security officer's jacket"
