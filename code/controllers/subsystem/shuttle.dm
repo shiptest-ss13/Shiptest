@@ -170,7 +170,7 @@ SUBSYSTEM_DEF(shuttle)
 
 	var/list/allocation_coords = SSmapping.get_free_allocation(ALLOCATION_FREE, transit_width, transit_height)
 
-	var/transist_name = "Transit map zone"
+	var/transist_name = "Transit Map Zone"
 	var/datum/map_zone/mapzone = new(transist_name)
 	var/datum/virtual_level/vlevel = new(transist_name, list(ZTRAIT_RESERVED = TRUE), mapzone, allocation_coords[1], allocation_coords[2], allocation_coords[1] + transit_width, allocation_coords[2] + transit_height, allocation_coords[3])
 

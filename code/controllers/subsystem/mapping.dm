@@ -299,7 +299,7 @@ SUBSYSTEM_DEF(mapping)
 		/// None of the levels could faciliate a new allocation, make a new one
 		created_new_level = TRUE
 		levels_to_check.Cut()
-		levels_to_check += add_new_zlevel("assblast usa", allocation_type = allocation_type)
+		levels_to_check += add_new_zlevel("Generated Allocation Level", allocation_type = allocation_type)
 
 #define ALLOCATION_FIND_JUMP_DIST 5
 

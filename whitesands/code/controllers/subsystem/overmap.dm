@@ -246,7 +246,7 @@ SUBSYSTEM_DEF(overmap)
 
 	var/list/allocation_coords = SSmapping.get_free_allocation(ALLOCATION_QUADRANT, width, height)
 
-	var/encounter_name = "Super coolio encoutnero"
+	var/encounter_name = "Dynamic Overmap Encounter"
 	var/datum/map_zone/mapzone = new(encounter_name)
 	var/datum/virtual_level/vlevel = new(encounter_name, list(ZTRAIT_MINING = TRUE), mapzone, allocation_coords[1], allocation_coords[2], allocation_coords[1] + width, allocation_coords[2] + height, allocation_coords[3])
 
