@@ -34,23 +34,23 @@ GLOBAL_VAR(test_log)
 	var/list/allocated
 	var/list/fail_reasons
 
-	var/static/datum/space_level/reservation
+	var/static/datum/map_zone/mapzone
 
 /datum/unit_test/New()
-	if (isnull(reservation))
-		var/datum/map_template/unit_tests/template = new
-		reservation = template.load_new_z()
+	if (isnull(mapzone))
+		var/height = 7
+		var/width = 7
+		var/list/allocation = SSmapping.get_free_allocation(ALLOCATION_FREE, width, height)
 
-		///Wrap the loaded z_level into a map_zone
-		var/datum/map_zone/mapzone = new("Integration Test Mapzone")
-		new /datum/sub_map_zone("Integration Test Subzone", ZTRAITS_STATION, mapzone, 1, 1, world.maxx, world.maxy, world.maxz)
+		mapzone = new("Integration Test Mapzone")
+		var/datum/sub_map_zone/subzone = new("Integration Test Subzone", ZTRAITS_STATION, mapzone, allocation[1], allocation[2], allocation[1] + width, allocation[2] + height, allocation[3])
+		subzone.reserve_margin(2)
+		subzone.fill_in(/turf/open/floor/iron, /area/testroom)
 
 	allocated = new
-	run_loc_floor_bottom_left = get_turf(locate(/obj/effect/landmark/unit_test_bottom_left) in GLOB.landmarks_list)
-	run_loc_floor_top_right = get_turf(locate(/obj/effect/landmark/unit_test_top_right) in GLOB.landmarks_list)
-
-	TEST_ASSERT(isfloorturf(run_loc_floor_bottom_left), "run_loc_floor_bottom_left was not a floor ([run_loc_floor_bottom_left])")
-	TEST_ASSERT(isfloorturf(run_loc_floor_top_right), "run_loc_floor_top_right was not a floor ([run_loc_floor_top_right])")
+	var/datum/sub_map_zone/subzone = mapzone.sub_map_zones[1]
+	run_loc_bottom_left = subzone.get_unreserved_bottom_left_turf()
+	run_loc_top_right = subzone.get_unreserved_top_right_turf()
 
 /datum/unit_test/Destroy()
 	//clear the test area

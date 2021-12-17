@@ -418,6 +418,12 @@
 /datum/sub_map_zone/proc/get_trait(trait)
 	return traits[trait]
 
+/datum/sub_map_zone/proc/get_unreserved_bottom_left_turf()
+	return locate(low_x + reserved_margin, low_y + reserved_margin, z_value)
+
+/datum/sub_map_zone/proc/get_unreserved_top_right_turf()
+	return locate(high_x - reserved_margin, high_y - reserved_margin, z_value)
+
 /datum/sub_map_zone/proc/reserve(x1, y1, x2, y2, passed_z)
 	low_x = x1
 	low_y = y1
