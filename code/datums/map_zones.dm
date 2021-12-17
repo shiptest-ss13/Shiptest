@@ -65,6 +65,11 @@
 	for(var/datum/virtual_level/vlevel as anything in virtual_levels)
 		. += vlevel.get_dead_client_mobs()
 
+/datum/map_zone/proc/get_mind_mobs()
+	. = list()
+	for(var/datum/virtual_level/vlevel as anything in virtual_levels)
+		. += vlevel.get_mind_mobs()
+
 /datum/map_zone/proc/is_in_bounds(atom/Atom)
 	for(var/datum/virtual_level/vlevel as anything in virtual_levels)
 		if(vlevel.is_in_bounds(Atom))
