@@ -315,7 +315,7 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 			. += "[src] is made of cold-resistant materials."
 		if(resistance_flags & FIRE_PROOF)
 			. += "[src] is made of fire-retardant materials."
-//modifier annendums
+//modifier addendums
 	if(haunted)
 		. += "[src] is swirling with ghostly energy!"
 		. += "<span class='notice'>Alt-click to summon a wandering spirit into [src].</span>"
