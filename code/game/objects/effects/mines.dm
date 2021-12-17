@@ -1,3 +1,4 @@
+
 /obj/effect/mine
 	name = "dummy mine"
 	desc = "Better stay away from that thing."
@@ -81,6 +82,27 @@
 	name = "stun mine"
 	var/stun_time = 80
 
+/obj/effect/mine/shrapnel
+	name = "shrapnel mine"
+	var/shrapnel_type = /obj/projectile/bullet/shrapnel
+	var/shrapnel_magnitude = 3
+
+/obj/effect/mine/shrapnel/mineEffect(mob/victim)
+	AddComponent(/datum/component/pellet_cloud, projectile_type=shrapnel_type, magnitude=shrapnel_magnitude)
+
+/obj/effect/mine/shrapnel/human_only
+	name = "sophisticated shrapnel mine"
+	desc = "A deadly mine, this one seems to be modified to trigger for humans only?"
+
+/obj/effect/mine/shrapnel/human_only/Crossed(atom/movable/AM)
+	if(!ishuman(AM))
+		return
+	. = ..()
+
+/obj/effect/mine/shrapnel/sting
+	name = "stinger mine"
+	shrapnel_type = /obj/projectile/bullet/pellet/stingball
+
 /obj/effect/mine/stun/mineEffect(mob/living/victim)
 	if(isliving(victim))
 		victim.Paralyze(stun_time)
@@ -131,16 +153,18 @@
 	sound = 'sound/effects/adminhelp.ogg'
 
 /obj/effect/mine/pickup
-	name = "pickup"
-	desc = "pick me up"
-	icon = 'icons/effects/effects.dmi'
-	icon_state = "electricity2"
+	name = "He"
+	desc = "He."
+	icon = 'icons/obj/marg.dmi'
+	icon_state = "marg"
 	density = FALSE
 	var/duration = 0
+	pixel_x = -8
+	pixel_y = 1
 
 /obj/effect/mine/pickup/Initialize()
 	. = ..()
-	animate(src, pixel_y = 4, time = 20, loop = -1)
+	animate(src, time = 20, loop = -1)
 
 /obj/effect/mine/pickup/triggermine(mob/victim)
 	if(triggered)
@@ -152,8 +176,8 @@
 
 
 /obj/effect/mine/pickup/bloodbath
-	name = "Red Orb"
-	desc = "You feel angry just looking at it."
+	name = "His Odium"
+	desc = "Embrace my righteous fury."
 	duration = 1200 //2min
 	color = "#FF0000"
 	var/mob/living/doomslayer
@@ -167,7 +191,7 @@
 	INVOKE_ASYNC(src, .proc/blood_delusion, victim)
 
 	chainsaw = new(victim.loc)
-	victim.log_message("entered a blood frenzy", LOG_ATTACK)
+	victim.log_message("entered a marg frenzy", LOG_ATTACK)
 
 	ADD_TRAIT(chainsaw, TRAIT_NODROP, CHAINSAW_FRENZY_TRAIT)
 	victim.drop_all_held_items()
@@ -193,9 +217,9 @@
 	new /datum/hallucination/delusion(victim, TRUE, "demon", duration, 0)
 
 /obj/effect/mine/pickup/healing
-	name = "Blue Orb"
-	desc = "You feel better just looking at it."
-	color = "#0000FF"
+	name = "His Benevolence"
+	desc = "Come, come. Your wounds shall be undone by my mercy."
+
 
 /obj/effect/mine/pickup/healing/mineEffect(mob/living/carbon/victim)
 	if(!victim.client || !istype(victim))
@@ -204,9 +228,8 @@
 	victim.revive(full_heal = TRUE, admin_revive = TRUE)
 
 /obj/effect/mine/pickup/speed
-	name = "Yellow Orb"
-	desc = "You feel faster just looking at it."
-	color = "#FFFF00"
+	name = "His Purpose"
+	desc = "Come, let me quicken you to brilliance."
 	duration = 300
 
 /obj/effect/mine/pickup/speed/mineEffect(mob/living/carbon/victim)

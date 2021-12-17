@@ -153,6 +153,14 @@
 	desc = "A modified stimulants autoinjector for use in combat situations. Has a mild healing effect."
 	list_reagents = list(/datum/reagent/medicine/stimulants = 10, /datum/reagent/medicine/omnizine = 10)
 
+//watered down traitor stim
+/obj/item/reagent_containers/hypospray/medipen/stimpack/crisis
+	name = "crisis stimpack"
+	icon_state = "stimpen"
+	item_state = "stimpen"
+	desc = "A modified stimulant autoinjector for use in emergency situations, containing a cocktail of potent nerve excitants that greatly improve both speed and stun resistance for a brief period. Popular among soldiers and adrenaline junkies."
+	list_reagents = list(/datum/reagent/medicine/stimulants = 5, /datum/reagent/medicine/ephedrine = 10, /datum/reagent/medicine/omnizine = 10)
+
 /obj/item/reagent_containers/hypospray/medipen/stimulants
 	name = "stimulant medipen"
 	desc = "Contains a very large amount of an incredibly powerful stimulant, vastly increasing your movement speed and reducing stuns by a very large amount for around five minutes. Do not take if pregnant."

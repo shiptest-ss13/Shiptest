@@ -4,10 +4,10 @@
 	melee_damage_upper = 15
 	ranged = 1 //technically
 	ranged_message = "charges"
-	ranged_cooldown_time = 40
-	speed = -1
-	damage_coeff = list(BRUTE = 0.6, BURN = 0.6, TOX = 0.6, CLONE = 0.6, STAMINA = 0, OXY = 0.6)
-	playstyle_string = "<span class='holoparasite'>As a <b>charger</b> type you do medium damage, have medium damage resistance, move very fast, and can charge at a location, damaging any target hit and forcing them to drop any items they are holding.</span>"
+	ranged_cooldown_time = 10
+	speed = 2//slow when not charging
+	damage_coeff = list(BRUTE = 0.5, BURN = 0.5, TOX = 0.6, CLONE = 0.6, STAMINA = 0, OXY = 0.6)
+	playstyle_string = "<span class='holoparasite'>As a <b>charger</b> type you are a formidable close range fighter, but move slowly when not charging. You can charge at a location, damaging any target hit and potentially knocking them flat.</span>"
 	magic_fluff_string = "<span class='holoparasite'>..And draw the Hunter, an alien master of rapid assault.</span>"
 	tech_fluff_string = "<span class='holoparasite'>Boot sequence complete. Charge modules loaded. Holoparasite swarm online.</span>"
 	carp_fluff_string = "<span class='holoparasite'>CARP CARP CARP! Caught one! It's a charger carp, that likes running at people. But it doesn't have any legs...</span>"
@@ -63,9 +63,12 @@
 				if(H.check_shields(src, 90, "[name]", attack_type = THROWN_PROJECTILE_ATTACK))
 					blocked = TRUE
 			if(!blocked)
-				L.drop_all_held_items()
 				L.visible_message("<span class='danger'>[src] slams into [L]!</span>", "<span class='userdanger'>[src] slams into you!</span>")
-				L.apply_damage(20, BRUTE)
+				if(prob(25))
+					L.drop_all_held_items()
+					L.Knockdown(10)
+					L.visible_message("<span class='danger'>[L] is knocked clean over!</span>", "<span class='userdanger'>You are flung to the ground by the impact!</span>")
+				L.apply_damage(30, BRUTE)
 				playsound(get_turf(L), 'sound/effects/meteorimpact.ogg', 100, TRUE)
 				shake_camera(L, 4, 3)
 				shake_camera(src, 2, 3)

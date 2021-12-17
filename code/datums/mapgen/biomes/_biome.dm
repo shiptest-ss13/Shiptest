@@ -23,6 +23,7 @@
 		var/obj/structure/flora = pick(flora_types)
 		new flora(gen_turf)
 
+//jungle planet biomes
 /datum/biome/mudlands
 	turf_type = /turf/open/floor/plating/dirt/jungle/dark
 	flora_types = list(/obj/structure/flora/grass/jungle,/obj/structure/flora/grass/jungle/b, /obj/structure/flora/rock/jungle, /obj/structure/flora/rock/pile/largejungle)
