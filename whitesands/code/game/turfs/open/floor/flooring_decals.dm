@@ -172,6 +172,7 @@ HELPER(bottlegreen, "#57967f", 255)
 /obj/effect/turf_decal/industrial/custodial
 	name = "custodial stripes"
 	icon_state = "stripe"
+	color =  "#c900fb"
 
 /obj/effect/turf_decal/industrial/custodial/corner
 	icon_state = "stripecorner"
@@ -188,20 +189,16 @@ HELPER(bottlegreen, "#57967f", 255)
 /obj/effect/turf_decal/industrial/fire
 	name = "fire safety stripes"
 	icon_state = "stripe"
-	detail_overlay = "overstripe"
-	detail_color = "#c90000"
+	color = "#c90000"
 
 /obj/effect/turf_decal/industrial/fire/corner
 	icon_state = "stripecorner"
-	detail_overlay = "overstripecorner"
 
 /obj/effect/turf_decal/industrial/fire/full
 	icon_state = "stripefull"
-	detail_overlay = "overstripefull"
 
 /obj/effect/turf_decal/industrial/fire/cee
 	icon_state = "stripecee"
-	detail_overlay = "overstripecee"
 
 /obj/effect/turf_decal/industrial/fire/fulltile
 	icon_state = "stripefulltile"
@@ -231,20 +228,16 @@ HELPER(bottlegreen, "#57967f", 255)
 /obj/effect/turf_decal/industrial/firstaid
 	name = "first aid stripes"
 	icon_state = "stripe"
-	detail_overlay = "overstripe"
-	detail_color =  "#00cd00"
+	color =  "#00cd00"
 
 /obj/effect/turf_decal/industrial/firstaid/corner
 	icon_state = "stripecorner"
-	detail_overlay = "overstripecorner"
 
 /obj/effect/turf_decal/industrial/firstaid/full
 	icon_state = "stripefull"
-	detail_overlay = "overstripefull"
 
 /obj/effect/turf_decal/industrial/firstaid/cee
 	icon_state = "stripecee"
-	detail_overlay = "overstripecee"
 
 /obj/effect/turf_decal/industrial/firstaid/fulltile
 	icon_state = "stripefulltile"
@@ -252,20 +245,16 @@ HELPER(bottlegreen, "#57967f", 255)
 /obj/effect/turf_decal/industrial/defective
 	name = "defective machinery stripes"
 	icon_state = "stripe"
-	detail_overlay = "overstripe"
-	detail_color = "#0000fb"
+	color = "#0000fb"
 
 /obj/effect/turf_decal/industrial/defective/corner
 	icon_state = "stripecorner"
-	detail_overlay = "overstripecorner"
 
 /obj/effect/turf_decal/industrial/defective/full
 	icon_state = "stripefull"
-	detail_overlay = "overstripefull"
 
 /obj/effect/turf_decal/industrial/defective/cee
 	icon_state = "stripecee"
-	detail_overlay = "overstripecee"
 
 /obj/effect/turf_decal/industrial/defective/fulltile
 	icon_state = "stripefulltile"
@@ -273,20 +262,16 @@ HELPER(bottlegreen, "#57967f", 255)
 /obj/effect/turf_decal/industrial/traffic
 	name = "traffic hazard stripes"
 	icon_state = "stripe"
-	detail_overlay = "overstripe"
-	detail_color = "#fb9700"
+	color = "#fb9700"
 
 /obj/effect/turf_decal/industrial/traffic/corner
 	icon_state = "stripecorner"
-	detail_overlay = "overstripecorner"
 
 /obj/effect/turf_decal/industrial/traffic/full
 	icon_state = "stripefull"
-	detail_overlay = "overstripefull"
 
 /obj/effect/turf_decal/industrial/traffic/cee
 	icon_state = "stripecee"
-	detail_overlay = "overstripecee"
 
 /obj/effect/turf_decal/industrial/traffic/fulltile
 	icon_state = "stripefulltile"
@@ -349,9 +334,27 @@ HELPER(bottlegreen, "#57967f", 255)
 	name = "loading area"
 	icon_state = "loadingarea"
 	alpha = 229
+	detail_overlay = "loadingarea_stripes"
+
+/obj/effect/turf_decal/industrial/loading/red
+	detail_color = COLOR_RED_GRAY
+
+/obj/effect/turf_decal/industrial/loading/white
+	detail_color = COLOR_WHITE
+
+/obj/effect/turf_decal/industrial/caution
+	icon_state = "caution"
+	color = COLOR_YELLOW
+
+/obj/effect/turf_decal/industrial/caution/white
+	color = COLOR_WHITE
+
+/obj/effect/turf_decal/industrial/caution/red
+	color = COLOR_RED
 
 /obj/effect/turf_decal/industrial/stand_clear
 	icon_state = "stand_clear"
+	color = COLOR_YELLOW
 
 /obj/effect/turf_decal/industrial/stand_clear/white
 	color = COLOR_WHITE
@@ -361,6 +364,7 @@ HELPER(bottlegreen, "#57967f", 255)
 
 /obj/effect/turf_decal/industrial/caution
 	icon_state = "caution"
+	color = COLOR_YELLOW
 
 /obj/effect/turf_decal/industrial/caution/white
 	color = COLOR_WHITE
@@ -376,14 +380,6 @@ HELPER(bottlegreen, "#57967f", 255)
 /obj/effect/turf_decal/asteroid
 	name = "random asteroid rubble"
 	icon_state = "asteroid0"
-
-/obj/effect/turf_decal/beach
-	name = "sandy border"
-	icon = 'icons/misc/beach.dmi'
-	icon_state = "beachborder"
-
-/obj/effect/turf_decal/beach/corner
-	icon_state = "beachbordercorner"
 
 /obj/effect/turf_decal/asteroid/New()
 	icon_state = "asteroid[rand(0,9)]"

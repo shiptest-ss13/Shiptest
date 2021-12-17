@@ -28,19 +28,7 @@
 	explanation_text+= " [style]."
 
 /datum/objective/abductee/capture
-	explanation_text = "Capture"
-
-/datum/objective/abductee/capture/New()
-	var/list/jobs = SSjob.occupations.Copy()
-	for(var/X in jobs)
-		var/datum/job/J = X
-		if(J.current_positions < 1)
-			jobs -= J
-	if(jobs.len > 0)
-		var/datum/job/target = pick(jobs)
-		explanation_text += " a [target.title]."
-	else
-		explanation_text += " someone."
+	explanation_text = "Capture someone."
 
 /datum/objective/abductee/calling/New()
 	var/mob/dead/D = pick(GLOB.dead_mob_list)

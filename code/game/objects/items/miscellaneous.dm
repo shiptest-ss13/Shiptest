@@ -285,7 +285,7 @@
 	name = "\improper Ichorium"
 	desc = "A strange substance, known to coalesce in the presence of otherwordly phenomena. Could probably fetch a good price for this."
 	icon = 'icons/obj/gems.dmi'
-	icon_state = "ruby"
+	icon_state = "red"
 	light_range = 2
 	light_power = 3
 	light_color = "#800000"

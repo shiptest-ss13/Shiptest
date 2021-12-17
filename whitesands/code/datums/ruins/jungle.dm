@@ -121,3 +121,15 @@
 	id = "witchjungle"
 	description = "Some heretical sorcerer living in a dingy hut, with a cat."
 	suffix = "jungle_witch.dmm"
+
+/datum/map_template/ruin/jungle/roommates
+	name = "Roommates"
+	id = "roommates"
+	description = "And they were roommates."
+	suffix = "jungle_surface_roommates.dmm"
+
+/datum/map_template/ruin/jungle/ninjashrine
+	name = "Ninja Shrine"
+	id = "ninjashrine"
+	description = "A ninja shrine."
+	suffix = "jungle_surface_ninjashrine.dmm"

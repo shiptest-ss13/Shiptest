@@ -9,6 +9,7 @@
 /obj/item/disk/design_disk/ammo_1911
 	name = "Design Disk - 1911 Magazine"
 	desc = "A design disk containing the pattern for the classic 1911's seven round .45ACP magazine."
+	illustration = "ammo"
 
 /obj/item/disk/design_disk/ammo_1911/Initialize()
 	. = ..()
@@ -34,6 +35,7 @@
 /obj/item/disk/design_disk/disposable_gun
 	name = "Design Disk - Disposable Gun"
 	desc = "A design disk containing designs for a cheap and disposable gun."
+	illustration = "gun"
 
 /obj/item/disk/design_disk/disposable_gun/Initialize()
 	. = ..()
@@ -41,3 +43,20 @@
 	var/datum/design/pizza_disposable_gun/P = new
 	blueprints[1] = G
 	blueprints[2] = P
+
+/obj/item/disk/design_disk/ammo_38_hunting
+	name = "Design Disk - .38 Hunting Ammo"
+	desc = "A design disk containing the pattern for a refill ammo box for Winchester rifles and Detective Specials."
+
+/obj/item/disk/design_disk/ammo_38_hunting/Initialize()
+	. = ..()
+	var/datum/design/ammo/c38_hunting/M = new
+	blueprints[1] = M
+
+/datum/design/ammo/c38_hunting
+	name = "Ammo Box (.38 hunting)"
+	id = "c38_hunting"
+	build_type = AUTOLATHE
+	materials = list(/datum/material/iron = 30000)
+	build_path = /obj/item/ammo_box/c38_box/hunting
+	category = list("Imported")

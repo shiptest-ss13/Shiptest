@@ -1,10 +1,9 @@
 /obj/item/singularityhammer
 	name = "singularity hammer"
 	desc = "The pinnacle of close combat technology, the hammer harnesses the power of a miniaturized singularity to deal crushing blows."
-	icon_state = "mjollnir0"
+	icon_state = "singularity0"
 	lefthand_file = 'icons/mob/inhands/weapons/hammers_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/hammers_righthand.dmi'
-	color = "#212121"
 	flags_1 = CONDUCT_1
 	slot_flags = ITEM_SLOT_BACK
 	force = 5
@@ -25,7 +24,7 @@
 
 /obj/item/singularityhammer/ComponentInitialize()
 	. = ..()
-	AddComponent(/datum/component/two_handed, force_multiplier=4, icon_wielded="mjollnir1")
+	AddComponent(/datum/component/two_handed, force_multiplier=4, icon_wielded="singularity1")
 
 /// triggered on wield of two handed item
 /obj/item/singularityhammer/proc/on_wield(obj/item/source, mob/user)
@@ -40,7 +39,7 @@
 	wielded = FALSE
 
 /obj/item/singularityhammer/update_icon_state()
-	icon_state = "mjollnir0"
+	icon_state = "singularity0"
 
 /obj/item/singularityhammer/Destroy()
 	STOP_PROCESSING(SSobj, src)

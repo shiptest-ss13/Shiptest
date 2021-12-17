@@ -7,7 +7,7 @@
 	crate_name = "hybrid taser crate"
 	dangerous = TRUE
 
-/datum/supply_pack/armory/armory/commanders
+/datum/supply_pack/security/armory/commanders
 	name = "Commander pistol crate"
 	desc = "Contains two modified M1911 'Commander' pistols, produced by Nanotrasen. Requires Armory access to open."
 	cost = 7500
@@ -27,7 +27,7 @@
 	cost = 5000
 	dangerous = TRUE
 
-/datum/supply_pack/armory/armory/makarovs
+/datum/supply_pack/security/armory/makarovs
 	name = "Makarov pistol crate"
 	desc = "Contains three concealable soviet-era Makarov pistols, produced by the Gorlex Marauders. Requires Armory access to open."
 	cost = 9500
@@ -36,7 +36,7 @@
 					/obj/item/gun/ballistic/automatic/pistol)
 	dangerous = TRUE
 
-/datum/supply_pack/Armory/m10mm_ammo
+/datum/supply_pack/security/armory/m10mm_ammo
 	name = "10mm Makarov Ammo Crate"
 	desc = "Contains five eight-round magazines for the Makarov pistol. Requires Armory access to open."
 	contains = list(/obj/item/ammo_box/magazine/m10mm,
@@ -71,37 +71,41 @@
 
 /datum/supply_pack/security/hardsuit
 	name = "Security Hardsuit Crate"
-	desc = "Contains a security hardsuit for catching criminals in space! Requires Security access to open."
+	desc = "Contains a security hardsuit for light combat duty. Requires Security access to open."
 	cost = 4500
-	contains = list(/obj/item/clothing/suit/space/hardsuit/security)
+	contains = list(/obj/item/clothing/suit/space/hardsuit/security/independent)
 	crate_name = "security hardsuit crate"
 
 /datum/supply_pack/security/hardsuit3
 	name = "Bulk Security Hardsuit Crate"
-	desc = "Contains three security hardsuits for catching criminals in space! Requires Security access to open."
+	desc = "Contains three security hardsuits for light combat duty. Requires Security access to open."
 	cost = 11000
-	contains = list(/obj/item/clothing/suit/space/hardsuit/security,
-					/obj/item/clothing/suit/space/hardsuit/security,
-					/obj/item/clothing/suit/space/hardsuit/security)
+	contains = list(/obj/item/clothing/suit/space/hardsuit/security/independent,
+					/obj/item/clothing/suit/space/hardsuit/security/independent,
+					/obj/item/clothing/suit/space/hardsuit/security/independent)
 	crate_name = "bulk security hardsuit crate"
 
 /datum/supply_pack/engineering/hardsuit
-	name = "Engineering Hardsuit Crate"
-	desc = "Who took all the damn hardsuits? Not a problem, for some money, we can hook you up with another hardsuit!"
+	name = "Engineering Space Suit Crate"
+	desc = "Who took all the damn space suits? Not a problem, for some money, we can hook you up with another space suit!"
 	cost = 3500
 	access = ACCESS_ENGINE
-	contains = list(/obj/item/clothing/suit/space/hardsuit/engine)
-	crate_name = "engineering hardsuit crate"
+	contains = list(/obj/item/clothing/suit/space/engineer,
+					/obj/item/clothing/head/helmet/space/light/engineer)
+	crate_name = "engineering space suit crate"
 
 /datum/supply_pack/engineering/hardsuit3
-	name = "Bulk Engineering Hardsuit Crate"
-	desc = "All the engineers with hardsuits walk into the SM or die to space carp? Not a problem! For a small fee we can hook you up with more hardsuits!"
+	name = "Bulk Engineering Space Suit Crate"
+	desc = "All the engineers with space suits walk into the SM or die to space carp? Not a problem! For a small fee we can hook you up with more space suits!"
 	cost = 10000
 	access = ACCESS_ENGINE
-	contains = list(/obj/item/clothing/suit/space/hardsuit/engine,
-					/obj/item/clothing/suit/space/hardsuit/engine,
-					/obj/item/clothing/suit/space/hardsuit/engine)
-	crate_name = "bulk engineering hardsuit crate"
+	contains = list(/obj/item/clothing/suit/space/engineer,
+					/obj/item/clothing/head/helmet/space/light/engineer,
+					/obj/item/clothing/suit/space/engineer,
+					/obj/item/clothing/head/helmet/space/light/engineer,
+					/obj/item/clothing/suit/space/engineer,
+					/obj/item/clothing/head/helmet/space/light/engineer)
+	crate_name = "bulk engineering space suit crate"
 
 /datum/supply_pack/engineering/atmossuit
 	name = "Atmospherics Hardsuit Crate"
@@ -217,6 +221,15 @@
 	access = ACCESS_MEDICAL
 	contains = list(/obj/item/clothing/suit/space/hardsuit/medical)
 	crate_name = "medical hardsuit crate"
+
+/datum/supply_pack/science/pilotsuit
+	name = "Pilot Space Suit Crate"
+	desc = "A pilot space suit for added mobility in mechs and pods! Requires mining or science access to open."
+	cost = 4000
+	access = list(ACCESS_RESEARCH, ACCESS_MINING)
+	contains = list(/obj/item/clothing/suit/space/pilot,
+					/obj/item/clothing/head/helmet/space/pilot/random)
+	crate_name = "pilot space suit crate"
 
 /datum/supply_pack/science/hardsuit
 	name = "Science Hardsuit Crate"

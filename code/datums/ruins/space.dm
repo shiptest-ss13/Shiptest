@@ -5,12 +5,24 @@
 	cost = 1
 	allow_duplicates = FALSE
 
+/datum/map_template/ruin/space/corporate_mining
+	id = "corporate_mining"
+	suffix = "corporate_mining.dmm"
+	name = "Corporate Mining Module"
+	description = "An old and rusty mining facility, with big ore potential."
+
 /datum/map_template/ruin/space/zoo
 	id = "zoo"
 	suffix = "abandonedzoo.dmm"
 	name = "Biological Storage Facility"
 	description = "In case society crumbles, we will be able to restore our zoos to working order with the breeding stock kept in these 100% secure and unbreachable storage facilities. \
 	At no point has anything escaped. That's our story, and we're sticking to it."
+
+/datum/map_template/ruin/space/excavator_DK
+	id = "Excavator-DK"
+	suffix = "excavator_DK.dmm"
+	name = "Excavator DK Class"
+	description = "A heavily damaged DK class excavator"
 
 /datum/map_template/ruin/space/asteroid1
 	id = "asteroid1"
@@ -156,11 +168,13 @@
 	name = "Strange Ship"
 	description = "A ship seemingly lost, drifting along the stars. This thing looks like it belongs in ancient times."
 
+/* shiptest: Replaced with dark_glade ruin
 /datum/map_template/ruin/space/way_home
 	id = "way-home"
 	suffix = "way_home.dmm"
 	name = "Salvation"
 	description = "In the darkest times, we will find our way home."
+*/
 
 /datum/map_template/ruin/space/djstation
 	id = "djstation"
@@ -300,9 +314,3 @@
 	suffix = "syndicatewreck01.dmm"
 	name = "Syndicate Station Wreckage"
 	description = "An old wreck, made of plastitanium. Somehow, it looks more filled than it ever was..."
-
-/datum/map_template/ruin/space/cult_templar
-	id = "cult_templar"
-	suffix = "chaosmarine.dmm"
-	name = "Bloody Lair"
-	description = "A seemingly abandoned blood cult base in space, but why was it abandoned?"

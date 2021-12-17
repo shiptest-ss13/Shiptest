@@ -663,6 +663,33 @@
 		var/item = pick(contains)
 		new item(C)
 
+/datum/supply_pack/security/armory/winchester
+	name = "Winchester Lever Action Rifle Crate"
+	desc = "Contains two lever action rifles intended for hunting wildlife or no-go-doers."
+	cost = 9000
+	contains = list(/obj/item/gun/ballistic/shotgun/winchester,
+					/obj/item/gun/ballistic/shotgun/winchester)
+	crate_name = "rifle crate"
+	dangerous = TRUE
+
+/datum/supply_pack/security/armory/winchester_ammo
+	name = "Winchester and Detective Special .38 Ammo Boxes"
+	desc = "Contains two 30 round ammo boxes for refilling .38 weapons."
+	cost = 5000
+	contains = list(/obj/item/ammo_box/c38_box,
+					/obj/item/ammo_box/c38_box)
+	crate_name = "ammo crate"
+	dangerous = TRUE
+
+/datum/supply_pack/security/armory/winchester_hunting_ammo
+	name = "Winchester and Detective Special .38 Hunting Ammo Boxes"
+	desc = "Contains two  30 round .38 ammo boxes which deal extra damage to wildlife."
+	cost = 2000
+	contains = list(/obj/item/ammo_box/c38_box/hunting,
+					/obj/item/ammo_box/c38_box/hunting)
+	crate_name = "ammo crate"
+	dangerous = TRUE
+
 /datum/supply_pack/security/armory/aknt
 	name = "Nanotrasen Brand Kalashnikov Rifle Crate"
 	desc = "Contains two cheaply made reproductions of the AK-47 by Nanotrasen, the NT-AK."
@@ -1649,13 +1676,26 @@
 	crate_name = "replacement lights"
 
 /datum/supply_pack/service/minerkit
-	name = "Shaft Miner Starter Kit"
-	desc = "All the miners died too fast? Assistant wants to get a taste of life off-station? Either way, this kit is the best way to turn a regular crewman into an ore-producing, monster-slaying machine. Contains meson goggles, a pickaxe, advanced mining scanner, cargo headset, ore bag, gasmask, an explorer suit and a miner ID upgrade. Requires QM access to open."
+	name = "EXOCON Frontier Starter Kit"
+	desc = "All the essentials an aspiring prospector or hunter needs to get their operation off the ground."
 	cost = 2000
 	access = ACCESS_QM
 	contains = list(/obj/item/storage/backpack/duffelbag/mining_conscript)
-	crate_name = "shaft miner starter kit"
-	crate_type = /obj/structure/closet/crate/secure
+	crate_name = "EXOCON Frontier starter kit"
+	crate_type = /obj/structure/closet/crate/secure/exo
+
+/datum/supply_pack/service/hvyminer
+	name = "Heavy Mining Kit"
+	desc = "A set of supplementary premium equipment for particularly challenging frontier expeditions. Comes equipped with an enhanced mining suit, crusher, launch boots, and two emerency stimulant injectors."
+	cost = 7500
+	access = ACCESS_QM
+	crate_name = "EXOCON Heavy Operations Kit"
+	crate_type = /obj/structure/closet/crate/secure/exo
+	contains = list(/obj/item/clothing/suit/space/hardsuit/mining/heavy,
+					/obj/item/clothing/shoes/bhop,
+					/obj/item/reagent_containers/hypospray/medipen/stimpack/crisis,
+					/obj/item/reagent_containers/hypospray/medipen/stimpack/crisis,
+					/obj/item/kinetic_crusher)
 
 /datum/supply_pack/service/vending/bartending
 	name = "Booze-o-mat and Coffee Supply Crate"

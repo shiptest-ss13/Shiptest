@@ -166,7 +166,7 @@
 	icon = 'whitesands/icons/obj/items_and_weapons.dmi'
 	lefthand_file = 'whitesands/icons/mob/inhands/weapons/polearms_lefthand.dmi'
 	righthand_file = 'whitesands/icons/mob/inhands/weapons/polearms_righthand.dmi'
-	mob_overlay_icon = 'whitesands/icons/mob/clothing/back.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/back.dmi'
 	force = 12
 	throwforce = 22
 	armour_penetration = 15				//Enhanced armor piercing
@@ -224,3 +224,15 @@
 
 /obj/item/spear/dragonspear/update_icon_state()
 	icon_state = "[icon_prefix]0"
+
+/obj/item/spear/dragonspear/attack(atom/target, blocked = FALSE)
+	if(iscarbon(target))
+		var/mob/living/carbon/M = target
+		M.adjust_fire_stacks(3)
+		M.IgniteMob()
+		M.apply_damage(5, BURN)
+		M.adjust_bodytemperature(150)
+	if(isanimal(target))
+		var/mob/living/simple_animal/M = target
+		M.apply_damage(15, BURN)
+	..()

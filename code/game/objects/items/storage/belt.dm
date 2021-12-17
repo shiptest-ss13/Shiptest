@@ -118,9 +118,9 @@
 	new /obj/item/screwdriver/nuke(src)
 	new /obj/item/wrench/combat(src)
 	new /obj/item/weldingtool/largetank(src)
-	new /obj/item/crowbar(src)
-	new /obj/item/wirecutters(src)
-	new /obj/item/multitool(src)
+	new /obj/item/crowbar/syndie(src)
+	new /obj/item/wirecutters/syndie(src)
+	new /obj/item/multitool/syndie(src)
 	new /obj/item/inducer/syndicate(src)
 
 /obj/item/storage/belt/medical

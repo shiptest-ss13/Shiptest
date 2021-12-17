@@ -4,11 +4,31 @@
 	"map_path": "_maps/shuttles/shiptest/corp_high.dmm",
 	"map_id": "corp_high",
 	"job_slots": {
-		"Captain": 1,
-		"Security Officer": 2,
-		"Station Engineer": 2,
-		"Shaft Miner": 1,
-		"Assistant": 4
+		"Chief Executive Officer": {
+			"outfit": "/datum/outfit/job/captain/corporate",
+			"officer": true,
+			"slots": 1
+		},
+		"Chief Supply Officer": {
+			"outfit": "/datum/outfit/job/quartermaster/supplychief",
+			"officer": true,
+			"slots": 1
+		},
+		"Corporate Security": {
+			"outfit": "/datum/outfit/job/security/corporate",
+			"officer": false,
+			"slots": 2
+		},
+		"Contracted Engineer": {
+			"outfit": "/datum/outfit/job/engineer/corporate",
+			"officer": false,
+			"slots": 2
+		},
+		"Business Associate": {
+			"outfit": "/datum/outfit/job/assistant/corporate",
+			"officer": false,
+			"slots": 4
+		}
 	},
 	"cost": 850
 }

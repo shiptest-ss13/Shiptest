@@ -54,11 +54,11 @@ GLOBAL_VAR_INIT(mouse_killed, 0)
 	var/full = FALSE //WS Edit
 	var/eating = FALSE //WS Edit
 	var/cheesed = FALSE //WS Edit
-	can_be_held = TRUE
 	held_state = "mouse_gray"
 
 /mob/living/simple_animal/mouse/Initialize()
 	. = ..()
+	ADD_TRAIT(src, TRAIT_HOLDABLE, INNATE_TRAIT)
 	AddComponent(/datum/component/squeak, list('sound/effects/mousesqueek.ogg'=1), 100, extrarange = SHORT_RANGE_SOUND_EXTRARANGE) //as quiet as a mouse or whatever
 	if(!body_color)
 		body_color = pick( list("brown","gray","white") )

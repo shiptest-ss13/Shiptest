@@ -1,0 +1,50 @@
+{
+	"map_name": "Rigoureux-class Auxiliary Cutter",
+	"map_short_name": "Rigoureux-class",
+	"map_path": "_maps/shuttles/shiptest/rigger_b.dmm",
+	"map_id": "rigger_b",
+	"roundstart": true,
+	"job_slots": {
+		"Captain": {
+			"outfit": "/datum/outfit/job/captain/solgov",
+			"officer": true,
+			"slots": 1
+		},
+		"Executive Officer": {
+			"outfit": "/datum/outfit/job/head_of_personnel/solgov",
+			"officer": true,
+			"slots": 1
+		},
+		"Signal Officer": {
+			"outfit": "/datum/outfit/job/solgov",
+			"officer": true,
+			"slots": 1
+		},
+		"Naval Surgeon": {
+			"outfit": "/datum/outfit/job/doctor/solgov",
+			"slots": 1
+		},
+		"Machinist": {
+			"outfit": "/datum/outfit/job/engineer/solgov",
+			"slots": 2
+		},
+		"Field Engineer": {
+			"outfit": "/datum/outfit/job/miner/solgov",
+			"slots": 2
+		},
+		"Cook": 1,
+		"Brig Officer": {
+			"outfit": "/datum/outfit/job/warden/solgov",
+			"slots": 1
+		},
+		"Boarding Specialist": {
+			"outfit": "/datum/outfit/job/security/solgov",
+			"slots": 2
+		},
+		"Sailor": {
+			"outfit": "/datum/outfit/job/assistant/solgov",
+			"slots": 4
+		}
+	},
+	"cost": 750
+}

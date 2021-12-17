@@ -298,29 +298,30 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 
 /// Maintenance Areas ///
 /area/ship/maintenance
+	name = "Maintenance"
 	ambientsounds = MAINTENANCE
 	lighting_colour_tube = "#ffe5cb"
 	lighting_colour_bulb = "#ffdbb4"
 	sound_environment = SOUND_AREA_TUNNEL_ENCLOSED
 
 /area/ship/maintenance/aft
-	name = "Aft Hallway"
+	name = "Aft Maintenance"
 	icon_state = "amaint"
 
 /area/ship/maintenance/fore
-	name = "Fore Hallway"
+	name = "Fore Maintenance"
 	icon_state = "fmaint"
 
 /area/ship/maintenance/starboard
-	name = "Starboard Hallway"
+	name = "Starboard Maintenance"
 	icon_state = "smaint"
 
 /area/ship/maintenance/port
-	name = "Port Hallway"
+	name = "Port Maintenance"
 	icon_state = "pmaint"
 
 /area/ship/maintenance/central
-	name = "Central Hallway"
+	name = "Central Maintenance"
 	icon_state = "maintcentral"
 
 /area/ship/construction

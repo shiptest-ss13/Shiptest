@@ -260,7 +260,7 @@ GLOBAL_LIST_INIT(sand_recipes, list(\
 		GibtoniteReaction(user)
 		return
 	if(primed)
-		if(istype(I, /obj/item/mining_scanner) || istype(I, /obj/item/t_scanner/adv_mining_scanner) || I.tool_behaviour == TOOL_MULTITOOL)
+		if(istype(I, /obj/item/mining_scanner) || istype(I, /obj/item/t_scanner/adv_mining_scanner) || istype(I, /obj/item/pinpointer/deepcore) || I.tool_behaviour == TOOL_MULTITOOL)
 			primed = FALSE
 			if(det_timer)
 				deltimer(det_timer)

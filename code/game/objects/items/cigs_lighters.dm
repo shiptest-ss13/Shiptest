@@ -776,6 +776,35 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	overlay_state = "clockwork"
 	grind_results = list(/datum/reagent/iron = 1, /datum/reagent/fuel = 5, /datum/reagent/copper = 1)
 
+/obj/item/lighter/liz
+	name = "small blaze"
+	desc = "A little flame of your own, currently located dangerously in your mouth."
+	icon_state = "fire"
+	item_state = "fire"
+	overlay_state = "fire"
+	grind_results = null
+	lefthand_file = null
+	righthand_file = null
+	item_flags = DROPDEL
+	w_class = WEIGHT_CLASS_HUGE
+	force = 0                       //if you want to attack someone with that fire you gotta spit it out first
+	throwforce = 0
+	throw_range = 0
+	throw_speed = 0
+
+/obj/item/lighter/liz/Initialize()
+	. = ..()
+	set_lit(TRUE)
+	force = 0
+
+/obj/item/lighter/liz/attack_self(mob/user)
+	qdel(src)
+
+/obj/item/lighter/liz/ignition_effect(atom/A, mob/user)
+	if(get_temperature())
+		. = "<span class='rose'>[user] spits fire at [A], igniting it.</span>"
+		playsound(src, 'sound/magic/fireball.ogg', 10, TRUE)
+
 ///////////
 //ROLLING//
 ///////////

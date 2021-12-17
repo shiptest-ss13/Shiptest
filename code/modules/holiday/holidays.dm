@@ -178,7 +178,6 @@
 	begin_month = APRIL
 
 /datum/holiday/april_fools/celebrate()
-	SSjob.set_overflow_role("Clown")
 	SSticker.login_music = 'sound/ambience/clown.ogg'
 	for(var/i in GLOB.new_player_list)
 		var/mob/dead/new_player/P = i

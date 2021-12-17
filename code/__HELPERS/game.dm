@@ -517,11 +517,11 @@ block( \
 
 	return A.loc
 
-/proc/AnnounceArrival(mob/living/carbon/human/character, rank)
+/proc/AnnounceArrival(mob/living/carbon/human/character, rank, obj/structure/overmap/ship/simulated/ship)
 	if(!SSticker.IsRoundInProgress() || QDELETED(character))
 		return
 	var/area/A = get_area(character)
-	deadchat_broadcast("<span class='game'> has arrived at the station at <span class='name'>[A.name]</span>.</span>", "<span class='game'><span class='name'>[character.real_name]</span> ([rank])</span>", follow_target = character, message_type=DEADCHAT_ARRIVALRATTLE)
+	deadchat_broadcast("<span class='game'> has arrived on the <span class='name'>[ship.name]</span> at <span class='name'>[A.name]</span>.</span>", "<span class='game'><span class='name'>[character.real_name]</span> ([rank])</span>", follow_target = character, message_type=DEADCHAT_ARRIVALRATTLE)
 	if((!GLOB.announcement_systems.len) || (!character.mind))
 		return
 	if((character.mind.assigned_role == "Cyborg") || (character.mind.assigned_role == character.mind.special_role))

@@ -3,6 +3,8 @@
 //Primary reward: the cleric's mace design disk.
 /obj/item/disk/design_disk/adv/cleric_mace
 	name = "Enshrined Disc of Smiting"
+	illustration = "sword"
+	color = "#6F6F6F"
 
 /obj/item/disk/design_disk/adv/cleric_mace/Initialize()
 	. = ..()

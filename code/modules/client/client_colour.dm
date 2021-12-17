@@ -192,10 +192,7 @@
 	fade_in = 20
 	fade_out = 20
 
-/datum/client_colour/monochrome/trance
-	priority = PRIORITY_ABSOLUTE
-
-/datum/client_colour/monochrome/blind
+/datum/client_colour/monochrome/blind/permanent //For the permanently colorblind
 	priority = PRIORITY_ABSOLUTE
 
 /datum/client_colour/bloodlust

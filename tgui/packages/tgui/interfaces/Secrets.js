@@ -61,14 +61,6 @@ const DebuggingTab = (props, context) => {
           content="Change all maintenance doors to brig access only"
           onClick={() => act("maint_access_brig")} />
       </Flex.Item>
-      <Flex.Item mt={0.5} mb={-0.5}>
-        <Button
-          lineHeight={lineHeightDebug}
-          icon="question"
-          fluid
-          content="Remove cap on security officers"
-          onClick={() => act("infinite_sec")} />
-      </Flex.Item>
     </Flex>
   );
 };
@@ -307,14 +299,6 @@ const FunTab = (props, context) => {
             fluid
             content="Anonymous Names"
             onClick={() => act("anon_name")} />
-        </Flex.Item>
-        <Flex.Item grow={1} mx={0.5}>
-          <Button
-            icon="users"
-            lineHeight={lineHeightNormal}
-            fluid
-            content="Triple AI mode"
-            onClick={() => act("tripleAI")} />
         </Flex.Item>
         <Flex.Item grow={1}>
           <Button

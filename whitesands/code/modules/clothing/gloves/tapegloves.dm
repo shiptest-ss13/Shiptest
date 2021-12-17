@@ -1,7 +1,6 @@
 /obj/item/clothing/gloves/color/yellow/sprayon/tape
 	name = "taped-on insulated gloves"
 	desc = "This is a totally safe idea."
-	icon = 'whitesands/icons/obj/clothing/gloves.dmi'
 	icon_state = "yellowtape"
 	item_state = "ygloves"
 	shocks_remaining = 3
@@ -19,5 +18,5 @@
 		shocks_remaining--
 	if(shocks_remaining <= 0)
 		playsound(user, 'sound/items/poster_ripped.ogg', 30)
-		to_chat(user, "<span class='danger'>\The [src] fall appart into useless scraps!</span>")
+		to_chat(user, "<span class='danger'>\The [src] fall apart into useless scraps!</span>")
 		qdel(src)

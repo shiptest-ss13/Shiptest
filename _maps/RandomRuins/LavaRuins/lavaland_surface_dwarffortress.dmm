@@ -5,6 +5,12 @@
 	},
 /turf/open/floor/plating/asteroid/basalt,
 /area/lavaland/surface/outdoors)
+"dO" = (
+/mob/living/simple_animal/hostile/asteroid/hivelord/legion/dwarf{
+	name = "dwarf bartender"
+	},
+/turf/open/floor/plating/asteroid/basalt,
+/area/ruin/unpowered)
 "fr" = (
 /obj/structure/closet/cabinet,
 /obj/item/instrument/banjo,
@@ -41,6 +47,12 @@
 /obj/structure/mineral_door/iron,
 /turf/open/floor/plating/asteroid/basalt,
 /area/ruin/unpowered)
+"kY" = (
+/mob/living/simple_animal/hostile/asteroid/hivelord/legion/dwarf{
+	name = "dwarf armorer"
+	},
+/turf/open/floor/plating/asteroid/basalt,
+/area/ruin/unpowered)
 "lt" = (
 /obj/structure/table/wood,
 /obj/item/reagent_containers/food/drinks/drinkingglass{
@@ -48,11 +60,15 @@
 	},
 /turf/open/floor/plating/asteroid/basalt,
 /area/ruin/unpowered)
-"lV" = (
-/obj/structure/chair/wood/wings{
-	dir = 8
+"mN" = (
+/obj/structure/chair/stool/bar,
+/mob/living/simple_animal/hostile/asteroid/hivelord/legion{
+	icon_aggro = "dwarf_legion";
+	icon_dead = "dwarf_legion";
+	icon_living = "dwarf_legion";
+	icon_state = "dwarf_legion";
+	name = "dwarf legion"
 	},
-/mob/living/simple_animal/hostile/asteroid/hivelord/legion/dwarf,
 /turf/open/floor/plating/asteroid/basalt,
 /area/ruin/unpowered)
 "mO" = (
@@ -68,11 +84,6 @@
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor2-old"
 	},
-/turf/open/floor/plating/asteroid/basalt,
-/area/ruin/unpowered)
-"se" = (
-/obj/structure/chair/stool/bar,
-/mob/living/simple_animal/hostile/asteroid/hivelord/legion/dwarf,
 /turf/open/floor/plating/asteroid/basalt,
 /area/ruin/unpowered)
 "sz" = (
@@ -117,11 +128,28 @@
 /obj/structure/chair/wood/wings{
 	dir = 1
 	},
+/mob/living/simple_animal/hostile/asteroid/hivelord/legion{
+	icon_aggro = "dwarf_legion";
+	icon_dead = "dwarf_legion";
+	icon_living = "dwarf_legion";
+	icon_state = "dwarf_legion";
+	name = "dwarf legion"
+	},
 /turf/open/floor/plating/asteroid/basalt,
 /area/ruin/unpowered)
 "xR" = (
 /turf/closed/wall/mineral/wood,
 /area/ruin/unpowered)
+"zY" = (
+/mob/living/simple_animal/hostile/asteroid/hivelord/legion{
+	icon_aggro = "dwarf_legion";
+	icon_dead = "dwarf_legion";
+	icon_living = "dwarf_legion";
+	icon_state = "dwarf_legion";
+	name = "dwarf legion"
+	},
+/turf/open/floor/plating/asteroid/basalt,
+/area/lavaland/surface/outdoors)
 "Ay" = (
 /turf/open/floor/plating/asteroid/basalt,
 /area/lavaland/surface/outdoors)
@@ -280,6 +308,16 @@
 	},
 /turf/open/floor/plating/asteroid/basalt,
 /area/ruin/unpowered)
+"UP" = (
+/mob/living/simple_animal/hostile/asteroid/hivelord/legion{
+	icon_aggro = "dwarf_legion";
+	icon_dead = "dwarf_legion";
+	icon_living = "dwarf_legion";
+	icon_state = "dwarf_legion";
+	name = "dwarf legion"
+	},
+/turf/open/floor/plating/asteroid/basalt,
+/area/ruin/unpowered)
 "Vk" = (
 /obj/structure/chair/stool/bar,
 /turf/open/floor/plating/asteroid/basalt,
@@ -348,7 +386,7 @@ GS
 xP
 xR
 Dk
-Bb
+UP
 wm
 xR
 uW
@@ -364,7 +402,7 @@ xR
 jL
 jL
 jL
-lV
+Hj
 jL
 xR
 wm
@@ -403,7 +441,7 @@ xi
 xR
 jL
 lt
-se
+Vk
 jL
 jL
 xR
@@ -421,9 +459,9 @@ xi
 xi
 xi
 xR
-Bb
+dO
 Hg
-Vk
+mN
 jL
 jL
 ks
@@ -488,7 +526,7 @@ jL
 fr
 xR
 wm
-Bb
+UP
 jL
 xR
 xi
@@ -589,7 +627,7 @@ jL
 jL
 xR
 HZ
-Bb
+kY
 jL
 ks
 uW
@@ -639,7 +677,7 @@ xi
 "}
 (18,1,1) = {"
 sS
-GL
+zY
 xR
 xR
 xR
@@ -652,7 +690,7 @@ xR
 xR
 xR
 xR
-GL
+zY
 xi
 xi
 xi

@@ -167,7 +167,6 @@
 /obj/effect/mob_spawn/human/corpse/nanotrasensoldier
 	name = "\improper Nanotrasen Private Security Officer"
 	id_job = "Private Security Force"
-	id_access = "Security Officer"
 	outfit = /datum/outfit/nanotrasensoldiercorpse2
 	hairstyle = "Bald"
 	facial_hairstyle = "Shaved"
@@ -187,7 +186,6 @@
 /obj/effect/mob_spawn/human/corpse/nanotrasenassaultsoldier
 	name = "Nanotrasen Private Security Officer"
 	id_job = "Nanotrasen Assault Force"
-	id_access = "Security Officer"
 	outfit = /datum/outfit/nanotrasenassaultsoldiercorpse
 	hairstyle = "Bald"
 	facial_hairstyle = "Shaved"

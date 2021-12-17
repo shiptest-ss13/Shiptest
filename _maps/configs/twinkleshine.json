@@ -1,0 +1,34 @@
+{
+	"map_name": "Twinkleshine-class Battle Cruiser",
+	"map_short_name": "Twinkleshine-class",
+	"map_path": "_maps/shuttles/shiptest/starfury_class.dmm",
+	"map_id": "starfury_class",
+	"job_slots": {
+		"Captain": {
+			"outfit": "/datum/outfit/syndicate_empty/sbc/assault/captain",
+			"officer": true,
+			"slots": 1
+		},
+		"Operative": {
+			"outfit": "/datum/outfit/syndicate_empty/sbc/assault/operative",
+			"officer": true,
+			"slots": 1
+		},
+		"Medic":{
+			"outfit": "/datum/outfit/syndicate_empty/sbc/med",
+			"slots": 2
+		},
+		"Mechanic":{
+			"outfit": "/datum/outfit/syndicate_empty/sbc/engi",
+			"slots": 2
+		},
+		"Trooper":{
+			"outfit": "/datum/outfit/syndicate_empty/sbc/assault",
+			"slots": 5
+		},
+		"Deck Assistant":{
+			"outfit": "/datum/outfit/syndicate_empty/sbc",
+			"slots": 2
+		}
+	}
+}

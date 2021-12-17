@@ -4,13 +4,36 @@
 	"map_path": "_maps/shuttles/shiptest/bogatyr.dmm",
 	"map_id": "bogatyr",
 	"job_slots": {
-		"Captain": 1,
-		"Scientist": 1,
-		"Shaft Miner": 2,
-		"Medical Doctor": 1,
-		"Security Officer": 1,
-		"Cargo Technician": 1,
-		"Assistant": 6
+		"Kapitan": {
+			"outfit": "/datum/outfit/job/captain",
+			"officer": true,
+			"slots": 1
+		},
+		"Uchenyy": {
+			"outfit": "/datum/outfit/job/scientist",
+			"slots": 1
+		
+		},
+		"Shakhter": {
+			"outfit": "/datum/outfit/job/miner",
+			"slots": 2
+		},
+		"Vrach": {
+			"outfit": "/datum/outfit/job/doctor",
+			"slots": 1
+		},
+		"Strazha": {
+			"outfit": "/datum/outfit/job/security",
+			"slots": 1
+		},
+		"Gruzovoy Tekhnik": {
+			"outfit": "/datum/outfit/job/cargo_tech",
+			"slots": 1
+		},
+		"Pomoshchnik": {
+			"outfit": "/datum/outfit/job/assistant",
+			"slots": 4
+		}
 	},
 	"cost": 499
 }
