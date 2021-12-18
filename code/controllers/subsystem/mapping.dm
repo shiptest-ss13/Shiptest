@@ -315,7 +315,7 @@ SUBSYSTEM_DEF(mapping)
 			var/upper_target_y = target_y+size_y
 
 			if((target_x < 1 || target_x > world.maxx) || (target_y < 1 || upper_target_y > world.maxy))
-				return //Out of bounds
+				continue //Out of bounds
 
 			if(level.is_box_free(target_x, target_y, upper_target_x, upper_target_y))
 				return list(target_x, target_y, level.z_value) //hallelujah we found the unallocated spot
