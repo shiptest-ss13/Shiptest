@@ -347,7 +347,7 @@ GLOBAL_VAR_INIT(say_disabled, FALSE)
 	to_chat(src, messages.Join(""), confidential = TRUE)
 
 #define SUB_ZONE_INFO_FULL(virtual_level) "[virtual_level.parent_map_zone.id]. [virtual_level.id]. [virtual_level.name]"
-#define MAP_ZONE_INFO(map_zone) "[map_zone.id]. [map_zone.name]" //Works for sub zone or map zones
+#define MAP_ZONE_INFO(map_zone) "[map_zone.id]. [map_zone.name]" //Works for virtual level or map zones
 
 /client/proc/map_zones_info()
 	set name = "Map-Zones Info"

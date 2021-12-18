@@ -60,7 +60,7 @@
 	var/datum/signal/subspace/original
 	/// Map zones that this signal is reaching
 	var/list/map_zones
-	/// Whether it reaches all sub zones
+	/// Whether it reaches all virtual levels
 	var/wideband = FALSE
 
 /datum/signal/subspace/New(data)
@@ -151,7 +151,7 @@
 	var/list/radios = list()
 	switch (transmission_method)
 		if (TRANSMISSION_SUBSPACE)
-			// Reaches any radios on the sub zones
+			// Reaches any radios on the virtual levels
 			for(var/obj/item/radio/R in GLOB.all_radios["[frequency]"])
 				if(R.can_receive(frequency, map_zones))
 					radios += R

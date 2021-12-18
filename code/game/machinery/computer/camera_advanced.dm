@@ -4,7 +4,7 @@
 	icon_screen = "cameras"
 	icon_keyboard = "security_key"
 	light_color = COLOR_SOFT_RED
-	/// If defined, the console will only be able to access the sub zones with the defined trait
+	/// If defined, the console will only be able to access the virtual levels with the defined trait
 	var/trait_lock
 	var/mob/camera/aiEye/remote/eyeobj
 	var/mob/living/current_user = null

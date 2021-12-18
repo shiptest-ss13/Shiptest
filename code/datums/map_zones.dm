@@ -4,7 +4,6 @@
 	var/static/next_id = 0
 	var/next_vlevel_id = 0
 	var/list/traits
-	//var/datum/overmap_object/related_overmap_object
 	var/parallax_movedir
 	/// Weather controller for this level
 	var/datum/weather_controller/weather_controller
@@ -25,11 +24,6 @@
 
 /datum/map_zone/New(passed_name)
 	name = passed_name
-	/*
-	related_overmap_object = passed_ov_obj
-	if(related_overmap_object)
-		related_overmap_object.related_map_zone = src
-	*/
 	SSmapping.map_zones += src
 	next_id++
 	id = next_id
@@ -502,8 +496,8 @@
 		else
 			area_to_use = area_override
 
-	for(var/turf/iterated_turf as anything in get_block())
-		if(area_to_use)
+	if(area_to_use)
+		for(var/turf/iterated_turf as anything in get_block())
 			var/area/old_area = get_area(iterated_turf)
 			area_to_use.contents += iterated_turf
 			iterated_turf.change_area(old_area, area_to_use)
@@ -511,11 +505,12 @@
 	for(var/turf/iterated_turf as anything in get_unreserved_block())
 		iterated_turf.ChangeTurf(turf_type, turf_type)
 
-/// Gets the sub zone that contains the passed atom
+/// Gets the virtual level that contains the passed atom
 /datum/controller/subsystem/mapping/proc/get_virtual_level(atom/Atom)
-	var/datum/space_level/level = z_list[Atom.z]
-	if(!level) //This can happen with areas trying to get their sub zone, Hyperspace for example, unsure why, areas weird
+	if(!Atom.loc)
+		stack_trace("Tried to get a virtual level of an atom in nullspace")
 		return
+	var/datum/space_level/level = z_list[Atom.z]
 	var/datum/virtual_level/sub_map
 	for(var/datum/virtual_level/iterated_zone as anything in level.virtual_levels)
 		if(iterated_zone.is_in_bounds(Atom))
@@ -525,6 +520,9 @@
 
 /// A helper pretty much
 /datum/controller/subsystem/mapping/proc/get_map_zone(atom/Atom)
+	if(!Atom.loc)
+		stack_trace("Tried to get a map zone of an atom in nullspace")
+		return
 	var/datum/virtual_level/sub_map = get_virtual_level(Atom)
 	if(sub_map)
 		return sub_map.parent_map_zone
@@ -549,6 +547,10 @@
 /turf/closed/indestructible/edge/Entered(atom/movable/arrived, direction)
 	. = ..()
 	if(!arrived || src != arrived.loc)
+		return
+
+	if(!destination_z && isliving(arrived))
+		stack_trace("Living mob entered level edge turf, somehow")
 		return
 
 	if(destination_z && !(arrived.pulledby || !arrived.can_be_z_moved))
