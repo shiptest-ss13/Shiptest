@@ -60,6 +60,7 @@
 	var/dimension_y = 32
 	var/center = FALSE	//Should we center the sprite?
 	var/limbs_id // The limbs id supplied for full-body replacing features.
+	var/image_alpha = 255 // The alpha for the accessory to use.
 
 //////////////////////
 // Hair Definitions //
@@ -1722,13 +1723,15 @@
 
 /datum/sprite_accessory/tails/human/cat/slime
 	name = "Slimecat"
-	icon_state = "catslime"
+	icon_state = "cat"
 	color_src = HAIR
+	image_alpha = 150
 
 /datum/sprite_accessory/tails_animated/human/cat/slime
 	name = "Slimecat"
-	icon_state = "catslime"
+	icon_state = "cat"
 	color_src = HAIR
+	image_alpha = 150
 
 /datum/sprite_accessory/snouts
 	icon = 'icons/mob/mutant_bodyparts.dmi'
@@ -1791,9 +1794,10 @@
 
 /datum/sprite_accessory/ears/cat/slime
 	name = "Slimecat"
-	icon_state = "catslime"
-	hasinner = 1
+	icon_state = "cat"
+	hasinner = FALSE
 	color_src = HAIR
+	image_alpha = 150
 
 /datum/sprite_accessory/wings/none
 	name = "None"

@@ -131,32 +131,25 @@
 	.["integrity"] = current_ship.integrity
 	.["calibrating"] = calibrating
 	.["otherInfo"] = list()
-	for (var/object in current_ship.close_overmap_objects)
-		var/obj/structure/overmap/O = object
+	for (var/obj/structure/overmap/object as anything in current_ship.close_overmap_objects)
 		var/list/other_data = list(
-			name = O.name,
-			integrity = O.integrity,
-			ref = REF(O)
+			name = object.name,
+			integrity = object.integrity,
+			ref = REF(object)
 		)
 		.["otherInfo"] += list(other_data)
 
 	var/turf/T = get_turf(current_ship)
 	.["x"] = T.x
 	.["y"] = T.y
-
-	if(!istype(current_ship, /obj/structure/overmap/ship/simulated))
-		return
-
-	var/obj/structure/overmap/ship/simulated/S = current_ship
-
-	.["state"] = S.state
-	.["docked"] = isturf(S.loc) ? FALSE : TRUE
-	.["heading"] = dir2text(S.get_heading()) || "None"
-	.["speed"] = S.get_speed()
-	.["eta"] = S.get_eta()
-	.["est_thrust"] = S.est_thrust
+	.["state"] = current_ship.state
+	.["docked"] = isturf(current_ship.loc) ? FALSE : TRUE
+	.["heading"] = dir2text(current_ship.get_heading()) || "None"
+	.["speed"] = current_ship.get_speed()
+	.["eta"] = current_ship.get_eta()
+	.["est_thrust"] = current_ship.est_thrust
 	.["engineInfo"] = list()
-	for(var/obj/machinery/power/shuttle/engine/E in S.shuttle.engine_list)
+	for(var/obj/machinery/power/shuttle/engine/E in current_ship.shuttle.engine_list)
 		var/list/engine_data
 		if(!E.thruster_active)
 			engine_data = list(
@@ -180,19 +173,13 @@
 	. = list()
 	.["isViewer"] = viewer
 	.["mapRef"] = current_ship.map_name
-
-	var/class_name = istype(current_ship, /obj/structure/overmap/ship) ? "Ship" : "Planetoid"
 	.["shipInfo"] = list(
 		name = current_ship.name,
-		can_rename = class_name == "Ship",
-		class = class_name,
+		class = current_ship.source_template.name,
 		mass = current_ship.mass,
-		sensor_range = current_ship.sensor_range,
-		ref = REF(current_ship)
+		sensor_range = current_ship.sensor_range
 	)
-	if(class_name == "Ship")
-		.["canFly"] = TRUE
-
+	.["canFly"] = TRUE
 
 /obj/machinery/computer/helm/ui_act(action, list/params, datum/tgui/ui, datum/ui_state/state)
 	. = ..()
@@ -200,17 +187,13 @@
 		return
 	if(viewer)
 		return
-	if(!istype(current_ship, /obj/structure/overmap/ship/simulated))
-		return
-
-	var/obj/structure/overmap/ship/simulated/S = current_ship
 
 	switch(action) // Universal topics
 		if("rename_ship")
-			if(!("newName" in params) || params["newName"] == S.name)
+			if(!("newName" in params) || params["newName"] == current_ship.name)
 				return
-			if(!S.set_ship_name(params["newName"]))
-				say("Error: [COOLDOWN_TIMELEFT(S, rename_cooldown)/10] seconds until ship designation can be changed..")
+			if(!current_ship.set_ship_name(params["newName"]))
+				say("Error: [COOLDOWN_TIMELEFT(current_ship, rename_cooldown)/10] seconds until ship designation can be changed..")
 			update_static_data(usr, ui)
 			return
 		if("reload_ship")
@@ -218,10 +201,10 @@
 			update_static_data(usr, ui)
 			return
 		if("reload_engines")
-			S.refresh_engines()
+			current_ship.refresh_engines()
 			return
 
-	switch(S.state) // Ship state-llimited topics
+	switch(current_ship.state) // Ship state-limited topics
 		if(OVERMAP_SHIP_FLYING)
 			switch(action)
 				if("act_overmap")
@@ -229,20 +212,20 @@
 						to_chat(usr, "<span class='warning'>You've already escaped. Never going back to that place again!</span>")
 						return
 					var/obj/structure/overmap/to_act = locate(params["ship_to_act"])
-					say(S.overmap_object_act(usr, to_act))
+					say(current_ship.overmap_object_act(usr, to_act))
 					return
 				if("toggle_engine")
 					var/obj/machinery/power/shuttle/engine/E = locate(params["engine"])
 					E.enabled = !E.enabled
-					S.refresh_engines()
+					current_ship.refresh_engines()
 					return
 				if("change_heading")
-					S.current_autopilot_target = null
-					S.burn_engines(text2num(params["dir"]))
+					current_ship.current_autopilot_target = null
+					current_ship.burn_engines(text2num(params["dir"]))
 					return
 				if("stop")
-					S.current_autopilot_target = null
-					S.burn_engines()
+					current_ship.current_autopilot_target = null
+					current_ship.burn_engines()
 					return
 				if("bluespace_jump")
 					if(calibrating)
@@ -254,14 +237,14 @@
 						calibrate_jump()
 						return
 				if("dock_empty")
-					say(S.dock_in_empty_space(usr))
+					say(current_ship.dock_in_empty_space(usr))
 					return
 		if(OVERMAP_SHIP_IDLE)
 			if(action == "undock")
-				S.calculate_avg_fuel()
-				if(S.avg_fuel_amnt < 25 && tgui_alert(usr, "Ship only has ~[round(S.avg_fuel_amnt)]% fuel remaining! Are you sure you want to undock?", name, list("Yes", "No")) != "Yes")
+				current_ship.calculate_avg_fuel()
+				if(current_ship.avg_fuel_amnt < 25 && tgui_alert(usr, "Ship only has ~[round(current_ship.avg_fuel_amnt)]% fuel remaining! Are you sure you want to undock?", name, list("Yes", "No")) != "Yes")
 					return
-				say(S.undock())
+				say(current_ship.undock())
 				return
 
 /obj/machinery/computer/helm/ui_close(mob/user)
