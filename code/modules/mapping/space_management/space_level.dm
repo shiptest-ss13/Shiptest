@@ -40,7 +40,7 @@
 	low_y = lowy
 	high_x = high_x
 	high_y = high_y
-	z_value = z_value
+	z_value = zvalue
 
 	attached_level = SSmapping.z_list[z_value]
 	attached_level.dummy_reservations += src

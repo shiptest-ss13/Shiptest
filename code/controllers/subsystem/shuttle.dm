@@ -353,6 +353,8 @@ SUBSYSTEM_DEF(shuttle)
 	preview_shuttle = null
 	preview_template = null
 	selected = null
+
+	preview_mapzone.clear_reservation() //Is this safe? Docking CHECK_TICK's and this should happen on the same thread, so theoritically this wouldn't happen until docking has been finished? Maybe?
 	QDEL_NULL(preview_mapzone)
 
 /// Internal template loading proc. Do not call, instead use [/datum/controller/subsystem/shuttle/proc/action_load]
