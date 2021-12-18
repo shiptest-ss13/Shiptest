@@ -38,8 +38,8 @@
 /datum/dummy_space_reservation/New(lowx, lowy, highx, highy, zvalue)
 	low_x = lowx
 	low_y = lowy
-	high_x = high_x
-	high_y = high_y
+	high_x = highx
+	high_y = highy
 	z_value = zvalue
 
 	attached_level = SSmapping.z_list[z_value]
