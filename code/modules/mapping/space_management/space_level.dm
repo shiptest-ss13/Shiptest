@@ -42,7 +42,7 @@
 	high_y = high_y
 	z_value = z_value
 
-	attached_level = SSmapping.zlist[z_value]
+	attached_level = SSmapping.z_list[z_value]
 	attached_level.dummy_reservations += src
 
 /datum/dummy_space_reservation/Destroy()
