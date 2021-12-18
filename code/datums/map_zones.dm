@@ -507,15 +507,15 @@
 			var/area/old_area = get_area(iterated_turf)
 			area_to_use.contents += iterated_turf
 			iterated_turf.change_area(old_area, area_to_use)
+			CHECK_TICK
 			if(QDELETED(src))
 				return
-			CHECK_TICK
 
 	for(var/turf/iterated_turf as anything in get_unreserved_block())
 		iterated_turf.ChangeTurf(turf_type, turf_type)
+		CHECK_TICK
 		if(QDELETED(src))
 			return
-		CHECK_TICK
 
 /// Gets the virtual level that contains the passed atom
 /datum/controller/subsystem/mapping/proc/get_virtual_level(atom/Atom)
