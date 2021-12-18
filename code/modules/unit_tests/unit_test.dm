@@ -43,7 +43,7 @@ GLOBAL_VAR(test_log)
 		var/list/allocation = SSmapping.get_free_allocation(ALLOCATION_FREE, width, height)
 
 		mapzone = new("Integration Test Mapzone")
-		var/datum/virtual_level/vlevel = new("Integration Test Subzone", ZTRAITS_STATION, mapzone, allocation[1], allocation[2], allocation[1] + width, allocation[2] + height, allocation[3])
+		var/datum/virtual_level/vlevel = new("Integration Test Virtual Level", ZTRAITS_STATION, mapzone, allocation[1], allocation[2], allocation[1] + width, allocation[2] + height, allocation[3])
 		vlevel.reserve_margin(2)
 		vlevel.fill_in(/turf/open/floor/plasteel, /area/testroom)
 

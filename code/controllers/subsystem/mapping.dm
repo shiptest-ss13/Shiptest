@@ -281,6 +281,7 @@ SUBSYSTEM_DEF(mapping)
 			break
 	return returned_mapzone
 
+/// Searches for a free allocation for the passed type and size, creates new physical levels if nessecary.
 /datum/controller/subsystem/mapping/proc/get_free_allocation(allocation_type, size_x, size_y)
 	var/list/allocation_list
 	var/list/levels_to_check = z_list.Copy()
@@ -303,6 +304,7 @@ SUBSYSTEM_DEF(mapping)
 
 #define ALLOCATION_FIND_JUMP_DIST 5
 
+/// Finds a box allocation inside a Z level. Uses a methodical box boundary check method
 /datum/controller/subsystem/mapping/proc/find_allocation_in_level(datum/space_level/level, size_x, size_y)
 	var/target_x = 1
 	var/target_y = 1
