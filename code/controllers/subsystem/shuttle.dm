@@ -168,11 +168,9 @@ SUBSYSTEM_DEF(shuttle)
 		if(WEST)
 			transit_path = /turf/open/space/transit/west
 
-	var/list/allocation_coords = SSmapping.get_free_allocation(ALLOCATION_FREE, transit_width, transit_height)
-
-	var/transist_name = "Transit Map Zone"
-	var/datum/map_zone/mapzone = new(transist_name)
-	var/datum/virtual_level/vlevel = new(transist_name, list(ZTRAIT_RESERVED = TRUE), mapzone, allocation_coords[1], allocation_coords[2], allocation_coords[1] + transit_width, allocation_coords[2] + transit_height, allocation_coords[3])
+	var/transit_name = "Transit Map Zone"
+	var/datum/map_zone/mapzone = SSmapping.create_map_zone(transit_name)
+	var/datum/virtual_level/vlevel = SSmapping.create_virtual_level(transit_name, list(ZTRAIT_RESERVED = TRUE), mapzone, transit_width, transit_height, ALLOCATION_FREE)
 
 	vlevel.reserve_margin(TRANSIT_BORDER_RESERVE)
 
@@ -361,22 +359,17 @@ SUBSYSTEM_DEF(shuttle)
 /datum/controller/subsystem/shuttle/proc/load_template(datum/map_template/shuttle/S)
 	PRIVATE_PROC(TRUE)
 	. = FALSE
-	//preview_reservation = SSmapping.request_dynamic_reservation(S.width, S.height)
 	var/width = S.width
 	var/height = S.height
 
-	var/list/allocation_coords = SSmapping.get_free_allocation(ALLOCATION_FREE, width, height)
-
 	var/mapzone_name = "Preview Shuttle Zone"
-	preview_mapzone = new(mapzone_name)
-	var/datum/virtual_level/vlevel = new(mapzone_name, list(ZTRAIT_RESERVED = TRUE), preview_mapzone, allocation_coords[1], allocation_coords[2], allocation_coords[1] + width, allocation_coords[2] + height, allocation_coords[3])
+	preview_mapzone = SSmapping.create_map_zone(mapzone_name)
+	var/datum/virtual_level/vlevel = SSmapping.create_virtual_level(mapzone_name, list(ZTRAIT_RESERVED = TRUE), preview_mapzone, width, height, ALLOCATION_FREE)
 
 	if(!preview_mapzone) ///Shouldn't ever happen
 		CRASH("failed to reserve an area for shuttle template loading")
-	//preview_reservation.fill_in(turf_type = /turf/open/space/transit/south)
 	vlevel.fill_in(/turf/open/space/transit/south)
 
-	//var/turf/BL = TURF_FROM_COORDS_LIST(preview_reservation.bottom_left_coords)
 	var/turf/BL = locate(vlevel.low_x, vlevel.low_y, vlevel.z_value)
 	S.load(BL, centered = FALSE, register = FALSE)
 
