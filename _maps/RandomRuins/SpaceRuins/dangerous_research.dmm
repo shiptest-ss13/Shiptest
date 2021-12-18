@@ -43,11 +43,8 @@
 /turf/open/floor/plasteel/white,
 /area/ruin/space/has_grav)
 "aW" = (
-/obj/structure/extinguisher_cabinet{
-	pixel_x = 26
-	},
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plasteel,
+/turf/open/floor/plating,
 /area/ruin/space/has_grav)
 "bB" = (
 /obj/effect/decal/cleanable/blood/footprints{
@@ -133,9 +130,6 @@
 /obj/effect/turf_decal/corner/grey,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav)
-"es" = (
-/turf/closed/mineral/random/high_chance,
-/area/template_noop)
 "eI" = (
 /obj/effect/turf_decal/corner/grey/diagonal,
 /obj/machinery/computer/security,
@@ -185,6 +179,7 @@
 "fR" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/table,
+/obj/item/flashlight,
 /turf/open/floor/plating/rust,
 /area/ruin/space/has_grav)
 "fZ" = (
@@ -242,6 +237,14 @@
 /obj/item/kirbyplants/random,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav)
+"ij" = (
+/obj/effect/decal/cleanable/blood/tracks,
+/obj/effect/decal/cleanable/blood/footprints{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav)
 "ip" = (
 /obj/effect/turf_decal/trimline/blue/filled/line{
 	dir = 4
@@ -295,7 +298,9 @@
 /turf/open/floor/plasteel/white,
 /area/ruin/space/has_grav)
 "jD" = (
-/turf/closed/mineral/random/high_chance,
+/obj/effect/decal/cleanable/blood/gibs/up,
+/obj/effect/decal/cleanable/blood/bubblegum,
+/turf/open/floor/plating,
 /area/ruin/space/has_grav)
 "jF" = (
 /obj/structure/chair{
@@ -316,7 +321,8 @@
 /turf/open/floor/plating/rust,
 /area/ruin/space/has_grav)
 "kp" = (
-/turf/closed/mineral/random,
+/obj/effect/decal/cleanable/blood/gibs/core,
+/turf/open/floor/plating/rust,
 /area/ruin/space/has_grav)
 "kA" = (
 /obj/effect/decal/cleanable/blood/tracks{
@@ -540,7 +546,7 @@
 /obj/effect/decal/cleanable/blood/footprints{
 	dir = 4
 	},
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plating,
 /area/ruin/space/has_grav)
 "rb" = (
 /obj/effect/decal/cleanable/blood/tracks{
@@ -725,7 +731,7 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /mob/living/simple_animal/hostile/faithless,
-/turf/open/floor/plasteel/white,
+/turf/open/floor/plating,
 /area/ruin/space/has_grav)
 "vm" = (
 /obj/effect/turf_decal/corner/mauve/border{
@@ -733,6 +739,10 @@
 	},
 /obj/effect/turf_decal/corner/grey,
 /turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav)
+"vp" = (
+/obj/item/circuitboard/computer/operating,
+/turf/open/floor/plating/rust,
 /area/ruin/space/has_grav)
 "vA" = (
 /obj/structure/window/reinforced{
@@ -777,9 +787,17 @@
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav)
 "wC" = (
-/obj/structure/closet/l3closet/scientist,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plasteel,
+/obj/effect/decal/cleanable/blood/bubblegum,
+/obj/structure/frame/computer,
+/obj/effect/decal/cleanable/glass,
+/obj/item/shard{
+	icon_state = "small"
+	},
+/obj/item/shard{
+	icon_state = "medium"
+	},
+/obj/item/stack/cable_coil/cut,
+/turf/open/floor/plating,
 /area/ruin/space/has_grav)
 "wJ" = (
 /obj/machinery/light{
@@ -817,6 +835,10 @@
 	},
 /obj/effect/turf_decal/trimline/purple/line,
 /turf/open/floor/plasteel/white,
+/area/ruin/space/has_grav)
+"xC" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating/rust,
 /area/ruin/space/has_grav)
 "xE" = (
 /obj/effect/turf_decal/corner/mauve/border{
@@ -966,7 +988,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav)
 "Bg" = (
-/turf/closed/mineral/random,
+/turf/closed/mineral/random/asteroid,
 /area/template_noop)
 "Bz" = (
 /obj/effect/decal/cleanable/blood/tracks{
@@ -1171,13 +1193,7 @@
 /obj/effect/decal/cleanable/blood/footprints{
 	dir = 8
 	},
-/obj/effect/turf_decal/corner/mauve/border{
-	dir = 4
-	},
-/obj/effect/turf_decal/corner/grey{
-	dir = 1
-	},
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plating,
 /area/ruin/space/has_grav)
 "Fo" = (
 /obj/effect/turf_decal/siding/purple{
@@ -1543,6 +1559,9 @@
 /obj/effect/turf_decal/corner/grey/diagonal,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav)
+"PJ" = (
+/turf/open/floor/plating,
+/area/ruin/space/has_grav)
 "PL" = (
 /obj/machinery/light/broken,
 /obj/effect/turf_decal/industrial/warning/corner{
@@ -1681,10 +1700,7 @@
 /obj/effect/decal/cleanable/blood/footprints{
 	dir = 8
 	},
-/obj/effect/turf_decal/siding/purple{
-	dir = 8
-	},
-/turf/open/floor/plasteel,
+/turf/open/floor/plating,
 /area/ruin/space/has_grav)
 "RR" = (
 /obj/structure/table,
@@ -1795,6 +1811,14 @@
 /obj/effect/turf_decal/siding/purple,
 /obj/structure/chair,
 /turf/open/floor/plasteel,
+/area/ruin/space/has_grav)
+"TP" = (
+/obj/effect/decal/cleanable/blood/bubblegum,
+/obj/effect/decal/cleanable/blood/gibs/core,
+/obj/effect/decal/cleanable/blood/gibs/down,
+/mob/living/simple_animal/hostile/faithless,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating,
 /area/ruin/space/has_grav)
 "TW" = (
 /obj/structure/chair/office{
@@ -2057,8 +2081,8 @@ Qv
 Bg
 Bg
 Bg
-es
-es
+Bg
+Bg
 Qv
 Qv
 Qv
@@ -2101,7 +2125,7 @@ Bg
 Bg
 Bg
 Bg
-es
+Bg
 Qv
 Qv
 Qv
@@ -2113,7 +2137,7 @@ Qv
 Qv
 On
 On
-es
+Bg
 On
 Qv
 Qv
@@ -2155,7 +2179,7 @@ Qv
 Qv
 Qv
 On
-es
+Bg
 On
 Qv
 Qv
@@ -2175,16 +2199,16 @@ Qv
 Bg
 Bg
 Bg
-Ns
-Ns
+gb
+gb
 Ns
 Ns
 ze
 Ns
 Ns
-Ns
-Ns
-Ns
+gb
+gb
+gb
 Bg
 On
 Qv
@@ -2217,7 +2241,7 @@ Qv
 Bg
 Bg
 Bg
-Ns
+gb
 qp
 nl
 Ty
@@ -2259,7 +2283,7 @@ Qv
 Qv
 Bg
 Bg
-Ns
+gb
 SV
 TW
 iD
@@ -2357,7 +2381,7 @@ Bg
 Bg
 Bg
 Bg
-es
+Bg
 Bg
 Bg
 Bg
@@ -2399,8 +2423,8 @@ Bg
 Bg
 Bg
 Bg
-es
-es
+Bg
+Bg
 Bg
 Bg
 Bg
@@ -2414,7 +2438,7 @@ On
 Qv
 On
 On
-es
+Bg
 Bg
 Bg
 Bg
@@ -2441,8 +2465,8 @@ Ns
 Ns
 Bg
 Bg
-es
-es
+Bg
+Bg
 Bg
 Bg
 On
@@ -2456,8 +2480,8 @@ On
 On
 On
 On
-es
-es
+Bg
+Bg
 Bg
 Bg
 Bg
@@ -2475,7 +2499,7 @@ xn
 Xy
 Xy
 RM
-Xy
+PJ
 Xy
 tS
 Gn
@@ -2499,7 +2523,7 @@ On
 On
 On
 On
-es
+Bg
 Bg
 Bg
 Qv
@@ -2522,7 +2546,7 @@ aW
 Mf
 Si
 Si
-Si
+PJ
 xn
 Ns
 Rj
@@ -2541,9 +2565,9 @@ On
 On
 On
 On
-es
-es
-es
+Bg
+Bg
+Bg
 Qv
 Qv
 "}
@@ -2564,7 +2588,7 @@ BG
 Ns
 xn
 xn
-Si
+PJ
 Si
 BG
 Si
@@ -2585,7 +2609,7 @@ Qv
 On
 On
 On
-es
+Bg
 Qv
 Qv
 "}
@@ -2662,7 +2686,7 @@ xf
 Wx
 Xk
 Bg
-es
+Bg
 On
 Qv
 Qv
@@ -2690,7 +2714,7 @@ NK
 Fi
 CG
 Dx
-Si
+PJ
 xn
 Ns
 TO
@@ -2703,9 +2727,9 @@ zX
 zz
 mV
 Xk
-es
-es
-es
+Bg
+Bg
+Bg
 Qv
 Qv
 Qv
@@ -2733,7 +2757,7 @@ Fi
 CG
 Dx
 QF
-Si
+PJ
 Ns
 TO
 aa
@@ -3025,7 +3049,7 @@ PM
 uP
 pO
 gb
-wC
+QF
 Si
 QF
 Ns
@@ -3126,7 +3150,7 @@ Xk
 CG
 Xk
 Bg
-es
+Bg
 Qv
 Qv
 Qv
@@ -3143,16 +3167,16 @@ Bg
 Bg
 Bg
 Bg
-Ns
-xn
-xn
-xn
-Cn
+BG
+kp
+vp
 ln
+Cn
+FM
 Oh
 CG
 ae
-Si
+QF
 Ns
 Um
 Gz
@@ -3186,14 +3210,14 @@ Bg
 Bg
 Bg
 Ns
-xn
-jD
+wC
+xC
 LZ
 GZ
 nB
 KT
 gN
-EF
+ij
 EF
 kf
 Qt
@@ -3227,9 +3251,9 @@ Bg
 Bg
 Bg
 Bg
-kp
+Ns
 jD
-jD
+TP
 xn
 xn
 fR
@@ -3269,15 +3293,15 @@ Bg
 Bg
 Bg
 Bg
-kp
-kp
-kp
-xn
+Ns
+Ns
+Ns
+BG
 xn
 rO
 Oh
 CG
-Si
+PJ
 Si
 mG
 RU
@@ -3339,7 +3363,7 @@ On
 On
 Qv
 On
-es
+Bg
 Bg
 On
 Qv
@@ -3356,7 +3380,7 @@ Bg
 Bg
 Bg
 Bg
-jD
+Ns
 Rs
 ln
 CE
@@ -3380,7 +3404,7 @@ Xk
 Bg
 On
 On
-es
+Bg
 Bg
 Bg
 On
@@ -3454,9 +3478,9 @@ TL
 Ns
 Bg
 Bg
-es
-es
-es
+Bg
+Bg
+Bg
 Bg
 Bg
 Bg
@@ -3496,8 +3520,8 @@ kY
 Ns
 Bg
 Bg
-es
-es
+Bg
+Bg
 Bg
 Bg
 Bg
@@ -3543,10 +3567,10 @@ Bg
 Bg
 Bg
 Bg
-Qv
-Qv
-Qv
-Qv
+On
+On
+On
+On
 Qv
 Qv
 Qv
@@ -3584,10 +3608,10 @@ Qv
 Qv
 Bg
 Bg
-Qv
-Qv
-Qv
-Qv
+On
+On
+Bg
+On
 Qv
 Qv
 Qv
@@ -3628,7 +3652,7 @@ Qv
 Qv
 Qv
 Qv
-Qv
+On
 Qv
 Qv
 Qv
