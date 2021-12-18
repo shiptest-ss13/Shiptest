@@ -675,7 +675,7 @@
 	name = "Zombie Mutation Toxin"
 	description = "An undead toxin... kinda..."
 	color = "#5EFF3B" //RGB: 94, 255, 59
-	race = /datum/species/krokodil_addict //Not the infectious kind. The days of xenobio zombie outbreaks are long past.
+	race = /datum/species/human/krokodil_addict //Not the infectious kind. The days of xenobio zombie outbreaks are long past.
 	process_flags = ORGANIC | SYNTHETIC
 
 /datum/reagent/mutationtoxin/ash
