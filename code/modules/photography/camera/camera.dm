@@ -148,7 +148,7 @@
 
 	icon_state = state_off
 
-	//INVOKE_ASYNC(src, .proc/captureimage, target, user, flag, picture_size_x - 1, picture_size_y - 1)
+	INVOKE_ASYNC(src, .proc/captureimage, target, user, flag, picture_size_x - 1, picture_size_y - 1)
 
 
 /obj/item/camera/proc/cooldown()
@@ -167,7 +167,6 @@
 	if(flash_enabled)
 		set_light_on(TRUE)
 		addtimer(CALLBACK(src, .proc/flash_end), FLASH_LIGHT_DURATION, TIMER_OVERRIDE|TIMER_UNIQUE)
-	/*
 	blending = TRUE
 	var/turf/target_turf = get_turf(target)
 	if(!isturf(target_turf))
@@ -187,7 +186,6 @@
 	var/list/turfs = list()
 	var/list/mobs = list()
 	var/blueprints = FALSE
-	var/clone_area = SSmapping.request_dynamic_reservation(size_x * 2 + 1, size_y * 2 + 1)
 	for(var/turf/placeholder in block(locate(target_turf.x - size_x, target_turf.y - size_y, target_turf.z), locate(target_turf.x + size_x, target_turf.y + size_y, target_turf.z)))
 		var/turf/T = placeholder
 		while(istype(T, /turf/open/openspace)) //Multi-z photography
@@ -210,14 +208,12 @@
 
 	var/psize_x = (size_x * 2 + 1) * world.icon_size
 	var/psize_y = (size_y * 2 + 1) * world.icon_size
-	var/icon/get_icon = camera_get_icon(turfs, target_turf, psize_x, psize_y, clone_area, size_x, size_y, (size_x * 2 + 1), (size_y * 2 + 1))
-	qdel(clone_area)
+	var/icon/get_icon = camera_get_icon(turfs, target_turf, psize_x, psize_y, size_x, size_y, (size_x * 2 + 1), (size_y * 2 + 1))
 	get_icon.Blend("#000", ICON_UNDERLAY)
 
 	var/datum/picture/P = new("picture", desc.Join(" "), mobs_spotted, dead_spotted, get_icon, null, psize_x, psize_y, blueprints)
 	after_picture(user, P, flag)
 	blending = FALSE
-*/
 
 
 /obj/item/camera/proc/flash_end()
