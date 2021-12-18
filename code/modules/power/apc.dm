@@ -212,7 +212,6 @@
 /obj/machinery/power/apc/Destroy()
 	GLOB.apcs_list -= src
 
-	QDEL_NULL(soundloop)
 	if(malfai && operating)
 		malfai.malf_picker.processing_time = clamp(malfai.malf_picker.processing_time - 10,0,1000)
 	area.power_light = FALSE
@@ -245,7 +244,6 @@
 
 /obj/machinery/power/apc/Initialize(mapload)
 	. = ..()
-	soundloop = new(list(src))
 	if(!mapload)
 		return
 	has_electronics = APC_ELECTRONICS_SECURED
@@ -1256,14 +1254,6 @@
 		return 0
 
 /obj/machinery/power/apc/process()
-	if(operating && cell)
-		if(!(cell.charge == 0))
-			soundloop.start()
-		else
-			soundloop.stop()
-	else
-		soundloop.stop()
-
 	if(icon_update_needed)
 		update_icon()
 	if(machine_stat & (BROKEN|MAINT))

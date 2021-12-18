@@ -178,7 +178,6 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 	*/
 /obj/machinery/vending/Initialize(mapload)
 	var/build_inv = FALSE
-	soundloop = new(list(src))
 	if(!refill_canister)
 		circuit = null
 		build_inv = TRUE
@@ -200,7 +199,6 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 	Radio.listening = 0
 
 /obj/machinery/vending/Destroy()
-	QDEL_NULL(soundloop)
 	QDEL_NULL(wires)
 	QDEL_NULL(coin)
 	QDEL_NULL(bill)
@@ -837,7 +835,6 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 
 /obj/machinery/vending/process()
 	if(machine_stat & (BROKEN|NOPOWER))
-		soundloop.stop()
 		return PROCESS_KILL
 	if(!active)
 		return
@@ -854,7 +851,6 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 	if(shoot_inventory && prob(shoot_inventory_chance))
 		throw_item()
 
-	soundloop.start()
 /**
 	* Speak the given message verbally
 	*
