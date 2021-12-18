@@ -405,6 +405,9 @@
 	return ..()
 
 /datum/virtual_level/proc/clear_reservation()
+	/// Create a dummy reservation to safeguard this space from being allocated mid-clearing in case the virtual level does get deleted
+	var/datum/dummy_space_reservation/safeguard = new(low_x, low_y, high_x, high_y, z_value)
+
 	var/area/space_area = GLOB.areas_by_type[/area/space]
 	for(var/turf/turf as anything in get_block())
 		//Reset turf
@@ -413,6 +416,9 @@
 		var/area/old_area = get_area(turf)
 		space_area.contents += turf
 		turf.change_area(old_area, space_area)
+		CHECK_TICK
+
+	qdel(safeguard)
 
 /datum/virtual_level/proc/get_trait(trait)
 	return traits[trait]
@@ -501,9 +507,15 @@
 			var/area/old_area = get_area(iterated_turf)
 			area_to_use.contents += iterated_turf
 			iterated_turf.change_area(old_area, area_to_use)
+			if(QDELETED(src))
+				return
+			CHECK_TICK
 
 	for(var/turf/iterated_turf as anything in get_unreserved_block())
 		iterated_turf.ChangeTurf(turf_type, turf_type)
+		if(QDELETED(src))
+			return
+		CHECK_TICK
 
 /// Gets the virtual level that contains the passed atom
 /datum/controller/subsystem/mapping/proc/get_virtual_level(atom/Atom)
