@@ -319,4 +319,4 @@
 	id = "dangerous_research"
 	suffix = "dangerous_research.dmm"
 	name = "Occult Research Station"
-	description = "This station was deemed unsuitable for continued experiments, and quickly abandoned."|
+	description = "This station was deemed unsuitable for continued experiments, and quickly abandoned."
