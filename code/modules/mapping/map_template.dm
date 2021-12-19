@@ -90,10 +90,8 @@
 	var/r_width = width + reservation_margin
 	var/r_height = height + reservation_margin
 
-	var/list/allocation = SSmapping.get_free_allocation(ALLOCATION_FREE, r_width, r_height)
-
-	var/datum/map_zone/mapzone = new(name)
-	var/datum/virtual_level/vlevel = new(name, list(), mapzone, allocation[1], allocation[2], allocation[1] + r_width, allocation[2] + r_height, allocation[3])
+	var/datum/map_zone/mapzone = SSmapping.create_map_zone(name)
+	var/datum/virtual_level/vlevel = SSmapping.create_virtual_level(name, list(), mapzone, r_width, r_height, ALLOCATION_FREE)
 
 	if(reservation_margin)
 		vlevel.reserve_margin(reservation_margin)
