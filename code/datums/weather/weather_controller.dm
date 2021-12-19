@@ -29,10 +29,6 @@
 	if(skyblock == last_checked_skyblock)
 		return
 	last_checked_skyblock = skyblock
-	/*
-	if(mapzone && mapzone.day_night_controller)
-		mapzone.day_night_controller.update_areas()
-	*/
 
 /// In theory this should never be destroyed, unless you plan to dynamically change existing z levels
 /datum/weather_controller/Destroy()
