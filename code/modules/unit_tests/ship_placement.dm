@@ -8,3 +8,9 @@
 		catch(var/exception/e)
 			Fail("Runtime error loading ship type ([map.name]): [e] on [e.file]:[e.line]\n[e.desc]")
 	SSair.is_test_loading = FALSE
+
+	var/list/errors = atmosscan(TRUE)
+	errors += powerdebug(TRUE)
+
+	for(var/error in errors)
+		Fail("[error]")

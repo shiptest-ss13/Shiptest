@@ -1568,6 +1568,25 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/hydroponics)
+"ET" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/machinery/door/airlock/freezer,
+/turf/open/floor/plasteel/dark,
+/area/ship/storage)
 "Fm" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 5
@@ -1800,25 +1819,6 @@
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/canteen)
-"JF" = (
-/obj/machinery/door/airlock,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 1
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 1
-	},
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/machinery/door/firedoor/border_only{
-	dir = 1
-	},
-/obj/machinery/door/firedoor/border_only,
-/turf/open/floor/plasteel/dark,
-/area/ship/crew)
 "JR" = (
 /turf/closed/wall/r_wall,
 /area/ship/crew)
@@ -2266,25 +2266,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/maintenance)
-"Tn" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 8
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 8
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/machinery/door/firedoor/border_only{
-	dir = 4
-	},
-/obj/machinery/door/firedoor/border_only{
-	dir = 8
-	},
-/obj/machinery/door/airlock/freezer,
-/turf/open/floor/plasteel/dark,
-/area/ship/storage)
 "Tz" = (
 /obj/structure/closet/secure_closet/freezer/fridge/open,
 /obj/machinery/light{
@@ -2329,6 +2310,25 @@
 /obj/item/stock_parts/cell/high/plus,
 /turf/open/floor/plating,
 /area/ship/maintenance)
+"Ub" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/machinery/door/airlock/freezer,
+/turf/open/floor/plasteel/dark,
+/area/ship/crew)
 "Uq" = (
 /obj/machinery/power/shuttle/engine/fueled/plasma{
 	dir = 4
@@ -2363,25 +2363,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/ship/cargo)
-"UB" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 8
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 8
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/machinery/door/firedoor/border_only{
-	dir = 4
-	},
-/obj/machinery/door/firedoor/border_only{
-	dir = 8
-	},
-/obj/machinery/door/airlock/freezer,
-/turf/open/floor/plasteel/dark,
-/area/ship/crew)
 "UU" = (
 /obj/machinery/gibber,
 /obj/machinery/power/terminal{
@@ -2434,6 +2415,21 @@
 /obj/item/storage/box/disks_plantgene,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/hydroponics)
+"WG" = (
+/obj/machinery/door/airlock,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/obj/machinery/door/firedoor/border_only,
+/turf/open/floor/plasteel/dark,
+/area/ship/crew)
 "WH" = (
 /obj/effect/turf_decal/corner/neutral{
 	dir = 1
@@ -2804,7 +2800,7 @@ ZR
 hp
 Yz
 Pa
-JF
+WG
 cl
 PX
 rB
@@ -2871,7 +2867,7 @@ LX
 sg
 UU
 sg
-UB
+Ub
 uR
 JR
 vZ
@@ -2934,7 +2930,7 @@ xM
 sg
 iB
 sg
-Tn
+ET
 sg
 Au
 vZ
