@@ -39,61 +39,21 @@ GLOBAL_LIST_INIT(meteorsC, list(/obj/effect/meteor/dust)) //for space dust event
 	for(var/i = 0; i < number; i++)
 		spawn_meteor(meteortypes)
 
-/proc/spawn_meteor(list/meteortypes)
+/proc/spawn_meteor(list/meteortypes, datum/virtual_level/vlevel, padding = MAP_EDGE_PAD)
 	var/turf/pickedstart
 	var/turf/pickedgoal
 	var/max_i = 10//number of tries to spawn meteor.
 	while(!isspaceturf(pickedstart))
 		var/startSide = pick(GLOB.cardinals)
-		var/startZ = pick(SSmapping.virtual_levels_by_trait(ZTRAIT_STATION))
-		pickedstart = spaceDebrisStartLoc(startSide, SSmapping.get_virtual_level(startZ))
-		pickedgoal = spaceDebrisFinishLoc(startSide, SSmapping.get_virtual_level(startZ))
+		var/datum/virtual_level/startsub = vlevel || pick(SSmapping.virtual_levels_by_trait(ZTRAIT_STATION))
+		pickedstart = startsub.get_side_turf(startSide, padding)
+		pickedgoal = startsub.get_side_turf(REVERSE_DIR(startSide), padding)
 		max_i--
 		if(max_i<=0)
 			return
 	var/Me = pickweight(meteortypes)
 	var/obj/effect/meteor/M = new Me(pickedstart, pickedgoal)
 	M.dest = pickedgoal
-
-#define MAP_EDGE_PAD 5
-
-/proc/spaceDebrisStartLoc(startSide, datum/virtual_level/vlevel, padding = MAP_EDGE_PAD)
-	var/starty
-	var/startx
-	switch(startSide)
-		if(NORTH)
-			starty = vlevel.high_y-(vlevel.reserved_margin + padding)
-			startx = rand(vlevel.low_x + (vlevel.reserved_margin + padding), vlevel.high_x-(vlevel.reserved_margin + padding))
-		if(EAST)
-			starty = rand(vlevel.low_y + (vlevel.reserved_margin + padding),vlevel.high_y-(vlevel.reserved_margin + padding))
-			startx = vlevel.high_x-(vlevel.reserved_margin + padding)
-		if(SOUTH)
-			starty = (vlevel.reserved_margin + padding)
-			startx = rand(vlevel.low_x + (vlevel.reserved_margin + padding),vlevel.high_x-(vlevel.reserved_margin + padding))
-		if(WEST)
-			starty = rand(vlevel.low_y + (vlevel.reserved_margin + padding), vlevel.high_y-(vlevel.reserved_margin + padding))
-			startx = (vlevel.reserved_margin + padding)
-	. = locate(startx, starty, vlevel.z_value)
-
-/proc/spaceDebrisFinishLoc(startSide, datum/virtual_level/vlevel, padding = MAP_EDGE_PAD)
-	var/endy
-	var/endx
-	switch(startSide)
-		if(NORTH)
-			endy = (vlevel.reserved_margin + padding)
-			endx = rand(vlevel.low_x + (vlevel.reserved_margin + padding), vlevel.high_x-(vlevel.reserved_margin + padding))
-		if(EAST)
-			endy = rand(vlevel.low_y + (vlevel.reserved_margin + padding), vlevel.high_y-(vlevel.reserved_margin + padding))
-			endx = (vlevel.reserved_margin + padding)
-		if(SOUTH)
-			endy = vlevel.high_y-(vlevel.reserved_margin + padding)
-			endx = rand(vlevel.low_x + (vlevel.reserved_margin + padding), vlevel.high_x-(vlevel.reserved_margin + padding))
-		if(WEST)
-			endy = rand(vlevel.low_y + (vlevel.reserved_margin + padding), vlevel.high_y-(vlevel.reserved_margin + padding))
-			endx = vlevel.high_x-(vlevel.reserved_margin + padding)
-	. = locate(endx, endy, vlevel.z_value)
-
-#undef MAP_EDGE_PAD
 
 ///////////////////////
 //The meteor effect

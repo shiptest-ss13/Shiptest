@@ -429,6 +429,37 @@
 /datum/virtual_level/proc/get_unreserved_top_right_turf()
 	return locate(high_x - reserved_margin, high_y - reserved_margin, z_value)
 
+/// Gets a random turf on a side of a virtual level
+/datum/virtual_level/proc/get_side_turf(dir, padding = 0, middle = FALSE)
+	var/r_low_x = low_x + reserved_margin
+	var/r_low_y = low_y + reserved_margin
+	var/r_high_x = high_x - reserved_margin
+	var/r_high_y = high_y - reserved_margin
+	if(!dir)
+		dir = pick(GLOB.cardinals)
+	var/turf/found_turf
+	if(middle)
+		switch(dir)
+			if(NORTH)
+				found_turf = locate(round((low_x + high_x) / 2), r_high_y, z_value)
+			if(SOUTH)
+				found_turf = locate(round((low_x + high_x) / 2), r_low_y, z_value)
+			if(EAST)
+				found_turf = locate(r_high_x, round((low_y + high_y) / 2), z_value)
+			if(WEST)
+				found_turf = locate(r_low_x, round((low_y + high_y) / 2), z_value)
+	else
+		switch(dir)
+			if(NORTH)
+				found_turf = locate(rand(r_low_x + padding, r_high_x - padding), r_high_y, z_value)
+			if(SOUTH)
+				found_turf = locate(rand(r_low_x + padding, r_high_x - padding), r_low_y, z_value)
+			if(EAST)
+				found_turf = locate(r_high_x, rand(r_low_y + padding, r_high_y - padding), z_value)
+			if(WEST)
+				found_turf = locate(r_low_x, rand(r_low_y + padding, r_high_y - padding), z_value)
+	return found_turf
+
 /datum/virtual_level/proc/reserve(x1, y1, x2, y2, passed_z)
 	low_x = x1
 	low_y = y1

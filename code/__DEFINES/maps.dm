@@ -141,3 +141,5 @@ require only minor tweaks.
 #define ALLOCATION_QUADRANT 2
 
 #define QUADRANT_SIZE 125
+
+#define MAP_EDGE_PAD 5
