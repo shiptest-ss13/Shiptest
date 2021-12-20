@@ -89,8 +89,8 @@
 	item_flags = EYE_STAB
 	var/bayonet = FALSE	//Can this be attached to a gun?
 	custom_price = 250
-	wound_bonus = -5
-	bare_wound_bonus = 10
+	wound_bonus = 5
+	bare_wound_bonus = 15
 
 /obj/item/kitchen/knife/ComponentInitialize()
 	. = ..()
@@ -165,12 +165,14 @@
 	attack_verb = list("cleaved", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
 	w_class = WEIGHT_CLASS_NORMAL
 	custom_price = 600
+	wound_bonus = 15
 
 /obj/item/kitchen/knife/hunting
 	name = "hunting knife"
 	desc = "Despite its name, it's mainly used for cutting meat from dead prey rather than actual hunting."
 	item_state = "huntingknife"
 	icon_state = "huntingknife"
+	wound_bonus = 10
 
 /obj/item/kitchen/knife/hunting/set_butchering()
 	AddComponent(/datum/component/butchering, 80 - force, 100, force + 10)
