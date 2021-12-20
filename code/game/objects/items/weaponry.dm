@@ -640,6 +640,9 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	var/homerun_ready = 0
 	var/homerun_able = 0
 
+/obj/item/melee/baseball_bat/Initialize()
+	AddElement(/datum/element/kneecapping)
+
 /obj/item/melee/baseball_bat/homerun
 	name = "home run bat"
 	desc = "This thing looks dangerous... Dangerously good at baseball, that is."
