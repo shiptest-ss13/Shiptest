@@ -45,6 +45,7 @@
 	selfcharge = 1
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | ACID_PROOF
 	weapon_weight = WEAPON_LIGHT
+	ammo_type = list(/obj/item/ammo_casing/energy/laser/hellfire/antique)
 
 /obj/item/gun/energy/laser/captain/brazil
 	icon_state = "capgun_brazil"
