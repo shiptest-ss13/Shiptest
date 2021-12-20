@@ -429,7 +429,7 @@
 		user.visible_message("<span class='notice'>[user] finishes applying [I] to [victim]'s [limb.name], emitting a fizzing noise!</span>", "<span class='notice'>You finish applying [I] to [victim]'s [limb.name]!</span>", ignored_mobs=victim)
 		to_chat(victim, "<span class='userdanger'>[user] finishes applying [I] to your [limb.name], and you feel a funny fizzy tickling as they begin to reform!</span>")
 	else
-		victim.visible_message("<span class='notice'>[victim] finishes applying [I] to [victim.p_their()] [limb.name], emitting a funny fizzing sound!", span_notice("You finish applying [I] to your [limb.name], and feel a funny fizzy tickling as the bone begins to reform!</span>")
+		victim.visible_message("<span class='notice'>[victim] finishes applying [I] to [victim.p_their()] [limb.name], emitting a funny fizzing sound!", "<span class='notice'>You finish applying [I] to your [limb.name], and feel a funny fizzy tickling as the bone begins to reform!</span>")
 
 	gelled = TRUE
 	processes = TRUE
