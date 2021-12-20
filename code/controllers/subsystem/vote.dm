@@ -148,6 +148,7 @@ SUBSYSTEM_DEF(vote)
 					SSshuttle.request_jump()
 			//WS End
 
+			// DEBUG FIX -- make this correctly spawn a ship
 			if("map")
 				SSshuttle.action_load(SSmapping.maplist[.])
 

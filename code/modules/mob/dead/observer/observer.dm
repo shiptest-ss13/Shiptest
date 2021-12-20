@@ -116,12 +116,15 @@ GLOBAL_VAR_INIT(observer_default_invisibility, INVISIBILITY_OBSERVER)
 
 	update_icon()
 
+	// DEBUG FIX -- what the fuck does this mean?
+	/*
 	if(!T)
 		var/list/turfs = get_areatype_turfs(/area/overmap)
 		if(turfs.len)
 			T = pick(turfs)
 		else
 			T = SSmapping.get_station_center()
+	*/
 
 	forceMove(T)
 

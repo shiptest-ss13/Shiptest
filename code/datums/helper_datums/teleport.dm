@@ -95,14 +95,18 @@
 			effect.start()
 
 // Safe location finder
+// DEBUG FIX -- this proc sucks ass. it shouldn't be directly using ship components or spawn components at all. fuck me
 /proc/find_safe_turf(list/zlevels, extended_safety_checks = FALSE)
 	var/list/potential_targets = list()
-	for(var/obj/structure/overmap/ship/simulated/possible_ship as anything in SSovermap.simulated_ships)
-		if(!zlevels)
-			potential_targets += possible_ship.shuttle
+	for(var/datum/component/overmap/spawn_location/spawn_comp as anything in SSovermap.spawn_comps)
+		var/datum/component/overmap/ship/ship_comp = spawn_comp.GetComponent(/datum/component/overmap/ship)
+		if(!ship_comp)
 			continue
-		if((possible_ship.z in zlevels) || (possible_ship.get_virtual_z_level() in zlevels))
-			potential_targets += possible_ship.shuttle.shuttle_areas
+		if(!zlevels)
+			potential_targets += ship_comp.shuttle_port
+			continue
+		if((ship_comp.shuttle_port.z in zlevels) || (ship_comp.shuttle_port.get_virtual_z_level() in zlevels))
+			potential_targets += ship_comp.shuttle_port.shuttle_areas
 
 	if(!length(potential_targets))
 		CRASH("No safe ship turfs found!")

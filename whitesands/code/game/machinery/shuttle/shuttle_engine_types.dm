@@ -11,9 +11,8 @@
 	icon_state = "burst_plasma"
 	icon_state_off = "burst_plasma_off"
 
-	idle_power_usage = 0
-	///The specific gas to burn out of the engine heater. If none, burns any gas.
-	var/datum/gas/fuel_type
+	///The specific gas to burn out of the engine heater. If null, burns any gas.
+	var/datum/gas/fuel_type = null
 	///How much fuel (in mols) of the specified gas should be used in a full burn.
 	var/fuel_use = 0
 	///If this engine should create heat when burned.
@@ -21,28 +20,55 @@
 	///A weakref of the connected engine heater with fuel.
 	var/datum/weakref/attached_heater
 
-/obj/machinery/power/shuttle/engine/fueled/burn_engine(percentage = 100)
-	..()
-	var/obj/machinery/atmospherics/components/unary/shuttle/heater/resolved_heater = attached_heater.resolve()
-	if(heat_creation)
-		heat_engine()
-	var/to_use = fuel_use * (percentage / 100)
-	return resolved_heater?.consume_fuel(to_use, fuel_type) / to_use * thrust //This proc returns how much was actually burned, so let's use that and multiply it by the thrust to get all the thrust we CAN give.
-
-/obj/machinery/power/shuttle/engine/fueled/return_fuel()
-	. = ..()
-	var/obj/machinery/atmospherics/components/unary/shuttle/heater/resolved_heater = attached_heater.resolve()
-	return resolved_heater?.return_gas(fuel_type)
-
-/obj/machinery/power/shuttle/engine/fueled/return_fuel_cap()
-	. = ..()
-	var/obj/machinery/atmospherics/components/unary/shuttle/heater/resolved_heater = attached_heater.resolve()
-	return resolved_heater?.return_gas_capacity()
-
 /obj/machinery/power/shuttle/engine/fueled/screwdriver_act(mob/living/user, obj/item/I)
 	. = ..()
 	if(!panel_open)
 		update_icon_state()
+
+/obj/machinery/power/shuttle/engine/fueled/update_engine()
+	. = ..()
+	if(!.)
+		return
+	if(!attached_heater)
+		if(!set_heater()) // see if we can grab a new heater
+			thruster_active = FALSE
+			return thruster_active
+
+/obj/machinery/power/shuttle/engine/fueled/burn_engine(pow_coeff)
+	. = ..()
+	if(!thruster_active)
+		return 0
+	var/obj/machinery/atmospherics/components/unary/shuttle/heater/resolved_heater = attached_heater.resolve()
+	if(heat_creation)
+		heat_engine()
+	var/to_use = fuel_use * pow_coeff
+	return thrust * (resolved_heater.consume_fuel(to_use, fuel_type) / to_use) //This proc returns how much was actually burned, so let's use that and multiply it by the thrust to get all the thrust we CAN give.
+
+/obj/machinery/power/shuttle/engine/fueled/return_fuel()
+	if(!thruster_active)
+		return null
+	var/obj/machinery/atmospherics/components/unary/shuttle/heater/resolved_heater = attached_heater.resolve()
+	if(!resolved_heater)
+		return null
+	var/moles = resolved_heater.return_gas(fuel_type)
+	var/volume = resolved_heater.return_volume()
+	if(isnull(moles) || isnull(volume))
+		return null
+	return moles / volume
+
+/// Searches adjacent turfs for an engine heater facing the right direction and sets it as our own.
+/obj/machinery/power/shuttle/engine/fueled/proc/set_heater()
+	for(var/direction in GLOB.cardinals)
+		for(var/obj/machinery/atmospherics/components/unary/shuttle/heater/found in get_step(get_turf(src), direction))
+			if(found.dir != dir)
+				continue
+			if(found.panel_open)
+				continue
+			if(!found.anchored)
+				continue
+			attached_heater = WEAKREF(found)
+			return TRUE
+	return FALSE
 
 ///This proc makes the area the shuttle is in EXTREMELY hot. I don't know how it does this, but that's what it does.
 /obj/machinery/power/shuttle/engine/proc/heat_engine()
@@ -61,43 +87,20 @@
 	env.set_temperature(env.return_temperature() + deltaTemperature)
 	air_update_turf()
 
-/obj/machinery/power/shuttle/engine/fueled/update_engine()
-	. = ..()
-	if(!.)
-		return
-	if(!attached_heater)
-		if(!set_heater())
-			thruster_active = FALSE
-			return FALSE
-
-/obj/machinery/power/shuttle/engine/fueled/proc/set_heater()
-	for(var/direction in GLOB.cardinals)
-		for(var/obj/machinery/atmospherics/components/unary/shuttle/heater/found in get_step(get_turf(src), direction))
-			if(found.dir != dir)
-				continue
-			if(found.panel_open)
-				continue
-			if(!found.anchored)
-				continue
-			attached_heater = WEAKREF(found)
-			update_icon_state()
-			return TRUE
-
 /obj/machinery/power/shuttle/engine/fueled/plasma
 	name = "plasma thruster"
 	desc = "A thruster that burns plasma from an adjacent heater to create thrust."
 	circuit = /obj/item/circuitboard/machine/shuttle/engine/plasma
 	fuel_type = GAS_PLASMA
-	fuel_use = 20
-	thrust = 25
+	fuel_use = 10
+	thrust = 50 * FORCE_TON_GM_PER_SEC_SQUARE
 
 /obj/machinery/power/shuttle/engine/fueled/expulsion
 	name = "expulsion thruster"
 	desc = "A thruster that expels gas inefficiently to create thrust."
 	circuit = /obj/item/circuitboard/machine/shuttle/engine/expulsion
-	fuel_use = 80
-	thrust = 15
-	//All fuel code already handled
+	fuel_use = 40
+	thrust = 30 * FORCE_TON_GM_PER_SEC_SQUARE
 
 /**
   * ### Ion Engines
@@ -111,10 +114,39 @@
 	icon_state_off = "burst_off"
 	icon_state_closed = "burst"
 	icon_state_open = "burst_open"
-	thrust = 10
+	thrust = 10 * FORCE_TON_GM_PER_SEC_SQUARE
 	///Amount, in kilojoules, needed for a full burn.
-	var/power_per_burn = 50000
+	var/power_per_burn = 25000
 
+/obj/machinery/power/shuttle/engine/electric/on_construction()
+	. = ..()
+	connect_to_network()
+
+/obj/machinery/power/shuttle/engine/electric/update_engine()
+	. = ..()
+	if(!.)
+		return
+	if(!powernet)
+		thruster_active = FALSE
+		return thruster_active
+
+/obj/machinery/power/shuttle/engine/electric/burn_engine(pow_coeff)
+	. = ..()
+	if(!thruster_active)
+		return 0
+	var/true_coeff = min(newavail() / power_per_burn, pow_coeff)
+	add_delayedload(power_per_burn * true_coeff)
+	return thrust * true_coeff
+
+/obj/machinery/power/shuttle/engine/electric/return_fuel()
+	if(!thruster_active)
+		return null
+	if(length(powernet?.nodes) == 2)
+		for(var/obj/machinery/power/smes/S in powernet.nodes)
+			return S.charge / S.capacity
+	return min(newavail() / power_per_burn, 1)
+
+// Ion Engine prechargers
 /obj/machinery/power/smes/shuttle
 	name = "electric engine precharger"
 	desc = "A medium-capacity, high transfer superconducting magnetic energy storage unit specially made for use with shuttle engines."
@@ -126,36 +158,6 @@
 
 /obj/machinery/power/smes/shuttle/precharged
 	charge = 1e6
-
-/obj/machinery/power/shuttle/engine/electric/update_engine()
-	. = ..()
-	if(!.)
-		return
-	if(!powernet)
-		thruster_active = FALSE
-		return FALSE
-
-/obj/machinery/power/shuttle/engine/electric/on_construction()
-	. = ..()
-	connect_to_network()
-
-/obj/machinery/power/shuttle/engine/electric/burn_engine(percentage = 100)
-	. = ..()
-	var/true_percentage = min(newavail() / power_per_burn, percentage / 100)
-	add_delayedload(power_per_burn * true_percentage)
-	return thrust * true_percentage
-
-/obj/machinery/power/shuttle/engine/electric/return_fuel()
-	if(length(powernet?.nodes) == 2)
-		for(var/obj/machinery/power/smes/S in powernet.nodes)
-			return S.charge
-	return newavail()
-
-/obj/machinery/power/shuttle/engine/electric/return_fuel_cap()
-	if(length(powernet?.nodes) == 2)
-		for(var/obj/machinery/power/smes/S in powernet.nodes)
-			return S.capacity
-	return power_per_burn
 
 /**
   * ### Liquid Fuel Engines
@@ -178,28 +180,32 @@
 	for(var/reagent in fuel_reagents)
 		reagent_amount_holder += fuel_reagents[reagent]
 
-/obj/machinery/power/shuttle/engine/liquid/burn_engine(percentage = 100)
+/obj/machinery/power/shuttle/engine/liquid/burn_engine(pow_coeff)
 	. = ..()
-	var/true_percentage = 1
+	if(!thruster_active)
+		return 0
+	var/true_coeff = pow_coeff
 	for(var/reagent in fuel_reagents)
-		true_percentage *= reagents.remove_reagent(reagent, fuel_reagents[reagent]) / fuel_reagents[reagent]
-	return thrust * true_percentage
+		var/adj_amount = pow_coeff * fuel_reagents[reagent]
+		true_coeff *= reagents.remove_reagent(reagent, adj_amount) / adj_amount
+	return thrust * true_coeff
 
 /obj/machinery/power/shuttle/engine/liquid/return_fuel()
-	var/true_percentage = 1
+	if(!thruster_active)
+		return null
+	var/lowest_ratio = 1
 	for(var/reagent in fuel_reagents)
-		true_percentage = min(reagents.get_reagent_amount(reagent) / fuel_reagents[reagent], true_percentage)
-	return reagent_amount_holder * true_percentage //Multiplies the total amount needed by the smallest percentage of any reagent in the recipe
-
-/obj/machinery/power/shuttle/engine/liquid/return_fuel_cap()
-	return reagents.maximum_volume
+		var/true_frac = reagents.get_reagent_amount(reagent) / max_reagents
+		var/desired_frac = fuel_reagents[reagent] / reagent_amount_holder
+		lowest_ratio = min(true_frac / desired_frac, lowest_ratio)
+	return lowest_ratio
 
 /obj/machinery/power/shuttle/engine/liquid/oil
 	name = "oil thruster"
 	desc = "A highly inefficient thruster that burns oil as a propellant."
 	max_reagents = 2000
-	thrust = 20
-	fuel_reagents = list(/datum/reagent/fuel/oil = 200)
+	thrust = 40 * FORCE_TON_GM_PER_SEC_SQUARE
+	fuel_reagents = list(/datum/reagent/fuel/oil = 100)
 	circuit = /obj/item/circuitboard/machine/shuttle/engine/oil
 
 /**
@@ -214,16 +220,18 @@
 	icon_state_closed = "burst_void"
 	icon_state_open = "burst_void_open"
 	circuit = /obj/item/circuitboard/machine/shuttle/engine/void
-	thrust = 400
+	thrust = 800 * FORCE_TON_GM_PER_SEC_SQUARE
+
+/obj/machinery/power/shuttle/engine/void/burn_engine(pow_coeff)
+	. = ..()
+	if(!thruster_active)
+		return 0
+	return thrust*pow_coeff
 
 /obj/machinery/power/shuttle/engine/void/return_fuel()
-	return TRUE
-
-/obj/machinery/power/shuttle/engine/void/return_fuel_cap()
-	return TRUE
-
-/obj/machinery/power/shuttle/engine/void/burn_engine()
-	return thrust
+	if(!thruster_active)
+		return null
+	return 1
 
 #undef ENGINE_HEAT_TARGET
 #undef ENGINE_HEATING_POWER

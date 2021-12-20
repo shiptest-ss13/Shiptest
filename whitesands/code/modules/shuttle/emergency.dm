@@ -9,10 +9,10 @@
 	icon_state = "safe"
 	anchored = TRUE
 	var/unlocked = FALSE
-	var/obj/structure/overmap/ship/simulated/linked_ship
+	var/datum/component/overmap/damageable/damage_comp
 
 /obj/item/storage/overmap_ship/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock)
-	linked_ship = port?.current_ship
+	damage_comp = port.ship_comp.parent.GetComponent(/datum/component/overmap/damageable)
 
 /obj/item/storage/overmap_ship/PopulateContents()
 	new /obj/item/clothing/head/helmet/space/fragile(src)
@@ -54,11 +54,15 @@
 	..()
 
 /obj/item/storage/overmap_ship/can_interact(mob/user)
-	if(!..())
+	// DEBUG FIX -- this proc
+	. = ..()
+	if(!.)
 		return FALSE
-	if((linked_ship?.integrity < initial(linked_ship?.integrity) / 4)|| (!linked_ship.is_still() && linked_ship.avg_fuel_amnt < 10) || unlocked)
+	/*
+	if((linked_ship?.integrity < initial(linked_ship?.integrity) / 4) || (linked_ship.avg_fuel_amnt < 10) || unlocked)
 		return TRUE
 	to_chat(user, "The storage unit will only unlock when the vessel is at 25% integrity or out of fuel.")
+	*/
 
 //Emergency toolbox with a few more things for repairing shuttles.
 /obj/item/storage/toolbox/emergency/shuttle

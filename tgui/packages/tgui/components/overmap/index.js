@@ -1,1 +1,1 @@
-export { OvermapDisplay } from './OvermapDisplay'
+export { OvermapDisplay } from './OvermapDisplay';

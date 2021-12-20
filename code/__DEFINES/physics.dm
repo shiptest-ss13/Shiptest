@@ -1,13 +1,24 @@
-// orbital period of an object w/ semi-major axis of 1 AU around an object of 1 solar mass
+/// A mass of one ton.
+#define MASS_TON 1
+
+/// One solar mass (not necessarily to scale with IRL).
+#define MASS_SOLAR (100000000*MASS_TON)
+
+/// A distance of one gigameter.
+#define DIST_GM 1
+
+/// A distance of one AU (avg. distance between Sun and Earth).
+#define DIST_AU (150*DIST_GM)
+
+/// A force of one ton-gigameter per second squared.
+#define FORCE_TON_GM_PER_SEC_SQUARE (MASS_TON*(DIST_GM/(1 SECONDS SECONDS)))
+
+/// The orbital period of an object w/ semi-major axis of 1 AU around an object of 1 solar mass.
 #define STD_ORBIT_TIME (1 MINUTES)
 
-// the relative mass of the sun compared to "1" mass
-#define SOLAR_MASS 1
-
-#define ONE_AU 1
-
 // we can calculate G using our choice of units like so
-#define NORM_GRAV_CONSTANT (((2 * PI * ONE_AU / STD_ORBIT_TIME)**2)/SOLAR_MASS)
+/// The gravitational constant.
+#define NORM_GRAV_CONSTANT ((4*(PI**2)*(DIST_AU**3)/(STD_ORBIT_TIME**2))/MASS_SOLAR)
 
 // DEBUG REMOVE
 #define SYS_GENMODE_NORMAL (0)

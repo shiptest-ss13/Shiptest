@@ -11,9 +11,9 @@
 	. = ..()
 	if(istype(target, /obj/machinery/computer/helm))
 		var/obj/machinery/computer/helm/H = target
-		if(istype(H.current_ship, /obj/structure/overmap/ship/simulated))
-			var/obj/structure/overmap/ship/simulated/S = H.current_ship
-			target_shuttle = S.shuttle
+		if(istype(H.ship_comp, /datum/component/overmap/ship))
+			var/datum/component/overmap/ship/S = H.ship_comp
+			target_shuttle = S.shuttle_port
 
 /obj/item/areaeditor/shuttle/attack_self(mob/user)
 	. = ..()

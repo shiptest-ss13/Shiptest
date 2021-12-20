@@ -1,127 +1,12 @@
 import { Component, createRef } from 'inferno';
 import { Application, Graphics, Matrix, Container, ObservablePoint, LineStyle, utils, Text} from 'pixi.js';
-import { vecAdd, vecScale, vecLength } from 'common/vector';
 import { createLogger } from '../../logging';
-import { getUpdateAppearance } from './BodyAppearance.js';
+import { OvermapBody } from './OvermapBody.js';
 
-// TODO: redo data loading and parenting, OOB culling for perf, orbit line updating + disabling,
+// TODO: redo data loading and parenting, OOB culling for perf,
 // TODO: escape orbits, text + popups, effects, sprites, a nice grid?, Rest Of The Fucking UI
 // TODO: remove logger
 const logger = createLogger('backend');
-
-// make this higher if you want circles / orbits to be less pointy; explanation in OvermapBody.updateAppearance()
-
-const LAYER_UI = 2;
-const LAYER_SHIP = 1;
-const LAYER_BODY = 0;
-const LAYER_ORBIT = -1;
-
-const DUMMY_RADIUS = 25;
-
-
-class OvermapBody {
-  constructor() {
-    // TODO: maybe move the initialization here somewhere else?
-    this.orbitContainer = new Graphics();
-    this.orbitContainer.zIndex = LAYER_ORBIT;
-
-    return;
-  }
-
-  parentToContainer(parentContainer) {
-    parentContainer.addChild(this.visContainer);
-    // TODO: a better understanding of what showOrbit actually is + does
-    if(this.orbitContainer) {
-      parentContainer.addChild(this.orbitContainer);
-    }
-  }
-
-  loadFromData(bodyData) {
-    this.updateAppearance = getUpdateAppearance(bodyData["appearance_type"]);
-
-    this.visContainer = this.updateAppearance(this.visContainer, {
-      radius: bodyData["radius"],
-      color: utils.string2hex(bodyData["color"])
-    });
-    // TODO: move this
-    this.visContainer.zIndex = LAYER_BODY;
-
-    // load the position directly into the vis container
-    this.visContainer.x = bodyData["position"][0];
-    this.visContainer.y = bodyData["position"][1];
-    this.velocity = bodyData["velocity"];
-    this.acceleration = bodyData["acceleration"];
-
-    // TODO: figure out a sensible understanding of what showOrbit means
-    this.showOrbit = !!bodyData["show_orbit"];
-    this.oSemiMajor = bodyData["o_semimajor"];
-    this.oEccentricity = bodyData["o_eccentricity"];
-    this.oCounterclockwise = bodyData["o_counterclockwise"];
-    this.oArgOfPeriapsis = bodyData["o_arg_of_periapsis"];
-
-    this.updateOrbit();
-  }
-
-  setOnClick(onClick, ourRef) {
-    if(!onClick) {
-      this.visContainer.interactive = false;
-      return;
-    }
-    this.visContainer.interactive = true;
-    this.visContainer.click = () => onClick(ourRef);
-  }
-
-  updateOrbit() {
-    // TODO: figure out a sensible understanding of what showOrbit means
-    if (!this.showOrbit) {
-      return;
-    }
-
-    // TODO: escape trajectory visualization
-    if (this.oEccentricity >= 1) {
-      return;
-    }
-
-    this.orbitContainer.clear();
-    // this width gets overridden in updateZoom (but if it's 0 the line hides)
-    this.orbitContainer.lineStyle({width: 1, color: 0x00FFFF, alpha: 1});
-    // TODO: fix this comment
-    // we've gotta do the same scaling fuckery as in updateAppearance
-    const scaleMatrix = new Matrix(1/DUMMY_RADIUS, 0, 0, 1/DUMMY_RADIUS);
-    this.orbitContainer.setMatrix(scaleMatrix);
-
-    // draws the orbit's ellipse, with the focus of the orbit (the attractor) at 0,0
-    const semiMinor = Math.sqrt(Math.pow(this.oSemiMajor, 2)*(1-Math.pow(this.oEccentricity, 2)));
-    this.orbitContainer.drawEllipse(-this.oEccentricity*this.oSemiMajor*DUMMY_RADIUS, 0, this.oSemiMajor*DUMMY_RADIUS, semiMinor*DUMMY_RADIUS);
-
-    this.orbitContainer.angle = (this.oCounterclockwise ? -1*this.oArgOfPeriapsis : this.oArgOfPeriapsis);
-  }
-
-  updateZoom(zoomLevel) {
-    // we scale the line width of each orbit down by the zoom level, so the width stays constant regardless of system zoom
-    this.orbitContainer.geometry.graphicsData.forEach(graphics => graphics.lineStyle.width = 1.625/zoomLevel);
-  }
-
-  runTick(dT) {
-    const displacement = vecScale(vecAdd(this.velocity, vecScale(this.acceleration, dT/2)), dT)
-    this.visContainer.x += displacement[0];
-    this.visContainer.y += displacement[1];
-    this.velocity = vecAdd(this.velocity, vecScale(this.acceleration, dT));
-  }
-
-  cleanUp() {
-    if (!!this.visContainer.parent) {
-      this.visContainer.parent.removeChild(this.visContainer);
-    }
-    if (!!this.orbitContainer.parent) {
-      this.orbitContainer.parent.removeChild(this.orbitContainer);
-    }
-    this.visContainer.destroy();
-    this.orbitContainer.destroy();
-    delete this.visContainer;
-    delete this.orbitContainer;
-  }
-}
 
 export class OvermapDisplay extends Component {
   constructor(props) {
@@ -173,13 +58,11 @@ export class OvermapDisplay extends Component {
       const bodyData = this.props.bodyInformation[ref];
       if (!this.bodies[ref]) {
         const newBody = new OvermapBody();
-        // TODO: move
-        newBody.loadFromData(bodyData);
-        newBody.parentToContainer(this.systemAnchor);
+        // TODO: maybe move this into OvermapBody's constructor
+        this.systemAnchor.addChild(newBody.visContainer);
         this.bodies[ref] = newBody;
-        continue;
       }
-      // TODO: move
+      // TODO: move ?
       this.bodies[ref].loadFromData(bodyData);
       this.bodies[ref].setOnClick(this.props.onBodyClick, ref);
     }
@@ -191,7 +74,7 @@ export class OvermapDisplay extends Component {
 
     for (const ref in this.bodies) {
       if (!this.props.bodyInformation[ref]) {
-        this.bodies[ref].cleanUp();
+        this.bodies[ref].destroy();
         delete this.bodies[ref];
         continue;
       }
@@ -202,6 +85,7 @@ export class OvermapDisplay extends Component {
   }
 
   _runTick() {
+    // get the time change in seconds
     const dT = this.pixiApp.ticker.deltaMS / 1000;
     for (const ref in this.bodies) {
       this.bodies[ref].runTick(dT);
@@ -232,7 +116,7 @@ export class OvermapDisplay extends Component {
     this.pixiApp.ticker.remove(this._runTick, this);
     this.focusedBody = null;
     for (const ref in this.bodies) {
-      this.bodies[ref].cleanUp();
+      this.bodies[ref].destroy();
       delete this.bodies[ref];
     }
     this.pixiApp.destroy(false, {

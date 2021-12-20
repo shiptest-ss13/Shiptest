@@ -696,14 +696,15 @@ SUBSYSTEM_DEF(job)
 
 /datum/controller/subsystem/job/proc/get_manifest()
 	var/list/manifest_out = list()
-	for(var/obj/structure/overmap/ship/simulated/ship as anything in SSovermap.simulated_ships)
-		if(!length(ship.manifest))
+	for(var/D in SSovermap.spawn_comps)
+		var/datum/component/overmap/spawn_location/spawn_comp = D
+		// DEBUG FIX -- can this ever be null / empty? if not, remove it
+		if(!length(spawn_comp.manifest))
 			continue
-		manifest_out["[ship.name] ([ship.shuttle.source_template.short_name])"] = list()
-		for(var/crewmember in ship.manifest)
-			manifest_out["[ship.name] ([ship.shuttle.source_template.short_name])"] += list(list(
+		manifest_out[spawn_comp.manifest_name] = list()
+		for(var/crewmember in spawn_comp.manifest)
+			manifest_out[spawn_comp.manifest_name] += list(list(
 				"name" = crewmember,
-				"rank" = ship.manifest[crewmember]
+				"rank" = spawn_comp.manifest[crewmember]
 			))
-
 	return manifest_out

@@ -16,12 +16,3 @@
 	value_mode = VALUE_MODE_NUM
 	lowercase = FALSE
 	splitter = ","
-
-/datum/config_entry/number/max_overmap_event_clusters
-	config_entry_value = 10
-
-/datum/config_entry/number/max_overmap_events
-	config_entry_value = 150
-
-/datum/config_entry/number/max_overmap_dynamic_events
-	config_entry_value = 10

@@ -404,26 +404,26 @@ GLOBAL_LIST_EMPTY(cryopod_computers)
 	add_fingerprint(target)
 
 /obj/machinery/cryopod/latejoin
-	var/obj/docking_port/mobile/linked_ship
+	var/datum/component/overmap/spawn_location/spawn_comp
 
 /obj/machinery/cryopod/latejoin/Initialize()
 	. = ..()
 	new /obj/effect/landmark/latejoin(src)
 
 /obj/machinery/cryopod/latejoin/despawn_occupant()
-	if(!linked_ship)
+	if(!spawn_comp)
 		return ..()
 	var/mob/living/mob_occupant = occupant
-	if(mob_occupant.job in linked_ship.current_ship.job_slots)
-		linked_ship.current_ship.job_slots[mob_occupant.job]++
+	if(mob_occupant.job in spawn_comp.job_slots)
+		spawn_comp.job_slots[mob_occupant.job]++
 	return ..()
 
 /obj/machinery/cryopod/latejoin/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock, idnum, override)
 	. = ..()
-	linked_ship = port
-	linked_ship.spawn_points += src
+	spawn_comp = port.ship_comp.parent.GetComponent(/datum/component/overmap/spawn_location)
+	spawn_comp.spawn_points += src
 
 /obj/machinery/cryopod/latejoin/Destroy()
 	SSjob.latejoin_trackers -= src
-	linked_ship?.spawn_points -= src
+	spawn_comp?.spawn_points -= src
 	. = ..()

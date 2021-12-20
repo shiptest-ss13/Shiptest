@@ -94,6 +94,7 @@
 	var/provisional_X = 1
 	var/provisional_Y = 1
 	for(var/R in sorted_reserves)
+		// we don't want fixed reservations intermingling with dynamic reservations
 		if(!istype(R, /datum/turf_reservation/fixed))
 			return FALSE
 		var/datum/turf_reservation/fixed/reserve = R
@@ -127,8 +128,8 @@
 	return ..()
 
 /datum/turf_reservation/dynamic/reserve_on_z(zlevel)
-
 	for(var/reserve in SSmapping.reservations_by_level["[zlevel]"])
+		// we don't want dynamic reservations intermingling with fixed reservations
 		if(istype(reserve, /datum/turf_reservation/fixed))
 			return FALSE
 

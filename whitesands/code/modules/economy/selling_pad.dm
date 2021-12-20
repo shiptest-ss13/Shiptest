@@ -30,7 +30,7 @@
 
 /obj/machinery/computer/selling_pad_control/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock)
 	. = ..()
-	sell_account = port.current_ship?.ship_account
+	sell_account = port.ship_comp.parent.GetComponent(/datum/component/overmap/spawn_location).account
 
 /obj/machinery/computer/selling_pad_control/multitool_act(mob/living/user, obj/item/multitool/I)
 	. = ..()
@@ -47,7 +47,7 @@
 		var/area/ship/current_area = get_area(src)
 		if(!istype(current_area))
 			return
-		sell_account = current_area.mobile_port?.current_ship.ship_account
+		sell_account = current_area.mobile_port?.ship_comp.parent.GetComponent(/datum/component/overmap/spawn_location).account
 
 /obj/machinery/computer/selling_pad_control/ui_interact(mob/user, datum/tgui/ui)
 	ui = SStgui.try_update_ui(user, src, ui)

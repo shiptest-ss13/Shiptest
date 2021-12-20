@@ -408,3 +408,8 @@
 /datum/config_entry/number/respawn_timer
 	min_val = 0
 	config_entry_value = 1 MINUTES
+
+// Ship / overmap configs
+
+/datum/config_entry/number/bluespace_jump_wait
+	default = 30 MINUTES

@@ -14,8 +14,8 @@
 	light_color = LIGHT_COLOR_FLARE
 	clicksound = null
 
-	/// The ship we reside on for ease of access
-	var/obj/structure/overmap/ship/simulated/current_ship
+	/// The ship component that controls the shuttle we're on
+	var/datum/component/overmap/ship/ship_comp
 	/// All users currently using this
 	var/list/concurrent_users = list()
 	/// Is this console view only? I.E. cant dock/etc
@@ -29,9 +29,6 @@
 	var/reset_system_on_every_load = FALSE
 	var/system_genmode = SYS_GENMODE_NORMAL
 
-/datum/config_entry/number/bluespace_jump_wait
-	default = 30 MINUTES
-
 /obj/machinery/computer/helm/Initialize(mapload, obj/item/circuitboard/C)
 	. = ..()
 	jump_allowed = world.time + CONFIG_GET(number/bluespace_jump_wait)
@@ -41,7 +38,7 @@
 	if(jump_allowed < 0)
 		say("Bluespace Jump Calibration offline. Please contact your systems administrator.")
 		return
-	if(current_ship.state != OVERMAP_SHIP_FLYING)
+	if(ship_comp.state != OVERMAP_SHIP_FLYING)
 		say("Bluespace Jump Calibration detected interference in the local area.")
 		return
 	if(world.time < jump_allowed)
@@ -76,18 +73,18 @@
 
 /obj/machinery/computer/helm/proc/do_jump()
 	priority_announce("Bluespace Jump Initiated", sender_override="Bluespace Pylon", sound='sound/magic/lightningbolt.ogg', zlevel=get_virtual_z_level())
-	current_ship.shuttle.intoTheSunset()
+	ship_comp.shuttle_port.intoTheSunset()
 
 /obj/machinery/computer/helm/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock)
-	current_ship = port.current_ship
+	ship_comp = port.ship_comp
 
 /**
  * This proc manually rechecks that the helm computer is connected to a proper ship
  */
 /obj/machinery/computer/helm/proc/reload_ship()
 	var/obj/docking_port/mobile/port = SSshuttle.get_containing_shuttle(src)
-	if(port?.current_ship)
-		current_ship = port.current_ship
+	if(port?.ship_comp)
+		ship_comp = port.ship_comp
 		return TRUE
 
 /obj/machinery/computer/helm/ui_interact(mob/user, datum/tgui/ui)
@@ -95,7 +92,7 @@
 		say("Bluespace Jump in progress. Controls suspended.")
 		return
 	// Update UI
-	if(!current_ship && !reload_ship())
+	if(!ship_comp && !reload_ship())
 		return
 	ui = SStgui.try_update_ui(user, src, ui)
 	if(!ui)
@@ -109,13 +106,6 @@
 		if(length(concurrent_users) == 1 && is_living)
 			playsound(src, 'sound/machines/terminal_on.ogg', 25, FALSE)
 			use_power(active_power_usage)
-		// Register map objects
-		if(current_ship)
-			user.client.register_map_obj(current_ship.cam_screen)
-			user.client.register_map_obj(current_ship.cam_plane_master)
-			user.client.register_map_obj(current_ship.cam_background)
-			current_ship.update_screen()
-
 		// Open UI
 		ui = new(user, src, "OvermapView", name)
 		// DEBUG REMOVE
@@ -125,11 +115,24 @@
 
 /obj/machinery/computer/helm/ui_data(mob/user)
 	. = list()
+	// DEBUG REMOVE -- this code
 	if(!SSovermap.primary_system)
 		SSovermap.primary_system = new /datum/overmap_system(system_genmode)
 
-	.["body_information"] = SSovermap.primary_system.get_map_data_for_user(user)
-	.["focused_body"] = null
+	.["body_information"] = SSovermap.primary_system.get_body_data(user)
+	.["focused_body"] = REF(ship_comp.parent)
+	.["heading"] = ship_comp.engine_dir
+	.["power"] = ship_comp.pow_coeff
+	.["engine_info"] = list()
+	for(var/E in ship_comp.engine_list)
+		var/obj/machinery/power/shuttle/engine/engine = E
+		// we have to double-wrap the list because of how byond handles list addition
+		.["engine_info"] += list(list(
+			ref = REF(engine),
+			name = engine.name,
+			enabled = engine.enabled,
+			fuel = engine.return_fuel()
+		))
 
 /*
 	.["integrity"] = current_ship.integrity
@@ -181,7 +184,7 @@
 */
 
 /obj/machinery/computer/helm/ui_static_data(mob/user)
-	/*
+/*
 	.["isViewer"] = viewer
 	.["mapRef"] = current_ship.map_name
 
@@ -196,10 +199,40 @@
 	)
 	if(class_name == "Ship")
 		.["canFly"] = TRUE
-	*/
+*/
 
 /obj/machinery/computer/helm/ui_act(action, list/params, datum/tgui/ui, datum/ui_state/state)
 	. = ..()
+	if(.)
+		return
+
+	switch(action)
+		if("heading")
+			var/val = params["heading"]
+			// engine dir has to be, you know, an angle
+			if(!isnum(val))
+				return
+			ship_comp.engine_dir = val % 360
+			return
+		if("power")
+			var/val = params["power"]
+			// don't let people href to set power absurdly high or negative
+			if(!isnum(val) || val < 0 || val > 1)
+				return
+			ship_comp.pow_coeff = val
+			return
+		if("reload_engines")
+			ship_comp.refresh_engines()
+			return
+		if("toggle_engine")
+			var/obj/machinery/power/shuttle/engine/engine = locate(params["engine"])
+			// don't let people disable other ships' engines, that'd be dumb
+			if(!istype(engine) || !(engine in ship_comp.engine_list))
+				return
+			engine.enabled = !engine.enabled
+			return
+
+	/*
 	if(.)
 		return
 	if(viewer)
@@ -241,11 +274,11 @@
 					S.refresh_engines()
 					return
 				if("change_heading")
-					S.current_autopilot_target = null
+					//S.current_autopilot_target = null
 					S.burn_engines(text2num(params["dir"]))
 					return
 				if("stop")
-					S.current_autopilot_target = null
+					//S.current_autopilot_target = null
 					S.burn_engines()
 					return
 				if("bluespace_jump")
@@ -263,15 +296,13 @@
 					return
 				say(S.undock())
 				return
+	*/
 
 /obj/machinery/computer/helm/ui_close(mob/user)
 	var/user_ref = REF(user)
 	var/is_living = isliving(user)
 	// Living creature or not, we remove you anyway.
 	concurrent_users -= user_ref
-	// Unregister map objects
-	if(current_ship)
-		user.client?.clear_map(current_ship.map_name)
 	// Turn off the console
 	if(length(concurrent_users) == 0 && is_living)
 		playsound(src, 'sound/machines/terminal_off.ogg', 25, FALSE)

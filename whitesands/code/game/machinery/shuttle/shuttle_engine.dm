@@ -8,47 +8,33 @@
 	desc = "A thruster for shuttles."
 	circuit = /obj/item/circuitboard/machine/shuttle/engine
 	CanAtmosPass = FALSE //so people can actually tend to their engines
-	///Whether or not the engine is enabled and can be used. Controlled from helm consoles and by hitting with a multitool.
-	var/enabled = TRUE
-	///How much thrust this engine generates when burned fully.
-	var/thrust = 0
-	///I don't really know what this is but it's used a lot
+	/// Used to determine whether the engine is considered "on" or "off".
 	var/thruster_active = FALSE
+	/// Used by the ship component to selectively fire engines.
+	/// If false, the engine will fire, even if other engines might.
+	var/enabled = TRUE
+	/// Used by subtypes as part of determining "true" thrust.
+	var/thrust = 0 * FORCE_TON_GM_PER_SEC_SQUARE
 
-/**
-  * Uses up a specified percentage of the fuel cost, and returns the amount of thrust if successful.
-  * * percentage - The percentage of total thrust that should be used
-  */
-/obj/machinery/power/shuttle/engine/proc/burn_engine(percentage = 100)
+// these 3 procs are organized in the order they'll likely be called
+/obj/machinery/power/shuttle/engine/Initialize()
+	. = ..()
 	update_icon_state()
-	return FALSE
 
-/**
-  * Returns how much "Fuel" is left. (For use with engine displays.)
-  */
-/obj/machinery/power/shuttle/engine/proc/return_fuel()
-	return
+/obj/machinery/power/shuttle/engine/connect_to_shuttle(obj/docking_port/mobile/port)
+	LAZYADD(port.ship_comp?.engine_list, src)
 
-/**
-  * Returns how much "Fuel" can be held. (For use with engine displays.)
-  */
-/obj/machinery/power/shuttle/engine/proc/return_fuel_cap()
-	return
+// DEBUG REMOVE -- not sure if this is necessary; seems like it'd maybe be already done in Initialize()?
+/obj/machinery/power/shuttle/engine/on_construction()
+	. = ..()
+	update_icon_state()
 
-/**
-  * Updates the engine state.
-  * All functions should return if the parent function returns false.
-  */
-/obj/machinery/power/shuttle/engine/proc/update_engine()
-	thruster_active = TRUE
-	if(panel_open)
-		thruster_active = FALSE
-		return FALSE
-	return TRUE
+/obj/machinery/power/shuttle/engine/Destroy()
+	. = ..()
+	var/obj/docking_port/mobile/port = SSshuttle.get_containing_shuttle(src)
+	if(port && port.ship_comp)
+		LAZYREMOVE(port.ship_comp.engine_list, src)
 
-/**
-  * Updates the engine's icon and engine state.
-  */
 /obj/machinery/power/shuttle/engine/update_icon_state()
 	update_engine() //Calls this so it sets the accurate icon
 	if(panel_open)
@@ -58,30 +44,34 @@
 	else
 		icon_state = icon_state_off
 
-/obj/machinery/power/shuttle/engine/Initialize()
-	. = ..()
-	update_icon_state()
-	alter_engine_power(0.5)
-
-/obj/machinery/power/shuttle/engine/Destroy()
-	. = ..()
-	alter_engine_power(-0.5)
-
-/obj/machinery/power/shuttle/engine/on_construction()
-	. = ..()
-	update_icon_state()
-
 /obj/machinery/power/shuttle/engine/multitool_act(mob/living/user, obj/item/I)
 	. = ..()
 	if(do_after(user, MIN_TOOL_SOUND_DELAY, target=src))
 		enabled = !enabled
 		to_chat(user, "<span class='notice'>You [enabled ? "enable" : "disable"] [src].")
 
-///Propagates the change to the shuttle.
-/obj/machinery/power/shuttle/engine/proc/alter_engine_power(mod)
-	if(mod == 0)
-		return
-	if(SSshuttle.is_in_shuttle_bounds(src))
-		var/obj/docking_port/mobile/M = SSshuttle.get_containing_shuttle(src)
-		if(M)
-			M.alter_engines(mod, src)
+/**
+  * Updates the engine state, used to determine the engine's icon.
+  * All functions should return if the parent function returns false.
+  */
+/obj/machinery/power/shuttle/engine/proc/update_engine()
+	SHOULD_CALL_PARENT(TRUE)
+	thruster_active = !panel_open
+	return thruster_active
+
+/**
+  * Burns an amount of fuel influenced by the given pow_coeff.
+  * Returns the thrust generated.
+  *
+  * Arguments:
+  * * pow_coeff - Non-negative number representing burn power, where 1 is "full" power. May be higher than 1.
+  */
+/obj/machinery/power/shuttle/engine/proc/burn_engine(pow_coeff)
+	update_icon_state()
+	return 0
+
+/**
+  * Returns how much fuel is left as a fraction between 0 (empty) and 1 (full), or null if N/A.
+  */
+/obj/machinery/power/shuttle/engine/proc/return_fuel()
+	return null

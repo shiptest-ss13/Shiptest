@@ -277,7 +277,7 @@ SUBSYSTEM_DEF(shuttle)
   * * destination_port - The port the newly loaded shuttle will be sent to after being fully spawned in. Can be null, and will create a transit port if so.
   * * old_shuttle - The shuttle the newly loaded shuttle will replace(?).
   **/
-/datum/controller/subsystem/shuttle/proc/action_load(datum/map_template/shuttle/loading_template, obj/docking_port/stationary/destination_port = null, obj/docking_port/mobile/old_shuttle = null)
+/datum/controller/subsystem/shuttle/proc/action_load(datum/map_template/shuttle/loading_template, obj/docking_port/stationary/destination_port = null, obj/docking_port/mobile/old_shuttle = null, datum/component/overmap/ship/new_ship_comp = null)
 	// Check for an existing preview
 	if(preview_shuttle && (loading_template != preview_template))
 		preview_shuttle.jumpToNullSpace()
@@ -287,6 +287,10 @@ SUBSYSTEM_DEF(shuttle)
 
 	if(!preview_shuttle)
 		if(load_template(loading_template))
+			// DEBUG FIX -- make a better proc than this, then use that
+			if(new_ship_comp)
+				new_ship_comp.shuttle_port = preview_shuttle
+				preview_shuttle.ship_comp = new_ship_comp
 			preview_shuttle.linkup(loading_template, destination_port)
 		preview_template = loading_template
 

@@ -9,16 +9,18 @@
 	///The currently selected overmap object destination of the attached shuttle
 	var/obj/structure/overmap/destination
 	///The linked overmap shuttle
-	var/obj/structure/overmap/ship/simulated/ship
+	var/datum/component/overmap/ship/ship_comp
 
 /obj/machinery/computer/autopilot/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock)
-	ship = port.current_ship
+	ship_comp = port.ship_comp
 
 /obj/machinery/computer/autopilot/proc/reload_ship()
 	var/obj/docking_port/mobile/port = SSshuttle.get_containing_shuttle(src)
-	if(port?.current_ship)
-		ship = port.current_ship
+	if(port?.ship_comp)
+		ship_comp = port.ship_comp
 		return TRUE
+
+/* DEBUG FIX -- all of the autopilot console
 
 /obj/machinery/computer/autopilot/ui_interact(mob/user, datum/tgui/ui)
 	if(!ship && !reload_ship())
@@ -83,13 +85,14 @@
 
 	switch(action)
 		if("move")
-			ship.current_autopilot_target = locate(params["shuttle_id"])
+			//ship.current_autopilot_target = locate(params["shuttle_id"])
 			if(!isturf(ship.loc))
 				ship.undock()
-			ship.tick_autopilot()
 			return TRUE
 		if("set_destination")
 			var/target_destination = params["destination"]
 			if(target_destination)
 				destination = target_destination
 				return TRUE
+
+*/

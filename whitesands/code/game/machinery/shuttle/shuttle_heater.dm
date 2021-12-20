@@ -85,19 +85,18 @@
 	. += "It looks like the fuel source can be toggled with an alt-click."
 	. += "The engine heater's gas dial reads [return_gas()] moles of gas.<br>"
 
-/obj/machinery/atmospherics/components/unary/shuttle/heater/proc/return_gas(datum/gas/gas_type)
+/// Returns the # moles of gas of gas_type in the heater, or the total if gas_type is null.
+/obj/machinery/atmospherics/components/unary/shuttle/heater/proc/return_gas(datum/gas/gas_type = null)
 	var/datum/gas_mixture/air_contents = use_tank ? fuel_tank?.air_contents : airs[1]
 	if(!air_contents)
-		return
-	if(gas_type)
-		return air_contents.get_moles(gas_type)
-	else
-		return air_contents.total_moles()
+		return null
+	return gas_type ? air_contents.get_moles(gas_type) : air_contents.total_moles()
 
-/obj/machinery/atmospherics/components/unary/shuttle/heater/proc/return_gas_capacity()
+/// Returns the volume of the heater's gas storage.
+/obj/machinery/atmospherics/components/unary/shuttle/heater/proc/return_volume()
 	var/datum/gas_mixture/air_contents = use_tank ? fuel_tank?.air_contents : airs[1]
 	if(!air_contents)
-		return
+		return null
 	return air_contents.return_volume()
 
 /obj/machinery/atmospherics/components/unary/shuttle/heater/proc/update_gas_stats()
@@ -106,12 +105,6 @@
 		return
 	air_contents.set_volume(gas_capacity)
 	air_contents.set_temperature(T20C)
-
-/obj/machinery/atmospherics/components/unary/shuttle/heater/proc/has_fuel(required, datum/gas/gas_type)
-	var/datum/gas_mixture/air_contents = use_tank ? fuel_tank?.air_contents : airs[1]
-	if(!air_contents)
-		return
-	return air_contents.get_moles(gas_type) >= required
 
 /**
   * Burns a specific amount of one type of gas. Returns how much was actually used.

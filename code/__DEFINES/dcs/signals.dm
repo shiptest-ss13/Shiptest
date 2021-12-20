@@ -656,3 +656,21 @@
 #define COMSIG_XENO_TURF_CLICK_SHIFT "xeno_turf_click_shift" //from turf ShiftClickOn(): (/mob)
 #define COMSIG_XENO_TURF_CLICK_CTRL "xeno_turf_click_alt" //from turf AltClickOn(): (/mob)
 #define COMSIG_XENO_MONKEY_CLICK_CTRL "xeno_monkey_click_ctrl" //from monkey CtrlClickOn(): (/mob)
+
+
+
+
+
+
+// DEBUG FIX -- move this somewhere better
+// Overmap signals
+
+#define COMSIG_OVERMAP_GET_UI_DATA "overmap_get_ui_data"
+
+#define COMSIG_OVERMAP_GET_DOCKS "overmap_get_docks"
+
+#define COMSIG_OVERMAP_GET_FORCES "overmap_get_forces"
+
+
+
+
