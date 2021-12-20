@@ -142,7 +142,7 @@ require only minor tweaks.
 
 #define QUADRANT_MAP_SIZE 127
 
-#define QUADRANT_SIZE_BORDER 4
+#define QUADRANT_SIZE_BORDER 3
 #define TRANSIT_SIZE_BORDER 3
 
 #define DEFAULT_ALLOC_JUMP 5

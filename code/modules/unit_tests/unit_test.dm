@@ -40,10 +40,8 @@ GLOBAL_VAR(test_log)
 	if (isnull(mapzone))
 		var/height = 7
 		var/width = 7
-		var/list/allocation = SSmapping.get_free_allocation(ALLOCATION_FREE, width, height)
-
-		mapzone = new("Integration Test Mapzone")
-		var/datum/virtual_level/vlevel = new("Integration Test Virtual Level", ZTRAITS_STATION, mapzone, allocation[1], allocation[2], allocation[1] + width, allocation[2] + height, allocation[3])
+		mapzone = SSmapping.create_map_zone("Integration Test Mapzone")
+		var/datum/virtual_level/vlevel = SSmapping.create_virtual_level("Integration Test Virtual Level", ZTRAITS_STATION, mapzone, width, height, ALLOCATION_FREE)
 		vlevel.reserve_margin(2)
 		vlevel.fill_in(/turf/open/floor/plasteel, /area/testroom)
 
