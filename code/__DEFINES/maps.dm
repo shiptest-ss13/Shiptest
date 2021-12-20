@@ -139,3 +139,5 @@ require only minor tweaks.
 
 #define ALLOCATION_FREE 1
 #define ALLOCATION_QUADRANT 2
+
+#define QUADRANT_SIZE 125

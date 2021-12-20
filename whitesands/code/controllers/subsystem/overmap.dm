@@ -241,8 +241,8 @@ SUBSYSTEM_DEF(overmap)
 		if(ispath(ruin_type))
 			ruin_type = new ruin_type
 
-	var/height = 124
-	var/width = 124
+	var/height = QUADRANT_SIZE
+	var/width = QUADRANT_SIZE
 
 	var/encounter_name = "Dynamic Overmap Encounter"
 	var/datum/map_zone/mapzone = SSmapping.create_map_zone(encounter_name)

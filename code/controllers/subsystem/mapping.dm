@@ -357,5 +357,8 @@ SUBSYSTEM_DEF(mapping)
 
 /// Allocates, creates and passes a new virtual level
 /datum/controller/subsystem/mapping/proc/create_virtual_level(new_name, list/traits, datum/map_zone/mapzone, width, height, allocation_type = ALLOCATION_FREE)
+	/// Because we add an implicit 1 for the coordinate calcuations.
+	width--
+	height--
 	var/list/allocation_coords = SSmapping.get_free_allocation(allocation_type, width, height)
 	return new /datum/virtual_level(new_name, traits, mapzone, allocation_coords[1], allocation_coords[2], allocation_coords[1] + width, allocation_coords[2] + height, allocation_coords[3])
