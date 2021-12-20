@@ -367,7 +367,7 @@
 
 	amount = 1
 	self_delay = 20
-	grind_results = list(/datum/reagent/bone_dust = 10, /datum/reagent/carbon = 10)
+	grind_results = list(/datum/reagent/calcium = 10, /datum/reagent/carbon = 10)
 	novariants = TRUE
 	merge_type = /obj/item/stack/medical/bone_gel
 

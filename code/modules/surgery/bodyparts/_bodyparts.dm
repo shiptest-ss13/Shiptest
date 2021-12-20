@@ -8,7 +8,7 @@
 	icon = 'icons/mob/human_parts.dmi'
 	icon_state = ""
 	layer = BELOW_MOB_LAYER //so it isn't hidden behind objects when on the floor
-	grind_results = list(/datum/reagent/bone_dust = 10, /datum/reagent/liquidgibs = 5) // robotic bodyparts and chests/heads cannot be ground
+	grind_results = list(/datum/reagent/calcium = 10, /datum/reagent/liquidgibs = 5) // robotic bodyparts and chests/heads cannot be ground
 	var/mob/living/carbon/owner = null
 	var/datum/weakref/original_owner = null
 	var/status = BODYPART_ORGANIC

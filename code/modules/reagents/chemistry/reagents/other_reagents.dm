@@ -89,12 +89,6 @@
 	shot_glass_icon_state = "shotglassred"
 	material = /datum/material/meat
 
-/datum/reagent/bone_dust
-	name = "bone dust"
-	color = "#dbcdcb"
-	description = "Ground up bones, gross!"
-	taste_description = "the most disgusting grain in existence"
-
 /datum/reagent/vaccine
 	//data must contain virus type
 	name = "Vaccine"

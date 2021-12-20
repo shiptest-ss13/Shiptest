@@ -576,7 +576,7 @@
 	required_catalysts = list(/datum/reagent/water/holywater = 1)
 
 /datum/chemical_reaction/bone_gel
-	required_reagents = list(/datum/reagent/bone_dust = 10, /datum/reagent/carbon = 10)
+	required_reagents = list(/datum/reagent/calcium = 10, /datum/reagent/carbon = 10)
 	required_temp = 630
 	mob_react = FALSE
 	mix_message = "The solution clarifies, leaving an ashy gel."
