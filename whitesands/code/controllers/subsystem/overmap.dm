@@ -241,12 +241,12 @@ SUBSYSTEM_DEF(overmap)
 		if(ispath(ruin_type))
 			ruin_type = new ruin_type
 
-	var/height = QUADRANT_SIZE
-	var/width = QUADRANT_SIZE
+	var/height = QUADRANT_MAP_SIZE
+	var/width = QUADRANT_MAP_SIZE
 
 	var/encounter_name = "Dynamic Overmap Encounter"
 	var/datum/map_zone/mapzone = SSmapping.create_map_zone(encounter_name)
-	var/datum/virtual_level/vlevel = SSmapping.create_virtual_level(encounter_name, list(ZTRAIT_MINING = TRUE), mapzone, width, height, ALLOCATION_QUADRANT, ALLOCATION_QUADRANT)
+	var/datum/virtual_level/vlevel = SSmapping.create_virtual_level(encounter_name, list(ZTRAIT_MINING = TRUE), mapzone, width, height, ALLOCATION_QUADRANT, QUADRANT_MAP_SIZE)
 
 	vlevel.reserve_margin(QUADRANT_SIZE_BORDER)
 
