@@ -550,9 +550,6 @@
 
 /// Gets the virtual level that contains the passed atom
 /datum/controller/subsystem/mapping/proc/get_virtual_level(atom/Atom)
-	if(!Atom.loc)
-		stack_trace("Tried to get a virtual level of an atom in nullspace")
-		return
 	var/datum/space_level/level = z_list[Atom.z]
 	var/datum/virtual_level/sub_map
 	for(var/datum/virtual_level/iterated_zone as anything in level.virtual_levels)
@@ -563,9 +560,6 @@
 
 /// A helper pretty much
 /datum/controller/subsystem/mapping/proc/get_map_zone(atom/Atom)
-	if(!Atom.loc)
-		stack_trace("Tried to get a map zone of an atom in nullspace")
-		return
 	var/datum/virtual_level/sub_map = get_virtual_level(Atom)
 	if(sub_map)
 		return sub_map.parent_map_zone
