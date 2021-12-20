@@ -17,5 +17,5 @@
 	if(vlevel)
 		return vlevel.id
 
-	stack_trace("Tried to get a virtual z level outside of one")
+	/// This can rarely happen. And it's fine I guess.
 	return 0
