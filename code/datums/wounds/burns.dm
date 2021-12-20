@@ -49,11 +49,11 @@
 			sanitization += 0.3
 			flesh_healing += 0.5
 
-	if(limb.current_gauze)
-		limb.seep_gauze(WOUND_BURN_SANITIZATION_RATE)
+	var/bandage_factor = 1
+	if(limb.current_gauze && limb.current_gauze.seep_gauze(WOUND_BURN_SANITIZATION_RATE, GAUZE_STAIN_PUS))
+		bandage_factor = limb.current_gauze.sanitisation_factor
 
 	if(flesh_healing > 0) // good bandages multiply the length of flesh healing
-		var/bandage_factor = limb.current_gauze?.burn_cleanliness_bonus || 1
 		flesh_damage = max(0, flesh_damage - 1)
 		flesh_healing = max(0, flesh_healing - bandage_factor)
 
@@ -69,7 +69,6 @@
 
 	// sanitization is checked after the clearing check but before the actual ill-effects, because we freeze the effects of infection while we have sanitization
 	if(sanitization > 0)
-		var/bandage_factor = limb.current_gauze?.burn_cleanliness_bonus || 1
 		infestation = max(0, infestation - WOUND_BURN_SANITIZATION_RATE)
 		sanitization = max(0, sanitization - (WOUND_BURN_SANITIZATION_RATE * bandage_factor))
 		return
@@ -188,6 +187,8 @@
 /// if someone is using ointment or mesh on our burns
 /datum/wound/burn/proc/ointmentmesh(obj/item/stack/medical/I, mob/user)
 	user.visible_message("<span class='notice'>[user] begins applying [I] to [victim]'s [limb.name]...</span>", "<span class='notice'>You begin applying [I] to [user == victim ? "your" : "[victim]'s"] [limb.name]...</span>")
+	if (I.amount <= 0)
+		return
 	if(!do_after(user, (user == victim ? I.self_delay : I.other_delay), extra_checks = CALLBACK(src, .proc/still_exists)))
 		return
 

@@ -220,3 +220,8 @@
 	id = "thirddeg"
 /datum/status_effect/wound/burn/critical
 	id = "fourthdeg"
+// muscle
+/datum/status_effect/wound/muscle/moderate
+	id = "torn muscle"
+/datum/status_effect/wound/muscle/severe
+	id = "ruptured tendon"

@@ -11,7 +11,7 @@
 	treatable_by = list(/obj/item/stack/medical/suture)
 	treatable_tool = TOOL_CAUTERY
 	base_treat_time = 3 SECONDS
-	wound_flags = (FLESH_WOUND | ACCEPTS_GAUZE)
+	wound_flags = (FLESH_WOUND | ACCEPTS_GAUZE | ACCEPTS_SPLINT)
 
 	/// How much blood we start losing when this wound is first applied
 	var/initial_flow
@@ -23,6 +23,16 @@
 	/// If we let off blood when hit, the max blood lost is this * the incoming damage
 	var/internal_bleeding_coefficient
 
+/datum/wound/pierce/show_wound_topic(mob/user)
+	return (user == victim && blood_flow)
+
+/datum/wound/pierce/Topic(href, href_list)
+	. = ..()
+	if(href_list["wound_topic"])
+		if(!usr == victim)
+			return
+		victim.self_grasp_bleeding_limb(limb)
+
 /datum/wound/pierce/wound_injury(datum/wound/old_wound)
 	blood_flow = initial_flow
 
@@ -30,8 +40,8 @@
 	if(victim.stat == DEAD || wounding_dmg < 5)
 		return
 	if(victim.blood_volume && prob(internal_bleeding_chance + wounding_dmg))
-		if(limb.current_gauze?.splint_factor)
-			wounding_dmg *= (1 - limb.current_gauze.splint_factor)
+		if(limb.current_splint?.splint_factor)
+			wounding_dmg *= (1 - limb.current_splint.splint_factor)
 		var/blood_bled = rand(1, wounding_dmg * internal_bleeding_coefficient) // 12 brute toolbox can cause up to 15/18/21 bloodloss on mod/sev/crit
 		switch(blood_bled)
 			if(1 to 6)
@@ -52,7 +62,7 @@
 /datum/wound/pierce/get_bleed_rate_of_change()
 	if(HAS_TRAIT(victim, TRAIT_BLOODY_MESS))
 		return BLOOD_FLOW_INCREASING
-	if(limb.current_gauze)
+	if(limb.current_gauze && limb.current_gauze.seep_gauze(limb.current_gauze.absorption_rate, GAUZE_STAIN_BLOOD))
 		return BLOOD_FLOW_DECREASING
 	return BLOOD_FLOW_STEADY
 
@@ -69,7 +79,6 @@
 
 	if(limb.current_gauze)
 		blood_flow -= limb.current_gauze.absorption_rate * gauzed_clot_rate
-		limb.current_gauze.absorption_capacity -= limb.current_gauze.absorption_rate
 
 	if(blood_flow <= 0)
 		qdel(src)
