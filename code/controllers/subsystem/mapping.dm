@@ -282,7 +282,7 @@ SUBSYSTEM_DEF(mapping)
 	return returned_mapzone
 
 /// Searches for a free allocation for the passed type and size, creates new physical levels if nessecary.
-/datum/controller/subsystem/mapping/proc/get_free_allocation(allocation_type, size_x, size_y, allocation_jump)
+/datum/controller/subsystem/mapping/proc/get_free_allocation(allocation_type, size_x, size_y, allocation_jump = DEFAULT_ALLOC_JUMP)
 	var/list/allocation_list
 	var/list/levels_to_check = z_list.Copy()
 	var/created_new_level = FALSE
