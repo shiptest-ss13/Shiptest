@@ -641,6 +641,7 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	var/homerun_able = 0
 
 /obj/item/melee/baseball_bat/Initialize()
+	. = ..()
 	AddElement(/datum/element/kneecapping)
 
 /obj/item/melee/baseball_bat/homerun

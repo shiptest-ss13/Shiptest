@@ -9,7 +9,7 @@
 	grind_results = list(/datum/reagent/cellulose = 5)
 	usesound = 'whitesands/sound/items/tape.ogg'
 
-	splint_factor = 0.8
+	splint_factor = 0.65
 	var/nonorganic_heal = 5
 	var/self_delay = 30 //! Also used for the tapecuff delay/
 	var/other_delay = 10

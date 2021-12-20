@@ -53,7 +53,7 @@
 		limb.seep_gauze(WOUND_BURN_SANITIZATION_RATE)
 
 	if(flesh_healing > 0) // good bandages multiply the length of flesh healing
-		var/bandage_factor = (limb.current_gauze ? limb.current_gauze.splint_factor : 1)
+		var/bandage_factor = limb.current_gauze?.burn_cleanliness_bonus || 1
 		flesh_damage = max(0, flesh_damage - 1)
 		flesh_healing = max(0, flesh_healing - bandage_factor)
 
@@ -69,7 +69,7 @@
 
 	// sanitization is checked after the clearing check but before the actual ill-effects, because we freeze the effects of infection while we have sanitization
 	if(sanitization > 0)
-		var/bandage_factor = (limb.current_gauze ? limb.current_gauze.splint_factor : 1)
+		var/bandage_factor = limb.current_gauze?.burn_cleanliness_bonus || 1
 		infestation = max(0, infestation - WOUND_BURN_SANITIZATION_RATE)
 		sanitization = max(0, sanitization - (WOUND_BURN_SANITIZATION_RATE * bandage_factor))
 		return
