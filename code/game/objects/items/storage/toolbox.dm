@@ -335,6 +335,6 @@
 	new /obj/item/surgicaldrill(src)
 	new /obj/item/cautery(src)
 	new /obj/item/bonesetter(src)
-	new /obj/item/stack/medical/bone_gel(src)
+	new /obj/item/stack/medical/bone_gel/four(src)
 	new /obj/item/reagent_containers/medigel/sterilizine(src)
 
