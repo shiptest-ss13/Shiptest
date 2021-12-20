@@ -29,7 +29,6 @@
 	name = "repair components"
 	implements = list(TOOL_WELDER = 100, TOOL_CAUTERY = 60, /obj/item/melee/transforming/energy = 40, /obj/item/gun/energy/laser = 20, TOOL_WIRECUTTER = 100, TOOL_HEMOSTAT = 60, TOOL_RETRACTOR = 60)
 	time = 20
-	missinghpbonus = 10
 
 /datum/surgery_step/heal/mechanic/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
 	var/repairtype
@@ -51,18 +50,17 @@
 /datum/surgery_step/heal/mechanic/success(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery, default_display_results = FALSE)
 	var/umsg = "You succeed in fixing some of [target]'s damages" //no period, add initial space to "addons"
 	var/tmsg = "[user] fixes some of [target]'s damages" //see above
-	var/urhealedamt_brute = brutehealing
-	var/urhealedamt_burn = burnhealing
-	if(missinghpbonus)
-		urhealedamt_brute += round((target.getBruteLoss()/ missinghpbonus),0.1)
-		urhealedamt_burn += round((target.getFireLoss()/ missinghpbonus),0.1)
+	var/brute_healed = brutehealing
+	var/burn_healed = burnhealing
+	brute_healed += round((target.getBruteLoss()/ brute_multiplier),0.1)
+	burn_healed += round((target.getFireLoss()/ burn_multiplier ),0.1)
 
 	if(!get_location_accessible(target, target_zone))
-		urhealedamt_brute *= 0.55
-		urhealedamt_burn *= 0.55
+		brute_healed *= 0.55
+		burn_healed *= 0.55
 		umsg += " as best as you can while they have clothing on"
 		tmsg += " as best as they can while [target] has clothing on"
-	experience_given = CEILING((target.heal_bodypart_damage(urhealedamt_brute,urhealedamt_burn)/5),1)
+	experience_given = CEILING((target.heal_bodypart_damage(brute_healed,burn_healed)/5),1)
 	display_results(user, target, "<span class='notice'>[umsg].</span>",
 		"[tmsg].",
 		"[tmsg].")
@@ -80,9 +78,8 @@
 	//Reset heal checks
 	burnhealing = 0
 	brutehealing = 0
-	if(missinghpbonus)
-		urdamageamt_brute += round((target.getBruteLoss()/ (missinghpbonus*2)),0.1)
-		urdamageamt_burn += round((target.getFireLoss()/ (missinghpbonus*2)),0.1)
+	urdamageamt_brute += round((target.getBruteLoss()/ (brute_multiplier*2)),0.1)
+	urdamageamt_burn += round((target.getFireLoss()/ (burn_multiplier*2)),0.1)
 	if((fail_prob > 50) && (tool.tool_behaviour == TOOL_WIRECUTTER || tool.tool_behaviour == TOOL_HEMOSTAT || tool.tool_behaviour == TOOL_RETRACTOR))
 		do_sparks(3, TRUE, target)
 		if(isliving(user))
