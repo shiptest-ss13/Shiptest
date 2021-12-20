@@ -140,6 +140,11 @@ require only minor tweaks.
 #define ALLOCATION_FREE 1
 #define ALLOCATION_QUADRANT 2
 
-#define QUADRANT_SIZE 125
+#define QUADRANT_SIZE 127
+
+#define QUADRANT_SIZE_BORDER 4
+#define TRANSIT_SIZE_BORDER 3
+
+#define DEFAULT_ALLOC_JUMP 5
 
 #define MAP_EDGE_PAD 5

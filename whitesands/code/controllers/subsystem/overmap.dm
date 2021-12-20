@@ -246,9 +246,9 @@ SUBSYSTEM_DEF(overmap)
 
 	var/encounter_name = "Dynamic Overmap Encounter"
 	var/datum/map_zone/mapzone = SSmapping.create_map_zone(encounter_name)
-	var/datum/virtual_level/vlevel = SSmapping.create_virtual_level(encounter_name, list(ZTRAIT_MINING = TRUE), mapzone, width, height, ALLOCATION_QUADRANT)
+	var/datum/virtual_level/vlevel = SSmapping.create_virtual_level(encounter_name, list(ZTRAIT_MINING = TRUE), mapzone, width, height, ALLOCATION_QUADRANT, ALLOCATION_QUADRANT)
 
-	vlevel.reserve_margin(5)
+	vlevel.reserve_margin(QUADRANT_SIZE_BORDER)
 
 	vlevel.fill_in(surface, target_area)
 

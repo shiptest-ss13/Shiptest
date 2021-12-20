@@ -132,8 +132,6 @@ SUBSYSTEM_DEF(shuttle)
 	if(!(M in transit_requesters))
 		transit_requesters += M
 
-#define TRANSIT_BORDER_RESERVE 3
-
 /datum/controller/subsystem/shuttle/proc/generate_transit_dock(obj/docking_port/mobile/M)
 	// First, determine the size of the needed zone
 	// Because of shuttle rotation, the "width" of the shuttle is not
@@ -172,7 +170,7 @@ SUBSYSTEM_DEF(shuttle)
 	var/datum/map_zone/mapzone = SSmapping.create_map_zone(transit_name)
 	var/datum/virtual_level/vlevel = SSmapping.create_virtual_level(transit_name, list(ZTRAIT_RESERVED = TRUE), mapzone, transit_width, transit_height, ALLOCATION_FREE)
 
-	vlevel.reserve_margin(TRANSIT_BORDER_RESERVE)
+	vlevel.reserve_margin(TRANSIT_SIZE_BORDER)
 
 	mapzone.parallax_movedir = travel_dir
 
@@ -221,8 +219,6 @@ SUBSYSTEM_DEF(shuttle)
 
 	M.assigned_transit = new_transit_dock
 	return new_transit_dock
-
-#undef TRANSIT_BORDER_RESERVE
 
 /datum/controller/subsystem/shuttle/Recover()
 	if (istype(SSshuttle.mobile))
