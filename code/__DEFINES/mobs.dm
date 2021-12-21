@@ -101,7 +101,7 @@
 #define SPECIES_SNAIL "snail"
 #define SPECIES_SYNTH "synth"
 #define SPECIES_MILITARYSYNTH "military_synth"
-#define SPECIES_TESHARI "teshari"
+#define SPECIES_KEPORI "kepori"
 #define SPECIES_VAMPIRE "vampire"
 #define SPECIES_VOX "vox"
 #define SPECIES_ZOMBIE "zombie"
