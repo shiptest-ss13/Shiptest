@@ -1319,7 +1319,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			if(initial(T.mood_quirk) && CONFIG_GET(flag/disable_human_mood))
 				lock_reason = "Mood is disabled."
 				quirk_conflict = TRUE
-			if((allowed_species && !(pref_species.id in allowed_species)) || (blocked_species && (pref_species.id in blocked_species)))
+			if((Test.allowed_species && !(pref_species.id in Test.allowed_species)) || (Test.blocked_species && (pref_species.id in Test.blocked_species)))
 				lock_reason = "Quirk unavailable to your species."
 				quirk_conflict = TRUE
 			if(has_quirk)
