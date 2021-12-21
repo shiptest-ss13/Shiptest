@@ -1312,7 +1312,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			var/has_quirk
 			var/quirk_cost = initial(T.value) * -1
 			var/lock_reason = "This trait is unavailable."
-			var/list/allowed_species = Test.allowed_species
 			var/quirk_conflict = FALSE
 			for(var/_V in all_quirks)
 				if(_V == quirk_name)
