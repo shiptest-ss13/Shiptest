@@ -492,8 +492,7 @@ GLOBAL_LIST_EMPTY(teleportlocs)
   */
 /area/update_icon_state()
 	var/weather_icon
-	for(var/V in SSweather.get_all_current_weather())
-		var/datum/weather/W = V
+	for(var/datum/weather/W as anything in SSweather.get_all_current_weather())
 		if(W.stage != END_STAGE && (src in W.impacted_areas))
 			W.update_areas()
 			weather_icon = TRUE
