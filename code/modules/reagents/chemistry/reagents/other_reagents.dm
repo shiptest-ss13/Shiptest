@@ -563,7 +563,7 @@
 	taste_description = "something nyat good"
 
 /datum/reagent/mutationtoxin/lizard
-	name = "lizard Mutation Toxin"
+	name = "Sarathi Mutation Toxin"
 	description = "A lizarding toxin."
 	color = "#5EFF3B" //RGB: 94, 255, 59
 	race = /datum/species/lizard
@@ -656,10 +656,11 @@
 	process_flags = ORGANIC | SYNTHETIC
 
 /datum/reagent/mutationtoxin/tesh //crying
-	name = "Teshari Mutation Toxin"
+	name = "Kepori Mutation Toxin"
 	description = "A feathery toxin."
-	race = /datum/species/teshari
+	race = /datum/species/kepori
 	process_flags = ORGANIC | SYNTHETIC
+	taste_description = "a familiar white meat"
 
 //BLACKLISTED RACES
 /datum/reagent/mutationtoxin/skeleton

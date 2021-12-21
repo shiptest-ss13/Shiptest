@@ -1,6 +1,6 @@
 /datum/species/lizard
 	// Reptilian humanoids with scaled skin and tails.
-	name = "Lizardperson"
+	name = "Sarathi"
 	id = "lizard"
 	say_mod = "hisses"
 	default_color = "00FF00"
@@ -28,9 +28,7 @@
 	// Lizards are coldblooded and can stand a greater temperature range than humans
 	bodytemp_heat_damage_limit = (BODYTEMP_HEAT_DAMAGE_LIMIT + 20) // This puts lizards 10 above lavaland max heat for ash lizards.
 	bodytemp_cold_damage_limit = (BODYTEMP_COLD_DAMAGE_LIMIT - 10)
-	loreblurb = "Cold-blooded and covered in scales, lizards may seem like a vicious predator put in a fancy jumpsuit, \
-	but due to some recent pressure from HR they're generally well-behaved. Most of them don't even fight all that well. \
-	Confusing them with Ash Walkers (the similarly lizard-like natives of the Lavaland Wastes) might lead to having a spear lodged in your skull."
+	loreblurb = "The Sarathi are a cold-blooded reptilian species originating from the planet Kalixcis, where they evolved alongside the Elzuosa. Kalixcian culture places no importance on blood-bonds, and those from it tend to consider their family anyone they are sufficiently close to, and choose their own names."
 
 	ass_image = 'icons/ass/asslizard.png'
 	var/datum/action/innate/lizlighter/lizlighter

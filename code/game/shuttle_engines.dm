@@ -96,6 +96,10 @@
 	icon_state = "platform"
 	desc = "A platform for engine components."
 	engine_power = 0
+	pass_flags_self = PASSPLATFORM
+
+/obj/structure/shuttle/engine/platform/corner
+	icon_state = "platform_corner"
 
 /obj/structure/shuttle/engine/propulsion
 	name = "propulsion engine"

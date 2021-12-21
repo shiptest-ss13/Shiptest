@@ -19,7 +19,7 @@
 	resistance_flags = FIRE_PROOF
 	wound_bonus = -15
 	bare_wound_bonus = 20
-	species_exception = list(/datum/species/teshari)	//WS edit - Tesh can carry light things on back
+	species_exception = list(/datum/species/kepori)
 	var/wielded = FALSE // track wielded status on item
 
 /obj/item/fireaxe/Initialize()
