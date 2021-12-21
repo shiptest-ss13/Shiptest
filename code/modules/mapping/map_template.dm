@@ -111,7 +111,7 @@
 							locate(min(T.x+width+1, world.maxx),	min(T.y+height+1, world.maxy), T.z))
 	for(var/L in border)
 		var/turf/turf_to_disable = L
-		turf_to_disable.atmos_adjacent_turfs?.Cut()
+		turf_to_disable.set_sleeping(TRUE)
 
 	// Accept cached maps, but don't save them automatically - we don't want
 	// ruins clogging up memory for the whole round.
