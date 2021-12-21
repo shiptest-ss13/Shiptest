@@ -250,6 +250,8 @@ SUBSYSTEM_DEF(overmap)
 
 	vlevel.reserve_margin(QUADRANT_SIZE_BORDER)
 
+	if(mapgen) /// If we have a map generator, don't ChangeTurf's in fill_in. Just to ChangeTurf them once again.
+		surface = null
 	vlevel.fill_in(surface, target_area)
 
 	if(ruin_type)

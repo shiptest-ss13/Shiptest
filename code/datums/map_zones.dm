@@ -542,11 +542,12 @@
 			if(QDELETED(src))
 				return
 
-	for(var/turf/iterated_turf as anything in get_unreserved_block())
-		iterated_turf.ChangeTurf(turf_type, turf_type)
-		CHECK_TICK
-		if(QDELETED(src))
-			return
+	if(turf_type)
+		for(var/turf/iterated_turf as anything in get_unreserved_block())
+			iterated_turf.ChangeTurf(turf_type, turf_type)
+			CHECK_TICK
+			if(QDELETED(src))
+				return
 
 /// Gets the virtual level that contains the passed atom
 /datum/controller/subsystem/mapping/proc/get_virtual_level(atom/Atom)
