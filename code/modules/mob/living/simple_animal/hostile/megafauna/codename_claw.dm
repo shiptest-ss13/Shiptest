@@ -2,8 +2,8 @@
 	name = "Trooper \"Claw\""
 	desc = "This is Trooper \"Claw\".\
 	They are holding a armblade in their right hand."
-	health = 3000
-	maxHealth = 3000
+	health = 750
+	maxHealth = 750
 	attack_verb_continuous = "slices"
 	attack_verb_simple = "slice"
 	attack_sound = 'ModularTegustation/Tegusounds/claw/attack.ogg'
@@ -27,132 +27,101 @@
 	crusher_loot = list(/obj/item/card/id/ert/deathsquad, /obj/item/documents/nanotrasen)
 	loot = list(/obj/item/card/id/ert/deathsquad, /obj/item/documents/nanotrasen)
 	wander = FALSE
-	del_on_death = TRUE
 	blood_volume = BLOOD_VOLUME_NORMAL
 	gps_name = "NTAF-V"
-	deathmessage = "falls to the ground, decaying into glowing particles."
+	deathmessage = "stops moving..."
 	deathsound = "bodyfall"
 	footstep_type = FOOTSTEP_MOB_HEAVY
-	attack_action_types = list(/datum/action/innate/megafauna_attack/ultimatum,
-							   /datum/action/innate/megafauna_attack/swift_dash,
-							   /datum/action/innate/megafauna_attack/swift_dash_long)
-	var/ultimatum_cooldown = 0
-	var/ultimatum_cooldown_time = 40 SECONDS
-	var/charging = FALSE
+	attack_action_types = list(/datum/action/innate/megafauna_attack/swift_dash,
+								/datum/action/innate/megafauna_attack/swift_dash_long)
+	pixel_x = -16
+	var/shoudnt_move = FALSE
 	var/dash_num_short = 4
 	var/dash_num_long = 18
 	var/dash_cooldown = 0
 	var/dash_cooldown_time = 4 // cooldown_time * distance:
 	// 4 * 4 = 16 (1.6 seconds)
 	// 4 * 18 = 72 (7.2 seconds)
+	var/phase = 1 //at about 25% hp, they will "die", and then come back with even more attacks
 
-/datum/action/innate/megafauna_attack/ultimatum
-	name = "Ultimatum"
-	icon_icon = 'icons/effects/effects.dmi'
-	button_icon_state = "static"
-	chosen_message = "<span class='colossus'>You will now jump to random targets on the station.</span>"
-	chosen_attack_num = 1
+/mob/living/simple_animal/hostile/megafauna/claw/phase2
+	gps_name = "F453C619AE278"
+	deathsound = "bodyfall"
+	speed = 5
+	move_to_delay = 5
+	speak_emote = list("verbalizes")
+	crusher_loot = list(/obj/effect/spawner/clawloot)
+	loot = list(/obj/effect/spawner/clawloot/crusher)
+	health = 2250
+	maxHealth = 2250
+	shoudnt_move = TRUE //we want to show the transforming animation
+	phase = 2
+
+/obj/effect/spawner/clawloot/Initialize()
+	. = ..()
+	addtimer(CALLBACK(src, .proc/spawn_loot), 5 SECONDS) //this is because it dies violently exploding, so we dont want to destroy the goodies, you know?
+
+/obj/effect/spawner/clawloot/proc/spawn_loot
+	new /obj/item/gun/energy/pulse/pistol(get_turf(src))
+	qdel(src)
+
+/obj/effect/spawner/clawloot/crusher/spawn_loot
+	new /obj/item/nullrod/armblade/tentacle(get_turf(src)) //idk what to put here, memed is the loot person
+	return ..()
 
 /datum/action/innate/megafauna_attack/swift_dash
 	name = "Swift Dash"
 	icon_icon = 'icons/effects/effects.dmi'
 	button_icon_state = "rift"
 	chosen_message = "<span class='colossus'>You will now dash forward for a short distance.</span>"
-	chosen_attack_num = 2
+	chosen_attack_num = 1
 
 /datum/action/innate/megafauna_attack/swift_dash_long
 	name = "Long Dash"
 	icon_icon = 'icons/effects/effects.dmi'
 	button_icon_state = "plasmasoul"
 	chosen_message = "<span class='colossus'>You will now dash forward for a long distance.</span>"
-	chosen_attack_num = 3
-
-/obj/effect/target_field
-	name = "target field"
-	desc = "You have a bad feeling about this..."
-	icon = 'ModularTegustation/Teguicons/tegu_effects.dmi'
-	icon_state = "target_field"
+	chosen_attack_num = 2
 
 /mob/living/simple_animal/hostile/megafauna/claw/Initialize()
 	. = ..()
 	ADD_TRAIT(src, TRAIT_NO_FLOATING_ANIM, ROUNDSTART_TRAIT) // Imagine floating.
 
-/mob/living/simple_animal/hostile/megafauna/claw/OpenFire()
-	if(client)
-		if(charging)
-			return
-		switch(chosen_attack)
-			if(1)
-				ultimatum(target)
-			if(2)
-				swift_dash(target, dash_num_short, 5)
-			if(3)
-				swift_dash(target, dash_num_long, 20)
-		return
-
-	Goto(target, move_to_delay, minimum_distance)
-	if(get_dist(src, target) >= 3 && dash_cooldown <= world.time && !charging)
-		swift_dash(target, dash_num_short, 5)
-	if(get_dist(src, target) > 5 && ultimatum_cooldown <= world.time && !charging)
-		ultimatum()
+/mob/living/simple_animal/hostile/megafauna/claw/phase2/Initialize()
+	. = ..()
+	flick("claw-phase2_transform",src) //plays the transforming animation
+	addtimer(CALLBACK(src, .proc/unlock_phase2, 4.4 SECONDS)
 
 /mob/living/simple_animal/hostile/megafauna/claw/Move()
-	if(charging)
+	if(shoudnt_move)
 		return FALSE
 	return ..()
 
-/mob/living/simple_animal/hostile/megafauna/claw/proc/ultimatum()
-	if(ultimatum_cooldown > world.time)
+/mob/living/simple_animal/hostile/megafauna/claw/OpenFire()
+	if(client)
+		if(shoudnt_move)
+			return
+		switch(chosen_attack)
+			if(1) //these SHOULDNT fire during phase 2, but if they do have fun with the extra attacks
+					swift_dash(target, dash_num_short, 5)
+			if(2)
+					swift_dash(target, dash_num_long, 15)
 		return
-	ultimatum_cooldown = world.time + ultimatum_cooldown_time
-	var/list/mob/living/carbon/human/death_candidates = list()
-	for(var/mob/living/carbon/human/maybe_victim in range(8, src))
-		if((maybe_victim.stat != DEAD) && maybe_victim.z == z)
-			death_candidates += maybe_victim
-	var/mob/living/carbon/human/H = null
-	if(!death_candidates.len) // If there is 0 candidates - stop the spell.
-		to_chat(src, "<span class='notice'>No targets in range.</span>")
-		return
-	for(var/i in 1 to 5)
-		if(!death_candidates.len) // No more candidates left? Let's stop picking through the list.
-			break
-		H = pick(death_candidates)
-		addtimer(CALLBACK(src, .proc/eviscerate, H), i*4)
-		death_candidates.Remove(H)
 
-/mob/living/simple_animal/hostile/megafauna/claw/proc/eviscerate(mob/living/carbon/human/target)
-	var/obj/effect/target_field/uhoh = new /obj/effect/target_field(target.loc)
-	uhoh.orbit(target, 0)
-	playsound(target, 'ModularTegustation/Tegusounds/claw/eviscerate1.ogg', 100, 1)
-	playsound(src, 'ModularTegustation/Tegusounds/claw/eviscerate1.ogg', 1, 1)
-	to_chat(target, "<span class='danger'>You feel like the [src] is targeting you!</span>")
-	addtimer(CALLBACK(src, .proc/eviscerate2, target, uhoh), 30)
-
-/mob/living/simple_animal/hostile/megafauna/claw/proc/eviscerate2(mob/living/carbon/human/target, obj/effect/eff)
-	if(prob(2) || target.z != z || !target.loc.AllowClick() || !target) // Be happy, mortal. Did you just hide in a locker?
-		to_chat(src, "<span class='notice'>Your teleportation device malfunctions!</span>")
-		to_chat(target, "<span class='notice'>The [src] misses!<span>")
-		playsound(src.loc, 'ModularTegustation/Tegusounds/claw/error.ogg', 50, 1)
-		qdel(eff)
-		return
-	new /obj/effect/temp_visual/emp/pulse(src.loc)
-	visible_message("<span class='warning'>[src] blinks away!</span>")
-	var/turf/tp_loc = get_step(target.loc, pick(0,1,2,4,5,6,8,9,10))
-	new /obj/effect/temp_visual/emp/pulse(tp_loc)
-	forceMove(tp_loc)
-	qdel(eff)
-	playsound(target, 'ModularTegustation/Tegusounds/claw/eviscerate2.ogg', 100, 1)
-	for(var/turf/b in range(1, src.loc)) // Attacks everyone around.
-		for(var/mob/living/H in b)
-			H.Knockdown(15)
-			H.attack_animal(src)
-			new /obj/effect/temp_visual/cleave(H.loc)
+	Goto(target, move_to_delay, minimum_distance)
+	if(phase == 1)
+		if(get_dist(src, target) >= 3 && dash_cooldown <= world.time && !shoudnt_move)
+			swift_dash(target, dash_num_short, 5)
+		if(get_dist(src, target) > 5 && dash_cooldown <= world.time && !shoudnt_move)
+			swift_dash(target, dash_num_long, 15)
+	else
+//to be implmented
 
 /mob/living/simple_animal/hostile/megafauna/claw/proc/swift_dash(target, distance, wait_time)
 	if(dash_cooldown > world.time)
 		return
 	dash_cooldown = world.time + (dash_cooldown_time * distance)
-	charging = TRUE
+	shoudnt_move = TRUE
 	var/dir_to_target = get_dir(get_turf(src), get_turf(target))
 	var/turf/T = get_step(get_turf(src), dir_to_target)
 	for(var/i in 1 to distance)
@@ -163,7 +132,7 @@
 
 /mob/living/simple_animal/hostile/megafauna/claw/proc/swift_dash2(move_dir, times_ran, distance_run)
 	if(times_ran > distance_run)
-		charging = FALSE
+		shoudnt_move = FALSE
 		return
 	var/turf/T = get_step(get_turf(src), move_dir)
 	new /obj/effect/temp_visual/small_smoke/halfsecond(T)
@@ -174,3 +143,21 @@
 		L.attack_animal(src)
 		new /obj/effect/temp_visual/cleave(L.loc)
 	addtimer(CALLBACK(src, .proc/swift_dash2, move_dir, (times_ran + 1), distance_run), 0.7)
+
+/mob/living/simple_animal/hostile/megafauna/claw/death()
+	. = ..()
+	OnDeath() //this is because both stages have unique behavior on death, inlcuding stage one not dying
+
+/mob/living/simple_animal/hostile/megafauna/claw/proc/on_death()
+	. = ..()
+	flick("claw-phase1_transform",src) //woho you won... or did you?
+	addtimer(CALLBACK(src, .proc/create_phase2, 30 SECONDS)
+
+/mob/living/simple_animal/hostile/megafauna/claw/proc/create_phase2() //this only exists so the timer can callback to this proc
+	new /mob/living/simple_animal/hostile/megafauna/claw/phase2(get_turf(src))
+
+/mob/living/simple_animal/hostile/megafauna/claw/proc/unlock_phase2()
+	shoudnt_move = FALSE
+	empulse(src, 3, 10) //changling's emp scream, right?
+	explosion(src, 1, 2, 3) //dramatic
+	playsound(src, 'sound/voice/vox/vox_scream_1.ogg', 200, 1, 8, 8) //jumpscare
