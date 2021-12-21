@@ -247,8 +247,8 @@ SUBSYSTEM_DEF(mapping)
 			S.short_name = copytext(S.name, 1, 20)
 		if(istext(data["prefix"]))
 			S.prefix = data["prefix"]
-		if(islist(data["namelist"]))
-			S.name_categories = data["namelist"]
+		if(islist(data["namelists"]))
+			S.name_categories = data["namelists"]
 
 		S.job_slots = list()
 		var/list/job_slot_list = data["job_slots"]
