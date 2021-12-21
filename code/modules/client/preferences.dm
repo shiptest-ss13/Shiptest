@@ -1562,7 +1562,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					for(var/datum/quirk/V in all_quirks)
 						var/datum/quirk/_V = new V
 						balance -= _V.value
-						if(_V.allowed_species && !(pref_species.id in _V.allowed_species))
+						if((_V.allowed_species && !(pref_species.id in _V.allowed_species)) || (_V.blocked_species && (pref_species.id in _V.blocked_species)))
 							all_quirks ^= V
 							balance += _V.value
 					while(balance < 0)
