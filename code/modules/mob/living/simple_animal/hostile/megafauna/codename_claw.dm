@@ -6,7 +6,7 @@
 	maxHealth = 750
 	attack_verb_continuous = "slices"
 	attack_verb_simple = "slice"
-	attack_sound = 'ModularTegustation/Tegusounds/claw/attack.ogg'
+	attack_sound = 'sound/creatures/claw_attack.ogg'
 	icon_state = "claw"
 	icon_living = "claw"
 	icon = 'icons/mob/broadMobs.dmi'
@@ -61,11 +61,11 @@
 	. = ..()
 	addtimer(CALLBACK(src, .proc/spawn_loot), 5 SECONDS) //this is because it dies violently exploding, so we dont want to destroy the goodies, you know?
 
-/obj/effect/spawner/clawloot/proc/spawn_loot
+/obj/effect/spawner/clawloot/proc/spawn_loot()
 	new /obj/item/gun/energy/pulse/pistol(get_turf(src))
 	qdel(src)
 
-/obj/effect/spawner/clawloot/crusher/spawn_loot
+/obj/effect/spawner/clawloot/crusher/spawn_loot()
 	new /obj/item/nullrod/armblade/tentacle(get_turf(src)) //idk what to put here, memed is the loot person
 	return ..()
 
@@ -114,7 +114,6 @@
 			swift_dash(target, dash_num_short, 5)
 		if(get_dist(src, target) > 5 && dash_cooldown <= world.time && !shoudnt_move)
 			swift_dash(target, dash_num_long, 15)
-	else
 //to be implmented
 
 /mob/living/simple_animal/hostile/megafauna/claw/proc/swift_dash(target, distance, wait_time)
@@ -128,7 +127,7 @@
 		new /obj/effect/temp_visual/cult/sparks(T)
 		T = get_step(T, dir_to_target)
 	addtimer(CALLBACK(src, .proc/swift_dash2, dir_to_target, 0, distance), wait_time)
-	playsound(src, 'ModularTegustation/Tegusounds/claw/prepare.ogg', 100, 1)
+	playsound(src, 'sound/creatures/claw_prepare.ogg', 100, 1)
 
 /mob/living/simple_animal/hostile/megafauna/claw/proc/swift_dash2(move_dir, times_ran, distance_run)
 	if(times_ran > distance_run)
@@ -137,7 +136,7 @@
 	var/turf/T = get_step(get_turf(src), move_dir)
 	new /obj/effect/temp_visual/small_smoke/halfsecond(T)
 	forceMove(T)
-	playsound(src,'ModularTegustation/Tegusounds/claw/move.ogg', 50, 1)
+	playsound(src,'sound/creatures/claw_move.ogg', 50, 1)
 	for(var/mob/living/L in T.contents - src)
 		L.Knockdown(15)
 		L.attack_animal(src)

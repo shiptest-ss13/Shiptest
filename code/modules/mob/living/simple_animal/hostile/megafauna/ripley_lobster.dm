@@ -17,7 +17,7 @@
 	projectiletype = /obj/projectile/beam/hitscan/laser
 	projectilesound = 'sound/weapons/laser.ogg'
 	ranged = TRUE
-	ranged_cooldown_time = 20
+	ranged_cooldown_time = 120
 	move_to_delay = 4
 	vision_range = 10
 	loot = list(/obj/item/assembly/signaler/anomaly/bluespace, /obj/structure/mecha_wreckage/ripley) //well what else do I give them?
@@ -32,14 +32,12 @@
 								/datum/action/innate/megafauna_attack/missle_barrage,
 								/datum/action/innate/megafauna_attack/laser_barrage,
 								/datum/action/innate/megafauna_attack/flamethrower,
-								/datum/action/innate/megafauna_attack/bolt_spiral,
-								/datum/action/innate/megafauna_attack/pulse_fire,
-								/datum/action/innate/megafauna_attack/self_destuct)
+								/datum/action/innate/megafauna_attack/bolt_spiral)
 	move_force = MOVE_FORCE_NORMAL
 	var/attack_count = 3 //how many attacks in a row?
 	var/speed_mod = 1 //how much time it takes for a attack?
 //	var/allow_self_destruct = FALSE //if lobster is allowed to proc "self destruct"
-	var/charging = TRUE //if drill dash is happening
+	var/charging = FALSE //if drill dash is happening
 
 /datum/action/innate/megafauna_attack/drill_dash
 	name = "Dril Dash"
@@ -119,7 +117,7 @@
 
 /mob/living/simple_animal/hostile/megafauna/ripley_lobster/proc/drill_dash(target)
 	charging = TRUE
-	for(var/i = 0, i=<3, i++)
+	for(var/i = 0, i<3, i++)
 		charge(target)
 	charging = FALSE
 
@@ -133,13 +131,13 @@
 	var/turf/T = get_ranged_target_turf(chargeturf, dir, chargepast)
 	if(!T)
 		return
-	revving_charge = TRUE
+
 	walk(src, 0)
 	setDir(dir)
 	var/obj/effect/temp_visual/decoy/D = new /obj/effect/temp_visual/decoy(loc,src)
 	animate(D, alpha = 0, color = "#FF0000", transform = matrix()*2, time = 3)
 	SLEEP_CHECK_DEATH(delay)
-	revving_charge = FALSE
+
 	var/movespeed = 0.7
 	walk_towards(src, T, movespeed)
 	SLEEP_CHECK_DEATH(get_dist(src, T) * movespeed)
