@@ -1354,8 +1354,8 @@
 /mob/living/carbon/human/species/synth/military
 	race = /datum/species/synth/military
 
-/mob/living/carbon/human/species/teshari
-	race = /datum/species/teshari
+/mob/living/carbon/human/species/kepori
+	race = /datum/species/kepori
 
 /mob/living/carbon/human/species/vampire
 	race = /datum/species/vampire

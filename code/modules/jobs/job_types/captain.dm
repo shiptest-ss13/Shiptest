@@ -62,7 +62,7 @@
 	name = "Captain (Nanotrasen)"
 
 	uniform = /obj/item/clothing/under/rank/command/captain/nt
-	alt_uniform = null
+	alt_uniform = /obj/item/clothing/under/rank/command/captain/nt/alt
 	shoes = /obj/item/clothing/shoes/laceup
 	head = /obj/item/clothing/head/caphat/nt
 

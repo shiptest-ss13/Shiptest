@@ -77,6 +77,8 @@
 	permeability_coefficient = 0.5
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 10, "rad" = 0, "fire" = 0, "acid" = 0)
 	fitted = NO_FEMALE_UNIFORM
+	icon = 'icons/obj/clothing/under/medical.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/under/medical.dmi'
 
 /obj/item/clothing/under/suit/cmo/skirt
 	name = "medical director skirtsuit"
@@ -99,6 +101,8 @@
 	permeability_coefficient = 0.5
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 10, "rad" = 0, "fire" = 0, "acid" = 0)
 	fitted = NO_FEMALE_UNIFORM
+	icon = 'icons/obj/clothing/under/medical.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/under/medical.dmi'
 
 /obj/item/clothing/under/suit/senior_doctor/skirt
 	name = "senior doctor skirtsuit"
@@ -115,6 +119,8 @@
 	permeability_coefficient = 0.5
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 10, "rad" = 0, "fire" = 50, "acid" = 65)
 	fitted = NO_FEMALE_UNIFORM
+	icon = 'icons/obj/clothing/under/medical.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/under/medical.dmi'
 
 /obj/item/clothing/under/suit/senior_chemist/skirt
 	name = "senior chemist suit"
@@ -130,6 +136,8 @@
 	permeability_coefficient = 0.5
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 10, "rad" = 0, "fire" = 0, "acid" = 0)
 	fitted = NO_FEMALE_UNIFORM
+	icon = 'icons/obj/clothing/under/medical.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/under/medical.dmi'
 
 /obj/item/clothing/under/suit/pathologist/skirt
 	name = "pathologist suit"

@@ -133,7 +133,7 @@
 /obj/item/clothing/head/collectable/HoP
 	name = "collectable HoP hat"
 	desc = "It's your turn to demand excessive paperwork, signatures, stamps, and hire more clowns! Papers, please!"
-	icon_state = "hopcap"
+	icon_state = "hopcap_nt"
 	dog_fashion = /datum/dog_fashion/head/head_of_personnel
 
 /obj/item/clothing/head/collectable/thunderdome

@@ -281,7 +281,7 @@
 		return FALSE
 	. = TRUE
 	moveToNullspace()
-	owner = C
+	set_owner(C)
 	C.add_bodypart(src)
 	if(held_index)
 		if(held_index > C.hand_bodyparts.len)
