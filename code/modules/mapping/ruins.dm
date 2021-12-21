@@ -49,7 +49,7 @@
 		WARNING("No Z levels provided - Not generating ruins")
 		return
 
-	for(var/datum/virtual_level/vlevel in virtual_levels)
+	for(var/datum/virtual_level/vlevel as anything in virtual_levels)
 		var/turf/T = locate(1, 1, vlevel.z_value)
 		if(!T)
 			WARNING("Z level [vlevel.z_value] does not exist - Not generating ruins")
