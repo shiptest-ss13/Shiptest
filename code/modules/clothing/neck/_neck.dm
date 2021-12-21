@@ -37,7 +37,8 @@
 						"gay tie" = "gay",
 						"genderfluid tie" = "genderfluid",
 						"asexual tie" = "asexual",
-						"genderfae tie" = "genderfae"
+						"genderfae tie" = "genderfae",
+						"ally tie" = "ally_tie"
 						)
 	icon_state = "rainbow_tie"
 	item_state = ""	//no inhands
@@ -122,6 +123,11 @@
 	name = "genderfae tie"
 	desc = "A neosilk clip-on tie. This one is in the colors of the genderfae flag."
 	icon_state = "genderfae"
+
+/obj/item/clothing/neck/tie/ally_tie
+	name = "ally tie"
+	desc = "A neosilk clip-on tie. This one is in the colors of the ally flag."
+	icon_state = "ally_tie"
 
 /obj/item/clothing/neck/stethoscope
 	name = "stethoscope"

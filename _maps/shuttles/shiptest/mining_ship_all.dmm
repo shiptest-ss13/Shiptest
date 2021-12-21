@@ -99,23 +99,6 @@
 /obj/structure/catwalk/over,
 /turf/open/floor/plating,
 /area/ship/engineering)
-"bV" = (
-/obj/machinery/door/airlock/external,
-/obj/structure/fans/tiny,
-/obj/docking_port/mobile{
-	can_move_docking_ports = 1;
-	dir = 2;
-	dwidth = 12;
-	height = 17;
-	launch_status = 0;
-	name = "mining ship";
-	port_direction = 8;
-	preferred_direction = 4;
-	undock_roundstart = 1;
-	width = 28
-	},
-/turf/open/floor/plating,
-/area/ship/cargo)
 "bW" = (
 /obj/structure/cable/yellow{
 	icon_state = "2-8"
@@ -516,6 +499,28 @@
 /obj/effect/turf_decal/solarpanel,
 /turf/open/floor/plating/airless,
 /area/ship/external)
+"kf" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/effect/turf_decal/techfloor{
+	dir = 8
+	},
+/obj/effect/turf_decal/industrial/caution{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/orange/visible,
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/engineering)
 "kD" = (
 /obj/structure/fans/tiny,
 /obj/machinery/door/poddoor{
@@ -1307,28 +1312,22 @@
 /obj/machinery/door/airlock/external,
 /turf/open/floor/plating,
 /area/ship/engineering)
-"Dm" = (
-/obj/structure/cable{
-	icon_state = "1-2"
+"DC" = (
+/obj/machinery/door/airlock/external,
+/obj/structure/fans/tiny,
+/obj/docking_port/mobile{
+	can_move_docking_ports = 1;
+	dir = 2;
+	dwidth = 12;
+	height = 17;
+	launch_status = 0;
+	name = "mining ship";
+	port_direction = 8;
+	preferred_direction = 4;
+	width = 28
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 8
-	},
-/obj/structure/cable/yellow{
-	icon_state = "4-8"
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 4
-	},
-/obj/effect/turf_decal/techfloor{
-	dir = 8
-	},
-/obj/effect/turf_decal/caution{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/orange/visible,
-/turf/open/floor/plasteel/tech/techmaint,
-/area/ship/engineering)
+/turf/open/floor/plating,
+/area/ship/cargo)
 "DJ" = (
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
@@ -2208,7 +2207,7 @@ hO
 Mk
 IF
 TF
-Dm
+kf
 WE
 vJ
 vJ
@@ -2409,7 +2408,7 @@ lg
 lh
 "}
 (16,1,1) = {"
-bV
+DC
 FP
 ww
 Mo

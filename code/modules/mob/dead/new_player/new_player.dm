@@ -303,7 +303,7 @@
 		humanc = character	//Let's retypecast the var to be human,
 
 	if(humanc)	//These procs all expect humans
-		ship.manifest_inject(humanc, client)
+		ship.manifest_inject(humanc, client, job)
 		GLOB.data_core.manifest_inject(humanc, client)
 		AnnounceArrival(humanc, job.title, ship)
 		AddEmploymentContract(humanc)
@@ -338,31 +338,31 @@
 /mob/dead/new_player/proc/LateChoices()
 	var/list/shuttle_choices = list("Purchase ship..." = "Purchase") //Dummy for purchase option
 
-	for(var/obj/structure/overmap/ship/simulated/S in SSovermap.overmap_objects)
+	for(var/obj/structure/overmap/ship/simulated/S as anything in SSovermap.simulated_ships)
 		if((length(S.shuttle.spawn_points) < 1) || !S.join_allowed)
 			continue
-		shuttle_choices[S.name + " ([S.shuttle.source_template.short_name ? S.shuttle.source_template.short_name : "Unknown-class"])"] = S //Try to get the class name
+		shuttle_choices[S.name + " ([S.source_template.short_name ? S.source_template.short_name : "Unknown-class"])"] = S //Try to get the class name
 
 	var/obj/structure/overmap/ship/simulated/selected_ship = shuttle_choices[tgui_input_list(src, "Select ship to spawn on.", "Welcome, [client.prefs.real_name].", shuttle_choices)]
 	if(!selected_ship)
 		return
 
 	if(selected_ship == "Purchase")
-		var/obj/docking_port/mobile/M = tgui_input_list(src, "Please select ship to purchase!", "Welcome, [client.prefs.real_name].", SSmapping.ship_purchase_list)
-		if(!M)
+		var/datum/map_template/shuttle/template = SSmapping.ship_purchase_list[tgui_input_list(src, "Please select ship to purchase!", "Welcome, [client.prefs.real_name].", SSmapping.ship_purchase_list)]
+		if(!template)
 			return LateChoices()
-		var/price = SSmapping.ship_purchase_list[M]
-		if(SSdbcore.IsConnected() && usr.client.get_metabalance() < price)
-			alert(src, "You have insufficient metabalance to cover this purchase! (Price: [price])")
+		if(SSdbcore.IsConnected() && usr.client.get_metabalance() < template.cost)
+			alert(src, "You have insufficient metabalance to cover this purchase! (Price: [template.cost])")
 			return
 		close_spawn_windows()
-		to_chat(usr, "<span class='danger'>Your [M.name] is being prepared. Please be patient!</span>")
-		var/obj/docking_port/mobile/target = SSshuttle.action_load(M)
+		to_chat(usr, "<span class='danger'>Your [template.name] is being prepared. Please be patient!</span>")
+		var/obj/docking_port/mobile/target = SSshuttle.action_load(template)
 		if(!istype(target))
 			to_chat(usr, "<span class='danger'>There was an error loading the ship (You have not been charged). Please contact admins!</span>")
+			new_player_panel()
 			return
-		usr.client.inc_metabalance(-price, TRUE, "buying [M.name]")
-		SSblackbox.record_feedback("tally", "ship_purchased", 1, M.name) //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+		usr.client.inc_metabalance(-template.cost, TRUE, "buying [template.name]")
+		SSblackbox.record_feedback("tally", "ship_purchased", 1, template.name) //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 		if(!AttemptLateSpawn(target.current_ship.job_slots[1], target.current_ship)) //Try to spawn as the first listed job in the job slots (usually captain)
 			to_chat(usr, "<span class='danger'>Ship spawned, but you were unable to be spawned. You can likely try to spawn in the ship through joining normally, but if not, please contact an admin.</span>")
 			new_player_panel()

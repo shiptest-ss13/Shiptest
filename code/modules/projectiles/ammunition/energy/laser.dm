@@ -38,6 +38,9 @@
 	e_cost = 2000
 	select_name = "kill"
 
+/obj/item/ammo_casing/energy/laser/ultima/alt
+	select_name = "scatter"
+
 /obj/item/ammo_casing/energy/laser/heavy
 	projectile_type = /obj/projectile/beam/laser/heavylaser
 	select_name = "anti-vehicle"

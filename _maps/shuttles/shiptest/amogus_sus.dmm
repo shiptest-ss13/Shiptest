@@ -40,21 +40,6 @@
 /obj/effect/mapping_helpers/airlock/cyclelink_helper,
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/port)
-"az" = (
-/obj/machinery/door/airlock/external,
-/obj/effect/mapping_helpers/airlock/cyclelink_helper,
-/obj/docking_port/mobile{
-	can_move_docking_ports = 1;
-	dir = 2;
-	dwidth = 30;
-	height = 26;
-	launch_status = 0;
-	port_direction = 8;
-	undock_roundstart = 1;
-	width = 48
-	},
-/turf/open/floor/plasteel/dark,
-/area/ship/hallway/port)
 "aK" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -185,6 +170,15 @@
 /obj/structure/catwalk/over,
 /turf/open/floor/plating,
 /area/ship/hallway/fore)
+"cl" = (
+/obj/item/radio/intercom{
+	pixel_y = 32
+	},
+/obj/machinery/vending/security/wall{
+	pixel_x = 24
+	},
+/turf/open/floor/wood,
+/area/ship/security)
 "co" = (
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/port)
@@ -939,6 +933,15 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
+"kh" = (
+/obj/machinery/door/airlock/public/glass,
+/obj/effect/turf_decal/industrial/warning/fulltile,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/obj/machinery/door/firedoor/border_only,
+/turf/open/floor/plasteel/dark,
+/area/ship/crew/canteen)
 "ko" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -1259,15 +1262,6 @@
 /obj/structure/catwalk/over,
 /turf/open/floor/plating,
 /area/ship/hallway/fore)
-"og" = (
-/obj/machinery/door/airlock/public/glass,
-/obj/effect/turf_decal/industrial/warning/fulltile,
-/obj/machinery/door/firedoor/border_only{
-	dir = 1
-	},
-/obj/machinery/door/firedoor/border_only,
-/turf/open/floor/plasteel/dark,
-/area/ship/crew/canteen)
 "oj" = (
 /obj/machinery/atmospherics/pipe/simple/green/visible,
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
@@ -2745,15 +2739,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
-"FA" = (
-/obj/item/radio/intercom{
-	pixel_y = 32
-	},
-/obj/machinery/vending/security/wall{
-	pixel_x = 24
-	},
-/turf/open/floor/wood,
-/area/ship/security)
 "FG" = (
 /obj/structure/table/reinforced,
 /obj/item/radio/intercom/wideband,
@@ -3483,6 +3468,20 @@
 "Nv" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
 /turf/open/floor/plasteel,
+/area/ship/hallway/port)
+"Ny" = (
+/obj/machinery/door/airlock/external,
+/obj/effect/mapping_helpers/airlock/cyclelink_helper,
+/obj/docking_port/mobile{
+	can_move_docking_ports = 1;
+	dir = 2;
+	dwidth = 30;
+	height = 26;
+	launch_status = 0;
+	port_direction = 8;
+	width = 48
+	},
+/turf/open/floor/plasteel/dark,
 /area/ship/hallway/port)
 "NA" = (
 /obj/effect/turf_decal/industrial/warning/fulltile,
@@ -5120,7 +5119,7 @@ QN
 uf
 uf
 QQ
-FA
+cl
 MX
 po
 jV
@@ -5196,7 +5195,7 @@ hk
 GV
 "}
 (19,1,1) = {"
-az
+Ny
 co
 dK
 gZ
@@ -5439,7 +5438,7 @@ nj
 Ui
 Ui
 Ui
-og
+kh
 JE
 QW
 Qk
