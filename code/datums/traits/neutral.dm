@@ -367,7 +367,7 @@
 				return
 			var/blood_volume_difference = BLOOD_VOLUME_MAXIMUM - victim.blood_volume //How much capacity we have left to transfer blood
 			var/transfered_blood = min(H.blood_volume, VAMP_TRANSFER_AMOUNT, blood_volume_difference)
-			to_chat(victim, "<span class='danger'>You feel darkness leaving[H] and entering you!</span>")
+			to_chat(victim, "<span class='danger'>You feel darkness leaving [H] and entering you!</span>")
 			to_chat(H, "<span class='notice'>You transfer blood to [victim]!</span>")
 			playsound(H, 'sound/items/drink.ogg', 30, TRUE, -2)
 			H.blood_volume = clamp(H.blood_volume - transfered_blood, 0, BLOOD_VOLUME_MAXIMUM)
