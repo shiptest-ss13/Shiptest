@@ -68,7 +68,7 @@ const TARGET_SPECIES_LIST = [
   },
   {
     name: 'Kepori',
-    value: 'tesh',
+    value: 'kepori',
   },
 ];
 

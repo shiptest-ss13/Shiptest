@@ -21,7 +21,7 @@
 #define SCANGATE_IPC "ipc"
 #define SCANGATE_SQUID "squid"
 #define SCANGATE_ETHEREAL "ethereal"
-#define SCANGATE_KEPORI "tesh"
+#define SCANGATE_KEPORI "kepori"
 
 /obj/machinery/scanner_gate
 	name = "scanner gate"
