@@ -32,17 +32,17 @@
 	mutanttongue = /obj/item/organ/tongue/kepori
 	species_language_holder = /datum/language_holder/kepori
 
-/datum/species/kepori/random_name(gender,unique,lastname)
-	if(unique)
-		return random_unique_kepori_name()
-	return kepori_name()
-
 	species_chest = /obj/item/bodypart/chest/kepori
 	species_head = /obj/item/bodypart/head/kepori
 	species_l_arm = /obj/item/bodypart/l_arm/kepori
 	species_r_arm = /obj/item/bodypart/r_arm/kepori
 	species_l_leg = /obj/item/bodypart/l_leg/kepori
 	species_r_leg = /obj/item/bodypart/r_leg/kepori
+
+/datum/species/kepori/random_name(gender,unique,lastname)
+	if(unique)
+		return random_unique_kepori_name()
+	return kepori_name()
 
 /datum/species/kepori/can_equip(obj/item/I, slot, disable_warning, mob/living/carbon/human/H, bypass_equip_delay_self, swap)
 	if(slot == ITEM_SLOT_MASK)
@@ -54,3 +54,4 @@
 			return FALSE
 		return equip_delay_self_check(I, H, bypass_equip_delay_self)
 	. = ..()
+
