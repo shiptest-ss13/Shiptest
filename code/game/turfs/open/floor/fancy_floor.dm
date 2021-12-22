@@ -101,7 +101,7 @@
 	var/turfverb = "uproot"
 	tiled_dirt = FALSE
 
-/turf/open/floor/grass/Initialize()
+/turf/open/floor/grass/Initialize(mapload, inherited_virtual_z)
 	. = ..()
 	spawniconchange()
 
@@ -217,7 +217,7 @@
 	. = ..()
 	. += "<span class='notice'>There's a <b>small crack</b> on the edge of it.</span>"
 
-/turf/open/floor/carpet/Initialize()
+/turf/open/floor/carpet/Initialize(mapload, inherited_virtual_z)
 	. = ..()
 	update_icon()
 
@@ -410,7 +410,7 @@
 	plane = PLANE_SPACE
 	tiled_dirt = FALSE
 
-/turf/open/floor/fakespace/Initialize()
+/turf/open/floor/fakespace/Initialize(mapload, inherited_virtual_z)
 	. = ..()
 	icon_state = SPACE_ICON_STATE
 

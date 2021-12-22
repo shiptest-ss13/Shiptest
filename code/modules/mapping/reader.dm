@@ -373,7 +373,7 @@
 			else if(!no_changeturf)
 				. = crds.ChangeTurf(path, null, CHANGETURF_DEFER_CHANGE)
 			else
-				. = create_atom(path, crds)//first preloader pass
+				. = create_turf(path, crds , old_virtual_z)//first preloader pass
 			var/turf/new_turf = .
 			new_turf.virtual_z = old_virtual_z //UNDER NO CIRCUMSTANCES LOOSE THIS VARIABLE
 		else
@@ -387,6 +387,10 @@
 		SSatoms.map_loader_stop()
 		stoplag()
 		SSatoms.map_loader_begin()
+
+/datum/parsed_map/proc/create_turf(path, crds, virtual_z)
+	set waitfor = FALSE
+	. = new path (crds, virtual_z)
 
 /datum/parsed_map/proc/create_atom(path, crds)
 	set waitfor = FALSE

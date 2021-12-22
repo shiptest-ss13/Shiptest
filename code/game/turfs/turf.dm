@@ -78,11 +78,14 @@
   *
   * Doesn't call parent, see [/atom/proc/Initialize]
   */
-/turf/Initialize(mapload)
+/turf/Initialize(mapload, inherited_virtual_z)
 	SHOULD_CALL_PARENT(FALSE)
 	if(flags_1 & INITIALIZED_1)
 		stack_trace("Warning: [src]([type]) initialized multiple times!")
 	flags_1 |= INITIALIZED_1
+
+	if(inherited_virtual_z)
+		virtual_z = inherited_virtual_z
 
 	assemble_baseturfs()
 
