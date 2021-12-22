@@ -7,7 +7,7 @@
 /datum/map_template/ruin/icemoon/oldstation
 	id = "oldstation-icemoon"
 	suffix = "icemoon_underground_oldstation.dmm"
-	name = "Artic Charlie Module Station"
+	name = "Arctic Charlie Module Station"
 	description = "The crew of a outpost awaken one hundred years after a crisis. Awaking to a derelict outpost on the verge of collapse, and a hostile force of invading \
 	hivebots. Can the surviving crew overcome the odds and survive and rebuild, or will the cold embrace of the moon become their new home?"
 
