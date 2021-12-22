@@ -96,7 +96,7 @@
 /obj/structure/closet/crate/necropolis/tendril/greater
 	desc = "It's watching you wearily. It seems terribly bloated."
 
-/obj/structure/closet/crate/necropolis/tendril/PopulateContents()
+/obj/structure/closet/crate/necropolis/tendril/greater/PopulateContents()
 	var/loot = rand(1,32)
 	switch(loot)
 		if(1)
