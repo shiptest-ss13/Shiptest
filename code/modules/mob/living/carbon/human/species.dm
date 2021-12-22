@@ -819,13 +819,13 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		if(!H.dna.features["squid_face"] || H.dna.features["squid_face"] == "None" || H.head && (H.head.flags_inv & HIDEFACE) || (H.wear_mask && (H.wear_mask.flags_inv & HIDEFACE)) || !HD || HD.status == BODYPART_ROBOTIC)
 			bodyparts_to_add -= "squid_face"
 
-	if("teshari_feathers" in mutant_bodyparts)
-		if(!H.dna.features["teshari_feathers"] || H.dna.features["teshari_feathers"] == "None" || H.head && (H.head.flags_inv & HIDEHAIR) || (H.wear_mask && (H.wear_mask.flags_inv & HIDEHAIR)) || !HD || HD.status == BODYPART_ROBOTIC)
-			bodyparts_to_add -= "teshari_feathers"
+	if("kepori_feathers" in mutant_bodyparts)
+		if(!H.dna.features["kepori_feathers"] || H.dna.features["kepori_feathers"] == "None" || H.head && (H.head.flags_inv & HIDEHAIR) || (H.wear_mask && (H.wear_mask.flags_inv & HIDEHAIR)) || !HD || HD.status == BODYPART_ROBOTIC)
+			bodyparts_to_add -= "kepori_feathers"
 
-	if("teshari_body_feathers" in mutant_bodyparts)
-		if(!H.dna.features["teshari_body_feathers"] || H.dna.features["teshari_body_feathers"] == "None" || H.wear_suit && (H.wear_suit.flags_inv & HIDEJUMPSUIT))
-			bodyparts_to_add -= "teshari_body_feathers"
+	if("kepori_body_feathers" in mutant_bodyparts)
+		if(!H.dna.features["kepori_body_feathers"] || H.dna.features["kepori_body_feathers"] == "None" || H.wear_suit && (H.wear_suit.flags_inv & HIDEJUMPSUIT))
+			bodyparts_to_add -= "kepori_body_feathers"
 
 	//Digitigrade legs are stuck in the phantom zone between true limbs and mutant bodyparts. Mainly it just needs more agressive updating than most limbs.
 	var/update_needed = FALSE
@@ -912,10 +912,10 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 					S = GLOB.spider_spinneret_list[H.dna.features["spider_spinneret"]]
 				if ("spider_mandibles")
 					S = GLOB.spider_mandibles_list[H.dna.features["spider_mandibles"]]
-				if("teshari_feathers")
-					S = GLOB.teshari_feathers_list[H.dna.features["teshari_feathers"]]
-				if("teshari_body_feathers")
-					S = GLOB.teshari_body_feathers_list[H.dna.features["teshari_body_feathers"]]
+				if("kepori_feathers")
+					S = GLOB.kepori_feathers_list[H.dna.features["kepori_feathers"]]
+				if("kepori_body_feathers")
+					S = GLOB.kepori_body_feathers_list[H.dna.features["kepori_body_feathers"]]
 			if(!S || S.icon_state == "none")
 				continue
 
