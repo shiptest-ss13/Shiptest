@@ -405,7 +405,7 @@ Possible to do for anyone motivated enough:
 		Hologram.set_anchored(TRUE)//So space wind cannot drag it.
 		Hologram.name = "[user.name] (Hologram)"//If someone decides to right click.
 		Hologram.set_light(2)	//hologram lighting
-		move_hologram()
+		move_hologram(user, loc)
 
 		set_holo(user, Hologram)
 		visible_message("<span class='notice'>A holographic image of [user] flickers to life before your eyes!</span>")
