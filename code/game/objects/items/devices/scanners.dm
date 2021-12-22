@@ -515,8 +515,7 @@ GENE SCANNER
 			return
 
 		if(weather_controller.current_weathers)
-			for(var/V in weather_controller.current_weathers)
-				var/datum/weather/W = V
+			for(var/datum/weather/W as anything in weather_controller.current_weathers)
 				if(W.barometer_predictable && W.my_controller.mapzone.is_in_bounds(T) && W.area_type == user_area.type && !(W.stage == END_STAGE))
 					ongoing_weather = W
 					break
