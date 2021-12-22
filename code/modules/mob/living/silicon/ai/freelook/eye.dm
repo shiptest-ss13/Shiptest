@@ -67,7 +67,7 @@
 
 // Use this when setting the aiEye's location.
 // It will also stream the chunk that the new loc is in.
-
+// WHEN FIRST SETTING A LOCATION, MAKE SURE TO `force_update = TRUE`. This needs to be done because otherwise we can't tell apart virtual level boundaries
 /mob/camera/aiEye/proc/setLoc(turf/T, force_update = FALSE)
 	if(ai)
 		if(!isturf(ai.loc))
