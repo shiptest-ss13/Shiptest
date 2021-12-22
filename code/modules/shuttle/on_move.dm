@@ -148,8 +148,6 @@ All ShuttleMove procs go here
 		update_light()
 	if(rotation)
 		shuttleRotate(rotation)
-	if(proximity_monitor)
-		proximity_monitor.HandleMove()
 
 	update_parallax_contents()
 
@@ -412,11 +410,3 @@ All ShuttleMove procs go here
 	if((!(src in moving_dock.docking_points) || !towed_shuttles[docked]) && !moving_dock.can_move_docking_ports)
 		return FALSE
 	. = ..()
-
-/obj/effect/abstract/proximity_checker/onShuttleMove(turf/newT, turf/oldT, list/movement_force, move_dir, obj/docking_port/stationary/old_dock, obj/docking_port/mobile/moving_dock, list/obj/docking_port/mobile/towed_shuttles)
-	. = ..()
-	//timer so it only happens once
-	if(!monitor)
-		qdel(src)
-		return
-	addtimer(CALLBACK(monitor, /datum/proximity_monitor/proc/SetRange, monitor.current_range, TRUE), 0, TIMER_UNIQUE)

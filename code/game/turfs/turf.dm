@@ -355,7 +355,7 @@ GLOBAL_LIST_EMPTY(created_baseturf_lists)
 	if(canPassSelf || (mover.movement_type & PHASING) || (mover.pass_flags & pass_flags_self))
 		for(var/atom/movable/thing as anything in contents)
 			if(QDELETED(mover))
-				return FALSE		//We were deleted, do not attempt to proceed with movement.
+				return FALSE //We were deleted, do not attempt to proceed with movement.
 			if(thing == mover || thing == mover.loc) // Multi tile objects and moving out of other objects
 				continue
 			if(!thing.Cross(mover))
