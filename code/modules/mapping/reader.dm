@@ -367,12 +367,15 @@
 
 	if(crds)
 		if(ispath(path, /turf))
+			var/old_virtual_z = crds.virtual_z
 			if(placeOnTop)
 				. = crds.PlaceOnTop(null, path, CHANGETURF_DEFER_CHANGE | (no_changeturf ? CHANGETURF_SKIP : NONE))
 			else if(!no_changeturf)
 				. = crds.ChangeTurf(path, null, CHANGETURF_DEFER_CHANGE)
 			else
 				. = create_atom(path, crds)//first preloader pass
+			var/turf/new_turf = .
+			new_turf.virtual_z = old_virtual_z //UNDER NO CIRCUMSTANCES LOOSE THIS VARIABLE
 		else
 			. = create_atom(path, crds)//first preloader pass
 
