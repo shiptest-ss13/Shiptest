@@ -358,6 +358,9 @@ GLOBAL_VAR_INIT(say_disabled, FALSE)
 		dat += "[MAP_ZONE_INFO(map_zone)]:"
 		for(var/datum/virtual_level/virtual_level as anything in map_zone.virtual_levels)
 			dat += "<BR> - [MAP_ZONE_INFO(virtual_level)]:"
+			var/turf/low_bound = locate(virtual_level.low_x, virtual_level.low_y, virtual_level.z_value)
+			var/turf/high_bound = locate(virtual_level.high_x, virtual_level.high_y, virtual_level.z_value)
+			dat += "<BR> -- Low bounds: [ADMIN_JMP(low_bound)], High bounds: [ADMIN_JMP(high_bound)]"
 			dat += "<BR> -- Reservation: LowX: [virtual_level.low_x], LowY: [virtual_level.low_y], HighX: [virtual_level.high_x], HighY: [virtual_level.high_y]"
 			dat += "<BR> -- Reserved Margin: [virtual_level.reserved_margin]"
 			dat += "<BR> -- Traits: [json_encode(virtual_level.traits)]"
