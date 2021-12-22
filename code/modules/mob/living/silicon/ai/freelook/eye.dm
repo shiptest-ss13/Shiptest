@@ -68,7 +68,7 @@
 // Use this when setting the aiEye's location.
 // It will also stream the chunk that the new loc is in.
 
-/mob/camera/aiEye/proc/setLoc(T, force_update = FALSE)
+/mob/camera/aiEye/proc/setLoc(turf/T, force_update = FALSE)
 	if(ai)
 		if(!isturf(ai.loc))
 			return
@@ -77,7 +77,7 @@
 			return //we are already here!
 		if (T)
 			if(!force_update)
-				var/datum/map_zone/mapzone = SSmapping.get_map_zone(loc)
+				var/datum/map_zone/mapzone = T.get_map_zone()
 				if(!mapzone.is_in_bounds(T))
 					return
 			forceMove(T)
@@ -143,7 +143,7 @@
 /atom/proc/move_camera_by_click()
 	if(isAI(usr))
 		var/mob/living/silicon/ai/AI = usr
-		if(AI.eyeobj && (AI.multicam_on || (AI.client.eye == AI.eyeobj)) && (AI.eyeobj.get_virtual_z_level() == get_virtual_z_level()))
+		if(AI.eyeobj && (AI.multicam_on || (AI.client.eye == AI.eyeobj)) && (AI.eyeobj.virtual_z() == virtual_z()))
 			AI.cameraFollow = null
 			if (isturf(loc) || isturf(src))
 				AI.eyeobj.setLoc(src)

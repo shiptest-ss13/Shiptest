@@ -1,35 +1,27 @@
 // Look up levels[z].traits[trait]
-/datum/controller/subsystem/mapping/proc/virtual_level_trait(atom/Atom, trait)
-	var/z = Atom.z
-	if (!isnum(z) || z < 1) //wat???
-		WARNING("Tried to get virtual level trait with physical z being less than 1")
-		return null
-	if (z_list)
-		if (z > z_list.len)
-			stack_trace("Unmanaged z-level [z]! maxz = [world.maxz], z_list.len = [z_list.len]")
-			return list()
-		var/datum/virtual_level/zone = get_virtual_level(Atom)
-		if(!zone)
-			return
-		return zone.traits[trait]
-	else
-		var/list/default = DEFAULT_MAP_TRAITS
-		if (z > default.len)
-			stack_trace("Unmanaged z-level [z]! maxz = [world.maxz], default.len = [default.len]")
-			return list()
-		return default[z][DL_TRAITS][trait]
+/atom/proc/virtual_level_trait(trait)
+	var/datum/virtual_level/zone = get_virtual_level()
+	if(!zone)
+		return
+	return zone.traits[trait]
 
 // Check if levels[z] has any of the specified traits
-/datum/controller/subsystem/mapping/proc/virtual_level_has_any_trait(atom/Atom, list/traits)
+/atom/proc/virtual_level_has_any_trait(list/traits)
+	var/datum/virtual_level/zone = get_virtual_level()
+	if(!zone)
+		return FALSE
 	for (var/trait in traits)
-		if(virtual_level_trait(Atom, trait))
+		if(trait in zone.traits)
 			return TRUE
 	return FALSE
 
 // Check if levels[z] has all of the specified traits
-/datum/controller/subsystem/mapping/proc/virtual_level_has_all_traits(atom/Atom, list/traits)
+/atom/proc/virtual_level_has_all_traits(list/traits)
+	var/datum/virtual_level/zone = get_virtual_level()
+	if(!zone)
+		return FALSE
 	for (var/trait in traits)
-		if(!virtual_level_trait(Atom, trait))
+		if(!(trait in zone.traits))
 			return FALSE
 	return TRUE
 
@@ -50,24 +42,6 @@
 				if(virtual_level.traits[trait])
 					. += virtual_level
 					break
-
-// Attempt to get the turf below the provided one according to Z traits
-/datum/controller/subsystem/mapping/proc/get_turf_below(turf/T)
-	if (!T)
-		return
-	var/datum/virtual_level/zone = get_virtual_level(T)
-	if (!zone)
-		return
-	return zone.get_below_turf(T)
-
-// Attempt to get the turf above the provided one according to Z traits
-/datum/controller/subsystem/mapping/proc/get_turf_above(turf/T)
-	if (!T)
-		return
-	var/datum/virtual_level/zone = get_virtual_level(T)
-	if (!zone)
-		return
-	return zone.get_above_turf(T)
 
 // Prefer not to use this one too often
 /datum/controller/subsystem/mapping/proc/get_station_center()

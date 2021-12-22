@@ -26,7 +26,7 @@
 		return
 	if(!on || !is_freq_listening(signal))  // has to be on to receive messages
 		return
-	var/datum/map_zone/mapzone = SSmapping.get_map_zone(src)
+	var/datum/map_zone/mapzone = src.get_map_zone()
 	if (!intercept && !(mapzone in signal.map_zones) && !(0 in signal.map_zones))  // has to be syndicate or on the right level
 		return
 

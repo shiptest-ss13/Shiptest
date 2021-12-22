@@ -30,7 +30,7 @@
 	var/list/destinations = list()
 
 	for(var/obj/item/beacon/B in GLOB.teleportbeacons)
-		if(B.get_virtual_z_level() == get_virtual_z_level())
+		if(B.virtual_z() == virtual_z())
 			destinations += B
 
 	return destinations

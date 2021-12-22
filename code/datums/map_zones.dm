@@ -392,6 +392,7 @@
 	name = passed_name
 	traits = passed_traits.Copy()
 	passed_map.add_virtual_level(src)
+	SSmapping.virtual_z_translation["[id]"] = src
 	reserve(lx, ly, hx, hy, passed_z)
 	return ..()
 
@@ -401,8 +402,13 @@
 			unlink(dir)
 	var/datum/space_level/level = SSmapping.z_list[z_value]
 	level.virtual_levels -= src
+	SSmapping.virtual_z_translation -= "[id]"
 	parent_map_zone.remove_virtual_level(src)
 	return ..()
+
+/datum/virtual_level/proc/mark_turfs()
+	for(var/turf/turf as anything in get_block())
+		turf.virtual_z = id
 
 /datum/virtual_level/proc/clear_reservation()
 	/// Create a dummy reservation to safeguard this space from being allocated mid-clearing in case the virtual level does get deleted
@@ -470,9 +476,10 @@
 	parent_level.virtual_levels += src
 	x_distance = high_x - low_x + 1
 	y_distance = high_y - low_y + 1
+	mark_turfs()
 
 /datum/virtual_level/proc/is_in_bounds(atom/Atom)
-	if(Atom.x >= low_x && Atom.x <= high_x && Atom.y >= low_y && Atom.y <= high_y && Atom.z == z_value)
+	if(Atom.virtual_z() == z_value)
 		return TRUE
 	return FALSE
 
@@ -548,22 +555,6 @@
 			CHECK_TICK
 			if(QDELETED(src))
 				return
-
-/// Gets the virtual level that contains the passed atom
-/datum/controller/subsystem/mapping/proc/get_virtual_level(atom/Atom)
-	var/datum/space_level/level = z_list[Atom.z]
-	var/datum/virtual_level/sub_map
-	for(var/datum/virtual_level/iterated_zone as anything in level.virtual_levels)
-		if(iterated_zone.is_in_bounds(Atom))
-			sub_map = iterated_zone
-			break
-	return sub_map
-
-/// A helper pretty much
-/datum/controller/subsystem/mapping/proc/get_map_zone(atom/Atom)
-	var/datum/virtual_level/sub_map = get_virtual_level(Atom)
-	if(sub_map)
-		return sub_map.parent_map_zone
 
 /turf/closed/indestructible/edge
 	name = "edge"

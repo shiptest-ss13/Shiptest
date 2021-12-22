@@ -581,7 +581,7 @@ GLOBAL_LIST_EMPTY(species_list)
 		if(check_mind)
 			if(!A.mind)
 				continue
-		if(z && A.get_virtual_z_level() != z) //if a Z level was specified, AND the AI is not on the same level
+		if(z && A.virtual_z() != z) //if a Z level was specified, AND the AI is not on the same level
 			continue
 		. += A
 	return .

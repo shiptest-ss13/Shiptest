@@ -306,7 +306,7 @@
 	if(!target)
 		return
 
-	if (ai.get_virtual_z_level() != target.get_virtual_z_level())
+	if (ai.virtual_z() != target.virtual_z())
 		return FALSE
 
 	if (istype(loc, /obj/item/aicard))
@@ -466,7 +466,7 @@
 	call_bot_cooldown = 0
 
 /mob/living/silicon/ai/triggerAlarm(class, area/home, cameras, obj/source)
-	if(source.get_virtual_z_level() != get_virtual_z_level())
+	if(source.virtual_z() != virtual_z())
 		return
 	var/list/our_sort = alarms[class]
 	for(var/areaname in our_sort)
@@ -554,7 +554,7 @@
 
 	for (var/obj/machinery/camera/C as anything in GLOB.cameranet.cameras)
 		var/list/tempnetwork = C.network
-		if(!(C.get_virtual_z_level() == get_virtual_z_level() || ("ss13" in tempnetwork)))
+		if(!(C.virtual_z() == virtual_z() || ("ss13" in tempnetwork)))
 			continue
 		if(!C.can_use())
 			continue

@@ -53,11 +53,11 @@ GLOBAL_LIST_INIT(blacklisted_automated_baseturfs, typecacheof(list(
 	return ChangeTurf(path, new_baseturf, flags)
 
 /turf/proc/get_z_base_turf()
-	. = SSmapping.virtual_level_trait(src, ZTRAIT_BASETURF) || /turf/open/space
+	. = virtual_level_trait(ZTRAIT_BASETURF) || /turf/open/space
 	if (!ispath(.))
 		. = text2path(.)
 		if (!ispath(.))
-			warning("Z-level [z] has invalid baseturf '[SSmapping.virtual_level_trait(src, ZTRAIT_BASETURF)]'")
+			warning("Z-level [z] has invalid baseturf '[virtual_level_trait(ZTRAIT_BASETURF)]'")
 			. = /turf/open/space
 
 // Creates a new turf
@@ -93,6 +93,8 @@ GLOBAL_LIST_INIT(blacklisted_automated_baseturfs, typecacheof(list(
 
 	var/list/old_baseturfs = baseturfs
 
+	var/old_virtual_z = virtual_z
+
 	var/list/transferring_comps = list()
 	SEND_SIGNAL(src, COMSIG_TURF_CHANGE, path, new_baseturfs, flags, transferring_comps)
 	for(var/i in transferring_comps)
@@ -118,6 +120,8 @@ GLOBAL_LIST_INIT(blacklisted_automated_baseturfs, typecacheof(list(
 		W.AfterChange(flags)
 
 	W.blueprint_data = old_bp
+
+	W.virtual_z = old_virtual_z
 
 	lighting_corner_NE = old_lighting_corner_NE
 	lighting_corner_SE = old_lighting_corner_SE

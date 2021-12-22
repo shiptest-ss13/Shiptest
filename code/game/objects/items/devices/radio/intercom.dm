@@ -76,7 +76,7 @@
 		return FALSE
 	if(!(0 in map_zones))
 		var/turf/position = get_turf(src)
-		var/datum/map_zone/mapzone = SSmapping.get_map_zone(position)
+		var/datum/map_zone/mapzone = position.get_map_zone()
 		if(!position || !(mapzone in map_zones))
 			return FALSE
 	if(!listening)

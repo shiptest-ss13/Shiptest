@@ -64,10 +64,10 @@
 	if (opacity)
 		directional_opacity = ALL_CARDINALS
 
-	var/turf/T = SSmapping.get_turf_above(src)
+	var/turf/T = above()
 	if(T)
 		T.multiz_turf_new(src, DOWN)
-	T = SSmapping.get_turf_below(src)
+	T = below()
 	if(T)
 		T.multiz_turf_new(src, UP)
 

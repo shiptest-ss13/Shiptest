@@ -245,7 +245,7 @@
 	var/turf/position = get_turf(src)
 	for(var/obj/item/jammer/jammer in GLOB.active_jammers)
 		var/turf/jammer_turf = get_turf(jammer)
-		if(position?.get_virtual_z_level() == jammer_turf.get_virtual_z_level() && (get_dist(position, jammer_turf) <= jammer.range))
+		if(position?.virtual_z() == jammer_turf.virtual_z() && (get_dist(position, jammer_turf) <= jammer.range))
 			return
 
 	// Determine the identity information which will be attached to the signal.
@@ -279,7 +279,7 @@
 
 /obj/item/radio/proc/backup_transmission(datum/signal/subspace/vocal/signal)
 	var/turf/T = get_turf(src)
-	var/datum/map_zone/mapzone = SSmapping.get_map_zone(T)
+	var/datum/map_zone/mapzone = T.get_map_zone()
 	if (signal.data["done"] && (mapzone in signal.map_zones))
 		return
 
@@ -316,7 +316,7 @@
 		return independent  // hard-ignores the z-level check
 	if (!(0 in map_zones))
 		var/turf/position = get_turf(src)
-		var/datum/map_zone/mapzone = SSmapping.get_map_zone(position)
+		var/datum/map_zone/mapzone = position.get_map_zone()
 		if(!position || !(mapzone in map_zones))
 			return FALSE
 

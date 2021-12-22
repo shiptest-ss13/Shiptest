@@ -135,7 +135,7 @@
 					hearing_mobs += M
 		if(SOUND_EMITTER_ZLEVEL)
 			for(var/mob/M in GLOB.player_list)
-				if(M.get_virtual_z_level() == get_virtual_z_level())
+				if(M.virtual_z() == virtual_z())
 					hearing_mobs += M
 		if(SOUND_EMITTER_GLOBAL)
 			hearing_mobs = GLOB.player_list.Copy()

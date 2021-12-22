@@ -124,7 +124,7 @@
 		"mods" = message_mods
 	)
 	var/turf/T = get_turf(source)
-	var/datum/map_zone/mapzone = SSmapping.get_map_zone(T)
+	var/datum/map_zone/mapzone = T.get_map_zone()
 	map_zones = list(mapzone)
 
 /datum/signal/subspace/vocal/copy()

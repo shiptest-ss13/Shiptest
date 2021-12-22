@@ -37,6 +37,8 @@ SUBSYSTEM_DEF(mapping)
 
 	/// List of all map zones
 	var/list/map_zones = list()
+	/// Translation of virtual level ID to a virtual level reference
+	var/list/virtual_z_translation = list()
 
 /datum/controller/subsystem/mapping/Initialize(timeofday)
 	if(initialized)
@@ -267,7 +269,7 @@ SUBSYSTEM_DEF(mapping)
 		qdel(T, TRUE)
 
 /datum/controller/subsystem/mapping/proc/get_map_zone_weather_controller(atom/Atom)
-	var/datum/map_zone/mapzone = get_map_zone(Atom)
+	var/datum/map_zone/mapzone = Atom.get_map_zone()
 	if(!mapzone)
 		return
 	mapzone.assert_weather_controller()

@@ -28,13 +28,13 @@
 		relay_information(signal, /obj/machinery/telecomms/bus)
 
 /obj/machinery/telecomms/receiver/proc/check_receive_level(datum/signal/subspace/signal)
-	var/datum/map_zone/mapzone = SSmapping.get_map_zone(src)
+	var/datum/map_zone/mapzone = get_map_zone()
 	if (mapzone in signal.map_zones)
 		return TRUE
 
 	for(var/obj/machinery/telecomms/hub/H in links)
 		for(var/obj/machinery/telecomms/relay/R in H.links)
-			var/datum/map_zone/relay_mapzone = SSmapping.get_map_zone(R)
+			var/datum/map_zone/relay_mapzone = R.get_map_zone()
 			if(R.can_receive(signal) && (relay_mapzone in signal.map_zones))
 				return TRUE
 

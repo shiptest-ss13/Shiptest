@@ -22,7 +22,7 @@
 /obj/machinery/telecomms/relay/receive_information(datum/signal/subspace/signal, obj/machinery/telecomms/machine_from)
 	// Add our map zones and send it back
 	var/turf/T = get_turf(src)
-	var/datum/map_zone/mapzone = SSmapping.get_map_zone(T)
+	var/datum/map_zone/mapzone = T.get_map_zone()
 	if(can_send(signal) && mapzone)
 		signal.map_zones |= mapzone
 

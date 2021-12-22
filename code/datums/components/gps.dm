@@ -108,7 +108,7 @@ GLOBAL_LIST_EMPTY(GPS_list)
 		return data
 
 	var/turf/curr = get_turf(parent)
-	var/datum/virtual_level/vlevel = SSmapping.get_virtual_level(curr)
+	var/datum/virtual_level/vlevel = curr.get_virtual_level()
 	var/datum/map_zone/mapzone = vlevel.parent_map_zone
 	var/list/coords = vlevel.get_relative_coords(curr)
 	data["currentArea"] = "[get_area_name(curr, TRUE)]"
@@ -122,10 +122,10 @@ GLOBAL_LIST_EMPTY(GPS_list)
 		if(G.emped || !G.tracking || G == src)
 			continue
 		var/turf/pos = get_turf(G.parent)
-		if(!pos || !global_mode && pos.get_virtual_z_level() != curr.get_virtual_z_level())
+		if(!pos || !global_mode && pos.virtual_z() != curr.virtual_z())
 			continue
 		var/list/signal = list()
-		var/datum/virtual_level/other_vlevel = SSmapping.get_virtual_level(pos)
+		var/datum/virtual_level/other_vlevel = pos.get_virtual_level()
 		var/datum/map_zone/other_mapzone = other_vlevel.parent_map_zone
 		var/list/other_coords = other_vlevel.get_relative_coords(pos)
 		signal["entrytag"] = G.gpstag //Name or 'tag' of the GPS

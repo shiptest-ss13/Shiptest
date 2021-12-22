@@ -908,7 +908,7 @@
 		if(ADMIN_PUNISHMENT_ROD)
 			var/turf/T = get_turf(target)
 			var/startside = pick(GLOB.cardinals)
-			var/datum/virtual_level/vlevel = SSmapping.get_virtual_level(T)
+			var/datum/virtual_level/vlevel = T.get_virtual_level()
 			var/turf/startT = vlevel.get_side_turf(startside)
 			var/turf/endT = vlevel.get_side_turf(REVERSE_DIR(startside))
 			new /obj/effect/immovablerod(startT, endT,target)

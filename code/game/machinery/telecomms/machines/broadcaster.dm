@@ -33,7 +33,7 @@ GLOBAL_VAR_INIT(message_delay, 0) // To make sure restarting the recentmessages 
 		original.data["compression"] = signal.data["compression"]
 
 	var/turf/T = get_turf(src)
-	var/datum/map_zone/mapzone = SSmapping.get_map_zone(T)
+	var/datum/map_zone/mapzone = T.get_map_zone()
 	if (mapzone)
 		signal.map_zones |= mapzone
 

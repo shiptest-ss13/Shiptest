@@ -44,7 +44,7 @@
 	var/list/L = list()
 	var/turf/pos = get_turf(src)
 	for(var/turf/T in thearea)
-		if(!T.density && pos.get_virtual_z_level() == T.get_virtual_z_level())
+		if(!T.density && pos.virtual_z() == T.virtual_z())
 			var/clear = 1
 			for(var/obj/O in T)
 				if(O.density)

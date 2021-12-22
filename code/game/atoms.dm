@@ -1485,13 +1485,13 @@
 		return A.has_gravity
 	else
 		// See if there's a gravity generator on our map zone
-		var/datum/map_zone/mapzone = SSmapping.get_map_zone(T)
+		var/datum/map_zone/mapzone = T.get_map_zone()
 		if(mapzone.gravity_generators.len)
 			var/max_grav = 0
 			for(var/obj/machinery/gravity_generator/main/G as anything in mapzone.gravity_generators)
 				max_grav = max(G.setting,max_grav)
 			return max_grav
-	return SSmapping.virtual_level_trait(T, ZTRAIT_GRAVITY)
+	return T.virtual_level_trait(ZTRAIT_GRAVITY)
 
 /**
   * Called when a mob examines (shift click or verb) this atom twice (or more) within EXAMINE_MORE_TIME (default 1.5 seconds)

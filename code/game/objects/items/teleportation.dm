@@ -49,7 +49,7 @@
 			var/turf/tr = get_turf(W)
 
 			// Make sure it's on a turf and that its Z-level matches the tracker's Z-level
-			if (tr && tr.get_virtual_z_level() == sr.get_virtual_z_level())
+			if (tr && tr.virtual_z() == sr.virtual_z())
 				// Get the distance between the beacon's turf and our turf
 				var/distance = max(abs(tr.x - sr.x), abs(tr.y - sr.y))
 
@@ -150,13 +150,13 @@
 			else
 				L["[get_area(com.target)] (Inactive)"] = com.target
 	var/list/turfs = list()
-	var/current_z_level = user.get_virtual_z_level()
+	var/current_z_level = user.virtual_z()
 	for(var/turf/T in urange(10, orange=1))
 		if(T.x>world.maxx-8 || T.x<8)
 			continue	//putting them at the edge is dumb
 		if(T.y>world.maxy-8 || T.y<8)
 			continue
-		if(T.get_virtual_z_level() != current_z_level)
+		if(T.virtual_z() != current_z_level)
 			continue
 		var/area/A = T.loc
 		if(A.area_flags & NOTELEPORT)

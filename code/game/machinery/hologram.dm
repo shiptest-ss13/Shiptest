@@ -506,7 +506,7 @@ For the other part of the code, check silicon say.dm. Particularly robot talk.*/
   * *Areacheck for things that need to get into other areas, such as emergency holograms
   */
 /obj/machinery/holopad/proc/validate_location(turf/T, check_los = FALSE, areacheck = TRUE)
-	if(T.get_virtual_z_level() == get_virtual_z_level() && get_dist(T, src) <= holo_range && (T.loc == get_area(src) || !areacheck) && anchored)
+	if(T.virtual_z() == virtual_z() && get_dist(T, src) <= holo_range && (T.loc == get_area(src) || !areacheck) && anchored)
 		return TRUE
 	else
 		return FALSE
