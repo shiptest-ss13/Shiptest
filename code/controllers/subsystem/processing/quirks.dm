@@ -24,7 +24,7 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 							list("Ananas Affinity","Ananas Aversion"), \
 							list("Alcohol Tolerance","Light Drinker"), \
 							list("Clown Fan","Mime Fan"), \
-							list("Bad Touch", "Friendly"), \
+							list("Bad Touch", "Friendly"))
 							list("Blood Deficiency", "Vampirism"))
 	return ..()
 
