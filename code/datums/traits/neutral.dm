@@ -225,3 +225,4 @@
 	SIGNAL_HANDLER
 
 	SEND_SIGNAL(quirk_holder, COMSIG_ADD_MOOD_EVENT, "bad_hair_day", /datum/mood_event/bald)
+
