@@ -119,21 +119,21 @@
 /// Used if we want the mutant colour to be only used by mutant bodyparts. Don't combine this with MUTCOLORS, or it will be useless.
 #define MUTCOLORS_PARTSONLY 8
 #define NOZOMBIE 9
-#define NO_UNDERWEAR	10
-#define NOLIVER			11
-#define NOSTOMACH		12
-#define NO_DNA_COPY		13
-#define DRINKSBLOOD		14
-#define NOFLASH			15
-#define DYNCOLORS		16 //! Use this if you want to change the race's color without the player being able to pick their own color. AKA special color shifting TRANSLATION: AWFUL.
-#define AGENDER			17
-#define NOEYESPRITES	18 //! Do not draw eyes or eyeless overlay
-#define NOREAGENTS		19 //! DO NOT PROCESS REAGENTS
+#define NO_UNDERWEAR 10
+#define NOLIVER 11
+#define NOSTOMACH 12
+#define NO_DNA_COPY 13
+#define DRINKSBLOOD 14
+#define NOFLASH 15
+#define DYNCOLORS 16 //! Use this if you want to change the race's color without the player being able to pick their own color. AKA special color shifting TRANSLATION: AWFUL.
+#define AGENDER 17
+#define NOEYESPRITES 18 //! Do not draw eyes or eyeless overlay
+#define NOREAGENTS 19 //! DO NOT PROCESS REAGENTS
 #define REVIVESBYHEALING 20 // Will revive on heal when healing and total HP > 0.
-#define NOHUSK			21 // Can't be husked.
-#define NOMOUTH			22
-#define NOSOCKS			23 // You cannot wear sock
-#define NO_BONES		24 //WS Edit - Breakable Bones
+#define NOHUS 21 // Can't be husked.
+#define NOMOUTH 22
+#define NOSOCKS 23 // You cannot wear sock
+#define NO_BONES 24 //WS Edit - Breakable Bones
 
 //organ slots
 #define ORGAN_SLOT_BRAIN "brain"

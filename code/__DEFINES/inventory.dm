@@ -94,8 +94,8 @@
 #define DIGITIGRADE_STYLE 2
 
 //This system takes priority over Sprite Sheets.
-#define NO_VARIATION			(1<<0)
-#define DIGITIGRADE_VARIATION	(1<<1)
+#define NO_VARIATION (1<<0)
+#define DIGITIGRADE_VARIATION (1<<1)
 #define DIGITIGRADE_VARIATION_NO_NEW_ICON (1<<2)
 
 #define NOT_DIGITIGRADE 0

@@ -362,7 +362,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		new_species.species_r_leg = /obj/item/bodypart/r_leg/digitigrade
 		new_species.species_l_leg = /obj/item/bodypart/l_leg/digitigrade
 
-	for(var/obj/item/bodypart/old_part as() in C.bodyparts)
+	for(var/obj/item/bodypart/old_part as anything in C.bodyparts)
 		if(old_part.change_exempt_flags & CHANGE_SPECIES)
 			continue
 
@@ -888,12 +888,12 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 			suit_compatible = TRUE
 
 		if((uniform_compatible && suit_compatible) || (suit_compatible && H.wear_suit?.flags_inv & HIDEJUMPSUIT)) //If the uniform is hidden, it doesnt matter if its compatible
-			for(var/obj/item/bodypart/BP as() in H.bodyparts)
+			for(var/obj/item/bodypart/BP as anything in H.bodyparts)
 				if(BP.bodytype & BODYTYPE_DIGITIGRADE)
 					BP.limb_id = "digitigrade"
 
 		else
-			for(var/obj/item/bodypart/BP as() in H.bodyparts)
+			for(var/obj/item/bodypart/BP as anything in H.bodyparts)
 				if(BP.bodytype & BODYTYPE_DIGITIGRADE)
 					BP.limb_id = "lizard"
 	///End digi handling

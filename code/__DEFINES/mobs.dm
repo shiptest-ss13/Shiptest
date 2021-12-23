@@ -120,7 +120,7 @@
 #define SYNTHETIC 2
 
 //Species bitflags, used for species_restricted. If this somehow ever gets above 23 Bee has larger problems.
-#define	FLAG_HUMAN			(1<<0)
+#define FLAG_HUMAN			(1<<0)
 #define FLAG_IPC			(1<<1)
 #define FLAG_ETHEREAL		(1<<2)
 #define FLAG_PLASMAMAN		(1<<3)

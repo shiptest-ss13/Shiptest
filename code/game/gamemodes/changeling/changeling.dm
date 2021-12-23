@@ -111,7 +111,7 @@ GLOBAL_VAR(changeling_team_objective_type) //If this is not null, we hand our th
 	user.updateappearance(mutcolor_update=1)
 
 	///Bodypart data hack. Will rewrite when I rewrite changelings soon-ish
-	for(var/obj/item/bodypart/BP as() in user.bodyparts)
+	for(var/obj/item/bodypart/BP as anything in user.bodyparts)
 		if(IS_ORGANIC_LIMB(BP))
 			BP.update_limb(is_creating = TRUE)
 
