@@ -16,6 +16,23 @@
 "aW" = (
 /turf/template_noop,
 /area/template_noop)
+"bq" = (
+/obj/structure/table/wood/reinforced,
+/obj/item/reagent_containers/food/drinks/drinkingglass{
+	pixel_y = 12
+	},
+/obj/item/reagent_containers/food/drinks/drinkingglass{
+	pixel_x = 8;
+	pixel_y = 2
+	},
+/obj/item/reagent_containers/food/drinks/drinkingglass{
+	pixel_x = -6;
+	pixel_y = 4
+	},
+/turf/open/floor/wood{
+	initial_gas_mix = "ICEMOON_ATMOS"
+	},
+/area/ruin/unpowered)
 "bv" = (
 /obj/effect/decal/cleanable/blood/splatter,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -46,6 +63,11 @@
 	initial_gas_mix = "ICEMOON_ATMOS"
 	},
 /area/ruin/unpowered)
+"cH" = (
+/turf/open/floor/carpet/blue{
+	initial_gas_mix = "ICEMOON_ATMOS"
+	},
+/area/ruin/unpowered)
 "dz" = (
 /obj/structure/table/wood/fancy/green,
 /turf/open/floor/wood{
@@ -57,19 +79,22 @@
 /obj/structure/barricade/wooden/crude/snow,
 /turf/open/floor/plating/snowed/smoothed/icemoon,
 /area/ruin/unpowered)
-"fi" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/smartfridge/drying_rack,
-/turf/open/floor/wood{
-	initial_gas_mix = "ICEMOON_ATMOS"
-	},
-/area/ruin/unpowered)
 "fz" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/turf_decal/corner/green/border{
 	dir = 4
 	},
 /turf/open/floor/plasteel/white{
+	initial_gas_mix = "ICEMOON_ATMOS"
+	},
+/area/ruin/unpowered)
+"fB" = (
+/obj/structure/chair/stool/bar,
+/mob/living/simple_animal/hostile/asteroid/whitesands/survivor{
+	desc = " A wild-eyed figure, wearing tattered mining equipment and boasting a malformed body.";
+	faction = list("brazillian")
+	},
+/turf/open/floor/wood{
 	initial_gas_mix = "ICEMOON_ATMOS"
 	},
 /area/ruin/unpowered)
@@ -81,7 +106,9 @@
 /mob/living/simple_animal/hostile/asteroid/whitesands/ranged/gunslinger{
 	faction = list("brazillian")
 	},
-/turf/open/floor/carpet/green,
+/turf/open/floor/carpet/green{
+	initial_gas_mix = "ICEMOON_ATMOS"
+	},
 /area/ruin/unpowered)
 "hg" = (
 /obj/structure/barricade/wooden/snowed,
@@ -133,13 +160,6 @@
 	initial_gas_mix = "ICEMOON_ATMOS"
 	},
 /area/ruin/unpowered)
-"hY" = (
-/obj/structure/table/wood,
-/obj/item/reagent_containers/food/snacks/rationpack,
-/turf/open/floor/wood{
-	initial_gas_mix = "ICEMOON_ATMOS"
-	},
-/area/ruin/unpowered)
 "ib" = (
 /obj/structure/table/wood,
 /turf/open/floor/wood{
@@ -152,16 +172,22 @@
 	initial_gas_mix = "ICEMOON_ATMOS"
 	},
 /area/ruin/unpowered)
-"ji" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 5
-	},
-/turf/open/floor/plating/asteroid/snow/icemoon,
-/area/icemoon/surface/outdoors)
 "jn" = (
 /obj/item/ammo_casing/spent,
 /turf/open/floor/plating/asteroid/snow/icemoon,
 /area/icemoon/surface/outdoors)
+"jy" = (
+/obj/structure/chair/wood{
+	dir = 1
+	},
+/mob/living/simple_animal/hostile/asteroid/whitesands/survivor{
+	desc = " A wild-eyed figure, wearing tattered mining equipment and boasting a malformed body.";
+	faction = list("brazillian")
+	},
+/turf/open/floor/wood{
+	initial_gas_mix = "ICEMOON_ATMOS"
+	},
+/area/ruin/unpowered)
 "jU" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/white{
@@ -229,6 +255,17 @@
 	initial_gas_mix = "ICEMOON_ATMOS"
 	},
 /area/ruin/unpowered)
+"nf" = (
+/obj/structure/table/wood,
+/obj/item/reagent_containers/food/snacks/meat/steak/bear,
+/obj/item/reagent_containers/food/snacks/meat/steak/goliath{
+	pixel_x = 4;
+	pixel_y = 3
+	},
+/turf/open/floor/wood{
+	initial_gas_mix = "ICEMOON_ATMOS"
+	},
+/area/ruin/unpowered)
 "nF" = (
 /obj/machinery/hydroponics/soil,
 /obj/item/seeds/cannabis,
@@ -256,12 +293,6 @@
 	initial_gas_mix = "ICEMOON_ATMOS"
 	},
 /area/ruin/unpowered)
-"oY" = (
-/obj/structure/fireplace,
-/turf/open/floor/wood{
-	initial_gas_mix = "ICEMOON_ATMOS"
-	},
-/area/ruin/unpowered)
 "pf" = (
 /obj/item/weaponcrafting/receiver{
 	pixel_x = -16;
@@ -272,12 +303,6 @@
 	initial_gas_mix = "ICEMOON_ATMOS"
 	},
 /area/ruin/unpowered)
-"pB" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 4
-	},
-/turf/open/floor/plating/asteroid/snow/icemoon,
-/area/icemoon/surface/outdoors)
 "ql" = (
 /obj/effect/decal/cleanable/blood/old,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -286,9 +311,17 @@
 	},
 /area/ruin/unpowered)
 "qm" = (
-/obj/structure/table/wood,
-/obj/item/flashlight/lantern{
-	on = 1
+/obj/structure/table/wood/reinforced,
+/obj/item/reagent_containers/food/drinks/drinkingglass{
+	pixel_x = 1;
+	pixel_y = 8
+	},
+/obj/item/reagent_containers/food/drinks/drinkingglass{
+	pixel_x = 5
+	},
+/obj/item/reagent_containers/food/drinks/drinkingglass{
+	pixel_x = -4;
+	pixel_y = 4
 	},
 /turf/open/floor/wood{
 	initial_gas_mix = "ICEMOON_ATMOS"
@@ -310,6 +343,17 @@
 /obj/structure/flora/tree/pine,
 /turf/open/floor/plating/asteroid/snow/icemoon,
 /area/icemoon/surface/outdoors)
+"qS" = (
+/mob/living/simple_animal/hostile/asteroid/whitesands/survivor{
+	desc = "The greatest chef this side of the wastes.";
+	faction = list("brazillian");
+	health = 150;
+	name = "Margarine"
+	},
+/turf/open/floor/wood{
+	initial_gas_mix = "ICEMOON_ATMOS"
+	},
+/area/ruin/unpowered)
 "rw" = (
 /obj/effect/decal/cleanable/blood/tracks{
 	dir = 4
@@ -321,6 +365,19 @@
 "rP" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
+	},
+/turf/open/floor/wood{
+	initial_gas_mix = "ICEMOON_ATMOS"
+	},
+/area/ruin/unpowered)
+"sf" = (
+/obj/structure/table/wood,
+/obj/item/nullrod/claymore{
+	block_chance = 50;
+	desc = "This massive chart appears to be the layout of a SolGov outpost. It's covered in marks, scribbles in a language you don't recognize, and several stains. It's unusually sturdy.";
+	icon_state = "blueprints";
+	name = "facility blueprints";
+	pixel_y = 10
 	},
 /turf/open/floor/wood{
 	initial_gas_mix = "ICEMOON_ATMOS"
@@ -378,6 +435,23 @@
 	initial_gas_mix = "ICEMOON_ATMOS"
 	},
 /area/ruin/unpowered)
+"wd" = (
+/obj/structure/table/wood/reinforced,
+/obj/item/reagent_containers/food/drinks/bottle/wine{
+	pixel_y = 12
+	},
+/obj/item/reagent_containers/food/drinks/bottle/tequila{
+	pixel_x = 8;
+	pixel_y = 4
+	},
+/obj/item/reagent_containers/food/drinks/bottle/vermouth{
+	pixel_x = -8;
+	pixel_y = 4
+	},
+/turf/open/floor/wood{
+	initial_gas_mix = "ICEMOON_ATMOS"
+	},
+/area/ruin/unpowered)
 "wh" = (
 /obj/structure/flora/tree/jungle/small,
 /turf/open/floor/plating/grass/jungle{
@@ -385,18 +459,11 @@
 	},
 /area/ruin/unpowered)
 "wk" = (
-/obj/structure/table/wood,
-/obj/item/reagent_containers/food/drinks/beer{
-	pixel_x = -5;
-	pixel_y = 10
+/obj/structure/table/wood/reinforced,
+/obj/item/reagent_containers/food/drinks/drinkingglass{
+	pixel_x = 8;
+	pixel_y = 2
 	},
-/obj/item/reagent_containers/food/snacks/meat/steak/penguin,
-/turf/open/floor/wood{
-	initial_gas_mix = "ICEMOON_ATMOS"
-	},
-/area/ruin/unpowered)
-"wM" = (
-/obj/effect/decal/cleanable/food/tomato_smudge,
 /turf/open/floor/wood{
 	initial_gas_mix = "ICEMOON_ATMOS"
 	},
@@ -405,6 +472,21 @@
 /obj/structure/flora/tree/pine,
 /turf/open/floor/plating/asteroid/snow/icemoon,
 /area/icemoon/surface/outdoors)
+"xu" = (
+/obj/structure/bed,
+/obj/structure/curtain,
+/obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/hostile/asteroid/whitesands/survivor{
+	desc = " A wild-eyed figure, wearing tattered mining equipment and boasting a malformed body.";
+	faction = list("brazillian")
+	},
+/obj/effect/turf_decal/corner/green/border{
+	dir = 1
+	},
+/turf/open/floor/plasteel/white{
+	initial_gas_mix = "ICEMOON_ATMOS"
+	},
+/area/ruin/unpowered)
 "xI" = (
 /turf/open/floor/plating/asteroid/snow/icemoon,
 /area/ruin/unpowered)
@@ -453,42 +535,69 @@
 /obj/structure/flora/grass/both,
 /turf/open/floor/plating/asteroid/snow/icemoon,
 /area/icemoon/surface/outdoors)
-"zn" = (
-/obj/structure/bed,
-/obj/structure/curtain,
-/obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/asteroid/whitesands/survivor{
-	faction = list("brazillian")
-	},
-/obj/effect/turf_decal/corner/green/border{
-	dir = 1
-	},
-/turf/open/floor/plasteel/white{
-	initial_gas_mix = "ICEMOON_ATMOS"
-	},
-/area/ruin/unpowered)
 "zy" = (
 /mob/living/simple_animal/hostile/asteroid/whitesands/survivor{
+	desc = " A wild-eyed figure, wearing tattered mining equipment and boasting a malformed body.";
 	faction = list("brazillian")
 	},
 /turf/open/floor/plating/snowed/smoothed/icemoon,
 /area/ruin/unpowered)
+"Al" = (
+/obj/structure/chair/wood{
+	dir = 8
+	},
+/mob/living/simple_animal/hostile/asteroid/whitesands/ranged/hunter{
+	faction = list("brazillian")
+	},
+/turf/open/floor/wood{
+	initial_gas_mix = "ICEMOON_ATMOS"
+	},
+/area/ruin/unpowered)
 "Aw" = (
-/obj/machinery/grill/unwrenched,
-/obj/item/stack/sheet/mineral/coal/ten,
+/obj/structure/table/wood/reinforced,
+/obj/item/reagent_containers/food/drinks/shaker,
+/obj/item/reagent_containers/glass/rag{
+	pixel_x = 8;
+	pixel_y = 3
+	},
 /turf/open/floor/wood{
 	initial_gas_mix = "ICEMOON_ATMOS"
 	},
 /area/ruin/unpowered)
 "AN" = (
-/obj/structure/table/wood,
-/obj/item/reagent_containers/glass/rag,
+/obj/structure/table/wood/reinforced,
+/obj/item/reagent_containers/food/drinks/bottle/sarsaparilla{
+	pixel_y = 12
+	},
+/obj/item/reagent_containers/food/drinks/bottle/kahlua{
+	pixel_x = -8;
+	pixel_y = 4
+	},
+/obj/item/reagent_containers/food/drinks/bottle/hcider{
+	pixel_x = 16;
+	pixel_y = 12
+	},
+/obj/item/reagent_containers/food/drinks/bottle/rum{
+	pixel_x = 8;
+	pixel_y = 4
+	},
+/turf/open/floor/wood{
+	initial_gas_mix = "ICEMOON_ATMOS"
+	},
+/area/ruin/unpowered)
+"Br" = (
+/obj/item/candle/tribal_torch{
+	name = "standing torch";
+	start_lit = 1
+	},
 /turf/open/floor/wood{
 	initial_gas_mix = "ICEMOON_ATMOS"
 	},
 /area/ruin/unpowered)
 "Bw" = (
-/turf/open/floor/carpet/green,
+/turf/open/floor/carpet/green{
+	initial_gas_mix = "ICEMOON_ATMOS"
+	},
 /area/ruin/unpowered)
 "BL" = (
 /obj/item/weaponcrafting/receiver,
@@ -521,7 +630,9 @@
 	pixel_y = -2
 	},
 /obj/structure/table/wood/fancy/blue,
-/turf/open/floor/carpet/orange,
+/turf/open/floor/carpet/orange{
+	initial_gas_mix = "ICEMOON_ATMOS"
+	},
 /area/ruin/unpowered)
 "Ct" = (
 /obj/structure/barricade/sandbags,
@@ -620,7 +731,9 @@
 	},
 /area/ruin/unpowered)
 "GU" = (
-/turf/open/floor/carpet/orange,
+/turf/open/floor/carpet/orange{
+	initial_gas_mix = "ICEMOON_ATMOS"
+	},
 /area/ruin/unpowered)
 "GX" = (
 /obj/structure/barricade/wooden/crude/snow,
@@ -650,17 +763,6 @@
 /obj/machinery/iv_drip,
 /obj/effect/turf_decal/corner/green/border,
 /turf/open/floor/plasteel/white{
-	initial_gas_mix = "ICEMOON_ATMOS"
-	},
-/area/ruin/unpowered)
-"Jm" = (
-/obj/structure/table/wood,
-/obj/item/reagent_containers/food/drinks/beer{
-	pixel_x = 8;
-	pixel_y = 4
-	},
-/obj/effect/decal/cleanable/food/flour,
-/turf/open/floor/wood{
 	initial_gas_mix = "ICEMOON_ATMOS"
 	},
 /area/ruin/unpowered)
@@ -705,17 +807,34 @@
 	},
 /area/ruin/unpowered)
 "Ly" = (
-/obj/structure/table/wood,
-/obj/item/reagent_containers/food/drinks/shaker{
-	pixel_x = -10
+/obj/structure/table/wood/reinforced,
+/obj/item/reagent_containers/food/drinks/bottle/whiskey{
+	pixel_x = 16;
+	pixel_y = 12
+	},
+/obj/item/reagent_containers/food/drinks/bottle/vodka{
+	pixel_y = 12
+	},
+/obj/item/reagent_containers/food/drinks/bottle/cognac{
+	pixel_x = 8;
+	pixel_y = 4
+	},
+/obj/item/reagent_containers/food/drinks/bottle/gin{
+	pixel_x = -8;
+	pixel_y = 4
 	},
 /turf/open/floor/wood{
 	initial_gas_mix = "ICEMOON_ATMOS"
 	},
 /area/ruin/unpowered)
 "LA" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/flora/grass/jungle/b,
+/obj/structure/chair/stool/bar{
+	dir = 4
+	},
+/mob/living/simple_animal/hostile/asteroid/whitesands/survivor{
+	desc = " A wild-eyed figure, wearing tattered mining equipment and boasting a malformed body.";
+	faction = list("brazillian")
+	},
 /turf/open/floor/wood{
 	initial_gas_mix = "ICEMOON_ATMOS"
 	},
@@ -767,12 +886,6 @@
 	initial_gas_mix = "ICEMOON_ATMOS"
 	},
 /area/ruin/unpowered)
-"Np" = (
-/obj/structure/reagent_dispensers/beerkeg,
-/turf/open/floor/wood{
-	initial_gas_mix = "ICEMOON_ATMOS"
-	},
-/area/ruin/unpowered)
 "Nt" = (
 /obj/structure/flora/junglebush/b,
 /obj/structure/flora/grass/jungle/b,
@@ -791,6 +904,7 @@
 /area/ruin/unpowered)
 "NR" = (
 /mob/living/simple_animal/hostile/asteroid/whitesands/survivor{
+	desc = " A wild-eyed figure, wearing tattered mining equipment and boasting a malformed body.";
 	faction = list("brazillian")
 	},
 /turf/open/floor/plating/asteroid/snow/icemoon,
@@ -799,12 +913,10 @@
 /obj/structure/barricade/wooden/snowed,
 /turf/open/floor/plating/snowed/smoothed/icemoon,
 /area/ruin/unpowered)
-"Oh" = (
-/obj/structure/bed/roller,
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/item/reagent_containers/glass/mortar/glass,
-/obj/item/pestle,
-/turf/open/floor/plasteel/white{
+"OA" = (
+/obj/structure/table/wood/reinforced,
+/obj/item/reagent_containers/glass/maunamug,
+/turf/open/floor/wood{
 	initial_gas_mix = "ICEMOON_ATMOS"
 	},
 /area/ruin/unpowered)
@@ -826,13 +938,22 @@
 	initial_gas_mix = "ICEMOON_ATMOS"
 	},
 /area/ruin/unpowered)
+"Ps" = (
+/obj/structure/table/wood,
+/obj/item/screwdriver/old{
+	pixel_y = 20
+	},
+/turf/open/floor/wood{
+	initial_gas_mix = "ICEMOON_ATMOS"
+	},
+/area/ruin/unpowered)
 "Pu" = (
 /obj/structure/flora/tree/pine/xmas,
 /turf/open/floor/plating/asteroid/snow/icemoon,
 /area/icemoon/surface/outdoors)
 "Qk" = (
-/obj/structure/table/wood,
-/obj/item/reagent_containers/food/drinks/bottle/sarsaparilla,
+/obj/structure/table/wood/reinforced,
+/obj/machinery/chem_dispenser/drinks/beer,
 /turf/open/floor/wood{
 	initial_gas_mix = "ICEMOON_ATMOS"
 	},
@@ -850,34 +971,14 @@
 	initial_gas_mix = "ICEMOON_ATMOS"
 	},
 /area/ruin/unpowered)
-"QN" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/item/reagent_containers/food/snacks/rationpack,
-/obj/item/reagent_containers/food/snacks/rationpack,
-/obj/item/reagent_containers/food/snacks/rationpack,
-/obj/item/reagent_containers/food/snacks/rationpack,
-/obj/item/reagent_containers/food/snacks/rationpack,
-/obj/item/reagent_containers/food/snacks/rationpack,
-/obj/structure/closet/crate/bin,
-/turf/open/floor/wood{
-	initial_gas_mix = "ICEMOON_ATMOS"
-	},
-/area/ruin/unpowered)
-"Sb" = (
-/mob/living/simple_animal/hostile/asteroid/whitesands/survivor{
-	faction = list("brazillian")
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood{
-	initial_gas_mix = "ICEMOON_ATMOS"
-	},
-/area/ruin/unpowered)
 "Sd" = (
 /obj/item/gun/ballistic/shotgun/doublebarrel/brazil{
 	pixel_x = 8
 	},
 /obj/structure/table/wood/fancy/blue,
-/turf/open/floor/carpet/orange,
+/turf/open/floor/carpet/orange{
+	initial_gas_mix = "ICEMOON_ATMOS"
+	},
 /area/ruin/unpowered)
 "Sf" = (
 /obj/item/ammo_box/magazine/zip_ammo_9mm,
@@ -931,7 +1032,9 @@
 	pixel_y = 10
 	},
 /obj/structure/table/wood/fancy/blue,
-/turf/open/floor/carpet/orange,
+/turf/open/floor/carpet/orange{
+	initial_gas_mix = "ICEMOON_ATMOS"
+	},
 /area/ruin/unpowered)
 "Tx" = (
 /obj/structure/flora/junglebush/b,
@@ -957,9 +1060,19 @@
 /obj/effect/turf_decal/siding/wood,
 /turf/open/floor/plating/asteroid/snow/icemoon,
 /area/ruin/unpowered)
-"Uq" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/food/egg_smudge,
+"Uu" = (
+/obj/structure/table/wood/reinforced,
+/obj/item/reagent_containers/food/drinks/bottle/amaretto{
+	pixel_y = 12
+	},
+/obj/item/reagent_containers/food/drinks/bottle/trappist{
+	pixel_x = 16;
+	pixel_y = 12
+	},
+/obj/item/reagent_containers/food/drinks/bottle/bottleofnothing{
+	pixel_x = 8;
+	pixel_y = 4
+	},
 /turf/open/floor/wood{
 	initial_gas_mix = "ICEMOON_ATMOS"
 	},
@@ -972,30 +1085,11 @@
 	initial_gas_mix = "ICEMOON_ATMOS"
 	},
 /area/ruin/unpowered)
-"UA" = (
-/obj/structure/table/wood,
-/obj/item/reagent_containers/food/drinks/bottle/sarsaparilla{
-	pixel_x = 8;
-	pixel_y = 16
-	},
-/obj/item/reagent_containers/food/snacks/meat/steak/bear,
-/turf/open/floor/wood{
-	initial_gas_mix = "ICEMOON_ATMOS"
-	},
-/area/ruin/unpowered)
-"UF" = (
-/mob/living/simple_animal/hostile/asteroid/whitesands/survivor{
-	faction = list("brazillian")
-	},
-/turf/open/floor/wood{
-	initial_gas_mix = "ICEMOON_ATMOS"
-	},
-/area/ruin/unpowered)
 "Vt" = (
 /turf/open/floor/plating/snowed/smoothed/icemoon,
 /area/ruin/unpowered)
-"VE" = (
-/obj/machinery/space_heater,
+"VB" = (
+/obj/structure/table/wood/reinforced,
 /turf/open/floor/wood{
 	initial_gas_mix = "ICEMOON_ATMOS"
 	},
@@ -1004,12 +1098,6 @@
 /obj/structure/flora/rock/pile,
 /turf/open/floor/plating/asteroid/snow/icemoon,
 /area/icemoon/surface/outdoors)
-"VP" = (
-/obj/effect/spawner/lootdrop/maintenance,
-/turf/open/floor/wood{
-	initial_gas_mix = "ICEMOON_ATMOS"
-	},
-/area/ruin/unpowered)
 "VS" = (
 /obj/structure/flora/grass/jungle/b,
 /turf/open/floor/plasteel/white{
@@ -1047,18 +1135,15 @@
 /turf/open/floor/plating/asteroid/snow/icemoon,
 /area/icemoon/surface/outdoors)
 "XL" = (
-/obj/structure/table/wood,
-/obj/item/reagent_containers/food/snacks/meat/steak,
+/obj/structure/table/wood/reinforced,
+/obj/item/reagent_containers/food/drinks/drinkingglass{
+	pixel_x = -6;
+	pixel_y = 4
+	},
 /turf/open/floor/wood{
 	initial_gas_mix = "ICEMOON_ATMOS"
 	},
 /area/ruin/unpowered)
-"XW" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 6
-	},
-/turf/open/floor/plating/asteroid/snow/icemoon,
-/area/icemoon/surface/outdoors)
 "Ya" = (
 /mob/living/simple_animal/bot/medbot/rockplanet{
 	faction = list("brazillian")
@@ -1099,7 +1184,9 @@
 /obj/item/ammo_casing/shotgun/pulseslug,
 /obj/item/ammo_casing/shotgun/pulseslug,
 /obj/item/key,
-/turf/open/floor/carpet/orange,
+/turf/open/floor/carpet/orange{
+	initial_gas_mix = "ICEMOON_ATMOS"
+	},
 /area/ruin/unpowered)
 "Yg" = (
 /obj/item/candle/tribal_torch{
@@ -1127,6 +1214,7 @@
 /area/ruin/unpowered)
 "Yy" = (
 /mob/living/simple_animal/hostile/asteroid/whitesands/survivor{
+	desc = " A wild-eyed figure, wearing tattered mining equipment and boasting a malformed body.";
 	faction = list("brazillian")
 	},
 /obj/effect/turf_decal/siding/wood{
@@ -1168,9 +1256,9 @@
 	},
 /turf/open/floor/plating/snowed/smoothed/icemoon,
 /area/ruin/unpowered)
-"ZB" = (
+"Zs" = (
 /obj/structure/table/wood,
-/obj/effect/spawner/lootdrop/gambling,
+/obj/item/banhammer,
 /turf/open/floor/wood{
 	initial_gas_mix = "ICEMOON_ATMOS"
 	},
@@ -1614,7 +1702,7 @@ YX
 aW
 Ct
 Hb
-Hb
+hA
 Ct
 Hb
 hr
@@ -1778,7 +1866,7 @@ kX
 kX
 kX
 Hb
-Hb
+hA
 Ex
 Ct
 Hb
@@ -1905,7 +1993,7 @@ aW
 aW
 kX
 zi
-Hb
+hA
 Hb
 Hb
 Ct
@@ -1980,10 +2068,10 @@ aW
 aW
 aW
 aW
-pB
-Ct
-pB
-pB
+aW
+aW
+aW
+aW
 Tx
 Tx
 YX
@@ -2010,13 +2098,13 @@ aW
 "}
 (27,1,1) = {"
 aW
-kX
-Vt
-Vt
-XW
-Vt
-Vt
-XD
+aW
+aW
+aW
+aW
+aW
+aW
+aW
 Tx
 YX
 YX
@@ -2042,13 +2130,13 @@ aW
 "}
 (28,1,1) = {"
 aW
-kX
+aW
+aW
+aW
 WH
-UF
 WH
 WH
 WH
-ji
 YX
 YX
 YX
@@ -2074,15 +2162,15 @@ aW
 "}
 (29,1,1) = {"
 aW
-kX
-qm
-ZB
-hY
-UA
+aW
+aW
+WH
+WH
+WH
 WH
 LA
-ji
-pB
+WH
+WH
 YX
 GK
 YX
@@ -2108,15 +2196,16 @@ Hb
 aW
 kX
 WH
-VP
-WH
-UF
-WH
-Eg
-Eg
-Eg
-XD
+Br
 kX
+Br
+fB
+OA
+VB
+kX
+kX
+aW
+aW
 kX
 kX
 kX
@@ -2129,7 +2218,6 @@ aW
 aW
 aW
 aW
-aW
 Hb
 Hb
 cr
@@ -2138,26 +2226,26 @@ Hb
 "}
 (31,1,1) = {"
 aW
-kX
-kX
-kX
-Vt
-Uq
-WH
-VP
+cH
+cH
+cH
 WH
 WH
-XD
+WH
+VB
+WH
+Br
+kX
+aW
+aW
 kX
 Xq
-vR
 vR
 Kl
 uv
 rw
 bv
 kX
-aW
 aW
 aW
 aW
@@ -2170,26 +2258,26 @@ Hb
 "}
 (32,1,1) = {"
 aW
-Hb
-Hb
-VI
-lu
-hA
-Vt
+WH
+jy
+Zs
+WH
+WH
+WH
 XL
-ib
+WH
 qm
-XD
+kX
+aW
+aW
 kX
 xQ
 ql
-Oh
 Pb
 Kt
 Ya
 fz
 kX
-aW
 aW
 aW
 aW
@@ -2202,26 +2290,26 @@ Hb
 "}
 (33,1,1) = {"
 aW
-aW
-aW
-Hb
-kX
-Vt
+Br
+ib
+sf
 WH
+WH
+fB
 Qk
-wM
+WH
 Aw
-XD
+kX
+Hb
+aW
 kX
 kX
 NY
 kX
-kX
 kQ
 vR
-zn
+xu
 kX
-aW
 aW
 aW
 aW
@@ -2234,26 +2322,26 @@ Hb
 "}
 (34,1,1) = {"
 aW
-aW
-aW
-Hb
+WH
+Ps
+Al
+WH
+WH
+WH
+VB
+WH
+Uu
 kX
-VE
-UF
-Jm
-WH
-WH
-XD
+Hb
+aW
 Hb
 Hb
 zi
-Hb
 kX
 yr
 vR
 Sj
 kX
-aW
 aW
 aW
 aW
@@ -2267,15 +2355,16 @@ aW
 (35,1,1) = {"
 aW
 aW
-aW
-zi
-kX
-oY
-Eg
-hY
-ct
+WH
+WH
+WH
+WH
+WH
+Qk
+qS
 AN
-XD
+kX
+Hb
 Hb
 zi
 Hb
@@ -2289,7 +2378,6 @@ aW
 aW
 aW
 aW
-aW
 Hb
 Ex
 zi
@@ -2298,26 +2386,26 @@ aW
 "}
 (36,1,1) = {"
 aW
-aW
-aW
-Hb
 kX
-fi
-Sb
+aW
+Br
+kX
+Br
+fB
 wk
 WH
 Ly
-aW
-aW
+kX
 Hb
-xg
+Hb
+Hb
+Hb
 Hb
 fd
 IE
 LR
 aS
 kX
-aW
 aW
 aW
 aW
@@ -2331,25 +2419,25 @@ aW
 (37,1,1) = {"
 aW
 aW
-aW
-aW
-kX
-QN
+cH
+cH
 WH
-ib
-Np
-ib
+WH
+WH
+VB
+WH
+wd
+kX
 aW
-aW
-aW
+Hb
+Hb
 Hb
 zi
 fd
 xV
 Yg
-zn
+xu
 kX
-aW
 aW
 aW
 aW
@@ -2364,16 +2452,17 @@ aW
 aW
 aW
 aW
+WH
+Br
+nf
+fB
+bq
+WH
+Br
 aW
-kX
-kX
-kX
-kX
-kX
-kX
+WH
 aW
-aW
-aW
+Hb
 Hb
 Hb
 kX
@@ -2381,7 +2470,6 @@ fd
 kX
 kX
 kX
-aW
 aW
 aW
 Hb
@@ -2396,21 +2484,21 @@ aW
 aW
 aW
 aW
+WH
+kX
+kX
+kX
+kX
+kX
 aW
+WH
 aW
 aW
 aW
 Hb
 aW
 aW
-aW
-aW
-aW
-aW
-aW
-aW
 VI
-aW
 aW
 aW
 aW
