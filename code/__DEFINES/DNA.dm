@@ -130,7 +130,7 @@
 #define NOEYESPRITES 18 //! Do not draw eyes or eyeless overlay
 #define NOREAGENTS 19 //! DO NOT PROCESS REAGENTS
 #define REVIVESBYHEALING 20 // Will revive on heal when healing and total HP > 0.
-#define NOHUS 21 // Can't be husked.
+#define NOHUSK 21 // Can't be husked.
 #define NOMOUTH 22
 #define NOSOCKS 23 // You cannot wear sock
 #define NO_BONES 24 //WS Edit - Breakable Bones
