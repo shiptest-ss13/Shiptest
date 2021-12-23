@@ -24,7 +24,7 @@
 	suffix = "icemoon_underground_burnies_lair.dmm"
 
 /datum/map_template/ruin/icemoon/brazillian_lab
-	name = "Barricaded Shack"
+	name = "Barricaded Compound"
 	id = "brazillian-lab"
-	description = "Who knows why this is barricaded? Nothing of importance is inside anyways..."
+	description = "A conspicuous compound in the middle of the cold wasteland. What goodies are inside?"
 	suffix = "icemoon_underground_brazillianlab.dmm"
