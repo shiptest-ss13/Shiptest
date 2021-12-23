@@ -76,6 +76,7 @@
 			display_results(user, target, "<span class='warning'>You fail in replacing [target]'s [parse_zone(target_zone)]! Their body has rejected [L]!</span>",
 				"<span class='warning'>[user] fails to replace [target]'s [parse_zone(target_zone)]!</span>",
 				"<span class='warning'>[user] fails to replaces [target]'s [parse_zone(target_zone)]!</span>")
+			L.forceMove(target.loc)
 			return
 		if(organ_rejection_dam)
 			target.adjustToxLoss(organ_rejection_dam)

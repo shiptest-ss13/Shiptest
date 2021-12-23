@@ -355,6 +355,36 @@
 	burn_reduction = 0
 	max_damage = 20
 
+/obj/item/bodypart/chest/robot/kepori
+	name = "prosthetic kepori chest"
+	static_icon = 'icons/mob/augmentation/augments_kepori.dmi'
+	bodytype = BODYTYPE_KEPORI | BODYTYPE_ROBOTIC
+	acceptable_bodytype = BODYTYPE_KEPORI
+
+/obj/item/bodypart/head/robot/kepori
+	name = "prosthetic kepori head"
+	static_icon = 'icons/mob/augmentation/augments_kepori.dmi'
+	bodytype = BODYTYPE_KEPORI | BODYTYPE_ROBOTIC
+
+/obj/item/bodypart/l_arm/robot/kepori
+	name = "prosthetic kepori left arm"
+	static_icon = 'icons/mob/augmentation/augments_kepori.dmi'
+	bodytype = BODYTYPE_KEPORI | BODYTYPE_ROBOTIC
+
+/obj/item/bodypart/r_arm/robot/kepori
+	name = "prosthetic kepori right arm"
+	static_icon = 'icons/mob/augmentation/augments_kepori.dmi'
+	bodytype = BODYTYPE_KEPORI | BODYTYPE_ROBOTIC
+
+/obj/item/bodypart/l_leg/robot/kepori
+	name = "prosthetic kepori left leg"
+	static_icon = 'icons/mob/augmentation/augments_kepori.dmi'
+	bodytype = BODYTYPE_KEPORI | BODYTYPE_ROBOTIC
+
+/obj/item/bodypart/r_leg/robot/kepori
+	name = "prosthetic kepori right leg"
+	static_icon = 'icons/mob/augmentation/augments_kepori.dmi'
+	bodytype = BODYTYPE_KEPORI | BODYTYPE_ROBOTIC
 
 #undef ROBOTIC_LIGHT_BRUTE_MSG
 #undef ROBOTIC_MEDIUM_BRUTE_MSG

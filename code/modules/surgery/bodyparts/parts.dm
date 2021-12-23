@@ -12,6 +12,7 @@
 	max_stamina_damage = 120
 	is_dimorphic = TRUE
 	var/obj/item/cavity_item
+	var/acceptable_bodytype = BODYTYPE_HUMANOID
 
 /obj/item/bodypart/chest/can_dismember(obj/item/I)
 	if(owner.stat <= HARD_CRIT)

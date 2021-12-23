@@ -272,7 +272,7 @@
 	var/obj/item/bodypart/O = C.get_bodypart(body_zone)
 	if(O)
 		O.drop_limb(1)
-	attach_limb(C, special, is_creating)
+	return attach_limb(C, special, is_creating)
 
 /obj/item/bodypart/head/replace_limb(mob/living/carbon/C, special, is_creating = FALSE)
 	if(!istype(C))
@@ -283,9 +283,12 @@
 			return
 		else
 			O.drop_limb(1)
-	attach_limb(C, special, is_creating)
+	return attach_limb(C, special, is_creating)
 
 /obj/item/bodypart/proc/attach_limb(mob/living/carbon/C, special, is_creating = FALSE)
+	var/obj/item/bodypart/chest/mob_chest = C.get_bodypart(BODY_ZONE_CHEST)
+	if((body_zone != BODY_ZONE_CHEST) && !(mob_chest.acceptable_bodytype & bodytype))
+		return FALSE
 	moveToNullspace()
 	set_owner(C)
 	C.add_bodypart(src)

@@ -137,7 +137,7 @@
 #define BODYTYPE_HUMANOID (1<<2) //Everything
 #define BODYTYPE_BOXHEAD (1<<3) //TV Head
 #define BODYTYPE_DIGITIGRADE (1<<4) //Cancer
-#define NUMBER_OF_BODYTYPES 5 //KEEP THIS UPDATED OR SHIT WILL BREAK
+#define BODYTYPE_KEPORI (1<<5) //Just Kepori
 
 // Health/damage defines
 #define MAX_LIVING_HEALTH 100
