@@ -221,6 +221,10 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 9
 	},
+/obj/item/candle/tribal_torch{
+	name = "standing torch";
+	start_lit = 1
+	},
 /turf/open/floor/wood{
 	initial_gas_mix = "ICEMOON_ATMOS"
 	},
@@ -278,6 +282,15 @@
 /obj/effect/decal/cleanable/blood/old,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/white{
+	initial_gas_mix = "ICEMOON_ATMOS"
+	},
+/area/ruin/unpowered)
+"qm" = (
+/obj/structure/table/wood,
+/obj/item/flashlight/lantern{
+	on = 1
+	},
+/turf/open/floor/wood{
 	initial_gas_mix = "ICEMOON_ATMOS"
 	},
 /area/ruin/unpowered)
@@ -551,9 +564,12 @@
 	initial_gas_mix = "ICEMOON_ATMOS"
 	},
 /area/ruin/unpowered)
-"DV" = (
-/obj/effect/turf_decal/siding/wood,
-/turf/open/floor/plating/grass/jungle{
+"DH" = (
+/obj/structure/railing,
+/obj/item/flashlight/lantern{
+	on = 1
+	},
+/turf/open/floor/wood{
 	initial_gas_mix = "ICEMOON_ATMOS"
 	},
 /area/ruin/unpowered)
@@ -672,6 +688,18 @@
 "Kl" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/white{
+	initial_gas_mix = "ICEMOON_ATMOS"
+	},
+/area/ruin/unpowered)
+"Kt" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/corner/green/border{
+	dir = 4
+	},
+/obj/item/flashlight/lantern{
+	on = 1
+	},
 /turf/open/floor/plasteel/white{
 	initial_gas_mix = "ICEMOON_ATMOS"
 	},
@@ -872,13 +900,6 @@
 	},
 /obj/machinery/space_heater,
 /turf/open/floor/plasteel/white{
-	initial_gas_mix = "ICEMOON_ATMOS"
-	},
-/area/ruin/unpowered)
-"Sm" = (
-/obj/structure/table/wood,
-/obj/item/candle,
-/turf/open/floor/wood{
 	initial_gas_mix = "ICEMOON_ATMOS"
 	},
 /area/ruin/unpowered)
@@ -1128,6 +1149,10 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 5
 	},
+/obj/item/candle/tribal_torch{
+	name = "standing torch";
+	start_lit = 1
+	},
 /turf/open/floor/wood{
 	initial_gas_mix = "ICEMOON_ATMOS"
 	},
@@ -1295,7 +1320,7 @@ GX
 Vt
 xI
 Ul
-TA
+DH
 LI
 CT
 kX
@@ -1767,7 +1792,7 @@ Ct
 Hb
 aW
 YX
-DV
+YX
 WH
 WH
 WH
@@ -1799,7 +1824,7 @@ Ct
 Hb
 aW
 YX
-DV
+YX
 WH
 WH
 WH
@@ -2050,7 +2075,7 @@ aW
 (29,1,1) = {"
 aW
 kX
-Sm
+qm
 ZB
 hY
 UA
@@ -2128,7 +2153,7 @@ Xq
 vR
 vR
 Kl
-Yg
+uv
 rw
 bv
 kX
@@ -2153,14 +2178,14 @@ hA
 Vt
 XL
 ib
-ib
+qm
 XD
 kX
 xQ
 ql
 Oh
 Pb
-fz
+Kt
 Ya
 fz
 kX
