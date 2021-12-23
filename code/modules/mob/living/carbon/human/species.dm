@@ -34,14 +34,11 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	///The alpha used by the hair. 255 is completely solid, 0 is invisible.
 	var/hair_alpha = 255
 
-	//KAPU LIMBS OVERRIDES - Used for barely used species that dont deserve their own limb datums.
-	var/limb_icon_file //DO. NOT. USE.
-	var/use_generic_limbs = FALSE //Does this species have its own bodypart type, or does it use a reskinned human limb?
-	var/gen_limbs_are_colored = TRUE
-	var/limbs_id
-	var/examine_limb_id //This is used for children, felinids and ashwalkers namely
+	///This is used for children, it will determine their default limb ID for use of examine. See examine.dm.
+	var/examine_limb_id
+	///Never, Optional, or Forced digi legs?
+	var/digitigrade_customization = DIGITIGRADE_NEVER
 
-	var/digitigrade_customization = DIGITIGRADE_NEVER //Never, Optional, or Forced digi legs?
 	///The gradient style used for the mob's hair.
 	var/grad_style
 	///The gradient color used to color the gradient.
@@ -215,9 +212,6 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 
 
 /datum/species/New()
-
-	if(!limbs_id)	//if we havent set a limbs id to use, just use our own id
-		limbs_id = id
 	wings_icons = string_list(wings_icons)
 	..()
 
@@ -416,6 +410,13 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		var/obj/item/thing = C.get_item_by_slot(slot_id)
 		if(thing && (!thing.species_exception || !is_type_in_list(src,thing.species_exception)))
 			C.dropItemToGround(thing)
+
+	if(ishuman(C))
+		var/mob/living/carbon/human/H = C
+		for(var/obj/item/I in H.get_equipped_items(TRUE))
+			if(I.restricted_bodytypes & H.dna.species.bodytype)
+				H.dropItemToGround(I)
+
 	if(C.hud_used)
 		C.hud_used.update_locked_slots()
 
@@ -1067,6 +1068,10 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		if(!I.species_exception || !is_type_in_list(src, I.species_exception))
 			return FALSE
 
+	if(I.restricted_bodytypes & H.dna.species.bodytype)
+		to_chat(H, "<span class='warning'>Your species cannot wear this item!</span>")
+		return FALSE
+
 	switch(slot)
 		if(ITEM_SLOT_HANDS)
 			if(H.get_empty_held_indexes())
@@ -1113,12 +1118,10 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 				return FALSE
 			if(H.num_legs < 2)
 				return FALSE
-			// if((DIGITIGRADE in species_traits) == (I.obj_flags != DIGITIGRADE_SHOE)) //WS Start - Digitigrade Magboots
-			if((bodytype & BODYTYPE_DIGITIGRADE) && !(I.supports_variations & DIGITIGRADE_VARIATION)) //Shiptest edit, straight-up ripping everything from bee
-				if(!(DIGITIGRADE_COMPATIBLE & I.obj_flags))
-					if(!disable_warning)
-						to_chat(H, "<span class='warning'>These shoes aren't compatible with your feet!</span>")
-					return FALSE //WS End - Digitigrade Magboots
+			if((bodytype & BODYTYPE_DIGITIGRADE) && !(I.supports_variations & DIGITIGRADE_VARIATION))
+				if(!disable_warning)
+					to_chat(H, "<span class='warning'>This footwear isn't compatible with your feet!</span>")
+				return FALSE
 			return equip_delay_self_check(I, H, bypass_equip_delay_self)
 		if(ITEM_SLOT_BELT)
 			if(H.belt && !swap)

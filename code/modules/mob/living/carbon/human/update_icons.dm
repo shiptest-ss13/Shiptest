@@ -286,16 +286,21 @@ There are several things that need to be remembered:
 			if(S.sprite_sheets & (dna?.species.bodyflag))
 				icon_file = dna.species.get_custom_icons("shoes")
 
-			if(dna?.species.bodytype & BODYTYPE_DIGITIGRADE)
-				if(S.supports_variations & DIGITIGRADE_VARIATION)
-					icon_file = 'icons/mob/species/misc/digitigrade_shoes.dmi'
+			var/handled_icon = FALSE
+			if((dna?.species.bodytype & BODYTYPE_DIGITIGRADE && S.supports_variations & DIGITIGRADE_VARIATION))
+				var/obj/item/bodypart/r_leg/leg = src.get_bodypart(BODY_ZONE_L_LEG)
+				if(leg.limb_id == "digitigrade")//Snowflakey and bad. But it makes it look consistent.
+					overlays_standing[SHOES_LAYER] = S.build_worn_icon(default_layer = UNIFORM_LAYER, default_icon_file = icon_file, isinhands = FALSE, override_file = 'icons/mob/species/misc/digitigrade_shoes.dmi', species = dna.species.species_clothing_path)
+					handled_icon = TRUE
+
+			if(!handled_icon)
+				overlays_standing[SHOES_LAYER] = S.build_worn_icon(default_layer = UNIFORM_LAYER, default_icon_file = icon_file, isinhands = FALSE, species = dna.species.species_clothing_path)
 
 		shoes.screen_loc = ui_shoes					//move the item to the appropriate screen loc
 		if(client && hud_used && hud_used.hud_shown)
 			if(hud_used.inventory_shown)			//if the inventory is open
 				client.screen += shoes					//add it to client's screen
 		update_observer_view(shoes,1)
-		overlays_standing[SHOES_LAYER] = shoes.build_worn_icon(default_layer = SHOES_LAYER, default_icon_file = icon_file, species = dna.species.species_clothing_path)
 		var/mutable_appearance/shoes_overlay = overlays_standing[SHOES_LAYER]
 		if(OFFSET_SHOES in dna.species.offset_features)
 			shoes_overlay.pixel_x += dna.species.offset_features[OFFSET_SHOES][1]

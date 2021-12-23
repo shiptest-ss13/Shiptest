@@ -121,8 +121,8 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	var/list/species_exception = null
 	///A bitfield of a species to use as an alternative sprite for any given item. DMIs are stored in the species datum and called via proc in update_icons.
 	var/sprite_sheets = null
-	///A bitfield of species that the item cannot be worn by.
-	var/species_restricted = null
+	///A bitfield of bodytypes that the item cannot be worn by.
+	var/restricted_bodytypes = null
 
 	///Who threw the item
 	var/mob/thrownby = null

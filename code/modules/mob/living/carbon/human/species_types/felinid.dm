@@ -3,9 +3,7 @@
 	name = "\improper Felinid"
 	id = SPECIES_FELINID
 	say_mod = "meows"
-	limbs_id = "human"
 	examine_limb_id = SPECIES_HUMAN
-
 	mutant_bodyparts = list("ears", "tail_human")
 	default_features = list("mcolor" = "FFF", "tail_human" = "Cat", "ears" = "Cat", "wings" = "None")
 
