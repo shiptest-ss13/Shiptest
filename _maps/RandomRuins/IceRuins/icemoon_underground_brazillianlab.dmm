@@ -1051,7 +1051,9 @@
 /area/ruin/unpowered)
 "Yc" = (
 /obj/structure/table/wood/fancy/blue,
-/obj/structure/safe/floor,
+/obj/structure/safe/floor{
+	maxspace = 99
+	},
 /obj/item/storage/box/lethalshot,
 /obj/item/storage/box/lethalshot,
 /obj/item/storage/box/lethalshot,
@@ -1260,7 +1262,7 @@ Hb
 fd
 Vt
 HV
-Jt
+Ul
 WH
 hp
 oo
@@ -1292,7 +1294,7 @@ Hb
 GX
 Vt
 xI
-Jt
+Ul
 TA
 LI
 CT
