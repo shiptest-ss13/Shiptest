@@ -419,3 +419,9 @@
 	if(istype(target,/mob/living/simple_animal/hostile/asteroid))
 		return FALSE
 	return ..()
+
+/mob/living/simple_animal/hostile/asteroid/goliath/beast/ancient/monolith/death(gibbed)
+	. = ..()
+	new /obj/effect/gibspawner/crystal(get_turf(src))
+	qdel(src)
+
