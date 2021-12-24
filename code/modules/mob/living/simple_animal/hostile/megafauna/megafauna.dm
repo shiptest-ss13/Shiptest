@@ -219,3 +219,7 @@
 	. = ..()
 	if(. > 0 && stat == CONSCIOUS)
 		Retaliate()
+
+/mob/living/simple_animal/hostile/megafauna/proc/check_death()
+	if(QDELETED(src) || stat == DEAD)
+		return

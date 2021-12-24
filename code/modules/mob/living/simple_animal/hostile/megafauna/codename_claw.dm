@@ -7,8 +7,8 @@
 	attack_verb_continuous = "slices"
 	attack_verb_simple = "slice"
 	attack_sound = 'sound/creatures/claw_attack.ogg'
-	icon_state = "claw"
-	icon_living = "claw"
+	icon_state = "claw-phase1"
+	icon_living = "claw-phase1"
 	icon = 'icons/mob/broadMobs.dmi'
 	health_doll_icon = "miner"
 	mob_biotypes = MOB_ORGANIC|MOB_HUMANOID
@@ -45,6 +45,8 @@
 	var/phase = 1 //at about 25% hp, they will "die", and then come back with even more attacks
 
 /mob/living/simple_animal/hostile/megafauna/claw/phase2
+	icon_state = "claw-phase2"
+	icon_living = "claw-phase2"
 	gps_name = "F453C619AE278"
 	deathsound = "bodyfall"
 	speed = 5

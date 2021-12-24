@@ -37,7 +37,7 @@
 	var/attack_count = 3 //how many attacks in a row?
 	var/speed_mod = 1 //how much time it takes for a attack?
 //	var/allow_self_destruct = FALSE //if lobster is allowed to proc "self destruct"
-	var/charging = FALSE //if drill dash is happening
+	var/attacking = FALSE //prevents attacks from going trhough if theres one in progress
 
 /datum/action/innate/megafauna_attack/drill_dash
 	name = "Dril Dash"
@@ -73,15 +73,17 @@
 	button_icon_state = "mech_defense_mode_on"
 	chosen_message = "<span class='colossus'>You firing a series of taser bolts around yourself.</span>"
 	chosen_attack_num = 5
-
+/*
 /mob/living/simple_animal/hostile/megafauna/ripley_lobster/Move()
 	if(charging)
 		return FALSE
 	return ..()
-
+*/
 /mob/living/simple_animal/hostile/megafauna/ripley_lobster/OpenFire()
 	adjust_health_difficulty() //checks the health, and adjusts the diffculty of the boss acordingly
-
+	var/dist = get_dist(src, target)
+	if(attacking)
+		return
 	if(client) //checks if the boss is player controlled
 		switch(chosen_attack) //if so, checks which attack they selected
 			if(1)
@@ -95,6 +97,10 @@
 //			if(5)
 //				bolt_spiral()
 		return
+	if(dist < 5 && prob(30))
+		flamethrower(target)
+	else
+		drill_dash(target)
 
 /mob/living/simple_animal/hostile/megafauna/ripley_lobster/proc/adjust_health_difficulty() //checks the health, and adjusts the diffculty of the boss acordingly
 	if(health <= maxHealth*0.25) //start off easy peasy...
@@ -115,13 +121,10 @@
 		speed_mod = initial(speed_mod) //attacks will be telegraphed normally
 //		allow_self_destruct = TRUE //rare chance of happening, you better watch out
 
-/mob/living/simple_animal/hostile/megafauna/ripley_lobster/proc/drill_dash(target)
-	charging = TRUE
-	for(var/i = 0, i<3, i++)
-		charge(target)
-	charging = FALSE
+/mob/living/simple_animal/hostile/megafauna/ripley_lobster/proc/drill_dash(atom/chargeat = target, delay = 5, chargepast = 2, remaining_loops = 3) //copied from goliath code
+	check_death()
+	attacking = TRUE
 
-/mob/living/simple_animal/hostile/megafauna/ripley_lobster/proc/charge(atom/chargeat = target, delay = 5, chargepast = 2)
 	if(!chargeat)
 		return
 	var/chargeturf = get_turf(chargeat)
@@ -136,23 +139,36 @@
 	setDir(dir)
 	var/obj/effect/temp_visual/decoy/D = new /obj/effect/temp_visual/decoy(loc,src)
 	animate(D, alpha = 0, color = "#FF0000", transform = matrix()*2, time = 3)
-	SLEEP_CHECK_DEATH(delay)
-
+	sleep(delay) //explaination for this, this used to be SLEEP_CHECK_DEATH but then i was told to not used them, so they are now regular sleeps, just have to shoot all sleeps now
+	check_death()
 	var/movespeed = 0.7
 	walk_towards(src, T, movespeed)
-	SLEEP_CHECK_DEATH(get_dist(src, T) * movespeed)
+	sleep(get_dist(src, T) * movespeed)
+	check_death()
 	walk(src, 0) // cancel the movement
 
-/mob/living/simple_animal/hostile/megafauna/ripley_lobster/proc/flamethrower(atom/at = target) //literally copied and pasted from ashdrake
-	if(charging)
-		return FALSE
-	for(var/i = 0, i < attack_count, i++)
-		playsound(get_turf(src),'sound/magic/fireball.ogg', 200, TRUE) //todo, port turf fires some day
-		SLEEP_CHECK_DEATH(0)
-		var/range = 15
-		var/list/turfs = list()
-		turfs = line_target(rand(-20,20), range, at)
-		INVOKE_ASYNC(src, .proc/fire_line, turfs)
+	remaining_loops--
+	if(remaining_loops)
+		addtimer(CALLBACK(src, .proc/drill_dash, target, remaining_loops), 1 SECONDS)
+	else
+		attacking = FALSE
+
+
+/mob/living/simple_animal/hostile/megafauna/ripley_lobster/proc/flamethrower(atom/at = target, remaining_loops = attack_count) //literally copied and pasted from ashdrake
+	check_death()
+	attacking = TRUE
+	playsound(get_turf(src),'sound/magic/fireball.ogg', 200, TRUE) //todo, port turf fires someday
+	check_death()
+	var/range = 15
+	var/list/turfs = list()
+	turfs = line_target(rand(-20,20), range, at)
+	INVOKE_ASYNC(src, .proc/fire_line, turfs)
+	remaining_loops--
+	if(remaining_loops)
+		addtimer(CALLBACK(src, .proc/flamethrower, target, remaining_loops), 1 SECONDS)
+	else
+		attacking = FALSE
+
 
 /mob/living/simple_animal/hostile/megafauna/ripley_lobster/proc/line_target(offset, range, atom/at = target) //same as above
 	if(!at)
@@ -167,5 +183,7 @@
 	return (getline(src, T) - get_turf(src))
 
 /mob/living/simple_animal/hostile/megafauna/ripley_lobster/proc/fire_line(var/list/turfs) //same as above
-	SLEEP_CHECK_DEATH(0)
+	if(QDELETED(src) || stat == DEAD)
+		return
+	check_death()
 	dragon_fire_line(src, turfs)
