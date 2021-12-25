@@ -1561,7 +1561,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					for(var/datum/quirk/V in all_quirks)
 						var/datum/quirk/_V = new V
 						balance -= _V.value
-						if((_V.species_lock["type"] == "allowed") && !(pref_species.id in _V.species_lock)) || (_V.species_lock["type"] == "blocked" && (pref_species.id in _V.species_lock)))
+						if(((_V.species_lock["type"] == "allowed") && !(pref_species.id in _V.species_lock)) || (_V.species_lock["type"] == "blocked" && (pref_species.id in _V.species_lock)))
 							all_quirks ^= V
 							balance += _V.value
 					while(balance < 0)
