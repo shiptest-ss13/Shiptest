@@ -129,7 +129,7 @@
 #define FLAG_FELINID (1<<6)
 #define FLAG_OOZELING (1<<7)
 #define FLAG_FLY (1<<8)
-#define FLAG_MONKEY  (1<<9)
+#define FLAG_MONKEY (1<<9)
 
 //Bodytype defines for how things can be worn.
 #define BODYTYPE_ORGANIC (1<<0)
