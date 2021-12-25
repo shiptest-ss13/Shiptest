@@ -199,7 +199,7 @@
 	if(eye_user)
 		T = get_turf(T)
 		if (T)
-			forceMove(T)
+			abstract_move(T)
 		else
 			moveToNullspace()
 		update_ai_detect_hud()
