@@ -10,6 +10,7 @@
 	density = TRUE
 	flags_1 = HEAR_1
 	circuit = /obj/item/circuitboard/machine/nanite_programmer
+	var/cooldown = 0
 
 /obj/machinery/nanite_programmer/attackby(obj/item/I, mob/user)
 	if(istype(I, /obj/item/disk/nanite_program))
@@ -141,3 +142,5 @@
 	var/static/regex/when = regex("(?:^\\W*when|when\\W*$)", "i") //starts or ends with when
 	if(findtext(raw_message, when) && !istype(speaker, /obj/machinery/nanite_programmer) && cooldown + 5 SECONDS < world.time)
 		say("When you code it!!")
+		cooldown = world.time
+		
