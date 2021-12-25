@@ -139,5 +139,5 @@
 /obj/machinery/nanite_programmer/Hear(message, atom/movable/speaker, message_language, raw_message, radio_freq, list/spans, list/message_mods = list())
 	. = ..()
 	var/static/regex/when = regex("(?:^\\W*when|when\\W*$)", "i") //starts or ends with when
-	if(findtext(raw_message, when) && !istype(speaker, /obj/machinery/nanite_programmer))
+	if(findtext(raw_message, when) && !istype(speaker, /obj/machinery/nanite_programmer) && cooldown + 5 SECONDS < world.time)
 		say("When you code it!!")
