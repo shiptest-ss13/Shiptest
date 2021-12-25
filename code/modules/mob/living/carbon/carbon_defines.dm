@@ -60,7 +60,6 @@
 	var/list/hand_bodyparts = list() ///a collection of arms (or actually whatever the fug /bodyparts you monsters use to wreck my systems)
 
 	var/static/list/limb_icon_cache = list()
-	var/has_bones = FALSE
 
 	//halucination vars
 	var/image/halimage

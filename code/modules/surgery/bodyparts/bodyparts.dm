@@ -501,13 +501,6 @@
 		else
 			no_update = FALSE
 
-	if(C.has_bones) // Get the data from default carbon
-		bone_status = BONE_FLAG_NORMAL //get the carbon's default bone settings
-		RegisterSignal(owner, COMSIG_MOVABLE_MOVED, .proc/on_mob_move)
-	else
-		bone_status = BONE_FLAG_NO_BONES
-		UnregisterSignal(owner, COMSIG_MOVABLE_MOVED)
-
 	if(HAS_TRAIT(C, TRAIT_HUSK) && IS_ORGANIC_LIMB(src))
 		dmg_overlay_type = "" //no damage overlay shown when husked
 		is_husked = TRUE
