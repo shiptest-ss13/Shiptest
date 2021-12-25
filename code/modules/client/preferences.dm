@@ -1319,7 +1319,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			if(initial(T.mood_quirk) && CONFIG_GET(flag/disable_human_mood))
 				lock_reason = "Mood is disabled."
 				quirk_conflict = TRUE
-			if((Test.allowed_species && !(pref_species.id in Test.allowed_species)) || (Test.blocked_species && (pref_species.id in Test.blocked_species)))
+			if(((Test.species_lock["type"] == "allowed") && !(pref_species.id in Test.species_lock)) || (Test.species_lock["type"] == "blocked" && (pref_species.id in Test.species_lock)))
 				lock_reason = "Quirk unavailable to your species."
 				quirk_conflict = TRUE
 			if(has_quirk)
@@ -1561,7 +1561,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					for(var/datum/quirk/V in all_quirks)
 						var/datum/quirk/_V = new V
 						balance -= _V.value
-						if((_V.allowed_species && !(pref_species.id in _V.allowed_species)) || (_V.blocked_species && (pref_species.id in _V.blocked_species)))
+						if((_V.species_lock["type"] == "allowed") && !(pref_species.id in _V.species_lock)) || (_V.species_lock["type"] == "blocked" && (pref_species.id in _V.species_lock)))
 							all_quirks ^= V
 							balance += _V.value
 					while(balance < 0)
