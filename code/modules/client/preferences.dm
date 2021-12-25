@@ -1558,7 +1558,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				ShowChoices(user)
 				if(all_quirks)
 					var/balance
-					for(var/datum/quirk/V in all_quirks)
+					for(var/datum/quirk/V as anything in all_quirks)
 						var/datum/quirk/_V = new V
 						balance -= _V.value
 						if(((_V.species_lock["type"] == "allowed") && !(pref_species.id in _V.species_lock)) || (_V.species_lock["type"] == "blocked" && (pref_species.id in _V.species_lock)))
@@ -1566,7 +1566,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 							balance += _V.value
 					while(balance < 0)
 						var/list/positive_quirks
-						for(var/datum/quirk/quirk in all_quirks)
+						for(var/datum/quirk/quirk as anything in all_quirks)
 							if(quirk.value > 0)
 								positive_quirks |= quirk
 						var/datum/quirk/M = pick(positive_quirks)
