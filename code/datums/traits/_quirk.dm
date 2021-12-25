@@ -9,9 +9,8 @@
 	var/lose_text
 	var/medical_record_text //This text will appear on medical records for the trait. Not yet implemented
 	var/mood_quirk = FALSE //if true, this quirk affects mood and is unavailable if moodlets are disabled
-	var/list/mob_traits //if applicable, apply and remove this mob trait
-	var/list/allowed_species
-	var/list/blocked_species
+	var/list/mob_traits //if applicable, apply and remove these mob traits
+	var/list/species_lock //List of id-based locks for species, set "type" = "allowed" to lock the species not on the list, set "type" = block to lock the species on the list.
 	var/mob/living/quirk_holder
 
 /datum/quirk/New(mob/living/quirk_mob, spawn_effects)
