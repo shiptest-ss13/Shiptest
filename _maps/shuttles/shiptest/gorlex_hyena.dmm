@@ -1275,7 +1275,8 @@
 /area/ship/cargo)
 "vG" = (
 /obj/machinery/atmospherics/components/unary/tank/toxins{
-	dir = 1
+	dir = 1;
+	piping_layer = 4
 	},
 /obj/effect/turf_decal/industrial/fire{
 	dir = 8
