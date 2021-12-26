@@ -53,9 +53,9 @@
 	else if(ishuman(target))
 		var/mob/living/carbon/human/H = target
 		if(H?.dna?.species)
-			if(isabductor(H) || ismilsynth(H))
+			if(isabductor(H))
 				cost = (BASE_HUMAN_REWARD*24)
-			else if(isgolem(H) || iszombie(H) || isshadow(H) || isandroid(H) || issynth(H))
+			else if(isgolem(H) || iszombie(H) || isshadow(H) || isandroid(H))
 				cost = (BASE_HUMAN_REWARD*20)
 			else if(isjellyperson(H) || ispodperson(H) || issquidperson(H) || isalien(H) || ismushroom(H) || isashlizard(H))
 				cost = (BASE_HUMAN_REWARD*14)
