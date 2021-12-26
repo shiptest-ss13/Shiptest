@@ -16,7 +16,7 @@
 	user.sight = NONE
 	user.see_in_dark = 1
 	return TRUE
-  
+
 /mob/camera/aiEye/remote/holo/setLoc(turf/T, force_update = FALSE)
 	. = ..()
 	var/obj/machinery/holopad/H = origin
