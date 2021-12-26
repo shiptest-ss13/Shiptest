@@ -318,3 +318,8 @@
 	projectiletype = /obj/projectile/temp/basilisk/super
 	ranged_cooldown_time = 10
 	butcher_results = list(/obj/item/stack/ore/diamond = 2, /obj/item/stack/sheet/sinew = 2, /obj/item/stack/sheet/bone = 1, /obj/item/strange_crystal = 1)
+
+/mob/living/simple_animal/hostile/asteroid/basilisk/watcher/forgotten/death(gibbed)
+	. = ..()
+	new /obj/effect/gibspawner/generic/crystal(get_turf(src))
+	qdel(src)

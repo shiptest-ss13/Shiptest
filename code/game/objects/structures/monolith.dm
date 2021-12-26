@@ -1,6 +1,6 @@
 /obj/structure/spawner/monolith
-	name = "necropolis tendril"
-	desc = "A vile tendril of corruption, originating deep underground. Terrible monsters are pouring out of it."
+	name = "monolith"
+	desc = "A strange, perfect rectanular structure. It's somehow bringing monsters out of itself."
 
 	icon = 'icons/mob/nest.dmi'
 	icon_state = "monolith"
@@ -15,83 +15,96 @@
 	resistance_flags = FIRE_PROOF | LAVA_PROOF
 
 	var/gps = null
-	var/obj/effect/light_emitter/tendril/emitted_light
+	var/obj/effect/light_emitter/blue_energy_sword/emitted_light
 
 
-/obj/structure/spawner/lavaland/goliath
-	mob_types = list(/mob/living/simple_animal/hostile/asteroid/goliath/beast/ancient/crystal)
+/obj/structure/spawner/monolith/attackby(obj/item/I, mob/living/user)
+	. = ..()
+	if(I.force)
+		update_icon()
+	return ..()
 
-/obj/structure/spawner/lavaland/legion
-	mob_types = list(/mob/living/simple_animal/hostile/asteroid/hivelord/legion/crystal)
+/obj/structure/spawner/monolith/bullet_act(obj/projectile/P)
+	. = ..()
+	update_icon()
 
+/obj/structure/spawner/monolith/play_attack_sound(damage_amount, damage_type = BRUTE, damage_flag = 0)
+	switch(damage_type)
+		if(BRUTE)
+			if(damage_amount)
+				playsound(src.loc, 'sound/effects/hit_on_shattered_glass.ogg', 70, TRUE)
+			else
+				playsound(src.loc, 'sound/effects/glasshit.ogg', 75, TRUE)
+		if(BURN)
+			playsound(src.loc, 'sound/items/welder.ogg', 100, TRUE)
 
-GLOBAL_LIST_INIT(tendrils, list())
-/obj/structure/spawner/lavaland/Initialize()
+/obj/structure/spawner/monolith/update_icon()
+	. = ..()
+	if(obj_integrity >= max_integrity*0.75)
+		icon_state = "monolith"
+	else if(obj_integrity >= max_integrity*0.50)
+		icon_state = "monolith-25"
+	else if(obj_integrity >= max_integrity*0.25)
+		icon_state = "monolith-50"
+	else
+		icon_state = "monolith-75"
+
+/obj/structure/spawner/monolith/goliath
+	mob_types = list(/mob/living/simple_animal/hostile/asteroid/goliath/beast/ancient/crystal/monolith)
+
+/obj/structure/spawner/monolith/legion
+	mob_types = list(/mob/living/simple_animal/hostile/asteroid/hivelord/legion/crystal/monolith)
+
+/obj/structure/spawner/monolith/watcher
+	mob_types = list(/mob/living/simple_animal/hostile/asteroid/basilisk/watcher/forgotten/monolith)
+
+/obj/structure/spawner/monolith/Initialize()
 	. = ..()
 	emitted_light = new(loc)
 	for(var/F in RANGE_TURFS(1, src))
 		if(ismineralturf(F))
 			var/turf/closed/mineral/M = F
 			M.ScrapeAway(null, CHANGETURF_IGNORE_AIR)
-	AddComponent(/datum/component/gps, "Eerie Signal")
-	GLOB.tendrils += src
+	AddComponent(/datum/component/gps, "Resonating Signal")
 
-/obj/structure/spawner/lavaland/deconstruct(disassembled)
-	new /obj/effect/collapse(loc)
-//	new /obj/structure/closet/crate/ancientcrate/loot(loc)
+/obj/structure/spawner/monolith/deconstruct(disassembled)
+	new /obj/effect/collapse_monolith(loc)
+	new /obj/structure/closet/crate/ancientcrate/loot(loc) TODO: implment this, and give it a high tech pot spirte
+//	new /obj/structure/closet/crate/ancientcrate/loot(loc) TODO: implment this, and give it a high tech pot spirte
 	return ..()
 
 
-/obj/structure/spawner/lavaland/Destroy()
-	var/last_tendril = TRUE
-	if(GLOB.tendrils.len>1)
-		last_tendril = FALSE
-
-	if(last_tendril && !(flags_1 & ADMIN_SPAWNED_1))
-		if(SSachievements.achievements_enabled)
-			for(var/mob/living/L in view(7,src))
-				if(L.stat || !L.client)
-					continue
-				L.client.give_award(/datum/award/achievement/boss/tendril_exterminator, L)
-				L.client.give_award(/datum/award/score/tendril_score, L) //Progresses score by one
-	GLOB.tendrils -= src
+/obj/structure/spawner/monolith/Destroy()
 	QDEL_NULL(emitted_light)
 	QDEL_NULL(gps)
 	return ..()
 
-/obj/effect/light_emitter/tendril
-	set_luminosity = 4
-	set_cap = 2.5
-	light_color = LIGHT_COLOR_LAVA
-
-/obj/effect/collapse
-	name = "collapsing necropolis tendril"
-	desc = "Get clear!"
+/obj/effect/collapse_monolith
+	name = "shattering monolith"
+	desc = "It's about to break!!"
 	layer = TABLE_LAYER
 	icon = 'icons/mob/nest.dmi'
-	icon_state = "tendril"
+	icon_state = "monolith-75"
 	anchored = TRUE
 	density = TRUE
-	var/obj/effect/light_emitter/tendril/emitted_light
+	var/obj/effect/light_emitter/blue_energy_sword/emitted_light
 
-/obj/effect/collapse/Initialize()
+/obj/effect/collapse_monolith/Initialize()
 	. = ..()
 	emitted_light = new(loc)
-	visible_message("<span class='boldannounce'>The tendril writhes in fury as the earth around it begins to crack and break apart! Get back!</span>")
-	visible_message("<span class='warning'>Something falls free of the tendril!</span>")
-	playsound(loc,'sound/effects/tendril_destroyed.ogg', 200, FALSE, 50, TRUE, TRUE)
+	visible_message("<span class='boldannounce'>The [src] shatters violently and starts to fall apart! Run away!</span>")
+	visible_message("<span class='warning'>Something is grabbed from [pick("yellowspace","bluespace","redspace","somewhere from the depths of reality")]!</span>")
+	playsound(loc,"shatter", 200, FALSE, 50, TRUE, TRUE)
 	addtimer(CALLBACK(src, .proc/collapse), 50)
 
-/obj/effect/collapse/Destroy()
+/obj/effect/collapse_monolith/Destroy()
 	QDEL_NULL(emitted_light)
 	return ..()
 
-/obj/effect/collapse/proc/collapse()
-	for(var/mob/M in range(7,src))
-		shake_camera(M, 15, 1)
-	playsound(get_turf(src),'sound/effects/explosionfar.ogg', 200, TRUE)
-	visible_message("<span class='boldannounce'>The tendril falls inward, the ground around it erupting into bubbling lava!</span>") //WS edit.
+/obj/effect/collapse_monolith/proc/collapse()
+	playsound(get_turf(src),'sound/effects/supermatter.ogg', 200, TRUE)
+	visible_message("<span class='boldannounce'>The [src] shatters into liquid supermatter!</span>")
 	for(var/turf/T in range(2,src))
 		if(!T.density)
-			T.TerraformTurf(/turf/open/lava/smooth/lava_land_surface, /turf/open/lava/smooth/lava_land_surface, flags = CHANGETURF_INHERIT_AIR) //WS edit, instead of chasms this produces lava instead.
+			T.TerraformTurf(/turf/open/indestructible/supermatter_cascade/stationary, /turf/open/indestructible/supermatter_cascade/stationary, flags = CHANGETURF_INHERIT_AIR) //if chasms werent deadly enough
 	qdel(src)
