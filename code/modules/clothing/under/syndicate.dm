@@ -52,6 +52,16 @@
 	fitted = FEMALE_UNIFORM_TOP
 	can_adjust = FALSE
 
+/obj/item/clothing/under/syndicate/tacticool/maid
+	name = "syndicate maid uniform"
+	desc = "A simple maid uniform for cleaning up all that blood."
+	icon_state = "syndimaid"
+	item_state = "syndimaid"
+	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 20, "rad" = 10, "fire" = 50, "acid" = 40)
+	body_parts_covered = CHEST|GROIN
+	fitted = FEMALE_UNIFORM_TOP
+	can_adjust = FALSE
+
 /obj/item/clothing/under/syndicate/sniper
 	name = "Tactical turtleneck suit"
 	desc = "A double seamed tactical turtleneck disguised as a civilian grade silk suit. Intended for the most formal operator. The collar is really sharp."
