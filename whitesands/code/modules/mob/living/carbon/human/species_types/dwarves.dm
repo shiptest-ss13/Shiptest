@@ -25,10 +25,7 @@ GLOBAL_LIST_INIT(dwarf_last, world.file2list("strings/names/dwarf_last.txt")) //
 	mutanttongue= /obj/item/organ/tongue/dwarf //A workaround for the language issues I was having
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | ERT_SPAWN | RACE_SWAP | SLIME_EXTRACT
 	species_language_holder = /datum/language_holder/dwarf
-	loreblurb = {"
-		A species of squat, sturdy creatures drenched in facial hair with a fondness for drink and industry.
-		They superficially look like short humans, but they have engorged livers, thick skin, and a specialized gall bladder \
-		that processes alcohol into vital nutrients that the dwarf cannot live without, making them compulsory drunkards. They are from Canada."}
+	loreblurb = {"Essentially shorter, squatter humans, dwarves are one of the earliest genelines modified from humans, and one of the most divergent in function and form. Developed in Canada at nearly the beginning of humanity's progress into genetic engineering, they require alcohol to survive, and have been around long enough to have both substantial numbers and their own distinct culture."}
 
 /mob/living/carbon/human/species/dwarf //species admin spawn path
 	race = /datum/species/dwarf //and the race the path is set to.
