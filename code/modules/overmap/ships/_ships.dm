@@ -246,7 +246,7 @@
 		burn_engines(null)
 		return tick_autopilot()
 
-/obj/structure/overmap/ship/Uncrossed(atom/movable/AM, atom/newloc)
+/obj/structure/overmap/ship/on_exited(datum/source, atom/movable/AM, atom/newloc)
 	. = ..()
 	if(AM == current_autopilot_target)
 		tick_autopilot()

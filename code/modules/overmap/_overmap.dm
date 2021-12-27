@@ -102,6 +102,12 @@
 		cam_background.del_on_map_removal = FALSE
 		update_screen()
 
+	var/static/list/loc_connections = list(
+		COMSIG_ATOM_ENTERED = .proc/on_entered,
+		COMSIG_ATOM_EXITED = .proc/on_exited
+	)
+	AddElement(/datum/element/connect_loc, loc_connections)
+
 /obj/structure/overmap/Destroy()
 	. = ..()
 	for(var/obj/structure/overmap/O as anything in close_overmap_objects)
@@ -140,8 +146,8 @@
 /**
   * When something crosses another overmap object, add it to the nearby objects list, which are used by events and docking
   */
-/obj/structure/overmap/Crossed(atom/movable/AM, oldloc)
-	. = ..()
+/obj/structure/overmap/proc/on_entered(datum/source, atom/movable/AM, oldloc)
+	SIGNAL_HANDLER
 	if(istype(loc, /turf/) && istype(AM, /obj/structure/overmap))
 		var/obj/structure/overmap/other = AM
 		if(other == src)
@@ -152,8 +158,8 @@
 /**
   * See [/obj/structure/overmap/Crossed]
   */
-/obj/structure/overmap/Uncrossed(atom/movable/AM, atom/newloc)
-	. = ..()
+/obj/structure/overmap/proc/on_exited(datum/source, atom/movable/AM, atom/newloc)
+	SIGNAL_HANDLER
 	if(istype(loc, /turf/) && istype(AM, /obj/structure/overmap))
 		var/obj/structure/overmap/other = AM
 		if(other == src)

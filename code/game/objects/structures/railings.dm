@@ -7,6 +7,15 @@
 	anchored = TRUE
 	climbable = TRUE
 
+
+/obj/structure/railing/Initialize()
+	. = ..()
+	var/static/list/loc_connections = list(
+		COMSIG_ATOM_EXIT = .proc/on_exit,
+	)
+
+	AddElement(/datum/element/connect_loc, loc_connections)
+
 /obj/structure/railing/corner //aesthetic corner sharp edges hurt oof ouch
 	icon_state = "railing_corner"
 	density = FALSE
@@ -71,8 +80,12 @@
 	..()
 	return TRUE
 
-/obj/structure/railing/CheckExit(atom/movable/mover, turf/target)
-	..()
+/obj/structure/railing/proc/on_exit(datum/source, atom/movable/mover, turf/target)
+	SIGNAL_HANDLER
+
+	if(mover == src)
+		return // Let's not block ourselves.
+
 	if(get_dir(loc, target) & dir)
 		var/checking = PHASING | FLYING | FLOATING
 		return !density || mover.throwing || mover.movement_type & checking || mover.move_force >= MOVE_FORCE_EXTREMELY_STRONG

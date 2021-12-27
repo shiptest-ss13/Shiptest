@@ -70,6 +70,11 @@
 	update_weight()
 	update_icon()
 
+	var/static/list/loc_connections = list(
+		COMSIG_ATOM_ENTERED = .proc/on_entered,
+	)
+	AddElement(/datum/element/connect_loc, loc_connections)
+
 /obj/item/stack/proc/get_main_recipes()
 	SHOULD_CALL_PARENT(1)
 	return list()//empty list
@@ -375,10 +380,10 @@
 	S.add(transfer)
 	return transfer
 
-/obj/item/stack/Crossed(atom/movable/AM)
+/obj/item/stack/proc/on_entered(datum/source, atom/movable/AM)
+	SIGNAL_HANDLER
 	if(istype(AM, merge_type) && !AM.throwing)
-		merge(AM)
-	. = ..()
+		INVOKE_ASYNC(src, .proc/merge, AM)
 
 /obj/item/stack/hitby(atom/movable/AM, skipcatch, hitpush, blocked, datum/thrownthing/throwingdatum)
 	if(istype(AM, merge_type))

@@ -110,6 +110,7 @@
 	var/static/list/loc_connections = list(
 		COMSIG_ATOM_ENTERED = .proc/on_entered,
 		COMSIG_ATOM_EXITED =.proc/on_uncrossed,
+		COMSIG_ATOM_EXIT = .proc/on_exit
 	)
 	AddElement(/datum/element/connect_loc, loc_connections)
 
@@ -125,3 +126,7 @@
 	SIGNAL_HANDLER
 
 	monitor?.hasprox_receiver?.HasProximity(AM)
+
+//does nothing, is supposed to be overriden in the advanced proximity checker
+/obj/effect/abstract/proximity_checker/proc/on_exit(datum/source, atom/movable/AM)
+	SIGNAL_HANDLER

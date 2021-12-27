@@ -40,7 +40,7 @@
 /obj/structure/overmap/event/proc/affect_ship(obj/structure/overmap/ship/simulated/S)
 	return
 
-/obj/structure/overmap/event/Crossed(atom/movable/AM, oldloc)
+/obj/structure/overmap/event/on_entered(datum/source, atom/movable/AM, oldloc)
 	. = ..()
 	if(istype(AM, /obj/structure/overmap/ship))
 		affect_ship(AM)

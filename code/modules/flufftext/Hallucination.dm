@@ -83,6 +83,16 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 	anchored = TRUE
 	var/mob/living/carbon/target = null
 
+/obj/effect/hallucination/Initialize()
+	. = ..()
+	var/static/list/loc_connections = list(
+		COMSIG_ATOM_ENTERED = .proc/on_entered,
+	)
+	AddElement(/datum/element/connect_loc, loc_connections)
+
+/obj/effect/hallucination/proc/on_entered()
+	SIGNAL_HANDLER
+
 /obj/effect/hallucination/simple
 	var/image_icon = 'icons/mob/alien.dmi'
 	var/image_state = "alienh_pounce"
@@ -1105,8 +1115,7 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 	if(target.client)
 		target.client.images += image
 
-/obj/effect/hallucination/danger/lava/Crossed(atom/movable/AM)
-	. = ..()
+/obj/effect/hallucination/danger/lava/on_entered(datum/source, atom/movable/AM)
 	if(AM == target)
 		target.adjustStaminaLoss(20)
 		new /datum/hallucination/fire(target)
@@ -1120,8 +1129,7 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 	if(target.client)
 		target.client.images += image
 
-/obj/effect/hallucination/danger/chasm/Crossed(atom/movable/AM)
-	. = ..()
+/obj/effect/hallucination/danger/chasm/on_entered(datum/source, atom/movable/AM)
 	if(AM == target)
 		if(istype(target, /obj/effect/dummy/phased_mob))
 			return
@@ -1150,8 +1158,7 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 	if(target.client)
 		target.client.images += image
 
-/obj/effect/hallucination/danger/anomaly/Crossed(atom/movable/AM)
-	. = ..()
+/obj/effect/hallucination/danger/anomaly/on_entered(datum/source, atom/movable/AM)
 	if(AM == target)
 		new /datum/hallucination/shock(target)
 

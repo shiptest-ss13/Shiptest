@@ -46,6 +46,10 @@
 			break
 	AddElement(/datum/element/bsa_blocker)
 	RegisterSignal(src, COMSIG_ATOM_BSA_BEAM, .proc/bluespace_reaction)
+	var/static/list/loc_connections = list(
+		COMSIG_ATOM_ENTERED = .proc/on_entered
+	)
+	AddElement(/datum/element/connect_loc, loc_connections)
 
 /obj/singularity/Destroy()
 	STOP_PROCESSING(SSobj, src)
@@ -136,8 +140,8 @@
 		step(src, drifting_dir)
 	return
 
-/obj/singularity/Crossed(atom/A)
-	..()
+/obj/singularity/proc/on_entered(datum/source, atom/A)
+	SIGNAL_HANDLER
 	consume(A)
 
 /obj/singularity/Bumped(atom/movable/AM)
