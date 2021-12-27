@@ -49,6 +49,12 @@
 	icon_living = "claw-phase2"
 	gps_name = "F453C619AE278"
 	deathsound = "bodyfall"
+	attack_action_types = list(/datum/action/innate/megafauna_attack/emp_pulse,
+								/datum/action/innate/megafauna_attack/tentacle,
+								/datum/action/innate/megafauna_attack/summon_creatures,
+								/datum/action/innate/megafauna_attack/pulse_rifle,
+								/datum/action/innate/megafauna_attack/string_attack
+								)
 	speed = 5
 	move_to_delay = 5
 	speak_emote = list("verbalizes")
@@ -142,12 +148,13 @@
 			if(3) //only should fire duing phase 2
 				emp_pulse()
 			if(4)
-				tentacle()
-			if(5)
-				summon_creatures()
-			if(6)
-				pulse_rifle()
-			if(7)
+				tentacle(target)
+//			if(5)
+//				summon_creatures()
+//			if(6)
+//				pulse_rifle(target)
+//			if(7)
+//				sting_attack(target)
 		return
 
 	Goto(target, move_to_delay, minimum_distance)
@@ -156,8 +163,16 @@
 			swift_dash(target, dash_num_short, 5)
 		if(get_dist(src, target) > 5 && dash_cooldown <= world.time && !shoudnt_move)
 			swift_dash(target, dash_num_long, 15)
-//to be implmented
+	else
+		if((get_dist(src, target) >= 4) && ((get_dist(src, target)) <= 8) && !shoudnt_move)
+			if(prob(70))
+				tentacle(target)
+				return
+		if(prob(10))
+			emp_pulse()
+			return
 
+/////DASH ATTACK
 /mob/living/simple_animal/hostile/megafauna/claw/proc/swift_dash(target, distance, wait_time)
 	if(dash_cooldown > world.time)
 		return
@@ -184,10 +199,12 @@
 		L.attack_animal(src)
 //		new /obj/effect/temp_visual/cleave(L.loc)
 	addtimer(CALLBACK(src, .proc/swift_dash2, move_dir, (times_ran + 1), distance_run), 0.7)
+/////DASH ATTACK END
 
+/////DISSONANT SHREK
 /mob/living/simple_animal/hostile/megafauna/claw/proc/emp_pulse()
 	shake_animation(0.5)
-	visible_message("<span class='danger'> [src] stops and shudders for a moment... </span>")
+	visible_message("<span class='danger'>[src] stops and shudders for a moment... </span>")
 	shoudnt_move = TRUE
 	addtimer(CALLBACK(src, .proc/emp_pulse2), 1 SECONDS)
 
@@ -196,6 +213,17 @@
 	playsound(src, 'sound/voice/vox/vox_scream_1.ogg', 300, 1, 8, 8)
 	empulse(src, 2, 4)
 	shoudnt_move = FALSE
+
+/////TENTACLE
+/mob/living/simple_animal/hostile/megafauna/claw/proc/tentacle(target)
+	shake_animation(2)
+	projectiletype = /obj/projectile/tentacle
+	projectilesound = 'sound/effects/splat.ogg'
+	Shoot(target)
+
+/////TENTACLE END
+
+/////STING ATTACK
 
 /mob/living/simple_animal/hostile/megafauna/claw/death()
 	. = ..()
