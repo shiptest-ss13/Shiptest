@@ -152,6 +152,6 @@
 	gibamounts[6] = pick(0, 1, 2)
 	return ..()
 
-/obj/effect/gibspawner/crystal
+/obj/effect/gibspawner/generic/crystal
 	gibtypes = list(/obj/effect/decal/cleanable/glass/strange, /obj/effect/decal/cleanable/blood/gibs, /obj/effect/decal/cleanable/blood/gibs, /obj/effect/decal/cleanable/blood/gibs/core)
 	gibamounts = list(5, 2, 2, 1)

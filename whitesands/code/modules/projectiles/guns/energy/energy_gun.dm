@@ -33,3 +33,13 @@
 	ammo_type = list(/obj/item/ammo_casing/energy/disabler/scatter/ultima, /obj/item/ammo_casing/energy/laser/ultima)
 	var/obj/item/modular_computer/integratedNTOS
 	var/NTOS_type = /obj/item/modular_computer/internal
+
+/obj/item/gun/energy/e_gun/ancient_revolver
+	name = "ancient revolver"
+	desc = "An unknown artifact from the ancients. Use with care."
+	icon_state = "ancientrevolver"
+	item_state = "gun"
+	force = 7
+	ammo_type = list(/obj/item/ammo_casing/energy/laser/pulse, /obj/item/ammo_casing/energy/declone/weak)
+	ammo_x_offset = 1
+	shaded_charge = TRUE
