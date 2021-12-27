@@ -694,6 +694,11 @@
 		return FALSE
 	return TRUE
 
+/obj/structure/firelock_frame/border/CanAllowThrough(atom/movable/mover, turf/target)
+	. = ..()
+	if(!(get_dir(loc, target) == dir)) //Make sure looking at appropriate border
+		return TRUE
+
 /obj/structure/firelock_frame/border/proc/on_exit(datum/source, atom/movable/leaving, direction)
 	SIGNAL_HANDLER
 

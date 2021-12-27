@@ -67,7 +67,8 @@
 		COMSIG_ATOM_EXIT = .proc/on_exit,
 	)
 
-	AddElement(/datum/element/connect_loc, loc_connections)
+	if (flags_1 & ON_BORDER_1)
+		AddElement(/datum/element/connect_loc, loc_connections)
 
 /obj/structure/window/ComponentInitialize()
 	. = ..()
@@ -115,15 +116,23 @@
 
 	return TRUE
 
-/obj/structure/window/proc/on_exit(datum/source, atom/movable/O, turf/target)
+/obj/structure/window/proc/on_exit(datum/source, atom/movable/leaving, direction)
 	SIGNAL_HANDLER
-	if(O == src)
+	if(leaving.movement_type & PHASING)
+		return
+
+	if(leaving == src)
 		return // Let's not block ourselves.
-	if(istype(O) && (O.pass_flags & PASSGLASS))
-		return 1
-	if(get_dir(O.loc, target) == dir)
-		return 0
-	return 1
+
+	if (leaving.pass_flags & pass_flags_self)
+		return
+
+	if (fulltile)
+		return
+
+	if(direction == dir && density)
+		leaving.Bump(src)
+		return COMPONENT_ATOM_BLOCK_EXIT
 
 /obj/structure/window/attack_tk(mob/user)
 	user.changeNext_move(CLICK_CD_MELEE)
