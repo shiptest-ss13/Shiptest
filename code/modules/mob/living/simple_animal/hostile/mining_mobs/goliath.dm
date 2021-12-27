@@ -422,5 +422,5 @@
 
 /mob/living/simple_animal/hostile/asteroid/goliath/beast/ancient/crystal/monolith/death(gibbed)
 	. = ..()
-	new /obj/effect/gibspawner/generic/crystal(get_turf(src))
+	new /obj/effect/gibspawner/generic(get_turf(src))
 	qdel(src)

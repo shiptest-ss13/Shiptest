@@ -40,6 +40,6 @@
 	icon_state = "ancientrevolver"
 	item_state = "gun"
 	force = 7
-	ammo_type = list(/obj/item/ammo_casing/energy/laser/pulse, /obj/item/ammo_casing/energy/declone/weak)
+	ammo_type = list(/obj/item/ammo_casing/energy/laser/pulse, /obj/item/ammo_casing/energy/declone)
 	ammo_x_offset = 1
 	shaded_charge = TRUE

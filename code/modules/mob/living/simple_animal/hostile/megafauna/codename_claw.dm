@@ -23,7 +23,7 @@
 	speed = 4
 	move_to_delay = 4
 	pixel_x = 0
-	base_pixel_x = 0
+
 	crusher_loot = list(/obj/item/card/id/ert/deathsquad, /obj/item/documents/nanotrasen)
 	loot = list(/obj/item/card/id/ert/deathsquad, /obj/item/documents/nanotrasen)
 	wander = FALSE
@@ -70,7 +70,7 @@
 /obj/effect/spawner/clawloot/crusher/spawn_loot()
 	new /obj/item/nullrod/armblade/tentacle(get_turf(src)) //idk what to put here, memed is the loot person
 	return ..()
-
+//PHASE ONE
 /datum/action/innate/megafauna_attack/swift_dash
 	name = "Swift Dash"
 	icon_icon = 'icons/effects/effects.dmi'
@@ -84,15 +84,46 @@
 	button_icon_state = "plasmasoul"
 	chosen_message = "<span class='colossus'>You will now dash forward for a long distance.</span>"
 	chosen_attack_num = 2
+//PHASE TWO
+/datum/action/innate/megafauna_attack/emp_pulse
+	name = "Dissonant Shriek"
+	icon_icon = 'icons/effects/effects.dmi'
+	button_icon_state = "emppulse"
+	chosen_message = "<span class='colossus'>You will now create a EMP pulse.</span>"
+	chosen_attack_num = 3
 
-/mob/living/simple_animal/hostile/megafauna/claw/Initialize()
-	. = ..()
-	ADD_TRAIT(src, TRAIT_NO_FLOATING_ANIM, ROUNDSTART_TRAIT) // Imagine floating.
+/datum/action/innate/megafauna_attack/tentacle
+	name = "Tentacle"
+	icon_icon = 'icons/mob/actions/actions_changeling.dmi'
+	button_icon_state = "tentacle"
+	chosen_message = "<span class='colossus'>You will now shoot your tentacle, bringing mobs ever so closer.</span>"
+	chosen_attack_num = 4
+
+/datum/action/innate/megafauna_attack/summon_creatures
+	name = "Lie Spider"
+	icon_icon = 'icons/mob/actions/actions_changeling.dmi'
+	button_icon_state = "plasmasoul"
+	chosen_message = "<span class='colossus'>You will now summon a weak spider.</span>"
+	chosen_attack_num = 5
+
+/datum/action/innate/megafauna_attack/pulse_rifle
+	name = "Tentacle"
+	icon_icon = 'icons/obj/guns/energy.dmi'
+	button_icon_state = "pulse"
+	chosen_message = "<span class='colossus'>You will now stop, and telegraph a attack that will shoot either: Pulse lasers, electrodes, or regular lasers depending on health.</span>"
+	chosen_attack_num = 6
+
+/datum/action/innate/megafauna_attack/string_attack
+	name = "Sting shotgun"
+	icon_icon = 'icons/mob/actions/actions_changeling.dmi'
+	button_icon_state = "sting_cryo"
+	chosen_message = "<span class='colossus'>You stop, and telegraph a shotgun of stings.</span>"
+	chosen_attack_num = 7
 
 /mob/living/simple_animal/hostile/megafauna/claw/phase2/Initialize()
 	. = ..()
 	flick("claw-phase2_transform",src) //plays the transforming animation
-	addtimer(CALLBACK(src, .proc/unlock_phase2, 4.4 SECONDS)
+	addtimer(CALLBACK(src, .proc/unlock_phase2), 4.4 SECONDS)
 
 /mob/living/simple_animal/hostile/megafauna/claw/Move()
 	if(shoudnt_move)
@@ -105,9 +136,18 @@
 			return
 		switch(chosen_attack)
 			if(1) //these SHOULDNT fire during phase 2, but if they do have fun with the extra attacks
-					swift_dash(target, dash_num_short, 5)
+				swift_dash(target, dash_num_short, 5)
 			if(2)
-					swift_dash(target, dash_num_long, 15)
+				swift_dash(target, dash_num_long, 15)
+			if(3) //only should fire duing phase 2
+				emp_pulse()
+			if(4)
+				tentacle()
+			if(5)
+				summon_creatures()
+			if(6)
+				pulse_rifle()
+			if(7)
 		return
 
 	Goto(target, move_to_delay, minimum_distance)
@@ -142,17 +182,35 @@
 	for(var/mob/living/L in T.contents - src)
 		L.Knockdown(15)
 		L.attack_animal(src)
-		new /obj/effect/temp_visual/cleave(L.loc)
+//		new /obj/effect/temp_visual/cleave(L.loc)
 	addtimer(CALLBACK(src, .proc/swift_dash2, move_dir, (times_ran + 1), distance_run), 0.7)
+
+/mob/living/simple_animal/hostile/megafauna/claw/proc/emp_pulse()
+	shake_animation(0.5)
+	visible_message("<span class='danger'> [src] stops and shudders for a moment... </span>")
+	shoudnt_move = TRUE
+	addtimer(CALLBACK(src, .proc/emp_pulse2), 1 SECONDS)
+
+/mob/living/simple_animal/hostile/megafauna/claw/proc/emp_pulse2()
+	shake_animation(2)
+	playsound(src, 'sound/voice/vox/vox_scream_1.ogg', 300, 1, 8, 8)
+	empulse(src, 2, 4)
+	shoudnt_move = FALSE
 
 /mob/living/simple_animal/hostile/megafauna/claw/death()
 	. = ..()
-	OnDeath() //this is because both stages have unique behavior on death, inlcuding stage one not dying
+	on_death() //this is because both stages have unique behavior on death, inlcuding stage one not dying
 
 /mob/living/simple_animal/hostile/megafauna/claw/proc/on_death()
-	. = ..()
 	flick("claw-phase1_transform",src) //woho you won... or did you?
-	addtimer(CALLBACK(src, .proc/create_phase2, 30 SECONDS)
+	addtimer(CALLBACK(src, .proc/create_phase2), 30 SECONDS)
+
+/mob/living/simple_animal/hostile/megafauna/claw/phase2/on_death()
+	icon_state = "claw-phase2_dying"
+	flick("claw-phase2_to_dying_anim",src)
+	playsound(src, 'sound/voice/vox/vox_scream_1.ogg', 300, 1, 8, 8)
+	addtimer(CALLBACK(src, .proc/phase2_dramatic, src), 3 SECONDS)
+	return
 
 /mob/living/simple_animal/hostile/megafauna/claw/proc/create_phase2() //this only exists so the timer can callback to this proc
 	new /mob/living/simple_animal/hostile/megafauna/claw/phase2(get_turf(src))
@@ -160,5 +218,16 @@
 /mob/living/simple_animal/hostile/megafauna/claw/proc/unlock_phase2()
 	shoudnt_move = FALSE
 	empulse(src, 3, 10) //changling's emp scream, right?
-	explosion(src, 1, 2, 3) //dramatic
-	playsound(src, 'sound/voice/vox/vox_scream_1.ogg', 200, 1, 8, 8) //jumpscare
+	explosion(src, 0, 0, 5) //dramatic
+	playsound(src, 'sound/voice/vox/vox_scream_1.ogg', 300, 1, 8, 8) //jumpscare
+	shake_animation(2)
+	new /obj/effect/gibspawner/human(get_turf(src))
+	name = "The CLAW"
+	desc = "You aren't sure what this is and you are afraid to know."
+
+/mob/living/simple_animal/hostile/megafauna/claw/proc/phase2_dramatic()
+	explosion(src, 0, 5, 10)
+	empulse(src, 5, 8)
+	new /obj/effect/gibspawner/human(get_turf(src))
+	qdel(src)
+

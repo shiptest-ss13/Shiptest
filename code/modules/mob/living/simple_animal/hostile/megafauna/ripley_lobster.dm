@@ -1,3 +1,4 @@
+//this will very likely not be finished, its pretty unorignal and doesnt work how i want it to
 /mob/living/simple_animal/hostile/megafauna/ripley_lobster
 	name = "\improper APLU MK-I \"Lobster\""
 	desc = "A old abandoned powerloader, that was once used for warfare. Now it seeks out blood, with its many hidden weapons."

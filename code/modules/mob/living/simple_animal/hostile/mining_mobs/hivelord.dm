@@ -635,7 +635,7 @@
 		P.fire(i*(360/5))
 	return ..()
 
-/mob/living/simple_animal/hostile/asteroid/hivelord/legion/crystalmonolith/death(gibbed)
+/mob/living/simple_animal/hostile/asteroid/hivelord/legion/crystal/monolith/death(gibbed)
 	. = ..()
 	new /obj/effect/gibspawner/generic/crystal(get_turf(src))
 	qdel(src)

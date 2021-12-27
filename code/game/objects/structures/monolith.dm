@@ -6,7 +6,7 @@
 	icon_state = "monolith"
 
 	faction = list("mining")
-	max_mobs = 3
+	max_mobs = 1
 	max_integrity = 800
 	mob_types = list(/mob/living/simple_animal/hostile/asteroid/basilisk/watcher/forgotten)
 
@@ -57,6 +57,7 @@
 
 /obj/structure/spawner/monolith/watcher
 	mob_types = list(/mob/living/simple_animal/hostile/asteroid/basilisk/watcher/forgotten/monolith)
+	max_mobs = 2
 
 /obj/structure/spawner/monolith/Initialize()
 	. = ..()
@@ -84,7 +85,7 @@
 	desc = "It's about to break!!"
 	layer = TABLE_LAYER
 	icon = 'icons/mob/nest.dmi'
-	icon_state = "monolith-75"
+	icon_state = "monolith-colapse"
 	anchored = TRUE
 	density = TRUE
 	var/obj/effect/light_emitter/blue_energy_sword/emitted_light
@@ -115,7 +116,7 @@
 	icon_state = "ancientpot"
 	locked = TRUE
 
-/obj/structure/closet/crate/ancientpot/open(mob/living/user)
+/obj/structure/closet/crate/ancientpot/open(mob/living/user, force)
 	. = ..()
 	if(user)
 		to_chat(user, "<span class='danger'>You can't reach in the [src]!</span>")
@@ -131,7 +132,7 @@
 /obj/effect/spawner/lootdrop/ancientpot
 	loot = list(/obj/item/strange_crystal = 20,
 				/obj/item/coin/plasma = 10,
-				/obj/item/coin/diamond = 10,
+				/obj/item/grenade/hypnotic = 10,
 				/obj/item/gun/energy/e_gun/ancient_revolver = 10,
 				/obj/item/gun/energy/decloner = 10,
 				/obj/item/construction/rcd/combat = 10,
