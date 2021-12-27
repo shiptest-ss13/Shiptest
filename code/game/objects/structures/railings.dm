@@ -91,7 +91,7 @@
 		return !density || mover.throwing || mover.movement_type & checking || mover.move_force >= MOVE_FORCE_EXTREMELY_STRONG
 	return TRUE
 
-/obj/structure/railing/corner/CheckExit()
+/obj/structure/railing/corner/on_exit(datum/source, atom/movable/mover, turf/target)
 	return TRUE
 
 /obj/structure/railing/proc/can_be_rotated(mob/user,rotation_type)

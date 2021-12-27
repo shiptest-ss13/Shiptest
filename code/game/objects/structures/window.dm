@@ -63,6 +63,12 @@
 	real_explosion_block = explosion_block
 	explosion_block = EXPLOSION_BLOCK_PROC
 
+	var/static/list/loc_connections = list(
+		COMSIG_ATOM_EXIT = .proc/on_exit,
+	)
+
+	AddElement(/datum/element/connect_loc, loc_connections)
+
 /obj/structure/window/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/simple_rotation,ROTATION_ALTCLICK | ROTATION_CLOCKWISE | ROTATION_COUNTERCLOCKWISE | ROTATION_VERBS ,null,CALLBACK(src, .proc/can_be_rotated),CALLBACK(src,.proc/after_rotation))
@@ -109,7 +115,10 @@
 
 	return TRUE
 
-/obj/structure/window/CheckExit(atom/movable/O, turf/target)
+/obj/structure/window/proc/on_exit(datum/source, atom/movable/O, turf/target)
+	SIGNAL_HANDLER
+	if(O == src)
+		return // Let's not block ourselves.
 	if(istype(O) && (O.pass_flags & PASSGLASS))
 		return 1
 	if(get_dir(O.loc, target) == dir)

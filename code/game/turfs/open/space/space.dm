@@ -166,9 +166,9 @@
 		else
 			to_chat(user, "<span class='warning'>The plating is going to need some support! Place metal rods first.</span>")
 
-/turf/open/space/Entered(atom/movable/A)
-	..()
-	if ((!(A) || src != A.loc))
+/turf/open/space/Entered(atom/movable/A, atom/old_loc, list/atom/old_locs)
+	. = ..()
+	if(!arrived || src != arrived.loc)
 		return
 
 	if(destination_z && destination_x && destination_y && !(A.pulledby || !A.can_be_z_moved))

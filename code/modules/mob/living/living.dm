@@ -217,7 +217,7 @@
 		return
 	now_pushing = TRUE
 	var/dir_to_target = get_dir(src, AM)
-	t = t ? t : dir //we will fall back to using the mob's dir if on same tile as obj
+	dir_to_target = dir_to_target ? dir_to_target : dir //we will fall back to using the mob's dir if on same tile as obj
 
 	// If there's no dir_to_target then the player is on the same turf as the atom they're trying to push.
 	// This can happen when a player is stood on the same turf as a directional window. All attempts to push

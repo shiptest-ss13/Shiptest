@@ -88,7 +88,7 @@
 /obj/item/onetankbomb/proc/on_entered(datum/source, atom/movable/AM as mob|obj) //for mousetraps
 	SIGNAL_HANDLER
 	if(bombassembly)
-		bombassembly.on_entered(null, AM)
+		bombassembly.on_entered(src, AM)
 
 /obj/item/onetankbomb/on_found(mob/finder) //for mousetraps
 	if(bombassembly)

@@ -57,7 +57,7 @@
 /obj/projectile/mega_arachnid/on_hit(atom/target, blocked = FALSE)
 	if(iscarbon(target) && blocked < 100)
 		var/obj/item/restraints/legcuffs/beartrap/mega_arachnid/B = new /obj/item/restraints/legcuffs/beartrap/mega_arachnid(get_turf(target))
-		B.Crossed(target)
+		B.on_entered(src ,target)
 	..()
 
 /obj/item/restraints/legcuffs/beartrap/mega_arachnid

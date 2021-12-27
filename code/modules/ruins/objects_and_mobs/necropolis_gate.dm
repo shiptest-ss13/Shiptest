@@ -46,6 +46,11 @@
 	dais_overlay.layer = CLOSED_TURF_LAYER
 	add_overlay(dais_overlay)
 
+	var/static/list/loc_connections = list(
+		COMSIG_ATOM_EXIT = .proc/on_exit
+	)
+	AddElement(/datum/element/connect_loc, loc_connections)
+
 /obj/structure/necropolis_gate/Destroy(force)
 	if(force)
 		qdel(sight_blocker, TRUE)
@@ -61,7 +66,7 @@
 	if(!(get_dir(loc, target) == dir))
 		return TRUE
 
-/obj/structure/necropolis_gate/CheckExit(atom/movable/O, target)
+/obj/structure/necropolis_gate/proc/on_exit(datum/source, atom/movable/O, target)
 	if(get_dir(O.loc, target) == dir)
 		return !density
 	return 1

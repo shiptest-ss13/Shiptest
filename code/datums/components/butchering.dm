@@ -6,7 +6,7 @@
 	/// Percentage increase to bonus item chance
 	var/bonus_modifier = 0
 	/// Sound played when butchering
-	var/butcher_sound = 'sound/effects/butcher.ogg'
+	var/butcher_sound = 'sound/weapons/slice.ogg'
 	/// Whether or not this component can be used to butcher currently. Used to temporarily disable butchering
 	var/butchering_enabled = TRUE
 	/// Whether or not this component is compatible with blunt tools.

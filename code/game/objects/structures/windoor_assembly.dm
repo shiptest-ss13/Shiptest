@@ -35,6 +35,14 @@
 		setDir(set_dir)
 	air_update_turf(TRUE)
 
+/obj/structure/windoor_assembly/Initialize()
+	. = ..()
+	var/static/list/loc_connections = list(
+		COMSIG_ATOM_EXIT = .proc/on_exit,
+	)
+
+	AddElement(/datum/element/connect_loc, loc_connections)
+
 /obj/structure/windoor_assembly/Destroy()
 	density = FALSE
 	air_update_turf(TRUE)
@@ -66,7 +74,10 @@
 	else
 		return 1
 
-/obj/structure/windoor_assembly/CheckExit(atom/movable/mover, turf/target)
+/obj/structure/windoor_assembly/proc/on_exit(datum/source, atom/movable/mover, turf/target)
+	SIGNAL_HANDLER
+	if(mover == src)
+		return // Let's not block ourselves.
 	if(mover.pass_flags & pass_flags_self)
 		return TRUE
 	if(get_dir(loc, target) == dir)

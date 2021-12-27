@@ -138,8 +138,7 @@
 	icon_state = "lasergrid_full"
 	claimed = TRUE
 
-/obj/item/pressure_plate/hologrid/proc/on_entered(datum/source, atom/movable/AM)
-	SIGNAL_HANDLER
+/obj/item/pressure_plate/hologrid/on_entered(datum/source, atom/movable/AM)
 	if(trigger_item && istype(AM, specific_item) && !claimed)
 		AM.set_anchored(TRUE)
 		flick("laserbox_burn", AM)

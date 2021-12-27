@@ -325,7 +325,7 @@
 		qdel(src)
 
 /obj/item/restraints/legcuffs/beartrap/energy/attack_hand(mob/user)
-	Crossed(user) //honk
+	on_entered(src, user) //honk
 	return ..()
 
 /obj/item/restraints/legcuffs/beartrap/energy/cyborg
@@ -390,9 +390,9 @@
 /obj/item/restraints/legcuffs/bola/energy/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)
 	if(iscarbon(hit_atom))
 		var/obj/item/restraints/legcuffs/beartrap/B = new /obj/item/restraints/legcuffs/beartrap/energy/cyborg(get_turf(hit_atom))
-		B.Crossed(hit_atom)
+		B.on_entered(src, hit_atom)
 		qdel(src)
-	..()
+	. = ..()
 
 /obj/item/restraints/legcuffs/bola/gonbola
 	name = "gonbola"

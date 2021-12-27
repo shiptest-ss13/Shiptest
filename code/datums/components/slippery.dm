@@ -91,6 +91,9 @@
 
 	holder = null
 
+/datum/component/slippery/proc/Slip_on_wearer(datum/source, atom/movable/arrived)
+	SIGNAL_HANDLER
+
 /// Used for making the clown PDA only slip if the clown is wearing his shoes and the elusive banana-skin belt
 /datum/component/slippery/clowning
 

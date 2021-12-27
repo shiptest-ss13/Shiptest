@@ -76,9 +76,9 @@
 /obj/item/assembly_holder/proc/on_entered(datum/source, atom/movable/AM as mob|obj)
 	SIGNAL_HANDLER
 	if(a_left)
-		a_left.on_entered(AM)
+		a_left.on_entered(src, AM)
 	if(a_right)
-		a_right.on_entered(AM)
+		a_right.on_entered(src, AM)
 
 /obj/item/assembly_holder/on_found(mob/finder)
 	if(a_left)
