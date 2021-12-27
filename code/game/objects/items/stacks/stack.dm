@@ -382,6 +382,11 @@
 
 /obj/item/stack/proc/on_entered(datum/source, atom/movable/AM)
 	SIGNAL_HANDLER
+
+	// Edge case. This signal will also be sent when src has entered the turf. Don't want to merge with ourselves.
+	if(arrived == src)
+		return
+
 	if(istype(AM, merge_type) && !AM.throwing)
 		INVOKE_ASYNC(src, .proc/merge, AM)
 
