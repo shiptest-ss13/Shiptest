@@ -26,7 +26,7 @@
 	righthand_file = 'icons/mob/inhands/weapons/64x_guns_right.dmi'
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
-	icon_state = "ioteshotgun"
+	icon_state = "iotshotgun"
 	item_state = "shotgun_combat"
 	shaded_charge = 1
 	w_class = WEIGHT_CLASS_BULKY
