@@ -84,6 +84,7 @@
 	open_machine()
 
 /obj/machinery/sleeper/Exited(atom/movable/user)
+	. = ..()
 	if (!state_open && user == occupant)
 		container_resist_act(user)
 

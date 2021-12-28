@@ -9,7 +9,6 @@
 	layer = BELOW_MOB_LAYER//icon draw layer
 	infra_luminosity = 15 //byond implementation is bugged.
 	force = 5
-	flags_1 = HEAR_1
 	light_system = MOVABLE_LIGHT
 	light_power = 0.8
 	light_range = 6
@@ -147,6 +146,7 @@
 	diag_hud_set_mechhealth()
 	diag_hud_set_mechcell()
 	diag_hud_set_mechstat()
+	become_hearing_sensitive(trait_source = ROUNDSTART_TRAIT)
 
 /obj/mecha/update_icon_state()
 	if(silicon_pilot && silicon_icon_state)
@@ -1019,6 +1019,7 @@
 	is_currently_ejecting = FALSE
 
 /obj/mecha/Exited(atom/movable/M, atom/newloc)
+	. = ..()
 	if(occupant && occupant == M) // The occupant exited the mech without calling go_out()
 		go_out(TRUE, newloc)
 
