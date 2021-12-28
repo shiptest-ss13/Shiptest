@@ -440,8 +440,6 @@
 /obj/mecha/Hear(message, atom/movable/speaker, message_language, raw_message, radio_freq, list/spans, list/message_mods = list())
 	. = ..()
 	if(speaker == occupant)
-		if(radio?.broadcasting)
-			radio.talk_into(speaker, text, , spans, message_language, message_mods)
 		//flick speech bubble
 		var/list/speech_bubble_recipients = list()
 		for(var/mob/M in get_hearers_in_view(7,src))
