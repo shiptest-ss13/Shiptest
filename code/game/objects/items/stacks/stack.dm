@@ -58,6 +58,8 @@
 		for(var/obj/item/stack/S in loc)
 			if(S.merge_type == merge_type)
 				merge(S)
+				if(QDELETED(src))
+					return
 	var/list/temp_recipes = get_main_recipes()
 	recipes = temp_recipes.Copy()
 	if(material_type)
