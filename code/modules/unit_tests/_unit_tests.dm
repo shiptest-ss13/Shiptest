@@ -26,6 +26,7 @@
 //#include "chain_pull_through_space.dm" - Removed, as crosslinked levels are not used.
 #include "combat.dm"
 #include "component_tests.dm"
+#include "connect_loc.dm"
 #include "emoting.dm"
 #include "keybinding_init.dm"
 #include "machine_disassembly.dm"

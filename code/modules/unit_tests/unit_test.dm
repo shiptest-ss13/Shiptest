@@ -48,10 +48,10 @@ GLOBAL_VAR(test_log)
 	run_loc_top_right = locate(turf_reservation.top_right_coords[1], turf_reservation.top_right_coords[2], turf_reservation.top_right_coords[3])
 
 /datum/unit_test/Destroy()
+	QDEL_LIST(allocated)
 	//clear the test area
 	for(var/atom/movable/AM in block(run_loc_bottom_left, run_loc_top_right))
 		qdel(AM)
-	QDEL_LIST(allocated)
 	return ..()
 
 /datum/unit_test/proc/Run()
