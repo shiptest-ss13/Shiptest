@@ -195,9 +195,12 @@
 	},
 /turf/open/floor/wood,
 /area/whitesands/surface/outdoors)
+"ut" = (
+/turf/open/floor/plating/asteroid,
+/area/template_noop)
 "uM" = (
 /obj/structure/lattice,
-/turf/template_noop,
+/turf/open/floor/plating/asteroid,
 /area/whitesands/surface/outdoors)
 "vc" = (
 /obj/structure/cable{
@@ -362,20 +365,16 @@
 /turf/open/floor/plating,
 /area/whitesands/surface/outdoors)
 "Lz" = (
-/obj/effect/mob_spawn/human/corpse{
-	head = 0;
-	mob_species = /datum/species/golem
-	},
 /obj/item/ammo_casing/spent{
 	dir = 1;
 	pixel_x = 7;
 	pixel_y = 4
 	},
-/obj/item/gun/ballistic/automatic/zip_pistol{
-	pixel_x = 5;
-	pixel_y = 9
-	},
 /obj/effect/decal/cleanable/blood/gibs,
+/obj/item/gun/ballistic/automatic/pistol/commander{
+	pixel_y = 7
+	},
+/obj/effect/mob_spawn/human/corpse/assistant,
 /turf/open/floor/plating{
 	icon_state = "panelscorched"
 	},
@@ -421,7 +420,9 @@
 /obj/machinery/door/window/westright,
 /obj/structure/window/reinforced/spawner,
 /obj/machinery/atmospherics/components/binary/pump/layer2,
-/turf/open/floor/plating/foam,
+/turf/open/floor/plating{
+	icon_state = "platingdmg1"
+	},
 /area/whitesands/surface/outdoors)
 "Te" = (
 /obj/structure/table,
@@ -544,9 +545,9 @@
 /area/whitesands/surface/outdoors)
 
 (1,1,1) = {"
-iH
-iH
-iH
+ut
+ut
+ut
 uM
 uM
 uM
@@ -555,9 +556,9 @@ jX
 sQ
 uM
 uM
-iH
-iH
-iH
+ut
+ut
+ut
 iH
 iH
 "}
@@ -575,8 +576,8 @@ Nb
 dr
 dr
 uM
-iH
-iH
+ut
+ut
 iH
 "}
 (3,1,1) = {"
@@ -594,7 +595,7 @@ Ka
 fE
 KR
 uM
-iH
+ut
 iH
 "}
 (4,1,1) = {"
@@ -613,7 +614,7 @@ im
 gg
 sQ
 uM
-iH
+ut
 "}
 (5,1,1) = {"
 Rt
@@ -648,8 +649,8 @@ DF
 pa
 sQ
 uM
-iH
-iH
+ut
+ut
 "}
 (7,1,1) = {"
 Mi
@@ -665,7 +666,7 @@ Nb
 pa
 pa
 uM
-iH
+ut
 iH
 iH
 "}
@@ -681,15 +682,15 @@ jX
 sQ
 Nb
 uM
-iH
-iH
+ut
+ut
 iH
 iH
 iH
 "}
 (9,1,1) = {"
-iH
-iH
+ut
+ut
 uM
 uM
 sQ
@@ -698,7 +699,7 @@ sI
 sQ
 uM
 uM
-iH
+ut
 iH
 iH
 iH
@@ -708,14 +709,14 @@ iH
 (10,1,1) = {"
 iH
 iH
-iH
-iH
-iH
+ut
+ut
+ut
 uM
 uM
 uM
-iH
-iH
+ut
+ut
 iH
 iH
 iH
@@ -729,9 +730,9 @@ iH
 iH
 iH
 iH
-iH
+ut
 uM
-iH
+ut
 iH
 iH
 iH
