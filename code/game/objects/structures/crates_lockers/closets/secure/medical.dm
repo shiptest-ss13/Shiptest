@@ -85,7 +85,7 @@
 	new /obj/item/clothing/head/beret/cmo(src) //Berets
 	new /obj/item/clothing/under/rank/command(src) //Better command uniforms
 	new /obj/item/storage/box/hypospray/CMO(src) //Hypo mk. 2s
-	//new /obj/item/card/id/departmental_budget/med(src) //Budget cards [NOT BALANCED FOR SHIPTEST]
+	//new /obj/item/card/id/departmental_budget/med(src)  Budget cards [NOT BALANCED FOR SHIPTEST]
 	//WS End
 	new /obj/item/clothing/neck/cloak/cmo(src)
 	new /obj/item/clothing/suit/bio_suit/cmo(src)

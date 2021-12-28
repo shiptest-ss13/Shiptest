@@ -6,7 +6,7 @@
 /obj/structure/closet/secure_closet/RD/PopulateContents()
 	..()
 	new /obj/item/clothing/head/beret/rd(src) //WS edit - Berets
-	// new /obj/item/card/id/departmental_budget/sci(src) //WS Edit - Budget Cards [NOT BALANCED FOR SHIPTEST]
+	// new /obj/item/card/id/departmental_budget/sci(src)  WS Edit - Budget Cards [NOT BALANCED FOR SHIPTEST]
 	new /obj/item/clothing/under/rank/command(src) //WS edit - better command uniforms
 	new /obj/item/clothing/neck/cloak/rd(src)
 	new /obj/item/clothing/suit/bio_suit/scientist(src)
