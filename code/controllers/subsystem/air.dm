@@ -52,6 +52,7 @@ SUBSYSTEM_DEF(air)
 
 	var/log_explosive_decompression = TRUE // If things get spammy, admemes can turn this off.
 
+	var/planet_equalize_enabled = FALSE
 	// Max number of turfs equalization will grab.
 	var/equalize_turf_limit = 10
 	// Max number of turfs to look for a space turf, and max number of turfs that will be decompressed.
