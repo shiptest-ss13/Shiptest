@@ -393,7 +393,9 @@ SUBSYSTEM_DEF(air)
 	while(currentrun.len)
 		var/obj/machinery/M = currentrun[currentrun.len]
 		currentrun.len--
-		if(!M || (M.process_atmos(seconds) == PROCESS_KILL))
+		if(!M)
+			atmos_machinery -= M
+		if(M.process_atmos(seconds) == PROCESS_KILL)
 			atmos_machinery.Remove(M)
 		if(MC_TICK_CHECK)
 			return
@@ -407,7 +409,9 @@ SUBSYSTEM_DEF(air)
 	while(currentrun.len)
 		var/obj/machinery/M = currentrun[currentrun.len]
 		currentrun.len--
-		if(!M || (M.process_atmos(seconds) == PROCESS_KILL))
+		if(!M)
+			atmos_air_machinery -= M
+		if(M.process_atmos(seconds) == PROCESS_KILL)
 			atmos_air_machinery.Remove(M)
 		if(MC_TICK_CHECK)
 			return

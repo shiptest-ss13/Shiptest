@@ -20,10 +20,13 @@
 	SSair.networks -= src
 	if(building)
 		SSair.remove_from_expansion(src)
-	if(air && air.return_volume())
+	if(air?.return_volume())
 		temporarily_store_air()
 	for(var/obj/machinery/atmospherics/pipe/P in members)
 		P.parent = null
+		if(QDELETED(P))
+			continue
+		SSair.add_to_rebuild_queue(P)
 	for(var/obj/machinery/atmospherics/components/C in other_atmosmch)
 		C.nullifyPipenet(src)
 	return ..()
