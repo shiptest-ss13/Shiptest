@@ -253,7 +253,7 @@ SUBSYSTEM_DEF(air)
 		resumed = 0
 		currentpart = SSAIR_HOTSPOTS
 	*/
-	currentpart = SSAIR_REBUILD_PIPENETS
+	currentpart = SSAIR_PIPENETS
 
 
 
