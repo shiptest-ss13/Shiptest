@@ -7,6 +7,9 @@
 
 	var/update = TRUE
 
+	///Is this pipeline being reconstructed?
+	var/building = FALSE
+
 /datum/pipeline/New()
 	other_airs = list()
 	members = list()
@@ -15,6 +18,8 @@
 
 /datum/pipeline/Destroy()
 	SSair.networks -= src
+	if(building)
+		SSair.remove_from_expansion(src)
 	if(air && air.return_volume())
 		temporarily_store_air()
 	for(var/obj/machinery/atmospherics/pipe/P in members)
@@ -24,15 +29,34 @@
 	return ..()
 
 /datum/pipeline/process()
+	if(building)
+		return
 	if(update)
 		update = FALSE
 		reconcile_air()
 	update = air.react(src)
 
 /datum/pipeline/proc/build_pipeline(obj/machinery/atmospherics/base)
-#ifdef CITESTING
-	return
-#endif
+	building = TRUE
+	var/volume = 0
+	if(istype(base, /obj/machinery/atmospherics/pipe))
+		var/obj/machinery/atmospherics/pipe/considered_pipe = base
+		volume = considered_pipe.volume
+		members += considered_pipe
+		if(considered_pipe.air_temporary)
+			air = considered_pipe.air_temporary
+			considered_pipe.air_temporary = null
+	else
+		addMachineryMember(base)
+
+	if(!air)
+		air = new
+
+	air.set_volume(volume)
+	SSair.add_to_expansion(src, base)
+
+///Has the same effect as build_pipeline(), but this doesn't queue its work, so overrun abounds. It's useful for the pregame
+/datum/pipeline/proc/build_pipeline_blocking(obj/machinery/atmospherics/base)
 	var/volume = 0
 	if(istype(base, /obj/machinery/atmospherics/pipe))
 		var/obj/machinery/atmospherics/pipe/E = base
@@ -88,9 +112,6 @@
 	other_airs |= returned_airs
 
 /datum/pipeline/proc/addMember(obj/machinery/atmospherics/A, obj/machinery/atmospherics/N)
-#ifdef CITESTING
-	return
-#endif
 	if(istype(A, /obj/machinery/atmospherics/pipe))
 		var/obj/machinery/atmospherics/pipe/P = A
 		if(P.parent)
@@ -110,9 +131,6 @@
 		addMachineryMember(A)
 
 /datum/pipeline/proc/merge(datum/pipeline/E)
-#ifdef CITESTING
-	return
-#endif
 	if(E == src)
 		return
 	air.set_volume(air.return_volume() + E.air.return_volume())
