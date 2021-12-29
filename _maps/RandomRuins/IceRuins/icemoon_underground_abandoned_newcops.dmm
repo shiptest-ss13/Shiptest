@@ -7,6 +7,11 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood,
 /area/ruin/powered)
+"bf" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/holopad/emergency/command,
+/turf/open/floor/plasteel/dark,
+/area/ruin/powered)
 "bF" = (
 /obj/machinery/computer/mech_bay_power_console,
 /obj/effect/decal/cleanable/dirt,
@@ -367,7 +372,7 @@
 /area/template_noop)
 "rG" = (
 /turf/open/floor/plating/asteroid/snow/icemoon,
-/area/icemoon/underground/unexplored)
+/area/icemoon/underground/explored)
 "sf" = (
 /obj/effect/turf_decal/corner/bar,
 /obj/effect/turf_decal/corner/bar{
@@ -590,7 +595,7 @@
 	picked_color = "Burgundy"
 	},
 /turf/open/floor/plating/asteroid/snow/icemoon,
-/area/icemoon/underground/unexplored)
+/area/icemoon/underground/explored)
 "Bo" = (
 /obj/item/documents/syndicate,
 /obj/item/clothing/gloves/krav_maga/combatglovesplus,
@@ -715,7 +720,7 @@
 "FL" = (
 /obj/structure/flora/bush,
 /turf/open/floor/plating/asteroid/snow/icemoon,
-/area/icemoon/underground/unexplored)
+/area/icemoon/underground/explored)
 "GU" = (
 /obj/effect/turf_decal/corner/bar,
 /obj/effect/turf_decal/corner/bar{
@@ -857,6 +862,11 @@
 "LP" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating,
+/area/ruin/powered)
+"LR" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/holopad/emergency/bar,
+/turf/open/floor/wood,
 /area/ruin/powered)
 "LU" = (
 /obj/effect/turf_decal/corner/bar,
@@ -1039,7 +1049,7 @@
 "WV" = (
 /obj/structure/flora/grass/both,
 /turf/open/floor/plating/asteroid/snow/icemoon,
-/area/icemoon/underground/unexplored)
+/area/icemoon/underground/explored)
 "WW" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -1067,7 +1077,7 @@
 "Xn" = (
 /obj/structure/flora/tree/pine,
 /turf/open/floor/plating/asteroid/snow/icemoon,
-/area/icemoon/underground/unexplored)
+/area/icemoon/underground/explored)
 "XN" = (
 /obj/machinery/light,
 /obj/effect/decal/cleanable/dirt,
@@ -1110,9 +1120,6 @@
 /obj/structure/bed,
 /turf/open/floor/wood,
 /area/ruin/powered)
-"Zp" = (
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/icemoon/underground/unexplored)
 "ZL" = (
 /obj/machinery/door/airlock/centcom{
 	name = "EVA Equipment";
@@ -1582,7 +1589,7 @@ Rj
 vV
 vV
 vV
-Zp
+vV
 Xn
 rG
 rG
@@ -1683,7 +1690,7 @@ sf
 Je
 Ut
 tg
-Cs
+LR
 ic
 vV
 Qb
@@ -2285,7 +2292,7 @@ gp
 fa
 xa
 Di
-ZU
+bf
 LP
 ZU
 LP
