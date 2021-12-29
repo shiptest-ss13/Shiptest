@@ -4,9 +4,22 @@
 	"map_path": "_maps/shuttles/shiptest/engi_moth.dmm",
 	"map_id": "engi_moth",
 	"job_slots": {
-		"Chief Engineer": 1,
-		"Station Engineer": 5,
-		"Atmospheric Technician": 2
+		"Project Overseer": {
+			"outfit": "/datum/outfit/job/ce/gec",
+			"slots": 1
+		},
+		"Ship Engineer": {
+			"outfit": "/datum/outfit/job/engineer/gec",
+			"slots": 3
+		},
+		"Atmospherics Technician": {
+			"outfit": "/datum/outfit/job/atmos/gec",
+			"slots": 2
+		},
+		"Chemical Engineer": {
+			"outfit": "/datum/outfit/job/chemist/gec",
+			"slots": 1
+		}
 	},
 	"cost": 750
 }
