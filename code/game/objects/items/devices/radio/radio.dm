@@ -316,8 +316,10 @@
 		return independent  // hard-ignores the z-level check
 	if (!(0 in map_zones))
 		var/turf/position = get_turf(src)
+		if(!position)
+			return FALSE
 		var/datum/map_zone/mapzone = position.get_map_zone()
-		if(!position || !(mapzone in map_zones))
+		if(!(mapzone in map_zones))
 			return FALSE
 
 	// allow checks: are we listening on that frequency?
