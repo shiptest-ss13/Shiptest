@@ -1,4 +1,4 @@
-/proc/get_step_multiz(ref, dir)
+/proc/get_step_multiz(atom/ref, dir)
 	var/multiz_dir = NONE
 	if(dir & UP)
 		dir &= ~UP
@@ -6,13 +6,17 @@
 	else if(dir & DOWN)
 		dir &= ~DOWN
 		multiz_dir = DOWN
-	var/turf/step_turf = get_step(get_turf(ref), dir)
+	var/turf/my_turf = get_turf(ref)
+	if(dir)
+		my_turf = get_step(my_turf, dir)
+		if(!my_turf)
+			return
 	switch(multiz_dir)
 		if(UP)
-			return step_turf.above()
+			return my_turf.above()
 		if(DOWN)
-			return step_turf.below()
-	return step_turf
+			return my_turf.below()
+	return my_turf
 
 /proc/get_dir_multiz(turf/us, turf/them)
 	us = get_turf(us)
