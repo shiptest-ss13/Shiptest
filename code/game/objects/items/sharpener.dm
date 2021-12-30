@@ -9,7 +9,7 @@
 	var/apincrement = 0
 	var/toolincrement = 0//subtract by decimal percentages for best effect, if trying to upgrade
 	var/max = 30
-	var/prefix = "sharpen"
+	var/prefix = "sharpened"
 	var/requires_sharpness = 1
 	var/used = 0
 	var/stackable = FALSE//for effects that can be applied multiple times, set to TRUE
