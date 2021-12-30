@@ -635,6 +635,7 @@
 	Only a few were ever produced, mostly for NT research institutions, and they are a valulable relic in the postwar age."
 	slowdown = 0.5//hevy
 	attack_verb = list("mashed", "flattened", "bisected", "eradicated","destroyed")
+	attackspeed = 2
 
 /obj/item/kinetic_crusher/old/examine(mob/user)
 	. = ..()
@@ -644,10 +645,6 @@
 	. = ..()
 	AddComponent(/datum/component/butchering, 60, 110)
 	AddComponent(/datum/component/two_handed, force_unwielded=0, force_wielded=45)//big choppa!
-
-/obj/item/kinetic_crusher/old/melee_attack_chain(mob/user, atom/target, params)
-	..()
-	user.changeNext_move(CLICK_CD_MELEE * 2.0)//...slow swinga.
 
 /obj/item/kinetic_crusher/old/update_icon_state()
 	item_state = "crusherold[wielded]" // still not supported by 2hcomponent
