@@ -72,7 +72,6 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/atmospherics)
 "bu" = (
-/obj/structure/fans/tiny,
 /obj/machinery/door/window/brigdoor{
 	dir = 1
 	},
@@ -83,6 +82,7 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
 	},
+/obj/structure/holosign/barrier/atmos,
 /turf/open/floor/engine,
 /area/ship/engineering/engine)
 "bv" = (
@@ -100,7 +100,7 @@
 "bB" = (
 /obj/machinery/atmospherics/pipe/simple/orange/hidden/layer1,
 /obj/effect/decal/hammerandsickle{
-	desc = "GEC power union"
+	desc = "Engineers powerful force"
 	},
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -163,6 +163,7 @@
 /area/ship/engineering)
 "cW" = (
 /obj/item/pod_parts/pod_frame/fore_starboard,
+/obj/effect/turf_decal/box/corners,
 /turf/open/floor/mineral/plastitanium/red,
 /area/ship/science/robotics)
 "dh" = (
@@ -667,6 +668,7 @@
 /obj/machinery/power/apc/auto_name/north,
 /obj/item/clothing/under/syndicate/tacticool,
 /obj/item/clothing/under/syndicate/tacticool/skirt,
+/obj/item/holosign_creator/atmos,
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/atmospherics)
 "kd" = (
@@ -806,6 +808,7 @@
 	name = "Window Shutters";
 	pixel_y = -25
 	},
+/obj/item/stock_parts/cell/high/plus,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/crew)
 "mn" = (
@@ -826,6 +829,7 @@
 /obj/item/radio/intercom{
 	pixel_y = -32
 	},
+/obj/item/stock_parts/capacitor/adv,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/crew)
 "mL" = (
@@ -862,6 +866,9 @@
 /area/ship/engineering/atmospherics)
 "nn" = (
 /obj/item/pod_parts/pod_frame/aft_starboard,
+/obj/effect/turf_decal/box/corners{
+	dir = 4
+	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/ship/science/robotics)
 "nt" = (
@@ -1333,6 +1340,9 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 9
 	},
+/obj/effect/turf_decal/box/corners{
+	dir = 1
+	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/ship/science/robotics)
 "vJ" = (
@@ -1400,6 +1410,7 @@
 /obj/machinery/airalarm/directional/west,
 /obj/item/clothing/under/syndicate/tacticool,
 /obj/item/clothing/under/syndicate/tacticool/skirt,
+/obj/item/holosign_creator/engineering,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
 "wi" = (
@@ -1612,6 +1623,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/item/clothing/under/syndicate/tacticool,
 /obj/item/clothing/under/syndicate/tacticool/skirt,
+/obj/item/holosign_creator/atmos,
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/atmospherics)
 "yJ" = (
@@ -1629,6 +1641,7 @@
 /obj/item/clothing/head/beret/eng,
 /obj/item/clothing/under/syndicate/tacticool,
 /obj/item/clothing/under/syndicate/tacticool/skirt,
+/obj/item/holosign_creator/engineering,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
 "yY" = (
@@ -1990,6 +2003,7 @@
 	},
 /obj/item/mecha_parts/mecha_equipment/rcd,
 /obj/item/stack/sheet/plasteel/twenty,
+/obj/item/storage/part_replacer,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
 "GL" = (
@@ -2041,6 +2055,7 @@
 "HA" = (
 /obj/effect/turf_decal/corner/yellow/three_quarters,
 /obj/item/kirbyplants/random,
+/obj/item/stock_parts/scanning_module/adv,
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "HI" = (
@@ -2196,6 +2211,8 @@
 /obj/item/circuitboard/machine/techfab/department/engineering,
 /obj/item/clothing/under/syndicate/tacticool,
 /obj/item/clothing/under/syndicate/tacticool/skirt,
+/obj/item/holosign_creator/engineering,
+/obj/item/holosign_creator/atmos,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
 "JR" = (
@@ -2477,6 +2494,9 @@
 	dir = 1
 	},
 /obj/item/pod_parts/pod_frame/fore_port,
+/obj/effect/turf_decal/box/corners{
+	dir = 8
+	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/ship/science/robotics)
 "Po" = (
