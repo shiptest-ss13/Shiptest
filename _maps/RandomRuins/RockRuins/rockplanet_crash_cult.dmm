@@ -179,6 +179,12 @@
 /obj/structure/barricade/wooden/crude,
 /turf/open/floor/plasteel/cult,
 /area/whitesands/surface/outdoors)
+"hX" = (
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 10
+	},
+/turf/open/floor/plating/asteroid,
+/area/template_noop)
 "hY" = (
 /obj/effect/decal/cleanable/blood,
 /obj/effect/decal/cleanable/blood/tracks{
@@ -188,6 +194,13 @@
 	dir = 10
 	},
 /turf/open/floor/plasteel/cult,
+/area/whitesands/surface/outdoors)
+"ir" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/item/flashlight/glowstick/red{
+	on = 1
+	},
+/turf/open/floor/plating,
 /area/whitesands/surface/outdoors)
 "ix" = (
 /obj/machinery/processor,
@@ -241,7 +254,7 @@
 /turf/open/floor/plating,
 /area/whitesands/surface/outdoors)
 "jG" = (
-/turf/template_noop,
+/turf/open/floor/plating/asteroid,
 /area/template_noop)
 "jI" = (
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
@@ -250,6 +263,15 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/cult,
+/area/whitesands/surface/outdoors)
+"jM" = (
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 5
+	},
 /turf/open/floor/plasteel/cult,
 /area/whitesands/surface/outdoors)
 "kb" = (
@@ -273,6 +295,12 @@
 /mob/living/simple_animal/hostile/construct/proteon/hostile,
 /turf/open/floor/plating,
 /area/whitesands/surface/outdoors)
+"kr" = (
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 1
+	},
+/turf/closed/wall/mineral/cult,
+/area/whitesands/surface/outdoors)
 "ku" = (
 /obj/machinery/suit_storage_unit/atmos,
 /obj/effect/turf_decal/corner/brown{
@@ -293,6 +321,9 @@
 /obj/effect/decal/cleanable/blood/tracks{
 	dir = 4
 	},
+/obj/item/flashlight/glowstick/red{
+	on = 1
+	},
 /turf/open/floor/plating,
 /area/whitesands/surface/outdoors)
 "lQ" = (
@@ -305,6 +336,10 @@
 	},
 /turf/open/floor/plasteel/cult,
 /area/whitesands/surface/outdoors)
+"mo" = (
+/obj/structure/flora/rock/pile,
+/turf/open/floor/plating/asteroid,
+/area/template_noop)
 "mR" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/blood/tracks{
@@ -319,6 +354,18 @@
 /obj/machinery/advanced_airlock_controller{
 	dir = 8;
 	pixel_x = 24
+	},
+/obj/item/flashlight/glowstick/red{
+	on = 1
+	},
+/turf/open/floor/plasteel/cult,
+/area/whitesands/surface/outdoors)
+"nG" = (
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 4
+	},
+/obj/item/flashlight/glowstick/red{
+	on = 1
 	},
 /turf/open/floor/plasteel/cult,
 /area/whitesands/surface/outdoors)
@@ -341,12 +388,14 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/corner/green,
-/obj/machinery/computer/cryopod{
-	pixel_x = 32
-	},
-/obj/machinery/cryopod,
 /turf/open/floor/plating,
 /area/whitesands/surface/outdoors)
+"oC" = (
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 4
+	},
+/turf/open/floor/plating/asteroid,
+/area/template_noop)
 "pN" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/blood,
@@ -378,6 +427,12 @@
 /obj/effect/decal/cleanable/blood/tracks,
 /turf/open/floor/plasteel/cult,
 /area/whitesands/surface/outdoors)
+"qf" = (
+/obj/item/flashlight/glowstick/red{
+	on = 1
+	},
+/turf/open/floor/plating/asteroid,
+/area/template_noop)
 "qm" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on,
 /obj/item/radio/intercom/wideband{
@@ -471,6 +526,12 @@
 	},
 /obj/effect/decal/cleanable/blood,
 /turf/open/floor/plasteel/cult,
+/area/whitesands/surface/outdoors)
+"vm" = (
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 1
+	},
+/turf/open/floor/plating,
 /area/whitesands/surface/outdoors)
 "vE" = (
 /obj/structure/tank_dispenser/oxygen,
@@ -606,6 +667,11 @@
 	},
 /turf/open/floor/plating,
 /area/whitesands/surface/outdoors)
+"Ag" = (
+/obj/item/pickaxe/rusted,
+/obj/effect/gibspawner/human/bodypartless,
+/turf/open/floor/plating/asteroid,
+/area/template_noop)
 "BT" = (
 /obj/structure/constructshell,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -636,10 +702,20 @@
 	},
 /turf/open/floor/plasteel/cult,
 /area/whitesands/surface/outdoors)
+"Cz" = (
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 5
+	},
+/turf/open/floor/plating/asteroid,
+/area/template_noop)
 "CP" = (
 /obj/machinery/power/port_gen/pacman,
 /turf/open/floor/plating,
 /area/whitesands/surface/outdoors)
+"Dd" = (
+/obj/structure/marker_beacon,
+/turf/open/floor/plating/asteroid,
+/area/template_noop)
 "Df" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on{
 	dir = 8
@@ -652,6 +728,11 @@
 	},
 /turf/open/floor/plasteel/cult,
 /area/whitesands/surface/outdoors)
+"Dr" = (
+/obj/structure/marker_beacon,
+/obj/effect/decal/cleanable/blood/tracks,
+/turf/open/floor/plating/asteroid,
+/area/template_noop)
 "Dy" = (
 /obj/effect/decal/cleanable/blood,
 /obj/effect/turf_decal/corner/green{
@@ -742,6 +823,9 @@
 	},
 /obj/effect/decal/cleanable/blood/tracks{
 	dir = 4
+	},
+/obj/item/flashlight/glowstick/red{
+	on = 1
 	},
 /turf/open/floor/plating,
 /area/whitesands/surface/outdoors)
@@ -882,6 +966,9 @@
 /obj/item/areaeditor/shuttle,
 /turf/open/floor/plating,
 /area/whitesands/surface/outdoors)
+"Lo" = (
+/turf/closed/mineral/random/asteroid/rockplanet,
+/area/template_noop)
 "LB" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on{
 	dir = 4
@@ -906,6 +993,9 @@
 "LV" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/turf_decal/corner/brown,
+/obj/item/flashlight/glowstick/red{
+	on = 1
+	},
 /turf/open/floor/plasteel/cult,
 /area/whitesands/surface/outdoors)
 "Mf" = (
@@ -936,19 +1026,6 @@
 /turf/open/floor/plasteel/cult,
 /area/whitesands/surface/outdoors)
 "MQ" = (
-/obj/docking_port/mobile{
-	callTime = 250;
-	can_move_docking_ports = 1;
-	dir = 2;
-	dwidth = 11;
-	height = 17;
-	launch_status = 0;
-	movement_force = list("KNOCKDOWN" = 0, "THROW" = 0);
-	name = "Salvage Ship";
-	port_direction = 8;
-	preferred_direction = 4;
-	width = 33
-	},
 /obj/machinery/door/airlock/external,
 /obj/effect/mapping_helpers/airlock/cyclelink_helper,
 /turf/open/floor/plasteel,
@@ -958,7 +1035,6 @@
 /obj/effect/turf_decal/corner/green{
 	dir = 4
 	},
-/obj/machinery/cryopod,
 /turf/open/floor/plating,
 /area/whitesands/surface/outdoors)
 "NM" = (
@@ -1022,6 +1098,10 @@
 "Pi" = (
 /turf/open/floor/plasteel/cult,
 /area/whitesands/surface/outdoors)
+"PY" = (
+/obj/structure/flora/rock,
+/turf/open/floor/plating/asteroid,
+/area/template_noop)
 "Qb" = (
 /obj/machinery/light/broken,
 /obj/effect/turf_decal/corner/blue,
@@ -1192,6 +1272,14 @@
 /obj/effect/decal/cleanable/blood,
 /turf/open/floor/plating,
 /area/whitesands/surface/outdoors)
+"Wn" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 4
+	},
+/obj/structure/marker_beacon,
+/turf/open/floor/plating,
+/area/whitesands/surface/outdoors)
 "WM" = (
 /obj/structure/table,
 /obj/structure/cable,
@@ -1265,6 +1353,9 @@
 /obj/effect/turf_decal/corner/green{
 	dir = 1
 	},
+/obj/item/flashlight/glowstick/red{
+	on = 1
+	},
 /turf/open/floor/plating,
 /area/whitesands/surface/outdoors)
 "XJ" = (
@@ -1278,6 +1369,13 @@
 /obj/machinery/atmospherics/pipe/simple/green/visible,
 /turf/closed/wall/mineral/cult,
 /area/whitesands/surface/outdoors)
+"Yv" = (
+/obj/structure/marker_beacon,
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 5
+	},
+/turf/open/floor/plating/asteroid,
+/area/template_noop)
 "Yw" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/turf_decal/corner/brown{
@@ -1307,8 +1405,8 @@
 jG
 jG
 jG
-jG
-jG
+Dd
+mo
 jG
 jG
 jn
@@ -1316,9 +1414,9 @@ cE
 eC
 Ir
 jG
+PY
 jG
-jG
-jG
+Dd
 jG
 jG
 jG
@@ -1330,9 +1428,9 @@ ZQ
 ZQ
 ZQ
 jn
-jG
+mo
 zR
-mR
+Wn
 WR
 zR
 jG
@@ -1348,7 +1446,7 @@ ZQ
 Wf
 HH
 yS
-QT
+ir
 jn
 jG
 zR
@@ -1527,9 +1625,9 @@ jn
 jG
 jG
 jG
+Dd
 jG
-jG
-jG
+qf
 jG
 ZQ
 We
@@ -1538,7 +1636,7 @@ zR
 jG
 jG
 jG
-jG
+Dd
 jG
 jG
 jG
@@ -1552,7 +1650,7 @@ ZQ
 ZQ
 jG
 ZQ
-We
+nG
 pN
 zR
 jG
@@ -1652,10 +1750,10 @@ vE
 jn
 jG
 jn
-We
-yS
-ZQ
-jG
+jM
+vm
+kr
+hX
 jn
 xz
 VP
@@ -1675,7 +1773,7 @@ ZQ
 We
 QT
 jn
-jG
+oC
 jn
 jn
 zR
@@ -1688,25 +1786,25 @@ jG
 jG
 jG
 jG
-jG
+Dd
 jG
 jG
 ZQ
 Cx
 Pi
 jn
+Cz
+Dr
+hX
 jG
 jG
 jG
-jG
-jG
-jG
-jG
+Lo
 "}
 (21,1,1) = {"
+Lo
 jG
-jG
-jG
+PY
 jG
 jG
 jG
@@ -1716,18 +1814,18 @@ ye
 dK
 xP
 ZQ
-jG
-jG
-jG
-jG
-jG
-jG
+PY
+oC
+qf
+Lo
+Lo
+Lo
 "}
 (22,1,1) = {"
+Lo
 jG
 jG
-jG
-jG
+mo
 jG
 jn
 ZQ
@@ -1737,17 +1835,17 @@ NM
 WM
 ZQ
 ZQ
-jG
-jG
-jG
-jG
-jG
+oC
+Lo
+Lo
+Lo
+Lo
 "}
 (23,1,1) = {"
+Lo
+Lo
 jG
-jG
-jG
-jG
+Dd
 jG
 XJ
 pV
@@ -1757,17 +1855,17 @@ fe
 Gc
 tE
 XJ
+Yv
+Ag
 jG
-jG
-jG
-jG
+Dd
 jG
 "}
 (24,1,1) = {"
+Lo
+Lo
 jG
-jG
-jG
-jG
+qf
 jG
 XJ
 rO
@@ -1778,15 +1876,15 @@ tl
 Mf
 ZQ
 jG
-jG
-jG
-jG
+mo
+Lo
+Lo
 jG
 "}
 (25,1,1) = {"
-jG
-jG
-jG
+Lo
+Lo
+Lo
 jG
 jG
 XJ
@@ -1798,16 +1896,16 @@ Ud
 ZQ
 ZQ
 jG
-jG
-jG
-jG
-jG
+Lo
+Lo
+Lo
+Lo
 "}
 (26,1,1) = {"
-jG
-jG
-jG
-jG
+Lo
+Lo
+Lo
+Lo
 jG
 jG
 XJ
@@ -1820,6 +1918,6 @@ jG
 jG
 jG
 jG
-jG
-jG
+Lo
+Lo
 "}

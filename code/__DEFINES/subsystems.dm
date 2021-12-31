@@ -178,6 +178,10 @@
 #define FIRE_PRIORITY_EXPLOSIONS 666
 #define FIRE_PRIORITY_INPUT 1000 // This must always always be the max highest priority. Player input must never be lost.
 
+//Pipeline rebuild helper defines, these suck but it'll do for now
+#define SSAIR_REBUILD_PIPELINE 1
+#define SSAIR_REBUILD_QUEUE 2
+
 // SS runlevels
 
 #define RUNLEVEL_INIT 0
