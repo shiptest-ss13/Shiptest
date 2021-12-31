@@ -627,9 +627,6 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
 "jS" = (
-/obj/machinery/atmospherics/components/trinary/mixer/airmix{
-	dir = 1
-	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
@@ -640,6 +637,9 @@
 	icon_state = "4-8"
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/components/trinary/mixer/airmix/inverse{
+	dir = 1
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/atmospherics)
 "jY" = (
