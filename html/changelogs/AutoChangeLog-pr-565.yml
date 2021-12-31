@@ -1,0 +1,6 @@
+author: jupyterkat
+delete-after: true
+changes:
+  - bugfix: pipe rebuilds runtime a bit less now
+  - refactor: Things that break pipes will cause much less game lag now. Looking at
+      you singularity
