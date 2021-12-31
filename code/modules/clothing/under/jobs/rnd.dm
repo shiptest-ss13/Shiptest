@@ -38,6 +38,7 @@
 	fitted = FEMALE_UNIFORM_TOP
 
 /obj/item/clothing/under/rank/rnd/research_director/turtleneck
+	//test
 	desc = "A dark purple turtleneck and tan khakis, for a director with a superior sense of style."
 	name = "research director's turtleneck"
 	icon_state = "rdturtle"
