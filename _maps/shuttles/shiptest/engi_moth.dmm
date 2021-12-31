@@ -259,7 +259,8 @@
 	dir = 8
 	},
 /obj/structure/closet/secure{
-	icon_state = "med"
+	icon_state = "med";
+	name = "Chemist's locker"
 	},
 /obj/item/construction/plumbing,
 /obj/item/clothing/suit/toggle/hazard,
@@ -449,11 +450,37 @@
 	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/ship/science/robotics)
+"hw" = (
+/obj/effect/turf_decal/techfloor/orange{
+	dir = 8
+	},
+/obj/structure/closet/secure{
+	icon_state = "eng_secure";
+	name = "Engineer's locker"
+	},
+/obj/item/clothing/gloves/color/yellow,
+/obj/item/pipe_dispenser,
+/obj/item/clothing/glasses/meson/engine,
+/obj/item/clothing/suit/toggle/hazard,
+/obj/item/clothing/head/beret/eng/hazard,
+/obj/item/clothing/head/beret/eng,
+/obj/item/clothing/under/syndicate/tacticool,
+/obj/item/clothing/under/syndicate/tacticool/skirt,
+/obj/item/holosign_creator/engineering,
+/obj/machinery/firealarm{
+	dir = 4;
+	pixel_x = -28
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/engineering)
 "hA" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
 	},
 /obj/item/spacepod_equipment/weaponry/plasma_cutter,
+/obj/item/radio/intercom{
+	pixel_y = 22
+	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/science/robotics)
 "hN" = (
@@ -497,6 +524,12 @@
 	},
 /obj/machinery/door/airlock/engineering/glass,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only{
 	dir = 4
 	},
 /turf/open/floor/mineral/plastitanium/red,
@@ -647,7 +680,8 @@
 	dir = 4
 	},
 /obj/structure/closet/secure{
-	icon_state = "atmos"
+	icon_state = "atmos";
+	name = "Technician's locker"
 	},
 /obj/item/clothing/gloves/color/yellow,
 /obj/item/pipe_dispenser,
@@ -828,7 +862,7 @@
 /area/ship/engineering)
 "mR" = (
 /obj/machinery/nuclearbomb/beer{
-	desc = "A commemorative model of a Nuclear Device, the same used by the brave troops in red to voice their complaints about station conditions to NT.";
+	desc = "A commemorative model of a Nuclear Device, the same used by the brave troops in red to voice their complaints about station conditions to NT. Seems to have a tap on the back.";
 	name = "\improper Dwarven Accessibility Device"
 	},
 /obj/machinery/light,
@@ -910,6 +944,9 @@
 /obj/item/storage/pill_bottle/penacid,
 /obj/item/clothing/glasses/meson,
 /obj/item/clothing/glasses/meson,
+/obj/machinery/firealarm{
+	pixel_y = -26
+	},
 /turf/open/floor/engine,
 /area/ship/engineering/engine)
 "oa" = (
@@ -952,6 +989,9 @@
 	dir = 5
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/firealarm{
+	pixel_y = 24
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "oY" = (
@@ -976,6 +1016,10 @@
 	dir = 8
 	},
 /obj/machinery/suit_storage_unit/engine,
+/obj/item/radio/intercom{
+	dir = 4;
+	pixel_x = -22
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
 "pt" = (
@@ -1018,6 +1062,9 @@
 "qc" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 9
+	},
+/obj/machinery/firealarm{
+	pixel_y = 24
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/science/robotics)
@@ -1108,6 +1155,12 @@
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/medical)
@@ -1201,7 +1254,7 @@
 /area/ship/crew)
 "tp" = (
 /obj/structure/window/plasma/reinforced/spawner/north,
-/obj/machinery/atmospherics/components/unary/vent_pump/siphon/atmos/nitrogen_output{
+/obj/machinery/atmospherics/components/unary/vent_pump/siphon/atmos/oxygen_output{
 	dir = 1
 	},
 /turf/open/floor/engine/o2,
@@ -1223,6 +1276,12 @@
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/science/robotics)
@@ -1247,6 +1306,10 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
+	},
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
 	},
 /turf/open/floor/engine,
 /area/ship/engineering/engine)
@@ -1358,7 +1421,8 @@
 	dir = 8
 	},
 /obj/structure/closet/secure{
-	icon_state = "eng_secure"
+	icon_state = "eng_secure";
+	name = "Engineer's locker"
 	},
 /obj/item/clothing/gloves/color/yellow,
 /obj/item/pipe_dispenser,
@@ -1411,6 +1475,12 @@
 /area/ship/engineering)
 "wy" = (
 /obj/machinery/door/airlock/atmos/glass,
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/atmospherics)
 "wz" = (
@@ -1493,6 +1563,9 @@
 /obj/effect/turf_decal/corner/yellow/three_quarters{
 	dir = 1
 	},
+/obj/item/radio/intercom{
+	pixel_y = -32
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "xC" = (
@@ -1561,7 +1634,8 @@
 	dir = 4
 	},
 /obj/structure/closet/secure{
-	icon_state = "atmos"
+	icon_state = "atmos";
+	name = "Technician's locker"
 	},
 /obj/item/clothing/gloves/color/yellow,
 /obj/item/pipe_dispenser,
@@ -1574,6 +1648,10 @@
 /obj/item/clothing/under/syndicate/tacticool,
 /obj/item/clothing/under/syndicate/tacticool/skirt,
 /obj/item/holosign_creator/atmos,
+/obj/machinery/firealarm{
+	dir = 4;
+	pixel_x = 26
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/atmospherics)
 "yJ" = (
@@ -1581,7 +1659,8 @@
 	dir = 8
 	},
 /obj/structure/closet/secure{
-	icon_state = "eng_secure"
+	icon_state = "eng_secure";
+	name = "Engineer's locker"
 	},
 /obj/item/clothing/gloves/color/yellow,
 /obj/item/pipe_dispenser,
@@ -1601,6 +1680,9 @@
 /obj/item/toy/plush/beeplushie,
 /obj/machinery/light{
 	dir = 1
+	},
+/obj/machinery/firealarm{
+	pixel_y = 24
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/crew)
@@ -1654,6 +1736,12 @@
 /area/ship/science/robotics)
 "An" = (
 /obj/machinery/door/airlock/engineering/glass,
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/ship/crew)
 "Ao" = (
@@ -1752,6 +1840,12 @@
 /area/ship/medical)
 "CJ" = (
 /obj/machinery/door/airlock/medical/glass,
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/medical)
 "CP" = (
@@ -1835,6 +1929,12 @@
 /obj/machinery/atmospherics/pipe/simple/orange/visible{
 	dir = 8
 	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/science/robotics)
 "EF" = (
@@ -1846,6 +1946,12 @@
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only{
 	dir = 4
 	},
 /turf/open/floor/plasteel/tech/grid,
@@ -1952,6 +2058,9 @@
 /obj/effect/turf_decal/corner/yellow/three_quarters,
 /obj/item/kirbyplants/random,
 /obj/item/stock_parts/scanning_module/adv,
+/obj/item/radio/intercom{
+	pixel_y = -32
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "HI" = (
@@ -2019,6 +2128,9 @@
 	},
 /obj/item/clothing/suit/fire/firefighter,
 /obj/item/mecha_parts/chassis/firefighter,
+/obj/item/radio/intercom{
+	pixel_y = -32
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/science/robotics)
 "Iu" = (
@@ -2061,7 +2173,8 @@
 /area/ship/crew)
 "JE" = (
 /obj/structure/closet/secure{
-	icon_state = "ce"
+	icon_state = "ce";
+	name = "Overseer's locker"
 	},
 /obj/item/clothing/gloves/combat,
 /obj/item/pipe_dispenser,
@@ -2253,6 +2366,10 @@
 /obj/machinery/door/airlock/maintenance_hatch,
 /obj/structure/barricade/wooden/crude,
 /obj/effect/mapping_helpers/airlock/locked,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/obj/machinery/door/firedoor/border_only,
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
 "MA" = (
@@ -2260,7 +2377,7 @@
 /obj/structure/window/plasma/reinforced/spawner/east{
 	dir = 8
 	},
-/obj/machinery/atmospherics/components/unary/vent_pump/siphon/atmos/oxygen_output{
+/obj/machinery/atmospherics/components/unary/vent_pump/siphon/atmos/nitrogen_output{
 	dir = 1
 	},
 /turf/open/floor/engine/n2,
@@ -2700,6 +2817,9 @@
 	dir = 9
 	},
 /obj/effect/turf_decal/techfloor/orange/corner,
+/obj/machinery/firealarm{
+	pixel_y = 24
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
 "YM" = (
@@ -3023,7 +3143,7 @@ sk
 vY
 yJ
 CP
-yJ
+hw
 JE
 Lq
 Lf
