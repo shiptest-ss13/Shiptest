@@ -90,7 +90,7 @@
 	backpack_contents = list(/obj/item/clothing/glasses/science=1)
 
 //Shiptest
-/datum/outfit/job/chemist/syndicate/gec
+/datum/outfit/job/chemist/gec
 	name = "GEC Chemical Engineer"
 
 	uniform = /obj/item/clothing/under/syndicate/intern

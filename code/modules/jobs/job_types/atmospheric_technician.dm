@@ -73,7 +73,7 @@
 	backpack_contents = list(/obj/item/modular_computer/tablet/preset/advanced=1, /obj/item/storage/belt/utility/atmostech=1)
 
 //Shiptest
-/datum/outfit/job/atmos/syndicate/gec
+/datum/outfit/job/atmos/gec
 	name = "GEC Atmos Tech"
 
 	uniform = /obj/item/clothing/under/syndicate/intern
@@ -82,7 +82,7 @@
 	ears = /obj/item/radio/headset/syndicate/alt
 	id = /obj/item/card/id/syndicate_command/crew_id
 
-/datum/outfit/job/engineer/syndicate/gec
+/datum/outfit/job/engineer/gec
 	name = "GEC Engineer"
 
 	uniform = /obj/item/clothing/under/syndicate/intern
@@ -91,7 +91,7 @@
 	ears = /obj/item/radio/headset/syndicate/alt
 	id = /obj/item/card/id/syndicate_command/crew_id
 
-/datum/outfit/job/ce/syndicate/gec
+/datum/outfit/job/ce/gec
 	name = "Chief Engineer (GEC)"
 
 	uniform = /obj/item/clothing/under/suit/black
