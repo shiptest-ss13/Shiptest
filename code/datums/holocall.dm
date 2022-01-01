@@ -9,6 +9,14 @@
 
 #define HOLORECORD_MAX_LENGTH 200
 
+/mob/camera/aiEye/remote/holo
+	use_static = USE_STATIC_NONE
+
+/mob/camera/aiEye/remote/holo/update_remote_sight(mob/living/user)
+	user.sight = NONE
+	user.see_in_dark = 1
+	return TRUE
+
 /mob/camera/aiEye/remote/holo/setLoc()
 	. = ..()
 	var/obj/machinery/holopad/H = origin

@@ -81,13 +81,14 @@
 	..()
 	update_parents()
 
-/obj/machinery/atmospherics/components/build_network()
+/obj/machinery/atmospherics/components/get_rebuild_targets()
+	var/list/to_return = list()
 	for(var/i in 1 to device_type)
-		if(!parents[i])
-			parents[i] = new /datum/pipeline()
-			var/datum/pipeline/P = parents[i]
-			P.build_pipeline(src)
-			update_parents()
+		if(parents[i])
+			continue
+		parents[i] = new /datum/pipeline()
+		to_return += parents[i]
+	return to_return
 
 /obj/machinery/atmospherics/components/proc/nullifyPipenet(datum/pipeline/reference)
 	if(!reference)

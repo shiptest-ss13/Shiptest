@@ -3,15 +3,27 @@
 /obj/structure/table/wood,
 /obj/item/card/id/away/slime,
 /obj/item/card/id/away/slime,
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
+	},
 /turf/open/floor/wood,
 /area/ruin/powered/slimerancher/house)
 "ah" = (
 /turf/closed/wall/r_wall,
 /area/ruin/powered/slimerancher)
+"aN" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
+	},
+/turf/open/floor/wood,
+/area/ruin/powered/slimerancher)
 "bk" = (
 /obj/structure/flora/ausbushes/genericbush,
 /turf/open/floor/plating/grass,
 /area/ruin/powered/slimerancher)
+"bl" = (
+/turf/open/floor/mineral/titanium/tiled,
+/area/ruin/powered/slimerancher/prison)
 "bD" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 5
@@ -19,7 +31,10 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 5
 	},
-/turf/open/floor/wood,
+/obj/effect/turf_decal/siding/wood{
+	dir = 10
+	},
+/turf/open/floor/carpet/green,
 /area/ruin/powered/slimerancher/house)
 "bO" = (
 /obj/machinery/button/door{
@@ -27,11 +42,16 @@
 	name = "Monkey Silence Door Button";
 	pixel_y = -25
 	},
-/turf/open/floor/mineral/plastitanium,
+/turf/open/floor/mineral/titanium/tiled,
 /area/ruin/powered/slimerancher/prison)
 "bW" = (
 /turf/open/floor/plating/grass,
 /area/ruin/powered/slimerancher)
+"cb" = (
+/obj/machinery/portable_atmospherics/canister/bz,
+/obj/effect/turf_decal/box,
+/turf/open/floor/plating,
+/area/ruin/powered/slimerancher/house)
 "ch" = (
 /obj/structure/flora/ausbushes/ppflowers,
 /turf/open/floor/plating/grass,
@@ -56,14 +76,24 @@
 /obj/structure/flora/ausbushes/sunnybush,
 /turf/open/floor/plating/grass,
 /area/ruin/powered/slimerancher)
+"dV" = (
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
+	dir = 8
+	},
+/turf/open/floor/carpet/green,
+/area/ruin/powered/slimerancher/house)
 "eA" = (
 /obj/structure/flora/tree/jungle,
 /turf/open/floor/plating/grass,
 /area/ruin/powered/slimerancher)
-"ff" = (
-/mob/living/carbon/monkey,
-/turf/open/floor/plating/grass,
-/area/ruin/powered/slimerancher)
+"eG" = (
+/obj/machinery/autolathe,
+/obj/effect/turf_decal/box,
+/turf/open/floor/plating,
+/area/ruin/powered/slimerancher/maints)
 "fh" = (
 /obj/machinery/light/floor,
 /turf/open/floor/plating/grass,
@@ -72,14 +102,31 @@
 /obj/machinery/shower{
 	dir = 8
 	},
-/mob/living/carbon/monkey,
 /obj/machinery/light{
 	dir = 4
 	},
 /obj/structure/bed,
 /obj/item/bedsheet/random,
-/turf/open/floor/mineral/plastitanium/red/brig,
+/mob/living/carbon/monkey,
+/turf/open/floor/mineral/plastitanium,
 /area/ruin/powered/slimerancher/prison)
+"fS" = (
+/obj/structure/window/reinforced/spawner,
+/obj/structure/window/reinforced/spawner/east,
+/obj/machinery/disposal/deliveryChute{
+	dir = 1;
+	name = "Naughty Slime Death Chute"
+	},
+/obj/structure/disposalpipe/trunk,
+/obj/machinery/door/window{
+	dir = 1;
+	req_access = null;
+	req_one_access = null;
+	req_one_access_txt = "55"
+	},
+/obj/structure/window/reinforced/spawner/west,
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/powered/slimerancher)
 "fV" = (
 /mob/living/simple_animal/slime/random,
 /turf/open/floor/plating/grass,
@@ -88,11 +135,6 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/turf/open/floor/plating/grass,
-/area/ruin/powered/slimerancher)
-"ga" = (
-/obj/structure/flora/ausbushes/genericbush,
-/mob/living/carbon/monkey,
 /turf/open/floor/plating/grass,
 /area/ruin/powered/slimerancher)
 "gd" = (
@@ -126,17 +168,11 @@
 /obj/machinery/light/floor,
 /turf/open/floor/plating/grass,
 /area/ruin/powered/slimerancher)
-"hv" = (
-/obj/structure/flora/ausbushes/leafybush,
-/mob/living/carbon/monkey,
-/turf/open/floor/plating/grass,
-/area/ruin/powered/slimerancher)
 "hz" = (
-/mob/living/carbon/monkey,
 /obj/structure/bed,
 /obj/item/bedsheet/random,
 /obj/structure/bed,
-/turf/open/floor/mineral/plastitanium/red/brig,
+/turf/open/floor/mineral/plastitanium,
 /area/ruin/powered/slimerancher/prison)
 "hA" = (
 /obj/machinery/light{
@@ -176,6 +212,9 @@
 /obj/structure/sink{
 	dir = 4;
 	pixel_x = -15
+	},
+/obj/structure/extinguisher_cabinet{
+	pixel_x = -32
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/powered/slimerancher/prison)
@@ -223,51 +262,37 @@
 	},
 /obj/structure/window/reinforced/spawner,
 /obj/structure/window/reinforced/spawner/west,
-/turf/open/floor/plating/grass,
+/obj/structure/window/reinforced/spawner/east,
+/turf/open/floor/mineral/plastitanium,
 /area/ruin/powered/slimerancher)
 "kJ" = (
 /turf/closed/wall/r_wall,
 /area/ruin/powered/slimerancher/prison)
-"kL" = (
-/obj/machinery/disposal/deliveryChute{
-	dir = 1;
-	name = "Naughty Slime Death Chute"
-	},
-/obj/structure/disposalpipe/trunk,
-/obj/structure/window/reinforced/spawner/east,
-/obj/structure/window/reinforced/spawner,
-/obj/machinery/door/window{
-	dir = 1;
-	req_access = null;
-	req_one_access = null;
-	req_one_access_txt = "55"
-	},
-/turf/open/floor/plating/grass,
-/area/ruin/powered/slimerancher)
 "kW" = (
 /obj/structure/sink/puddle,
 /turf/open/floor/plating/grass,
 /area/ruin/powered/slimerancher)
 "lc" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
-/turf/open/floor/wood,
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
+	},
+/turf/open/floor/carpet/green,
 /area/ruin/powered/slimerancher/house)
 "ld" = (
 /obj/machinery/airalarm/all_access{
 	pixel_y = 24
 	},
-/obj/machinery/space_heater,
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
+	},
 /turf/open/floor/wood,
 /area/ruin/powered/slimerancher/house)
 "le" = (
 /obj/machinery/portable_atmospherics/canister/nitrous_oxide,
+/obj/effect/turf_decal/box,
 /turf/open/floor/plating,
 /area/ruin/powered/slimerancher/maints)
-"lt" = (
-/obj/structure/flora/ausbushes/lavendergrass,
-/mob/living/carbon/monkey,
-/turf/open/floor/plating/grass,
-/area/ruin/powered/slimerancher)
 "lA" = (
 /obj/structure/disposalpipe/segment{
 	dir = 6
@@ -295,8 +320,14 @@
 	},
 /turf/open/floor/wood,
 /area/ruin/powered/slimerancher)
+"ma" = (
+/obj/effect/turf_decal/box,
+/obj/structure/reagent_dispensers/watertank/high,
+/turf/open/floor/plating,
+/area/ruin/powered/slimerancher/house)
 "mJ" = (
 /obj/machinery/portable_atmospherics/canister/oxygen,
+/obj/effect/turf_decal/box,
 /turf/open/floor/plating,
 /area/ruin/powered/slimerancher/maints)
 "mL" = (
@@ -306,7 +337,13 @@
 "ne" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/turf/open/floor/wood,
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
+	},
+/turf/open/floor/carpet/green,
 /area/ruin/powered/slimerancher/house)
 "ni" = (
 /obj/structure/disposalpipe/segment{
@@ -341,16 +378,18 @@
 	default_price = 0;
 	extra_price = 0
 	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
+	},
 /turf/open/floor/wood,
 /area/ruin/powered/slimerancher/house)
 "oy" = (
-/mob/living/carbon/monkey,
 /obj/structure/toilet{
 	dir = 8
 	},
 /obj/structure/bed,
 /obj/item/bedsheet/random,
-/turf/open/floor/mineral/plastitanium/red/brig,
+/turf/open/floor/mineral/plastitanium,
 /area/ruin/powered/slimerancher/prison)
 "oB" = (
 /turf/open/floor/mineral/plastitanium,
@@ -367,6 +406,7 @@
 /obj/machinery/light{
 	dir = 4
 	},
+/obj/effect/turf_decal/siding/wood,
 /turf/open/floor/wood,
 /area/ruin/powered/slimerancher/house)
 "pT" = (
@@ -374,20 +414,29 @@
 /obj/machinery/light/floor,
 /turf/open/floor/plating/grass,
 /area/ruin/powered/slimerancher)
+"qb" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
+	},
+/turf/open/floor/carpet/green,
+/area/ruin/powered/slimerancher/house)
 "qe" = (
 /obj/effect/spawner/structure/window/reinforced,
+/obj/machinery/door/poddoor/shutters{
+	id = "slimerancherlockdown"
+	},
 /turf/open/floor/plating,
 /area/ruin/powered/slimerancher/maints)
 "qj" = (
-/obj/machinery/processor/slime{
-	rating_amount = 2;
-	rating_speed = 3
-	},
+/obj/structure/table,
+/obj/item/slime_scanner,
+/obj/item/slime_scanner,
+/obj/item/reagent_containers/dropper,
+/obj/item/reagent_containers/dropper,
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/powered/slimerancher/prison)
 "qk" = (
 /obj/structure/table,
-/obj/item/storage/box/monkeycubes,
 /obj/machinery/reagentgrinder{
 	pixel_x = -6;
 	pixel_y = 11
@@ -404,6 +453,11 @@
 /obj/machinery/hydroponics/soil,
 /turf/open/floor/plating/grass,
 /area/ruin/powered/slimerancher)
+"rz" = (
+/obj/structure/bed,
+/obj/item/bedsheet/random,
+/turf/open/floor/mineral/plastitanium/red/brig,
+/area/ruin/powered/slimerancher/prison)
 "rK" = (
 /obj/structure/flora/ausbushes/brflowers,
 /obj/machinery/light,
@@ -415,12 +469,10 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 8
 	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
+	},
 /turf/open/floor/wood,
-/area/ruin/powered/slimerancher/house)
-"st" = (
-/obj/effect/spawner/structure/window/reinforced,
-/obj/effect/spawner/structure/window/reinforced,
-/turf/open/floor/plating,
 /area/ruin/powered/slimerancher/house)
 "sO" = (
 /obj/structure/disposalpipe/segment,
@@ -445,6 +497,24 @@
 /obj/item/cultivator/rake,
 /turf/open/floor/plating/grass,
 /area/ruin/powered/slimerancher)
+"tI" = (
+/obj/structure/rack,
+/obj/effect/turf_decal/box,
+/obj/item/storage/part_replacer,
+/obj/item/stock_parts/matter_bin/super,
+/obj/item/stock_parts/matter_bin/super,
+/obj/item/stock_parts/matter_bin/super,
+/obj/item/stock_parts/manipulator/pico,
+/obj/item/stock_parts/manipulator/pico,
+/obj/item/stock_parts/manipulator/pico,
+/obj/item/stock_parts/matter_bin/super,
+/obj/item/stock_parts/matter_bin/super,
+/obj/item/stock_parts/matter_bin/super,
+/obj/item/stock_parts/manipulator/pico,
+/obj/item/stock_parts/manipulator/pico,
+/obj/item/stock_parts/manipulator/pico,
+/turf/open/floor/plating,
+/area/ruin/powered/slimerancher/house)
 "tN" = (
 /obj/item/seeds/tower,
 /turf/open/floor/wood,
@@ -454,26 +524,37 @@
 /area/ruin/powered/slimerancher/maints)
 "tX" = (
 /obj/structure/table,
-/obj/item/storage/box/syringes{
-	pixel_y = 10
-	},
-/obj/item/storage/box/beakers,
 /obj/machinery/light{
 	dir = 1
 	},
+/obj/machinery/recharger,
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/powered/slimerancher/prison)
+"ue" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 10
+	},
+/turf/open/floor/carpet/green,
+/area/ruin/powered/slimerancher/house)
 "ur" = (
 /obj/machinery/airalarm/all_access{
 	pixel_y = 24
 	},
-/turf/open/floor/mineral/plastitanium,
+/obj/machinery/processor/slime{
+	rating_amount = 2;
+	rating_speed = 3
+	},
+/obj/effect/turf_decal/box,
+/turf/open/floor/mineral/plastitanium/red/brig,
 /area/ruin/powered/slimerancher/prison)
 "uv" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 4
 	},
 /obj/machinery/space_heater,
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
+	},
 /turf/open/floor/wood,
 /area/ruin/powered/slimerancher/house)
 "uT" = (
@@ -493,7 +574,7 @@
 	req_one_access = null;
 	req_one_access_txt = "55"
 	},
-/turf/open/floor/mineral/plastitanium,
+/turf/open/floor/mineral/plastitanium/red/brig,
 /area/ruin/powered/slimerancher/prison)
 "vl" = (
 /obj/machinery/hydroponics/soil,
@@ -514,8 +595,26 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/powered/slimerancher/maints)
+"vP" = (
+/obj/structure/extinguisher_cabinet{
+	pixel_x = -40
+	},
+/obj/structure/extinguisher_cabinet{
+	pixel_x = -24
+	},
+/turf/closed/wall/r_wall,
+/area/ruin/powered/slimerancher)
 "wa" = (
-/obj/machinery/smartfridge/extract,
+/obj/item/gun/energy/temperature,
+/obj/structure/closet/wall/red{
+	name = "Weapons Locker";
+	pixel_y = 32
+	},
+/obj/item/extinguisher,
+/obj/item/extinguisher,
+/obj/item/extinguisher,
+/obj/item/melee/baton/cattleprod,
+/obj/item/gun/ballistic/shotgun/winchester,
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/powered/slimerancher/prison)
 "wb" = (
@@ -526,13 +625,22 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
+	},
 /turf/open/floor/wood,
 /area/ruin/powered/slimerancher/house)
 "wj" = (
 /obj/machinery/light{
 	dir = 1
 	},
-/turf/open/floor/mineral/plastitanium,
+/obj/structure/rack,
+/obj/item/storage/box/monkeycubes,
+/obj/item/storage/box/monkeycubes,
+/turf/open/floor/mineral/plastitanium/red/brig,
 /area/ruin/powered/slimerancher/prison)
 "wl" = (
 /mob/living/simple_animal/slime/pet{
@@ -542,6 +650,7 @@
 	name = "Rainy"
 	},
 /obj/structure/bed/dogbed,
+/obj/effect/turf_decal/siding/wood,
 /turf/open/floor/wood,
 /area/ruin/powered/slimerancher/house)
 "wn" = (
@@ -551,11 +660,14 @@
 /obj/machinery/atmospherics/components/binary/pump{
 	dir = 8
 	},
-/turf/open/floor/mineral/plastitanium,
+/turf/open/floor/mineral/plastitanium/red/brig,
 /area/ruin/powered/slimerancher/prison)
 "wo" = (
 /obj/machinery/airalarm/all_access{
 	pixel_y = 24
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
 	},
 /turf/open/floor/wood,
 /area/ruin/powered/slimerancher)
@@ -563,13 +675,13 @@
 /obj/machinery/shower{
 	dir = 4
 	},
-/mob/living/carbon/monkey,
 /obj/machinery/light{
 	dir = 8
 	},
 /obj/structure/bed,
 /obj/item/bedsheet/random,
-/turf/open/floor/mineral/plastitanium/red/brig,
+/mob/living/carbon/monkey,
+/turf/open/floor/mineral/plastitanium,
 /area/ruin/powered/slimerancher/prison)
 "wU" = (
 /obj/machinery/light/floor,
@@ -578,6 +690,7 @@
 "xq" = (
 /obj/machinery/microwave,
 /obj/structure/table/wood,
+/obj/effect/turf_decal/siding/wood,
 /turf/open/floor/wood,
 /area/ruin/powered/slimerancher/house)
 "xu" = (
@@ -597,14 +710,20 @@
 /obj/machinery/airalarm/all_access{
 	pixel_y = 24
 	},
+/obj/item/stack/sheet/glass/fifty,
+/obj/structure/rack,
+/obj/item/stack/sheet/metal/fifty,
 /turf/open/floor/plating,
 /area/ruin/powered/slimerancher/maints)
 "yo" = (
 /obj/machinery/space_heater,
+/obj/effect/turf_decal/box,
 /turf/open/floor/plating,
 /area/ruin/powered/slimerancher/maints)
 "yp" = (
-/obj/machinery/door/airlock/external,
+/obj/machinery/door/airlock/external{
+	req_access_txt = "55, 200"
+	},
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
 	dir = 4
 	},
@@ -616,6 +735,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/cyan{
 	dir = 6
+	},
+/obj/machinery/door/poddoor/shutters{
+	id = "slimerancherlockdown"
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/powered/slimerancher/prison)
@@ -635,11 +757,20 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 4
 	},
-/turf/open/floor/wood,
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
+	},
+/turf/open/floor/carpet/green,
 /area/ruin/powered/slimerancher/house)
 "Al" = (
 /turf/template_noop,
 /area/template_noop)
+"As" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
+	},
+/turf/open/floor/wood,
+/area/ruin/powered/slimerancher/house)
 "At" = (
 /obj/machinery/advanced_airlock_controller{
 	pixel_y = 25
@@ -650,14 +781,20 @@
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/powered/slimerancher/prison)
 "AA" = (
-/obj/machinery/portable_atmospherics/canister/nitrous_oxide,
 /obj/machinery/atmospherics/components/unary/portables_connector{
 	dir = 8
 	},
-/turf/open/floor/mineral/plastitanium,
+/obj/machinery/button/door{
+	id = "slimerancherlockdown";
+	name = "Facility Lockdown";
+	pixel_y = 24
+	},
+/turf/open/floor/mineral/plastitanium/red/brig,
 /area/ruin/powered/slimerancher/prison)
 "AC" = (
-/obj/machinery/door/airlock/external,
+/obj/machinery/door/airlock/external{
+	req_access_txt = "55, 200"
+	},
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
 	dir = 8
 	},
@@ -668,14 +805,14 @@
 /area/ruin/powered/slimerancher/prison)
 "AS" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
-/turf/open/floor/mineral/plastitanium,
+/turf/open/floor/mineral/plastitanium/red/brig,
 /area/ruin/powered/slimerancher/prison)
 "AT" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
 /obj/machinery/atmospherics/pipe/simple/orange/visible{
 	dir = 6
 	},
-/turf/open/floor/mineral/plastitanium,
+/turf/open/floor/mineral/plastitanium/red/brig,
 /area/ruin/powered/slimerancher/prison)
 "Bb" = (
 /obj/structure/disposalpipe/segment{
@@ -702,8 +839,15 @@
 /area/ruin/powered/slimerancher/maints)
 "CU" = (
 /obj/machinery/portable_atmospherics/canister/air,
+/obj/effect/turf_decal/box,
 /turf/open/floor/plating,
 /area/ruin/powered/slimerancher/maints)
+"Dm" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
+	},
+/turf/open/floor/wood,
+/area/ruin/powered/slimerancher/house)
 "Dt" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -713,6 +857,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
 	},
 /turf/open/floor/wood,
 /area/ruin/powered/slimerancher)
@@ -758,13 +905,16 @@
 /obj/item/clothing/head/beret/sci,
 /obj/item/clothing/suit/toggle/labcoat/science,
 /obj/item/clothing/suit/toggle/labcoat/science,
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
+	},
 /turf/open/floor/wood,
 /area/ruin/powered/slimerancher/house)
 "DU" = (
 /obj/machinery/atmospherics/pipe/manifold/cyan{
 	dir = 4
 	},
-/turf/open/floor/mineral/plastitanium,
+/turf/open/floor/mineral/titanium/tiled,
 /area/ruin/powered/slimerancher/prison)
 "DV" = (
 /obj/structure/disposalpipe/segment{
@@ -782,6 +932,9 @@
 /obj/structure/bed,
 /obj/item/bedsheet/random,
 /obj/machinery/light,
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
+	},
 /turf/open/floor/wood,
 /area/ruin/powered/slimerancher/house)
 "EJ" = (
@@ -794,7 +947,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 5
 	},
-/turf/open/floor/mineral/plastitanium,
+/turf/open/floor/mineral/titanium/tiled,
 /area/ruin/powered/slimerancher/prison)
 "Fz" = (
 /obj/machinery/vending/boozeomat/all_access{
@@ -810,7 +963,22 @@
 /obj/machinery/light{
 	dir = 4
 	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
+	},
+/obj/machinery/button/door{
+	id = "slimerancherlockdown";
+	name = "Facility Lockdown";
+	pixel_x = 24
+	},
 /turf/open/floor/wood,
+/area/ruin/powered/slimerancher/house)
+"Gc" = (
+/obj/effect/spawner/structure/window/reinforced,
+/obj/machinery/door/poddoor/shutters{
+	id = "slimerancherlockdown"
+	},
+/turf/open/floor/plating,
 /area/ruin/powered/slimerancher/house)
 "Gx" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
@@ -839,16 +1007,15 @@
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
-/turf/open/floor/mineral/plastitanium,
+/turf/open/floor/mineral/titanium/tiled,
 /area/ruin/powered/slimerancher/prison)
 "Hc" = (
-/mob/living/carbon/monkey,
 /obj/structure/toilet{
 	dir = 4
 	},
 /obj/structure/bed,
 /obj/item/bedsheet/random,
-/turf/open/floor/mineral/plastitanium/red/brig,
+/turf/open/floor/mineral/plastitanium,
 /area/ruin/powered/slimerancher/prison)
 "Hg" = (
 /obj/structure/disposalpipe/segment{
@@ -860,7 +1027,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
-/turf/open/floor/mineral/plastitanium,
+/turf/open/floor/mineral/titanium/tiled,
 /area/ruin/powered/slimerancher/prison)
 "Hl" = (
 /obj/effect/spawner/structure/window/reinforced,
@@ -888,7 +1055,7 @@
 /obj/machinery/atmospherics/pipe/simple/cyan{
 	dir = 9
 	},
-/turf/open/floor/mineral/plastitanium,
+/turf/open/floor/mineral/titanium/tiled,
 /area/ruin/powered/slimerancher/prison)
 "Is" = (
 /obj/structure/fence/corner{
@@ -908,13 +1075,13 @@
 	dir = 1
 	},
 /obj/structure/disposalpipe/segment,
-/turf/open/floor/mineral/plastitanium,
+/turf/open/floor/mineral/titanium/tiled,
 /area/ruin/powered/slimerancher/prison)
 "Jg" = (
 /obj/structure/sign/warning/gasmask{
 	pixel_y = -32
 	},
-/turf/open/floor/mineral/plastitanium,
+/turf/open/floor/mineral/titanium/tiled,
 /area/ruin/powered/slimerancher/prison)
 "Jk" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
@@ -924,20 +1091,29 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
+/obj/effect/turf_decal/box,
 /turf/open/floor/plating,
 /area/ruin/powered/slimerancher/maints)
 "JJ" = (
-/mob/living/carbon/monkey,
-/obj/structure/bed,
-/obj/item/bedsheet/random,
 /turf/open/floor/mineral/plastitanium/red/brig,
 /area/ruin/powered/slimerancher/prison)
 "JK" = (
 /obj/structure/bed,
 /obj/item/bedsheet/random,
-/mob/living/carbon/monkey,
-/turf/open/floor/mineral/plastitanium/red/brig,
+/turf/open/floor/mineral/plastitanium,
 /area/ruin/powered/slimerancher/prison)
+"JN" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
+	},
+/obj/machinery/button/door{
+	id = "slimerancherlockdown";
+	name = "Facility Lockdown";
+	pixel_x = 24;
+	pixel_y = -24
+	},
+/turf/open/floor/wood,
+/area/ruin/powered/slimerancher/house)
 "Kj" = (
 /obj/structure/fence/post{
 	dir = 8
@@ -954,7 +1130,7 @@
 	id = "monkies";
 	name = "Monkey Pen Silence Shutters"
 	},
-/turf/open/floor/mineral/plastitanium/red/brig,
+/turf/open/floor/mineral/plastitanium,
 /area/ruin/powered/slimerancher/prison)
 "Kl" = (
 /obj/structure/table/wood,
@@ -963,6 +1139,11 @@
 	},
 /obj/item/clothing/mask/gas,
 /obj/item/clothing/mask/gas,
+/obj/item/tank/internals/emergency_oxygen/engi,
+/obj/item/tank/internals/emergency_oxygen/engi,
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
+	},
 /turf/open/floor/wood,
 /area/ruin/powered/slimerancher/house)
 "Kt" = (
@@ -970,6 +1151,9 @@
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/effect/turf_decal/siding/wood{
 	dir = 4
 	},
 /turf/open/floor/wood,
@@ -984,12 +1168,19 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
-/turf/open/floor/wood,
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/wood,
+/turf/open/floor/carpet/green,
 /area/ruin/powered/slimerancher/house)
 "Lo" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/atmospherics/pipe/layer_manifold{
 	dir = 4
+	},
+/obj/machinery/door/poddoor/shutters{
+	id = "slimerancherlockdown"
 	},
 /turf/open/floor/plating,
 /area/ruin/powered/slimerancher/maints)
@@ -1010,9 +1201,16 @@
 	},
 /turf/open/floor/wood,
 /area/ruin/powered/slimerancher/house)
+"LK" = (
+/obj/machinery/smartfridge/extract,
+/turf/closed/wall/r_wall,
+/area/ruin/powered/slimerancher/prison)
 "LL" = (
 /obj/machinery/atmospherics/pipe/simple/cyan{
 	dir = 5
+	},
+/obj/machinery/door/poddoor/shutters{
+	id = "slimerancherlockdown"
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/powered/slimerancher/prison)
@@ -1020,13 +1218,14 @@
 /obj/structure/flora/tree/jungle/small,
 /turf/open/floor/plating/grass,
 /area/ruin/powered/slimerancher)
-"LX" = (
-/obj/structure/table,
-/turf/open/floor/mineral/titanium/white,
-/area/ruin/powered/slimerancher/house)
 "Mc" = (
 /obj/machinery/atmospherics/pipe/simple/cyan{
 	dir = 4
+	},
+/obj/machinery/button/door{
+	id = "slimerancherlockdown";
+	name = "Facility Lockdown";
+	pixel_y = -24
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/powered/slimerancher/prison)
@@ -1041,6 +1240,12 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /turf/open/floor/plating,
 /area/ruin/powered/slimerancher/maints)
+"Mk" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
+	},
+/turf/open/floor/carpet/green,
+/area/ruin/powered/slimerancher/house)
 "Ml" = (
 /obj/structure/flora/ausbushes/leafybush,
 /turf/open/floor/plating/grass,
@@ -1056,22 +1261,22 @@
 	dir = 1
 	},
 /obj/item/restraints/handcuffs,
-/turf/open/floor/mineral/plastitanium,
+/turf/open/floor/mineral/plastitanium/red/brig,
 /area/ruin/powered/slimerancher/prison)
 "MW" = (
 /obj/structure/disposalpipe/segment,
-/turf/open/floor/mineral/plastitanium,
+/turf/open/floor/mineral/plastitanium/red/brig,
 /area/ruin/powered/slimerancher/prison)
 "Nh" = (
 /obj/machinery/space_heater,
-/turf/open/floor/mineral/plastitanium,
+/turf/open/floor/mineral/plastitanium/red/brig,
 /area/ruin/powered/slimerancher/prison)
 "NG" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/orange/visible,
-/turf/open/floor/mineral/plastitanium,
+/turf/open/floor/mineral/titanium/tiled,
 /area/ruin/powered/slimerancher/prison)
 "NJ" = (
 /obj/machinery/door/airlock/security/glass{
@@ -1097,6 +1302,10 @@
 	},
 /obj/item/storage/bag/bio,
 /obj/item/storage/bag/bio,
+/obj/item/storage/box/beakers,
+/obj/item/storage/box/syringes{
+	pixel_y = 10
+	},
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/powered/slimerancher/prison)
 "Os" = (
@@ -1110,18 +1319,18 @@
 	id = "monkies";
 	name = "Monkey Pen Silence Shutters"
 	},
-/turf/open/floor/mineral/plastitanium/red/brig,
+/turf/open/floor/mineral/plastitanium,
 /area/ruin/powered/slimerancher/prison)
 "OI" = (
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
-/turf/open/floor/wood,
-/area/ruin/powered/slimerancher/house)
-"OS" = (
-/obj/structure/toilet,
-/turf/open/floor/mineral/titanium/white,
+/obj/effect/turf_decal/siding/wood,
+/obj/effect/turf_decal/siding/wood/corner{
+	dir = 4
+	},
+/turf/open/floor/carpet/green,
 /area/ruin/powered/slimerancher/house)
 "Pj" = (
 /obj/item/reagent_containers/glass/bucket/wooden,
@@ -1150,10 +1359,16 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 8
 	},
-/turf/open/floor/wood,
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
+	},
+/turf/open/floor/carpet/green,
 /area/ruin/powered/slimerancher/house)
 "PU" = (
 /obj/effect/spawner/structure/window/reinforced,
+/obj/machinery/door/poddoor/shutters{
+	id = "slimerancherlockdown"
+	},
 /turf/open/floor/plating,
 /area/ruin/powered/slimerancher/prison)
 "Qi" = (
@@ -1168,6 +1383,12 @@
 /obj/item/storage/fancy/egg_box,
 /obj/item/reagent_containers/food/condiment/sugar,
 /obj/item/reagent_containers/food/condiment/sugar,
+/obj/item/storage/box/monkeycubes,
+/obj/item/storage/box/monkeycubes,
+/obj/item/storage/box/monkeycubes,
+/obj/effect/turf_decal/siding/wood{
+	dir = 10
+	},
 /turf/open/floor/wood,
 /area/ruin/powered/slimerancher/house)
 "Qr" = (
@@ -1177,11 +1398,8 @@
 /turf/open/floor/plating,
 /area/ruin/powered/slimerancher/maints)
 "QE" = (
-/obj/structure/bed,
-/obj/item/bedsheet/random,
-/mob/living/carbon/monkey,
 /obj/machinery/atmospherics/pipe/simple/orange/visible,
-/turf/open/floor/mineral/plastitanium/red/brig,
+/turf/open/floor/mineral/titanium/tiled,
 /area/ruin/powered/slimerancher/prison)
 "Rh" = (
 /turf/open/floor/plating/asteroid/snow/icemoon,
@@ -1190,30 +1408,35 @@
 /obj/machinery/atmospherics/components/unary/outlet_injector/on{
 	dir = 1
 	},
-/obj/item/bedsheet/random,
-/obj/structure/bed,
-/mob/living/carbon/monkey,
-/turf/open/floor/mineral/plastitanium/red/brig,
+/turf/open/floor/mineral/titanium/tiled,
 /area/ruin/powered/slimerancher/prison)
 "Rm" = (
 /obj/machinery/shower{
 	dir = 1
 	},
 /obj/structure/curtain,
-/turf/open/floor/mineral/titanium/white,
+/turf/open/floor/mineral/titanium/tiled,
 /area/ruin/powered/slimerancher/house)
 "Rs" = (
 /obj/machinery/vending/autodrobe/all_access{
 	default_price = 0;
 	extra_price = 0
 	},
+/obj/effect/turf_decal/siding/wood,
 /turf/open/floor/wood,
 /area/ruin/powered/slimerancher/house)
 "Ry" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 4
 	},
-/turf/open/floor/mineral/titanium/white,
+/obj/structure/toilet,
+/turf/open/floor/mineral/titanium/tiled,
+/area/ruin/powered/slimerancher/house)
+"RE" = (
+/obj/effect/turf_decal/siding/wood/corner{
+	dir = 8
+	},
+/turf/open/floor/wood,
 /area/ruin/powered/slimerancher/house)
 "RQ" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
@@ -1222,6 +1445,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 6
 	},
+/obj/structure/table,
 /turf/open/floor/mineral/titanium/white,
 /area/ruin/powered/slimerancher/house)
 "RU" = (
@@ -1231,13 +1455,7 @@
 /obj/machinery/light{
 	dir = 4
 	},
-/turf/open/floor/mineral/titanium/white,
-/area/ruin/powered/slimerancher/house)
-"RZ" = (
-/obj/structure/table/wood,
-/obj/item/tank/internals/emergency_oxygen/engi,
-/obj/item/tank/internals/emergency_oxygen/engi,
-/turf/open/floor/wood,
+/turf/open/floor/mineral/titanium/tiled,
 /area/ruin/powered/slimerancher/house)
 "Tb" = (
 /obj/machinery/light,
@@ -1254,11 +1472,14 @@
 /obj/structure/mirror{
 	pixel_y = -30
 	},
-/turf/open/floor/mineral/titanium/white,
+/turf/open/floor/mineral/titanium/tiled,
 /area/ruin/powered/slimerancher/house)
 "TZ" = (
 /obj/structure/chair/wood{
 	dir = 8
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
 	},
 /turf/open/floor/wood,
 /area/ruin/powered/slimerancher/house)
@@ -1271,28 +1492,38 @@
 	},
 /turf/open/floor/plating/asteroid/snow/icemoon,
 /area/ruin/powered/slimerancher/prison)
+"UP" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 1
+	},
+/turf/open/floor/carpet/green,
+/area/ruin/powered/slimerancher/house)
 "UT" = (
-/mob/living/carbon/monkey,
 /obj/machinery/shower{
 	dir = 4
 	},
 /obj/structure/bed,
 /obj/item/bedsheet/random,
-/turf/open/floor/mineral/plastitanium/red/brig,
+/mob/living/carbon/monkey,
+/turf/open/floor/mineral/plastitanium,
 /area/ruin/powered/slimerancher/prison)
 "Vq" = (
 /obj/machinery/shower{
 	dir = 8
 	},
-/mob/living/carbon/monkey,
 /obj/structure/bed,
 /obj/item/bedsheet/random,
-/turf/open/floor/mineral/plastitanium/red/brig,
+/mob/living/carbon/monkey,
+/turf/open/floor/mineral/plastitanium,
 /area/ruin/powered/slimerancher/prison)
 "Vs" = (
 /obj/structure/table,
 /obj/item/storage/backpack,
 /obj/item/storage/backpack,
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
+	},
 /turf/open/floor/wood,
 /area/ruin/powered/slimerancher/house)
 "Vy" = (
@@ -1301,19 +1532,25 @@
 /area/ruin/powered/slimerancher/maints)
 "VB" = (
 /obj/machinery/gibber,
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
+	},
 /turf/open/floor/wood,
 /area/ruin/powered/slimerancher/house)
 "Wj" = (
 /obj/structure/table/wood,
 /obj/item/clothing/gloves/color/rainbow,
 /obj/item/clothing/gloves/color/rainbow,
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
+	},
 /turf/open/floor/wood,
 /area/ruin/powered/slimerancher/house)
 "WT" = (
 /obj/structure/sign/poster/official/no_erp{
 	pixel_y = 32
 	},
-/turf/open/floor/mineral/plastitanium,
+/turf/open/floor/mineral/plastitanium/red/brig,
 /area/ruin/powered/slimerancher/prison)
 "WV" = (
 /obj/structure/fans/tiny,
@@ -1327,8 +1564,17 @@
 	name = "Naughty Slime Chamber";
 	req_one_access_txt = "55"
 	},
+/obj/machinery/door/poddoor/shutters{
+	id = "slimerancherlockdown"
+	},
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/powered/slimerancher/prison)
+"Xd" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
+	},
+/turf/open/floor/wood,
+/area/ruin/powered/slimerancher)
 "Xe" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 9
@@ -1336,12 +1582,21 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 9
 	},
-/turf/open/floor/wood,
+/obj/effect/turf_decal/siding/wood{
+	dir = 6
+	},
+/obj/effect/turf_decal/siding/wood/corner{
+	dir = 1
+	},
+/turf/open/floor/carpet/green,
 /area/ruin/powered/slimerancher/house)
 "Xt" = (
 /obj/structure/sink/kitchen{
 	dir = 4;
 	pixel_x = -12
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
 	},
 /turf/open/floor/wood,
 /area/ruin/powered/slimerancher/house)
@@ -1350,7 +1605,10 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 1
 	},
-/turf/open/floor/wood,
+/obj/effect/turf_decal/siding/wood/corner{
+	dir = 8
+	},
+/turf/open/floor/carpet/green,
 /area/ruin/powered/slimerancher/house)
 "XU" = (
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
@@ -1359,7 +1617,13 @@
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
 	dir = 8
 	},
-/turf/open/floor/wood,
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
+	},
+/turf/open/floor/carpet/green,
 /area/ruin/powered/slimerancher/house)
 "XZ" = (
 /mob/living/simple_animal/slime,
@@ -1380,11 +1644,17 @@
 /obj/machinery/light{
 	dir = 8
 	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
+	},
 /turf/open/floor/wood,
 /area/ruin/powered/slimerancher/house)
 "YY" = (
 /obj/machinery/light_switch{
 	pixel_y = 25
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
 	},
 /turf/open/floor/wood,
 /area/ruin/powered/slimerancher/house)
@@ -1395,7 +1665,6 @@
 /turf/open/floor/plating/asteroid/snow/icemoon,
 /area/ruin/powered/slimerancher/prison)
 "ZD" = (
-/mob/living/carbon/monkey,
 /obj/structure/toilet{
 	dir = 4
 	},
@@ -1404,10 +1673,9 @@
 	},
 /obj/structure/bed,
 /obj/item/bedsheet/random,
-/turf/open/floor/mineral/plastitanium/red/brig,
+/turf/open/floor/mineral/plastitanium,
 /area/ruin/powered/slimerancher/prison)
 "ZH" = (
-/mob/living/carbon/monkey,
 /obj/structure/toilet{
 	dir = 8
 	},
@@ -1416,7 +1684,7 @@
 	},
 /obj/structure/bed,
 /obj/item/bedsheet/random,
-/turf/open/floor/mineral/plastitanium/red/brig,
+/turf/open/floor/mineral/plastitanium,
 /area/ruin/powered/slimerancher/prison)
 "ZM" = (
 /obj/machinery/light{
@@ -1429,10 +1697,16 @@
 "ZP" = (
 /obj/structure/table/wood,
 /obj/item/trash/plate,
-/turf/open/floor/wood,
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
+	},
+/turf/open/floor/carpet/green,
 /area/ruin/powered/slimerancher/house)
 "ZX" = (
 /obj/machinery/grill,
+/obj/effect/turf_decal/siding/wood{
+	dir = 10
+	},
 /turf/open/floor/wood,
 /area/ruin/powered/slimerancher/house)
 
@@ -1611,7 +1885,7 @@ hc
 bW
 bW
 bW
-ff
+bW
 bW
 bW
 ah
@@ -1660,10 +1934,10 @@ ah
 ah
 kJ
 tX
-oB
-oB
-oB
-oB
+JJ
+JJ
+bl
+bl
 MU
 PU
 Rh
@@ -1700,7 +1974,7 @@ oJ
 ah
 kJ
 qk
-oB
+JJ
 AS
 EJ
 IF
@@ -1741,9 +2015,9 @@ lI
 sO
 uT
 uV
-oB
+JJ
 Hg
-oB
+bl
 Nh
 PU
 Rh
@@ -1781,9 +2055,9 @@ kW
 ah
 ah
 wa
-oB
+JJ
 Hg
-oB
+bl
 NY
 PU
 Zu
@@ -1802,7 +2076,7 @@ ah
 bW
 bW
 bW
-ga
+bk
 XZ
 bW
 bW
@@ -1823,7 +2097,7 @@ ah
 ah
 wj
 Hg
-oB
+bl
 kJ
 kJ
 kJ
@@ -1861,14 +2135,14 @@ lT
 tz
 qP
 ah
-oB
+JJ
 Hg
 Jg
 kJ
-JJ
+JK
 ZD
 UT
-JJ
+JK
 Hc
 ws
 kJ
@@ -1890,7 +2164,7 @@ cq
 cq
 bW
 LS
-ff
+bW
 bW
 kW
 gl
@@ -1903,14 +2177,14 @@ qP
 ah
 ur
 Hg
-oB
+bl
 Kk
-JJ
-JJ
-JJ
-JJ
-JJ
-JJ
+bl
+bl
+bl
+bl
+bl
+bl
 kJ
 Al
 Al
@@ -1927,7 +2201,7 @@ hc
 bW
 XZ
 bW
-ff
+bW
 gl
 bW
 bW
@@ -1945,12 +2219,12 @@ WT
 Hg
 Jg
 kJ
-JJ
-JJ
-JK
+rz
+rz
+rz
 hz
-JJ
-JK
+rz
+rz
 kJ
 Al
 Al
@@ -1988,9 +2262,9 @@ Os
 QE
 QE
 Ri
-JK
-JK
-JK
+bl
+bl
+bl
 kJ
 Al
 Al
@@ -2025,12 +2299,12 @@ wn
 Hg
 bO
 kJ
-JJ
-JJ
-JK
-JJ
-JJ
-JK
+rz
+rz
+rz
+rz
+rz
+rz
 kJ
 Al
 Al
@@ -2063,14 +2337,14 @@ vu
 ah
 AA
 Hg
-oB
+bl
 Kk
-JJ
-JJ
-JJ
-JJ
-JJ
-JJ
+bl
+bl
+bl
+bl
+bl
+bl
 kJ
 Al
 Al
@@ -2084,7 +2358,7 @@ cY
 bW
 bW
 Ml
-hv
+Ml
 bW
 gl
 bW
@@ -2101,14 +2375,14 @@ gR
 wU
 gR
 ah
-ah
+oB
 Hg
 Jg
 kJ
-JJ
+JK
 ZH
 Vq
-JJ
+JK
 oy
 fq
 kJ
@@ -2133,15 +2407,15 @@ bW
 gl
 bW
 gR
-kL
-nj
+bW
 gR
 gR
 gR
 gR
 gR
 gR
-ah
+vP
+LK
 Bb
 NJ
 Be
@@ -2173,17 +2447,17 @@ PA
 bW
 bk
 bW
-gR
-lV
+fS
+nj
 gR
 gR
 gT
 gR
 gR
-gR
-gR
+Xd
+Xd
 Dt
-gR
+Xd
 Be
 Kl
 ag
@@ -2225,12 +2499,12 @@ ja
 DV
 gR
 Hl
-RZ
-Ku
+Mk
+Mk
 Ak
-Ku
-Ku
-Ku
+Mk
+Mk
+ue
 YW
 Qi
 Be
@@ -2265,22 +2539,22 @@ wU
 Hy
 ie
 Pw
-XL
-XL
-XU
-XL
-XL
+UP
+UP
+dV
+UP
+UP
 XL
 bD
-Ku
+RE
 ZX
-Hl
+Gc
 "}
 (22,1,1) = {"
 ah
 fW
 bW
-ff
+bW
 XZ
 bW
 bW
@@ -2303,18 +2577,18 @@ rK
 ah
 wo
 Kt
-gR
+aN
 Hl
-Ku
+qb
 ZP
 PG
-Ku
-Ku
+qb
+qb
 lc
 OI
 LH
 xq
-st
+Gc
 "}
 (23,1,1) = {"
 ah
@@ -2348,13 +2622,13 @@ Be
 ld
 TZ
 FL
-Ku
-Ku
-Ku
+Dm
+Dm
+Dm
 Kx
 Ku
 pi
-Hl
+Gc
 "}
 (24,1,1) = {"
 ah
@@ -2383,7 +2657,7 @@ bW
 ah
 oX
 HY
-Be
+ma
 Be
 Be
 Be
@@ -2423,18 +2697,18 @@ LS
 ah
 iM
 HY
+tI
 Be
-OS
 Ry
 Tk
 Be
 DA
-Ku
+As
 uv
 Kx
 Ku
 Rs
-Hl
+Gc
 "}
 (26,1,1) = {"
 Al
@@ -2452,7 +2726,7 @@ bW
 bW
 PA
 bW
-ff
+bW
 bW
 bW
 bW
@@ -2463,8 +2737,8 @@ LA
 ah
 xB
 HY
+cb
 Be
-LX
 RQ
 Gx
 MB
@@ -2474,7 +2748,7 @@ XU
 Xe
 Ku
 wl
-Hl
+Gc
 "}
 (27,1,1) = {"
 Al
@@ -2493,7 +2767,7 @@ bW
 bW
 bW
 LS
-lt
+gl
 bW
 bW
 gl
@@ -2509,7 +2783,7 @@ RU
 Rm
 Be
 YY
-Ku
+JN
 sc
 Vs
 En
@@ -2540,7 +2814,7 @@ bW
 bW
 ah
 ah
-oX
+eG
 oX
 HY
 mJ
@@ -2551,8 +2825,8 @@ Be
 Mg
 mL
 Be
-Hl
-Hl
+Gc
+Gc
 Be
 Al
 "}
@@ -2588,8 +2862,8 @@ Qr
 nZ
 Vy
 Be
-Hl
-Hl
+Gc
+Gc
 Be
 Al
 Al
@@ -2620,7 +2894,7 @@ iH
 ah
 ah
 vK
-oX
+yo
 yo
 Jk
 CU
@@ -2654,7 +2928,7 @@ PA
 cY
 bW
 bW
-ff
+bW
 ah
 ah
 ah
