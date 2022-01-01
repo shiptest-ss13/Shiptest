@@ -752,7 +752,7 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 /obj/item/circlegame/Destroy()
 	var/mob/owner = loc
 	if(!istype(owner))
-		return
+		return ..()
 	UnregisterSignal(owner, COMSIG_PARENT_EXAMINE)
 	. = ..()
 
