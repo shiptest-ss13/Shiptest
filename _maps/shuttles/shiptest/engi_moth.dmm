@@ -289,6 +289,12 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/engine,
 /area/ship/engineering/engine)
+"eF" = (
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/engineering)
 "eX" = (
 /obj/machinery/atmospherics/pipe/simple/green/visible{
 	dir = 9
@@ -548,6 +554,19 @@
 /obj/effect/turf_decal/industrial/stand_clear,
 /turf/open/floor/engine,
 /area/ship/engineering/engine)
+"jb" = (
+/obj/effect/turf_decal/techfloor/orange,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 10
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 10
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/engineering)
 "ji" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 6
@@ -994,6 +1013,18 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
+"oM" = (
+/obj/effect/turf_decal/techfloor/orange{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/engineering)
 "oY" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/medical)
@@ -1330,6 +1361,9 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/effect/turf_decal/syndicateemblem/middle/middle,
 /obj/machinery/atmospherics/pipe/simple/orange/hidden/layer1,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/ship/engineering)
 "vz" = (
@@ -1464,6 +1498,9 @@
 	},
 /obj/effect/turf_decal/syndicateemblem/top/middle,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/ship/engineering)
 "wx" = (
@@ -1884,15 +1921,18 @@
 /turf/open/floor/mineral/plastitanium/red,
 /area/ship/engineering)
 "DV" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 5
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 9
-	},
 /obj/effect/turf_decal/industrial/warning,
 /obj/effect/turf_decal/syndicateemblem/bottom/middle,
 /obj/machinery/atmospherics/pipe/manifold/orange/hidden/layer1,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
+	dir = 8
+	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/ship/engineering)
 "Ef" = (
@@ -2004,6 +2044,7 @@
 /obj/effect/turf_decal/corner/purple{
 	dir = 10
 	},
+/obj/item/mecha_parts/mecha_equipment/mining_scanner,
 /turf/open/floor/plasteel/dark,
 /area/ship/science/robotics)
 "GH" = (
@@ -2214,6 +2255,9 @@
 "JT" = (
 /obj/item/storage/toolbox/electrical,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
 "JW" = (
@@ -2227,6 +2271,14 @@
 	},
 /obj/effect/decal/cleanable/oil,
 /obj/effect/decal/cleanable/robot_debris,
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
 "Ka" = (
@@ -2297,6 +2349,15 @@
 /area/ship/engineering)
 "LC" = (
 /obj/effect/turf_decal/techfloor/orange,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 6
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 6
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
 "LL" = (
@@ -2313,6 +2374,8 @@
 	},
 /obj/effect/turf_decal/techfloor/orange,
 /obj/structure/reagent_dispensers/fueltank,
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
 "Md" = (
@@ -2370,7 +2433,10 @@
 	dir = 1
 	},
 /obj/machinery/door/firedoor/border_only,
-/turf/open/floor/plasteel/dark,
+/obj/structure/cable,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/turf/open/floor/plating/airless,
 /area/ship/engineering)
 "MA" = (
 /obj/structure/window/plasma/reinforced/spawner/north,
@@ -2731,6 +2797,9 @@
 	},
 /obj/structure/cable{
 	icon_state = "1-8"
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
@@ -3221,7 +3290,7 @@ UQ
 ww
 vw
 DV
-TI
+oM
 JW
 LN
 MH
@@ -3248,8 +3317,8 @@ wx
 pV
 Ef
 De
-QB
-LC
+eF
+jb
 Mx
 "}
 (16,1,1) = {"
