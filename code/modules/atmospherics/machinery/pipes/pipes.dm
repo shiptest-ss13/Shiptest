@@ -34,10 +34,11 @@
 /obj/machinery/atmospherics/pipe/destroy_network()
 	QDEL_NULL(parent)
 
-/obj/machinery/atmospherics/pipe/build_network()
-	if(QDELETED(parent))
-		parent = new
-		parent.build_pipeline(src)
+/obj/machinery/atmospherics/pipe/get_rebuild_targets()
+	if(!QDELETED(parent))
+		return
+	parent = new
+	return list(parent)
 
 /obj/machinery/atmospherics/pipe/proc/releaseAirToTurf()
 	if(air_temporary)
@@ -46,16 +47,23 @@
 		air_update_turf()
 
 /obj/machinery/atmospherics/pipe/return_air()
-	build_network()
+	if(air_temporary)
+		return air_temporary
 	return parent.air
 
 /obj/machinery/atmospherics/pipe/return_analyzable_air()
+	if(air_temporary)
+		return air_temporary
 	return parent.air
 
 /obj/machinery/atmospherics/pipe/remove_air(amount)
+	if(air_temporary)
+		return air_temporary.remove(amount)
 	return parent.air.remove(amount)
 
 /obj/machinery/atmospherics/pipe/remove_air_ratio(ratio)
+	if(air_temporary)
+		return air_temporary.remove_ratio(ratio)
 	return parent.air.remove_ratio(ratio)
 
 /obj/machinery/atmospherics/pipe/attackby(obj/item/W, mob/user, params)
