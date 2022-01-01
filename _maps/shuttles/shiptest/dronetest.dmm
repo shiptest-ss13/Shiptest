@@ -17,9 +17,6 @@
 /turf/open/floor/plating,
 /area/ship/external)
 "e" = (
-/obj/machinery/atmospherics/components/unary/vent_pump/on{
-	dir = 8
-	},
 /obj/docking_port/mobile{
 	dir = 8
 	},
@@ -132,18 +129,9 @@
 /turf/open/floor/plating/airless,
 /area/ship/construction)
 "J" = (
-/obj/machinery/atmospherics/pipe/simple{
-	dir = 8
-	},
 /obj/machinery/door/airlock/maintenance{
 	locked = 1;
 	welded = 1
-	},
-/turf/open/floor/plating/airless,
-/area/ship/construction)
-"K" = (
-/obj/machinery/atmospherics/components/unary/vent_pump/on{
-	dir = 4
 	},
 /turf/open/floor/plating/airless,
 /area/ship/construction)
@@ -172,9 +160,6 @@
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/construction)
 "R" = (
-/obj/machinery/atmospherics/components/unary/vent_pump/on{
-	dir = 8
-	},
 /turf/open/floor/plating/airless,
 /area/ship/external)
 "S" = (
@@ -242,8 +227,8 @@ a
 a
 Q
 I
-K
-K
+j
+j
 p
 Q
 a
