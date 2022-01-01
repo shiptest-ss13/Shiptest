@@ -26,6 +26,5 @@
 		/obj/item/reagent_containers/blood/OMinus = 1,
 		/obj/item/reagent_containers/blood/OPlus = 1,
 		/obj/item/reagent_containers/blood/lizard = 1,
-		/obj/item/reagent_containers/blood/ethereal = 1,
 		/obj/item/reagent_containers/blood/squid = 1,
 		/obj/item/reagent_containers/blood/random = 5)
