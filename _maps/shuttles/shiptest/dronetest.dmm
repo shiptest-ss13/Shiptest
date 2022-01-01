@@ -2,9 +2,6 @@
 "a" = (
 /turf/open/space/basic,
 /area/space)
-"b" = (
-/turf/closed/wall/mineral/plastitanium,
-/area/ship/construction)
 "c" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -80,21 +77,18 @@
 /area/ship/construction)
 "y" = (
 /obj/machinery/power/apc,
-/turf/closed/wall/mineral/plastitanium,
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/construction)
 "z" = (
 /obj/machinery/cryopod,
 /turf/open/floor/plating,
 /area/ship/external)
+"A" = (
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/construction)
 "B" = (
 /obj/item/radio/intercom/wideband,
-/turf/closed/wall/mineral/plastitanium,
-/area/ship/construction)
-"D" = (
-/obj/machinery/computer/cryopod{
-	pixel_y = 24
-	},
-/turf/closed/wall/mineral/plastitanium,
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/construction)
 "E" = (
 /obj/machinery/power/terminal{
@@ -137,7 +131,7 @@
 /area/ship/construction)
 "M" = (
 /obj/machinery/computer/cryopod,
-/turf/closed/wall/mineral/plastitanium,
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/construction)
 "N" = (
 /obj/structure/cable{
@@ -172,25 +166,31 @@
 /obj/structure/closet/crate/wooden,
 /turf/open/floor/plating/airless,
 /area/ship/construction)
+"Y" = (
+/turf/closed/wall/mineral/plastitanium,
+/area/ship/construction)
+"Z" = (
+/turf/closed/wall/mineral/plastitanium/overspace,
+/area/ship/construction)
 
 (1,1,1) = {"
 a
 z
-D
+Y
 H
 H
-b
+Y
 d
 a
 "}
 (2,1,1) = {"
 a
-b
+Z
 M
 k
 k
-b
-b
+A
+Z
 a
 "}
 (3,1,1) = {"
@@ -235,21 +235,21 @@ a
 "}
 (7,1,1) = {"
 a
-b
+Z
 y
 J
 J
 B
-b
+Z
 a
 "}
 (8,1,1) = {"
 a
 a
-b
+Z
 e
 R
-b
+Z
 a
 a
 "}
