@@ -49,6 +49,13 @@
 /obj/machinery/atmospherics/pipe/return_air()
 	if(air_temporary)
 		return air_temporary
+	if(!parent)
+		SSair.process_rebuilds()
+		if(!parent)
+			stack_trace("parent still null after SSair rebuild")
+			rebuild_pipes()
+			if(!parent)
+				CRASH("parent still null after manual rebuild.")
 	return parent.air
 
 /obj/machinery/atmospherics/pipe/return_analyzable_air()

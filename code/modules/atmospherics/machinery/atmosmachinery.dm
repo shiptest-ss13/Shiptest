@@ -67,6 +67,7 @@
 		else
 			SSair.atmos_machinery += src
 	SetInitDirections()
+	SSair.add_to_rebuild_queue(src)
 
 /obj/machinery/atmospherics/Destroy()
 	for(var/i in 1 to device_type)
