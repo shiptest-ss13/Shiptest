@@ -148,6 +148,13 @@
 	resistance_flags = FLAMMABLE
 	tableVariant = /obj/structure/table/wood/fancy
 
+/obj/item/stack/tile/carpet/red_gold
+	name = "fancy red carpet"
+	icon_state = "tile-carpet-red_gold"
+	item_state = "tile-carpet-red_gold"
+	turf_type = /turf/open/floor/carpet/red_gold
+	tableVariant = /obj/structure/table/wood/fancy/red_gold
+
 /obj/item/stack/tile/carpet/black
 	name = "black carpet"
 	icon_state = "tile-carpet-black"
