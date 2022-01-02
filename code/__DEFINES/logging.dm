@@ -38,6 +38,7 @@
 #define LOG_CLONING (1 << 17)
 #define LOG_SHUTTLE (1 << 18)
 #define LOG_ECON (1 << 19)
+#define LOG_RADIO_EMOTE (1 << 20)
 
 #define LOG_MSAY (1 << 25) //WS Edit
 #define LOG_LOOC (1 << 26) //WS Edit
