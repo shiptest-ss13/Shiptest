@@ -1,6 +1,6 @@
-#define ANNOTATE_OBJECT(object) testing ? "[get_area(object)] ([english_list(object.check_shuttle_offset(0)) || "[object.x], [object.y]"])" : ADMIN_VERBOSEJMP(object)
+#define ANNOTATE_OBJECT(object) testing ? "[get_area(object)] (estimated location: [english_list(object.check_shuttle_offset()) || "[object.x], [object.y]"])" : ADMIN_VERBOSEJMP(object)
 
-/obj/proc/check_shuttle_offset()
+/atom/proc/check_shuttle_offset()
 	if(!SSshuttle.initialized)
 		return
 	var/obj/docking_port/mobile/shuttle = SSshuttle.get_containing_shuttle(src)
@@ -18,20 +18,20 @@
 		if(WEST)
 			return list(y + 1 - min(bounds[2], bounds[4]), -(x - 1 - max(bounds[1], bounds[3])))
 
-/client/proc/check_plumbing()
+/client/proc/check_atmos()
 	set category = "Mapping"
-	set name = "Check Plumbing"
+	set name = "Check Atmospherics Piping"
 	if(!check_rights_for(src, R_DEBUG))
 		to_chat(src, "Only administrators may use this command.", confidential = TRUE)
 		return
-	SSblackbox.record_feedback("tally", "admin_verb", 1, "Check Plumbing") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+	SSblackbox.record_feedback("tally", "admin_verb", 1, "Check Atmospherics Piping") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 	var/list/results = atmosscan()
-	to_chat(usr, "[results.Join("\n")]", confidential = TRUE)
+	to_chat(src, "[results.Join("\n")]", confidential = TRUE)
 
 /proc/atmosscan(testing = FALSE)
 	var/list/results = list()
 
-	//all plumbing - yes, some things might get stated twice, doesn't matter.
+	//Atmos Components
 	for(var/obj/machinery/atmospherics/components/component in GLOB.machines)
 		if(!testing && component.z && (!component.nodes || !component.nodes.len || (null in component.nodes)))
 			results += "Unconnected [component.name] located at [ANNOTATE_OBJECT(component)]"
@@ -39,19 +39,11 @@
 			if(other_component != component && other_component.piping_layer == component.piping_layer && other_component.dir == component.dir)
 				results += "Doubled [component.name] located at [ANNOTATE_OBJECT(component)]"
 
-	//Manifolds
-	for(var/obj/machinery/atmospherics/pipe/manifold/manifold in GLOB.machines)
-		if(manifold.z && (!manifold.nodes || !manifold.nodes.len || (null in manifold.nodes)))
-			results += "Unconnected [manifold.name] located at [ANNOTATE_OBJECT(manifold)]"
-		for(var/obj/machinery/atmospherics/pipe/manifold/other_manifold in get_turf(manifold))
-			if(other_manifold != manifold && other_manifold.piping_layer == manifold.piping_layer && other_manifold.dir == manifold.dir)
-				results += "Doubled [manifold.name] located at [ANNOTATE_OBJECT(manifold)]"
-
 	//Pipes
-	for(var/obj/machinery/atmospherics/pipe/simple/pipe in SSair.atmos_machinery)
+	for(var/obj/machinery/atmospherics/pipe/pipe in SSair.atmos_machinery)
 		if(pipe.z && (!pipe.nodes || !pipe.nodes.len || (null in pipe.nodes)))
 			results += "Unconnected [pipe.name] located at [ANNOTATE_OBJECT(pipe)]"
-		for(var/obj/machinery/atmospherics/pipe/simple/other_pipe in get_turf(pipe))
+		for(var/obj/machinery/atmospherics/pipe/other_pipe in get_turf(pipe))
 			if(other_pipe != pipe && other_pipe.piping_layer == pipe.piping_layer && other_pipe.dir == pipe.dir)
 				results += "Doubled [pipe.name] located at [ANNOTATE_OBJECT(pipe)]"
 
@@ -65,7 +57,7 @@
 		return
 	SSblackbox.record_feedback("tally", "admin_verb", 1, "Check Power") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 	var/list/results = powerdebug()
-	to_chat(usr, "[results.Join("\n")]", confidential = TRUE)
+	to_chat(src, "[results.Join("\n")]", confidential = TRUE)
 
 /proc/powerdebug(testing = FALSE)
 	var/list/results = list()
