@@ -145,7 +145,7 @@ Des: Removes all infected images from the alien.
 	return has_fine_manipulation
 
 /mob/living/carbon/alien/can_use_guns(obj/item/G)
-	to_chat(src, "<span class='warning'>Your meaty finger is much too large for the trigger guard!</span>")
+	to_chat(src, "<span class='warning'>Your oversized claws are much too large for the trigger guard!</span>")
 	return FALSE
 
 /mob/living/carbon/alien/on_lying_down(new_lying_angle)
@@ -155,3 +155,15 @@ Des: Removes all infected images from the alien.
 /mob/living/carbon/alien/on_standing_up()
 	. = ..()
 	update_icons()
+
+/mob/living/carbon/alien/canUseTopic(atom/movable/M, be_close=FALSE, no_dexterity=FALSE, no_tk=FALSE)
+	if(incapacitated())
+		to_chat(src, "<span class='warning'>You can't do that right now!</span>")
+		return FALSE
+	if(be_close && !in_range(M, src))
+		to_chat(src, "<span class='warning'>You are too far away!</span>")
+		return FALSE
+	if(!(has_fine_manipulation))
+		to_chat(src, "<span class='warning'>You don't have the dexterity to do this!</span>")
+		return FALSE
+	return TRUE
