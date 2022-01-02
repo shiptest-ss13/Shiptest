@@ -14,8 +14,8 @@
 	var/obj/item/cavity_item
 	var/acceptable_bodytype = BODYTYPE_HUMANOID
 
-/obj/item/bodypart/chest/can_dismember(obj/item/I)
-	if(owner.stat <= HARD_CRIT)
+/obj/item/bodypart/chest/can_dismember()
+	if(owner?.stat <= HARD_CRIT)
 		return FALSE
 	return ..()
 

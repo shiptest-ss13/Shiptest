@@ -93,8 +93,8 @@
 			. += "<span class='info'>[real_name]'s tongue has been removed.</span>"
 
 
-/obj/item/bodypart/head/can_dismember(obj/item/I)
-	if(owner && owner.stat <= HARD_CRIT)
+/obj/item/bodypart/head/can_dismember()
+	if(owner?.stat <= HARD_CRIT)
 		return FALSE
 	return ..()
 

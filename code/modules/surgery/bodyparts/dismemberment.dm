@@ -1,15 +1,14 @@
 
-/obj/item/bodypart/proc/can_dismember(obj/item/I)
-	if(dismemberable)
-		return TRUE
+/obj/item/bodypart/proc/can_dismember()
+	return dismemberable
 
 //Dismember a limb
 /obj/item/bodypart/proc/dismember(dam_type = BRUTE)
 	if(!owner)
 		return FALSE
-	var/mob/living/carbon/C = owner
 	if(!dismemberable)
 		return FALSE
+	var/mob/living/carbon/C = owner
 	if(C.status_flags & GODMODE)
 		return FALSE
 	if(HAS_TRAIT(C, TRAIT_NODISMEMBER))
@@ -154,7 +153,7 @@
 
 //when a limb is dropped, the internal organs are removed from the mob and put into the limb
 /obj/item/organ/proc/transfer_to_limb(obj/item/bodypart/LB, mob/living/carbon/C)
-	Remove(C)
+	Remove(C, TRUE)
 	forceMove(LB)
 
 /obj/item/organ/brain/transfer_to_limb(obj/item/bodypart/head/LB, mob/living/carbon/human/C)
@@ -257,12 +256,7 @@
 		if(pill)
 			pill.forceMove(src)
 
-	//Make sure de-zombification happens before organ removal instead of during it
-	var/obj/item/organ/zombie_infection/ooze = owner.getorganslot(ORGAN_SLOT_ZOMBIE)
-	if(istype(ooze))
-		ooze.transfer_to_limb(src, owner)
-
-	name = "[owner.real_name]'s head"
+	name = owner ? "[owner.real_name]'s head" : "unknown [limb_id] head"
 	..()
 
 //Attach a limb to a human and drop any existing limb of that type.
