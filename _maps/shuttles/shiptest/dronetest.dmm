@@ -7,6 +7,7 @@
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
+/obj/machinery/power/apc/auto_name/north,
 /turf/open/floor/plating/airless,
 /area/ship/construction)
 "d" = (
@@ -184,10 +185,6 @@
 /obj/effect/mob_spawn/drone,
 /turf/open/floor/plating/airless,
 /area/ship/construction)
-"W" = (
-/obj/machinery/power/apc,
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ship/construction)
 "X" = (
 /obj/item/stack/sheet/metal/twenty,
 /obj/item/stack/sheet/glass/fifty,
@@ -243,7 +240,7 @@ a
 "}
 (5,1,1) = {"
 a
-W
+A
 c
 D
 S
