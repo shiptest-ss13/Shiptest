@@ -196,7 +196,7 @@ SUBSYSTEM_DEF(overmap)
   * * ruin_type - The ruin to spawn. Don't pass this argument if you want it to randomly select based on planet type.
   */
 /datum/controller/subsystem/overmap/proc/spawn_dynamic_encounter(planet_type, ruin = TRUE, ignore_cooldown = FALSE, datum/map_template/ruin/ruin_type)
-	var/list/ruin_list = SSmapping.space_ruins_templates
+	var/list/ruin_list
 	var/datum/map_generator/mapgen
 	var/area/target_area
 	var/turf/surface = /turf/open/space
@@ -235,6 +235,8 @@ SUBSYSTEM_DEF(overmap)
 				mapgen = new /datum/map_generator/cave_generator/reebe
 				target_area = /area/overmap_encounter/planetoid/reebe
 				surface = /turf/open/chasm/reebe_void
+			if(DYNAMIC_WORLD_SPACERUIN)
+				ruin_list = SSmapping.space_ruins_templates
 
 	if(ruin && ruin_list && !ruin_type)
 		ruin_type = ruin_list[pick(ruin_list)]

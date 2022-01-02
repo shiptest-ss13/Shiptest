@@ -236,6 +236,14 @@
 /turf/open/floor/carpet/lone
 	icon_state = "carpet-0"
 
+/turf/open/floor/carpet/red_gold
+	icon = 'icons/turf/floors/carpet_red_gold.dmi'
+	icon_state = "carpet_red_gold-255"
+	base_icon_state = "carpet_red_gold"
+	floor_tile = /obj/item/stack/tile/carpet/red_gold
+	smoothing_groups = list(SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_CARPET_RED_GOLD)
+	canSmoothWith = list(SMOOTH_GROUP_CARPET_RED_GOLD)
+
 /turf/open/floor/carpet/black
 	icon = 'icons/turf/floors/carpet_black.dmi'
 	icon_state = "carpet_black-255"

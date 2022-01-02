@@ -254,7 +254,7 @@
 
 /turf/open/rad_act(pulse_strength)
 	. = ..()
-	if (air.get_moles(GAS_CO2) && air.get_moles(GAS_O2))
+	if (air?.get_moles(GAS_CO2) && air?.get_moles(GAS_O2))
 		pulse_strength = min(pulse_strength,air.get_moles(GAS_CO2)*1000,air.get_moles(GAS_O2)*2000) //Ensures matter is conserved properly
 		air.set_moles(GAS_CO2, max(air.get_moles(GAS_CO2)-(pulse_strength/1000),0))
 		air.set_moles(GAS_O2, max(air.get_moles(GAS_O2)-(pulse_strength/2000),0))
