@@ -432,7 +432,7 @@ SUBSYSTEM_DEF(air)
 		if(!M)
 			atmos_machinery -= M
 		if(M.process_atmos(seconds) == PROCESS_KILL)
-			atmos_machinery.Remove(M)
+			stop_processing_machine(M)
 		if(MC_TICK_CHECK)
 			return
 
