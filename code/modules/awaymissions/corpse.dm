@@ -620,3 +620,5 @@
 	shoes = /obj/item/clothing/shoes/sneakers/black
 	suit = /obj/item/clothing/suit/armor/vest
 	glasses = /obj/item/clothing/glasses/sunglasses/reagent
+
+/obj/effect/mob_spawn/simple//for the creation of dead simplemobs
