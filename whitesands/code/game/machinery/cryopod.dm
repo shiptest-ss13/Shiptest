@@ -231,7 +231,7 @@ GLOBAL_LIST_EMPTY(cryopod_computers)
 	close_machine(M, TRUE)
 
 /obj/machinery/cryopod/close_machine(mob/user, exiting = FALSE)
-	if(isnull(control_computer.resolve()))
+	if(isnull(control_computer?.resolve()))
 		find_control_computer(TRUE)
 	if((isnull(user) || istype(user)) && state_open && !panel_open)
 		..(user)
@@ -271,7 +271,7 @@ GLOBAL_LIST_EMPTY(cryopod_computers)
 		return
 
 	if(!mob_occupant.client) //Occupant's client isn't present
-		if(isnull(control_computer.resolve()))
+		if(isnull(control_computer?.resolve()))
 			find_control_computer(urgent = TRUE)//better hope you found it this time
 
 		despawn_occupant()
@@ -354,7 +354,7 @@ GLOBAL_LIST_EMPTY(cryopod_computers)
 	for(var/obj/structure/overmap/ship/simulated/sim_ship as anything in SSovermap.simulated_ships)
 		sim_ship.manifest -= mob_occupant.real_name
 
-	var/obj/machinery/computer/cryopod/control_computer_obj = control_computer.resolve()
+	var/obj/machinery/computer/cryopod/control_computer_obj = control_computer?.resolve()
 
 	//Make an announcement and log the person entering storage.
 	if(control_computer_obj)
