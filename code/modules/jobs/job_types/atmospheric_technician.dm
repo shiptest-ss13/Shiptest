@@ -81,22 +81,3 @@
 	head = /obj/item/clothing/head/hardhat
 	ears = /obj/item/radio/headset/syndicate/alt
 	id = /obj/item/card/id/syndicate_command/crew_id
-
-/datum/outfit/job/engineer/gec
-	name = "GEC Engineer"
-
-	uniform = /obj/item/clothing/under/syndicate/intern
-	suit = /obj/item/clothing/suit/toggle/hazard
-	head = /obj/item/clothing/head/hardhat
-	ears = /obj/item/radio/headset/syndicate/alt
-	id = /obj/item/card/id/syndicate_command/crew_id
-
-/datum/outfit/job/ce/gec
-	name = "Chief Engineer (GEC)"
-
-	uniform = /obj/item/clothing/under/suit/black
-	suit = /obj/item/clothing/suit/toggle/hazard
-	head = /obj/item/clothing/head/hardhat/white
-	shoes =/obj/item/clothing/shoes/laceup
-	ears = /obj/item/radio/headset/syndicate/alt/leader
-	id = /obj/item/card/id/syndicate_command/captain_id

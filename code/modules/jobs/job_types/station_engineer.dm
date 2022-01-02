@@ -156,3 +156,12 @@
 	accessory = /obj/item/clothing/accessory/armband/engine
 	glasses = /obj/item/clothing/glasses/sunglasses
 	shoes = /obj/item/clothing/shoes/jackboots
+/datum/outfit/job/engineer/gec
+	name = "GEC Engineer"
+
+	uniform = /obj/item/clothing/under/syndicate/intern
+	suit = /obj/item/clothing/suit/toggle/hazard
+	head = /obj/item/clothing/head/hardhat
+	ears = /obj/item/radio/headset/syndicate/alt
+	id = /obj/item/card/id/syndicate_command/crew_id
+
