@@ -120,6 +120,16 @@
 	satchel = /obj/item/storage/backpack/satchel/tox
 	courierbag = /obj/item/storage/backpack/messenger/tox
 
+/datum/outfit/job/miner/syndicate
+	name = "Wrecker (Gorlex Marauders)"
+
+	id = /obj/item/card/id/syndicate_command/crew_id
+	ears = /obj/item/radio/headset/syndicate/alt
+	uniform = /obj/item/clothing/under/syndicate/gorlex
+	alt_uniform = null
+	accessory = /obj/item/clothing/accessory/armband/cargo
+	head = /obj/item/clothing/head/hardhat/orange
+
 /datum/outfit/job/miner/old
 	name = "Shaft Miner (Legacy)"
 	suit = /obj/item/clothing/suit/hooded/explorer/old

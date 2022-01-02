@@ -90,3 +90,20 @@
 	shoes =/obj/item/clothing/shoes/laceup
 	ears = /obj/item/radio/headset/syndicate/alt/leader
 	id = /obj/item/card/id/syndicate_command/captain_id
+
+/datum/outfit/job/ce/syndicate
+	name = "Chief Engineer (Syndicate Generic)"
+
+	id = /obj/item/card/id/syndicate_command/crew_id
+	ears = /obj/item/radio/headset/syndicate/alt
+	glasses = /obj/item/clothing/glasses/sunglasses
+
+/datum/outfit/job/ce/syndicate/gorlex
+	name = "Foreman (Gorlex Marauders)"
+
+	uniform = /obj/item/clothing/under/syndicate/gorlex
+	alt_uniform = null
+	suit = /obj/item/clothing/suit/toggle/hazard
+	alt_suit = null
+	shoes = /obj/item/clothing/shoes/jackboots
+	gloves = /obj/item/clothing/gloves/combat
