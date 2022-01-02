@@ -250,6 +250,15 @@ SUBSYSTEM_DEF(mapping)
 		if(islist(data["namelists"]))
 			S.name_categories = data["namelists"]
 
+		S.allowed_species = list()
+		if(islist(data["allowed_species"]))
+			var/list/allowed_species_list = data["allowed_species"]
+			for(var/species in allowed_species_list)
+				if(ispath(text2path(species), /datum/species) && species != "/datum/species")
+					S.allowed_species.Add(text2path(species))
+				else
+					stack_trace("Invalid species! [species] on [S.name]'s config! Skipping.")
+
 		S.job_slots = list()
 		var/list/job_slot_list = data["job_slots"]
 		for(var/job in job_slot_list)
@@ -275,6 +284,7 @@ SUBSYSTEM_DEF(mapping)
 				continue
 
 			S.job_slots[job_slot] = slots
+
 		if(isnum(data["cost"]))
 			S.cost = data["cost"]
 			ship_purchase_list["[S.name] ([S.cost] [CONFIG_GET(string/metacurrency_name)]s)"] = S

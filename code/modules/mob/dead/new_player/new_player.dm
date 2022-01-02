@@ -354,6 +354,10 @@
 		if(SSdbcore.IsConnected() && usr.client.get_metabalance() < template.cost)
 			alert(src, "You have insufficient metabalance to cover this purchase! (Price: [template.cost])")
 			return
+		if(template.allowed_species.len > 0)
+			if(!(client.prefs.pref_species.type in template.allowed_species))
+				alert(src, "This species is unable to purchase this model of ship!")
+				return
 		close_spawn_windows()
 		to_chat(usr, "<span class='danger'>Your [template.name] is being prepared. Please be patient!</span>")
 		var/obj/docking_port/mobile/target = SSshuttle.action_load(template)
@@ -367,6 +371,11 @@
 			to_chat(usr, "<span class='danger'>Ship spawned, but you were unable to be spawned. You can likely try to spawn in the ship through joining normally, but if not, please contact an admin.</span>")
 			new_player_panel()
 		return
+
+	if(selected_ship.allowed_species.len > 0)
+		if(!(client.prefs.pref_species.type in selected_ship.allowed_species))
+			alert(src, "This species is unable to join this model of ship!")
+			return
 
 	if(selected_ship.memo)
 		var/memo_accept = tgui_alert(src, "Current ship memo: [selected_ship.memo]", "[selected_ship.name] Memo", list("OK", "Cancel"))

@@ -14,7 +14,9 @@
 	var/cost
 	var/short_name
 	var/list/job_slots
+	var/list/allowed_species
 	var/list/name_categories = list("GENERAL")
+
 	var/prefix = "SV"
 
 /datum/map_template/shuttle/proc/prerequisites_met()

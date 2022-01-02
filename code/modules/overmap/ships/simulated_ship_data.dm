@@ -4,6 +4,8 @@
 /obj/structure/overmap/ship/simulated
 	///Assoc list of remaining open job slots (job = remaining slots)
 	var/list/job_slots = list("Captain" = 1, "Assistant" = 5)
+	///List of species allowed to join this ship (empty means no restriction)
+	var/list/allowed_species = list()
 	///Manifest list of people on the ship
 	var/list/manifest = list()
 	///Shipwide bank account
@@ -18,6 +20,7 @@
 /obj/structure/overmap/ship/simulated/Initialize(mapload, obj/docking_port/mobile/_shuttle, datum/map_template/shuttle/_source_template)
 	. = ..()
 	job_slots = _source_template.job_slots.Copy()
+	allowed_species = _source_template.allowed_species.Copy()
 	ship_account = new(name, 7500)
 
 /**

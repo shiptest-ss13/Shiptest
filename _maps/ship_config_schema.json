@@ -43,6 +43,11 @@
 			"type": "string",
 			"description": "The ID of the ship class. Deprecated, code uses map_path instead."
 		},
+		"allowed_species": {
+			"title": "Allowed Species",
+			"type": "array",
+			"description": "The species allowed to buy and join this class of ship. Is ignored when empty."
+		},
 		"job_slots": {
 			"title": "Job Slots",
 			"description": "A list of job slots that this ship class will have when placed. The First Slot will always be the 'captain' that the purchaser becomes.",
