@@ -3,10 +3,10 @@
 /turf/open/space/basic,
 /area/space)
 "c" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
 /obj/machinery/holopad/emergency/command,
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
 /turf/open/floor/plating/airless,
 /area/ship/construction)
 "d" = (
@@ -19,6 +19,10 @@
 	},
 /turf/open/floor/plating/airless,
 /area/ship/external)
+"i" = (
+/obj/effect/gibspawner/robot,
+/turf/open/floor/plating/airless,
+/area/ship/construction)
 "j" = (
 /turf/open/floor/plating/airless,
 /area/ship/construction)
@@ -29,6 +33,9 @@
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
 /turf/open/floor/plating/airless,
 /area/ship/construction)
 "o" = (
@@ -38,7 +45,7 @@
 /obj/machinery/light/dim{
 	dir = 1
 	},
-/obj/machinery/power/rtg,
+/obj/machinery/power/rtg/advanced,
 /turf/open/floor/plating/airless,
 /area/ship/construction)
 "p" = (
@@ -49,6 +56,9 @@
 /obj/item/mining_scanner,
 /obj/item/mining_scanner,
 /obj/item/mining_scanner,
+/obj/item/gun/energy/kinetic_accelerator,
+/obj/item/gun/energy/kinetic_accelerator,
+/obj/item/gun/energy/kinetic_accelerator/old,
 /obj/item/gun/energy/kinetic_accelerator,
 /obj/item/gun/energy/kinetic_accelerator,
 /turf/open/floor/plating/airless,
@@ -64,6 +74,12 @@
 	icon_state = "0-5"
 	},
 /obj/structure/reagent_dispensers/fueltank,
+/obj/structure/cable{
+	icon_state = "2-5"
+	},
+/obj/structure/cable{
+	icon_state = "5-8"
+	},
 /turf/open/floor/plating/airless,
 /area/ship/construction)
 "u" = (
@@ -75,9 +91,14 @@
 /obj/machinery/autolathe,
 /turf/open/floor/plating/airless,
 /area/ship/construction)
+"x" = (
+/obj/item/storage/backpack/duffelbag/captain,
+/turf/open/floor/plating/airless,
+/area/ship/construction)
 "y" = (
-/obj/machinery/power/apc,
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/obj/structure/closet/wall,
+/obj/item/construction/rcd,
+/turf/closed/wall/mineral/plastitanium,
 /area/ship/construction)
 "z" = (
 /obj/machinery/cryopod,
@@ -89,6 +110,10 @@
 "B" = (
 /obj/item/radio/intercom/wideband,
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/construction)
+"D" = (
+/obj/effect/mob_spawn/drone/capdrone,
+/turf/open/floor/plating/airless,
 /area/ship/construction)
 "E" = (
 /obj/machinery/power/terminal{
@@ -102,6 +127,10 @@
 /obj/item/areaeditor/shuttle,
 /obj/effect/spawner/lootdrop/minor/kittyears_or_rabbitears,
 /obj/effect/spawner/lootdrop/maintenance/four,
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/item/dronespeak_manual,
 /turf/open/floor/plating/airless,
 /area/ship/construction)
 "H" = (
@@ -114,12 +143,6 @@
 /turf/open/floor/plating/airless,
 /area/ship/construction)
 "I" = (
-/obj/machinery/power/terminal{
-	dir = 4
-	},
-/obj/structure/cable{
-	icon_state = "0-8"
-	},
 /obj/machinery/computer/helm{
 	dir = 8
 	},
@@ -143,8 +166,6 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/item/construction/rcd,
-/obj/structure/closet/crate/rcd,
 /turf/open/floor/plating/airless,
 /area/ship/construction)
 "O" = (
@@ -162,6 +183,10 @@
 "S" = (
 /obj/effect/mob_spawn/drone,
 /turf/open/floor/plating/airless,
+/area/ship/construction)
+"W" = (
+/obj/machinery/power/apc,
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/construction)
 "X" = (
 /obj/item/stack/sheet/metal/twenty,
@@ -208,9 +233,9 @@ a
 "}
 (4,1,1) = {"
 a
-O
+y
 N
-j
+i
 j
 w
 O
@@ -218,9 +243,9 @@ a
 "}
 (5,1,1) = {"
 a
-O
+W
 c
-S
+D
 S
 X
 O
@@ -230,7 +255,7 @@ a
 a
 Q
 I
-j
+x
 j
 p
 Q
@@ -239,7 +264,7 @@ a
 (7,1,1) = {"
 a
 Z
-y
+A
 J
 J
 B
