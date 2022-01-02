@@ -168,3 +168,5 @@
 	icon_state = "syndrone_item"
 	mob_name = "capdrone"
 	mob_type = /mob/living/simple_animal/drone/capdrone
+
+
