@@ -128,6 +128,9 @@ SUBSYSTEM_DEF(air)
 	fix_corrupted_atmos()
 
 /datum/controller/subsystem/air/fire(resumed = 0)
+	if(map_loading)
+		pause()
+		return
 
 	var/timer = TICK_USAGE_REAL
 
@@ -506,9 +509,11 @@ SUBSYSTEM_DEF(air)
 
 /datum/controller/subsystem/air/StartLoadingMap()
 	map_loading = TRUE
+	state = SS_PAUSED
 
 /datum/controller/subsystem/air/StopLoadingMap()
 	map_loading = FALSE
+	state = SS_RUNNING
 
 /datum/controller/subsystem/air/proc/setup_allturfs()
 	var/list/turfs_to_init = block(locate(1, 1, 1), locate(world.maxx, world.maxy, world.maxz))
