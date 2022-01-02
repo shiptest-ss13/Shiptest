@@ -552,9 +552,9 @@
 		else
 			species_color = ""
 
+		UnregisterSignal(owner, COMSIG_MOVABLE_MOVED)
 		if(NO_BONES in S.species_traits)
 			bone_status = BONE_FLAG_NO_BONES
-			UnregisterSignal(owner, COMSIG_MOVABLE_MOVED)
 		else
 			bone_status = BONE_FLAG_NORMAL
 			RegisterSignal(owner, COMSIG_MOVABLE_MOVED, .proc/on_mob_move)
