@@ -15,6 +15,7 @@
 	circuit = /obj/item/circuitboard/machine/space_heater
 	/// We don't use area power, we always use the cell
 	use_power = NO_POWER_USE
+	interacts_with_air = TRUE
 	var/obj/item/stock_parts/cell/cell
 	var/on = FALSE
 	var/mode = HEATER_MODE_STANDBY
@@ -212,7 +213,7 @@
 			usr.visible_message("<span class='notice'>[usr] switches [on ? "on" : "off"] \the [src].</span>", "<span class='notice'>You switch [on ? "on" : "off"] \the [src].</span>")
 			update_icon()
 			if (on)
-				SSair.atmos_air_machinery += src
+				SSair.start_processing_machine(src)
 			. = TRUE
 		if("mode")
 			setMode = params["mode"]

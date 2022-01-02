@@ -257,6 +257,44 @@ SUBSYSTEM_DEF(air)
 	currentpart = SSAIR_PIPENETS
 
 
+/**
+ * Adds a given machine to the processing system for SSAIR_ATMOSMACHINERY processing.
+ *
+ * Arguments:
+ * * machine - The machine to start processing. Can be any /obj/machinery.
+ */
+/datum/controller/subsystem/air/proc/start_processing_machine(obj/machinery/machine)
+	if(machine.atmos_processing)
+		return
+	machine.atmos_processing = TRUE
+	if(machine.interacts_with_air)
+		atmos_air_machinery += machine
+	else
+		atmos_machinery += machine
+
+/**
+ * Removes a given machine to the processing system for SSAIR_ATMOSMACHINERY processing.
+ *
+ * Arguments:
+ * * machine - The machine to stop processing.
+ */
+/datum/controller/subsystem/air/proc/stop_processing_machine(obj/machinery/machine)
+	if(!machine.atmos_processing)
+		return
+	machine.atmos_processing = FALSE
+	if(machine.interacts_with_air)
+		atmos_air_machinery -= machine
+	else
+		atmos_machinery -= machine
+
+	// If we're currently processing atmos machines, there's a chance this machine is in
+	// the currentrun list, which is a cache of atmos_machinery. Remove it from that list
+	// as well to prevent processing qdeleted objects in the cache.
+	if(currentpart == SSAIR_ATMOSMACHINERY)
+		currentrun -= machine
+	if(machine.interacts_with_air && currentpart == SSAIR_ATMOSMACHINERY_AIR)
+		currentrun -= machine
+
 
 /datum/controller/subsystem/air/proc/process_pipenets(resumed = 0)
 	if (!resumed)
