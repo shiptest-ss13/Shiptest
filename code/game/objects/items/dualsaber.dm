@@ -3,11 +3,11 @@
  */
 /obj/item/dualsaber
 	icon = 'icons/obj/transforming_energy.dmi'
-	icon_state = "dualsaber0"
+	icon_state = "dualsaber"
 	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
 	name = "double-bladed energy sword"
-	desc = "Handle with care."
+	desc = "For when simply killing someone isn't enough."
 	force = 3
 	throwforce = 5
 	throw_speed = 3
@@ -27,7 +27,7 @@
 	var/saber_color = "green"
 	var/two_hand_force = 34
 	var/hacked = FALSE
-	var/list/possible_colors = list("red", "blue", "green", "purple")
+	var/list/possible_colors = list("red", "blue", "green", "purple", "yellow")
 	var/wielded = FALSE // track wielded status on item
 
 /obj/item/dualsaber/ComponentInitialize()
@@ -66,9 +66,9 @@
 
 /obj/item/dualsaber/update_icon_state()
 	if(wielded)
-		icon_state = "dualsaber[saber_color][wielded]"
+		icon_state = "dualsaber[saber_color]"
 	else
-		icon_state = "dualsaber0"
+		icon_state = "dualsaber"
 
 /obj/item/dualsaber/suicide_act(mob/living/carbon/user)
 	if(wielded)
@@ -109,6 +109,8 @@
 				set_light_color(LIGHT_COLOR_LIGHT_CYAN)
 			if("purple")
 				set_light_color(LIGHT_COLOR_LAVENDER)
+			if("yellow")
+				set_light_color(COLOR_YELLOW)
 
 /obj/item/dualsaber/Destroy()
 	STOP_PROCESSING(SSobj, src)
@@ -181,6 +183,9 @@
 
 /obj/item/dualsaber/purple
 	possible_colors = list("purple")
+
+/obj/item/dualsaber/yellow
+	possible_colors = list("yellow")
 
 /obj/item/dualsaber/attackby(obj/item/W, mob/user, params)
 	if(W.tool_behaviour == TOOL_MULTITOOL)
