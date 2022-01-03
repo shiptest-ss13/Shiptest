@@ -14,7 +14,6 @@
 /area/ship/bridge)
 "an" = (
 /obj/structure/table/reinforced,
-/obj/item/areaeditor/shuttle,
 /obj/machinery/light{
 	dir = 8
 	},
@@ -27,6 +26,19 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/library)
+"aJ" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer2{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/turf/open/floor/plasteel/white,
+/area/ship/medical)
 "aV" = (
 /obj/structure/table/glass,
 /obj/machinery/photocopier/faxmachine/longrange,
@@ -46,6 +58,9 @@
 	dir = 1
 	},
 /obj/machinery/door/firedoor/border_only,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "bd" = (
@@ -65,14 +80,25 @@
 	},
 /turf/open/floor/plating,
 /area/ship/crew/hydroponics)
+"ca" = (
+/obj/effect/turf_decal/corner/bottlegreen{
+	dir = 10
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
+/obj/machinery/door/firedoor/border_only,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plasteel/white,
+/area/ship/medical)
 "co" = (
 /obj/structure/table/reinforced,
-/obj/item/card/emag,
 /obj/machinery/firealarm{
 	dir = 4;
 	pixel_x = -24
 	},
-/obj/item/storage/firstaid/tactical,
+/obj/item/areaeditor/shuttle,
 /turf/open/floor/carpet/nanoweave/red,
 /area/ship/bridge)
 "cB" = (
@@ -133,7 +159,6 @@
 /turf/open/floor/grass,
 /area/ship/crew/hydroponics)
 "do" = (
-/obj/effect/turf_decal/syndicateemblem/top/left,
 /obj/item/kirbyplants/random,
 /obj/item/vending_refill/medical,
 /obj/effect/turf_decal/corner/bottlegreen/border{
@@ -145,15 +170,16 @@
 	pixel_x = -24
 	},
 /obj/item/vending_refill/autodrobe,
+/obj/effect/turf_decal/syndicateemblem/top/left,
 /turf/open/floor/mineral/plastitanium/red,
 /area/ship/hallway/central)
 "dr" = (
-/obj/effect/turf_decal/syndicateemblem/top/right,
 /obj/item/kirbyplants/random,
 /obj/item/seeds/replicapod,
 /obj/effect/turf_decal/corner/bottlegreen/border{
 	dir = 5
 	},
+/obj/effect/turf_decal/syndicateemblem/top/right,
 /turf/open/floor/mineral/plastitanium/red,
 /area/ship/hallway/central)
 "dw" = (
@@ -429,12 +455,12 @@
 /turf/open/floor/grass,
 /area/ship/crew/hydroponics)
 "iR" = (
-/obj/effect/turf_decal/syndicateemblem/bottom/left,
 /obj/effect/turf_decal/corner/bottlegreen/border{
 	dir = 10
 	},
 /obj/machinery/ore_silo,
 /obj/machinery/light,
+/obj/effect/turf_decal/syndicateemblem/bottom/left,
 /turf/open/floor/mineral/plastitanium/red,
 /area/ship/hallway/central)
 "iU" = (
@@ -477,13 +503,13 @@
 /turf/open/floor/carpet/nanoweave/red,
 /area/ship/bridge)
 "ju" = (
-/obj/effect/turf_decal/syndicateemblem/bottom/right,
 /obj/item/kirbyplants/random,
 /obj/effect/turf_decal/corner/bottlegreen/border{
 	dir = 6
 	},
 /obj/machinery/airalarm/directional/east,
 /obj/item/clothing/head/hardhat,
+/obj/effect/turf_decal/syndicateemblem/bottom/right,
 /turf/open/floor/mineral/plastitanium/red,
 /area/ship/hallway/central)
 "jD" = (
@@ -874,6 +900,9 @@
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer2{
 	dir = 1
 	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "rt" = (
@@ -1009,6 +1038,9 @@
 	dir = 1
 	},
 /obj/machinery/computer/arcade/amputation,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/crew/library)
 "vn" = (
@@ -1076,6 +1108,9 @@
 /obj/machinery/door/window/survival_pod{
 	dir = 1
 	},
+/obj/item/pinpointer/crew,
+/obj/item/storage/firstaid/toxin,
+/obj/item/storage/firstaid/o2,
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "vZ" = (
@@ -1096,6 +1131,9 @@
 /obj/machinery/door/window/survival_pod{
 	dir = 1
 	},
+/obj/item/pinpointer/crew,
+/obj/item/storage/firstaid/toxin,
+/obj/item/storage/firstaid/o2,
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "wd" = (
@@ -1107,11 +1145,17 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
 "wz" = (
 /obj/effect/turf_decal/corner/brown{
 	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
@@ -1122,6 +1166,9 @@
 /obj/machinery/suit_storage_unit/syndicate,
 /obj/machinery/power/apc/auto_name/north,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
 "wK" = (
@@ -1168,6 +1215,9 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/construction/plumbing,
+/obj/item/stack/ducts/fifty,
+/obj/item/circuitboard/machine/shuttle/engine/electric,
+/obj/item/circuitboard/machine/shuttle/smes,
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
 "yf" = (
@@ -1179,6 +1229,7 @@
 	dir = 6
 	},
 /obj/machinery/power/apc/auto_name/east,
+/obj/structure/cable,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/library)
 "yE" = (
@@ -1204,12 +1255,6 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/library)
 "zc" = (
-/obj/structure/closet/secure_closet{
-	anchored = 1;
-	icon_state = "mining";
-	name = "wrecker's locker";
-	req_access = list(48)
-	},
 /obj/effect/turf_decal/corner/brown{
 	dir = 9
 	},
@@ -1228,6 +1273,9 @@
 /obj/machinery/airalarm/directional/west,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/closet/secure_closet{
+	icon_state = "mining"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
 "zd" = (
@@ -1930,6 +1978,9 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 8
 	},
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "YN" = (
@@ -1953,6 +2004,9 @@
 /obj/machinery/firealarm{
 	pixel_y = -26
 	},
+/obj/item/storage/firstaid/tactical,
+/obj/item/card/emag,
+/obj/item/storage/box/hypospray/CMO,
 /turf/open/floor/wood/yew,
 /area/ship/crew/office)
 "YX" = (
@@ -2143,7 +2197,7 @@ ew
 iQ
 lr
 nO
-TJ
+aJ
 aY
 vi
 yi
@@ -2284,7 +2338,7 @@ kq
 ME
 pw
 qq
-FJ
+ca
 wj
 zd
 BF
