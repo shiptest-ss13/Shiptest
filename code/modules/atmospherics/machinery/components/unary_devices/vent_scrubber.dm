@@ -136,8 +136,7 @@
 	..()
 	if(welded || !is_operational())
 		return FALSE
-	if(!nodes[1] || !on)
-		on = FALSE
+	if(!nodes[1])
 		return FALSE
 	scrub(loc)
 	if(widenet)
