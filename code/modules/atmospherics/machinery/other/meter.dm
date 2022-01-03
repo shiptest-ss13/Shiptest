@@ -33,14 +33,14 @@
 	id_tag = ATMOS_GAS_MONITOR_LOOP_DISTRIBUTION
 
 /obj/machinery/meter/Destroy()
-	SSair.atmos_machinery -= src
+	SSair.stop_processing_machine(src)
 	target = null
 	return ..()
 
 /obj/machinery/meter/Initialize(mapload, new_piping_layer)
 	if(!isnull(new_piping_layer))
 		target_layer = new_piping_layer
-	SSair.atmos_machinery += src
+	SSair.start_processing_machine(src)
 	if(!target)
 		reattach_to_layer()
 	return ..()
@@ -59,10 +59,6 @@
 	PIPING_LAYER_DOUBLE_SHIFT(src, target_layer)
 
 /obj/machinery/meter/process_atmos()
-	if(!target)
-		reattach_to_layer()
-		return 0
-
 	if(!(target?.flags_1 & INITIALIZED_1))
 		icon_state = "meterX"
 		return 0
