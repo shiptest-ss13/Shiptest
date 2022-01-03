@@ -40,7 +40,7 @@
 	if(.)
 		if(active)
 			if(sword_color)
-				icon_state = "sword[sword_color]"
+				icon_state = "[base_icon_state][sword_color]"
 			START_PROCESSING(SSobj, src)
 		else
 			STOP_PROCESSING(SSobj, src)
@@ -90,8 +90,9 @@
 
 /obj/item/melee/transforming/energy/sword
 	name = "energy sword"
-	desc = "May the force be within you."
-	icon_state = "sword0"
+	desc = "For when a katana isn't enough. While Nanotrasen and the Syndicate both produce the so-called e-swords, they are visually and functionaly identical."
+	icon_state = "sword"
+	base_icon_state = "sword"
 	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
 	force = 3
@@ -108,7 +109,7 @@
 /obj/item/melee/transforming/energy/sword/transform_weapon(mob/living/user, supress_message_text)
 	. = ..()
 	if(. && active && sword_color)
-		icon_state = "sword[sword_color]"
+		icon_state = "[base_icon_state][sword_color]"
 
 /obj/item/melee/transforming/energy/sword/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
 	if(active)
@@ -154,7 +155,7 @@
 	return 0
 
 /obj/item/melee/transforming/energy/sword/saber
-	var/list/possible_colors = list("red" = COLOR_SOFT_RED, "blue" = LIGHT_COLOR_LIGHT_CYAN, "green" = LIGHT_COLOR_GREEN, "purple" = LIGHT_COLOR_LAVENDER)
+	var/list/possible_colors = list("red" = COLOR_SOFT_RED, "blue" = LIGHT_COLOR_LIGHT_CYAN, "green" = LIGHT_COLOR_GREEN, "purple" = LIGHT_COLOR_LAVENDER, "yellow" = COLOR_YELLOW)
 	var/hacked = FALSE
 
 /obj/item/melee/transforming/energy/sword/saber/Initialize(mapload)
@@ -182,6 +183,9 @@
 /obj/item/melee/transforming/energy/sword/saber/purple
 	possible_colors = list("purple" = LIGHT_COLOR_LAVENDER)
 
+/obj/item/melee/transforming/energy/sword/saber/yellow
+	possible_colors = list("yellow" = COLOR_YELLOW)
+
 /obj/item/melee/transforming/energy/sword/saber/attackby(obj/item/W, mob/living/user, params)
 	if(W.tool_behaviour == TOOL_MULTITOOL)
 		if(!hacked)
@@ -190,21 +194,37 @@
 			to_chat(user, "<span class='warning'>RNBW_ENGAGE</span>")
 
 			if(active)
-				icon_state = "swordrainbow"
+				icon_state = "[base_icon_state]rainbow"
 				user.update_inv_hands()
 		else
 			to_chat(user, "<span class='warning'>It's already fabulous!</span>")
 	else
 		return ..()
 
-/obj/item/melee/transforming/energy/sword/pirate
+
+/obj/item/melee/transforming/energy/sword/saber/pirate
 	name = "energy cutlass"
 	desc = "Arrrr matey."
-	icon_state = "cutlass0"
+	icon_state = "cutlass"
+	base_icon_state = "cutlass"
 	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
-	icon_state_on = "cutlass1"
-	light_color = COLOR_RED
+	icon_state_on = "cutlass"
+
+/obj/item/melee/transforming/energy/sword/saber/pirate/red
+	possible_colors = list("red" = COLOR_SOFT_RED)
+
+/obj/item/melee/transforming/energy/sword/saber/pirate/blue
+	possible_colors = list("blue" = LIGHT_COLOR_LIGHT_CYAN)
+
+/obj/item/melee/transforming/energy/sword/saber/pirate/green
+	possible_colors = list("green" = LIGHT_COLOR_GREEN)
+
+/obj/item/melee/transforming/energy/sword/saber/pirate/purple
+	possible_colors = list("purple" = LIGHT_COLOR_LAVENDER)
+
+/obj/item/melee/transforming/energy/sword/saber/pirate/yellow
+	possible_colors = list("yellow" = COLOR_YELLOW)
 
 /obj/item/melee/transforming/energy/blade
 	name = "energy blade"

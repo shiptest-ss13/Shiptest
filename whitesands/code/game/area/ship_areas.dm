@@ -257,8 +257,12 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	icon_state = "firingrange"
 
 /area/ship/security
-	name = "Security Podbay"
+	name = "Security Office"
 	icon_state = "security"
+
+/area/ship/security/armory
+	name = "Armory"
+	icon_state = "armory"
 
 /// Cargo Bay ///
 /area/ship/cargo
@@ -267,6 +271,11 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	lighting_colour_tube = "#ffe3cc"
 	lighting_colour_bulb = "#ffdbb8"
 	sound_environment = SOUND_AREA_LARGE_ENCLOSED
+
+/area/ship/cargo/office
+	name = "Cargo Office"
+	icon_state = "quartoffice"
+	sound_environment = SOUND_AREA_STANDARD_STATION
 
 /// Hallways ///
 /area/ship/hallway

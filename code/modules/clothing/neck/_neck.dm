@@ -254,6 +254,8 @@
 	name = "pet collar"
 	desc = "It's for pets. But some people wear it anyways for reasons unknown."
 	icon_state = "petcollar"
+	greyscale_colors = list(list(16,21), list(16,19))
+	greyscale_icon_state = "collar"
 	var/tagname = null
 
 
