@@ -32,11 +32,9 @@
 	return ..()
 
 /datum/pipeline/process()
-	if(building)
+	if(!update || building)
 		return
-	if(update)
-		update = FALSE
-		reconcile_air()
+	reconcile_air()
 	update = air.react(src)
 
 /datum/pipeline/proc/build_pipeline(obj/machinery/atmospherics/base)
