@@ -166,10 +166,6 @@
 	head = /obj/item/clothing/head/hardhat
 	ears = /obj/item/radio/headset/syndicate/alt
 	id = /obj/item/card/id/syndicate_command/crew_id
-<<<<<<< HEAD
-=======
-
->>>>>>> master-2
 
 /datum/outfit/job/engineer/syndicate/gorlex
 	name = "Mechanic (Gorlex Marauders)"
