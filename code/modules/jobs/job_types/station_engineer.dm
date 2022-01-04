@@ -159,7 +159,7 @@
 	glasses = /obj/item/clothing/glasses/sunglasses
 	shoes = /obj/item/clothing/shoes/jackboots
 /datum/outfit/job/engineer/gec
-	name = "GEC Engineer"
+	name = "Station Engineer (GEC)"
 
 	uniform = /obj/item/clothing/under/syndicate/intern
 	suit = /obj/item/clothing/suit/toggle/hazard

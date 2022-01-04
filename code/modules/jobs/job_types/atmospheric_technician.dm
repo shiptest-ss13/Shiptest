@@ -74,7 +74,7 @@
 
 //Shiptest
 /datum/outfit/job/atmos/gec
-	name = "GEC Atmos Tech"
+	name = "Atmospheric Technician (GEC)"
 
 	uniform = /obj/item/clothing/under/syndicate/intern
 	suit = /obj/item/clothing/suit/toggle/hazard

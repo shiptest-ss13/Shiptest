@@ -91,7 +91,7 @@
 
 //Shiptest
 /datum/outfit/job/chemist/gec
-	name = "GEC Chemical Engineer"
+	name = "Chemist (GEC)"
 
 	uniform = /obj/item/clothing/under/syndicate/intern
 	suit = /obj/item/clothing/suit/toggle/hazard
