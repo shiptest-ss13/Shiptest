@@ -33,7 +33,7 @@
 		"NT-E-Rifle" = /obj/item/gun/energy/e_gun,
 		"E-TAR SMG" = /obj/item/gun/energy/e_gun/smg,
 		"Vector SMG" = /obj/item/gun/ballistic/automatic/vector,
-		"E-SG 500" = /obj/item/gun/energy/e_gun/iot,)
+		"E-SG 500" = /obj/item/gun/energy/e_gun/iot)
 
 /obj/machinery/vending/security/pre_throw(obj/item/I)
 	if(istype(I, /obj/item/grenade))
