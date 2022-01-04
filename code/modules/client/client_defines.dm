@@ -189,6 +189,3 @@
 
 	/// If the client is currently under the restrictions of the interview system
 	var/interviewee = FALSE
-
-	/// Client-based respawn timer using timeofday.
-	var/timeofdeath

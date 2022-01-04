@@ -716,13 +716,18 @@
 	if (CONFIG_GET(flag/norespawn) && !admin_bypass)
 		return
 
-	if(client?.timeofdeath && !admin_bypass)
-		var/time_left = client?.timeofdeath + respawn_timer - world.timeofday
+	var/usrkey = client?.ckey
+	if(!usrkey)
+		log_game("[key_name(usr)] AM failed due to disconnect.")
+
+	if(GLOB.respawn_timers[usrkey] && !admin_bypass)
+		var/time_left = GLOB.respawn_timers[usrkey] + respawn_timer - world.timeofday
 		if(time_left > 0)
 			to_chat(usr, "<span class='boldnotice'>You still have [DisplayTimeText(time_left)] left before you can respawn.</span>")
 			return
 
-	client?.timeofdeath = 0
+	GLOB.respawn_timers -= usrkey
+
 	log_game("[key_name(usr)] used abandon mob.")
 
 	to_chat(usr, "<span class='boldnotice'>Please roleplay correctly!</span>")
