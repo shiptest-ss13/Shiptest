@@ -274,6 +274,14 @@ Works together with spawning an observer, noted above.
 */
 
 /mob/proc/ghostize(can_reenter_corpse = TRUE)
+	for(var/mob/dead/observer/ghost in GLOB.dead_mob_list)
+		if(!ghost.mind || !ghost.can_reenter_corpse)
+			continue
+		if(ghost.mind == mind)
+			SStgui.on_transfer(src, ghost)
+			if(!can_reenter_corpse)
+				ghost.mind = null
+				key = null
 	if(key)
 		if(key[1] != "@") // Skip aghosts.
 			stop_sound_channel(CHANNEL_HEARTBEAT) //Stop heartbeat sounds because You Are A Ghost Now
