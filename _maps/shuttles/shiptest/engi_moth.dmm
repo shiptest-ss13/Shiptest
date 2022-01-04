@@ -1121,7 +1121,7 @@
 	id = "moth_doors_west";
 	name = "Western Blast Door"
 	},
-/turf/open/floor/mineral/plastitanium/red/airless,
+/turf/open/floor/mineral/plastitanium/red,
 /area/ship/medical)
 "qS" = (
 /obj/effect/turf_decal/corner/yellow{
@@ -1417,7 +1417,7 @@
 	name = "Port Blast Doors";
 	pixel_y = -25
 	},
-/turf/open/floor/mineral/plastitanium/red/airless,
+/turf/open/floor/mineral/plastitanium/red,
 /area/ship/medical)
 "vP" = (
 /obj/effect/turf_decal/techfloor/orange/corner{
@@ -1885,6 +1885,9 @@
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
 	},
+/obj/machinery/atmospherics/pipe/simple/orange/visible{
+	dir = 8
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/medical)
 "CP" = (
@@ -2245,6 +2248,7 @@
 /obj/item/clothing/under/syndicate/tacticool/skirt,
 /obj/item/holosign_creator/engineering,
 /obj/item/holosign_creator/atmos,
+/obj/item/clothing/glasses/meson/engine,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
 "JR" = (
@@ -2560,6 +2564,10 @@
 /obj/effect/decal/cleanable/oil,
 /obj/item/kirbyplants/random,
 /obj/item/mecha_parts/mecha_equipment/hydraulic_clamp,
+/obj/machinery/shower{
+	pixel_y = 19
+	},
+/obj/effect/turf_decal/box/white,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
 "PN" = (
