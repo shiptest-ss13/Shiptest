@@ -282,6 +282,7 @@ Works together with spawning an observer, noted above.
 			if(!can_reenter_corpse)
 				ghost.mind = null
 				key = null
+			return ghost
 	if(key)
 		if(key[1] != "@") // Skip aghosts.
 			stop_sound_channel(CHANNEL_HEARTBEAT) //Stop heartbeat sounds because You Are A Ghost Now
