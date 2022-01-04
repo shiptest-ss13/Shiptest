@@ -284,6 +284,7 @@ Works together with spawning an observer, noted above.
 			ghost.client.init_verbs()
 			if(!can_reenter_corpse)	// Disassociates observer mind from the body mind
 				ghost.mind = null
+				key = null
 			return ghost
 
 /*
@@ -343,7 +344,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 	set name = "Re-enter Corpse"
 	if(!client)
 		return
-	if(!mind || QDELETED(mind.current))
+	if(!mind || QDELETED(mind.current) || mind.current.loc == null)
 		to_chat(src, "<span class='warning'>You have no body.</span>")
 		return
 	if(!can_reenter_corpse)
