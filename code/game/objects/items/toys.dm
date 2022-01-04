@@ -310,8 +310,8 @@
 	name = "toy sword"
 	desc = "A cheap, plastic replica of an energy sword. Realistic sounds! Ages 8 and up."
 	icon = 'icons/obj/transforming_energy.dmi'
-	icon_state = "sword0"
-	item_state = "sword0"
+	icon_state = "sword"
+	item_state = "sword"
 	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
 	var/active = 0
@@ -335,8 +335,8 @@
 	else
 		to_chat(user, "<span class='notice'>You push the plastic blade back down into the handle.</span>")
 		playsound(user, 'sound/weapons/saberoff.ogg', 20, TRUE)
-		icon_state = "sword0"
-		item_state = "sword0"
+		icon_state = "sword"
+		item_state = "sword"
 		w_class = WEIGHT_CLASS_SMALL
 	add_fingerprint(user)
 
