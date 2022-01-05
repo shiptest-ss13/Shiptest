@@ -254,8 +254,8 @@ SUBSYSTEM_DEF(mapping)
 		if(islist(data["allowed_species"]))
 			var/list/allowed_species_list = data["allowed_species"]
 			for(var/species in allowed_species_list)
-				if(ispath(text2path(species), /datum/species)) // forbidding the parent type is done by the schema
-					S.allowed_species.Add(text2path(species))
+				if(species in GLOB.species_list) // forbidding the parent type is done by the schema
+					S.allowed_species.Add(GLOB.species_list[species])
 				else
 					stack_trace("Invalid species! [species] on [S.name]'s config! Skipping.")
 
