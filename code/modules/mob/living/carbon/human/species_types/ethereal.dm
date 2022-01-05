@@ -80,6 +80,9 @@
 
 /datum/species/ethereal/spec_updatehealth(mob/living/carbon/human/H)
 	. = ..()
+	if(!ethereal_light)
+		return
+
 	if(H.stat != DEAD && !EMPeffect)
 		if(!emag_effect)
 			current_color = health_adjusted_color(H, default_color)
@@ -110,6 +113,9 @@
 	return result
 
 /datum/species/ethereal/proc/set_ethereal_light(mob/living/carbon/human/H, current_color)
+	if(!ethereal_light)
+		return
+
 	var/health_percent = max(H.health, 0) / 100
 
 	var/light_range = 1 + (2 * health_percent)
