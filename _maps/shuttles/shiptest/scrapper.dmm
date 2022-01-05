@@ -289,15 +289,6 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/security)
-"cQ" = (
-/obj/machinery/atmospherics/components/binary/pump{
-	name = "engine fuel pump"
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
-	dir = 9
-	},
-/turf/open/floor/plating,
-/area/ship/engineering/engine)
 "cR" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /obj/effect/landmark/start/station_engineer,
@@ -1662,6 +1653,15 @@
 	},
 /turf/open/floor/pod/light,
 /area/ship/hallway/starboard)
+"sX" = (
+/obj/machinery/atmospherics/components/binary/pump{
+	name = "engine fuel pump"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 9
+	},
+/turf/open/floor/plating,
+/area/ship/engineering/engine)
 "tb" = (
 /obj/machinery/computer/communications{
 	dir = 1
@@ -3378,7 +3378,9 @@
 /obj/effect/turf_decal/techfloor/orange{
 	dir = 5
 	},
-/obj/machinery/rnd/server,
+/obj/structure/frame/machine,
+/obj/item/stock_parts/scanning_module,
+/obj/item/circuitboard/machine/rdserver,
 /turf/open/floor/pod/dark,
 /area/ship/engineering)
 "MV" = (
@@ -5617,7 +5619,7 @@ Rh
 Hi
 ny
 JJ
-cQ
+sX
 Rg
 uJ
 "}
