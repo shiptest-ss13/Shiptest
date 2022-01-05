@@ -113,7 +113,9 @@
 /turf/open/floor/grass,
 /area/ship/crew/hydroponics)
 "cI" = (
-/obj/machinery/door/airlock/highsecurity,
+/obj/machinery/door/airlock/highsecurity{
+	name = "Bridge"
+	},
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
@@ -232,7 +234,9 @@
 /turf/open/floor/carpet/nanoweave/red,
 /area/ship/crew/dorm)
 "dW" = (
-/obj/machinery/vending/hydroseeds,
+/obj/machinery/vending/hydroseeds{
+	all_items_free = 1
+	},
 /obj/machinery/light{
 	dir = 1
 	},
@@ -277,7 +281,9 @@
 /turf/open/floor/grass,
 /area/ship/crew/hydroponics)
 "eL" = (
-/obj/machinery/door/airlock/wood/glass,
+/obj/machinery/door/airlock/wood/glass{
+	name = "Natural Sciences Lab"
+	},
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -341,7 +347,9 @@
 /turf/open/floor/mineral/plastitanium/red,
 /area/ship/hallway/central)
 "fB" = (
-/obj/machinery/door/airlock/hatch,
+/obj/machinery/door/airlock/hatch{
+	name = "Crew Quarters"
+	},
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -573,11 +581,15 @@
 /obj/machinery/light{
 	dir = 1
 	},
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
 "lm" = (
 /obj/structure/closet/secure_closet{
-	icon_state = "hydro"
+	icon_state = "hydro";
+	name = "natural scientist's locker"
 	},
 /obj/item/storage/belt/fannypack/green,
 /obj/item/encryptionkey/headset_med,
@@ -617,11 +629,14 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 6
 	},
+/obj/machinery/holopad/emergency/command,
 /turf/open/floor/carpet/nanoweave/red,
 /area/ship/bridge)
 "mz" = (
 /obj/effect/turf_decal/corner/bottlegreen/full,
-/obj/machinery/door/airlock/virology/glass,
+/obj/machinery/door/airlock/virology/glass{
+	name = "Medical Center"
+	},
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
@@ -680,6 +695,7 @@
 	},
 /obj/effect/turf_decal/corner/yellow,
 /obj/machinery/airalarm/directional/west,
+/obj/structure/cable,
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
 "nu" = (
@@ -832,7 +848,9 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
 "pL" = (
-/obj/machinery/door/airlock/command/glass,
+/obj/machinery/door/airlock/command/glass{
+	name = "Professor's Office"
+	},
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -935,6 +953,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 9
 	},
+/obj/machinery/holopad,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/library)
 "rZ" = (
@@ -1098,7 +1117,8 @@
 	dir = 8
 	},
 /obj/structure/closet/secure_closet{
-	icon_state = "med_secure"
+	icon_state = "med_secure";
+	name = "student's locker"
 	},
 /obj/item/radio/headset/syndicate/alt,
 /obj/item/storage/belt/medical,
@@ -1121,7 +1141,8 @@
 	dir = 4
 	},
 /obj/structure/closet/secure_closet{
-	icon_state = "med_secure"
+	icon_state = "med_secure";
+	name = "student's locker"
 	},
 /obj/item/radio/headset/syndicate/alt,
 /obj/item/storage/belt/medical,
@@ -1189,7 +1210,8 @@
 /area/ship/engineering)
 "xM" = (
 /obj/structure/closet/secure_closet{
-	icon_state = "eng_secure"
+	icon_state = "eng_secure";
+	name = "engineer's locker"
 	},
 /obj/item/radio/headset/syndicate/alt,
 /obj/item/storage/toolbox/syndicate,
@@ -1218,6 +1240,7 @@
 /obj/item/stack/ducts/fifty,
 /obj/item/circuitboard/machine/shuttle/engine/electric,
 /obj/item/circuitboard/machine/shuttle/smes,
+/obj/item/circuitboard/computer/rdconsole,
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
 "yf" = (
@@ -1274,7 +1297,8 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/closet/secure_closet{
-	icon_state = "mining"
+	icon_state = "mining";
+	name = "rescue specialist's locker"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
@@ -1352,7 +1376,8 @@
 	dir = 8
 	},
 /obj/structure/closet/secure_closet{
-	icon_state = "med"
+	icon_state = "med";
+	name = "paramedic's locker"
 	},
 /obj/item/radio/headset/syndicate/alt,
 /obj/item/storage/belt/medical/paramedic,
@@ -1432,12 +1457,13 @@
 	},
 /obj/structure/table/glass,
 /obj/item/storage/firstaid/o2,
-/obj/item/defibrillator,
 /obj/machinery/duct,
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
 /obj/machinery/power/apc/auto_name/north,
+/obj/item/soap/syndie,
+/obj/item/defibrillator,
 /turf/open/floor/plasteel/white,
 /area/ship/medical/surgery)
 "Bu" = (
@@ -1576,6 +1602,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 9
 	},
+/obj/machinery/holopad/emergency/medical,
 /turf/open/floor/plasteel/white,
 /area/ship/medical/surgery)
 "DH" = (
@@ -1943,7 +1970,9 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
 "Yo" = (
-/obj/machinery/door/airlock/engineering/glass,
+/obj/machinery/door/airlock/engineering/glass{
+	name = "Engineering Bay"
+	},
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -1985,7 +2014,8 @@
 /area/ship/medical)
 "YN" = (
 /obj/structure/closet/secure_closet{
-	icon_state = "cmo"
+	icon_state = "cmo";
+	name = "professor's locker"
 	},
 /obj/item/radio/headset/syndicate/alt/leader,
 /obj/item/storage/belt/medical/surgery,
