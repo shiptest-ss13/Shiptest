@@ -149,7 +149,7 @@ SUBSYSTEM_DEF(vote)
 			//WS End
 
 			if("map")
-				SSshuttle.action_load(SSmapping.maplist[.])
+				SSshuttle.load_template(SSmapping.maplist[.])
 
 	if(restart)
 		var/active_admins = FALSE
