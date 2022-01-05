@@ -1721,7 +1721,9 @@
 /turf/open/floor/pod/dark,
 /area/ship/cargo)
 "xk" = (
-/obj/machinery/rnd/server,
+/obj/structure/frame/machine,
+/obj/item/stock_parts/scanning_module,
+/obj/item/circuitboard/machine/rdserver,
 /turf/open/floor/carpet/royalblue,
 /area/ship/construction)
 "xl" = (
@@ -2419,20 +2421,6 @@
 	},
 /turf/open/floor/carpet/royalblue,
 /area/ship/construction)
-"Fk" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/machinery/door/firedoor/border_only,
-/obj/machinery/door/firedoor/border_only{
-	dir = 1
-	},
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/machinery/door/airlock/external{
-	icon = 'icons/obj/doors/blastdoor.dmi'
-	},
-/turf/open/floor/pod/light,
-/area/ship/hallway/central)
 "Fm" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 1
@@ -3558,6 +3546,20 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/electrical)
+"Ri" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/door/airlock/external{
+	icon = 'icons/obj/doors/blastdoor.dmi'
+	},
+/turf/open/floor/pod/light,
+/area/ship/hallway/central)
 "Rl" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
@@ -4826,7 +4828,7 @@ NC
 kH
 mH
 pC
-Fk
+Ri
 Xe
 Gt
 VN
