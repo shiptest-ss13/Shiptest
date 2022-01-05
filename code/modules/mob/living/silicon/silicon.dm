@@ -57,7 +57,6 @@
 		diag_hud.add_to_hud(src)
 	diag_hud_set_status()
 	diag_hud_set_health()
-	become_hearing_sensitive()
 
 /mob/living/silicon/med_hud_set_health()
 	return //we use a different hud
