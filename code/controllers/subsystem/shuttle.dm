@@ -305,6 +305,10 @@ SUBSYSTEM_DEF(shuttle)
 	new_shuttle.current_ship.set_ship_name(to_replace.name)
 	new_shuttle.current_ship.forceMove(to_replace.current_ship.loc) //Overmap location
 
+	if(istype(old_shuttle_location, /obj/docking_port/stationary/transit))
+		to_replace.assigned_transit = null
+		new_shuttle.assigned_transit = old_shuttle_location
+
 	to_replace.jumpToNullSpace() //This will destroy the old shuttle
 	new_shuttle.initiate_docking(old_shuttle_location) //This will spawn the new shuttle
 	return new_shuttle
