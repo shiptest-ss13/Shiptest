@@ -15,10 +15,6 @@
 	if(!islist && !istype(D))
 		return
 
-	if(istype(D, /datum/controller))
-		var/datum/controller/ss = D
-		message_admins("[key_name_admin(usr)] is debugging the [ss.name] controller")
-
 	var/title = ""
 	var/refid = REF(D)
 	var/icon/sprite
