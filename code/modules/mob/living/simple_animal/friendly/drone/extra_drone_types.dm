@@ -152,7 +152,7 @@
 	"2. Expand.\n"+\
 	"3. Command."
 	default_storage = /obj/item/gun/energy/e_gun/old
-	default_hatmask = /obj/item/clothing/head/crown/fancy
+	default_hatmask = /obj/item/clothing/head/caphat
 	hacked = TRUE
 	flavortext = null
 
