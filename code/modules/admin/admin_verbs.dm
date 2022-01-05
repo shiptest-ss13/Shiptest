@@ -167,6 +167,10 @@ GLOBAL_PROTECT(admin_verbs_debug)
 	/client/proc/cmd_display_init_log,
 	/client/proc/cmd_display_overlay_log,
 	/client/proc/reload_configuration,
+	/client/proc/jumptoarea,
+	/client/proc/jumptocoord,
+	/client/proc/jumptokey,
+	/client/proc/admin_ghost,
 	#ifdef SENDMAPS_PROFILE
 	/client/proc/display_sendmaps,
 	#endif
