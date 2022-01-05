@@ -1,259 +1,3204 @@
-"al" = (/obj/structure/window/reinforced/spawner,/obj/structure/window/reinforced/spawner/west,/obj/structure/cable/yellow{icon_state = "1-4"},/obj/structure/cable/yellow{icon_state = "1-2"},/obj/structure/cable/yellow{icon_state = "4-8"},/obj/structure/cable{icon_state = "1-4"},/obj/structure/catwalk/over,/turf/open/floor/plating,/area/ship/maintenance/fore)
-"am" = (/obj/structure/closet/crate/hydroponics,/obj/item/vending_refill/hydroseeds,/obj/effect/spawner/lootdrop/seed_vault,/obj/effect/spawner/lootdrop/seed_vault,/obj/effect/spawner/lootdrop/seed_vault,/obj/item/storage/box/disks_plantgene,/turf/open/floor/plasteel/tech/techmaint,/area/ship/maintenance/fore)
-"aE" = (/obj/effect/turf_decal/corner/green/border{dir = 4},/turf/open/floor/plasteel/white{dir = 1},/area/ship/crew/hydroponics)
-"bL" = (/turf/closed/wall,/area/ship/crew)
-"bS" = (/obj/structure/cable/yellow{icon_state = "4-8"},/obj/structure/cable{icon_state = "4-8"},/obj/structure/catwalk/over,/obj/machinery/light/small,/turf/open/floor/plating,/area/ship/maintenance/fore)
-"bT" = (/obj/machinery/door/airlock/public,/obj/structure/cable{icon_state = "1-2"},/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,/obj/machinery/door/firedoor/border_only,/obj/machinery/door/firedoor/border_only{dir = 1},/turf/open/floor/plasteel/white{dir = 1},/area/ship/crew/hydroponics)
-"cl" = (/obj/machinery/airalarm/all_access{dir = 1; pixel_y = -24},/turf/open/floor/carpet/red,/area/ship/bridge)
-"ct" = (/obj/item/storage/toolbox/mechanical{pixel_x = -2; pixel_y = -1},/obj/structure/rack,/obj/item/storage/toolbox/electrical{pixel_x = 1; pixel_y = 6},/obj/item/clothing/gloves/color/yellow,/obj/item/clothing/gloves/color/yellow,/obj/item/clothing/head/welding{pixel_x = -2; pixel_y = 1},/turf/open/floor/plasteel/tech/techmaint,/area/ship/engineering)
-"cA" = (/obj/machinery/power/solar,/obj/structure/cable/yellow{icon_state = "0-4"},/obj/structure/cable/yellow{icon_state = "4-8"},/obj/effect/turf_decal/solarpanel,/obj/machinery/power/tracker,/obj/structure/window/reinforced/spawner/west,/obj/structure/window/reinforced/spawner,/turf/open/floor/plating/airless,/area/ship/external)
-"cN" = (/obj/structure/cable/yellow{icon_state = "1-8"},/obj/structure/catwalk/over,/turf/open/floor/plating/airless,/area/ship/maintenance/fore)
-"db" = (/obj/machinery/hydroponics/constructable,/turf/open/floor/plasteel/white{dir = 1},/area/ship/crew/hydroponics)
-"de" = (/obj/machinery/airalarm/all_access{dir = 8; pixel_x = 24},/obj/machinery/power/terminal,/obj/structure/cable/yellow{icon_state = "0-8"},/obj/structure/cable{icon_state = "2-8"},/turf/open/floor/plasteel/tech/techmaint,/area/ship/engineering)
-"do" = (/obj/machinery/hydroponics/constructable,/obj/structure/cable{icon_state = "4-8"},/obj/effect/turf_decal/corner/green/border{dir = 1},/turf/open/floor/plasteel/white{dir = 1},/area/ship/crew/hydroponics)
-"dp" = (/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,/obj/machinery/atmospherics/pipe/simple/orange/visible{dir = 6},/obj/structure/cable{icon_state = "1-2"},/obj/structure/cable/yellow{icon_state = "1-2"},/turf/open/floor/plasteel/tech/techmaint,/area/ship/engineering)
-"dG" = (/obj/structure/window/reinforced/spawner/west,/obj/structure/window/reinforced/spawner/north,/obj/structure/cable/yellow{icon_state = "1-2"},/obj/structure/cable/yellow{icon_state = "4-8"},/obj/structure/cable/yellow{icon_state = "2-4"},/obj/structure/catwalk/over,/turf/open/floor/plating,/area/ship/maintenance/fore)
-"dU" = (/obj/item/kirbyplants/random,/obj/machinery/firealarm{pixel_y = -28},/turf/open/floor/carpet/red,/area/ship/bridge)
-"dW" = (/obj/effect/turf_decal/corner/green/bordercorner{dir = 1},/turf/open/floor/plasteel/white{dir = 1},/area/ship/crew/hydroponics)
-"dZ" = (/obj/machinery/power/shuttle/engine/fueled/plasma{dir = 1},/turf/open/floor/plating,/area/ship/engineering)
-"ew" = (/obj/machinery/door/airlock/maintenance_hatch,/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{dir = 8},/obj/machinery/door/firedoor/border_only{dir = 8},/obj/machinery/door/firedoor/border_only{dir = 4},/turf/open/floor/plating,/area/ship/hallway/starboard)
-"eF" = (/obj/effect/spawner/structure/window/reinforced,/obj/machinery/door/poddoor/preopen{id = "mining_ship_blast"},/turf/open/floor/plating,/area/ship/crew)
-"eI" = (/obj/structure/cable{icon_state = "2-4"},/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,/turf/open/floor/plasteel,/area/ship/crew)
-"eU" = (/turf/template_noop,/area/template_noop)
-"fd" = (/obj/machinery/computer/helm,/turf/open/floor/carpet/red,/area/ship/bridge)
-"fu" = (/obj/machinery/seed_extractor,/obj/effect/turf_decal/corner/green/border{dir = 5},/obj/item/seeds/cannabis,/obj/item/seeds/cannabis,/obj/item/seeds/cannabis,/turf/open/floor/plasteel/white{dir = 1},/area/ship/crew/hydroponics)
-"fy" = (/obj/structure/catwalk/over,/obj/structure/cable/yellow{icon_state = "1-2"},/obj/structure/cable{icon_state = "2-8"},/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{dir = 4},/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{dir = 8},/turf/open/floor/plating,/area/ship/maintenance/fore)
-"fz" = (/obj/machinery/airalarm/all_access{dir = 8; pixel_x = 56},/turf/open/floor/plasteel,/area/ship/crew)
-"fJ" = (/obj/machinery/light{dir = 1; light_color = "#FFDDBB"},/turf/open/floor/plasteel/dark,/area/ship/hallway/starboard)
-"fM" = (/turf/template_noop,/area/ship/external)
-"fO" = (/obj/effect/spawner/structure/window/reinforced,/obj/machinery/door/poddoor/preopen{id = "mining_ship_blast"},/turf/open/floor/plating,/area/ship/maintenance/fore)
-"gE" = (/obj/structure/catwalk/over,/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{dir = 4},/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{dir = 8},/turf/open/floor/plating,/area/ship/hallway/starboard)
-"gL" = (/obj/structure/tank_dispenser,/turf/open/floor/plasteel/tech/techmaint,/area/ship/maintenance/fore)
-"hh" = (/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{dir = 8},/turf/open/floor/carpet/red,/area/ship/bridge)
-"hn" = (/obj/structure/chair/comfy/shuttle{dir = 1},/turf/open/floor/carpet/red,/area/ship/bridge)
-"hO" = (/obj/machinery/atmospherics/components/unary/portables_connector,/obj/structure/cable/yellow{icon_state = "2-8"},/obj/structure/cable/yellow{icon_state = "4-8"},/obj/structure/cable{icon_state = "4-8"},/turf/open/floor/plasteel/tech/techmaint,/area/ship/engineering)
-"iF" = (/obj/structure/window/reinforced/spawner/east,/obj/structure/window/reinforced/spawner/north,/obj/structure/cable/yellow{icon_state = "2-8"},/obj/structure/cable/yellow{icon_state = "4-8"},/obj/structure/catwalk/over,/turf/open/floor/plating,/area/ship/maintenance/fore)
-"ja" = (/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,/obj/machinery/atmospherics/pipe/manifold/orange/visible,/obj/structure/cable{icon_state = "1-4"},/obj/structure/cable{icon_state = "1-8"},/obj/machinery/power/port_gen/pacman,/obj/structure/cable/yellow,/obj/item/stack/sheet/mineral/plasma/five,/turf/open/floor/plasteel/tech/techmaint,/area/ship/engineering)
-"jg" = (/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{dir = 1},/turf/open/floor/plasteel,/area/ship/crew)
-"js" = (/obj/structure/window/reinforced,/obj/machinery/door/window/northleft,/obj/machinery/atmospherics/components/unary/shuttle/heater{dir = 1},/turf/open/floor/plating,/area/ship/engineering)
-"jt" = (/obj/machinery/smartfridge/disks{pixel_y = 2},/obj/structure/table/reinforced,/obj/effect/turf_decal/corner/green/border{dir = 5},/turf/open/floor/plasteel/white{dir = 1},/area/ship/crew/hydroponics)
-"ju" = (/turf/open/floor/plasteel/white{dir = 1},/area/ship/crew/hydroponics)
-"jO" = (/obj/machinery/atmospherics/components/unary/tank/air{dir = 8},/turf/open/floor/plasteel/tech/techmaint,/area/ship/engineering)
-"jZ" = (/obj/structure/table/wood,/obj/effect/turf_decal/siding/wood{dir = 8},/obj/item/reagent_containers/food/snacks/grown/cannabis{pixel_x = -5; pixel_y = 9},/obj/item/reagent_containers/food/snacks/grown/cannabis,/obj/item/lighter,/obj/item/storage/fancy/rollingpapers,/turf/open/floor/plasteel/grimy,/area/ship/crew)
-"kk" = (/obj/machinery/chem_dispenser/mutagensaltpeter,/obj/effect/turf_decal/corner/green/border{dir = 10},/turf/open/floor/plasteel/white{dir = 1},/area/ship/crew/hydroponics)
-"kx" = (/obj/structure/table/wood,/obj/machinery/reagentgrinder{pixel_y = 8},/obj/effect/turf_decal/siding/wood{dir = 8},/turf/open/floor/plasteel/grimy,/area/ship/crew)
-"ky" = (/obj/structure/reagent_dispensers/watertank,/obj/item/mop,/obj/item/reagent_containers/glass/bucket,/obj/item/storage/bag/trash{pixel_x = 6},/turf/open/floor/plasteel/tech/techmaint,/area/ship/maintenance/fore)
-"la" = (/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{dir = 9},/turf/open/floor/plasteel/white{dir = 1},/area/ship/crew/hydroponics)
-"lb" = (/obj/machinery/hydroponics/constructable,/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{dir = 4},/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{dir = 8},/turf/open/floor/plasteel/white{dir = 1},/area/ship/crew/hydroponics)
-"lx" = (/obj/machinery/hydroponics/constructable,/obj/effect/turf_decal/corner/green/border,/turf/open/floor/plasteel/white{dir = 1},/area/ship/crew/hydroponics)
-"lB" = (/obj/structure/cable{icon_state = "4-8"},/obj/effect/turf_decal/industrial/warning,/obj/machinery/atmospherics/pipe/simple/orange/visible{dir = 6},/turf/open/floor/plasteel/tech/techmaint,/area/ship/engineering)
-"mj" = (/obj/effect/turf_decal/siding/wood{dir = 5},/obj/machinery/smartfridge/drying_rack,/turf/open/floor/plasteel/grimy,/area/ship/crew)
-"mm" = (/obj/machinery/power/solar,/obj/structure/cable/yellow{icon_state = "0-4"},/obj/effect/turf_decal/solarpanel,/obj/structure/window/reinforced/spawner/east,/turf/open/floor/plating/airless,/area/ship/external)
-"mx" = (/obj/structure/table/reinforced,/obj/item/storage/toolbox/emergency{pixel_y = 6},/turf/open/floor/carpet/red,/area/ship/bridge)
-"mJ" = (/turf/closed/wall,/area/ship/bridge)
-"nc" = (/obj/structure/rack,/obj/item/gun/energy/floragun,/obj/item/cultivator,/obj/item/shovel/spade,/obj/item/plant_analyzer,/obj/item/gun/ballistic/shotgun/winchester,/turf/open/floor/plasteel,/area/ship/crew)
-"np" = (/turf/closed/wall,/area/ship/hallway/starboard)
-"ns" = (/obj/machinery/door/airlock/public,/obj/structure/cable{icon_state = "1-2"},/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,/obj/machinery/door/firedoor/border_only,/obj/machinery/door/firedoor/border_only{dir = 1},/turf/open/floor/plasteel/white{dir = 1},/area/ship/crew/hydroponics)
-"nz" = (/obj/structure/cable{icon_state = "1-2"},/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,/turf/open/floor/plasteel/white{dir = 1},/area/ship/crew/hydroponics)
-"nD" = (/obj/structure/table/reinforced,/obj/item/paicard,/turf/open/floor/carpet/red,/area/ship/bridge)
-"nF" = (/obj/structure/catwalk/over,/obj/structure/cable{icon_state = "1-2"},/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,/obj/structure/cable{icon_state = "2-4"},/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{dir = 8},/turf/open/floor/plating/airless,/area/ship/hallway/starboard)
-"nY" = (/obj/machinery/power/solar,/obj/structure/cable/yellow,/obj/effect/turf_decal/solarpanel,/turf/open/floor/plating/airless,/area/ship/external)
-"of" = (/obj/effect/turf_decal/siding/wood{dir = 4},/turf/open/floor/plasteel/grimy,/area/ship/crew)
-"og" = (/obj/structure/cable/yellow{icon_state = "1-4"},/obj/structure/catwalk/over,/turf/open/floor/plating,/area/ship/maintenance/fore)
-"oo" = (/obj/machinery/power/solar,/obj/structure/cable/yellow{icon_state = "0-8"},/obj/effect/turf_decal/solarpanel,/turf/open/floor/plating/airless,/area/ship/external)
-"oB" = (/obj/structure/catwalk/over,/obj/structure/cable/yellow{icon_state = "1-2"},/obj/structure/cable{icon_state = "2-4"},/turf/open/floor/plating,/area/ship/maintenance/fore)
-"oL" = (/obj/structure/cable/yellow{icon_state = "4-8"},/obj/structure/cable{icon_state = "1-2"},/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,/obj/structure/catwalk/over,/obj/structure/catwalk/over,/turf/open/floor/plating,/area/ship/maintenance/fore)
-"pd" = (/obj/machinery/door/airlock/maintenance_hatch,/obj/structure/cable/yellow{icon_state = "1-2"},/obj/structure/catwalk/over,/obj/structure/cable{icon_state = "1-2"},/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,/obj/machinery/door/firedoor/border_only,/obj/machinery/door/firedoor/border_only{dir = 1},/turf/open/floor/plating,/area/ship/engineering)
-"pj" = (/obj/machinery/light{dir = 4; light_color = "#FFDDBB"},/turf/open/floor/plasteel/dark,/area/ship/hallway/starboard)
-"pU" = (/obj/structure/catwalk/over,/obj/structure/cable{icon_state = "1-8"},/turf/open/floor/plating,/area/ship/maintenance/fore)
-"pY" = (/obj/structure/cable/yellow{icon_state = "4-8"},/obj/structure/cable{icon_state = "4-8"},/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{dir = 8},/obj/machinery/ore_silo,/obj/effect/turf_decal/box,/turf/open/floor/plasteel/tech/techmaint,/area/ship/engineering)
-"qc" = (/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{dir = 4},/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{dir = 8},/turf/open/floor/plasteel/white{dir = 1},/area/ship/crew/hydroponics)
-"qf" = (/obj/machinery/power/solar,/obj/structure/cable/yellow{icon_state = "0-8"},/obj/structure/cable/yellow{icon_state = "1-2"},/obj/effect/turf_decal/solarpanel,/obj/structure/window/reinforced/spawner,/turf/open/floor/plating/airless,/area/ship/external)
-"qQ" = (/obj/item/radio/intercom{pixel_y = 20},/turf/open/floor/plasteel/dark,/area/ship/hallway/starboard)
-"rJ" = (/obj/machinery/power/terminal,/obj/structure/cable{icon_state = "0-4"},/obj/machinery/airalarm/all_access{dir = 4; pixel_x = -56},/obj/effect/turf_decal/industrial/warning,/turf/open/floor/plasteel/tech/techmaint,/area/ship/engineering)
-"rX" = (/obj/machinery/chem_master/condimaster,/obj/effect/turf_decal/corner/green/border{dir = 10},/turf/open/floor/plasteel/white{dir = 1},/area/ship/crew/hydroponics)
-"sd" = (/obj/machinery/door/airlock/public,/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{dir = 4},/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{dir = 10},/obj/machinery/door/firedoor/border_only{dir = 8},/obj/machinery/door/firedoor/border_only{dir = 4},/turf/open/floor/plasteel/white{dir = 1},/area/ship/crew/hydroponics)
-"sQ" = (/obj/structure/window/reinforced/spawner,/obj/structure/window/reinforced/spawner/east,/obj/structure/cable/yellow{icon_state = "1-8"},/obj/structure/cable/yellow{icon_state = "4-8"},/obj/structure/cable{icon_state = "1-8"},/obj/structure/catwalk/over,/turf/open/floor/plating,/area/ship/maintenance/fore)
-"sW" = (/obj/structure/table/reinforced,/obj/structure/cable{icon_state = "1-2"},/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,/obj/item/reagent_containers/glass/beaker/large{pixel_x = -6; pixel_y = 5},/obj/item/reagent_containers/glass/beaker/large,/obj/item/storage/fancy/rollingpapers,/obj/item/storage/fancy/rollingpapers,/obj/item/lighter,/turf/open/floor/plasteel/white{dir = 1},/area/ship/crew/hydroponics)
-"ty" = (/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{dir = 4},/turf/open/floor/carpet/red,/area/ship/bridge)
-"tK" = (/obj/structure/sink{pixel_y = 17},/obj/effect/turf_decal/corner/green/border{dir = 5},/obj/structure/sign/poster/contraband/have_a_puff{pixel_x = 32},/obj/machinery/light{bulb_colour = "#FFF0FE"; dir = 4; light_color = "#FF4EF3"},/turf/open/floor/plasteel/white{dir = 1},/area/ship/crew/hydroponics)
-"tN" = (/obj/machinery/button/door{id = "mining_ship_blast"; name = "Blast Door Control"; pixel_x = -5; pixel_y = 39},/obj/machinery/button/door{id = "bridge_lockdown"; name = "Bridge Lockdown Control"; pixel_x = 6; pixel_y = 31},/turf/open/floor/carpet/red,/area/ship/bridge)
-"tT" = (/obj/machinery/atmospherics/components/unary/portables_connector,/obj/structure/ore_box,/turf/open/floor/plasteel/tech/techmaint,/area/ship/engineering)
-"tX" = (/obj/structure/closet/emcloset/anchored,/turf/open/floor/plasteel/tech/techmaint,/area/ship/engineering)
-"un" = (/obj/machinery/light{light_color = "#FFDDBB"},/turf/open/floor/plasteel/dark,/area/ship/hallway/starboard)
-"uv" = (/obj/structure/closet/emcloset/anchored,/turf/open/floor/plasteel/dark,/area/ship/hallway/starboard)
-"uG" = (/obj/machinery/atmospherics/pipe/layer_manifold{dir = 8},/turf/open/floor/plasteel/tech/techmaint,/area/ship/engineering)
-"uK" = (/turf/open/floor/plasteel/dark,/area/ship/hallway/starboard)
-"uO" = (/obj/structure/cable/yellow{icon_state = "1-2"},/obj/structure/cable{icon_state = "1-2"},/obj/structure/catwalk/over,/turf/open/floor/plating,/area/ship/maintenance/fore)
-"uQ" = (/obj/machinery/computer/cryopod{pixel_x = 64},/turf/open/floor/plasteel,/area/ship/crew)
-"uR" = (/obj/structure/chair/stool/bar{dir = 8},/obj/effect/turf_decal/siding/wood{dir = 4},/turf/open/floor/plasteel/grimy,/area/ship/crew)
-"uS" = (/obj/machinery/door/airlock/maintenance_hatch,/obj/structure/catwalk/over,/obj/machinery/door/firedoor/border_only{dir = 4},/obj/machinery/door/firedoor/border_only{dir = 8},/turf/open/floor/plating/airless,/area/ship/hallway/starboard)
-"uX" = (/obj/machinery/power/apc/auto_name/north,/obj/structure/cable{icon_state = "0-2"},/turf/open/floor/plasteel/tech/techmaint,/area/ship/maintenance/fore)
-"ve" = (/obj/structure/extinguisher_cabinet{pixel_y = -32},/obj/machinery/light{light_color = "#FFDDBB"},/turf/open/floor/carpet/red,/area/ship/bridge)
-"vx" = (/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{dir = 8},/obj/structure/cable{icon_state = "4-8"},/obj/machinery/light_switch{pixel_x = 10; pixel_y = -23},/turf/open/floor/plasteel/dark,/area/ship/hallway/starboard)
-"vB" = (/obj/machinery/door/airlock/external,/obj/structure/fans/tiny,/obj/docking_port/mobile{can_move_docking_ports = 1; dir = 8; dwidth = 12; height = 32; launch_status = 0; name = "SV Four Twenty"; port_direction = 8; preferred_direction = 4; width = 32},/turf/open/floor/plating,/area/ship/maintenance/fore)
-"vG" = (/obj/structure/catwalk/over,/obj/structure/cable{icon_state = "1-2"},/obj/machinery/atmospherics/pipe/manifold/supply/visible/layer2{dir = 4},/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,/turf/open/floor/plating,/area/ship/hallway/starboard)
-"vH" = (/obj/machinery/power/solar,/obj/structure/cable/yellow{icon_state = "0-4"},/obj/structure/cable/yellow{icon_state = "4-8"},/obj/effect/turf_decal/solarpanel,/obj/structure/window/reinforced/spawner/north,/obj/structure/window/reinforced/spawner/west,/turf/open/floor/plating/airless,/area/ship/external)
-"vL" = (/obj/structure/cable/yellow{icon_state = "4-8"},/obj/structure/catwalk/over,/turf/open/floor/plating,/area/ship/maintenance/fore)
-"vZ" = (/obj/structure/cable/yellow{icon_state = "4-8"},/obj/structure/cable{icon_state = "4-8"},/obj/structure/cable{icon_state = "0-8"},/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{dir = 4},/obj/structure/rack,/obj/item/gps{gpstag = "NTREC1"; pixel_x = -2; pixel_y = 1},/obj/item/gps{gpstag = "NTREC1"; pixel_x = -9; pixel_y = 7},/obj/item/gps{gpstag = "NTREC1"; pixel_x = 3; pixel_y = 7},/obj/item/radio/off{pixel_x = -1; pixel_y = 5},/obj/item/radio/off{pixel_x = -4; pixel_y = -1},/obj/item/radio/off{pixel_x = 5; pixel_y = 5},/obj/machinery/power/apc/auto_name/north,/turf/open/floor/plasteel/tech/techmaint,/area/ship/engineering)
-"wU" = (/obj/machinery/atmospherics/pipe/simple/orange/hidden{dir = 8},/obj/structure/cable{icon_state = "4-8"},/obj/machinery/mineral/ore_redemption{dir = 1},/turf/open/floor/plasteel/tech/techmaint,/area/ship/engineering)
-"xa" = (/turf/open/floor/plasteel,/area/ship/crew)
-"xg" = (/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{dir = 4},/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{dir = 1},/turf/open/floor/plasteel/white{dir = 1},/area/ship/crew/hydroponics)
-"xn" = (/obj/machinery/airalarm/all_access{dir = 1; pixel_y = -24},/turf/open/floor/plasteel/dark,/area/ship/hallway/starboard)
-"xs" = (/obj/machinery/hydroponics/constructable,/obj/effect/turf_decal/corner/green/border{dir = 1},/turf/open/floor/plasteel/white{dir = 1},/area/ship/crew/hydroponics)
-"xH" = (/obj/structure/cable/yellow{icon_state = "1-4"},/obj/item/toy/plush/beeplushie,/obj/structure/catwalk/over,/turf/open/floor/plating,/area/ship/maintenance/fore)
-"yo" = (/obj/structure/window/reinforced/spawner,/obj/structure/window/reinforced/spawner/east,/obj/structure/cable/yellow{icon_state = "1-8"},/obj/structure/cable/yellow{icon_state = "1-2"},/obj/structure/cable/yellow{icon_state = "4-8"},/obj/structure/cable{icon_state = "1-8"},/obj/structure/catwalk/over,/turf/open/floor/plating,/area/ship/maintenance/fore)
-"yp" = (/obj/machinery/atmospherics/components/binary/pump{dir = 8; name = "engine fuel pump"},/turf/open/floor/plasteel/tech/techmaint,/area/ship/engineering)
-"yu" = (/obj/machinery/vending/hydronutrients,/obj/effect/turf_decal/corner/green/border{dir = 9},/turf/open/floor/plasteel/white{dir = 1},/area/ship/crew/hydroponics)
-"yE" = (/obj/effect/turf_decal/corner/green/bordercorner{dir = 4},/turf/open/floor/plasteel/white{dir = 1},/area/ship/crew/hydroponics)
-"yO" = (/obj/machinery/power/shuttle/engine/electric{dir = 1},/turf/open/floor/plating,/area/ship/engineering)
-"yX" = (/obj/structure/cable/yellow{icon_state = "4-8"},/obj/structure/cable{icon_state = "4-8"},/obj/structure/catwalk/over,/turf/open/floor/plating,/area/ship/maintenance/fore)
-"zU" = (/obj/structure/rack,/obj/item/gun/energy/floragun,/obj/item/cultivator,/obj/item/shovel/spade,/obj/item/plant_analyzer,/obj/item/radio/intercom{pixel_x = 32},/turf/open/floor/plasteel,/area/ship/crew)
-"Am" = (/obj/item/radio/intercom{pixel_y = 20},/obj/item/storage/toolbox/emergency,/turf/open/floor/plasteel/tech/techmaint,/area/ship/maintenance/fore)
-"Ar" = (/obj/machinery/power/solar,/obj/structure/cable/yellow,/obj/effect/turf_decal/solarpanel,/obj/structure/window/reinforced/spawner/north,/turf/open/floor/plating/airless,/area/ship/external)
-"AE" = (/obj/machinery/atmospherics/components/unary/outlet_injector/layer4{dir = 1},/turf/open/floor/plating/airless,/area/ship/engineering)
-"AM" = (/obj/structure/table/wood,/obj/item/reagent_containers/food/drinks/beer{pixel_x = -7; pixel_y = 6},/obj/item/reagent_containers/food/drinks/beer{pixel_x = 3; pixel_y = 3},/obj/effect/spawner/lootdrop/donkpockets,/obj/effect/turf_decal/siding/wood{dir = 8},/turf/open/floor/plasteel/grimy,/area/ship/crew)
-"Bj" = (/obj/structure/catwalk/over,/obj/structure/cable/yellow{icon_state = "2-8"},/obj/structure/cable/yellow{icon_state = "4-8"},/obj/structure/cable{icon_state = "2-8"},/obj/structure/cable{icon_state = "1-2"},/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,/obj/structure/cable{icon_state = "2-4"},/turf/open/floor/plating,/area/ship/maintenance/fore)
-"Bw" = (/obj/structure/catwalk/over,/turf/open/floor/plating,/area/ship/hallway/starboard)
-"BA" = (/obj/machinery/door/airlock/public,/obj/machinery/door/firedoor/border_only{dir = 8},/obj/machinery/door/firedoor/border_only{dir = 4},/turf/open/floor/plasteel/white{dir = 1},/area/ship/crew/hydroponics)
-"BK" = (/obj/structure/table/reinforced,/turf/open/floor/carpet/red,/area/ship/bridge)
-"BY" = (/obj/structure/window/reinforced,/obj/machinery/door/window/northleft,/obj/machinery/power/smes/shuttle/precharged{dir = 1},/obj/structure/cable{icon_state = "0-2"},/turf/open/floor/plating,/area/ship/engineering)
-"Cf" = (/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,/turf/open/floor/plasteel,/area/ship/crew)
-"CH" = (/obj/structure/sign/poster/official/no_erp{pixel_x = 32},/turf/open/floor/plasteel,/area/ship/crew)
-"Dd" = (/obj/structure/cable/yellow{icon_state = "1-4"},/obj/structure/cable{icon_state = "1-4"},/obj/machinery/atmospherics/pipe/manifold/supply/visible/layer2,/obj/structure/cable{icon_state = "1-2"},/obj/structure/cable/yellow{icon_state = "1-2"},/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{dir = 4},/turf/open/floor/plasteel/tech/techmaint,/area/ship/engineering)
-"De" = (/obj/structure/closet/crate{icon_state = "crateopen"},/obj/item/stack/sheet/mineral/plasma/five,/obj/item/stack/sheet/glass/fifty,/obj/item/stack/sheet/metal/twenty,/obj/item/circuitboard/computer/rdconsole,/obj/item/circuitboard/machine/rdserver,/turf/open/floor/plasteel/tech/techmaint,/area/ship/maintenance/fore)
-"Df" = (/obj/structure/cable{icon_state = "1-2"},/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,/turf/open/floor/plasteel,/area/ship/crew)
-"Dp" = (/obj/structure/catwalk/over,/obj/structure/cable{icon_state = "1-2"},/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,/turf/open/floor/plating,/area/ship/hallway/starboard)
-"Du" = (/obj/structure/window/reinforced/spawner,/obj/structure/window/reinforced/spawner/west,/obj/structure/cable/yellow{icon_state = "1-4"},/obj/structure/cable/yellow{icon_state = "4-8"},/obj/structure/cable{icon_state = "1-4"},/obj/structure/catwalk/over,/turf/open/floor/plating,/area/ship/maintenance/fore)
-"DJ" = (/obj/item/storage/box/disks_plantgene,/obj/item/storage/box/disks_plantgene,/obj/item/storage/box/disks_plantgene,/obj/structure/table/reinforced,/obj/structure/cable{icon_state = "1-2"},/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,/turf/open/floor/plasteel/white{dir = 1},/area/ship/crew/hydroponics)
-"DP" = (/obj/machinery/plantgenes{pixel_y = 7},/obj/structure/table/reinforced,/obj/effect/turf_decal/corner/green/border{dir = 6},/turf/open/floor/plasteel/white{dir = 1},/area/ship/crew/hydroponics)
-"Ek" = (/obj/structure/catwalk/over,/obj/structure/cable{icon_state = "1-2"},/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,/turf/open/floor/plating/airless,/area/ship/hallway/starboard)
-"EL" = (/obj/machinery/firealarm{pixel_y = -28},/turf/open/floor/plasteel/dark,/area/ship/hallway/starboard)
-"ER" = (/obj/machinery/power/smes/engineering,/obj/structure/cable,/turf/open/floor/plasteel/tech/techmaint,/area/ship/engineering)
-"EY" = (/obj/machinery/light{bulb_colour = "#FFF0FE"; dir = 8; light_color = "#FF4EF3"},/obj/structure/cable{icon_state = "0-4"},/obj/machinery/power/apc/auto_name/north,/obj/effect/turf_decal/corner/green/border{dir = 9},/turf/open/floor/plasteel/white{dir = 1},/area/ship/crew/hydroponics)
-"Fi" = (/obj/machinery/firealarm{dir = 1; pixel_y = 26},/turf/open/floor/plasteel/dark,/area/ship/hallway/starboard)
-"Fr" = (/obj/machinery/power/solar,/obj/structure/cable/yellow{icon_state = "0-4"},/obj/structure/cable/yellow{icon_state = "2-4"},/obj/effect/turf_decal/solarpanel,/obj/structure/window/reinforced/spawner,/turf/open/floor/plating/airless,/area/ship/external)
-"FH" = (/obj/structure/table/reinforced,/obj/item/storage/firstaid/medical,/turf/open/floor/carpet/red,/area/ship/bridge)
-"FU" = (/obj/structure/cable/yellow{icon_state = "1-2"},/obj/structure/catwalk/over,/turf/open/floor/plating,/area/ship/maintenance/fore)
-"FX" = (/turf/closed/wall,/area/ship/engineering)
-"Gg" = (/obj/machinery/atmospherics/pipe/manifold/general/hidden,/turf/open/floor/plasteel/tech/techmaint,/area/ship/engineering)
-"GB" = (/obj/machinery/computer/autopilot,/turf/open/floor/carpet/red,/area/ship/bridge)
-"GI" = (/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,/obj/effect/spawner/structure/window/reinforced,/obj/machinery/door/poddoor/preopen{id = "mining_ship_blast"},/turf/open/floor/plating/airless,/area/ship/engineering)
-"GN" = (/obj/structure/cable/yellow{icon_state = "2-8"},/obj/structure/cable{icon_state = "2-8"},/obj/effect/spawner/lootdrop/maintenance,/obj/structure/catwalk/over,/turf/open/floor/plating,/area/ship/maintenance/fore)
-"GT" = (/obj/machinery/biogenerator,/obj/effect/turf_decal/corner/green/border{dir = 6},/turf/open/floor/plasteel/white{dir = 1},/area/ship/crew/hydroponics)
-"He" = (/obj/structure/window/reinforced/tinted/fulltile,/turf/open/floor/plating,/area/ship/crew/hydroponics)
-"Hi" = (/obj/machinery/light_switch{pixel_x = 55; pixel_y = -9},/turf/open/floor/plasteel,/area/ship/crew)
-"HE" = (/obj/structure/table/reinforced,/obj/item/storage/firstaid/regular,/turf/open/floor/carpet/red,/area/ship/bridge)
-"HM" = (/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{dir = 4},/obj/machinery/firealarm{dir = 1; pixel_y = 26},/obj/machinery/autolathe,/obj/effect/turf_decal/industrial/hatch/yellow,/turf/open/floor/plasteel/tech/techmaint,/area/ship/engineering)
-"Ij" = (/obj/structure/cable/yellow{icon_state = "1-8"},/obj/structure/catwalk/over,/turf/open/floor/plating,/area/ship/maintenance/fore)
-"Ir" = (/obj/structure/cable{icon_state = "1-2"},/obj/structure/cable{icon_state = "2-8"},/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,/obj/effect/turf_decal/corner/green/border{dir = 1},/turf/open/floor/plasteel/white{dir = 1},/area/ship/crew/hydroponics)
-"IV" = (/turf/open/floor/plasteel/tech/techmaint,/area/ship/maintenance/fore)
-"Jj" = (/turf/closed/wall,/area/ship/maintenance/fore)
-"Jv" = (/obj/structure/frame/computer,/turf/open/floor/carpet/red,/area/ship/bridge)
-"Jx" = (/obj/machinery/atmospherics/pipe/simple/orange/hidden{dir = 8},/obj/structure/cable{icon_state = "4-8"},/obj/item/radio/intercom{pixel_y = -28},/turf/open/floor/plasteel/tech/techmaint,/area/ship/engineering)
-"JE" = (/obj/structure/catwalk/over,/turf/open/floor/plating,/area/ship/maintenance/fore)
-"JQ" = (/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{dir = 4},/turf/open/floor/carpet/red,/area/ship/bridge)
-"JZ" = (/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{dir = 4},/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{dir = 4},/obj/effect/turf_decal/corner/green/border{dir = 8},/turf/open/floor/plasteel/white{dir = 1},/area/ship/crew/hydroponics)
-"Kd" = (/obj/machinery/power/solar,/obj/structure/cable/yellow{icon_state = "0-4"},/obj/structure/cable/yellow{icon_state = "4-8"},/obj/effect/turf_decal/solarpanel,/obj/structure/window/reinforced/spawner/west,/obj/structure/window/reinforced/spawner,/turf/open/floor/plating/airless,/area/ship/external)
-"Km" = (/obj/structure/cable{icon_state = "0-4"},/obj/machinery/power/apc/auto_name/south,/turf/open/floor/carpet/red,/area/ship/bridge)
-"Kr" = (/obj/structure/sink{dir = 1},/obj/effect/turf_decal/corner/green/border{dir = 10},/obj/machinery/airalarm/all_access{dir = 1; pixel_y = -24},/obj/machinery/light{bulb_colour = "#FFF0FE"; dir = 8; light_color = "#FF4EF3"},/turf/open/floor/plasteel/white{dir = 1},/area/ship/crew/hydroponics)
-"Ks" = (/obj/structure/window/reinforced/spawner/north,/obj/structure/window/reinforced/spawner/west,/obj/structure/cable/yellow{icon_state = "4-8"},/obj/structure/cable/yellow{icon_state = "2-4"},/obj/structure/catwalk/over,/turf/open/floor/plating/airless,/area/ship/maintenance/fore)
-"KJ" = (/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{dir = 8},/obj/effect/turf_decal/corner/green/border{dir = 8},/turf/open/floor/plasteel/white{dir = 1},/area/ship/crew/hydroponics)
-"KX" = (/obj/machinery/smartfridge,/obj/structure/cable{icon_state = "1-2"},/obj/machinery/atmospherics/pipe/manifold4w/supply/visible/layer2,/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{dir = 4},/turf/closed/wall,/area/ship/crew/hydroponics)
-"Lc" = (/obj/machinery/power/solar,/obj/structure/cable/yellow{icon_state = "0-8"},/obj/structure/cable/yellow{icon_state = "4-8"},/obj/effect/turf_decal/solarpanel,/obj/structure/window/reinforced/spawner,/obj/structure/window/reinforced/spawner/east,/turf/open/floor/plating/airless,/area/ship/external)
-"Lz" = (/obj/machinery/atmospherics/components/unary/tank/toxins{dir = 8},/turf/open/floor/plasteel/tech/techmaint,/area/ship/engineering)
-"LE" = (/obj/machinery/door/airlock/command,/obj/structure/catwalk/over,/obj/structure/cable{icon_state = "1-2"},/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,/obj/machinery/door/firedoor/border_only,/obj/machinery/door/firedoor/border_only{dir = 1},/obj/machinery/door/poddoor/preopen{id = "bridge_lockdown"},/turf/open/floor/plating,/area/ship/bridge)
-"LG" = (/obj/structure/catwalk/over,/obj/structure/cable{icon_state = "4-8"},/turf/open/floor/plating,/area/ship/maintenance/fore)
-"Mn" = (/obj/machinery/power/solar,/obj/structure/cable/yellow{icon_state = "0-4"},/obj/effect/turf_decal/solarpanel,/turf/open/floor/plating/airless,/area/ship/external)
-"Mr" = (/obj/machinery/light{dir = 1},/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{dir = 8},/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{dir = 6},/obj/machinery/computer/monitor,/turf/open/floor/plasteel/tech/techmaint,/area/ship/engineering)
-"Mt" = (/obj/structure/cable{icon_state = "1-4"},/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{dir = 6},/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{dir = 5},/turf/open/floor/plasteel,/area/ship/crew)
-"Mz" = (/obj/machinery/power/solar,/obj/structure/cable/yellow{icon_state = "0-2"},/obj/structure/cable/yellow{icon_state = "2-4"},/obj/effect/turf_decal/solarpanel,/obj/structure/window/reinforced/spawner/east,/obj/structure/window/reinforced/spawner/north,/turf/open/floor/plating/airless,/area/ship/external)
-"MH" = (/obj/machinery/power/solar,/obj/structure/cable/yellow{icon_state = "0-2"},/obj/structure/cable/yellow{icon_state = "2-4"},/obj/effect/turf_decal/solarpanel,/obj/structure/window/reinforced/spawner/east,/turf/open/floor/plating/airless,/area/ship/external)
-"MM" = (/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{dir = 6},/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{dir = 10},/obj/machinery/holopad/emergency/command,/turf/open/floor/carpet/red,/area/ship/bridge)
-"MT" = (/obj/machinery/atmospherics/components/binary/pump,/obj/structure/cable/yellow{icon_state = "1-2"},/turf/open/floor/plasteel/tech/techmaint,/area/ship/engineering)
-"Na" = (/obj/machinery/power/solar,/obj/structure/cable/yellow{icon_state = "0-8"},/obj/structure/cable/yellow{icon_state = "4-8"},/obj/effect/turf_decal/solarpanel,/obj/structure/window/reinforced/spawner/west,/turf/open/floor/plating/airless,/area/ship/external)
-"Nh" = (/obj/structure/cable{icon_state = "2-8"},/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,/turf/open/floor/carpet/red,/area/ship/bridge)
-"Ny" = (/obj/item/kirbyplants/random,/turf/open/floor/plasteel/dark,/area/ship/hallway/starboard)
-"NK" = (/obj/machinery/power/terminal,/obj/structure/cable{icon_state = "0-8"},/obj/structure/cable/yellow{icon_state = "1-4"},/obj/effect/turf_decal/industrial/warning,/obj/machinery/atmospherics/pipe/simple/orange/visible{dir = 9},/turf/open/floor/plasteel/tech/techmaint,/area/ship/engineering)
-"NM" = (/obj/item/radio/intercom{pixel_y = -28},/turf/open/floor/plasteel/dark,/area/ship/hallway/starboard)
-"NP" = (/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{dir = 8},/obj/effect/turf_decal/corner/green/border{dir = 4},/turf/open/floor/plasteel/white{dir = 1},/area/ship/crew/hydroponics)
-"NR" = (/obj/machinery/hydroponics/constructable,/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{dir = 4},/turf/open/floor/plasteel/white{dir = 1},/area/ship/crew/hydroponics)
-"NT" = (/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{dir = 9},/obj/machinery/light_switch{pixel_x = -9; pixel_y = 55},/turf/open/floor/plasteel/tech/techmaint,/area/ship/engineering)
-"Oc" = (/obj/machinery/light_switch{pixel_x = 10; pixel_y = -23},/turf/open/floor/carpet/red,/area/ship/bridge)
-"Ov" = (/obj/item/kirbyplants/random,/obj/effect/turf_decal/siding/wood{dir = 6},/turf/open/floor/plasteel/grimy,/area/ship/crew)
-"Oz" = (/obj/effect/spawner/structure/window/reinforced,/obj/machinery/door/poddoor/preopen{id = "mining_ship_blast"},/turf/open/floor/plating,/area/ship/bridge)
-"OQ" = (/obj/structure/cable/yellow{icon_state = "2-4"},/obj/structure/cable{icon_state = "2-4"},/obj/structure/catwalk/over,/turf/open/floor/plating,/area/ship/maintenance/fore)
-"Pc" = (/obj/machinery/door/airlock/maintenance_hatch,/obj/structure/catwalk/over,/obj/structure/cable{icon_state = "1-2"},/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,/obj/machinery/door/firedoor/border_only,/obj/machinery/door/firedoor/border_only{dir = 1},/turf/open/floor/plating/airless,/area/ship/hallway/starboard)
-"Pe" = (/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{dir = 4},/turf/open/floor/plasteel/white{dir = 1},/area/ship/crew/hydroponics)
-"Pv" = (/obj/structure/cable{icon_state = "1-2"},/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,/obj/effect/turf_decal/corner/green/border,/turf/open/floor/plasteel/white{dir = 1},/area/ship/crew/hydroponics)
-"Px" = (/turf/closed/wall,/area/ship/crew/hydroponics)
-"PJ" = (/obj/machinery/cryopod,/turf/open/floor/plasteel,/area/ship/crew)
-"Qa" = (/obj/machinery/suit_storage_unit/standard_unit,/turf/open/floor/plasteel/tech/techmaint,/area/ship/maintenance/fore)
-"Qe" = (/obj/structure/cable{icon_state = "4-8"},/obj/effect/turf_decal/industrial/warning,/obj/effect/turf_decal/industrial/caution,/obj/machinery/atmospherics/pipe/manifold/orange/visible{dir = 1},/turf/open/floor/plasteel/tech/techmaint,/area/ship/engineering)
-"Rh" = (/obj/structure/cable/yellow{icon_state = "2-8"},/obj/structure/cable{icon_state = "2-8"},/obj/structure/catwalk/over,/turf/open/floor/plating,/area/ship/maintenance/fore)
-"RE" = (/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{dir = 8},/turf/open/floor/carpet/red,/area/ship/bridge)
-"RU" = (/obj/machinery/vending/snack/random,/turf/open/floor/plasteel/dark,/area/ship/hallway/starboard)
-"Sq" = (/obj/structure/window/reinforced/spawner/north,/obj/structure/window/reinforced/spawner/east,/obj/structure/cable/yellow{icon_state = "2-8"},/obj/structure/cable/yellow{icon_state = "4-8"},/obj/structure/cable/yellow{icon_state = "1-2"},/obj/structure/catwalk/over,/turf/open/floor/plating,/area/ship/maintenance/fore)
-"SB" = (/obj/structure/cable{icon_state = "4-8"},/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{dir = 4},/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{dir = 8},/turf/open/floor/plasteel,/area/ship/crew)
-"Tl" = (/obj/item/radio/intercom{pixel_y = -28},/obj/item/storage/overmap_ship/electric{pixel_x = 32; pixel_y = -32},/turf/open/floor/carpet/red,/area/ship/bridge)
-"Tu" = (/obj/structure/window/reinforced/tinted/fulltile,/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{dir = 5},/turf/open/floor/plating,/area/ship/crew/hydroponics)
-"UK" = (/obj/machinery/door/airlock/maintenance_hatch,/turf/open/floor/plating,/area/ship/maintenance/fore)
-"UL" = (/obj/structure/extinguisher_cabinet{pixel_x = 32},/turf/open/floor/plasteel/dark,/area/ship/hallway/starboard)
-"UY" = (/obj/machinery/vending/cola/random,/turf/open/floor/plasteel/dark,/area/ship/hallway/starboard)
-"Vf" = (/obj/machinery/power/solar_control{dir = 8},/obj/structure/cable/yellow{icon_state = "0-8"},/turf/open/floor/plasteel/tech/techmaint,/area/ship/engineering)
-"Vr" = (/obj/structure/table/wood,/obj/machinery/microwave,/obj/effect/turf_decal/siding/wood{dir = 9},/turf/open/floor/plasteel/grimy,/area/ship/crew)
-"VO" = (/obj/effect/turf_decal/corner/green/border{dir = 6},/obj/machinery/firealarm{pixel_y = -28},/obj/machinery/light_switch{pixel_x = 23; pixel_y = 9},/obj/structure/reagent_dispensers/watertank/high,/obj/item/reagent_containers/glass/bucket,/obj/item/reagent_containers/glass/bucket{pixel_x = -7; pixel_y = 7},/obj/machinery/light{bulb_colour = "#FFF0FE"; dir = 4; light_color = "#FF4EF3"},/turf/open/floor/plasteel/white{dir = 1},/area/ship/crew/hydroponics)
-"WK" = (/obj/structure/table/reinforced,/obj/item/areaeditor/shuttle{pixel_x = -2; pixel_y = 5},/turf/open/floor/carpet/red,/area/ship/bridge)
-"WN" = (/obj/structure/table/wood,/obj/item/flashlight/lamp/green,/obj/effect/turf_decal/siding/wood{dir = 10},/turf/open/floor/plasteel/grimy,/area/ship/crew)
-"WQ" = (/obj/structure/closet/crate/hydroponics,/obj/structure/beebox,/obj/item/melee/flyswatter,/obj/item/honey_frame,/obj/item/honey_frame,/obj/item/honey_frame,/obj/item/queen_bee/bought,/obj/item/clothing/head/beekeeper_head,/obj/item/clothing/suit/beekeeper_suit,/turf/open/floor/plasteel/tech/techmaint,/area/ship/maintenance/fore)
-"WW" = (/obj/effect/turf_decal/corner/green/bordercorner,/turf/open/floor/plasteel/white{dir = 1},/area/ship/crew/hydroponics)
-"Xb" = (/obj/effect/turf_decal/corner/green/bordercorner{dir = 8},/turf/open/floor/plasteel/white{dir = 1},/area/ship/crew/hydroponics)
-"Xp" = (/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{dir = 4},/turf/open/floor/plasteel/dark,/area/ship/hallway/starboard)
-"Xt" = (/obj/machinery/firealarm{dir = 4; pixel_x = 26},/obj/machinery/light{dir = 4; light_color = "#FFDDBB"},/turf/open/floor/plasteel,/area/ship/crew)
-"XC" = (/obj/effect/turf_decal/corner/green/border{dir = 8},/turf/open/floor/plasteel/white{dir = 1},/area/ship/crew/hydroponics)
-"XL" = (/obj/structure/closet/firecloset,/turf/open/floor/plasteel/dark,/area/ship/hallway/starboard)
-"Yb" = (/turf/open/floor/carpet/red,/area/ship/bridge)
-"Yh" = (/obj/machinery/power/apc/auto_name/south,/obj/structure/cable{icon_state = "0-8"},/turf/open/floor/plasteel/dark,/area/ship/hallway/starboard)
-"YO" = (/obj/item/pickaxe,/obj/item/pickaxe,/obj/item/pickaxe,/obj/item/mining_scanner,/obj/structure/closet/wall,/obj/item/storage/bag/ore,/obj/item/storage/bag/ore,/obj/item/storage/bag/ore,/obj/item/clothing/glasses/meson,/obj/item/clothing/glasses/meson,/obj/item/clothing/glasses/meson,/obj/item/clothing/head/hardhat/mining,/obj/item/clothing/head/hardhat/mining,/obj/item/clothing/head/hardhat/mining,/obj/item/clothing/suit/hazardvest{desc = "A high-visibility lifejacket complete with whistle and slot for oxygen tanks."; name = "emergency lifejacket"},/obj/item/clothing/suit/hazardvest{desc = "A high-visibility lifejacket complete with whistle and slot for oxygen tanks."; name = "emergency lifejacket"},/obj/item/clothing/suit/hazardvest{desc = "A high-visibility lifejacket complete with whistle and slot for oxygen tanks."; name = "emergency lifejacket"},/turf/closed/wall,/area/ship/maintenance/fore)
-"YT" = (/obj/machinery/light{dir = 8; light_color = "#FFDDBB"},/turf/open/floor/plasteel/dark,/area/ship/hallway/starboard)
-"YZ" = (/obj/machinery/power/solar,/obj/structure/cable/yellow{icon_state = "0-4"},/obj/structure/cable/yellow{icon_state = "1-4"},/obj/effect/turf_decal/solarpanel,/obj/structure/window/reinforced/spawner/north,/turf/open/floor/plating/airless,/area/ship/external)
-"Zh" = (/obj/machinery/door/airlock/external,/obj/structure/catwalk/over,/turf/open/floor/plating,/area/ship/maintenance/fore)
-"Zj" = (/obj/machinery/door/airlock,/obj/structure/catwalk/over,/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{dir = 8},/obj/machinery/door/firedoor/border_only{dir = 8},/obj/machinery/door/firedoor/border_only{dir = 4},/turf/open/floor/plating,/area/ship/crew)
-"Zt" = (/obj/structure/rack,/obj/item/gun/energy/floragun,/obj/item/cultivator,/obj/item/shovel/spade,/obj/structure/cable{icon_state = "0-8"},/obj/item/plant_analyzer,/obj/machinery/power/apc/auto_name/east,/turf/open/floor/plasteel,/area/ship/crew)
-"ZG" = (/obj/machinery/vending/hydroseeds,/obj/effect/turf_decal/corner/green/border{dir = 9},/turf/open/floor/plasteel/white{dir = 1},/area/ship/crew/hydroponics)
-"ZH" = (/obj/machinery/suit_storage_unit/standard_unit,/obj/machinery/light/small,/turf/open/floor/plasteel/tech/techmaint,/area/ship/maintenance/fore)
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"al" = (
+/obj/structure/window/reinforced/spawner,
+/obj/structure/window/reinforced/spawner/west,
+/obj/structure/cable/yellow{
+	icon_state = "1-4"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/obj/structure/catwalk/over,
+/turf/open/floor/plating,
+/area/ship/maintenance/fore)
+"am" = (
+/obj/structure/closet/crate/hydroponics,
+/obj/item/vending_refill/hydroseeds,
+/obj/effect/spawner/lootdrop/seed_vault,
+/obj/effect/spawner/lootdrop/seed_vault,
+/obj/effect/spawner/lootdrop/seed_vault,
+/obj/item/storage/box/disks_plantgene,
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/maintenance/fore)
+"aE" = (
+/obj/effect/turf_decal/corner/green/border{
+	dir = 4
+	},
+/turf/open/floor/plasteel/white{
+	dir = 1
+	},
+/area/ship/crew/hydroponics)
+"bL" = (
+/turf/closed/wall,
+/area/ship/crew)
+"bS" = (
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/catwalk/over,
+/obj/machinery/light/small,
+/turf/open/floor/plating,
+/area/ship/maintenance/fore)
+"bT" = (
+/obj/machinery/door/airlock/public,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/turf/open/floor/plasteel/white{
+	dir = 1
+	},
+/area/ship/crew/hydroponics)
+"cl" = (
+/obj/machinery/airalarm/all_access{
+	dir = 1;
+	pixel_y = -24
+	},
+/turf/open/floor/carpet/red,
+/area/ship/bridge)
+"ct" = (
+/obj/item/storage/toolbox/mechanical{
+	pixel_x = -2;
+	pixel_y = -1
+	},
+/obj/structure/rack,
+/obj/item/storage/toolbox/electrical{
+	pixel_x = 1;
+	pixel_y = 6
+	},
+/obj/item/clothing/gloves/color/yellow,
+/obj/item/clothing/gloves/color/yellow,
+/obj/item/clothing/head/welding{
+	pixel_x = -2;
+	pixel_y = 1
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/engineering)
+"cA" = (
+/obj/machinery/power/solar,
+/obj/structure/cable/yellow{
+	icon_state = "0-4"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/effect/turf_decal/solarpanel,
+/obj/machinery/power/tracker,
+/obj/structure/window/reinforced/spawner/west,
+/obj/structure/window/reinforced/spawner,
+/turf/open/floor/plating/airless,
+/area/ship/external)
+"cN" = (
+/obj/structure/cable/yellow{
+	icon_state = "1-8"
+	},
+/obj/structure/catwalk/over,
+/turf/open/floor/plating/airless,
+/area/ship/maintenance/fore)
+"db" = (
+/obj/machinery/hydroponics/constructable,
+/turf/open/floor/plasteel/white{
+	dir = 1
+	},
+/area/ship/crew/hydroponics)
+"de" = (
+/obj/machinery/airalarm/all_access{
+	dir = 8;
+	pixel_x = 24
+	},
+/obj/machinery/power/terminal,
+/obj/structure/cable/yellow{
+	icon_state = "0-8"
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/engineering)
+"do" = (
+/obj/machinery/hydroponics/constructable,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/effect/turf_decal/corner/green/border{
+	dir = 1
+	},
+/turf/open/floor/plasteel/white{
+	dir = 1
+	},
+/area/ship/crew/hydroponics)
+"dp" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/orange/visible{
+	dir = 6
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/engineering)
+"dG" = (
+/obj/structure/window/reinforced/spawner/west,
+/obj/structure/window/reinforced/spawner/north,
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "2-4"
+	},
+/obj/structure/catwalk/over,
+/turf/open/floor/plating,
+/area/ship/maintenance/fore)
+"dU" = (
+/obj/item/kirbyplants/random,
+/obj/machinery/firealarm{
+	pixel_y = -28
+	},
+/turf/open/floor/carpet/red,
+/area/ship/bridge)
+"dW" = (
+/obj/effect/turf_decal/corner/green/bordercorner{
+	dir = 1
+	},
+/turf/open/floor/plasteel/white{
+	dir = 1
+	},
+/area/ship/crew/hydroponics)
+"dZ" = (
+/obj/machinery/power/shuttle/engine/fueled/plasma{
+	dir = 1
+	},
+/turf/open/floor/plating,
+/area/ship/engineering)
+"ew" = (
+/obj/machinery/door/airlock/maintenance_hatch,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/ship/hallway/starboard)
+"eF" = (
+/obj/effect/spawner/structure/window/reinforced,
+/obj/machinery/door/poddoor/preopen{
+	id = "mining_ship_blast"
+	},
+/turf/open/floor/plating,
+/area/ship/crew)
+"eI" = (
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
+/turf/open/floor/plasteel,
+/area/ship/crew)
+"eU" = (
+/turf/template_noop,
+/area/template_noop)
+"fd" = (
+/obj/machinery/computer/helm,
+/turf/open/floor/carpet/red,
+/area/ship/bridge)
+"fu" = (
+/obj/machinery/seed_extractor,
+/obj/effect/turf_decal/corner/green/border{
+	dir = 5
+	},
+/obj/item/seeds/cannabis,
+/obj/item/seeds/cannabis,
+/obj/item/seeds/cannabis,
+/turf/open/floor/plasteel/white{
+	dir = 1
+	},
+/area/ship/crew/hydroponics)
+"fy" = (
+/obj/structure/catwalk/over,
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
+	},
+/turf/open/floor/plating,
+/area/ship/maintenance/fore)
+"fz" = (
+/obj/machinery/airalarm/all_access{
+	dir = 8;
+	pixel_x = 56
+	},
+/turf/open/floor/plasteel,
+/area/ship/crew)
+"fJ" = (
+/obj/machinery/light{
+	dir = 1;
+	light_color = "#FFDDBB"
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/hallway/starboard)
+"fM" = (
+/turf/template_noop,
+/area/ship/external)
+"fO" = (
+/obj/effect/spawner/structure/window/reinforced,
+/obj/machinery/door/poddoor/preopen{
+	id = "mining_ship_blast"
+	},
+/turf/open/floor/plating,
+/area/ship/maintenance/fore)
+"gE" = (
+/obj/structure/catwalk/over,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
+	},
+/turf/open/floor/plating,
+/area/ship/hallway/starboard)
+"gL" = (
+/obj/structure/tank_dispenser,
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/maintenance/fore)
+"hh" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
+	},
+/turf/open/floor/carpet/red,
+/area/ship/bridge)
+"hn" = (
+/obj/structure/chair/comfy/shuttle{
+	dir = 1
+	},
+/turf/open/floor/carpet/red,
+/area/ship/bridge)
+"hO" = (
+/obj/machinery/atmospherics/components/unary/portables_connector,
+/obj/structure/cable/yellow{
+	icon_state = "2-8"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/engineering)
+"iF" = (
+/obj/structure/window/reinforced/spawner/east,
+/obj/structure/window/reinforced/spawner/north,
+/obj/structure/cable/yellow{
+	icon_state = "2-8"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/structure/catwalk/over,
+/turf/open/floor/plating,
+/area/ship/maintenance/fore)
+"ja" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/manifold/orange/visible,
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/machinery/power/port_gen/pacman,
+/obj/structure/cable/yellow,
+/obj/item/stack/sheet/mineral/plasma/five,
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/engineering)
+"jg" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 1
+	},
+/turf/open/floor/plasteel,
+/area/ship/crew)
+"js" = (
+/obj/structure/window/reinforced,
+/obj/machinery/door/window/northleft,
+/obj/machinery/atmospherics/components/unary/shuttle/heater{
+	dir = 1
+	},
+/turf/open/floor/plating,
+/area/ship/engineering)
+"jt" = (
+/obj/machinery/smartfridge/disks{
+	pixel_y = 2
+	},
+/obj/structure/table/reinforced,
+/obj/effect/turf_decal/corner/green/border{
+	dir = 5
+	},
+/turf/open/floor/plasteel/white{
+	dir = 1
+	},
+/area/ship/crew/hydroponics)
+"ju" = (
+/turf/open/floor/plasteel/white{
+	dir = 1
+	},
+/area/ship/crew/hydroponics)
+"jO" = (
+/obj/machinery/atmospherics/components/unary/tank/air{
+	dir = 8
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/engineering)
+"jZ" = (
+/obj/structure/table/wood,
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
+	},
+/obj/item/reagent_containers/food/snacks/grown/cannabis{
+	pixel_x = -5;
+	pixel_y = 9
+	},
+/obj/item/reagent_containers/food/snacks/grown/cannabis,
+/obj/item/lighter,
+/obj/item/storage/fancy/rollingpapers,
+/turf/open/floor/plasteel/grimy,
+/area/ship/crew)
+"kk" = (
+/obj/machinery/chem_dispenser/mutagensaltpeter,
+/obj/effect/turf_decal/corner/green/border{
+	dir = 10
+	},
+/turf/open/floor/plasteel/white{
+	dir = 1
+	},
+/area/ship/crew/hydroponics)
+"kx" = (
+/obj/structure/table/wood,
+/obj/machinery/reagentgrinder{
+	pixel_y = 8
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
+	},
+/turf/open/floor/plasteel/grimy,
+/area/ship/crew)
+"ky" = (
+/obj/structure/reagent_dispensers/watertank,
+/obj/item/mop,
+/obj/item/reagent_containers/glass/bucket,
+/obj/item/storage/bag/trash{
+	pixel_x = 6
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/maintenance/fore)
+"la" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 9
+	},
+/turf/open/floor/plasteel/white{
+	dir = 1
+	},
+/area/ship/crew/hydroponics)
+"lb" = (
+/obj/machinery/hydroponics/constructable,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
+	},
+/turf/open/floor/plasteel/white{
+	dir = 1
+	},
+/area/ship/crew/hydroponics)
+"lx" = (
+/obj/machinery/hydroponics/constructable,
+/obj/effect/turf_decal/corner/green/border,
+/turf/open/floor/plasteel/white{
+	dir = 1
+	},
+/area/ship/crew/hydroponics)
+"lB" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/effect/turf_decal/industrial/warning,
+/obj/machinery/atmospherics/pipe/simple/orange/visible{
+	dir = 6
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/engineering)
+"mj" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 5
+	},
+/obj/machinery/smartfridge/drying_rack,
+/turf/open/floor/plasteel/grimy,
+/area/ship/crew)
+"mm" = (
+/obj/machinery/power/solar,
+/obj/structure/cable/yellow{
+	icon_state = "0-4"
+	},
+/obj/effect/turf_decal/solarpanel,
+/obj/structure/window/reinforced/spawner/east,
+/turf/open/floor/plating/airless,
+/area/ship/external)
+"mx" = (
+/obj/structure/table/reinforced,
+/obj/item/storage/toolbox/emergency{
+	pixel_y = 6
+	},
+/turf/open/floor/carpet/red,
+/area/ship/bridge)
+"mJ" = (
+/turf/closed/wall,
+/area/ship/bridge)
+"nc" = (
+/obj/structure/rack,
+/obj/item/gun/energy/floragun,
+/obj/item/cultivator,
+/obj/item/shovel/spade,
+/obj/item/plant_analyzer,
+/obj/item/gun/ballistic/shotgun/winchester,
+/turf/open/floor/plasteel,
+/area/ship/crew)
+"np" = (
+/turf/closed/wall,
+/area/ship/hallway/starboard)
+"ns" = (
+/obj/machinery/door/airlock/public,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/turf/open/floor/plasteel/white{
+	dir = 1
+	},
+/area/ship/crew/hydroponics)
+"nz" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/turf/open/floor/plasteel/white{
+	dir = 1
+	},
+/area/ship/crew/hydroponics)
+"nD" = (
+/obj/structure/table/reinforced,
+/obj/item/paicard,
+/turf/open/floor/carpet/red,
+/area/ship/bridge)
+"nF" = (
+/obj/structure/catwalk/over,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
+	dir = 8
+	},
+/turf/open/floor/plating/airless,
+/area/ship/hallway/starboard)
+"nY" = (
+/obj/machinery/power/solar,
+/obj/structure/cable/yellow,
+/obj/effect/turf_decal/solarpanel,
+/turf/open/floor/plating/airless,
+/area/ship/external)
+"of" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
+	},
+/turf/open/floor/plasteel/grimy,
+/area/ship/crew)
+"og" = (
+/obj/structure/cable/yellow{
+	icon_state = "1-4"
+	},
+/obj/structure/catwalk/over,
+/turf/open/floor/plating,
+/area/ship/maintenance/fore)
+"oo" = (
+/obj/machinery/power/solar,
+/obj/structure/cable/yellow{
+	icon_state = "0-8"
+	},
+/obj/effect/turf_decal/solarpanel,
+/turf/open/floor/plating/airless,
+/area/ship/external)
+"oB" = (
+/obj/structure/catwalk/over,
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/turf/open/floor/plating,
+/area/ship/maintenance/fore)
+"oL" = (
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/structure/catwalk/over,
+/obj/structure/catwalk/over,
+/turf/open/floor/plating,
+/area/ship/maintenance/fore)
+"pd" = (
+/obj/machinery/door/airlock/maintenance_hatch,
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/structure/catwalk/over,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/turf/open/floor/plating,
+/area/ship/engineering)
+"pj" = (
+/obj/machinery/light{
+	dir = 4;
+	light_color = "#FFDDBB"
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/hallway/starboard)
+"pU" = (
+/obj/structure/catwalk/over,
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/turf/open/floor/plating,
+/area/ship/maintenance/fore)
+"pY" = (
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 8
+	},
+/obj/machinery/ore_silo,
+/obj/effect/turf_decal/box,
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/engineering)
+"qc" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
+	},
+/turf/open/floor/plasteel/white{
+	dir = 1
+	},
+/area/ship/crew/hydroponics)
+"qf" = (
+/obj/machinery/power/solar,
+/obj/structure/cable/yellow{
+	icon_state = "0-8"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/effect/turf_decal/solarpanel,
+/obj/structure/window/reinforced/spawner,
+/turf/open/floor/plating/airless,
+/area/ship/external)
+"qQ" = (
+/obj/item/radio/intercom{
+	pixel_y = 20
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/hallway/starboard)
+"rJ" = (
+/obj/machinery/power/terminal,
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/machinery/airalarm/all_access{
+	dir = 4;
+	pixel_x = -56
+	},
+/obj/effect/turf_decal/industrial/warning,
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/engineering)
+"rX" = (
+/obj/machinery/chem_master/condimaster,
+/obj/effect/turf_decal/corner/green/border{
+	dir = 10
+	},
+/turf/open/floor/plasteel/white{
+	dir = 1
+	},
+/area/ship/crew/hydroponics)
+"sd" = (
+/obj/machinery/door/airlock/public,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 10
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/turf/open/floor/plasteel/white{
+	dir = 1
+	},
+/area/ship/crew/hydroponics)
+"sQ" = (
+/obj/structure/window/reinforced/spawner,
+/obj/structure/window/reinforced/spawner/east,
+/obj/structure/cable/yellow{
+	icon_state = "1-8"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/structure/catwalk/over,
+/turf/open/floor/plating,
+/area/ship/maintenance/fore)
+"sW" = (
+/obj/structure/table/reinforced,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/item/reagent_containers/glass/beaker/large{
+	pixel_x = -6;
+	pixel_y = 5
+	},
+/obj/item/reagent_containers/glass/beaker/large,
+/obj/item/storage/fancy/rollingpapers,
+/obj/item/storage/fancy/rollingpapers,
+/obj/item/lighter,
+/turf/open/floor/plasteel/white{
+	dir = 1
+	},
+/area/ship/crew/hydroponics)
+"ty" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/turf/open/floor/carpet/red,
+/area/ship/bridge)
+"tK" = (
+/obj/structure/sink{
+	pixel_y = 17
+	},
+/obj/effect/turf_decal/corner/green/border{
+	dir = 5
+	},
+/obj/structure/sign/poster/contraband/have_a_puff{
+	pixel_x = 32
+	},
+/obj/machinery/light{
+	bulb_colour = "#FFF0FE";
+	dir = 4;
+	light_color = "#FF4EF3"
+	},
+/turf/open/floor/plasteel/white{
+	dir = 1
+	},
+/area/ship/crew/hydroponics)
+"tN" = (
+/obj/machinery/button/door{
+	id = "mining_ship_blast";
+	name = "Blast Door Control";
+	pixel_x = -5;
+	pixel_y = 39
+	},
+/obj/machinery/button/door{
+	id = "bridge_lockdown";
+	name = "Bridge Lockdown Control";
+	pixel_x = 6;
+	pixel_y = 31
+	},
+/turf/open/floor/carpet/red,
+/area/ship/bridge)
+"tT" = (
+/obj/machinery/atmospherics/components/unary/portables_connector,
+/obj/structure/ore_box,
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/engineering)
+"tX" = (
+/obj/structure/closet/emcloset/anchored,
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/engineering)
+"un" = (
+/obj/machinery/light{
+	light_color = "#FFDDBB"
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/hallway/starboard)
+"uv" = (
+/obj/structure/closet/emcloset/anchored,
+/turf/open/floor/plasteel/dark,
+/area/ship/hallway/starboard)
+"uG" = (
+/obj/machinery/atmospherics/pipe/layer_manifold{
+	dir = 8
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/engineering)
+"uK" = (
+/turf/open/floor/plasteel/dark,
+/area/ship/hallway/starboard)
+"uO" = (
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/catwalk/over,
+/turf/open/floor/plating,
+/area/ship/maintenance/fore)
+"uQ" = (
+/obj/machinery/computer/cryopod{
+	pixel_x = 64
+	},
+/turf/open/floor/plasteel,
+/area/ship/crew)
+"uR" = (
+/obj/structure/chair/stool/bar{
+	dir = 8
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
+	},
+/turf/open/floor/plasteel/grimy,
+/area/ship/crew)
+"uS" = (
+/obj/machinery/door/airlock/maintenance_hatch,
+/obj/structure/catwalk/over,
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/turf/open/floor/plating/airless,
+/area/ship/hallway/starboard)
+"uX" = (
+/obj/machinery/power/apc/auto_name/north,
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/maintenance/fore)
+"ve" = (
+/obj/structure/extinguisher_cabinet{
+	pixel_y = -32
+	},
+/obj/machinery/light{
+	light_color = "#FFDDBB"
+	},
+/turf/open/floor/carpet/red,
+/area/ship/bridge)
+"vx" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/light_switch{
+	pixel_x = 10;
+	pixel_y = -23
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/hallway/starboard)
+"vB" = (
+/obj/machinery/door/airlock/external,
+/obj/structure/fans/tiny,
+/obj/docking_port/mobile{
+	can_move_docking_ports = 1;
+	dir = 8;
+	dwidth = 12;
+	height = 32;
+	launch_status = 0;
+	name = "SV Four Twenty";
+	port_direction = 8;
+	preferred_direction = 4;
+	width = 32
+	},
+/turf/open/floor/plating,
+/area/ship/maintenance/fore)
+"vG" = (
+/obj/structure/catwalk/over,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/manifold/supply/visible/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/turf/open/floor/plating,
+/area/ship/hallway/starboard)
+"vH" = (
+/obj/machinery/power/solar,
+/obj/structure/cable/yellow{
+	icon_state = "0-4"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/effect/turf_decal/solarpanel,
+/obj/structure/window/reinforced/spawner/north,
+/obj/structure/window/reinforced/spawner/west,
+/turf/open/floor/plating/airless,
+/area/ship/external)
+"vL" = (
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/structure/catwalk/over,
+/turf/open/floor/plating,
+/area/ship/maintenance/fore)
+"vZ" = (
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/structure/rack,
+/obj/item/gps{
+	gpstag = "NTREC1";
+	pixel_x = -2;
+	pixel_y = 1
+	},
+/obj/item/gps{
+	gpstag = "NTREC1";
+	pixel_x = -9;
+	pixel_y = 7
+	},
+/obj/item/gps{
+	gpstag = "NTREC1";
+	pixel_x = 3;
+	pixel_y = 7
+	},
+/obj/item/radio/off{
+	pixel_x = -1;
+	pixel_y = 5
+	},
+/obj/item/radio/off{
+	pixel_x = -4;
+	pixel_y = -1
+	},
+/obj/item/radio/off{
+	pixel_x = 5;
+	pixel_y = 5
+	},
+/obj/machinery/power/apc/auto_name/north,
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/engineering)
+"wU" = (
+/obj/machinery/atmospherics/pipe/simple/orange/hidden{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/mineral/ore_redemption{
+	dir = 1
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/engineering)
+"xa" = (
+/turf/open/floor/plasteel,
+/area/ship/crew)
+"xg" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
+	dir = 1
+	},
+/turf/open/floor/plasteel/white{
+	dir = 1
+	},
+/area/ship/crew/hydroponics)
+"xn" = (
+/obj/machinery/airalarm/all_access{
+	dir = 1;
+	pixel_y = -24
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/hallway/starboard)
+"xs" = (
+/obj/machinery/hydroponics/constructable,
+/obj/effect/turf_decal/corner/green/border{
+	dir = 1
+	},
+/turf/open/floor/plasteel/white{
+	dir = 1
+	},
+/area/ship/crew/hydroponics)
+"xH" = (
+/obj/structure/cable/yellow{
+	icon_state = "1-4"
+	},
+/obj/item/toy/plush/beeplushie,
+/obj/structure/catwalk/over,
+/turf/open/floor/plating,
+/area/ship/maintenance/fore)
+"yo" = (
+/obj/structure/window/reinforced/spawner,
+/obj/structure/window/reinforced/spawner/east,
+/obj/structure/cable/yellow{
+	icon_state = "1-8"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/structure/catwalk/over,
+/turf/open/floor/plating,
+/area/ship/maintenance/fore)
+"yp" = (
+/obj/machinery/atmospherics/components/binary/pump{
+	dir = 8;
+	name = "engine fuel pump"
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/engineering)
+"yu" = (
+/obj/machinery/vending/hydronutrients,
+/obj/effect/turf_decal/corner/green/border{
+	dir = 9
+	},
+/turf/open/floor/plasteel/white{
+	dir = 1
+	},
+/area/ship/crew/hydroponics)
+"yE" = (
+/obj/effect/turf_decal/corner/green/bordercorner{
+	dir = 4
+	},
+/turf/open/floor/plasteel/white{
+	dir = 1
+	},
+/area/ship/crew/hydroponics)
+"yO" = (
+/obj/machinery/power/shuttle/engine/electric{
+	dir = 1
+	},
+/turf/open/floor/plating,
+/area/ship/engineering)
+"yX" = (
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/catwalk/over,
+/turf/open/floor/plating,
+/area/ship/maintenance/fore)
+"zU" = (
+/obj/structure/rack,
+/obj/item/gun/energy/floragun,
+/obj/item/cultivator,
+/obj/item/shovel/spade,
+/obj/item/plant_analyzer,
+/obj/item/radio/intercom{
+	pixel_x = 32
+	},
+/turf/open/floor/plasteel,
+/area/ship/crew)
+"Am" = (
+/obj/item/radio/intercom{
+	pixel_y = 20
+	},
+/obj/item/storage/toolbox/emergency,
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/maintenance/fore)
+"Ar" = (
+/obj/machinery/power/solar,
+/obj/structure/cable/yellow,
+/obj/effect/turf_decal/solarpanel,
+/obj/structure/window/reinforced/spawner/north,
+/turf/open/floor/plating/airless,
+/area/ship/external)
+"AE" = (
+/obj/machinery/atmospherics/components/unary/outlet_injector/layer4{
+	dir = 1
+	},
+/turf/open/floor/plating/airless,
+/area/ship/engineering)
+"AM" = (
+/obj/structure/table/wood,
+/obj/item/reagent_containers/food/drinks/beer{
+	pixel_x = -7;
+	pixel_y = 6
+	},
+/obj/item/reagent_containers/food/drinks/beer{
+	pixel_x = 3;
+	pixel_y = 3
+	},
+/obj/effect/spawner/lootdrop/donkpockets,
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
+	},
+/turf/open/floor/plasteel/grimy,
+/area/ship/crew)
+"Bj" = (
+/obj/structure/catwalk/over,
+/obj/structure/cable/yellow{
+	icon_state = "2-8"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/turf/open/floor/plating,
+/area/ship/maintenance/fore)
+"Bw" = (
+/obj/structure/catwalk/over,
+/turf/open/floor/plating,
+/area/ship/hallway/starboard)
+"BA" = (
+/obj/machinery/door/airlock/public,
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/turf/open/floor/plasteel/white{
+	dir = 1
+	},
+/area/ship/crew/hydroponics)
+"BK" = (
+/obj/structure/table/reinforced,
+/turf/open/floor/carpet/red,
+/area/ship/bridge)
+"BY" = (
+/obj/structure/window/reinforced,
+/obj/machinery/door/window/northleft,
+/obj/machinery/power/smes/shuttle/precharged{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/turf/open/floor/plating,
+/area/ship/engineering)
+"Cf" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/turf/open/floor/plasteel,
+/area/ship/crew)
+"CH" = (
+/obj/structure/sign/poster/official/no_erp{
+	pixel_x = 32
+	},
+/turf/open/floor/plasteel,
+/area/ship/crew)
+"Dd" = (
+/obj/structure/cable/yellow{
+	icon_state = "1-4"
+	},
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/obj/machinery/atmospherics/pipe/manifold/supply/visible/layer2,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/engineering)
+"De" = (
+/obj/structure/closet/crate{
+	icon_state = "crateopen"
+	},
+/obj/item/stack/sheet/mineral/plasma/five,
+/obj/item/stack/sheet/glass/fifty,
+/obj/item/stack/sheet/metal/twenty,
+/obj/item/circuitboard/computer/rdconsole,
+/obj/item/circuitboard/machine/rdserver,
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/maintenance/fore)
+"Df" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/turf/open/floor/plasteel,
+/area/ship/crew)
+"Dp" = (
+/obj/structure/catwalk/over,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/turf/open/floor/plating,
+/area/ship/hallway/starboard)
+"Du" = (
+/obj/structure/window/reinforced/spawner,
+/obj/structure/window/reinforced/spawner/west,
+/obj/structure/cable/yellow{
+	icon_state = "1-4"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/obj/structure/catwalk/over,
+/turf/open/floor/plating,
+/area/ship/maintenance/fore)
+"DJ" = (
+/obj/item/storage/box/disks_plantgene,
+/obj/item/storage/box/disks_plantgene,
+/obj/item/storage/box/disks_plantgene,
+/obj/structure/table/reinforced,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/turf/open/floor/plasteel/white{
+	dir = 1
+	},
+/area/ship/crew/hydroponics)
+"DP" = (
+/obj/machinery/plantgenes{
+	pixel_y = 7
+	},
+/obj/structure/table/reinforced,
+/obj/effect/turf_decal/corner/green/border{
+	dir = 6
+	},
+/turf/open/floor/plasteel/white{
+	dir = 1
+	},
+/area/ship/crew/hydroponics)
+"Ek" = (
+/obj/structure/catwalk/over,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/turf/open/floor/plating/airless,
+/area/ship/hallway/starboard)
+"EL" = (
+/obj/machinery/firealarm{
+	pixel_y = -28
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/hallway/starboard)
+"ER" = (
+/obj/machinery/power/smes/engineering,
+/obj/structure/cable,
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/engineering)
+"EY" = (
+/obj/machinery/light{
+	bulb_colour = "#FFF0FE";
+	dir = 8;
+	light_color = "#FF4EF3"
+	},
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/machinery/power/apc/auto_name/north,
+/obj/effect/turf_decal/corner/green/border{
+	dir = 9
+	},
+/turf/open/floor/plasteel/white{
+	dir = 1
+	},
+/area/ship/crew/hydroponics)
+"Fi" = (
+/obj/machinery/firealarm{
+	dir = 1;
+	pixel_y = 26
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/hallway/starboard)
+"Fr" = (
+/obj/machinery/power/solar,
+/obj/structure/cable/yellow{
+	icon_state = "0-4"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "2-4"
+	},
+/obj/effect/turf_decal/solarpanel,
+/obj/structure/window/reinforced/spawner,
+/turf/open/floor/plating/airless,
+/area/ship/external)
+"FH" = (
+/obj/structure/table/reinforced,
+/obj/item/storage/firstaid/medical,
+/turf/open/floor/carpet/red,
+/area/ship/bridge)
+"FU" = (
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/structure/catwalk/over,
+/turf/open/floor/plating,
+/area/ship/maintenance/fore)
+"FX" = (
+/turf/closed/wall,
+/area/ship/engineering)
+"Gg" = (
+/obj/machinery/atmospherics/pipe/manifold/general/hidden,
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/engineering)
+"GB" = (
+/obj/machinery/computer/autopilot,
+/turf/open/floor/carpet/red,
+/area/ship/bridge)
+"GI" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/effect/spawner/structure/window/reinforced,
+/obj/machinery/door/poddoor/preopen{
+	id = "mining_ship_blast"
+	},
+/turf/open/floor/plating/airless,
+/area/ship/engineering)
+"GN" = (
+/obj/structure/cable/yellow{
+	icon_state = "2-8"
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/obj/effect/spawner/lootdrop/maintenance,
+/obj/structure/catwalk/over,
+/turf/open/floor/plating,
+/area/ship/maintenance/fore)
+"GT" = (
+/obj/machinery/biogenerator,
+/obj/effect/turf_decal/corner/green/border{
+	dir = 6
+	},
+/turf/open/floor/plasteel/white{
+	dir = 1
+	},
+/area/ship/crew/hydroponics)
+"He" = (
+/obj/structure/window/reinforced/tinted/fulltile,
+/turf/open/floor/plating,
+/area/ship/crew/hydroponics)
+"Hi" = (
+/obj/machinery/light_switch{
+	pixel_x = 55;
+	pixel_y = -9
+	},
+/turf/open/floor/plasteel,
+/area/ship/crew)
+"HE" = (
+/obj/structure/table/reinforced,
+/obj/item/storage/firstaid/regular,
+/turf/open/floor/carpet/red,
+/area/ship/bridge)
+"HM" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 4
+	},
+/obj/machinery/firealarm{
+	dir = 1;
+	pixel_y = 26
+	},
+/obj/machinery/autolathe,
+/obj/effect/turf_decal/industrial/hatch/yellow,
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/engineering)
+"Ij" = (
+/obj/structure/cable/yellow{
+	icon_state = "1-8"
+	},
+/obj/structure/catwalk/over,
+/turf/open/floor/plating,
+/area/ship/maintenance/fore)
+"Ir" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/effect/turf_decal/corner/green/border{
+	dir = 1
+	},
+/turf/open/floor/plasteel/white{
+	dir = 1
+	},
+/area/ship/crew/hydroponics)
+"IV" = (
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/maintenance/fore)
+"Jj" = (
+/turf/closed/wall,
+/area/ship/maintenance/fore)
+"Jv" = (
+/obj/structure/frame/computer,
+/turf/open/floor/carpet/red,
+/area/ship/bridge)
+"Jx" = (
+/obj/machinery/atmospherics/pipe/simple/orange/hidden{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/item/radio/intercom{
+	pixel_y = -28
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/engineering)
+"JE" = (
+/obj/structure/catwalk/over,
+/turf/open/floor/plating,
+/area/ship/maintenance/fore)
+"JQ" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 4
+	},
+/turf/open/floor/carpet/red,
+/area/ship/bridge)
+"JZ" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/effect/turf_decal/corner/green/border{
+	dir = 8
+	},
+/turf/open/floor/plasteel/white{
+	dir = 1
+	},
+/area/ship/crew/hydroponics)
+"Kd" = (
+/obj/machinery/power/solar,
+/obj/structure/cable/yellow{
+	icon_state = "0-4"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/effect/turf_decal/solarpanel,
+/obj/structure/window/reinforced/spawner/west,
+/obj/structure/window/reinforced/spawner,
+/turf/open/floor/plating/airless,
+/area/ship/external)
+"Km" = (
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/machinery/power/apc/auto_name/south,
+/turf/open/floor/carpet/red,
+/area/ship/bridge)
+"Kr" = (
+/obj/structure/sink{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/green/border{
+	dir = 10
+	},
+/obj/machinery/airalarm/all_access{
+	dir = 1;
+	pixel_y = -24
+	},
+/obj/machinery/light{
+	bulb_colour = "#FFF0FE";
+	dir = 8;
+	light_color = "#FF4EF3"
+	},
+/turf/open/floor/plasteel/white{
+	dir = 1
+	},
+/area/ship/crew/hydroponics)
+"Ks" = (
+/obj/structure/window/reinforced/spawner/north,
+/obj/structure/window/reinforced/spawner/west,
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "2-4"
+	},
+/obj/structure/catwalk/over,
+/turf/open/floor/plating/airless,
+/area/ship/maintenance/fore)
+"KJ" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
+	},
+/obj/effect/turf_decal/corner/green/border{
+	dir = 8
+	},
+/turf/open/floor/plasteel/white{
+	dir = 1
+	},
+/area/ship/crew/hydroponics)
+"KX" = (
+/obj/machinery/smartfridge,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/visible/layer2,
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/turf/closed/wall,
+/area/ship/crew/hydroponics)
+"Lc" = (
+/obj/machinery/power/solar,
+/obj/structure/cable/yellow{
+	icon_state = "0-8"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/effect/turf_decal/solarpanel,
+/obj/structure/window/reinforced/spawner,
+/obj/structure/window/reinforced/spawner/east,
+/turf/open/floor/plating/airless,
+/area/ship/external)
+"Lz" = (
+/obj/machinery/atmospherics/components/unary/tank/toxins{
+	dir = 8
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/engineering)
+"LE" = (
+/obj/machinery/door/airlock/command,
+/obj/structure/catwalk/over,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/obj/machinery/door/poddoor/preopen{
+	id = "bridge_lockdown"
+	},
+/turf/open/floor/plating,
+/area/ship/bridge)
+"LG" = (
+/obj/structure/catwalk/over,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plating,
+/area/ship/maintenance/fore)
+"Mn" = (
+/obj/machinery/power/solar,
+/obj/structure/cable/yellow{
+	icon_state = "0-4"
+	},
+/obj/effect/turf_decal/solarpanel,
+/turf/open/floor/plating/airless,
+/area/ship/external)
+"Mr" = (
+/obj/machinery/light{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 6
+	},
+/obj/machinery/computer/monitor,
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/engineering)
+"Mt" = (
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 6
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 5
+	},
+/turf/open/floor/plasteel,
+/area/ship/crew)
+"Mz" = (
+/obj/machinery/power/solar,
+/obj/structure/cable/yellow{
+	icon_state = "0-2"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "2-4"
+	},
+/obj/effect/turf_decal/solarpanel,
+/obj/structure/window/reinforced/spawner/east,
+/obj/structure/window/reinforced/spawner/north,
+/turf/open/floor/plating/airless,
+/area/ship/external)
+"MH" = (
+/obj/machinery/power/solar,
+/obj/structure/cable/yellow{
+	icon_state = "0-2"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "2-4"
+	},
+/obj/effect/turf_decal/solarpanel,
+/obj/structure/window/reinforced/spawner/east,
+/turf/open/floor/plating/airless,
+/area/ship/external)
+"MM" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 6
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 10
+	},
+/obj/machinery/holopad/emergency/command,
+/turf/open/floor/carpet/red,
+/area/ship/bridge)
+"MT" = (
+/obj/machinery/atmospherics/components/binary/pump,
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/engineering)
+"Na" = (
+/obj/machinery/power/solar,
+/obj/structure/cable/yellow{
+	icon_state = "0-8"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/effect/turf_decal/solarpanel,
+/obj/structure/window/reinforced/spawner/west,
+/turf/open/floor/plating/airless,
+/area/ship/external)
+"Nh" = (
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/turf/open/floor/carpet/red,
+/area/ship/bridge)
+"Ny" = (
+/obj/item/kirbyplants/random,
+/turf/open/floor/plasteel/dark,
+/area/ship/hallway/starboard)
+"NK" = (
+/obj/machinery/power/terminal,
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-4"
+	},
+/obj/effect/turf_decal/industrial/warning,
+/obj/machinery/atmospherics/pipe/simple/orange/visible{
+	dir = 9
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/engineering)
+"NM" = (
+/obj/item/radio/intercom{
+	pixel_y = -28
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/hallway/starboard)
+"NP" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 8
+	},
+/obj/effect/turf_decal/corner/green/border{
+	dir = 4
+	},
+/turf/open/floor/plasteel/white{
+	dir = 1
+	},
+/area/ship/crew/hydroponics)
+"NR" = (
+/obj/machinery/hydroponics/constructable,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/turf/open/floor/plasteel/white{
+	dir = 1
+	},
+/area/ship/crew/hydroponics)
+"NT" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 9
+	},
+/obj/machinery/light_switch{
+	pixel_x = -9;
+	pixel_y = 55
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/engineering)
+"Oc" = (
+/obj/machinery/light_switch{
+	pixel_x = 10;
+	pixel_y = -23
+	},
+/turf/open/floor/carpet/red,
+/area/ship/bridge)
+"Ov" = (
+/obj/item/kirbyplants/random,
+/obj/effect/turf_decal/siding/wood{
+	dir = 6
+	},
+/turf/open/floor/plasteel/grimy,
+/area/ship/crew)
+"Oz" = (
+/obj/effect/spawner/structure/window/reinforced,
+/obj/machinery/door/poddoor/preopen{
+	id = "mining_ship_blast"
+	},
+/turf/open/floor/plating,
+/area/ship/bridge)
+"OQ" = (
+/obj/structure/cable/yellow{
+	icon_state = "2-4"
+	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/obj/structure/catwalk/over,
+/turf/open/floor/plating,
+/area/ship/maintenance/fore)
+"Pc" = (
+/obj/machinery/door/airlock/maintenance_hatch,
+/obj/structure/catwalk/over,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/turf/open/floor/plating/airless,
+/area/ship/hallway/starboard)
+"Pe" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/turf/open/floor/plasteel/white{
+	dir = 1
+	},
+/area/ship/crew/hydroponics)
+"Pv" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/effect/turf_decal/corner/green/border,
+/turf/open/floor/plasteel/white{
+	dir = 1
+	},
+/area/ship/crew/hydroponics)
+"Px" = (
+/turf/closed/wall,
+/area/ship/crew/hydroponics)
+"PJ" = (
+/obj/machinery/cryopod,
+/turf/open/floor/plasteel,
+/area/ship/crew)
+"Qa" = (
+/obj/machinery/suit_storage_unit/standard_unit,
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/maintenance/fore)
+"Qe" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/effect/turf_decal/industrial/warning,
+/obj/effect/turf_decal/industrial/caution,
+/obj/machinery/atmospherics/pipe/manifold/orange/visible{
+	dir = 1
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/engineering)
+"Rh" = (
+/obj/structure/cable/yellow{
+	icon_state = "2-8"
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/obj/structure/catwalk/over,
+/turf/open/floor/plating,
+/area/ship/maintenance/fore)
+"RE" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 8
+	},
+/turf/open/floor/carpet/red,
+/area/ship/bridge)
+"RU" = (
+/obj/machinery/vending/snack/random,
+/turf/open/floor/plasteel/dark,
+/area/ship/hallway/starboard)
+"Sq" = (
+/obj/structure/window/reinforced/spawner/north,
+/obj/structure/window/reinforced/spawner/east,
+/obj/structure/cable/yellow{
+	icon_state = "2-8"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/structure/catwalk/over,
+/turf/open/floor/plating,
+/area/ship/maintenance/fore)
+"SB" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
+	},
+/turf/open/floor/plasteel,
+/area/ship/crew)
+"Tl" = (
+/obj/item/radio/intercom{
+	pixel_y = -28
+	},
+/obj/item/storage/overmap_ship/electric{
+	pixel_x = 32;
+	pixel_y = -32
+	},
+/turf/open/floor/carpet/red,
+/area/ship/bridge)
+"Tu" = (
+/obj/structure/window/reinforced/tinted/fulltile,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 5
+	},
+/turf/open/floor/plating,
+/area/ship/crew/hydroponics)
+"UK" = (
+/obj/machinery/door/airlock/maintenance_hatch,
+/turf/open/floor/plating,
+/area/ship/maintenance/fore)
+"UL" = (
+/obj/structure/extinguisher_cabinet{
+	pixel_x = 32
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/hallway/starboard)
+"UY" = (
+/obj/machinery/vending/cola/random,
+/turf/open/floor/plasteel/dark,
+/area/ship/hallway/starboard)
+"Vf" = (
+/obj/machinery/power/solar_control{
+	dir = 8
+	},
+/obj/structure/cable/yellow{
+	icon_state = "0-8"
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/engineering)
+"Vr" = (
+/obj/structure/table/wood,
+/obj/machinery/microwave,
+/obj/effect/turf_decal/siding/wood{
+	dir = 9
+	},
+/turf/open/floor/plasteel/grimy,
+/area/ship/crew)
+"VO" = (
+/obj/effect/turf_decal/corner/green/border{
+	dir = 6
+	},
+/obj/machinery/firealarm{
+	pixel_y = -28
+	},
+/obj/machinery/light_switch{
+	pixel_x = 23;
+	pixel_y = 9
+	},
+/obj/structure/reagent_dispensers/watertank/high,
+/obj/item/reagent_containers/glass/bucket,
+/obj/item/reagent_containers/glass/bucket{
+	pixel_x = -7;
+	pixel_y = 7
+	},
+/obj/machinery/light{
+	bulb_colour = "#FFF0FE";
+	dir = 4;
+	light_color = "#FF4EF3"
+	},
+/turf/open/floor/plasteel/white{
+	dir = 1
+	},
+/area/ship/crew/hydroponics)
+"WK" = (
+/obj/structure/table/reinforced,
+/obj/item/areaeditor/shuttle{
+	pixel_x = -2;
+	pixel_y = 5
+	},
+/turf/open/floor/carpet/red,
+/area/ship/bridge)
+"WN" = (
+/obj/structure/table/wood,
+/obj/item/flashlight/lamp/green,
+/obj/effect/turf_decal/siding/wood{
+	dir = 10
+	},
+/turf/open/floor/plasteel/grimy,
+/area/ship/crew)
+"WQ" = (
+/obj/structure/closet/crate/hydroponics,
+/obj/structure/beebox,
+/obj/item/melee/flyswatter,
+/obj/item/honey_frame,
+/obj/item/honey_frame,
+/obj/item/honey_frame,
+/obj/item/queen_bee/bought,
+/obj/item/clothing/head/beekeeper_head,
+/obj/item/clothing/suit/beekeeper_suit,
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/maintenance/fore)
+"WW" = (
+/obj/effect/turf_decal/corner/green/bordercorner,
+/turf/open/floor/plasteel/white{
+	dir = 1
+	},
+/area/ship/crew/hydroponics)
+"Xb" = (
+/obj/effect/turf_decal/corner/green/bordercorner{
+	dir = 8
+	},
+/turf/open/floor/plasteel/white{
+	dir = 1
+	},
+/area/ship/crew/hydroponics)
+"Xp" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/hallway/starboard)
+"Xt" = (
+/obj/machinery/firealarm{
+	dir = 4;
+	pixel_x = 26
+	},
+/obj/machinery/light{
+	dir = 4;
+	light_color = "#FFDDBB"
+	},
+/turf/open/floor/plasteel,
+/area/ship/crew)
+"XC" = (
+/obj/effect/turf_decal/corner/green/border{
+	dir = 8
+	},
+/turf/open/floor/plasteel/white{
+	dir = 1
+	},
+/area/ship/crew/hydroponics)
+"XL" = (
+/obj/structure/closet/firecloset,
+/turf/open/floor/plasteel/dark,
+/area/ship/hallway/starboard)
+"Yb" = (
+/turf/open/floor/carpet/red,
+/area/ship/bridge)
+"Yh" = (
+/obj/machinery/power/apc/auto_name/south,
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/hallway/starboard)
+"YO" = (
+/obj/item/pickaxe,
+/obj/item/pickaxe,
+/obj/item/pickaxe,
+/obj/item/mining_scanner,
+/obj/structure/closet/wall,
+/obj/item/storage/bag/ore,
+/obj/item/storage/bag/ore,
+/obj/item/storage/bag/ore,
+/obj/item/clothing/glasses/meson,
+/obj/item/clothing/glasses/meson,
+/obj/item/clothing/glasses/meson,
+/obj/item/clothing/head/hardhat/mining,
+/obj/item/clothing/head/hardhat/mining,
+/obj/item/clothing/head/hardhat/mining,
+/obj/item/clothing/suit/hazardvest{
+	desc = "A high-visibility lifejacket complete with whistle and slot for oxygen tanks.";
+	name = "emergency lifejacket"
+	},
+/obj/item/clothing/suit/hazardvest{
+	desc = "A high-visibility lifejacket complete with whistle and slot for oxygen tanks.";
+	name = "emergency lifejacket"
+	},
+/obj/item/clothing/suit/hazardvest{
+	desc = "A high-visibility lifejacket complete with whistle and slot for oxygen tanks.";
+	name = "emergency lifejacket"
+	},
+/turf/closed/wall,
+/area/ship/maintenance/fore)
+"YT" = (
+/obj/machinery/light{
+	dir = 8;
+	light_color = "#FFDDBB"
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/hallway/starboard)
+"YZ" = (
+/obj/machinery/power/solar,
+/obj/structure/cable/yellow{
+	icon_state = "0-4"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-4"
+	},
+/obj/effect/turf_decal/solarpanel,
+/obj/structure/window/reinforced/spawner/north,
+/turf/open/floor/plating/airless,
+/area/ship/external)
+"Zh" = (
+/obj/machinery/door/airlock/external,
+/obj/structure/catwalk/over,
+/turf/open/floor/plating,
+/area/ship/maintenance/fore)
+"Zj" = (
+/obj/machinery/door/airlock,
+/obj/structure/catwalk/over,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/ship/crew)
+"Zt" = (
+/obj/structure/rack,
+/obj/item/gun/energy/floragun,
+/obj/item/cultivator,
+/obj/item/shovel/spade,
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/item/plant_analyzer,
+/obj/machinery/power/apc/auto_name/east,
+/turf/open/floor/plasteel,
+/area/ship/crew)
+"ZG" = (
+/obj/machinery/vending/hydroseeds,
+/obj/effect/turf_decal/corner/green/border{
+	dir = 9
+	},
+/turf/open/floor/plasteel/white{
+	dir = 1
+	},
+/area/ship/crew/hydroponics)
+"ZH" = (
+/obj/machinery/suit_storage_unit/standard_unit,
+/obj/machinery/light/small,
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/maintenance/fore)
 
 (1,1,1) = {"
-eUeUeUeUeUeUeUeUeUeUeUeUeUeUeUeUeUeUeUeUeUeUeUeUeUeUeUeUeUeUeUeU
-eUeUeUeUeUeUeUeUeUeUeUeUeUOzOzOzOzOzOzOzeUeUeUeUeUeUeUeUeUeUeUeU
-eUeUeUeUeUeUeUeUeUeUeUeUOzOzBKGBfdJvWKOzOzeUeUeUeUeUeUeUeUeUeUeU
-eUeUeUeUeUeUeUeUeUeUeUOzOzYbtNhnhnhnYbYbOzOzeUeUeUeUeUeUeUeUeUeU
-eUeUeUeUeUeUeUeUeUeUeUOznDYbJQhhMMtyREYbFHOzeUeUeUeUeUeUeUeUeUeU
-eUeUeUeUeUeUeUeUeUeUeUmJmxclOcKmNhvedUTlHEmJeUeUeUeUeUeUeUeUeUeU
-eUeUeUeUeUeUeUeUeUMnqfmJmJmJmJmJLEmJmJmJmJmJFrooeUeUeUeUeUeUeUeU
-eUeUeUeUeUeUeUeUMnLcdGvLvLvLvLvLoLvLvLvLvLvLSqKdooeUeUeUeUeUeUeU
-eUeUeUeUeUeUeUMnLcKsIjnpnpnpnpnpPcnpnpnpnpnpogiFcAooeUeUeUeUeUeU
-eUeUeUeUeUeUMnLcKscNnpnpuKuKqQXpvGFiuKuKuvnpnpxHiFKdooeUeUeUeUeU
-eUeUeUeUeUeUmmKscNnpnpuKuKunuKuKDpuKNMuKuKuKnpnpogiFNaeUeUeUeUeU
-eUeUeUeFeFbLbLFUnpnpuKuKNyPxPxHebTHePxPxuKuKuKnpnpFUJjJjJjJjJjeU
-eUeUeFeFHizUbLFUnpUYuKULPxPxEYdoIrxstKPxPxuKuKuKnpFUJjamamamJjeU
-eUeFeFmjxaPJbLFUnpuKuKPxPxZGdWjunzjuyEjtPxPxYTuKnpFUUKIVIVIVJjeU
-eUeFVrofeIZtbLFUnpuKuKPxyudWjujunzjujuyEfuPxuKuKnpFUJjJjJjJjJjeU
-eUeFAMuRDfPJbLFUnpuKuKHeXCjudbjusWjudbjuaEHeuKuKnpFUJjgLuXAmfOeU
-eUeFkxofMtSBZjfyewgEgEsdJZxglbqcKXPeNRPeNPBABwBwuSoBZhLGpUJEvBeU
-eUeFjZofCfXtbLuOnpuKuKTuKJladbjuDJjudbjuaEHeuKuKnpuOJjQaZHQafOeU
-eUeFWNofjgCHbLuOnpuKuKPxkkXbjujunzjujuWWGTPxuKuKnpuOJjJjJjYOJjeU
-eUeFeFOvuQPJbLuOnpuKpjPxPxrXXbjunzjuWWDPPxPxuKuKnpuOUKIVIVIVJjeU
-eUeUeFeFfzncbLuOnpRUuKuKPxPxKrlxPvlxVOPxPxuKuKuKnpuOJjDekyWQJjeU
-eUeUeUeFeFbLbLuOnpnpuKuKuKPxPxHensHePxPxNyuKuKnpnpuOJjJjJjJjJjeU
-eUeUeUeUeUeUMHDuRhnpnpuKuKuKuKuKEkuKuKfJuKuKnpnpOQsQNaeUeUeUeUeU
-eUeUeUeUeUeUnYMzDuGNnpnpuvuKxnELnFvxYhuKXLnpnpOQsQvHooeUeUeUeUeU
-eUeUeUeUeUeUeUnYMzDuRhnpnpnpnpnpPcnpnpnpnpnpOQsQvHooeUeUeUeUeUeU
-eUeUeUeUeUeUeUeUnYMzalyXyXyXyXyXBjbSyXyXyXyXyovHooeUeUeUeUeUeUeU
-eUeUeUeUeUeUeUeUeUnYArFXFXFXFXFXpdFXFXFXFXFXYZooeUeUeUeUeUeUeUeU
-eUeUeUeUeUeUeUeUeUeUeUFXtXtTHMMrDdvZpYhOdeFXeUeUeUeUeUeUeUeUeUeU
-eUeUeUeUeUeUeUeUeUeUeUFXjOGguGNTdpypLzMTERFXeUeUeUeUeUeUeUeUeUeU
-eUeUeUeUeUeUeUeUeUeUeUFXctrJlBwUjaJxQeNKVfFXeUeUeUeUeUeUeUeUeUeU
-eUeUeUeUeUeUeUeUeUeUeUFXFXBYjsFXGIFXjsBYFXFXeUeUeUeUeUeUeUeUeUeU
-eUeUeUeUeUeUeUeUeUeUeUeUeUyOdZfMAEfMdZyOeUeUeUeUeUeUeUeUeUeUeUeU
+eU
+eU
+eU
+eU
+eU
+eU
+eU
+eU
+eU
+eU
+eU
+eU
+eU
+eU
+eU
+eU
+eU
+eU
+eU
+eU
+eU
+eU
+eU
+eU
+eU
+eU
+eU
+eU
+eU
+eU
+eU
+eU
+"}
+(2,1,1) = {"
+eU
+eU
+eU
+eU
+eU
+eU
+eU
+eU
+eU
+eU
+eU
+eU
+eU
+eF
+eF
+eF
+eF
+eF
+eF
+eF
+eU
+eU
+eU
+eU
+eU
+eU
+eU
+eU
+eU
+eU
+eU
+eU
+"}
+(3,1,1) = {"
+eU
+eU
+eU
+eU
+eU
+eU
+eU
+eU
+eU
+eU
+eU
+eU
+eF
+eF
+Vr
+AM
+kx
+jZ
+WN
+eF
+eF
+eU
+eU
+eU
+eU
+eU
+eU
+eU
+eU
+eU
+eU
+eU
+"}
+(4,1,1) = {"
+eU
+eU
+eU
+eU
+eU
+eU
+eU
+eU
+eU
+eU
+eU
+eF
+eF
+mj
+of
+uR
+of
+of
+of
+Ov
+eF
+eF
+eU
+eU
+eU
+eU
+eU
+eU
+eU
+eU
+eU
+eU
+"}
+(5,1,1) = {"
+eU
+eU
+eU
+eU
+eU
+eU
+eU
+eU
+eU
+eU
+eU
+eF
+Hi
+xa
+eI
+Df
+Mt
+Cf
+jg
+uQ
+fz
+eF
+eU
+eU
+eU
+eU
+eU
+eU
+eU
+eU
+eU
+eU
+"}
+(6,1,1) = {"
+eU
+eU
+eU
+eU
+eU
+eU
+eU
+eU
+eU
+eU
+eU
+bL
+zU
+PJ
+Zt
+PJ
+SB
+Xt
+CH
+PJ
+nc
+bL
+eU
+eU
+eU
+eU
+eU
+eU
+eU
+eU
+eU
+eU
+"}
+(7,1,1) = {"
+eU
+eU
+eU
+eU
+eU
+eU
+eU
+eU
+eU
+Mn
+mm
+bL
+bL
+bL
+bL
+bL
+Zj
+bL
+bL
+bL
+bL
+bL
+MH
+nY
+eU
+eU
+eU
+eU
+eU
+eU
+eU
+eU
+"}
+(8,1,1) = {"
+eU
+eU
+eU
+eU
+eU
+eU
+eU
+eU
+Mn
+Lc
+Ks
+FU
+FU
+FU
+FU
+FU
+fy
+uO
+uO
+uO
+uO
+uO
+Du
+Mz
+nY
+eU
+eU
+eU
+eU
+eU
+eU
+eU
+"}
+(9,1,1) = {"
+eU
+eU
+eU
+eU
+eU
+eU
+eU
+Mn
+Lc
+Ks
+cN
+np
+np
+np
+np
+np
+ew
+np
+np
+np
+np
+np
+Rh
+Du
+Mz
+nY
+eU
+eU
+eU
+eU
+eU
+eU
+"}
+(10,1,1) = {"
+eU
+eU
+eU
+eU
+eU
+eU
+Mn
+Lc
+Ks
+cN
+np
+np
+UY
+uK
+uK
+uK
+gE
+uK
+uK
+uK
+RU
+np
+np
+GN
+Du
+Mz
+nY
+eU
+eU
+eU
+eU
+eU
+"}
+(11,1,1) = {"
+eU
+eU
+eU
+eU
+eU
+eU
+qf
+dG
+Ij
+np
+np
+uK
+uK
+uK
+uK
+uK
+gE
+uK
+uK
+pj
+uK
+uK
+np
+np
+Rh
+al
+Ar
+eU
+eU
+eU
+eU
+eU
+"}
+(12,1,1) = {"
+eU
+eU
+eU
+Oz
+Oz
+mJ
+mJ
+vL
+np
+np
+uK
+uK
+UL
+Px
+Px
+He
+sd
+Tu
+Px
+Px
+uK
+uK
+uK
+np
+np
+yX
+FX
+FX
+FX
+FX
+FX
+eU
+"}
+(13,1,1) = {"
+eU
+eU
+Oz
+Oz
+nD
+mx
+mJ
+vL
+np
+uK
+uK
+Ny
+Px
+Px
+yu
+XC
+JZ
+KJ
+kk
+Px
+Px
+uK
+uK
+uv
+np
+yX
+FX
+tX
+jO
+ct
+FX
+eU
+"}
+(14,1,1) = {"
+eU
+Oz
+Oz
+Yb
+Yb
+cl
+mJ
+vL
+np
+uK
+un
+Px
+Px
+ZG
+dW
+ju
+xg
+la
+Xb
+rX
+Px
+Px
+uK
+uK
+np
+yX
+FX
+tT
+Gg
+rJ
+BY
+yO
+"}
+(15,1,1) = {"
+eU
+Oz
+BK
+tN
+JQ
+Oc
+mJ
+vL
+np
+qQ
+uK
+Px
+EY
+dW
+ju
+db
+lb
+db
+ju
+Xb
+Kr
+Px
+uK
+xn
+np
+yX
+FX
+HM
+uG
+lB
+js
+dZ
+"}
+(16,1,1) = {"
+eU
+Oz
+GB
+hn
+hh
+Km
+mJ
+vL
+np
+Xp
+uK
+He
+do
+ju
+ju
+ju
+qc
+ju
+ju
+ju
+lx
+He
+uK
+EL
+np
+yX
+FX
+Mr
+NT
+wU
+FX
+fM
+"}
+(17,1,1) = {"
+eU
+Oz
+fd
+hn
+MM
+Nh
+LE
+oL
+Pc
+vG
+Dp
+bT
+Ir
+nz
+nz
+sW
+KX
+DJ
+nz
+nz
+Pv
+ns
+Ek
+nF
+Pc
+Bj
+pd
+Dd
+dp
+ja
+GI
+AE
+"}
+(18,1,1) = {"
+eU
+Oz
+Jv
+hn
+ty
+ve
+mJ
+vL
+np
+Fi
+uK
+He
+xs
+ju
+ju
+ju
+Pe
+ju
+ju
+ju
+lx
+He
+uK
+vx
+np
+bS
+FX
+vZ
+yp
+Jx
+FX
+fM
+"}
+(19,1,1) = {"
+eU
+Oz
+WK
+Yb
+RE
+dU
+mJ
+vL
+np
+uK
+NM
+Px
+tK
+yE
+ju
+db
+NR
+db
+ju
+WW
+VO
+Px
+uK
+Yh
+np
+yX
+FX
+pY
+Lz
+Qe
+js
+dZ
+"}
+(20,1,1) = {"
+eU
+Oz
+Oz
+Yb
+Yb
+Tl
+mJ
+vL
+np
+uK
+uK
+Px
+Px
+jt
+yE
+ju
+Pe
+ju
+WW
+DP
+Px
+Px
+fJ
+uK
+np
+yX
+FX
+hO
+MT
+NK
+BY
+yO
+"}
+(21,1,1) = {"
+eU
+eU
+Oz
+Oz
+FH
+HE
+mJ
+vL
+np
+uv
+uK
+uK
+Px
+Px
+fu
+aE
+NP
+aE
+GT
+Px
+Px
+Ny
+uK
+XL
+np
+yX
+FX
+de
+ER
+Vf
+FX
+eU
+"}
+(22,1,1) = {"
+eU
+eU
+eU
+Oz
+Oz
+mJ
+mJ
+vL
+np
+np
+uK
+uK
+uK
+Px
+Px
+He
+BA
+He
+Px
+Px
+uK
+uK
+uK
+np
+np
+yX
+FX
+FX
+FX
+FX
+FX
+eU
+"}
+(23,1,1) = {"
+eU
+eU
+eU
+eU
+eU
+eU
+Fr
+Sq
+og
+np
+np
+uK
+uK
+YT
+uK
+uK
+Bw
+uK
+uK
+uK
+uK
+uK
+np
+np
+OQ
+yo
+YZ
+eU
+eU
+eU
+eU
+eU
+"}
+(24,1,1) = {"
+eU
+eU
+eU
+eU
+eU
+eU
+oo
+Kd
+iF
+xH
+np
+np
+uK
+uK
+uK
+uK
+Bw
+uK
+uK
+uK
+uK
+np
+np
+OQ
+sQ
+vH
+oo
+eU
+eU
+eU
+eU
+eU
+"}
+(25,1,1) = {"
+eU
+eU
+eU
+eU
+eU
+eU
+eU
+oo
+cA
+iF
+og
+np
+np
+np
+np
+np
+uS
+np
+np
+np
+np
+np
+OQ
+sQ
+vH
+oo
+eU
+eU
+eU
+eU
+eU
+eU
+"}
+(26,1,1) = {"
+eU
+eU
+eU
+eU
+eU
+eU
+eU
+eU
+oo
+Kd
+iF
+FU
+FU
+FU
+FU
+FU
+oB
+uO
+uO
+uO
+uO
+uO
+sQ
+vH
+oo
+eU
+eU
+eU
+eU
+eU
+eU
+eU
+"}
+(27,1,1) = {"
+eU
+eU
+eU
+eU
+eU
+eU
+eU
+eU
+eU
+oo
+Na
+Jj
+Jj
+UK
+Jj
+Jj
+Zh
+Jj
+Jj
+UK
+Jj
+Jj
+Na
+oo
+eU
+eU
+eU
+eU
+eU
+eU
+eU
+eU
+"}
+(28,1,1) = {"
+eU
+eU
+eU
+eU
+eU
+eU
+eU
+eU
+eU
+eU
+eU
+Jj
+am
+IV
+Jj
+gL
+LG
+Qa
+Jj
+IV
+De
+Jj
+eU
+eU
+eU
+eU
+eU
+eU
+eU
+eU
+eU
+eU
+"}
+(29,1,1) = {"
+eU
+eU
+eU
+eU
+eU
+eU
+eU
+eU
+eU
+eU
+eU
+Jj
+am
+IV
+Jj
+uX
+pU
+ZH
+Jj
+IV
+ky
+Jj
+eU
+eU
+eU
+eU
+eU
+eU
+eU
+eU
+eU
+eU
+"}
+(30,1,1) = {"
+eU
+eU
+eU
+eU
+eU
+eU
+eU
+eU
+eU
+eU
+eU
+Jj
+am
+IV
+Jj
+Am
+JE
+Qa
+YO
+IV
+WQ
+Jj
+eU
+eU
+eU
+eU
+eU
+eU
+eU
+eU
+eU
+eU
+"}
+(31,1,1) = {"
+eU
+eU
+eU
+eU
+eU
+eU
+eU
+eU
+eU
+eU
+eU
+Jj
+Jj
+Jj
+Jj
+fO
+vB
+fO
+Jj
+Jj
+Jj
+Jj
+eU
+eU
+eU
+eU
+eU
+eU
+eU
+eU
+eU
+eU
+"}
+(32,1,1) = {"
+eU
+eU
+eU
+eU
+eU
+eU
+eU
+eU
+eU
+eU
+eU
+eU
+eU
+eU
+eU
+eU
+eU
+eU
+eU
+eU
+eU
+eU
+eU
+eU
+eU
+eU
+eU
+eU
+eU
+eU
+eU
+eU
 "}
