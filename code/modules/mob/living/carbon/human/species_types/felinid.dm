@@ -13,7 +13,7 @@
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_PRIDE | MIRROR_MAGIC | RACE_SWAP | ERT_SPAWN | SLIME_EXTRACT
 	var/original_felinid = TRUE //set to false for felinids created by mass-purrbation
 	ass_image = 'icons/ass/asscat.png'
-	loreblurb = "Humans with genetic modifications spliced from the domestic cat. These are by far the most common human genemod. There's a lot of rumors about potential issues in the culture or psychology of felinids, but the only proven differences between felinids and unmodified humans are physically apparent, such as the more iconic ears and tails, or minor alterations such as fangs or slit-eyes."
+	loreblurb = "Humans with genetic modifications spliced from the domestic cat. One of the more common human genelines."
 
 /datum/species/human/felinid/qualifies_for_rank(rank, list/features)
 	return TRUE

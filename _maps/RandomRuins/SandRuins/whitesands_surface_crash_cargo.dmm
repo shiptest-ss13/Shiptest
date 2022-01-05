@@ -115,6 +115,10 @@
 	icon_state = "panelscorched"
 	},
 /area/whitesands/surface/outdoors)
+"la" = (
+/obj/structure/lattice,
+/turf/open/floor/plating/asteroid/whitesands/dried,
+/area/whitesands/surface/outdoors)
 "lf" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/door/airlock/external,
@@ -242,7 +246,7 @@
 "qb" = (
 /obj/effect/turf_decal/box/white/corners,
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/template_noop,
+/turf/open/floor/plating/asteroid/whitesands/dried,
 /area/whitesands/surface/outdoors)
 "qi" = (
 /obj/effect/spawner/structure/window/shuttle,
@@ -655,7 +659,7 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/closet/crate/secure/weapon,
 /obj/item/gun/energy/laser/retro,
-/obj/item/melee/transforming/energy/sword/pirate,
+/obj/item/melee/transforming/energy/sword/saber/pirate,
 /obj/item/gun/energy/laser/retro,
 /turf/open/floor/plasteel/dark,
 /area/whitesands/surface/outdoors)
@@ -750,7 +754,7 @@
 /area/whitesands/surface/outdoors)
 "Um" = (
 /obj/structure/lattice,
-/turf/template_noop,
+/turf/open/floor/plating/asteroid/whitesands,
 /area/whitesands/surface/outdoors)
 "UV" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -811,7 +815,7 @@ Xl
 Xl
 Xl
 Xl
-Um
+la
 Um
 Xl
 "}
@@ -863,7 +867,7 @@ lN
 (5,1,1) = {"
 Xl
 Xl
-Um
+la
 lN
 Kj
 yi
@@ -877,8 +881,8 @@ lN
 "}
 (6,1,1) = {"
 Xl
-Um
-Um
+la
+la
 lN
 nD
 Gs
@@ -952,7 +956,7 @@ No
 "}
 (11,1,1) = {"
 Xl
-Um
+la
 No
 qb
 NI
@@ -967,7 +971,7 @@ sw
 "}
 (12,1,1) = {"
 Xl
-Um
+la
 No
 du
 du
@@ -1026,30 +1030,30 @@ lN
 FM
 "}
 (16,1,1) = {"
-Um
-Um
+la
+la
 yi
 Um
 yi
 yi
-Um
+la
 yi
 yi
 yi
 yi
-Um
+la
 Um
 "}
 (17,1,1) = {"
-Um
-Um
+la
+la
 yi
 yi
-Um
+la
 yi
-Um
-Um
-Um
+la
+la
+la
 yi
 Um
 Um
@@ -1096,7 +1100,7 @@ Xl
 Xl
 Xl
 yi
-Um
+la
 yi
 Xl
 "}

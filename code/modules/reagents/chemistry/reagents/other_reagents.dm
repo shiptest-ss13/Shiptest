@@ -556,7 +556,7 @@
 	taste_description = "something nyat good"
 
 /datum/reagent/mutationtoxin/lizard
-	name = "lizard Mutation Toxin"
+	name = "Sarathi Mutation Toxin"
 	description = "A lizarding toxin."
 	color = "#5EFF3B" //RGB: 94, 255, 59
 	race = /datum/species/lizard
@@ -649,10 +649,11 @@
 	process_flags = ORGANIC | SYNTHETIC
 
 /datum/reagent/mutationtoxin/tesh //crying
-	name = "Teshari Mutation Toxin"
+	name = "Kepori Mutation Toxin"
 	description = "A feathery toxin."
-	race = /datum/species/teshari
+	race = /datum/species/kepori
 	process_flags = ORGANIC | SYNTHETIC
+	taste_description = "a familiar white meat"
 
 //BLACKLISTED RACES
 /datum/reagent/mutationtoxin/skeleton
@@ -1150,8 +1151,7 @@
 /datum/reagent/space_cleaner/expose_turf(turf/T, reac_volume)
 	if(reac_volume >= 1)
 		T.wash(clean_types)
-		for(var/am in T)
-			var/atom/movable/movable_content
+		for(var/atom/movable/movable_content in T)
 			if(ismopable(movable_content)) // Mopables will be cleaned anyways by the turf wash
 				continue
 			movable_content.wash(clean_types)

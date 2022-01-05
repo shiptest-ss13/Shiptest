@@ -721,7 +721,9 @@
 /area/ship/bridge)
 "ol" = (
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
-/obj/machinery/door/poddoor/shutters,
+/obj/machinery/door/poddoor/shutters{
+	id = "externalshutters"
+	},
 /turf/open/floor/plating,
 /area/ship/cargo)
 "oy" = (
@@ -804,7 +806,9 @@
 /area/ship/engineering)
 "qj" = (
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
-/obj/machinery/door/poddoor/shutters,
+/obj/machinery/door/poddoor/shutters{
+	id = "externalshutters"
+	},
 /turf/open/floor/plating,
 /area/ship/storage)
 "qm" = (
@@ -812,7 +816,9 @@
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/layer_manifold,
-/obj/machinery/door/poddoor/shutters,
+/obj/machinery/door/poddoor/shutters{
+	id = "externalshutters"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "qp" = (
@@ -1168,14 +1174,18 @@
 	dir = 2;
 	launch_status = 0
 	},
-/obj/machinery/door/poddoor/shutters,
+/obj/machinery/door/poddoor/shutters{
+	id = "externalshutters"
+	},
 /turf/open/floor/plating,
 /area/ship/bridge)
 "yC" = (
 /obj/machinery/power/shuttle/engine/fueled/plasma{
 	dir = 1
 	},
-/obj/machinery/door/poddoor/shutters,
+/obj/machinery/door/poddoor/shutters{
+	id = "externalshutters"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "yI" = (
@@ -1208,7 +1218,9 @@
 /area/ship/cargo)
 "zA" = (
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
-/obj/machinery/door/poddoor/shutters,
+/obj/machinery/door/poddoor/shutters{
+	id = "externalshutters"
+	},
 /turf/open/floor/plating,
 /area/ship/medical)
 "zL" = (
@@ -1271,7 +1283,9 @@
 /area/ship/bridge)
 "AM" = (
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
-/obj/machinery/door/poddoor/shutters,
+/obj/machinery/door/poddoor/shutters{
+	id = "externalshutters"
+	},
 /turf/open/floor/plating,
 /area/ship/crew/dorm)
 "Bd" = (
@@ -1769,7 +1783,9 @@
 /area/ship/crew/dorm)
 "OE" = (
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
-/obj/machinery/door/poddoor/shutters,
+/obj/machinery/door/poddoor/shutters{
+	id = "externalshutters"
+	},
 /turf/open/floor/plating,
 /area/ship/bridge)
 "OI" = (
@@ -2129,7 +2145,14 @@
 /obj/machinery/button/door{
 	id = "cargodoors";
 	name = "Cargo Bay Shutter Control";
-	pixel_x = -34
+	pixel_x = -38;
+	pixel_y = 5
+	},
+/obj/machinery/button/door{
+	id = "externalshutters";
+	name = "External Shutters Control";
+	pixel_x = -38;
+	pixel_y = -5
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/bridge)
