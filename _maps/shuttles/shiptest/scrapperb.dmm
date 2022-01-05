@@ -37,6 +37,9 @@
 /obj/effect/turf_decal/techfloor/orange{
 	dir = 9
 	},
+/obj/machinery/atmospherics/pipe/layer_manifold{
+	dir = 4
+	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/hallway/central)
 "aC" = (
@@ -151,8 +154,11 @@
 	pixel_y = 32
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/atmospherics/components/unary/vent_pump/siphon/layer4{
-	dir = 8
+/obj/machinery/atmospherics/pipe/layer_manifold{
+	dir = 4
+	},
+/obj/machinery/advanced_airlock_controller{
+	pixel_y = -20
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/science)
@@ -206,12 +212,6 @@
 /turf/open/floor/plating,
 /area/ship/engineering/electrical)
 "cm" = (
-/obj/machinery/button/door{
-	id = "EVAEXTERNAL";
-	name = "Blast Door Control";
-	pixel_x = -8;
-	pixel_y = -24
-	},
 /obj/effect/turf_decal/siding/yellow/corner{
 	dir = 8
 	},
@@ -716,10 +716,15 @@
 /turf/open/floor/pod/light,
 /area/ship/cargo)
 "kz" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/effect/landmark/start/shaft_miner,
 /obj/effect/turf_decal/siding/yellow{
 	dir = 8
+	},
+/obj/machinery/atmospherics/components/binary/dp_vent_pump/layer2{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
+	dir = 4
 	},
 /turf/open/floor/pod/light,
 /area/ship/hallway/central)
@@ -733,15 +738,14 @@
 /turf/open/floor/pod/light,
 /area/ship/cargo)
 "kH" = (
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /obj/effect/turf_decal/siding/yellow{
 	dir = 4
 	},
-/obj/machinery/button/door{
-	id = "EVAEXTERNAL";
-	name = "Blast Door Control";
-	pixel_x = 24;
-	pixel_y = 24
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 6
+	},
+/obj/machinery/atmospherics/components/binary/dp_vent_pump/layer2{
+	dir = 4
 	},
 /turf/open/floor/pod/light,
 /area/ship/hallway/central)
@@ -865,10 +869,15 @@
 /turf/open/floor/carpet/royalblue,
 /area/ship/construction)
 "mH" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/effect/landmark/start/shaft_miner,
 /obj/effect/turf_decal/siding/yellow{
 	dir = 4
+	},
+/obj/machinery/atmospherics/components/binary/dp_vent_pump/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
+	dir = 8
 	},
 /turf/open/floor/pod/light,
 /area/ship/hallway/central)
@@ -916,6 +925,9 @@
 /obj/item/mining_scanner,
 /obj/effect/turf_decal/techfloor/orange{
 	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/layer_manifold{
+	dir = 4
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/hallway/central)
@@ -1071,6 +1083,9 @@
 /obj/effect/turf_decal/techfloor/orange{
 	dir = 4
 	},
+/obj/machinery/atmospherics/pipe/layer_manifold{
+	dir = 4
+	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/hallway/central)
 "oX" = (
@@ -1147,14 +1162,18 @@
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/engineering/engine)
 "pC" = (
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/structure/cable{
 	icon_state = "2-4"
 	},
 /obj/effect/landmark/start/shaft_miner,
 /obj/effect/turf_decal/siding/yellow{
 	dir = 4
+	},
+/obj/machinery/atmospherics/components/binary/dp_vent_pump/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
+	dir = 8
 	},
 /turf/open/floor/pod/light,
 /area/ship/hallway/central)
@@ -1342,6 +1361,9 @@
 /obj/effect/turf_decal/techfloor/orange{
 	dir = 5
 	},
+/obj/machinery/atmospherics/pipe/layer_manifold{
+	dir = 4
+	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/hallway/central)
 "rY" = (
@@ -1418,15 +1440,13 @@
 /turf/open/floor/eighties,
 /area/ship/crew/canteen)
 "sP" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/machinery/door/poddoor{
-	id = "EVAINTERNAL";
-	name = "cargo bay blast door"
-	},
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
+	},
+/obj/machinery/door/airlock/external{
+	icon = 'icons/obj/doors/blastdoor.dmi'
 	},
 /turf/open/floor/pod/light,
 /area/ship/hallway/central)
@@ -1917,7 +1937,9 @@
 /turf/open/floor/pod/light,
 /area/ship/science/robotics)
 "zs" = (
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
+	dir = 1
+	},
 /turf/open/floor/pod/light,
 /area/ship/hallway/central)
 "zv" = (
@@ -2207,13 +2229,15 @@
 /turf/open/floor/plasteel/mono/white,
 /area/ship/science)
 "Dh" = (
-/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
 /obj/effect/turf_decal/techfloor{
 	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
 	},
 /turf/open/floor/pod/light,
 /area/ship/cargo)
@@ -2302,12 +2326,6 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/science)
 "Ey" = (
-/obj/machinery/button/door{
-	id = "EVAINTERNAL";
-	name = "Blast Door Control";
-	pixel_x = -8;
-	pixel_y = -24
-	},
 /obj/machinery/suit_storage_unit/mining/eva,
 /obj/machinery/power/apc/auto_name/east,
 /obj/structure/cable{
@@ -2315,6 +2333,9 @@
 	},
 /obj/effect/turf_decal/techfloor/orange{
 	dir = 6
+	},
+/obj/machinery/atmospherics/pipe/layer_manifold{
+	dir = 4
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/hallway/central)
@@ -2398,6 +2419,20 @@
 	},
 /turf/open/floor/carpet/royalblue,
 /area/ship/construction)
+"Fk" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/door/airlock/external{
+	icon = 'icons/obj/doors/blastdoor.dmi'
+	},
+/turf/open/floor/pod/light,
+/area/ship/hallway/central)
 "Fm" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 1
@@ -2441,11 +2476,6 @@
 /obj/item/multitool,
 /turf/open/floor/pod/light,
 /area/ship/science/robotics)
-"FI" = (
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/turf/open/floor/pod/light,
-/area/ship/hallway/central)
 "FP" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/effect/turf_decal/box,
@@ -2477,7 +2507,7 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/maintenance/starboard)
 "Gh" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer2,
 /turf/open/floor/pod/light,
 /area/ship/hallway/central)
 "Gs" = (
@@ -2615,17 +2645,17 @@
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "Ij" = (
-/obj/effect/turf_decal/techfloor{
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/firedoor/border_only{
 	dir = 1
 	},
-/obj/machinery/button/door{
-	id = "EVAINTERNAL";
-	name = "Blast Door Control";
-	pixel_x = -8;
-	pixel_y = 24
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/door/airlock/external{
+	icon = 'icons/obj/doors/blastdoor.dmi'
 	},
 /turf/open/floor/pod/light,
-/area/ship/cargo)
+/area/ship/hallway/central)
 "Is" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
@@ -2640,12 +2670,13 @@
 	pixel_y = 32
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/atmospherics/components/unary/vent_pump/layer2{
-	dir = 8
-	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
+/obj/machinery/atmospherics/components/binary/dp_vent_pump/layer2{
+	dir = 4
+	},
+/obj/machinery/light/small,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/science)
 "Iv" = (
@@ -2705,7 +2736,6 @@
 /area/ship/engineering/atmospherics)
 "IH" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
@@ -2774,15 +2804,18 @@
 /turf/open/floor/plasteel/showroomfloor,
 /area/ship/science)
 "JO" = (
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /obj/effect/turf_decal/siding/yellow{
 	dir = 8
 	},
-/obj/machinery/button/door{
-	id = "EVAEXTERNAL";
-	name = "Blast Door Control";
-	pixel_x = -24;
-	pixel_y = 24
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 10
+	},
+/obj/machinery/atmospherics/components/binary/dp_vent_pump/layer2{
+	dir = 8
+	},
+/obj/machinery/advanced_airlock_controller{
+	pixel_x = -30;
+	pixel_y = 30
 	},
 /turf/open/floor/pod/light,
 /area/ship/hallway/central)
@@ -2940,13 +2973,6 @@
 	},
 /turf/open/floor/pod/light,
 /area/ship/cargo)
-"Lk" = (
-/obj/machinery/advanced_airlock_controller{
-	pixel_y = -20
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plasteel/tech/techmaint,
-/area/ship/science)
 "Ll" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -3193,9 +3219,8 @@
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
 	},
-/obj/machinery/door/poddoor{
-	id = "EVAEXTERNAL";
-	name = "cargo bay blast door"
+/obj/machinery/door/airlock/external{
+	icon = 'icons/obj/doors/blastdoor.dmi'
 	},
 /turf/open/floor/pod/light,
 /area/ship/hallway/central)
@@ -3274,11 +3299,13 @@
 /turf/open/floor/eighties,
 /area/ship/crew/canteen)
 "Ox" = (
-/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
 /obj/effect/turf_decal/siding/yellow,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
 /turf/open/floor/pod/light,
 /area/ship/cargo)
 "OE" = (
@@ -3493,12 +3520,6 @@
 /area/ship/crew/canteen)
 "QW" = (
 /obj/effect/turf_decal/siding/yellow/corner,
-/obj/machinery/button/door{
-	id = "EVAEXTERNAL";
-	name = "Blast Door Control";
-	pixel_x = 8;
-	pixel_y = -24
-	},
 /turf/open/floor/plating/airless,
 /area/ship/external)
 "QY" = (
@@ -3508,6 +3529,9 @@
 /obj/item/mining_scanner,
 /obj/effect/turf_decal/techfloor/orange{
 	dir = 10
+	},
+/obj/machinery/atmospherics/pipe/layer_manifold{
+	dir = 4
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/hallway/central)
@@ -3846,10 +3870,14 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/science)
 "Ug" = (
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/effect/turf_decal/siding/yellow{
 	dir = 8
+	},
+/obj/machinery/atmospherics/components/binary/dp_vent_pump/layer2{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
+	dir = 4
 	},
 /turf/open/floor/pod/light,
 /area/ship/hallway/central)
@@ -4021,11 +4049,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
-"VX" = (
-/obj/machinery/light/small,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plasteel/tech/techmaint,
-/area/ship/science)
 "Wb" = (
 /obj/structure/window/plasma/reinforced/plastitanium,
 /obj/structure/grille,
@@ -4116,11 +4139,11 @@
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
-	dir = 4
-	},
 /obj/structure/cable{
 	icon_state = "1-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 10
 	},
 /turf/open/floor/pod/light,
 /area/ship/cargo)
@@ -4764,8 +4787,8 @@ GK
 NC
 zs
 Gh
-FI
-sP
+Gh
+Ij
 IH
 Ox
 mB
@@ -4803,7 +4826,7 @@ NC
 kH
 mH
 pC
-sP
+Fk
 Xe
 Gt
 VN
@@ -4842,7 +4865,7 @@ rQ
 oJ
 Ey
 DL
-Ij
+DY
 Is
 nj
 zB
@@ -5162,7 +5185,7 @@ Qi
 IZ
 Lz
 Iu
-VX
+eN
 tf
 Bz
 NO
@@ -5200,7 +5223,7 @@ VS
 Qu
 Lz
 by
-Lk
+eN
 tf
 GO
 rm
