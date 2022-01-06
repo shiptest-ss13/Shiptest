@@ -644,9 +644,12 @@
 			for(var/S in mind.spell_list)
 				var/obj/effect/proc_holder/spell/spell = S
 				spell.updateButtonIcon()
+			if(ckey)
+				GLOB.respawn_timers -= ckey
 		if(excess_healing)
 			INVOKE_ASYNC(src, .proc/emote, "gasp")
 			log_combat(src, src, "revived")
+
 
 /mob/living/proc/remove_CC()
 	SetStun(0)
