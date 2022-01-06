@@ -95,7 +95,7 @@
 	var/scan_on_late_init = FALSE
 	var/depressurization_margin = 10 // use a lower value to reduce cross-contamination
 	var/overlays_hash = null
-	var/skip_delay = 300
+	var/skip_delay = 10
 	var/skip_timer = 0
 	var/is_skipping = FALSE
 
@@ -106,7 +106,7 @@
 /obj/machinery/advanced_airlock_controller/lavaland
 	exterior_pressure = WARNING_LOW_PRESSURE + 10
 	depressurization_margin = ONE_ATMOSPHERE
-	skip_delay = 30
+	skip_delay = 10
 
 /obj/machinery/advanced_airlock_controller/mix_chamber
 	depressurization_margin = 0.15 // The minimum - We really don't want contamination.
