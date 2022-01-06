@@ -39,8 +39,16 @@
 			if(other_component != component && other_component.piping_layer == component.piping_layer && other_component.dir == component.dir)
 				results += "Doubled [component.name] located at [ANNOTATE_OBJECT(component)]"
 
+	//Manifold
+	for(var/obj/machinery/atmospherics/pipe/manifold/manifold in SSair.atmos_machinery)
+		if(manifold.z && (!manifold.nodes || !manifold.nodes.len || (null in manifold.nodes)))
+			results += "Unconnected [manifold.name] located at [ANNOTATE_OBJECT(manifold)]"
+		for(var/obj/machinery/atmospherics/pipe/manifold/other_manifold in get_turf(manifold))
+			if(other_manifold != manifold && other_manifold.piping_layer == manifold.piping_layer && other_manifold.dir == manifold.dir)
+				results += "Doubled [manifold.name] located at [ANNOTATE_OBJECT(manifold)]"
+
 	//Pipes
-	for(var/obj/machinery/atmospherics/pipe/pipe in SSair.atmos_machinery)
+	for(var/obj/machinery/atmospherics/pipe/simple/pipe in SSair.atmos_machinery)
 		if(pipe.z && (!pipe.nodes || !pipe.nodes.len || (null in pipe.nodes)))
 			results += "Unconnected [pipe.name] located at [ANNOTATE_OBJECT(pipe)]"
 		for(var/obj/machinery/atmospherics/pipe/other_pipe in get_turf(pipe))
