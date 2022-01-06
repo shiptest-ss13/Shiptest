@@ -215,6 +215,7 @@ block( \
 		var/list/recursive_contents = LAZYACCESS(movable.important_recursive_contents, RECURSIVE_CONTENTS_HEARING_SENSITIVE)
 		if(recursive_contents)
 			. += recursive_contents
+			SEND_SIGNAL(movable, COMSIG_ATOM_HEARER_IN_VIEW, .)
 	center_turf.luminosity = lum
 
 /proc/get_mobs_in_radio_ranges(list/obj/item/radio/radios)

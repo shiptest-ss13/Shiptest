@@ -24,7 +24,7 @@
 
 /datum/species/dullahan/on_species_gain(mob/living/carbon/human/H, datum/species/old_species)
 	. = ..()
-	REMOVE_TRAIT(H, TRAIT_HEARING_SENSITIVE, ORGAN_TRAIT)
+	H.lose_hearing_sensitivity(ORGAN_TRAIT)
 	var/obj/item/bodypart/head/head = H.get_bodypart(BODY_ZONE_HEAD)
 	if(head)
 		head.drop_limb()
