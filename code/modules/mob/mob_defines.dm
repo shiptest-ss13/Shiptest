@@ -229,5 +229,5 @@
 	///Override for sound_environments. If this is set the user will always hear a specific type of reverb (Instead of the area defined reverb)
 	var/sound_environment_override = SOUND_ENVIRONMENT_NONE
 
-	/// Whether the typing indicator is on. Not on /living level because of verbs
-	var/typing_indicator = FALSE
+	///Has a typing indicator?
+	var/typing_indicator

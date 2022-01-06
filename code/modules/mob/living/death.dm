@@ -76,9 +76,6 @@
 	med_hud_set_status()
 	stop_pulling()
 
-	if(typing_indicator)
-		set_typing_indicator(FALSE)
-
 	. = ..()
 
 	if (client)
