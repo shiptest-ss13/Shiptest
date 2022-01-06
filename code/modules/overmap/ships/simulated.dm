@@ -251,6 +251,7 @@
 				if(!docking_target) //Panic, somehow the docking target is gone but the shuttle has likely docked somewhere, get it out quickly
 					state = OVERMAP_SHIP_FLYING
 					shuttle.enterTransit()
+					return
 
 				if(istype(docking_target, /obj/structure/overmap/ship/simulated)) //hardcoded and bad
 					var/obj/structure/overmap/ship/simulated/S = docking_target
