@@ -698,27 +698,36 @@
 	set name = "Respawn"
 	set category = "OOC"
 
-	if (CONFIG_GET(flag/norespawn))
-		return
-
-	if ((stat != DEAD || !( SSticker )))
+	if ((stat != DEAD || !( SSticker )) || !isobserver(usr))
 		to_chat(usr, "<span class='boldnotice'>You must be dead to use this!</span>")
 		return
 
 	var/respawn_timer = CONFIG_GET(number/respawn_timer)
-	if(respawn_timer)
-		if(!SSticker.respawn_timer[client])
-			to_chat(usr, "<span class='boldnotice'>You have begun your respawn timer. You will be allowed to Respawn in [DisplayTimeText(respawn_timer)]</span>")
-			SSticker.respawn_timer[client] = world.time + respawn_timer
+	if(!respawn_timer)
+		return
+
+	var/admin_bypass = FALSE
+	if(client?.holder)
+		var/poll_client = tgui_alert(usr, "Would you like to use your rank to bypass a potential respawn timer?", "Admin Alert", list("Yes", "No"))
+		if(poll_client == "Yes")
+			admin_bypass = TRUE
+			message_admins("[key_name_admin(usr)] has used admin permissions to bypass respawn restrictions.")
+			log_game("key_name(usr) used admin permissions to bypass respawn restrictions.")
+
+	if (CONFIG_GET(flag/norespawn) && !admin_bypass)
+		return
+
+	var/usrkey = client?.ckey
+	if(!usrkey)
+		log_game("[key_name(usr)] AM failed due to disconnect.")
+
+	if(GLOB.respawn_timers[usrkey] && !admin_bypass)
+		var/time_left = GLOB.respawn_timers[usrkey] + respawn_timer - world.timeofday
+		if(time_left > 0)
+			to_chat(usr, "<span class='boldnotice'>You still have [DisplayTimeText(time_left)] left before you can respawn.</span>")
 			return
 
-		var/left = round(SSticker.respawn_timer[client] - world.time)
-		if(left > 0)
-			to_chat(usr, "<span class='boldnotice'>You still have [DisplayTimeText(left)] left before you can respawn.</span>")
-			return
-
-		// Their timer is up, let them through
-		SSticker.respawn_timer -= client
+	GLOB.respawn_timers -= usrkey
 
 	log_game("[key_name(usr)] used abandon mob.")
 
