@@ -25,7 +25,7 @@
 	if(starting_tape_type)
 		mytape = new starting_tape_type(src)
 	update_icon()
-	become_hearing_sensitive()
+	become_hearing_sensitive(ROUNDSTART_TRAIT)
 
 /obj/item/taperecorder/Destroy()
 	QDEL_NULL(mytape)

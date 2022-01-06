@@ -133,7 +133,7 @@
 
 /obj/item/toy/eightball/haunted/Initialize(mapload)
 	. = ..()
-	become_hearing_sensitive()
+	become_hearing_sensitive(ROUNDSTART_TRAIT)
 	for (var/answer in haunted_answers)
 		votes[answer] = 0
 	GLOB.poi_list |= src

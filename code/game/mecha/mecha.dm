@@ -146,7 +146,7 @@
 	diag_hud_set_mechhealth()
 	diag_hud_set_mechcell()
 	diag_hud_set_mechstat()
-	become_hearing_sensitive(trait_source = ROUNDSTART_TRAIT)
+	become_hearing_sensitive(ROUNDSTART_TRAIT)
 
 /obj/mecha/update_icon_state()
 	if(silicon_pilot && silicon_icon_state)

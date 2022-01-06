@@ -82,7 +82,7 @@
 	gust.Grant(src)
 	rift = new
 	rift.Grant(src)
-	become_hearing_sensitive()
+	become_hearing_sensitive(ROUNDSTART_TRAIT)
 
 /mob/living/simple_animal/hostile/space_dragon/Life(mapload)
 	. = ..()
