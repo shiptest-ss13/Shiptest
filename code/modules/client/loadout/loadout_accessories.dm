@@ -68,3 +68,9 @@
 	description = "Only the truly insane would wear this around their neck."
 	path = /obj/item/clothing/neck/petcollar
 	cost = 5000
+
+/datum/gear/accessory/evening_gloves
+	display_name = "evening gloves"
+	description = "Excessively fancy elbow-length gloves."
+	path = /obj/item/clothing/gloves/color/evening_gloves
+	cot = 750

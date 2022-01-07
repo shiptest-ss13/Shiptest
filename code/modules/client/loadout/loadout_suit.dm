@@ -59,6 +59,14 @@
 
 /datum/gear/suit/jacket/navy
 
+/datum/gear/suit/jacket/highvis
+	display_name = "industrial jacket"
+	path = /obj/item/clothing/suit/toggle/highvis
+
+/datum/gear/suit/jacket/hazard
+	display_name = "hazard jacket"
+	path = /obj/item/clothing/suit/toggle/hazard
+
 //Misc
 /datum/gear/suit/grponcho
 	display_name = "poncho, green"

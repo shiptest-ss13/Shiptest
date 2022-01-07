@@ -234,6 +234,13 @@
 	item_state = "wgloves"
 	custom_price = 200
 
+/obj/item/clothing/gloves/color/evening
+	name = "evening gloves"
+	desc = "White satin gloves that rise up to the elbows. Just plain excessively fancy."
+	icon_state = "evening_gloves"
+	item_state = "evening_gloves"
+	custom_price = 200
+
 /obj/effect/spawner/lootdrop/gloves
 	name = "random gloves"
 	desc = "These gloves are supposed to be a random color..."
