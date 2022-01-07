@@ -808,7 +808,7 @@
 	dir = 10
 	},
 /obj/effect/turf_decal/industrial/hatch/yellow,
-/obj/machinery/suit_storage_unit/engine,
+/obj/machinery/suit_storage_unit/independent/engineering,
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "eo" = (
@@ -1109,6 +1109,11 @@
 /obj/item/areaeditor/shuttle,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/bridge)
+"nG" = (
+/obj/machinery/atmospherics/components/unary/outlet_injector/on/layer4,
+/obj/structure/catwalk,
+/turf/open/floor/plating/airless,
+/area/template_noop)
 "oj" = (
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/effect/decal/cleanable/dirt,
@@ -1758,17 +1763,22 @@
 "Jf" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/engineering/engine)
-"Jt" = (
-/obj/machinery/atmospherics/components/unary/outlet_injector/on/layer4,
-/obj/structure/catwalk,
-/turf/open/floor/plating/airless,
-/area/template_noop)
 "Jz" = (
 /obj/machinery/porta_turret/centcom_shuttle/weak{
 	dir = 4;
 	name = "Old Mining Turret"
 	},
 /turf/closed/wall/mineral/titanium,
+/area/ship/cargo)
+"Kc" = (
+/obj/effect/spawner/structure/window/shuttle,
+/obj/machinery/door/poddoor{
+	id = "whiteship_windows";
+	name = "Exterior Window Blast door"
+	},
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/turf/open/floor/plating,
 /area/ship/cargo)
 "Ke" = (
 /obj/machinery/door/poddoor{
@@ -1998,16 +2008,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
-"Qc" = (
-/obj/effect/spawner/structure/window/shuttle,
-/obj/machinery/door/poddoor{
-	id = "whiteship_windows";
-	name = "Exterior Window Blast door"
-	},
-/obj/machinery/door/firedoor/border_only,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/turf/open/floor/plating,
-/area/ship/cargo)
 "Qw" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
@@ -2598,8 +2598,8 @@ aa
 "}
 (14,1,1) = {"
 aa
-Jt
-Qc
+nG
+Kc
 bL
 bX
 Ud
