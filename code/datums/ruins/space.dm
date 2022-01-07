@@ -18,6 +18,12 @@
 	description = "In case society crumbles, we will be able to restore our zoos to working order with the breeding stock kept in these 100% secure and unbreachable storage facilities. \
 	At no point has anything escaped. That's our story, and we're sticking to it."
 
+/datum/map_template/ruin/space/excavator_DK
+	id = "Excavator-DK"
+	suffix = "excavator_DK.dmm"
+	name = "Excavator DK Class"
+	description = "A heavily damaged DK class excavator"
+
 /datum/map_template/ruin/space/asteroid1
 	id = "asteroid1"
 	suffix = "asteroid1.dmm"
@@ -110,12 +116,6 @@
 	suffix = "emptyshell.dmm"
 	name = "Empty Shell"
 	description = "Cosy, rural property available for young professional couple. Only twelve parsecs from the nearest hyperspace lane!"
-
-/datum/map_template/ruin/space/gas_the_lizards
-	id = "gas-the-lizards"
-	suffix = "gasthelizards.dmm"
-	name = "Disposal Facility 17"
-	description = "Gas efficiency at 95.6%, fluid elimination at 96.2%. Will require renewed supplies of 'carpet' before the end of the quarter."
 
 /datum/map_template/ruin/space/intact_empty_ship
 	id = "intact-empty-ship"
@@ -309,8 +309,8 @@
 	name = "Syndicate Station Wreckage"
 	description = "An old wreck, made of plastitanium. Somehow, it looks more filled than it ever was..."
 
-/datum/map_template/ruin/space/cult_templar
-	id = "cult_templar"
-	suffix = "chaosmarine.dmm"
-	name = "Bloody Lair"
-	description = "A seemingly abandoned blood cult base in space, but why was it abandoned?"
+/datum/map_template/ruin/space/dangerous_research
+	id = "dangerous_research"
+	suffix = "dangerous_research.dmm"
+	name = "Occult Research Station"
+	description = "This station was deemed unsuitable for continued experiments, and quickly abandoned."

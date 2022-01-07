@@ -8,6 +8,8 @@
 	var/showpipe = TRUE
 	var/shift_underlay_only = TRUE //Layering only shifts underlay?
 
+	var/update_parents_after_rebuild = FALSE
+
 	var/list/datum/pipeline/parents
 	var/list/datum/gas_mixture/airs
 
@@ -81,13 +83,19 @@
 	..()
 	update_parents()
 
-/obj/machinery/atmospherics/components/build_network()
+/obj/machinery/atmospherics/components/rebuild_pipes()
+	. = ..()
+	if(update_parents_after_rebuild)
+		update_parents()
+
+/obj/machinery/atmospherics/components/get_rebuild_targets()
+	var/list/to_return = list()
 	for(var/i in 1 to device_type)
-		if(!parents[i])
-			parents[i] = new /datum/pipeline()
-			var/datum/pipeline/P = parents[i]
-			P.build_pipeline(src)
-			update_parents()
+		if(parents[i])
+			continue
+		parents[i] = new /datum/pipeline()
+		to_return += parents[i]
+	return to_return
 
 /obj/machinery/atmospherics/components/proc/nullifyPipenet(datum/pipeline/reference)
 	if(!reference)
@@ -168,12 +176,18 @@
 // Helpers
 
 /obj/machinery/atmospherics/components/proc/update_parents()
+	if(!SSair.initialized)
+		return
+	if(rebuilding)
+		update_parents_after_rebuild = TRUE
+		return
 	for(var/i in 1 to device_type)
 		var/datum/pipeline/parent = parents[i]
 		if(!parent)
+			//WARNING("Component is missing a pipenet! Rebuilding...")
 			SSair.add_to_rebuild_queue(src)
-			continue
-		parent.update = 1
+		else
+			parent.update = TRUE
 
 /obj/machinery/atmospherics/components/returnPipenets()
 	. = list()

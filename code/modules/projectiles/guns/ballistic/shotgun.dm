@@ -291,7 +291,6 @@
 /obj/item/gun/ballistic/shotgun/automatic/combat/compact/compact
 	name = "compact compact combat shotgun"
 	desc = "A compact version of the compact version of the semi automatic combat shotgun. For when you want a gun the same size as your brain."
-	icon = 'whitesands/icons/obj/guns/projectile.dmi'
 	icon_state = "cshotguncc"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/com/compact/compact
 	w_class = WEIGHT_CLASS_SMALL
@@ -314,7 +313,6 @@
 /obj/item/gun/ballistic/shotgun/automatic/combat/compact/compact/compact
 	name = "compact compact compact combat shotgun"
 	desc = "A compact version of the compact version of the compact version of the semi automatic combat shotgun. <i>It's a miracle it works...</i>"
-	icon = 'whitesands/icons/obj/guns/projectile.dmi'
 	icon_state = "cshotgunccc"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/com/compact/compact/compact
 	w_class = WEIGHT_CLASS_TINY

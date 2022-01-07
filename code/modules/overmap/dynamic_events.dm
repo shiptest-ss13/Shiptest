@@ -18,6 +18,8 @@
 	var/virtual_z_level
 	///List of probabilities for each type of planet.
 	var/static/list/probabilities
+	///The planet that will be forced to load
+	var/force_encounter
 
 /obj/structure/overmap/dynamic/Initialize(mapload)
 	. = ..()
@@ -58,9 +60,21 @@
   * Chooses a type of level for the dynamic level to use.
   */
 /obj/structure/overmap/dynamic/proc/choose_level_type()
+	var/chosen
 	if(!probabilities)
-		probabilities = list(DYNAMIC_WORLD_LAVA = length(SSmapping.lava_ruins_templates), DYNAMIC_WORLD_ICE = length(SSmapping.ice_ruins_templates), DYNAMIC_WORLD_JUNGLE = length(SSmapping.jungle_ruins_templates), DYNAMIC_WORLD_SAND = length(SSmapping.sand_ruins_templates), DYNAMIC_WORLD_SPACERUIN = length(SSmapping.space_ruins_templates), DYNAMIC_WORLD_ASTEROID = 30)
-	var/chosen = pickweight(probabilities)
+		probabilities = list(DYNAMIC_WORLD_LAVA = length(SSmapping.lava_ruins_templates),
+		DYNAMIC_WORLD_ICE = length(SSmapping.ice_ruins_templates),
+		DYNAMIC_WORLD_JUNGLE = length(SSmapping.jungle_ruins_templates),
+		DYNAMIC_WORLD_SAND = length(SSmapping.sand_ruins_templates),
+		DYNAMIC_WORLD_SPACERUIN = length(SSmapping.space_ruins_templates),
+		DYNAMIC_WORLD_ROCKPLANET = length(SSmapping.rock_ruins_templates),
+		//DYNAMIC_WORLD_REEBE = 1, //very rare because of major lack of skil //TODO, make removing no teleport not break things, then it can be reenabled
+		DYNAMIC_WORLD_ASTEROID = 30)
+
+	if(force_encounter)
+		chosen = force_encounter
+	else
+		chosen = pickweight(probabilities)
 	mass = rand(50, 100) * 1000000 //50 to 100 million tonnes //this was a stupid feature
 	switch(chosen)
 		if(DYNAMIC_WORLD_LAVA)
@@ -87,6 +101,18 @@
 			planet = DYNAMIC_WORLD_SAND
 			icon_state = "globe"
 			color = COLOR_GRAY
+		if(DYNAMIC_WORLD_ROCKPLANET)
+			name = "strange rock planet"
+			desc = "A very weak energy signal originating from a abandoned industrial planet."
+			planet = DYNAMIC_WORLD_ROCKPLANET
+			icon_state = "globe"
+			color = COLOR_BROWN
+		if(DYNAMIC_WORLD_REEBE)
+			name = "???"
+			desc = "Some sort of strange portal. Theres no identification of what this is."
+			planet = DYNAMIC_WORLD_REEBE
+			icon_state = "wormhole"
+			color = COLOR_YELLOW
 		if(DYNAMIC_WORLD_ASTEROID)
 			name = "large asteroid"
 			desc = "A large asteroid with significant traces of minerals."
@@ -228,6 +254,30 @@
 	QDEL_NULL(reserve)
 	qdel(src)
 
+/obj/structure/overmap/dynamic/lava
+	force_encounter = DYNAMIC_WORLD_LAVA
+
+/obj/structure/overmap/dynamic/ice
+	force_encounter = DYNAMIC_WORLD_ICE
+
+/obj/structure/overmap/dynamic/sand
+	force_encounter = DYNAMIC_WORLD_SAND
+
+/obj/structure/overmap/dynamic/jungle
+	force_encounter = DYNAMIC_WORLD_JUNGLE
+
+/obj/structure/overmap/dynamic/rock
+	force_encounter = DYNAMIC_WORLD_ROCKPLANET
+
+/obj/structure/overmap/dynamic/reebe
+	force_encounter = DYNAMIC_WORLD_REEBE
+
+/obj/structure/overmap/dynamic/asteroid
+	force_encounter = DYNAMIC_WORLD_ASTEROID
+
+/obj/structure/overmap/dynamic/energy_signal
+	force_encounter = DYNAMIC_WORLD_SPACERUIN
+
 /area/overmap_encounter
 	name = "\improper Overmap Encounter"
 	icon_state = "away"
@@ -242,18 +292,44 @@
 	name = "\improper Unknown Planetoid"
 	sound_environment = SOUND_ENVIRONMENT_MOUNTAINS
 	has_gravity = STANDARD_GRAVITY
+	always_unpowered = TRUE
 
 /area/overmap_encounter/planetoid/lava
 	name = "\improper Volcanic Planetoid"
+	ambientsounds = MINING
 
 /area/overmap_encounter/planetoid/ice
 	name = "\improper Frozen Planetoid"
 	sound_environment = SOUND_ENVIRONMENT_CAVE
+	ambientsounds = SPOOKY
 
 /area/overmap_encounter/planetoid/sand
 	name = "\improper Sandy Planetoid"
-	sound_environment = SOUND_ENVIRONMENT_CARPETED_HALLWAY
+	sound_environment = SOUND_ENVIRONMENT_QUARRY
+	ambientsounds = MINING
 
 /area/overmap_encounter/planetoid/jungle
 	name = "\improper Jungle Planetoid"
 	sound_environment = SOUND_ENVIRONMENT_FOREST
+	ambientsounds = AWAY_MISSION
+
+/area/overmap_encounter/planetoid/rockplanet
+	name = "\improper Rocky Planetoid"
+	sound_environment = SOUND_ENVIRONMENT_HANGAR
+	ambientsounds = MAINTENANCE
+
+/area/overmap_encounter/planetoid/rockplanet/explored//for use in ruins
+	area_flags = UNIQUE_AREA
+	area_flags = VALID_TERRITORY | UNIQUE_AREA
+
+/area/overmap_encounter/planetoid/reebe
+	name = "\improper Yellow Space"
+	sound_environment = SOUND_ENVIRONMENT_MOUNTAINS
+	ambientsounds = REEBE
+
+/area/overmap_encounter/planetoid/reebe/Entered(atom/movable/AM)
+	. = ..()
+	if(ismob(AM))
+		var/mob/M = AM
+		if(M.client)
+			addtimer(CALLBACK(M.client, /client/proc/play_reebe_ambience), 900)

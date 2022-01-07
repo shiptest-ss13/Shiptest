@@ -74,9 +74,6 @@ SUBSYSTEM_DEF(overmap)
 
 	create_map()
 
-	for(var/obj/docking_port/mobile/M as anything in SSshuttle.mobile)
-		setup_shuttle_ship(M)
-
 	return ..()
 
 /datum/controller/subsystem/overmap/fire()
@@ -89,18 +86,16 @@ SUBSYSTEM_DEF(overmap)
   * Creates an overmap ship object for the provided mobile docking port if one does not already exist.
   * * Shuttle: The docking port to create an overmap object for
   */
-/datum/controller/subsystem/overmap/proc/setup_shuttle_ship(obj/docking_port/mobile/shuttle)
+/datum/controller/subsystem/overmap/proc/setup_shuttle_ship(obj/docking_port/mobile/shuttle, datum/map_template/shuttle/source_template)
 	var/docked_object = get_overmap_object_by_z(shuttle.get_virtual_z_level())
 	var/obj/structure/overmap/ship/simulated/new_ship
 	if(docked_object)
-		new_ship = new(docked_object, shuttle)
-		if(shuttle.undock_roundstart)
-			new_ship.undock()
+		new_ship = new(docked_object, shuttle, source_template)
 	else if(is_reserved_level(shuttle.z))
-		new_ship = new(get_unused_overmap_square(), shuttle)
+		new_ship = new(get_unused_overmap_square(), shuttle, source_template)
 		new_ship.state = OVERMAP_SHIP_FLYING
 	else if(is_centcom_level(shuttle.z))
-		new_ship = new(null, shuttle)
+		new_ship = new(null, shuttle, source_template)
 	else
 		CRASH("Shuttle created in unknown location, unable to create overmap ship!")
 
@@ -201,7 +196,7 @@ SUBSYSTEM_DEF(overmap)
   * * ruin_type - The ruin to spawn. Don't pass this argument if you want it to randomly select based on planet type.
   */
 /datum/controller/subsystem/overmap/proc/spawn_dynamic_encounter(planet_type, ruin = TRUE, ignore_cooldown = FALSE, datum/map_template/ruin/ruin_type)
-	var/list/ruin_list = SSmapping.space_ruins_templates
+	var/list/ruin_list
 	var/datum/map_generator/mapgen
 	var/area/target_area
 	var/turf/surface = /turf/open/space
@@ -230,6 +225,18 @@ SUBSYSTEM_DEF(overmap)
 			if(DYNAMIC_WORLD_ASTEROID)
 				ruin_list = null
 				mapgen = new /datum/map_generator/cave_generator/asteroid
+			if(DYNAMIC_WORLD_ROCKPLANET)
+				ruin_list = SSmapping.rock_ruins_templates
+				mapgen = new /datum/map_generator/cave_generator/rockplanet
+				target_area = /area/overmap_encounter/planetoid/rockplanet
+				surface = /turf/open/floor/plating/asteroid
+			if(DYNAMIC_WORLD_REEBE)
+				ruin_list = SSmapping.yellow_ruins_templates
+				mapgen = new /datum/map_generator/cave_generator/reebe
+				target_area = /area/overmap_encounter/planetoid/reebe
+				surface = /turf/open/chasm/reebe_void
+			if(DYNAMIC_WORLD_SPACERUIN)
+				ruin_list = SSmapping.space_ruins_templates
 
 	if(ruin && ruin_list && !ruin_type)
 		ruin_type = ruin_list[pick(ruin_list)]
