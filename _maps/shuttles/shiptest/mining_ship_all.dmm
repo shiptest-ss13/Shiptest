@@ -23,8 +23,8 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
 "aR" = (
-/obj/machinery/suit_storage_unit/mining/eva,
 /obj/effect/turf_decal/industrial/hatch/yellow,
+/obj/machinery/suit_storage_unit/independent/mining/eva,
 /turf/open/floor/plasteel,
 /area/ship/cargo)
 "aS" = (
@@ -166,7 +166,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
 "eH" = (
-/obj/effect/landmark/start/assistant,
+/obj/effect/landmark/start/shaft_miner,
 /turf/open/floor/plasteel,
 /area/ship/cargo)
 "eM" = (
@@ -201,7 +201,6 @@
 /area/ship/medical)
 "fY" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/landmark/start/assistant,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
@@ -701,8 +700,8 @@
 /area/ship/engineering)
 "om" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/landmark/start/assistant,
 /obj/structure/catwalk/over,
+/obj/effect/landmark/start/station_engineer,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "or" = (
@@ -933,7 +932,9 @@
 /obj/item/pickaxe/silver,
 /obj/item/storage/bag/ore,
 /obj/item/storage/bag/ore,
-/obj/structure/closet/wall,
+/obj/structure/closet/wall{
+	name = "equipment closet"
+	},
 /turf/closed/wall/r_wall,
 /area/ship/cargo)
 "tH" = (
@@ -1017,11 +1018,11 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
 "vs" = (
-/obj/effect/landmark/start/assistant,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 4
 	},
 /obj/effect/turf_decal/corner/white/mono,
+/obj/effect/landmark/start/medical_doctor,
 /turf/open/floor/plasteel/mono/white,
 /area/ship/medical)
 "vJ" = (
@@ -1236,6 +1237,33 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 6
 	},
+/obj/structure/closet/wall{
+	pixel_y = 32
+	},
+/obj/item/clothing/shoes/cowboy,
+/obj/item/clothing/shoes/cowboy,
+/obj/item/clothing/shoes/cowboy,
+/obj/item/clothing/shoes/workboots,
+/obj/item/clothing/shoes/workboots,
+/obj/item/clothing/shoes/workboots,
+/obj/item/clothing/suit/toggle/hazard,
+/obj/item/clothing/suit/toggle/hazard,
+/obj/item/clothing/suit/toggle/hazard,
+/obj/item/clothing/suit/hazardvest,
+/obj/item/clothing/suit/hazardvest,
+/obj/item/clothing/suit/hazardvest,
+/obj/item/clothing/under/utility,
+/obj/item/clothing/under/utility,
+/obj/item/clothing/under/utility,
+/obj/item/clothing/under/utility/skirt,
+/obj/item/clothing/under/utility/skirt,
+/obj/item/clothing/under/utility/skirt,
+/obj/item/clothing/head/cowboy,
+/obj/item/clothing/head/cowboy,
+/obj/item/clothing/head/cowboy,
+/obj/item/clothing/head/cowboy,
+/obj/item/clothing/head/cowboy,
+/obj/item/clothing/head/cowboy,
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew)
 "AD" = (
@@ -1589,6 +1617,7 @@
 /obj/effect/turf_decal/corner/blue/half{
 	dir = 1
 	},
+/obj/item/clothing/head/caphat/cowboy,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "Ka" = (
@@ -1777,6 +1806,10 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
+"OH" = (
+/obj/effect/landmark/start/quartermaster,
+/turf/open/floor/plasteel,
+/area/ship/cargo)
 "OJ" = (
 /turf/template_noop,
 /area/template_noop)
@@ -1960,11 +1993,11 @@
 /turf/open/floor/plating,
 /area/ship/engineering)
 "VF" = (
-/obj/machinery/suit_storage_unit/mining/eva,
 /obj/effect/turf_decal/industrial/hatch/yellow,
 /obj/machinery/light{
 	dir = 8
 	},
+/obj/machinery/suit_storage_unit/independent/mining/eva,
 /turf/open/floor/plasteel,
 /area/ship/cargo)
 "VO" = (
@@ -2298,7 +2331,7 @@ Cw
 nu
 eH
 Cp
-eH
+OH
 vb
 eM
 Sg
