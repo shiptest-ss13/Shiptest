@@ -676,6 +676,16 @@
 	},
 /turf/open/floor/mineral/titanium/blue,
 /area/ship/bridge)
+"cP" = (
+/obj/effect/spawner/structure/window/shuttle,
+/obj/machinery/door/poddoor{
+	id = "whiteship_windows";
+	name = "Exterior Window Blast door"
+	},
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/turf/open/floor/plating,
+/area/ship/cargo)
 "cV" = (
 /obj/effect/turf_decal/industrial/warning,
 /obj/machinery/airalarm/all_access{
@@ -808,6 +818,11 @@
 /obj/machinery/suit_storage_unit/independent/engineering,
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
+"dF" = (
+/obj/machinery/atmospherics/components/unary/outlet_injector/on/layer4,
+/obj/structure/catwalk,
+/turf/open/floor/plating/airless,
+/area/ship/external)
 "eo" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
@@ -1518,11 +1533,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/bridge)
-"Bw" = (
-/obj/machinery/atmospherics/components/unary/outlet_injector/on/layer4,
-/obj/structure/catwalk,
-/turf/open/floor/plating/airless,
-/area/ship/external)
 "BS" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor{
@@ -2043,15 +2053,11 @@
 	name = "fridge"
 	},
 /obj/item/reagent_containers/food/snacks/sausage,
-/obj/item/reagent_containers/food/drinks/beer{
-	pixel_x = -3;
-	pixel_y = 3
-	},
-/obj/item/reagent_containers/food/drinks/beer,
 /obj/item/reagent_containers/food/snacks/sandwich,
 /obj/effect/turf_decal/trimline/white/filled/line{
 	dir = 1
 	},
+/obj/item/storage/cans/sixbeer,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/crew/canteen)
 "Ti" = (
@@ -2172,16 +2178,6 @@
 "Vx" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/crew/canteen)
-"VH" = (
-/obj/effect/spawner/structure/window/shuttle,
-/obj/machinery/door/poddoor{
-	id = "whiteship_windows";
-	name = "Exterior Window Blast door"
-	},
-/obj/machinery/door/firedoor/border_only,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/turf/open/floor/plating,
-/area/ship/cargo)
 "We" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/rack,
@@ -2597,8 +2593,8 @@ aa
 "}
 (14,1,1) = {"
 aa
-Bw
-VH
+dF
+cP
 bL
 bX
 Ud
