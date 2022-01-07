@@ -51,6 +51,8 @@
 	set_stat(DEAD)
 	unset_machine()
 	timeofdeath = world.time
+	if(ckey)
+		GLOB.respawn_timers[client?.ckey] = world.timeofday
 	tod = station_time_timestamp()
 	var/turf/T = get_turf(src)
 	for(var/obj/item/I in contents)

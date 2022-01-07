@@ -1286,7 +1286,7 @@
 
 /datum/supply_pack/medical/bloodpacks
 	name = "Blood Pack Variety Crate"
-	desc = "Contains eight different blood packs for reintroducing blood to patients."
+	desc = "Contains several different blood packs for reintroducing blood to patients."
 	cost = 1000
 	contains = list(/obj/item/reagent_containers/blood,
 					/obj/item/reagent_containers/blood,
@@ -1296,8 +1296,7 @@
 					/obj/item/reagent_containers/blood/BMinus,
 					/obj/item/reagent_containers/blood/OPlus,
 					/obj/item/reagent_containers/blood/OMinus,
-					/obj/item/reagent_containers/blood/lizard,
-					/obj/item/reagent_containers/blood/ethereal)
+					/obj/item/reagent_containers/blood/lizard)
 	crate_name = "blood freezer"
 	crate_type = /obj/structure/closet/crate/freezer
 

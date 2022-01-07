@@ -296,22 +296,31 @@
 
 /area/overmap_encounter/planetoid/lava
 	name = "\improper Volcanic Planetoid"
+	ambientsounds = MINING
 
 /area/overmap_encounter/planetoid/ice
 	name = "\improper Frozen Planetoid"
 	sound_environment = SOUND_ENVIRONMENT_CAVE
+	ambientsounds = SPOOKY
 
 /area/overmap_encounter/planetoid/sand
 	name = "\improper Sandy Planetoid"
-	sound_environment = SOUND_ENVIRONMENT_CARPETED_HALLWAY
+	sound_environment = SOUND_ENVIRONMENT_QUARRY
+	ambientsounds = MINING
 
 /area/overmap_encounter/planetoid/jungle
 	name = "\improper Jungle Planetoid"
 	sound_environment = SOUND_ENVIRONMENT_FOREST
+	ambientsounds = AWAY_MISSION
 
 /area/overmap_encounter/planetoid/rockplanet
 	name = "\improper Rocky Planetoid"
 	sound_environment = SOUND_ENVIRONMENT_HANGAR
+	ambientsounds = MAINTENANCE
+
+/area/overmap_encounter/planetoid/rockplanet/explored//for use in ruins
+	area_flags = UNIQUE_AREA
+	area_flags = VALID_TERRITORY | UNIQUE_AREA
 
 /area/overmap_encounter/planetoid/reebe
 	name = "\improper Yellow Space"
