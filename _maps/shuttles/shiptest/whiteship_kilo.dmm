@@ -320,6 +320,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/item/gun/energy/kinetic_accelerator,
 /turf/open/floor/plating,
 /area/ship/cargo)
 "bO" = (
@@ -515,11 +516,7 @@
 	dir = 1;
 	pixel_y = -24
 	},
-/obj/machinery/suit_storage_unit/standard_unit{
-	desc = "An industrial suit storage device carrying retro space suits. Neat!";
-	helmet_type = /obj/item/clothing/head/helmet/space;
-	suit_type = /obj/item/clothing/suit/space
-	},
+/obj/machinery/suit_storage_unit/independent/mining/eva,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/cargo)
 "cj" = (
@@ -956,6 +953,11 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/crew)
+"hX" = (
+/obj/machinery/atmospherics/components/unary/outlet_injector/on/layer4,
+/obj/structure/catwalk,
+/turf/open/floor/plating/airless,
+/area/template_noop)
 "ig" = (
 /obj/effect/turf_decal/industrial/hatch/yellow,
 /obj/machinery/door/airlock/shuttle{
@@ -1708,16 +1710,6 @@
 	},
 /turf/open/floor/mineral/titanium/blue,
 /area/ship/bridge)
-"Gp" = (
-/obj/effect/spawner/structure/window/shuttle,
-/obj/machinery/door/poddoor{
-	id = "whiteship_windows";
-	name = "Exterior Window Blast door"
-	},
-/obj/machinery/door/firedoor/border_only,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/turf/open/floor/plating,
-/area/ship/cargo)
 "GM" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
@@ -1774,6 +1766,16 @@
 	name = "Old Mining Turret"
 	},
 /turf/closed/wall/mineral/titanium,
+/area/ship/cargo)
+"JQ" = (
+/obj/effect/spawner/structure/window/shuttle,
+/obj/machinery/door/poddoor{
+	id = "whiteship_windows";
+	name = "Exterior Window Blast door"
+	},
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/turf/open/floor/plating,
 /area/ship/cargo)
 "Ke" = (
 /obj/machinery/door/poddoor{
@@ -1865,11 +1867,7 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/turf_decal/industrial/hatch/yellow,
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/suit_storage_unit/standard_unit{
-	desc = "An industrial suit storage device carrying retro space suits. Neat!";
-	helmet_type = /obj/item/clothing/head/helmet/space;
-	suit_type = /obj/item/clothing/suit/space
-	},
+/obj/machinery/suit_storage_unit/independent/mining/eva,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/cargo)
 "MI" = (
@@ -2021,11 +2019,6 @@
 	},
 /turf/open/floor/plating/airless,
 /area/ship/engineering/engine)
-"Rg" = (
-/obj/machinery/atmospherics/components/unary/outlet_injector/on/layer4,
-/obj/structure/catwalk,
-/turf/open/floor/plating/airless,
-/area/template_noop)
 "Rq" = (
 /obj/machinery/washing_machine,
 /obj/effect/turf_decal/trimline/white/filled/line{
@@ -2604,8 +2597,8 @@ aa
 "}
 (14,1,1) = {"
 aa
-Rg
-Gp
+hX
+JQ
 bL
 bX
 Ud
