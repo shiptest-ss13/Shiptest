@@ -17,6 +17,9 @@
 	var/list/show_categories = list("Food", "Botany Chemicals", "Organic Materials")
 	/// Currently selected category in the UI
 	var/selected_cat
+	
+/obj/machinery/biogenerator/contraband
+	show_categories = list("Food", "Botany Chemicals", "Organic Materials", "Contraband")
 
 /obj/machinery/biogenerator/Initialize()
 	. = ..()
