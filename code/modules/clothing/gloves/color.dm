@@ -236,7 +236,7 @@
 
 /obj/item/clothing/gloves/color/evening
 	name = "evening gloves"
-	desc = "White satin gloves that rise up to the elbows. Just plain excessively fancy."
+	desc = "White satin gloves that rise up to the elbows. Excessively fancy."
 	icon_state = "evening_gloves"
 	item_state = "evening_gloves"
 	custom_price = 200

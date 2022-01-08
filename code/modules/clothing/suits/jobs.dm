@@ -103,7 +103,7 @@
 	resistance_flags = NONE
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/exo/large
 
-/obj/item/clothing/suit/toggle/highvis
+/obj/item/clothing/suit/toggle/industrial
 	name = "industrial jacket"
 	desc = "A black bomber jacket with high-visibility markings."
 	icon_state = "highvis"

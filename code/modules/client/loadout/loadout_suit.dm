@@ -61,7 +61,7 @@
 
 /datum/gear/suit/jacket/highvis
 	display_name = "industrial jacket"
-	path = /obj/item/clothing/suit/toggle/highvis
+	path = /obj/item/clothing/suit/toggle/industrial
 
 /datum/gear/suit/jacket/hazard
 	display_name = "hazard jacket"
