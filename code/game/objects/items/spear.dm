@@ -236,3 +236,25 @@
 		var/mob/living/simple_animal/M = target
 		M.apply_damage(15, BURN)
 	..()
+
+//crystal spear
+/obj/item/spear/crystal
+	icon_state = "crystal_spear0"
+	name = "crystal spear"
+	desc = "While more 'sharp stick' than spear, this thing is extremely dangerous. Crafted out of the mysterous crystals, it can hit for very high damage, although it will break with use.\
+	You can throw it for very high damage on a animal, or for a stun on a human, though this will shatter it instantly."
+	icon = 'whitesands/icons/obj/items_and_weapons.dmi'
+	lefthand_file = 'whitesands/icons/mob/inhands/weapons/polearms_lefthand.dmi'
+	righthand_file = 'whitesands/icons/mob/inhands/weapons/polearms_righthand.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/back.dmi'
+	force = 12
+	throwforce = 50 //should be handled by component
+	armour_penetration = 20
+
+/obj/item/spear/crystal/ComponentInitialize()
+	. = ..()
+	AddComponent(/datum/component/two_handed, force_unwielded=12, force_wielded=35, icon_wielded="crystal_spear1")
+	AddComponent(/datum/component/shatterable, break_on_throw=TRUE, damage_taken_per_hit=25)
+
+/obj/item/spear/crystal/update_icon_state()
+	icon_state = "crystal_spear0"
