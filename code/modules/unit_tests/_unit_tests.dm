@@ -23,7 +23,6 @@
 #include "anchored_mobs.dm"
 #include "bespoke_id.dm"
 #include "binary_insert.dm"
-//#include "chain_pull_through_space.dm" - Removed, as crosslinked levels are not used.
 #include "combat.dm"
 #include "component_tests.dm"
 #include "connect_loc.dm"

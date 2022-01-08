@@ -35,11 +35,10 @@ SUBSYSTEM_DEF(mapping)
 	var/list/datum/space_level/z_list
 	var/datum/space_level/empty_space
 
-	// reserve stuff
-	var/list/reservations_by_level = list()	// list of lists of turf reservations (not reserved turfs) by z level. "[zlevel_of_reserve]" = list(reserves)
-	var/list/turf/unused_turfs = list()		// turfs on reserveable z-levels that are not currently reserved but are available to be. "[zlevel_of_turf]" = list(turfs)
-	var/clearing_reserved_turfs = FALSE 	// whether we're currently clearing out all the reserves
-	var/num_of_res_levels = 0				// number of z-levels for reserving
+	/// List of all map zones
+	var/list/map_zones = list()
+	/// Translation of virtual level ID to a virtual level reference
+	var/list/virtual_z_translation = list()
 
 /datum/controller/subsystem/mapping/Initialize(timeofday)
 	if(initialized)
@@ -51,11 +50,10 @@ SUBSYSTEM_DEF(mapping)
 	preloadTemplates()
 	run_map_generation()
 
-	// Add the transit level
-	new_reserved_level()
+	// Add the transit levels
+	init_reserved_levels()
+
 	repopulate_sorted_areas()
-	// Set up Z-level transitions.
-	setup_map_transitions()
 	return ..()
 
 /* Nuke threats, for making the blue tiles on the station go RED
@@ -94,57 +92,7 @@ SUBSYSTEM_DEF(mapping)
 
 	z_list = SSmapping.z_list
 
-	reservations_by_level = SSmapping.reservations_by_level
-	unused_turfs = SSmapping.unused_turfs
-	clearing_reserved_turfs = SSmapping.clearing_reserved_turfs
-	num_of_res_levels = SSmapping.num_of_res_levels
-
 #define INIT_ANNOUNCE(X) to_chat(world, "<span class='boldannounce'>[X]</span>"); log_world(X)
-/datum/controller/subsystem/mapping/proc/LoadGroup(list/errorList, name, path, files, list/traits, list/default_traits, silent = FALSE)
-	. = list()
-	var/start_time = REALTIMEOFDAY
-
-	if (!islist(files))  // handle single-level maps
-		files = list(files)
-
-	// check that the total z count of all maps matches the list of traits
-	var/total_z = 0
-	var/list/parsed_maps = list()
-	for (var/file in files)
-		var/full_path = "_maps/[path]/[file]"
-		var/datum/parsed_map/pm = new(file(full_path))
-		var/bounds = pm?.bounds
-		if (!bounds)
-			errorList |= full_path
-			continue
-		parsed_maps[pm] = total_z  // save the start Z of this file
-		total_z += bounds[MAP_MAXZ] - bounds[MAP_MINZ] + 1
-
-	if (!length(traits))  // null or empty - default
-		for (var/i in 1 to total_z)
-			traits += list(default_traits)
-	else if (total_z != traits.len)  // mismatch
-		INIT_ANNOUNCE("WARNING: [traits.len] trait sets specified for [total_z] z-levels in [path]!")
-		if (total_z < traits.len)  // ignore extra traits
-			traits.Cut(total_z + 1)
-		while (total_z > traits.len)  // fall back to defaults on extra levels
-			traits += list(default_traits)
-
-	// preload the relevant space_level datums
-	var/start_z = world.maxz + 1
-	var/i = 0
-	for (var/level in traits)
-		add_new_zlevel("[name][i ? " [i + 1]" : ""]", level)
-		++i
-
-	// load the maps
-	for (var/P in parsed_maps)
-		var/datum/parsed_map/pm = P
-		if (!pm.load(1, 1, start_z + parsed_maps[P], no_changeturf = TRUE))
-			errorList |= pm.original_path
-	if(!silent)
-		INIT_ANNOUNCE("Loaded [name] in [(REALTIMEOFDAY - start_time)/10]s!")
-	return parsed_maps
 
 /datum/controller/subsystem/mapping/proc/run_map_generation()
 	for(var/area/A in world)
@@ -307,80 +255,11 @@ SUBSYSTEM_DEF(mapping)
 		var/area/A = B
 		A.reg_in_areas_in_z()
 
-//////////////////
-// RESERVATIONS //
-//////////////////
+/// Creates basic physical levels so we dont have to do that during runtime every time, nothing bad will happen if this wont run, as allocation will handle adding new levels
+/datum/controller/subsystem/mapping/proc/init_reserved_levels()
+	add_new_zlevel("Free Allocation Level", allocation_type = ALLOCATION_FREE)
+	add_new_zlevel("Quadrant Allocation Level", allocation_type = ALLOCATION_QUADRANT)
 
-/datum/controller/subsystem/mapping/proc/request_fixed_reservation()
-	UNTIL(!clearing_reserved_turfs)
-	var/datum/turf_reservation/fixed/reservation = new()
-
-	var/successful_reservation = reservation.reserve()
-	if(successful_reservation)
-		return reservation
-
-	qdel(reservation)
-	return null
-
-/datum/controller/subsystem/mapping/proc/request_dynamic_reservation(width, height)
-	UNTIL(!clearing_reserved_turfs)
-	var/datum/turf_reservation/dynamic/reservation = new(width, height)
-
-	var/successful_reservation = reservation.reserve()
-	if(successful_reservation)
-		return reservation
-
-	qdel(reservation)
-	return null
-
-/datum/controller/subsystem/mapping/proc/new_reserved_level()
-	num_of_res_levels += 1
-	var/datum/space_level/new_reserved = add_new_zlevel("Reserved [num_of_res_levels]", list(ZTRAIT_RESERVED = TRUE))
-	initialize_reserved_level(new_reserved.z_value)
-	return new_reserved
-
-//This is not for wiping reserved levels, use wipe_reservations() for that.
-/datum/controller/subsystem/mapping/proc/initialize_reserved_level(z)
-	UNTIL(!clearing_reserved_turfs)				//regardless, lets add a check just in case.
-	clearing_reserved_turfs = TRUE			//This operation will likely clear any existing reservations, so lets make sure nothing tries to make one while we're doing it.
-	if(!level_trait(z,ZTRAIT_RESERVED))
-		clearing_reserved_turfs = FALSE
-		CRASH("Invalid z level prepared for reservations.")
-	var/turf/A = get_turf(locate(SHUTTLE_TRANSIT_BORDER,SHUTTLE_TRANSIT_BORDER,z))
-	var/turf/B = get_turf(locate(world.maxx - SHUTTLE_TRANSIT_BORDER,world.maxy - SHUTTLE_TRANSIT_BORDER,z))
-	var/block = block(A, B)
-	for(var/t in block)
-		// No need to empty() these, because it's world init and they're
-		// already /turf/open/space/basic.
-		var/turf/T = t
-		T.flags_1 |= UNUSED_RESERVATION_TURF_1
-
-	unused_turfs["[z]"] = block
-	reservations_by_level["[z]"] = list()
-	clearing_reserved_turfs = FALSE
-
-// For wiping all reserved levels.
-/datum/controller/subsystem/mapping/proc/wipe_reservations(wipe_safety_delay = 100)
-	if(clearing_reserved_turfs || !initialized)			//in either case this is just not needed.
-		return
-	clearing_reserved_turfs = TRUE
-	SSshuttle.transit_requesters.Cut()
-	message_admins("Clearing dynamic reservation space.")
-	var/list/obj/docking_port/mobile/in_transit = list()
-	for(var/i in SSshuttle.transit)
-		var/obj/docking_port/stationary/transit/T = i
-		if(!istype(T))
-			continue
-		in_transit[T] = T.get_docked()
-	var/go_ahead = world.time + wipe_safety_delay
-	if(in_transit.len)
-		message_admins("Shuttles in transit detected. Attempting to fast travel. Timeout is [wipe_safety_delay/10] seconds.")
-	var/list/cleared = list()
-	for(var/i in in_transit)
-		INVOKE_ASYNC(src, .proc/safety_clear_transit_dock, i, in_transit[i], cleared)
-	UNTIL((go_ahead < world.time) || (cleared.len == in_transit.len))
-	do_wipe_turf_reservations()
-	clearing_reserved_turfs = FALSE
 
 /datum/controller/subsystem/mapping/proc/safety_clear_transit_dock(obj/docking_port/stationary/transit/T, obj/docking_port/mobile/M, list/returning)
 	M.setTimer(0)
@@ -389,36 +268,94 @@ SUBSYSTEM_DEF(mapping)
 		returning += M
 		qdel(T, TRUE)
 
-//DO NOT CALL THIS PROC DIRECTLY, CALL wipe_reservations().
-/datum/controller/subsystem/mapping/proc/do_wipe_turf_reservations()
-	PRIVATE_PROC(TRUE)
-	UNTIL(initialized)							//This proc is for AFTER init, before init turf reservations won't even exist and using this will likely break things.
-	for(var/z_level in reservations_by_level)
-		for(var/reserve in reservations_by_level[z_level])
-			var/datum/turf_reservation/TR = reserve
-			if(!QDELETED(TR))
-				qdel(TR, TRUE)
-	var/list/clearing = list()
-	for(var/l in unused_turfs)			//unused_turfs is a assoc list by z = list(turfs)
-		if(islist(unused_turfs[l]))
-			clearing |= unused_turfs[l]
-	unused_turfs.Cut()
-	mark_turfs_as_unused(clearing)
+/datum/controller/subsystem/mapping/proc/get_map_zone_weather_controller(atom/Atom)
+	var/datum/map_zone/mapzone = Atom.get_map_zone()
+	if(!mapzone)
+		return
+	mapzone.assert_weather_controller()
+	return mapzone.weather_controller
 
-/datum/controller/subsystem/mapping/proc/mark_turfs_as_unused(list/turfs)
-	for(var/i in turfs)
-		var/turf/T = i
-		T.empty(RESERVED_TURF_TYPE, RESERVED_TURF_TYPE, null, TRUE)
-		LAZYINITLIST(unused_turfs["[T.z]"])
-		unused_turfs["[T.z]"] |= T
-		T.flags_1 |= UNUSED_RESERVATION_TURF_1
-		GLOB.areas_by_type[world.area].contents += T
-		CHECK_TICK
+/datum/controller/subsystem/mapping/proc/get_map_zone_id(mapzone_id)
+	var/datum/map_zone/returned_mapzone
+	for(var/datum/map_zone/iterated_mapzone as anything in map_zones)
+		if(iterated_mapzone.id == mapzone_id)
+			returned_mapzone = iterated_mapzone
+			break
+	return returned_mapzone
 
-/datum/controller/subsystem/mapping/proc/get_turf_reservation_at_coords(x, y, z)
-	for(var/datum/turf_reservation/TR as anything in reservations_by_level["[z]"])
-		if(x < TR.bottom_left_coords[1] || x > TR.top_right_coords[1])
-			continue
-		if(y < TR.bottom_left_coords[2] || y > TR.top_right_coords[2])
-			continue
-		return TR
+/// Searches for a free allocation for the passed type and size, creates new physical levels if nessecary.
+/datum/controller/subsystem/mapping/proc/get_free_allocation(allocation_type, size_x, size_y, allocation_jump = DEFAULT_ALLOC_JUMP)
+	var/list/allocation_list
+	var/list/levels_to_check = z_list.Copy()
+	var/created_new_level = FALSE
+	while(TRUE)
+		for(var/datum/space_level/iterated_level as anything in levels_to_check)
+			if(iterated_level.allocation_type != allocation_type)
+				continue
+			allocation_list = find_allocation_in_level(iterated_level, size_x, size_y, allocation_jump)
+			if(allocation_list)
+				return allocation_list
+
+		if(created_new_level)
+			stack_trace("MAPPING: We have failed to find allocation after creating a new level just for it, something went terribly wrong")
+			return FALSE
+		/// None of the levels could faciliate a new allocation, make a new one
+		created_new_level = TRUE
+		levels_to_check.Cut()
+
+		var/allocation_name
+		switch(allocation_type)
+			if(ALLOCATION_FREE)
+				allocation_name = "Free Allocation"
+			if(ALLOCATION_QUADRANT)
+				allocation_name = "Quadrant Allocation"
+			else
+				allocation_name = "Unaccounted Allocation"
+
+		levels_to_check += add_new_zlevel("Generated [allocation_name] Level", allocation_type = allocation_type)
+
+/// Finds a box allocation inside a Z level. Uses a methodical box boundary check method
+/datum/controller/subsystem/mapping/proc/find_allocation_in_level(datum/space_level/level, size_x, size_y, allocation_jump)
+	var/target_x = 1
+	var/target_y = 1
+
+	/// Sanity
+	if(size_x > world.maxx || size_y > world.maxy)
+		stack_trace("Tried to find virtual level allocation that cannot possibly fit in a physical level.")
+		return FALSE
+
+	/// Methodical trial and error method
+	while(TRUE)
+		var/upper_target_x = target_x+size_x
+		var/upper_target_y = target_y+size_y
+
+		var/out_of_bounds = FALSE
+		if((target_x < 1 || upper_target_x > world.maxx) || (target_y < 1 || upper_target_y > world.maxy))
+			out_of_bounds = TRUE
+
+		if(!out_of_bounds && level.is_box_free(target_x, target_y, upper_target_x, upper_target_y))
+			return list(target_x, target_y, level.z_value) //hallelujah we found the unallocated spot
+
+		if(upper_target_x > world.maxx) //If we can't increment x, then the search is over
+			break
+
+		var/increments_y = TRUE
+		if(upper_target_y > world.maxy)
+			target_y = 1
+			increments_y = FALSE
+		if(increments_y)
+			target_y += allocation_jump
+		else
+			target_x += allocation_jump
+
+/// Creates and passes a new map zone
+/datum/controller/subsystem/mapping/proc/create_map_zone(new_name)
+	return new /datum/map_zone(new_name)
+
+/// Allocates, creates and passes a new virtual level
+/datum/controller/subsystem/mapping/proc/create_virtual_level(new_name, list/traits, datum/map_zone/mapzone, width, height, allocation_type = ALLOCATION_FREE, allocation_jump = DEFAULT_ALLOC_JUMP)
+	/// Because we add an implicit 1 for the coordinate calcuations.
+	width--
+	height--
+	var/list/allocation_coords = SSmapping.get_free_allocation(allocation_type, width, height, allocation_jump)
+	return new /datum/virtual_level(new_name, traits, mapzone, allocation_coords[1], allocation_coords[2], allocation_coords[1] + width, allocation_coords[2] + height, allocation_coords[3])

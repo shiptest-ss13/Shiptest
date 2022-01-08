@@ -60,7 +60,7 @@
 	var/turf/curturf = get_turf(teleatom)
 	var/turf/destturf = get_teleport_turf(get_turf(destination), precision)
 
-	if(!destturf || !curturf || destturf.is_transition_turf())
+	if(!destturf || !curturf)
 		return FALSE
 
 	var/area/A = get_area(curturf)
@@ -104,7 +104,7 @@
 		if(!zlevels)
 			potential_targets += possible_ship.shuttle
 			continue
-		if((possible_ship.z in zlevels) || (possible_ship.get_virtual_z_level() in zlevels))
+		if((possible_ship.z in zlevels) || (possible_ship.virtual_z() in zlevels))
 			potential_targets += possible_ship.shuttle.shuttle_areas
 
 	if(!length(potential_targets))
@@ -156,12 +156,15 @@
 /proc/get_teleport_turfs(turf/center, precision = 0)
 	if(!precision)
 		return list(center)
+	var/datum/virtual_level/center_vlevel = center.get_virtual_level()
 	var/list/posturfs = list()
-	var/current_z_level = center.get_virtual_z_level()
+	var/current_z_level = center.virtual_z()
 	for(var/turf/T in range(precision,center))
 		if(T.is_transition_turf())
 			continue // Avoid picking these.
-		if(T.get_virtual_z_level() != current_z_level)
+		if(!center_vlevel.is_in_bounds(T))
+			continue // Out of bounds of our vlevel
+		if(T.virtual_z() != current_z_level)
 			continue
 		var/area/A = T.loc
 		if(!(A.area_flags & NOTELEPORT))
