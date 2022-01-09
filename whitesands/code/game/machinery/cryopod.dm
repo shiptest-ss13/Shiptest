@@ -224,14 +224,12 @@ GLOBAL_LIST_EMPTY(cryopod_computers)
 		message_admins("Cryopod in [get_area(src)] could not find control computer!")
 		last_no_computer_message = world.time
 
-	return !isnull(control_computer)
-
 /obj/machinery/cryopod/JoinPlayerHere(mob/M, buckle)
 	. = ..()
 	close_machine(M, TRUE)
 
 /obj/machinery/cryopod/close_machine(mob/user, exiting = FALSE)
-	if(isnull(control_computer.resolve()))
+	if(!control_computer?.resolve())
 		find_control_computer(TRUE)
 	if((isnull(user) || istype(user)) && state_open && !panel_open)
 		..(user)
@@ -244,7 +242,7 @@ GLOBAL_LIST_EMPTY(cryopod_computers)
 		var/mob/living/mob_occupant = occupant
 		if(mob_occupant && mob_occupant.stat != DEAD)
 			to_chat(occupant, "<span class='boldnotice'>You feel cool air surround you. You go numb as your senses turn inward.</span>")
-		addtimer(CALLBACK(src, .proc/try_despawn_occupant, mob_occupant), mob_occupant.client ? time_till_despawn * 0.1 : time_till_despawn) // If they're logged in, reduce the timer
+			addtimer(CALLBACK(src, .proc/try_despawn_occupant, mob_occupant), mob_occupant.client ? time_till_despawn * 0.1 : time_till_despawn) // If they're logged in, reduce the timer
 	icon_state = close_state
 
 /obj/machinery/cryopod/open_machine()
@@ -271,8 +269,8 @@ GLOBAL_LIST_EMPTY(cryopod_computers)
 		return
 
 	if(!mob_occupant.client) //Occupant's client isn't present
-		if(isnull(control_computer.resolve()))
-			find_control_computer(urgent = TRUE)//better hope you found it this time
+		if(!control_computer?.resolve())
+			find_control_computer(TRUE)//better hope you found it this time
 
 		despawn_occupant()
 	else
@@ -354,7 +352,7 @@ GLOBAL_LIST_EMPTY(cryopod_computers)
 	for(var/obj/structure/overmap/ship/simulated/sim_ship as anything in SSovermap.simulated_ships)
 		sim_ship.manifest -= mob_occupant.real_name
 
-	var/obj/machinery/computer/cryopod/control_computer_obj = control_computer.resolve()
+	var/obj/machinery/computer/cryopod/control_computer_obj = control_computer?.resolve()
 
 	//Make an announcement and log the person entering storage.
 	if(control_computer_obj)

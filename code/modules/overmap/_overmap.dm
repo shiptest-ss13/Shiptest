@@ -9,7 +9,7 @@
 	density = 1
 
 //this is completely unnecessary but it looks nice
-/turf/open/overmap/Initialize()
+/turf/open/overmap/Initialize(mapload, inherited_virtual_z)
 	. = ..()
 	name = "[x]-[y]"
 	var/list/numbers = list()

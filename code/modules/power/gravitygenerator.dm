@@ -3,8 +3,6 @@
 // Gravity Generator
 //
 
-GLOBAL_LIST_EMPTY(gravity_generators) // We will keep track of this by adding new gravity generators to the list, and keying it with the z level.
-
 #define POWER_IDLE 0
 #define POWER_UP 1
 #define POWER_DOWN 2
@@ -125,11 +123,16 @@ GLOBAL_LIST_EMPTY(gravity_generators) // We will keep track of this by adding ne
 	var/current_overlay = null
 	var/broken_state = 0
 	var/setting = 1	//Gravity value when on
+	/// The mapzone we give gravity to
+	var/datum/map_zone/mapzone
 
 /obj/machinery/gravity_generator/main/Destroy() // If we somehow get deleted, remove all of our other parts.
 	investigate_log("was destroyed!", INVESTIGATE_GRAVITY)
 	on = FALSE
-	update_list()
+
+	if(mapzone)
+		mapzone.gravity_generators -= src
+
 	for(var/obj/machinery/gravity_generator/part/O in parts)
 		O.main_part = null
 		if(!QDESTROYING(O))
@@ -351,7 +354,7 @@ GLOBAL_LIST_EMPTY(gravity_generators) // We will keep track of this by adding ne
 	var/sound/alert_sound = sound('sound/effects/alert.ogg')
 	for(var/i in GLOB.mob_list)
 		var/mob/M = i
-		if(M.get_virtual_z_level() != get_virtual_z_level() && !(SSmapping.level_trait(z, ZTRAITS_STATION) && SSmapping.level_trait(M.z, ZTRAITS_STATION)))
+		if(M.virtual_z() != virtual_z() && !(virtual_level_trait(ZTRAITS_STATION) && M.virtual_level_trait(ZTRAITS_STATION)))
 			continue
 		M.update_gravity(M.mob_has_gravity())
 		if(M.client)
@@ -359,30 +362,22 @@ GLOBAL_LIST_EMPTY(gravity_generators) // We will keep track of this by adding ne
 			M.playsound_local(T, null, 100, 1, 0.5, S = alert_sound)
 
 /obj/machinery/gravity_generator/main/proc/gravity_in_level()
-	var/turf/T = get_turf(src)
-	if(!T)
+	if(!mapzone)
 		return FALSE
-	if(GLOB.gravity_generators["[T.get_virtual_z_level()]"])
-		return length(GLOB.gravity_generators["[T.get_virtual_z_level()]"])
-	return FALSE
+	return length(mapzone.gravity_generators)
 
 /obj/machinery/gravity_generator/main/proc/update_list()
-	var/turf/T = get_turf(src.loc)
-	if(T)
-		var/list/z_list = list()
-		// Multi-Z, station gravity generator generates gravity on all ZTRAIT_STATION z-levels.
-		if(SSmapping.level_trait(T.z, ZTRAIT_STATION))
-			for(var/z in SSmapping.levels_by_trait(ZTRAIT_STATION))
-				z_list += z
-		else
-			z_list += T.z
-		for(var/z in z_list)
-			if(!GLOB.gravity_generators["[z]"])
-				GLOB.gravity_generators["[z]"] = list()
-			if(on)
-				GLOB.gravity_generators["[z]"] |= src
-			else
-				GLOB.gravity_generators["[z]"] -= src
+	var/turf/T = get_turf(src)
+
+	var/datum/map_zone/found_mapzone = T.get_map_zone()
+	if(mapzone == found_mapzone)
+		return
+	if(mapzone && found_mapzone != mapzone)
+		mapzone.gravity_generators -= src
+
+	mapzone = found_mapzone
+	if(found_mapzone)
+		mapzone.gravity_generators += src
 
 /obj/machinery/gravity_generator/main/proc/change_setting(value)
 	if(value != setting)

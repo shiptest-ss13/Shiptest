@@ -180,7 +180,7 @@
 			// Key-authed callers may know the truth behind the "secret"
 
 	.["security_level"] = get_security_level()
-	.["round_duration"] = SSticker ? round((world.time-SSticker.round_start_time)/10) : 0
+	.["round_duration"] = SSticker ? round((world.timeofday - SSticker.round_start_timeofday)/10) : 0
 	// Amount of world's ticks in seconds, useful for calculating round duration
 
 	//Time dilation stats.
