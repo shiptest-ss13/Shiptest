@@ -599,7 +599,10 @@
 /obj/item/cultivator,
 /obj/item/storage/bag/chemistry,
 /obj/item/storage/box/disks_plantgene,
-/obj/machinery/smartfridge/disks,
+/obj/machinery/smartfridge/disks{
+	density = 0;
+	name = "small disk compartmentalizer"
+	},
 /obj/item/storage/box/beakers,
 /obj/item/clothing/glasses/science,
 /obj/item/plant_analyzer,
@@ -1800,6 +1803,9 @@
 /area/ship/cargo)
 "Hi" = (
 /obj/effect/spawner/structure/window/reinforced,
+/obj/machinery/door/poddoor/preopen{
+	id = "spitfireshutters"
+	},
 /turf/open/floor/plating,
 /area/ship/medical/surgery)
 "HS" = (
