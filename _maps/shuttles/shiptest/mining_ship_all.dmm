@@ -140,7 +140,6 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/pipe/layer_manifold,
-/obj/structure/fans/tiny,
 /obj/machinery/door/airlock/external{
 	name = "Hangar Airlock"
 	},
@@ -514,7 +513,6 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
 "kD" = (
-/obj/structure/fans/tiny,
 /obj/machinery/door/poddoor{
 	id = "mining_ship_port"
 	},
@@ -1305,7 +1303,6 @@
 /obj/machinery/door/poddoor{
 	id = "mining_ship_port"
 	},
-/obj/structure/fans/tiny,
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
 	},
@@ -1337,7 +1334,6 @@
 /area/ship/engineering)
 "DC" = (
 /obj/machinery/door/airlock/external,
-/obj/structure/fans/tiny,
 /obj/docking_port/mobile{
 	can_move_docking_ports = 1;
 	dir = 2;
