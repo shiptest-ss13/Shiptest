@@ -41,6 +41,11 @@
 	var/safety_mode = FALSE ///Whether or not the airlock can be opened with bare hands while unpowered
 	var/can_crush = TRUE /// Whether or not the door can crush mobs.
 
+	/// Whether or not this airlock spawns a tiny fan underneath it when opened, (while powered)
+	var/tiny_fan_integration = FALSE
+	/// Reference to our tiny fan
+	var/obj/machinery/integrated_airlock_tiny_fan/tiny_fan
+
 
 /obj/machinery/door/examine(mob/user)
 	. = ..()
@@ -76,6 +81,10 @@
 	real_explosion_block = explosion_block
 	explosion_block = EXPLOSION_BLOCK_PROC
 
+	if(tiny_fan_integration)
+		tiny_fan = new /obj/machinery/integrated_airlock_tiny_fan(get_turf(src))
+		START_PROCESSING(SSmachines, tiny_fan)
+
 /obj/machinery/door/proc/set_init_door_layer()
 	if(density)
 		layer = closingLayer
@@ -88,6 +97,9 @@
 	if(spark_system)
 		qdel(spark_system)
 		spark_system = null
+	if(tiny_fan)
+		STOP_PROCESSING(SSmachines, tiny_fan)
+		QDEL_NULL(tiny_fan)
 	return ..()
 
 /obj/machinery/door/proc/try_safety_unlock(mob/user, closing = FALSE)

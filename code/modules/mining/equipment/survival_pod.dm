@@ -111,6 +111,7 @@
 	icon = 'icons/obj/doors/airlocks/survival/survival.dmi'
 	overlays_file = 'icons/obj/doors/airlocks/survival/survival_overlays.dmi'
 	assemblytype = /obj/structure/door_assembly/door_assembly_pod
+	tiny_fan_integration = TRUE
 
 /obj/machinery/door/airlock/survival_pod/glass
 	opacity = FALSE
@@ -129,6 +130,7 @@
 	icon = 'icons/obj/lavaland/survival_pod.dmi'
 	icon_state = "windoor"
 	base_state = "windoor"
+	tiny_fan_integration = TRUE
 
 //Table
 /obj/structure/table/survival_pod

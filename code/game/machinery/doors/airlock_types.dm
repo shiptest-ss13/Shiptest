@@ -42,6 +42,7 @@
 	icon = 'icons/obj/doors/airlocks/station/maintenanceexternal.dmi'
 	assemblytype = /obj/structure/door_assembly/door_assembly_extmai
 	has_hatch = FALSE
+	tiny_fan_integration = TRUE
 
 /obj/machinery/door/airlock/mining
 	name = "mining airlock"
@@ -384,6 +385,7 @@
 	note_overlay_file = 'icons/obj/doors/airlocks/external/overlays.dmi'
 	assemblytype = /obj/structure/door_assembly/door_assembly_ext
 	has_hatch = FALSE
+	tiny_fan_integration = TRUE
 
 /obj/machinery/door/airlock/external/glass
 	opacity = FALSE
