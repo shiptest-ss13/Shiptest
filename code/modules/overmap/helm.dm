@@ -6,7 +6,7 @@
 #define JUMP_CHARGE_DELAY (20 SECONDS)
 #define JUMP_CHARGEUP_TIME (3 MINUTES)
 
-/obj/machinery/computer/helm
+/obj/machinery/computer/ship/helm
 	name = "helm control console"
 	desc = "Used to view or control the ship."
 	icon_screen = "shuttle"
@@ -14,11 +14,6 @@
 	circuit = /obj/item/circuitboard/computer/shuttle/helm
 	light_color = LIGHT_COLOR_FLARE
 	clicksound = null
-
-	/// The ship we reside on for ease of access
-	var/obj/structure/overmap/ship/simulated/current_ship
-	/// All users currently using this
-	var/list/concurrent_users = list()
 	/// Is this console view only? I.E. cant dock/etc
 	var/viewer = FALSE
 	/// When are we allowed to jump
@@ -33,12 +28,11 @@
 /datum/config_entry/number/bluespace_jump_wait
 	default = 30 MINUTES
 
-/obj/machinery/computer/helm/Initialize(mapload, obj/item/circuitboard/C)
+/obj/machinery/computer/ship/helm/Initialize(mapload, obj/item/circuitboard/C)
 	. = ..()
 	jump_allowed = world.time + CONFIG_GET(number/bluespace_jump_wait)
-	addtimer(CALLBACK(src, .proc/reload_ship), 5)
 
-/obj/machinery/computer/helm/proc/calibrate_jump(inline = FALSE)
+/obj/machinery/computer/ship/helm/proc/calibrate_jump(inline = FALSE)
 	if(jump_allowed < 0)
 		say("Bluespace Jump Calibration offline. Please contact your system administrator.")
 		return
@@ -57,12 +51,12 @@
 	calibrating = TRUE
 	return TRUE
 
-/obj/machinery/computer/helm/proc/cancel_jump()
+/obj/machinery/computer/ship/helm/proc/cancel_jump()
 	priority_announce("Bluespace Pylon spooling down. Jump calibration aborted.", sender_override="[current_ship.name] Bluespace Pylon", zlevel=get_virtual_z_level())
 	calibrating = FALSE
 	deltimer(jump_timer)
 
-/obj/machinery/computer/helm/proc/jump_sequence()
+/obj/machinery/computer/ship/helm/proc/jump_sequence()
 	switch(jump_state)
 		if(JUMP_STATE_OFF)
 			jump_state = JUMP_STATE_CHARGING
@@ -80,41 +74,22 @@
 			return
 	addtimer(CALLBACK(src, .proc/jump_sequence, TRUE), JUMP_CHARGE_DELAY)
 
-/obj/machinery/computer/helm/proc/do_jump()
+/obj/machinery/computer/ship/helm/proc/do_jump()
 	priority_announce("Bluespace Jump Initiated.", sender_override="[current_ship.name] Bluespace Pylon", sound='sound/magic/lightningbolt.ogg', zlevel=get_virtual_z_level())
 	current_ship.shuttle.intoTheSunset()
 
-/obj/machinery/computer/helm/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock)
-	current_ship = port.current_ship
 
-/**
- * This proc manually rechecks that the helm computer is connected to a proper ship
- */
-/obj/machinery/computer/helm/proc/reload_ship()
-	var/obj/docking_port/mobile/port = SSshuttle.get_containing_shuttle(src)
-	if(port?.current_ship)
-		current_ship = port.current_ship
-		return TRUE
-
-/obj/machinery/computer/helm/ui_interact(mob/user, datum/tgui/ui)
+/obj/machinery/computer/ship/helm/ui_interact(mob/user, datum/tgui/ui)
+	..()
 	if(jump_state != JUMP_STATE_OFF)
 		say("Bluespace Jump in progress. Controls suspended.")
 		return
 	// Update UI
-	if(!current_ship && !reload_ship())
+	if(!current_ship && !attempt_connect())
+		user.changeNext_move(CLICK_CD_MELEE)
 		return
 	ui = SStgui.try_update_ui(user, src, ui)
 	if(!ui)
-		var/user_ref = REF(user)
-		var/is_living = isliving(user)
-		// Ghosts shouldn't count towards concurrent users, which produces
-		// an audible terminal_on click.
-		if(is_living)
-			concurrent_users += user_ref
-		// Turn on the console
-		if(length(concurrent_users) == 1 && is_living)
-			playsound(src, 'sound/machines/terminal_on.ogg', 25, FALSE)
-			use_power(active_power_usage)
 		// Register map objects
 		if(current_ship)
 			user.client.register_map_obj(current_ship.cam_screen)
@@ -126,7 +101,7 @@
 		ui = new(user, src, "HelmConsole", name)
 		ui.open()
 
-/obj/machinery/computer/helm/ui_data(mob/user)
+/obj/machinery/computer/ship/helm/ui_data(mob/user)
 	. = list()
 	.["integrity"] = current_ship.integrity
 	.["calibrating"] = calibrating
@@ -169,7 +144,7 @@
 			)
 		.["engineInfo"] += list(engine_data)
 
-/obj/machinery/computer/helm/ui_static_data(mob/user)
+/obj/machinery/computer/ship/helm/ui_static_data(mob/user)
 	. = list()
 	.["isViewer"] = viewer
 	.["mapRef"] = current_ship.map_name
@@ -181,7 +156,7 @@
 	)
 	.["canFly"] = TRUE
 
-/obj/machinery/computer/helm/ui_act(action, list/params, datum/tgui/ui, datum/ui_state/state)
+/obj/machinery/computer/ship/helm/ui_act(action, list/params, datum/tgui/ui, datum/ui_state/state)
 	. = ..()
 	if(.)
 		return
@@ -197,7 +172,7 @@
 			update_static_data(usr, ui)
 			return
 		if("reload_ship")
-			reload_ship()
+			attempt_connect()
 			update_static_data(usr, ui)
 			return
 		if("reload_engines")
@@ -247,20 +222,7 @@
 				say(current_ship.undock())
 				return
 
-/obj/machinery/computer/helm/ui_close(mob/user)
-	var/user_ref = REF(user)
-	var/is_living = isliving(user)
-	// Living creature or not, we remove you anyway.
-	concurrent_users -= user_ref
-	// Unregister map objects
-	if(current_ship)
-		user.client?.clear_map(current_ship.map_name)
-	// Turn off the console
-	if(length(concurrent_users) == 0 && is_living)
-		playsound(src, 'sound/machines/terminal_off.ogg', 25, FALSE)
-		use_power(0)
-
-/obj/machinery/computer/helm/viewscreen
+/obj/machinery/computer/ship/helm/viewscreen
 	name = "ship viewscreen"
 	icon = 'icons/obj/stationobjs.dmi'
 	icon_state = "telescreen"

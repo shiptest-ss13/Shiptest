@@ -58,9 +58,9 @@ GLOBAL_LIST_EMPTY(custom_shuttle_machines)		//Machines that require updating (He
 		if(shuttle_create_docking_port(target, user))
 			to_chat(user, "<span class='notice'>Shuttle created!</span>")
 		return
-	else if(istype(target, /obj/machinery/computer/helm))
-		var/obj/machinery/computer/helm/console = target
-		console.reload_ship()
+	else if(istype(target, /obj/machinery/computer/ship/helm))
+		var/obj/machinery/computer/ship/helm/console = target
+		console.attempt_connect()
 		return
 	to_chat(user, "<span class='warning'>The [src] bleeps. Select an airlock to create a docking port, or a valid machine to link.</span>")
 	return
