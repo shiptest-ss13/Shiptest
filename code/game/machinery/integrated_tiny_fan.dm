@@ -7,12 +7,6 @@
 	power_channel = AREA_USAGE_ENVIRON
 	use_power = IDLE_POWER_USE
 	idle_power_usage = 20
-	/// Reference to our parent airlock
-	var/obj/machinery/door/airlock/parent_airlock
-
-/obj/machinery/integrated_airlock_tiny_fan/Initialize(mapload)
-	. = ..()
-	parent_airlock = locate() in get_turf(src)
 
 /obj/machinery/integrated_airlock_tiny_fan/process()
 	var/old_pass = CanAtmosPass
@@ -26,7 +20,3 @@
 		return
 	var/turf/our_turf = get_turf(src)
 	our_turf.ImmediateCalculateAdjacentTurfs()
-
-/obj/machinery/integrated_airlock_tiny_fan/Destroy()
-	. = ..()
-	parent_airlock = null
