@@ -2340,3 +2340,85 @@
 	H.adjustStaminaLoss(10)
 	H.adjustOrganLoss(ORGAN_SLOT_HEART,100)
 	H.set_heartattack(TRUE)
+
+/datum/reagent/three_eye
+	name = "Three Eye"
+	taste_description = "liquid starlight"
+	description = "Out on the edge of human space, at the limits of scientific understanding and \
+	cultural taboo, people develop and dose themselves with substances that would curl the hair on \
+	a brinker's vatgrown second head. Three Eye is one of the most notorious narcotics to ever come \
+	out of the independant habitats, and has about as much in common with recreational drugs as a \
+	Stok does with an Unathi strike trooper. It is equally effective on humans, Skrell, dionaea and \
+	probably the Captain's cat, and distributing it will get you guaranteed jail time in every \
+	human territory."
+	reagent_state = LIQUID
+	color = "#ccccff"
+	metabolization_rate = 0.5 * REAGENTS_METABOLISM
+	overdose_threshold = 25
+	var/static/list/dose_messages = list(
+		"Your name is called. It is your time.",
+		"You are dissolving. Your hands are wax...",
+		"It all runs together. It all mixes.",
+		"It is done. It is over. You are done. You are over.",
+		"You won't forget. Don't forget. Don't forget.",
+		"Light seeps across the edges of your vision...",
+		"Something slides and twitches within your sinus cavity...",
+		"Your bowels roil. It waits within.",
+		"Your gut churns. You are heavy with potential.",
+		"Your heart flutters. It is winged and caged in your chest.",
+		"There is a precious thing, behind your eyes.",
+		"Everything is ending. Everything is beginning.",
+		"Nothing ends. Nothing begins.",
+		"Wake up. Please wake up.",
+		"Stop it! You're hurting them!",
+		"It's too soon for this. Please go back.",
+		"We miss you. Where are you?",
+		"Come back from there. Please."
+	)
+	var/static/list/overdose_messages = list(
+		"THE SIGNAL THE SIGNAL THE SIGNAL THE SIGNAL",
+		"IT CRIES IT CRIES IT WAITS IT CRIES",
+		"NOT YOURS NOT YOURS NOT YOURS NOT YOURS",
+		"THAT IS NOT FOR YOU",
+		"IT RUNS IT RUNS IT RUNS IT RUNS",
+		"THE BLOOD THE BLOOD THE BLOOD THE BLOOD",
+		"THE LIGHT THE DARK A STAR IN CHAINS"
+	)
+
+/datum/reagent/three_eye/on_mob_life(mob/living/carbon/M)
+	. = ..()
+	for(var/datum/reagent/medicine/mannitol/chem in M.reagents.reagent_list)
+		M.reagents.remove_reagent(chem.type, chem.volume)
+
+	M.hallucination += 3
+	M.Jitter(3)
+	M.Dizzy(3)
+	if(prob(0.1) && ishuman(M))
+		var/mob/living/carbon/human/H = M
+		H.seizure()
+		H.adjustOrganLoss(ORGAN_SLOT_BRAIN, rand(2, 4))
+	if(prob(7))
+		to_chat(M, "<span class='warning'><font size = [rand(1,3)]>[pick(dose_messages)]</font></span>")
+
+/datum/reagent/three_eye/overdose_start(mob/living/M)
+	if(ishuman(M))
+		var/mob/living/carbon/human/H = M
+		addtimer(CALLBACK(H, /mob/living.proc/seizure), rand(1 SECONDS, 5 SECONDS))
+
+/datum/reagent/three_eye/overdose_process(mob/living/M)
+	. = ..()
+	if(iscarbon(M))
+		var/mob/living/carbon/C = M
+		C.adjustOrganLoss(ORGAN_SLOT_BRAIN, rand(1, 2))
+	if(prob(7))
+		to_chat(M, "<span class='danger'><font size = [rand(2,4)]>[pick(overdose_messages)]</font></span>")
+
+/datum/reagent/three_eye/on_mob_end_metabolize(mob/living/L)
+	. = ..()
+	if(L.hallucination >= 50)
+		to_chat(L, "<span class='danger'><font size = 6>Your mind reels and the world begins to fade away...</font></span>")
+		if(iscarbon(L))
+			var/mob/living/carbon/C = L
+			addtimer(CALLBACK(C, /mob/living/carbon.proc/adjustOrganLoss, ORGAN_SLOT_BRAIN, 200), 5 SECONDS) //Deathblow to the brain
+		else
+			addtimer(CALLBACK(L, /mob/living.proc/gib), 5 SECONDS)
