@@ -65,12 +65,12 @@
 /obj/structure/overmap/dynamic/proc/choose_level_type()
 	var/chosen
 	if(!probabilities)
-		probabilities = list(DYNAMIC_WORLD_LAVA = length(SSmapping.lava_ruins_templates),
-		DYNAMIC_WORLD_ICE = length(SSmapping.ice_ruins_templates),
-		DYNAMIC_WORLD_JUNGLE = length(SSmapping.jungle_ruins_templates),
-		DYNAMIC_WORLD_SAND = length(SSmapping.sand_ruins_templates),
-		DYNAMIC_WORLD_SPACERUIN = length(SSmapping.space_ruins_templates),
-		DYNAMIC_WORLD_ROCKPLANET = length(SSmapping.rock_ruins_templates),
+		probabilities = list(DYNAMIC_WORLD_LAVA = min(length(SSmapping.lava_ruins_templates), 20),
+		DYNAMIC_WORLD_ICE = min(length(SSmapping.ice_ruins_templates), 20),
+		DYNAMIC_WORLD_JUNGLE = min(length(SSmapping.jungle_ruins_templates), 20),
+		DYNAMIC_WORLD_SAND = min(length(SSmapping.sand_ruins_templates), 20),
+		DYNAMIC_WORLD_SPACERUIN = min(length(SSmapping.space_ruins_templates), 20),
+		DYNAMIC_WORLD_ROCKPLANET = min(length(SSmapping.rock_ruins_templates), 20),
 		//DYNAMIC_WORLD_REEBE = 1, //very rare because of major lack of skil //TODO, make removing no teleport not break things, then it can be reenabled
 		DYNAMIC_WORLD_ASTEROID = 30)
 
@@ -126,7 +126,7 @@
 		if(DYNAMIC_WORLD_SPACERUIN)
 			name = "weak energy signal"
 			desc = "A very weak energy signal emenating from space."
-			planet = FALSE
+			planet = DYNAMIC_WORLD_SPACERUIN
 			icon_state = "strange_event"
 			color = null
 			mass = 0 //Space doesn't weigh anything
