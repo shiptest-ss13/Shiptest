@@ -2373,7 +2373,11 @@
 		"Stop it! You're hurting them!",
 		"It's too soon for this. Please go back.",
 		"We miss you. Where are you?",
-		"Come back from there. Please."
+		"Come back from there. Please.",
+		"Is it really you?",
+		"He isn't like us. He doesn't belong.",
+		"Don't leave... please...",
+		"You hear a clock ticking. It's getting faster."
 	)
 	var/static/list/overdose_messages = list(
 		"THE SIGNAL THE SIGNAL THE SIGNAL THE SIGNAL",
@@ -2382,7 +2386,9 @@
 		"THAT IS NOT FOR YOU",
 		"IT RUNS IT RUNS IT RUNS IT RUNS",
 		"THE BLOOD THE BLOOD THE BLOOD THE BLOOD",
-		"THE LIGHT THE DARK A STAR IN CHAINS"
+		"THE LIGHT THE DARK A STAR IN CHAINS",
+		"GET OUT GET OUT GET OUT GET OUT",
+		"NO MORE NO MORE NO MORE"
 	)
 
 /datum/reagent/three_eye/on_mob_life(mob/living/carbon/M)
