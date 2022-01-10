@@ -69,11 +69,3 @@
 	. = ..()
 	var/datum/design/ammo/c10mm/C = new
 	blueprints[1] = C
-
-/datum/design/ammo/c10mm
-	name = "Ammo Box (10mm)"
-	id = "c10mm"
-	build_type = AUTOLATHE
-	materials = list(/datum/material/iron = 40000)
-	build_path = /obj/item/ammo_box/c10mm
-	category = list("Imported")
