@@ -224,9 +224,11 @@
 	idle_power_usage = 10
 	active_power_usage = 50
 	max_integrity = 300
+	var/initial_icon = "shield_wall_gen"
 	var/active = FALSE
 	var/locked = TRUE
 	var/shield_range = 8
+	var/shocked = FALSE
 	var/obj/structure/cable/attached // the attached cable
 
 /obj/machinery/power/shieldwallgen/xenobiologyaccess		//use in xenobiology containment
@@ -239,12 +241,14 @@
 
 /obj/machinery/power/shieldwallgen/Initialize()
 	. = ..()
+	wires = new /datum/wires/shieldwallgen(src)
 	if(anchored)
 		connect_to_network()
 
 /obj/machinery/power/shieldwallgen/Destroy()
 	for(var/d in GLOB.cardinals)
 		cleanup_field(d)
+	QDEL_NULL(wires)
 	return ..()
 
 /*WS Edit - Reverted Smartwire
@@ -259,7 +263,7 @@
 
 /obj/machinery/power/shieldwallgen/process()
 	if(active)
-		icon_state = "shield_wall_gen_on"
+		icon_state = initial_icon + "_on"
 		if(active == ACTIVE_SETUPFIELDS)
 			var/fields = 0
 			for(var/d in GLOB.cardinals)
@@ -273,13 +277,13 @@
 			visible_message("<span class='danger'>The [src.name] shuts down due to lack of power!</span>", \
 				"If this message is ever seen, something is wrong.",
 				"<span class='hear'>You hear heavy droning fade out.</span>")
-			icon_state = "shield_wall_gen"
+			icon_state = initial_icon
 			active = FALSE
 			log_game("[src] deactivated due to lack of power at [AREACOORD(src)]")
 			for(var/d in GLOB.cardinals)
 				cleanup_field(d)
 	else
-		icon_state = "shield_wall_gen"
+		icon_state = initial_icon
 		for(var/d in GLOB.cardinals)
 			cleanup_field(d)
 
@@ -368,6 +372,9 @@
 	. = ..()
 	if(.)
 		return
+	if(shocked && !(machine_stat & NOPOWER))
+		shock(user,50)
+		return
 	if(!anchored)
 		to_chat(user, "<span class='warning'>\The [src] needs to be firmly secured to the floor first!</span>")
 		return
@@ -392,6 +399,24 @@
 		log_game("[src] was activated by [key_name(user)] at [AREACOORD(src)]")
 	add_fingerprint(user)
 
+/obj/machinery/power/shieldwallgen/proc/toggle()
+	if(!anchored)
+		return
+	if(!powernet)
+		return
+	if(active)
+		visible_message("<span class= 'notice'>The [src.name] hums as it powers down.</span>", \
+			"If this message is ever seen, something is wrong.", \
+			"<span class= 'notice'>You hear heavy droning fade out.</span>")
+		active = FALSE
+		log_game("[src] was deactivated by wire pulse at [AREACOORD(src)]")
+	else
+		visible_message("<span class= 'notice'>The [src.name] beeps as it powers up.</span>", \
+			"If this message is ever seen, something is wrong.", \
+			"<span class= 'notice'>You hear heavy droning.</span>")
+		active = ACTIVE_SETUPFIELDS
+		log_game("[src] was activated by wire pulse at [AREACOORD(src)]")
+
 /obj/machinery/power/shieldwallgen/emag_act(mob/user)
 	if(obj_flags & EMAGGED)
 		to_chat(user, "<span class='warning'>The access controller is damaged!</span>")
@@ -400,6 +425,71 @@
 	locked = FALSE
 	playsound(src, "sparks", 100, TRUE, SHORT_RANGE_SOUND_EXTRARANGE)
 	to_chat(user, "<span class='warning'>You short out the access controller.</span>")
+
+/obj/machinery/power/shieldwallgen/proc/shock(mob/user, prb)
+	if(machine_stat & (BROKEN|NOPOWER))		// unpowered, no shock
+		return FALSE
+	if(!prob(prb))
+		return FALSE
+	var/datum/effect_system/spark_spread/s = new /datum/effect_system/spark_spread
+	s.set_up(5, 1, src)
+	s.start()
+	if (electrocute_mob(user, get_area(src), src, 0.7, TRUE))
+		return TRUE
+	else
+		return FALSE
+
+/obj/machinery/power/shieldwallgen/proc/reset(wire)
+	switch(wire)
+		if(WIRE_SHOCK)
+			if(!wires.is_cut(wire))
+				shocked = FALSE
+
+/obj/machinery/power/shieldwallgen/atmos
+	name = "holofield generator"
+	desc = "A holofield generator designed for use in ship loading bays."
+	icon = 'icons/obj/stationobjs.dmi'
+	icon_state = "holo_wall_gen"
+	anchored = FALSE
+	density = FALSE
+	req_access = list()
+	locked = FALSE
+	shield_range = 8
+	initial_icon = "shield_wall_gen_atmos"
+
+/obj/machinery/power/shieldwallgen/atmos/roundstart
+	anchored = TRUE
+	active = ACTIVE_SETUPFIELDS
+
+/// Same as in the normal shieldwallgen, but with the shieldwalls replaced with atmos shieldwalls
+/obj/machinery/power/shieldwallgen/atmos/setup_field(direction)
+	if(!direction)
+		return
+
+	var/turf/T = loc
+	var/obj/machinery/power/shieldwallgen/G
+	var/steps = 0
+	var/opposite_direction = turn(direction, 180)
+
+	for(var/i in 1 to shield_range) //checks out to 8 tiles away for another generator
+		T = get_step(T, direction)
+		G = locate(/obj/machinery/power/shieldwallgen/atmos) in T
+		if(G)
+			if(!G.active)
+				return
+			G.cleanup_field(opposite_direction)
+			break
+		else
+			steps++
+
+	if(!G || !steps) //no shield gen or no tiles between us and the gen
+		return
+
+	new/obj/machinery/shieldwall/atmos(T, src, G) //adds the shield to the generator tile
+	for(var/i in 1 to steps+1) //creates each field tile
+		T = get_step(T, opposite_direction)
+		new/obj/machinery/shieldwall/atmos(T, src, G)
+	return TRUE
 
 //////////////Containment Field START
 /obj/machinery/shieldwall
@@ -411,6 +501,7 @@
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
 	light_range = 3
 	var/needs_power = FALSE
+	var/hardshield = TRUE
 	var/obj/machinery/power/shieldwallgen/gen_primary
 	var/obj/machinery/power/shieldwallgen/gen_secondary
 
@@ -421,9 +512,10 @@
 	if(gen_primary && gen_secondary)
 		needs_power = TRUE
 		setDir(get_dir(gen_primary, gen_secondary))
-	for(var/mob/living/L in get_turf(src))
-		visible_message("<span class='danger'>\The [src] is suddenly occupying the same space as \the [L]!</span>")
-		L.gib()
+	if(hardshield == TRUE)
+		for(var/mob/living/L in get_turf(src))
+			visible_message("<span class='danger'>\The [src] is suddenly occupying the same space as \the [L]!</span>")
+			L.gib()
 
 /obj/machinery/shieldwall/Destroy()
 	gen_primary = null
@@ -436,7 +528,7 @@
 			qdel(src)
 			return
 
-		drain_power(10)
+		drain_power(50)
 
 /obj/machinery/shieldwall/play_attack_sound(damage_amount, damage_type = BRUTE, damage_flag = 0)
 	switch(damage_type)
@@ -460,8 +552,20 @@
 
 /obj/machinery/shieldwall/CanAllowThrough(atom/movable/mover, turf/target)
 	. = ..()
-	if(istype(mover) && (mover.pass_flags & PASSGLASS))
-		return prob(20)
-	else
-		if(istype(mover, /obj/projectile))
-			return prob(10)
+	if(hardshield == TRUE)
+		if(istype(mover) && (mover.pass_flags & PASSGLASS))
+			return prob(20)
+		else
+			if(istype(mover, /obj/projectile))
+				return prob(10)
+
+//atmos blocking shieldwalls for shiptest use
+/obj/machinery/shieldwall/atmos
+	name = "holofield wall"
+	desc = "An energy shield capable of blocking gas movement."
+	icon = 'icons/effects/effects.dmi'
+	icon_state = "holo_fan"
+	density = FALSE
+	CanAtmosPass = 0
+	CanAtmosPassVertical = 1
+	hardshield = FALSE
