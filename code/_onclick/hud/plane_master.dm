@@ -20,7 +20,7 @@
 /atom/movable/screen/plane_master/openspace
 	name = "open space plane master"
 	plane = OPENSPACE_BACKDROP_PLANE
-	appearance_flags = PLANE_MASTER
+	appearance_flags = PLANE_MASTER|NO_CLIENT_COLOR
 	blend_mode = BLEND_MULTIPLY
 	alpha = 255
 
