@@ -2344,6 +2344,7 @@
 /datum/reagent/three_eye
 	name = "Three Eye"
 	taste_description = "liquid starlight"
+	taste_mult = 100
 	description = "Out on the edge of human space, at the limits of scientific understanding and \
 	cultural taboo, people develop and dose themselves with substances that would curl the hair on \
 	a brinker's vatgrown second head. Three Eye is one of the most notorious narcotics to ever come \
@@ -2355,6 +2356,8 @@
 	color = "#ccccff"
 	metabolization_rate = 0.5 * REAGENTS_METABOLISM
 	overdose_threshold = 25
+	var/worthy = FALSE
+
 	var/static/list/dose_messages = list(
 		"Your name is called. It is your time.",
 		"You are dissolving. Your hands are wax...",
@@ -2393,10 +2396,17 @@
 
 /datum/reagent/three_eye/on_mob_life(mob/living/carbon/M)
 	. = ..()
+	if(M.client?.holder) //You are worthy.
+		worthy = TRUE
+		M.reagents.remove_reagent(src.type, src.volume)
+		M.visible_message("<span class='danger'><font size = 6>Grips their head and dances around, collapsing to the floor!</font></span>", \
+		"<span class='danger'><font size = 6>Visions of a realm BYOND your own flash across your eyes, before it all goes black...</font></span>")
+		M.SetSleeping(40 SECONDS)
+		return
+
 	for(var/datum/reagent/medicine/mannitol/chem in M.reagents.reagent_list)
 		M.reagents.remove_reagent(chem.type, chem.volume)
 
-	M.hallucination += 3
 	M.Jitter(3)
 	M.Dizzy(3)
 	if(prob(0.1) && ishuman(M))
@@ -2407,12 +2417,19 @@
 		to_chat(M, "<span class='warning'><font size = [rand(1,3)]>[pick(dose_messages)]</font></span>")
 
 /datum/reagent/three_eye/overdose_start(mob/living/M)
+	if(worthy)
+		overdosed = FALSE
+		return
+
 	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
 		addtimer(CALLBACK(H, /mob/living.proc/seizure), rand(1 SECONDS, 5 SECONDS))
 
 /datum/reagent/three_eye/overdose_process(mob/living/M)
 	. = ..()
+	if(worthy)
+		return
+
 	if(iscarbon(M))
 		var/mob/living/carbon/C = M
 		C.adjustOrganLoss(ORGAN_SLOT_BRAIN, rand(1, 2))
@@ -2421,7 +2438,7 @@
 
 /datum/reagent/three_eye/on_mob_end_metabolize(mob/living/L)
 	. = ..()
-	if(L.hallucination >= 50)
+	if(overdosed && !worthy)
 		to_chat(L, "<span class='danger'><font size = 6>Your mind reels and the world begins to fade away...</font></span>")
 		if(iscarbon(L))
 			var/mob/living/carbon/C = L
