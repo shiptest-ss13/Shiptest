@@ -2393,15 +2393,21 @@
 		"GET OUT GET OUT GET OUT GET OUT",
 		"NO MORE NO MORE NO MORE"
 	)
+/datum/reagent/three_eye/on_mob_metabolize(mob/living/L)
+	. = ..()
+	//addtimer(CALLBACK(L, /mob.proc/add_client_colour, /datum/client_colour/thirdeye), 1.5 SECONDS)
+	L.add_client_colour(/datum/client_colour/thirdeye)
+	if(L.client?.holder) //You are worthy.
+		worthy = TRUE
+		L.visible_message("<span class='danger'><font size = 6>Grips their head and dances around, collapsing to the floor!</font></span>", \
+		"<span class='danger'><font size = 6>Visions of a realm BYOND your own flash across your eyes, before it all goes black...</font></span>")
+		addtimer(CALLBACK(L, /mob/living.proc/SetSleeping, 40 SECONDS), 10 SECONDS)
+		addtimer(CALLBACK(L.reagents, /datum/reagents.proc/remove_reagent, src.type, src.volume,), 10 SECONDS)
+		return
 
 /datum/reagent/three_eye/on_mob_life(mob/living/carbon/M)
 	. = ..()
-	if(M.client?.holder) //You are worthy.
-		worthy = TRUE
-		M.reagents.remove_reagent(src.type, src.volume)
-		M.visible_message("<span class='danger'><font size = 6>Grips their head and dances around, collapsing to the floor!</font></span>", \
-		"<span class='danger'><font size = 6>Visions of a realm BYOND your own flash across your eyes, before it all goes black...</font></span>")
-		M.SetSleeping(40 SECONDS)
+	if(worthy)
 		return
 
 	for(var/datum/reagent/medicine/mannitol/chem in M.reagents.reagent_list)
@@ -2417,6 +2423,7 @@
 		to_chat(M, "<span class='warning'><font size = [rand(1,3)]>[pick(dose_messages)]</font></span>")
 
 /datum/reagent/three_eye/overdose_start(mob/living/M)
+	on_mob_metabolize(M) //set worthy
 	if(worthy)
 		overdosed = FALSE
 		return
@@ -2438,6 +2445,7 @@
 
 /datum/reagent/three_eye/on_mob_end_metabolize(mob/living/L)
 	. = ..()
+	L.remove_client_colour(/datum/client_colour/thirdeye)
 	if(overdosed && !worthy)
 		to_chat(L, "<span class='danger'><font size = 6>Your mind reels and the world begins to fade away...</font></span>")
 		if(iscarbon(L))
