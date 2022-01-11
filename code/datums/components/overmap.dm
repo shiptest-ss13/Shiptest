@@ -21,5 +21,4 @@
 
 /datum/component/overmap/proc/get_ui_data(datum/D, list/data)
 	SIGNAL_HANDLER
-	data[overmap_ui_comp_id] = list()
 	return

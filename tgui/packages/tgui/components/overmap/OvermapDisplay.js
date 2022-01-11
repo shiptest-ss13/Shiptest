@@ -1,10 +1,17 @@
 import { Component, createRef } from 'inferno';
-import { Application, Graphics, Matrix, Container, ObservablePoint, LineStyle, utils, Text} from 'pixi.js';
+import { Application, Container } from 'pixi.js';
 import { createLogger } from '../../logging';
+import { RunTickEvent, ChangeZoomEvent } from '/Events.js';
 import { OvermapBody } from './OvermapBody.js';
+import { SelectedComponent } from './components/BodyComponent.js';
+import { EventSystem } from './systems/EventSystem.js';
+import { BodySystem } from './systems/BodySystem';
+import { CameraSystem } from './systems/CameraSystem';
 
+// TODO: move the entire damn directory
 // TODO: redo data loading and parenting, OOB culling for perf,
-// TODO: escape orbits, text + popups, effects, sprites, a nice grid?, Rest Of The Fucking UI
+// TODO: fixed satellite orbit tracking, escape orbits,
+// TODO: text + popups, effects, sprites, a nice grid?, Rest Of The Fucking UI
 // TODO: remove logger
 const logger = createLogger('backend');
 
@@ -13,14 +20,12 @@ export class OvermapDisplay extends Component {
     super(props);
     this.canvasRef = createRef();
     this.pixiApp = null;
+    // TODO: remove
     // collection of all OvermapBodys, keyed by the ref used to identify the body
     this.bodies = {};
-    // the parent container of all currently-visible bodies; can be scaled up and down without affecting global coords
-    this.systemAnchor = null;
-
-    this.focusedBody = null;
   }
 
+  // TODO: move initDisplay into the constructor if possible? unsure how interfaces with createRef
   componentDidMount() {
     this.initDisplay();
     this.componentDidUpdate();
@@ -44,67 +49,54 @@ export class OvermapDisplay extends Component {
     });
     self.PointerEvent = storedPointerEvent;
 
-    this.systemAnchor = new Container();
-    this.systemAnchor.sortableChildren = true;
-
-    this.pixiApp.stage.addChild(this.systemAnchor);
+    this.pixiApp.stage.addChild(CameraSystem.bodyContainer);
 
     this.pixiApp.ticker.add(this._runTick, this);
     return;
   }
 
+  // TODO: graceful unfolding of props, default values???
   componentDidUpdate(prevProps, prevState, snapshot) {
-    for (const ref in this.props.bodyInformation) {
-      const bodyData = this.props.bodyInformation[ref];
-      if (!this.bodies[ref]) {
-        const newBody = new OvermapBody();
-        // TODO: maybe move this into OvermapBody's constructor
-        this.systemAnchor.addChild(newBody.visContainer);
-        this.bodies[ref] = newBody;
+    BodySystem.updateBodies(this.props.bodyInformation);
+
+    // deselect old body / select new one, if applicable
+    if (this.props.selectedBody !== prevProps.selectedBody) {
+      if (!!this.selectedBody) {
+        this.selectedBody.removeComponent(SelectedComponent);
       }
-      // TODO: move ?
-      this.bodies[ref].loadFromData(bodyData);
-      this.bodies[ref].setOnClick(this.props.onBodyClick, ref);
+      this.selectedBody = BodySystem.getEntity(this.props.selectedBody);
+      if (!!this.selectedBody) {
+        this.selectedBody.addComponent(SelectedComponent);
+      }
     }
 
-    this.focusedBody = this.bodies[this.props.focusedBody];
-
-    const zoomLevel = this.props.zoomLevel * Math.min(this.pixiApp.screen.width, this.pixiApp.screen.height) / 4;
-    this.systemAnchor.scale.set(zoomLevel);
-
-    for (const ref in this.bodies) {
-      if (!this.props.bodyInformation[ref]) {
-        this.bodies[ref].destroy();
-        delete this.bodies[ref];
-        continue;
-      }
-      this.bodies[ref].updateZoom(zoomLevel);
-    }
-
+    const newZoom = this.props.zoomLevel * Math.min(this.pixiApp.screen.width, this.pixiApp.screen.height);
+    CameraSystem.updateZoom(newZoom);
     return;
   }
 
   _runTick() {
     // get the time change in seconds
     const dT = this.pixiApp.ticker.deltaMS / 1000;
-    for (const ref in this.bodies) {
-      this.bodies[ref].runTick(dT);
-    }
-    // TODO: use a listener so it doesn't have to update every single frame
+    EventSystem.raiseEvent(RunTickEvent, dT);
     this._updateCameraLoc();
   }
 
+  // TODO: move this to a system or something
   _updateCameraLoc() {
-    const centerPoint = {x:this.pixiApp.screen.width / 2, y:this.pixiApp.screen.height / 2};
+    // screen center point in px
+    const centerPoint = {
+      x: this.pixiApp.screen.width / 2,
+      y: this.pixiApp.screen.height / 2
+    };
     if (!!this.focusedBody) {
-      // TODO: this feels very roundabout. please torture yourself again and try to figure out how toGlobal and toLocal work. i'm sorry
       const focusedScreenPos = this.focusedBody.visContainer.toGlobal({x:0, y:0});
       const sysPos = this.systemAnchor.toGlobal({x:0, y:0});
-      this.systemAnchor.position.copyFrom({x: centerPoint.x+sysPos.x-focusedScreenPos.x, y: centerPoint.y+sysPos.y-focusedScreenPos.y});
-    } else {
-      // nothing focused, just center the anchor
-      this.systemAnchor.position.copyFrom(centerPoint);
+      centerPoint.x += sysPos.x - focusedScreenPos.x;
+      centerPoint.y += sysPos.y - focusedScreenPos.y;
     }
+    this.systemAnchor.position.copyFrom(centerPoint);
+    return;
   }
 
   componentWillUnmount() {
@@ -112,9 +104,9 @@ export class OvermapDisplay extends Component {
     return;
   }
 
+  // TODO: rework this, make sure to clean up focusedBody / selectedBody etc.
   _shutDown() {
     this.pixiApp.ticker.remove(this._runTick, this);
-    this.focusedBody = null;
     for (const ref in this.bodies) {
       this.bodies[ref].destroy();
       delete this.bodies[ref];
@@ -122,6 +114,7 @@ export class OvermapDisplay extends Component {
     this.pixiApp.destroy(false, {
       children: true
     });
+    return;
   }
 
   // TODO: move the styling info into CSS

@@ -51,8 +51,10 @@
 	// the physics system uses deciseconds as its native units; the display does not.
 	// to compensate, we convert velocity and acceleration to their respective values in seconds.
 	. = ..()
-	data[overmap_ui_comp_id]["velocity"] = list(vel_x SECONDS, vel_y SECONDS)
-	data[overmap_ui_comp_id]["acceleration"] = list(acc_x SECONDS SECONDS, acc_y SECONDS SECONDS)
+	data[overmap_ui_comp_id] = list(
+		velocity = list(vel_x SECONDS, vel_y SECONDS),
+		acceleration = list(acc_x SECONDS SECONDS, acc_y SECONDS SECONDS)
+	)
 
 /datum/component/overmap/physics/process(d_t)
 	// casting so the compiler shuts up

@@ -8,6 +8,8 @@
 	ambientsounds = RUINS
 	outdoors = TRUE
 
+// DEBUG FIX -- area for space encounters if not already fixed
+
 /area/overmap_encounter/planetoid
 	name = "\improper Unknown Planetoid"
 	sound_environment = SOUND_ENVIRONMENT_MOUNTAINS

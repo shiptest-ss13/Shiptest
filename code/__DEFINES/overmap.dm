@@ -1,4 +1,4 @@
-// These must be kept in sync with the constants in tgui/packages/tgui/components/overmap/BodyComponent.js
+// These must be kept in sync with the constants in tgui/packages/tgui/components/overmap/components/BodyComponent.js
 // If they fall out of sync, the overmap display will break.
 #define OVER_COMP_ID_CIRCLE "circle"
 #define OVER_COMP_ID_RECT "rectangle"

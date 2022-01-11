@@ -1,68 +1,95 @@
-import { createLogger, logger } from '../../logging';
-import { Graphics, Matrix, Container, ObservablePoint, LineStyle, utils, Text } from 'pixi.js';
-import { locateBodyComponent } from './BodyComponent.js';
-import { vecAdd, vecScale, vecLength } from 'common/vector';
+import { createLogger } from '../../logging';
+import { Container } from 'pixi.js';
+import { getCompTypeFromID, BodyComponent } from './components/BodyComponent.js';
+import * as LAYERS from './Layers.js';
 
-const LAYER_UI = 2;
-const LAYER_SHIP = 1;
-const LAYER_BODY = 0;
-const LAYER_ORBIT = -1;
+const logger = createLogger('backend');
 
 export class OvermapBody {
-  constructor() {
+  constructor(ref) {
+    this.ref = ref;
     this.visContainer = new Container();
-    this.visContainer.zIndex = LAYER_BODY;
-    // collection of all BodyComponents, keyed by their corresponding IDs
+    this.visContainer.zIndex = LAYERS.LAYER_BODY;
+    this.visContainer.sortableChildren = true;
+
+    // collection of all BodyComponents, keyed by their types
     this.components = {};
     return;
   }
 
-  loadFromData(bodyData) {
+  addComponent(compType, ...args) {
+    if (!!this.getComponent(compType)) {
+      throw "Attempted to add a component to a body that already had a component of specified type!";
+    }
+    this.components[compType] = new compType(this, ...args);
+    return this.components[compType];
+  }
+
+  /// Deletes a component from the body. Accepts either a component itself or its type.
+  deleteComponent(comp) {
+    let compType = null;
+    // if we were given a component instance, not a type
+    if (comp instanceof BodyComponent) {
+      compType = comp.constructor;
+      // might've have been given a component of a type we possess, but which we do not have specifically
+      if (comp !== this.components[compType]) {
+        throw "Attempted to delete a component from a body that did not possess it!";
+      }
+    } else {
+      // we were (hopefully) given a type
+      compType = comp;
+    }
+
+    this.components[compType].destroy();
+    return delete this.components[compType];
+  }
+
+  getComponent(compType) {
+    return this.components[compType];
+  }
+
+  // TODO: elegant unfolding of bodyData
+  readData(bodyData) {
     // load position directly into the vis container
     this.visContainer.x = bodyData["position"][0];
     // remember to flip the y
     this.visContainer.y = -bodyData["position"][1];
+    const compDataDict = bodyData["components"];
 
-    // TODO: prettier way of doing this?
-    for (const compID in bodyData["components"]) {
-      const compData = bodyData["components"][compID];
-      // if we don't have this component already
-      if (!this.components[compID]) {
-        const compType = locateBodyComponent(compID);
-        // initialize it
-        this.components[compID] = new compType(this);
+    for (const compID in compDataDict) {
+      const compType = getCompTypeFromID(compID);
+      let comp = this.getComponent(compType);
+      if (!comp) {
+        comp = this.addComponent(compType);
       }
-      this.components[compID].readData(compData);
+      comp.readData(compDataDict[compID]);
     }
+    // delete all unnetworked components that didn't receive an update
+    for (const compType in this.components) {
+      const compID = compType.componentID();
+      if (compID && !compDataDict[compID]) {
+        this.deleteComponent(compType);
+      }
+    }
+    return;
   }
 
-  // TODO: make all of these use events
-  runTick(dT) {
-    for (const compID in this.components) {
-      this.components[compID].runTick(dT);
-    }
-  }
-
-  updateZoom(zoomLevel) {
-    for (const compID in this.components) {
-      this.components[compID].updateZoom(zoomLevel);
-    }
-  }
-
-  setOnClick(onClick, ourRef) {
+  setOnClick(onClick) {
     if(!onClick) {
       this.visContainer.interactive = false;
       return;
     }
     this.visContainer.interactive = true;
-    this.visContainer.click = () => onClick(ourRef);
+    this.visContainer.click = () => onClick(this.ref);
+    return;
   }
 
   destroy() {
     this.visContainer.destroy();
     delete this.visContainer;
-    for (const compID in this.components) {
-        this.components[compID].destroy();
+    for (const compType in this.components) {
+      this.deleteComponent(compType);
     }
+    return;
   }
 }
