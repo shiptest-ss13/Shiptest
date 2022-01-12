@@ -17,9 +17,15 @@
 	var/skyblock = 0
 	/// A simple cache to make sure we dont call updates with no changes
 	var/last_checked_skyblock = 0
+	/// Common cache for current weathers list
+	var/static/list/current_weathers_cache = list()
 
 /datum/weather_controller/New(datum/map_zone/passed_mapzone)
 	. = ..()
+	if(current_weathers)
+		if(!current_weathers_cache[type])
+			current_weathers_cache[type] = current_weathers
+		current_weathers = current_weathers_cache[type]
 	mapzone = passed_mapzone
 	mapzone.weather_controller = src
 	SSweather.weather_controllers += src
