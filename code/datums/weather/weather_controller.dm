@@ -66,3 +66,33 @@
 	if(telegraph)
 		weather.telegraph()
 	return weather
+
+/datum/weather_controller/lavaland
+	possible_weathers = list(
+		/datum/weather/ash_storm = 90,
+		/datum/weather/ash_storm/emberfall = 10
+		)
+
+/datum/weather_controller/snow_planet
+		possible_weathers = list(
+			/datum/weather/snow_storm = 50,
+			/datum/weather/snowfall = 20,
+			/datum/weather/snowfall/heavy = 20,
+			/datum/weather/hailstorm = 20
+			)
+
+/datum/weather_controller/desert
+	possible_weathers = list(/datum/weather/sandstorm = 100)
+
+/datum/weather_controller/lush
+	possible_weathers = list(
+		/datum/weather/rain = 30,
+		/datum/weather/rain/heavy = 30,
+		/datum/weather/rain/heavy/storm = 30,
+	)
+
+/datum/weather_controller/chlorine
+	possible_weathers = list(/datum/weather/acid_rain = 100)
+
+/datum/weather_controller/shrouded
+	possible_weathers = list(/datum/weather/shroud_storm = 100)
