@@ -292,8 +292,7 @@
   *
   */
 /datum/weather/proc/update_areas()
-	for(var/V in impacted_areas)
-		var/area/N = V
+	for(var/area/N as anything in impacted_areas)
 		if(stage == MAIN_STAGE && multiply_blend_on_main_stage)
 			N.blend_mode = BLEND_MULTIPLY
 		else
