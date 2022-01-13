@@ -68,4 +68,3 @@
 /obj/item/disk/design_disk/ammo_c10mm/Initialize()
 	. = ..()
 	blueprints[1] = new /datum/design/c10mm()
-``` whoops, missed this, my bad
