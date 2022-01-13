@@ -47,6 +47,7 @@ Nothing else in the console has ID requirements.
 
 	var/research_control = TRUE
 	var/list/slime_already_researched = list()
+	var/list/plant_already_researched = list()
 
 /obj/machinery/computer/rdconsole/production
 	circuit = /obj/item/circuitboard/computer/rdconsole/production
@@ -142,6 +143,25 @@ Nothing else in the console has ID requirements.
 				return
 		else
 			visible_message("<span class='notice'>[src] buzzes and displays a message: Slime extract already researched!</span>")
+			playsound(src, 'sound/machines/buzz-sigh.ogg', 50, 3, -1)
+			return
+
+	if(istype(D, /obj/item/seeds))
+		var/obj/item/seeds/E = D
+		if(!plant_already_researched[E.type])
+			if(!E.research)
+				playsound(src, 'sound/machines/buzz-sigh.ogg', 50, 3, -1)
+				visible_message("<span class='notice'>[src] buzzes and displays a message: Sample quality error! (You shouldn't be seeing this. If you are, tell someone.)</span>")
+				return
+			else
+				playsound(src, 'sound/machines/ping.ogg', 50, 3, -1)
+				visible_message("<span class='notice'>You insert [E] into a slot on the [src], producting [E.research] points from the plant's genetic makeup!</span>")
+				stored_research.add_point_list(list(TECHWEB_POINT_TYPE_GENERIC = E.research))
+				plant_already_researched[E.type] = TRUE
+				qdel(D)
+				return
+		else
+			visible_message("<span class='notice'>[src] buzzes and displays a message: Genetic data already researched!</span>")
 			playsound(src, 'sound/machines/buzz-sigh.ogg', 50, 3, -1)
 			return
 
