@@ -61,11 +61,13 @@
 	///Lazylist of movable atoms providing opacity sources.
 	var/list/atom/movable/opacity_sources
 
-	/// ID of the virtual level we're in
+	// ID of the virtual level we're in
 	var/virtual_z = 0
 	/// Translation of the virtual z to a virtual level
 	var/static/list/virtual_z_translation
 
+	///the holodeck can load onto this turf if TRUE
+	var/holodeck_compatible = FALSE
 
 /turf/vv_edit_var(var_name, new_value)
 	var/static/list/banned_edits = list("x", "y", "z")

@@ -63,6 +63,9 @@ SUBSYSTEM_DEF(shuttle)
 	return ..()
 
 /datum/controller/subsystem/shuttle/fire()
+	if(SSair.thread_running())
+		return
+
 	for(var/obj/docking_port/mobile/mobile_port as anything in mobile)
 		if(!mobile_port)
 			mobile.Remove(mobile_port)
@@ -371,7 +374,7 @@ SUBSYSTEM_DEF(shuttle)
 	var/turf/BL = locate(vlevel.low_x, vlevel.low_y, vlevel.z_value)
 	S.load(BL, centered = FALSE, register = FALSE)
 
-	var/affected = S.get_affected_turfs(BL, centered=FALSE)
+	var/list/affected = S.get_affected_turfs(BL, centered=FALSE)
 
 	var/found = 0
 	// Search the turfs for docking ports
