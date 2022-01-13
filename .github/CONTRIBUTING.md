@@ -31,7 +31,7 @@ The Head Developer is responsible for controlling, adding, and removing maintain
 
 ### Maintainers
 
-Maintainers are quality control. If a proposed pull request doesn't meet the following specifications, they can request you to change it, or simply just close the pull request. Maintainers are required to give a reason for closing the pull request.
+Maintainers are quality control. If a proposed pull request doesn't meet the following specifications, they can request you to change it, or simply just close the pull request. Maintainers can close a pull request for the following reasons: The pull request doesn't follow the guidelines, excessively undocumented changes, failure to comply with coding standards. Note that maintainers should generally help bring a pull request up to standard instead of outright closing the PR; however if the pull request author does not comply with the given guidelines or refuses to adhere to the required coding standards the pull request will be closed. **Maintainers must have a valid reason to close a pull request and state what the reason is when they close the pull request.**
 
 Maintainers can revert your changes if they feel they are not worth maintaining or if they did not live up to the quality specifications.
 
