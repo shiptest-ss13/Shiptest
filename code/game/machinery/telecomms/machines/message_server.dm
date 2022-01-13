@@ -162,14 +162,15 @@
 	source = init_source
 	data = init_data
 	var/turf/T = get_turf(source)
-	levels = list(T.get_virtual_z_level())
+	var/datum/map_zone/mapzone = T.get_map_zone()
+	map_zones = list(mapzone)
 	if(!("reject" in data))
 		data["reject"] = TRUE
 
 /datum/signal/subspace/messaging/copy()
 	var/datum/signal/subspace/messaging/copy = new type(source, data.Copy())
 	copy.original = src
-	copy.levels = levels
+	copy.map_zones = map_zones
 	return copy
 
 // PDA signal datum

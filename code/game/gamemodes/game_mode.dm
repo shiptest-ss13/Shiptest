@@ -167,7 +167,7 @@
 	var/list/antag_candidates = list()
 
 	for(var/mob/living/carbon/human/H in living_crew)
-		if(H.client && H.client.prefs.allow_midround_antag && !is_centcom_level(H.z))
+		if(H.client && H.client.prefs.allow_midround_antag && !is_centcom_level(H))
 			antag_candidates += H
 
 	if(!antag_candidates)

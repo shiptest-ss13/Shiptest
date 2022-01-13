@@ -47,7 +47,7 @@
 		return
 	recalculating = TRUE
 	timing_id = null
-	if(origin && target && get_dist(origin,target)<max_distance && origin.get_virtual_z_level() == target.get_virtual_z_level())
+	if(origin && target && get_dist(origin,target)<max_distance && origin.virtual_z() == target.virtual_z())
 		var/origin_turf = get_turf(origin)
 		var/target_turf = get_turf(target)
 		if(!static_beam && (origin_turf != origin_oldloc || target_turf != target_oldloc))

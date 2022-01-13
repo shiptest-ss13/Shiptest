@@ -93,7 +93,7 @@
 	heavyfootstep = FOOTSTEP_LAVA
 	tiled_dirt = FALSE
 
-/turf/open/indestructible/necropolis/Initialize()
+/turf/open/indestructible/necropolis/Initialize(mapload, inherited_virtual_z)
 	. = ..()
 	if(prob(12))
 		icon_state = "necro[rand(2,3)]"
