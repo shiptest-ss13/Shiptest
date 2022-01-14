@@ -276,6 +276,7 @@
 /obj/machinery/airalarm/all_access{
 	pixel_y = 24
 	},
+/obj/item/disk/design_disk/ammo_c10mm,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security/armory)
 "fA" = (
@@ -2837,14 +2838,16 @@
 "VQ" = (
 /obj/structure/rack,
 /obj/effect/turf_decal/industrial/outline,
-/obj/item/kinetic_crusher{
-	pixel_y = -4
-	},
-/obj/item/kinetic_crusher{
-	pixel_y = 4
-	},
 /obj/structure/sign/poster/contraband/random{
 	pixel_x = -32
+	},
+/obj/item/syndie_crusher{
+	pixel_x = 5;
+	pixel_y = -2
+	},
+/obj/item/syndie_crusher{
+	pixel_x = 5;
+	pixel_y = 6
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/storage)
