@@ -35,6 +35,7 @@
 
 	var/weed_rate = 1 //If the chance below passes, then this many weeds sprout during growth
 	var/weed_chance = 5 //Percentage chance per tray update to grow weeds
+	var/research = PLANT_RESEARCH_TIER_1 //defines "discovery value", which will give a one-time point payout if a seed is given to an R&D console. Seed discovery is determined on a ship-by-ship basis.
 
 /obj/item/seeds/Initialize(mapload, nogenes = 0)
 	. = ..()

@@ -30,7 +30,6 @@
 	materials = list(/datum/material/iron = 6000, /datum/material/glass = 1000) //expensive, but no need for miners.
 	build_path = /obj/item/pickaxe/drill
 	category = list("Mining Designs")
-	departmental_flags = DEPARTMENTAL_FLAG_CARGO
 
 /datum/design/drill_diamond
 	name = "Diamond-Tipped Mining Drill"

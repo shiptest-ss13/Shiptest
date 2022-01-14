@@ -14,6 +14,7 @@
 	genes = list(/datum/plant_gene/trait/repeated_harvest)
 	mutatelist = list(/obj/item/seeds/eggplant/eggy)
 	reagents_add = list(/datum/reagent/consumable/nutriment/vitamin = 0.04, /datum/reagent/consumable/nutriment = 0.1)
+	research = PLANT_RESEARCH_TIER_0
 
 /obj/item/reagent_containers/food/snacks/grown/eggplant
 	seed = /obj/item/seeds/eggplant
@@ -37,6 +38,7 @@
 	production = 12
 	mutatelist = list()
 	reagents_add = list(/datum/reagent/consumable/nutriment = 0.1)
+	research = PLANT_RESEARCH_TIER_2
 
 /obj/item/reagent_containers/food/snacks/grown/shell/eggy
 	seed = /obj/item/seeds/eggplant/eggy

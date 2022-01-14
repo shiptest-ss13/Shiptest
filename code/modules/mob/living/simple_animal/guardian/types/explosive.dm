@@ -9,11 +9,11 @@
 	melee_damage_lower = 35
 	melee_damage_upper = 35
 	next_move_modifier = 1.5//attacks are 50% slower
-	damage_coeff = list(BRUTE = 0.6, BURN = 0.6, TOX = 0.6, CLONE = 0.6, STAMINA = 0, OXY = 0.6)//relatively delicate, for a holopara
+	damage_coeff = list(BRUTE = 0.7, BURN = 0.7, TOX = 0.7, CLONE = 0.7, STAMINA = 0, OXY = 0.7)//relatively delicate, for a holopara
 	attack_sound = 'sound/effects/gravhit.ogg'
 	range = 5//tiny range
-	speed = 4//slow af
-	playstyle_string = "<span class='holoparasite'>As an <b>explosive</b> type, you have powerful but slow blasting punches, may explode targets for bonus damage on attack, and are capable of converting nearby items and objects into disguised bombs via alt click. However, you are slow, and your range is very low. Make it count!</span>"
+	speed = 3//slow af
+	playstyle_string = "<span class='holoparasite'>As an <b>explosive</b> type, you have powerful but slow blasting punches, which may explode targets for double damage, and are capable of converting nearby items and objects into disguised bombs via alt click. However, you are slow, and your range is very low. Make it count!</span>"
 	magic_fluff_string = "<span class='holoparasite'>..And draw the Scientist, master of explosive death.</span>"
 	tech_fluff_string = "<span class='holoparasite'>Boot sequence complete. Explosive modules active. Holoparasite swarm online.</span>"
 	carp_fluff_string = "<span class='holoparasite'>CARP CARP CARP! Caught one! It's an explosive carp! Boom goes the fishy.</span>"
@@ -28,7 +28,7 @@
 
 /mob/living/simple_animal/hostile/guardian/bomb/AttackingTarget()
 	. = ..()
-	if(. && prob(65) && isliving(target))
+	if(. && prob(45) && isliving(target))
 		var/mob/living/M = target
 		if(!M.anchored && M != summoner && !hasmatchingsummoner(M))
 			new /obj/effect/temp_visual/guardian/phase/out(get_turf(M))
@@ -36,8 +36,12 @@
 				if(hasmatchingsummoner(L)) //if the summoner matches don't hurt them
 					continue
 				if(L != src && L != summoner)
-					L.apply_damage(20, BRUTE)
-			new /obj/effect/temp_visual/explosion(get_turf(M))
+					L.apply_damage(35, BURN)
+					if(isanimal(L))
+						L.apply_damage(15, BURN)//extra viable against simplemobs
+					L.adjust_fire_stacks(5)
+					L.IgniteMob()
+					new /obj/effect/temp_visual/explosion(get_turf(M))
 
 /mob/living/simple_animal/hostile/guardian/bomb/AltClickOn(atom/movable/A)
 	if(!istype(A))

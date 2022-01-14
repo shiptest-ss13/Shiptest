@@ -548,13 +548,13 @@ Difficulty: Hard
 
 //Behold, his ultimate form
 /mob/living/simple_animal/hostile/megafauna/marg
-	name = "<b>His Excellence</b>"
+	name = "His Excellence"
 	desc = "Your end is at hand."
 	maxHealth = 9999
 	health = 9999
 	damage_coeff = list(BRUTE = 0.5, BURN = 0.5, TOX = 0.5, CLONE = 0.5, STAMINA = 0, OXY = 1)//unstopping
-	attack_verb_continuous = "<b>reverts the pr</b> of"
-	attack_verb_simple = "<b>revert the pr</b> of"
+	attack_verb_continuous = "reverts"
+	attack_verb_simple = "revert"
 	deathmessage = "Qdel's himself out of frustration!"
 	icon_state = "margmob"
 	icon_living = "margmob"
@@ -589,16 +589,13 @@ Difficulty: Hard
 	var/enrage_time = 70
 	var/revving_charge = FALSE
 	gps_name = "Glitchy Signal"
-	achievement_type = /datum/award/achievement/boss/bubblegum_kill
-	crusher_achievement_type = /datum/award/achievement/boss/bubblegum_crusher
-	score_achievement_type = /datum/award/score/bubblegum_score
 	deathsound = 'sound/magic/enter_blood.ogg'
 	attack_action_types = list(
 		/datum/action/innate/megafauna_attack/triple_charge,
 		/datum/action/innate/megafauna_attack/hallucination_charge,
 		/datum/action/innate/megafauna_attack/hallucination_surround,
 		/datum/action/innate/megafauna_attack/blood_warp)
-	small_sprite_type = /datum/action/small_sprite/megafauna/bubblegum
+	small_sprite_type = /datum/action/small_sprite/megafauna/marg
 
 /mob/living/simple_animal/hostile/megafauna/marg/OpenFire()
 	if(charging)
@@ -739,7 +736,7 @@ Difficulty: Hard
 	SLEEP_CHECK_DEATH(4)
 	for(var/mob/living/L in T)
 		if(!faction_check_mob(L))
-			to_chat(L, "<span class='userdanger'>[src] <b>reverts</b> you!</span>")
+			to_chat(L, "<span class='userdanger'>[src] reverts you!</span>")
 			playsound(T, attack_sound, 100, TRUE, -1)
 			var/limb_to_hit = L.get_bodypart(pick(BODY_ZONE_HEAD, BODY_ZONE_CHEST, BODY_ZONE_R_ARM, BODY_ZONE_L_ARM, BODY_ZONE_R_LEG, BODY_ZONE_L_LEG))
 			L.apply_damage(10, BRUTE, limb_to_hit, L.run_armor_check(limb_to_hit, "melee", null, null, armour_penetration))
