@@ -72,8 +72,12 @@
 	return COMPONENT_BLOCK_MARK_RETRIEVAL
 
 /datum/component/shiploving/proc/in_bounds()
+#ifdef UNIT_TESTS
+	return TRUE // during unit tests ships are loaded without being added to the overmap
+#else
 	var/datum/virtual_level/v_ship = parent_ship.get_virtual_level()
 	return v_ship.is_in_bounds(parent)
+#endif
 
 /datum/component/shiploving/proc/check_deletion(datum/source, force) // TRUE = interrupt deletion, FALSE = proceed with deletion
 
