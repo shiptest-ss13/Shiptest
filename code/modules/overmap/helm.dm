@@ -192,6 +192,9 @@
 		if("rename_ship")
 			if(!("newName" in params) || params["newName"] == current_ship.name)
 				return
+			if(lentext(params["newName"]) > MAX_CHARTER_LEN)
+				say("Error: Replacement designation too long.")
+				return
 			if(!current_ship.set_ship_name(params["newName"]))
 				say("Error: [COOLDOWN_TIMELEFT(current_ship, rename_cooldown)/10] seconds until ship designation can be changed..")
 			update_static_data(usr, ui)
