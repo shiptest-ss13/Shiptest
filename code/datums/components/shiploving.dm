@@ -43,9 +43,9 @@
 	if(!targetturf)
 		message_admins("[type] failed to locate targetturf for [parent]")
 		return null
-	var/atom/movable/parent = src.parent
 	playsound(parent, 'sound/machines/synth_no.ogg', 5, TRUE)
-	parent.forceMove(targetturf)
+	var/atom/movable/parent_atom = src.parent
+	parent_atom.forceMove(targetturf)
 	to_chat(get(parent, /mob), "<span class='danger'>You can't help but feel that you just lost something back there...</span>")
 	return targetturf
 
