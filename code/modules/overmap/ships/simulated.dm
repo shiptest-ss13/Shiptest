@@ -103,7 +103,7 @@
 
 	priority_announce("Beginning docking procedures. Completion in [(shuttle.callTime + 1 SECONDS)/10] seconds.", "Docking Announcement", sender_override = name, zlevel = shuttle.virtual_z())
 
-	addtimer(CALLBACK(src, .proc/complete_dock, to_dock), shuttle.callTime + 1 SECONDS)
+	addtimer(CALLBACK(src, .proc/complete_dock, WEAKREF(to_dock)), shuttle.callTime + 1 SECONDS)
 	state = OVERMAP_SHIP_DOCKING
 	return "Commencing docking..."
 
@@ -242,18 +242,24 @@
 /**
   * Called after the shuttle docks, and finishes the transfer to the new location.
   */
-/obj/structure/overmap/ship/simulated/proc/complete_dock(obj/structure/overmap/to_dock)
+/obj/structure/overmap/ship/simulated/proc/complete_dock(datum/weakref/to_dock)
 	var/old_loc = loc
 	switch(state)
 		if(OVERMAP_SHIP_DOCKING) //so that the shuttle is truly docked first
 			if(shuttle.mode == SHUTTLE_CALL || shuttle.mode == SHUTTLE_IDLE)
-				if(istype(to_dock, /obj/structure/overmap/ship/simulated)) //hardcoded and bad
-					var/obj/structure/overmap/ship/simulated/S = to_dock
+				var/obj/structure/overmap/docking_target = to_dock?.resolve()
+				if(!docking_target) //Panic, somehow the docking target is gone but the shuttle has likely docked somewhere, get it out quickly
+					state = OVERMAP_SHIP_FLYING
+					shuttle.enterTransit()
+					return
+
+				if(istype(docking_target, /obj/structure/overmap/ship/simulated)) //hardcoded and bad
+					var/obj/structure/overmap/ship/simulated/S = docking_target
 					S.shuttle.shuttle_areas |= shuttle.shuttle_areas
-				forceMove(to_dock)
+				forceMove(docking_target)
 				state = OVERMAP_SHIP_IDLE
 			else
-				addtimer(CALLBACK(src, .proc/complete_dock), 1 SECONDS) //This should never happen
+				addtimer(CALLBACK(src, .proc/complete_dock, to_dock), 1 SECONDS) //This should never happen, yet it does sometimes.
 		if(OVERMAP_SHIP_UNDOCKING)
 			if(!isturf(loc))
 				if(istype(loc, /obj/structure/overmap/ship/simulated)) //Even more hardcoded, even more bad
