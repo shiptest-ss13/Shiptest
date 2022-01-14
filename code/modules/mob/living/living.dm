@@ -1855,3 +1855,12 @@
 
 /mob/living/remove_air_ratio(ratio)
 	return loc ? loc.remove_air_ratio(ratio) : null
+
+/mob/living/proc/seizure()
+	set waitfor = 0
+	if(!IsParalyzed() && stat == CONSCIOUS)
+		visible_message("<span class='danger'>\The [src] starts having a seizure!</span>", "<span class='userdanger'>Your muscles spasm violently!</span>")
+		var/howfuck = rand(8,16)
+		AdjustParalyzed(howfuck)
+		AdjustKnockdown(howfuck)
+		Jitter(rand(150,200))
