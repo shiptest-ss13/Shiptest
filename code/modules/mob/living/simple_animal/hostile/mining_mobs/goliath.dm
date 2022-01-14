@@ -368,6 +368,9 @@
 /obj/effect/temp_visual/goliath_tentacle/crystal/get_directions()
 	return GLOB.cardinals.Copy() + GLOB.diagonals.Copy()
 
+/obj/effect/temp_visual/goliath_tentacle/crystal/visual_only/on_hit(mob/living/L)
+	return
+
 /mob/living/simple_animal/hostile/asteroid/goliath/beast/ancient/crystal
 	name = "crystal goliath"
 	desc = "Once a goliath, it is now an abomination composed of undead flesh and crystals that sprout throughout it's decomposing body."

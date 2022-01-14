@@ -133,7 +133,7 @@
 	loot = list(/obj/item/strange_crystal = 20,
 				/obj/item/coin/plasma = 10,
 				/obj/item/grenade/hypnotic = 10,
-				/obj/item/gun/energy/e_gun/ancient_revolver = 10,
+//				/obj/item/gun/energy/e_gun/ancient_revolver = 10, //too op as of the moment, might make a good player award though
 				/obj/item/gun/energy/decloner = 10,
 				/obj/item/construction/rcd/combat = 10,
 				/obj/item/clothing/suit/space/hardsuit/syndi = 10, //todo, make a non-syndi version
