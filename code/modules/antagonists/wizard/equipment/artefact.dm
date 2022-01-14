@@ -441,7 +441,7 @@
 	var/breakout = 0
 	while(breakout < 50)
 		var/turf/potential_T = find_safe_turf()
-		if(T.get_virtual_z_level() != potential_T.get_virtual_z_level() || abs(get_dist_euclidian(potential_T,T)) > 50 - breakout)
+		if(T.virtual_z() != potential_T.virtual_z() || abs(get_dist_euclidian(potential_T,T)) > 50 - breakout)
 			do_teleport(user, potential_T, channel = TELEPORT_CHANNEL_MAGIC)
 			T = potential_T
 			break

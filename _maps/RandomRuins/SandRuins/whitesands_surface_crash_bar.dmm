@@ -98,7 +98,7 @@
 /area/whitesands/surface/outdoors)
 "fj" = (
 /obj/structure/lattice,
-/turf/template_noop,
+/turf/open/floor/plating/asteroid/whitesands/dried,
 /area/whitesands/surface/outdoors)
 "fn" = (
 /obj/machinery/chem_master/condimaster,
@@ -289,6 +289,11 @@
 /obj/item/storage/pill_bottle/dice,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood,
+/area/whitesands/surface/outdoors)
+"pk" = (
+/obj/structure/lattice,
+/obj/structure/lattice,
+/turf/open/floor/plating/asteroid/whitesands/dried,
 /area/whitesands/surface/outdoors)
 "qe" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -517,7 +522,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/turf/template_noop,
+/turf/open/floor/plating/asteroid/whitesands/dried,
 /area/whitesands/surface/outdoors)
 "Br" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -605,6 +610,11 @@
 /turf/open/floor/wood{
 	icon_state = "wood-broken"
 	},
+/area/whitesands/surface/outdoors)
+"FD" = (
+/obj/structure/lattice,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating/asteroid/whitesands/dried,
 /area/whitesands/surface/outdoors)
 "FI" = (
 /obj/effect/decal/cleanable/dirt,
@@ -815,7 +825,7 @@
 "Np" = (
 /obj/structure/lattice,
 /obj/structure/lattice,
-/turf/template_noop,
+/turf/open/floor/plating/asteroid/whitesands,
 /area/whitesands/surface/outdoors)
 "Nr" = (
 /obj/machinery/power/port_gen/pacman,
@@ -932,6 +942,10 @@
 	},
 /turf/open/floor/plating,
 /area/whitesands/surface/outdoors)
+"RC" = (
+/obj/structure/lattice,
+/turf/open/floor/plating/asteroid/whitesands,
+/area/whitesands/surface/outdoors)
 "RK" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -942,7 +956,7 @@
 "Sd" = (
 /obj/structure/lattice,
 /obj/effect/decal/cleanable/dirt,
-/turf/template_noop,
+/turf/open/floor/plating/asteroid/whitesands,
 /area/whitesands/surface/outdoors)
 "Tj" = (
 /obj/structure/cable{
@@ -1133,12 +1147,12 @@ Wv
 Wv
 Wv
 Ar
-fj
-fj
-fj
+RC
+RC
+RC
 Ar
-fj
-fj
+RC
+RC
 Np
 Ar
 Wv
@@ -1149,15 +1163,15 @@ Wv
 (3,1,1) = {"
 Wv
 Wv
-Np
+pk
 Fc
 cP
 cP
-fj
-fj
+RC
+RC
 cP
 cP
-fj
+RC
 fj
 fj
 Wv
@@ -1176,7 +1190,7 @@ Ar
 cP
 cP
 cP
-Sd
+FD
 Wv
 Wv
 "}
@@ -1215,8 +1229,8 @@ el
 fj
 "}
 (7,1,1) = {"
-fj
-fj
+RC
+RC
 Br
 FA
 QG
@@ -1229,11 +1243,11 @@ vc
 eP
 el
 Sd
-fj
+RC
 "}
 (8,1,1) = {"
 Wv
-fj
+RC
 JH
 BE
 yv
@@ -1246,10 +1260,10 @@ HU
 tV
 Ar
 kk
-fj
+RC
 "}
 (9,1,1) = {"
-fj
+RC
 Ar
 Jw
 bU
@@ -1263,7 +1277,7 @@ TU
 XT
 Ar
 Sd
-fj
+RC
 "}
 (10,1,1) = {"
 Ar
@@ -1278,13 +1292,13 @@ lH
 Ys
 lx
 ME
-fj
+RC
 el
 Wv
 "}
 (11,1,1) = {"
 Ar
-Np
+pk
 Vw
 sN
 Ka
@@ -1312,7 +1326,7 @@ uD
 MO
 xh
 XT
-fj
+RC
 Wv
 Wv
 "}
@@ -1329,13 +1343,13 @@ zn
 Ig
 HA
 HA
-fj
+RC
 Wv
 Wv
 "}
 (14,1,1) = {"
 Ar
-fj
+RC
 iV
 Uc
 od
@@ -1368,7 +1382,7 @@ Wv
 Wv
 "}
 (16,1,1) = {"
-fj
+RC
 fj
 ud
 Hc
@@ -1386,7 +1400,7 @@ Wv
 "}
 (17,1,1) = {"
 Wv
-Np
+pk
 Ar
 od
 lI
@@ -1439,7 +1453,7 @@ Wv
 Wv
 Wv
 Wv
-fj
+RC
 OZ
 OZ
 OZ
@@ -1456,14 +1470,14 @@ Wv
 Wv
 Wv
 Wv
-fj
-fj
+RC
+RC
 Ar
 hm
-fj
+RC
 Ar
 Ar
-fj
+RC
 Ar
 Wv
 Wv
@@ -1475,11 +1489,11 @@ Wv
 Wv
 Wv
 Np
-fj
-fj
+RC
+RC
 Ar
-fj
-fj
+RC
+RC
 Ar
 Wv
 Wv

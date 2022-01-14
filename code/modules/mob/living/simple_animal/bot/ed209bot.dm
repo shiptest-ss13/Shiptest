@@ -19,9 +19,29 @@
 	var/projectile = /obj/projectile/beam/disabler
 	var/fair_market_projectile = /obj/projectile/bullet/c38 // For shooting the worst scumbags of all: the poor
 
+/mob/living/simple_animal/bot/secbot/ed209/rockplanet
+	name = "\improper Abandoned ED-209 Robot"
+	desc = "A security robot. It looks like they have a loose trigger finger."
+	health = 80
+	maxHealth = 80
+	icon_state = "red209"
+	shoot_sound = 'sound/weapons/laser.ogg'
+	projectile = /obj/projectile/beam/scatter
+	emagged = 2
+	remote_disabled = 1
+	locked = TRUE
+	faction = list("mining", "silicon" , "turret")
+	declare_arrests = FALSE
+
+/mob/living/simple_animal/bot/secbot/ed209/rockplanet/stun_attack(atom/A)
+	if(!on)
+		return
+	shootAt(A)
+
 /mob/living/simple_animal/bot/secbot/ed209/Initialize(mapload)
 	. = ..()
-	set_weapon() //giving it the right projectile and firing sound.
+	set_weapon()
+
 
 /mob/living/simple_animal/bot/secbot/ed209/bot_reset()
 	..()

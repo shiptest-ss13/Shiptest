@@ -16,7 +16,7 @@
 	icon_state = "alienpod1"
 	tiled_dirt = FALSE
 
-/turf/open/floor/plating/abductor/Initialize()
+/turf/open/floor/plating/abductor/Initialize(mapload, inherited_virtual_z)
 	. = ..()
 	icon_state = "alienpod[rand(1,9)]"
 
@@ -62,7 +62,7 @@
 	var/smooth_icon = 'icons/turf/floors/ash.dmi'
 
 
-/turf/open/floor/plating/ashplanet/Initialize()
+/turf/open/floor/plating/ashplanet/Initialize(mapload, inherited_virtual_z)
 	. = ..()
 	if(smoothing_flags & SMOOTH_BITMASK)
 		var/matrix/M = new
@@ -112,7 +112,7 @@
 	clawfootstep = FOOTSTEP_HARD_CLAW
 	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
 
-/turf/open/floor/plating/ashplanet/wateryrock/Initialize()
+/turf/open/floor/plating/ashplanet/wateryrock/Initialize(mapload, inherited_virtual_z)
 	icon_state = "[icon_state][rand(1, 9)]"
 	. = ..()
 
@@ -180,7 +180,7 @@
 	clawfootstep = FOOTSTEP_SAND
 	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
 
-/turf/open/floor/plating/ironsand/Initialize()
+/turf/open/floor/plating/ironsand/Initialize(mapload, inherited_virtual_z)
 	. = ..()
 	icon_state = "ironsand[rand(1,15)]"
 
@@ -207,7 +207,7 @@
 	clawfootstep = FOOTSTEP_HARD_CLAW
 	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
 
-/turf/open/floor/plating/ice/Initialize()
+/turf/open/floor/plating/ice/Initialize(mapload, inherited_virtual_z)
 	. = ..()
 	MakeSlippery(TURF_WET_PERMAFROST, INFINITY, 0, INFINITY, TRUE)
 
@@ -287,7 +287,7 @@
 	layer = HIGH_TURF_LAYER
 	var/smooth_icon = 'icons/turf/floors/grass.dmi'
 
-/turf/open/floor/plating/grass/Initialize()
+/turf/open/floor/plating/grass/Initialize(mapload, inherited_virtual_z)
 	. = ..()
 	if(smoothing_flags)
 		var/matrix/translation = new

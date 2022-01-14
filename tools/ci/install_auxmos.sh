@@ -4,6 +4,6 @@ set -euo pipefail
 source dependencies.sh
 
 mkdir -p ~/.byond/bin
-wget -O ~/.byond/bin/libauxmos.so "https://github.com/shiptest-ss13/auxmos/releases/download/${AUXMOS_VERSION}/libauxmos.so"
+wget -O ~/.byond/bin/libauxmos.so "https://github.com/jupyterkat/auxmos/releases/download/${AUXMOS_VERSION}/libauxmos.so"
 chmod +x ./auxtools/libauxmos.so
 ldd ./auxtools/libauxmos.so

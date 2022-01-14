@@ -195,7 +195,7 @@ SUBSYSTEM_DEF(explosions)
 	var/orig_max_distance = max(devastation_range, heavy_impact_range, light_impact_range, flash_range, flame_range)
 
 	//Zlevel specific bomb cap multiplier
-	var/cap_multiplier = SSmapping.level_trait(epicenter.z, ZTRAIT_BOMBCAP_MULTIPLIER)
+	var/cap_multiplier = epicenter.virtual_level_trait(ZTRAIT_BOMBCAP_MULTIPLIER)
 	if (isnull(cap_multiplier))
 		cap_multiplier = 1
 
@@ -214,7 +214,7 @@ SUBSYSTEM_DEF(explosions)
 
 	var/x0 = epicenter.x
 	var/y0 = epicenter.y
-	var/z0 = epicenter.get_virtual_z_level()
+	var/z0 = epicenter.virtual_z()
 	var/area/areatype = get_area(epicenter)
 	SSblackbox.record_feedback("associative", "explosion", 1, list("dev" = devastation_range, "heavy" = heavy_impact_range, "light" = light_impact_range, "flash" = flash_range, "flame" = flame_range, "orig_dev" = orig_dev_range, "orig_heavy" = orig_heavy_range, "orig_light" = orig_light_range, "x" = x0, "y" = y0, "z" = z0, "area" = areatype.type, "time" = time_stamp("YYYY-MM-DD hh:mm:ss", 1)))
 
@@ -235,7 +235,7 @@ SUBSYSTEM_DEF(explosions)
 		var/sound/creaking_explosion_sound = sound(get_sfx("explosion_creaking"))
 		var/sound/hull_creaking_sound = sound(get_sfx("hull_creaking"))
 		var/sound/explosion_echo_sound = sound('sound/effects/explosion_distant.ogg')
-		var/on_station = SSmapping.level_trait(epicenter.z, ZTRAIT_STATION)
+		var/on_station = epicenter.virtual_level_trait(ZTRAIT_STATION)
 		var/creaking_explosion = FALSE
 
 		if(prob(devastation_range*DEVASTATION_PROB+heavy_impact_range*HEAVY_IMPACT_PROB) && on_station) // Huge explosions are near guaranteed to make the station creak and whine, smaller ones might.
@@ -245,7 +245,7 @@ SUBSYSTEM_DEF(explosions)
 			var/mob/M = MN
 			// Double check for client
 			var/turf/M_turf = get_turf(M)
-			if(M_turf && M_turf.get_virtual_z_level() == z0)
+			if(M_turf && M_turf.virtual_z() == z0)
 				var/dist = get_dist(M_turf, epicenter)
 				var/baseshakeamount
 				if(orig_max_distance - dist > 0)
@@ -318,7 +318,7 @@ SUBSYSTEM_DEF(explosions)
 		var/flame_dist = dist < flame_range
 		var/throw_dist = dist
 
-		if(T.get_virtual_z_level() != z0)
+		if(T.virtual_z() != z0)
 			dist = EXPLODE_NONE
 		else if(dist < devastation_range)
 			dist = EXPLODE_DEVASTATE

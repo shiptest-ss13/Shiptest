@@ -68,7 +68,7 @@ fi
 # update auxmos
 if [ ! -d "auxmos" ]; then
 	echo "Cloning auxmos..."
-	git clone https://github.com/shiptest-ss13/auxmos
+	git clone https://github.com/jupyterkat/auxmos
 	cd auxmos
 	~/.cargo/bin/rustup target add i686-unknown-linux-gnu
 	cd ..
@@ -90,7 +90,7 @@ cd ..
 echo "Deploying auxmos..."
 cd auxmos
 git checkout "$AUXMOS_VERSION"
-env PKG_CONFIG_ALLOW_CROSS=1 RUSTFLAGS="-C target-cpu=native" ~/.cargo/bin/cargo build --release --target=i686-unknown-linux-gnu --features "trit_fire_hook,plasma_fire_hook,generic_fire_hook,xenomedes_fusion,explosive_decompression"
+env PKG_CONFIG_ALLOW_CROSS=1 RUSTFLAGS="-C target-cpu=native" ~/.cargo/bin/cargo build --release --target=i686-unknown-linux-gnu --features "all_reaction_hooks,katmos"
 mv target/i686-unknown-linux-gnu/release/libauxmos.so "$1/libauxmos.so"
 cd ..
 

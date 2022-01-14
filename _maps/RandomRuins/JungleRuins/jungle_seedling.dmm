@@ -151,7 +151,10 @@
 /turf/open/water/jungle,
 /area/ruin/unpowered)
 "Lt" = (
-/mob/living/simple_animal/hostile/jungle/seedling,
+/mob/living/simple_animal/hostile/jungle/seedling{
+	health = 300;
+	maxHealth = 300
+	},
 /obj/item/ship_in_a_bottle,
 /turf/open/water/jungle,
 /area/ruin/unpowered)

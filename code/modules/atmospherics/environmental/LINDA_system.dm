@@ -84,8 +84,6 @@
 	LAZYCLEARLIST(atmos_adjacent_turfs)
 	__update_auxtools_turf_adjacency_info(isspaceturf(get_z_base_turf()))
 
-/obj/machinery/atmospherics/components/trinary/nuclear_reactor/process()
-
 /turf/proc/set_sleeping(should_sleep)
 
 /turf/proc/__update_auxtools_turf_adjacency_info()

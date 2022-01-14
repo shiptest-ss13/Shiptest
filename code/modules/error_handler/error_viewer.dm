@@ -90,7 +90,7 @@ GLOBAL_DATUM(error_cache, /datum/error_viewer/error_cache)
 
 	else
 		html += "[make_link("organized", null)] | linear<hr>"
-		for (var/datum/error_viewer/error_entry/error_entry in errors)
+		for (var/datum/error_viewer/error_entry/error_entry as anything in errors)
 			html += "[error_entry.make_link(null, src, 1)]<br>"
 
 	browse_to(user, html)
@@ -141,8 +141,10 @@ GLOBAL_DATUM(error_cache, /datum/error_viewer/error_cache)
 		back_to = GLOB.error_cache
 
 	var/html = build_header(back_to)
-	for (var/datum/error_viewer/error_entry/error_entry in errors)
+	for (var/i in 1 to min(length(errors), 1000))
+		var/datum/error_viewer/error_entry/error_entry = errors[i]
 		html += "[error_entry.make_link(null, src)]<br>"
+	html += "<i>Limited to the first 1000 errors</i>"
 
 	browse_to(user, html)
 

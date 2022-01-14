@@ -36,8 +36,6 @@
 /obj/machinery/door/firedoor/Initialize()
 	. = ..()
 	CalculateAffectingAreas()
-	SSair.firelocks += src
-	SSair.firelocks_requires_updates = TRUE
 
 /obj/machinery/door/firedoor/examine(mob/user)
 	. = ..()
@@ -73,8 +71,6 @@
 /obj/machinery/door/firedoor/Destroy()
 	remove_from_areas()
 	affecting_areas.Cut()
-	SSair.firelocks -= src
-	SSair.firelocks_requires_updates = TRUE
 	return ..()
 
 /obj/machinery/door/firedoor/Bumped(atom/movable/AM)
@@ -407,14 +403,6 @@
 	else
 		return TRUE
 
-/obj/machinery/door/firedoor/Moved(atom/OldLoc, Dir)
-	. = ..()
-	SSair.firelocks_requires_updates = TRUE
-
-/obj/machinery/door/firedoor/afterShuttleMove(turf/oldT, list/movement_force, shuttle_dir, shuttle_preferred_direction, move_dir, rotation)
-	. = ..()
-	SSair.firelocks_requires_updates = TRUE
-
 /obj/machinery/door/firedoor/proc/emergency_pressure_close()
 	if(density)
 		return
@@ -443,6 +431,29 @@
 	else if(!(flags_1 & ON_BORDER_1))
 		crush()
 	latetoggle()
+
+/obj/machinery/door/firedoor/border_only/emergency_pressure_close()
+	if(density)
+		return TRUE
+	if(operating || welded)
+		return
+	var/turf/T1 = get_turf(src)
+	var/turf/T2 = get_step(T1, dir)
+	for(var/mob/living/M in T1)
+		if(M.stat == CONSCIOUS && M.pulling && M.pulling.loc == T2 && !M.pulling.anchored && M.pulling.move_resist <= M.move_force)
+			var/mob/living/M2 = M.pulling
+			if(!istype(M2) || !M2.buckled || !M2.buckled.buckle_prevents_pull)
+				to_chat(M, "<span class='notice'>You pull [M.pulling] through [src] right as it closes.</span>")
+				M.pulling.forceMove(T1)
+				M.start_pulling(M2)
+	for(var/mob/living/M in T2)
+		if(M.stat == CONSCIOUS && M.pulling && M.pulling.loc == T1 && !M.pulling.anchored && M.pulling.move_resist <= M.move_force)
+			var/mob/living/M2 = M.pulling
+			if(!istype(M2) || !M2.buckled || !M2.buckled.buckle_prevents_pull)
+				to_chat(M, "<span class='notice'>You pull [M.pulling] through [src] right as it closes.</span>")
+				M.pulling.forceMove(T2)
+				M.start_pulling(M2)
+	return ..()
 
 /obj/machinery/door/firedoor/heavy
 	name = "heavy firelock"

@@ -30,11 +30,11 @@ RUN git init \
 # Build auxmos
 FROM rust-build as auxmos
 RUN git init \
-    && git remote add origin https://github.com/shiptest-ss13/auxmos \
+    && git remote add origin https://github.com/jupyterkat/auxmos \
     && /bin/bash -c "source dependencies.sh \
     && git fetch --depth 1 origin \$AUXMOS_VERSION" \
     && git checkout FETCH_HEAD \
-    && cargo rustc --target=i686-unknown-linux-gnu --release --features=trit_fire_hook,plasma_fire_hook,generic_fire_hook,xenomedes_fusion,explosive_decompression
+    && cargo rustc --target=i686-unknown-linux-gnu --release --features all_reaction_hooks,katmos
 
 # Install nodejs which is required to deploy Shiptest
 FROM base as node

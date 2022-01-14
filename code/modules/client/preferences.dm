@@ -83,7 +83,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/eye_color = "000"				//Eye color
 	var/datum/species/pref_species = new /datum/species/human()	//Mutant race
 	var/species_looking_at = "human" //used as a helper to keep track of in the species select thingy
-	var/list/features = list("mcolor" = "FFF", "ethcolor" = "9c3030", "tail_lizard" = "Smooth", "tail_human" = "None", "snout" = "Round", "horns" = "None", "ears" = "None", "wings" = "None", "frills" = "None", "spines" = "None", "body_markings" = "None", "legs" = "Normal Legs", "moth_wings" = "Plain", "moth_fluff" = "Plain", "moth_markings" = "None", "spider_legs" = "Plain", "spider_spinneret" = "Plain", "spider_mandibles" = "Plain", "squid_face" = "Squidward", "ipc_screen" = "Blue", "ipc_antenna" = "None", "ipc_chassis" = "Morpheus Cyberkinetics(Greyscale)", "teshari_feathers" = "Plain", "teshari_body_feathers" = "Plain", "flavor_text" = "")
+	var/list/features = list("mcolor" = "FFF", "ethcolor" = "9c3030", "tail_lizard" = "Smooth", "tail_human" = "None", "snout" = "Round", "horns" = "None", "ears" = "None", "wings" = "None", "frills" = "None", "spines" = "None", "body_markings" = "None", "legs" = "Normal Legs", "moth_wings" = "Plain", "moth_fluff" = "Plain", "moth_markings" = "None", "spider_legs" = "Plain", "spider_spinneret" = "Plain", "spider_mandibles" = "Plain", "squid_face" = "Squidward", "ipc_screen" = "Blue", "ipc_antenna" = "None", "ipc_chassis" = "Morpheus Cyberkinetics(Greyscale)", "kepori_feathers" = "Plain", "kepori_body_feathers" = "Plain", "flavor_text" = "")
 	var/list/randomise = list(RANDOM_UNDERWEAR = TRUE, RANDOM_UNDERWEAR_COLOR = TRUE, RANDOM_UNDERSHIRT = TRUE, RANDOM_SOCKS = TRUE, RANDOM_BACKPACK = TRUE, RANDOM_JUMPSUIT_STYLE = TRUE, RANDOM_EXOWEAR_STYLE = TRUE, RANDOM_HAIRSTYLE = TRUE, RANDOM_HAIR_COLOR = TRUE, RANDOM_FACIAL_HAIRSTYLE = TRUE, RANDOM_FACIAL_HAIR_COLOR = TRUE, RANDOM_SKIN_TONE = TRUE, RANDOM_EYE_COLOR = TRUE)
 	var/list/friendlyGenders = list("Male" = "male", "Female" = "female", "Other" = "plural")
 	var/phobia = "spiders"
@@ -629,12 +629,12 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					dat += "</td>"
 					mutant_category = 0
 
-			if("teshari_feathers" in pref_species.default_features)
+			if("kepori_feathers" in pref_species.default_features)
 				if(!mutant_category)
 					dat += APPEARANCE_CATEGORY_COLUMN
 
-				dat += "<h3>Teshari Head Feathers</h3>"
-				dat += "<a href='?_src_=prefs;preference=teshari_feathers;task=input'>[features["teshari_feathers"]]</a><BR>"
+				dat += "<h3>Kepori Head Feathers</h3>"
+				dat += "<a href='?_src_=prefs;preference=kepori_feathers;task=input'>[features["kepori_feathers"]]</a><BR>"
 				dat += "<span style='border:1px solid #161616; background-color: #[hair_color];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=hair;task=input'>Change</a><BR>"
 				dat += "<a href='?_src_=prefs;preference=toggle_random;random_type=[RANDOM_HAIR_COLOR]'>[(randomise[RANDOM_HAIR_COLOR]) ? "Lock" : "Unlock"]</A><BR>"
 
@@ -643,12 +643,12 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					dat += "</td>"
 					mutant_category = 0
 
-			if("teshari_body_feathers" in pref_species.default_features)
+			if("kepori_body_feathers" in pref_species.default_features)
 				if(!mutant_category)
 					dat += APPEARANCE_CATEGORY_COLUMN
 
-				dat += "<h3>Teshari Body Feathers</h3>"
-				dat += "<a href='?_src_=prefs;preference=teshari_body_feathers;task=input'>[features["teshari_body_feathers"]]</a><BR>"
+				dat += "<h3>Kepori Body Feathers</h3>"
+				dat += "<a href='?_src_=prefs;preference=kepori_body_feathers;task=input'>[features["kepori_body_feathers"]]</a><BR>"
 				dat += "<span style='border:1px solid #161616; background-color: #[facial_hair_color];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=facial;task=input'>Change</a><BR>"
 				dat += "<a href='?_src_=prefs;preference=toggle_random;random_type=[RANDOM_FACIAL_HAIR_COLOR]'>[(randomise[RANDOM_FACIAL_HAIR_COLOR]) ? "Lock" : "Unlock"]</A><BR>"
 
@@ -1864,17 +1864,17 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					if(new_ipc_chassis)
 						features["ipc_chassis"] = new_ipc_chassis
 
-				if("teshari_feathers")
-					var/new_teshari_feathers
-					new_teshari_feathers = input(user, "Choose your character's face type:", "Character Preference") as null|anything in GLOB.teshari_feathers_list
-					if (new_teshari_feathers)
-						features["teshari_feathers"] = new_teshari_feathers
+				if("kepori_feathers")
+					var/new_kepori_feathers
+					new_kepori_feathers = input(user, "Choose your character's face type:", "Character Preference") as null|anything in GLOB.kepori_feathers_list
+					if (new_kepori_feathers)
+						features["kepori_feathers"] = new_kepori_feathers
 
-				if("teshari_body_feathers")
-					var/new_teshari_feathers
-					new_teshari_feathers = input(user, "Choose your character's face type:", "Character Preference") as null|anything in GLOB.teshari_body_feathers_list
-					if (new_teshari_feathers)
-						features["teshari_body_feathers"] = new_teshari_feathers
+				if("kepori_body_feathers")
+					var/new_kepori_feathers
+					new_kepori_feathers = input(user, "Choose your character's face type:", "Character Preference") as null|anything in GLOB.kepori_body_feathers_list
+					if (new_kepori_feathers)
+						features["kepori_body_feathers"] = new_kepori_feathers
 
 				if("s_tone")
 					var/new_s_tone = input(user, "Choose your character's skin-tone:", "Character Preference")  as null|anything in GLOB.skin_tones

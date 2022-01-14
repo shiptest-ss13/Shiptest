@@ -136,7 +136,7 @@ GLOBAL_LIST_EMPTY(blob_nodes)
 	for(var/i in GLOB.mob_living_list)
 		var/mob/living/L = i
 		var/turf/T = get_turf(L)
-		if(L.get_virtual_z_level() != get_virtual_z_level())
+		if(L.virtual_z() != virtual_z())
 			continue
 
 		if(L in GLOB.overminds || (L.pass_flags & PASSBLOB))

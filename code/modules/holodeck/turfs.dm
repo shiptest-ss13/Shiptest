@@ -59,7 +59,7 @@
 	bullet_bounce_sound = null
 	tiled_dirt = FALSE
 
-/turf/open/floor/holofloor/grass/Initialize()
+/turf/open/floor/holofloor/grass/Initialize(mapload, inherited_virtual_z)
 	. = ..()
 	icon_state = "grass[rand(0,3)]"
 
@@ -92,7 +92,7 @@
 	icon_state = "asteroid"
 	tiled_dirt = FALSE
 
-/turf/open/floor/holofloor/asteroid/Initialize()
+/turf/open/floor/holofloor/asteroid/Initialize(mapload, inherited_virtual_z)
 	icon_state = "asteroid[rand(0, 12)]"
 	. = ..()
 
@@ -102,7 +102,7 @@
 	icon_state = "basalt0"
 	tiled_dirt = FALSE
 
-/turf/open/floor/holofloor/basalt/Initialize()
+/turf/open/floor/holofloor/basalt/Initialize(mapload, inherited_virtual_z)
 	. = ..()
 	if(prob(15))
 		icon_state = "basalt[rand(0, 12)]"
@@ -113,7 +113,7 @@
 	icon = 'icons/turf/space.dmi'
 	icon_state = "0"
 
-/turf/open/floor/holofloor/space/Initialize()
+/turf/open/floor/holofloor/space/Initialize(mapload, inherited_virtual_z)
 	icon_state = SPACE_ICON_STATE // so realistic
 	. = ..()
 
@@ -124,11 +124,11 @@
 	bullet_bounce_sound = null
 	tiled_dirt = FALSE
 
-/turf/open/floor/holofloor/hyperspace/Initialize()
+/turf/open/floor/holofloor/hyperspace/Initialize(mapload, inherited_virtual_z)
 	icon_state = "speedspace_ns_[(x + 5*y + (y%2+1)*7)%15+1]"
 	. = ..()
 
-/turf/open/floor/holofloor/hyperspace/ns/Initialize()
+/turf/open/floor/holofloor/hyperspace/ns/Initialize(mapload, inherited_virtual_z)
 	. = ..()
 	icon_state = "speedspace_ns_[(x + 5*y + (y%2+1)*7)%15+1]"
 
@@ -145,7 +145,7 @@
 	bullet_bounce_sound = null
 	tiled_dirt = FALSE
 
-/turf/open/floor/holofloor/carpet/Initialize()
+/turf/open/floor/holofloor/carpet/Initialize(mapload, inherited_virtual_z)
 	. = ..()
 	addtimer(CALLBACK(src, /atom/.proc/update_icon), 1)
 

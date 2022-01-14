@@ -1,8 +1,11 @@
-//Threshold above which it uses the ship sprites instead of the shuttle sprites
+///Threshold above which it uses the ship sprites instead of the shuttle sprites
 #define SHIP_SIZE_THRESHOLD 150
 
-//How long it takes to regain 1% integrity while docked
+///How long it takes to regain 1% integrity while docked
 #define SHIP_DOCKED_REPAIR_TIME 2 SECONDS
+
+///Name of the file used for ship name random selection
+#define SHIP_NAMES_FILE "ship_names.json"
 
 /**
   * # Simulated overmap ship
@@ -32,8 +35,10 @@
 	var/obj/structure/overmap/docked
 	///The docking port of the linked shuttle
 	var/obj/docking_port/mobile/shuttle
+	///The map template the shuttle was spawned from, if it was indeed created from a template
+	var/datum/map_template/shuttle/source_template
 
-/obj/structure/overmap/ship/simulated/Initialize(mapload, obj/docking_port/mobile/_shuttle)
+/obj/structure/overmap/ship/simulated/Initialize(mapload, obj/docking_port/mobile/_shuttle, datum/map_template/shuttle/_source_template)
 	. = ..()
 	SSovermap.simulated_ships += src
 	if(_shuttle)
@@ -41,8 +46,9 @@
 	if(!shuttle)
 		CRASH("Simulated overmap ship created without associated shuttle!")
 	name = shuttle.name
+	source_template = _source_template
 	calculate_mass()
-	initial_name()
+	set_ship_name("[source_template.prefix] [pick_list_replacements(SHIP_NAMES_FILE, pick(source_template.name_categories))]", TRUE)
 	refresh_engines()
 	check_loc()
 
@@ -56,15 +62,6 @@
 		return TRUE
 	else
 		return
-
-/obj/structure/overmap/ship/simulated/proc/initial_name()
-	if(mass < SHIP_SIZE_THRESHOLD)
-		return //You don't DESERVE a name >:(
-	var/chosen_name = pick_n_take(GLOB.ship_names)
-	if(!chosen_name)
-		return //Sorry, we're out of names
-	chosen_name = "SV [chosen_name]"
-	set_ship_name(chosen_name)
 
 ///Destroy if integrity <= 0 and no concious mobs on shuttle
 /obj/structure/overmap/ship/simulated/recieve_damage(amount)
@@ -104,7 +101,7 @@
 /obj/structure/overmap/ship/simulated/proc/dock(obj/structure/overmap/to_dock, obj/docking_port/stationary/dock_to_use)
 	shuttle.request(dock_to_use)
 
-	priority_announce("Beginning docking procedures. Completion in [(shuttle.callTime + 1 SECONDS)/10] seconds.", "Docking Announcement", sender_override = name, zlevel = shuttle.get_virtual_z_level())
+	priority_announce("Beginning docking procedures. Completion in [(shuttle.callTime + 1 SECONDS)/10] seconds.", "Docking Announcement", sender_override = name, zlevel = shuttle.virtual_z())
 
 	addtimer(CALLBACK(src, .proc/complete_dock, to_dock), shuttle.callTime + 1 SECONDS)
 	state = OVERMAP_SHIP_DOCKING
@@ -124,7 +121,7 @@
 	shuttle.destination = null
 	shuttle.mode = SHUTTLE_IGNITING
 	shuttle.setTimer(shuttle.ignitionTime)
-	priority_announce("Beginning undocking procedures. Completion in [(shuttle.ignitionTime + 1 SECONDS)/10] seconds.", "Docking Announcement", sender_override = name, zlevel = shuttle.get_virtual_z_level())
+	priority_announce("Beginning undocking procedures. Completion in [(shuttle.ignitionTime + 1 SECONDS)/10] seconds.", "Docking Announcement", sender_override = name, zlevel = shuttle.virtual_z())
 	addtimer(CALLBACK(src, .proc/complete_dock), shuttle.ignitionTime + 1 SECONDS)
 	state = OVERMAP_SHIP_UNDOCKING
 	return "Beginning undocking procedures..."
@@ -203,12 +200,12 @@
   * Proc called after a shuttle is moved, used for checking a ship's location when it's moved manually (E.G. calling the mining shuttle via a console)
   */
 /obj/structure/overmap/ship/simulated/proc/check_loc()
-	var/docked_object = SSovermap.get_overmap_object_by_z(shuttle.get_virtual_z_level())
+	var/docked_object = shuttle.current_ship
 	if(docked_object == loc) //The docked object is correct, move along
 		return TRUE
 	if(state == OVERMAP_SHIP_DOCKING || state == OVERMAP_SHIP_UNDOCKING)
 		return
-	if(!istype(loc, /obj/structure/overmap) && is_reserved_level(shuttle.z)) //The object isn't currently docked, and doesn't think it is. This is correct.
+	if(!istype(loc, /obj/structure/overmap) && is_reserved_level(shuttle)) //The object isn't currently docked, and doesn't think it is. This is correct.
 		return TRUE
 	if(!istype(loc, /obj/structure/overmap) && !docked_object) //The overmap object thinks it's docked to something, but it really isn't. Move to a random tile on the overmap
 		forceMove(SSovermap.get_unused_overmap_square())
@@ -291,15 +288,16 @@
 /**
   * Sets the ship, shuttle, and shuttle areas to a new name.
   */
-/obj/structure/overmap/ship/simulated/proc/set_ship_name(new_name)
+/obj/structure/overmap/ship/simulated/proc/set_ship_name(new_name, ignore_cooldown = FALSE)
 	if(!new_name || new_name == name || !COOLDOWN_FINISHED(src, rename_cooldown))
 		return
 	if(name != initial(name))
-		priority_announce("The [name] has been renamed to the [new_name].", "Docking Announcement", sender_override = new_name, zlevel = shuttle.get_virtual_z_level())
+		priority_announce("The [name] has been renamed to the [new_name].", "Docking Announcement", sender_override = new_name, zlevel = shuttle.virtual_z())
 	name = new_name
 	shuttle.name = new_name
-	COOLDOWN_START(src, rename_cooldown, 5 MINUTES)
-	for(var/area/shuttle_area in shuttle.shuttle_areas)
+	if(!ignore_cooldown)
+		COOLDOWN_START(src, rename_cooldown, 5 MINUTES)
+	for(var/area/shuttle_area as anything in shuttle.shuttle_areas)
 		shuttle_area.rename_area("[new_name] [initial(shuttle_area.name)]")
 	return TRUE
 

@@ -1,16 +1,37 @@
 {
 	"map_name": "Dwayne-class Long Range Mining Transport",
+	"prefix": "SV",
+	"namelists": ["GENERAL", "SPACE", "NATURAL", "MERCANTILE"],
 	"map_short_name": "Dwayne-class",
 	"map_path": "_maps/shuttles/shiptest/mining_ship_all.dmm",
 	"map_id": "mining_ship",
 	"roundstart": true,
 	"job_slots": {
-		"Captain": 1,
-		"Quartermaster": 1,
-		"Medical Doctor": 1,
-		"Station Engineer": 1,
-		"Shaft Miner": 1,
-		"Assistant": 3
+		"Captain": {
+			"outfit": "/datum/outfit/job/captain/western",
+			"officer": true,
+			"slots": 1
+		},
+		"Foreman": {
+			"outfit": "/datum/outfit/job/quartermaster/western",
+			"slots": 1
+			},
+		"Ship's Doctor": {
+			"outfit": "/datum/outfit/job/doctor",
+			"slots": 1
+			},
+		"Ship's Engineer": {
+			"outfit": "/datum/outfit/job/engineer/hazard",
+			"slots": 1
+		},
+		"Asteroid Miner": {
+			"outfit": "/datum/outfit/job/miner/hazard",
+			"slots": 2
+		},
+		"Deckhand": {
+			"outfit": "/datum/outfit/job/assistant",
+			"slots": 3
+		}
 	},
 	"cost": 500
 }
