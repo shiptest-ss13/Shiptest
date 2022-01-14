@@ -45,7 +45,7 @@ They also control the general "perspective" of the game - how sprites should gen
 
 The Head Mapper controls ships and all variants of shuttles, including their balance and cost. Final decision on whether or not a shuttle is added is at their discretion and cannot be vetoed by anyone other than the Head Coder.
 
-### Maintiner Code of Conduct
+### Maintainer Code of Conduct
 Maintainers are expected to maintain the codebase in its entirety. This means that maintainers are in charge of pull requests, issues, and the Git discussion board. Maintainers have say on what will and will not be merged. Maintainers should assign themselves to pull requests that they are claiming and reviewing and should respect when others assign themselves to a pull request and not interfere except in situations where they believe a pull request to be heavily detrimental to the codebase or its playerbase. **Maintainers are not server admins and should not use their rank on the server to perform admin related tasks except where asked to by a Senior Admin or higher.**
 
 ## Specifications
