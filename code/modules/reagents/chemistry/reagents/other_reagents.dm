@@ -648,7 +648,7 @@
 	race = /datum/species/squid
 	process_flags = ORGANIC | SYNTHETIC
 
-/datum/reagent/mutationtoxin/tesh //crying
+/datum/reagent/mutationtoxin/kepi //crying
 	name = "Kepori Mutation Toxin"
 	description = "A feathery toxin."
 	race = /datum/species/kepori
