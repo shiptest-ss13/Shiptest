@@ -85,17 +85,3 @@
 						riding_datum.force_dismount(M)
 			else
 				L.unbuckle_all_mobs()
-/* /datum/emote/thud
-	key = "thud"
-	key_third_person = "thuds"
-	hands_use_check = TRUE
-	mob_type_allowed_typecache = list(/mob/living, /mob/dead/observer)
-	mob_type_ignore_stat_typecache = list(/mob/dead/observer)
-
-/datum/emote/thud/run_emote(mob/user, params,  type_override, intentional)
-	. = ..()
-	if(.)
-		if(isobserver(user) && prob(90)) //admin only until further notice :sadge: 
-			user.playsound_local(get_turf(user), 'sound/misc/vinethud.ogg', 50, TRUE)
-			return
-		playsound(user, 'sound/misc/vinethud.ogg', 50, 1, -1) */
