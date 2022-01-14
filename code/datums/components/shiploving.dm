@@ -24,8 +24,8 @@
 		parent_ship = pick(SSovermap.simulated_ships)
 	check_in_bounds() // Just in case something is being created outside of station/centcom
 
-/datum/component/shiploving/InheritComponent(datum/component/shiploving/newc, inform_admins, allow_death)
-	if (original)
+/datum/component/shiploving/InheritComponent(datum/component/shiploving/newc, i_am_original, inform_admins, allow_death)
+	if (i_am_original)
 		if (newc)
 			inform_admins = newc.inform_admins
 			allow_death = newc.allow_death
@@ -46,7 +46,7 @@
 	var/atom/movable/parent = src.parent
 	playsound(parent, 'sound/machines/synth_no.ogg', 5, TRUE)
 	parent.forceMove(targetturf)
-	to_chat(get(parent, /mob), "<span class='danger'>You can't help but feel that you just lost something back there...</span>")=
+	to_chat(get(parent, /mob), "<span class='danger'>You can't help but feel that you just lost something back there...</span>")
 	return targetturf
 
 /datum/component/shiploving/proc/check_in_bounds()
