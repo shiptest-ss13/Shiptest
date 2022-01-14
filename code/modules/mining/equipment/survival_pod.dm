@@ -274,6 +274,8 @@
 /obj/structure/fans/Initialize(mapload)
 	. = ..()
 	air_update_turf(1)
+	if(type == /obj/structure/fans/tiny)
+		stack_trace("[type] used at [COORD(src)]. [type] is deprecated and should not be used")
 
 //Inivisible, indestructible fans
 /obj/structure/fans/tiny/invisible
