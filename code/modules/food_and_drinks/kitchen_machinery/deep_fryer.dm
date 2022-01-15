@@ -28,7 +28,6 @@
 	idle_power_usage = 5
 	layer = BELOW_OBJ_LAYER
 	var/obj/item/reagent_containers/food/snacks/deepfryholder/frying	//What's being fried RIGHT NOW?
-	var/obj/item/clothing/head/mob_holder/frying_mob					//Who's bring fried RIGHT NOW?
 	var/cook_time = 0
 	var/oil_use = 0.05 //How much cooking oil is used per tick
 	var/fry_speed = 1 //How quickly we fry food
@@ -71,8 +70,6 @@
 	if(frying)
 		. += "You can make out \a [frying] in the oil."
 	if(in_range(user, src) || isobserver(user))
-		if(frying_mob)
-			. += "<span class='warning'>You can see [frying_mob.held_mob] being fried inside!</span>"
 		. += "<span class='notice'>The status display reads: Frying at <b>[fry_speed*100]%</b> speed.<br>Using <b>[oil_use*10]</b> units of oil per second.</span>"
 
 /obj/machinery/deepfryer/attackby(obj/item/I, mob/user)
@@ -100,16 +97,9 @@
 	else
 		if(is_type_in_typecache(I, deepfry_blacklisted_items) || HAS_TRAIT(I, TRAIT_NODROP) || (I.item_flags & (ABSTRACT | DROPDEL)))
 			return ..()
-		else if(!(frying || frying_mob) && user.transferItemToLoc(I, src))
-			if(istype(I, /obj/item/clothing/head/mob_holder)) //Extreme violence against the short
-				user.visible_message("<span class='warning'>[user.name] dunks [I.name] into [src]!", "<span class='notice'>You put [I] into [src].</span>")
-				var/obj/item/clothing/head/mob_holder/M = I
-				M.forceMove(src)
-				frying_mob = M
-				reagents.expose(M.held_mob, TOUCH)
-			else
-				to_chat(user, "<span class='notice'>You put [I] into [src].</span>")
-				frying = new/obj/item/reagent_containers/food/snacks/deepfryholder(src, I)
+		else if(!frying && user.transferItemToLoc(I, src))
+			to_chat(user, "<span class='notice'>You put [I] into [src].</span>")
+			frying = new/obj/item/reagent_containers/food/snacks/deepfryholder(src, I)
 			icon_state = "fryer_on"
 			fry_loop.start()
 
@@ -119,24 +109,14 @@
 	if(!C)
 		return
 	reagents.chem_temp = C.fry_temperature
-	cook_time += fry_speed
 	if(frying)
 		reagents.trans_to(frying, oil_use, multiplier = fry_speed * 3) //Fried foods gain more of the reagent thanks to space magic
+		cook_time += fry_speed
 		if(cook_time >= 30 && !frying_fried)
 			frying_fried = TRUE //frying... frying... fried
 			playsound(src.loc, 'sound/machines/ding.ogg', 50, TRUE)
 			audible_message("<span class='notice'>[src] dings!</span>")
 		else if (cook_time >= 60 && !frying_burnt)
-			frying_burnt = TRUE
-			visible_message("<span class='warning'>[src] emits an acrid smell!</span>")
-	if(frying_mob)
-		frying_mob.held_mob.adjustFireLoss(fry_speed)
-		frying_mob.held_mob.adjust_bodytemperature(fry_speed * 10, 0, C.fry_temperature)
-		if(frying_mob.held_mob.stat == DEAD && !frying_fried)
-			frying_fried = TRUE //frying... frying... gone
-			playsound(src.loc, 'sound/machines/ding.ogg', 50, TRUE)
-			audible_message("<span class='notice'>[src] dings!</span>")
-		if(((frying_mob.held_mob.maxHealth - frying_mob.held_mob.fireloss) < HEALTH_THRESHOLD_DEAD*2) && !frying_burnt)
 			frying_burnt = TRUE
 			visible_message("<span class='warning'>[src] emits an acrid smell!</span>")
 
@@ -159,22 +139,6 @@
 			frying_burnt = FALSE
 			fry_loop.stop()
 			return
-	else if(frying_mob)
-		if(frying_mob.loc == src)
-			user.visible_message("<span class='notice'>[user] ejects [frying_mob] from [src].", "<span class='notice'>You eject [frying_mob] from [src].</span>")
-			icon_state = "fryer_off"
-			if(Adjacent(user) && !issilicon(user) && user.a_intent != INTENT_HELP)
-				user.put_in_hands(frying_mob)
-			else
-				frying_mob.forceMove(drop_location())
-				frying_mob.release()
-				reagents.expose(drop_location(), TOUCH)
-			frying_mob = null
-			cook_time = 0
-			frying_fried = FALSE
-			frying_burnt = FALSE
-			fry_loop.stop()
-			return
 	else if(user.pulling && user.a_intent == "grab" && iscarbon(user.pulling) && reagents.total_volume)
 		if(user.grab_state < GRAB_AGGRESSIVE)
 			to_chat(user, "<span class='warning'>You need a better grip to do that!</span>")
@@ -188,24 +152,3 @@
 		C.Paralyze(60)
 		user.changeNext_move(CLICK_CD_MELEE)
 	return ..()
-
-/obj/machinery/deepfryer/relay_container_resist_act(mob/living/user, obj/O)
-	to_chat(world, "C")
-	if(O != frying_mob)
-		to_chat(world, "C-")
-		return
-	//Used by unfortunate contained mobs
-	loc.visible_message("<span class='warning'>Oil spills out as something crawls out from [src]!</span>", null, null, null, user)
-	to_chat(user, "<span class='notice'>You start crawling out of [src]... (This will take about 5 seconds.)</span>")
-	if(!do_after(user, 50, FALSE))
-		return
-	user.visible_message("<span class='warning'>[user] spills out from [src] in a splash of grease!</span>", "You make it out of [src]!")
-	icon_state = "fryer_off"
-	frying_mob.forceMove(drop_location())
-	frying_mob.release()
-	reagents.expose(drop_location(), TOUCH)
-	frying_mob = null
-	cook_time = 0
-	frying_fried = FALSE
-	frying_burnt = FALSE
-	fry_loop.stop()

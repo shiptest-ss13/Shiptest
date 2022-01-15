@@ -80,15 +80,9 @@
 	qdel(src)
 
 /obj/item/clothing/head/mob_holder/relaymove(mob/living/user, direction)
-	container_resist_act()
+	release()
 
 /obj/item/clothing/head/mob_holder/container_resist_act()
-	if(ismovable(loc)) //If the mob is put into a real container that needs breaking out of
-		held_mob.changeNext_move(CLICK_CD_BREAKOUT)
-		held_mob.last_special = world.time + CLICK_CD_BREAKOUT
-		var/atom/movable/AM = loc
-		AM.relay_container_resist_act(held_mob, src)
-		return
 	release()
 
 /obj/item/clothing/head/mob_holder/drone/deposit(mob/living/L)
