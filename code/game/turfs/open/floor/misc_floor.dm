@@ -18,7 +18,7 @@
 	floor_tile = /obj/item/stack/tile/circuit
 	var/on = TRUE
 
-/turf/open/floor/circuit/Initialize()
+/turf/open/floor/circuit/Initialize(mapload, inherited_virtual_z)
 	SSmapping.nuke_tiles += src
 	update_icon()
 	. = ..()

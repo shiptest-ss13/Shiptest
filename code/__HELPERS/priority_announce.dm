@@ -37,7 +37,7 @@
 		if(isnewplayer(M) || !M.can_hear())
 			continue
 
-		if(zlevel && (M.get_virtual_z_level() != zlevel)) // If a z-level is specified and the mob's z does not equal it
+		if(zlevel && (M.virtual_z() != zlevel)) // If a z-level is specified and the mob's z does not equal it
 			continue
 
 		to_chat(M, announcement)
@@ -67,7 +67,7 @@
 		if(isnewplayer(M) || !M.can_hear())
 			continue
 
-		if(zlevel && (M.get_virtual_z_level() != zlevel)) // If a z-level is specified and the mob's z does not equal it
+		if(zlevel && (M.virtual_z() != zlevel)) // If a z-level is specified and the mob's z does not equal it
 			continue
 
 		to_chat(M, "<span class='minorannounce'><font color = red>[title]</font color><BR>[message]</span><BR>[from ? "<span class='alert'>-[from.name] ([from.job])</span>" : null]")

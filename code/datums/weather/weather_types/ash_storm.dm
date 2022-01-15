@@ -18,11 +18,8 @@
 
 	area_type = /area
 	protect_indoors = TRUE
-	target_trait = ZTRAIT_ASHSTORM
 
 	immunity_type = "ash"
-
-	probability = 90
 
 	barometer_predictable = TRUE
 
@@ -109,5 +106,3 @@
 	end_sound = null
 
 	aesthetic = TRUE
-
-	probability = 10

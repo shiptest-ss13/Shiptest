@@ -387,7 +387,9 @@
 				H.adjustOrganLoss(ORGAN_SLOT_BRAIN, 60, 80)
 			message_admins("[key_name_admin(holder)] made everybody brain damaged")
 		if("floorlava")
-			SSweather.run_weather(/datum/weather/floor_is_lava)
+			/// Should point to a central mapzone.weather_controller, one doesn't exist in shiptest
+			WARNING("Floor lava bus is not implemented.")
+			return
 		if("anime")
 			if(!is_funmin)
 				return

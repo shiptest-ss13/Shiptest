@@ -39,7 +39,7 @@
 	slowdown = 0.5
 	floor_variance = 30
 
-/turf/open/floor/plating/asteroid/basalt/wasteland/Initialize()
+/turf/open/floor/plating/asteroid/basalt/wasteland/Initialize(mapload, inherited_virtual_z)
 	.=..()
 	if(prob(floor_variance))
 		icon_state = "[environment_type][rand(0,6)]"
