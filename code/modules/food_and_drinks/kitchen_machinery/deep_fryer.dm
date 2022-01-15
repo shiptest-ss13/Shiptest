@@ -190,9 +190,7 @@
 	return ..()
 
 /obj/machinery/deepfryer/relay_container_resist_act(mob/living/user, obj/O)
-	to_chat(world, "C")
 	if(O != frying_mob)
-		to_chat(world, "C-")
 		return
 	//Used by unfortunate contained mobs
 	loc.visible_message("<span class='warning'>Oil spills out as something crawls out from [src]!</span>", null, null, null, user)

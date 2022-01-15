@@ -63,19 +63,21 @@
 	if(held_mob && isturf(loc))
 		release()
 
-/obj/item/clothing/head/mob_holder/proc/release()
+/obj/item/clothing/head/mob_holder/proc/release(announce=TRUE)
 	if(!held_mob)
 		qdel(src)
 		return
 	if(isliving(loc))
 		var/mob/living/L = loc
-		to_chat(L, "<span class='warning'>[held_mob] wriggles free!</span>")
+		if(announce)
+			to_chat(L, "<span class='warning'>[held_mob] wriggles free!</span>")
 		L.dropItemToGround(src)
 		return
 	held_mob.forceMove(get_turf(held_mob))
 	held_mob.reset_perspective()
 	held_mob.setDir(SOUTH)
-	held_mob.visible_message("<span class='warning'>[held_mob] uncurls!</span>")
+	if(announce)
+		held_mob.visible_message("<span class='warning'>[held_mob] uncurls!</span>")
 	held_mob = null
 	qdel(src)
 

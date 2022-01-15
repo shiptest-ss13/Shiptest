@@ -1333,6 +1333,10 @@
 			return//dont open the mobs inventory if you are picking them up
 	. = ..()
 
+/mob/living/proc/mob_to_item()
+	var/obj/item/clothing/head/mob_holder/holder = new(get_turf(src), src, held_state, head_icon, held_lh, held_rh, worn_slot_flags)
+	return holder
+
 /mob/living/proc/mob_pickup(mob/living/L)
 	var/obj/item/clothing/head/mob_holder/holder = new(get_turf(src), src, held_state, head_icon, held_lh, held_rh, worn_slot_flags)
 	L.visible_message("<span class='warning'>[L] scoops up [src]!</span>")
