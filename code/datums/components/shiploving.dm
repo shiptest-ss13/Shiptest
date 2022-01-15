@@ -16,10 +16,11 @@
 	src.inform_admins = inform_admins
 	src.allow_death = allow_death
 	src.parent_ship = parent_ship
-	for(var/obj/structure/overmap/ship/simulated/ship as anything in SSovermap.simulated_ships)
-		if(get_area(parent) in ship.shuttle.shuttle_areas)
-			parent_ship = ship
-			break
+	if(!parent_ship)
+		  for(var/obj/structure/overmap/ship/simulated/ship as anything in SSovermap.simulated_ships)
+			  if(get_area(parent) in ship.shuttle.shuttle_areas)
+				  parent_ship = ship
+				  break
 	if(!parent_ship)
 		message_admins("[parent] created with [type] outside a ship, assigning a ship at random!")
 		parent_ship = pick(SSovermap.simulated_ships)
