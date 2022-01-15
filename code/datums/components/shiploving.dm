@@ -26,7 +26,7 @@
 		parent_ship = pick(SSovermap.simulated_ships)
 	check_in_bounds() // Just in case something is being created outside of station/centcom
 
-/datum/component/shiploving/InheritComponent(datum/component/shiploving/newc, i_am_original, inform_admins, allow_death)
+/datum/component/shiploving/InheritComponent(datum/component/shiploving/newc, i_am_original, parent_ship, inform_admins, allow_death)
 	if (i_am_original)
 		if (newc)
 			inform_admins = newc.inform_admins
