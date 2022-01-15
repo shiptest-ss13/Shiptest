@@ -1317,7 +1317,7 @@
 /area/ship/external)
 "FH" = (
 /obj/structure/table/reinforced,
-/obj/item/storage/firstaid/medical,
+/obj/item/wallframe/intercom/wideband,
 /turf/open/floor/carpet/red,
 /area/ship/bridge)
 "FU" = (
@@ -1379,7 +1379,14 @@
 /area/ship/crew)
 "HE" = (
 /obj/structure/table/reinforced,
-/obj/item/storage/firstaid/regular,
+/obj/item/storage/firstaid/regular{
+	pixel_x = -4;
+	pixel_y = 1
+	},
+/obj/item/storage/firstaid/medical{
+	pixel_x = 7;
+	pixel_y = 4
+	},
 /turf/open/floor/carpet/red,
 /area/ship/bridge)
 "HM" = (
@@ -2068,6 +2075,9 @@
 "Zh" = (
 /obj/machinery/door/airlock/external,
 /obj/structure/catwalk/over,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plating,
 /area/ship/maintenance/fore)
 "Zj" = (
@@ -2081,6 +2091,9 @@
 	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
 	},
 /turf/open/floor/plating,
 /area/ship/crew)
