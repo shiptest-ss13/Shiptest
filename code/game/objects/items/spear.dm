@@ -269,7 +269,7 @@
 	handle_damage()
 
 /obj/item/spear/crystal/proc/handle_damage() // lets handle the damage we should take per hit
-	obj_integrity = obj_integrity - damage_to_take_on_hit
+	obj_integrity -= damage_to_take_on_hit
 	if(!(obj_integrity > 0))
 		visible_message("<span class='danger'>[src] shatters into a million pieces!</span>")
 		playsound(src,"shatter", 70)
