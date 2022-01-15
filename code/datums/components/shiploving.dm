@@ -15,6 +15,7 @@
 	RegisterSignal(parent, list(COMSIG_ITEM_MARK_RETRIEVAL), .proc/check_mark_retrieval)
 	src.inform_admins = inform_admins
 	src.allow_death = allow_death
+	src.parent_ship = parent_ship
 	for(var/obj/structure/overmap/ship/simulated/ship as anything in SSovermap.simulated_ships)
 		if(get_area(parent) in ship.shuttle.shuttle_areas)
 			parent_ship = ship
