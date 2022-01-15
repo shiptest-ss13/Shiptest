@@ -2499,11 +2499,12 @@
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "CD" = (
+/obj/structure/catwalk,
 /obj/docking_port/mobile{
 	dir = 8;
 	port_direction = 4
 	},
-/turf/open/floor/plating/airless,
+/turf/template_noop,
 /area/ship/external)
 "CG" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
@@ -5744,7 +5745,7 @@ mN
 mN
 mN
 mN
-CD
+mN
 mN
 mN
 mN
@@ -5781,7 +5782,7 @@ dN
 dN
 dN
 dN
-dN
+CD
 dN
 dN
 dN
