@@ -45,7 +45,7 @@ They also control the general "perspective" of the game - how sprites should gen
 
 The Head Mapper controls ships and all variants of shuttles, including their balance and cost. Final decision on whether or not a shuttle is added is at their discretion and cannot be vetoed by anyone other than the Head Coder.
 
-### Maintiner Code of Conduct
+### Maintainer Code of Conduct
 Maintainers are expected to maintain the codebase in its entirety. This means that maintainers are in charge of pull requests, issues, and the Git discussion board. Maintainers have say on what will and will not be merged. Maintainers should assign themselves to pull requests that they are claiming and reviewing and should respect when others assign themselves to a pull request and not interfere except in situations where they believe a pull request to be heavily detrimental to the codebase or its playerbase. **Maintainers are not server admins and should not use their rank on the server to perform admin related tasks except where asked to by a Senior Admin or higher.**
 
 ## Specifications
@@ -198,7 +198,7 @@ There are two key points here:
 
 Remember: although this tradeoff makes sense in many cases, it doesn't cover them all. Think carefully about your addition before deciding if you need to use it.
 
-### Prefer `Initialize()` over `New()`
+### Prefer `Initialize()` over `New()` when possible
 Our game controller is pretty good at handling long operations and lag, but it can't control what happens when the map is loaded, which calls `New` for all atoms on the map. If you're creating a new atom, use the `Initialize` proc to do what you would normally do in `New`. This cuts down on the number of proc calls needed when the world is loaded. See here for details on `Initialize`: https://github.com/tgstation/tgstation/blob/master/code/game/atoms.dm#L49
 While we normally encourage (and in some cases, even require) bringing out of date code up to date when you make unrelated changes near the out of date code, that is not the case for `New` -> `Initialize` conversions. These systems are generally more dependant on parent and children procs so unrelated random conversions of existing things can cause bugs that take months to figure out.
 
