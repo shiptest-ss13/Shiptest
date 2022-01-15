@@ -31,6 +31,7 @@
 		if (newc)
 			inform_admins = newc.inform_admins
 			allow_death = newc.allow_death
+			parent_ship = newc.parent_ship
 		else
 			inform_admins = inform_admins
 
