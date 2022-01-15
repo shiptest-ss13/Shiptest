@@ -835,8 +835,11 @@
 
 ///called when a mob resists while inside a container that is itself inside something.
 /atom/movable/proc/relay_container_resist_act(mob/living/user, obj/O)
+	//Generic case for mob_holders
+	if(istype(O, /obj/item/clothing/head/mob_holder))
+		var/obj/item/clothing/head/mob_holder/holder = O
+		holder.release()
 	return
-
 
 /atom/movable/proc/do_attack_animation(atom/A, visual_effect_icon, obj/item/used_item, no_effect)
 	if(!no_effect && (visual_effect_icon || used_item))
