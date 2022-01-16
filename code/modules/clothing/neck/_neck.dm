@@ -381,10 +381,9 @@
 	name = "crystal amulet"
 	desc = "A mysterious amulet which protects the user from hits, at the cost of itself."
 	icon_state = "crystal_talisman"
-	armor = list("melee" = 15, "bullet" = 15, "laser" = 15, "energy" = 15, "bomb" = 25, "bio" = -45, "rad" = -45, "fire" = -45, "acid" = -45)
 	cuttable = FALSE
-	var/shield_state = "shield-old"
-	var/shield_on = "shield-old"
+	var/shield_state = "shieldsparkles"
+	var/shield_on = "shieldsparkles"
 	var/damage_to_take_on_hit = 50 //every time the owner is hit, how much damage to give to the amulet?
 
 
@@ -392,7 +391,7 @@
 
 /obj/item/clothing/neck/crystal_amulet/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
 	if(obj_integrity > 0)
-		var/datum/effect_system/spark_spread/s = new
+		var/datum/effect_system/spark_spread/quantum/s = new
 		s.set_up(2, 1, src)
 		s.start()
 		owner.visible_message("<span class='danger'>[owner]'s shields deflect [attack_text] in a shower of sparks!</span>")

@@ -253,7 +253,7 @@
 
 /obj/item/spear/crystal/ComponentInitialize()
 	. = ..()
-	AddComponent(/datum/component/two_handed, force_unwielded=12, force_wielded=40, icon_wielded="crystal_spear1") //3 hit crit
+	AddComponent(/datum/component/two_handed, force_unwielded=12, force_wielded=50, icon_wielded="crystal_spear1") //3 hit crit
 	//AddComponent(/datum/component/shatterable, break_on_throw=TRUE, damage_taken_per_hit=25) //8 hits from shattering
 
 /obj/item/spear/crystal/update_icon_state()
