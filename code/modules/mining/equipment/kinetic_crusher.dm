@@ -354,6 +354,20 @@
 				H.ranged_cooldown += bonus_value
 			else
 				H.ranged_cooldown = bonus_value + world.time
+//forgotten watcher
+/obj/item/crusher_trophy/watcher_wing_forgotten
+	name = "forgotten watcher wing"
+	desc = "A wing with a terminal infection of the strange crystals."
+	icon_state = "watcher_wing"
+	denied_type = /obj/item/crusher_trophy/watcher_wing_forgotten
+	bonus_value = 5
+
+/obj/item/crusher_trophy/watcher_wing_forgotten/effect_desc()
+	return "waveform collapse to stun creatures for <b>[bonus_value*0.1]</b> second\s"
+
+/obj/item/crusher_trophy/watcher_wing_forgotten/on_mark_detonation(mob/living/target, mob/living/user)
+	if(ishostile(target))
+		Stun(bonus_value*0.1 SECONDS)
 
 //legion
 /obj/item/crusher_trophy/legion_skull

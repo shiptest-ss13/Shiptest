@@ -384,7 +384,7 @@
 	cuttable = FALSE
 	var/shield_state = "shieldsparkles"
 	var/shield_on = "shieldsparkles"
-	var/damage_to_take_on_hit = 50 //every time the owner is hit, how much damage to give to the amulet?
+	var/damage_to_take_on_hit = 40 //every time the owner is hit, how much damage to give to the amulet?
 
 
 //This is copied and pasted from the shield harsuit code, any issues here are also a issue there. Should I have done this? No, i shouldn't. Should this be a component? Yes, most likely. Do i want to touch DCS ever again? No.

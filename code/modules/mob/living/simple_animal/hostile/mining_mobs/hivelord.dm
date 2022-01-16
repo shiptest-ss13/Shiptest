@@ -625,7 +625,8 @@
 	icon_living = "disfigured_legion_head"
 	icon_aggro = "disfigured_legion_head"
 	icon_dead = "disfigured_legion_head"
-	speed = 2
+	speed = 5
+	move_to_delay = 5
 
 /mob/living/simple_animal/hostile/asteroid/hivelordbrood/legion/crystal/death(gibbed)
 	for(var/i in 0 to 5)
