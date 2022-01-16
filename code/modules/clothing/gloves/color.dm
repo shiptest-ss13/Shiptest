@@ -205,6 +205,12 @@
 	transfer_prints = FALSE
 	carrytrait = TRAIT_QUICKER_CARRY
 
+/obj/item/clothing/gloves/color/latex/nitrile/evil
+	name = "red nitrile gloves"
+	desc = "Thick sterile gloves that reach up to the elbows, in exactly the same color as fresh blood. Transfers combat medic knowledge into the user via nanochips."
+	icon_state = "nitrile_evil"
+	item_state = "nitrile_evil"
+
 /obj/item/clothing/gloves/color/latex/nitrile/infiltrator
 	name = "infiltrator gloves"
 	desc = "Specialized combat gloves for carrying people around. Transfers tactical kidnapping knowledge into the user via nanochips."
