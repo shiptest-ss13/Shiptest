@@ -20,12 +20,17 @@
 				. += mutable_appearance('icons/effects/blood.dmi', "maskblood")
 
 /obj/item/clothing/neck/tie
-	name = "recolorable tie"
-	desc = "A neosilk clip-on tie. Special material allows it to be reskinned by Alt-clicking it."
+	name = "tie"
+	desc = "A neosilk clip-on tie. Special material allows it to be reskinned by Alt-clicking it, but only once."
 	icon = 'icons/obj/clothing/neck.dmi'
 	unique_reskin = list("blue tie" = "bluetie",
 						"red tie" = "redtie",
 						"black tie" = "blacktie",
+						"orange tie" = "orangetie",
+						"light blue tie" = "lightbluetie",
+						"purple tie" = "purpletie",
+						"green tie" = "greentie",
+						"brown tie" = "browntie",
 						"rainbow tie" = "rainbow_tie",
 						"horrible tie" = "horribletie",
 						"transgender tie" = "transgender",
@@ -58,6 +63,26 @@
 /obj/item/clothing/neck/tie/black
 	name = "black tie"
 	icon_state = "blacktie"
+
+/obj/item/clothing/neck/tie/orange
+	name = "orange tie"
+	icon_state = "orangetie"
+
+/obj/item/clothing/neck/tie/light_blue
+	name = "light blue tie"
+	icon_state = "lightbluetie"
+
+/obj/item/clothing/neck/tie/purple
+	name = "purple tie"
+	icon_state = "purpletie"
+
+/obj/item/clothing/neck/tie/green
+	name = "green tie"
+	icon_state = "greentie"
+
+/obj/item/clothing/neck/tie/brown
+	name = "brown tie"
+	icon_state = "browntie"
 
 /obj/item/clothing/neck/tie/rainbow
 	name = "rainbow tie"
@@ -351,3 +376,49 @@
 /obj/item/clothing/neck/beads/Initialize()
 	. = ..()
 	color = color = pick("#ff0077","#d400ff","#2600ff","#00ccff","#00ff2a","#e5ff00","#ffae00","#ff0000", "#ffffff")
+
+/obj/item/clothing/neck/crystal_amulet
+	name = "crystal amulet"
+	desc = "A mysterious amulet which protects the user from hits, at the cost of itself."
+	icon_state = "crystal_talisman"
+	armor = list("melee" = 15, "bullet" = 15, "laser" = 15, "energy" = 15, "bomb" = 25, "bio" = -45, "rad" = -45, "fire" = -45, "acid" = -45)
+	cuttable = FALSE
+	var/shield_state = "shield-old"
+	var/shield_on = "shield-old"
+	var/damage_to_take_on_hit = 50 //every time the owner is hit, how much damage to give to the amulet?
+
+
+//This is copied and pasted from the shield harsuit code, any issues here are also a issue there. Should I have done this? No, i shouldn't. Should this be a component? Yes, most likely. Do i want to touch DCS ever again? No.
+
+/obj/item/clothing/neck/crystal_amulet/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
+	if(obj_integrity > 0)
+		var/datum/effect_system/spark_spread/s = new
+		s.set_up(2, 1, src)
+		s.start()
+		owner.visible_message("<span class='danger'>[owner]'s shields deflect [attack_text] in a shower of sparks!</span>")
+		obj_integrity -= damage_to_take_on_hit
+		playsound(src, 'sound/effects/hit_on_shattered_glass.ogg', 70, TRUE)
+		if(!(obj_integrity > 0))
+			visible_message("<span class='danger'>[src] shatters into a million pieces!</span>")
+			playsound(src,"shatter", 70)
+			new /obj/effect/decal/cleanable/glass/strange(get_turf(src))
+			qdel(src)
+		return 1
+	return 0
+
+/obj/item/clothing/neck/crystal_amulet/examine(mob/user)
+	. = ..()
+	var/healthpercent = (obj_integrity/max_integrity) * 100
+	switch(healthpercent)
+		if(50 to 99)
+			. += "It looks slightly damaged."
+		if(25 to 50)
+			. += "It appears heavily damaged."
+		if(0 to 25)
+			. += "<span class='warning'>It's falling apart!</span>"
+
+/obj/item/clothing/neck/crystal_amulet/worn_overlays(isinhands)
+	. = list()
+	if(!isinhands)
+		. += mutable_appearance('icons/effects/effects.dmi', shield_state, MOB_LAYER + 0.01)
+

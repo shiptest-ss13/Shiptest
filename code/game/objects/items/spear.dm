@@ -241,8 +241,7 @@
 /obj/item/spear/crystal
 	icon_state = "crystal_spear0"
 	name = "crystal spear"
-	desc = "While more 'sharp stick' than spear, this thing is extremely dangerous neverless. Crafted out of the mysterous crystals, it can hit for very high damage, although it will break with use.\
-	You can throw it for very high damage on a animal along with a stun, though this will shatter it instantly."
+	desc = "While more 'sharp stick' than spear, this thing is extremely dangerous neverless. Crafted out of the mysterous crystals, it can hit for very high damage, although it will break with repeated use."
 	icon = 'whitesands/icons/obj/items_and_weapons.dmi'
 	lefthand_file = 'whitesands/icons/mob/inhands/weapons/polearms_lefthand.dmi'
 	righthand_file = 'whitesands/icons/mob/inhands/weapons/polearms_righthand.dmi'
@@ -260,6 +259,18 @@
 /obj/item/spear/crystal/update_icon_state()
 	icon_state = "crystal_spear0"
 
+/obj/item/spear/crystal/examine(mob/user)
+	. = ..()
+	. += "You can throw it for very high damage on a animal along with a stun, though this will shatter it instantly."
+	var/healthpercent = (obj_integrity/max_integrity) * 100
+	switch(healthpercent)
+		if(50 to 99)
+			. += "It looks slightly damaged."
+		if(25 to 50)
+			. += "It appears heavily damaged."
+		if(0 to 25)
+			. += "<span class='warning'>It's falling apart!</span>"
+
 /obj/item/spear/crystal/attack(mob/living/M, mob/living/user)
 	. = ..()
 	handle_damage()
@@ -273,6 +284,7 @@
 	if(!(obj_integrity > 0))
 		visible_message("<span class='danger'>[src] shatters into a million pieces!</span>")
 		playsound(src,"shatter", 70)
+		new /obj/effect/decal/cleanable/glass/strange(get_turf(src))
 		qdel(src)
 
 /obj/item/spear/crystal/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum) //destroyes when trhwon
@@ -283,4 +295,5 @@
 	new /obj/effect/temp_visual/goliath_tentacle/crystal/visual_only(get_turf(src))
 	visible_message("<span class='danger'>[src] shatters into a million pieces!</span>")
 	playsound(src,"shatter", 70)
+	new /obj/effect/decal/cleanable/glass/strange(get_turf(src))
 	qdel(src)
