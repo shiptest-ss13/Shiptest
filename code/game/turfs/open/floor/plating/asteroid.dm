@@ -25,7 +25,7 @@
 	/// Whether the turf has been dug or not
 	var/dug
 
-/turf/open/floor/plating/asteroid/Initialize()
+/turf/open/floor/plating/asteroid/Initialize(mapload, inherited_virtual_z)
 	var/proper_name = name
 	. = ..()
 	name = proper_name
@@ -109,7 +109,7 @@
 /turf/open/floor/plating/asteroid/basalt/airless
 	initial_gas_mix = AIRLESS_ATMOS
 
-/turf/open/floor/plating/asteroid/basalt/Initialize()
+/turf/open/floor/plating/asteroid/basalt/Initialize(mapload, inherited_virtual_z)
 	. = ..()
 	set_basalt_light(src)
 

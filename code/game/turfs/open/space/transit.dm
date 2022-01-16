@@ -49,7 +49,7 @@
 	return SSshuttle.is_in_shuttle_bounds(src)
 
 
-/turf/open/space/transit/Initialize()
+/turf/open/space/transit/Initialize(mapload, inherited_virtual_z)
 	. = ..()
 	update_icon()
 	for(var/atom/movable/AM in src)

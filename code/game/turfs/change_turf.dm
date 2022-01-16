@@ -53,11 +53,11 @@ GLOBAL_LIST_INIT(blacklisted_automated_baseturfs, typecacheof(list(
 	return ChangeTurf(path, new_baseturf, flags)
 
 /turf/proc/get_z_base_turf()
-	. = SSmapping.level_trait(z, ZTRAIT_BASETURF) || /turf/open/space
+	. = virtual_level_trait(ZTRAIT_BASETURF) || /turf/open/space
 	if (!ispath(.))
 		. = text2path(.)
 		if (!ispath(.))
-			warning("Z-level [z] has invalid baseturf '[SSmapping.level_trait(z, ZTRAIT_BASETURF)]'")
+			warning("Z-level [z] has invalid baseturf '[virtual_level_trait(ZTRAIT_BASETURF)]'")
 			. = /turf/open/space
 
 // Creates a new turf
@@ -76,7 +76,7 @@ GLOBAL_LIST_INIT(blacklisted_automated_baseturfs, typecacheof(list(
 	if(!GLOB.use_preloader && path == type && !(flags & CHANGETURF_FORCEOP) && (baseturfs == new_baseturfs)) // Don't no-op if the map loader requires it to be reconstructed, or if this is a new set of baseturfs
 		return src
 	if(flags & CHANGETURF_SKIP)
-		return new path(src)
+		return new path(src, virtual_z)
 
 	var/old_dynamic_lighting = dynamic_lighting
 	var/old_lighting_object = lighting_object
@@ -93,6 +93,8 @@ GLOBAL_LIST_INIT(blacklisted_automated_baseturfs, typecacheof(list(
 
 	var/list/old_baseturfs = baseturfs
 
+	var/old_virtual_z = virtual_z
+
 	var/list/transferring_comps = list()
 	SEND_SIGNAL(src, COMSIG_TURF_CHANGE, path, new_baseturfs, flags, transferring_comps)
 	for(var/i in transferring_comps)
@@ -101,7 +103,7 @@ GLOBAL_LIST_INIT(blacklisted_automated_baseturfs, typecacheof(list(
 
 	changing_turf = TRUE
 	qdel(src)	//Just get the side effects and call Destroy
-	var/turf/W = new path(src)
+	var/turf/W = new path(src, virtual_z)
 
 	for(var/i in transferring_comps)
 		W.TakeComponent(i)
@@ -118,6 +120,8 @@ GLOBAL_LIST_INIT(blacklisted_automated_baseturfs, typecacheof(list(
 		W.AfterChange(flags)
 
 	W.blueprint_data = old_bp
+
+	W.virtual_z = old_virtual_z
 
 	lighting_corner_NE = old_lighting_corner_NE
 	lighting_corner_SE = old_lighting_corner_SE

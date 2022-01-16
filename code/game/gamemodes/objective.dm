@@ -965,7 +965,7 @@ GLOBAL_LIST_EMPTY(possible_items_special)
 	var/found = FALSE
 	while (!found)
 		var/area/dropoff_area = pick(GLOB.sortedAreas)
-		if(dropoff_area && !is_centcom_level(dropoff_area.z) && !dropoff_area.outdoors)
+		if(dropoff_area && !is_centcom_level(dropoff_area) && !dropoff_area.outdoors)
 			dropoff = dropoff_area
 			found = TRUE
 

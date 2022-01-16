@@ -20,7 +20,7 @@
 /atom/movable/screen/plane_master/openspace
 	name = "open space plane master"
 	plane = OPENSPACE_BACKDROP_PLANE
-	appearance_flags = PLANE_MASTER
+	appearance_flags = PLANE_MASTER|NO_CLIENT_COLOR
 	blend_mode = BLEND_MULTIPLY
 	alpha = 255
 
@@ -34,7 +34,7 @@
 /atom/movable/screen/plane_master/floor
 	name = "floor plane master"
 	plane = FLOOR_PLANE
-	appearance_flags = PLANE_MASTER
+	appearance_flags = PLANE_MASTER|NO_CLIENT_COLOR
 	blend_mode = BLEND_OVERLAY
 
 /atom/movable/screen/plane_master/floor/backdrop(mob/mymob)
@@ -46,7 +46,7 @@
 /atom/movable/screen/plane_master/game_world
 	name = "game world plane master"
 	plane = GAME_PLANE
-	appearance_flags = PLANE_MASTER //should use client color
+	appearance_flags = PLANE_MASTER|NO_CLIENT_COLOR //should use client color
 	blend_mode = BLEND_OVERLAY
 
 /atom/movable/screen/plane_master/game_world/backdrop(mob/mymob)
@@ -63,6 +63,7 @@
 	plane = LIGHTING_PLANE
 	blend_mode = BLEND_MULTIPLY
 	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
+	appearance_flags = PLANE_MASTER
 
 /atom/movable/screen/plane_master/lighting/Initialize()
 	. = ..()
@@ -141,7 +142,7 @@
 /atom/movable/screen/plane_master/runechat
 	name = "runechat plane master"
 	plane = RUNECHAT_PLANE
-	appearance_flags = PLANE_MASTER
+	appearance_flags = PLANE_MASTER|NO_CLIENT_COLOR
 	blend_mode = BLEND_OVERLAY
 
 /atom/movable/screen/plane_master/runechat/backdrop(mob/mymob)
