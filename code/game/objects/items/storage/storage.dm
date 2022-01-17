@@ -1,3 +1,6 @@
+#define DO_HOLDABLE_SELF	3 SECONDS
+#define DO_HOLDABLE_OTHER	5 SECONDS
+
 /obj/item/storage
 	name = "storage"
 	icon = 'icons/obj/storage.dmi'
@@ -61,26 +64,32 @@
 		dat += "[custom_data ? ",\n[custom_data]" : ""]"
 	return dat
 
-/obj/item/storage/MouseDrop_T(mob/living/M, mob/living/user)
+/obj/item/storage/MouseDrop_T(mob/living/dropping, mob/living/user)
 	. = ..()
-	if(HAS_TRAIT(M, TRAIT_HOLDABLE))
-		var/obj/item/clothing/head/mob_holder/holder = M.mob_to_item()
+	if(HAS_TRAIT(dropping, TRAIT_HOLDABLE))
+		var/obj/item/clothing/head/mob_holder/holder = dropping.mob_to_item()
 		var/datum/component/storage/ST = GetComponent(/datum/component/storage)
-		if(!ST.can_be_inserted(holder, FALSE, M) || !Adjacent(M))
+		if(!ST.can_be_inserted(holder, FALSE, dropping) || !Adjacent(dropping))
 			holder.release(FALSE)
 			return
-		M.visible_message("<span class='notice'>[M] starts to crawl into [src]...</span>", "<span class='notice'>You start crawling into [src]...</span>")
-		if(!do_after(M, 30, TRUE, src))
-			holder.release()
-			return
+		if(dropping == user)
+			dropping.visible_message("<span class='notice'>[dropping] starts to crawl into [src]...</span>", "<span class='notice'>You start crawling into [src]...</span>")
+			if(!do_after(dropping, DO_HOLDABLE_SELF, TRUE, src))
+				holder.release()
+				return
+		else
+			user.visible_message("<span class='notice'>[user] starts to put [dropping] into [src]...</span>", "<span class='notice'>You start stuffing [dropping] into [src]...</span>")
+			if(!do_after(user, DO_HOLDABLE_OTHER, TRUE, src))
+				holder.release()
+				return
 		holder.forceMove(src)
-		ST.signal_insertion_attempt(ST, holder, M)
-		to_chat(M, "<span class='notice'>You have tucked yourself away into [src].</span>")
+		ST.signal_insertion_attempt(ST, holder, dropping)
+		to_chat(dropping, "<span class='notice'>You have been tucked away into [src].</span>")
 
-/obj/item/storage/relay_container_resist_act(mob/living/user, obj/O)
+/obj/item/storage/relay_container_resist_act(mob/living/user, obj/container)
 	var/datum/component/storage/ST = GetComponent(/datum/component/storage)
-	if(istype(O, /obj/item/clothing/head/mob_holder))
-		var/obj/item/clothing/head/mob_holder/holder = O
+	if(istype(container, /obj/item/clothing/head/mob_holder))
+		var/obj/item/clothing/head/mob_holder/holder = container
 		ST.remove_from_storage(holder, get_turf(src))
 		src.visible_message("<span class='warning'>[user] suddenly pops out from [src]!</span>")
 		holder.release(FALSE)

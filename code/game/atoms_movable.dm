@@ -833,12 +833,19 @@
 				break
 	. = dense_object_backup
 
-///called when a mob resists while inside a container that is itself inside something.
-/atom/movable/proc/relay_container_resist_act(mob/living/user, obj/O)
+/**
+  * Called when a mob resists while inside a container that is itself inside something.
+  *
+  * Arguments:
+  * * resistor - Mob calling the container_resist_act
+  * * container - containing object the mob is nested within
+  */
+/atom/movable/proc/relay_container_resist_act(mob/living/resistor, obj/container)
 	//Generic case for mob_holders
-	if(istype(O, /obj/item/clothing/head/mob_holder))
-		var/obj/item/clothing/head/mob_holder/holder = O
+	if(istype(container, /obj/item/clothing/head/mob_holder))
+		var/obj/item/clothing/head/mob_holder/holder = container
 		holder.release()
+		return
 	return
 
 /atom/movable/proc/do_attack_animation(atom/A, visual_effect_icon, obj/item/used_item, no_effect)

@@ -27,15 +27,20 @@
 	use_power = IDLE_POWER_USE
 	idle_power_usage = 5
 	layer = BELOW_OBJ_LAYER
-	///What's being fried RIGHT NOW?
+	/// What's being fried RIGHT NOW?
 	var/obj/item/reagent_containers/food/snacks/deepfryholder/frying
-	///Who's bring fried RIGHT NOW?
+	/// Who's bring fried RIGHT NOW?
 	var/obj/item/clothing/head/mob_holder/frying_mob
 	var/cook_time = 0
-	var/oil_use = 0.05 //How much cooking oil is used per tick
-	var/fry_speed = 1 //How quickly we fry food
-	var/frying_fried //If the object has been fried; used for messages
-	var/frying_burnt //If the object has been burnt
+	/// How much cooking oil is used per tick
+	var/oil_use = 0.05
+	/// How quickly we fry food
+	var/fry_speed = 1
+	/// If the object has been fried; used for messages
+	var/frying_fried
+	/// If the object has been burnt
+	var/frying_burnt
+	/// Items that should not be fried under any circumstance
 	var/static/list/deepfry_blacklisted_items = typecacheof(list(
 		/obj/item/screwdriver,
 		/obj/item/crowbar,
@@ -49,6 +54,7 @@
 		/obj/item/storage,
 		/obj/item/smallDelivery,
 		/obj/item/his_grace))
+	/// Audio loop datum
 	var/datum/looping_sound/deep_fryer/fry_loop
 
 /obj/machinery/deepfryer/Initialize()
@@ -191,15 +197,15 @@
 		user.changeNext_move(CLICK_CD_MELEE)
 	return ..()
 
-/obj/machinery/deepfryer/relay_container_resist_act(mob/living/user, obj/O)
-	if(O != frying_mob)
+/obj/machinery/deepfryer/relay_container_resist_act(mob/living/resistor, obj/container)
+	if(container != frying_mob)
 		return
 	//Used by unfortunate contained mobs
-	loc.visible_message("<span class='warning'>Oil spills out as something crawls out from [src]!</span>", null, null, null, user)
-	to_chat(user, "<span class='notice'>You start crawling out of [src]... (This will take about 5 seconds.)</span>")
-	if(!do_after(user, 50, FALSE))
+	loc.visible_message("<span class='warning'>Oil spills out as something crawls out from [src]!</span>", null, null, null, resistor)
+	to_chat(resistor, "<span class='notice'>You start crawling out of [src]... (This will take about 5 seconds.)</span>")
+	if(!do_after(resistor, 50, FALSE))
 		return
-	user.visible_message("<span class='warning'>[user] spills out from [src] in a splash of grease!</span>", "You make it out of [src]!")
+	resistor.visible_message("<span class='warning'>[resistor] spills out from [src] in a splash of grease!</span>", "You make it out of [src]!")
 	icon_state = "fryer_off"
 	frying_mob.forceMove(drop_location())
 	frying_mob.release()

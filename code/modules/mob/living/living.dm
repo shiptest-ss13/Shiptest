@@ -1333,20 +1333,37 @@
 			return//dont open the mobs inventory if you are picking them up
 	. = ..()
 
+/**
+  * Creates a mob_holder object and puts the mob in it.
+  *
+  * Usually followed up by putting the new holder in something. Returns the new mob_holder object.
+  */
 /mob/living/proc/mob_to_item()
 	var/obj/item/clothing/head/mob_holder/holder = new(get_turf(src), src, held_state, head_icon, held_lh, held_rh, worn_slot_flags)
 	return holder
 
-/mob/living/proc/mob_pickup(mob/living/L)
-	var/obj/item/clothing/head/mob_holder/holder = new(get_turf(src), src, held_state, head_icon, held_lh, held_rh, worn_slot_flags)
-	L.visible_message("<span class='warning'>[L] scoops up [src]!</span>")
-	L.put_in_hands(holder)
+/**
+  * Creates a mob_holder for the mob and gives it to the picker-upper.
+  *
+  * Arguments:
+  * * user - mob currently picking up this mob
+  */
+/mob/living/proc/mob_pickup(mob/living/user)
+	var/obj/item/clothing/head/mob_holder/holder = mob_to_item()
+	user.visible_message("<span class='warning'>[user] scoops up [src]!</span>")
+	user.put_in_hands(holder)
 
 /mob/living/proc/set_name()
 	numba = rand(1, 1000)
 	name = "[name] ([numba])"
 	real_name = name
 
+/**
+  * Called when someone attempts to pick this mob up
+  *
+  * Arguments:
+  * * user - mob trying to pick up this mob
+  */
 /mob/living/proc/mob_try_pickup(mob/living/user)
 	if(!ishuman(user))
 		return

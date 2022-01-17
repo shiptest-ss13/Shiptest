@@ -1,5 +1,12 @@
-//Generic system for picking up mobs.
-//Currently works for head and hands.
+/**
+  * # Mob Holder
+  *
+  * Generic system for picking up mobs.
+  *
+  * Currently works for head and hands.
+  * Relays any container_resist_act() calls made by the mob.
+  * As a sanity check, any proc refering to held_mob should qdel(src) if the result is null
+  */
 /obj/item/clothing/head/mob_holder
 	name = "bugged mob"
 	desc = "Yell at coderbrush."
@@ -8,9 +15,10 @@
 	slot_flags = NONE
 	moth_edible = FALSE
 	w_class = 20 // so that only one can fit in a duffel bag
+	/// Mob being contained within the holder
 	var/mob/living/held_mob
 
-/obj/item/clothing/head/mob_holder/Initialize(mapload, mob/living/M, worn_state, head_icon, lh_icon, rh_icon, worn_slot_flags = NONE)
+/obj/item/clothing/head/mob_holder/Initialize(mapload, mob/living/held_target, worn_state, head_icon, lh_icon, rh_icon, worn_slot_flags = NONE)
 	. = ..()
 	if(head_icon)
 		mob_overlay_icon = head_icon
@@ -22,7 +30,7 @@
 		righthand_file = rh_icon
 	if(worn_slot_flags)
 		slot_flags = worn_slot_flags
-	deposit(M)
+	deposit(held_target)
 
 /obj/item/clothing/head/mob_holder/Destroy()
 	if(held_mob)
@@ -41,18 +49,31 @@
 		update_visuals(held_mob)
 
 /obj/item/clothing/head/mob_holder/examine(mob/user)
+	if(!held_mob)
+		qdel(src)
 	return held_mob.examine(user)
 
-/obj/item/clothing/head/mob_holder/proc/deposit(mob/living/L)
-	if(!istype(L))
+/**
+  * Sets the given mob to the container.
+  *
+  * Called on Initialize(). Sets the container values to match the mobs.
+  * * held_target - Mob to be held
+  */
+/obj/item/clothing/head/mob_holder/proc/deposit(mob/living/held_target)
+	if(!istype(held_target))
 		return FALSE
-	L.setDir(SOUTH)
-	held_mob = L
-	update_visuals(L)
-	L.forceMove(src)
-	name = L.name
+	held_target.setDir(SOUTH)
+	held_mob = held_target
+	update_visuals(held_target)
+	held_target.forceMove(src)
+	name = held_target.name
 	return TRUE
 
+/**
+  * Updates the holder visuals to match the held mob.
+  *
+  * Deletes the holder if no mob is being held.
+  */
 /obj/item/clothing/head/mob_holder/proc/update_visuals()
 	if(!held_mob)
 		qdel(src)
@@ -60,9 +81,18 @@
 
 /obj/item/clothing/head/mob_holder/dropped()
 	..()
-	if(held_mob && isturf(loc))
+	if(!held_mob)
+		qdel(src)
+	else if(isturf(loc))
 		release()
 
+/**
+  * Safely ejects the held mob and deletes this instance
+  *
+  * Also called by Destroy() so the class "should" be safe to qdel without getting the mob stuck.
+  * Arguments:
+  * * announce - enables messages to chat when TRUE
+  */
 /obj/item/clothing/head/mob_holder/proc/release(announce=TRUE)
 	if(!held_mob)
 		qdel(src)
