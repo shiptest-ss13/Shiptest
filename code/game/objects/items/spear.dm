@@ -247,14 +247,13 @@
 	righthand_file = 'whitesands/icons/mob/inhands/weapons/polearms_righthand.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/back.dmi'
 	force = 12
-	throwforce = 50 //should be handled by component
+	throwforce = 50
 	armour_penetration = 20
 	var/damage_to_take_on_hit = 25 //every time we hit something, deal how much damage?
 
 /obj/item/spear/crystal/ComponentInitialize()
 	. = ..()
-	AddComponent(/datum/component/two_handed, force_unwielded=12, force_wielded=50, icon_wielded="crystal_spear1") //3 hit crit
-	//AddComponent(/datum/component/shatterable, break_on_throw=TRUE, damage_taken_per_hit=25) //8 hits from shattering
+	AddComponent(/datum/component/two_handed, force_unwielded=12, force_wielded=50, icon_wielded="crystal_spear1") //2 hit crit
 
 /obj/item/spear/crystal/update_icon_state()
 	icon_state = "crystal_spear0"

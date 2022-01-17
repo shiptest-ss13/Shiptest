@@ -395,7 +395,6 @@
 	playsound(loc, 'sound/effects/magic.ogg', 100, TRUE)
 	addtimer(CALLBACK(src, .proc/open_fire_2), 2 SECONDS)
 
-
 /mob/living/simple_animal/hostile/asteroid/goliath/beast/ancient/crystal/proc/open_fire_2()
 	if(prob(20) && !(spiral_attack_inprogress))
 		visible_message("<span class='warning'>[src] sprays crystalline shards in a circle!</span>")
