@@ -66,25 +66,32 @@
 
 /obj/item/storage/MouseDrop_T(mob/living/dropping, mob/living/user)
 	. = ..()
+	var/datum/component/storage/ST = GetComponent(/datum/component/storage)
+
 	if(HAS_TRAIT(dropping, TRAIT_HOLDABLE))
-		var/obj/item/clothing/head/mob_holder/holder = dropping.mob_to_item()
-		var/datum/component/storage/ST = GetComponent(/datum/component/storage)
-		if(!ST.can_be_inserted(holder, FALSE, dropping) || !Adjacent(dropping))
-			holder.release(FALSE)
+		//Doing as much checks as possible before calling mob_to_item()
+		if(!Adjacent(user) || !Adjacent(dropping))
 			return
 		if(dropping == user)
+			//Self-Bagging procedure
 			dropping.visible_message("<span class='notice'>[dropping] starts to crawl into [src]...</span>", "<span class='notice'>You start crawling into [src]...</span>")
 			if(!do_after(dropping, DO_HOLDABLE_SELF, TRUE, src))
-				holder.release()
 				return
 		else
-			user.visible_message("<span class='notice'>[user] starts to put [dropping] into [src]...</span>", "<span class='notice'>You start stuffing [dropping] into [src]...</span>")
-			if(!do_after(user, DO_HOLDABLE_OTHER, TRUE, src))
-				holder.release()
+			//Third-party bagging procedure
+			if(user.pulling != dropping)
 				return
+			user.visible_message("<span class='notice'>[user] starts to put [dropping] into [src]...</span>", "<span class='notice'>You start stuffing [dropping] into [src]...</span>")
+			if(!do_after(user, DO_HOLDABLE_OTHER, TRUE, src) || !Adjacent(dropping))
+				return
+		var/obj/item/clothing/head/mob_holder/holder = dropping.mob_to_item() //At this point a mob is being held in a container item.
+		if(!ST.can_be_inserted(holder, FALSE, dropping))
+			holder.release(FALSE)
+			return
 		holder.forceMove(src)
 		ST.signal_insertion_attempt(ST, holder, dropping)
 		to_chat(dropping, "<span class='notice'>You have been tucked away into [src].</span>")
+		return
 
 /obj/item/storage/relay_container_resist_act(mob/living/user, obj/container)
 	var/datum/component/storage/ST = GetComponent(/datum/component/storage)
