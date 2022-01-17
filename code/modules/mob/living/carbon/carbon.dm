@@ -509,8 +509,7 @@
 	var/total_burn	= 0
 	var/total_brute	= 0
 	var/total_stamina = 0
-	for(var/X in bodyparts)	//hardcoded to streamline things a bit
-		var/obj/item/bodypart/BP = X
+	for(var/obj/item/bodypart/BP as() in bodyparts)
 		total_brute	+= (BP.brute_dam * BP.body_damage_coeff)
 		total_burn	+= (BP.burn_dam * BP.body_damage_coeff)
 		total_stamina += (BP.stamina_dam * BP.stam_damage_coeff)
@@ -1070,9 +1069,9 @@
 			new result(src, TRUE)
 
 /mob/living/carbon/has_mouth()
-	for(var/obj/item/bodypart/head/head in bodyparts)
-		if(head.mouth)
-			return TRUE
+	var/obj/item/bodypart/head/head = get_bodypart(BODY_ZONE_HEAD)
+	if(head && head.mouth)
+		return TRUE
 
 /mob/living/carbon/can_resist()
 	return bodyparts.len > 2 && ..()

@@ -97,7 +97,7 @@
 /datum/species/human/krokodil_addict
 	name = "\improper Human"
 	id = SPECIES_GOOFZOMBIE
-	examine_limb_id = "human"
+	examine_limb_id = SPECIES_HUMAN
 	sexes = 0
 	meat = /obj/item/reagent_containers/food/snacks/meat/slab/human/mutant/zombie
 	mutanttongue = /obj/item/organ/tongue/zombie

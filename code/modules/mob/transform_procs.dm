@@ -328,7 +328,7 @@
 				changeling.purchasedpowers -= HF
 				changeling.regain_powers()
 
-	if(O.dna?.species && !istype(O.dna.species, /datum/species/monkey))
+	if(O.dna.species && !istype(O.dna.species, /datum/species/monkey))
 		O.set_species(O.dna.species)
 	else
 		O.set_species(/datum/species/human)

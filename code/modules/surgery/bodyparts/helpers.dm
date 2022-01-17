@@ -4,8 +4,7 @@
 /mob/living/carbon/get_bodypart(zone)
 	if(!zone)
 		zone = BODY_ZONE_CHEST
-	for(var/X in bodyparts)
-		var/obj/item/bodypart/L = X
+	for(var/obj/item/bodypart/L as() in bodyparts)
 		if(L.body_zone == zone)
 			return L
 
@@ -131,14 +130,12 @@
 
 ///Remove all embedded objects from all limbs on the carbon mob
 /mob/living/carbon/proc/remove_all_embedded_objects()
-	for(var/X in bodyparts)
-		var/obj/item/bodypart/L = X
+	for(var/obj/item/bodypart/L as() in bodyparts)
 		for(var/obj/item/I in L.embedded_objects)
 			remove_embedded_object(I)
 
 /mob/living/carbon/proc/has_embedded_objects(include_harmless=FALSE)
-	for(var/X in bodyparts)
-		var/obj/item/bodypart/L = X
+	for(var/obj/item/bodypart/L as() in bodyparts)
 		for(var/obj/item/I in L.embedded_objects)
 			if(!include_harmless && I.isEmbedHarmless())
 				continue

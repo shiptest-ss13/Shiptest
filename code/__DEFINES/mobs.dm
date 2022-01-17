@@ -72,7 +72,7 @@
 #define DEVIL_BODYPART "devil"
 
 //Bodypart change blocking flags
-#define CHANGE_SPECIES (1<<0)
+#define BP_BLOCK_CHANGE_SPECIES	(1<<0)
 
 //Defines for Species IDs
 #define SPECIES_ABDUCTOR "abductor"

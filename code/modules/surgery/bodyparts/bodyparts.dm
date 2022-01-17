@@ -15,7 +15,7 @@
 	var/needs_processing = FALSE
 	///If you'd like to know if a bodypart is organic, please use is_organic_limb()
 	var/bodytype = BODYTYPE_HUMANOID | BODYTYPE_ORGANIC //List of bodytypes flags, important for fitting clothing.
-	var/change_exempt_flags //Defines when a bodypart should not be changed. Example: CHANGE_SPECIES prevents the limb from being overwritten on species gain
+	var/change_exempt_flags //Defines when a bodypart should not be changed. Example: BP_BLOCK_CHANGE_SPECIES prevents the limb from being overwritten on species gain
 
 	var/is_husked = FALSE //Duh
 	var/limb_id = SPECIES_HUMAN //This is effectively the icon_state for limbs.
@@ -43,7 +43,7 @@
 	///Controls whether bodypart_disabled makes sense or not for this limb.
 	var/can_be_disabled = FALSE
 	var/body_damage_coeff = 1 //Multiplier of the limb's damage that gets applied to the mob
-	var/stam_damage_coeff = 0.75
+	var/stam_damage_coeff = 0.75  //Why is this the default??? - Kapu
 	var/brutestate = 0
 	var/burnstate = 0
 	var/brute_dam = 0
@@ -60,7 +60,7 @@
 	//Coloring and proper item icon update
 	var/skin_tone = ""
 	var/should_draw_gender = FALSE
-	var/should_draw_greyscale = FALSE //Automatically determined by species information later.
+	var/should_draw_greyscale = TRUE //Limbs need this information as a back-up incase they are generated outside of a carbon (limbgrower)
 	var/species_color = ""
 	var/mutation_color = ""
 	var/no_update = 0
@@ -461,9 +461,9 @@
 //Note:This proc only exists because I can't be arsed to remove it yet. Theres no real reason this should ever be used.
 //Don't look at me, I'm just half-assedly porting everything I see.
 /obj/item/bodypart/proc/change_bodypart_status(new_limb_status, heal_limb, change_icon_to_default)
-	if(!(bodytype & new_limb_status) && (new_limb_status == BODYTYPE_ORGANIC))
-		bodytype = bodytype & ~BODYTYPE_ROBOTIC
-		bodytype = bodytype | BODYTYPE_ORGANIC
+	if(!(bodytype & new_limb_status))
+		bodytype &= ~(BODYTYPE_ROBOTIC & BODYTYPE_ORGANIC)
+		bodytype |= new_limb_status
 	else
 		bodytype = bodytype & ~BODYTYPE_ORGANIC
 		bodytype = bodytype | BODYTYPE_ROBOTIC
@@ -511,7 +511,7 @@
 	if(!dropping_limb && C.dna?.check_mutation(HULK)) //Please remove hulk from the game. I beg you.
 		mutation_color = "00aa00"
 	else
-		mutation_color = ""
+		mutation_color = null
 
 	if(mutation_color) //I hate mutations
 		draw_color = mutation_color
@@ -531,7 +531,7 @@
 		should_draw_greyscale = FALSE
 
 		var/datum/species/S = H.dna.species
-		species_flags_list = H.dna.species.species_traits //Kapu: Literally only exists for a single use of NOBLOOD, but, no reason to remove it i guess...?
+		species_flags_list = H.dna.species.species_traits //Literally only exists for a single use of NOBLOOD, but, no reason to remove it i guess...?
 
 		if(S.use_skintones)
 			skin_tone = H.skin_tone
@@ -550,7 +550,7 @@
 				species_color = H.dna.features["mcolor"]
 			should_draw_greyscale = TRUE
 		else
-			species_color = ""
+			species_color = null
 
 		UnregisterSignal(owner, COMSIG_MOVABLE_MOVED)
 		if(NO_BONES in S.species_traits)

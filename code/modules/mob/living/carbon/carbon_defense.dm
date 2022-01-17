@@ -363,8 +363,7 @@
 		return
 
 	var/embeds = FALSE
-	for(var/X in bodyparts)
-		var/obj/item/bodypart/LB = X
+	for(var/obj/item/bodypart/LB as() in bodyparts)
 		for(var/obj/item/I in LB.embedded_objects)
 			if(!embeds)
 				embeds = TRUE

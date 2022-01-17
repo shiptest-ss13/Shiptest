@@ -523,7 +523,7 @@
 	var/datum/action/innate/use_extract/major/extract_major
 	var/extract_cooldown = 0
 
-	examine_limb_id = "jelly"
+	examine_limb_id = SPECIES_JELLYPERSON
 
 /datum/species/jelly/luminescent/on_species_loss(mob/living/carbon/C)
 	..()
@@ -693,7 +693,7 @@
 	var/mob/living/carbon/human/slimelink_owner
 	var/current_link_id = 0
 
-	examine_limb_id = "jelly"
+	examine_limb_id = SPECIES_JELLYPERSON
 
 /datum/species/jelly/stargazer/on_species_loss(mob/living/carbon/C)
 	..()

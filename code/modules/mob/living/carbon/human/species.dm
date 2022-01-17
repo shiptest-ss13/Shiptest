@@ -357,7 +357,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		new_species.species_l_leg = /obj/item/bodypart/l_leg/digitigrade
 
 	for(var/obj/item/bodypart/old_part as anything in C.bodyparts)
-		if(old_part.change_exempt_flags & CHANGE_SPECIES)
+		if(old_part.change_exempt_flags & BP_BLOCK_CHANGE_SPECIES)
 			continue
 
 		switch(old_part.body_zone)
