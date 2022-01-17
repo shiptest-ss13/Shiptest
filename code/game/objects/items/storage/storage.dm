@@ -1,5 +1,5 @@
-#define DO_HOLDABLE_SELF	3 SECONDS
-#define DO_HOLDABLE_OTHER	5 SECONDS
+#define DO_HOLDABLE_SELF 3 SECONDS
+#define DO_HOLDABLE_OTHER 5 SECONDS
 
 /obj/item/storage
 	name = "storage"
