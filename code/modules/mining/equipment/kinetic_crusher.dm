@@ -496,7 +496,7 @@
 /obj/projectile/crystalline_crusher/can_hit_target(atom/target, list/passthrough, direct_target, ignore_loc)
 	if(!(istype(target,/mob/living/simple_animal/hostile/asteroid)))
 		if(isturf(target))
-			break
+			return ..()
 		return FALSE
 	return ..()
 
