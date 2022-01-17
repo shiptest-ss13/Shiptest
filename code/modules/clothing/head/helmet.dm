@@ -440,3 +440,9 @@
 	for(var/X in actions)
 		var/datum/action/A = X
 		A.UpdateButtonIcon()
+
+/obj/item/clothing/head/helmet/swat/talison
+	name = "talison SWAT helmet"
+	desc = "A robust and spaceworthy helmet with an opaque burgundy visor, there is an insignia on the earpad with the letters 'T.C' on it."
+	icon_state = "talison_swat"
+	item_state = "talison_swat"

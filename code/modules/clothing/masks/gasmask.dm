@@ -268,4 +268,4 @@
 	desc = "A fancy balaclava, while it doesn't muffle your voice it has a miniature rebreather for internals. Comfy to boot!"
 	icon_state = "talison_balaclava"
 	strip_delay = 60
-	flags_inv = HIDEFACIALHAIR|HIDEFACE|HIDEEYES|HIDEEARS|HIDEHAIR
+	flags_inv = HIDEFACIALHAIR|HIDEFACE|HIDEEARS|HIDEHAIR
