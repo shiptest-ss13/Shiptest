@@ -699,9 +699,9 @@
 	new /obj/item/melee/sabre(src)
 	update_icon()
 
-/obj/item/storage/belt/security/webbing/talison
+/obj/item/storage/belt/security/webbing/inteq
 	name = "talison corp webbing"
-	desc = "A set of tactical webbing for agents of the Talison Corporation, can hold security gear."
-	icon_state = "talison_webbing"
-	item_state = "talison_webbing"
+	desc = "A set of tactical webbing for agents of the Inteq Corporation, can hold security gear."
+	icon_state = "inteq_webbing"
+	item_state = "inteq_webbing"
 	content_overlays = FALSE
