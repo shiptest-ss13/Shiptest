@@ -89,3 +89,24 @@
 	can_adjust = FALSE
 	armor = list("melee" = 5, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	resistance_flags = NONE
+
+/obj/item/clothing/under/syndicate/talison
+	name = "talison turtleneck"
+	desc = "A burgundy red turtleneck with black digital camo pants, it has a small 'T.C' embroidered onto the shoulder."
+	icon_state = "talison"
+	item_state = "bl_suit"
+	has_sensor = HAS_SENSORS
+	armor = list("melee" = 10, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 40)
+	alt_covers_chest = TRUE
+	icon = 'icons/obj/clothing/under/syndicate.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/under/syndicate.dmi'
+
+/obj/item/clothing/under/syndicate/skirt
+	name = "talison skirtleneck"
+	desc = "A burgundy red turtleneck with a free flowing black skirt, it has a small 'T.C' embroidered onto the shoulder."
+	icon_state = "talison_skirt"
+	item_state = "bl_suit"
+	has_sensor = HAS_SENSORS
+	armor = list("melee" = 10, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 40)
+	alt_covers_chest = TRUE
+	fitted = FEMALE_UNIFORM_TOP
