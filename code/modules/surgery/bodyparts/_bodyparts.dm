@@ -27,7 +27,7 @@
 	///If disabled, limb is as good as missing.
 	var/bodypart_disabled = FALSE
 	///Multiplied by max_damage it returns the threshold which defines a limb being disabled or not. From 0 to 1. 0 means no disable thru damage
-	var/disable_threshold = 0
+	var/disable_threshold = 1
 	///Controls whether bodypart_disabled makes sense or not for this limb.
 	var/can_be_disabled = FALSE
 	var/body_damage_coeff = 1 //Multiplier of the limb's damage that gets applied to the mob
