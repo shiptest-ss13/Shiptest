@@ -276,7 +276,7 @@
 
 /obj/structure/statue/sandstone/ancient
 	name = "statue of a ancient"
-	desc = "A ancient statue depecting a unkown alien race. It's strange physique and similiarities to other alien species make it oddly beautiful."
+	desc = "An ancient statue depicting an unkown alien race. Its strange physique and similiarities to other alien species makes it oddly beautiful."
 	icon_state = "ancient"
 	impressiveness = 50
 
