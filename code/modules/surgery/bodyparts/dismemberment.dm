@@ -281,7 +281,7 @@
 
 /obj/item/bodypart/proc/attach_limb(mob/living/carbon/C, special, is_creating = FALSE)
 	var/obj/item/bodypart/chest/mob_chest = C.get_bodypart(BODY_ZONE_CHEST)
-	if((body_zone != BODY_ZONE_CHEST) && !(mob_chest.acceptable_bodytype & bodytype))
+	if(mob_chest && !(mob_chest.acceptable_bodytype & bodytype))
 		return FALSE
 	moveToNullspace()
 	set_owner(C)
@@ -318,7 +318,7 @@
 	C.updatehealth()
 	C.update_body()
 	C.update_hair()
-
+	return TRUE
 
 /obj/item/bodypart/head/attach_limb(mob/living/carbon/C, special = FALSE, abort = FALSE)
 	// These are stored before calling super. This is so that if the head is from a different body, it persists its appearance.
