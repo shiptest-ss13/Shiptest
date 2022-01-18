@@ -19,7 +19,7 @@
 	ammo_type = /obj/item/ammo_casing/c38
 	max_ammo = 6
 	multiple_sprites = AMMO_BOX_PER_BULLET
-	custom_materials = list(/datum/material/iron = 20000)
+	custom_materials = list(/datum/material/iron = 15000)
 
 /obj/item/ammo_box/c38/trac
 	name = "speed loader (.38 TRAC)"

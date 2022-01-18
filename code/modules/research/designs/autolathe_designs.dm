@@ -776,7 +776,7 @@
 	name = "Ammo Box(.38)"
 	id = "c38"
 	build_type = AUTOLATHE
-	materials = list(/datum/material/iron = 20000)
+	materials = list(/datum/material/iron = 15000)
 	build_path = /obj/item/ammo_box/c38_box
 	category = list("initial", "Security")
 
