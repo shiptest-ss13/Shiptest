@@ -278,22 +278,30 @@
 
 /datum/design/commanderammo
 	name = "Commander magazine (9mm)"
-	desc = "A single stack M1911 reproduction magazine, modified to chamber 9mm and fit into Security's Commander sidearms."
+	desc = "A single stack M1911 reproduction magazine, modified to chamber 9mm and fit into Nanotrasen's Commander sidearms."
 	id = "commanderammo"
 	build_type = PROTOLATHE
-	materials = list(/datum/material/iron = 4000)
+	materials = list(/datum/material/iron = 15000)
 	build_path = /obj/item/ammo_box/magazine/co9mm
 	category = list("Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
-/datum/design/commanderammo //WS edit - free lethals
-	name = "Commander magazine (9mm)"
-	desc = "A single stack M1911 reproduction magazine, modified to chamber 9mm and fit into Security's Commander sidearms."
-	id = "commanderammo"
+/datum/design/stechkinammo
+	name = "Stechkin magazine (10mm)"
+	desc = "A single stack Stechkin magazine, designed to chamber 10mm and fit into the Syndicate's Stechkin sidearms."
+	id = "stechkinammo"
 	build_type = PROTOLATHE
-	materials = list(/datum/material/iron = 4000)
-	build_path = /obj/item/ammo_box/magazine/co9mm
+	materials = list(/datum/material/iron = 15000)
+	build_path = /obj/item/ammo_box/magazine/m10mm
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
+
+/datum/design/m1911ammo
+	name = "M1911 magazine (.45)"
+	desc = "A single stack M1911 magazine, faithfully designed to chamber .45 and fit into the popular M1911 sidearms."
+	id = "m1911ammo"
+	build_type = PROTOLATHE
+	materials = list(/datum/material/iron = 15000)
+	build_path = /obj/item/ammo_box/magazine/m45
 
 // WS edit - not so free rubbershot
 
@@ -304,6 +312,116 @@
 	build_type = PROTOLATHE
 	materials = list(/datum/material/iron = 15000)
 	build_path = /obj/item/ammo_box/c9mm/rubbershot
+	category = list("Ammo")
+	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
+
+/datum/design/rubbershot10mm
+	name = "Rubbershot 10mm Ammo Box"
+	desc = "A box full of less-than-lethal 10mm ammunition."
+	id = "rubbershot10mm"
+	build_type = PROTOLATHE
+	materials = list(/datum/material/iron = 15000)
+	build_path = /obj/item/ammo_box/c10mm/rubbershot
+	category = list("Ammo")
+	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
+
+/datum/design/rubbershot45
+	name = "Rubbershot .45 Ammo Box"
+	desc = "A box full of less-than-lethal .45 ammunition."
+	id = "rubbershot45"
+	build_type = PROTOLATHE
+	materials = list(/datum/material/iron = 15000)
+	build_path = /obj/item/ammo_box/c45/rubbershot
+	category = list("Ammo")
+	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
+
+/datum/design/ap9mm
+	name = "AP 9mm Ammo Box"
+	desc = "A box full of armor piercing 9mm ammunition."
+	id = "ap9mm"
+	build_type = PROTOLATHE
+	materials = list(/datum/material/iron = 15000, /datum/material/uranium = 1000)
+	build_path = /obj/item/ammo_box/c9mm/ap
+	category = list("Ammo")
+	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
+
+/datum/design/ap10mm
+	name = "AP 10mm Ammo Box"
+	desc = "A box full of armor piercing 10mm ammunition."
+	id = "ap10mm"
+	build_type = PROTOLATHE
+	materials = list(/datum/material/iron = 15000, /datum/material/uranium = 1000)
+	build_path = /obj/item/ammo_box/c10mm/ap
+	category = list("Ammo")
+	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
+
+/datum/design/ap45
+	name = "AP .45 Ammo Box"
+	desc = "A box full of armor piercing .45 ammunition."
+	id = "ap45"
+	build_type = PROTOLATHE
+	materials = list(/datum/material/iron = 15000, /datum/material/uranium = 1000)
+	build_path = /obj/item/ammo_box/c45/ap
+	category = list("Ammo")
+	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
+
+/datum/design/hp9mm
+	name = "HP 9mm Ammo Box"
+	desc = "A box full of hollow point 9mm ammunition."
+	id = "hp9mm"
+	build_type = PROTOLATHE
+	materials = list(/datum/material/iron = 15000, /datum/material/silver = 1000)
+	build_path = /obj/item/ammo_box/c9mm/hp
+	category = list("Ammo")
+	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
+
+/datum/design/hp10mm
+	name = "HP 10mm Ammo Box"
+	desc = "A box full of hollow point 10mm ammunition."
+	id = "hp10mm"
+	build_type = PROTOLATHE
+	materials = list(/datum/material/iron = 15000, /datum/material/silver = 1000)
+	build_path = /obj/item/ammo_box/c10mm/hp
+	category = list("Ammo")
+	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
+
+/datum/design/hp45
+	name = "HP .45 Ammo Box"
+	desc = "A box full of hollow point .45 ammunition."
+	id = "hp45"
+	build_type = PROTOLATHE
+	materials = list(/datum/material/iron = 15000, /datum/material/silver = 1000)
+	build_path = /obj/item/ammo_box/c45/hp
+	category = list("Ammo")
+	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
+
+/datum/design/inc9mm
+	name = "Incendiary 9mm Ammo Box"
+	desc = "A box full of incendiary 9mm ammunition."
+	id = "inc9mm"
+	build_type = PROTOLATHE
+	materials = list(/datum/material/iron = 15000, /datum/material/plasma = 5000)
+	build_path = /obj/item/ammo_box/c9mm/fire
+	category = list("Ammo")
+	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
+
+/datum/design/inc10mm
+	name = "Incendiary 10mm Ammo Box"
+	desc = "A box full of incendiary 10mm ammunition."
+	id = "inc10mm"
+	build_type = PROTOLATHE
+	materials = list(/datum/material/iron = 15000, /datum/material/plasma = 5000)
+	build_path = /obj/item/ammo_box/c10mm/fire
+	category = list("Ammo")
+	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
+
+/datum/design/inc45
+	name = "Incendiary .45 Ammo Box"
+	desc = "A box full of incendiary .45 ammunition."
+	id = "inc45"
+	build_type = PROTOLATHE
+	materials = list(/datum/material/iron = 15000, /datum/material/plasma = 5000)
+	build_path = /obj/item/ammo_box/c45/fire
 	category = list("Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 

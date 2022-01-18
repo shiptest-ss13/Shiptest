@@ -576,30 +576,6 @@
 	category = list("initial", "Medical", "Medical Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
 
-/datum/design/beanbag_slug
-	name = "Beanbag Slug"
-	id = "beanbag_slug"
-	build_type = AUTOLATHE
-	materials = list(/datum/material/iron = 2000)
-	build_path = /obj/item/ammo_casing/shotgun/beanbag
-	category = list("initial", "Security")
-
-/datum/design/rubbershot
-	name = "Rubber Shot"
-	id = "rubber_shot"
-	build_type = AUTOLATHE
-	materials = list(/datum/material/iron = 4000)
-	build_path = /obj/item/ammo_casing/shotgun/rubbershot
-	category = list("initial", "Security")
-
-/datum/design/c38
-	name = "Speed Loader (.38)"
-	id = "c38"
-	build_type = AUTOLATHE
-	materials = list(/datum/material/iron = 20000)
-	build_path = /obj/item/ammo_box/c38
-	category = list("initial", "Security")
-
 /datum/design/recorder
 	name = "Universal Recorder"
 	id = "recorder"
@@ -796,13 +772,13 @@
 	build_path = /obj/item/weaponcrafting/receiver
 	category = list("hacked", "Security")
 
-/datum/design/shotgun_slug
-	name = "Shotgun Slug"
-	id = "shotgun_slug"
+/datum/design/c38
+	name = "Ammo Box(.38)"
+	id = "c38"
 	build_type = AUTOLATHE
-	materials = list(/datum/material/iron = 4000)
-	build_path = /obj/item/ammo_casing/shotgun
-	category = list("emagged", "Security")
+	materials = list(/datum/material/iron = 20000)
+	build_path = /obj/item/ammo_box/c38_box
+	category = list("initial", "Security")
 
 /datum/design/buckshot_shell
 	name = "Buckshot Shell"
@@ -810,7 +786,31 @@
 	build_type = AUTOLATHE
 	materials = list(/datum/material/iron = 4000)
 	build_path = /obj/item/ammo_casing/shotgun/buckshot
-	category = list("emagged", "Security")
+	category = list("initial", "Security")
+
+/datum/design/rubbershot
+	name = "Rubber Shot"
+	id = "rubber_shot"
+	build_type = AUTOLATHE
+	materials = list(/datum/material/iron = 4000)
+	build_path = /obj/item/ammo_casing/shotgun/rubbershot
+	category = list("hacked", "Security")
+
+/datum/design/beanbag_slug
+	name = "Beanbag Slug"
+	id = "beanbag_slug"
+	build_type = AUTOLATHE
+	materials = list(/datum/material/iron = 2000)
+	build_path = /obj/item/ammo_casing/shotgun/beanbag
+	category = list("initial", "Security")
+
+/datum/design/shotgun_slug
+	name = "Shotgun Slug"
+	id = "shotgun_slug"
+	build_type = AUTOLATHE
+	materials = list(/datum/material/iron = 4000)
+	build_path = /obj/item/ammo_casing/shotgun
+	category = list("hacked", "Security")
 
 /datum/design/shotgun_dart
 	name = "Shotgun Dart"
@@ -818,7 +818,7 @@
 	build_type = AUTOLATHE
 	materials = list(/datum/material/iron = 4000)
 	build_path = /obj/item/ammo_casing/shotgun/dart
-	category = list("emagged", "Security")
+	category = list("hacked", "Security")
 
 /datum/design/incendiary_slug
 	name = "Incendiary Slug"
@@ -826,7 +826,7 @@
 	build_type = AUTOLATHE
 	materials = list(/datum/material/iron = 4000)
 	build_path = /obj/item/ammo_casing/shotgun/incendiary
-	category = list("emagged", "Security")
+	category = list("hacked", "Security")
 
 /datum/design/riot_dart
 	name = "Foam Riot Dart"
@@ -855,26 +855,26 @@
 /datum/design/c10mm
 	name = "Ammo Box (10mm)"
 	id = "c10mm"
-	build_type = AUTOLATHE
-	materials = list(/datum/material/iron = 30000)
+	build_type = AUTOLATHE | PROTOLATHE
+	materials = list(/datum/material/iron = 15000)
 	build_path = /obj/item/ammo_box/c10mm
-	category = list("emagged", "Security")
+	category = list("initial", "Security")
 
 /datum/design/c45
 	name = "Ammo Box (.45)"
 	id = "c45"
-	build_type = AUTOLATHE
-	materials = list(/datum/material/iron = 30000)
+	build_type = AUTOLATHE | PROTOLATHE
+	materials = list(/datum/material/iron = 15000)
 	build_path = /obj/item/ammo_box/c45
-	category = list("emagged", "Security")
+	category = list("initial", "Security")
 
 /datum/design/c9mm
 	name = "Ammo Box (9mm)"
 	id = "c9mm"
-	build_type = AUTOLATHE
-	materials = list(/datum/material/iron = 30000)
+	build_type = AUTOLATHE | PROTOLATHE
+	materials = list(/datum/material/iron = 15000)
 	build_path = /obj/item/ammo_box/c9mm
-	category = list("emagged", "Security")
+	category = list("initial", "Security")
 
 /datum/design/cleaver
 	name = "Butcher's Cleaver"
