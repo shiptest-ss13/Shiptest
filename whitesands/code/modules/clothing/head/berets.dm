@@ -214,3 +214,9 @@
 	desc = "A plain beret colored in original TerraGov green. It looks like it's missing something."
 	icon_state = "beret_terragovplain"
 	item_state = "beret_terragovplain"
+
+/obj/item/clothing/head/beret/sec/inteq
+	name = "inteq beret"
+	desc = "A comfortable looking brown beret with a golden insignia. Denotes the wearer as part of Inteq corp."
+	icon_state = "inteq_beret"
+	item_state = "inteq_beret"

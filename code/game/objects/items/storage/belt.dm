@@ -700,7 +700,7 @@
 	update_icon()
 
 /obj/item/storage/belt/security/webbing/inteq
-	name = "talison corp webbing"
+	name = "inteq corp webbing"
 	desc = "A set of tactical webbing for agents of the Inteq Corporation, can hold security gear."
 	icon_state = "inteq_webbing"
 	item_state = "inteq_webbing"
