@@ -14,7 +14,7 @@
 	. = ..()
 	. += "<span class='warning'>Run away! Touching this will result in dusting!</span>"
 
-/turf/open/indestructible/supermatter_cascade/Initialize(mapload)
+/turf/open/indestructible/supermatter_cascade/Initialize(mapload, inherited_virtual_z)
 	. = ..()
 	for(var/delete_items in contents)
 		Consume(delete_items)

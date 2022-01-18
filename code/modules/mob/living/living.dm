@@ -1047,9 +1047,9 @@
 	var/turf/T = get_turf(src)
 	if(!T)
 		return FALSE
-	if(is_centcom_level(T.z)) //dont detect mobs on centcom
+	if(is_centcom_level(T)) //dont detect mobs on centcom
 		return FALSE
-	if(is_away_level(T.z))
+	if(is_away_level(T))
 		return FALSE
 	if(user != null && src == user)
 		return FALSE
@@ -1855,3 +1855,12 @@
 
 /mob/living/remove_air_ratio(ratio)
 	return loc ? loc.remove_air_ratio(ratio) : null
+
+/mob/living/proc/seizure()
+	set waitfor = 0
+	if(!IsParalyzed() && stat == CONSCIOUS)
+		visible_message("<span class='danger'>\The [src] starts having a seizure!</span>", "<span class='userdanger'>Your muscles spasm violently!</span>")
+		var/howfuck = rand(8,16)
+		AdjustParalyzed(howfuck)
+		AdjustKnockdown(howfuck)
+		Jitter(rand(150,200))

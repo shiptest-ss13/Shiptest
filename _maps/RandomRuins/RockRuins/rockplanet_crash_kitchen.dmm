@@ -14,13 +14,13 @@
 	},
 /obj/machinery/door/poddoor/shutters,
 /turf/open/floor/plasteel,
-/area/whitesands/surface/outdoors)
+/area/ruin/unpowered)
 "br" = (
 /obj/structure/sign/donk{
 	pixel_y = 32
 	},
 /turf/open/floor/carpet/nanoweave/purple,
-/area/whitesands/surface/outdoors)
+/area/ruin/unpowered)
 "cl" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 8
@@ -28,36 +28,36 @@
 /turf/open/floor/plating{
 	icon_state = "panelscorched"
 	},
-/area/whitesands/surface/outdoors)
+/area/ruin/unpowered)
 "dr" = (
 /turf/closed/wall/mineral/titanium,
-/area/whitesands/surface/outdoors)
+/area/ruin/unpowered)
 "dA" = (
 /obj/structure/extinguisher_cabinet,
 /obj/structure/girder,
 /turf/open/floor/plating{
 	icon_state = "panelscorched"
 	},
-/area/whitesands/surface/outdoors)
+/area/ruin/unpowered)
 "fE" = (
 /obj/structure/curtain/bounty,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 1
 	},
 /turf/open/floor/eighties,
-/area/whitesands/surface/outdoors)
+/area/ruin/unpowered)
 "ga" = (
 /turf/open/floor/wood,
-/area/whitesands/surface/outdoors)
+/area/ruin/unpowered)
 "gg" = (
 /turf/open/floor/plating{
 	icon_state = "platingdmg2"
 	},
-/area/whitesands/surface/outdoors)
+/area/ruin/unpowered)
 "gO" = (
 /obj/structure/table,
 /turf/open/floor/carpet/nanoweave/purple,
-/area/whitesands/surface/outdoors)
+/area/ruin/unpowered)
 "gS" = (
 /obj/structure/chair{
 	dir = 4
@@ -67,11 +67,11 @@
 	pixel_y = -24
 	},
 /turf/open/floor/carpet/nanoweave/purple,
-/area/whitesands/surface/outdoors)
+/area/ruin/unpowered)
 "im" = (
 /obj/structure/curtain/bounty,
 /turf/open/floor/eighties,
-/area/whitesands/surface/outdoors)
+/area/ruin/unpowered)
 "iH" = (
 /turf/template_noop,
 /area/template_noop)
@@ -84,12 +84,12 @@
 	dir = 1
 	},
 /turf/open/floor/carpet/nanoweave/purple,
-/area/whitesands/surface/outdoors)
+/area/ruin/unpowered)
 "jX" = (
 /turf/open/floor/plating{
 	icon_state = "platingdmg1"
 	},
-/area/whitesands/surface/outdoors)
+/area/ruin/unpowered)
 "lN" = (
 /obj/structure/table/reinforced,
 /obj/item/reagent_containers/food/condiment/saltshaker{
@@ -111,7 +111,7 @@
 	},
 /obj/machinery/door/poddoor/shutters,
 /turf/open/floor/plasteel,
-/area/whitesands/surface/outdoors)
+/area/ruin/unpowered)
 "me" = (
 /obj/structure/table,
 /obj/structure/frame/machine,
@@ -120,10 +120,10 @@
 /turf/open/floor/plating{
 	icon_state = "platingdmg2"
 	},
-/area/whitesands/surface/outdoors)
+/area/ruin/unpowered)
 "pa" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
-/area/whitesands/surface/outdoors)
+/area/ruin/unpowered)
 "pc" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 4
@@ -138,7 +138,7 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel,
-/area/whitesands/surface/outdoors)
+/area/ruin/unpowered)
 "sI" = (
 /mob/living/simple_animal/hostile/asteroid/goliath/beast{
 	dir = 4
@@ -146,16 +146,16 @@
 /turf/open/floor/plating{
 	icon_state = "platingdmg1"
 	},
-/area/whitesands/surface/outdoors)
+/area/ruin/unpowered)
 "sQ" = (
 /turf/open/floor/plating{
 	icon_state = "panelscorched"
 	},
-/area/whitesands/surface/outdoors)
+/area/ruin/unpowered)
 "sV" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /turf/open/floor/plating,
-/area/whitesands/surface/outdoors)
+/area/ruin/unpowered)
 "tm" = (
 /obj/structure/table,
 /obj/machinery/reagentgrinder{
@@ -180,7 +180,7 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel,
-/area/whitesands/surface/outdoors)
+/area/ruin/unpowered)
 "tI" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -194,11 +194,14 @@
 	pixel_y = 0
 	},
 /turf/open/floor/wood,
-/area/whitesands/surface/outdoors)
+/area/ruin/unpowered)
+"ut" = (
+/turf/open/floor/plating/asteroid,
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "uM" = (
 /obj/structure/lattice,
-/turf/template_noop,
-/area/whitesands/surface/outdoors)
+/turf/open/floor/plating/asteroid,
+/area/ruin/unpowered)
 "vc" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -211,7 +214,7 @@
 	dir = 4
 	},
 /turf/open/floor/carpet/nanoweave/purple,
-/area/whitesands/surface/outdoors)
+/area/ruin/unpowered)
 "wq" = (
 /mob/living/simple_animal/hostile/asteroid/goliath/beast{
 	dir = 8
@@ -219,24 +222,24 @@
 /turf/open/floor/plating{
 	icon_state = "platingdmg2"
 	},
-/area/whitesands/surface/outdoors)
+/area/ruin/unpowered)
 "wG" = (
 /obj/structure/girder,
 /obj/structure/girder,
 /turf/open/floor/plating{
 	icon_state = "panelscorched"
 	},
-/area/whitesands/surface/outdoors)
+/area/ruin/unpowered)
 "xh" = (
 /obj/structure/girder,
 /turf/open/floor/plating{
 	icon_state = "platingdmg1"
 	},
-/area/whitesands/surface/outdoors)
+/area/ruin/unpowered)
 "xi" = (
 /obj/structure/girder,
 /turf/open/floor/plating,
-/area/whitesands/surface/outdoors)
+/area/ruin/unpowered)
 "xD" = (
 /obj/structure/table,
 /obj/item/storage/bag/tray,
@@ -254,7 +257,7 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel,
-/area/whitesands/surface/outdoors)
+/area/ruin/unpowered)
 "xU" = (
 /obj/machinery/door/airlock/public/glass{
 	name = "Crew Quarters"
@@ -271,7 +274,7 @@
 	dir = 1
 	},
 /turf/open/floor/wood,
-/area/whitesands/surface/outdoors)
+/area/ruin/unpowered)
 "yB" = (
 /obj/machinery/door/airlock/public/glass,
 /obj/machinery/door/firedoor/border_only{
@@ -281,11 +284,11 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/tech/grid,
-/area/whitesands/surface/outdoors)
+/area/ruin/unpowered)
 "yE" = (
 /obj/structure/sign/warning/docking,
 /turf/closed/wall/mineral/titanium,
-/area/whitesands/surface/outdoors)
+/area/ruin/unpowered)
 "Al" = (
 /obj/structure/window/reinforced/tinted/frosted{
 	dir = 1
@@ -293,7 +296,7 @@
 /turf/open/floor/plating{
 	icon_state = "panelscorched"
 	},
-/area/whitesands/surface/outdoors)
+/area/ruin/unpowered)
 "DF" = (
 /obj/machinery/door/window/westleft,
 /obj/structure/sink{
@@ -304,13 +307,13 @@
 	pixel_x = 24
 	},
 /turf/open/floor/plasteel/white,
-/area/whitesands/surface/outdoors)
+/area/ruin/unpowered)
 "Fq" = (
 /obj/item/electronics/apc,
 /turf/open/floor/plating{
 	icon_state = "platingdmg1"
 	},
-/area/whitesands/surface/outdoors)
+/area/ruin/unpowered)
 "Hv" = (
 /obj/structure/table,
 /obj/machinery/chem_dispenser/drinks,
@@ -324,13 +327,13 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel,
-/area/whitesands/surface/outdoors)
+/area/ruin/unpowered)
 "HU" = (
 /obj/structure/chair{
 	dir = 8
 	},
 /turf/open/floor/carpet/nanoweave/purple,
-/area/whitesands/surface/outdoors)
+/area/ruin/unpowered)
 "HV" = (
 /obj/structure/curtain,
 /obj/machinery/shower{
@@ -344,7 +347,7 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel/white,
-/area/whitesands/surface/outdoors)
+/area/ruin/unpowered)
 "Ka" = (
 /obj/machinery/power/terminal{
 	dir = 8
@@ -357,46 +360,42 @@
 	dir = 1
 	},
 /turf/open/floor/wood,
-/area/whitesands/surface/outdoors)
+/area/ruin/unpowered)
 "KR" = (
 /turf/open/floor/plating,
-/area/whitesands/surface/outdoors)
+/area/ruin/unpowered)
 "Lz" = (
-/obj/effect/mob_spawn/human/corpse{
-	head = 0;
-	mob_species = /datum/species/golem
-	},
 /obj/item/ammo_casing/spent{
 	dir = 1;
 	pixel_x = 7;
 	pixel_y = 4
 	},
-/obj/item/gun/ballistic/automatic/zip_pistol{
-	pixel_x = 5;
-	pixel_y = 9
-	},
 /obj/effect/decal/cleanable/blood/gibs,
+/obj/item/gun/ballistic/automatic/pistol/commander{
+	pixel_y = 7
+	},
+/obj/effect/mob_spawn/human/corpse/assistant,
 /turf/open/floor/plating{
 	icon_state = "panelscorched"
 	},
-/area/whitesands/surface/outdoors)
+/area/ruin/unpowered)
 "Mi" = (
 /obj/structure/grille,
 /turf/open/floor/plating,
-/area/whitesands/surface/outdoors)
+/area/ruin/unpowered)
 "Nb" = (
 /obj/structure/girder,
 /turf/open/floor/plating{
 	icon_state = "panelscorched"
 	},
-/area/whitesands/surface/outdoors)
+/area/ruin/unpowered)
 "QS" = (
 /obj/structure/chair/comfy/teal,
 /obj/machinery/airalarm/all_access{
 	pixel_y = 24
 	},
 /turf/open/floor/wood,
-/area/whitesands/surface/outdoors)
+/area/ruin/unpowered)
 "Rt" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/firedoor/window,
@@ -406,14 +405,14 @@
 	name = "external shutters"
 	},
 /turf/open/floor/plating,
-/area/whitesands/surface/outdoors)
+/area/ruin/unpowered)
 "RL" = (
 /obj/structure/lattice,
 /obj/structure/girder,
 /turf/open/floor/plating{
 	icon_state = "panelscorched"
 	},
-/area/whitesands/surface/outdoors)
+/area/ruin/unpowered)
 "Sh" = (
 /obj/machinery/light/small{
 	dir = 4
@@ -421,8 +420,10 @@
 /obj/machinery/door/window/westright,
 /obj/structure/window/reinforced/spawner,
 /obj/machinery/atmospherics/components/binary/pump/layer2,
-/turf/open/floor/plating/foam,
-/area/whitesands/surface/outdoors)
+/turf/open/floor/plating{
+	icon_state = "platingdmg1"
+	},
+/area/ruin/unpowered)
 "Te" = (
 /obj/structure/table,
 /obj/machinery/microwave,
@@ -436,7 +437,7 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel,
-/area/whitesands/surface/outdoors)
+/area/ruin/unpowered)
 "TX" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 9
@@ -452,7 +453,7 @@
 	pixel_x = 32
 	},
 /turf/open/floor/plasteel/tech,
-/area/whitesands/surface/outdoors)
+/area/ruin/unpowered)
 "TZ" = (
 /obj/machinery/door/airlock/public/glass,
 /obj/structure/cable{
@@ -471,7 +472,7 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel/tech/grid,
-/area/whitesands/surface/outdoors)
+/area/ruin/unpowered)
 "UA" = (
 /obj/machinery/gibber,
 /obj/effect/turf_decal/corner/white{
@@ -486,7 +487,7 @@
 /turf/open/floor/plating{
 	icon_state = "panelscorched"
 	},
-/area/whitesands/surface/outdoors)
+/area/ruin/unpowered)
 "Vn" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -501,7 +502,7 @@
 	dir = 1
 	},
 /turf/open/floor/carpet/nanoweave/purple,
-/area/whitesands/surface/outdoors)
+/area/ruin/unpowered)
 "Vy" = (
 /obj/structure/table,
 /obj/effect/spawner/lootdrop/donkpockets,
@@ -524,7 +525,7 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel,
-/area/whitesands/surface/outdoors)
+/area/ruin/unpowered)
 "VG" = (
 /obj/machinery/atmospherics/components/unary/tank/air{
 	piping_layer = 2
@@ -535,18 +536,18 @@
 	network = list("cricket")
 	},
 /turf/open/floor/plasteel/tech,
-/area/whitesands/surface/outdoors)
+/area/ruin/unpowered)
 "WP" = (
 /mob/living/simple_animal/hostile/asteroid/goliath/beast{
 	dir = 4
 	},
 /turf/open/floor/plating,
-/area/whitesands/surface/outdoors)
+/area/ruin/unpowered)
 
 (1,1,1) = {"
+ut
 iH
-iH
-iH
+ut
 uM
 uM
 uM
@@ -555,9 +556,9 @@ jX
 sQ
 uM
 uM
+ut
 iH
-iH
-iH
+ut
 iH
 iH
 "}
@@ -594,7 +595,7 @@ Ka
 fE
 KR
 uM
-iH
+ut
 iH
 "}
 (4,1,1) = {"
@@ -613,7 +614,7 @@ im
 gg
 sQ
 uM
-iH
+ut
 "}
 (5,1,1) = {"
 Rt
@@ -649,7 +650,7 @@ pa
 sQ
 uM
 iH
-iH
+ut
 "}
 (7,1,1) = {"
 Mi
@@ -665,7 +666,7 @@ Nb
 pa
 pa
 uM
-iH
+ut
 iH
 iH
 "}
@@ -681,15 +682,15 @@ jX
 sQ
 Nb
 uM
-iH
-iH
+ut
+ut
 iH
 iH
 iH
 "}
 (9,1,1) = {"
-iH
-iH
+ut
+ut
 uM
 uM
 sQ
@@ -698,7 +699,7 @@ sI
 sQ
 uM
 uM
-iH
+ut
 iH
 iH
 iH
@@ -708,15 +709,15 @@ iH
 (10,1,1) = {"
 iH
 iH
+ut
 iH
-iH
-iH
+ut
 uM
 uM
 uM
+ut
 iH
-iH
-iH
+ut
 iH
 iH
 iH
@@ -729,9 +730,9 @@ iH
 iH
 iH
 iH
-iH
+ut
 uM
-iH
+ut
 iH
 iH
 iH

@@ -267,12 +267,6 @@
 	description = "With heated debates over the legality of the catperson and their status in the workforce, there's always a place for the blackmarket to slip in for some cash. Whether the results \
 	are morally sound or not is another issue entirely."
 
-/datum/map_template/ruin/space/hilbertresearchfacility
-	id = "hilbert_facility"
-	suffix = "hilbertshoteltestingsite.dmm"
-	name = "Hilbert Research Facility"
-	description = "A research facility of great bluespace discoveries. Long since abandoned, willingly or not..."
-
 /datum/map_template/ruin/space/clownplanet
 	id = "clownplanet"
 	suffix = "clownplanet.dmm"
@@ -308,3 +302,9 @@
 	suffix = "syndicatewreck01.dmm"
 	name = "Syndicate Station Wreckage"
 	description = "An old wreck, made of plastitanium. Somehow, it looks more filled than it ever was..."
+
+/datum/map_template/ruin/space/dangerous_research
+	id = "dangerous_research"
+	suffix = "dangerous_research.dmm"
+	name = "Occult Research Station"
+	description = "This station was deemed unsuitable for continued experiments, and quickly abandoned."

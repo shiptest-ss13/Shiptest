@@ -36,7 +36,7 @@
 	. = ..()
 	. += "<span class='warning'>You WILL fucking die if you step on this!!!</span>"
 
-/turf/open/chasm/reebe_void/Initialize(mapload)
+/turf/open/chasm/reebe_void/Initialize(mapload, inherited_virtual_z)
 	. = ..()
 	icon_state = "reebegame"
 

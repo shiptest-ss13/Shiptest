@@ -193,12 +193,6 @@
 	allow_duplicates = FALSE
 
 //Crashed Shiptests//
-/datum/map_template/ruin/whitesands/crash_kitchen
-	name = "Crashed Kitchen"
-	description = "A crashed part of some unlucky ship."
-	id = "crash-kitchen"
-	suffix = "whitesands_surface_crash_kitchen.dmm"
-
 /datum/map_template/ruin/whitesands/crash_bar
 	name = "Crashed Bar"
 	description = "A crashed part of some unlucky ship. Was once a bar."
@@ -211,8 +205,3 @@
 	id = "crash-cargo"
 	suffix = "whitesands_surface_crash_cargo.dmm"
 
-/datum/map_template/ruin/whitesands/crash_cult
-	name = "Crashed Cult Ship"
-	description = "A crashed part of some unlucky ship. Has been occupied by a cult."
-	id = "crash-cult"
-	suffix = "whitesands_surface_crash_cult.dmm"
