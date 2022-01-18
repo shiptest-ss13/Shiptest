@@ -19,7 +19,7 @@
 		// Security Stuff
 		"sec_rshot", "sec_beanbag_slug", "sec_bshot", "sec_slug", "sec_Islug", "sec_dart", 	"sec_38",
 		//Handgun Ammo (Security)
-		"c9mm", "c10mm", "c45", "commanderammo", "rubbershot9mm", "stechkinammo", "rubbershot10mm", "m1911ammo", "rubbershot45",
+		"commanderammo", "stechkinammo", "m1911ammo", "c9mm", "c10mm", "c45", "rubbershot9mm", "rubbershot10mm", "rubbershot45",
 		// Construction Materials
 		"rglass", "plasteel", "plastitanium", "plasmaglass", "plasmareinforcedglass", "titaniumglass", "plastitaniumglass",
 	)

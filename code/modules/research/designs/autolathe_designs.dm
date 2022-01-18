@@ -858,7 +858,7 @@
 	build_type = AUTOLATHE | PROTOLATHE
 	materials = list(/datum/material/iron = 15000)
 	build_path = /obj/item/ammo_box/c10mm
-	category = list("initial", "Security")
+	category = list("initial", "Security", "Ammo")
 
 /datum/design/c45
 	name = "Ammo Box (.45)"
@@ -866,7 +866,7 @@
 	build_type = AUTOLATHE | PROTOLATHE
 	materials = list(/datum/material/iron = 15000)
 	build_path = /obj/item/ammo_box/c45
-	category = list("initial", "Security")
+	category = list("initial", "Security", "Ammo")
 
 /datum/design/c9mm
 	name = "Ammo Box (9mm)"
@@ -874,7 +874,7 @@
 	build_type = AUTOLATHE | PROTOLATHE
 	materials = list(/datum/material/iron = 15000)
 	build_path = /obj/item/ammo_box/c9mm
-	category = list("initial", "Security")
+	category = list("initial", "Security", "Ammo")
 
 /datum/design/cleaver
 	name = "Butcher's Cleaver"
