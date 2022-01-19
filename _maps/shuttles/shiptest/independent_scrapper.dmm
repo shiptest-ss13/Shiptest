@@ -288,6 +288,12 @@
 "dh" = (
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/security)
+"dk" = (
+/obj/effect/turf_decal/siding/yellow{
+	dir = 8
+	},
+/turf/open/floor/plating/airless,
+/area/ship/hallway/aft)
 "dl" = (
 /obj/machinery/power/apc/auto_name/west,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
@@ -2379,6 +2385,10 @@
 	},
 /turf/open/floor/pod/light,
 /area/ship/cargo)
+"Be" = (
+/obj/structure/catwalk,
+/turf/open/floor/plating/airless,
+/area/ship/hallway/aft)
 "Bh" = (
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/firedoor/border_only{
@@ -2498,13 +2508,6 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
-"CD" = (
-/obj/docking_port/mobile{
-	dir = 8;
-	port_direction = 4
-	},
-/turf/open/floor/plating/airless,
-/area/ship/external)
 "CG" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
@@ -2757,6 +2760,14 @@
 /obj/machinery/door/airlock/maintenance_hatch,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/maintenance/starboard)
+"Fl" = (
+/obj/structure/catwalk,
+/obj/docking_port/mobile{
+	dir = 8;
+	port_direction = 4
+	},
+/turf/open/floor/plating/airless,
+/area/ship/hallway/aft)
 "Fs" = (
 /obj/machinery/button/door{
 	id = "externalbridgeshutter";
@@ -3499,6 +3510,9 @@
 	},
 /turf/open/floor/pod/light,
 /area/ship/hallway/starboard)
+"Op" = (
+/turf/open/floor/plating/airless,
+/area/ship/hallway/aft)
 "Os" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/cargo)
@@ -5522,7 +5536,7 @@ Dw
 Dw
 jy
 oo
-oo
+dk
 Iw
 Me
 Dw
@@ -5559,7 +5573,7 @@ Dw
 Dw
 MX
 dN
-dN
+Be
 dN
 MX
 Dw
@@ -5596,7 +5610,7 @@ Dw
 Dw
 MX
 dN
-dN
+Be
 dN
 MX
 Dw
@@ -5633,7 +5647,7 @@ Dw
 Dw
 MX
 dN
-dN
+Be
 dN
 MX
 Dw
@@ -5670,7 +5684,7 @@ Dw
 Dw
 MX
 dN
-dN
+Be
 dN
 MX
 Dw
@@ -5707,7 +5721,7 @@ dN
 dN
 dN
 dN
-dN
+Be
 dN
 dN
 dN
@@ -5744,7 +5758,7 @@ mN
 mN
 mN
 mN
-CD
+Op
 mN
 mN
 mN
@@ -5781,7 +5795,7 @@ dN
 dN
 dN
 dN
-dN
+Fl
 dN
 dN
 dN
