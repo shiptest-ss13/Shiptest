@@ -1552,4 +1552,3 @@
 	base_pixel_y = new_value
 
 	pixel_y = pixel_y + base_pixel_y - .
-	
