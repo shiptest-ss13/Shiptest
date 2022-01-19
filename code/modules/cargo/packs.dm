@@ -690,6 +690,7 @@
 	crate_name = "ammo crate"
 	dangerous = TRUE
 
+/*
 /datum/supply_pack/security/armory/aknt
 	name = "Nanotrasen Brand Kalashnikov Rifle Crate"
 	desc = "Contains two cheaply made reproductions of the AK-47 by Nanotrasen, the NT-AK."
@@ -725,7 +726,7 @@
 					/obj/item/ammo_box/magazine/ak47)
 	crate_name = "rifle crate"
 	dangerous = TRUE
-
+*/
 /datum/supply_pack/security/armory/swat
 	name = "SWAT Crate"
 	desc = "Contains two fullbody sets of tough, fireproof, pressurized suits designed in a joint effort by IS-ERI and Nanotrasen. Each set contains a suit, helmet, mask, combat belt, and combat gloves. Requires Armory access to open."
