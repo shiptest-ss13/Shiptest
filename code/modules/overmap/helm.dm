@@ -190,12 +190,16 @@
 
 	switch(action) // Universal topics
 		if("rename_ship")
-			if(!("newName" in params) || params["newName"] == current_ship.name)
+			var/new_name = params["newName"]
+			if(!new_name)
 				return
-			if(reject_bad_text(params["newName"], MAX_CHARTER_LEN))
+			new_name = trim(new_name)
+			if (!length(new_name) || new_name == current_ship.name)
+				return
+			if(!reject_bad_text(new_name, MAX_CHARTER_LEN))
 				say("Error: Replacement designation rejected by system.")
 				return
-			if(!current_ship.set_ship_name(params["newName"]))
+			if(!current_ship.set_ship_name(new_name))
 				say("Error: [COOLDOWN_TIMELEFT(current_ship, rename_cooldown)/10] seconds until ship designation can be changed..")
 			update_static_data(usr, ui)
 			return
