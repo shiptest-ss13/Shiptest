@@ -2379,6 +2379,10 @@
 	},
 /turf/open/floor/pod/light,
 /area/ship/cargo)
+"Be" = (
+/obj/structure/catwalk,
+/turf/open/floor/plating/airless,
+/area/ship/external)
 "Bh" = (
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/firedoor/border_only{
@@ -2498,13 +2502,6 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
-"CD" = (
-/obj/docking_port/mobile{
-	dir = 8;
-	port_direction = 4
-	},
-/turf/open/floor/plating/airless,
-/area/ship/external)
 "CG" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
@@ -2757,6 +2754,14 @@
 /obj/machinery/door/airlock/maintenance_hatch,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/maintenance/starboard)
+"Fl" = (
+/obj/structure/catwalk,
+/obj/docking_port/mobile{
+	dir = 8;
+	port_direction = 4
+	},
+/turf/open/floor/plating/airless,
+/area/ship/external)
 "Fs" = (
 /obj/machinery/button/door{
 	id = "externalbridgeshutter";
@@ -5559,7 +5564,7 @@ Dw
 Dw
 MX
 dN
-dN
+Be
 dN
 MX
 Dw
@@ -5596,7 +5601,7 @@ Dw
 Dw
 MX
 dN
-dN
+Be
 dN
 MX
 Dw
@@ -5633,7 +5638,7 @@ Dw
 Dw
 MX
 dN
-dN
+Be
 dN
 MX
 Dw
@@ -5670,7 +5675,7 @@ Dw
 Dw
 MX
 dN
-dN
+Be
 dN
 MX
 Dw
@@ -5707,7 +5712,7 @@ dN
 dN
 dN
 dN
-dN
+Be
 dN
 dN
 dN
@@ -5744,7 +5749,7 @@ mN
 mN
 mN
 mN
-CD
+mN
 mN
 mN
 mN
@@ -5781,7 +5786,7 @@ dN
 dN
 dN
 dN
-dN
+Fl
 dN
 dN
 dN
