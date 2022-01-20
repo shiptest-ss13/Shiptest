@@ -1229,7 +1229,7 @@
 
 /datum/supply_pack/materials/plasma
 	name = "Plasma Canister"
-	desc = "Contains a canister of Plasma. Handy when no synthetization or plasma-rich atmospheres are aviable"
+	desc = "Contains a canister of Plasma. Handy when no synthetization or plasma-rich atmospheres are available."
 	cost = 4000
 	contains = list(/obj/machinery/portable_atmospherics/canister/toxins)
 	crate_name = "Plasma canister crate"
