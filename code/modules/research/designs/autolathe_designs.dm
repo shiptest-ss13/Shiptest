@@ -844,6 +844,14 @@
 	build_path = /obj/item/ammo_box/c9mm
 	category = list("initial", "Security", "Ammo")
 
+/datum/design/c556mmHITP
+	name = "Ammo Box (5.56mm HITP caseless)"
+	id = "c556mmHITP"
+	build_type = AUTOLATHE | PROTOLATHE
+	materials = list(/datum/material/iron = 18000)
+	build_path = /obj/item/ammo_box/c556mmHITP
+	category = list("initial", "Security", "Ammo")
+
 /datum/design/cleaver
 	name = "Butcher's Cleaver"
 	id = "cleaver"

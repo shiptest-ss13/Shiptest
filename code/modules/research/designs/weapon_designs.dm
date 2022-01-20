@@ -306,10 +306,20 @@
 	category = list("Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
+/datum/design/m9cammo
+	name = "M9C magazine (5.56mm HITP caseless)"
+	desc = "A double stack M9C magazine, designed to chamber 5.56mm HITP caseless and fit into SolGov's M9C sidearms."
+	id = "m9cammo"
+	build_type = PROTOLATHE
+	materials = list(/datum/material/iron = 18000)
+	build_path = /obj/item/ammo_box/magazine/pistol556mm
+	category = list("Ammo")
+	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
+
 // WS edit - not so free rubbershot
 
 /datum/design/rubbershot9mm
-	name = "Rubbershot 9mm Ammo Box"
+	name = "Rubbershot 9mm ammo box"
 	desc = "A box full of less-than-lethal 9mm ammunition."
 	id = "rubbershot9mm"
 	build_type = PROTOLATHE
@@ -319,7 +329,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
 /datum/design/rubbershot10mm
-	name = "Rubbershot 10mm Ammo Box"
+	name = "Rubbershot 10mm ammo box"
 	desc = "A box full of less-than-lethal 10mm ammunition."
 	id = "rubbershot10mm"
 	build_type = PROTOLATHE
@@ -329,7 +339,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
 /datum/design/rubbershot45
-	name = "Rubbershot .45 Ammo Box"
+	name = "Rubbershot .45 ammo box"
 	desc = "A box full of less-than-lethal .45 ammunition."
 	id = "rubbershot45"
 	build_type = PROTOLATHE
@@ -338,8 +348,18 @@
 	category = list("Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
+/datum/design/rubbershot556mmHITP
+	name = "Rubbershot 5.56mm HITP caseless ammo box"
+	desc = "A box full of less-than-lethal 5.56mm HITP ammunition."
+	id = "rubbershot556mmHITP"
+	build_type = PROTOLATHE
+	materials = list(/datum/material/iron = 18000)
+	build_path = /obj/item/ammo_box/c556mmHITP/rubbershot
+	category = list("Ammo")
+	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
+
 /datum/design/ap9mm
-	name = "AP 9mm Ammo Box"
+	name = "AP 9mm ammo box"
 	desc = "A box full of armor piercing 9mm ammunition."
 	id = "ap9mm"
 	build_type = PROTOLATHE
@@ -349,7 +369,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
 /datum/design/ap10mm
-	name = "AP 10mm Ammo Box"
+	name = "AP 10mm ammo box"
 	desc = "A box full of armor piercing 10mm ammunition."
 	id = "ap10mm"
 	build_type = PROTOLATHE
@@ -359,7 +379,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
 /datum/design/ap45
-	name = "AP .45 Ammo Box"
+	name = "AP .45 ammo box"
 	desc = "A box full of armor piercing .45 ammunition."
 	id = "ap45"
 	build_type = PROTOLATHE
@@ -368,8 +388,18 @@
 	category = list("Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
+/datum/design/ap556mmHITP
+	name = "AP 5.56mm HITP caseless ammo box"
+	desc = "A box full of armor piercing 5.56mm HITP caseless ammunition."
+	id = "ap556mmHITP"
+	build_type = PROTOLATHE
+	materials = list(/datum/material/iron = 18000, /datum/material/uranium = 1000)
+	build_path = /obj/item/ammo_box/c556mmHITP/ap
+	category = list("Ammo")
+	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
+
 /datum/design/hp9mm
-	name = "HP 9mm Ammo Box"
+	name = "HP 9mm ammo box"
 	desc = "A box full of hollow point 9mm ammunition."
 	id = "hp9mm"
 	build_type = PROTOLATHE
@@ -379,7 +409,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
 /datum/design/hp10mm
-	name = "HP 10mm Ammo Box"
+	name = "HP 10mm ammo box"
 	desc = "A box full of hollow point 10mm ammunition."
 	id = "hp10mm"
 	build_type = PROTOLATHE
@@ -389,7 +419,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
 /datum/design/hp45
-	name = "HP .45 Ammo Box"
+	name = "HP .45 ammo box"
 	desc = "A box full of hollow point .45 ammunition."
 	id = "hp45"
 	build_type = PROTOLATHE
@@ -398,8 +428,18 @@
 	category = list("Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
+/datum/design/hp45
+	name = "HP 5.56mm HITP caseless ammo box"
+	desc = "A box full of hollow point 5.56mm HITP caseless ammunition."
+	id = "hp556mmHITP"
+	build_type = PROTOLATHE
+	materials = list(/datum/material/iron = 18000, /datum/material/silver = 1000)
+	build_path = /obj/item/ammo_box/c556mmHITP/hp
+	category = list("Ammo")
+	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
+
 /datum/design/inc9mm
-	name = "Incendiary 9mm Ammo Box"
+	name = "Incendiary 9mm ammo box"
 	desc = "A box full of incendiary 9mm ammunition."
 	id = "inc9mm"
 	build_type = PROTOLATHE
@@ -409,7 +449,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
 /datum/design/inc10mm
-	name = "Incendiary 10mm Ammo Box"
+	name = "Incendiary 10mm ammo box"
 	desc = "A box full of incendiary 10mm ammunition."
 	id = "inc10mm"
 	build_type = PROTOLATHE
@@ -419,7 +459,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
 /datum/design/inc45
-	name = "Incendiary .45 Ammo Box"
+	name = "Incendiary .45 ammo box"
 	desc = "A box full of incendiary .45 ammunition."
 	id = "inc45"
 	build_type = PROTOLATHE

@@ -170,6 +170,34 @@
 	ammo_type = /obj/item/ammo_casing/c45/fire
 	max_ammo = 30
 
+/obj/item/ammo_box/556mmHITP
+	name = "ammo box (5.56mm HITP caseless)"
+	desc = "A box of 5.56mm HITP caseless ammo, a SolGov standard."
+	icon_state = "556mmHITPbox"
+	ammo_type = /obj/item/ammo_casing/caseless/c556mmHITP
+	max_ammo = 30
+
+/obj/item/ammo_box/556mmHITP/rubbershot
+	name = "ammo box (5.56mm HITP caseless rubbershot)"
+	desc = "A box of 5.56mm HITP caseless rubbershot ammo, designed to disable targets without causing serious damage."
+	icon_state = "556mmHITPbox-rubbershot"
+	ammo_type = /obj/item/ammo_casing/caseless/c556mmHITP/rubbershot
+	max_ammo = 30
+
+/obj/item/ammo_box/556mmHITP/ap
+	name = "ammo box (5.56mm HITP caseless AP)"
+	desc = "A box of 5.56mm HITP caseless armor piercing ammo, designed to designed to penetrate through armor at the cost of total damage."
+	icon_state = "556mmHITPbox-ap"
+	ammo_type = /obj/item/ammo_casing/caseless/c556mmHITP_ap
+	max_ammo = 30
+
+/obj/item/ammo_box/556mmHITP/hp
+	name = "ammo box (5.56mm HITP caseless HP)"
+	desc = "A box of 5.56mm HITP caseless hollow point ammo, designed to cause massive tissue damage at the cost of armor penetration."
+	icon_state = "556mmHITPbox-ap"
+	ammo_type = /obj/item/ammo_casing/caseless/c556mmHITP_hp
+	max_ammo = 30
+
 /obj/item/ammo_box/a40mm
 	name = "ammo box (40mm grenades)"
 	icon_state = "40mm"
