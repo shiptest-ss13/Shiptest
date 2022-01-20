@@ -217,6 +217,6 @@
 
 /obj/item/clothing/head/beret/sec/inteq
 	name = "inteq beret"
-	desc = "A comfortable looking brown beret with a golden insignia. Denotes the wearer as part of Inteq corp."
+	desc = "A comfortable looking brown beret with a golden insignia. Denotes the wearer as part of the IRMG."
 	icon_state = "inteq_beret"
 	item_state = "inteq_beret"

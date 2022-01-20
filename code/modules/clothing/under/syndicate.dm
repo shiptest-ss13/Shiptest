@@ -92,7 +92,7 @@
 
 /obj/item/clothing/under/syndicate/inteq
 	name = "inteq turtleneck"
-	desc = "A drab brown turtleneck with black digital camo pants, it has a small 'I.C' embroidered onto the shoulder."
+	desc = "A drab brown turtleneck with black digital camo pants, it has a small 'IRMG' embroidered onto the shoulder."
 	icon_state = "inteq"
 	item_state = "bl_suit"
 	has_sensor = HAS_SENSORS
@@ -103,7 +103,7 @@
 
 /obj/item/clothing/under/syndicate/inteq/skirt
 	name = "inteq skirtleneck"
-	desc = "A drab brown turtleneck with a free flowing black skirt, it has a small 'I.C' embroidered onto the shoulder."
+	desc = "A drab brown turtleneck with a free flowing black skirt, it has a small 'IRMG' embroidered onto the shoulder."
 	icon_state = "inteq_skirt"
 	item_state = "bl_suit"
 	has_sensor = HAS_SENSORS
