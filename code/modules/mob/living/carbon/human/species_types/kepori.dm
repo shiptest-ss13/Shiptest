@@ -31,6 +31,20 @@
 	no_equip = list(ITEM_SLOT_BACK)
 	mutanttongue = /obj/item/organ/tongue/kepori
 	species_language_holder = /datum/language_holder/kepori
+	/// For storing our tackler datum so we can remove it after
+	var/datum/component/tackler
+	/// See: [/datum/component/tackler/var/stamina_cost]
+	var/tackle_stam_cost = 10
+	/// See: [/datum/component/tackler/var/base_knockdown]
+	var/base_knockdown = 0.2 SECONDS
+	/// See: [/datum/component/tackler/var/range]
+	var/tackle_range = 8
+	/// See: [/datum/component/tackler/var/min_distance]
+	var/min_distance = 1
+	/// See: [/datum/component/tackler/var/speed]
+	var/tackle_speed = 2
+	/// See: [/datum/component/tackler/var/skill_mod]
+	var/skill_mod = 2
 
 /datum/species/kepori/random_name(gender,unique,lastname)
 	if(unique)
@@ -47,3 +61,11 @@
 			return FALSE
 		return equip_delay_self_check(I, H, bypass_equip_delay_self)
 	. = ..()
+
+/datum/species/kepori/on_species_gain(mob/living/carbon/C, datum/species/old_species, pref_load)
+	tackler = C.AddComponent(/datum/component/tackler, stamina_cost= tackle_stam_cost, base_knockdown= base_knockdown, range= tackle_range, speed= tackle_speed, skill_mod= skill_mod, min_distance= min_distance)
+	. = ..()
+
+/datum/species/kepori/on_species_loss(mob/living/carbon/human/C, datum/species/new_species, pref_load)
+	. = ..()
+	qdel(tackler)
