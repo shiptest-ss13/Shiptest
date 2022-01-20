@@ -27,4 +27,4 @@
 /obj/item/ammo_casing/caseless/c556mmHITP/rubbershot
 	name = "5.56mm HITP rubber round"
 	desc = "A 5.56mm HITP caseless rubber round."
-	projectile_type = /obj/projectile/bullet/c556mmHITP_rubbershot
+	projectile_type = /obj/projectile/bullet/c556mmHITP/rubbershot
