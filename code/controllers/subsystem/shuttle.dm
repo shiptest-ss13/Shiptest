@@ -270,6 +270,8 @@ SUBSYSTEM_DEF(shuttle)
   * * destination_port - The port the newly loaded shuttle will be sent to after being fully spawned in. If you want to have a transit dock be created, use [proc/load_template] instead. Should NOT be null.
   **/
 /datum/controller/subsystem/shuttle/proc/action_load(datum/map_template/shuttle/loading_template, obj/docking_port/stationary/destination_port)
+	if(!destination_port)
+		CRASH("No destination port specified for shuttle load, aborting.")
 	var/obj/docking_port/mobile/new_shuttle = load_template(loading_template, FALSE)
 	var/result = new_shuttle.canDock(destination_port)
 	if((result != SHUTTLE_CAN_DOCK))
