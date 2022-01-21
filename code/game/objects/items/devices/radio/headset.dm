@@ -282,6 +282,7 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 	name = "\proper Integrated Subspace Transceiver "
 	keyslot2 = new /obj/item/encryptionkey/ai
 	command = TRUE
+	subspace_switchable = TRUE
 
 /obj/item/radio/headset/silicon/can_receive(freq, map_zones)
 	return ..(freq, map_zones, TRUE)
