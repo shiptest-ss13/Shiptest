@@ -176,16 +176,7 @@
 /datum/quirk/multilingual/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
 	if(H.job != "Curator")
-		var/obj/item/organ/tongue/T = H.getorganslot(ORGAN_SLOT_TONGUE)
-		var/list/languages_possible = T.languages_possible
-		languages_possible = languages_possible - typecacheof(/datum/language/codespeak) - typecacheof(/datum/language/narsie) - typecacheof(/datum/language/ratvar)
-		languages_possible = languages_possible - H.language_holder.understood_languages
-		languages_possible = languages_possible - H.language_holder.spoken_languages
-		languages_possible = languages_possible - H.language_holder.blocked_languages
-		if(LAZYLEN(languages_possible))
-			var/datum/language/random_language = pick(languages_possible)
-			H.grant_language(random_language, TRUE, TRUE, LANGUAGE_MULTILINGUAL)
-//Credit To Yowii/Yoworii/Yorii for a much more streamlined method of language library building
+		H.grant_language(H.client?.prefs.language_datum, TRUE, TRUE, LANGUAGE_MULTILINGUAL)
 
 /datum/quirk/night_vision
 	name = "Night Vision"

@@ -87,7 +87,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/list/randomise = list(RANDOM_UNDERWEAR = TRUE, RANDOM_UNDERWEAR_COLOR = TRUE, RANDOM_UNDERSHIRT = TRUE, RANDOM_SOCKS = TRUE, RANDOM_BACKPACK = TRUE, RANDOM_JUMPSUIT_STYLE = TRUE, RANDOM_EXOWEAR_STYLE = TRUE, RANDOM_HAIRSTYLE = TRUE, RANDOM_HAIR_COLOR = TRUE, RANDOM_FACIAL_HAIRSTYLE = TRUE, RANDOM_FACIAL_HAIR_COLOR = TRUE, RANDOM_SKIN_TONE = TRUE, RANDOM_EYE_COLOR = TRUE)
 	var/list/friendlyGenders = list("Male" = "male", "Female" = "female", "Other" = "plural")
 	var/phobia = "spiders"
-	var/list/language_instances = GLOB.language_datum_instances
+	var/language = "Kalixcian Common"
+	var/datum/language/language_datum
 	var/list/alt_titles_preferences = list()
 
 	var/list/custom_names = list()
@@ -1953,9 +1954,24 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						phobia = phobiaType
 
 				if("language")
-					var/languageType = input(user, "What are you scared of?", "Character Preference", language) as null|anything in vars[name] in GLOB.language_datum_instances
+					var/obj/item/organ/tongue/T = pref_species.mutanttongue
+					var/list/languages_possible = T.languages_possible
+					var/datum/language_holder/language_holder = new pref_species.species_language_holder
+					languages_possible -= typecacheof(/datum/language/codespeak)
+					languages_possible -= language_holder.understood_languages
+					languages_possible -= language_holder.spoken_languages
+					languages_possible -= language_holder.blocked_languages
+					//Credit To Yowii/Yoworii/Yorii for a much more streamlined method of language library building
+					var/list/language_names
+					for(var/datum/language/language_possible in languages_possible)
+						language_names |= initial(language_possible.name)
+					var/languageType = input(user, "What other language do you know?", "Character Preference", language) as null|anything in language_names
 					if(languageType)
 						language = languageType
+						for(var/datum/language/language_datum_test as anything in GLOB.all_languages)
+							if(initial(language_datum_test.name) == language)
+								language_datum = language_datum_test
+								break
 
 				if ("max_chat_length")
 					var/desiredlength = input(user, "Choose the max character length of shown Runechat messages. Valid range is 1 to [CHAT_MESSAGE_MAX_LENGTH] (default: [initial(max_chat_length)]))", "Character Preference", max_chat_length)  as null|num
