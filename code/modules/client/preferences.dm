@@ -88,7 +88,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/list/friendlyGenders = list("Male" = "male", "Female" = "female", "Other" = "plural")
 	var/phobia = "spiders"
 	var/language = "Kalixcian Common"
-	var/datum/language/language_datum
+	var/datum/language/language_datum = /datum/language/draconic
 	var/list/alt_titles_preferences = list()
 
 	var/list/custom_names = list()
