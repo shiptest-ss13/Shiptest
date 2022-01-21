@@ -1,5 +1,6 @@
 
 #define CAMERA_PICTURE_SIZE_HARD_LIMIT 21
+#define CAMERA_PICTURE_SIZE_HARD_MINIMUM 1
 
 /obj/item/camera
 	name = "camera"
@@ -161,6 +162,7 @@
 	to_chat(user, P.desc)
 	qdel(P)
 
+
 /obj/item/camera/proc/captureimage(atom/target, mob/user, flag, size_x = 1, size_y = 1)
 	if(flash_enabled)
 		set_light_on(TRUE)
@@ -170,8 +172,8 @@
 	if(!isturf(target_turf))
 		blending = FALSE
 		return FALSE
-	size_x = clamp(size_x, 0, CAMERA_PICTURE_SIZE_HARD_LIMIT)
-	size_y = clamp(size_y, 0, CAMERA_PICTURE_SIZE_HARD_LIMIT)
+	size_x = clamp(size_x, CAMERA_PICTURE_SIZE_HARD_MINIMUM, CAMERA_PICTURE_SIZE_HARD_LIMIT)
+	size_y = clamp(size_y, CAMERA_PICTURE_SIZE_HARD_MINIMUM, CAMERA_PICTURE_SIZE_HARD_LIMIT)
 	var/list/desc = list("This is a photo of an area of [size_x+1] meters by [size_y+1] meters.")
 	var/list/mobs_spotted = list()
 	var/list/dead_spotted = list()
@@ -184,11 +186,10 @@
 	var/list/turfs = list()
 	var/list/mobs = list()
 	var/blueprints = FALSE
-	var/clone_area = SSmapping.request_dynamic_reservation(size_x * 2 + 1, size_y * 2 + 1)
 	for(var/turf/placeholder in block(locate(target_turf.x - size_x, target_turf.y - size_y, target_turf.z), locate(target_turf.x + size_x, target_turf.y + size_y, target_turf.z)))
 		var/turf/T = placeholder
 		while(istype(T, /turf/open/openspace)) //Multi-z photography
-			T = SSmapping.get_turf_below(T)
+			T = T.below()
 			if(!T)
 				break
 
@@ -207,8 +208,7 @@
 
 	var/psize_x = (size_x * 2 + 1) * world.icon_size
 	var/psize_y = (size_y * 2 + 1) * world.icon_size
-	var/icon/get_icon = camera_get_icon(turfs, target_turf, psize_x, psize_y, clone_area, size_x, size_y, (size_x * 2 + 1), (size_y * 2 + 1))
-	qdel(clone_area)
+	var/icon/get_icon = camera_get_icon(turfs, target_turf, psize_x, psize_y, size_x, size_y, (size_x * 2 + 1), (size_y * 2 + 1))
 	get_icon.Blend("#000", ICON_UNDERLAY)
 
 	var/datum/picture/P = new("picture", desc.Join(" "), mobs_spotted, dead_spotted, get_icon, null, psize_x, psize_y, blueprints)

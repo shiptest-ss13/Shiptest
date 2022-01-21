@@ -86,8 +86,8 @@
 	density = FALSE
 	short_desc = "You are an ash walker. Your tribe worships the Necropolis."
 	flavour_text = "The wastes are sacred ground, its monsters a blessed bounty. \
-	You have seen lights in the distance... they foreshadow the arrival of outsiders that seek to tear apart the Necropolis and its domain. \
-	Fresh sacrifices for your nest."
+	The invaders from the past have died long ago. You will survive until the next \
+	day, and the day after. Your way of life is important to you."
 	assignedrole = "Ash Walker"
 	var/datum/team/ashwalkers/team
 	var/obj/structure/ash_walker_eggshell/eggshell
@@ -100,7 +100,7 @@
 
 /obj/effect/mob_spawn/human/ash_walker/special(mob/living/new_spawn)
 	new_spawn.fully_replace_character_name(null,random_unique_lizard_name(gender))
-	to_chat(new_spawn, "<b>Drag the corpses of men and beasts to your nest. It will absorb them to create more of your kind. Invade the strange structure of the outsiders if you must. Do not cause unnecessary destruction, as littering the wastes with ugly wreckage is certain to not gain you favor. Glory to the Necropolis!</b>")
+	to_chat(new_spawn, "<b>Drag the corpses of beasts and the dead to your nest. It will absorb them to create more of your kind. You have never seen a outsider before, as that was before your time.</b>")
 
 	new_spawn.mind.add_antag_datum(/datum/antagonist/ashwalker, team)
 
@@ -490,7 +490,7 @@
 	density = FALSE
 
 /datum/outfit/syndicate_empty/sbc
-	name = "Syndicate Battlecruiser Ship Operative"
+	name = "Syndicate Battlecruiser Ship Deck Assistant"
 	gloves = /obj/item/clothing/gloves/combat
 	l_pocket = /obj/item/gun/ballistic/automatic/pistol
 	r_pocket = /obj/item/kitchen/knife/combat/survival
@@ -511,6 +511,7 @@
 /datum/outfit/syndicate_empty/sbc/engi
 	name = "Syndicate Battlecruiser Ship Engineer"
 	glasses = /obj/item/clothing/glasses/meson/night
+	uniform = /obj/item/clothing/under/syndicate/aclfgrunt
 	r_pocket = /obj/item/analyzer
 	l_pocket = /obj/item/gun/ballistic/automatic/pistol
 	belt = /obj/item/storage/belt/utility/syndicate
@@ -530,8 +531,8 @@
 /datum/outfit/syndicate_empty/sbc/med
 	name = "Syndicate Battlecruiser Ship Medical Doctor"
 	uniform = /obj/item/clothing/under/syndicate/intern
-	glasses = /obj/item/clothing/glasses/hud/health/night
-	l_pocket = /obj/item/gun/ballistic/automatic/pistol
+	glasses = /obj/item/clothing/glasses/hud/health/prescription
+	l_pocket = /obj/item/gun/energy/e_gun/mini
 	r_pocket = /obj/item/kitchen/knife/combat/survival
 	belt = /obj/item/defibrillator/compact/combat/loaded
 	back = /obj/item/storage/backpack/duffelbag/syndie/med
@@ -550,7 +551,7 @@
 
 /datum/outfit/syndicate_empty/sbc/assault
 	name = "Syndicate Battlecruiser Assault Operative"
-	uniform = /obj/item/clothing/under/syndicate/combat
+	uniform = /obj/item/clothing/under/syndicate/camo
 	l_pocket = /obj/item/ammo_box/magazine/m10mm
 	r_pocket = /obj/item/kitchen/knife/combat/survival
 	glasses = /obj/item/clothing/glasses/night
@@ -558,7 +559,14 @@
 	back = /obj/item/storage/backpack/duffelbag/syndie
 	suit = /obj/item/clothing/suit/armor/vest
 	suit_store = /obj/item/gun/ballistic/automatic/pistol
-	mask = /obj/item/clothing/mask/gas/syndicate
+	backpack_contents = list(/obj/item/storage/box/survival/syndie=1, /obj/item/gun_voucher/syndicate=1)
+
+/datum/outfit/syndicate_empty/sbc/assault/operative
+	name = "Syndicate Battlecruiser Operative"
+	head = /obj/item/clothing/head/warden
+	uniform = /obj/item/clothing/under/syndicate/combat
+	id = /obj/item/card/id/syndicate_command/operative
+	backpack_contents = list(/obj/item/melee/baton/loaded=1, /obj/item/storage/box/survival/syndie=1)
 
 /obj/effect/mob_spawn/human/syndicate/battlecruiser/captain
 	name = "Syndicate Battlecruiser Captain"
@@ -575,11 +583,13 @@
 	name = "Syndicate Battlecruiser Captain"
 	l_pocket = /obj/item/melee/transforming/energy/sword/saber/red
 	r_pocket = /obj/item/melee/classic_baton/telescopic
+	uniform = /obj/item/clothing/under/syndicate/gorlex
 	suit = /obj/item/clothing/suit/armor/vest/capcarapace/syndicate
 	suit_store = /obj/item/gun/ballistic/revolver/mateba
 	head = /obj/item/clothing/head/HoS/syndicate
 	mask = /obj/item/clothing/mask/cigarette/cigar/havana
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses/eyepatch
+	id = /obj/item/card/id/syndicate_command/captain_id
 
 //Ancient cryogenic sleepers. Players become NT crewmen from a hundred year old space station, now on the verge of collapse.
 /obj/effect/mob_spawn/human/oldsec

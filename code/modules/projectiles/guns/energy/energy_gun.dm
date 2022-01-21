@@ -1,8 +1,7 @@
 /obj/item/gun/energy/e_gun
-	name = "energy gun"
+	name = "energy rifle"
 	desc = "A basic hybrid energy gun with two settings: disable and kill."
 	icon_state = "energy"
-	icon = 'whitesands/icons/obj/guns/energy.dmi' //WS edit
 	item_state = null	//so the human update icon uses the icon_state instead.
 	ammo_type = list(/obj/item/ammo_casing/energy/disabler, /obj/item/ammo_casing/energy/laser)
 	modifystate = 1
@@ -63,6 +62,18 @@
 	fire_rate = 3
 	shaded_charge = TRUE
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | ACID_PROOF
+
+/obj/item/gun/energy/e_gun/hos/brazil
+	name = "modified antique laser gun"
+	desc = "It's somehow modified to have more firemodes."
+	icon_state = "capgun_brazil_hos"
+	item_state = "hoslaser"
+
+/obj/item/gun/energy/e_gun/hos/brazil/true
+	desc = "By using a original antique laser gun with a intact nuclear power cell, it is truly one of the finest weapons in this area of space."
+	icon_state = "capgun_hos"
+	item_state = "hoslaser"
+	selfcharge = 1
 
 /obj/item/gun/energy/e_gun/dragnet
 	name = "\improper DRAGnet"
@@ -154,3 +165,14 @@
 				. += "[icon_state]_fail_1"
 			if(151 to INFINITY)
 				. += "[icon_state]_fail_2"
+
+/obj/item/gun/energy/e_gun/rdgun
+	name = "research director's PDW"
+	desc = "A energy revolver made from the power of science, but more importantly booze. Only has 6 shots."
+	icon_state = "rdpdw"
+	item_state = "gun"
+	ammo_x_offset = 2
+	charge_sections = 6
+	small_gun = TRUE
+	ammo_type = list(/obj/item/ammo_casing/energy/disabler/hitscan, /obj/item/ammo_casing/energy/ion/cheap)
+	cell_type = /obj/item/stock_parts/cell/gun/mini

@@ -95,7 +95,7 @@ STI KALY - blind
 
 	var/list/L = list()
 	for(var/turf/T in thearea.contents)
-		if(T.get_virtual_z_level() != affected_mob.get_virtual_z_level())
+		if(T.virtual_z() != affected_mob.virtual_z())
 			continue
 		if(T.name == "space")
 			continue

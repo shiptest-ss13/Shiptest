@@ -42,12 +42,18 @@
 /obj/projectile/beam/weak
 	damage = 15
 
+/obj/projectile/beam/weaker
+	damage = 10
+
 /obj/projectile/beam/weak/penetrator
 	armour_penetration = 50
 
 /obj/projectile/beam/laser/weak/negative_ap
 	damage = 15
 	armour_penetration = -30
+
+/obj/projectile/beam/laser/weak/negative_ap/low_range
+	range = 6
 
 /obj/projectile/beam/practice
 	name = "practice laser"
@@ -94,6 +100,8 @@
 /obj/projectile/beam/disabler/weak/negative_ap
 	armour_penetration = -30
 
+/obj/projectile/beam/disabler/weak/negative_ap/low_range
+	range = 6
 /obj/projectile/beam/pulse
 	name = "pulse"
 	icon_state = "u_laser"

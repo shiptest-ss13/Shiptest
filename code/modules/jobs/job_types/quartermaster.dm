@@ -7,6 +7,7 @@
 	supervisors = "the head of personnel"
 	selection_color = "#d7b088"
 	wiki_page = "Quartermaster" //WS Edit - Wikilinks/Warning
+	officer = TRUE
 	exp_type_department = EXP_TYPE_SUPPLY // This is so the jobs menu can work properly
 
 	outfit = /datum/outfit/job/quartermaster
@@ -48,4 +49,12 @@
 	neck = /obj/item/clothing/neck/tie/brown
 	head = /obj/item/clothing/head/supply_chief
 	backpack_contents = list(/obj/item/modular_computer/tablet/preset/cargo=1, /obj/item/clipboard=1)
+
+/datum/outfit/job/quartermaster/western
+	name = "Foreman (Western)"
+	uniform = /obj/item/clothing/under/rank/cargo/qm
+	suit = /obj/item/clothing/suit/toggle/hazard
+	shoes = /obj/item/clothing/shoes/workboots
+	glasses = /obj/item/clothing/glasses/sunglasses
+	head = /obj/item/clothing/head/cowboy/sec
 

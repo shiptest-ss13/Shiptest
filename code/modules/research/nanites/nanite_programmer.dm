@@ -10,6 +10,7 @@
 	density = TRUE
 	flags_1 = HEAR_1
 	circuit = /obj/item/circuitboard/machine/nanite_programmer
+	COOLDOWN_DECLARE(nanite_programmer)
 
 /obj/machinery/nanite_programmer/attackby(obj/item/I, mob/user)
 	if(istype(I, /obj/item/disk/nanite_program))
@@ -139,5 +140,6 @@
 /obj/machinery/nanite_programmer/Hear(message, atom/movable/speaker, message_language, raw_message, radio_freq, list/spans, list/message_mods = list())
 	. = ..()
 	var/static/regex/when = regex("(?:^\\W*when|when\\W*$)", "i") //starts or ends with when
-	if(findtext(raw_message, when) && !istype(speaker, /obj/machinery/nanite_programmer))
+	if(findtext(raw_message, when) && !istype(speaker, /obj/machinery/nanite_programmer) && COOLDOWN_FINISHED(src, nanite_programmer))
 		say("When you code it!!")
+		COOLDOWN_START(src, nanite_programmer, 5 SECONDS)

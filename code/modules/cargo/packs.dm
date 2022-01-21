@@ -690,42 +690,6 @@
 	crate_name = "ammo crate"
 	dangerous = TRUE
 
-/datum/supply_pack/security/armory/aknt
-	name = "Nanotrasen Brand Kalashnikov Rifle Crate"
-	desc = "Contains two cheaply made reproductions of the AK-47 by Nanotrasen, the NT-AK."
-	cost = 12000
-	contains = list(/obj/item/gun/ballistic/automatic/ak47/nt,
-					/obj/item/gun/ballistic/automatic/ak47/nt)
-	crate_name = "rifle crate"
-	dangerous = TRUE
-
-/datum/supply_pack/security/armory/akntammo
-	name = "Nanotrasen Brand Kalashnikov Ammo Crate"
-	desc = "Contains two 30 round proprietary magazines for the NT-AK."
-	cost = 5000
-	contains = list(/obj/item/ammo_box/magazine/aknt,
-					/obj/item/ammo_box/magazine/aknt)
-	crate_name = "rifle crate"
-	dangerous = TRUE
-
-/datum/supply_pack/security/armory/ak47
-	name = "Kalashnikov Rifle Crate"
-	desc = "Hello Comrade, this here is our most famous product! It is easily maintainable, and more afordable than any other rifle, yes! If product stops working, just apply tape!"
-	cost = 20000
-	contains = list(/obj/item/gun/ballistic/automatic/ak47,
-					/obj/item/gun/ballistic/automatic/ak47)
-	crate_name = "rifle crate"
-	dangerous = TRUE
-
-/datum/supply_pack/security/armory/ak47ammo
-	name = "Kalashnikov Ammo Crate"
-	desc = "You ran out of ammo? We have solution, yes! Order 2 spare magazines for the shiny rifle of yours, and continue doing, whatever you do with your rifle!"
-	cost = 7000
-	contains = list(/obj/item/ammo_box/magazine/ak47,
-					/obj/item/ammo_box/magazine/ak47)
-	crate_name = "rifle crate"
-	dangerous = TRUE
-
 /datum/supply_pack/security/armory/swat
 	name = "SWAT Crate"
 	desc = "Contains two fullbody sets of tough, fireproof, pressurized suits designed in a joint effort by IS-ERI and Nanotrasen. Each set contains a suit, helmet, mask, combat belt, and combat gloves. Requires Armory access to open."
@@ -1286,7 +1250,7 @@
 
 /datum/supply_pack/medical/bloodpacks
 	name = "Blood Pack Variety Crate"
-	desc = "Contains eight different blood packs for reintroducing blood to patients."
+	desc = "Contains several different blood packs for reintroducing blood to patients."
 	cost = 1000
 	contains = list(/obj/item/reagent_containers/blood,
 					/obj/item/reagent_containers/blood,
@@ -1296,22 +1260,21 @@
 					/obj/item/reagent_containers/blood/BMinus,
 					/obj/item/reagent_containers/blood/OPlus,
 					/obj/item/reagent_containers/blood/OMinus,
-					/obj/item/reagent_containers/blood/lizard,
-					/obj/item/reagent_containers/blood/ethereal)
+					/obj/item/reagent_containers/blood/lizard)
 	crate_name = "blood freezer"
 	crate_type = /obj/structure/closet/crate/freezer
 
 /datum/supply_pack/medical/firstaidbruises_single
 	name = "Bruise Treatment Kit Single-Pack"
 	desc = "Contains one first aid kit focused on healing bruises and broken bones."
-	cost = 330
+	cost = 800
 	small_item = TRUE
 	contains = list(/obj/item/storage/firstaid/brute)
 
 /datum/supply_pack/medical/firstaidburns_single
 	name = "Burn Treatment Kit Single-Pack"
 	desc = "Contains one first aid kit focused on healing severe burns."
-	cost = 330
+	cost = 800
 	small_item = TRUE
 	contains = list(/obj/item/storage/firstaid/fire)
 
@@ -1349,7 +1312,7 @@
 /datum/supply_pack/medical/firstaid_single
 	name = "First Aid Kit Single-Pack"
 	desc = "Contains one first aid kit for healing most types of wounds."
-	cost = 250
+	cost = 600
 	small_item = TRUE
 	contains = list(/obj/item/storage/firstaid/regular)
 
@@ -1395,7 +1358,7 @@
 /datum/supply_pack/medical/firstaidoxygen_single
 	name = "Oxygen Deprivation Kit Single-Pack"
 	desc = "Contains three first aid kits focused on helping oxygen deprivation victims."
-	cost = 330
+	cost = 800
 	small_item = TRUE
 	contains = list(/obj/item/storage/firstaid/o2)
 
@@ -1411,7 +1374,7 @@
 /datum/supply_pack/medical/firstaidtoxins_single
 	name = "Toxin Treatment Kit Single-Pack"
 	desc = "Contains one first aid kit focused on healing damage dealt by heavy toxins."
-	cost = 330
+	cost = 800
 	small_item = TRUE
 	contains = list(/obj/item/storage/firstaid/toxin)
 
@@ -1676,13 +1639,26 @@
 	crate_name = "replacement lights"
 
 /datum/supply_pack/service/minerkit
-	name = "Shaft Miner Starter Kit"
-	desc = "All the miners died too fast? Assistant wants to get a taste of life off-station? Either way, this kit is the best way to turn a regular crewman into an ore-producing, monster-slaying machine. Contains meson goggles, a pickaxe, advanced mining scanner, cargo headset, ore bag, gasmask, an explorer suit and a miner ID upgrade. Requires QM access to open."
+	name = "EXOCON Frontier Starter Kit"
+	desc = "All the essentials an aspiring prospector or hunter needs to get their operation off the ground."
 	cost = 2000
 	access = ACCESS_QM
 	contains = list(/obj/item/storage/backpack/duffelbag/mining_conscript)
-	crate_name = "shaft miner starter kit"
-	crate_type = /obj/structure/closet/crate/secure
+	crate_name = "EXOCON Frontier starter kit"
+	crate_type = /obj/structure/closet/crate/secure/exo
+
+/datum/supply_pack/service/hvyminer
+	name = "Heavy Mining Kit"
+	desc = "A set of supplementary premium equipment for particularly challenging frontier expeditions. Comes equipped with an enhanced mining suit, crusher, launch boots, and two emerency stimulant injectors."
+	cost = 7500
+	access = ACCESS_QM
+	crate_name = "EXOCON Heavy Operations Kit"
+	crate_type = /obj/structure/closet/crate/secure/exo
+	contains = list(/obj/item/clothing/suit/space/hardsuit/mining/heavy,
+					/obj/item/clothing/shoes/bhop,
+					/obj/item/reagent_containers/hypospray/medipen/stimpack/crisis,
+					/obj/item/reagent_containers/hypospray/medipen/stimpack/crisis,
+					/obj/item/kinetic_crusher)
 
 /datum/supply_pack/service/vending/bartending
 	name = "Booze-o-mat and Coffee Supply Crate"

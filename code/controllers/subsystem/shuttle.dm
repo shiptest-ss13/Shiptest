@@ -44,8 +44,8 @@ SUBSYSTEM_DEF(shuttle)
 	var/obj/docking_port/mobile/preview_shuttle
 	/// The template of the shuttle manipulator's currently loaded preview shuttle
 	var/datum/map_template/shuttle/preview_template
-	/// The turf reservation that the preview shuttle is loaded into
-	var/datum/turf_reservation/preview_reservation
+	/// The mapzone that the preview shuttle is loaded into
+	var/datum/map_zone/preview_mapzone
 
 /datum/controller/subsystem/shuttle/Initialize(timeofday)
 	ordernum = rand(1, 9000)
@@ -85,19 +85,18 @@ SUBSYSTEM_DEF(shuttle)
 				qdel(transit_dock, force=TRUE)
 				continue
 
-	if(!SSmapping.clearing_reserved_turfs)
-		while(transit_requesters.len)
-			var/requester = popleft(transit_requesters)
-			var/success = generate_transit_dock(requester)
-			if(!success) // BACK OF THE QUEUE
-				transit_request_failures[requester]++
-				if(transit_request_failures[requester] < MAX_TRANSIT_REQUEST_RETRIES)
-					transit_requesters += requester
-				else
-					var/obj/docking_port/mobile/M = requester
-					M.transit_failure()
-			if(MC_TICK_CHECK)
-				break
+	while(transit_requesters.len)
+		var/requester = popleft(transit_requesters)
+		var/success = generate_transit_dock(requester)
+		if(!success) // BACK OF THE QUEUE
+			transit_request_failures[requester]++
+			if(transit_request_failures[requester] < MAX_TRANSIT_REQUEST_RETRIES)
+				transit_requesters += requester
+			else
+				var/obj/docking_port/mobile/M = requester
+				M.transit_failure()
+		if(MC_TICK_CHECK)
+			break
 
 /// Requests a bluespace jump, which, after jump_request_time deciseconds, will initiate a bluespace jump.
 /datum/controller/subsystem/shuttle/proc/request_jump(modifier = 1)
@@ -167,15 +166,24 @@ SUBSYSTEM_DEF(shuttle)
 		if(WEST)
 			transit_path = /turf/open/space/transit/west
 
-	var/datum/turf_reservation/dynamic/proposal = SSmapping.request_dynamic_reservation(transit_width, transit_height)
-	if(!istype(proposal))
-		return FALSE
+	var/transit_name = "Transit Map Zone"
+	var/datum/map_zone/mapzone = SSmapping.create_map_zone(transit_name)
+	var/datum/virtual_level/vlevel = SSmapping.create_virtual_level(transit_name, list(ZTRAIT_RESERVED = TRUE), mapzone, transit_width, transit_height, ALLOCATION_FREE)
+
+	vlevel.reserve_margin(TRANSIT_SIZE_BORDER)
+
+	mapzone.parallax_movedir = travel_dir
 
 	var/area/shuttle/transit/transit_area = new()
-	transit_area.parallax_movedir = travel_dir
-	proposal.fill_in(turf_type = transit_path, area_override = transit_area)
 
-	var/turf/bottomleft = locate(proposal.bottom_left_coords[1], proposal.bottom_left_coords[2], proposal.bottom_left_coords[3])
+	vlevel.fill_in(transit_path, transit_area)
+
+	var/turf/bottomleft = locate(
+		vlevel.low_x,
+		vlevel.low_y,
+		vlevel.z_value
+		)
+
 	// Then create a transit docking port in the middle
 	var/coords = M.return_coords(0, 0, dock_dir)
 	/*  0------2
@@ -201,7 +209,7 @@ SUBSYSTEM_DEF(shuttle)
 	if(!midpoint)
 		return FALSE
 	var/obj/docking_port/stationary/transit/new_transit_dock = new(midpoint)
-	new_transit_dock.reserved_area = proposal
+	new_transit_dock.reserved_mapzone = mapzone
 	new_transit_dock.name = "Transit for [M.name]"
 	new_transit_dock.owner = M
 	new_transit_dock.assigned_area = transit_area
@@ -231,7 +239,7 @@ SUBSYSTEM_DEF(shuttle)
 
 	preview_shuttle = SSshuttle.preview_shuttle
 	preview_template = SSshuttle.preview_template
-	preview_reservation = SSshuttle.preview_reservation
+	preview_mapzone = SSshuttle.preview_mapzone
 
 /datum/controller/subsystem/shuttle/proc/is_in_shuttle_bounds(atom/A)
 	var/area/param_area = get_area(A)
@@ -283,11 +291,11 @@ SUBSYSTEM_DEF(shuttle)
 		preview_shuttle.jumpToNullSpace()
 		preview_shuttle = null
 		preview_template = null
-		QDEL_NULL(preview_reservation)
+		QDEL_NULL(preview_mapzone)
 
 	if(!preview_shuttle)
 		if(load_template(loading_template))
-			preview_shuttle.linkup(loading_template, destination_port)
+			preview_shuttle.linkup(destination_port)
 		preview_template = loading_template
 
 	// get the existing shuttle information, if any
@@ -341,18 +349,26 @@ SUBSYSTEM_DEF(shuttle)
 	preview_shuttle = null
 	preview_template = null
 	selected = null
-	QDEL_NULL(preview_reservation)
+
+	preview_mapzone.clear_reservation() //Is this safe? Docking CHECK_TICK's and this should happen on the same thread, so theoritically this wouldn't happen until docking has been finished? Maybe?
+	QDEL_NULL(preview_mapzone)
 
 /// Internal template loading proc. Do not call, instead use [/datum/controller/subsystem/shuttle/proc/action_load]
 /datum/controller/subsystem/shuttle/proc/load_template(datum/map_template/shuttle/S)
 	PRIVATE_PROC(TRUE)
 	. = FALSE
-	preview_reservation = SSmapping.request_dynamic_reservation(S.width, S.height)
-	if(!preview_reservation)
-		CRASH("failed to reserve an area for shuttle template loading")
-	preview_reservation.fill_in(turf_type = /turf/open/space/transit/south)
+	var/width = S.width
+	var/height = S.height
 
-	var/turf/BL = TURF_FROM_COORDS_LIST(preview_reservation.bottom_left_coords)
+	var/mapzone_name = "Preview Shuttle Zone"
+	preview_mapzone = SSmapping.create_map_zone(mapzone_name)
+	var/datum/virtual_level/vlevel = SSmapping.create_virtual_level(mapzone_name, list(ZTRAIT_RESERVED = TRUE), preview_mapzone, width, height, ALLOCATION_FREE)
+
+	if(!preview_mapzone) ///Shouldn't ever happen
+		CRASH("failed to reserve an area for shuttle template loading")
+	vlevel.fill_in(/turf/open/space/transit/south)
+
+	var/turf/BL = locate(vlevel.low_x, vlevel.low_y, vlevel.z_value)
 	S.load(BL, centered = FALSE, register = FALSE)
 
 	var/affected = S.get_affected_turfs(BL, centered=FALSE)

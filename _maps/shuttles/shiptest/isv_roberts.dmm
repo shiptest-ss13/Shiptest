@@ -605,7 +605,6 @@
 /obj/structure/closet/crate/freezer,
 /obj/item/reagent_containers/blood/AMinus,
 /obj/item/reagent_containers/blood/BPlus,
-/obj/item/reagent_containers/blood/ethereal,
 /obj/item/reagent_containers/blood/random,
 /obj/item/organ/ears/cat,
 /obj/item/organ/tail/cat,
@@ -613,7 +612,7 @@
 /area/ship/maintenance/starboard)
 "Lh" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/cryopod/latejoin/reskinnable{
+/obj/machinery/cryopod{
 	close_state = "crate";
 	dir = 8;
 	icon = 'goon/icons/obj/crates.dmi';

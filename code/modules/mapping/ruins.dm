@@ -1,12 +1,11 @@
-/datum/map_template/ruin/proc/try_to_place(z,allowed_areas,turf/forced_turf)
+/datum/map_template/ruin/proc/try_to_place(datum/virtual_level/vlevel, allowed_areas, turf/forced_turf)
 	var/sanity = forced_turf ? 1 : PLACEMENT_TRIES
-	if(SSmapping.level_trait(z,ZTRAIT_RESERVED))
-		return place_on_isolated_level()
+	var/z = vlevel.z_value
 	while(sanity > 0)
 		sanity--
-		var/width_border = TRANSITIONEDGE + SPACERUIN_MAP_EDGE_PAD + round(width / 2)
-		var/height_border = TRANSITIONEDGE + SPACERUIN_MAP_EDGE_PAD + round(height / 2)
-		var/turf/central_turf = forced_turf ? forced_turf : locate(rand(width_border, world.maxx - width_border), rand(height_border, world.maxy - height_border), z)
+		var/width_border = vlevel.mapping_margin + SPACERUIN_MAP_EDGE_PAD + round(width / 2)
+		var/height_border = vlevel.mapping_margin + SPACERUIN_MAP_EDGE_PAD + round(height / 2)
+		var/turf/central_turf = forced_turf ? forced_turf : locate(rand(vlevel.low_x + width_border, vlevel.high_x - width_border), rand(vlevel.low_y + height_border, vlevel.high_y - height_border), z)
 		var/valid = TRUE
 
 		for(var/turf/check in get_affected_turfs(central_turf,1))
@@ -45,29 +44,15 @@
 		new /obj/effect/landmark/ruin(central_turf, src)
 		return central_turf
 
-/datum/map_template/ruin/proc/place_on_isolated_level()
-	var/datum/turf_reservation/reservation = SSmapping.request_dynamic_reservation(width, height) //Make the new level creation work with different traits.
-	if(!reservation)
-		return
-	var/turf/placement = locate(reservation.bottom_left_coords[1],reservation.bottom_left_coords[2],reservation.bottom_left_coords[3])
-	load(placement)
-	loaded++
-	for(var/turf/T in get_affected_turfs(placement))
-		T.flags_1 |= NO_RUINS_1
-	var/turf/center = locate(placement.x + round(width/2),placement.y + round(height/2),placement.z)
-	new /obj/effect/landmark/ruin(center, src)
-	return center
-
-
-/proc/seedRuins(list/z_levels = null, budget = 0, whitelist = list(/area/space), list/potentialRuins)
-	if(!z_levels || !z_levels.len)
+/proc/seedRuins(list/virtual_levels, budget = 0, whitelist = list(/area/space), list/potentialRuins)
+	if(!virtual_levels || !virtual_levels.len)
 		WARNING("No Z levels provided - Not generating ruins")
 		return
 
-	for(var/zl in z_levels)
-		var/turf/T = locate(1, 1, zl)
+	for(var/datum/virtual_level/vlevel as anything in virtual_levels)
+		var/turf/T = locate(1, 1, vlevel.z_value)
 		if(!T)
-			WARNING("Z level [zl] does not exist - Not generating ruins")
+			WARNING("Z level [vlevel.z_value] does not exist - Not generating ruins")
 			return
 
 	var/list/ruins = potentialRuins.Copy()
@@ -110,22 +95,26 @@
 		var/placement_tries = forced_turf ? 1 : PLACEMENT_TRIES //Only try once if we target specific turf
 		var/failed_to_place = TRUE
 		var/target_z = 0
+		var/datum/virtual_level/picked_sub = pick(virtual_levels)
 		var/turf/placed_turf //Where the ruin ended up if we succeeded
 		outer:
 			while(placement_tries > 0)
 				placement_tries--
-				target_z = pick(z_levels)
+				picked_sub = pick(virtual_levels)
+				target_z = picked_sub.z_value
 				if(forced_z)
 					target_z = forced_z
 				if(current_pick?.always_spawn_with) //If the ruin has part below, make sure that z exists.
 					for(var/v in current_pick.always_spawn_with)
 						if(current_pick.always_spawn_with[v] == PLACE_BELOW)
 							var/turf/T = locate(1,1,target_z)
-							if(!SSmapping.get_turf_below(T))
+							if(!T.below())
 								if(forced_z)
 									continue outer
 								else
 									break outer
+				//Apparently commented out instead of just not calling the proc? curious
+				//placed_turf = current_pick.try_to_place(picked_sub,whitelist,forced_turf)
 				if(!placed_turf)
 					continue
 				else
@@ -163,15 +152,15 @@
 								if(PLACE_SAME_Z)
 									forced_ruins[linked] = target_z //I guess you might want a chain somehow
 								if(PLACE_LAVA_RUIN)
-									forced_ruins[linked] = pick(SSmapping.levels_by_trait(ZTRAIT_LAVA_RUINS))
+									forced_ruins[linked] = pick(SSmapping.virtual_levels_by_trait(ZTRAIT_LAVA_RUINS))
 								if(PLACE_SPACE_RUIN)
-									forced_ruins[linked] = pick(SSmapping.levels_by_trait(ZTRAIT_SPACE_RUINS))
+									forced_ruins[linked] = pick(SSmapping.virtual_levels_by_trait(ZTRAIT_SPACE_RUINS))
 								if(PLACE_DEFAULT)
 									forced_ruins[linked] = -1
 								if(PLACE_BELOW)
-									forced_ruins[linked] = SSmapping.get_turf_below(placed_turf)
+									forced_ruins[linked] = placed_turf.below()
 								if(PLACE_RESERVED) // the specific z-value doesn't actually matter here, just that the z level has ZTRAIT_RESERVED, because
-									forced_ruins[linked] = pick(SSmapping.levels_by_trait(ZTRAIT_RESERVED)) // place_on_isolated_level doesn't take a z argument.
+									forced_ruins[linked] = pick(SSmapping.virtual_levels_by_trait(ZTRAIT_RESERVED)) // place_on_isolated_level doesn't take a z argument.
 
 		//Update the availible list
 		for(var/datum/map_template/ruin/R in ruins_availible)

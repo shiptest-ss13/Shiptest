@@ -173,7 +173,7 @@
 	var/turf/T = get_turf(AM)
 	if(!T)
 		return FALSE
-	if(is_centcom_level(T.z) || is_away_level(T.z))
+	if(is_centcom_level(T) || is_away_level(T))
 		return FALSE
 	var/area/A = get_area(T)
 	if(!A ||(A.area_flags & NOTELEPORT))

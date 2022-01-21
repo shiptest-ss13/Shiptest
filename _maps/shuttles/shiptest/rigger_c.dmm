@@ -2204,9 +2204,7 @@
 "zg" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/effect/turf_decal/caution{
-	pixel_y = -11
-	},
+/obj/effect/turf_decal/industrial/caution,
 /obj/effect/turf_decal/industrial/warning{
 	dir = 10
 	},
@@ -2603,7 +2601,7 @@
 /turf/open/floor/plating,
 /area/ship/crew/canteen)
 "Dr" = (
-/obj/machinery/cryopod/latejoin{
+/obj/machinery/cryopod{
 	dir = 1
 	},
 /obj/machinery/computer/cryopod{
