@@ -1556,21 +1556,21 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				ShowChoices(user)
 				if(all_quirks)
 					var/balance
-					for(var/V as anything in all_quirks)
-						var/datum/quirk/_V = new SSquirks.quirks[V]
-						balance -= _V.value
-						if(((_V.species_lock["type"] == "allowed") && !(pref_species.id in _V.species_lock)) || (_V.species_lock["type"] == "blocked" && (pref_species.id in _V.species_lock)))
-							all_quirks ^= _V.name
-							balance += _V.value
+					for(var/quirk_owned in all_quirks)
+						var/datum/quirk/quirk_owned_instance = new SSquirks.quirks[quirk_owned]
+						balance -= quirk_owned_instance.value
+						if(((quirk_owned_instance.species_lock["type"] == "allowed") && !(pref_species.id in quirk_owned_instance.species_lock)) || (quirk_owned_instance.species_lock["type"] == "blocked" && (pref_species.id in quirk_owned_instance.species_lock)))
+							all_quirks ^= quirk_owned_instance.name
+							balance += quirk_owned_instance.value
 					while(balance < 0)
 						var/list/positive_quirks
-						for(var/T as anything in all_quirks)
-							var/datum/quirk/quirk = new SSquirks.quirks[T]
-							if(quirk.value > 0)
-								positive_quirks |= quirk
-						var/datum/quirk/M = pick(positive_quirks)
-						all_quirks ^= M.name
-						balance += initial(M.value)
+						for(var/quirk_owned in all_quirks)
+							var/datum/quirk/quirk_owned_instance = new SSquirks.quirks[quirk_owned]
+							if(quirk_owned_instance.value > 0)
+								positive_quirks |= quirk_owned_instance
+						var/datum/quirk/positive_quirk = pick(positive_quirks)
+						all_quirks ^= positive_quirk.name
+						balance += positive_quirk.value
 				return 1
 
 			if(href_list["lookatspecies"])
