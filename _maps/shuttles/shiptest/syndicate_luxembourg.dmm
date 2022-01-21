@@ -229,10 +229,6 @@
 /turf/open/floor/carpet/nanoweave/beige,
 /area/ship/bridge)
 "ft" = (
-/obj/machinery/button/door{
-	id = "warehouse";
-	pixel_x = -25
-	},
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
@@ -406,6 +402,19 @@
 /obj/item/storage/box/donkpockets/donkpocketteriyaki,
 /turf/open/floor/carpet/blue,
 /area/ship/bridge)
+"ib" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
+/obj/machinery/button/door{
+	id = "warehouse";
+	pixel_x = 24;
+	pixel_y = 21
+	},
+/turf/open/floor/carpet/nanoweave/beige,
+/area/ship/storage)
 "ie" = (
 /turf/closed/wall/r_wall/syndicate/nodiagonal,
 /area/ship/crew/dorm)
@@ -2161,7 +2170,7 @@ Og
 zu
 gz
 Cj
-Qu
+ib
 GU
 dc
 Xk
