@@ -991,7 +991,6 @@
 	if(radio && AI.radio) //AI keeps all channels, including Syndie if it is a Traitor
 		if(AI.radio.syndie)
 			radio.make_syndie()
-		radio.subspace_transmission = TRUE
 		radio.channels = AI.radio.channels
 		for(var/chan in radio.channels)
 			radio.secure_radio_connections[chan] = add_radio(radio, GLOB.radiochannels[chan])
