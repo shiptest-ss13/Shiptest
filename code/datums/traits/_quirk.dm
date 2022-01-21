@@ -53,8 +53,8 @@
 	if(quirk_holder)
 		to_chat(quirk_holder, lose_text)
 		quirk_holder.roundstart_quirks -= src
-		for(var/T in mob_traits)
-			REMOVE_TRAIT(quirk_holder, T, ROUNDSTART_TRAIT)
+		for(var/trait in mob_traits)
+			REMOVE_TRAIT(quirk_holder, trait, ROUNDSTART_TRAIT)
 	SSquirks.quirk_objects -= src
 	return ..()
 
