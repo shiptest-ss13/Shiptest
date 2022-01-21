@@ -61,9 +61,9 @@
 /datum/quirk/proc/transfer_mob(mob/living/to_mob)
 	quirk_holder.roundstart_quirks -= src
 	to_mob.roundstart_quirks += src
-	for(var/T in mob_traits)
-		REMOVE_TRAIT(quirk_holder, T, ROUNDSTART_TRAIT)
-		ADD_TRAIT(to_mob, T, ROUNDSTART_TRAIT)
+	for(var/trait in mob_traits)
+		REMOVE_TRAIT(quirk_holder, trait, ROUNDSTART_TRAIT)
+		ADD_TRAIT(to_mob, trait, ROUNDSTART_TRAIT)
 	quirk_holder = to_mob
 	on_transfer()
 
