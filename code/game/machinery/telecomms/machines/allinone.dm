@@ -26,12 +26,13 @@
 		return
 	if(!on || !is_freq_listening(signal))  // has to be on to receive messages
 		return
-	if (!intercept && !(get_virtual_z_level() in signal.levels) && !(0 in signal.levels))  // has to be syndicate or on the right level
+	var/datum/map_zone/mapzone = src.get_map_zone()
+	if (!intercept && !(mapzone in signal.map_zones) && !(0 in signal.map_zones))  // has to be syndicate or on the right level
 		return
 
 	// Decompress the signal and mark it done
 	if (intercept)
-		signal.levels += 0  // Signal is broadcast to agents anywhere
+		signal.map_zones += 0  // Signal is broadcast to agents anywhere
 
 	signal.data["compression"] = 0
 	signal.mark_done()

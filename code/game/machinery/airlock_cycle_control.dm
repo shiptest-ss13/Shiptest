@@ -95,7 +95,7 @@
 	var/scan_on_late_init = FALSE
 	var/depressurization_margin = 10 // use a lower value to reduce cross-contamination
 	var/overlays_hash = null
-	var/skip_delay = 300
+	var/skip_delay = 10
 	var/skip_timer = 0
 	var/is_skipping = FALSE
 
@@ -106,7 +106,7 @@
 /obj/machinery/advanced_airlock_controller/lavaland
 	exterior_pressure = WARNING_LOW_PRESSURE + 10
 	depressurization_margin = ONE_ATMOSPHERE
-	skip_delay = 30
+	skip_delay = 10
 
 /obj/machinery/advanced_airlock_controller/mix_chamber
 	depressurization_margin = 0.15 // The minimum - We really don't want contamination.
@@ -129,12 +129,12 @@
 	qdel(wires)
 	wires = null
 	cut_links()
-	SSair.atmos_machinery -= src
+	SSair.stop_processing_machine(src)
 	return ..()
 
 /obj/machinery/advanced_airlock_controller/Initialize(mapload)
 	. = ..()
-	SSair.atmos_machinery += src
+	SSair.start_processing_machine(src)
 	scan_on_late_init = mapload
 	if(mapload && (. != INITIALIZE_HINT_QDEL))
 		return INITIALIZE_HINT_LATELOAD
@@ -581,6 +581,8 @@
 					if(assume_roles)
 						for(var/adir in GLOB.cardinals)					// Checking all the turfs around the airlock
 							var/turf/check_turf = get_step(T2, adir)
+							if(!check_turf) //You can step out of the map bondaries
+								continue
 							if(check_turf.initial_gas_mix != OPENTURF_DEFAULT_ATMOS)
 								airlocks[A] = EXTERIOR_AIRLOCK
 								break

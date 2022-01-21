@@ -1,8 +1,6 @@
 /obj/item/clothing/under/rank/civilian/janitor
 	name = "janitor's jumpsuit"
 	desc = "It's the official uniform of the station's janitor. It has minor protection from biohazards."
-	icon = 'whitesands/icons/obj/clothing/under/service.dmi'
-	mob_overlay_icon = 'whitesands/icons/mob/clothing/under/service.dmi'
 	icon_state = "janitor"
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 10, "rad" = 0, "fire" = 0, "acid" = 0)
 	fitted = NO_FEMALE_UNIFORM

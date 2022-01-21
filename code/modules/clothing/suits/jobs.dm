@@ -103,6 +103,18 @@
 	resistance_flags = NONE
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/exo/large
 
+/obj/item/clothing/suit/toggle/industrial
+	name = "industrial jacket"
+	desc = "A black bomber jacket with high-visibility markings."
+	icon_state = "highvis"
+	item_state = "highvis"
+	blood_overlay_type = "coat"
+	body_parts_covered = CHEST|ARMS
+	togglename = "zipper"
+	allowed = list(/obj/item/flashlight, /obj/item/tank/internals/emergency_oxygen, /obj/item/tank/internals/plasmaman, /obj/item/t_scanner, /obj/item/radio)
+	resistance_flags = NONE
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/exo/large
+
 //Lawyer
 /obj/item/clothing/suit/toggle/lawyer
 	name = "blue suit jacket"
@@ -154,8 +166,6 @@
 
 //Security
 /obj/item/clothing/suit/armor/vest/security
-	icon = 'whitesands/icons/obj/clothing/under/security.dmi'
-	mob_overlay_icon = 'whitesands/icons/mob/clothing/under/security.dmi'
 
 /obj/item/clothing/suit/armor/vest/security/officer
 	name = "security officer's jacket"

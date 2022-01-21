@@ -285,7 +285,7 @@
 		return 0
 	if(target in possible_targets)
 		var/turf/T = get_turf(src)
-		if(target.get_virtual_z_level() != T.get_virtual_z_level())
+		if(target.virtual_z() != T.virtual_z())
 			LoseTarget()
 			return 0
 		var/target_distance = get_dist(targets_from,target)
@@ -673,7 +673,6 @@
 
 /mob/living/simple_animal/hostile/proc/handle_target_del(datum/source)
 	SIGNAL_HANDLER
-	UnregisterSignal(target, COMSIG_PARENT_QDELETING)
 	target = null
 	LoseTarget()
 

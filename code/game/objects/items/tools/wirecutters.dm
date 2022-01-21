@@ -52,13 +52,13 @@
 
 /obj/item/wirecutters/get_belt_overlay()
 	if(random_color)
-		var/mutable_appearance/body = mutable_appearance('whitesands/icons/obj/clothing/belt_overlays.dmi', "cutters")
-		var/mutable_appearance/head = mutable_appearance('whitesands/icons/obj/clothing/belt_overlays.dmi', "cutters_head")
+		var/mutable_appearance/body = mutable_appearance('icons/obj/clothing/belt_overlays.dmi', "cutters")
+		var/mutable_appearance/head = mutable_appearance('icons/obj/clothing/belt_overlays.dmi', "cutters_head")
 		body.color = color
 		head.add_overlay(body)
 		return head
 	else
-		return mutable_appearance('whitesands/icons/obj/clothing/belt_overlays.dmi', icon_state)
+		return mutable_appearance('icons/obj/clothing/belt_overlays.dmi', icon_state)
 
 /obj/item/wirecutters/attack(mob/living/carbon/C, mob/user)
 	if(istype(C) && C.handcuffed && istype(C.handcuffed, /obj/item/restraints/handcuffs/cable))

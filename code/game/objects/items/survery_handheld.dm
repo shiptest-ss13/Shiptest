@@ -29,7 +29,7 @@
 
 	var/turf/src_turf = get_turf(src)
 
-	var/my_z = "[get_virtual_z_level()]"
+	var/my_z = "[virtual_z()]"
 	if(z_active[my_z])
 		flick(icon_state + "-corrupted", src)
 		playsound(src, 'sound/machines/buzz-sigh.ogg', 20)
@@ -113,3 +113,8 @@
 	)
 	category = list("Tool Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
+
+/obj/structure/anomaly
+	name = "Defaultic Bind"
+	desc = "The truly unexpected anomaly. Let a coder know if you see this!"
+	max_integrity = 300

@@ -1,6 +1,6 @@
 /obj/item/gun/energy/kinetic_accelerator
-	name = "proto-kinetic accelerator"
-	desc = "A self recharging, ranged mining tool that does increased damage in low pressure."
+	name = "kinetic accelerator"
+	desc = "A self recharging, ranged self-defense and rock pulverizing tool that does increased damage in low pressure. EXOCON does not condone use of this weapon against other sentient life."
 	icon_state = "kineticgun"
 	item_state = "kineticgun"
 	ammo_type = list(/obj/item/ammo_casing/energy/kinetic)
@@ -74,11 +74,14 @@
 		M.modify_projectile(K)
 
 /obj/item/gun/energy/kinetic_accelerator/cyborg
+	name = "chassis_mounted kinetic accelerator"
+	icon_state = "kineticgun_b"
 	holds_charge = TRUE
 	unique_frequency = TRUE
 	max_mod_capacity = 80
 
 /obj/item/gun/energy/kinetic_accelerator/minebot
+	name = "chassis_mounted kinetic accelerator"
 	trigger_guard = TRIGGER_GUARD_ALLOW_ALL
 	overheat_time = 20
 	holds_charge = TRUE
@@ -566,9 +569,14 @@
 	if(.)
 		KA.icon_state = chassis_icon
 		KA.name = chassis_name
+		KA.item_state = chassis_icon
+		if(iscarbon(KA.loc))
+			var/mob/living/carbon/holder = KA.loc
+			holder.update_inv_hands()
 
 /obj/item/borg/upgrade/modkit/chassis_mod/uninstall(obj/item/gun/energy/kinetic_accelerator/KA)
 	KA.icon_state = initial(KA.icon_state)
+	KA.item_state = initial(KA.item_state)
 	KA.name = initial(KA.name)
 	..()
 
@@ -597,3 +605,10 @@
 
 /obj/item/borg/upgrade/modkit/tracer/adjustable/attack_self(mob/user)
 	bolt_color = input(user,"","Choose Color",bolt_color) as color|null
+
+/obj/item/gun/energy/kinetic_accelerator/old
+	name = "proto-kinetic accelerator"
+	desc = "A self-recharging concussive blast mining tool, heavily used by Nanotransen Mining Corps both for extracting minerals and dealing with unruly locals. NT's prototype line was produced with top-of-the-line cooling mechanisms. "
+	icon_state = "kineticgunold"
+	item_state = "kineticgunold"
+	overheat_time = 10

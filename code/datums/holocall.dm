@@ -9,7 +9,15 @@
 
 #define HOLORECORD_MAX_LENGTH 200
 
-/mob/camera/aiEye/remote/holo/setLoc()
+/mob/camera/aiEye/remote/holo
+	use_static = USE_STATIC_NONE
+
+/mob/camera/aiEye/remote/holo/update_remote_sight(mob/living/user)
+	user.sight = NONE
+	user.see_in_dark = 1
+	return TRUE
+
+/mob/camera/aiEye/remote/holo/setLoc(turf/T, force_update = FALSE)
 	. = ..()
 	var/obj/machinery/holopad/H = origin
 	H?.move_hologram(eye_user, loc)
@@ -158,7 +166,7 @@
 	eye.name = "Camera Eye ([user.name])"
 	user.remote_control = eye
 	user.reset_perspective(eye)
-	eye.setLoc(H.loc)
+	eye.setLoc(H.loc, TRUE)
 
 	hangup = new(eye, src)
 	hangup.Grant(user)

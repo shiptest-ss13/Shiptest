@@ -1,8 +1,6 @@
 /obj/item/clothing/suit/toggle/labcoat
 	name = "labcoat"
 	desc = "A suit that protects against minor chemical spills."
-	icon = 'whitesands/icons/obj/clothing/suits.dmi' // shiptest edit, labcoats that arent from 2012. Made by Tetra "amogus moth" Zeta
-	mob_overlay_icon = 'whitesands/icons/mob/clothing/suits.dmi' // another funny edit by the shiptest codebase
 	icon_state = "labcoat"
 	item_state = "labcoat"
 	blood_overlay_type = "coat"

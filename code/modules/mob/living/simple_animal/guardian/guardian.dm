@@ -35,7 +35,7 @@ GLOBAL_LIST_EMPTY(parasites) //all currently existing/living guardians
 	maxHealth = INFINITY //The spirit itself is invincible
 	health = INFINITY
 	healable = FALSE //don't brusepack the guardian
-	damage_coeff = list(BRUTE = 0.5, BURN = 0.5, TOX = 0.5, CLONE = 0.5, STAMINA = 0, OXY = 0.5) //how much damage from each damage type we transfer to the owner
+	damage_coeff = list(BRUTE = 0.4, BURN = 0.4, TOX = 0.5, CLONE = 0.5, STAMINA = 0, OXY = 0.5) //how much damage from each damage type we transfer to the owner
 	environment_smash = ENVIRONMENT_SMASH_STRUCTURES
 	obj_damage = 40
 	melee_damage_lower = 15
@@ -66,7 +66,7 @@ GLOBAL_LIST_EMPTY(parasites) //all currently existing/living guardians
 /mob/living/simple_animal/hostile/guardian/Initialize(mapload, theme)
 	GLOB.parasites += src
 	updatetheme(theme)
-
+	ADD_TRAIT(src, TRAIT_SPACEWALK, INNATE_TRAIT)//local flying mob drifts in space, more news at six
 	. = ..()
 
 /mob/living/simple_animal/hostile/guardian/med_hud_set_health()

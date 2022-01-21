@@ -1058,7 +1058,7 @@
 		return ..()
 
 	//If they can be picked up, and we can't (prevents recursion), try to pick the target mob up as an item.
-	if(target.can_be_held && !can_be_held)
+	if(HAS_TRAIT(target, TRAIT_HOLDABLE) && !HAS_TRAIT(src, TRAIT_HOLDABLE))
 		if(target.mob_try_pickup(user))
 			return
 	//If they dragged themselves and we're currently aggressively grabbing them try to piggyback
@@ -1354,8 +1354,8 @@
 /mob/living/carbon/human/species/synth/military
 	race = /datum/species/synth/military
 
-/mob/living/carbon/human/species/teshari
-	race = /datum/species/teshari
+/mob/living/carbon/human/species/kepori
+	race = /datum/species/kepori
 
 /mob/living/carbon/human/species/vampire
 	race = /datum/species/vampire

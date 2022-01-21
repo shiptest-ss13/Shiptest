@@ -34,7 +34,6 @@
 	pull_force = MOVE_FORCE_VERY_STRONG
 	del_on_death = TRUE
 	loot = list()
-	crusher_loot = /obj/item/crusher_trophy/ice_wing
 	deathmessage = "fades as the energies that tied it to this world dissipate."
 	deathsound = 'sound/magic/demon_dies.ogg'
 	stat_attack = HARD_CRIT
@@ -83,6 +82,8 @@
 		new /obj/item/assembly/signaler/anomaly/bluespace(loc)
 	if(prob(5))
 		new /obj/item/gem/fdiamond(loc)
+	if(prob(10))
+		new /obj/item/crusher_trophy/ice_wing(loc)
 	return ..()
 
 /mob/living/simple_animal/hostile/asteroid/old_demon
@@ -122,7 +123,6 @@
 	pull_force = MOVE_FORCE_VERY_STRONG
 	del_on_death = TRUE
 	loot = list()
-	crusher_loot = /obj/item/crusher_trophy/ice_crystal
 	deathmessage = "screeches in rage as it falls back into nullspace."
 	deathsound = 'sound/magic/demon_dies.ogg'
 	stat_attack = HARD_CRIT
@@ -172,6 +172,8 @@
 		new /obj/item/assembly/signaler/anomaly/bluespace(loc)
 	if(prob(20))
 		new /obj/item/gem/fdiamond(loc)
+	if(prob(50))
+		new /obj/item/crusher_trophy/ice_crystal(loc)
 	return ..()
 
 /mob/living/simple_animal/hostile/asteroid/ice_demon/random/Initialize()
