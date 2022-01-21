@@ -306,7 +306,7 @@
 	if(!target)
 		return
 
-	if (ai.get_virtual_z_level() != target.get_virtual_z_level())
+	if (ai.virtual_z() != target.virtual_z())
 		return FALSE
 
 	if (istype(loc, /obj/item/aicard))
@@ -429,7 +429,7 @@
 		view_core()
 		return
 	// ok, we're alive, camera is good and in our network...
-	eyeobj.setLoc(get_turf(C))
+	eyeobj.setLoc(get_turf(C), TRUE)
 	return TRUE
 
 /mob/living/silicon/ai/proc/botcall()
@@ -466,7 +466,7 @@
 	call_bot_cooldown = 0
 
 /mob/living/silicon/ai/triggerAlarm(class, area/home, cameras, obj/source)
-	if(source.get_virtual_z_level() != get_virtual_z_level())
+	if(source.virtual_z() != virtual_z())
 		return
 	var/list/our_sort = alarms[class]
 	for(var/areaname in our_sort)
@@ -554,7 +554,7 @@
 
 	for (var/obj/machinery/camera/C as anything in GLOB.cameranet.cameras)
 		var/list/tempnetwork = C.network
-		if(!(C.get_virtual_z_level() == get_virtual_z_level() || ("ss13" in tempnetwork)))
+		if(!(C.virtual_z() == virtual_z() || ("ss13" in tempnetwork)))
 			continue
 		if(!C.can_use())
 			continue
@@ -577,7 +577,7 @@
 			if(!C.can_use())
 				continue
 			if(network in C.network)
-				U.eyeobj.setLoc(get_turf(C))
+				U.eyeobj.setLoc(get_turf(C), TRUE)
 				break
 	to_chat(src, "<span class='notice'>Switched to the \"[uppertext(network)]\" camera network.</span>")
 //End of code by Mord_Sith

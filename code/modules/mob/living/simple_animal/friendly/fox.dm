@@ -21,10 +21,13 @@
 	response_harm_continuous = "kicks"
 	response_harm_simple = "kick"
 	gold_core_spawnable = FRIENDLY_SPAWN
-	can_be_held = TRUE
 	held_state = "fox"
 
 	footstep_type = FOOTSTEP_MOB_CLAW
+
+/mob/living/simple_animal/pet/fox/Initialize()
+	. = ..()
+	ADD_TRAIT(src, TRAIT_HOLDABLE, INNATE_TRAIT)
 
 //Captain fox
 /mob/living/simple_animal/pet/fox/Renault

@@ -18,6 +18,11 @@
 	name = "hardened shutters"
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
 
+/obj/machinery/door/poddoor/shutters/indestructible/preopen
+	icon_state = "open"
+	density = FALSE
+	opacity = FALSE
+
 /obj/machinery/door/poddoor/gates
 	gender = PLURAL
 	name = "gate"

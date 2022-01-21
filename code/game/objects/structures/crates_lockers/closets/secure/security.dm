@@ -7,7 +7,6 @@
 	..()
 	//WS Begin
 	new /obj/item/clothing/head/beret/captain(src) //Berets
-	new /obj/item/card/id/departmental_budget/civ(src) //Budget Cards
 	new /obj/item/storage/backpack/messenger/com(src) //Messenger Bags
 	//WS End
 	new /obj/item/clothing/suit/hooded/wintercoat/captain(src)
@@ -48,7 +47,6 @@
 
 /obj/structure/closet/secure_closet/head_of_personnel/PopulateContents()
 	..()
-	new /obj/item/card/id/departmental_budget/srv(src) //WS Edit - Budget Cards
 	new /obj/item/clothing/neck/cloak/head_of_personnel(src)
 	new /obj/item/storage/lockbox/medal/service(src)
 	new /obj/item/clothing/head/beret/hop(src) //WS edit - More Berets
@@ -80,7 +78,6 @@
 
 /obj/structure/closet/secure_closet/hos/PopulateContents()
 	..()
-	new /obj/item/card/id/departmental_budget/sec(src) //WS edit - budget card
 	new /obj/item/storage/box/deputy(src) //WS edit - Small QoL Brig additions
 	new /obj/item/clothing/neck/cloak/hos(src)
 	new /obj/item/clothing/under/rank/command(src) //WS edit - better command uniforms

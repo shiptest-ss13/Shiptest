@@ -118,9 +118,9 @@
 	new /obj/item/screwdriver/nuke(src)
 	new /obj/item/wrench/combat(src)
 	new /obj/item/weldingtool/largetank(src)
-	new /obj/item/crowbar(src)
-	new /obj/item/wirecutters(src)
-	new /obj/item/multitool(src)
+	new /obj/item/crowbar/syndie(src)
+	new /obj/item/wirecutters/syndie(src)
+	new /obj/item/multitool/syndie(src)
 	new /obj/item/inducer/syndicate(src)
 
 /obj/item/storage/belt/medical
@@ -128,6 +128,13 @@
 	desc = "Can hold various medical equipment."
 	icon_state = "medicalbelt"
 	item_state = "medical"
+
+/obj/item/storage/belt/medical/webbing
+	name = "medical webbing"
+	desc = "Versatile chest rig, valued by field medics of all stripes for its ease of use. Can hold various medical equipment."
+	icon_state = "medicwebbing"
+	item_state = "medicwebbing"
+	custom_premium_price = 900
 
 /obj/item/storage/belt/medical/ComponentInitialize()
 	. = ..()
@@ -188,6 +195,15 @@
 		))
 
 /obj/item/storage/belt/medical/paramedic/PopulateContents()
+	new /obj/item/sensor_device(src)
+	new /obj/item/pinpointer/crew/prox(src)
+	new /obj/item/stack/medical/gauze/twelve(src)
+	new /obj/item/reagent_containers/syringe(src)
+	new /obj/item/reagent_containers/glass/bottle/epinephrine(src)
+	new /obj/item/reagent_containers/glass/bottle/formaldehyde(src)
+	update_icon()
+
+/obj/item/storage/belt/medical/webbing/paramedic/PopulateContents()
 	new /obj/item/sensor_device(src)
 	new /obj/item/pinpointer/crew/prox(src)
 	new /obj/item/stack/medical/gauze/twelve(src)

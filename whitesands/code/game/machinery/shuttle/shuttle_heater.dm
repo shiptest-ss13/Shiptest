@@ -49,6 +49,10 @@
 	SetInitDirections()
 	update_adjacent_engines()
 
+/obj/machinery/atmospherics/components/unary/shuttle/heater/process_atmos()
+	if(!use_tank)
+		update_parents()
+
 /obj/machinery/atmospherics/components/unary/shuttle/heater/default_change_direction_wrench(mob/user, obj/item/I)
 	if(!..())
 		return FALSE
@@ -66,7 +70,7 @@
 	if(node)
 		node.atmosinit()
 		node.addMember(src)
-	build_network()
+	SSair.add_to_rebuild_queue(src)
 	return TRUE
 
 /obj/machinery/atmospherics/components/unary/shuttle/heater/RefreshParts()

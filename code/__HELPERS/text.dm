@@ -67,31 +67,6 @@
 /proc/adminscrub(t,limit=MAX_MESSAGE_LEN)
 	return copytext((html_encode(strip_html_simple(t))),1,limit)
 
-//BeginWS edit - Chat markup
-//Credit to Aurorastation for the regex and idea for the proc
-//Should be in the form of "tag to be replaced" = list("replacement for beginning", "replacement for end")
-GLOBAL_LIST_INIT(markup_tags, list(
-	"/"  = list("<i>", "</i>"),
-	"**" = list("<b>", "</b>")
-))
-//Should be in the form of "((\\W|^)@)(\[^@\]*)(@(\\W|$)), "g"", where @ is the appropriate tag from markup_tags
-GLOBAL_LIST_INIT(markup_regex, list(
-	"/"  = new /regex("((\\W|^)_)(\[^_\]*)(_(\\W|$))", "g"),
-	"**" = new /regex("((\\W|^)\\*\\*)(\[^\\*\\*\]*)(\\*\\*(\\W|$))", "g")
-))
-
-/proc/process_chat_markup(var/message, var/list/ignore = list())
-	if(!CONFIG_GET(flag/chat_markup) || !message)
-		return message
-
-	var/regex/markup
-	for(var/tag in (GLOB.markup_tags - ignore))
-		markup = GLOB.markup_regex[tag]
-		message = markup.Replace_char(message, "$2[GLOB.markup_tags[tag][1]]$3[GLOB.markup_tags[tag][2]]$5")
-
-	return message
-//EndWS edit - Chat markup
-
 //Returns null if there is any bad text in the string
 /proc/reject_bad_text(text, max_length = 512, ascii_only = TRUE)
 	var/char_count = 0

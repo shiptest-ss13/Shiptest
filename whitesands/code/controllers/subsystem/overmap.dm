@@ -74,9 +74,6 @@ SUBSYSTEM_DEF(overmap)
 
 	create_map()
 
-	for(var/obj/docking_port/mobile/M as anything in SSshuttle.mobile)
-		setup_shuttle_ship(M)
-
 	return ..()
 
 /datum/controller/subsystem/overmap/fire()
@@ -89,18 +86,16 @@ SUBSYSTEM_DEF(overmap)
   * Creates an overmap ship object for the provided mobile docking port if one does not already exist.
   * * Shuttle: The docking port to create an overmap object for
   */
-/datum/controller/subsystem/overmap/proc/setup_shuttle_ship(obj/docking_port/mobile/shuttle)
-	var/docked_object = get_overmap_object_by_z(shuttle.get_virtual_z_level())
+/datum/controller/subsystem/overmap/proc/setup_shuttle_ship(obj/docking_port/mobile/shuttle, datum/map_template/shuttle/source_template)
+	var/docked_object = shuttle.current_ship
 	var/obj/structure/overmap/ship/simulated/new_ship
 	if(docked_object)
-		new_ship = new(docked_object, shuttle)
-		if(shuttle.undock_roundstart)
-			new_ship.undock()
-	else if(is_reserved_level(shuttle.z))
-		new_ship = new(get_unused_overmap_square(), shuttle)
+		new_ship = new(docked_object, shuttle, source_template)
+	else if(is_reserved_level(shuttle))
+		new_ship = new(get_unused_overmap_square(), shuttle, source_template)
 		new_ship.state = OVERMAP_SHIP_FLYING
-	else if(is_centcom_level(shuttle.z))
-		new_ship = new(null, shuttle)
+	else if(is_centcom_level(shuttle))
+		new_ship = new(null, shuttle, source_template)
 	else
 		CRASH("Shuttle created in unknown location, unable to create overmap ship!")
 
@@ -201,7 +196,7 @@ SUBSYSTEM_DEF(overmap)
   * * ruin_type - The ruin to spawn. Don't pass this argument if you want it to randomly select based on planet type.
   */
 /datum/controller/subsystem/overmap/proc/spawn_dynamic_encounter(planet_type, ruin = TRUE, ignore_cooldown = FALSE, datum/map_template/ruin/ruin_type)
-	var/list/ruin_list = SSmapping.space_ruins_templates
+	var/list/ruin_list
 	var/datum/map_generator/mapgen
 	var/area/target_area
 	var/turf/surface = /turf/open/space
@@ -230,31 +225,61 @@ SUBSYSTEM_DEF(overmap)
 			if(DYNAMIC_WORLD_ASTEROID)
 				ruin_list = null
 				mapgen = new /datum/map_generator/cave_generator/asteroid
+			if(DYNAMIC_WORLD_ROCKPLANET)
+				ruin_list = SSmapping.rock_ruins_templates
+				mapgen = new /datum/map_generator/cave_generator/rockplanet
+				target_area = /area/overmap_encounter/planetoid/rockplanet
+				surface = /turf/open/floor/plating/asteroid
+			if(DYNAMIC_WORLD_REEBE)
+				ruin_list = SSmapping.yellow_ruins_templates
+				mapgen = new /datum/map_generator/cave_generator/reebe
+				target_area = /area/overmap_encounter/planetoid/reebe
+				surface = /turf/open/chasm/reebe_void
+			if(DYNAMIC_WORLD_SPACERUIN)
+				ruin_list = SSmapping.space_ruins_templates
 
 	if(ruin && ruin_list && !ruin_type)
 		ruin_type = ruin_list[pick(ruin_list)]
 		if(ispath(ruin_type))
 			ruin_type = new ruin_type
 
-	var/datum/turf_reservation/fixed/encounter_reservation = SSmapping.request_fixed_reservation()
-	encounter_reservation.fill_in(surface, /turf/closed/indestructible/blank, target_area)
+	var/height = QUADRANT_MAP_SIZE
+	var/width = QUADRANT_MAP_SIZE
 
-	if(ruin_type) // loaded in after the reservation so we can place inside the reservation
-		var/turf/ruin_turf = locate(rand(encounter_reservation.bottom_left_coords[1]+6,encounter_reservation.top_right_coords[1]-ruin_type.width-6),
-									encounter_reservation.top_right_coords[2]-ruin_type.height-6,
-									encounter_reservation.top_right_coords[3])
+	var/encounter_name = "Dynamic Overmap Encounter"
+	var/datum/map_zone/mapzone = SSmapping.create_map_zone(encounter_name)
+	var/datum/virtual_level/vlevel = SSmapping.create_virtual_level(encounter_name, list(ZTRAIT_MINING = TRUE), mapzone, width, height, ALLOCATION_QUADRANT, QUADRANT_MAP_SIZE)
+
+	vlevel.reserve_margin(QUADRANT_SIZE_BORDER)
+
+	if(mapgen) /// If we have a map generator, don't ChangeTurf's in fill_in. Just to ChangeTurf them once again.
+		surface = null
+	vlevel.fill_in(surface, target_area)
+
+	if(ruin_type)
+		var/turf/ruin_turf = locate(rand(
+			vlevel.low_x+6 + vlevel.reserved_margin,
+			vlevel.high_x-ruin_type.width-6 - vlevel.reserved_margin),
+			vlevel.high_y-ruin_type.height-6 - vlevel.reserved_margin,
+			vlevel.z_value
+			)
 		ruin_type.load(ruin_turf)
 
-	if(mapgen) //Does AFTER the ruin is loaded so that it does not spawn flora/fauna in the ruin
-		mapgen.generate_terrain(encounter_reservation.get_non_border_turfs())
+	if(mapgen)
+		mapgen.generate_terrain(vlevel.get_unreserved_block())
 
 	// locates the first dock in the bottom left, accounting for padding and the border
 	var/turf/primary_docking_turf = locate(
-		encounter_reservation.bottom_left_coords[1]+RESERVE_DOCK_DEFAULT_PADDING+1,
-		encounter_reservation.bottom_left_coords[2]+RESERVE_DOCK_DEFAULT_PADDING+1,
-		encounter_reservation.bottom_left_coords[3])
+		vlevel.low_x+RESERVE_DOCK_DEFAULT_PADDING+1 + vlevel.reserved_margin,
+		vlevel.low_y+RESERVE_DOCK_DEFAULT_PADDING+1 + vlevel.reserved_margin,
+		vlevel.z_value
+		)
 	// now we need to offset to account for the first dock
-	var/turf/secondary_docking_turf = locate(primary_docking_turf.x+RESERVE_DOCK_MAX_SIZE_LONG+RESERVE_DOCK_DEFAULT_PADDING, primary_docking_turf.y, primary_docking_turf.z)
+	var/turf/secondary_docking_turf = locate(
+		primary_docking_turf.x+RESERVE_DOCK_MAX_SIZE_LONG+RESERVE_DOCK_DEFAULT_PADDING,
+		primary_docking_turf.y,
+		primary_docking_turf.z
+		)
 
 	//This check exists because docking ports don't like to be deleted.
 	var/obj/docking_port/stationary/primary_dock = new(primary_docking_turf)
@@ -273,7 +298,7 @@ SUBSYSTEM_DEF(overmap)
 	secondary_dock.dheight = 0
 	secondary_dock.dwidth = 0
 
-	return list(encounter_reservation, primary_dock, secondary_dock)
+	return list(mapzone, primary_dock, secondary_dock)
 
 /**
   * Returns a random, usually empty turf in the overmap
@@ -319,17 +344,6 @@ SUBSYSTEM_DEF(overmap)
 		if (dist < max_range && dist < ret_dist)
 			. = T
 			ret_dist = dist
-
-/**
-  * Gets the corresponding overmap object that shares the provided z level
-  * * zlevel - The Z-level of the overmap object you want to find
-  */
-/datum/controller/subsystem/overmap/proc/get_overmap_object_by_z(zlevel)
-	for(var/O in overmap_objects)
-		if(istype(O, /obj/structure/overmap/dynamic))
-			var/obj/structure/overmap/dynamic/D = O
-			if(zlevel == D.virtual_z_level)
-				return D
 
 /datum/controller/subsystem/overmap/Recover()
 	if(istype(SSovermap.events))

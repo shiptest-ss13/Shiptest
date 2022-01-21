@@ -10,8 +10,12 @@
 
 	var/port_x_offset
 	var/port_y_offset
-	var/short_name = ""
-	var/list/job_slots = list()
+
+	var/cost
+	var/short_name
+	var/list/job_slots
+	var/list/name_categories = list("GENERAL")
+	var/prefix = "SV"
 
 /datum/map_template/shuttle/proc/prerequisites_met()
 	return TRUE
@@ -72,7 +76,6 @@
 				port.register()
 			if(isnull(port_x_offset))
 				continue
-			port.source_template = src
 			switch(port.dir) // Yeah this looks a little ugly but mappers had to do this in their head before
 				if(NORTH)
 					port.width = width
@@ -95,7 +98,7 @@
 					port.dwidth = port_y_offset - 1
 					port.dheight = width - port_x_offset
 
-			port.load()
+			port.load(src)
 
 //Whatever special stuff you want
 /datum/map_template/shuttle/proc/post_load(obj/docking_port/mobile/M)

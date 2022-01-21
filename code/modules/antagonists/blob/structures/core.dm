@@ -68,4 +68,4 @@
 
 /obj/structure/blob/core/ComponentInitialize()
 	. = ..()
-	AddComponent(/datum/component/stationloving, FALSE, TRUE)
+	AddComponent(/datum/component/shiploving, inform_admins = FALSE, allow_death = TRUE)

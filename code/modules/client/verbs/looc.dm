@@ -45,7 +45,6 @@ GLOBAL_VAR_INIT(normal_looc_colour, "#6699CC")
 			return
 
 	msg = emoji_parse(msg)
-	msg = process_chat_markup(msg) //WS edit - Chat markup
 
 	mob.log_talk(msg,LOG_OOC, tag="(LOOC)")
 
