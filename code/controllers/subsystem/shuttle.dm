@@ -322,12 +322,14 @@ SUBSYSTEM_DEF(shuttle)
   **/
 /datum/controller/subsystem/shuttle/proc/load_template(datum/map_template/shuttle/template, spawn_transit = TRUE)
 	. = FALSE
-	var/datum/turf_reservation/reservation = SSmapping.request_dynamic_reservation(template.width, template.height)
-	if(!reservation)
-		CRASH("failed to reserve an area for shuttle template loading")
-	reservation.fill_in(turf_type = /turf/open/space/transit/south)
+	var/loading_mapzone = SSmapping.create_map_zone("Shuttle Loading Zone")
+	var/datum/virtual_level/loading_zone = SSmapping.create_virtual_level("[template.name] Loading Level", list(ZTRAIT_RESERVED = TRUE), loading_mapzone, template.width, template.height, ALLOCATION_FREE)
 
-	var/turf/BL = TURF_FROM_COORDS_LIST(reservation.bottom_left_coords)
+	if(!loading_zone)
+		CRASH("failed to reserve an area for shuttle template loading")
+	loading_zone.fill_in(turf_type = /turf/open/space/transit/south)
+
+	var/turf/BL = locate(loading_zone.low_x, loading_zone.low_y, loading_zone.z_value)
 	template.load(BL, centered = FALSE, register = FALSE)
 
 	var/affected = template.get_affected_turfs(BL, centered=FALSE)
@@ -373,7 +375,7 @@ SUBSYSTEM_DEF(shuttle)
 
 	new_shuttle.initiate_docking(transit_dock)
 	new_shuttle.linkup(transit_dock)
-	QDEL_NULL(reservation)
+	QDEL_NULL(loading_zone)
 
 	//Everything fine
 	template.post_load(new_shuttle)
