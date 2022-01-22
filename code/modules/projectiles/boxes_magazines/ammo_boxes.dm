@@ -194,7 +194,7 @@
 /obj/item/ammo_box/c556mmHITP/hp
 	name = "ammo box (5.56mm HITP caseless HP)"
 	desc = "A box of 5.56mm HITP caseless hollow point ammo, designed to cause massive tissue damage at the cost of armor penetration."
-	icon_state = "556mmHITPbox-ap"
+	icon_state = "556mmHITPbox-hp"
 	ammo_type = /obj/item/ammo_casing/caseless/c556mmHITP/hp
 	max_ammo = 30
 
