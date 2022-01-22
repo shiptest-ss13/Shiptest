@@ -140,7 +140,7 @@
 	name = "cybersun medic cap"
 	desc = "A turquoise baseball hat emblazoned with a reflective cross. Typical of Cybersun Industries field medics."
 	icon_state = "cybersunsoft"
-	soft_type = "cybersunsoft"
+	soft_type = "cybersun"
 	dog_fashion = null
 
 /obj/item/clothing/head/soft/inteq

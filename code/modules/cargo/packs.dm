@@ -690,42 +690,6 @@
 	crate_name = "ammo crate"
 	dangerous = TRUE
 
-/datum/supply_pack/security/armory/aknt
-	name = "Nanotrasen Brand Kalashnikov Rifle Crate"
-	desc = "Contains two cheaply made reproductions of the AK-47 by Nanotrasen, the NT-AK."
-	cost = 12000
-	contains = list(/obj/item/gun/ballistic/automatic/ak47/nt,
-					/obj/item/gun/ballistic/automatic/ak47/nt)
-	crate_name = "rifle crate"
-	dangerous = TRUE
-
-/datum/supply_pack/security/armory/akntammo
-	name = "Nanotrasen Brand Kalashnikov Ammo Crate"
-	desc = "Contains two 30 round proprietary magazines for the NT-AK."
-	cost = 5000
-	contains = list(/obj/item/ammo_box/magazine/aknt,
-					/obj/item/ammo_box/magazine/aknt)
-	crate_name = "rifle crate"
-	dangerous = TRUE
-
-/datum/supply_pack/security/armory/ak47
-	name = "Kalashnikov Rifle Crate"
-	desc = "Hello Comrade, this here is our most famous product! It is easily maintainable, and more afordable than any other rifle, yes! If product stops working, just apply tape!"
-	cost = 20000
-	contains = list(/obj/item/gun/ballistic/automatic/ak47,
-					/obj/item/gun/ballistic/automatic/ak47)
-	crate_name = "rifle crate"
-	dangerous = TRUE
-
-/datum/supply_pack/security/armory/ak47ammo
-	name = "Kalashnikov Ammo Crate"
-	desc = "You ran out of ammo? We have solution, yes! Order 2 spare magazines for the shiny rifle of yours, and continue doing, whatever you do with your rifle!"
-	cost = 7000
-	contains = list(/obj/item/ammo_box/magazine/ak47,
-					/obj/item/ammo_box/magazine/ak47)
-	crate_name = "rifle crate"
-	dangerous = TRUE
-
 /datum/supply_pack/security/armory/swat
 	name = "SWAT Crate"
 	desc = "Contains two fullbody sets of tough, fireproof, pressurized suits designed in a joint effort by IS-ERI and Nanotrasen. Each set contains a suit, helmet, mask, combat belt, and combat gloves. Requires Armory access to open."
@@ -1122,6 +1086,23 @@
 	crate_name = "tesla generator crate"
 	dangerous = TRUE
 
+/datum/supply_pack/engine/teg
+	name = "Thermoelectric generator Crate"
+	desc = "Turn heat into electricity! Make atmosia great again."
+	cost = 5000
+	contains = list(/obj/item/circuitboard/machine/generator,
+					/obj/item/circuitboard/machine/circulator,
+					/obj/item/circuitboard/machine/circulator)
+	crate_name = "thermoelectric generator crate"
+
+/datum/supply_pack/engine/thermomachine
+	name = "Thermomachine Crate"
+	desc = "Freeze or heat your air."
+	cost = 2000
+	contains = list(/obj/item/circuitboard/machine/thermomachine,
+					/obj/item/circuitboard/machine/thermomachine)
+	crate_name = "thermomachine crate"
+
 //////////////////////////////////////////////////////////////////////////////
 /////////////////////// Canisters & Materials ////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////
@@ -1208,6 +1189,14 @@
 	cost = 3000
 	contains = list(/obj/machinery/portable_atmospherics/canister/carbon_dioxide)
 	crate_name = "carbon dioxide canister crate"
+	crate_type = /obj/structure/closet/crate/large
+
+/datum/supply_pack/materials/plasma
+	name = "Plasma Canister"
+	desc = "Contains a canister of Plasma. Handy when no synthetization or plasma-rich atmospheres are available."
+	cost = 4000
+	contains = list(/obj/machinery/portable_atmospherics/canister/toxins)
+	crate_name = "Plasma canister crate"
 	crate_type = /obj/structure/closet/crate/large
 
 /datum/supply_pack/materials/foamtank
@@ -1509,6 +1498,20 @@
 	cost = 1000
 	contains = list(/obj/item/storage/part_replacer/cargo)
 	crate_name = "\improper RPED crate"
+
+/datum/supply_pack/science/t2
+	name = "T2 parts crate"
+	desc = "An advanced parts order offering 3 each tier 2 components with only a 2,000,000% price increase!"
+	cost = 20000 // 100 plasma sheets worth
+	contains = list(/obj/item/storage/box/stockparts/t2)
+	crate_name = "\improper T2 parts crate"
+
+/datum/supply_pack/science/t3
+	name = "T3 parts crate"
+	desc = "A deluxe parts order offering 3 each tier 3 components with only a 6e13% price increase!"
+	cost = 60000 // 300 plasma sheets worth
+	contains = list(/obj/item/storage/box/stockparts/t3)
+	crate_name = "\improper T3 parts crate"
 
 /datum/supply_pack/science/shieldwalls
 	name = "Shield Generator Crate"
