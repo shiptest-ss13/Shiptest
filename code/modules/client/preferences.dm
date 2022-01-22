@@ -87,7 +87,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/list/randomise = list(RANDOM_UNDERWEAR = TRUE, RANDOM_UNDERWEAR_COLOR = TRUE, RANDOM_UNDERSHIRT = TRUE, RANDOM_SOCKS = TRUE, RANDOM_BACKPACK = TRUE, RANDOM_JUMPSUIT_STYLE = TRUE, RANDOM_EXOWEAR_STYLE = TRUE, RANDOM_HAIRSTYLE = TRUE, RANDOM_HAIR_COLOR = TRUE, RANDOM_FACIAL_HAIRSTYLE = TRUE, RANDOM_FACIAL_HAIR_COLOR = TRUE, RANDOM_SKIN_TONE = TRUE, RANDOM_EYE_COLOR = TRUE)
 	var/list/friendlyGenders = list("Male" = "male", "Female" = "female", "Other" = "plural")
 	var/phobia = "spiders"
-	var/language = "Kalixcian Common"
 	var/datum/language/language_datum = /datum/language/draconic
 	var/list/alt_titles_preferences = list()
 
@@ -694,7 +693,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			if("Multilingual" in all_quirks)
 				dat += "<h3>Language</h3>"
 
-				dat += "<a href='?_src_=prefs;preference=language;task=input'>[language]</a><BR>"
+				dat += "<a href='?_src_=prefs;preference=language_datum;task=input'>[initial(language_datum.name)]</a><BR>"
 
 			if(CONFIG_GET(flag/join_with_mutant_humans))
 
@@ -1957,22 +1956,20 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					var/obj/item/organ/tongue/T = new pref_species.mutanttongue
 					var/list/languages_possible = T.languages_possible
 					var/datum/language_holder/language_holder = new pref_species.species_language_holder(T)
-					languages_possible -= typecacheof(/datum/language/codespeak)
+					languages_possible -= GLOB.restricted_languages
 					languages_possible -= language_holder.understood_languages
 					languages_possible -= language_holder.spoken_languages
 					languages_possible -= language_holder.blocked_languages
 					//Credit To Yowii/Yoworii/Yorii for a much more streamlined method of language library building
-					var/list/language_names = list()
-					for(var/L in languages_possible)
-						var/datum/language/lang_possible = L
-						language_names |= initial(lang_possible.name)
-					var/languageType = input(user, "What other language do you know?", "Character Preference", language) as null|anything in language_names
-					if(languageType)
-						language = languageType
-						for(var/datum/language/language_datum_test as anything in GLOB.all_languages)
-							if(initial(language_datum_test.name) == language)
-								language_datum = language_datum_test
-								break
+					var/list/language_options = list()
+					for(var/datum/language/lang_option as anything in languages_possible)
+						language_options |= initial(lang_option.name)
+						language_options[initial(lang_option.name)] = lang_option
+					var/selected_language= input(user, "What other language do you know?", "Character Preference", language) as null|anything in language_options
+					if(selected_language)
+						language_datum = language_options[selected_language]
+					qdel(language_holder)
+					qdel(T)
 
 				if ("max_chat_length")
 					var/desiredlength = input(user, "Choose the max character length of shown Runechat messages. Valid range is 1 to [CHAT_MESSAGE_MAX_LENGTH] (default: [initial(max_chat_length)]))", "Character Preference", max_chat_length)  as null|num

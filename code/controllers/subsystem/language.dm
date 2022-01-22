@@ -14,5 +14,5 @@ SUBSYSTEM_DEF(language)
 		var/datum/language/instance = new language
 
 		GLOB.language_datum_instances[language] = instance
-
+	GLOB.restricted_languages = list(/datum/language/codespeak)
 	return ..()
