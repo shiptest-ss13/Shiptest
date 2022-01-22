@@ -619,7 +619,6 @@
 		return
 	owner.update_health_hud() //update the healthdoll
 	owner.update_body()
-	return TRUE //if there was a change.
 
 
 ///Proc to change the value of the `owner` variable and react to the event of its change.
