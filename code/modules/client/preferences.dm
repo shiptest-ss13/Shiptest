@@ -693,7 +693,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			if("Multilingual" in all_quirks)
 				dat += "<h3>Language</h3>"
 
-				dat += "<a href='?_src_=prefs;preference=language_datum;task=input'>[initial(language_datum.name)]</a><BR>"
+				dat += "<a href='?_src_=prefs;preference=language;task=input'>[initial(language_datum.name)]</a><BR>"
 
 			if(CONFIG_GET(flag/join_with_mutant_humans))
 
