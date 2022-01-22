@@ -168,3 +168,8 @@
 	var/icon/held_rh = 'icons/mob/pets_held_rh.dmi'
 	var/icon/head_icon = 'icons/mob/pets_held.dmi'//what it looks like on your head
 	var/held_state = ""//icon state for the above
+
+	///Default X offset
+	var/body_pixel_x_offset = 0
+	///Default Y offset
+	var/body_pixel_y_offset = 0

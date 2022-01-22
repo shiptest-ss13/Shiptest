@@ -97,6 +97,13 @@ Uplink Items
 	item = /obj/item/flashlight/lantern/lanternbang
 	restricted_species = list("moth")
 
+/datum/uplink_item/race_restricted/ethereal_grenade
+	name = "Ethereal Dance Grenade"
+	desc = "Syndicate scientists have cunningly stuffed the bodies of multiple Ethereals into a special package! Activating it will cause anyone nearby to dance, excluding Ethereals, who might just get offended."
+	cost = 4
+	item = /obj/item/grenade/discogrenade
+	restricted_species = list("ethereal")
+
 /*Role Restricted*/
 /datum/uplink_item/role_restricted/greykingsword
 	name = "Blade of The Grey Tide"
