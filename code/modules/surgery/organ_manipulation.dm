@@ -111,7 +111,7 @@
 		if(!affected)
 			return -1
 
-		if(!IS_ORGANIC_LIMB(affected)) //was (affected.status != ORGAN_ROBOTIC)
+		if(IS_ORGANIC_LIMB(affected))
 			to_chat(user, "<span class='notice'>You can't put [tool] into a meat enclosure!</span>")
 			return -1
 		if(!isipc(target))
