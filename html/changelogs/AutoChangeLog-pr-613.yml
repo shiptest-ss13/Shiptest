@@ -1,8 +1,0 @@
-author: MarkSuckerberg
-delete-after: true
-changes:
-  - rscdel: Removes shuttle previewing from the admin shuttle manipulator.
-  - refactor: Shuttles now load independently, instead of through one single port
-      specified in the shuttle subsystem for reasons beyond my comprehension.
-  - bugfix: Fixed the bug where you spawn on the wrong ship (caused by people trying
-      to create two ships at the sameish time)
