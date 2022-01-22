@@ -268,8 +268,8 @@
 
 /mob/living/simple_animal/chick/Initialize()
 	. = ..()
-	pixel_x = rand(-6, 6)
-	pixel_y = rand(0, 10)
+	pixel_x = base_pixel_x + rand(-6, 6)
+	pixel_y = base_pixel_y + rand(0, 10)
 
 /mob/living/simple_animal/chick/Life()
 	. =..()
@@ -363,8 +363,8 @@
 		visible_message("<span class='alertalien'>[src] [pick(layMessage)]</span>")
 		eggsleft--
 		var/obj/item/E = new egg_type(get_turf(src))
-		E.pixel_x = rand(-6,6)
-		E.pixel_y = rand(-6,6)
+		E.pixel_x = E.base_pixel_x + rand(-6,6)
+		E.pixel_y = E.base_pixel_y + rand(-6,6)
 		if(eggsFertile)
 			if(chicken_count < MAX_CHICKENS && prob(25))
 				START_PROCESSING(SSobj, E)
