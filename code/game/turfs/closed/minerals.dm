@@ -83,23 +83,14 @@
 		return attack_hand(user)
 
 /turf/closed/mineral/proc/gets_drilled(user, give_exp = FALSE)
-	if (mineralType && (mineralAmt > 0))
+	if(mineralType && (mineralAmt > 0))
 		new mineralType(src, mineralAmt)
 		SSblackbox.record_feedback("tally", "ore_mined", mineralAmt, mineralType)
-	if(ishuman(user))
-		var/mob/living/carbon/human/H = user
-		if(give_exp)
-			if (mineralType && (mineralAmt > 0))
-				H.mind.adjust_experience(/datum/skill/mining, initial(mineralType.mine_experience) * mineralAmt)
-			else
-				H.mind.adjust_experience(/datum/skill/mining, 4)
-	if(iscyborg(user))
-		var/mob/living/silicon/H = user
-		if(give_exp)
-			if (mineralType && (mineralAmt > 0))
-				H.mind.adjust_experience(/datum/skill/mining, initial(mineralType.mine_experience) * mineralAmt)
-			else
-				H.mind.adjust_experience(/datum/skill/mining, 4)
+	if(give_exp)
+		if(mineralType && (mineralAmt > 0))
+			user.mind.adjust_experience(/datum/skill/mining, initial(mineralType.mine_experience) * mineralAmt)
+		else
+			user.mind.adjust_experience(/datum/skill/mining, 4)
 
 	for(var/obj/effect/temp_visual/mining_overlay/M in src)
 		qdel(M)
