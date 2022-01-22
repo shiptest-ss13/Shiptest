@@ -93,7 +93,7 @@
 	var/mutable_appearance/damage_overlay = mutable_appearance('icons/mob/dam_mob.dmi', "blank", -DAMAGE_LAYER)
 	overlays_standing[DAMAGE_LAYER] = damage_overlay
 
-	for(var/obj/item/bodypart/BP as() in bodyparts)
+	for(var/obj/item/bodypart/BP as anything in bodyparts)
 		if(BP.dmg_overlay_type)
 			if(BP.brutestate)
 				damage_overlay.add_overlay("[BP.dmg_overlay_type]_[BP.body_zone]_[BP.brutestate]0")	//we're adding icon_states of the base image as overlays
