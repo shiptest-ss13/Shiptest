@@ -1965,7 +1965,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					for(var/datum/language/lang_option as anything in languages_possible)
 						language_options |= initial(lang_option.name)
 						language_options[initial(lang_option.name)] = lang_option
-					var/selected_language= input(user, "What other language do you know?", "Character Preference", language) as null|anything in language_options
+					var/selected_language= input(user, "What other language do you know?", "Character Preference", initial(language_datum.name)) as null|anything in language_options
 					if(selected_language)
 						language_datum = language_options[selected_language]
 					qdel(language_holder)
