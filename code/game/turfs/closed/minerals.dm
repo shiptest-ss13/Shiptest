@@ -86,11 +86,13 @@
 	if(mineralType && (mineralAmt > 0))
 		new mineralType(src, mineralAmt)
 		SSblackbox.record_feedback("tally", "ore_mined", mineralAmt, mineralType)
-	if(give_exp)
-		if(mineralType && (mineralAmt > 0))
-			user.mind.adjust_experience(/datum/skill/mining, initial(mineralType.mine_experience) * mineralAmt)
-		else
-			user.mind.adjust_experience(/datum/skill/mining, 4)
+	if(isliving(user))
+		var/mob/living/living_user
+		if(give_exp)
+			if(mineralType && (mineralAmt > 0))
+				living_user?.mind.adjust_experience(/datum/skill/mining, initial(mineralType.mine_experience) * mineralAmt)
+			else
+				living_user?.mind.adjust_experience(/datum/skill/mining, 4)
 
 	for(var/obj/effect/temp_visual/mining_overlay/M in src)
 		qdel(M)
