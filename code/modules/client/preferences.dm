@@ -1954,17 +1954,18 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						phobia = phobiaType
 
 				if("language")
-					var/obj/item/organ/tongue/T = pref_species.mutanttongue
+					var/obj/item/organ/tongue/T = new pref_species.mutanttongue
 					var/list/languages_possible = T.languages_possible
-					var/datum/language_holder/language_holder = new pref_species.species_language_holder
+					var/datum/language_holder/language_holder = new pref_species.species_language_holder(T)
 					languages_possible -= typecacheof(/datum/language/codespeak)
 					languages_possible -= language_holder.understood_languages
 					languages_possible -= language_holder.spoken_languages
 					languages_possible -= language_holder.blocked_languages
 					//Credit To Yowii/Yoworii/Yorii for a much more streamlined method of language library building
-					var/list/language_names
-					for(var/datum/language/language_possible in languages_possible)
-						language_names |= initial(language_possible.name)
+					var/list/language_names = list()
+					for(var/L in languages_possible)
+						var/datum/language/lang_possible = L
+						language_names |= initial(lang_possible.name)
 					var/languageType = input(user, "What other language do you know?", "Character Preference", language) as null|anything in language_names
 					if(languageType)
 						language = languageType
