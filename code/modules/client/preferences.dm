@@ -692,7 +692,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 			if("Multilingual" in all_quirks)
 				dat += "<h3>Language</h3>"
-				
+
 				var/language_name = initial(language_datum.name)
 				dat += "<a href='?_src_=prefs;preference=language;task=input'>[language_name]</a><BR>"
 
