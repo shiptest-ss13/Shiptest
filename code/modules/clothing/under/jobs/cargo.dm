@@ -33,7 +33,7 @@
 	icon_state = "cargo_skirt"
 	item_state = "lb_suit"
 	body_parts_covered = CHEST|GROIN|ARMS
-	supports_variations = DIGITIGRADE_VARIATION
+	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON
 	can_adjust = FALSE
 	fitted = FEMALE_UNIFORM_TOP
 
