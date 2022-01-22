@@ -39,7 +39,7 @@
 	SIGNAL_HANDLER
 	var/turf/targetturf
 	for(var/area/area as anything in parent_ship.shuttle.shuttle_areas)
-		var/obj/machinery/computer/helm/helm = locate() in area
+		var/obj/machinery/computer/ship/helm/helm = locate() in area
 		if(helm)
 			targetturf = get_turf(helm)
 			break
