@@ -222,7 +222,8 @@
 
 /datum/controller/subsystem/stat_entry(msg)
 	if(can_fire && !(SS_NO_FIRE & flags))
-		msg = "[round(cost,1)]ms|[round(tick_usage,1)]%([round(tick_overrun,1)]%)|[round(ticks,0.1)]\t[msg]"
+		var/f_space = "\u2007" //Figure space for visual alignment
+		msg = "[add_leading(round(cost,1),4,f_space)]ms|[add_leading(round(tick_usage,1),3,f_space)]%([add_leading(round(tick_overrun,1),3,f_space)]%)|[round(ticks,0.1)]\t[msg]"
 	else
 		msg = "OFFLINE\t[msg]"
 	return msg

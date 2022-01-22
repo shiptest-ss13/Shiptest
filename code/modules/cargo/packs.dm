@@ -1086,6 +1086,23 @@
 	crate_name = "tesla generator crate"
 	dangerous = TRUE
 
+/datum/supply_pack/engine/teg
+	name = "Thermoelectric generator Crate"
+	desc = "Turn heat into electricity! Make atmosia great again."
+	cost = 5000
+	contains = list(/obj/item/circuitboard/machine/generator,
+					/obj/item/circuitboard/machine/circulator,
+					/obj/item/circuitboard/machine/circulator)
+	crate_name = "thermoelectric generator crate"
+
+/datum/supply_pack/engine/thermomachine
+	name = "Thermomachine Crate"
+	desc = "Freeze or heat your air."
+	cost = 2000
+	contains = list(/obj/item/circuitboard/machine/thermomachine,
+					/obj/item/circuitboard/machine/thermomachine)
+	crate_name = "thermomachine crate"
+
 //////////////////////////////////////////////////////////////////////////////
 /////////////////////// Canisters & Materials ////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////
@@ -1172,6 +1189,14 @@
 	cost = 3000
 	contains = list(/obj/machinery/portable_atmospherics/canister/carbon_dioxide)
 	crate_name = "carbon dioxide canister crate"
+	crate_type = /obj/structure/closet/crate/large
+
+/datum/supply_pack/materials/plasma
+	name = "Plasma Canister"
+	desc = "Contains a canister of Plasma. Handy when no synthetization or plasma-rich atmospheres are available."
+	cost = 4000
+	contains = list(/obj/machinery/portable_atmospherics/canister/toxins)
+	crate_name = "Plasma canister crate"
 	crate_type = /obj/structure/closet/crate/large
 
 /datum/supply_pack/materials/foamtank
@@ -1473,6 +1498,20 @@
 	cost = 1000
 	contains = list(/obj/item/storage/part_replacer/cargo)
 	crate_name = "\improper RPED crate"
+
+/datum/supply_pack/science/t2
+	name = "T2 parts crate"
+	desc = "An advanced parts order offering 3 each tier 2 components with only a 2,000,000% price increase!"
+	cost = 20000 // 100 plasma sheets worth
+	contains = list(/obj/item/storage/box/stockparts/t2)
+	crate_name = "\improper T2 parts crate"
+
+/datum/supply_pack/science/t3
+	name = "T3 parts crate"
+	desc = "A deluxe parts order offering 3 each tier 3 components with only a 6e13% price increase!"
+	cost = 60000 // 300 plasma sheets worth
+	contains = list(/obj/item/storage/box/stockparts/t3)
+	crate_name = "\improper T3 parts crate"
 
 /datum/supply_pack/science/shieldwalls
 	name = "Shield Generator Crate"

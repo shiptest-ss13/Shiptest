@@ -356,7 +356,7 @@
 			return
 		close_spawn_windows()
 		to_chat(usr, "<span class='danger'>Your [template.name] is being prepared. Please be patient!</span>")
-		var/obj/docking_port/mobile/target = SSshuttle.action_load(template)
+		var/obj/docking_port/mobile/target = SSshuttle.load_template(template)
 		if(!istype(target))
 			to_chat(usr, "<span class='danger'>There was an error loading the ship (You have not been charged). Please contact admins!</span>")
 			new_player_panel()
