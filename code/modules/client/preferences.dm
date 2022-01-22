@@ -692,8 +692,9 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 			if("Multilingual" in all_quirks)
 				dat += "<h3>Language</h3>"
-
-				dat += "<a href='?_src_=prefs;preference=language;task=input'>[initial(language_datum.name)]</a><BR>"
+				
+				var/language_name = initial(language_datum.name)
+				dat += "<a href='?_src_=prefs;preference=language;task=input'>[language_name]</a><BR>"
 
 			if(CONFIG_GET(flag/join_with_mutant_humans))
 
@@ -1965,7 +1966,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					for(var/datum/language/lang_option as anything in languages_possible)
 						language_options |= initial(lang_option.name)
 						language_options[initial(lang_option.name)] = lang_option
-					var/selected_language= input(user, "What other language do you know?", "Character Preference", initial(language_datum.name)) as null|anything in language_options
+					var/default_language_name = initial(language_datum.name)
+					var/selected_language = input(user, "What other language do you know?", "Character Preference", default_language_name) as null|anything in language_options
 					if(selected_language)
 						language_datum = language_options[selected_language]
 					qdel(language_holder)
