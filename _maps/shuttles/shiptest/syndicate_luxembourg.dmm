@@ -42,6 +42,9 @@
 /area/ship/cargo)
 "bL" = (
 /obj/structure/window/plasma/reinforced,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
+	dir = 4
+	},
 /turf/open/floor/carpet/red_gold,
 /area/ship/bridge)
 "bR" = (
@@ -69,6 +72,12 @@
 /area/ship/crew/dorm)
 "cv" = (
 /obj/machinery/door/window/brigdoor,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 6
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 10
+	},
 /turf/open/floor/carpet/red_gold,
 /area/ship/bridge)
 "cx" = (
@@ -112,7 +121,7 @@
 	},
 /obj/item/clothing/under/syndicate/donk/qm,
 /obj/item/clothing/suit/hazardvest/donk/qm,
-/obj/item/melee/baton,
+/obj/item/melee/classic_baton/telescopic/contractor_baton,
 /turf/open/floor/carpet/red_gold,
 /area/ship/engineering)
 "dc" = (
@@ -160,10 +169,8 @@
 /obj/item/clothing/head/HoS/beret/syndicate,
 /obj/item/radio/headset/syndicate/alt,
 /obj/item/gun/ballistic/shotgun/doublebarrel,
-/obj/structure/closet/secure_closet/bar{
-	req_access = list(25,41)
-	},
 /obj/item/clothing/under/rank/civilian/bartender,
+/obj/structure/closet/secure_closet/bar,
 /turf/open/floor/carpet/red_gold,
 /area/ship/engineering)
 "dB" = (
@@ -350,6 +357,9 @@
 	pixel_x = 8;
 	pixel_y = -24
 	},
+/obj/machinery/door/window{
+	dir = 8
+	},
 /obj/machinery/door/poddoor/shutters{
 	id = "cargodoors"
 	},
@@ -395,7 +405,8 @@
 	dir = 8
 	},
 /obj/structure/rack,
-/turf/open/floor/plasteel/mono/white,
+/obj/effect/turf_decal/corner/neutral/mono,
+/turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
 "hx" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
@@ -501,7 +512,8 @@
 	pixel_x = -32
 	},
 /obj/structure/rack,
-/turf/open/floor/plasteel/mono/white,
+/obj/effect/turf_decal/corner/neutral/mono,
+/turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
 "jg" = (
 /obj/effect/turf_decal/siding/blue,
@@ -534,7 +546,8 @@
 /obj/item/rack_parts,
 /obj/item/rack_parts,
 /obj/item/rack_parts,
-/turf/open/floor/plasteel/mono/white,
+/obj/effect/turf_decal/corner/neutral/mono,
+/turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
 "jB" = (
 /obj/machinery/door/airlock/engineering/glass,
@@ -688,11 +701,13 @@
 	dir = 4
 	},
 /obj/structure/closet/crate/large,
-/obj/item/mecha_parts/mecha_equipment/drill,
 /obj/item/mecha_parts/mecha_equipment/mining_scanner,
 /mob/living/simple_animal/bot/secbot/grievous/toy,
 /obj/effect/decal/cleanable/blood/old,
 /obj/item/hand_labeler_refill,
+/obj/item/mecha_parts/mecha_equipment/hydraulic_clamp,
+/obj/item/mecha_parts/mecha_equipment/rcd,
+/obj/item/mecha_parts/mecha_equipment/cable_layer,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/storage)
 "no" = (
@@ -978,7 +993,6 @@
 /obj/structure/closet/crate/large{
 	name = "Donk! Co. Powerloader In a Box"
 	},
-/obj/item/mecha_parts/mecha_equipment/hydraulic_clamp,
 /obj/effect/decal/cleanable/oil,
 /obj/effect/turf_decal/rechargefloor,
 /turf/open/floor/plasteel/mono/dark,
@@ -1041,6 +1055,9 @@
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
 	},
+/obj/structure/table/reinforced,
+/obj/structure/window/plasma/reinforced,
+/obj/machinery/door/window/eastright,
 /obj/machinery/door/poddoor/shutters{
 	id = "cargodoors"
 	},
@@ -1269,8 +1286,11 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/cargo)
 "Af" = (
-/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
-/turf/open/floor/plating,
+/obj/structure/window/plasma/reinforced,
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
+	dir = 8
+	},
+/turf/open/floor/carpet/red_gold,
 /area/ship/bridge)
 "Ah" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
@@ -1317,7 +1337,8 @@
 	dir = 4
 	},
 /obj/structure/displaycase,
-/turf/open/floor/plasteel/mono/white,
+/obj/effect/turf_decal/corner/neutral/mono,
+/turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
 "Bo" = (
 /obj/structure/cable{
@@ -1416,7 +1437,8 @@
 /area/ship/bridge)
 "DD" = (
 /obj/structure/displaycase,
-/turf/open/floor/plasteel/mono/white,
+/obj/effect/turf_decal/corner/neutral/mono,
+/turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
 "DH" = (
 /obj/structure/cable{
@@ -1444,18 +1466,14 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/cargo)
 "Ef" = (
-/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer4{
-	dir = 1
-	},
-/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer2{
-	dir = 1
-	},
 /obj/effect/turf_decal/siding/blue{
 	dir = 8
 	},
 /obj/effect/turf_decal/siding/blue{
 	dir = 4
 	},
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/visible/layer2,
+/obj/machinery/atmospherics/pipe/manifold4w/supply/visible/layer4,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "Eo" = (
@@ -1602,9 +1620,16 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
 "HF" = (
-/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
-/turf/open/floor/plating,
-/area/ship/cargo)
+/obj/effect/turf_decal/siding/blue{
+	dir = 8
+	},
+/obj/effect/turf_decal/siding/blue{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
+/turf/open/floor/plasteel/dark,
+/area/ship/bridge)
 "HS" = (
 /obj/structure/cable{
 	icon_state = "1-8"
@@ -1753,18 +1778,22 @@
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
-/obj/machinery/suit_storage_unit{
-	helmet_type = /obj/item/clothing/head/helmet/space/syndicate/blue;
-	suit_type = /obj/item/clothing/suit/space/syndicate/surplus
-	},
 /obj/effect/turf_decal/corner/brown/border{
 	dir = 4
+	},
+/obj/machinery/suit_storage_unit{
+	base_icon_state = "industrial";
+	helmet_type = /obj/item/clothing/head/helmet/space/syndicate/blue;
+	icon_state = "industrial";
+	suit_type = /obj/item/clothing/suit/space/syndicate/surplus
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/cargo)
 "LP" = (
 /obj/machinery/suit_storage_unit{
+	base_icon_state = "industrial";
 	helmet_type = /obj/item/clothing/head/helmet/space/syndicate/blue;
+	icon_state = "industrial";
 	suit_type = /obj/item/clothing/suit/space/syndicate/surplus
 	},
 /obj/effect/turf_decal/corner/brown/border{
@@ -1780,10 +1809,6 @@
 /turf/open/floor/engine/air,
 /area/ship/engineering)
 "Mi" = (
-/obj/machinery/suit_storage_unit{
-	helmet_type = /obj/item/clothing/head/helmet/space/syndicate/blue;
-	suit_type = /obj/item/clothing/suit/space/syndicate/surplus
-	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/firealarm{
 	dir = 4;
@@ -1791,6 +1816,12 @@
 	},
 /obj/effect/turf_decal/corner/brown/border{
 	dir = 4
+	},
+/obj/machinery/suit_storage_unit{
+	base_icon_state = "industrial";
+	helmet_type = /obj/item/clothing/head/helmet/space/syndicate/blue;
+	icon_state = "industrial";
+	suit_type = /obj/item/clothing/suit/space/syndicate/surplus
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/cargo)
@@ -1824,7 +1855,8 @@
 "Nc" = (
 /obj/machinery/light,
 /obj/structure/rack,
-/turf/open/floor/plasteel/mono/white,
+/obj/effect/turf_decal/corner/neutral/mono,
+/turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
 "Nr" = (
 /turf/template_noop,
@@ -1843,7 +1875,8 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
 	dir = 8
 	},
-/turf/open/floor/plasteel/mono/white,
+/obj/effect/turf_decal/corner/neutral/mono,
+/turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
 "Og" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
@@ -1907,6 +1940,8 @@
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
 	},
+/obj/structure/table/reinforced,
+/obj/machinery/door/window/eastright,
 /obj/machinery/door/poddoor/shutters{
 	id = "cargodoors"
 	},
@@ -1926,6 +1961,8 @@
 /obj/effect/turf_decal/corner/blue/half{
 	dir = 1
 	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "Pr" = (
@@ -1943,7 +1980,8 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
 	dir = 4
 	},
-/turf/open/floor/plasteel/mono/white,
+/obj/effect/turf_decal/corner/neutral/mono,
+/turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
 "Qh" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
@@ -1991,16 +2029,6 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/item/hand_labeler_refill,
 /obj/item/stack/sheet/mineral/wood/fifty,
-/obj/item/stack/tile/carpet/black/fifty,
-/obj/item/stack/tile/carpet/blue/fifty,
-/obj/item/stack/tile/carpet/cyan/fifty,
-/obj/item/stack/tile/carpet/fifty,
-/obj/item/stack/tile/carpet/green/fifty,
-/obj/item/stack/tile/carpet/orange/fifty,
-/obj/item/stack/tile/carpet/purple/fifty,
-/obj/item/stack/tile/carpet/red/fifty,
-/obj/item/stack/tile/carpet/royalblack/fifty,
-/obj/item/stack/tile/carpet/royalblue/fifty,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/storage)
 "Rb" = (
@@ -2066,7 +2094,6 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/storage)
 "RG" = (
-/obj/machinery/ore_silo,
 /obj/effect/turf_decal/corner/brown/border{
 	dir = 5
 	},
@@ -2075,7 +2102,8 @@
 "RV" = (
 /obj/machinery/airalarm/directional/east,
 /obj/structure/rack,
-/turf/open/floor/plasteel/mono/white,
+/obj/effect/turf_decal/corner/neutral/mono,
+/turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
 "Sa" = (
 /obj/machinery/cryopod{
@@ -2179,7 +2207,8 @@
 /area/ship/engineering)
 "UZ" = (
 /obj/structure/rack,
-/turf/open/floor/plasteel/mono/white,
+/obj/effect/turf_decal/corner/neutral/mono,
+/turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
 "Vz" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
@@ -2189,7 +2218,8 @@
 	dir = 4
 	},
 /obj/structure/displaycase,
-/turf/open/floor/plasteel/mono/white,
+/obj/effect/turf_decal/corner/neutral/mono,
+/turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
 "VF" = (
 /obj/machinery/power/apc/auto_name/east,
@@ -2292,7 +2322,8 @@
 	pixel_y = -24
 	},
 /obj/structure/rack,
-/turf/open/floor/plasteel/mono/white,
+/obj/effect/turf_decal/corner/neutral/mono,
+/turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
 "Xf" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
@@ -2407,6 +2438,10 @@
 /obj/machinery/button/door{
 	id = "cargodoors";
 	pixel_y = 24
+	},
+/obj/structure/table/reinforced,
+/obj/machinery/door/window{
+	dir = 4
 	},
 /obj/machinery/door/poddoor/shutters{
 	id = "cargodoors"
@@ -2534,7 +2569,7 @@ Nr
 Nr
 Nr
 ol
-HF
+ol
 RG
 yl
 Tj
@@ -2682,7 +2717,7 @@ bR
 TW
 cv
 Pp
-dE
+HF
 Ef
 KR
 Qh
@@ -2709,7 +2744,7 @@ OE
 OE
 cQ
 Bd
-bL
+Af
 Rn
 DD
 Vz
@@ -2824,7 +2859,7 @@ Nr
 Nr
 Nr
 OE
-Af
+OE
 dh
 zx
 zx
