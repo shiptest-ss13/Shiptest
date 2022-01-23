@@ -378,7 +378,7 @@
 #undef PATH_HEATER
 
 /obj/item/circuitboard/machine/shieldwallgen
-	name = "Shieldwall Generator"
+	name = "Shieldwall Generator (Machine Board)"
 	icon_state = "engineering"
 	build_path = /obj/machinery/power/shieldwallgen
 	req_components = list(
@@ -390,7 +390,7 @@
 	needs_anchored = FALSE
 
 /obj/item/circuitboard/machine/shieldwallgen/atmos
-	name = "Atmospheric Holowall Generator"
+	name = "Atmospheric Holowall Generator (Machine Board)"
 	build_path = /obj/machinery/power/shieldwallgen/atmos
 
 
