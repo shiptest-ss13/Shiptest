@@ -346,14 +346,11 @@
 /obj/structure/headpike,
 /obj/effect/decal/cleanable/generic,
 /turf/open/floor/plating/asteroid/lowpressure,
-/area/overmap_encounter/planetoid/rockplanet)
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "dv" = (
 /obj/structure/reagent_dispensers/water_cooler,
 /turf/open/floor/plating/rust,
 /area/ruin/powered)
-"dz" = (
-/turf/template_noop,
-/area/overmap_encounter/planetoid/rockplanet)
 "dC" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
@@ -798,6 +795,9 @@
 /obj/effect/decal/cleanable/cobweb,
 /turf/open/floor/plating,
 /area/ruin/powered)
+"in" = (
+/turf/template_noop,
+/area/template_noop)
 "is" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/glass,
@@ -1161,7 +1161,7 @@
 "ll" = (
 /obj/structure/headpike,
 /turf/open/floor/plating/asteroid/lowpressure,
-/area/overmap_encounter/planetoid/rockplanet)
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "lm" = (
 /obj/machinery/door/airlock/maintenance,
 /obj/item/assembly/mousetrap/armed,
@@ -1607,7 +1607,7 @@
 "oW" = (
 /obj/structure/flora/rock,
 /turf/open/floor/plating/asteroid/lowpressure,
-/area/overmap_encounter/planetoid/rockplanet)
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "oX" = (
 /obj/structure/sign/poster/contraband/lizard,
 /turf/closed/wall/rust,
@@ -2101,7 +2101,7 @@
 "tR" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating/asteroid/lowpressure,
-/area/overmap_encounter/planetoid/rockplanet)
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "tT" = (
 /obj/machinery/door/airlock/maintenance{
 	name = "The Barracks"
@@ -2308,7 +2308,7 @@
 "vJ" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/template_noop,
-/area/overmap_encounter/planetoid/rockplanet)
+/area/template_noop)
 "vM" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt,
@@ -2659,7 +2659,7 @@
 "zG" = (
 /obj/item/gun/ballistic/automatic/pistol/commander,
 /turf/open/floor/plating/asteroid/lowpressure,
-/area/overmap_encounter/planetoid/rockplanet)
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "zK" = (
 /turf/closed/indestructible/reinforced,
 /area/ruin/powered)
@@ -3324,7 +3324,7 @@
 	},
 /obj/effect/decal/cleanable/blood/old,
 /turf/open/floor/plating/asteroid/lowpressure,
-/area/overmap_encounter/planetoid/rockplanet)
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "Fl" = (
 /obj/effect/decal/cleanable/robot_debris,
 /mob/living/simple_animal/hostile/rat{
@@ -3570,7 +3570,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating/asteroid/lowpressure,
-/area/overmap_encounter/planetoid/rockplanet)
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "In" = (
 /obj/effect/decal/cleanable/blood/tracks{
 	dir = 4
@@ -3637,7 +3637,7 @@
 /area/ruin/powered)
 "IA" = (
 /turf/open/floor/plating/asteroid/lowpressure,
-/area/overmap_encounter/planetoid/rockplanet)
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "IB" = (
 /obj/item/storage/fancy/cigarettes/cigpack_robustgold,
 /turf/open/floor/plating,
@@ -4697,7 +4697,7 @@
 /obj/structure/headpike,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating/asteroid/lowpressure,
-/area/overmap_encounter/planetoid/rockplanet)
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "SC" = (
 /obj/machinery/door/airlock/maintenance,
 /obj/effect/decal/cleanable/dirt,
@@ -5584,9 +5584,9 @@
 /area/ruin/powered)
 
 (1,1,1) = {"
-dz
-dz
-dz
+in
+in
+in
 xx
 xx
 fi
@@ -5604,33 +5604,33 @@ et
 xx
 xx
 xx
-dz
-dz
-dz
-dz
-dz
-dz
-dz
-dz
-dz
-dz
-dz
-dz
-dz
-dz
-dz
-dz
-dz
-dz
-dz
-dz
-dz
-dz
+in
+in
+in
+in
+in
+in
+in
+in
+in
+in
+in
+in
+in
+in
+in
+in
+in
+in
+in
+in
+in
+in
 "}
 (2,1,1) = {"
-dz
-dz
-dz
+in
+in
+in
 xx
 Hp
 rE
@@ -5663,18 +5663,18 @@ bG
 xx
 xx
 xx
-dz
-dz
-dz
-dz
-dz
-dz
-dz
+in
+in
+in
+in
+in
+in
+in
 "}
 (3,1,1) = {"
-dz
-dz
-dz
+in
+in
+in
 xx
 oY
 ED
@@ -5710,10 +5710,10 @@ xx
 xx
 xx
 xx
-dz
-dz
-dz
-dz
+in
+in
+in
+in
 "}
 (4,1,1) = {"
 xx
@@ -5754,10 +5754,10 @@ av
 Vf
 Lj
 fi
-dz
-dz
-dz
-dz
+in
+in
+in
+in
 "}
 (5,1,1) = {"
 xx
@@ -5798,10 +5798,10 @@ NK
 XW
 wP
 xx
-dz
-dz
-dz
-dz
+in
+in
+in
+in
 "}
 (6,1,1) = {"
 xx
@@ -5843,9 +5843,9 @@ sB
 gG
 xx
 xx
-dz
-dz
-dz
+in
+in
+in
 "}
 (7,1,1) = {"
 xx
@@ -5888,8 +5888,8 @@ bG
 RY
 xx
 xx
-dz
-dz
+in
+in
 "}
 (8,1,1) = {"
 fi
@@ -5932,8 +5932,8 @@ dU
 Cf
 ul
 xx
-dz
-dz
+in
+in
 "}
 (9,1,1) = {"
 xx
@@ -5976,8 +5976,8 @@ vy
 OQ
 sg
 fi
-dz
-dz
+in
+in
 "}
 (10,1,1) = {"
 xx
@@ -6020,8 +6020,8 @@ RR
 pz
 Bl
 xx
-dz
-dz
+in
+in
 "}
 (11,1,1) = {"
 xx
@@ -6064,8 +6064,8 @@ Lc
 Bn
 Xg
 xx
-dz
-dz
+in
+in
 "}
 (12,1,1) = {"
 xx
@@ -6108,8 +6108,8 @@ Jx
 vF
 fj
 xx
-dz
-dz
+in
+in
 "}
 (13,1,1) = {"
 xx
@@ -6152,8 +6152,8 @@ XF
 Lj
 El
 xx
-dz
-dz
+in
+in
 "}
 (14,1,1) = {"
 xx
@@ -6196,8 +6196,8 @@ zE
 kf
 Fl
 xx
-dz
-dz
+in
+in
 "}
 (15,1,1) = {"
 xx
@@ -6240,8 +6240,8 @@ Do
 Xe
 xx
 xx
-dz
-dz
+in
+in
 "}
 (16,1,1) = {"
 xx
@@ -6284,8 +6284,8 @@ Bw
 zf
 eM
 bG
-dz
-dz
+in
+in
 "}
 (17,1,1) = {"
 xx
@@ -6328,8 +6328,8 @@ tf
 mx
 Ib
 xx
-dz
-dz
+in
+in
 "}
 (18,1,1) = {"
 fi
@@ -6372,8 +6372,8 @@ tf
 so
 tF
 xx
-dz
-dz
+in
+in
 "}
 (19,1,1) = {"
 xx
@@ -6416,8 +6416,8 @@ Pe
 Ib
 ET
 fi
-dz
-dz
+in
+in
 "}
 (20,1,1) = {"
 xx
@@ -6460,8 +6460,8 @@ Or
 Tj
 xx
 xx
-dz
-dz
+in
+in
 "}
 (21,1,1) = {"
 xx
@@ -6503,9 +6503,9 @@ xx
 kw
 xx
 xx
-dz
-dz
-dz
+in
+in
+in
 "}
 (22,1,1) = {"
 xx
@@ -6546,10 +6546,10 @@ iR
 xx
 xx
 xx
-dz
-dz
-dz
-dz
+in
+in
+in
+in
 "}
 (23,1,1) = {"
 xx
@@ -6590,10 +6590,10 @@ FH
 xx
 zG
 oW
-dz
-dz
-dz
-dz
+in
+in
+in
+in
 "}
 (24,1,1) = {"
 xx
@@ -6637,7 +6637,7 @@ IA
 IA
 ll
 IA
-dz
+in
 "}
 (25,1,1) = {"
 xx
@@ -6939,7 +6939,7 @@ ut
 Fw
 he
 xx
-dz
+in
 IA
 ll
 IA
@@ -6983,7 +6983,7 @@ Uk
 am
 Bd
 xx
-dz
+in
 IA
 IA
 IA
@@ -7028,7 +7028,7 @@ xx
 xx
 xx
 xx
-dz
+in
 IA
 IA
 IA
@@ -7072,12 +7072,12 @@ OV
 yj
 Jp
 xx
-dz
-dz
-dz
-dz
-dz
-dz
+in
+in
+in
+in
+in
+in
 "}
 (35,1,1) = {"
 xx
@@ -7116,12 +7116,12 @@ Ie
 PM
 NI
 xx
-dz
-dz
-dz
-dz
-dz
-dz
+in
+in
+in
+in
+in
+in
 "}
 (36,1,1) = {"
 xx
@@ -7160,12 +7160,12 @@ Mo
 Ie
 Ie
 xx
-dz
-dz
-dz
-dz
-dz
-dz
+in
+in
+in
+in
+in
+in
 "}
 (37,1,1) = {"
 xx
@@ -7204,12 +7204,12 @@ bG
 RG
 xx
 xx
-dz
-dz
-dz
-dz
-dz
-dz
+in
+in
+in
+in
+in
+in
 "}
 (38,1,1) = {"
 xx
@@ -7248,12 +7248,12 @@ pM
 XF
 iI
 xx
-dz
-dz
-dz
-dz
-dz
-dz
+in
+in
+in
+in
+in
+in
 "}
 (39,1,1) = {"
 xx
@@ -7292,12 +7292,12 @@ AC
 nd
 xj
 xx
-dz
-dz
-dz
-dz
-dz
-dz
+in
+in
+in
+in
+in
+in
 "}
 (40,1,1) = {"
 xx
@@ -7336,12 +7336,12 @@ xm
 OM
 pp
 bG
-dz
-dz
-dz
-dz
-dz
-dz
+in
+in
+in
+in
+in
+in
 "}
 (41,1,1) = {"
 xx
@@ -7380,12 +7380,12 @@ xu
 AE
 mc
 bG
-dz
-dz
-dz
-dz
-dz
-dz
+in
+in
+in
+in
+in
+in
 "}
 (42,1,1) = {"
 xx
@@ -7424,12 +7424,12 @@ ED
 Px
 av
 bG
-dz
-dz
-dz
-dz
-dz
-dz
+in
+in
+in
+in
+in
+in
 "}
 (43,1,1) = {"
 xx
@@ -7468,12 +7468,12 @@ xx
 xx
 bG
 bG
-dz
-dz
-dz
-dz
-dz
-dz
+in
+in
+in
+in
+in
+in
 "}
 (44,1,1) = {"
 xx
@@ -7489,35 +7489,35 @@ zK
 zK
 zK
 xx
-dz
-dz
-dz
-dz
-dz
-dz
-dz
-dz
-dz
-dz
-dz
-dz
-dz
-dz
-dz
-dz
-dz
-dz
-dz
-dz
-dz
+in
+in
+in
+in
+in
+in
+in
+in
+in
+in
+in
+in
+in
+in
+in
+in
+in
+in
+in
+in
+in
 vJ
-dz
-dz
-dz
-dz
-dz
-dz
-dz
+in
+in
+in
+in
+in
+in
+in
 "}
 (45,1,1) = {"
 xx
@@ -7533,33 +7533,33 @@ xx
 xx
 xx
 xx
-dz
-dz
-dz
-dz
-dz
-dz
-dz
-dz
-dz
-dz
-dz
-dz
-dz
-dz
-dz
-dz
-dz
-dz
-dz
-dz
-dz
-dz
-dz
-dz
-dz
-dz
-dz
-dz
-dz
+in
+in
+in
+in
+in
+in
+in
+in
+in
+in
+in
+in
+in
+in
+in
+in
+in
+in
+in
+in
+in
+in
+in
+in
+in
+in
+in
+in
+in
 "}

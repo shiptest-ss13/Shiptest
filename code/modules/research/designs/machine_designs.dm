@@ -280,7 +280,7 @@
 	id = "rdserver"
 	build_type = AUTOLATHE | IMPRINTER
 	build_path = /obj/item/circuitboard/machine/rdserver
-	category = list("Research Machinery", "initial", "Equipment")
+	category = list("Research Machinery", "initial", "Equipment", "Machinery")
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/board/mechfab

@@ -185,9 +185,9 @@
 			if(A.crystal_charge == 0)
 				to_chat(H, "<span class='warning'>[A] is completely drained!</span>")
 				break
-			siphon_amt = A.crystal_charge <= 8 ? A.crystal_charge : 8
+			siphon_amt = A.crystal_charge <= (2 * ETHEREAL_CHARGE_SCALING_MULTIPLIER) ? A.crystal_charge : (2 * ETHEREAL_CHARGE_SCALING_MULTIPLIER)
 			A.adjust_charge(-1 * siphon_amt)
-			H.nutrition += (siphon_amt * 5)
+			H.nutrition += (siphon_amt)
 			if(H.nutrition > NUTRITION_LEVEL_WELL_FED)
 				to_chat(H, "<span class='notice'>You are now fully charged.</span>")
 				break

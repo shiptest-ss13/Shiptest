@@ -20,14 +20,14 @@
 	offset_features = list(OFFSET_UNIFORM = list(0,0), OFFSET_ID = list(0,0), OFFSET_GLOVES = list(0,0), OFFSET_GLASSES = list(0,0), OFFSET_EARS = list(0,-4), OFFSET_SHOES = list(0,0), OFFSET_S_STORE = list(0,0), OFFSET_FACEMASK = list(0,-5), OFFSET_HEAD = list(0,-4), OFFSET_FACE = list(0,0), OFFSET_BELT = list(0,0), OFFSET_BACK = list(0,-4), OFFSET_SUIT = list(0,0), OFFSET_NECK = list(0,0), OFFSET_ACCESSORY = list(0, -4))
 	punchdamagelow = 0
 	punchdamagehigh = 6
-	coldmod = 0.67
-	heatmod = 1.5
+	heatmod = 0.67
+	coldmod = 1.5
 	brutemod = 1.5
 	burnmod = 1.5
 	speedmod = -0.25
-	bodytemp_normal = BODYTEMP_NORMAL - 30
-	bodytemp_heat_damage_limit = (BODYTEMP_HEAT_DAMAGE_LIMIT - 30)
-	bodytemp_cold_damage_limit = (BODYTEMP_COLD_DAMAGE_LIMIT - 30)
+	bodytemp_normal = BODYTEMP_NORMAL + 30
+	bodytemp_heat_damage_limit = (BODYTEMP_HEAT_DAMAGE_LIMIT + 30)
+	bodytemp_cold_damage_limit = (BODYTEMP_COLD_DAMAGE_LIMIT + 30)
 	no_equip = list(ITEM_SLOT_BACK)
 	mutanttongue = /obj/item/organ/tongue/kepori
 	species_language_holder = /datum/language_holder/kepori

@@ -52,3 +52,11 @@
 	head = /obj/item/clothing/head/supply_chief
 	backpack_contents = list(/obj/item/modular_computer/tablet/preset/cargo=1, /obj/item/clipboard=1)
 
+/datum/outfit/job/quartermaster/western
+	name = "Foreman (Western)"
+	uniform = /obj/item/clothing/under/rank/cargo/qm
+	suit = /obj/item/clothing/suit/toggle/hazard
+	shoes = /obj/item/clothing/shoes/workboots
+	glasses = /obj/item/clothing/glasses/sunglasses
+	head = /obj/item/clothing/head/cowboy/sec
+

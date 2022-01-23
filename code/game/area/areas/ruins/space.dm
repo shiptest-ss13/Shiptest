@@ -2,7 +2,7 @@
 
 /area/ruin/space
 	has_gravity = FALSE
-	area_flags = UNIQUE_AREA
+	area_flags = NONE
 
 /area/ruin/space/has_grav
 	has_gravity = STANDARD_GRAVITY
@@ -349,7 +349,7 @@
 /area/ruin/space/has_grav/hellfactoryoffice
 	name = "Hell Factory Office"
 	icon_state = "red"
-	area_flags = VALID_TERRITORY | BLOBS_ALLOWED | UNIQUE_AREA | NOTELEPORT
+	area_flags = VALID_TERRITORY | BLOBS_ALLOWED | NOTELEPORT
 
 //Ruin of Transport 18
 /area/ruin/space/has_grav/transport18fore

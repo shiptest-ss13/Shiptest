@@ -262,6 +262,12 @@
 	list_reagents = list(/datum/reagent/medicine/potass_iodide = 15)
 	rename_with_volume = TRUE
 
+/obj/item/reagent_containers/pill/three_eye
+	name = "peculiar pill"
+	desc = "I don't like this..."
+	icon_state = "pill21"
+	list_reagents = list(/datum/reagent/three_eye = 25)
+
 /*WS Begin - No Cobbychem
 
 /obj/item/reagent_containers/pill/C2/probital

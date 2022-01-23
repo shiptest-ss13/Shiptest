@@ -139,6 +139,10 @@
 	var/list/canSmoothWith = null
 	///Reference to atom being orbited
 	var/atom/orbit_target
+	///Default X pixel offset
+	var/base_pixel_x
+	///Default Y pixel offset
+	var/base_pixel_y
 
 /**
   * Called when an atom is created in byond (built in engine proc)
@@ -345,7 +349,7 @@
 	if(!T)
 		return FALSE
 
-	if(is_reserved_level(T.z))
+	if(is_reserved_level(T))
 		for(var/A in SSshuttle.mobile)
 			var/obj/docking_port/mobile/M = A
 			if(M.launch_status == ENDGAME_TRANSIT)
@@ -354,7 +358,7 @@
 					if(T in shuttle_area)
 						return TRUE
 
-	if(!is_centcom_level(T.z))//if not, don't bother
+	if(!is_centcom_level(T))//if not, don't bother
 		return FALSE
 
 	//Check for centcom itself
@@ -382,7 +386,7 @@
 	if(!T)
 		return FALSE
 
-	if(!is_centcom_level(T.z))//if not, don't bother
+	if(!is_centcom_level(T))//if not, don't bother
 		return FALSE
 
 	if(istype(T.loc, /area/shuttle/syndicate) || istype(T.loc, /area/syndicate_mothership))
@@ -402,7 +406,7 @@
 	if(!T)
 		return FALSE
 
-	if(is_away_level(T.z))
+	if(is_away_level(T))
 		return TRUE
 
 	return FALSE
@@ -1532,13 +1536,14 @@
 	if(A.has_gravity) // Areas which always has gravity
 		return A.has_gravity
 	else
-		// There's a gravity generator on our z level
-		if(GLOB.gravity_generators["[T.get_virtual_z_level()]"])
+		// See if there's a gravity generator on our map zone
+		var/datum/map_zone/mapzone = T.get_map_zone()
+		if(mapzone.gravity_generators.len)
 			var/max_grav = 0
-			for(var/obj/machinery/gravity_generator/main/G in GLOB.gravity_generators["[T.get_virtual_z_level()]"])
+			for(var/obj/machinery/gravity_generator/main/G as anything in mapzone.gravity_generators)
 				max_grav = max(G.setting,max_grav)
 			return max_grav
-	return SSmapping.level_trait(T.z, ZTRAIT_GRAVITY)
+	return T.virtual_level_trait(ZTRAIT_GRAVITY)
 
 ///Passes Stat Browser Panel clicks to the game and calls client click on an atom
 /atom/Topic(href, list/href_list)
@@ -1562,3 +1567,20 @@
 ///Called when something resists while this atom is its loc
 /atom/proc/container_resist_act(mob/living/user)
 
+///Setter for the "base_pixel_x" var to append behavior related to it's changing
+/atom/proc/set_base_pixel_x(var/new_value)
+	if(base_pixel_x == new_value)
+		return
+	. = base_pixel_x
+	base_pixel_x = new_value
+
+	pixel_x = pixel_x + base_pixel_x - .
+
+///Setter for the "base_pixel_y" var to append behavior related to it's changing
+/atom/proc/set_base_pixel_y(new_value)
+	if(base_pixel_y == new_value)
+		return
+	. = base_pixel_y
+	base_pixel_y = new_value
+
+	pixel_y = pixel_y + base_pixel_y - .

@@ -114,10 +114,10 @@
 	"<span class='notice'>Perfect. Much better! Now <i>nobody</i> will be able to resist yo-</span>")
 
 	var/turf/T = get_turf(user)
-	var/list/levels = SSmapping.levels_by_trait(ZTRAIT_SPACE_RUINS)
+	var/datum/virtual_level/vlevel = pick(SSmapping.virtual_levels_by_trait(ZTRAIT_SPACE_RUINS))
 	var/turf/dest
-	if (levels.len)
-		dest = locate(T.x, T.y, pick(levels))
+	if (vlevel)
+		dest = vlevel.get_random_position()
 
 	T.ChangeTurf(/turf/open/chasm, flags = CHANGETURF_INHERIT_AIR)
 	var/turf/open/chasm/C = T
