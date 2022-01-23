@@ -691,5 +691,5 @@ HELPER(bottlegreen, "#57967f", 255)
 
 /obj/effect/turf_decal/solgov //Credit to baystation for these sprites!
 	alpha = 230
-	icon = 'whitesands/icons/obj/solgov_floor.dmi'
+	icon = 'icons/obj/solgov_floor.dmi'
 	icon_state = "center"

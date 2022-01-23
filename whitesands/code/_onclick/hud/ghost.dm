@@ -1,6 +1,6 @@
 /atom/movable/screen/ghost/spawner_menu
 	name = "Spawner Menu"
-	icon = 'whitesands/icons/mob/screen_ghost.dmi'
+	icon = 'icons/mob/screen_ghost.dmi'
 	icon_state = "spawner_menu"
 
 /atom/movable/screen/ghost/spawner_menu/Click()

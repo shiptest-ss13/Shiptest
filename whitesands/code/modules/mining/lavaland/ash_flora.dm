@@ -10,7 +10,7 @@
 	return 1
 
 /obj/structure/flora/ash/whitesands
-	icon = 'whitesands/icons/obj/lavaland/newlavalandplants.dmi'
+	icon = 'icons/obj/lavaland/newlavalandplants.dmi'
 
 /obj/structure/flora/ash/whitesands/fern
 	name = "cave fern"
@@ -62,7 +62,7 @@
 //SNACKS
 
 /obj/item/reagent_containers/food/snacks/grown/ash_flora/whitesands
-	icon = 'whitesands/icons/obj/lavaland/newlavalandplants.dmi'
+	icon = 'icons/obj/lavaland/newlavalandplants.dmi'
 
 /obj/item/reagent_containers/food/snacks/grown/ash_flora/whitesands/fern
 	name = "fern leaf"
@@ -91,8 +91,8 @@
 //SEEDS
 
 /obj/item/seeds/lavaland/whitesands
-	icon = 'whitesands/icons/obj/lavaland/newlavalandplants.dmi'
-	growing_icon = 'whitesands/icons/obj/lavaland/newlavalandplants.dmi'
+	icon = 'icons/obj/lavaland/newlavalandplants.dmi'
+	growing_icon = 'icons/obj/lavaland/newlavalandplants.dmi'
 	species = "fern" // begone test
 	growthstages = 2
 

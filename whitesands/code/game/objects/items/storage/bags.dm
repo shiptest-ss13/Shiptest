@@ -1,6 +1,6 @@
 /obj/item/storage/bag/medical
 	name = "medicine bag"
-	icon = 'whitesands/icons/obj/bags.dmi'
+	icon = 'icons/obj/bags.dmi'
 	icon_state = "medbag"
 	desc = "A bag for storing syringes, sutures, ointments, and pills."
 	w_class = WEIGHT_CLASS_NORMAL

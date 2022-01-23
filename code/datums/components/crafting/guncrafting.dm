@@ -18,5 +18,5 @@
 /obj/item/weaponcrafting/silkstring
 	name = "silkstring"
 	desc = "A long piece of Silk that looks like a cable coil."
-	icon = 'whitesands/icons/obj/improvised.dmi'
+	icon = 'icons/obj/improvised.dmi'
 	icon_state = "silkstring"

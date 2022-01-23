@@ -1,5 +1,5 @@
 /obj/machinery/portable_atmospherics/canister
-	icon = 'whitesands/icons/obj/atmos.dmi'
+	icon = 'icons/obj/atmos.dmi'
 
 /obj/machinery/portable_atmospherics/canister/update_overlays()
 	. = ..()

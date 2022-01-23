@@ -1,7 +1,7 @@
 /obj/item/retractor
 	name = "retractor"
 	desc = "Retracts stuff."
-	icon = 'whitesands/icons/obj/surgery.dmi' //SHIPTEST edit: cool and new tools
+	icon = 'icons/obj/surgery.dmi' //SHIPTEST edit: cool and new tools
 	icon_state = "retractor"
 	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
@@ -21,7 +21,7 @@
 /obj/item/hemostat
 	name = "hemostat"
 	desc = "You think you have seen this before."
-	icon = 'whitesands/icons/obj/surgery.dmi' //SHIPTEST edit: cool and new tools
+	icon = 'icons/obj/surgery.dmi' //SHIPTEST edit: cool and new tools
 	icon_state = "hemostat"
 	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
@@ -42,7 +42,7 @@
 /obj/item/cautery
 	name = "cautery"
 	desc = "This stops bleeding."
-	icon = 'whitesands/icons/obj/surgery.dmi' //SHIPTEST edit: cool and new tools
+	icon = 'icons/obj/surgery.dmi' //SHIPTEST edit: cool and new tools
 	icon_state = "cautery"
 	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
@@ -63,7 +63,7 @@
 /obj/item/surgicaldrill
 	name = "surgical drill"
 	desc = "You can drill using this item. You dig?"
-	icon = 'whitesands/icons/obj/surgery.dmi' //SHIPTEST edit: cool and new tools
+	icon = 'icons/obj/surgery.dmi' //SHIPTEST edit: cool and new tools
 	icon_state = "drill"
 	lefthand_file = 'icons/mob/inhands/equipment/tools_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/tools_righthand.dmi'
@@ -100,7 +100,7 @@
 /obj/item/scalpel
 	name = "scalpel"
 	desc = "Cut, cut, and once more cut."
-	icon = 'whitesands/icons/obj/surgery.dmi' //SHIPTEST edit: cool and new tools
+	icon = 'icons/obj/surgery.dmi' //SHIPTEST edit: cool and new tools
 	icon_state = "scalpel"
 	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
@@ -135,7 +135,7 @@
 /obj/item/circular_saw
 	name = "circular saw"
 	desc = "For heavy duty cutting."
-	icon = 'whitesands/icons/obj/surgery.dmi' //SHIPTEST edit: cool and new tools
+	icon = 'icons/obj/surgery.dmi' //SHIPTEST edit: cool and new tools
 	icon_state = "saw"
 	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
@@ -271,8 +271,8 @@
 /obj/item/retractor/advanced
 	name = "mechanical pinches"
 	desc = "An ungainly set of rods and gears mounted onto a gauntlet apparatus."
-	lefthand_file = 'whitesands/icons/mob/inhands/equipment/medical_lefthand.dmi'
-	righthand_file = 'whitesands/icons/mob/inhands/equipment/medical_righthand.dmi'
+	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
 	icon_state = "retractor_a"
 	toolspeed = 0.7
 	force = 10 //this is in essence a hunk of metal strapped to someone's hand, it's gonna hurt
@@ -321,7 +321,7 @@
 /obj/item/shears
 	name = "amputation shears"
 	desc = "A type of heavy duty surgical shears used for achieving a clean separation between limb and patient. Keeping the patient still is imperative to be able to secure and align the shears."
-	icon = 'whitesands/icons/obj/surgery.dmi' //SHiIPTEST AWESOME
+	icon = 'icons/obj/surgery.dmi' //SHiIPTEST AWESOME
 	icon_state = "shears"
 	flags_1 = CONDUCT_1
 	item_flags = SURGICAL_TOOL

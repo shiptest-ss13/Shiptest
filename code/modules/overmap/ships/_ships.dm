@@ -7,7 +7,7 @@
 /obj/structure/overmap/ship
 	name = "overmap vessel"
 	desc = "A spacefaring vessel."
-	icon = 'whitesands/icons/effects/overmap.dmi'
+	icon = 'icons/effects/overmap.dmi'
 	icon_state = "ship"
 	///Prefix of all the icons used by the ship. (ex. [base_icon_state]_moving)
 	base_icon_state = "ship"

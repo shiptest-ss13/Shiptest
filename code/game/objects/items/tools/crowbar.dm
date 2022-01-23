@@ -1,10 +1,10 @@
 /obj/item/crowbar
 	name = "pocket crowbar"
 	desc = "A small crowbar. This handy tool is useful for lots of things, such as prying floor tiles or opening unpowered doors."
-	icon = 'whitesands/icons/obj/tools.dmi' //WS Edit - Better Tool Sprites
+	icon = 'icons/obj/tools.dmi' //WS Edit - Better Tool Sprites
 	icon_state = "crowbar"
-	lefthand_file = 'whitesands/icons/mob/inhands/equipment/tools_lefthand.dmi' //WS edit: i finally do those god forsaken inhands
-	righthand_file = 'whitesands/icons/mob/inhands/equipment/tools_righthand.dmi'
+	lefthand_file = 'icons/mob/inhands/equipment/tools_lefthand.dmi' //WS edit: i finally do those god forsaken inhands
+	righthand_file = 'icons/mob/inhands/equipment/tools_righthand.dmi'
 	usesound = 'sound/items/crowbar.ogg'
 	flags_1 = CONDUCT_1
 	slot_flags = ITEM_SLOT_BELT

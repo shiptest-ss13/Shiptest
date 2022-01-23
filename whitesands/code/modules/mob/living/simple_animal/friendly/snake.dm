@@ -1,5 +1,5 @@
 /mob/living/simple_animal/hostile/retaliate/poison/snake
-	var/glasses_overlay_file = 'whitesands/icons/mob/pets.dmi'
+	var/glasses_overlay_file = 'icons/mob/pets.dmi'
 	var/obj/item/clothing/glasses/glasses = null //snek glasses
 
 /mob/living/simple_animal/hostile/retaliate/poison/snake/say(message, bubble_type, list/spans, sanitize, datum/language/language, ignore_spam, forced)
@@ -79,7 +79,7 @@
 
 /mob/living/simple_animal/hostile/retaliate/poison/snake/bookworm
 	name = "Bookworm"
-	icon = 'whitesands/icons/mob/pets.dmi'
+	icon = 'icons/mob/pets.dmi'
 	icon_state = "bookworm"
 	icon_living = "bookworm"
 	icon_dead = "bookworm_dead"

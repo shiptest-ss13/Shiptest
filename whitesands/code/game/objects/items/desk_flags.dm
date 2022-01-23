@@ -1,7 +1,7 @@
 /obj/item/desk_flag
 	name = "flag"
 	desc = "Show your patriotism with WaffleCo. brand desk flags!"
-	icon = 'whitesands/icons/obj/flags.dmi'
+	icon = 'icons/obj/flags.dmi'
 	icon_state = "flag"
 	force = 3
 	throwforce = 2

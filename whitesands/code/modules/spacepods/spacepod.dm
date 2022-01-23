@@ -18,7 +18,7 @@ GLOBAL_LIST_INIT(spacepod_verb_list,  list(
 /obj/spacepod
 	name = "space pod"
 	desc = "A frame for a spacepod."
-	icon = 'whitesands/goon/icons/obj/spacepods/construction_2x2.dmi'
+	icon = 'goon/icons/obj/spacepods/construction_2x2.dmi'
 	icon_state = "pod_1"
 	density = 1
 	opacity = 0
@@ -406,10 +406,10 @@ GLOBAL_LIST_INIT(spacepod_verb_list,  list(
 /obj/spacepod/update_icon()
 	cut_overlays()
 	if(construction_state != SPACEPOD_ARMOR_WELDED)
-		icon = 'whitesands/goon/icons/obj/spacepods/construction_2x2.dmi'
+		icon = 'goon/icons/obj/spacepods/construction_2x2.dmi'
 		icon_state = "pod_[construction_state]"
 		if(pod_armor && construction_state >= SPACEPOD_ARMOR_LOOSE)
-			var/mutable_appearance/masked_armor = mutable_appearance(icon = 'whitesands/goon/icons/obj/spacepods/construction_2x2.dmi', icon_state = "armor_mask")
+			var/mutable_appearance/masked_armor = mutable_appearance(icon = 'goon/icons/obj/spacepods/construction_2x2.dmi', icon_state = "armor_mask")
 			var/mutable_appearance/armor = mutable_appearance(pod_armor.pod_icon, pod_armor.pod_icon_state)
 			armor.blend_mode = BLEND_MULTIPLY
 			masked_armor.overlays = list(armor)
@@ -421,13 +421,13 @@ GLOBAL_LIST_INIT(spacepod_verb_list,  list(
 		icon = pod_armor.pod_icon
 		icon_state = pod_armor.pod_icon_state
 	else
-		icon = 'whitesands/goon/icons/obj/spacepods/2x2.dmi'
+		icon = 'goon/icons/obj/spacepods/2x2.dmi'
 		icon_state = initial(icon_state)
 
 	if(obj_integrity <= max_integrity / 2)
-		add_overlay(image(icon='whitesands/goon/icons/obj/spacepods/2x2.dmi', icon_state="pod_damage"))
+		add_overlay(image(icon='goon/icons/obj/spacepods/2x2.dmi', icon_state="pod_damage"))
 		if(obj_integrity <= max_integrity / 4)
-			add_overlay(image(icon='whitesands/goon/icons/obj/spacepods/2x2.dmi', icon_state="pod_fire"))
+			add_overlay(image(icon='goon/icons/obj/spacepods/2x2.dmi', icon_state="pod_fire"))
 
 	if(weapon && weapon.overlay_icon_state)
 		add_overlay(image(icon=weapon.overlay_icon,icon_state=weapon.overlay_icon_state))
@@ -463,11 +463,11 @@ GLOBAL_LIST_INIT(spacepod_verb_list,  list(
 		var/left_thrust = left_thrusts[cdir]
 		var/right_thrust = right_thrusts[cdir]
 		if(left_thrust)
-			add_overlay(image(icon = 'whitesands/icons/obj/spacepods/2x2.dmi', icon_state = "rcs_left", dir = cdir))
+			add_overlay(image(icon = 'icons/obj/spacepods/2x2.dmi', icon_state = "rcs_left", dir = cdir))
 		if(right_thrust)
-			add_overlay(image(icon = 'whitesands/icons/obj/spacepods/2x2.dmi', icon_state = "rcs_right", dir = cdir))
+			add_overlay(image(icon = 'icons/obj/spacepods/2x2.dmi', icon_state = "rcs_right", dir = cdir))
 	if(back_thrust)
-		var/image/I = image(icon = 'whitesands/icons/obj/spacepods/2x2.dmi', icon_state = "thrust")
+		var/image/I = image(icon = 'icons/obj/spacepods/2x2.dmi', icon_state = "thrust")
 		I.transform = matrix(1, 0, 0, 0, 1, -32)
 		add_overlay(I)
 

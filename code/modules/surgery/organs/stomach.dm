@@ -167,7 +167,7 @@
 
 /obj/item/organ/stomach/cell
 	name = "micro-cell"
-	icon = 'whitesands/icons/obj/surgery.dmi'
+	icon = 'icons/obj/surgery.dmi'
 	icon_state = "microcell"
 	w_class = WEIGHT_CLASS_NORMAL
 	zone = "chest"

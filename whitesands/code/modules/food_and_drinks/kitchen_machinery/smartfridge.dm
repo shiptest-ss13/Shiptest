@@ -4,7 +4,7 @@
 /obj/machinery/smartfridge/bloodbank
 	name = "Refrigerated Blood Bank"
 	desc = "A refrigerated storage unit for blood packs."
-	icon = 'whitesands/icons/obj/vending.dmi'
+	icon = 'icons/obj/vending.dmi'
 	icon_state = "bloodbank"
 
 /obj/machinery/smartfridge/bloodbank/accept_check(obj/item/O) //Literally copied bar smartfridge code

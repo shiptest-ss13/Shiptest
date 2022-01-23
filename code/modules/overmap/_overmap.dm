@@ -1,6 +1,6 @@
 /* OVERMAP TURFS */
 /turf/open/overmap
-	icon = 'whitesands/icons/turf/overmap.dmi'
+	icon = 'icons/turf/overmap.dmi'
 	icon_state = "overmap"
 	initial_gas_mix = AIRLESS_ATMOS
 
@@ -22,7 +22,7 @@
 		numbers += list("[round(x/10)]","[round(x%10)]")
 
 	for(var/i = 1 to numbers.len)
-		var/image/I = image('whitesands/icons/effects/numbers.dmi',numbers[i])
+		var/image/I = image('icons/effects/numbers.dmi',numbers[i])
 		I.pixel_x = 5*i - 2
 		I.pixel_y = world.icon_size/2 - 3
 		if(y == 1)
@@ -60,7 +60,7 @@
 /obj/structure/overmap
 	name = "overmap object"
 	desc = "An unknown celestial object."
-	icon = 'whitesands/icons/effects/overmap.dmi'
+	icon = 'icons/effects/overmap.dmi'
 	icon_state = "object"
 
 	///~~If we need to render a map for cameras and helms for this object~~ basically can you look at and use this as a ship or station
@@ -178,7 +178,7 @@
 /obj/structure/overmap/star
 	name = "Star"
 	desc = "A star."
-	icon = 'whitesands/icons/effects/overmap.dmi'
+	icon = 'icons/effects/overmap.dmi'
 	icon_state = "star1"
 	var/class //what kind of star will you be?
 	var/star_classes = list(\
@@ -220,7 +220,7 @@
 	add_atom_colour(c, FIXED_COLOUR_PRIORITY)
 
 /obj/structure/overmap/star/medium
-	icon = 'whitesands/icons/effects/overmap_large.dmi'
+	icon = 'icons/effects/overmap_large.dmi'
 	bound_height = 64
 	bound_width = 64
 	pixel_x = -16
@@ -235,7 +235,7 @@
 	)
 
 /obj/structure/overmap/star/big
-	icon = 'whitesands/icons/effects/overmap_larger.dmi'
+	icon = 'icons/effects/overmap_larger.dmi'
 	icon_state = "star3"
 	bound_height = 96
 	bound_width = 96

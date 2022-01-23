@@ -1,7 +1,7 @@
 /mob/living/simple_animal/hostile/asteroid/whitesands
 	name = "Whitesands Inhabitant"
 	desc = "If you can read this, yell at a coder!"
-	icon = 'whitesands/icons/mob/simple_human.dmi'
+	icon = 'icons/mob/simple_human.dmi'
 	icon_state = "survivor_base"
 	icon_living = "survivor_base"
 	icon_dead = null

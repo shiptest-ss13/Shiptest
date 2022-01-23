@@ -6,7 +6,7 @@
 *
 */
 /turf/open/floor/plasteel/median
-	icon = 'whitesands/icons/turf/floors/medians.dmi'
+	icon = 'icons/turf/floors/medians.dmi'
 	icon_state = "floor_fuckywucky"
 	name = "Uh oh tile"
 

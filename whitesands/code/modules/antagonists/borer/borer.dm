@@ -61,7 +61,7 @@ GLOBAL_VAR_INIT(total_borer_hosts_needed, 3)
 	name = "cortical borer"
 	real_name = "cortical borer"
 	desc = "A small, quivering, slug-like creature."
-	icon = 'whitesands/icons/mob/borer.dmi'
+	icon = 'icons/mob/borer.dmi'
 	icon_state = "brainslug"
 	icon_living = "brainslug"
 	icon_dead = "brainslug_dead"
@@ -994,7 +994,7 @@ GLOBAL_VAR_INIT(total_borer_hosts_needed, 3)
 	give_back_control_action.Remove(victim)
 
 /datum/action/innate/borer
-	icon_icon = 'whitesands/icons/mob/actions/actions_borer.dmi'
+	icon_icon = 'icons/mob/actions/actions_borer.dmi'
 	background_icon_state = "bg_alien"
 
 /datum/action/innate/borer/talk_to_host

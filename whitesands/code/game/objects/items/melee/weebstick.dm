@@ -1,11 +1,11 @@
 /obj/item/melee/weebstick
 	name = "Weeb Stick"
 	desc = "Glorious nippon steel, folded 1000 times."
-	icon = 'whitesands/icons/obj/items_and_weapons.dmi'
+	icon = 'icons/obj/items_and_weapons.dmi'
 	icon_state = "weeb_blade"
 	item_state = "weeb_blade"
-	lefthand_file = 'whitesands/icons/mob/inhands/weapons/swords_lefthand.dmi'
-	righthand_file = 'whitesands/icons/mob/inhands/weapons/swords_righthand.dmi'
+	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
 	flags_1 = CONDUCT_1
 	obj_flags = UNIQUE_RENAME
 	w_class = WEIGHT_CLASS_BULKY
@@ -17,7 +17,7 @@
 	throwforce = 12
 	block_chance = 40
 	armour_penetration = 50
-	hitsound = 'whitesands/sound/weapons/anime_slash.ogg'
+	hitsound = 'sound/weapons/anime_slash.ogg'
 	attack_verb = list("attacked", "slashed", "stabbed", "sliced", "diced", "cut")
 
 /obj/item/melee/weebstick/Initialize()
@@ -49,14 +49,14 @@
 /obj/item/storage/belt/weebstick
 	name = "nanoforged blade sheath"
 	desc = "It yearns to bath in the blood of your enemies... but you hold it back!"
-	icon = 'whitesands/icons/obj/items_and_weapons.dmi'
+	icon = 'icons/obj/items_and_weapons.dmi'
 	icon_state = "weeb_sheath"
 	item_state = "sheath"
 	w_class = WEIGHT_CLASS_BULKY
 	force = 3
 	var/primed = FALSE //Prerequisite to anime bullshit
 	// ##The anime bullshit## - Mostly stolen from action/innate/dash
-	var/dash_sound = 'whitesands/sound/weapons/unsheathed_blade.ogg'
+	var/dash_sound = 'sound/weapons/unsheathed_blade.ogg'
 	var/beam_effect = "blood_beam"
 	var/phasein = /obj/effect/temp_visual/dir_setting/cult/phase
 	var/phaseout = /obj/effect/temp_visual/dir_setting/cult/phase
@@ -138,7 +138,7 @@
 		var/turf/tile = T
 		for(var/mob/living/victim in tile)
 			if(victim != user)
-				playsound(victim, 'whitesands/sound/weapons/anime_slash.ogg', 10, TRUE)
+				playsound(victim, 'sound/weapons/anime_slash.ogg', 10, TRUE)
 				victim.take_bodypart_damage(15)
 		// Unlike actual ninjas, we stop noclip-dashing here.
 		if(isclosedturf(T))

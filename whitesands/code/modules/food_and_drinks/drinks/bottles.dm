@@ -8,7 +8,7 @@
 
 /obj/item/reagent_containers/food/drinks/bottle/sarsaparilla/attack_self(mob/user)
 	if(!is_drainable()) // Uses the reagents.flags cause reagent_flags is only the init value
-		playsound(src, 'whitesands/sound/items/openbottle.ogg', 30, 1)
+		playsound(src, 'sound/items/openbottle.ogg', 30, 1)
 		user.visible_message("<span class='notice'>[user] takes the cap off \the [src].</span>", "<span class='notice'>You take the cap off [src].</span>")
 		reagents.flags |= OPENCONTAINER //Cap's off
 		if(prob(1)) //Lucky you
@@ -28,7 +28,7 @@
 	desc = "Legend says something amazing happens when you collect enough of these."
 	custom_price = 100
 	custom_premium_price = 110
-	icon = 'whitesands/icons/obj/items_and_weapons.dmi'
+	icon = 'icons/obj/items_and_weapons.dmi'
 	icon_state = "sandstar"
 	w_class = WEIGHT_CLASS_TINY
 	custom_materials = list(/datum/material/gold = 200)
@@ -36,7 +36,7 @@
 /obj/item/storage/bottles
 	name = "bottle crate"
 	desc = "A small crate for storing bottles"
-	icon = 'whitesands/icons/obj/storage.dmi'
+	icon = 'icons/obj/storage.dmi'
 	icon_state = "bottlecrate"
 	item_state = "deliverypackage"
 	lefthand_file = 'icons/mob/inhands/items_lefthand.dmi'

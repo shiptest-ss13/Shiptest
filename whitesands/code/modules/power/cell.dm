@@ -1,6 +1,6 @@
 /obj/item/stock_parts/cell/gun
 	name = "weapon power cell"
-	icon = 'whitesands/icons/obj/power.dmi'
+	icon = 'icons/obj/power.dmi'
 	icon_state = "g-cell"
 	maxcharge = 10000
 	custom_materials = list(/datum/material/glass=60)
@@ -53,7 +53,7 @@
 
 /obj/item/stock_parts/cell/gun/SolGov
 	name = "SolGov power cell"
-	icon = 'whitesands/icons/obj/power.dmi'
+	icon = 'icons/obj/power.dmi'
 	icon_state = "g-cell"
 	maxcharge = 8000
 	custom_materials = list(/datum/material/glass=60)

@@ -18,7 +18,7 @@
 	attack_verb = "slap"
 	attack_sound = 'sound/weapons/slap.ogg'
 	miss_sound = 'sound/weapons/punchmiss.ogg'
-	special_step_sounds = list('whitesands/sound/effects/footstep/squid1.ogg', 'whitesands/sound/effects/footstep/squid2.ogg', 'whitesands/sound/effects/footstep/squid3.ogg')
+	special_step_sounds = list('sound/effects/footstep/squid1.ogg', 'sound/effects/footstep/squid2.ogg', 'sound/effects/footstep/squid3.ogg')
 	disliked_food = JUNKFOOD
 	liked_food = VEGETABLES | MEAT
 	toxic_food = FRIED
