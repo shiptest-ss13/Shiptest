@@ -246,8 +246,8 @@
 		connect_to_network()
 
 /obj/machinery/power/shieldwallgen/Destroy()
-	for(var/d in GLOB.cardinals)
-		cleanup_field(d)
+	for(var/direction in GLOB.cardinals)
+		cleanup_field(direction)
 	QDEL_NULL(wires)
 	return ..()
 
@@ -265,8 +265,8 @@
 	if(active)
 		if(active == ACTIVE_SETUPFIELDS)
 			var/fields = 0
-			for(var/d in GLOB.cardinals)
-				if(setup_field(d))
+			for(var/direction in GLOB.cardinals)
+				if(setup_field(direction))
 					fields++
 			if(fields)
 				active = ACTIVE_HASFIELDS
@@ -278,11 +278,11 @@
 				"<span class='hear'>You hear heavy droning fade out.</span>")
 			active = FALSE
 			log_game("[src] deactivated due to lack of power at [AREACOORD(src)]")
-			for(var/d in GLOB.cardinals)
-				cleanup_field(d)
+			for(var/direction in GLOB.cardinals)
+				cleanup_field(direction)
 	else
-		for(var/d in GLOB.cardinals)
-			cleanup_field(d)
+		for(var/direction in GLOB.cardinals)
+			cleanup_field(direction)
 	update_icon()
 
 /obj/machinery/power/shieldwallgen/update_icon_state()
@@ -301,46 +301,46 @@
 	if(!direction)
 		return
 
-	var/turf/T = loc
-	var/obj/machinery/power/shieldwallgen/G
+	var/turf/turf = loc
+	var/obj/machinery/power/shieldwallgen/generator
 	var/steps = 0
 	var/opposite_direction = turn(direction, 180)
 
 	for(var/i in 1 to shield_range) //checks out to 8 tiles away for another generator
-		T = get_step(T, direction)
-		G = locate(/obj/machinery/power/shieldwallgen) in T
-		if(G)
-			if(!G.active)
+		turf = get_step(turf, direction)
+		generator = locate(/obj/machinery/power/shieldwallgen) in turf
+		if(generator)
+			if(!generator.active)
 				return
-			G.cleanup_field(opposite_direction)
+			generator.cleanup_field(opposite_direction)
 			break
 		else
 			steps++
 
-	if(!G || !steps) //no shield gen or no tiles between us and the gen
+	if(!generator || !steps) //no shield gen or no tiles between us and the gen
 		return
 
 	for(var/i in 1 to steps) //creates each field tile
-		T = get_step(T, opposite_direction)
-		new/obj/machinery/shieldwall(T, src, G)
+		turf = get_step(turf, opposite_direction)
+		new/obj/machinery/shieldwall(turf, src, generator)
 	return TRUE
 
 /// cleans up fields in the specified direction if they belong to this generator
 /obj/machinery/power/shieldwallgen/proc/cleanup_field(direction)
-	var/obj/machinery/shieldwall/F
-	var/obj/machinery/power/shieldwallgen/G
-	var/turf/T = loc
+	var/obj/machinery/shieldwall/field
+	var/obj/machinery/power/shieldwallgen/generator
+	var/turf/turf = loc
 
 	for(var/i in 1 to shield_range)
-		T = get_step(T, direction)
+		turf = get_step(turf, direction)
 
-		G = (locate(/obj/machinery/power/shieldwallgen) in T)
-		if(G && !G.active)
+		generator = (locate(/obj/machinery/power/shieldwallgen) in turf)
+		if(generator && !generator.active)
 			break
 
-		F = (locate(/obj/machinery/shieldwall) in T)
-		if(F && (F.gen_primary == src || F.gen_secondary == src)) //it's ours, kill it.
-			qdel(F)
+		field = (locate(/obj/machinery/shieldwall) in turf)
+		if(field && (field.gen_primary == src || field.gen_secondary == src)) //it's ours, kill it.
+			qdel(field)
 
 /obj/machinery/power/shieldwallgen/can_be_unfasten_wrench(mob/user, silent)
 	if(active)
@@ -350,29 +350,29 @@
 	return ..()
 
 
-/obj/machinery/power/shieldwallgen/wrench_act(mob/living/user, obj/item/I)
+/obj/machinery/power/shieldwallgen/wrench_act(mob/living/user, obj/item/item)
 	. = ..()
-	. |= default_unfasten_wrench(user, I, 0)
-	var/turf/T = get_turf(src)
+	. |= default_unfasten_wrench(user, item, 0)
+	var/turf/turf = get_turf(src)
 //	update_cable_icons_on_turf(T) - Removed because smartwire Revert
 //WS Begin - Smartwire Revert
-	var/obj/structure/cable/C = locate(/obj/structure/cable) in T
-	C.update_icon()
+	var/obj/structure/cable/cable = locate(/obj/structure/cable) in turf
+	cable.update_icon()
 //WS End - Smartwire Revert
 	if(. == SUCCESSFUL_UNFASTEN && anchored)
 		connect_to_network()
 
 
-/obj/machinery/power/shieldwallgen/attackby(obj/item/W, mob/user, params)
-	if(default_deconstruction_screwdriver(user, icon_state, icon_state, W))
+/obj/machinery/power/shieldwallgen/attackby(obj/item/item, mob/user, params)
+	if(default_deconstruction_screwdriver(user, icon_state, icon_state, item))
 		update_icon()
 		updateUsrDialog()
 		return TRUE
 
-	if(default_deconstruction_crowbar(W))
+	if(default_deconstruction_crowbar(item))
 		return TRUE
 
-	if(panel_open && is_wire_tool(W))
+	if(panel_open && is_wire_tool(item))
 		wires.interact(user)
 		return TRUE
 
@@ -382,7 +382,7 @@
 	if(machine_stat)
 		return TRUE
 
-	if(W.GetID())
+	if(item.GetID())
 		if(allowed(user) && !(obj_flags & EMAGGED))
 			locked = !locked
 			to_chat(user, "<span class='notice'>You [src.locked ? "lock" : "unlock"] the controls.</span>")
@@ -458,9 +458,9 @@
 		return FALSE
 	if(!prob(prb))
 		return FALSE
-	var/datum/effect_system/spark_spread/s = new /datum/effect_system/spark_spread
-	s.set_up(5, 1, src)
-	s.start()
+	var/datum/effect_system/spark_spread/spark = new /datum/effect_system/spark_spread
+	spark.set_up(5, 1, src)
+	spark.start()
 	if (electrocute_mob(user, get_area(src), src, 0.7, TRUE))
 		return TRUE
 	else
@@ -505,30 +505,30 @@
 	if(direction != dir)
 		return
 
-	var/turf/T = loc
-	var/obj/machinery/power/shieldwallgen/G
+	var/turf/turf = loc
+	var/obj/machinery/power/shieldwallgen/generator
 	var/steps = 0
 	var/opposite_direction = turn(direction, 180)
 
 	for(var/i in 1 to shield_range) //checks out to 8 tiles away for another generator
-		T = get_step(T, direction)
-		G = locate(/obj/machinery/power/shieldwallgen/atmos) in T
-		if(G)
-			if(!G.active)
+		turf = get_step(turf, direction)
+		generator = locate(/obj/machinery/power/shieldwallgen/atmos) in turf
+		if(generator)
+			if(!generator.active)
 				return
-			G.cleanup_field(opposite_direction)
+			generator.cleanup_field(opposite_direction)
 			break
 		else
 			steps++
 
-	if(!G) //no shield gen, generators are allowed to function adjacent to eachother
+	if(!generator) //no shield gen, generators are allowed to function adjacent to eachother
 		return
 
-	new /obj/machinery/shieldwall/atmos(loc, src, G)
-	new /obj/machinery/shieldwall/atmos(G.loc, src, G)
+	new /obj/machinery/shieldwall/atmos(loc, src, generator)
+	new /obj/machinery/shieldwall/atmos(G.loc, src, generator)
 	for(var/i in 1 to steps) //creates each field tile
-		T = get_step(T, opposite_direction)
-		new /obj/machinery/shieldwall/atmos(T, src, G)
+		turf = get_step(turf, opposite_direction)
+		new /obj/machinery/shieldwall/atmos(turf, src, generator)
 	return TRUE
 
 //////////////Containment Field START
@@ -553,9 +553,9 @@
 		needs_power = TRUE
 		setDir(get_dir(gen_primary, gen_secondary))
 	if(hardshield == TRUE)
-		for(var/mob/living/L in get_turf(src))
-			visible_message("<span class='danger'>\The [src] is suddenly occupying the same space as \the [L]!</span>")
-			L.gib()
+		for(var/mob/living/victim in get_turf(src))
+			visible_message("<span class='danger'>\The [src] is suddenly occupying the same space as \the [victim]!</span>")
+			victim.gib()
 
 /obj/machinery/shieldwall/Destroy()
 	gen_primary = null

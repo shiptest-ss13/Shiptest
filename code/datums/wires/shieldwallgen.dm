@@ -12,35 +12,35 @@
 	..()
 
 /datum/wires/shieldwallgen/interactable(mob/user)
-	var/obj/machinery/power/shieldwallgen/G = holder
-	if(G.panel_open)
+	var/obj/machinery/power/shieldwallgen/generator = holder
+	if(generator.panel_open)
 		return TRUE
 
 /datum/wires/shieldwallgen/get_status()
-	var/obj/machinery/power/shieldwallgen/G = holder
+	var/obj/machinery/power/shieldwallgen/generator = holder
 	var/list/status = list()
-	status += "The interface light is [G.locked ? "red" : "green"]."
-	status += "The activity light is [G.active ? "blinking steadily" : "off"]."
+	status += "The interface light is [generator.locked ? "red" : "green"]."
+	status += "The activity light is [generator.active ? "blinking steadily" : "off"]."
 	return status
 
 /datum/wires/shieldwallgen/on_pulse(wire)
-	var/obj/machinery/power/shieldwallgen/G = holder
+	var/obj/machinery/power/shieldwallgen/generator = holder
 	switch(wire)
 		if(WIRE_SHOCK)
-			G.shocked = !G.shocked
-			addtimer(CALLBACK(G, /obj/machinery/autolathe.proc/reset, wire), 60)
+			generator.shocked = !generator.shocked
+			addtimer(CALLBACK(generator, /obj/machinery/autolathe.proc/reset, wire), 60)
 		if(WIRE_ACTIVATE)
-			G.toggle()
+			generator.toggle()
 		if(WIRE_DISABLE)
-			G.locked = !G.locked
+			generator.locked = !generator.locked
 
 /datum/wires/shieldwallgen/on_cut(wire, mend)
-	var/obj/machinery/power/shieldwallgen/G = holder
+	var/obj/machinery/power/shieldwallgen/generator = holder
 	switch(wire)
 		if(WIRE_SHOCK)
-			G.shocked = !mend
+			generator.shocked = !mend
 		if(WIRE_ACTIVATE)
 			if(!mend)
-				G.active = FALSE
+				generator.active = FALSE
 		if(WIRE_DISABLE)
-			G.locked = !mend
+			generator.locked = !mend
