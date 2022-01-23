@@ -118,8 +118,6 @@
 	var/update_overlay = -1
 	var/icon_update_needed = FALSE
 	var/obj/machinery/computer/apc_control/remote_control = null
-	///Looping audio for when apc is on and sending power
-	var/datum/looping_sound/apc/soundloop
 
 /obj/machinery/power/apc/unlocked
 	locked = FALSE
@@ -398,7 +396,6 @@
 
 	if(operating)
 		update_overlay |= APC_UPOVERLAY_OPERATING
-
 
 	if(update_state & UPSTATE_ALLGOOD)
 		if(locked)

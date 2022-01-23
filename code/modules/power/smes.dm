@@ -40,7 +40,6 @@
 
 	var/obj/machinery/power/terminal/terminal = null
 
-
 /obj/machinery/power/smes/examine(user)
 	. = ..()
 	if(!terminal)

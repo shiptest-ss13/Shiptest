@@ -168,8 +168,6 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 	/// used for narcing on underages
 	var/obj/item/radio/Radio
 
-	///Looping audio for when the vending machine is powered
-	var/datum/looping_sound/vending/soundloop
 
 /**
 	* Initialize the vending machine
@@ -850,7 +848,6 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 
 	if(shoot_inventory && prob(shoot_inventory_chance))
 		throw_item()
-
 /**
 	* Speak the given message verbally
 	*
@@ -871,7 +868,6 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 	. = ..()
 	if(powered())
 		START_PROCESSING(SSmachines, src)
-
 
 //Somebody cut an important wire and now we're following a new definition of "pitch."
 /**
