@@ -428,7 +428,7 @@
 	category = list("Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
-/datum/design/hp45
+/datum/design/hp556mmHITP
 	name = "HP 5.56mm HITP caseless ammo box"
 	desc = "A box full of hollow point 5.56mm HITP caseless ammunition."
 	id = "hp556mmHITP"
