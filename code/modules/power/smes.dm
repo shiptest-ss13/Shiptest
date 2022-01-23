@@ -40,8 +40,6 @@
 
 	var/obj/machinery/power/terminal/terminal = null
 
-	///Looping audio for when smes has power and is sending power
-	var/datum/looping_sound/smes/soundloop
 
 /obj/machinery/power/smes/examine(user)
 	. = ..()
