@@ -223,8 +223,8 @@
 	use_power = NO_POWER_USE
 	idle_power_usage = 10
 	active_power_usage = 50
+	circuit = /obj/item/circuitboard/machine/shieldwallgen
 	max_integrity = 300
-	var/initial_icon = "shield_wall_gen"
 	var/active = FALSE
 	var/locked = TRUE
 	var/shield_range = 8
@@ -263,7 +263,6 @@
 
 /obj/machinery/power/shieldwallgen/process()
 	if(active)
-		icon_state = initial_icon + "_on"
 		if(active == ACTIVE_SETUPFIELDS)
 			var/fields = 0
 			for(var/d in GLOB.cardinals)
@@ -277,15 +276,25 @@
 			visible_message("<span class='danger'>The [src.name] shuts down due to lack of power!</span>", \
 				"If this message is ever seen, something is wrong.",
 				"<span class='hear'>You hear heavy droning fade out.</span>")
-			icon_state = initial_icon
 			active = FALSE
 			log_game("[src] deactivated due to lack of power at [AREACOORD(src)]")
 			for(var/d in GLOB.cardinals)
 				cleanup_field(d)
 	else
-		icon_state = initial_icon
 		for(var/d in GLOB.cardinals)
 			cleanup_field(d)
+	update_icon()
+
+/obj/machinery/power/shieldwallgen/update_icon_state()
+	if(active)
+		icon_state = initial(icon_state) + "_on"
+	else
+		icon_state = initial(icon_state)
+
+/obj/machinery/power/shieldwallgen/update_overlays()
+	. = ..()
+	if((machine_stat & MAINT) || panel_open)
+		. += initial(icon_state)+"-maint"
 
 /// Constructs the actual field walls in the specified direction, cleans up old/stuck shields before doing so
 /obj/machinery/power/shieldwallgen/proc/setup_field(direction)
@@ -355,6 +364,24 @@
 
 
 /obj/machinery/power/shieldwallgen/attackby(obj/item/W, mob/user, params)
+	if(default_deconstruction_screwdriver(user, icon_state, icon_state, W))
+		update_icon()
+		updateUsrDialog()
+		return TRUE
+
+	if(default_deconstruction_crowbar(W))
+		return TRUE
+
+	if(panel_open && is_wire_tool(W))
+		wires.interact(user)
+		return TRUE
+
+	if(user.a_intent == INTENT_HARM) //so we can hit the machine
+		return ..()
+
+	if(machine_stat)
+		return TRUE
+
 	if(W.GetID())
 		if(allowed(user) && !(obj_flags & EMAGGED))
 			locked = !locked
@@ -449,21 +476,33 @@
 	name = "holofield generator"
 	desc = "A holofield generator designed for use in ship loading bays."
 	icon = 'icons/obj/stationobjs.dmi'
-	icon_state = "holo_wall_gen"
+	icon_state = "shield_wall_gen_atmos"
+	circuit = /obj/item/circuitboard/machine/shieldwallgen/atmos
 	anchored = FALSE
 	density = FALSE
 	req_access = list()
 	locked = FALSE
 	shield_range = 8
-	initial_icon = "shield_wall_gen_atmos"
 
 /obj/machinery/power/shieldwallgen/atmos/roundstart
 	anchored = TRUE
 	active = ACTIVE_SETUPFIELDS
 
+/obj/machinery/power/shieldwallgen/atmos/ComponentInitialize()
+	. = ..()
+	AddComponent(/datum/component/simple_rotation, ROTATION_ALTCLICK | ROTATION_CLOCKWISE | ROTATION_COUNTERCLOCKWISE | ROTATION_VERBS, null, CALLBACK(src, .proc/can_be_rotated))
+
+/obj/machinery/power/shieldwallgen/atmos/proc/can_be_rotated(mob/user, rotation_type)
+	if (anchored)
+		to_chat(user, "<span class='warning'>It is fastened to the floor!</span>")
+		return FALSE
+	return TRUE
+
 /// Same as in the normal shieldwallgen, but with the shieldwalls replaced with atmos shieldwalls
 /obj/machinery/power/shieldwallgen/atmos/setup_field(direction)
 	if(!direction)
+		return
+	if(direction != dir)
 		return
 
 	var/turf/T = loc
@@ -482,13 +521,14 @@
 		else
 			steps++
 
-	if(!G || !steps) //no shield gen or no tiles between us and the gen
+	if(!G) //no shield gen, generators are allowed to function adjacent to eachother
 		return
 
-	new/obj/machinery/shieldwall/atmos(T, src, G) //adds the shield to the generator tile
-	for(var/i in 1 to steps+1) //creates each field tile
+	new /obj/machinery/shieldwall/atmos(loc, src, G)
+	new /obj/machinery/shieldwall/atmos(G.loc, src, G)
+	for(var/i in 1 to steps) //creates each field tile
 		T = get_step(T, opposite_direction)
-		new/obj/machinery/shieldwall/atmos(T, src, G)
+		new /obj/machinery/shieldwall/atmos(T, src, G)
 	return TRUE
 
 //////////////Containment Field START
@@ -566,6 +606,10 @@
 	icon = 'icons/effects/effects.dmi'
 	icon_state = "holo_fan"
 	density = FALSE
-	CanAtmosPass = 0
+	CanAtmosPass = ATMOS_PASS_NO
 	CanAtmosPassVertical = 1
 	hardshield = FALSE
+
+/obj/machinery/shieldwall/atmos/Initialize()
+	. = ..()
+	air_update_turf(TRUE)
