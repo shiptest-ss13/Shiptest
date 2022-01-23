@@ -186,7 +186,7 @@
 
 /obj/item/ammo_box/c556mmHITP/ap
 	name = "ammo box (5.56mm HITP caseless AP)"
-	desc = "A box of 5.56mm HITP caseless armor piercing ammo, designed to designed to penetrate through armor at the cost of total damage."
+	desc = "A box of 5.56mm HITP caseless armor piercing ammo, designed to penetrate through armor at the cost of total damage."
 	icon_state = "556mmHITPbox-ap"
 	ammo_type = /obj/item/ammo_casing/caseless/c556mmHITP/ap
 	max_ammo = 30
