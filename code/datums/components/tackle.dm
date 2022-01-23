@@ -475,31 +475,31 @@
 	for(var/obj/item/I in T.contents)
 		if(!I.anchored)
 			messes += I
-			if(messes.len >= MAX_TABLE_MESSES)
+			if(length(messes) >= MAX_TABLE_MESSES)
 				break
 
 	// Kepori have mastered the art of the table-tackle and will instead fly over gracefully (most of the time)
 	if(iskepori(owner))
 		// However if there is too much junk on the table, it can't be helped
-		if(rand(1, MAX_TABLE_MESSES) > messes.len)
+		if(rand(1, MAX_TABLE_MESSES) > length(messes))
 			return
 	/// for telling HOW big of a mess we just made
 	var/HOW_big_of_a_miss_did_we_just_make = ""
-	if(messes.len)
-		if(messes.len < MAX_TABLE_MESSES / 4)
+	if(length(messes))
+		if(length(messes) < MAX_TABLE_MESSES / 4)
 			HOW_big_of_a_miss_did_we_just_make = ", making a mess"
-		else if(messes.len < MAX_TABLE_MESSES / 2)
+		else if(length(messes) < MAX_TABLE_MESSES / 2)
 			HOW_big_of_a_miss_did_we_just_make = ", making a big mess"
-		else if(messes.len < MAX_TABLE_MESSES)
+		else if(length(messes) < MAX_TABLE_MESSES)
 			HOW_big_of_a_miss_did_we_just_make = ", making a giant mess"
 		else
 			HOW_big_of_a_miss_did_we_just_make = ", making a ginormous mess!" // an extra exclamation point!! for emphasis!!!
 
 	owner.visible_message("<span class='danger'>[owner] trips over [kevved] and slams into it face-first[HOW_big_of_a_miss_did_we_just_make]!</span>", "<span class='userdanger'>You trip over [kevved] and slam into it face-first[HOW_big_of_a_miss_did_we_just_make]!</span>")
-	owner.adjustStaminaLoss(20 + messes.len * 2)
-	owner.adjustBruteLoss(10 + messes.len)
-	owner.Paralyze(5 * messes.len) // half a second of paralyze for each thing you knock around
-	owner.Knockdown(20 + 5 * messes.len) // 2 seconds of knockdown after the paralyze
+	owner.adjustStaminaLoss(20 + length(messes) * 2)
+	owner.adjustBruteLoss(10 + length(messes))
+	owner.Paralyze(5 * length(messes)) // half a second of paralyze for each thing you knock around
+	owner.Knockdown(20 + 5 * length(messes)) // 2 seconds of knockdown after the paralyze
 
 	for(var/obj/item/I in messes)
 		var/dist = rand(1, 3)
