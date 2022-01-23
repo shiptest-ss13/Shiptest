@@ -31,8 +31,7 @@
 	no_equip = list(ITEM_SLOT_BACK)
 	mutanttongue = /obj/item/organ/tongue/kepori
 	species_language_holder = /datum/language_holder/kepori
-	/// For storing our tackler datum so we can remove it after
-	var/datum/component/tackler
+	/// # Inherit tackling variables #
 	/// See: [/datum/component/tackler/var/stamina_cost]
 	var/tackle_stam_cost = 10
 	/// See: [/datum/component/tackler/var/base_knockdown]
@@ -64,9 +63,9 @@
 
 /datum/species/kepori/on_species_gain(mob/living/carbon/C, datum/species/old_species, pref_load)
 	..()
-	tackler = C.AddComponent(/datum/component/tackler, stamina_cost= tackle_stam_cost, base_knockdown= base_knockdown, range= tackle_range, speed= tackle_speed, skill_mod= skill_mod, min_distance= min_distance)
+	C.AddComponent(/datum/component/tackler, stamina_cost= tackle_stam_cost, base_knockdown= base_knockdown, range= tackle_range, speed= tackle_speed, skill_mod= skill_mod, min_distance= min_distance)
 
 
 /datum/species/kepori/on_species_loss(mob/living/carbon/human/C, datum/species/new_species, pref_load)
 	. = ..()
-	qdel(tackler)
+	qdel(C.GetComponent(/datum/component/tackler))
