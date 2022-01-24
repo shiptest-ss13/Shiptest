@@ -326,7 +326,7 @@
 	log_manifest(character.mind.key, character.mind, character, TRUE)
 
 	if(length(ship.job_slots) > 1 && ship.job_slots[1] == job) // if it's the "captain" equivalent job of the ship. checks to make sure it's not a one-job ship
-		minor_announce("[job.title] [character.real_name] on deck!", zlevel = ship.shuttle.get_virtual_z_level())
+		minor_announce("[job.title] [character.real_name] on deck!", zlevel = ship.shuttle.virtual_z())
 
 /mob/dead/new_player/proc/AddEmploymentContract(mob/living/carbon/human/employee)
 	//TODO:  figure out a way to exclude wizards/nukeops/demons from this.
@@ -356,7 +356,7 @@
 			return
 		close_spawn_windows()
 		to_chat(usr, "<span class='danger'>Your [template.name] is being prepared. Please be patient!</span>")
-		var/obj/docking_port/mobile/target = SSshuttle.action_load(template)
+		var/obj/docking_port/mobile/target = SSshuttle.load_template(template)
 		if(!istype(target))
 			to_chat(usr, "<span class='danger'>There was an error loading the ship (You have not been charged). Please contact admins!</span>")
 			new_player_panel()

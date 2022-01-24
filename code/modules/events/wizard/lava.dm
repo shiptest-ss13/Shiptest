@@ -10,6 +10,6 @@
 	var/started = FALSE
 
 /datum/round_event/wizard/lava/start()
-	if(!started)
-		started = TRUE
-		SSweather.run_weather(/datum/weather/floor_is_lava)
+	/// Should point to a central mapzone.weather_controller, one doesn't exist in shiptest
+	WARNING("Wizard Floor is Lava event is not implemented.")
+	return

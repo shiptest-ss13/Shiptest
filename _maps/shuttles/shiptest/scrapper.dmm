@@ -1733,7 +1733,7 @@
 	dir = 1
 	},
 /obj/structure/cable,
-/turf/open/floor/plating,
+/turf/open/floor/plating/airless,
 /area/ship/engineering/engine)
 "va" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
@@ -2267,7 +2267,7 @@
 /obj/machinery/power/shuttle/engine/fueled/plasma{
 	dir = 1
 	},
-/turf/open/floor/plating,
+/turf/open/floor/plating/airless,
 /area/ship/engineering/engine)
 "Ar" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -2462,7 +2462,7 @@
 	dir = 1
 	},
 /obj/structure/cable,
-/turf/open/floor/plating,
+/turf/open/floor/plating/airless,
 /area/ship/engineering/atmospherics)
 "Ch" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -2498,13 +2498,6 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
-"CD" = (
-/obj/docking_port/mobile{
-	dir = 8;
-	port_direction = 4
-	},
-/turf/open/floor/plating/airless,
-/area/ship/external)
 "CG" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
@@ -2636,7 +2629,7 @@
 /area/ship/cargo)
 "Dw" = (
 /turf/template_noop,
-/area/space)
+/area/template_noop)
 "DA" = (
 /obj/machinery/button/door{
 	id = "scrapdoorint";
@@ -2805,6 +2798,13 @@
 	},
 /turf/open/floor/pod/light,
 /area/ship/storage)
+"FP" = (
+/obj/docking_port/mobile{
+	launch_status = 0;
+	port_direction = 2
+	},
+/turf/open/floor/plating/airless,
+/area/ship/engineering/electrical)
 "Gi" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/hydroponics/constructable,
@@ -3988,7 +3988,7 @@
 /obj/machinery/power/shuttle/engine/fueled/plasma{
 	dir = 1
 	},
-/turf/open/floor/plating,
+/turf/open/floor/plating/airless,
 /area/ship/engineering/atmospherics)
 "Ti" = (
 /obj/structure/window/reinforced/spawner/north,
@@ -4450,6 +4450,9 @@
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/maintenance/starboard)
+"XP" = (
+/turf/open/floor/plating/airless,
+/area/ship/engineering/electrical)
 "XS" = (
 /obj/structure/closet/crate{
 	name = "Comms Crate"
@@ -5101,7 +5104,7 @@ np
 Ti
 mr
 bX
-iH
+FP
 "}
 (13,1,1) = {"
 wW
@@ -5138,7 +5141,7 @@ np
 Ti
 mr
 bX
-iH
+XP
 "}
 (14,1,1) = {"
 wW
@@ -5744,7 +5747,7 @@ mN
 mN
 mN
 mN
-CD
+mN
 mN
 mN
 mN

@@ -101,8 +101,8 @@ SUBSYSTEM_DEF(jukeboxes)
 		var/area/currentarea = get_area(jukebox)
 		var/turf/currentturf = get_turf(jukebox)
 		var/list/hearerscache = hearers(7, jukebox)
-		var/turf/above_turf = SSmapping.get_turf_above(currentturf)
-		var/turf/below_turf = SSmapping.get_turf_below(currentturf)
+		var/turf/above_turf = currentturf.above()
+		var/turf/below_turf = currentturf.below()
 
 		song_played.falloff = jukeinfo[4]
 

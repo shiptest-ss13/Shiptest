@@ -34,18 +34,21 @@ GLOBAL_VAR(test_log)
 	var/list/allocated
 	var/list/fail_reasons
 
-	var/static/datum/turf_reservation/turf_reservation
+	var/static/datum/map_zone/mapzone
 
 /datum/unit_test/New()
-	if (isnull(turf_reservation))
-		turf_reservation = SSmapping.request_dynamic_reservation(5, 5)
-
-	for (var/turf/reserved_turf in turf_reservation.get_reserved_turfs())
-		reserved_turf.ChangeTurf(test_turf_type)
+	if (isnull(mapzone))
+		var/height = 7
+		var/width = 7
+		mapzone = SSmapping.create_map_zone("Integration Test Mapzone")
+		var/datum/virtual_level/vlevel = SSmapping.create_virtual_level("Integration Test Virtual Level", ZTRAITS_STATION, mapzone, width, height, ALLOCATION_FREE)
+		vlevel.reserve_margin(2)
+		vlevel.fill_in(/turf/open/floor/plasteel, /area/testroom)
 
 	allocated = new
-	run_loc_bottom_left = locate(turf_reservation.bottom_left_coords[1], turf_reservation.bottom_left_coords[2], turf_reservation.bottom_left_coords[3])
-	run_loc_top_right = locate(turf_reservation.top_right_coords[1], turf_reservation.top_right_coords[2], turf_reservation.top_right_coords[3])
+	var/datum/virtual_level/vlevel = mapzone.virtual_levels[1]
+	run_loc_bottom_left = vlevel.get_unreserved_bottom_left_turf()
+	run_loc_top_right = vlevel.get_unreserved_top_right_turf()
 
 /datum/unit_test/Destroy()
 	//clear the test area

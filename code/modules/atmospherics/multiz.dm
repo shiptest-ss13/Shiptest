@@ -17,8 +17,8 @@
 /obj/machinery/atmospherics/pipe/simple/multiz/pipeline_expansion()
 	icon = 'icons/obj/atmos.dmi' //Just to refresh.
 	var/turf/T = get_turf(src)
-	var/obj/machinery/atmospherics/pipe/simple/multiz/above = locate(/obj/machinery/atmospherics/pipe/simple/multiz) in(SSmapping.get_turf_above(T))
-	var/obj/machinery/atmospherics/pipe/simple/multiz/below = locate(/obj/machinery/atmospherics/pipe/simple/multiz) in(SSmapping.get_turf_below(T))
+	var/obj/machinery/atmospherics/pipe/simple/multiz/above = locate(/obj/machinery/atmospherics/pipe/simple/multiz) in(T.above())
+	var/obj/machinery/atmospherics/pipe/simple/multiz/below = locate(/obj/machinery/atmospherics/pipe/simple/multiz) in(T.below())
 	if(below)
 		below.pipeline_expansion() //If we've got one below us, force it to add us on facebook
 	if(above)

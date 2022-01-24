@@ -173,7 +173,7 @@
 
 	for(var/mob/living/carbon/food in GLOB.alive_mob_list) //we don't care about constructs or cult-Ians or whatever. cult-monkeys are fair game i guess
 		var/turf/pos = get_turf(food)
-		if(!pos || (pos.get_virtual_z_level() != get_virtual_z_level()))
+		if(!pos || (pos.virtual_z() != virtual_z()))
 			continue
 
 		if(iscultist(food))
@@ -192,7 +192,7 @@
 	//no living humans, follow a ghost instead.
 	for(var/mob/dead/observer/ghost in GLOB.player_list)
 		var/turf/pos = get_turf(ghost)
-		if(!pos || (pos.get_virtual_z_level() != get_virtual_z_level()))
+		if(!pos || (pos.virtual_z() != virtual_z()))
 			continue
 		cultists += ghost
 	if(cultists.len)

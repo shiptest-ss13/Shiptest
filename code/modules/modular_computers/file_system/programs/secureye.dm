@@ -178,7 +178,7 @@
 /datum/computer_file/program/secureye/proc/get_available_cameras()
 	var/list/L = list()
 	for (var/obj/machinery/camera/cam as anything in GLOB.cameranet.cameras)
-		if(cam.get_virtual_z_level() != computer.get_virtual_z_level())//Only show cameras on the same level.
+		if(cam.virtual_z() != computer.virtual_z())//Only show cameras on the same level.
 			continue
 		L.Add(cam)
 	var/list/camlist = list()
