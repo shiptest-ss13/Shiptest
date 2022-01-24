@@ -1,7 +1,7 @@
 "a" = (/turf/closed/wall/rust,/area/ship/storage)
 "b" = (/turf/closed/wall,/area/ship/storage)
 "c" = (/obj/structure/grille,/obj/structure/window/fulltile,/turf/open/floor/plating,/area/ship/storage)
-"d" = (/obj/structure/fans/tiny,/obj/machinery/door/airlock/external/glass,/obj/effect/decal/cleanable/oil/slippery,/obj/docking_port/mobile{dir = 2; launch_status = 0},/turf/open/floor/plating,/area/ship/storage)
+"d" = (/obj/structure/fans/tiny,/obj/machinery/door/airlock/external/glass,/obj/effect/decal/cleanable/oil/slippery,/obj/docking_port/mobile{can_move_docking_ports = 1; dir = 2; launch_status = 0; port_direction = 8; preferred_direction = 4},/turf/open/floor/plating,/area/ship/storage)
 "e" = (/obj/structure/window/reinforced/spawner/east,/obj/machinery/power/shuttle/engine/electric{dir = 4},/obj/structure/cable{icon_state = "0-4"},/turf/open/floor/plating,/area/ship/storage)
 "f" = (/obj/structure/cable{icon_state = "4-8"},/obj/structure/cable{icon_state = "2-4"},/obj/effect/decal/cleanable/dirt/dust,/obj/machinery/power/apc/auto_name/north{charging = 20000},/obj/structure/cable{icon_state = "0-4"},/turf/open/floor/plating,/area/ship/storage)
 "g" = (/obj/structure/cable{icon_state = "0-8"},/obj/machinery/power/smes/shuttle/precharged,/turf/open/floor/plating,/area/ship/storage)
