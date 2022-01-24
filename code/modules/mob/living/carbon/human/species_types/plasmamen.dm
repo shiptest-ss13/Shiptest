@@ -1,6 +1,6 @@
 /datum/species/plasmaman
-	name = "Plasmaman"
-	id = "plasmaman"
+	name = "\improper Plasmaman"
+	id = SPECIES_PLASMAMAN
 	say_mod = "rattles"
 	sexes = 0
 	meat = /obj/item/stack/sheet/mineral/plasma
@@ -23,6 +23,13 @@
 	outfit_important_for_life = /datum/outfit/plasmaman
 	species_language_holder = /datum/language_holder/skeleton
 	loreblurb = "Technically a disability rather than a species, Phorids (known far more commonly as plasmamen) are a loose grouping of people fallen victim to anomalous plasma-related effects that convert tough biological matter into inorganic, biology-mimicking plasma structures. Phorids often live their lives dependent on larger organizations due to their oxygen-incompatible physiology."
+
+	species_chest = /obj/item/bodypart/chest/plasmaman
+	species_head = /obj/item/bodypart/head/plasmaman
+	species_l_arm = /obj/item/bodypart/l_arm/plasmaman
+	species_r_arm = /obj/item/bodypart/r_arm/plasmaman
+	species_l_leg = /obj/item/bodypart/l_leg/plasmaman
+	species_r_leg = /obj/item/bodypart/r_leg/plasmaman
 
 	// Body temperature for Plasmen is much lower human as they can handle colder environments
 	bodytemp_normal = (BODYTEMP_NORMAL - 40)

@@ -1,6 +1,6 @@
 /datum/species/kepori
-	name = "Kepori"
-	id = "kepori"
+	name = "\improper Kepori"
+	id = SPECIES_KEPORI
 	default_color = "6060FF"
 	species_traits = list(MUTCOLORS, EYECOLOR, NO_UNDERWEAR)
 	inherent_traits = list(TRAIT_HOLDABLE)
@@ -32,6 +32,13 @@
 	mutanttongue = /obj/item/organ/tongue/kepori
 	species_language_holder = /datum/language_holder/kepori
 
+	species_chest = /obj/item/bodypart/chest/kepori
+	species_head = /obj/item/bodypart/head/kepori
+	species_l_arm = /obj/item/bodypart/l_arm/kepori
+	species_r_arm = /obj/item/bodypart/r_arm/kepori
+	species_l_leg = /obj/item/bodypart/l_leg/kepori
+	species_r_leg = /obj/item/bodypart/r_leg/kepori
+
 /datum/species/kepori/random_name(gender,unique,lastname)
 	if(unique)
 		return random_unique_kepori_name()
@@ -47,3 +54,4 @@
 			return FALSE
 		return equip_delay_self_check(I, H, bypass_equip_delay_self)
 	. = ..()
+
