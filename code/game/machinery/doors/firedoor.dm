@@ -420,8 +420,6 @@
 	sleep(8)
 
 	update_icon()
-	if(visible && !glass)
-		set_opacity(1)
 
 	operating = FALSE
 
