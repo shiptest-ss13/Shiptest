@@ -392,6 +392,7 @@
 			user.put_in_hands(beaker)
 		else
 			beaker.forceMove(get_turf(src))
+		beaker = null
 	if(new_beaker)
 		beaker = new_beaker
 	update_icon()
