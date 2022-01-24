@@ -3,6 +3,16 @@
 	specific_heat = 20
 	name = "Oxygen"
 	oxidation_temperature = T0C - 100 // it checks max of this and fire temperature, so rarely will things spontaneously combust
+	breath_alert_info = list(
+		not_enough_alert = list(
+			alert_category = "not_enough_oxy",
+			alert_type = /atom/movable/screen/alert/not_enough_oxy
+		),
+		too_much_alert = list(
+			alert_category = "too_much_oxy",
+			alert_type = /atom/movable/screen/alert/too_much_oxy
+		)
+	)
 
 /datum/gas/nitrogen
 	id = GAS_N2
@@ -144,3 +154,10 @@
 	gas_overlay = "miasma"
 	moles_visible = MOLES_GAS_VISIBLE * 60
 
+/datum/gas/freon
+	id = GAS_FREON
+	specific_heat = 600
+	name = "Freon"
+	gas_overlay = "freon"
+	moles_visible = MOLES_GAS_VISIBLE *30
+	fusion_power = -5
