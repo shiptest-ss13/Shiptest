@@ -226,6 +226,7 @@
 	circuit = /obj/item/circuitboard/machine/shieldwallgen
 	max_integrity = 300
 	var/active = FALSE
+	var/id = null
 	var/locked = TRUE
 	var/shield_range = 8
 	var/shocked = FALSE
@@ -525,7 +526,7 @@
 		return
 
 	new /obj/machinery/shieldwall/atmos(loc, src, generator)
-	new /obj/machinery/shieldwall/atmos(G.loc, src, generator)
+	new /obj/machinery/shieldwall/atmos(generator.loc, src, generator)
 	for(var/i in 1 to steps) //creates each field tile
 		turf = get_step(turf, opposite_direction)
 		new /obj/machinery/shieldwall/atmos(turf, src, generator)
