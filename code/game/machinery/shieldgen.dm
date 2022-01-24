@@ -262,6 +262,9 @@
 		return FALSE
 	. = ..()
 
+/obj/machinery/power/shieldwallgen/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock)
+	id = "[REF(port)][id]"
+
 /obj/machinery/power/shieldwallgen/process()
 	if(active)
 		if(active == ACTIVE_SETUPFIELDS)
