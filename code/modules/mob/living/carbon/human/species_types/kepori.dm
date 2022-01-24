@@ -1,6 +1,6 @@
 /datum/species/kepori
-	name = "Kepori"
-	id = "kepori"
+	name = "\improper Kepori"
+	id = SPECIES_KEPORI
 	default_color = "6060FF"
 	species_traits = list(MUTCOLORS, EYECOLOR, NO_UNDERWEAR)
 	inherent_traits = list(TRAIT_HOLDABLE)
@@ -44,6 +44,13 @@
 	var/tackle_speed = 2
 	/// See: [/datum/component/tackler/var/skill_mod]
 	var/skill_mod = 2
+
+	species_chest = /obj/item/bodypart/chest/kepori
+	species_head = /obj/item/bodypart/head/kepori
+	species_l_arm = /obj/item/bodypart/l_arm/kepori
+	species_r_arm = /obj/item/bodypart/r_arm/kepori
+	species_l_leg = /obj/item/bodypart/l_leg/kepori
+	species_r_leg = /obj/item/bodypart/r_leg/kepori
 
 /datum/species/kepori/random_name(gender,unique,lastname)
 	if(unique)
