@@ -370,23 +370,23 @@
 	name = "Cargo Bay 1"
 	icon_state = "cargo_bay"
 
-area/ruin/space/has_grav/radship/Cargo2
+/area/ruin/space/has_grav/radship/Cargo2
 	name = "Cargo Bay 2"
 	icon_state = "cargo_bay"
 
-area/ruin/space/has_grav/radship/Cargo3
+/area/ruin/space/has_grav/radship/Cargo3
 	name = "Cargo Bay 3"
 	icon_state = "cargo_bay"
 
-area/ruin/space/has_grav/radship/Cargo4
+/area/ruin/space/has_grav/radship/Cargo4
 	name = "Cargo Bay 4"
 	icon_state = "cargo_bay"
 
-area/ruin/space/has_grav/radship/EngineRoom
+/area/ruin/space/has_grav/radship/EngineRoom
 	name = "Engine Room"
 	icon_state = "yellow"
 
-area/ruin/space/has_grav/radship/Engineering
+/area/ruin/space/has_grav/radship/Engineering
 	name = "Engineering"
 	icon_state = "engine"
 
@@ -394,10 +394,10 @@ area/ruin/space/has_grav/radship/MethLab
 	name = "Storage"
 	icon_state = "red"
 
-area/ruin/space/has_grav/radship/CrewQuarters
+/area/ruin/space/has_grav/radship/CrewQuarters
 	name = "Crew Quarters"
 	icon_state = "green"
 
-area/ruin/space/has_grav/radship/Hallway
+/area/ruin/space/has_grav/radship/Hallway
 	name = "Hallway"
 	icon_state = "away"
