@@ -88,10 +88,6 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 			pref_species = new /datum/species/kepori
 			READ_FILE(S["feature_teshari_feathers"], features["kepori_feathers"])
 			READ_FILE(S["feature_teshari_body_feathers"], features["kepori_body_feathers"])
-		if(species_id == SPECIES_VOX)
-			pref_species = new /datum/species/vox
-			READ_FILE(S["feature_vox_head_quills"], features["vox_head_quills"])
-			READ_FILE(S["feature_vox_neck_quills"], features["vox_neck_quills"])
 
 /// checks through keybindings for outdated unbound keys and updates them
 /datum/preferences/proc/check_keybindings()
@@ -530,8 +526,8 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	features["ipc_chassis"]	 = sanitize_inlist(features["ipc_chassis"], GLOB.ipc_chassis_list)
 	features["kepori_feathers"] = sanitize_inlist(features["kepori_feathers"], GLOB.kepori_feathers_list, "Plain")
 	features["kepori_body_feathers"] = sanitize_inlist(features["kepori_body_feathers"], GLOB.kepori_body_feathers_list, "Plain")
-	features["vox_head_quills"] = sanitize_inlist(features["vox_head_quills"], GLOB.vox_head_quills_list, "Plain")
-	features["vox_neck_quills"] = sanitize_inlist(features["vox_neck_quills"], GLOB.vox_neck_quills_list, "Plain")
+	features["vox_head_quills"] = sanitize_inlist(features["vox_head_quills"], GLOB.vox_head_quills_list, "None")
+	features["vox_neck_quills"] = sanitize_inlist(features["vox_neck_quills"], GLOB.vox_neck_quills_list, "None")
 	features["flavor_text"]		= sanitize_text(features["flavor_text"], initial(features["flavor_text"]))
 
 	joblessrole	= sanitize_integer(joblessrole, 1, 3, initial(joblessrole))

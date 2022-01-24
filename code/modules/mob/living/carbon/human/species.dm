@@ -883,7 +883,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 			bodyparts_to_add -= "vox_head_quills"
 
 	if("vox_neck_quills" in mutant_bodyparts)
-		if(!H.dna.features["vox_neck_quills"] || H.dna.features["vox_neck_quills"] == "None" || H.wear_suit && (H.wear_suit.flags_inv & HIDEJUMPSUIT))
+		if(!H.dna.features["vox_neck_quills"] || H.dna.features["vox_neck_quills"] == "None")
 			bodyparts_to_add -= "vox_neck_quills"
 
 ////PUT ALL YOUR WEIRD ASS REAL-LIMB HANDLING HERE
