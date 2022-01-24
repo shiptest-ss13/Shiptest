@@ -2482,6 +2482,8 @@
 	name = "Spiky"
 	icon_state = "spiky"
 
+//Kepori
+
 /datum/sprite_accessory/kepori_feathers
 	color_src = HAIR
 	icon = 'icons/mob/kepori_parts.dmi'
@@ -2559,5 +2561,28 @@
 
 /datum/sprite_accessory/kepori_body_feathers/none
 	name = "None"
+
+
+//Vox
+
+/datum/sprite_accessory/vox_head_quills
+	color_src = HAIR
+	icon = 'icons/mob/species/vox/vox_quills.dmi'
+
+/datum/sprite_accessory/vox_head_quills/none
+	name = "None"
+
+/datum/sprite_accessory/vox_head_quills/plain
+	name = "Plain"
+
+/datum/sprite_accessory/vox_head_quills/wildflower
+	name = "Wildflower"
+	icon_state = "vox_wildflower"
+
+/datum/sprite_accessory/vox_neck_quills/none
+	name = "None"
+
+/datum/sprite_accessory/vox_neck_quills/plain
+	name = "Plain"
 
 //ENDWS

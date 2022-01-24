@@ -83,7 +83,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/eye_color = "000"				//Eye color
 	var/datum/species/pref_species = new /datum/species/human()	//Mutant race
 	var/species_looking_at = "human" //used as a helper to keep track of in the species select thingy
-	var/list/features = list("mcolor" = "FFF", "ethcolor" = "9c3030", "tail_lizard" = "Smooth", "tail_human" = "None", "snout" = "Round", "horns" = "None", "ears" = "None", "wings" = "None", "frills" = "None", "spines" = "None", "body_markings" = "None", "legs" = "Normal Legs", "moth_wings" = "Plain", "moth_fluff" = "Plain", "moth_markings" = "None", "spider_legs" = "Plain", "spider_spinneret" = "Plain", "spider_mandibles" = "Plain", "squid_face" = "Squidward", "ipc_screen" = "Blue", "ipc_antenna" = "None", "ipc_chassis" = "Morpheus Cyberkinetics(Greyscale)", "kepori_feathers" = "Plain", "kepori_body_feathers" = "Plain", "flavor_text" = "")
+	var/list/features = list("mcolor" = "FFF", "ethcolor" = "9c3030", "tail_lizard" = "Smooth", "tail_human" = "None", "snout" = "Round", "horns" = "None", "ears" = "None", "wings" = "None", "frills" = "None", "spines" = "None", "body_markings" = "None", "legs" = "Normal Legs", "moth_wings" = "Plain", "moth_fluff" = "Plain", "moth_markings" = "None", "spider_legs" = "Plain", "spider_spinneret" = "Plain", "spider_mandibles" = "Plain", "squid_face" = "Squidward", "ipc_screen" = "Blue", "ipc_antenna" = "None", "ipc_chassis" = "Morpheus Cyberkinetics(Greyscale)", "kepori_feathers" = "Plain", "kepori_body_feathers" = "Plain", "vox_head_quills" = "Plain", "vox_neck_quills" = "Plain", "flavor_text" = "")
 	var/list/randomise = list(RANDOM_UNDERWEAR = TRUE, RANDOM_UNDERWEAR_COLOR = TRUE, RANDOM_UNDERSHIRT = TRUE, RANDOM_SOCKS = TRUE, RANDOM_BACKPACK = TRUE, RANDOM_JUMPSUIT_STYLE = TRUE, RANDOM_EXOWEAR_STYLE = TRUE, RANDOM_HAIRSTYLE = TRUE, RANDOM_HAIR_COLOR = TRUE, RANDOM_FACIAL_HAIRSTYLE = TRUE, RANDOM_FACIAL_HAIR_COLOR = TRUE, RANDOM_SKIN_TONE = TRUE, RANDOM_EYE_COLOR = TRUE)
 	var/list/friendlyGenders = list("Male" = "male", "Female" = "female", "Other" = "plural")
 	var/phobia = "spiders"
@@ -540,6 +540,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				if(mutant_category >= MAX_MUTANT_ROWS)
 					dat += "</td>"
 					mutant_category = 0
+
 			if("spider_legs" in pref_species.default_features)
 				if(!mutant_category)
 					dat += APPEARANCE_CATEGORY_COLUMN
@@ -551,6 +552,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				if(mutant_category >= MAX_MUTANT_ROWS)
 					dat += "</td>"
 					mutant_category = 0
+
 			if("spider_spinneret" in pref_species.default_features)
 				if(!mutant_category)
 					dat += APPEARANCE_CATEGORY_COLUMN
@@ -562,6 +564,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				if(mutant_category >= MAX_MUTANT_ROWS)
 					dat += "</td>"
 					mutant_category = 0
+
 			if("spider_mandibles" in pref_species.default_features)
 				if(!mutant_category)
 					dat += APPEARANCE_CATEGORY_COLUMN
@@ -573,6 +576,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				if(mutant_category >= MAX_MUTANT_ROWS)
 					dat += "</td>"
 					mutant_category = 0
+
 			if("squid_face" in pref_species.default_features)
 				if(!mutant_category)
 					dat += APPEARANCE_CATEGORY_COLUMN
@@ -649,6 +653,34 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 				dat += "<h3>Kepori Body Feathers</h3>"
 				dat += "<a href='?_src_=prefs;preference=kepori_body_feathers;task=input'>[features["kepori_body_feathers"]]</a><BR>"
+				dat += "<span style='border:1px solid #161616; background-color: #[facial_hair_color];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=facial;task=input'>Change</a><BR>"
+				dat += "<a href='?_src_=prefs;preference=toggle_random;random_type=[RANDOM_FACIAL_HAIR_COLOR]'>[(randomise[RANDOM_FACIAL_HAIR_COLOR]) ? "Lock" : "Unlock"]</A><BR>"
+
+				mutant_category++
+				if(mutant_category >= MAX_MUTANT_ROWS)
+					dat += "</td>"
+					mutant_category = 0
+
+			if("vox_head_quills" in pref_species.default_features)
+				if(!mutant_category)
+					dat += APPEARANCE_CATEGORY_COLUMN
+
+				dat += "<h3>Vox Head Quills</h3>"
+				dat += "<a href='?_src_=prefs;preference=vox_head_quills;task=input'>[features["vox_head_quills"]]</a><BR>"
+				dat += "<span style='border:1px solid #161616; background-color: #[hair_color];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=hair;task=input'>Change</a><BR>"
+				dat += "<a href='?_src_=prefs;preference=toggle_random;random_type=[RANDOM_HAIR_COLOR]'>[(randomise[RANDOM_HAIR_COLOR]) ? "Lock" : "Unlock"]</A><BR>"
+
+				mutant_category++
+				if(mutant_category >= MAX_MUTANT_ROWS)
+					dat += "</td>"
+					mutant_category = 0
+
+			if("vox_neck_quills" in pref_species.default_features)
+				if(!mutant_category)
+					dat += APPEARANCE_CATEGORY_COLUMN
+
+				dat += "<h3>Vox Neck Quills</h3>"
+				dat += "<a href='?_src_=prefs;preference=vox_neck_quills;task=input'>[features["vox_neck_quills"]]</a><BR>"
 				dat += "<span style='border:1px solid #161616; background-color: #[facial_hair_color];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=facial;task=input'>Change</a><BR>"
 				dat += "<a href='?_src_=prefs;preference=toggle_random;random_type=[RANDOM_FACIAL_HAIR_COLOR]'>[(randomise[RANDOM_FACIAL_HAIR_COLOR]) ? "Lock" : "Unlock"]</A><BR>"
 
@@ -1875,6 +1907,18 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					new_kepori_feathers = input(user, "Choose your character's face type:", "Character Preference") as null|anything in GLOB.kepori_body_feathers_list
 					if (new_kepori_feathers)
 						features["kepori_body_feathers"] = new_kepori_feathers
+
+				if("vox_head_quills")
+					var/new_vox_head_quills
+					new_vox_head_quills = input(user, "Choose your character's face type:", "Character Preference") as null|anything in GLOB.vox_head_quills_list
+					if (new_vox_head_quills)
+						features["vox_head_quills"] = new_vox_head_quills
+
+				if("vox_neck_quills")
+					var/new_vox_neck_quills
+					new_vox_neck_quills = input(user, "Choose your character's face type:", "Character Preference") as null|anything in GLOB.vox_neck_quills_list
+					if (new_vox_neck_quills)
+						features["vox_neck_quills"] = new_vox_neck_quills
 
 				if("s_tone")
 					var/new_s_tone = input(user, "Choose your character's skin-tone:", "Character Preference")  as null|anything in GLOB.skin_tones

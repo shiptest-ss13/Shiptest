@@ -23,6 +23,11 @@
 	var/name = "[pick(list("Fa", "Fe", "Fi", "Ma", "Me", "Mi", "Na", "Ne", "Ni", "Sa", "Se", "Si", "Ta", "Te", "Ti"))]"
 	return name + "[pick(list("fa", "fe", "fi", "la", "le", "li", "ma", "me", "mi", "na", "ne", "ni", "ra", "re", "ri", "sa", "se", "si", "sha", "she", "shi", "ta", "te", "ti",))]" + "[pick(list("ca", "ce", "ci", "fa", "fe", "fi", "la", "le", "li", "ma", "me", "mi", "na", "ne", "ni", "ra", "re", "ri", "sa", "se", "si", "sha", "she", "shi", "ta", "te", "ti"))]"
 
+//Actually get some vox names instead of a copy-paste kepori in the future though
+/proc/vox_name()
+	var/name = "[pick(list("Fa", "Fe", "Fi", "Ma", "Me", "Mi", "Na", "Ne", "Ni", "Sa", "Se", "Si", "Ta", "Te", "Ti"))]"
+	return name + "[pick(list("fa", "fe", "fi", "la", "le", "li", "ma", "me", "mi", "na", "ne", "ni", "ra", "re", "ri", "sa", "se", "si", "sha", "she", "shi", "ta", "te", "ti",))]" + "[pick(list("ca", "ce", "ci", "fa", "fe", "fi", "la", "le", "li", "ma", "me", "mi", "na", "ne", "ni", "ra", "re", "ri", "sa", "se", "si", "sha", "she", "shi", "ta", "te", "ti"))]"
+
 GLOBAL_VAR(command_name)
 /proc/command_name()
 	if (GLOB.command_name)
