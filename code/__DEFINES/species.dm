@@ -33,3 +33,9 @@
 /// This also affects how fast the body normalises it's temperature when cold.
 /// 270k is about -3c, that is below freezing and would hurt over time.
 #define HUMAN_BODYTEMP_COLD_DAMAGE_LIMIT (HUMAN_BODYTEMP_NORMAL - 40)
+
+
+//VOX DEFINES
+#define VOX_BODYTEMP_HEAT_DIVISOR 10
+#define VOX_BODYTEMP_COLD_DIVISOR 20
+#define VOX_BODYTEMP_AUTORECOVERY_MIN 6

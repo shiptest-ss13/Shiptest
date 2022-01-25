@@ -13,6 +13,10 @@
 	acceptable_bodytype = BODYTYPE_VOX
 	should_draw_greyscale = FALSE
 
+/obj/item/bodypart/chest/vox/on_life()
+	. = ..()
+	if(owner.stat != DEAD)
+		owner.adjust_bodytemperature(length(owner.bodyparts) * 2.5, 0, owner.dna.species.bodytemp_heat_damage_limit + 50) //More meat = more heat
 
 /obj/item/bodypart/l_arm/vox
 	static_icon = 'icons/mob/species/vox/bodyparts.dmi'

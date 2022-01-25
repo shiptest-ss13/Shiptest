@@ -23,6 +23,10 @@
 	mutanttongue = /obj/item/organ/tongue/vox
 	species_language_holder = /datum/language_holder/vox
 
+	bodytemp_heat_divisor = VOX_BODYTEMP_HEAT_DIVISOR
+	bodytemp_cold_divisor = VOX_BODYTEMP_COLD_DIVISOR
+	bodytemp_autorecovery_min = VOX_BODYTEMP_AUTORECOVERY_MIN
+
 	species_chest = /obj/item/bodypart/chest/vox
 	species_head = /obj/item/bodypart/head/vox
 	species_l_arm = /obj/item/bodypart/l_arm/vox
