@@ -586,23 +586,23 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	var/natural_change = 0
 
 	// We are very cold, increate body temperature
-	if(bodytemperature <= BODYTEMP_COLD_DAMAGE_LIMIT)
-		natural_change = max((body_temperature_difference * metabolism_efficiency / BODYTEMP_AUTORECOVERY_DIVISOR), \
-			BODYTEMP_AUTORECOVERY_MINIMUM)
+	if(bodytemperature <= dna.species.bodytemp_cold_damage_limit)
+		natural_change = max((body_temperature_difference * metabolism_efficiency / HUMAN_BODYTEMP_AUTORECOVERY_DIVISOR), \
+			HUMAN_BODYTEMP_AUTORECOVERY_MINIMUM)
 
 	// we are cold, reduce the minimum increment and do not jump over the difference
-	else if(bodytemperature > BODYTEMP_COLD_DAMAGE_LIMIT && bodytemperature < get_body_temp_normal())
-		natural_change = max(body_temperature_difference * metabolism_efficiency / BODYTEMP_AUTORECOVERY_DIVISOR, \
-			min(body_temperature_difference, BODYTEMP_AUTORECOVERY_MINIMUM / 4))
+	else if(bodytemperature > dna.species.bodytemp_cold_damage_limit && bodytemperature < get_body_temp_normal())
+		natural_change = max(body_temperature_difference * metabolism_efficiency / HUMAN_BODYTEMP_AUTORECOVERY_DIVISOR, \
+			min(body_temperature_difference, HUMAN_BODYTEMP_AUTORECOVERY_MINIMUM / 4))
 
 	// We are hot, reduce the minimum increment and do not jump below the difference
-	else if(bodytemperature > get_body_temp_normal() && bodytemperature <= BODYTEMP_HEAT_DAMAGE_LIMIT)
-		natural_change = min(body_temperature_difference * metabolism_efficiency / BODYTEMP_AUTORECOVERY_DIVISOR, \
-			max(body_temperature_difference, -(BODYTEMP_AUTORECOVERY_MINIMUM / 4)))
+	else if(bodytemperature > get_body_temp_normal() && bodytemperature <= dna.species.bodytemp_heat_damage_limit)
+		natural_change = min(body_temperature_difference * metabolism_efficiency / HUMAN_BODYTEMP_AUTORECOVERY_DIVISOR, \
+			max(body_temperature_difference, -(HUMAN_BODYTEMP_AUTORECOVERY_MINIMUM / 4)))
 
 	// We are very hot, reduce the body temperature
-	else if(bodytemperature >= BODYTEMP_HEAT_DAMAGE_LIMIT)
-		natural_change = min((body_temperature_difference / BODYTEMP_AUTORECOVERY_DIVISOR), -BODYTEMP_AUTORECOVERY_MINIMUM)
+	else if(bodytemperature >= dna.species.bodytemp_heat_damage_limit)
+		natural_change = min((body_temperature_difference / HUMAN_BODYTEMP_AUTORECOVERY_DIVISOR), -HUMAN_BODYTEMP_AUTORECOVERY_MINIMUM)
 
 	var/thermal_protection = 1 - get_insulation_protection(areatemp) // invert the protection
 	if(areatemp > bodytemperature) // It is hot here
@@ -676,7 +676,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
  * * max_temp (optional) The maximum body temperature after adjustment
  * * use_insulation (optional) modifies the amount based on the amount of insulation the mob has
  * * use_steps (optional) Use the body temp divisors and max change rates
- * * hardsuit_fix (optional) num bodytemp_normal - H.bodytemperature Use hardsuit override until hardsuits fix is done...
+ * * hardsuit_fix (optional) num HUMAN_BODYTEMP_NORMAL - H.bodytemperature Use hardsuit override until hardsuits fix is done...
  */
 /mob/living/carbon/adjust_bodytemperature(amount, min_temp=0, max_temp=INFINITY, use_insulation=FALSE, use_steps=FALSE, \
 											hardsuit_fix=FALSE)
@@ -690,7 +690,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
 
 	// Use the bodytemp divisors to get the change step, with max step size
 	if(use_steps)
-		amount = (amount > 0) ? min(amount / BODYTEMP_HEAT_DIVISOR, BODYTEMP_HEATING_MAX) : max(amount / BODYTEMP_COLD_DIVISOR, BODYTEMP_COOLING_MAX)
+		amount = (amount > 0) ? min(amount / HUMAN_BODYTEMP_HEAT_DIVISOR, HUMAN_BODYTEMP_HEATING_MAX) : max(amount / HUMAN_BODYTEMP_COLD_DIVISOR, HUMAN_BODYTEMP_COOLING_MAX)
 
 	if(bodytemperature >= min_temp && bodytemperature <= max_temp)
 		bodytemperature = clamp(bodytemperature + amount,min_temp,max_temp)

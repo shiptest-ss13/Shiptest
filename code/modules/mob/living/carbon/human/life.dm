@@ -119,7 +119,7 @@
 /**
  * get_body_temperature Returns the body temperature with any modifications applied
  *
- * This applies the result from proc/get_body_temp_normal_change() against the bodytemp_normal
+ * This applies the result from proc/get_body_temp_normal_change() against the HUMAN_BODYTEMP_NORMAL
  * for the species and returns the result
  *
  * arguments:
