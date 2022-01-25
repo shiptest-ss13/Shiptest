@@ -52,7 +52,11 @@
 	if(replaced)
 		replaced.Remove(M, special = 1)
 		if(drop_if_replaced)
-			replaced.forceMove(get_turf(M))
+			var/dest = get_turf(M)
+			if(dest)
+				replaced.forceMove(get_turf(M))
+			else
+				qdel(replaced)
 		else
 			qdel(replaced)
 
