@@ -103,7 +103,7 @@
 	if(!affecting) //Missing limb?
 		to_chat(user, "<span class='warning'>[C] doesn't have \a [parse_zone(user.zone_selected)]!</span>")
 		return
-	if(affecting.status == BODYPART_ORGANIC)
+	if(!IS_ORGANIC_LIMB(affecting))
 		if(ishuman(C))
 			var/mob/living/carbon/human/H = C
 			if(!H.bleedsuppress && H.bleed_rate)

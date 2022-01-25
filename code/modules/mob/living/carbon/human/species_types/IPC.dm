@@ -1,9 +1,9 @@
 /datum/species/ipc // im fucking lazy mk2 and cant get sprites to normally work
-	name = "IPC" //inherited from the real species, for health scanners and things
-	id = "ipc"
+	name = "\improper Integrated Positronic Chassis" //inherited from the real species, for health scanners and things
+	id = SPECIES_IPC
 	sexes = FALSE
 	say_mod = "states" //inherited from a user's real species
-	species_traits = list(AGENDER,NOTRANSSTING,NOEYESPRITES,NO_DNA_COPY,NOBLOOD,TRAIT_EASYDISMEMBER,ROBOTIC_LIMBS,NOZOMBIE,MUTCOLORS,REVIVESBYHEALING,NOHUSK,NOMOUTH,NO_BONES) //all of these + whatever we inherit from the real species
+	species_traits = list(AGENDER,NOTRANSSTING,NOEYESPRITES,NO_DNA_COPY,NOBLOOD,TRAIT_EASYDISMEMBER,NOZOMBIE,MUTCOLORS,REVIVESBYHEALING,NOHUSK,NOMOUTH,NO_BONES, MUTCOLORS, NO_UNDERWEAR) //all of these + whatever we inherit from the real species
 	inherent_traits = list(TRAIT_RESISTCOLD,TRAIT_VIRUSIMMUNE,TRAIT_NOBREATH,TRAIT_RADIMMUNE,TRAIT_GENELESS,TRAIT_LIMBATTACHMENT)
 	inherent_biotypes = list(MOB_ROBOTIC, MOB_HUMANOID)
 	mutantbrain = /obj/item/organ/brain/mmi_holder/posibrain
@@ -21,7 +21,6 @@
 	skinned_type = /obj/item/stack/sheet/metal{amount = 10}
 	exotic_blood = /datum/reagent/fuel/oil
 	damage_overlay_type = "synth"
-	limbs_id = "synth"
 	mutant_bodyparts = list("ipc_screen", "ipc_antenna", "ipc_chassis")
 	default_features = list("ipc_screen" = "BSOD", "ipc_antenna" = "None")
 	burnmod = 1.25
@@ -38,6 +37,14 @@
 	Intelligence program encased in a bipedal robotic shell. They are fragile, allergic to EMPs, and the butt of endless toaster jokes. \
 	Just as easy to repair as they are to destroy, they might just get their last laugh in as you're choking on neurotoxins. Beep Boop."
 	ass_image = 'icons/ass/assmachine.png'
+
+	species_chest = /obj/item/bodypart/chest/ipc
+	species_head = /obj/item/bodypart/head/ipc
+	species_l_arm = /obj/item/bodypart/l_arm/ipc
+	species_r_arm = /obj/item/bodypart/r_arm/ipc
+	species_l_leg = /obj/item/bodypart/l_leg/ipc
+	species_r_leg = /obj/item/bodypart/r_leg/ipc
+
 	/// The last screen used when the IPC died.
 	var/saved_screen
 	var/datum/action/innate/change_screen/change_screen
@@ -51,15 +58,6 @@
 	if(ishuman(C) && !change_screen)
 		change_screen = new
 		change_screen.Grant(C)
-	for(var/obj/item/bodypart/O in C.bodyparts)
-		O.render_like_organic = TRUE // Makes limbs render like organic limbs instead of augmented limbs, check bodyparts.dm
-		var/chassis = C.dna.features["ipc_chassis"]
-		var/datum/sprite_accessory/ipc_chassis/chassis_of_choice = GLOB.ipc_chassis_list[chassis]
-		C.dna.species.limbs_id = chassis_of_choice.limbs_id
-		if(chassis_of_choice.color_src == MUTCOLORS && !(MUTCOLORS in C.dna.species.species_traits)) // If it's a colorable(Greyscale) chassis, we use MUTCOLORS.
-			C.dna.species.species_traits += MUTCOLORS
-		else if(MUTCOLORS in C.dna.species.species_traits)
-			C.dna.species.species_traits -= MUTCOLORS
 
 /datum/species/ipc/on_species_loss(mob/living/carbon/C)
 	. = ..()
@@ -198,7 +196,7 @@
 /datum/species/ipc/spec_life(mob/living/carbon/human/H)
 	. = ..()
 	if(H.health <= HEALTH_THRESHOLD_CRIT && H.stat != DEAD) // So they die eventually instead of being stuck in crit limbo.
-		H.adjustFireLoss(6) // After bodypart_robotic resistance this is ~2/second
+		H.adjustFireLoss(6) // After BODYTYPE_ROBOTIC resistance this is ~2/second
 		if(prob(5))
 			to_chat(H, "<span class='warning'>Alert: Internal temperature regulation systems offline; thermal damage sustained. Shutdown imminent.</span>")
 			H.visible_message("[H]'s cooling system fans stutter and stall. There is a faint, yet rapid beeping coming from inside their chassis.")
@@ -216,3 +214,18 @@
 	H.say("Unit [H.real_name] is fully functional. Have a nice day.")
 	H.dna.features["ipc_screen"] = saved_screen
 	H.update_body()
+
+/datum/species/ipc/replace_body(mob/living/carbon/C, datum/species/new_species)
+	..()
+
+	var/datum/sprite_accessory/ipc_chassis/chassis_of_choice = GLOB.ipc_chassis_list[C.dna.features["ipc_chassis"]]
+
+	for(var/obj/item/bodypart/BP as anything in C.bodyparts) //Override bodypart data as necessary
+		BP.uses_mutcolor = chassis_of_choice.color_src ? TRUE : FALSE
+		if(BP.uses_mutcolor)
+			BP.should_draw_greyscale = TRUE
+			BP.species_color = C.dna?.features["mcolor"]
+
+		BP.limb_id = chassis_of_choice.limbs_id
+		BP.name = "\improper[chassis_of_choice.name] [parse_zone(BP.body_zone)]"
+		BP.update_limb()
