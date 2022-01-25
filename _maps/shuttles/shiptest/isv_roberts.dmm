@@ -22,21 +22,13 @@
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "cd" = (
-/obj/structure/window/fulltile,
-/obj/structure/grille,
+/obj/effect/spawner/structure/window/hollow,
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "ch" = (
 /obj/structure/falsewall,
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
-"cm" = (
-/obj/machinery/computer/cryopod{
-	pixel_x = 1;
-	pixel_y = -6
-	},
-/turf/closed/wall,
-/area/ship/maintenance/port)
 "ea" = (
 /obj/structure/cable{
 	icon_state = "1-8"
@@ -82,7 +74,9 @@
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "eR" = (
-/obj/machinery/autolathe/hacked,
+/obj/machinery/autolathe/hacked{
+	shocked = 1
+	},
 /obj/machinery/light/broken,
 /turf/open/floor/plating,
 /area/ship/maintenance/aft)
@@ -96,19 +90,17 @@
 /turf/open/floor/plating,
 /area/ship/external)
 "hb" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2,
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/airalarm/directional/west,
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2,
 /turf/open/floor/plating,
 /area/ship/cargo)
 "hr" = (
-/obj/effect/landmark/start/assistant,
 /mob/living/simple_animal/hostile/cockroach,
 /obj/structure/safe/floor{
-	desc = "A huge chunk of metal with a dial embedded in it. Fine print on the dial reads \"Scarborough Arms - 2 tumbler safe, guaranteed thermite resistant, explosion resistant, and assistant resistant.\" Contains the spare ID.";
+	desc = "A huge chunk of metal with a dial embedded in it. Fine print on the dial reads "\Scarborough Arms - 2 tumbler safe, guaranteed thermite resistant, explosion resistant, and assistant resistant.\" Contains the spare ID.";
 	name = "Spare ID Safe";
 	number_of_tumblers = 4
 	},
@@ -128,7 +120,9 @@
 /turf/open/floor/plating,
 /area/ship/maintenance/fore)
 "hU" = (
-/obj/machinery/mineral/ore_redemption,
+/obj/machinery/mineral/ore_redemption{
+	dir = 4
+	},
 /turf/open/floor/plating,
 /area/ship/cargo)
 "ih" = (
@@ -140,8 +134,7 @@
 /turf/open/floor/plating,
 /area/ship/cargo)
 "iF" = (
-/obj/structure/window/fulltile,
-/obj/structure/grille,
+/obj/effect/spawner/structure/window/hollow,
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "iW" = (
@@ -149,8 +142,11 @@
 /turf/closed/wall/rust,
 /area/ship/maintenance/central)
 "jd" = (
-/obj/machinery/ore_silo,
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/industrial/loading{
+	dir = 8
+	},
+/obj/machinery/airalarm/directional/north,
 /turf/open/floor/plating,
 /area/ship/cargo)
 "le" = (
@@ -159,13 +155,13 @@
 	},
 /obj/effect/spawner/lootdrop/grille_or_trash,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
+/obj/structure/cable,
 /turf/open/floor/plating,
 /area/ship/maintenance/central)
 "ln" = (
 /turf/closed/wall,
 /area/ship/maintenance/starboard)
 "mc" = (
-/obj/effect/landmark/start/assistant,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating,
 /area/ship/cargo)
@@ -191,8 +187,13 @@
 /obj/machinery/airalarm/directional/north,
 /obj/effect/spawner/lootdrop/maintenance/eight,
 /obj/item/reagent_containers/food/snacks/canned/peaches/maint,
-/obj/structure/closet/secure_closet/engineering_personal,
 /mob/living/simple_animal/hostile/cockroach/glockroach,
+/obj/item/clothing/suit/space/engineer,
+/obj/item/clothing/head/helmet/space/light/engineer,
+/obj/structure/closet/secure_closet{
+	icon_state = "eng_secure";
+	req_access = list(11)
+	},
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "nh" = (
@@ -200,6 +201,10 @@
 	dir = 2
 	},
 /obj/effect/decal/cleanable/glass,
+/obj/item/reagent_containers/glass/bucket{
+	desc = "Better get scoopin'.";
+	name = "oil-soaked bucket"
+	},
 /turf/open/floor/plating,
 /area/ship/maintenance/central)
 "nq" = (
@@ -216,9 +221,9 @@
 	},
 /obj/effect/decal/cleanable/blood/splatter,
 /obj/machinery/light/broken,
-/obj/effect/landmark/start/assistant,
 /obj/item/radio/intercom/wideband{
-	pixel_x = -26
+	dir = 4;
+	pixel_x = -23
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/fore)
@@ -239,7 +244,6 @@
 /turf/closed/wall,
 /area/ship/maintenance/aft)
 "pI" = (
-/obj/effect/decal/cleanable/cobweb,
 /obj/effect/decal/cleanable/cobweb/cobweb2,
 /obj/effect/decal/cleanable/glass,
 /obj/structure/reagent_dispensers/cooking_oil{
@@ -247,9 +251,6 @@
 	name = "vat of engine oil";
 	reagent_id = /datum/reagent/fuel/oil;
 	tank_volume = 3000
-	},
-/obj/item/reagent_containers/glass/bucket{
-	desc = "Better get scoopin'."
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/central)
@@ -312,7 +313,7 @@
 /turf/open/floor/plating,
 /area/ship/cargo)
 "vf" = (
-/obj/machinery/suit_storage_unit/mining/eva,
+/obj/machinery/suit_storage_unit/standard_unit,
 /turf/open/floor/plating,
 /area/ship/cargo)
 "vj" = (
@@ -323,10 +324,10 @@
 /obj/effect/decal/cleanable/oil,
 /obj/structure/frame/machine,
 /obj/effect/decal/cleanable/glass,
+/obj/effect/decal/cleanable/cobweb,
 /turf/open/floor/plating,
 /area/ship/maintenance/aft)
 "vk" = (
-/obj/effect/landmark/start/assistant,
 /obj/effect/decal/cleanable/glass,
 /turf/open/floor/plating,
 /area/ship/maintenance/aft)
@@ -349,14 +350,9 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/mob/living/simple_animal/hostile/retaliate/goose/vomit,
 /turf/open/floor/plating,
 /area/ship/maintenance/central)
 "wR" = (
-/obj/item/storage/box/rndboards{
-	desc = "Smells feighntly of plastic.";
-	name = "research equipment"
-	},
 /obj/effect/spawner/lootdrop/maintenance,
 /obj/effect/decal/cleanable/dirt,
 /obj/item/trash/sosjerky,
@@ -365,6 +361,9 @@
 /obj/structure/closet/secure_closet{
 	req_access = list(11)
 	},
+/obj/item/circuitboard/machine/circuit_imprinter,
+/obj/item/circuitboard/computer/rdconsole,
+/obj/item/circuitboard/machine/destructive_analyzer,
 /turf/open/floor/plating,
 /area/ship/maintenance/aft)
 "xa" = (
@@ -383,10 +382,10 @@
 /area/ship/cargo)
 "xk" = (
 /obj/machinery/power/port_gen/pacman,
-/obj/item/stack/sheet/mineral/plasma/twenty,
 /obj/structure/cable/yellow{
 	icon_state = "0-4"
 	},
+/obj/item/stack/sheet/mineral/plasma/five,
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "yZ" = (
@@ -423,7 +422,6 @@
 /turf/closed/wall/rust,
 /area/ship/maintenance/central)
 "Ab" = (
-/obj/effect/decal/cleanable/cobweb,
 /obj/effect/decal/cleanable/generic,
 /turf/open/floor/plating,
 /area/ship/maintenance/aft)
@@ -477,6 +475,8 @@
 	icon_state = "0-8"
 	},
 /obj/item/trash/tray,
+/mob/living/simple_animal/hostile/retaliate/goose/vomit,
+/obj/structure/bed/dogbed,
 /turf/open/floor/plating,
 /area/ship/maintenance/central)
 "Ed" = (
@@ -492,7 +492,6 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
 	dir = 1
 	},
-/obj/effect/landmark/start/assistant,
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "Fg" = (
@@ -519,7 +518,6 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 10
 	},
-/obj/effect/landmark/start/assistant,
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "FC" = (
@@ -532,6 +530,7 @@
 	icon_state = "0-4"
 	},
 /mob/living/simple_animal/hostile/cockroach/glockroach,
+/obj/effect/decal/cleanable/cobweb,
 /turf/open/floor/plating,
 /area/ship/maintenance/central)
 "FQ" = (
@@ -559,8 +558,7 @@
 /turf/open/floor/plating,
 /area/ship/maintenance/aft)
 "Hj" = (
-/obj/structure/window/fulltile,
-/obj/structure/grille,
+/obj/effect/spawner/structure/window/hollow,
 /turf/open/floor/plating,
 /area/ship/maintenance/fore)
 "HQ" = (
@@ -671,8 +669,6 @@
 /turf/closed/wall,
 /area/ship/maintenance/port)
 "Od" = (
-/obj/structure/window/fulltile,
-/obj/structure/grille,
 /turf/closed/wall/material,
 /area/ship/maintenance/starboard)
 "Oy" = (
@@ -754,7 +750,7 @@
 	name = "Blast Door Control";
 	pixel_y = -24
 	},
-/obj/machinery/suit_storage_unit/mining/eva,
+/obj/machinery/suit_storage_unit/standard_unit,
 /turf/open/floor/plating,
 /area/ship/cargo)
 "Ub" = (
@@ -838,6 +834,9 @@
 /obj/item/reagent_containers/food/drinks/sillycup/smallcarton{
 	list_reagents = list(/datum/reagent/consumable/ethanol/vodka = 100)
 	},
+/obj/machinery/computer/cryopod{
+	pixel_y = 24
+	},
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "Zj" = (
@@ -911,7 +910,7 @@ Ck
 Ck
 Ck
 Ck
-cm
+Ns
 YV
 hr
 KK
