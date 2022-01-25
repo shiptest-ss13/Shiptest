@@ -542,7 +542,7 @@ generate/load female uniform sprites matching all previously decided variables
 
 
 */
-/obj/item/proc/build_worn_icon(default_layer = 0, default_icon_file = null, isinhands = FALSE, femaleuniform = NO_FEMALE_UNIFORM, override_state = null, override_file = null, species = null)
+/obj/item/proc/build_worn_icon(default_layer = 0, default_icon_file = null, isinhands = FALSE, femaleuniform = NO_FEMALE_UNIFORM, override_state = null, override_file = null, species = null, direction = null)
 
 	// WS Edit Start - Worn Icon State
 	var/t_state
@@ -581,7 +581,7 @@ generate/load female uniform sprites matching all previously decided variables
 	//Handle held offsets
 	var/mob/M = loc
 	if(istype(M))
-		var/list/L = get_held_offsets()
+		var/list/L = get_held_offsets(direction)
 		if(L)
 			standing.pixel_x += L["x"] //+= because of center()ing
 			standing.pixel_y += L["y"]
@@ -592,13 +592,25 @@ generate/load female uniform sprites matching all previously decided variables
 	return standing
 
 
-/obj/item/proc/get_held_offsets()
+/obj/item/proc/get_held_offsets(var/direction)
 	var/list/L
 	if(ismob(loc))
+		if(iscarbon(loc))
+			var/mob/living/carbon/C = loc
+			var/index = C.get_held_index_of_item(src)
+			index ||= 1
+			if(!C.layered_hands)
+				L = C.dna.species.get_item_offsets_for_index(index)
+				if(L)
+					return L
+			else
+				L = C.dna.species.get_item_offsets_for_dir(direction ? direction : C.dir)
+				L = L[index]
+				return L
 		var/mob/M = loc
 		L = M.get_item_offsets_for_index(M.get_held_index_of_item(src))
-	return L
 
+	return L
 
 //Can't think of a better way to do this, sadly
 /mob/proc/get_item_offsets_for_index(i)
@@ -609,7 +621,6 @@ generate/load female uniform sprites matching all previously decided variables
 			return list("x" = 0, "y" = 16)
 		else //No offsets or Unwritten number of hands
 			return list("x" = 0, "y" = 0)//Handle held offsets
-
 
 /mob/living/carbon/human/proc/update_observer_view(obj/item/I, inventory)
 	if(observers && observers.len)

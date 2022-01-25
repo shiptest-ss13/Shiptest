@@ -2567,9 +2567,14 @@
 
 /datum/sprite_accessory/vox_head_quills
 	icon = 'icons/mob/species/vox/vox_quills.dmi'
+	color_src = null
 
 /datum/sprite_accessory/vox_head_quills/none
 	name = "None"
+
+/datum/sprite_accessory/vox_head_quills/wildflower
+	name = "Wildflower"
+	icon_state = "wildflower"
 
 /datum/sprite_accessory/vox_head_quills/augmenter
 	name = "Augmenter"
@@ -2649,9 +2654,11 @@
 
 /datum/sprite_accessory/vox_neck_quills
 	icon = 'icons/mob/species/vox/vox_quills.dmi'
+	color_src = null
 
 /datum/sprite_accessory/vox_neck_quills/none
 	name = "None"
+
 
 /datum/sprite_accessory/vox_neck_quills/plain
 	name = "Plain"

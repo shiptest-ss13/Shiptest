@@ -2352,5 +2352,8 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 /datum/species/proc/get_item_offsets_for_index(i)
 	return
 
+/datum/species/proc/get_item_offsets_for_dir(dir, hand_index)
+	return
+
 /datum/species/proc/get_harm_descriptors()
 	return

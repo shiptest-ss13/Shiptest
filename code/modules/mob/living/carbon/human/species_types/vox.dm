@@ -39,8 +39,22 @@
 	. = ..()
 	C.base_pixel_x -= 9
 	C.pixel_x = C.base_pixel_x
+	C.update_hands_on_rotate()
 
 /datum/species/vox/on_species_loss(mob/living/carbon/human/C, datum/species/new_species, pref_load)
 	. = ..()
-	C.base_pixel_x += 0
+	C.base_pixel_x += 9
 	C.pixel_x = C.base_pixel_x
+	C.stop_updating_hands()
+
+/datum/species/vox/get_item_offsets_for_dir(var/dir, var/hand)
+	////LEFT/RIGHT
+	switch(dir)
+		if(SOUTH)
+			return list(list("x" = 10, "y" = -1), list("x" = 8, "y" = -1))
+		if(NORTH)
+			return list(list("x" = 9, "y" = 0), list("x" = 9, "y" = 0))
+		if(EAST)
+			return list(list("x" = 18, "y" = 2), list("x" = 21, "y" = -1))
+		if(WEST)
+			return list(list("x" = -5, "y" = -1), list("x" = -1, "y" = 2))
