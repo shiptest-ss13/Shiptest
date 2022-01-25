@@ -34,10 +34,24 @@
 	species_l_leg = /obj/item/bodypart/l_leg/vox
 	species_r_leg = /obj/item/bodypart/r_leg/vox
 
-/datum/species/vox/random_name(gender,unique,lastname)
-	if(unique)
-		return random_unique_vox_name()
-	return kepori_name()
+/datum/species/vox/random_name(gender,unique,lastname,attempts)
+	. = ""
+
+	var/new_name = ""
+	var/static/list/syllables = list("ti", "ti", "ti", "hi", "hi", "ki", "ki", "ki", "ki", "ya", "ta", "ha", "ka", "ya", "chi", "cha", "kah", \
+		"SKRE", "AHK", "EHK", "RAWK", "KRA", "KI", "II", "KRI", "KA")
+
+	for(var/x = rand(3,8) to 0 step -1)
+		new_name += pick(syllables)
+	. += "[capitalize(lowertext(new_name))]"
+
+	if(unique && attempts < 10)
+		if(findname(new_name))
+			.(gender, TRUE, null, attempts++)
+
+	return .
+
+
 
 /datum/species/vox/on_species_gain(mob/living/carbon/C, datum/species/old_species, pref_load)
 	. = ..()
