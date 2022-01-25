@@ -1,6 +1,8 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "aC" = (
-/obj/structure/chair/stool,
+/obj/structure/chair/stool{
+	dir = 1
+	},
 /turf/open/floor/plating,
 /area/ship/cargo)
 "aK" = (
@@ -15,7 +17,7 @@
 "aW" = (
 /obj/structure/lattice,
 /turf/closed/wall,
-/area/space)
+/area/ship/external)
 "bd" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/reagent_dispensers/beerkeg,
@@ -55,7 +57,7 @@
 /obj/structure/catwalk,
 /obj/item/trash/sosjerky,
 /turf/open/floor/plating,
-/area/space)
+/area/ship/external)
 "cc" = (
 /obj/structure/table/wood,
 /obj/item/pen/fountain/solgov,
@@ -154,6 +156,9 @@
 /turf/closed/wall/r_wall,
 /area/ship/maintenance/port)
 "fj" = (
+/obj/machinery/computer/cryopod{
+	pixel_y = -26
+	},
 /turf/open/floor/plating,
 /area/ship/maintenance/fore)
 "fO" = (
@@ -220,7 +225,7 @@
 	dir = 1
 	},
 /turf/open/floor/plating,
-/area/space)
+/area/ship/external)
 "iS" = (
 /obj/machinery/door/airlock/maintenance_hatch,
 /obj/structure/cable{
@@ -381,16 +386,18 @@
 /turf/closed/wall/rust,
 /area/ship/maintenance/central)
 "oh" = (
-/obj/machinery/door/airlock/maintenance_hatch,
+/obj/machinery/door/airlock/maintenance_hatch{
+	welded = 1
+	},
 /obj/structure/barricade/wooden/crude,
 /turf/open/floor/plating,
 /area/ship/maintenance/fore)
 "ou" = (
 /obj/structure/catwalk,
-/obj/item/toy/plush/among,
 /obj/structure/chair,
+/obj/item/toy/plush/among,
 /turf/open/floor/plating,
-/area/space)
+/area/ship/external)
 "oF" = (
 /turf/closed/wall/r_wall,
 /area/ship/maintenance/starboard)
@@ -528,7 +535,9 @@
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "tL" = (
-/obj/machinery/door/airlock/maintenance_hatch,
+/obj/machinery/door/airlock/maintenance_hatch{
+	welded = 1
+	},
 /obj/structure/barricade/wooden/crude,
 /turf/open/floor/plating,
 /area/ship/maintenance/central)
@@ -650,7 +659,11 @@
 /area/ship/maintenance/central)
 "yw" = (
 /obj/machinery/cryopod{
-	dir = 4
+	close_state = "crate";
+	dir = 8;
+	icon = 'goon/icons/obj/crates.dmi';
+	icon_state = "crateopen";
+	open_state = "crateopen"
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/fore)
@@ -673,6 +686,9 @@
 /obj/machinery/airalarm/directional/west,
 /obj/structure/table,
 /obj/effect/spawner/lootdrop/donkpockets,
+/obj/item/circular_saw{
+	pixel_y = 11
+	},
 /obj/effect/spawner/lootdrop/maintenance/four,
 /turf/open/floor/plating,
 /area/ship/maintenance/aft)
@@ -681,11 +697,10 @@
 	req_access = list(11)
 	},
 /obj/item/circuitboard/machine/rdserver,
-/obj/item/storage/box/rndboards{
-	desc = "Smells feighntly of plastic.";
-	name = "research equipment"
-	},
 /obj/effect/spawner/lootdrop/maintenance/five,
+/obj/item/circuitboard/computer/research,
+/obj/item/circuitboard/machine/circuit_imprinter,
+/obj/item/circuitboard/machine/destructive_analyzer,
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "zE" = (
@@ -774,7 +789,7 @@
 	},
 /obj/structure/cable/yellow,
 /turf/open/floor/plating,
-/area/ship/maintenance/central)
+/area/ship/external)
 "Dn" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/airalarm/directional/east,
@@ -870,7 +885,7 @@
 /obj/structure/table,
 /obj/effect/spawner/lootdrop/two_percent_xeno_egg_spawner,
 /turf/open/floor/plating,
-/area/space)
+/area/ship/external)
 "Jd" = (
 /obj/structure/window/reinforced/spawner,
 /obj/machinery/power/smes/shuttle/precharged{
@@ -1037,7 +1052,7 @@
 "QJ" = (
 /obj/structure/catwalk,
 /turf/open/floor/plating,
-/area/space)
+/area/ship/external)
 "Rc" = (
 /obj/effect/decal/cleanable/robot_debris,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -1167,7 +1182,7 @@
 "Uw" = (
 /obj/structure/lattice,
 /turf/template_noop,
-/area/space)
+/area/ship/external)
 "UX" = (
 /obj/machinery/door/airlock/maintenance_hatch,
 /turf/open/floor/plating,
@@ -1252,11 +1267,15 @@
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "XU" = (
-/obj/machinery/cryopod{
-	dir = 4
-	},
 /obj/item/trash/semki,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/cryopod{
+	close_state = "crate";
+	dir = 8;
+	icon = 'goon/icons/obj/crates.dmi';
+	icon_state = "crateopen";
+	open_state = "crateopen"
+	},
 /turf/open/floor/plating,
 /area/ship/maintenance/fore)
 "XZ" = (
