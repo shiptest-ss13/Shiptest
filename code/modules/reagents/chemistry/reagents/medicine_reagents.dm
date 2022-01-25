@@ -156,10 +156,10 @@
 	taste_description = "spicy jelly"
 
 /datum/reagent/medicine/pyroxadone/on_mob_life(mob/living/carbon/M)
-	if(M.bodytemperature > M.dna.species.bodytemp_cold_damage_limit)
+	if(M.bodytemperature > M.dna.species.bodytemp_heat_damage_limit)
 		var/power = 0
 		switch(M.bodytemperature)
-			if(M.dna.species.bodytemp_cold_damage_limit to 400)
+			if(M.dna.species.bodytemp_heat_damage_limit to 400)
 				power = 2
 			if(400 to 460)
 				power = 3

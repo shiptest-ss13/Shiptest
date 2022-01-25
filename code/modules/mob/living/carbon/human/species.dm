@@ -142,6 +142,10 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	var/bodytemp_autorecovery_min = HUMAN_BODYTEMP_AUTORECOVERY_MINIMUM
 	/// This is the divisor which handles how much of the temperature difference between the current body temperature and 310.15K (optimal temperature) humans auto-regenerate each tick. The higher the number, the slower the recovery.
 	var/bodytemp_autorecovery_divisor = HUMAN_BODYTEMP_AUTORECOVERY_DIVISOR
+	///Similar to the autorecovery_divsor, but this is the divisor which is applied at the stage that follows autorecovery. This is the divisor which comes into play when the human's loc temperature is higher than their body temperature. Make it lower to lose bodytemp faster.
+	var/bodytemp_heat_divisor = HUMAN_BODYTEMP_HEAT_DIVISOR
+	///Similar to the autorecovery_divisor, but this is the divisor which is applied at the stage that follows autorecovery. This is the divisor which comes into play when the human's loc temperature is lower than their body temperature. Make it lower to gain bodytemp faster.
+	var/bodytemp_cold_divisor = HUMAN_BODYTEMP_COLD_DIVISOR
 	/// The body temperature limit the body can take before it starts taking damage from heat.
 	var/bodytemp_heat_damage_limit = HUMAN_BODYTEMP_HEAT_DAMAGE_LIMIT
 	/// The body temperature limit the body can take before it starts taking damage from cold.
