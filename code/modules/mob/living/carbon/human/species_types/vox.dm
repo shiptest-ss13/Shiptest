@@ -3,6 +3,8 @@
 	name = "\improper Vox"
 	id = SPECIES_VOX
 	default_color = "6060FF"
+	species_age_min = 17
+	species_age_max = 280
 	species_traits = list(EYECOLOR, NO_UNDERWEAR)
 	mutant_bodyparts = list("vox_head_quills", "vox_neck_quills")
 	default_features = list("mcolor" = "0F0", "wings" = "None", "vox_head_quills" = "None", "vox_neck_quills" = "None")
@@ -39,11 +41,10 @@
 
 	var/new_name = ""
 	var/static/list/syllables = list("ti", "ti", "ti", "hi", "hi", "ki", "ki", "ki", "ki", "ya", "ta", "ha", "ka", "ya", "chi", "cha", "kah", \
-		"SKRE", "AHK", "EHK", "RAWK", "KRA", "KI", "II", "KRI", "KA")
-
+		"skre", "ahk", "ehk", "rawk", "kra", "ki", "ii", "kri", "ka")
 	for(var/x = rand(3,8) to 0 step -1)
 		new_name += pick(syllables)
-	. += "[capitalize(lowertext(new_name))]"
+	. += "[capitalize(new_name)]"
 
 	if(unique && attempts < 10)
 		if(findname(new_name))

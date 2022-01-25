@@ -1541,7 +1541,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				if("name")
 					real_name = pref_species.random_name(gender,1)
 				if("age")
-					age = rand(AGE_MIN, AGE_MAX)
+					age = rand(pref_species.species_age_min, pref_species.species_age_max)
 				if("hair")
 					hair_color = random_short_color()
 				if("hairstyle")
@@ -1584,7 +1584,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					features["mcolor"] = pref_species.default_color
 				user << browse(null, "window=speciespick")
 				ShowChoices(user)
-				return 1
+				age = rand(pref_species.species_age_min, pref_species.species_age_max)
+				return TRUE
 
 			if(href_list["lookatspecies"])
 				species_looking_at = href_list["lookatspecies"]
@@ -1638,9 +1639,9 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						to_chat(user, "<font color='red'>Invalid name. Your name should be at least 2 and at most [MAX_NAME_LEN] characters long. It may only contain the characters A-Z, a-z, -, ' and .</font>")
 
 				if("age")
-					var/new_age = input(user, "Choose your character's age:\n([AGE_MIN]-[AGE_MAX])", "Character Preference") as num|null
+					var/new_age = input(user, "Choose your character's age:\n([pref_species.species_age_min]-[pref_species.species_age_max])", "Character Preference") as num|null
 					if(new_age)
-						age = max(min( round(text2num(new_age)), AGE_MAX),AGE_MIN)
+						age = clamp(round(text2num(new_age)), pref_species.species_age_min, pref_species.species_age_max)
 
 				if("flavor_text")
 					var/msg = sanitize(stripped_multiline_input(usr, "Set the flavor text in your 'examine' verb. This can also be used for OOC notes and preferences!", "Flavor Text", features["flavor_text"], 4096, TRUE))
@@ -2300,8 +2301,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	character.name = character.real_name
 
 	character.gender = gender
-	character.age = age
-
+	character.age = clamp(age, pref_species.species_age_min, pref_species.species_age_max)
 	character.eye_color = eye_color
 	var/obj/item/organ/eyes/organ_eyes = character.getorgan(/obj/item/organ/eyes)
 	if(organ_eyes)

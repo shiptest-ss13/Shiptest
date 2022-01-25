@@ -240,7 +240,7 @@
 		msg = "[msg]"
 	for(var/i in GLOB.mob_list)
 		var/mob/M = i
-		if(capitalize(M.real_name) == capitalize(msg))
+		if(lowertext(M.real_name) == lowertext(msg))
 			return M
 	return 0
 
