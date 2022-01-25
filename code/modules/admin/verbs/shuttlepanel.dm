@@ -3,7 +3,7 @@
 	set name = "Shuttle Manipulator"
 	set desc = "Opens the shuttle manipulator UI."
 
-	if(!check_rights(R_ADMIN))
+	if(!check_rights(R_DEBUG))
 		return
 
 	SSshuttle.ui_interact(usr)

@@ -746,7 +746,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
 			if(limb.get_damage() >= limb.max_damage)
 				limb.cremation_progress += rand(2,5)
 				if(limb.cremation_progress >= 100)
-					if(limb.status == BODYPART_ORGANIC) //Non-organic limbs don't burn
+					if(IS_ORGANIC_LIMB(limb))  //Non-organic limbs don't burn
 						limb.drop_limb()
 						limb.visible_message("<span class='warning'>[src]'s [limb.name] crumbles into ash!</span>")
 						qdel(limb)
@@ -762,7 +762,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
 		if(head.get_damage() >= head.max_damage)
 			head.cremation_progress += rand(2,5)
 			if(head.cremation_progress >= 100)
-				if(head.status == BODYPART_ORGANIC) //Non-organic limbs don't burn
+				if(!IS_ORGANIC_LIMB(head)) //Non-organic limbs don't burn
 					head.drop_limb()
 					head.visible_message("<span class='warning'>[src]'s head crumbles into ash!</span>")
 					qdel(head)

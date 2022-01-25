@@ -778,7 +778,7 @@ But you can call procs that are of type /mob/living/carbon/human/proc/ for that 
 	set name = "Toggle Medal Disable"
 	set desc = "Toggles the safety lock on trying to contact the medal hub."
 
-	if(!check_rights(R_DEBUG))
+	if(!check_rights(R_SERVER))
 		return
 
 	SSachievements.achievements_enabled = !SSachievements.achievements_enabled
