@@ -84,7 +84,7 @@
 	var/heavy_burn_msg = "peeling away"
 
 /obj/item/bodypart/Initialize()
-	..()
+	. = ..()
 	name = "[limb_id] [parse_zone(body_zone)]"
 	update_icon_dropped()
 
