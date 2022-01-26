@@ -2,7 +2,7 @@
 
 /datum/surgery/brain_surgery/mechanic
 	name = "Mechanical brain surgery"
-	requires_bodypart_type = BODYPART_ROBOTIC
+	requires_bodypart_type = BODYTYPE_ROBOTIC
 	steps = list(
 		/datum/surgery_step/mechanic_open,
 		/datum/surgery_step/open_hatch,
@@ -15,7 +15,7 @@
 
 /datum/surgery/healing/mechanic
 	name = "Repair machinery"
-	requires_bodypart_type = BODYPART_ROBOTIC
+	requires_bodypart_type = BODYTYPE_ROBOTIC
 	replaced_by = null
 	steps = list(
 		/datum/surgery_step/mechanic_open,

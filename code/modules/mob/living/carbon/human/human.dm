@@ -9,8 +9,11 @@
 
 	setup_human_dna()
 
+
+	prepare_huds() //Prevents a nasty runtime on human init
+
 	if(dna.species)
-		set_species(dna.species.type)
+		set_species(dna.species.type) //This generates new limbs based on the species, beware.
 
 	//initialise organs
 	create_internal_organs() //most of it is done in set_species now, this is only for parent call
@@ -198,7 +201,7 @@
 		dat += "</td></tr>"
 
 	var/obj/item/bodypart/O = get_bodypart(BODY_ZONE_CHEST)
-	if((w_uniform == null && !(dna && dna.species.nojumpsuit) && !(O && O.status == BODYPART_ROBOTIC)) || (ITEM_SLOT_ICLOTHING in obscured))
+	if((w_uniform == null && !(dna && dna.species.nojumpsuit) && !IS_ORGANIC_LIMB(O)) || (ITEM_SLOT_ICLOTHING in obscured))
 		dat += "<tr><td><font color=grey>&nbsp;&#8627;<B>Pockets:</B></font></td></tr>"
 		dat += "<tr><td><font color=grey>&nbsp;&#8627;<B>ID:</B></font></td></tr>"
 		dat += "<tr><td><font color=grey>&nbsp;&#8627;<B>Belt:</B></font></td></tr>"
@@ -332,8 +335,7 @@
 				var/status = ""
 				if(getBruteLoss())
 					to_chat(usr, "<b>Physical trauma analysis:</b>")
-					for(var/X in bodyparts)
-						var/obj/item/bodypart/BP = X
+					for(var/obj/item/bodypart/BP as anything in bodyparts)
 						var/brutedamage = BP.brute_dam
 						if(brutedamage > 0)
 							status = "received minor physical injuries."
@@ -348,8 +350,7 @@
 							to_chat(usr, "<span class='[span]'>[BP] appears to have [status]</span>")
 				if(getFireLoss())
 					to_chat(usr, "<b>Analysis of skin burns:</b>")
-					for(var/X in bodyparts)
-						var/obj/item/bodypart/BP = X
+					for(var/obj/item/bodypart/BP as anything in bodyparts)
 						var/burndamage = BP.burn_dam
 						if(burndamage > 0)
 							status = "signs of minor burns."
@@ -634,7 +635,7 @@
 		threatcount += 2
 
 	//Check for nonhuman scum
-	if(dna && dna.species.id && dna.species.id != "human")
+	if(dna && dna.species.id && dna.species.id != SPECIES_HUMAN)
 		threatcount += 1
 
 	//mindshield implants imply trustworthyness
@@ -876,8 +877,7 @@
 			hud_used.healthdoll.cut_overlays()
 			if(stat != DEAD)
 				hud_used.healthdoll.icon_state = "healthdoll_OVERLAY"
-				for(var/X in bodyparts)
-					var/obj/item/bodypart/BP = X
+				for(var/obj/item/bodypart/BP as anything in bodyparts)
 
 					var/numbing_wound = FALSE
 					for(var/datum/wound/W in BP.wounds)
@@ -1366,12 +1366,6 @@
 /mob/living/carbon/human/species/snail
 	race = /datum/species/snail
 
-/mob/living/carbon/human/species/synth
-	race = /datum/species/synth
-
-/mob/living/carbon/human/species/synth/military
-	race = /datum/species/synth/military
-
 /mob/living/carbon/human/species/kepori
 	race = /datum/species/kepori
 
@@ -1385,4 +1379,4 @@
 	race = /datum/species/zombie/infectious
 
 /mob/living/carbon/human/species/zombie/krokodil_addict
-	race = /datum/species/krokodil_addict
+	race = /datum/species/human/krokodil_addict

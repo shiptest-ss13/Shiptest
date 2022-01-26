@@ -12,10 +12,12 @@
 	max_stamina_damage = 120
 	grind_results = null
 	wound_resistance = 10
+	is_dimorphic = TRUE
 	var/obj/item/cavity_item
+	var/acceptable_bodytype = BODYTYPE_HUMANOID
 
-/obj/item/bodypart/chest/can_dismember(obj/item/I)
-	if(owner.stat < HARD_CRIT || !get_organs())
+/obj/item/bodypart/chest/can_dismember()
+	if(owner?.stat <= HARD_CRIT)
 		return FALSE
 	return ..()
 
@@ -32,6 +34,7 @@
 /obj/item/bodypart/chest/monkey
 	icon = 'icons/mob/animal_parts.dmi'
 	icon_state = "default_monkey_chest"
+	limb_id = SPECIES_MONKEY
 	animal_origin = MONKEY_BODYPART
 	wound_resistance = -10
 
@@ -136,6 +139,7 @@
 /obj/item/bodypart/l_arm/monkey
 	icon = 'icons/mob/animal_parts.dmi'
 	icon_state = "default_monkey_l_arm"
+	limb_id = SPECIES_MONKEY
 	animal_origin = MONKEY_BODYPART
 	wound_resistance = -10
 	px_x = -5
@@ -237,6 +241,7 @@
 /obj/item/bodypart/r_arm/monkey
 	icon = 'icons/mob/animal_parts.dmi'
 	icon_state = "default_monkey_r_arm"
+	limb_id = SPECIES_MONKEY
 	animal_origin = MONKEY_BODYPART
 	wound_resistance = -10
 	px_x = 5
@@ -324,13 +329,11 @@
 	else if(!bodypart_disabled)
 		owner.set_usable_legs(owner.usable_legs + 1)
 
-/obj/item/bodypart/l_leg/digitigrade
-	name = "left digitigrade leg"
-	use_digitigrade = FULL_DIGITIGRADE
 
 /obj/item/bodypart/l_leg/monkey
 	icon = 'icons/mob/animal_parts.dmi'
 	icon_state = "default_monkey_l_leg"
+	limb_id = SPECIES_MONKEY
 	animal_origin = MONKEY_BODYPART
 	wound_resistance = -10
 	px_y = 4
@@ -419,13 +422,11 @@
 	else if(!bodypart_disabled)
 		owner.set_usable_legs(owner.usable_legs + 1)
 
-/obj/item/bodypart/r_leg/digitigrade
-	name = "right digitigrade leg"
-	use_digitigrade = FULL_DIGITIGRADE
 
 /obj/item/bodypart/r_leg/monkey
 	icon = 'icons/mob/animal_parts.dmi'
 	icon_state = "default_monkey_r_leg"
+	limb_id = SPECIES_MONKEY
 	animal_origin = MONKEY_BODYPART
 	wound_resistance = -10
 	px_y = 4

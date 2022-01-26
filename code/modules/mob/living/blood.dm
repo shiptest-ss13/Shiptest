@@ -61,8 +61,7 @@
 
 		var/temp_bleed = 0
 		//Bleeding out
-		for(var/X in bodyparts)
-			var/obj/item/bodypart/BP = X
+		for(var/obj/item/bodypart/BP as anything in bodyparts)
 			temp_bleed += BP.get_bleed_rate()
 			BP.generic_bleedstacks = max(0, BP.generic_bleedstacks - 1)
 

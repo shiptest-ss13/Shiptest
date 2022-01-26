@@ -87,7 +87,7 @@
 	if(!affecting) //Missing limb?
 		to_chat(user, "<span class='warning'>[C] doesn't have \a [parse_zone(user.zone_selected)]!</span>")
 		return FALSE
-	if(affecting.status != BODYPART_ORGANIC) //Limb must be organic to be healed - RR
+	if(!IS_ORGANIC_LIMB(affecting)) //Limb must be organic to be healed - RR
 		to_chat(user, "<span class='warning'>[src] won't work on a robotic limb!</span>")
 		return FALSE
 	if(affecting.brute_dam && brute || affecting.burn_dam && burn)

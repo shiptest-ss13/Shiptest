@@ -1,8 +1,8 @@
 #define ETHEREAL_EMAG_COLORS list("#00ffff", "#ffc0cb", "#9400D3", "#4B0082", "#0000FF", "#00FF00", "#FFFF00", "#FF7F00", "#FF0000")
 
 /datum/species/ethereal
-	name = "Elzuose"
-	id = "ethereal"
+	name = "\improper Elzuose"
+	id = SPECIES_ETHEREAL
 	attack_verb = "burn"
 	attack_sound = 'sound/weapons/etherealhit.ogg'
 	miss_sound = 'sound/weapons/etherealmiss.ogg'
@@ -26,6 +26,14 @@
 	bodytemp_cold_damage_limit = (T20C - 10) // about 10c
 	hair_color = "fixedmutcolor"
 	hair_alpha = 140
+
+	species_chest = /obj/item/bodypart/chest/ethereal
+	species_head = /obj/item/bodypart/head/ethereal
+	species_l_arm = /obj/item/bodypart/l_arm/ethereal
+	species_r_arm = /obj/item/bodypart/r_arm/ethereal
+	species_l_leg = /obj/item/bodypart/l_leg/ethereal
+	species_r_leg = /obj/item/bodypart/r_leg/ethereal
+
 	var/current_color
 	var/EMPeffect = FALSE
 	var/emag_effect = FALSE
@@ -50,6 +58,12 @@
 	ethereal_light = ethereal.mob_light()
 	spec_updatehealth(ethereal)
 
+	//The following code is literally only to make admin-spawned ethereals not be black.
+	C.dna.features["mcolor"] = C.dna.features["ethcolor"] //Ethcolor and Mut color are both dogshit and will be replaced
+	for(var/obj/item/bodypart/BP as anything in C.bodyparts)
+		if(BP.limb_id == SPECIES_ETHEREAL)
+			BP.update_limb(is_creating = TRUE)
+
 /datum/species/ethereal/on_species_loss(mob/living/carbon/human/C, datum/species/new_species, pref_load)
 	UnregisterSignal(C, COMSIG_ATOM_EMAG_ACT)
 	UnregisterSignal(C, COMSIG_ATOM_EMP_ACT)
@@ -66,6 +80,9 @@
 
 /datum/species/ethereal/spec_updatehealth(mob/living/carbon/human/H)
 	. = ..()
+	if(!ethereal_light)
+		return
+
 	if(H.stat != DEAD && !EMPeffect)
 		if(!emag_effect)
 			current_color = health_adjusted_color(H, default_color)
@@ -96,6 +113,9 @@
 	return result
 
 /datum/species/ethereal/proc/set_ethereal_light(mob/living/carbon/human/H, current_color)
+	if(!ethereal_light)
+		return
+
 	var/health_percent = max(H.health, 0) / 100
 
 	var/light_range = 1 + (2 * health_percent)
