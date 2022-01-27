@@ -10,6 +10,20 @@ In any query remember to add a prefix to the table names if you use one.
 
 -----------------------------------------------------
 
+Version 5.12, 27 January 2022, by MarkSuckerberg
+
+Removes Metacoin and Antag Token columns introduced in 5.7.2
+
+START TRANSACTION;
+
+ALTER TABLE `player`
+	DROP COLUMN `antag_tokens`,
+	DROP COLUMN `metacoins`;
+
+COMMIT;
+
+-----------------------------------------------------
+
 Version 5.11, 25 June 2021, by MarkSuckerberg
 
 Increases mapname max value size in the round table slightly to accomodate larger map names.
