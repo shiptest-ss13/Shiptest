@@ -10,10 +10,13 @@
 	/// Current activation state
 	VAR_PRIVATE/activated = FALSE
 
-/obj/machinery/computer/ship/proc/get_active_uis()
+/obj/machinery/computer/ship/proc/get_active_uis(living_only = TRUE)
 	PRIVATE_PROC(TRUE)
 	var/our_ref = "[REF(src)]"
-	return length(SStgui.open_uis_by_src[our_ref])
+	. = 0
+	for(var/datum/tgui/ui as anything in SStgui.open_uis_by_src[our_ref])
+		if(living_only && isliving(ui.user))
+			.++
 
 /obj/machinery/computer/ship/proc/update_state()
 	SHOULD_NOT_SLEEP(TRUE)
