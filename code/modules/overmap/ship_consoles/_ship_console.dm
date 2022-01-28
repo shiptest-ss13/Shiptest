@@ -15,8 +15,9 @@
 	var/our_ref = "[REF(src)]"
 	. = 0
 	for(var/datum/tgui/ui as anything in SStgui.open_uis_by_src[our_ref])
-		if(living_only && isliving(ui.user))
-			.++
+		if(living_only && !isliving(ui.user))
+			continue
+		.++
 
 /obj/machinery/computer/ship/proc/update_state()
 	SHOULD_NOT_SLEEP(TRUE)
