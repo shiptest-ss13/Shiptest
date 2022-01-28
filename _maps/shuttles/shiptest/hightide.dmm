@@ -29,8 +29,8 @@
 /turf/open/floor/plating,
 /area/ship/cargo)
 "bg" = (
-/obj/machinery/suit_storage_unit/mining/eva,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/suit_storage_unit/independent/mining/eva,
 /turf/open/floor/plating,
 /area/ship/cargo)
 "bn" = (
@@ -828,6 +828,11 @@
 "Eh" = (
 /turf/closed/wall/rust,
 /area/ship/maintenance/aft)
+"Fi" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/suit_storage_unit/independent/engineering,
+/turf/open/floor/plating,
+/area/ship/cargo)
 "Fn" = (
 /turf/closed/wall,
 /area/ship/cargo)
@@ -1652,7 +1657,7 @@ Uw
 Il
 Il
 Il
-bg
+Fi
 bg
 Fn
 np
