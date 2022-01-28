@@ -74,7 +74,7 @@
 /turf/open/floor/plating,
 /area/ship/cargo)
 "et" = (
-/obj/machinery/suit_storage_unit/standard_unit,
+/obj/machinery/suit_storage_unit/independent/mining/eva,
 /turf/open/floor/plating,
 /area/ship/cargo)
 "eC" = (
@@ -161,7 +161,7 @@
 	name = "Blast Door Control";
 	pixel_y = -24
 	},
-/obj/machinery/suit_storage_unit/standard_unit,
+/obj/machinery/suit_storage_unit/independent/engineering,
 /turf/open/floor/plating,
 /area/ship/cargo)
 "mB" = (
@@ -460,7 +460,7 @@
 /area/ship/cargo)
 "Ck" = (
 /turf/template_noop,
-/area/space)
+/area/template_noop)
 "CD" = (
 /obj/structure/cable{
 	icon_state = "4-8"
