@@ -35,21 +35,6 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
-"bq" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/borderfloor{
-	dir = 8
-	},
-/obj/effect/turf_decal/industrial/outline,
-/obj/machinery/suit_storage_unit/standard_unit{
-	helmet_type = /obj/item/clothing/head/helmet/space/syndicate;
-	suit_type = /obj/item/clothing/suit/space/syndicate
-	},
-/obj/machinery/light/small{
-	dir = 8
-	},
-/turf/open/floor/plasteel/tech/grid,
-/area/ship/hallway/central)
 "bJ" = (
 /obj/effect/turf_decal/industrial/outline,
 /obj/structure/closet/secure_closet{
@@ -261,10 +246,6 @@
 /obj/item/mining_scanner,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/storage)
-"ey" = (
-/obj/structure/sign/syndicate,
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ship/hallway/central)
 "fi" = (
 /obj/machinery/power/port_gen/pacman/super,
 /obj/effect/turf_decal/radiation/white,
@@ -1172,8 +1153,9 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/frame/machine{
-	anchored = 1
+/obj/structure/frame/computer{
+	anchored = 1;
+	dir = 8
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo/office)
@@ -1959,6 +1941,21 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/dorm)
+"IK" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/borderfloor{
+	dir = 8
+	},
+/obj/effect/turf_decal/industrial/outline,
+/obj/machinery/suit_storage_unit/standard_unit{
+	helmet_type = /obj/item/clothing/head/helmet/space/syndicate;
+	suit_type = /obj/item/clothing/suit/space/syndicate
+	},
+/obj/machinery/light/small{
+	dir = 8
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/hallway/central)
 "IO" = (
 /obj/effect/turf_decal/corner/bar{
 	dir = 1
@@ -2600,6 +2597,10 @@
 /obj/effect/decal/cleanable/oil/streak,
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
+"SF" = (
+/obj/structure/sign/syndicate,
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/hallway/central)
 "SJ" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
@@ -3458,8 +3459,8 @@ Zb
 "}
 (16,1,1) = {"
 cs
-bq
-ey
+IK
+SF
 ZR
 BB
 DO
