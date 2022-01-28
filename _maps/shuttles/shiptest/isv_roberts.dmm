@@ -21,28 +21,10 @@
 /obj/effect/decal/cleanable/greenglow,
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
-"cd" = (
-/obj/structure/window/fulltile,
-/obj/structure/grille,
-/turf/open/floor/plating,
-/area/ship/maintenance/port)
 "ch" = (
 /obj/structure/falsewall,
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
-"cN" = (
-/obj/effect/spawner/lootdrop/maintenance/four,
-/obj/structure/light_construct/small{
-	dir = 8
-	},
-/obj/machinery/power/terminal,
-/obj/structure/cable{
-	icon_state = "0-4"
-	},
-/mob/living/simple_animal/hostile/cockroach/glockroach,
-/obj/effect/decal/cleanable/cobweb,
-/turf/open/floor/plating,
-/area/ship/maintenance/central)
 "dZ" = (
 /obj/machinery/door/window/northright{
 	dir = 2
@@ -51,6 +33,12 @@
 /obj/item/reagent_containers/glass/bucket{
 	desc = "Better get scoopin'.";
 	name = "oil-soaked bucket"
+	},
+/mob/living/simple_animal/hostile/cockroach/glockroach,
+/obj/effect/spawner/lootdrop/maintenance/four,
+/obj/structure/cable,
+/obj/machinery/power/terminal{
+	dir = 8
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/central)
@@ -241,14 +229,16 @@
 /turf/closed/wall/rust,
 /area/ship/maintenance/aft)
 "qB" = (
-/obj/machinery/door/window/northright,
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
 /obj/machinery/power/smes/shuttle/precharged{
-	dir = 1
+	dir = 4
 	},
 /obj/structure/window,
+/obj/machinery/door/window/northright{
+	dir = 4
+	},
 /turf/open/floor/plating,
 /area/ship/maintenance/central)
 "ra" = (
@@ -434,7 +424,7 @@
 /obj/effect/decal/cleanable/glass,
 /mob/living/simple_animal/hostile/cockroach,
 /obj/structure/cable{
-	icon_state = "4-8"
+	icon_state = "2-4"
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/central)
@@ -518,11 +508,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/aft)
-"Hj" = (
-/obj/structure/window/fulltile,
-/obj/structure/grille,
-/turf/open/floor/plating,
-/area/ship/maintenance/fore)
 "Hm" = (
 /obj/effect/spawner/lootdrop/maintenance,
 /obj/effect/decal/cleanable/dirt,
@@ -899,7 +884,7 @@ Ck
 Ck
 Ck
 Ck
-cd
+Ns
 Ns
 iu
 Yo
@@ -908,7 +893,7 @@ pH
 tG
 RZ
 pH
-Po
+Ck
 Po
 zr
 zr
@@ -928,13 +913,13 @@ hi
 Hm
 pH
 zr
-cN
+zr
 qB
 zm
 Ck
 "}
 (4,1,1) = {"
-Hj
+ra
 Tp
 Oy
 Ns
@@ -1010,7 +995,7 @@ Bs
 zm
 "}
 (8,1,1) = {"
-Hj
+ra
 Oy
 Oy
 oC
