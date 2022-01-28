@@ -1306,7 +1306,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 		dat += "<center>[GetPositiveQuirkCount()] / [MAX_QUIRKS] max positive quirks<br>\
 		<b>Quirk balance remaining:</b> [GetQuirkBalance()]</center><br>"
 		for(var/quirk_index in SSquirks.quirks)
-			var/datum/quirk/quirk_instance = new SSquirks.quirks[quirk_index]
+			var/datum/quirk/quirk_datum = SSquirks.quirks[quirk_index]
+			var/datum/quirk/quirk_instance = new quirk_datum
 			var/has_quirk
 			var/quirk_cost = quirk_instance.value * -1
 			var/lock_reason = "This trait is unavailable."
@@ -1317,7 +1318,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			if(quirk_instance.mood_quirk && CONFIG_GET(flag/disable_human_mood))
 				lock_reason = "Mood is disabled."
 				quirk_conflict = TRUE
-			if(((quirk_instance.species_lock["type"] == "allowed") && !(pref_species.id in quirk_instance.species_lock)) || (quirk_instance.species_lock["type"] == "blocked" && (pref_species.id in quirk_instance.species_lock)))
+			if(quirk_instance.species_lock && (((quirk_instance.species_lock["type"] == "allowed") && !(pref_species.id in quirk_instance.species_lock)) || (quirk_instance.species_lock["type"] == "blocked" && (pref_species.id in quirk_instance.species_lock))))
 				lock_reason = "Quirk unavailable to your species."
 				quirk_conflict = TRUE
 			if(has_quirk)
@@ -1557,19 +1558,21 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				if(all_quirks)
 					var/balance
 					for(var/quirk_owned in all_quirks)
-						var/datum/quirk/quirk_owned_instance = new SSquirks.quirks[quirk_owned]
+						var/datum/quirk/quirk_owned_datum = SSquirks.quirks[quirk_owned]
+						var/datum/quirk/quirk_owned_instance = new quirk_owned_datum
 						balance -= quirk_owned_instance.value
-						if(((quirk_owned_instance.species_lock["type"] == "allowed") && !(pref_species.id in quirk_owned_instance.species_lock)) || (quirk_owned_instance.species_lock["type"] == "blocked" && (pref_species.id in quirk_owned_instance.species_lock)))
-							all_quirks ^= quirk_owned_instance.name
+						if(quirk_owned_instance.species_lock && (((quirk_owned_instance.species_lock["type"] == "allowed") && !(pref_species.id in quirk_owned_instance.species_lock)) || (quirk_owned_instance.species_lock["type"] == "blocked" && (pref_species.id in quirk_owned_instance.species_lock))))
+							all_quirks -= quirk_owned_instance.name
 							balance += quirk_owned_instance.value
 					while(balance < 0)
-						var/list/positive_quirks
+						var/list/positive_quirks = list()
 						for(var/quirk_owned in all_quirks)
-							var/datum/quirk/quirk_owned_instance = new SSquirks.quirks[quirk_owned]
+							var/datum/quirk/quirk_owned_datum = SSquirks.quirks[quirk_owned]
+							var/datum/quirk/quirk_owned_instance = new quirk_owned_datum
 							if(quirk_owned_instance.value > 0)
 								positive_quirks |= quirk_owned_instance
 						var/datum/quirk/positive_quirk = pick(positive_quirks)
-						all_quirks ^= positive_quirk.name
+						all_quirks -= positive_quirk.name
 						balance += positive_quirk.value
 				return 1
 
