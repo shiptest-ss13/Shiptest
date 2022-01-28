@@ -105,12 +105,14 @@
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/hallway/central)
 "cH" = (
+/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
+/obj/machinery/atmospherics/pipe/layer_manifold{
+	dir = 4
+	},
 /obj/machinery/door/poddoor/shutters{
 	id = "wreckerwindows";
 	name = "blast shutters"
 	},
-/obj/structure/grille,
-/obj/structure/window/plasma/reinforced/plastitanium,
 /turf/open/floor/plating,
 /area/ship/storage)
 "cV" = (
@@ -295,19 +297,9 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/hallway/central)
 "fL" = (
-/obj/structure/grille,
-/obj/structure/window/plasma/reinforced/plastitanium,
+/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /turf/open/floor/plating,
 /area/ship/cargo/office)
-"fR" = (
-/obj/structure/grille,
-/obj/machinery/door/poddoor/shutters{
-	id = "wreckerwindows";
-	name = "blast shutters"
-	},
-/obj/structure/window/plasma/reinforced/plastitanium,
-/turf/open/floor/plating,
-/area/ship/bridge)
 "fV" = (
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/bridge)
@@ -517,14 +509,10 @@
 /turf/open/floor/mineral/plastitanium,
 /area/ship/crew/dorm)
 "jt" = (
+/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor/shutters{
 	id = "wreckerwindows";
 	name = "blast shutters"
-	},
-/obj/structure/grille,
-/obj/structure/window/plasma/reinforced/plastitanium,
-/obj/machinery/atmospherics/pipe/layer_manifold{
-	dir = 4
 	},
 /turf/open/floor/plating,
 /area/ship/storage)
@@ -664,8 +652,7 @@
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/maintenance/fore)
 "mX" = (
-/obj/structure/grille,
-/obj/structure/window/plasma/reinforced/plastitanium,
+/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /turf/open/floor/plating,
 /area/ship/crew)
 "nn" = (
@@ -751,8 +738,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
 "oz" = (
-/obj/structure/grille,
-/obj/structure/window/plasma/reinforced/plastitanium,
+/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor/shutters{
 	id = "wreckerwindows";
 	name = "blast shutters"
@@ -2011,8 +1997,7 @@
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/maintenance/port)
 "JP" = (
-/obj/structure/grille,
-/obj/structure/window/plasma/reinforced/plastitanium,
+/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /turf/open/floor/plating,
 /area/ship/storage)
 "JS" = (
@@ -2510,8 +2495,7 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "QW" = (
-/obj/structure/grille,
-/obj/structure/window/plasma/reinforced/plastitanium,
+/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor/shutters{
 	id = "wreckerwindows";
 	name = "blast shutters"
@@ -2573,8 +2557,7 @@
 /turf/open/floor/carpet/red,
 /area/ship/crew/dorm)
 "Sg" = (
-/obj/structure/grille,
-/obj/structure/window/plasma/reinforced/plastitanium,
+/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor/shutters{
 	id = "wreckerwindows";
 	name = "blast shutters"
@@ -2672,11 +2655,10 @@
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "TR" = (
-/obj/structure/grille,
-/obj/structure/window/plasma/reinforced/plastitanium,
 /obj/structure/curtain/cloth/fancy{
 	name = "blood-red curtains"
 	},
+/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /turf/open/floor/plating,
 /area/ship/bridge)
 "TT" = (
@@ -2879,12 +2861,11 @@
 /turf/open/floor/carpet/red,
 /area/ship/crew/dorm)
 "Wd" = (
-/obj/structure/window/plasma/reinforced/plastitanium,
-/obj/structure/grille,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 1
 	},
+/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /turf/open/floor/plating,
 /area/ship/hallway/central)
 "Wp" = (
@@ -3078,12 +3059,11 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/crew)
 "YI" = (
-/obj/structure/window/plasma/reinforced/plastitanium,
-/obj/structure/grille,
 /obj/machinery/door/poddoor/shutters{
 	id = "wreckerwindows";
 	name = "blast shutters"
 	},
+/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /turf/open/floor/plating,
 /area/ship/hallway/central)
 "YV" = (
@@ -3658,7 +3638,7 @@ mL
 mL
 "}
 (26,1,1) = {"
-fR
+oz
 cf
 Ma
 ch
