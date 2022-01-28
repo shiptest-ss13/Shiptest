@@ -112,7 +112,7 @@
 				squash(user)
 		if(TOOL_WRENCH)
 			playsound(loc, 'sound/misc/splort.ogg', 50, TRUE, -1)
-			user.visible_message("<span class='notice'>[user] starts wackng \the [src].</span>", "<span class='notice'>You start wacking \the [src]...</span>", "<span class='hear'>You hear the sound of a plant being wacked violently.</span>")
+			user.visible_message("<span class='notice'>[user] starts whacking \the [src].</span>", "<span class='notice'>You start whacking \the [src]...</span>", "<span class='hear'>You hear the sound of a plant being whacked violently.</span>")
 			if(do_after(user, 17, target = src))
 				to_chat(user, "<span class='notice'>You smash [src]! Sadly there's nothing left of it other than the seeds and some junk.</span>")
 				seedify(src, 1, TRUE, FALSE, src, user)
