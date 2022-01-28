@@ -130,6 +130,10 @@
 /obj/machinery/power/apc/auto_name/north,
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
+"dc" = (
+/obj/structure/sign/syndicate,
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/hallway/central)
 "dh" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -635,6 +639,8 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/cargo)
 "lt" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/hallway/central)
 "lX" = (
@@ -1803,21 +1809,6 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
-"Fv" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/borderfloor{
-	dir = 8
-	},
-/obj/effect/turf_decal/industrial/outline,
-/obj/machinery/suit_storage_unit/standard_unit{
-	helmet_type = /obj/item/clothing/head/helmet/space/syndicate;
-	suit_type = /obj/item/clothing/suit/space/syndicate
-	},
-/obj/machinery/light/small{
-	dir = 8
-	},
-/turf/open/floor/plasteel/tech/grid,
-/area/ship/hallway/central)
 "FA" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -1890,10 +1881,6 @@
 "GV" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/crew/dorm)
-"HE" = (
-/obj/structure/sign/syndicate,
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ship/hallway/central)
 "HJ" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/security/armory)
@@ -2710,6 +2697,21 @@
 /obj/machinery/power/apc/auto_name/south,
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/central)
+"Uy" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/borderfloor{
+	dir = 8
+	},
+/obj/effect/turf_decal/industrial/outline,
+/obj/machinery/suit_storage_unit/standard_unit{
+	helmet_type = /obj/item/clothing/head/helmet/space/syndicate;
+	suit_type = /obj/item/clothing/suit/space/syndicate
+	},
+/obj/machinery/light/small{
+	dir = 8
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/hallway/central)
 "UI" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -3456,8 +3458,8 @@ Zb
 "}
 (16,1,1) = {"
 cs
-Fv
-HE
+Uy
+dc
 ZR
 BB
 DO
