@@ -79,10 +79,10 @@
 	if(!affecting) //missing limb? we select the first bodypart (you can never have zero, because of chest)
 		affecting = bodyparts[1]
 	SEND_SIGNAL(I, COMSIG_ITEM_ATTACK_ZONE, src, user, affecting)
-	send_item_attack_message(I, user, affecting.name)
+	send_item_attack_message(I, user, parse_zone(affecting.body_zone))
 	if(I.force)
 		apply_damage(I.force, I.damtype, affecting)
-		if(I.damtype == BRUTE && affecting.status == BODYPART_ORGANIC)
+		if(I.damtype == BRUTE && (IS_ORGANIC_LIMB(affecting)))
 			if(prob(33))
 				I.add_mob_blood(src)
 				var/turf/location = get_turf(src)
@@ -363,8 +363,7 @@
 		return
 
 	var/embeds = FALSE
-	for(var/X in bodyparts)
-		var/obj/item/bodypart/LB = X
+	for(var/obj/item/bodypart/LB as anything in bodyparts)
 		for(var/obj/item/I in LB.embedded_objects)
 			if(!embeds)
 				embeds = TRUE
