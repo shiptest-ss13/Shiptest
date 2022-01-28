@@ -663,7 +663,10 @@
 /turf/open/floor/plating,
 /area/ship/crew)
 "ry" = (
-/obj/machinery/mineral/ore_redemption,
+/obj/machinery/mineral/ore_redemption{
+	input_dir = 2;
+	output_dir = 1
+	},
 /turf/open/floor/plating,
 /area/ship/maintenance/central)
 "rM" = (
