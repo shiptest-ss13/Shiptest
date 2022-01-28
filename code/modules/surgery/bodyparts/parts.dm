@@ -10,10 +10,12 @@
 	px_y = 0
 	stam_damage_coeff = 1
 	max_stamina_damage = 120
+	is_dimorphic = TRUE
 	var/obj/item/cavity_item
+	var/acceptable_bodytype = BODYTYPE_HUMANOID
 
-/obj/item/bodypart/chest/can_dismember(obj/item/I)
-	if(owner.stat <= HARD_CRIT)
+/obj/item/bodypart/chest/can_dismember()
+	if(owner?.stat <= HARD_CRIT)
 		return FALSE
 	return ..()
 
@@ -30,6 +32,7 @@
 /obj/item/bodypart/chest/monkey
 	icon = 'icons/mob/animal_parts.dmi'
 	icon_state = "default_monkey_chest"
+	limb_id = SPECIES_MONKEY
 	animal_origin = MONKEY_BODYPART
 
 /obj/item/bodypart/chest/alien
@@ -133,6 +136,7 @@
 /obj/item/bodypart/l_arm/monkey
 	icon = 'icons/mob/animal_parts.dmi'
 	icon_state = "default_monkey_l_arm"
+	limb_id = SPECIES_MONKEY
 	animal_origin = MONKEY_BODYPART
 	px_x = -5
 	px_y = -3
@@ -233,6 +237,7 @@
 /obj/item/bodypart/r_arm/monkey
 	icon = 'icons/mob/animal_parts.dmi'
 	icon_state = "default_monkey_r_arm"
+	limb_id = SPECIES_MONKEY
 	animal_origin = MONKEY_BODYPART
 	px_x = 5
 	px_y = -3
@@ -320,13 +325,10 @@
 		owner.set_usable_legs(owner.usable_legs + 1)
 
 
-/obj/item/bodypart/l_leg/digitigrade
-	name = "left digitigrade leg"
-	use_digitigrade = FULL_DIGITIGRADE
-
 /obj/item/bodypart/l_leg/monkey
 	icon = 'icons/mob/animal_parts.dmi'
 	icon_state = "default_monkey_l_leg"
+	limb_id = SPECIES_MONKEY
 	animal_origin = MONKEY_BODYPART
 	px_y = 4
 
@@ -415,13 +417,10 @@
 		owner.set_usable_legs(owner.usable_legs + 1)
 
 
-/obj/item/bodypart/r_leg/digitigrade
-	name = "right digitigrade leg"
-	use_digitigrade = FULL_DIGITIGRADE
-
 /obj/item/bodypart/r_leg/monkey
 	icon = 'icons/mob/animal_parts.dmi'
 	icon_state = "default_monkey_r_leg"
+	limb_id = SPECIES_MONKEY
 	animal_origin = MONKEY_BODYPART
 	px_y = 4
 

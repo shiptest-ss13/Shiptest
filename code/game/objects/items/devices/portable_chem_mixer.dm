@@ -107,10 +107,13 @@
   *	* obj/item/reagent_containers/new_beaker	-	The new beaker that the user wants to put into the device
   */
 /obj/item/storage/portable_chem_mixer/proc/replace_beaker(mob/living/user, obj/item/reagent_containers/new_beaker)
-	if(!user)
+	if(!user || !can_interact(user))
 		return FALSE
 	if(beaker)
-		user.put_in_hands(beaker)
+		if(Adjacent(src, user) && !issiliconoradminghost(user))
+			user.put_in_hands(beaker)
+		else
+			beaker.forceMove(get_turf(src))
 		beaker = null
 	if(new_beaker)
 		beaker = new_beaker
