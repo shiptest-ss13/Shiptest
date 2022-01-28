@@ -340,8 +340,9 @@ There are several things that need to be remembered:
 	if(head_overlay)
 		remove_overlay(HEAD_LAYER)
 		if(OFFSET_HEAD in dna.species.offset_features)
-			head_overlay.pixel_x += dna.species.offset_features[OFFSET_HEAD][1]
-			head_overlay.pixel_y += dna.species.offset_features[OFFSET_HEAD][2]
+			//head_overlay.pixel_x += dna.species.offset_features[OFFSET_HEAD][1]
+			//head_overlay.pixel_y += dna.species.offset_features[OFFSET_HEAD][2]
+			head_overlay.filters = filter(type = "displace", size = 32, icon = icon('filter.dmi'))
 			overlays_standing[HEAD_LAYER] = head_overlay
 	apply_overlay(HEAD_LAYER)
 
