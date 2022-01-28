@@ -47,7 +47,7 @@
 	. = FALSE
 	if(simple_connect())
 		. = TRUE
-	if(recursive_connect())
+	if(!. && recursive_connect())
 		. = TRUE
 	if(!.)
 		say("Failed to establish connection to ship mainframe.")
