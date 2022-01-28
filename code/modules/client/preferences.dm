@@ -2263,7 +2263,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 		real_name = pref_species.random_name(gender)
 
 	if(roundstart_checks)
-		if(CONFIG_GET(flag/humans_need_surnames) && (pref_species.id == "human"))
+		if(CONFIG_GET(flag/humans_need_surnames) && (pref_species.id == SPECIES_HUMAN))
 			var/firstspace = findtext(real_name, " ")
 			var/name_length = length(real_name)
 			if(!firstspace)	//we need a surname
@@ -2283,11 +2283,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 		if(!initial(organ_eyes.eye_color))
 			organ_eyes.eye_color = eye_color
 		organ_eyes.old_eye_color = eye_color
-	character.hair_color = hair_color
-	character.facial_hair_color = facial_hair_color
 	character.skin_tone = skin_tone
-	character.hairstyle = hairstyle
-	character.facial_hairstyle = facial_hairstyle
 	character.underwear = underwear
 	character.underwear_color = underwear_color
 	character.undershirt = undershirt
@@ -2317,7 +2313,13 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 	character.dna.features = features.Copy()
 	character.set_species(chosen_species, icon_update = FALSE, pref_load = TRUE)
+	//Because of how set_species replaces all bodyparts with new ones, hair needs to be set AFTER species.
 	character.dna.real_name = character.real_name
+	character.hair_color = hair_color
+	character.facial_hair_color = facial_hair_color
+
+	character.hairstyle = hairstyle
+	character.facial_hairstyle = facial_hairstyle
 
 	if("tail_lizard" in pref_species.default_features)
 		character.dna.species.mutant_bodyparts |= "tail_lizard"
@@ -2325,7 +2327,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	if(icon_updates)
 		character.update_body()
 		character.update_hair()
-		character.update_body_parts()
+		character.update_body_parts(TRUE)
 
 /datum/preferences/proc/get_default_name(name_id)
 	switch(name_id)

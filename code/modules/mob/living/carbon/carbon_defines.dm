@@ -47,21 +47,19 @@
 
 	var/tinttotal = 0	/// Total level of visualy impairing items
 
-	///Gets filled up in [create_bodyparts()][/mob/living/carbon/proc/create_bodyparts]
+	var/list/icon_render_keys = list()
 	var/list/bodyparts = list(
 		/obj/item/bodypart/chest,
 		/obj/item/bodypart/head,
 		/obj/item/bodypart/l_arm,
 		/obj/item/bodypart/r_arm,
 		/obj/item/bodypart/r_leg,
-		/obj/item/bodypart/l_leg,
-		)
+		/obj/item/bodypart/l_leg
+	)
 
 	var/list/hand_bodyparts = list() ///a collection of arms (or actually whatever the fug /bodyparts you monsters use to wreck my systems)
 
-	var/icon_render_key = ""
 	var/static/list/limb_icon_cache = list()
-	var/has_bones = FALSE
 
 	//halucination vars
 	var/image/halimage
