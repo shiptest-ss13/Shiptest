@@ -35,6 +35,21 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
+"bq" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/borderfloor{
+	dir = 8
+	},
+/obj/effect/turf_decal/industrial/outline,
+/obj/machinery/suit_storage_unit/standard_unit{
+	helmet_type = /obj/item/clothing/head/helmet/space/syndicate;
+	suit_type = /obj/item/clothing/suit/space/syndicate
+	},
+/obj/machinery/light/small{
+	dir = 8
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/hallway/central)
 "bJ" = (
 /obj/effect/turf_decal/industrial/outline,
 /obj/structure/closet/secure_closet{
@@ -130,10 +145,6 @@
 /obj/machinery/power/apc/auto_name/north,
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
-"dc" = (
-/obj/structure/sign/syndicate,
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ship/hallway/central)
 "dh" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -250,6 +261,10 @@
 /obj/item/mining_scanner,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/storage)
+"ey" = (
+/obj/structure/sign/syndicate,
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/hallway/central)
 "fi" = (
 /obj/machinery/power/port_gen/pacman/super,
 /obj/effect/turf_decal/radiation/white,
@@ -1345,7 +1360,7 @@
 /area/ship/storage)
 "xQ" = (
 /obj/structure/chair/sofa/corner{
-	dir = 1
+	dir = 4
 	},
 /obj/machinery/power/apc/auto_name/west,
 /obj/structure/cable{
@@ -2697,21 +2712,6 @@
 /obj/machinery/power/apc/auto_name/south,
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/central)
-"Uy" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/borderfloor{
-	dir = 8
-	},
-/obj/effect/turf_decal/industrial/outline,
-/obj/machinery/suit_storage_unit/standard_unit{
-	helmet_type = /obj/item/clothing/head/helmet/space/syndicate;
-	suit_type = /obj/item/clothing/suit/space/syndicate
-	},
-/obj/machinery/light/small{
-	dir = 8
-	},
-/turf/open/floor/plasteel/tech/grid,
-/area/ship/hallway/central)
 "UI" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -3458,8 +3458,8 @@ Zb
 "}
 (16,1,1) = {"
 cs
-Uy
-dc
+bq
+ey
 ZR
 BB
 DO
