@@ -34,3 +34,9 @@
 	id = "demonlab"
 	description = "Some abandoned research outpost"
 	suffix = "icemoon_demonlab.dmm"
+
+/datum/map_template/ruin/icemoon/corpreject
+	name = "NT Security Solutions Site Gamma"
+	id = "corpreject"
+	description = "Nanotrasen Corporate Security Solutions vault site Gamma."
+	suffix = "icemoon_surface_corporate_rejects.dmm"
