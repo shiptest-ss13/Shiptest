@@ -74,7 +74,7 @@
 	icon_state = "co9mm-8"
 	ammo_type = /obj/item/ammo_casing/c9mm
 	caliber = "9mm"
-	max_ammo = 8
+	max_ammo = 10
 
 /obj/item/ammo_box/magazine/co9mm/fire
 	name = "pistol magazine (9mm incendiary)"
