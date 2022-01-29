@@ -51,6 +51,7 @@
 
 	//handle DNA and other attributes
 	dna.transfer_identity(O)
+	O.set_species(/datum/species/monkey)
 	O.updateappearance(icon_update=0)
 
 	if(tr_flags & TR_KEEPSE)
@@ -326,6 +327,11 @@
 			for(var/datum/action/changeling/humanform/HF in changeling.purchasedpowers)
 				changeling.purchasedpowers -= HF
 				changeling.regain_powers()
+
+	if(O.dna.species && !istype(O.dna.species, /datum/species/monkey))
+		O.set_species(O.dna.species)
+	else
+		O.set_species(/datum/species/human)
 
 	O.a_intent = INTENT_HELP
 	if (tr_flags & TR_DEFAULTMSG)

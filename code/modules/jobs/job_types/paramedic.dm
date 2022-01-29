@@ -78,3 +78,11 @@
 	uniform = /obj/item/clothing/under/syndicate/gorlex
 	alt_uniform = null
 	shoes = /obj/item/clothing/shoes/jackboots
+
+/datum/outfit/job/paramedic/syndicate
+	name = "Field Medic (Cybersun Industries)"
+
+	uniform = /obj/item/clothing/under/syndicate/medic
+	head = /obj/item/clothing/head/soft/cybersun
+	shoes = /obj/item/clothing/shoes/combat
+	suit = /obj/item/clothing/suit/toggle/labcoat/raincoat
