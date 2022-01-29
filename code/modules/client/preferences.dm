@@ -87,6 +87,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/list/randomise = list(RANDOM_UNDERWEAR = TRUE, RANDOM_UNDERWEAR_COLOR = TRUE, RANDOM_UNDERSHIRT = TRUE, RANDOM_SOCKS = TRUE, RANDOM_BACKPACK = TRUE, RANDOM_JUMPSUIT_STYLE = TRUE, RANDOM_EXOWEAR_STYLE = TRUE, RANDOM_HAIRSTYLE = TRUE, RANDOM_HAIR_COLOR = TRUE, RANDOM_FACIAL_HAIRSTYLE = TRUE, RANDOM_FACIAL_HAIR_COLOR = TRUE, RANDOM_SKIN_TONE = TRUE, RANDOM_EYE_COLOR = TRUE)
 	var/list/friendlyGenders = list("Male" = "male", "Female" = "female", "Other" = "plural")
 	var/phobia = "spiders"
+	var/prosthetic_limbs = list(BODY_ZONE_L_ARM = "normal", BODY_ZONE_R_ARM = "normal", BODY_ZONE_L_LEG = "normal", BODY_ZONE_R_LEG = "normal")
 	var/list/alt_titles_preferences = list()
 
 	var/list/custom_names = list()
@@ -688,6 +689,11 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				dat += "<h3>Phobia</h3>"
 
 				dat += "<a href='?_src_=prefs;preference=phobia;task=input'>[phobia]</a><BR>"
+
+			if("Prosthetic Limb" in all_quirks)
+				dat += "<h3>Prosthetic Limb</h3>"
+
+				dat += "<a href='?_src_=prefs;preference=limbs;task=input'>Limb Selection</a><BR>"
 
 			if(CONFIG_GET(flag/join_with_mutant_humans))
 
@@ -1945,6 +1951,11 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					var/phobiaType = input(user, "What are you scared of?", "Character Preference", phobia) as null|anything in SStraumas.phobia_types
 					if(phobiaType)
 						phobia = phobiaType
+
+				if("limbs")
+					var/limb = input(user, "Which limb would you like to modify?", "Character Preference", BODY_ZONE_L_ARM) as anything in prosthetic_limbs
+					var/status = input(user, "You are modifying [limb], what should it be changed to?", "Character Preference", "normal") in list("normal","prosthetic","amputated")
+					prosthetic_limbs[limb] = status
 
 				if ("max_chat_length")
 					var/desiredlength = input(user, "Choose the max character length of shown Runechat messages. Valid range is 1 to [CHAT_MESSAGE_MAX_LENGTH] (default: [initial(max_chat_length)]))", "Character Preference", max_chat_length)  as null|num

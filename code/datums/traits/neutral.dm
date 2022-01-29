@@ -224,3 +224,39 @@
 	SIGNAL_HANDLER
 
 	SEND_SIGNAL(quirk_holder, COMSIG_ADD_MOOD_EVENT, "bad_hair_day", /datum/mood_event/bald)
+
+/datum/quirk/prosthetic_limb
+	name = "Prosthetic Limb"
+	desc = "An accident caused you to lose one of your limbs. Because of this, you now have a prosthetic or amputated limb! (Go to appearance to customize)"
+	value = 0
+	medical_record_text = "During physical examination, patient was found to have a missing limb."
+
+/datum/quirk/prosthetic_limb/on_spawn()
+	var/mob/living/carbon/human/H = quirk_holder
+	var/limb_list = H.client?.prefs.prosthetic_limbs
+	for(var/L in limb_list)
+		var/obj/item/bodypart/old_part = H.get_bodypart(L)
+		switch(limb_list[L])
+			if("normal")
+				continue
+			if("amputated")
+				old_part.drop_limb()
+				qdel(old_part)
+			if("prosthetic")
+				var/obj/item/bodypart/prosthetic
+				switch(L)
+					if(BODY_ZONE_L_ARM)
+						prosthetic = new/obj/item/bodypart/l_arm/robot/surplus(quirk_holder)
+					if(BODY_ZONE_R_ARM)
+						prosthetic = new/obj/item/bodypart/r_arm/robot/surplus(quirk_holder)
+					if(BODY_ZONE_L_LEG)
+						prosthetic = new/obj/item/bodypart/l_leg/robot/surplus(quirk_holder)
+					if(BODY_ZONE_R_LEG)
+						prosthetic = new/obj/item/bodypart/r_leg/robot/surplus(quirk_holder)
+				prosthetic.replace_limb(H)
+				qdel(old_part)
+	H.regenerate_icons()
+
+/datum/quirk/prosthetic_limb/post_add()
+	to_chat(quirk_holder, "<span class='boldannounce'>Some of your limbs have been replaced with a surplus prosthetic. They are fragile and will easily come apart under duress. Additionally, \
+	you need to use a welding tool and cables to repair them, instead of bruise packs and ointment.</span>")
