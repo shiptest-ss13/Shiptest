@@ -89,6 +89,7 @@
 /obj/item/hand_tele,
 /obj/item/stack/sheet/mineral/adamantine,
 /obj/item/stack/sheet/mineral/adamantine,
+/obj/item/organ/lungs/cybernetic/tier3,
 /turf/open/floor/plating/asteroid/snow/icemoon,
 /area/ruin/unpowered/corprejectrooms)
 "cP" = (
@@ -372,9 +373,10 @@
 /turf/open/floor/vault,
 /area/ruin/unpowered/corprejectrooms)
 "jy" = (
-/mob/living/simple_animal/hostile/cockroach/glockroach{
+/mob/living/simple_animal/slaughter{
 	faction = list("DeserterNT");
-	name = "Asshole Glockroach"
+	name = "Jack";
+	real_name = "Glorious Jonathon"
 	},
 /turf/open/floor/vault,
 /area/ruin/unpowered/corprejectvault)
@@ -1240,7 +1242,9 @@
 "CS" = (
 /obj/effect/decal/cleanable/cobweb,
 /obj/structure/filingcabinet,
-/obj/item/documents/nanotrasen,
+/obj/item/folder/documents{
+	name = "folder- 'EGREGORE PROJECT'"
+	},
 /turf/open/floor/vault,
 /area/ruin/unpowered/corprejectvault)
 "CU" = (
@@ -1338,9 +1342,9 @@
 /area/ruin/unpowered/corprejectrooms)
 "En" = (
 /obj/item/gun/ballistic/automatic/proto,
-/obj/item/gun/ballistic/automatic/sniper_rifle,
 /obj/structure/rack,
 /obj/item/firing_pin,
+/obj/item/gun/energy/beam_rifle,
 /turf/open/floor/vault,
 /area/ruin/unpowered/corprejectvault)
 "Er" = (
@@ -1612,13 +1616,12 @@
 /area/ruin/unpowered/corprejectrooms)
 "Kj" = (
 /obj/structure/rack,
-/obj/item/ammo_box/magazine/sniper_rounds,
 /obj/item/ammo_box/magazine/smgm9mm/ap,
 /obj/item/ammo_box/magazine/smgm9mm/fire,
-/obj/item/ammo_box/magazine/sniper_rounds/penetrator,
 /obj/machinery/light/small{
 	dir = 4
 	},
+/obj/item/stock_parts/cell/gun/upgraded,
 /turf/open/floor/vault,
 /area/ruin/unpowered/corprejectvault)
 "Kk" = (
@@ -1643,8 +1646,10 @@
 /turf/open/floor/vault,
 /area/ruin/unpowered/corprejectvault)
 "Lo" = (
-/obj/effect/decal/cleanable/insectguts{
-	name = "Glockroach Jr."
+/mob/living/simple_animal/slaughter/laughter{
+	faction = list("DeserterNT");
+	name = "Jill";
+	real_name = "Funny Janie"
 	},
 /turf/open/floor/vault,
 /area/ruin/unpowered/corprejectvault)
@@ -1704,6 +1709,8 @@
 /obj/item/stack/sheet/mineral/gold/twenty,
 /obj/item/stack/sheet/mineral/runite/ten,
 /obj/item/toy/figure/captain,
+/obj/item/slimepotion/slime/sentience,
+/obj/item/organ/cyberimp/brain/anti_stun,
 /turf/open/floor/vault,
 /area/ruin/unpowered/corprejectvault)
 "LY" = (
@@ -2099,10 +2106,6 @@
 "TN" = (
 /obj/structure/cable/blue{
 	icon_state = "1-2"
-	},
-/mob/living/simple_animal/hostile/cockroach/glockroach{
-	faction = list("DeserterNT");
-	name = "Ms Asshole Glockroach"
 	},
 /turf/open/floor/vault,
 /area/ruin/unpowered/corprejectvault)
