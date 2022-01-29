@@ -1953,9 +1953,10 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						phobia = phobiaType
 
 				if("limbs")
-					var/limb = input(user, "Which limb would you like to modify?", "Character Preference", BODY_ZONE_L_ARM) as anything in prosthetic_limbs
-					var/status = input(user, "You are modifying [limb], what should it be changed to?", "Character Preference", "normal") in list("normal","prosthetic","amputated")
-					prosthetic_limbs[limb] = status
+					var/limb = input(user, "Which limb would you like to modify?", "Character Preference", BODY_ZONE_L_ARM) as null|anything in prosthetic_limbs
+					var/status = input(user, "You are modifying [limb], what should it be changed to?", "Character Preference", "normal") as null|text in list("normal","prosthetic","amputated")
+					if(status && limb)
+						prosthetic_limbs[limb] = status
 
 				if ("max_chat_length")
 					var/desiredlength = input(user, "Choose the max character length of shown Runechat messages. Valid range is 1 to [CHAT_MESSAGE_MAX_LENGTH] (default: [initial(max_chat_length)]))", "Character Preference", max_chat_length)  as null|num
