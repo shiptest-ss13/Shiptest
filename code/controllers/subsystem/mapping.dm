@@ -230,7 +230,8 @@ SUBSYSTEM_DEF(mapping)
 		if(isnum(data["cost"]))
 			S.cost = data["cost"]
 			ship_purchase_list["[S.name] ([S.cost] [CONFIG_GET(string/metacurrency_name)]s)"] = S
-
+		if(isnum(data["limit"]))
+			S.limit = data["limit"]
 		shuttle_templates[S.file_name] = S
 		map_templates[S.file_name] = S
 		if(isnum(data["roundstart"]) && data["roundstart"])
