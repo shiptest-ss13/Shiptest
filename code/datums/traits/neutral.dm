@@ -244,15 +244,12 @@
 				qdel(old_part)
 			if("prosthetic")
 				var/obj/item/bodypart/prosthetic
-				switch(L)
-					if(BODY_ZONE_L_ARM)
-						prosthetic = new/obj/item/bodypart/l_arm/robot/surplus(quirk_holder)
-					if(BODY_ZONE_R_ARM)
-						prosthetic = new/obj/item/bodypart/r_arm/robot/surplus(quirk_holder)
-					if(BODY_ZONE_L_LEG)
-						prosthetic = new/obj/item/bodypart/l_leg/robot/surplus(quirk_holder)
-					if(BODY_ZONE_R_LEG)
-						prosthetic = new/obj/item/bodypart/r_leg/robot/surplus(quirk_holder)
+				var/prosthetic_type = "surplus"
+				switch(H.client?.prefs.pref_species.type)  // Can be expanded as more species prosthetics are added
+					if(/datum/species/kepori)
+						prosthetic_type = "kepori"
+				var/typepath = text2path("/obj/item/bodypart/[L]/robot/[prosthetic_type]") // Dynamically makes the path so I don't have to type this shit out
+				prosthetic = new typepath(H)
 				prosthetic.replace_limb(H)
 				qdel(old_part)
 	H.regenerate_icons()

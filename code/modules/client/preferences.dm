@@ -1954,7 +1954,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 				if("limbs")
 					var/limb = input(user, "Which limb would you like to modify?", "Character Preference", BODY_ZONE_L_ARM) as null|anything in prosthetic_limbs
-					var/status = input(user, "You are modifying [limb], what should it be changed to?", "Character Preference", "normal") as null|text in list("normal","prosthetic","amputated")
+					var/status = input(user, "You are modifying [limb], what should it be changed to?", "Character Preference", prosthetic_limbs[limb]) as null|anything in list("normal","prosthetic","amputated")
 					if(status && limb)
 						prosthetic_limbs[limb] = status
 
