@@ -1,0 +1,6 @@
+author: MarkSuckerberg
+delete-after: true
+changes:
+  - bugfix: Custom shuttles can be built again.
+  - admin: setup_shuttle_ship() actually works to fix ships missing their overmap
+      token once again.
