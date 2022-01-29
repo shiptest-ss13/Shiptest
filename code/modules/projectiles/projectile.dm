@@ -434,8 +434,8 @@
 		var/mob/living/M = pick(considering)
 		return M.lowest_buckled_mob()
 	considering.len = 0
-	// 3. objs/mechs
-	possible = typecache_filter_list(T, GLOB.typecache_machine_or_structure) + typecache_filter_list(T, typecacheof(/obj/mecha))	// because why are items ever dense?
+	// 3. objs
+	possible = typecache_filter_list(T, GLOB.typecache_machine_or_structure)	// because why are items ever dense?
 	for(var/i in possible)
 		if(!can_hit_target(i, i == original, TRUE))
 			continue
