@@ -175,7 +175,7 @@
 	.["mapRef"] = current_ship.map_name
 	.["shipInfo"] = list(
 		name = current_ship.name,
-		class = current_ship.source_template.name,
+		class = current_ship.source_template?.name,
 		mass = current_ship.mass,
 		sensor_range = current_ship.sensor_range
 	)

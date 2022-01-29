@@ -35,7 +35,7 @@
 	var/obj/structure/overmap/docked
 	///The docking port of the linked shuttle
 	var/obj/docking_port/mobile/shuttle
-	///The map template the shuttle was spawned from, if it was indeed created from a template
+	///The map template the shuttle was spawned from, if it was indeed created from a template. CAN BE NULL (ex. custom-built ships).
 	var/datum/map_template/shuttle/source_template
 
 /obj/structure/overmap/ship/simulated/Initialize(mapload, obj/docking_port/mobile/_shuttle, datum/map_template/shuttle/_source_template)
