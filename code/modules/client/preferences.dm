@@ -1318,7 +1318,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			if(quirk_instance.mood_quirk && CONFIG_GET(flag/disable_human_mood))
 				lock_reason = "Mood is disabled."
 				quirk_conflict = TRUE
-			if(quirk_instance.species_lock && (((quirk_instance.species_lock["type"] == "allowed") && !(pref_species.id in quirk_instance.species_lock)) || (quirk_instance.species_lock["type"] == "blocked" && (pref_species.id in quirk_instance.species_lock))))
+			if(((quirk_instance.species_lock["type"] == "allowed") && !(pref_species.id in quirk_instance.species_lock)) || (quirk_instance.species_lock["type"] == "blocked" && (pref_species.id in quirk_instance.species_lock)))
 				lock_reason = "Quirk unavailable to your species."
 				quirk_conflict = TRUE
 			if(has_quirk)
@@ -1342,6 +1342,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				else
 					dat += "<a href='?_src_=prefs;preference=trait;task=update;trait=[quirk_instance.name]'>[has_quirk ? "Remove" : "Take"] ([quirk_cost] pts.)</a> \
 					<font color='[font_color]'>[quirk_instance.name]</font> - [quirk_instance.desc]<br>"
+			qdel(quirk_instance)
 		dat += "<br><center><a href='?_src_=prefs;preference=trait;task=reset'>Reset Quirks</a></center>"
 
 	var/datum/browser/popup = new(user, "mob_occupation", "<div align='center'>Quirk Preferences</div>", 900, 600) //no reason not to reuse the occupation window, as it's cleaner that way
@@ -1561,19 +1562,20 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						var/datum/quirk/quirk_owned_datum = SSquirks.quirks[quirk_owned]
 						var/datum/quirk/quirk_owned_instance = new quirk_owned_datum
 						balance -= quirk_owned_instance.value
-						if(quirk_owned_instance.species_lock && (((quirk_owned_instance.species_lock["type"] == "allowed") && !(pref_species.id in quirk_owned_instance.species_lock)) || (quirk_owned_instance.species_lock["type"] == "blocked" && (pref_species.id in quirk_owned_instance.species_lock))))
+						if(((quirk_owned_instance.species_lock["type"] == "allowed") && !(pref_species.id in quirk_owned_instance.species_lock)) || (quirk_owned_instance.species_lock["type"] == "blocked" && (pref_species.id in quirk_owned_instance.species_lock)))
 							all_quirks -= quirk_owned_instance.name
 							balance += quirk_owned_instance.value
+						qdel(quirk_owned_instance)
 					while(balance < 0)
 						var/list/positive_quirks = list()
 						for(var/quirk_owned in all_quirks)
 							var/datum/quirk/quirk_owned_datum = SSquirks.quirks[quirk_owned]
-							var/datum/quirk/quirk_owned_instance = new quirk_owned_datum
-							if(quirk_owned_instance.value > 0)
-								positive_quirks |= quirk_owned_instance
+							var/quirk_value = initial(quirk_owned_datum.value)
+							if(quirk_value > 0)
+								positive_quirks |= quirk_owned_datum
 						var/datum/quirk/positive_quirk = pick(positive_quirks)
-						all_quirks -= positive_quirk.name
-						balance += positive_quirk.value
+						all_quirks -= initial(positive_quirk.name)
+						balance += initial(positive_quirk.value)
 				return 1
 
 			if(href_list["lookatspecies"])
