@@ -38,7 +38,7 @@
 /datum/outfit/job/botanist/syndicate/nsv
 	name = "Botanist-Chemist (NSV-M)"
 
-	uniform = /obj/item/clothing/under/syndicate/skirt
+	uniform = /obj/item/clothing/under/syndicate
 	id = /obj/item/card/id/syndicate_command/crew_id
 	shoes = /obj/item/clothing/shoes/jackboots
 	ears = /obj/item/radio/headset/syndicate/alt

@@ -91,7 +91,7 @@
 /datum/outfit/job/cmo/syndicate/nsv
 	name = "Medical Director (NSV-M)"
 
-	uniform = /obj/item/clothing/under/syndicate/skirt
+	uniform = /obj/item/clothing/under/syndicate
 	ears = /obj/item/radio/headset/syndicate/alt/leader
 	id = /obj/item/card/id/syndicate_command/captain_id
 	shoes = /obj/item/clothing/shoes/jackboots
