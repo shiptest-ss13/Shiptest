@@ -206,6 +206,9 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	///For custom overrides for species ass images
 	var/icon/ass_image
 
+	// Does this species have unique robotic limbs? (Used for prosthesis quirk.)
+	var/unique_prosthesis = FALSE
+
 ///////////
 // PROCS //
 ///////////

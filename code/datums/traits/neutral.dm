@@ -244,13 +244,14 @@
 				qdel(old_part)
 			if("prosthetic")
 				var/obj/item/bodypart/prosthetic
-				var/prosthetic_type = "surplus"
-				switch(H.client?.prefs.pref_species.type)  // Can be expanded as more species prosthetics are added
-					if(/datum/species/kepori)
-						prosthetic_type = "kepori"
-				var/typepath = text2path("/obj/item/bodypart/[L]/robot/[prosthetic_type]") // Dynamically makes the path so I don't have to type this shit out
+				var/datum/species/client_species = H.client?.prefs.pref_species
+				var/typepath
+				if(client_species.unique_prosthesis) // Checks for if the species has a unique limb type, otherwise defaults to human
+					typepath = text2path("/obj/item/bodypart/[L]/robot/[client_species.id]")
+				else
+					typepath = text2path("/obj/item/bodypart/[L]/robot/surplus")
 				if(!ispath(typepath))
-					to_chat(H, "<span class='warning'>Problem initializing [L] prosthetic for species [H.client?.prefs.pref_species], it will be a normal limb. Make a bug report on github!</span>")
+					to_chat(H, "<span class='warning'>Problem initializing [L] prosthetic for species [client_species], it will be a normal limb. Make a bug report on github!</span>")
 					continue
 				prosthetic = new typepath(H)
 				prosthetic.replace_limb(H)
