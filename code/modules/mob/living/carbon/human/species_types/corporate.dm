@@ -1,6 +1,6 @@
 /datum/species/corporate
 	name = "Corporate Agent"
-	id = "agent"
+	id = SPECIES_CORPORATE
 	hair_alpha = 0
 	say_mod = "declares"
 	speedmod = -2//Fast
@@ -13,8 +13,9 @@
 	punchstunthreshold = 25
 	attack_verb = "smash"
 	attack_sound = 'sound/weapons/resonator_blast.ogg'
-	use_skintones = 0
+	use_skintones = FALSE
 	species_traits = list(NOBLOOD,EYECOLOR)
 	inherent_traits = list(TRAIT_RADIMMUNE,TRAIT_GENELESS,TRAIT_VIRUSIMMUNE,TRAIT_PIERCEIMMUNE,TRAIT_NODISMEMBER,TRAIT_NOLIMBDISABLE,TRAIT_NOHUNGER)
 	sexes = 0
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | ERT_SPAWN
+	examine_limb_id = SPECIES_HUMAN

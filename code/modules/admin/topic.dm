@@ -2294,7 +2294,7 @@
 		else
 			for(var/thing in GLOB.allfaxes)
 				var/obj/machinery/photocopier/faxmachine/F = thing
-				if(F.z in SSmapping.levels_by_trait(ZTRAIT_STATION))
+				if(F.z in SSmapping.virtual_levels_by_trait(ZTRAIT_STATION))
 					addtimer(CALLBACK(src, .proc/handle_sendall, F, P), 0)
 
 		var/datum/fax/admin/A = new /datum/fax/admin()

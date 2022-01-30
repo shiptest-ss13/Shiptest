@@ -408,7 +408,7 @@ Possible to do for anyone motivated enough:
 		Hologram.set_anchored(TRUE)//So space wind cannot drag it.
 		Hologram.name = "[user.name] (Hologram)"//If someone decides to right click.
 		Hologram.set_light(2)	//hologram lighting
-		move_hologram()
+		move_hologram(user, loc)
 
 		set_holo(user, Hologram)
 		visible_message("<span class='notice'>A holographic image of [user] flickers to life before your eyes!</span>")
@@ -509,7 +509,7 @@ For the other part of the code, check silicon say.dm. Particularly robot talk.*/
   * *Areacheck for things that need to get into other areas, such as emergency holograms
   */
 /obj/machinery/holopad/proc/validate_location(turf/T, check_los = FALSE, areacheck = TRUE)
-	if(T.get_virtual_z_level() == get_virtual_z_level() && get_dist(T, src) <= holo_range && (T.loc == get_area(src) || !areacheck) && anchored)
+	if(T.virtual_z() == virtual_z() && get_dist(T, src) <= holo_range && (T.loc == get_area(src) || !areacheck) && anchored)
 		return TRUE
 	else
 		return FALSE
