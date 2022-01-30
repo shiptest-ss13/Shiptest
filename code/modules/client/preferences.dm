@@ -708,7 +708,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					if(prosthetic_limbs[index] != "normal")
 						display_list += "[bodypart_name]: [prosthetic_limbs[index]]"
 					dat += "<a href='?_src_=prefs;preference=limbs;customize_limb=[index]'>[bodypart_name]</a>"
-				dat += "<b>Current Modifications:</b> [display_list.len ? display_list.Join("; ") : "None"]<BR>"
+				dat += "<b>Current Modifications:</b> [length(display_list) ? display_list.Join("; ") : "None"]<BR>"
 
 			if(CONFIG_GET(flag/join_with_mutant_humans))
 
