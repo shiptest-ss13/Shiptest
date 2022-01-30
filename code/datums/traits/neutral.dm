@@ -249,6 +249,9 @@
 					if(/datum/species/kepori)
 						prosthetic_type = "kepori"
 				var/typepath = text2path("/obj/item/bodypart/[L]/robot/[prosthetic_type]") // Dynamically makes the path so I don't have to type this shit out
+				if(!ispath(typepath))
+					to_chat(H, "<span class='warning'>Problem initializing [L] prosthetic for species [H.client?.prefs.pref_species], it will be a normal limb. Make a bug report on github!</span>")
+					continue
 				prosthetic = new typepath(H)
 				prosthetic.replace_limb(H)
 				qdel(old_part)
