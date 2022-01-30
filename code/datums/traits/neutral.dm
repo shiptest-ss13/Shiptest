@@ -245,6 +245,9 @@
 			if("prosthetic")
 				var/obj/item/bodypart/prosthetic
 				var/datum/species/client_species = H.client?.prefs.pref_species
+				if(!client_species)
+					message_admins("[key_name(H)]'s prosthetic [L] failed to apply due to a missing client.")
+					continue
 				var/typepath
 				if(client_species.unique_prosthesis) // Checks for if the species has a unique limb type, otherwise defaults to human
 					typepath = text2path("/obj/item/bodypart/[L]/robot/[client_species.id]")
