@@ -87,10 +87,11 @@ SUBSYSTEM_DEF(overmap)
   * * Shuttle: The docking port to create an overmap object for
   */
 /datum/controller/subsystem/overmap/proc/setup_shuttle_ship(obj/docking_port/mobile/shuttle, datum/map_template/shuttle/source_template)
-	var/docked_object = shuttle.current_ship
+	var/docked_object = get_overmap_object_by_location(shuttle)
 	var/obj/structure/overmap/ship/simulated/new_ship
 	if(docked_object)
 		new_ship = new(docked_object, shuttle, source_template)
+		new_ship.state = OVERMAP_SHIP_IDLE
 	else if(is_reserved_level(shuttle))
 		new_ship = new(get_unused_overmap_square(), shuttle, source_template)
 		new_ship.state = OVERMAP_SHIP_FLYING
@@ -170,7 +171,7 @@ SUBSYSTEM_DEF(overmap)
 /datum/controller/subsystem/overmap/proc/spawn_initial_ships()
 	var/datum/map_template/shuttle/selected_template = SSmapping.maplist[pick(SSmapping.maplist)]
 	INIT_ANNOUNCE("Loading [selected_template.name]...")
-	SSshuttle.action_load(selected_template)
+	SSshuttle.load_template(selected_template)
 	if(SSdbcore.Connect())
 		var/datum/DBQuery/query_round_map_name = SSdbcore.NewQuery({"
 			UPDATE [format_table_name("round")] SET map_name = :map_name WHERE id = :round_id
@@ -344,6 +345,17 @@ SUBSYSTEM_DEF(overmap)
 		if (dist < max_range && dist < ret_dist)
 			. = T
 			ret_dist = dist
+
+/**
+  * Gets the parent overmap object (e.g. the planet the atom is on) for a given atom.
+  * * source - The object you want to get the corresponding parent overmap object for.
+  */
+/datum/controller/subsystem/overmap/proc/get_overmap_object_by_location(atom/source)
+	for(var/O in overmap_objects)
+		if(istype(O, /obj/structure/overmap/dynamic))
+			var/obj/structure/overmap/dynamic/D = O
+			if(D.mapzone?.is_in_bounds(source))
+				return D
 
 /datum/controller/subsystem/overmap/Recover()
 	if(istype(SSovermap.events))

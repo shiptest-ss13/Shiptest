@@ -4,6 +4,7 @@
 	icon_state = "pipe_d"
 	desc = "Dispenses countless types of pipes. Very useful if you need pipes."
 	density = TRUE
+	circuit = /obj/item/circuitboard/machine/pipedispenser
 	interaction_flags_machine = INTERACT_MACHINE_ALLOW_SILICON | INTERACT_MACHINE_OPEN_SILICON | INTERACT_MACHINE_OFFLINE
 	var/wait = 0
 	var/piping_layer = PIPING_LAYER_DEFAULT
@@ -85,6 +86,15 @@
 
 	return TRUE
 
+/obj/machinery/pipedispenser/screwdriver_act(mob/user, obj/item/I)
+	panel_open = !panel_open
+	I.play_tool_sound(src)
+	to_chat(user, "<span class='notice'>You [panel_open?"open":"close"] the panel on [src].</span>")
+	return TRUE
+
+/obj/machinery/pipedispenser/crowbar_act(mob/living/user, obj/item/I)
+	default_deconstruction_crowbar(I)
+	return TRUE
 
 /obj/machinery/pipedispenser/disposal
 	name = "disposal pipe dispenser"
