@@ -1436,3 +1436,11 @@
 		/obj/item/reagent_containers/glass/beaker/large=1
 		)
 	generate_items_inside(items_inside,src)
+
+/obj/item/storage/box/subspace_filters
+	name = "box of subspace filters"
+	desc = "A box filled with subspace filters, useful if you need the parts for building relays."
+
+/obj/item/storage/box/subspace_filters/PopulateContents()
+	for(var/i in 1 to 8)
+		new /obj/item/stock_parts/subspace/filter(src)

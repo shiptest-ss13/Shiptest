@@ -273,10 +273,6 @@
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
 "bG" = (
-/obj/machinery/camera/xray{
-	dir = 4;
-	network = list("starfurybc_cam")
-	},
 /obj/effect/turf_decal/techfloor/orange{
 	dir = 10
 	},
@@ -404,6 +400,10 @@
 /obj/machinery/suit_storage_unit/syndicate,
 /obj/structure/sign/poster/contraband/random{
 	pixel_y = -32
+	},
+/obj/machinery/camera/xray{
+	dir = 10;
+	network = list("starfurybc_cam")
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo/office)
@@ -638,6 +638,13 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
 /turf/open/floor/plasteel/tech/techmaint,
+/area/ship/hallway/starboard)
+"dJ" = (
+/obj/machinery/camera/xray{
+	dir = 8;
+	network = list("starfurybc_cam")
+	},
+/turf/open/floor/mineral/plastitanium,
 /area/ship/hallway/starboard)
 "dM" = (
 /obj/structure/cable{
@@ -1009,6 +1016,10 @@
 /obj/item/storage/backpack/duffelbag/syndie/surgery,
 /obj/structure/table/wood/reinforced,
 /obj/effect/turf_decal/corner/bottlegreen/full,
+/obj/machinery/camera/xray{
+	dir = 4;
+	network = list("starfurybc_cam")
+	},
 /turf/open/floor/plasteel,
 /area/ship/medical/surgery)
 "fR" = (
@@ -1169,6 +1180,10 @@
 	dir = 8
 	},
 /obj/machinery/airalarm/directional/west,
+/obj/item/paper{
+	info = "[center][b]So you've gotten a telecommunications setup.[/b][/center][center]To set up your telecommunications, you'll need to do only a few quick steps!First order of conduct, you'll need to get a handy multitool, and link your processor to your bus. Then, link the bus to the hub. After you've done this, link both your Broadcaster and your Reciever to the hub, and then link the Hub to the provided Relay. If you ever want to have your network work for other ships, simply build a relay on their ship, and link it to your hub! It's that simple![/center]";
+	name = "telecommunications instructions"
+	},
 /turf/open/floor/circuit,
 /area/ship/engineering/communications)
 "hm" = (
@@ -1427,6 +1442,10 @@
 /obj/structure/sign/poster/contraband/random{
 	pixel_x = 32
 	},
+/obj/machinery/camera/xray{
+	dir = 10;
+	network = list("starfurybc_cam")
+	},
 /turf/open/floor/carpet/nanoweave/red,
 /area/ship/bridge)
 "je" = (
@@ -1660,14 +1679,6 @@
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "km" = (
-/obj/effect/turf_decal/industrial/warning{
-	dir = 8
-	},
-/obj/machinery/shieldgen{
-	anchored = 1;
-	locked = 1;
-	req_access = 150
-	},
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "kn" = (
@@ -1772,6 +1783,10 @@
 /obj/machinery/light,
 /obj/structure/cable{
 	icon_state = "1-8"
+	},
+/obj/machinery/camera/xray{
+	dir = 10;
+	network = list("starfurybc_cam")
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
@@ -2097,6 +2112,10 @@
 /obj/item/clothing/glasses/sunglasses/chemical,
 /obj/item/storage/bag/chemistry,
 /obj/item/hand_labeler_refill,
+/obj/machinery/camera/xray{
+	dir = 8;
+	network = list("starfurybc_cam")
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "mV" = (
@@ -2271,6 +2290,9 @@
 	pixel_x = -28
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4,
+/obj/machinery/camera/xray{
+	network = list("starfurybc_cam")
+	},
 /turf/open/floor/wood,
 /area/ship/crew/dorm)
 "nU" = (
@@ -2310,19 +2332,19 @@
 /area/ship/cargo)
 "oa" = (
 /obj/effect/turf_decal/techfloor/orange,
-/obj/structure/bed/dogbed{
-	anchored = 1
-	},
-/mob/living/simple_animal/parrot/Poly{
-	desc = "Perry the Parrot. A visionary in sub-atomic complaining.";
-	name = "Perry"
-	},
 /obj/machinery/light,
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
 	dir = 1
+	},
+/mob/living/simple_animal/hostile/retaliate/gator/steppy/iguana,
+/obj/structure/flora/rock{
+	can_buckle = 1;
+	density = 0;
+	desc = "A large decorative rock, with a lamp above it. Primarily used by Izzy to get some sweet UV rays. Has a little buckle on it for perilous journeys!";
+	name = "izzy's rock"
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/maintenance/port)
@@ -2369,6 +2391,15 @@
 "ow" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/crew/hydroponics)
+"oA" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber{
+	dir = 4
+	},
+/obj/machinery/camera/xray{
+	network = list("starfurybc_cam")
+	},
+/turf/open/floor/engine,
+/area/ship/engineering/engine)
 "oB" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
 /obj/effect/turf_decal/techfloor{
@@ -2539,6 +2570,10 @@
 /obj/machinery/chem_dispenser/drinks/beer{
 	dir = 1
 	},
+/obj/machinery/camera/xray{
+	dir = 10;
+	network = list("starfurybc_cam")
+	},
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
 "pK" = (
@@ -2567,7 +2602,8 @@
 /obj/effect/turf_decal/corner/brown{
 	dir = 6
 	},
-/obj/machinery/door/airlock/centcom{
+/obj/machinery/door/airlock/grunge{
+	has_hatch = 1;
 	name = "Bow Access"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
@@ -3479,6 +3515,10 @@
 	pixel_y = 26;
 	specialfunctions = 4
 	},
+/obj/machinery/camera/xray{
+	dir = 4;
+	network = list("starfurybc_cam")
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/maintenance/port)
 "vt" = (
@@ -3490,7 +3530,8 @@
 /obj/effect/turf_decal/corner/bar{
 	dir = 9
 	},
-/obj/machinery/door/airlock/centcom{
+/obj/machinery/door/airlock/grunge{
+	has_hatch = 1;
 	name = "Bow Access"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
@@ -3674,6 +3715,13 @@
 /obj/effect/turf_decal/atmos/nitrogen,
 /turf/open/floor/engine/n2,
 /area/ship/engineering/atmospherics)
+"wv" = (
+/obj/machinery/camera/xray{
+	dir = 4;
+	network = list("starfurybc_cam")
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/ship/hallway/port)
 "ww" = (
 /obj/effect/turf_decal/corner/bottlegreen/full,
 /obj/machinery/chem_master,
@@ -3701,6 +3749,18 @@
 	},
 /turf/open/floor/engine,
 /area/ship/engineering)
+"wN" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/yellow/hidden/layer1{
+	dir = 4
+	},
+/obj/machinery/camera/xray{
+	network = list("starfurybc_cam")
+	},
+/turf/open/floor/plating,
+/area/ship/engineering/atmospherics)
 "wQ" = (
 /obj/effect/turf_decal/industrial/warning,
 /obj/machinery/telecomms/relay,
@@ -3941,6 +4001,9 @@
 /obj/machinery/conveyor{
 	dir = 4;
 	id = "beta"
+	},
+/obj/machinery/camera/xray{
+	network = list("starfurybc_cam")
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
@@ -5223,7 +5286,8 @@
 /obj/effect/turf_decal/corner/brown{
 	dir = 9
 	},
-/obj/machinery/door/airlock/centcom{
+/obj/machinery/door/airlock/grunge{
+	has_hatch = 1;
 	name = "Bow Access"
 	},
 /turf/open/floor/plasteel/tech/techmaint,
@@ -5327,7 +5391,8 @@
 /obj/effect/turf_decal/corner/bar{
 	dir = 6
 	},
-/obj/machinery/door/airlock/centcom{
+/obj/machinery/door/airlock/grunge{
+	has_hatch = 1;
 	name = "Bow Access"
 	},
 /turf/open/floor/plasteel/tech/techmaint,
@@ -6010,6 +6075,7 @@
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "LL" = (
+/obj/item/multitool,
 /turf/open/floor/circuit,
 /area/ship/engineering/communications)
 "LN" = (
@@ -6517,6 +6583,10 @@
 	dir = 4
 	},
 /obj/machinery/light,
+/obj/machinery/camera/xray{
+	dir = 10;
+	network = list("starfurybc_cam")
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "PR" = (
@@ -7003,6 +7073,7 @@
 /obj/item/circuitboard/machine/quantumpad,
 /obj/item/circuitboard/machine/quantumpad,
 /obj/item/circuitboard/machine/rdserver,
+/obj/item/storage/box/subspace_filters,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/cargo)
 "Sq" = (
@@ -7690,6 +7761,7 @@
 /obj/item/trash/can/food/beans,
 /obj/item/trash/can/food/beans,
 /obj/item/trash/can/food/beans,
+/obj/item/camera,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/cargo)
 "Xg" = (
@@ -7706,6 +7778,10 @@
 /obj/item/ammo_box/foambox/riot,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/camera/xray{
+	dir = 10;
+	network = list("starfurybc_cam")
+	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/ship/security/armory)
 "Xj" = (
@@ -8488,7 +8564,7 @@ Zc
 Eo
 NP
 Lh
-NP
+wv
 vv
 NP
 NP
@@ -9110,7 +9186,7 @@ tm
 tm
 hF
 as
-Kz
+oA
 Kz
 Kz
 Nk
@@ -9124,7 +9200,7 @@ qy
 no
 pF
 oQ
-ew
+wN
 yP
 mO
 mO
@@ -9588,7 +9664,7 @@ HI
 Eo
 TB
 Zx
-TB
+dJ
 UY
 TB
 TB
