@@ -47,7 +47,7 @@
 	name = "NT Security Solutions Site Gamma Engineering"
 	icon_state = "dk_yellow"
 
-	/area/ruin/unpowered/corprejectvault
+/area/ruin/unpowered/corprejectvault
 	name = "NT Security Solutions Site Gamma Vault"
 	icon_state = "dk_yellow"
 
