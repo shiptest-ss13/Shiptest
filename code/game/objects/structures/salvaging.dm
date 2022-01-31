@@ -14,6 +14,12 @@
 			new path (loc)
 	return
 
+/obj/structure/salvageable/attackby(obj/item/I, mob/living/user, params)
+	if((!(user.a_intent == INTENT_HELP)) && I.tool_behaviour == TOOL_CROWBAR)
+		return
+	else
+		return ..()
+
 /obj/structure/salvageable/crowbar_act(mob/living/user, obj/item/I)
 	. = ..()
 	user.visible_message(user,"<span class='notice'>[user] starts to salvage \the [src].</span>", \
@@ -82,7 +88,7 @@
 	name = "broken autolathe"
 	icon_state = "wreck_autolathe"
 	salvageable_parts = list(
-		/obj/item/stock_parts/console_screen = 80,
+		/obj/item/stack/sheet/glass/two = 80,
 		/obj/item/stack/cable_coil/cut = 80,
 		/obj/item/stack/ore/salvage/scraptitanium/five = 60,
 		/obj/item/stack/ore/salvage/scrapmetal/five = 60,
@@ -185,7 +191,7 @@
 		/obj/effect/spawner/lootdrop/salvage_manipulator = 30,
 
 		/obj/item/storage/toolbox/syndicate/empty = 80,
-		/obj/effect/spawner/lootdrop/destructive_anal_loot = 40,
+		/obj/effect/spawner/lootdrop/destructive_anal_loot = 60,
 
 		/obj/item/stack/sheet/metal/five = 15, //same as above but more geared towards stuff used by circuit imprinter
 		/obj/item/stack/sheet/glass/five = 15,
@@ -271,10 +277,10 @@
 		if(40 to 45)
 			playsound(src, 'sound/machines/buzz-two.ogg', 100, FALSE, FALSE)
 			src.audible_message("<span class='danger'>You hear a buzz from the [src] and a voice,</span>")
-			say("SECURITY BREACH DETECTED, SENDING BACKUP IMMEDIATELY, PRIORITY GREEN, SENDING IN THE MEDBOT.")
+			say("SECURITY BREACH DETECTED, SENDING IN THE MEDBOT.")
 			src.visible_message("<span class=danger>A strange target appears on the ground.</span>")
 
-			var/obj/structure/closet/supplypod/bluespacepod/pod = new()
+			var/obj/structure/closet/supplypod/bluespacepod/pod = new(get_turf(src))
 			new /mob/living/simple_animal/bot/medbot/rockplanet(pod)
 			pod.style = STYLE_STANDARD
 			pod.explosionSize = list(0,0,0,0)
@@ -282,10 +288,10 @@
 		if(26 to 40)
 			playsound(src, 'sound/machines/buzz-two.ogg', 100, FALSE, FALSE)
 			src.audible_message("<span class='danger'>You hear a buzz from the [src] and a voice,</span>")
-			say("SECURITY BREACH DETECTED, SENDING BACKUP IMMEDIATELY, PRIORITY BLUE, SENDING IN THE FIREBOT.")
+			say("SECURITY BREACH DETECTED, SENDING IN THE FIREBOT.")
 			src.visible_message("<span class=danger>A strange target appears on the ground.</span>")
 
-			var/obj/structure/closet/supplypod/bluespacepod/pod = new()
+			var/obj/structure/closet/supplypod/bluespacepod/pod = new(get_turf(src))
 			new /mob/living/simple_animal/bot/firebot/rockplanet(pod)
 			pod.style = STYLE_STANDARD
 			pod.explosionSize = list(0,0,0,0)
@@ -293,10 +299,10 @@
 		if(1 to 25)
 			playsound(src, 'sound/machines/buzz-two.ogg', 100, FALSE, FALSE)
 			src.audible_message("<span class='danger'>You hear as buzz from the [src] and a voice,</span>")
-			say("SECURITY BREACH DETECTED, SENDING BACKUP IMMEDIATELY, PRIORITY RED, SENDING IN THE ED 209.")
+			say("SECURITY BREACH DETECTED, SENDING IN THE ED 209.")
 			src.visible_message("<span class=danger>A strange target appears on the ground.</span>")
 
-			var/obj/structure/closet/supplypod/bluespacepod/pod = new()
+			var/obj/structure/closet/supplypod/bluespacepod/pod = new(get_turf(src))
 			new /mob/living/simple_animal/bot/secbot/ed209/rockplanet(pod)
 			pod.style = STYLE_STANDARD
 			pod.explosionSize = list(0,0,0,0)
@@ -304,7 +310,7 @@
 		if(1 to 3)
 			playsound(src, 'sound/machines/warning-buzzer.ogg', 100, FALSE, FALSE)
 			src.audible_message("<span class='boldwarning'>You hear a loud buzzing from the [src] and a voice,</span>")
-			say("SECURITY BREACH DETECTED, SENDING BACKUP IMMEDIATELY, PRIORITY DELTA, SENDING IN THE LOBSTER.")
+			say("SECURITY BREACH DETECTED, SENDING BACKUP IMMEDIATELY, PRIORITY RED, SENDING IN THE LOBSTER.")
 			src.visible_message("<span class=danger>A strange target appears on the ground. It might be best to step back!</span>")
 
 			var/obj/structure/closet/supplypod/bluespacepod/pod = new()
@@ -422,43 +428,43 @@
 //GENERIC
 /obj/effect/spawner/lootdrop/salvage_capacitor
 	loot = list(
-			/obj/item/stock_parts/capacitor = 100,
+			/obj/item/stock_parts/capacitor = 150,
 			/obj/item/stock_parts/capacitor/adv = 20,
 			/obj/item/stock_parts/capacitor/super = 5
 		)
 
 /obj/effect/spawner/lootdrop/salvage_scanning
 	loot = list(
-			/obj/item/stock_parts/scanning_module = 100,
+			/obj/item/stock_parts/scanning_module = 150,
 			/obj/item/stock_parts/scanning_module/adv = 20,
 			/obj/item/stock_parts/scanning_module/phasic = 5
 		)
 
 /obj/effect/spawner/lootdrop/salvage_manipulator
 	loot = list(
-			/obj/item/stock_parts/manipulator = 100,
-			/obj/item/stock_parts/manipulator/adv = 20,
+			/obj/item/stock_parts/manipulator = 150,
+			/obj/item/stock_parts/manipulator/nano = 20,
 			/obj/item/stock_parts/manipulator/pico = 5
 		)
 
 /obj/effect/spawner/lootdrop/salvage_matter_bin
 	loot = list(
-			/obj/item/stock_parts/matter_bin = 100,
+			/obj/item/stock_parts/matter_bin = 150,
 			/obj/item/stock_parts/matter_bin/adv = 20,
 			/obj/item/stock_parts/matter_bin/super = 5
 		)
 
 /obj/effect/spawner/lootdrop/salvage_laser
 	loot = list(
-			/obj/item/stock_parts/micro_laser = 100,
-			/obj/item/stock_parts/micro_laser/adv = 20,
+			/obj/item/stock_parts/micro_laser = 150,
+			/obj/item/stock_parts/micro_laser/high = 20,
 			/obj/item/stock_parts/micro_laser/ultra = 5
 		)
 
 //PROTOLATHE
 /obj/effect/spawner/lootdrop/tool_engie_proto
 	loot = list(
-			/obj/effect/spawner/lootdrop/tool_engie_common = 100,
+			/obj/effect/spawner/lootdrop/tool_engie_common = 150,
 			/obj/effect/spawner/lootdrop/tool_engie_sydnie = 20,
 			/obj/effect/spawner/lootdrop/tool_engie_adv = 5
 		)
@@ -477,7 +483,7 @@
 	loot = list(
 			/obj/item/wrench/syndie = 1,
 			/obj/item/screwdriver/nuke = 1,
-			/obj/item/weldingtool/industrial = 1,
+			/obj/item/weldingtool/largetank = 1,
 			/obj/item/crowbar/syndie = 1,
 			/obj/item/wirecutters/syndie = 1,
 			/obj/item/multitool/syndie = 1
@@ -492,7 +498,7 @@
 
 /obj/effect/spawner/lootdrop/tool_surgery_proto
 	loot = list(
-			/obj/effect/spawner/lootdrop/tool_surgery_common = 100,
+			/obj/effect/spawner/lootdrop/tool_surgery_common = 150,
 			/obj/effect/spawner/lootdrop/tool_surgery_adv = 10,
 		)
 
@@ -630,4 +636,40 @@
 			/obj/item/circuitboard/computer/shuttle/helm = 5,
 			/obj/item/circuitboard/computer/operating = 5,
 			/obj/item/circuitboard/computer/med_data = 5
+		)
+
+//DESTRUCTIVE ANAL
+/obj/effect/spawner/lootdrop/destructive_anal_loot //what do people usually put in these things anayways
+	loot = list(
+			/obj/item/storage/toolbox/syndicate/empty = 900,
+			/obj/item/gun/ballistic/automatic/pistol/no_mag = 600,
+			/obj/item/camera_bug = 600,
+			/obj/item/pen = 400,
+			/obj/item/clothing/gloves/combat = 300,
+			/obj/item/clothing/head/chameleon = 300,
+			/obj/item/pen/sleepy = 300,
+			/obj/item/reagent_containers/hypospray/medipen/stimpack/traitor = 100,
+
+			/obj/item/grenade/c4 = 100,
+
+			/obj/item/wrench/syndie = 30,
+			/obj/item/screwdriver/nuke = 30,
+			/obj/item/crowbar/syndie = 30,
+			/obj/item/wirecutters/syndie = 30,
+			/obj/item/multitool/syndie = 30,
+
+			/obj/item/scalpel/alien = 1,
+			/obj/item/hemostat/alien = 1,
+			/obj/item/cautery/alien = 1,
+			/obj/item/retractor/alien = 1,
+			/obj/item/circular_saw/alien = 1,
+			/obj/item/surgicaldrill/alien = 1,
+
+			/obj/item/wrench/abductor = 1,
+			/obj/item/screwdriver/abductor = 1,
+			/obj/item/weldingtool/abductor = 1,
+			/obj/item/crowbar/abductor = 1,
+			/obj/item/wirecutters/abductor = 1,
+			/obj/item/multitool/abductor = 1
+
 		)

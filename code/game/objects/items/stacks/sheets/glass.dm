@@ -40,6 +40,12 @@ GLOBAL_LIST_INIT(glass_recipes, list ( \
 /obj/item/stack/sheet/glass/two
 	amount = 2
 
+/obj/item/stack/sheet/glass/five
+	amount = 5
+
+/obj/item/stack/sheet/glass/twenty
+	amount = 20
+
 /obj/item/stack/sheet/glass/fifty
 	amount = 50
 
