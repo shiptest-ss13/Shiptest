@@ -188,6 +188,13 @@
 	},
 /turf/open/floor/carpet/nanoweave/red,
 /area/ship/bridge)
+"be" = (
+/obj/machinery/conveyor{
+	dir = 6;
+	id = "beta"
+	},
+/turf/open/floor/plasteel/tech,
+/area/template_noop)
 "bf" = (
 /obj/structure/bed/pod,
 /obj/item/bedsheet/syndie,
@@ -346,7 +353,8 @@
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "cb" = (
-/obj/structure/table/reinforced,
+/obj/effect/turf_decal/industrial/outline/orange,
+/obj/structure/closet/crate,
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "cc" = (
@@ -356,6 +364,12 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/electrical)
+"cf" = (
+/obj/machinery/conveyor{
+	dir = 5
+	},
+/turf/open/floor/plasteel/tech,
+/area/template_noop)
 "cm" = (
 /turf/closed/wall/r_wall/syndicate/nodiagonal,
 /area/ship/maintenance/starboard)
@@ -1343,10 +1357,10 @@
 /turf/open/floor/engine,
 /area/ship/engineering)
 "iu" = (
-/obj/effect/turf_decal/industrial/stand_clear,
 /obj/effect/turf_decal/corner/brown{
 	dir = 10
 	},
+/obj/effect/turf_decal/industrial/stand_clear,
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "iw" = (
@@ -1380,9 +1394,10 @@
 /turf/open/floor/mineral/plastitanium,
 /area/ship/hallway/starboard)
 "iH" = (
-/obj/effect/turf_decal/industrial/outline/orange,
-/obj/structure/ore_box,
-/turf/open/floor/plasteel/tech,
+/obj/machinery/mineral/processing_unit_console{
+	machinedir = 1
+	},
+/turf/closed/wall/r_wall/syndicate/nodiagonal,
 /area/ship/cargo)
 "iI" = (
 /obj/structure/reflector/box{
@@ -1402,7 +1417,9 @@
 /obj/structure/table/reinforced,
 /obj/effect/turf_decal/corner/bar/diagonal,
 /obj/effect/turf_decal/corner/bar/diagonal,
-/obj/machinery/door/poddoor/preopen,
+/obj/machinery/door/poddoor/preopen{
+	id = "syndiekitchen"
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/crew/canteen)
 "iQ" = (
@@ -1413,8 +1430,10 @@
 /turf/open/floor/mineral/plastitanium,
 /area/ship/bridge)
 "iT" = (
-/obj/machinery/mineral/unloading_machine{
-	dir = 4
+/obj/effect/turf_decal/industrial/outline/orange,
+/obj/machinery/conveyor{
+	dir = 8;
+	id = "crushing"
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
@@ -1566,10 +1585,12 @@
 /turf/open/floor/carpet/nanoweave/red,
 /area/ship/crew/dorm)
 "jM" = (
-/obj/machinery/conveyor{
-	dir = 9
-	},
 /obj/structure/window/reinforced/survival_pod,
+/obj/machinery/conveyor{
+	dir = 9;
+	id = "crushing"
+	},
+/obj/structure/plasticflaps,
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "jN" = (
@@ -1622,6 +1643,10 @@
 	},
 /turf/open/floor/engine,
 /area/ship/engineering)
+"ka" = (
+/obj/structure/table/reinforced,
+/turf/open/floor/plasteel/tech,
+/area/template_noop)
 "kb" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
@@ -2135,7 +2160,7 @@
 	},
 /obj/effect/turf_decal/corner/bar/diagonal,
 /obj/machinery/door/poddoor/preopen{
-	id = "syndiekitchen"
+	id = "syndiebar"
 	},
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
@@ -3998,13 +4023,17 @@
 /turf/open/floor/circuit/green,
 /area/ship/engineering/engine)
 "yl" = (
-/obj/machinery/conveyor{
-	dir = 4;
-	id = "beta"
-	},
 /obj/machinery/camera/xray{
 	network = list("starfurybc_cam")
 	},
+/obj/machinery/conveyor{
+	dir = 4;
+	id = "crushing"
+	},
+/obj/machinery/door/poddoor/crusher{
+	id = "crusher"
+	},
+/obj/structure/window/reinforced/survival_pod,
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "yo" = (
@@ -4341,7 +4370,7 @@
 "zV" = (
 /obj/machinery/conveyor{
 	dir = 6;
-	id = "beta"
+	id = "crushing"
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
@@ -5409,6 +5438,13 @@
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/bridge)
+"HK" = (
+/obj/machinery/conveyor{
+	dir = 9
+	},
+/obj/structure/window/reinforced/survival_pod,
+/turf/open/floor/plasteel/tech,
+/area/template_noop)
 "HR" = (
 /obj/structure/sign/poster/contraband/donut_corp{
 	pixel_x = -32
@@ -5446,9 +5482,6 @@
 /turf/open/floor/carpet/stellar,
 /area/ship/bridge)
 "Ie" = (
-/obj/machinery/mineral/processing_unit_console{
-	pixel_y = 24
-	},
 /obj/effect/turf_decal/corner/brown{
 	dir = 5
 	},
@@ -5607,6 +5640,12 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/hallway/port)
+"IS" = (
+/obj/machinery/mineral/processing_unit{
+	dir = 8
+	},
+/turf/open/floor/plasteel/tech,
+/area/template_noop)
 "Ja" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 5
@@ -6032,6 +6071,16 @@
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/hallway/port)
+"Lw" = (
+/obj/machinery/conveyor{
+	dir = 4;
+	id = "beta"
+	},
+/obj/machinery/camera/xray{
+	network = list("starfurybc_cam")
+	},
+/turf/open/floor/plasteel/tech,
+/area/template_noop)
 "Lz" = (
 /obj/effect/turf_decal/corner/bottlegreen/bordercorner{
 	dir = 1
@@ -7007,8 +7056,7 @@
 	id = "starfurybcrightbaydoor";
 	name = "Cargo Bay Doors";
 	pixel_x = 26;
-	pixel_y = -28;
-	req_access_txt = "150"
+	pixel_y = -28
 	},
 /obj/effect/turf_decal/corner/brown{
 	dir = 10
@@ -7076,6 +7124,11 @@
 /obj/item/storage/box/subspace_filters,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/cargo)
+"Sk" = (
+/obj/effect/turf_decal/industrial/outline/orange,
+/obj/structure/ore_box,
+/turf/open/floor/plasteel/tech,
+/area/template_noop)
 "Sq" = (
 /obj/effect/turf_decal/techfloor/orange{
 	dir = 4
@@ -7489,6 +7542,12 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
+"UP" = (
+/obj/machinery/mineral/unloading_machine{
+	dir = 4
+	},
+/turf/open/floor/plasteel/tech,
+/area/template_noop)
 "UY" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
 	dir = 8
@@ -7797,7 +7856,7 @@
 /obj/structure/table/reinforced,
 /obj/effect/turf_decal/corner/bar/diagonal,
 /obj/machinery/door/poddoor/preopen{
-	id = "syndiekitchen"
+	id = "syndiebar"
 	},
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
@@ -7857,6 +7916,19 @@
 	},
 /turf/open/floor/engine,
 /area/ship/engineering/electrical)
+"XR" = (
+/obj/effect/turf_decal/corner/brown{
+	dir = 5
+	},
+/obj/machinery/button/door{
+	desc = "A button that controls the crusher";
+	id = "crusher";
+	name = "crusher operation";
+	pixel_x = -10;
+	pixel_y = 20
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/cargo)
 "XU" = (
 /obj/effect/turf_decal/corner/bottlegreen/bordercorner{
 	dir = 4
@@ -7867,6 +7939,18 @@
 "XV" = (
 /turf/closed/wall/r_wall/syndicate/nodiagonal,
 /area/ship/hallway/starboard)
+"XW" = (
+/obj/effect/turf_decal/corner/brown{
+	dir = 5
+	},
+/obj/effect/turf_decal/industrial/loading{
+	dir = 1
+	},
+/obj/machinery/conveyor_switch/oneway{
+	id = "crushing"
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/cargo)
 "XY" = (
 /obj/machinery/atmospherics/pipe/simple/orange/visible,
 /obj/effect/turf_decal/techfloor/orange,
@@ -8087,7 +8171,11 @@
 /area/ship/hallway/starboard)
 "ZF" = (
 /obj/machinery/conveyor{
-	dir = 5
+	dir = 5;
+	id = "crushing"
+	},
+/obj/structure/window/reinforced/survival_pod{
+	dir = 6
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
@@ -9672,7 +9760,7 @@ SV
 Fe
 yl
 iT
-xw
+XW
 Up
 VJ
 nY
@@ -9727,7 +9815,7 @@ XV
 Fe
 GH
 iH
-xw
+XR
 Si
 YU
 rp
@@ -9830,8 +9918,8 @@ xt
 xt
 Ze
 Ze
-Ze
-Ze
+cf
+HK
 Ze
 Ze
 Fe
@@ -9885,8 +9973,8 @@ cH
 xt
 Ze
 Ze
-Ze
-Ze
+Lw
+UP
 Ze
 Ze
 Ze
@@ -9940,8 +10028,8 @@ kf
 xt
 Ze
 Ze
-Ze
-Ze
+IS
+Sk
 Ze
 Ze
 Ze
@@ -9995,8 +10083,8 @@ xt
 xt
 Ze
 Ze
-Ze
-Ze
+be
+ka
 Ze
 Ze
 Ze
