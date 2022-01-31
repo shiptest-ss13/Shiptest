@@ -68,7 +68,10 @@
 
 /datum/status_effect/in_love/tick()
 	if(date)
-		new /obj/effect/temp_visual/love_heart/invisible(date.drop_location(), owner)
+		new /obj/effect/temp_visual/love_heart/invisible(get_turf(date.loc), owner)
+		if(get_dist(get_turf(owner), get_turf(date)) < 7)
+			owner.heal_overall_damage(1, 1, BODYTYPE_ORGANIC)
+			date.heal_overall_damage(1, 1, BODYTYPE_ORGANIC)
 
 /datum/status_effect/throat_soothed
 	id = "throat_soothed"

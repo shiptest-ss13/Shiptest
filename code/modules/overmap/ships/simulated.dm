@@ -35,7 +35,7 @@
 	var/obj/structure/overmap/docked
 	///The docking port of the linked shuttle
 	var/obj/docking_port/mobile/shuttle
-	///The map template the shuttle was spawned from, if it was indeed created from a template
+	///The map template the shuttle was spawned from, if it was indeed created from a template. CAN BE NULL (ex. custom-built ships).
 	var/datum/map_template/shuttle/source_template
 
 /obj/structure/overmap/ship/simulated/Initialize(mapload, obj/docking_port/mobile/_shuttle, datum/map_template/shuttle/_source_template)
@@ -301,6 +301,7 @@
 		return
 	if(name != initial(name))
 		priority_announce("The [name] has been renamed to the [new_name].", "Docking Announcement", sender_override = new_name, zlevel = shuttle.virtual_z())
+	message_admins("[key_name_admin(usr)] renamned vessel '[name]' to '[new_name]'")
 	name = new_name
 	shuttle.name = new_name
 	if(!ignore_cooldown)

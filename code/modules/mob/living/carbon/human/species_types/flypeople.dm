@@ -1,6 +1,6 @@
 /datum/species/fly
-	name = "Flyperson"
-	id = "fly"
+	name = "\improper Flyperson"
+	id = SPECIES_FLYPERSON
 	say_mod = "buzzes"
 	species_traits = list(NOEYESPRITES,TRAIT_ANTENNAE)
 	inherent_biotypes = MOB_ORGANIC|MOB_HUMANOID|MOB_BUG
@@ -12,6 +12,13 @@
 	liked_food = GROSS
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_PRIDE | MIRROR_MAGIC | RACE_SWAP | ERT_SPAWN | SLIME_EXTRACT
 	species_language_holder = /datum/language_holder/fly
+
+	species_chest = /obj/item/bodypart/chest/fly
+	species_head = /obj/item/bodypart/head/fly
+	species_l_arm = /obj/item/bodypart/l_arm/fly
+	species_r_arm = /obj/item/bodypart/r_arm/fly
+	species_l_leg = /obj/item/bodypart/l_leg/fly
+	species_r_leg = /obj/item/bodypart/r_leg/fly
 
 /datum/species/fly/handle_chemicals(datum/reagent/chem, mob/living/carbon/human/H)
 	if(chem.type == /datum/reagent/toxin/pestkiller)

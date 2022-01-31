@@ -2,8 +2,8 @@
 
 /datum/species/zombie
 	// 1spooky
-	name = "High-Functioning Zombie"
-	id = "zombie"
+	name = "\improper High-Functioning Zombie"
+	id = SPECIES_ZOMBIE
 	say_mod = "moans"
 	sexes = 0
 	meat = /obj/item/reagent_containers/food/snacks/meat/slab/human/mutant/zombie
@@ -19,15 +19,22 @@
 	bodytemp_heat_damage_limit = FIRE_MINIMUM_TEMPERATURE_TO_EXIST // Take damage at fire temp
 	bodytemp_cold_damage_limit = MINIMUM_TEMPERATURE_TO_MOVE // take damage below minimum movement temp
 
+	species_chest = /obj/item/bodypart/chest/zombie
+	species_head = /obj/item/bodypart/head/zombie
+	species_l_arm = /obj/item/bodypart/l_arm/zombie
+	species_r_arm = /obj/item/bodypart/r_arm/zombie
+	species_l_leg = /obj/item/bodypart/l_leg/zombie
+	species_r_leg = /obj/item/bodypart/r_leg/zombie
+
 /datum/species/zombie/check_roundstart_eligible()
 	if(SSevents.holidays && SSevents.holidays[HALLOWEEN])
 		return TRUE
 	return ..()
 
 /datum/species/zombie/infectious
-	name = "Infectious Zombie"
+	name = "\improper Infectious Zombie"
 	id = "memezombies"
-	limbs_id = "zombie"
+	examine_limb_id = "zombie"
 	mutanthands = /obj/item/zombie_hand
 	armor = 20 // 120 damage to KO a zombie, which kills it
 	speedmod = 1.6
@@ -87,13 +94,38 @@
 		infection.Insert(C)
 
 // Your skin falls off
-/datum/species/krokodil_addict
-	name = "Human"
-	id = "goofzombies"
-	limbs_id = "zombie" //They look like zombies
+/datum/species/human/krokodil_addict
+	name = "\improper Human"
+	id = SPECIES_GOOFZOMBIE
+	examine_limb_id = SPECIES_HUMAN
 	sexes = 0
 	meat = /obj/item/reagent_containers/food/snacks/meat/slab/human/mutant/zombie
 	mutanttongue = /obj/item/organ/tongue/zombie
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | ERT_SPAWN
+
+	species_chest = /obj/item/bodypart/chest/zombie
+	species_head = /obj/item/bodypart/head/zombie
+	species_l_arm = /obj/item/bodypart/l_arm/zombie
+	species_r_arm = /obj/item/bodypart/r_arm/zombie
+	species_l_leg = /obj/item/bodypart/l_leg/zombie
+	species_r_leg = /obj/item/bodypart/r_leg/zombie
+
+/datum/species/human/krokodil_addict/replace_body(mob/living/carbon/C, datum/species/new_species)
+	..()
+	var/skintone
+	if(ishuman(C))
+		var/mob/living/carbon/human/H = C
+		skintone = H.skin_tone
+
+	for(var/obj/item/bodypart/BP as anything in C.bodyparts)
+		if(IS_ORGANIC_LIMB(BP))
+			if(BP.body_zone == BODY_ZONE_HEAD || BP.body_zone == BODY_ZONE_CHEST)
+				BP.is_dimorphic = TRUE
+			BP.skin_tone ||= skintone
+			BP.limb_id = SPECIES_HUMAN
+			BP.should_draw_greyscale = TRUE
+			BP.name = "human [parse_zone(BP.body_zone)]"
+			BP.update_limb()
+
 
 #undef REGENERATION_DELAY

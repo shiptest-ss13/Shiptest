@@ -377,6 +377,14 @@
 #undef PATH_FREEZER
 #undef PATH_HEATER
 
+/obj/item/circuitboard/machine/pipedispenser
+	name = "Pipe dispenser (Machine Board)"
+	icon_state = "engineering"
+	build_path = /obj/machinery/pipedispenser
+	req_components = list(
+		/obj/item/stock_parts/manipulator = 1,
+		/obj/item/stock_parts/matter_bin = 1)
+
 //Generic
 
 /obj/item/circuitboard/machine/circuit_imprinter
