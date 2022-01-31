@@ -42,3 +42,5 @@
 	speak_emote = list("sneezes")
 	emote_hear = list("snaps.","hisses.", "sneezes.")
 	emote_see = list("waits apprehensively.", "shuffles.")
+	attack_verb_continuous = "whips"
+	attack_verb_simple = "whipped"
