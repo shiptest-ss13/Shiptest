@@ -1,0 +1,26 @@
+{
+	"map_name": "Cosmos-class Fleet Coordination Vessel",
+	"prefix": "SLV",
+	"map_short_name": "Cosmos-class",
+	"map_path": "_maps/shuttles/shiptest/syndicate_cosmos.dmm",
+	"map_id": "cosmos",
+	"job_slots": {
+		"Project Overseer": {
+			"outfit": "/datum/outfit/job/ce/gec",
+			"slots": 1
+		},
+		"Ship Engineer": {
+			"outfit": "/datum/outfit/job/engineer/gec",
+			"slots": 3
+		},
+		"Atmospheric Technician": {
+			"outfit": "/datum/outfit/job/atmos/gec",
+			"slots": 2
+		},
+		"Chemical Engineer": {
+			"outfit": "/datum/outfit/job/chemist/gec",
+			"slots": 1
+		}
+	},
+	"cost": 750
+}

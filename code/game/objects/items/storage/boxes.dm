@@ -1420,3 +1420,19 @@
 		/obj/item/stack/wrapping_paper/small=1
 		)
 	generate_items_inside(items_inside,src)
+///Shiptest
+/obj/item/storage/box/chemistry
+	name = "chemistry box"
+	desc = "A package filled with everything you need to do chemistry on your own!"
+
+/obj/item/storage/box/chemistry/PopulateContents()
+	var/static/items_inside = list(
+		/obj/item/reagent_containers/glass/mortar=1,\
+		/obj/item/pestle=1,\
+		/obj/item/stock_parts/capacitor=1,\
+		/obj/item/stock_parts/manipulator=1,\
+		/obj/item/stock_parts/scanning_module=1,\
+		/obj/item/stock_parts/micro_laser=1,\
+		/obj/item/reagent_containers/glass/beaker/large=1
+		)
+	generate_items_inside(items_inside,src)

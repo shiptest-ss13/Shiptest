@@ -605,3 +605,12 @@
 	name = "police bag"
 	desc = "A large duffel bag for holding extra police gear."
 	slowdown = 0
+
+//shiptest
+/obj/item/storage/backpack/duffelbag/syndie/ammo/rockets
+	name = "rocket bag"
+	desc = "A large duffel bag, packed to the brim with PML-9 magazines."
+
+/obj/item/storage/backpack/duffelbag/syndie/ammo/rockets/PopulateContents()
+	for(var/i in 1 to 21)
+		new /obj/item/ammo_casing/caseless/rocket(src)
