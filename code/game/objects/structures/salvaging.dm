@@ -73,8 +73,8 @@
 		/obj/item/computer_hardware/card_slot = 40,
 		/obj/item/computer_hardware/network_card/advanced = 20,
 
-		/obj/effect/spawner/lootdrop/random_computer_cicuit_common = 20
-		/obj/effect/spawner/lootdrop/random_computer_cicuit_rare = 5
+		/obj/effect/spawner/lootdrop/random_computer_cicuit_common = 20,
+		/obj/effect/spawner/lootdrop/random_computer_cicuit_rare = 5,
 
 		/obj/item/research_notes/loot/tiny = 10
 	)
@@ -124,8 +124,8 @@
 		/obj/effect/spawner/lootdrop/tool_surgery_proto = 50,
 		/obj/effect/spawner/lootdrop/beaker_loot_spawner = 40,
 		/obj/effect/spawner/lootdrop/random_prosthetic = 20,
-		/obj/effect/spawner/lootdrop/random_gun_protolathe_lootdrop = 8, //:flushed:
-		/obj/effect/spawner/lootdrop/random_ammo_protolathe_lootdrop = 8,
+		/obj/effect/spawner/lootdrop/random_gun_protolathe_lootdrop = 5, //:flushed:
+		/obj/effect/spawner/lootdrop/random_ammo_protolathe_lootdrop = 5,
 
 		/obj/item/storage/part_replacer = 20,
 		/obj/item/storage/part_replacer/bluespace = 1,
@@ -157,9 +157,9 @@
 		/obj/effect/spawner/lootdrop/salvage_manipulator = 30,
 
 		/obj/item/stack/circuit_stack = 50, //this might be the only way in the game to get a poly circuit, and the only way for many ships to get essensial electronics. huh.
-		/obj/effect/spawner/lootdrop/random_machine_cicuit_mech = 40 //with all the wonderful broken mechs lying around, this might be a chance to get something stupidly overpowered.
-		/obj/effect/spawner/lootdrop/random_machine_cicuit_common = 25 //well.... "common"
-		/obj/effect/spawner/lootdrop/random_machine_cicuit_rare = 5
+		/obj/effect/spawner/lootdrop/random_machine_cicuit_mech = 40, //with all the wonderful broken mechs lying around, this might be a chance to get something stupidly overpowered.
+		/obj/effect/spawner/lootdrop/random_machine_cicuit_common = 25, //well.... "common"
+		/obj/effect/spawner/lootdrop/random_machine_cicuit_rare = 5,
 
 		/obj/item/stack/sheet/metal/five = 15, //same as above but more geared towards stuff used by circuit imprinter
 		/obj/item/stack/sheet/glass/five = 15,
@@ -198,26 +198,26 @@
 /obj/structure/salvageable/destructive_analyzer/dismantle(mob/living/user)
 	. = ..()
 	var/danger_level = rand(1,100)
-		switch(danger_level) //scary.
-			if(60 to 100)
-				src.audible_message("<span class='notice'>You can hear the sound of broken glass in the [src].</span>")
-			if(50 to 59)
-				src.visible_message("<span class='danger'>You flinch as you think the [src] is going to turn on in your face, but your tool destroys the laser before it activates..</span>")
-			if(20 to 49)
-				src.visible_message("<span class='danger'>You see a bright light from the [src] before the laser reactivates in your face!</span>")
-				shoot_projectile(user, /obj/projectile/beam/scatter)
-			if(8 to 19)
-				src.visible_message("<span class='danger'>You see a bright light from the [src] before the laser reactivates in your face!</span>")
-				shoot_projectile(user, /obj/projectile/beam)
-			if(2 to 7)
-				src.visible_message("<span class='danger'>You see a bright light from the [src] before the laser reactivates in your face!</span>")
-				shoot_projectile(user, /obj/projectile/heavylaser)
-			if(1)
-				src.audible_message("<span class='boldwarning'>You hear something crawling out of the [src]!!</span>")
-				if(prob(70))
-					new /obj/item/clothing/mask/facehugger/toy/(get_turf(src)) //gotcha!
-				else
-					new /obj/item/clothing/mask/facehugger/(get_turf(src)) //yeah
+	switch(danger_level) //scary.
+		if(60 to 100)
+			src.audible_message("<span class='notice'>You can hear the sound of broken glass in the [src].</span>")
+		if(50 to 59)
+			src.visible_message("<span class='danger'>You flinch as you think the [src] is going to turn on in your face, but your tool destroys the laser before it activates..</span>")
+		if(20 to 49)
+			src.visible_message("<span class='danger'>You see a bright light from the [src] before the laser reactivates in your face!</span>")
+			shoot_projectile(user, /obj/projectile/beam/scatter)
+		if(8 to 19)
+			src.visible_message("<span class='danger'>You see a bright light from the [src] before the laser reactivates in your face!</span>")
+			shoot_projectile(user, /obj/projectile/beam)
+		if(2 to 7)
+			src.visible_message("<span class='danger'>You see a bright light from the [src] before the laser reactivates in your face!</span>")
+			shoot_projectile(user, /obj/projectile/beam/laser/heavylaser)
+		if(1)
+			src.audible_message("<span class='boldwarning'>You hear something crawling out of the [src]!!</span>")
+			if(prob(70))
+				new /obj/item/clothing/mask/facehugger/toy/(get_turf(src)) //gotcha!
+			else
+				new /obj/item/clothing/mask/facehugger/(get_turf(src)) //yeah
 
 /obj/structure/salvageable/destructive_analyzer/proc/shoot_projectile(mob/living/target, obj/projectile/projectile_to_shoot)
 	var/obj/projectile/projectile_being_shot = new projectile_to_shoot(get_turf(src))
@@ -228,7 +228,6 @@
 /obj/structure/salvageable/server
 	name = "broken server"
 	icon_state = "wreck_server"
-	rarity_value = 16
 	salvageable_parts = list(
 		/obj/item/stack/sheet/glass/two = 80,
 		/obj/item/stack/cable_coil/cut = 80,
@@ -266,53 +265,53 @@
 /obj/structure/salvageable/server/dismantle(mob/living/user)
 	. = ..()
 	var/danger_level = rand(1,100)
-		switch(danger_level) //ever wanted the extreme dannger of FE rng but in your palm?
-			if(46 to 100)
-				src.audible_message("<span class='notice'>The [src] makes a crashing sound as its salvaged.</span>")
-			if(40 to 45)
-				playsound(src, 'sound/machines/buzz-two.ogg', 100, FALSE, FALSE)
-				src.audible_message("<span class='danger'>You hear a buzz from the [src] and a voice,</span>")
-				say("SECURITY BREACH DETECTED, SENDING BACKUP IMMEDIATELY, PRIORITY GREEN, SENDING IN THE MEDBOT.")
-				src.visible_message("<span class=danger>A strange target appears on the ground.</span>")
+	switch(danger_level) //ever wanted the extreme dannger of turn based rng but in space station 13?
+		if(46 to 100)
+			src.audible_message("<span class='notice'>The [src] makes a crashing sound as its salvaged.</span>")
+		if(40 to 45)
+			playsound(src, 'sound/machines/buzz-two.ogg', 100, FALSE, FALSE)
+			src.audible_message("<span class='danger'>You hear a buzz from the [src] and a voice,</span>")
+			say("SECURITY BREACH DETECTED, SENDING BACKUP IMMEDIATELY, PRIORITY GREEN, SENDING IN THE MEDBOT.")
+			src.visible_message("<span class=danger>A strange target appears on the ground.</span>")
 
-				var/obj/structure/closet/supplypod/bluespacepod/pod = new()
-				new /mob/living/simple_animal/bot/medbot/rockplanet(pod)
-				pod.style = STYLE_STANDARD
-				pod.explosionSize = list(0,0,0,0)
+			var/obj/structure/closet/supplypod/bluespacepod/pod = new()
+			new /mob/living/simple_animal/bot/medbot/rockplanet(pod)
+			pod.style = STYLE_STANDARD
+			pod.explosionSize = list(0,0,0,0)
 
-			if(26 to 40)
-				playsound(src, 'sound/machines/buzz-two.ogg', 100, FALSE, FALSE)
-				src.audible_message("<span class='danger'>You hear a buzz from the [src] and a voice,</span>")
-				say("SECURITY BREACH DETECTED, SENDING BACKUP IMMEDIATELY, PRIORITY BLUE, SENDING IN THE FIREBOT.")
-				src.visible_message("<span class=danger>A strange target appears on the ground.</span>")
+		if(26 to 40)
+			playsound(src, 'sound/machines/buzz-two.ogg', 100, FALSE, FALSE)
+			src.audible_message("<span class='danger'>You hear a buzz from the [src] and a voice,</span>")
+			say("SECURITY BREACH DETECTED, SENDING BACKUP IMMEDIATELY, PRIORITY BLUE, SENDING IN THE FIREBOT.")
+			src.visible_message("<span class=danger>A strange target appears on the ground.</span>")
 
-				var/obj/structure/closet/supplypod/bluespacepod/pod = new()
-				new /mob/living/simple_animal/bot/firebot/rockplanet(pod)
-				pod.style = STYLE_STANDARD
-				pod.explosionSize = list(0,0,0,0)
+			var/obj/structure/closet/supplypod/bluespacepod/pod = new()
+			new /mob/living/simple_animal/bot/firebot/rockplanet(pod)
+			pod.style = STYLE_STANDARD
+			pod.explosionSize = list(0,0,0,0)
 
-			if(4 to 25)
-				playsound(src, 'sound/machines/buzz-two.ogg', 100, FALSE, FALSE)
-				src.audible_message("<span class='danger'>You hear as buzz from the [src] and a voice,</span>")
-				say("SECURITY BREACH DETECTED, SENDING BACKUP IMMEDIATELY, PRIORITY RED, SENDING IN THE ED 209.")
-				src.visible_message("<span class=danger>A strange target appears on the ground.</span>")
+		if(1 to 25)
+			playsound(src, 'sound/machines/buzz-two.ogg', 100, FALSE, FALSE)
+			src.audible_message("<span class='danger'>You hear as buzz from the [src] and a voice,</span>")
+			say("SECURITY BREACH DETECTED, SENDING BACKUP IMMEDIATELY, PRIORITY RED, SENDING IN THE ED 209.")
+			src.visible_message("<span class=danger>A strange target appears on the ground.</span>")
 
-				var/obj/structure/closet/supplypod/bluespacepod/pod = new()
-				new /mob/living/simple_animal/bot/secbot/ed209/rockplanet(pod)
-				pod.style = STYLE_STANDARD
-				pod.explosionSize = list(0,0,0,0)
+			var/obj/structure/closet/supplypod/bluespacepod/pod = new()
+			new /mob/living/simple_animal/bot/secbot/ed209/rockplanet(pod)
+			pod.style = STYLE_STANDARD
+			pod.explosionSize = list(0,0,0,0)
+/*
+		if(1 to 3)
+			playsound(src, 'sound/machines/warning-buzzer.ogg', 100, FALSE, FALSE)
+			src.audible_message("<span class='boldwarning'>You hear a loud buzzing from the [src] and a voice,</span>")
+			say("SECURITY BREACH DETECTED, SENDING BACKUP IMMEDIATELY, PRIORITY DELTA, SENDING IN THE LOBSTER.")
+			src.visible_message("<span class=danger>A strange target appears on the ground. It might be best to step back!</span>")
 
-			if(1 to 3)
-				playsound(src, 'sound/machines/warning-buzzer.ogg', 100, FALSE, FALSE)
-				src.audible_message("<span class='boldwarning'>You hear a loud buzzing from the [src] and a voice,</span>")
-				say("SECURITY BREACH DETECTED, SENDING BACKUP IMMEDIATELY, PRIORITY DELTA, SENDING IN THE LOBSTER.")
-				src.visible_message("<span class=danger>A strange target appears on the ground. It might be best to step back!</span>")
-
-				var/obj/structure/closet/supplypod/bluespacepod/pod = new()
-				new /mob/living/simple_animal/hostile/megafauna/ripley_lobster(pod)
-				pod.style = STYLE_SEETHROUGH
-				return
-
+			var/obj/structure/closet/supplypod/bluespacepod/pod = new()
+			new /mob/living/simple_animal/hostile/megafauna/ripley_lobster(pod)
+			pod.style = STYLE_SEETHROUGH
+			return
+*/
 //scrap item, mostly for fluff
 /obj/item/stack/ore/salvage
 	name = "salvage"
@@ -458,7 +457,11 @@
 
 //PROTOLATHE
 /obj/effect/spawner/lootdrop/tool_engie_proto
-
+	loot = list(
+			/obj/effect/spawner/lootdrop/tool_engie_common = 100,
+			/obj/effect/spawner/lootdrop/tool_engie_sydnie = 20,
+			/obj/effect/spawner/lootdrop/tool_engie_adv = 5
+		)
 
 /obj/effect/spawner/lootdrop/tool_engie_common
 	loot = list(
@@ -471,7 +474,6 @@
 		)
 
 /obj/effect/spawner/lootdrop/tool_engie_sydnie
-/obj/effect/spawner/lootdrop/tool_engie_common
 	loot = list(
 			/obj/item/wrench/syndie = 1,
 			/obj/item/screwdriver/nuke = 1,
@@ -489,8 +491,44 @@
 		)
 
 /obj/effect/spawner/lootdrop/tool_surgery_proto
+	loot = list(
+			/obj/effect/spawner/lootdrop/tool_surgery_common = 100,
+			/obj/effect/spawner/lootdrop/tool_surgery_adv = 10,
+		)
+
+/obj/effect/spawner/lootdrop/tool_surgery_common
+	loot = list(
+			/obj/item/scalpel = 1,
+			/obj/item/hemostat = 1,
+			/obj/item/cautery = 1,
+			/obj/item/retractor = 1,
+			/obj/item/circular_saw = 1,
+			/obj/item/surgicaldrill = 1
+		)
+
+/obj/effect/spawner/lootdrop/tool_surgery_adv
+	loot = list(
+			/obj/item/scalpel/advanced = 1,
+			/obj/item/retractor/advanced = 1,
+			/obj/item/surgicaldrill/advanced = 1
+		)
+
 /obj/effect/spawner/lootdrop/beaker_loot_spawner
+	loot = list(
+			/obj/item/reagent_containers/glass/beaker = 500,
+			/obj/item/reagent_containers/glass/beaker/large = 200,
+			/obj/item/reagent_containers/glass/beaker/plastic = 50,
+			/obj/item/reagent_containers/glass/beaker/meta = 10,
+			/obj/item/reagent_containers/glass/beaker/noreact = 5,
+			/obj/item/reagent_containers/glass/beaker/bluespace = 1
+		)
 /obj/effect/spawner/lootdrop/random_prosthetic
+	loot = list(
+			/obj/item/bodypart/l_arm/robot/surplus = 1,
+			/obj/item/bodypart/r_arm/robot/surplus = 1,
+			/obj/item/bodypart/l_leg/robot/surplus = 1,
+			/obj/item/bodypart/r_leg/robot/surplus = 1,
+		)
 /obj/effect/spawner/lootdrop/random_gun_protolathe_lootdrop
 	loot = list(
 			/obj/item/gun/energy/lasercannon = 1,
@@ -498,3 +536,98 @@
 			/obj/item/gun/energy/temperature = 1
 		)
 /obj/effect/spawner/lootdrop/random_ammo_protolathe_lootdrop
+	loot = list(
+			/obj/item/stock_parts/cell/gun/upgraded = 5,
+			/obj/item/ammo_box/magazine/smgm9mm = 7
+		)
+
+//CIRCUIT IMPRINTER
+/obj/effect/spawner/lootdrop/random_machine_cicuit_common
+	loot = list(
+			/obj/item/circuitboard/machine/autodoc = 5,
+			/obj/item/circuitboard/machine/autolathe = 5,
+			/obj/item/circuitboard/machine/bepis = 5,
+			/obj/item/circuitboard/machine/biogenerator = 5,
+			/obj/item/circuitboard/machine/cell_charger = 5,
+			/obj/item/circuitboard/machine/chem_heater = 5,
+			/obj/item/circuitboard/machine/chem_master = 5,
+			/obj/item/circuitboard/machine/clonescanner = 5,
+			/obj/item/circuitboard/machine/cryo_tube = 5,
+			/obj/item/circuitboard/machine/cyborgrecharger = 5,
+			/obj/item/circuitboard/machine/deep_fryer = 5,
+			/obj/item/circuitboard/machine/experimentor = 5,
+			/obj/item/circuitboard/machine/holopad = 5,
+			/obj/item/circuitboard/machine/hydroponics = 5,
+			/obj/item/circuitboard/machine/limbgrower = 5,
+			/obj/item/circuitboard/machine/ltsrbt = 5,
+			/obj/item/circuitboard/machine/mech_recharger = 5,
+			/obj/item/circuitboard/machine/mechfab = 5,
+			/obj/item/circuitboard/machine/medical_kiosk = 5,
+			/obj/item/circuitboard/machine/medipen_refiller = 5,
+			/obj/item/circuitboard/machine/microwave = 5,
+			/obj/item/circuitboard/machine/monkey_recycler = 5,
+			/obj/item/circuitboard/machine/ore_redemption = 5,
+			/obj/item/circuitboard/machine/ore_silo = 5,
+			/obj/item/circuitboard/machine/reagentgrinder = 5,
+			/obj/item/circuitboard/machine/recharger = 5,
+			/obj/item/circuitboard/machine/seed_extractor = 5,
+			/obj/item/circuitboard/machine/selling_pad = 5,
+			/obj/item/circuitboard/machine/emitter = 5
+		)
+
+/obj/effect/spawner/lootdrop/random_machine_cicuit_rare
+	loot = list(
+			/obj/item/circuitboard/aicore = 5,
+			/obj/item/circuitboard/machine/chem_dispenser = 5,
+			/obj/item/circuitboard/machine/circuit_imprinter = 5,
+			/obj/item/circuitboard/machine/protolathe = 5,
+			/obj/item/circuitboard/machine/clonepod/experimental = 5,
+			/obj/item/circuitboard/machine/rad_collector = 5
+		)
+
+/obj/effect/spawner/lootdrop/random_machine_cicuit_mech
+	loot = list(
+			/obj/item/circuitboard/mecha/ripley/main = 100,
+			/obj/item/circuitboard/mecha/ripley/peripherals = 100,
+			/obj/item/circuitboard/mecha/honker/main = 5,
+			/obj/item/circuitboard/mecha/honker/peripherals = 5,
+			/obj/item/circuitboard/mecha/odysseus/main = 5,
+			/obj/item/circuitboard/mecha/odysseus/peripherals = 5,
+			/obj/item/circuitboard/mecha/gygax/main = 1,
+			/obj/item/circuitboard/mecha/gygax/peripherals = 1,
+			/obj/item/circuitboard/mecha/gygax/targeting = 1,
+			/obj/item/circuitboard/mecha/durand/main = 1,
+			/obj/item/circuitboard/mecha/durand/peripherals = 1,
+			/obj/item/circuitboard/mecha/durand/targeting = 1
+		)
+
+//COMPUTER
+/obj/effect/spawner/lootdrop/random_computer_cicuit_common
+	loot = list(
+			/obj/item/circuitboard/computer/aifixer = 5,
+			/obj/item/circuitboard/computer/arcade/amputation = 5,
+			/obj/item/circuitboard/computer/arcade/battle = 5,
+			/obj/item/circuitboard/computer/arcade/orion_trail = 5,
+			/obj/item/circuitboard/computer/atmos_alert = 5,
+			/obj/item/circuitboard/computer/card = 5,
+			/obj/item/circuitboard/computer/cloning = 5,
+			/obj/item/circuitboard/computer/communications = 5,
+			/obj/item/circuitboard/computer/launchpad_console = 5,
+			/obj/item/circuitboard/computer/mech_bay_power_console = 5,
+			/obj/item/circuitboard/computer/pandemic = 5,
+			/obj/item/circuitboard/computer/powermonitor/secret = 5,
+			/obj/item/circuitboard/computer/prototype_cloning = 5,
+			/obj/item/circuitboard/computer/stationalert = 5,
+			/obj/item/circuitboard/computer/xenobiology = 5,
+			/obj/item/circuitboard/computer/teleporter = 5
+		)
+
+/obj/effect/spawner/lootdrop/random_computer_cicuit_rare
+	loot = list(
+			/obj/item/circuitboard/computer/crew = 5,
+			/obj/item/circuitboard/computer/cargo/express = 5,
+			/obj/item/circuitboard/computer/communications = 5,
+			/obj/item/circuitboard/computer/shuttle/helm = 5,
+			/obj/item/circuitboard/computer/operating = 5,
+			/obj/item/circuitboard/computer/med_data = 5
+		)
