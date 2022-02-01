@@ -333,3 +333,28 @@
 	. = ..()
 	languages_possible = languages_possible_ethereal
 
+/obj/item/organ/tongue/slime //I really can't be asked to make an icon for this. Besides nobody is ever going to pull your tongue out in the first place.
+	name = "slime 'tongue'"
+	desc = "A glob of slime that somehow lets slimepeople speak."
+	alpha = 150
+	say_mod = "blorbles"
+	var/static/list/languages_possible_slime = typecacheof(list(
+		/datum/language/common,
+		/datum/language/draconic,
+		/datum/language/codespeak,
+		/datum/language/monkey,
+		/datum/language/narsie,
+		/datum/language/beachbum,
+		/datum/language/aphasia,
+		/datum/language/piratespeak,
+		/datum/language/moffic,
+		/datum/language/sylvan,
+		/datum/language/shadowtongue,
+		/datum/language/terrum,
+		/datum/language/ratvar,
+		/datum/language/slime
+	))
+
+/obj/item/organ/tongue/slime/Initialize(mapload)
+	. = ..()
+	languages_possible = languages_possible_slime
