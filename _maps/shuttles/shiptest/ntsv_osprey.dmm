@@ -5535,9 +5535,8 @@
 /turf/open/floor/plating,
 /area/ship/cargo)
 "NU" = (
-/obj/structure/sign/departments/custodian,
 /turf/closed/wall/mineral/titanium/nodiagonal,
-/area/ship/crew/janitor)
+/area/ship/engineering/engine)
 "NV" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 10
@@ -5829,6 +5828,10 @@
 	},
 /turf/open/floor/plasteel,
 /area/ship/hallway/port)
+"Qa" = (
+/obj/structure/sign/departments/custodian,
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ship/crew/janitor)
 "Qp" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -5908,6 +5911,9 @@
 	},
 /turf/open/floor/plasteel,
 /area/ship/hallway/aft)
+"QH" = (
+/turf/closed/wall/mineral/titanium,
+/area/ship/engineering/engine)
 "QJ" = (
 /obj/machinery/atmospherics/components/binary/pump/on/layer2{
 	dir = 1;
@@ -7492,7 +7498,7 @@ DQ
 pT
 pT
 Sb
-NU
+Qa
 pT
 UU
 sl
@@ -7664,12 +7670,12 @@ zQ
 DQ
 Ui
 cS
-xh
-xh
-xh
-xh
-xh
-xh
+NU
+NU
+NU
+NU
+NU
+NU
 UU
 UU
 iF
@@ -7902,8 +7908,8 @@ KV
 xh
 xh
 xh
-xh
-xh
+NU
+QH
 XU
 XU
 XU
@@ -7961,7 +7967,7 @@ ml
 ep
 ep
 gu
-xh
+NU
 XU
 XU
 XU
@@ -8019,7 +8025,7 @@ Wu
 Bs
 Bs
 Rm
-xh
+NU
 XU
 XU
 XU
@@ -8077,7 +8083,7 @@ aB
 ZD
 Bs
 Rm
-xh
+NU
 XU
 XU
 XU
@@ -8135,7 +8141,7 @@ tc
 qa
 Bs
 Rm
-xh
+NU
 XU
 XU
 XU
@@ -8193,7 +8199,7 @@ AM
 sw
 sw
 Ym
-xh
+NU
 XU
 XU
 XU
@@ -8250,8 +8256,8 @@ Hh
 cb
 xh
 xh
-xh
-xh
+NU
+QH
 XU
 XU
 XU
@@ -8476,12 +8482,12 @@ pJ
 mE
 Tw
 XO
-xh
-xh
-xh
-xh
-xh
-xh
+NU
+NU
+NU
+NU
+NU
+NU
 ao
 ao
 nT
