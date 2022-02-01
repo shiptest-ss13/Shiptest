@@ -37,7 +37,7 @@
 	pixel_x = -16
 	var/shoudnt_move = FALSE
 	var/dash_num_short = 4
-	var/dash_num_long = 18
+	var/dash_num_long = 7
 	var/dash_cooldown = 0
 	var/dash_cooldown_time = 4 // cooldown_time * distance:
 	// 4 * 4 = 16 (1.6 seconds)
@@ -64,7 +64,9 @@
 	maxHealth = 2250
 	shoudnt_move = TRUE //we want to show the transforming animation
 	phase = 2
+	status_flags = CANPUSH | GODMODE //this is so during the animation you cant beat it up
 
+///LOOT
 /obj/effect/spawner/clawloot/Initialize()
 	. = ..()
 	addtimer(CALLBACK(src, .proc/spawn_loot), 5 SECONDS) //this is because it dies violently exploding, so we dont want to destroy the goodies, you know?
@@ -76,6 +78,8 @@
 /obj/effect/spawner/clawloot/crusher/spawn_loot()
 	new /obj/item/nullrod/armblade/tentacle(get_turf(src)) //idk what to put here, memed is the loot person
 	return ..()
+///LOOT END
+
 //PHASE ONE
 /datum/action/innate/megafauna_attack/swift_dash
 	name = "Swift Dash"
@@ -149,12 +153,12 @@
 				emp_pulse()
 			if(4)
 				tentacle(target)
-//			if(5)
-//				summon_creatures()
+			if(5)
+				summon_creatures()
 //			if(6)
 //				pulse_rifle(target)
-//			if(7)
-//				sting_attack(target)
+			if(7)
+				sting_attack(target)
 		return
 
 	Goto(target, move_to_delay, minimum_distance)
@@ -165,12 +169,32 @@
 			swift_dash(target, dash_num_long, 15)
 	else
 		if((get_dist(src, target) >= 4) && ((get_dist(src, target)) <= 8) && !shoudnt_move)
-			if(prob(70))
+			if(prob(60))
 				tentacle(target)
 				return
-		if(prob(10))
+			else if(prob(40))
+				sting_attack(target)
+				return
+			else
+				swift_dash(target, dash_num_long, 7)
+				return
+
+		else if(prob(10))
 			emp_pulse()
 			return
+		else if(get_dist(src, target) >= 3 && dash_cooldown <= world.time && !shoudnt_move)
+			swift_dash(target, dash_num_short, 5)
+		else
+			summon_creatures()
+
+/////PROJECTILE SHOOTING
+/mob/living/simple_animal/hostile/megafauna/claw/proc/shoot_projectile(angle)
+	var/obj/projectile/P = new projectiletype(get_turf(src))
+	playsound(src, projectilesound, 100, TRUE)
+	P.preparePixelProjectile(get_step(src, pick(GLOB.alldirs)), get_turf(src))
+	P.firer = src
+	P.fire(angle)
+
 
 /////DASH ATTACK
 /mob/living/simple_animal/hostile/megafauna/claw/proc/swift_dash(target, distance, wait_time)
@@ -224,7 +248,51 @@
 /////TENTACLE END
 
 /////STING ATTACK
+/mob/living/simple_animal/hostile/megafauna/claw/proc/sting_attack(target)
+	visible_message("<span class='danger'>[src] stops suddenly and spikes apear all over it's body!</span>")
+	icon_state = "claw-phase2_sting_attack"
+	flick("claw-phase2_sting_attack_transform", src)
+	projectiletype = /obj/projectile/claw_projectille
+	projectilesound = 'sound/effects/splat.ogg'
+	shoudnt_move = TRUE
+	addtimer(CALLBACK(src, .proc/sting_attack2, target), 2 SECONDS)
 
+/mob/living/simple_animal/hostile/megafauna/claw/proc/sting_attack2(target)
+	visible_message("<span class='danger'>[src] shoots all the spikes!</span>")
+	icon_state = "claw-phase2"
+	shoot_projectile(Get_Angle(src,target) + 10)
+	shoot_projectile(Get_Angle(src,target) + 5)
+	shoot_projectile(Get_Angle(src,target))
+	shoot_projectile(Get_Angle(src,target) - 5)
+	shoot_projectile(Get_Angle(src,target) - 10)
+	shoudnt_move = FALSE
+
+/obj/projectile/claw_projectille
+	name = "claw's spike"
+	icon_state = "crystal_shard"
+	damage = 15
+	armour_penetration = 25
+	damage_type = BRUTE
+	speed = 4
+
+/////STING ATTACK END
+
+/////LIE SPIDER
+/mob/living/simple_animal/hostile/megafauna/claw/proc/summon_creatures()
+	shake_animation(20)
+	visible_message("<span class='danger'>[src] shudders violently and starts to split a flesh spider from it's body!</span>")
+	shoudnt_move = TRUE
+	addtimer(CALLBACK(src, .proc/summon_creatures2), 2 SECONDS)
+
+/mob/living/simple_animal/hostile/megafauna/claw/proc/summon_creatures2()
+	shake_animation(5)
+	var/mob/living/summoned_spider = new /mob/living/simple_animal/hostile/poison/giant_spider/hunter(get_turf(src))
+	visible_message("<span class='danger'>[summoned_spider] violently tears apart from [src]!</span>")
+	shoudnt_move = FALSE
+
+/////LIE SPIDER END
+
+/////PHASE SHIFT STUFF
 /mob/living/simple_animal/hostile/megafauna/claw/death()
 	. = ..()
 	on_death() //this is because both stages have unique behavior on death, inlcuding stage one not dying
@@ -252,10 +320,10 @@
 	new /obj/effect/gibspawner/human(get_turf(src))
 	name = "The CLAW"
 	desc = "You aren't sure what this is and you are afraid to know."
+	status_flags &= ~GODMODE
 
 /mob/living/simple_animal/hostile/megafauna/claw/proc/phase2_dramatic()
 	explosion(src, 0, 5, 10)
 	empulse(src, 5, 8)
 	new /obj/effect/gibspawner/human(get_turf(src))
 	qdel(src)
-

@@ -393,7 +393,7 @@
 	shake_animation(20)
 	visible_message("<span class='warning'>[src] convulses violently!! Get back!!</span>")
 	playsound(loc, 'sound/effects/magic.ogg', 100, TRUE)
-	addtimer(CALLBACK(src, .proc/open_fire_2), 2 SECONDS)
+	addtimer(CALLBACK(src, .proc/open_fire_2), 1 SECONDS)
 
 /mob/living/simple_animal/hostile/asteroid/goliath/beast/ancient/crystal/proc/open_fire_2()
 	if(prob(20) && !(spiral_attack_inprogress))
