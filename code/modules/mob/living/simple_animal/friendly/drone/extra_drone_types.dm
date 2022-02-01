@@ -133,3 +133,38 @@
 
 
 
+
+/mob/living/simple_animal/drone/capdrone
+	name = "Capdrone"
+	desc = "A modified maintenance drone. This one brings with it the feeling of command."
+	icon_state = "drone_synd"
+	icon_living = "drone_synd"
+	picked = TRUE //the appearence of syndrones is static, you don't get to change it.
+	health = 50
+	maxHealth = 140 //If you murder other drones and cannibalize them you can get much stronger
+	initial_language_holder = /datum/language_holder/drone/syndicate
+	faction = list(ROLE_SYNDICATE)
+	speak_emote = list("orders")
+	bubble_icon = "syndibot"
+	heavy_emp_damage = 10
+	laws = \
+	"1. Survive.\n"+\
+	"2. Expand.\n"+\
+	"3. Command."
+	default_storage = /obj/item/gun/energy/e_gun/old
+	default_hatmask = /obj/item/clothing/head/crown/fancy
+	hacked = TRUE
+	flavortext = null
+
+/mob/living/simple_animal/drone/capdrone/Login()
+	. = ..()
+	if(!. || !client)
+		return FALSE
+	to_chat(src, "<span class='notice'>You can kill and eat other drones to increase your health!</span>" )
+
+/obj/effect/mob_spawn/drone/capdrone
+	name = "capdrone shell"
+	desc = "A shell of a capdrone, a modified maintenance drone designed to command and control."
+	icon_state = "syndrone_item"
+	mob_name = "capdrone"
+	mob_type = /mob/living/simple_animal/drone/capdrone
