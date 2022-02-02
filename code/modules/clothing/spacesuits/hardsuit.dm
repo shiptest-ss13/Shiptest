@@ -326,7 +326,7 @@
 	actions_types = list(/datum/action/item_action/toggle_helmet_mode)
 	visor_flags_inv = HIDEMASK|HIDEEYES|HIDEFACE|HIDEFACIALHAIR|HIDEEARS
 	visor_flags = STOPSPRESSUREDAMAGE
-	var/visor_flags_updated_on_toggle = FALSE //whether or not our face is covered or not during the toggled mode
+	var/full_retraction = FALSE //whether or not our full face is revealed or not during combat mode
 
 /obj/item/clothing/head/helmet/space/hardsuit/syndi/update_icon_state()
 	icon_state = "hardsuit[on]-[hardsuit_type]"
@@ -348,9 +348,11 @@
 		set_light_on(TRUE)
 		clothing_flags |= visor_flags
 		cold_protection |= HEAD
-		if(visor_flags_updated_on_toggle)
+		if(full_retraction)
 			flags_cover |= HEADCOVERSEYES | HEADCOVERSMOUTH
-			flags_inv |= visor_flags_inv
+		else
+			flags_cover |= HEADCOVERSMOUTH
+		flags_inv |= visor_flags_inv
 	else
 		to_chat(user, "<span class='notice'>You switch your hardsuit to combat mode and can now run at full speed.</span>")
 		name += " (combat)"
@@ -358,9 +360,11 @@
 		set_light_on(FALSE)
 		clothing_flags &= ~visor_flags
 		cold_protection &= ~HEAD
-		if(visor_flags_updated_on_toggle)
+		if(full_retraction)
 			flags_cover &= ~(HEADCOVERSEYES | HEADCOVERSMOUTH)
-			flags_inv &= ~visor_flags_inv
+		else
+			flags_cover &= ~(HEADCOVERSMOUTH)
+		flags_inv &= ~visor_flags_inv
 	update_icon()
 	playsound(src.loc, 'sound/mecha/mechmove03.ogg', 50, TRUE)
 	toggle_hardsuit_mode(user)
@@ -419,7 +423,7 @@
 	heat_protection = HEAD
 	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
 	resistance_flags = FIRE_PROOF | ACID_PROOF
-	visor_flags_updated_on_toggle = TRUE
+	full_retraction = TRUE
 
 /obj/item/clothing/head/helmet/space/hardsuit/syndi/elite/debug
 
@@ -454,7 +458,7 @@
 	visor_flags_inv = 0
 	visor_flags = 0
 	on = FALSE
-	visor_flags_updated_on_toggle = TRUE
+	full_retraction = TRUE
 
 /obj/item/clothing/suit/space/hardsuit/syndi/owl
 	name = "owl hardsuit"
