@@ -3006,11 +3006,11 @@
 /obj/item/chair,
 /obj/effect/decal/cleanable/greenglow,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/machinery/atmospherics/pipe/manifold/scrubbers/visible/layer4{
-	dir = 4
-	},
 /obj/structure/disposalpipe/segment{
 	dir = 10
+	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
+	dir = 4
 	},
 /turf/open/floor/mineral/titanium/tiled/purple,
 /area/ship/science)
@@ -3847,7 +3847,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 5
 	},
-/obj/machinery/atmospherics/pipe/manifold/scrubbers/visible/layer4{
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
 	dir = 4
 	},
 /turf/open/floor/mineral/titanium/tiled/purple,
@@ -4031,6 +4031,11 @@
 	},
 /turf/open/floor/mineral/titanium/tiled/purple,
 /area/ship/science)
+"YK" = (
+/turf/closed/wall/mineral/titanium{
+	baseturfs = /turf/open/floor/mineral/titanium/tiled/white
+	},
+/area/ship/hallway/fore)
 "YO" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/firealarm{
@@ -4456,7 +4461,7 @@ ih
 ET
 kj
 BD
-Vw
+YK
 zr
 to
 DK
@@ -4736,7 +4741,7 @@ Ft
 eV
 Sa
 fU
-Vw
+YK
 Qu
 xY
 ee
