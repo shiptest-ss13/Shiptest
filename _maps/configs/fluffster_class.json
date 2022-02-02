@@ -1,0 +1,32 @@
+{
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
+	"map_name": "Fluffster-Class Capable Vessel",
+	"prefix": "ISV",
+	"namelists": ["GENERAL", "SPACE"],
+	"map_short_name": "Fluffster-Class",
+	"map_path": "_maps/shuttles/shiptest/fluffster_class.dmm",
+	"map_id": "fluffster_class",
+	"job_slots": {
+		"Captain": {
+			"outfit": "/datum/outfit/job/captain",
+			"officer": true,
+			"slots": 1
+		},
+		"First Officer": {
+			"outfit": "/datum/outfit/job/head_of_personnel",
+			"officer": true,
+			"slots": 1
+		},
+		"Medical Doctor": 1,
+		"Ship Engineer": {
+			"outfit": "/datum/outfit/job/engineer",
+			"slots": 1
+		},
+		"Atmospheric Technician": 1,
+		"Cargo Technician": 1,
+		"Shaft Miner": 2,
+		"Security Officer": 1,
+		"Assistant": 3
+	},
+	"cost": 550
+}
