@@ -74,6 +74,14 @@
 	category = list ("Engineering Machinery")
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
 
+/datum/design/board/magnetic_constrictor
+	name = "Machine Design (Magnetic Constrictor Board)"
+	desc = "The circuit board for a magnetic plasma constrictor."
+	id = "mag_cons"
+	build_path = /obj/item/circuitboard/machine/magnetic_constrictor
+	category = list("Engineering Machinery")
+	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING
+
 /datum/design/board/space_heater
 	name = "Machine Design (Space Heater Board)"
 	desc = "The circuit board for a space heater."

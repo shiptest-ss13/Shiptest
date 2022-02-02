@@ -1103,6 +1103,32 @@
 					/obj/item/circuitboard/machine/thermomachine)
 	crate_name = "thermomachine crate"
 
+/datum/supply_pack/engine/reactor
+	name = "AGCNR Construction Kit"
+	desc = "Contains a reactor beacon and 3 reactor consoles. Uranium rods not included."
+	cost = 12000
+	access = ACCESS_ENGINE
+	contains = list(/obj/item/survivalcapsule/reactor,
+					/obj/machinery/computer/reactor/control_rods/cargo,
+					/obj/machinery/computer/reactor/stats/cargo,
+					/obj/machinery/computer/reactor/fuel_rods/cargo)
+	crate_name = "reactor construction crate"
+	crate_type = /obj/structure/closet/crate/secure/engineering
+	dangerous = TRUE
+
+/datum/supply_pack/engine/reactor_rods
+	name = "Uranium-235 Fuel Rod Crate"
+	desc = "Contains 3 Uranium-235 Fuel Rods. Caution: Contents are radioactive."
+	cost = 5000
+	access = ACCESS_ENGINE
+	contains = list(/obj/item/survivalcapsule/reactor,
+					/obj/machinery/computer/reactor/control_rods/cargo,
+					/obj/machinery/computer/reactor/stats/cargo,
+					/obj/machinery/computer/reactor/fuel_rods/cargo)
+	crate_name = "uranium-235 fuel rods crate"
+	crate_type = /obj/structure/closet/crate/secure/engineering
+	dangerous = TRUE
+
 //////////////////////////////////////////////////////////////////////////////
 /////////////////////// Canisters & Materials ////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////

@@ -217,6 +217,7 @@
 	if(istype(T))
 		var/datum/gas_mixture/GM = T.air
 		GM.set_moles(GAS_PLASMA, max(GM.get_moles(GAS_PLASMA) - severity * holder.energy, 0))
+		GM.set_moles(GAS_CONSTRICTED_PLASMA, max(GM.get_moles(GAS_CONSTRICTED_PLASMA) - severity * holder.energy, 0))
 
 /datum/spacevine_mutation/thorns
 	name = "thorny"

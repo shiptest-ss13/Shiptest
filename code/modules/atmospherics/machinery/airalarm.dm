@@ -109,7 +109,9 @@
 		GAS_STIMULUM				= new/datum/tlv/dangerous,
 		GAS_NITRYL					= new/datum/tlv/dangerous,
 		GAS_PLUOXIUM				= new/datum/tlv(-1, -1, 5, 6), // Unlike oxygen, pluoxium does not fuel plasma/tritium fires
-		GAS_FREON 					= new/datum/tlv/dangerous
+		GAS_FREON 					= new/datum/tlv/dangerous,
+		GAS_CONSTRICTED_PLASMA		= new/datum/tlv/dangerous,
+		GAS_NUCLEIUM				= new/datum/tlv/dangerous,
 	)
 
 /obj/machinery/airalarm/server // No checks here.
@@ -129,7 +131,9 @@
 		GAS_STIMULUM				= new/datum/tlv/no_checks,
 		GAS_NITRYL					= new/datum/tlv/no_checks,
 		GAS_PLUOXIUM				= new/datum/tlv/no_checks,
-		GAS_FREON					= new/datum/tlv/no_checks
+		GAS_FREON					= new/datum/tlv/no_checks,
+		GAS_CONSTRICTED_PLASMA		= new/datum/tlv/no_checks,
+		GAS_NUCLEIUM				= new/datum/tlv/no_checks,
 	)
 
 /obj/machinery/airalarm/kitchen_cold_room // Kitchen cold rooms start off at -80°C or 193.15°K.
@@ -149,7 +153,9 @@
 		GAS_STIMULUM				= new/datum/tlv/dangerous,
 		GAS_NITRYL					= new/datum/tlv/dangerous,
 		GAS_PLUOXIUM				= new/datum/tlv(-1, -1, 1000, 1000), // Unlike oxygen, pluoxium does not fuel plasma/tritium fires
-		GAS_FREON					=  new/datum/tlv/dangerous
+		GAS_FREON					= new/datum/tlv/dangerous,
+		GAS_CONSTRICTED_PLASMA		= new/datum/tlv/dangerous,
+		GAS_NUCLEIUM				= new/datum/tlv/dangerous,
 	)
 
 /obj/machinery/airalarm/unlocked
@@ -542,7 +548,9 @@
 						GAS_BZ,
 						GAS_STIMULUM,
 						GAS_PLUOXIUM,
-						GAS_FREON
+						GAS_FREON,
+						GAS_CONSTRICTED_PLASMA,
+						GAS_NUCLEIUM
 					),
 					"scrubbing" = 1,
 					"widenet" = 1

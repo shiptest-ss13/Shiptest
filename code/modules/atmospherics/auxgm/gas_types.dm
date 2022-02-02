@@ -155,3 +155,19 @@
 	gas_overlay = "freon"
 	moles_visible = MOLES_GAS_VISIBLE *30
 	fusion_power = -5
+
+/datum/gas/constricted_plasma
+	id = "constricted_plasma"
+	specific_heat = 250
+	name = "Constricted plasma"
+	gas_overlay = "constricted_plasma"
+	moles_visible = MOLES_GAS_VISIBLE
+	flags = GAS_FLAG_DANGEROUS
+
+/datum/gas/nucleium
+	id = "nucleium"
+	specific_heat = 450
+	name = "Nucleium"
+	gas_overlay = "nucleium"
+	moles_visible = MOLES_GAS_VISIBLE
+	flags = GAS_FLAG_DANGEROUS

@@ -129,7 +129,7 @@
 				continue
 			if(floor_gas_mix.get_moles(GAS_O2) < 16)
 				continue
-			if(floor_gas_mix.get_moles(GAS_PLASMA))
+			if(floor_gas_mix.get_moles(GAS_PLASMA) || floor_gas_mix.get_moles(GAS_CONSTRICTED_PLASMA) || floor_gas_mix.get_moles(GAS_NUCLEIUM))
 				continue
 			if(floor_gas_mix.get_moles(GAS_CO2) >= 10)
 				continue

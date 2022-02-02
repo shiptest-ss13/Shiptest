@@ -154,6 +154,18 @@
 	gas_type = GAS_FREON
 	filled = 1
 
+/obj/machinery/portable_atmospherics/canister/constricted_plasma
+	name = "constricted plasma canister"
+	desc = "Highly volatile magnetically constricted plasma."
+	icon_state = "orange"
+	gas_type = GAS_CONSTRICTED_PLASMA
+
+/obj/machinery/portable_atmospherics/canister/nucleium
+	name = "nucleium canister"
+	desc = "A concentrated waste gas produced by nuclear reactors. Inhalation will cause irradiation."
+	icon_state = "green"
+	gas_type = GAS_NUCLEIUM
+
 /obj/machinery/portable_atmospherics/canister/fusion_test
 	name = "fusion test canister"
 	desc = "Don't be a badmin."

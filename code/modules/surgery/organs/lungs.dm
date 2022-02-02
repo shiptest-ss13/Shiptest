@@ -31,7 +31,8 @@
 	var/list/gas_min = list()
 	var/list/gas_max = list(
 		GAS_CO2 = 30, // Yes it's an arbitrary value who cares?
-		GAS_PLASMA = MOLES_GAS_VISIBLE
+		GAS_PLASMA = MOLES_GAS_VISIBLE,
+		GAS_CONSTRICTED_PLASMA = MOLES_GAS_VISIBLE
 	)
 	var/list/gas_damage = list(
 		"default" = list(
@@ -40,6 +41,11 @@
 			damage_type = OXY
 		),
 		GAS_PLASMA = list(
+			min = MIN_TOXIC_GAS_DAMAGE,
+			max = MAX_TOXIC_GAS_DAMAGE,
+			damage_type = TOX
+		),
+		GAS_CONSTRICTED_PLASMA = list(
 			min = MIN_TOXIC_GAS_DAMAGE,
 			max = MAX_TOXIC_GAS_DAMAGE,
 			damage_type = TOX
@@ -341,6 +347,34 @@
 		else
 			SEND_SIGNAL(owner, COMSIG_CLEAR_MOOD_EVENT, "smell")
 
+		var/nucleium_pp = PP(breath, GAS_NUCLEIUM)
+		switch(nucleium_pp)
+			if(0.1 to 5)
+				H.adjustFireLoss(1)
+				H.radiation += 1
+			if(5 to 15)
+				H.adjustFireLoss(3)
+				H.radiation += 3
+			if(15 to 30)
+				H.adjustFireLoss(5)
+				H.radiation += 5
+			if(30 to INFINITY)
+				H.adjustFireLoss(10)
+				H.radiation += 10
+
+		if(prob(nucleium_pp/4))
+			to_chat(owner, "<span class='warning'>Your lungs burn!</span>")
+		if(prob(nucleium_pp))
+			H.emote("gasp")
+		if(nucleium_pp > 15)
+			if(prob(2))
+				to_chat(owner, "<span class='userdanger'>Your lungs feel like they're falling apart!</span>")
+				src.Remove(H, 1)
+				QDEL_NULL(src)
+				return
+		gas_breathed = breath.get_moles(GAS_NUCLEIUM)
+		breath.adjust_moles(GAS_NUCLEIUM, -gas_breathed)
+
 		handle_breath_temperature(breath, H)
 	return TRUE
 
@@ -428,7 +462,7 @@
 	if (breath)
 		var/total_moles = breath.total_moles()
 		var/pressure = breath.return_pressure()
-		var/plasma_pp = PP(breath, GAS_PLASMA)
+		var/plasma_pp = PP(breath, GAS_PLASMA) + PP(breath, GAS_CONSTRICTED_PLASMA)
 		owner.blood_volume += (0.2 * plasma_pp) // 10/s when breathing literally nothing but plasma, which will suffocate you.
 
 /obj/item/organ/lungs/cybernetic
@@ -457,6 +491,7 @@
 	safe_breath_max = 250
 	gas_max = list(
 		GAS_PLASMA = 30,
+		GAS_CONSTRICTED_PLASMA = 30,
 		GAS_CO2 = 30
 	)
 	maxHealth = 2 * STANDARD_ORGAN_THRESHOLD

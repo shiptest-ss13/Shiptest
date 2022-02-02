@@ -17,7 +17,7 @@
 
 	if (air.get_oxidation_power(exposed_temperature) < 0.5)
 		return
-	var/has_fuel = air.get_moles(GAS_PLASMA) > 0.5 || air.get_moles(GAS_TRITIUM) > 0.5 || air.get_fuel_amount(exposed_temperature) > 0.5
+	var/has_fuel = (air.get_moles(GAS_PLASMA) + air.get_moles(GAS_CONSTRICTED_PLASMA)) > 0.5 || air.get_moles(GAS_TRITIUM) > 0.5 || air.get_fuel_amount(exposed_temperature) > 0.5
 	if(active_hotspot)
 		if(soh)
 			if(has_fuel)
@@ -157,7 +157,7 @@
 	if((temperature < FIRE_MINIMUM_TEMPERATURE_TO_EXIST) || (volume <= 1))
 		qdel(src)
 		return
-	if(!location.air || location.air.get_oxidation_power() < 0.5 || (INSUFFICIENT(GAS_PLASMA) && INSUFFICIENT(GAS_TRITIUM) && location.air.get_fuel_amount() < 0.5))
+	if(!location.air || location.air.get_oxidation_power() < 0.5 || (INSUFFICIENT(GAS_PLASMA) && INSUFFICIENT(GAS_TRITIUM) && INSUFFICIENT(GAS_CONSTRICTED_PLASMA) && location.air.get_fuel_amount() < 0.5))
 		qdel(src)
 		return
 

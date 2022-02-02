@@ -121,23 +121,33 @@
 	cost = 25
 	unit_name = "security barrier"
 	export_types = list(/obj/item/grenade/barrier, /obj/structure/barricade/security)
-/*WS Begin - Cargo Rebalance?
 
 /datum/export/large/gas_canister
 	cost = 10 //Base cost of canister. You get more for nice gases inside.
 	unit_name = "Gas Canister"
 	export_types = list(/obj/machinery/portable_atmospherics/canister)
+
 /datum/export/large/gas_canister/get_cost(obj/O)
 	var/obj/machinery/portable_atmospherics/canister/C = O
 	var/worth = 10
 
-	worth += C.air_contents.get_moles(GAS_BZ)*4
+	worth += C.air_contents.get_moles(GAS_BZ)*2
 	worth += C.air_contents.get_moles(GAS_STIMULUM)*100
 	worth += C.air_contents.get_moles(GAS_HYPERNOB)*1000
-	worth += C.air_contents.get_moles(GAS_MIASMA)*10
-	worth += C.air_contents.get_moles(GAS_TRITIUM)*5
+	worth += C.air_contents.get_moles(GAS_MIASMA)*4
+	worth += C.air_contents.get_moles(GAS_TRITIUM)*4
 	worth += C.air_contents.get_moles(GAS_PLUOXIUM)*5
 	worth += C.air_contents.get_moles(GAS_FREON)*5
+	worth += C.air_contents.get_moles(GAS_CONSTRICTED_PLASMA)*2
+	worth += C.air_contents.get_moles(GAS_NUCLEIUM)*10
 	return worth
 
-WS end */
+/datum/export/large/am_control_unit
+	cost = 4000
+	unit_name = "antimatter control unit"
+	export_types = list(/obj/machinery/power/am_control_unit)
+
+/datum/export/large/am_shielding_container
+	cost = 150
+	unit_name = "packaged antimatter reactor section"
+	export_types = list(/obj/item/am_shielding_container)

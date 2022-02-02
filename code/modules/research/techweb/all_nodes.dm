@@ -196,6 +196,15 @@
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 	export_price = 5000
 
+/datum/techweb_node/magnetic_constrictor
+	id = "mag_cons"
+	display_name = "Magnetic Constriction of Plasma"
+	description = "Beating plasma into submission - a guide."
+	prereq_ids = list("adv_engi", "adv_power")
+	design_ids = list("mag_cons")
+	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
+	export_price = 5000
+
 /////////////////////////Bluespace tech/////////////////////////
 /datum/techweb_node/bluespace_basic //Bluespace-memery
 	id = "bluespace_basic"
