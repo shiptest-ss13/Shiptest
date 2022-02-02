@@ -199,7 +199,7 @@
 	return reagent_amount_holder * true_percentage //Multiplies the total amount needed by the smallest percentage of any reagent in the recipe
 
 /obj/machinery/power/shuttle/engine/liquid/return_fuel_cap()
-	if(!(INITIALIZED_ & flags_1))
+	if(!(INITIALIZED_1 & flags_1))
 		CRASH("Attempted to read the fuel cap of an uninitialized liquid engine")
 	return reagents.maximum_volume
 
