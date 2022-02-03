@@ -15,7 +15,7 @@
 
 #define RBMK_MAX_CRITICALITY 3 //No more criticality than N for now.
 
-#define RBMK_POWER_FLAVOURISER 8000 //To turn those KWs into something usable
+#define RBMK_POWER_FLAVOURISER 4000 //To turn those KWs into something usable
 
 //Math stuffs.
 #define KPA_TO_PSI(A) (A/6.895)
@@ -99,7 +99,7 @@ The reactor CHEWS through moderator. It does not do this slowly. Be very careful
 	var/next_slowprocess = 0
 	var/gas_absorption_effectiveness = 0.5
 	var/gas_absorption_constant = 0.5 //We refer to this one as it's set on init, randomized.
-	var/minimum_coolant_level = 5
+	var/minimum_coolant_level = 1
 	var/warning = FALSE //Have we begun warning the crew of their impending death?
 	var/next_warning = 0 //To avoid spam.
 	var/last_power_produced = 0 //For logging purposes
@@ -120,7 +120,7 @@ The reactor CHEWS through moderator. It does not do this slowly. Be very careful
 	. = ..()
 	if(!Adjacent(user))
 		return
-	if(do_after(user, 1 SECONDS, target=src))
+	if(!do_after(user, 1 SECONDS, target=src))
 		return
 	var/percent = vessel_integrity / initial(vessel_integrity) * 100
 	var/msg = "<span class='warning'>The reactor looks operational.</span>"
@@ -394,6 +394,7 @@ The reactor CHEWS through moderator. It does not do this slowly. Be very careful
 		playsound(loc, 'sound/machines/clockcult/steam_whoosh.ogg', 100, TRUE)
 		var/turf/T = get_turf(src)
 		T.atmos_spawn_air("water_vapor=[pressure/100];TEMP=[CELSIUS_TO_KELVIN(temperature)]")
+		T.atmos_spawn_air("nucleium=[pressure/500];TEMP=[CELSIUS_TO_KELVIN(temperature)]")
 		var/pressure_damage = min(pressure/100, initial(vessel_integrity)/45)	//You get 45 seconds (if you had full integrity), worst-case. But hey, at least it can't be instantly nuked with a pipe-fire.. though it's still very difficult to save.
 		vessel_integrity -= pressure_damage
 		if(vessel_integrity <= pressure_damage) //It wouldn't be able to tank another hit.
@@ -466,12 +467,17 @@ The reactor CHEWS through moderator. It does not do this slowly. Be very careful
 	explosion(get_turf(src), 0, 5, 10, 20, TRUE, TRUE)
 	empulse(get_turf(src), 25, 15)
 
-//Failure condition 2: Blowout. Achieved by reactor going over-pressured. Results are *much* worse than standard meltdowns.
+// Failure condition 2: Blowout. Achieved by reactor over-pressurizing and rupturing. Results are *much* worse than standard meltdowns.
 /obj/machinery/atmospherics/components/trinary/nuclear_reactor/proc/blowout()
 	explosion(get_turf(src), GLOB.MAX_EX_DEVESTATION_RANGE, GLOB.MAX_EX_HEAVY_RANGE, GLOB.MAX_EX_LIGHT_RANGE, GLOB.MAX_EX_FLASH_RANGE)
 	meltdown() //Double kill.
-	var/datum/map_zone/target_zone = get_map_zone()
-	target_zone.weather_controller.run_weather("nuclear fallout") //Run the weather for this specific virtual Z-level
+	var/datum/weather_controller/weather_controller = SSmapping.get_map_zone_weather_controller(get_turf(src))
+	weather_controller.run_weather(/datum/weather/nuclear_fallout) // Nuclear fallout time
+	for(var/X in GLOB.landmarks_list)
+		if(istype(X, /obj/effect/landmark/nuclear_waste_spawner))
+			var/obj/effect/landmark/nuclear_waste_spawner/WS = X
+			if(WS.get_virtual_level() == get_virtual_level()) // If this ship/planet has waste spawners, drop waste at them.
+				WS.fire()
 
 /obj/machinery/atmospherics/components/trinary/nuclear_reactor/update_icon()
 	icon_state = "reactor_off"
@@ -482,7 +488,7 @@ The reactor CHEWS through moderator. It does not do this slowly. Be very careful
 			icon_state = "reactor_hot"
 		if(RBMK_TEMPERATURE_OPERATING to 750)
 			icon_state = "reactor_veryhot"
-		if(750 to RBMK_TEMPERATURE_CRITICAL) //Point of no return.
+		if(750 to RBMK_TEMPERATURE_CRITICAL) // Overheating point
 			icon_state = "reactor_overheat"
 		if(RBMK_TEMPERATURE_CRITICAL to INFINITY)
 			icon_state = "reactor_meltdown"
@@ -546,7 +552,7 @@ The reactor CHEWS through moderator. It does not do this slowly. Be very careful
 
 /obj/machinery/computer/reactor/multitool_act(mob/living/user, obj/item/multitool/I)
 	if(istype(I))
-		to_chat(user, "<span class='notice'>You add the reactor's ID to \the [src]>")
+		to_chat(user, "<span class='notice'>You add the reactor's ID to \the [src].")
 		src.id = I.buffer
 		link_to_reactor()
 		return TRUE
@@ -859,6 +865,9 @@ The reactor CHEWS through moderator. It does not do this slowly. Be very careful
 	. = ..()
 	set_light(3)
 
+/obj/effect/decal/ex_act(severity, target) // This prevents the reactor from blowing up its own sludge
+	return
+
 /obj/effect/decal/nuclear_waste/epicenter //The one that actually does the irradiating. This is to avoid every bit of sludge PROCESSING
 	name = "Dense nuclear sludge"
 
@@ -867,7 +876,7 @@ The reactor CHEWS through moderator. It does not do this slowly. Be very careful
 	var/range = 5 //5 tile radius to spawn goop
 
 /obj/effect/landmark/nuclear_waste_spawner/strong
-	range = 10
+	range = 15
 
 /obj/effect/landmark/nuclear_waste_spawner/proc/fire()
 	playsound(loc, 'sound/effects/gib_step.ogg', 100)
@@ -901,13 +910,16 @@ The reactor CHEWS through moderator. It does not do this slowly. Be very careful
 /datum/weather/nuclear_fallout
 	name = "nuclear fallout"
 	desc = "Irradiated dust falls down everywhere."
+
 	telegraph_duration = 50
 	telegraph_message = "<span class='boldwarning'>The air suddenly becomes dusty..</span>"
+	telegraph_overlay = "light_snow"
+
 	weather_message = "<span class='userdanger'><i>You feel a wave of hot ash fall down on you.</i></span>"
 	weather_overlay = "light_ash"
-	telegraph_overlay = "light_snow"
 	weather_duration_lower = 600
 	weather_duration_upper = 1500
+
 	weather_color = "green"
 	telegraph_sound = null
 	weather_sound = 'sound/effects/agcnr/falloutwind.ogg'
@@ -945,7 +957,7 @@ The reactor CHEWS through moderator. It does not do this slowly. Be very careful
 	status_alarm(FALSE)
 
 /obj/item/sealant
-	name = "Flexi seal"
+	name = "\improper Flexi-Seal"
 	desc = "A strong sealant designed for use in nuclear reactors."
 	icon_state = "sealant"
 	w_class = 1

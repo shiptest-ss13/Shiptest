@@ -2,7 +2,7 @@
 
 /obj/item/survivalcapsule/reactor
 	name = "AGCNR Reactor Beacon"
-	desc = "A special bluespace beacon designed to teleport a reactor assembly to the ship that it is activated on."
+	desc = "A special bluespace beacon designed to teleport a reactor assembly to the ship that it is activated on.<br><b>WARNING: When deployed, the reactor's area must be manually connected to the ship's area network for proper power and gravity functionality.</b>"
 	icon = 'icons/obj/device.dmi'
 	icon_state = "beacon"
 	template_id = "reactor"
@@ -22,6 +22,15 @@
 /obj/machinery/computer/reactor/cargo
 	anchored = FALSE
 	id = null
+
+/obj/machinery/computer/reactor/attackby(obj/item/I, mob/living/user, params)
+	if(I.tool_behaviour == TOOL_WRENCH)
+		to_chat(user, "<span class='notice'>You [!anchored ? "secure \the [src] in place."  : "remove the securing bolts."]</span>")
+		anchored = !anchored
+		density = anchored
+		I.play_tool_sound(src)
+		return TRUE
+	. = ..()
 
 /obj/machinery/computer/reactor/control_rods/cargo
 	anchored = FALSE

@@ -191,7 +191,7 @@
 		return list("success" = FALSE, "message" = "Trit fires aren't setting fire results correctly!")
 	return ..()
 
-// Constricted plasma fire. Similar to a standard plasma fire, but more energetic. Releases H20 while burning.
+// Constricted plasma fire. Similar to a standard plasma fire, but more energetic. Releases H2O and CO2 while burning.
 /datum/gas_reaction/constricted_plasmafire
 	priority = -2 // Constricted plasma burns before standard plasma, due to higher energy release.
 	name = "Constricted Plasma Combustion"
@@ -240,7 +240,8 @@
 			if (super_saturation)
 				air.adjust_moles(GAS_TRITIUM, plasma_burn_rate)
 			else
-				air.adjust_moles(GAS_H2O, plasma_burn_rate)
+				air.adjust_moles(GAS_H2O, plasma_burn_rate * 0.5)
+				air.adjust_moles(GAS_CO2, plasma_burn_rate * 0.5)
 
 			energy_released += FIRE_CONSTRICTED_PLASMA_ENERGY_RELEASED * (plasma_burn_rate)
 

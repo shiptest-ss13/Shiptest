@@ -1147,3 +1147,11 @@
 	materials = list(/datum/material/plastic = 500)
 	build_path = /obj/item/stack/tape/industrial
 	category = list("initial", "Misc")
+
+/datum/design/sealant
+	name = "\improper Flexi-Seal"
+	id = "sealant"
+	build_type = AUTOLATHE
+	materials = list(/datum/material/glass = 200, /datum/material/plastic = 200)
+	build_path = /obj/item/sealant
+	category = list("initial","Tools","Tool Designs")
