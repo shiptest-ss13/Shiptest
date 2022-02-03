@@ -543,6 +543,23 @@ The reactor CHEWS through moderator. It does not do this slowly. Be very careful
 	. = ..()
 	addtimer(CALLBACK(src, .proc/link_to_reactor), 10 SECONDS)
 
+/obj/machinery/computer/reactor/attack_robot(mob/user)
+	. = ..()
+	attack_hand(user)
+
+/obj/machinery/computer/reactor/attack_ai(mob/user)
+	. = ..()
+	attack_hand(user)
+
+/obj/machinery/computer/reactor/attackby(obj/item/I, mob/living/user, params)
+	if(I.tool_behaviour == TOOL_WRENCH)
+		to_chat(user, "<span class='notice'>You [!anchored ? "secure \the [src] in place."  : "remove the securing bolts."]</span>")
+		anchored = !anchored
+		density = anchored
+		I.play_tool_sound(src)
+		return TRUE
+	. = ..()
+
 /obj/machinery/computer/reactor/proc/link_to_reactor()
 	for(var/obj/machinery/atmospherics/components/trinary/nuclear_reactor/asdf in GLOB.machines)
 		if(asdf.id && asdf.id == id)
@@ -551,7 +568,7 @@ The reactor CHEWS through moderator. It does not do this slowly. Be very careful
 	return FALSE
 
 /obj/machinery/computer/reactor/multitool_act(mob/living/user, obj/item/multitool/I)
-	if(istype(I))
+	if(istype(I) && I.buffer)
 		to_chat(user, "<span class='notice'>You add the reactor's ID to \the [src].")
 		src.id = I.buffer
 		link_to_reactor()
@@ -693,23 +710,6 @@ The reactor CHEWS through moderator. It does not do this slowly. Be very careful
 		return
 	newPressure = clamp(newPressure, 0, MAX_OUTPUT_PRESSURE) //Number sanitization is not handled in the pumps themselves, only during their ui_act which this doesn't use.
 	signal(on, newPressure)
-
-/obj/machinery/computer/reactor/attack_robot(mob/user)
-	. = ..()
-	attack_hand(user)
-
-/obj/machinery/computer/reactor/attack_ai(mob/user)
-	. = ..()
-	attack_hand(user)
-
-/obj/machinery/computer/reactor/attackby(obj/item/I, mob/living/user, params)
-	if(I.tool_behaviour == TOOL_WRENCH)
-		to_chat(user, "<span class='notice'>You [!anchored ? "secure \the [src] in place."  : "remove the securing bolts."]</span>")
-		anchored = !anchored
-		density = anchored
-		I.play_tool_sound(src)
-		return TRUE
-	. = ..()
 
 /obj/machinery/computer/reactor/pump/attack_hand(mob/living/user)
 	. = ..()
