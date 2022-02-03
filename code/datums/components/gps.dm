@@ -6,6 +6,9 @@ GLOBAL_LIST_EMPTY(GPS_list)
 	var/tracking = TRUE
 	var/emped = FALSE
 
+	//DO NOT MERGE ME TO MASTER
+	var/__has_screamed = FALSE
+
 /datum/component/gps/Initialize(_gpstag = "COM0")
 	if(!isatom(parent))
 		return COMPONENT_INCOMPATIBLE
@@ -122,6 +125,12 @@ GLOBAL_LIST_EMPTY(GPS_list)
 		if(G.emped || !G.tracking || G == src)
 			continue
 		var/turf/pos = get_turf(G.parent)
+		if(pos.virtual_z() == null)
+			if(!G.__has_screamed)
+				var/atom/crashparent = G.parent
+				stack_trace("GPS Component [G] with parent atom [crashparent] at [crashparent.x], [crashparent.y], [crashparent.z], Area: [get_area(crashparent)] exists outside of a vlev.")
+				G.__has_screamed = TRUE
+			continue
 		if(!pos || !global_mode && pos.virtual_z() != curr.virtual_z())
 			continue
 		var/list/signal = list()
