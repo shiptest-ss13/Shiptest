@@ -45,7 +45,7 @@
 			if(alert(user, "Really delete [name] and greentext escape objectives?", "Delete Shuttle", "Cancel", "Really!") != "Really!")
 				return
 			intoTheSunset()
-			message_admins("[user.key] has deleted [name], and granted the crew greentext.")
+			message_admins("\[SHUTTLE]: [key_name_admin(user)] has deleted [name], and granted the crew greentext.")
 
 		else
 			if(options[selection])
