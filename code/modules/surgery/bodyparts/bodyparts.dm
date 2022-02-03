@@ -59,7 +59,6 @@
 
 	//Coloring and proper item icon update
 	var/skin_tone = ""
-	var/should_draw_gender = FALSE
 	var/should_draw_greyscale = TRUE //Limbs need this information as a back-up incase they are generated outside of a carbon (limbgrower)
 	var/species_color = ""
 	var/mutation_color = ""
