@@ -33,7 +33,7 @@
 			destination = null
 			mode = SHUTTLE_IGNITING
 			setTimer(ignitionTime)
-			message_admins("[user.key] has placed [name] into Infinite Transit.")
+			message_admins("\[SHUTTLE]: [key_name_admin(user)] has placed [name] into Infinite Transit.")
 
 		if("Delete Shuttle")
 			if(alert(user, "Really delete [name]?", "Delete Shuttle", "Cancel", "Really!") != "Really!")
