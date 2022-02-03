@@ -702,6 +702,15 @@ The reactor CHEWS through moderator. It does not do this slowly. Be very careful
 	. = ..()
 	attack_hand(user)
 
+/obj/machinery/computer/reactor/attackby(obj/item/I, mob/living/user, params)
+	if(I.tool_behaviour == TOOL_WRENCH)
+		to_chat(user, "<span class='notice'>You [!anchored ? "secure \the [src] in place."  : "remove the securing bolts."]</span>")
+		anchored = !anchored
+		density = anchored
+		I.play_tool_sound(src)
+		return TRUE
+	. = ..()
+
 /obj/machinery/computer/reactor/pump/attack_hand(mob/living/user)
 	. = ..()
 	if(!is_operational())

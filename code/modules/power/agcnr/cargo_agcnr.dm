@@ -23,15 +23,6 @@
 	anchored = FALSE
 	id = null
 
-/obj/machinery/computer/reactor/attackby(obj/item/I, mob/living/user, params)
-	if(I.tool_behaviour == TOOL_WRENCH)
-		to_chat(user, "<span class='notice'>You [!anchored ? "secure \the [src] in place."  : "remove the securing bolts."]</span>")
-		anchored = !anchored
-		density = anchored
-		I.play_tool_sound(src)
-		return TRUE
-	. = ..()
-
 /obj/machinery/computer/reactor/control_rods/cargo
 	anchored = FALSE
 	id = null
