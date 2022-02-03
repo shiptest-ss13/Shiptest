@@ -89,10 +89,10 @@ GLOBAL_LIST_INIT(save_file_chars, list(
 				var/current_header = "(\n"										//The actual stuff inside the header
 				//Add objects to the header file
 				var/empty = TRUE
+				CHECK_TICK
 				//====SAVING OBJECTS====
 				if(save_flag & SAVE_OBJECTS)
 					for(var/obj/thing in objects)
-						CHECK_TICK
 						if(thing.type in obj_blacklist)
 							continue
 						var/metadata = generate_tgm_metadata(thing)
@@ -103,13 +103,12 @@ GLOBAL_LIST_INIT(save_file_chars, list(
 						if(save_flag & SAVE_OBJECT_PROPERTIES)
 							var/custom_data = thing.on_object_saved()
 							current_header += "[custom_data ? ",\n[custom_data]" : ""]"
+				CHECK_TICK
 				//====SAVING MOBS====
 				if(save_flag & SAVE_MOBS)
 					for(var/mob/living/thing in objects)
-						CHECK_TICK
 						if(istype(thing, /mob/living/carbon))		//Ignore people, but not animals
 							for(var/obj/object in thing.get_contents())
-								CHECK_TICK
 								if(object.type in obj_blacklist)
 									continue
 								var/metadata = generate_tgm_metadata(object)
@@ -148,7 +147,6 @@ GLOBAL_LIST_INIT(save_file_chars, list(
 	if(!vars_to_save)
 		return
 	for(var/V in O.vars)
-		CHECK_TICK
 		if(!(V in vars_to_save))
 			continue
 		var/value = O.vars[V]
@@ -182,7 +180,6 @@ GLOBAL_LIST_INIT(save_file_chars, list(
 /proc/calculate_tgm_header_index(index, layers)
 	var/output = ""
 	for(var/i in 1 to layers)
-		CHECK_TICK
 		var/l = GLOB.save_file_chars.len
 		var/c = FLOOR((index-1) / (l ** (i - 1)), 1)
 		c = (c % l) + 1
