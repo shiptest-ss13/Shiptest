@@ -39,7 +39,7 @@
 			if(alert(user, "Really delete [name]?", "Delete Shuttle", "Cancel", "Really!") != "Really!")
 				return
 			jumpToNullSpace()
-			message_admins("[user.key] has deleted [name].")
+			message_admins("\[SHUTTLE]: [key_name_admin(user)] has deleted [name].")
 
 		if("Into The Sunset (delete & greentext 'escape')")
 			if(alert(user, "Really delete [name] and greentext escape objectives?", "Delete Shuttle", "Cancel", "Really!") != "Really!")
