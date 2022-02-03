@@ -518,6 +518,9 @@
 /obj/machinery/airalarm/directional/east,
 /obj/item/clothing/head/hardhat,
 /obj/effect/turf_decal/syndicateemblem/bottom/right,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
+	dir = 8
+	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/ship/hallway/central)
 "jD" = (
@@ -810,6 +813,7 @@
 /obj/item/storage/backpack/duffelbag/med/surgery,
 /obj/item/defibrillator,
 /obj/item/storage/firstaid/medical,
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4,
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "pw" = (
