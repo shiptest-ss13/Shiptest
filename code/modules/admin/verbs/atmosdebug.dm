@@ -1,4 +1,4 @@
-#define ANNOTATE_OBJECT(object) testing ? "[get_area(object)] (estimated location: [english_list(object.check_shuttle_offset(and_text = ", ")) || "[object.x], [object.y]"])" : ADMIN_VERBOSEJMP(object)
+#define ANNOTATE_OBJECT(object) testing ? "[get_area(object)] (estimated location: [english_list(object.check_shuttle_offset(), and_text = ", ") || "[object.x], [object.y]"])" : ADMIN_VERBOSEJMP(object)
 
 /atom/proc/check_shuttle_offset()
 	if(!SSshuttle.initialized)
@@ -14,7 +14,7 @@
 		if(NORTH)
 			return list(-(x - 1 - max(bounds[1], bounds[3])), y + 1 - min(bounds[2], bounds[4]))
 		if(EAST)
-			return list(y + 1 - min(bounds[2], bounds[4]), x + 1 - min(bounds[1], bounds[3]))
+			return list(x + 1 - min(bounds[1], bounds[3]), y + 1 - min(bounds[2], bounds[4]))
 		if(WEST)
 			return list(y + 1 - min(bounds[2], bounds[4]), -(x - 1 - max(bounds[1], bounds[3])))
 
