@@ -32,6 +32,7 @@ SUBSYSTEM_DEF(npcpool)
 			if(!has_screamed)
 				has_screamed = 1
 				message_admins("<span class='danger'>SSnpcpool has failed to fire at least 5 times. The subsystem has been placed into a more permissive mode. Call a coder!</span>")
+				stack_trace("SSnpcpool has started ignoring nulls. Something is wrong with GLOB.simple_animals\[1]")
 			if(QDELETED(SA))
 				continue
 
