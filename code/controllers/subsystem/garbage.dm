@@ -254,6 +254,8 @@ SUBSYSTEM_DEF(garbage)
 // Should be treated as a replacement for the 'del' keyword.
 // Datums passed to this will be given a chance to clean up references to allow the GC to collect them.
 /proc/qdel(datum/D, force=FALSE, ...)
+	if(isnull(D))
+		CRASH("QDEL: ATTEMPTED TO QDEL A NULL")
 	if(isweakref(D))
 		var/datum/weakref/weakref = D
 		D = weakref.resolve()
