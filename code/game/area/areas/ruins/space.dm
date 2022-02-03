@@ -390,7 +390,7 @@
 	name = "Engineering"
 	icon_state = "engine"
 
-area/ruin/space/has_grav/radship/MethLab
+/area/ruin/space/has_grav/radship/MethLab
 	name = "Storage"
 	icon_state = "red"
 
