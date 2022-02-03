@@ -1,7 +1,7 @@
 /datum/species/jelly
 	// Entirely alien beings that seem to be made entirely out of gel. They have three eyes and a skeleton visible within them.
-	name = "Jellyperson"
-	id = "jelly"
+	name = "\improper Jellyperson"
+	id = SPECIES_JELLYPERSON
 	default_color = "00FF90"
 	say_mod = "chirps"
 	species_traits = list(MUTCOLORS,EYECOLOR,NOBLOOD,NO_BONES,HAIR,FACEHAIR)
@@ -9,6 +9,7 @@
 	hair_color = "mutcolor"
 	hair_alpha = 150
 	mutantlungs = /obj/item/organ/lungs/slime
+	mutanttongue = /obj/item/organ/tongue/slime
 	meat = /obj/item/reagent_containers/food/snacks/meat/slab/human/mutant/slime
 	exotic_blood = /datum/reagent/toxin/slimejelly
 	damage_overlay_type = ""
@@ -22,7 +23,14 @@
 	inherent_factions = list("slime")
 	species_language_holder = /datum/language_holder/jelly
 	ass_image = 'icons/ass/assslime.png'
-	loreblurb = "Alien beings made of a gelatinous substance. It's relatively common to be transformed into a jellyperson from another species due to the mutagenic properties of less intelligent slime beings, but many truly alien jelly people also exist. Their blood is toxic, and the properties of poisonous and poison-healing substances are inverted for them."
+	loreblurb = "Slime, itself a slime-mold like organism of unknown origin, is capable of both mutating existing biological organisms into slime, retaining most of the structure and mind of the original, and forming quick-learning gestalts capable of mimicking existing beings, including animals and humanoids. The blood of slimepeople is toxic, and the properties of poisonous and poison-healing substances are inverted for them."
+
+	species_chest = /obj/item/bodypart/chest/jelly
+	species_head = /obj/item/bodypart/head/jelly
+	species_l_arm = /obj/item/bodypart/l_arm/jelly
+	species_r_arm = /obj/item/bodypart/r_arm/jelly
+	species_l_leg = /obj/item/bodypart/l_leg/jelly
+	species_r_leg = /obj/item/bodypart/r_leg/jelly
 
 /datum/species/jelly/on_species_loss(mob/living/carbon/C)
 	if(regenerate_limbs)
@@ -208,7 +216,7 @@
 
 /datum/species/jelly/slime
 	name = "Slimeperson"
-	id = "slime"
+	id = SPECIES_SLIMEPERSON
 	default_color = "00FFFF"
 	species_traits = list(MUTCOLORS,EYECOLOR,HAIR,FACEHAIR,NOBLOOD)
 	say_mod = "says"
@@ -218,6 +226,13 @@
 	var/datum/action/innate/split_body/slime_split
 	var/list/mob/living/carbon/bodies
 	var/datum/action/innate/swap_body/swap_body
+
+	species_chest = /obj/item/bodypart/chest/slime
+	species_head = /obj/item/bodypart/head/slime
+	species_l_arm = /obj/item/bodypart/l_arm/slime
+	species_r_arm = /obj/item/bodypart/r_arm/slime
+	species_l_leg = /obj/item/bodypart/l_leg/slime
+	species_r_leg = /obj/item/bodypart/r_leg/slime
 
 /datum/species/jelly/slime/on_species_loss(mob/living/carbon/C)
 	if(slime_split)
@@ -499,7 +514,7 @@
 
 /datum/species/jelly/luminescent
 	name = "Luminescent"
-	id = "lum"
+	id = SPECIES_LUMINESCENT
 	say_mod = "says"
 	var/glow_intensity = LUMINESCENT_DEFAULT_GLOW
 	var/obj/effect/dummy/luminescent_glow/glow
@@ -508,6 +523,8 @@
 	var/datum/action/innate/use_extract/extract_minor
 	var/datum/action/innate/use_extract/major/extract_major
 	var/extract_cooldown = 0
+
+	examine_limb_id = SPECIES_JELLYPERSON
 
 /datum/species/jelly/luminescent/on_species_loss(mob/living/carbon/C)
 	..()
@@ -669,13 +686,15 @@
 
 /datum/species/jelly/stargazer
 	name = "Stargazer"
-	id = "stargazer"
+	id = SPECIES_STARGAZER
 	var/datum/action/innate/project_thought/project_thought
 	var/datum/action/innate/link_minds/link_minds
 	var/list/mob/living/linked_mobs = list()
 	var/list/datum/action/innate/linked_speech/linked_actions = list()
 	var/mob/living/carbon/human/slimelink_owner
 	var/current_link_id = 0
+
+	examine_limb_id = SPECIES_JELLYPERSON
 
 /datum/species/jelly/stargazer/on_species_loss(mob/living/carbon/C)
 	..()

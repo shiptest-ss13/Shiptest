@@ -144,8 +144,8 @@
 	if(C?.powernet)
 		connect_to_network(FALSE)
 
-	below = locate(/obj/machinery/power/deck_relay) in(SSmapping.get_turf_below(T))
-	above = locate(/obj/machinery/power/deck_relay) in(SSmapping.get_turf_above(T))
+	below = locate(/obj/machinery/power/deck_relay) in(T.below())
+	above = locate(/obj/machinery/power/deck_relay) in(T.above())
 	if(below || above)
 		icon_state = "cablerelay-on"
 		if(above)

@@ -107,7 +107,6 @@
 	force = 15
 
 /obj/item/station_charter/flag/rename_station(designation, uname, ureal_name, ukey)
-	set_station_name(designation)
 	minor_announce("[ureal_name] has designated the planet as [station_name()]", "Captain's Banner", 0)
 	log_game("[ukey] has renamed the planet as [station_name()].")
 	name = "banner of [station_name()]"

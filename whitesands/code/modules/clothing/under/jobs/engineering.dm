@@ -83,7 +83,6 @@
 	name = "senior engineer skirtsuit"
 	desc = "A skirtsuit with engineering colors, meant to be worn by senior staff."
 	icon_state = "senior_engineer_skirt"
-
 	body_parts_covered = CHEST|GROIN|ARMS
 	can_adjust = FALSE
 

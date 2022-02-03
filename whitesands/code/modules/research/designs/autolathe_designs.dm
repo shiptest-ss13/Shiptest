@@ -15,3 +15,11 @@
 	materials = list(/datum/material/iron = 20000)
 	build_path = /obj/item/ammo_box/magazine/zip_ammo_9mm
 	category = list("hacked", "Security")
+
+/datum/design/pipedispenser
+	name = "Pipe Dispenser (Machine Board)"
+	id = "pipedispenser"
+	build_type = AUTOLATHE
+	materials = list(/datum/material/glass = 500)
+	build_path = /obj/item/circuitboard/machine/pipedispenser
+	category = list("initial", "Machinery")

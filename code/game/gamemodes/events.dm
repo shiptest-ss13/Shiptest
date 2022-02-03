@@ -1,7 +1,7 @@
 /proc/power_failure(z_level)
 	priority_announce("As a maintenance measure, power will be shut off for an indeterminate duration.", "Power Systems Maintenance", 'sound/ai/poweroff.ogg', zlevel = z_level)
 	for(var/obj/machinery/power/smes/S in GLOB.machines)
-		if(istype(get_area(S), /area/ship/science/ai_chamber) || (z_level && S.get_virtual_z_level() != z_level))
+		if(istype(get_area(S), /area/ship/science/ai_chamber) || (z_level && S.virtual_z() != z_level))
 			continue
 		S.charge = 0
 		S.output_level = 0
@@ -21,7 +21,7 @@
 		A.power_change()
 
 	for(var/obj/machinery/power/apc/C in GLOB.apcs_list)
-		if(!C.cell || (z_level && C.get_virtual_z_level() != z_level))
+		if(!C.cell || (z_level && C.virtual_z() != z_level))
 			continue
 		var/area/A = C.area
 		if(GLOB.typecache_powerfailure_safe_areas[A.type])
@@ -32,12 +32,12 @@
 /proc/power_restore(z_level)
 	priority_announce("Power has been restored. We apologize for the inconvenience.", "Power Systems Nominal", 'sound/ai/poweron.ogg', zlevel = z_level)
 	for(var/obj/machinery/power/apc/C in GLOB.machines)
-		if(!C.cell || (z_level && C.get_virtual_z_level() != z_level))
+		if(!C.cell || (z_level && C.virtual_z() != z_level))
 			continue
 		C.cell.charge = C.cell.maxcharge
 		C.failure_timer = 0
 	for(var/obj/machinery/power/smes/S in GLOB.machines)
-		if(z_level && S.get_virtual_z_level() != z_level)
+		if(z_level && S.virtual_z() != z_level)
 			continue
 		S.charge = S.capacity
 		S.output_level = S.output_level_max

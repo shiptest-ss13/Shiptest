@@ -1,6 +1,6 @@
 /datum/species/moth
-	name = "Mothman"
-	id = "moth"
+	name = "\improper Mothman"
+	id = SPECIES_MOTH
 	say_mod = "flutters"
 	default_color = "00FF00"
 	species_traits = list(LIPS, NOEYESPRITES, TRAIT_ANTENNAE)
@@ -19,9 +19,16 @@
 	mutanttongue = /obj/item/organ/tongue/moth //WS Edit - Insectoid language
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | ERT_SPAWN | RACE_SWAP | SLIME_EXTRACT
 	species_language_holder = /datum/language_holder/moth
-	loreblurb = "Horrifying giant bug monsters, or possibly cute and fluffy cuddlebugs, depending on who you ask. Astoundingly common in every corner of space, their origin is typically assumed to be misdirected gene modification or mutation of regular Sol moths. Their wings, while pretty, are non-functional in standard gravity levels."
+	loreblurb = "Bug-mammal hybrids resembling Sol's lepidopterans. They share the least DNA with baseline humans of any human-derived geneline, being significant portions insect and modified whole-cloth DNA. Their classification as another human geneline or as something else is highly debated. All evidence that would point to their origin– which is presumably a genelab somewhere– has seemingly disappeared into thin air. Mothpeople themselves have no centralized culture or homeworld, leading to a fractured existence amongst the stars."
 	wings_icons = list("Megamoth", "Mothra")
 	has_innate_wings = TRUE
+
+	species_chest = /obj/item/bodypart/chest/moth
+	species_head = /obj/item/bodypart/head/moth
+	species_l_arm = /obj/item/bodypart/l_arm/moth
+	species_r_arm = /obj/item/bodypart/r_arm/moth
+	species_l_leg = /obj/item/bodypart/l_leg/moth
+	species_r_leg = /obj/item/bodypart/r_leg/moth
 
 /datum/species/moth/regenerate_organs(mob/living/carbon/C,datum/species/old_species,replace_current=TRUE,list/excluded_zones)
 	. = ..()

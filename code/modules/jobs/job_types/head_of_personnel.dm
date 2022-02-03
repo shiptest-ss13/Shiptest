@@ -68,11 +68,11 @@
 
 /datum/outfit/job/head_of_personnel/nt
 	name = "First Officer (Nanotrasen)"
-	uniform = /obj/item/clothing/under/rank/command/lieutenant/blue
+	uniform = /obj/item/clothing/under/rank/command/head_of_personnel/nt
 	alt_uniform = null
 	alt_suit = null
 	shoes = /obj/item/clothing/shoes/laceup
-	head = /obj/item/clothing/head/collectable/HoP
+	head = /obj/item/clothing/head/hopcap/nt
 
 /datum/outfit/job/head_of_personnel/solgov
 	name = "Executive Officer (SolGov)"

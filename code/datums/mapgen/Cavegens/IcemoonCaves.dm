@@ -3,7 +3,7 @@
 	closed_turf_types = list(/turf/closed/mineral/random/snow = 1)
 
 
-	feature_spawn_list = list(/obj/structure/geyser/random = 1, /obj/effect/landmark/ore_vein = 9)
+	feature_spawn_list = list(/obj/structure/geyser/random = 1, /obj/effect/landmark/ore_vein = 9, /obj/structure/elite_tumor = 2)
 	mob_spawn_list = list(
 		/mob/living/simple_animal/hostile/asteroid/wolf/random = 30, /obj/structure/spawner/ice_moon = 3,
 		/mob/living/simple_animal/hostile/asteroid/polarbear/random = 30, /obj/structure/spawner/ice_moon/polarbear = 3,

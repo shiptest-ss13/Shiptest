@@ -88,3 +88,15 @@
 	neck = /obj/item/clothing/neck/tie/orange
 
 	backpack_contents = list(/obj/item/clothing/glasses/science=1)
+
+//Shiptest
+/datum/outfit/job/chemist/gec
+	name = "Chemist (GEC)"
+
+	uniform = /obj/item/clothing/under/syndicate/intern
+	suit = /obj/item/clothing/suit/toggle/hazard
+	head = /obj/item/clothing/head/hardhat
+	ears = /obj/item/radio/headset/syndicate/alt
+	belt = /obj/item/storage/belt/utility/full/engi
+	id = /obj/item/card/id/syndicate_command/crew_id
+	l_pocket =/obj/item/pda/chemist

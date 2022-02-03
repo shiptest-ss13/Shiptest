@@ -31,6 +31,8 @@ jobs:
           bash tools/ci/install_spaceman_dmm.sh dreamchecker
           bash tools/ci/install_auxmos.sh
           tools/bootstrap/python -c ''
+      - name: Check line endings
+        uses: AODocs/check-eol@v1.1
       - name: Run Linters
         run: |
           bash tools/ci/check_filedirs.sh shiptest.dme

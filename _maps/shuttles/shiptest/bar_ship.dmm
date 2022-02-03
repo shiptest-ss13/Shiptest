@@ -390,7 +390,6 @@
 	launch_status = 0;
 	name = "diner ship";
 	port_direction = 2;
-	undock_roundstart = 1;
 	width = 19
 	},
 /turf/open/floor/plasteel/dark,
@@ -2283,9 +2282,7 @@
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
 	},
-/obj/machinery/door/airlock/freezer{
-	name = "freezer airlock"
-	},
+/obj/machinery/door/airlock/freezer,
 /turf/open/floor/plasteel/dark,
 /area/ship/storage)
 "Tz" = (
@@ -2382,9 +2379,7 @@
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
 	},
-/obj/machinery/door/airlock/freezer{
-	name = "freezer airlock"
-	},
+/obj/machinery/door/airlock/freezer,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
 "UU" = (

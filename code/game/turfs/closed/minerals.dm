@@ -24,7 +24,7 @@
 	var/defer_change = 0
 	var/has_borders = TRUE
 
-/turf/closed/mineral/Initialize()
+/turf/closed/mineral/Initialize(mapload, inherited_virtual_z)
 	. = ..()
 	if(has_borders)
 		var/matrix/M = new
@@ -154,7 +154,7 @@
 		//Currently, Adamantine won't spawn as it has no uses. -Durandan
 	var/mineralChance = 13
 
-/turf/closed/mineral/random/Initialize()
+/turf/closed/mineral/random/Initialize(mapload, inherited_virtual_z)
 
 	mineralSpawnChanceList = typelist("mineralSpawnChanceList", mineralSpawnChanceList)
 
@@ -443,6 +443,15 @@
 	turf_type = /turf/open/floor/plating/asteroid/snow/ice/icemoon
 	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
 
+//yoo RED ROCK RED ROCK
+
+/turf/closed/mineral/asteroid
+	name = "iron rock"
+	icon = 'icons/turf/mining.dmi'
+	icon_state = "redrock"
+	smooth_icon = 'icons/turf/walls/red_wall.dmi'
+	base_icon_state = "red_wall"
+
 //GIBTONITE
 
 /turf/closed/mineral/gibtonite
@@ -454,7 +463,7 @@
 	var/activated_name = null
 	var/mutable_appearance/activated_overlay
 
-/turf/closed/mineral/gibtonite/Initialize()
+/turf/closed/mineral/gibtonite/Initialize(mapload, inherited_virtual_z)
 	det_time = rand(8,10) //So you don't know exactly when the hot potato will explode
 	. = ..()
 

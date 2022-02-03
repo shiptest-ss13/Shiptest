@@ -1,6 +1,6 @@
 /datum/species/plasmaman
-	name = "Plasmaman"
-	id = "plasmaman"
+	name = "\improper Plasmaman"
+	id = SPECIES_PLASMAMAN
 	say_mod = "rattles"
 	sexes = 0
 	meat = /obj/item/stack/sheet/mineral/plasma
@@ -22,8 +22,14 @@
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_PRIDE | MIRROR_MAGIC
 	outfit_important_for_life = /datum/outfit/plasmaman
 	species_language_holder = /datum/language_holder/skeleton
-	loreblurb = "These strange abominations lead a difficult life of breathing plasma and bursting into flames when exposed to oxygen. Although where they come from is unknown, as not even plasmamen themselves typically seem to know for sure, their similarity to the human skeleton leads to the rumor that they're humans who were injured horribly in a plasma fire, losing their memories. Or  maybe they're just weird aliens, those things tend to look like humans all the time anyways. \
-	Spacers frequently groan at the prospect of having a plasmaman as a member of their crew, as they have difficult needs that tend to contrast with oxygen-breathing organic lifeforms. But hey, purple skeletons."
+	loreblurb = "Technically a disability rather than a species, Phorids (known far more commonly as plasmamen) are a loose grouping of people fallen victim to anomalous plasma-related effects that convert tough biological matter into inorganic, biology-mimicking plasma structures. Phorids often live their lives dependent on larger organizations due to their oxygen-incompatible physiology."
+
+	species_chest = /obj/item/bodypart/chest/plasmaman
+	species_head = /obj/item/bodypart/head/plasmaman
+	species_l_arm = /obj/item/bodypart/l_arm/plasmaman
+	species_r_arm = /obj/item/bodypart/r_arm/plasmaman
+	species_l_leg = /obj/item/bodypart/l_leg/plasmaman
+	species_r_leg = /obj/item/bodypart/r_leg/plasmaman
 
 	// Body temperature for Plasmen is much lower human as they can handle colder environments
 	bodytemp_normal = (BODYTEMP_NORMAL - 40)

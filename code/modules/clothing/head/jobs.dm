@@ -52,6 +52,10 @@
 	armor = list("melee" = 25, "bullet" = 15, "laser" = 25, "energy" = 35, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
 	dog_fashion = /datum/dog_fashion/head/head_of_personnel
 
+/obj/item/clothing/head/hopcap/nt
+	icon_state = "hopcap_nt"
+	dog_fashion = /datum/dog_fashion/head/head_of_personnel
+
 //Chaplain
 /obj/item/clothing/head/nun_hood
 	name = "nun hood"
@@ -168,7 +172,8 @@ WS End */
 /obj/item/clothing/head/HoS/beret/syndicate
 	name = "syndicate beret"
 	desc = "A black beret with thick armor padding inside. Stylish and robust."
-	icon_state = "hosberetblack"
+	icon_state = "beret_officer"
+	item_state = "beret_officer"
 
 /obj/item/clothing/head/warden
 	name = "warden's police hat"

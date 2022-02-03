@@ -49,3 +49,6 @@
 
 /datum/proc/on_reagent_change(changetype)
 	return
+
+/datum/proc/vv_alert_admins()
+	return

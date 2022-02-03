@@ -143,6 +143,7 @@ GLOBAL_LIST_INIT(available_depts, list(SEC_DEPT_ENGINEERING, SEC_DEPT_MEDICAL, S
 	gloves = /obj/item/clothing/gloves/tackler/combat
 
 	backpack = /obj/item/storage/backpack/ert/security
+	backpack_contents = list(/obj/item/melee/baton/loaded=1, /obj/item/ammo_box/magazine/co9mm=1, /obj/item/gun_voucher/solgov=1)
 
 /datum/outfit/job/security/pirate
 	name = "Buccaneer (Pirate)"

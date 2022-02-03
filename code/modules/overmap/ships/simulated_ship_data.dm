@@ -3,7 +3,7 @@
 
 /obj/structure/overmap/ship/simulated
 	///Assoc list of remaining open job slots (job = remaining slots)
-	var/list/job_slots = list("Captain" = 1, "Assistant" = 5)
+	var/list/job_slots = list(new /datum/job/captain() = 1, new /datum/job/assistant() = 5)
 	///Manifest list of people on the ship
 	var/list/manifest = list()
 	///Shipwide bank account
@@ -15,28 +15,16 @@
 	///Time that next job slot change can occur
 	var/job_slot_adjustment_cooldown = 0
 
-/obj/structure/overmap/ship/simulated/Initialize(mapload, obj/docking_port/mobile/_shuttle)
+/obj/structure/overmap/ship/simulated/Initialize(mapload, obj/docking_port/mobile/_shuttle, datum/map_template/shuttle/_source_template)
 	. = ..()
-	job_slots = shuttle.source_template.job_slots.Copy()
+	job_slots = _source_template.job_slots.Copy()
 	ship_account = new(name, 7500)
 
 /**
   * Bastardized version of GLOB.manifest.manifest_inject, but used per ship
   *
   */
-/obj/structure/overmap/ship/simulated/proc/manifest_inject(mob/living/carbon/human/H, client/C)
+/obj/structure/overmap/ship/simulated/proc/manifest_inject(mob/living/carbon/human/H, client/C, datum/job/human_job)
 	set waitfor = FALSE
 	if(H.mind && (H.mind.assigned_role != H.mind.special_role))
-		LAZYINITLIST(manifest)
-		var/assignment
-		if(H.mind.assigned_role)
-			assignment = H.mind.assigned_role
-		else if(H.job)
-			assignment = H.job
-		else
-			assignment = "Unassigned"
-
-		if(C && C.prefs && C.prefs.alt_titles_preferences[assignment])
-			assignment = C.prefs.alt_titles_preferences[assignment]
-
-		manifest[H.real_name] = assignment
+		manifest[H.real_name] = human_job
