@@ -1,4 +1,4 @@
-#define ANNOTATE_OBJECT(object) testing ? "[get_area(object)] (estimated location: [english_list(object.check_shuttle_offset(), and_text = ", ") || "[object.x], [object.y]"])" : ADMIN_VERBOSEJMP(object)
+#define ANNOTATE_OBJECT(object) testing ? "[get_area(object)] (estimated location: [json_encode(object.check_shuttle_offset())])" : ADMIN_VERBOSEJMP(object)
 
 /atom/proc/check_shuttle_offset()
 	if(!SSshuttle.initialized)
@@ -39,7 +39,7 @@
 			if(other_component != component && other_component.piping_layer == component.piping_layer && other_component.dir == component.dir)
 				results += "Doubled [component.name] located at [ANNOTATE_OBJECT(component)]"
 
-	//Manifold
+	//Manifolds
 	for(var/obj/machinery/atmospherics/pipe/manifold/manifold in SSair.atmos_machinery)
 		if(manifold.z && (!manifold.nodes || !manifold.nodes.len || (null in manifold.nodes)))
 			results += "Unconnected [manifold.name] located at [ANNOTATE_OBJECT(manifold)]"
