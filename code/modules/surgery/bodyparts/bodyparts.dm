@@ -528,27 +528,21 @@
 
 	if(!animal_origin && ishuman(C))
 		var/mob/living/carbon/human/H = C
-		should_draw_greyscale = FALSE
 
 		var/datum/species/S = H.dna.species
 		species_flags_list = H.dna.species.species_traits //Literally only exists for a single use of NOBLOOD, but, no reason to remove it i guess...?
+		limb_gender = (H.gender == MALE) ? "m" : "f"
 
 		if(S.use_skintones)
 			skin_tone = H.skin_tone
-			should_draw_greyscale = TRUE
 		else
 			skin_tone = ""
-
-		should_draw_gender = S.sexes
-		if(should_draw_gender) //Assigns the limb a gender for rendering
-			limb_gender = (H.gender == MALE) ? "m" : "f"
 
 		if(((MUTCOLORS in S.species_traits) || (DYNCOLORS in S.species_traits)) && uses_mutcolor) //Ethereal code. Motherfuckers.
 			if(S.fixed_mut_color)
 				species_color = S.fixed_mut_color
 			else
 				species_color = H.dna.features["mcolor"]
-			should_draw_greyscale = TRUE
 		else
 			species_color = null
 
