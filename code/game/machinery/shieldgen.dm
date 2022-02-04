@@ -528,12 +528,27 @@
 	if(!generator) //no shield gen, generators are allowed to function adjacent to eachother
 		return
 
-	new /obj/machinery/shieldwall/atmos(loc, src, generator)
-	new /obj/machinery/shieldwall/atmos(generator.loc, src, generator)
-	for(var/i in 1 to steps) //creates each field tile
-		turf = get_step(turf, opposite_direction)
+	for(var/i in 1 to steps+2) //creates each field tile
 		new /obj/machinery/shieldwall/atmos(turf, src, generator)
+		turf = get_step(turf, opposite_direction)
 	return TRUE
+
+/obj/machinery/power/shieldwallgen/atmos/cleanup_field(direction)
+	var/obj/machinery/shieldwall/field
+	var/obj/machinery/power/shieldwallgen/generator
+	var/turf/turf = loc
+
+	for(var/i in 1 to shield_range+1)
+
+		generator = (locate(/obj/machinery/power/shieldwallgen) in turf)
+		if(generator && !generator.active)
+			break
+
+		field = (locate(/obj/machinery/shieldwall) in turf)
+		if(field && (field.gen_primary == src || field.gen_secondary == src)) //it's ours, kill it.
+			qdel(field)
+
+		turf = get_step(turf, direction)
 
 //////////////Containment Field START
 /obj/machinery/shieldwall
