@@ -7,7 +7,7 @@
 //this is completely unnecessary but it looks nice
 /turf/open/overmap/Initialize(mapload, inherited_virtual_z)
 	. = ..()
-	if(!SSovermap.initialized)
+	if(!SSovermap.overmap_vlevel)
 		return
 	var/datum/virtual_level/vlevel = SSovermap.overmap_vlevel
 	var/overmap_x = x - (vlevel.low_x + vlevel.reserved_margin)
