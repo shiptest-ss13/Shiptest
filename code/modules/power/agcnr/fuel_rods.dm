@@ -1,5 +1,5 @@
 /obj/item/fuel_rod
-	name = "uranium-238 fuel rod"
+	name = "uranium-235 fuel rod"
 	desc = "A titanium sheathed rod containing a measure of enriched uranium-dioxide powder, used to kick off a fission reaction."
 	icon = 'icons/obj/control_rod.dmi'
 	icon_state = "irradiated"
@@ -73,7 +73,7 @@
 /obj/item/fuel_rod/plutonium
 	fuel_power = 0.20
 	name = "plutonium-239 fuel rod"
-	desc = "A highly energetic titanium sheathed rod containing a sizeable measure of weapons grade plutonium, it's highly efficient as nuclear fuel, but will cause the reaction to get out of control if not properly utilised."
+	desc = "A highly energetic titanium sheathed rod containing a sizeable measure of weapons grade plutonium. It's highly efficient as nuclear fuel, but will cause the reaction to get out of control if not properly utilised."
 	icon_state = "inferior"
 	rad_strength = 1500
 	process = TRUE

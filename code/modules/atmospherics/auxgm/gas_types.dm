@@ -159,7 +159,7 @@
 /datum/gas/constricted_plasma
 	id = "constricted_plasma"
 	specific_heat = 250
-	name = "Constricted plasma"
+	name = "Constricted Plasma"
 	gas_overlay = "constricted_plasma"
 	moles_visible = MOLES_GAS_VISIBLE
 	flags = GAS_FLAG_DANGEROUS
