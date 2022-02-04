@@ -48,7 +48,11 @@
 	name = shuttle.name
 	source_template = _source_template
 	calculate_mass()
+#ifdef UNIT_TESTS
+	set_ship_name("[source_template]")
+#else
 	set_ship_name("[source_template.prefix] [pick_list_replacements(SHIP_NAMES_FILE, pick(source_template.name_categories))]", TRUE)
+#endif
 	refresh_engines()
 	check_loc()
 

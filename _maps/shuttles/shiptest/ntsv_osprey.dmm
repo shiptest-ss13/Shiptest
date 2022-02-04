@@ -298,6 +298,9 @@
 /obj/machinery/door/airlock/atmos{
 	name = "Life Support"
 	},
+/obj/machinery/atmospherics/pipe/simple/green/hidden/layer5{
+	dir = 8
+	},
 /turf/open/floor/plasteel,
 /area/ship/engineering/atmospherics)
 "cb" = (
@@ -1331,7 +1334,6 @@
 	dir = 4
 	},
 /obj/machinery/firealarm{
-	dir = 2;
 	pixel_y = 28
 	},
 /obj/structure/cable{
@@ -1350,7 +1352,6 @@
 /obj/structure/table,
 /obj/item/flashlight/lamp,
 /obj/machinery/firealarm{
-	dir = 2;
 	pixel_y = 28
 	},
 /turf/open/floor/wood,
@@ -1375,7 +1376,6 @@
 	dir = 4
 	},
 /obj/machinery/firealarm{
-	dir = 2;
 	pixel_y = 28
 	},
 /turf/open/floor/plating,
@@ -3625,7 +3625,6 @@
 	dir = 1
 	},
 /obj/machinery/firealarm{
-	dir = 2;
 	pixel_y = 28
 	},
 /turf/open/floor/plasteel/tech/techmaint,
@@ -6114,7 +6113,6 @@
 	},
 /obj/structure/dresser,
 /obj/machinery/firealarm{
-	dir = 2;
 	pixel_y = 28
 	},
 /turf/open/floor/plasteel/grimy,
@@ -6258,7 +6256,6 @@
 	dir = 4
 	},
 /obj/machinery/firealarm{
-	dir = 2;
 	pixel_y = 28
 	},
 /turf/open/floor/plating,
@@ -6820,7 +6817,6 @@
 	dir = 1
 	},
 /obj/machinery/firealarm{
-	dir = 2;
 	pixel_y = 28
 	},
 /obj/structure/frame/machine,

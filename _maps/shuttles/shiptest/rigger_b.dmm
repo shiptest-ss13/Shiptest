@@ -1606,6 +1606,7 @@
 /obj/machinery/door/airlock/command/glass{
 	name = "Bridge"
 	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
 "uC" = (
@@ -3098,6 +3099,9 @@
 /obj/machinery/door/airlock/security/glass{
 	name = "Brig"
 	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security/prison)
 "Md" = (
@@ -4299,6 +4303,9 @@
 	},
 /obj/machinery/power/apc/auto_name/north,
 /obj/item/clothing/head/helmet/solgov,
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
 /turf/open/floor/carpet/nanoweave/red,
 /area/ship/security)
 "ZT" = (
