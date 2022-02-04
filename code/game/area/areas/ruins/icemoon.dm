@@ -52,7 +52,7 @@
 	icon_state = "dk_yellow"
 
 /area/ruin/unpowered/icecropolis
-	name = "The Bloody Hollow"
+	name = "The Bloody Hallow"
 	icon_state = "dk_yellow"
 	mood_bonus = -10
 	mood_message = "<span class='boldwarning''>I want to leave this place.</span>\n"

@@ -52,7 +52,7 @@
 	suffix = "icemoon_surface_corporate_rejects.dmm"
 
 /datum/map_template/ruin/icemoon/icecropolis
-	name = "The Bloody Hollow"
+	name = "The Bloody Hallow"
 	id = "icecropolis"
 	description = "Blood and writhing flesh make up this citadel of horrors."
 	suffix = "icemoon_underground_icecropolis.dmm"
