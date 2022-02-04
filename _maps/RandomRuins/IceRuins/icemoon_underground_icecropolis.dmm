@@ -24,7 +24,7 @@
 "aE" = (
 /obj/structure/flora/grass/both,
 /turf/open/floor/plating/asteroid/snow/icemoon,
-/area/template_noop)
+/area/ruin/unpowered/icecropolis/outside)
 "aM" = (
 /obj/structure/table,
 /obj/item/circular_saw,
@@ -106,7 +106,7 @@
 	},
 /obj/item/trash/can,
 /turf/open/floor/plating/asteroid/snow/icemoon,
-/area/template_noop)
+/area/ruin/unpowered/icecropolis/outside)
 "df" = (
 /obj/item/trash/syndi_cakes,
 /turf/open/floor/grass/snow/basalt{
@@ -134,7 +134,7 @@
 "ea" = (
 /obj/structure/flora/rock/icy,
 /turf/open/floor/plating/asteroid/snow/icemoon,
-/area/template_noop)
+/area/ruin/unpowered/icecropolis/outside)
 "eB" = (
 /obj/structure/necropolis_gate,
 /obj/structure/stone_tile/slab/cracked,
@@ -479,7 +479,7 @@
 	},
 /obj/item/trash/plate,
 /turf/open/floor/plating/asteroid/snow/icemoon,
-/area/template_noop)
+/area/ruin/unpowered/icecropolis/outside)
 "nC" = (
 /obj/structure/stone_tile/surrounding_tile,
 /obj/structure/stone_tile{
@@ -549,7 +549,7 @@
 "pa" = (
 /obj/structure/stone_tile/block/burnt,
 /turf/open/floor/plating/asteroid/snow/icemoon,
-/area/template_noop)
+/area/ruin/unpowered/icecropolis/outside)
 "ph" = (
 /obj/effect/mob_spawn/human/corpse/russian/ranged/trooper,
 /turf/open/floor/wood,
@@ -675,7 +675,7 @@
 /turf/open/floor/grass/snow/basalt{
 	initial_gas_mix = "ICEMOON_ATMOS"
 	},
-/area/ruin/unpowered/icecropolis)
+/area/ruin/unpowered/icecropolis/outside)
 "tE" = (
 /obj/structure/mineral_door/wood,
 /turf/open/floor/wood,
@@ -756,11 +756,6 @@
 	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
 	},
 /area/ruin/unpowered/icecropolis)
-"vf" = (
-/turf/open/indestructible/necropolis/air,
-/area/ruin/unpowered/icecropolis{
-	desc = "Bow before He, lest ye be judged. Or run away."
-	})
 "vh" = (
 /obj/item/storage/box/disks_plantgene,
 /turf/open/floor/plasteel,
@@ -849,7 +844,7 @@
 /turf/open/floor/grass/snow/basalt{
 	initial_gas_mix = "ICEMOON_ATMOS"
 	},
-/area/ruin/unpowered/icecropolis)
+/area/ruin/unpowered/icecropolis/outside)
 "wy" = (
 /obj/item/shield/riot/roman,
 /turf/open/floor/grass/snow/basalt{
@@ -1005,7 +1000,7 @@
 /area/ruin/unpowered/icecropolis/reach)
 "Ao" = (
 /turf/open/floor/plating/asteroid/snow/icemoon,
-/area/template_noop)
+/area/ruin/unpowered/icecropolis/outside)
 "AX" = (
 /obj/structure/stone_tile,
 /obj/structure/stone_tile{
@@ -1026,7 +1021,7 @@
 /turf/open/chasm/lavaland{
 	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
 	},
-/area/ruin/unpowered/icecropolis)
+/area/ruin/unpowered/icecropolis/rusty)
 "Bl" = (
 /mob/living/simple_animal/hostile/asteroid/elite/legionnaire{
 	faction = list("mining")
@@ -1067,7 +1062,7 @@
 	dir = 4
 	},
 /turf/open/floor/plating/asteroid/snow/icemoon,
-/area/template_noop)
+/area/ruin/unpowered/icecropolis/outside)
 "CF" = (
 /obj/structure/stone_tile/surrounding_tile{
 	dir = 1
@@ -1090,7 +1085,7 @@
 	},
 /obj/effect/mob_spawn/human/corpse/charredskeleton,
 /turf/open/floor/plating/asteroid/snow/icemoon,
-/area/template_noop)
+/area/ruin/unpowered/icecropolis/outside)
 "CQ" = (
 /obj/structure/spawner/lavaland/goliath,
 /turf/open/indestructible/necropolis/air,
@@ -1444,7 +1439,7 @@
 "LA" = (
 /obj/structure/stone_tile/surrounding/cracked,
 /turf/open/floor/plating/asteroid/snow/icemoon,
-/area/template_noop)
+/area/ruin/unpowered/icecropolis/outside)
 "LH" = (
 /obj/structure/stone_tile/slab/cracked,
 /obj/structure/table/wood/fancy/red_gold,
@@ -1460,7 +1455,7 @@
 	},
 /obj/structure/bonfire/prelit,
 /turf/open/floor/plating/asteroid/snow/icemoon,
-/area/template_noop)
+/area/ruin/unpowered/icecropolis/outside)
 "LM" = (
 /obj/structure/stone_tile/surrounding_tile{
 	dir = 4
@@ -1584,7 +1579,7 @@
 "OG" = (
 /obj/structure/flora/rock/pile/icy,
 /turf/open/floor/plating/asteroid/snow/icemoon,
-/area/template_noop)
+/area/ruin/unpowered/icecropolis/outside)
 "Pa" = (
 /obj/effect/decal/cleanable/blood/gibs/old,
 /turf/open/floor/mineral/gold,
@@ -1616,7 +1611,7 @@
 	dir = 1
 	},
 /turf/open/floor/plating/asteroid/snow/icemoon,
-/area/template_noop)
+/area/ruin/unpowered/icecropolis/outside)
 "PT" = (
 /obj/machinery/power/apc/auto_name{
 	pixel_y = 27
@@ -1629,12 +1624,12 @@
 "PW" = (
 /obj/structure/flora/tree/dead,
 /turf/open/floor/plating/asteroid/snow/icemoon,
-/area/template_noop)
+/area/ruin/unpowered/icecropolis/outside)
 "PX" = (
 /obj/structure/stone_tile/slab/cracked,
 /obj/item/trash/sosjerky,
 /turf/open/floor/plating/asteroid/snow/icemoon,
-/area/template_noop)
+/area/ruin/unpowered/icecropolis/outside)
 "PZ" = (
 /obj/effect/decal/cleanable/blood/gibs/core,
 /turf/open/floor/grass/snow/basalt{
@@ -2904,7 +2899,7 @@ je
 je
 tA
 tA
-vf
+tA
 XN
 tA
 je
@@ -4398,14 +4393,14 @@ tA
 tA
 tA
 tA
-vv
-vv
-vv
-vv
-vv
-vv
-vv
-vv
+jV
+jV
+jV
+jV
+jV
+jV
+jV
+jV
 vv
 vv
 vv
@@ -4460,7 +4455,7 @@ jV
 jV
 jV
 jV
-vv
+jV
 WO
 WO
 WO
@@ -4522,7 +4517,7 @@ je
 je
 je
 je
-vv
+jV
 WO
 WO
 WO
@@ -4584,7 +4579,7 @@ je
 je
 je
 je
-vv
+jV
 WO
 WO
 WO
@@ -4646,7 +4641,7 @@ je
 tA
 tA
 tA
-vv
+jV
 WO
 WO
 WO
@@ -4708,7 +4703,7 @@ je
 tA
 tA
 jV
-vv
+jV
 WO
 WO
 Eu
@@ -4832,7 +4827,7 @@ je
 tA
 tA
 jV
-vv
+jV
 WO
 WO
 Eu
@@ -4894,7 +4889,7 @@ je
 tA
 tA
 tA
-vv
+jV
 WO
 WO
 WO
@@ -4956,7 +4951,7 @@ tA
 tA
 tA
 tA
-vv
+jV
 WO
 WO
 WO
@@ -5018,7 +5013,7 @@ tA
 vz
 tA
 je
-vv
+jV
 WO
 WO
 WO
@@ -5080,7 +5075,7 @@ je
 je
 je
 je
-vv
+jV
 WO
 WO
 WO
@@ -5142,14 +5137,14 @@ jV
 jV
 jV
 jV
-vv
-vv
-vv
-vv
-vv
-vv
-vv
-vv
+jV
+jV
+jV
+jV
+jV
+jV
+jV
+jV
 vv
 vv
 vv
@@ -7189,21 +7184,21 @@ je
 je
 je
 je
-jV
-jV
-jV
-jV
+iV
+iV
+iV
+iV
 iV
 Zm
 Fj
 Xo
 Zm
 Fj
-jV
-jV
-jV
-jV
-jV
+iV
+iV
+iV
+iV
+iV
 fE
 Ao
 Za
@@ -7251,7 +7246,7 @@ je
 je
 je
 je
-jV
+iV
 EE
 Zm
 gF
@@ -7265,7 +7260,7 @@ hT
 Pn
 SN
 Wu
-jV
+iV
 fE
 Ao
 Za
@@ -7313,7 +7308,7 @@ jV
 jV
 jV
 jV
-jV
+iV
 Zm
 Zm
 Zm
@@ -7327,7 +7322,7 @@ tE
 br
 br
 br
-jV
+iV
 fE
 Ao
 Za
@@ -7375,7 +7370,7 @@ fE
 fE
 fE
 fE
-jV
+iV
 ZA
 Zm
 ZA
@@ -7389,7 +7384,7 @@ hT
 br
 br
 br
-jV
+iV
 fE
 Ao
 Za
@@ -7428,16 +7423,16 @@ tA
 je
 jV
 fE
-jV
-jV
-jV
-jV
-jV
-jV
-jV
-jV
+iV
+iV
+iV
+iV
+iV
+iV
+iV
+iV
 ww
-jV
+iV
 ZA
 Zm
 ZA
@@ -7451,7 +7446,7 @@ iV
 Gf
 WW
 RQ
-jV
+iV
 fE
 Ao
 Za
@@ -7490,16 +7485,16 @@ je
 je
 jV
 fE
-jV
+iV
 YD
 Zm
 Zm
 kK
 Ds
 ZW
-jV
+iV
 tB
-jV
+iV
 ZA
 Zm
 ZA
@@ -7511,9 +7506,9 @@ bz
 Hw
 iV
 hT
-jV
-jV
-jV
+iV
+iV
+iV
 fE
 Ao
 Za
@@ -7552,16 +7547,16 @@ je
 je
 jV
 fE
-jV
+iV
 Zm
 cE
 Zm
 Zm
 Zm
 Zm
-jV
-jV
-jV
+iV
+iV
+iV
 ZA
 Zm
 ZA
@@ -7573,7 +7568,7 @@ SY
 Zm
 Zm
 Zm
-jV
+iV
 fE
 fE
 fE
@@ -7614,7 +7609,7 @@ je
 je
 jV
 fE
-jV
+iV
 Zm
 Gr
 Zm
@@ -7635,7 +7630,7 @@ SY
 Zm
 Zm
 Zm
-jV
+iV
 fE
 Ao
 Ao
@@ -7676,7 +7671,7 @@ tA
 je
 jV
 fE
-jV
+iV
 Zm
 Zm
 tO
@@ -7697,7 +7692,7 @@ SY
 Zm
 Zm
 Zm
-jV
+iV
 fE
 Ao
 Za
@@ -7738,7 +7733,7 @@ je
 je
 jV
 fE
-jV
+iV
 bu
 Zm
 Be
@@ -7759,7 +7754,7 @@ SY
 Zm
 JB
 Zm
-jV
+iV
 fE
 Ao
 Za
@@ -7800,7 +7795,7 @@ je
 je
 jV
 fE
-jV
+iV
 Zm
 Zm
 zO
@@ -7821,7 +7816,7 @@ zb
 Zm
 Zm
 Zm
-jV
+iV
 fE
 Ao
 Za
@@ -7862,7 +7857,7 @@ je
 je
 jV
 fE
-jV
+iV
 Zm
 Zm
 pV
@@ -7883,7 +7878,7 @@ SY
 Zm
 JB
 Zm
-jV
+iV
 fE
 Ao
 Za
@@ -7924,7 +7919,7 @@ je
 je
 jV
 fE
-jV
+iV
 Zm
 iV
 iV
@@ -7945,7 +7940,7 @@ SY
 Zm
 Zm
 Zm
-jV
+iV
 fE
 Ao
 Za
@@ -7986,7 +7981,7 @@ je
 je
 jV
 fE
-jV
+iV
 HN
 iV
 Tf
@@ -8007,7 +8002,7 @@ hT
 hT
 iV
 hT
-jV
+iV
 fE
 Ao
 Za
@@ -8048,7 +8043,7 @@ je
 je
 jV
 fE
-jV
+iV
 Zm
 iV
 Sy
@@ -8069,7 +8064,7 @@ hT
 fl
 Zm
 bO
-jV
+iV
 fE
 Ao
 Za
@@ -8110,7 +8105,7 @@ je
 je
 jV
 fE
-jV
+iV
 qr
 iV
 Vk
@@ -8131,7 +8126,7 @@ tE
 Zm
 Zm
 NK
-jV
+iV
 fE
 Ao
 Za
@@ -8172,9 +8167,9 @@ je
 je
 jV
 fE
-jV
-jV
-jV
+iV
+iV
+iV
 Xv
 Xb
 HC
@@ -8193,7 +8188,7 @@ iV
 NU
 br
 wO
-jV
+iV
 fE
 Ao
 Za
@@ -8236,7 +8231,7 @@ jV
 fE
 fE
 fE
-jV
+iV
 yj
 Xr
 hy
@@ -8255,7 +8250,7 @@ iV
 Ei
 Zm
 br
-jV
+iV
 fE
 Ao
 Za
@@ -8298,7 +8293,7 @@ jV
 fE
 fE
 fE
-jV
+iV
 uC
 hf
 uC
@@ -8317,7 +8312,7 @@ hT
 ZH
 Zm
 CN
-jV
+iV
 fE
 Ao
 Za
@@ -8360,7 +8355,7 @@ fE
 fE
 fE
 fE
-jV
+iV
 kW
 Xh
 Tf
@@ -8379,7 +8374,7 @@ iV
 Os
 Zm
 Gx
-jV
+iV
 fE
 Ao
 Za
@@ -8422,26 +8417,26 @@ Ao
 Ao
 fE
 fE
-jV
-jV
-jV
-jV
-jV
-jV
-jV
-jV
-jV
-jV
-jV
-jV
-jV
-jV
-jV
-jV
-jV
-jV
-jV
-jV
+iV
+iV
+iV
+iV
+iV
+iV
+iV
+iV
+iV
+iV
+iV
+iV
+iV
+iV
+iV
+iV
+iV
+iV
+iV
+iV
 fE
 Ao
 Za
