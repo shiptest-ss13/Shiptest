@@ -84,9 +84,10 @@ SUBSYSTEM_DEF(mapping)
 	ruins_templates = SSmapping.ruins_templates
 	space_ruins_templates = SSmapping.space_ruins_templates
 	lava_ruins_templates = SSmapping.lava_ruins_templates
-	// WS Edit Start - Whitesands
+	rock_ruins_templates = SSmapping.rock_ruins_templates
 	sand_ruins_templates = SSmapping.sand_ruins_templates
-	// WS Edit End - Whitesands
+	jungle_ruins_templates = SSmapping.jungle_ruins_templates
+	ice_ruins_templates = SSmapping.ice_ruins_templates
 	shuttle_templates = SSmapping.shuttle_templates
 	shelter_templates = SSmapping.shelter_templates
 
@@ -120,6 +121,8 @@ SUBSYSTEM_DEF(mapping)
 	banned += generateMapList("[global.config.directory]/spaceruinblacklist.txt")
 	banned += generateMapList("[global.config.directory]/iceruinblacklist.txt")
 	banned += generateMapList("[global.config.directory]/sandruinblacklist.txt")
+	banned += generateMapList("[global.config.directory]/jungleruinblacklist.txt")
+	banned += generateMapList("[global.config.directory]/rockruinblacklist.txt")
 
 	for(var/item in sortList(subtypesof(/datum/map_template/ruin), /proc/cmp_ruincost_priority))
 		var/datum/map_template/ruin/ruin_type = item
