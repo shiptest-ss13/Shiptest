@@ -437,14 +437,12 @@
 	if(!open)
 		icon_state = "[icon_type]-closed"
 		layer = WALL_OBJ_LAYER
-		density = TRUE
 		open = FALSE
 		if(opaque_closed)
 			set_opacity(TRUE)
 	else
 		icon_state = "[icon_type]-open"
 		layer = SIGN_LAYER
-		density = FALSE
 		open = TRUE
 		set_opacity(FALSE)
 
