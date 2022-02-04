@@ -112,6 +112,10 @@ The reactor CHEWS through moderator. It does not do this slowly. Be very careful
 	var/last_heat_delta = 0 //For administrative cheating only. Knowing the delta lets you know EXACTLY what to set K at.
 	var/no_coolant_ticks = 0	//How many times in succession did we not have enough coolant? Decays twice as fast as it accumulates.
 
+	// Logging stuff
+	var/last_user = null
+	var/current_desired_k = null
+
 //Use this in your maps if you want everything to be preset.
 /obj/machinery/atmospherics/components/trinary/nuclear_reactor/preset
 	id = "default_reactor_for_lazy_mappers"
@@ -152,9 +156,12 @@ The reactor CHEWS through moderator. It does not do this slowly. Be very careful
 		if(do_after(user, 5 SECONDS, target=src))
 			if(!fuel_rods.len)
 				start_up() //That was the first fuel rod. Let's heat it up.
+				message_admins("Nuclear reactor started by [ADMIN_LOOKUPFLW(user)] in [ADMIN_VERBOSEJMP(src)]")
+				investigate_log("Nuclear reactor started by [key_name(user)] at [AREACOORD(src)]", INVESTIGATE_SINGULO)
 			fuel_rods += W
 			W.forceMove(src)
 			radiation_pulse(src, temperature) //Wear protective equipment when even breathing near a reactor!
+			investigate_log("Rod added to reactor by [key_name(user)] at [AREACOORD(src)]", INVESTIGATE_SINGULO)
 		return TRUE
 	if(istype(W, /obj/item/sealant))
 		if(power >= 20)
@@ -204,6 +211,7 @@ The reactor CHEWS through moderator. It does not do this slowly. Be very careful
 /obj/machinery/atmospherics/components/trinary/nuclear_reactor/proc/lazy_startup()
 	for(var/I=0;I<5;I++)
 		fuel_rods += new /obj/item/fuel_rod(src)
+	message_admins("Reactor lazy-started by admins in [ADMIN_VERBOSEJMP(src)]")
 	start_up()
 
 /obj/machinery/atmospherics/components/trinary/nuclear_reactor/proc/deplete()
@@ -258,6 +266,7 @@ The reactor CHEWS through moderator. It does not do this slowly. Be very careful
 				vessel_integrity -= temperature / 200 //Think fast loser.
 				take_damage(10) //Just for the sound effect, to let you know you've fucked up.
 				color = "[COLOR_RED]"
+				investigate_log("Reactor taking damage from the lack of coolant", INVESTIGATE_SINGULO)
 	//Now, heat up the output and set our pressure.
 	coolant_output.set_temperature(CELSIUS_TO_KELVIN(temperature)) //Heat the coolant output gas that we just had pass through us.
 	last_output_temperature = KELVIN_TO_CELSIUS(coolant_output.return_temperature())
@@ -320,6 +329,10 @@ The reactor CHEWS through moderator. It does not do this slowly. Be very careful
 			K += difference
 		else if(desired_k < K)
 			K -= difference
+	if(K == desired_k && last_user && current_desired_k != desired_k)
+		current_desired_k = desired_k
+		message_admins("Reactor target criticality set to [desired_k] by [ADMIN_LOOKUPFLW(last_user)] in [ADMIN_VERBOSEJMP(src)]")
+		investigate_log("reactor target criticality set to [desired_k] by [key_name(last_user)] at [AREACOORD(src)]", INVESTIGATE_SINGULO)
 
 	K = clamp(K, 0, RBMK_MAX_CRITICALITY)
 	if(has_fuel())
@@ -334,6 +347,7 @@ The reactor CHEWS through moderator. It does not do this slowly. Be very careful
 		for(var/obj/machinery/light/L in GLOB.machines)
 			if(prob(25) && (L.get_virtual_level() == get_virtual_level()))
 				L.flicker()
+		investigate_log("Nuclear reactor overloading at [power]% power", INVESTIGATE_SINGULO)
 	for(var/atom/movable/I in get_turf(src))
 		if(isliving(I))
 			var/mob/living/L = I
@@ -373,11 +387,14 @@ The reactor CHEWS through moderator. It does not do this slowly. Be very careful
 		shut_down()
 	//First alert condition: Overheat
 	if(temperature >= RBMK_TEMPERATURE_CRITICAL)
+		investigate_log("Reactor reaching critical temperature at [temperature] C with desired criticality at [desired_k]", INVESTIGATE_SINGULO)
+		message_admins("Nuclear reactor reaching critical temperature at [ADMIN_VERBOSEJMP(src)]")
 		alert = TRUE
 		if(temperature >= RBMK_TEMPERATURE_MELTDOWN)
 			var/temp_damage = min(temperature/100, initial(vessel_integrity)/40)	//40 seconds to meltdown from full integrity, worst-case. Bit less than blowout since it's harder to spike heat that much.
 			vessel_integrity -= temp_damage
 			if(vessel_integrity <= temp_damage) //It wouldn't be able to tank another hit.
+				investigate_log("Reactor melted down at [temperature] C with desired criticality at [desired_k]", INVESTIGATE_SINGULO)
 				meltdown() //Oops! All meltdown
 				return
 	else
@@ -389,6 +406,8 @@ The reactor CHEWS through moderator. It does not do this slowly. Be very careful
 		color = null
 	//Second alert condition: Overpressurized (the more lethal one)
 	if(pressure >= RBMK_PRESSURE_CRITICAL)
+		investigate_log("Reactor reaching critical pressure at [pressure] PSI with desired criticality at [desired_k]", INVESTIGATE_SINGULO)
+		message_admins("Nuclear reactor reaching critical pressure at [ADMIN_VERBOSEJMP(src)]")
 		alert = TRUE
 		shake_animation(0.5)
 		playsound(loc, 'sound/machines/clockcult/steam_whoosh.ogg', 100, TRUE)
@@ -398,6 +417,7 @@ The reactor CHEWS through moderator. It does not do this slowly. Be very careful
 		var/pressure_damage = min(pressure/100, initial(vessel_integrity)/45)	//You get 45 seconds (if you had full integrity), worst-case. But hey, at least it can't be instantly nuked with a pipe-fire.. though it's still very difficult to save.
 		vessel_integrity -= pressure_damage
 		if(vessel_integrity <= pressure_damage) //It wouldn't be able to tank another hit.
+			investigate_log("Reactor blowout at [pressure] PSI with desired criticality at [desired_k]", INVESTIGATE_SINGULO)
 			blowout()
 			return
 	if(warning)
@@ -598,6 +618,7 @@ The reactor CHEWS through moderator. It does not do this slowly. Be very careful
 	if(!reactor)
 		return
 	if(action == "input")
+		reactor.last_user = usr
 		var/input = text2num(params["target"])
 		reactor.desired_k = clamp(input, 0, 3)
 
