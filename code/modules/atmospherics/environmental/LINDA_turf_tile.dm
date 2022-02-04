@@ -185,14 +185,15 @@
 /turf/proc/process_cell(fire_count)
 /turf/open/proc/equalize_pressure_in_zone(cyclenum)
 /turf/open/proc/consider_firelocks(turf/T2)
-	for(var/obj/machinery/door/firedoor/FD in src)
-		FD.emergency_pressure_stop()
-	for(var/obj/machinery/door/firedoor/FD in T2)
-		FD.emergency_pressure_stop()
+	if(!blocks_air && !T2.blocks_air)
+		for(var/obj/machinery/door/firedoor/FD in src)
+			FD.emergency_pressure_stop()
+		for(var/obj/machinery/door/firedoor/FD in T2)
+			FD.emergency_pressure_stop()
 
 /turf/proc/handle_decompression_floor_rip()
 /turf/open/floor/handle_decompression_floor_rip(sum)
-	if(sum > 20 && prob(clamp(sum / 10, 0, 30)))
+	if(sum > 20 && prob(clamp(sum / 10, 0, 30)) && !blocks_air)
 		remove_tile()
 
 /turf/open/process_cell(fire_count)
@@ -209,6 +210,8 @@
 		pressure_difference = difference
 
 /turf/open/proc/high_pressure_movements()
+	if(blocks_air)
+		return //fuck you
 	var/atom/movable/M
 	var/multiplier = 1
 	if(locate(/obj/structure/rack) in src)
