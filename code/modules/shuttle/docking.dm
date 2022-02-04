@@ -89,7 +89,9 @@
 	for(var/i in 1 to old_turfs.len)
 		var/turf/oldT = old_turfs[i]
 		var/turf/newT = new_turfs[i]
+		oldT.blocks_air = TRUE
 		oldT.set_sleeping(TRUE)
+		newT.blocks_air = TRUE
 		newT.set_sleeping(TRUE)
 
 /obj/docking_port/mobile/proc/throw_exception(var/exception/e)
