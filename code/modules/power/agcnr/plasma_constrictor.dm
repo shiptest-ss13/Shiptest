@@ -36,9 +36,15 @@
 	on = !on
 	update_icon()
 
-/obj/machinery/atmospherics/components/binary/magnetic_constrictor/ComponentInitialize()
-	. = ..()
-	AddComponent(/datum/component/simple_rotation,ROTATION_ALTCLICK | ROTATION_CLOCKWISE | ROTATION_COUNTERCLOCKWISE | ROTATION_VERBS )
+/obj/machinery/atmospherics/components/binary/magnetic_constrictor/attackby(obj/item/I, mob/user, params)
+	if(!on)
+		if(default_deconstruction_screwdriver(user, "constrictor_screw", "constrictor", I))
+			return
+	if(default_change_direction_wrench(user, I))
+		return
+	if(default_deconstruction_crowbar(I))
+		return
+	return ..()
 
 /obj/machinery/atmospherics/components/binary/magnetic_constrictor/process_atmos()
 	..()
@@ -55,22 +61,6 @@
 	air2.set_temperature(air1.return_temperature())
 	air1.adjust_moles(GAS_PLASMA, -plasma_transfer_moles)
 	update_parents()
-
-/obj/machinery/atmospherics/components/binary/magnetic_constrictor/crowbar_act(mob/user, obj/item/I)
-	default_deconstruction_crowbar(I)
-	return TRUE
-
-/obj/machinery/atmospherics/components/binary/magnetic_constrictor/screwdriver_act(mob/user, obj/item/I)
-	if(..())
-		return TRUE
-	if(on)
-		to_chat(user, "<span class='notice'>You must turn off [src] before opening the panel.</span>")
-		return FALSE
-	panel_open = !panel_open
-	I.play_tool_sound(src)
-	to_chat(user, "<span class='notice'>You [panel_open?"open":"close"] the panel on [src].</span>")
-	update_icon()
-	return TRUE
 
 /obj/machinery/atmospherics/components/binary/magnetic_constrictor/update_icon()
 	cut_overlays()

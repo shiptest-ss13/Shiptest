@@ -132,7 +132,7 @@ The reactor CHEWS through moderator. It does not do this slowly. Be very careful
 		if(40 to 60)
 			msg = "<span class='warning'>[src]'s seals are holding, but barely. You can see some micro-fractures forming in the reactor vessel.</span>"
 		if(60 to 80)
-			msg = "<span class='warning'>[src]'s seals are in-tact, but slightly worn. There are no visible cracks in the reactor vessel.</span>"
+			msg = "<span class='warning'>[src]'s seals are intact, but slightly worn. There are no visible cracks in the reactor vessel.</span>"
 		if(80 to 90)
 			msg = "<span class='notice'>[src]'s seals are in good shape, and there are no visible cracks in the reactor vessel.</span>"
 		if(95 to 100)
@@ -161,14 +161,14 @@ The reactor CHEWS through moderator. It does not do this slowly. Be very careful
 			to_chat(user, "<span class='notice'>You cannot repair [src] while it is running at above 20% power.</span>")
 			return FALSE
 		if(vessel_integrity >= vessel_max_repair_integrity)
-			to_chat(user, "<span class='notice'>[src]'s seals are already in-tact, repairing them further would require a new set of seals.</span>")
+			to_chat(user, "<span class='notice'>[src]'s seals are already intact, repairing them further would require a new set of seals.</span>")
 			return FALSE
 		if(vessel_integrity <= 0.5 * vessel_max_repair_integrity) //Heavily damaged.
 			to_chat(user, "<span class='notice'>[src]'s reactor vessel is cracked and worn, you need to repair the cracks with a welder before you can repair the seals.</span>")
 			return FALSE
 		if(do_after(user, 5 SECONDS, target=src))
 			if(vessel_integrity >= vessel_max_repair_integrity)	//They might've stacked doafters
-				to_chat(user, "<span class='notice'>[src]'s seals are already in-tact, repairing them further would require a new set of seals.</span>")
+				to_chat(user, "<span class='notice'>[src]'s seals are already intact, repairing them further would require a new set of seals.</span>")
 				return FALSE
 			playsound(src, 'sound/effects/spray2.ogg', 50, 1, -6)
 			user.visible_message("<span class='warning'>[user] applies sealant to some of [src]'s worn out seals.</span>", "<span class='notice'>You apply sealant to some of [src]'s worn out seals.</span>")
