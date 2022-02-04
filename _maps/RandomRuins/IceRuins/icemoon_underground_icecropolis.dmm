@@ -756,6 +756,11 @@
 	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
 	},
 /area/ruin/unpowered/icecropolis)
+"vf" = (
+/turf/open/indestructible/necropolis/air,
+/area/ruin/unpowered/icecropolis{
+	desc = "Bow before He, lest ye be judged. Or run away."
+	})
 "vh" = (
 /obj/item/storage/box/disks_plantgene,
 /turf/open/floor/plasteel,
@@ -1983,7 +1988,9 @@
 	},
 /area/ruin/unpowered/icecropolis)
 "XN" = (
-/mob/living/simple_animal/hostile/megafauna/dragon,
+/mob/living/simple_animal/hostile/megafauna/dragon{
+	name = "The Bloody King"
+	},
 /turf/open/indestructible/necropolis/air,
 /area/ruin/unpowered/icecropolis)
 "Ys" = (
@@ -2897,7 +2904,7 @@ je
 je
 tA
 tA
-tA
+vf
 XN
 tA
 je
