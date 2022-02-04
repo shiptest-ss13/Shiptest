@@ -138,7 +138,7 @@
 "eB" = (
 /obj/structure/necropolis_gate,
 /obj/structure/stone_tile/slab/cracked,
-/turf/open/space/basic,
+/turf/open/indestructible/boss/air,
 /area/ruin/unpowered/icecropolis/reach)
 "eD" = (
 /obj/item/melee/baseball_bat/homerun,
@@ -164,11 +164,11 @@
 /turf/open/floor/wood,
 /area/ruin/unpowered/icecropolis/russia)
 "fh" = (
-/mob/living/simple_animal/hostile/cult_demon{
-	faction = list("mining")
+/obj/structure/legionturret,
+/turf/open/floor/grass/snow/basalt{
+	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
 	},
-/turf/open/floor/wood,
-/area/ruin/unpowered/icecropolis/russia)
+/area/ruin/unpowered/icecropolis)
 "fl" = (
 /obj/structure/table/wood/reinforced,
 /obj/item/storage/box/donkpockets/donkpocketgondola,
@@ -210,6 +210,9 @@
 /obj/structure/stone_tile/block{
 	dir = 8
 	},
+/obj/structure/stone_tile/block{
+	dir = 4
+	},
 /turf/open/lava/smooth,
 /area/ruin/unpowered/icecropolis/reach)
 "gn" = (
@@ -225,10 +228,6 @@
 /turf/open/lava{
 	initial_gas_mix = "ICEMOON_ATMOS"
 	},
-/area/ruin/unpowered/icecropolis/outside)
-"go" = (
-/obj/structure/fans/tiny/invisible,
-/turf/closed/indestructible/riveted/boss,
 /area/ruin/unpowered/icecropolis/outside)
 "gr" = (
 /obj/structure/stone_tile,
@@ -371,12 +370,10 @@
 	},
 /area/ruin/unpowered/icecropolis)
 "jE" = (
-/obj/machinery/power/apc/auto_name{
-	pixel_y = 27
-	},
 /obj/structure/cable/blue{
 	icon_state = "0-8"
 	},
+/obj/machinery/power/apc/auto_name/north,
 /turf/open/floor/plating,
 /area/ruin/unpowered/icecropolis/rusty)
 "jR" = (
@@ -392,8 +389,8 @@
 /obj/item/reagent_containers/blood/lizard,
 /obj/item/reagent_containers/blood/lizard,
 /obj/item/stack/sheet/cotton/cloth/ten,
-/obj/item/storage/firstaid/ancient,
 /obj/item/storage/firstaid/brute,
+/obj/item/storage/firstaid/medical,
 /turf/open/floor/grass/snow/basalt{
 	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
 	},
@@ -473,6 +470,30 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/unpowered/icecropolis/rusty)
+"mU" = (
+/mob/living/simple_animal/hostile/asteroid/goliath/pup{
+	a_intent = "help";
+	desc = "A small goliath pup. Its tendrils have not yet fully grown. Someone, somehow, has managed to fit a large dog collar around its neck.";
+	environment_smash = 0;
+	faction = list("neutral");
+	mob_size = 2;
+	move_force = 1000;
+	move_resist = 1000;
+	name = "David";
+	pull_force = 1000
+	},
+/turf/closed/mineral/random/high_chance/volcanic{
+	baseturfs = /turf/open/indestructible/necropolis/air;
+	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
+	},
+/area/ruin/unpowered/icecropolis)
+"ng" = (
+/obj/structure/stone_tile/block/burnt,
+/obj/structure/stone_tile/block{
+	dir = 1
+	},
+/turf/open/lava/smooth,
+/area/ruin/unpowered/icecropolis/reach)
 "nh" = (
 /obj/structure/stone_tile/surrounding/cracked{
 	dir = 8
@@ -491,10 +512,8 @@
 /turf/open/lava/smooth,
 /area/ruin/unpowered/icecropolis/gold)
 "nE" = (
-/obj/structure/legionnaire_bonfire,
-/turf/open/floor/grass/snow/basalt{
-	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
-	},
+/mob/living/simple_animal/hostile/asteroid/hivelord/legion/crystal,
+/turf/open/indestructible/necropolis/air,
 /area/ruin/unpowered/icecropolis)
 "nS" = (
 /obj/item/melee/baton/cattleprod,
@@ -577,6 +596,12 @@
 /area/ruin/unpowered/icecropolis)
 "pV" = (
 /obj/structure/closet/crate/radiation,
+/obj/machinery/the_singularitygen,
+/obj/item/toy/plush/beeplushie,
+/obj/item/clothing/suit/hooded/bee_costume,
+/obj/item/clothing/mask/rat/bee,
+/obj/item/clothing/head/beekeeper_head,
+/obj/item/clothing/suit/beekeeper_suit,
 /turf/open/floor/grass/snow/basalt{
 	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
 	},
@@ -681,11 +706,11 @@
 /turf/open/floor/wood,
 /area/ruin/unpowered/icecropolis/reach)
 "tO" = (
-/obj/item/clothing/shoes/roman,
-/turf/open/floor/grass/snow/basalt{
-	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
+/mob/living/simple_animal/hostile/cult_demon/greater{
+	faction = list("mining")
 	},
-/area/ruin/unpowered/icecropolis/reach)
+/turf/open/floor/wood,
+/area/ruin/unpowered/icecropolis/russia)
 "tQ" = (
 /obj/effect/sliding_puzzle/lavaland,
 /turf/open/indestructible/necropolis/air,
@@ -751,11 +776,9 @@
 /turf/open/floor/plasteel,
 /area/ruin/unpowered/icecropolis/rusty)
 "uU" = (
-/obj/item/clothing/suit/hooded/cloak/goliath,
-/turf/open/floor/grass/snow/basalt{
-	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
-	},
-/area/ruin/unpowered/icecropolis)
+/mob/living/simple_animal/hostile/asteroid/ice_demon/random,
+/turf/open/floor/wood,
+/area/ruin/unpowered/icecropolis/russia)
 "vh" = (
 /obj/item/storage/box/disks_plantgene,
 /turf/open/floor/plasteel,
@@ -1023,8 +1046,8 @@
 	},
 /area/ruin/unpowered/icecropolis/rusty)
 "Bl" = (
-/mob/living/simple_animal/hostile/asteroid/elite/legionnaire{
-	faction = list("mining")
+/mob/living/simple_animal/hostile/big_legion{
+	health = 300
 	},
 /turf/open/floor/grass/snow/basalt{
 	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
@@ -1200,7 +1223,8 @@
 /area/ruin/unpowered/icecropolis/outside)
 "Gc" = (
 /mob/living/simple_animal/hostile/asteroid/elite/herald{
-	faction = list("mining")
+	faction = list("mining");
+	health = 450
 	},
 /turf/open/floor/mineral/gold,
 /area/ruin/unpowered/icecropolis/gold)
@@ -1381,11 +1405,11 @@
 	},
 /area/ruin/unpowered/icecropolis)
 "Kn" = (
-/mob/living/simple_animal/hostile/cult_demon/greater{
-	faction = list("mining")
+/obj/structure/reagent_dispensers/beerkeg,
+/turf/open/floor/grass/snow/basalt{
+	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
 	},
-/turf/open/indestructible/necropolis/air,
-/area/ruin/unpowered/icecropolis)
+/area/ruin/unpowered/icecropolis/reach)
 "Kq" = (
 /obj/structure/stone_tile/cracked{
 	dir = 1
@@ -1422,8 +1446,15 @@
 /area/ruin/unpowered/icecropolis/russia)
 "Ls" = (
 /mob/living/simple_animal/hostile/asteroid/goliath/pup{
-	faction = list("mining","ashwalker");
-	name = "Pillar"
+	a_intent = "help";
+	desc = "A small goliath pup. Its tendrils have not yet fully grown. Someone, somehow, has managed to fit a large dog collar around its neck.";
+	environment_smash = 0;
+	faction = list("neutral");
+	mob_size = 2;
+	move_force = 1000;
+	move_resist = 1000;
+	name = "Pillar";
+	pull_force = 1000
 	},
 /turf/open/floor/grass/snow/basalt{
 	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
@@ -1469,11 +1500,11 @@
 /turf/open/lava/smooth,
 /area/ruin/unpowered/icecropolis/gold)
 "LO" = (
-/obj/machinery/the_singularitygen,
+/mob/living/simple_animal/hostile/asteroid/hivelord/legion/crystal,
 /turf/open/floor/grass/snow/basalt{
 	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
 	},
-/area/ruin/unpowered/icecropolis/reach)
+/area/ruin/unpowered/icecropolis)
 "LT" = (
 /obj/effect/decal/cleanable/blood/old,
 /turf/open/floor/mineral/gold,
@@ -1501,7 +1532,7 @@
 	},
 /area/ruin/unpowered/icecropolis/gold)
 "MR" = (
-/mob/living/simple_animal/hostile/asteroid/hivelord/legion,
+/obj/structure/legionnaire_bonfire,
 /turf/open/floor/grass/snow/basalt{
 	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
 	},
@@ -1570,10 +1601,11 @@
 /turf/open/floor/wood,
 /area/ruin/unpowered/icecropolis/reach)
 "OB" = (
-/obj/effect/decal/cleanable/blood/gibs/old,
 /mob/living/simple_animal/hostile/asteroid/elite/broodmother{
-	faction = list("mining")
+	faction = list("mining");
+	health = 250
 	},
+/obj/effect/sliding_puzzle/lavaland,
 /turf/open/indestructible/necropolis/air,
 /area/ruin/unpowered/icecropolis)
 "OG" = (
@@ -1586,7 +1618,10 @@
 /area/ruin/unpowered/icecropolis/gold)
 "Ph" = (
 /obj/structure/stone_tile/surrounding/burnt,
-/mob/living/simple_animal/hostile/big_legion,
+/mob/living/simple_animal/hostile/asteroid/elite/legionnaire{
+	faction = list("mining");
+	health = 400
+	},
 /turf/open/lava/smooth,
 /area/ruin/unpowered/icecropolis)
 "Pl" = (
@@ -1613,12 +1648,10 @@
 /turf/open/floor/plating/asteroid/snow/icemoon,
 /area/ruin/unpowered/icecropolis/outside)
 "PT" = (
-/obj/machinery/power/apc/auto_name{
-	pixel_y = 27
-	},
 /obj/structure/cable/blue{
 	icon_state = "0-2"
 	},
+/obj/machinery/power/apc/auto_name/north,
 /turf/open/floor/wood,
 /area/ruin/unpowered/icecropolis/russia)
 "PW" = (
@@ -1652,12 +1685,11 @@
 	},
 /area/ruin/unpowered/icecropolis/gold)
 "Qz" = (
-/obj/item/key/janitor,
-/obj/vehicle/ridden/janicart{
-	desc = "His name is Buck, and he likes to...";
+/obj/vehicle/ridden/atv{
 	movedelay = 0;
-	name = "Pussy Wagon"
+	name = "White Lightning"
 	},
+/obj/item/key,
 /turf/open/indestructible/necropolis/air,
 /area/ruin/unpowered/icecropolis)
 "QK" = (
@@ -1694,12 +1726,6 @@
 	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
 	},
 /area/ruin/unpowered/icecropolis/gold)
-"RE" = (
-/mob/living/simple_animal/hostile/asteroid/hivelord/legion/crystal,
-/turf/open/floor/grass/snow/basalt{
-	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
-	},
-/area/ruin/unpowered/icecropolis)
 "RO" = (
 /obj/structure/sink{
 	dir = 8;
@@ -1903,10 +1929,6 @@
 /obj/item/trash/popcorn,
 /turf/open/indestructible/boss/air,
 /area/ruin/unpowered/icecropolis/gold)
-"WU" = (
-/mob/living/simple_animal/hostile/asteroid/ice_demon/random,
-/turf/open/indestructible/necropolis/air,
-/area/ruin/unpowered/icecropolis)
 "WV" = (
 /obj/structure/stone_tile/center,
 /obj/structure/stone_tile/surrounding,
@@ -1952,12 +1974,16 @@
 /obj/structure/stone_tile/block{
 	dir = 4
 	},
+/obj/structure/stone_tile/block{
+	dir = 8
+	},
 /turf/open/lava/smooth,
 /area/ruin/unpowered/icecropolis/reach)
 "Xv" = (
 /obj/structure/stone_tile/block{
 	dir = 1
 	},
+/obj/structure/stone_tile/block/burnt,
 /turf/open/lava/smooth,
 /area/ruin/unpowered/icecropolis/reach)
 "Xw" = (
@@ -1984,6 +2010,7 @@
 /area/ruin/unpowered/icecropolis)
 "XN" = (
 /mob/living/simple_animal/hostile/megafauna/dragon{
+	health = 2000;
 	name = "The Bloody King"
 	},
 /turf/open/indestructible/necropolis/air,
@@ -2014,12 +2041,6 @@
 /obj/item/rcd_ammo,
 /obj/item/gps,
 /turf/open/floor/plating,
-/area/ruin/unpowered/icecropolis)
-"Yz" = (
-/obj/structure/legionturret,
-/turf/open/floor/grass/snow/basalt{
-	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
-	},
 /area/ruin/unpowered/icecropolis)
 "YD" = (
 /obj/structure/closet/crate,
@@ -4074,9 +4095,9 @@ tA
 tA
 EU
 EU
-Kn
+tA
+tO
 mu
-fh
 Dh
 LY
 Dh
@@ -4198,9 +4219,9 @@ je
 je
 jV
 tA
-WU
+tA
+uU
 mu
-fh
 Dh
 LY
 Dh
@@ -4624,9 +4645,9 @@ tA
 tA
 tA
 tA
+nE
 tA
 tA
-hb
 tA
 tA
 tA
@@ -4650,7 +4671,7 @@ Eu
 WO
 WO
 WO
-go
+yl
 vv
 WO
 WO
@@ -4986,7 +5007,7 @@ je
 jV
 tA
 HW
-uU
+BT
 BT
 tA
 tA
@@ -5199,7 +5220,7 @@ je
 jV
 BT
 BT
-MR
+BT
 BT
 Ka
 BT
@@ -5263,7 +5284,7 @@ BT
 oT
 eH
 rE
-Yz
+BT
 rE
 eH
 Kq
@@ -5316,7 +5337,7 @@ je
 je
 je
 tA
-vz
+tA
 dG
 je
 je
@@ -5325,7 +5346,7 @@ BT
 zp
 pO
 rE
-BT
+MR
 rE
 hs
 aV
@@ -5378,7 +5399,7 @@ je
 je
 je
 tA
-tA
+CQ
 tA
 je
 je
@@ -5387,7 +5408,7 @@ BT
 rE
 rE
 wq
-RE
+BT
 NS
 rE
 rE
@@ -5440,19 +5461,19 @@ je
 je
 je
 tA
-Fq
+tA
 je
 je
 je
 jV
 Il
-Yz
+BT
 BT
 BT
 Ph
 BT
 BT
-Yz
+BT
 BT
 jV
 fE
@@ -5639,7 +5660,7 @@ BT
 rE
 oZ
 oT
-MR
+BT
 jV
 fE
 Ao
@@ -5882,7 +5903,7 @@ je
 je
 Il
 tA
-BT
+LO
 BT
 BT
 je
@@ -6073,7 +6094,7 @@ je
 je
 je
 tA
-ZG
+tA
 tA
 tA
 tA
@@ -6506,7 +6527,7 @@ je
 tA
 je
 je
-tA
+vz
 je
 je
 je
@@ -6547,7 +6568,7 @@ UI
 li
 li
 tA
-Fq
+tA
 je
 je
 je
@@ -6575,7 +6596,7 @@ je
 je
 je
 tA
-CQ
+tA
 tA
 je
 jV
@@ -6608,7 +6629,7 @@ UI
 dx
 li
 je
-tA
+hb
 tA
 je
 je
@@ -6622,7 +6643,7 @@ tA
 tA
 tA
 tA
-vz
+tA
 je
 je
 je
@@ -7178,7 +7199,7 @@ je
 je
 je
 je
-je
+mU
 je
 je
 je
@@ -7235,7 +7256,7 @@ je
 je
 tA
 tA
-iQ
+tA
 je
 je
 je
@@ -7674,7 +7695,7 @@ fE
 iV
 Zm
 Zm
-tO
+Zm
 TC
 Zm
 sZ
@@ -7861,7 +7882,7 @@ iV
 Zm
 Zm
 pV
-LO
+Zm
 tX
 Zm
 hT
@@ -7968,7 +7989,7 @@ je
 je
 BT
 BT
-BT
+fh
 tA
 BT
 je
@@ -8032,7 +8053,7 @@ je
 je
 BT
 BT
-nE
+BT
 je
 je
 je
@@ -8044,7 +8065,7 @@ je
 jV
 fE
 iV
-Zm
+Kn
 iV
 Sy
 Sy
@@ -8172,7 +8193,7 @@ iV
 iV
 Xv
 Xb
-HC
+ng
 AX
 eB
 Zm
