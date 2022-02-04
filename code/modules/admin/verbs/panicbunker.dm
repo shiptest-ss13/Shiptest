@@ -102,4 +102,4 @@ GLOBAL_LIST_EMPTY(bunker_passthrough)
 
 /datum/config_entry/number/max_bunker_days
 	config_entry_value = 7
-	min_val = 1 
+	min_val = 1
