@@ -13,6 +13,7 @@
 	lefthand_file = 'icons/mob/inhands/equipment/security_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/security_righthand.dmi'
 	armor = list("melee" = 25, "bullet" = 25, "laser" = 25, "energy" = 25, "bomb" = 50, "bio" = 10, "rad" = 0, "fire" = 70, "acid" = 50)
+	supports_variations = DIGITIGRADE_VARIATION
 	strip_delay = 40
 	resistance_flags = NONE
 	permeability_coefficient = 0.05 //Thick soles, and covers the ankle
