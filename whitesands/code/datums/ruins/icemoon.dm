@@ -34,9 +34,3 @@
 	id = "demonlab"
 	description = "Some abandoned research outpost"
 	suffix = "icemoon_demonlab.dmm"
-
-/datum/map_template/ruin/icemoon/icecropolis
-	name = "The Bloody Hollow"
-	id = "icecropolis"
-	description = "Blood and writhing flesh make up this citadel of horrors."
-	suffix = "icemoon_underground_icecropolis.dmm"
