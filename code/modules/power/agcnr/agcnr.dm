@@ -15,7 +15,7 @@
 
 #define RBMK_MAX_CRITICALITY 3 //No more criticality than N for now.
 
-#define RBMK_POWER_FLAVOURISER 4000 //To turn those KWs into something usable
+#define RBMK_POWER_FLAVOURISER 6000 //To turn those KWs into something usable
 
 //Math stuffs.
 #define KPA_TO_PSI(A) (A/6.895)
@@ -254,7 +254,7 @@ The reactor CHEWS through moderator. It does not do this slowly. Be very careful
 		if(has_fuel())
 			no_coolant_ticks++
 			if(no_coolant_ticks > RBMK_NO_COOLANT_TOLERANCE)
-				temperature += temperature / 500 //This isn't really harmful early game, but when your reactor is up to full power, this can get out of hand quite quickly.
+				temperature += temperature / 500 //This isn't really harmful while the reactor is starting, but when your reactor is up to full power, this can get out of hand quite quickly.
 				vessel_integrity -= temperature / 200 //Think fast loser.
 				take_damage(10) //Just for the sound effect, to let you know you've fucked up.
 				color = "[COLOR_RED]"
@@ -262,7 +262,7 @@ The reactor CHEWS through moderator. It does not do this slowly. Be very careful
 	coolant_output.set_temperature(CELSIUS_TO_KELVIN(temperature)) //Heat the coolant output gas that we just had pass through us.
 	last_output_temperature = KELVIN_TO_CELSIUS(coolant_output.return_temperature())
 	pressure = KPA_TO_PSI(coolant_output.return_pressure())
-	power = (temperature / RBMK_TEMPERATURE_CRITICAL) * 100
+	power = (max(temperature, 0) / RBMK_TEMPERATURE_CRITICAL) * 100 // Temperature to power calculation is clamped to prevent negative powers from occuring if the coolant is supercooled.
 	var/radioactivity_spice_multiplier = 1 //Some gasses make the reactor a bit spicy.
 	var/depletion_modifier = 0.035 //How rapidly do your rods decay
 	gas_absorption_effectiveness = gas_absorption_constant
@@ -446,13 +446,13 @@ The reactor CHEWS through moderator. It does not do this slowly. Be very careful
 	update_icon()
 	STOP_PROCESSING(SSmachines, src)
 	icon_state = "reactor_slagged"
-	AddComponent(/datum/component/radioactive, 15000 , src)
+	AddComponent(/datum/component/radioactive, 15000 , src) // Starts irradiating the area, as the core is now exposed.
 	var/obj/effect/landmark/nuclear_waste_spawner/NSW = new /obj/effect/landmark/nuclear_waste_spawner/strong(get_turf(src))
 	relay('sound/effects/agcnr/meltdown.ogg', "<span class='userdanger'>You hear a horrible metallic hissing.</span>")
 	stop_relay(CHANNEL_REACTOR_ALERT)
 	NSW.fire() //This will take out engineering for a decent amount of time as they have to clean up the sludge.
 	for(var/obj/machinery/power/apc/A in GLOB.apcs_list)
-		if((A.get_virtual_level() == get_virtual_level()) && prob(70))
+		if((A.get_virtual_level() == get_virtual_level()) && prob(40)) // Knocks out some lighting in the ship's area
 			A.overload_lighting()
 	var/datum/gas_mixture/coolant_input = COOLANT_INPUT_GATE
 	var/datum/gas_mixture/moderator_input = MODERATOR_INPUT_GATE
@@ -464,15 +464,17 @@ The reactor CHEWS through moderator. It does not do this slowly. Be very careful
 	T.assume_air(coolant_input)
 	T.assume_air(moderator_input)
 	T.assume_air(coolant_output)
-	explosion(get_turf(src), 0, 5, 10, 20, TRUE, TRUE)
-	empulse(get_turf(src), 25, 15)
+	explosion(get_turf(src), 0, 0, 10, 20, TRUE, TRUE) // Knocks out anything near the reactor, but shouldn't blow too many holes in the ship.
+	empulse(get_turf(src), 25, 15) // Knocks out or damages electronics on the ship
 
 // Failure condition 2: Blowout. Achieved by reactor over-pressurizing and rupturing. Results are *much* worse than standard meltdowns.
 /obj/machinery/atmospherics/components/trinary/nuclear_reactor/proc/blowout()
 	explosion(get_turf(src), GLOB.MAX_EX_DEVESTATION_RANGE, GLOB.MAX_EX_HEAVY_RANGE, GLOB.MAX_EX_LIGHT_RANGE, GLOB.MAX_EX_FLASH_RANGE)
 	meltdown() //Double kill.
 	var/datum/weather_controller/weather_controller = SSmapping.get_map_zone_weather_controller(get_turf(src))
-	weather_controller.run_weather(/datum/weather/nuclear_fallout) // Nuclear fallout time
+	weather_controller.run_weather(/datum/weather/nuclear_fallout) // Trigger the nuclear fallout
+	var/obj/effect/landmark/nuclear_waste_spawner/NSW = new /obj/effect/landmark/nuclear_waste_spawner/verystrong(get_turf(src))
+	NSW.fire() // Drop even more waste on the ground by the reactor
 	for(var/X in GLOB.landmarks_list)
 		if(istype(X, /obj/effect/landmark/nuclear_waste_spawner))
 			var/obj/effect/landmark/nuclear_waste_spawner/WS = X
@@ -660,7 +662,7 @@ The reactor CHEWS through moderator. It does not do this slowly. Be very careful
 	return data
 
 /obj/machinery/computer/reactor/fuel_rods
-	name = "Reactor Fuel Management Console"
+	name = "reactor fuel management console"
 	desc = "A console which can remotely raise fuel rods out of nuclear reactors."
 	icon_screen = "rbmk_fuel"
 
@@ -884,8 +886,11 @@ The reactor CHEWS through moderator. It does not do this slowly. Be very careful
 	name = "Nuclear waste spawner"
 	var/range = 5 //5 tile radius to spawn goop
 
-/obj/effect/landmark/nuclear_waste_spawner/strong
-	range = 15
+/obj/effect/landmark/nuclear_waste_spawner/strong // Used during standard meltdowns for leaving waste around the now-destroyed reactor.
+	range = 10
+
+/obj/effect/landmark/nuclear_waste_spawner/verystrong // Used for reactors blowing out, leaves waste absolutely everywhere
+	range = 20
 
 /obj/effect/landmark/nuclear_waste_spawner/proc/fire()
 	playsound(loc, 'sound/effects/gib_step.ogg', 100)
