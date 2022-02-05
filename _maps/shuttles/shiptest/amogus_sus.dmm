@@ -223,8 +223,8 @@
 /obj/machinery/light/small{
 	dir = 4
 	},
-/obj/machinery/suit_storage_unit/mining/eva,
 /obj/effect/turf_decal/box,
+/obj/machinery/suit_storage_unit/independent/mining/eva,
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
 "dh" = (
@@ -381,10 +381,6 @@
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
 /area/ship/crew/canteen)
-"ex" = (
-/obj/structure/tank_dispenser,
-/turf/open/floor/plasteel,
-/area/ship/engineering/atmospherics)
 "eJ" = (
 /obj/effect/turf_decal/industrial/warning/fulltile,
 /obj/machinery/door/airlock/public/glass,
@@ -839,8 +835,8 @@
 /turf/open/floor/plating,
 /area/ship/engineering/electrical)
 "jh" = (
-/obj/machinery/suit_storage_unit/engine,
 /obj/effect/turf_decal/industrial/outline/yellow,
+/obj/machinery/suit_storage_unit/independent/engineering,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/engineering)
 "jm" = (
@@ -3252,11 +3248,13 @@
 /turf/open/floor/plating,
 /area/ship/hallway/fore)
 "LB" = (
-/obj/machinery/suit_storage_unit/mining/eva,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 10
 	},
 /obj/effect/turf_decal/box,
+/obj/machinery/suit_storage_unit/inherit,
+/obj/item/clothing/suit/hooded/survivor,
+/obj/item/clothing/mask/gas/explorer,
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
 "LO" = (
@@ -3890,8 +3888,8 @@
 /area/ship/hallway/fore)
 "SJ" = (
 /obj/machinery/light/small,
-/obj/machinery/suit_storage_unit/engine,
 /obj/effect/turf_decal/industrial/outline/yellow,
+/obj/machinery/suit_storage_unit/independent/engineering,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/engineering)
 "SU" = (
@@ -4477,6 +4475,10 @@
 "Yu" = (
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew)
+"YM" = (
+/obj/structure/tank_dispenser,
+/turf/open/floor/plasteel/dark,
+/area/ship/engineering)
 "YN" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -5037,7 +5039,7 @@ Us
 xu
 tt
 vP
-vP
+YM
 DO
 dl
 dl
@@ -5606,7 +5608,7 @@ iP
 iV
 CL
 HC
-ex
+DA
 HB
 DA
 HX
