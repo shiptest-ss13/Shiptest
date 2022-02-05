@@ -260,8 +260,38 @@ SUBSYSTEM_DEF(garbage)
 		if(!D)
 			return
 
-	if(!istype(D))
-		del(D)
+	if(!istype(D)) //FOR THE LOVE OF FUCK DO NOT MERGE THIS TO MASTER
+		var/str_type
+		var/str_type
+		if(isnull(D))
+			str_type = "NULL"
+		else if(isnum(D))
+			str_type = "NUMBER"
+		else if(istext(D))
+			str_type = "TEXT"
+		else if(isicon(D))
+			str_type = "ICON"
+		else if(isfile(D))
+			str_type = "FILE"
+		else if(!str_type)
+			str_type = "SOMETHING ELSE???"
+		try
+			del(D)
+		catch
+			var/str_type2
+			if(isnull(D))
+				str_type2 = "NULL"
+			else if(isnum(D))
+				str_type2 = "NUMBER"
+			else if(istext(D))
+				str_type2 = "TEXT"
+			else if(isicon(D))
+				str_type2 = "ICON"
+			else if(isfile(D))
+				str_type2 = "FILE"
+			else if(!str_type)
+				str_type2 = "SOMETHING ELSE???"
+			CRASH("BAD DEL: [D] OF CLASS [str_type] PRE-DEL, [str_type2] POST-DEL")
 		return
 
 	var/datum/qdel_item/I = SSgarbage.items[D.type]
