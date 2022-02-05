@@ -3,6 +3,19 @@
 /obj/machinery/computer/autopilot,
 /turf/open/floor/plating,
 /area/ship/maintenance/fore)
+"av" = (
+/obj/structure/chair/comfy/shuttle{
+	dir = 1;
+	name = "Helm"
+	},
+/obj/effect/decal/cleanable/blood/splatter,
+/obj/machinery/light/broken,
+/obj/item/radio/intercom/wideband{
+	dir = 4;
+	pixel_x = -23
+	},
+/turf/open/floor/plating,
+/area/ship/maintenance/fore)
 "aM" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -21,27 +34,22 @@
 /obj/effect/decal/cleanable/greenglow,
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
+"bX" = (
+/obj/effect/decal/cleanable/glass,
+/turf/open/floor/plating,
+/area/ship/maintenance/aft)
 "ch" = (
 /obj/structure/falsewall,
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
-"dZ" = (
-/obj/machinery/door/window/northright{
-	dir = 2
-	},
-/obj/effect/decal/cleanable/glass,
-/obj/item/reagent_containers/glass/bucket{
-	desc = "Better get scoopin'.";
-	name = "oil-soaked bucket"
-	},
-/mob/living/simple_animal/hostile/cockroach/glockroach,
-/obj/effect/spawner/lootdrop/maintenance/four,
-/obj/structure/cable,
-/obj/machinery/power/terminal{
-	dir = 8
+"cl" = (
+/obj/machinery/mineral/ore_redemption{
+	dir = 4;
+	input_dir = 4;
+	output_dir = 8
 	},
 /turf/open/floor/plating,
-/area/ship/maintenance/central)
+/area/ship/cargo)
 "ea" = (
 /obj/structure/cable{
 	icon_state = "1-8"
@@ -73,10 +81,6 @@
 /obj/item/cigbutt,
 /turf/open/floor/plating,
 /area/ship/cargo)
-"et" = (
-/obj/machinery/suit_storage_unit/independent/mining/eva,
-/turf/open/floor/plating,
-/area/ship/cargo)
 "eC" = (
 /obj/structure/cable{
 	icon_state = "1-4"
@@ -90,10 +94,27 @@
 /obj/item/clothing/gloves/color/fyellow,
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
-"gj" = (
-/obj/effect/spawner/structure/window/hollow,
+"eV" = (
+/mob/living/simple_animal/hostile/cockroach,
+/obj/item/card/id/captains_spare{
+	desc = "The spare ID of the Grand Tider himself."
+	},
+/obj/structure/safe/floor{
+	number_of_tumblers = 5
+	},
 /turf/open/floor/plating,
-/area/ship/maintenance/starboard)
+/area/ship/maintenance/port)
+"ff" = (
+/obj/effect/decal/cleanable/cobweb/cobweb2,
+/obj/effect/decal/cleanable/glass,
+/obj/structure/reagent_dispensers/cooking_oil{
+	desc = "A huge metal vat with a tap on the front. Contains your backup fuel.";
+	name = "vat of engine oil";
+	reagent_id = /datum/reagent/fuel/oil;
+	tank_volume = 3000
+	},
+/turf/open/floor/plating,
+/area/ship/maintenance/central)
 "gy" = (
 /obj/machinery/atmospherics/components/unary/outlet_injector/on/layer2{
 	dir = 1
@@ -103,29 +124,22 @@
 "gS" = (
 /turf/open/floor/plating,
 /area/ship/external)
-"hc" = (
-/obj/effect/decal/cleanable/oil/streak,
-/obj/effect/decal/cleanable/cobweb/cobweb2,
-/obj/effect/decal/cleanable/glass,
-/obj/item/pipe_dispenser,
-/obj/item/construction/rcd,
-/obj/item/trash/syndi_cakes,
-/obj/machinery/airalarm/directional/north,
-/obj/effect/spawner/lootdrop/maintenance/eight,
-/obj/item/reagent_containers/food/snacks/canned/peaches/maint,
-/mob/living/simple_animal/hostile/cockroach/glockroach,
-/obj/item/clothing/suit/space/engineer,
-/obj/item/clothing/head/helmet/space/light/engineer,
-/obj/structure/closet/secure_closet{
-	icon_state = "eng_secure";
-	req_access = list(11)
-	},
-/turf/open/floor/plating,
-/area/ship/maintenance/starboard)
 "hi" = (
-/obj/effect/decal/cleanable/glass,
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/obj/item/storage/toolbox/mechanical/old,
+/obj/effect/decal/cleanable/blood/old,
+/obj/effect/decal/cleanable/blood/drip,
+/obj/effect/decal/cleanable/blood/footprints,
+/obj/effect/decal/cleanable/blood/gibs/down,
+/obj/effect/decal/cleanable/blood/gibs/limb,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 6
+	},
+/obj/machinery/holopad/emergency/command,
 /turf/open/floor/plating,
-/area/ship/maintenance/aft)
+/area/ship/maintenance/fore)
 "hQ" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -144,26 +158,50 @@
 	},
 /turf/open/floor/plating,
 /area/ship/cargo)
-"iu" = (
-/obj/effect/spawner/structure/window/hollow,
+"iL" = (
+/obj/machinery/door/window/northright{
+	dir = 2
+	},
+/obj/effect/decal/cleanable/glass,
+/obj/item/reagent_containers/glass/bucket{
+	desc = "Better get scoopin'.";
+	name = "oil-soaked bucket"
+	},
+/mob/living/simple_animal/hostile/cockroach/glockroach,
+/obj/effect/spawner/lootdrop/maintenance/four,
+/obj/structure/cable,
+/obj/machinery/power/terminal{
+	dir = 8
+	},
 /turf/open/floor/plating,
-/area/ship/maintenance/port)
+/area/ship/maintenance/central)
 "iW" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
 /turf/closed/wall/rust,
 /area/ship/maintenance/central)
+"jq" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/effect/spawner/lootdrop/grille_or_trash,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
+/obj/structure/cable,
+/turf/open/floor/plating,
+/area/ship/maintenance/central)
 "ln" = (
 /turf/closed/wall,
 /area/ship/maintenance/starboard)
-"lq" = (
-/obj/machinery/button/door{
-	id = "tidedoors";
-	name = "Blast Door Control";
-	pixel_y = -24
+"mr" = (
+/obj/effect/decal/cleanable/oil/streak,
+/obj/item/trash/boritos,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/glass,
+/obj/machinery/airalarm/directional/east,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
+	dir = 1
 	},
-/obj/machinery/suit_storage_unit/independent/engineering,
 /turf/open/floor/plating,
-/area/ship/cargo)
+/area/ship/maintenance/port)
 "mB" = (
 /obj/structure/cable{
 	icon_state = "0-2"
@@ -176,6 +214,14 @@
 /obj/effect/decal/cleanable/ash,
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
+"mC" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/industrial/loading{
+	dir = 8
+	},
+/obj/machinery/airalarm/directional/north,
+/turf/open/floor/plating,
+/area/ship/cargo)
 "nq" = (
 /turf/closed/wall/rust,
 /area/ship/cargo)
@@ -193,61 +239,32 @@
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
-"oB" = (
-/obj/machinery/mineral/ore_redemption{
-	dir = 4;
-	input_dir = 4;
-	output_dir = 8
+"or" = (
+/obj/effect/spawner/lootdrop/maintenance,
+/obj/effect/decal/cleanable/dirt,
+/obj/item/trash/sosjerky,
+/obj/item/cigbutt,
+/obj/item/circuitboard/machine/rdserver,
+/obj/structure/closet/secure_closet{
+	req_access = list(11)
 	},
+/obj/item/circuitboard/machine/circuit_imprinter,
+/obj/item/circuitboard/computer/rdconsole,
+/obj/item/circuitboard/machine/destructive_analyzer,
 /turf/open/floor/plating,
-/area/ship/cargo)
+/area/ship/maintenance/aft)
 "oC" = (
 /turf/closed/wall,
 /area/ship/cargo)
-"oL" = (
-/obj/structure/table,
-/obj/item/trash/cheesie,
-/obj/item/reagent_containers/food/snacks/kebab/rat{
-	pixel_y = -6
-	},
-/obj/item/reagent_containers/food/snacks/kebab/rat/double{
-	pixel_x = 2;
-	pixel_y = 6
-	},
-/obj/item/reagent_containers/food/snacks/burger/rat,
-/obj/item/cigbutt,
-/obj/item/reagent_containers/food/drinks/sillycup/smallcarton{
-	list_reagents = list(/datum/reagent/consumable/ethanol/vodka = 100)
-	},
-/obj/machinery/computer/cryopod{
-	pixel_y = 24
-	},
-/obj/item/areaeditor/shuttle,
-/turf/open/floor/plating,
-/area/ship/maintenance/port)
+"oU" = (
+/turf/template_noop,
+/area/template_noop)
 "pH" = (
 /turf/closed/wall,
 /area/ship/maintenance/aft)
 "pU" = (
 /turf/closed/wall/rust,
 /area/ship/maintenance/aft)
-"qB" = (
-/obj/structure/cable{
-	icon_state = "0-2"
-	},
-/obj/machinery/power/smes/shuttle/precharged{
-	dir = 4
-	},
-/obj/structure/window,
-/obj/machinery/door/window/northright{
-	dir = 4
-	},
-/turf/open/floor/plating,
-/area/ship/maintenance/central)
-"ra" = (
-/obj/effect/spawner/structure/window/hollow,
-/turf/open/floor/plating,
-/area/ship/maintenance/fore)
 "sw" = (
 /obj/machinery/power/apc/auto_name/east,
 /obj/structure/cable,
@@ -261,34 +278,14 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
 /turf/open/floor/plating,
 /area/ship/maintenance/central)
-"sT" = (
-/obj/machinery/power/port_gen/pacman,
-/obj/structure/cable/yellow{
-	icon_state = "0-4"
-	},
-/obj/item/stack/sheet/mineral/plasma/five,
-/turf/open/floor/plating,
-/area/ship/maintenance/starboard)
 "tr" = (
 /obj/structure/frame/computer,
 /turf/open/floor/plating,
 /area/ship/maintenance/fore)
-"tG" = (
-/obj/effect/decal/cleanable/generic,
+"ud" = (
+/obj/machinery/suit_storage_unit/independent/mining/eva,
 /turf/open/floor/plating,
-/area/ship/maintenance/aft)
-"uk" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/glass,
-/obj/machinery/power/terminal,
-/obj/structure/cable{
-	icon_state = "0-8"
-	},
-/obj/item/trash/tray,
-/mob/living/simple_animal/hostile/retaliate/goose/vomit,
-/obj/structure/bed/dogbed,
-/turf/open/floor/plating,
-/area/ship/maintenance/central)
+/area/ship/cargo)
 "uy" = (
 /obj/machinery/light{
 	dir = 1
@@ -300,14 +297,6 @@
 /obj/structure/tank_dispenser/oxygen,
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
-"uI" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/industrial/loading{
-	dir = 8
-	},
-/obj/machinery/airalarm/directional/north,
-/turf/open/floor/plating,
-/area/ship/cargo)
 "uW" = (
 /obj/effect/decal/cleanable/glass,
 /turf/open/floor/plating,
@@ -334,6 +323,10 @@
 /obj/effect/spawner/lootdrop/grille_or_trash,
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
+"vX" = (
+/obj/effect/spawner/structure/window/hollow,
+/turf/open/floor/plating,
+/area/ship/maintenance/port)
 "xa" = (
 /obj/item/pickaxe/emergency,
 /obj/structure/closet/crate,
@@ -348,9 +341,6 @@
 /obj/effect/spawner/lootdrop/maintenance/eight,
 /turf/open/floor/plating,
 /area/ship/cargo)
-"xd" = (
-/turf/closed/wall/material,
-/area/ship/maintenance/starboard)
 "yZ" = (
 /obj/structure/cable{
 	icon_state = "0-2"
@@ -378,37 +368,12 @@
 "zr" = (
 /turf/closed/wall,
 /area/ship/maintenance/central)
-"zT" = (
-/obj/effect/decal/cleanable/cobweb/cobweb2,
-/obj/effect/decal/cleanable/glass,
-/obj/structure/reagent_dispensers/cooking_oil{
-	desc = "A huge metal vat with a tap on the front. Contains your backup fuel.";
-	name = "vat of engine oil";
-	reagent_id = /datum/reagent/fuel/oil;
-	tank_volume = 3000
-	},
-/turf/open/floor/plating,
-/area/ship/maintenance/central)
 "zX" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 6
 	},
 /turf/closed/wall/rust,
 /area/ship/maintenance/central)
-"Av" = (
-/obj/structure/cable{
-	icon_state = "2-8"
-	},
-/obj/item/storage/firstaid/fire,
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/light_construct{
-	dir = 1
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
-	dir = 10
-	},
-/turf/open/floor/plating,
-/area/ship/maintenance/starboard)
 "AU" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -420,17 +385,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
-"Bn" = (
-/obj/effect/decal/cleanable/oil,
-/obj/effect/decal/cleanable/oil/streak,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/glass,
-/mob/living/simple_animal/hostile/cockroach,
-/obj/structure/cable{
-	icon_state = "2-4"
-	},
-/turf/open/floor/plating,
-/area/ship/maintenance/central)
 "Bs" = (
 /obj/machinery/door/window/northright,
 /obj/machinery/power/smes/shuttle/precharged{
@@ -442,15 +396,10 @@
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/central)
-"BH" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/effect/spawner/lootdrop/grille_or_trash,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
-/obj/structure/cable,
+"BF" = (
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating,
-/area/ship/maintenance/central)
+/area/ship/cargo)
 "BZ" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -461,9 +410,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/cargo)
-"Ck" = (
-/turf/template_noop,
-/area/template_noop)
 "CD" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -471,10 +417,34 @@
 /obj/machinery/door/airlock/maintenance_hatch,
 /turf/open/floor/plating,
 /area/ship/maintenance/central)
+"DA" = (
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/machinery/power/smes/shuttle/precharged{
+	dir = 4
+	},
+/obj/structure/window,
+/obj/machinery/door/window/northright{
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/ship/maintenance/central)
 "Ed" = (
 /obj/effect/decal/cleanable/oil,
 /turf/open/floor/plating,
 /area/ship/cargo)
+"ES" = (
+/obj/effect/decal/cleanable/oil,
+/obj/effect/decal/cleanable/oil/streak,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/glass,
+/mob/living/simple_animal/hostile/cockroach,
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/turf/open/floor/plating,
+/area/ship/maintenance/central)
 "Fg" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -511,39 +481,15 @@
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/aft)
-"Hm" = (
-/obj/effect/spawner/lootdrop/maintenance,
-/obj/effect/decal/cleanable/dirt,
-/obj/item/trash/sosjerky,
-/obj/item/cigbutt,
-/obj/item/circuitboard/machine/rdserver,
-/obj/structure/closet/secure_closet{
-	req_access = list(11)
-	},
-/obj/item/circuitboard/machine/circuit_imprinter,
-/obj/item/circuitboard/computer/rdconsole,
-/obj/item/circuitboard/machine/destructive_analyzer,
-/turf/open/floor/plating,
-/area/ship/maintenance/aft)
-"Hn" = (
-/obj/structure/chair/comfy/shuttle{
-	dir = 1;
-	name = "Helm"
-	},
-/obj/effect/decal/cleanable/blood/splatter,
-/obj/machinery/light/broken,
-/obj/item/radio/intercom/wideband{
-	dir = 4;
-	pixel_x = -23
-	},
-/turf/open/floor/plating,
-/area/ship/maintenance/fore)
 "HQ" = (
 /obj/machinery/power/shuttle/engine/liquid/oil{
 	dir = 1
 	},
 /turf/open/floor/plating,
 /area/ship/external)
+"Ih" = (
+/turf/closed/wall/material,
+/area/ship/maintenance/starboard)
 "Il" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -557,6 +503,15 @@
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/aft)
+"IJ" = (
+/obj/machinery/button/door{
+	id = "tidedoors";
+	name = "Blast Door Control";
+	pixel_y = -24
+	},
+/obj/machinery/suit_storage_unit/independent/engineering,
+/turf/open/floor/plating,
+/area/ship/cargo)
 "IX" = (
 /obj/structure/fans/tiny,
 /obj/machinery/door/airlock/maintenance_hatch,
@@ -567,16 +522,10 @@
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/aft)
-"Kk" = (
-/mob/living/simple_animal/hostile/cockroach,
-/obj/item/card/id/captains_spare{
-	desc = "The spare ID of the Grand Tider himself."
-	},
-/obj/structure/safe/floor{
-	number_of_tumblers = 5
-	},
+"Jk" = (
+/obj/effect/decal/cleanable/generic,
 /turf/open/floor/plating,
-/area/ship/maintenance/port)
+/area/ship/maintenance/aft)
 "KK" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/broken,
@@ -652,39 +601,62 @@
 /obj/effect/decal/cleanable/glass,
 /turf/open/floor/plating,
 /area/ship/cargo)
+"MP" = (
+/obj/machinery/power/port_gen/pacman,
+/obj/structure/cable/yellow{
+	icon_state = "0-4"
+	},
+/obj/item/stack/sheet/mineral/plasma/five,
+/turf/open/floor/plating,
+/area/ship/maintenance/starboard)
 "Ns" = (
 /turf/closed/wall,
 /area/ship/maintenance/port)
-"NA" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2,
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/turf/open/floor/plating,
-/area/ship/cargo)
 "Oy" = (
 /turf/closed/wall,
 /area/ship/maintenance/fore)
-"OK" = (
+"OA" = (
 /obj/structure/cable{
-	icon_state = "2-4"
+	icon_state = "2-8"
 	},
-/obj/item/storage/toolbox/mechanical/old,
-/obj/effect/decal/cleanable/blood/old,
-/obj/effect/decal/cleanable/blood/drip,
-/obj/effect/decal/cleanable/blood/footprints,
-/obj/effect/decal/cleanable/blood/gibs/down,
-/obj/effect/decal/cleanable/blood/gibs/limb,
+/obj/item/storage/firstaid/fire,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/light_construct{
+	dir = 1
+	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
-	dir = 6
+	dir = 10
 	},
-/obj/machinery/holopad/emergency/command,
 /turf/open/floor/plating,
-/area/ship/maintenance/fore)
+/area/ship/maintenance/starboard)
+"OW" = (
+/obj/structure/table,
+/obj/item/trash/cheesie,
+/obj/item/reagent_containers/food/snacks/kebab/rat{
+	pixel_y = -6
+	},
+/obj/item/reagent_containers/food/snacks/kebab/rat/double{
+	pixel_x = 2;
+	pixel_y = 6
+	},
+/obj/item/reagent_containers/food/snacks/burger/rat,
+/obj/item/cigbutt,
+/obj/item/reagent_containers/food/drinks/sillycup/smallcarton{
+	list_reagents = list(/datum/reagent/consumable/ethanol/vodka = 100)
+	},
+/obj/machinery/computer/cryopod{
+	pixel_y = 24
+	},
+/obj/item/areaeditor/shuttle,
+/turf/open/floor/plating,
+/area/ship/maintenance/port)
 "Po" = (
 /turf/closed/wall/rust,
 /area/ship/maintenance/central)
+"Pv" = (
+/obj/effect/spawner/structure/window/hollow,
+/turf/open/floor/plating,
+/area/ship/maintenance/starboard)
 "Px" = (
 /obj/structure/cable{
 	icon_state = "1-4"
@@ -695,10 +667,6 @@
 /obj/structure/cable,
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
-"PQ" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating,
-/area/ship/cargo)
 "RK" = (
 /obj/machinery/power/apc/auto_name/south,
 /obj/structure/cable{
@@ -715,13 +683,6 @@
 /obj/effect/decal/cleanable/ash,
 /turf/open/floor/plating,
 /area/ship/maintenance/fore)
-"RZ" = (
-/obj/machinery/autolathe/hacked{
-	shocked = 1
-	},
-/obj/machinery/light/broken,
-/turf/open/floor/plating,
-/area/ship/maintenance/aft)
 "Sf" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -735,11 +696,27 @@
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/central)
+"Sw" = (
+/obj/effect/spawner/structure/window/hollow,
+/turf/open/floor/plating,
+/area/ship/maintenance/fore)
 "SI" = (
 /obj/effect/decal/cleanable/glass,
 /obj/machinery/portable_atmospherics/canister/oxygen,
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
+"SS" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/glass,
+/obj/machinery/power/terminal,
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/item/trash/tray,
+/mob/living/simple_animal/hostile/retaliate/goose/vomit,
+/obj/structure/bed/dogbed,
+/turf/open/floor/plating,
+/area/ship/maintenance/central)
 "Ti" = (
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
@@ -759,6 +736,25 @@
 /obj/machinery/computer/helm,
 /turf/open/floor/plating,
 /area/ship/maintenance/fore)
+"VK" = (
+/obj/effect/decal/cleanable/oil/streak,
+/obj/effect/decal/cleanable/cobweb/cobweb2,
+/obj/effect/decal/cleanable/glass,
+/obj/item/pipe_dispenser,
+/obj/item/construction/rcd,
+/obj/item/trash/syndi_cakes,
+/obj/machinery/airalarm/directional/north,
+/obj/effect/spawner/lootdrop/maintenance/eight,
+/obj/item/reagent_containers/food/snacks/canned/peaches/maint,
+/mob/living/simple_animal/hostile/cockroach/glockroach,
+/obj/item/clothing/suit/space/engineer,
+/obj/item/clothing/head/helmet/space/light/engineer,
+/obj/structure/closet/secure_closet{
+	icon_state = "eng_secure";
+	req_access = list(11)
+	},
+/turf/open/floor/plating,
+/area/ship/maintenance/starboard)
 "VL" = (
 /obj/effect/spawner/lootdrop/maintenance,
 /obj/structure/closet/crate,
@@ -772,17 +768,6 @@
 /obj/effect/decal/cleanable/blood/old,
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
-"Xc" = (
-/obj/machinery/power/apc/auto_name/north,
-/obj/structure/cable{
-	icon_state = "0-4"
-	},
-/obj/effect/decal/cleanable/oil,
-/obj/structure/frame/machine,
-/obj/effect/decal/cleanable/glass,
-/obj/effect/decal/cleanable/cobweb,
-/turf/open/floor/plating,
-/area/ship/maintenance/aft)
 "Xg" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -799,6 +784,25 @@
 /obj/item/trash/semki,
 /turf/open/floor/plating,
 /area/ship/maintenance/central)
+"Xn" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plating,
+/area/ship/cargo)
+"Xz" = (
+/obj/machinery/power/apc/auto_name/north,
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/effect/decal/cleanable/oil,
+/obj/structure/frame/machine,
+/obj/effect/decal/cleanable/glass,
+/obj/effect/decal/cleanable/cobweb,
+/turf/open/floor/plating,
+/area/ship/maintenance/aft)
 "Ye" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -835,6 +839,13 @@
 /mob/living/simple_animal/hostile/cockroach,
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
+"Zk" = (
+/obj/machinery/autolathe/hacked{
+	shocked = 1
+	},
+/obj/machinery/light/broken,
+/turf/open/floor/plating,
+/area/ship/maintenance/aft)
 "Zo" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -851,98 +862,87 @@
 /obj/item/cigbutt,
 /turf/open/floor/plating,
 /area/ship/maintenance/central)
-"Zw" = (
-/obj/effect/decal/cleanable/oil/streak,
-/obj/item/trash/boritos,
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/decal/cleanable/glass,
-/obj/machinery/airalarm/directional/east,
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
-	dir = 1
-	},
-/turf/open/floor/plating,
-/area/ship/maintenance/port)
 
 (1,1,1) = {"
-Ck
-Ck
-Ck
-Ck
-Ck
-Ck
-Ck
-Ck
+oU
+oU
+oU
+oU
+oU
+oU
+oU
+oU
 pH
 IX
 pU
 pH
-Ck
-Ck
-Ck
-Ck
-Ck
+oU
+oU
+oU
+oU
+oU
 "}
 (2,1,1) = {"
-Ck
-Ck
-Ck
+oU
+oU
+oU
 Ns
 Ns
-iu
+vX
 Yo
 pH
 pH
-tG
-RZ
+Jk
+Zk
 pH
-Ck
+oU
 Po
 zr
 zr
-Ck
+oU
 "}
 (3,1,1) = {"
-Ck
-Ck
-Ck
+oU
+oU
+oU
 Ns
-oL
-Kk
+OW
+eV
 KK
 pH
-Xc
-hi
-Hm
+Xz
+bX
+or
 pH
 zr
 zr
-qB
+DA
 zm
-Ck
+oU
 "}
 (4,1,1) = {"
-ra
+Sw
 Tp
 Oy
 Ns
 zc
-Zw
+mr
 Lh
 pU
 Il
 Mk
 VL
 pU
-zT
-Bn
-dZ
+ff
+ES
+iL
 HQ
-Ck
+oU
 "}
 (5,1,1) = {"
-ra
+Sw
 au
-Hn
+av
 Oy
 oq
 Ns
@@ -959,16 +959,16 @@ iW
 gy
 "}
 (6,1,1) = {"
-ra
+Sw
 Vl
-OK
+hi
 hQ
 Xg
 FQ
 Sf
 Ub
 aM
-BH
+jq
 Ye
 Sf
 LP
@@ -978,7 +978,7 @@ zr
 Po
 "}
 (7,1,1) = {"
-ra
+Sw
 tr
 RK
 Oy
@@ -997,37 +997,37 @@ Bs
 zm
 "}
 (8,1,1) = {"
-ra
+Sw
 Oy
 Oy
 oC
 eq
-NA
+Xn
 vb
 xa
 ln
-sT
+MP
 ln
 AU
 SI
 ln
-uk
+SS
 Bs
 zm
 "}
 (9,1,1) = {"
-Ck
-Ck
-Ck
+oU
+oU
+oU
 nq
-oB
-PQ
+cl
+BF
 nt
-et
+ud
 ln
 vs
 ln
-Av
+OA
 eC
 ln
 Po
@@ -1035,14 +1035,14 @@ Po
 zr
 "}
 (10,1,1) = {"
-Ck
-Ck
-Ck
+oU
+oU
+oU
 oC
-uI
+mC
 Ed
 nt
-lq
+IJ
 ln
 yZ
 Px
@@ -1050,13 +1050,13 @@ GE
 Fg
 ln
 ln
-Ck
-Ck
+oU
+oU
 "}
 (11,1,1) = {"
-Ck
-Ck
-Ck
+oU
+oU
+oU
 oC
 ih
 ih
@@ -1069,44 +1069,44 @@ mB
 ea
 LR
 ln
-Ck
-Ck
+oU
+oU
 "}
 (12,1,1) = {"
-Ck
-Ck
-Ck
-Ck
+oU
+oU
+oU
+oU
 gS
 gS
 gS
 uW
 GE
-hc
+VK
 KS
 Ti
 aZ
 We
 GE
-Ck
-Ck
+oU
+oU
 "}
 (13,1,1) = {"
-Ck
-Ck
-Ck
-Ck
-Ck
-Ck
-Ck
-Ck
+oU
+oU
+oU
+oU
+oU
+oU
+oU
+oU
 GE
 ln
-xd
-gj
-gj
+Ih
+Pv
+Pv
 ln
 GE
-Ck
-Ck
+oU
+oU
 "}
