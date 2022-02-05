@@ -262,7 +262,6 @@ SUBSYSTEM_DEF(garbage)
 
 	if(!istype(D)) //FOR THE LOVE OF FUCK DO NOT MERGE THIS TO MASTER
 		var/str_type
-		var/str_type
 		if(isnull(D))
 			str_type = "NULL"
 		else if(isnum(D))
