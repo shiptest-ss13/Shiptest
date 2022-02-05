@@ -492,7 +492,7 @@ The reactor CHEWS through moderator. It does not do this slowly. Be very careful
 	explosion(get_turf(src), GLOB.MAX_EX_DEVESTATION_RANGE, GLOB.MAX_EX_HEAVY_RANGE, GLOB.MAX_EX_LIGHT_RANGE, GLOB.MAX_EX_FLASH_RANGE)
 	meltdown() //Double kill.
 	var/datum/weather_controller/weather_controller = SSmapping.get_map_zone_weather_controller(get_turf(src))
-	weather_controller.run_weather(/datum/weather/nuclear_fallout) // Trigger the nuclear fallout
+	weather_controller?.run_weather(/datum/weather/nuclear_fallout) // Trigger the nuclear fallout
 	var/obj/effect/landmark/nuclear_waste_spawner/NSW = new /obj/effect/landmark/nuclear_waste_spawner/verystrong(get_turf(src))
 	NSW.fire() // Drop even more waste on the ground by the reactor
 	for(var/X in GLOB.landmarks_list)
