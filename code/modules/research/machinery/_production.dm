@@ -357,7 +357,7 @@
 		say("Mineral access is on hold, please contact the quartermaster.")
 		return 0
 	var/obj/item/card/id/user_id = usr.get_idcard(TRUE)
-	var/count = mat_container.retrieve_sheets(text2num(eject_amt), eject_sheet, drop_location(), user_id.registered_account)
+	var/count = mat_container.retrieve_sheets(text2num(eject_amt), eject_sheet, drop_location(), user_id?.registered_account) //TODO: clean out this whole economy hookin.
 	var/list/matlist = list()
 	matlist[eject_sheet] = MINERAL_MATERIAL_AMOUNT
 	materials.silo_log(src, "ejected", -count, "sheets", matlist)
