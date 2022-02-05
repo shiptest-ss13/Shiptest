@@ -253,6 +253,8 @@
 		qdel(reserve_dock_secondary, TRUE)
 		reserve_dock_secondary = null
 
+	qdel(src)
+
 /obj/structure/overmap/dynamic/lava
 	force_encounter = DYNAMIC_WORLD_LAVA
 
