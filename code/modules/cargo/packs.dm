@@ -1128,7 +1128,7 @@
 	crate_type = /obj/structure/closet/crate/secure/engineering
 	dangerous = TRUE
 
-/datum/supply_pack/engine/reactor_rods
+/datum/supply_pack/engine/reactor_rods_plutonium
 	name = "Plutonium-239 Fuel Rod Crate"
 	desc = "Contains 3 Plutonium-239 Fuel Rods. Danger: Contents are highly radioactive."
 	cost = 5000
@@ -1136,7 +1136,7 @@
 	contains = list(/obj/item/fuel_rod/plutonium,
 					/obj/item/fuel_rod/plutonium,
 					/obj/item/fuel_rod/plutonium)
-	crate_name = "uranium-235 fuel rods crate"
+	crate_name = "plutonium-239 fuel rods crate"
 	crate_type = /obj/structure/closet/crate/secure/engineering
 	dangerous = TRUE
 
