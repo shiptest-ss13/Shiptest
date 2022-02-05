@@ -15,7 +15,6 @@
 	desc = "A bluespace engine used to make shuttles move."
 	density = TRUE
 	anchored = TRUE
-	var/engine_power = 1
 	var/state = ENGINE_WELDED //welding shmelding
 
 //Ugh this is a lot of copypasta from emitters, welding need some boilerplate reduction
@@ -73,7 +72,6 @@
 	name = "engine heater"
 	icon_state = "heater"
 	desc = "Directs energy into compressed particles in order to power engines."
-	engine_power = 0 // todo make these into 2x1 parts
 
 /obj/structure/shuttle/platform
 	name = "engine platform"
