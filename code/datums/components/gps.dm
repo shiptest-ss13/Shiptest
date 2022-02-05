@@ -120,22 +120,31 @@ GLOBAL_LIST_EMPTY(GPS_list)
 	var/list/signals = list()
 	data["signals"] = list()
 
+#define SCREAM_OUTSIDE_VIRTZ		(1<<0)
+#define SCREAM_NO_PARENT_MAPZONE	(1<<1)
+
 	for(var/gps in GLOB.GPS_list)
 		var/datum/component/gps/G = gps
 		if(G.emped || !G.tracking || G == src)
 			continue
 		var/turf/pos = get_turf(G.parent)
 		if(pos.virtual_z() == null)
-			if(!G.__has_screamed)
+			if(!(G.__has_screamed & SCREAM_OUTSIDE_VIRTZ))
 				var/atom/crashparent = G.parent
 				stack_trace("GPS Component [G] with parent atom [crashparent] at [crashparent.x], [crashparent.y], [crashparent.z], Area: [get_area(crashparent)] exists outside of a vlev.")
-				G.__has_screamed = TRUE
+				G.__has_screamed |= SCREAM_OUTSIDE_VIRTZ
 			continue
 		if(!pos || !global_mode && pos.virtual_z() != curr.virtual_z())
 			continue
 		var/list/signal = list()
 		var/datum/virtual_level/other_vlevel = pos.get_virtual_level()
-		var/datum/map_zone/other_mapzone = other_vlevel.parent_map_zone
+		var/datum/map_zone/other_mapzone = other_vlevel?.parent_map_zone
+		if(isnull(other_mapzone))
+			if(!(G.__has_screamed & SCREAM_NO_PARENT_MAPZONE))
+				var/atom/crashparent = G.parent
+				stack_trace("GPS Component [G] with parent atom [crashparent] at [crashparent.x], [crashparent.y], [crashparent.z], Area: [get_area(crashparent)], with virtual level [other_vlevel ? other_vlevel : "!!NULL!!"], has no parent mapzone.")
+				G.__has_screamed |= SCREAM_NO_PARENT_MAPZONE
+			continue
 		var/list/other_coords = other_vlevel.get_relative_coords(pos)
 		signal["entrytag"] = G.gpstag //Name or 'tag' of the GPS
 		signal["coords"] = "[other_coords[1]], [other_coords[2]], [other_mapzone.id], [other_vlevel.relative_id]"
