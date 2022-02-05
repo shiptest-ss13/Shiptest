@@ -61,11 +61,15 @@
 /obj/machinery/power/shuttle/engine/Initialize()
 	. = ..()
 	update_icon_state()
-	alter_engine_power(0.5)
+	var/obj/docking_port/mobile/M = SSshuttle.get_containing_shuttle(src)
+	if(M)
+		M.engine_list += src
 
 /obj/machinery/power/shuttle/engine/Destroy()
 	. = ..()
-	alter_engine_power(-0.5)
+	var/obj/docking_port/mobile/M = SSshuttle.get_containing_shuttle(src)
+	if(M)
+		M.engine_list -= src
 
 /obj/machinery/power/shuttle/engine/on_construction()
 	. = ..()
@@ -76,12 +80,3 @@
 	if(do_after(user, MIN_TOOL_SOUND_DELAY, target=src))
 		enabled = !enabled
 		to_chat(user, "<span class='notice'>You [enabled ? "enable" : "disable"] [src].")
-
-///Propagates the change to the shuttle.
-/obj/machinery/power/shuttle/engine/proc/alter_engine_power(mod)
-	if(mod == 0)
-		return
-	if(SSshuttle.is_in_shuttle_bounds(src))
-		var/obj/docking_port/mobile/M = SSshuttle.get_containing_shuttle(src)
-		if(M)
-			M.alter_engines(mod, src)
