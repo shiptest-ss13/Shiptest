@@ -120,8 +120,8 @@ GLOBAL_LIST_EMPTY(GPS_list)
 	var/list/signals = list()
 	data["signals"] = list()
 
-#define SCREAM_OUTSIDE_VIRTZ		(1<<0)
-#define SCREAM_NO_PARENT_MAPZONE	(1<<1)
+#define SCREAM_OUTSIDE_VIRTZ        (1<<0)
+#define SCREAM_NO_PARENT_MAPZONE    (1<<1)
 
 	for(var/gps in GLOB.GPS_list)
 		var/datum/component/gps/G = gps
