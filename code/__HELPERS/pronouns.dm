@@ -266,8 +266,7 @@
 
 //clothing need special handling due to pairs of items, ie gloves vs a singular glove, shoes, ect.
 /obj/item/clothing/p_they(capitalized, temp_gender)
-	if(!temp_gender)
-		temp_gender = gender
+	temp_gender ||= gender
 	. = "it"
 	if(temp_gender == PLURAL)
 		. = "they"
