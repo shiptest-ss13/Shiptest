@@ -276,38 +276,24 @@
 	. += "-husk"
 	. += "-[BP.body_zone]"
 
-/mob/living/carbon/proc/generate_icon_render_key()
-	for(var/X in bodyparts)
-		var/obj/item/bodypart/BP = X
-		. += "-[BP.body_zone]"
-		if(BP.use_digitigrade)
-			. += "-digitigrade[BP.use_digitigrade]"
-		if(BP.animal_origin)
-			. += "-[BP.animal_origin]"
-		if(BP.status == BODYPART_ORGANIC)
-			. += "-organic"
-		else
-			. += "-robotic"
 
-	if(HAS_TRAIT(src, TRAIT_HUSK))
-		. += "-husk"
+//Updating overlays related to on bodypart bandages
+/mob/living/carbon/proc/update_bandage_overlays()
+	remove_overlay(BANDAGE_LAYER)
 
+	var/mutable_appearance/overlays = mutable_appearance('icons/mob/bandage_overlays.dmi', "", -BANDAGE_LAYER)
+	overlays_standing[BANDAGE_LAYER] = overlays
 
-//change the mob's icon to the one matching its key
-/mob/living/carbon/proc/load_limb_from_cache()
-	if(limb_icon_cache[icon_render_key])
-		remove_overlay(BODYPARTS_LAYER)
-		overlays_standing[BODYPARTS_LAYER] = limb_icon_cache[icon_render_key]
-		apply_overlay(BODYPARTS_LAYER)
-	update_damage_overlays()
+	for(var/obj/item/bodypart/BP as anything in bodyparts)
+		if(BP.current_gauze && BP.current_gauze.overlay_prefix)
+			var/bp_suffix = BP.body_zone
+			if(BP.bodytype & BODYTYPE_DIGITIGRADE)
+				bp_suffix += "_digitigrade"
+			overlays.add_overlay("[BP.current_gauze.overlay_prefix]_[bp_suffix]")
+		if(BP.current_splint && BP.current_splint.overlay_prefix)
+			var/bp_suffix = BP.body_zone
+			if(BP.bodytype & BODYTYPE_DIGITIGRADE)
+				bp_suffix += "_digitigrade"
+			overlays.add_overlay("[BP.current_splint.overlay_prefix]_[bp_suffix]")
 
-/mob/living/carbon/proc/update_inv_splints()
-	remove_overlay(SPLINT_LAYER)
-	var/list/standing = list()
-	for(var/obj/item/bodypart/B in bodyparts)
-		if(B.bone_status == BONE_FLAG_SPLINTED)
-			var/mutable_appearance/some_overlay_thing = mutable_appearance('icons/mob/splints.dmi', B.body_zone, SPLINT_LAYER)
-			standing += some_overlay_thing
-
-	overlays_standing[SPLINT_LAYER] = standing
-	apply_overlay(SPLINT_LAYER)
+	apply_overlay(BANDAGE_LAYER)

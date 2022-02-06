@@ -136,7 +136,7 @@
 				continue
 			O.transfer_to_limb(src, phantom_owner)
 
-	synchronize_bodytypes(C)
+	synchronize_bodytypes(phantom_owner)
 
 	update_icon_dropped()
 	phantom_owner.update_health_hud() //update the healthdoll
@@ -468,9 +468,7 @@
 		return FALSE
 	L = newBodyPart(limb_zone, 0, 0)
 	L.replace_limb(src, TRUE, TRUE)
-	return 1
-
-		var/datum/scar/scaries = new
-		var/datum/wound/loss/phantom_loss = new // stolen valor, really
-		scaries.generate(L, phantom_loss)
-		return TRUE
+	var/datum/scar/scaries = new
+	var/datum/wound/loss/phantom_loss = new // stolen valor, really
+	scaries.generate(L, phantom_loss)
+	return TRUE

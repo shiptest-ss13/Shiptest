@@ -542,7 +542,7 @@
 	. = health
 	for (var/_limb in bodyparts)
 		var/obj/item/bodypart/limb = _limb
-		if (limb.status != BODYPART_ORGANIC)
+		if (limb.bodytype != BODYPART_ORGANIC)
 			. += (limb.brute_dam * limb.body_damage_coeff) + (limb.burn_dam * limb.body_damage_coeff)
 
 /mob/living/carbon/grabbedby(mob/living/carbon/user, supress_message = FALSE)
