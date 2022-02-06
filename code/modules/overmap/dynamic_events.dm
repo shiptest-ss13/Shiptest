@@ -142,15 +142,12 @@
 /obj/structure/overmap/dynamic/proc/gen_planet_name()
 	. = ""
 	switch(rand(1,10))
-		if(1 to 3)
+		if(1 to 4)
 			for(var/i in 1 to rand(2,3))
-				. += pick(GLOB.alphabet)
+				. += capitalize(pick(GLOB.alphabet))
 			. += "-"
-			for(var/i in 1 to rand(2,4))
-			. += "\Roman[pick(rand(1,9))]"
-		if(4 to 7)
-			. += "[pick(GLOB.planet_names)]-[rand(1,999)]"
-		if(8 to 9)
+			. += "[pick(rand(1,999))]"
+		if(4 to 9)
 			. += "[pick(GLOB.planet_names)] \Roman[rand(1,9)]"
 		if(10)
 			. += "[pick(GLOB.planet_prefixes)] [pick(GLOB.planet_names)]"

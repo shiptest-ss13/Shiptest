@@ -279,7 +279,7 @@
 										"<span class='maptext' style=font-size:24pt;text-align:center valign='top'><u>[docked_loc.planet_name]</u></span><br>"\
 										+ "[station_time_timestamp_fancy("hh:mm")]"
 									),
-									shuttle.callTime + -3 SECONDS
+									shuttle.callTime
 								)
 			else
 				addtimer(CALLBACK(src, .proc/complete_dock, to_dock), 1 SECONDS) //This should never happen, yet it does sometimes.
