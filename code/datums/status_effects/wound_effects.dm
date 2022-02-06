@@ -105,8 +105,8 @@
 			limp_chance_left = max(limp_chance_left, W.limp_chance)
 
 	if(right)
-		for(var/thing in right.wounds)
-			var/datum/wound/W = thing
+		for(var/datum/wound/W as anything in right.wounds)
+
 			slowdown_right += W.limp_slowdown
 			limp_chance_right = max(limp_chance_right, W.limp_chance)
 
