@@ -88,6 +88,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/list/friendlyGenders = list("Male" = "male", "Female" = "female", "Other" = "plural")
 	var/phobia = "spiders"
 	var/list/prosthetic_limbs = list(BODY_ZONE_L_ARM = "normal", BODY_ZONE_R_ARM = "normal", BODY_ZONE_L_LEG = "normal", BODY_ZONE_R_LEG = "normal")
+	var/list/robotic_organs = list(ORGAN_SLOT_LIVER = "normal", ORGAN_SLOT_HEART = "normal", ORGAN_SLOT_STOMACH = "normal", ORGAN_SLOT_LUNGS = "normal")
 	var/list/alt_titles_preferences = list()
 
 	var/list/custom_names = list()
@@ -409,6 +410,44 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				dat += "<a href='?_src_=prefs;preference=toggle_random;random_type=[RANDOM_FACIAL_HAIR_COLOR]'>[(randomise[RANDOM_FACIAL_HAIR_COLOR]) ? "Lock" : "Unlock"]</A>"
 				dat += "<br></td>"
 
+			dat += "<h3>Prosthetic Limb</h3>"
+
+			var/list/limb_display_list = list()
+			for(var/index in prosthetic_limbs)
+				var/bodypart_name
+				switch(index)
+					if(BODY_ZONE_L_ARM)
+						bodypart_name = "Left Arm"
+					if(BODY_ZONE_L_LEG)
+						bodypart_name = "Left Leg"
+					if(BODY_ZONE_R_ARM)
+						bodypart_name = "Right Arm"
+					if(BODY_ZONE_R_LEG)
+						bodypart_name = "Right Leg"
+				if(prosthetic_limbs[index] != "normal")
+					limb_display_list += "[bodypart_name]: [prosthetic_limbs[index]]"
+				dat += "<a href='?_src_=prefs;preference=limbs;customize_limb=[index]'>[bodypart_name]</a>"
+			dat += "<b>Current Modifications:</b> [length(limb_display_list) ? limb_display_list.Join("; ") : "None"]<BR>"
+
+			dat += "<h3>Robotic Organ</h3>"
+
+			var/list/organ_display_list = list()
+			for(var/index in robotic_organs)
+				var/bodypart_name
+				switch(index)
+					if(ORGAN_SLOT_STOMACH)
+						bodypart_name = "Stomach"
+					if(ORGAN_SLOT_HEART)
+						bodypart_name = "Heart"
+					if(ORGAN_SLOT_LUNGS)
+						bodypart_name = "Lungs"
+					if(ORGAN_SLOT_LIVER)
+						bodypart_name = "Liver"
+				if(robotic_organs[index] != "normal")
+					organ_display_list += "[bodypart_name]: [robotic_organs[index]]"
+				dat += "<a href='?_src_=prefs;preference=organs;customize_organ=[index]'>[bodypart_name]</a>"
+			dat += "<b>Current Modifications:</b> [length(organ_display_list) ? organ_display_list.Join("; ") : "None"]<BR>"
+
 			//Mutant stuff
 			var/mutant_category = 0
 
@@ -689,26 +728,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				dat += "<h3>Phobia</h3>"
 
 				dat += "<a href='?_src_=prefs;preference=phobia;task=input'>[phobia]</a><BR>"
-
-			if("Prosthetic Limb" in all_quirks)
-				dat += "<h3>Prosthetic Limb</h3>"
-
-				var/list/display_list = list()
-				for(var/index in prosthetic_limbs)
-					var/bodypart_name
-					switch(index)
-						if(BODY_ZONE_L_ARM)
-							bodypart_name = "Left Arm"
-						if(BODY_ZONE_L_LEG)
-							bodypart_name = "Left Leg"
-						if(BODY_ZONE_R_ARM)
-							bodypart_name = "Right Arm"
-						if(BODY_ZONE_R_LEG)
-							bodypart_name = "Right Leg"
-					if(prosthetic_limbs[index] != "normal")
-						display_list += "[bodypart_name]: [prosthetic_limbs[index]]"
-					dat += "<a href='?_src_=prefs;preference=limbs;customize_limb=[index]'>[bodypart_name]</a>"
-				dat += "<b>Current Modifications:</b> [length(display_list) ? display_list.Join("; ") : "None"]<BR>"
 
 			if(CONFIG_GET(flag/join_with_mutant_humans))
 
@@ -2006,6 +2025,23 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						if(status)
 							prosthetic_limbs[limb] = status
 
+				if("organs")
+					if(href_list["customize_organ"])
+						var/organ = href_list["customize_organ"]
+						var/bodypart_name
+						switch(organ)
+							if(ORGAN_SLOT_STOMACH)
+								bodypart_name = "Stomach"
+							if(ORGAN_SLOT_HEART)
+								bodypart_name = "Heart"
+							if(ORGAN_SLOT_LUNGS)
+								bodypart_name = "Lungs"
+							if(ORGAN_SLOT_LIVER)
+								bodypart_name = "Liver"
+						var/status = input(user, "You are modifying [bodypart_name], what should it be changed to?", "Character Preference", robotic_organs[organ]) as null|anything in list("normal","robotic")
+						if(status)
+							robotic_organs[organ] = status
+
 				if("hotkeys")
 					hotkeys = !hotkeys
 					if(hotkeys)
@@ -2342,6 +2378,49 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 	if("tail_lizard" in pref_species.default_features)
 		character.dna.species.mutant_bodyparts |= "tail_lizard"
+
+	for(var/L in prosthetic_limbs)
+		var/obj/item/bodypart/old_part = character.get_bodypart(L)
+		switch(prosthetic_limbs[L])
+			if("normal")
+				continue
+			if("amputated")
+				old_part.drop_limb()
+				qdel(old_part)
+			if("prosthetic")
+				var/obj/item/bodypart/prosthetic
+				var/datum/species/client_species = character.dna.species
+				var/typepath
+				if(client_species.unique_prosthesis) // Checks for if the species has a unique limb type, otherwise defaults to human
+					typepath = text2path("/obj/item/bodypart/[L]/robot/[client_species.id]")
+				else
+					typepath = text2path("/obj/item/bodypart/[L]/robot/surplus")
+				if(!ispath(typepath))
+					to_chat(character, "<span class='warning'>Problem initializing [L] prosthetic for species [client_species], it will be a normal limb. Make a bug report on github!</span>")
+					continue
+				prosthetic = new typepath(character)
+				prosthetic.replace_limb(character)
+				qdel(old_part)
+
+	for(var/O in robotic_organs)
+		var/obj/item/organ/old_organ = character.getorganslot(O)
+		if(robotic_organs[O] == "robotic")
+			var/obj/item/organ/r_organ
+			var/datum/species/client_species = character.dna.species
+			if(client_species.inherent_biotypes & MOB_MINERAL || client_species.inherent_biotypes & MOB_ROBOTIC) // Mineral/robotics can't have or dont need robotic organs
+				break
+			var/typepath
+			if(client_species.unique_r_organs)
+				typepath = text2path("/obj/item/organ/[O]/cybernetic/[client_species.id]")
+			else
+				typepath = text2path("/obj/item/organ/[O]/cybernetic")
+			if(!ispath(typepath))
+				to_chat(character, "<span class='warning'>Problem initializing [O] cybernetic for species [client_species], it will be a normal organ. Make a bug report on github!</span>")
+				continue
+			r_organ = new typepath(character)
+			r_organ.Insert(character, TRUE, FALSE) // handles qdel'ing the old organ
+		else
+			continue
 
 	if(icon_updates)
 		character.update_body()

@@ -206,8 +206,10 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	///For custom overrides for species ass images
 	var/icon/ass_image
 
-	// Does this species have unique robotic limbs? (Used for prosthesis quirk.)
+	// Does this species have unique robotic limbs? (currently used in: kepori)
 	var/unique_prosthesis = FALSE
+	// Does this species have unqiue robotic organs? (currently unused but being expandable is nice)
+	var/unique_r_organs = FALSE
 
 ///////////
 // PROCS //
