@@ -22,8 +22,7 @@
 		playsound(L, 'sound/effects/splat.ogg', 50, TRUE)
 
 	for(var/obj/item/stack/ore/O in get_turf(src))
-		var/obj/item/stack/ore/R = new O.refined_type(src)
-		R.amount = O.amount
+		new O.refined_type(get_turf(src), O.amount)
 		O.use(O.amount)
 
 /obj/machinery/door/poddoor/crusher/close()
