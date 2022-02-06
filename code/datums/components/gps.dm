@@ -101,8 +101,8 @@ GLOBAL_LIST_EMPTY(GPS_list)
 		ui.open()
 	ui.set_autoupdate(updating)
 
-#define SCREAM_OUTSIDE_VIRTZ        (1<<0)
-#define SCREAM_NO_PARENT_MAPZONE    (1<<1)
+#define SCREAM_OUTSIDE_VIRTZ (1<<0)
+#define SCREAM_NO_PARENT_MAPZONE (1<<1)
 
 /datum/component/gps/item/ui_data(mob/user)
 	var/list/data = list()
