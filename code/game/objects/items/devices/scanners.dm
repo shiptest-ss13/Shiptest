@@ -354,8 +354,7 @@ GENE SCANNER
 	if(iscarbon(M))
 		var/mob/living/carbon/C = M
 		var/list/wounded_parts = C.get_wounded_bodyparts()
-		for(var/i in wounded_parts)
-			var/obj/item/bodypart/wounded_part = i
+		for(var/obj/item/bodypart/wounded_part as anything in wounded_parts)
 			render_list += "<span class='alert ml-1'><b>Warning: Physical trauma[LAZYLEN(wounded_part.wounds) > 1? "s" : ""] detected in [wounded_part.name]</b>"
 			for(var/datum/wound/W as anything in wounded_part.wounds)
 				render_list += "<div class='ml-2'>Type: [W.name]\nSeverity: [W.severity_text()]\nRecommended Treatment: [W.treat_text]</div>\n" // less lines than in woundscan() so we don't overload people trying to get basic med info
