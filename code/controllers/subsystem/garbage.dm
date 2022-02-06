@@ -272,6 +272,8 @@ SUBSYSTEM_DEF(garbage)
 			str_type = "ICON"
 		else if(isfile(D))
 			str_type = "FILE"
+		else if(ispath(D))
+			sty_type = "PATH OF [D]"
 		else if(!str_type)
 			str_type = "SOMETHING ELSE???"
 		try
@@ -288,6 +290,8 @@ SUBSYSTEM_DEF(garbage)
 				str_type2 = "ICON"
 			else if(isfile(D))
 				str_type2 = "FILE"
+			else if(ispath(D))
+				sty_type = "PATH OF [D]"
 			else if(!str_type)
 				str_type2 = "SOMETHING ELSE???"
 			CRASH("BAD DEL: [D] OF CLASS [str_type] PRE-DEL, [str_type2] POST-DEL")
