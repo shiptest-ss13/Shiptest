@@ -99,8 +99,7 @@
 
 // technically you can have multiple wounds causing limps on the same limb, even if practically only bone wounds cause it in normal gameplay
 	if(left)
-		for(var/thing in left.wounds)
-			var/datum/wound/W = thing
+		for(var/datum/wound/W as anything in left.wounds)
 			slowdown_left += W.limp_slowdown
 			limp_chance_left = max(limp_chance_left, W.limp_chance)
 
