@@ -357,8 +357,7 @@ GENE SCANNER
 		for(var/i in wounded_parts)
 			var/obj/item/bodypart/wounded_part = i
 			render_list += "<span class='alert ml-1'><b>Warning: Physical trauma[LAZYLEN(wounded_part.wounds) > 1? "s" : ""] detected in [wounded_part.name]</b>"
-			for(var/k in wounded_part.wounds)
-				var/datum/wound/W = k
+			for(var/datum/wound/W as anything in wounded_part.wounds)
 				render_list += "<div class='ml-2'>Type: [W.name]\nSeverity: [W.severity_text()]\nRecommended Treatment: [W.treat_text]</div>\n" // less lines than in woundscan() so we don't overload people trying to get basic med info
 			render_list += "</span>"
 
