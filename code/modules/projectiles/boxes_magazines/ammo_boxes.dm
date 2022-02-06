@@ -12,6 +12,25 @@
 	desc = "Designed to quickly reload revolvers. These rounds are manufactured within extremely tight tolerances, making them easy to show off trickshots with."
 	ammo_type = /obj/item/ammo_casing/a357/match
 
+/obj/item/ammo_box/a4570
+	name = "ammo holder (.45-70)"
+	desc = "Designed to help reload large revolvers."
+	icon_state = "4570"
+	ammo_type = /obj/item/ammo_casing/a4570
+	max_ammo = 6
+	multiple_sprites = AMMO_BOX_PER_BULLET
+	item_flags = NO_MAT_REDEMPTION
+
+/obj/item/ammo_box/a4570/match
+	name = "ammo holder (.45-70 Match)"
+	desc = "Designed to help reload large revolvers. These rounds are manufactured within extremely tight tolerances, making them easy to show off trickshots with."
+	ammo_type = /obj/item/ammo_casing/a4570/match
+
+/obj/item/ammo_box/a4570/explosive
+	name = "ammo holder (.45-70 Explosive)"
+	desc = "Designed to help reload large revolvers. These rounds contain a tiny explosive charge that detonates on impact, creating especially deadly wounds."
+	ammo_type = /obj/item/ammo_casing/a4570/explosive
+
 /obj/item/ammo_box/c38
 	name = "speed loader (.38)"
 	desc = "Designed to quickly reload revolvers."
