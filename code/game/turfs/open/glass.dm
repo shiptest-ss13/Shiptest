@@ -1,6 +1,6 @@
 /turf/open/floor/glass
 	name = "Glass floor"
-	desc = "Dont jump on it, or do, I'm not your mom."
+	desc = "While it at first appears to be a dangerous glass floor over space, closer inspection reveals it to simply be a screen behind a layer of glass."
 	icon = 'icons/turf/floors/glass.dmi'
 	icon_state = "glass-0"
 	base_icon_state = "glass"
@@ -25,7 +25,7 @@
 
 /turf/open/floor/glass/reinforced
 	name = "Reinforced glass floor"
-	desc = "Do jump on it, it can take it."
+	desc = "While it at first appears to be a dangerous glass floor over space, closer inspection reveals it to simply be a screen behind a reinforced protective layer of glass."
 	icon = 'icons/turf/floors/reinf_glass.dmi'
 	icon_state = "reinf_glass-0"
 	base_icon_state = "reinf_glass"
