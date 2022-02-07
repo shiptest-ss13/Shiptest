@@ -264,6 +264,10 @@ GLOBAL_LIST_INIT(ship_names, world.file2list("strings/ship_names.txt"))
 
 GLOBAL_LIST_INIT(star_names, world.file2list("strings/star_names.txt"))
 
+GLOBAL_LIST_INIT(planet_names, world.file2list("strings/planet_names.txt"))
+
+GLOBAL_LIST_INIT(planet_prefixes, world.file2list("strings/planet_prefixes.txt"))
+
 /proc/generate_number_strings()
 	var/list/L[198]
 	for(var/i in 1 to 99)
