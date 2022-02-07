@@ -208,8 +208,6 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 
 	// Does this species have unique robotic limbs? (currently used in: kepori)
 	var/unique_prosthesis = FALSE
-	// Does this species have unqiue robotic organs? (currently unused but being expandable is nice)
-	var/unique_r_organs = FALSE
 
 ///////////
 // PROCS //
