@@ -2,7 +2,7 @@
 
 /obj/projectile/bullet/n762
 	name = "7.62x38mmR bullet"
-	damage = 40
+	damage = 35
 
 // .50AE (Desert Eagle)
 
