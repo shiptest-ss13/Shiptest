@@ -28,8 +28,6 @@
 /obj/item/clothing/head/caphat
 	name = "captain's peaked cap"
 	desc = "It's good being the king."
-	icon = 'whitesands/icons/obj/clothing/hats.dmi'
-	mob_overlay_icon = 'whitesands/icons/mob/clothing/head.dmi'
 	icon_state = "captain"
 	item_state = "that"
 	flags_inv = 0
@@ -49,11 +47,13 @@
 //Head of Personnel
 /obj/item/clothing/head/hopcap
 	name = "head of personnel's cap"
-	icon = 'whitesands/icons/obj/clothing/hats.dmi'
-	mob_overlay_icon = 'whitesands/icons/mob/clothing/head.dmi'
 	icon_state = "hopcap"
 	desc = "The symbol of true bureaucratic micromanagement."
 	armor = list("melee" = 25, "bullet" = 15, "laser" = 25, "energy" = 35, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
+	dog_fashion = /datum/dog_fashion/head/head_of_personnel
+
+/obj/item/clothing/head/hopcap/nt
+	icon_state = "hopcap_nt"
 	dog_fashion = /datum/dog_fashion/head/head_of_personnel
 
 //Chaplain
@@ -172,7 +172,8 @@ WS End */
 /obj/item/clothing/head/HoS/beret/syndicate
 	name = "syndicate beret"
 	desc = "A black beret with thick armor padding inside. Stylish and robust."
-	icon_state = "hosberetblack"
+	icon_state = "beret_officer"
+	item_state = "beret_officer"
 
 /obj/item/clothing/head/warden
 	name = "warden's police hat"

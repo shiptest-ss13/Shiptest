@@ -40,7 +40,9 @@
 	var/construction_type
 	var/pipe_state //icon_state as a pipe item
 	var/on = FALSE
-	var/interacts_with_air = FALSE
+
+	///Is the thing being rebuilt by SSair or not. Prevents list blaot
+	var/rebuilding = FALSE
 
 /obj/machinery/atmospherics/examine(mob/user)
 	. = ..()
@@ -59,21 +61,16 @@
 		armor = list("melee" = 25, "bullet" = 10, "laser" = 10, "energy" = 100, "bomb" = 0, "bio" = 100, "rad" = 100, "fire" = 100, "acid" = 70)
 	..()
 	if(process)
-		if(interacts_with_air)
-			SSair.atmos_air_machinery += src
-		else
-			SSair.atmos_machinery += src
+		SSair.start_processing_machine(src)
 	SetInitDirections()
 
 /obj/machinery/atmospherics/Destroy()
 	for(var/i in 1 to device_type)
 		nullifyNode(i)
 
-	SSair.atmos_machinery -= src
-	SSair.atmos_air_machinery -= src
-	SSair.pipenets_needing_rebuilt -= src
-	if(SSair.currentpart == SSAIR_ATMOSMACHINERY)
-		SSair.currentrun -= src
+	SSair.stop_processing_machine(src)
+
+	SSair.rebuild_queue -= src
 
 	dropContents()
 	if(pipe_vision_img)
@@ -85,7 +82,15 @@
 /obj/machinery/atmospherics/proc/destroy_network()
 	return
 
-/obj/machinery/atmospherics/proc/build_network()
+/// This should only be called by SSair as part of the rebuild queue.
+/// Handles rebuilding pipelines after init or they've been changed.
+/obj/machinery/atmospherics/proc/rebuild_pipes()
+	var/list/targets = get_rebuild_targets()
+	rebuilding = FALSE
+	for(var/datum/pipeline/build_off as anything in targets)
+		build_off.build_pipeline(src) //This'll add to the expansion queue
+
+/obj/machinery/atmospherics/proc/get_rebuild_targets()
 	// Called to build a network from this node
 	return
 
@@ -277,7 +282,7 @@
 	for(var/obj/machinery/atmospherics/A in nodes)
 		A.atmosinit()
 		A.addMember(src)
-	build_network()
+	SSair.add_to_rebuild_queue(src)
 
 /obj/machinery/atmospherics/Entered(atom/movable/AM)
 	if(istype(AM, /mob/living))

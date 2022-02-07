@@ -156,10 +156,12 @@
 	"steel_decals8","steel_decals9","steel_decals10","steel_decals_central1","steel_decals_central2",
 	"steel_decals_central3","steel_decals_central4","steel_decals_central5","steel_decals_central_6","steel_decals_central7",
 	"bordercolor","bordercolorcorner","bordercolorcorner2","bordercolorfull","bordercolorcee",
-	"bordercolorhalf","bordercolormonofull","borderfloor_white","borderfloorcorner_white","borderfloorcorner2_white",
+	"bordercolorhalf","bordercolormonofull","borderfloor_white","borderfloorfull_white","borderfloorcee_white","borderfloorcorner_white","borderfloorcorner2_white",
 	"siding_line","siding_corner","siding_end","siding_thinplating_line","siding_thinplating_end",
 	"siding_thinplating_corner","siding_wideplating_line","siding_wideplating_end","siding_wideplating_corner","siding_wood_line",
-	"siding_wood_corner","siding_wood_end"
+	"siding_wood_corner","siding_wood_end","trimline","trimline_corner","trimline_end","trimline_box","trimline_arrow_cw","trimline_arrow_ccw","trimline_fill",
+	"trimline_corner_fill","trimline_end_fill","trimline_box_fill","trimline_arrow_cw_fill","trimline_arrow_ccw_fill",
+	"trimline_shrink_cw","trimline_shrink_ccw","trimline_warn", "trimline_warn_fill"
 	)
 
 	var/list/color_disallowed = list(
@@ -170,8 +172,21 @@
 	"warningfulltile","danger","dangercorner","dangerfull","dangercee"
 	)
 
-	var/list/decal_no_dirs = list("delivery", "warningfull", "box", "warningfulltile", "overstripefull", "stripefull", "stripefulltile", "outline","spline_fancy_full","spline_plain_full","solarpanel","traction","manydot","manydot_tiled","dangerfull","bordercolorfull","bordercolormonofull","",)
-	var/list/decal_eight_dirs = list()
+	var/list/decal_no_dirs = list(
+	"delivery","warningfull","box","warningfulltile","overstripefull",
+	"stripefull","stripefulltile","outline","spline_fancy_full","spline_plain_full",
+	"solarpanel","traction","manydot","manydot_tiled","dangerfull","bordercolorfull",
+	"bordercolormonofull","trimline_box","trimline_box_fill","borderfloorfull_white"
+	)
+
+	var/list/decal_eight_dirs = list(
+	"warning","stripe","spline_fancy","spline_plain","danger","techfloor_edges",
+	"techfloororange_edges","steel_decals1","steel_decals3","steel_decals4",
+	"steel_decals6","steel_decals7","steel_decals10","bordercolor","bordercolorcorner2",
+	"borderfloor_white","siding_line","siding_thinplating_line","siding_wideplating_line",
+	"siding_wood_line","trimline","trimline_fill","trimline_arrow_cw","trimline_arrow_ccw",
+	"trimline_arrow_cw_fill","trimline_arrow_ccw_fill","trimline_warn","trimline_warn_fill"
+	)
 
 /obj/item/decal_painter/afterattack(var/atom/A, var/mob/user, proximity, params)
 	if(!proximity)

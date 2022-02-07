@@ -99,17 +99,17 @@
 	var/mob/living/carbon/human/H = L
 	for(var/X in H.bodyparts)
 		var/obj/item/bodypart/BP = X
-		if(BP.status == BODYPART_ROBOTIC)
+		if(BODYTYPE_ROBOTIC in BP.bodytype)
 			to_chat(user, "<span class='warning'>[GLOB.deity] refuses to heal this metallic taint!</span>")
 			return TRUE
 
 	var/heal_amt = 10
-	var/list/hurt_limbs = H.get_damaged_bodyparts(1, 1, null, BODYPART_ORGANIC)
+	var/list/hurt_limbs = H.get_damaged_bodyparts(1, 1, null, BODYTYPE_ORGANIC)
 
 	if(hurt_limbs.len)
 		for(var/X in hurt_limbs)
 			var/obj/item/bodypart/affecting = X
-			if(affecting.heal_damage(heal_amt, heal_amt, null, BODYPART_ORGANIC))
+			if(affecting.heal_damage(heal_amt, heal_amt, null, BODYTYPE_ORGANIC))
 				H.update_damage_overlays()
 		H.visible_message("<span class='notice'>[user] heals [H] with the power of [GLOB.deity]!</span>")
 		to_chat(H, "<span class='boldnotice'>May the power of [GLOB.deity] compel you to be healed!</span>")
@@ -156,7 +156,7 @@
 
 	//if we're not targetting a robot part we stop early
 	var/obj/item/bodypart/BP = H.get_bodypart(user.zone_selected)
-	if(BP.status != BODYPART_ROBOTIC)
+	if(IS_ORGANIC_LIMB(BP))
 		if(!did_we_charge)
 			to_chat(user, "<span class='warning'>[GLOB.deity] scoffs at the idea of healing such fleshy matter!</span>")
 		else
@@ -167,7 +167,7 @@
 		return TRUE
 
 	//charge(?) and go
-	if(BP.heal_damage(5,5,null,BODYPART_ROBOTIC))
+	if(BP.heal_damage(5,5,null,BODYTYPE_ROBOTIC))
 		H.update_damage_overlays()
 
 	H.visible_message("<span class='notice'>[user] [did_we_charge ? "repairs" : "repairs and charges"] [H] with the power of [GLOB.deity]!</span>")
@@ -180,8 +180,8 @@
 	if(!..())
 		return FALSE
 	var/obj/item/stock_parts/cell/the_cell = I
-	if(the_cell.charge < 3000)
-		to_chat("<span class='notice'>[GLOB.deity] does not accept pity amounts of power.</span>")
+	if(the_cell.charge < 3000)   // stops people from grabbing cells out of APCs
+		to_chat(L, "<span class='notice'>[GLOB.deity] does not accept pity amounts of power.</span>")
 		return FALSE
 	return TRUE
 
@@ -190,6 +190,40 @@
 	if(!is_type_in_typecache(I, desired_items_typecache))
 		return
 	var/obj/item/stock_parts/cell/the_cell = I
-	adjust_favor(round(the_cell.charge/3000), L)
+	adjust_favor(round(the_cell.charge/500), L)
 	to_chat(L, "<span class='notice'>You offer [the_cell]'s power to [GLOB.deity], pleasing them.</span>")
+	qdel(I)
+
+
+/datum/religion_sect/clockwork
+	name = "Clockwork"
+	desc = "A sect oriented around gears and brass."
+	convert_opener = "Build for his honor, acolyte.<br>Bibles now teach the tongue of the Clockwork Justiciar. You can now sacrifice metal for favor."
+	alignment = ALIGNMENT_NEUT
+	desired_items = list(/obj/item/stack/sheet/metal)
+	rites_list = list(/datum/religion_rites/transmute_brass)
+	altar_icon_state = "convertaltar-red"
+
+/datum/religion_sect/clockwork/on_conversion(mob/living/L)
+	..()
+	L.grant_language(/datum/language/ratvar, TRUE, TRUE, LANGUAGE_MIND)
+	to_chat(L, "<span class='boldnotice'>The words of [GLOB.deity] fill your head!</span>")
+
+/datum/religion_sect/clockwork/sect_bless(mob/living/L, mob/living/user)
+	if(!L.has_language(/datum/language/ratvar, TRUE))
+		L.grant_language(/datum/language/ratvar, TRUE, TRUE, LANGUAGE_MIND)
+		L.visible_message("<span class='notice'>[user] enlightens [L] with the power of [GLOB.deity]!</span>")
+		to_chat(L, "<span class='boldnotice'>The words of [GLOB.deity] fill your head!</span>")
+
+	L.visible_message("<span class='notice'>[user] blesses [L] with the power of [GLOB.deity]!</span>")
+	playsound(user, 'sound/effects/bang.ogg', 25, TRUE, -1)
+	SEND_SIGNAL(L, COMSIG_ADD_MOOD_EVENT, "blessing", /datum/mood_event/blessing)
+	return TRUE
+
+/datum/religion_sect/clockwork/on_sacrifice(obj/item/I, mob/living/L)
+	if(!is_type_in_typecache(I, desired_items_typecache))
+		return
+	var/obj/item/stack/sheet/sheets = I
+	adjust_favor(sheets.amount, L)
+	to_chat(L, "<span class='notice'>You offer [sheets] to [GLOB.deity], pleasing them.</span>")
 	qdel(I)

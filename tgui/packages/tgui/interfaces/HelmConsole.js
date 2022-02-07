@@ -7,7 +7,7 @@ import { ButtonInput } from '../components/Button';
 
 export const HelmConsole = (props, context) => {
   const { act, data, config } = useBackend(context);
-  const { canFly, mapRef, isViewer } = data;
+  const { mapRef, isViewer } = data;
   return (
     <Window
       width={870}
@@ -15,12 +15,10 @@ export const HelmConsole = (props, context) => {
       resizable>
       <div className="CameraConsole__left">
         <Window.Content>
-          {canFly && !isViewer && (
+          {!isViewer && (
             <ShipControlContent />
           )}
-          {canFly && (
-            <ShipContent />
-          )}
+          <ShipContent />
           <SharedContent />
         </Window.Content>
       </div>
@@ -42,7 +40,7 @@ const SharedContent = (props, context) => {
   return (
     <>
       <Section
-        title={shipInfo.can_rename && (
+        title={(
           <Button.Input
             content={shipInfo.name}
             currentValue={shipInfo.name}
@@ -50,7 +48,7 @@ const SharedContent = (props, context) => {
             onCommit={(e, value) => act('rename_ship', {
               newName: value,
             })} />
-        ) || (shipInfo.name ? shipInfo.name : "Ship Info")}
+        )}
         buttons={(
           <Button
             tooltip="Refresh Ship Stats"
@@ -289,6 +287,12 @@ const ShipControlContent = (props, context) => {
             icon="sign-out-alt"
             disabled={data.state !== 'idle'}
             onClick={() => act('undock')} />
+          <Button
+            tooltip="Dock in Empty Space"
+            tooltipPosition="left"
+            icon="sign-in-alt"
+            disabled={data.state !== 'flying'}
+            onClick={() => act('dock_empty')} />
           <Button
             tooltip={calibrating ? "Cancel Jump" : "Bluespace Jump"}
             tooltipPosition="left"

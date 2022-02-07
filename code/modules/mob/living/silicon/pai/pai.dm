@@ -12,7 +12,6 @@
 	health = 500
 	maxHealth = 500
 	layer = BELOW_MOB_LAYER
-	can_be_held = TRUE
 	worn_slot_flags = ITEM_SLOT_HEAD
 	held_lh = 'icons/mob/pai_item_lh.dmi'
 	held_rh = 'icons/mob/pai_item_rh.dmi'
@@ -102,6 +101,7 @@
 	return ..()
 
 /mob/living/silicon/pai/Initialize()
+	ADD_TRAIT(src, TRAIT_HOLDABLE, INNATE_TRAIT)
 	var/obj/item/paicard/P = loc
 	START_PROCESSING(SSfastprocess, src)
 	GLOB.pai_list += src

@@ -87,13 +87,10 @@
 	// a much more descriptive and less scary name than fucking "COMSIG". But noooooooooo
 	// the TG coders were too self important to pick a descriptive name and wanted to sound all scientific
 	RegisterSignal(SP, COMSIG_MOUSEDROPPED_ONTO, .proc/spacepod_mousedrop)
-	SP.verbs |= /obj/spacepod/proc/unload_cargo
 
 /obj/item/spacepod_equipment/cargo/large/on_uninstall()
 	UnregisterSignal(spacepod, COMSIG_MOUSEDROPPED_ONTO)
 	..()
-	if(!(locate(/obj/item/spacepod_equipment/cargo/large) in spacepod.equipment))
-		spacepod.verbs -= /obj/spacepod/proc/unload_cargo
 
 /obj/item/spacepod_equipment/cargo/large/can_uninstall(mob/user)
 	if(storage)

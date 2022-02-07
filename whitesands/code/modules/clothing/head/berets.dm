@@ -2,8 +2,6 @@
 /obj/item/clothing/head/beret
 	name = "beret"
 	desc = "A beret, a mime's favorite headwear."
-	icon = 'whitesands/icons/obj/clothing/hats.dmi'
-	mob_overlay_icon = 'whitesands/icons/mob/clothing/head.dmi'
 	icon_state = "beret"
 	dog_fashion = /datum/dog_fashion/head/beret
 	dynamic_hair_suffix = "+generic"
@@ -12,16 +10,12 @@
 /obj/item/clothing/head/beret/vintage
 	name = "vintage beret"
 	desc = "A well-worn beret."
-	icon = 'icons/mob/clothing/head.dmi'
-	mob_overlay_icon = 'icons/mob/clothing/head.dmi'
 	icon_state = "vintageberet"
 	dog_fashion = null
 
 /obj/item/clothing/head/beret/archaic
 	name = "archaic beret"
 	desc = "An absolutely ancient beret, allegedly worn by the first mime to ever step foot on a NanoTrasen station."
-	icon = 'icons/mob/clothing/head.dmi'
-	mob_overlay_icon = 'icons/mob/clothing/head.dmi'
 	icon_state = "archaicberet"
 	dog_fashion = null
 

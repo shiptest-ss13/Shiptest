@@ -157,6 +157,10 @@
 
 /datum/config_entry/flag/join_with_mutant_humans	//players can pick mutant bodyparts for humans before joining the game
 
+/datum/config_entry/number/max_loadout_items	//maximum number of items that can be in a player's loadout
+	config_entry_value = 10
+	min_val = 0
+
 /datum/config_entry/flag/no_summon_guns	//No
 
 /datum/config_entry/flag/no_summon_magic	//Fun
@@ -196,7 +200,6 @@
 
 /datum/config_entry/flag/emojis
 
-/datum/config_entry/flag/chat_markup //WS edit - Chat markup
 
 /datum/config_entry/keyed_list/multiplicative_movespeed
 	key_mode = KEY_MODE_TYPE
@@ -408,3 +411,9 @@
 /datum/config_entry/number/respawn_timer
 	min_val = 0
 	config_entry_value = 1 MINUTES
+
+/datum/config_entry/number/max_shuttle_count
+	config_entry_value = 20
+
+/datum/config_entry/number/max_shuttle_size
+	config_entry_value = 300

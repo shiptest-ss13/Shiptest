@@ -30,6 +30,13 @@
 /obj/structure/falsewall,
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
+"cm" = (
+/obj/machinery/computer/cryopod{
+	pixel_x = 1;
+	pixel_y = -6
+	},
+/turf/closed/wall,
+/area/ship/maintenance/port)
 "ea" = (
 /obj/structure/cable{
 	icon_state = "1-8"
@@ -80,19 +87,12 @@
 /turf/open/floor/plating,
 /area/ship/maintenance/aft)
 "gy" = (
-/obj/effect/turf_decal{
-	dir = 8
-	},
-/obj/effect/turf_decal,
 /obj/machinery/atmospherics/components/unary/outlet_injector/on/layer2{
 	dir = 1
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/central)
 "gS" = (
-/obj/effect/turf_decal{
-	dir = 4
-	},
 /turf/open/floor/plating,
 /area/ship/external)
 "hb" = (
@@ -144,15 +144,6 @@
 /obj/structure/grille,
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
-"iO" = (
-/obj/effect/turf_decal{
-	dir = 4
-	},
-/obj/effect/turf_decal{
-	dir = 1
-	},
-/turf/open/floor/plating,
-/area/ship/external)
 "iW" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
 /turf/closed/wall/rust,
@@ -305,9 +296,6 @@
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "uW" = (
-/obj/effect/turf_decal{
-	dir = 4
-	},
 /obj/effect/decal/cleanable/glass,
 /turf/open/floor/plating,
 /area/ship/external)
@@ -324,7 +312,7 @@
 /turf/open/floor/plating,
 /area/ship/cargo)
 "vf" = (
-/obj/machinery/suit_storage_unit/mining/eva,
+/obj/machinery/suit_storage_unit/independent/mining/eva,
 /turf/open/floor/plating,
 /area/ship/cargo)
 "vj" = (
@@ -617,7 +605,6 @@
 /obj/structure/closet/crate/freezer,
 /obj/item/reagent_containers/blood/AMinus,
 /obj/item/reagent_containers/blood/BPlus,
-/obj/item/reagent_containers/blood/ethereal,
 /obj/item/reagent_containers/blood/random,
 /obj/item/organ/ears/cat,
 /obj/item/organ/tail/cat,
@@ -625,7 +612,13 @@
 /area/ship/maintenance/starboard)
 "Lh" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/cryopod/latejoin,
+/obj/machinery/cryopod{
+	close_state = "crate";
+	dir = 8;
+	icon = 'goon/icons/obj/crates.dmi';
+	icon_state = "crateopen";
+	open_state = "crateopen"
+	},
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "LK" = (
@@ -761,7 +754,7 @@
 	name = "Blast Door Control";
 	pixel_y = -24
 	},
-/obj/machinery/suit_storage_unit/mining/eva,
+/obj/machinery/suit_storage_unit/independent/mining/eva,
 /turf/open/floor/plating,
 /area/ship/cargo)
 "Ub" = (
@@ -888,7 +881,7 @@ Ck
 pH
 IX
 pU
-Ck
+pH
 Ck
 Ck
 Ck
@@ -899,7 +892,7 @@ Ck
 Ck
 Ck
 Ck
-Ck
+cd
 Ns
 cd
 Yo
@@ -908,7 +901,7 @@ pH
 Ab
 eR
 pH
-Ck
+Po
 Po
 zr
 zr
@@ -918,7 +911,7 @@ Ck
 Ck
 Ck
 Ck
-Ns
+cm
 YV
 hr
 KK
@@ -934,7 +927,7 @@ zm
 Ck
 "}
 (4,1,1) = {"
-Ck
+Hj
 Tp
 Oy
 Ns
@@ -1010,7 +1003,7 @@ Bs
 zm
 "}
 (8,1,1) = {"
-Ck
+Hj
 Oy
 Oy
 oC
@@ -1090,7 +1083,7 @@ Ck
 Ck
 Ck
 Ck
-iO
+gS
 gS
 gS
 uW

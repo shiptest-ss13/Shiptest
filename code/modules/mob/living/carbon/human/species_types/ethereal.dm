@@ -1,20 +1,19 @@
-#define ETHEREAL_EMAG_COLORS list("#00ffff", "#ffc0cb", "#9400D3", "#4B0082", "#0000FF", "#00FF00", "#FFFF00", "#FF7F00", "#FF0000") //WS Edit -- Multitool Color Change
+#define ETHEREAL_EMAG_COLORS list("#00ffff", "#ffc0cb", "#9400D3", "#4B0082", "#0000FF", "#00FF00", "#FFFF00", "#FF7F00", "#FF0000")
 
 /datum/species/ethereal
-	name = "Ethereal"
-	id = "ethereal"
+	name = "\improper Elzuose"
+	id = SPECIES_ETHEREAL
 	attack_verb = "burn"
 	attack_sound = 'sound/weapons/etherealhit.ogg'
 	miss_sound = 'sound/weapons/etherealmiss.ogg'
 	meat = /obj/item/reagent_containers/food/snacks/meat/slab/human/mutant/ethereal
 	mutantstomach = /obj/item/organ/stomach/ethereal
 	mutanttongue = /obj/item/organ/tongue/ethereal
-	exotic_blood = /datum/reagent/consumable/liquidelectricity //Liquid Electricity. fuck you think of something better gamer
 	siemens_coeff = 0.5 //They thrive on energy
 	brutemod = 1.25 //They're weak to punches
 	attack_type = BURN //burn bish
 	damage_overlay_type = "" //We are too cool for regular damage overlays
-	species_traits = list(DYNCOLORS, AGENDER, HAIR, FACEHAIR)    //WS Edit - Gave Ethereals Beards
+	species_traits = list(DYNCOLORS, AGENDER, HAIR, FACEHAIR)
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_PRIDE | MIRROR_MAGIC | RACE_SWAP | ERT_SPAWN | SLIME_EXTRACT
 	species_language_holder = /datum/language_holder/ethereal
 	inherent_traits = list(TRAIT_NOHUNGER)
@@ -27,20 +26,26 @@
 	bodytemp_cold_damage_limit = (T20C - 10) // about 10c
 	hair_color = "fixedmutcolor"
 	hair_alpha = 140
+
+	species_chest = /obj/item/bodypart/chest/ethereal
+	species_head = /obj/item/bodypart/head/ethereal
+	species_l_arm = /obj/item/bodypart/l_arm/ethereal
+	species_r_arm = /obj/item/bodypart/r_arm/ethereal
+	species_l_leg = /obj/item/bodypart/l_leg/ethereal
+	species_r_leg = /obj/item/bodypart/r_leg/ethereal
+
 	var/current_color
 	var/EMPeffect = FALSE
-	var/emag_effect = FALSE                          //WS Edit -- Multitool Color Change
-	var/static/unhealthy_color = rgb(237, 164, 149)  //WS Edit -- Multitool Color Change
-	loreblurb = "Ethereals are organic humanoid beings with a blood that has strange luminiscent and electrical properties. They require electricity to survive, rather than food, and cast bright, colorful light from their bodies."
+	var/emag_effect = FALSE
+	var/static/unhealthy_color = rgb(237, 164, 149)
+	loreblurb = "Elzuosa are an uncommon and unusual species best described as crystalline, electrically-powered plantpeople. They hail from the warm planet Kalixcis, where they evolved alongside the Sarathi. Kalixcian culture places no importance on blood-bonds, and those from it tend to consider their family anyone they are sufficiently close to, and choose their own names."
 	var/drain_time = 0 //used to keep ethereals from spam draining power sources
 	var/obj/effect/dummy/lighting_obj/ethereal_light
-
 
 /datum/species/ethereal/Destroy(force)
 	if(ethereal_light)
 		QDEL_NULL(ethereal_light)
 	return ..()
-
 
 /datum/species/ethereal/on_species_gain(mob/living/carbon/C, datum/species/old_species, pref_load)
 	. = ..()
@@ -48,19 +53,22 @@
 		return
 	var/mob/living/carbon/human/ethereal = C
 	default_color = "#[ethereal.dna.features["ethcolor"]]"
-	//WS Removal -- Multitool Color Change
 	RegisterSignal(ethereal, COMSIG_ATOM_EMAG_ACT, .proc/on_emag_act)
 	RegisterSignal(ethereal, COMSIG_ATOM_EMP_ACT, .proc/on_emp_act)
 	ethereal_light = ethereal.mob_light()
 	spec_updatehealth(ethereal)
 
+	//The following code is literally only to make admin-spawned ethereals not be black.
+	C.dna.features["mcolor"] = C.dna.features["ethcolor"] //Ethcolor and Mut color are both dogshit and will be replaced
+	for(var/obj/item/bodypart/BP as anything in C.bodyparts)
+		if(BP.limb_id == SPECIES_ETHEREAL)
+			BP.update_limb(is_creating = TRUE)
 
 /datum/species/ethereal/on_species_loss(mob/living/carbon/human/C, datum/species/new_species, pref_load)
 	UnregisterSignal(C, COMSIG_ATOM_EMAG_ACT)
 	UnregisterSignal(C, COMSIG_ATOM_EMP_ACT)
 	QDEL_NULL(ethereal_light)
 	return ..()
-
 
 /datum/species/ethereal/random_name(gender,unique,lastname)
 	if(unique)
@@ -70,23 +78,22 @@
 
 	return randname
 
-
 /datum/species/ethereal/spec_updatehealth(mob/living/carbon/human/H)
 	. = ..()
+	if(!ethereal_light)
+		return
+
 	if(H.stat != DEAD && !EMPeffect)
-		//WS Start -- Multitool Color Change
 		if(!emag_effect)
 			current_color = health_adjusted_color(H, default_color)
 		set_ethereal_light(H, current_color)
 		ethereal_light.set_light_on(TRUE)
 		fixed_mut_color = copytext_char(current_color, 2)
-		//WS End
 	else
 		ethereal_light.set_light_on(FALSE)
 		fixed_mut_color = rgb(128,128,128)
 	H.update_body()
 
-//WS Start -- Multitool Color Change
 /datum/species/ethereal/proc/health_adjusted_color(mob/living/carbon/human/H, default_color)
 	var/health_percent = max(H.health, 0) / 100
 
@@ -106,13 +113,15 @@
 	return result
 
 /datum/species/ethereal/proc/set_ethereal_light(mob/living/carbon/human/H, current_color)
+	if(!ethereal_light)
+		return
+
 	var/health_percent = max(H.health, 0) / 100
 
 	var/light_range = 1 + (2 * health_percent)
 	var/light_power = 1 + (1 * health_percent)
 
 	ethereal_light.set_light_range_power_color(light_range, light_power, current_color)
-//WS End
 
 /datum/species/ethereal/proc/on_emp_act(mob/living/carbon/human/H, severity)
 	EMPeffect = TRUE
@@ -125,49 +134,44 @@
 			addtimer(CALLBACK(src, .proc/stop_emp, H), 20 SECONDS, TIMER_UNIQUE|TIMER_OVERRIDE) //We're out for 20 seconds
 
 /datum/species/ethereal/proc/on_emag_act(mob/living/carbon/human/H, mob/user)
-	if(emag_effect)                              //WS Edit -- Multitool Color Change
+	if(emag_effect)
 		return
-	emag_effect = TRUE                           //WS Edit -- Multitool Color Change
+	emag_effect = TRUE
 	if(user)
 		to_chat(user, "<span class='notice'>You tap [H] on the back with your card.</span>")
 	H.visible_message("<span class='danger'>[H] starts flickering in an array of colors!</span>")
 	handle_emag(H)
 	addtimer(CALLBACK(src, .proc/stop_emag, H), 30 SECONDS) //Disco mode for 30 seconds! This doesn't affect the ethereal at all besides either annoying some players, or making someone look badass.
 
-
 /datum/species/ethereal/spec_life(mob/living/carbon/human/H)
 	.=..()
 	handle_charge(H)
-
 
 /datum/species/ethereal/proc/stop_emp(mob/living/carbon/human/H)
 	EMPeffect = FALSE
 	spec_updatehealth(H)
 	to_chat(H, "<span class='notice'>You feel more energized as your shine comes back.</span>")
 
-
 /datum/species/ethereal/proc/handle_emag(mob/living/carbon/human/H)
-	if(!emag_effect)                              //WS Edit -- Multitool Color Change
+	if(!emag_effect)
 		return
-	current_color = pick(ETHEREAL_EMAG_COLORS)    //WS Edit -- Multitool Color Change
+	current_color = pick(ETHEREAL_EMAG_COLORS)
 	spec_updatehealth(H)
 	addtimer(CALLBACK(src, .proc/handle_emag, H), 5) //Call ourselves every 0.5 seconds to change color
 
 /datum/species/ethereal/proc/stop_emag(mob/living/carbon/human/H)
-	emag_effect = FALSE                           //WS Edit -- Multitool Color Change
+	emag_effect = FALSE
 	spec_updatehealth(H)
 	H.visible_message("<span class='danger'>[H] stops flickering and goes back to their normal state!</span>")
 
 /datum/species/ethereal/proc/handle_charge(mob/living/carbon/human/H)
 	brutemod = 1.25
 	switch(get_charge(H))
-		//WS Begin - Display Ethereal no charge icon
 		if(ETHEREAL_CHARGE_NONE to ETHEREAL_CHARGE_LOWPOWER)
 			if(get_charge(H) == ETHEREAL_CHARGE_NONE)
 				H.throw_alert("ethereal_charge", /atom/movable/screen/alert/etherealcharge, 3)
 			else
 				H.throw_alert("ethereal_charge", /atom/movable/screen/alert/etherealcharge, 2)
-			//WS End
 			if(H.health > 10.5)
 				apply_damage(0.2, TOX, null, null, H)
 			brutemod = 1.75
@@ -197,9 +201,9 @@
 		var/obj/item/organ/stomach/ethereal/stomach = H.getorganslot(ORGAN_SLOT_STOMACH)
 		playsound(H, 'sound/magic/lightningshock.ogg', 100, TRUE, extrarange = 5)
 		H.cut_overlay(overcharge)
-		tesla_zap(H, 2, (stomach.crystal_charge / ETHEREAL_CHARGE_SCALING_MULTIPLIER) * 50, ZAP_OBJ_DAMAGE | ZAP_ALLOW_DUPLICATES)       //WS Edit -- Ethereal Charge Scaling
+		tesla_zap(H, 2, (stomach.crystal_charge / ETHEREAL_CHARGE_SCALING_MULTIPLIER) * 50, ZAP_OBJ_DAMAGE | ZAP_ALLOW_DUPLICATES)
 		if(istype(stomach))
-			stomach.adjust_charge(ETHEREAL_CHARGE_FULL - stomach.crystal_charge)     //WS Edit -- Ethereal Charge Scaling
+			stomach.adjust_charge(ETHEREAL_CHARGE_FULL - stomach.crystal_charge)
 		to_chat(H, "<span class='warning'>You violently discharge energy!</span>")
 		H.visible_message("<span class='danger'>[H] violently discharges energy!</span>")
 		if(prob(10)) //chance of developing heart disease to dissuade overcharging oneself
@@ -216,7 +220,6 @@
 		return stomach.crystal_charge
 	return ETHEREAL_CHARGE_NONE
 
-//WS Start -- Multitool Color Change
 /datum/species/ethereal/spec_attacked_by(obj/item/I, mob/living/user, obj/item/bodypart/affecting, intent, mob/living/carbon/human/H)
 	if(istype(I, /obj/item/multitool))
 		if(user.a_intent == INTENT_HARM)
@@ -235,7 +238,7 @@
 			H.visible_message("<span class='danger'>[H]'s EM frequency is scrambled to a random color.</span>")
 		else
 			// select new color
-			var/new_etherealcolor = input(user, "Choose your ethereal color", "Character Preference") as null|anything in GLOB.color_list_ethereal
+			var/new_etherealcolor = input(user, "Choose your Elzuosa color", "Character Preference") as null|anything in GLOB.color_list_ethereal
 			if(new_etherealcolor)
 				default_color = "#" + GLOB.color_list_ethereal[new_etherealcolor]
 				current_color = health_adjusted_color(H, default_color)
@@ -243,4 +246,3 @@
 				H.visible_message("<span class='notice'>[H] modulates \his EM frequency to [new_etherealcolor].</span>")
 	else
 		. = ..()
-//WS End

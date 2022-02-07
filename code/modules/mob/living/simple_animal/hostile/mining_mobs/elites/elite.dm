@@ -92,6 +92,7 @@ While using this makes the system rely on OnFire, it still gives options for tim
 	icon = 'icons/obj/lavaland/tumor.dmi'
 	icon_state = "tumor"
 	pixel_x = -16
+	base_pixel_x = -16
 	light_color = COLOR_SOFT_RED
 	light_range = 3
 	anchored = TRUE
@@ -244,8 +245,8 @@ While using this makes the system rely on OnFire, it still gives options for tim
 	var/lootpick = rand(1, 2)
 	if(lootpick == 1 && mychild.loot_drop != null)
 		new mychild.loot_drop(lootbox)
-	else
-		new /obj/item/tumor_shard(lootbox)
+		if(prob(25))
+			new /obj/item/tumor_shard(lootbox)
 	mychild = null
 	activator = null
 	qdel(src)

@@ -28,7 +28,6 @@
 
 	client.playtitlemusic()
 
-	SSticker.respawn_timer[client] = FALSE
 
 	// Check if user should be added to interview queue
 	if (!client.holder && CONFIG_GET(flag/panic_bunker) && CONFIG_GET(flag/panic_bunker_interview) && !(client.ckey in GLOB.interviews.approved_ckeys))

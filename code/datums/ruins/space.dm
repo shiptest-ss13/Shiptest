@@ -5,12 +5,24 @@
 	cost = 1
 	allow_duplicates = FALSE
 
+/datum/map_template/ruin/space/corporate_mining
+	id = "corporate_mining"
+	suffix = "corporate_mining.dmm"
+	name = "Corporate Mining Module"
+	description = "An old and rusty mining facility, with big ore potential."
+
 /datum/map_template/ruin/space/zoo
 	id = "zoo"
 	suffix = "abandonedzoo.dmm"
 	name = "Biological Storage Facility"
 	description = "In case society crumbles, we will be able to restore our zoos to working order with the breeding stock kept in these 100% secure and unbreachable storage facilities. \
 	At no point has anything escaped. That's our story, and we're sticking to it."
+
+/datum/map_template/ruin/space/excavator_DK
+	id = "Excavator-DK"
+	suffix = "excavator_DK.dmm"
+	name = "Excavator DK Class"
+	description = "A heavily damaged DK class excavator"
 
 /datum/map_template/ruin/space/asteroid1
 	id = "asteroid1"
@@ -105,12 +117,6 @@
 	name = "Empty Shell"
 	description = "Cosy, rural property available for young professional couple. Only twelve parsecs from the nearest hyperspace lane!"
 
-/datum/map_template/ruin/space/gas_the_lizards
-	id = "gas-the-lizards"
-	suffix = "gasthelizards.dmm"
-	name = "Disposal Facility 17"
-	description = "Gas efficiency at 95.6%, fluid elimination at 96.2%. Will require renewed supplies of 'carpet' before the end of the quarter."
-
 /datum/map_template/ruin/space/intact_empty_ship
 	id = "intact-empty-ship"
 	suffix = "intactemptyship.dmm"
@@ -156,11 +162,13 @@
 	name = "Strange Ship"
 	description = "A ship seemingly lost, drifting along the stars. This thing looks like it belongs in ancient times."
 
+/* shiptest: Replaced with dark_glade ruin
 /datum/map_template/ruin/space/way_home
 	id = "way-home"
 	suffix = "way_home.dmm"
 	name = "Salvation"
 	description = "In the darkest times, we will find our way home."
+*/
 
 /datum/map_template/ruin/space/djstation
 	id = "djstation"
@@ -259,12 +267,6 @@
 	description = "With heated debates over the legality of the catperson and their status in the workforce, there's always a place for the blackmarket to slip in for some cash. Whether the results \
 	are morally sound or not is another issue entirely."
 
-/datum/map_template/ruin/space/hilbertresearchfacility
-	id = "hilbert_facility"
-	suffix = "hilbertshoteltestingsite.dmm"
-	name = "Hilbert Research Facility"
-	description = "A research facility of great bluespace discoveries. Long since abandoned, willingly or not..."
-
 /datum/map_template/ruin/space/clownplanet
 	id = "clownplanet"
 	suffix = "clownplanet.dmm"
@@ -301,8 +303,8 @@
 	name = "Syndicate Station Wreckage"
 	description = "An old wreck, made of plastitanium. Somehow, it looks more filled than it ever was..."
 
-/datum/map_template/ruin/space/cult_templar
-	id = "cult_templar"
-	suffix = "chaosmarine.dmm"
-	name = "Bloody Lair"
-	description = "A seemingly abandoned blood cult base in space, but why was it abandoned?"
+/datum/map_template/ruin/space/dangerous_research
+	id = "dangerous_research"
+	suffix = "dangerous_research.dmm"
+	name = "Occult Research Station"
+	description = "This station was deemed unsuitable for continued experiments, and quickly abandoned."

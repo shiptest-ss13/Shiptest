@@ -37,7 +37,6 @@
 		return
 
 	message = trim(copytext_char(sanitize(message), 1, MAX_MESSAGE_LEN))
-	message = process_chat_markup(message) //WS edit - Chat markup
 
 	usr.emote("me",1,message,TRUE)
 
@@ -79,7 +78,7 @@
 		if(name != real_name)
 			alt_name = " (died as [real_name])"
 
-	var/spanned = say_quote(message)
+	var/spanned = say_quote(say_emphasis(message))
 	var/source = "<span class='game'><span class='prefix'>DEAD:</span> <span class='name'>[name]</span>[alt_name]"
 	var/rendered = " <span class='message'>[emoji_parse(spanned)]</span></span>"
 	log_talk(message, LOG_SAY, tag="DEAD")
@@ -96,6 +95,18 @@
 		emote(copytext(message, length(message[1]) + 1), intentional = !forced)
 		return TRUE
 
+/mob/proc/check_for_custom_say_emote(message, list/mods)
+	var/customsaypos = findtext(message, "*")
+	if(!customsaypos)
+		return message
+	if (is_banned_from(ckey, "Emote"))
+		return copytext(message, customsaypos + 1)
+	mods[MODE_CUSTOM_SAY_EMOTE] = lowertext(copytext_char(message, 1, customsaypos))
+	message = copytext(message, customsaypos + 1)
+	if (!message)
+		mods[MODE_CUSTOM_SAY_ERASE_INPUT] = TRUE
+		message = "an interesting thing to say"
+	return message
 ///Check if the mob has a hivemind channel
 /mob/proc/hivecheck()
 	return 0

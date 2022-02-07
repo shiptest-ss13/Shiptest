@@ -2,7 +2,7 @@
 	icon_state = "energy"
 	name = "energy gun"
 	desc = "A basic energy-based gun."
-	icon = 'whitesands/icons/obj/guns/energy.dmi'
+	icon = 'icons/obj/guns/energy.dmi'
 
 	var/obj/item/stock_parts/cell/gun/cell //What type of power cell this uses
 	var/cell_type = /obj/item/stock_parts/cell/gun
@@ -213,26 +213,29 @@
 	. = ..()
 	if(!automatic_charge_overlays)
 		return
+	// Every time I see code this "flexible", a kitten fucking dies
 	var/overlay_icon_state = "[icon_state]_charge"
+	var/obj/item/ammo_casing/energy/shot = ammo_type[modifystate ? select : 1]
 	var/ratio = get_charge_ratio()
-	if(modifystate)
-		var/obj/item/ammo_casing/energy/shot = ammo_type[select]
-		overlay_icon_state += "_[shot.select_name]"
-		. += "[icon_state]_[shot.select_name]"
 	if(ratio == 0)
+		if(modifystate)
+			. += "[icon_state]_[shot.select_name]"
 		. += "[icon_state]_empty"
 	else
 		if(!shaded_charge)
+			if(modifystate)
+				. += "[icon_state]_[shot.select_name]"
+				overlay_icon_state += "_[shot.select_name]"
 			var/mutable_appearance/charge_overlay = mutable_appearance(icon, overlay_icon_state)
 			for(var/i = ratio, i >= 1, i--)
 				charge_overlay.pixel_x = ammo_x_offset * (i - 1)
 				charge_overlay.pixel_y = ammo_y_offset * (i - 1)
 				. += new /mutable_appearance(charge_overlay)
 		else
-			. += "[icon_state]_charge[ratio]"
 			if(modifystate)
-				var/obj/item/ammo_casing/energy/shot = ammo_type[select]
 				. += "[icon_state]_charge[ratio]_[shot.select_name]" //:drooling_face:
+			else
+				. += "[icon_state]_charge[ratio]"
 
 ///Used by update_icon_state() and update_overlays()
 /obj/item/gun/energy/proc/get_charge_ratio()

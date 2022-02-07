@@ -51,7 +51,7 @@
 	desc = "Yarr."
 	icon_state = "pirate"
 	item_state = "pirate"
-	allowed = list(/obj/item/melee/transforming/energy/sword/pirate, /obj/item/clothing/glasses/eyepatch, /obj/item/reagent_containers/food/drinks/bottle/rum)
+	allowed = list(/obj/item/melee/transforming/energy/sword/saber/pirate, /obj/item/clothing/glasses/eyepatch, /obj/item/reagent_containers/food/drinks/bottle/rum)
 
 /obj/item/clothing/suit/pirate/captain
 	name = "pirate captain coat"
@@ -796,4 +796,3 @@
 	icon_state = "DutchJacket"
 	item_state = "DutchJacket"
 	body_parts_covered = ARMS
-

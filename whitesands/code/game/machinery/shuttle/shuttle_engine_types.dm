@@ -186,7 +186,7 @@
 	return thrust * true_percentage
 
 /obj/machinery/power/shuttle/engine/liquid/return_fuel()
-	var/true_percentage = 1
+	var/true_percentage = INFINITY
 	for(var/reagent in fuel_reagents)
 		true_percentage = min(reagents.get_reagent_amount(reagent) / fuel_reagents[reagent], true_percentage)
 	return reagent_amount_holder * true_percentage //Multiplies the total amount needed by the smallest percentage of any reagent in the recipe
@@ -197,9 +197,9 @@
 /obj/machinery/power/shuttle/engine/liquid/oil
 	name = "oil thruster"
 	desc = "A highly inefficient thruster that burns oil as a propellant."
-	max_reagents = 2000
+	max_reagents = 1000
 	thrust = 20
-	fuel_reagents = list(/datum/reagent/fuel/oil = 200)
+	fuel_reagents = list(/datum/reagent/fuel/oil = 50)
 	circuit = /obj/item/circuitboard/machine/shuttle/engine/oil
 
 /**

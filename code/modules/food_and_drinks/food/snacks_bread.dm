@@ -98,7 +98,7 @@
 /obj/item/reagent_containers/food/snacks/breadslice/spidermeat
 	name = "spider meat bread slice"
 	desc = "A slice of meatloaf made from an animal that most likely still wants you dead."
-	icon_state = "xenobreadslice"
+	icon_state = "spiderbreadslice"
 	filling_color = "#7CFC00"
 	list_reagents = list(/datum/reagent/consumable/nutriment = 6, /datum/reagent/toxin = 3, /datum/reagent/consumable/nutriment/vitamin = 1)
 	foodtype = GRAIN | MEAT | TOXIC

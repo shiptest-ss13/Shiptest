@@ -98,7 +98,7 @@
 	if(!is_operational())
 		return
 	if(!nodes[1])
-		on = FALSE
+		return
 	if(!on || welded)
 		return
 

@@ -10,21 +10,21 @@
 	friendly_verb_continuous = "stares down"
 	friendly_verb_simple = "stare down"
 	speak_emote = list("roars")
-	speed = 30
-	move_to_delay = 30
+	speed = 20
+	move_to_delay = 20
 	ranged = TRUE
-	ranged_cooldown_time = 50
-	maxHealth = 350
-	health = 350
-	obj_damage = 40
+	ranged_cooldown_time = 200
+	maxHealth = 300
+	health = 300
+	obj_damage = 15
 	armour_penetration = 20
 	melee_damage_lower = 20
 	melee_damage_upper = 20
 	attack_verb_continuous = "chomps"
 	attack_verb_simple = "chomp"
 	attack_sound = 'sound/magic/demon_attack1.ogg'
-	vision_range = 9
-	aggro_vision_range = 9
+	vision_range = 7
+	aggro_vision_range = 7
 	move_force = MOVE_FORCE_VERY_STRONG
 	move_resist = MOVE_FORCE_VERY_STRONG
 	pull_force = MOVE_FORCE_VERY_STRONG
@@ -37,7 +37,7 @@
 	robust_searching = TRUE
 	footstep_type = FOOTSTEP_MOB_CLAW
 	/// How far the whelps fire can go
-	var/fire_range = 4
+	var/fire_range = 3
 
 /mob/living/simple_animal/hostile/asteroid/ice_whelp/OpenFire()
 	var/turf/T = get_ranged_target_turf_direct(src, target, fire_range)
@@ -54,4 +54,7 @@
 	move_force = MOVE_FORCE_DEFAULT
 	move_resist = MOVE_RESIST_DEFAULT
 	pull_force = PULL_FORCE_DEFAULT
+	if(prob(10))
+		new /obj/item/gem/amber(loc)
 	return ..()
+

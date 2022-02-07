@@ -29,7 +29,7 @@
 			new /obj/item/reagent_containers/glass/bottle/potion/flight(src)
 		if(7)
 			new /obj/item/pickaxe/diamond(src)
-			new /obj/item/t_scanner/adv_mining_scanner(src)
+			new /obj/item/pinpointer/deepcore/advanced(src)
 		if(8)
 			if(prob(50))
 				new /obj/item/disk/design_disk/modkit_disc/resonator_blast(src)
@@ -95,7 +95,8 @@
 /obj/item/disk/design_disk/modkit_disc
 	name = "KA Mod Disk"
 	desc = "A design disc containing the design for a unique kinetic accelerator modkit. It's compatible with a research console."
-	icon_state = "datadisk1"
+	illustration = "accel"
+	color = "#6F6F6F"
 	var/modkit_design = /datum/design/unique_modkit
 
 /obj/item/disk/design_disk/modkit_disc/Initialize()
@@ -335,12 +336,14 @@
 		to_chat(user, "<span class='notice'>You release the wisp. It begins to bob around your head.</span>")
 		icon_state = "lantern"
 		wisp.orbit(user, 20)
+		ADD_TRAIT(user, ORBITED_TRAIT, "orbited")
 		SSblackbox.record_feedback("tally", "wisp_lantern", 1, "Freed")
 
 	else
 		to_chat(user, "<span class='notice'>You return the wisp to the lantern.</span>")
 		icon_state = "lantern-blue"
 		wisp.forceMove(src)
+		REMOVE_TRAIT(user, ORBITED_TRAIT, "orbited")
 		SSblackbox.record_feedback("tally", "wisp_lantern", 1, "Returned")
 
 /obj/item/wisp_lantern/Initialize()
@@ -464,9 +467,9 @@
 	max_charges = 1
 	item_flags = NEEDS_PERMIT
 	force = 15
+	sharpness = IS_SHARP
 	block_chance = 25//A pittance, but might be worth something in a scuffle
 	hitsound = 'sound/weapons/chainhit.ogg'
-
 
 /obj/item/gun/magic/hook/melee_attack_chain(mob/user, atom/target, params)
 	..()
@@ -474,7 +477,7 @@
 
 /obj/item/gun/magic/hook/Initialize()
 	. = ..()
-	AddComponent(/datum/component/butchering, 15, 125, 0, hitsound)
+	AddComponent(/datum/component/butchering, 15, 130, 0, hitsound)
 
 /obj/item/ammo_casing/magic/hook
 	name = "hook"
@@ -498,7 +501,7 @@
 
 /obj/projectile/hook/fire(setAngle)
 	if(firer)
-		chain = firer.Beam(src, icon_state = "chain", time = INFINITY, maxdistance = INFINITY)
+		chain = firer.Beam(src, icon_state = "chain")
 	..()
 	//TODO: root the firer until the chain returns
 
@@ -1133,30 +1136,6 @@
 	if(!isinhands)
 		. += mutable_appearance('icons/effects/effects.dmi', shield_state, MOB_LAYER - 0.01)
 
-/obj/item/jacobs_ladder
-	name = "jacob's ladder"
-	desc = "A celestial ladder that violates the laws of physics."
-	icon = 'icons/obj/structures.dmi'
-	icon_state = "ladder00"
-
-/obj/item/jacobs_ladder/attack_self(mob/user)
-	var/turf/T = get_turf(src)
-	var/ladder_x = T.x
-	var/ladder_y = T.y
-	to_chat(user, "<span class='notice'>You unfold the ladder. It extends much farther than you were expecting.</span>")
-	var/last_ladder = null
-	for(var/i in 1 to world.maxz)
-		if(is_centcom_level(i) || is_reserved_level(i) || is_away_level(i))
-			continue
-		var/turf/T2 = locate(ladder_x, ladder_y, i)
-		last_ladder = new /obj/structure/ladder/unbreakable/jacob(T2, null, last_ladder)
-	qdel(src)
-
-// Inherit from unbreakable but don't set ID, to suppress the default Z linkage
-/obj/structure/ladder/unbreakable/jacob
-	name = "jacob's ladder"
-	desc = "An indestructible celestial ladder that violates the laws of physics."
-
 ///Bosses
 
 //Miniboss Miner
@@ -1275,7 +1254,7 @@
 
 /obj/structure/closet/crate/necropolis/dragon/crusher/PopulateContents()
 	..()
-	new /obj/item/crusher_trophy/tail_spike(src)
+	new /obj/item/crusher_trophy/ash_spike(src)
 
 /obj/item/melee/ghost_sword
 	name = "\improper spectral blade"

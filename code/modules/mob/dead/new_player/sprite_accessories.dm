@@ -60,6 +60,7 @@
 	var/dimension_y = 32
 	var/center = FALSE	//Should we center the sprite?
 	var/limbs_id // The limbs id supplied for full-body replacing features.
+	var/image_alpha = 255 // The alpha for the accessory to use.
 
 //////////////////////
 // Hair Definitions //
@@ -1722,13 +1723,15 @@
 
 /datum/sprite_accessory/tails/human/cat/slime
 	name = "Slimecat"
-	icon_state = "catslime"
+	icon_state = "cat"
 	color_src = HAIR
+	image_alpha = 150
 
 /datum/sprite_accessory/tails_animated/human/cat/slime
 	name = "Slimecat"
-	icon_state = "catslime"
+	icon_state = "cat"
 	color_src = HAIR
+	image_alpha = 150
 
 /datum/sprite_accessory/snouts
 	icon = 'icons/mob/mutant_bodyparts.dmi'
@@ -1791,9 +1794,10 @@
 
 /datum/sprite_accessory/ears/cat/slime
 	name = "Slimecat"
-	icon_state = "catslime"
-	hasinner = 1
+	icon_state = "cat"
+	hasinner = FALSE
 	color_src = HAIR
+	image_alpha = 150
 
 /datum/sprite_accessory/wings/none
 	name = "None"
@@ -2390,7 +2394,7 @@
 	color_src = 0
 
 /datum/sprite_accessory/ipc_chassis/mcgreyscale
-	name = "Morpheus Cyberkinetics(Greyscale)"
+	name = "Morpheus Cyberkinetics (Custom)"
 	limbs_id = "mcgipc"
 	color_src = MUTCOLORS
 
@@ -2478,78 +2482,82 @@
 	name = "Spiky"
 	icon_state = "spiky"
 
-/datum/sprite_accessory/teshari_feathers
+/datum/sprite_accessory/kepori_feathers
 	color_src = HAIR
-	icon = 'icons/mob/teshari_parts.dmi'
+	icon = 'icons/mob/kepori_parts.dmi'
 
-/datum/sprite_accessory/teshari_feathers/none
+/datum/sprite_accessory/kepori_feathers/none
 	name = "None"
 
-/datum/sprite_accessory/teshari_feathers/plain
+/datum/sprite_accessory/kepori_feathers/plain
 	name = "Plain"
 	icon_state = "plain"
 
-/datum/sprite_accessory/teshari_feathers/spiky
+/datum/sprite_accessory/kepori_feathers/spiky
 	name = "Spiky"
 	icon_state = "spiky"
 
-/datum/sprite_accessory/teshari_feathers/bushy
+/datum/sprite_accessory/kepori_feathers/bushy
 	name = "Bushy"
 	icon_state = "bushy"
 
-/datum/sprite_accessory/teshari_feathers/mohawk
+/datum/sprite_accessory/kepori_feathers/mohawk
 	name = "Mohawk"
 	icon_state = "mohawk"
 
-/datum/sprite_accessory/teshari_feathers/pointy
+/datum/sprite_accessory/kepori_feathers/pointy
 	name = "Pointy"
 	icon_state = "pointy"
 
-/datum/sprite_accessory/teshari_feathers/upright
+/datum/sprite_accessory/kepori_feathers/upright
 	name = "Upright"
 	icon_state = "upright"
 
-/datum/sprite_accessory/teshari_feathers/mane
+/datum/sprite_accessory/kepori_feathers/mane
 	name = "Mane"
 	icon_state = "mane"
 
-/datum/sprite_accessory/teshari_feathers/droopy
+/datum/sprite_accessory/kepori_feathers/droopy
 	name = "Droopy"
 	icon_state = "droopy"
 
-/datum/sprite_accessory/teshari_feathers/mushroom
+/datum/sprite_accessory/kepori_feathers/mushroom
 	name = "Mushroom"
 	icon_state = "mushroom"
 
-/datum/sprite_accessory/teshari_feathers/backstrafe
+/datum/sprite_accessory/kepori_feathers/backstrafe
 	name = "Backstrafe"
 	icon_state = "backstrafe"
 
-/datum/sprite_accessory/teshari_feathers/longway
+/datum/sprite_accessory/kepori_feathers/longway
 	name = "Longway"
 	icon_state = "longway"
 
-/datum/sprite_accessory/teshari_feathers/tree
+/datum/sprite_accessory/kepori_feathers/tree
 	name = "Tree"
 	icon_state = "tree"
 
-/datum/sprite_accessory/teshari_feathers/thin_mohawk
+/datum/sprite_accessory/kepori_feathers/thin_mohawk
 	name = "Thin Mohawk"
 	icon_state = "thinmohawk"
 
-/datum/sprite_accessory/teshari_feathers/twies
+/datum/sprite_accessory/kepori_feathers/twies
 	name = "Twies"
 	icon_state = "twies"
 
-/datum/sprite_accessory/teshari_body_feathers
-	color_src = FACEHAIR
-	icon = 'icons/mob/teshari_parts.dmi'
+/datum/sprite_accessory/kepori_feathers/thin
+	name = "Thin"
+	icon_state = "thin"
 
-/datum/sprite_accessory/teshari_body_feathers/plain
+/datum/sprite_accessory/kepori_body_feathers
+	color_src = FACEHAIR
+	icon = 'icons/mob/kepori_parts.dmi'
+
+/datum/sprite_accessory/kepori_body_feathers/plain
 	name = "Plain"
 	icon_state = "plain"
 
-/datum/sprite_accessory/teshari_body_feathers/none
+/datum/sprite_accessory/kepori_body_feathers/none
 	name = "None"
 
 //ENDWS

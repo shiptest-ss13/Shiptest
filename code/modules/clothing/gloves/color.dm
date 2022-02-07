@@ -166,8 +166,6 @@
 /obj/item/clothing/gloves/color/captain
 	desc = "Regal white gloves, with a nice gold trim, a diamond anti-shock coating, and an integrated thermal barrier, and armoured bracers. Swanky."
 	name = "captain's gloves"
-	icon = 'whitesands/icons/obj/clothing/gloves.dmi'
-	mob_overlay_icon = 'whitesands/icons/mob/clothing/hands.dmi'
 	icon_state = "captain"
 	item_state = "egloves"
 	siemens_coefficient = 0
@@ -207,6 +205,12 @@
 	transfer_prints = FALSE
 	carrytrait = TRAIT_QUICKER_CARRY
 
+/obj/item/clothing/gloves/color/latex/nitrile/evil
+	name = "red nitrile gloves"
+	desc = "Thick sterile gloves that reach up to the elbows, in exactly the same color as fresh blood. Transfers combat medic knowledge into the user via nanochips."
+	icon_state = "nitrile_evil"
+	item_state = "nitrile_evil"
+
 /obj/item/clothing/gloves/color/latex/nitrile/infiltrator
 	name = "infiltrator gloves"
 	desc = "Specialized combat gloves for carrying people around. Transfers tactical kidnapping knowledge into the user via nanochips."
@@ -234,6 +238,13 @@
 	desc = "These look pretty fancy."
 	icon_state = "white"
 	item_state = "wgloves"
+	custom_price = 200
+
+/obj/item/clothing/gloves/color/evening
+	name = "evening gloves"
+	desc = "White satin gloves that rise up to the elbows. Excessively fancy."
+	icon_state = "evening_gloves"
+	item_state = "evening_gloves"
 	custom_price = 200
 
 /obj/effect/spawner/lootdrop/gloves

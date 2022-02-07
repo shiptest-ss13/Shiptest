@@ -6,7 +6,6 @@
 	spawn_positions = 1
 	supervisors = "the head of personnel"
 	wiki_page = "Clown" //WS Edit - Wikilinks/Warning
-	special_notice = "There is a difference between funny pranks and griefing. Know it." //WS Edit - Wikilinks/Warning
 	selection_color = "#bbe291"
 
 	outfit = /datum/outfit/job/clown

@@ -1,13 +1,10 @@
-#define RANDOM_UPPER_X 200
-#define RANDOM_UPPER_Y 200
+#define RIVER_PADDING 50
 
-#define RANDOM_LOWER_X 50
-#define RANDOM_LOWER_Y 50
-
-/proc/spawn_rivers(target_z, nodes = 4, turf_type = /turf/open/lava/smooth/lava_land_surface, whitelist_area = /area/lavaland/surface/outdoors/unexplored, min_x = RANDOM_LOWER_X, min_y = RANDOM_LOWER_Y, max_x = RANDOM_UPPER_X, max_y = RANDOM_UPPER_Y, new_baseturfs)
+/proc/spawn_rivers(datum/virtual_level/vlevel, nodes = 4, turf_type = /turf/open/lava/smooth/lava_land_surface, whitelist_area = /area/lavaland/surface/outdoors/unexplored, padding = RIVER_PADDING, new_baseturfs)
+	var/target_z = vlevel.z_value
 	var/list/river_nodes = list()
 	var/num_spawned = 0
-	var/list/possible_locs = block(locate(min_x, min_y, target_z), locate(max_x, max_y, target_z))
+	var/list/possible_locs = block(locate(vlevel.low_x + padding, vlevel.low_y + padding, target_z), locate(vlevel.high_x - padding, vlevel.high_y - padding, target_z))
 	while(num_spawned < nodes && possible_locs.len)
 		var/turf/T = pick(possible_locs)
 		var/area/A = get_area(T)
@@ -102,8 +99,4 @@
 
 
 
-#undef RANDOM_UPPER_X
-#undef RANDOM_UPPER_Y
-
-#undef RANDOM_LOWER_X
-#undef RANDOM_LOWER_Y
+#undef RIVER_PADDING

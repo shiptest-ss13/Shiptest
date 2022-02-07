@@ -31,6 +31,8 @@
 	var/fade_in = 0
 	///Same as above, but on removal.
 	var/fade_out = 0
+	///Easing value for the above
+	var/easing = 0
 
 /datum/client_colour/New(mob/_owner)
 	owner = _owner
@@ -64,7 +66,7 @@
 	var/datum/client_colour/colour = new colour_type(src)
 	BINARY_INSERT(colour, client_colours, /datum/client_colour, colour, priority, COMPARE_KEY)
 	if(colour.fade_in)
-		animate_client_colour(colour.fade_in)
+		animate_client_colour(colour.fade_in, colour.easing)
 	else
 		update_client_colour()
 	return colour
@@ -192,10 +194,7 @@
 	fade_in = 20
 	fade_out = 20
 
-/datum/client_colour/monochrome/trance
-	priority = PRIORITY_ABSOLUTE
-
-/datum/client_colour/monochrome/blind
+/datum/client_colour/monochrome/blind/permanent //For the permanently colorblind
 	priority = PRIORITY_ABSOLUTE
 
 /datum/client_colour/bloodlust
@@ -206,6 +205,18 @@
 /datum/client_colour/bloodlust/New(mob/_owner)
 	..()
 	addtimer(CALLBACK(src, .proc/update_colour, list(1,0,0,0.8,0.2,0, 0.8,0,0.2,0.1,0,0), 10, SINE_EASING|EASE_OUT), 1)
+
+/datum/client_colour/thirdeye
+	colour = list(
+			-0.3, -0.3, -0.3, 0.00,\
+			-0.3, -0.3, -0.3, 0.00,\
+			-0.3, -0.3, -0.3, 0.00,\
+			0.00, 0.00, 0.00, 1.00,\
+			0.20, 0.80, 0.70, 0.00
+			)
+	priority = PRIORITY_NORMAL
+	fade_in = 5 SECONDS
+	easing = SINE_EASING
 
 #undef PRIORITY_ABSOLUTE
 #undef PRIORITY_HIGH

@@ -247,13 +247,12 @@
 			return "[jobtitle] is already filled to capacity."
 	return "Error: Unknown job availability."
 
-/mob/dead/new_player/proc/IsJobUnavailable(rank, obj/structure/overmap/ship/simulated/ship, latejoin = FALSE)
-	var/datum/job/job = SSjob.GetJob(rank)
+/mob/dead/new_player/proc/IsJobUnavailable(datum/job/job, obj/structure/overmap/ship/simulated/ship, latejoin = FALSE)
 	if(!job)
 		return JOB_UNAVAILABLE_GENERIC
-	if(!(ship?.job_slots[rank] > 0))
+	if(!(ship?.job_slots[job] > 0))
 		return JOB_UNAVAILABLE_SLOTFULL
-	if(is_banned_from(ckey, rank))
+	if(is_banned_from(ckey, job.title))
 		return JOB_UNAVAILABLE_BANNED
 	if(QDELETED(src))
 		return JOB_UNAVAILABLE_GENERIC
@@ -265,10 +264,10 @@
 		return JOB_UNAVAILABLE_GENERIC
 	return JOB_AVAILABLE
 
-/mob/dead/new_player/proc/AttemptLateSpawn(rank, obj/structure/overmap/ship/simulated/ship)
-	var/error = IsJobUnavailable(rank, ship)
+/mob/dead/new_player/proc/AttemptLateSpawn(datum/job/job, obj/structure/overmap/ship/simulated/ship)
+	var/error = IsJobUnavailable(job, ship)
 	if(error != JOB_AVAILABLE)
-		alert(src, get_job_unavailable_error_message(error, rank))
+		alert(src, get_job_unavailable_error_message(error, job))
 		return FALSE
 
 	if(SSticker.late_join_disabled)
@@ -276,20 +275,18 @@
 		return FALSE
 
 	//Removes a job slot
-	ship.job_slots[rank]--
+	ship.job_slots[job]--
 
 	//Remove the player from the join queue if he was in one and reset the timer
 	SSticker.queued_players -= src
 	SSticker.queue_delay = 4
 
-	SSjob.AssignRole(src, rank, 1)
+	SSjob.AssignRole(src, job, 1)
 
 	var/mob/living/character = create_character(TRUE)	//creates the human and transfers vars and mind
-	var/equip = SSjob.EquipRank(character, rank, TRUE)
+	var/equip = job.EquipRank(character)
 	if(isliving(equip))	//Borgs get borged in the equip, so we need to make sure we handle the new mob.
 		character = equip
-
-	var/datum/job/job = SSjob.GetJob(rank)
 
 	if(job && !job.override_latejoin_spawn(character))
 		SSjob.SendToLateJoin(character, destination = pick(ship.shuttle.spawn_points))
@@ -306,14 +303,14 @@
 		humanc = character	//Let's retypecast the var to be human,
 
 	if(humanc)	//These procs all expect humans
-		ship.manifest_inject(humanc, client)
+		ship.manifest_inject(humanc, client, job)
 		GLOB.data_core.manifest_inject(humanc, client)
-		AnnounceArrival(humanc, rank)
+		AnnounceArrival(humanc, job.title, ship)
 		AddEmploymentContract(humanc)
+
 		if(GLOB.highlander)
 			to_chat(humanc, "<span class='userdanger'><i>THERE CAN BE ONLY ONE!!!</i></span>")
 			humanc.make_scottish()
-
 		if(GLOB.summon_guns_triggered)
 			give_guns(humanc)
 		if(GLOB.summon_magic_triggered)
@@ -326,7 +323,10 @@
 	if(humanc && CONFIG_GET(flag/roundstart_traits))
 		SSquirks.AssignQuirks(humanc, humanc.client, TRUE)
 
-	log_manifest(character.mind.key,character.mind,character,latejoin = TRUE)
+	log_manifest(character.mind.key, character.mind, character, TRUE)
+
+	if(length(ship.job_slots) > 1 && ship.job_slots[1] == job) // if it's the "captain" equivalent job of the ship. checks to make sure it's not a one-job ship
+		minor_announce("[job.title] [character.real_name] on deck!", zlevel = ship.shuttle.virtual_z())
 
 /mob/dead/new_player/proc/AddEmploymentContract(mob/living/carbon/human/employee)
 	//TODO:  figure out a way to exclude wizards/nukeops/demons from this.
@@ -338,43 +338,56 @@
 /mob/dead/new_player/proc/LateChoices()
 	var/list/shuttle_choices = list("Purchase ship..." = "Purchase") //Dummy for purchase option
 
-	for(var/obj/structure/overmap/ship/simulated/S in SSovermap.overmap_objects)
-		if(length(S.shuttle.spawn_points) < 1)
+	for(var/obj/structure/overmap/ship/simulated/S as anything in SSovermap.simulated_ships)
+		if((length(S.shuttle.spawn_points) < 1) || !S.join_allowed)
 			continue
-		shuttle_choices[S.name + " ([S.shuttle.source_template.short_name ? S.shuttle.source_template.short_name : "Unknown-class"])"] = S //Try to get the class name
+		shuttle_choices[S.name + " ([S.source_template.short_name ? S.source_template.short_name : "Unknown-class"])"] = S //Try to get the class name
 
-	var/obj/structure/overmap/ship/simulated/selected_ship = shuttle_choices[tgui_input_list(src, "Select ship to spawn on.", "Welcome, [client.prefs.real_name].", shuttle_choices)]
+	var/obj/structure/overmap/ship/simulated/selected_ship = shuttle_choices[tgui_input_list(src, "Select ship to spawn on.", "Welcome, [client?.prefs.real_name || "User"].", shuttle_choices)]
 	if(!selected_ship)
 		return
 
 	if(selected_ship == "Purchase")
-		var/obj/docking_port/mobile/M = tgui_input_list(src, "Please select ship to purchase!", "Welcome, [client.prefs.real_name].", SSmapping.ship_purchase_list)
-		if(!M)
+		var/datum/map_template/shuttle/template = SSmapping.ship_purchase_list[tgui_input_list(src, "Please select ship to purchase!", "Welcome, [client.prefs.real_name].", SSmapping.ship_purchase_list)]
+		if(!template)
 			return LateChoices()
-		var/price = SSmapping.ship_purchase_list[M]
-		if(SSdbcore.IsConnected() && usr.client.get_metabalance() < price)
-			alert(src, "You have insufficient metabalance to cover this purchase! (Price: [price])")
-			return
+		if(template.limit)
+			var/count = 0
+			for(var/obj/structure/overmap/ship/simulated/X in SSovermap.simulated_ships)
+				if(X.source_template == template)
+					count++
+					if(template.limit <= count)
+						alert(src, "The ship limit of [template.limit] has been reached this round.")
+						return
 		close_spawn_windows()
-		to_chat(usr, "<span class='danger'>Your [M.name] is being prepared. Please be patient!</span>")
-		var/obj/docking_port/mobile/target = SSshuttle.action_load(M)
+		to_chat(usr, "<span class='danger'>Your [template.name] is being prepared. Please be patient!</span>")
+		var/obj/docking_port/mobile/target = SSshuttle.load_template(template)
 		if(!istype(target))
-			to_chat(usr, "<span class='danger'>There was an error loading the ship (You have not been charged). Please contact admins!</span>")
+			to_chat(usr, "<span class='danger'>There was an error loading the ship. Please contact admins!</span>")
+			new_player_panel()
 			return
-		usr.client.inc_metabalance(-price, TRUE, "buying [M.name]")
-		SSblackbox.record_feedback("tally", "ship_purchased", 1, M.name) //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+		SSblackbox.record_feedback("tally", "ship_purchased", 1, template.name) //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 		if(!AttemptLateSpawn(target.current_ship.job_slots[1], target.current_ship)) //Try to spawn as the first listed job in the job slots (usually captain)
 			to_chat(usr, "<span class='danger'>Ship spawned, but you were unable to be spawned. You can likely try to spawn in the ship through joining normally, but if not, please contact an admin.</span>")
 			new_player_panel()
 		return
 
+	if(selected_ship.memo)
+		var/memo_accept = tgui_alert(src, "Current ship memo: [selected_ship.memo]", "[selected_ship.name] Memo", list("OK", "Cancel"))
+		if(memo_accept == "Cancel")
+			return LateChoices() //Send them back to shuttle selection
+
 	var/list/job_choices = list()
-	for(var/job in selected_ship.job_slots)
+	for(var/datum/job/job as anything in selected_ship.job_slots)
 		if(selected_ship.job_slots[job] < 1)
 			continue
-		job_choices["[job] ([selected_ship.job_slots[job]] positions)"] = job
+		job_choices["[job.title] ([selected_ship.job_slots[job]] positions)"] = job
 
-	var/selected_job = job_choices[tgui_input_list(src, "Select job.", "Welcome, [client.prefs.real_name].", job_choices)]
+	if(!length(job_choices))
+		to_chat(usr, "<span class='danger'>There are no jobs available on this ship!</span>")
+		return LateChoices() //Send them back to shuttle selection
+
+	var/datum/job/selected_job = job_choices[tgui_input_list(src, "Select job.", "Welcome, [client.prefs.real_name].", job_choices)]
 	if(!selected_job)
 		return LateChoices() //Send them back to shuttle selection
 

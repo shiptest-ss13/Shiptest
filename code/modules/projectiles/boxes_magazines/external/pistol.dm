@@ -74,3 +74,12 @@
 	caliber = ".50"
 	max_ammo = 7
 	multiple_sprites = AMMO_BOX_PER_BULLET
+
+/obj/item/ammo_box/magazine/disposable
+	name = "part of a disposable gun"
+	desc = "You ripped out part of the gun, somehow, rendering it unusuable. I hope you're happy."
+	icon = 'whitesands/icons/obj/ammo.dmi'
+	icon_state = "45-8"
+	ammo_type = /obj/item/ammo_casing/c38
+	caliber = ".38"
+	max_ammo = 3

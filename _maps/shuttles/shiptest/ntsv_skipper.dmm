@@ -762,6 +762,22 @@
 	},
 /turf/open/floor/carpet/nanoweave,
 /area/ship/hallway/central)
+"ja" = (
+/obj/structure/cable/yellow{
+	icon_state = "1-8"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/ship/engineering/engine)
 "ji" = (
 /obj/machinery/door/airlock/external,
 /obj/machinery/atmospherics/pipe/layer_manifold{
@@ -796,12 +812,8 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/pipe/simple/orange/visible,
-/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
-	dir = 4
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel,
 /area/ship/engineering)
 "jE" = (
@@ -1386,6 +1398,12 @@
 /obj/effect/turf_decal/corner/yellow/half{
 	dir = 4
 	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
 /turf/open/floor/plasteel,
 /area/ship/engineering)
 "qJ" = (
@@ -1461,13 +1479,17 @@
 /turf/open/floor/plasteel,
 /area/ship/engineering)
 "rL" = (
-/obj/structure/table/optable,
 /obj/effect/turf_decal/corner/blue{
 	dir = 9
 	},
 /obj/effect/turf_decal/borderfloor{
 	dir = 4
 	},
+/obj/structure/table,
+/obj/item/book/manual/wiki/surgery,
+/obj/item/storage/box/gloves,
+/obj/item/storage/backpack/duffelbag/med/surgery,
+/obj/item/storage/belt/medical,
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "rP" = (
@@ -1954,7 +1976,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "zs" = (
-/obj/machinery/cryopod/latejoin,
+/obj/machinery/cryopod,
 /turf/open/floor/wood,
 /area/ship/crew)
 "zy" = (
@@ -2651,7 +2673,7 @@
 /obj/structure/window/reinforced/tinted{
 	dir = 1
 	},
-/obj/machinery/cryopod/latejoin,
+/obj/machinery/cryopod,
 /obj/machinery/light/small{
 	dir = 4
 	},
@@ -3066,6 +3088,22 @@
 	},
 /turf/open/floor/carpet/nanoweave/blue,
 /area/ship/medical)
+"Ld" = (
+/obj/structure/cable/yellow{
+	icon_state = "1-8"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 9
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 10
+	},
+/turf/open/floor/plating,
+/area/ship/engineering/engine)
 "Lf" = (
 /obj/machinery/atmospherics/pipe/simple/cyan/visible{
 	dir = 4
@@ -3822,14 +3860,12 @@
 /obj/effect/turf_decal/corner/blue{
 	dir = 5
 	},
-/obj/structure/table,
-/obj/item/book/manual/wiki/surgery,
-/obj/item/storage/backpack/duffelbag/med/surgery,
 /obj/structure/window/reinforced{
 	dir = 8
 	},
-/obj/item/storage/box/gloves,
-/obj/item/storage/belt/medical,
+/obj/machinery/computer/operating{
+	dir = 1
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "Vo" = (
@@ -3891,13 +3927,11 @@
 /turf/closed/wall/r_wall,
 /area/ship/engineering)
 "WI" = (
-/obj/machinery/computer/operating{
-	dir = 1
-	},
 /obj/effect/turf_decal/borderfloor,
 /obj/effect/turf_decal/corner/blue{
 	dir = 5
 	},
+/obj/structure/table/optable,
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "WS" = (
@@ -3985,6 +4019,7 @@
 	pixel_y = 4
 	},
 /obj/machinery/door/window/northleft,
+/obj/item/defibrillator/loaded,
 /turf/open/floor/plasteel,
 /area/ship/medical)
 "Yf" = (
@@ -4009,6 +4044,12 @@
 	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
 	},
 /turf/open/floor/plasteel,
 /area/ship/engineering/engine)
@@ -4347,7 +4388,7 @@ ea
 Cz
 SU
 sr
-ew
+ja
 rl
 ov
 Yh
@@ -4378,7 +4419,7 @@ sF
 Gq
 SU
 fT
-ew
+Ld
 FF
 ov
 NR

@@ -8,11 +8,11 @@
 	spawn_positions = 1
 	supervisors = "the captain"
 	selection_color = "#ffddf0"
-	req_admin_notify = 1
 	minimal_player_age = 7
 	exp_requirements = 180
 	exp_type = EXP_TYPE_CREW
 	exp_type_department = EXP_TYPE_MEDICAL
+	officer = TRUE
 	wiki_page = "Chief_Medical_Officer"
 
 	outfit = /datum/outfit/job/cmo
@@ -86,3 +86,12 @@
 	l_hand = null
 	suit_store = null
 	backpack_contents = list(/obj/item/melee/classic_baton/telescopic=1, /obj/item/storage/firstaid/medical=1, /obj/item/flashlight/pen=1)
+
+//Shiptest!
+/datum/outfit/job/cmo/syndicate/nsv
+	name = "Medical Director (NSV-M)"
+
+	uniform = /obj/item/clothing/under/syndicate
+	ears = /obj/item/radio/headset/syndicate/alt/leader
+	id = /obj/item/card/id/syndicate_command/captain_id
+	shoes = /obj/item/clothing/shoes/jackboots

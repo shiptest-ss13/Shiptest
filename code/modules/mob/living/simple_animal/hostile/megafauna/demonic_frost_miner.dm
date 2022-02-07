@@ -330,7 +330,7 @@ Difficulty: Extremely Hard
 	denied_type = /obj/item/crusher_trophy/ice_block_talisman
 
 /obj/item/crusher_trophy/ice_block_talisman/effect_desc()
-	return "mark detonation to freeze a creature in a block of ice for a period, preventing them from moving"
+	return "waveform collapse to freeze a creature in a block of ice for a period, preventing them from moving"
 
 /obj/item/crusher_trophy/ice_block_talisman/on_mark_detonation(mob/living/target, mob/living/user)
 	target.apply_status_effect(/datum/status_effect/ice_block_talisman)

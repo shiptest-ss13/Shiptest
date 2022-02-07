@@ -873,9 +873,6 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 		// so that the visual focus indicator matches reality.
 		winset(src, null, "input.background-color=[COLOR_INPUT_DISABLED]")
 
-	else
-		winset(src, null, "input.focus=true input.background-color=[COLOR_INPUT_ENABLED]")
-
 	..()
 
 /client/proc/add_verbs_from_config()
@@ -978,6 +975,8 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 					winset(src, "default-[REF(key)]", "parent=default;name=[key];command=looc")
 				if("Me")
 					winset(src, "default-[REF(key)]", "parent=default;name=[key];command=me")
+				if("Whisper")
+					winset(src, "default-[REF(key)]", "parent=default;name=[key];command=whisper")
 
 /client/proc/change_view(new_size)
 	if (isnull(new_size))

@@ -178,7 +178,7 @@
   * * vision_distance (optional) define how many tiles away the message can be seen.
   * * ignored_mob (optional) doesn't show any message to a given mob if TRUE.
   */
-/atom/proc/visible_message(message, self_message, blind_message, vision_distance = DEFAULT_MESSAGE_RANGE, list/ignored_mobs, visible_message_flags = NONE)
+/atom/proc/visible_message(message, self_message, blind_message, vision_distance = DEFAULT_MESSAGE_RANGE, list/ignored_mobs, visible_message_flags = NONE, separation = " ")
 	var/turf/T = get_turf(src)
 	if(!T)
 		return
@@ -193,7 +193,7 @@
 
 	var/raw_msg = message
 	if(visible_message_flags & EMOTE_MESSAGE)
-		message = "<span class='emote'><b>[src]</b> [message]</span>"
+		message = "<span class='emote'><b>[src]</b>[separation][message]</span>"
 
 	for(var/mob/M in hearers)
 		if(!M.client)
@@ -217,7 +217,7 @@
 
 
 ///Adds the functionality to self_message.
-/mob/visible_message(message, self_message, blind_message, vision_distance = DEFAULT_MESSAGE_RANGE, list/ignored_mobs, visible_message_flags = NONE)
+/mob/visible_message(message, self_message, blind_message, vision_distance = DEFAULT_MESSAGE_RANGE, list/ignored_mobs, visible_message_flags = NONE, separation = " ")
 	. = ..()
 	if(self_message)
 		show_message(self_message, MSG_VISUAL, blind_message, MSG_AUDIBLE)
@@ -232,13 +232,13 @@
   * * deaf_message (optional) is what deaf people will see.
   * * hearing_distance (optional) is the range, how many tiles away the message can be heard.
   */
-/atom/proc/audible_message(message, deaf_message, hearing_distance = DEFAULT_MESSAGE_RANGE, self_message, audible_message_flags = NONE, list/ignored_mobs)
+/atom/proc/audible_message(message, deaf_message, hearing_distance = DEFAULT_MESSAGE_RANGE, self_message, audible_message_flags = NONE, list/ignored_mobs, separation = " ")
 	var/list/hearers = get_hearers_in_view(hearing_distance, src)
 	if(self_message)
 		hearers -= src
 	var/raw_msg = message
 	if(audible_message_flags & EMOTE_MESSAGE)
-		message = "<span class='emote'><b>[src]</b> [message]</span>"
+		message = "<span class='emote'><b>[src]</b>[separation][message]</span>"
 	for(var/mob/M in hearers)
 		if(audible_message_flags & EMOTE_MESSAGE && runechat_prefs_check(M, audible_message_flags))
 			M.create_chat_message(src, raw_message = raw_msg, runechat_flags = audible_message_flags)
@@ -255,7 +255,7 @@
   * * deaf_message (optional) is what deaf people will see.
   * * hearing_distance (optional) is the range, how many tiles away the message can be heard.
   */
-/mob/audible_message(message, deaf_message, hearing_distance = DEFAULT_MESSAGE_RANGE, self_message, audible_message_flags = NONE, list/ignored_mobs)
+/mob/audible_message(message, deaf_message, hearing_distance = DEFAULT_MESSAGE_RANGE, self_message, audible_message_flags = NONE, list/ignored_mobs, separation = " ")
 	. = ..()
 	if(self_message)
 		show_message(self_message, MSG_AUDIBLE, deaf_message, MSG_VISUAL)
@@ -386,31 +386,6 @@
 			return 1
 
 	return 0
-
-// Convinience proc.  Collects crap that fails to equip either onto the mob's back, or drops it.
-// Used in job equipping so shit doesn't pile up at the start loc.
-/mob/living/carbon/human/proc/equip_or_collect(var/obj/item/W, var/slot)
-	if(W.mob_can_equip(src, null, slot, TRUE, TRUE))
-		//Mob can equip.  Equip it.
-		equip_to_slot_or_del(W, slot)
-	else
-		//Mob can't equip it.  Put it in a bag B.
-		// Do I have a backpack?
-		var/obj/item/storage/B
-		if(istype(back,/obj/item/storage))
-			//Mob is wearing backpack
-			B = back
-		else
-			//not wearing backpack.  Check if player holding box
-			if(!is_holding_item_of_type(/obj/item/storage/box)) //If not holding box, give box
-				B = new /obj/item/storage/box(null) // Null in case of failed equip.
-				if(!put_in_hands(B))
-					return // box could not be placed in players hands.  I don't know what to do here...
-			//Now, B represents a container we can insert W into.
-			var/datum/component/storage/STR = B.GetComponent(/datum/component/storage)
-			if(STR.can_be_inserted(W, stop_messages=TRUE))
-				STR.handle_item_insertion(W,1)
-			return B
 
 /**
   * Reset the attached clients perspective (viewpoint)
@@ -697,27 +672,36 @@
 	set name = "Respawn"
 	set category = "OOC"
 
-	if (CONFIG_GET(flag/norespawn))
-		return
-
-	if ((stat != DEAD || !( SSticker )))
+	if ((stat != DEAD || !( SSticker )) || !isobserver(usr))
 		to_chat(usr, "<span class='boldnotice'>You must be dead to use this!</span>")
 		return
 
 	var/respawn_timer = CONFIG_GET(number/respawn_timer)
-	if(respawn_timer)
-		if(!SSticker.respawn_timer[client])
-			to_chat(usr, "<span class='boldnotice'>You have begun your respawn timer. You will be allowed to Respawn in [DisplayTimeText(respawn_timer)]</span>")
-			SSticker.respawn_timer[client] = world.time + respawn_timer
+	if(!respawn_timer)
+		return
+
+	var/admin_bypass = FALSE
+	if(client?.holder)
+		var/poll_client = tgui_alert(usr, "Would you like to use your rank to bypass a potential respawn timer?", "Admin Alert", list("Yes", "No"))
+		if(poll_client == "Yes")
+			admin_bypass = TRUE
+			message_admins("[key_name_admin(usr)] has used admin permissions to bypass respawn restrictions.")
+			log_game("key_name(usr) used admin permissions to bypass respawn restrictions.")
+
+	if (CONFIG_GET(flag/norespawn) && !admin_bypass)
+		return
+
+	var/usrkey = client?.ckey
+	if(!usrkey)
+		log_game("[key_name(usr)] AM failed due to disconnect.")
+
+	if(GLOB.respawn_timers[usrkey] && !admin_bypass)
+		var/time_left = GLOB.respawn_timers[usrkey] + respawn_timer - world.timeofday
+		if(time_left > 0)
+			to_chat(usr, "<span class='boldnotice'>You still have [DisplayTimeText(time_left)] left before you can respawn.</span>")
 			return
 
-		var/left = round(SSticker.respawn_timer[client] - world.time)
-		if(left > 0)
-			to_chat(usr, "<span class='boldnotice'>You still have [DisplayTimeText(left)] left before you can respawn.</span>")
-			return
-
-		// Their timer is up, let them through
-		SSticker.respawn_timer -= client
+	GLOB.respawn_timers -= usrkey
 
 	log_game("[key_name(usr)] used abandon mob.")
 

@@ -22,6 +22,7 @@
 		/datum/language/sylvan,
 		/datum/language/shadowtongue,
 		/datum/language/terrum,
+		/datum/language/ratvar
 	))
 
 /obj/item/organ/tongue/Initialize(mapload)
@@ -87,7 +88,8 @@
 		/datum/language/sylvan,
 		/datum/language/shadowtongue,
 		/datum/language/terrum,
-		/datum/language/buzzwords
+		/datum/language/buzzwords,
+		/datum/language/ratvar
 	))
 
 /obj/item/organ/tongue/fly/handle_speech(datum/source, list/speech_args)
@@ -223,7 +225,8 @@
 		/datum/language/sylvan,
 		/datum/language/shadowtongue,
 		/datum/language/terrum,
-		/datum/language/calcic
+		/datum/language/calcic,
+		/datum/language/ratvar
 	))
 
 /obj/item/organ/tongue/bone/Initialize()
@@ -256,9 +259,11 @@
 	attack_verb = list("beeped", "booped")
 	modifies_speech = TRUE
 	taste_sensitivity = 25 // not as good as an organic tongue
+	var/static/list/languages_possible_robot = typecacheof(subtypesof(/datum/language))
 
-/obj/item/organ/tongue/robot/can_speak_language(language)
-	return TRUE // THE MAGIC OF ELECTRONICS
+/obj/item/organ/tongue/robot/Initialize(mapload)
+	. = ..()
+	languages_possible = languages_possible_robot
 
 /obj/item/organ/tongue/robot/emp_act(severity)
 	owner.apply_effect(EFFECT_STUTTER, 120)
@@ -293,7 +298,8 @@
 		/datum/language/aphasia,
 		/datum/language/narsie,
 		/datum/language/monkey,
-		/datum/language/shadowtongue
+		/datum/language/shadowtongue,
+		/datum/language/ratvar
 		))
 
 /obj/item/organ/tongue/squid/Initialize(mapload)
@@ -320,10 +326,35 @@
 		/datum/language/sylvan,
 		/datum/language/shadowtongue,
 		/datum/language/terrum,
-		/datum/language/voltaic
+		/datum/language/ratvar,
 	))
 
 /obj/item/organ/tongue/ethereal/Initialize(mapload)
 	. = ..()
 	languages_possible = languages_possible_ethereal
 
+/obj/item/organ/tongue/slime //I really can't be asked to make an icon for this. Besides nobody is ever going to pull your tongue out in the first place.
+	name = "slime 'tongue'"
+	desc = "A glob of slime that somehow lets slimepeople speak."
+	alpha = 150
+	say_mod = "blorbles"
+	var/static/list/languages_possible_slime = typecacheof(list(
+		/datum/language/common,
+		/datum/language/draconic,
+		/datum/language/codespeak,
+		/datum/language/monkey,
+		/datum/language/narsie,
+		/datum/language/beachbum,
+		/datum/language/aphasia,
+		/datum/language/piratespeak,
+		/datum/language/moffic,
+		/datum/language/sylvan,
+		/datum/language/shadowtongue,
+		/datum/language/terrum,
+		/datum/language/ratvar,
+		/datum/language/slime
+	))
+
+/obj/item/organ/tongue/slime/Initialize(mapload)
+	. = ..()
+	languages_possible = languages_possible_slime

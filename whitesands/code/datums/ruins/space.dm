@@ -33,7 +33,7 @@
 	id = "transport18"
 	suffix = "transport18.dmm"
 	name = "Booze Cruise"
-	description = "A freighter, damaged beyond repair and surrounded by a cloud of aluminum and... beer foam?"
+	description = "A freighter, damaged beyond repair and surrounded by a cloud of aluminium and... beer foam?"
 
 /datum/map_template/ruin/space/fueldepot
 	id = "fueldepot"
@@ -53,8 +53,14 @@
 	name = "Abandoned Facility"
 	description = "A NT research station. Something has gone horribly wrong here."
 
-/datum/map_template/ruin/space/solgovhistory
-	id = "solgovhistory"
-	suffix = "solgovhistory.dmm"
-	name = "Abandoned Museum"
-	description = "A abandoned musuem dedicated to the long history of SolGov. Who the hell puts live bullets in a musuem is beyond anyone, but the salvagers aren't complaining."
+/datum/map_template/ruin/space/astraeus
+	id = "astraeus"
+	suffix = "astraeus.dmm"
+	name = "Astraeus Ruin"
+	description = "This vessel served a lengthy period in the Nanotrasen fleet, before an accident in the munitions bay caused to to be destroyed while in active combat."
+
+/datum/map_template/ruin/space/glade
+	id = "dark_glade"
+	suffix = "dark_glade.dmm"
+	name = "Dark Glade"
+	description = "It's always dark in the ancient glade."

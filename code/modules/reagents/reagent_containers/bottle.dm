@@ -273,6 +273,12 @@
 	desc = "A small bottle containing Bio Virus Antidote Kit."
 	list_reagents = list(/datum/reagent/vaccine/fungal_tb = 30)
 
+/obj/item/reagent_containers/glass/bottle/necropolis_seed
+	name = "bowl of blood"
+	desc = "A clay bowl containing a fledgling spire, preserved in blood. When consumed, allows the user to transform into an avatar of the Necropolis. A robust virologist may be able to unlock its full potential..."
+	icon_state = "mortar_bone"
+	spawned_disease = /datum/disease/advance/necropolis
+
 //Oldstation.dmm chemical storage bottles
 
 /obj/item/reagent_containers/glass/bottle/hydrogen
@@ -378,3 +384,8 @@
 /obj/item/reagent_containers/glass/bottle/thermite
 	name = "thermite bottle"
 	list_reagents = list(/datum/reagent/thermite = 30)
+
+/obj/item/reagent_containers/glass/bottle/nitroglycerin
+	name = "nitroglycerin bottle"
+	desc = "A small bottle. A red warning label alerts you to the fact that it contains nitrated glycerol."
+	list_reagents = list(/datum/reagent/nitroglycerin = 30)

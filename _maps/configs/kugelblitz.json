@@ -1,12 +1,30 @@
 {
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
+	"prefix": "SEV",
+	"namelists": ["GENERAL", "NATURAL", "BEASTS", "ENGINEERING"],
 	"map_name": "Kugelblitz-class Experimental Vessel",
+	"prefix": "SEV",
 	"map_short_name": "Kugelblitz-class",
 	"map_path": "_maps/shuttles/shiptest/engi_moth.dmm",
 	"map_id": "engi_moth",
+	"limit": 1,
 	"job_slots": {
-		"Chief Engineer": 1,
-		"Station Engineer": 5,
-		"Atmospherics Technician": 2
+		"Project Overseer": {
+			"outfit": "/datum/outfit/job/ce/gec",
+			"slots": 1
+		},
+		"Ship Engineer": {
+			"outfit": "/datum/outfit/job/engineer/gec",
+			"slots": 3
+		},
+		"Atmospheric Technician": {
+			"outfit": "/datum/outfit/job/atmos/gec",
+			"slots": 2
+		},
+		"Chemical Engineer": {
+			"outfit": "/datum/outfit/job/chemist/gec",
+			"slots": 1
+		}
 	},
 	"cost": 750
 }

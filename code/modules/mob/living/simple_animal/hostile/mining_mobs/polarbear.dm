@@ -12,8 +12,8 @@
 	speak_emote = list("growls")
 	speed = 12
 	move_to_delay = 12
-	maxHealth = 300
-	health = 300
+	maxHealth = 200
+	health = 200
 	obj_damage = 40
 	melee_damage_lower = 25
 	melee_damage_upper = 25
@@ -28,7 +28,7 @@
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/bear = 3, /obj/item/stack/sheet/bone = 2)
 	guaranteed_butcher_results = list(/obj/item/stack/sheet/animalhide/goliath_hide/polar_bear_hide = 1)
 	loot = list()
-	crusher_loot = /obj/item/crusher_trophy/goliath_tentacle
+	crusher_loot = /obj/item/crusher_trophy/bear_paw
 	stat_attack = HARD_CRIT
 	robust_searching = TRUE
 	footstep_type = FOOTSTEP_MOB_CLAW
@@ -37,17 +37,19 @@
 
 /mob/living/simple_animal/hostile/asteroid/polarbear/adjustHealth(amount, updating_health = TRUE, forced = FALSE)
 	. = ..()
-	if(health > maxHealth*0.5)
+	if(health > maxHealth*0.3)
 		rapid_melee = initial(rapid_melee)
 		return
 	if(!aggressive_message_said && target)
-		visible_message("<span class='danger'>The [name] gets an enraged look at [target]!</span>")
+		visible_message("<span class='danger'>The [name] looks at [target] with an expression of rage!</span>")
 		aggressive_message_said = TRUE
 	rapid_melee = 2
+	speed = 7
+	move_to_delay = 7
 
 /mob/living/simple_animal/hostile/asteroid/polarbear/Life()
 	. = ..()
-	if(!. || target)
+	if(target)
 		return
 	adjustHealth(-maxHealth*0.025)
 	aggressive_message_said = FALSE
@@ -62,3 +64,66 @@
 	name = "magic polar bear"
 	desc = "It seems sentient somehow."
 	faction = list("neutral")
+
+/obj/item/crusher_trophy/bear_paw
+	name = "polar bear paw"
+	desc = "It's a polar bear paw."
+	icon_state = "bear_paw"
+	icon ='icons/obj/lavaland/elite_trophies.dmi'
+	denied_type = /obj/item/crusher_trophy/bear_paw
+
+/obj/item/crusher_trophy/bear_paw/effect_desc()
+	return "doubled strikes when below 50% health"
+
+/obj/item/crusher_trophy/bear_paw/on_mark_detonation(mob/living/target, mob/living/user)
+	if(user.health / user.maxHealth > 0.5)
+		return
+	var/obj/item/I = user.get_active_held_item()
+	if(!I)
+		return
+	I.melee_attack_chain(user, target, null)
+
+//elite bear
+/mob/living/simple_animal/hostile/asteroid/polarbear/warrior
+	name = "polar warbear"
+	desc = "An aggressive animal that defends its territory with incredible power. This one appears to be a remnant of the short-lived Wojtek-Aleph program."
+	melee_damage_lower = 35
+	melee_damage_upper = 35
+	attack_verb_continuous = "CQB's"
+	attack_verb_simple = "CQB"
+	speed = 7
+	move_to_delay = 7
+	maxHealth = 300
+	health = 300
+	obj_damage = 60
+	icon_state = "warbear"
+	icon_living = "warbear"
+	icon_dead = "warbear_dead"
+	crusher_loot = /obj/item/crusher_trophy/war_paw
+	crusher_drop_mod = 75
+	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/bear = 3, /obj/item/stack/sheet/bone = 2, /obj/item/stack/sheet/animalhide/goliath_hide/polar_bear_hide = 3)
+	guaranteed_butcher_results = list(/obj/item/stack/sheet/animalhide/goliath_hide/polar_bear_hide = 3, /obj/item/bear_armor = 1)
+
+/obj/item/crusher_trophy/war_paw
+	name = "Armored bear paw"
+	desc = "It's a paw from a true warrior. Still remembers the basics of CQB."
+	icon_state = "armor_paw"
+	icon ='icons/obj/lavaland/elite_trophies.dmi'
+	denied_type = /obj/item/crusher_trophy/war_paw
+
+/obj/item/crusher_trophy/war_paw/effect_desc()
+	return "doubled strikes when below 70% health"
+
+/obj/item/crusher_trophy/war_paw/on_mark_detonation(mob/living/target, mob/living/user)
+	if(user.health / user.maxHealth > 0.7)
+		return
+	var/obj/item/I = user.get_active_held_item()
+	if(!I)
+		return
+	I.melee_attack_chain(user, target, null)
+
+/mob/living/simple_animal/hostile/asteroid/polarbear/random/Initialize()
+	. = ..()
+	if(prob(15))
+		new /mob/living/simple_animal/hostile/asteroid/polarbear/warrior(loc)
+		return INITIALIZE_HINT_QDEL

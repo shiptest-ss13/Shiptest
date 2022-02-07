@@ -19,7 +19,7 @@
 /datum/computer_file/program/robocontrol/ui_data(mob/user)
 	var/list/data = get_header_data()
 	var/turf/current_turf = get_turf(ui_host())
-	var/zlevel = current_turf.get_virtual_z_level()
+	var/zlevel = current_turf.virtual_z()
 	var/list/botlist = list()
 	var/list/mulelist = list()
 
@@ -36,7 +36,7 @@
 
 	for(var/B in GLOB.bots_list)
 		var/mob/living/simple_animal/bot/Bot = B
-		if(!Bot.on || Bot.get_virtual_z_level() != zlevel || Bot.remote_disabled) //Only non-emagged bots on the same Z-level are detected!
+		if(!Bot.on || Bot.virtual_z() != zlevel || Bot.remote_disabled) //Only non-emagged bots on the same Z-level are detected!
 			continue
 		else if(computer) //Also, the inserted ID must have access to the bot type
 			var/obj/item/card/id/id_card = card_slot ? card_slot.stored_card : null
@@ -84,7 +84,6 @@
 			if(!computer || !card_slot)
 				return
 			if(id_card)
-				GLOB.data_core.manifest_modify(id_card.registered_name, id_card.assignment)
 				card_slot.try_eject(TRUE, current_user)
 			else
 				playsound(get_turf(ui_host()) , 'sound/machines/buzz-sigh.ogg', 25, FALSE)

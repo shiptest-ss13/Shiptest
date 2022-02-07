@@ -34,9 +34,6 @@
 	var/selection_color = "#ffffff"
 
 
-	//If this is set to 1, a text is printed to the player when jobs are assigned, telling him that he should let admins know that he has to disconnect.
-	var/req_admin_notify
-
 	//If you have the use_age_restriction_for_jobs config option enabled and the database set up, this option will add a requirement for players to be at least minimal_player_age days old. (meaning they first signed in at least that many days before.)
 	var/minimal_player_age = 0
 
@@ -47,10 +44,7 @@
 	var/exp_type = ""
 	var/exp_type_department = ""
 
-	//A special, very large and noticeable message for certain roles reminding them of something important. Ex: "Blueshields are not security"
-	var/special_notice = ""
-
-	// A link to the relevant wiki related to the job. Ex: "Space_law" would link to wiki.blah/Space_law
+	/// A link to the relevant wiki related to the job. Ex: "Space_law" would link to wiki.blah/Space_law
 	var/wiki_page = ""
 
 	//The amount of good boy points playing this role will earn you towards a higher chance to roll antagonist next round
@@ -67,27 +61,19 @@
 
 	///Levels unlocked at roundstart in physiology
 	var/list/roundstart_experience
-	/// Should this job be allowed to be picked for the bureaucratic error event?
-	var/allow_bureaucratic_error = TRUE
 
-/datum/job/New()
-	. = ..()
-	var/list/jobs_changes = GetMapChanges()
-	if(!jobs_changes)
-		return
-	if(isnum(jobs_changes["additional_access"]))
-		access += jobs_changes["additional_access"]
-	if(isnum(jobs_changes["additional_minimal_access"]))
-		minimal_access += jobs_changes["additional_minimal_access"]
-	if(isnum(jobs_changes["spawn_positions"]))
-		spawn_positions = jobs_changes["spawn_positions"]
-	if(isnum(jobs_changes["total_positions"]))
-		total_positions = jobs_changes["total_positions"]
+	///Basically determines whether or not more of the job can be opened.
+	var/officer = FALSE
+
+/datum/job/New(new_title, datum/outfit/new_outfit)
+	if(new_title)
+		title = new_title
+		outfit = new_outfit
 
 //Only override this proc
 //H is usually a human unless an /equip override transformed it
 //do actions on H but send messages to M as the key may not have been transferred_yet
-/datum/job/proc/after_spawn(mob/living/H, mob/M, latejoin = FALSE)
+/datum/job/proc/after_spawn(mob/living/H, mob/M)
 	//do actions on H but send messages to M as the key may not have been transferred_yet
 	if(mind_traits)
 		for(var/t in mind_traits)
@@ -97,73 +83,19 @@
 		for(var/i in roundstart_experience)
 			experiencer.mind.adjust_experience(i, roundstart_experience[i], TRUE)
 
-
-	if(!ishuman(H))
+	if(!iscarbon(H))
 		return
-	var/mob/living/carbon/human/human = H
-	var/list/gear_leftovers
-	if(M.client && (M.client.prefs.equipped_gear && M.client.prefs.equipped_gear.len))
+	var/mob/living/carbon/spawnee = H
+	if(M.client && (M.client.prefs.equipped_gear && length(M.client.prefs.equipped_gear)))
+		var/obj/item/storage/box/loadout_dumper = new()
 		for(var/gear in M.client.prefs.equipped_gear)
-			var/datum/gear/G = GLOB.gear_datums[gear]
-			if(G)
-				var/permitted = FALSE
-
-				if(G.allowed_roles && H.mind && (H.mind.assigned_role in G.allowed_roles))
-					permitted = TRUE
-				else if(!G.allowed_roles)
-					permitted = TRUE
-				else
-					permitted = FALSE
-
-				if(G.species_blacklist && (human.dna.species.id in G.species_blacklist))
-					permitted = FALSE
-
-				if(G.species_whitelist && !(human.dna.species.id in G.species_whitelist))
-					permitted = FALSE
-
-				if(!permitted)
-					to_chat(M, "<span class='warning'>Your current species or role does not permit you to spawn with [gear]!</span>")
-					continue
-				//WS Edit - Fix Loadout Uniforms not spawning ID/PDA
-				if(G.slot == ITEM_SLOT_ICLOTHING)
-					continue // Handled in pre_equip
-				//EndWS Edit - Fix Loadout Uniforms not spawning ID/PDA
-				if(G.slot)
-					if(!H.equip_to_slot_or_del(G.spawn_item(H, owner = H), G.slot))
-						LAZYADD(gear_leftovers, G)
-				else
-					LAZYADD(gear_leftovers, G)
-			else
-				M.client.prefs.equipped_gear -= gear
-
-	if(gear_leftovers?.len)
-		for(var/datum/gear/G in gear_leftovers)
-			var/metadata = M.client.prefs.equipped_gear[G.display_name]
-			var/item = G.spawn_item(null, metadata, owner = H)
-			var/atom/placed_in = human.equip_or_collect(item)
-
-			if(istype(placed_in))
-				if(isturf(placed_in))
-					to_chat(M, "<span class='notice'>Placing [G.display_name] on [placed_in]!</span>")
-				else
-					to_chat(M, "<span class='noticed'>Placing [G.display_name] in [placed_in.name]]")
-				continue
-
-			if(H.equip_to_appropriate_slot(item))
-				to_chat(M, "<span class='notice'>Placing [G.display_name] in your inventory!</span>")
-				continue
-			if(H.put_in_hands(item))
-				to_chat(M, "<span class='notice'>Placing [G.display_name] in your hands!</span>")
-				continue
-
-			var/obj/item/storage/B = (locate() in H)
-			if(B)
-				G.spawn_item(B, metadata, owner = H)
-				to_chat(M, "<span class='notice'>Placing [G.display_name] in [B.name]!</span>")
-				continue
-
-			to_chat(M, "<span class='danger'>Failed to locate a storage object on your mob, either you spawned with no hands free and no backpack or this is a bug.</span>")
-			qdel(item)
+			var/datum/gear/new_gear = GLOB.gear_datums[gear]
+			new_gear.spawn_item(loadout_dumper, spawnee)
+		var/datum/component/storage/back_storage = spawnee.back.GetComponent(/datum/component/storage)
+		if(back_storage)
+			back_storage.handle_item_insertion(loadout_dumper, TRUE)
+		else if(!spawnee.put_in_hands(loadout_dumper, TRUE))
+			to_chat("Unable to place loadout box.")
 
 /datum/job/proc/announce(mob/living/carbon/human/H)
 	if(head_announce)
@@ -181,12 +113,59 @@
 	if(. == null)
 		return antag_rep
 
+
+//Gives the player the stuff he should have with his rank
+/datum/job/proc/EquipRank(mob/living/living_mob)
+	living_mob.job = title
+
+	SEND_SIGNAL(living_mob, COMSIG_JOB_RECEIVED, living_mob.job)
+
+	if(living_mob.mind)
+		living_mob.mind.assigned_role = title
+
+	var/display_rank = title
+	if(living_mob.client.prefs && living_mob.client.prefs.alt_titles_preferences[title])
+		display_rank = living_mob.client.prefs.alt_titles_preferences[title]
+
+	to_chat(living_mob, "<b>You are the [display_rank].</b>")
+
+	var/new_mob = equip(living_mob, null, null, null, living_mob.client)//silicons override this proc to return a mob
+	if(ismob(new_mob))
+		living_mob = new_mob
+
+	SSpersistence.antag_rep_change[living_mob.client.ckey] += GetAntagRep()
+
+	if(living_mob.client.holder)
+		if(CONFIG_GET(flag/auto_deadmin_players) || (living_mob.client.prefs?.toggles & DEADMIN_ALWAYS))
+			living_mob.client.holder.auto_deadmin()
+		else
+			SSjob.handle_auto_deadmin_roles(living_mob.client, title)
+
+	to_chat(living_mob, "<b>As the [display_rank] you answer directly to [supervisors]. Special circumstances may change this.</b>")
+	radio_help_message(living_mob)
+	//WS Begin - Wikilinks
+	if(wiki_page)
+		to_chat(living_mob, "<span class='notice'><a href=[CONFIG_GET(string/wikiurl)]/[wiki_page]>Wiki Page</a></span>")
+	//WS End
+
+	var/related_policy = get_policy(title)
+	if(related_policy)
+		to_chat(living_mob,related_policy)
+	if(ishuman(living_mob))
+		var/mob/living/carbon/human/wageslave = living_mob
+		living_mob.add_memory("Your account ID is [wageslave.account_id].")
+	if(living_mob)
+		after_spawn(living_mob, living_mob) // note: this happens before the mob has a key! living_mob will always have a client, H might not.
+
+	return living_mob
+
+
 //Don't override this unless the job transforms into a non-human (Silicons do this for example)
-/datum/job/proc/equip(mob/living/carbon/human/H, visualsOnly = FALSE, announce = TRUE, latejoin = FALSE, datum/outfit/outfit_override = null, client/preference_source)
+/datum/job/proc/equip(mob/living/carbon/human/H, visualsOnly = FALSE, announce = TRUE, datum/outfit/outfit_override = null, client/preference_source)
 	if(!H)
 		return FALSE
 	if(CONFIG_GET(flag/enforce_human_authority) && (title in GLOB.command_positions))
-		if(H.dna.species.id != "human")
+		if(H.dna.species.id != SPECIES_HUMAN)
 			H.set_species(/datum/species/human)
 			H.apply_pref_name("human", preference_source)
 	if(!visualsOnly)
@@ -332,21 +311,6 @@
 				holder = "[alt_uniform]"
 		if(PREF_GREYSUIT)
 			holder = "/obj/item/clothing/under/color/grey"
-		//WS Edit - Fix Loadout Uniforms not spawning ID/PDA
-		if(PREF_LOADOUT)
-			if (preference_source == null)
-				holder = "[uniform]" // Who are we getting the loadout pref from anyways?
-			else
-				var/datum/pref_loadout_uniform = null
-				for(var/gear in preference_source.prefs.equipped_gear)
-					var/datum/gear/G = GLOB.gear_datums[gear]
-					if (G.slot == ITEM_SLOT_ICLOTHING)
-						pref_loadout_uniform = G.path
-				if (pref_loadout_uniform == null)
-					holder = "[uniform]"
-				else
-					uniform = pref_loadout_uniform
-		// EndWS Edit - Fix Loadout Uniforms not spawning ID/PDA
 		else
 			holder = "[uniform]"
 
@@ -387,12 +351,12 @@
 		C.access = J.get_access()
 		shuffle_inplace(C.access) // Shuffle access list to make NTNet passkeys less predictable
 		C.registered_name = H.real_name
-		//WS begin - Alt job titles
-		if(preference_source && preference_source.prefs && preference_source.prefs.alt_titles_preferences[J.title])
+		if(H.job)
+			C.assignment = H.job
+		else if(preference_source && preference_source.prefs && preference_source.prefs.alt_titles_preferences[J.title])
 			C.assignment = preference_source.prefs.alt_titles_preferences[J.title]
 		else
 			C.assignment = J.title
-		//WS end
 		if(H.age)
 			C.registered_age = H.age
 		C.update_label()
@@ -407,12 +371,12 @@
 	var/obj/item/pda/PDA = H.get_item_by_slot(pda_slot)
 	if(istype(PDA))
 		PDA.owner = H.real_name
-		//WS begin - Alt job titles
-		if(preference_source && preference_source.prefs && preference_source.prefs.alt_titles_preferences[J.title])
+		if(H.job)
+			PDA.ownjob = H.job
+		else if(preference_source && preference_source.prefs && preference_source.prefs.alt_titles_preferences[J.title])
 			PDA.ownjob = preference_source.prefs.alt_titles_preferences[J.title]
 		else
 			PDA.ownjob = J.title
-		//WS end
 		PDA.update_label()
 
 /datum/outfit/job/get_chameleon_disguise_info()

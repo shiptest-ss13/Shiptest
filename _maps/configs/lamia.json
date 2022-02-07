@@ -4,12 +4,35 @@
 	"map_path": "_maps/shuttles/shiptest/lamia.dmm",
 	"map_id": "lamia",
 	"job_slots": {
-		"Bartender": 1,
-		"Cook": 1,
-		"Shaft Miner": 1,
-		"Station Engineer": 1,
-		"Curator": 1,
-		"Assistant":  5
+		"Alchemist": {
+			"outfit": "/datum/outfit/job/bartender",
+			"officer": true,
+			"slots": 1
+		},
+		"Gastronomer": {
+			"outfit": "/datum/outfit/job/cook",
+			"slots": 1
+		},
+		"Lorekeeper": {
+			"outfit": "/datum/outfit/job/curator/dungeonmaster",
+			"slots": 1
+		},
+		"Geomancer": {
+			"outfit": "/datum/outfit/job/miner",
+			"slots": 1
+		},
+		"Allomancer": {
+			"outfit": "/datum/outfit/job/engineer",
+			"slots": 1
+		},
+		"Scholar": {
+			"outfit": "/datum/outfit/job/scientist",
+			"slots": 1
+		},
+		"Apprentice": {
+			"outfit": "/datum/outfit/job/assistant",
+			"slots": 5
+		}
 	},
 	"cost": 777
 }

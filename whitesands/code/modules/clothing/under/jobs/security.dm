@@ -14,8 +14,8 @@
  */
 
 /obj/item/clothing/under/rank/security
-	icon = 'whitesands/icons/obj/clothing/under/security.dmi'
-	mob_overlay_icon = 'whitesands/icons/mob/clothing/under/security.dmi'
+	icon = 'icons/obj/clothing/under/security.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/under/security.dmi'
 
 // Security Officer //
 /obj/item/clothing/under/rank/security/officer
@@ -36,6 +36,7 @@
 	body_parts_covered = CHEST|GROIN|ARMS
 	can_adjust = FALSE //you know now that i think of it if you adjust the skirt and the sprite disappears isn't that just like flashing everyone
 	fitted = FEMALE_UNIFORM_TOP
+	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON
 
 // Detective//
 /obj/item/clothing/under/rank/security/detective
@@ -56,6 +57,7 @@
 	body_parts_covered = CHEST|GROIN|ARMS
 	can_adjust = FALSE
 	fitted = FEMALE_UNIFORM_TOP
+	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON
 
 /obj/item/clothing/under/rank/security/detective/grey
 	name = "noir suit"
@@ -71,6 +73,7 @@
 	body_parts_covered = CHEST|GROIN|ARMS
 	can_adjust = FALSE
 	fitted = FEMALE_UNIFORM_TOP
+	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON
 
 // Brig Physician //
 /obj/item/clothing/under/rank/security/brig_phys
@@ -85,6 +88,7 @@
 	body_parts_covered = CHEST|GROIN|ARMS
 	can_adjust = FALSE
 	fitted = FEMALE_UNIFORM_TOP
+	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON
 
 /obj/item/clothing/under/rank/security/brig_phys/security_medic
 	name = "security medic's uniform"
@@ -98,6 +102,7 @@
 	icon_state = "security_medic_skirt"
 	body_parts_covered = CHEST|GROIN|ARMS
 	can_adjust = FALSE
+	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON
 
 // Warden //
 /obj/item/clothing/under/rank/security/warden
@@ -117,6 +122,7 @@
 	body_parts_covered = CHEST|GROIN|ARMS
 	can_adjust = FALSE
 	fitted = FEMALE_UNIFORM_TOP
+	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON
 
 // Head of Security //
 /obj/item/clothing/under/rank/security/head_of_security
@@ -136,6 +142,7 @@
 	body_parts_covered = CHEST|GROIN|ARMS
 	can_adjust = FALSE
 	fitted = FEMALE_UNIFORM_TOP
+	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON
 
 /obj/item/clothing/under/rank/security/head_of_security/alt
 	name = "head of security's turtleneck"
@@ -151,6 +158,7 @@
 	body_parts_covered = CHEST|GROIN|ARMS
 	can_adjust = FALSE
 	fitted = FEMALE_UNIFORM_TOP
+	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON
 
 /obj/item/clothing/under/rank/security/head_of_security/parade
 	name = "head of security's parade uniform"
@@ -185,12 +193,11 @@
 	body_parts_covered = CHEST|GROIN|ARMS
 	can_adjust = FALSE
 	fitted = FEMALE_UNIFORM_TOP
+	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON
 
 /obj/item/clothing/under/rank/prisoner/protected_custody
 	name = "protected custody jumpsuit"
 	desc = "It's standardised Nanotrasen prisoner-wear worn by those in protected custody. Its suit sensors are stuck in the \"Fully On\" position."
-	icon = 'whitesands/icons/obj/clothing/under/security.dmi'
-	mob_overlay_icon = 'whitesands/icons/mob/clothing/under/security.dmi'
 	icon_state = "protected_custody"
 	fitted = NO_FEMALE_UNIFORM
 
@@ -198,6 +205,7 @@
 	name = "protected custody jumpskirt"
 	desc = "It's standardised Nanotrasen prisoner-wear worn by those in protected custody. Its suit sensors are stuck in the \"Fully On\" position."
 	icon_state = "protected_custody_skirt"
+	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON
 
 // Non-official //
 /obj/item/clothing/under/rank/security/old

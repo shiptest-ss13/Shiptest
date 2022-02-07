@@ -213,16 +213,18 @@
 		visible_message("<span class='notice'>[usr] pries open [src].</span>", "<span class='notice'>You pry open [src].</span>")
 		open_machine()
 
-/obj/machinery/sleeper/ui_state(mob/user)
-	if(controls_inside)
-		return GLOB.notcontained_state
-	return GLOB.default_state
-
 /obj/machinery/sleeper/ui_interact(mob/user, datum/tgui/ui)
+	if(src.contains(user) && !controls_inside)
+		return
 	ui = SStgui.try_update_ui(user, src, ui)
 	if(!ui)
 		ui = new(user, src, "Sleeper", name)
 		ui.open()
+
+/obj/machinery/sleeper/ui_state(mob/user)
+	if(controls_inside)
+		return GLOB.notcontained_state
+	return GLOB.default_state
 
 /obj/machinery/sleeper/AltClick(mob/user)
 	if(!user.canUseTopic(src, !issilicon(user)))
@@ -245,6 +247,8 @@
 	open_machine()
 
 /obj/machinery/sleeper/ui_data(mob/user)
+	if(src.contains(user) && !controls_inside)
+		return
 	var/list/data = list()
 	data["occupied"] = occupant ? 1 : 0
 	data["open"] = state_open

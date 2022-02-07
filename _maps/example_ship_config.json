@@ -1,0 +1,21 @@
+{
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
+	"map_name": "Example-class Experimental Ship",
+	"map_short_name": "Test-class",
+	"prefix": "STSV",
+	"namelists": ["GENERAL", "SPACE", "FANTASY", "WEAPONS"],
+	"map_path": "_maps/shuttles/shiptest/null.dmm",
+	"job_slots": {
+		"The First Slot will always be the 'captain' that the purchaser becomes.": {
+			"outfit": "/datum/outfit/job/captain",
+			"officer": true,
+			"slots": 1
+		},
+		"Second Custom Job showing minimum possible arguments": {
+			"outfit": "/datum/outfit/job",
+			"slots": 2
+		},
+		"Assistant": 3
+	},
+	"cost": 99999999
+}

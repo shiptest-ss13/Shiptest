@@ -293,14 +293,6 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 	GLOB.newplayer_start += loc
 	return INITIALIZE_HINT_QDEL
 
-/obj/effect/landmark/latejoin
-	name = "JoinLate"
-
-/obj/effect/landmark/latejoin/Initialize(mapload)
-	..()
-	SSjob.latejoin_trackers += loc
-
-
 //space carps, magicarps, lone ops, slaughter demons, possibly revenants spawn here
 /obj/effect/landmark/carpspawn
 	name = "carpspawn"
@@ -321,7 +313,6 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 	GLOB.xeno_spawn += loc
 	return INITIALIZE_HINT_QDEL
 
-//objects with the stationloving component (nuke disk) respawn here.
 //also blobs that have their spawn forcemoved (running out of time when picking their spawn spot), santa and respawning devils
 /obj/effect/landmark/blobstart
 	name = "blobstart"

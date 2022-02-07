@@ -142,7 +142,6 @@
 	var/disable_sensors = TRUE
 	//All of these only affect the ID that the outfit has placed in the ID slot
 	var/id_job = null			//Such as "Clown" or "Chef." This just determines what the ID reads as, not their access
-	var/id_access = null		//This is for access. See access.dm for which jobs give what access. Use "Captain" if you want it to be all access.
 	var/id_access_list = null	//Allows you to manually add access to an ID card.
 	assignedrole = "Ghost Role"
 
@@ -225,12 +224,6 @@
 	if(W)
 		if(H.age)
 			W.registered_age = H.age
-		if(id_access)
-			for(var/jobtype in typesof(/datum/job))
-				var/datum/job/J = new jobtype
-				if(J.title == id_access)
-					W.access = J.get_access()
-					break
 		if(id_access_list)
 			if(!islist(W.access))
 				W.access = list()
@@ -387,11 +380,28 @@
 /obj/effect/mob_spawn/human/miner/explorer
 	outfit = /datum/outfit/job/miner/equipped
 
+/obj/effect/mob_spawn/human/miner/old
+	outfit = /datum/outfit/job/miner/old
 
 /obj/effect/mob_spawn/human/plasmaman
 	mob_species = /datum/species/plasmaman
 	outfit = /datum/outfit/plasmaman
 
+/obj/effect/mob_spawn/human/botanist
+	outfit = /datum/outfit/job/botanist
+	icon_state = "corpsehuman"
+
+/obj/effect/mob_spawn/human/sec
+	outfit = /datum/outfit/job/security
+	icon_state = "corpsehuman"
+
+/obj/effect/mob_spawn/human/hop
+	outfit = /datum/outfit/job/head_of_personnel
+	icon_state = "corpsehuman"
+
+/obj/effect/mob_spawn/human/janitor
+	outfit = /datum/outfit/job/janitor
+	icon_state = "corpsehuman"
 
 /obj/effect/mob_spawn/human/bartender
 	name = "Space Bartender"

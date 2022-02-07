@@ -5,7 +5,6 @@
 	total_positions = 2
 	spawn_positions = 2
 	supervisors = "the head of personnel"
-	special_notice = "You are not a security officer. However, you represent the law and can defend those who are mishandled by security in court." //WS Edit - Wikilinks/Warning
 	wiki_page = "Lawyer" //WS Edit - Wikilinks/Warning
 	selection_color = "#bbe291"
 	var/lawyers = 0 //Counts lawyer amount
@@ -35,19 +34,6 @@
 	r_pocket = /obj/item/clothing/accessory/lawyers_badge
 
 	chameleon_extras = /obj/item/stamp/law
-
-
-/datum/outfit/job/lawyer/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
-	..()
-	if(visualsOnly)
-		return
-
-	var/datum/job/lawyer/J = SSjob.GetJobType(jobtype)
-	J.lawyers++
-	if(J.lawyers>1)
-		uniform = /obj/item/clothing/under/rank/civilian/lawyer/purpsuit
-		suit = /obj/item/clothing/suit/toggle/lawyer/purple
-
 
 /datum/outfit/job/lawyer/corporaterepresentative
 	uniform = /obj/item/clothing/under/suit/black

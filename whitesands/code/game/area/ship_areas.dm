@@ -92,9 +92,9 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 /area/ship/proc/link_to_shuttle(obj/docking_port/mobile/M)
 	mobile_port = M
 
-/area/ship/get_virtual_z_level()
+/area/ship/virtual_z()
 	if(mobile_port)
-		return mobile_port.get_virtual_z_level()
+		return mobile_port.virtual_z()
 	return ..()
 
 /// Command ///
@@ -257,8 +257,12 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	icon_state = "firingrange"
 
 /area/ship/security
-	name = "Security Podbay"
+	name = "Security Office"
 	icon_state = "security"
+
+/area/ship/security/armory
+	name = "Armory"
+	icon_state = "armory"
 
 /// Cargo Bay ///
 /area/ship/cargo
@@ -267,6 +271,11 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	lighting_colour_tube = "#ffe3cc"
 	lighting_colour_bulb = "#ffdbb8"
 	sound_environment = SOUND_AREA_LARGE_ENCLOSED
+
+/area/ship/cargo/office
+	name = "Cargo Office"
+	icon_state = "quartoffice"
+	sound_environment = SOUND_AREA_STANDARD_STATION
 
 /// Hallways ///
 /area/ship/hallway
@@ -298,29 +307,30 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 
 /// Maintenance Areas ///
 /area/ship/maintenance
+	name = "Maintenance"
 	ambientsounds = MAINTENANCE
 	lighting_colour_tube = "#ffe5cb"
 	lighting_colour_bulb = "#ffdbb4"
 	sound_environment = SOUND_AREA_TUNNEL_ENCLOSED
 
 /area/ship/maintenance/aft
-	name = "Aft Hallway"
+	name = "Aft Maintenance"
 	icon_state = "amaint"
 
 /area/ship/maintenance/fore
-	name = "Fore Hallway"
+	name = "Fore Maintenance"
 	icon_state = "fmaint"
 
 /area/ship/maintenance/starboard
-	name = "Starboard Hallway"
+	name = "Starboard Maintenance"
 	icon_state = "smaint"
 
 /area/ship/maintenance/port
-	name = "Port Hallway"
+	name = "Port Maintenance"
 	icon_state = "pmaint"
 
 /area/ship/maintenance/central
-	name = "Central Hallway"
+	name = "Central Maintenance"
 	icon_state = "maintcentral"
 
 /area/ship/construction

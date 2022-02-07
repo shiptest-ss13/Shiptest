@@ -4,16 +4,17 @@
 
 	feature_spawn_chance = 1
 	feature_spawn_list = list(/obj/structure/geyser/random = 1, /obj/effect/landmark/ore_vein = 9)
-	mob_spawn_list = list(/mob/living/simple_animal/hostile/asteroid/goliath = 50, /obj/structure/spawner/mining/goliath = 3, \
-		/mob/living/simple_animal/hostile/asteroid/basilisk = 40, /obj/structure/spawner/mining = 2, \
-		/mob/living/simple_animal/hostile/asteroid/hivelord = 30, /obj/structure/spawner/mining/hivelord = 3, \
+	mob_spawn_list = list(/mob/living/simple_animal/hostile/asteroid/goliath = 25, /obj/structure/spawner/mining/goliath = 30, \
+		/mob/living/simple_animal/hostile/asteroid/basilisk = 25, /obj/structure/spawner/mining = 30, \
+		/mob/living/simple_animal/hostile/asteroid/hivelord = 25, /obj/structure/spawner/mining/hivelord = 30, \
 		SPAWN_MEGAFAUNA = 4, /mob/living/simple_animal/hostile/asteroid/goldgrub = 10)
 	flora_spawn_list = list(/obj/structure/flora/ash/space/voidmelon = 2)
 
-	initial_closed_chance = 60
+	initial_closed_chance = 55
 	smoothing_iterations = 50
 	birth_limit = 4
 	death_limit = 3
+	mob_spawn_chance = 6
 
 /datum/map_generator/cave_generator/asteroid/generate_terrain(list/turfs)
 	var/maxx
@@ -49,3 +50,4 @@
 		T.change_area(old_area, asteroid_area)
 
 	return ..(turfs_to_gen)
+

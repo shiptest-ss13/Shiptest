@@ -58,6 +58,33 @@
 	for(var/i = 1, i <= created_volume, i++)
 		new /obj/item/stack/sheet/mineral/adamantine(location)
 
+/datum/chemical_reaction/silversolidification
+	required_reagents = list(/datum/reagent/silver = 20, /datum/reagent/consumable/frostoil = 5, /datum/reagent/carbon = 10)
+	mob_react = FALSE
+
+/datum/chemical_reaction/silversolidification/on_reaction(datum/reagents/holder, created_volume)
+	var/location = get_turf(holder.my_atom)
+	for(var/i = 1, i <= created_volume, i++)
+		new /obj/item/stack/sheet/mineral/silver(location)
+
+/datum/chemical_reaction/uraniumsolidification
+	required_reagents = list(/datum/reagent/uranium = 20, /datum/reagent/consumable/frostoil = 5, /datum/reagent/potassium = 1)
+	mob_react = FALSE
+
+/datum/chemical_reaction/uraniumsolidification/on_reaction(datum/reagents/holder, created_volume)
+	var/location = get_turf(holder.my_atom)
+	for(var/i = 1, i <= created_volume, i++)
+		new /obj/item/stack/sheet/mineral/uranium(location)
+
+/datum/chemical_reaction/titaniumsolidification
+	required_reagents = list(/datum/reagent/titanium = 20, /datum/reagent/consumable/frostoil = 5, /datum/reagent/iron = 1)
+	mob_react = FALSE
+
+/datum/chemical_reaction/titaniumsolidification/on_reaction(datum/reagents/holder, created_volume)
+	var/location = get_turf(holder.my_atom)
+	for(var/i = 1, i <= created_volume, i++)
+		new /obj/item/stack/sheet/mineral/titanium(location)
+
 /datum/chemical_reaction/capsaicincondensation
 	results = list(/datum/reagent/consumable/condensedcapsaicin = 5)
 	required_reagents = list(/datum/reagent/consumable/capsaicin = 1, /datum/reagent/consumable/ethanol = 5)
@@ -400,20 +427,14 @@
 	results = list(/datum/reagent/colorful_reagent = 5)
 	required_reagents = list(/datum/reagent/stable_plasma = 1, /datum/reagent/uranium/radium = 1, /datum/reagent/drug/space_drugs = 1, /datum/reagent/medicine/cryoxadone = 1, /datum/reagent/consumable/triple_citrus = 1)
 
-/*WS Begin - No CobbyChems
-
 /datum/chemical_reaction/life
-	required_reagents = list(/datum/reagent/medicine/strange_reagent = 1, /datum/reagent/medicine/C2/instabitaluri = 1, /datum/reagent/blood = 1)
-	required_temp = 374
+	required_reagents = list(/datum/reagent/medicine/strange_reagent = 1, /datum/reagent/medicine/synthflesh = 1, /datum/reagent/blood = 1)
 
 /datum/chemical_reaction/life/on_reaction(datum/reagents/holder, created_volume)
 	chemical_mob_spawn(holder, rand(1, round(created_volume, 1)), "Life (hostile)") //defaults to HOSTILE_SPAWN
 
 /datum/chemical_reaction/life_friendly
-	required_reagents = list(/datum/reagent/medicine/strange_reagent = 1, /datum/reagent/medicine/C2/instabitaluri = 1, /datum/reagent/consumable/sugar = 1)
-	required_temp = 374
-
-WS End */
+	required_reagents = list(/datum/reagent/medicine/strange_reagent = 1, /datum/reagent/medicine/synthflesh = 1, /datum/reagent/consumable/sugar = 1)
 
 /datum/chemical_reaction/life_friendly/on_reaction(datum/reagents/holder, created_volume)
 	chemical_mob_spawn(holder, rand(1, round(created_volume, 1)), "Life (friendly)", FRIENDLY_SPAWN)
@@ -618,17 +639,13 @@ WS End */
 	results = list(/datum/reagent/mutationtoxin/abductor = 1)
 	required_reagents  = list(/datum/reagent/mutationtoxin/unstable = 1, /datum/reagent/medicine/morphine = 10, /datum/reagent/toxin/mutetoxin = 10)
 
-/datum/chemical_reaction/mutationtoxin/tesh
-	results = list(/datum/reagent/mutationtoxin/tesh = 1)
-	required_reagents  = list(/datum/reagent/mutationtoxin/unstable = 1, /datum/reagent/ammonia = 25)
+/datum/chemical_reaction/mutationtoxin/kepi
+	results = list(/datum/reagent/mutationtoxin/kepi = 1)
+	required_reagents  = list(/datum/reagent/mutationtoxin/unstable = 1, /datum/reagent/carbondioxide = 25)
 
 /datum/chemical_reaction/mutationtoxin/squid
 	results = list(/datum/reagent/mutationtoxin/squid = 1)
 	required_reagents  = list(/datum/reagent/mutationtoxin/unstable = 1, /datum/reagent/consumable/sodiumchloride = 10, /datum/reagent/water = 20)
-
-/datum/chemical_reaction/mutationtoxin/ipc
-	results = list(/datum/reagent/mutationtoxin/ipc = 1)
-	required_reagents  = list(/datum/reagent/mutationtoxin/unstable = 1, /datum/reagent/teslium = 20)
 
 //////////////Mutatuion toxins made out of advanced toxin/////////////
 

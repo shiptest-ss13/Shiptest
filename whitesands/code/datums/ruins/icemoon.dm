@@ -6,8 +6,8 @@
 
 /datum/map_template/ruin/icemoon/oldstation
 	id = "oldstation-icemoon"
-	suffix = "icemoon_underground_oldstation.dmm "
-	name = "Artic Post 13"
+	suffix = "icemoon_underground_oldstation.dmm"
+	name = "Arctic Charlie Module Station"
 	description = "The crew of a outpost awaken one hundred years after a crisis. Awaking to a derelict outpost on the verge of collapse, and a hostile force of invading \
 	hivebots. Can the surviving crew overcome the odds and survive and rebuild, or will the cold embrace of the moon become their new home?"
 
@@ -24,7 +24,13 @@
 	suffix = "icemoon_underground_burnies_lair.dmm"
 
 /datum/map_template/ruin/icemoon/brazillian_lab
-	name = "Baracaded Shack"
+	name = "Barricaded Compound"
 	id = "brazillian-lab"
-	description = "Who knows why this is baracaded? Nothing of importance is inside anyways..."
+	description = "A conspicuous compound in the middle of the cold wasteland. What goodies are inside?"
 	suffix = "icemoon_underground_brazillianlab.dmm"
+
+/datum/map_template/ruin/icemoon/demonlab
+	name = "Upsilon Research Outpost"
+	id = "demonlab"
+	description = "Some abandoned research outpost"
+	suffix = "icemoon_demonlab.dmm"

@@ -68,7 +68,9 @@
 
 /datum/emote/spin/run_emote(mob/user, params ,  type_override, intentional)
 	. = ..()
-	if(.)
+	if(HAS_TRAIT(user, ORBITED_TRAIT))
+		user.spin(40, 2)
+	else
 		user.spin(20, 1)
 
 		if((iscyborg(user) || isanimal(user)) && user.has_buckled_mobs())

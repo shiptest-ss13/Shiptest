@@ -21,19 +21,21 @@
 	if(!is_freq_listening(signal))
 		return
 
-	signal.levels = list()
+	signal.map_zones = list()
 
 	// send the signal to the hub if possible, or a bus otherwise
 	if(!relay_information(signal, /obj/machinery/telecomms/hub))
 		relay_information(signal, /obj/machinery/telecomms/bus)
 
 /obj/machinery/telecomms/receiver/proc/check_receive_level(datum/signal/subspace/signal)
-	if (get_virtual_z_level() in signal.levels)
+	var/datum/map_zone/mapzone = get_map_zone()
+	if (mapzone in signal.map_zones)
 		return TRUE
 
 	for(var/obj/machinery/telecomms/hub/H in links)
 		for(var/obj/machinery/telecomms/relay/R in H.links)
-			if(R.can_receive(signal) && (R.get_virtual_z_level() in signal.levels))
+			var/datum/map_zone/relay_mapzone = R.get_map_zone()
+			if(R.can_receive(signal) && (relay_mapzone in signal.map_zones))
 				return TRUE
 
 	return FALSE

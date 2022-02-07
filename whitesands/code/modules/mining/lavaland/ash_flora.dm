@@ -12,9 +12,10 @@
 /obj/structure/flora/ash/whitesands
 	icon = 'whitesands/icons/obj/lavaland/newlavalandplants.dmi'
 
-/*/obj/structure/flora/ash/whitesands/fern		Need sprats
+/obj/structure/flora/ash/whitesands/fern
 	name = "cave fern"
 	desc = "A species of fern with highly fibrous leaves."
+	icon_state = "fern" //needs new sprites.
 	harvested_name = "cave fern stems"
 	harvested_desc = "A few cave fern stems, missing their leaves."
 	harvest = /obj/item/reagent_containers/food/snacks/grown/ash_flora/whitesands/fern
@@ -24,7 +25,7 @@
 	harvest_message_high = "You clip quite a lot of suitable leaves."
 	regrowth_time_low = 3000
 	regrowth_time_high = 5400
-	num_sprites = 0*/
+	num_sprites = 1
 
 /obj/structure/flora/ash/whitesands/fireblossom
 	name = "fire blossom"

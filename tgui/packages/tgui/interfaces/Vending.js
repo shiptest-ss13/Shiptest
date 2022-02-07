@@ -12,12 +12,12 @@ const VendingRow = (props, context) => {
   } = props;
   const {
     miningvendor,
-    onstation,
+    all_items_free,
     department,
     user,
   } = data;
   const free = (
-    !onstation
+    all_items_free
     || product.price === 0
     || (
       !product.premium
@@ -99,7 +99,7 @@ export const Vending = (props, context) => {
   const { act, data } = useBackend(context);
   const {
     user,
-    onstation,
+    all_items_free,
     miningvendor,
     product_records = [],
     coin_records = [],
@@ -133,7 +133,7 @@ export const Vending = (props, context) => {
       height={600}
       resizable>
       <Window.Content scrollable>
-        {!!onstation && (
+        {!all_items_free && (
           <Section title="User">
             {user && (
               <Box>

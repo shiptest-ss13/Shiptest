@@ -42,8 +42,6 @@
 /obj/item/clothing/head/wizard/marisa
 	name = "witch hat"
 	desc = "Strange-looking hat-wear. Makes you want to cast fireballs."
-	icon = 'whitesands/icons/obj/clothing/hats.dmi' // Shiptest edit. Sprites by TetraZeta.
-	mob_overlay_icon = 'whitesands/icons/mob/clothing/head.dmi' // Shiptest edit. See above.
 	icon_state = "marisa"
 	dog_fashion = null
 
@@ -97,8 +95,6 @@
 /obj/item/clothing/suit/wizrobe/marisa
 	name = "witch robe"
 	desc = "Magic is all about the spell power, ZE!"
-	icon = 'whitesands/icons/obj/clothing/suits.dmi' // Shiptest edit. Sprites by TetraZeta.
-	mob_overlay_icon = 'whitesands/icons/mob/clothing/suits.dmi' // Shiptest edit. See above.
 	icon_state = "marisa"
 	item_state = "marisarobe"
 

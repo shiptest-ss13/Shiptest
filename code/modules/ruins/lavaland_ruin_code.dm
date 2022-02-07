@@ -3,6 +3,8 @@
 ///Wizard tower item
 /obj/item/disk/design_disk/adv/knight_gear
 	name = "Magic Disk of Smithing"
+	illustration = "sword"
+	color = "#6F6F6F"
 
 /obj/item/disk/design_disk/adv/knight_gear/Initialize()
 	. = ..()
@@ -29,7 +31,7 @@
 /obj/item/disk/design_disk/golem_shell
 	name = "Golem Creation Disk"
 	desc = "A gift from the Liberator."
-	icon_state = "datadisk1"
+	illustration = "poyo"
 	max_blueprints = 1
 
 /obj/item/disk/design_disk/golem_shell/Initialize()

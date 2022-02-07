@@ -19,3 +19,7 @@
 
 /datum/movespeed_modifier/sanity/disturbed
 	multiplicative_slowdown = 0.25
+
+/datum/movespeed_modifier/necropolis
+	multiplicative_slowdown = 0.5
+
