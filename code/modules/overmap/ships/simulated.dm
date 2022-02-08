@@ -48,7 +48,11 @@
 	name = shuttle.name
 	source_template = _source_template
 	calculate_mass()
+#ifdef UNIT_TESTS
+	set_ship_name("[source_template]")
+#else
 	set_ship_name("[source_template.prefix] [pick_list_replacements(SHIP_NAMES_FILE, pick(source_template.name_categories))]", TRUE)
+#endif
 	refresh_engines()
 	check_loc()
 
@@ -260,6 +264,23 @@
 					S.shuttle.shuttle_areas |= shuttle.shuttle_areas
 				forceMove(docking_target)
 				state = OVERMAP_SHIP_IDLE
+				SEND_GLOBAL_SIGNAL(COMSIG_GLOB_SHIP_DOCK_COMPLETE, src, docking_target)
+				//Displays planet information on land because thats fucking COOL (TODO: actually make it print planet information)
+				if(istype(docking_target, /obj/structure/overmap/dynamic))
+					var/obj/structure/overmap/dynamic/docked_loc = docking_target
+					if(docked_loc.planet_name)
+						for(var/mob/M as anything in GLOB.player_list)
+							if(shuttle.is_in_shuttle_bounds(M))
+								//AHAHAAHAHAHAHAHAHAAHA
+								addtimer(
+									CALLBACK(
+										M,
+										/mob/.proc/play_screen_text,
+										"<span class='maptext' style=font-size:24pt;text-align:center valign='top'><u>[docked_loc.planet_name]</u></span><br>"\
+										+ "[station_time_timestamp_fancy("hh:mm")]"
+									),
+									shuttle.callTime
+								)
 			else
 				addtimer(CALLBACK(src, .proc/complete_dock, to_dock), 1 SECONDS) //This should never happen, yet it does sometimes.
 		if(OVERMAP_SHIP_UNDOCKING)
