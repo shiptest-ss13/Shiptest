@@ -91,10 +91,12 @@
 /obj/effect/turf_decal/corner/brown/border{
 	dir = 1
 	},
-/obj/structure/filingcabinet/chestdrawer,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/airalarm/all_access{
 	pixel_y = 24
+	},
+/obj/structure/chair/office{
+	dir = 8
 	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
@@ -139,18 +141,21 @@
 	},
 /obj/structure/table,
 /obj/item/paper_bin{
-	pixel_x = -6
+	pixel_x = -6;
+	pixel_y = 6
 	},
 /obj/item/pen{
-	pixel_x = -6
+	pixel_x = -6;
+	pixel_y = 6
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/stamp/denied{
 	pixel_x = 8;
-	pixel_y = 8
+	pixel_y = 14
 	},
 /obj/item/stamp{
-	pixel_x = 8
+	pixel_x = 8;
+	pixel_y = 6
 	},
 /obj/item/radio/intercom{
 	dir = 4;
@@ -593,9 +598,6 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
 "hi" = (
-/obj/structure/chair/office{
-	dir = 8
-	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -826,6 +828,7 @@
 	name = "\improper Colt Navy Special"
 	},
 /obj/item/ammo_box/c45,
+/obj/item/gun/ballistic/automatic/pistol/m1911,
 /obj/item/gun/ballistic/automatic/pistol/m1911,
 /obj/item/ammo_box/magazine/m45,
 /obj/item/ammo_box/magazine/m45,
@@ -1118,6 +1121,7 @@
 /turf/open/floor/plating,
 /area/ship/external)
 "nZ" = (
+/obj/structure/table/wood,
 /obj/item/storage/box/flashes{
 	pixel_x = 4;
 	pixel_y = 4
@@ -1129,7 +1133,6 @@
 /obj/item/restraints/handcuffs{
 	pixel_y = 3
 	},
-/obj/structure/table/wood,
 /obj/item/reagent_containers/spray/pepper{
 	pixel_x = -10
 	},
@@ -1160,12 +1163,10 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/closet/wall{
 	dir = 1;
-	icon_door = "wardrobe_blue";
+	icon_door = "blue_wall";
 	name = "first officer's closet";
 	pixel_y = -28
 	},
-/obj/item/storage/box/PDAs,
-/obj/item/storage/box/PDAs,
 /obj/item/assembly/flash,
 /obj/item/storage/backpack,
 /obj/item/clothing/head/hopcap{
@@ -1183,6 +1184,9 @@
 /obj/item/clothing/shoes/laceup,
 /obj/item/clothing/gloves/color/white,
 /obj/item/clothing/glasses/sunglasses,
+/obj/item/clothing/suit/hooded/wintercoat/captain{
+	name = "first officer's winter coat"
+	},
 /obj/item/clothing/head/beret/hop{
 	desc = "A lovely blue First Officer's beret with a silver and white insignia. It smells faintly of leadership and dogs.";
 	name = "first officer beret"
@@ -1194,6 +1198,10 @@
 /obj/effect/turf_decal/siding/white{
 	dir = 1
 	},
+/obj/item/storage/box/ids,
+/obj/item/storage/box/ids,
+/obj/item/storage/box/PDAs,
+/obj/item/storage/box/PDAs,
 /turf/open/floor/carpet/blue,
 /area/ship/bridge)
 "oX" = (
@@ -1263,6 +1271,7 @@
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/structure/sink,
 /turf/open/floor/plasteel/stairs{
 	dir = 1
 	},
@@ -1340,6 +1349,14 @@
 /area/ship/engineering/atmospherics)
 "sd" = (
 /obj/structure/table/wood,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/extinguisher_cabinet{
+	pixel_y = 28
+	},
+/obj/item/clipboard{
+	pixel_x = 4;
+	pixel_y = 2
+	},
 /obj/item/paper_bin{
 	pixel_x = -4;
 	pixel_y = 4
@@ -1347,10 +1364,6 @@
 /obj/item/pen/fountain{
 	pixel_x = -4;
 	pixel_y = 4
-	},
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/extinguisher_cabinet{
-	pixel_y = 28
 	},
 /obj/machinery/light/small{
 	dir = 8
@@ -1483,7 +1496,6 @@
 	icon_state = "0-2"
 	},
 /obj/structure/frame/computer,
-/obj/item/circuitboard/computer/solar_control,
 /obj/structure/cable/yellow{
 	icon_state = "2-8"
 	},
@@ -1857,7 +1869,7 @@
 	},
 /obj/item/clipboard{
 	pixel_x = -6;
-	pixel_y = -12
+	pixel_y = -6
 	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
@@ -1991,14 +2003,17 @@
 /obj/structure/cable/yellow{
 	icon_state = "0-4"
 	},
-/obj/structure/closet/crate/solarpanel_small,
+/obj/structure/closet/crate/engineering{
+	name = "budget solar panel crate"
+	},
+/obj/item/paper/guides/jobs/engi/solars,
 /obj/item/solar_assembly,
 /obj/item/solar_assembly,
 /obj/item/solar_assembly,
 /obj/item/solar_assembly,
 /obj/item/solar_assembly,
-/obj/item/solar_assembly,
-/obj/item/solar_assembly,
+/obj/item/electronics/tracker,
+/obj/item/circuitboard/computer/solar_control,
 /obj/item/paper/guides/jobs/engi/solars,
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
@@ -2252,31 +2267,6 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
 "Iz" = (
-/obj/item/book/manual/wiki/chemistry{
-	desc = "Crack it open, inhale the musk of its pages, and learn something new. It's not teaching what it's supposed to be teaching but the topic is still chemistry, right?";
-	name = "Guide to Ghetto Chemistry";
-	pixel_x = -8;
-	pixel_y = -4
-	},
-/obj/item/toy/plush/lizardplushie{
-	desc = "An adorable stuffed toy that resembles a lizard. Seems to be distracted doing tests...";
-	item_color = "#386c96#;
-	name = "Is-Doing-Tests"
-	},
-/obj/item/toy/plush/moth{
-	desc = "A plushie depicting an adorable mothperson, featuring realistic mothperson agony sounds every time you hug it. Here to tell you all is alright and that it'll be by your side, always. Even in your walls.";
-	name = "supportive moth plushie";
-	pixel_x = 5;
-	pixel_y = -6
-	},
-/obj/structure/closet/wall{
-	alpha = 0;
-	desc = "A hidden storage unit. How the hell did you find this?";
-	icon_door = "orange_wall";
-	name = "easter egg closet";
-	pixel_x = 352;
-	pixel_y = 96
-	},
 /obj/effect/turf_decal/corner/lightgrey/half{
 	dir = 4
 	},
@@ -2309,7 +2299,7 @@
 /area/ship/external)
 "Ja" = (
 /obj/structure/closet/wall{
-	icon_door = "wardrobe_blue";
+	icon_door = "blue_wall";
 	name = "captain's closet";
 	pixel_y = 28
 	},
@@ -2367,6 +2357,9 @@
 "Jn" = (
 /obj/machinery/power/shuttle/engine/electric{
 	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "0-8"
 	},
 /turf/open/floor/plating/airless,
 /area/ship/engineering/engine)
@@ -2462,9 +2455,6 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
 "Mb" = (
-/obj/structure/chair/office{
-	dir = 8
-	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/generic,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
@@ -2505,6 +2495,9 @@
 "NQ" = (
 /obj/machinery/power/shuttle/engine/electric{
 	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "0-8"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
@@ -2659,6 +2652,9 @@
 /obj/machinery/power/apc/auto_name/south,
 /obj/structure/cable,
 /obj/machinery/power/terminal,
+/obj/structure/chair/office{
+	dir = 8
+	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
 "Qj" = (
@@ -2730,6 +2726,10 @@
 "RH" = (
 /obj/effect/turf_decal/corner/lightgrey/half{
 	dir = 8
+	},
+/obj/item/clipboard{
+	pixel_x = -6;
+	pixel_y = -12
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
@@ -2957,7 +2957,8 @@
 /obj/docking_port/mobile{
 	dir = 2;
 	launch_status = 0;
-	port_direction = 4
+	port_direction = 8;
+	preferred_direction = 8
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
@@ -3014,6 +3015,24 @@
 /area/ship/engineering/engine)
 "Vs" = (
 /obj/structure/table,
+/obj/item/book/manual/wiki/chemistry{
+	desc = "Crack it open, inhale the musk of its pages, and learn something new. It's not teaching what it's supposed to be teaching but the topic is still chemistry, right?";
+	name = "Guide to Ghetto Chemistry";
+	pixel_y = -4
+	},
+/obj/item/toy/plush/moth{
+	desc = "A plushie depicting an adorable mothperson, featuring realistic mothperson agony sounds every time you hug it. Here to tell you all is alright and that it'll be by your side, always. Even in your walls.";
+	name = "supportive moth plushie";
+	pixel_x = -2;
+	pixel_y = 4
+	},
+/obj/item/toy/plush/lizardplushie{
+	desc = "An adorable stuffed toy that resembles a lizard. Seems to be distracted doing tests...";
+	item_color = "#386c96";
+	name = "Is-Doing-Tests";
+	pixel_x = 2;
+	pixel_y = -4
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/crew/canteen)
 "Vu" = (
@@ -3080,12 +3099,6 @@
 	},
 /obj/structure/chair/comfy/shuttle{
 	dir = 8
-	},
-/obj/structure/closet/wall{
-	dir = 4;
-	icon_door = "wardrobe_blue";
-	name = "captain's closet";
-	pixel_x = -28
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
@@ -3156,13 +3169,13 @@
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/crew)
 "XD" = (
-/obj/structure/sink{
-	dir = 1
-	},
 /obj/structure/mirror{
 	pixel_y = -30
 	},
 /obj/machinery/light/small,
+/obj/structure/sink{
+	dir = 1
+	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/crew)
 "XF" = (
