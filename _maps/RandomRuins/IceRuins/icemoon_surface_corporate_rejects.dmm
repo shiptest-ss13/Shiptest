@@ -377,6 +377,11 @@
 	name = "Jack";
 	real_name = "Glorious Jonathon"
 	},
+/mob/living/simple_animal/hostile/cult_demon/greater{
+	faction = list("DeserterNT");
+	name = "Jack";
+	real_name = "Glorious Jonathon"
+	},
 /turf/open/floor/vault,
 /area/ruin/unpowered/corprejectvault)
 "jF" = (
@@ -1636,6 +1641,7 @@
 /obj/item/poster/random_official,
 /obj/item/poster/random_official,
 /obj/structure/table/glass,
+/obj/item/slimepotion/slime/sentience,
 /turf/open/floor/vault,
 /area/ruin/unpowered/corprejectvault)
 "KF" = (
@@ -1645,10 +1651,10 @@
 /turf/open/floor/vault,
 /area/ruin/unpowered/corprejectvault)
 "Lo" = (
-/mob/living/simple_animal/slaughter/laughter{
+/mob/living/simple_animal/hostile/cult_demon{
 	faction = list("DeserterNT");
 	name = "Jill";
-	real_name = "Funny Janie"
+	real_name = "Jolly Janie"
 	},
 /turf/open/floor/vault,
 /area/ruin/unpowered/corprejectvault)
@@ -1708,7 +1714,6 @@
 /obj/item/stack/sheet/mineral/gold/twenty,
 /obj/item/stack/sheet/mineral/runite/ten,
 /obj/item/toy/figure/captain,
-/obj/item/slimepotion/slime/sentience,
 /obj/item/organ/cyberimp/brain/anti_stun,
 /obj/item/disk/design_disk/adv/knight_gear,
 /turf/open/floor/vault,
@@ -1725,10 +1730,6 @@
 "Mc" = (
 /obj/structure/table/glass,
 /obj/item/gun_voucher,
-/obj/item/clothing/suit/armor/riot/knight/blue{
-	desc = "Only the finest smiths can work runite. Requiring 40 Defence to wield, it provides the best protection for f2p.";
-	name = "Runite Armor"
-	},
 /turf/open/floor/vault,
 /area/ruin/unpowered/corprejectvault)
 "Mh" = (
