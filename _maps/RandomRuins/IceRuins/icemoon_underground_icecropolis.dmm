@@ -4,6 +4,13 @@
 /obj/structure/stone_tile/slab/cracked,
 /turf/open/indestructible/boss/air,
 /area/ruin/unpowered/icecropolis/gold)
+"ae" = (
+/obj/structure/fluff/fokoff_sign,
+/turf/open/floor/grass/snow/basalt{
+	baseturfs = /turf/open/indestructible/necropolis;
+	initial_gas_mix = "ICEMOON_ATMOS"
+	},
+/area/ruin/unpowered/icecropolis/outside)
 "aw" = (
 /obj/structure/reagent_dispensers/water_cooler,
 /turf/open/floor/plasteel,
@@ -34,6 +41,13 @@
 /obj/item/retractor,
 /turf/open/floor/wood,
 /area/ruin/unpowered/icecropolis/russia)
+"aU" = (
+/obj/effect/spawner/lootdrop/snowdin/dungeonmid,
+/turf/open/floor/grass/snow/basalt{
+	baseturfs = /turf/open/indestructible/necropolis/air;
+	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
+	},
+/area/ruin/unpowered/icecropolis)
 "aV" = (
 /obj/structure/stone_tile/block/burnt{
 	dir = 1
@@ -59,6 +73,7 @@
 /obj/item/stack/sheet/sinew,
 /obj/item/stack/sheet/sinew,
 /turf/open/floor/grass/snow/basalt{
+	baseturfs = /turf/open/indestructible/necropolis/air;
 	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
 	},
 /area/ruin/unpowered/icecropolis/reach)
@@ -67,17 +82,37 @@
 	dir = 8
 	},
 /turf/open/floor/grass/snow/basalt{
+	baseturfs = /turf/open/indestructible/necropolis/air;
 	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
 	},
 /area/ruin/unpowered/icecropolis/reach)
 "bC" = (
 /turf/open/floor/plating,
 /area/ruin/unpowered/icecropolis/rusty)
+"bJ" = (
+/obj/structure/stone_tile/center,
+/obj/structure/stone_tile/surrounding,
+/obj/effect/decal/remains/human,
+/turf/open/lava/smooth,
+/area/ruin/unpowered/icecropolis)
 "bO" = (
 /obj/structure/bed/roller,
 /obj/item/bedsheet/random,
 /turf/open/floor/wood,
 /area/ruin/unpowered/icecropolis/reach)
+"bR" = (
+/obj/structure/table/wood/reinforced,
+/obj/item/trash/plate,
+/obj/item/kitchen/fork,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/wood,
+/area/ruin/unpowered/icecropolis)
+"bT" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/item/storage/box/cups,
+/obj/structure/table/wood/reinforced,
+/turf/open/floor/wood,
+/area/ruin/unpowered/icecropolis)
 "bU" = (
 /obj/structure/stone_tile/slab/cracked,
 /mob/living/simple_animal/hostile/asteroid/gutlunch,
@@ -86,6 +121,7 @@
 "cE" = (
 /obj/effect/mob_spawn/human/clown/corpse,
 /turf/open/floor/grass/snow/basalt{
+	baseturfs = /turf/open/indestructible/necropolis/air;
 	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
 	},
 /area/ruin/unpowered/icecropolis/reach)
@@ -110,9 +146,22 @@
 "df" = (
 /obj/item/trash/syndi_cakes,
 /turf/open/floor/grass/snow/basalt{
+	baseturfs = /turf/open/indestructible/necropolis/air;
 	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
 	},
 /area/ruin/unpowered/icecropolis/gold)
+"dg" = (
+/obj/item/reagent_containers/glass/bottle/diethylamine,
+/obj/item/reagent_containers/glass/bottle/diethylamine,
+/obj/item/reagent_containers/glass/bottle/mutagen,
+/obj/item/reagent_containers/glass/bottle/mutagen,
+/turf/open/floor/plasteel,
+/area/ruin/unpowered/icecropolis/rusty)
+"di" = (
+/obj/structure/stone_tile/slab,
+/obj/effect/decal/cleanable/blood,
+/turf/open/indestructible/boss/air,
+/area/ruin/unpowered/icecropolis)
 "dx" = (
 /mob/living/simple_animal/hostile/asteroid/hivelord/legion,
 /turf/open/floor/plasteel,
@@ -120,6 +169,16 @@
 "dG" = (
 /obj/item/rcd_ammo,
 /turf/open/indestructible/necropolis/air,
+/area/ruin/unpowered/icecropolis)
+"dH" = (
+/obj/effect/decal/remains/human,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/wood,
+/area/ruin/unpowered/icecropolis)
+"dP" = (
+/obj/item/chair/wood/wings,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/wood,
 /area/ruin/unpowered/icecropolis)
 "dU" = (
 /obj/machinery/door/airlock/public,
@@ -143,6 +202,7 @@
 "eD" = (
 /obj/item/melee/baseball_bat/homerun,
 /turf/open/floor/grass/snow/basalt{
+	baseturfs = /turf/open/indestructible/necropolis/air;
 	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
 	},
 /area/ruin/unpowered/icecropolis/reach)
@@ -158,16 +218,42 @@
 	},
 /turf/open/lava/smooth,
 /area/ruin/unpowered/icecropolis)
+"eQ" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/glowshroom/single,
+/turf/open/floor/grass/snow/basalt{
+	baseturfs = /turf/open/indestructible/necropolis/air;
+	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
+	},
+/area/ruin/unpowered/icecropolis)
 "eU" = (
 /obj/structure/fence/door,
 /obj/structure/barricade/wooden/crude,
 /turf/open/floor/wood,
 /area/ruin/unpowered/icecropolis/russia)
-"fh" = (
-/obj/structure/legionturret,
+"fg" = (
+/mob/living/simple_animal/hostile/asteroid/goliath/beast/ancient,
 /turf/open/floor/grass/snow/basalt{
+	baseturfs = /turf/open/indestructible/necropolis/air;
 	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
 	},
+/area/ruin/unpowered/icecropolis)
+"fh" = (
+/mob/living/simple_animal/hostile/big_legion{
+	desc = "Hidden away with his sect of heretical brethren, he festers and awaits judgement from The Priest.";
+	health = 300;
+	maxHealth = 300;
+	name = "The Heathen"
+	},
+/turf/open/floor/grass/snow/basalt{
+	baseturfs = /turf/open/indestructible/necropolis/air;
+	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
+	},
+/area/ruin/unpowered/icecropolis)
+"fi" = (
+/obj/item/trash/candy,
+/mob/living/simple_animal/hostile/asteroid/hivelord/legion,
+/turf/open/floor/wood,
 /area/ruin/unpowered/icecropolis)
 "fl" = (
 /obj/structure/table/wood/reinforced,
@@ -178,6 +264,22 @@
 /obj/structure/reagent_dispensers/watertank,
 /turf/open/floor/plating,
 /area/ruin/unpowered/icecropolis/rusty)
+"fx" = (
+/obj/structure/stone_tile,
+/obj/structure/stone_tile{
+	dir = 1
+	},
+/obj/structure/stone_tile/block{
+	dir = 8
+	},
+/turf/open/lava/smooth,
+/area/ruin/unpowered/icecropolis)
+"fz" = (
+/obj/item/storage/firstaid/fire,
+/obj/structure/closet/crate,
+/obj/item/storage/firstaid/regular,
+/turf/open/floor/wood,
+/area/ruin/unpowered/icecropolis/russia)
 "fE" = (
 /turf/open/lava{
 	initial_gas_mix = "ICEMOON_ATMOS"
@@ -203,7 +305,7 @@
 /turf/open/floor/wood,
 /area/ruin/unpowered/icecropolis/reach)
 "fT" = (
-/mob/living/simple_animal/hostile/asteroid/hivelord/legion/dwarf,
+/obj/structure/elite_tumor,
 /turf/open/indestructible/necropolis/air,
 /area/ruin/unpowered/icecropolis)
 "ge" = (
@@ -255,12 +357,14 @@
 "gA" = (
 /obj/item/trash/raisins,
 /turf/open/floor/grass/snow/basalt{
+	baseturfs = /turf/open/indestructible/necropolis/air;
 	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
 	},
 /area/ruin/unpowered/icecropolis/gold)
 "gF" = (
 /obj/structure/bonfire/prelit,
 /turf/open/floor/grass/snow/basalt{
+	baseturfs = /turf/open/indestructible/necropolis/air;
 	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
 	},
 /area/ruin/unpowered/icecropolis/reach)
@@ -289,6 +393,11 @@
 /obj/structure/table/optable,
 /turf/open/floor/wood,
 /area/ruin/unpowered/icecropolis/russia)
+"hn" = (
+/obj/structure/stone_tile/slab,
+/obj/structure/closet/crate/necropolis/tendril,
+/turf/open/indestructible/boss/air,
+/area/ruin/unpowered/icecropolis)
 "hs" = (
 /obj/structure/stone_tile/cracked{
 	dir = 1
@@ -307,6 +416,7 @@
 "hw" = (
 /obj/item/trash/tray,
 /turf/open/floor/grass/snow/basalt{
+	baseturfs = /turf/open/indestructible/necropolis/air;
 	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
 	},
 /area/ruin/unpowered/icecropolis/gold)
@@ -320,13 +430,12 @@
 /obj/structure/barricade/wooden/crude,
 /turf/open/floor/plasteel,
 /area/ruin/unpowered/icecropolis/rusty)
-"hQ" = (
-/obj/structure/mineral_door/gold,
-/turf/open/space/basic,
-/area/ruin/unpowered/icecropolis/gold)
 "hT" = (
 /turf/closed/wall/mineral/wood/nonmetal,
 /area/ruin/unpowered/icecropolis/reach)
+"ie" = (
+/turf/closed/wall/mineral/wood/nonmetal,
+/area/ruin/unpowered/icecropolis)
 "in" = (
 /obj/structure/sign/warning/securearea,
 /turf/closed/wall/mineral/iron,
@@ -336,6 +445,18 @@
 /obj/item/gps,
 /turf/open/floor/wood,
 /area/ruin/unpowered/icecropolis/russia)
+"it" = (
+/obj/structure/stone_tile/center,
+/obj/structure/stone_tile/surrounding,
+/obj/effect/decal/cleanable/blood/gibs/core,
+/obj/effect/decal/remains/human,
+/turf/open/lava/smooth,
+/area/ruin/unpowered/icecropolis)
+"iy" = (
+/obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/hostile/asteroid/hivelord/legion,
+/turf/open/floor/wood,
+/area/ruin/unpowered/icecropolis)
 "iH" = (
 /obj/structure/stone_tile/surrounding_tile{
 	dir = 8
@@ -350,12 +471,17 @@
 /obj/item/bedsheet/syndie,
 /obj/effect/mob_spawn/human/corpse/charredskeleton,
 /turf/open/floor/grass/snow/basalt{
+	baseturfs = /turf/open/indestructible/necropolis/air;
 	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
 	},
 /area/ruin/unpowered/icecropolis/gold)
 "iQ" = (
 /mob/living/simple_animal/hostile/asteroid/hivelord/legion,
 /turf/open/indestructible/necropolis/air,
+/area/ruin/unpowered/icecropolis)
+"iR" = (
+/obj/item/toy/foamblade,
+/turf/open/floor/wood,
 /area/ruin/unpowered/icecropolis)
 "iS" = (
 /turf/open/floor/plating,
@@ -376,6 +502,9 @@
 /obj/machinery/power/apc/auto_name/north,
 /turf/open/floor/plating,
 /area/ruin/unpowered/icecropolis/rusty)
+"jN" = (
+/turf/open/floor/wood,
+/area/ruin/unpowered/icecropolis)
 "jR" = (
 /obj/item/dragons_blood,
 /turf/open/indestructible/necropolis/air,
@@ -383,6 +512,14 @@
 "jV" = (
 /turf/closed/indestructible/riveted/boss,
 /area/ruin/unpowered/icecropolis)
+"kp" = (
+/obj/effect/decal/cleanable/blood,
+/turf/open/indestructible/necropolis/air,
+/area/ruin/unpowered/icecropolis)
+"kC" = (
+/obj/structure/fluff/fokoff_sign,
+/turf/open/floor/plating/asteroid/snow/icemoon,
+/area/ruin/unpowered/icecropolis/outside)
 "kK" = (
 /obj/structure/closet/crate/medical,
 /obj/item/reagent_containers/blood/random,
@@ -392,6 +529,7 @@
 /obj/item/storage/firstaid/brute,
 /obj/item/storage/firstaid/medical,
 /turf/open/floor/grass/snow/basalt{
+	baseturfs = /turf/open/indestructible/necropolis/air;
 	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
 	},
 /area/ruin/unpowered/icecropolis/reach)
@@ -401,15 +539,23 @@
 /turf/open/indestructible/boss/air,
 /area/ruin/unpowered/icecropolis/reach)
 "li" = (
-/turf/closed/wall/rust,
+/turf/closed/wall/rust{
+	baseturfs = /turf/open/indestructible/necropolis/air
+	},
 /area/ruin/unpowered/icecropolis/rusty)
 "ln" = (
 /obj/structure/bed/pod,
 /obj/item/bedsheet/rainbow,
 /turf/open/floor/grass/snow/basalt{
+	baseturfs = /turf/open/indestructible/necropolis/air;
 	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
 	},
 /area/ruin/unpowered/icecropolis/gold)
+"lr" = (
+/obj/effect/decal/cleanable/blood/footprints,
+/obj/effect/decal/cleanable/blood,
+/turf/open/indestructible/necropolis/air,
+/area/ruin/unpowered/icecropolis)
 "lB" = (
 /obj/structure/table,
 /obj/item/ammo_casing/shotgun/improvised,
@@ -438,15 +584,24 @@
 /obj/item/scythe,
 /turf/open/floor/wood,
 /area/ruin/unpowered/icecropolis/reach)
+"lZ" = (
+/mob/living/simple_animal/hostile/asteroid/basilisk/watcher/icewing,
+/turf/open/floor/grass/snow/basalt{
+	baseturfs = /turf/open/indestructible/necropolis/air;
+	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
+	},
+/area/ruin/unpowered/icecropolis)
 "mj" = (
 /obj/item/trash/boritos,
 /turf/open/floor/grass/snow/basalt{
+	baseturfs = /turf/open/indestructible/necropolis/air;
 	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
 	},
 /area/ruin/unpowered/icecropolis/gold)
 "mk" = (
 /obj/item/stack/sheet/bone,
 /turf/open/floor/grass/snow/basalt{
+	baseturfs = /turf/open/indestructible/necropolis/air;
 	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
 	},
 /area/ruin/unpowered/icecropolis)
@@ -455,9 +610,18 @@
 /obj/item/bedsheet/random,
 /turf/open/floor/wood,
 /area/ruin/unpowered/icecropolis/russia)
+"mo" = (
+/obj/structure/table/wood/reinforced,
+/obj/item/clothing/head/collectable/tophat,
+/obj/item/clothing/head/collectable/petehat,
+/obj/item/clothing/head/lobsterhat,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/wood,
+/area/ruin/unpowered/icecropolis)
 "mp" = (
 /obj/effect/mob_spawn/human/corpse/charredskeleton,
 /turf/open/floor/grass/snow/basalt{
+	baseturfs = /turf/open/indestructible/necropolis/air;
 	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
 	},
 /area/ruin/unpowered/icecropolis/gold)
@@ -471,22 +635,15 @@
 /turf/open/floor/plasteel,
 /area/ruin/unpowered/icecropolis/rusty)
 "mU" = (
-/mob/living/simple_animal/hostile/asteroid/goliath/pup{
-	a_intent = "help";
-	desc = "A small goliath pup. Its tendrils have not yet fully grown. Someone, somehow, has managed to fit a large dog collar around its neck.";
-	environment_smash = 0;
-	faction = list("neutral");
-	mob_size = 2;
-	move_force = 1000;
-	move_resist = 1000;
-	name = "David";
-	pull_force = 1000
-	},
-/turf/closed/mineral/random/high_chance/volcanic{
-	baseturfs = /turf/open/indestructible/necropolis/air;
-	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
-	},
+/obj/structure/spawner/lavaland/legion,
+/turf/open/indestructible/necropolis/air,
 /area/ruin/unpowered/icecropolis)
+"na" = (
+/obj/structure/stone_tile/slab/cracked,
+/obj/effect/decal/cleanable/blood/gibs/old,
+/obj/structure/closet/crate/necropolis/tendril,
+/turf/open/indestructible/boss/air,
+/area/ruin/unpowered/icecropolis/gold)
 "ng" = (
 /obj/structure/stone_tile/block/burnt,
 /obj/structure/stone_tile/block{
@@ -501,6 +658,15 @@
 /obj/item/trash/plate,
 /turf/open/floor/plating/asteroid/snow/icemoon,
 /area/ruin/unpowered/icecropolis/outside)
+"nr" = (
+/obj/item/clothing/head/festive{
+	desc = "A festive party hat with the name 'timmy' scribbled on the front.";
+	name = "party hat"
+	},
+/obj/effect/decal/remains/human,
+/obj/item/chair/wood/wings,
+/turf/open/floor/wood,
+/area/ruin/unpowered/icecropolis)
 "nC" = (
 /obj/structure/stone_tile/surrounding_tile,
 /obj/structure/stone_tile{
@@ -512,8 +678,10 @@
 /turf/open/lava/smooth,
 /area/ruin/unpowered/icecropolis/gold)
 "nE" = (
-/mob/living/simple_animal/hostile/asteroid/hivelord/legion/crystal,
-/turf/open/indestructible/necropolis/air,
+/turf/closed/mineral/random/volcanic{
+	baseturfs = /turf/open/indestructible/necropolis/air;
+	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
+	},
 /area/ruin/unpowered/icecropolis)
 "nS" = (
 /obj/item/melee/baton/cattleprod,
@@ -546,6 +714,18 @@
 /obj/item/circuitboard/machine/smartfridge,
 /turf/open/floor/plasteel,
 /area/ruin/unpowered/icecropolis/rusty)
+"oS" = (
+/mob/living/simple_animal/hostile/asteroid/hivelord/legion/crystal{
+	color = "#880808";
+	desc = "Disfigured and distorted, this fallen deacon of The Priest attones by guarding some holy entrance.";
+	health = 100;
+	maxHealth = 100;
+	name = "The Deacon"
+	},
+/turf/open/indestructible/necropolis{
+	initial_gas_mix = "ICEMOON_ATMOS"
+	},
+/area/ruin/unpowered/icecropolis/outside)
 "oT" = (
 /obj/structure/stone_tile/cracked{
 	dir = 4
@@ -594,6 +774,18 @@
 /obj/structure/stone_tile/cracked,
 /turf/open/lava/smooth,
 /area/ruin/unpowered/icecropolis)
+"pT" = (
+/obj/structure/stone_tile/slab,
+/obj/structure/necropolis_gate,
+/obj/effect/decal/cleanable/blood/footprints,
+/obj/effect/decal/cleanable/blood,
+/turf/open/indestructible/boss/air,
+/area/ruin/unpowered/icecropolis)
+"pU" = (
+/turf/closed/wall/rust{
+	baseturfs = /turf/open/indestructible/necropolis/air
+	},
+/area/ruin/unpowered/icecropolis)
 "pV" = (
 /obj/structure/closet/crate/radiation,
 /obj/machinery/the_singularitygen,
@@ -603,6 +795,7 @@
 /obj/item/clothing/head/beekeeper_head,
 /obj/item/clothing/suit/beekeeper_suit,
 /turf/open/floor/grass/snow/basalt{
+	baseturfs = /turf/open/indestructible/necropolis/air;
 	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
 	},
 /area/ruin/unpowered/icecropolis/reach)
@@ -611,10 +804,16 @@
 /obj/structure/mineral_door/gold,
 /turf/open/indestructible/boss/air,
 /area/ruin/unpowered/icecropolis/gold)
+"qh" = (
+/obj/structure/stone_tile/slab,
+/obj/effect/decal/cleanable/blood/footprints,
+/turf/open/indestructible/boss/air,
+/area/ruin/unpowered/icecropolis)
 "ql" = (
 /obj/structure/bed/pod,
 /obj/item/bedsheet/wiz,
 /turf/open/floor/grass/snow/basalt{
+	baseturfs = /turf/open/indestructible/necropolis/air;
 	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
 	},
 /area/ruin/unpowered/icecropolis/gold)
@@ -624,6 +823,7 @@
 /obj/item/stack/spacecash/c1000,
 /obj/item/clothing/mask/fakemoustache/italian,
 /turf/open/floor/grass/snow/basalt{
+	baseturfs = /turf/open/indestructible/necropolis/air;
 	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
 	},
 /area/ruin/unpowered/icecropolis/reach)
@@ -631,17 +831,46 @@
 /obj/effect/decal/cleanable/blood/gibs/core,
 /turf/open/floor/mineral/gold,
 /area/ruin/unpowered/icecropolis/gold)
+"qC" = (
+/obj/structure/stone_tile{
+	dir = 8
+	},
+/obj/structure/stone_tile/block{
+	dir = 1
+	},
+/obj/structure/stone_tile,
+/obj/structure/statue/bone/rib{
+	color = "#880808";
+	dir = 1
+	},
+/turf/open/lava/smooth,
+/area/ruin/unpowered/icecropolis)
 "qQ" = (
 /obj/structure/stone_tile/slab/cracked,
 /obj/effect/decal/cleanable/blood/gibs/old,
-/mob/living/simple_animal/hostile/mimic/copy/ranged,
+/mob/living/simple_animal/hostile/mimic/copy/ranged{
+	faction = list("mimic","mining")
+	},
 /turf/open/indestructible/boss/air,
 /area/ruin/unpowered/icecropolis/gold)
+"qV" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/reagent_dispensers/water_cooler{
+	name = "punch cooler";
+	reagent_id = /datum/reagent/consumable/ethanol/bacchus_blessing
+	},
+/turf/open/floor/wood,
+/area/ruin/unpowered/icecropolis)
 "re" = (
 /obj/structure/stone_tile/slab/cracked,
 /obj/item/stack/sheet/mineral/gold/twenty,
 /turf/open/indestructible/boss/air,
 /area/ruin/unpowered/icecropolis/gold)
+"rq" = (
+/obj/structure/fluff/broken_flooring,
+/mob/living/simple_animal/hostile/asteroid/hivelord/legion,
+/turf/open/floor/plating,
+/area/ruin/unpowered/icecropolis/rusty)
 "rE" = (
 /obj/structure/stone_tile/slab/cracked,
 /turf/open/lava/smooth,
@@ -654,16 +883,24 @@
 "rR" = (
 /obj/item/trash/semki,
 /turf/open/floor/grass/snow/basalt{
+	baseturfs = /turf/open/indestructible/necropolis/air;
 	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
 	},
 /area/ruin/unpowered/icecropolis/gold)
+"rT" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/item/trash/candy,
+/turf/open/floor/wood,
+/area/ruin/unpowered/icecropolis)
 "sa" = (
 /turf/closed/wall/mineral/iron,
 /area/ruin/unpowered/icecropolis/russia)
 "sM" = (
 /obj/structure/bed/pod,
 /obj/item/bedsheet/yellow,
+/obj/item/storage/pill_bottle/trophazole,
 /turf/open/floor/grass/snow/basalt{
+	baseturfs = /turf/open/indestructible/necropolis/air;
 	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
 	},
 /area/ruin/unpowered/icecropolis/gold)
@@ -681,12 +918,19 @@
 /turf/open/indestructible/boss/air,
 /area/ruin/unpowered/icecropolis/reach)
 "sT" = (
-/mob/living/simple_animal/hostile/megafauna/blood_drunk_miner/doom,
+/mob/living/simple_animal/hostile/megafauna/blood_drunk_miner/doom{
+	desc = "The Lost Prophet, destined to wander the Bloody Hallow in a death stained rut.";
+	health = 300;
+	maxHealth = 300;
+	name = "The Lost Prophet";
+	ranged_ignores_vision = 0
+	},
 /turf/open/floor/plating,
 /area/ruin/unpowered/icecropolis)
 "sZ" = (
 /obj/structure/destructible/tribal_torch,
 /turf/open/floor/grass/snow/basalt{
+	baseturfs = /turf/open/indestructible/necropolis/air;
 	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
 	},
 /area/ruin/unpowered/icecropolis/reach)
@@ -706,13 +950,13 @@
 /turf/open/floor/wood,
 /area/ruin/unpowered/icecropolis/reach)
 "tO" = (
-/mob/living/simple_animal/hostile/cult_demon/greater{
-	faction = list("mining")
+/mob/living/simple_animal/hostile/asteroid/elite/broodmother{
+	aggro_vision_range = 5;
+	faction = list("mining");
+	health = 200;
+	maxHealth = 200;
+	name = "The Gatekeeper"
 	},
-/turf/open/floor/wood,
-/area/ruin/unpowered/icecropolis/russia)
-"tQ" = (
-/obj/effect/sliding_puzzle/lavaland,
 /turf/open/indestructible/necropolis/air,
 /area/ruin/unpowered/icecropolis)
 "tS" = (
@@ -735,6 +979,7 @@
 /obj/item/reagent_containers/food/snacks/store/bread/creamcheese,
 /obj/item/reagent_containers/food/snacks/spaghetti/pastatomato,
 /turf/open/floor/grass/snow/basalt{
+	baseturfs = /turf/open/indestructible/necropolis/air;
 	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
 	},
 /area/ruin/unpowered/icecropolis/gold)
@@ -750,6 +995,7 @@
 /obj/item/reagent_containers/food/condiment/flour,
 /obj/item/reagent_containers/food/condiment/flour,
 /turf/open/floor/grass/snow/basalt{
+	baseturfs = /turf/open/indestructible/necropolis/air;
 	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
 	},
 /area/ruin/unpowered/icecropolis/reach)
@@ -760,6 +1006,13 @@
 /obj/structure/stone_tile,
 /turf/open/lava/smooth,
 /area/ruin/unpowered/icecropolis/reach)
+"ur" = (
+/obj/structure/legionpike,
+/turf/open/floor/grass/snow/basalt{
+	baseturfs = /turf/open/indestructible/necropolis;
+	initial_gas_mix = "ICEMOON_ATMOS"
+	},
+/area/ruin/unpowered/icecropolis/outside)
 "uC" = (
 /obj/structure/stone_tile,
 /obj/structure/stone_tile{
@@ -776,7 +1029,13 @@
 /turf/open/floor/plasteel,
 /area/ruin/unpowered/icecropolis/rusty)
 "uU" = (
-/mob/living/simple_animal/hostile/asteroid/ice_demon/random,
+/mob/living/simple_animal/hostile/cult_demon{
+	aggro_vision_range = 6;
+	desc = "A failed usurper of The Priest, too scared to match His might.";
+	faction = list("mining");
+	name = "Ursurper";
+	vision_range = 9
+	},
 /turf/open/floor/wood,
 /area/ruin/unpowered/icecropolis/russia)
 "vh" = (
@@ -786,6 +1045,7 @@
 "vk" = (
 /obj/item/trash/can/food/beans,
 /turf/open/floor/grass/snow/basalt{
+	baseturfs = /turf/open/indestructible/necropolis/air;
 	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
 	},
 /area/ruin/unpowered/icecropolis/gold)
@@ -831,6 +1091,7 @@
 "vE" = (
 /obj/item/trash/candy,
 /turf/open/floor/grass/snow/basalt{
+	baseturfs = /turf/open/indestructible/necropolis/air;
 	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
 	},
 /area/ruin/unpowered/icecropolis/gold)
@@ -846,6 +1107,13 @@
 /obj/structure/toilet,
 /turf/open/floor/wood,
 /area/ruin/unpowered/icecropolis/russia)
+"wf" = (
+/mob/living/simple_animal/hostile/asteroid/goliath/beast,
+/turf/open/floor/grass/snow/basalt{
+	baseturfs = /turf/open/indestructible/necropolis/air;
+	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
+	},
+/area/ruin/unpowered/icecropolis)
 "wq" = (
 /obj/structure/stone_tile/surrounding/cracked,
 /obj/structure/stone_tile/cracked,
@@ -862,6 +1130,11 @@
 	initial_gas_mix = "ICEMOON_ATMOS"
 	},
 /area/ruin/unpowered/icecropolis/outside)
+"wt" = (
+/obj/structure/stone_tile/slab,
+/obj/effect/decal/cleanable/blood/gibs/old,
+/turf/open/indestructible/boss/air,
+/area/ruin/unpowered/icecropolis)
 "ww" = (
 /obj/effect/mob_spawn/human/corpse/charredskeleton,
 /turf/open/floor/grass/snow/basalt{
@@ -871,6 +1144,7 @@
 "wy" = (
 /obj/item/shield/riot/roman,
 /turf/open/floor/grass/snow/basalt{
+	baseturfs = /turf/open/indestructible/necropolis/air;
 	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
 	},
 /area/ruin/unpowered/icecropolis/reach)
@@ -885,6 +1159,16 @@
 /obj/item/slapper,
 /turf/open/indestructible/boss/air,
 /area/ruin/unpowered/icecropolis/gold)
+"yg" = (
+/mob/living/simple_animal/hostile/cult_demon{
+	aggro_vision_range = 6;
+	desc = "A failed usurper of The Priest, too scared to match His might.";
+	faction = list("mining");
+	name = "Ursurper";
+	vision_range = 9
+	},
+/turf/open/indestructible/necropolis/air,
+/area/ruin/unpowered/icecropolis)
 "yj" = (
 /obj/structure/stone_tile/surrounding/cracked{
 	dir = 8
@@ -897,6 +1181,7 @@
 "yl" = (
 /obj/structure/fans/tiny/invisible,
 /turf/open/floor/grass/snow/basalt{
+	baseturfs = /turf/open/indestructible/necropolis;
 	initial_gas_mix = "ICEMOON_ATMOS"
 	},
 /area/ruin/unpowered/icecropolis/outside)
@@ -924,6 +1209,7 @@
 /obj/item/reagent_containers/food/drinks/soda_cans/cola,
 /obj/item/reagent_containers/food/drinks/soda_cans/cola,
 /turf/open/floor/grass/snow/basalt{
+	baseturfs = /turf/open/indestructible/necropolis/air;
 	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
 	},
 /area/ruin/unpowered/icecropolis/gold)
@@ -938,9 +1224,16 @@
 /obj/structure/stone_tile/center,
 /turf/open/indestructible/boss/air,
 /area/ruin/unpowered/icecropolis/reach)
+"yF" = (
+/obj/item/chair/wood/wings,
+/obj/effect/decal/cleanable/dirt,
+/obj/item/trash/candy,
+/turf/open/floor/wood,
+/area/ruin/unpowered/icecropolis)
 "zb" = (
 /obj/structure/fence/door,
 /turf/open/floor/grass/snow/basalt{
+	baseturfs = /turf/open/indestructible/necropolis/air;
 	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
 	},
 /area/ruin/unpowered/icecropolis/reach)
@@ -1005,6 +1298,7 @@
 "zM" = (
 /obj/effect/decal/cleanable/blood/gibs/old,
 /turf/open/floor/grass/snow/basalt{
+	baseturfs = /turf/open/indestructible/necropolis/air;
 	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
 	},
 /area/ruin/unpowered/icecropolis)
@@ -1018,9 +1312,15 @@
 "zO" = (
 /obj/item/clothing/head/syndicatefake,
 /turf/open/floor/grass/snow/basalt{
+	baseturfs = /turf/open/indestructible/necropolis/air;
 	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
 	},
 /area/ruin/unpowered/icecropolis/reach)
+"Ag" = (
+/obj/structure/stone_tile/slab,
+/obj/structure/destructible/tribal_torch,
+/turf/open/indestructible/boss/air,
+/area/ruin/unpowered/icecropolis)
 "Ao" = (
 /turf/open/floor/plating/asteroid/snow/icemoon,
 /area/ruin/unpowered/icecropolis/outside)
@@ -1037,6 +1337,7 @@
 "Be" = (
 /obj/item/clothing/under/costume/roman,
 /turf/open/floor/grass/snow/basalt{
+	baseturfs = /turf/open/indestructible/necropolis/air;
 	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
 	},
 /area/ruin/unpowered/icecropolis/reach)
@@ -1046,10 +1347,9 @@
 	},
 /area/ruin/unpowered/icecropolis/rusty)
 "Bl" = (
-/mob/living/simple_animal/hostile/big_legion{
-	health = 300
-	},
+/obj/effect/sliding_puzzle/lavaland,
 /turf/open/floor/grass/snow/basalt{
+	baseturfs = /turf/open/indestructible/necropolis/air;
 	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
 	},
 /area/ruin/unpowered/icecropolis)
@@ -1057,6 +1357,13 @@
 /obj/structure/mineral_door/iron,
 /turf/open/floor/wood,
 /area/ruin/unpowered/icecropolis/russia)
+"Bw" = (
+/obj/structure/barricade/wooden,
+/turf/open/floor/grass/snow/basalt{
+	baseturfs = /turf/open/indestructible/necropolis/air;
+	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
+	},
+/area/ruin/unpowered/icecropolis)
 "BJ" = (
 /obj/structure/stone_tile/surrounding/cracked,
 /obj/structure/stone_tile/surrounding_tile,
@@ -1068,18 +1375,34 @@
 /obj/item/trash/candy,
 /obj/effect/decal/cleanable/blood/old,
 /turf/open/floor/grass/snow/basalt{
+	baseturfs = /turf/open/indestructible/necropolis/air;
 	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
 	},
 /area/ruin/unpowered/icecropolis/gold)
-"BT" = (
+"BR" = (
+/obj/structure/barricade/wooden,
 /turf/open/floor/grass/snow/basalt{
-	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
+	baseturfs = /turf/open/indestructible/necropolis;
+	initial_gas_mix = "ICEMOON_ATMOS"
 	},
-/area/ruin/unpowered/icecropolis)
+/area/ruin/unpowered/icecropolis/outside)
 "Ci" = (
 /obj/structure/barricade/wooden/crude,
 /turf/open/floor/plating,
 /area/ruin/unpowered/icecropolis/rusty)
+"Cl" = (
+/obj/structure/stone_tile{
+	dir = 1
+	},
+/obj/structure/stone_tile/block,
+/obj/structure/stone_tile{
+	dir = 4
+	},
+/obj/structure/statue/bone/rib{
+	color = "#880808"
+	},
+/turf/open/lava/smooth,
+/area/ruin/unpowered/icecropolis)
 "CA" = (
 /obj/structure/stone_tile/block/burnt{
 	dir = 4
@@ -1099,6 +1422,7 @@
 "CN" = (
 /obj/structure/closet/crate/necropolis,
 /turf/open/floor/grass/snow/basalt{
+	baseturfs = /turf/open/indestructible/necropolis/air;
 	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
 	},
 /area/ruin/unpowered/icecropolis/reach)
@@ -1130,14 +1454,18 @@
 /obj/structure/bed/pod,
 /obj/item/bedsheet/cosmos,
 /turf/open/floor/grass/snow/basalt{
+	baseturfs = /turf/open/indestructible/necropolis/air;
 	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
 	},
 /area/ruin/unpowered/icecropolis/gold)
 "Dq" = (
 /mob/living/simple_animal/hostile/netherworld/migo{
-	faction = list("mining")
+	desc = "The Missionary, carrying out the will of their bishop.";
+	faction = list("mining");
+	name = "Missionary"
 	},
 /turf/open/floor/grass/snow/basalt{
+	baseturfs = /turf/open/indestructible/necropolis/air;
 	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
 	},
 /area/ruin/unpowered/icecropolis/gold)
@@ -1145,16 +1473,34 @@
 /obj/machinery/iv_drip,
 /obj/item/reagent_containers/food/drinks/waterbottle/large,
 /turf/open/floor/grass/snow/basalt{
+	baseturfs = /turf/open/indestructible/necropolis/air;
 	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
 	},
 /area/ruin/unpowered/icecropolis/reach)
+"Dt" = (
+/obj/structure/stone_tile{
+	dir = 8
+	},
+/obj/structure/stone_tile{
+	dir = 4
+	},
+/obj/structure/stone_tile/block{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/blood,
+/turf/open/lava/smooth,
+/area/ruin/unpowered/icecropolis)
 "DJ" = (
 /obj/item/stack/sheet/bone,
 /turf/open/indestructible/necropolis/air,
 /area/ruin/unpowered/icecropolis)
 "DN" = (
-/obj/structure/elite_tumor,
-/turf/open/indestructible/necropolis/air,
+/obj/structure/stone_tile/block{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/blood/gibs/core,
+/obj/effect/decal/cleanable/blood,
+/turf/open/lava/smooth,
 /area/ruin/unpowered/icecropolis)
 "DR" = (
 /obj/structure/stone_tile/block/burnt{
@@ -1165,6 +1511,7 @@
 "DZ" = (
 /obj/effect/decal/cleanable/blood,
 /turf/open/floor/grass/snow/basalt{
+	baseturfs = /turf/open/indestructible/necropolis/air;
 	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
 	},
 /area/ruin/unpowered/icecropolis/reach)
@@ -1173,6 +1520,7 @@
 	dir = 4
 	},
 /turf/open/floor/grass/snow/basalt{
+	baseturfs = /turf/open/indestructible/necropolis/air;
 	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
 	},
 /area/ruin/unpowered/icecropolis/reach)
@@ -1184,12 +1532,25 @@
 "EE" = (
 /obj/structure/sink/puddle,
 /turf/open/floor/grass/snow/basalt{
+	baseturfs = /turf/open/indestructible/necropolis/air;
 	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
 	},
 /area/ruin/unpowered/icecropolis/reach)
+"EK" = (
+/obj/item/kitchen/knife,
+/obj/effect/decal/cleanable/dirt,
+/obj/item/trash/candy,
+/turf/open/floor/wood,
+/area/ruin/unpowered/icecropolis)
 "EU" = (
 /obj/structure/barricade/wooden,
 /turf/open/indestructible/necropolis/air,
+/area/ruin/unpowered/icecropolis)
+"EX" = (
+/obj/structure/table/wood/reinforced,
+/obj/effect/spawner/lootdrop/pizzaparty,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/wood,
 /area/ruin/unpowered/icecropolis)
 "Ff" = (
 /obj/structure/stone_tile/slab/cracked,
@@ -1199,9 +1560,20 @@
 "Fj" = (
 /turf/open/indestructible/necropolis/air,
 /area/ruin/unpowered/icecropolis/reach)
+"Fk" = (
+/obj/effect/decal/remains/human,
+/turf/open/floor/wood,
+/area/ruin/unpowered/icecropolis)
 "Fq" = (
 /mob/living/simple_animal/hostile/asteroid/basilisk/watcher,
 /turf/open/indestructible/necropolis/air,
+/area/ruin/unpowered/icecropolis)
+"FD" = (
+/mob/living/simple_animal/hostile/asteroid/basilisk/watcher,
+/turf/open/floor/grass/snow/basalt{
+	baseturfs = /turf/open/indestructible/necropolis/air;
+	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
+	},
 /area/ruin/unpowered/icecropolis)
 "FI" = (
 /obj/structure/closet/crate,
@@ -1214,17 +1586,35 @@
 /obj/item/grenade/chem_grenade/cleaner,
 /turf/open/floor/wood,
 /area/ruin/unpowered/icecropolis/russia)
+"FN" = (
+/obj/item/rcd_ammo,
+/turf/open/floor/grass/snow/basalt{
+	baseturfs = /turf/open/indestructible/necropolis/air;
+	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
+	},
+/area/ruin/unpowered/icecropolis)
 "FQ" = (
 /obj/structure/necropolis_gate,
 /obj/structure/necropolis_arch,
 /turf/open/floor/grass/snow/basalt{
+	baseturfs = /turf/open/indestructible/necropolis;
 	initial_gas_mix = "ICEMOON_ATMOS"
 	},
 /area/ruin/unpowered/icecropolis/outside)
+"FY" = (
+/obj/structure/stone_tile/slab,
+/obj/effect/decal/remains/human,
+/turf/open/indestructible/boss/air,
+/area/ruin/unpowered/icecropolis)
 "Gc" = (
 /mob/living/simple_animal/hostile/asteroid/elite/herald{
+	aggro_vision_range = 6;
+	desc = "This Bishop, twisted in its worship,  brought holy word to some golden city of lore.";
 	faction = list("mining");
-	health = 450
+	health = 400;
+	maxHealth = 400;
+	name = "The Bishop";
+	ranged_ignores_vision = 0
 	},
 /turf/open/floor/mineral/gold,
 /area/ruin/unpowered/icecropolis/gold)
@@ -1252,6 +1642,7 @@
 "Gr" = (
 /obj/item/implanter/sad_trombone,
 /turf/open/floor/grass/snow/basalt{
+	baseturfs = /turf/open/indestructible/necropolis/air;
 	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
 	},
 /area/ruin/unpowered/icecropolis/reach)
@@ -1277,6 +1668,11 @@
 	},
 /turf/open/lava/smooth,
 /area/ruin/unpowered/icecropolis/gold)
+"GP" = (
+/obj/structure/table/wood/reinforced,
+/obj/item/reagent_containers/food/snacks/store/cake/birthday,
+/turf/open/floor/wood,
+/area/ruin/unpowered/icecropolis)
 "Hd" = (
 /obj/structure/stone_tile/surrounding/cracked{
 	dir = 1
@@ -1294,9 +1690,16 @@
 "Hw" = (
 /obj/structure/fence,
 /turf/open/floor/grass/snow/basalt{
+	baseturfs = /turf/open/indestructible/necropolis/air;
 	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
 	},
 /area/ruin/unpowered/icecropolis/reach)
+"Hz" = (
+/obj/structure/table/wood/reinforced,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/spawner/lootdrop/pizzaparty,
+/turf/open/floor/wood,
+/area/ruin/unpowered/icecropolis)
 "HB" = (
 /obj/item/rcd_ammo,
 /turf/open/floor/plating,
@@ -1308,6 +1711,7 @@
 "HN" = (
 /obj/item/malf_upgrade,
 /turf/open/floor/grass/snow/basalt{
+	baseturfs = /turf/open/indestructible/necropolis/air;
 	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
 	},
 /area/ruin/unpowered/icecropolis/reach)
@@ -1318,6 +1722,7 @@
 	},
 /obj/machinery/light/floor,
 /mob/living/simple_animal/hostile/zombie{
+	aggro_vision_range = 6;
 	faction = list("mining")
 	},
 /turf/open/floor/wood,
@@ -1325,6 +1730,7 @@
 "HW" = (
 /obj/effect/decal/cleanable/blood,
 /turf/open/floor/grass/snow/basalt{
+	baseturfs = /turf/open/indestructible/necropolis/air;
 	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
 	},
 /area/ruin/unpowered/icecropolis)
@@ -1339,13 +1745,21 @@
 /turf/open/indestructible/boss/air,
 /area/ruin/unpowered/icecropolis/reach)
 "Il" = (
-/turf/open/floor/fakepit,
+/turf/open/floor/grass/snow/basalt{
+	baseturfs = /turf/open/indestructible/necropolis/air;
+	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
+	},
 /area/ruin/unpowered/icecropolis)
 "Im" = (
 /obj/structure/table_frame,
 /obj/item/reagent_containers/spray/cleaner,
 /turf/open/floor/plating,
 /area/ruin/unpowered/icecropolis/rusty)
+"In" = (
+/obj/structure/stone_tile/slab,
+/obj/effect/decal/cleanable/blood/gibs/core,
+/turf/open/indestructible/boss/air,
+/area/ruin/unpowered/icecropolis)
 "Ip" = (
 /obj/item/radio/intercom/wideband{
 	dir = 8;
@@ -1353,21 +1767,38 @@
 	},
 /turf/open/floor/wood,
 /area/ruin/unpowered/icecropolis/russia)
+"Iq" = (
+/obj/effect/decal/remains/human,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/grass/snow/basalt{
+	baseturfs = /turf/open/indestructible/necropolis/air;
+	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
+	},
+/area/ruin/unpowered/icecropolis)
 "Ir" = (
 /obj/item/trash/plate,
 /turf/open/floor/grass/snow/basalt{
+	baseturfs = /turf/open/indestructible/necropolis/air;
 	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
 	},
 /area/ruin/unpowered/icecropolis/gold)
+"Ix" = (
+/turf/open/floor/grass/snow/basalt{
+	baseturfs = /turf/open/indestructible/necropolis;
+	initial_gas_mix = "ICEMOON_ATMOS"
+	},
+/area/ruin/unpowered/icecropolis/outside)
 "IC" = (
 /obj/structure/flora/rock/pile/icy,
 /turf/open/floor/grass/snow/basalt{
+	baseturfs = /turf/open/indestructible/necropolis;
 	initial_gas_mix = "ICEMOON_ATMOS"
 	},
 /area/ruin/unpowered/icecropolis/outside)
 "IE" = (
 /obj/item/trash/waffles,
 /turf/open/floor/grass/snow/basalt{
+	baseturfs = /turf/open/indestructible/necropolis/air;
 	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
 	},
 /area/ruin/unpowered/icecropolis/gold)
@@ -1390,9 +1821,15 @@
 "JB" = (
 /mob/living/simple_animal/hostile/asteroid/gutlunch,
 /turf/open/floor/grass/snow/basalt{
+	baseturfs = /turf/open/indestructible/necropolis/air;
 	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
 	},
 /area/ruin/unpowered/icecropolis/reach)
+"JU" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/item/storage/pill_bottle/trophazole,
+/turf/open/floor/wood,
+/area/ruin/unpowered/icecropolis)
 "JY" = (
 /obj/item/circuitboard/machine/autolathe,
 /obj/structure/frame/machine,
@@ -1401,12 +1838,14 @@
 "Ka" = (
 /obj/structure/closet/crate/necropolis/tendril,
 /turf/open/floor/grass/snow/basalt{
+	baseturfs = /turf/open/indestructible/necropolis/air;
 	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
 	},
 /area/ruin/unpowered/icecropolis)
 "Kn" = (
 /obj/structure/reagent_dispensers/beerkeg,
 /turf/open/floor/grass/snow/basalt{
+	baseturfs = /turf/open/indestructible/necropolis/air;
 	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
 	},
 /area/ruin/unpowered/icecropolis/reach)
@@ -1423,6 +1862,17 @@
 /obj/structure/stone_tile/cracked,
 /turf/open/lava/smooth,
 /area/ruin/unpowered/icecropolis)
+"KA" = (
+/obj/structure/stone_tile,
+/obj/structure/stone_tile{
+	dir = 8
+	},
+/obj/structure/stone_tile/block{
+	dir = 1
+	},
+/obj/effect/decal/remains/human,
+/turf/open/lava/smooth,
+/area/ruin/unpowered/icecropolis)
 "KN" = (
 /obj/structure/table,
 /obj/machinery/light/floor,
@@ -1435,21 +1885,27 @@
 "KW" = (
 /obj/item/trash/can,
 /turf/open/floor/grass/snow/basalt{
+	baseturfs = /turf/open/indestructible/necropolis/air;
 	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
 	},
 /area/ruin/unpowered/icecropolis/gold)
 "Le" = (
 /mob/living/simple_animal/hostile/zombie{
+	aggro_vision_range = 6;
 	faction = list("mining")
 	},
 /turf/open/floor/wood,
 /area/ruin/unpowered/icecropolis/russia)
+"Lp" = (
+/obj/structure/fluff/fokoff_sign,
+/turf/open/indestructible/necropolis/air,
+/area/ruin/unpowered/icecropolis)
 "Ls" = (
 /mob/living/simple_animal/hostile/asteroid/goliath/pup{
 	a_intent = "help";
 	desc = "A small goliath pup. Its tendrils have not yet fully grown. Someone, somehow, has managed to fit a large dog collar around its neck.";
 	environment_smash = 0;
-	faction = list("neutral");
+	faction = list("neutral","mining","ashwalker");
 	mob_size = 2;
 	move_force = 1000;
 	move_resist = 1000;
@@ -1457,6 +1913,7 @@
 	pull_force = 1000
 	},
 /turf/open/floor/grass/snow/basalt{
+	baseturfs = /turf/open/indestructible/necropolis/air;
 	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
 	},
 /area/ruin/unpowered/icecropolis/reach)
@@ -1500,10 +1957,9 @@
 /turf/open/lava/smooth,
 /area/ruin/unpowered/icecropolis/gold)
 "LO" = (
-/mob/living/simple_animal/hostile/asteroid/hivelord/legion/crystal,
-/turf/open/floor/grass/snow/basalt{
-	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
-	},
+/obj/structure/stone_tile/slab,
+/obj/structure/closet/crate/necropolis,
+/turf/open/indestructible/boss/air,
 /area/ruin/unpowered/icecropolis)
 "LT" = (
 /obj/effect/decal/cleanable/blood/old,
@@ -1528,12 +1984,14 @@
 "MK" = (
 /obj/item/stack/sheet/mineral/gold/twenty,
 /turf/open/floor/grass/snow/basalt{
+	baseturfs = /turf/open/indestructible/necropolis/air;
 	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
 	},
 /area/ruin/unpowered/icecropolis/gold)
 "MR" = (
 /obj/structure/legionnaire_bonfire,
 /turf/open/floor/grass/snow/basalt{
+	baseturfs = /turf/open/indestructible/necropolis/air;
 	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
 	},
 /area/ruin/unpowered/icecropolis)
@@ -1553,6 +2011,7 @@
 "MU" = (
 /obj/effect/decal/cleanable/blood/old,
 /turf/open/floor/grass/snow/basalt{
+	baseturfs = /turf/open/indestructible/necropolis/air;
 	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
 	},
 /area/ruin/unpowered/icecropolis/gold)
@@ -1565,6 +2024,15 @@
 /obj/structure/bed/dogbed,
 /turf/open/floor/wood,
 /area/ruin/unpowered/icecropolis/reach)
+"NN" = (
+/obj/structure/table/wood/reinforced,
+/obj/item/a_gift,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/grass/snow/basalt{
+	baseturfs = /turf/open/indestructible/necropolis/air;
+	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
+	},
+/area/ruin/unpowered/icecropolis)
 "NS" = (
 /obj/structure/stone_tile/surrounding/cracked{
 	dir = 8
@@ -1601,16 +2069,30 @@
 /turf/open/floor/wood,
 /area/ruin/unpowered/icecropolis/reach)
 "OB" = (
-/mob/living/simple_animal/hostile/asteroid/elite/broodmother{
+/obj/effect/decal/cleanable/blood/old,
+/mob/living/simple_animal/hostile/netherworld/migo{
+	desc = "The Missionary, carrying out the will of their bishop.";
 	faction = list("mining");
-	health = 250
+	name = "Missionary"
 	},
-/obj/effect/sliding_puzzle/lavaland,
-/turf/open/indestructible/necropolis/air,
-/area/ruin/unpowered/icecropolis)
+/turf/open/floor/grass/snow/basalt{
+	baseturfs = /turf/open/indestructible/necropolis/air;
+	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
+	},
+/area/ruin/unpowered/icecropolis/gold)
 "OG" = (
 /obj/structure/flora/rock/pile/icy,
 /turf/open/floor/plating/asteroid/snow/icemoon,
+/area/ruin/unpowered/icecropolis/outside)
+"OX" = (
+/obj/structure/statue/bone/rib{
+	color = "#880808";
+	dir = 1
+	},
+/turf/open/floor/grass/snow/basalt{
+	baseturfs = /turf/open/indestructible/necropolis;
+	initial_gas_mix = "ICEMOON_ATMOS"
+	},
 /area/ruin/unpowered/icecropolis/outside)
 "Pa" = (
 /obj/effect/decal/cleanable/blood/gibs/old,
@@ -1619,8 +2101,11 @@
 "Ph" = (
 /obj/structure/stone_tile/surrounding/burnt,
 /mob/living/simple_animal/hostile/asteroid/elite/legionnaire{
+	desc = "Captain of the Holy Guard, a title few can hold without faulter.";
 	faction = list("mining");
-	health = 400
+	health = 300;
+	maxHealth = 300;
+	name = "Captain of the Holy Guard"
 	},
 /turf/open/lava/smooth,
 /area/ruin/unpowered/icecropolis)
@@ -1634,13 +2119,30 @@
 /turf/open/lava/smooth,
 /area/ruin/unpowered/icecropolis/reach)
 "Pm" = (
-/obj/structure/spawner/lavaland/legion,
-/turf/open/indestructible/necropolis/air,
+/obj/structure/stone_tile/slab,
+/obj/effect/decal/cleanable/blood/gibs/body,
+/turf/open/indestructible/boss/air,
 /area/ruin/unpowered/icecropolis)
 "Pn" = (
 /obj/structure/reagent_dispensers/watertank/high,
 /turf/open/floor/wood,
 /area/ruin/unpowered/icecropolis/reach)
+"PI" = (
+/obj/item/chair/wood/wings,
+/obj/effect/decal/cleanable/dirt,
+/obj/item/storage/box/emptysandbags,
+/turf/open/floor/wood,
+/area/ruin/unpowered/icecropolis)
+"PK" = (
+/obj/structure/stone_tile,
+/obj/structure/stone_tile{
+	dir = 8
+	},
+/obj/structure/stone_tile/block{
+	dir = 1
+	},
+/turf/open/lava/smooth,
+/area/ruin/unpowered/icecropolis)
 "PP" = (
 /obj/structure/stone_tile/block/burnt{
 	dir = 1
@@ -1666,21 +2168,24 @@
 "PZ" = (
 /obj/effect/decal/cleanable/blood/gibs/core,
 /turf/open/floor/grass/snow/basalt{
+	baseturfs = /turf/open/indestructible/necropolis/air;
 	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
 	},
 /area/ruin/unpowered/icecropolis/gold)
 "Qe" = (
-/obj/item/rcd_ammo,
-/turf/open/floor/grass/snow/basalt{
-	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
-	},
-/area/ruin/unpowered/icecropolis)
+/obj/item/reagent_containers/glass/bottle/nutrient/ez,
+/obj/item/reagent_containers/glass/bottle/nutrient/ez,
+/obj/item/reagent_containers/glass/bottle/nutrient/ez,
+/obj/item/reagent_containers/glass/bottle/nutrient/ez,
+/turf/open/floor/plating,
+/area/ruin/unpowered/icecropolis/rusty)
 "Qf" = (
 /turf/open/lava,
 /area/ruin/unpowered/icecropolis)
 "Qi" = (
 /obj/effect/decal/cleanable/blood/gibs/old,
 /turf/open/floor/grass/snow/basalt{
+	baseturfs = /turf/open/indestructible/necropolis/air;
 	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
 	},
 /area/ruin/unpowered/icecropolis/gold)
@@ -1717,12 +2222,18 @@
 	},
 /turf/open/lava/smooth,
 /area/ruin/unpowered/icecropolis/gold)
+"Rp" = (
+/obj/structure/stone_tile/center,
+/obj/structure/stone_tile/surrounding,
+/turf/open/lava/smooth,
+/area/ruin/unpowered/icecropolis)
 "Rs" = (
 /obj/structure/bed/pod,
 /obj/item/bedsheet/purple,
 /obj/effect/decal/cleanable/blood/gibs/old,
 /obj/item/rcd_ammo,
 /turf/open/floor/grass/snow/basalt{
+	baseturfs = /turf/open/indestructible/necropolis/air;
 	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
 	},
 /area/ruin/unpowered/icecropolis/gold)
@@ -1747,6 +2258,10 @@
 /obj/item/seeds/lavaland/cactus,
 /turf/open/floor/wood,
 /area/ruin/unpowered/icecropolis/reach)
+"Sp" = (
+/obj/structure/mineral_door/iron,
+/turf/open/indestructible/necropolis/air,
+/area/ruin/unpowered/icecropolis)
 "St" = (
 /obj/structure/stone_tile/block/burnt{
 	dir = 8
@@ -1771,6 +2286,19 @@
 	},
 /turf/open/indestructible/boss/air,
 /area/ruin/unpowered/icecropolis/reach)
+"SG" = (
+/obj/structure/stone_tile,
+/obj/structure/stone_tile/block{
+	dir = 1
+	},
+/obj/structure/stone_tile{
+	dir = 8
+	},
+/obj/structure/statue/bone/rib{
+	color = "#880808"
+	},
+/turf/open/lava/smooth,
+/area/ruin/unpowered/icecropolis)
 "SH" = (
 /obj/effect/decal/cleanable/blood/gibs/old,
 /turf/closed/indestructible/riveted/boss,
@@ -1796,6 +2324,7 @@
 	dir = 8
 	},
 /turf/open/floor/grass/snow/basalt{
+	baseturfs = /turf/open/indestructible/necropolis/air;
 	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
 	},
 /area/ruin/unpowered/icecropolis/reach)
@@ -1813,18 +2342,21 @@
 /obj/item/trash/sosjerky,
 /obj/effect/decal/cleanable/blood/gibs/old,
 /turf/open/floor/grass/snow/basalt{
+	baseturfs = /turf/open/indestructible/necropolis/air;
 	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
 	},
 /area/ruin/unpowered/icecropolis/gold)
 "To" = (
 /obj/structure/mineral_door/wood,
 /turf/open/floor/grass/snow/basalt{
+	baseturfs = /turf/open/indestructible/necropolis/air;
 	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
 	},
 /area/ruin/unpowered/icecropolis/reach)
 "TC" = (
 /obj/item/clothing/head/helmet/roman/legionnaire,
 /turf/open/floor/grass/snow/basalt{
+	baseturfs = /turf/open/indestructible/necropolis/air;
 	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
 	},
 /area/ruin/unpowered/icecropolis/reach)
@@ -1836,6 +2368,10 @@
 /obj/item/clothing/suit/armor/vest/russian_coat,
 /obj/item/clothing/head/helmet/rus_helmet,
 /obj/item/clothing/under/color/black,
+/obj/item/a_gift{
+	desc = "A nicely wrapped present adressed to Yuri.";
+	name = "gift to Yuri"
+	},
 /turf/open/floor/wood,
 /area/ruin/unpowered/icecropolis/russia)
 "TP" = (
@@ -1845,6 +2381,7 @@
 "Uj" = (
 /obj/structure/stone_tile/slab/cracked,
 /obj/effect/decal/cleanable/blood/old,
+/obj/item/stack/sheet/mineral/gold/twenty,
 /turf/open/indestructible/boss/air,
 /area/ruin/unpowered/icecropolis/gold)
 "Un" = (
@@ -1862,7 +2399,10 @@
 /obj/item/shovel,
 /obj/item/shovel,
 /obj/item/shovel/spoon,
-/turf/open/floor/wood,
+/turf/open/floor/grass/snow/basalt{
+	baseturfs = /turf/open/indestructible/necropolis/air;
+	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
+	},
 /area/ruin/unpowered/icecropolis/reach)
 "Ur" = (
 /obj/structure/fluff/broken_flooring,
@@ -1875,6 +2415,13 @@
 /obj/item/stack/sheet/mineral/plasma/five,
 /turf/open/floor/wood,
 /area/ruin/unpowered/icecropolis/russia)
+"Ux" = (
+/obj/structure/mineral_door/iron,
+/turf/open/floor/grass/snow/basalt{
+	baseturfs = /turf/open/indestructible/necropolis/air;
+	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
+	},
+/area/ruin/unpowered/icecropolis)
 "UI" = (
 /turf/open/floor/plasteel,
 /area/ruin/unpowered/icecropolis/rusty)
@@ -1887,18 +2434,40 @@
 	},
 /turf/open/lava/smooth,
 /area/ruin/unpowered/icecropolis/reach)
+"Vq" = (
+/obj/structure/stone_tile/block,
+/obj/structure/stone_tile{
+	dir = 1
+	},
+/obj/structure/stone_tile{
+	dir = 4
+	},
+/obj/structure/fluff/drake_statue/falling{
+	color = "#880808";
+	desc = "A towering basalt sculpture of a drake. It's old and decrepit, with THE PRIEST inscribed at its base.";
+	name = "Statue of The Priest";
+	pixel_y = -16
+	},
+/turf/open/lava/smooth,
+/area/ruin/unpowered/icecropolis)
 "Vx" = (
 /mob/living/simple_animal/hostile/asteroid/gutlunch,
 /turf/open/floor/grass/snow/basalt{
+	baseturfs = /turf/open/indestructible/necropolis/air;
 	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
 	},
 /area/ruin/unpowered/icecropolis/gold)
+"VU" = (
+/obj/structure/stone_tile/slab,
+/turf/open/indestructible/boss/air,
+/area/ruin/unpowered/icecropolis)
 "VV" = (
 /turf/closed/indestructible/necropolis,
 /area/ruin/unpowered/icecropolis)
 "VX" = (
 /obj/effect/mob_spawn/human/corpse/charredskeleton,
 /turf/open/floor/grass/snow/basalt{
+	baseturfs = /turf/open/indestructible/necropolis/air;
 	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
 	},
 /area/ruin/unpowered/icecropolis)
@@ -1914,11 +2483,27 @@
 /obj/structure/necropolis_gate,
 /turf/open/indestructible/necropolis/air,
 /area/ruin/unpowered/icecropolis)
+"Wt" = (
+/obj/structure/legionpike,
+/turf/open/floor/grass/snow/basalt{
+	baseturfs = /turf/open/indestructible/necropolis/air;
+	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
+	},
+/area/ruin/unpowered/icecropolis)
 "Wu" = (
 /obj/structure/table/wood/reinforced,
 /obj/item/storage/bag/plants/portaseeder,
 /turf/open/floor/wood,
 /area/ruin/unpowered/icecropolis/reach)
+"Wz" = (
+/obj/structure/statue/bone/rib{
+	color = "#880808"
+	},
+/turf/open/floor/grass/snow/basalt{
+	baseturfs = /turf/open/indestructible/necropolis;
+	initial_gas_mix = "ICEMOON_ATMOS"
+	},
+/area/ruin/unpowered/icecropolis/outside)
 "WO" = (
 /turf/open/floor/grass/snow/basalt{
 	initial_gas_mix = "ICEMOON_ATMOS"
@@ -1962,6 +2547,7 @@
 "Xm" = (
 /obj/structure/ore_box,
 /turf/open/floor/grass/snow/basalt{
+	baseturfs = /turf/open/indestructible/necropolis/air;
 	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
 	},
 /area/ruin/unpowered/icecropolis/reach)
@@ -1970,6 +2556,22 @@
 /obj/structure/stone_tile/center,
 /turf/open/indestructible/boss/air,
 /area/ruin/unpowered/icecropolis/reach)
+"Xp" = (
+/obj/structure/stone_tile/block,
+/obj/structure/stone_tile/surrounding{
+	pixel_y = -16
+	},
+/obj/structure/stone_tile/center{
+	pixel_y = -16
+	},
+/obj/structure/sacrificealtar{
+	color = "#880808";
+	desc = "An altar designed to perform blood sacrifice to The Priest.";
+	name = "Altar of the Priest";
+	pixel_y = -16
+	},
+/turf/open/lava/smooth,
+/area/ruin/unpowered/icecropolis)
 "Xr" = (
 /obj/structure/stone_tile/block{
 	dir = 4
@@ -1988,6 +2590,7 @@
 /area/ruin/unpowered/icecropolis/reach)
 "Xw" = (
 /mob/living/simple_animal/hostile/zombie{
+	aggro_vision_range = 6;
 	faction = list("mining")
 	},
 /turf/open/indestructible/necropolis/air,
@@ -2003,17 +2606,44 @@
 /turf/open/floor/plasteel,
 /area/ruin/unpowered/icecropolis/rusty)
 "XI" = (
-/obj/structure/barricade/wooden,
-/turf/open/floor/grass/snow/basalt{
-	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
+/obj/structure/stone_tile{
+	dir = 4
 	},
+/obj/structure/stone_tile/block,
+/obj/structure/stone_tile{
+	dir = 1
+	},
+/obj/structure/statue/bone/rib{
+	color = "#880808";
+	dir = 1
+	},
+/turf/open/lava/smooth,
 /area/ruin/unpowered/icecropolis)
 "XN" = (
 /mob/living/simple_animal/hostile/megafauna/dragon{
+	aggro_vision_range = 8;
+	desc = "High Priest of the Bloody Hallow.";
+	gps_name = "Holy Fire Signal";
 	health = 2000;
-	name = "The Bloody King"
+	name = "The Priest"
 	},
 /turf/open/indestructible/necropolis/air,
+/area/ruin/unpowered/icecropolis)
+"XV" = (
+/obj/effect/spawner/lootdrop/snowdin/dungeonmid,
+/turf/open/indestructible/necropolis/air,
+/area/ruin/unpowered/icecropolis)
+"Ym" = (
+/obj/structure/stone_tile{
+	dir = 8
+	},
+/obj/structure/stone_tile{
+	dir = 4
+	},
+/obj/structure/stone_tile/block{
+	dir = 4
+	},
+/turf/open/lava/smooth,
 /area/ruin/unpowered/icecropolis)
 "Ys" = (
 /obj/structure/window/reinforced,
@@ -2048,6 +2678,7 @@
 /obj/item/weldingtool/experimental,
 /obj/item/construction/rcd/loaded,
 /turf/open/floor/grass/snow/basalt{
+	baseturfs = /turf/open/indestructible/necropolis/air;
 	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
 	},
 /area/ruin/unpowered/icecropolis/reach)
@@ -2055,13 +2686,21 @@
 /obj/structure/bed/pod,
 /obj/item/bedsheet/red,
 /turf/open/floor/grass/snow/basalt{
+	baseturfs = /turf/open/indestructible/necropolis/air;
 	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
 	},
 /area/ruin/unpowered/icecropolis/gold)
 "YV" = (
 /obj/structure/toilet,
+/obj/item/clothing/head/collectable/welding,
 /turf/open/floor/plasteel,
 /area/ruin/unpowered/icecropolis/rusty)
+"YW" = (
+/obj/item/chair/wood/wings,
+/obj/effect/decal/cleanable/dirt,
+/obj/item/toy/figure/clown,
+/turf/open/floor/wood,
+/area/ruin/unpowered/icecropolis)
 "YY" = (
 /obj/effect/mob_spawn/human/corpse/charredskeleton,
 /turf/open/indestructible/necropolis/air,
@@ -2076,6 +2715,7 @@
 "Zd" = (
 /obj/item/trash/sosjerky,
 /turf/open/floor/grass/snow/basalt{
+	baseturfs = /turf/open/indestructible/necropolis/air;
 	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
 	},
 /area/ruin/unpowered/icecropolis/gold)
@@ -2094,25 +2734,50 @@
 /obj/item/circuitboard/machine/biogenerator,
 /turf/open/floor/plating,
 /area/ruin/unpowered/icecropolis/rusty)
+"Zk" = (
+/obj/structure/stone_tile/block{
+	dir = 1
+	},
+/obj/structure/stone_tile,
+/obj/structure/stone_tile{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/blood/footprints,
+/mob/living/simple_animal/hostile/asteroid/hivelord/legion{
+	color = "#880808";
+	desc = "Disfigured and distorted, this disciple of The Priest fell to temptation before shutting themselves away with their idol.";
+	health = 200;
+	maxHealth = 200;
+	melee_damage_lower = 20;
+	melee_damage_type = "burn";
+	melee_damage_upper = 20;
+	name = "The Disciple"
+	},
+/turf/open/lava/smooth,
+/area/ruin/unpowered/icecropolis)
 "Zm" = (
 /turf/open/floor/grass/snow/basalt{
+	baseturfs = /turf/open/indestructible/necropolis/air;
 	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
 	},
 /area/ruin/unpowered/icecropolis/reach)
 "Zw" = (
 /turf/open/floor/grass/snow/basalt{
+	baseturfs = /turf/open/indestructible/necropolis/air;
 	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
 	},
 /area/ruin/unpowered/icecropolis/gold)
 "ZA" = (
 /obj/machinery/hydroponics/soil,
 /turf/open/floor/grass/snow/basalt{
+	baseturfs = /turf/open/indestructible/necropolis/air;
 	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
 	},
 /area/ruin/unpowered/icecropolis/reach)
 "ZE" = (
 /obj/structure/mineral_door/gold,
 /turf/open/floor/grass/snow/basalt{
+	baseturfs = /turf/open/indestructible/necropolis/air;
 	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
 	},
 /area/ruin/unpowered/icecropolis/gold)
@@ -2121,11 +2786,18 @@
 /turf/open/lava/smooth,
 /area/ruin/unpowered/icecropolis/gold)
 "ZG" = (
-/mob/living/simple_animal/hostile/asteroid/goliath/beast/ancient,
-/turf/open/indestructible/necropolis/air,
+/obj/structure/stone_tile{
+	dir = 1
+	},
+/obj/structure/stone_tile{
+	dir = 4
+	},
+/obj/structure/stone_tile/block,
+/turf/open/lava/smooth,
 /area/ruin/unpowered/icecropolis)
 "ZH" = (
 /obj/structure/table/rolling,
+/obj/effect/spawner/lootdrop/three_course_meal,
 /turf/open/floor/wood,
 /area/ruin/unpowered/icecropolis/reach)
 "ZM" = (
@@ -2139,6 +2811,7 @@
 "ZW" = (
 /obj/structure/table/optable,
 /turf/open/floor/grass/snow/basalt{
+	baseturfs = /turf/open/indestructible/necropolis/air;
 	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
 	},
 /area/ruin/unpowered/icecropolis/reach)
@@ -2599,8 +3272,8 @@ jV
 jV
 jV
 jV
-je
-je
+nE
+nE
 VV
 Qf
 Qf
@@ -2966,8 +3639,8 @@ Zw
 Zd
 mp
 ZM
-je
-je
+nE
+nE
 je
 iS
 iS
@@ -3028,7 +3701,7 @@ vk
 Zw
 gA
 ZM
-je
+nE
 je
 je
 iS
@@ -3036,8 +3709,8 @@ iS
 iS
 iS
 tA
-tA
-tA
+je
+je
 VV
 tA
 tA
@@ -3086,19 +3759,19 @@ ZU
 ZU
 ab
 Zw
-Zw
+Dq
 Zw
 Zw
 ZM
-je
-je
+nE
+nE
 je
 tA
 tA
 iS
 iS
 iS
-tA
+je
 VV
 VV
 tA
@@ -3153,16 +3826,16 @@ Zw
 KW
 ZM
 je
-je
-je
+nE
+nE
 tA
 tA
 tA
 tA
 iS
-tA
+je
 VV
-tA
+je
 tA
 tA
 tA
@@ -3215,16 +3888,16 @@ Zw
 Zw
 ZM
 je
-je
+nE
 je
 tA
 iS
 tA
 tA
-tA
-tA
+je
+je
 VV
-tA
+je
 tA
 tA
 tA
@@ -3271,26 +3944,26 @@ re
 Zb
 bU
 ZM
-Dq
+Zw
 rR
 MK
 Qi
 ZM
 je
-je
+nE
 je
 tA
 tA
 iS
-tA
 je
 je
+nE
 VV
 tA
 tA
 tA
-tA
-tA
+je
+je
 tA
 tA
 tA
@@ -3339,24 +4012,24 @@ Zw
 PZ
 ZM
 je
-je
+nE
 je
 je
 tA
 tA
 je
 je
+nE
+VV
 je
 VV
-tA
 VV
 VV
 VV
 VV
 VV
-VV
-tA
-tA
+je
+je
 VV
 VV
 VV
@@ -3407,24 +4080,24 @@ je
 EU
 EU
 je
+nE
+nE
+VV
 je
 je
-VV
-tA
 EU
 EU
-EU
-tA
-tA
+nE
+nE
 VV
 VV
 VV
 VV
-tA
-tA
+nE
+nE
 VV
 VV
-tA
+je
 tA
 tA
 jV
@@ -3469,7 +4142,7 @@ je
 EU
 je
 je
-je
+nE
 je
 VV
 VV
@@ -3488,9 +4161,9 @@ tA
 VV
 VV
 VV
-tA
-VV
 je
+VV
+nE
 jV
 fE
 Ao
@@ -3531,8 +4204,8 @@ je
 tA
 tA
 tA
-je
-je
+nE
+nE
 je
 jV
 jV
@@ -3540,19 +4213,19 @@ VV
 VV
 VV
 VV
+nE
 tA
-tA
-tA
+nE
 VV
 VV
 VV
-tA
 EU
 EU
 EU
-tA
-VV
 je
+je
+VV
+nE
 jV
 fE
 Ao
@@ -3578,7 +4251,7 @@ Ao
 fE
 jV
 zr
-Zb
+re
 qQ
 ZM
 Zw
@@ -3589,8 +4262,8 @@ Zw
 hw
 Zw
 ZM
-je
-je
+nE
+nE
 je
 EU
 je
@@ -3599,8 +4272,8 @@ je
 je
 jV
 je
-je
-je
+nE
+nE
 VV
 EU
 EU
@@ -3613,8 +4286,8 @@ VV
 VV
 VV
 VV
-je
-je
+VV
+nE
 jV
 fE
 Ao
@@ -3645,28 +4318,30 @@ Uj
 ZM
 Zw
 Lx
-Lx
+Gc
 LT
 Lx
 Lx
 MU
 ZM
 je
-je
+nE
 je
 EU
 EU
 tA
 je
-je
+nE
 jV
-je
-je
-tA
+nE
+nE
+Lp
 EU
 EU
 EU
 EU
+EU
+Lp
 tA
 tA
 tA
@@ -3675,8 +4350,6 @@ tA
 tA
 tA
 tA
-tA
-je
 jV
 fE
 Ao
@@ -3714,16 +4387,16 @@ Lx
 Zw
 ZM
 je
-je
-je
+nE
+nE
 tA
 tA
 tA
 je
-je
+nE
 jV
-je
-je
+nE
+nE
 tA
 tA
 tA
@@ -3764,10 +4437,10 @@ Ao
 fE
 jV
 hu
-Zb
+re
 Zb
 ZM
-Dq
+Zw
 Lx
 ZF
 IX
@@ -3777,7 +4450,7 @@ Zw
 ZM
 je
 je
-je
+nE
 tA
 tA
 tA
@@ -3785,7 +4458,7 @@ je
 je
 jV
 je
-je
+nE
 je
 tA
 tA
@@ -3799,7 +4472,7 @@ tA
 Mf
 ml
 ml
-mu
+fz
 tA
 jV
 fE
@@ -3826,10 +4499,10 @@ Ao
 fE
 jV
 xx
-Ff
+na
 WT
 ZM
-Zw
+Dq
 Lx
 IX
 IX
@@ -3838,8 +4511,8 @@ Lx
 Zw
 ZM
 je
-je
-je
+nE
+nE
 tA
 tA
 tA
@@ -3858,7 +4531,7 @@ jV
 jV
 jV
 tA
-Le
+mu
 ml
 ml
 Mf
@@ -3900,14 +4573,14 @@ Lx
 Zw
 ZM
 ZM
-je
+nE
 je
 je
 tA
-tA
-tA
+Fq
 tA
 EU
+jV
 EU
 tA
 tA
@@ -3962,14 +4635,14 @@ Pa
 Zw
 Zw
 ZM
+nE
 je
 je
-je
-tA
 tA
 tA
 tA
 EU
+Sp
 EU
 tA
 in
@@ -3980,9 +4653,9 @@ mu
 ph
 in
 tA
-Xw
 tA
-Xw
+tA
+tA
 tA
 tA
 tA
@@ -4023,15 +4696,15 @@ Rn
 Lx
 Zw
 Zw
-hQ
+ZE
 je
+nE
 je
-je
-tA
 tA
 tA
 tA
 EU
+Sp
 EU
 tA
 Mf
@@ -4048,7 +4721,7 @@ tA
 tA
 tA
 tA
-tA
+Xw
 jV
 fE
 Ao
@@ -4082,34 +4755,34 @@ Lx
 GF
 IX
 LM
-Gc
+Lx
 Zw
 Ir
-hQ
+ZE
 je
+nE
 je
-je
-tA
 tA
 tA
 tA
 EU
+jV
 EU
 tA
-tO
 mu
+uU
 Dh
 LY
 Dh
-mu
 Le
+mu
 tA
 tA
 sa
 Mf
 hi
 sa
-Xw
+tA
 tA
 jV
 fE
@@ -4147,23 +4820,23 @@ Lx
 Lx
 rR
 Zw
-hQ
+ZE
 je
-je
+nE
 je
 tA
 tA
 tA
 je
 jV
-EU
+tA
 tA
 mu
 mu
 Dh
 eU
 Dh
-Le
+mu
 mu
 tA
 tA
@@ -4211,14 +4884,14 @@ Zw
 Zw
 ZM
 je
-je
+nE
 je
 tA
 tA
 je
 je
 jV
-tA
+yg
 tA
 uU
 mu
@@ -4266,19 +4939,19 @@ ZM
 Zw
 IE
 Zw
-MU
+OB
 ZM
 ZM
 ZM
 ZM
 ZM
 je
-je
+nE
 je
 tA
 tA
-je
-je
+nE
+nE
 jV
 tA
 tA
@@ -4331,16 +5004,16 @@ ZM
 ZM
 ZM
 je
-je
-je
-je
+nE
+nE
+nE
 je
 je
 je
 tA
 tA
 je
-je
+nE
 jV
 tA
 tA
@@ -4383,26 +5056,26 @@ Za
 Ao
 fE
 jV
+nE
+nE
+nE
 je
 je
 je
 je
 je
 je
+nE
+nE
 je
-je
-je
-je
-je
-je
-je
-je
+nE
+nE
 je
 je
 tA
 tA
 je
-je
+nE
 jV
 tA
 tA
@@ -4425,9 +5098,9 @@ jV
 vv
 vv
 vv
-WO
-WO
-WO
+Ix
+Ix
+Ix
 Ao
 Ao
 Ao
@@ -4445,26 +5118,26 @@ Za
 Ao
 fE
 jV
-je
-je
-je
-je
-tA
-tA
-je
-je
-je
-je
-je
-je
-je
+nE
+nE
 je
 je
 tA
 tA
+je
+je
+nE
+nE
+je
+je
+je
+nE
+je
+tA
+tA
 tA
 je
-je
+nE
 jV
 jV
 jV
@@ -4477,20 +5150,20 @@ jV
 jV
 jV
 jV
-WO
-WO
-WO
-WO
-WO
-WO
-WO
-WO
-WO
+ur
+ur
+ur
+ur
+ur
+ur
+ur
+ur
+ur
 vv
 ws
 St
 op
-WO
+Ix
 Ao
 Ao
 Ao
@@ -4507,53 +5180,53 @@ Za
 Ao
 fE
 jV
+nE
+je
+tA
+tA
+tA
+tA
+nE
+nE
+nE
+je
+tA
+tA
+je
 je
 je
 tA
 tA
 tA
-tA
 je
-je
-je
-je
-tA
-tA
-je
-je
-je
-tA
-tA
-tA
-je
-je
+nE
 je
 je
 je
 je
 je
 jV
-je
-je
-je
-je
-je
+nE
+nE
+nE
+nE
+nE
 jV
-WO
-WO
-WO
-WO
-WO
-WO
-WO
-WO
-WO
+Ix
+Ix
+Ix
+Ix
+Ix
+Ix
+Ix
+Ix
+Ix
 vv
 og
 vP
 Jz
-WO
-WO
+Ix
+Ix
 WO
 Ao
 Ao
@@ -4569,17 +5242,15 @@ Za
 Ao
 fE
 jV
-je
-je
-tA
-je
-je
-je
-je
-je
+nE
 je
 tA
-tA
+je
+je
+je
+nE
+je
+je
 tA
 tA
 tA
@@ -4588,39 +5259,41 @@ tA
 tA
 tA
 tA
+tA
+tA
 je
 je
-je
-je
-je
-je
+nE
+nE
+nE
+nE
 jV
-je
-je
-je
-je
-je
+nE
+nE
+nE
+nE
+nE
 jV
-WO
-WO
-WO
-WO
-WO
-WO
-WO
-WO
-WO
+Ix
+OX
+Ix
+Ix
+OX
+Ix
+Ix
+OX
+Ix
 vv
 cF
 gn
 BJ
-WO
-WO
-WO
-WO
+Ix
+Ix
+Ix
+Ix
 Ao
 Ao
-Ao
+kC
 Ao
 "}
 (41,1,1) = {"
@@ -4636,52 +5309,52 @@ je
 tA
 je
 je
+nE
+nE
+je
+tA
+tA
+tA
+tA
+tA
+tA
+Fq
+tA
+tA
+tA
+tA
+tA
+tA
+tA
 je
 je
-je
-tA
-tA
-tA
-tA
-tA
-tA
+nE
+jV
+nE
 nE
 tA
 tA
 tA
-tA
-tA
-tA
-tA
-je
-je
-je
 jV
-je
-je
-tA
-tA
-tA
-jV
-WO
-WO
-WO
+Ix
+Ix
+Ix
 Eu
 Eu
-WO
-WO
-WO
+Ix
+Ix
+Ix
 yl
 vv
-WO
-WO
-WO
-WO
-WO
-WO
-WO
-WO
-WO
+BR
+BR
+Ix
+Ix
+Ix
+ae
+Ix
+Ix
+Ix
 Ao
 Ao
 "}
@@ -4697,10 +5370,10 @@ je
 je
 tA
 je
+nE
 je
+nE
 je
-je
-je
 tA
 tA
 tA
@@ -4711,40 +5384,40 @@ tA
 tA
 tA
 tA
-tA
-je
+nE
+nE
 je
 tA
 tA
 tA
 je
 jV
-je
-je
+nE
+nE
 tA
-tA
+EU
 jV
 jV
-WO
-WO
+Ix
+Ix
 Eu
-WO
-WO
+Ix
+Ix
 Eu
-WO
-WO
+Ix
+Ix
+Ix
 vv
-vv
-WO
-WO
-WO
-WO
-WO
-WO
-WO
+Ix
+BR
+Ix
+Ix
+Ix
+Ix
+Ix
 IC
-WO
-WO
+Ix
+Ix
 Ao
 "}
 (43,1,1) = {"
@@ -4773,41 +5446,41 @@ je
 je
 je
 tA
-je
-je
+nE
+nE
 je
 je
 tA
 je
-je
+nE
 jV
-je
-je
+nE
+nE
 tA
-tA
+EU
 tA
 Wi
-WO
+Ix
+Eu
+Eu
+oS
 Eu
 Eu
 Eu
-Eu
-Eu
-Eu
-WO
-WO
+Ix
+Ix
 FQ
-WO
-WO
-WO
-WO
-WO
-WO
-WO
-WO
-WO
-WO
-WO
+Ix
+BR
+Ix
+Ix
+Ix
+Ix
+Ix
+Ix
+Ix
+Ix
+Ix
 "}
 (44,1,1) = {"
 Za
@@ -4828,48 +5501,48 @@ jV
 jV
 tA
 je
+nE
+je
+nE
+nE
 je
 je
 je
-je
-je
-je
-je
-je
-je
-je
+nE
+nE
+nE
 je
 je
 je
 je
 jV
-je
-je
+nE
+nE
 tA
-tA
+EU
 jV
 jV
-WO
-WO
+Ix
+Ix
 Eu
-WO
-WO
+Ix
+Ix
 Eu
-WO
-WO
+Ix
+Ix
+Ix
 vv
-vv
-WO
-WO
-WO
+Ix
+BR
+Ix
 IC
-WO
-WO
-WO
-WO
-WO
-WO
-WO
+Ix
+Ix
+Ix
+Ix
+Ix
+Ix
+Ix
 "}
 (45,1,1) = {"
 Za
@@ -4890,10 +5563,10 @@ tA
 jV
 je
 je
-je
-je
-je
-je
+nE
+nE
+nE
+nE
 jV
 jV
 jV
@@ -4905,30 +5578,30 @@ jV
 jV
 jV
 jV
-je
-je
+nE
+nE
 tA
 tA
 tA
 jV
-WO
-WO
-WO
+Ix
+Ix
+Ix
 Eu
 Eu
-WO
-WO
-WO
+Ix
+Ix
+Ix
 yl
 vv
-WO
-WO
-WO
-WO
-WO
-WO
-WO
-WO
+BR
+BR
+Ix
+ae
+Ix
+Ix
+Ix
+Ix
 Ao
 Ao
 Ao
@@ -4944,20 +5617,20 @@ jV
 je
 jV
 DJ
-BT
-BT
+Il
+Il
 VX
-BT
+Il
 mk
 jV
 je
 je
-je
-je
-je
+nE
+nE
+nE
 je
 jV
-je
+nE
 tA
 tA
 vz
@@ -4965,32 +5638,32 @@ tA
 tA
 tA
 tA
-je
-je
-je
+nE
+nE
+nE
 tA
-tA
+nE
 tA
 tA
 jV
-WO
-WO
-WO
-WO
-WO
-WO
-WO
-WO
-WO
+Ix
+Wz
+Ix
+Ix
+Wz
+Ix
+Ix
+Wz
+Ix
 vv
 ws
 St
 op
-WO
-WO
-WO
+Ix
+Ix
+Ix
 Ao
-Ao
+kC
 Ao
 Ao
 Ao
@@ -5005,21 +5678,21 @@ fE
 jV
 je
 jV
-tA
-HW
-BT
-BT
-tA
-tA
+pU
+pU
+Il
+Il
+pU
+pU
 jV
 je
-je
-je
+nE
+nE
 je
 je
 je
 jV
-je
+nE
 tA
 tA
 tA
@@ -5028,29 +5701,29 @@ tA
 tA
 tA
 tA
+nE
 tA
+nE
+nE
 tA
-tA
-vz
-tA
-je
+nE
 jV
-WO
-WO
-WO
-WO
-WO
-WO
-WO
-WO
-WO
+Ix
+Ix
+Ix
+Ix
+Ix
+Ix
+Ix
+Ix
+Ix
 vv
 og
 vP
 Jz
-WO
-WO
-WO
+Ix
+Ix
+Ix
 Ao
 Ao
 Ao
@@ -5067,12 +5740,12 @@ fE
 jV
 jV
 jV
+XV
+pU
+tO
 tA
-DJ
-tA
-OB
-BT
-BT
+pU
+Ka
 jV
 jV
 jV
@@ -5081,36 +5754,36 @@ jV
 jV
 jV
 jV
-je
+nE
 tA
 tA
-je
-je
-je
-je
-je
-je
-je
-je
-je
-je
-je
-je
+nE
+nE
+nE
+nE
+nE
+nE
+nE
+nE
+nE
+nE
+nE
+nE
 jV
-WO
-WO
-WO
-WO
-WO
-WO
-WO
-WO
-WO
+ur
+ur
+ur
+ur
+ur
+ur
+ur
+ur
+ur
 vv
 cF
 gn
 BJ
-WO
+Ix
 Ao
 Ao
 ea
@@ -5127,26 +5800,26 @@ Za
 Ao
 fE
 jV
-je
+nE
 jV
+pU
+pU
+Il
 tA
-BT
-BT
-tA
-BT
-BT
+pU
+pU
 jV
-je
-je
-je
-je
-je
-je
+nE
+nE
+nE
+nE
+nE
+nE
 jV
-je
+nE
 tA
 tA
-je
+nE
 jV
 jV
 jV
@@ -5169,9 +5842,9 @@ jV
 vv
 vv
 vv
-WO
-WO
-WO
+Ix
+Ix
+Ix
 Ao
 Ao
 Ao
@@ -5189,44 +5862,44 @@ Za
 Ao
 fE
 jV
-je
+nE
 jV
 tA
 VX
-BT
+Il
 zM
 tA
 HW
 jV
-je
-je
-je
-je
-je
-je
+nE
+nE
+nE
+nE
+nE
+nE
 jV
-je
+nE
 tA
 tA
-je
+nE
 jV
-je
-je
-je
-je
-je
-je
-je
+nE
+nE
+nE
+nE
+nE
+nE
+nE
 jV
-BT
-BT
-BT
-BT
+Wt
+Il
+Il
+aU
+Il
 Ka
-BT
-BT
-BT
-Qe
+Il
+Il
+Wt
 jV
 fE
 Ao
@@ -5251,40 +5924,40 @@ Za
 Ao
 fE
 jV
-je
+nE
 jV
 tA
 tA
 tA
-BT
+Il
 tA
 DJ
 jV
+nE
+nE
+nE
+nE
 je
-je
-je
-je
-je
-je
-je
-je
+nE
+nE
+nE
 tA
-je
-je
-je
-je
-je
-je
-je
-je
-je
-je
+nE
+nE
+nE
+nE
+nE
+nE
+nE
+nE
+nE
+nE
 jV
-BT
+Il
 oT
 eH
 rE
-BT
+Il
 rE
 eH
 Kq
@@ -5313,36 +5986,36 @@ Za
 Ao
 fE
 jV
-je
+nE
 jV
 jV
 jV
-je
-je
+nE
+nE
 jV
 jV
 jV
 tA
 tA
 tA
-je
-je
-je
-je
+nE
+nE
+nE
+nE
 tA
 tA
-je
-je
-je
-je
-je
+nE
+nE
+nE
+nE
+nE
 tA
 tA
 dG
-je
-je
+nE
+nE
 jV
-BT
+Il
 zp
 pO
 rE
@@ -5350,7 +6023,7 @@ MR
 rE
 hs
 aV
-BT
+Il
 jV
 fE
 Ao
@@ -5375,44 +6048,44 @@ Za
 Ao
 fE
 jV
-je
-je
+nE
+nE
 tA
-je
-je
-je
-je
-je
+nE
+nE
+nE
+nE
+nE
 tA
 tA
 iQ
 tA
+nE
+nE
 je
-je
-je
-je
+nE
 tA
 Fq
+nE
+nE
 je
 je
-je
-je
-je
+nE
 tA
 CQ
 tA
-je
-je
+nE
+nE
 jV
-BT
+Il
 rE
 rE
 wq
-BT
+Il
 NS
 rE
 rE
-BT
+FN
 jV
 fE
 Ao
@@ -5437,44 +6110,44 @@ Za
 Ao
 fE
 jV
+nE
+nE
+tA
+nE
+nE
+tA
+tA
+tA
+tA
+tA
+tA
+tA
+tA
+tA
+tA
+tA
+tA
+tA
+nE
+nE
 je
-je
-tA
-je
-je
+nE
+nE
 tA
 tA
-tA
-tA
-tA
-tA
-tA
-tA
-tA
-tA
-tA
-tA
-tA
-je
-je
-je
-je
-je
-tA
-tA
-je
-je
-je
+nE
+nE
+nE
 jV
 Il
-BT
-BT
-BT
+Il
+Il
+Il
 Ph
-BT
-BT
-BT
-BT
+Il
+Il
+Il
+Il
 jV
 fE
 Ao
@@ -5499,44 +6172,44 @@ Za
 Ao
 fE
 jV
+nE
+nE
+tA
+tA
+tA
+tA
+tA
+tA
+tA
+tA
+tA
+tA
+tA
+tA
+tA
+tA
+tA
+tA
+nE
 je
 je
-tA
-tA
-tA
-tA
-tA
-tA
-tA
-tA
-tA
-tA
-tA
-tA
-tA
-tA
-tA
-tA
-je
-je
-je
-je
-je
-je
-je
-je
-je
-je
+nE
+nE
+nE
+nE
+nE
+nE
+nE
 jV
-BT
+Il
 rE
 rE
 CY
-BT
+Il
 Hd
 rE
 rE
-BT
+Il
 jV
 fE
 Ao
@@ -5561,44 +6234,44 @@ Za
 Ao
 fE
 jV
-je
-je
-je
-je
-je
+nE
+nE
+nE
+nE
+nE
+nE
+tA
+tA
+nE
+nE
+nE
+nE
 tA
 tA
 tA
-je
-je
-je
-je
 tA
 tA
-tA
-tA
-tA
+nE
+nE
 je
-je
-je
-je
-je
-je
-je
-je
-je
-je
-je
+nE
+nE
+nE
+nE
+nE
+nE
+nE
+nE
 jV
-BT
+Il
 zp
 hs
 rE
-BT
+Il
 rE
 pO
 aV
-BT
+Il
 jV
 fE
 Ao
@@ -5623,44 +6296,44 @@ Za
 Ao
 fE
 jV
-je
-je
-je
-je
-je
-je
+nE
+nE
+nE
+nE
+nE
+nE
 tA
-je
-je
-je
-je
-je
-je
-je
-je
+nE
+nE
+nE
+nE
+nE
+nE
+nE
+nE
 tA
 tA
+nE
+nE
 je
 je
-je
-je
-je
+nE
 tA
-je
-je
-je
+nE
+nE
+nE
 je
 je
 jV
-BT
+Il
 MT
 oZ
 rE
-BT
+Il
 rE
 oZ
 oT
-BT
+Il
 jV
 fE
 Ao
@@ -5685,44 +6358,44 @@ Za
 Ao
 fE
 jV
-je
-je
-je
-je
-je
-je
-je
-je
-je
-je
-je
-je
-je
-je
+nE
+nE
+nE
+nE
+nE
+nE
+nE
+nE
+nE
+nE
+nE
+nE
+nE
+nE
 tA
 tA
 tA
+nE
+nE
 je
 je
-je
-je
-je
+nE
 tA
+nE
+nE
+nE
 je
-je
-je
-je
-je
+nE
 jV
-BT
-BT
-XI
-XI
-XI
-XI
-XI
-BT
-BT
+Wt
+Il
+Il
+Il
+Il
+Il
+Il
+Il
+Wt
 jV
 fE
 fE
@@ -5764,24 +6437,24 @@ tA
 tA
 tA
 tA
+nE
+nE
 je
 je
-je
-je
-je
+nE
 tA
-je
-je
-je
-je
-je
+nE
+nE
+nE
+nE
+nE
 jV
 jV
 jV
 jV
-je
-je
-je
+Ux
+Ux
+Ux
 jV
 jV
 jV
@@ -5809,48 +6482,48 @@ Za
 Ao
 fE
 jV
-je
-je
-je
-je
-je
-je
-je
-je
-je
-je
-je
-je
-je
+nE
+nE
+nE
+nE
+nE
+nE
+nE
+nE
+nE
+nE
+nE
+nE
+nE
 tA
 tA
 tA
 tA
+nE
+nE
 je
 je
-je
-je
-je
+nE
 tA
-je
-je
-je
-je
-je
-je
-tA
-je
-Il
-BT
-BT
-je
-je
-je
-je
-je
-je
-je
-je
+nE
+nE
+nE
+nE
+nE
+nE
+nE
+nE
+Bw
+Bw
+Bw
+Bw
+Bw
+nE
+nE
+nE
+nE
+nE
+nE
 jV
 fE
 fE
@@ -5871,48 +6544,48 @@ Za
 Ao
 fE
 jV
+nE
+nE
+nE
+je
+nE
 je
 je
 je
 je
 je
-je
-je
-je
-je
-je
-je
-je
-je
-je
+nE
+nE
+nE
+nE
 tA
 iQ
 tA
+nE
 je
 je
 je
-je
-je
+nE
 tA
 tA
 tA
 tA
 tA
 tA
-je
-je
+nE
+nE
 Il
 tA
-LO
-BT
-BT
-je
-je
-je
-je
-je
-je
-je
+Il
+Il
+Il
+nE
+nE
+nE
+nE
+nE
+nE
+nE
 jV
 jV
 jV
@@ -5933,50 +6606,50 @@ Za
 Ao
 fE
 jV
+nE
+nE
+nE
+nE
 je
 je
 je
 je
 je
 je
-je
-je
-je
-je
-je
-je
-je
+nE
+nE
+nE
 tA
 tA
 tA
 tA
-je
-je
-je
-je
-je
-je
+nE
+nE
+nE
+nE
+nE
+nE
 tA
 vz
 tA
 tA
 tA
+nE
+nE
+nE
+nE
+nE
+nE
+nE
+nE
+nE
 je
 je
 je
 je
-je
-je
-je
-je
-je
-je
-je
-je
-je
-je
-je
-je
+nE
+nE
+nE
 jV
 fE
 Ao
@@ -5995,50 +6668,50 @@ Za
 Ao
 fE
 jV
-je
-je
-je
-je
-je
-je
-je
-je
-je
-je
-je
-je
-je
-je
+nE
+nE
+nE
+nE
+nE
+nE
+nE
+nE
+nE
+nE
+nE
+nE
+nE
+nE
 tA
 tA
-je
-je
-je
-tA
-tA
-tA
+nE
+nE
+nE
 tA
 tA
 tA
 tA
 tA
 tA
+nE
+nE
+nE
+nE
 je
-je
-je
-je
-je
-je
-je
-je
-tA
-tA
-tA
-tA
-tA
-ZG
-tA
-je
+nE
+nE
+nE
+nE
+nE
+nE
+nE
+nE
+nE
+nE
+nE
+nE
+nE
+nE
 jV
 fE
 fE
@@ -6057,7 +6730,7 @@ Za
 Ao
 fE
 jV
-je
+nE
 li
 li
 li
@@ -6066,41 +6739,41 @@ li
 li
 li
 li
-je
-je
-je
-je
-je
+nE
+nE
+nE
+nE
+nE
+nE
 tA
+nE
+nE
+nE
 tA
+jV
+jV
+jV
+jV
+nE
+nE
+nE
+nE
+nE
 je
 je
-je
-tA
-je
-je
-je
+nE
+nE
+nE
 je
 je
-je
-je
-tA
-je
-je
-je
-je
-je
-je
-je
-je
-tA
-tA
-tA
-tA
-tA
-tA
-tA
-je
+nE
+nE
+nE
+ie
+dP
+eQ
+PI
+ie
 jV
 jV
 jV
@@ -6119,7 +6792,7 @@ Za
 Ao
 fE
 jV
-je
+nE
 li
 ft
 Zh
@@ -6132,39 +6805,39 @@ li
 li
 li
 li
-je
+nE
 tA
 tA
-je
-je
-je
+nE
+nE
+nE
 tA
+jV
+LO
+hn
+jV
+jV
+jV
+nE
+nE
+nE
+nE
+nE
 je
 je
+nE
+nE
+nE
 je
-je
-je
-je
-je
-tA
-je
-je
-je
-je
-je
-je
-je
-je
-tA
-tA
-je
-je
-je
-tA
-tA
-je
-je
-je
+nE
+nE
+rT
+yF
+jN
+Fk
+YW
+nE
+nE
 jV
 fE
 Ao
@@ -6181,10 +6854,10 @@ Za
 Ao
 fE
 jV
-je
+nE
 li
 TP
-Ur
+rq
 UI
 li
 UI
@@ -6197,36 +6870,36 @@ li
 li
 tA
 tA
-je
-je
-je
+nE
+nE
+nE
 tA
+jV
+Pm
+di
+di
+VU
+jV
+jV
+nE
+nE
+nE
+nE
+nE
+nE
+nE
+nE
+nE
 je
-je
-je
-je
-je
-je
-je
-tA
-je
-je
-je
-je
-je
-je
-je
-je
-tA
-tA
-tA
-je
-je
-tA
-tA
-je
-je
-je
+nE
+nE
+nE
+nr
+EX
+GP
+fi
+nE
+nE
 jV
 fE
 Ao
@@ -6243,9 +6916,9 @@ Za
 Ao
 fE
 jV
-je
+nE
 li
-UI
+dg
 Ur
 dx
 hM
@@ -6259,36 +6932,36 @@ UI
 li
 tA
 tA
-je
-je
-je
-tA
-je
-je
-je
-tA
-je
-je
-je
-tA
-tA
-tA
-tA
+nE
+nE
+nE
+nE
+jV
+XI
+Ym
+Dt
+qC
+Ag
+jV
+nE
+nE
 tA
 tA
 tA
-je
-je
 tA
 tA
-tA
-je
-je
-tA
-tA
-tA
-je
-je
+nE
+nE
+nE
+nE
+nE
+nE
+iR
+Hz
+mo
+jN
+nE
+nE
 jV
 fE
 Ao
@@ -6305,9 +6978,9 @@ Za
 Ao
 fE
 jV
-je
+nE
 li
-bC
+Qe
 oQ
 XF
 li
@@ -6321,36 +6994,36 @@ bC
 li
 tA
 tA
-je
-je
-je
+nE
+nE
+nE
+nE
+jV
+ZG
+Rp
+bJ
+KA
+di
+jV
 tA
-je
-je
-je
-hb
-je
-je
-je
-tA
-tA
-je
-je
-je
+nE
+nE
+nE
+nE
 vz
 tA
-je
-je
+nE
 tA
-je
-je
-je
-je
-je
-je
 tA
-je
-je
+nE
+nE
+bT
+Iq
+NN
+bR
+dH
+nE
+nE
 jV
 fE
 Ao
@@ -6367,7 +7040,7 @@ Za
 Ao
 fE
 jV
-je
+nE
 li
 li
 li
@@ -6383,36 +7056,36 @@ UI
 rM
 tA
 tA
+nE
 je
-je
-je
-tA
-je
-je
-Fq
+nE
+nE
+jV
+Vq
+Xp
 DN
-je
-je
-je
+Zk
+qh
+pT
+lr
+tA
+nE
+nE
+nE
 tA
 tA
-je
-je
-je
-tA
-tA
-je
-je
-tA
-je
-je
-je
-je
-je
-je
-tA
-tA
-je
+nE
+nE
+fg
+nE
+nE
+qV
+dP
+iy
+EK
+yF
+nE
+nE
 jV
 fE
 Ao
@@ -6445,36 +7118,36 @@ UI
 Ci
 tA
 tA
+nE
 je
-je
-je
+nE
+nE
+jV
+ZG
+Rp
+it
+PK
+FY
+jV
+kp
 tA
+nE
+je
+nE
+nE
 tA
-je
-je
-je
-je
-je
-je
-tA
-tA
-je
-je
-je
-je
-tA
-je
-je
-tA
-je
-je
-je
-je
-je
-je
-je
-tA
-je
+nE
+nE
+Il
+nE
+nE
+ie
+JU
+nE
+eQ
+ie
+nE
+nE
 jV
 fE
 Ao
@@ -6507,36 +7180,36 @@ Ur
 li
 tA
 tA
+nE
 je
-je
-je
+nE
+nE
+jV
+Cl
+fx
+fx
+SG
+Ag
+jV
 tA
 tA
+nE
 je
-je
-je
-je
-je
-je
+nE
+nE
 tA
-tA
-je
-je
-je
-je
-tA
-je
-je
-vz
-je
-je
-je
-je
-je
-tA
-tA
-vz
-je
+nE
+nE
+Il
+nE
+nE
+nE
+nE
+nE
+nE
+nE
+nE
+nE
 jV
 fE
 Ao
@@ -6553,7 +7226,7 @@ Za
 Ao
 fE
 jV
-je
+nE
 li
 li
 li
@@ -6569,36 +7242,36 @@ li
 li
 tA
 tA
+nE
+nE
+nE
+nE
+jV
+di
+In
+VU
+wt
+jV
+jV
+tA
+nE
+nE
 je
 je
-je
+nE
+tA
+nE
+nE
 tA
 tA
-je
-je
-je
-je
-je
-tA
-Fq
-tA
-je
-je
-je
-je
-tA
-je
-je
-tA
-je
-je
-je
-je
-je
-tA
-tA
-tA
-je
+nE
+nE
+nE
+nE
+nE
+nE
+nE
+nE
 jV
 fE
 Ao
@@ -6615,7 +7288,7 @@ Za
 Ao
 fE
 jV
-je
+nE
 li
 fK
 bC
@@ -6628,39 +7301,39 @@ aw
 UI
 dx
 li
-je
+nE
 hb
 tA
+nE
+nE
+nE
+nE
+jV
+LO
+LO
+jV
+jV
+jV
+nE
+nE
+nE
+nE
+nE
 je
-je
-je
+nE
+tA
+nE
+nE
+nE
+tA
+Il
+Il
 tA
 tA
 tA
-tA
-tA
-tA
-tA
-tA
-tA
-tA
-je
-je
-je
-je
-tA
-je
-je
-tA
-je
-je
-je
-je
-je
-tA
-tA
-tA
-je
+Il
+nE
+nE
 jV
 fE
 Ao
@@ -6677,7 +7350,7 @@ Za
 Ao
 fE
 jV
-je
+nE
 li
 jE
 Ur
@@ -6690,39 +7363,39 @@ li
 li
 li
 li
-je
+nE
 tA
 tA
-je
-je
-je
-tA
-tA
-tA
-tA
-tA
-tA
-tA
-tA
+nE
+nE
+nE
+nE
+jV
+jV
+jV
+jV
 tA
 tA
 tA
+nE
+nE
+Fq
 tA
 tA
 tA
 tA
-je
-je
-tA
-je
-je
-je
-je
-je
-je
-je
-je
-je
+nE
+nE
+nE
+nE
+nE
+nE
+nE
+nE
+nE
+wf
+Il
+nE
 jV
 fE
 Ao
@@ -6739,7 +7412,7 @@ Za
 Ao
 fE
 jV
-je
+nE
 li
 JY
 UI
@@ -6749,42 +7422,42 @@ YV
 RO
 Gv
 li
-je
-je
-je
-je
+nE
+nE
+nE
+nE
 tA
 tA
-je
-je
-je
+nE
+nE
+nE
+nE
+nE
+nE
+nE
+nE
 tA
-je
-je
-je
-je
-je
-je
-je
-je
-je
+nE
+nE
+nE
+nE
 tA
 tA
 tA
-je
-je
-je
-je
-je
-je
-je
-je
-je
-je
-je
-je
-je
-je
+nE
+nE
+nE
+nE
+nE
+nE
+nE
+nE
+nE
+nE
+tA
+tA
+Il
+nE
 jV
 fE
 Ao
@@ -6801,7 +7474,7 @@ Za
 Ao
 fE
 jV
-je
+nE
 li
 HB
 vm
@@ -6811,42 +7484,42 @@ li
 li
 li
 li
-je
-je
-je
-je
+nE
+nE
+nE
+nE
 tA
 tA
-je
-je
-je
+nE
+nE
+nE
 tA
-je
-je
-je
-je
-je
-je
-je
-je
-je
-je
+nE
+nE
+nE
+nE
+tA
+nE
+nE
+nE
+nE
+nE
 tA
 tA
-je
-je
-je
-je
-je
-je
-je
-je
-je
-je
-je
-je
-je
-je
+nE
+nE
+nE
+nE
+nE
+nE
+nE
+nE
+nE
+nE
+nE
+nE
+tA
+nE
 jV
 fE
 Ao
@@ -6863,52 +7536,52 @@ Za
 Ao
 fE
 jV
-je
+nE
 li
 li
 li
 li
 li
-je
-je
-je
-je
-je
-je
-je
-je
+nE
+nE
+nE
+nE
+nE
+nE
+nE
+nE
 tA
 tA
-je
-je
-je
-tA
-tA
-tA
-tA
-je
-je
-je
-tA
-tA
-je
-je
-je
-je
-je
-je
-je
+nE
+nE
+nE
 tA
 tA
 tA
+nE
+nE
+tA
+nE
+tA
+tA
+nE
+nE
+nE
+nE
+nE
+nE
+nE
 tA
 tA
 tA
-je
-je
-je
-je
-je
+tA
+tA
+tA
+nE
+nE
+nE
+nE
+nE
 jV
 fE
 Ao
@@ -6925,25 +7598,25 @@ Za
 Ao
 fE
 jV
-je
-je
-je
-je
-je
-je
-je
-je
-je
-je
-je
-je
-je
+nE
+nE
+nE
+nE
+nE
+nE
+nE
+nE
+nE
+nE
+nE
+nE
+nE
 tA
 tA
 tA
-je
-je
-je
+nE
+nE
+nE
 tA
 Fq
 tA
@@ -6953,24 +7626,24 @@ tA
 tA
 tA
 tA
-je
-je
-je
-je
-je
-je
-je
+nE
+nE
+nE
+nE
+nE
+nE
+nE
 tA
 tA
 tA
 tA
 tA
 tA
-je
-je
-je
-je
-je
+nE
+nE
+nE
+nE
+nE
 jV
 fE
 Ao
@@ -6989,15 +7662,15 @@ fE
 jV
 jV
 jV
+nE
+nE
 je
 je
 je
-je
-je
-je
-je
-je
-tA
+nE
+nE
+nE
+nE
 tA
 tA
 hb
@@ -7007,32 +7680,32 @@ tA
 tA
 tA
 tA
-je
-je
-je
-je
-je
-je
-je
-je
-je
-je
-je
-je
-je
-je
-je
+nE
+nE
+nE
+nE
 tA
-BT
-BT
-BT
+nE
+nE
+tA
+nE
+nE
+nE
+nE
+nE
+nE
+nE
+tA
+Il
+Il
+Il
 tA
 tA
+nE
+nE
+nE
 je
-je
-je
-je
-je
+nE
 jV
 fE
 Ao
@@ -7051,50 +7724,50 @@ fE
 fE
 fE
 jV
+nE
 je
 je
+nE
 je
 je
-je
-je
-je
-je
+nE
+nE
+nE
+nE
 tA
 tA
 tA
 tA
+nE
+nE
+nE
+nE
+je
+je
+je
+nE
 tA
-tA
-je
-je
-je
-je
-je
-je
-je
-je
-je
-je
-je
-je
-je
-je
-je
-je
-je
-je
+nE
+nE
 tA
 tA
 tA
-BT
-BT
-BT
+vz
+nE
+nE
+nE
 tA
 tA
 tA
-je
-je
-je
+Il
+Il
+Il
+tA
+tA
+tA
+nE
+nE
+nE
 jV
 fE
 Ao
@@ -7113,50 +7786,50 @@ Ao
 Ao
 fE
 jV
+nE
+nE
+nE
+nE
+nE
+nE
+nE
+nE
+nE
+tA
+tA
+nE
+nE
+nE
+nE
+nE
+nE
+nE
+nE
+nE
 je
-je
-je
-je
-je
-je
-je
-BT
+nE
+tA
+nE
+nE
+nE
+nE
+nE
+nE
+nE
+nE
+nE
 tA
 tA
 tA
+Wt
+Il
 tA
+Il
+Wt
 tA
-je
-je
-je
-je
-je
-je
-je
-je
-je
-je
-je
-je
-je
-je
-je
-je
-je
-je
-je
-tA
-tA
-tA
-BT
-BT
-tA
-BT
-BT
-tA
-je
-je
-je
+nE
+nE
+nE
 jV
 fE
 Ao
@@ -7175,36 +7848,36 @@ Za
 Ao
 fE
 jV
-je
-je
-je
-je
-je
-je
+nE
+nE
 tA
-EU
+nE
+nE
+nE
+nE
+nE
+nE
 tA
 tA
-tA
-BT
-BT
+nE
+nE
+nE
+nE
+nE
+nE
+nE
+nE
+nE
 je
 je
+nE
+nE
+nE
+nE
+nE
 je
 je
-je
-je
-tA
-je
-je
-je
-je
-mU
-je
-je
-je
-je
-je
+nE
 iV
 iV
 iV
@@ -7237,36 +7910,36 @@ Za
 Ao
 fE
 jV
-je
-je
-je
-je
+nE
 tA
-BT
+Fq
 tA
 tA
-EU
-tA
-BT
-BT
-je
-je
-je
-je
-je
+nE
+nE
+nE
+nE
 tA
 tA
+nE
+nE
+nE
+nE
+nE
 tA
+tA
+nE
+nE
+nE
+nE
+nE
+nE
+nE
 je
 je
 je
-je
-je
-je
-je
-je
-je
-je
+nE
+nE
 iV
 EE
 Zm
@@ -7299,25 +7972,25 @@ Za
 Ao
 fE
 jV
-je
-je
-je
-BT
+nE
+nE
+tA
+fT
+tA
+nE
 tA
 tA
 tA
 tA
-BT
-XI
-BT
-je
-je
-je
+tA
+tA
+tA
+nE
 tA
 tA
 tA
 tA
-je
+nE
 jV
 jV
 jV
@@ -7361,25 +8034,25 @@ Za
 Ao
 fE
 jV
-je
-je
-BT
-BT
-tA
-tA
-BT
+nE
+nE
 tA
 tA
 tA
-je
-je
-je
-je
+nE
+nE
 tA
 tA
-Pm
 tA
-je
+tA
+nE
+tA
+nE
+tA
+mU
+tA
+nE
+nE
 jV
 fE
 fE
@@ -7423,25 +8096,25 @@ Za
 Ao
 fE
 jV
-je
-je
+nE
+nE
+hb
+tA
+tA
+nE
+nE
+nE
+nE
+tA
+tA
+nE
+nE
+nE
 tA
 tA
 tA
-BT
-je
-je
-je
-je
-je
-je
-je
-je
-tA
-tA
-tA
-tA
-je
+nE
+nE
 jV
 fE
 iV
@@ -7485,25 +8158,25 @@ Za
 Ao
 fE
 jV
+nE
+nE
+tA
+nE
+nE
+nE
 je
-je
+nE
+nE
+nE
 tA
 tA
-BT
-je
-je
-je
-je
-je
-je
-je
-je
-je
-je
+nE
+nE
 tA
 tA
+nE
 je
-je
+nE
 jV
 fE
 iV
@@ -7547,25 +8220,25 @@ Za
 Ao
 fE
 jV
+nE
+nE
+nE
+nE
+nE
+nE
 je
 je
+nE
+nE
 tA
 tA
-BT
 tA
+nE
+nE
+nE
 je
 je
-tA
-tA
-tA
-je
-je
-je
-je
-fT
-tA
-je
-je
+nE
 jV
 fE
 iV
@@ -7609,25 +8282,25 @@ Za
 Ao
 fE
 jV
+nE
+nE
 je
 je
+je
+nE
+nE
+je
+je
+nE
 tA
 tA
-tA
-tA
-je
-je
-tA
-tQ
-tA
+nE
+nE
 je
 je
 je
-je
-tA
-tA
-je
-je
+nE
+nE
 jV
 fE
 iV
@@ -7671,25 +8344,25 @@ Za
 Ao
 fE
 jV
+nE
+nE
+nE
+nE
+nE
+nE
+nE
+nE
+je
+nE
+tA
+iQ
+nE
+nE
 je
 je
-tA
-tA
-BT
-tA
-je
-je
-tA
-tA
-tA
-je
-je
-je
-tA
-tA
-tA
-tA
-je
+nE
+nE
+nE
 jV
 fE
 iV
@@ -7733,25 +8406,25 @@ Za
 Ao
 fE
 jV
+jV
+jV
+jV
+jV
+jV
+nE
 je
 je
 je
+nE
 tA
 tA
-tA
-je
-je
-tA
-tA
-BT
-je
-je
-je
-je
-je
-je
-je
-je
+nE
+nE
+nE
+nE
+nE
+nE
+nE
 jV
 fE
 iV
@@ -7795,25 +8468,25 @@ Za
 Ao
 fE
 jV
-je
-je
-je
+Ka
 tA
 tA
-BT
+tA
+jV
+nE
+nE
+nE
+nE
+nE
 tA
 tA
-BT
-BT
-tA
-je
-je
-je
-je
-je
-je
-je
-je
+nE
+nE
+Il
+Il
+FD
+nE
+nE
 jV
 fE
 iV
@@ -7857,25 +8530,25 @@ Za
 Ao
 fE
 jV
-je
-je
-je
+Il
+Il
 tA
-BT
 tA
-BT
-BT
-BT
-Bl
+jV
+nE
+nE
+nE
+nE
 tA
-je
-je
-je
-je
-je
-je
-je
-je
+tA
+nE
+nE
+Il
+Il
+Il
+Il
+Il
+nE
 jV
 fE
 iV
@@ -7919,25 +8592,25 @@ Za
 Ao
 fE
 jV
-je
-je
-je
-je
+tA
+Il
+fh
+tA
+Ux
+nE
+nE
+nE
 tA
 tA
-BT
 tA
-BT
-BT
-BT
-je
-je
-je
-je
-je
-je
-je
-je
+nE
+nE
+Il
+tA
+Il
+Il
+tA
+nE
 jV
 fE
 iV
@@ -7981,25 +8654,25 @@ Za
 Ao
 fE
 jV
-je
-je
-je
-je
-je
-je
-BT
-BT
-fh
 tA
-BT
-je
-je
-je
-je
-je
-je
-je
-je
+tA
+tA
+tA
+Ux
+nE
+nE
+nE
+nE
+nE
+tA
+tA
+nE
+FD
+Il
+Bl
+tA
+Il
+nE
 jV
 fE
 iV
@@ -8043,25 +8716,25 @@ Za
 Ao
 fE
 jV
-je
-je
-je
-je
-je
-je
-je
-je
-BT
-BT
-BT
-je
-je
-je
-je
-je
-je
-je
-je
+tA
+Il
+tA
+Il
+jV
+nE
+nE
+nE
+nE
+nE
+nE
+tA
+tA
+tA
+tA
+Il
+tA
+tA
+nE
 jV
 fE
 iV
@@ -8105,25 +8778,25 @@ Za
 Ao
 fE
 jV
-je
-je
-je
-je
-je
-je
-je
-je
-BT
-BT
-BT
-je
-je
-je
-je
-je
-je
-je
-je
+XV
+tA
+tA
+Il
+jV
+nE
+nE
+nE
+nE
+nE
+nE
+nE
+nE
+Il
+tA
+Il
+Il
+Il
+nE
 jV
 fE
 iV
@@ -8143,7 +8816,7 @@ Zm
 Ls
 Xo
 WV
-tE
+To
 Zm
 Zm
 NK
@@ -8173,19 +8846,19 @@ jV
 jV
 jV
 jV
+nE
+nE
 je
-je
-je
-je
-je
-je
-je
-je
-je
-je
-je
-je
-je
+nE
+nE
+nE
+nE
+nE
+Il
+Il
+lZ
+nE
+nE
 jV
 fE
 iV
@@ -8235,19 +8908,19 @@ fE
 fE
 fE
 jV
-je
-je
-je
-je
-je
-je
-je
-je
-je
-je
-je
-je
-je
+nE
+nE
+nE
+nE
+nE
+nE
+nE
+nE
+nE
+nE
+nE
+nE
+nE
 jV
 fE
 fE
