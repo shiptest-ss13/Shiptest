@@ -78,7 +78,6 @@
 
 /obj/item/clothing/under/rank/command/head_of_personnel/nt
 	icon_state = "hop_nt"
-	item_state = "b_suit"
 
 /obj/item/clothing/under/rank/command/head_of_personnel/nt/skirt
 	name = "head of personnel's jumpskirt"
@@ -111,13 +110,10 @@
 	item_state = "b_suit"
 	can_adjust = FALSE
 
-/obj/item/clothing/under/rank/command/captain/nt/alt
-	icon_state = "captain_nt_alt"
-
 /obj/item/clothing/under/rank/command/captain/nt/skirt
 	name = "captain's jumpskirt"
 	desc = "It's a blue jumpskirt with some gold markings denoting the rank of \"Captain\"."
-	icon_state = "captain_nt_alt_skirt"
+	icon_state = "captain_nt_skirt"
 	body_parts_covered = CHEST|GROIN|ARMS
 	can_adjust = FALSE
 	fitted = FEMALE_UNIFORM_TOP
