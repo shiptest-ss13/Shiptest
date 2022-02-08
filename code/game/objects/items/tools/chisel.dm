@@ -55,7 +55,7 @@
 	var/verify_iconstate = "[wall.base_icon_state]-5-d" // Look for a diagonal icon_state, if it exists the wall supports diagonal
 	return verify_iconstate in icon_states(wall.icon)
 
-/datum/design/cable_coil
+/datum/design/chisel
 	name = "Chisel"
 	id = "chisel"
 	build_type = AUTOLATHE | PROTOLATHE
