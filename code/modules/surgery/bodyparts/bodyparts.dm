@@ -19,7 +19,7 @@
 
 	var/is_husked = FALSE //Duh
 	var/limb_id = SPECIES_HUMAN //This is effectively the icon_state for limbs.
-	var/limb_gender //Defines what sprite the limb should use if it is also sexually dimorphic.
+	var/limb_gender = "m" //Defines what sprite the limb should use if it is also sexually dimorphic.
 	var/uses_mutcolor = TRUE //Does this limb have a greyscale version?
 	var/is_dimorphic = FALSE //Is there a sprite difference between male and female?
 	var/draw_color //Greyscale draw color
@@ -628,6 +628,9 @@
 
 	else
 		limb.icon_state = "[limb_id]_[body_zone]"
+
+	if(!icon_exists(limb.icon, limb.icon_state))
+		stack_trace("Limb generated with nonexistant icon. File: [limb.icon] | State: [limb.icon_state]")
 
 	if(aux_zone) //Hand shit
 		aux = image(limb.icon, "[limb_id]_[aux_zone]", -aux_layer, image_dir)
