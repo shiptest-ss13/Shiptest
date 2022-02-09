@@ -208,27 +208,6 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
 "cd" = (
-/obj/structure/closet/crate,
-/obj/item/storage/toolbox/mechanical{
-	pixel_x = 4;
-	pixel_y = -4
-	},
-/obj/item/stack/cable_coil,
-/obj/item/stack/sheet/glass{
-	amount = 2
-	},
-/obj/item/storage/box/stockparts/basic,
-/obj/item/reagent_containers/glass/beaker,
-/obj/item/reagent_containers/glass/beaker,
-/obj/item/circuitboard/machine/rdserver,
-/obj/item/circuitboard/machine/circuit_imprinter,
-/obj/item/circuitboard/computer/rdconsole,
-/obj/item/paper{
-	info = "Notice: Due to contraints, a protolathe board could not be shipped to this vessel, just the research console and circuit imprinter boards. We apologize for any inconveniences.";
-	name = "apology note"
-	},
-/obj/effect/turf_decal/box,
-/obj/machinery/selling_pad,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating{
 	icon_state = "platingdmg1"
@@ -277,6 +256,13 @@
 /obj/effect/turf_decal/corner/mauve/mono,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/frame/machine,
+/obj/item/circuitboard/machine/circuit_imprinter,
+/obj/item/reagent_containers/glass/beaker,
+/obj/item/reagent_containers/glass/beaker,
+/obj/item/stack/cable_coil{
+	amount = 10
+	},
+/obj/item/storage/box/stockparts/basic,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
 "cv" = (
@@ -325,12 +311,12 @@
 /obj/item/clothing/head/beret/mining,
 /obj/item/clothing/head/beret/mining,
 /obj/item/clothing/head/beret/mining,
-/obj/item/pickaxe/silver,
-/obj/item/pickaxe/silver,
-/obj/item/pickaxe/silver,
 /obj/item/flashlight/seclite,
 /obj/item/flashlight/seclite,
 /obj/item/flashlight/seclite,
+/obj/item/kinetic_crusher,
+/obj/item/kinetic_crusher,
+/obj/item/kinetic_crusher,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
 "cL" = (
@@ -595,6 +581,7 @@
 /obj/item/mop,
 /obj/item/reagent_containers/glass/bucket,
 /obj/item/storage/bag/trash,
+/obj/item/soap,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
 "hi" = (
@@ -1202,6 +1189,7 @@
 /obj/item/storage/box/ids,
 /obj/item/storage/box/PDAs,
 /obj/item/storage/box/PDAs,
+/obj/item/gun/energy/e_gun/mini,
 /turf/open/floor/carpet/blue,
 /area/ship/bridge)
 "oX" = (
@@ -1271,7 +1259,6 @@
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/structure/sink,
 /turf/open/floor/plasteel/stairs{
 	dir = 1
 	},
@@ -1871,6 +1858,19 @@
 	pixel_x = -6;
 	pixel_y = -6
 	},
+/obj/item/stack/spacecash/c500{
+	pixel_x = 4;
+	pixel_y = -6
+	},
+/obj/item/stack/spacecash/c1000{
+	pixel_y = -2
+	},
+/obj/item/stack/spacecash/c1000,
+/obj/item/stack/spacecash/c1000,
+/obj/item/stack/spacecash/c1000,
+/obj/item/stack/spacecash/c1000,
+/obj/item/stack/spacecash/c1000,
+/obj/item/stack/spacecash/c1000,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
 "Dz" = (
@@ -2318,6 +2318,7 @@
 	dir = 1
 	},
 /obj/item/radio/headset/heads/captain/alt,
+/obj/item/gun/energy,
 /turf/open/floor/carpet/royalblue,
 /area/ship/bridge)
 "Jf" = (
@@ -2452,6 +2453,13 @@
 	},
 /obj/effect/turf_decal/corner/mauve/mono,
 /obj/effect/decal/cleanable/dirt,
+/obj/item/circuitboard/computer/rdconsole,
+/obj/item/stack/sheet/glass{
+	amount = 2
+	},
+/obj/item/stack/cable_coil{
+	amount = 10
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
 "Mb" = (
@@ -2470,7 +2478,7 @@
 "MY" = (
 /obj/structure/table,
 /obj/machinery/chem_dispenser/drinks{
-	dir = 8
+	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable/yellow{
@@ -2727,9 +2735,15 @@
 /obj/effect/turf_decal/corner/lightgrey/half{
 	dir = 8
 	},
-/obj/item/clipboard{
-	pixel_x = -6;
-	pixel_y = -12
+/obj/item/storage/toolbox/mechanical{
+	pixel_x = 2;
+	pixel_y = 6
+	},
+/obj/item/paper{
+	info = "Notice: Due to contraints, a protolathe board could not be shipped to this vessel, just the research console and circuit imprinter boards. We apologize for any inconveniences.";
+	name = "apology note";
+	pixel_x = 8;
+	pixel_y = -10
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
@@ -3136,14 +3150,19 @@
 	name = "materials crate"
 	},
 /obj/item/stack/sheet/mineral/wood{
-	amount = 20
+	amount = 10
 	},
 /obj/item/stack/sheet/cardboard{
 	amount = 2
 	},
-/obj/item/stack/sheet/metal/fifty,
-/obj/item/stack/sheet/glass/fifty,
+/obj/item/stack/sheet/metal/fifty{
+	amount = 25
+	},
+/obj/item/stack/sheet/glass/fifty{
+	amount = 10
+	},
 /obj/item/stack/sheet/plastic/five{
+	amount = 2;
 	pixel_x = 3;
 	pixel_y = -3
 	},
@@ -3260,6 +3279,10 @@
 /obj/effect/turf_decal/corner/mauve/mono,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/frame/machine,
+/obj/item/circuitboard/machine/rdserver,
+/obj/item/stack/cable_coil{
+	amount = 10
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
 "YL" = (
