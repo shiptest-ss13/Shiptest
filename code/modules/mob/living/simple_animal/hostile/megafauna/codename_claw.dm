@@ -116,19 +116,12 @@
 	chosen_message = "<span class='colossus'>You will now summon a weak spider.</span>"
 	chosen_attack_num = 5
 
-/datum/action/innate/megafauna_attack/pulse_rifle
-	name = "Tentacle"
-	icon_icon = 'icons/obj/guns/energy.dmi'
-	button_icon_state = "pulse"
-	chosen_message = "<span class='colossus'>You will now stop, and telegraph a attack that will shoot either: Pulse lasers, electrodes, or regular lasers depending on health.</span>"
-	chosen_attack_num = 6
-
 /datum/action/innate/megafauna_attack/string_attack
 	name = "Sting shotgun"
 	icon_icon = 'icons/mob/actions/actions_changeling.dmi'
 	button_icon_state = "sting_cryo"
 	chosen_message = "<span class='colossus'>You stop, and telegraph a shotgun of stings.</span>"
-	chosen_attack_num = 7
+	chosen_attack_num = 6
 
 /mob/living/simple_animal/hostile/megafauna/claw/phase2/Initialize()
 	. = ..()
@@ -155,9 +148,7 @@
 				tentacle(target)
 			if(5)
 				summon_creatures()
-//			if(6)
-//				pulse_rifle(target)
-			if(7)
+			if(6)
 				sting_attack(target)
 		return
 
@@ -249,12 +240,12 @@
 
 /////STING ATTACK
 /mob/living/simple_animal/hostile/megafauna/claw/proc/sting_attack(target)
+	shoudnt_move = TRUE
 	visible_message("<span class='danger'>[src] stops suddenly and spikes apear all over it's body!</span>")
 	icon_state = "claw-phase2_sting_attack"
 	flick("claw-phase2_sting_attack_transform", src)
 	projectiletype = /obj/projectile/claw_projectille
 	projectilesound = 'sound/effects/splat.ogg'
-	shoudnt_move = TRUE
 	addtimer(CALLBACK(src, .proc/sting_attack2, target), 2 SECONDS)
 
 /mob/living/simple_animal/hostile/megafauna/claw/proc/sting_attack2(target)
