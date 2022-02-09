@@ -447,3 +447,9 @@
 	icon_state = "inteq_swat"
 	item_state = "inteq_swat"
 	flags_inv = HIDEHAIR
+
+/obj/item/clothing/head/helmet/inteq
+	name = "inteq helmet"
+	desc = "A standard issue helmet in the colors of the IRMG. It doesn't feel special in any way."
+	icon_state = "inteq_helmet"
+	icon_state = "inteq_helmet"
