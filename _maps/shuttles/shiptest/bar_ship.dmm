@@ -875,6 +875,17 @@
 	},
 /turf/open/floor/carpet/nanoweave,
 /area/ship/crew)
+"tP" = (
+/obj/effect/turf_decal/corner/neutral{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/neutral{
+	dir = 4
+	},
+/obj/effect/turf_decal/box,
+/obj/machinery/suit_storage_unit/standard_unit,
+/turf/open/floor/plasteel/dark,
+/area/ship/cargo)
 "tR" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -1513,7 +1524,7 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/box,
-/obj/machinery/suit_storage_unit/mining/eva,
+/obj/machinery/suit_storage_unit/independent/mining/eva,
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
 "EH" = (
@@ -2961,7 +2972,7 @@ as
 cp
 nc
 DB
-EF
+tP
 FN
 np
 bQ
