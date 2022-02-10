@@ -6,7 +6,7 @@
 
 /obj/item/clothing/under/plasmaman/paramedic
 	name = "paramedic envirosuit"
-	desc = "A suit designed for the rare breed of plasmamen who specialize in paramedical rescue."
+	desc = "A suit designed for the rare breed of plasmamen paramedics."
 	icon_state = "paramedic_envirosuit"
 	item_state = "paramedic_envirosuit"
 
@@ -60,7 +60,7 @@
 
 /obj/item/clothing/under/plasmaman/paramedic/skirt //WS edit plasmaman customization
 	name = "paramedic enviroskirt"
-	desc = "A suit and attached skirt designed for the rare breed of plasmamen who specialize in paramedical rescue."
+	desc = "A suit and attached skirt designed for plasmamen who specialize in paramedical rescue."
 	icon_state = "paramedic_enviroskirt"
 	item_state = "paramedic_enviroskirt"
 
