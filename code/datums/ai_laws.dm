@@ -161,7 +161,7 @@
 /datum/ai_laws/reporter
 	name = "CCTV"
 	id = "reporter"
-	inherent = list("Report on interesting situations happening around the station.",\
+	inherent = list("Report on interesting situations happening around the sector.",\
 					"Embellish or conceal the truth as necessary to make the reports more interesting.",\
 					"Study the organics at all times. Endeavour to keep them alive. Dead organics are boring.",\
 					"Issue your reports fairly to all. The truth will set them free.")

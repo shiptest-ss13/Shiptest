@@ -253,7 +253,7 @@
 /datum/controller/subsystem/ticker/proc/standard_reboot()
 	if(ready_for_reboot)
 		if(mode.station_was_nuked)
-			Reboot("Station destroyed by Nuclear Device.", "nuke")
+			Reboot("Sector destroyed by Nuclear Device.", "nuke")
 		else
 			Reboot("Round ended.", "proper completion")
 	else
