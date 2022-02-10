@@ -21,7 +21,7 @@
 			to_chat(user, "<span class='warning'>\the [src] makes a tart buzz. \the [target] doesn't appear to support smoothed corners.</span>")
 			return
 		smooth_atom_diagonal(target, user)
-	return ..()
+	return
 
 /obj/item/chisel/attack_self(mob/user)
 	toggling_smooth = !toggling_smooth
