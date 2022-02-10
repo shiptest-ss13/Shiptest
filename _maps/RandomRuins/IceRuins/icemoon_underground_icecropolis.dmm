@@ -6,19 +6,17 @@
 /area/ruin/unpowered/icecropolis/gold)
 "ae" = (
 /obj/structure/fluff/fokoff_sign,
-/turf/open/floor/grass/snow/basalt{
-	baseturfs = /turf/open/indestructible/necropolis;
-	initial_gas_mix = "ICEMOON_ATMOS"
-	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis,
 /area/ruin/unpowered/icecropolis/outside)
 "al" = (
 /obj/structure/stone_tile/slab,
 /obj/structure/closet/crate/necropolis,
+/obj/effect/spawner/lootdrop/snowdin/dungeonmisc,
 /turf/open/indestructible/boss/air,
 /area/ruin/unpowered/icecropolis)
 "aw" = (
 /obj/structure/reagent_dispensers/water_cooler,
-/turf/open/floor/plasteel,
+/turf/open/floor/plasteel/icecropolis,
 /area/ruin/unpowered/icecropolis/rusty)
 "az" = (
 /mob/living/simple_animal/hostile/asteroid/gutlunch/guthen,
@@ -44,7 +42,7 @@
 /obj/item/cautery,
 /obj/item/hemostat,
 /obj/item/retractor,
-/turf/open/floor/wood,
+/turf/open/floor/wood/icecropolis,
 /area/ruin/unpowered/icecropolis/russia)
 "aU" = (
 /obj/structure/spawner/lavaland/goliath,
@@ -57,7 +55,7 @@
 /turf/open/lava/smooth,
 /area/ruin/unpowered/icecropolis)
 "br" = (
-/turf/open/floor/wood,
+/turf/open/floor/wood/icecropolis,
 /area/ruin/unpowered/icecropolis/reach)
 "bs" = (
 /obj/item/rcd_ammo,
@@ -78,19 +76,13 @@
 /obj/item/stack/sheet/animalhide/goliath_hide,
 /obj/item/stack/sheet/sinew,
 /obj/item/stack/sheet/sinew,
-/turf/open/floor/grass/snow/basalt{
-	baseturfs = /turf/open/indestructible/necropolis/air;
-	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
-	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis/inside,
 /area/ruin/unpowered/icecropolis/reach)
 "bz" = (
 /obj/structure/fence/corner{
 	dir = 8
 	},
-/turf/open/floor/grass/snow/basalt{
-	baseturfs = /turf/open/indestructible/necropolis/air;
-	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
-	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis/inside,
 /area/ruin/unpowered/icecropolis/reach)
 "bC" = (
 /turf/open/floor/plating,
@@ -104,20 +96,20 @@
 "bO" = (
 /obj/structure/bed/roller,
 /obj/item/bedsheet/random,
-/turf/open/floor/wood,
+/turf/open/floor/wood/icecropolis,
 /area/ruin/unpowered/icecropolis/reach)
 "bR" = (
 /obj/structure/table/wood/reinforced,
 /obj/item/trash/plate,
 /obj/item/kitchen/fork,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood,
+/turf/open/floor/wood/icecropolis,
 /area/ruin/unpowered/icecropolis)
 "bT" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/item/storage/box/cups,
 /obj/structure/table/wood/reinforced,
-/turf/open/floor/wood,
+/turf/open/floor/wood/icecropolis,
 /area/ruin/unpowered/icecropolis)
 "bU" = (
 /obj/structure/stone_tile/slab/cracked,
@@ -126,10 +118,7 @@
 /area/ruin/unpowered/icecropolis/gold)
 "cE" = (
 /obj/effect/mob_spawn/human/clown/corpse,
-/turf/open/floor/grass/snow/basalt{
-	baseturfs = /turf/open/indestructible/necropolis/air;
-	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
-	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis/inside,
 /area/ruin/unpowered/icecropolis/reach)
 "cF" = (
 /obj/structure/stone_tile/surrounding/cracked{
@@ -151,17 +140,14 @@
 /area/ruin/unpowered/icecropolis/outside)
 "df" = (
 /obj/item/trash/syndi_cakes,
-/turf/open/floor/grass/snow/basalt{
-	baseturfs = /turf/open/indestructible/necropolis/air;
-	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
-	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis/inside,
 /area/ruin/unpowered/icecropolis/gold)
 "dg" = (
 /obj/item/reagent_containers/glass/bottle/diethylamine,
 /obj/item/reagent_containers/glass/bottle/diethylamine,
 /obj/item/reagent_containers/glass/bottle/mutagen,
 /obj/item/reagent_containers/glass/bottle/mutagen,
-/turf/open/floor/plasteel,
+/turf/open/floor/plasteel/icecropolis,
 /area/ruin/unpowered/icecropolis/rusty)
 "di" = (
 /obj/structure/stone_tile/slab,
@@ -170,24 +156,20 @@
 /area/ruin/unpowered/icecropolis)
 "dx" = (
 /mob/living/simple_animal/hostile/asteroid/hivelord/legion,
-/turf/open/floor/plasteel,
+/turf/open/floor/plasteel/icecropolis,
 /area/ruin/unpowered/icecropolis/rusty)
 "dG" = (
 /obj/structure/girder/bronze,
-/turf/open/floor/grass/snow/basalt{
-	baseturfs = /turf/open/indestructible/necropolis/air;
-	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
-	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis/inside,
 /area/ruin/unpowered/icecropolis)
-"dH" = (
-/obj/effect/decal/remains/human,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood,
+"dJ" = (
+/obj/structure/girder/bronze,
+/turf/closed/mineral/random/high_chance/volcanic/icecropolis,
 /area/ruin/unpowered/icecropolis)
 "dP" = (
 /obj/item/chair/wood/wings,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood,
+/turf/open/floor/wood/icecropolis,
 /area/ruin/unpowered/icecropolis)
 "dU" = (
 /obj/machinery/door/airlock/public,
@@ -208,12 +190,23 @@
 /obj/structure/stone_tile/slab/cracked,
 /turf/open/indestructible/boss/air,
 /area/ruin/unpowered/icecropolis/reach)
+"eC" = (
+/obj/structure/stone_tile/block{
+	dir = 1;
+	pixel_x = -16
+	},
+/obj/structure/stone_tile/block{
+	dir = 8;
+	pixel_y = 16
+	},
+/obj/structure/stone_tile{
+	dir = 4
+	},
+/turf/open/lava,
+/area/ruin/unpowered/icecropolis)
 "eD" = (
 /obj/item/melee/baseball_bat/homerun,
-/turf/open/floor/grass/snow/basalt{
-	baseturfs = /turf/open/indestructible/necropolis/air;
-	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
-	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis/inside,
 /area/ruin/unpowered/icecropolis/reach)
 "eG" = (
 /mob/living/simple_animal/hostile/mining_drone/rockplanet{
@@ -230,22 +223,16 @@
 "eQ" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/glowshroom/single,
-/turf/open/floor/grass/snow/basalt{
-	baseturfs = /turf/open/indestructible/necropolis/air;
-	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
-	},
+/turf/open/floor/wood/icecropolis,
 /area/ruin/unpowered/icecropolis)
 "eU" = (
 /obj/structure/fence/door,
 /obj/structure/barricade/wooden/crude,
-/turf/open/floor/wood,
+/turf/open/floor/wood/icecropolis,
 /area/ruin/unpowered/icecropolis/russia)
 "fg" = (
 /mob/living/simple_animal/hostile/asteroid/goliath/beast/ancient,
-/turf/open/floor/grass/snow/basalt{
-	baseturfs = /turf/open/indestructible/necropolis/air;
-	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
-	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis/inside,
 /area/ruin/unpowered/icecropolis)
 "fh" = (
 /mob/living/simple_animal/hostile/big_legion{
@@ -257,20 +244,17 @@
 /obj/effect/mapping_helpers/component_injector/doordeath{
 	door_id = "heathen_death_id"
 	},
-/turf/open/floor/grass/snow/basalt{
-	baseturfs = /turf/open/indestructible/necropolis/air;
-	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
-	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis/inside,
 /area/ruin/unpowered/icecropolis)
 "fi" = (
 /obj/item/trash/candy,
 /mob/living/simple_animal/hostile/asteroid/hivelord/legion,
-/turf/open/floor/wood,
+/turf/open/floor/wood/icecropolis,
 /area/ruin/unpowered/icecropolis)
 "fl" = (
 /obj/structure/table/wood/reinforced,
 /obj/item/storage/box/donkpockets/donkpocketgondola,
-/turf/open/floor/wood,
+/turf/open/floor/wood/icecropolis,
 /area/ruin/unpowered/icecropolis/reach)
 "ft" = (
 /obj/structure/reagent_dispensers/watertank,
@@ -291,8 +275,15 @@
 /obj/structure/closet/crate,
 /obj/item/storage/firstaid/regular,
 /obj/effect/spawner/lootdrop/snowdin/dungeonmid,
-/turf/open/floor/wood,
+/turf/open/floor/wood/icecropolis,
 /area/ruin/unpowered/icecropolis/russia)
+"fB" = (
+/obj/structure/stone_tile/slab,
+/obj/structure/chair/pew/left{
+	dir = 1
+	},
+/turf/open/indestructible/boss/air,
+/area/ruin/unpowered/icecropolis)
 "fE" = (
 /turf/open/lava{
 	initial_gas_mix = "ICEMOON_ATMOS"
@@ -304,6 +295,11 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/unpowered/icecropolis/rusty)
+"fN" = (
+/turf/open/lava{
+	initial_gas_mix = "ICEMOON_ATMOS"
+	},
+/area/ruin/unpowered/icecropolis)
 "fR" = (
 /obj/structure/table/wood,
 /obj/item/clothing/under/costume/gladiator/ash_walker,
@@ -315,7 +311,7 @@
 /obj/item/clothing/head/helmet/gladiator,
 /obj/item/clothing/head/helmet/gladiator,
 /obj/item/storage/belt/utility,
-/turf/open/floor/wood,
+/turf/open/floor/wood/icecropolis,
 /area/ruin/unpowered/icecropolis/reach)
 "fT" = (
 /obj/structure/elite_tumor,
@@ -330,6 +326,24 @@
 	},
 /turf/open/lava/smooth,
 /area/ruin/unpowered/icecropolis/reach)
+"gh" = (
+/obj/structure/stone_tile/surrounding,
+/obj/structure/stone_tile/center,
+/mob/living/simple_animal/hostile/megafauna/dragon{
+	crusher_loot = null;
+	desc = "High Priest of the Bloody Hallow. Fires burn in his name, crusades and holy word spread across the necropolis until it split and vanished. It was not meant to stay under the gaze of Legion, prospering in its own citadel of flesh and death.";
+	faction = list("mining","boss","neutral");
+	gps_name = "Holy Fire Signal";
+	health = 2000;
+	loot = null;
+	maxHealth = 2000;
+	name = "The Priest"
+	},
+/obj/effect/mapping_helpers/component_injector/doordeath{
+	door_id = "priest_death_id"
+	},
+/turf/open/lava,
+/area/ruin/unpowered/icecropolis)
 "gn" = (
 /obj/structure/stone_tile/block/burnt{
 	dir = 4
@@ -369,24 +383,15 @@
 /area/ruin/unpowered/icecropolis/reach)
 "gA" = (
 /obj/item/trash/raisins,
-/turf/open/floor/grass/snow/basalt{
-	baseturfs = /turf/open/indestructible/necropolis/air;
-	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
-	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis/inside,
 /area/ruin/unpowered/icecropolis/gold)
 "gF" = (
 /obj/structure/bonfire/prelit,
-/turf/open/floor/grass/snow/basalt{
-	baseturfs = /turf/open/indestructible/necropolis/air;
-	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
-	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis/inside,
 /area/ruin/unpowered/icecropolis/reach)
 "gM" = (
 /obj/structure/girder/bronze,
-/turf/open/floor/grass/snow/basalt{
-	baseturfs = /turf/open/indestructible/necropolis/air;
-	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
-	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis/inside,
 /area/ruin/unpowered/icecropolis/gold)
 "gV" = (
 /obj/structure/stone_tile/block/burnt{
@@ -417,7 +422,7 @@
 /area/ruin/unpowered/icecropolis/reach)
 "hi" = (
 /obj/structure/table/optable,
-/turf/open/floor/wood,
+/turf/open/floor/wood/icecropolis,
 /area/ruin/unpowered/icecropolis/russia)
 "hs" = (
 /obj/structure/stone_tile/cracked{
@@ -436,10 +441,7 @@
 /area/ruin/unpowered/icecropolis/gold)
 "hw" = (
 /obj/item/trash/tray,
-/turf/open/floor/grass/snow/basalt{
-	baseturfs = /turf/open/indestructible/necropolis/air;
-	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
-	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis/inside,
 /area/ruin/unpowered/icecropolis/gold)
 "hy" = (
 /obj/structure/stone_tile,
@@ -449,22 +451,22 @@
 "hM" = (
 /obj/machinery/door/airlock/public,
 /obj/structure/barricade/wooden/crude,
-/turf/open/floor/plasteel,
+/turf/open/floor/plasteel/icecropolis,
 /area/ruin/unpowered/icecropolis/rusty)
 "hT" = (
-/turf/closed/wall/mineral/wood/nonmetal,
+/turf/closed/wall/mineral/wood/nonmetal/icecropolis,
 /area/ruin/unpowered/icecropolis/reach)
 "ie" = (
-/turf/closed/wall/mineral/wood/nonmetal,
+/turf/closed/wall/mineral/wood/nonmetal/icecropolis,
 /area/ruin/unpowered/icecropolis)
 "in" = (
 /obj/structure/sign/warning/securearea,
-/turf/closed/wall/mineral/iron,
+/turf/closed/wall/mineral/iron/icecropolis,
 /area/ruin/unpowered/icecropolis/russia)
 "iq" = (
 /obj/structure/table,
 /obj/item/gps,
-/turf/open/floor/wood,
+/turf/open/floor/wood/icecropolis,
 /area/ruin/unpowered/icecropolis/russia)
 "it" = (
 /obj/structure/stone_tile/center,
@@ -476,7 +478,7 @@
 "iy" = (
 /obj/effect/decal/cleanable/dirt,
 /mob/living/simple_animal/hostile/asteroid/hivelord/legion,
-/turf/open/floor/wood,
+/turf/open/floor/wood/icecropolis,
 /area/ruin/unpowered/icecropolis)
 "iH" = (
 /obj/structure/stone_tile/surrounding_tile{
@@ -491,10 +493,7 @@
 /obj/structure/bed/pod,
 /obj/item/bedsheet/syndie,
 /obj/effect/mob_spawn/human/corpse/charredskeleton,
-/turf/open/floor/grass/snow/basalt{
-	baseturfs = /turf/open/indestructible/necropolis/air;
-	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
-	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis/inside,
 /area/ruin/unpowered/icecropolis/gold)
 "iQ" = (
 /mob/living/simple_animal/hostile/asteroid/hivelord/legion,
@@ -502,7 +501,7 @@
 /area/ruin/unpowered/icecropolis)
 "iR" = (
 /obj/item/toy/foamblade,
-/turf/open/floor/wood,
+/turf/open/floor/wood/icecropolis,
 /area/ruin/unpowered/icecropolis)
 "iS" = (
 /turf/open/floor/plating,
@@ -511,10 +510,7 @@
 /turf/closed/indestructible/riveted/boss,
 /area/ruin/unpowered/icecropolis/reach)
 "je" = (
-/turf/closed/mineral/random/high_chance/volcanic{
-	baseturfs = /turf/open/indestructible/necropolis/air;
-	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
-	},
+/turf/closed/mineral/random/high_chance/volcanic/icecropolis,
 /area/ruin/unpowered/icecropolis)
 "jE" = (
 /obj/structure/cable/blue{
@@ -523,17 +519,20 @@
 /obj/machinery/power/apc/auto_name/north,
 /turf/open/floor/plating,
 /area/ruin/unpowered/icecropolis/rusty)
+"jK" = (
+/obj/structure/stone_tile/slab,
+/obj/structure/table/wood/fancy/royalblue,
+/obj/item/book/granter/spell/smoke/lesser,
+/turf/open/indestructible/boss/air,
+/area/ruin/unpowered/icecropolis)
 "jN" = (
-/turf/open/floor/wood,
+/turf/open/floor/wood/icecropolis,
 /area/ruin/unpowered/icecropolis)
 "jR" = (
 /obj/machinery/door/poddoor/gates{
 	id = "heathen_death_id"
 	},
-/turf/open/floor/grass/snow/basalt{
-	baseturfs = /turf/open/indestructible/necropolis/air;
-	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
-	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis/inside,
 /area/ruin/unpowered/icecropolis)
 "jV" = (
 /turf/closed/indestructible/riveted/boss,
@@ -546,6 +545,13 @@
 /obj/structure/fluff/fokoff_sign,
 /turf/open/floor/plating/asteroid/snow/icemoon,
 /area/ruin/unpowered/icecropolis/outside)
+"kD" = (
+/obj/structure/stone_tile/slab,
+/obj/structure/chair/pew{
+	dir = 1
+	},
+/turf/open/indestructible/boss/air,
+/area/ruin/unpowered/icecropolis)
 "kK" = (
 /obj/structure/closet/crate/medical,
 /obj/item/reagent_containers/blood/random,
@@ -554,10 +560,7 @@
 /obj/item/stack/sheet/cotton/cloth/ten,
 /obj/item/storage/firstaid/brute,
 /obj/item/storage/firstaid/medical,
-/turf/open/floor/grass/snow/basalt{
-	baseturfs = /turf/open/indestructible/necropolis/air;
-	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
-	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis/inside,
 /area/ruin/unpowered/icecropolis/reach)
 "kW" = (
 /obj/structure/stone_tile/slab/cracked,
@@ -565,17 +568,12 @@
 /turf/open/indestructible/boss/air,
 /area/ruin/unpowered/icecropolis/reach)
 "li" = (
-/turf/closed/wall/rust{
-	baseturfs = /turf/open/indestructible/necropolis/air
-	},
+/turf/closed/wall/rust/icecropolis,
 /area/ruin/unpowered/icecropolis/rusty)
 "ln" = (
 /obj/structure/bed/pod,
 /obj/item/bedsheet/rainbow,
-/turf/open/floor/grass/snow/basalt{
-	baseturfs = /turf/open/indestructible/necropolis/air;
-	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
-	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis/inside,
 /area/ruin/unpowered/icecropolis/gold)
 "lr" = (
 /obj/effect/decal/cleanable/blood/footprints,
@@ -592,7 +590,7 @@
 /obj/item/ammo_casing/shotgun/buckshot,
 /obj/item/kitchen/knife/combat/survival,
 /obj/item/kitchen/knife/combat/survival,
-/turf/open/floor/wood,
+/turf/open/floor/wood/icecropolis,
 /area/ruin/unpowered/icecropolis/russia)
 "lH" = (
 /obj/structure/table/wood,
@@ -608,33 +606,24 @@
 /obj/item/scythe,
 /obj/item/scythe,
 /obj/item/scythe,
-/turf/open/floor/wood,
+/turf/open/floor/wood/icecropolis,
 /area/ruin/unpowered/icecropolis/reach)
 "lZ" = (
 /mob/living/simple_animal/hostile/asteroid/basilisk/watcher/icewing,
-/turf/open/floor/grass/snow/basalt{
-	baseturfs = /turf/open/indestructible/necropolis/air;
-	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
-	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis/inside,
 /area/ruin/unpowered/icecropolis)
 "mj" = (
 /obj/item/trash/boritos,
-/turf/open/floor/grass/snow/basalt{
-	baseturfs = /turf/open/indestructible/necropolis/air;
-	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
-	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis/inside,
 /area/ruin/unpowered/icecropolis/gold)
 "mk" = (
 /obj/item/stack/sheet/bone,
-/turf/open/floor/grass/snow/basalt{
-	baseturfs = /turf/open/indestructible/necropolis/air;
-	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
-	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis/inside,
 /area/ruin/unpowered/icecropolis)
 "ml" = (
 /obj/structure/bed,
 /obj/item/bedsheet/random,
-/turf/open/floor/wood,
+/turf/open/floor/wood/icecropolis,
 /area/ruin/unpowered/icecropolis/russia)
 "mo" = (
 /obj/structure/table/wood/reinforced,
@@ -642,27 +631,34 @@
 /obj/item/clothing/head/collectable/petehat,
 /obj/item/clothing/head/lobsterhat,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood,
+/turf/open/floor/wood/icecropolis,
 /area/ruin/unpowered/icecropolis)
 "mp" = (
 /obj/effect/mob_spawn/human/corpse/charredskeleton,
-/turf/open/floor/grass/snow/basalt{
-	baseturfs = /turf/open/indestructible/necropolis/air;
-	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
-	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis/inside,
 /area/ruin/unpowered/icecropolis/gold)
 "mu" = (
-/turf/open/floor/wood,
+/turf/open/floor/wood/icecropolis,
 /area/ruin/unpowered/icecropolis/russia)
+"mI" = (
+/obj/structure/stone_tile/slab,
+/obj/structure/bookcase/manuals/medical,
+/turf/open/indestructible/boss/air,
+/area/ruin/unpowered/icecropolis)
 "mT" = (
 /obj/structure/windoor_assembly{
 	dir = 4
 	},
-/turf/open/floor/plasteel,
+/turf/open/floor/plasteel/icecropolis,
 /area/ruin/unpowered/icecropolis/rusty)
 "mU" = (
 /obj/structure/spawner/lavaland/legion,
 /turf/open/indestructible/necropolis/air,
+/area/ruin/unpowered/icecropolis)
+"mZ" = (
+/obj/structure/stone_tile/slab,
+/obj/structure/bookcase/random/nonfiction,
+/turf/open/indestructible/boss/air,
 /area/ruin/unpowered/icecropolis)
 "na" = (
 /obj/machinery/door/poddoor/gates{
@@ -691,7 +687,7 @@
 	},
 /obj/effect/decal/remains/human,
 /obj/item/chair/wood/wings,
-/turf/open/floor/wood,
+/turf/open/floor/wood/icecropolis,
 /area/ruin/unpowered/icecropolis)
 "nC" = (
 /obj/structure/stone_tile/surrounding_tile,
@@ -704,10 +700,7 @@
 /turf/open/lava/smooth,
 /area/ruin/unpowered/icecropolis/gold)
 "nE" = (
-/turf/closed/mineral/random/volcanic{
-	baseturfs = /turf/open/indestructible/necropolis/air;
-	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
-	},
+/turf/closed/mineral/random/volcanic/icecropolis,
 /area/ruin/unpowered/icecropolis)
 "nS" = (
 /obj/item/melee/baton/cattleprod,
@@ -731,6 +724,11 @@
 	initial_gas_mix = "ICEMOON_ATMOS"
 	},
 /area/ruin/unpowered/icecropolis/outside)
+"oj" = (
+/obj/structure/stone_tile/slab,
+/obj/structure/chair/pew,
+/turf/open/indestructible/boss/air,
+/area/ruin/unpowered/icecropolis)
 "op" = (
 /obj/structure/stone_tile/surrounding/cracked{
 	dir = 4
@@ -742,9 +740,14 @@
 	initial_gas_mix = "ICEMOON_ATMOS"
 	},
 /area/ruin/unpowered/icecropolis/outside)
+"oJ" = (
+/obj/structure/stone_tile/slab,
+/obj/structure/bookcase/random/reference,
+/turf/open/indestructible/boss/air,
+/area/ruin/unpowered/icecropolis)
 "oQ" = (
 /obj/item/circuitboard/machine/smartfridge,
-/turf/open/floor/plasteel,
+/turf/open/floor/plasteel/icecropolis,
 /area/ruin/unpowered/icecropolis/rusty)
 "oS" = (
 /mob/living/simple_animal/hostile/asteroid/hivelord/legion/crystal{
@@ -754,9 +757,7 @@
 	maxHealth = 100;
 	name = "The Deacon"
 	},
-/turf/open/indestructible/necropolis{
-	initial_gas_mix = "ICEMOON_ATMOS"
-	},
+/turf/open/indestructible/necropolis/icecropolis,
 /area/ruin/unpowered/icecropolis/outside)
 "oT" = (
 /obj/structure/stone_tile/cracked{
@@ -783,7 +784,7 @@
 /area/ruin/unpowered/icecropolis/outside)
 "ph" = (
 /obj/effect/mob_spawn/human/corpse/russian/ranged/trooper,
-/turf/open/floor/wood,
+/turf/open/floor/wood/icecropolis,
 /area/ruin/unpowered/icecropolis/russia)
 "pm" = (
 /obj/structure/closet/crate,
@@ -794,7 +795,7 @@
 /obj/item/clothing/head/helmet/rus_helmet,
 /obj/item/clothing/under/pants/track,
 /obj/item/clothing/under/color/black,
-/turf/open/floor/wood,
+/turf/open/floor/wood/icecropolis,
 /area/ruin/unpowered/icecropolis/russia)
 "pE" = (
 /obj/structure/stone_tile/slab,
@@ -822,10 +823,7 @@
 /obj/machinery/door/poddoor/gates/indestructible{
 	id = "gatekeeper_death_id"
 	},
-/turf/open/floor/grass/snow/basalt{
-	baseturfs = /turf/open/indestructible/necropolis/air;
-	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
-	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis/inside,
 /area/ruin/unpowered/icecropolis)
 "pV" = (
 /obj/structure/closet/crate/radiation,
@@ -835,10 +833,7 @@
 /obj/item/clothing/mask/rat/bee,
 /obj/item/clothing/head/beekeeper_head,
 /obj/item/clothing/suit/beekeeper_suit,
-/turf/open/floor/grass/snow/basalt{
-	baseturfs = /turf/open/indestructible/necropolis/air;
-	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
-	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis/inside,
 /area/ruin/unpowered/icecropolis/reach)
 "qe" = (
 /obj/structure/stone_tile/slab/cracked,
@@ -855,20 +850,14 @@
 "ql" = (
 /obj/structure/bed/pod,
 /obj/item/bedsheet/wiz,
-/turf/open/floor/grass/snow/basalt{
-	baseturfs = /turf/open/indestructible/necropolis/air;
-	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
-	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis/inside,
 /area/ruin/unpowered/icecropolis/gold)
 "qr" = (
 /obj/item/stack/spacecash/c1000,
 /obj/item/stack/spacecash/c1000,
 /obj/item/stack/spacecash/c1000,
 /obj/item/clothing/mask/fakemoustache/italian,
-/turf/open/floor/grass/snow/basalt{
-	baseturfs = /turf/open/indestructible/necropolis/air;
-	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
-	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis/inside,
 /area/ruin/unpowered/icecropolis/reach)
 "qA" = (
 /obj/effect/decal/cleanable/blood/gibs/core,
@@ -902,13 +891,23 @@
 	name = "punch cooler";
 	reagent_id = /datum/reagent/consumable/ethanol/bacchus_blessing
 	},
-/turf/open/floor/wood,
+/turf/open/floor/wood/icecropolis,
 /area/ruin/unpowered/icecropolis)
 "re" = (
 /obj/structure/stone_tile/slab/cracked,
 /obj/item/stack/sheet/mineral/gold/twenty,
 /turf/open/indestructible/boss/air,
 /area/ruin/unpowered/icecropolis/gold)
+"rh" = (
+/obj/structure/stone_tile{
+	dir = 1
+	},
+/obj/structure/stone_tile/block{
+	dir = 8
+	},
+/obj/item/candle/tribal_torch,
+/turf/open/lava,
+/area/ruin/unpowered/icecropolis)
 "rq" = (
 /obj/structure/fluff/broken_flooring,
 /mob/living/simple_animal/hostile/asteroid/hivelord/legion,
@@ -925,31 +924,42 @@
 "rM" = (
 /obj/machinery/door/airlock/glass_large,
 /obj/structure/barricade/wooden/crude,
-/turf/open/floor/plasteel,
+/turf/open/floor/plasteel/icecropolis,
 /area/ruin/unpowered/icecropolis/rusty)
 "rR" = (
 /obj/item/trash/semki,
-/turf/open/floor/grass/snow/basalt{
-	baseturfs = /turf/open/indestructible/necropolis/air;
-	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
-	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis/inside,
 /area/ruin/unpowered/icecropolis/gold)
 "rT" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/item/trash/candy,
-/turf/open/floor/wood,
+/turf/open/floor/wood/icecropolis,
 /area/ruin/unpowered/icecropolis)
 "sa" = (
-/turf/closed/wall/mineral/iron,
+/turf/closed/wall/mineral/iron/icecropolis,
 /area/ruin/unpowered/icecropolis/russia)
+"sH" = (
+/obj/structure/stone_tile/center{
+	pixel_y = -16
+	},
+/obj/structure/stone_tile/surrounding{
+	pixel_y = -16
+	},
+/obj/structure/stone_tile/block,
+/obj/structure/bed/dogbed{
+	anchored = 1;
+	color = "#888c8d";
+	desc = "A very holy place to rest a weary body.";
+	name = "Holy Resting Place";
+	pixel_y = -8
+	},
+/turf/open/lava,
+/area/ruin/unpowered/icecropolis)
 "sM" = (
 /obj/structure/bed/pod,
 /obj/item/bedsheet/yellow,
 /obj/item/storage/pill_bottle/trophazole,
-/turf/open/floor/grass/snow/basalt{
-	baseturfs = /turf/open/indestructible/necropolis/air;
-	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
-	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis/inside,
 /area/ruin/unpowered/icecropolis/gold)
 "sO" = (
 /obj/structure/stone_tile{
@@ -976,11 +986,23 @@
 /area/ruin/unpowered/icecropolis)
 "sZ" = (
 /obj/structure/destructible/tribal_torch,
-/turf/open/floor/grass/snow/basalt{
-	baseturfs = /turf/open/indestructible/necropolis/air;
-	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
-	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis/inside,
 /area/ruin/unpowered/icecropolis/reach)
+"tq" = (
+/obj/structure/stone_tile/block{
+	dir = 4;
+	pixel_y = -16
+	},
+/obj/structure/stone_tile/block{
+	pixel_x = 16
+	},
+/obj/structure/stone_tile,
+/turf/open/lava,
+/area/ruin/unpowered/icecropolis)
+"tv" = (
+/obj/structure/closet/crate/necropolis/tendril,
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis/inside,
+/area/ruin/unpowered/icecropolis)
 "tA" = (
 /turf/open/indestructible/necropolis/air,
 /area/ruin/unpowered/icecropolis)
@@ -988,20 +1010,18 @@
 /obj/item/cardboard_cutout/adaptive,
 /obj/item/gun/magic/wand/nothing,
 /obj/item/implanter/adrenalin,
-/turf/open/floor/grass/snow/basalt{
-	initial_gas_mix = "ICEMOON_ATMOS"
-	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis,
 /area/ruin/unpowered/icecropolis/outside)
 "tE" = (
 /obj/structure/mineral_door/wood,
-/turf/open/floor/wood,
+/turf/open/floor/wood/icecropolis,
 /area/ruin/unpowered/icecropolis/reach)
 "tO" = (
 /mob/living/simple_animal/hostile/asteroid/elite/broodmother{
 	aggro_vision_range = 5;
 	desc = "The gatekeeper, a beast dedicated to guarding the wellbeing of its master.";
 	faction = list("mining");
-	health = 200;
+	health = 300;
 	maxHealth = 200;
 	name = "The Gatekeeper"
 	},
@@ -1029,10 +1049,7 @@
 /obj/item/reagent_containers/food/snacks/store/cake/birthday,
 /obj/item/reagent_containers/food/snacks/store/bread/creamcheese,
 /obj/item/reagent_containers/food/snacks/spaghetti/pastatomato,
-/turf/open/floor/grass/snow/basalt{
-	baseturfs = /turf/open/indestructible/necropolis/air;
-	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
-	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis/inside,
 /area/ruin/unpowered/icecropolis/gold)
 "tX" = (
 /obj/item/kitchen/knife/butcher,
@@ -1045,10 +1062,7 @@
 /obj/item/reagent_containers/food/snacks/meat/slab/goliath,
 /obj/item/reagent_containers/food/condiment/flour,
 /obj/item/reagent_containers/food/condiment/flour,
-/turf/open/floor/grass/snow/basalt{
-	baseturfs = /turf/open/indestructible/necropolis/air;
-	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
-	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis/inside,
 /area/ruin/unpowered/icecropolis/reach)
 "um" = (
 /obj/structure/stone_tile/surrounding_tile{
@@ -1059,10 +1073,7 @@
 /area/ruin/unpowered/icecropolis/reach)
 "ur" = (
 /obj/structure/legionpike,
-/turf/open/floor/grass/snow/basalt{
-	baseturfs = /turf/open/indestructible/necropolis;
-	initial_gas_mix = "ICEMOON_ATMOS"
-	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis,
 /area/ruin/unpowered/icecropolis/outside)
 "uC" = (
 /obj/structure/stone_tile,
@@ -1074,10 +1085,22 @@
 	},
 /turf/open/indestructible/boss/air,
 /area/ruin/unpowered/icecropolis/reach)
+"uE" = (
+/obj/structure/stone_tile/slab,
+/obj/structure/table/wood/fancy/royalblue,
+/obj/item/gun/magic/staff/healing,
+/turf/open/indestructible/boss/air,
+/area/ruin/unpowered/icecropolis)
+"uF" = (
+/obj/structure/stone_tile/block{
+	dir = 1
+	},
+/turf/open/lava,
+/area/ruin/unpowered/icecropolis)
 "uO" = (
 /obj/structure/table_frame,
 /obj/item/table_bell/brass,
-/turf/open/floor/plasteel,
+/turf/open/floor/plasteel/icecropolis,
 /area/ruin/unpowered/icecropolis/rusty)
 "uU" = (
 /mob/living/simple_animal/hostile/cult_demon{
@@ -1087,18 +1110,21 @@
 	name = "Ursurper";
 	vision_range = 9
 	},
-/turf/open/floor/wood,
+/turf/open/floor/wood/icecropolis,
 /area/ruin/unpowered/icecropolis/russia)
+"va" = (
+/obj/structure/stone_tile/slab,
+/obj/structure/closet/crate/necropolis,
+/obj/effect/spawner/lootdrop/snowdin/dungeonlite,
+/turf/open/indestructible/boss/air,
+/area/ruin/unpowered/icecropolis)
 "vh" = (
 /obj/item/storage/box/disks_plantgene,
-/turf/open/floor/plasteel,
+/turf/open/floor/plasteel/icecropolis,
 /area/ruin/unpowered/icecropolis/rusty)
 "vk" = (
 /obj/item/trash/can/food/beans,
-/turf/open/floor/grass/snow/basalt{
-	baseturfs = /turf/open/indestructible/necropolis/air;
-	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
-	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis/inside,
 /area/ruin/unpowered/icecropolis/gold)
 "vm" = (
 /obj/structure/table/glass,
@@ -1141,10 +1167,7 @@
 /area/ruin/unpowered/icecropolis)
 "vE" = (
 /obj/item/trash/candy,
-/turf/open/floor/grass/snow/basalt{
-	baseturfs = /turf/open/indestructible/necropolis/air;
-	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
-	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis/inside,
 /area/ruin/unpowered/icecropolis/gold)
 "vP" = (
 /obj/structure/stone_tile/slab/cracked,
@@ -1156,18 +1179,17 @@
 "wa" = (
 /obj/effect/mob_spawn/human/corpse/russian/ranged/trooper,
 /obj/structure/toilet,
-/turf/open/floor/wood,
+/turf/open/floor/wood/icecropolis,
 /area/ruin/unpowered/icecropolis/russia)
 "wd" = (
 /obj/item/dragons_blood,
-/turf/open/indestructible/necropolis/air,
+/obj/structure/stone_tile/slab,
+/obj/structure/table/wood/fancy/royalblue,
+/turf/open/indestructible/boss/air,
 /area/ruin/unpowered/icecropolis)
 "wf" = (
 /mob/living/simple_animal/hostile/asteroid/goliath/beast,
-/turf/open/floor/grass/snow/basalt{
-	baseturfs = /turf/open/indestructible/necropolis/air;
-	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
-	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis/inside,
 /area/ruin/unpowered/icecropolis)
 "wq" = (
 /obj/structure/stone_tile/surrounding/cracked,
@@ -1192,22 +1214,28 @@
 /area/ruin/unpowered/icecropolis)
 "ww" = (
 /obj/effect/mob_spawn/human/corpse/charredskeleton,
-/turf/open/floor/grass/snow/basalt{
-	initial_gas_mix = "ICEMOON_ATMOS"
-	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis,
 /area/ruin/unpowered/icecropolis/outside)
 "wy" = (
 /obj/item/shield/riot/roman,
-/turf/open/floor/grass/snow/basalt{
-	baseturfs = /turf/open/indestructible/necropolis/air;
-	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
-	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis/inside,
 /area/ruin/unpowered/icecropolis/reach)
+"wI" = (
+/obj/structure/stone_tile/slab,
+/obj/structure/table/wood/fancy/royalblue,
+/obj/item/gun/magic/staff/spellblade,
+/turf/open/indestructible/boss/air,
+/area/ruin/unpowered/icecropolis)
 "wO" = (
 /obj/structure/bed,
 /obj/item/bedsheet/random,
-/turf/open/floor/wood,
+/turf/open/floor/wood/icecropolis,
 /area/ruin/unpowered/icecropolis/reach)
+"wP" = (
+/obj/structure/stone_tile/slab,
+/obj/structure/bookcase/random/fiction,
+/turf/open/indestructible/boss/air,
+/area/ruin/unpowered/icecropolis)
 "xx" = (
 /obj/structure/stone_tile/slab/cracked,
 /obj/structure/table/wood/fancy/red_gold,
@@ -1235,10 +1263,7 @@
 /area/ruin/unpowered/icecropolis/reach)
 "yl" = (
 /obj/structure/fans/tiny/invisible,
-/turf/open/floor/grass/snow/basalt{
-	baseturfs = /turf/open/indestructible/necropolis;
-	initial_gas_mix = "ICEMOON_ATMOS"
-	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis,
 /area/ruin/unpowered/icecropolis/outside)
 "yn" = (
 /obj/structure/closet/crate/necropolis,
@@ -1263,15 +1288,12 @@
 /obj/item/reagent_containers/food/drinks/soda_cans/cola,
 /obj/item/reagent_containers/food/drinks/soda_cans/cola,
 /obj/item/reagent_containers/food/drinks/soda_cans/cola,
-/turf/open/floor/grass/snow/basalt{
-	baseturfs = /turf/open/indestructible/necropolis/air;
-	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
-	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis/inside,
 /area/ruin/unpowered/icecropolis/gold)
 "yo" = (
 /obj/structure/table/reinforced,
 /obj/item/paper_bin,
-/turf/open/floor/plasteel,
+/turf/open/floor/plasteel/icecropolis,
 /area/ruin/unpowered/icecropolis/rusty)
 "ys" = (
 /obj/structure/stone_tile/surrounding,
@@ -1279,18 +1301,34 @@
 /obj/structure/stone_tile/center,
 /turf/open/indestructible/boss/air,
 /area/ruin/unpowered/icecropolis/reach)
+"yy" = (
+/obj/structure/stone_tile/block{
+	pixel_x = 16
+	},
+/obj/structure/stone_tile/block{
+	dir = 1
+	},
+/turf/open/lava,
+/area/ruin/unpowered/icecropolis)
 "yF" = (
 /obj/item/chair/wood/wings,
 /obj/effect/decal/cleanable/dirt,
 /obj/item/trash/candy,
-/turf/open/floor/wood,
+/turf/open/floor/wood/icecropolis,
+/area/ruin/unpowered/icecropolis)
+"yN" = (
+/obj/structure/stone_tile/block{
+	dir = 4;
+	pixel_y = -16
+	},
+/obj/structure/stone_tile{
+	dir = 8
+	},
+/turf/open/lava,
 /area/ruin/unpowered/icecropolis)
 "zb" = (
 /obj/structure/fence/door,
-/turf/open/floor/grass/snow/basalt{
-	baseturfs = /turf/open/indestructible/necropolis/air;
-	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
-	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis/inside,
 /area/ruin/unpowered/icecropolis/reach)
 "zg" = (
 /obj/structure/stone_tile/slab/cracked,
@@ -1350,27 +1388,34 @@
 /obj/structure/barricade/wooden/crude,
 /turf/open/indestructible/necropolis/air,
 /area/ruin/unpowered/icecropolis/russia)
+"zA" = (
+/obj/structure/stone_tile/slab,
+/obj/item/circuitboard/machine/teleporter_station,
+/obj/structure/table/wood/fancy/royalblue,
+/obj/item/circuitboard/machine/teleporter_hub,
+/obj/item/circuitboard/computer/teleporter,
+/turf/open/indestructible/boss/air,
+/area/ruin/unpowered/icecropolis)
 "zM" = (
 /obj/effect/decal/cleanable/blood/gibs/old,
-/turf/open/floor/grass/snow/basalt{
-	baseturfs = /turf/open/indestructible/necropolis/air;
-	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
-	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis/inside,
 /area/ruin/unpowered/icecropolis)
 "zN" = (
 /obj/structure/table,
 /obj/item/storage/toolbox/mechanical/old,
 /obj/item/storage/toolbox/electrical,
 /obj/item/multitool,
-/turf/open/floor/wood,
+/turf/open/floor/wood/icecropolis,
 /area/ruin/unpowered/icecropolis/russia)
 "zO" = (
 /obj/item/clothing/head/syndicatefake,
-/turf/open/floor/grass/snow/basalt{
-	baseturfs = /turf/open/indestructible/necropolis/air;
-	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
-	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis/inside,
 /area/ruin/unpowered/icecropolis/reach)
+"zR" = (
+/obj/structure/stone_tile/slab,
+/obj/structure/chair/pew/left,
+/turf/open/indestructible/boss/air,
+/area/ruin/unpowered/icecropolis)
 "Ag" = (
 /obj/structure/stone_tile/slab,
 /obj/structure/destructible/tribal_torch,
@@ -1379,6 +1424,23 @@
 "Ao" = (
 /turf/open/floor/plating/asteroid/snow/icemoon,
 /area/ruin/unpowered/icecropolis/outside)
+"AP" = (
+/obj/structure/stone_tile{
+	dir = 8
+	},
+/obj/structure/stone_tile/block{
+	dir = 8;
+	pixel_y = -16
+	},
+/obj/structure/stone_tile/block{
+	dir = 4
+	},
+/obj/structure/showcase/machinery/tv{
+	desc = "How else is The Preist supposed to keep up on the news?";
+	name = "Holy Television"
+	},
+/turf/open/lava,
+/area/ruin/unpowered/icecropolis)
 "AX" = (
 /obj/structure/stone_tile,
 /obj/structure/stone_tile{
@@ -1391,17 +1453,11 @@
 /area/ruin/unpowered/icecropolis/reach)
 "Be" = (
 /obj/item/clothing/under/costume/roman,
-/turf/open/floor/grass/snow/basalt{
-	baseturfs = /turf/open/indestructible/necropolis/air;
-	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
-	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis/inside,
 /area/ruin/unpowered/icecropolis/reach)
 "Bi" = (
 /obj/structure/destructible/tribal_torch,
-/turf/open/floor/grass/snow/basalt{
-	baseturfs = /turf/open/indestructible/necropolis/air;
-	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
-	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis/inside,
 /area/ruin/unpowered/icecropolis)
 "Bk" = (
 /turf/open/chasm/lavaland{
@@ -1410,21 +1466,15 @@
 /area/ruin/unpowered/icecropolis/rusty)
 "Bl" = (
 /obj/effect/sliding_puzzle/lavaland,
-/turf/open/floor/grass/snow/basalt{
-	baseturfs = /turf/open/indestructible/necropolis/air;
-	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
-	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis/inside,
 /area/ruin/unpowered/icecropolis)
 "Bs" = (
 /obj/structure/mineral_door/iron,
-/turf/open/floor/wood,
+/turf/open/floor/wood/icecropolis,
 /area/ruin/unpowered/icecropolis/russia)
 "Bw" = (
 /obj/structure/barricade/wooden,
-/turf/open/floor/grass/snow/basalt{
-	baseturfs = /turf/open/indestructible/necropolis/air;
-	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
-	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis/inside,
 /area/ruin/unpowered/icecropolis)
 "BJ" = (
 /obj/structure/stone_tile/surrounding/cracked,
@@ -1436,17 +1486,11 @@
 "BK" = (
 /obj/item/trash/candy,
 /obj/effect/decal/cleanable/blood/old,
-/turf/open/floor/grass/snow/basalt{
-	baseturfs = /turf/open/indestructible/necropolis/air;
-	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
-	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis/inside,
 /area/ruin/unpowered/icecropolis/gold)
 "BR" = (
 /obj/structure/barricade/wooden,
-/turf/open/floor/grass/snow/basalt{
-	baseturfs = /turf/open/indestructible/necropolis;
-	initial_gas_mix = "ICEMOON_ATMOS"
-	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis,
 /area/ruin/unpowered/icecropolis/outside)
 "Ci" = (
 /obj/structure/barricade/wooden/crude,
@@ -1465,6 +1509,17 @@
 	},
 /turf/open/lava/smooth,
 /area/ruin/unpowered/icecropolis)
+"Co" = (
+/obj/structure/stone_tile/slab,
+/obj/structure/chair/pew/right,
+/turf/open/indestructible/boss/air,
+/area/ruin/unpowered/icecropolis)
+"Cp" = (
+/obj/structure/stone_tile/slab,
+/obj/structure/table/wood/fancy/royalblue,
+/obj/item/storage/book/bible,
+/turf/open/indestructible/boss/air,
+/area/ruin/unpowered/icecropolis)
 "CA" = (
 /obj/structure/stone_tile/block/burnt{
 	dir = 4
@@ -1481,12 +1536,13 @@
 /obj/structure/stone_tile,
 /turf/open/lava/smooth,
 /area/ruin/unpowered/icecropolis/gold)
+"CJ" = (
+/obj/item/candle/tribal_torch,
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis/inside,
+/area/ruin/unpowered/icecropolis)
 "CN" = (
 /obj/structure/closet/crate/necropolis,
-/turf/open/floor/grass/snow/basalt{
-	baseturfs = /turf/open/indestructible/necropolis/air;
-	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
-	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis/inside,
 /area/ruin/unpowered/icecropolis/reach)
 "CO" = (
 /obj/structure/stone_tile/surrounding/cracked{
@@ -1497,10 +1553,7 @@
 /area/ruin/unpowered/icecropolis/outside)
 "CQ" = (
 /obj/effect/spawner/lootdrop/snowdin/dungeonmid,
-/turf/open/floor/grass/snow/basalt{
-	baseturfs = /turf/open/indestructible/necropolis/air;
-	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
-	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis/inside,
 /area/ruin/unpowered/icecropolis)
 "CY" = (
 /obj/structure/stone_tile/surrounding/cracked{
@@ -1513,15 +1566,17 @@
 /area/ruin/unpowered/icecropolis)
 "Dh" = (
 /obj/structure/barricade/wooden,
-/turf/open/floor/wood,
+/turf/open/floor/wood/icecropolis,
 /area/ruin/unpowered/icecropolis/russia)
+"Di" = (
+/obj/structure/stone_tile/slab,
+/obj/item/statuebust,
+/turf/open/indestructible/boss/air,
+/area/ruin/unpowered/icecropolis)
 "Dk" = (
 /obj/structure/bed/pod,
 /obj/item/bedsheet/cosmos,
-/turf/open/floor/grass/snow/basalt{
-	baseturfs = /turf/open/indestructible/necropolis/air;
-	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
-	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis/inside,
 /area/ruin/unpowered/icecropolis/gold)
 "Dq" = (
 /mob/living/simple_animal/hostile/netherworld/migo{
@@ -1529,18 +1584,12 @@
 	faction = list("mining");
 	name = "Missionary"
 	},
-/turf/open/floor/grass/snow/basalt{
-	baseturfs = /turf/open/indestructible/necropolis/air;
-	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
-	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis/inside,
 /area/ruin/unpowered/icecropolis/gold)
 "Ds" = (
 /obj/machinery/iv_drip,
 /obj/item/reagent_containers/food/drinks/waterbottle/large,
-/turf/open/floor/grass/snow/basalt{
-	baseturfs = /turf/open/indestructible/necropolis/air;
-	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
-	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis/inside,
 /area/ruin/unpowered/icecropolis/reach)
 "Dt" = (
 /obj/structure/stone_tile{
@@ -1575,37 +1624,26 @@
 /area/ruin/unpowered/icecropolis/reach)
 "DZ" = (
 /obj/effect/decal/cleanable/blood,
-/turf/open/floor/grass/snow/basalt{
-	baseturfs = /turf/open/indestructible/necropolis/air;
-	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
-	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis/inside,
 /area/ruin/unpowered/icecropolis/reach)
 "Ei" = (
 /obj/structure/chair/plastic{
 	dir = 4
 	},
-/turf/open/floor/grass/snow/basalt{
-	baseturfs = /turf/open/indestructible/necropolis/air;
-	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
-	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis/inside,
 /area/ruin/unpowered/icecropolis/reach)
 "Eu" = (
-/turf/open/indestructible/necropolis{
-	initial_gas_mix = "ICEMOON_ATMOS"
-	},
+/turf/open/indestructible/necropolis/icecropolis,
 /area/ruin/unpowered/icecropolis/outside)
 "EE" = (
 /obj/structure/sink/puddle,
-/turf/open/floor/grass/snow/basalt{
-	baseturfs = /turf/open/indestructible/necropolis/air;
-	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
-	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis/inside,
 /area/ruin/unpowered/icecropolis/reach)
 "EK" = (
 /obj/item/kitchen/knife,
 /obj/effect/decal/cleanable/dirt,
 /obj/item/trash/candy,
-/turf/open/floor/wood,
+/turf/open/floor/wood/icecropolis,
 /area/ruin/unpowered/icecropolis)
 "EU" = (
 /obj/structure/barricade/wooden,
@@ -1615,7 +1653,7 @@
 /obj/structure/table/wood/reinforced,
 /obj/effect/spawner/lootdrop/pizzaparty,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood,
+/turf/open/floor/wood/icecropolis,
 /area/ruin/unpowered/icecropolis)
 "Ff" = (
 /obj/structure/stone_tile/slab/cracked,
@@ -1627,7 +1665,7 @@
 /area/ruin/unpowered/icecropolis/reach)
 "Fk" = (
 /obj/effect/decal/remains/human,
-/turf/open/floor/wood,
+/turf/open/floor/wood/icecropolis,
 /area/ruin/unpowered/icecropolis)
 "Fq" = (
 /mob/living/simple_animal/hostile/asteroid/basilisk/watcher,
@@ -1637,14 +1675,12 @@
 /obj/machinery/door/poddoor/gates/indestructible{
 	id = "priest_death_id"
 	},
-/turf/open/indestructible/necropolis/air,
+/obj/structure/stone_tile/slab,
+/turf/open/indestructible/boss/air,
 /area/ruin/unpowered/icecropolis)
 "FD" = (
 /mob/living/simple_animal/hostile/asteroid/basilisk/watcher,
-/turf/open/floor/grass/snow/basalt{
-	baseturfs = /turf/open/indestructible/necropolis/air;
-	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
-	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis/inside,
 /area/ruin/unpowered/icecropolis)
 "FI" = (
 /obj/structure/closet/crate,
@@ -1655,22 +1691,16 @@
 /obj/item/clothing/head/helmet/rus_helmet,
 /obj/item/clothing/under/color/black,
 /obj/item/grenade/chem_grenade/cleaner,
-/turf/open/floor/wood,
+/turf/open/floor/wood/icecropolis,
 /area/ruin/unpowered/icecropolis/russia)
 "FN" = (
 /obj/item/rcd_ammo,
-/turf/open/floor/grass/snow/basalt{
-	baseturfs = /turf/open/indestructible/necropolis/air;
-	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
-	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis/inside,
 /area/ruin/unpowered/icecropolis)
 "FQ" = (
 /obj/structure/necropolis_gate,
 /obj/structure/necropolis_arch,
-/turf/open/floor/grass/snow/basalt{
-	baseturfs = /turf/open/indestructible/necropolis;
-	initial_gas_mix = "ICEMOON_ATMOS"
-	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis,
 /area/ruin/unpowered/icecropolis/outside)
 "FY" = (
 /obj/structure/stone_tile/slab,
@@ -1711,26 +1741,28 @@
 /obj/item/reagent_containers/spray/weedspray,
 /obj/item/reagent_containers/glass/bottle/nutrient/ez,
 /obj/item/reagent_containers/glass/bottle/nutrient/ez,
-/turf/open/floor/wood,
+/turf/open/floor/wood/icecropolis,
 /area/ruin/unpowered/icecropolis/reach)
 "Gr" = (
 /obj/item/implanter/sad_trombone,
-/turf/open/floor/grass/snow/basalt{
-	baseturfs = /turf/open/indestructible/necropolis/air;
-	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
-	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis/inside,
 /area/ruin/unpowered/icecropolis/reach)
+"Gt" = (
+/obj/structure/necropolis_gate,
+/obj/structure/stone_tile/slab,
+/turf/open/indestructible/boss/air,
+/area/ruin/unpowered/icecropolis)
 "Gv" = (
 /obj/structure/curtain,
 /obj/machinery/shower{
 	dir = 1
 	},
 /obj/item/soap/homemade,
-/turf/open/floor/plasteel,
+/turf/open/floor/plasteel/icecropolis,
 /area/ruin/unpowered/icecropolis/rusty)
 "Gx" = (
 /obj/structure/closet/crate/necropolis,
-/turf/open/floor/wood,
+/turf/open/floor/wood/icecropolis,
 /area/ruin/unpowered/icecropolis/reach)
 "GF" = (
 /obj/structure/stone_tile,
@@ -1745,7 +1777,7 @@
 "GP" = (
 /obj/structure/table/wood/reinforced,
 /obj/item/reagent_containers/food/snacks/store/cake/birthday,
-/turf/open/floor/wood,
+/turf/open/floor/wood/icecropolis,
 /area/ruin/unpowered/icecropolis)
 "Hd" = (
 /obj/structure/stone_tile/surrounding/cracked{
@@ -1761,25 +1793,39 @@
 /obj/structure/mineral_door/wood,
 /turf/open/floor/plating,
 /area/ruin/unpowered/icecropolis/rusty)
+"Hk" = (
+/obj/structure/stone_tile,
+/obj/structure/stone_tile/block{
+	dir = 4;
+	pixel_y = -16
+	},
+/obj/structure/stone_tile/block{
+	dir = 8
+	},
+/obj/item/newspaper,
+/obj/item/reagent_containers/food/drinks/coffee{
+	pixel_x = -8;
+	pixel_y = -4
+	},
+/obj/item/reagent_containers/food/snacks/donut/chaos{
+	pixel_x = 6;
+	pixel_y = -4
+	},
+/turf/open/lava,
+/area/ruin/unpowered/icecropolis)
 "Hq" = (
 /obj/item/stack/tile/bronze,
-/turf/open/floor/grass/snow/basalt{
-	baseturfs = /turf/open/indestructible/necropolis/air;
-	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
-	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis/inside,
 /area/ruin/unpowered/icecropolis/gold)
 "Hw" = (
 /obj/structure/fence,
-/turf/open/floor/grass/snow/basalt{
-	baseturfs = /turf/open/indestructible/necropolis/air;
-	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
-	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis/inside,
 /area/ruin/unpowered/icecropolis/reach)
 "Hz" = (
 /obj/structure/table/wood/reinforced,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/spawner/lootdrop/pizzaparty,
-/turf/open/floor/wood,
+/turf/open/floor/wood/icecropolis,
 /area/ruin/unpowered/icecropolis)
 "HB" = (
 /obj/item/rcd_ammo,
@@ -1791,10 +1837,7 @@
 /area/ruin/unpowered/icecropolis/reach)
 "HN" = (
 /obj/item/malf_upgrade,
-/turf/open/floor/grass/snow/basalt{
-	baseturfs = /turf/open/indestructible/necropolis/air;
-	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
-	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis/inside,
 /area/ruin/unpowered/icecropolis/reach)
 "HO" = (
 /obj/structure/sink{
@@ -1806,30 +1849,45 @@
 	aggro_vision_range = 6;
 	faction = list("mining")
 	},
-/turf/open/floor/wood,
+/turf/open/floor/wood/icecropolis,
 /area/ruin/unpowered/icecropolis/russia)
+"HQ" = (
+/obj/structure/stone_tile/slab,
+/obj/structure/bookcase/manuals/engineering,
+/turf/open/indestructible/boss/air,
+/area/ruin/unpowered/icecropolis)
 "HW" = (
 /obj/effect/decal/cleanable/blood,
-/turf/open/floor/grass/snow/basalt{
-	baseturfs = /turf/open/indestructible/necropolis/air;
-	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
-	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis/inside,
 /area/ruin/unpowered/icecropolis)
 "Ie" = (
 /obj/structure/fluff/broken_flooring,
 /obj/structure/table/reinforced,
 /turf/open/floor/plating,
 /area/ruin/unpowered/icecropolis/rusty)
+"Ig" = (
+/obj/structure/stone_tile/slab,
+/obj/structure/closet/cabinet{
+	desc = "A wooden cabinet with an engraving stating, Things for Humanoids.";
+	name = "Things for Humanoids"
+	},
+/obj/item/stock_parts/cell/hyper/empty,
+/obj/item/reagent_containers/food/drinks/bottle/cognac,
+/obj/item/reagent_containers/food/condiment/mayonnaise,
+/obj/item/reagent_containers/food/snacks/chocolatebar,
+/obj/item/stack/spacecash/c10,
+/obj/item/tank/internals/emergency_oxygen/double,
+/obj/item/tank/internals/plasmaman/belt,
+/obj/item/toy/plush/plushvar,
+/turf/open/indestructible/boss/air,
+/area/ruin/unpowered/icecropolis)
 "Ik" = (
 /obj/structure/fluff/drake_statue,
 /obj/structure/stone_tile/slab,
 /turf/open/indestructible/boss/air,
 /area/ruin/unpowered/icecropolis/reach)
 "Il" = (
-/turf/open/floor/grass/snow/basalt{
-	baseturfs = /turf/open/indestructible/necropolis/air;
-	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
-	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis/inside,
 /area/ruin/unpowered/icecropolis)
 "Im" = (
 /obj/structure/table_frame,
@@ -1846,42 +1904,24 @@
 	dir = 8;
 	pixel_x = 28
 	},
-/turf/open/floor/wood,
+/turf/open/floor/wood/icecropolis,
 /area/ruin/unpowered/icecropolis/russia)
 "Iq" = (
 /obj/effect/decal/remains/human,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/grass/snow/basalt{
-	baseturfs = /turf/open/indestructible/necropolis/air;
-	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
-	},
+/turf/open/floor/wood/icecropolis,
 /area/ruin/unpowered/icecropolis)
 "Ir" = (
 /obj/item/trash/plate,
-/turf/open/floor/grass/snow/basalt{
-	baseturfs = /turf/open/indestructible/necropolis/air;
-	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
-	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis/inside,
 /area/ruin/unpowered/icecropolis/gold)
-"Ix" = (
-/turf/open/floor/grass/snow/basalt{
-	baseturfs = /turf/open/indestructible/necropolis;
-	initial_gas_mix = "ICEMOON_ATMOS"
-	},
-/area/ruin/unpowered/icecropolis/outside)
 "IC" = (
 /obj/structure/flora/rock/pile/icy,
-/turf/open/floor/grass/snow/basalt{
-	baseturfs = /turf/open/indestructible/necropolis;
-	initial_gas_mix = "ICEMOON_ATMOS"
-	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis,
 /area/ruin/unpowered/icecropolis/outside)
 "IE" = (
 /obj/item/trash/waffles,
-/turf/open/floor/grass/snow/basalt{
-	baseturfs = /turf/open/indestructible/necropolis/air;
-	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
-	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis/inside,
 /area/ruin/unpowered/icecropolis/gold)
 "IX" = (
 /obj/structure/stone_tile/slab/cracked,
@@ -1901,15 +1941,23 @@
 /area/ruin/unpowered/icecropolis/outside)
 "JB" = (
 /mob/living/simple_animal/hostile/asteroid/gutlunch,
-/turf/open/floor/grass/snow/basalt{
-	baseturfs = /turf/open/indestructible/necropolis/air;
-	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
-	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis/inside,
 /area/ruin/unpowered/icecropolis/reach)
+"JF" = (
+/obj/structure/stone_tile/block{
+	dir = 8;
+	pixel_y = 16
+	},
+/obj/structure/stone_tile/block{
+	dir = 4;
+	pixel_y = -16
+	},
+/turf/open/lava,
+/area/ruin/unpowered/icecropolis)
 "JU" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/item/storage/pill_bottle/trophazole,
-/turf/open/floor/wood,
+/turf/open/floor/wood/icecropolis,
 /area/ruin/unpowered/icecropolis)
 "JY" = (
 /obj/item/circuitboard/machine/autolathe,
@@ -1917,18 +1965,12 @@
 /turf/open/floor/plating,
 /area/ruin/unpowered/icecropolis/rusty)
 "Ka" = (
-/obj/structure/closet/crate/necropolis/tendril,
-/turf/open/floor/grass/snow/basalt{
-	baseturfs = /turf/open/indestructible/necropolis/air;
-	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
-	},
+/obj/item/gun/magic/hook,
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis/inside,
 /area/ruin/unpowered/icecropolis)
 "Kn" = (
 /obj/structure/reagent_dispensers/beerkeg,
-/turf/open/floor/grass/snow/basalt{
-	baseturfs = /turf/open/indestructible/necropolis/air;
-	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
-	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis/inside,
 /area/ruin/unpowered/icecropolis/reach)
 "Kq" = (
 /obj/structure/stone_tile/cracked{
@@ -1961,14 +2003,25 @@
 /obj/item/radio,
 /obj/item/radio,
 /obj/item/radio,
-/turf/open/floor/wood,
+/turf/open/floor/wood/icecropolis,
 /area/ruin/unpowered/icecropolis/russia)
+"KO" = (
+/obj/structure/stone_tile/slab,
+/obj/structure/chair/pew/right{
+	dir = 1
+	},
+/turf/open/indestructible/boss/air,
+/area/ruin/unpowered/icecropolis)
+"KS" = (
+/obj/structure/stone_tile/slab,
+/obj/structure/mirror{
+	pixel_y = 26
+	},
+/turf/open/indestructible/boss/air,
+/area/ruin/unpowered/icecropolis)
 "KW" = (
 /obj/item/trash/can,
-/turf/open/floor/grass/snow/basalt{
-	baseturfs = /turf/open/indestructible/necropolis/air;
-	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
-	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis/inside,
 /area/ruin/unpowered/icecropolis/gold)
 "KX" = (
 /obj/structure/girder/bronze,
@@ -1979,11 +2032,11 @@
 	aggro_vision_range = 6;
 	faction = list("mining")
 	},
-/turf/open/floor/wood,
+/turf/open/floor/wood/icecropolis,
 /area/ruin/unpowered/icecropolis/russia)
 "Lp" = (
 /obj/structure/fluff/fokoff_sign,
-/turf/open/indestructible/necropolis/air,
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis/inside,
 /area/ruin/unpowered/icecropolis)
 "Ls" = (
 /mob/living/simple_animal/hostile/asteroid/goliath/pup{
@@ -1997,14 +2050,11 @@
 	name = "Pillar";
 	pull_force = 1000
 	},
-/turf/open/floor/grass/snow/basalt{
-	baseturfs = /turf/open/indestructible/necropolis/air;
-	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
-	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis/inside,
 /area/ruin/unpowered/icecropolis/reach)
 "Lt" = (
 /obj/effect/mob_spawn/human/corpse/russian/ranged/officer,
-/turf/open/floor/wood,
+/turf/open/floor/wood/icecropolis,
 /area/ruin/unpowered/icecropolis/russia)
 "Lx" = (
 /turf/open/floor/mineral/gold,
@@ -2016,7 +2066,6 @@
 "LH" = (
 /obj/structure/stone_tile/slab/cracked,
 /obj/structure/table/wood/fancy/red_gold,
-/obj/item/claymore,
 /obj/item/stack/sheet/mineral/adamantine{
 	amount = 15
 	},
@@ -2041,6 +2090,13 @@
 	},
 /turf/open/lava/smooth,
 /area/ruin/unpowered/icecropolis/gold)
+"LQ" = (
+/obj/structure/stone_tile/slab,
+/obj/structure/chair/bronze{
+	dir = 8
+	},
+/turf/open/indestructible/boss/air,
+/area/ruin/unpowered/icecropolis)
 "LT" = (
 /obj/effect/decal/cleanable/blood/old,
 /turf/open/floor/mineral/gold,
@@ -2050,20 +2106,27 @@
 	dir = 8
 	},
 /obj/structure/barricade/wooden/crude,
-/turf/open/floor/wood,
+/turf/open/floor/wood/icecropolis,
 /area/ruin/unpowered/icecropolis/russia)
 "Mc" = (
 /obj/machinery/hydroponics/soil,
 /obj/item/grown/cotton,
-/turf/open/floor/grass/snow/basalt{
-	baseturfs = /turf/open/indestructible/necropolis/air;
-	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
-	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis/inside,
 /area/ruin/unpowered/icecropolis/reach)
 "Mf" = (
 /obj/machinery/light/floor,
-/turf/open/floor/wood,
+/turf/open/floor/wood/icecropolis,
 /area/ruin/unpowered/icecropolis/russia)
+"Mh" = (
+/obj/structure/stone_tile/block{
+	dir = 8;
+	pixel_y = 16
+	},
+/obj/structure/stone_tile{
+	dir = 1
+	},
+/turf/open/lava,
+/area/ruin/unpowered/icecropolis)
 "Mw" = (
 /obj/structure/stone_tile/slab/cracked,
 /obj/item/skub,
@@ -2071,17 +2134,11 @@
 /area/ruin/unpowered/icecropolis/gold)
 "MK" = (
 /obj/item/stack/sheet/mineral/gold/twenty,
-/turf/open/floor/grass/snow/basalt{
-	baseturfs = /turf/open/indestructible/necropolis/air;
-	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
-	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis/inside,
 /area/ruin/unpowered/icecropolis/gold)
 "MR" = (
 /obj/structure/legionnaire_bonfire,
-/turf/open/floor/grass/snow/basalt{
-	baseturfs = /turf/open/indestructible/necropolis/air;
-	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
-	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis/inside,
 /area/ruin/unpowered/icecropolis)
 "MT" = (
 /obj/structure/stone_tile/cracked{
@@ -2098,28 +2155,29 @@
 /area/ruin/unpowered/icecropolis)
 "MU" = (
 /obj/effect/decal/cleanable/blood/old,
-/turf/open/floor/grass/snow/basalt{
-	baseturfs = /turf/open/indestructible/necropolis/air;
-	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
-	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis/inside,
 /area/ruin/unpowered/icecropolis/gold)
 "MY" = (
 /obj/structure/stone_tile/slab/cracked,
 /obj/effect/decal/cleanable/blood/gibs/core,
 /turf/open/indestructible/boss/air,
 /area/ruin/unpowered/icecropolis/gold)
+"Ne" = (
+/obj/structure/stone_tile/slab,
+/obj/structure/displaycase/noalert{
+	start_showpiece_type = /obj/item/stack/telecrystal/five
+	},
+/turf/open/indestructible/boss/air,
+/area/ruin/unpowered/icecropolis)
 "NK" = (
 /obj/structure/bed/dogbed,
-/turf/open/floor/wood,
+/turf/open/floor/wood/icecropolis,
 /area/ruin/unpowered/icecropolis/reach)
 "NN" = (
 /obj/structure/table/wood/reinforced,
 /obj/item/a_gift,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/grass/snow/basalt{
-	baseturfs = /turf/open/indestructible/necropolis/air;
-	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
-	},
+/turf/open/floor/wood/icecropolis,
 /area/ruin/unpowered/icecropolis)
 "NS" = (
 /obj/structure/stone_tile/surrounding/cracked{
@@ -2132,7 +2190,7 @@
 /area/ruin/unpowered/icecropolis)
 "NU" = (
 /obj/structure/destructible/tribal_torch,
-/turf/open/floor/wood,
+/turf/open/floor/wood/icecropolis,
 /area/ruin/unpowered/icecropolis/reach)
 "Od" = (
 /mob/living/simple_animal/hostile/asteroid/hivelord/legion,
@@ -2154,7 +2212,7 @@
 /obj/structure/chair/bronze{
 	dir = 8
 	},
-/turf/open/floor/wood,
+/turf/open/floor/wood/icecropolis,
 /area/ruin/unpowered/icecropolis/reach)
 "OB" = (
 /obj/effect/decal/cleanable/blood/old,
@@ -2163,10 +2221,7 @@
 	faction = list("mining");
 	name = "Missionary"
 	},
-/turf/open/floor/grass/snow/basalt{
-	baseturfs = /turf/open/indestructible/necropolis/air;
-	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
-	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis/inside,
 /area/ruin/unpowered/icecropolis/gold)
 "OG" = (
 /obj/structure/flora/rock/pile/icy,
@@ -2174,7 +2229,8 @@
 /area/ruin/unpowered/icecropolis/outside)
 "OP" = (
 /obj/structure/stone_tile/slab,
-/obj/structure/closet/crate/necropolis/tendril,
+/obj/structure/closet/crate/necropolis,
+/obj/effect/spawner/lootdrop/snowdin/dungeonmid,
 /turf/open/indestructible/boss/air,
 /area/ruin/unpowered/icecropolis)
 "OX" = (
@@ -2182,11 +2238,17 @@
 	color = "#880808";
 	dir = 1
 	},
-/turf/open/floor/grass/snow/basalt{
-	baseturfs = /turf/open/indestructible/necropolis;
-	initial_gas_mix = "ICEMOON_ATMOS"
-	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis,
 /area/ruin/unpowered/icecropolis/outside)
+"OY" = (
+/obj/structure/stone_tile{
+	dir = 4
+	},
+/obj/structure/stone_tile/block{
+	dir = 4
+	},
+/turf/open/lava,
+/area/ruin/unpowered/icecropolis)
 "Pa" = (
 /obj/effect/decal/cleanable/blood/gibs/old,
 /turf/open/floor/mineral/gold,
@@ -2221,13 +2283,29 @@
 /area/ruin/unpowered/icecropolis)
 "Pn" = (
 /obj/structure/reagent_dispensers/watertank/high,
-/turf/open/floor/wood,
+/turf/open/floor/wood/icecropolis,
 /area/ruin/unpowered/icecropolis/reach)
+"Pw" = (
+/obj/structure/stone_tile/slab,
+/obj/structure/showcase,
+/turf/open/indestructible/boss/air,
+/area/ruin/unpowered/icecropolis)
+"PF" = (
+/obj/structure/stone_tile/block{
+	dir = 4;
+	pixel_y = -16
+	},
+/obj/structure/stone_tile/block{
+	dir = 8;
+	pixel_y = 16
+	},
+/turf/open/lava,
+/area/ruin/unpowered/icecropolis)
 "PI" = (
 /obj/item/chair/wood/wings,
 /obj/effect/decal/cleanable/dirt,
 /obj/item/storage/box/emptysandbags,
-/turf/open/floor/wood,
+/turf/open/floor/wood/icecropolis,
 /area/ruin/unpowered/icecropolis)
 "PK" = (
 /obj/structure/stone_tile,
@@ -2250,8 +2328,12 @@
 	icon_state = "0-2"
 	},
 /obj/machinery/power/apc/auto_name/north,
-/turf/open/floor/wood,
+/turf/open/floor/wood/icecropolis,
 /area/ruin/unpowered/icecropolis/russia)
+"PV" = (
+/obj/item/guardiancreator/choose,
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis/inside,
+/area/ruin/unpowered/icecropolis)
 "PW" = (
 /obj/structure/flora/tree/dead,
 /turf/open/floor/plating/asteroid/snow/icemoon,
@@ -2263,10 +2345,7 @@
 /area/ruin/unpowered/icecropolis/outside)
 "PZ" = (
 /obj/effect/decal/cleanable/blood/gibs/core,
-/turf/open/floor/grass/snow/basalt{
-	baseturfs = /turf/open/indestructible/necropolis/air;
-	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
-	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis/inside,
 /area/ruin/unpowered/icecropolis/gold)
 "Qe" = (
 /obj/item/reagent_containers/glass/bottle/nutrient/ez,
@@ -2280,10 +2359,7 @@
 /area/ruin/unpowered/icecropolis)
 "Qi" = (
 /obj/effect/decal/cleanable/blood/gibs/old,
-/turf/open/floor/grass/snow/basalt{
-	baseturfs = /turf/open/indestructible/necropolis/air;
-	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
-	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis/inside,
 /area/ruin/unpowered/icecropolis/gold)
 "Qz" = (
 /obj/vehicle/ridden/atv{
@@ -2300,13 +2376,25 @@
 	},
 /obj/item/stack/sheet/plasteel,
 /obj/item/rcd_ammo,
-/turf/open/floor/wood,
+/turf/open/floor/wood/icecropolis,
 /area/ruin/unpowered/icecropolis/russia)
 "QN" = (
 /obj/structure/stone_tile/slab,
 /obj/structure/stone_tile/slab,
 /turf/open/indestructible/boss/air,
 /area/ruin/unpowered/icecropolis/reach)
+"QQ" = (
+/obj/structure/stone_tile/slab,
+/obj/structure/table/wood/fancy/royalblue,
+/obj/item/gavelhammer,
+/turf/open/indestructible/boss/air,
+/area/ruin/unpowered/icecropolis)
+"QW" = (
+/obj/structure/stone_tile/slab,
+/obj/structure/table/wood/fancy/royalblue,
+/obj/item/gavelblock,
+/turf/open/indestructible/boss/air,
+/area/ruin/unpowered/icecropolis)
 "Ra" = (
 /obj/structure/fluff/drake_statue/falling,
 /obj/structure/stone_tile/slab/cracked,
@@ -2328,10 +2416,7 @@
 /obj/item/bedsheet/purple,
 /obj/effect/decal/cleanable/blood/gibs/old,
 /obj/item/rcd_ammo,
-/turf/open/floor/grass/snow/basalt{
-	baseturfs = /turf/open/indestructible/necropolis/air;
-	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
-	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis/inside,
 /area/ruin/unpowered/icecropolis/gold)
 "RO" = (
 /obj/structure/sink{
@@ -2339,7 +2424,7 @@
 	pixel_x = 18
 	},
 /mob/living/simple_animal/hostile/asteroid/hivelord/legion,
-/turf/open/floor/plasteel,
+/turf/open/floor/plasteel/icecropolis,
 /area/ruin/unpowered/icecropolis/rusty)
 "RQ" = (
 /obj/structure/table/wood/reinforced,
@@ -2352,8 +2437,22 @@
 /obj/item/seeds/lavaland/cactus,
 /obj/item/seeds/lavaland/cactus,
 /obj/item/seeds/lavaland/cactus,
-/turf/open/floor/wood,
+/turf/open/floor/wood/icecropolis,
 /area/ruin/unpowered/icecropolis/reach)
+"RT" = (
+/obj/structure/stone_tile/center{
+	pixel_x = -16;
+	pixel_y = 16
+	},
+/obj/structure/stone_tile/block{
+	dir = 8;
+	pixel_y = 16
+	},
+/obj/structure/stone_tile/block{
+	dir = 1
+	},
+/turf/open/lava,
+/area/ruin/unpowered/icecropolis)
 "Sp" = (
 /obj/structure/mineral_door/iron,
 /turf/open/indestructible/necropolis/air,
@@ -2413,16 +2512,13 @@
 /obj/item/reagent_containers/spray/plantbgone,
 /obj/item/cultivator/rake,
 /obj/item/cultivator/rake,
-/turf/open/floor/wood,
+/turf/open/floor/wood/icecropolis,
 /area/ruin/unpowered/icecropolis/reach)
 "SY" = (
 /obj/structure/fence{
 	dir = 8
 	},
-/turf/open/floor/grass/snow/basalt{
-	baseturfs = /turf/open/indestructible/necropolis/air;
-	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
-	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis/inside,
 /area/ruin/unpowered/icecropolis/reach)
 "Tf" = (
 /obj/structure/stone_tile/slab,
@@ -2437,24 +2533,15 @@
 /obj/item/trash/semki,
 /obj/item/trash/sosjerky,
 /obj/effect/decal/cleanable/blood/gibs/old,
-/turf/open/floor/grass/snow/basalt{
-	baseturfs = /turf/open/indestructible/necropolis/air;
-	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
-	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis/inside,
 /area/ruin/unpowered/icecropolis/gold)
 "To" = (
 /obj/structure/mineral_door/wood,
-/turf/open/floor/grass/snow/basalt{
-	baseturfs = /turf/open/indestructible/necropolis/air;
-	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
-	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis/inside,
 /area/ruin/unpowered/icecropolis/reach)
 "TC" = (
 /obj/item/clothing/head/helmet/roman/legionnaire,
-/turf/open/floor/grass/snow/basalt{
-	baseturfs = /turf/open/indestructible/necropolis/air;
-	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
-	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis/inside,
 /area/ruin/unpowered/icecropolis/reach)
 "TK" = (
 /obj/structure/closet/crate,
@@ -2468,11 +2555,11 @@
 	desc = "A nicely wrapped present adressed to Yuri.";
 	name = "gift to Yuri"
 	},
-/turf/open/floor/wood,
+/turf/open/floor/wood/icecropolis,
 /area/ruin/unpowered/icecropolis/russia)
 "TP" = (
 /obj/item/circuitboard/machine/hydroponics,
-/turf/open/floor/plasteel,
+/turf/open/floor/plasteel/icecropolis,
 /area/ruin/unpowered/icecropolis/rusty)
 "Uj" = (
 /obj/structure/stone_tile/slab/cracked,
@@ -2495,10 +2582,7 @@
 /obj/item/shovel,
 /obj/item/shovel,
 /obj/item/shovel/spoon,
-/turf/open/floor/grass/snow/basalt{
-	baseturfs = /turf/open/indestructible/necropolis/air;
-	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
-	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis/inside,
 /area/ruin/unpowered/icecropolis/reach)
 "Ur" = (
 /obj/structure/fluff/broken_flooring,
@@ -2509,18 +2593,27 @@
 /obj/machinery/power/port_gen/pacman,
 /obj/item/wrench/old,
 /obj/item/stack/sheet/mineral/plasma/five,
-/turf/open/floor/wood,
+/turf/open/floor/wood/icecropolis,
 /area/ruin/unpowered/icecropolis/russia)
 "Ux" = (
 /obj/structure/mineral_door/iron,
-/turf/open/floor/grass/snow/basalt{
-	baseturfs = /turf/open/indestructible/necropolis/air;
-	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
-	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis/inside,
 /area/ruin/unpowered/icecropolis)
 "UI" = (
-/turf/open/floor/plasteel,
+/turf/open/floor/plasteel/icecropolis,
 /area/ruin/unpowered/icecropolis/rusty)
+"UJ" = (
+/obj/structure/stone_tile/surrounding{
+	pixel_x = 16;
+	pixel_y = -16
+	},
+/obj/structure/stone_tile/block{
+	dir = 4;
+	pixel_y = -16
+	},
+/obj/structure/stone_tile/block,
+/turf/open/lava,
+/area/ruin/unpowered/icecropolis)
 "Vk" = (
 /obj/structure/stone_tile/surrounding/cracked{
 	dir = 1
@@ -2548,10 +2641,7 @@
 /area/ruin/unpowered/icecropolis)
 "Vx" = (
 /mob/living/simple_animal/hostile/asteroid/gutlunch,
-/turf/open/floor/grass/snow/basalt{
-	baseturfs = /turf/open/indestructible/necropolis/air;
-	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
-	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis/inside,
 /area/ruin/unpowered/icecropolis/gold)
 "VU" = (
 /obj/structure/stone_tile/slab,
@@ -2562,10 +2652,7 @@
 /area/ruin/unpowered/icecropolis)
 "VX" = (
 /obj/effect/mob_spawn/human/corpse/charredskeleton,
-/turf/open/floor/grass/snow/basalt{
-	baseturfs = /turf/open/indestructible/necropolis/air;
-	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
-	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis/inside,
 /area/ruin/unpowered/icecropolis)
 "We" = (
 /obj/structure/stone_tile/surrounding_tile,
@@ -2579,32 +2666,38 @@
 /obj/structure/necropolis_gate,
 /turf/open/indestructible/necropolis/air,
 /area/ruin/unpowered/icecropolis)
+"Wo" = (
+/obj/structure/stone_tile/slab,
+/obj/structure/bookcase/manuals,
+/turf/open/indestructible/boss/air,
+/area/ruin/unpowered/icecropolis)
 "Wt" = (
 /obj/structure/legionpike,
-/turf/open/floor/grass/snow/basalt{
-	baseturfs = /turf/open/indestructible/necropolis/air;
-	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
-	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis/inside,
 /area/ruin/unpowered/icecropolis)
 "Wu" = (
 /obj/structure/table/wood/reinforced,
 /obj/item/storage/bag/plants/portaseeder,
-/turf/open/floor/wood,
+/turf/open/floor/wood/icecropolis,
 /area/ruin/unpowered/icecropolis/reach)
 "Wz" = (
 /obj/structure/statue/bone/rib{
 	color = "#880808"
 	},
-/turf/open/floor/grass/snow/basalt{
-	baseturfs = /turf/open/indestructible/necropolis;
-	initial_gas_mix = "ICEMOON_ATMOS"
-	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis,
 /area/ruin/unpowered/icecropolis/outside)
+"WN" = (
+/obj/structure/stone_tile/block,
+/turf/open/lava,
+/area/ruin/unpowered/icecropolis)
 "WO" = (
-/turf/open/floor/grass/snow/basalt{
-	initial_gas_mix = "ICEMOON_ATMOS"
-	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis,
 /area/ruin/unpowered/icecropolis/outside)
+"WS" = (
+/obj/structure/stone_tile/slab,
+/obj/item/statuebust/hippocratic,
+/turf/open/indestructible/boss/air,
+/area/ruin/unpowered/icecropolis)
 "WT" = (
 /obj/structure/stone_tile/slab/cracked,
 /obj/item/trash/popcorn,
@@ -2630,7 +2723,7 @@
 /obj/item/seeds/bamboo,
 /obj/item/seeds/apple,
 /obj/item/seeds/cotton/durathread,
-/turf/open/floor/wood,
+/turf/open/floor/wood/icecropolis,
 /area/ruin/unpowered/icecropolis/reach)
 "Xb" = (
 /obj/structure/lavaland/ash_walker,
@@ -2642,11 +2735,13 @@
 /area/ruin/unpowered/icecropolis/reach)
 "Xm" = (
 /obj/structure/ore_box,
-/turf/open/floor/grass/snow/basalt{
-	baseturfs = /turf/open/indestructible/necropolis/air;
-	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
-	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis/inside,
 /area/ruin/unpowered/icecropolis/reach)
+"Xn" = (
+/obj/structure/stone_tile/slab,
+/obj/structure/bookcase/manuals/research_and_development,
+/turf/open/indestructible/boss/air,
+/area/ruin/unpowered/icecropolis)
 "Xo" = (
 /obj/structure/stone_tile/surrounding,
 /obj/structure/stone_tile/center,
@@ -2699,7 +2794,7 @@
 /area/ruin/unpowered/icecropolis/reach)
 "XF" = (
 /obj/item/circuitboard/machine/plantgenes,
-/turf/open/floor/plasteel,
+/turf/open/floor/plasteel/icecropolis,
 /area/ruin/unpowered/icecropolis/rusty)
 "XI" = (
 /obj/structure/stone_tile{
@@ -2716,22 +2811,21 @@
 /turf/open/lava/smooth,
 /area/ruin/unpowered/icecropolis)
 "XN" = (
-/obj/effect/mapping_helpers/component_injector/doordeath{
-	door_id = "priest_death_id"
-	},
-/mob/living/simple_animal/hostile/megafauna/dragon{
-	desc = "High Priest of the Bloody Hallow. Fires burn in his name, crusades and holy word spread across the necropolis until it split and vanished. It was not meant to stay under the gaze of Legion, prospering in its own citadel of flesh and death.";
-	faction = list("mining","boss","neutral");
-	gps_name = "Holy Fire Signal";
-	health = 2000;
-	maxHealth = 2000;
-	name = "The Priest"
-	},
-/turf/open/indestructible/necropolis/air,
+/obj/structure/stone_tile/slab,
+/obj/structure/table/wood/fancy/royalblue,
+/turf/open/indestructible/boss/air,
 /area/ruin/unpowered/icecropolis)
 "XV" = (
 /obj/effect/spawner/lootdrop/snowdin/dungeonmid,
 /turf/open/indestructible/necropolis/air,
+/area/ruin/unpowered/icecropolis)
+"XY" = (
+/obj/structure/stone_tile/block{
+	dir = 1;
+	pixel_x = -16
+	},
+/obj/structure/stone_tile/block,
+/turf/open/lava,
 /area/ruin/unpowered/icecropolis)
 "Ym" = (
 /obj/structure/stone_tile{
@@ -2778,42 +2872,34 @@
 /obj/item/weldingtool/experimental,
 /obj/item/construction/rcd/loaded,
 /obj/item/clothing/head/collectable/welding,
-/turf/open/floor/grass/snow/basalt{
-	baseturfs = /turf/open/indestructible/necropolis/air;
-	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
-	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis/inside,
 /area/ruin/unpowered/icecropolis/reach)
 "YF" = (
 /obj/machinery/door/poddoor/gates{
 	id = "guard_death_id"
 	},
-/turf/open/floor/grass/snow/basalt{
-	baseturfs = /turf/open/indestructible/necropolis/air;
-	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
-	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis/inside,
 /area/ruin/unpowered/icecropolis)
 "YJ" = (
 /obj/structure/bed/pod,
 /obj/item/bedsheet/red,
-/turf/open/floor/grass/snow/basalt{
-	baseturfs = /turf/open/indestructible/necropolis/air;
-	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
-	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis/inside,
 /area/ruin/unpowered/icecropolis/gold)
 "YV" = (
 /obj/structure/toilet,
 /obj/item/clothing/head/collectable/welding,
-/turf/open/floor/plasteel,
+/turf/open/floor/plasteel/icecropolis,
 /area/ruin/unpowered/icecropolis/rusty)
 "YW" = (
 /obj/item/chair/wood/wings,
 /obj/effect/decal/cleanable/dirt,
 /obj/item/toy/figure/clown,
-/turf/open/floor/wood,
+/turf/open/floor/wood/icecropolis,
 /area/ruin/unpowered/icecropolis)
 "YY" = (
-/obj/effect/mob_spawn/human/corpse/charredskeleton,
-/turf/open/indestructible/necropolis/air,
+/obj/structure/stone_tile/slab,
+/obj/structure/closet/crate/necropolis/dragon,
+/turf/open/indestructible/boss/air,
 /area/ruin/unpowered/icecropolis)
 "Za" = (
 /turf/template_noop,
@@ -2824,10 +2910,7 @@
 /area/ruin/unpowered/icecropolis/gold)
 "Zd" = (
 /obj/item/trash/sosjerky,
-/turf/open/floor/grass/snow/basalt{
-	baseturfs = /turf/open/indestructible/necropolis/air;
-	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
-	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis/inside,
 /area/ruin/unpowered/icecropolis/gold)
 "Zf" = (
 /obj/structure/closet/crate,
@@ -2838,7 +2921,7 @@
 /obj/item/clothing/head/helmet/rus_helmet,
 /obj/item/clothing/under/pants/track,
 /obj/item/clothing/under/color/black,
-/turf/open/floor/wood,
+/turf/open/floor/wood/icecropolis,
 /area/ruin/unpowered/icecropolis/russia)
 "Zh" = (
 /obj/item/circuitboard/machine/biogenerator,
@@ -2869,16 +2952,10 @@
 /turf/open/lava/smooth,
 /area/ruin/unpowered/icecropolis)
 "Zm" = (
-/turf/open/floor/grass/snow/basalt{
-	baseturfs = /turf/open/indestructible/necropolis/air;
-	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
-	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis/inside,
 /area/ruin/unpowered/icecropolis/reach)
 "Zw" = (
-/turf/open/floor/grass/snow/basalt{
-	baseturfs = /turf/open/indestructible/necropolis/air;
-	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
-	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis/inside,
 /area/ruin/unpowered/icecropolis/gold)
 "Zz" = (
 /obj/structure/stone_tile/slab,
@@ -2889,17 +2966,11 @@
 /area/ruin/unpowered/icecropolis)
 "ZA" = (
 /obj/machinery/hydroponics/soil,
-/turf/open/floor/grass/snow/basalt{
-	baseturfs = /turf/open/indestructible/necropolis/air;
-	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
-	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis/inside,
 /area/ruin/unpowered/icecropolis/reach)
 "ZE" = (
 /obj/structure/mineral_door/gold,
-/turf/open/floor/grass/snow/basalt{
-	baseturfs = /turf/open/indestructible/necropolis/air;
-	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
-	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis/inside,
 /area/ruin/unpowered/icecropolis/gold)
 "ZF" = (
 /obj/structure/stone_tile/block/burnt,
@@ -2918,7 +2989,7 @@
 "ZH" = (
 /obj/structure/table/rolling,
 /obj/item/reagent_containers/food/snacks/store/bread/meat,
-/turf/open/floor/wood,
+/turf/open/floor/wood/icecropolis,
 /area/ruin/unpowered/icecropolis/reach)
 "ZM" = (
 /turf/closed/indestructible/riveted/boss,
@@ -2930,10 +3001,7 @@
 /area/ruin/unpowered/icecropolis/gold)
 "ZW" = (
 /obj/structure/table/optable,
-/turf/open/floor/grass/snow/basalt{
-	baseturfs = /turf/open/indestructible/necropolis/air;
-	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
-	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis/inside,
 /area/ruin/unpowered/icecropolis/reach)
 
 (1,1,1) = {"
@@ -3400,19 +3468,19 @@ VV
 VV
 VV
 VV
-tA
-tA
-tA
-tA
-tA
-tA
-tA
-tA
-tA
-tA
-tA
-YY
-Qf
+CJ
+Il
+Il
+Il
+Il
+Il
+Il
+Il
+CJ
+VV
+VV
+VV
+VV
 Qf
 Qf
 jV
@@ -3459,22 +3527,22 @@ je
 VV
 Qf
 VV
-tA
+uE
 YY
 VV
-tA
-je
-tA
-tA
-je
-tA
-tA
-je
-tA
-tA
-tA
-tA
-Qf
+VU
+Il
+Il
+Il
+Il
+Il
+Il
+Il
+VU
+VV
+Hk
+rh
+VV
 Qf
 Qf
 Qf
@@ -3521,22 +3589,22 @@ KX
 VV
 Qf
 VV
-tA
-tA
+wI
+VU
 Fx
-tA
-je
-je
-je
-je
-tA
-tA
-je
-je
-tA
-tA
-tA
-Qf
+VU
+VU
+VU
+tq
+PF
+Mh
+VU
+VU
+VU
+VU
+sH
+uF
+VV
 Qf
 Qf
 Qf
@@ -3583,22 +3651,22 @@ tA
 VV
 Qf
 VV
-tA
+zA
 wd
 VV
-tA
-tA
-tA
-tA
-tA
-tA
-tA
-je
-je
-tA
-tA
-tA
-Qf
+VU
+Il
+Il
+yy
+gh
+XY
+Il
+Il
+VU
+VV
+AP
+OY
+VV
 Qf
 jV
 jV
@@ -3648,20 +3716,20 @@ VV
 VV
 VV
 VV
-tA
-tA
-tA
-tA
-tA
-tA
-tA
-je
-je
-tA
-tA
-Qf
-Qf
-jV
+CJ
+Il
+Il
+yN
+JF
+eC
+Il
+Il
+CJ
+VV
+VV
+VV
+VV
+fN
 jV
 fE
 fE
@@ -3708,23 +3776,23 @@ VV
 Qf
 Qf
 Qf
-tA
-tA
-tA
-tA
-tA
-tA
-XN
-tA
-tA
-tA
-je
-tA
-tA
-Qf
+Il
+Il
+Il
+Il
+Il
+CJ
+VU
+CJ
+Il
+Il
+Il
+Il
+Il
+Il
+Il
+fN
 jV
-jV
-fE
 fE
 Ao
 Ao
@@ -3770,23 +3838,23 @@ VV
 VV
 VV
 VV
-tA
-tA
-tA
-tA
-tA
-tA
-tA
-tA
-tA
-tA
-tA
-tA
-tA
-je
+Il
+Il
+Il
+Il
+Il
+Il
+VU
+VU
+VU
+VU
+VU
+Di
+Pw
+Il
+Il
 jV
-fE
-fE
+jV
 Ao
 Ao
 Za
@@ -3832,22 +3900,22 @@ tA
 je
 je
 VV
-tA
-tA
-tA
-tA
-tA
-tA
-tA
-tA
-tA
-tA
-tA
-tA
-tA
-je
+Il
+Il
+Il
+Il
+Il
+Il
+VU
+Il
+Il
+Il
+VU
+VU
+VU
+Il
+Il
 jV
-fE
 Ao
 Ao
 Za
@@ -3894,22 +3962,22 @@ iS
 je
 VV
 VV
-tA
-YY
-tA
-tA
-tA
-tA
-je
-je
-tA
-tA
-tA
-KX
-tA
-je
+Il
+Il
+Il
+Il
+Il
+CJ
+VU
+Il
+Il
+Il
+WS
+Ne
+VU
+Il
+Il
 jV
-fE
 fE
 Ao
 Ao
@@ -3955,22 +4023,22 @@ tA
 iS
 je
 VV
-je
-tA
-tA
-tA
-tA
-tA
-tA
-je
-je
-tA
-tA
-tA
-tA
-tA
-je
-jV
+CJ
+Il
+Il
+VU
+VU
+VU
+VU
+VU
+Il
+Il
+Il
+Il
+Il
+VU
+Il
+Il
 jV
 fE
 fE
@@ -4017,22 +4085,22 @@ tA
 je
 je
 VV
-je
-tA
-KX
-tA
-tA
-tA
-tA
-je
-je
-tA
-tA
-YY
-tA
-tA
-je
-je
+Ig
+VU
+VU
+VU
+CJ
+Il
+Il
+Il
+Il
+Il
+Il
+CJ
+VU
+VU
+VU
+CJ
 jV
 jV
 fE
@@ -4079,23 +4147,23 @@ je
 je
 nE
 VV
-tA
-tA
-tA
-je
-je
-tA
-tA
-tA
-tA
-tA
-tA
-tA
-tA
-tA
-tA
-je
-je
+KS
+UJ
+uF
+VU
+VV
+VV
+VV
+VV
+VV
+VV
+wP
+VU
+VU
+VU
+VU
+VU
+wP
 jV
 fE
 Ao
@@ -4141,23 +4209,23 @@ je
 je
 nE
 VV
-tA
+VU
+WN
+RT
+VU
 VV
+CJ
+Il
+Il
+Il
 VV
-VV
-VV
-VV
-VV
-je
-je
-VV
-VV
-VV
-VV
-tA
-tA
-tA
-je
+mZ
+VU
+zR
+jK
+fB
+VU
+mZ
 jV
 fE
 fE
@@ -4203,23 +4271,23 @@ je
 nE
 nE
 VV
-tA
-tA
-EU
-EU
-nE
-nE
+LQ
+XN
+LQ
+VU
+Gt
+Il
+Il
+Il
+Il
 VV
-VV
-VV
-VV
-nE
-nE
-VV
-VV
-je
-tA
-tA
+oJ
+VU
+oj
+QW
+kD
+VU
+Wo
 jV
 jV
 jV
@@ -4268,20 +4336,20 @@ VV
 VV
 VV
 VV
-EU
-tA
-tA
-tA
-tA
-tA
-tA
-tA
-tA
-tA
 VV
 VV
+CJ
+Il
+Il
+Il
 VV
-tA
+mZ
+VU
+oj
+QQ
+kD
+VU
+HQ
 VV
 KX
 jV
@@ -4329,21 +4397,21 @@ nE
 je
 jV
 jV
-VV
-VV
-VV
-VV
 nE
-tA
 nE
 VV
 VV
+Il
+Il
 VV
-EU
-EU
-EU
-tA
-tA
+VV
+mI
+VU
+Co
+Cp
+KO
+VU
+Xn
 VV
 nE
 jV
@@ -4395,11 +4463,11 @@ je
 nE
 nE
 VV
-EU
-EU
+Bw
+Bw
 VV
 VV
-je
+VV
 VV
 VV
 VV
@@ -4456,13 +4524,13 @@ jV
 nE
 nE
 Lp
-EU
-EU
-EU
-EU
-EU
+Bw
+Bw
+Bw
+Bw
+Bw
 Lp
-tA
+Il
 tA
 tA
 tA
@@ -4517,14 +4585,14 @@ nE
 jV
 nE
 nE
-tA
-tA
-tA
-tA
-tA
-tA
-tA
-tA
+Il
+Il
+Il
+Il
+Il
+Il
+Il
+Il
 tA
 Xw
 sa
@@ -5124,7 +5192,7 @@ ZM
 ZM
 ZM
 je
-nE
+je
 nE
 nE
 je
@@ -5218,9 +5286,9 @@ jV
 vv
 vv
 vv
-Ix
-Ix
-Ix
+WO
+WO
+WO
 Ao
 Ao
 Ao
@@ -5283,7 +5351,7 @@ vv
 ws
 St
 op
-Ix
+WO
 Ao
 Ao
 Ao
@@ -5332,21 +5400,21 @@ nE
 nE
 nE
 jV
-Ix
-Ix
-Ix
-Ix
-Ix
-Ix
-Ix
-Ix
-Ix
+WO
+WO
+WO
+WO
+WO
+WO
+WO
+WO
+WO
 vv
 og
 vP
 Jz
-Ix
-Ix
+WO
+WO
 WO
 Ao
 Ao
@@ -5394,23 +5462,23 @@ nE
 nE
 nE
 jV
-Ix
+WO
 OX
-Ix
-Ix
+WO
+WO
 OX
-Ix
-Ix
+WO
+WO
 OX
-Ix
+WO
 vv
 cF
 gn
 BJ
-Ix
-Ix
-Ix
-Ix
+WO
+WO
+WO
+WO
 Ao
 Ao
 kC
@@ -5456,25 +5524,25 @@ tA
 tA
 tA
 jV
-Ix
-Ix
-Ix
+WO
+WO
+WO
 Eu
 Eu
-Ix
-Ix
-Ix
+WO
+WO
+WO
 yl
 vv
 BR
 BR
-Ix
-Ix
-Ix
+WO
+WO
+WO
 ae
-Ix
-Ix
-Ix
+WO
+WO
+WO
 Ao
 Ao
 "}
@@ -5518,26 +5586,26 @@ tA
 EU
 jV
 jV
-Ix
-Ix
+WO
+WO
 Eu
-Ix
-Ix
+WO
+WO
 Eu
-Ix
-Ix
-Ix
+WO
+WO
+WO
 vv
-Ix
+WO
 BR
-Ix
-Ix
-Ix
-Ix
-Ix
+WO
+WO
+WO
+WO
+WO
 IC
-Ix
-Ix
+WO
+WO
 Ao
 "}
 (43,1,1) = {"
@@ -5580,27 +5648,27 @@ tA
 EU
 tA
 Wi
-Ix
+WO
 Eu
 Eu
 oS
 Eu
 Eu
 Eu
-Ix
-Ix
+WO
+WO
 FQ
-Ix
+WO
 BR
-Ix
-Ix
-Ix
-Ix
-Ix
-Ix
-Ix
-Ix
-Ix
+WO
+WO
+WO
+WO
+WO
+WO
+WO
+WO
+WO
 "}
 (44,1,1) = {"
 Za
@@ -5642,27 +5710,27 @@ tA
 EU
 jV
 jV
-Ix
-Ix
+WO
+WO
 Eu
-Ix
-Ix
+WO
+WO
 Eu
-Ix
-Ix
-Ix
+WO
+WO
+WO
 vv
-Ix
+WO
 BR
-Ix
+WO
 IC
-Ix
-Ix
-Ix
-Ix
-Ix
-Ix
-Ix
+WO
+WO
+WO
+WO
+WO
+WO
+WO
 "}
 (45,1,1) = {"
 Za
@@ -5704,24 +5772,24 @@ tA
 tA
 tA
 jV
-Ix
-Ix
-Ix
+WO
+WO
+WO
 Eu
 Eu
-Ix
-Ix
-Ix
+WO
+WO
+WO
 yl
 vv
 BR
 BR
-Ix
+WO
 ae
-Ix
-Ix
-Ix
-Ix
+WO
+WO
+WO
+WO
 Ao
 Ao
 Ao
@@ -5766,22 +5834,22 @@ nE
 tA
 tA
 jV
-Ix
+WO
 Wz
-Ix
-Ix
+WO
+WO
 Wz
-Ix
-Ix
+WO
+WO
 Wz
-Ix
+WO
 vv
 ws
 St
 op
-Ix
-Ix
-Ix
+WO
+WO
+WO
 Ao
 kC
 Ao
@@ -5828,22 +5896,22 @@ nE
 tA
 nE
 jV
-Ix
-Ix
-Ix
-Ix
-Ix
-Ix
-Ix
-Ix
-Ix
+WO
+WO
+WO
+WO
+WO
+WO
+WO
+WO
+WO
 vv
 og
 vP
 Jz
-Ix
-Ix
-Ix
+WO
+WO
+WO
 Ao
 Ao
 Ao
@@ -5865,7 +5933,7 @@ pU
 tO
 tA
 ob
-Ka
+tv
 jV
 jV
 jV
@@ -5903,9 +5971,9 @@ vv
 cF
 gn
 BJ
-Ix
-Ao
-Ao
+WO
+WO
+WO
 ea
 Ao
 Za
@@ -5962,9 +6030,9 @@ jV
 vv
 vv
 vv
-Ix
-Ix
-Ix
+WO
+WO
+WO
 Ao
 Ao
 Ao
@@ -6195,7 +6263,7 @@ aU
 tA
 nE
 jV
-Ka
+PV
 YF
 Il
 rE
@@ -6496,7 +6564,7 @@ tA
 tA
 tA
 nE
-nE
+je
 je
 je
 nE
@@ -6682,7 +6750,7 @@ tA
 iQ
 tA
 nE
-je
+nE
 je
 je
 nE
@@ -7141,7 +7209,7 @@ bT
 Iq
 NN
 bR
-dH
+Iq
 nE
 nE
 jV
@@ -7286,7 +7354,7 @@ fE
 jV
 je
 je
-KX
+dJ
 je
 Bk
 Bk
@@ -7491,8 +7559,8 @@ nE
 nE
 nE
 jV
-al
-al
+va
+va
 jV
 tA
 tA
