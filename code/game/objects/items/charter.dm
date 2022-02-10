@@ -4,7 +4,7 @@
 	name = "Charter of Colonization"
 	icon = 'icons/obj/wizard.dmi'
 	icon_state = "scroll2"
-	desc = "An official-looking document writ from dense legalese, entrusting a plot of frontier territory to the owner of this document, along with a formal writ of governance."
+	desc = "An official-looking writ in dense legalese, entrusting a plot of frontier territory to the owner of this document, along with a formal writ of governance."
 	var/used = FALSE
 	var/name_type = "station"
 
