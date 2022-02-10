@@ -137,7 +137,7 @@
 /obj/structure/sign/departments/mait
 	name = "\improper Maintenance Tunnel sign"
 	sign_change_name = "Location - Maintenance"
-	desc = "A sign labelling an area where open walkspace is connected to maintnence tunnels."
+	desc = "A sign labelling an area where open walkspace is connected to maintenance tunnels."
 	icon_state = "mait1"
 	is_editable = TRUE
 
