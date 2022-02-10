@@ -18,8 +18,6 @@
 		if(D.id == door_id)
 			D.open()
 
-	..()
-
 /obj/effect/mapping_helpers/component_injector/doordeath
 	name = "Monster Closet Helper"
 	icon = 'icons/obj/balloons.dmi'
