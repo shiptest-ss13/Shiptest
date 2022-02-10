@@ -60,7 +60,7 @@
 
 /obj/item/clothing/under/suit/black_really/skirt
 	name = "executive suitskirt"
-	desc = "A formal black suitskirt and red tie, intended for the sector's finest."
+	desc = "A formal black suitskirt and red tie, intended for the galaxy's finest."
 	icon_state = "really_black_suit_skirt"
 	item_state = "really_black_suit_skirt"
 	body_parts_covered = CHEST|GROIN|ARMS
