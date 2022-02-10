@@ -4,56 +4,106 @@
 	icon = 'icons/obj/tools.dmi'
 	icon_state = "chisel"
 	force = 5
-	/// Are we toggling the ability for walls to smooth at all?
+	/// Are we toggling the ability for atoms to smooth at all?
 	var/toggling_smooth = FALSE
 
-/obj/item/chisel/pre_attack(atom/A, mob/living/user, params)
-	if(iswallturf(A))
-		attack_wall(A, user)
-		return TRUE
+/obj/item/chisel/pre_attack(atom/target, mob/living/user, params)
+	if(ismob(target))
+		return ..()
+	. = TRUE
+	if(toggling_smooth)
+		if(!atom_supports_smoothing(target))
+			to_chat(user, "<span class='warning'>\the [src] makes a tart buzz. \the [target] doesn't appear to support smoothing.</span>")
+			return
+		smooth_atom(target, user)
+	else
+		if(!atom_supports_diagonal(target))
+			to_chat(user, "<span class='warning'>\the [src] makes a tart buzz. \the [target] doesn't appear to support smoothed corners.</span>")
+			return
+		smooth_atom_diagonal(target, user)
 	return ..()
 
 /obj/item/chisel/attack_self(mob/user)
 	toggling_smooth = !toggling_smooth
 	to_chat(user, "<span class='notice'>\the [src] is now set to reform the [(toggling_smooth ? "smoothness" : "corners")] of walls</span>")
 
-/obj/item/chisel/proc/attack_wall(turf/closed/wall/wall, mob/living/user)
-	if(toggling_smooth)
-		if(wall.smoothing_flags == 0)
-			wall.smoothing_flags = initial(wall.smoothing_flags)
-			QUEUE_SMOOTH(wall)
-			to_chat(user, "<span class='notice'>\the [src] vibrates gently as it reforms the wall to be smooth.</span>")
-		else
-			wall.smoothing_flags = 0
-			wall.icon_state = initial(wall.icon_state)
-			to_chat(user, "<span class='notice'>\the [src] vibrates gently as it reforms the wall to be rough.</span>")
-		QUEUE_SMOOTH_NEIGHBORS(wall)
-		return
-
-	if(!wall_supports_diagonal(wall))
-		to_chat(user, "<span class='warning'>\the [src] gives off a tart buzz. It appears that \the [wall] cannot be smoothed diagonally.</span>")
-		return
-
-	wall.smoothing_flags ^= SMOOTH_DIAGONAL_CORNERS
-	if(wall.smoothing_flags & SMOOTH_DIAGONAL_CORNERS)
-		to_chat(user, "<span class='notice'>\the [src] vibrates intensely as it reforms\the [wall] to be rounded.</span>")
-		if(!wall.fixed_underlay && length(wall.baseturfs))
-			var/turf/baseturf = wall.baseturfs[length(wall.baseturfs)]
-			wall.smooth_underlay = mutable_appearance(layer = TURF_LAYER, plane = FLOOR_PLANE)
-			wall.smooth_underlay.icon = initial(baseturf.icon)
-			wall.smooth_underlay.icon_state = initial(baseturf.icon_state)
-			wall.underlays |= wall.smooth_underlay
+/obj/item/chisel/proc/smooth_atom(atom/target, mob/living/user)
+	target.icon_state = initial(target.icon_state)
+	if(target.smoothing_flags != initial(target.smoothing_flags)) // Smoothing flags were changed, reset them
+		target.smoothing_flags = initial(target.smoothing_flags)
+		QUEUE_SMOOTH(target)
+		QUEUE_SMOOTH_NEIGHBORS(target)
+		to_chat(user, "<span class='notice'>\the [src] vibrates gently as it reforms \the [target] to be smooth.</span>")
 	else
-		to_chat(user, "<span class='notice'>\the [src] vibrates intensely as it reforms \the [wall] to be straight.</span>")
-		if(wall.smooth_underlay)
-			wall.underlays -= wall.smooth_underlay
+		target.smoothing_flags = 0
+		QUEUE_SMOOTH_NEIGHBORS(target)
+		to_chat(user, "<span class='notice'>\the [src] vibrates gently as it reforms \the [target] to be rough.</span>")
+	target.update_icon()
 
-	QUEUE_SMOOTH(wall)
-	QUEUE_SMOOTH_NEIGHBORS(wall)
+/obj/item/chisel/proc/smooth_atom_diagonal(atom/target, mob/living/user)
+	if(target.smoothing_flags & SMOOTH_DIAGONAL_CORNERS)
+		target.smoothing_flags &= ~SMOOTH_DIAGONAL_CORNERS
+		QUEUE_SMOOTH(target)
+		QUEUE_SMOOTH_NEIGHBORS(target)
+		if(iswallturf(target))
+			remove_turf_underlay(target)
+	else
+		target.smoothing_flags |= SMOOTH_DIAGONAL_CORNERS
+		QUEUE_SMOOTH(target)
+		QUEUE_SMOOTH_NEIGHBORS(target)
+		if(iswallturf(target))
+			add_turf_underlay(target)
+	to_chat(user, "<span class='notice'>\the [src] vibrates intensely as it reforms \the [target]'s corners.</span>")
 
-/obj/item/chisel/proc/wall_supports_diagonal(turf/closed/wall/wall)
-	var/verify_iconstate = "[wall.base_icon_state]-5-d" // Look for a diagonal icon_state, if it exists the wall supports diagonal
-	return verify_iconstate in icon_states(wall.icon)
+#define UNDERLAY_FOUND 1
+#define UNDERLAY_MISSING 3
+
+/obj/item/chisel/proc/add_turf_underlay(turf/target)
+	if(target.fixed_underlay)
+		return
+
+	var/turf/baseturf
+	var/found = UNDERLAY_MISSING
+	var/idx = length(target.baseturfs)
+
+	if(!idx)
+		CRASH("[target] does not have any baseturfs")
+
+	while(idx)
+		baseturf = target.baseturfs[idx]
+		if(ispath(baseturf, /turf/baseturf_skipover))
+			idx--
+			continue
+		found = UNDERLAY_FOUND
+		if(ispath(baseturf, /turf/baseturf_bottom))
+			baseturf = target.get_z_base_turf()
+		break
+
+	if(found == UNDERLAY_MISSING)
+		CRASH("Unable to find valid baseturf underlay for [target]")
+
+	target.smooth_underlay = mutable_appearance(layer = TURF_LAYER, plane = FLOOR_PLANE)
+	target.smooth_underlay.icon = initial(baseturf.icon)
+	target.smooth_underlay.icon_state = initial(baseturf.icon_state)
+	target.underlays |= target.smooth_underlay
+
+/obj/item/chisel/proc/remove_turf_underlay(turf/target)
+	if(!target.smooth_underlay)
+		return
+	target.underlays -= target.smooth_underlay
+
+#undef UNDERLAY_FOUND
+#undef UNDERLAY_MISSING
+
+/obj/item/chisel/proc/atom_supports_smoothing(atom/target)
+	if(initial(target.smoothing_flags) & SMOOTH_BORDER|SMOOTH_BITMASK)
+		return TRUE // If they start off with valid smoothing flags assume yes
+	var/find_this = "[target.base_icon_state]-5"
+	return find_this in icon_states(target.icon)
+
+/obj/item/chisel/proc/atom_supports_diagonal(atom/target)
+	var/verify_iconstate = "[target.base_icon_state]-5-d" // Look for a diagonal icon_state, if it exists the atom supports diagonal corners
+	return verify_iconstate in icon_states(target.icon)
 
 /datum/design/chisel
 	name = "Chisel"

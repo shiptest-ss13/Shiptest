@@ -40,6 +40,9 @@
 	///Icon-smoothing variable to map a diagonal wall corner with a fixed underlay.
 	var/list/fixed_underlay = null
 
+	/// The underlay generated and applied when a chisel makes a turf diagonal. Stored here for removal on un-diagonalizing
+	var/mutable_appearance/smooth_underlay
+
 	///Lumcount added by sources other than lighting datum objects, such as the overlay lighting component.
 	var/dynamic_lumcount = 0
 
