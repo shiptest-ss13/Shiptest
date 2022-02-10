@@ -18,6 +18,9 @@
 	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
 	tiled_dirt = FALSE
 
+/turf/open/floor/wood/icecropolis
+	baseturfs = /turf/open/indestructible/necropolis/air
+
 /turf/open/floor/wood/mahogany
 	color = WOOD_COLOR_RICH
 
