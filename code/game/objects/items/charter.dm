@@ -1,11 +1,11 @@
 #define STATION_RENAME_TIME_LIMIT 3000
 
 /obj/item/station_charter
-	name = "station charter"
+	name = "sector charter"
 	icon = 'icons/obj/wizard.dmi'
 	icon_state = "scroll2"
-	desc = "An official document entrusting the governance of the station \
-		and surrounding space to the Captain."
+	desc = "An official document entrusting the governance of the sector \
+		and surrounding space to the owner of this document."
 	var/used = FALSE
 	var/name_type = "station"
 

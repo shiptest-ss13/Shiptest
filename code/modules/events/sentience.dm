@@ -99,7 +99,7 @@ GLOBAL_LIST_INIT(high_priority_sentience, typecacheof(list(
 	return SUCCESSFUL_SPAWN
 
 /datum/round_event_control/sentience/all
-	name = "Station-wide Human-level Intelligence"
+	name ="Sector-wide Human-level Intelligence"
 	typepath = /datum/round_event/ghost_role/sentience/all
 	weight = 0
 

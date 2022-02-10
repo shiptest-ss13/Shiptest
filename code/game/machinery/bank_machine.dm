@@ -1,6 +1,6 @@
 /obj/machinery/computer/bank_machine
 	name = "bank machine"
-	desc = "A machine used to deposit and withdraw station funds."
+	desc = "A machine used to deposit and withdraw funds."
 	icon = 'goon/icons/obj/goon_terminals.dmi'
 	idle_power_usage = 100
 
