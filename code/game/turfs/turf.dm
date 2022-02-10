@@ -531,13 +531,12 @@
 					SSexplosions.lowobj += A
 
 /turf/narsie_act(force, ignore_mobs, probability = 20)
-	. = (prob(probability) || force)
-	for(var/atom/movable/AM as anything in src)
-		var/thing_is_mob = ismob(AM)
-		if(ignore_mobs && thing_is_mob)
-			continue
-		if(thing_is_mob || .)
-			AM.narsie_act()
+	. = (force || prob(probability))
+	var/individual_chance
+	for(var/atom/movable/movable_contents as anything in src)
+		individual_chance = ismob(movable_contents) ? !ignore_mobs : .
+		if(individual_chance)
+			movable_contents.narsie_act()
 
 /turf/proc/get_smooth_underlay_icon(mutable_appearance/underlay_appearance, turf/asking_turf, adjacency_dir)
 	underlay_appearance.icon = icon
