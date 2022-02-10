@@ -69,7 +69,7 @@
 
 /obj/item/clothing/under/suit/black/female
 	name = "executive suit"
-	desc = "A formal trouser suit for women, intended for the sector's finest."
+	desc = "A formal trouser suit for women, intended for the galaxy's finest."
 	icon_state = "black_suit_fem"
 	item_state = "black_suit_fem"
 
