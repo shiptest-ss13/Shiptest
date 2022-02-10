@@ -29,7 +29,7 @@
 	if(user)
 		to_chat(user, "<span class='danger'>The crate's anti-tamper system activates!</span>")
 		log_bomber(user, "has detonated a", src)
-	for(var/atom/movable/AM in src)
+	for(var/atom/movable/AM as anything in src)
 		qdel(AM)
 	explosion(get_turf(src), 0, 1, 5, 5)
 	qdel(src)

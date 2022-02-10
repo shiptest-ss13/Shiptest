@@ -124,7 +124,7 @@
 				continue
 			var/datum/pipeline/E = I.parent
 			merge(E)
-		if(!members.Find(P))
+		if(!(P in members))
 			members += P
 			air.set_volume(air.return_volume() + P.volume)
 	else

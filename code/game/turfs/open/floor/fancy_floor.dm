@@ -375,13 +375,12 @@
 	initial_gas_mix = AIRLESS_ATMOS
 
 /turf/open/floor/carpet/narsie_act(force, ignore_mobs, probability = 20)
-	. = (prob(probability) || force)
-	for(var/I in src)
-		var/atom/A = I
-		if(ignore_mobs && ismob(A))
-			continue
-		if(ismob(A) || .)
-			A.narsie_act()
+    . = (force || prob(probability))
+    var/individual_chance
+    for(var/atom/movable/movable_contents as anything in src)
+        individual_chance = ismob(movable_contents) ? !ignore_mobs : .
+        if(individual_chance)
+            movable_contents.narsie_act()
 
 /turf/open/floor/carpet/break_tile()
 	broken = TRUE
