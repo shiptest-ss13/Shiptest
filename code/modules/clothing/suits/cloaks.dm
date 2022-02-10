@@ -19,12 +19,12 @@
 
 /obj/item/clothing/neck/cloak/hos
 	name = "head of security's cloak"
-	desc = "Worn by Securistan, ruling their vessel with an iron fist."
+	desc = "Worn by Securistan, ruling their watch with an iron fist."
 	icon_state = "hoscloak"
 
 /obj/item/clothing/neck/cloak/qm
 	name = "quartermaster's cloak"
-	desc = "Worn by Cargonia, supplying the sector with the necessary tools for survival."
+	desc = "Worn by Cargonia, supplying the frontier with the necessary tools for survival."
 
 /obj/item/clothing/neck/cloak/cmo
 	name = "chief medical officer's cloak"
