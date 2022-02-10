@@ -11,6 +11,7 @@
 	icon_state = "janitor_skirt"
 	body_parts_covered = CHEST|GROIN|ARMS
 	can_adjust = FALSE
+	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON
 
 
 /obj/item/clothing/under/rank/civilian/janitor/custodian
@@ -24,6 +25,7 @@
 	icon_state = "custodian_skirt"
 	body_parts_covered = CHEST|GROIN|ARMS
 	can_adjust = FALSE
+	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON
 
 
 /obj/item/clothing/under/rank/civilian/janitor/sanitation_tech
@@ -37,4 +39,5 @@
 	icon_state = "sanitation_technician_skirt"
 	body_parts_covered = CHEST|GROIN|ARMS
 	can_adjust = FALSE
+	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON
 

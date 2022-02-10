@@ -163,35 +163,6 @@
 	else if(speed[2])
 		adjust_speed(0, -SIGN(speed[2]) * min(acceleration, abs(speed[2])))
 
-/obj/structure/overmap/ship/Bump(atom/A)
-	if(istype(A, /turf/open/overmap/edge))
-		handle_wraparound()
-	..()
-
-/**
-  * Check if the ship is flying into the border of the overmap.
-  */
-/obj/structure/overmap/ship/proc/handle_wraparound()
-	var/nx = x
-	var/ny = y
-	var/low_edge = 2
-	var/high_edge = SSovermap.size - 1
-
-	if((dir & WEST) && x == low_edge)
-		nx = high_edge
-	else if((dir & EAST) && x == high_edge)
-		nx = low_edge
-	if((dir & SOUTH)  && y == low_edge)
-		ny = high_edge
-	else if((dir & NORTH) && y == high_edge)
-		ny = low_edge
-	if((x == nx) && (y == ny))
-		return //we're not flying off anywhere
-
-	var/turf/T = locate(nx,ny,z)
-	if(T)
-		forceMove(T)
-
 /**
  * Burns the engines in one direction, accelerating in that direction.
  * Unsimulated ships use the acceleration_speed var, simulated ships check eacch engine's thrust and fuel.

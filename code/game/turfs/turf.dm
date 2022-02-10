@@ -341,7 +341,7 @@
 	// Here's hoping it doesn't stay like this for years before we finish conversion to step_
 	var/atom/firstbump
 	var/canPassSelf = CanPass(mover, src)
-	if(canPassSelf || (mover.movement_type & PHASING))
+	if(canPassSelf || (mover.movement_type & PHASING) || (mover.pass_flags & pass_flags_self))
 		for(var/i in contents)
 			if(QDELETED(mover))
 				return FALSE		//We were deleted, do not attempt to proceed with movement.
@@ -363,7 +363,7 @@
 		firstbump = src
 	if(firstbump)
 		mover.Bump(firstbump)
-		return (mover.movement_type & PHASING)
+		return (mover.movement_type & PHASING) || (mover.pass_flags & pass_flags_self) // If they can phase through us, let them in. If not, don't.
 	return TRUE
 
 /turf/open/Entered(atom/movable/AM)

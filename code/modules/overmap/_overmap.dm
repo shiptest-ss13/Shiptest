@@ -4,37 +4,29 @@
 	icon_state = "overmap"
 	initial_gas_mix = AIRLESS_ATMOS
 
-/turf/open/overmap/edge
-	opacity = 1
-	density = 1
-
 //this is completely unnecessary but it looks nice
 /turf/open/overmap/Initialize(mapload, inherited_virtual_z)
 	. = ..()
-	name = "[x]-[y]"
+	if(!SSovermap.overmap_vlevel)
+		return
+	var/datum/virtual_level/vlevel = SSovermap.overmap_vlevel
+	var/overmap_x = x - (vlevel.low_x + vlevel.reserved_margin)
+	var/overmap_y = y - (vlevel.low_y + vlevel.reserved_margin)
+
+	name = "[overmap_x]-[overmap_y]"
 	var/list/numbers = list()
 
-	if(x == 1 || x == SSovermap.size)
-		numbers += list("[round(y/10)]","[round(y%10)]")
-		if(y == 1 || y == SSovermap.size)
+	if(overmap_x == 0 || overmap_x == SSovermap.size)
+		numbers += list("[round(overmap_y/10)]","[round(overmap_y%10)]")
+		if(overmap_y == 0 || overmap_y == SSovermap.size)
 			numbers += "-"
-	if(y == 1 || y == SSovermap.size)
-		numbers += list("[round(x/10)]","[round(x%10)]")
+	if(overmap_y == 0 || overmap_y == SSovermap.size)
+		numbers += list("[round(overmap_x/10)]","[round(overmap_x%10)]")
 
-	for(var/i = 1 to numbers.len)
-		var/image/I = image('whitesands/icons/effects/numbers.dmi',numbers[i])
-		I.pixel_x = 5*i - 2
+	for(var/i = 1 to length(numbers))
+		var/image/I = image('whitesands/icons/effects/numbers.dmi', numbers[i])
+		I.pixel_x = 5*i + (world.icon_size - length(numbers)*5)/2 - 5
 		I.pixel_y = world.icon_size/2 - 3
-		if(y == 1)
-			I.pixel_y = 3
-			I.pixel_x = 5*i + 4
-		if(y == SSovermap.size)
-			I.pixel_y = world.icon_size - 9
-			I.pixel_x = 5*i + 4
-		if(x == 1)
-			I.pixel_x = 5*i - 2
-		if(x == SSovermap.size)
-			I.pixel_x = 5*i + 2
 		overlays += I
 
 /** # Overmap area
