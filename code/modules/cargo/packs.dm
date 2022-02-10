@@ -102,7 +102,7 @@
 
 /datum/supply_pack/emergency/bomb
 	name = "Explosive Emergency Crate"
-	desc = "Science gone bonkers? Beeping behind the airlock? Buy now and be the hero the sector des... I mean needs! (time not included)"
+	desc = "Science gone bonkers? Beeping behind the airlock? Buy now and be the hero the frontier des... I mean needs! (time not included)"
 	cost = 1500
 	contains = list(/obj/item/clothing/head/bomb_hood,
 					/obj/item/clothing/suit/bomb_suit,
