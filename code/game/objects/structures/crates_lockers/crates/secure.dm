@@ -61,7 +61,7 @@
 
 /obj/structure/closet/crate/secure/science
 	name = "secure science crate"
-	desc = "A crate with a lock on it, painted in the scheme of the Nanotransen Research & Development."
+	desc = "A crate with a lock on it, painted in the scheme of the Nanotransen's research & development division."
 	icon_state = "scisecurecrate"
 
 /obj/structure/closet/crate/secure/owned

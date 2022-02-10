@@ -1,6 +1,6 @@
 /obj/machinery/computer/camera_advanced
 	name = "advanced camera console"
-	desc = "An advanced data-tapping console used to jack into various camera networks in one's local stellar region. Highly illegal under Solarian privacy laws."
+	desc = "An advanced data-tapping console used to jack into various camera networks in one's local stellar region."
 	icon_screen = "cameras"
 	icon_keyboard = "security_key"
 	light_color = COLOR_SOFT_RED

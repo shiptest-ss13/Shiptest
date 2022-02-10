@@ -107,7 +107,7 @@ GLOBAL_LIST_EMPTY(allCasters)
 	var/redactedText = "\[REDACTED\]"
 
 /datum/newscaster/feed_network/New()
-	CreateFeedChannel("Sector Announcements", "SS13", 1)
+	CreateFeedChannel("Colonial Announcement Network", "SS13", 1)
 	wanted_issue = new /datum/newscaster/wanted_message
 
 /datum/newscaster/feed_network/proc/CreateFeedChannel(channel_name, author, locked, adminChannel = 0)
