@@ -95,7 +95,7 @@
 
 /obj/item/clothing/under/suit/navy
 	name = "navy suit"
-	desc = "A navy suit and red tie, intended for the sector's finest."
+	desc = "A navy suit and red tie, intended for the galaxy's finest."
 	icon_state = "navy_suit"
 	item_state = "navy_suit"
 
