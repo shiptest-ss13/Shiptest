@@ -136,6 +136,7 @@ LINEN BINS
 	name = "Royal Cape of the Liberator"
 	desc = "Majestic."
 	dream_messages = list("mining", "stone", "a golem", "freedom", "doing whatever")
+	custom_price = 500
 
 /obj/item/bedsheet/medical
 	name = "medical blanket"

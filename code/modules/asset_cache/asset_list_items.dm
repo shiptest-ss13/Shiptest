@@ -370,11 +370,6 @@
 				vending_products[typepath] = 1
 		qdel(V)
 
-	var/obj/machinery/mineral/equipment_vendor/V = new /obj/machinery/mineral/equipment_vendor()
-	for(var/typepath in V.prize_list)
-		vending_products[typepath] = 1
-	qdel(V)
-
 	for (var/k in vending_products)
 		var/atom/item = k
 		if (!ispath(item, /atom))
