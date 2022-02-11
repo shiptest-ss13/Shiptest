@@ -455,6 +455,7 @@
 
 	id = /obj/item/card/id/ert/security
 	suit = /obj/item/clothing/suit/armor/vest/marine/security
+	back = /obj/item/storage/backpack/ert/security
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses
 	head = /obj/item/clothing/head/helmet/marine/security
 
@@ -503,7 +504,7 @@
 	id = /obj/item/card/id/ert/engineer
 	suit = /obj/item/clothing/suit/armor/vest/marine/engineer
 	head = /obj/item/clothing/head/helmet/marine/engineer
-	back = /obj/item/storage/backpack/ert
+	back = /obj/item/storage/backpack/ert/engineer
 	backpack_contents = list(
 		/obj/item/storage/box/survival/engineer/radio = 1,
 		/obj/item/gun_voucher/nanotrasen = 1,
