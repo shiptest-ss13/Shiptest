@@ -131,9 +131,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/list/exp = list()
 	var/list/menuoptions
 
-	///Gear the CLIENT has purchased
-	var/list/purchased_gear = list()
-	///Gear the CHARACTER has equipped
+	///Gear the character has equipped
 	var/list/equipped_gear = list()
 	///Gear tab currently being viewed
 	var/gear_tab = "General"
@@ -157,10 +155,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				max_save_slots = 15
 	var/loaded_preferences_successfully = load_preferences()
 	if(loaded_preferences_successfully)
-		if("extra character slot" in purchased_gear)
-			max_save_slots += 1
-		if("custom ooc color" in purchased_gear)
-			custom_ooc = TRUE
 		if(load_character())
 			species_looking_at = pref_species.id
 			return
@@ -729,8 +723,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					dat += "</center>"
 					dat += "<HR>"
 			var/list/type_blacklist = list()
-			if(equipped_gear && equipped_gear.len)
-				for(var/i = 1, i <= equipped_gear.len, i++)
+			if(equipped_gear && length(equipped_gear))
+				for(var/i = 1, i <= length(equipped_gear), i++)
 					var/datum/gear/G = GLOB.gear_datums[equipped_gear[i]]
 					if(G)
 						if(G.subtype_path in type_blacklist)
@@ -739,10 +733,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					else
 						equipped_gear.Cut(i,i+1)
 
-			var/fcolor =  "#3366CC"
-			var/metabalance = user.client.get_metabalance()
 			dat += "<table align='center' width='100%'>"
-			dat += "<tr><td colspan=4><center><b>Current balance: <font color='[fcolor]'>[metabalance]</font> [CONFIG_GET(string/metacurrency_name)]s.</b> \[<a href='?_src_=prefs;preference=gear;clear_loadout=1'>Clear Loadout</a>\] | \[<a href='?_src_=prefs;preference=gear;toggle_loadout=1'>Toggle Loadout</a>\]</center></td></tr>"
+			dat += "<tr><td colspan=4><center><b>Current loadout usage: [length(equipped_gear)]/[CONFIG_GET(number/max_loadout_items)]</b> \[<a href='?_src_=prefs;preference=gear;clear_loadout=1'>Clear Loadout</a>\] | \[<a href='?_src_=prefs;preference=gear;toggle_loadout=1'>Toggle Loadout</a>\]</center></td></tr>"
 			dat += "<tr><td colspan=4><center><b>"
 
 			var/firstcat = 1
@@ -758,29 +750,18 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			dat += "</b></center></td></tr>"
 
 			var/datum/loadout_category/LC = GLOB.loadout_categories[gear_tab]
-			dat += "<tr><td colspan=4><hr></td></tr>"
-			dat += "<tr><td colspan=4><b><center>[LC.category]</center></b></td></tr>"
-			dat += "<tr><td colspan=4><hr></td></tr>"
+			dat += "<tr><td colspan=3><hr></td></tr>"
+			dat += "<tr><td colspan=3><b><center>[LC.category]</center></b></td></tr>"
+			dat += "<tr><td colspan=3><hr></td></tr>"
 
-			dat += "<tr><td colspan=4><hr></td></tr>"
+			dat += "<tr><td colspan=3><hr></td></tr>"
 			dat += "<tr><td><b>Name</b></td>"
-			dat += "<td><b>Cost</b></td>"
 			dat += "<td><b>Restricted Jobs</b></td>"
-			dat += "<td><b>Description</b></td></tr>"
-			dat += "<tr><td colspan=4><hr></td></tr>"
+			dat += "<td><b>Description</b></td>"
+			dat += "<tr><td colspan=3><hr></td></tr>"
 			for(var/gear_name in LC.gear)
 				var/datum/gear/G = LC.gear[gear_name]
-				var/ticked = (G.display_name in equipped_gear)
-
-				dat += "<tr style='vertical-align:top;'><td width=20%>[G.display_name]\n"
-				if(G.display_name in purchased_gear)
-					if(G.sort_category == "OOC")
-						dat += "<i>Purchased.</i></td>"
-					else
-						dat += "<a style='white-space:normal;' [ticked ? "class='linkOn' " : ""]href='?_src_=prefs;preference=gear;toggle_gear=[G.display_name]'>Equip</a></td>"
-				else
-					dat += "<a style='white-space:normal;' href='?_src_=prefs;preference=gear;purchase_gear=[G.display_name]'>Purchase</a></td>"
-				dat += "<td width = 5% style='vertical-align:top'>[G.cost]</td><td>"
+				dat += "<tr style='vertical-align:top;'><td width=20%><a style='white-space:normal;' [(G.display_name in equipped_gear) ? "class='linkOn' " : ""]href='?_src_=prefs;preference=gear;toggle_gear=[G.display_name]'>[G.display_name]</a></td><td>"
 				if(G.allowed_roles)
 					dat += "<font size=2>"
 					var/list/allowedroles = list()
@@ -810,8 +791,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			dat += "<br>"
 			dat += "<b>PDA Color:</b> <span style='border:1px solid #161616; background-color: [pda_color];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=pda_color;task=input'>Change</a><BR>"
 			dat += "<b>PDA Style:</b> <a href='?_src_=prefs;task=input;preference=pda_style'>[pda_style]</a><br>"
-			dat += "<br>"
-			dat += "<b>Crew Objectives:</b> <a href='?_src_=prefs;preference=crewobj'>[(crew_objectives) ? "Yes" : "No"]</a><br>"
 			dat += "<br>"
 			dat += "<b>Ghost Ears:</b> <a href='?_src_=prefs;preference=ghost_ears'>[(chat_toggles & CHAT_GHOSTEARS) ? "All Speech" : "Nearest Creatures"]</a><br>"
 			dat += "<b>Ghost Radio:</b> <a href='?_src_=prefs;preference=ghost_radio'>[(chat_toggles & CHAT_GHOSTRADIO) ? "All Messages":"No Messages"]</a><br>"
@@ -1462,20 +1441,14 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 		return TRUE
 
 	if(href_list["preference"] == "gear")
-		if(href_list["purchase_gear"])
-			var/datum/gear/TG = GLOB.gear_datums[href_list["purchase_gear"]]
-			if(TG.cost < user.client.get_metabalance())
-				purchased_gear += TG.display_name
-				TG.purchase(user.client)
-				user.client.inc_metabalance((TG.cost * -1), TRUE, "Purchased [TG.display_name].")
-				save_preferences()
-			else
-				to_chat(user, "<span class='warning'>You don't have enough [CONFIG_GET(string/metacurrency_name)]s to purchase \the [TG.display_name]!</span>")
 		if(href_list["toggle_gear"])
 			var/datum/gear/TG = GLOB.gear_datums[href_list["toggle_gear"]]
 			if(TG.display_name in equipped_gear)
 				equipped_gear -= TG.display_name
 			else
+				if(length(equipped_gear) >= CONFIG_GET(number/max_loadout_items))
+					alert(user, "You can't have more than [CONFIG_GET(number/max_loadout_items)] items in your loadout!")
+					return
 				var/list/type_blacklist = list()
 				var/list/slot_blacklist = list()
 				for(var/gear_name in equipped_gear)
@@ -1484,13 +1457,10 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						if(G.subtype_path in type_blacklist)
 							continue
 						type_blacklist += G.subtype_path
-				if((TG.display_name in purchased_gear))
-					if(!(TG.subtype_path in type_blacklist) || !(TG.slot in slot_blacklist))
-						equipped_gear += TG.display_name
-					else
-						to_chat(user, "<span class='warning'>Can't equip [TG.display_name]. It conflicts with an already-equipped item.</span>")
+				if(!(TG.subtype_path in type_blacklist) || !(TG.slot in slot_blacklist))
+					equipped_gear += TG.display_name
 				else
-					log_href("[user] attempted a HREF exploit!")
+					alert(user, "Can't equip [TG.display_name]. It conflicts with an already-equipped item.")
 			save_preferences()
 
 		else if(href_list["select_category"])
@@ -2065,8 +2035,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					tgui_lock = !tgui_lock
 				if("winflash")
 					windowflashing = !windowflashing
-				if("crewobj")
-					crew_objectives = !crew_objectives
 
 				//here lies the badmins
 				if("hear_adminhelps")
@@ -2278,11 +2246,11 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 	character.flavor_text = features["flavor_text"] //Let's update their flavor_text at least initially
 
-	if(loadout) //I have been told not to do this because it's too taxing on performance, but hey, I did it anyways!
-		for(var/gear in usr.client.prefs.equipped_gear)
+	if(loadout) //I have been told not to do this because it's too taxing on performance, but hey, I did it anyways! //I hate you old me
+		for(var/gear in equipped_gear)
 			var/datum/gear/G = GLOB.gear_datums[gear]
-			if(G && G.slot)
-				if(!character.equip_to_slot_or_del(G.spawn_item(character, owner = character), G.slot))
+			if(G?.slot)
+				if(!character.equip_to_slot_or_del(G.spawn_item(character, character), G.slot))
 					continue
 
 	var/datum/species/chosen_species
