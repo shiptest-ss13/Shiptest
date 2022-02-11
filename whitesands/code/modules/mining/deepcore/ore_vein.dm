@@ -4,7 +4,7 @@ GLOBAL_LIST_EMPTY(ore_vein_landmarks)
 	name = "ore vein"
 	var/datum/material/resource
 	var/material_rate = 0
-	var/obj/machinery/deepcore/miner
+	var/obj/machinery/deepcore/drill/miner
 
 /obj/effect/landmark/ore_vein/Initialize(mapload, var/datum/material/mat)
 	. = ..()
