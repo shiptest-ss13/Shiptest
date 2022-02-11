@@ -18,21 +18,19 @@
 /obj/structure/overmap/ship/simulated
 	render_map = TRUE
 
-	///The time the shuttle started launching
-	var/dock_change_start_time
 	///The timer ID of the repair timer.
 	var/repair_timer
 	///State of the shuttle: idle, flying, docking, or undocking
-	var/state = OVERMAP_SHIP_IDLE
+	var/state = OVERMAP_SHIP_FLYING
 	///Vessel estimated thrust
 	var/est_thrust
 	///Average fuel fullness percentage
 	var/avg_fuel_amnt = 100
 	///Cooldown until the ship can be renamed again
 	COOLDOWN_DECLARE(rename_cooldown)
+	///Vessel approximate mass
+	var/mass
 
-	///The overmap object the ship is docked to, if any
-	var/obj/structure/overmap/docked
 	///The docking port of the linked shuttle
 	var/obj/docking_port/mobile/shuttle
 	///The map template the shuttle was spawned from, if it was indeed created from a template. CAN BE NULL (ex. custom-built ships).
@@ -45,6 +43,7 @@
 		shuttle = _shuttle
 	if(!shuttle)
 		CRASH("Simulated overmap ship created without associated shuttle!")
+	new /datum/overmap/ship/simulated(x - (SSovermap.overmap_vlevel.low_x + SSovermap.overmap_vlevel.reserved_margin), y - (SSovermap.overmap_vlevel.low_y + SSovermap.overmap_vlevel.reserved_margin), src)
 	name = shuttle.name
 	source_template = _source_template
 	calculate_mass()
@@ -81,7 +80,7 @@
 		if(shuttle.is_in_shuttle_bounds(M))
 			if(M.stat <= HARD_CRIT) //Is not in hard crit, or is dead.
 				return //MEANT TO BE A RETURN, DO NOT REPLACE WITH CONTINUE, THIS KEEPS IT FROM DELETING THE SHUTTLE WHEN THERE'S CONCIOUS PEOPLE ON
-			throw_atom_into_space(M)
+			M.throw_atom_into_space()
 	shuttle.jumpToNullSpace()
 	qdel(src)
 
@@ -236,15 +235,6 @@
 		decelerate(max_speed / 100)
 	..()
 
-/obj/structure/overmap/ship/simulated/tick_autopilot()
-	if(!isturf(loc))
-		return
-	. = ..()
-	if(!.) //Parent proc only returns TRUE when destination is reached.
-		return
-	overmap_object_act(null, current_autopilot_target)
-	current_autopilot_target = null
-
 /**
   * Called after the shuttle docks, and finishes the transfer to the new location.
   */
@@ -296,13 +286,7 @@
 				state = OVERMAP_SHIP_FLYING
 				if(repair_timer)
 					deltimer(repair_timer)
-				addtimer(CALLBACK(src, /obj/structure/overmap/ship/.proc/tick_autopilot), 5 SECONDS) //TODO: Improve this SOMEHOW
 	update_screen()
-
-/obj/structure/overmap/ship/simulated/get_eta()
-	if(current_autopilot_target && !is_still())
-		. += shuttle.callTime
-	return ..()
 
 /**
   * Handles repairs. Called by a repeating timer that is created when the ship docks.
@@ -322,7 +306,7 @@
 		return
 	if(name != initial(name))
 		priority_announce("The [name] has been renamed to the [new_name].", "Docking Announcement", sender_override = new_name, zlevel = shuttle.virtual_z())
-	message_admins("[key_name_admin(usr)] renamned vessel '[name]' to '[new_name]'")
+	message_admins("[key_name_admin(usr)] renamed vessel '[name]' to '[new_name]'")
 	name = new_name
 	shuttle.name = new_name
 	if(!ignore_cooldown)

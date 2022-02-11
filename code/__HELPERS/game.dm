@@ -517,7 +517,7 @@ block( \
 
 	return A.loc
 
-/proc/AnnounceArrival(mob/living/carbon/human/character, rank, obj/structure/overmap/ship/simulated/ship)
+/proc/AnnounceArrival(mob/living/carbon/human/character, rank, datum/overmap/ship/simulated/ship)
 	if(!SSticker.IsRoundInProgress() || QDELETED(character))
 		return
 	var/area/A = get_area(character)

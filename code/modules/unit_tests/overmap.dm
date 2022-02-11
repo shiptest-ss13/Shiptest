@@ -1,5 +1,5 @@
 /datum/unit_test/overmap_move/Run()
-	var/obj/structure/overmap/ship/S = allocate(/obj/structure/overmap/ship, run_loc_bottom_left)
+	var/datum/overmap/ship/S = new /datum/overmap/ship()
 
 	S.burn_engines(NORTHEAST)
 	TEST_ASSERT_EQUAL(S.speed[1] + S.speed[2], S.acceleration_speed, "Ship did not increase to proper speed after burning engines")
@@ -12,8 +12,8 @@
 	TEST_ASSERT(S.is_still(), "Ship did not stop after burning engines")
 
 /datum/unit_test/overmap_autopilot/Run()
-	var/obj/structure/overmap/ship/flying = allocate(/obj/structure/overmap/ship, get_step(run_loc_bottom_left, NORTHEAST))
-	var/obj/structure/overmap/target = allocate(/obj/structure/overmap, get_step(flying, EAST))
+	var/datum/overmap/ship/flying = new /datum/overmap/ship(1, 1)
+	var/datum/overmap/target = new /datum/overmap/ship(1, 2)
 
 	flying.current_autopilot_target = target
 

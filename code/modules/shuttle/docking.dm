@@ -9,7 +9,7 @@
 		if(!check_dock(new_dock))
 			remove_ripples()
 			return DOCKING_BLOCKED
-		if(!canMove())
+		if(!can_move())
 			remove_ripples()
 			return DOCKING_IMMOBILIZED
 
@@ -59,7 +59,7 @@
 		if(!check_dock(new_dock))
 			remove_ripples()
 			return DOCKING_BLOCKED
-		if(!canMove())
+		if(!can_move())
 			remove_ripples()
 			return DOCKING_IMMOBILIZED
 
@@ -79,7 +79,6 @@
 	check_poddoors()
 	new_dock.last_dock_time = world.time
 	setDir(new_dock.dir)
-	current_ship?.check_loc()
 
 	// remove any stragglers just in case, and clear the list
 	remove_ripples()

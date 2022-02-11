@@ -54,12 +54,6 @@ SUBSYSTEM_DEF(shuttle)
 	return ..()
 
 /datum/controller/subsystem/shuttle/fire()
-	for(var/obj/docking_port/mobile/mobile_port as anything in mobile)
-		if(!mobile_port)
-			mobile.Remove(mobile_port)
-			continue
-		mobile_port.check()
-
 	for(var/obj/docking_port/stationary/transit/transit_dock as anything in transit)
 		if(!transit_dock.owner)
 			qdel(transit_dock, force=TRUE)
@@ -85,7 +79,7 @@ SUBSYSTEM_DEF(shuttle)
 				transit_requesters += requester
 			else
 				var/obj/docking_port/mobile/M = requester
-				M.transit_failure()
+				message_admins("Shuttle [M] repeatedly failed to create transit zone.")
 		if(MC_TICK_CHECK)
 			break
 
@@ -304,8 +298,8 @@ SUBSYSTEM_DEF(shuttle)
 
 	new_shuttle.timer = to_replace.timer //Copy some vars from the old shuttle
 	new_shuttle.mode = to_replace.mode
-	new_shuttle.current_ship.set_ship_name(to_replace.name)
-	new_shuttle.current_ship.forceMove(to_replace.current_ship.loc) //Overmap location
+	new_shuttle.current_ship.Rename(to_replace.name)
+	new_shuttle.current_ship.Move(to_replace.current_ship.x, to_replace.current_ship.y) //Overmap location
 
 	if(istype(old_shuttle_location, /obj/docking_port/stationary/transit))
 		to_replace.assigned_transit = null
@@ -322,7 +316,7 @@ SUBSYSTEM_DEF(shuttle)
   * * template - The shuttle map template to load. Can NOT be null.
   * * spawn_transit - Whether or not to send the new shuttle to a newly-generated transit dock after loading.
   **/
-/datum/controller/subsystem/shuttle/proc/load_template(datum/map_template/shuttle/template, spawn_transit = TRUE)
+/datum/controller/subsystem/shuttle/proc/load_template(datum/map_template/shuttle/template, datum/overmap/ship/simulated/parent, spawn_transit = TRUE)
 	. = FALSE
 	var/loading_mapzone = SSmapping.create_map_zone("Shuttle Loading Zone")
 	var/datum/virtual_level/loading_zone = SSmapping.create_virtual_level("[template.name] Loading Level", list(ZTRAIT_RESERVED = TRUE), loading_mapzone, template.width, template.height, ALLOCATION_FREE)
@@ -376,7 +370,7 @@ SUBSYSTEM_DEF(shuttle)
 		return
 
 	new_shuttle.initiate_docking(transit_dock)
-	new_shuttle.linkup(transit_dock)
+	new_shuttle.linkup(transit_dock, parent)
 	QDEL_NULL(loading_zone)
 
 	//Everything fine
@@ -427,18 +421,11 @@ SUBSYSTEM_DEF(shuttle)
 	// Status panel
 	data["shuttles"] = list()
 	for(var/obj/docking_port/mobile/M as anything in mobile)
-		var/timeleft = M.timeLeft(1)
 		var/list/L = list()
 		L["name"] = M.name
 		L["id"] = REF(M)
 		L["timer"] = M.timer
-		L["timeleft"] = M.getTimerStr()
-		if (timeleft > 1 HOURS)
-			L["timeleft"] = "Infinity"
-		L["can_fast_travel"] = M.timer && timeleft >= 50
 		L["can_fly"] = TRUE
-		if(!M.destination)
-			L["can_fast_travel"] = FALSE
 		if (M.mode != SHUTTLE_IDLE)
 			L["mode"] = capitalize(M.mode)
 		L["status"] = M.getDbgStatusText()

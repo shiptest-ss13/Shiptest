@@ -279,10 +279,11 @@
 	var/list/engine_list = list()
 	///if this shuttle can move docking ports other than the one it is docked at
 	var/can_move_docking_ports = FALSE
-	var/list/hidden_turfs = list()
 
 	///The linked overmap object, if there is one
-	var/obj/structure/overmap/ship/simulated/current_ship
+	var/datum/overmap/ship/simulated/current_ship
+
+	//var/datum/ship/current_ship_datum
 	///List of spawn points on the ship
 	var/list/atom/spawn_points = list()
 
@@ -296,7 +297,8 @@
 			qdel(current_ship)
 		destination = null
 		previous = null
-		QDEL_NULL(assigned_transit)		//don't need it where we're goin'!
+		assigned_transit = null
+		qdel(assigned_transit, TRUE)		//don't need it where we're goin'!
 		shuttle_areas = null
 		remove_ripples()
 	. = ..()
@@ -325,14 +327,15 @@
 	initial_engines = count_engines()
 	current_engines = initial_engines
 
-	SSovermap.setup_shuttle_ship(src, source_template)
+	//SSovermap.setup_shuttle_ship(src, source_template)
 
 	#ifdef DOCKING_PORT_HIGHLIGHT
 	highlight("#0f0")
 	#endif
 
 // Called after the shuttle is loaded from template
-/obj/docking_port/mobile/proc/linkup(obj/docking_port/stationary/dock)
+/obj/docking_port/mobile/proc/linkup(obj/docking_port/stationary/dock, datum/overmap/ship/simulated/new_ship)
+	current_ship = new_ship
 	for(var/place in shuttle_areas)
 		var/area/area = place
 		area.connect_to_shuttle(src, dock)
@@ -340,9 +343,8 @@
 			var/atom/atom = each
 			atom.connect_to_shuttle(src, dock)
 
-
 //this is a hook for custom behaviour. Maybe at some point we could add checks to see if engines are intact
-/obj/docking_port/mobile/proc/canMove()
+/obj/docking_port/mobile/proc/can_move()
 	return TRUE
 
 //this is to check if this shuttle can physically dock at dock S
@@ -390,9 +392,6 @@
 		// Triggering shuttle movement code in place is weird
 		return FALSE
 
-/obj/docking_port/mobile/proc/transit_failure()
-	message_admins("Shuttle [src] repeatedly failed to create transit zone.")
-
 //call the shuttle to destination S
 /obj/docking_port/mobile/proc/request(obj/docking_port/stationary/S)
 	if(!check_dock(S))
@@ -433,7 +432,7 @@
 	mode = SHUTTLE_RECALL
 
 /obj/docking_port/mobile/proc/enterTransit()
-	if((SSshuttle.lockdown) || !canMove())	//emp went off, no escape
+	if(SSshuttle.lockdown || !can_move())	//emp went off, no escape
 		mode = SHUTTLE_IDLE
 		return
 	previous = null

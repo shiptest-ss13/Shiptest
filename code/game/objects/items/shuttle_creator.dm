@@ -27,12 +27,9 @@ GLOBAL_LIST_EMPTY(custom_shuttle_machines)		//Machines that require updating (He
 	var/recorded_shuttle_area
 	var/list/loggedTurfs = list()
 	var/loggedOldArea
-	var/obj/structure/overmap/ship/simulated/target_ship
 
 /obj/item/shuttle_creator/attack_self(mob/user)
 	..()
-	if(target_ship)
-		return
 	if(GLOB.custom_shuttle_count > CUSTOM_SHUTTLE_LIMIT)
 		return
 	return check_current_area(user)
@@ -47,8 +44,6 @@ GLOBAL_LIST_EMPTY(custom_shuttle_machines)		//Machines that require updating (He
 	if(istype(target, /obj/machinery/door/airlock))
 		if(get_area(target) != loggedOldArea)
 			to_chat(user, "<span class='warning'>Caution, airlock must be on the shuttle to function as a dock.</span>")
-			return
-		if(target_ship)
 			return
 		if(GLOB.custom_shuttle_count > CUSTOM_SHUTTLE_LIMIT)
 			to_chat(user, "<span class='warning'>Shuttle limit reached, sorry.</span>")
@@ -156,7 +151,6 @@ GLOBAL_LIST_EMPTY(custom_shuttle_machines)		//Machines that require updating (He
 		to_chat(usr, "<span class='warning'>Shuttle creation aborted, docking airlock must be on an external wall. Please select a new airlock.</span>")
 		qdel(port, TRUE)
 		qdel(stationary_port, TRUE)
-		target_ship = null
 		return FALSE
 	port.dir = invertedDir
 	port.port_direction = portDirection
@@ -165,7 +159,6 @@ GLOBAL_LIST_EMPTY(custom_shuttle_machines)		//Machines that require updating (He
 		to_chat(usr, "<span class='warning'>Bluespace calculations failed, please select a new airlock.</span>")
 		qdel(port, TRUE)
 		qdel(stationary_port, TRUE)
-		target_ship = null
 		return FALSE
 
 	port.shuttle_areas = list()

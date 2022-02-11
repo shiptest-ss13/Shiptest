@@ -29,7 +29,7 @@ GLOBAL_LIST_EMPTY(cryopod_computers)
 	/// Whether or not to store items from people going into cryosleep.
 	var/allow_items = TRUE
 	/// The ship object representing the ship that this console is on.
-	var/obj/structure/overmap/ship/simulated/linked_ship
+	var/datum/overmap/ship/simulated/linked_ship
 
 /obj/machinery/computer/cryopod/Initialize()
 	. = ..()
@@ -359,7 +359,7 @@ GLOBAL_LIST_EMPTY(cryopod_computers)
 
 	// Regardless of what ship you spawned in you need to be removed from it.
 	// This covers scenarios where you spawn in one ship but cryo in another.
-	for(var/obj/structure/overmap/ship/simulated/sim_ship as anything in SSovermap.simulated_ships)
+	for(var/datum/overmap/ship/simulated/sim_ship as anything in SSovermap.simulated_ships)
 		sim_ship.manifest -= mob_occupant.real_name
 
 	var/obj/machinery/computer/cryopod/control_computer_obj = control_computer?.resolve()

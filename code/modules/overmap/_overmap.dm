@@ -10,17 +10,17 @@
 	if(!SSovermap.overmap_vlevel)
 		return
 	var/datum/virtual_level/vlevel = SSovermap.overmap_vlevel
-	var/overmap_x = x - (vlevel.low_x + vlevel.reserved_margin)
-	var/overmap_y = y - (vlevel.low_y + vlevel.reserved_margin)
+	var/overmap_x = x - (vlevel.low_x + vlevel.reserved_margin) + 1
+	var/overmap_y = y - (vlevel.low_y + vlevel.reserved_margin) + 1
 
 	name = "[overmap_x]-[overmap_y]"
 	var/list/numbers = list()
 
-	if(overmap_x == 0 || overmap_x == SSovermap.size)
+	if(overmap_x == 1)
 		numbers += list("[round(overmap_y/10)]","[round(overmap_y%10)]")
-		if(overmap_y == 0 || overmap_y == SSovermap.size)
+		if(overmap_y == 1)
 			numbers += "-"
-	if(overmap_y == 0 || overmap_y == SSovermap.size)
+	if(overmap_y == 1)
 		numbers += list("[round(overmap_x/10)]","[round(overmap_x%10)]")
 
 	for(var/i = 1 to length(numbers))
@@ -55,7 +55,7 @@
 	icon = 'whitesands/icons/effects/overmap.dmi'
 	icon_state = "object"
 
-	///~~If we need to render a map for cameras and helms for this object~~ basically can you look at and use this as a ship or station
+	///~~If we need to render a map for cameras and helms for this object~~ basically can you look at and use this as a ship or station. Needs to be set on the type
 	var/render_map = FALSE
 	///The range of the view shown to helms and viewscreens (subject to be relegated to something else)
 	var/sensor_range = 4
@@ -65,8 +65,6 @@
 	var/overmap_armor = 1
 	///List of other overmap objects in the same tile
 	var/list/close_overmap_objects
-	///Vessel approximate mass
-	var/mass
 
 	// Stuff needed to render the map
 	var/map_name
@@ -77,6 +75,7 @@
 /obj/structure/overmap/Initialize(mapload)
 	. = ..()
 	SSovermap.overmap_objects += src
+	close_overmap_objects = list()
 	if(render_map)	// Initialize map objects
 		map_name = "overmap_[REF(src)]_map"
 		cam_screen = new
@@ -97,7 +96,7 @@
 /obj/structure/overmap/Destroy()
 	. = ..()
 	for(var/obj/structure/overmap/O as anything in close_overmap_objects)
-		LAZYREMOVE(O.close_overmap_objects, src)
+		O.close_overmap_objects -= src
 	SSovermap.overmap_objects -= src
 	if(render_map)
 		QDEL_NULL(cam_screen)
@@ -138,8 +137,7 @@
 		var/obj/structure/overmap/other = AM
 		if(other == src)
 			return
-		LAZYOR(other.close_overmap_objects, src)
-		LAZYOR(close_overmap_objects, other)
+		close_overmap_objects |= other
 
 /**
   * See [/obj/structure/overmap/Crossed]
@@ -150,8 +148,7 @@
 		var/obj/structure/overmap/other = AM
 		if(other == src)
 			return
-		LAZYREMOVE(other.close_overmap_objects, src)
-		LAZYREMOVE(close_overmap_objects, other)
+		close_overmap_objects -= other
 
 /**
   * Reduces overmap object integrity by X amount, divided by armor
@@ -167,120 +164,3 @@
 /obj/structure/overmap/proc/ship_act(mob/user, obj/structure/overmap/ship/simulated/acting)
 	to_chat(user, "<span class='notice'>You don't think there's anything you can do here.</span>")
 
-/obj/structure/overmap/star
-	name = "Star"
-	desc = "A star."
-	icon = 'whitesands/icons/effects/overmap.dmi'
-	icon_state = "star1"
-	var/class //what kind of star will you be?
-	var/star_classes = list(\
-		STARK,
-		STARM,
-		STARL,
-		START,
-		STARY,
-		STARD
-	)
-
-/obj/structure/overmap/star/Initialize(mapload)
-	. = ..()
-	name = "[pick(GLOB.star_names)] [pick(GLOB.greek_letters)]"
-	var/c = "#ffffff"
-	switch(pick(star_classes))
-		if(STARO)
-			c = "#75ffff"
-			desc = "A blue giant."
-		if(STARB)
-			c = "#c0ffff"
-		if(STARG)
-			c = "#ffff00"
-		if(STARK)
-			c = "#ff7f00"
-		if(STARM)
-			c = "#d50000"
-		if(STARL) //Take the L
-			c = "#a31300"
-		if(START)
-			c = "#a60347"
-			desc = "A brown dwarf"
-		if(STARY)
-			c = "#4a3059"
-			desc = "A brown dwarf."
-		if(STARD)
-			c = pick("#75ffff", "#c0ffff", "#ffffff")
-			desc = "A white dwarf."
-	add_atom_colour(c, FIXED_COLOUR_PRIORITY)
-
-/obj/structure/overmap/star/medium
-	icon = 'whitesands/icons/effects/overmap_large.dmi'
-	bound_height = 64
-	bound_width = 64
-	pixel_x = -16
-	pixel_y = -16
-	icon_state = "star2"
-	star_classes = list(\
-		STARB,
-		STARA,
-		STARF,
-		STARG,
-		STARK
-	)
-
-/obj/structure/overmap/star/big
-	icon = 'whitesands/icons/effects/overmap_larger.dmi'
-	icon_state = "star3"
-	bound_height = 96
-	bound_width = 96
-	pixel_z = -32
-	pixel_w = -32
-	star_classes = list(\
-		STARO,
-		STARB,
-		STARG,
-		STARM
-	)
-
-/obj/structure/overmap/star/big/binary
-	icon_state = "binaryswoosh"
-	var/class2 //because this one has two!
-	star_classes = list(\
-		STARK,
-		STARM,
-		STARL,
-		START,
-		STARY,
-		STARD
-	)
-
-/obj/structure/overmap/star/big/binary/Initialize(mapload)
-	. = ..()
-	name = "[pick(GLOB.greek_letters)] [pick(GLOB.star_names)] AB"
-	class = pick(star_classes)
-	color = "#ffffff"
-	add_star_overlay()
-
-/obj/structure/overmap/star/big/binary/proc/add_star_overlay()
-	cut_overlays()
-	var/mutable_appearance/s1 = mutable_appearance(icon_state = "binary1")
-	var/mutable_appearance/s2 = mutable_appearance(icon_state = "binary2")
-	switch(class)
-		if(STARK)
-			s1.color = "#ff7f00"
-			s2.color = "#ffff00"
-		if(STARM)
-			s1.color = "#d50000"
-			s2.color = "#a31300"
-		if(STARL)
-			s1.color = "#a31300"
-			s2.color = "#ff7f00"
-		if(START)
-			s1.color = "#a60347"
-			s2.color = pick("#75ffff", "#c0ffff", "#ffffff")
-		if(STARY)
-			s1.color = "#4a3059"
-			s2.color = pick("#75ffff", "#c0ffff", "#ffffff")
-		if(STARD)
-			s1.color = pick("#75ffff", "#c0ffff", "#ffffff")
-			s2.color = pick("#4a3059", "#a60347", "#a31300")
-	add_overlay(s1)
-	add_overlay(s2)

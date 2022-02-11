@@ -3,7 +3,7 @@
 	var/inform_admins = FALSE
 	var/disallow_soul_imbue = TRUE
 	var/allow_death = FALSE
-	var/obj/structure/overmap/ship/simulated/parent_ship
+	var/datum/overmap/ship/simulated/parent_ship
 
 /datum/component/shiploving/Initialize(parent_ship, inform_admins = FALSE, allow_death = FALSE)
 	if(!ismovable(parent))
@@ -17,8 +17,8 @@
 	src.allow_death = allow_death
 	src.parent_ship = parent_ship
 	if(!parent_ship)
-		for(var/obj/structure/overmap/ship/simulated/ship as anything in SSovermap.simulated_ships)
-			if(get_area(parent) in ship.shuttle.shuttle_areas)
+		for(var/datum/overmap/ship/simulated/ship as anything in SSovermap.simulated_ships)
+			if(get_area(parent) in ship.shuttle_port.shuttle_areas)
 				parent_ship = ship
 				break
 	if(!parent_ship)
@@ -38,7 +38,7 @@
 /datum/component/shiploving/proc/relocate()
 	SIGNAL_HANDLER
 	var/turf/targetturf
-	for(var/area/area as anything in parent_ship.shuttle.shuttle_areas)
+	for(var/area/area as anything in parent_ship.shuttle_port.shuttle_areas)
 		var/obj/machinery/computer/helm/helm = locate() in area
 		if(helm)
 			targetturf = get_turf(helm)
@@ -78,7 +78,7 @@
 #ifdef UNIT_TESTS
 	return TRUE // during unit tests ships are loaded without being added to the overmap
 #else
-	var/datum/virtual_level/v_ship = parent_ship.get_virtual_level()
+	var/datum/virtual_level/v_ship = parent_ship.shuttle_port.get_virtual_level()
 	return v_ship.is_in_bounds(parent)
 #endif
 

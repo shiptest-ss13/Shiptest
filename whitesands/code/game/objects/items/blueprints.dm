@@ -11,9 +11,7 @@
 	. = ..()
 	if(istype(target, /obj/machinery/computer/helm))
 		var/obj/machinery/computer/helm/H = target
-		if(istype(H.current_ship, /obj/structure/overmap/ship/simulated))
-			var/obj/structure/overmap/ship/simulated/S = H.current_ship
-			target_shuttle = S.shuttle
+		target_shuttle = H.current_ship.shuttle_port
 
 /obj/item/areaeditor/shuttle/attack_self(mob/user)
 	. = ..()
@@ -184,3 +182,5 @@
 			height = new_width
 			dwidth = offset_y - 1
 			dheight = new_width - offset_x
+	qdel(assigned_transit, TRUE)
+	assigned_transit = null
