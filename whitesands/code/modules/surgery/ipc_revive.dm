@@ -11,7 +11,7 @@
 		/datum/surgery_step/mechanic_close
 	)
 	possible_locs = list(BODY_ZONE_CHEST)
-	requires_bodypart_type = BODYPART_ROBOTIC
+	requires_bodypart_type = BODYTYPE_ROBOTIC
 	lying_required = FALSE
 
 /datum/surgery/revival/ipc/can_start(mob/user, mob/living/carbon/target)

@@ -94,8 +94,6 @@
 	var/team_gid = 1
 	var/list/team_ids = list()
 
-	var/list/greentexters = list()//WS Edit - Metacoin
-
 	for(var/datum/antagonist/A in GLOB.antagonists)
 		if(!A.owner)
 			continue
@@ -115,27 +113,12 @@
 				team_ids[T] = team_gid++
 			antag_info["team"]["id"] = team_ids[T]
 
-		var/greentexted = TRUE
-
 		if(A.objectives.len)
 			for(var/datum/objective/O in A.objectives)
 				var/result = O.check_completion() ? "SUCCESS" : "FAIL"
 
-				if (result == "FAIL")
-					greentexted = FALSE
-
 				antag_info["objectives"] += list(list("objective_type"=O.type,"text"=O.explanation_text,"result"=result))
 		SSblackbox.record_feedback("associative", "antagonists", 1, antag_info)
-
-		if (greentexted)
-			if (A.owner && A.owner.key)
-				if (A.type != /datum/antagonist/custom)
-					var/client/C = GLOB.directory[ckey(A.owner.key)]
-					if (C)
-						greentexters |= C
-
-	for (var/client/C in greentexters)
-		C.process_greentext(world.time - SSticker.round_start_time <= 300 SECONDS, world.time - SSticker.round_start_time)
 
 /datum/controller/subsystem/ticker/proc/record_nuke_disk_location()
 	var/obj/item/disk/nuclear/N = locate() in GLOB.poi_list
@@ -202,7 +185,6 @@
 
 	for(var/client/C in GLOB.clients)
 		C.playtitlemusic(40)
-		C.process_endround_metacoin(speed_round, world.time - SSticker.round_start_time)
 
 		if(speed_round)
 			C.give_award(/datum/award/achievement/misc/speed_round, C.mob)
