@@ -40,11 +40,11 @@ GLOBAL_LIST_INIT(spider_last, world.file2list("strings/names/spider_last.txt"))
 
 /datum/species/spider
 	name = "Rachnid"
-	id = "rachnid"
+	id = SPECIES_RACHNID
 	sexes = 0
 	say_mod = "chitters"
 	default_color = "00FF00"
-	species_traits = list(LIPS, NOEYESPRITES, NO_UNDERWEAR)
+	species_traits = list(LIPS, NOEYESPRITES, NO_UNDERWEAR, MUTCOLORS_PARTSONLY)
 	inherent_biotypes = MOB_ORGANIC|MOB_HUMANOID|MOB_BUG
 	mutant_bodyparts = list("spider_legs", "spider_spinneret", "spider_mandibles")
 	default_features = list("spider_legs" = "Plain", "spider_spinneret" = "Plain", "spider_mandibles" = "Plain")
@@ -63,6 +63,13 @@ GLOBAL_LIST_INIT(spider_last, world.file2list("strings/names/spider_last.txt"))
 	var/web_cooldown = 30
 	var/web_ready = TRUE
 	var/spinner_rate = 75
+
+	species_chest = /obj/item/bodypart/chest/rachnid
+	species_head = /obj/item/bodypart/head/rachnid
+	species_l_arm = /obj/item/bodypart/l_arm/rachnid
+	species_r_arm = /obj/item/bodypart/r_arm/rachnid
+	species_l_leg = /obj/item/bodypart/l_leg/rachnid
+	species_r_leg = /obj/item/bodypart/r_leg/rachnid
 
 /proc/random_unique_spider_name(attempts_to_find_unique_name=10)
 	for(var/i in 1 to attempts_to_find_unique_name)

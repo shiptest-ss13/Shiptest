@@ -326,7 +326,7 @@
 	log_manifest(character.mind.key, character.mind, character, TRUE)
 
 	if(length(ship.job_slots) > 1 && ship.job_slots[1] == job) // if it's the "captain" equivalent job of the ship. checks to make sure it's not a one-job ship
-		minor_announce("[job.title] [character.real_name] on deck!", zlevel = ship.shuttle.get_virtual_z_level())
+		minor_announce("[job.title] [character.real_name] on deck!", zlevel = ship.shuttle.virtual_z())
 
 /mob/dead/new_player/proc/AddEmploymentContract(mob/living/carbon/human/employee)
 	//TODO:  figure out a way to exclude wizards/nukeops/demons from this.
@@ -351,17 +351,21 @@
 		var/datum/map_template/shuttle/template = SSmapping.ship_purchase_list[tgui_input_list(src, "Please select ship to purchase!", "Welcome, [client.prefs.real_name].", SSmapping.ship_purchase_list)]
 		if(!template)
 			return LateChoices()
-		if(SSdbcore.IsConnected() && usr.client.get_metabalance() < template.cost)
-			alert(src, "You have insufficient metabalance to cover this purchase! (Price: [template.cost])")
-			return
+		if(template.limit)
+			var/count = 0
+			for(var/obj/structure/overmap/ship/simulated/X in SSovermap.simulated_ships)
+				if(X.source_template == template)
+					count++
+					if(template.limit <= count)
+						alert(src, "The ship limit of [template.limit] has been reached this round.")
+						return
 		close_spawn_windows()
 		to_chat(usr, "<span class='danger'>Your [template.name] is being prepared. Please be patient!</span>")
-		var/obj/docking_port/mobile/target = SSshuttle.action_load(template)
+		var/obj/docking_port/mobile/target = SSshuttle.load_template(template)
 		if(!istype(target))
-			to_chat(usr, "<span class='danger'>There was an error loading the ship (You have not been charged). Please contact admins!</span>")
+			to_chat(usr, "<span class='danger'>There was an error loading the ship. Please contact admins!</span>")
 			new_player_panel()
 			return
-		usr.client.inc_metabalance(-template.cost, TRUE, "buying [template.name]")
 		SSblackbox.record_feedback("tally", "ship_purchased", 1, template.name) //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 		if(!AttemptLateSpawn(target.current_ship.job_slots[1], target.current_ship)) //Try to spawn as the first listed job in the job slots (usually captain)
 			to_chat(usr, "<span class='danger'>Ship spawned, but you were unable to be spawned. You can likely try to spawn in the ship through joining normally, but if not, please contact an admin.</span>")

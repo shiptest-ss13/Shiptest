@@ -9,87 +9,19 @@ SUBSYSTEM_DEF(weather)
 	flags = SS_BACKGROUND
 	wait = 10
 	runlevels = RUNLEVEL_GAME
-	var/list/processing = list()
-	var/list/eligible_zlevels = list()
-	var/list/temperature_gradients = list()
-	var/list/next_hit_by_zlevel = list() //Used by barometers to know when the next storm is coming
+	var/list/weather_controllers = list()
 
 /datum/controller/subsystem/weather/fire()
-	// process active weather
-	for(var/V in processing)
-		var/datum/weather/W = V
-		if(W.aesthetic || W.stage != MAIN_STAGE)
-			continue
-		for(var/i in GLOB.mob_living_list)
-			var/mob/living/L = i
-			if(W.can_weather_act(L))
-				W.weather_act(L)
+	// process active weather controllers
+	for(var/i in weather_controllers)
+		var/datum/weather_controller/iterated_controller = i
+		iterated_controller.process()
 
-	// start random weather on relevant levels
-	for(var/z in eligible_zlevels)
-		var/possible_weather = eligible_zlevels[z]
-		var/datum/weather/W = pickweight(possible_weather)
-		run_weather(W, list(text2num(z)))
-		eligible_zlevels -= z
-		var/randTime = rand(3000, 6000)
-		next_hit_by_zlevel["[z]"] = addtimer(CALLBACK(src, .proc/make_eligible, z, possible_weather), randTime + initial(W.weather_duration_upper), TIMER_UNIQUE|TIMER_STOPPABLE) //Around 5-10 minutes between weathers
-
-	for(var/mix in temperature_gradients)
-		fire_temperature_update(mix)
-
-/datum/controller/subsystem/weather/Initialize(start_timeofday)
-	for(var/V in subtypesof(/datum/weather))
-		var/datum/weather/W = V
-		var/probability = initial(W.probability)
-		var/target_trait = initial(W.target_trait)
-
-		// any weather with a probability set may occur at random
-		if (probability)
-			for(var/z in SSmapping.levels_by_trait(target_trait))
-				LAZYINITLIST(eligible_zlevels["[z]"])
-				eligible_zlevels["[z]"][W] = probability
-	return ..()
-
-/datum/controller/subsystem/weather/proc/run_weather(datum/weather/weather_datum_type, z_levels)
-	if (istext(weather_datum_type))
-		for (var/V in subtypesof(/datum/weather))
-			var/datum/weather/W = V
-			if (initial(W.name) == weather_datum_type)
-				weather_datum_type = V
-				break
-	if (!ispath(weather_datum_type, /datum/weather))
-		CRASH("run_weather called with invalid weather_datum_type: [weather_datum_type || "null"]")
-
-	if (isnull(z_levels))
-		z_levels = SSmapping.levels_by_trait(initial(weather_datum_type.target_trait))
-	else if (isnum(z_levels))
-		z_levels = list(z_levels)
-	else if (!islist(z_levels))
-		CRASH("run_weather called with invalid z_levels: [z_levels || "null"]")
-
-	var/datum/weather/W = new weather_datum_type(z_levels)
-	W.telegraph()
-
-/datum/controller/subsystem/weather/proc/make_eligible(z, possible_weather)
-	eligible_zlevels[z] = possible_weather
-	next_hit_by_zlevel["[z]"] = null
-
-/datum/controller/subsystem/weather/proc/get_weather(z, area/active_area)
-	var/datum/weather/A
-	for(var/V in processing)
-		var/datum/weather/W = V
-		if((z in W.impacted_z_levels) && W.area_type == active_area.type)
-			A = W
-			break
-	return A
-
-/datum/controller/subsystem/weather/proc/set_temperature_gradient(datum/gas_mixture/immutable/immutable_mix)
-	temperature_gradients += immutable_mix
-
-/datum/controller/subsystem/weather/proc/fire_temperature_update(datum/gas_mixture/immutable/mix)
-	if (!istype(mix))
-		CRASH("fire temperature update called on invalid mix: [mix]")
-	else
-		var/adjusted_time = (86400 / SSticker.station_time_rate_multiplier)
-		var/step = world.time % adjusted_time == 0 ? 1 : (world.time % adjusted_time)
-		mix.tick_temperature_gradient(step)
+/datum/controller/subsystem/weather/proc/get_all_current_weather()
+	var/list/returned_weathers = list()
+	for(var/i in weather_controllers)
+		var/datum/weather_controller/iterated_controller = i
+		if(iterated_controller.current_weathers)
+			for(var/b in iterated_controller.current_weathers)
+				returned_weathers += iterated_controller.current_weathers[b]
+	return returned_weathers

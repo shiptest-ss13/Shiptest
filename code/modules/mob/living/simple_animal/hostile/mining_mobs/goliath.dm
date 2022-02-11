@@ -41,7 +41,7 @@
 	var/pre_attack_icon = "Goliath_preattack"
 	var/tentacle_type = /obj/effect/temp_visual/goliath_tentacle
 	loot = list(/obj/item/stack/sheet/animalhide/goliath_hide)
-	food_type = list(/obj/item/reagent_containers/food/snacks/meat)		// Omnivorous
+	food_type = list(/obj/item/reagent_containers/food/snacks/meat, /obj/item/reagent_containers/food/snacks/grown/ash_flora/cactus_fruit, /obj/item/reagent_containers/food/snacks/grown/ash_flora/mushroom_leaf)		// Omnivorous
 	tame_chance = 0
 	bonus_tame_chance = 10
 	search_objects = 1

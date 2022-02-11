@@ -35,7 +35,7 @@
 	var/obj/structure/overmap/docked
 	///The docking port of the linked shuttle
 	var/obj/docking_port/mobile/shuttle
-	///The map template the shuttle was spawned from, if it was indeed created from a template
+	///The map template the shuttle was spawned from, if it was indeed created from a template. CAN BE NULL (ex. custom-built ships).
 	var/datum/map_template/shuttle/source_template
 
 /obj/structure/overmap/ship/simulated/Initialize(mapload, obj/docking_port/mobile/_shuttle, datum/map_template/shuttle/_source_template)
@@ -48,7 +48,11 @@
 	name = shuttle.name
 	source_template = _source_template
 	calculate_mass()
+#ifdef UNIT_TESTS
+	set_ship_name("[source_template]")
+#else
 	set_ship_name("[source_template.prefix] [pick_list_replacements(SHIP_NAMES_FILE, pick(source_template.name_categories))]", TRUE)
+#endif
 	refresh_engines()
 	check_loc()
 
@@ -99,11 +103,13 @@
   * * dock_to_use - The [/obj/docking_port/mobile] to dock to.
   */
 /obj/structure/overmap/ship/simulated/proc/dock(obj/structure/overmap/to_dock, obj/docking_port/stationary/dock_to_use)
+	refresh_engines()
+	shuttle.movement_force = list("KNOCKDOWN" = FLOOR(est_thrust / 50, 1), "THROW" = FLOOR(est_thrust / 200, 1))
 	shuttle.request(dock_to_use)
 
-	priority_announce("Beginning docking procedures. Completion in [(shuttle.callTime + 1 SECONDS)/10] seconds.", "Docking Announcement", sender_override = name, zlevel = shuttle.get_virtual_z_level())
+	priority_announce("Beginning docking procedures. Completion in [(shuttle.callTime + 1 SECONDS)/10] seconds.", "Docking Announcement", sender_override = name, zlevel = shuttle.virtual_z())
 
-	addtimer(CALLBACK(src, .proc/complete_dock, to_dock), shuttle.callTime + 1 SECONDS)
+	addtimer(CALLBACK(src, .proc/complete_dock, WEAKREF(to_dock)), shuttle.callTime + 1 SECONDS)
 	state = OVERMAP_SHIP_DOCKING
 	return "Commencing docking..."
 
@@ -121,7 +127,7 @@
 	shuttle.destination = null
 	shuttle.mode = SHUTTLE_IGNITING
 	shuttle.setTimer(shuttle.ignitionTime)
-	priority_announce("Beginning undocking procedures. Completion in [(shuttle.ignitionTime + 1 SECONDS)/10] seconds.", "Docking Announcement", sender_override = name, zlevel = shuttle.get_virtual_z_level())
+	priority_announce("Beginning undocking procedures. Completion in [(shuttle.ignitionTime + 1 SECONDS)/10] seconds.", "Docking Announcement", sender_override = name, zlevel = shuttle.virtual_z())
 	addtimer(CALLBACK(src, .proc/complete_dock), shuttle.ignitionTime + 1 SECONDS)
 	state = OVERMAP_SHIP_UNDOCKING
 	return "Beginning undocking procedures..."
@@ -200,12 +206,12 @@
   * Proc called after a shuttle is moved, used for checking a ship's location when it's moved manually (E.G. calling the mining shuttle via a console)
   */
 /obj/structure/overmap/ship/simulated/proc/check_loc()
-	var/docked_object = SSovermap.get_overmap_object_by_z(shuttle.get_virtual_z_level())
+	var/docked_object = SSovermap.get_overmap_object_by_location(shuttle)
 	if(docked_object == loc) //The docked object is correct, move along
 		return TRUE
 	if(state == OVERMAP_SHIP_DOCKING || state == OVERMAP_SHIP_UNDOCKING)
 		return
-	if(!istype(loc, /obj/structure/overmap) && is_reserved_level(shuttle.z)) //The object isn't currently docked, and doesn't think it is. This is correct.
+	if(!istype(loc, /obj/structure/overmap) && is_reserved_level(shuttle)) //The object isn't currently docked, and doesn't think it is. This is correct.
 		return TRUE
 	if(!istype(loc, /obj/structure/overmap) && !docked_object) //The overmap object thinks it's docked to something, but it really isn't. Move to a random tile on the overmap
 		forceMove(SSovermap.get_unused_overmap_square())
@@ -242,18 +248,41 @@
 /**
   * Called after the shuttle docks, and finishes the transfer to the new location.
   */
-/obj/structure/overmap/ship/simulated/proc/complete_dock(obj/structure/overmap/to_dock)
+/obj/structure/overmap/ship/simulated/proc/complete_dock(datum/weakref/to_dock)
 	var/old_loc = loc
 	switch(state)
 		if(OVERMAP_SHIP_DOCKING) //so that the shuttle is truly docked first
 			if(shuttle.mode == SHUTTLE_CALL || shuttle.mode == SHUTTLE_IDLE)
-				if(istype(to_dock, /obj/structure/overmap/ship/simulated)) //hardcoded and bad
-					var/obj/structure/overmap/ship/simulated/S = to_dock
+				var/obj/structure/overmap/docking_target = to_dock?.resolve()
+				if(!docking_target) //Panic, somehow the docking target is gone but the shuttle has likely docked somewhere, get it out quickly
+					state = OVERMAP_SHIP_FLYING
+					shuttle.enterTransit()
+					return
+
+				if(istype(docking_target, /obj/structure/overmap/ship/simulated)) //hardcoded and bad
+					var/obj/structure/overmap/ship/simulated/S = docking_target
 					S.shuttle.shuttle_areas |= shuttle.shuttle_areas
-				forceMove(to_dock)
+				forceMove(docking_target)
 				state = OVERMAP_SHIP_IDLE
+				SEND_GLOBAL_SIGNAL(COMSIG_GLOB_SHIP_DOCK_COMPLETE, src, docking_target)
+				//Displays planet information on land because thats fucking COOL (TODO: actually make it print planet information)
+				if(istype(docking_target, /obj/structure/overmap/dynamic))
+					var/obj/structure/overmap/dynamic/docked_loc = docking_target
+					if(docked_loc.planet_name)
+						for(var/mob/M as anything in GLOB.player_list)
+							if(shuttle.is_in_shuttle_bounds(M))
+								//AHAHAAHAHAHAHAHAHAAHA
+								addtimer(
+									CALLBACK(
+										M,
+										/mob/.proc/play_screen_text,
+										"<span class='maptext' style=font-size:24pt;text-align:center valign='top'><u>[docked_loc.planet_name]</u></span><br>"\
+										+ "[station_time_timestamp_fancy("hh:mm")]"
+									),
+									shuttle.callTime
+								)
 			else
-				addtimer(CALLBACK(src, .proc/complete_dock), 1 SECONDS) //This should never happen
+				addtimer(CALLBACK(src, .proc/complete_dock, to_dock), 1 SECONDS) //This should never happen, yet it does sometimes.
 		if(OVERMAP_SHIP_UNDOCKING)
 			if(!isturf(loc))
 				if(istype(loc, /obj/structure/overmap/ship/simulated)) //Even more hardcoded, even more bad
@@ -292,7 +321,8 @@
 	if(!new_name || new_name == name || !COOLDOWN_FINISHED(src, rename_cooldown))
 		return
 	if(name != initial(name))
-		priority_announce("The [name] has been renamed to the [new_name].", "Docking Announcement", sender_override = new_name, zlevel = shuttle.get_virtual_z_level())
+		priority_announce("The [name] has been renamed to the [new_name].", "Docking Announcement", sender_override = new_name, zlevel = shuttle.virtual_z())
+	message_admins("[key_name_admin(usr)] renamned vessel '[name]' to '[new_name]'")
 	name = new_name
 	shuttle.name = new_name
 	if(!ignore_cooldown)

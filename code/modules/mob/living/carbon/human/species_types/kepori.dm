@@ -1,6 +1,6 @@
 /datum/species/kepori
-	name = "Kepori"
-	id = "kepori"
+	name = "\improper Kepori"
+	id = SPECIES_KEPORI
 	default_color = "6060FF"
 	species_traits = list(MUTCOLORS, EYECOLOR, NO_UNDERWEAR)
 	inherent_traits = list(TRAIT_HOLDABLE)
@@ -20,17 +20,37 @@
 	offset_features = list(OFFSET_UNIFORM = list(0,0), OFFSET_ID = list(0,0), OFFSET_GLOVES = list(0,0), OFFSET_GLASSES = list(0,0), OFFSET_EARS = list(0,-4), OFFSET_SHOES = list(0,0), OFFSET_S_STORE = list(0,0), OFFSET_FACEMASK = list(0,-5), OFFSET_HEAD = list(0,-4), OFFSET_FACE = list(0,0), OFFSET_BELT = list(0,0), OFFSET_BACK = list(0,-4), OFFSET_SUIT = list(0,0), OFFSET_NECK = list(0,0), OFFSET_ACCESSORY = list(0, -4))
 	punchdamagelow = 0
 	punchdamagehigh = 6
-	coldmod = 0.67
-	heatmod = 1.5
+	heatmod = 0.67
+	coldmod = 1.5
 	brutemod = 1.5
 	burnmod = 1.5
 	speedmod = -0.25
-	bodytemp_normal = BODYTEMP_NORMAL - 30
-	bodytemp_heat_damage_limit = (BODYTEMP_HEAT_DAMAGE_LIMIT - 30)
-	bodytemp_cold_damage_limit = (BODYTEMP_COLD_DAMAGE_LIMIT - 30)
+	bodytemp_normal = BODYTEMP_NORMAL + 30
+	bodytemp_heat_damage_limit = (BODYTEMP_HEAT_DAMAGE_LIMIT + 30)
+	bodytemp_cold_damage_limit = (BODYTEMP_COLD_DAMAGE_LIMIT + 30)
 	no_equip = list(ITEM_SLOT_BACK)
 	mutanttongue = /obj/item/organ/tongue/kepori
 	species_language_holder = /datum/language_holder/kepori
+	/// # Inherit tackling variables #
+	/// See: [/datum/component/tackler/var/stamina_cost]
+	var/tackle_stam_cost = 10
+	/// See: [/datum/component/tackler/var/base_knockdown]
+	var/base_knockdown = 0.2 SECONDS
+	/// See: [/datum/component/tackler/var/range]
+	var/tackle_range = 8
+	/// See: [/datum/component/tackler/var/min_distance]
+	var/min_distance = 1
+	/// See: [/datum/component/tackler/var/speed]
+	var/tackle_speed = 2
+	/// See: [/datum/component/tackler/var/skill_mod]
+	var/skill_mod = 2
+
+	species_chest = /obj/item/bodypart/chest/kepori
+	species_head = /obj/item/bodypart/head/kepori
+	species_l_arm = /obj/item/bodypart/l_arm/kepori
+	species_r_arm = /obj/item/bodypart/r_arm/kepori
+	species_l_leg = /obj/item/bodypart/l_leg/kepori
+	species_r_leg = /obj/item/bodypart/r_leg/kepori
 
 /datum/species/kepori/random_name(gender,unique,lastname)
 	if(unique)
@@ -47,3 +67,12 @@
 			return FALSE
 		return equip_delay_self_check(I, H, bypass_equip_delay_self)
 	. = ..()
+
+/datum/species/kepori/on_species_gain(mob/living/carbon/C, datum/species/old_species, pref_load)
+	..()
+	C.AddComponent(/datum/component/tackler, stamina_cost= tackle_stam_cost, base_knockdown= base_knockdown, range= tackle_range, speed= tackle_speed, skill_mod= skill_mod, min_distance= min_distance)
+
+
+/datum/species/kepori/on_species_loss(mob/living/carbon/human/C, datum/species/new_species, pref_load)
+	. = ..()
+	qdel(C.GetComponent(/datum/component/tackler))

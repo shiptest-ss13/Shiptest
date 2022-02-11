@@ -281,7 +281,7 @@ All ShuttleMove procs go here
 	// If the pod was launched, the storage will always open. The reserved_level check
 	// ignores the movement of the shuttle from the transit level to
 	// the station as it is loaded in.
-	if (oldT && !is_reserved_level(oldT.z))
+	if (oldT && !is_reserved_level(oldT))
 		unlocked = TRUE
 
 /************************************Mob move procs************************************/
