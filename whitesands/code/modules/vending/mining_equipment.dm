@@ -1,1 +1,0 @@
-/* Mining Points Equipment Vendor */
