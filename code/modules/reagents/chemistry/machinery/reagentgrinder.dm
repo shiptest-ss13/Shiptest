@@ -109,13 +109,13 @@
 		icon_state = "juicer0"
 
 /obj/machinery/reagentgrinder/proc/replace_beaker(mob/living/user, obj/item/reagent_containers/new_beaker)
-	if(!user)
+	if(!user || !can_interact(user))
 		return FALSE
 	if(beaker)
-		if(can_interact(user))
+		if(Adjacent(src, user) && !issiliconoradminghost(user))
 			user.put_in_hands(beaker)
 		else
-			beaker.drop_location(get_turf(src))
+			beaker.forceMove(get_turf(src))
 		beaker = null
 	if(new_beaker)
 		beaker = new_beaker

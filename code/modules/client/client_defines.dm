@@ -85,6 +85,10 @@
 	///datum that controls the displaying and hiding of tooltips
 	var/datum/tooltip/tooltips
 
+	//screen_text vars
+	///lazylist of screen_texts for this client, first in this list is the one playing
+	var/list/atom/movable/screen/text/screen_text/screen_texts
+
 	///Last ping of the client
 	var/lastping = 0
 	///Average ping of the client
@@ -189,3 +193,4 @@
 
 	/// If the client is currently under the restrictions of the interview system
 	var/interviewee = FALSE
+

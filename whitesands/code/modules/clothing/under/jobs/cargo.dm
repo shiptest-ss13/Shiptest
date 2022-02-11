@@ -16,6 +16,7 @@
 
 	body_parts_covered = CHEST|GROIN|ARMS
 	can_adjust = FALSE
+	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON
 
 //Cargo
 
@@ -34,6 +35,7 @@
 
 	body_parts_covered = CHEST|GROIN|ARMS
 	can_adjust = FALSE
+	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON
 
 /obj/item/clothing/under/rank/cargo/tech/mailroom_technician
 	name = "mailroom technician's jumpsuit"
@@ -50,3 +52,4 @@
 	desc = "Skirts and lost mail makes up this jumpskirt."
 	icon_state = "mailroom_technician_skirt"
 	can_adjust = FALSE
+	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON

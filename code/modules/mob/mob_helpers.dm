@@ -107,6 +107,8 @@
 				newletter += "[newletter]"
 			if(20)
 				newletter += "[newletter][newletter]"
+			else
+				// do nothing
 		. += "[newletter]"
 	return sanitize(.)
 
@@ -150,6 +152,8 @@
 				newletter = "nglu"
 			if(5)
 				newletter = "glor"
+			else
+				// do nothing
 		. += newletter
 	return sanitize(.)
 
@@ -437,7 +441,7 @@
 		return
 	if(!isobserver(user)) // Are they a ghost?
 		return
-	if(!check_rights_for(user.client, R_ADMIN)) // Are they allowed?
+	if(!check_rights_for(user.client, R_ADMIN|R_DEBUG)) // Are they allowed?
 		return
 	return TRUE
 

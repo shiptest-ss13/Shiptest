@@ -445,6 +445,8 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 					freebie(user, 2)
 				if(16 to 25)
 					freebie(user, 1)
+				if(26 to 75)
+					return // 50% chance to not do anything
 				if(76 to 90)
 					tilt(user)
 				if(91 to 100)
