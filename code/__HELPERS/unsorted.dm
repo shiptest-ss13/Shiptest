@@ -1055,6 +1055,14 @@ GLOBAL_LIST_INIT(WALLITEMS_INVERSE, typecacheof(list(
 /datum/proc/stack_trace(msg)
 	CRASH(msg)
 
+/datum/proc/limb_stacktrace(msg, bypass_cap) //yes yes this uses a magic number but fuck it.
+	var/static/mcount
+	if(mcount == 10)
+		message_debug("Kapu1178/LimbSystem: Limb Stack trace cap exceeded, further traces silenced.")
+	if((mcount < 10) || bypass_cap)
+		mcount++
+		CRASH(msg)
+
 GLOBAL_REAL_VAR(list/stack_trace_storage)
 /proc/gib_stack_trace()
 	stack_trace_storage = list()
