@@ -36,7 +36,6 @@
 /obj/machinery/computer/helm/Initialize(mapload, obj/item/circuitboard/C)
 	. = ..()
 	jump_allowed = world.time + CONFIG_GET(number/bluespace_jump_wait)
-	addtimer(CALLBACK(src, .proc/reload_ship), 5)
 
 /obj/machinery/computer/helm/proc/calibrate_jump(inline = FALSE)
 	if(jump_allowed < 0)
@@ -94,7 +93,6 @@
 	var/obj/docking_port/mobile/port = SSshuttle.get_containing_shuttle(src)
 	if(port?.current_ship)
 		current_ship = port.current_ship
-		return TRUE
 
 /obj/machinery/computer/helm/ui_interact(mob/user, datum/tgui/ui)
 	if(jump_state != JUMP_STATE_OFF)
@@ -128,13 +126,11 @@
 
 /obj/machinery/computer/helm/ui_data(mob/user)
 	. = list()
-	.["integrity"] = /*current_ship.integrity*/ 100
 	.["calibrating"] = calibrating
 	.["otherInfo"] = list()
 	for (var/datum/overmap/object as anything in current_ship.get_nearby_overmap_objects())
 		var/list/other_data = list(
 			name = object.name,
-			//integrity = object.integrity,
 			ref = REF(object)
 		)
 		.["otherInfo"] += list(other_data)
@@ -142,7 +138,7 @@
 	.["x"] = current_ship.x || current_ship.docked_to.x
 	.["y"] = current_ship.y || current_ship.docked_to.y
 	.["state"] = current_ship.docked_to ? "idle" : "flying"
-	.["docked"] = !!current_ship.docked_to
+	.["docked"] = current_ship.docked_to
 	.["heading"] = dir2text(current_ship.get_heading()) || "None"
 	.["speed"] = current_ship.get_speed()
 	.["eta"] = current_ship.get_eta()
@@ -176,7 +172,7 @@
 		name = current_ship.name,
 		class = current_ship.source_template?.name,
 		mass = current_ship.mass,
-		sensor_range = /*current_ship.sensor_range*/ 4
+		sensor_range = 4
 	)
 	.["canFly"] = TRUE
 
@@ -199,7 +195,7 @@
 				say("Error: Replacement designation rejected by system.")
 				return
 			if(!current_ship.Rename(new_name))
-				say("Error: [COOLDOWN_TIMELEFT(current_ship, rename_cooldown)/10] seconds until ship designation can be changed..")
+				say("Error: [COOLDOWN_TIMELEFT(current_ship, rename_cooldown)/10] seconds until ship designation can be changed.")
 			update_static_data(usr, ui)
 			return
 		if("reload_ship")
@@ -213,14 +209,14 @@
 	if(!current_ship.docked_to)
 		switch(action)
 			if("act_overmap")
-				if(SSshuttle.jump_mode == BS_JUMP_INITIATED)
-					to_chat(usr, "<span class='warning'>You've already escaped. Never going back to that place again!</span>")
+				if(SSshuttle.jump_mode > BS_JUMP_CALLED)
+					to_chat(usr, "<span class='warning'>Cannot dock due to bluespace jump preperations!</span>")
 					return
-				var/datum/overmap/to_act = locate(params["ship_to_act"])
+				var/datum/overmap/to_act = locate(params["ship_to_act"]) in current_ship.get_nearby_overmap_objects()
 				current_ship.Dock(to_act)
 				return
 			if("toggle_engine")
-				var/obj/machinery/power/shuttle/engine/E = locate(params["engine"])
+				var/obj/machinery/power/shuttle/engine/E = locate(params["engine"]) in current_ship.shuttle_port.engine_list
 				E.enabled = !E.enabled
 				current_ship.refresh_engines()
 				return
@@ -247,8 +243,7 @@
 			current_ship.calculate_avg_fuel()
 			if(current_ship.avg_fuel_amnt < 25 && tgui_alert(usr, "Ship only has ~[round(current_ship.avg_fuel_amnt)]% fuel remaining! Are you sure you want to undock?", name, list("Yes", "No")) != "Yes")
 				return
-			say(current_ship.Undock())
-			return
+			current_ship.Undock()
 
 /obj/machinery/computer/helm/ui_close(mob/user)
 	var/user_ref = REF(user)

@@ -1,4 +1,4 @@
-/datum/overmap/star
+/datum/overmap/star //TODO: refactor literally all of this this is painful
 	name = "Star"
 	token_type = /obj/overmap/star
 

@@ -1,6 +1,13 @@
 ///Name of the file used for ship name random selection
 #define SHIP_NAMES_FILE "ship_names.json"
 
+/**
+  * # Simulated overmap ship
+  *
+  * A ship that corresponds to an actual, physical shuttle.
+  *
+  * Can be docked to any other overmap datum that has a valid docking process.
+  */
 /datum/overmap/ship/simulated
 	token_type = /obj/overmap/rendered
 	dock_time = 10 SECONDS
@@ -30,7 +37,7 @@
 	///Short memo of the ship shown to new joins
 	var/memo = ""
 
-	///Shipwide bank account
+	///Shipwide bank account used for cargo consoles and bounty payouts.
 	var/datum/bank_account/ship/ship_account
 
 /datum/overmap/ship/simulated/Rename(new_name, force = FALSE)
@@ -63,6 +70,9 @@
 /datum/overmap/ship/simulated/Destroy()
 	SSovermap.simulated_ships -= src
 	. = ..()
+
+/datum/overmap/ship/simulated/get_jump_to_turf()
+	return get_turf(shuttle_port)
 
 /datum/overmap/ship/simulated/pre_dock(datum/overmap/to_dock, datum/docking_ticket/ticket)
 	if(ticket.target != src || ticket.issuer != to_dock)
@@ -98,7 +108,10 @@
 	shuttle_port.enterTransit()
 	return ..()
 
-/datum/overmap/ship/simulated/post_undocked(datum/overmap/ship/simulated/dock_requester)
+/datum/overmap/ship/simulated/pre_docked(datum/overmap/dock_requester)
+	return new /datum/docking_ticket(shuttle_port.docking_points[1], src, dock_requester) //TODO: Find a better way of doing this that allows for multiple docking points
+
+/datum/overmap/ship/simulated/post_undocked(datum/overmap/dock_requester)
 	if(istype(dock_requester, /datum/overmap/ship/simulated))
 		var/datum/overmap/ship/simulated/docker_port = dock_requester
 		shuttle_port.shuttle_areas += docker_port.shuttle_port.shuttle_areas
@@ -113,7 +126,7 @@
 	if(!E)
 		E = new(x, y)
 	if(E)
-		return Dock(E)
+		Dock(E)
 
 /datum/overmap/ship/simulated/burn_engines(n_dir = null, percentage = 100)
 	if(docked_to)

@@ -36,7 +36,7 @@ export const HelmConsole = (props, context) => {
 
 const SharedContent = (props, context) => {
   const { act, data } = useBackend(context);
-  const { isViewer, integrity, shipInfo = [], otherInfo = [] } = data;
+  const { isViewer, shipInfo = [], otherInfo = [] } = data;
   return (
     <>
       <Section
@@ -61,16 +61,6 @@ const SharedContent = (props, context) => {
           <LabeledList.Item label="Class">
             {shipInfo.class}
           </LabeledList.Item>
-          <LabeledList.Item label="Integrity">
-            <ProgressBar
-              ranges={{
-                good: [51, 100],
-                average: [26, 50],
-                bad: [0, 25],
-              }}
-              maxValue={100}
-              value={integrity} />
-          </LabeledList.Item>
           <LabeledList.Item label="Sensor Range">
             <ProgressBar
               value={shipInfo.sensor_range}
@@ -92,9 +82,6 @@ const SharedContent = (props, context) => {
             <Table.Cell>
               Name
             </Table.Cell>
-            <Table.Cell>
-              Integrity
-            </Table.Cell>
             {!isViewer && (
               <Table.Cell>
                 Act
@@ -105,18 +92,6 @@ const SharedContent = (props, context) => {
             <Table.Row key={ship.name}>
               <Table.Cell>
                 {ship.name}
-              </Table.Cell>
-              <Table.Cell>
-                {!!ship.integrity && (
-                  <ProgressBar
-                    ranges={{
-                      good: [51, 100],
-                      average: [26, 50],
-                      bad: [0, 25],
-                    }}
-                    maxValue={100}
-                    value={ship.integrity} />
-                )}
               </Table.Cell>
               {!isViewer && (
                 <Table.Cell>
@@ -159,7 +134,7 @@ const ShipContent = (props, context) => {
             <ProgressBar
               ranges={{
                 good: [0, 4],
-                average: [5, 6],
+                average: [4, 7],
                 bad: [7, Infinity],
               }}
               maxValue={10}
@@ -302,9 +277,9 @@ const ShipControlContent = (props, context) => {
             onClick={() => act('bluespace_jump')} />
         </>
       )}>
-      {data.state === 'idle' && (
+      {!!data.docked && (
         <div className="NoticeBox">
-          Ship Docked.
+          Ship docked to: {data.docked}
         </div>
       )}
       <Table collapsing>

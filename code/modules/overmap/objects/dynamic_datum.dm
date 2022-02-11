@@ -1,3 +1,9 @@
+/**
+  * # Dynamic Overmap Encounters
+  *
+  * These overmap objects can be docked with and will create a dynamically generated area of many different types depending on the planet variable.
+  * When undocked with, it checks if there's anyone left on the planet, and if not, will move to another random location and wait to create a new encounter.
+  */
 /datum/overmap/dynamic
 	name = "weak energy signature"
 	char_rep = "?"
@@ -11,6 +17,8 @@
 	var/preserve_level = FALSE
 	///What kind of planet the level is, if it's a planet at all.
 	var/planet
+	///Planet's flavor name, if it is a planet.
+	var/planet_name
 	///List of probabilities for each type of planet.
 	var/static/list/probabilities
 	///The planet that will be forced to load
@@ -29,6 +37,10 @@
 		QDEL_NULL(mapzone)
 	return ..()
 
+/datum/overmap/dynamic/get_jump_to_turf()
+	if(reserve_docks)
+		return get_turf(pick(reserve_docks))
+
 /datum/overmap/dynamic/pre_docked(datum/overmap/ship/simulated/dock_requester)
 	if(!load_level(dock_requester.shuttle_port))
 		return FALSE
@@ -44,7 +56,13 @@
 		adjust_dock_to_shuttle(dock_to_use, dock_requester.shuttle_port)
 		return new /datum/docking_ticket(dock_to_use, src, dock_requester)
 
-/datum/overmap/dynamic/post_undocked(datum/overmap/ship/simulated/dock_requester)
+/datum/overmap/dynamic/post_docked(datum/overmap/ship/simulated/dock_requester)
+	if(planet_name)
+		for(var/mob/M as anything in GLOB.player_list)
+			if(dock_requester.shuttle_port.is_in_shuttle_bounds(M))
+				M.play_screen_text("<span class='maptext' style=font-size:24pt;text-align:center valign='top'><u>[planet_name]</u></span><br>[station_time_timestamp_fancy("hh:mm")]")
+
+/datum/overmap/dynamic/post_undocked(datum/overmap/dock_requester)
 	if(preserve_level)
 		return
 
@@ -57,6 +75,7 @@
 	for(var/obj/docking_port/stationary/dock as anything in reserve_docks)
 		reserve_docks -= dock
 		qdel(dock, TRUE)
+	reserve_docks = null
 	if(mapzone)
 		mapzone.clear_reservation()
 		QDEL_NULL(mapzone)
@@ -87,30 +106,35 @@
 			planet = DYNAMIC_WORLD_LAVA
 			token.icon_state = "globe"
 			token.color = COLOR_ORANGE
+			planet_name = gen_planet_name()
 		if(DYNAMIC_WORLD_ICE)
 			Rename("strange ice planet")
 			token.desc = "A very weak energy signal originating from a planet with traces of water and extremely low temperatures."
 			planet = DYNAMIC_WORLD_ICE
 			token.icon_state = "globe"
 			token.color = COLOR_BLUE_LIGHT
+			planet_name = gen_planet_name()
 		if(DYNAMIC_WORLD_JUNGLE)
 			Rename("strange jungle planet")
 			token.desc = "A very weak energy signal originating from a planet teeming with life."
 			planet = DYNAMIC_WORLD_JUNGLE
 			token.icon_state = "globe"
 			token.color = COLOR_LIME
+			planet_name = gen_planet_name()
 		if(DYNAMIC_WORLD_SAND)
 			Rename("strange sand planet")
 			token.desc = "A very weak energy signal originating from a planet with many traces of silica."
 			planet = DYNAMIC_WORLD_SAND
 			token.icon_state = "globe"
 			token.color = COLOR_GRAY
+			planet_name = gen_planet_name()
 		if(DYNAMIC_WORLD_ROCKPLANET)
 			Rename("strange rock planet")
 			token.desc = "A very weak energy signal originating from a abandoned industrial planet."
 			planet = DYNAMIC_WORLD_ROCKPLANET
 			token.icon_state = "globe"
 			token.color = COLOR_BROWN
+			planet_name = gen_planet_name()
 		if(DYNAMIC_WORLD_REEBE)
 			Rename("???")
 			token.desc = "Some sort of strange portal. Theres no identification of what this is."
@@ -130,6 +154,19 @@
 			token.icon_state = "strange_event"
 			token.color = null
 	token.desc += !preserve_level && "It may not still be here if you leave it."
+
+/datum/overmap/dynamic/proc/gen_planet_name()
+	. = ""
+	switch(rand(1,10))
+		if(1 to 4)
+			for(var/i in 1 to rand(2,3))
+				. += capitalize(pick(GLOB.alphabet))
+			. += "-"
+			. += "[pick(rand(1,999))]"
+		if(4 to 9)
+			. += "[pick(GLOB.planet_names)] \Roman[rand(1,9)]"
+		if(10)
+			. += "[pick(GLOB.planet_prefixes)] [pick(GLOB.planet_names)]"
 
 /**
   * Load a level for a ship that's visiting the level.
@@ -268,7 +305,7 @@
 /datum/overmap/dynamic/empty/choose_level_type()
 	return
 
-/datum/overmap/dynamic/post_undocked(datum/overmap/ship/simulated/dock_requester)
+/datum/overmap/dynamic/empty/post_undocked(datum/overmap/ship/simulated/dock_requester)
 	if(length(mapzone?.get_mind_mobs()))
 		return //Dont fuck over stranded people? tbh this shouldn't be called on this condition, instead of bandaiding it inside
 

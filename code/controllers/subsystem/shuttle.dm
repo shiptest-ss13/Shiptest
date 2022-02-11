@@ -330,8 +330,8 @@ SUBSYSTEM_DEF(shuttle)
 
 	var/affected = template.get_affected_turfs(BL, centered=FALSE)
 
-	var/found = 0
 	var/obj/docking_port/mobile/new_shuttle
+	var/list/stationary_ports = list()
 	// Search the turfs for docking ports
 	// - We need to find the mobile docking port because that is the heart of
 	//   the shuttle.
@@ -340,15 +340,14 @@ SUBSYSTEM_DEF(shuttle)
 	for(var/T in affected)
 		for(var/obj/docking_port/P in T)
 			if(istype(P, /obj/docking_port/mobile))
-				found++
-				if(found > 1)
-					qdel(P, force=TRUE)
+				if(new_shuttle)
+					qdel(P, TRUE)
 					log_world("Map warning: Shuttle Template [template.mappath] has multiple mobile docking ports.")
 				else
 					new_shuttle = P
 			if(istype(P, /obj/docking_port/stationary))
-				log_world("Map warning: Shuttle Template [template.mappath] has a stationary docking port.")
-	if(!found)
+				stationary_ports += P
+	if(!new_shuttle)
 		var/msg = "load_template(): Shuttle Template [template.mappath] has no mobile docking port. Aborting import."
 		for(var/T in affected)
 			var/turf/T0 = T
@@ -357,6 +356,10 @@ SUBSYSTEM_DEF(shuttle)
 		message_admins(msg)
 		WARNING(msg)
 		return
+
+	if(!new_shuttle.can_move_docking_ports && length(stationary_ports))
+		log_world("Map warning: Shuttle Template [template.mappath] has [length(stationary_ports)] stationary docking port(s) and does not have var/can_move_docking_ports set to TRUE. Will not move these ports.")
+	new_shuttle.docking_points = stationary_ports
 
 	var/obj/docking_port/mobile/transit_dock = generate_transit_dock(new_shuttle)
 
@@ -471,14 +474,4 @@ SUBSYSTEM_DEF(shuttle)
 				if(REF(M) == params["id"])
 					. = TRUE
 					M.admin_fly_shuttle(user)
-					break
-
-		if("fast_travel")
-			for(var/obj/docking_port/mobile/M as anything in mobile)
-				if(REF(M) == params["id"] && M.timer && M.timeLeft(1) >= 50)
-					M.setTimer(50)
-					. = TRUE
-					message_admins("[key_name_admin(usr)] fast travelled [M]")
-					log_admin("[key_name(usr)] fast travelled [M]")
-					SSblackbox.record_feedback("text", "shuttle_manipulator", 1, "[M.name]")
 					break
