@@ -14,6 +14,8 @@
 	var/preserve_level = FALSE
 	///What kind of planet the level is, if it's a planet at all.
 	var/planet
+	///Planet's flavor name, if it is a planet.
+	var/planet_name
 	///List of probabilities for each type of planet.
 	var/static/list/probabilities
 	///The planet that will be forced to load
@@ -86,30 +88,35 @@
 			planet = DYNAMIC_WORLD_LAVA
 			icon_state = "globe"
 			color = COLOR_ORANGE
+			planet_name = gen_planet_name()
 		if(DYNAMIC_WORLD_ICE)
 			name = "strange ice planet"
 			desc = "A very weak energy signal originating from a planet with traces of water and extremely low temperatures."
 			planet = DYNAMIC_WORLD_ICE
 			icon_state = "globe"
 			color = COLOR_BLUE_LIGHT
+			planet_name = gen_planet_name()
 		if(DYNAMIC_WORLD_JUNGLE)
 			name = "strange jungle planet"
 			desc = "A very weak energy signal originating from a planet teeming with life."
 			planet = DYNAMIC_WORLD_JUNGLE
 			icon_state = "globe"
 			color = COLOR_LIME
+			planet_name = gen_planet_name()
 		if(DYNAMIC_WORLD_SAND)
 			name = "strange sand planet"
 			desc = "A very weak energy signal originating from a planet with many traces of silica."
 			planet = DYNAMIC_WORLD_SAND
 			icon_state = "globe"
 			color = COLOR_GRAY
+			planet_name = gen_planet_name()
 		if(DYNAMIC_WORLD_ROCKPLANET)
 			name = "strange rock planet"
 			desc = "A very weak energy signal originating from a abandoned industrial planet."
 			planet = DYNAMIC_WORLD_ROCKPLANET
 			icon_state = "globe"
 			color = COLOR_BROWN
+			planet_name = gen_planet_name()
 		if(DYNAMIC_WORLD_REEBE)
 			name = "???"
 			desc = "Some sort of strange portal. Theres no identification of what this is."
@@ -131,6 +138,19 @@
 			color = null
 			mass = 0 //Space doesn't weigh anything
 	desc += !preserve_level && "It may not still be here if you leave it."
+
+/obj/structure/overmap/dynamic/proc/gen_planet_name()
+	. = ""
+	switch(rand(1,10))
+		if(1 to 4)
+			for(var/i in 1 to rand(2,3))
+				. += capitalize(pick(GLOB.alphabet))
+			. += "-"
+			. += "[pick(rand(1,999))]"
+		if(4 to 9)
+			. += "[pick(GLOB.planet_names)] \Roman[rand(1,9)]"
+		if(10)
+			. += "[pick(GLOB.planet_prefixes)] [pick(GLOB.planet_names)]"
 
 /**
   * Load a level for a ship that's visiting the level.

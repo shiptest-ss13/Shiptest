@@ -17,6 +17,13 @@
 /proc/station_time_timestamp(format = "hh:mm:ss", wtime)
 	return time2text(station_time(TRUE, wtime), format)
 
+/proc/station_time_timestamp_fancy(format = "hh:mm", wtime)
+	. = station_time_timestamp(format, wtime)
+	if(station_time() > 432000)
+		. += " PM"
+	else
+		. += " AM"
+
 /proc/station_time_debug(force_set)
 	if(isnum(force_set))
 		SSticker.gametime_offset = force_set

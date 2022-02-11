@@ -71,6 +71,45 @@
 #define LARVA_BODYPART "larva"
 #define DEVIL_BODYPART "devil"
 
+//Bodypart change blocking flags
+#define BP_BLOCK_CHANGE_SPECIES (1<<0)
+
+//Defines for Species IDs
+#define SPECIES_ABDUCTOR "abductor"
+#define SPECIES_ANDROID "android"
+#define SPECIES_CORPORATE "corporate"
+#define SPECIES_DULLAHAN "dullahan"
+#define SPECIES_ETHEREAL "ethereal"
+#define SPECIES_FELINID "felinid"
+#define SPECIES_FLYPERSON "fly"
+#define SPECIES_HUMAN "human"
+#define SPECIES_IPC "ipc"
+#define SPECIES_JELLYPERSON "jelly"
+#define SPECIES_SLIMEPERSON "slime_person"
+#define SPECIES_LUMINESCENT "luminescent"
+#define SPECIES_STARGAZER "stargazer"
+#define SPECIES_LIZARD "lizard"
+#define SPECIES_ASHWALKER "ashwalker"
+#define SPECIES_KOBOLD "kobold"
+#define SPECIES_MONKEY "monkey"
+#define SPECIES_MOTH "moth"
+#define SPECIES_MUSH "mush"
+#define SPECIES_PLASMAMAN "plasmaman"
+#define SPECIES_POD "pod_person"
+#define SPECIES_SHADOW "shadow"
+#define SPECIES_SKELETON "skeleton"
+#define SPECIES_SNAIL "snail"
+#define SPECIES_RACHNID "rachnid"
+#define SPECIES_KEPORI "kepori"
+#define SPECIES_VAMPIRE "vampire"
+#define SPECIES_VOX "vox"
+#define SPECIES_ZOMBIE "zombie"
+#define SPECIES_GOOFZOMBIE "krokodil_zombie"
+
+#define DIGITIGRADE_NEVER 0
+#define DIGITIGRADE_OPTIONAL 1
+#define DIGITIGRADE_FORCED 2
+
 //Reagent Metabolization flags, defines the type of reagents that affect this mob
 #define PROCESS_ORGANIC 1 //Only processes reagents with "ORGANIC" or "ORGANIC | SYNTHETIC"
 #define PROCESS_SYNTHETIC 2 //Only processes reagents with "SYNTHETIC" or "ORGANIC | SYNTHETIC"
@@ -79,7 +118,25 @@
 #define ORGANIC 1
 #define SYNTHETIC 2
 
-/*see __DEFINES/inventory.dm for bodypart bitflag defines*/
+//Species bitflags for sprite sheets. If this somehow ever gets above 23 Bee has larger problems.
+#define FLAG_HUMAN (1<<0)
+#define FLAG_IPC (1<<1)
+#define FLAG_ETHEREAL (1<<2)
+#define FLAG_PLASMAMAN (1<<3)
+#define FLAG_MOTH (1<<4)
+#define FLAG_LIZARD (1<<5)
+#define FLAG_FELINID (1<<6)
+#define FLAG_OOZELING (1<<7)
+#define FLAG_FLY (1<<8)
+#define FLAG_MONKEY (1<<9)
+
+//Bodytype defines for how things can be worn.
+#define BODYTYPE_ORGANIC (1<<0)
+#define BODYTYPE_ROBOTIC (1<<1)
+#define BODYTYPE_HUMANOID (1<<2) //Everything
+#define BODYTYPE_BOXHEAD (1<<3) //TV Head
+#define BODYTYPE_DIGITIGRADE (1<<4) //Cancer
+#define BODYTYPE_KEPORI (1<<5) //Just Kepori
 
 // Health/damage defines
 #define MAX_LIVING_HEALTH 100
@@ -193,7 +250,7 @@
 
 //Charge levels for Ethereals
 //WS Begin -- Ethereal Charge Scaling
-#define ETHEREAL_CHARGE_SCALING_MULTIPLIER 1
+#define ETHEREAL_CHARGE_SCALING_MULTIPLIER 20
 #define ETHEREAL_CHARGE_NONE ( 0 * ETHEREAL_CHARGE_SCALING_MULTIPLIER)
 #define ETHEREAL_CHARGE_LOWPOWER ( 20 * ETHEREAL_CHARGE_SCALING_MULTIPLIER)
 #define ETHEREAL_CHARGE_NORMAL ( 50 * ETHEREAL_CHARGE_SCALING_MULTIPLIER)
@@ -302,19 +359,19 @@
 #define OFFSET_ACCESSORY "accessory"
 
 //MINOR TWEAKS/MISC
-#define AGE_MIN 17	//youngest a character can be
-#define AGE_MAX 85	//oldest a character can be
+#define AGE_MIN 17 //youngest a character can be
+#define AGE_MAX 85 //oldest a character can be
 #define AGE_MINOR 20 //legal age of space drinking and smoking
-#define WIZARD_AGE_MIN 30	//youngest a wizard can be
-#define APPRENTICE_AGE_MIN 29	//youngest an apprentice can be
-#define SHOES_SLOWDOWN 0	//How much shoes slow you down by default. Negative values speed you up
-#define POCKET_STRIP_DELAY 40	//time taken (in deciseconds) to search somebody's pockets
-#define DOOR_CRUSH_DAMAGE 15	//the amount of damage that airlocks deal when they crush you
+#define WIZARD_AGE_MIN 30 //youngest a wizard can be
+#define APPRENTICE_AGE_MIN 29 //youngest an apprentice can be
+#define SHOES_SLOWDOWN 0 //How much shoes slow you down by default. Negative values speed you up
+#define POCKET_STRIP_DELAY 40 //time taken (in deciseconds) to search somebody's pockets
+#define DOOR_CRUSH_DAMAGE 15 //the amount of damage that airlocks deal when they crush you
 
-#define HUNGER_FACTOR 0.1	//factor at which mob nutrition decreases
+#define HUNGER_FACTOR 0.1 //factor at which mob nutrition decreases
 #define ETHEREAL_CHARGE_FACTOR (0.05 * ETHEREAL_CHARGE_SCALING_MULTIPLIER) //factor at which ethereal's charge decreases //WS Edit -- Ethereal Charge Scaling
-#define REAGENTS_METABOLISM 0.4	//How many units of reagent are consumed per tick, by default.
-#define REAGENTS_EFFECT_MULTIPLIER (REAGENTS_METABOLISM / 0.4)	// By defining the effect multiplier this way, it'll exactly adjust all effects according to how they originally were with the 0.4 metabolism
+#define REAGENTS_METABOLISM 0.4 //How many units of reagent are consumed per tick, by default.
+#define REAGENTS_EFFECT_MULTIPLIER (REAGENTS_METABOLISM / 0.4) // By defining the effect multiplier this way, it'll exactly adjust all effects according to how they originally were with the 0.4 metabolism
 
 // Eye protection
 #define FLASH_PROTECTION_SENSITIVE -1
