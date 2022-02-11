@@ -177,12 +177,12 @@ SUBSYSTEM_DEF(overmap)
   */
 /datum/controller/subsystem/overmap/proc/spawn_ruin_levels()
 	for(var/i in 1 to CONFIG_GET(number/max_overmap_dynamic_events))
-		var/position = get_unused_overmap_square()
+		var/position = get_unused_overmap_square(force = TRUE)
 		new /datum/overmap/dynamic(position["x"], position["y"])
 
 /datum/controller/subsystem/overmap/proc/spawn_ruin_levels_in_orbits()
 	for(var/i in 1 to CONFIG_GET(number/max_overmap_dynamic_events))
-		var/position = get_unused_overmap_square_in_radius()
+		var/position = get_unused_overmap_square_in_radius(force = TRUE)
 		new /datum/overmap/dynamic(position["x"], position["y"])
 
 /**

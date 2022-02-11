@@ -108,10 +108,10 @@
   * * user - The user that initiated the action
   */
 /datum/overmap/ship/simulated/proc/dock_in_empty_space(mob/user)
-	var/obj/structure/overmap/dynamic/empty/E
-	E = locate() in get_turf(src)
+	var/datum/overmap/dynamic/empty/E
+	E = locate() in SSovermap.overmap_container[x][y]
 	if(!E)
-		E = new(get_turf(src))
+		E = new(x, y)
 	if(E)
 		return Dock(E)
 

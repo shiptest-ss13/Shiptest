@@ -261,3 +261,15 @@
 		var/mob/M = AM
 		if(M.client)
 			addtimer(CALLBACK(M.client, /client/proc/play_reebe_ambience), 900)
+
+/datum/overmap/dynamic/empty
+	name = "Empty Space"
+
+/datum/overmap/dynamic/empty/choose_level_type()
+	return
+
+/datum/overmap/dynamic/post_undocked(datum/overmap/ship/simulated/dock_requester)
+	if(length(mapzone?.get_mind_mobs()))
+		return //Dont fuck over stranded people? tbh this shouldn't be called on this condition, instead of bandaiding it inside
+
+	qdel(src)

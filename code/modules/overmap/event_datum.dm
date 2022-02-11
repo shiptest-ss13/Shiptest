@@ -39,7 +39,7 @@
 /datum/overmap/event/meteor
 	name = "asteroid storm (moderate)"
 	token_icon_state = "meteor1"
-	chance_to_affect = 5
+	chance_to_affect = 15
 	spread_chance = 50
 	chain_rate = 4
 	var/max_damage = 15
@@ -110,7 +110,7 @@
 /datum/overmap/event/electric
 	name = "electrical storm (moderate)"
 	token_icon_state = "electrical1"
-	chance_to_affect = 5
+	chance_to_affect = 15
 	spread_chance = 30
 	chain_rate = 3
 	var/max_damage = 15
