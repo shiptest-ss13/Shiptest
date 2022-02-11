@@ -1059,6 +1059,7 @@ GLOBAL_LIST_INIT(WALLITEMS_INVERSE, typecacheof(list(
 	var/static/mcount
 	if(mcount == 10)
 		message_debug("Kapu1178/LimbSystem: Limb Stack trace cap exceeded, further traces silenced.")
+		mcount++
 	if((mcount < 10) || bypass_cap)
 		mcount++
 		CRASH(msg)
