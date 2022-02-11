@@ -1,10 +1,10 @@
 /datum/species/lizard
 	// Reptilian humanoids with scaled skin and tails.
-	name = "Sarathi"
-	id = "lizard"
+	name = "\improper Sarathi"
+	id = SPECIES_LIZARD
 	say_mod = "hisses"
 	default_color = "00FF00"
-	species_traits = list(MUTCOLORS,EYECOLOR,LIPS)
+	species_traits = list(MUTCOLORS,EYECOLOR,LIPS,NO_UNDERWEAR)
 	inherent_biotypes = MOB_ORGANIC|MOB_HUMANOID|MOB_REPTILE
 	mutant_bodyparts = list("tail_lizard", "snout", "spines", "horns", "frills", "body_markings", "legs")
 	mutanttongue = /obj/item/organ/tongue/lizard
@@ -25,6 +25,14 @@
 	deathsound = 'sound/voice/lizard/deathsound.ogg'
 	wings_icons = list("Dragon")
 	species_language_holder = /datum/language_holder/lizard
+	digitigrade_customization = DIGITIGRADE_OPTIONAL
+
+	species_chest = /obj/item/bodypart/chest/lizard
+	species_head = /obj/item/bodypart/head/lizard
+	species_l_arm = /obj/item/bodypart/l_arm/lizard
+	species_r_arm = /obj/item/bodypart/r_arm/lizard
+	species_l_leg = /obj/item/bodypart/l_leg/lizard
+	species_r_leg = /obj/item/bodypart/r_leg/lizard
 	// Lizards are coldblooded and can stand a greater temperature range than humans
 	bodytemp_heat_damage_limit = (BODYTEMP_HEAT_DAMAGE_LIMIT + 20) // This puts lizards 10 above lavaland max heat for ash lizards.
 	bodytemp_cold_damage_limit = (BODYTEMP_COLD_DAMAGE_LIMIT - 10)
@@ -121,18 +129,20 @@
 */
 /datum/species/lizard/ashwalker
 	name = "Ash Walker"
-	id = "ashlizard"
-	limbs_id = "lizard"
-	species_traits = list(MUTCOLORS,EYECOLOR,LIPS,DIGITIGRADE)
+	id = SPECIES_ASHWALKER
+	examine_limb_id = SPECIES_LIZARD
+	species_traits = list(MUTCOLORS,EYECOLOR,LIPS, NO_UNDERWEAR)
 	inherent_traits = list(TRAIT_CHUNKYFINGERS,TRAIT_NOBREATH)
 	species_language_holder = /datum/language_holder/lizard/ash
+	digitigrade_customization = DIGITIGRADE_FORCED
+
 //WS Edit Start - Kobold
 //Ashwalker subspecies: KOBOLD
 /datum/species/lizard/ashwalker/kobold
 	name = "Kobold"
-	id = "kobold"
-	limbs_id = "lizard"
-	species_traits = list(MUTCOLORS,EYECOLOR,LIPS,DIGITIGRADE)
+	id = SPECIES_KOBOLD
+	examine_limb_id = SPECIES_LIZARD
+	species_traits = list(MUTCOLORS,EYECOLOR,LIPS, NO_UNDERWEAR)
 	inherent_traits = list(TRAIT_CHUNKYFINGERS,TRAIT_NOBREATH)
 	species_language_holder = /datum/language_holder/lizard/ash
 

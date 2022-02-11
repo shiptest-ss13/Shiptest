@@ -1,7 +1,7 @@
 /mob/living/carbon/Initialize()
 	. = ..()
 	create_reagents(1000)
-	assign_bodypart_ownership()
+	// assign_bodypart_ownership()
 	update_body_parts() //to update the carbon's new bodyparts appearance
 	GLOB.carbon_list += src
 
@@ -219,7 +219,7 @@
 
 /mob/living/carbon/on_fall()
 	. = ..()
-	loc.handle_fall(src)//it's loc so it doesn't call the mob's handle_fall which does nothing
+	loc?.handle_fall(src)//it's loc so it doesn't call the mob's handle_fall which does nothing
 
 /mob/living/carbon/is_muzzled()
 	return(istype(src.wear_mask, /obj/item/clothing/mask/muzzle))
@@ -509,8 +509,7 @@
 	var/total_burn	= 0
 	var/total_brute	= 0
 	var/total_stamina = 0
-	for(var/X in bodyparts)	//hardcoded to streamline things a bit
-		var/obj/item/bodypart/BP = X
+	for(var/obj/item/bodypart/BP as anything in bodyparts)
 		total_brute	+= (BP.brute_dam * BP.body_damage_coeff)
 		total_burn	+= (BP.burn_dam * BP.body_damage_coeff)
 		total_stamina += (BP.stamina_dam * BP.stam_damage_coeff)
@@ -998,7 +997,7 @@
 				if("augment")
 					if(ishuman(src))
 						if(BP)
-							BP.change_bodypart_status(BODYPART_ROBOTIC, TRUE, TRUE)
+							BP.change_bodypart_status(BODYTYPE_ROBOTIC, TRUE, TRUE)
 						else
 							to_chat(usr, "<span class='boldwarning'>[src] doesn't have such bodypart.</span>")
 					else
@@ -1070,9 +1069,9 @@
 			new result(src, TRUE)
 
 /mob/living/carbon/has_mouth()
-	for(var/obj/item/bodypart/head/head in bodyparts)
-		if(head.mouth)
-			return TRUE
+	var/obj/item/bodypart/head/head = get_bodypart(BODY_ZONE_HEAD)
+	if(head && head.mouth)
+		return TRUE
 
 /mob/living/carbon/can_resist()
 	return bodyparts.len > 2 && ..()

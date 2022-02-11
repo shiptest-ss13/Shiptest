@@ -33,6 +33,22 @@
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 60, "acid" = 100)
 	alt_covers_chest = TRUE
 
+/obj/item/clothing/under/syndicate/medic
+	name = "Cybersun medical jumpsuit"
+	desc = "Sterile coveralls worn by Cybersun Industries field medics for protection against biological hazards."
+	icon_state = "cybersun_med"
+	permeability_coefficient = 0.5
+	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 10, "rad" = 0, "fire" = 0, "acid" = 0)
+
+/obj/item/clothing/under/syndicate/medic/skirt
+	name = "Cybersun medical jumpskirt"
+	desc = "A sterile jumpskirt worn by Cybersun Industries field medics for protection against biological hazards."
+	icon_state = "cybersun_med_skirt"
+	body_parts_covered = CHEST|GROIN|ARMS
+	can_adjust = FALSE
+	fitted = FEMALE_UNIFORM_TOP
+	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON
+
 /datum/outfit/syndicate/intern
 	name = "Syndicate Operative - Intern"
 
