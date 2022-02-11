@@ -163,12 +163,16 @@
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis/inside,
 /area/ruin/unpowered/icecropolis)
 "dJ" = (
-/obj/structure/girder/bronze,
-/turf/closed/mineral/random/high_chance/volcanic/icecropolis,
-/area/ruin/unpowered/icecropolis)
+/obj/item/seeds/tobacco,
+/obj/item/seeds/tomato/blue,
+/obj/item/seeds/cannabis,
+/obj/item/seeds/wheat,
+/turf/open/floor/plasteel/icecropolis,
+/area/ruin/unpowered/icecropolis/rusty)
 "dP" = (
 /obj/item/chair/wood/wings,
 /obj/effect/decal/cleanable/dirt,
+/obj/item/seeds/cotton/durathread,
 /turf/open/floor/wood/icecropolis,
 /area/ruin/unpowered/icecropolis)
 "dU" = (
@@ -477,6 +481,7 @@
 "iy" = (
 /obj/effect/decal/cleanable/dirt,
 /mob/living/simple_animal/hostile/asteroid/hivelord/legion,
+/obj/item/seeds/cotton,
 /turf/open/floor/wood/icecropolis,
 /area/ruin/unpowered/icecropolis)
 "iH" = (
@@ -525,6 +530,7 @@
 /turf/open/indestructible/boss/air,
 /area/ruin/unpowered/icecropolis)
 "jN" = (
+/obj/item/seeds/apple,
 /turf/open/floor/wood/icecropolis,
 /area/ruin/unpowered/icecropolis)
 "jR" = (
@@ -653,6 +659,12 @@
 "mU" = (
 /obj/structure/spawner/lavaland/legion,
 /turf/open/indestructible/necropolis/air,
+/area/ruin/unpowered/icecropolis)
+"mX" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/glowshroom/single,
+/obj/item/seeds/bamboo,
+/turf/open/floor/wood/icecropolis,
 /area/ruin/unpowered/icecropolis)
 "mZ" = (
 /obj/structure/stone_tile/slab,
@@ -1070,6 +1082,10 @@
 /obj/structure/stone_tile,
 /turf/open/lava/smooth,
 /area/ruin/unpowered/icecropolis/reach)
+"uo" = (
+/obj/item/seeds/corn,
+/turf/open/floor/wood/icecropolis,
+/area/ruin/unpowered/icecropolis)
 "ur" = (
 /obj/structure/legionpike,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis,
@@ -2065,6 +2081,7 @@
 /obj/item/stack/sheet/mineral/adamantine{
 	amount = 15
 	},
+/obj/item/pickaxe/drill/cyborg,
 /turf/open/indestructible/boss/air,
 /area/ruin/unpowered/icecropolis/gold)
 "LL" = (
@@ -2428,8 +2445,6 @@
 /obj/item/seeds/lavaland/whitesands/fireblossom,
 /obj/item/seeds/lavaland/porcini,
 /obj/item/seeds/lavaland/polypore,
-/obj/item/seeds/lavaland/inocybe,
-/obj/item/seeds/lavaland/ember,
 /obj/item/seeds/lavaland/cactus,
 /obj/item/seeds/lavaland/cactus,
 /obj/item/seeds/lavaland/cactus,
@@ -2706,19 +2721,10 @@
 /area/ruin/unpowered/icecropolis/reach)
 "WW" = (
 /obj/structure/table/wood/reinforced,
-/obj/item/seeds/wheat/rice,
-/obj/item/seeds/wheat,
 /obj/item/seeds/tower,
-/obj/item/seeds/tomato/blue,
-/obj/item/seeds/tobacco,
 /obj/item/seeds/glowshroom/glowcap,
-/obj/item/seeds/cotton,
-/obj/item/seeds/corn,
-/obj/item/seeds/coffee,
-/obj/item/seeds/cannabis,
-/obj/item/seeds/bamboo,
-/obj/item/seeds/apple,
-/obj/item/seeds/cotton/durathread,
+/obj/item/seeds/lavaland/ember,
+/obj/item/seeds/lavaland/inocybe,
 /turf/open/floor/wood/icecropolis,
 /area/ruin/unpowered/icecropolis/reach)
 "Xb" = (
@@ -2729,6 +2735,12 @@
 /obj/structure/stone_tile/slab/cracked,
 /turf/open/indestructible/boss/air,
 /area/ruin/unpowered/icecropolis/reach)
+"Xi" = (
+/obj/item/chair/wood/wings,
+/obj/effect/decal/cleanable/dirt,
+/obj/item/seeds/coffee,
+/turf/open/floor/wood/icecropolis,
+/area/ruin/unpowered/icecropolis)
 "Xm" = (
 /obj/structure/ore_box,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis/inside,
@@ -6955,7 +6967,7 @@ nE
 nE
 ie
 dP
-eQ
+mX
 PI
 ie
 jV
@@ -7042,7 +7054,7 @@ nE
 li
 TP
 rq
-UI
+dJ
 li
 UI
 Ur
@@ -7143,7 +7155,7 @@ nE
 iR
 Hz
 mo
-jN
+uo
 nE
 nE
 jV
@@ -7264,7 +7276,7 @@ fg
 nE
 nE
 qV
-dP
+Xi
 iy
 EK
 yF
@@ -7350,7 +7362,7 @@ fE
 jV
 je
 je
-dJ
+KX
 je
 Bk
 Bk
