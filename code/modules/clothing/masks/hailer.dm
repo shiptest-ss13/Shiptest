@@ -184,11 +184,12 @@ GLOBAL_LIST_INIT(hailer_phrases, list(
 	slot_flags = ITEM_SLOT_MASK|ITEM_SLOT_NECK
 	custom_price = 150
 	actions_types = list(/datum/action/item_action/halt)
+	var/blown_sound = 'sound/misc/whistle.ogg'
 
 /obj/item/clothing/mask/whistle/ui_action_click(mob/user, action)
 	if(cooldown < world.time - 100)
 		usr.audible_message("<font color='red' size='5'><b>HALT!</b></font>")
-		playsound(src, 'sound/misc/whistle.ogg', 100, FALSE, 4)
+		playsound(src, blown_sound, 100, FALSE, 4)
 		cooldown = world.time
 
 #undef PHRASE_COOLDOWN

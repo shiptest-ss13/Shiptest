@@ -2,7 +2,6 @@
 /obj/machinery/vending/mining_equipment
 	name = "frontier equipment vendor"
 	desc = "An equipment vendor for miners, prospectors, and all manner of far reach scroungers. Ore Redemption Points can be spent here to purchase rough-and-tumble goods. Sold by EXOCON."
-	icon = 'whitesands/icons/obj/machines/vending.dmi'
 	icon_state = "mining"
 	icon_deny = "mining-deny"
 	max_integrity = 500 // A bit more durable than your average snack vendor

@@ -124,6 +124,15 @@
 	new /obj/item/multitool/syndie(src)
 	new /obj/item/inducer/syndicate(src)
 
+/obj/item/storage/belt/utility/full/ert/PopulateContents()
+	new /obj/item/screwdriver/power(src)
+	new /obj/item/crowbar/power(src)
+	new /obj/item/weldingtool/experimental(src)
+	new /obj/item/multitool(src)
+	new /obj/item/construction/rcd/combat(src)
+	new /obj/item/extinguisher/mini(src)
+	new /obj/item/stack/cable_coil(src)
+
 /obj/item/storage/belt/medical
 	name = "medical belt"
 	desc = "Can hold various medical equipment."
@@ -485,6 +494,14 @@
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_items = 6
+
+/obj/item/storage/belt/military/assault/full/PopulateContents()
+	new /obj/item/ammo_box/magazine/wt550m9/wtap(src)
+	new /obj/item/ammo_box/magazine/wt550m9/wtap(src)
+	new /obj/item/ammo_box/magazine/wt550m9(src)
+	new /obj/item/ammo_box/magazine/wt550m9(src)
+	new /obj/item/ammo_box/magazine/wt550m9(src)
+	new /obj/item/ammo_box/magazine/wt550m9(src)
 
 /obj/item/storage/belt/grenade
 	name = "grenadier belt"

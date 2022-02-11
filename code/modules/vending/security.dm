@@ -90,7 +90,7 @@
 	desc = "A marine equipment vendor."
 	product_ads = "Please insert your marine voucher in the bottom slot."
 	icon_state = "marine"
-	icon_deny = "smarine-deny"
+	icon_deny = "marine-deny"
 	light_mask = "marine-mask"
 	req_access = list(ACCESS_SYNDICATE)
 	products = list(
@@ -167,10 +167,10 @@
 		"TGV \"Edison\" Energy Rifle" = /obj/item/gun/energy/laser/terra)
 
 /obj/machinery/vending/security/marine/nanotrasen
-	icon_state = "nanotrasen-marine"
-	icon_deny = "nanotrasen-marine-deny"
-	light_mask = "nanotrasen-marine-mask"
-	icon_vend = "nanotrasen-marine-vend"
+	icon_state = "nt-marine"
+	icon_deny = "nt-marine-deny"
+	light_mask = "nt-marine-mask"
+	icon_vend = "nt-marine-vend"
 	req_access = list(ACCESS_SECURITY)
 	products = list(
 		/obj/item/restraints/handcuffs = 10,
@@ -178,12 +178,13 @@
 		/obj/item/flashlight/seclite = 10,
 
 		/obj/item/ammo_box/magazine/aknt = 10,
+		/obj/item/storage/box/lethalshot = 5,
 
 		/obj/item/grenade/c4 = 5,
 		/obj/item/grenade/frag = 5,
 		/obj/item/grenade/flashbang = 5,
 		/obj/item/grenade/barrier = 10,
-		/obj/item/melee/transforming/energy/sword/saber/blue = 1,
+		/obj/item/melee/transforming/energy/sword/saber/blue = 1
 		)
 
 	voucher_items = list(
@@ -206,7 +207,7 @@
 	desc = "A token used to redeem equipment from your nearest marine vendor."
 	icon_state = "syndie-voucher"
 
-/obj/item/gun_voucher/syndicate
+/obj/item/gun_voucher/nanotrasen
 	name = "nanotrasen weapon voucher"
 	desc = "A token used to redeem equipment from your nearest marine vendor."
 	icon_state = "nanotrasen-voucher"
