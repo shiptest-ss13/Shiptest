@@ -72,10 +72,6 @@
 
 #define STATUS_EFFECT_SAWBLEED /datum/status_effect/stacking/saw_bleed //if the bleed builds up enough, takes a ton of damage
 
-#define STATUS_EFFECT_DEEPFREEZE /datum/status_effect/stacking/freeze //if the chill builds up enough, takes a bit of damage and get frozen inside a block of ice
-
-#define STATUS_EFFECT_CUBEFREEZE /datum/status_effect/ice_block_talisman //creates a block of ice around someone, briefly stunning them and temporarily preventing them from moving.
-
 #define STATUS_EFFECT_NECKSLICE /datum/status_effect/neck_slice //Creates the flavor messages for the neck-slice
 
 #define STATUS_EFFECT_CONVULSING /datum/status_effect/convulsing

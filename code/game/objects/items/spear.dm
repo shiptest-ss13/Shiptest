@@ -185,18 +185,18 @@
 	lefthand_file = 'icons/mob/inhands/weapons/polearms_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/polearms_righthand.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/back.dmi'
-	icon_state = "dragon_spear0"
 	force = 20
 	throwforce = 25
 	block_chance = 15//lol,lmao
 	armour_penetration = 30
 	embedding = list("impact_pain_mult" = 5)
+	icon_prefix = "dragon_spear"
 	var/list/nemesis_factions = list("mining", "boss")
 	var/faction_bonus_force = 25
 	attack_verb = list("seared", "braided", "impaled", "smote", "gored")
 	hitsound = 'sound/weapons/sear.ogg'
-	burner = TRUE
-	burnpower = 4
+	var/cooldown_time = 0 SECONDS
+	COOLDOWN_DECLARE(freeze_cooldown)
 
 /obj/item/spear/dragonspear/attack(mob/living/target, mob/living/carbon/human/user)
 	var/nemesis_faction = FALSE
@@ -218,8 +218,21 @@
 
 /obj/item/spear/dragonspear/ComponentInitialize()
 	. = ..()
-	AddComponent(/datum/component/two_handed, force_unwielded=20, force_wielded=25, icon_wielded="dragon_spear1")
+	AddComponent(/datum/component/two_handed, force_unwielded=20, force_wielded=25, icon_wielded="[icon_prefix]1")
 	AddComponent(/datum/component/butchering, 60, 150)
+	icon_state = "[icon_prefix]0"
 
 /obj/item/spear/dragonspear/update_icon_state()
-	icon_state = "dragon_spear0"
+	icon_state = "[icon_prefix]0"
+
+/obj/item/spear/dragonspear/attack(atom/target, blocked = FALSE)
+	if(iscarbon(target))
+		var/mob/living/carbon/M = target
+		M.adjust_fire_stacks(3)
+		M.IgniteMob()
+		M.apply_damage(5, BURN)
+		M.adjust_bodytemperature(150)
+	if(isanimal(target))
+		var/mob/living/simple_animal/M = target
+		M.apply_damage(15, BURN)
+	..()

@@ -273,9 +273,8 @@
 			A.copy_to(new_mob, icon_updates=0)
 
 			var/mob/living/carbon/human/H = new_mob
-			H.update_body()
 			H.update_hair()
-			H.update_body_parts()
+			H.update_body_parts(TRUE)
 			H.dna.update_dna_identity()
 
 	if(!new_mob)
@@ -553,33 +552,6 @@
 		if(L.maxHealth <= 0)
 			to_chat(L, "<span class='userdanger'>Your weakened soul is completely consumed by the [src]!</span>")
 			L.mind.hasSoul = FALSE
-		for(var/obj/effect/proc_holder/spell/spell in L.mind.spell_list)
-			spell.charge_counter = spell.charge_max
-			spell.recharging = FALSE
-			spell.update_icon()
-
-/obj/projectile/magic/fortify
-	name = "bolt of light"
-	icon_state = "spark"
-
-/obj/projectile/magic/fortify/on_hit(target)
-	. = ..()
-	if(isliving(target))
-		var/mob/living/L = target
-		if(L.anti_magic_check() || !L.mind || !L.mind.hasSoul)
-			L.visible_message("<span class='warning'>[src] vanishes on contact with [target]!</span>")
-			return BULLET_ACT_BLOCK
-		to_chat(L, "<span class='greentext'>You feel your body flood with magical strength! Your flesh feels cleansed, and somehow... tougher.</span>")
-		L.maxHealth += 20//empowers and heals
-		L.heal_overall_damage(20, 20)
-		L.apply_damage(-100, CLONE)
-		if(L.mob_biotypes & MOB_UNDEAD)//turns the undead back to natural life
-			to_chat(L, "<span class='greentext'>You body's natural chill softly fades. You feel fresh and pink.</span>")
-		if(L.mind.hasSoul == FALSE)//restores consumed souls
-			to_chat(L, "<span class='nicegreen'>You feel a warm light in your chest... the [src] has restored something you'd long forgotten.</span>")
-			L.mind.hasSoul = TRUE
-			if(L.hellbound == 1)
-				L.hellbound = 0//devil economy in shambles
 		for(var/obj/effect/proc_holder/spell/spell in L.mind.spell_list)
 			spell.charge_counter = spell.charge_max
 			spell.recharging = FALSE

@@ -146,14 +146,15 @@
 	armour_penetration = 65
 	attack_verb = list("slashed", "stung", "prickled", "poked")
 	hitsound = 'sound/weapons/rapierhit.ogg'
-	poisoned = TRUE
-	poisonpower = 4
 
 /obj/item/melee/beesword/afterattack(atom/target, mob/user, proximity)
 	. = ..()
 	if(!proximity)
 		return
 	user.changeNext_move(CLICK_CD_RAPID)
+	if(iscarbon(target))
+		var/mob/living/carbon/H = target
+		H.reagents.add_reagent(/datum/reagent/toxin, 4)
 
 /obj/item/melee/beesword/suicide_act(mob/living/user)
 	user.visible_message("<span class='suicide'>[user] is stabbing [user.p_them()]self in the throat with [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")

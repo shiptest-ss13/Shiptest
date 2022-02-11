@@ -292,15 +292,18 @@
 	force = 5
 	slot_flags = ITEM_SLOT_BACK
 	block_chance = 50
-	effect_icon = "shield-red"
-	overlayed = TRUE
+	var/shield_icon = "shield-red"
+
+/obj/item/nullrod/staff/worn_overlays(isinhands)
+	. = list()
+	if(isinhands)
+		. += mutable_appearance('icons/effects/effects.dmi', shield_icon, MOB_LAYER + 0.01)
 
 /obj/item/nullrod/staff/blue
 	name = "blue holy staff"
 	icon_state = "godstaff-blue"
 	item_state = "godstaff-blue"
-	effect_icon = "shield-old"
-	overlayed = TRUE
+	shield_icon = "shield-old"
 
 /obj/item/nullrod/claymore
 	icon_state = "claymore_gold"
@@ -449,7 +452,44 @@
 	desc = "When the station falls into chaos, it's nice to have a friend by your side."
 	attack_verb = list("chopped", "sliced", "cut")
 	hitsound = 'sound/weapons/rapierhit.ogg'
-	haunted = TRUE
+	var/possessed = FALSE
+
+/obj/item/nullrod/scythe/talking/relaymove(mob/living/user, direction)
+	return //stops buckled message spam for the ghost.
+
+/obj/item/nullrod/scythe/talking/attack_self(mob/living/user)
+	if(possessed)
+		return
+
+	to_chat(user, "<span class='notice'>You attempt to wake the spirit of the blade...</span>")
+
+	possessed = TRUE
+
+	var/list/mob/dead/observer/candidates = pollGhostCandidates("Do you want to play as the spirit of [user.real_name]'s blade?", ROLE_PAI, null, FALSE, 100, POLL_IGNORE_POSSESSED_BLADE)
+
+	if(LAZYLEN(candidates))
+		var/mob/dead/observer/C = pick(candidates)
+		var/mob/living/simple_animal/shade/S = new(src)
+		S.ckey = C.ckey
+		S.fully_replace_character_name(null, "The spirit of [name]")
+		S.status_flags |= GODMODE
+		S.copy_languages(user, LANGUAGE_MASTER)	//Make sure the sword can understand and communicate with the user.
+		S.update_atom_languages()
+		grant_all_languages(FALSE, FALSE, TRUE)	//Grants omnitongue
+		var/input = sanitize_name(stripped_input(S,"What are you named?", ,"", MAX_NAME_LEN))
+
+		if(src && input)
+			name = input
+			S.fully_replace_character_name(null, "The spirit of [input]")
+	else
+		to_chat(user, "<span class='warning'>The blade is dormant. Maybe you can try again later.</span>")
+		possessed = FALSE
+
+/obj/item/nullrod/scythe/talking/Destroy()
+	for(var/mob/living/simple_animal/shade/S in contents)
+		to_chat(S, "<span class='userdanger'>You were destroyed!</span>")
+		qdel(S)
+	return ..()
 
 /obj/item/nullrod/scythe/talking/chainsword
 	icon_state = "chainswordon"
@@ -473,7 +513,7 @@
 	chaplain_spawnable = FALSE
 	attack_verb = list("gnawed", "munched on", "chewed", "rended", "chomped")
 	name = "possessed greatsword"
-	var/bleed_stacks_per_hit = 3 //this effect has rapid scaling and is an instant down pretty much, I'll crib it since it can trigger on non-fauna
+	var/bleed_stacks_per_hit = 2 //this effect has rapid scaling and is an instant down pretty much, I'll crib it since it can trigger on non-fauna
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 
 /obj/item/nullrod/scythe/talking/necro/examine(mob/user)

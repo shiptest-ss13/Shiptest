@@ -253,16 +253,12 @@ Unless you know what you're doing, only use the first three numbers. They're in 
 /datum/material/mythril/on_applied_obj(atom/source, amount, material_flags)
 	. = ..()
 	if(istype(source, /obj/item))
-		if(!istype(source, /obj/item/stack/sheet))
-			if(!istype(source, /obj/item/coin/mythril))
-				source.AddComponent(/datum/component/fantasy)
+		source.AddComponent(/datum/component/fantasy)
 
 /datum/material/mythril/on_removed_obj(atom/source, material_flags)
 	. = ..()
 	if(istype(source, /obj/item))
-		if(!istype(source, /obj/item/stack/sheet))
-			if(!istype(source, /obj/item/coin/mythril))
-				qdel(source.GetComponent(/datum/component/fantasy))
+		qdel(source.GetComponent(/datum/component/fantasy))
 
 //formed when freon react with o2, emits a lot of plasma when heated
 /datum/material/hot_ice

@@ -18,6 +18,8 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	///Icon file for right inhand overlays
 	var/righthand_file = 'icons/mob/inhands/items_righthand.dmi'
 
+	var/supports_variations = null //This is a bitfield that defines what variations exist for bodyparts like Digi legs.
+
 	///Icon file for mob worn overlays.
 	var/icon/mob_overlay_icon
 	///icon state for mob worn overlays, if null the normal icon_state will be used.
@@ -87,6 +89,9 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	///flags for what should be done when you click on the item, default is picking it up
 	var/interaction_flags_item = INTERACT_ITEM_ATTACK_HAND_PICKUP
 
+	/// Used in picking icon_states based on the string color here. Also used for cables or something. This could probably do with being deprecated.
+	var/item_color = null
+
 	///What body parts are covered by the clothing when you wear it
 	var/body_parts_covered = 0
 	///Literally does nothing right now
@@ -110,10 +115,14 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	///How long it takes to resist out of the item (cuffs and such)
 	var/breakouttime = 0
 
-	///Used in [atom/proc/attackby] to say how something was attacked "[x] has been [z.attack_verb] by [y] with [z]"
+	/// Used in attackby() to say how something was attacked "[x] has been [z.attack_verb] by [y] with [z]"
 	var/list/attack_verb
-	///list() of species types, if a species cannot put items in a certain slot, but species type is in list, it will be able to wear that item
+	/// list() of species types, if a species cannot put items in a certain slot, but species type is in list, it will be able to wear that item
 	var/list/species_exception = null
+	///A bitfield of a species to use as an alternative sprite for any given item. DMIs are stored in the species datum and called via proc in update_icons.
+	var/sprite_sheets = null
+	///A bitfield of bodytypes that the item cannot be worn by.
+	var/restricted_bodytypes = null
 
 	///Who threw the item
 	var/mob/thrownby = null
@@ -172,35 +181,6 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 
 	var/canMouseDown = FALSE
 
-//modification functionality//
-	var/mods = 0
-
-	//maximum number of modifications an item can have.
-	var/maxmodify = 3
-	var/postfixed = FALSE//prevents more then one postfix. Prevents "burning sword of the jester of the dervish" and instead causes "burning prank sword of the dervish", see the naming part of sharpener code.
-	//weapon poison effect, injected on every stab if poisoned is TRUE. Amount is determined by poison power.
-	var/poisoned = FALSE
-	var/poisonpower = 1
-	var/stabpoison = /datum/reagent/toxin
-	//weapon flame effect. Ignites and burns based on burnpower if burner is TRUE
-	var/burner = FALSE
-	var/burnpower = 1
-	//weapon chill effect. Reduces temp, slightly burns based on freezepower. Applies a slowly-increasing status effect that eventually freezes in a block of ice.
-	var/freezer = FALSE
-	var/freezepower = 1
-	//finally, (semi)functional modular possession. When haunted is true, alt-click the item in question to summon a spirit, a la. the talking sword.
-	var/haunted = FALSE
-	var/possessed = FALSE
-	//modularizes bleed effect. Bleedpower dictates how quickly stacks are gained on attack.
-	var/serrated = FALSE
-	var/bleedpower = 1
-
-//attack speed modification: decreases cooldown between clicks. Lower numbers are faster, higher are slower//
-	var/attackspeed = 1
-
-//causes an effect overlay to appear over your char when the item is held inhand. Most often used for "shielding" effects, see red and blue holy staves for an example.
-	var/overlayed = FALSE
-	var/effect_icon = null//pathing is under icons/effects/effects.dmi
 
 /obj/item/Initialize()
 
@@ -210,10 +190,7 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	. = ..()
 	for(var/path in actions_types)
 		new path(src)
-//	if(!haunted)
-		actions_types = null
-//	else
-//		actions_types = list(/datum/action/item_action/possession)
+	actions_types = null
 
 	if(force_string)
 		item_flags |= FORCE_STRING_OVERRIDE
@@ -237,12 +214,7 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 		m.temporarilyRemoveItemFromInventory(src, TRUE)
 	for(var/X in actions)
 		qdel(X)
-	if(possessed)
-		for(var/mob/living/simple_animal/shade/S in contents)
-			to_chat(S, "<span class='userdanger'>You were destroyed!</span>")
-			qdel(S)
 	return ..()
-
 
 /obj/item/proc/check_allowed_items(atom/target, not_inside, target_self)
 	if(((src in target) && !target_self) || (!isturf(target.loc) && !isturf(target) && not_inside))
@@ -315,18 +287,7 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 			. += "[src] is made of cold-resistant materials."
 		if(resistance_flags & FIRE_PROOF)
 			. += "[src] is made of fire-retardant materials."
-//modifier addendums
-	if(haunted)
-		. += "[src] is swirling with ghostly energy!"
-		. += "<span class='notice'>Alt-click to summon a wandering spirit into [src].</span>"
-	if(burner)
-		. += "[src] is flickering with phantom flame!"
-	if(poisoned)
-		. += "[src] is dripping a foul substance!"
-	if(freezer)
-		. += "[src] has crackling frost running up and down it's surface!"
-	if(serrated)
-		. += "[src] has a wicked-looking serrated edge!"
+
 	if(!user.research_scanner)
 		return
 
@@ -1093,40 +1054,3 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	if(ismob(loc))
 		var/mob/mob_loc = loc
 		mob_loc.regenerate_icons()
-
-/obj/item/relaymove(mob/living/user, direction)
-	if(haunted == TRUE)
-		return //stops buckled message spam for the ghost.
-
-/obj/item/AltClick(mob/living/user)
-	.=..()
-//functionality for haunted items
-	if(haunted)
-		if(possessed)
-			return
-		to_chat(user, "<span class='notice'>You attempt to wake the spirit of the blade...</span>")
-		possessed = TRUE
-		var/list/mob/dead/observer/candidates = pollGhostCandidates("Do you want to play as the spirit of [user.real_name]'s blade?", ROLE_PAI, null, FALSE, 100, POLL_IGNORE_POSSESSED_BLADE)
-		if(LAZYLEN(candidates))
-			var/mob/dead/observer/C = pick(candidates)
-			var/mob/living/simple_animal/shade/S = new(src)
-			S.ckey = C.ckey
-			S.fully_replace_character_name(null, "The spirit of [name]")
-			S.status_flags |= GODMODE
-			S.copy_languages(user, LANGUAGE_MASTER)	//Make sure the sword can understand and communicate with the user.
-			S.update_atom_languages()
-			grant_all_languages(FALSE, FALSE, TRUE)	//Grants omnitongue
-			var/input = sanitize_name(stripped_input(S,"What are you named?", ,"", MAX_NAME_LEN))
-
-			if(src && input)
-				name = input
-				S.fully_replace_character_name(null, "The spirit of [input]")
-		else
-			to_chat(user, "<span class='warning'>The blade is dormant. Maybe you can try again later.</span>")
-			possessed = FALSE
-
-/obj/item/worn_overlays(isinhands)
-	if(overlayed)
-		. = list()
-		if(isinhands)
-			. += mutable_appearance('icons/effects/effects.dmi', effect_icon, MOB_LAYER + 0.01)

@@ -356,7 +356,6 @@ Difficulty: Extremely Hard
 	var/icon/size_check = icon(owner.icon, owner.icon_state)
 	cube.Scale(size_check.Width(), size_check.Height())
 	owner.add_overlay(cube)
-	owner.Stun(5, TRUE)//extremely briefly stalls enemies. Being frozen in a cube is kind of disorienting.
 	return ..()
 
 /// Blocks movement from the status effect owner

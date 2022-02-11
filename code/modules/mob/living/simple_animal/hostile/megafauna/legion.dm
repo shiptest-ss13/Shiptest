@@ -43,7 +43,9 @@
 	crusher_achievement_type = /datum/award/achievement/boss/legion_crusher
 	score_achievement_type = /datum/award/score/legion_score
 	pixel_y = -16
+	base_pixel_y = -16
 	pixel_x = -32
+	base_pixel_x = -32
 	loot = list(/obj/item/stack/sheet/bone = 3)
 	vision_range = 13
 	wander = FALSE
@@ -204,7 +206,7 @@
 		loot = list(/obj/item/staff/storm)
 		elimination = FALSE
 	else if(prob(20)) //20% chance for sick lootz.
-		loot = list(/obj/structure/closet/crate/necropolis/tendril/greater)
+		loot = list(/obj/structure/closet/crate/necropolis/tendril)
 		if(!true_spawn)
 			loot = null
 	return ..()
@@ -259,7 +261,7 @@
 	icon = 'icons/obj/guns/magic.dmi'
 	slot_flags = ITEM_SLOT_BACK
 	w_class = WEIGHT_CLASS_BULKY
-	force = 30
+	force = 25
 	damtype = BURN
 	hitsound = 'sound/weapons/sear.ogg'
 	var/storm_type = /datum/weather/ash_storm
