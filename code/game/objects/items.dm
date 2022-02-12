@@ -1128,7 +1128,7 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 				name = input
 				S.fully_replace_character_name(null, "The spirit of [input]")
 		else
-			to_chat(user, "<span class='warning'>The blade is dormant. Maybe you can try again later.</span>")
+			to_chat(user, "<span class='warning'>The [src] remains dormant. Maybe you can try again later.</span>")
 			possessed = FALSE
 
 /obj/item/worn_overlays(isinhands)
