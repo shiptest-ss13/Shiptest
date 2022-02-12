@@ -246,7 +246,8 @@
 	name = "The Heathen"
 	},
 /obj/effect/mapping_helpers/component_injector/doordeath{
-	door_id = "heathen_death_id"
+	door_id = "heathen_death_id";
+	target_type = /mob/living/simple_animal/hostile/big_legion
 	},
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis/inside,
 /area/ruin/unpowered/icecropolis)
@@ -343,7 +344,8 @@
 	name = "The Priest"
 	},
 /obj/effect/mapping_helpers/component_injector/doordeath{
-	door_id = "priest_death_id"
+	door_id = "priest_death_id";
+	target_type = /mob/living/simple_animal/hostile/megafauna/dragon
 	},
 /turf/open/lava,
 /area/ruin/unpowered/icecropolis)
@@ -1037,7 +1039,8 @@
 	name = "The Gatekeeper"
 	},
 /obj/effect/mapping_helpers/component_injector/doordeath{
-	door_id = "gatekeeper_death_id"
+	door_id = "gatekeeper_death_id";
+	target_type = /mob/living/simple_animal/hostile/asteroid/elite/broodmother
 	},
 /turf/open/indestructible/necropolis/air,
 /area/ruin/unpowered/icecropolis)
@@ -1729,7 +1732,8 @@
 	ranged_ignores_vision = 0
 	},
 /obj/effect/mapping_helpers/component_injector/doordeath{
-	door_id = "bishop_death_id"
+	door_id = "bishop_death_id";
+	target_type = /mob/living/simple_animal/hostile/asteroid/elite/herald
 	},
 /turf/open/floor/mineral/gold,
 /area/ruin/unpowered/icecropolis/gold)
@@ -2276,7 +2280,8 @@
 	name = "Captain of the Holy Guard"
 	},
 /obj/effect/mapping_helpers/component_injector/doordeath{
-	door_id = "guard_death_id"
+	door_id = "guard_death_id";
+	target_type = /mob/living/simple_animal/hostile/asteroid/elite/legionnaire
 	},
 /turf/open/lava/smooth,
 /area/ruin/unpowered/icecropolis)
@@ -2955,7 +2960,8 @@
 	name = "The Disciple"
 	},
 /obj/effect/mapping_helpers/component_injector/doordeath{
-	door_id = "disciple_death_id"
+	door_id = "disciple_death_id";
+	target_type = /mob/living/simple_animal/hostile/asteroid/hivelord/legion
 	},
 /turf/open/lava/smooth,
 /area/ruin/unpowered/icecropolis)
