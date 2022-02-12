@@ -495,6 +495,9 @@ GLOBAL_LIST_INIT(cardboard_recipes, list (														\
 	. = ..()
 	. += GLOB.cardboard_recipes
 
+/obj/item/stack/sheet/cardboard/twenty
+	amount = 20
+
 /obj/item/stack/sheet/cardboard/fifty
 	amount = 50
 

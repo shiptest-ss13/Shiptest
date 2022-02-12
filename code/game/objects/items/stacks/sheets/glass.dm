@@ -38,6 +38,9 @@ GLOBAL_LIST_INIT(glass_recipes, list ( \
 	is_cyborg = 1
 	cost = 500
 
+/obj/item/stack/sheet/glass/twenty
+	amount = 20
+
 /obj/item/stack/sheet/glass/fifty
 	amount = 50
 

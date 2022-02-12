@@ -380,6 +380,29 @@
 	max_stacks = 7
 	bleed_damage = 20
 
+/datum/status_effect/stacking/freeze
+	id = "cubefreeze"
+	tick_interval = 20
+	delay_before_decay = 20
+	stack_threshold = 10
+	max_stacks = 10
+	overlay_file = 'icons/effects/bleed.dmi'
+	underlay_file = 'icons/effects/bleed.dmi'
+	overlay_state = "freeze"
+	underlay_state = "freeze"
+	var/freeze_damage = 15
+
+/datum/status_effect/stacking/freeze/fadeout_effect()
+	new /obj/effect/temp_visual/freeze(get_turf(owner))
+
+/datum/status_effect/stacking/freeze/threshold_cross_effect()
+	owner.adjustFireLoss(freeze_damage)
+	owner.adjust_bodytemperature(-500)//you've frozen my heart away...
+	owner.apply_status_effect(STATUS_EFFECT_CUBEFREEZE, 6 SECONDS)//finally, recursive status datums. The future is now
+	var/turf/T = get_turf(owner)
+	new /obj/effect/temp_visual/freeze/explode(T)
+	playsound(T, 'sound/effects/glassbr3.ogg', 100, TRUE, -1)
+
 /datum/status_effect/neck_slice
 	id = "neck_slice"
 	status_type = STATUS_EFFECT_UNIQUE

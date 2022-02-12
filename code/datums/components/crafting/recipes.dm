@@ -649,6 +649,20 @@
 				/obj/item/stack/sheet/sinew = 3)
 	category = CAT_PRIMAL
 
+/datum/crafting_recipe/woodsharp
+	name = "Wooden Sharpener"
+	result = /obj/item/sharpener/improvised
+	time = 50
+	reqs = list(/obj/item/stack/sheet/mineral/wood = 10)
+	category = CAT_PRIMAL
+
+/datum/crafting_recipe/bonesharp
+	name = "Bone Sharpener"
+	result = /obj/item/sharpener/bone
+	time = 50
+	reqs = list(/obj/item/stack/sheet/bone = 6)
+	category = CAT_PRIMAL
+
 /datum/crafting_recipe/bonfire
 	name = "Bonfire"
 	time = 60

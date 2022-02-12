@@ -295,7 +295,7 @@
 	item_state = "hvymining_hardsuit"
 	max_heat_protection_temperature = FIRE_SUIT_MAX_TEMP_PROTECT
 	resistance_flags = FIRE_PROOF | ACID_PROOF
-	armor = list("melee" = 45, "bullet" = 20, "laser" = 35, "energy" = 40, "bomb" = 65, "bio" = 100, "rad" = 85, "fire" = 75, "acid" = 100)
+	armor = list("melee" = 30, "bullet" = 15, "laser" = 15, "energy" = 25, "bomb" = 65, "bio" = 100, "rad" = 65, "fire" = 75, "acid" = 100)
 	allowed = list(/obj/item/flashlight, /obj/item/tank/internals, /obj/item/storage/bag/ore, /obj/item/pickaxe)
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/mining/heavy
 	custom_price = 4500
@@ -308,9 +308,8 @@
 	item_state = "hvymining_helm"
 	hardsuit_type = "hvymining"
 	resistance_flags = FIRE_PROOF | ACID_PROOF
-	armor = list("melee" = 45, "bullet" = 20, "laser" = 20, "energy" = 30, "bomb" = 65, "bio" = 100, "rad" = 75, "fire" = 75, "acid" = 100)
+	armor = list("melee" = 30, "bullet" = 15, "laser" = 15, "energy" = 25, "bomb" = 65, "bio" = 100, "rad" = 65, "fire" = 75, "acid" = 100)
 	light_range = 10
-	allowed = list(/obj/item/flashlight, /obj/item/tank/internals, /obj/item/resonator, /obj/item/mining_scanner, /obj/item/t_scanner/adv_mining_scanner, /obj/item/gun/energy/kinetic_accelerator, /obj/item/pinpointer/deepcore)
 
 	//Syndicate hardsuit
 /obj/item/clothing/head/helmet/space/hardsuit/syndi
@@ -678,11 +677,27 @@
 
 /obj/item/clothing/suit/space/hardsuit/clown
 	name = "cosmohonk hardsuit"
-	desc = "A special suit that protects against hazardous, low humor environments. Has radiation shielding. Only a true clown can wear it."
+	desc = "A special suit that protects against hazardous, low humor environments. Has radiation shielding."
 	icon_state = "hardsuit-clown"
 	item_state = "clown_hardsuit"
 	armor = list("melee" = 30, "bullet" = 5, "laser" = 10, "energy" = 20, "bomb" = 10, "bio" = 100, "rad" = 75, "fire" = 60, "acid" = 30)
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/clown
+
+/obj/item/clothing/suit/space/hardsuit/clown/combat
+	name = "cosmohonk hardsuit"
+	desc = "A special suit that protects against hazardous, low humor environments. This one possesses extra plating against angry hecklers."
+	icon_state = "hardsuit-clown"
+	item_state = "clown_hardsuit"
+	armor = list("melee" = 55, "bullet" = 25, "laser" = 40, "energy" = 40, "bomb" = 50, "bio" = 100, "rad" = 85, "fire" = 75, "acid" = 60)
+	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/clown/combat
+
+/obj/item/clothing/head/helmet/space/hardsuit/clown/combat
+	name = "cosmohonk hardsuit helmet"
+	desc = "A special helmet designed for work in a hazardous, low-humor environment. This one is especially well-padded."
+	icon_state = "hardsuit0-clown"
+	item_state = "hardsuit0-clown"
+	armor = list("melee" = 55, "bullet" = 25, "laser" = 40, "energy" = 40, "bomb" = 50, "bio" = 100, "rad" = 85, "fire" = 75, "acid" = 60)
+	hardsuit_type = "clown"
 
 	//Old Prototype
 /obj/item/clothing/head/helmet/space/hardsuit/ancient
