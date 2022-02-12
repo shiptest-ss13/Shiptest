@@ -1,0 +1,9 @@
+author: Phoaly
+delete-after: true
+changes:
+  - rscadd: Adds A new ruin to the Icemoon, the Bloody Hallow.
+  - code_imp: Adds areas and a datum for the Icecropolis (Bloody Hallow) map.
+  - refactor: Refactors a death proc making a specific set of doors open into a mapper
+      helper object anyone can use.
+  - tweak: tweaked icemoon ashdrake map to use new code refactor.
+  - rscadd: Adds new component file to the DME for the refactor to work.
