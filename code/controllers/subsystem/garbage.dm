@@ -273,7 +273,7 @@ SUBSYSTEM_DEF(garbage)
 		else if(isfile(D))
 			str_type = "FILE"
 		else if(ispath(D))
-			str_type = "PATH OF [D]"
+			CRASH("BAD DEL: PATH OF [D].")
 		else if(!str_type)
 			str_type = "SOMETHING ELSE???"
 		try
