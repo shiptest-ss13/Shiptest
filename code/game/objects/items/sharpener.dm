@@ -295,7 +295,7 @@
 	name = "runeword"
 	desc = "A fragment of a forgotten god's true name. Could be infused upon a weapon."
 	apincrement = 5
-	increment = 15
+	increment = 10
 	blockincrement = 25
 	max = 100
 	prefix = "runed"

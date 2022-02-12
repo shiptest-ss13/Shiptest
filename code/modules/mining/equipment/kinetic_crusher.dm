@@ -683,12 +683,6 @@
 	wielded = FALSE // track wielded status on item
 	actions_types = list()
 
-/obj/item/kinetic_crusher/syndie_crusher/Initialize()
-	. = ..()
-	RegisterSignal(src, COMSIG_TWOHANDED_WIELD, .proc/on_wield)
-	RegisterSignal(src, COMSIG_TWOHANDED_UNWIELD, .proc/on_unwield)
-	set_light_on(wielded)
-
 /obj/item/kinetic_crusher/syndie_crusher/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/butchering, 60, 150)
