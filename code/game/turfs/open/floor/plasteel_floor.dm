@@ -207,6 +207,3 @@
 
 /turf/open/floor/plasteel/sepia
 	color = "#938170"
-
-/turf/open/floor/plasteel/icecropolis
-	baseturfs = /turf/open/indestructible/necropolis/air
