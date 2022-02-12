@@ -544,15 +544,3 @@
 				/obj/item/stack/cable_coil/red,
 				/obj/item/stack/rods/fifty
 				)
-
-/obj/effect/spawner/lootdrop/engimatic
-	name = "random engimatic component"
-	loot = list(
-				/obj/item/stock_parts/capacitor/quantumcap,
-				/obj/item/stock_parts/cell/quantum,
-				/obj/item/stock_parts/matter_bin/quantumbin,
-				/obj/item/stock_parts/micro_laser/quantumlaser,
-				/obj/item/stock_parts/scanning_module/quantumscan,
-				/obj/item/reagent_containers/glass/beaker/quantum,
-				/obj/item/stock_parts/manipulator/quantummanip
-				)
