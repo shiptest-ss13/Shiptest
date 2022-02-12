@@ -15,8 +15,6 @@
 /area/ship/maintenance/central)
 "bb" = (
 /obj/machinery/computer/cryopod{
-	icon_screen = "wallconsole_old_cryo";
-	icon_state = "wallconsole_old";
 	pixel_y = 28
 	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
@@ -930,9 +928,6 @@
 	},
 /obj/item/radio/intercom{
 	pixel_y = 26
-	},
-/obj/machinery/vending/security/wall{
-	pixel_x = -32
 	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/ship/maintenance/central)
