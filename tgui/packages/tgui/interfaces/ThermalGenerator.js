@@ -1,56 +1,79 @@
 import { useBackend } from '../backend';
-import { Button, LabeledList, Section, ProgressBar } from '../components';
+import { formatSiUnit } from '../format';
+import { Box, LabeledList, Section, ProgressBar } from '../components';
 import { Window } from '../layouts';
 
 export const ThermalGenerator = (props, context) => {
   const { act, data } = useBackend(context);
   const {
     powernet,
-    output,
     power,
-    cold_circ_temp,
-    cold_circ_pressure,
-    hot_circ_temp,
-    hot_circ_pressure,
-    hot_circ,
-    cold_circ,
+    coldCircTemp,
+    coldCircPressure,
+    hotCircTemp,
+    hotCircPressure,
+    hotCirc,
+    coldCirc,
   } = data;
+
+  const maxPowerDisplay = 6 * (10**9);
+
+  const hasNoErrors = () => {
+    return powernet && hotCirc && coldCirc;
+  };
+
   return (
-    <Window title="Thermo-Electric Generator" width={900} height={500} resizable>
+    <Window
+      width={400}
+      height={250}
+      resizable
+    >
       <Window.Content>
-        <Section title="Legend:">
-          Output:
-          <ProgressBar
-            value={power}
-            minValue={0}
-            maxValue={6000000000}
-            color="yellow"/>
-            {output}
-          <br />
-          Cold loop:
-          <ProgressBar
-            value={cold_circ_temp}
-            minValue={0}
-            maxValue={600}
-            ranges={{
-              blue: [-Infinity, 293],
-              average: [293, 500],
-              bad: [500, Infinity],
-            }}>
-            {cold_circ_temp} K {cold_circ_pressure} kPa
-          </ProgressBar>
-          Hot loop:
-          <ProgressBar
-            value={hot_circ_temp}
-            minValue={0}
-            maxValue={600}
-            ranges={{
-              blue: [-Infinity, 293],
-              average: [293, 500],
-              bad: [500, Infinity],
-            }}>
-            {hot_circ_temp} K {hot_circ_pressure} kPa
-          </ProgressBar>
+        <Section>
+          <LabeledList>
+            <LabeledList.Item label="Unit Status">
+              {!powernet && (<Box color="bad">Not connected to power network!</Box>)}
+              {!hotCirc && (<Box color="bad">Could not connect to hot circulator!</Box>)}
+              {!coldCirc && (<Box color="bad">Could not connect to cold circulator!</Box>)}
+              {hasNoErrors() && (<Box color="good">Operational</Box>)}
+            </LabeledList.Item>
+            <LabeledList.Item label="Power Output">
+              <ProgressBar
+                value={power}
+                minValue={0}
+                maxValue={maxPowerDisplay}
+                color="yellow"
+              >
+                {formatSiUnit(power, 0, 'W')}
+              </ProgressBar>
+            </LabeledList.Item>
+            <LabeledList.Item label="Cold Loop">
+              <ProgressBar
+                value={coldCircTemp}
+                minValue={0}
+                maxValue={600}
+                ranges={{
+                  blue: [-Infinity, 293],
+                  good: [293, 500],
+                  average: [500, Infinity],
+                }}>
+                {coldCircTemp} K {coldCircPressure} kPa
+              </ProgressBar>
+            </LabeledList.Item>
+            <LabeledList.Item label="Hot Loop">
+              <ProgressBar
+                value={hotCircTemp}
+                minValue={0}
+                maxValue={600}
+                ranges={{
+                  blue: [-Infinity, 293],
+                  good: [293, 500],
+                  average: [500, Infinity],
+                }}>
+                {hotCircTemp} K {hotCircPressure} kPa
+              </ProgressBar>
+            </LabeledList.Item>
+          </LabeledList>
         </Section>
       </Window.Content>
     </Window>

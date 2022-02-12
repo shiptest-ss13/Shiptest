@@ -155,7 +155,7 @@
 /obj/machinery/power/generator/ui_interact(mob/user, datum/tgui/ui)
 	ui = SStgui.try_update_ui(user, src, ui)
 	if(!ui)
-		ui = new(user, src, "ThermalGenerator")
+		ui = new(user, src, "ThermalGenerator", name)
 		ui.open()
 		ui.set_autoupdate(TRUE)
 
@@ -165,27 +165,15 @@
 //	var/datum/gas_mixture/hot_circ_air1 = hot_circ.airs[1] //outlet hot
 	var/datum/gas_mixture/hot_circ_air2 = hot_circ.airs[2] //inlet hot
 
-	var/list/data =  list()
-	data["powernet"] = powernet
-	data["output"] = DisplayPower(lastgenlev)
-	data["power"] = lastgenlev
-	data["cold_circ_temp"] = round(cold_circ_air2.return_temperature(), 0.1)
-	data["cold_circ_pressure"] = round(cold_circ_air2.return_pressure(), 0.1)
-	data["hot_circ_temp"] = round(hot_circ_air2.return_temperature(), 0.1)
-	data["hot_circ_pressure"] = round(hot_circ_air2.return_pressure(), 0.1)
-	data["hot_circ"] = hot_circ
-	data["cold_circ"] = cold_circ
-
-/obj/machinery/power/generator/Topic(href, href_list)
-	if(..())
-		return
-	if( href_list["close"] )
-		usr << browse(null, "window=teg")
-		usr.unset_machine()
-		return FALSE
-	return TRUE
-
-
+	. = ..()
+	.["powernet"] = powernet
+	.["power"] = lastgenlev
+	.["coldCircTemp"] = round(cold_circ_air2.return_temperature(), 0.1)
+	.["coldCircPressure"] = round(cold_circ_air2.return_pressure(), 0.1)
+	.["hotCircTemp"] = round(hot_circ_air2.return_temperature(), 0.1)
+	.["hotCircPressure"] = round(hot_circ_air2.return_pressure(), 0.1)
+	.["hotCirc"] = hot_circ
+	.["coldCirc"] = cold_circ
 
 /obj/machinery/power/generator/proc/find_circs()
 	kill_circs()
