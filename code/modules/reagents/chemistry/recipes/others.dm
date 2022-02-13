@@ -606,6 +606,10 @@
 	results = list(/datum/reagent/consumable/gravy = 3)
 	required_reagents = list(/datum/reagent/consumable/milk = 1, /datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/flour = 1)
 
+/datum/chemical_reaction/stable_plasma
+	results = list(/datum/reagent/stable_plasma = 5)
+	required_reagents = list(/datum/reagent/toxin/plasma = 5, /datum/reagent/water = 5, /datum/reagent/stabilizing_agent = 1)
+
 
 /datum/chemical_reaction/mutationtoxin/stable
 	results = list(/datum/reagent/mutationtoxin = 1)
