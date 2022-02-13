@@ -162,6 +162,15 @@
 			C.adjust_fire_stacks(5)
 			C.IgniteMob()
 
+/datum/chemical_reaction/reagent_explosion/plasmawater_explosion
+	required_reagents = list(/datum/reagent/water = 1, /datum/reagent/toxin/plasma = 1)
+	strengthdiv = 10
+
+/datum/chemical_reaction/reagent_explosion/plasmawater_explosion/on_reaction(datum/reagents/holder)
+	if(holder.has_reagent(/datum/reagent/stabilizing_agent))
+		return
+	..()
+
 /*WS Edit - No Cobby
 /datum/chemical_reaction/gunpowder
 	results = list(/datum/reagent/gunpowder = 3)
