@@ -25,8 +25,8 @@ GLOBAL_LIST_INIT(admin_verbs_debug_mapping, list(
 	/client/proc/intercom_view, 			//-errorage
 	/client/proc/air_status, //Air things
 	/client/proc/Cell, //More air things
-	/client/proc/check_plumbing, //check plumbing
-	/client/proc/check_wiring, //check power
+	/client/proc/check_atmos,
+	/client/proc/check_wiring,
 	/client/proc/count_objects_on_z_level,
 	/client/proc/count_objects_all,
 	/client/proc/cmd_assume_direct_control,	//-errorage

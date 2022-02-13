@@ -12,6 +12,7 @@
 	icon_state = "junior_engineer_skirt"
 	body_parts_covered = CHEST|GROIN|ARMS
 	can_adjust = FALSE
+	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON
 
 /obj/item/clothing/under/rank/engineering/engineer/electrician
 	name = "electrician jumpsuit"
@@ -25,6 +26,7 @@
 	icon_state = "electrician_skirt"
 	body_parts_covered = CHEST|GROIN|ARMS
 	can_adjust = FALSE
+	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON
 
 /obj/item/clothing/under/rank/engineering/engineer/maintenance_tech
 	name = "maintenance technician jumpsuit"
@@ -38,6 +40,7 @@
 	icon_state = "maintenance_tech_skirt"
 	body_parts_covered = CHEST|GROIN|ARMS
 	can_adjust = FALSE
+	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON
 
 /obj/item/clothing/under/rank/engineering/engineer/telecomm_specialist
 	name = "telecommunications specialist jumpsuit"
@@ -51,6 +54,7 @@
 	icon_state = "telecomm_specialist_skirt"
 	body_parts_covered = CHEST|GROIN|ARMS
 	can_adjust = FALSE
+	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON
 
 /obj/item/clothing/under/suit/ce
 	name = "engineering coordinator suit"
@@ -68,6 +72,7 @@
 	icon_state = "engineering_coordinator_skirt"
 	body_parts_covered = CHEST|GROIN|ARMS
 	can_adjust = FALSE
+	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON
 
 /obj/item/clothing/under/suit/senior_engineer
 	name = "senior engineer suit"
@@ -85,6 +90,7 @@
 	icon_state = "senior_engineer_skirt"
 	body_parts_covered = CHEST|GROIN|ARMS
 	can_adjust = FALSE
+	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON
 
 /obj/item/clothing/under/suit/senior_atmos
 	name = "senior atmospheric technician suit"
@@ -98,9 +104,9 @@
 	name = "senior atmospheric technician skirtsuit"
 	desc = "A skirtsuit with atmospheric colors, meant to be worn by senior staff."
 	icon_state = "senior_atmos_skirt"
-
 	body_parts_covered = CHEST|GROIN|ARMS
 	can_adjust = FALSE
+	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON
 
 /obj/item/clothing/under/rank/engineering/atmospheric_technician/life_support_specialist
 	name = "life support specialists's jumpsuit"
@@ -115,6 +121,7 @@
 	icon_state = "life_support_specialist_skirt"
 	body_parts_covered = CHEST|GROIN|ARMS
 	can_adjust = FALSE
+	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON
 
 
 /obj/item/clothing/under/rank/engineering/atmospheric_technician/firefighter
@@ -130,4 +137,5 @@
 	icon_state = "firefighter_skirt"
 	body_parts_covered = CHEST|GROIN|ARMS
 	can_adjust = FALSE
+	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON
 

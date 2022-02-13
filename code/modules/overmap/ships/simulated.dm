@@ -35,7 +35,7 @@
 	var/obj/structure/overmap/docked
 	///The docking port of the linked shuttle
 	var/obj/docking_port/mobile/shuttle
-	///The map template the shuttle was spawned from, if it was indeed created from a template
+	///The map template the shuttle was spawned from, if it was indeed created from a template. CAN BE NULL (ex. custom-built ships).
 	var/datum/map_template/shuttle/source_template
 
 /obj/structure/overmap/ship/simulated/Initialize(mapload, obj/docking_port/mobile/_shuttle, datum/map_template/shuttle/_source_template)
@@ -48,7 +48,11 @@
 	name = shuttle.name
 	source_template = _source_template
 	calculate_mass()
+#ifdef UNIT_TESTS
+	set_ship_name("[source_template]")
+#else
 	set_ship_name("[source_template.prefix] [pick_list_replacements(SHIP_NAMES_FILE, pick(source_template.name_categories))]", TRUE)
+#endif
 	refresh_engines()
 	check_loc()
 
@@ -202,7 +206,7 @@
   * Proc called after a shuttle is moved, used for checking a ship's location when it's moved manually (E.G. calling the mining shuttle via a console)
   */
 /obj/structure/overmap/ship/simulated/proc/check_loc()
-	var/docked_object = shuttle.current_ship
+	var/docked_object = SSovermap.get_overmap_object_by_location(shuttle)
 	if(docked_object == loc) //The docked object is correct, move along
 		return TRUE
 	if(state == OVERMAP_SHIP_DOCKING || state == OVERMAP_SHIP_UNDOCKING)
@@ -260,6 +264,23 @@
 					S.shuttle.shuttle_areas |= shuttle.shuttle_areas
 				forceMove(docking_target)
 				state = OVERMAP_SHIP_IDLE
+				SEND_GLOBAL_SIGNAL(COMSIG_GLOB_SHIP_DOCK_COMPLETE, src, docking_target)
+				//Displays planet information on land because thats fucking COOL (TODO: actually make it print planet information)
+				if(istype(docking_target, /obj/structure/overmap/dynamic))
+					var/obj/structure/overmap/dynamic/docked_loc = docking_target
+					if(docked_loc.planet_name)
+						for(var/mob/M as anything in GLOB.player_list)
+							if(shuttle.is_in_shuttle_bounds(M))
+								//AHAHAAHAHAHAHAHAHAAHA
+								addtimer(
+									CALLBACK(
+										M,
+										/mob/.proc/play_screen_text,
+										"<span class='maptext' style=font-size:24pt;text-align:center valign='top'><u>[docked_loc.planet_name]</u></span><br>"\
+										+ "[station_time_timestamp_fancy("hh:mm")]"
+									),
+									shuttle.callTime
+								)
 			else
 				addtimer(CALLBACK(src, .proc/complete_dock, to_dock), 1 SECONDS) //This should never happen, yet it does sometimes.
 		if(OVERMAP_SHIP_UNDOCKING)
