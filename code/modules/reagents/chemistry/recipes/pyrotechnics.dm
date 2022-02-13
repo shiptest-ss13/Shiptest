@@ -134,6 +134,11 @@
 	required_reagents = list(/datum/reagent/water = 1, /datum/reagent/toxin/plasma = 1)
 	strengthdiv = 10
 
+/datum/chemical_reaction/reagent_explosion/plasmawater_explosion/on_reaction(datum/reagents/holder)
+	if(holder.has_reagent(/datum/reagent/stabilizing_agent))
+		return
+	..()
+
 /datum/chemical_reaction/reagent_explosion/potassium_explosion
 	required_reagents = list(/datum/reagent/water = 1, /datum/reagent/potassium = 1)
 	strengthdiv = 10
