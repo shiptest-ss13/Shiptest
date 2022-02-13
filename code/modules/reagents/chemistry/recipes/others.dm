@@ -607,8 +607,9 @@
 	required_reagents = list(/datum/reagent/consumable/milk = 1, /datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/flour = 1)
 
 /datum/chemical_reaction/stable_plasma
-	results = list(/datum/reagent/stable_plasma = 5)
-	required_reagents = list(/datum/reagent/toxin/plasma = 5, /datum/reagent/water = 5, /datum/reagent/stabilizing_agent = 1)
+	results = list(/datum/reagent/stable_plasma = 1)
+	required_reagents = list(/datum/reagent/toxin/plasma = 1, /datum/reagent/water = 1)
+	required_catalysts = list(/datum/reagent/stabilizing_agent = 1)
 
 
 /datum/chemical_reaction/mutationtoxin/stable
