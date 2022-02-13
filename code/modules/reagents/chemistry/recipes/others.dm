@@ -40,6 +40,10 @@
 	for(var/i = 1, i <= created_volume, i++)
 		new /obj/item/stack/sheet/mineral/plasma(location)
 
+/datum/chemical_reaction/stable_plasma
+	results = list(/datum/reagent/stable_plasma = 4)
+	required_reagents = list(/datum/reagent/stabilizing_agent = 1, /datum/reagent/toxin/plasma = 4, /datum/reagent/water = 4)
+
 /datum/chemical_reaction/goldsolidification
 	required_reagents = list(/datum/reagent/consumable/frostoil = 5, /datum/reagent/gold = 20, /datum/reagent/iron = 1)
 	mob_react = FALSE
