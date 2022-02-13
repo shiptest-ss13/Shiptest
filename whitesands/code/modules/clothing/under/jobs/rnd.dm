@@ -12,6 +12,7 @@
 
 	body_parts_covered = CHEST|GROIN|ARMS
 	can_adjust = FALSE
+	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON
 
 /obj/item/clothing/under/rank/rnd/scientist/xenobiologist
 	name = "xenobiologist jumpsuit"
@@ -27,6 +28,7 @@
 
 	body_parts_covered = CHEST|GROIN|ARMS
 	can_adjust = FALSE
+	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON
 
 /obj/item/clothing/under/rank/rnd/scientist/nanite
 	name = "nanite researcher jumpsuit"
@@ -42,6 +44,7 @@
 
 	body_parts_covered = CHEST|GROIN|ARMS
 	can_adjust = FALSE
+	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON
 
 /obj/item/clothing/under/rank/rnd/roboticist/biomech_engineer
 	name = "biomechanical engineer jumpsuit"
@@ -54,6 +57,7 @@
 
 	body_parts_covered = CHEST|GROIN|ARMS
 	can_adjust = FALSE
+	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON
 
 /obj/item/clothing/under/rank/rnd/roboticist/mech_engineer
 	name = "mechatronic engineer jumpsuit"
@@ -66,6 +70,7 @@
 
 	body_parts_covered = CHEST|GROIN|ARMS
 	can_adjust = FALSE
+	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON
 
 /obj/item/clothing/under/suit/senior_scientist
 	name = "senior scientist suit"
@@ -84,6 +89,7 @@
 
 	body_parts_covered = CHEST|GROIN|ARMS
 	can_adjust = FALSE
+	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON
 
 /obj/item/clothing/under/suit/senior_roboticist
 	name = "senior roboticist suit"
@@ -101,3 +107,4 @@
 
 	body_parts_covered = CHEST|GROIN|ARMS
 	can_adjust = FALSE
+	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON
