@@ -608,8 +608,7 @@
 
 /datum/chemical_reaction/stable_plasma
 	results = list(/datum/reagent/stable_plasma = 1)
-	required_reagents = list(/datum/reagent/toxin/plasma = 1, /datum/reagent/water = 1)
-	required_catalysts = list(/datum/reagent/stabilizing_agent = 1)
+	required_reagents = list(/datum/reagent/stabilizing_agent = 1, /datum/reagent/toxin/plasma = 1, /datum/reagent/water = 1)
 
 
 /datum/chemical_reaction/mutationtoxin/stable
