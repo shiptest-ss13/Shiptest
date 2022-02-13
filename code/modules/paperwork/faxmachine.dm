@@ -126,7 +126,7 @@ GLOBAL_LIST_EMPTY(alldepartments)
 				remove_photocopy(document_copy, usr)
 				document_copy = null
 			else
-				attackby(usr.get_active_held_item(), usr)
+				to_chat(user, "<span class='notice'>There's nothing in the tray.</span>")
 		if("dept")
 			if(is_authenticated)
 				var/lastdestination = destination
