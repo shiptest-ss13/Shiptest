@@ -182,6 +182,7 @@
 	name = "dragonslayer's spear"
 	desc = "A bone spear crafted from the leading spine of a fully-grown drake, razor-sharp and hotter then magma. Wielded by the deranged, pyromaniacs, and champions of lavaland."
 	icon = 'icons/obj/items_and_weapons.dmi'
+	icon_state = "dragonspear0"
 	lefthand_file = 'icons/mob/inhands/weapons/polearms_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/polearms_righthand.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/back.dmi'
@@ -195,8 +196,8 @@
 	var/faction_bonus_force = 25
 	attack_verb = list("seared", "braided", "impaled", "smote", "gored")
 	hitsound = 'sound/weapons/sear.ogg'
-	var/cooldown_time = 0 SECONDS
-	COOLDOWN_DECLARE(freeze_cooldown)
+	burner = TRUE
+	burnpower = 4
 
 /obj/item/spear/dragonspear/attack(mob/living/target, mob/living/carbon/human/user)
 	var/nemesis_faction = FALSE
@@ -218,21 +219,9 @@
 
 /obj/item/spear/dragonspear/ComponentInitialize()
 	. = ..()
-	AddComponent(/datum/component/two_handed, force_unwielded=20, force_wielded=25, icon_wielded="[icon_prefix]1")
+	AddComponent(/datum/component/two_handed, force_unwielded=20, force_wielded=25, icon_wielded="dragonspear1")
 	AddComponent(/datum/component/butchering, 60, 150)
-	icon_state = "[icon_prefix]0"
 
 /obj/item/spear/dragonspear/update_icon_state()
-	icon_state = "[icon_prefix]0"
+	icon_state = "dragonspear0"
 
-/obj/item/spear/dragonspear/attack(atom/target, blocked = FALSE)
-	if(iscarbon(target))
-		var/mob/living/carbon/M = target
-		M.adjust_fire_stacks(3)
-		M.IgniteMob()
-		M.apply_damage(5, BURN)
-		M.adjust_bodytemperature(150)
-	if(isanimal(target))
-		var/mob/living/simple_animal/M = target
-		M.apply_damage(15, BURN)
-	..()
