@@ -130,6 +130,10 @@
 	strengthdiv = 5
 	modifier = 5
 
+/datum/chemical_reaction/reagent_explosion/plasmawater_explosion
+	required_reagents = list(/datum/reagent/water = 1, /datum/reagent/toxin/plasma = 1)
+	strengthdiv = 10
+
 /datum/chemical_reaction/reagent_explosion/potassium_explosion
 	required_reagents = list(/datum/reagent/water = 1, /datum/reagent/potassium = 1)
 	strengthdiv = 10
