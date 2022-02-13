@@ -189,5 +189,5 @@
 /turf/open/floor/plasteel/telecomms_floor
 	icon_state = "tcomms"
 	base_icon_state = "tcomms"
-	icon = 'whitesands/icons/turf/floors/misc.dmi'
+	icon = 'icons/turf/floors/misc.dmi'
 	color = null
