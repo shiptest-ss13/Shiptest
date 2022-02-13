@@ -23,9 +23,6 @@ GLOBAL_LIST_EMPTY(gear_datums)
 		if(!use_name)
 			WARNING("Loadout - Missing display name: [G]")
 			continue
-		if(!initial(G.cost))
-			WARNING("Loadout - Missing cost: [G]")
-			continue
 		if(!initial(G.path) && use_category != "OOC") //OOC category does not contain actual items
 			WARNING("Loadout - Missing path definition: [G]")
 			continue
@@ -49,8 +46,6 @@ GLOBAL_LIST_EMPTY(gear_datums)
 	var/description
 	///Path to item.
 	var/path
-	///Number of metacoins
-	var/cost = 0
 	///Slot to equip to.
 	var/slot
 	///Roles that can spawn with this item.
@@ -84,11 +79,10 @@ GLOBAL_LIST_EMPTY(gear_datums)
 	path = npath
 	location = nlocation
 
-/datum/gear/proc/spawn_item(location, metadata, owner)
+/datum/gear/proc/spawn_item(location, mob/owner)
 	var/datum/gear_data/gd
-	if(ishuman(owner) && role_replacements) //If the owner is a human (should be one) and the item in question has a role replacement
-		var/mob/living/carbon/human/H = owner
-		var/job = H.job || H.mind?.assigned_role
+	if(role_replacements) //If the owner is a human (should be one) and the item in question has a role replacement
+		var/job = owner.job || owner.mind?.assigned_role
 		if(job in role_replacements) //If the job has an applicable replacement
 			gd = new(role_replacements[job], location)
 			return new gd.path(gd.location)

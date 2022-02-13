@@ -17,6 +17,7 @@
 	item_state = "scratch"
 	body_parts_covered = CHEST|GROIN|ARMS
 	fitted = FEMALE_UNIFORM_TOP
+	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON
 
 /obj/item/clothing/under/suit/sl
 	desc = "It's a very amish looking suit."
@@ -49,6 +50,7 @@
 	item_state = "bar_suit"
 	alt_covers_chest = TRUE
 	fitted = FEMALE_UNIFORM_TOP
+	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON
 
 /obj/item/clothing/under/suit/black_really
 	name = "executive suit"
@@ -63,6 +65,7 @@
 	item_state = "really_black_suit_skirt"
 	body_parts_covered = CHEST|GROIN|ARMS
 	fitted = FEMALE_UNIFORM_TOP
+	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON
 
 /obj/item/clothing/under/suit/black/female
 	name = "executive suit"
