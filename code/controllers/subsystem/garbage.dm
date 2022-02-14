@@ -250,7 +250,6 @@ SUBSYSTEM_DEF(garbage)
 /datum/qdel_item/New(mytype)
 	name = "[mytype]"
 
-
 // Should be treated as a replacement for the 'del' keyword.
 // Datums passed to this will be given a chance to clean up references to allow the GC to collect them.
 /proc/qdel(datum/D, force=FALSE, ...)
@@ -260,41 +259,10 @@ SUBSYSTEM_DEF(garbage)
 		if(!D)
 			return
 
-	if(!istype(D)) //FOR THE LOVE OF FUCK DO NOT MERGE THIS TO MASTER
-		var/str_type
-		if(isnull(D))
-			str_type = "NULL"
-		else if(isnum(D))
-			str_type = "NUMBER"
-		else if(istext(D))
-			str_type = "TEXT"
-		else if(isicon(D))
-			str_type = "ICON"
-		else if(isfile(D))
-			str_type = "FILE"
-		else if(ispath(D))
+	if(!istype(D))
+		if(ispath(D))
 			CRASH("BAD DEL: PATH OF [D].")
-		else if(!str_type)
-			str_type = "SOMETHING ELSE???"
-		try
-			del(D)
-		catch
-			var/str_type2
-			if(isnull(D))
-				str_type2 = "NULL"
-			else if(isnum(D))
-				str_type2 = "NUMBER"
-			else if(istext(D))
-				str_type2 = "TEXT"
-			else if(isicon(D))
-				str_type2 = "ICON"
-			else if(isfile(D))
-				str_type2 = "FILE"
-			else if(ispath(D))
-				str_type = "PATH OF [D]"
-			else if(!str_type)
-				str_type2 = "SOMETHING ELSE???"
-			CRASH("BAD DEL: [D] OF CLASS [str_type] PRE-DEL, [str_type2] POST-DEL")
+		del(D)
 		return
 
 	var/datum/qdel_item/I = SSgarbage.items[D.type]
