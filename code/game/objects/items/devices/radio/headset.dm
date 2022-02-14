@@ -67,13 +67,13 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 		return ITALICS | REDUCE_RANGE
 	return ..()
 
-/obj/item/radio/headset/can_receive(freq, level, AIuser)
+/obj/item/radio/headset/can_receive(freq, map_zones, AIuser)
 	if(ishuman(src.loc))
 		var/mob/living/carbon/human/H = src.loc
 		if(H.ears == src)
-			return ..(freq, level)
+			return ..(freq, map_zones)
 	else if(AIuser)
-		return ..(freq, level)
+		return ..(freq, map_zones)
 	return FALSE
 
 /obj/item/radio/headset/ui_data(mob/user)
@@ -283,8 +283,8 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 	keyslot2 = new /obj/item/encryptionkey/ai
 	command = TRUE
 
-/obj/item/radio/headset/silicon/can_receive(freq, level)
-	return ..(freq, level, TRUE)
+/obj/item/radio/headset/silicon/can_receive(freq, map_zones)
+	return ..(freq, map_zones, TRUE)
 
 /obj/item/radio/headset/attackby(obj/item/W, mob/user, params)
 	user.set_machine(src)

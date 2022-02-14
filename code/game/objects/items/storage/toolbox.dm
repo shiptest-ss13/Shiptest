@@ -179,6 +179,10 @@
 	new /obj/item/multitool/syndie(src) //WS End
 	new /obj/item/clothing/gloves/combat(src)
 
+/obj/item/storage/toolbox/syndicate/empty
+
+/obj/item/storage/toolbox/syndicate/empty/PopulateContents()
+	return
 /obj/item/storage/toolbox/drone
 	name = "mechanical toolbox"
 	icon_state = "blue"

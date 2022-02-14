@@ -39,7 +39,7 @@
 	slowdown = 0.5
 	floor_variance = 30
 
-/turf/open/floor/plating/asteroid/basalt/wasteland/Initialize()
+/turf/open/floor/plating/asteroid/basalt/wasteland/Initialize(mapload, inherited_virtual_z)
 	.=..()
 	if(prob(floor_variance))
 		icon_state = "[environment_type][rand(0,6)]"
@@ -125,7 +125,7 @@
 /obj/structure/closet/crate/grave/PopulateContents()  //GRAVEROBBING IS NOW A FEATURE
 	..()
 	new /obj/effect/decal/remains/human/grave(src)
-	switch(rand(1,8))
+	switch(rand(1,7))
 		if(1)
 			new /obj/item/coin/gold(src)
 			new /obj/item/storage/wallet(src)

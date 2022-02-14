@@ -55,9 +55,6 @@
 	name = "Escape Pod"
 	},
 /obj/effect/mapping_helpers/airlock/cyclelink_helper,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
-	dir = 1
-	},
 /obj/effect/turf_decal/industrial/warning,
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
@@ -116,9 +113,7 @@
 /obj/effect/turf_decal/corner/black{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/black{
-	dir = 2
-	},
+/obj/effect/turf_decal/corner/black,
 /turf/open/floor/plasteel/white,
 /area/ship/security)
 "ci" = (
@@ -167,8 +162,7 @@
 	can_move_docking_ports = 1;
 	launch_status = 0;
 	name = "SS Galaxy";
-	port_direction = 4;
-	undock_roundstart = 1
+	port_direction = 4
 	},
 /turf/closed/wall/r_wall,
 /area/ship/cargo)
@@ -192,9 +186,7 @@
 /obj/effect/turf_decal/corner/black{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/black{
-	dir = 2
-	},
+/obj/effect/turf_decal/corner/black,
 /turf/open/floor/plasteel/white,
 /area/ship/security)
 "dv" = (
@@ -334,9 +326,7 @@
 /obj/effect/turf_decal/corner/black{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/black{
-	dir = 2
-	},
+/obj/effect/turf_decal/corner/black,
 /turf/open/floor/plasteel/white,
 /area/ship/security)
 "iv" = (
@@ -346,9 +336,7 @@
 /obj/effect/turf_decal/corner/black{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/black{
-	dir = 2
-	},
+/obj/effect/turf_decal/corner/black,
 /turf/open/floor/plasteel/white,
 /area/ship/security)
 "iO" = (
@@ -405,9 +393,7 @@
 /obj/effect/turf_decal/corner/black{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/black{
-	dir = 2
-	},
+/obj/effect/turf_decal/corner/black,
 /turf/open/floor/plasteel/white,
 /area/ship/security)
 "ka" = (
@@ -925,9 +911,7 @@
 /obj/effect/turf_decal/corner/black{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/black{
-	dir = 2
-	},
+/obj/effect/turf_decal/corner/black,
 /turf/open/floor/plasteel/white,
 /area/ship/security)
 "ua" = (
@@ -1213,9 +1197,7 @@
 /obj/effect/turf_decal/corner/black{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/black{
-	dir = 2
-	},
+/obj/effect/turf_decal/corner/black,
 /turf/open/floor/plasteel/white,
 /area/ship/security)
 "yj" = (
@@ -1850,9 +1832,7 @@
 /obj/effect/turf_decal/corner/black{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/black{
-	dir = 2
-	},
+/obj/effect/turf_decal/corner/black,
 /turf/open/floor/plasteel/white,
 /area/ship/security)
 "HT" = (
@@ -1985,9 +1965,7 @@
 /obj/effect/turf_decal/corner/black{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/black{
-	dir = 2
-	},
+/obj/effect/turf_decal/corner/black,
 /turf/open/floor/plasteel/white,
 /area/ship/security)
 "Kz" = (
@@ -2184,9 +2162,7 @@
 /obj/effect/turf_decal/corner/black{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/black{
-	dir = 2
-	},
+/obj/effect/turf_decal/corner/black,
 /turf/open/floor/plasteel/white,
 /area/ship/security)
 "Pq" = (
@@ -2555,9 +2531,7 @@
 /obj/effect/turf_decal/corner/black{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/black{
-	dir = 2
-	},
+/obj/effect/turf_decal/corner/black,
 /turf/open/floor/plasteel/white,
 /area/ship/security)
 "YH" = (
@@ -2582,9 +2556,6 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/power/apc/auto_name/west,
 /obj/structure/cable,
-/obj/machinery/power/terminal{
-	dir = 8
-	},
 /turf/open/floor/plasteel/stairs/medium,
 /area/ship/bridge)
 "Zb" = (
@@ -2641,9 +2612,7 @@
 /obj/effect/turf_decal/corner/black{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/black{
-	dir = 2
-	},
+/obj/effect/turf_decal/corner/black,
 /turf/open/floor/plasteel/white,
 /area/ship/security)
 "ZR" = (

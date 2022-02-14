@@ -33,7 +33,7 @@
 	id = "transport18"
 	suffix = "transport18.dmm"
 	name = "Booze Cruise"
-	description = "A freighter, damaged beyond repair and surrounded by a cloud of aluminum and... beer foam?"
+	description = "A freighter, damaged beyond repair and surrounded by a cloud of aluminium and... beer foam?"
 
 /datum/map_template/ruin/space/fueldepot
 	id = "fueldepot"

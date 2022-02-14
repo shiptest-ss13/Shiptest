@@ -1,12 +1,10 @@
-
 /mob/living/proc/get_bodypart(zone)
 	return
 
 /mob/living/carbon/get_bodypart(zone)
 	if(!zone)
 		zone = BODY_ZONE_CHEST
-	for(var/X in bodyparts)
-		var/obj/item/bodypart/L = X
+	for(var/obj/item/bodypart/L as anything in bodyparts)
 		if(L.body_zone == zone)
 			return L
 
@@ -132,39 +130,36 @@
 
 ///Remove all embedded objects from all limbs on the carbon mob
 /mob/living/carbon/proc/remove_all_embedded_objects()
-	for(var/X in bodyparts)
-		var/obj/item/bodypart/L = X
+	for(var/obj/item/bodypart/L as anything in bodyparts)
 		for(var/obj/item/I in L.embedded_objects)
 			remove_embedded_object(I)
 
 /mob/living/carbon/proc/has_embedded_objects(include_harmless=FALSE)
-	for(var/X in bodyparts)
-		var/obj/item/bodypart/L = X
+	for(var/obj/item/bodypart/L as anything in bodyparts)
 		for(var/obj/item/I in L.embedded_objects)
 			if(!include_harmless && I.isEmbedHarmless())
 				continue
 			return TRUE
 
 //Helper for quickly creating a new limb - used by augment code in species.dm spec_attacked_by
+//
+// FUCK YOU AUGMENT CODE - With love, Kapu
+//Hi Kapu
 /mob/living/carbon/proc/newBodyPart(zone, robotic, fixed_icon)
 	var/obj/item/bodypart/L
 	switch(zone)
 		if(BODY_ZONE_L_ARM)
-			L = new /obj/item/bodypart/l_arm()
+			L = new dna.species.species_l_arm()
 		if(BODY_ZONE_R_ARM)
-			L = new /obj/item/bodypart/r_arm()
+			L = new dna.species.species_r_arm()
 		if(BODY_ZONE_HEAD)
-			L = new /obj/item/bodypart/head()
+			L = new dna.species.species_head()
 		if(BODY_ZONE_L_LEG)
-			L = new /obj/item/bodypart/l_leg()
+			L = new dna.species.species_l_leg()
 		if(BODY_ZONE_R_LEG)
-			L = new /obj/item/bodypart/r_leg()
+			L = new dna.species.species_r_leg()
 		if(BODY_ZONE_CHEST)
-			L = new /obj/item/bodypart/chest()
-	if(L)
-		L.update_limb(fixed_icon, src)
-		if(robotic)
-			L.change_bodypart_status(BODYPART_ROBOTIC)
+			L = new dna.species.species_chest()
 	. = L
 
 /mob/living/carbon/monkey/newBodyPart(zone, robotic, fixed_icon)
@@ -185,7 +180,7 @@
 	if(L)
 		L.update_limb(fixed_icon, src)
 		if(robotic)
-			L.change_bodypart_status(BODYPART_ROBOTIC)
+			L.change_bodypart_status(BODYTYPE_ROBOTIC)
 	. = L
 
 /mob/living/carbon/alien/larva/newBodyPart(zone, robotic, fixed_icon)
@@ -198,7 +193,7 @@
 	if(L)
 		L.update_limb(fixed_icon, src)
 		if(robotic)
-			L.change_bodypart_status(BODYPART_ROBOTIC)
+			L.change_bodypart_status(BODYTYPE_ROBOTIC)
 	. = L
 
 /mob/living/carbon/alien/humanoid/newBodyPart(zone, robotic, fixed_icon)
@@ -219,7 +214,7 @@
 	if(L)
 		L.update_limb(fixed_icon, src)
 		if(robotic)
-			L.change_bodypart_status(BODYPART_ROBOTIC)
+			L.change_bodypart_status(BODYTYPE_ROBOTIC)
 	. = L
 
 
@@ -253,37 +248,3 @@
 		if("orange")
 			. = "ffc905"
 
-/mob/living/carbon/proc/Digitigrade_Leg_Swap(swap_back)
-	var/body_plan_changed = FALSE
-	for(var/X in bodyparts)
-		var/obj/item/bodypart/O = X
-		var/obj/item/bodypart/N
-		if((!O.use_digitigrade && swap_back == FALSE) || (O.use_digitigrade && swap_back == TRUE))
-			if(O.body_part == LEG_LEFT)
-				if(swap_back == TRUE)
-					N = new /obj/item/bodypart/l_leg
-				else
-					N = new /obj/item/bodypart/l_leg/digitigrade
-			else if(O.body_part == LEG_RIGHT)
-				if(swap_back == TRUE)
-					N = new /obj/item/bodypart/r_leg
-				else
-					N = new /obj/item/bodypart/r_leg/digitigrade
-		if(!N)
-			continue
-		body_plan_changed = TRUE
-		O.drop_limb(1)
-		qdel(O)
-		N.attach_limb(src) //no sanity for if this fails here because we just dropped out a limb of the same zone, SHOULD be okay
-	if(body_plan_changed && ishuman(src))
-		var/mob/living/carbon/human/H = src
-		if(H.w_uniform)
-			var/obj/item/clothing/under/U = H.w_uniform
-			if(U.mutantrace_variation)
-				if(swap_back)
-					U.adjusted = NORMAL_STYLE
-				else
-					U.adjusted = DIGITIGRADE_STYLE
-				H.update_inv_w_uniform()
-		if(H.shoes && !swap_back)
-			H.dropItemToGround(H.shoes)

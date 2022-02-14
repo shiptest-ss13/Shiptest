@@ -9,7 +9,7 @@ GLOBAL_VAR_INIT(highlander, FALSE)
 	send_to_playing_players("<span class='boldannounce'><font size=6>THERE CAN BE ONLY ONE</font></span>")
 
 	for(var/obj/item/disk/nuclear/N in GLOB.poi_list)
-		var/datum/component/stationloving/component = N.GetComponent(/datum/component/stationloving)
+		var/datum/component/shiploving/component = N.GetComponent(/datum/component/shiploving)
 		if (component)
 			component.relocate() //Gets it out of bags and such
 

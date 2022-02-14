@@ -27,9 +27,11 @@
 	var/girder_type = /obj/structure/girder
 
 	var/list/dent_decals
+	/// The underlay generated and applied when a chisel makes a wall diagonal. Stored here for removal on un-diagonalizing
+	var/mutable_appearance/smooth_underlay
 
 
-/turf/closed/wall/Initialize(mapload)
+/turf/closed/wall/Initialize(mapload, inherited_virtual_z)
 	. = ..()
 	if(smoothing_flags & SMOOTH_DIAGONAL_CORNERS && fixed_underlay) //Set underlays for the diagonal walls.
 		var/mutable_appearance/underlay_appearance = mutable_appearance(layer = TURF_LAYER, plane = FLOOR_PLANE)

@@ -10,21 +10,17 @@ If you have difficulty, ask for help in the #coding-general channel on our disco
 
 ## Introduction
 
-Hello and welcome to White Sands' contributing page. You are here because you are curious or interested in contributing - thank you! Everyone is free to contribute to this project as long as they follow the simple guidelines and specifications below; at WS, we strive to maintain code stability and maintainability, and to do that, we need all pull requests to hold up to those specifications. It's in everyone's best interests - including yours! - if the same bug doesn't have to be fixed twice because of duplicated code.
+Hello and welcome to Shiptest's contributing page. You are here because you are curious or interested in contributing - thank you! Everyone is free to contribute to this project as long as they follow the simple guidelines and specifications below; at Shiptest, we strive to maintain code stability and maintainability, and to do that, we need all pull requests to hold up to those specifications. It's in everyone's best interests - including yours! - if the same bug doesn't have to be fixed twice because of duplicated code.
 
 First things first, we want to make it clear how you can contribute (if you've never contributed before), as well as the kinds of powers the team has over your additions, to avoid any unpleasant surprises if your pull request is closed for a reason you didn't foresee.
 
 ## Getting Started
 
-White Sands doesn't usually have a list of goals and features to add; we instead allow freedom for contributors to suggest and create their ideas for the game. That doesn't mean we aren't determined to squash bugs, which unfortunately pop up a lot due to the deep complexity of the game. Here are some useful starting guides, if you want to contribute or if you want to know what challenges you can tackle with zero knowledge about the game's code structure.
-
+Shiptest doesn't usually have a list of goals and features to add; we instead allow freedom for contributors to suggest and create their ideas for the game. That doesn't mean we aren't determined to squash bugs, which unfortunately pop up a lot due to the deep complexity of the game. Here are some useful starting guides, if you want to contribute or if you want to know what challenges you can tackle with zero knowledge about the game's code structure.
+<!--> This needs to be updated still
 If you want to contribute the first thing you'll need to do is [set up Git](https://wiki.white-sands.space/Setting_up_git) so you can download the source code.
 After setting it up, optionally navigate your git commandline to the project folder and run the command: 'git config blame.ignoreRevsFile .git-blame-ignore-revs'
-
-We have a [list of guides on the wiki](https://wiki.white-sands.space/index.php/Guides#Development_and_Contribution_Guides) that will help you get started contributing to White Sands with Git and Dream Maker. For beginners, it is recommended you work on small projects like bugfixes at first. If you need help learning to program in BYOND, check out this [repository of resources](http://www.byond.com/developer/articles/resources).
-
-There is an open list of approachable issues for [your inspiration here](https://github.com/shiptest-ss13/Shiptestissues?q=is%3Aopen+is%3Aissue+label%3A%22Good+First+Issue%22).e
-
+<!-->
 You can of course, as always, ask for help on the discord channels, or the forums, We're just here to have fun and help out, so please don't expect professional support.
 
 ## Meet the Team
@@ -35,7 +31,7 @@ The Head Developer is responsible for controlling, adding, and removing maintain
 
 ### Maintainers
 
-Maintainers are quality control. If a proposed pull request doesn't meet the following specifications, they can request you to change it, or simply just close the pull request. Maintainers are required to give a reason for closing the pull request.
+Maintainers are quality control. If a proposed pull request doesn't meet the following specifications, they can request you to change it, or simply just close the pull request. Maintainers can close a pull request for the following reasons: The pull request doesn't follow the guidelines, excessively undocumented changes, failure to comply with coding standards. Note that maintainers should generally help bring a pull request up to standard instead of outright closing the PR; however if the pull request author does not comply with the given guidelines or refuses to adhere to the required coding standards the pull request will be closed. **Maintainers must have a valid reason to close a pull request and state what the reason is when they close the pull request.**
 
 Maintainers can revert your changes if they feel they are not worth maintaining or if they did not live up to the quality specifications.
 
@@ -44,6 +40,13 @@ Maintainers can revert your changes if they feel they are not worth maintaining 
 The Head Spriter controls sprites and aesthetic that get into the game. While sprites for brand-new additions are generally accepted regardless of quality, modified current art assets fall to the Head Spriter, who can decide whether or not a sprite tweak is both merited and a suitable replacement.
 
 They also control the general "perspective" of the game - how sprites should generally look, especially the angle from which they're viewed. An example of this is the 3/4 perspective, which is a bird's eye view from above the object being viewed.
+
+### Head Mapper
+
+The Head Mapper controls ships and all variants of shuttles, including their balance and cost. Final decision on whether or not a shuttle is added is at their discretion and cannot be vetoed by anyone other than the Head Coder.
+
+### Maintainer Code of Conduct
+Maintainers are expected to maintain the codebase in its entirety. This means that maintainers are in charge of pull requests, issues, and the Git discussion board. Maintainers have say on what will and will not be merged. Maintainers should assign themselves to pull requests that they are claiming and reviewing and should respect when others assign themselves to a pull request and not interfere except in situations where they believe a pull request to be heavily detrimental to the codebase or its playerbase. **Maintainers are not server admins and should not use their rank on the server to perform admin related tasks except where asked to by a Senior Admin or higher.**
 
 ## Specifications
 
@@ -112,6 +115,12 @@ The use of the : operator to override type safety checks is not allowed. You mus
 ### Type paths must begin with a /
 eg: `/datum/thing`, not `datum/thing`
 
+### Paths must be in snake case
+eg: `/obj/handheld_tool`, not `/obj/handheldTool`
+
+### Improve code in any files you touch
+If there is legacy code in a file you are modifying it is also your responsibility to bring the old code up to standards. In general this means that if you are expanding upon a proc that has single letter var names, improperly formatted var names, etc you should be modernizing that proc. **This does not mean you have to refactor the entirety of the file, although doing so would be appreciated.**
+
 ### Type paths must be lowercase
 eg: `/datum/thing/blue`, not `datum/thing/BLUE` or `datum/thing/Blue`
 
@@ -135,8 +144,6 @@ While DM allows other ways of declaring variables, this one should be used for c
 ### Tabs, not spaces
 You must use tabs to indent your code, NOT SPACES.
 
-(You may use spaces to align something, but you should tab to the block level first, then add the remaining spaces)
-
 ### No hacky code
 Hacky code, such as adding specific checks, is highly discouraged and only allowed when there is ***no*** other option. (Protip: 'I couldn't immediately think of a proper way so thus there must be no other option' is not gonna cut it here! If you can't think of anything else, say that outright and admit that you need help with it. Maintainers exist for exactly that reason.)
 
@@ -147,6 +154,39 @@ Copying code from one place to another may be suitable for small, short-time pro
 
 Instead you can use object orientation, or simply placing repeated code in a function, to obey this specification easily.
 
+### Document your code
+Our codebase uses an interpreter called SpacemanDMM which includes the helpful ability to provide tooltips and inform you of documentation for various procs and vars. You are required to document any code you add so that it is readable and understandable to the maintainers of the codebase and also to other contributors.
+eg:
+```dm
+/// This proc causes the object to do a thing to the target mob
+/obj/proc/do_thing(mob/target)
+```
+eg2:
+```dm
+/* This is a special proc that causes the target mob to instantly gib itself
+ * If the argument recurse_contents is passed a truthy value all mobs inside the contents are also gibbed
+ */
+/mob/proc/gib_recurse(recurse_contents=FALSE)
+	if(!recurse_contents)
+		gib()
+		return
+	for(var/mob/other in contents)
+		other.gib()
+	gib()
+```
+
+### Use self-explanatory var names
+When adding any new vars to a type, they must be self-explanatory and concise.
+eg:`var/ticks_to_explosion` instead of `var/tte`
+
+### Asyncronous proc calls
+If there is something that must be done via an asyncronous call, it is required that it be done using the INVOKE_ASYNC macro.
+
+### Signal Handlers
+If you are registering signal handlers onto a type, the signal handler must have the SIGNAL_HANDLER definition and cannot sleep. If there is code in your signal handler that requires use of the sleep proc you must have your signal hander handle it via an invoke async call.
+
+### Data caching
+Types and procs that need to create or load large amounts of data that (should) never change needs to be cached into a static var so that in the event the proc needs to load the data again instead of recreating the data it has a cache that it can pull from, this reduces overhead and memory usage.
 ### Startup/Runtime tradeoffs with lists and the "hidden" init proc
 First, read the comments in [this BYOND thread](http://www.byond.com/forum/?post=2086980&page=2#comment19776775), starting where the link takes you.
 
@@ -158,7 +198,7 @@ There are two key points here:
 
 Remember: although this tradeoff makes sense in many cases, it doesn't cover them all. Think carefully about your addition before deciding if you need to use it.
 
-### Prefer `Initialize()` over `New()` for atoms
+### Prefer `Initialize()` over `New()` when possible
 Our game controller is pretty good at handling long operations and lag, but it can't control what happens when the map is loaded, which calls `New` for all atoms on the map. If you're creating a new atom, use the `Initialize` proc to do what you would normally do in `New`. This cuts down on the number of proc calls needed when the world is loaded. See here for details on `Initialize`: https://github.com/tgstation/tgstation/blob/master/code/game/atoms.dm#L49
 While we normally encourage (and in some cases, even require) bringing out of date code up to date when you make unrelated changes near the out of date code, that is not the case for `New` -> `Initialize` conversions. These systems are generally more dependant on parent and children procs so unrelated random conversions of existing things can cause bugs that take months to figure out.
 
@@ -290,7 +330,6 @@ The following coding styles are not only not enforced at all, but are generally 
 
 ### Operators
 #### Spacing
-(this is not strictly enforced, but more a guideline for readability's sake)
 
 * Operators that should be separated by spaces
 	* Boolean and logic operators like &&, || <, >, ==, etc (but not !)
@@ -393,7 +432,7 @@ There is no strict process when it comes to merging pull requests. Pull requests
 
 * You are going to be expected to document all your changes in the pull request. Failing to do so will mean delaying it as we will have to question why you made the change. On the other hand, you can speed up the process by making the pull request readable and easy to understand, with diagrams or before/after data.
 
-* We ask that you use the changelog system to document your change, which prevents our players from being caught unaware by changes - you can find more information about this [on this wiki page](https://wiki.white-sands.space/Guide_to_Changelogs).
+* We ask that you use the changelog system to document your change, which prevents our players from being caught unaware by changes.
 
 * If you are proposing multiple changes, which change many different aspects of the code, you are expected to section them off into different pull requests in order to make it easier to review them and to deny/accept the changes that are deemed acceptable. (This is called atomization, if someone asks you to do it.)
 
@@ -413,7 +452,7 @@ There is no strict process when it comes to merging pull requests. Pull requests
 
 ## Porting features/sprites/sounds/tools from other codebases
 
-If you are porting features/tools from other codebases, you must give them credit where it's due. Typically, crediting them in your pull request and the changelog is the recommended way of doing it. Take note of what license they use though, porting stuff from AGPLv3 and GPLv3 codebases are allowed.
+If you are porting features/tools from other codebases, you must give the original authors credit where it's due. Typically, crediting them in your pull request and the changelog is the recommended way of doing it. Take note of what license they use though, porting stuff from AGPLv3 and GPLv3 codebases are allowed.
 
 Regarding sprites & sounds, you must credit the artist and possibly the codebase. All /tg/station assets including icons and sound are under a [Creative Commons 3.0 BY-SA license](https://creativecommons.org/licenses/by-sa/3.0/) unless otherwise indicated. However if you are porting assets from GoonStation or usually any assets under the [Creative Commons 3.0 BY-NC-SA license](https://creativecommons.org/licenses/by-nc-sa/3.0/) are to go into the 'goon' folder of the /tg/station codebase.
 
@@ -426,7 +465,5 @@ Do not add any of the following in a Pull Request or risk getting the PR closed:
 
 Just because something isn't on this list doesn't mean that it's acceptable. Use common sense above all else.
 
-## A word on Git
-Yes, we know that the files have a tonne of mixed Windows and Linux line endings. Attempts to fix this have been met with less than stellar success, and as such we have decided to give up caring until there comes a time when it matters.
-
-Therefore, EOF settings of main repo are forbidden territory one must avoid wandering into, at risk of losing body and/or mind to the Git gods.
+## Line Endings
+All newly created, uploaded, or modified files in this codebase are required to be using the Unix Schema for line endings. That means the only acceptable line ending is '__\n__', not '__\r\n__' nor '__\r\r__'

@@ -148,6 +148,13 @@
 	resistance_flags = FLAMMABLE
 	tableVariant = /obj/structure/table/wood/fancy
 
+/obj/item/stack/tile/carpet/red_gold
+	name = "fancy red carpet"
+	icon_state = "tile-carpet-red_gold"
+	item_state = "tile-carpet-red_gold"
+	turf_type = /turf/open/floor/carpet/red_gold
+	tableVariant = /obj/structure/table/wood/fancy/red_gold
+
 /obj/item/stack/tile/carpet/black
 	name = "black carpet"
 	icon_state = "tile-carpet-black"
@@ -450,3 +457,17 @@
 
 /obj/item/stack/tile/eighties/loaded
 	amount = 15
+
+/obj/item/stack/tile/glass
+	name = "glass tile"
+	singular_name = "glass floor tile"
+	desc = "The glass you walk on."
+	icon_state = "glass_tile"
+	turf_type = /turf/open/floor/glass
+
+/obj/item/stack/tile/glass/reinforced
+	name = "reinforced glass tile"
+	singular_name = "reinforced glass tile"
+	desc = "The glass you walk on."
+	icon_state = "rglass_tile"
+	turf_type = /turf/open/floor/glass/reinforced

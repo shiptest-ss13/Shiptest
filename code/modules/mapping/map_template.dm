@@ -82,8 +82,21 @@
 	var/x = round((world.maxx - width) * 0.5) + 1
 	var/y = round((world.maxy - height) * 0.5) + 1
 
-	var/datum/space_level/level = SSmapping.add_new_zlevel(name, list(ZTRAIT_AWAY = TRUE))
-	var/datum/parsed_map/parsed = load_map(file(mappath), x, y, level.z_value, no_changeturf=(SSatoms.initialized == INITIALIZATION_INSSATOMS), placeOnTop=TRUE)
+	/// Map templates which reach the boundaries of the world dont get reservation margin.
+	var/reservation_margin = 1
+	if(world.maxx == width && world.maxy == height)
+		reservation_margin = 0
+
+	var/r_width = width + reservation_margin
+	var/r_height = height + reservation_margin
+
+	var/datum/map_zone/mapzone = SSmapping.create_map_zone(name)
+	var/datum/virtual_level/vlevel = SSmapping.create_virtual_level(name, list(), mapzone, r_width, r_height, ALLOCATION_FREE)
+
+	if(reservation_margin)
+		vlevel.reserve_margin(reservation_margin)
+
+	var/datum/parsed_map/parsed = load_map(file(mappath), vlevel.low_x + reservation_margin + x, vlevel.low_y + reservation_margin + y, vlevel.z_value, no_changeturf=(SSatoms.initialized == INITIALIZATION_INSSATOMS), placeOnTop=TRUE)
 	var/list/bounds = parsed.bounds
 	if(!bounds)
 		return FALSE
@@ -95,7 +108,7 @@
 	smooth_zlevel(world.maxz)
 	log_game("Z-level [name] loaded at [x],[y],[world.maxz]")
 
-	return level
+	return mapzone
 
 /datum/map_template/proc/load(turf/T, centered = FALSE)
 	if(centered)
@@ -111,7 +124,7 @@
 							locate(min(T.x+width+1, world.maxx),	min(T.y+height+1, world.maxy), T.z))
 	for(var/L in border)
 		var/turf/turf_to_disable = L
-		turf_to_disable.atmos_adjacent_turfs?.Cut()
+		turf_to_disable.set_sleeping(TRUE)
 
 	// Accept cached maps, but don't save them automatically - we don't want
 	// ruins clogging up memory for the whole round.

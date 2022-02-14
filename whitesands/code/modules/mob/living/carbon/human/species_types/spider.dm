@@ -39,12 +39,12 @@ GLOBAL_LIST_INIT(spider_last, world.file2list("strings/names/spider_last.txt"))
 	foodtype = MEAT | RAW | TOXIC
 
 /datum/species/spider
-	name = "Arachnid"
-	id = "rachnid"
+	name = "Rachnid"
+	id = SPECIES_RACHNID
 	sexes = 0
 	say_mod = "chitters"
 	default_color = "00FF00"
-	species_traits = list(LIPS, NOEYESPRITES, NO_UNDERWEAR)
+	species_traits = list(LIPS, NOEYESPRITES, NO_UNDERWEAR, MUTCOLORS_PARTSONLY)
 	inherent_biotypes = MOB_ORGANIC|MOB_HUMANOID|MOB_BUG
 	mutant_bodyparts = list("spider_legs", "spider_spinneret", "spider_mandibles")
 	default_features = list("spider_legs" = "Plain", "spider_spinneret" = "Plain", "spider_mandibles" = "Plain")
@@ -59,10 +59,17 @@ GLOBAL_LIST_INIT(spider_last, world.file2list("strings/names/spider_last.txt"))
 	mutanttongue = /obj/item/organ/tongue/spider
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | ERT_SPAWN | RACE_SWAP | SLIME_EXTRACT
 	species_language_holder = /datum/language_holder/spider
-	loreblurb = "A species biologically predisposed to a highly competitive attitude and with a strong work ethic, Arachnids make up a growing minority within the workforces of most factions. Males are commonly found on outposts near independent Arachnid civilizations, but the dominant arachnid \"Matriarchs\" have willfully resisted integration into most factions (with deadly consequences.)"
+	loreblurb = "Rachnids are aliens with coincidental physiological similarities to Sol's spiders. Despite visible adaptations that would make them excellent hunters, modern Rachnidian culture revolves around honing the skills and talents of oneself, treating them as forms of self-expression. Rachnids tend to focus on their work intensely, priding themselves on a job well done and languishing if they see themselves as underperforming in their field."
 	var/web_cooldown = 30
 	var/web_ready = TRUE
 	var/spinner_rate = 75
+
+	species_chest = /obj/item/bodypart/chest/rachnid
+	species_head = /obj/item/bodypart/head/rachnid
+	species_l_arm = /obj/item/bodypart/l_arm/rachnid
+	species_r_arm = /obj/item/bodypart/r_arm/rachnid
+	species_l_leg = /obj/item/bodypart/l_leg/rachnid
+	species_r_leg = /obj/item/bodypart/r_leg/rachnid
 
 /proc/random_unique_spider_name(attempts_to_find_unique_name=10)
 	for(var/i in 1 to attempts_to_find_unique_name)

@@ -28,7 +28,7 @@
 	var/list/burnt_states
 
 
-/turf/open/floor/Initialize(mapload)
+/turf/open/floor/Initialize(mapload, inherited_virtual_z)
 	if(color)
 		add_atom_colour(color, FIXED_COLOUR_PRIORITY) //This should already be called in atoms.dm:150 but apparently it's not and I'm too lazy to find out why B)
 	if (!broken_states)

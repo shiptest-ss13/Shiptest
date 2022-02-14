@@ -379,7 +379,7 @@
 	set category = "Admin.Events"
 	set name = "Create Command Report"
 
-	if(!check_rights(R_ADMIN))
+	if(!check_rights(R_FUN))
 		return
 
 	var/input = input(usr, "Enter a Command Report. Ensure it makes sense IC. Command's name is currently set to [command_name()].", "What?", "") as message|null
@@ -408,7 +408,7 @@
 	set category = "Admin.Events"
 	set name = "Change Command Name"
 
-	if(!check_rights(R_ADMIN))
+	if(!check_rights(R_FUN))
 		return
 
 	var/input = input(usr, "Please input a new name for Central Command.", "What?", "") as text|null
@@ -715,15 +715,17 @@
 	if(!weather_type)
 		return
 
-	var/turf/T = get_turf(mob)
-	var/z_level = input("Z-Level to target?", "Z-Level", T?.z) as num|null
-	if(!isnum(z_level))
+	var/datum/map_zone/mapzone = input("Map Zone to target?", "Map Zone") as null|anything in SSmapping.map_zones
+	if(!mapzone)
 		return
 
-	SSweather.run_weather(weather_type, z_level)
+	var/datum/weather_controller/weather_controller = mapzone.weather_controller
+	if(!weather_controller)
+		return
+	weather_controller.run_weather(weather_type)
 
-	message_admins("[key_name_admin(usr)] started weather of type [weather_type] on the z-level [z_level].")
-	log_admin("[key_name(usr)] started weather of type [weather_type] on the z-level [z_level].")
+	message_admins("[key_name_admin(usr)] started weather of type [weather_type] on the map-zone [mapzone].")
+	log_admin("[key_name(usr)] started weather of type [weather_type] on the map-zone [mapzone].")
 	SSblackbox.record_feedback("tally", "admin_verb", 1, "Run Weather")
 
 /client/proc/mass_zombie_infection()
@@ -906,8 +908,9 @@
 		if(ADMIN_PUNISHMENT_ROD)
 			var/turf/T = get_turf(target)
 			var/startside = pick(GLOB.cardinals)
-			var/turf/startT = spaceDebrisStartLoc(startside, T.z)
-			var/turf/endT = spaceDebrisFinishLoc(startside, T.z)
+			var/datum/virtual_level/vlevel = T.get_virtual_level()
+			var/turf/startT = vlevel.get_side_turf(startside)
+			var/turf/endT = vlevel.get_side_turf(REVERSE_DIR(startside))
 			new /obj/effect/immovablerod(startT, endT,target)
 		if(ADMIN_PUNISHMENT_SUPPLYPOD_QUICK)
 			var/target_path = input(usr,"Enter typepath of an atom you'd like to send with the pod (type \"empty\" to send an empty pod):" ,"Typepath","/obj/item/reagent_containers/food/snacks/grown/harebell") as null|text

@@ -387,7 +387,9 @@
 				H.adjustOrganLoss(ORGAN_SLOT_BRAIN, 60, 80)
 			message_admins("[key_name_admin(holder)] made everybody brain damaged")
 		if("floorlava")
-			SSweather.run_weather(/datum/weather/floor_is_lava)
+			/// Should point to a central mapzone.weather_controller, one doesn't exist in shiptest
+			WARNING("Floor lava bus is not implemented.")
+			return
 		if("anime")
 			if(!is_funmin)
 				return
@@ -405,7 +407,7 @@
 				var/mob/living/carbon/human/H = i
 				SEND_SOUND(H, sound('sound/ai/animes.ogg'))
 
-				if(H.dna.species.id == "human")
+				if(H.dna.species.id == SPECIES_HUMAN)
 					if(H.dna.features["tail_human"] == "None" || H.dna.features["ears"] == "None")
 						var/obj/item/organ/ears/cat/ears = new
 						var/obj/item/organ/tail/cat/tail = new

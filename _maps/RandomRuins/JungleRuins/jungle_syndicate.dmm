@@ -7,8 +7,10 @@
 /area/ruin/powered)
 "c" = (
 /obj/machinery/power/port_gen/pacman,
-/obj/structure/cable,
 /obj/effect/decal/cleanable/cobweb,
+/obj/structure/cable{
+	icon_state = "0-6"
+	},
 /turf/open/floor/plating,
 /area/ruin/powered)
 "e" = (
@@ -33,16 +35,23 @@
 /turf/open/floor/plating,
 /area/ruin/powered)
 "j" = (
-/obj/structure/cable,
 /obj/structure/rack,
 /obj/item/storage/toolbox/syndicate,
 /obj/item/stack/sheet/mineral/plasma,
+/obj/item/gun/ballistic/automatic/pistol,
 /turf/open/floor/plating,
 /area/ruin/powered)
 "k" = (
-/obj/structure/chair/plastic,
-/obj/structure/cable,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plating,
+/area/ruin/powered)
+"l" = (
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
 /turf/open/floor/plating,
 /area/ruin/powered)
 "m" = (
@@ -77,10 +86,20 @@
 /obj/item/grenade/frag,
 /turf/open/floor/plating,
 /area/ruin/powered)
+"t" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/porta_turret/syndicate/pod,
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/turf/open/floor/plating,
+/area/ruin/powered)
 "u" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/porta_turret/syndicate/pod,
-/obj/structure/cable,
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
 /turf/open/floor/plating,
 /area/ruin/powered)
 "v" = (
@@ -97,6 +116,12 @@
 /obj/item/grenade/smokebomb,
 /obj/item/grenade/smokebomb,
 /obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating,
+/area/ruin/powered)
+"y" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plating,
 /area/ruin/powered)
 "A" = (
@@ -142,8 +167,8 @@
 /turf/open/floor/plating/dirt,
 /area/ruin/unpowered)
 "K" = (
-/obj/machinery/manned_turret,
-/obj/structure/cable,
+/obj/structure/chair/plastic,
+/mob/living/simple_animal/hostile/syndicate/ranged,
 /turf/open/floor/plating,
 /area/ruin/powered)
 "M" = (
@@ -156,8 +181,18 @@
 /obj/effect/decal/cleanable/blood/gibs/up,
 /turf/open/floor/plating/dirt,
 /area/ruin/unpowered)
+"R" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/barricade/sandbags,
+/turf/open/floor/plating,
+/area/ruin/powered)
 "S" = (
-/mob/living/simple_animal/hostile/syndicate/ranged,
+/obj/structure/cable{
+	icon_state = "5-8"
+	},
+/obj/structure/cable{
+	icon_state = "5-9"
+	},
 /turf/open/floor/plating,
 /area/ruin/powered)
 "T" = (
@@ -180,8 +215,13 @@
 /turf/open/floor/plating/dirt,
 /area/ruin/unpowered)
 "X" = (
-/obj/structure/cable,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/cable{
+	icon_state = "1-10"
+	},
 /turf/open/floor/plating,
 /area/ruin/powered)
 "Y" = (
@@ -189,7 +229,9 @@
 /turf/closed/wall,
 /area/ruin/powered)
 "Z" = (
-/obj/structure/cable,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plating,
 /area/ruin/powered)
 
@@ -219,7 +261,7 @@ a
 a
 I
 c
-X
+k
 F
 i
 M
@@ -230,8 +272,8 @@ a
 W
 b
 j
-V
 S
+V
 p
 C
 o
@@ -242,10 +284,10 @@ v
 U
 X
 Z
-Z
-k
+l
+F
 K
-o
+R
 q
 "}
 (6,1,1) = {"
@@ -253,7 +295,7 @@ n
 Y
 G
 V
-Z
+y
 V
 A
 w
@@ -264,7 +306,7 @@ a
 b
 x
 r
-Z
+y
 e
 I
 I
@@ -275,7 +317,7 @@ a
 b
 w
 o
-u
+t
 b
 a
 a
