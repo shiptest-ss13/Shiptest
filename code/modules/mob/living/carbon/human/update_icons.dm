@@ -139,12 +139,12 @@ There are several things that need to be remembered:
 
 			//Kapu's autistic attempt at digitigrade handling
 			//Hi Kapu
-			if((dna?.species.bodytype & BODYTYPE_DIGITIGRADE && U.supports_variations & DIGITIGRADE_VARIATION))
+			if((dna.species.bodytype & BODYTYPE_DIGITIGRADE) && (U.supports_variations & DIGITIGRADE_VARIATION))
+				icon_file = 'icons/mob/species/misc/digitigrade.dmi'
+			else if((dna.species.bodytype & BODYTYPE_VOX) && (U.supports_variations & VOX_VARIATION))
+				icon_file = 'icons/mob/species/vox/onmob_vox_uniform.dmi'
 
-				uniform_overlay = U.build_worn_icon(default_layer = UNIFORM_LAYER, default_icon_file = icon_file, isinhands = FALSE, override_file = 'icons/mob/species/misc/digitigrade.dmi', species = dna.species.species_clothing_path)
-			else
-				uniform_overlay = U.build_worn_icon(default_layer = UNIFORM_LAYER, default_icon_file = icon_file, isinhands = FALSE, species = dna.species.species_clothing_path)
-
+			uniform_overlay = U.build_worn_icon(default_layer = UNIFORM_LAYER, default_icon_file = icon_file, isinhands = FALSE, override_file = icon_file, species = dna.species.species_clothing_path)
 
 		if(OFFSET_UNIFORM in dna.species.offset_features)
 			uniform_overlay.pixel_x += dna.species.offset_features[OFFSET_UNIFORM][1]
@@ -391,7 +391,7 @@ There are several things that need to be remembered:
 				client.screen += wear_suit
 		update_observer_view(wear_suit,1)
 
-		overlays_standing[SUIT_LAYER] = wear_suit.build_worn_icon(default_layer = SUIT_LAYER, default_icon_file = icon_file, species = dna.species.species_clothing_path)
+		overlays_standing[SUIT_LAYER] = wear_suit.build_worn_icon(default_layer = SUIT_LAYER, default_icon_file = icon_file, species = dna.species)
 		var/mutable_appearance/suit_overlay = overlays_standing[SUIT_LAYER]
 		if(OFFSET_SUIT in dna.species.offset_features)
 			suit_overlay.pixel_x += dna.species.offset_features[OFFSET_SUIT][1]
@@ -542,7 +542,7 @@ generate/load female uniform sprites matching all previously decided variables
 
 
 */
-/obj/item/proc/build_worn_icon(default_layer = 0, default_icon_file = null, isinhands = FALSE, femaleuniform = NO_FEMALE_UNIFORM, override_state = null, override_file = null, species = null, direction = null)
+/obj/item/proc/build_worn_icon(default_layer = 0, default_icon_file = null, isinhands = FALSE, femaleuniform = NO_FEMALE_UNIFORM, override_state = null, override_file = null, use_species_greyscale = null, direction = null)
 
 	// WS Edit Start - Worn Icon State
 	var/t_state
@@ -552,16 +552,13 @@ generate/load female uniform sprites matching all previously decided variables
 		t_state = !isinhands ? (mob_overlay_state ? mob_overlay_state : icon_state) : (item_state ? item_state : icon_state)
 
 	//Find a valid icon file from variables+arguments
-	var/file2use
-	if(override_file)
-		file2use = override_file
-	else
-		file2use = !isinhands ? (mob_overlay_icon ? mob_overlay_icon : default_icon_file) : default_icon_file
+	var/file2use = override_file || (!isinhands ? (mob_overlay_icon ? mob_overlay_icon : default_icon_file) : default_icon_file)
 
 	//Find a valid layer from variables+arguments
 	var/layer2use = alternate_worn_layer ? alternate_worn_layer : default_layer
 
 	var/mutable_appearance/standing
+
 	if(species)
 		standing = wear_species_version(file2use, t_state, layer2use, species)
 	else if(femaleuniform)
