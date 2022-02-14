@@ -11,6 +11,9 @@
 	armor = list("melee" = 50, "bullet" = 70, "laser" = 70, "energy" = 100, "bomb" = 10, "bio" = 100, "rad" = 100, "fire" = 0, "acid" = 0)
 	max_integrity = 50
 	integrity_failure = 0.4
+
+	isometric_mode = ISOMETRIC_BLOCKIFY
+
 	var/rods_type = /obj/item/stack/rods
 	var/rods_amount = 2
 	var/rods_broken = TRUE

@@ -12,6 +12,7 @@
 	idle_power_usage = 5
 	active_power_usage = 100
 	circuit = /obj/item/circuitboard/machine/smartfridge
+	isometric_mode = ISOMETRIC_BLOCKIFY
 
 	var/max_n_of_items = 1500
 	var/allow_ai_retrieve = FALSE

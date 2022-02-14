@@ -10,6 +10,7 @@ GLOBAL_DATUM_INIT(openspace_backdrop_one_for_all, /atom/movable/openspace_backdr
 	plane           = OPENSPACE_BACKDROP_PLANE
 	mouse_opacity 	= MOUSE_OPACITY_TRANSPARENT
 	layer           = SPLASHSCREEN_LAYER
+	isometric_mode = ISOMETRIC_BLOCKIFY
 
 /turf/open/openspace
 	name = "open space"

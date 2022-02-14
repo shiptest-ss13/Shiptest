@@ -16,6 +16,8 @@
 	var/clawfootstep = null
 	var/heavyfootstep = null
 
+	isometric_mode = ISOMETRIC_FLATTEN
+
 /turf/open/ComponentInitialize()
 	. = ..()
 	if(wet)

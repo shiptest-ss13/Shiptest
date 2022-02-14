@@ -233,6 +233,8 @@ GLOBAL_LIST_INIT(glass_sheet_types, typecacheof(list(
 #define isspacepod(A) (istype(A, /obj/spacepod))
 //WS End
 
+#define isProbablyWallMounted(O) (O.pixel_x > 20 || O.pixel_x < -20 || O.pixel_y > 20 || O.pixel_y < -20)
+
 #define isbook(O) (is_type_in_typecache(O, GLOB.book_types))
 
 GLOBAL_LIST_INIT(book_types, typecacheof(list(

@@ -29,7 +29,7 @@
 	if(has_borders)
 		var/matrix/M = new
 		M.Translate(-4, -4)
-		transform = M
+		transform.Add(M)
 		icon = smooth_icon
 
 

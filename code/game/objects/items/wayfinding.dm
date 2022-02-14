@@ -14,6 +14,7 @@
 	var/datum/bank_account/synth_acc = new /datum/bank_account/remote
 	var/ppt_cost = 65 //Jan 6 '20: Assistant can buy one roundstart (125 cr starting)
 	var/expression_timer
+	isometric_mode = ISOMETRIC_WALLMOUNTED
 
 /obj/machinery/pinpointer_dispenser/Initialize(mapload)
 	..()

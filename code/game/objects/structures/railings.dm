@@ -6,6 +6,7 @@
 	density = TRUE
 	anchored = TRUE
 	climbable = TRUE
+	isometric_mode = ISOMETRIC_FLATTEN
 
 /obj/structure/railing/corner //aesthetic corner sharp edges hurt oof ouch
 	icon_state = "railing_corner"

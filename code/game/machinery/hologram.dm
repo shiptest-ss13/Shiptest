@@ -41,6 +41,7 @@ Possible to do for anyone motivated enough:
 	max_integrity = 300
 	armor = list("melee" = 50, "bullet" = 20, "laser" = 20, "energy" = 20, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 0)
 	circuit = /obj/item/circuitboard/machine/holopad
+	isometric_mode = ISOMETRIC_FLATTEN
 	/// List of living mobs that use the holopad
 	var/list/masters
 	/// Holoray-mob link

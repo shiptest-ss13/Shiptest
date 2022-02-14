@@ -146,6 +146,7 @@ GLOBAL_LIST_EMPTY(lifts)
 	smoothing_groups = list(SMOOTH_GROUP_INDUSTRIAL_LIFT)
 	canSmoothWith = null
 	obj_flags = CAN_BE_HIT | BLOCK_Z_OUT_DOWN
+	isometric_mode = ISOMETRIC_FLATTEN
 
 	var/id = null //ONLY SET THIS TO ONE OF THE LIFT'S PARTS. THEY'RE CONNECTED! ONLY ONE NEEDS THE SIGNAL!
 	var/pass_through_floors = FALSE //if true, the elevator works through floors

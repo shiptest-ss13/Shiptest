@@ -14,6 +14,7 @@
 	var/buildable_sign = TRUE
 	flags_1 = RAD_PROTECT_CONTENTS_1 | RAD_NO_CONTAMINATE_1
 	resistance_flags = FLAMMABLE
+	isometric_mode = ISOMETRIC_WALLMOUNTED
 	///This determines if you can select this sign type when using a pen on a sign backing. False by default, set to true per sign type to override.
 	var/is_editable = FALSE
 	///sign_change_name is used to make nice looking, alphebetized and categorized names when you use a pen on a sign backing.
