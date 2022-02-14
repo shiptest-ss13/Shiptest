@@ -107,6 +107,8 @@
 				newletter += "[newletter]"
 			if(20)
 				newletter += "[newletter][newletter]"
+			else
+				// do nothing
 		. += "[newletter]"
 	return sanitize(.)
 
@@ -150,6 +152,8 @@
 				newletter = "nglu"
 			if(5)
 				newletter = "glor"
+			else
+				// do nothing
 		. += newletter
 	return sanitize(.)
 
