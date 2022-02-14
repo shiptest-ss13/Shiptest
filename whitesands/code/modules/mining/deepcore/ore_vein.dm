@@ -32,7 +32,6 @@ GLOBAL_LIST_EMPTY(ore_vein_landmarks)
 		material_rate = ores_list[M]
 
 /obj/effect/landmark/ore_vein/Destroy()
-	QDEL_NULL(resource)
 	if(miner)
 		miner.active_vein = null
 		miner = null
