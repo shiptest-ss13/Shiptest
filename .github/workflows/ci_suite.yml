@@ -14,6 +14,10 @@ jobs:
       - uses: actions/checkout@v2
         with:
           ref: master
+      - name: Python setup
+        uses: actions/setup-python@v1
+        with:
+          python-version: "3.9"
       - uses: actions/checkout@v2
       - name: Setup cache
         id: cache-spacemandmm
