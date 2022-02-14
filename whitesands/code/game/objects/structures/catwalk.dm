@@ -17,6 +17,7 @@
 	var/number_of_rods = 2
 	var/hatch_open = FALSE
 	var/obj/item/stack/tile/plated_tile
+	isometric_mode = ISOMETRIC_FLATTEN
 
 /obj/structure/catwalk/Initialize()
 	. = ..()

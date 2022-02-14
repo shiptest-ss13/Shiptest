@@ -148,8 +148,8 @@
 		update_air_ref(-1)
 		__auxtools_update_turf_temp_info(isspaceturf(get_z_base_turf()))
 
-		if(isometric_mode == ISOMETRIC_FLATTEN)
-			flatify()
+	if(isometric_mode == ISOMETRIC_FLATTEN)
+		flatify()
 	if(isometric_mode == ISOMETRIC_BLOCKIFY)
 		blockify()
 
