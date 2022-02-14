@@ -359,7 +359,7 @@
 	return FALSE
 
 
-/mob/proc/reagent_check(datum/reagent/R) // utilized in the species code
+/mob/proc/handled_by_species(datum/reagent/R) // utilized in the species code
 	return 1
 
 

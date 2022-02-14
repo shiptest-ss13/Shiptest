@@ -69,7 +69,7 @@
 	else
 		clear_alert("alien_fire")
 
-/mob/living/carbon/alien/reagent_check(datum/reagent/R) //can metabolize all reagents
+/mob/living/carbon/alien/handled_by_species(datum/reagent/R) //can metabolize all reagents
 	return 0
 
 /mob/living/carbon/alien/IsAdvancedToolUser()
