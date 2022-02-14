@@ -148,6 +148,8 @@ There are several things that need to be remembered:
 
 			uniform_overlay = U.build_worn_icon(default_layer = UNIFORM_LAYER, default_icon_file = icon_file, isinhands = FALSE, override_file = icon_file, species = CHECK_USE_AUTOGEN)
 
+		if(!uniform_overlay)
+			return
 		if(OFFSET_UNIFORM in dna.species.offset_features)
 			uniform_overlay.pixel_x += dna.species.offset_features[OFFSET_UNIFORM][1]
 			uniform_overlay.pixel_y += dna.species.offset_features[OFFSET_UNIFORM][2]
@@ -175,6 +177,9 @@ There are several things that need to be remembered:
 
 		//TODO: add an icon file for ID slot stuff, so it's less snowflakey
 		id_overlay = I.build_worn_icon(default_layer = ID_LAYER, default_icon_file = 'icons/mob/mob.dmi', species = CHECK_USE_AUTOGEN)
+
+		if(!id_overlay)
+			return
 		if(OFFSET_ID in dna.species.offset_features)
 			id_overlay.pixel_x += dna.species.offset_features[OFFSET_ID][1]
 			id_overlay.pixel_y += dna.species.offset_features[OFFSET_ID][2]
@@ -213,6 +218,8 @@ There are several things that need to be remembered:
 		var/handled_by_bodytype
 		gloves_overlay = I.build_worn_icon(default_layer = GLOVES_LAYER, default_icon_file = 'icons/mob/clothing/hands.dmi', species = CHECK_USE_AUTOGEN)
 
+		if(!gloves_overlay)
+			return
 		if(OFFSET_GLOVES in dna.species.offset_features)
 			gloves_overlay.pixel_x += dna.species.offset_features[OFFSET_GLOVES][1]
 			gloves_overlay.pixel_y += dna.species.offset_features[OFFSET_GLOVES][2]
@@ -274,6 +281,9 @@ There are several things that need to be remembered:
 			icon_file = DEFAULT_EARS_PATH
 
 		ears_overlay = I.build_worn_icon(default_layer = EARS_LAYER, override_file = icon_file, species = CHECK_USE_AUTOGEN)
+
+		if(!ears_overlay)
+			return
 		if(OFFSET_EARS in dna.species.offset_features)
 			ears_overlay.pixel_x += dna.species.offset_features[OFFSET_EARS][1]
 			ears_overlay.pixel_y += dna.species.offset_features[OFFSET_EARS][2]
@@ -307,6 +317,8 @@ There are several things that need to be remembered:
 
 		shoes_overlay = I.build_worn_icon(default_layer = UNIFORM_LAYER, default_icon_file = icon_file, isinhands = FALSE, species = CHECK_USE_AUTOGEN)
 
+		if(!shoes_overlay)
+			return
 		if(OFFSET_SHOES in dna.species.offset_features)
 			shoes_overlay.pixel_x += dna.species.offset_features[OFFSET_SHOES][1]
 			shoes_overlay.pixel_y += dna.species.offset_features[OFFSET_SHOES][2]
@@ -331,6 +343,9 @@ There are several things that need to be remembered:
 			t_state = I.icon_state
 
 		s_store_overlay = mutable_appearance('icons/mob/clothing/belt_mirror.dmi', t_state, -SUIT_STORE_LAYER)
+
+		if(!s_store_overlay)
+			return
 		if(OFFSET_S_STORE in dna.species.offset_features)
 			s_store_overlay.pixel_x += dna.species.offset_features[OFFSET_S_STORE][1]
 			s_store_overlay.pixel_y += dna.species.offset_features[OFFSET_S_STORE][2]
@@ -352,6 +367,9 @@ There are several things that need to be remembered:
 		var/icon_file
 
 		head_overlay = I.build_worn_icon(default_layer = HEAD_LAYER, default_icon_file = icon_file, isinhands = FALSE, species = CHECK_USE_AUTOGEN)
+
+		if(!head_overlay)
+			return
 		if(OFFSET_HEAD in dna.species.offset_features)
 			head_overlay.pixel_x += dna.species.offset_features[OFFSET_HEAD][1]
 			head_overlay.pixel_y += dna.species.offset_features[OFFSET_HEAD][2]
@@ -373,6 +391,9 @@ There are several things that need to be remembered:
 		var/handled_by_bodytype
 
 		belt_overlay = I.build_worn_icon(default_layer = BELT_LAYER, default_icon_file = 'icons/mob/clothing/belt.dmi', species = CHECK_USE_AUTOGEN)
+
+		if(!belt_overlay)
+			return
 		if(OFFSET_BELT in dna.species.offset_features)
 			belt_overlay.pixel_x += dna.species.offset_features[OFFSET_BELT][1]
 			belt_overlay.pixel_y += dna.species.offset_features[OFFSET_BELT][2]
@@ -404,6 +425,9 @@ There are several things that need to be remembered:
 			handled_by_bodytype = FALSE
 
 		suit_overlay = wear_suit.build_worn_icon(default_layer = SUIT_LAYER, default_icon_file = icon_file, species = CHECK_USE_AUTOGEN)
+
+		if(!suit_overlay)
+			return
 		if(OFFSET_SUIT in dna.species.offset_features)
 			suit_overlay.pixel_x += dna.species.offset_features[OFFSET_SUIT][1]
 			suit_overlay.pixel_y += dna.species.offset_features[OFFSET_SUIT][2]
@@ -454,6 +478,8 @@ There are several things that need to be remembered:
 		if(!(ITEM_SLOT_MASK in check_obscured_slots()))
 			mask_overlay = I.build_worn_icon(default_layer = FACEMASK_LAYER, default_icon_file = 'icons/mob/clothing/mask.dmi')
 
+		if(!mask_overlay)
+			return
 		if(OFFSET_FACEMASK in dna.species.offset_features)
 			mask_overlay.pixel_x += dna.species.offset_features[OFFSET_FACEMASK][1]
 			mask_overlay.pixel_y += dna.species.offset_features[OFFSET_FACEMASK][2]
@@ -485,6 +511,8 @@ There are several things that need to be remembered:
 
 		back_overlay = I.build_worn_icon(default_layer = BACK_LAYER, default_icon_file = icon_file, isinhands = FALSE, override_file = icon_file, species = CHECK_USE_AUTOGEN)
 
+		if(!back_overlay)
+			return
 		if(OFFSET_BACK in dna.species.offset_features)
 			back_overlay.pixel_x += dna.species.offset_features[OFFSET_BACK][1]
 			back_overlay.pixel_y += dna.species.offset_features[OFFSET_BACK][2]
