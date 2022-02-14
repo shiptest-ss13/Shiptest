@@ -440,3 +440,8 @@
 	for(var/X in actions)
 		var/datum/action/A = X
 		A.UpdateButtonIcon()
+
+/obj/item/clothing/head/helmet/alt/minutemen
+	name = "minutemen ballistic helmet"
+	desc = "A bulletproof helmet that is worn by members of the colonial minutemen."
+	icon_state = "antichristhelm"
