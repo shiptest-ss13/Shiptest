@@ -8,7 +8,7 @@
   *
   * Can be docked to any other overmap datum that has a valid docking process.
   */
-/datum/overmap/ship/simulated
+/datum/overmap/ship/controlled
 	token_type = /obj/overmap/rendered
 	dock_time = 10 SECONDS
 
@@ -40,7 +40,7 @@
 	///Shipwide bank account used for cargo consoles and bounty payouts.
 	var/datum/bank_account/ship/ship_account
 
-/datum/overmap/ship/simulated/Rename(new_name, force = FALSE)
+/datum/overmap/ship/controlled/Rename(new_name, force = FALSE)
 	var/oldname = name
 	if(!..() || (!COOLDOWN_FINISHED(src, rename_cooldown) && !force))
 		return FALSE
@@ -53,7 +53,7 @@
 		COOLDOWN_START(src, rename_cooldown, 5 MINUTES)
 	return TRUE
 
-/datum/overmap/ship/simulated/Initialize(placement_x, placement_y, datum/map_template/shuttle/creation_template)
+/datum/overmap/ship/controlled/Initialize(placement_x, placement_y, datum/map_template/shuttle/creation_template)
 	. = ..()
 	if(creation_template)
 		source_template = creation_template
@@ -67,34 +67,34 @@
 		refresh_engines()
 	SSovermap.simulated_ships += src
 
-/datum/overmap/ship/simulated/Destroy()
+/datum/overmap/ship/controlled/Destroy()
 	SSovermap.simulated_ships -= src
 	. = ..()
 
-/datum/overmap/ship/simulated/get_jump_to_turf()
+/datum/overmap/ship/controlled/get_jump_to_turf()
 	return get_turf(shuttle_port)
 
-/datum/overmap/ship/simulated/pre_dock(datum/overmap/to_dock, datum/docking_ticket/ticket)
+/datum/overmap/ship/controlled/pre_dock(datum/overmap/to_dock, datum/docking_ticket/ticket)
 	if(ticket.target != src || ticket.issuer != to_dock)
 		return FALSE
 	if(!shuttle_port.check_dock(ticket.target_port))
 		return FALSE
 	return TRUE
 
-/datum/overmap/ship/simulated/start_dock(datum/overmap/to_dock, datum/docking_ticket/ticket)
+/datum/overmap/ship/controlled/start_dock(datum/overmap/to_dock, datum/docking_ticket/ticket)
 	refresh_engines()
 	shuttle_port.movement_force = list("KNOCKDOWN" = FLOOR(est_thrust / 50, 1), "THROW" = FLOOR(est_thrust / 500, 1))
 	priority_announce("Beginning docking procedures. Completion in [dock_time/10] seconds.", "Docking Announcement", sender_override = name, zlevel = shuttle_port.virtual_z())
 	shuttle_port.create_ripples(ticket.target_port, dock_time)
 
-/datum/overmap/ship/simulated/complete_dock(datum/overmap/dock_target, datum/docking_ticket/ticket)
+/datum/overmap/ship/controlled/complete_dock(datum/overmap/dock_target, datum/docking_ticket/ticket)
 	shuttle_port.initiate_docking(ticket.target_port)
 	. = ..()
-	if(istype(dock_target, /datum/overmap/ship/simulated)) //hardcoded and bad
-		var/datum/overmap/ship/simulated/S = dock_target
+	if(istype(dock_target, /datum/overmap/ship/controlled)) //hardcoded and bad
+		var/datum/overmap/ship/controlled/S = dock_target
 		S.shuttle_port.shuttle_areas |= shuttle_port.shuttle_areas
 
-/datum/overmap/ship/simulated/Undock()
+/datum/overmap/ship/controlled/Undock()
 	var/dock_time_temp = dock_time
 	if(!shuttle_port.check_transit_zone()  != TRANSIT_READY)
 		dock_time *= 2 // Give it double the time in order to reserve transit space
@@ -104,23 +104,23 @@
 	. = ..()
 	dock_time = dock_time_temp // Set it back to the original value if it was changed
 
-/datum/overmap/ship/simulated/complete_undock()
+/datum/overmap/ship/controlled/complete_undock()
 	shuttle_port.enterTransit()
 	return ..()
 
-/datum/overmap/ship/simulated/pre_docked(datum/overmap/dock_requester)
+/datum/overmap/ship/controlled/pre_docked(datum/overmap/dock_requester)
 	return new /datum/docking_ticket(shuttle_port.docking_points[1], src, dock_requester) //TODO: Find a better way of doing this that allows for multiple docking points
 
-/datum/overmap/ship/simulated/post_undocked(datum/overmap/dock_requester)
-	if(istype(dock_requester, /datum/overmap/ship/simulated))
-		var/datum/overmap/ship/simulated/docker_port = dock_requester
+/datum/overmap/ship/controlled/post_undocked(datum/overmap/dock_requester)
+	if(istype(dock_requester, /datum/overmap/ship/controlled))
+		var/datum/overmap/ship/controlled/docker_port = dock_requester
 		shuttle_port.shuttle_areas += docker_port.shuttle_port.shuttle_areas
 
 /**
   * Docks to an empty dynamic encounter. Used for intership interaction, structural modifications, and such
   * * user - The user that initiated the action
   */
-/datum/overmap/ship/simulated/proc/dock_in_empty_space(mob/user)
+/datum/overmap/ship/controlled/proc/dock_in_empty_space(mob/user)
 	var/datum/overmap/dynamic/empty/E
 	E = locate() in SSovermap.overmap_container[x][y]
 	if(!E)
@@ -128,7 +128,7 @@
 	if(E)
 		Dock(E)
 
-/datum/overmap/ship/simulated/burn_engines(n_dir = null, percentage = 100)
+/datum/overmap/ship/controlled/burn_engines(n_dir = null, percentage = 100)
 	if(docked_to)
 		return
 
@@ -151,7 +151,7 @@
 /**
   * Just double checks all the engines on the shuttle
   */
-/datum/overmap/ship/simulated/proc/refresh_engines()
+/datum/overmap/ship/controlled/proc/refresh_engines()
 	var/calculated_thrust
 	for(var/obj/machinery/power/shuttle/engine/E in shuttle_port.engine_list)
 		E.update_engine()
@@ -162,7 +162,7 @@
 /**
   * Calculates the mass based on the amount of turfs in the shuttle's areas
   */
-/datum/overmap/ship/simulated/proc/calculate_mass()
+/datum/overmap/ship/controlled/proc/calculate_mass()
 	. = 0
 	var/list/areas = shuttle_port.shuttle_areas
 	for(var/shuttle_area in areas)
@@ -172,7 +172,7 @@
 /**
   * Calculates the average fuel fullness of all engines.
   */
-/datum/overmap/ship/simulated/proc/calculate_avg_fuel()
+/datum/overmap/ship/controlled/proc/calculate_avg_fuel()
 	var/fuel_avg = 0
 	var/engine_amnt = 0
 	for(var/obj/machinery/power/shuttle/engine/E in shuttle_port.engine_list)
@@ -185,7 +185,7 @@
 		return
 	avg_fuel_amnt = round(fuel_avg / engine_amnt * 100)
 
-/datum/overmap/ship/simulated/tick_move()
+/datum/overmap/ship/controlled/tick_move()
 	if(avg_fuel_amnt < 1)
 		decelerate(max_speed / 100)
 	..()
@@ -194,7 +194,7 @@
   * Bastardized version of GLOB.manifest.manifest_inject, but used per ship
   *
   */
-/datum/overmap/ship/simulated/proc/manifest_inject(mob/living/carbon/human/H, client/C, datum/job/human_job)
+/datum/overmap/ship/controlled/proc/manifest_inject(mob/living/carbon/human/H, client/C, datum/job/human_job)
 	set waitfor = FALSE
 	if(H.mind && (H.mind.assigned_role != H.mind.special_role))
 		manifest[H.real_name] = human_job

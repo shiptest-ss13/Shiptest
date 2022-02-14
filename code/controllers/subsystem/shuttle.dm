@@ -316,7 +316,7 @@ SUBSYSTEM_DEF(shuttle)
   * * template - The shuttle map template to load. Can NOT be null.
   * * spawn_transit - Whether or not to send the new shuttle to a newly-generated transit dock after loading.
   **/
-/datum/controller/subsystem/shuttle/proc/load_template(datum/map_template/shuttle/template, datum/overmap/ship/simulated/parent, spawn_transit = TRUE)
+/datum/controller/subsystem/shuttle/proc/load_template(datum/map_template/shuttle/template, datum/overmap/ship/controlled/parent, spawn_transit = TRUE)
 	. = FALSE
 	var/loading_mapzone = SSmapping.create_map_zone("Shuttle Loading Zone")
 	var/datum/virtual_level/loading_zone = SSmapping.create_virtual_level("[template.name] Loading Level", list(ZTRAIT_RESERVED = TRUE), loading_mapzone, template.width, template.height, ALLOCATION_FREE)

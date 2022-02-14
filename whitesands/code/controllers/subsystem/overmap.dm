@@ -163,7 +163,7 @@ SUBSYSTEM_DEF(overmap)
 	var/datum/map_template/shuttle/selected_template = SSmapping.maplist[pick(SSmapping.maplist)]
 	INIT_ANNOUNCE("Loading [selected_template.name]...")
 	//SSshuttle.load_template(selected_template)
-	new /datum/overmap/ship/simulated(rand(1, size), rand(1, size), selected_template)
+	new /datum/overmap/ship/controlled(rand(1, size), rand(1, size), selected_template)
 	if(SSdbcore.Connect())
 		var/datum/DBQuery/query_round_map_name = SSdbcore.NewQuery({"
 			UPDATE [format_table_name("round")] SET map_name = :map_name WHERE id = :round_id

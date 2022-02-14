@@ -41,7 +41,7 @@
 	if(reserve_docks)
 		return get_turf(pick(reserve_docks))
 
-/datum/overmap/dynamic/pre_docked(datum/overmap/ship/simulated/dock_requester)
+/datum/overmap/dynamic/pre_docked(datum/overmap/ship/controlled/dock_requester)
 	if(!load_level(dock_requester.shuttle_port))
 		return FALSE
 	else
@@ -56,7 +56,7 @@
 		adjust_dock_to_shuttle(dock_to_use, dock_requester.shuttle_port)
 		return new /datum/docking_ticket(dock_to_use, src, dock_requester)
 
-/datum/overmap/dynamic/post_docked(datum/overmap/ship/simulated/dock_requester)
+/datum/overmap/dynamic/post_docked(datum/overmap/ship/controlled/dock_requester)
 	if(planet_name)
 		for(var/mob/M as anything in GLOB.player_list)
 			if(dock_requester.shuttle_port.is_in_shuttle_bounds(M))
@@ -305,7 +305,7 @@
 /datum/overmap/dynamic/empty/choose_level_type()
 	return
 
-/datum/overmap/dynamic/empty/post_undocked(datum/overmap/ship/simulated/dock_requester)
+/datum/overmap/dynamic/empty/post_undocked(datum/overmap/ship/controlled/dock_requester)
 	if(length(mapzone?.get_mind_mobs()))
 		return //Dont fuck over stranded people? tbh this shouldn't be called on this condition, instead of bandaiding it inside
 

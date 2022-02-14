@@ -3,7 +3,7 @@
 	var/inform_admins = FALSE
 	var/disallow_soul_imbue = TRUE
 	var/allow_death = FALSE
-	var/datum/overmap/ship/simulated/parent_ship
+	var/datum/overmap/ship/controlled/parent_ship
 
 /datum/component/shiploving/Initialize(parent_ship, inform_admins = FALSE, allow_death = FALSE)
 	if(!ismovable(parent))
@@ -17,7 +17,7 @@
 	src.allow_death = allow_death
 	src.parent_ship = parent_ship
 	if(!parent_ship)
-		for(var/datum/overmap/ship/simulated/ship as anything in SSovermap.simulated_ships)
+		for(var/datum/overmap/ship/controlled/ship as anything in SSovermap.simulated_ships)
 			if(get_area(parent) in ship.shuttle_port.shuttle_areas)
 				parent_ship = ship
 				break

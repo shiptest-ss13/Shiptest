@@ -287,7 +287,7 @@
 	var/can_move_docking_ports = FALSE
 
 	///The linked overmap object, if there is one
-	var/datum/overmap/ship/simulated/current_ship
+	var/datum/overmap/ship/controlled/current_ship
 
 	///List of spawn points on the ship
 	var/list/atom/spawn_points = list()
@@ -339,7 +339,7 @@
 	#endif
 
 // Called after the shuttle is loaded from template
-/obj/docking_port/mobile/proc/linkup(obj/docking_port/stationary/dock, datum/overmap/ship/simulated/new_ship)
+/obj/docking_port/mobile/proc/linkup(obj/docking_port/stationary/dock, datum/overmap/ship/controlled/new_ship)
 	current_ship = new_ship
 	for(var/place in shuttle_areas)
 		var/area/area = place

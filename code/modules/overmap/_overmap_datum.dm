@@ -267,5 +267,5 @@
   *
   * * dock_requester - The overmap datum trying to undock from this one. Cannot be null.
   */
-/datum/overmap/proc/post_undocked(datum/overmap/ship/simulated/dock_requester)
+/datum/overmap/proc/post_undocked(datum/overmap/ship/controlled/dock_requester)
 	return

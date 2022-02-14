@@ -24,14 +24,14 @@
   * The main proc for calling other procs. Called by SSovermap.
   */
 /datum/overmap/event/proc/apply_effect()
-	for(var/datum/overmap/ship/simulated/S in get_nearby_overmap_objects())
+	for(var/datum/overmap/ship/controlled/S in get_nearby_overmap_objects())
 		if(prob(chance_to_affect))
 			affect_ship(S)
 
 /**
   * The proc called on all ships that are currently being affected.
   */
-/datum/overmap/event/proc/affect_ship(datum/overmap/ship/simulated/S)
+/datum/overmap/event/proc/affect_ship(datum/overmap/ship/controlled/S)
 	return
 
 
@@ -49,7 +49,7 @@
 	. = ..()
 	token.icon_state = "meteor[rand(1, 4)]"
 
-/datum/overmap/event/meteor/affect_ship(datum/overmap/ship/simulated/S)
+/datum/overmap/event/meteor/affect_ship(datum/overmap/ship/controlled/S)
 	var/area/source_area = pick(S.shuttle_port.shuttle_areas)
 	source_area?.set_fire_alarm_effect()
 	var/source_object = pick(source_area.contents)
@@ -85,7 +85,7 @@
 	. = ..()
 	token.icon_state = "ion[rand(1, 4)]"
 
-/datum/overmap/event/emp/affect_ship(datum/overmap/ship/simulated/S)
+/datum/overmap/event/emp/affect_ship(datum/overmap/ship/controlled/S)
 	var/area/source_area = pick(S.shuttle_port.shuttle_areas)
 	source_area.set_fire_alarm_effect()
 	var/source_object = pick(source_area.contents)
@@ -120,7 +120,7 @@
 	. = ..()
 	token.icon_state = "electrical[rand(1, 4)]"
 
-/datum/overmap/event/electric/affect_ship(datum/overmap/ship/simulated/S)
+/datum/overmap/event/electric/affect_ship(datum/overmap/ship/controlled/S)
 	var/area/source_area = pick(S.shuttle_port.shuttle_areas)
 	source_area.set_fire_alarm_effect()
 	var/source_object = pick(source_area.contents)
@@ -174,7 +174,7 @@
 	if(!other_wormhole)
 		other_wormhole = new(null, null, src) //Create a new wormhole at a random location
 
-/datum/overmap/event/wormhole/affect_ship(datum/overmap/ship/simulated/S)
+/datum/overmap/event/wormhole/affect_ship(datum/overmap/ship/controlled/S)
 	if(!other_wormhole)
 		qdel(src)
 	if(--stability <= 0)

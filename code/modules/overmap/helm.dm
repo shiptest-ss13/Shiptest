@@ -16,7 +16,7 @@
 	clicksound = null
 
 	/// The ship we reside on for ease of access
-	var/datum/overmap/ship/simulated/current_ship
+	var/datum/overmap/ship/controlled/current_ship
 	/// All users currently using this
 	var/list/concurrent_users = list()
 	/// Is this console view only? I.E. cant dock/etc
