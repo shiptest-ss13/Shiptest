@@ -50,3 +50,9 @@
 	id = "corpreject"
 	description = "Nanotrasen Corporate Security Solutions vault site Gamma."
 	suffix = "icemoon_surface_corporate_rejects.dmm"
+
+/datum/map_template/ruin/icemoon/testruin
+	name = "Ship Tester"
+	id = "testruin"
+	description = "A test ruin. You shouldn't see this!"
+	suffix = "icemoon_surface_test_ruin.dmm"
