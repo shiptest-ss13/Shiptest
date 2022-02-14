@@ -57,6 +57,7 @@
 	idle_threads = list()
 	update_icon()
 
+
 /obj/item/modular_computer/Destroy()
 	kill_program(forced = TRUE)
 	STOP_PROCESSING(SSobj, src)

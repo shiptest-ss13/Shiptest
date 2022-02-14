@@ -27,8 +27,8 @@
 /turf/open/floor/plating,
 /area/ship/cargo)
 "bg" = (
-/obj/machinery/suit_storage_unit/mining/eva,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/suit_storage_unit/independent/mining/eva,
 /turf/open/floor/plating,
 /area/ship/cargo)
 "bn" = (
@@ -185,6 +185,13 @@
 /obj/item/trash/sosjerky,
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
+"hh" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/computer/cryopod{
+	pixel_y = -32
+	},
+/turf/open/floor/plating,
+/area/ship/maintenance/fore)
 "hy" = (
 /obj/machinery/photocopier,
 /obj/effect/decal/cleanable/glitter,
@@ -1213,6 +1220,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
 /turf/open/floor/plating,
 /area/ship/maintenance/central)
 "Wr" = (
@@ -1414,7 +1422,7 @@ ob
 cQ
 lQ
 po
-LV
+hh
 vK
 vK
 jr

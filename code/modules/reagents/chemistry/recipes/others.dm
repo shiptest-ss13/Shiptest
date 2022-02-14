@@ -647,10 +647,6 @@
 	results = list(/datum/reagent/mutationtoxin/squid = 1)
 	required_reagents  = list(/datum/reagent/mutationtoxin/unstable = 1, /datum/reagent/consumable/sodiumchloride = 10, /datum/reagent/water = 20)
 
-/datum/chemical_reaction/mutationtoxin/ipc
-	results = list(/datum/reagent/mutationtoxin/ipc = 1)
-	required_reagents  = list(/datum/reagent/mutationtoxin/unstable = 1, /datum/reagent/teslium = 20)
-
 //////////////Mutatuion toxins made out of advanced toxin/////////////
 
 /datum/chemical_reaction/mutationtoxin/skeleton
