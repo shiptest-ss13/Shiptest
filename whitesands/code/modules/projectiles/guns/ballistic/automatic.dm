@@ -106,6 +106,7 @@
 	mag_display = TRUE
 	weapon_weight = WEAPON_MEDIUM
 	w_class = WEIGHT_CLASS_BULKY
+	slot_flags = null
 	mag_type = /obj/item/ammo_box/magazine/ak47
 
 /obj/item/gun/ballistic/automatic/ak47/nt
