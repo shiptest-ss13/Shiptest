@@ -24,6 +24,7 @@
 	cartridge_wording = "shell"
 	tac_reloads = FALSE
 	fire_rate = 1 //reee
+	pickup_sound =  'sound/items/handling/shotgun_pickup.ogg'
 
 /obj/item/gun/ballistic/shotgun/blow_up(mob/user)
 	. = 0
@@ -141,6 +142,7 @@
 	tac_reloads = TRUE
 	fire_rate = 2
 	automatic = 1
+	pickup_sound =  'sound/items/handling/rifle_pickup.ogg'
 
 
 /obj/item/gun/ballistic/shotgun/bulldog/unrestricted
