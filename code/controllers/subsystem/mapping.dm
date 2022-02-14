@@ -128,7 +128,7 @@ SUBSYSTEM_DEF(mapping)
 			continue
 		var/datum/map_template/ruin/R = new ruin_type()
 
-		if(banned.Find(R.mappath))
+		if(R.mappath in banned)
 			continue
 
 		map_templates[R.name] = R
