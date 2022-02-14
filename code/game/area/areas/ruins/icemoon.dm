@@ -51,24 +51,12 @@
 	name = "NT Security Solutions Site Gamma Vault"
 	icon_state = "dk_yellow"
 
-/area/ruin/unpowered/testmap
-	name = "Testing Area"
+/area/ruin/unpowered/strandedsyndicate
+	name = "Frost Bar"
 	icon_state = "dk_yellow"
 	mood_bonus = -10
-	mood_message = "<span class='boldwarning'>I feel like testing some ships.</span>\n"
+	mood_message = "<span class='boldwarning'>All of this over some skub...?</span>\n"
 
-/area/ruin/unpowered/testmap/up
-	name = "Unpowered Area"
-	icon_state = "dk_yellow"
-
-/area/ruin/powered/testmap/pow
-	name = "Powered Area"
-	icon_state = "dk_yellow"
-
-/area/ruin/powered/testmap/uptwo
-	name = "Powered Area Strikes Back"
-	icon_state = "dk_yellow"
-
-/area/ruin/powered/testmap/upout
-	name = "Powered Area The Third"
-	icon_state = "dk_yellow"
+/area/ruin/unpowered/strandedsyndicate/kitchen
+	name = "Frost Kitchen"
+	icon_state = "green"
