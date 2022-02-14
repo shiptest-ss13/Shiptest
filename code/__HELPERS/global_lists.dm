@@ -56,6 +56,11 @@
 		GLOB.species_list[S.id] = spath
 	sortList(GLOB.species_list, /proc/cmp_typepaths_asc)
 
+	//Species clothing
+	for(var/spath in subtypesof(/datum/species))
+		var/datum/species/S = new spath()
+		GLOB.species_clothing_icons[S.id] = list()
+
 	//Surgeries
 	for(var/path in subtypesof(/datum/surgery))
 		GLOB.surgeries_list += new path()

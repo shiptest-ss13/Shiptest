@@ -1,5 +1,5 @@
 #define GET_ICON_STATE(I) (I.mob_overlay_state || I.icon_state)
-#define CHECK_USE_AUTOGEN (handled_by_bodytype ? null : dna.species.species_clothing_path) //Is this gross overuse of macros? Yes. Fuck you.
+#define CHECK_USE_AUTOGEN (handled_by_bodytype ? null : dna.species) //Is this gross overuse of macros? Yes. Fuck you.
 
 	///////////////////////
 	//UPDATE_ICONS SYSTEM//
@@ -146,7 +146,7 @@ There are several things that need to be remembered:
 				handled_by_bodytype = FALSE
 				icon_file = DEFAULT_UNIFORM_PATH
 
-			uniform_overlay = U.build_worn_icon(default_layer = UNIFORM_LAYER, default_icon_file = icon_file, isinhands = FALSE, override_file = icon_file, use_species_greyscale = CHECK_USE_AUTOGEN)
+			uniform_overlay = U.build_worn_icon(default_layer = UNIFORM_LAYER, default_icon_file = icon_file, isinhands = FALSE, override_file = icon_file, species = CHECK_USE_AUTOGEN)
 
 		if(OFFSET_UNIFORM in dna.species.offset_features)
 			uniform_overlay.pixel_x += dna.species.offset_features[OFFSET_UNIFORM][1]
@@ -174,7 +174,7 @@ There are several things that need to be remembered:
 		var/handled_by_bodytype
 
 		//TODO: add an icon file for ID slot stuff, so it's less snowflakey
-		id_overlay = I.build_worn_icon(default_layer = ID_LAYER, default_icon_file = 'icons/mob/mob.dmi', use_species_greyscale = CHECK_USE_AUTOGEN)
+		id_overlay = I.build_worn_icon(default_layer = ID_LAYER, default_icon_file = 'icons/mob/mob.dmi', species = CHECK_USE_AUTOGEN)
 		if(OFFSET_ID in dna.species.offset_features)
 			id_overlay.pixel_x += dna.species.offset_features[OFFSET_ID][1]
 			id_overlay.pixel_y += dna.species.offset_features[OFFSET_ID][2]
@@ -211,7 +211,7 @@ There are several things that need to be remembered:
 		update_hud_gloves(I)
 
 		var/handled_by_bodytype
-		gloves_overlay = I.build_worn_icon(default_layer = GLOVES_LAYER, default_icon_file = 'icons/mob/clothing/hands.dmi', use_species_greyscale = CHECK_USE_AUTOGEN)
+		gloves_overlay = I.build_worn_icon(default_layer = GLOVES_LAYER, default_icon_file = 'icons/mob/clothing/hands.dmi', species = CHECK_USE_AUTOGEN)
 
 		if(OFFSET_GLOVES in dna.species.offset_features)
 			gloves_overlay.pixel_x += dna.species.offset_features[OFFSET_GLOVES][1]
@@ -238,7 +238,7 @@ There are several things that need to be remembered:
 		var/handled_by_bodytype
 
 		if(!(head?.flags_inv & HIDEEYES) && !(wear_mask?.flags_inv & HIDEEYES))
-			glasses_overlay = I.build_worn_icon(default_layer = GLASSES_LAYER, default_icon_file = 'icons/mob/clothing/eyes.dmi', use_species_greyscale = CHECK_USE_AUTOGEN)
+			glasses_overlay = I.build_worn_icon(default_layer = GLASSES_LAYER, default_icon_file = 'icons/mob/clothing/eyes.dmi', species = CHECK_USE_AUTOGEN)
 
 		if(OFFSET_GLASSES in dna.species.offset_features)
 			glasses_overlay.pixel_x += dna.species.offset_features[OFFSET_GLASSES][1]
@@ -262,9 +262,16 @@ There are several things that need to be remembered:
 		var/mutable_appearance/ears_overlay
 		update_hud_ears(I)
 
-		var/handled_by_bodytype
+		var/handled_by_bodytype = TRUE
+		var/icon_file
+		if((dna.species.bodytype & BODYTYPE_VOX) && (I.supports_variations & BODYTYPE_VOX))
+			icon_file = VOX_EARS_PATH
 
-		ears_overlay = I.build_worn_icon(default_layer = EARS_LAYER, default_icon_file = 'icons/mob/clothing/ears.dmi', use_species_greyscale = CHECK_USE_AUTOGEN)
+		if(!(icon_exists(icon_file, GET_ICON_STATE(I))))
+			handled_by_bodytype = FALSE
+			icon_file = DEFAULT_EARS_PATH
+
+		ears_overlay = I.build_worn_icon(default_layer = EARS_LAYER, override_file = icon_file, species = CHECK_USE_AUTOGEN)
 		if(OFFSET_EARS in dna.species.offset_features)
 			ears_overlay.pixel_x += dna.species.offset_features[OFFSET_EARS][1]
 			ears_overlay.pixel_y += dna.species.offset_features[OFFSET_EARS][2]
@@ -296,7 +303,7 @@ There are several things that need to be remembered:
 		else
 			handled_by_bodytype = FALSE
 
-		shoes_overlay = I.build_worn_icon(default_layer = UNIFORM_LAYER, default_icon_file = icon_file, isinhands = FALSE, use_species_greyscale = CHECK_USE_AUTOGEN)
+		shoes_overlay = I.build_worn_icon(default_layer = UNIFORM_LAYER, default_icon_file = icon_file, isinhands = FALSE, species = CHECK_USE_AUTOGEN)
 
 		if(OFFSET_SHOES in dna.species.offset_features)
 			shoes_overlay.pixel_x += dna.species.offset_features[OFFSET_SHOES][1]
@@ -342,7 +349,7 @@ There are several things that need to be remembered:
 		var/handled_by_bodytype
 		var/icon_file
 
-		head_overlay = I.build_worn_icon(default_layer = HEAD_LAYER, default_icon_file = icon_file, isinhands = FALSE, use_species_greyscale = CHECK_USE_AUTOGEN)
+		head_overlay = I.build_worn_icon(default_layer = HEAD_LAYER, default_icon_file = icon_file, isinhands = FALSE, species = CHECK_USE_AUTOGEN)
 		if(OFFSET_HEAD in dna.species.offset_features)
 			head_overlay.pixel_x += dna.species.offset_features[OFFSET_HEAD][1]
 			head_overlay.pixel_y += dna.species.offset_features[OFFSET_HEAD][2]
@@ -363,7 +370,7 @@ There are several things that need to be remembered:
 		update_hud_belt(I)
 		var/handled_by_bodytype
 
-		belt_overlay = I.build_worn_icon(default_layer = BELT_LAYER, default_icon_file = 'icons/mob/clothing/belt.dmi', use_species_greyscale = CHECK_USE_AUTOGEN)
+		belt_overlay = I.build_worn_icon(default_layer = BELT_LAYER, default_icon_file = 'icons/mob/clothing/belt.dmi', species = CHECK_USE_AUTOGEN)
 		if(OFFSET_BELT in dna.species.offset_features)
 			belt_overlay.pixel_x += dna.species.offset_features[OFFSET_BELT][1]
 			belt_overlay.pixel_y += dna.species.offset_features[OFFSET_BELT][2]
@@ -394,7 +401,7 @@ There are several things that need to be remembered:
 		else
 			handled_by_bodytype = FALSE
 
-		suit_overlay = wear_suit.build_worn_icon(default_layer = SUIT_LAYER, default_icon_file = icon_file, use_species_greyscale = CHECK_USE_AUTOGEN)
+		suit_overlay = wear_suit.build_worn_icon(default_layer = SUIT_LAYER, default_icon_file = icon_file, species = CHECK_USE_AUTOGEN)
 		if(OFFSET_SUIT in dna.species.offset_features)
 			suit_overlay.pixel_x += dna.species.offset_features[OFFSET_SUIT][1]
 			suit_overlay.pixel_y += dna.species.offset_features[OFFSET_SUIT][2]
@@ -474,7 +481,7 @@ There are several things that need to be remembered:
 			icon_file = DEFAULT_BACK_PATH
 			handled_by_bodytype = FALSE
 
-		back_overlay = I.build_worn_icon(default_layer = BACK_LAYER, default_icon_file = icon_file, isinhands = FALSE, override_file = icon_file, use_species_greyscale = CHECK_USE_AUTOGEN)
+		back_overlay = I.build_worn_icon(default_layer = BACK_LAYER, default_icon_file = icon_file, isinhands = FALSE, override_file = icon_file, species = CHECK_USE_AUTOGEN)
 
 		if(OFFSET_BACK in dna.species.offset_features)
 			back_overlay.pixel_x += dna.species.offset_features[OFFSET_BACK][1]
@@ -497,15 +504,19 @@ There are several things that need to be remembered:
 		generate_female_clothing(index,t_color,icon,type)
 	return mutable_appearance(GLOB.female_clothing_icons[t_color], layer = -layer)
 
-/obj/item/proc/wear_species_version(file2use, state2use, layer, species)
+/obj/item/proc/wear_species_version(file2use, state2use, layer, datum/species/species)
+	if(slot_flags & ITEM_SLOT_BACK)
+		var/icon/species_clothing_icon = GLOB.species_clothing_icons[species.id]["[file2use]-[state2use]"]
+		if(!species_clothing_icon)
+			generate_species_clothing(file2use, state2use, species)
+		return mutable_appearance(GLOB.species_clothing_icons[species.id]["[file2use]-[state2use]"], layer = -layer)
 	return
 
-/obj/item/clothing/wear_species_version(file2use, state2use, layer, species)
-	LAZYINITLIST(GLOB.species_clothing_icons[species])
-	var/icon/species_clothing_icon = GLOB.species_clothing_icons[species]["[file2use]-[state2use]"]
+/obj/item/clothing/wear_species_version(file2use, state2use, layer, datum/species/species)
+	var/icon/species_clothing_icon = GLOB.species_clothing_icons[species.id]["[file2use]-[state2use]"]
 	if(!species_clothing_icon) 	//Create standing/laying icons if they don't exist
 		generate_species_clothing(file2use, state2use, species)
-	return mutable_appearance(GLOB.species_clothing_icons[species]["[file2use]-[state2use]"], layer = -layer)
+	return mutable_appearance(GLOB.species_clothing_icons[species.id]["[file2use]-[state2use]"], layer = -layer)
 
 /mob/living/carbon/human/proc/get_overlays_copy(list/unwantedLayers)
 	var/list/out = new
@@ -520,7 +531,7 @@ There are several things that need to be remembered:
 //human HUD updates for items in our inventory
 
 /mob/living/carbon/human/proc/update_hud_uniform(obj/item/I)
-	I.screen_loc = ui_oclothing
+	I.screen_loc = ui_iclothing
 	if((client && hud_used) && (hud_used.inventory_shown && hud_used.hud_shown))
 		client.screen += I
 	update_observer_view(I,TRUE)
@@ -625,7 +636,7 @@ generate/load female uniform sprites matching all previously decided variables
 
 
 */
-/obj/item/proc/build_worn_icon(default_layer = 0, default_icon_file = null, isinhands = FALSE, femaleuniform = NO_FEMALE_UNIFORM, override_state = null, override_file = null, use_species_greyscale = null, direction = null)
+/obj/item/proc/build_worn_icon(default_layer = 0, default_icon_file = null, isinhands = FALSE, femaleuniform = NO_FEMALE_UNIFORM, override_state = null, override_file = null, datum/species/species = null, direction = null)
 
 	// WS Edit Start - Worn Icon State
 	var/t_state
@@ -642,8 +653,8 @@ generate/load female uniform sprites matching all previously decided variables
 
 	var/mutable_appearance/standing
 
-	if(use_species_greyscale)
-		standing = wear_species_version(file2use, t_state, layer2use, use_species_greyscale)
+	if(species?.species_clothing_path)
+		standing = wear_species_version(file2use, t_state, layer2use, species)
 	else if(femaleuniform)
 		standing = wear_female_version(t_state,file2use,layer2use,femaleuniform) //should layer2use be in sync with the adjusted value below? needs testing - shiz
 	if(!standing)
