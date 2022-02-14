@@ -38,7 +38,7 @@ jobs:
           bash tools/ci/check_filedirs.sh shiptest.dme
           bash tools/ci/check_changelogs.sh
           find . -name "*.php" -print0 | xargs -0 -n1 php -l
-          find . -name "*.json" -not -path "*/node_modules/*" -print0 | xargs -0 python3 ./tools/json_verifier.py
+          find . -name "*.json" -not -path "*/node_modules/*" -print0 | xargs -0 tools/bootstrap/python ./tools/json_verifier.py
           tgui/bin/tgui --lint
           bash tools/ci/check_grep.sh
           tools/bootstrap/python -m ci.check_regex --log-changes-only
@@ -72,7 +72,7 @@ jobs:
       - name: Compile All Maps
         run: |
           source $HOME/BYOND/byond/bin/byondsetup
-          python3 tools/ci/template_dm_generator.py
+          tools/bootstrap/python tools/ci/template_dm_generator.py
           tgui/bin/tgui --build
           bash tools/ci/dm.sh -DCIBUILDING -DCITESTING -DALL_MAPS shiptest.dme
 
