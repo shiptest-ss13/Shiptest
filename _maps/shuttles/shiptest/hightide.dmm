@@ -37,6 +37,7 @@
 	welded = 1
 	},
 /obj/structure/barricade/wooden/crude,
+/obj/effect/mapping_helpers/airlock/abandoned,
 /turf/open/floor/plating,
 /area/ship/maintenance/central)
 "bT" = (
@@ -59,7 +60,6 @@
 /turf/template_noop,
 /area/template_noop)
 "cr" = (
-/obj/structure/lattice,
 /turf/closed/wall,
 /area/ship/external)
 "cy" = (
@@ -244,9 +244,6 @@
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "ju" = (
-/obj/machinery/computer/cryopod{
-	pixel_y = -26
-	},
 /turf/open/floor/plating,
 /area/ship/maintenance/fore)
 "ka" = (
@@ -327,6 +324,7 @@
 	welded = 1
 	},
 /obj/structure/barricade/wooden/crude,
+/obj/effect/mapping_helpers/airlock/abandoned,
 /turf/open/floor/plating,
 /area/ship/maintenance/fore)
 "lY" = (
@@ -399,7 +397,8 @@
 /area/ship/maintenance/aft)
 "ob" = (
 /obj/item/radio/intercom/wideband{
-	pixel_y = -32
+	dir = 1;
+	pixel_y = -24
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/fore)
@@ -415,6 +414,9 @@
 	dir = 8;
 	launch_status = 0;
 	port_direction = 4
+	},
+/obj/effect/mapping_helpers/airlock/cyclelink_helper{
+	dir = 8
 	},
 /turf/open/floor/plating,
 /area/ship/cargo)
@@ -480,7 +482,8 @@
 "qE" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/computer/cryopod{
-	pixel_y = -32
+	dir = 1;
+	pixel_y = -23
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/fore)
@@ -640,6 +643,14 @@
 /obj/structure/window,
 /turf/open/floor/plating,
 /area/ship/maintenance/central)
+"xh" = (
+/obj/machinery/door/airlock/maintenance_hatch,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/mapping_helpers/airlock/cyclelink_helper{
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/ship/cargo)
 "xk" = (
 /obj/machinery/portable_atmospherics/canister,
 /turf/open/floor/plating,
@@ -1016,7 +1027,9 @@
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
-/obj/machinery/power/apc/auto_name/south,
+/obj/machinery/power/apc/auto_name/south{
+	dir = 1
+	},
 /obj/effect/decal/cleanable/glass,
 /obj/item/trash/cheesie,
 /obj/item/areaeditor/shuttle,
@@ -1801,7 +1814,7 @@ kj
 Yc
 Fn
 Fn
-be
+xh
 Il
 RR
 xq

@@ -897,6 +897,12 @@
 /obj/item/storage/belt/utility/full,
 /obj/item/clothing/gloves/color/yellow,
 /obj/item/stack/cable_coil/red,
+/obj/item/stack/tape/industrial,
+/obj/item/stack/tape/industrial/electrical,
+/obj/structure/closet/wall/orange{
+	dir = 8;
+	pixel_x = 30
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/electrical)
 "mK" = (
@@ -930,7 +936,6 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/machinery/airalarm/directional/north,
 /turf/open/floor/plating,
 /area/ship/engineering/electrical)
 "nm" = (
@@ -2926,6 +2931,9 @@
 	id = "slimelock";
 	name = "Lockdown Shutters"
 	},
+/obj/effect/mapping_helpers/airlock/cyclelink_helper{
+	dir = 8
+	},
 /turf/open/floor/mineral/titanium/tiled/purple,
 /area/ship/science)
 "Mc" = (
@@ -3166,7 +3174,6 @@
 /obj/structure/cable/orange{
 	icon_state = "4-10"
 	},
-/obj/machinery/airalarm/directional/north,
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "Pw" = (
@@ -3219,6 +3226,9 @@
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "slimelock";
 	name = "Lockdown Shutters"
+	},
+/obj/effect/mapping_helpers/airlock/cyclelink_helper{
+	dir = 4
 	},
 /turf/open/floor/mineral/titanium/tiled/purple,
 /area/ship/science)

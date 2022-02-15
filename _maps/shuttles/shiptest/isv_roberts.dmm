@@ -372,6 +372,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 6
 	},
+/obj/structure/sign/warning/gasmask,
 /turf/closed/wall/rust,
 /area/ship/maintenance/central)
 "AU" = (
@@ -439,10 +440,18 @@
 /obj/effect/decal/cleanable/oil/streak,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/glass,
-/mob/living/simple_animal/hostile/cockroach,
 /obj/structure/cable{
 	icon_state = "2-4"
 	},
+/obj/item/stack/tape/industrial/electrical,
+/obj/structure/closet/firecloset/wall{
+	dir = 4;
+	name = "emergency repair kit";
+	pixel_x = -28
+	},
+/obj/item/stack/tape/industrial,
+/obj/item/wirecutters/old,
+/obj/item/clothing/mask/gas,
 /turf/open/floor/plating,
 /area/ship/maintenance/central)
 "Fg" = (
@@ -753,6 +762,7 @@
 	icon_state = "eng_secure";
 	req_access = list(11)
 	},
+/obj/item/stack/tape/industrial,
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "VL" = (
@@ -825,6 +835,7 @@
 /obj/item/trash/can/food,
 /obj/machinery/light/broken,
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer2,
+/mob/living/simple_animal/hostile/cockroach,
 /turf/open/floor/plating,
 /area/ship/maintenance/central)
 "Zj" = (

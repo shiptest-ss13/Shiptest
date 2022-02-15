@@ -224,19 +224,17 @@
 /turf/open/floor/wood/mahogany,
 /area/ship/crew/chapel/office)
 "dX" = (
-/obj/item/canvas/twentythreeXtwentythree{
-	desc = "Earnings chart your soul out on this whiteboard!";
-	name = "whiteboard"
-	},
-/obj/structure/easel{
-	desc = "Only for the finest of flowcharts!";
-	name = "whiteboard stand";
-	pixel_x = 6
-	},
 /obj/item/pen/fourcolor{
 	desc = "It's a fancy four-color dry erase marker, set to black.";
 	name = "four-color dry erase marker";
-	pixel_x = -5
+	pixel_x = 13;
+	pixel_y = 13
+	},
+/obj/item/canvas/twentythreeXtwentythree{
+	desc = "Earnings chart your soul out on this whiteboard!";
+	name = "whiteboard";
+	pixel_x = 34;
+	pixel_y = 0
 	},
 /turf/open/floor/carpet/nanoweave,
 /area/ship/crew/office)
@@ -980,6 +978,21 @@
 "oL" = (
 /turf/closed/wall/r_wall,
 /area/ship/crew/dorm)
+"oO" = (
+/obj/structure/easel{
+	desc = "Only for the finest of flowcharts!";
+	name = "whiteboard stand";
+	pixel_x = -4;
+	pixel_y = 1
+	},
+/obj/item/canvas/twentythreeXtwentythree{
+	desc = "Earnings chart your soul out on this whiteboard!";
+	name = "whiteboard";
+	pixel_x = 0;
+	pixel_y = 11
+	},
+/turf/open/floor/carpet/nanoweave,
+/area/ship/crew/office)
 "oQ" = (
 /obj/machinery/power/terminal,
 /obj/structure/cable{
@@ -1711,6 +1724,7 @@
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
+/obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "yq" = (
@@ -2441,6 +2455,30 @@
 /obj/item/folder/yellow,
 /obj/item/folder/red,
 /obj/item/folder/blue,
+/obj/item/canvas/twentythreeXtwentythree{
+	desc = "Earnings chart your soul out on this whiteboard!";
+	name = "whiteboard";
+	pixel_x = 0;
+	pixel_y = 0
+	},
+/obj/item/canvas/twentythreeXtwentythree{
+	desc = "Earnings chart your soul out on this whiteboard!";
+	name = "whiteboard";
+	pixel_x = 0;
+	pixel_y = 0
+	},
+/obj/item/canvas/twentythreeXtwentythree{
+	desc = "Earnings chart your soul out on this whiteboard!";
+	name = "whiteboard";
+	pixel_x = 0;
+	pixel_y = 0
+	},
+/obj/item/canvas/twentythreeXtwentythree{
+	desc = "Earnings chart your soul out on this whiteboard!";
+	name = "whiteboard";
+	pixel_x = 0;
+	pixel_y = 0
+	},
 /turf/open/floor/carpet/nanoweave,
 /area/ship/crew/office)
 "IS" = (
@@ -2978,14 +3016,11 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/engineering)
 "Px" = (
-/obj/structure/easel{
-	desc = "Only for the finest of flowcharts!";
-	name = "whiteboard stand";
-	pixel_x = 6
-	},
 /obj/item/canvas/twentythreeXtwentythree{
 	desc = "Earnings chart your soul out on this whiteboard!";
-	name = "whiteboard"
+	name = "whiteboard";
+	pixel_x = 34;
+	pixel_y = 6
 	},
 /turf/open/floor/carpet/nanoweave,
 /area/ship/crew/office)
@@ -3356,10 +3391,6 @@
 	color = "#4c535b"
 	},
 /area/ship/crew/dorm)
-"We" = (
-/obj/structure/catwalk,
-/turf/template_noop,
-/area/ship/external)
 "Wp" = (
 /obj/structure/sign/poster/retro/nanotrasen_logo_70s{
 	pixel_x = -32
@@ -3372,6 +3403,7 @@
 	dir = 8
 	},
 /obj/structure/cable,
+/obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "WH" = (
@@ -3653,7 +3685,7 @@ Er
 vv
 tL
 nm
-VA
+oO
 VA
 VA
 VA
@@ -4050,7 +4082,7 @@ pu
 em
 gJ
 ui
-We
+hv
 "}
 (12,1,1) = {"
 Aq
@@ -4092,7 +4124,7 @@ WV
 dZ
 Yd
 GX
-We
+hv
 "}
 (13,1,1) = {"
 Aq

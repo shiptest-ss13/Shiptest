@@ -133,6 +133,7 @@
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
+/obj/item/stack/tape/industrial,
 /turf/open/floor/plating,
 /area/ship/maintenance/aft)
 "fa" = (
@@ -645,7 +646,9 @@
 /turf/open/floor/mineral/titanium/yellow,
 /area/ship/cargo)
 "xL" = (
-/obj/machinery/cryopod,
+/obj/machinery/cryopod{
+	dir = 8
+	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/crew/dorm)
 "xR" = (
