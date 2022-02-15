@@ -172,6 +172,25 @@ GLOBAL_LIST_INIT(available_depts, list(SEC_DEPT_ENGINEERING, SEC_DEPT_MEDICAL, S
 	head = /obj/item/clothing/head/cowboy/sec
 
 /datum/outfit/job/security/minutemen
+	name = "Minuteman (Colonial Minutemen)"
+
+	head = null
+	suit = null
+	uniform = /obj/item/clothing/under/rank/security/officer/minutemen
+	shoes = null
+	gloves = null
+	ears = null
+
+	belt = null
+
+	l_pocket = null
+	r_pocket = null
+
+	backpack = /obj/item/storage/backpack
+	box = /obj/item/storage/box/survival/engineer/radio
+	backpack_contents = null
+
+/datum/outfit/job/security/minutemen/armed
 	name = "Minuteman (Colonial Minutemen) (Armed)"
 
 	head = /obj/item/clothing/head/helmet/alt/minutemen
@@ -180,8 +199,9 @@ GLOBAL_LIST_INIT(available_depts, list(SEC_DEPT_ENGINEERING, SEC_DEPT_MEDICAL, S
 	uniform = /obj/item/clothing/under/rank/security/officer/minutemen
 	shoes = /obj/item/clothing/shoes/combat
 	gloves = /obj/item/clothing/gloves/combat
+	ears = /obj/item/radio/headset/headset_sec/alt
 
-	belt = /obj/item/storage/belt/military
+	belt = /obj/item/storage/belt/military/minutemen
 
 	suit_store = /obj/item/gun/ballistic/automatic/p16/minutemen
 
@@ -190,7 +210,7 @@ GLOBAL_LIST_INIT(available_depts, list(SEC_DEPT_ENGINEERING, SEC_DEPT_MEDICAL, S
 
 	backpack = /obj/item/storage/backpack
 	box = /obj/item/storage/box/survival/engineer/radio
-	backpack_contents = list(/obj/item/melee/classic_baton=1, /obj/item/ammo_box/magazine/co9mm=2, /obj/item/gun/ballistic/automatic/pistol/commander=1, /obj/item/restraints/handcuffs=1, /obj/item/ammo_box/magazine/p16=3)
+	backpack_contents = list(/obj/item/melee/classic_baton=1, /obj/item/gun/ballistic/automatic/pistol/commander=1, /obj/item/restraints/handcuffs=1)
 
 //Shiptest outfits end
 

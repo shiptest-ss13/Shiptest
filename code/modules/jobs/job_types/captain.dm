@@ -120,3 +120,15 @@
 	head = /obj/item/clothing/head/aclfcap
 	suit = /obj/item/clothing/suit/aclf
 
+/datum/outfit/job/captain/minutemen
+	name = "General (Colonial Minutemen)"
+
+	head = /obj/item/clothing/head/caphat/minutemen
+	uniform = /obj/item/clothing/under/rank/command/minutemen
+	suit = /obj/item/clothing/suit/armor/vest/capcarapace/minutemen
+	shoes = /obj/item/clothing/shoes/combat
+
+	box = /obj/item/storage/box/survival/engineer/radio
+	backpack = /obj/item/storage/backpack
+	backpack_contents = list(/obj/item/melee/classic_baton/telescopic=1, /obj/item/gun/ballistic/revolver/mateba=1)
+

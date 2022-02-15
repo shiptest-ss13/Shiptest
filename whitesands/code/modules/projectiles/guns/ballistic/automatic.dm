@@ -210,7 +210,7 @@
 
 /obj/item/gun/ballistic/automatic/p16
 	name = "P-16"
-	desc = "A old rifle used by professional mercanaries. It is said that the P-16 and AK-47 destined to be in combat against each other. Chambered in 5.56mm HITP caseless"
+	desc = "A old rifle used by professional mercanaries. It is said that the P-16 and AK-47 destined to be in combat against each other. Chambered in 5.56mm."
 	icon = 'icons/obj/guns/48x32guns.dmi'
 	fire_sound = 'sound/weapons/gun/rifle/m16.ogg'
 	icon_state = "p16"
