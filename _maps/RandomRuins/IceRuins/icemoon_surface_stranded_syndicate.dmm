@@ -1,146 +1,1682 @@
-"ah" = (/obj/structure/cable{icon_state = "4-8"},/obj/effect/decal/cleanable/blood{icon_state = "drip1"},/turf/open/floor/plastic,/area/ruin/unpowered/strandedsyndicate/kitchen)
-"ai" = (/obj/structure/chair/wood{dir = 4},/turf/open/floor/wood{initial_gas_mix = "ICEMOON_ATMOS"},/area/ruin/unpowered/strandedsyndicate)
-"by" = (/turf/closed/wall,/area/ruin/unpowered/strandedsyndicate/kitchen)
-"bH" = (/obj/effect/decal/cleanable/dirt,/obj/effect/spawner/lootdrop/maintenance,/turf/open/floor/plating/icemoon,/area/ruin/unpowered/strandedsyndicate)
-"bQ" = (/obj/effect/decal/cleanable/generic,/obj/effect/spawner/lootdrop/maintenance,/turf/open/floor/plating/icemoon,/area/ruin/unpowered/strandedsyndicate)
-"bV" = (/obj/structure/table,/obj/machinery/reagentgrinder{pixel_y = 5},/obj/machinery/light{dir = 1},/turf/open/floor/wood{initial_gas_mix = "ICEMOON_ATMOS"},/area/ruin/unpowered/strandedsyndicate)
-"cf" = (/obj/structure/table/wood,/obj/item/reagent_containers/food/drinks/soda_cans/lemon_lime{pixel_x = -6; pixel_y = 10},/obj/item/reagent_containers/food/snacks/cheesyfries,/obj/item/reagent_containers/food/condiment/saltshaker{pixel_x = 5; pixel_y = 12},/turf/open/floor/wood{initial_gas_mix = "ICEMOON_ATMOS"},/area/ruin/unpowered/strandedsyndicate)
-"cF" = (/obj/machinery/deepfryer,/turf/open/floor/plastic,/area/ruin/unpowered/strandedsyndicate/kitchen)
-"cZ" = (/obj/structure/chair/stool/bar{dir = 1},/turf/open/floor/wood{icon_state = "wood-broken2"; initial_gas_mix = "ICEMOON_ATMOS"},/area/ruin/unpowered/strandedsyndicate)
-"dZ" = (/obj/structure/table,/obj/machinery/microwave{pixel_y = 6},/turf/open/floor/plastic,/area/ruin/unpowered/strandedsyndicate/kitchen)
-"ek" = (/obj/structure/cable{icon_state = "1-4"},/turf/open/floor/wood{initial_gas_mix = "ICEMOON_ATMOS"},/area/ruin/unpowered/strandedsyndicate)
-"eA" = (/obj/structure/flora/grass/brown{icon_state = "snowbush3"},/turf/open/floor/plating/asteroid/snow/icemoon,/area/icemoon/surface/outdoors/unexplored)
-"fI" = (/mob/living/simple_animal/hostile/syndicate/melee/space{desc = "They're looking for a way off the planet, and they're not risking you leaving without them."; faction = list("rogue"); name = "Rogue Commando"},/turf/open/floor/plastic,/area/ruin/unpowered/strandedsyndicate/kitchen)
-"fU" = (/obj/structure/windoor_assembly{dir = 2; name = "broken windoor"},/obj/structure/cable{icon_state = "1-2"},/turf/open/floor/wood{initial_gas_mix = "ICEMOON_ATMOS"},/area/ruin/unpowered/strandedsyndicate)
-"gp" = (/obj/structure/table,/obj/machinery/reagentgrinder{pixel_y = 5},/obj/item/gun/ballistic/automatic/pistol{pixel_x = -4; pixel_y = 3},/obj/item/ammo_box/magazine/m10mm{pixel_x = 4; pixel_y = -1},/obj/item/ammo_box/magazine/m10mm{pixel_x = 8; pixel_y = 4},/turf/open/floor/plastic,/area/ruin/unpowered/strandedsyndicate/kitchen)
-"gT" = (/obj/machinery/grill,/turf/open/floor/plastic,/area/ruin/unpowered/strandedsyndicate/kitchen)
-"hj" = (/obj/effect/decal/cleanable/dirt,/obj/effect/spawner/lootdrop/crate_spawner,/turf/open/floor/plating/icemoon,/area/ruin/unpowered/strandedsyndicate)
-"hk" = (/obj/structure/table,/obj/machinery/chem_dispenser/drinks/beer,/turf/open/floor/wood{icon_state = "wood-broken"; initial_gas_mix = "ICEMOON_ATMOS"},/area/ruin/unpowered/strandedsyndicate)
-"hs" = (/obj/structure/table/wood,/obj/item/reagent_containers/food/snacks/cakeslice/carrot{pixel_x = 3; pixel_y = 2},/obj/item/reagent_containers/food/drinks/waterbottle{pixel_x = -9; pixel_y = 3},/turf/open/floor/wood{icon_state = "wood-broken3"; initial_gas_mix = "ICEMOON_ATMOS"},/area/ruin/unpowered/strandedsyndicate)
-"hL" = (/obj/structure/chair/sofa/left{dir = 1},/turf/open/floor/wood{initial_gas_mix = "ICEMOON_ATMOS"},/area/ruin/unpowered/strandedsyndicate)
-"in" = (/obj/structure/cable{icon_state = "0-2"},/obj/machinery/power/port_gen/pacman,/turf/open/floor/plating/icemoon,/area/ruin/unpowered/strandedsyndicate)
-"ix" = (/obj/structure/grille,/obj/structure/window/reinforced/fulltile/ice{opacity = 1},/turf/open/floor/plating/icemoon,/area/ruin/unpowered/strandedsyndicate)
-"jk" = (/obj/effect/decal/cleanable/blood{icon_state = "floor2"},/obj/machinery/jukebox,/turf/open/floor/wood{initial_gas_mix = "ICEMOON_ATMOS"},/area/ruin/unpowered/strandedsyndicate)
-"jq" = (/obj/structure/chair/wood{dir = 1},/turf/open/floor/wood{initial_gas_mix = "ICEMOON_ATMOS"},/area/ruin/unpowered/strandedsyndicate)
-"jI" = (/obj/structure/chair/sofa/right{dir = 1},/obj/machinery/light/small/broken,/turf/open/floor/wood{icon_state = "wood-broken"; initial_gas_mix = "ICEMOON_ATMOS"},/area/ruin/unpowered/strandedsyndicate)
-"kc" = (/obj/effect/decal/cleanable/blood/gibs/limb,/turf/open/floor/wood{initial_gas_mix = "ICEMOON_ATMOS"},/area/ruin/unpowered/strandedsyndicate)
-"kh" = (/obj/structure/cable{icon_state = "4-8"},/obj/effect/decal/cleanable/blood{icon_state = "ltrails_2"},/turf/open/floor/plastic,/area/ruin/unpowered/strandedsyndicate/kitchen)
-"lL" = (/obj/effect/decal/cleanable/blood{dir = 4; icon_state = "gibarm"},/obj/effect/decal/cleanable/blood{icon_state = "bubblegumfoot"},/turf/open/floor/wood{icon_state = "wood-broken2"; initial_gas_mix = "ICEMOON_ATMOS"},/area/ruin/unpowered/strandedsyndicate)
-"mf" = (/obj/structure/chair/sofa/corner{dir = 8},/turf/open/floor/wood{icon_state = "wood-broken"; initial_gas_mix = "ICEMOON_ATMOS"},/area/ruin/unpowered/strandedsyndicate)
-"mr" = (/obj/structure/cable{icon_state = "1-8"},/obj/effect/decal/cleanable/food/salt,/turf/open/floor/plastic,/area/ruin/unpowered/strandedsyndicate/kitchen)
-"mA" = (/obj/effect/decal/cleanable/blood{icon_state = "ltrails_2"},/turf/open/floor/wood{initial_gas_mix = "ICEMOON_ATMOS"},/area/ruin/unpowered/strandedsyndicate)
-"mY" = (/obj/structure/disposalpipe/trunk,/obj/structure/disposaloutlet{dir = 1},/turf/open/floor/plating/icemoon,/area/ruin/unpowered/strandedsyndicate)
-"ne" = (/obj/effect/decal/cleanable/blood,/turf/open/floor/plastic,/area/ruin/unpowered/strandedsyndicate/kitchen)
-"nz" = (/obj/effect/decal/cleanable/blood{icon_state = "bubblegumfoot"},/turf/open/floor/wood{icon_state = "wood-broken"; initial_gas_mix = "ICEMOON_ATMOS"},/area/ruin/unpowered/strandedsyndicate)
-"oB" = (/obj/effect/mob_spawn/human/corpse{mob_species = /datum/species/human/felinid; outfit = /datum/outfit/job/bartender},/obj/effect/decal/cleanable/blood{icon_state = "floor4"},/turf/open/floor/wood{initial_gas_mix = "ICEMOON_ATMOS"},/area/ruin/unpowered/strandedsyndicate)
-"pm" = (/obj/structure/chair/sofa{dir = 8},/obj/item/ammo_box/magazine/tommygunm45{pixel_x = -4; pixel_y = 7},/obj/machinery/light/broken{dir = 4},/obj/item/skub{pixel_y = -5},/obj/item/gun/ballistic/automatic/tommygun,/turf/open/floor/wood{initial_gas_mix = "ICEMOON_ATMOS"},/area/ruin/unpowered/strandedsyndicate)
-"pp" = (/obj/effect/decal/cleanable/blood{icon_state = "floor5"},/turf/open/floor/wood{initial_gas_mix = "ICEMOON_ATMOS"},/area/ruin/unpowered/strandedsyndicate)
-"pM" = (/obj/effect/decal/cleanable/blood{icon_state = "floor3"},/obj/machinery/light/broken,/turf/open/floor/plastic,/area/ruin/unpowered/strandedsyndicate/kitchen)
-"qF" = (/obj/effect/decal/cleanable/ash,/turf/open/floor/plating/icemoon,/area/ruin/unpowered/strandedsyndicate)
-"qS" = (/obj/effect/decal/cleanable/food/egg_smudge,/turf/open/floor/plastic,/area/ruin/unpowered/strandedsyndicate/kitchen)
-"rl" = (/obj/effect/spawner/lootdrop/maintenance,/turf/open/floor/plating/icemoon,/area/ruin/unpowered/strandedsyndicate)
-"rN" = (/obj/structure/flora/grass/brown,/turf/open/floor/plating/asteroid/snow/icemoon,/area/icemoon/surface/outdoors/unexplored)
-"rY" = (/obj/structure/flora/rock/icy{icon_state = "lavarocks"},/turf/open/floor/plating/asteroid/snow/icemoon,/area/icemoon/surface/outdoors/unexplored)
-"rZ" = (/obj/machinery/processor,/turf/open/floor/plastic,/area/ruin/unpowered/strandedsyndicate/kitchen)
-"sc" = (/obj/structure/cable{icon_state = "4-8"},/obj/structure/cable{icon_state = "2-8"},/turf/open/floor/wood{icon_state = "wood-broken2"; initial_gas_mix = "ICEMOON_ATMOS"},/area/ruin/unpowered/strandedsyndicate)
-"sF" = (/obj/structure/flora/grass/brown{icon_state = "snowgrass2bb"},/turf/open/floor/plating/asteroid/snow/icemoon,/area/icemoon/surface/outdoors/unexplored)
-"sT" = (/obj/item/flashlight/glowstick/yellow{on = 1},/turf/open/floor/plating/icemoon,/area/ruin/unpowered/strandedsyndicate)
-"te" = (/obj/structure/chair/stool/bar{dir = 1},/obj/effect/mob_spawn/human/corpse{mob_species = /datum/species/lizard; outfit = /datum/outfit/job/botanist},/obj/effect/decal/cleanable/blood{icon_state = "bubblegumfoot"},/turf/open/floor/wood{icon_state = "wood-broken"; initial_gas_mix = "ICEMOON_ATMOS"},/area/ruin/unpowered/strandedsyndicate)
-"tr" = (/obj/structure/extinguisher_cabinet,/turf/closed/wall,/area/ruin/unpowered/strandedsyndicate/kitchen)
-"tx" = (/obj/machinery/power/apc/auto_name/east{start_charge = 0},/obj/structure/cable,/turf/open/floor/wood{initial_gas_mix = "ICEMOON_ATMOS"},/area/ruin/unpowered/strandedsyndicate)
-"uA" = (/obj/item/ammo_casing/c45,/turf/open/floor/plating/asteroid/snow/icemoon,/area/icemoon/surface/outdoors/unexplored)
-"uE" = (/obj/effect/decal/cleanable/dirt/dust,/obj/machinery/portable_atmospherics/canister/air,/turf/open/floor/plating/icemoon,/area/ruin/unpowered/strandedsyndicate)
-"ve" = (/obj/effect/decal/cleanable/blood{icon_state = "splatter2"},/obj/machinery/light/small{dir = 8},/obj/structure/table,/obj/item/reagent_containers/food/drinks/bottle/sarsaparilla{pixel_x = -8; pixel_y = 4},/turf/open/floor/wood{initial_gas_mix = "ICEMOON_ATMOS"},/area/ruin/unpowered/strandedsyndicate)
-"wj" = (/obj/structure/flora/tree/dead,/turf/open/floor/plating/asteroid/snow/icemoon,/area/icemoon/surface/outdoors/unexplored)
-"wP" = (/turf/open/floor/plastic,/area/ruin/unpowered/strandedsyndicate/kitchen)
-"xd" = (/obj/structure/chair/sofa{dir = 4},/obj/effect/mob_spawn/human/corpse/cargo_tech,/obj/effect/decal/cleanable/blood{icon_state = "gibbl3"},/turf/open/floor/wood{initial_gas_mix = "ICEMOON_ATMOS"},/area/ruin/unpowered/strandedsyndicate)
-"xl" = (/obj/machinery/disposal/bin,/obj/structure/disposalpipe/trunk{dir = 1},/turf/open/floor/wood{initial_gas_mix = "ICEMOON_ATMOS"},/area/ruin/unpowered/strandedsyndicate)
-"yl" = (/obj/structure/table,/obj/item/reagent_containers/food/drinks/bottle/wine{pixel_x = -8; pixel_y = 12},/obj/item/flashlight/glowstick/red{on = 1; pixel_x = 5; pixel_y = 3},/obj/item/kitchen/rollingpin,/obj/item/grenade/syndieminibomb{pixel_x = 7; pixel_y = -4},/turf/open/floor/plastic,/area/ruin/unpowered/strandedsyndicate/kitchen)
-"yK" = (/obj/effect/decal/cleanable/glass,/obj/machinery/atmospherics/pipe/simple/general/visible/layer1,/turf/open/floor/plating/icemoon,/area/ruin/unpowered/strandedsyndicate)
-"AG" = (/obj/structure/table,/obj/item/kitchen/knife{pixel_x = -8},/obj/item/reagent_containers/food/snacks/meat/steak{pixel_x = 6; pixel_y = -2},/turf/open/floor/plastic,/area/ruin/unpowered/strandedsyndicate/kitchen)
-"AI" = (/obj/structure/flora/grass/brown{icon_state = "snowgrassall2"},/turf/open/floor/plating/asteroid/snow/icemoon,/area/icemoon/surface/outdoors/unexplored)
-"AU" = (/obj/effect/spawner/lootdrop/crate_spawner,/turf/open/floor/plating/icemoon,/area/ruin/unpowered/strandedsyndicate)
-"AV" = (/obj/structure/flora/grass/brown{icon_state = "snowbush1"},/turf/open/floor/plating/asteroid/snow/icemoon,/area/icemoon/surface/outdoors/unexplored)
-"AW" = (/obj/machinery/atmospherics/components/unary/portables_connector/visible/layer1,/turf/open/floor/plating/icemoon,/area/ruin/unpowered/strandedsyndicate)
-"Bc" = (/obj/effect/decal/cleanable/blood{icon_state = "coatblood"},/turf/open/floor/wood{icon_state = "wood-broken3"; initial_gas_mix = "ICEMOON_ATMOS"},/area/ruin/unpowered/strandedsyndicate)
-"Br" = (/mob/living/simple_animal/hostile/syndicate/ranged/shotgun/space/stormtrooper{desc = "They're looking for a way off the planet, and they're not risking you leaving without them."; faction = list("rogue"); name = "Rogue Stormtrooper"},/obj/machinery/light/broken{dir = 4},/obj/structure/cable{icon_state = "1-2"},/turf/open/floor/wood{icon_state = "wood-broken"; initial_gas_mix = "ICEMOON_ATMOS"},/area/ruin/unpowered/strandedsyndicate)
-"Bw" = (/obj/structure/chair/stool/bar{dir = 1},/obj/item/shard{icon_state = "tiny"},/turf/open/floor/wood{initial_gas_mix = "ICEMOON_ATMOS"},/area/ruin/unpowered/strandedsyndicate)
-"BF" = (/obj/structure/table,/obj/item/reagent_containers/food/drinks/shaker{pixel_x = -9; pixel_y = -4},/turf/open/floor/wood{initial_gas_mix = "ICEMOON_ATMOS"},/area/ruin/unpowered/strandedsyndicate)
-"BM" = (/obj/structure/table/wood,/obj/item/reagent_containers/food/drinks/bottle/orangejuice{pixel_x = -7; pixel_y = 12},/obj/item/stack/spacecash/c1000,/obj/item/stack/spacecash/c1000,/obj/item/stack/spacecash/c1000,/obj/item/stack/spacecash/c1000,/obj/item/stack/spacecash/c1000,/obj/item/stack/spacecash/c1000,/obj/item/stack/spacecash/c1000,/obj/item/reagent_containers/food/condiment/peppermill{pixel_x = 4; pixel_y = 12},/turf/open/floor/wood{initial_gas_mix = "ICEMOON_ATMOS"},/area/ruin/unpowered/strandedsyndicate)
-"DJ" = (/obj/structure/flora/rock/icy,/turf/open/floor/plating/asteroid/snow/icemoon,/area/icemoon/surface/outdoors/unexplored)
-"Ep" = (/obj/structure/sink/kitchen{pixel_y = 16},/turf/open/floor/plastic,/area/ruin/unpowered/strandedsyndicate/kitchen)
-"Er" = (/obj/machinery/door/airlock/glass,/obj/structure/cable{icon_state = "4-8"},/turf/open/floor/plastic,/area/ruin/unpowered/strandedsyndicate/kitchen)
-"Fk" = (/obj/effect/decal/cleanable/blood{icon_state = "splatter4"},/obj/structure/table,/obj/item/reagent_containers/food/drinks/bottle/trappist{pixel_x = 7; pixel_y = 5},/obj/item/reagent_containers/food/snacks/friedegg{pixel_x = -3; pixel_y = 3},/turf/open/floor/wood{initial_gas_mix = "ICEMOON_ATMOS"},/area/ruin/unpowered/strandedsyndicate)
-"Fq" = (/obj/effect/mob_spawn/human/corpse{mob_species = /datum/species/felinid; outfit = /datum/outfit/job/cook},/obj/effect/decal/cleanable/blood{icon_state = "gibbl3"},/turf/open/floor/plastic,/area/ruin/unpowered/strandedsyndicate/kitchen)
-"Fz" = (/obj/structure/chair/sofa/right{dir = 8},/obj/effect/mob_spawn/human/corpse{outfit = /datum/outfit/mobster},/obj/effect/decal/cleanable/blood{icon_state = "gibbl5"},/obj/item/ammo_casing/c45,/obj/item/ammo_casing/c45,/obj/item/ammo_casing/c45,/obj/item/paper/fluff/ruins/oldstation/survivor_note{desc = "A note to a mobster's wife."; info = "This one goes to my wife, back home. We've struck gold this time; we found skub on one of the folks who didn't pay our fee today! I'm hoping to sell this, so we can get ourselves a stable footing, and finally find a way to fix thi"; name = "To my wife"},/turf/open/floor/wood{initial_gas_mix = "ICEMOON_ATMOS"},/area/ruin/unpowered/strandedsyndicate)
-"FO" = (/obj/effect/decal/cleanable/oil,/obj/effect/spawner/lootdrop/crate_spawner,/turf/open/floor/plating/icemoon,/area/ruin/unpowered/strandedsyndicate)
-"Gl" = (/obj/structure/table,/obj/item/kitchen/knife/hunting{pixel_x = 4; pixel_y = 6},/turf/open/floor/wood{initial_gas_mix = "ICEMOON_ATMOS"},/area/ruin/unpowered/strandedsyndicate)
-"GI" = (/obj/effect/decal/cleanable/blood,/turf/open/floor/wood{icon_state = "wood-broken"; initial_gas_mix = "ICEMOON_ATMOS"},/area/ruin/unpowered/strandedsyndicate)
-"Hh" = (/obj/effect/decal/cleanable/food/flour,/turf/open/floor/plastic,/area/ruin/unpowered/strandedsyndicate/kitchen)
-"Hi" = (/mob/living/simple_animal/hostile/syndicate/ranged/smg/space{desc = "They're looking for a way off the planet, and they're not risking you leaving without them."; faction = list("rogue"); name = "Rogue Commando"},/turf/open/floor/wood{icon_state = "wood-broken"; initial_gas_mix = "ICEMOON_ATMOS"},/area/ruin/unpowered/strandedsyndicate)
-"HA" = (/obj/item/storage/toolbox/mechanical{pixel_y = 6},/obj/structure/table,/obj/item/stack/sheet/mineral/plasma/twenty,/turf/open/floor/plating/icemoon,/area/ruin/unpowered/strandedsyndicate)
-"HM" = (/obj/structure/closet/secure_closet/freezer/meat,/obj/item/reagent_containers/food/condiment/milk,/obj/item/reagent_containers/food/condiment/milk,/obj/item/reagent_containers/food/condiment/milk,/obj/item/storage/fancy/egg_box,/obj/item/storage/fancy/egg_box,/obj/item/storage/fancy/egg_box,/obj/item/reagent_containers/food/condiment/sugar,/obj/item/reagent_containers/food/condiment/sugar,/obj/item/reagent_containers/food/condiment/sugar,/obj/item/reagent_containers/food/condiment/flour,/obj/item/reagent_containers/food/condiment/flour,/obj/item/reagent_containers/food/condiment/flour,/obj/item/reagent_containers/food/condiment/enzyme,/obj/item/reagent_containers/food/condiment/enzyme,/obj/item/reagent_containers/food/condiment/enzyme,/obj/item/reagent_containers/food/condiment/enzyme,/obj/item/reagent_containers/food/condiment/enzyme,/obj/item/reagent_containers/food/condiment/enzyme,/obj/item/reagent_containers/food/snacks/sausage,/obj/item/reagent_containers/food/snacks/sausage,/turf/open/floor/plastic,/area/ruin/unpowered/strandedsyndicate/kitchen)
-"Ik" = (/obj/effect/decal/cleanable/blood/old,/obj/machinery/portable_atmospherics/scrubber,/turf/open/floor/plating/icemoon,/area/ruin/unpowered/strandedsyndicate)
-"Jb" = (/obj/machinery/vending/dinnerware,/turf/open/floor/plastic,/area/ruin/unpowered/strandedsyndicate/kitchen)
-"Kc" = (/obj/machinery/portable_atmospherics/pump,/turf/open/floor/plating/icemoon,/area/ruin/unpowered/strandedsyndicate)
-"Ky" = (/obj/structure/cable{icon_state = "1-2"},/turf/closed/wall,/area/ruin/unpowered/strandedsyndicate)
-"KB" = (/turf/closed/wall,/area/ruin/unpowered/strandedsyndicate)
-"LO" = (/obj/effect/decal/cleanable/blood,/turf/open/floor/wood{initial_gas_mix = "ICEMOON_ATMOS"},/area/ruin/unpowered/strandedsyndicate)
-"LP" = (/obj/structure/closet/supplypod/extractionpod{desc = "A specalised, blood-red styled pod for delivering operatives to a target destination with pristine cargo delivery rates. That is to say, it delivers people. One way."; name = "Syndicate Drop Pod"; opened = 1},/turf/open/floor/plating/asteroid/snow/icemoon,/area/icemoon/surface/outdoors/unexplored)
-"Me" = (/turf/template_noop,/area/template_noop)
-"Mf" = (/obj/structure/disposalpipe/segment,/turf/closed/wall,/area/ruin/unpowered/strandedsyndicate)
-"Oj" = (/turf/open/floor/wood{initial_gas_mix = "ICEMOON_ATMOS"},/area/ruin/unpowered/strandedsyndicate)
-"Ow" = (/obj/effect/decal/cleanable/blood{icon_state = "gibbl2"},/turf/open/floor/wood{initial_gas_mix = "ICEMOON_ATMOS"},/area/ruin/unpowered/strandedsyndicate)
-"PU" = (/obj/machinery/power/apc/auto_name/north{start_charge = 0},/obj/structure/cable{icon_state = "0-2"},/obj/machinery/light/broken{dir = 1},/obj/effect/decal/cleanable/blood{icon_state = "floor7"},/turf/open/floor/plastic,/area/ruin/unpowered/strandedsyndicate/kitchen)
-"QL" = (/obj/structure/chair/sofa/left{dir = 4},/obj/effect/decal/cleanable/blood{icon_state = "armorblood"},/turf/open/floor/wood{icon_state = "wood-broken3"; initial_gas_mix = "ICEMOON_ATMOS"},/area/ruin/unpowered/strandedsyndicate)
-"Ry" = (/obj/item/reagent_containers/food/drinks/drinkingglass/shotglass{pixel_x = -5; pixel_y = -7},/turf/open/floor/wood{initial_gas_mix = "ICEMOON_ATMOS"},/area/ruin/unpowered/strandedsyndicate)
-"RC" = (/obj/item/kitchen/knife/shiv{pixel_x = 4; pixel_y = 6},/obj/item/ammo_casing/c45{dir = 8; pixel_x = 4; pixel_y = 6},/obj/item/flashlight/glowstick/yellow{on = 1; pixel_x = -5; pixel_y = -4},/turf/open/floor/wood{initial_gas_mix = "ICEMOON_ATMOS"},/area/ruin/unpowered/strandedsyndicate)
-"RE" = (/obj/structure/table,/obj/effect/spawner/lootdrop/donkpockets,/obj/effect/spawner/lootdrop/donkpockets,/obj/effect/spawner/lootdrop/donkpockets,/obj/effect/spawner/lootdrop/donkpockets,/turf/open/floor/plastic,/area/ruin/unpowered/strandedsyndicate/kitchen)
-"RN" = (/obj/machinery/portable_atmospherics/canister/air,/obj/machinery/atmospherics/components/unary/portables_connector/visible/layer1{dir = 1},/turf/open/floor/plating/icemoon,/area/ruin/unpowered/strandedsyndicate)
-"RS" = (/obj/structure/chair/stool/bar{dir = 1},/turf/open/floor/wood{initial_gas_mix = "ICEMOON_ATMOS"},/area/ruin/unpowered/strandedsyndicate)
-"Sf" = (/turf/open/floor/plating/asteroid/snow/icemoon,/area/icemoon/surface/outdoors/unexplored)
-"TS" = (/obj/machinery/door/airlock/glass_large,/turf/open/floor/wood{initial_gas_mix = "ICEMOON_ATMOS"},/area/ruin/unpowered/strandedsyndicate)
-"TY" = (/obj/effect/decal/cleanable/garbage,/turf/open/floor/plating/icemoon,/area/ruin/unpowered/strandedsyndicate)
-"Uf" = (/obj/effect/decal/cleanable/blood{icon_state = "floor3"},/turf/open/floor/wood{initial_gas_mix = "ICEMOON_ATMOS"},/area/ruin/unpowered/strandedsyndicate)
-"Uj" = (/obj/effect/decal/cleanable/blood{icon_state = "u_dangerous_l"},/obj/machinery/space_heater,/turf/open/floor/wood{initial_gas_mix = "ICEMOON_ATMOS"},/area/ruin/unpowered/strandedsyndicate)
-"Ve" = (/obj/effect/mob_spawn/human/corpse/assistant{mob_species = /datum/species/moth},/obj/structure/chair/wood,/obj/effect/decal/cleanable/blood{icon_state = "floor2"},/turf/open/floor/wood{initial_gas_mix = "ICEMOON_ATMOS"},/area/ruin/unpowered/strandedsyndicate)
-"Vk" = (/obj/effect/decal/cleanable/blood{icon_state = "floor5"},/turf/open/floor/plastic,/area/ruin/unpowered/strandedsyndicate/kitchen)
-"Vo" = (/obj/structure/flora/grass/brown{icon_state = "snowgrassall1"},/turf/open/floor/plating/asteroid/snow/icemoon,/area/icemoon/surface/outdoors/unexplored)
-"VP" = (/obj/structure/table,/obj/machinery/chem_dispenser/drinks,/turf/open/floor/wood{initial_gas_mix = "ICEMOON_ATMOS"},/area/ruin/unpowered/strandedsyndicate)
-"We" = (/obj/structure/chair/sofa/corner{dir = 1},/obj/effect/decal/cleanable/blood,/turf/open/floor/wood{initial_gas_mix = "ICEMOON_ATMOS"},/area/ruin/unpowered/strandedsyndicate)
-"Wh" = (/obj/structure/closet/chefcloset,/turf/open/floor/plastic,/area/ruin/unpowered/strandedsyndicate/kitchen)
-"WI" = (/obj/structure/table/wood,/obj/item/reagent_containers/food/snacks/burger/baconburger{pixel_x = 2; pixel_y = 3},/obj/item/clothing/mask/cigarette/robustgold,/obj/item/lighter{icon_state = "lighter_overlay_plain"; pixel_x = -8; pixel_y = -2},/turf/open/floor/wood{icon_state = "wood-broken"; initial_gas_mix = "ICEMOON_ATMOS"},/area/ruin/unpowered/strandedsyndicate)
-"Xd" = (/obj/machinery/vending/boozeomat,/obj/structure/cable{icon_state = "1-2"},/turf/open/floor/wood{initial_gas_mix = "ICEMOON_ATMOS"},/area/ruin/unpowered/strandedsyndicate)
-"Yi" = (/turf/open/floor/wood{icon_state = "wood-broken"; initial_gas_mix = "ICEMOON_ATMOS"},/area/ruin/unpowered/strandedsyndicate)
-"Yw" = (/obj/item/chair/wood,/obj/effect/mob_spawn/human/corpse{mob_species = /datum/species/lizard; outfit = /datum/outfit/job/doctor},/obj/item/hatchet{pixel_x = -6; pixel_y = -3},/obj/effect/decal/cleanable/blood{icon_state = "armorblood"},/obj/effect/decal/cleanable/blood{icon_state = "bubblegumfoot"},/turf/open/floor/wood{icon_state = "wood-broken2"; initial_gas_mix = "ICEMOON_ATMOS"},/area/ruin/unpowered/strandedsyndicate)
-"YL" = (/obj/structure/table/wood,/obj/item/broken_bottle{pixel_x = -7; pixel_y = -2},/obj/item/shard{icon_state = "small"; pixel_x = 3; pixel_y = -2},/obj/item/reagent_containers/food/snacks/fortunecookie{pixel_x = 4; pixel_y = 8},/turf/open/floor/wood{initial_gas_mix = "ICEMOON_ATMOS"},/area/ruin/unpowered/strandedsyndicate)
-"YS" = (/obj/structure/table,/obj/item/shard{icon_state = "medium"},/turf/open/floor/wood{icon_state = "wood-broken"; initial_gas_mix = "ICEMOON_ATMOS"},/area/ruin/unpowered/strandedsyndicate)
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"ah" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/effect/decal/cleanable/blood{
+	icon_state = "drip1"
+	},
+/turf/open/floor/plastic,
+/area/ruin/unpowered/strandedsyndicate/kitchen)
+"ai" = (
+/obj/structure/chair/wood{
+	dir = 4
+	},
+/turf/open/floor/wood{
+	initial_gas_mix = "ICEMOON_ATMOS"
+	},
+/area/ruin/unpowered/strandedsyndicate)
+"by" = (
+/turf/closed/wall,
+/area/ruin/unpowered/strandedsyndicate/kitchen)
+"bH" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/spawner/lootdrop/maintenance,
+/turf/open/floor/plating/icemoon,
+/area/ruin/unpowered/strandedsyndicate)
+"bQ" = (
+/obj/effect/decal/cleanable/generic,
+/obj/effect/spawner/lootdrop/maintenance,
+/turf/open/floor/plating/icemoon,
+/area/ruin/unpowered/strandedsyndicate)
+"bV" = (
+/obj/structure/table,
+/obj/machinery/reagentgrinder{
+	pixel_y = 5
+	},
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/open/floor/wood{
+	initial_gas_mix = "ICEMOON_ATMOS"
+	},
+/area/ruin/unpowered/strandedsyndicate)
+"cf" = (
+/obj/structure/table/wood,
+/obj/item/reagent_containers/food/drinks/soda_cans/lemon_lime{
+	pixel_x = -6;
+	pixel_y = 10
+	},
+/obj/item/reagent_containers/food/snacks/cheesyfries,
+/obj/item/reagent_containers/food/condiment/saltshaker{
+	pixel_x = 5;
+	pixel_y = 12
+	},
+/turf/open/floor/wood{
+	initial_gas_mix = "ICEMOON_ATMOS"
+	},
+/area/ruin/unpowered/strandedsyndicate)
+"cF" = (
+/obj/machinery/deepfryer,
+/turf/open/floor/plastic,
+/area/ruin/unpowered/strandedsyndicate/kitchen)
+"cZ" = (
+/obj/structure/chair/stool/bar{
+	dir = 1
+	},
+/turf/open/floor/wood{
+	icon_state = "wood-broken2";
+	initial_gas_mix = "ICEMOON_ATMOS"
+	},
+/area/ruin/unpowered/strandedsyndicate)
+"dZ" = (
+/obj/structure/table,
+/obj/machinery/microwave{
+	pixel_y = 6
+	},
+/turf/open/floor/plastic,
+/area/ruin/unpowered/strandedsyndicate/kitchen)
+"ek" = (
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/turf/open/floor/wood{
+	initial_gas_mix = "ICEMOON_ATMOS"
+	},
+/area/ruin/unpowered/strandedsyndicate)
+"eA" = (
+/obj/structure/flora/grass/brown{
+	icon_state = "snowbush3"
+	},
+/turf/open/floor/plating/asteroid/snow/icemoon,
+/area/icemoon/surface/outdoors/unexplored)
+"fI" = (
+/mob/living/simple_animal/hostile/syndicate/melee/space{
+	desc = "They're looking for a way off the planet, and they're not risking you leaving without them.";
+	faction = list("rogue");
+	name = "Rogue Commando"
+	},
+/turf/open/floor/plastic,
+/area/ruin/unpowered/strandedsyndicate/kitchen)
+"fU" = (
+/obj/structure/windoor_assembly{
+	dir = 2;
+	name = "broken windoor"
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/wood{
+	initial_gas_mix = "ICEMOON_ATMOS"
+	},
+/area/ruin/unpowered/strandedsyndicate)
+"gp" = (
+/obj/structure/table,
+/obj/machinery/reagentgrinder{
+	pixel_y = 5
+	},
+/obj/item/gun/ballistic/automatic/pistol{
+	pixel_x = -4;
+	pixel_y = 3
+	},
+/obj/item/ammo_box/magazine/m10mm{
+	pixel_x = 4;
+	pixel_y = -1
+	},
+/obj/item/ammo_box/magazine/m10mm{
+	pixel_x = 8;
+	pixel_y = 4
+	},
+/turf/open/floor/plastic,
+/area/ruin/unpowered/strandedsyndicate/kitchen)
+"gT" = (
+/obj/machinery/grill,
+/turf/open/floor/plastic,
+/area/ruin/unpowered/strandedsyndicate/kitchen)
+"hj" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/spawner/lootdrop/crate_spawner,
+/turf/open/floor/plating/icemoon,
+/area/ruin/unpowered/strandedsyndicate)
+"hk" = (
+/obj/structure/table,
+/obj/machinery/chem_dispenser/drinks/beer,
+/turf/open/floor/wood{
+	icon_state = "wood-broken";
+	initial_gas_mix = "ICEMOON_ATMOS"
+	},
+/area/ruin/unpowered/strandedsyndicate)
+"hs" = (
+/obj/structure/table/wood,
+/obj/item/reagent_containers/food/snacks/cakeslice/carrot{
+	pixel_x = 3;
+	pixel_y = 2
+	},
+/obj/item/reagent_containers/food/drinks/waterbottle{
+	pixel_x = -9;
+	pixel_y = 3
+	},
+/turf/open/floor/wood{
+	icon_state = "wood-broken3";
+	initial_gas_mix = "ICEMOON_ATMOS"
+	},
+/area/ruin/unpowered/strandedsyndicate)
+"hL" = (
+/obj/structure/chair/sofa/left{
+	dir = 1
+	},
+/turf/open/floor/wood{
+	initial_gas_mix = "ICEMOON_ATMOS"
+	},
+/area/ruin/unpowered/strandedsyndicate)
+"in" = (
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/machinery/power/port_gen/pacman,
+/turf/open/floor/plating/icemoon,
+/area/ruin/unpowered/strandedsyndicate)
+"ix" = (
+/obj/structure/grille,
+/obj/structure/window/reinforced/fulltile/ice{
+	opacity = 1
+	},
+/turf/open/floor/plating/icemoon,
+/area/ruin/unpowered/strandedsyndicate)
+"jk" = (
+/obj/effect/decal/cleanable/blood{
+	icon_state = "floor2"
+	},
+/obj/machinery/jukebox,
+/turf/open/floor/wood{
+	initial_gas_mix = "ICEMOON_ATMOS"
+	},
+/area/ruin/unpowered/strandedsyndicate)
+"jq" = (
+/obj/structure/chair/wood{
+	dir = 1
+	},
+/turf/open/floor/wood{
+	initial_gas_mix = "ICEMOON_ATMOS"
+	},
+/area/ruin/unpowered/strandedsyndicate)
+"jI" = (
+/obj/structure/chair/sofa/right{
+	dir = 1
+	},
+/obj/machinery/light/small/broken,
+/turf/open/floor/wood{
+	icon_state = "wood-broken";
+	initial_gas_mix = "ICEMOON_ATMOS"
+	},
+/area/ruin/unpowered/strandedsyndicate)
+"kc" = (
+/obj/effect/decal/cleanable/blood/gibs/limb,
+/turf/open/floor/wood{
+	initial_gas_mix = "ICEMOON_ATMOS"
+	},
+/area/ruin/unpowered/strandedsyndicate)
+"kh" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/effect/decal/cleanable/blood{
+	icon_state = "ltrails_2"
+	},
+/turf/open/floor/plastic,
+/area/ruin/unpowered/strandedsyndicate/kitchen)
+"lL" = (
+/obj/effect/decal/cleanable/blood{
+	dir = 4;
+	icon_state = "gibarm"
+	},
+/obj/effect/decal/cleanable/blood{
+	icon_state = "bubblegumfoot"
+	},
+/turf/open/floor/wood{
+	icon_state = "wood-broken2";
+	initial_gas_mix = "ICEMOON_ATMOS"
+	},
+/area/ruin/unpowered/strandedsyndicate)
+"mf" = (
+/obj/structure/chair/sofa/corner{
+	dir = 8
+	},
+/turf/open/floor/wood{
+	icon_state = "wood-broken";
+	initial_gas_mix = "ICEMOON_ATMOS"
+	},
+/area/ruin/unpowered/strandedsyndicate)
+"mr" = (
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/effect/decal/cleanable/food/salt,
+/turf/open/floor/plastic,
+/area/ruin/unpowered/strandedsyndicate/kitchen)
+"mA" = (
+/obj/effect/decal/cleanable/blood{
+	icon_state = "ltrails_2"
+	},
+/turf/open/floor/wood{
+	initial_gas_mix = "ICEMOON_ATMOS"
+	},
+/area/ruin/unpowered/strandedsyndicate)
+"mY" = (
+/obj/structure/disposalpipe/trunk,
+/obj/structure/disposaloutlet{
+	dir = 1
+	},
+/turf/open/floor/plating/icemoon,
+/area/ruin/unpowered/strandedsyndicate)
+"ne" = (
+/obj/effect/decal/cleanable/blood,
+/turf/open/floor/plastic,
+/area/ruin/unpowered/strandedsyndicate/kitchen)
+"nz" = (
+/obj/effect/decal/cleanable/blood{
+	icon_state = "bubblegumfoot"
+	},
+/turf/open/floor/wood{
+	icon_state = "wood-broken";
+	initial_gas_mix = "ICEMOON_ATMOS"
+	},
+/area/ruin/unpowered/strandedsyndicate)
+"oB" = (
+/obj/effect/mob_spawn/human/corpse{
+	mob_species = /datum/species/human/felinid;
+	outfit = /datum/outfit/job/bartender
+	},
+/obj/effect/decal/cleanable/blood{
+	icon_state = "floor4"
+	},
+/turf/open/floor/wood{
+	initial_gas_mix = "ICEMOON_ATMOS"
+	},
+/area/ruin/unpowered/strandedsyndicate)
+"pm" = (
+/obj/structure/chair/sofa{
+	dir = 8
+	},
+/obj/item/ammo_box/magazine/tommygunm45{
+	pixel_x = -4;
+	pixel_y = 7
+	},
+/obj/machinery/light/broken{
+	dir = 4
+	},
+/obj/item/skub{
+	pixel_y = -5
+	},
+/obj/item/gun/ballistic/automatic/tommygun,
+/turf/open/floor/wood{
+	initial_gas_mix = "ICEMOON_ATMOS"
+	},
+/area/ruin/unpowered/strandedsyndicate)
+"pp" = (
+/obj/effect/decal/cleanable/blood{
+	icon_state = "floor5"
+	},
+/turf/open/floor/wood{
+	initial_gas_mix = "ICEMOON_ATMOS"
+	},
+/area/ruin/unpowered/strandedsyndicate)
+"pM" = (
+/obj/effect/decal/cleanable/blood{
+	icon_state = "floor3"
+	},
+/obj/machinery/light/broken,
+/turf/open/floor/plastic,
+/area/ruin/unpowered/strandedsyndicate/kitchen)
+"qF" = (
+/obj/effect/decal/cleanable/ash,
+/turf/open/floor/plating/icemoon,
+/area/ruin/unpowered/strandedsyndicate)
+"qS" = (
+/obj/effect/decal/cleanable/food/egg_smudge,
+/turf/open/floor/plastic,
+/area/ruin/unpowered/strandedsyndicate/kitchen)
+"rl" = (
+/obj/effect/spawner/lootdrop/maintenance,
+/turf/open/floor/plating/icemoon,
+/area/ruin/unpowered/strandedsyndicate)
+"rN" = (
+/obj/structure/flora/grass/brown,
+/turf/open/floor/plating/asteroid/snow/icemoon,
+/area/icemoon/surface/outdoors/unexplored)
+"rY" = (
+/obj/structure/flora/rock/icy{
+	icon_state = "lavarocks"
+	},
+/turf/open/floor/plating/asteroid/snow/icemoon,
+/area/icemoon/surface/outdoors/unexplored)
+"rZ" = (
+/obj/machinery/processor,
+/turf/open/floor/plastic,
+/area/ruin/unpowered/strandedsyndicate/kitchen)
+"sc" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/turf/open/floor/wood{
+	icon_state = "wood-broken2";
+	initial_gas_mix = "ICEMOON_ATMOS"
+	},
+/area/ruin/unpowered/strandedsyndicate)
+"sF" = (
+/obj/structure/flora/grass/brown{
+	icon_state = "snowgrass2bb"
+	},
+/turf/open/floor/plating/asteroid/snow/icemoon,
+/area/icemoon/surface/outdoors/unexplored)
+"sT" = (
+/obj/item/flashlight/glowstick/yellow{
+	on = 1
+	},
+/turf/open/floor/plating/icemoon,
+/area/ruin/unpowered/strandedsyndicate)
+"te" = (
+/obj/structure/chair/stool/bar{
+	dir = 1
+	},
+/obj/effect/mob_spawn/human/corpse{
+	mob_species = /datum/species/lizard;
+	outfit = /datum/outfit/job/botanist
+	},
+/obj/effect/decal/cleanable/blood{
+	icon_state = "bubblegumfoot"
+	},
+/turf/open/floor/wood{
+	icon_state = "wood-broken";
+	initial_gas_mix = "ICEMOON_ATMOS"
+	},
+/area/ruin/unpowered/strandedsyndicate)
+"tr" = (
+/obj/structure/extinguisher_cabinet,
+/turf/closed/wall,
+/area/ruin/unpowered/strandedsyndicate/kitchen)
+"tx" = (
+/obj/machinery/power/apc/auto_name/east{
+	start_charge = 0
+	},
+/obj/structure/cable,
+/turf/open/floor/wood{
+	initial_gas_mix = "ICEMOON_ATMOS"
+	},
+/area/ruin/unpowered/strandedsyndicate)
+"uA" = (
+/obj/item/ammo_casing/c45,
+/turf/open/floor/plating/asteroid/snow/icemoon,
+/area/icemoon/surface/outdoors/unexplored)
+"uE" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/portable_atmospherics/canister/air,
+/turf/open/floor/plating/icemoon,
+/area/ruin/unpowered/strandedsyndicate)
+"ve" = (
+/obj/effect/decal/cleanable/blood{
+	icon_state = "splatter2"
+	},
+/obj/machinery/light/small{
+	dir = 8
+	},
+/obj/structure/table,
+/obj/item/reagent_containers/food/drinks/bottle/sarsaparilla{
+	pixel_x = -8;
+	pixel_y = 4
+	},
+/turf/open/floor/wood{
+	initial_gas_mix = "ICEMOON_ATMOS"
+	},
+/area/ruin/unpowered/strandedsyndicate)
+"wj" = (
+/obj/structure/flora/tree/dead,
+/turf/open/floor/plating/asteroid/snow/icemoon,
+/area/icemoon/surface/outdoors/unexplored)
+"wP" = (
+/turf/open/floor/plastic,
+/area/ruin/unpowered/strandedsyndicate/kitchen)
+"xd" = (
+/obj/structure/chair/sofa{
+	dir = 4
+	},
+/obj/effect/mob_spawn/human/corpse/cargo_tech,
+/obj/effect/decal/cleanable/blood{
+	icon_state = "gibbl3"
+	},
+/turf/open/floor/wood{
+	initial_gas_mix = "ICEMOON_ATMOS"
+	},
+/area/ruin/unpowered/strandedsyndicate)
+"xl" = (
+/obj/machinery/disposal/bin,
+/obj/structure/disposalpipe/trunk{
+	dir = 1
+	},
+/turf/open/floor/wood{
+	initial_gas_mix = "ICEMOON_ATMOS"
+	},
+/area/ruin/unpowered/strandedsyndicate)
+"yl" = (
+/obj/structure/table,
+/obj/item/reagent_containers/food/drinks/bottle/wine{
+	pixel_x = -8;
+	pixel_y = 12
+	},
+/obj/item/flashlight/glowstick/red{
+	on = 1;
+	pixel_x = 5;
+	pixel_y = 3
+	},
+/obj/item/kitchen/rollingpin,
+/obj/item/grenade/syndieminibomb{
+	pixel_x = 7;
+	pixel_y = -4
+	},
+/turf/open/floor/plastic,
+/area/ruin/unpowered/strandedsyndicate/kitchen)
+"yK" = (
+/obj/effect/decal/cleanable/glass,
+/obj/machinery/atmospherics/pipe/simple/general/visible/layer1,
+/turf/open/floor/plating/icemoon,
+/area/ruin/unpowered/strandedsyndicate)
+"AG" = (
+/obj/structure/table,
+/obj/item/kitchen/knife{
+	pixel_x = -8
+	},
+/obj/item/reagent_containers/food/snacks/meat/steak{
+	pixel_x = 6;
+	pixel_y = -2
+	},
+/turf/open/floor/plastic,
+/area/ruin/unpowered/strandedsyndicate/kitchen)
+"AI" = (
+/obj/structure/flora/grass/brown{
+	icon_state = "snowgrassall2"
+	},
+/turf/open/floor/plating/asteroid/snow/icemoon,
+/area/icemoon/surface/outdoors/unexplored)
+"AU" = (
+/obj/effect/spawner/lootdrop/crate_spawner,
+/turf/open/floor/plating/icemoon,
+/area/ruin/unpowered/strandedsyndicate)
+"AV" = (
+/obj/structure/flora/grass/brown{
+	icon_state = "snowbush1"
+	},
+/turf/open/floor/plating/asteroid/snow/icemoon,
+/area/icemoon/surface/outdoors/unexplored)
+"AW" = (
+/obj/machinery/atmospherics/components/unary/portables_connector/visible/layer1,
+/turf/open/floor/plating/icemoon,
+/area/ruin/unpowered/strandedsyndicate)
+"Bc" = (
+/obj/effect/decal/cleanable/blood{
+	icon_state = "coatblood"
+	},
+/turf/open/floor/wood{
+	icon_state = "wood-broken3";
+	initial_gas_mix = "ICEMOON_ATMOS"
+	},
+/area/ruin/unpowered/strandedsyndicate)
+"Br" = (
+/mob/living/simple_animal/hostile/syndicate/ranged/shotgun/space/stormtrooper{
+	desc = "They're looking for a way off the planet, and they're not risking you leaving without them.";
+	faction = list("rogue");
+	name = "Rogue Stormtrooper"
+	},
+/obj/machinery/light/broken{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/wood{
+	icon_state = "wood-broken";
+	initial_gas_mix = "ICEMOON_ATMOS"
+	},
+/area/ruin/unpowered/strandedsyndicate)
+"Bw" = (
+/obj/structure/chair/stool/bar{
+	dir = 1
+	},
+/obj/item/shard{
+	icon_state = "tiny"
+	},
+/turf/open/floor/wood{
+	initial_gas_mix = "ICEMOON_ATMOS"
+	},
+/area/ruin/unpowered/strandedsyndicate)
+"BF" = (
+/obj/structure/table,
+/obj/item/reagent_containers/food/drinks/shaker{
+	pixel_x = -9;
+	pixel_y = -4
+	},
+/turf/open/floor/wood{
+	initial_gas_mix = "ICEMOON_ATMOS"
+	},
+/area/ruin/unpowered/strandedsyndicate)
+"BM" = (
+/obj/structure/table/wood,
+/obj/item/reagent_containers/food/drinks/bottle/orangejuice{
+	pixel_x = -7;
+	pixel_y = 12
+	},
+/obj/item/stack/spacecash/c1000,
+/obj/item/stack/spacecash/c1000,
+/obj/item/stack/spacecash/c1000,
+/obj/item/stack/spacecash/c1000,
+/obj/item/stack/spacecash/c1000,
+/obj/item/stack/spacecash/c1000,
+/obj/item/stack/spacecash/c1000,
+/obj/item/reagent_containers/food/condiment/peppermill{
+	pixel_x = 4;
+	pixel_y = 12
+	},
+/turf/open/floor/wood{
+	initial_gas_mix = "ICEMOON_ATMOS"
+	},
+/area/ruin/unpowered/strandedsyndicate)
+"DJ" = (
+/obj/structure/flora/rock/icy,
+/turf/open/floor/plating/asteroid/snow/icemoon,
+/area/icemoon/surface/outdoors/unexplored)
+"Ep" = (
+/obj/structure/sink/kitchen{
+	pixel_y = 16
+	},
+/turf/open/floor/plastic,
+/area/ruin/unpowered/strandedsyndicate/kitchen)
+"Er" = (
+/obj/machinery/door/airlock/glass,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plastic,
+/area/ruin/unpowered/strandedsyndicate/kitchen)
+"Fk" = (
+/obj/effect/decal/cleanable/blood{
+	icon_state = "splatter4"
+	},
+/obj/structure/table,
+/obj/item/reagent_containers/food/drinks/bottle/trappist{
+	pixel_x = 7;
+	pixel_y = 5
+	},
+/obj/item/reagent_containers/food/snacks/friedegg{
+	pixel_x = -3;
+	pixel_y = 3
+	},
+/turf/open/floor/wood{
+	initial_gas_mix = "ICEMOON_ATMOS"
+	},
+/area/ruin/unpowered/strandedsyndicate)
+"Fq" = (
+/obj/effect/mob_spawn/human/corpse{
+	mob_species = /datum/species/felinid;
+	outfit = /datum/outfit/job/cook
+	},
+/obj/effect/decal/cleanable/blood{
+	icon_state = "gibbl3"
+	},
+/turf/open/floor/plastic,
+/area/ruin/unpowered/strandedsyndicate/kitchen)
+"Fz" = (
+/obj/structure/chair/sofa/right{
+	dir = 8
+	},
+/obj/effect/mob_spawn/human/corpse{
+	outfit = /datum/outfit/mobster
+	},
+/obj/effect/decal/cleanable/blood{
+	icon_state = "gibbl5"
+	},
+/obj/item/ammo_casing/c45,
+/obj/item/ammo_casing/c45,
+/obj/item/ammo_casing/c45,
+/obj/item/paper/fluff/ruins/oldstation/survivor_note{
+	desc = "A note to a mobster's wife.";
+	info = "This one goes to my wife, back home. We've struck gold this time; we found skub on one of the folks who didn't pay our fee today! I'm hoping to sell this, so we can get ourselves a stable footing, and finally find a way to fix thi";
+	name = "To my wife"
+	},
+/turf/open/floor/wood{
+	initial_gas_mix = "ICEMOON_ATMOS"
+	},
+/area/ruin/unpowered/strandedsyndicate)
+"FO" = (
+/obj/effect/decal/cleanable/oil,
+/obj/effect/spawner/lootdrop/crate_spawner,
+/turf/open/floor/plating/icemoon,
+/area/ruin/unpowered/strandedsyndicate)
+"Gl" = (
+/obj/structure/table,
+/obj/item/kitchen/knife/hunting{
+	pixel_x = 4;
+	pixel_y = 6
+	},
+/turf/open/floor/wood{
+	initial_gas_mix = "ICEMOON_ATMOS"
+	},
+/area/ruin/unpowered/strandedsyndicate)
+"GI" = (
+/obj/effect/decal/cleanable/blood,
+/turf/open/floor/wood{
+	icon_state = "wood-broken";
+	initial_gas_mix = "ICEMOON_ATMOS"
+	},
+/area/ruin/unpowered/strandedsyndicate)
+"Hh" = (
+/obj/effect/decal/cleanable/food/flour,
+/turf/open/floor/plastic,
+/area/ruin/unpowered/strandedsyndicate/kitchen)
+"Hi" = (
+/mob/living/simple_animal/hostile/syndicate/ranged/smg/space{
+	desc = "They're looking for a way off the planet, and they're not risking you leaving without them.";
+	faction = list("rogue");
+	name = "Rogue Commando"
+	},
+/turf/open/floor/wood{
+	icon_state = "wood-broken";
+	initial_gas_mix = "ICEMOON_ATMOS"
+	},
+/area/ruin/unpowered/strandedsyndicate)
+"HA" = (
+/obj/item/storage/toolbox/mechanical{
+	pixel_y = 6
+	},
+/obj/structure/table,
+/obj/item/stack/sheet/mineral/plasma/twenty,
+/turf/open/floor/plating/icemoon,
+/area/ruin/unpowered/strandedsyndicate)
+"HM" = (
+/obj/structure/closet/secure_closet/freezer/meat,
+/obj/item/reagent_containers/food/condiment/milk,
+/obj/item/reagent_containers/food/condiment/milk,
+/obj/item/reagent_containers/food/condiment/milk,
+/obj/item/storage/fancy/egg_box,
+/obj/item/storage/fancy/egg_box,
+/obj/item/storage/fancy/egg_box,
+/obj/item/reagent_containers/food/condiment/sugar,
+/obj/item/reagent_containers/food/condiment/sugar,
+/obj/item/reagent_containers/food/condiment/sugar,
+/obj/item/reagent_containers/food/condiment/flour,
+/obj/item/reagent_containers/food/condiment/flour,
+/obj/item/reagent_containers/food/condiment/flour,
+/obj/item/reagent_containers/food/condiment/enzyme,
+/obj/item/reagent_containers/food/condiment/enzyme,
+/obj/item/reagent_containers/food/condiment/enzyme,
+/obj/item/reagent_containers/food/condiment/enzyme,
+/obj/item/reagent_containers/food/condiment/enzyme,
+/obj/item/reagent_containers/food/condiment/enzyme,
+/obj/item/reagent_containers/food/snacks/sausage,
+/obj/item/reagent_containers/food/snacks/sausage,
+/turf/open/floor/plastic,
+/area/ruin/unpowered/strandedsyndicate/kitchen)
+"Ik" = (
+/obj/effect/decal/cleanable/blood/old,
+/obj/machinery/portable_atmospherics/scrubber,
+/turf/open/floor/plating/icemoon,
+/area/ruin/unpowered/strandedsyndicate)
+"Jb" = (
+/obj/machinery/vending/dinnerware,
+/turf/open/floor/plastic,
+/area/ruin/unpowered/strandedsyndicate/kitchen)
+"Kc" = (
+/obj/machinery/portable_atmospherics/pump,
+/turf/open/floor/plating/icemoon,
+/area/ruin/unpowered/strandedsyndicate)
+"Ky" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/closed/wall,
+/area/ruin/unpowered/strandedsyndicate)
+"KB" = (
+/turf/closed/wall,
+/area/ruin/unpowered/strandedsyndicate)
+"LO" = (
+/obj/effect/decal/cleanable/blood,
+/turf/open/floor/wood{
+	initial_gas_mix = "ICEMOON_ATMOS"
+	},
+/area/ruin/unpowered/strandedsyndicate)
+"LP" = (
+/obj/structure/closet/supplypod/extractionpod{
+	desc = "A specalised, blood-red styled pod for delivering operatives to a target destination with pristine cargo delivery rates. That is to say, it delivers people. One way.";
+	name = "Syndicate Drop Pod";
+	opened = 1
+	},
+/turf/open/floor/plating/asteroid/snow/icemoon,
+/area/icemoon/surface/outdoors/unexplored)
+"Me" = (
+/turf/template_noop,
+/area/template_noop)
+"Mf" = (
+/obj/structure/disposalpipe/segment,
+/turf/closed/wall,
+/area/ruin/unpowered/strandedsyndicate)
+"Oj" = (
+/turf/open/floor/wood{
+	initial_gas_mix = "ICEMOON_ATMOS"
+	},
+/area/ruin/unpowered/strandedsyndicate)
+"Ow" = (
+/obj/effect/decal/cleanable/blood{
+	icon_state = "gibbl2"
+	},
+/turf/open/floor/wood{
+	initial_gas_mix = "ICEMOON_ATMOS"
+	},
+/area/ruin/unpowered/strandedsyndicate)
+"PU" = (
+/obj/machinery/power/apc/auto_name/north{
+	start_charge = 0
+	},
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/machinery/light/broken{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/blood{
+	icon_state = "floor7"
+	},
+/turf/open/floor/plastic,
+/area/ruin/unpowered/strandedsyndicate/kitchen)
+"QL" = (
+/obj/structure/chair/sofa/left{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/blood{
+	icon_state = "armorblood"
+	},
+/turf/open/floor/wood{
+	icon_state = "wood-broken3";
+	initial_gas_mix = "ICEMOON_ATMOS"
+	},
+/area/ruin/unpowered/strandedsyndicate)
+"Ry" = (
+/obj/item/reagent_containers/food/drinks/drinkingglass/shotglass{
+	pixel_x = -5;
+	pixel_y = -7
+	},
+/turf/open/floor/wood{
+	initial_gas_mix = "ICEMOON_ATMOS"
+	},
+/area/ruin/unpowered/strandedsyndicate)
+"RC" = (
+/obj/item/kitchen/knife/shiv{
+	pixel_x = 4;
+	pixel_y = 6
+	},
+/obj/item/ammo_casing/c45{
+	dir = 8;
+	pixel_x = 4;
+	pixel_y = 6
+	},
+/obj/item/flashlight/glowstick/yellow{
+	on = 1;
+	pixel_x = -5;
+	pixel_y = -4
+	},
+/turf/open/floor/wood{
+	initial_gas_mix = "ICEMOON_ATMOS"
+	},
+/area/ruin/unpowered/strandedsyndicate)
+"RE" = (
+/obj/structure/table,
+/obj/effect/spawner/lootdrop/donkpockets,
+/obj/effect/spawner/lootdrop/donkpockets,
+/obj/effect/spawner/lootdrop/donkpockets,
+/obj/effect/spawner/lootdrop/donkpockets,
+/turf/open/floor/plastic,
+/area/ruin/unpowered/strandedsyndicate/kitchen)
+"RN" = (
+/obj/machinery/portable_atmospherics/canister/air,
+/obj/machinery/atmospherics/components/unary/portables_connector/visible/layer1{
+	dir = 1
+	},
+/turf/open/floor/plating/icemoon,
+/area/ruin/unpowered/strandedsyndicate)
+"RS" = (
+/obj/structure/chair/stool/bar{
+	dir = 1
+	},
+/turf/open/floor/wood{
+	initial_gas_mix = "ICEMOON_ATMOS"
+	},
+/area/ruin/unpowered/strandedsyndicate)
+"Sf" = (
+/turf/open/floor/plating/asteroid/snow/icemoon,
+/area/icemoon/surface/outdoors/unexplored)
+"TS" = (
+/obj/machinery/door/airlock/glass_large,
+/turf/open/floor/wood{
+	initial_gas_mix = "ICEMOON_ATMOS"
+	},
+/area/ruin/unpowered/strandedsyndicate)
+"TY" = (
+/obj/effect/decal/cleanable/garbage,
+/turf/open/floor/plating/icemoon,
+/area/ruin/unpowered/strandedsyndicate)
+"Uf" = (
+/obj/effect/decal/cleanable/blood{
+	icon_state = "floor3"
+	},
+/turf/open/floor/wood{
+	initial_gas_mix = "ICEMOON_ATMOS"
+	},
+/area/ruin/unpowered/strandedsyndicate)
+"Uj" = (
+/obj/effect/decal/cleanable/blood{
+	icon_state = "u_dangerous_l"
+	},
+/obj/machinery/space_heater,
+/turf/open/floor/wood{
+	initial_gas_mix = "ICEMOON_ATMOS"
+	},
+/area/ruin/unpowered/strandedsyndicate)
+"Ve" = (
+/obj/effect/mob_spawn/human/corpse/assistant{
+	mob_species = /datum/species/moth
+	},
+/obj/structure/chair/wood,
+/obj/effect/decal/cleanable/blood{
+	icon_state = "floor2"
+	},
+/turf/open/floor/wood{
+	initial_gas_mix = "ICEMOON_ATMOS"
+	},
+/area/ruin/unpowered/strandedsyndicate)
+"Vk" = (
+/obj/effect/decal/cleanable/blood{
+	icon_state = "floor5"
+	},
+/turf/open/floor/plastic,
+/area/ruin/unpowered/strandedsyndicate/kitchen)
+"Vo" = (
+/obj/structure/flora/grass/brown{
+	icon_state = "snowgrassall1"
+	},
+/turf/open/floor/plating/asteroid/snow/icemoon,
+/area/icemoon/surface/outdoors/unexplored)
+"VP" = (
+/obj/structure/table,
+/obj/machinery/chem_dispenser/drinks,
+/turf/open/floor/wood{
+	initial_gas_mix = "ICEMOON_ATMOS"
+	},
+/area/ruin/unpowered/strandedsyndicate)
+"We" = (
+/obj/structure/chair/sofa/corner{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/blood,
+/turf/open/floor/wood{
+	initial_gas_mix = "ICEMOON_ATMOS"
+	},
+/area/ruin/unpowered/strandedsyndicate)
+"Wh" = (
+/obj/structure/closet/chefcloset,
+/turf/open/floor/plastic,
+/area/ruin/unpowered/strandedsyndicate/kitchen)
+"WI" = (
+/obj/structure/table/wood,
+/obj/item/reagent_containers/food/snacks/burger/baconburger{
+	pixel_x = 2;
+	pixel_y = 3
+	},
+/obj/item/clothing/mask/cigarette/robustgold,
+/obj/item/lighter{
+	icon_state = "lighter_overlay_plain";
+	pixel_x = -8;
+	pixel_y = -2
+	},
+/turf/open/floor/wood{
+	icon_state = "wood-broken";
+	initial_gas_mix = "ICEMOON_ATMOS"
+	},
+/area/ruin/unpowered/strandedsyndicate)
+"Xd" = (
+/obj/machinery/vending/boozeomat,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/wood{
+	initial_gas_mix = "ICEMOON_ATMOS"
+	},
+/area/ruin/unpowered/strandedsyndicate)
+"Yi" = (
+/turf/open/floor/wood{
+	icon_state = "wood-broken";
+	initial_gas_mix = "ICEMOON_ATMOS"
+	},
+/area/ruin/unpowered/strandedsyndicate)
+"Yw" = (
+/obj/item/chair/wood,
+/obj/effect/mob_spawn/human/corpse{
+	mob_species = /datum/species/lizard;
+	outfit = /datum/outfit/job/doctor
+	},
+/obj/item/hatchet{
+	pixel_x = -6;
+	pixel_y = -3
+	},
+/obj/effect/decal/cleanable/blood{
+	icon_state = "armorblood"
+	},
+/obj/effect/decal/cleanable/blood{
+	icon_state = "bubblegumfoot"
+	},
+/turf/open/floor/wood{
+	icon_state = "wood-broken2";
+	initial_gas_mix = "ICEMOON_ATMOS"
+	},
+/area/ruin/unpowered/strandedsyndicate)
+"YL" = (
+/obj/structure/table/wood,
+/obj/item/broken_bottle{
+	pixel_x = -7;
+	pixel_y = -2
+	},
+/obj/item/shard{
+	icon_state = "small";
+	pixel_x = 3;
+	pixel_y = -2
+	},
+/obj/item/reagent_containers/food/snacks/fortunecookie{
+	pixel_x = 4;
+	pixel_y = 8
+	},
+/turf/open/floor/wood{
+	initial_gas_mix = "ICEMOON_ATMOS"
+	},
+/area/ruin/unpowered/strandedsyndicate)
+"YS" = (
+/obj/structure/table,
+/obj/item/shard{
+	icon_state = "medium"
+	},
+/turf/open/floor/wood{
+	icon_state = "wood-broken";
+	initial_gas_mix = "ICEMOON_ATMOS"
+	},
+/area/ruin/unpowered/strandedsyndicate)
 
 (1,1,1) = {"
-MeMeMeMeMeMeMeMeMeMeMeMeMeMeMeMeMeMeMeMeMeMeMeMe
-MeMeMeMeMeMeMeMeMeMeMeMeMeMeMeMeMeMeMeMeMeMeMeMe
-MeMeMeMeMeMeMeMeMeMeMeMeMeMeMeMeMeMeMeMeMeMeMeMe
-MeMeMeMeMeMeMeMeMeMeMeMeMeMeMeMeMeMeMeMeMeMeMeMe
-MeMeMeMeMeMeMeMeMeMeMeMeMeMeMeMeMeMeMeMeMeMeMeMe
-MeMeMeMeMeMeMeMeMeMerlAWFOAUhjMeMeMeMeMeMeMeMeMe
-MeMeMeMeMeMeMeMebQAUrlyKrlsTAUqFMeMeMeMeMeMeMeMe
-MeMeMeMeMeMebHrluEmYTYRNHAinIkrlKcKcSfSfSfSfMeMe
-MeMeMeMeMeMeMerlKBMfKBKBKBKyKBKBtrbybybybySfMeMe
-MeMeMeMeMeMeMeSfKBxlbVhkVPXdUjKBylEpPUgpbySfMeMe
-MeMeMeMeMeMeMeSfKBHiUfoBnzekscErkhahmrdZbySfMeMe
-MeMeMeMeMeMeMeSfKBveYSFkGlBFfUKBcFfIVkgTbySfMeMe
-MeMeMeMeMeMeMeSfixRSteBwcZLOBrKBREneHhrZbySfMeMe
-MeMeMeMeMeMeMeSfixBcRyVeOjOjtxKBAGwPFqHMbySfMeMe
-MeMeMeMeMeMeMeSfixkcaihsRCYwjkKBWhqSpMJbbySfMeMe
-MeMeMeMeMeMeMeSfixOjGIjqmAOjOjKBbybybybybySfMeMe
-MeMeMeMeMeMeMeSfixQLcfOwOjWIFzKBSfuASfSfSfSfMeMe
-MeMeMeMeMeMeMeSfixxdYLYilLBMpmKBSfMeMeMeMeMeMeMe
-MeMeMeMeMeMeMeSfixWejIppOjhLmfKBSfMeMeMeMeMeMeMe
-MeMeMeMeMeMeMeSfKBKBKBTSOjKBKBKBSfMeMeMeMeMeMeMe
-MeMeMeMeMeMeSfeASfsFSfSfVoSfSfSfSfMeMeMeMeMeMeMe
-MeMeMeMeSfLPwjSfSfSfSfAISfSfMeMeMeMeMeMeMeMeMeMe
-MeMeMeMeSfrNSfLPSfDJeASfMeMeMeMeMeMeMeMeMeMeMeMe
-MeMeMeMeSfSfAVSfSfMeMeMeMeMeMeMeMeMeMeMeMeMeMeMe
-MeMeMeMeSfSfLPSfrYMeMeMeMeMeMeMeMeMeMeMeMeMeMeMe
-MeMeMeMeMeMeMeMeMeMeMeMeMeMeMeMeMeMeMeMeMeMeMeMe
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+"}
+(2,1,1) = {"
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+"}
+(3,1,1) = {"
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+"}
+(4,1,1) = {"
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+"}
+(5,1,1) = {"
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Sf
+Sf
+Sf
+Sf
+Sf
+Me
+"}
+(6,1,1) = {"
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Sf
+LP
+rN
+Sf
+Sf
+Me
+"}
+(7,1,1) = {"
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+bH
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Sf
+wj
+Sf
+AV
+LP
+Me
+"}
+(8,1,1) = {"
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+rl
+rl
+Sf
+Sf
+Sf
+Sf
+Sf
+Sf
+Sf
+Sf
+Sf
+Sf
+Sf
+eA
+Sf
+LP
+Sf
+Sf
+Me
+"}
+(9,1,1) = {"
+Me
+Me
+Me
+Me
+Me
+Me
+bQ
+uE
+KB
+KB
+KB
+KB
+ix
+ix
+ix
+ix
+ix
+ix
+ix
+KB
+Sf
+Sf
+Sf
+Sf
+rY
+Me
+"}
+(10,1,1) = {"
+Me
+Me
+Me
+Me
+Me
+Me
+AU
+mY
+Mf
+xl
+Hi
+ve
+RS
+Bc
+kc
+Oj
+QL
+xd
+We
+KB
+sF
+Sf
+DJ
+Me
+Me
+Me
+"}
+(11,1,1) = {"
+Me
+Me
+Me
+Me
+Me
+rl
+rl
+TY
+KB
+bV
+Uf
+YS
+te
+Ry
+ai
+GI
+cf
+YL
+jI
+KB
+Sf
+Sf
+eA
+Me
+Me
+Me
+"}
+(12,1,1) = {"
+Me
+Me
+Me
+Me
+Me
+AW
+yK
+RN
+KB
+hk
+oB
+Fk
+Bw
+Ve
+hs
+jq
+Ow
+Yi
+pp
+TS
+Sf
+AI
+Sf
+Me
+Me
+Me
+"}
+(13,1,1) = {"
+Me
+Me
+Me
+Me
+Me
+FO
+rl
+HA
+KB
+VP
+nz
+Gl
+cZ
+Oj
+RC
+mA
+Oj
+lL
+Oj
+Oj
+Vo
+Sf
+Me
+Me
+Me
+Me
+"}
+(14,1,1) = {"
+Me
+Me
+Me
+Me
+Me
+AU
+sT
+in
+Ky
+Xd
+ek
+BF
+LO
+Oj
+Yw
+Oj
+WI
+BM
+hL
+KB
+Sf
+Sf
+Me
+Me
+Me
+Me
+"}
+(15,1,1) = {"
+Me
+Me
+Me
+Me
+Me
+hj
+AU
+Ik
+KB
+Uj
+sc
+fU
+Br
+tx
+jk
+Oj
+Fz
+pm
+mf
+KB
+Sf
+Me
+Me
+Me
+Me
+Me
+"}
+(16,1,1) = {"
+Me
+Me
+Me
+Me
+Me
+Me
+qF
+rl
+KB
+KB
+Er
+KB
+KB
+KB
+KB
+KB
+KB
+KB
+KB
+KB
+Sf
+Me
+Me
+Me
+Me
+Me
+"}
+(17,1,1) = {"
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Kc
+tr
+yl
+kh
+cF
+RE
+AG
+Wh
+by
+Sf
+Sf
+Sf
+Sf
+Sf
+Me
+Me
+Me
+Me
+Me
+"}
+(18,1,1) = {"
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Kc
+by
+Ep
+ah
+fI
+ne
+wP
+qS
+by
+uA
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+"}
+(19,1,1) = {"
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Sf
+by
+PU
+mr
+Vk
+Hh
+Fq
+pM
+by
+Sf
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+"}
+(20,1,1) = {"
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Sf
+by
+gp
+dZ
+gT
+rZ
+HM
+Jb
+by
+Sf
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+"}
+(21,1,1) = {"
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Sf
+by
+by
+by
+by
+by
+by
+by
+by
+Sf
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+"}
+(22,1,1) = {"
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Sf
+Sf
+Sf
+Sf
+Sf
+Sf
+Sf
+Sf
+Sf
+Sf
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+"}
+(23,1,1) = {"
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+"}
+(24,1,1) = {"
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Me
+Me
 "}
