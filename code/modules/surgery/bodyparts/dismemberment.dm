@@ -72,7 +72,7 @@
 		O.Remove(C)
 		O.forceMove(T)
 		organ_spilled = 1
-		. += X
+		. += O
 	if(cavity_item)
 		cavity_item.forceMove(T)
 		. += cavity_item
