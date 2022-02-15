@@ -27,6 +27,8 @@
 	var/girder_type = /obj/structure/girder
 
 	var/list/dent_decals
+	/// The underlay generated and applied when a chisel makes a wall diagonal. Stored here for removal on un-diagonalizing
+	var/mutable_appearance/smooth_underlay
 
 
 /turf/closed/wall/Initialize(mapload, inherited_virtual_z)
@@ -62,10 +64,8 @@
 		if(newgirder) //maybe we don't /want/ a girder!
 			transfer_fingerprints_to(newgirder)
 
-	for(var/obj/O in src.contents) //Eject contents!
-		if(istype(O, /obj/structure/sign/poster))
-			var/obj/structure/sign/poster/P = O
-			P.roll_and_drop(src)
+	for(var/obj/structure/sign/poster/P in src.contents) //Eject contents!
+		P.roll_and_drop(src)
 
 	ScrapeAway()
 

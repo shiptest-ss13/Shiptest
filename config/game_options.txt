@@ -482,6 +482,9 @@ ROUNDSTART_RACES jelly
 ## Uncomment to give players the choice of joining as a human with mutant bodyparts before they join the game
 #JOIN_WITH_MUTANT_HUMANS
 
+## The amount of loadout items players are allowed to spawn with. Default 10
+MAX_LOADOUT_ITEMS 10
+
 ##Overflow job. Default is assistant
 OVERFLOW_JOB Assistant
 
@@ -580,9 +583,6 @@ MAXFINE 2000
 ## Enable the capitalist agenda on your server.
 ECONOMY
 
-## Put the name of your custom currency here
-METACURRENCY_NAME Metacoin
-
 ## Overmap Settings ##
 
 ## Put max amount of different event clusters you want to spawn here
@@ -593,6 +593,9 @@ MAX_OVERMAP_EVENTS 150
 
 ## Put the maximum amount of dynamic (runtime loaded) overmap locations here
 MAX_OVERMAP_DYNAMIC_EVENTS 10
+
+## Size of the overmap squared
+OVERMAP_SIZE 30
 
 ## Which overmap generator to use
 ## Valid values are: "random", "solar_system"

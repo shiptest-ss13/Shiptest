@@ -185,3 +185,9 @@
 
 /turf/open/floor/plating/rust/plasma
 	initial_gas_mix = "plasma=104;TEMP=293.15"
+
+/turf/open/floor/plasteel/telecomms_floor
+	icon_state = "tcomms"
+	base_icon_state = "tcomms"
+	icon = 'icons/turf/floors/misc.dmi'
+	color = null
