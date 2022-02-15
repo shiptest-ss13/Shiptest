@@ -105,8 +105,7 @@
 
 /obj/structure/tank_dispenser/deconstruct(disassembled = TRUE)
 	if(!(flags_1 & NODECONSTRUCT_1))
-		for(var/X in src)
-			var/obj/item/I = X
+		for(var/obj/item/I in src)
 			I.forceMove(loc)
 		new /obj/item/stack/sheet/metal (loc, 2)
 	qdel(src)

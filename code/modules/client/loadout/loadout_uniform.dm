@@ -10,19 +10,16 @@
 	display_name = "jumpsuit, utility"
 	path = /obj/item/clothing/under/utility
 	description = "A cheaply manufactured jumpsuit made out of cheap materials designed for use by cheap labor."
-	cost = 1
 
 /datum/gear/uniform/utility_skirt
 	display_name = "jumpskirt, utility"
 	path = /obj/item/clothing/under/utility/skirt
 	description = "Does it being a skirt defeat the purpose of use in a hazardous work environment?"
-	cost = 1
 
 //Colored jumpsuits
 
 /datum/gear/uniform/color
 	subtype_path = /datum/gear/uniform/color
-	cost = 1000
 
 /datum/gear/uniform/color/red
 	display_name = "jumpsuit, red"
@@ -55,30 +52,25 @@
 /datum/gear/uniform/color/random
 	display_name = "jumpsuit, random"
 	path = /obj/item/clothing/under/color/random //literally useless if grey assistants is off
-	cost = 2500
 
 /datum/gear/uniform/color/rainbow
 	display_name = "jumpsuit, rainbow"
 	path = /obj/item/clothing/under/color/rainbow
-	cost = 5000
 
 //Shorts
 
 /datum/gear/uniform/athshortsred
 	display_name = "athletic shorts, red"
 	path = /obj/item/clothing/under/shorts/red
-	cost = 1000
 
 /datum/gear/uniform/athshortsblack
 	display_name = "athletic shorts, black"
 	path = /obj/item/clothing/under/shorts/black
-	cost = 1000
 
 //JUMPSUIT "SUITS"
 
 /datum/gear/uniform/suit
 	subtype_path = /datum/gear/uniform/suit
-	cost = 1000
 
 /datum/gear/uniform/suit/amish
 	display_name = "suit, amish"
@@ -115,7 +107,6 @@
 /datum/gear/uniform/suit/galaxy
 	display_name = "suit, galaxy"
 	path = /obj/item/clothing/under/rank/civilian/lawyer/galaxy
-	cost = 7500
 
 /datum/gear/uniform/suit/white/skirt
 	display_name = "suitskirt, white shirt"
@@ -129,14 +120,11 @@
 /datum/gear/uniform/tacticool
 	display_name = "tacticool turtleneck"
 	path = /obj/item/clothing/under/syndicate/tacticool
-	cost = 10000
 
 /datum/gear/uniform/psychedelic
 	display_name = "psychedelic suit"
 	path = /obj/item/clothing/under/misc/psyche
-	cost = 10000
 
 /datum/gear/uniform/maid
 	display_name = "maid outfit"
 	path = /obj/item/clothing/under/costume/maid
-	cost = 10000

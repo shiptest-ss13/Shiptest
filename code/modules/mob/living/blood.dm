@@ -83,8 +83,7 @@
 
 		var/temp_bleed = 0
 		//Bleeding out
-		for(var/X in bodyparts)
-			var/obj/item/bodypart/BP = X
+		for(var/obj/item/bodypart/BP as anything in bodyparts)
 			var/brutedamage = BP.brute_dam
 
 			//We want an accurate reading of .len
