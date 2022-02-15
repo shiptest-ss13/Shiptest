@@ -20,8 +20,7 @@
 /turf/closed/wall,
 /area/ruin/unpowered/strandedsyndicate/kitchen)
 "bH" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/spawner/lootdrop/maintenance,
+/obj/effect/spawner/lootdrop/crate_spawner,
 /turf/open/floor/plating/icemoon,
 /area/ruin/unpowered/strandedsyndicate)
 "bQ" = (
@@ -330,6 +329,7 @@
 /area/ruin/unpowered/strandedsyndicate/kitchen)
 "qF" = (
 /obj/effect/decal/cleanable/ash,
+/obj/effect/spawner/lootdrop/crate_spawner,
 /turf/open/floor/plating/icemoon,
 /area/ruin/unpowered/strandedsyndicate)
 "qS" = (
@@ -501,7 +501,17 @@
 /turf/open/floor/plating/asteroid/snow/icemoon,
 /area/icemoon/surface/outdoors/unexplored)
 "AU" = (
-/obj/effect/spawner/lootdrop/crate_spawner,
+/obj/structure/closet/crate/trashcart,
+/obj/effect/spawner/lootdrop/maintenance,
+/obj/effect/spawner/lootdrop/maintenance,
+/obj/effect/spawner/lootdrop/maintenance,
+/obj/effect/spawner/lootdrop/maintenance,
+/obj/effect/spawner/lootdrop/maintenance,
+/obj/effect/spawner/lootdrop/maintenance,
+/obj/effect/spawner/lootdrop/maintenance,
+/obj/effect/spawner/lootdrop/maintenance,
+/obj/effect/spawner/lootdrop/maintenance,
+/obj/effect/spawner/lootdrop/maintenance,
 /turf/open/floor/plating/icemoon,
 /area/ruin/unpowered/strandedsyndicate)
 "AV" = (
@@ -747,7 +757,7 @@
 /area/ruin/unpowered/strandedsyndicate)
 "LP" = (
 /obj/structure/closet/supplypod/extractionpod{
-	desc = "A specalised, blood-red styled pod for delivering operatives to a target destination with pristine cargo delivery rates. That is to say, it delivers people. One way.";
+	desc = "A specalised, blood-red styled pod for delivering operatives to a target destination with high rates of successful undamaged cargo delivery compared to competitor products. That is to say, it delivers people.";
 	name = "Syndicate Drop Pod";
 	opened = 1
 	},
@@ -1184,7 +1194,7 @@ Me
 Me
 Me
 Me
-bH
+hj
 Me
 Me
 Me
@@ -1213,7 +1223,7 @@ Me
 Me
 Me
 rl
-rl
+bH
 Sf
 Sf
 Sf
@@ -1294,7 +1304,7 @@ Me
 Me
 Me
 Me
-rl
+bH
 rl
 TY
 KB
@@ -1378,7 +1388,7 @@ Me
 Me
 Me
 Me
-AU
+rl
 sT
 in
 Ky
@@ -1407,7 +1417,7 @@ Me
 Me
 Me
 hj
-AU
+rl
 Ik
 KB
 Uj
