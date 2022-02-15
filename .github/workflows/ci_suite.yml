@@ -9,7 +9,7 @@ on:
 jobs:
   run_linters:
     name: Run Linters
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v2
         with:
@@ -61,9 +61,13 @@ jobs:
 
   compile_all_maps:
     name: Compile Maps
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v2
+      - name: Python setup
+        uses: actions/setup-python@v1
+        with:
+          python-version: "3.9"
       - name: Setup cache
         id: cache-byond
         uses: actions/cache@v2
@@ -82,7 +86,7 @@ jobs:
 
   run_all_tests:
     name: Integration Tests
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     services:
       mysql:
         image: mysql:latest
