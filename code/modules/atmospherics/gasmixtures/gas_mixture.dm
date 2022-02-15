@@ -131,9 +131,8 @@ we use a hook instead
 
 /proc/gas_types()
 	var/list/L = subtypesof(/datum/gas)
-	for(var/gt in L)
-		var/datum/gas/G = gt
-		L[gt] = initial(G.specific_heat)
+	for(var/datum/gas/G as anything in L)
+		L[G] = initial(G.specific_heat)
 	return L
 
 /datum/gas_mixture/proc/heat_capacity() //joules per kelvin

@@ -8,7 +8,6 @@
 	name = "captain's hat"
 	desc = "It's good being the king."
 	icon_state = "captain_nt"
-	item_state = "captain_nt"
 
 //Cowboy Hats below
 

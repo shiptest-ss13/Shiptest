@@ -9,6 +9,7 @@
 	var/obj/item/bodypart/storedpart
 	var/initial_icon_state
 	var/static/list/style_list_icons = list("standard" = 'icons/mob/augmentation/augments.dmi', "engineer" = 'icons/mob/augmentation/augments_engineer.dmi', "security" = 'icons/mob/augmentation/augments_security.dmi', "mining" = 'icons/mob/augmentation/augments_mining.dmi')
+	var/static/list/type_whitelist = list(/obj/item/bodypart/head/robot, /obj/item/bodypart/r_arm/robot, /obj/item/bodypart/l_arm/robot, /obj/item/bodypart/chest/robot, /obj/item/bodypart/r_leg/robot, /obj/item/bodypart/l_leg/robot)
 
 /obj/machinery/aug_manipulator/examine(mob/user)
 	. = ..()
@@ -59,8 +60,11 @@
 
 	else if(istype(O, /obj/item/bodypart))
 		var/obj/item/bodypart/B = O
-		if(B.status != BODYPART_ROBOTIC)
+		if(IS_ORGANIC_LIMB(B))
 			to_chat(user, "<span class='warning'>The machine only accepts cybernetics!</span>")
+			return
+		if(!(O.type in type_whitelist)) //Kepori won't break my system damn it
+			to_chat(user, "<span class='warning'>The machine doesn't accept that type of prosthetic!</span>")
 			return
 		if(storedpart)
 			to_chat(user, "<span class='warning'>There is already something inside!</span>")
@@ -108,7 +112,9 @@
 			return
 		if(!storedpart)
 			return
-		storedpart.icon = style_list_icons[augstyle]
+		storedpart.static_icon = style_list_icons[augstyle]
+		storedpart.should_draw_greyscale = FALSE //Premptive fuck you to greyscale IPCs trying to break something
+		storedpart.update_icon_dropped()
 		eject_part(user)
 
 	else

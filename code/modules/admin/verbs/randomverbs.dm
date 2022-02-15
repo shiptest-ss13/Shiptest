@@ -379,7 +379,7 @@
 	set category = "Admin.Events"
 	set name = "Create Command Report"
 
-	if(!check_rights(R_ADMIN))
+	if(!check_rights(R_FUN))
 		return
 
 	var/input = input(usr, "Enter a Command Report. Ensure it makes sense IC. Command's name is currently set to [command_name()].", "What?", "") as message|null
@@ -408,7 +408,7 @@
 	set category = "Admin.Events"
 	set name = "Change Command Name"
 
-	if(!check_rights(R_ADMIN))
+	if(!check_rights(R_FUN))
 		return
 
 	var/input = input(usr, "Please input a new name for Central Command.", "What?", "") as text|null
