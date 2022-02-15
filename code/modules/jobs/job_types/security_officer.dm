@@ -171,6 +171,27 @@ GLOBAL_LIST_INIT(available_depts, list(SEC_DEPT_ENGINEERING, SEC_DEPT_MEDICAL, S
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses
 	head = /obj/item/clothing/head/cowboy/sec
 
+/datum/outfit/job/security/minutemen
+	name = "Minuteman (Colonial Minutemen) (Armed)"
+
+	head = /obj/item/clothing/head/helmet/alt/minutemen
+	mask = /obj/item/clothing/mask/russian_balaclava
+	suit = /obj/item/clothing/suit/armor/bulletproof
+	uniform = /obj/item/clothing/under/rank/security/officer/minutemen
+	shoes = /obj/item/clothing/shoes/combat
+	gloves = /obj/item/clothing/gloves/combat
+
+	belt = /obj/item/storage/belt/military
+
+	suit_store = /obj/item/gun/ballistic/automatic/p16/minutemen
+
+	l_pocket = /obj/item/flashlight/seclite
+	r_pocket = /obj/item/tank/internals/emergency_oxygen/double
+
+	backpack = /obj/item/storage/backpack
+	box = /obj/item/storage/box/survival/engineer/radio
+	backpack_contents = list(/obj/item/melee/classic_baton=1, /obj/item/ammo_box/magazine/co9mm=2, /obj/item/gun/ballistic/automatic/pistol/commander=1, /obj/item/restraints/handcuffs=1, /obj/item/ammo_box/magazine/p16=3)
+
 //Shiptest outfits end
 
 /obj/item/radio/headset/headset_sec/alt/department/Initialize()
