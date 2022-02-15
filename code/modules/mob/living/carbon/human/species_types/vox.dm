@@ -47,7 +47,7 @@
 
 	if(unique && attempts < 10)
 		if(findname(new_name))
-			.(gender, TRUE, null, attempts++)
+			. = .(gender, TRUE, null, attempts++)
 
 	return .
 
