@@ -28,17 +28,21 @@
 	to_chat(user, "<span class='notice'>\the [src] is now set to reform the [(toggling_smooth ? "smoothness" : "corners")] of walls</span>")
 
 /obj/item/chisel/proc/smooth_atom(atom/target, mob/living/user)
-	target.icon_state = initial(target.icon_state)
-	if(target.smoothing_flags != initial(target.smoothing_flags)) // Smoothing flags were changed, reset them
-		target.smoothing_flags = initial(target.smoothing_flags)
-		QUEUE_SMOOTH(target)
-		QUEUE_SMOOTH_NEIGHBORS(target)
-		to_chat(user, "<span class='notice'>\the [src] vibrates gently as it reforms \the [target] to be smooth.</span>")
-	else
-		target.smoothing_flags = 0
-		QUEUE_SMOOTH_NEIGHBORS(target)
+
+	if(target.smoothing_flags & SMOOTH_BITMASK) // We're unsmoothing this atom
+		target.smoothing_flags &= ~(SMOOTH_BITMASK|SMOOTH_OBJ)
 		to_chat(user, "<span class='notice'>\the [src] vibrates gently as it reforms \the [target] to be rough.</span>")
-	target.update_icon()
+	else // We're smoothing it
+		target.smoothing_flags |= SMOOTH_BITMASK
+		if(initial(target.smoothing_flags) & SMOOTH_OBJ)
+			target.smoothing_flags |= SMOOTH_OBJ // Only append SMOOTH_OBJ if the target had originally supported it
+		to_chat(user, "<span class='notice'>\the [src] vibrates gently as it reforms \the [target] to be smooth.</span>")
+
+	QUEUE_SMOOTH(target)
+	QUEUE_SMOOTH_NEIGHBORS(target)
+	if(!(target.smoothing_flags & SMOOTH_BITMASK))
+		target.icon_state = initial(target.icon_state)
+		target.update_icon()
 
 /obj/item/chisel/proc/smooth_atom_diagonal(atom/target, mob/living/user)
 	if(target.smoothing_flags & SMOOTH_DIAGONAL_CORNERS)
