@@ -58,6 +58,9 @@
 	name = "\proper High-end Engineering Tools"
 	},
 /obj/item/areaeditor/shuttle,
+/obj/item/circuitboard/machine/holopad,
+/obj/item/wallframe/intercom/wideband,
+/obj/item/stack/tape/industrial/pro,
 /turf/open/floor/plating,
 /area/ship/construction)
 "i" = (
@@ -72,6 +75,7 @@
 /obj/item/clothing/gloves/color/yellow,
 /obj/item/storage/toolbox/electrical,
 /obj/item/multitool,
+/obj/item/stack/tape/industrial/electrical,
 /turf/open/floor/plating,
 /area/ship/construction)
 "k" = (
@@ -127,6 +131,8 @@
 /obj/effect/turf_decal/box/corners{
 	dir = 4
 	},
+/obj/item/stack/tape/industrial,
+/obj/item/stack/tape/industrial,
 /turf/open/floor/plating,
 /area/ship/construction)
 "s" = (
@@ -166,11 +172,6 @@
 /area/ship/construction)
 "z" = (
 /obj/structure/table,
-/obj/item/storage/box/rndboards{
-	desc = "A box containing every board you need to start your own civilian research operation!";
-	name = "Donk! Co. RND Boards Kit";
-	pixel_y = 5
-	},
 /turf/open/floor/plating,
 /area/ship/construction)
 "A" = (
@@ -193,6 +194,8 @@
 /obj/item/clothing/head/helmet/space/light/engineer,
 /obj/item/clothing/head/helmet/space/light/engineer,
 /obj/effect/turf_decal/box/corners,
+/obj/item/clothing/shoes/magboots,
+/obj/item/clothing/shoes/magboots,
 /turf/open/floor/plating,
 /area/ship/construction)
 "E" = (
@@ -302,6 +305,8 @@
 /obj/structure/closet/crate{
 	name = "Suit crate"
 	},
+/obj/item/clothing/shoes/magboots,
+/obj/item/clothing/shoes/magboots,
 /turf/open/floor/plating,
 /area/ship/construction)
 "M" = (
@@ -313,7 +318,9 @@
 	dir = 8
 	},
 /obj/docking_port/mobile{
-	dir = 8
+	dir = 8;
+	port_direction = 4;
+	preferred_direction = 8
 	},
 /turf/open/floor/plating,
 /area/ship/construction)
@@ -425,6 +432,7 @@
 /obj/item/clothing/head/hardhat,
 /obj/item/clothing/glasses/welding,
 /obj/effect/turf_decal/box/corners,
+/obj/item/clothing/shoes/magboots,
 /turf/open/floor/plating,
 /area/ship/construction)
 "Z" = (
