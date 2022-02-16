@@ -284,7 +284,7 @@
 
 //crystal goliath
 /obj/item/crusher_trophy/goliath_crystal
-	name = "goliath crysal"
+	name = "goliath crystal"
 	desc = "A crystal ripped off from a goliath infected by the strange crystals. You can see the original skin of the goliath deeply embeded in it."
 	icon_state = "goliath_crystal"
 	denied_type = /obj/item/crusher_trophy/elder_tentacle
@@ -292,17 +292,16 @@
 	var/missing_health_ratio = 0.1
 	var/missing_health_desc = 5
 
-/obj/item/crusher_trophy/goliath_crystal/examine(mob/user)
-	. = ..()
-	. += "<span class='notice'>Suitable as a trophy for a proto-kinetic crusher.</span>"
-
 /obj/item/crusher_trophy/goliath_crystal/effect_desc()
 	return "waveform collapse to stun creatures for <b>[bonus_value*0.1]</b> second\s"
 
-/obj/item/crusher_trophy/goliath_crystal/on_mark_detonation(mob/living/target, mob/living/user)
-	if(ishostile(target))
-		target.Stun(bonus_value*0.1 SECONDS)
-		new /obj/effect/temp_visual/goliath_tentacle/crystal/visual_only(get_turf(target))
+/obj/item/crusher_trophy/goliath_crystal/on_mark_detonation(mob/living/simple_animal/target, mob/living/user)
+	if(!ishostile(target))
+		return
+	var/mob/living/simple_animal/hostile/hostile_target = target
+	var/hostile_ai_status = hostile_target.AIStatus
+	hostile_target.AIStatus = AI_OFF
+	addtimer(VARSET_CALLBACK(hostile_target, AIStatus, hostile_ai_status), bonus_value*0.1 SECONDS)
 
 //watcher
 /obj/item/crusher_trophy/watcher_wing
