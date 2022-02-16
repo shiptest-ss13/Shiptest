@@ -360,7 +360,7 @@
 
 /obj/item/mecha_parts/mecha_equipment/generator
 	name = "exosuit plasma converter"
-	desc = "An exosuit module that generates power using solid plasma as fuel."
+	desc = "An exosuit module that generates power using solid plasma as fuel. Pollutes the environment."
 	icon_state = "tesla"
 	range = MECHA_MELEE
 	var/coeff = 100

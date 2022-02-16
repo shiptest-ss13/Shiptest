@@ -96,7 +96,7 @@
 	if(!rounds)
 		qdel(src)
 
-/obj/item/mecha_ammo/tank_shell/Initialize()
+/obj/item/mecha_ammo/tank_shell/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/two_handed, require_twohands=TRUE)
 
