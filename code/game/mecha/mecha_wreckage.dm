@@ -211,3 +211,8 @@
 			/obj/item/mecha_parts/part/odysseus_right_arm,
 			/obj/item/mecha_parts/part/odysseus_left_leg,
 			/obj/item/mecha_parts/part/odysseus_right_leg)
+
+/obj/structure/mecha_wreckage/tank/Initialize()
+	. = ..()
+	explosion(src, 0, 2, 4, 4, TRUE, flame_range = 5)
+	return INITIALIZE_HINT_QDEL

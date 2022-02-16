@@ -174,9 +174,29 @@ GLOBAL_LIST_INIT(available_depts, list(SEC_DEPT_ENGINEERING, SEC_DEPT_MEDICAL, S
 /datum/outfit/job/security/minutemen
 	name = "Minuteman (Colonial Minutemen)"
 
+	head = /obj/item/clothing/head/helmet/alt/minutemen
+	mask = /obj/item/clothing/mask/russian_balaclava
+	suit = /obj/item/clothing/suit/armor/bulletproof
+	uniform = /obj/item/clothing/under/rank/security/officer/minutemen
+	shoes = /obj/item/clothing/shoes/combat
+	gloves = /obj/item/clothing/gloves/combat
+	ears = /obj/item/radio/headset/headset_sec/alt
+
+	belt = /obj/item/storage/belt/military
+
+	l_pocket = /obj/item/flashlight/seclite
+	r_pocket = /obj/item/tank/internals/emergency_oxygen/double
+
+	backpack = /obj/item/storage/backpack
+	box = /obj/item/storage/box/survival/engineer/radio
+	backpack_contents = null
+
+/datum/outfit/job/security/minutemen/naked
+	name = "Minuteman (Colonial Minutemen) (Naked)"
+
 	head = null
 	suit = null
-	uniform = /obj/item/clothing/under/rank/security/officer/minutemen
+	mask = null
 	shoes = null
 	gloves = null
 	ears = null
@@ -186,30 +206,12 @@ GLOBAL_LIST_INIT(available_depts, list(SEC_DEPT_ENGINEERING, SEC_DEPT_MEDICAL, S
 	l_pocket = null
 	r_pocket = null
 
-	backpack = /obj/item/storage/backpack
-	box = /obj/item/storage/box/survival/engineer/radio
-	backpack_contents = null
-
 /datum/outfit/job/security/minutemen/armed
 	name = "Minuteman (Colonial Minutemen) (Armed)"
 
-	head = /obj/item/clothing/head/helmet/alt/minutemen
-	mask = /obj/item/clothing/mask/russian_balaclava
-	suit = /obj/item/clothing/suit/armor/bulletproof
-	uniform = /obj/item/clothing/under/rank/security/officer/minutemen
-	shoes = /obj/item/clothing/shoes/combat
-	gloves = /obj/item/clothing/gloves/combat
-	ears = /obj/item/radio/headset/headset_sec/alt
-
+	suit_store = /obj/item/gun/ballistic/automatic/p16/minutemen
 	belt = /obj/item/storage/belt/military/minutemen
 
-	suit_store = /obj/item/gun/ballistic/automatic/p16/minutemen
-
-	l_pocket = /obj/item/flashlight/seclite
-	r_pocket = /obj/item/tank/internals/emergency_oxygen/double
-
-	backpack = /obj/item/storage/backpack
-	box = /obj/item/storage/box/survival/engineer/radio
 	backpack_contents = list(/obj/item/melee/classic_baton=1, /obj/item/gun/ballistic/automatic/pistol/commander=1, /obj/item/restraints/handcuffs=1)
 
 //Shiptest outfits end

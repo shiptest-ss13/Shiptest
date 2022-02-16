@@ -105,7 +105,7 @@
 	fire_rate = 5
 	mag_display = TRUE
 	weapon_weight = WEAPON_MEDIUM
-	w_class = WEIGHT_CLASS_BULKY
+	w_class = WEIGHT_CLASS_HUGE
 	mag_type = /obj/item/ammo_box/magazine/ak47
 
 /obj/item/gun/ballistic/automatic/ak47/nt

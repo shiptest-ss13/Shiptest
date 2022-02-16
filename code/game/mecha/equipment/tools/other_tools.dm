@@ -360,7 +360,7 @@
 
 /obj/item/mecha_parts/mecha_equipment/generator
 	name = "exosuit plasma converter"
-	desc = "An exosuit module that generates power using solid plasma as fuel. Pollutes the environment."
+	desc = "An exosuit module that generates power using solid plasma as fuel."
 	icon_state = "tesla"
 	range = MECHA_MELEE
 	var/coeff = 100
@@ -408,20 +408,20 @@
 		if(result)
 			send_byjax(chassis.occupant,"exosuit.browser","[REF(src)]",src.get_equip_info())
 
-/obj/item/mecha_parts/mecha_equipment/generator/proc/load_fuel(var/obj/item/stack/sheet/P)
-	if(P.type == fuel.type && P.amount > 0)
+/obj/item/mecha_parts/mecha_equipment/generator/proc/load_fuel(var/obj/item/stack/sheet/sheet_being_inserted)
+	if((istype(sheet_being_inserted, fuel)) && sheet_being_inserted.amount > 0)
 		var/to_load = max(max_fuel - fuel.amount*MINERAL_MATERIAL_AMOUNT,0)
 		if(to_load)
-			var/units = min(max(round(to_load / MINERAL_MATERIAL_AMOUNT),1),P.amount)
+			var/units = min(max(round(to_load / MINERAL_MATERIAL_AMOUNT),1),sheet_being_inserted.amount)
 			fuel.amount += units
-			P.use(units)
+			sheet_being_inserted.use(units)
 			occupant_message("<span class='notice'>[units] unit\s of [fuel] successfully loaded.</span>")
 			return units
 		else
 			occupant_message("<span class='notice'>Unit is full.</span>")
 			return 0
 	else
-		occupant_message("<span class='warning'>[fuel] traces in target minimal! [P] cannot be used as fuel.</span>")
+		occupant_message("<span class='warning'>[fuel] traces in target minimal! [sheet_being_inserted] cannot be used as fuel.</span>")
 		return
 
 /obj/item/mecha_parts/mecha_equipment/generator/attackby(weapon,mob/user, params)
