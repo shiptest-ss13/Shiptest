@@ -40,6 +40,9 @@
 		STOP_PROCESSING(SSprocessing, src)
 		return
 
+	if(IS_IN_STASIS(owner))
+		return
+
 	if(owner.bodytemperature >= HUMAN_BODYTEMP_NORMAL)
 		owner.adjust_bodytemperature(-6, HUMAN_BODYTEMP_NORMAL)
 	else
