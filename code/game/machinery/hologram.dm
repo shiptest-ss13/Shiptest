@@ -431,6 +431,7 @@ For the other part of the code, check silicon say.dm. Particularly robot talk.*/
 	if(outgoing_call && speaker == outgoing_call.user)
 		if(!outgoing_call.hologram) //This can apparently be null, just panic and hang up.
 			hangup_all_calls()
+			return
 		outgoing_call.hologram.say(raw_message)
 
 	if(record_mode && speaker == record_user)
