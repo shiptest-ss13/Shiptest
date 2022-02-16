@@ -19,8 +19,8 @@
 	miss_sound = 'sound/weapons/slashmiss.ogg'
 	species_clothing_path = 'icons/mob/clothing/species/vox.dmi'
 	species_eye_path = 'icons/mob/vox_parts.dmi'
-	punchdamagelow = 4
-	punchdamagehigh = 10
+	punchdamagelow = 6
+	punchdamagehigh = 12
 	mutanttongue = /obj/item/organ/tongue/vox
 	species_language_holder = /datum/language_holder/vox
 
@@ -81,5 +81,5 @@
 	. = ..()
 	var/obj/item/environmental_regulator/regulator = new
 	if(!H.equip_to_slot_if_possible(regulator, ITEM_SLOT_BACK, swap = TRUE))
-		if(!H.put_in_hands(I, forced = TRUE))
+		if(!H.put_in_hands(regulator, forced = TRUE))
 			regulator.forceMove(get_turf(H))
