@@ -37,6 +37,8 @@
 	qdel(hud_used)
 	QDEL_LIST(client_colours)
 	ghostize()
+	if(mind)
+		mind.handle_mob_deletion(src)
 	return ..()
 
 

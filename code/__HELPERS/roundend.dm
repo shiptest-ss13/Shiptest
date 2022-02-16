@@ -64,7 +64,7 @@
 			var/name_to_use = initial(M.name)
 			if(ishuman(M))
 				name_to_use = "Unknown Human" //Monkeymen and other mindless corpses
-			if(npc_nest.Find(name_to_use))
+			if(name_to_use in npc_nest)
 				file_data["[escape_status]"]["npcs"][name_to_use] += 1
 			else
 				file_data["[escape_status]"]["npcs"][name_to_use] = 1
