@@ -70,10 +70,10 @@
 	port.engine_list |= src
 
 /obj/machinery/power/shuttle/engine/Destroy()
-	. = ..()
 	var/obj/docking_port/mobile/M = SSshuttle.get_containing_shuttle(src)
 	if(M)
 		M.engine_list -= src
+	return ..()
 
 /obj/machinery/power/shuttle/engine/on_construction()
 	. = ..()
