@@ -9,11 +9,11 @@
 	dir = 10
 	},
 /turf/open/floor/plasteel/mono,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/lobby)
 "ak" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/carpet/blue,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/lobby)
 "ao" = (
 /obj/item/tank/internals/oxygen{
 	dir = 1;
@@ -22,52 +22,52 @@
 	},
 /obj/structure/table/reinforced,
 /turf/open/floor/carpet/blue,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/lobby)
 "au" = (
 /obj/machinery/light/small/built{
 	dir = 8;
 	icon_state = "bulb"
 	},
 /turf/open/floor/wood,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/dorms)
 "av" = (
 /obj/machinery/door/airlock{
 	req_access = list()
 	},
 /obj/structure/barricade/wooden/crude,
 /turf/open/floor/wood,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/dorms)
 "ay" = (
 /obj/structure/bed,
 /obj/item/bedsheet/black,
 /turf/open/floor/wood,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/dorms)
 "aC" = (
 /obj/effect/turf_decal/corner/lightgrey/border{
 	dir = 1
 	},
 /turf/open/floor/plasteel/mono,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/lobby)
 "aD" = (
 /obj/machinery/light/small/built{
 	dir = 8;
 	icon_state = "bulb"
 	},
 /turf/open/floor/wood/bamboo,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/dorms)
 "aE" = (
 /obj/machinery/door/airlock{
 	req_access = list()
 	},
 /turf/open/floor/wood/bamboo,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/dorms)
 "aF" = (
 /obj/machinery/light/built{
 	dir = 8;
 	icon_state = "tube"
 	},
 /turf/open/floor/wood/bamboo,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/dorms)
 "aG" = (
 /obj/structure/marker_beacon{
 	icon_state = "markerindigo-on"
@@ -87,14 +87,8 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel/mono,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/lobby)
 "aI" = (
-/obj/machinery/power/apc{
-	name = "Nest-1 Arrivals APC";
-	pixel_y = -23;
-	req_access = list()
-	},
-/obj/machinery/power/terminal,
 /obj/structure/cable{
 	color = "#ffff00"
 	},
@@ -105,8 +99,9 @@
 /obj/effect/turf_decal/corner/lightgrey/border{
 	dir = 6
 	},
+/obj/machinery/power/apc/auto_name/south,
 /turf/open/floor/plasteel/mono,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/lobby)
 "aN" = (
 /obj/item/ammo_casing/a50AE{
 	dir = 1;
@@ -133,7 +128,7 @@
 /obj/effect/turf_decal/corner/red/diagonal,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/white,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/cafeteria)
 "aP" = (
 /obj/structure/cable{
 	color = "#00ffff";
@@ -148,7 +143,7 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/mono,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/lobby)
 "aR" = (
 /obj/structure/marker_beacon{
 	icon_state = "markercerulean-on"
@@ -165,16 +160,16 @@
 /obj/item/ammo_casing/a762/enchanted,
 /obj/item/ammo_casing/a556,
 /turf/open/floor/plasteel/mono,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/lobby)
 "ba" = (
 /turf/closed/wall,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/cafeteria)
 "bh" = (
 /obj/effect/turf_decal/corner/purple/border{
 	dir = 8
 	},
 /turf/open/floor/plasteel/white,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/research)
 "bj" = (
 /obj/item/ammo_casing/a50AE{
 	dir = 4;
@@ -196,7 +191,7 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/hall)
 "bl" = (
 /obj/item/ammo_casing/a50AE{
 	dir = 4;
@@ -217,13 +212,13 @@
 	},
 /obj/effect/turf_decal/corner/yellow/mono,
 /turf/open/floor/plasteel/mono/white,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/cafeteria)
 "bp" = (
 /obj/structure/cable{
 	icon_state = "2-4"
 	},
 /turf/open/floor/engine,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/engineering)
 "bq" = (
 /obj/machinery/door/airlock/maintenance/external{
 	req_access = list()
@@ -233,7 +228,7 @@
 	icon_state = "1-2"
 	},
 /turf/open/floor/plasteel/tech,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/engineering)
 "br" = (
 /obj/structure/cable{
 	color = "#00ffff";
@@ -251,14 +246,14 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/hall)
 "bt" = (
 /obj/structure/cable{
 	color = "#ff8000";
 	icon_state = "1-2"
 	},
 /turf/open/floor/plasteel/mono,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/hall)
 "bu" = (
 /obj/machinery/door/airlock/public/glass{
 	req_access = list()
@@ -269,12 +264,12 @@
 	},
 /obj/effect/decal/cleanable/blood/drip,
 /turf/open/floor/plasteel/tech,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/cafeteria)
 "bv" = (
 /obj/structure/table/wood,
 /obj/effect/turf_decal/corner/yellow/mono,
 /turf/open/floor/plasteel/mono/white,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/cafeteria)
 "bw" = (
 /obj/structure/cable{
 	color = "#ff8000";
@@ -287,37 +282,26 @@
 	},
 /obj/effect/turf_decal/corner/yellow/mono,
 /turf/open/floor/plasteel/mono/white,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/cafeteria)
 "bx" = (
 /obj/structure/cable{
 	color = "#ff8000"
 	},
-/obj/machinery/power/apc{
-	name = "Nest-1 Canteen APC";
-	pixel_y = -23
-	},
-/obj/machinery/power/terminal,
 /obj/effect/turf_decal/corner/red/diagonal,
+/obj/machinery/power/apc/auto_name/south,
 /turf/open/floor/plasteel/white,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/cafeteria)
 "by" = (
 /obj/machinery/rnd/production/circuit_imprinter,
 /obj/effect/turf_decal/corner/purple/border{
 	dir = 9
 	},
 /turf/open/floor/plasteel/white,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/research)
 "bA" = (
 /obj/structure/cable{
 	color = "#00ffff";
 	icon_state = "4-8"
-	},
-/obj/machinery/power/apc{
-	name = "Nest-1 Primary Hallway APC";
-	pixel_y = 23
-	},
-/obj/machinery/power/terminal{
-	dir = 1
 	},
 /obj/structure/cable{
 	color = "#ff8000";
@@ -326,8 +310,9 @@
 /obj/effect/turf_decal/corner/beige/border{
 	dir = 1
 	},
+/obj/machinery/power/apc/auto_name/north,
 /turf/open/floor/plasteel,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/hall)
 "bB" = (
 /obj/machinery/computer/rdconsole/core{
 	req_access = list(
@@ -336,21 +321,21 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/white,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/research)
 "bC" = (
 /obj/machinery/rnd/production/protolathe,
 /obj/effect/turf_decal/corner/purple/border{
 	dir = 1
 	},
 /turf/open/floor/plasteel/white,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/research)
 "bE" = (
 /obj/machinery/light/built{
 	icon_state = "tube"
 	},
 /obj/effect/turf_decal/corner/red/diagonal,
 /turf/open/floor/plasteel/white,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/cafeteria)
 "bG" = (
 /obj/structure/cable{
 	color = "#00ffff";
@@ -360,14 +345,14 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/hall)
 "bH" = (
 /obj/machinery/rnd/destructive_analyzer,
 /obj/effect/turf_decal/corner/purple/border{
 	dir = 1
 	},
 /turf/open/floor/plasteel/white,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/research)
 "bI" = (
 /obj/machinery/light/built{
 	dir = 4;
@@ -378,7 +363,7 @@
 	dir = 5
 	},
 /turf/open/floor/plasteel/white,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/research)
 "bP" = (
 /obj/effect/decal/cleanable/blood/drip{
 	icon_state = "drip4"
@@ -386,7 +371,7 @@
 /obj/effect/turf_decal/corner/purple/mono,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/mono/white,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/research)
 "bS" = (
 /obj/effect/decal/cleanable/blood/drip{
 	icon_state = "drip2"
@@ -394,7 +379,7 @@
 /obj/effect/turf_decal/corner/purple/half,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/mono/white,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/research)
 "bT" = (
 /obj/structure/cable{
 	color = "#00ffff";
@@ -406,7 +391,7 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/white,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/research)
 "bV" = (
 /obj/structure/cable{
 	color = "#00ffff";
@@ -421,17 +406,17 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/hall)
 "bW" = (
 /obj/effect/spawner/structure/window,
 /turf/open/floor/plasteel/tech,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/lobby)
 "bY" = (
 /obj/machinery/vending/boozeomat/all_access,
 /obj/effect/turf_decal/corner/white/mono,
 /obj/effect/turf_decal/corner/red/mono,
 /turf/open/floor/plasteel/patterned,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/cafeteria)
 "ca" = (
 /obj/structure/table/glass,
 /obj/item/circular_saw{
@@ -442,11 +427,11 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel/white,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/research)
 "cb" = (
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/research)
 "cc" = (
 /obj/structure/cable{
 	color = "#ff8000";
@@ -466,7 +451,7 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel/white,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/research)
 "cd" = (
 /obj/item/pickaxe{
 	dir = 4;
@@ -481,7 +466,7 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/hall)
 "ce" = (
 /obj/machinery/light/built{
 	dir = 1;
@@ -492,7 +477,7 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/mono,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/dorms)
 "cf" = (
 /obj/machinery/light/built{
 	dir = 8;
@@ -503,7 +488,7 @@
 	dir = 9
 	},
 /turf/open/floor/plasteel/mono,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/lobby)
 "cg" = (
 /obj/machinery/light/built{
 	dir = 4;
@@ -513,11 +498,11 @@
 	dir = 5
 	},
 /turf/open/floor/plasteel/mono,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/lobby)
 "cj" = (
 /obj/effect/turf_decal/corner/green/mono,
 /turf/open/floor/plasteel/mono,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/dorms)
 "ck" = (
 /obj/structure/cable{
 	icon_state = "2-4"
@@ -525,7 +510,7 @@
 /obj/effect/turf_decal/corner/green/mono,
 /obj/effect/decal/cleanable/blood/splatter,
 /turf/open/floor/plasteel/mono,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/dorms)
 "cl" = (
 /obj/structure/cable{
 	color = "#00aa00";
@@ -534,12 +519,12 @@
 /obj/machinery/power/port_gen/pacman/super,
 /obj/item/wrench,
 /turf/open/floor/engine,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/engineering)
 "cm" = (
 /obj/structure/bed,
 /obj/item/bedsheet/black,
 /turf/open/floor/wood/bamboo,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/dorms)
 "cn" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -554,7 +539,7 @@
 /obj/effect/decal/cleanable/blood/footprints,
 /obj/effect/decal/cleanable/blood/tracks,
 /turf/open/floor/plasteel/mono,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/dorms)
 "cp" = (
 /obj/item/rcl/ghetto{
 	icon_state = "rclg-1";
@@ -565,7 +550,7 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel/mono,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/lobby)
 "cr" = (
 /obj/structure/cable{
 	color = "#00aa00";
@@ -573,7 +558,7 @@
 	},
 /obj/effect/turf_decal/corner/green/half,
 /turf/open/floor/plasteel/mono,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/dorms)
 "cs" = (
 /obj/machinery/door/airlock/public/glass{
 	req_access = list()
@@ -584,7 +569,7 @@
 	},
 /obj/effect/decal/cleanable/blood/tracks,
 /turf/open/floor/plasteel/tech,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/dorms)
 "ct" = (
 /obj/structure/cable{
 	color = "#00ffff";
@@ -599,7 +584,7 @@
 	},
 /obj/effect/decal/cleanable/blood/splatter,
 /turf/open/floor/plasteel,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/hall)
 "cu" = (
 /obj/structure/marker_beacon{
 	icon_state = "markerfuchsia-on"
@@ -608,23 +593,19 @@
 /area/template_noop)
 "cv" = (
 /turf/open/floor/engine,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/engineering)
 "cy" = (
-/obj/machinery/power/apc{
-	name = "Nest-1 Substation APC";
-	pixel_y = -23
-	},
 /obj/structure/cable{
 	color = "#ff8000";
 	icon_state = "0-8"
 	},
-/obj/machinery/power/terminal,
 /obj/structure/cable{
 	color = "#00aa00";
 	icon_state = "1-8"
 	},
+/obj/machinery/power/apc/auto_name/south,
 /turf/open/floor/engine,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/engineering)
 "cz" = (
 /obj/machinery/light/built{
 	dir = 8;
@@ -634,14 +615,14 @@
 	dir = 10
 	},
 /turf/open/floor/plasteel/white,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/research)
 "cA" = (
 /obj/structure/cable{
 	color = "#00ffff";
 	icon_state = "1-2"
 	},
 /turf/open/floor/plasteel/mono,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/hall)
 "cB" = (
 /obj/machinery/door/airlock/public/glass{
 	req_access = list()
@@ -651,34 +632,32 @@
 	icon_state = "1-2"
 	},
 /turf/open/floor/plasteel/tech,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/hall)
 "cF" = (
 /turf/open/floor/wood,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/dorms)
 "cH" = (
-/obj/machinery/power/apc{
-	name = "Nest-1 Dormitories APC";
-	pixel_x = 24
-	},
 /obj/structure/cable{
 	icon_state = "0-8"
-	},
-/obj/machinery/power/terminal{
-	dir = 4
 	},
 /obj/effect/turf_decal/corner/green/half{
 	dir = 4
 	},
+/obj/machinery/power/apc/auto_name/east,
 /turf/open/floor/plasteel/mono,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/dorms)
+"cI" = (
+/obj/effect/spawner/structure/window,
+/turf/open/floor/plating,
+/area/ruin/unpowered/tested_colony/dorms)
 "cJ" = (
 /obj/structure/table/optable,
 /obj/effect/turf_decal/corner/purple/border,
 /turf/open/floor/plasteel/white,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/research)
 "cL" = (
 /turf/open/floor/wood/bamboo,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/hall)
 "cN" = (
 /obj/structure/cable{
 	color = "#00ffff";
@@ -687,13 +666,8 @@
 /obj/effect/turf_decal/corner/purple/border,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/white,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/research)
 "cO" = (
-/obj/machinery/power/apc{
-	name = "Nest-1 R&ampD Core APC";
-	pixel_y = -23
-	},
-/obj/machinery/power/terminal,
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
@@ -704,8 +678,9 @@
 /obj/effect/turf_decal/corner/purple/border{
 	dir = 6
 	},
+/obj/machinery/power/apc/auto_name/south,
 /turf/open/floor/plasteel/white,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/research)
 "cV" = (
 /turf/template_noop,
 /area/template_noop)
@@ -718,27 +693,30 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/hall)
 "et" = (
 /obj/effect/turf_decal/corner/neutral/mono,
 /obj/effect/decal/cleanable/blood/footprints,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/mono,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/hall)
 "ez" = (
 /obj/effect/decal/cleanable/blood,
 /obj/effect/decal/cleanable/blood/old,
 /turf/open/floor/carpet/blue,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/lobby)
 "eI" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/mono,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/hall)
+"eY" = (
+/turf/closed/wall,
+/area/ruin/unpowered/tested_colony/dorms)
 "ff" = (
 /obj/effect/turf_decal/corner/red/border,
 /turf/open/floor/plasteel,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/hall)
 "fw" = (
 /obj/structure/cable{
 	color = "#00ffff";
@@ -753,20 +731,20 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/mono,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/lobby)
 "fN" = (
 /obj/effect/turf_decal/corner/lightgrey/border,
 /obj/item/shard,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/mono,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/lobby)
 "fQ" = (
 /obj/machinery/door/airlock/public/glass{
 	req_access = list()
 	},
 /obj/structure/barricade/wooden/crude,
 /turf/open/floor/plasteel/tech,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/cafeteria)
 "fV" = (
 /obj/effect/turf_decal/corner/lightgrey/border{
 	dir = 1
@@ -774,14 +752,14 @@
 /obj/item/shard,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating/dirt/dark,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/lobby)
 "gC" = (
 /obj/structure/grille/broken,
 /obj/item/shard,
 /obj/item/shard,
 /obj/item/shard,
 /turf/open/floor/plating,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/hall)
 "hg" = (
 /obj/machinery/door/airlock/research/glass{
 	req_access = list()
@@ -792,7 +770,7 @@
 	},
 /obj/structure/barricade/wooden/crude,
 /turf/open/floor/plasteel/tech,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/cafeteria)
 "hA" = (
 /obj/structure/chair/greyscale{
 	color = "#bb8e53";
@@ -803,14 +781,14 @@
 /obj/effect/decal/cleanable/blood,
 /obj/effect/decal/cleanable/blood,
 /turf/open/floor/plasteel/mono/white,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/cafeteria)
 "hP" = (
 /obj/effect/decal/cleanable/blood,
 /obj/effect/decal/cleanable/blood/old,
 /obj/effect/mob_spawn/human/corpse,
 /obj/effect/turf_decal/weather/dirt,
 /turf/open/floor/carpet/blue,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/lobby)
 "iy" = (
 /obj/item/shard,
 /obj/item/shard,
@@ -818,16 +796,16 @@
 /obj/item/shard,
 /obj/structure/grille/broken,
 /turf/open/floor/plating,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/dorms)
 "jk" = (
 /obj/effect/turf_decal/corner/red/diagonal,
 /obj/effect/decal/cleanable/blood,
 /obj/effect/decal/cleanable/blood/old,
 /turf/open/floor/plasteel/white,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/cafeteria)
 "kj" = (
 /turf/open/floor/plasteel,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/hall)
 "kr" = (
 /obj/structure/table/wood,
 /obj/item/reagent_containers/glass/bottle{
@@ -838,11 +816,11 @@
 	},
 /obj/effect/turf_decal/corner/yellow/mono,
 /turf/open/floor/plasteel/mono/white,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/cafeteria)
 "ku" = (
 /obj/effect/turf_decal/corner/red/diagonal,
 /turf/open/floor/plasteel/white,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/cafeteria)
 "lx" = (
 /obj/item/shard,
 /obj/item/shard,
@@ -850,7 +828,7 @@
 /obj/structure/grille/broken,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/cafeteria)
 "mW" = (
 /obj/effect/turf_decal/corner/green/half{
 	dir = 8
@@ -858,12 +836,12 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/mono,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/dorms)
 "np" = (
 /obj/effect/turf_decal/corner/red/border,
 /obj/effect/decal/cleanable/blood/splatter,
 /turf/open/floor/plasteel,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/hall)
 "oa" = (
 /obj/machinery/power/smes,
 /obj/structure/cable{
@@ -871,26 +849,33 @@
 	icon_state = "0-2"
 	},
 /turf/open/floor/engine,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/engineering)
 "oe" = (
 /obj/effect/decal/cleanable/blood/drip{
 	icon_state = "drip2"
 	},
 /obj/effect/mob_spawn/human/corpse/charredskeleton,
 /turf/open/floor/engine,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/engineering)
+"op" = (
+/obj/effect/spawner/structure/window,
+/turf/open/floor/plating,
+/area/ruin/unpowered/tested_colony/lobby)
+"ow" = (
+/turf/closed/wall,
+/area/ruin/unpowered/tested_colony/lobby)
 "oI" = (
 /obj/effect/turf_decal/corner/lightgrey/border{
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating/dirt,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/lobby)
 "pk" = (
 /obj/effect/turf_decal/corner/neutral/mono,
 /obj/structure/barricade/sandbags,
 /turf/open/floor/plasteel/mono,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/hall)
 "pY" = (
 /obj/structure/cable{
 	color = "#00ffff";
@@ -900,14 +885,14 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/hall)
 "qa" = (
 /obj/effect/turf_decal/corner/yellow/border,
 /obj/effect/decal/cleanable/blood/drip{
 	icon_state = "drip2"
 	},
 /turf/open/floor/plasteel,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/hall)
 "ql" = (
 /obj/machinery/vending/mining_equipment{
 	dir = 8
@@ -916,7 +901,7 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/mono,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/lobby)
 "ra" = (
 /obj/structure/cable{
 	color = "#00ffff";
@@ -926,32 +911,35 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/hall)
 "rd" = (
 /obj/machinery/door/airlock{
 	req_access = list()
 	},
 /obj/structure/barricade/wooden/crude,
 /turf/open/floor/wood/bamboo,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/dorms)
 "rj" = (
 /obj/structure/rack,
 /turf/open/floor/wood/bamboo,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/hall)
 "rF" = (
 /obj/item/kirbyplants,
 /obj/effect/turf_decal/corner/yellow/border,
 /turf/open/floor/plasteel,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/hall)
+"rQ" = (
+/turf/closed/wall,
+/area/ruin/unpowered/tested_colony/hall)
 "rW" = (
 /obj/effect/turf_decal/corner/neutral/mono,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/mono,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/hall)
 "sI" = (
 /obj/effect/turf_decal/corner/neutral/mono,
 /turf/open/floor/plasteel/mono,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/hall)
 "sR" = (
 /obj/structure/marker_beacon{
 	icon_state = "markeryellow-on"
@@ -961,14 +949,18 @@
 "uo" = (
 /obj/effect/turf_decal/corner/white/mono,
 /turf/open/floor/plasteel/patterned,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/cafeteria)
+"us" = (
+/obj/effect/spawner/structure/window,
+/turf/open/floor/plating,
+/area/ruin/unpowered/tested_colony/hall)
 "vo" = (
 /obj/structure/cable{
 	color = "#00ffff";
 	icon_state = "1-4"
 	},
 /turf/open/floor/plasteel,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/hall)
 "vC" = (
 /obj/effect/turf_decal/corner/yellow/border,
 /obj/effect/decal/cleanable/blood/drip{
@@ -980,7 +972,15 @@
 /obj/structure/barricade/sandbags,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/hall)
+"vH" = (
+/obj/effect/spawner/structure/window/reinforced,
+/turf/open/floor/plating,
+/area/ruin/unpowered/tested_colony/dorms)
+"vL" = (
+/obj/effect/spawner/structure/window,
+/turf/open/floor/plating,
+/area/ruin/unpowered/tested_colony/engineering)
 "vV" = (
 /obj/machinery/door/airlock/public/glass{
 	req_access = list()
@@ -991,27 +991,27 @@
 	},
 /obj/effect/decal/cleanable/blood/splatter,
 /turf/open/floor/plasteel/tech,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/dorms)
 "ww" = (
 /obj/effect/turf_decal/corner/lightgrey/border,
 /turf/open/floor/plasteel/mono,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/lobby)
 "xx" = (
 /obj/effect/turf_decal/corner/purple/half{
 	dir = 1
 	},
 /turf/open/floor/plasteel/mono/white,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/research)
 "xB" = (
 /obj/structure/sink/kitchen,
 /obj/effect/turf_decal/corner/white/mono,
 /obj/effect/turf_decal/corner/red/mono,
 /turf/open/floor/plasteel/patterned,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/cafeteria)
 "xZ" = (
 /obj/effect/turf_decal/corner/yellow/border,
 /turf/open/floor/plasteel,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/hall)
 "ym" = (
 /obj/structure/cable{
 	color = "#00ffff";
@@ -1019,26 +1019,26 @@
 	},
 /obj/effect/turf_decal/corner/yellow/border,
 /turf/open/floor/plasteel,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/hall)
 "zT" = (
 /obj/machinery/vending/coffee,
 /obj/effect/turf_decal/corner/white/mono,
 /turf/open/floor/plasteel/patterned,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/cafeteria)
 "AQ" = (
 /obj/effect/turf_decal/corner/green/half{
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/mono,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/dorms)
 "Bc" = (
 /obj/structure/grille/broken,
 /obj/item/shard,
 /obj/item/shard,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating/dirt,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/lobby)
 "CV" = (
 /obj/machinery/light/built{
 	dir = 8;
@@ -1046,16 +1046,25 @@
 	},
 /obj/effect/decal/cleanable/blood/tracks,
 /turf/open/floor/wood/bamboo,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/dorms)
+"CW" = (
+/turf/closed/wall,
+/area/ruin/unpowered/tested_colony/engineering)
 "CZ" = (
 /obj/effect/turf_decal/corner/yellow/border,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/hall)
 "Do" = (
 /obj/effect/decal/cleanable/blood/tracks,
 /turf/open/floor/wood/bamboo,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/dorms)
+"DI" = (
+/obj/machinery/door/airlock/public/glass{
+	req_access = list()
+	},
+/turf/open/floor/plasteel/tech,
+/area/ruin/unpowered/tested_colony/dorms)
 "Eo" = (
 /obj/structure/chair/greyscale{
 	color = "#bb8e53";
@@ -1063,20 +1072,23 @@
 	},
 /obj/effect/turf_decal/corner/red/diagonal,
 /turf/open/floor/plasteel/white,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/cafeteria)
+"Er" = (
+/turf/closed/wall,
+/area/ruin/unpowered/tested_colony/research)
 "Ez" = (
 /obj/machinery/door/airlock/public/glass{
 	req_access = list()
 	},
 /obj/effect/decal/cleanable/blood/tracks,
 /turf/open/floor/plasteel/tech,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/lobby)
 "ED" = (
 /obj/effect/turf_decal/corner/red/border,
 /obj/structure/barricade/sandbags,
 /obj/item/ammo_casing/spent,
 /turf/open/floor/plasteel,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/hall)
 "EF" = (
 /obj/structure/cable{
 	color = "#ffff00";
@@ -1086,13 +1098,13 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel/mono,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/lobby)
 "EG" = (
 /obj/effect/turf_decal/corner/green/mono,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/mono,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/dorms)
 "Fb" = (
 /obj/structure/cable{
 	color = "#00ffff";
@@ -1106,7 +1118,7 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/hall)
 "Ft" = (
 /obj/effect/turf_decal/corner/yellow/border,
 /obj/effect/decal/cleanable/blood/drip{
@@ -1118,7 +1130,7 @@
 	pixel_y = 9
 	},
 /turf/open/floor/plasteel,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/hall)
 "FU" = (
 /obj/structure/cable{
 	color = "#ff8000";
@@ -1126,7 +1138,7 @@
 	},
 /obj/effect/turf_decal/corner/yellow/border,
 /turf/open/floor/plasteel,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/hall)
 "Gk" = (
 /obj/machinery/door/airlock/public/glass{
 	req_access = list()
@@ -1136,7 +1148,7 @@
 	icon_state = "4-8"
 	},
 /turf/open/floor/plasteel/tech,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/hall)
 "Gw" = (
 /obj/effect/decal/cleanable/blood,
 /obj/effect/decal/cleanable/blood/old,
@@ -1144,7 +1156,7 @@
 	dir = 8
 	},
 /turf/open/floor/carpet/blue,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/lobby)
 "Hl" = (
 /obj/effect/decal/cleanable/blood/drip{
 	icon_state = "drip4"
@@ -1160,10 +1172,10 @@
 	},
 /obj/structure/barricade/sandbags,
 /turf/open/floor/plasteel/mono,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/hall)
 "Hz" = (
 /turf/open/floor/plating/dirt/dark,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/lobby)
 "HG" = (
 /obj/effect/turf_decal/corner/green/half{
 	dir = 1
@@ -1173,13 +1185,13 @@
 	dir = 6
 	},
 /turf/open/floor/plasteel/mono,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/dorms)
 "IR" = (
 /obj/effect/turf_decal/corner/lightgrey/border{
 	dir = 4
 	},
 /turf/open/floor/plasteel/mono,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/lobby)
 "IS" = (
 /obj/effect/turf_decal/corner/green/half,
 /obj/item/ammo_casing/a357{
@@ -1190,7 +1202,7 @@
 	},
 /obj/effect/decal/cleanable/blood/tracks,
 /turf/open/floor/plasteel/mono,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/dorms)
 "IX" = (
 /obj/item/ammo_casing/a357,
 /obj/item/ammo_casing/a556{
@@ -1199,7 +1211,7 @@
 	},
 /obj/item/ammo_casing/spent,
 /turf/open/floor/carpet/blue,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/lobby)
 "Jp" = (
 /obj/item/shard,
 /turf/template_noop,
@@ -1207,17 +1219,20 @@
 "Ls" = (
 /obj/structure/grille/broken,
 /turf/open/floor/plating,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/cafeteria)
 "LA" = (
 /obj/effect/decal/cleanable/blood/drip,
 /turf/open/floor/wood/bamboo,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/hall)
 "LR" = (
 /obj/structure/table,
 /obj/effect/turf_decal/corner/white/mono,
 /obj/effect/turf_decal/corner/red/mono,
 /turf/open/floor/plasteel/patterned,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/cafeteria)
+"ME" = (
+/turf/open/floor/wood/bamboo,
+/area/ruin/unpowered/tested_colony/dorms)
 "Nx" = (
 /obj/effect/decal/cleanable/blood/drip,
 /obj/effect/decal/cleanable/blood/drip,
@@ -1229,26 +1244,26 @@
 	icon_state = "drip2"
 	},
 /turf/open/floor/wood/bamboo,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/hall)
 "NI" = (
 /obj/effect/spawner/structure/window,
 /turf/open/floor/plating,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/cafeteria)
 "Os" = (
 /obj/structure/barricade/sandbags,
 /turf/open/floor/carpet/blue,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/lobby)
 "Oy" = (
 /obj/structure/bed,
 /obj/item/bedsheet/black,
 /obj/effect/decal/cleanable/blood,
 /turf/open/floor/wood/bamboo,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/dorms)
 "OU" = (
 /obj/effect/turf_decal/corner/white/mono,
 /obj/effect/turf_decal/corner/red/mono,
 /turf/open/floor/plasteel/patterned,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/cafeteria)
 "Pb" = (
 /obj/structure/cable{
 	color = "#00ffff";
@@ -1261,7 +1276,7 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/hall)
 "Pt" = (
 /obj/machinery/door/airlock/public/glass{
 	req_access = list()
@@ -1271,7 +1286,7 @@
 	icon_state = "4-8"
 	},
 /turf/open/floor/plasteel/tech,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/lobby)
 "PM" = (
 /obj/item/kitchen/knife/combat,
 /obj/effect/decal/cleanable/blood/drip,
@@ -1280,42 +1295,42 @@
 /obj/item/kitchen/knife/combat,
 /obj/effect/mob_spawn/human/corpse/pirate,
 /turf/open/floor/wood/bamboo,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/hall)
 "PP" = (
 /obj/structure/table,
 /obj/effect/turf_decal/corner/white/mono,
 /turf/open/floor/plasteel/patterned,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/cafeteria)
 "Qi" = (
 /obj/effect/turf_decal/corner/lightgrey/border{
 	dir = 1
 	},
 /obj/effect/turf_decal/weather/dirt,
 /turf/open/floor/plasteel/mono,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/lobby)
 "Qx" = (
 /obj/machinery/light/built{
 	icon_state = "tube"
 	},
 /obj/effect/turf_decal/corner/white/mono,
 /turf/open/floor/plasteel/patterned,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/cafeteria)
 "QO" = (
 /turf/open/floor/plasteel/mono,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/hall)
 "Rp" = (
 /obj/effect/turf_decal/corner/yellow/border,
 /obj/effect/decal/cleanable/blood/splatter,
 /obj/effect/mob_spawn/human/corpse/pirate,
 /turf/open/floor/plasteel,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/hall)
 "Sk" = (
 /obj/item/shard,
 /obj/item/shard,
 /obj/structure/grille/broken,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/lobby)
 "SQ" = (
 /obj/effect/turf_decal/corner/lightgrey/border{
 	dir = 1
@@ -1325,7 +1340,7 @@
 	dir = 10
 	},
 /turf/open/floor/plasteel/mono,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/lobby)
 "SS" = (
 /obj/structure/grille/broken,
 /obj/item/shard,
@@ -1333,7 +1348,7 @@
 /obj/item/shard,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating/dirt,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/lobby)
 "Ue" = (
 /obj/machinery/door/airlock/research/glass{
 	req_access = list()
@@ -1344,7 +1359,7 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/tech,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/research)
 "UK" = (
 /obj/effect/turf_decal/corner/red/border,
 /obj/item/ammo_casing/spent,
@@ -1358,21 +1373,21 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/hall)
 "UN" = (
 /obj/effect/turf_decal/corner/purple/mono,
 /turf/open/floor/plasteel/mono/white,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/research)
 "UV" = (
 /obj/machinery/door/airlock/public/glass{
 	req_access = list()
 	},
 /turf/open/floor/plasteel/tech,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/lobby)
 "Vk" = (
 /obj/structure/table/reinforced,
 /turf/open/floor/carpet/blue,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/lobby)
 "Vt" = (
 /obj/structure/cable{
 	color = "#ff8000";
@@ -1384,7 +1399,7 @@
 	},
 /obj/effect/turf_decal/corner/red/diagonal,
 /turf/open/floor/plasteel/white,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/cafeteria)
 "Vv" = (
 /obj/structure/closet/secure_closet/freezer/kitchen,
 /obj/item/kitchen/rollingpin,
@@ -1393,14 +1408,14 @@
 /obj/item/kitchen/spoon/plastic,
 /obj/effect/turf_decal/corner/white/mono,
 /turf/open/floor/plasteel/patterned,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/cafeteria)
 "VM" = (
 /obj/machinery/power/terminal,
 /obj/structure/cable{
 	color = "#00aa00"
 	},
 /turf/open/floor/engine,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/engineering)
 "Wg" = (
 /obj/structure/cable{
 	color = "#00ffff";
@@ -1413,12 +1428,12 @@
 	icon_state = "drip2"
 	},
 /turf/open/floor/plasteel,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/hall)
 "Wn" = (
 /obj/effect/turf_decal/corner/purple/mono,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/mono/white,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/research)
 "Wt" = (
 /obj/machinery/light/built{
 	dir = 1;
@@ -1432,10 +1447,10 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/hall)
 "Wx" = (
 /turf/open/floor/carpet/blue,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/lobby)
 "WK" = (
 /obj/machinery/light/built{
 	icon_state = "tube"
@@ -1446,13 +1461,13 @@
 	},
 /obj/effect/turf_decal/corner/yellow/bordercorner,
 /turf/open/floor/plasteel,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/hall)
 "Xg" = (
 /obj/effect/turf_decal/corner/lightgrey/border{
 	dir = 8
 	},
 /turf/open/floor/plasteel/mono,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/lobby)
 "XK" = (
 /obj/item/kirbyplants,
 /obj/effect/turf_decal/corner/yellow/bordercorner{
@@ -1460,7 +1475,7 @@
 	},
 /obj/effect/turf_decal/corner/red/bordercorner,
 /turf/open/floor/plasteel,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/hall)
 "XM" = (
 /obj/item/paper/crumpled/awaymissions/moonoutpost19/hastey_note{
 	info = "<i>19 06 2554</i><br><br><i>To whoever finds this I am long since dead. The pirates attacked this colony, I can hear the screaming. Managed to limp in here bleeding pretty bad. If you find this- </i>"
@@ -1469,12 +1484,12 @@
 /obj/effect/mob_spawn/human/corpse/nanotrasenassaultsoldier,
 /obj/item/gun/ballistic/automatic/pistol/commander,
 /turf/open/floor/wood/bamboo,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/hall)
 "Yx" = (
 /obj/effect/turf_decal/corner/green/half,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/mono,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/dorms)
 "YQ" = (
 /obj/item/grown/log/tree{
 	pixel_y = -4
@@ -1519,14 +1534,14 @@
 	},
 /obj/structure/rack,
 /turf/open/floor/wood/bamboo,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/hall)
 "YZ" = (
 /obj/structure/cable{
 	color = "#00ffff"
 	},
 /obj/effect/decal/cleanable/blood/footprints,
 /turf/open/floor/wood/bamboo,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/hall)
 "Za" = (
 /obj/effect/turf_decal/corner/yellow/border,
 /obj/effect/decal/cleanable/blood/drip{
@@ -1535,7 +1550,7 @@
 /obj/effect/decal/cleanable/blood/splatter,
 /obj/effect/mob_spawn/human/corpse/pirate,
 /turf/open/floor/plasteel,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/hall)
 "Zo" = (
 /obj/item/ammo_casing/a357,
 /obj/item/ammo_casing/a762/enchanted{
@@ -1547,7 +1562,7 @@
 	pixel_y = -5
 	},
 /turf/open/floor/carpet/blue,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/lobby)
 "ZS" = (
 /obj/structure/cable{
 	color = "#00ffff";
@@ -1561,7 +1576,7 @@
 /obj/effect/mob_spawn/human/corpse/solgov,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/mono,
-/area/ruin/powered)
+/area/ruin/unpowered/tested_colony/lobby)
 
 (1,1,1) = {"
 cV
@@ -1608,15 +1623,15 @@ cV
 cV
 cV
 cV
-ba
-ba
+ow
+ow
 bW
 bW
 bW
 bW
 bW
-ba
-ba
+ow
+ow
 cV
 cV
 cV
@@ -1638,7 +1653,7 @@ cV
 cV
 cV
 cV
-ba
+ow
 cf
 Xg
 Xg
@@ -1646,7 +1661,7 @@ Xg
 ql
 Xg
 ah
-ba
+ow
 cV
 cV
 cV
@@ -1676,7 +1691,7 @@ Wx
 Os
 Wx
 ww
-NI
+op
 cV
 cV
 cV
@@ -1706,7 +1721,7 @@ Vk
 Vk
 Wx
 ww
-NI
+op
 cV
 cV
 cV
@@ -1796,7 +1811,7 @@ Vk
 Vk
 Wx
 fN
-NI
+op
 cV
 cV
 cV
@@ -1848,7 +1863,7 @@ cV
 cV
 cV
 cV
-ba
+ow
 cg
 cp
 IR
@@ -1856,7 +1871,7 @@ aU
 EF
 aH
 aI
-ba
+ow
 cV
 cV
 cV
@@ -1878,15 +1893,15 @@ cV
 cV
 cV
 cV
-ba
-ba
-NI
-NI
+ow
+ow
+op
+op
 Pt
-NI
-NI
-ba
-ba
+op
+op
+ow
+ow
 cV
 cV
 cV
@@ -1911,9 +1926,9 @@ cV
 cV
 cV
 cu
-NI
+op
 aP
-NI
+op
 aR
 cV
 cV
@@ -1971,9 +1986,9 @@ cV
 cV
 cV
 cV
-NI
+op
 fw
-NI
+op
 cV
 cV
 cV
@@ -1996,15 +2011,15 @@ cV
 cV
 aG
 cV
-ba
-ba
-ba
-ba
-ba
-NI
+CW
+CW
+CW
+CW
+CW
+vL
 Gk
-NI
-NI
+us
+us
 ba
 ba
 NI
@@ -2026,12 +2041,12 @@ cV
 cV
 cV
 cV
-ba
+CW
 cv
 cv
 cv
 cv
-ba
+CW
 bG
 kj
 rF
@@ -2056,12 +2071,12 @@ cV
 cV
 cV
 cV
-ba
+CW
 cv
 oe
 cv
 cv
-ba
+CW
 bk
 sI
 Ft
@@ -2086,7 +2101,7 @@ cV
 cV
 cV
 cV
-ba
+CW
 cv
 cv
 cv
@@ -2116,12 +2131,12 @@ cV
 cV
 cV
 cV
-ba
+CW
 cl
 VM
 oa
 cy
-ba
+CW
 bA
 sI
 Za
@@ -2146,12 +2161,12 @@ cV
 cV
 cV
 cV
-ba
-ba
-ba
-ba
-ba
-ba
+CW
+CW
+CW
+CW
+CW
+CW
 Pb
 Hl
 vC
@@ -2296,12 +2311,12 @@ cV
 cV
 cV
 cV
-ba
+Er
 bI
 ca
 cc
 cO
-ba
+Er
 cd
 pk
 ED
@@ -2315,23 +2330,23 @@ cV
 "}
 (26,1,1) = {"
 cV
-ba
-ba
-ba
-ba
-ba
-ba
-ba
-ba
-ba
-ba
-ba
-ba
-ba
-cb
-cb
-ba
-ba
+eY
+eY
+eY
+eY
+eY
+eY
+eY
+eY
+eY
+eY
+eY
+eY
+eY
+vH
+vH
+eY
+eY
 Wt
 QO
 ff
@@ -2345,49 +2360,49 @@ cV
 "}
 (27,1,1) = {"
 cV
-ba
+eY
 au
 cF
-ba
+eY
 aD
-cL
-ba
+ME
+eY
 aD
-cL
-ba
+ME
+eY
 aD
-cL
-ba
+ME
+eY
 EG
 mW
 cj
-NI
+cI
 pY
 sI
 WK
-ba
-NI
+rQ
+us
 gC
-NI
-NI
-ba
+us
+us
+rQ
 cV
 "}
 (28,1,1) = {"
 cV
-ba
+eY
 cF
 ay
-ba
-cL
+eY
+ME
 cm
-ba
-cL
+eY
+ME
 cm
-ba
-cL
+eY
+ME
 Oy
-ba
+eY
 AQ
 EG
 Yx
@@ -2395,29 +2410,29 @@ iy
 pY
 QO
 qa
-NI
+us
 rj
 cL
 rj
 rj
-NI
+us
 cV
 "}
 (29,1,1) = {"
 cV
-ba
+eY
 av
-ba
-ba
+eY
+eY
 rd
-ba
-ba
+eY
+eY
 rd
-ba
-ba
+eY
+eY
 aE
-ba
-ba
+eY
+eY
 ce
 ck
 cr
@@ -2425,24 +2440,24 @@ vV
 ct
 sI
 xZ
-NI
+us
 rj
 PM
 rj
 cL
-NI
+us
 cV
 "}
 (30,1,1) = {"
 cV
-ba
+eY
 cF
 aF
-cL
-cL
-cL
-cL
-cL
+ME
+ME
+ME
+ME
+ME
 CV
 Do
 Do
@@ -2451,7 +2466,7 @@ cs
 HG
 cn
 IS
-NI
+cI
 Fb
 cA
 ym
@@ -2460,67 +2475,67 @@ YZ
 Nx
 LA
 XM
-NI
+us
 cV
 "}
 (31,1,1) = {"
 cV
-UV
+DI
 cF
-cL
-cL
-cL
-cL
-cL
-cL
-cL
-cL
-cL
-cL
-NI
+ME
+ME
+ME
+ME
+ME
+ME
+ME
+ME
+ME
+ME
+cI
 cj
 cH
 cj
-NI
+cI
 ra
 vo
 Rp
-NI
+us
 rj
 cL
 rj
 YQ
-NI
+us
 cV
 "}
 (32,1,1) = {"
 cV
-ba
-NI
-NI
-NI
-NI
-NI
-NI
-NI
-NI
-NI
-ba
-ba
-ba
-ba
-ba
-ba
-ba
-NI
+eY
+cI
+cI
+cI
+cI
+cI
+cI
+cI
+cI
+cI
+eY
+eY
+eY
+eY
+eY
+eY
+eY
+us
 Gk
-NI
-ba
-NI
-NI
-NI
-NI
-ba
+us
+rQ
+us
+us
+us
+us
+rQ
 cV
 "}
 (33,1,1) = {"
