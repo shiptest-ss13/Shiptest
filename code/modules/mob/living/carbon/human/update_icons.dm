@@ -363,8 +363,8 @@ There are several things that need to be remembered:
 		var/obj/item/I = head
 		var/mutable_appearance/head_overlay
 		update_hud_head(I)
-		var/handled_by_bodytype
-		var/icon_file
+		var/handled_by_bodytype = FALSE
+		var/icon_file = DEFAULT_HEAD_PATH
 
 		head_overlay = I.build_worn_icon(default_layer = HEAD_LAYER, default_icon_file = icon_file, isinhands = FALSE, species = CHECK_USE_AUTOGEN)
 
