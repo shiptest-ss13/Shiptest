@@ -1,11 +1,11 @@
 /obj/item/retractor
 	name = "retractor"
 	desc = "Retracts stuff."
-	icon = 'whitesands/icons/obj/surgery.dmi' //SHIPTEST edit: cool and new tools
-	icon_state = "retractor"
+	icon = 'icons/obj/surgery.dmi' //SHIPTEST edit: cool and new tools
+	icon_state = "retractor-1"
 	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
-	item_state = "clamps"
+	item_state = "clamps-1"
 	custom_materials = list(/datum/material/iron=6000, /datum/material/glass=3000)
 	flags_1 = CONDUCT_1
 	item_flags = SURGICAL_TOOL
@@ -21,11 +21,11 @@
 /obj/item/hemostat
 	name = "hemostat"
 	desc = "You think you have seen this before."
-	icon = 'whitesands/icons/obj/surgery.dmi' //SHIPTEST edit: cool and new tools
-	icon_state = "hemostat"
+	icon = 'icons/obj/surgery.dmi' //SHIPTEST edit: cool and new tools
+	icon_state = "hemostat-1"
 	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
-	item_state = "clamps"
+	item_state = "clamps-1"
 	custom_materials = list(/datum/material/iron=5000, /datum/material/glass=2500)
 	flags_1 = CONDUCT_1
 	item_flags = SURGICAL_TOOL
@@ -42,11 +42,11 @@
 /obj/item/cautery
 	name = "cautery"
 	desc = "This stops bleeding."
-	icon = 'whitesands/icons/obj/surgery.dmi' //SHIPTEST edit: cool and new tools
-	icon_state = "cautery"
+	icon = 'icons/obj/surgery.dmi' //SHIPTEST edit: cool and new tools
+	icon_state = "cautery-1"
 	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
-	item_state = "cautery"
+	item_state = "cautery-1"
 	custom_materials = list(/datum/material/iron=2500, /datum/material/glass=750)
 	flags_1 = CONDUCT_1
 	item_flags = SURGICAL_TOOL
@@ -63,10 +63,10 @@
 /obj/item/surgicaldrill
 	name = "surgical drill"
 	desc = "You can drill using this item. You dig?"
-	icon = 'whitesands/icons/obj/surgery.dmi' //SHIPTEST edit: cool and new tools
-	icon_state = "drill"
-	lefthand_file = 'icons/mob/inhands/equipment/tools_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/equipment/tools_righthand.dmi'
+	icon = 'icons/obj/surgery.dmi' //SHIPTEST edit: cool and new tools
+	icon_state = "drill-1"
+	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
 	hitsound = 'sound/weapons/circsawhit.ogg'
 	custom_materials = list(/datum/material/iron=10000, /datum/material/glass=6000)
 	flags_1 = CONDUCT_1
@@ -100,11 +100,11 @@
 /obj/item/scalpel
 	name = "scalpel"
 	desc = "Cut, cut, and once more cut."
-	icon = 'whitesands/icons/obj/surgery.dmi' //SHIPTEST edit: cool and new tools
-	icon_state = "scalpel"
+	icon = 'icons/obj/surgery.dmi' //SHIPTEST edit: cool and new tools
+	icon_state = "scalpel-1"
 	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
-	item_state = "scalpel"
+	item_state = "scalpel-1"
 	flags_1 = CONDUCT_1
 	item_flags = SURGICAL_TOOL | EYE_STAB
 	force = 10
@@ -135,8 +135,9 @@
 /obj/item/circular_saw
 	name = "circular saw"
 	desc = "For heavy duty cutting."
-	icon = 'whitesands/icons/obj/surgery.dmi' //SHIPTEST edit: cool and new tools
-	icon_state = "saw"
+	icon = 'icons/obj/surgery.dmi' //SHIPTEST edit: cool and new tools
+	icon_state = "saw-1"
+	item_state = "saw-1"
 	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
 	hitsound = 'sound/weapons/circsawhit.ogg'
@@ -237,32 +238,29 @@
 	return
 
 /obj/item/scalpel/advanced
-	name = "laser scalpel"
-	desc = "An advanced scalpel which uses laser technology to cut."
-	icon_state = "scalpel_a"
-	hitsound = 'sound/weapons/blade1.ogg'
-	force = 16
-	toolspeed = 0.7
-	light_system = MOVABLE_LIGHT
-	light_range = 1
-	light_color = LIGHT_COLOR_GREEN
-	sharpness = IS_SHARP_ACCURATE
-
+    name = "laser scalpel"
+    desc = "An advanced scalpel which uses laser technology to cut."
+    icon_state = "advscalpel"
+    item_state = "advscalpel"
+    lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
+    righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
+    hitsound = 'sound/weapons/blade1.ogg'
+    force = 16
+    toolspeed = 0.7
+    sharpness = IS_SHARP_ACCURATE
 
 /obj/item/scalpel/advanced/attack_self(mob/user)
 	playsound(get_turf(user), 'sound/machines/click.ogg', 50, TRUE)
 	if(tool_behaviour == TOOL_SCALPEL)
 		tool_behaviour = TOOL_SAW
 		to_chat(user, "<span class='notice'>You increase the power of [src], now it can cut bones.</span>")
-		set_light_range(2)
 		force += 1 //we don't want to ruin sharpened stuff
-		icon_state = "saw_a"
+		icon_state = "advsaw"
 	else
 		tool_behaviour = TOOL_SCALPEL
 		to_chat(user, "<span class='notice'>You lower the power of [src], it can no longer cut bones.</span>")
-		set_light_range(1)
 		force -= 1
-		icon_state = "scalpel_a"
+		icon_state = "advscalpel"
 
 /obj/item/scalpel/advanced/examine()
 	. = ..()
@@ -271,9 +269,10 @@
 /obj/item/retractor/advanced
 	name = "mechanical pinches"
 	desc = "An ungainly set of rods and gears mounted onto a gauntlet apparatus."
-	lefthand_file = 'whitesands/icons/mob/inhands/equipment/medical_lefthand.dmi'
-	righthand_file = 'whitesands/icons/mob/inhands/equipment/medical_righthand.dmi'
-	icon_state = "retractor_a"
+	icon_state = "advretractor"
+	item_state = "advclamps"
+	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
 	toolspeed = 0.7
 	force = 10 //this is in essence a hunk of metal strapped to someone's hand, it's gonna hurt
 
@@ -282,37 +281,36 @@
 	if(tool_behaviour == TOOL_RETRACTOR)
 		tool_behaviour = TOOL_HEMOSTAT
 		to_chat(user, "<span class='notice'>You configure the gears of [src], they are now in hemostat mode.</span>")
-		icon_state = "hemostat_a"
+		icon_state = "advhemostat"
 	else
 		tool_behaviour = TOOL_RETRACTOR
 		to_chat(user, "<span class='notice'>You configure the gears of [src], they are now in retractor mode.</span>")
-		icon_state = "retractor_a"
+		icon_state = "advretractor"
 
 /obj/item/retractor/advanced/examine()
 	. = ..()
 	. += " It resembles a [tool_behaviour == TOOL_RETRACTOR ? "retractor" : "hemostat"]."
 
 /obj/item/surgicaldrill/advanced
-	name = "searing tool"
-	desc = "It projects a high power laser used for medical application."
-	icon_state = "surgicaldrill_a"
-	hitsound = 'sound/items/welder.ogg'
-	toolspeed = 0.7
-	light_system = MOVABLE_LIGHT
-	light_range = 1
-	light_color = COLOR_SOFT_RED
-
+    name = "searing tool"
+    desc = "It projects a high power laser used for medical application."
+    icon_state = "advdrill"
+    lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
+    righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
+    item_state = "advcautery"
+    hitsound = 'sound/items/welder.ogg'
+    toolspeed = 0.7
 
 /obj/item/surgicaldrill/advanced/attack_self(mob/user)
-	playsound(get_turf(user), 'sound/weapons/tap.ogg', 50, TRUE)
-	if(tool_behaviour == TOOL_DRILL)
-		tool_behaviour = TOOL_CAUTERY
-		to_chat(user, "<span class='notice'>You focus the lenses of [src], it is now in mending mode.</span>")
-		icon_state = "cautery_a"
-	else
-		tool_behaviour = TOOL_DRILL
-		to_chat(user, "<span class='notice'>You dilate the lenses of [src], it is now in drilling mode.</span>")
-		icon_state = "surgicaldrill_a"
+    playsound(get_turf(user), 'sound/weapons/tap.ogg', 50, TRUE)
+    if(tool_behaviour == TOOL_DRILL)
+        tool_behaviour = TOOL_CAUTERY
+        to_chat(user, "<span class='notice'>You focus the lenses of [src], it is now in mending mode.</span>")
+        icon_state = "advcautery"
+    else
+        tool_behaviour = TOOL_DRILL
+        to_chat(user, "<span class='notice'>You dilate the lenses of [src], it is now in drilling mode.</span>")
+        icon_state = "advdrill"
 
 /obj/item/surgicaldrill/advanced/examine()
 	. = ..()

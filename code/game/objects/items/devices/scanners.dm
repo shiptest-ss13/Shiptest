@@ -77,36 +77,52 @@ GENE SCANNER
 		flick_overlay(t_ray_images, list(viewer.client), flick_time)
 
 /obj/item/healthanalyzer
-	name = "health analyzer"
-	icon = 'icons/obj/device.dmi'
-	icon_state = "health"
-	item_state = "healthanalyzer"
-	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
-	desc = "A hand-held body scanner capable of distinguishing vital signs of the subject."
-	flags_1 = CONDUCT_1
-	item_flags = NOBLUDGEON
-	slot_flags = ITEM_SLOT_BELT
-	throwforce = 3
-	w_class = WEIGHT_CLASS_TINY
-	throw_speed = 3
-	throw_range = 7
-	custom_materials = list(/datum/material/iron=200)
-	var/mode = SCANNER_VERBOSE
-	var/scanmode = SCANMODE_HEALTH
-	var/advanced = FALSE
-	custom_price = 300
+    name = "health analyzer"
+    icon = 'icons/obj/device.dmi'
+    icon_state = "analyzer-1"
+    item_state = "analyzer"
+    lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
+    righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
+    desc = "A hand-held body scanner capable of distinguishing vital signs of the subject."
+    flags_1 = CONDUCT_1
+    item_flags = NOBLUDGEON
+    slot_flags = ITEM_SLOT_BELT
+    throwforce = 3
+    w_class = WEIGHT_CLASS_TINY
+    throw_speed = 3
+    throw_range = 7
+    custom_materials = list(/datum/material/iron=200)
+    var/mode = SCANNER_VERBOSE
+    var/scanmode = SCANMODE_HEALTH
+    var/advanced = FALSE
+    var/healthscan = "analyzer-1"
+    var/reagentscan = "reagentanalyzer"
+    var/healthinhand = "analyzer"
+    var/reagentinhand = "reagentanalyzer-1"
+    custom_price = 300
 
 /obj/item/healthanalyzer/suicide_act(mob/living/carbon/user)
 	user.visible_message("<span class='suicide'>[user] begins to analyze [user.p_them()]self with [src]! The display shows that [user.p_theyre()] dead!</span>")
 	return BRUTELOSS
 
-/obj/item/healthanalyzer/attack_self(mob/user)
+obj/item/healthanalyzer/attack_self(mob/user)
+	playsound(get_turf(user), 'sound/machines/click.ogg', 50, TRUE)
 	scanmode = !scanmode
-	to_chat(user, "<span class='notice'>You switch the health analyzer to [scanmode ? "scan chemical contents" : "check physical health"].</span>")
+	if(scanmode == 1)
+		to_chat(user, "<span class='notice'>You switch the health analyzer to scan chemical contents.</span>")
+		icon_state = reagentscan
+		item_state = reagentinhand
+		lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
+		righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
+	else
+		to_chat(user, "<span class='notice'>You switch the health analyzer to check physical health.</span>")
+		icon_state = healthscan
+		item_state = healthinhand
+		lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
+		righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
 
 /obj/item/healthanalyzer/attack(mob/living/M, mob/living/carbon/human/user)
-	flick("[icon_state]-scan", src)	//makes it so that it plays the scan animation upon scanning, including clumsy scanning
+	flick("[icon_state]-anim", src)	//makes it so that it plays the scan animation upon scanning, including clumsy scanning
 	playsound(src, 'sound/effects/fastbeep.ogg', 10)
 
 	// Clumsiness/brain damage check
@@ -403,10 +419,17 @@ GENE SCANNER
 	to_chat(usr, mode == SCANNER_VERBOSE ? "The scanner now shows specific limb damage." : "The scanner no longer shows limb damage.")
 
 /obj/item/healthanalyzer/advanced
-	name = "advanced health analyzer"
-	icon_state = "health_adv"
-	desc = "A hand-held body scanner able to distinguish vital signs of the subject with high accuracy."
-	advanced = TRUE
+    name = "advanced health analyzer"
+    icon_state = "advanalyzer"
+    item_state = "advanalyzer"
+    lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
+    righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
+    desc = "A hand-held body scanner able to distinguish vital signs of the subject with high accuracy."
+    advanced = TRUE
+    healthscan = "advanalyzer"
+    reagentscan = "advreagentanalyzer"
+    healthinhand = "advanalyzer"
+    reagentinhand = "advreagentanalyzer"
 
 /obj/item/analyzer
 	desc = "A hand-held environmental scanner which reports current gas levels. Alt-Click to use the built in barometer function."
@@ -831,8 +854,8 @@ GENE SCANNER
 /obj/item/reagent_scanner //essentially just the code from the PDA reagent scanner, but shoved into this object, and specifies amount
 	name = "reagent scanner"
 	icon = 'icons/obj/device.dmi'
-	icon_state = "reagent"
-	item_state = "reagentanalyzer"
+	icon_state = "reagentanalyzer"
+	item_state = "reagentanalyzer-1"
 	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
 	desc = "A hand-held item capable of analyzing the reagents in a container, including complex, meat-based containers such as humans."
@@ -847,7 +870,7 @@ GENE SCANNER
 
 /obj/item/reagent_scanner/afterattack(atom/A as mob|obj|turf|area, mob/user, proximity)
 	. = ..()
-	flick("[icon_state]-scan", src)
+	flick("[icon_state]-anim", src)
 	if(!proximity)
 		return
 	playsound(src, 'sound/effects/fastbeep.ogg', 10)
