@@ -452,8 +452,8 @@
 	..()
 
 /datum/reagent/toxin/histamine/overdose_process(mob/living/M)
-	M.adjustOxyLoss(1., 0)
-	M.adjustToxLoss(1, 0)
+	M.adjustOxyLoss(1*REM, 0)
+	M.adjustToxLoss(1*REM, 0)
 	..()
 	. = 1
 

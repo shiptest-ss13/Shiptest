@@ -87,10 +87,10 @@
 
 /datum/species/vox/handle_chemicals(datum/reagent/chem, mob/living/carbon/human/H)
 	if(allergic_to[chem.type]) //Is_type_in_typecache is BAD.
-		H.reagents.add_reagent(/datum/reagent/toxin/histamine, chem.metabolization_rate * 5)
-		if(prob(7))
+		H.reagents.add_reagent(/datum/reagent/toxin/histamine, chem.metabolization_rate * 3)
+		if(prob(5))
 			to_chat(H, "<span class='danger'>[pick(allergy_reactions)]</span>")
-		else if(prob(7))
+		else if(prob(5))
 			H.emote("clack")
 		return FALSE //Its a bit TOO mean to have the chems not work at all.
 	return ..()
