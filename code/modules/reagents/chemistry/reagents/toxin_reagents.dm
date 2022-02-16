@@ -434,6 +434,9 @@
 	overdose_threshold = 30
 	toxpwr = 0
 
+/datum/reagent/toxin/histamine/overdose_start(mob/living/M)
+	//Deliberately empty to make it a silent killer
+
 /datum/reagent/toxin/histamine/on_mob_life(mob/living/carbon/M)
 	if(prob(10))
 		switch(rand(1,4))
