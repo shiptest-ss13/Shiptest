@@ -14,7 +14,7 @@
 
 /obj/item/gun/ballistic/automatic/pistol/commander
 	name = "\improper Commander"
-	desc = "A modification on the classic 1911 handgun, this one is chambered in 9mm. Much like its predecessor, it suffers from low capacity."
+	desc = "A modification on the classic 1911 handgun, chambered in 9mm. The smaller cartridge allows for improved magazine capacity."
 	icon_state = "commander"
 	w_class = WEIGHT_CLASS_NORMAL
 	mag_type = /obj/item/ammo_box/magazine/co9mm
@@ -105,7 +105,8 @@
 	fire_rate = 5
 	mag_display = TRUE
 	weapon_weight = WEAPON_MEDIUM
-	w_class = WEIGHT_CLASS_HUGE
+	w_class = WEIGHT_CLASS_BULKY
+	slot_flags = ITEM_SLOT_BACK
 	mag_type = /obj/item/ammo_box/magazine/ak47
 
 /obj/item/gun/ballistic/automatic/ak47/nt

@@ -11,6 +11,7 @@
 	suppressed_sound = 'sound/weapons/gun/smg/shot_suppressed.ogg'
 	automatic = 1
 	weapon_weight = WEAPON_MEDIUM
+	pickup_sound =  'sound/items/handling/rifle_pickup.ogg'
 
 /obj/item/gun/ballistic/automatic/proto
 	name = "\improper Nanotrasen Saber SMG"
