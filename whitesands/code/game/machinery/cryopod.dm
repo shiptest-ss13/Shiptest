@@ -151,7 +151,7 @@ GLOBAL_LIST_EMPTY(cryopod_computers)
 //Cryopods themselves.
 /obj/machinery/cryopod
 	name = "cryogenic freezer"
-	desc = "Suited for Cyborgs and Humanoids, the pod is a safe place for personnel affected by the Space Sleep Disorder to get some rest."
+	desc = "Keeps crew frozen in cryostasis until they are needed in order to cut down on supply usage."
 	icon = 'icons/obj/cryogenic2.dmi'
 	icon_state = "cryopod-open"
 	density = TRUE
@@ -239,8 +239,7 @@ GLOBAL_LIST_EMPTY(cryopod_computers)
 		..(user)
 		if(exiting && istype(user, /mob/living/carbon))
 			var/mob/living/carbon/C = user
-			C.SetSleeping(50)
-			to_chat(occupant, "<span class='boldnotice'>You begin to wake from cryosleep...</span>")
+			apply_effects_to_mob(C)
 			icon_state = close_state
 			playsound(src, 'sound/machines/hiss.ogg', 30, 1)
 			return
@@ -251,6 +250,10 @@ GLOBAL_LIST_EMPTY(cryopod_computers)
 	icon_state = close_state
 	if(close_sound)
 		playsound(src, close_sound, 40)
+
+/obj/machinery/cryopod/proc/apply_effects_to_mob(mob/living/carbon/sleepyhead)
+	sleepyhead.SetSleeping(50)
+	to_chat(sleepyhead, "<span class='boldnotice'>You begin to wake from cryosleep...</span>")
 
 /obj/machinery/cryopod/open_machine()
 	..()
@@ -458,5 +461,15 @@ GLOBAL_LIST_EMPTY(cryopod_computers)
 	. = ..()
 	linked_ship = port
 	linked_ship.spawn_points += src
+
+/obj/machinery/cryopod/poor
+	name = "low quality cryogenic freezer"
+	desc = "Keeps crew frozen in cryostasis until they are needed in order to cut down on supply usage. This one seems cheaply made."
+
+/obj/machinery/cryopod/poor/apply_effects_to_mob(mob/living/carbon/sleepyhead)
+	sleepyhead.SetSleeping(50)
+	sleepyhead.set_disgust(60)
+	sleepyhead.set_nutrition(160)
+	to_chat(sleepyhead, "<span class='bolddanger'>A very bad headache wakes you up from cryosleep...</span>")
 
 #undef DEFAULT_JOB_SLOT_ADJUSTMENT_COOLDOWN

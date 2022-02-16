@@ -8,7 +8,7 @@
 	stepsound = 'sound/mecha/mechstep.ogg'
 	turnsound = 'sound/mecha/mechturn.ogg'
 
-	armor = list("melee" = 100, "bullet" = 65, "laser" = 35, "energy" = 35, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 100)
+	armor = list("melee" = 80, "bullet" = 65, "laser" = 35, "energy" = 35, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 100)
 
 	wreckage = /obj/structure/mecha_wreckage/tank
 	exit_delay = 40
@@ -33,7 +33,7 @@
 
 /obj/mecha/combat/combat_tank/minutemen
 	name = "\improper Type 325 Armored Combat Vehicle \"Blueberry\""
-	desc = "A heavily modified Type 207 brought up to modren standards. As the Colonial Minutemen can't afford combat exosuits, they have to rely on refitting old 207s."
+	desc = "A heavily modified Type 207 brought up to modren standards. Usually, third-parties can't afford to purchase exosuits, so they have to rely on refitting old 207s."
 	icon_state = "blue"
 
 /obj/mecha/combat/combat_tank/minutemen/loaded/Initialize()
