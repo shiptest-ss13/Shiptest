@@ -89,10 +89,10 @@ GLOBAL_LIST_INIT(save_file_chars, list(
 				var/current_header = "(\n"										//The actual stuff inside the header
 				//Add objects to the header file
 				var/empty = TRUE
-				CHECK_TICK
 				//====SAVING OBJECTS====
 				if(save_flag & SAVE_OBJECTS)
 					for(var/obj/thing in objects)
+						CHECK_TICK
 						if(thing.type in obj_blacklist)
 							continue
 						var/metadata = generate_tgm_metadata(thing)
@@ -103,10 +103,10 @@ GLOBAL_LIST_INIT(save_file_chars, list(
 						if(save_flag & SAVE_OBJECT_PROPERTIES)
 							var/custom_data = thing.on_object_saved()
 							current_header += "[custom_data ? ",\n[custom_data]" : ""]"
-				CHECK_TICK
 				//====SAVING MOBS====
 				if(save_flag & SAVE_MOBS)
 					for(var/mob/living/thing in objects)
+						CHECK_TICK
 						if(istype(thing, /mob/living/carbon))		//Ignore people, but not animals
 							for(var/obj/object in thing.get_contents())
 								if(object.type in obj_blacklist)
