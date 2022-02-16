@@ -35,6 +35,26 @@
 	species_l_leg = /obj/item/bodypart/l_leg/vox
 	species_r_leg = /obj/item/bodypart/r_leg/vox
 
+	var/static/list/allergy_reactions = list(
+		"Your beak itches.",
+		"Your stomach churns.",
+		"Your tail flicks on its own.",
+		"Your quills feel heavy.",
+		"Your lungs struggle to fill."
+		)
+
+	var/static/list/allergic_to = typecacheof(
+		list(
+			/datum/reagent/medicine/ephedrine,
+			/datum/reagent/medicine/atropine,
+			/datum/reagent/medicine/epinephrine,
+			/datum/reagent/medicine/mannitol,
+			/datum/reagent/medicine/antihol,
+			/datum/reagent/medicine/stimulants,
+			/datum/reagent/medicine/inaprovaline
+		)
+	)
+
 /datum/species/vox/random_name(gender,unique,lastname,attempts)
 	. = ""
 
@@ -64,6 +84,16 @@
 	C.base_pixel_x += 9
 	C.pixel_x = C.base_pixel_x
 	C.stop_updating_hands()
+
+/datum/species/vox/handle_chemicals(datum/reagent/chem, mob/living/carbon/human/H)
+	if(allergic_to[chem.type]) //Is_type_in_typecache is BAD.
+		H.reagents.add_reagent(/datum/reagent/toxin/histamine, chem.metabolization_rate * 5)
+		if(prob(7))
+			to_chat(H, "<span class='danger'>[pick(allergy_reactions)]</span>")
+		else if(prob(7))
+			H.emote("clack")
+		return FALSE //Its a bit TOO mean to have the chems not work at all.
+	return ..()
 
 /datum/species/vox/get_item_offsets_for_dir(var/dir, var/hand)
 	////LEFT/RIGHT
