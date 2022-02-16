@@ -453,12 +453,3 @@
 	author = "Nanotrasen"
 	title = "Chemical Factories Without Narcotics"
 	page_link = "Guide_to_plumbing"
-
-//WS Addition - Spacepods
-/obj/item/book/manual/wiki/spacepod
-	name = "Guide to Podracing"
-	icon_state = "bookParticleAccelerator"
-	author = "Bananakin"
-	title = "Guide to Podracing"
-	page_link = "Space_Pods"
-//WS End

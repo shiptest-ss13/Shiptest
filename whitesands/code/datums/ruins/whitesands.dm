@@ -116,13 +116,6 @@
 	suffix = "whitesands_surface_onlyaspoonful.dmm"
 	allow_duplicates = FALSE
 
-/datum/map_template/ruin/whitesands/onlyaspoonful
-	name = "Abandoned Spacepod Garage"
-	id = "ws-spacepod"
-	description = "A old abandoned spacepod garage. What must it have been used for?"
-	suffix = "whitesands_surface_spacepod_garage.dmm"
-	allow_duplicates = FALSE
-
 /datum/map_template/ruin/whitesands/chokepoint
 	name = "Chokepoint"
 	id = "ws-chokepoint"
