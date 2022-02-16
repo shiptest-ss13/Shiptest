@@ -221,8 +221,7 @@
 
 /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/Initialize() //initial(projectiles) prevented me from making mech weapons start empty TODO: PORT ALL OF TG MECH IMPROVEMENTS
 	. = ..()
-	if(!projectiles_max)
-		projectiles_max = projectiles
+	projectiles_max ||= projectiles
 
 /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/get_shot_amount()
 	return min(projectiles, projectiles_per_shot)
