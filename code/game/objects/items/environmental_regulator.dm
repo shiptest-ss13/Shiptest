@@ -25,11 +25,12 @@
 
 /obj/item/environmental_regulator/equipped(mob/user, slot, initial)
 	. = ..()
-	if(slot == ITEM_SLOT_BACK || ITEM_SLOT_SUITSTORE)
-		START_PROCESSING(SSprocessing, src)
-		owner = user
-	else
-		owner = null
+	switch(slot)
+		if(ITEM_SLOT_BACK, ITEM_SLOT_SUITSTORE)
+			START_PROCESSING(SSprocessing, src)
+			owner = user
+		else
+			owner = null
 
 /obj/item/environmental_regulator/dropped(mob/user, silent)
 	. = ..()
