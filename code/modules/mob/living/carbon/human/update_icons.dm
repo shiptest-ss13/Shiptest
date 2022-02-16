@@ -475,13 +475,11 @@ There are several things that need to be remembered:
 		update_hud_wear_mask(I)
 		var/mutable_appearance/mask_overlay
 		var/icon_file = DEFAULT_MASK_PATH
-		var/handled_by_bodytype = TRUE
 		if(!(ITEM_SLOT_MASK in check_obscured_slots()))
 			if((dna.species.bodytype & BODYTYPE_VOX) && (I.supports_variations & VOX_VARIATION))
 				icon_file = VOX_MASK_PATH
 
 			if(!(icon_exists(icon_file, GET_ICON_STATE(I))))
-				handled_by_bodytype = FALSE
 				icon_file = DEFAULT_MASK_PATH
 
 			mask_overlay = I.build_worn_icon(default_layer = FACEMASK_LAYER, default_icon_file = icon_file)
