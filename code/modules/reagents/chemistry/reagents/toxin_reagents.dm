@@ -447,14 +447,13 @@
 			if(4)
 				if(prob(75))
 					to_chat(M, "<span class='danger'>You scratch at an itch.</span>")
-					M.adjustBruteLoss(2*REM, 0)
+					M.adjustBruteLoss(5, 0)
 					. = 1
 	..()
 
 /datum/reagent/toxin/histamine/overdose_process(mob/living/M)
-	M.adjustOxyLoss(1.5, 0)
-	M.adjustBruteLoss(1.5, FALSE, FALSE, BODYTYPE_ORGANIC)
-	M.adjustToxLoss(1.5, 0)
+	M.adjustOxyLoss(1., 0)
+	M.adjustToxLoss(1, 0)
 	..()
 	. = 1
 
