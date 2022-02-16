@@ -8,8 +8,10 @@
 #define DEFAULT_SHOES_PATH 'icons/mob/clothing/feet.dmi'
 #define DEFAULT_SUIT_PATH 'icons/mob/clothing/suit.dmi'
 #define DEFAULT_EARS_PATH 'icons/mob/clothing/ears.dmi'
+#define DEFAULT_MASK_PATH 'icons/mob/clothing/mask.dmi'
 
 ///VOX PATHS
 #define VOX_UNIFORM_PATH 'icons/mob/species/vox/onmob_uniform_vox.dmi'
 #define VOX_BACK_PATH 'icons/mob/species/vox/onmob_back_vox.dmi'
 #define VOX_EARS_PATH 'icons/mob/species/vox/onmob_ears_vox.dmi'
+#define VOX_MASK_PATH 'icons/mob/species/vox/onmob_mask_vox.dmi'

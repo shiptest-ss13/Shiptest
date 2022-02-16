@@ -24,6 +24,8 @@
 	mutanttongue = /obj/item/organ/tongue/vox
 	species_language_holder = /datum/language_holder/vox
 
+	offset_features = list(OFFSET_BELT = list(9,0))
+
 	bodytemp_heat_divisor = VOX_BODYTEMP_HEAT_DIVISOR
 	bodytemp_cold_divisor = VOX_BODYTEMP_COLD_DIVISOR
 	bodytemp_autorecovery_min = VOX_BODYTEMP_AUTORECOVERY_MIN

@@ -144,7 +144,7 @@ There are several things that need to be remembered:
 
 			if(!(icon_exists(icon_file, GET_ICON_STATE(U))))
 				handled_by_bodytype = FALSE
-				icon_file = DEFAULT_UNIFORM_PATH
+				icon_file = U.mob_overlay_icon || DEFAULT_UNIFORM_PATH
 
 			uniform_overlay = U.build_worn_icon(default_layer = UNIFORM_LAYER, default_icon_file = icon_file, isinhands = FALSE, override_file = icon_file, species = CHECK_USE_AUTOGEN)
 
@@ -474,9 +474,17 @@ There are several things that need to be remembered:
 		var/obj/item/I = wear_mask
 		update_hud_wear_mask(I)
 		var/mutable_appearance/mask_overlay
-
+		var/icon_file = DEFAULT_MASK_PATH
+		var/handled_by_bodytype = TRUE
 		if(!(ITEM_SLOT_MASK in check_obscured_slots()))
-			mask_overlay = I.build_worn_icon(default_layer = FACEMASK_LAYER, default_icon_file = 'icons/mob/clothing/mask.dmi')
+			if((dna.species.bodytype & BODYTYPE_VOX) && (I.supports_variations & VOX_VARIATION))
+				icon_file = VOX_MASK_PATH
+
+			if(!(icon_exists(icon_file, GET_ICON_STATE(I))))
+				handled_by_bodytype = FALSE
+				icon_file = DEFAULT_MASK_PATH
+
+			mask_overlay = I.build_worn_icon(default_layer = FACEMASK_LAYER, default_icon_file = icon_file)
 
 		if(!mask_overlay)
 			return
