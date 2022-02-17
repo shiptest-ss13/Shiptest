@@ -61,9 +61,6 @@
 /obj/machinery/power/shuttle/engine/Initialize()
 	. = ..()
 	update_icon_state()
-	var/obj/docking_port/mobile/M = SSshuttle.get_containing_shuttle(src)
-	if(M)
-		M.engine_list |= src
 
 /obj/machinery/power/shuttle/engine/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock)
 	. = ..()
