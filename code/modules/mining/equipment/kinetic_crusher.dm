@@ -380,7 +380,7 @@
 /obj/item/crusher_trophy/watcher_wing_forgotten
 	name = "forgotten watcher wing"
 	desc = "A wing with a terminal infection of the strange crystals."
-	icon_state = "watcher_wing"
+	icon_state = "watcher_wing_crystal"
 	denied_type = /obj/item/crusher_trophy/watcher_wing_forgotten
 	gender = NEUTER
 	bonus_value = 20

@@ -11,9 +11,9 @@
 
 	mob_spawn_list = list(
 		//'regular' fauna, not too difficult
-		/mob/living/simple_animal/hostile/netherworld/asteroid = 60,
-		/mob/living/simple_animal/hostile/asteroid/fugu/asteroid = 60,
-		/mob/living/simple_animal/hostile/netherworld/migo/asteroid = 50, //mariuce
+		/mob/living/simple_animal/hostile/netherworld/asteroid = 50,
+		/mob/living/simple_animal/hostile/asteroid/fugu/asteroid = 50,
+		/mob/living/simple_animal/hostile/netherworld/migo/asteroid = 40, //mariuce
 		//crystal mobs, very difficult
 		/mob/living/simple_animal/hostile/asteroid/goliath/beast/ancient/crystal = 1,
 		/mob/living/simple_animal/hostile/asteroid/basilisk/watcher/forgotten = 1,
