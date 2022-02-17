@@ -57,7 +57,7 @@
 	name = "Ammo Box (.38 hunting)"
 	id = "c38_hunting"
 	build_type = AUTOLATHE
-	materials = list(/datum/material/iron = 30000)
+	materials = list(/datum/material/iron = 20000)
 	build_path = /obj/item/ammo_box/c38_box/hunting
 	category = list("Imported")
 
