@@ -68,13 +68,10 @@
 	var/turf/open/open_turf = loc
 	if(open_turf.planetary_atmos)
 		return TRUE
-	var/list/air_gases = open_turf.air.get_gases()
-	if(!air_gases)
-		return FALSE
-	var/oxy = open_turf.air.get_moles(/datum/gas/oxygen)
+	var/datum/gas_mixture/cached_air = open_turf.air
+	var/oxy = cached_air.get_moles(/datum/gas/oxygen)
 	if (oxy < 0.5)
 		return FALSE
-	var/datum/gas_mixture/cached_air = open_turf.air
 	var/temperature = cached_air.return_temperature()
 	var/old_heat_capacity = cached_air.heat_capacity()
 	var/burn_rate = TURF_FIRE_BURN_RATE_BASE + fire_power * TURF_FIRE_BURN_RATE_PER_POWER
