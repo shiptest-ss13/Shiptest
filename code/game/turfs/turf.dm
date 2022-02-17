@@ -661,3 +661,6 @@
 		if(!ismopable(content))
 			continue
 		content.wash(clean_types)
+
+/turf/proc/IgniteTurf(power)
+	return
