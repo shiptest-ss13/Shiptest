@@ -103,6 +103,7 @@
   * * dock_to_use - The [/obj/docking_port/mobile] to dock to.
   */
 /obj/structure/overmap/ship/simulated/proc/dock(obj/structure/overmap/to_dock, obj/docking_port/stationary/dock_to_use)
+	log_shuttle("[src] [REF(src)] DOCKING: STARTED REQUEST FOR [to_dock] AT [dock_to_use]")
 	refresh_engines()
 	shuttle.movement_force = list("KNOCKDOWN" = FLOOR(est_thrust / 50, 1), "THROW" = FLOOR(est_thrust / 200, 1))
 	shuttle.request(dock_to_use)
@@ -124,6 +125,7 @@
 		return "Ship not docked!"
 	if(!shuttle)
 		return "Shuttle not found!"
+	log_shuttle("[src] [REF(src)] UNDOCK: STARTED UNDOCK FROM ")
 	shuttle.destination = null
 	shuttle.mode = SHUTTLE_IGNITING
 	shuttle.setTimer(shuttle.ignitionTime)
@@ -249,6 +251,7 @@
   * Called after the shuttle docks, and finishes the transfer to the new location.
   */
 /obj/structure/overmap/ship/simulated/proc/complete_dock(datum/weakref/to_dock)
+	log_shuttle("[src] [REF(src)] COMPLETE DOCK: RESOLVED WEAKREF TO [to_dock.resolve()]")
 	var/old_loc = loc
 	switch(state)
 		if(OVERMAP_SHIP_DOCKING) //so that the shuttle is truly docked first
