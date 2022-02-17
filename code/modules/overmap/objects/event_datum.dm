@@ -178,7 +178,7 @@
 	if(!other_wormhole)
 		qdel(src)
 	if(--stability <= 0)
-		var/results = SSovermap.get_unused_overmap_square()
+		var/list/results = SSovermap.get_unused_overmap_square()
 		S.Move(results["x"], results["y"])
 		QDEL_NULL(other_wormhole)
 		for(var/MN in GLOB.player_list)

@@ -23,6 +23,8 @@
 	var/dock_time
 	/// The current docking timer ID.
 	var/dock_timer_id
+	/// Whether or not the overmap object is currently docking.
+	var/docking
 
 	/// List of all datums docked in this datum.
 	var/list/datum/overmap/contents
@@ -77,6 +79,8 @@
   */
 /datum/overmap/proc/Move(new_x, new_y)
 	SHOULD_CALL_PARENT(TRUE)
+	if(docking)
+		return
 	if(docked_to)
 		CRASH("Overmap datum [src] tried to move() while docked to [docked_to].")
 	if(!isnum(new_x) || !isnum(new_y))
@@ -97,6 +101,7 @@
 
 	// Updates the token with the new position.
 	token.Move(OVERMAP_TOKEN_TURF(x, y))
+	return TRUE
 
 /**
   * Moves the overmap datum in a specific direction a specific number of spaces (magnitude, default 1).
@@ -116,7 +121,7 @@
 		move_x += magnitude
 	else if(dir & WEST)
 		move_x -= magnitude
-	Move(move_x, move_y)
+	return Move(move_x, move_y)
 
 /**
   * Proc used to rename an overmap datum and everything related to it.
@@ -156,15 +161,20 @@
   */
 /datum/overmap/proc/Dock(datum/overmap/dock_target)
 	SHOULD_CALL_PARENT(TRUE)
+	if(docking)
+		return
 	if(!istype(dock_target))
 		CRASH("Overmap datum [src] tried to dock to an invalid overmap datum.")
 	if(docked_to)
 		CRASH("Overmap datum [src] tried to dock to [docked_to] when it is already docked to another overmap datum.")
 
+	docking = TRUE
 	var/datum/docking_ticket/ticket = dock_target.pre_docked(src)
 	if(!ticket)
+		docking = FALSE
 		return
 	if(!pre_dock(dock_target, ticket))
+		docking = FALSE
 		return
 
 	start_dock(dock_target, ticket)
@@ -222,6 +232,7 @@
 	token.Move(dock_target.token)
 
 	dock_target.post_docked(src)
+	docking = FALSE
 
 	SEND_SIGNAL(src, COMSIG_OVERMAP_DOCK, dock_target)
 

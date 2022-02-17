@@ -96,7 +96,7 @@
 
 /datum/overmap/ship/controlled/Undock()
 	var/dock_time_temp = dock_time
-	if(!shuttle_port.check_transit_zone()  != TRANSIT_READY)
+	if(shuttle_port.check_transit_zone() != TRANSIT_READY)
 		dock_time *= 2 // Give it double the time in order to reserve transit space
 
 	priority_announce("Beginning undocking procedures. Completion in [dock_time/10] seconds.", "Docking Announcement", sender_override = name, zlevel = shuttle_port.virtual_z())
@@ -129,8 +129,8 @@
 		Dock(E)
 
 /datum/overmap/ship/controlled/burn_engines(n_dir = null, percentage = 100)
-	if(docked_to)
-		return
+	if(docked_to || docking)
+		CRASH("[src] burned engines while docking or docked!")
 
 	var/thrust_used = 0 //The amount of thrust that the engines will provide with one burn
 	refresh_engines()

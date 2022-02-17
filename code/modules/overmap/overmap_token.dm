@@ -38,6 +38,10 @@
 /obj/overmap/Destroy(force)
 	if(parent)
 		return QDEL_HINT_LETMELIVE
+	if(render_map)
+		QDEL_NULL(cam_screen)
+		QDEL_NULL(cam_plane_master)
+		QDEL_NULL(cam_background)
 	return ..()
 
 /obj/overmap/attack_ghost(mob/user)
@@ -47,6 +51,37 @@
 		return
 	user.forceMove(jump_to_turf)
 
+/obj/overmap/vv_edit_var(var_name, var_value)
+	switch(var_name)
+		if(NAMEOF(src, render_map))
+			if(!render_map && var_value)
+				map_name = "overmap_[REF(src)]_map"
+				cam_screen = new
+				cam_screen.name = "screen"
+				cam_screen.assigned_map = map_name
+				cam_screen.del_on_map_removal = FALSE
+				cam_screen.screen_loc = "[map_name]:1,1"
+				cam_plane_master = new
+				cam_plane_master.name = "plane_master"
+				cam_plane_master.assigned_map = map_name
+				cam_plane_master.del_on_map_removal = FALSE
+				cam_plane_master.screen_loc = "[map_name]:CENTER"
+				cam_background = new
+				cam_background.assigned_map = map_name
+				cam_background.del_on_map_removal = FALSE
+				update_screen()
+			else if(render_map && !var_value)
+				QDEL_NULL(cam_screen)
+				QDEL_NULL(cam_plane_master)
+				QDEL_NULL(cam_background)
+		if(NAMEOF(src, x))
+			return parent.Move(var_value, parent.y)
+		if(NAMEOF(src, y))
+			return parent.Move(parent.x, var_value)
+		if(NAMEOF(src, name))
+			parent.Rename(var_value)
+			return TRUE
+	return ..()
 /**
   * Updates the screen object, which is displayed on all connected helms
   */

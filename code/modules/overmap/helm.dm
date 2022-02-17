@@ -137,7 +137,7 @@
 
 	.["x"] = current_ship.x || current_ship.docked_to.x
 	.["y"] = current_ship.y || current_ship.docked_to.y
-	.["state"] = current_ship.docked_to ? "idle" : "flying"
+	.["docking"] = current_ship.docking
 	.["docked"] = current_ship.docked_to
 	.["heading"] = dir2text(current_ship.get_heading()) || "None"
 	.["speed"] = current_ship.get_speed()
@@ -206,7 +206,7 @@
 			current_ship.refresh_engines()
 			return
 
-	if(!current_ship.docked_to)
+	if(!current_ship.docked_to && !current_ship.docking)
 		switch(action)
 			if("act_overmap")
 				if(SSshuttle.jump_mode > BS_JUMP_CALLED)

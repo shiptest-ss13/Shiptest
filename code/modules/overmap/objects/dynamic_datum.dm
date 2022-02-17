@@ -69,7 +69,8 @@
 	if(length(mapzone?.get_mind_mobs()))
 		return //Dont fuck over stranded people? tbh this shouldn't be called on this condition, instead of bandaiding it inside
 
-	Move(rand(1, SSovermap.size), rand(1, SSovermap.size))
+	var/list/results = SSovermap.get_unused_overmap_square()
+	Move(results["x"], results["y"])
 	choose_level_type()
 
 	for(var/obj/docking_port/stationary/dock as anything in reserve_docks)

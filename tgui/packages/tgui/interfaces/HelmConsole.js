@@ -1,12 +1,10 @@
-import { Fragment } from 'inferno';
-import { useBackend, useLocalState } from '../backend';
-import { Button, ByondUi, LabeledList, Knob, Input, Section, Grid, Box, ProgressBar, Slider, AnimatedNumber, Tooltip } from '../components';
-import { refocusLayout, Window } from '../layouts';
+import { useBackend } from '../backend';
+import { Button, ByondUi, LabeledList, Section, ProgressBar, AnimatedNumber } from '../components';
+import { Window } from '../layouts';
 import { Table } from '../components/Table';
-import { ButtonInput } from '../components/Button';
 
-export const HelmConsole = (props, context) => {
-  const { act, data, config } = useBackend(context);
+export const HelmConsole = (_props, context) => {
+  const { data } = useBackend(context);
   const { mapRef, isViewer } = data;
   return (
     <Window
@@ -23,6 +21,13 @@ export const HelmConsole = (props, context) => {
         </Window.Content>
       </div>
       <div className="CameraConsole__right">
+        <div className="CameraConsole__toolbar">
+          {!!data.docked && (
+            <div className="NoticeBox">
+              Ship docked to: {data.docked}
+            </div>
+          )}
+        </div>
         <ByondUi
           className="CameraConsole__map"
           params={{
@@ -34,7 +39,7 @@ export const HelmConsole = (props, context) => {
   );
 };
 
-const SharedContent = (props, context) => {
+const SharedContent = (_props, context) => {
   const { act, data } = useBackend(context);
   const { isViewer, shipInfo = [], otherInfo = [] } = data;
   return (
@@ -45,7 +50,7 @@ const SharedContent = (props, context) => {
             content={shipInfo.name}
             currentValue={shipInfo.name}
             disabled={isViewer}
-            onCommit={(e, value) => act('rename_ship', {
+            onCommit={(_e, value) => act('rename_ship', {
               newName: value,
             })} />
         )}
@@ -99,7 +104,7 @@ const SharedContent = (props, context) => {
                     tooltip="Interact"
                     tooltipPosition="left"
                     icon="circle"
-                    disabled={isViewer || (data.speed > 0) || data.state !== 'flying'}
+                    disabled={isViewer || (data.speed > 0) || data.docked || data.docking}
                     onClick={() => act('act_overmap', {
                       ship_to_act: ship.ref,
                     })} />
@@ -114,7 +119,7 @@ const SharedContent = (props, context) => {
 };
 
 // Content included on helms when they're controlling ships
-const ShipContent = (props, context) => {
+const ShipContent = (_props, context) => {
   const { act, data } = useBackend(context);
   const {
     isViewer,
@@ -236,10 +241,10 @@ const ShipContent = (props, context) => {
 };
 
 // Arrow directional controls
-const ShipControlContent = (props, context) => {
+const ShipControlContent = (_props, context) => {
   const { act, data } = useBackend(context);
   const { calibrating } = data;
-  let flyable = (data.state === 'flying');
+  let flyable = (!data.docking && !data.docked);
   //  DIRECTIONS const idea from Lyra as part of their Haven-Urist project
   const DIRECTIONS = {
     north: 1,
@@ -260,28 +265,23 @@ const ShipControlContent = (props, context) => {
             tooltip="Undock"
             tooltipPosition="left"
             icon="sign-out-alt"
-            disabled={data.state !== 'idle'}
+            disabled={!data.docked}
             onClick={() => act('undock')} />
           <Button
             tooltip="Dock in Empty Space"
             tooltipPosition="left"
             icon="sign-in-alt"
-            disabled={data.state !== 'flying'}
+            disabled={!flyable}
             onClick={() => act('dock_empty')} />
           <Button
             tooltip={calibrating ? "Cancel Jump" : "Bluespace Jump"}
             tooltipPosition="left"
             icon={calibrating ? "times" : "angle-double-right"}
             color={calibrating ? "bad" : undefined}
-            disabled={data.state !== 'flying'}
+            disabled={!flyable}
             onClick={() => act('bluespace_jump')} />
         </>
       )}>
-      {!!data.docked && (
-        <div className="NoticeBox">
-          Ship docked to: {data.docked}
-        </div>
-      )}
       <Table collapsing>
         <Table.Row height={1}>
           <Table.Cell width={1}>
