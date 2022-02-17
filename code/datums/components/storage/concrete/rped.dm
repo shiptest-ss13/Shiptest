@@ -3,6 +3,7 @@
 	allow_quick_gather = TRUE
 	allow_quick_empty = TRUE
 	click_gather = TRUE
+	storage_flags = STORAGE_FLAGS_LEGACY_DEFAULT
 	max_w_class = WEIGHT_CLASS_NORMAL
 	max_combined_w_class = 100
 	max_items = 50

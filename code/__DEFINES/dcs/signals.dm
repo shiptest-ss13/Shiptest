@@ -503,6 +503,10 @@
 #define COMSIG_ITEM_DISABLE_EMBED "item_disable_embed" ///from [/obj/item/proc/disableEmbedding]:
 #define COMSIG_MINE_TRIGGERED "minegoboom" ///from [/obj/effect/mine/proc/triggermine]:
 
+// Item mouse siganls
+#define COMSIG_ITEM_MOUSE_EXIT "item_mouse_exit"				//from base of obj/item/MouseExited(): (location, control, params)
+#define COMSIG_ITEM_MOUSE_ENTER "item_mouse_enter"				//from base of obj/item/MouseEntered(): (location, control, params)
+
 // /obj/item signals for economy
 #define COMSIG_ITEM_SOLD "item_sold" //called when an item is sold by the exports subsystem
 #define COMSIG_STRUCTURE_UNWRAPPED "structure_unwrapped" //called when a wrapped up structure is opened by hand
