@@ -509,8 +509,8 @@
 
 /obj/item/reagent_containers/food/drinks/bottle/molotov/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)
 	var/firestarter = FALSE
-	for(var/datum/reagent/R in reagents.reagent_list)
-		if(R.accelerant_quality)
+	for(var/datum/reagent/reagent as anything in reagents.reagent_list)
+		if(reagent.accelerant_quality)
 			firestarter = TRUE
 			break
 	if(firestarter && active)

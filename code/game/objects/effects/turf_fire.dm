@@ -115,8 +115,7 @@
 			qdel(src)
 			return
 	open_turf.hotspot_expose(TURF_FIRE_TEMP_BASE + (TURF_FIRE_TEMP_INCREMENT_PER_POWER*fire_power), TURF_FIRE_VOLUME)
-	for(var/A in open_turf)
-		var/atom/AT = A
+	for(var/atom/movable/AT as anything in open_turf)
 		AT.fire_act(TURF_FIRE_TEMP_BASE + (TURF_FIRE_TEMP_INCREMENT_PER_POWER*fire_power), TURF_FIRE_VOLUME)
 	if(!magical)
 		if(prob(fire_power))
