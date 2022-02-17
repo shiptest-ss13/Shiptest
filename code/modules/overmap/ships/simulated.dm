@@ -51,7 +51,7 @@
 #ifdef UNIT_TESTS
 	set_ship_name("[source_template]")
 #else
-	set_ship_name("[source_template.prefix] [pick_list_replacements(SHIP_NAMES_FILE, pick(source_template.name_categories))]", TRUE)
+	set_ship_name("[source_template.prefix] [pick_list_replacements(SHIP_NAMES_FILE, pick(source_template.name_categories))]", TRUE, TRUE)
 #endif
 	refresh_engines()
 	check_loc()
@@ -320,12 +320,13 @@
 /**
   * Sets the ship, shuttle, and shuttle areas to a new name.
   */
-/obj/structure/overmap/ship/simulated/proc/set_ship_name(new_name, ignore_cooldown = FALSE)
+/obj/structure/overmap/ship/simulated/proc/set_ship_name(new_name, ignore_cooldown = FALSE, mute = FALSE)
 	if(!new_name || new_name == name || !COOLDOWN_FINISHED(src, rename_cooldown))
 		return
-	if(name != initial(name))
+	if((name != initial(name)) || !mute)
 		priority_announce("The [name] has been renamed to the [new_name].", "Docking Announcement", sender_override = new_name, zlevel = shuttle.virtual_z())
-	message_admins("[key_name_admin(usr)] renamned vessel '[name]' to '[new_name]'")
+	if(!mute)
+		message_admins("[key_name_admin(usr)] renamned vessel '[name]' to '[new_name]'")
 	name = new_name
 	shuttle.name = new_name
 	if(!ignore_cooldown)

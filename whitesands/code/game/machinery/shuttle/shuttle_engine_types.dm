@@ -23,7 +23,7 @@
 
 /obj/machinery/power/shuttle/engine/fueled/burn_engine(percentage = 100)
 	..()
-	var/obj/machinery/atmospherics/components/unary/shuttle/heater/resolved_heater = attached_heater.resolve()
+	var/obj/machinery/atmospherics/components/unary/shuttle/heater/resolved_heater = attached_heater?.resolve()
 	if(heat_creation)
 		heat_engine()
 	var/to_use = fuel_use * (percentage / 100)
@@ -31,12 +31,12 @@
 
 /obj/machinery/power/shuttle/engine/fueled/return_fuel()
 	. = ..()
-	var/obj/machinery/atmospherics/components/unary/shuttle/heater/resolved_heater = attached_heater.resolve()
+	var/obj/machinery/atmospherics/components/unary/shuttle/heater/resolved_heater = attached_heater?.resolve()
 	return resolved_heater?.return_gas(fuel_type)
 
 /obj/machinery/power/shuttle/engine/fueled/return_fuel_cap()
 	. = ..()
-	var/obj/machinery/atmospherics/components/unary/shuttle/heater/resolved_heater = attached_heater.resolve()
+	var/obj/machinery/atmospherics/components/unary/shuttle/heater/resolved_heater = attached_heater?.resolve()
 	return resolved_heater?.return_gas_capacity()
 
 /obj/machinery/power/shuttle/engine/fueled/screwdriver_act(mob/living/user, obj/item/I)
