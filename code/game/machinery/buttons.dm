@@ -303,3 +303,12 @@
 	. = ..()
 	. += "<span class='notice'>There's a small inscription on the button...</span>"
 	. += "<span class='notice'>THIS CALLS THE ELEVATOR! IT DOES NOT OPERATE IT! Interact with the elevator itself to use it!</span>"
+
+/obj/machinery/button/shieldwallgen
+	name = "holofield switch"
+	desc = "A remote switch for a holofield generator"
+	icon_state = "launcher"
+	skin = "launcher"
+	device_type = /obj/item/assembly/control/shieldwallgen
+	req_access = list()
+	id = 1
