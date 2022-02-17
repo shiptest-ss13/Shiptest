@@ -585,7 +585,7 @@
 			/obj/item/circuitboard/machine/circuit_imprinter = 5,
 			/obj/item/circuitboard/machine/protolathe = 5,
 			/obj/item/circuitboard/machine/clonepod/experimental = 5,
-			/obj/item/circuitboard/machine/rad_collector = 5
+			/obj/item/circuitboard/machine/rad_collector = 5,
 			/obj/item/circuitboard/machine/launchpad = 5
 		)
 

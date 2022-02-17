@@ -44,16 +44,17 @@
 	// 4 * 18 = 72 (7.2 seconds)
 	var/phase = 1 //at about 25% hp, they will "die", and then come back with even more attacks
 
-/mob/living/simple_animal/hostile/megafauna/claw/phase2
+/mob/living/simple_animal/hostile/megafauna/claw/phase2 //75% of the health this thing has is here
 	icon_state = "claw-phase2"
 	icon_living = "claw-phase2"
 	gps_name = "F453C619AE278"
 	deathsound = "bodyfall"
-	attack_action_types = list(/datum/action/innate/megafauna_attack/emp_pulse,
+	attack_action_types = list(/datum/action/innate/megafauna_attack/swift_dash,
+								/datum/action/innate/megafauna_attack/swift_dash_long,
+								/datum/action/innate/megafauna_attack/emp_pulse,
 								/datum/action/innate/megafauna_attack/tentacle,
 								/datum/action/innate/megafauna_attack/summon_creatures,
-								/datum/action/innate/megafauna_attack/pulse_rifle,
-								/datum/action/innate/megafauna_attack/string_attack
+								/datum/action/innate/megafauna_attack/sting_attack
 								)
 	speed = 5
 	move_to_delay = 5
@@ -116,7 +117,7 @@
 	chosen_message = "<span class='colossus'>You will now summon a weak spider.</span>"
 	chosen_attack_num = 5
 
-/datum/action/innate/megafauna_attack/string_attack
+/datum/action/innate/megafauna_attack/sting_attack
 	name = "Sting shotgun"
 	icon_icon = 'icons/mob/actions/actions_changeling.dmi'
 	button_icon_state = "sting_cryo"
