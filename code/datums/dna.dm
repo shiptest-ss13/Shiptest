@@ -301,6 +301,9 @@
 	if(desired_size == current_body_size)
 		return
 
+	if(!features["body_size"])
+		return
+
 	var/change_multiplier = desired_size / current_body_size
 	var/translate = ((change_multiplier-1) * 32)/2
 	holder.transform = holder.transform.Scale(change_multiplier)
