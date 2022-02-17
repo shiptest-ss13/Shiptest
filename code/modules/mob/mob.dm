@@ -40,7 +40,7 @@
 		for(var/M in observers)
 			var/mob/dead/observe = M
 			observe.reset_perspective(null)
-	for(var/datum/atom_hud/hud in GLOB.all_huds)
+	for(var/datum/atom_hud/hud as anything in GLOB.all_huds)
 		hud.remove_from_hud(src)
 		hud.remove_hud_from(src, TRUE)
 	qdel(hud_used)
