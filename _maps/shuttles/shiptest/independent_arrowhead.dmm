@@ -165,7 +165,9 @@
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
-/obj/machinery/door/poddoor/shutters,
+/obj/machinery/door/poddoor/shutters{
+	id = "ArrowheadMourn"
+	},
 /turf/open/floor/plating,
 /area/ship/medical)
 "dd" = (
@@ -1061,7 +1063,7 @@
 "uI" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
 /obj/machinery/button/door{
-	id = ArrowheadMourn;
+	id = "ArrowheadMourn";
 	name = "Storage Shutter Control";
 	pixel_x = -23
 	},
