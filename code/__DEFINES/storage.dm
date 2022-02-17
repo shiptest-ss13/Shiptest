@@ -19,11 +19,11 @@
 /// Size of EACH left/right border icon for volumetric boxes
 #define VOLUMETRIC_STORAGE_BOX_BORDER_SIZE 1
 /// Minimum pixels an item must have in volumetric scaled storage UI
-#define MINIMUM_PIXELS_PER_ITEM 8
+#define MINIMUM_PIXELS_PER_ITEM 16
 /// Maximum number of objects that will be allowed to be displayed using the volumetric display system. Arbitrary number to prevent server lockups.
 #define MAXIMUM_VOLUMETRIC_ITEMS 256
 /// How much padding to give between items
-#define VOLUMETRIC_STORAGE_ITEM_PADDING 4
+#define VOLUMETRIC_STORAGE_ITEM_PADDING 3
 /// How much padding to give to edges
 #define VOLUMETRIC_STORAGE_EDGE_PADDING 1
 
@@ -67,14 +67,20 @@ GLOBAL_LIST_INIT(default_weight_class_to_volume, list(
 
 // volume amount for items
 #define ITEM_VOLUME_DISK				DEFAULT_VOLUME_TINY
+#define ITEM_VOLUME_MOB					45//just over half of a duffelbag. Prevents mob_holder stacking in volumetric
 
 // #define SAMPLE_VOLUME_AMOUNT 2
 
 // max_weight_class for storages
-#define MAX_WEIGHT_CLASS_BACKPACK					WEIGHT_CLASS_NORMAL
-#define MAX_WEIGHT_CLASS_BAG_OF_HOLDING				WEIGHT_CLASS_BULKY
+//
+#define MAX_WEIGHT_CLASS_CONTAINER_M				WEIGHT_CLASS_SMALL
+#define MAX_WEIGHT_CLASS_SATCHEL					WEIGHT_CLASS_NORMAL
+#define MAX_WEIGHT_CLASS_BACKPACK					WEIGHT_CLASS_BULKY
+#define MAX_WEIGHT_CLASS_DUFFLEBAG					WEIGHT_CLASS_HUGE
 
 // max_volume for storages
+#define STORAGE_VOLUME_CONTAINER_M					(DEFAULT_VOLUME_NORMAL * 2)
+#define STORAGE_VOLUME_SATCHEL						(DEFAULT_VOLUME_NORMAL * 6)
 #define STORAGE_VOLUME_BACKPACK						(DEFAULT_VOLUME_NORMAL * 7)
 #define STORAGE_VOLUME_DUFFLEBAG					(DEFAULT_VOLUME_NORMAL * 10)
 #define STORAGE_VOLUME_BAG_OF_HOLDING				(DEFAULT_VOLUME_NORMAL * 20)
