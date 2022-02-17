@@ -1,4 +1,4 @@
-#define QDEL_IN(I,T) addtimer(CALLBACK(I, /datum/proc/qdel_self), T, TIMER_STOPPABLE)
+#define QDEL_IN(item, time) addtimer(CALLBACK(item, /datum/proc/qdel_self), time, TIMER_STOPPABLE)
 #define QDEL_IN_CLIENT_TIME(item, time) CALLBACK(item, /datum/proc/qdel_self), time, TIMER_STOPPABLE | TIMER_CLIENT_TIME)
 #define QDEL_NULL(item) qdel(item); item = null
 #define QDEL_LIST(L) if(L) { for(var/I in L) qdel(I); L.Cut(); }
