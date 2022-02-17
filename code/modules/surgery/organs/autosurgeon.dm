@@ -68,8 +68,7 @@
 		to_chat(user, "<span class='warning'>There's no implant in [src] for you to remove!</span>")
 	else
 		var/atom/drop_loc = user.drop_location()
-		for(var/J in src)
-			var/atom/movable/AM = J
+		for(var/atom/movable/AM as anything in src)
 			AM.forceMove(drop_loc)
 
 		to_chat(user, "<span class='notice'>You remove the [storedorgan] from [src].</span>")

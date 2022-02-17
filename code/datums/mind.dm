@@ -103,6 +103,12 @@
 	QDEL_NULL(language_holder)
 	return ..()
 
+/datum/mind/proc/handle_mob_deletion(mob/living/deleted_mob)
+	if (current == deleted_mob)
+		current = null
+	if (original_character == deleted_mob)
+		original_character = null
+
 /datum/mind/proc/get_language_holder()
 	if(!language_holder)
 		language_holder = new (src)

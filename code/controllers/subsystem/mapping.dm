@@ -132,7 +132,7 @@ SUBSYSTEM_DEF(mapping)
 			continue
 		var/datum/map_template/ruin/R = new ruin_type()
 
-		if(banned.Find(R.mappath))
+		if(R.mappath in banned)
 			continue
 
 		map_templates[R.name] = R
@@ -229,7 +229,7 @@ SUBSYSTEM_DEF(mapping)
 			S.job_slots[job_slot] = slots
 		if(isnum(data["cost"]))
 			S.cost = data["cost"]
-			ship_purchase_list["[S.name] ([S.cost] [CONFIG_GET(string/metacurrency_name)]s)"] = S
+			ship_purchase_list[S.name] = S
 		if(isnum(data["limit"]))
 			S.limit = data["limit"]
 		shuttle_templates[S.file_name] = S

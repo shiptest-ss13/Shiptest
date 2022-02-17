@@ -13,10 +13,6 @@
 /obj/machinery/computer/helm,
 /turf/open/floor/carpet/stellar,
 /area/ship/bridge)
-"ad" = (
-/obj/machinery/computer/communications,
-/turf/open/floor/carpet/stellar,
-/area/ship/bridge)
 "af" = (
 /obj/structure/chair/bronze{
 	dir = 1
@@ -283,14 +279,6 @@
 	},
 /turf/open/floor/wood,
 /area/ship/crew/canteen)
-"aZ" = (
-/obj/structure/table,
-/obj/item/shovel/spoon{
-	desc = "This mighty silver staff seems to have irreversibly lost it's luster.";
-	name = "staff of sustenance"
-	},
-/turf/open/floor/wood,
-/area/ship/crew/canteen/kitchen)
 "ba" = (
 /obj/structure/table,
 /obj/machinery/reagentgrinder{
@@ -324,17 +312,6 @@
 	},
 /turf/open/floor/carpet/royalblue,
 /area/ship/crew/dorm)
-"bg" = (
-/obj/structure/table,
-/obj/item/storage/box/donkpockets{
-	pixel_y = 8
-	},
-/obj/item/storage/box/donkpockets/donkpocketgondola,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
-	dir = 8
-	},
-/turf/open/floor/wood,
-/area/ship/crew/canteen/kitchen)
 "bh" = (
 /obj/structure/table,
 /obj/machinery/microwave{
@@ -457,7 +434,6 @@
 /turf/open/floor/plasteel,
 /area/ship/storage)
 "bD" = (
-/obj/effect/turf_decal/industrial/outline/yellow,
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
@@ -616,6 +592,7 @@
 	},
 /obj/machinery/airalarm/directional/west,
 /obj/structure/window/reinforced/survival_pod,
+/obj/effect/turf_decal/industrial/outline/yellow,
 /turf/open/floor/plasteel,
 /area/ship/storage)
 "bQ" = (
@@ -646,13 +623,6 @@
 	},
 /obj/structure/curtain,
 /obj/item/soap/deluxe,
-/turf/open/floor/plasteel/white,
-/area/ship/crew/toilet)
-"bU" = (
-/obj/structure/toilet{
-	dir = 1
-	},
-/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/white,
 /area/ship/crew/toilet)
 "bV" = (
@@ -1333,6 +1303,24 @@
 	},
 /turf/open/floor/wood,
 /area/ship/crew/canteen)
+"uO" = (
+/obj/effect/turf_decal/industrial/outline/yellow,
+/obj/structure/closet/crate{
+	name = "alchemical supplies"
+	},
+/obj/item/slimepotion/genderchange{
+	name = "potion of gender";
+	pixel_x = 5
+	},
+/obj/item/dyespray,
+/obj/item/reagent_containers/food/drinks/soda_cans/canned_laughter{
+	pixel_x = -5
+	},
+/obj/item/reagent_containers/pill/floorpill{
+	pixel_x = -9
+	},
+/turf/open/floor/plasteel,
+/area/ship/storage)
 "vk" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable/yellow{
@@ -1421,6 +1409,24 @@
 /obj/structure/table/wood/fancy/purple,
 /turf/open/floor/carpet/purple,
 /area/ship/crew/canteen)
+"Cg" = (
+/obj/structure/table,
+/obj/item/storage/box/donkpockets{
+	pixel_y = 8
+	},
+/obj/item/storage/box/donkpockets/donkpocketgondola,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 8
+	},
+/obj/item/shovel/spoon{
+	desc = "This mighty silver staff seems to have irreversibly lost it's luster.";
+	name = "staff of sustenance"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 4
+	},
+/turf/open/floor/wood,
+/area/ship/crew/canteen/kitchen)
 "Cq" = (
 /obj/structure/sign/poster/official/fruit_bowl,
 /turf/closed/wall/mineral/uranium/safe{
@@ -1627,6 +1633,10 @@
 /obj/structure/reagent_dispensers/fueltank,
 /turf/open/floor/plating,
 /area/ship/maintenance/aft)
+"HX" = (
+/obj/machinery/computer/monitor,
+/turf/open/floor/carpet/stellar,
+/area/ship/bridge)
 "Ia" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
@@ -1841,7 +1851,6 @@
 /turf/open/floor/carpet/purple,
 /area/ship/crew/canteen)
 "MB" = (
-/obj/effect/turf_decal/industrial/outline/yellow,
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
@@ -1953,6 +1962,10 @@
 /obj/machinery/libraryscanner,
 /turf/open/floor/wood,
 /area/ship/crew/library)
+"OZ" = (
+/obj/machinery/deepfryer,
+/turf/open/floor/wood,
+/area/ship/crew/canteen/kitchen)
 "Pc" = (
 /obj/effect/turf_decal/industrial/warning,
 /obj/structure/closet/crate,
@@ -1962,6 +1975,7 @@
 /obj/item/radio,
 /obj/item/radio,
 /obj/structure/window/reinforced/survival_pod,
+/obj/effect/turf_decal/industrial/outline/yellow,
 /turf/open/floor/plasteel,
 /area/ship/storage)
 "PT" = (
@@ -1972,6 +1986,14 @@
 /obj/structure/curtain/cloth/fancy,
 /turf/open/floor/plating,
 /area/ship/maintenance/aft)
+"Qf" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/toilet/secret{
+	dir = 1;
+	secret_type = /obj/item/book/granter/spell/knock
+	},
+/turf/open/floor/plasteel/white,
+/area/ship/crew/toilet)
 "Ql" = (
 /obj/machinery/bookbinder,
 /turf/open/floor/carpet/orange,
@@ -2299,24 +2321,6 @@
 /obj/item/clothing/suit/space/hardsuit/wizard,
 /turf/open/floor/bronze,
 /area/ship/cargo)
-"ZW" = (
-/obj/effect/turf_decal/industrial/outline/yellow,
-/obj/structure/closet/crate{
-	name = "alchemical supplies"
-	},
-/obj/item/slimepotion/genderchange{
-	name = "potion of gender";
-	pixel_x = 5
-	},
-/obj/item/dyespray,
-/obj/item/reagent_containers/food/drinks/soda_cans/canned_laughter{
-	pixel_x = -5
-	},
-/obj/item/reagent_containers/pill/floorpill{
-	pixel_x = -9
-	},
-/turf/open/floor/plasteel,
-/area/ship/storage)
 
 (1,1,1) = {"
 No
@@ -2538,7 +2542,7 @@ Vy
 Ge
 KS
 wj
-ZW
+uO
 bK
 Pc
 bY
@@ -2650,7 +2654,7 @@ cl
 "}
 (11,1,1) = {"
 ab
-ad
+HX
 af
 wq
 ab
@@ -2771,7 +2775,7 @@ cD
 bB
 bH
 Tc
-bU
+Qf
 CF
 No
 No
@@ -2826,8 +2830,8 @@ aC
 av
 CH
 oz
-aZ
-bg
+OZ
+Cg
 xc
 bs
 IN

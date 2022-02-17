@@ -61,7 +61,7 @@
 	name = "air alarm"
 	desc = "A machine that monitors atmosphere levels. Goes off if the area is dangerous."
 	icon = 'icons/obj/monitors.dmi'
-	icon_state = "alarm0"
+	icon_state = "alarm"
 	use_power = IDLE_POWER_USE
 	idle_power_usage = 4
 	active_power_usage = 8
@@ -636,18 +636,31 @@
 				icon_state = "alarm_b1"
 		return
 
-	if((machine_stat & (NOPOWER|BROKEN)) || shorted)
-		icon_state = "alarmp"
-		return
+	icon_state = "alarm"
+	return ..()
 
+/obj/machinery/airalarm/update_overlays()
+	. = ..()
+	if((machine_stat & (NOPOWER|BROKEN)) || shorted)
+		return
 	var/area/A = get_area(src)
-	switch(max(danger_level, A.atmosalm))
-		if(0)
-			icon_state = "alarm0"
-		if(1)
-			icon_state = "alarm2" //yes, alarm2 is yellow alarm
-		if(2)
-			icon_state = "alarm1"
+	var/perc_danger_level = max(danger_level, A.atmosalm)
+	if(!panel_open)
+		var/emissive_state
+		switch(perc_danger_level)
+			if(0)
+				emissive_state = "alarm0"
+			if(1)
+				emissive_state = "alarm1"
+			if(2)
+				emissive_state = "alarm2"
+
+		. += mutable_appearance(icon, emissive_state)
+		. += mutable_appearance(icon, "light_emissive", layer, EMISSIVE_PLANE)
+
+	if(perc_danger_level) //When there's any danger level, light up the "AIR" sign too
+		. += mutable_appearance(icon, "alarm_sign")
+		. += mutable_appearance(icon, "alarm_sign", layer, EMISSIVE_PLANE)
 
 /obj/machinery/airalarm/process()
 	if((machine_stat & (NOPOWER|BROKEN)) || shorted)

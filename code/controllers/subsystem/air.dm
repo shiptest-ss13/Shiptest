@@ -377,7 +377,7 @@ SUBSYSTEM_DEF(air)
 				net.addMachineryMember(considered_device)
 				continue
 			var/obj/machinery/atmospherics/pipe/item = considered_device
-			if(net.members.Find(item))
+			if(item in net.members)
 				continue
 			if(item.parent)
 				var/static/pipenetwarnings = 10

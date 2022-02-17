@@ -57,7 +57,7 @@
 			var/mob/M = target
 			var/R
 			if(reagents)
-				for(var/datum/reagent/A in src.reagents.reagent_list)
+				for(var/datum/reagent/A as anything in src.reagents.reagent_list)
 					R += "[A] ([num2text(A.volume)]),"
 
 			log_combat(user, M, "squirted", R)

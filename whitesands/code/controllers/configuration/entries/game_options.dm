@@ -22,3 +22,7 @@
 
 /datum/config_entry/string/overmap_generator_type
 	config_entry_value = "solar_system"
+
+/datum/config_entry/number/overmap_size
+	config_entry_value = 30
+	min_val = 1
