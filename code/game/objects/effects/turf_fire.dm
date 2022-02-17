@@ -75,7 +75,7 @@
 	if(open_turf.planetary_atmos)
 		return TRUE
 	var/datum/gas_mixture/cached_air = open_turf.air
-	var/oxy = cached_air.get_moles(/datum/gas/oxygen)
+	var/oxy = cached_air.get_moles(GAS_O2)
 	if (oxy < 0.5)
 		return FALSE
 	var/temperature = cached_air.return_temperature()
@@ -84,11 +84,11 @@
 	if(burn_rate > oxy)
 		burn_rate = oxy
 
-	var/new_o2 = (cached_air.get_moles(/datum/gas/oxygen) - burn_rate)
-	cached_air.set_moles(/datum/gas/oxygen, new_o2)
+	var/new_o2 = (cached_air.get_moles(GAS_O2) - burn_rate)
+	cached_air.set_moles(GAS_O2, new_o2)
 
-	var/new_co2 = (cached_air.get_moles(/datum/gas/carbon_dioxide) + burn_rate * TURF_FIRE_BURN_CARBON_DIOXIDE_MULTIPLIER)
-	cached_air.set_moles(/datum/gas/carbon_dioxide, new_co2)
+	var/new_co2 = (cached_air.get_moles(GAS_O2) + burn_rate * TURF_FIRE_BURN_CARBON_DIOXIDE_MULTIPLIER)
+	cached_air.set_moles(GAS_O2, new_co2)
 
 	var/new_heat_capacity = cached_air.heat_capacity()
 	var/energy_released = burn_rate * TURF_FIRE_ENERGY_PER_BURNED_OXY_MOL
