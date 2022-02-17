@@ -38,6 +38,10 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 
 /datum/controller/subsystem/processing/quirks/proc/AssignQuirks(mob/living/user, client/cli, spawn_effects)
 	var/badquirk = FALSE
+	var/conflicting_quirks = list2params(cli.prefs.check_quirk_compatibility())
+	if(conflicting_quirks)
+		stack_trace("Conflicting quirks [conflicting_quirks] in client [cli.ckey] preferences on spawn")
+		alert(user, "Your quirks have been reset because you had a conflicting quirk, this was likely caused by mood being disabled or the species locks on a quirk being updated!")
 	for(var/V in cli.prefs.all_quirks)
 		var/datum/quirk/Q = quirks[V]
 		if(Q)

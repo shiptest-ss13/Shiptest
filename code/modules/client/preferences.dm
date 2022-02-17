@@ -1270,12 +1270,12 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	if(!SSquirks)
 		to_chat(user, "<span class='danger'>The quirk subsystem is still initializing! Try again in a minute.</span>")
 		return
-
 	var/list/dat = list()
 	if(!SSquirks.quirks.len)
 		dat += "The quirk subsystem hasn't finished initializing, please hold..."
 		dat += "<center><a href='?_src_=prefs;preference=trait;task=close'>Done</a></center><br>"
 	else
+		var/list/quirk_conflicts = check_quirk_compatibility(user)
 		dat += "<center><b>Choose quirk setup</b></center><br>"
 		dat += "<div align='center'>Left-click to add or remove quirks. You need negative quirks to have positive ones.<br>\
 		Quirks are applied at roundstart and cannot normally be removed.</div>"
@@ -1286,42 +1286,35 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 		<b>Quirk balance remaining:</b> [GetQuirkBalance()]</center><br>"
 		for(var/quirk_index in SSquirks.quirks)
 			var/datum/quirk/quirk_datum = SSquirks.quirks[quirk_index]
-			var/datum/quirk/quirk_instance = new quirk_datum
 			var/has_quirk
-			var/quirk_cost = quirk_instance.value * -1
-			var/lock_reason = "This trait is unavailable."
-			var/quirk_conflict = FALSE
+			var/quirk_cost = initial(quirk_datum.value)
 			for(var/quirk_owned in all_quirks)
-				if(quirk_owned == quirk_instance.name)
+				if(quirk_owned == initial(quirk_datum.name))
 					has_quirk = TRUE
-			if(quirk_instance.mood_quirk && CONFIG_GET(flag/disable_human_mood))
-				lock_reason = "Mood is disabled."
-				quirk_conflict = TRUE
-			if(((quirk_instance.species_lock["type"] == "allowed") && !(pref_species.id in quirk_instance.species_lock)) || (quirk_instance.species_lock["type"] == "blocked" && (pref_species.id in quirk_instance.species_lock)))
-				lock_reason = "Quirk unavailable to your species."
-				quirk_conflict = TRUE
 			if(has_quirk)
-				if(quirk_conflict)
-					all_quirks -= quirk_instance.name
-					has_quirk = FALSE
-				else
-					quirk_cost *= -1 //invert it back, since we'd be regaining this amount
+				quirk_cost *= -1 //invert it.
 			if(quirk_cost > 0)
 				quirk_cost = "+[quirk_cost]"
 			var/font_color = "#AAAAFF"
-			if(quirk_instance.value != 0)
-				font_color = quirk_instance.value > 0 ? "#AAFFAA" : "#FFAAAA"
-			if(quirk_conflict)
-				dat += "<font color='[font_color]'>[quirk_instance.name]</font> - [quirk_instance.desc] \
-				<font color='red'><b>LOCKED: [lock_reason]</b></font><br>"
+			if(initial(quirk_datum.value) != 0)
+				font_color = initial(quirk_datum.value) > 0 ? "#AAFFAA" : "#FFAAAA"
+			if(quirk_conflicts[initial(quirk_datum.name)])
+				if(!has_quirk)
+					dat += "<font color='[font_color]'>[initial(quirk_datum.name)]</font> - [initial(quirk_datum.desc)] \
+					<font color='red'><b>LOCKED: [quirk_conflicts[initial(quirk_datum.name)]]</b></font><br>"
+				else
+					alert(user, "Something went wrong, you had somehow had a conflicting quirk that didn't get cleared during conflict checks, please open an issue or otherwise notify coders of such.")
+					all_quirks = list()
+					user << browse(null, "window=mob_occupation")
+					ShowChoices(user)
+					save_preferences()
 			else
 				if(has_quirk)
-					dat += "<a href='?_src_=prefs;preference=trait;task=update;trait=[quirk_instance.name]'>[has_quirk ? "Remove" : "Take"] ([quirk_cost] pts.)</a> \
-					<b><font color='[font_color]'>[quirk_instance.name]</font></b> - [quirk_instance.desc]<br>"
+					dat += "<a href='?_src_=prefs;preference=trait;task=update;trait=[initial(quirk_datum.name)]'>[has_quirk ? "Remove" : "Take"] ([quirk_cost] pts.)</a> \
+					<b><font color='[font_color]'>[initial(quirk_datum.name)]</font></b> - [initial(quirk_datum.desc)]<br>"
 				else
-					dat += "<a href='?_src_=prefs;preference=trait;task=update;trait=[quirk_instance.name]'>[has_quirk ? "Remove" : "Take"] ([quirk_cost] pts.)</a> \
-					<font color='[font_color]'>[quirk_instance.name]</font> - [quirk_instance.desc]<br>"
-			qdel(quirk_instance)
+					dat += "<a href='?_src_=prefs;preference=trait;task=update;trait=[initial(quirk_datum.name)]'>[has_quirk ? "Remove" : "Take"] ([quirk_cost] pts.)</a> \
+					<font color='[font_color]'>[initial(quirk_datum.name)]</font> - [initial(quirk_datum.desc)]<br>"
 		dat += "<br><center><a href='?_src_=prefs;preference=trait;task=reset'>Reset Quirks</a></center>"
 
 	var/datum/browser/popup = new(user, "mob_occupation", "<div align='center'>Quirk Preferences</div>", 900, 600) //no reason not to reuse the occupation window, as it's cleaner that way
@@ -1329,6 +1322,25 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	popup.set_content(dat.Join())
 	popup.open(FALSE)
 
+/datum/preferences/proc/check_quirk_compatibility(mob/user)
+	var/list/quirk_conflicts = list()
+	for(var/quirk_index in SSquirks.quirks)
+		var/datum/quirk/quirk_datum = SSquirks.quirks[quirk_index]
+		var/datum/quirk/quirk_instance = new quirk_datum
+		if(quirk_instance.mood_quirk && CONFIG_GET(flag/disable_human_mood))
+			quirk_conflicts[quirk_instance.name] = "Mood is disabled."
+		if(((quirk_instance.species_lock["type"] == "allowed") && !(pref_species.id in quirk_instance.species_lock)) || (quirk_instance.species_lock["type"] == "blocked" && (pref_species.id in quirk_instance.species_lock)))
+			quirk_conflicts[quirk_instance.name] = "Quirk unavailable to species."
+		for(var/quirk_owned in all_quirks)
+			if(quirk_conflicts[quirk_owned])
+				all_quirks = list()
+				if(user)
+					alert(user, "Your quirks have been reset because you had a conflicting quirk, this was likely caused by mood being disabled or the species locks on a quirk being updated!")
+					user << browse(null, "window=mob_occupation")
+					ShowChoices(user)
+				save_preferences()
+		qdel(quirk_instance)
+	return quirk_conflicts
 /datum/preferences/proc/GetQuirkBalance()
 	var/bal = 0
 	for(var/V in all_quirks)

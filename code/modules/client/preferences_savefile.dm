@@ -518,6 +518,8 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 			job_preferences -= j
 
 	all_quirks = SANITIZE_LIST(all_quirks)
+//Make sure all quirks are compatible
+	check_quirk_compatibility()
 
 	return TRUE
 
