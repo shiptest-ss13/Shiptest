@@ -52,6 +52,12 @@
 	var/turf/open/open_turf = loc
 	if(open_turf.turf_fire)
 		return INITIALIZE_HINT_QDEL
+	/* for crossed removal
+	var/static/list/loc_connections = list(
+		COMSIG_ATOM_ENTERED = .proc/on_entered,
+	)
+	AddElement(/datum/element/connect_loc, src, loc_connections)
+	*/
 	open_turf.turf_fire = src
 	SSturf_fire.fires[src] = TRUE
 	if(power)
@@ -91,10 +97,11 @@
 	return TRUE
 
 /obj/effect/abstract/turf_fire/process()
-	var/turf/open/open_turf = loc
-	if(!open_turf) //This can happen, how I'm not sure
+	var/turf/current_turf = loc
+	if(!isopenturf(current_turf)) //This can happen, how I'm not sure
 		qdel(src)
 		return
+	var/turf/open/open_turf = loc
 	if(open_turf.active_hotspot) //If we have an active hotspot, let it do the damage instead and lets not loose power
 		return
 	if(!magical)
@@ -118,6 +125,7 @@
 			playsound(open_turf, 'sound/effects/comfyfire.ogg', 40, TRUE)
 		UpdateFireState()
 
+// /obj/effect/abstract/turf_fire/proc/on_entered(datum/source, atom/movable/AM) for crossed removal
 /obj/effect/abstract/turf_fire/Crossed(atom/movable/AM)
 	. = ..()
 	var/turf/open/open_turf = loc
