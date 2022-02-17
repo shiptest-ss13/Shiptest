@@ -1,8 +1,0 @@
-author: MarkSuckerberg
-delete-after: true
-changes:
-  - bugfix: Map exporting now no longer crops off the bottom row of tiles
-  - tweak: Map exporting now saves all items a carbon/human has and dumps them on
-      the floor where they were.
-  - tweak: Less overzealous CHECK_TICKing of the map exporter to make it not slow
-      as heck- benchmarking to see if this is worth it or not incomplete
