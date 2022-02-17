@@ -277,7 +277,6 @@
 		if(40 to 45)
 			playsound(src, 'sound/machines/buzz-two.ogg', 100, FALSE, FALSE)
 			src.audible_message("<span class='danger'>You hear a buzz from the [src] and a voice,</span>")
-			say("SECURITY BREACH DETECTED, SENDING IN THE MEDBOT.")
 			src.visible_message("<span class=danger>A strange target appears on the ground.</span>")
 
 			var/obj/structure/closet/supplypod/bluespacepod/pod = new(get_turf(src))
@@ -288,7 +287,6 @@
 		if(26 to 40)
 			playsound(src, 'sound/machines/buzz-two.ogg', 100, FALSE, FALSE)
 			src.audible_message("<span class='danger'>You hear a buzz from the [src] and a voice,</span>")
-			say("SECURITY BREACH DETECTED, SENDING IN THE FIREBOT.")
 			src.visible_message("<span class=danger>A strange target appears on the ground.</span>")
 
 			var/obj/structure/closet/supplypod/bluespacepod/pod = new(get_turf(src))
@@ -299,7 +297,6 @@
 		if(1 to 25)
 			playsound(src, 'sound/machines/buzz-two.ogg', 100, FALSE, FALSE)
 			src.audible_message("<span class='danger'>You hear as buzz from the [src] and a voice,</span>")
-			say("SECURITY BREACH DETECTED, SENDING IN THE ED 209.")
 			src.visible_message("<span class=danger>A strange target appears on the ground.</span>")
 
 			var/obj/structure/closet/supplypod/bluespacepod/pod = new(get_turf(src))
@@ -589,6 +586,7 @@
 			/obj/item/circuitboard/machine/protolathe = 5,
 			/obj/item/circuitboard/machine/clonepod/experimental = 5,
 			/obj/item/circuitboard/machine/rad_collector = 5
+			/obj/item/circuitboard/machine/launchpad = 5
 		)
 
 /obj/effect/spawner/lootdrop/random_machine_cicuit_mech
