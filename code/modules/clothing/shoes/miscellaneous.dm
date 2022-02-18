@@ -450,7 +450,7 @@
 
 /obj/item/clothing/shoes/cowboy/lizard/masterwork
 	name = "\improper Hugs-The-Feet lizard skin boots"
-	desc = "A pair of masterfully crafted lizard skin boots. Finally a good application for the station's most bothersome inhabitants."
+	desc = "A pair of masterfully crafted lizard skin boots. Finally a good application for the sector's most bothersome inhabitants."//:c
 	icon_state = "lizardboots_blue"
 
 /obj/effect/spawner/lootdrop/lizardboots
