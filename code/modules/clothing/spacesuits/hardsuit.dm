@@ -1117,3 +1117,20 @@
 	for(var/X in actions)
 		var/datum/action/A = X
 		A.UpdateButtonIcon()
+
+//Inteq Hardsuit
+/obj/item/clothing/head/helmet/space/hardsuit/security/independent/inteq
+	name = "inteq hardsuit helmet"
+	desc = "A somewhat boxy, monocular visored helmet designed for hazardous, low pressure environments. It has the letters 'IRMG' imprinted onto the earpad."
+	icon_state = "hardsuit0-inteq"
+	item_state = "hardsuit-inteq"
+	hardsuit_type = "inteq"
+
+/obj/item/clothing/suit/space/hardsuit/security/independent/inteq
+	name = "inteq hardsuit"
+	desc = "A heavy-duty looking suit that protects against hazardous, low pressure environments. It's bulk provides ample protection, if not a bit cumbersome to wear."
+	icon_state = "hardsuit-inteq"
+	item_state = "hardsuit-inteq"
+	hardsuit_type = "inteq"
+	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/security/independent/inteq
+	supports_variations = DIGITIGRADE_VARIATION

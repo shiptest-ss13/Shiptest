@@ -204,6 +204,18 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	lighting_colour_tube = "#f0fbff"
 	lighting_colour_bulb = "#e4f7ff"
 
+/area/ship/science/xenobiology
+	name = "Xenobiology Lab"
+	icon_state = "xenolab"
+
+/area/ship/science/storage
+	name = "Toxins Storage"
+	icon_state = "toxstorage"
+
+/area/science/misc_lab
+	name = "Testing Lab"
+	icon_state = "toxmisc"
+
 /area/ship/science/robotics
 	name = "Robotics"
 	icon_state = "medresearch"

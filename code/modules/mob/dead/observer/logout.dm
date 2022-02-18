@@ -7,8 +7,7 @@
 		if(ismob(observetarget))
 			var/mob/target = observetarget
 			if(target.observers)
-				target.observers -= src
-				UNSETEMPTY(target.observers)
+				LAZYREMOVE(target.observers, src)
 			observetarget = null
 	..()
 	spawn(0)

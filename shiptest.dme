@@ -1,4 +1,4 @@
-g// DM Environment file for shiptest.dme.
+// DM Environment file for shiptest.dme.
 // All manual changes should be made outside the BEGIN_ and END_ blocks.
 // New source code should be placed in .dm files: choose File/New --> Code File.
 // BEGIN_INTERNALS
@@ -704,6 +704,7 @@ g// DM Environment file for shiptest.dme.
 #include "code\datums\wires\radio.dm"
 #include "code\datums\wires\robot.dm"
 #include "code\datums\wires\roulette.dm"
+#include "code\datums\wires\shieldwallgen.dm"
 #include "code\datums\wires\suit_storage_unit.dm"
 #include "code\datums\wires\syndicatebomb.dm"
 #include "code\datums\wires\tesla_coil.dm"
@@ -1692,6 +1693,7 @@ g// DM Environment file for shiptest.dme.
 #include "code\modules\buildmode\submodes\boom.dm"
 #include "code\modules\buildmode\submodes\copy.dm"
 #include "code\modules\buildmode\submodes\fill.dm"
+#include "code\modules\buildmode\submodes\map_export.dm"
 #include "code\modules\buildmode\submodes\throwing.dm"
 #include "code\modules\buildmode\submodes\variable_edit.dm"
 #include "code\modules\cargo\bounty.dm"
@@ -3358,7 +3360,6 @@ g// DM Environment file for shiptest.dme.
 #include "whitesands\code\modules\atmospherics\machinery\portable\canister.dm"
 #include "whitesands\code\modules\awaymissions\corpse.dm"
 #include "whitesands\code\modules\awaymissions\mission_code\speedway.dm"
-#include "whitesands\code\modules\buildmode\submodes\map_export.dm"
 #include "whitesands\code\modules\cargo\packs.dm"
 #include "whitesands\code\modules\cargo\blackmarket\blackmarket_items\weapons.dm"
 #include "whitesands\code\modules\cargo\bounties\engineering.dm"
