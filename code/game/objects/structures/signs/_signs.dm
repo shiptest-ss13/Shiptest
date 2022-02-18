@@ -251,7 +251,7 @@
 	icon_state = "solgovflag-right"
 
 // colonial minutemen seal
-/obj/structure/sign/solgov_seal
+/obj/structure/sign/minutemen
 	name = "Banner of the Colonial Minutemen"
 	desc = "A seal representing the many colonies of that comprise of the Colonial Minutemen."
 	icon_state = "minutemen"
