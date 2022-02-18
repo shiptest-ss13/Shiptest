@@ -17,13 +17,13 @@
 	src.allow_death = allow_death
 	src.parent_ship = parent_ship
 	if(!parent_ship)
-		for(var/datum/overmap/ship/controlled/ship as anything in SSovermap.simulated_ships)
+		for(var/datum/overmap/ship/controlled/ship as anything in SSovermap.controlled_ships)
 			if(get_area(parent) in ship.shuttle_port.shuttle_areas)
 				parent_ship = ship
 				break
 	if(!parent_ship)
 		message_admins("[parent] created with [type] outside a ship, assigning a ship at random!")
-		parent_ship = pick(SSovermap.simulated_ships)
+		parent_ship = pick(SSovermap.controlled_ships)
 	check_in_bounds() // Just in case something is being created outside of station/centcom
 
 /datum/component/shiploving/InheritComponent(datum/component/shiploving/newc, i_am_original, parent_ship, inform_admins, allow_death)

@@ -338,7 +338,7 @@
 /mob/dead/new_player/proc/LateChoices()
 	var/list/shuttle_choices = list("Purchase ship..." = "Purchase") //Dummy for purchase option
 
-	for(var/datum/overmap/ship/controlled/S as anything in SSovermap.simulated_ships)
+	for(var/datum/overmap/ship/controlled/S as anything in SSovermap.controlled_ships)
 		if((length(S.shuttle_port.spawn_points) < 1) || !S.join_allowed)
 			continue
 		shuttle_choices[S.name + " ([S.source_template.short_name ? S.source_template.short_name : "Unknown-class"])"] = S //Try to get the class name
@@ -353,7 +353,7 @@
 			return LateChoices()
 		if(template.limit)
 			var/count = 0
-			for(var/datum/overmap/ship/controlled/X in SSovermap.simulated_ships)
+			for(var/datum/overmap/ship/controlled/X in SSovermap.controlled_ships)
 				if(X.source_template == template)
 					count++
 					if(template.limit <= count)

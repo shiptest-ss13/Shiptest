@@ -11,7 +11,7 @@ SUBSYSTEM_DEF(overmap)
 	///List of all overmap objects.
 	var/list/overmap_objects
 	///List of all simulated ships
-	var/list/simulated_ships
+	var/list/controlled_ships
 	///List of all events
 	var/list/events
 
@@ -36,7 +36,7 @@ SUBSYSTEM_DEF(overmap)
   */
 /datum/controller/subsystem/overmap/Initialize(start_timeofday)
 	overmap_objects = list()
-	simulated_ships = list()
+	controlled_ships = list()
 	events = list()
 
 	generator_type = CONFIG_GET(string/overmap_generator_type)
@@ -393,8 +393,8 @@ SUBSYSTEM_DEF(overmap)
 /datum/controller/subsystem/overmap/Recover()
 	if(istype(SSovermap.overmap_objects))
 		overmap_objects = SSovermap.overmap_objects
-	if(istype(SSovermap.simulated_ships))
-		simulated_ships = SSovermap.simulated_ships
+	if(istype(SSovermap.controlled_ships))
+		controlled_ships = SSovermap.controlled_ships
 	if(istype(SSovermap.events))
 		events = SSovermap.events
 	if(istype(SSovermap.radius_positions))

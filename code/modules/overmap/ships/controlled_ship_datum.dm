@@ -60,18 +60,18 @@
 		source_template = creation_template
 		job_slots = source_template.job_slots.Copy()
 		shuttle_port = SSshuttle.load_template(creation_template, src)
+		ship_account = new(name, 7500)
 #ifdef UNIT_TESTS
 		Rename("[source_template]")
 #else
 		Rename("[source_template.prefix] [pick_list_replacements(SHIP_NAMES_FILE, pick(source_template.name_categories))]", TRUE)
 #endif
-		ship_account = new(name, 7500)
 		calculate_mass()
 		refresh_engines()
-	SSovermap.simulated_ships += src
+	SSovermap.controlled_ships += src
 
 /datum/overmap/ship/controlled/Destroy()
-	SSovermap.simulated_ships -= src
+	SSovermap.controlled_ships -= src
 	. = ..()
 
 /datum/overmap/ship/controlled/get_jump_to_turf()
