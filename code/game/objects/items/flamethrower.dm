@@ -199,7 +199,7 @@
 		return
 	playsound(src, pick('sound/weapons/gun/flamethrower/flamethrower1.ogg','sound/weapons/gun/flamethrower/flamethrower2.ogg','sound/weapons/gun/flamethrower/flamethrower3.ogg' ), 50, TRUE, -3)
 	operating = TRUE
-	var/turfs_flamed = 0
+	var/turfs_being_flamed = 0
 	var/turf/previousturf = get_turf(src)
 	for(var/turf/T in turflist)
 		if(safety && T == previousturf)
@@ -208,12 +208,12 @@
 		if(!(T in turfs_sharing_with_prev))
 			break
 		default_ignite(T, power)
-		turfs_flamed++
-		if(turfs_flamed >= FLAMETHROWER_RANGE)
+		turfs_being_flamed++
+		if(turfs_being_flamed >= FLAMETHROWER_RANGE)
 			break
 		sleep(1)
 		previousturf = T
-	if(!turfs_flamed && beaker)
+	if(!turfs_being_flamed && beaker)
 		my_fraction.trans_to(beaker_reagents, release_amount, no_react = TRUE)
 	qdel(my_fraction)
 	operating = FALSE

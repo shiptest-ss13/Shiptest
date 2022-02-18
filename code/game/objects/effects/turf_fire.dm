@@ -82,7 +82,7 @@
 		base_icon_state = "greyscale"
 
 	open_turf.turf_fire = src
-	SSturf_fire.fires[src] = TRUE
+	SSturf_fire.fires += src
 	if(power)
 		fire_power = min(TURF_FIRE_MAX_POWER, power)
 	UpdateFireState()
@@ -139,8 +139,8 @@
 			qdel(src)
 			return
 	open_turf.hotspot_expose(TURF_FIRE_TEMP_BASE + (TURF_FIRE_TEMP_INCREMENT_PER_POWER*fire_power), TURF_FIRE_VOLUME)
-	for(var/atom/movable/AT as anything in open_turf)
-		AT.fire_act(TURF_FIRE_TEMP_BASE + (TURF_FIRE_TEMP_INCREMENT_PER_POWER*fire_power), TURF_FIRE_VOLUME)
+	for(var/atom/movable/burning_atom as anything in open_turf)
+		burning_atom.fire_act(TURF_FIRE_TEMP_BASE + (TURF_FIRE_TEMP_INCREMENT_PER_POWER*fire_power), TURF_FIRE_VOLUME)
 	if(interact_with_atmos)
 		if(prob(fire_power))
 			open_turf.burn_tile()
