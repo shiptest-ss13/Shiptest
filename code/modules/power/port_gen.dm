@@ -60,7 +60,7 @@
 		soundloop.start()
 
 /obj/machinery/power/port_gen/proc/overheat()
-	message_admins("[src] [(obj_flags & EMAGGED) ? "Emagged by [emagger]" ; "isn't emagged but somehow"] exploded at [ADMIN_VERBOSEJMP(get_turf(src))]")
+	message_admins("[src] [(obj_flags & EMAGGED) ? "Emagged by [emagger]" : "isn't emagged but somehow"] exploded at [ADMIN_VERBOSEJMP(src)]")
 
 /obj/machinery/power/port_gen/update_icon_state()
 	icon_state = "[base_icon]_[active]"
