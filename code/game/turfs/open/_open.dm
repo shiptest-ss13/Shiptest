@@ -262,8 +262,6 @@
 		air.adjust_moles(GAS_PLUOXIUM, pulse_strength/4000)
 
 /turf/open/IgniteTurf(power, fire_color)
-	if(!fire_color)
-		fire_color = "red"
 	if(turf_fire)
 		turf_fire.AddPower(power)
 		return

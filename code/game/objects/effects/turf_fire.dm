@@ -27,26 +27,39 @@
 	mouse_opacity = FALSE
 	/// How much power have we got. This is treated like fuel, be it flamethrower liquid or any random thing you could come up with
 	var/fire_power = 20
-	/// Is it magical, if it is then it wont interact with atmos, and it will not loose power by itself. Mainly for adminbus events or mapping
-	var/magical = FALSE
+	/// If false, it does not interact with atmos.
+	var/interact_with_atmos = TRUE
+
+	/// If false, it will not lose power by itself. Mainly for adminbus events or mapping.
+	var/passive_loss = TRUE
+
 	/// Visual state of the fire. Kept track to not do too many updates.
 	var/current_fire_state
 
+	/// the list of allowed colors, if fire_color doesn't match, we store the color in hex_color instead and we color the fire based on hex instead
+	var/list/allowed_colors = list("red", "blue", "green", "white")
+
+	/// If we are using a custom hex color, which color are we using?
+	var/hex_color
+
 ///All the subtypes are for adminbussery and or mapping
 /obj/effect/abstract/turf_fire/magical
-	magical = TRUE
+	interact_with_atmos = TRUE
+	passive_loss = TRUE
 
 /obj/effect/abstract/turf_fire/small
 	fire_power = 10
 
 /obj/effect/abstract/turf_fire/small/magical
-	magical = TRUE
+	interact_with_atmos = TRUE
+	passive_loss = TRUE
 
 /obj/effect/abstract/turf_fire/inferno
 	fire_power = 30
 
 /obj/effect/abstract/turf_fire/inferno/magical
-	magical = TRUE
+	interact_with_atmos = TRUE
+	passive_loss = TRUE
 
 /obj/effect/abstract/turf_fire/Initialize(mapload, power, fire_color)
 	. = ..()
@@ -61,8 +74,12 @@
 	*/
 	if(!fire_color)
 		base_icon_state = "red"
-	else
+	if(fire_color == allowed_colors)
 		base_icon_state = fire_color
+	else
+		hex_color = fire_color
+		base_icon_state = "greyscale"
+
 	open_turf.turf_fire = src
 	SSturf_fire.fires[src] = TRUE
 	if(power)
@@ -109,10 +126,11 @@
 	var/turf/open/open_turf = loc
 	if(open_turf.active_hotspot) //If we have an active hotspot, let it do the damage instead and lets not loose power
 		return
-	if(!magical)
+	if(!interact_with_atmos)
 		if(!process_waste())
 			qdel(src)
 			return
+	if(!passive_loss)
 		if(open_turf.air.return_temperature() < TURF_FIRE_REQUIRED_TEMP)
 			fire_power -= TURF_FIRE_POWER_LOSS_ON_LOW_TEMP
 		fire_power--
@@ -122,7 +140,7 @@
 	open_turf.hotspot_expose(TURF_FIRE_TEMP_BASE + (TURF_FIRE_TEMP_INCREMENT_PER_POWER*fire_power), TURF_FIRE_VOLUME)
 	for(var/atom/movable/AT as anything in open_turf)
 		AT.fire_act(TURF_FIRE_TEMP_BASE + (TURF_FIRE_TEMP_INCREMENT_PER_POWER*fire_power), TURF_FIRE_VOLUME)
-	if(!magical)
+	if(!interact_with_atmos)
 		if(prob(fire_power))
 			open_turf.burn_tile()
 		if(prob(6))
@@ -160,6 +178,8 @@
 	current_fire_state = new_state
 
 	switch(base_icon_state) //switches light color depdning on the flame color
+		if("greyscale")
+			light_color = hex_color
 		if("red")
 			light_color = LIGHT_COLOR_FIRE
 		if("blue")
