@@ -1382,7 +1382,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			stack_trace("Client [user?.client?.ckey] has a negative balance without positive quirks.")
 			all_quirks = list()
 			alert(user, "Something went very wrong with your quirks, they have been reset.")
-	if(target_species.id == pref_species.id && CONFIG_GET(flag/disable_human_mood))
+	if(((target_species.id == pref_species.id) && change_type == "species") || (change_type = "mood" && CONFIG_GET(flag/disable_human_mood)))
 		save_character()
 	if(all_quirks_initial != all_quirks)
 		return TRUE
