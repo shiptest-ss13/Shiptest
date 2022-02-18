@@ -144,6 +144,7 @@
 		user.put_in_hands(beaker)
 		beaker = null
 		to_chat(user, "<span class='notice'>You remove the fuel container from [src]!</span>")
+		update_overlays()
 
 /obj/item/flamethrower/examine(mob/user)
 	. = ..()
@@ -193,8 +194,10 @@
 	beaker_reagents.trans_to(my_fraction, release_amount, no_react = TRUE)
 	power = my_fraction.get_total_accelerant_quality() * FLAMETHROWER_POWER_MULTIPLIER
 	if(power < REQUIRED_POWER_TO_FIRE_FLAMETHROWER)
+		audible_message("<span class='danger'>The [src] sputters.</span>")
+		playsound(src, 'sound/weapons/gun/flamethrower/flamethrower_empty.ogg', 50, TRUE, -3)
 		return
-	playsound(src, 'sound/effects/spray.ogg', 10, TRUE, -3)
+	playsound(src, pick('sound/weapons/gun/flamethrower/flamethrower1.ogg','sound/weapons/gun/flamethrower/flamethrower2.ogg','sound/weapons/gun/flamethrower/flamethrower3.ogg' ), 50, TRUE, -3)
 	operating = TRUE
 	var/turfs_flamed = 0
 	var/turf/previousturf = get_turf(src)
@@ -255,10 +258,3 @@
 		flame_turf(list(get_turf(src)), 100, FALSE)
 		QDEL_NULL(beaker)
 		return 1 //It hit the flamethrower, not them
-
-/obj/item/flamethrower/proc/instant_refill()
-	SIGNAL_HANDLER
-	if(!beaker)
-		beaker = new /obj/item/reagent_containers/glass/beaker/large(src)
-	beaker.reagents.add_reagent(/datum/reagent/fuel, beaker.reagents.total_volume)
-	update_icon()
