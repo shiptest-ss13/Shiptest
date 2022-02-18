@@ -224,9 +224,9 @@
 
 
 /obj/item/flamethrower/proc/default_ignite(turf/target, power)
+	target.IgniteTurf(power, "red")
 	new /obj/effect/hotspot(target)
 	target.hotspot_expose((power*3) + 380,500)
-	target.IgniteTurf(power, "red")
 
 /obj/item/flamethrower/Initialize(mapload)
 	. = ..()
