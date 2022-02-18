@@ -1,5 +1,5 @@
 /obj/item/radio/intercom
-	name = "station intercom"
+	name = "shortwave intercom"
 	desc = "Talk through this."
 	icon = 'icons/obj/radio.dmi'
 	icon_state = "intercom"

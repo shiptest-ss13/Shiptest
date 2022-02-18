@@ -2,7 +2,7 @@
 	filename = "bountyboard"
 	filedesc = "Bounty Board Request Network"
 	program_icon_state = "bountyboard"
-	extended_desc = "A multi-platform network for placing requests across the station, with payment across the network being possible.."
+	extended_desc = "A multi-platform network for placing requests across the sector, with payment across the network being possible.."
 	requires_ntnet = TRUE
 	size = 10
 	tgui_id = "NtosRequestKiosk"
