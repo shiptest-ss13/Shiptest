@@ -32,7 +32,7 @@ GLOBAL_LIST_INIT(high_priority_sentience, typecacheof(list(
 /datum/round_event/ghost_role/sentience/announce(fake)
 	var/sentience_report = ""
 
-	var/data = pick("scans from our long-range sensors", "our sophisticated probabilistic models", "our omnipotence", "the communications traffic on your station", "energy emissions we detected", "\[REDACTED\]")
+	var/data = pick("scans from our long-range sensors", "our sophisticated probabilistic models", "our omnipotence", "the communications traffic in your sector", "energy emissions we detected", "\[REDACTED\]")
 	var/pets = pick("animals/bots", "bots/animals", "pets", "simple animals", "lesser lifeforms", "\[REDACTED\]")
 	var/strength = pick("human", "moderate", "lizard", "security", "command", "clown", "low", "very low", "\[REDACTED\]")
 
@@ -99,7 +99,7 @@ GLOBAL_LIST_INIT(high_priority_sentience, typecacheof(list(
 	return SUCCESSFUL_SPAWN
 
 /datum/round_event_control/sentience/all
-	name = "Station-wide Human-level Intelligence"
+	name ="Sector-wide Human-level Intelligence"
 	typepath = /datum/round_event/ghost_role/sentience/all
 	weight = 0
 

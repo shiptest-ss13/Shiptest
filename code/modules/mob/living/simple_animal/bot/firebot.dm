@@ -48,16 +48,13 @@
 	extinguish_fires = FALSE
 	extinguish_people = TRUE
 
-/mob/living/simple_animal/bot/firebot/rockplanet/Initialize()
-	. = ..()
+/mob/living/simple_animal/bot/firebot/rockplanet/create_extinguisher()
 	internal_ext = new /obj/item/extinguisher(src)
 	internal_ext.chem = /datum/reagent/clf3 //Refill the internal extinguisher with liquid fire
-	internal_ext.power = 3
 	internal_ext.safety = FALSE
-	internal_ext.precision = FALSE
+	internal_ext.precision = TRUE
 	internal_ext.max_water = INFINITY
 	internal_ext.refill()
-
 
 /mob/living/simple_animal/bot/firebot/Initialize()
 	. = ..()
@@ -68,6 +65,10 @@
 	prev_access = access_card.access
 
 	create_extinguisher()
+
+/mob/living/simple_animal/bot/firebot/Destroy()
+	QDEL_NULL(internal_ext)
+	return ..()
 
 /mob/living/simple_animal/bot/firebot/bot_reset()
 	create_extinguisher()

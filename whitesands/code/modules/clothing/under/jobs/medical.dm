@@ -2,7 +2,7 @@
 
 /obj/item/clothing/under/rank/medical/chemist/pharmacist
 	name = "pharmacist's jumpsuit"
-	desc = "It's made of a special fiber that gives special protection against biohazards. For those pharmacists that want to improve or worsen the station's health."
+	desc = "It's made of a special fiber that gives special protection against biohazards. For those pharmacists that want to improve or worsen their crew's health."
 	icon_state = "pharmacist"
 	fitted = NO_FEMALE_UNIFORM
 

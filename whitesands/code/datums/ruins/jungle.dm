@@ -9,7 +9,7 @@
 	description = "A recently abandoned standard SolGov exploration pod. It may not be powerful or resilient, but it can fly in a pinch."
 	suffix = "jungle_surface_abandonedsolgov.dmm"
 
-/datum/map_template/ruin/jungle/solgov_crash
+/datum/map_template/ruin/jungle/monke
 	name = "Enlightenment"
 	id = "jungle-monkies"
 	description = "Ook. Ooh Ooh Aah. AAH. OOK OOK OOK. OOK OOK AAH AAAH AAAAAAAAAAAAAAAH!"
@@ -49,7 +49,7 @@
 	description = "The Industrial Revolution and its consequences have been a disaster for the human race."
 	suffix = "jungle_surface_unabomber_cabin.dmm"
 
-/datum/map_template/ruin/jungle/weeshack
+/datum/map_template/ruin/jungle/weedshack
 	name = "Stoner's Cabin"
 	id = "weed-shack"
 	description = "The Industrial Revolution and its consequences have been a disaster for the human race."
