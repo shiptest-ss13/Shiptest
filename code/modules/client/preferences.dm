@@ -1322,17 +1322,27 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	popup.set_content(dat.Join())
 	popup.open(FALSE)
 
+/**
+  * Proc called to track what quirks conflict with someone's preferences, returns a list with all quirks that conflict.
+  *
+  * Not to be used to actually handle conflicts, see handle_conflicts() for that, which is called once for each possible type of conflict if needed.
+**/
 /datum/preferences/proc/check_quirk_compatibility(mob/user)
 	var/list/quirk_conflicts = list()
+	var/list/handled_conflicts = list()
 	for(var/quirk_index in SSquirks.quirks)
 		var/datum/quirk/quirk_datum = SSquirks.quirks[quirk_index]
 		var/datum/quirk/quirk_instance = new quirk_datum
 		if(quirk_instance.mood_quirk && CONFIG_GET(flag/disable_human_mood))
 			quirk_conflicts[quirk_instance.name] = "Mood is disabled."
-			handle_quirk_conflict("mood", null, user)
+			if(!handled_conflicts["mood"])
+				handle_quirk_conflict("mood", null, user)
+				handled_conflicts(["mood"] = TRUE
 		if(((quirk_instance.species_lock["type"] == "allowed") && !(pref_species.id in quirk_instance.species_lock)) || (quirk_instance.species_lock["type"] == "blocked" && (pref_species.id in quirk_instance.species_lock)))
 			quirk_conflicts[quirk_instance.name] = "Quirk unavailable to species."
-			handle_quirk_conflict("species", pref_species, user)
+			if(!handled_conflicts["species"])
+				handle_quirk_conflict("species", pref_species, user)
+				handled_conflicts["species"] = TRUE
 		qdel(quirk_instance)
 	return quirk_conflicts
 /**
@@ -1344,8 +1354,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
   * * additional_argument - Supplies the species datum and can supply something else if this proc gets expanded.
 **/
 /datum/preferences/proc/handle_quirk_conflict(var/change_type, var/additional_argument, mob/user)
-	var/list/all_quirks_initial = list()
-	all_quirks_initial += all_quirks
+	var/list/all_quirks_new = list()
+	all_quirks_new += all_quirks
 	var/balance
 	var/datum/species/target_species
 	if(change_type == "species")
@@ -1360,32 +1370,34 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			if("species")
 				var/datum/quirk/quirk_owned_instance = new quirk_owned_datum
 				if(((quirk_owned_instance.species_lock["type"] == "allowed") && !(target_species.id in quirk_owned_instance.species_lock)) || (quirk_owned_instance.species_lock["type"] == "blocked" && (target_species.id in quirk_owned_instance.species_lock)))
-					all_quirks -= quirk_owned_instance.name
+					all_quirks_new -= quirk_owned_instance.name
 					balance += quirk_owned_instance.value
 				qdel(quirk_owned_instance)
 			if("mood")
 				if(initial(quirk_owned_datum.mood_quirk))
-					all_quirks -= initial(quirk_owned_datum.name)
+					all_quirks_new -= initial(quirk_owned_datum.name)
 					balance += initial(quirk_owned_datum.value)
 	while(balance < 0)
 		var/list/positive_quirks = list()
-		for(var/quirk_owned in all_quirks)
+		for(var/quirk_owned in all_quirks_new)
 			var/datum/quirk/quirk_owned_datum = SSquirks.quirks[quirk_owned]
 			var/quirk_value = initial(quirk_owned_datum.value)
 			if(quirk_value > 0)
 				positive_quirks |= quirk_owned_datum
 				var/datum/quirk/positive_quirk = pick(positive_quirks)
-				all_quirks -= initial(positive_quirk.name)
+				all_quirks_new -= initial(positive_quirk.name)
 				balance += initial(positive_quirk.value)
-				return
+				break
 		if(length(positive_quirks) < 1 && balance < 0)
 			stack_trace("Client [user?.client?.ckey] has a negative balance without positive quirks.")
 			all_quirks = list()
+			save_character()
 			alert(user, "Something went very wrong with your quirks, they have been reset.")
 	if(((target_species.id == pref_species.id) && change_type == "species") || (change_type = "mood" && CONFIG_GET(flag/disable_human_mood)))
+		all_quirks = all_quirks_new
 		save_character()
-	if(all_quirks_initial != all_quirks)
-		return TRUE
+	if(all_quirks_new != all_quirks)
+		return all_quirks_new
 
 /datum/preferences/proc/GetQuirkBalance()
 	var/bal = 0

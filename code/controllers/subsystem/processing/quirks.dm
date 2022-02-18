@@ -25,6 +25,9 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 							list("Alcohol Tolerance","Light Drinker"), \
 							list("Clown Fan","Mime Fan"), \
 							list("Bad Touch", "Friendly"))
+	for(var/client/client in GLOB.clients)
+		client?.prefs.check_quirk_compatibility()
+	to_chat(world, "<span class='notice'>Quirks have been checked for compatibility.</span>")
 	return ..()
 
 /datum/controller/subsystem/processing/quirks/proc/SetupQuirks()
@@ -41,7 +44,6 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 	var/conflicting_quirks = list2params(cli.prefs.check_quirk_compatibility())
 	if(conflicting_quirks)
 		stack_trace("Conflicting quirks [conflicting_quirks] in client [cli.ckey] preferences on spawn")
-		alert(user, "Your quirks have been reset because you had a conflicting quirk, this was likely caused by mood being disabled or the species locks on a quirk being updated!")
 	for(var/V in cli.prefs.all_quirks)
 		var/datum/quirk/Q = quirks[V]
 		if(Q)
@@ -53,6 +55,5 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 	if(badquirk)
 		cli.prefs.save_character()
 
-	// Assign wayfinding pinpointer granting quirk if they're new
-	if(cli.get_exp_living(TRUE) < EXP_ASSIGN_WAYFINDER && !user.has_quirk(/datum/quirk/needswayfinder))
-		user.add_quirk(/datum/quirk/needswayfinder, TRUE)
+	if(conflicting_quirks)
+		alert(user, "Your quirks have been reset because you had a conflicting quirk, this was likely caused by mood being disabled or the species locks on a quirk being updated!")
