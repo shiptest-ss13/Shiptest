@@ -40,7 +40,7 @@
 	dcoat = /obj/item/clothing/suit/hooded/wintercoat/captain //WS Edit - Alt Uniforms
 	shoes = /obj/item/clothing/shoes/sneakers/brown
 	head = /obj/item/clothing/head/caphat
-	backpack_contents = list(/obj/item/melee/classic_baton/telescopic=1, /obj/item/station_charter=1)
+	backpack_contents = list(/obj/item/melee/classic_baton/telescopic=1, /obj/item/sector_charter=1)
 
 	backpack = /obj/item/storage/backpack/captain
 	satchel = /obj/item/storage/backpack/satchel/cap

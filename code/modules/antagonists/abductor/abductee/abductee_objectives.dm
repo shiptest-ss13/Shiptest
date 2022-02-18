@@ -14,7 +14,7 @@
 	explanation_text+=" [target]."
 
 /datum/objective/abductee/paint
-	explanation_text = "The station is hideous. You must color it all"
+	explanation_text = "The universe is hideous. You must color it all"
 
 /datum/objective/abductee/paint/New()
 	var/color = pick(list("red", "blue", "green", "yellow", "orange", "purple", "black", "in rainbows", "in blood"))
