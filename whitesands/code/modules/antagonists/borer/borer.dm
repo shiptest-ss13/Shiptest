@@ -986,7 +986,8 @@ GLOBAL_VAR_INIT(total_borer_hosts_needed, 3)
 /mob/living/simple_animal/borer/proc/GrantControlActions()
 	talk_to_brain_action.Grant(victim)
 	give_back_control_action.Grant(victim)
-	make_larvae_action.Grant(victim)
+	if(is_team_borer) //The entire structure of this mob is fucking garbage.
+		make_larvae_action.Grant(victim)
 
 /mob/living/simple_animal/borer/proc/RemoveControlActions()
 	talk_to_brain_action.Remove(victim)

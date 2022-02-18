@@ -44,6 +44,7 @@
 /obj/structure/overmap/dynamic/ship_act(mob/user, obj/structure/overmap/ship/simulated/acting)
 	var/prev_state = acting.state
 	acting.state = OVERMAP_SHIP_ACTING //This is so the controls are locked while loading the level to give both a sense of confirmation and to prevent people from moving the ship
+	log_shuttle("[src] [REF(src)]: SHIP_ACT FROM [acting] [REF(acting)]")
 	. = load_level(acting.shuttle)
 	if(.)
 		acting.state = prev_state
@@ -161,6 +162,7 @@
 		return
 	if(!COOLDOWN_FINISHED(SSovermap, encounter_cooldown))
 		return "WARNING! Stellar interference is restricting flight in this area. Interference should pass in [COOLDOWN_TIMELEFT(SSovermap, encounter_cooldown) / 10] seconds."
+	log_shuttle("[src] [REF(src)] LEVEL_INIT: FOR [visiting_shuttle]")
 	var/list/dynamic_encounter_values = SSovermap.spawn_dynamic_encounter(planet, TRUE, ruin_type = template)
 	mapzone = dynamic_encounter_values[1]
 	reserve_dock = dynamic_encounter_values[2]
@@ -170,6 +172,7 @@
  * Alters the position and orientation of a stationary docking port to ensure that any mobile port small enough can dock within its bounds
  */
 /obj/structure/overmap/dynamic/proc/adjust_dock_to_shuttle(obj/docking_port/stationary/dock_to_adjust, obj/docking_port/mobile/shuttle)
+	log_shuttle("[src] [REF(src)] DOCKING: ADJUST [dock_to_adjust] [REF(dock_to_adjust)] TO [shuttle][REF(shuttle)]")
 	// the shuttle's dimensions where "true height" measures distance from the shuttle's fore to its aft
 	var/shuttle_true_height = shuttle.height
 	var/shuttle_true_width = shuttle.width
@@ -229,6 +232,7 @@
   * Unloads the reserve, deletes the linked docking port, and moves to a random location if there's no client-having, alive mobs.
   */
 /obj/structure/overmap/dynamic/proc/unload_level()
+	log_shuttle("[src] [REF(src)] UNLOAD")
 	if(preserve_level)
 		return
 
