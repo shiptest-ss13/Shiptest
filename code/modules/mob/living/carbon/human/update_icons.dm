@@ -139,8 +139,8 @@ There are several things that need to be remembered:
 			if((dna.species.bodytype & BODYTYPE_DIGITIGRADE) && (U.supports_variations & DIGITIGRADE_VARIATION))
 				icon_file = DIGITIGRADE_PATH
 
-			/*else if((dna.species.bodytype & BODYTYPE_VOX) && (U.supports_variations & VOX_VARIATION))
-				icon_file = VOX_UNIFORM_PATH*/
+			else if((dna.species.bodytype & BODYTYPE_VOX) && (U.supports_variations & VOX_VARIATION))
+				icon_file = VOX_UNIFORM_PATH
 
 			if(!(icon_exists(icon_file, GET_ICON_STATE(U))))
 				handled_by_bodytype = FALSE
