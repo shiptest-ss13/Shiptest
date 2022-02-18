@@ -44,22 +44,22 @@
 
 ///All the subtypes are for adminbussery and or mapping
 /obj/effect/abstract/turf_fire/magical
-	interact_with_atmos = TRUE
-	passive_loss = TRUE
+	interact_with_atmos = FALSE
+	passive_loss = FALSE
 
 /obj/effect/abstract/turf_fire/small
 	fire_power = 10
 
 /obj/effect/abstract/turf_fire/small/magical
-	interact_with_atmos = TRUE
-	passive_loss = TRUE
+	interact_with_atmos = FALSE
+	passive_loss = FALSE
 
 /obj/effect/abstract/turf_fire/inferno
 	fire_power = 30
 
 /obj/effect/abstract/turf_fire/inferno/magical
-	interact_with_atmos = TRUE
-	passive_loss = TRUE
+	interact_with_atmos = FALSE
+	passive_loss = FALSE
 
 /obj/effect/abstract/turf_fire/Initialize(mapload, power, fire_color)
 	. = ..()
@@ -74,10 +74,11 @@
 	*/
 	if(!fire_color)
 		base_icon_state = "red"
-	if(fire_color == allowed_colors)
+	else if(fire_color in allowed_colors)
 		base_icon_state = fire_color
 	else
 		hex_color = fire_color
+		color = fire_color
 		base_icon_state = "greyscale"
 
 	open_turf.turf_fire = src
@@ -126,11 +127,11 @@
 	var/turf/open/open_turf = loc
 	if(open_turf.active_hotspot) //If we have an active hotspot, let it do the damage instead and lets not loose power
 		return
-	if(!interact_with_atmos)
+	if(interact_with_atmos)
 		if(!process_waste())
 			qdel(src)
 			return
-	if(!passive_loss)
+	if(passive_loss)
 		if(open_turf.air.return_temperature() < TURF_FIRE_REQUIRED_TEMP)
 			fire_power -= TURF_FIRE_POWER_LOSS_ON_LOW_TEMP
 		fire_power--
@@ -140,7 +141,7 @@
 	open_turf.hotspot_expose(TURF_FIRE_TEMP_BASE + (TURF_FIRE_TEMP_INCREMENT_PER_POWER*fire_power), TURF_FIRE_VOLUME)
 	for(var/atom/movable/AT as anything in open_turf)
 		AT.fire_act(TURF_FIRE_TEMP_BASE + (TURF_FIRE_TEMP_INCREMENT_PER_POWER*fire_power), TURF_FIRE_VOLUME)
-	if(!interact_with_atmos)
+	if(interact_with_atmos)
 		if(prob(fire_power))
 			open_turf.burn_tile()
 		if(prob(6))
