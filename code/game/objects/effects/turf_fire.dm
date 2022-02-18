@@ -111,11 +111,12 @@
 	cached_air.set_moles(GAS_O2, new_o2)
 
 	var/new_co2 = (cached_air.get_moles(GAS_O2) + burn_rate * TURF_FIRE_BURN_CARBON_DIOXIDE_MULTIPLIER)
-	cached_air.set_moles(GAS_O2, new_co2)
+	cached_air.set_moles(GAS_CO2, new_co2)
 
 	var/new_heat_capacity = cached_air.heat_capacity()
 	var/energy_released = burn_rate * TURF_FIRE_ENERGY_PER_BURNED_OXY_MOL
 	cached_air.adjust_heat((temperature * old_heat_capacity + energy_released) / new_heat_capacity)
+	open_turf.air = cached_air
 	open_turf.air_update_turf(TRUE)
 	return TRUE
 

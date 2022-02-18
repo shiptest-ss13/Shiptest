@@ -129,6 +129,7 @@
 		return TRUE
 	if(temperature > T0C + 80 || temperature < T0C - 10)
 		return TRUE
+	..()
 
 /obj/machinery/firealarm/proc/alarm(mob/user)
 	if(!is_operational() || (last_alarm+FIREALARM_COOLDOWN > world.time))
