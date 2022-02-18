@@ -1,6 +1,6 @@
-/* Accessories
+/* Pouches
  * Contains:
- *		Pouches
+ *		Basic Pouches
  *		Pistol Holster
  *		Bluespace Pouches
  */
