@@ -16,7 +16,13 @@
   *
   * qdels any client colours in place on this mob
   *
+  * Unsets the currently active machine
+  *
+  * Clears roundstart quirks list
+  *
   * Ghostizes the client attached to this mob
+  *
+  * Removes references to the mob from its former mind, and vice versa
   *
   * Parent call
   */
@@ -34,11 +40,19 @@
 		for(var/M in observers)
 			var/mob/dead/observe = M
 			observe.reset_perspective(null)
+	for(var/datum/atom_hud/hud as anything in GLOB.all_huds)
+		hud.remove_from_hud(src)
+		hud.remove_hud_from(src, TRUE)
 	qdel(hud_used)
 	QDEL_LIST(client_colours)
+	active_storage = null
+	unset_machine()
 	ghostize()
 	if(mind)
 		mind.handle_mob_deletion(src)
+	if(istype(loc, /atom/movable))
+		var/atom/movable/movable_loc = loc
+		LAZYREMOVE(movable_loc.client_mobs_in_contents, src)
 	return ..()
 
 

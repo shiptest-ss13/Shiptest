@@ -3,10 +3,10 @@
 	filedesc = "Canary"
 	ui_header = "alarm_green.gif"
 	program_icon_state = "alert-green"
-	extended_desc = "This program provides visual interface for a station's alarm system."
+	extended_desc = "This program provides visual interface for the local emergency alarm system."
 	requires_ntnet = 1
 	size = 5
-	tgui_id = "NtosStationAlertConsole"
+	tgui_id = "NtosSectorAlertConsole"
 	program_icon = "bell"
 	var/has_alert = 0
 	var/alarms = list("Fire" = list(), "Atmosphere" = list(), "Power" = list())

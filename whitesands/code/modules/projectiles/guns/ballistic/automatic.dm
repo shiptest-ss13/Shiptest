@@ -208,3 +208,15 @@
 	mag_display = TRUE
 	weapon_weight = WEAPON_LIGHT
 	fire_rate = 3
+
+/obj/item/gun/ballistic/automatic/ak47/inteq
+	name = "\improper AKM"
+	desc = "An AKM that has been tinkered with, and branded with markings denoting it as a weapon from the IRMG."
+	icon = 'icons/obj/guns/48x32guns.dmi'
+	fire_sound = 'sound/weapons/gun/rifle/akm.ogg'
+	icon_state = "akm"
+	item_state = "akm"
+	lefthand_file = 'icons/mob/inhands/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/weapons/guns_righthand.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/back.dmi'
+	mag_display = TRUE

@@ -265,11 +265,18 @@
 	if(preserve_level)
 		return
 
-	// Duplicate code grrr
-	if(length(mapzone.get_mind_mobs()))
-		return //Dont fuck over stranded people? tbh this shouldn't be called on this condition, instead of bandaiding it inside
+	if(mapzone)
+		if(length(mapzone.get_mind_mobs()))
+			return //Dont fuck over stranded people? tbh this shouldn't be called on this condition, instead of bandaiding it inside
+		remove_mapzone()
 
-	remove_mapzone()
+	if(reserve_dock)
+		qdel(reserve_dock, TRUE)
+		reserve_dock = null
+	if(reserve_dock_secondary)
+		qdel(reserve_dock_secondary, TRUE)
+		reserve_dock_secondary = null
+
 	qdel(src)
 
 /obj/structure/overmap/dynamic/lava
