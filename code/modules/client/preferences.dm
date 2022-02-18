@@ -1329,18 +1329,64 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 		var/datum/quirk/quirk_instance = new quirk_datum
 		if(quirk_instance.mood_quirk && CONFIG_GET(flag/disable_human_mood))
 			quirk_conflicts[quirk_instance.name] = "Mood is disabled."
+			handle_quirk_conflict("mood", null, user)
 		if(((quirk_instance.species_lock["type"] == "allowed") && !(pref_species.id in quirk_instance.species_lock)) || (quirk_instance.species_lock["type"] == "blocked" && (pref_species.id in quirk_instance.species_lock)))
 			quirk_conflicts[quirk_instance.name] = "Quirk unavailable to species."
-		for(var/quirk_owned in all_quirks)
-			if(quirk_conflicts[quirk_owned])
-				all_quirks = list()
-				if(user)
-					alert(user, "Your quirks have been reset because you had a conflicting quirk, this was likely caused by mood being disabled or the species locks on a quirk being updated!")
-					user << browse(null, "window=mob_occupation")
-					ShowChoices(user)
-				save_preferences()
+			handle_quirk_conflict("species", pref_species, user)
 		qdel(quirk_instance)
 	return quirk_conflicts
+/**
+  * Proc called when there is a need to handle quirk conflicts.
+  *
+  * This evaluates what quirks conflict and removes them, aiming to have a balance of at least 0, and removes any positive quirks as needed for such.
+  * Arguments:
+  * * change_type - Currently can only be "species" or "mood", defines what kind of conflict it should look for.
+  * * additional_argument - Supplies the species datum and can supply something else if this proc gets expanded.
+**/
+/datum/preferences/proc/handle_quirk_conflict(var/change_type, var/additional_argument, mob/user)
+	var/list/all_quirks_initial = list()
+	all_quirks_initial += all_quirks
+	var/balance
+	var/datum/species/target_species
+	if(change_type == "species")
+		if(additional_argument)
+			target_species = additional_argument
+		else
+			return
+	for(var/quirk_owned in all_quirks)
+		var/datum/quirk/quirk_owned_datum = SSquirks.quirks[quirk_owned]
+		balance -= initial(quirk_owned_datum.value)
+		switch(change_type)
+			if("species")
+				var/datum/quirk/quirk_owned_instance = new quirk_owned_datum
+				if(((quirk_owned_instance.species_lock["type"] == "allowed") && !(target_species.id in quirk_owned_instance.species_lock)) || (quirk_owned_instance.species_lock["type"] == "blocked" && (target_species.id in quirk_owned_instance.species_lock)))
+					all_quirks -= quirk_owned_instance.name
+					balance += quirk_owned_instance.value
+				qdel(quirk_owned_instance)
+			if("mood")
+				if(initial(quirk_owned_datum.mood_quirk))
+					all_quirks -= initial(quirk_owned_datum.name)
+					balance += initial(quirk_owned_datum.value)
+	while(balance < 0)
+		var/list/positive_quirks = list()
+		for(var/quirk_owned in all_quirks)
+			var/datum/quirk/quirk_owned_datum = SSquirks.quirks[quirk_owned]
+			var/quirk_value = initial(quirk_owned_datum.value)
+			if(quirk_value > 0)
+				positive_quirks |= quirk_owned_datum
+				var/datum/quirk/positive_quirk = pick(positive_quirks)
+				all_quirks -= initial(positive_quirk.name)
+				balance += initial(positive_quirk.value)
+				return
+		if(length(positive_quirks) < 1 && balance < 0)
+			stack_trace("Client [user?.client?.ckey] has a negative balance without positive quirks.")
+			all_quirks = list()
+			alert(user, "Something went very wrong with your quirks, they have been reset.")
+	if(target_species.id == pref_species.id && CONFIG_GET(flag/disable_human_mood))
+		save_character()
+	if(all_quirks_initial != all_quirks)
+		return TRUE
+
 /datum/preferences/proc/GetQuirkBalance()
 	var/bal = 0
 	for(var/V in all_quirks)
@@ -1538,26 +1584,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					features["mcolor"] = pref_species.default_color
 				user << browse(null, "window=speciespick")
 				ShowChoices(user)
-				if(all_quirks)
-					var/balance
-					for(var/quirk_owned in all_quirks)
-						var/datum/quirk/quirk_owned_datum = SSquirks.quirks[quirk_owned]
-						var/datum/quirk/quirk_owned_instance = new quirk_owned_datum
-						balance -= quirk_owned_instance.value
-						if(((quirk_owned_instance.species_lock["type"] == "allowed") && !(pref_species.id in quirk_owned_instance.species_lock)) || (quirk_owned_instance.species_lock["type"] == "blocked" && (pref_species.id in quirk_owned_instance.species_lock)))
-							all_quirks -= quirk_owned_instance.name
-							balance += quirk_owned_instance.value
-						qdel(quirk_owned_instance)
-					while(balance < 0)
-						var/list/positive_quirks = list()
-						for(var/quirk_owned in all_quirks)
-							var/datum/quirk/quirk_owned_datum = SSquirks.quirks[quirk_owned]
-							var/quirk_value = initial(quirk_owned_datum.value)
-							if(quirk_value > 0)
-								positive_quirks |= quirk_owned_datum
-						var/datum/quirk/positive_quirk = pick(positive_quirks)
-						all_quirks -= initial(positive_quirk.name)
-						balance += initial(positive_quirk.value)
+				handle_quirk_conflict("species", pref_species)
 				return 1
 
 			if(href_list["lookatspecies"])
