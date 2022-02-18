@@ -2,7 +2,7 @@
 /datum/techweb_node/spacepod_basic
 	id = "spacepod_basic"
 	display_name = "Spacepod Construction"
-	description = "Basic stuff to construct Spacepods. Don't crash your first spacepod into the station, especially while going more than 10 m/s."
+	description = "Basic stuff to construct Spacepods. Don't crash your first spacepod into the sun, especially while going more than 10 m/s."
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 	export_price = 2500
 	prereq_ids = list("base")

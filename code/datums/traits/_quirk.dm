@@ -55,6 +55,7 @@
 		quirk_holder.roundstart_quirks -= src
 		for(var/trait in mob_traits)
 			REMOVE_TRAIT(quirk_holder, trait, ROUNDSTART_TRAIT)
+		quirk_holder = null
 	SSquirks.quirk_objects -= src
 	return ..()
 

@@ -1183,7 +1183,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 
 /datum/uplink_item/stealthy_tools/chameleon
 	name = "Chameleon Kit"
-	desc = "A set of items that contain chameleon technology allowing you to disguise as pretty much anything on the station, and more! \
+	desc = "A set of items that contain chameleon technology allowing you to disguise as pretty much anything you can think of, and more! \
 			Due to budget cuts, the shoes don't provide protection against slipping."
 	item = /obj/item/storage/box/syndie_kit/chameleon
 	cost = 2
@@ -1335,7 +1335,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 
 /datum/uplink_item/device_tools/magboots
 	name = "Blood-Red Magboots"
-	desc = "A pair of magnetic boots with a Syndicate paintjob that assist with freer movement in space or on-station \
+	desc = "A pair of magnetic boots with a Syndicate paintjob that assist with freer movement in zero-g conditions \
 			during gravitational generator failures. These reverse-engineered knockoffs of Nanotrasen's \
 			'Advanced Magboots' slow you down in simulated-gravity environments much like the standard issue variety."
 	item = /obj/item/clothing/shoes/magboots/syndie
@@ -1455,8 +1455,8 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 /datum/uplink_item/device_tools/powersink
 	name = "Power Sink"
 	desc = "When screwed to wiring attached to a power grid and activated, this large device lights up and places excessive \
-			load on the grid, causing a station-wide blackout. The sink is large and cannot be stored in most \
-			traditional bags and boxes. Caution: Will explode if the powernet contains sufficient amounts of energy."
+			load on the grid, causing a network-wide blackout. The sink is large and cannot be stored in most \
+			traditional bags and boxes. Caution: Will eventually explode when internal capacitors are sufficiently overcharged."
 	item = /obj/item/powersink
 	player_minimum = 20
 	cost = 10
@@ -1504,7 +1504,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 
 /datum/uplink_item/device_tools/encryptionkey
 	name = "Syndicate Encryption Key"
-	desc = "A key that, when inserted into a radio headset, allows you to listen to all station department channels \
+	desc = "A key that, when inserted into a radio headset, allows you to listen to all departmental channels \
 			as well as talk on an encrypted Syndicate channel with other agents that have the same key."
 	item = /obj/item/encryptionkey/syndicate
 	cost = 2
@@ -1522,7 +1522,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 
 /datum/uplink_item/device_tools/thermal
 	name = "Thermal Imaging Glasses"
-	desc = "These goggles can be turned to resemble common eyewear found throughout the station. \
+	desc = "These goggles can be turned to resemble common eyewear found throughout known space. \
 			They allow you to see organisms through walls by capturing the upper portion of the infrared light spectrum, \
 			emitted as heat and light by objects. Hotter objects, such as warm bodies, cybernetic organisms \
 			and artificial intelligence cores emit more of this light than cooler objects like walls and airlocks."
@@ -1786,7 +1786,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 
 /datum/uplink_item/role_restricted/his_grace
 	name = "His Grace"
-	desc = "An incredibly dangerous weapon recovered from a station overcome by the grey tide. Once activated, He will thirst for blood and must be used to kill to sate that thirst. \
+	desc = "An incredibly dangerous weapon recovered from a Nanotransen station overcome by the grey tide. Once activated, He will thirst for blood and must be used to kill to sate that thirst. \
 	His Grace grants gradual regeneration and complete stun immunity to His wielder, but be wary: if He gets too hungry, He will become impossible to drop and eventually kill you if not fed. \
 	However, if left alone for long enough, He will fall back to slumber. \
 	To activate His Grace, simply unlatch Him."
@@ -1906,7 +1906,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 
 /datum/uplink_item/badass/costumes/obvious_chameleon
 	name = "Broken Chameleon Kit"
-	desc = "A set of items that contain chameleon technology allowing you to disguise as pretty much anything on the station, and more! \
+	desc = "A set of items that contain chameleon technology allowing you to disguise as pretty much anything you can think of, and more! \
 			Please note that this kit did NOT pass quality control."
 	item = /obj/item/storage/box/syndie_kit/chameleon/broken
 
