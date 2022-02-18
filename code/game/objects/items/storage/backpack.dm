@@ -222,7 +222,7 @@
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_volume = STORAGE_VOLUME_SATCHEL
-	STR.max_w_class = MAX_WEIGHT_CLASS_SATCHEL
+	STR.max_w_class = MAX_WEIGHT_CLASS_M_CONTAINER
 
 /obj/item/storage/backpack/satchel/leather
 	name = "leather satchel"
@@ -343,7 +343,6 @@
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_volume = STORAGE_VOLUME_DUFFLEBAG
-	STR.max_w_class = MAX_WEIGHT_CLASS_DUFFLEBAG
 	LAZYINITLIST(STR.exception_hold) // This code allows you to fit one mob holder into a duffel bag
 	STR.exception_hold += typecacheof(/obj/item/clothing/head/mob_holder)
 

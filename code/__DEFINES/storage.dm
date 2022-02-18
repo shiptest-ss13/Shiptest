@@ -30,13 +30,13 @@
 //ITEM INVENTORY WEIGHT, FOR w_class
 /// Usually items smaller then a human hand, ex: Playing Cards, Lighter, Scalpel, Coins/Money
 #define WEIGHT_CLASS_TINY     1
-/// Pockets can hold small and tiny items, ex: Flashlight, Multitool, Grenades, GPS Device
+/// Fits within a small pocket, ex: Flashlight, Multitool, Grenades, GPS Device
 #define WEIGHT_CLASS_SMALL    2
-/// Standard backpacks can carry tiny, small & normal items, ex: Fire extinguisher, Stunbaton, Gas Mask, Metal Sheets
+/// Fits within a small satchel, ex: Fire extinguisher, Stunbaton, Gas Mask, Metal Sheets
 #define WEIGHT_CLASS_NORMAL   3
-/// Items that can be weilded or equipped but not stored in a normal bag, ex: Defibrillator, Backpack, Space Suits
+/// Items that can be wielded or equipped, (e.g. defibrillator, backpack, space suits). (Often barely) fits inside backpacks and duffels.
 #define WEIGHT_CLASS_BULKY    4
-/// Usually represents objects that require two hands to operate, ex: Shotgun, Two Handed Melee Weapons - Can not fit in Boh
+/// Usually represents objects that require two hands to operate, (e.g. shotgun, two-handed melee weapons) May fit on some inventory slots.
 #define WEIGHT_CLASS_HUGE     5
 /// Essentially means it cannot be picked up or placed in an inventory, ex: Mech Parts, Safe - Can not fit in Boh
 #define WEIGHT_CLASS_GIGANTIC 6
@@ -73,10 +73,9 @@ GLOBAL_LIST_INIT(default_weight_class_to_volume, list(
 
 // max_weight_class for storages
 //
-#define MAX_WEIGHT_CLASS_CONTAINER_M				WEIGHT_CLASS_SMALL
-#define MAX_WEIGHT_CLASS_SATCHEL					WEIGHT_CLASS_NORMAL
+#define MAX_WEIGHT_CLASS_S_CONTAINER					WEIGHT_CLASS_SMALL
+#define MAX_WEIGHT_CLASS_M_CONTAINER					WEIGHT_CLASS_NORMAL
 #define MAX_WEIGHT_CLASS_BACKPACK					WEIGHT_CLASS_BULKY
-#define MAX_WEIGHT_CLASS_DUFFLEBAG					WEIGHT_CLASS_HUGE
 
 // max_volume for storages
 #define STORAGE_VOLUME_CONTAINER_M					(DEFAULT_VOLUME_NORMAL * 2)
