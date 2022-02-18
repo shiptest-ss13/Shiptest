@@ -915,8 +915,8 @@
   * Default behaviour is to loop through atom contents and call their HandleTurfChange() proc
   */
 /atom/proc/HandleTurfChange(turf/T)
-	for(var/a in src)
-		var/atom/A = a
+	for(var/atom in src)
+		var/atom/A = atom
 		A.HandleTurfChange(T)
 
 /**

@@ -325,6 +325,12 @@ Key procs
 							/datum/language/dwarf = list(LANGUAGE_ATOM),
 							/datum/language/teceti_unified = list(LANGUAGE_ATOM))
 
+/datum/language_holder/ipc
+	understood_languages = list(/datum/language/common = list(LANGUAGE_ATOM),
+								/datum/language/machine = list(LANGUAGE_ATOM))
+	spoken_languages = list(/datum/language/common = list(LANGUAGE_ATOM),
+							/datum/language/machine = list(LANGUAGE_ATOM))
+
 /datum/language_holder/moth
 	understood_languages = list(/datum/language/common = list(LANGUAGE_ATOM),
 								/datum/language/moffic = list(LANGUAGE_ATOM),

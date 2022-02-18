@@ -40,7 +40,7 @@
   */
 /mob/living/simple_animal/drone
 	name = "Drone"
-	desc = "A maintenance drone, an expendable robot built to perform station repairs."
+	desc = "A maintenance drone, an expendable robot built to perform structural repairs to remote frontier installations."
 	icon = 'icons/mob/drone.dmi'
 	icon_state = "drone_maint_grey"
 	icon_living = "drone_maint_grey"

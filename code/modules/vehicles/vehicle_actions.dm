@@ -15,8 +15,7 @@
 		grant_passenger_actions(i)	//refresh
 
 /obj/vehicle/proc/initialize_controller_action_type(actiontype, control_flag)
-	LAZYINITLIST(autogrant_actions_controller["[control_flag]"])
-	autogrant_actions_controller["[control_flag]"] += actiontype
+	LAZYADD(autogrant_actions_controller["[control_flag]"], actiontype)
 	for(var/i in occupants)
 		grant_controller_actions(i)	//refresh
 
