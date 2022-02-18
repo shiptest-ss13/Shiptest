@@ -42,7 +42,7 @@
 		return get_turf(pick(reserve_docks))
 
 /datum/overmap/dynamic/pre_docked(datum/overmap/ship/controlled/dock_requester)
-	if(!load_level(dock_requester.shuttle_port))
+	if(!load_level())
 		return FALSE
 	else
 		var/dock_to_use = null
@@ -179,7 +179,7 @@
 		return TRUE
 	if(!COOLDOWN_FINISHED(SSovermap, encounter_cooldown))
 		return FALSE
-	log_shuttle("[src] [REF(src)] LEVEL_INIT: FOR [visiting_shuttle]")
+	log_shuttle("[src] [REF(src)] LEVEL_INIT")
 	var/list/dynamic_encounter_values = SSovermap.spawn_dynamic_encounter(planet, TRUE, ruin_type = template)
 	if(!length(dynamic_encounter_values))
 		return FALSE
