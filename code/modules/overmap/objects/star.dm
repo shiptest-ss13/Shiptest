@@ -21,6 +21,7 @@
 /obj/overmap/star
 	name = "Star"
 	desc = "A star."
+	icon = 'whitesands/icons/effects/overmap.dmi'
 	icon_state = "star1"
 	var/star_classes = list(\
 		STARK,

@@ -453,12 +453,12 @@ SUBSYSTEM_DEF(shuttle)
 			if(S)
 				. = TRUE
 				// If successful, returns the mobile docking port
-				var/obj/docking_port/mobile/mdp = load_template(S)
-				if(mdp)
-					user.forceMove(get_turf(mdp))
-					message_admins("[key_name_admin(usr)] loaded [mdp] with the shuttle manipulator.")
-					log_admin("[key_name(usr)] loaded [mdp] with the shuttle manipulator.</span>")
-					SSblackbox.record_feedback("text", "shuttle_manipulator", 1, "[mdp.name]")
+				var/datum/overmap/ship/controlled/new_ship = new(null, null, S)
+				if(new_ship)
+					user.forceMove(new_ship.get_jump_to_turf())
+					message_admins("[key_name_admin(usr)] loaded [new_ship] ([S]) with the shuttle manipulator.")
+					log_admin("[key_name(usr)] loaded [new_ship] ([S]) with the shuttle manipulator.</span>")
+					SSblackbox.record_feedback("text", "shuttle_manipulator", 1, "[S]")
 
 		if("jump_to")
 			if(params["type"] == "mobile")

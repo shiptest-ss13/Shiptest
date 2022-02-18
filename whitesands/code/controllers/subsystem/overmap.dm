@@ -75,24 +75,39 @@ SUBSYSTEM_DEF(overmap)
 				if(MC_TICK_CHECK)
 					return
 
-/datum/controller/subsystem/overmap/proc/overmap_container_view()
-	. += "<html><head><title>Overmap Viewer</title></head><body><code>"
+/datum/controller/subsystem/overmap/proc/overmap_container_view(user = usr)
+	. += "<a href='?src=[REF(src)];refresh=1'>\[Refresh\]</a><br><code>"
 	for(var/y in size to 1 step -1)
 		for(var/x in 1 to size)
 			var/tile
+			var/thing_to_link
 			if(length(overmap_container[x][y]) > 1)
 				tile = length(overmap_container[x][y])
+				thing_to_link = overmap_container[x][y]
 			else if(length(overmap_container[x][y]) == 1)
 				var/datum/overmap/overmap_thing = overmap_container[x][y][1]
-				tile = overmap_thing.char_rep || "o"
+				tile = overmap_thing.char_rep || "o" //fall back to "o" if no char_rep
+				thing_to_link = overmap_thing
 			else
 				tile = "."
-			. += add_leading(add_trailing(tile, 2), 3)
+				thing_to_link = overmap_container[x][y]
+			. += "<a href='?src=[REF(src)];view_object=[REF(thing_to_link)]' title='[x]x, [y]y'>[add_leading(add_trailing(tile, 2), 3)]</a>" //"centers" the character
 		. += "<br>"
-	. += "</code></body></html>"
-	var/datum/browser/popup = new(usr, "admin2", "Overmap Viewer", 600, 600)
+	. += "</code>"
+	var/datum/browser/popup = new(usr, "overmap_viewer", "Overmap Viewer", 850, 700)
 	popup.set_content(.)
 	popup.open()
+
+/datum/controller/subsystem/overmap/Topic(href, href_list[])
+	. = ..()
+	if(!check_rights(R_DEBUG))
+		return
+	var/mob/user = usr
+	if(href_list["refresh"])
+		overmap_container_view(user)
+	if(href_list["view_object"])
+		var/target = locate(href_list["view_object"])
+		user.client.debug_variables(target)
 
 /**
   * The proc that creates all the objects on the overmap, split into seperate procs for redundancy.
@@ -145,25 +160,24 @@ SUBSYSTEM_DEF(overmap)
 /**
   * See [/datum/controller/subsystem/overmap/proc/spawn_events], spawns "veins" (like ores) of events
   */
-/datum/controller/subsystem/overmap/proc/spawn_event_cluster(datum/overmap/event/type, x_location, y_location, chance)
+/datum/controller/subsystem/overmap/proc/spawn_event_cluster(datum/overmap/event/type, list/location, chance)
 	if(CONFIG_GET(number/max_overmap_events) <= LAZYLEN(events))
 		return
-	var/datum/overmap/event/E = new type(x_location, y_location)
+	var/datum/overmap/event/E = new type(location["x"], location["y"])
 	if(!chance)
 		chance = E.spread_chance
 	for(var/dir in GLOB.cardinals)
 		if(prob(chance))
 
-			if(locate(/datum/overmap) in SSovermap.overmap_container[x_location][y_location])
+			if(locate(/datum/overmap) in SSovermap.overmap_container[location["x"]][location["y"]])
 				continue
-			spawn_event_cluster(type, x_location, y_location, chance / 2)
+			spawn_event_cluster(type, location["x"], location["y"], chance / 2)
 
 /datum/controller/subsystem/overmap/proc/spawn_initial_ships()
 #ifndef UNIT_TESTS
 	var/datum/map_template/shuttle/selected_template = SSmapping.maplist[pick(SSmapping.maplist)]
 	INIT_ANNOUNCE("Loading [selected_template.name]...")
-	//SSshuttle.load_template(selected_template)
-	new /datum/overmap/ship/controlled(rand(1, size), rand(1, size), selected_template)
+	new /datum/overmap/ship/controlled(null, null, selected_template)
 	if(SSdbcore.Connect())
 		var/datum/DBQuery/query_round_map_name = SSdbcore.NewQuery({"
 			UPDATE [format_table_name("round")] SET map_name = :map_name WHERE id = :round_id
@@ -177,13 +191,11 @@ SUBSYSTEM_DEF(overmap)
   */
 /datum/controller/subsystem/overmap/proc/spawn_ruin_levels()
 	for(var/i in 1 to CONFIG_GET(number/max_overmap_dynamic_events))
-		var/position = get_unused_overmap_square(force = TRUE)
-		new /datum/overmap/dynamic(position["x"], position["y"])
+		new /datum/overmap/dynamic()
 
 /datum/controller/subsystem/overmap/proc/spawn_ruin_levels_in_orbits()
 	for(var/i in 1 to CONFIG_GET(number/max_overmap_dynamic_events))
-		var/position = get_unused_overmap_square_in_radius(force = TRUE)
-		new /datum/overmap/dynamic(position["x"], position["y"])
+		new /datum/overmap/dynamic()
 
 /**
   * Reserves a square dynamic encounter area, and spawns a ruin in it if one is supplied.

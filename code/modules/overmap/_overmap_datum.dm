@@ -41,8 +41,9 @@
 /datum/overmap/New(placement_x, placement_y, ...)
 	SHOULD_NOT_OVERRIDE(TRUE) // Use [/datum/overmap/proc/Initialize] instead.
 	if(!placement_x || !placement_y)
-		placement_x = rand(1, SSovermap.size)
-		placement_y = rand(1, SSovermap.size)
+		var/list/position = SSovermap.get_unused_overmap_square(force = TRUE)
+		placement_x = position["x"]
+		placement_y = position["y"]
 	contents = list()
 	SSovermap.overmap_container[placement_x][placement_y] += src
 	x = placement_x
