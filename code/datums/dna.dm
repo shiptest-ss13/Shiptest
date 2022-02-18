@@ -322,7 +322,7 @@
 				quirks_to_remove += quirk_datum.type
 			for(var/quirk in client?.prefs.all_quirks)
 				var/datum/quirk/quirk_datum = SSquirks.quirks[quirk]
-				quirks_to_remove -= quirk_datum.type
+				quirks_to_remove -= initial(quirk_datum.type)
 			for(var/quirk_type in quirks_to_remove)
 				remove_quirk(quirk_type)
 		dna.species.on_species_gain(src, old_species, pref_load)
