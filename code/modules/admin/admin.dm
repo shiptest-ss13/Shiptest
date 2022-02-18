@@ -14,6 +14,13 @@
 		html = msg,
 		confidential = TRUE)
 
+/proc/message_debug(msg)
+	log_world("DEBUG: [msg]")
+	msg = "<span class=\"admindebug\"><span class=\"prefix\">DEBUG:</span> <span class=\"message linkify\">[msg]</span></span>"
+	to_chat(GLOB.admins,
+		type = MESSAGE_TYPE_DEBUG,
+		html = msg,
+		confidential = TRUE)
 
 ///////////////////////////////////////////////////////////////////////////////////////////////Panels
 
@@ -252,7 +259,7 @@
 			dat+="<BR><A href='?src=[REF(src)];[HrefToken()];ac_menu_censor_channel=1'>Mark Feed Channel with Nanotrasen D-Notice (disables and locks the channel).</A>"
 			dat+="<BR><HR><A href='?src=[REF(src)];[HrefToken()];ac_set_signature=1'>The newscaster recognises you as:<BR> <FONT COLOR='green'>[src.admin_signature]</FONT></A>"
 		if(1)
-			dat+= "Station Feed Channels<HR>"
+			dat+= "Feed Channels<HR>"
 			if( !length(GLOB.news_network.network_channels) )
 				dat+="<I>No active channels found...</I>"
 			else

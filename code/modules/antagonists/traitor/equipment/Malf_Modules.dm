@@ -152,7 +152,7 @@ GLOBAL_LIST_INIT(malf_modules, subtypesof(/datum/AI_Module))
 /// Doomsday Device: Starts the self-destruct timer. It can only be stopped by killing the AI completely.
 /datum/AI_Module/destructive/nuke_station
 	name = "Doomsday Device"
-	description = "Activate a weapon that will disintegrate all organic life on the station after a 450 second delay. Can only be used while on the station, will fail if your core is moved off station or destroyed."
+	description = "Assemble and activate a weapon that will disintegrate all organic life on the station after a 450 second delay. Can only be used while on the station, will fail if your core is moved off station or destroyed."
 	cost = 130
 	one_purchase = TRUE
 	power_type = /datum/action/innate/ai/nuke_station
@@ -451,7 +451,7 @@ GLOBAL_LIST_INIT(malf_modules, subtypesof(/datum/AI_Module))
 /obj/effect/proc_holder/ranged_ai/overload_machine
 	active = FALSE
 	ranged_mousepointer = 'icons/effects/mouse_pointers/overload_machine_target.dmi'
-	enable_text = "<span class='notice'>You tap into the station's powernet. Click on a machine to detonate it, or use the ability again to cancel.</span>"
+	enable_text = "<span class='notice'>You tap into the local powernet. Click on a machine to detonate it, or use the ability again to cancel.</span>"
 	disable_text = "<span class='notice'>You release your hold on the powernet.</span>"
 
 /obj/effect/proc_holder/ranged_ai/overload_machine/InterceptClickOn(mob/living/caller, params, obj/machinery/target)

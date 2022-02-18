@@ -26,7 +26,8 @@ GLOBAL_PROTECT(admin_verbs_default)
 	/client/proc/resetasaycolor,
 	/client/proc/fix_air,				/*resets air in designated radius to its default atmos composition*/
 	/client/proc/addbunkerbypass,
-	/client/proc/revokebunkerbypass
+	/client/proc/revokebunkerbypass,
+	/client/proc/report_sgt //TEMP
 	)
 GLOBAL_LIST_INIT(admin_verbs_admin, world.AVerbsAdmin())
 GLOBAL_PROTECT(admin_verbs_admin)
@@ -162,6 +163,8 @@ GLOBAL_PROTECT(admin_verbs_debug)
 	/client/proc/cmd_display_del_log,
 	/client/proc/cmd_display_init_log,
 	/client/proc/cmd_display_overlay_log,
+	/client/proc/getserverlogs,		/*for accessing server logs*/
+	/client/proc/getcurrentlogs,		/*for accessing server logs for the current round*/
 	/client/proc/restart_controller,
 	/client/proc/enable_debug_verbs,
 	/client/proc/callproc,
@@ -765,3 +768,13 @@ GLOBAL_PROTECT(admin_verbs_hideable)
 
 	src << link("?debug=profile&type=sendmaps&window=test")
 #endif
+
+//FIXME TODO REMOVE THIS
+/client/proc/report_sgt()
+	set name = "SGT Report"
+	set category = "000_PANIC BUTTON"
+	set desc = "Report a Slimegirl Trafficking Incident"
+	if(!holder)
+		return
+	log_shuttle("CRITICAL: !!INCIDENT REPORTED!!")
+	message_debug("[key_name_admin(usr)]: Shuttle Incident Reported.")

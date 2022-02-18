@@ -91,3 +91,27 @@
 	can_adjust = FALSE
 	armor = list("melee" = 5, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	resistance_flags = NONE
+
+/obj/item/clothing/under/syndicate/inteq
+	name = "inteq turtleneck"
+	desc = "A drab brown turtleneck with black digital camo pants, it has a small 'IRMG' embroidered onto the shoulder."
+	icon_state = "inteq"
+	item_state = "bl_suit"
+	has_sensor = HAS_SENSORS
+	armor = list("melee" = 10, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 40)
+	supports_variations = DIGITIGRADE_VARIATION
+	alt_covers_chest = TRUE
+	icon = 'icons/obj/clothing/under/syndicate.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/under/syndicate.dmi'
+
+/obj/item/clothing/under/syndicate/inteq/skirt
+	name = "inteq skirtleneck"
+	desc = "A drab brown turtleneck with a free flowing black skirt, it has a small 'IRMG' embroidered onto the shoulder."
+	icon_state = "inteq_skirt"
+	item_state = "bl_suit"
+	has_sensor = HAS_SENSORS
+	armor = list("melee" = 10, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 40)
+	body_parts_covered = CHEST|GROIN|ARMS
+	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON
+	alt_covers_chest = TRUE
+	fitted = FEMALE_UNIFORM_TOP

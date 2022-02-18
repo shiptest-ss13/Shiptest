@@ -56,8 +56,8 @@ export const CentcomPodLauncherContent = (props, context) => {
               tooltip={multiline`
                 This bay is located on the western edge of CentCom. Its the
                 glass room directly west of where ERT spawn, and south of the
-                CentCom ferry. Useful for launching ERT/Deathsquads/etc. onto
-                the station via drop pods.
+                CentCom ferry. Useful for launching ERT/Deathsquads/etc. to
+                strategic targets via drop pods.
               `}
               onClick={() => act('bay5')} />
           </LabeledList.Item>
@@ -318,7 +318,7 @@ export const CentcomPodLauncherContent = (props, context) => {
               selected={data.landingDelay !== 20}
               tooltip={multiline`
                 Choose the amount of time it takes for the supplypod to hit
-                the station. By default this value is 0.5 seconds.
+                the landing site. By default this value is 0.5 seconds.
               `}
               onClick={() => act('landingDelay')} />
             <Button
@@ -432,7 +432,7 @@ export const CentcomPodLauncherContent = (props, context) => {
               tooltip={multiline`
                 By selecting this, the pod will instead look like whatevers
                 inside it (as if it were the contents falling by themselves,
-                without a pod). Useful for launching mechs at the station
+                without a pod). Useful for launching mechs at the sector
                 and standing tall as they soar in from the heavens.
               `}
               onClick={() => act('styleSeeThrough')} />

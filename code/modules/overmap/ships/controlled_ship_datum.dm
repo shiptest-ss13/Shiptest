@@ -85,6 +85,7 @@
 	return TRUE
 
 /datum/overmap/ship/controlled/start_dock(datum/overmap/to_dock, datum/docking_ticket/ticket)
+	log_shuttle("[src] [REF(src)] DOCKING: STARTED REQUEST FOR [to_dock] AT [ticket.target_port]")
 	refresh_engines()
 	shuttle_port.movement_force = list("KNOCKDOWN" = FLOOR(est_thrust / 50, 1), "THROW" = FLOOR(est_thrust / 500, 1))
 	priority_announce("Beginning docking procedures. Completion in [dock_time/10] seconds.", "Docking Announcement", sender_override = name, zlevel = shuttle_port.virtual_z())
@@ -96,8 +97,10 @@
 	if(istype(dock_target, /datum/overmap/ship/controlled)) //hardcoded and bad
 		var/datum/overmap/ship/controlled/S = dock_target
 		S.shuttle_port.shuttle_areas |= shuttle_port.shuttle_areas
+	log_shuttle("[src] [REF(src)] COMPLETE DOCK: FINISHED DOCKING TO [dock_target] AT [ticket.target_port]")
 
 /datum/overmap/ship/controlled/Undock()
+	log_shuttle("[src] [REF(src)] UNDOCK: STARTED UNDOCK FROM [docked_to]")
 	var/dock_time_temp = dock_time
 	if(shuttle_port.check_transit_zone() != TRANSIT_READY)
 		dock_time *= 2 // Give it double the time in order to reserve transit space

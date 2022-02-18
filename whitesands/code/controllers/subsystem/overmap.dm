@@ -204,6 +204,7 @@ SUBSYSTEM_DEF(overmap)
   * * ruin_type - The ruin to spawn. Don't pass this argument if you want it to randomly select based on planet type.
   */
 /datum/controller/subsystem/overmap/proc/spawn_dynamic_encounter(planet_type, ruin = TRUE, ignore_cooldown = FALSE, datum/map_template/ruin/ruin_type)
+	log_shuttle("SSOVERMAP: SPAWNING DYNAMIC ENCOUNTER STARTED")
 	var/list/ruin_list
 	var/datum/map_generator/mapgen
 	var/area/target_area
@@ -273,8 +274,10 @@ SUBSYSTEM_DEF(overmap)
 			)
 		ruin_type.load(ruin_turf)
 
-	if(mapgen)
+	if(mapgen) //If what is going on is what I think it is, this is going to need to return some sort of promise to await.
+		log_shuttle("SSOVERMAP: START_DYN_E: RUNNING MAPGEN REF [REF(mapgen)] FOR VLEV [vlevel.id] OF TYPE [mapgen.type]")
 		mapgen.generate_terrain(vlevel.get_unreserved_block())
+		log_shuttle("SSOVERMAP: START_DYN_E: MAPGEN REF [REF(mapgen)] RETURNED FOR VLEV [vlevel.id] OF TYPE [mapgen.type]. IT MAY NOT BE FINISHED YET.")
 
 	// locates the first dock in the bottom left, accounting for padding and the border
 	var/turf/primary_docking_turf = locate(

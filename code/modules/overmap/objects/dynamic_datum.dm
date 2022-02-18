@@ -69,6 +69,7 @@
 	if(length(mapzone?.get_mind_mobs()))
 		return //Dont fuck over stranded people? tbh this shouldn't be called on this condition, instead of bandaiding it inside
 
+	log_shuttle("[src] [REF(src)] UNLOAD")
 	var/list/results = SSovermap.get_unused_overmap_square()
 	Move(results["x"], results["y"])
 	choose_level_type()
@@ -178,6 +179,7 @@
 		return TRUE
 	if(!COOLDOWN_FINISHED(SSovermap, encounter_cooldown))
 		return FALSE
+	log_shuttle("[src] [REF(src)] LEVEL_INIT: FOR [visiting_shuttle]")
 	var/list/dynamic_encounter_values = SSovermap.spawn_dynamic_encounter(planet, TRUE, ruin_type = template)
 	if(!length(dynamic_encounter_values))
 		return FALSE
@@ -189,6 +191,7 @@
  * Alters the position and orientation of a stationary docking port to ensure that any mobile port small enough can dock within its bounds
  */
 /datum/overmap/dynamic/proc/adjust_dock_to_shuttle(obj/docking_port/stationary/dock_to_adjust, obj/docking_port/mobile/shuttle)
+	log_shuttle("[src] [REF(src)] DOCKING: ADJUST [dock_to_adjust] [REF(dock_to_adjust)] TO [shuttle][REF(shuttle)]")
 	// the shuttle's dimensions where "true height" measures distance from the shuttle's fore to its aft
 	var/shuttle_true_height = shuttle.height
 	var/shuttle_true_width = shuttle.width
@@ -309,5 +312,5 @@
 /datum/overmap/dynamic/empty/post_undocked(datum/overmap/ship/controlled/dock_requester)
 	if(length(mapzone?.get_mind_mobs()))
 		return //Dont fuck over stranded people? tbh this shouldn't be called on this condition, instead of bandaiding it inside
-
+	log_shuttle("[src] [REF(src)] UNLOAD")
 	qdel(src)
