@@ -16,7 +16,8 @@
 
 /obj/effect/abstract/turf_fire
 	icon = 'icons/effects/turf_fire.dmi'
-	icon_state = "fire_small"
+	base_icon_state = "red"
+	icon_state = "red_small"
 	layer = BELOW_OPEN_DOOR_LAYER
 	anchored = TRUE
 	move_resist = INFINITY
@@ -47,7 +48,7 @@
 /obj/effect/abstract/turf_fire/inferno/magical
 	magical = TRUE
 
-/obj/effect/abstract/turf_fire/Initialize(mapload, power)
+/obj/effect/abstract/turf_fire/Initialize(mapload, power, fire_color)
 	. = ..()
 	var/turf/open/open_turf = loc
 	if(open_turf.turf_fire)
@@ -58,6 +59,10 @@
 	)
 	AddElement(/datum/element/connect_loc, src, loc_connections)
 	*/
+	if(!fire_color)
+		base_icon_state = "red"
+	else
+		base_icon_state = fire_color
 	open_turf.turf_fire = src
 	SSturf_fire.fires[src] = TRUE
 	if(power)
@@ -125,12 +130,12 @@
 		UpdateFireState()
 
 // /obj/effect/abstract/turf_fire/proc/on_entered(datum/source, atom/movable/AM) for crossed removal
-/obj/effect/abstract/turf_fire/Crossed(atom/movable/AM)
+/obj/effect/abstract/turf_fire/Crossed(atom/movable/atom_crossing)
 	. = ..()
 	var/turf/open/open_turf = loc
 	if(open_turf.active_hotspot) //If we have an active hotspot, let it do the damage instead
 		return
-	AM.fire_act(TURF_FIRE_TEMP_BASE + (TURF_FIRE_TEMP_INCREMENT_PER_POWER*fire_power), TURF_FIRE_VOLUME)
+	atom_crossing.fire_act(TURF_FIRE_TEMP_BASE + (TURF_FIRE_TEMP_INCREMENT_PER_POWER*fire_power), TURF_FIRE_VOLUME)
 	return
 
 /obj/effect/abstract/turf_fire/extinguish()
@@ -154,15 +159,26 @@
 		return
 	current_fire_state = new_state
 
+	switch(base_icon_state) //switches light color depdning on the flame color
+		if("red")
+			light_color = LIGHT_COLOR_FIRE
+		if("blue")
+			light_color = LIGHT_COLOR_CYAN
+		if("green")
+			light_color = LIGHT_COLOR_GREEN
+		else
+			light_color = COLOR_VERY_LIGHT_GRAY
+	update_light()
+
 	switch(current_fire_state)
 		if(TURF_FIRE_STATE_SMALL)
-			icon_state = "fire_small"
+			icon_state = "[base_icon_state]_small"
 			set_light_range(1.5)
 		if(TURF_FIRE_STATE_MEDIUM)
-			icon_state = "fire_medium"
+			icon_state = "[base_icon_state]_medium"
 			set_light_range(2.5)
 		if(TURF_FIRE_STATE_LARGE)
-			icon_state = "fire_big"
+			icon_state = "[base_icon_state]_big"
 			set_light_range(3)
 
 #undef TURF_FIRE_REQUIRED_TEMP

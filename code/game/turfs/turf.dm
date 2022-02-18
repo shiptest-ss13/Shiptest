@@ -662,5 +662,5 @@
 			continue
 		content.wash(clean_types)
 
-/turf/proc/IgniteTurf(power)
+/turf/proc/IgniteTurf(power, fire_color = "red")
 	return

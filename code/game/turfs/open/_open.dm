@@ -261,10 +261,12 @@
 		air.set_moles(GAS_O2, max(air.get_moles(GAS_O2)-(pulse_strength/2000),0))
 		air.adjust_moles(GAS_PLUOXIUM, pulse_strength/4000)
 
-/turf/open/IgniteTurf(power)
+/turf/open/IgniteTurf(power, fire_color)
+	if(!fire_color)
+		fire_color = "red"
 	if(turf_fire)
 		turf_fire.AddPower(power)
 		return
 	if(isopenspaceturf(src) || isspaceturf(src))
 		return
-	new /obj/effect/abstract/turf_fire(src, power)
+	new /obj/effect/abstract/turf_fire(src, power, fire_color)
