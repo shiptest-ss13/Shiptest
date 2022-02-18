@@ -120,7 +120,7 @@
 		else
 			SSexplosions.medturf += target
 	var/turf/targets_turf = target.loc
-	if(!(isopenturf(targets_turf)))
+	if(!isopenturf(targets_turf))
 		return
 	targets_turf.IgniteTurf(rand(8,22), "blue")
 
