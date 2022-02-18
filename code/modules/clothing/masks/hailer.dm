@@ -191,6 +191,14 @@ GLOBAL_LIST_INIT(hailer_phrases, list(
 		playsound(src, 'sound/misc/whistle.ogg', 100, FALSE, 4)
 		cooldown = world.time
 
+/obj/item/clothing/mask/gas/sechailer/inteq
+	name = "balaclava"
+	desc = "A fancy balaclava, while it doesn't muffle your voice it has a miniature rebreather for internals. Comfy to boot!"
+	icon_state = "inteq_balaclava"
+	item_state = "inteq_balaclava"
+	strip_delay = 60
+	flags_inv = HIDEFACIALHAIR|HIDEFACE|HIDEEARS|HIDEHAIR
+
 #undef PHRASE_COOLDOWN
 #undef OVERUSE_COOLDOWN
 #undef AGGR_GOOD_COP
