@@ -31,7 +31,7 @@
 	///Manifest list of people on the ship
 	var/list/manifest = list()
 	///Time that next job slot change can occur
-	var/job_slot_adjustment_cooldown = 0
+	COOLDOWN_DECLARE(job_slot_adjustment_cooldown)
 	///Whether or not new players are allowed to join the ship
 	var/join_allowed = TRUE
 	///Short memo of the ship shown to new joins
@@ -47,6 +47,7 @@
 	priority_announce("The [oldname] has been renamed to the [new_name].", "Docking Announcement", sender_override = new_name, zlevel = shuttle_port.virtual_z())
 	message_admins("[key_name_admin(usr)] renamed vessel '[oldname]' to '[new_name]'")
 	shuttle_port.name = new_name
+	ship_account.account_holder = new_name
 	for(var/area/shuttle_area as anything in shuttle_port.shuttle_areas)
 		shuttle_area.rename_area("[new_name] [initial(shuttle_area.name)]")
 	if(!force)
@@ -57,12 +58,14 @@
 	. = ..()
 	if(creation_template)
 		source_template = creation_template
+		job_slots = source_template.job_slots.Copy()
 		shuttle_port = SSshuttle.load_template(creation_template, src)
 #ifdef UNIT_TESTS
 		Rename("[source_template]")
 #else
 		Rename("[source_template.prefix] [pick_list_replacements(SHIP_NAMES_FILE, pick(source_template.name_categories))]", TRUE)
 #endif
+		ship_account = new(name, 7500)
 		calculate_mass()
 		refresh_engines()
 	SSovermap.simulated_ships += src

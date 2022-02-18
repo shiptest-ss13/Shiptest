@@ -121,7 +121,7 @@ GLOBAL_LIST_EMPTY(cryopod_computers)
 			if(linked_ship.job_slots[target_job] + params["delta"] < 0 || linked_ship.job_slots[target_job] + params["delta"] > 4)
 				return
 			linked_ship.job_slots[target_job] += params["delta"]
-			linked_ship.job_slot_adjustment_cooldown = world.time + DEFAULT_JOB_SLOT_ADJUSTMENT_COOLDOWN
+			COOLDOWN_START(linked_ship, job_slot_adjustment_cooldown, DEFAULT_JOB_SLOT_ADJUSTMENT_COOLDOWN)
 			update_static_data(user)
 			return
 
@@ -129,7 +129,7 @@ GLOBAL_LIST_EMPTY(cryopod_computers)
 	. = list()
 	.["allowItems"] = allow_items
 	.["awakening"] = linked_ship.join_allowed
-	.["cooldown"] = linked_ship.job_slot_adjustment_cooldown - world.time
+	.["cooldown"] = COOLDOWN_TIMELEFT(linked_ship, job_slot_adjustment_cooldown)
 	.["memo"] = linked_ship.memo
 
 /obj/machinery/computer/cryopod/ui_static_data(mob/user)

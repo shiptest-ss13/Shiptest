@@ -162,14 +162,15 @@
   */
 /datum/overmap/proc/Dock(datum/overmap/dock_target)
 	SHOULD_CALL_PARENT(TRUE)
-	if(docking)
-		return
 	if(!istype(dock_target))
 		CRASH("Overmap datum [src] tried to dock to an invalid overmap datum.")
 	if(docked_to)
 		CRASH("Overmap datum [src] tried to dock to [docked_to] when it is already docked to another overmap datum.")
 
+	if(docking)
+		return
 	docking = TRUE
+
 	var/datum/docking_ticket/ticket = dock_target.pre_docked(src)
 	if(!ticket)
 		docking = FALSE
@@ -253,6 +254,10 @@
 	if(!docked_to)
 		CRASH("Overmap datum [src] tried to undock() but is not docked to anything.")
 
+	if(docking)
+		return
+	docking = TRUE
+
 	if(dock_time)
 		dock_timer_id = addtimer(CALLBACK(src, .proc/complete_undock), dock_time)
 	else
@@ -272,6 +277,7 @@
 	docked_to = null
 	token.Move(OVERMAP_TOKEN_TURF(x, y))
 	old_docked_to.post_undocked(src) //Post undocked is called on the old dock target.
+	docking = FALSE
 	SEND_SIGNAL(src, COMSIG_OVERMAP_UNDOCK, old_docked_to)
 
 /**

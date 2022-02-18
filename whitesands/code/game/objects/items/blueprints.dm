@@ -84,6 +84,7 @@
 					near_shuttle = TRUE
 	if(!near_shuttle)
 		to_chat(creator, "<span class='warning'>The new area must be next to the shuttle.</span>")
+		return
 	var/area_choice = input(creator, "Choose an area to expand or make a new area.", "Area Expansion") as null|anything in areas
 	area_choice = areas[area_choice]
 
