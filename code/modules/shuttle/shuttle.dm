@@ -297,11 +297,12 @@
 	SSshuttle.mobile += src
 
 /obj/docking_port/mobile/Destroy(force)
-	if(force && !current_ship)
+	if(force)
 		SSshuttle.mobile -= src
 		destination = null
 		previous = null
 		assigned_transit = null
+		QDEL_NULL(current_ship)
 		qdel(assigned_transit, TRUE)		//don't need it where we're goin'!
 		for(var/obj/docking_port/stationary/docking_point as anything in docking_points)
 			qdel(docking_point, TRUE)

@@ -72,6 +72,8 @@
 
 /datum/overmap/ship/controlled/Destroy()
 	SSovermap.controlled_ships -= src
+	//shuttle_port.intoTheSunset()
+	QDEL_NULL(ship_account)
 	. = ..()
 
 /datum/overmap/ship/controlled/get_jump_to_turf()
