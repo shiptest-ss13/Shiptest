@@ -2586,19 +2586,7 @@
 
 /datum/sprite_accessory/vox_head_quills/tailfeather
 	name = "Tailfeather"
-	icon_state = "Tailfeather"
-
-/datum/sprite_accessory/vox_head_quills/beard
-	name = "Beard"
-	icon_state = "beard"
-
-/datum/sprite_accessory/vox_head_quills/fuu
-	name = "Fuu"
-	icon_state = "fuu"
-
-/datum/sprite_accessory/vox_head_quills/colonal
-	name = "Colonal"
-	icon_state = "colonal"
+	icon_state = "tailfeather"
 
 /datum/sprite_accessory/vox_head_quills/mange
 	name = "Mange"
@@ -2659,10 +2647,26 @@
 /datum/sprite_accessory/vox_neck_quills/none
 	name = "None"
 
+/datum/sprite_accessory/vox_neck_quills/beard
+	name = "Beard"
+	icon_state = "beard"
+
+/datum/sprite_accessory/vox_neck_quills/fuu
+	name = "Fuu"
+	icon_state = "fuu"
+
+/datum/sprite_accessory/vox_neck_quills/colonal
+	name = "Colonal"
+	icon_state = "colonal"
 
 /datum/sprite_accessory/vox_neck_quills/plain
 	name = "Plain"
 	icon_state = "plain"
+
 /datum/sprite_accessory/vox_neck_quills/ruffbeard
 	name = "Ruffbeard"
 	icon_state = "ruffbeard"
+
+/datum/sprite_accessory/vox_neck_quills/ruffhawk
+	name = "Ruffhawk"
+	icon_state = "ruffhawk"
