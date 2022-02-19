@@ -56,7 +56,7 @@
 		return INITIALIZE_HINT_LATELOAD
 
 /obj/machinery/telecomms/relay/preset/station
-	id = "Station Relay"
+	id = "Vessel Relay"
 	autolinkers = list("s_relay")
 
 /obj/machinery/telecomms/relay/preset/telecomms

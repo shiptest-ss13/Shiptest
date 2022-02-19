@@ -39,6 +39,8 @@
 	var/stasis_enabled = FALSE
 	///The amount of reagent that is to be dispensed currently
 	var/amount = 10
+	var/open_sound = 'sound/machines/podopen.ogg'
+	var/close_sound = 'sound/machines/podclose.ogg'
 	payment_department = ACCOUNT_MED
 	fair_market_price = 5
 
@@ -129,11 +131,15 @@
 		occupant = null
 	if(!state_open && !panel_open)
 		flick("[initial(icon_state)]-anim", src)
+		if(open_sound)
+			playsound(src, open_sound, 40)
 		..(FALSE) //Don't drop the chem bag
 
 /obj/machinery/sleeper/close_machine(mob/user)
 	if((isnull(user) || istype(user)) && state_open && !panel_open)
 		flick("[initial(icon_state)]-anim", src)
+		if(close_sound)
+			playsound(src, close_sound, 40)
 		..(user)
 		var/mob/living/mob_occupant = occupant
 		if(mob_occupant && mob_occupant.stat != DEAD)

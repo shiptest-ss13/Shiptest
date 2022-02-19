@@ -15,6 +15,8 @@
 	var/barefootstep = null
 	var/clawfootstep = null
 	var/heavyfootstep = null
+	/// Reference to the turf fire on the turf
+	var/obj/effect/abstract/turf_fire/turf_fire
 
 /turf/open/ComponentInitialize()
 	. = ..()
@@ -189,8 +191,7 @@
 		M.apply_water()
 
 	wash(CLEAN_WASH)
-	for(var/am in src)
-		var/atom/movable/movable_content = am
+	for(var/atom/movable/movable_content as anything in src)
 		if(ismopable(movable_content)) // Will have already been washed by the wash call above at this point.
 			continue
 		movable_content.wash(CLEAN_WASH)
@@ -259,3 +260,11 @@
 		air.set_moles(GAS_CO2, max(air.get_moles(GAS_CO2)-(pulse_strength/1000),0))
 		air.set_moles(GAS_O2, max(air.get_moles(GAS_O2)-(pulse_strength/2000),0))
 		air.adjust_moles(GAS_PLUOXIUM, pulse_strength/4000)
+
+/turf/open/IgniteTurf(power, fire_color)
+	if(turf_fire)
+		turf_fire.AddPower(power)
+		return
+	if(isopenspaceturf(src) || isspaceturf(src))
+		return
+	new /obj/effect/abstract/turf_fire(src, power, fire_color)

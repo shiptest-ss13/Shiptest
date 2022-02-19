@@ -109,7 +109,7 @@
 
 /datum/supply_pack/engineering/atmossuit
 	name = "Atmospherics Hardsuit Crate"
-	desc = "Atmospherics hardsuit suspiciously missing with multiple plasma fires throughout the station?, This hardsuit can help with that! They do cost a fair bit because of the materials required to insulate them. Requires engineering access to open."
+	desc = "The iconic hardsuit of Nanotransen's Atmosphere Corps, this hardsuit is known across space as a symbol of defiance in the face of sudden decompression. Smells faintly of plasma. Requires engineering access to open."
 	cost = 12000
 	access = ACCESS_ATMOSPHERICS
 	contains = list(/obj/item/clothing/suit/space/hardsuit/engine/atmos)
@@ -233,7 +233,7 @@
 
 /datum/supply_pack/science/hardsuit
 	name = "Science Hardsuit Crate"
-	desc = "A science hardsuit for added safety during explosives test or for scientific activies outside of the station! Requires science access to open."
+	desc = "Contains a science hardsuit, designed to provide safety under advanced experimental conditions. Requires science access to open."
 	cost = 7500
 	access = ACCESS_RESEARCH
 	contains = list(/obj/item/clothing/suit/space/hardsuit/rd)
@@ -410,13 +410,15 @@
 					/obj/item/am_containment)
 	crate_name = "antimatter jar crate"
 	dangerous = TRUE
+
 /datum/supply_pack/engine/am_core
 	name = "Antimatter Control Crate"
-	desc = "The brains of the Antimatter engine, this device is sure to teach the station's powergrid the true meaning of real power."
+	desc = "The brains of the Antimatter engine, this device is sure to teach your poor powergrid meaning of TRUE amperage."
 	cost = 5000
 	contains = list(/obj/machinery/power/am_control_unit)
 	crate_name = "antimatter control crate"
 	dangerous = TRUE
+
 /datum/supply_pack/engine/am_shielding
 	name = "Antimatter Shielding Crate"
 	desc = "Contains ten Antimatter shields, somehow crammed into a crate."
@@ -433,9 +435,10 @@
 					/obj/item/am_shielding_container) //10 shields: 3x3 containment and a core
 	crate_name = "antimatter shielding crate"
 	dangerous = TRUE
+
 /datum/supply_pack/organic/catgrill
 	name = "Felinid-Style Grilling Kit"
-	desc = "Command recieved a request for \"Nic catgrill gf plz\", we're pretty sure this is what that meant."
+	desc = "Request: \"Nic catgrill gf plz\" has been successfully processed! As the original client seems to have mysteriously dissapeared, we're selling these in bulk to the open market."
 	cost = 12000
 	crate_type = /obj/structure/closet/crate/trashcart
 	contains = list(/obj/item/stack/sheet/mineral/coal/five,

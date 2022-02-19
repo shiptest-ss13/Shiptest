@@ -144,7 +144,7 @@
 	if(!grant_achievement.len)
 		for(var/mob/living/L in view(7,src))
 			grant_achievement += L
-	for(var/mob/living/L in grant_achievement)
+	for(var/mob/living/L as anything in grant_achievement)
 		if(L.stat || !L.client)
 			continue
 		L.client.give_award(/datum/award/achievement/boss/boss_killer, L)
@@ -197,22 +197,23 @@
 /mob/living/simple_animal/hostile/megafauna/proc/Retaliate()
 	var/list/around = view(src, vision_range)
 
-	for(var/atom/movable/A in around)
+	for(var/atom/A as anything in around)
 		if(A == src)
 			continue
 		if(isliving(A))
 			var/mob/living/M = A
 			if(faction_check_mob(M) && attack_same || !faction_check_mob(M))
 				enemies |= M
+			if(ismegafauna(M))
+				var/mob/living/simple_animal/hostile/megafauna/boss = M
+				if(faction_check_mob(boss) && !attack_same && !boss.attack_same)
+					boss.enemies |= enemies
 		else if(ismecha(A))
 			var/obj/mecha/M = A
 			if(M.occupant)
 				enemies |= M
 				enemies |= M.occupant
 
-	for(var/mob/living/simple_animal/hostile/megafauna/H in around)
-		if(faction_check_mob(H) && !attack_same && !H.attack_same)
-			H.enemies |= enemies
 	return 0
 
 /mob/living/simple_animal/hostile/megafauna/adjustHealth(amount, updating_health = TRUE, forced = FALSE)

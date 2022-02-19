@@ -1,11 +1,10 @@
 #define STATION_RENAME_TIME_LIMIT 3000
 
-/obj/item/station_charter
-	name = "station charter"
+/obj/item/sector_charter
+	name = "Charter of Colonization"
 	icon = 'icons/obj/wizard.dmi'
 	icon_state = "scroll2"
-	desc = "An official document entrusting the governance of the station \
-		and surrounding space to the Captain."
+	desc = "An official-looking writ in dense legalese, entrusting a plot of frontier territory to the owner of this document, along with a formal writ of governance."
 	var/used = FALSE
 	var/name_type = "station"
 
@@ -16,7 +15,7 @@
 
 	var/static/regex/standard_station_regex
 
-/obj/item/station_charter/Initialize()
+/obj/item/sector_charter/Initialize()
 	. = ..()
 	if(!standard_station_regex)
 		var/prefixes = jointext(GLOB.station_prefixes, "|")
@@ -26,7 +25,7 @@
 		var/regexstr = "^(([prefixes]) )?(([names]) ?)([suffixes]) ([numerals])$"
 		standard_station_regex = new(regexstr)
 
-/obj/item/station_charter/attack_self(mob/living/user)
+/obj/item/sector_charter/attack_self(mob/living/user)
 	if(used)
 		to_chat(user, "<span class='warning'>The [name_type] has already been named!</span>")
 		return
@@ -61,7 +60,7 @@
 	response_timer_id = addtimer(CALLBACK(src, .proc/rename_station, new_name, user.name, user.real_name, key_name(user)), approval_time, TIMER_STOPPABLE)
 	to_chat(GLOB.admins, "<span class='adminnotice'><b><font color=orange>CUSTOM STATION RENAME:</font></b>[ADMIN_LOOKUPFLW(user)] proposes to rename the [name_type] to [new_name] (will autoapprove in [DisplayTimeText(approval_time)]). [ADMIN_SMITE(user)] (<A HREF='?_src_=holder;[HrefToken(TRUE)];reject_custom_name=[REF(src)]'>REJECT</A>) [ADMIN_CENTCOM_REPLY(user)]</span>")
 
-/obj/item/station_charter/proc/reject_proposed(user)
+/obj/item/sector_charter/proc/reject_proposed(user)
 	if(!user)
 		return
 	if(!response_timer_id)
@@ -77,7 +76,7 @@
 	deltimer(response_timer_id)
 	response_timer_id = null
 
-/obj/item/station_charter/proc/rename_station(designation, uname, ureal_name, ukey)
+/obj/item/sector_charter/proc/rename_station(designation, uname, ureal_name, ukey)
 	set_station_name(designation)
 	minor_announce("[ureal_name] has designated your station as [station_name()]", "Captain's Charter", 0)
 	log_game("[ukey] has renamed the station as [station_name()].")
@@ -89,12 +88,12 @@
 	if(!unlimited_uses)
 		used = TRUE
 
-/obj/item/station_charter/admin
+/obj/item/sector_charter/admin
 	unlimited_uses = TRUE
 	ignores_timeout = TRUE
 
 
-/obj/item/station_charter/flag
+/obj/item/sector_charter/flag
 	name = "\improper Nanotrasen banner"
 	icon = 'icons/obj/banner.dmi'
 	name_type = "planet"
@@ -106,7 +105,7 @@
 	w_class = 5
 	force = 15
 
-/obj/item/station_charter/flag/rename_station(designation, uname, ureal_name, ukey)
+/obj/item/sector_charter/flag/rename_station(designation, uname, ureal_name, ukey)
 	minor_announce("[ureal_name] has designated the planet as [station_name()]", "Captain's Banner", 0)
 	log_game("[ukey] has renamed the planet as [station_name()].")
 	name = "banner of [station_name()]"
