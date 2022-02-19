@@ -108,50 +108,6 @@
 	lastgen -= power_output
 	..()
 
-/* todo: destroy
-/obj/machinery/power/generator/proc/get_menu(include_link = TRUE)
-	var/t = ""
-	if(!powernet)
-		t += "<span class='bad'>Unable to connect to the power network!</span>"
-	else if(cold_circ && hot_circ)
-		var/datum/gas_mixture/cold_circ_air1 = cold_circ.airs[1]
-		var/datum/gas_mixture/cold_circ_air2 = cold_circ.airs[2]
-		var/datum/gas_mixture/hot_circ_air1 = hot_circ.airs[1]
-		var/datum/gas_mixture/hot_circ_air2 = hot_circ.airs[2]
-
-		t += "<div class='statusDisplay'>"
-
-		t += "Output: [DisplayPower(lastgenlev)]"
-
-		t += "<BR>"
-
-		t += "<B><font color='blue'>Cold loop</font></B><BR>"
-		t += "Temperature Inlet: [round(cold_circ_air2.return_temperature(), 0.1)] K / Outlet: [round(cold_circ_air1.return_temperature(), 0.1)] K<BR>"
-		t += "Pressure Inlet: [round(cold_circ_air2.return_pressure(), 0.1)] kPa /  Outlet: [round(cold_circ_air1.return_pressure(), 0.1)] kPa<BR>"
-
-		t += "<B><font color='red'>Hot loop</font></B><BR>"
-		t += "Temperature Inlet: [round(hot_circ_air2.return_temperature(), 0.1)] K / Outlet: [round(hot_circ_air1.return_temperature(), 0.1)] K<BR>"
-		t += "Pressure Inlet: [round(hot_circ_air2.return_pressure(), 0.1)] kPa / Outlet: [round(hot_circ_air1.return_pressure(), 0.1)] kPa<BR>"
-
-		t += "</div>"
-	else if(!hot_circ && cold_circ)
-		t += "<span class='bad'>Unable to locate hot circulator!</span>"
-	else if(hot_circ && !cold_circ)
-		t += "<span class='bad'>Unable to locate cold circulator!</span>"
-	else
-		t += "<span class='bad'>Unable to locate any parts!</span>"
-	if(include_link)
-		t += "<BR><A href='?src=[REF(src)];close=1'>Close</A>"
-
-	return t
-
-/obj/machinery/power/generator/ui_interact(mob/user)
-	. = ..()
-	var/datum/browser/popup = new(user, "teg", "Thermo-Electric Generator", 460, 300)
-	popup.set_content(get_menu())
-	popup.open()
-*/
-
 /obj/machinery/power/generator/ui_interact(mob/user, datum/tgui/ui)
 	ui = SStgui.try_update_ui(user, src, ui)
 	if(!ui)
