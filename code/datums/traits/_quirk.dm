@@ -54,6 +54,7 @@
 		quirk_holder.roundstart_quirks -= src
 		if(mob_trait)
 			REMOVE_TRAIT(quirk_holder, mob_trait, ROUNDSTART_TRAIT)
+		quirk_holder = null
 	SSquirks.quirk_objects -= src
 	return ..()
 

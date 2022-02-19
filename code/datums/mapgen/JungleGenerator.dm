@@ -35,6 +35,7 @@
 ///Seeds the rust-g perlin noise with a random number.
 /datum/map_generator/jungle_generator/generate_terrain(var/list/turfs)
 	. = ..()
+	var/start_time = REALTIMEOFDAY
 	var/height_seed = rand(0, 50000)
 	var/humidity_seed = rand(0, 50000)
 	var/heat_seed = rand(0, 50000)
@@ -81,7 +82,7 @@
 		selected_biome = SSmapping.biomes[selected_biome] //Get the instance of this biome from SSmapping
 		selected_biome.generate_turf(gen_turf)
 		CHECK_TICK
-
+	report_completion(start_time, "Jungle Generator")
 /turf/open/genturf
 	name = "ungenerated turf"
 	desc = "If you see this, and you're not a ghost, yell at coders"

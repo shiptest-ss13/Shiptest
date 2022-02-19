@@ -297,6 +297,6 @@
 
 /obj/structure/statue/bronze/marx
 	name = "\improper Karl Marx bust"
-	desc = "A bust depicting a certain 19th century economist. You get the feeling a specter is haunting the station."
+	desc = "A bust depicting a certain 19th century economist. You get the feeling a specter is haunting the sector."
 	icon_state = "marx"
 	art_type = /datum/component/art/rev
