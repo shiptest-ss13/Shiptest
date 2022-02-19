@@ -108,7 +108,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 							"ipc_chassis" = "Morpheus Cyberkinetics(Greyscale)",
 							"kepori_feathers" = "Plain",
 							"kepori_body_feathers" = "Plain",
-							"flavor_text" = ""
+							"flavor_text" = "",
+							"body_size" = "Normal"
 						)
 	var/list/randomise = list(RANDOM_UNDERWEAR = TRUE, RANDOM_UNDERWEAR_COLOR = TRUE, RANDOM_UNDERSHIRT = TRUE, RANDOM_SOCKS = TRUE, RANDOM_BACKPACK = TRUE, RANDOM_JUMPSUIT_STYLE = TRUE, RANDOM_EXOWEAR_STYLE = TRUE, RANDOM_HAIRSTYLE = TRUE, RANDOM_HAIR_COLOR = TRUE, RANDOM_FACIAL_HAIRSTYLE = TRUE, RANDOM_FACIAL_HAIR_COLOR = TRUE, RANDOM_SKIN_TONE = TRUE, RANDOM_EYE_COLOR = TRUE)
 	var/list/friendlyGenders = list("Male" = "male", "Female" = "female", "Other" = "plural")
