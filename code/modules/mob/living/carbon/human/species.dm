@@ -972,9 +972,9 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 					S = GLOB.kepori_body_feathers_list[H.dna.features["kepori_body_feathers"]]
 			if(!S || S.icon_state == "none")
 				continue
+			S.image_alpha = H.dna.species.hair_alpha //hair_alpha is a decent indicator of how transparent a species is
 			if(isjellyperson(H))
-				S.image_alpha = 150 //Jellypeople sprite handling
-				S.hasinner = FALSE
+				S.hasinner = FALSE //Jellies shouldn't get inner sprites, where would they get the second color from?
 
 			var/mutable_appearance/accessory_overlay = mutable_appearance(S.icon, layer = -layer)
 

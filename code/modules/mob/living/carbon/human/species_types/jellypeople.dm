@@ -200,39 +200,8 @@
 				switch(selected_part)
 					if("Ears")
 						handle_sprites(lowertext(selected_part), H, GLOB.ears_list)
-					if("Tails") //Tails are a special case since they're separate from each other, and go into different features and mutant_bodyparts.
-						var/datum/sprite_accessory/tails/SA = new(src) // I *could* move this to a separate proc, but I don't see the point. It'd only be called this one time.
-						SA.name = input(owner, "Which type of tail do you wish to use?", "Tail Alteration") as null|anything in GLOB.tails_list_human + GLOB.tails_list_lizard + "Cancel"
-						if(!SA)
-							return
-						if(SA == "Cancel")
-							qdel(SA)
-							return
-						if(SA.name == "None")
-							if("tail_human" in H.dna.species.mutant_bodyparts)
-								H.dna.species.mutant_bodyparts -= "tail_human"
-								H.dna.features["tail_human"] = SA.name
-								H.update_body()
-								qdel(SA)
-								return
-							if("tail_lizard" in H.dna.species.mutant_bodyparts)
-								H.dna.features["tail_lizard"] = SA.name
-								H.dna.species.mutant_bodyparts -= "tail_lizard"
-								H.update_body()
-								qdel(SA)
-								return
-						if(SA.name in GLOB.tails_list_lizard)
-							H.dna.species.mutant_bodyparts |= "tail_lizard"
-							H.dna.features["tail_lizard"] = SA.name
-							H.update_body()
-							qdel(SA)
-							return
-						if(SA.name in GLOB.tails_list_human)
-							H.dna.species.mutant_bodyparts |= "tail_human"
-							H.dna.features["tail_human"] = SA.name
-							H.update_body()
-							qdel(SA)
-							return
+					if("Tails") //Tails are special and need special treatment because they're a combination of 2 lists.
+						handle_tails(H)
 					if("Frills")
 						handle_sprites(lowertext(selected_part), H, GLOB.frills_list)
 					if("Spines")
@@ -241,26 +210,54 @@
 						handle_sprites(lowertext(selected_part), H, GLOB.wings_list)
 	return
 
+/datum/action/innate/humanoid_customization/proc/remove_sprite(features_slot, var/mob/living/carbon/human/H)
+	H.dna.species.mutant_bodyparts -= "[features_slot]"
+	H.dna.features["[features_slot]"] = "None" //We are removing a sprite, it's always "None"
+	H.update_body()
+	return
+
+/datum/action/innate/humanoid_customization/proc/add_sprite(features_slot, sprite_name, var/mob/living/carbon/human/H)
+	H.dna.species.mutant_bodyparts |= "[features_slot]"
+	H.dna.features["[features_slot]"] = "[sprite_name]"
+	H.update_body()
+	return
+
+/datum/action/innate/humanoid_customization/proc/handle_tails(var/mob/living/carbon/human/H)
+	var/datum/sprite_accessory/tails/T = initial(src)
+	T.name = input(owner, "Which?", "Tail Alteration") as null|anything in GLOB.tails_list_human + GLOB.tails_list_lizard + "Cancel"
+	if(!T)
+		return
+	if(T.name == "Cancel")
+		return
+	if(T.name == "None")
+		if("tail_lizard" in H.dna.species.mutant_bodyparts) //If we have a lizard tail, remove it
+			remove_sprite("tail_lizard", H)
+		if("tail_human" in H.dna.species.mutant_bodyparts) //If we have a human tail as well, remove it too
+			remove_sprite("tail_human", H)
+		return
+	else
+		if(T.name in GLOB.tails_list_human)
+			add_sprite("tail_lizard", T.name, H) //Add human tail if applicable
+			return
+		else
+			add_sprite("tail_lizard", T.name, H) //Otherwise add applicable lizard tail
+			return
+
 /// Don't call this outside of slimeperson customization.
 /datum/action/innate/humanoid_customization/proc/handle_sprites(sprite, var/mob/living/carbon/human/H, list/spritelist)
 	var/datum/sprite_accessory/SA = initial(src)
 	SA.name = input(owner, "Which?", "Mutant Bodypart Alteration") as null|anything in spritelist + "Cancel"
 	if(!SA)
 		return
-	if(SA == "Cancel")
-		qdel(SA)
+	if(SA.name == "Cancel")
 		return
 	if(SA.name == "None")
-		H.dna.species.mutant_bodyparts -= "[sprite]"
-		H.dna.features["[sprite]"] = SA.name
+		remove_sprite(sprite, H)
 		H.update_body()
-		qdel(SA)
 		return
 	else
-		H.dna.species.mutant_bodyparts |= "[sprite]"
-		H.dna.features["[sprite]"] = SA.name
+		add_sprite(sprite, SA.name, H)
 		H.update_body()
-		qdel(SA)
 		return
 
 ////////////////////////////////////////////////////////SLIMEPEOPLE///////////////////////////////////////////////////////////////////
