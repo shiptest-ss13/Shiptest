@@ -9,7 +9,7 @@
 /obj/machinery/computer/ship/helm
 	name = "helm control console"
 	desc = "Used to view or control the ship."
-	icon_screen = "shuttle"
+	icon_screen = "navigation"
 	icon_keyboard = "tech_key"
 	circuit = /obj/item/circuitboard/computer/shuttle/helm
 	light_color = LIGHT_COLOR_FLARE
@@ -114,8 +114,8 @@
 		.["otherInfo"] += list(other_data)
 
 	var/turf/T = get_turf(current_ship)
-	.["x"] = T.x
-	.["y"] = T.y
+	.["x"] = T.x - SSovermap.overmap_vlevel.low_x
+	.["y"] = T.y - SSovermap.overmap_vlevel.low_y
 	.["state"] = current_ship.state
 	.["docked"] = isturf(current_ship.loc) ? FALSE : TRUE
 	.["heading"] = dir2text(current_ship.get_heading()) || "None"
@@ -149,7 +149,7 @@
 	.["mapRef"] = current_ship.map_name
 	.["shipInfo"] = list(
 		name = current_ship.name,
-		class = current_ship.source_template.name,
+		class = current_ship.source_template?.name,
 		mass = current_ship.mass,
 		sensor_range = current_ship.sensor_range
 	)

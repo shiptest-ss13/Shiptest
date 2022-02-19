@@ -154,8 +154,8 @@ GLOBAL_LIST_EMPTY(custom_shuttle_machines)		//Machines that require updating (He
 	var/invertedDir = REVERSE_DIR(portDirection)
 	if(!portDirection || !invertedDir)
 		to_chat(usr, "<span class='warning'>Shuttle creation aborted, docking airlock must be on an external wall. Please select a new airlock.</span>")
-		port.Destroy()
-		stationary_port.Destroy()
+		qdel(port, TRUE)
+		qdel(stationary_port, TRUE)
 		target_ship = null
 		return FALSE
 	port.dir = invertedDir
@@ -163,8 +163,8 @@ GLOBAL_LIST_EMPTY(custom_shuttle_machines)		//Machines that require updating (He
 
 	if(!calculate_bounds(port))
 		to_chat(usr, "<span class='warning'>Bluespace calculations failed, please select a new airlock.</span>")
-		port.Destroy()
-		stationary_port.Destroy()
+		qdel(port, TRUE)
+		qdel(stationary_port, TRUE)
 		target_ship = null
 		return FALSE
 

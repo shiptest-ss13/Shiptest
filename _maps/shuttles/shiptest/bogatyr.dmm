@@ -62,12 +62,11 @@
 /turf/open/floor/mineral/titanium/purple,
 /area/ship/science)
 "cD" = (
-/obj/structure/grille,
-/obj/structure/window/reinforced/fulltile,
+/obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
 /area/ship/cargo)
 "cL" = (
-/obj/machinery/computer/communications,
+/obj/machinery/computer/monitor,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/bridge)
 "cT" = (
@@ -134,6 +133,7 @@
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
+/obj/item/stack/tape/industrial,
 /turf/open/floor/plating,
 /area/ship/maintenance/aft)
 "fa" = (
@@ -180,6 +180,11 @@
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/aft)
+"gi" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/suit_storage_unit/independent/pilot,
+/turf/open/floor/mineral/titanium/yellow,
+/area/ship/cargo)
 "gs" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
@@ -375,11 +380,10 @@
 /turf/open/floor/mineral/titanium/blue,
 /area/ship/medical)
 "pG" = (
-/obj/structure/window/reinforced/fulltile,
-/obj/structure/grille,
 /obj/machinery/door/poddoor{
 	id = "bogatyr_windows"
 	},
+/obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
 /area/ship/maintenance/central)
 "pO" = (
@@ -412,11 +416,10 @@
 /turf/open/floor/mineral/plastitanium/red,
 /area/ship/maintenance/central)
 "qC" = (
-/obj/structure/grille,
-/obj/structure/window/reinforced/fulltile,
 /obj/machinery/door/poddoor{
 	id = "bogatyr_windows"
 	},
+/obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
 /area/ship/medical)
 "qQ" = (
@@ -643,7 +646,9 @@
 /turf/open/floor/mineral/titanium/yellow,
 /area/ship/cargo)
 "xL" = (
-/obj/machinery/cryopod,
+/obj/machinery/cryopod{
+	dir = 8
+	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/crew/dorm)
 "xR" = (
@@ -782,6 +787,8 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
 	dir = 4
 	},
+/obj/item/gun/ballistic/revolver/nagant,
+/obj/item/ammo_box/n762,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/bridge)
 "AV" = (
@@ -1314,7 +1321,7 @@
 /turf/open/floor/mineral/plastitanium/red,
 /area/ship/maintenance/central)
 "RD" = (
-/obj/machinery/suit_storage_unit/standard_unit,
+/obj/machinery/suit_storage_unit/independent/engineering,
 /turf/open/floor/mineral/titanium/yellow,
 /area/ship/cargo)
 "RN" = (
@@ -1516,11 +1523,10 @@
 /turf/open/floor/mineral/titanium/blue,
 /area/ship/medical)
 "WR" = (
-/obj/structure/grille,
-/obj/structure/window/reinforced/fulltile,
 /obj/machinery/door/poddoor{
 	id = "bogatyr_bridge"
 	},
+/obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
 /area/ship/bridge)
 "WX" = (
@@ -1811,7 +1817,7 @@ Dj
 Xh
 xR
 RD
-qs
+gi
 qs
 Xh
 pV

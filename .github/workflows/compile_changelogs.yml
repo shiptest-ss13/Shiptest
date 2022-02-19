@@ -22,7 +22,7 @@ jobs:
         if: steps.value_holder.outputs.CL_ENABLED
         uses: actions/setup-python@v1
         with:
-          python-version: '3.x'
+          python-version: '3.9'
       - name: "Install deps"
         if: steps.value_holder.outputs.CL_ENABLED
         run: |
@@ -37,7 +37,7 @@ jobs:
       - name: "Compile"
         if: steps.value_holder.outputs.CL_ENABLED
         run: |
-          python tools/ss13_genchangelog.py html/changelog.html html/changelogs
+          python tools/changelog/ss13_genchangelog.py html/changelog.html html/changelogs
       - name: "Convert Lineendings"
         if: steps.value_holder.outputs.CL_ENABLED
         run: |

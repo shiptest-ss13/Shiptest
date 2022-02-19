@@ -1343,6 +1343,7 @@
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
 	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/engine,
 /area/ship/engineering/engine)
 "vg" = (
@@ -1791,9 +1792,6 @@
 "AX" = (
 /obj/structure/fans/tiny,
 /obj/effect/turf_decal/industrial/warning,
-/obj/machinery/atmospherics/pipe/simple/orange/visible{
-	dir = 4
-	},
 /obj/machinery/door/poddoor{
 	id = "moth_east_door";
 	name = "Eastern Blast Door"
@@ -1813,6 +1811,7 @@
 	desc = "A plushie depicting a mothperson. Smells like incense.";
 	name = "dreamy moth plushie"
 	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /turf/open/floor/mineral/plastitanium/red,
 /area/ship/crew)
 "Bd" = (
@@ -2440,8 +2439,8 @@
 	},
 /obj/machinery/door/firedoor/border_only,
 /obj/structure/cable,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/components/binary/valve/layer2,
+/obj/machinery/atmospherics/components/binary/valve/layer4,
 /turf/open/floor/plating/airless,
 /area/ship/engineering)
 "MA" = (

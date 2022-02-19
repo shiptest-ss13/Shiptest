@@ -1,3 +1,5 @@
+// Hey! Listen! Update \config\jungleruinblacklist.txt with your new ruins!
+
 /datum/map_template/ruin/jungle/jungle_botany_ruin
 	id = "jungle_botany-ruin"
 	suffix = "jungle_botany.dmm"

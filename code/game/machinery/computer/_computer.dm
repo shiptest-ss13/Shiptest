@@ -16,7 +16,6 @@
 	var/time_to_screwdrive = 20
 	var/authenticated = 0
 
-
 /obj/machinery/computer/Initialize(mapload, obj/item/circuitboard/C)
 	. = ..()
 	power_change()
@@ -111,13 +110,12 @@
 				new /obj/item/shard(drop_location())
 				new /obj/item/shard(drop_location())
 				A.state = 3
-				A.icon_state = "3"
 			else
 				if(user)
 					to_chat(user, "<span class='notice'>You disconnect the monitor.</span>")
 				A.state = 4
-				A.icon_state = "4"
 			circuit = null
+			A.update_icon()
 		for(var/obj/C in src)
 			C.forceMove(loc)
 	qdel(src)

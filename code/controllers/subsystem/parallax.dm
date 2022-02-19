@@ -39,11 +39,9 @@ SUBSYSTEM_DEF(parallax)
 		for (A; isloc(A.loc) && !isturf(A.loc); A = A.loc);
 
 		if(A != C.movingmob)
-			if(C.movingmob != null)
-				C.movingmob.client_mobs_in_contents -= C.mob
-				UNSETEMPTY(C.movingmob.client_mobs_in_contents)
-			LAZYINITLIST(A.client_mobs_in_contents)
-			A.client_mobs_in_contents += C.mob
+			if(C.movingmob)
+				LAZYREMOVE(C.movingmob.client_mobs_in_contents, C.mob)
+			LAZYADD(A.client_mobs_in_contents, C.mob)
 			C.movingmob = A
 		if (MC_TICK_CHECK)
 			return

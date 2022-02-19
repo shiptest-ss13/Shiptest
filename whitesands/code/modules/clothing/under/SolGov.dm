@@ -34,7 +34,7 @@
 	icon = 'icons/obj/clothing/under/solgov.dmi' //ogan i am going to kill you i stg
 	mob_overlay_icon = 'icons/mob/clothing/under/solgov.dmi'
 	name = "SolGov envirosuit"
-	desc = "Why the human centric government sent the science-fiction equivalent of a leper to this station is beyond me."
+	desc = "The pride of Solarian plasmamen everywhere- though this tends to be a somewhat exclusive club, due to Sol's agressive workplace safety regulations."
 	icon_state = "plasma_solgov"
 	item_state = "plasma_solgov"
 	can_adjust = FALSE

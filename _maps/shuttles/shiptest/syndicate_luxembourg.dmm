@@ -426,23 +426,6 @@
 	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/ship/bridge)
-"hR" = (
-/obj/machinery/sleeper/syndie{
-	dir = 4
-	},
-/obj/machinery/power/apc/auto_name/south,
-/obj/structure/cable{
-	icon_state = "0-4"
-	},
-/obj/machinery/power/terminal{
-	dir = 8
-	},
-/obj/machinery/firealarm{
-	dir = 4;
-	pixel_x = -24
-	},
-/turf/open/floor/plasteel/dark,
-/area/ship/medical)
 "hV" = (
 /obj/machinery/computer/operating{
 	dir = 8
@@ -478,6 +461,28 @@
 /obj/structure/window/plasma/reinforced,
 /obj/item/reagent_containers/food/drinks/shaker,
 /turf/open/floor/mineral/plastitanium/red,
+/area/ship/bridge)
+"iR" = (
+/obj/machinery/power/shuttle/engine/fueled/plasma{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/layer_manifold,
+/obj/machinery/door/poddoor/shutters{
+	id = "externalshutters"
+	},
+/turf/open/floor/plating,
+/area/ship/engineering)
+"iV" = (
+/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
+/obj/docking_port/mobile{
+	can_move_docking_ports = 1;
+	dir = 2;
+	launch_status = 0
+	},
+/obj/machinery/door/poddoor/shutters{
+	id = "externalshutters"
+	},
+/turf/open/floor/plating,
 /area/ship/bridge)
 "iW" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
@@ -719,13 +724,6 @@
 	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/ship/bridge)
-"ol" = (
-/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
-/obj/machinery/door/poddoor/shutters{
-	id = "externalshutters"
-	},
-/turf/open/floor/plating,
-/area/ship/cargo)
 "oy" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4,
 /turf/open/floor/plasteel/dark,
@@ -804,23 +802,6 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
 /turf/open/floor/plating,
 /area/ship/engineering)
-"qj" = (
-/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
-/obj/machinery/door/poddoor/shutters{
-	id = "externalshutters"
-	},
-/turf/open/floor/plating,
-/area/ship/storage)
-"qm" = (
-/obj/machinery/power/shuttle/engine/fueled/plasma{
-	dir = 1
-	},
-/obj/machinery/atmospherics/pipe/layer_manifold,
-/obj/machinery/door/poddoor/shutters{
-	id = "externalshutters"
-	},
-/turf/open/floor/plating,
-/area/ship/engineering)
 "qp" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
@@ -890,6 +871,15 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating,
+/area/ship/engineering)
+"sh" = (
+/obj/machinery/power/shuttle/engine/fueled/plasma{
+	dir = 1
+	},
+/obj/machinery/door/poddoor/shutters{
+	id = "externalshutters"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "si" = (
@@ -1124,6 +1114,13 @@
 /obj/structure/window/reinforced/spawner,
 /turf/open/floor/plating,
 /area/ship/engineering)
+"wN" = (
+/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
+/obj/machinery/door/poddoor/shutters{
+	id = "externalshutters"
+	},
+/turf/open/floor/plating,
+/area/ship/medical)
 "wT" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/siphon/atmos/toxin_output{
 	dir = 8
@@ -1167,27 +1164,13 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
-"yp" = (
+"yq" = (
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
-/obj/docking_port/mobile{
-	can_move_docking_ports = 1;
-	dir = 2;
-	launch_status = 0
-	},
 /obj/machinery/door/poddoor/shutters{
 	id = "externalshutters"
 	},
 /turf/open/floor/plating,
 /area/ship/bridge)
-"yC" = (
-/obj/machinery/power/shuttle/engine/fueled/plasma{
-	dir = 1
-	},
-/obj/machinery/door/poddoor/shutters{
-	id = "externalshutters"
-	},
-/turf/open/floor/plating,
-/area/ship/engineering)
 "yI" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 4
@@ -1216,13 +1199,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
-"zA" = (
-/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
-/obj/machinery/door/poddoor/shutters{
-	id = "externalshutters"
-	},
-/turf/open/floor/plating,
-/area/ship/medical)
 "zL" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -1281,13 +1257,6 @@
 	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/ship/bridge)
-"AM" = (
-/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
-/obj/machinery/door/poddoor/shutters{
-	id = "externalshutters"
-	},
-/turf/open/floor/plating,
-/area/ship/crew/dorm)
 "Bd" = (
 /obj/machinery/selling_pad,
 /obj/effect/turf_decal/box,
@@ -1636,6 +1605,20 @@
 "Ka" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/storage)
+"Kh" = (
+/obj/machinery/sleeper/syndie{
+	dir = 4
+	},
+/obj/machinery/power/apc/auto_name/south,
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/machinery/firealarm{
+	dir = 4;
+	pixel_x = -24
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/medical)
 "Kk" = (
 /obj/machinery/air_sensor/atmos/toxin_tank,
 /turf/open/floor/engine/plasma,
@@ -1781,13 +1764,13 @@
 	},
 /turf/open/floor/carpet/donk,
 /area/ship/crew/dorm)
-"OE" = (
+"OF" = (
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor/shutters{
 	id = "externalshutters"
 	},
 /turf/open/floor/plating,
-/area/ship/bridge)
+/area/ship/crew/dorm)
 "OI" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer4{
 	dir = 8
@@ -1849,6 +1832,36 @@
 	dir = 4
 	},
 /turf/open/floor/mineral/plastitanium/red,
+/area/ship/bridge)
+"Qm" = (
+/obj/machinery/computer/selling_pad_control{
+	dir = 4
+	},
+/obj/machinery/button/door{
+	id = "syndiefuck";
+	name = "Loading Shutters Control";
+	pixel_x = -24;
+	pixel_y = -5
+	},
+/obj/machinery/button/door{
+	id = "warehouse";
+	name = "Warehouse Control";
+	pixel_x = -24;
+	pixel_y = 5
+	},
+/obj/machinery/button/door{
+	id = "cargodoors";
+	name = "Cargo Bay Shutter Control";
+	pixel_x = -38;
+	pixel_y = 5
+	},
+/obj/machinery/button/door{
+	id = "externalshutters";
+	name = "External Shutters Control";
+	pixel_x = -38;
+	pixel_y = -5
+	},
+/turf/open/floor/mineral/plastitanium,
 /area/ship/bridge)
 "Qq" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4,
@@ -1950,6 +1963,13 @@
 /obj/effect/turf_decal/corner/brown,
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
+"RH" = (
+/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
+/obj/machinery/door/poddoor/shutters{
+	id = "externalshutters"
+	},
+/turf/open/floor/plating,
+/area/ship/cargo)
 "RV" = (
 /obj/machinery/airalarm/directional/east,
 /turf/open/floor/mineral/plastitanium,
@@ -2025,6 +2045,13 @@
 /obj/structure/closet/secure_closet/engineering_electrical,
 /turf/open/floor/plating,
 /area/ship/engineering)
+"Uv" = (
+/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
+/obj/machinery/door/poddoor/shutters{
+	id = "externalshutters"
+	},
+/turf/open/floor/plating,
+/area/ship/storage)
 "Ux" = (
 /obj/machinery/airalarm/directional/north,
 /turf/open/floor/mineral/plastitanium,
@@ -2126,36 +2153,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/carpet/donk,
 /area/ship/crew/dorm)
-"WU" = (
-/obj/machinery/computer/selling_pad_control{
-	dir = 4
-	},
-/obj/machinery/button/door{
-	id = "syndiefuck";
-	name = "Loading Shutters Control";
-	pixel_x = -24;
-	pixel_y = -5
-	},
-/obj/machinery/button/door{
-	id = "warehouse";
-	name = "Warehouse Control";
-	pixel_x = -24;
-	pixel_y = 5
-	},
-/obj/machinery/button/door{
-	id = "cargodoors";
-	name = "Cargo Bay Shutter Control";
-	pixel_x = -38;
-	pixel_y = 5
-	},
-/obj/machinery/button/door{
-	id = "externalshutters";
-	name = "External Shutters Control";
-	pixel_x = -38;
-	pixel_y = -5
-	},
-/turf/open/floor/mineral/plastitanium,
-/area/ship/bridge)
 "Xe" = (
 /obj/item/banner/cargo,
 /obj/machinery/firealarm{
@@ -2336,7 +2333,7 @@ Nr
 Nr
 Nr
 hs
-ol
+RH
 hs
 DS
 JQ
@@ -2344,8 +2341,8 @@ JQ
 By
 ur
 Ka
-qj
-qj
+Uv
+Uv
 Ka
 Nr
 Nr
@@ -2376,7 +2373,7 @@ ft
 QF
 MX
 Ka
-qj
+Uv
 Ka
 Nr
 CP
@@ -2407,7 +2404,7 @@ GU
 dc
 Xk
 Ka
-qj
+Uv
 Ka
 VR
 qR
@@ -2420,7 +2417,7 @@ Nr
 (5,1,1) = {"
 Nr
 Nr
-ol
+RH
 HF
 RG
 yl
@@ -2501,13 +2498,13 @@ Hy
 sq
 vx
 qg
-qm
+iR
 hd
 "}
 (8,1,1) = {"
 Nr
-OE
-OE
+yq
+yq
 Yv
 cV
 TW
@@ -2530,14 +2527,14 @@ si
 Bo
 wn
 wE
-yC
+sh
 Nr
 "}
 (9,1,1) = {"
-OE
-OE
+yq
+yq
 bj
-WU
+Qm
 TW
 TW
 TW
@@ -2563,7 +2560,7 @@ vp
 vp
 "}
 (10,1,1) = {"
-yp
+iV
 je
 bR
 TW
@@ -2592,8 +2589,8 @@ pV
 qP
 "}
 (11,1,1) = {"
-OE
-OE
+yq
+yq
 cQ
 Bd
 TW
@@ -2622,8 +2619,8 @@ Er
 "}
 (12,1,1) = {"
 Nr
-OE
-OE
+yq
+yq
 Yv
 pv
 TW
@@ -2646,7 +2643,7 @@ Ul
 zj
 wn
 wE
-yC
+sh
 Nr
 "}
 (13,1,1) = {"
@@ -2675,7 +2672,7 @@ lJ
 se
 wn
 wE
-yC
+sh
 UE
 "}
 (14,1,1) = {"
@@ -2710,14 +2707,14 @@ Nr
 (15,1,1) = {"
 Nr
 Nr
-zA
+wN
 Af
 dh
 NW
 cv
 ST
 gO
-hR
+Kh
 fI
 ct
 Dt
@@ -2755,7 +2752,7 @@ zL
 gm
 Ml
 EO
-AM
+OF
 EO
 VR
 EW
@@ -2782,7 +2779,7 @@ WC
 Ml
 Ml
 EO
-AM
+OF
 EO
 Nr
 ie
@@ -2800,7 +2797,7 @@ Nr
 Nr
 Nr
 fI
-zA
+wN
 gw
 gI
 hh
@@ -2808,8 +2805,8 @@ hV
 fI
 Ml
 EO
-AM
-AM
+OF
+OF
 EO
 Nr
 Nr
@@ -2832,7 +2829,7 @@ Nr
 Nr
 fI
 fI
-zA
+wN
 fI
 fI
 EO
