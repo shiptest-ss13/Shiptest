@@ -339,7 +339,7 @@
 	var/list/shuttle_choices = list("Purchase ship..." = "Purchase") //Dummy for purchase option
 
 	for(var/datum/overmap/ship/controlled/S as anything in SSovermap.controlled_ships)
-		if((length(S.shuttle_port.spawn_points) < 1) || !S.join_allowed)
+		if((length(S.shuttle_port.spawn_points) < 1) || (length(S.job_slots) < 1) || !S.join_allowed)
 			continue
 		shuttle_choices[S.name + " ([S.source_template.short_name ? S.source_template.short_name : "Unknown-class"])"] = S //Try to get the class name
 
@@ -353,7 +353,7 @@
 			return LateChoices()
 		if(template.limit)
 			var/count = 0
-			for(var/datum/overmap/ship/controlled/X in SSovermap.controlled_ships)
+			for(var/datum/overmap/ship/controlled/X as anything in SSovermap.controlled_ships)
 				if(X.source_template == template)
 					count++
 					if(template.limit <= count)
@@ -361,7 +361,7 @@
 						return
 		close_spawn_windows()
 		to_chat(usr, "<span class='danger'>Your [template.name] is being prepared. Please be patient!</span>")
-		var/datum/overmap/ship/controlled/target = new(rand(1, SSovermap.size), rand(1, SSovermap.size),template)
+		var/datum/overmap/ship/controlled/target = new(SSovermap.get_unused_overmap_square(), template)
 		if(!istype(target))
 			to_chat(usr, "<span class='danger'>There was an error loading the ship. Please contact admins!</span>")
 			new_player_panel()

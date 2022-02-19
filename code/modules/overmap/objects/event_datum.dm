@@ -12,7 +12,7 @@
 	///How many additional tiles to spawn at once in the selected orbit. Used with OVERMAP_GENERATOR_SOLAR.
 	var/chain_rate = 0
 
-/datum/overmap/event/Initialize(mapload)
+/datum/overmap/event/Initialize(position, ...)
 	. = ..()
 	SSovermap.events += src
 
@@ -45,7 +45,7 @@
 	var/max_damage = 15
 	var/min_damage = 5
 
-/datum/overmap/event/meteor/Initialize(mapload)
+/datum/overmap/event/meteor/Initialize(position, ...)
 	. = ..()
 	token.icon_state = "meteor[rand(1, 4)]"
 
@@ -81,7 +81,7 @@
 	chain_rate = 2
 	var/strength = 3
 
-/datum/overmap/event/emp/Initialize(mapload)
+/datum/overmap/event/emp/Initialize(position, ...)
 	. = ..()
 	token.icon_state = "ion[rand(1, 4)]"
 
@@ -116,7 +116,7 @@
 	var/max_damage = 15
 	var/min_damage = 5
 
-/datum/overmap/event/electric/Initialize(mapload)
+/datum/overmap/event/electric/Initialize(position, ...)
 	. = ..()
 	token.icon_state = "electrical[rand(1, 4)]"
 
@@ -151,7 +151,7 @@
 	chain_rate = 8
 	spread_chance = 75
 
-/datum/overmap/event/nebula/Initialize(mapload)
+/datum/overmap/event/nebula/Initialize(position, ...)
 	. = ..()
 	token.opacity = TRUE
 
@@ -166,13 +166,13 @@
 	///Amount of times a ship can pass through before it collapses
 	var/stability
 
-/datum/overmap/event/wormhole/Initialize(placement_x, placement_y, _other_wormhole)
+/datum/overmap/event/wormhole/Initialize(position, _other_wormhole, ...)
 	. = ..()
 	stability = rand(1, 5)
 	if(_other_wormhole)
 		other_wormhole = _other_wormhole
 	if(!other_wormhole)
-		other_wormhole = new(null, null, src) //Create a new wormhole at a random location
+		other_wormhole = new(null, src) //Create a new wormhole at a random location
 
 /datum/overmap/event/wormhole/affect_ship(datum/overmap/ship/controlled/S)
 	if(!other_wormhole)

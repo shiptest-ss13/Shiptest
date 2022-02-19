@@ -10,7 +10,7 @@ SUBSYSTEM_DEF(overmap)
 
 	///List of all overmap objects.
 	var/list/overmap_objects
-	///List of all simulated ships
+	///List of all simulated ships. All ships in this list are fully initialized.
 	var/list/controlled_ships
 	///List of all events
 	var/list/events
@@ -28,8 +28,8 @@ SUBSYSTEM_DEF(overmap)
 	///Cooldown on dynamically loading encounters
 	var/encounter_cooldown = 0
 
+	///The two-dimensional list that contains every single tile in the overmap as a sublist.
 	var/list/list/overmap_container
-	var/list/overmap_datum_ships
 
 /**
   * Creates an overmap object for shuttles, triggers initialization procs for ships
@@ -57,7 +57,7 @@ SUBSYSTEM_DEF(overmap)
 	if (generator_type == OVERMAP_GENERATOR_SOLAR)
 		var/datum/overmap/star/center
 		var/startype = pick(/datum/overmap/star, /datum/overmap/star/medium, /datum/overmap/star/big, /datum/overmap/star/binary)
-		center = new startype(size / 2, size / 2)
+		center = new startype(list("x" = size / 2, "y" = size / 2))
 		radius_positions = list()
 		for(var/x in 1 to size)
 			for(var/y in 1 to size)
@@ -93,6 +93,7 @@ SUBSYSTEM_DEF(overmap)
 				thing_to_link = overmap_container[x][y]
 			. += "<a href='?src=[REF(src)];view_object=[REF(thing_to_link)]' title='[x]x, [y]y'>[add_leading(add_trailing(tile, 2), 3)]</a>" //"centers" the character
 		. += "<br>"
+		CHECK_TICK
 	. += "</code>"
 	var/datum/browser/popup = new(usr, "overmap_viewer", "Overmap Viewer", 850, 700)
 	popup.set_content(.)
@@ -149,13 +150,13 @@ SUBSYSTEM_DEF(overmap)
 			orbits -= "[selected_orbit]" // This orbit is full, move onto the next
 			continue
 
-		var/datum/overmap/event/E = new event_type(T["x"], T["y"])
+		var/datum/overmap/event/E = new event_type(T)
 		for(var/list/position as anything in radius_positions[selected_orbit])
 			if(locate(/datum/overmap) in overmap_container[position["x"]][position["y"]])
 				continue
 			if(!prob(E.spread_chance))
 				continue
-			new event_type(position["x"], position["y"])
+			new event_type(position)
 
 /**
   * See [/datum/controller/subsystem/overmap/proc/spawn_events], spawns "veins" (like ores) of events
@@ -163,7 +164,7 @@ SUBSYSTEM_DEF(overmap)
 /datum/controller/subsystem/overmap/proc/spawn_event_cluster(datum/overmap/event/type, list/location, chance)
 	if(CONFIG_GET(number/max_overmap_events) <= LAZYLEN(events))
 		return
-	var/datum/overmap/event/E = new type(location["x"], location["y"])
+	var/datum/overmap/event/E = new type(location)
 	if(!chance)
 		chance = E.spread_chance
 	for(var/dir in GLOB.cardinals)
@@ -171,13 +172,13 @@ SUBSYSTEM_DEF(overmap)
 
 			if(locate(/datum/overmap) in SSovermap.overmap_container[location["x"]][location["y"]])
 				continue
-			spawn_event_cluster(type, location["x"], location["y"], chance / 2)
+			spawn_event_cluster(type, location, chance / 2)
 
 /datum/controller/subsystem/overmap/proc/spawn_initial_ships()
 #ifndef UNIT_TESTS
 	var/datum/map_template/shuttle/selected_template = SSmapping.maplist[pick(SSmapping.maplist)]
 	INIT_ANNOUNCE("Loading [selected_template.name]...")
-	new /datum/overmap/ship/controlled(null, null, selected_template)
+	new /datum/overmap/ship/controlled(null, selected_template)
 	if(SSdbcore.Connect())
 		var/datum/DBQuery/query_round_map_name = SSdbcore.NewQuery({"
 			UPDATE [format_table_name("round")] SET map_name = :map_name WHERE id = :round_id

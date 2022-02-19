@@ -14,7 +14,7 @@
 	var/limit
 	var/cost
 	var/short_name
-	var/list/job_slots
+	var/list/job_slots = list()
 	var/list/name_categories = list("GENERAL")
 	var/prefix = "SV"
 
@@ -109,6 +109,10 @@
 /// Shiptest-specific main maps. Do not make subtypes! Make a json in /_maps/configs/ instead.
 /datum/map_template/shuttle/shiptest
 	category = "shiptest"
+
+/datum/map_template/shuttle/custom
+	job_slots = list(new /datum/job/assistant = 5) // There will already be a captain, probably!
+	file_name = "custom_shuttle" // Dummy
 
 /// Mining shuttles
 /datum/map_template/shuttle/mining

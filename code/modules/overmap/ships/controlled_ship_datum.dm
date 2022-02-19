@@ -21,8 +21,8 @@
 	///Vessel approximate mass
 	var/mass
 
-	///The docking port of the linked shuttle
-	var/obj/docking_port/mobile/shuttle_port
+	///The docking port of the linked shuttle. To add a port after creating a controlled ship datum, use [/datum/overmap/ship/controlled/proc/connect_new_shuttle_port].
+	VAR_FINAL/obj/docking_port/mobile/shuttle_port
 	///The map template the shuttle was spawned from, if it was indeed created from a template. CAN BE NULL (ex. custom-built ships).
 	var/datum/map_template/shuttle/source_template
 
@@ -44,30 +44,36 @@
 	var/oldname = name
 	if(!..() || (!COOLDOWN_FINISHED(src, rename_cooldown) && !force))
 		return FALSE
-	priority_announce("The [oldname] has been renamed to the [new_name].", "Docking Announcement", sender_override = new_name, zlevel = shuttle_port.virtual_z())
 	message_admins("[key_name_admin(usr)] renamed vessel '[oldname]' to '[new_name]'")
-	shuttle_port.name = new_name
+	shuttle_port?.name = new_name
 	ship_account.account_holder = new_name
-	for(var/area/shuttle_area as anything in shuttle_port.shuttle_areas)
+	for(var/area/shuttle_area as anything in shuttle_port?.shuttle_areas)
 		shuttle_area.rename_area("[new_name] [initial(shuttle_area.name)]")
 	if(!force)
 		COOLDOWN_START(src, rename_cooldown, 5 MINUTES)
+		priority_announce("The [oldname] has been renamed to the [new_name].", "Docking Announcement", sender_override = new_name, zlevel = shuttle_port.virtual_z())
 	return TRUE
 
-/datum/overmap/ship/controlled/Initialize(placement_x, placement_y, datum/map_template/shuttle/creation_template)
+/**
+  * * creation_template - The template used to create the ship.
+  * * target_port - The port to dock the new ship to.
+  */
+/datum/overmap/ship/controlled/Initialize(position, datum/map_template/shuttle/creation_template, create_shuttle = TRUE)
 	. = ..()
 	if(creation_template)
 		source_template = creation_template
-		job_slots = source_template.job_slots.Copy()
-		shuttle_port = SSshuttle.load_template(creation_template, src)
-		ship_account = new(name, 7500)
+		job_slots = source_template.job_slots?.Copy()
+		if(create_shuttle)
+			shuttle_port = SSshuttle.load_template(creation_template, src)
+			calculate_mass()
+			refresh_engines()
+
+	ship_account = new(name, 7500)
 #ifdef UNIT_TESTS
-		Rename("[source_template]")
+	Rename("[source_template]")
 #else
-		Rename("[source_template.prefix] [pick_list_replacements(SHIP_NAMES_FILE, pick(source_template.name_categories))]", TRUE)
+	Rename("[source_template.prefix] [pick_list_replacements(SHIP_NAMES_FILE, pick(source_template.name_categories))]", TRUE)
 #endif
-		calculate_mass()
-		refresh_engines()
 	SSovermap.controlled_ships += src
 
 /datum/overmap/ship/controlled/Destroy()
@@ -113,7 +119,8 @@
 	dock_time = dock_time_temp // Set it back to the original value if it was changed
 
 /datum/overmap/ship/controlled/complete_undock()
-	shuttle_port.enterTransit()
+	shuttle_port.initiate_docking(shuttle_port.assigned_transit)
+	log_shuttle("[src] [REF(src)] COMPLETE UNDOCK: FINISHED UNDOCK FROM [docked_to]")
 	return ..()
 
 /datum/overmap/ship/controlled/pre_docked(datum/overmap/dock_requester)
@@ -201,8 +208,27 @@
 /**
   * Bastardized version of GLOB.manifest.manifest_inject, but used per ship
   *
+  * * H - Human mob to add to the manifest
+  * * C - client of the mob to add to the manifest
+  * * human_job - Job of the human mob to add to the manifest
   */
 /datum/overmap/ship/controlled/proc/manifest_inject(mob/living/carbon/human/H, client/C, datum/job/human_job)
 	set waitfor = FALSE
 	if(H.mind && (H.mind.assigned_role != H.mind.special_role))
 		manifest[H.real_name] = human_job
+
+/**
+  * Connects a new shuttle port to the ship datum. Should be used very shortly after the ship is created, if at all.
+  * Used to connect the shuttle port to a ship datum that was created without a template.
+  *
+  * * new_port - The new shuttle port to connect to the ship.
+  */
+/datum/overmap/ship/controlled/proc/connect_new_shuttle_port(obj/docking_port/mobile/new_port)
+	if(shuttle_port)
+		CRASH("Attempted to connect a new port to a ship that already has a port!")
+	shuttle_port = new_port
+	calculate_mass()
+	refresh_engines()
+	shuttle_port.name = name
+	for(var/area/shuttle_area as anything in shuttle_port?.shuttle_areas)
+		shuttle_area.rename_area("[name] [initial(shuttle_area.name)]")

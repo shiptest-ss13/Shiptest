@@ -193,13 +193,12 @@
 
 /obj/docking_port/stationary/proc/load_roundstart()
 	if(roundstart_template) // passed a PATH
-		var/sid = "[initial(roundstart_template.file_name)]"
-
-		roundstart_template = SSmapping.shuttle_templates[sid]
+		var/template = SSmapping.shuttle_templates[initial(roundstart_template.file_name)]
 		if(!roundstart_template)
-			CRASH("Invalid path ([sid]/[roundstart_template]) passed to docking port.")
+			CRASH("Invalid path ([template]) passed to docking port.")
 
-		SSshuttle.action_load(roundstart_template, src)
+		var/datum/overmap/ship/controlled/new_ship = new(SSovermap.get_overmap_object_by_location(src), template, FALSE) //Don't instantiate, we handle that ourselves
+		new_ship.connect_new_shuttle_port(SSshuttle.action_load(template, new_ship, src))
 
 //returns first-found touching shuttleport
 /obj/docking_port/stationary/get_docked()

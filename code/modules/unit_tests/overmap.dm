@@ -1,5 +1,5 @@
 /datum/unit_test/overmap_move/Run()
-	var/datum/overmap/ship/S = new /datum/overmap/ship(1, 1)
+	var/datum/overmap/ship/S = new /datum/overmap/ship(list("x" = 1, "y" = 1))
 
 	S.burn_engines(NORTHEAST)
 	TEST_ASSERT_EQUAL(S.speed[1] + S.speed[2], S.acceleration_speed, "Ship did not increase to proper speed after burning engines")

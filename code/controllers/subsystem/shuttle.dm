@@ -263,16 +263,17 @@ SUBSYSTEM_DEF(shuttle)
   * * loading_template - The shuttle map template to load. Can NOT be null.
   * * destination_port - The port the newly loaded shuttle will be sent to after being fully spawned in. If you want to have a transit dock be created, use [proc/load_template] instead. Should NOT be null.
   **/
-/datum/controller/subsystem/shuttle/proc/action_load(datum/map_template/shuttle/loading_template, obj/docking_port/stationary/destination_port)
+/datum/controller/subsystem/shuttle/proc/action_load(datum/map_template/shuttle/loading_template, datum/overmap/ship/controlled/parent, obj/docking_port/stationary/destination_port)
 	if(!destination_port)
 		CRASH("No destination port specified for shuttle load, aborting.")
-	var/obj/docking_port/mobile/new_shuttle = load_template(loading_template, FALSE)
+	var/obj/docking_port/mobile/new_shuttle = load_template(loading_template, parent, FALSE)
 	var/result = new_shuttle.canDock(destination_port)
 	if((result != SHUTTLE_CAN_DOCK))
 		WARNING("Template shuttle [new_shuttle] cannot dock at [destination_port] ([result]).")
 		new_shuttle.jumpToNullSpace()
 		return
 	new_shuttle.initiate_docking(destination_port)
+	return new_shuttle
 
 /**
   * This proc replaces the given shuttle with a fresh new one spawned from a template.
@@ -284,10 +285,10 @@ SUBSYSTEM_DEF(shuttle)
   * * to_replace - The shuttle to replace. Should NOT be null.
   * * replacement - The shuttle map template to load in place of the old shuttle. Can NOT be null.
   **/
-/datum/controller/subsystem/shuttle/proc/replace_shuttle(obj/docking_port/mobile/to_replace, datum/map_template/shuttle/replacement)
+/datum/controller/subsystem/shuttle/proc/replace_shuttle(obj/docking_port/mobile/to_replace, datum/overmap/ship/controlled/parent, datum/map_template/shuttle/replacement)
 	if(!to_replace || !replacement)
 		return
-	var/obj/docking_port/mobile/new_shuttle = load_template(replacement, FALSE)
+	var/obj/docking_port/mobile/new_shuttle = load_template(replacement, parent, FALSE)
 	var/obj/docking_port/stationary/old_shuttle_location = to_replace.get_docked()
 	var/result = new_shuttle.canDock(old_shuttle_location)
 
@@ -453,8 +454,8 @@ SUBSYSTEM_DEF(shuttle)
 			if(S)
 				. = TRUE
 				// If successful, returns the mobile docking port
-				var/datum/overmap/ship/controlled/new_ship = new(null, null, S)
-				if(new_ship)
+				var/datum/overmap/ship/controlled/new_ship = new(null, S)
+				if(new_ship?.shuttle_port)
 					user.forceMove(new_ship.get_jump_to_turf())
 					message_admins("[key_name_admin(usr)] loaded [new_ship] ([S]) with the shuttle manipulator.")
 					log_admin("[key_name(usr)] loaded [new_ship] ([S]) with the shuttle manipulator.</span>")

@@ -38,20 +38,29 @@
 	/// The icon state the token will be set to on init.
 	var/token_icon_state = "object"
 
-/datum/overmap/New(placement_x, placement_y, ...)
+/datum/overmap/New(position, ...)
 	SHOULD_NOT_OVERRIDE(TRUE) // Use [/datum/overmap/proc/Initialize] instead.
-	if(!placement_x || !placement_y)
-		var/list/position = SSovermap.get_unused_overmap_square(force = TRUE)
-		placement_x = position["x"]
-		placement_y = position["y"]
+	if(!position)
+		position = SSovermap.get_unused_overmap_square(force = TRUE)
+
 	contents = list()
-	SSovermap.overmap_container[placement_x][placement_y] += src
-	x = placement_x
-	y = placement_y
-	token = new token_type(OVERMAP_TOKEN_TURF(x, y), src)
+
+	if(islist(position))
+		SSovermap.overmap_container[position["x"]][position["y"]] += src
+		x = position["x"]
+		y = position["y"]
+		token = new token_type(OVERMAP_TOKEN_TURF(x, y), src)
+	else if(istype(position, /datum/overmap))
+		var/datum/overmap/docked_object = position
+		docked_object.contents += src
+		docked_to = docked_object
+		token = new token_type(docked_object.token, src)
+
 	SSovermap.overmap_objects += src
+
 	if(!char_rep && name)
 		char_rep = name[1]
+
 	Initialize(arglist(args))
 
 /datum/overmap/Destroy(force, ...)
@@ -69,7 +78,7 @@
   *
   * * placement_x/y - the X and Y position of the overmap datum.
   */
-/datum/overmap/proc/Initialize(placement_x, placement_y, ...)
+/datum/overmap/proc/Initialize(position, ...)
 	PROTECTED_PROC(TRUE)
 	return
 
@@ -129,7 +138,7 @@
   *
   * * new_name - The new name of the overmap datum.
   */
-/datum/overmap/proc/Rename(new_name)
+/datum/overmap/proc/Rename(new_name, force)
 	new_name = sanitize_name(new_name) //sets to a falsey value if it's not a valid name
 	if(!new_name || new_name == name)
 		return

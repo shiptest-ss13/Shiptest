@@ -24,7 +24,7 @@
 	///The planet that will be forced to load
 	var/force_encounter
 
-/datum/overmap/dynamic/Initialize(placement_x, placement_y, ...)
+/datum/overmap/dynamic/Initialize(position, ...)
 	. = ..()
 	choose_level_type()
 

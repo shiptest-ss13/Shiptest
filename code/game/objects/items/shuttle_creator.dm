@@ -177,7 +177,9 @@ GLOBAL_LIST_EMPTY(custom_shuttle_machines)		//Machines that require updating (He
 			curT.baseturfs.Insert(3, /turf/baseturf_skipover/shuttle)
 			port.shuttle_areas[cur_area] = TRUE
 
-	port.linkup(stationary_port)
+	var/datum/overmap/ship/controlled/new_custom_ship = new(SSovermap.get_overmap_object_by_location(port), SSmapping.shuttle_templates["custom_shuttle"], FALSE)
+	port.linkup(stationary_port, new_custom_ship)
+	new_custom_ship.connect_new_shuttle_port(port)
 
 	port.movement_force = list("KNOCKDOWN" = 0, "THROW" = 0)
 	port.initiate_docking(stationary_port)
@@ -186,7 +188,7 @@ GLOBAL_LIST_EMPTY(custom_shuttle_machines)		//Machines that require updating (He
 	port.timer = 0
 
 	port.register()
-	GLOB.custom_shuttle_count ++
+	GLOB.custom_shuttle_count++
 	message_admins("[ADMIN_LOOKUPFLW(user)] created a new shuttle with a [src] at [ADMIN_VERBOSEJMP(user)] ([GLOB.custom_shuttle_count] custom shuttles, limit is [CUSTOM_SHUTTLE_LIMIT])")
 	log_game("[key_name(user)] created a new shuttle with a [src] at [AREACOORD(user)] ([GLOB.custom_shuttle_count] custom shuttles, limit is [CUSTOM_SHUTTLE_LIMIT])")
 	return TRUE
