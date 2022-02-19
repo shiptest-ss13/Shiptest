@@ -83,6 +83,3 @@
 
 	/// WS edit - moth dust when hugging
 	var/mothdust
-
-	/// Timer to remove the dream_sequence timer when the mob is deleted
-	var/dream_timer

@@ -47,19 +47,17 @@ GLOBAL_LIST_INIT(huds, list(
 
 /datum/atom_hud/Destroy()
 	for(var/v in hudusers)
-		remove_hud_from(v, TRUE)
+		remove_hud_from(v)
 	for(var/v in hudatoms)
 		remove_from_hud(v)
 	GLOB.all_huds -= src
 	return ..()
 
-/datum/atom_hud/proc/remove_hud_from(mob/M, force = FALSE)
+/datum/atom_hud/proc/remove_hud_from(mob/M)
 	if(!M || !hudusers[M])
 		return
-	if (force || !--hudusers[M])
+	if (!--hudusers[M])
 		hudusers -= M
-		if(next_time_allowed[M])
-			next_time_allowed -= M
 		if(queued_to_see[M])
 			queued_to_see -= M
 		else
@@ -67,7 +65,7 @@ GLOBAL_LIST_INIT(huds, list(
 				remove_from_single_hud(M, A)
 
 /datum/atom_hud/proc/remove_from_hud(atom/A)
-	if(!A || !(A in hudatoms))
+	if(!A)
 		return FALSE
 	for(var/mob/M in hudusers)
 		remove_from_single_hud(M, A)

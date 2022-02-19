@@ -47,7 +47,7 @@
 			return FALSE
 	return ..()
 
-/obj/Initialize(mapload)
+/obj/Initialize()
 	if (islist(armor))
 		armor = getArmor(arglist(armor))
 	else if (!armor)
@@ -68,9 +68,9 @@
 				obj_flags &= ~string_to_objflag[flag]
 			else
 				obj_flags |= string_to_objflag[flag]
-	if((obj_flags & ON_BLUEPRINTS) && isturf(loc) && mapload)
+	if((obj_flags & ON_BLUEPRINTS) && isturf(loc))
 		var/turf/T = loc
-		T.add_blueprints(src)
+		T.add_blueprints_preround(src)
 
 /obj/Destroy(force=FALSE)
 	if(!ismachinery(src))

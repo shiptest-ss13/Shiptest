@@ -58,18 +58,12 @@
 
 /mob/living/carbon/proc/dream_sequence(list/dream_fragments)
 	if(stat != UNCONSCIOUS || HAS_TRAIT(src, TRAIT_CRITICAL_CONDITION))
-		stop_dreaming()
+		dreaming = FALSE
 		return
 	var/next_message = dream_fragments[1]
 	dream_fragments.Cut(1,2)
 	to_chat(src, "<span class='notice'><i>... [next_message] ...</i></span>")
 	if(LAZYLEN(dream_fragments))
-		dream_timer = addtimer(CALLBACK(src, .proc/dream_sequence, dream_fragments), rand(1, 3) SECONDS, TIMER_STOPPABLE)
+		addtimer(CALLBACK(src, .proc/dream_sequence, dream_fragments), rand(10,30))
 	else
-		stop_dreaming()
-
-/mob/living/carbon/proc/stop_dreaming()
-	dreaming = FALSE
-	if(dream_timer)
-		deltimer(dream_timer)
-	dream_timer = null
+		dreaming = FALSE
