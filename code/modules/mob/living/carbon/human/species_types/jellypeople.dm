@@ -91,10 +91,10 @@
 	. = ..()
 
 /datum/species/jelly/can_wag_tail(mob/living/carbon/human/H)
-	return list(("tail_human" in mutant_bodyparts) || ("waggingtail_human" in mutant_bodyparts), ("tail_lizard" in mutant_bodyparts) || ("waggingtail_lizard" in mutant_bodyparts))
+	return ("tail_human" in mutant_bodyparts) || ("waggingtail_human" in mutant_bodyparts)
 
 /datum/species/jelly/is_wagging_tail(mob/living/carbon/human/H)
-	return list(("waggingtail_human" in mutant_bodyparts), ("waggingtail_lizard" in mutant_bodyparts))
+	return ("waggingtail_human" in mutant_bodyparts)
 
 /datum/species/jelly/start_wagging_tail(mob/living/carbon/human/H)
 	if("tail_human" in mutant_bodyparts)
