@@ -178,19 +178,19 @@
 			var/area/template = GLOB.areas_by_type[/area/tdome/arena_source]
 			template.copy_contents_to(thunderdome)
 		if("set_name")
-			var/new_name = input(holder, "Please input a new name for the station.", "What?", "") as text|null
+			var/new_name = input(holder, "Please input a new name for the sector.", "What?", "") as text|null
 			if(!new_name)
 				return
 			set_station_name(new_name)
-			log_admin("[key_name(holder)] renamed the station to \"[new_name]\".")
+			log_admin("[key_name(holder)] renamed the sector to \"[new_name]\".")
 			message_admins("<span class='adminnotice'>[key_name_admin(holder)] renamed the station to: [new_name].</span>")
-			priority_announce("[command_name()] has renamed the station to \"[new_name]\".")
+			priority_announce("[command_name()] has renamed the sector to \"[new_name]\".")
 		if("reset_name")
 			var/new_name = new_station_name()
 			set_station_name(new_name)
-			log_admin("[key_name(holder)] reset the station name.")
-			message_admins("<span class='adminnotice'>[key_name_admin(holder)] reset the station name.</span>")
-			priority_announce("[command_name()] has renamed the station to \"[new_name]\".")
+			log_admin("[key_name(holder)] reset the sector's name.")
+			message_admins("<span class='adminnotice'>[key_name_admin(holder)] reset the sector's name.</span>")
+			priority_announce("[command_name()] has renamed the sector to \"[new_name]\".")
 		//!fun! buttons.
 		if("virus")
 			if(!is_funmin)

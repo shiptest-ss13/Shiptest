@@ -4,6 +4,7 @@ GLOBAL_LIST_EMPTY(ore_vein_landmarks)
 	name = "ore vein"
 	var/datum/material/resource
 	var/material_rate = 0
+	var/obj/machinery/deepcore/drill/miner
 
 /obj/effect/landmark/ore_vein/Initialize(mapload, var/datum/material/mat)
 	. = ..()
@@ -29,6 +30,13 @@ GLOBAL_LIST_EMPTY(ore_vein_landmarks)
 	resource = M
 	if((!material_rate) && ores_list[M])
 		material_rate = ores_list[M]
+
+/obj/effect/landmark/ore_vein/Destroy()
+	if(miner)
+		miner.active_vein = null
+		miner = null
+	GLOB.ore_vein_landmarks -= src
+	return ..()
 
 /obj/effect/landmark/ore_vein/proc/extract_ore() //Called by deepcore drills, returns a list of keyed ore stacks by amount
 	var/list/ores = list()

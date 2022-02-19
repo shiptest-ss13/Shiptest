@@ -181,3 +181,17 @@
 	lift.lift_master_datum.set_controls(UNLOCKED)
 
 #undef FLOOR_TRAVEL_TIME
+
+/obj/item/assembly/control/shieldwallgen
+	name = "holofield controller"
+	desc = "A small device used to remotely operate holofield generators."
+
+/obj/item/assembly/control/shieldwallgen/activate()
+	if(cooldown)
+		return
+	cooldown = TRUE
+	for(var/obj/machinery/power/shieldwallgen/machine in GLOB.machines)
+		if(machine.id == src.id)
+			INVOKE_ASYNC(machine, /obj/machinery/power/shieldwallgen.proc/toggle)
+
+	addtimer(VARSET_CALLBACK(src, cooldown, FALSE), 20)

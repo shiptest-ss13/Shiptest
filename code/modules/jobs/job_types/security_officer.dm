@@ -171,6 +171,22 @@ GLOBAL_LIST_INIT(available_depts, list(SEC_DEPT_ENGINEERING, SEC_DEPT_MEDICAL, S
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses
 	head = /obj/item/clothing/head/cowboy/sec
 
+/datum/outfit/job/security/inteq
+	name = "IRMG Enforcer"
+
+	head = /obj/item/clothing/head/helmet/inteq
+	suit = /obj/item/clothing/suit/armor/vest/alt
+	belt = /obj/item/storage/belt/security/webbing/inteq
+	mask = /obj/item/clothing/mask/gas/sechailer/inteq
+	uniform = /obj/item/clothing/under/syndicate/inteq
+	dcoat = /obj/item/clothing/suit/hooded/wintercoat/security/inteq
+	shoes = /obj/item/clothing/shoes/combat
+	glasses = /obj/item/clothing/glasses/hud/security/sunglasses/inteq
+	gloves = /obj/item/clothing/gloves/combat
+
+	courierbag = /obj/item/storage/backpack/messenger/inteq
+	backpack_contents = list(/obj/item/melee/baton/loaded=1, /obj/item/ammo_box/magazine/co9mm=1, /obj/item/gun_voucher=1,/obj/item/pda/security )
+
 //Shiptest outfits end
 
 /obj/item/radio/headset/headset_sec/alt/department/Initialize()

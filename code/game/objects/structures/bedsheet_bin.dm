@@ -139,7 +139,7 @@ LINEN BINS
 
 /obj/item/bedsheet/medical
 	name = "medical blanket"
-	desc = "It's a sterilized* blanket commonly used in the Medbay.  *Sterilization is voided if a virologist is present onboard the station."
+	desc = "It's a sterilized* blanket commonly used in the Medbay.  *Sterilization is voided if a virologist is present within a 10 LY radius*."
 	icon_state = "sheetmedical"
 	item_state = "sheetmedical"
 	dream_messages = list("healing", "life", "surgery", "a doctor")

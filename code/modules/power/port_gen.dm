@@ -14,6 +14,7 @@
 	var/consumption = 0
 	var/base_icon = "portgen0"
 	var/datum/looping_sound/generator/soundloop
+	var/emagger //just gonna log this.
 
 	interaction_flags_atom = INTERACT_ATOM_ATTACK_HAND | INTERACT_ATOM_UI_INTERACT | INTERACT_ATOM_REQUIRES_ANCHORED
 
@@ -57,6 +58,9 @@
 		START_PROCESSING(SSmachines, src)
 		update_icon()
 		soundloop.start()
+
+/obj/machinery/power/port_gen/proc/overheat()
+	message_admins("[src] [(obj_flags & EMAGGED) ? "Emagged by [emagger]" : "isn't emagged but somehow"] exploded at [ADMIN_VERBOSEJMP(src)]")
 
 /obj/machinery/power/port_gen/update_icon_state()
 	icon_state = "[base_icon]_[active]"
@@ -171,7 +175,8 @@
 	if(current_heat == 0)
 		STOP_PROCESSING(SSmachines, src)
 
-/obj/machinery/power/port_gen/pacman/proc/overheat()
+/obj/machinery/power/port_gen/pacman/overheat()
+	. =..()
 	explosion(src.loc, 2, 5, 2, -1)
 
 /obj/machinery/power/port_gen/pacman/set_anchored(anchorvalue)
@@ -220,6 +225,8 @@
 /obj/machinery/power/port_gen/pacman/emag_act(mob/user)
 	if(obj_flags & EMAGGED)
 		return
+	message_admins("[ADMIN_LOOKUPFLW(usr)] Has emagged [src] at [ADMIN_VERBOSEJMP(src)]")
+	emagger = usr.ckey
 	obj_flags |= EMAGGED
 	emp_act(EMP_HEAVY)
 
@@ -286,6 +293,7 @@
 	time_per_sheet = 85
 
 /obj/machinery/power/port_gen/pacman/super/overheat()
+	. =..()
 	explosion(src.loc, 3, 3, 3, -1)
 
 /obj/machinery/power/port_gen/pacman/mrs
@@ -298,4 +306,5 @@
 	time_per_sheet = 80
 
 /obj/machinery/power/port_gen/pacman/mrs/overheat()
+	. =..()
 	explosion(src.loc, 4, 4, 4, -1)
