@@ -70,11 +70,10 @@ GLOBAL_LIST_INIT(name2reagent, build_name2reagent())
 	var/harmful = FALSE
 	/// Are we from a material? We might wanna know that for special stuff. Like metalgen. Is replaced with a ref of the material on New()
 	var/datum/material/material
-
-
-	//WS Begin
-	var/process_flags = ORGANIC // What can process this? ORGANIC, SYNTHETIC, or ORGANIC | SYNTHETIC?. We'll assume by default that it affects organics.
-	//WS End
+	// What can process this? ORGANIC, SYNTHETIC, or ORGANIC | SYNTHETIC?. We'll assume by default that it affects organics.
+	var/process_flags = ORGANIC
+	///How good of an accelerant is this reagent
+	var/accelerant_quality = 0
 
 /datum/reagent/New()
 	. = ..()
