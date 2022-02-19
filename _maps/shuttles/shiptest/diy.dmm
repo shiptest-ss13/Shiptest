@@ -36,7 +36,7 @@
 /area/ship/construction)
 "f" = (
 /obj/structure/closet/crate{
-	name = "Suit crate"
+	name = "Mining Equipment"
 	},
 /obj/item/pickaxe,
 /obj/item/pickaxe,
@@ -91,6 +91,18 @@
 /obj/effect/turf_decal/box/corners,
 /turf/open/floor/plating,
 /area/ship/construction)
+"l" = (
+/obj/item/circuitboard/machine/smes,
+/obj/structure/closet/crate/engineering{
+	name = "SMES crate"
+	},
+/obj/item/stock_parts/cell/high/empty,
+/obj/item/stock_parts/cell/high/empty,
+/obj/item/stock_parts/cell/high/empty,
+/obj/item/stock_parts/cell/high/empty,
+/obj/item/stock_parts/cell/high/empty,
+/turf/open/floor/plating,
+/area/ship/construction)
 "m" = (
 /obj/machinery/portable_atmospherics/canister/toxins,
 /obj/machinery/atmospherics/components/unary/portables_connector/visible/layer3,
@@ -141,12 +153,23 @@
 	},
 /turf/open/floor/plating,
 /area/ship/construction)
+"t" = (
+/obj/item/circuitboard/machine/medical_kiosk,
+/obj/item/circuitboard/machine/sleeper,
+/obj/item/circuitboard/computer/operating,
+/obj/item/circuitboard/computer/med_data,
+/obj/item/circuitboard/machine/microwave,
+/obj/item/storage/firstaid/fire,
+/obj/structure/closet/crate/medical,
+/turf/open/floor/plating,
+/area/ship/construction)
 "u" = (
 /obj/structure/reagent_dispensers/watertank,
 /turf/open/floor/plating,
 /area/ship/construction)
 "v" = (
 /obj/machinery/power/apc/auto_name/south,
+/obj/structure/cable/yellow,
 /turf/open/floor/plating,
 /area/ship/construction)
 "w" = (
@@ -419,7 +442,7 @@
 /area/ship/construction)
 "Y" = (
 /obj/structure/closet{
-	icon_state = "eng";
+	icon_state = "eng_secure";
 	name = "\proper Safety Equipment"
 	},
 /obj/item/clothing/head/welding,
@@ -599,10 +622,10 @@ p
 p
 p
 p
-p
-p
-p
 V
+t
+p
+p
 p
 m
 O
@@ -712,7 +735,7 @@ p
 p
 p
 p
-p
+l
 p
 p
 p
