@@ -9,6 +9,10 @@
 	var/deactivate_sound = 'sound/machines/terminal_off.ogg'
 	/// Current activation state
 	VAR_PRIVATE/activated = FALSE
+	/// Var used to store whether this console is currently connecting to a simulated ship
+	var/connecting = FALSE
+	/// Is this console in a ruin? AKA do literally nothing
+	var/is_ruin_console = FALSE
 
 /obj/machinery/computer/ship/proc/get_active_uis(living_only = TRUE)
 	PRIVATE_PROC(TRUE)
@@ -32,6 +36,11 @@
 	SHOULD_CALL_PARENT(TRUE)
 	..()
 	addtimer(CALLBACK(src, .proc/update_state), 1) // update our state after one tick
+	if(!current_ship)
+		user.changeNext_move(CLICK_CD_MELEE)
+		to_chat(user, "<span class='notice'>You sync [src].</span>")
+		initiate_connect()
+		return
 
 /obj/machinery/computer/ship/ui_close(mob/user)
 	SHOULD_CALL_PARENT(TRUE)
@@ -40,10 +49,21 @@
 
 /obj/machinery/computer/ship/Initialize(mapload, obj/item/circuitboard/C)
 	. = ..()
-	if(!attempt_connect())
-		message_admins("[src] failed to connect to a simulated ship!")
+	initiate_connect(mapload)
 
-/obj/machinery/computer/ship/proc/attempt_connect()
+/obj/machinery/computer/ship/proc/initiate_connect(mapload = FALSE)
+	if(is_ruin_console)
+		return
+	if(connecting)
+		say("Error: Connection in progress!")
+		return
+	say("Establishing connection to Ship Mainframe.")
+	connecting = TRUE
+	current_ship = null
+	addtimer(CALLBACK(src, .proc/attempt_connect, mapload), 1 SECONDS)
+	connecting = FALSE
+
+/obj/machinery/computer/ship/proc/attempt_connect(mapload = FALSE)
 	. = FALSE
 	if(simple_connect())
 		. = TRUE
@@ -51,6 +71,8 @@
 		. = TRUE
 	if(!.)
 		say("Failed to establish connection to ship mainframe.")
+		if(mapload)
+			message_admins("mapload [src] failed to connect to simulated ship. if this is a ruin console it should have is_ruin_console set to TRUE")
 	else
 		say("Established connection to ship mainframe.")
 	return

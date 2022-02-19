@@ -80,21 +80,17 @@
 
 /obj/machinery/computer/ship/helm/ui_interact(mob/user, datum/tgui/ui)
 	..()
+	if(!current_ship)
+		return
 	if(jump_state != JUMP_STATE_OFF)
 		say("Bluespace Jump in progress. Controls suspended.")
 		return
-	// Update UI
-	if(!current_ship && !attempt_connect())
-		user.changeNext_move(CLICK_CD_MELEE)
-		return
 	ui = SStgui.try_update_ui(user, src, ui)
 	if(!ui)
-		// Register map objects
-		if(current_ship)
-			user.client.register_map_obj(current_ship.cam_screen)
-			user.client.register_map_obj(current_ship.cam_plane_master)
-			user.client.register_map_obj(current_ship.cam_background)
-			current_ship.update_screen()
+		user.client.register_map_obj(current_ship.cam_screen)
+		user.client.register_map_obj(current_ship.cam_plane_master)
+		user.client.register_map_obj(current_ship.cam_background)
+		current_ship.update_screen()
 
 		// Open UI
 		ui = new(user, src, "HelmConsole", name)
