@@ -972,6 +972,9 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 					S = GLOB.kepori_body_feathers_list[H.dna.features["kepori_body_feathers"]]
 			if(!S || S.icon_state == "none")
 				continue
+			if(isjellyperson(H))
+				S.image_alpha = 150 //Jellypeople sprite handling
+				S.hasinner = FALSE
 
 			var/mutable_appearance/accessory_overlay = mutable_appearance(S.icon, layer = -layer)
 

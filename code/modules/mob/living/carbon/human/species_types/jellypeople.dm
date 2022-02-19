@@ -91,10 +91,10 @@
 	. = ..()
 
 /datum/species/jelly/can_wag_tail(mob/living/carbon/human/H)
-	return ("tail_human" in mutant_bodyparts) || ("waggingtail_human" in mutant_bodyparts)
+	return list(("tail_human" in mutant_bodyparts) || ("waggingtail_human" in mutant_bodyparts), ("tail_lizard" in mutant_bodyparts) || ("waggingtail_lizard" in mutant_bodyparts))
 
 /datum/species/jelly/is_wagging_tail(mob/living/carbon/human/H)
-	return ("waggingtail_human" in mutant_bodyparts)
+	return list(("waggingtail_human" in mutant_bodyparts), ("waggingtail_lizard" in mutant_bodyparts))
 
 /datum/species/jelly/start_wagging_tail(mob/living/carbon/human/H)
 	if("tail_human" in mutant_bodyparts)
@@ -102,7 +102,7 @@
 		mutant_bodyparts |= "waggingtail_human"
 	H.update_body()
 
-/datum/species/jelly/stop_wagging_tail(mob/living/carbon/human/H)
+/datum/species/jelly/stop_wagging_tail(mob/living/carbon/human/H) //Tail code doesn't like 2 types of tails. Lizzie tails staying unwaggable for now, unfortunately, as I'm not touching tail code.
 	if("waggingtail_human" in mutant_bodyparts)
 		mutant_bodyparts -= "waggingtail_human"
 		mutant_bodyparts |= "tail_human"
@@ -147,7 +147,7 @@
 		return
 	to_chat(H, "<span class='warning'>...but there is not enough of you to go around! You must attain more mass to heal!</span>")
 
-/datum/action/innate/humanoid_customization //oh boy this will be fun to do <-- clueless
+/datum/action/innate/humanoid_customization //This is shit snowflake code. If nobody has refactored this in the next 2 months, I am deeply sorry.
 	name = "Alter Form"
 	check_flags = AB_CHECK_CONSCIOUS
 	button_icon_state = "slimeheal" //placeholder
@@ -156,59 +156,112 @@
 
 /datum/action/innate/humanoid_customization/Activate()
 		var/mob/living/carbon/human/H = owner
-		H.visible_message("<span class='notice'>[owner] gains a look of concentration while standing perfectly still.")
+		H.visible_message("<span class='notice'>[owner] gains a look of concentration while standing perfectly still. Their body seems to be getting more goo-like.</span>")
 		change_form()
 
 /datum/action/innate/humanoid_customization/proc/change_form()
 	var/mob/living/carbon/human/H = owner
-	var/select_alteration = input(owner, "Select what part of your form to alter.", "Form Alteration", "Cancel") in list("Body Color", "Hair Style", "Ears", "Tail") //Select what you want to alter
-	switch(select_alteration) //fuck you i like readability
+	var/select_alteration = input(owner, "Select what part of your form to alter.", "Form Alteration", "Cancel") in list("Body Color", "Hair Style", "Mutant Bodyparts")
+	switch(select_alteration)
 		if("Body Color")
 			var/new_color = input(owner, "Select your new color.", "Color Change", "#"+H.dna.features["mcolor"]) as color|null
 			if(new_color)
 				H.dna.features["mcolor"] = sanitize_hexcolor(new_color, 6)
 				H.update_body()
 				H.update_hair()
+				H.dna.species.handle_mutant_bodyparts(H, null)
 
 		if("Hair Style")
-			//facial hair
+
+			//Facial hair
+
 			if(H.gender == MALE)
-				var/new_style = input(owner, "Select a facial hair style.", "Facial Hair Alterations") as null|anything in GLOB.facial_hairstyles_list
+				var/new_style = input(owner, "Select a facial hair style.", "Facial Hair Alteration") as null|anything in GLOB.facial_hairstyles_list
 				if(new_style)
 					H.facial_hairstyle = new_style
 			else
-				H.facial_hairstyle = "Shaved" //Female characters can't have beards
-			//normal hair
-			var/new_style = input(owner, "Select your hair style.", "Hair Style Alterations") as null|anything in GLOB.hairstyles_list
+				H.facial_hairstyle = "Shaved"
+				H.update_hair()
+
+			//Normal hair
+
+			var/new_style = input(owner, "Select your hair style.", "Hair Style Alteration") as null|anything in GLOB.hairstyles_list
 			if(new_style)
 				H.hairstyle = new_style
 				H.update_hair()
-				//Ears
-		if("Ears")
-			var/selected_ears = input(owner, "Select your desired ears.", "Ear Alteration") in list("None", "Cat") //easily expandable in case we ever have more ears
-			if(selected_ears)
-				switch(selected_ears)
-					if("None")
-						H.dna.features["ears"] = "None"
-						H.dna.species.mutant_bodyparts -= "ears"
-						H.update_body()
-					if("Cat")
-						H.dna.species.mutant_bodyparts |= "ears"
-						H.dna.features["ears"] = "Slimecat"
-						H.update_body()
-				//Tails
-		if("Tail")
-			var/selected_tail = input(owner, "Select your desired tail.", "Tail Alteration") in list("None", "Cat") //lizard tails and/or horns to follow eventually
-			if(selected_tail)
-				switch(selected_tail)
-					if("None")
-						H.dna.features["tail_human"] = "None"
-						H.dna.species.mutant_bodyparts -= "tail_human"
-						H.update_body()
-					if("Cat")
-						H.dna.species.mutant_bodyparts |= "tail_human"
-						H.dna.features["tail_human"] = "Slimecat"
-						H.update_body()
+
+				//Mutant Bodyparts
+
+		if("Mutant Bodyparts")
+			var/list/part_list = list("Ears", "Tails", "Frills", "Spines", "Wings") //Selection, if you want more stuff added, do it yourself
+			var/selected_part = input(owner, "Which bodypart do you want to alter?", "Mutant Bodypart Alteration") as null|anything in part_list + "Cancel"
+			if(selected_part)
+				if(selected_part == "Cancel")
+					return
+				switch(selected_part)
+					if("Ears")
+						handleSprites(lowertext(selected_part), H, GLOB.ears_list)
+					if("Tails") //Tails are a special case since they're separate from each other, and go into different features and mutant_bodyparts.
+						var/datum/sprite_accessory/tails/SA = new(src) // I *could* move this to a separate proc, but I don't see the point. It'd only be called this one time.
+						SA.name = input(owner, "Which type of tail do you wish to use?", "Tail Alteration") as null|anything in GLOB.tails_list_human + GLOB.tails_list_lizard + "Cancel"
+						if(!SA)
+							return
+						if(SA == "Cancel")
+							qdel(SA)
+							return
+						if(SA.name == "None")
+							if("tail_human" in H.dna.species.mutant_bodyparts)
+								H.dna.species.mutant_bodyparts -= "tail_human"
+								H.dna.features["tail_human"] = SA.name
+								H.update_body()
+								qdel(SA)
+								return
+							if("tail_lizard" in H.dna.species.mutant_bodyparts)
+								H.dna.features["tail_lizard"] = SA.name
+								H.dna.species.mutant_bodyparts -= "tail_lizard"
+								H.update_body()
+								qdel(SA)
+								return
+						if(SA.name in GLOB.tails_list_lizard)
+							H.dna.species.mutant_bodyparts |= "tail_lizard"
+							H.dna.features["tail_lizard"] = SA.name
+							H.update_body()
+							qdel(SA)
+							return
+						if(SA.name in GLOB.tails_list_human)
+							H.dna.species.mutant_bodyparts |= "tail_human"
+							H.dna.features["tail_human"] = SA.name
+							H.update_body()
+							qdel(SA)
+							return
+					if("Frills")
+						handleSprites(lowertext(selected_part), H, GLOB.frills_list)
+					if("Spines")
+						handleSprites(lowertext(selected_part), H, GLOB.spines_list)
+					if("Wings") //These don't look too good
+						handleSprites(lowertext(selected_part), H, GLOB.wings_list)
+	return
+/// Don't call this outside of slimeperson customization.
+/datum/action/innate/humanoid_customization/proc/handleSprites(sprite, var/mob/living/carbon/human/H, list/spritelist)
+	var/datum/sprite_accessory/SA = new(src)
+	SA.name = input(owner, "Which?", "Mutant Bodypart Alteration") as null|anything in spritelist + "Cancel"
+	if(!SA)
+		return
+	if(SA == "Cancel")
+		qdel(SA)
+		return
+	if(SA.name == "None")
+		H.dna.species.mutant_bodyparts -= "[sprite]"
+		H.dna.features["[sprite]"] = SA.name
+		H.update_body()
+		qdel(SA)
+		return
+	else
+		H.dna.species.mutant_bodyparts |= "[sprite]"
+		H.dna.features["[sprite]"] = SA.name
+		H.update_body()
+		qdel(SA)
+		return
 
 ////////////////////////////////////////////////////////SLIMEPEOPLE///////////////////////////////////////////////////////////////////
 

@@ -1792,7 +1792,7 @@
 	hasinner = 1
 	color_src = HAIR
 
-/datum/sprite_accessory/ears/cat/slime
+/datum/sprite_accessory/ears/cat/slime //I would yeet these, but unfortunately, deleting these can mess up savefiles, so you're stuck with this :)
 	name = "Slimecat"
 	icon_state = "cat"
 	hasinner = FALSE
