@@ -222,11 +222,10 @@
 
 /obj/item/areaeditor/shuttle/afterattack(atom/target, mob/user, proximity_flag, click_parameters)
 	. = ..()
-	if(istype(target, /obj/machinery/computer/helm))
+	if(istype(target, /obj/machinery/computer/helm) && istype(H.current_ship, /obj/structure/overmap/ship/simulated))
 		var/obj/machinery/computer/helm/H = target
-		if(istype(H.current_ship, /obj/structure/overmap/ship/simulated))
-			var/obj/structure/overmap/ship/simulated/S = H.current_ship
-			target_shuttle = S.shuttle
+		var/obj/structure/overmap/ship/simulated/S = H.current_ship
+		target_shuttle = S.shuttle
 
 /obj/item/areaeditor/shuttle/attack_self(mob/user)
 	. = ..()
@@ -265,11 +264,13 @@
 		/area/space,
 		))
 
-	if(creator)
-		if(creator.create_area_cooldown >= world.time)
-			to_chat(creator, "<span class='warning'>You're trying to create a new area a little too fast.</span>")
-			return
-		creator.create_area_cooldown = world.time + 10
+	if(!creator)
+		return
+
+	if(creator.create_area_cooldown >= world.time)
+		to_chat(creator, "<span class='warning'>You're trying to create a new area a little too fast.</span>")
+		return
+	creator.create_area_cooldown = world.time + 10
 
 	var/list/turfs = detect_room(get_turf(creator), area_or_turf_fail_types, BP_MAX_ROOM_SIZE*2)
 	if(!turfs)
@@ -336,14 +337,13 @@
 			thing.baseturfs.Insert(3, /turf/baseturf_skipover/shuttle)
 
 	var/list/firedoors = oldA.firedoors
-	for(var/door in firedoors)
-		var/obj/machinery/door/firedoor/FD = door
+	for(var/obj/machinery/door/firedoor/FD as anything in firedoors)
 		FD.CalculateAffectingAreas()
 
 	target_shuttle.shuttle_areas[newA] = TRUE
 
 	newA.connect_to_shuttle(target_shuttle, target_shuttle.get_docked())
-	for(var/atom/thing in newA)
+	for(var/atom/thing as anything in newA)
 		thing.connect_to_shuttle(target_shuttle, target_shuttle.get_docked())
 
 	target_shuttle.recalculate_bounds()
