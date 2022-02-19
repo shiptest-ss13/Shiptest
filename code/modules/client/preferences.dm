@@ -1337,7 +1337,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			quirk_conflicts[quirk_instance.name] = "Mood is disabled."
 			if(!handled_conflicts["mood"])
 				handle_quirk_conflict("mood", null, user)
-				handled_conflicts(["mood"]) = TRUE
+				handled_conflicts["mood"] = TRUE
 		if(((quirk_instance.species_lock["type"] == "allowed") && !(pref_species.id in quirk_instance.species_lock)) || (quirk_instance.species_lock["type"] == "blocked" && (pref_species.id in quirk_instance.species_lock)))
 			quirk_conflicts[quirk_instance.name] = "Quirk unavailable to species."
 			if(!handled_conflicts["species"])
