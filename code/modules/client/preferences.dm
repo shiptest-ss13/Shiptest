@@ -1388,7 +1388,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				all_quirks_new -= initial(positive_quirk.name)
 				balance += initial(positive_quirk.value)
 				break
-		if((length(positive_quirks) < 1) && ((balance < 0))
+		if((length(positive_quirks) < 1) && (balance < 0))
 			stack_trace("Client [user?.client?.ckey] has a negative balance without positive quirks.")
 			all_quirks = list()
 			save_character()
