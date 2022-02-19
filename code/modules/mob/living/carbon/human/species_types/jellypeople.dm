@@ -169,7 +169,6 @@
 				H.dna.features["mcolor"] = sanitize_hexcolor(new_color, 6)
 				H.update_body()
 				H.update_hair()
-				H.dna.species.handle_mutant_bodyparts(H, null)
 
 		if("Hair Style")
 
@@ -200,7 +199,7 @@
 					return
 				switch(selected_part)
 					if("Ears")
-						handleSprites(lowertext(selected_part), H, GLOB.ears_list)
+						handle_sprites(lowertext(selected_part), H, GLOB.ears_list)
 					if("Tails") //Tails are a special case since they're separate from each other, and go into different features and mutant_bodyparts.
 						var/datum/sprite_accessory/tails/SA = new(src) // I *could* move this to a separate proc, but I don't see the point. It'd only be called this one time.
 						SA.name = input(owner, "Which type of tail do you wish to use?", "Tail Alteration") as null|anything in GLOB.tails_list_human + GLOB.tails_list_lizard + "Cancel"
@@ -235,15 +234,16 @@
 							qdel(SA)
 							return
 					if("Frills")
-						handleSprites(lowertext(selected_part), H, GLOB.frills_list)
+						handle_sprites(lowertext(selected_part), H, GLOB.frills_list)
 					if("Spines")
-						handleSprites(lowertext(selected_part), H, GLOB.spines_list)
+						handle_sprites(lowertext(selected_part), H, GLOB.spines_list)
 					if("Wings") //These don't look too good
-						handleSprites(lowertext(selected_part), H, GLOB.wings_list)
+						handle_sprites(lowertext(selected_part), H, GLOB.wings_list)
 	return
+
 /// Don't call this outside of slimeperson customization.
-/datum/action/innate/humanoid_customization/proc/handleSprites(sprite, var/mob/living/carbon/human/H, list/spritelist)
-	var/datum/sprite_accessory/SA = new(src)
+/datum/action/innate/humanoid_customization/proc/handle_sprites(sprite, var/mob/living/carbon/human/H, list/spritelist)
+	var/datum/sprite_accessory/SA = initial(src)
 	SA.name = input(owner, "Which?", "Mutant Bodypart Alteration") as null|anything in spritelist + "Cancel"
 	if(!SA)
 		return
