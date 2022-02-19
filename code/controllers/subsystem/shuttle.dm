@@ -307,7 +307,7 @@ SUBSYSTEM_DEF(shuttle)
 
 	new_shuttle.timer = to_replace.timer //Copy some vars from the old shuttle
 	new_shuttle.mode = to_replace.mode
-	new_shuttle.current_ship.set_ship_name(to_replace.name)
+	new_shuttle.current_ship.set_ship_name(to_replace.name, mute = TRUE)
 	new_shuttle.current_ship.forceMove(to_replace.current_ship.loc) //Overmap location
 
 	if(istype(old_shuttle_location, /obj/docking_port/stationary/transit))

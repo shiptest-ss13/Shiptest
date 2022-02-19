@@ -12,6 +12,9 @@
 	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
 	tiled_dirt = FALSE
 	baseturfs = /turf/open/floor/plating/dirt
+	light_range = 2
+	light_power = 0.6
+	light_color = COLOR_VERY_LIGHT_GRAY
 
 /turf/open/floor/plating/dirt/dark
 	icon_state = "greenerdirt"
@@ -23,6 +26,10 @@
 /turf/open/floor/plating/dirt/jungle
 	slowdown = 0.5
 	baseturfs = /turf/open/floor/plating/dirt/jungle
+	initial_gas_mix = OPENTURF_DEFAULT_ATMOS
+	light_range = 2
+	light_power = 0.6
+	light_color = COLOR_VERY_LIGHT_GRAY
 
 /turf/open/floor/plating/dirt/jungle/dark
 	icon_state = "greenerdirt"
@@ -48,6 +55,10 @@
 	desc = "Greener on the other side."
 	icon_state = "junglegrass"
 	base_icon_state = "junglegrass"
+	baseturfs = /turf/open/floor/plating/dirt/jungle
+	light_range = 2
+	light_power = 0.6
+	light_color = COLOR_VERY_LIGHT_GRAY
 	smooth_icon = 'icons/turf/floors/junglegrass.dmi'
 	baseturfs = /turf/open/floor/plating/grass/jungle
 
