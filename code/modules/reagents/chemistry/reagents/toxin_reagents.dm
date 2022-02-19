@@ -61,10 +61,8 @@
 	color = "#8228A0"
 	toxpwr = 3
 	material = /datum/material/plasma
-
-	//WS Begin - IPCs
-	process_flags = ORGANIC | SYNTHETIC //WS Edit - IPCs
-	//WS End
+	process_flags = ORGANIC | SYNTHETIC
+	accelerant_quality = 10
 
 /datum/reagent/toxin/plasma/on_mob_life(mob/living/carbon/C)
 	if(holder.has_reagent(/datum/reagent/medicine/epinephrine))
@@ -322,6 +320,7 @@
 	color = "#9ACD32"
 	toxpwr = 0.5
 	taste_description = "burning"
+	accelerant_quality = 10
 
 /datum/reagent/toxin/spore_burning/on_mob_life(mob/living/carbon/M)
 	M.adjust_fire_stacks(2)

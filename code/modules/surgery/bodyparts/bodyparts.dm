@@ -626,7 +626,7 @@
 		limb.icon_state = "[limb_id]_[body_zone]"
 
 	if(!icon_exists(limb.icon, limb.icon_state))
-		stack_trace("Limb generated with nonexistant icon. File: [limb.icon] | State: [limb.icon_state]")
+		limb_stacktrace("Limb generated with nonexistant icon. File: [limb.icon] | State: [limb.icon_state]", GLOB.Debug) //If you *really* want more of these, you can set the *other* global debug flag manually.
 
 	if(aux_zone) //Hand shit
 		aux = image(limb.icon, "[limb_id]_[aux_zone]", -aux_layer, image_dir)

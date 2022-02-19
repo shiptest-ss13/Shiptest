@@ -250,7 +250,6 @@ SUBSYSTEM_DEF(garbage)
 /datum/qdel_item/New(mytype)
 	name = "[mytype]"
 
-
 // Should be treated as a replacement for the 'del' keyword.
 // Datums passed to this will be given a chance to clean up references to allow the GC to collect them.
 /proc/qdel(datum/D, force=FALSE, ...)
@@ -261,6 +260,8 @@ SUBSYSTEM_DEF(garbage)
 			return
 
 	if(!istype(D))
+		if(ispath(D))
+			CRASH("BAD DEL: PATH OF [D].")
 		del(D)
 		return
 
