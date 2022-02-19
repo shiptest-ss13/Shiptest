@@ -1,6 +1,6 @@
 /datum/overmap/star //TODO: refactor literally all of this this is painful
 	name = "Star"
-	token_icon_state = "star"
+	token_icon_state = "star1"
 	token_type = /obj/overmap/star
 
 /datum/overmap/star/Initialize(mapload)
