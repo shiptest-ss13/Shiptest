@@ -300,13 +300,13 @@
 		SSshuttle.mobile -= src
 		destination = null
 		previous = null
-		assigned_transit = null
 		QDEL_NULL(current_ship)
 		qdel(assigned_transit, TRUE)		//don't need it where we're goin'!
+		assigned_transit = null
 		for(var/obj/docking_port/stationary/docking_point as anything in docking_points)
 			qdel(docking_point, TRUE)
-		docking_points.Cut()
-		shuttle_areas = null
+		docking_points = null
+		shuttle_areas = null //TODO: This is nowhere near enough to clear references, lol. We need an /atom/proc/disconnect_from_shuttle() proc to clear references.
 		remove_ripples()
 	. = ..()
 

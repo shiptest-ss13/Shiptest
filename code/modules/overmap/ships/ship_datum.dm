@@ -65,6 +65,7 @@
 		movement_callback_id = null
 		return
 	Move(x + SIGN(speed[1]), y + SIGN(speed[2]))
+	update_visuals()
 
 	if(movement_callback_id)
 		deltimer(movement_callback_id)

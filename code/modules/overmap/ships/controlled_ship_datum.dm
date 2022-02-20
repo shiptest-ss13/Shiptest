@@ -133,14 +133,12 @@
 
 /**
   * Docks to an empty dynamic encounter. Used for intership interaction, structural modifications, and such
-  * * user - The user that initiated the action
   */
-/datum/overmap/ship/controlled/proc/dock_in_empty_space(mob/user)
-	var/datum/overmap/dynamic/empty/E
-	E = locate() in SSovermap.overmap_container[x][y]
+/datum/overmap/ship/controlled/proc/dock_in_empty_space()
+	var/datum/overmap/dynamic/empty/E = locate() in SSovermap.overmap_container[x][y]
 	if(!E)
-		E = new(x, y)
-	if(E)
+		E = new(list("x" = x, "y" = y))
+	if(E) //Don't make this an else
 		Dock(E)
 
 /datum/overmap/ship/controlled/burn_engines(n_dir = null, percentage = 100)
@@ -152,7 +150,7 @@
 	if(!mass)
 		calculate_mass()
 	calculate_avg_fuel()
-	for(var/obj/machinery/power/shuttle/engine/E in shuttle_port.engine_list)
+	for(var/obj/machinery/power/shuttle/engine/E as anything in shuttle_port.engine_list)
 		if(!E.enabled)
 			continue
 		thrust_used += E.burn_engine(percentage)
@@ -168,7 +166,7 @@
   */
 /datum/overmap/ship/controlled/proc/refresh_engines()
 	var/calculated_thrust
-	for(var/obj/machinery/power/shuttle/engine/E in shuttle_port.engine_list)
+	for(var/obj/machinery/power/shuttle/engine/E as anything in shuttle_port.engine_list)
 		E.update_engine()
 		if(E.enabled)
 			calculated_thrust += E.thrust
@@ -190,7 +188,7 @@
 /datum/overmap/ship/controlled/proc/calculate_avg_fuel()
 	var/fuel_avg = 0
 	var/engine_amnt = 0
-	for(var/obj/machinery/power/shuttle/engine/E in shuttle_port.engine_list)
+	for(var/obj/machinery/power/shuttle/engine/E as anything in shuttle_port.engine_list)
 		if(!E.enabled)
 			continue
 		fuel_avg += E.return_fuel() / E.return_fuel_cap()
@@ -230,5 +228,5 @@
 	calculate_mass()
 	refresh_engines()
 	shuttle_port.name = name
-	for(var/area/shuttle_area as anything in shuttle_port?.shuttle_areas)
+	for(var/area/shuttle_area as anything in shuttle_port.shuttle_areas)
 		shuttle_area.rename_area("[name] [initial(shuttle_area.name)]")

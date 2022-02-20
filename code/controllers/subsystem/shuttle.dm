@@ -54,22 +54,6 @@ SUBSYSTEM_DEF(shuttle)
 	return ..()
 
 /datum/controller/subsystem/shuttle/fire()
-	for(var/obj/docking_port/stationary/transit/transit_dock as anything in transit)
-		if(!transit_dock.owner)
-			qdel(transit_dock, force=TRUE)
-			continue
-		// This next one removes transit docks/zones that aren't
-		// immediately being used. This will mean that the zone creation
-		// code will be running a lot.
-		var/obj/docking_port/mobile/owner = transit_dock.owner
-		if(owner)
-			var/idle = owner.mode == SHUTTLE_IDLE
-			var/not_centcom_evac = owner.launch_status == NOLAUNCH
-			var/not_in_use = (!transit_dock.get_docked())
-			if(idle && not_centcom_evac && not_in_use)
-				qdel(transit_dock, force=TRUE)
-				continue
-
 	while(transit_requesters.len)
 		var/requester = popleft(transit_requesters)
 		var/success = generate_transit_dock(requester)

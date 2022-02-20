@@ -126,6 +126,9 @@
 
 /obj/machinery/computer/helm/ui_data(mob/user)
 	. = list()
+	if(!current_ship)
+		return
+
 	.["calibrating"] = calibrating
 	.["otherInfo"] = list()
 	for (var/datum/overmap/object as anything in current_ship.get_nearby_overmap_objects())
@@ -182,6 +185,8 @@
 		return
 	if(viewer)
 		return
+	if(!current_ship)
+		return
 
 	switch(action) // Universal topics
 		if("rename_ship")
@@ -236,7 +241,7 @@
 					calibrate_jump()
 					return
 			if("dock_empty")
-				say(current_ship.dock_in_empty_space(usr))
+				current_ship.dock_in_empty_space(usr)
 				return
 	else if(current_ship.docked_to)
 		if(action == "undock")
