@@ -951,8 +951,7 @@
 		if(!embeddies.isEmbedHarmless())
 			bleed_rate += 0.5
 
-	for(var/thing in wounds)
-		var/datum/wound/W = thing
+	for(var/datum/wound/W as anything in wounds)
 		bleed_rate += W.blood_flow
 
 	if(owner.body_position == LYING_DOWN)
