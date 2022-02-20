@@ -111,7 +111,7 @@
 	name = "[limb_id] [parse_zone(body_zone)]"
 	update_icon_dropped()
 
-	if(bodytype != BODYPART_ORGANIC)
+	if(!IS_ORGANIC_LIMB(src))
 		grind_results = null
 
 /obj/item/bodypart/forceMove(atom/destination) //Please. Never forcemove a limb if its's actually in use. This is only for borgs.
