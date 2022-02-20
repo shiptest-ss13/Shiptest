@@ -36,7 +36,7 @@
 
 	docker.Undock()
 
-	TEST_ASSERT(docker.docked_to, "Ship did not undock from dockee (Value: [docker.docked_to])")
+	TEST_ASSERT(!docker.docked_to, "Ship did not undock from dockee (Value: [docker.docked_to])")
 	TEST_ASSERT(docker in SSovermap.overmap_container[3][3], "Ship did not add itself to overmap container in correct position after undocking")
 	TEST_ASSERT(!(docker in dockee.contents), "Ship did not remove itself from dockee after undocking")
 	TEST_ASSERT_EQUAL(docker.docking, FALSE, "Ship did not set var/docking to false after undocking (Value: [docker.docking])")
