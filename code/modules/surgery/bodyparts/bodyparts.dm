@@ -432,8 +432,7 @@
 	if(ishuman(owner))
 		var/mob/living/carbon/human/human_wearer = owner
 		var/list/clothing = human_wearer.clothingonpart(src)
-		for(var/i in clothing)
-			var/obj/item/clothing/clothes_check = i
+		for(var/obj/item/clothing/clothes_check as anything in clothing)
 			// unlike normal armor checks, we tabluate these piece-by-piece manually so we can also pass on appropriate damage the clothing's limbs if necessary
 			if(clothes_check.armor.getRating("wound"))
 				bare_wound_bonus = 0
