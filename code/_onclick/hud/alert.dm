@@ -165,7 +165,7 @@
 
 /atom/movable/screen/alert/fat
 	name = "Fat"
-	desc = "You ate too much food, lardass. Run around the station and lose some weight."
+	desc = "You ate too much food, lardass. Run around and lose some weight."
 	icon_state = "fat"
 
 /atom/movable/screen/alert/hungry

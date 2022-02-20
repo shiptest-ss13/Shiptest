@@ -122,8 +122,13 @@
 	playsound(src, "sparks", 50, TRUE, SHORT_RANGE_SOUND_EXTRARANGE)
 
 /obj/machinery/firealarm/temperature_expose(datum/gas_mixture/air, temperature, volume)
-	if((temperature > T0C + 200 || temperature < BODYTEMP_COLD_DAMAGE_LIMIT) && (last_alarm+FIREALARM_COOLDOWN < world.time) && !(obj_flags & EMAGGED) && detecting && !machine_stat)
-		alarm()
+	if(obj_flags & EMAGGED || machine_stat)
+		return FALSE
+	var/turf/open/open_turf = loc
+	if(istype(open_turf) && open_turf.turf_fire)
+		return TRUE
+	if(temperature > T0C + 80 || temperature < T0C - 10)
+		return TRUE
 	..()
 
 /obj/machinery/firealarm/proc/alarm(mob/user)
