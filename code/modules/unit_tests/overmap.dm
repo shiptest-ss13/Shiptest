@@ -13,7 +13,7 @@
 	TEST_ASSERT(S.is_still(), "Ship did not stop after burning engines")
 
 /datum/unit_test/overmap_dock/Run()
-	var/datum/overmap/ship/controlled/docker = new(list("x" = 1, "y" = 1), SSmapping.ship_purchase_list[1])
+	var/datum/overmap/ship/controlled/docker = new(list("x" = 1, "y" = 1), SSmapping.ship_purchase_list[pick(SSmapping.ship_purchase_list)]) //TODO: debug ship instead of picking random ship
 	var/datum/overmap/dynamic/empty/dockee = new(list("x" = 1, "y" = 1))
 
 	docker.dock_time = 0
