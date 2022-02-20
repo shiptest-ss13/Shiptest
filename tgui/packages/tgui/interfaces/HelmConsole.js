@@ -104,7 +104,12 @@ const SharedContent = (_props, context) => {
                     tooltip="Interact"
                     tooltipPosition="left"
                     icon="circle"
-                    disabled={isViewer || (data.speed > 0) || data.docked || data.docking}
+                    disabled={// I hate this so much
+                      isViewer
+                      || (data.speed > 0)
+                      || data.docked
+                      || data.docking
+                    }
                     onClick={() => act('act_overmap', {
                       ship_to_act: ship.ref,
                     })} />
