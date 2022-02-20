@@ -640,6 +640,10 @@
 	..()
 	. = TRUE
 
+//gives the screen a white tint
+/atom/movable/screen/fullscreen/color_vision/heroin_color
+	color = "#444444"
+
 /datum/reagent/drug/heroin
 	name = "Heroin"
 	description = "A highly addictively narcotic painkiller processed from opium."
@@ -655,6 +659,7 @@
 
 	M.hal_screwyhud = SCREWYHUD_HEALTHY
 	SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "smacked out", /datum/mood_event/narcotic_heavy, name)
+	M.overlay_fullscreen("heroin_euphoria", /atom/movable/screen/fullscreen/color_vision/heroin_color)
 	..()
 	. = TRUE
 
@@ -666,6 +671,7 @@
 	if(iscarbon(M))
 		var/mob/living/carbon/N = M
 		N.hal_screwyhud = SCREWYHUD_NONE
+		N.clear_fullscreen("heroin_euphoria")
 	REMOVE_TRAIT(M, TRAIT_STUNRESISTANCE, type)
 	..()
 
