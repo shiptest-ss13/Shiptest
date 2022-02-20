@@ -322,7 +322,7 @@
 			quirks_to_remove += quirk_datum.type
 		for(var/quirk_name in quirks_conflicted)
 			var/datum/quirk/quirk_datum = SSquirks.quirks[quirk_name]
-			quirks_conflicted += initial(quirk_datum.type)
+			quirks_conflicted += quirk_datum.type
 			quirks_conflicted -= quirk_name
 		quirks_to_remove &= quirks_conflicted
 		for(var/quirk_type in quirks_to_remove)

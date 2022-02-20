@@ -1336,7 +1336,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			quirk_conflicts[quirk_instance.name] = "Mood is disabled."
 			if(!handled_conflicts["mood"])
 				handle_quirk_conflict("mood", null, user)
-				handled_conflicts(["mood"] = TRUE
+				handled_conflicts["mood"] = TRUE
 		if(((quirk_instance.species_lock["type"] == "allowed") && !(pref_species.id in quirk_instance.species_lock)) || (quirk_instance.species_lock["type"] == "blocked" && (pref_species.id in quirk_instance.species_lock)))
 			quirk_conflicts[quirk_instance.name] = "Quirk unavailable to species."
 			if(!handled_conflicts["species"])
@@ -1384,7 +1384,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				all_quirks_new -= initial(positive_quirk.name)
 				balance += initial(positive_quirk.value)
 				break
-		if(length(positive_quirks) < 1 && balance < 0)
+		if((length(positive_quirks) < 1) && (balance < 0))
 			stack_trace("Client [user?.client?.ckey] has a negative balance without positive quirks.")
 			all_quirks = list()
 			save_character()
