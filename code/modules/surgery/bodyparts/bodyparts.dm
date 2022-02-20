@@ -203,7 +203,7 @@
 		qdel(current_gauze)
 	if(current_splint)
 		qdel(current_splint)
-	for(var/obj/item/organ/drop_organ in get_organs())
+	for(var/obj/item/organ/drop_organ as anything in get_organs())
 		drop_organ.transfer_to_limb(src, owner)
 	for(var/obj/item/I in src)
 		I.forceMove(T)
