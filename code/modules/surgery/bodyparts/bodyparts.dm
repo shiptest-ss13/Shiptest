@@ -490,8 +490,7 @@
 	if(owner && ishuman(owner))
 		var/mob/living/carbon/human/H = owner
 		var/list/clothing = H.clothingonpart(src)
-		for(var/c in clothing)
-			var/obj/item/clothing/C = c
+		for(var/obj/item/clothing/C as anything in clothing)
 			// unlike normal armor checks, we tabluate these piece-by-piece manually so we can also pass on appropriate damage the clothing's limbs if necessary
 			armor_ablation += C.armor.getRating("wound")
 			if(wounding_type == WOUND_SLASH)
