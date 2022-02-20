@@ -95,6 +95,7 @@
 #define CAT_SPAGHETTI "Spaghettis"
 #define CAT_ICE "Frozen"
 #define CAT_DRINK "Drinks"
+#define CAT_DRUGS "Drugs"
 
 #define RCD_FLOORWALL 1
 #define RCD_AIRLOCK 2

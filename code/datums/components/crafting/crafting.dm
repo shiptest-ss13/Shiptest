@@ -42,6 +42,7 @@
 				),
 				CAT_DRINK = CAT_NONE,
 				CAT_CLOTHING = CAT_NONE,
+				CAT_DRUGS = CAT_NONE,
 			)
 
 	var/cur_category = CAT_NONE

@@ -37,3 +37,20 @@
 /datum/chemical_reaction/pumpup
 	results = list(/datum/reagent/drug/pumpup = 5)
 	required_reagents = list(/datum/reagent/medicine/epinephrine = 2, /datum/reagent/consumable/coffee = 5)
+
+/datum/chemical_reaction/powder_cocaine
+	is_cold_recipe = TRUE
+	required_reagents = list(/datum/reagent/drug/cocaine = 5)
+	required_temp = 250 //freeze it
+	mix_message = "The solution freezes into a powder!"
+
+/datum/chemical_reaction/powder_cocaine/on_reaction(datum/reagents/holder, created_volume)
+	var/location = get_turf(holder.my_atom)
+	for(var/i = 1, i <= created_volume, i++)
+		new /obj/item/reagent_containers/cocaine(location)
+
+/datum/chemical_reaction/heroin
+	results = list(/datum/reagent/drug/heroin = 1)
+	required_reagents = list(/datum/reagent/drug/opium = 1, /datum/reagent/toxin/acid = 1, /datum/reagent/water = 3, /datum/reagent/medicine/morphine = 1)
+	required_temp = 380
+	mix_message = "The solution darkens in color."

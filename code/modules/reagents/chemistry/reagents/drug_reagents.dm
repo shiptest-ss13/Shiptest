@@ -484,3 +484,227 @@
 	if(prob(15))
 		M.adjustToxLoss(2, 0)
 	..()
+
+/datum/reagent/drug/cocaine
+	name = "Cocaine"
+	description = "A powerful stimulant extracted from coca leaves. Reduces stun times, but causes drowsiness and severe brain damage if overdosed."
+	reagent_state = LIQUID
+	color = "#ffffff"
+	addiction_threshold = 10
+	overdose_threshold = 20
+	taste_description = "bitterness" //supposedly does taste bitter in real life
+
+/datum/reagent/drug/cocaine/on_mob_metabolize(mob/living/containing_mob)
+	..()
+	containing_mob.add_movespeed_modifier(/datum/movespeed_modifier/reagent/stimulants)
+	ADD_TRAIT(containing_mob, TRAIT_STUNRESISTANCE, type)
+
+/datum/reagent/drug/cocaine/on_mob_end_metabolize(mob/living/containing_mob)
+	containing_mob.remove_movespeed_modifier(/datum/movespeed_modifier/reagent/stimulants)
+	REMOVE_TRAIT(containing_mob, TRAIT_STUNRESISTANCE, type)
+	..()
+
+/datum/reagent/drug/cocaine/on_mob_life(mob/living/carbon/M)
+	if(prob(2.5))
+		var/high_message = pick("You feel jittery.", "You feel like you gotta go fast.", "You feel like you need to step it up.")
+		to_chat(M, "<span class='notice'>[high_message]</span>")
+	SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "zoinked", /datum/mood_event/stimulant_heavy, name)
+	M.AdjustStun(-15)
+	M.AdjustKnockdown(-15)
+	M.AdjustUnconscious(-15)
+	M.AdjustImmobilized(-15)
+	M.AdjustParalyzed(-15)
+	M.adjustStaminaLoss(-2, 0)
+	if(prob(2.5))
+		M.emote("shiver")
+	..()
+	. = TRUE
+
+/datum/reagent/drug/cocaine/overdose_start(mob/living/M)
+	to_chat(M, "<span class='danger'>Your heart beats is beating so fast, it hurts...</span>")
+
+/datum/reagent/drug/cocaine/overdose_process(mob/living/M)
+	M.adjustToxLoss(1)
+	M.adjustOrganLoss(ORGAN_SLOT_HEART, rand(1, 2))
+	M.Jitter(2)
+	if(prob(2.5))
+		M.emote(pick("twitch","drool"))
+	if(!HAS_TRAIT(M, TRAIT_FLOORED))
+		if(prob(1.5))
+			M.visible_message("<span class='danger'>[M] collapses onto the floor!</span>")
+			M.Paralyze(135,TRUE)
+			M.drop_all_held_items()
+	..()
+	. = TRUE
+
+/datum/reagent/drug/cocaine/addiction_act_stage1(mob/living/M)
+	if(prob(33))
+		M.Jitter(2)
+	..()
+	. = TRUE
+
+/datum/reagent/drug/cocaine/addiction_act_stage2(mob/living/M)
+	if(prob(33))
+		M.adjustToxLoss(1*REM, 0)
+		M.Dizzy(3)
+		M.Jitter(3)
+	if(prob(20))
+		M.emote(pick("twitch", "shiver"))
+	..()
+	. = TRUE
+
+/datum/reagent/drug/cocaine/addiction_act_stage3(mob/living/M)
+	if(prob(33))
+		M.drop_all_held_items()
+		M.adjustToxLoss(2*REM, 0)
+		M.adjustOrganLoss(ORGAN_SLOT_HEART, 1)
+		M.Dizzy(4)
+		M.Jitter(4)
+	if(prob(20))
+		M.emote(pick("twitch", "shiver"))
+	..()
+	. = TRUE
+
+/datum/reagent/drug/cocaine/addiction_act_stage4(mob/living/M)
+	if(prob(33))
+		M.drop_all_held_items()
+		M.adjustToxLoss(2*REM, 0)
+		M.adjustOrganLoss(ORGAN_SLOT_HEART, 1)
+		M.Dizzy(5)
+		M.Jitter(5)
+	if(prob(20))
+		M.emote(pick("twitch", "shiver"))
+	..()
+	. = TRUE
+
+/datum/reagent/drug/cocaine/powder_cocaine
+	name = "powder cocaine"
+	description = "The powder form of cocaine."
+	color = "#ffffff"
+
+/datum/reagent/drug/opium
+	name = "Opium"
+	description = "A natural painkiller/narcotic extracted from opium poppies. Able to be processed into heroin."
+	reagent_state = LIQUID
+	color = "#ffe669"
+	metabolization_rate = 0.5 * REAGENTS_METABOLISM
+	overdose_threshold = 20
+	addiction_threshold = 15
+	taste_description = "flowers"
+
+/datum/reagent/drug/opium/on_mob_life(mob/living/carbon/M)
+	var/high_message = pick("You feel euphoric.", "You feel on top of the world.")
+	if(prob(2.5))
+		to_chat(M, "<span class='notice'>[high_message]</span>")
+
+	SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "numb", /datum/mood_event/narcotic_medium, name)
+	..()
+
+/datum/reagent/drug/opium/overdose_process(mob/living/M)
+	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 0.5)
+	M.adjustToxLoss(1)
+	M.drowsyness += 0.5
+	..()
+	. = TRUE
+
+/datum/reagent/drug/opium/addiction_act_stage1(mob/living/M)
+	if(prob(33))
+		M.Jitter(2)
+	..()
+	. = TRUE
+
+/datum/reagent/drug/opium/addiction_act_stage2(mob/living/M)
+	if(prob(33))
+		M.drop_all_held_items()
+		M.adjustToxLoss(1*REM, 0)
+		M.Dizzy(3)
+		M.Jitter(3)
+	..()
+	. = TRUE
+
+/datum/reagent/drug/opium/addiction_act_stage3(mob/living/M)
+	if(prob(33))
+		M.drop_all_held_items()
+		M.adjustToxLoss(2*REM, 0)
+		M.Dizzy(4)
+		M.Jitter(4)
+	..()
+	. = TRUE
+
+/datum/reagent/drug/opium/addiction_act_stage4(mob/living/M)
+	if(prob(33))
+		M.drop_all_held_items()
+		M.adjustToxLoss(3*REM, 0)
+		M.Dizzy(5)
+		M.Jitter(5)
+	..()
+	. = TRUE
+
+/datum/reagent/drug/heroin
+	name = "Heroin"
+	description = "A highly addictively narcotic painkiller processed from opium."
+	reagent_state = LIQUID
+	color = "#efd659"
+	overdose_threshold = 20
+	addiction_threshold = 10
+
+/datum/reagent/drug/heroin/on_mob_life(mob/living/carbon/M)
+	var/high_message = pick("You feel like you're on clouds.", "You feel like God.")
+	if(prob(2.5))
+		to_chat(M, "<span class='notice'>[high_message]</span>")
+
+	M.hal_screwyhud = SCREWYHUD_HEALTHY
+	SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "smacked out", /datum/mood_event/narcotic_heavy, name)
+	..()
+	. = TRUE
+
+/datum/reagent/drug/heroin/on_mob_metabolize(mob/living/M)
+	..()
+	ADD_TRAIT(M, TRAIT_STUNRESISTANCE, type)
+
+/datum/reagent/drug/heroin/on_mob_end_metabolize(mob/living/M)
+	if(iscarbon(M))
+		var/mob/living/carbon/N = M
+		N.hal_screwyhud = SCREWYHUD_NONE
+	REMOVE_TRAIT(M, TRAIT_STUNRESISTANCE, type)
+	..()
+
+/datum/reagent/drug/heroin/overdose_process(mob/living/M)
+	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 0.5)
+	M.adjustToxLoss(2)
+	M.drowsyness += 1
+	..()
+	. = TRUE
+
+/datum/reagent/drug/heroin/addiction_act_stage1(mob/living/M)
+	if(prob(33))
+		M.Jitter(2)
+	..()
+	. = TRUE
+
+/datum/reagent/drug/heroin/addiction_act_stage2(mob/living/M)
+	if(prob(33))
+		M.drop_all_held_items()
+		M.adjustToxLoss(1*REM, 0)
+		M.Dizzy(3)
+		M.Jitter(3)
+	..()
+	. = TRUE
+
+/datum/reagent/drug/heroin/addiction_act_stage3(mob/living/M)
+	if(prob(33))
+		M.drop_all_held_items()
+		M.adjustToxLoss(2*REM, 0)
+		M.Dizzy(4)
+		M.Jitter(4)
+	..()
+	. = TRUE
+
+/datum/reagent/drug/heroin/addiction_act_stage4(mob/living/M)
+	if(prob(33))
+		M.drop_all_held_items()
+		M.adjustToxLoss(3*REM, 0)
+		M.Dizzy(5)
+		M.Jitter(5)
+	..()
+	. = TRUE
