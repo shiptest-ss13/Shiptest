@@ -218,8 +218,6 @@
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
-/obj/effect/turf_decal/box,
-/obj/machinery/selling_pad,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/cargo)
 "cu" = (
@@ -2700,9 +2698,6 @@
 	dir = 8;
 	network = list("cricket")
 	},
-/obj/machinery/computer/selling_pad_control{
-	dir = 8
-	},
 /obj/effect/turf_decal/corner/brown/half,
 /obj/effect/turf_decal/corner/brown{
 	dir = 4
@@ -4142,6 +4137,10 @@
 /obj/item/newspaper,
 /obj/item/megaphone/command,
 /obj/item/radio/headset/solgov/alt,
+/obj/item/stack/spacecash/c1000,
+/obj/item/stack/spacecash/c1000,
+/obj/item/stack/spacecash/c1000,
+/obj/item/stack/spacecash/c1000,
 /turf/open/floor/carpet/nanoweave/blue,
 /area/ship/bridge)
 "Wj" = (

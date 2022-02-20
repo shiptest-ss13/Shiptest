@@ -866,7 +866,7 @@
 /obj/structure/window/reinforced/tinted{
 	dir = 4
 	},
-/obj/structure/toilet,
+/obj/structure/toilet/secret,
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "HE" = (
@@ -952,6 +952,10 @@
 /obj/structure/catwalk,
 /turf/open/floor/plating,
 /area/ship/external)
+"Lr" = (
+/obj/item/stack/spacecash/c1,
+/turf/open/floor/plating,
+/area/ship/maintenance/port)
 "LD" = (
 /obj/machinery/airalarm/directional/west,
 /obj/effect/decal/cleanable/glass,
@@ -1413,7 +1417,7 @@ cQ
 aN
 Wt
 Vx
-Vx
+Lr
 Vx
 tq
 NI

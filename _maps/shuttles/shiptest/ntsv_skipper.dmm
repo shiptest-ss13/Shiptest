@@ -190,14 +190,6 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /turf/open/floor/carpet/nanoweave,
 /area/ship/hallway/central)
-"bU" = (
-/obj/effect/turf_decal/corner/yellow/border{
-	dir = 1
-	},
-/obj/effect/turf_decal/corner/yellow/half,
-/obj/machinery/selling_pad,
-/turf/open/floor/plasteel,
-/area/ship/cargo)
 "bV" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -577,24 +569,6 @@
 /area/ship/engineering)
 "gx" = (
 /turf/closed/wall/r_wall,
-/area/ship/cargo)
-"gF" = (
-/obj/structure/window/reinforced{
-	dir = 4
-	},
-/obj/effect/turf_decal/industrial/warning{
-	dir = 4
-	},
-/obj/effect/turf_decal/corner/yellow/border{
-	dir = 4
-	},
-/obj/effect/turf_decal/corner/yellow/half{
-	dir = 8
-	},
-/obj/machinery/computer/cargo/express{
-	dir = 1
-	},
-/turf/open/floor/plasteel,
 /area/ship/cargo)
 "gQ" = (
 /obj/machinery/power/shuttle/engine/fueled/plasma{
@@ -2015,6 +1989,11 @@
 "zR" = (
 /obj/structure/closet/secure_closet/captains,
 /obj/item/stock_parts/cell/gun,
+/obj/item/stack/spacecash/c1000,
+/obj/item/stack/spacecash/c1000,
+/obj/item/stack/spacecash/c1000,
+/obj/item/stack/spacecash/c1000,
+/obj/item/stack/spacecash/c1000,
 /turf/open/floor/carpet/royalblue,
 /area/ship/crew)
 "zX" = (
@@ -2433,7 +2412,7 @@
 /obj/effect/turf_decal/corner/yellow/bordercorner{
 	dir = 8
 	},
-/obj/machinery/computer/selling_pad_control,
+/obj/machinery/computer/cargo/express,
 /turf/open/floor/plasteel,
 /area/ship/cargo)
 "DQ" = (
@@ -4612,7 +4591,7 @@ ov
 GF
 HN
 Rd
-bU
+ff
 XC
 XC
 XC
@@ -4645,7 +4624,7 @@ KN
 Rd
 DN
 iQ
-gF
+iQ
 vQ
 oC
 AL
