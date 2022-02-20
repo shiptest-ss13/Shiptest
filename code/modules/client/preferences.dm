@@ -1330,7 +1330,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 /datum/preferences/proc/check_quirk_compatibility(mob/user)
 	var/list/quirk_conflicts = list()
 	var/list/handled_conflicts = list()
-	for(var/quirk_index in SSquirks.quirks)
+	for(var/quirk_index in SSquirks.quirk_instances)
 		var/datum/quirk/quirk_instance = SSquirks.quirk_instances[quirk_index]
 		if(quirk_instance.mood_quirk && CONFIG_GET(flag/disable_human_mood))
 			quirk_conflicts[quirk_instance.name] = "Mood is disabled."

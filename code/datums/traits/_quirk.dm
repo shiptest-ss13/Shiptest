@@ -1,3 +1,5 @@
+#define TRAIT_SPECIES_WHITELIST(ids...) list("type" = "allowed", ids)
+#define TRAIT_SPECIES_BLACKLIST(ids...) list("type" = "blocked", ids)
 //every quirk in this folder should be coded around being applied on spawn
 //these are NOT "mob quirks" like GOTTAGOFAST, but exist as a medium to apply them and other different effects
 /datum/quirk
@@ -10,7 +12,7 @@
 	var/medical_record_text //This text will appear on medical records for the trait. Not yet implemented
 	var/mood_quirk = FALSE //if true, this quirk affects mood and is unavailable if moodlets are disabled
 	var/list/mob_traits //if applicable, apply and remove these mob traits
-	var/list/species_lock = list() //List of id-based locks for species, set "type" = "allowed" to lock the species not on the list, set "type" = "blocked" to lock the species on the list, then add the species ids to the list. Example: species_lock = list("type" = "allowed", "ipc", "plasmaman")
+	var/list/species_lock = list() //List of id-based locks for species, use either TRAIT_SPECIES_WHITELIST or TRAIT_SPECIES_BLACKLIST inputting the species ids to said macros. Example: species_lock = TRAIT_SPECIES_WHITELIST(SPECIES_IPC, SPECIES_MOTH)
 	var/mob/living/quirk_holder
 
 /datum/quirk/New(mob/living/quirk_mob, spawn_effects)

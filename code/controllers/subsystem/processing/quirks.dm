@@ -1,4 +1,3 @@
-#define EXP_ASSIGN_WAYFINDER 1200
 //Used to process and handle roundstart quirks
 // - Quirk strings are used for faster checking in code
 // - Quirk datums are stored and hold different effects, as well as being a vector for applying trait string
@@ -28,7 +27,6 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 							list("Bad Touch", "Friendly"))
 	for(var/client/client in GLOB.clients)
 		client?.prefs.check_quirk_compatibility()
-	to_chat(world, "<span class='notice'>Quirks have been checked for compatibility.</span>")
 	return ..()
 
 /datum/controller/subsystem/processing/quirks/proc/SetupQuirks()
@@ -43,19 +41,20 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 
 /datum/controller/subsystem/processing/quirks/proc/AssignQuirks(mob/living/user, client/cli, spawn_effects)
 	var/badquirk = FALSE
-	var/conflicting_quirks = list2params(cli.prefs.check_quirk_compatibility())
-	if(conflicting_quirks)
-		stack_trace("Conflicting quirks [conflicting_quirks] in client [cli.ckey] preferences on spawn")
-	for(var/V in cli.prefs.all_quirks)
+	var/list/conflicting_quirks = cli?.prefs.check_quirk_compatibility()
+	conflicting_quirks &= cli?.prefs.all_quirks
+	if(length(conflicting_quirks) > 0)
+		stack_trace("Conflicting quirks [conflicting_quirks.Join(", ")] in client [cli.ckey] preferences on spawn")
+	for(var/V in cli?.prefs.all_quirks)
 		var/datum/quirk/Q = quirks[V]
 		if(Q)
 			user.add_quirk(Q, spawn_effects)
 		else
 			stack_trace("Invalid quirk \"[V]\" in client [cli.ckey] preferences")
-			cli.prefs.all_quirks -= V
+			cli?.prefs.all_quirks -= V
 			badquirk = TRUE
 	if(badquirk)
-		cli.prefs.save_character()
+		cli?.prefs.save_character()
 
 	if(conflicting_quirks)
 		alert(user, "Your quirks have been reset because you had a conflicting quirk, this was likely caused by mood being disabled or the species locks on a quirk being updated!")
