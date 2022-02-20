@@ -504,8 +504,7 @@
 	injury_mod -= armor_ablation
 	injury_mod += wound_bonus
 
-	for(var/thing in wounds)
-		var/datum/wound/W = thing
+	for(var/datum/wound/W as anything in wounds)
 		if(W.wound_type == wounding_type)
 			injury_mod += W.threshold_penalty
 
