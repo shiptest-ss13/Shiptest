@@ -464,8 +464,7 @@
 // try forcing a specific wound, but only if there isn't already a wound of that severity or greater for that type on this bodypart
 /obj/item/bodypart/proc/force_wound_upwards(specific_woundtype, smited = FALSE)
 	var/datum/wound/potential_wound = specific_woundtype
-	for(var/i in wounds)
-		var/datum/wound/existing_wound = i
+	for(var/datum/wound/existing_wound as anything in wounds)
 		if(existing_wound.wound_type == initial(potential_wound.wound_type))
 			if(existing_wound.severity < initial(potential_wound.severity)) // we only try if the existing one is inferior to the one we're trying to force
 				existing_wound.replace_wound(potential_wound, smited)
