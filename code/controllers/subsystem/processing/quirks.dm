@@ -13,6 +13,7 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 	var/list/quirk_points = list()	//Assoc. list of quirk names and their "point cost"; positive numbers are good traits, and negative ones are bad
 	var/list/quirk_objects = list()	//A list of all quirk objects in the game, since some may process
 	var/list/quirk_blacklist = list() //A list a list of quirks that can not be used with each other. Format: list(quirk1,quirk2),list(quirk3,quirk4)
+	var/list/quirk_instances = list() //Assoc. list with instances of all roundstart quirk datum types; "name" = /path/
 
 /datum/controller/subsystem/processing/quirks/Initialize(timeofday)
 	if(!quirks.len)
@@ -38,6 +39,7 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 		var/datum/quirk/T = V
 		quirks[initial(T.name)] = T
 		quirk_points[initial(T.name)] = initial(T.value)
+		quirk_instances[initial(T.name)] = new T
 
 /datum/controller/subsystem/processing/quirks/proc/AssignQuirks(mob/living/user, client/cli, spawn_effects)
 	var/badquirk = FALSE

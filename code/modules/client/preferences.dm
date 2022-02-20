@@ -1331,8 +1331,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/list/quirk_conflicts = list()
 	var/list/handled_conflicts = list()
 	for(var/quirk_index in SSquirks.quirks)
-		var/datum/quirk/quirk_datum = SSquirks.quirks[quirk_index]
-		var/datum/quirk/quirk_instance = new quirk_datum
+		var/datum/quirk/quirk_instance = SSquirks.quirk_instances[quirk_index]
 		if(quirk_instance.mood_quirk && CONFIG_GET(flag/disable_human_mood))
 			quirk_conflicts[quirk_instance.name] = "Mood is disabled."
 			if(!handled_conflicts["mood"])
@@ -1343,7 +1342,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			if(!handled_conflicts["species"])
 				handle_quirk_conflict("species", pref_species, user)
 				handled_conflicts["species"] = TRUE
-		qdel(quirk_instance)
 	return quirk_conflicts
 /**
   * Proc called when there is a need to handle quirk conflicts.
@@ -1364,19 +1362,17 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 		else
 			return
 	for(var/quirk_owned in all_quirks)
-		var/datum/quirk/quirk_owned_datum = SSquirks.quirks[quirk_owned]
-		balance -= initial(quirk_owned_datum.value)
+		var/datum/quirk/quirk_owned_instance = SSquirks.quirk_instances[quirk_owned]
+		balance -= quirk_owned_instance.value
 		switch(change_type)
 			if("species")
-				var/datum/quirk/quirk_owned_instance = new quirk_owned_datum
 				if(((quirk_owned_instance.species_lock["type"] == "allowed") && !(target_species.id in quirk_owned_instance.species_lock)) || (quirk_owned_instance.species_lock["type"] == "blocked" && (target_species.id in quirk_owned_instance.species_lock)))
 					all_quirks_new -= quirk_owned_instance.name
 					balance += quirk_owned_instance.value
-				qdel(quirk_owned_instance)
 			if("mood")
-				if(initial(quirk_owned_datum.mood_quirk))
-					all_quirks_new -= initial(quirk_owned_datum.name)
-					balance += initial(quirk_owned_datum.value)
+				if(quirk_owned_instance.mood_quirk)
+					all_quirks_new -= quirk_owned_instance.name
+					balance += quirk_owned_instance.value
 	while(balance < 0)
 		var/list/positive_quirks = list()
 		for(var/quirk_owned in all_quirks_new)
