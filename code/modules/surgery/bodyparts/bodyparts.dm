@@ -928,8 +928,7 @@
 	var/dam_mul = 1 //initial(wound_damage_multiplier)
 
 // we can (normally) only have one wound per type, but remember there's multiple types (smites like :B:loodless can generate multiple cuts on a limb)
-	for(var/i in wounds)
-		var/datum/wound/iter_wound = i
+	for(var/datum/wound/iter_wound as anything in wounds)
 		dam_mul *= iter_wound.damage_mulitplier_penalty
 
 	wound_damage_multiplier = dam_mul
