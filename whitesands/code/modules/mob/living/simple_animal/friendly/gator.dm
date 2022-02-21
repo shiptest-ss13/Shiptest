@@ -24,7 +24,6 @@
 	speed = 8
 	glide_size = 2
 	footstep_type = FOOTSTEP_MOB_CLAW
-//shipping my tests all over the floor
 /mob/living/simple_animal/hostile/retaliate/gator/steppy/iguana
 	name = "Izzy"
 	desc = "A master of looking at pipes, she's a favorite among the GEC for her GECK-like nature."
