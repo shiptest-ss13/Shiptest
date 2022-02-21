@@ -298,7 +298,7 @@
 
 /datum/design/id
 	name = "Identification Card"
-	desc = "A card used to provide ID and determine access across the station."
+	desc = "A card used to provide ID and determine access across known space."
 	id = "idcard"
 	build_type = PROTOLATHE
 	materials = list(/datum/material/iron=200, /datum/material/glass = 100)

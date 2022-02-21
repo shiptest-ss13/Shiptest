@@ -51,7 +51,7 @@
 #ifdef UNIT_TESTS
 	set_ship_name("[source_template]")
 #else
-	set_ship_name("[source_template.prefix] [pick_list_replacements(SHIP_NAMES_FILE, pick(source_template.name_categories))]", TRUE)
+	set_ship_name("[source_template.prefix] [pick_list_replacements(SHIP_NAMES_FILE, pick(source_template.name_categories))]", TRUE, TRUE)
 #endif
 	refresh_engines()
 	check_loc()
@@ -103,6 +103,7 @@
   * * dock_to_use - The [/obj/docking_port/mobile] to dock to.
   */
 /obj/structure/overmap/ship/simulated/proc/dock(obj/structure/overmap/to_dock, obj/docking_port/stationary/dock_to_use)
+	log_shuttle("[src] [REF(src)] DOCKING: STARTED REQUEST FOR [to_dock] AT [dock_to_use]")
 	refresh_engines()
 	shuttle.movement_force = list("KNOCKDOWN" = FLOOR(est_thrust / 50, 1), "THROW" = FLOOR(est_thrust / 200, 1))
 	shuttle.request(dock_to_use)
@@ -124,6 +125,7 @@
 		return "Ship not docked!"
 	if(!shuttle)
 		return "Shuttle not found!"
+	log_shuttle("[src] [REF(src)] UNDOCK: STARTED UNDOCK FROM ")
 	shuttle.destination = null
 	shuttle.mode = SHUTTLE_IGNITING
 	shuttle.setTimer(shuttle.ignitionTime)
@@ -206,7 +208,7 @@
   * Proc called after a shuttle is moved, used for checking a ship's location when it's moved manually (E.G. calling the mining shuttle via a console)
   */
 /obj/structure/overmap/ship/simulated/proc/check_loc()
-	var/docked_object = shuttle.current_ship
+	var/docked_object = SSovermap.get_overmap_object_by_location(shuttle)
 	if(docked_object == loc) //The docked object is correct, move along
 		return TRUE
 	if(state == OVERMAP_SHIP_DOCKING || state == OVERMAP_SHIP_UNDOCKING)
@@ -249,6 +251,7 @@
   * Called after the shuttle docks, and finishes the transfer to the new location.
   */
 /obj/structure/overmap/ship/simulated/proc/complete_dock(datum/weakref/to_dock)
+	log_shuttle("[src] [REF(src)] COMPLETE DOCK: RESOLVED WEAKREF TO [to_dock.resolve()]")
 	var/old_loc = loc
 	switch(state)
 		if(OVERMAP_SHIP_DOCKING) //so that the shuttle is truly docked first
@@ -317,12 +320,13 @@
 /**
   * Sets the ship, shuttle, and shuttle areas to a new name.
   */
-/obj/structure/overmap/ship/simulated/proc/set_ship_name(new_name, ignore_cooldown = FALSE)
+/obj/structure/overmap/ship/simulated/proc/set_ship_name(new_name, ignore_cooldown = FALSE, mute = FALSE)
 	if(!new_name || new_name == name || !COOLDOWN_FINISHED(src, rename_cooldown))
 		return
-	if(name != initial(name))
+	if((name != initial(name)) || !mute)
 		priority_announce("The [name] has been renamed to the [new_name].", "Docking Announcement", sender_override = new_name, zlevel = shuttle.virtual_z())
-	message_admins("[key_name_admin(usr)] renamned vessel '[name]' to '[new_name]'")
+	if(!mute)
+		message_admins("[key_name_admin(usr)] renamned vessel '[name]' to '[new_name]'")
 	name = new_name
 	shuttle.name = new_name
 	if(!ignore_cooldown)

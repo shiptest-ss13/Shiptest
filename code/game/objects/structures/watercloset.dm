@@ -216,7 +216,7 @@
 
 /obj/item/reagent_containers/food/snacks/urinalcake
 	name = "urinal cake"
-	desc = "The noble urinal cake, protecting the station's pipes from the station's pee. Do not eat."
+	desc = "The noble urinal cake, protecting the people's pipes from the people's pee. Edibility is suggested to be low."
 	icon = 'icons/obj/items_and_weapons.dmi'
 	icon_state = "urinalcake"
 	w_class = WEIGHT_CLASS_TINY

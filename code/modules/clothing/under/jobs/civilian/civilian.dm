@@ -113,14 +113,14 @@ WS End */
 	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON
 
 /obj/item/clothing/under/rank/civilian/janitor
-	desc = "It's the official uniform of the station's janitor. It has minor protection from biohazards."
+	desc = "It's the official uniform of a space janitor. It has minor protection from biohazards."
 	name = "janitor's jumpsuit"
 	icon_state = "janitor"
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 10, "rad" = 0, "fire" = 0, "acid" = 0)
 
 /obj/item/clothing/under/rank/civilian/janitor/skirt
 	name = "janitor's jumpskirt"
-	desc = "It's the official skirt of the station's janitor. It has minor protection from biohazards."
+	desc = "It's the official skirt of a space janitor. It has minor protection from biohazards."
 	icon_state = "janitor_skirt"
 	body_parts_covered = CHEST|GROIN|ARMS
 	can_adjust = FALSE

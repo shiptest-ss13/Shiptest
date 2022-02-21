@@ -69,8 +69,7 @@ SUBSYSTEM_DEF(sounds)
 		return FALSE
 	var/text_channel = num2text(.)
 	using_channels[text_channel] = DATUMLESS
-	LAZYINITLIST(using_channels_by_datum[DATUMLESS])
-	using_channels_by_datum[DATUMLESS] += .
+	LAZYADD(using_channels_by_datum[DATUMLESS], .)
 
 /// Reserves a channel for a datum. Automatic cleanup only when the datum is deleted. Returns an integer for channel.
 /datum/controller/subsystem/sounds/proc/reserve_sound_channel(datum/D)
@@ -81,8 +80,7 @@ SUBSYSTEM_DEF(sounds)
 		return FALSE
 	var/text_channel = num2text(.)
 	using_channels[text_channel] = D
-	LAZYINITLIST(using_channels_by_datum[D])
-	using_channels_by_datum[D] += .
+	LAZYADD(using_channels_by_datum[D], .)
 
 /**
   * Reserves a channel and updates the datastructure. Private proc.

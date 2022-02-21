@@ -149,7 +149,7 @@
 /mob/living/simple_animal/hostile/asteroid/goldgrub/proc/barf_contents()
 	visible_message("<span class='danger'>[src] spits out its consumed ores!</span>")
 	playsound(src, 'sound/effects/splat.ogg', 50, TRUE)
-	for(var/atom/movable/AM in src)
+	for(var/atom/movable/AM as anything in src)
 		AM.forceMove(loc)
 
 /mob/living/simple_animal/hostile/asteroid/goldgrub/proc/Burrow()//Begin the chase to kill the goldgrub in time

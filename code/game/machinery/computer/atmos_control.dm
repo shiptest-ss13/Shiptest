@@ -89,7 +89,7 @@ GLOBAL_LIST_EMPTY(atmos_air_controllers)
 
 /obj/machinery/computer/atmos_control
 	name = "atmospherics monitoring"
-	desc = "Used to monitor the station's atmospherics sensors."
+	desc = "Used to monitor nearby atmospherics sensors."
 	icon_screen = "tank"
 	icon_keyboard = "atmos_key"
 	circuit = /obj/item/circuitboard/computer/atmos_control
@@ -152,7 +152,7 @@ GLOBAL_LIST_EMPTY(atmos_air_controllers)
 		return
 
 	var/id_tag = signal.data["id_tag"]
-	if(!id_tag || !sensors.Find(id_tag))
+	if(!id_tag || !(id_tag in sensors))
 		return
 
 	sensor_information[id_tag] = signal.data

@@ -4,7 +4,7 @@
 	body_parts_covered = CHEST|GROIN
 	icon = 'icons/obj/clothing/under/dress.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/under/dress.dmi'
-	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON
+	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON //Doesn't require a new icon.
 
 /obj/item/clothing/under/dress/sundress
 	name = "sundress"
@@ -41,7 +41,6 @@
 	name = "black skirt"
 	desc = "A black skirt, very fancy!"
 	icon_state = "blackskirt"
-	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON //Doesn't require a new icon.
 
 /obj/item/clothing/under/dress/skirt/blue
 	name = "blue skirt"
