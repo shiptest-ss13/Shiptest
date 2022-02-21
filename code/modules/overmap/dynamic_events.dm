@@ -14,6 +14,8 @@
 	var/preserve_level = FALSE
 	///What kind of planet the level is, if it's a planet at all.
 	var/planet
+	///Planet's flavor name, if it is a planet.
+	var/planet_name
 	///List of probabilities for each type of planet.
 	var/static/list/probabilities
 	///The planet that will be forced to load
@@ -42,6 +44,7 @@
 /obj/structure/overmap/dynamic/ship_act(mob/user, obj/structure/overmap/ship/simulated/acting)
 	var/prev_state = acting.state
 	acting.state = OVERMAP_SHIP_ACTING //This is so the controls are locked while loading the level to give both a sense of confirmation and to prevent people from moving the ship
+	log_shuttle("[src] [REF(src)]: SHIP_ACT FROM [acting] [REF(acting)]")
 	. = load_level(acting.shuttle)
 	if(.)
 		acting.state = prev_state
@@ -86,30 +89,35 @@
 			planet = DYNAMIC_WORLD_LAVA
 			icon_state = "globe"
 			color = COLOR_ORANGE
+			planet_name = gen_planet_name()
 		if(DYNAMIC_WORLD_ICE)
 			name = "strange ice planet"
 			desc = "A very weak energy signal originating from a planet with traces of water and extremely low temperatures."
 			planet = DYNAMIC_WORLD_ICE
 			icon_state = "globe"
 			color = COLOR_BLUE_LIGHT
+			planet_name = gen_planet_name()
 		if(DYNAMIC_WORLD_JUNGLE)
 			name = "strange jungle planet"
 			desc = "A very weak energy signal originating from a planet teeming with life."
 			planet = DYNAMIC_WORLD_JUNGLE
 			icon_state = "globe"
 			color = COLOR_LIME
+			planet_name = gen_planet_name()
 		if(DYNAMIC_WORLD_SAND)
 			name = "strange sand planet"
 			desc = "A very weak energy signal originating from a planet with many traces of silica."
 			planet = DYNAMIC_WORLD_SAND
 			icon_state = "globe"
 			color = COLOR_GRAY
+			planet_name = gen_planet_name()
 		if(DYNAMIC_WORLD_ROCKPLANET)
 			name = "strange rock planet"
 			desc = "A very weak energy signal originating from a abandoned industrial planet."
 			planet = DYNAMIC_WORLD_ROCKPLANET
 			icon_state = "globe"
 			color = COLOR_BROWN
+			planet_name = gen_planet_name()
 		if(DYNAMIC_WORLD_REEBE)
 			name = "???"
 			desc = "Some sort of strange portal. Theres no identification of what this is."
@@ -132,6 +140,19 @@
 			mass = 0 //Space doesn't weigh anything
 	desc += !preserve_level && "It may not still be here if you leave it."
 
+/obj/structure/overmap/dynamic/proc/gen_planet_name()
+	. = ""
+	switch(rand(1,10))
+		if(1 to 4)
+			for(var/i in 1 to rand(2,3))
+				. += capitalize(pick(GLOB.alphabet))
+			. += "-"
+			. += "[pick(rand(1,999))]"
+		if(4 to 9)
+			. += "[pick(GLOB.planet_names)] \Roman[rand(1,9)]"
+		if(10)
+			. += "[pick(GLOB.planet_prefixes)] [pick(GLOB.planet_names)]"
+
 /**
   * Load a level for a ship that's visiting the level.
   * * visiting shuttle - The docking port of the shuttle visiting the level.
@@ -141,6 +162,7 @@
 		return
 	if(!COOLDOWN_FINISHED(SSovermap, encounter_cooldown))
 		return "WARNING! Stellar interference is restricting flight in this area. Interference should pass in [COOLDOWN_TIMELEFT(SSovermap, encounter_cooldown) / 10] seconds."
+	log_shuttle("[src] [REF(src)] LEVEL_INIT: FOR [visiting_shuttle]")
 	var/list/dynamic_encounter_values = SSovermap.spawn_dynamic_encounter(planet, TRUE, ruin_type = template)
 	mapzone = dynamic_encounter_values[1]
 	reserve_dock = dynamic_encounter_values[2]
@@ -150,6 +172,7 @@
  * Alters the position and orientation of a stationary docking port to ensure that any mobile port small enough can dock within its bounds
  */
 /obj/structure/overmap/dynamic/proc/adjust_dock_to_shuttle(obj/docking_port/stationary/dock_to_adjust, obj/docking_port/mobile/shuttle)
+	log_shuttle("[src] [REF(src)] DOCKING: ADJUST [dock_to_adjust] [REF(dock_to_adjust)] TO [shuttle][REF(shuttle)]")
 	// the shuttle's dimensions where "true height" measures distance from the shuttle's fore to its aft
 	var/shuttle_true_height = shuttle.height
 	var/shuttle_true_width = shuttle.width
@@ -209,6 +232,7 @@
   * Unloads the reserve, deletes the linked docking port, and moves to a random location if there's no client-having, alive mobs.
   */
 /obj/structure/overmap/dynamic/proc/unload_level()
+	log_shuttle("[src] [REF(src)] UNLOAD")
 	if(preserve_level)
 		return
 
@@ -241,11 +265,18 @@
 	if(preserve_level)
 		return
 
-	// Duplicate code grrr
-	if(length(mapzone.get_mind_mobs()))
-		return //Dont fuck over stranded people? tbh this shouldn't be called on this condition, instead of bandaiding it inside
+	if(mapzone)
+		if(length(mapzone.get_mind_mobs()))
+			return //Dont fuck over stranded people? tbh this shouldn't be called on this condition, instead of bandaiding it inside
+		remove_mapzone()
 
-	remove_mapzone()
+	if(reserve_dock)
+		qdel(reserve_dock, TRUE)
+		reserve_dock = null
+	if(reserve_dock_secondary)
+		qdel(reserve_dock_secondary, TRUE)
+		reserve_dock_secondary = null
+
 	qdel(src)
 
 /obj/structure/overmap/dynamic/lava

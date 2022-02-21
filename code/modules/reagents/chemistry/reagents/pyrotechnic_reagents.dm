@@ -31,12 +31,13 @@
 
 /datum/reagent/clf3
 	name = "Chlorine Trifluoride"
-	description = "Makes a temporary 3x3 fireball when it comes into existence, so be careful when mixing. ClF3 applied to a surface burns things that wouldn't otherwise burn, sometimes through the very floors of the station and exposing it to the vacuum of space."
+	description = "Makes a temporary 3x3 fireball when it comes into existence, so be careful when mixing. ClF3 applied to a surface burns things that wouldn't otherwise burn, including typically-robust flooring, potentially exposing it to the vacuum of space."
 	reagent_state = LIQUID
 	color = "#FFC8C8"
 	metabolization_rate = 4
 	taste_description = "burning"
-	process_flags = ORGANIC | SYNTHETIC //WS Edit - IPCs
+	process_flags = ORGANIC | SYNTHETIC
+	accelerant_quality = 20
 
 /datum/reagent/clf3/on_mob_life(mob/living/carbon/M)
 	M.adjust_fire_stacks(2)
@@ -153,7 +154,8 @@
 	color = "#FA00AF"
 	taste_description = "burning"
 	self_consuming = TRUE
-	process_flags = ORGANIC | SYNTHETIC //WS Edit - IPCs
+	process_flags = ORGANIC | SYNTHETIC
+	accelerant_quality = 20
 
 /datum/reagent/phlogiston/expose_mob(mob/living/M, method=TOUCH, reac_volume)
 	M.adjust_fire_stacks(1)
@@ -176,7 +178,8 @@
 	color = "#FA00AF"
 	taste_description = "burning"
 	self_consuming = TRUE
-	process_flags = ORGANIC | SYNTHETIC //WS Edit - IPCs
+	process_flags = ORGANIC | SYNTHETIC
+	accelerant_quality = 20
 
 /datum/reagent/napalm/on_mob_life(mob/living/carbon/M)
 	M.adjust_fire_stacks(1)

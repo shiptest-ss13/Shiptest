@@ -114,8 +114,7 @@
 						if(R.data["blood_DNA"] && R.data["blood_type"])
 							var/blood_DNA = R.data["blood_DNA"]
 							var/blood_type = R.data["blood_type"]
-							LAZYINITLIST(blood)
-							blood[blood_DNA] = blood_type
+							LAZYSET(blood, blood_DNA, blood_type)
 
 		// We gathered everything. Create a fork and slowly display the results to the holder of the scanner.
 

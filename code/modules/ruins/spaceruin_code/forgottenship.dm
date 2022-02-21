@@ -117,7 +117,7 @@ GLOBAL_VAR_INIT(fscpassword, generate_password())
 
 /mob/living/simple_animal/hostile/nanotrasen/ranged/assault
 	name = "Nanotrasen Assault Officer"
-	desc = "Nanotrasen Assault Officer. Contact CentCom if you saw him on your station. Prepare to die, if you've been found near Syndicate property."
+	desc = "A Nanotrasen Assault Officer. Prepare to die, if you've been found near Syndicate property."
 	icon_state = "nanotrasenrangedassault"
 	icon_living = "nanotrasenrangedassault"
 	icon_dead = null

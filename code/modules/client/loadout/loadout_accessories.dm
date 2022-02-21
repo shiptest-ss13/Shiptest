@@ -7,7 +7,6 @@
 
 /datum/gear/accessory/scarf
 	subtype_path = /datum/gear/accessory/scarf
-	cost = 500
 
 /datum/gear/accessory/scarf/red
 	display_name = "scarf, red"
@@ -25,7 +24,6 @@
 
 /datum/gear/accessory/scarf/striped
 	subtype_path = /datum/gear/accessory/scarf/striped
-	cost = 750
 
 /datum/gear/accessory/scarf/striped/red
 	display_name = "striped scarf, red"
@@ -43,7 +41,6 @@
 
 /datum/gear/accessory/tie
 	subtype_path = /datum/gear/accessory/tie
-	cost = 500
 
 /datum/gear/accessory/tie/recolorable
 	display_name = "tie, recolorable"
@@ -55,22 +52,18 @@
 	display_name = "armband"
 	path = /obj/item/clothing/accessory/armband
 	slot = null
-	cost = 750
 
 /datum/gear/accessory/stethoscope
 	display_name = "stethoscope"
 	path = /obj/item/clothing/neck/stethoscope
 	allowed_roles = list("Medical Doctor", "Chief Medical Officer")
-	cost = 750
 
 /datum/gear/accessory/collar
 	display_name = "pet collar"
 	description = "Only the truly insane would wear this around their neck."
 	path = /obj/item/clothing/neck/petcollar
-	cost = 5000
 
 /datum/gear/accessory/gloves/evening
 	display_name = "evening gloves"
 	description = "Excessively fancy elbow-length gloves."
 	path = /obj/item/clothing/gloves/color/evening
-	cost = 750
