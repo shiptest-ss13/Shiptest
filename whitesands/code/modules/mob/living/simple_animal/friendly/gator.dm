@@ -30,7 +30,7 @@
 	desc = "A master of looking at pipes, she's a favorite among the GEC for her GECK-like nature."
 	icon_state = "iguana"
 	icon_living = "iguana"
-	icon_dead ="steppy_dead"
+	icon_dead ="iguana_dead"
 	speak_chance = 1
 	turns_per_move = 5
 	response_help_continuous = "pets"
