@@ -6,6 +6,7 @@
 	item_state = "screwdriver"
 	lefthand_file = 'icons/mob/inhands/equipment/tools_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/tools_righthand.dmi'
+	belt_icon_state = "screwdriver"
 	flags_1 = CONDUCT_1
 	slot_flags = ITEM_SLOT_BELT
 	force = 5
@@ -19,11 +20,19 @@
 	usesound = list('sound/items/screwdriver.ogg', 'sound/items/screwdriver2.ogg')
 	tool_behaviour = TOOL_SCREWDRIVER
 	toolspeed = 1
+
+	greyscale_config = /datum/greyscale_config/screwdriver
+	greyscale_config_inhand_left = /datum/greyscale_config/screwdriver_inhand_left
+	greyscale_config_inhand_right = /datum/greyscale_config/screwdriver_inhand_right
+	greyscale_config_belt = /datum/greyscale_config/screwdriver_belt
+
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 30)
 	drop_sound = 'sound/items/handling/screwdriver_drop.ogg'
 	pickup_sound =  'sound/items/handling/screwdriver_pickup.ogg'
-	item_flags = SURGICAL_TOOL | EYE_STAB //WS - Fix IPC surgery
-	var/random_color = TRUE //if the screwdriver uses random coloring
+	item_flags = SURGICAL_TOOL | EYE_STAB
+	///if the screwdriver uses random coloring
+	var/random_color = TRUE
+	/// List of possible random colors
 	var/static/list/screwdriver_colors = list(
 		"blue" = "#8080ff",
 		"red" = "#ff666e",
@@ -38,40 +47,14 @@
 	user.visible_message("<span class='suicide'>[user] is stabbing [src] into [user.p_their()] [pick("temple", "heart")]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
 	return(BRUTELOSS)
 
-/obj/item/screwdriver/Initialize()
-	. = ..()
-	if(random_color) //random colors!
+/obj/item/screwdriver/Initialize(mapload)
+	if(random_color)
 		icon_state = "screwdriver"
 		var/our_color = pick(screwdriver_colors)
-		add_atom_colour(screwdriver_colors[our_color], FIXED_COLOUR_PRIORITY)
-		update_icon()
+		set_greyscale(colors=list(screwdriver_colors[our_color]))
+	. = ..()
 	if(prob(75))
 		pixel_y = rand(0, 16)
-
-/obj/item/screwdriver/update_overlays()
-	. = ..()
-	if(!random_color) //icon override
-		return
-	var/mutable_appearance/base_overlay = mutable_appearance(icon, "screwdriver_screwybits")
-	base_overlay.appearance_flags = RESET_COLOR
-	. += base_overlay
-
-/obj/item/screwdriver/worn_overlays(isinhands = FALSE, icon_file)
-	. = list()
-	if(isinhands && random_color)
-		var/mutable_appearance/M = mutable_appearance(icon_file, "screwdriver_head")
-		M.appearance_flags = RESET_COLOR
-		. += M
-
-/obj/item/screwdriver/get_belt_overlay()
-	if(random_color)
-		var/mutable_appearance/body = mutable_appearance('icons/obj/clothing/belt_overlays.dmi', "screwdriver")
-		var/mutable_appearance/head = mutable_appearance('icons/obj/clothing/belt_overlays.dmi', "screwdriver_head")
-		body.color = color
-		head.add_overlay(body)
-		return head
-	else
-		return mutable_appearance('icons/obj/clothing/belt_overlays.dmi', icon_state)
 
 /obj/item/screwdriver/abductor
 	name = "alien screwdriver"
@@ -82,6 +65,8 @@
 	usesound = 'sound/items/pshoom.ogg'
 	toolspeed = 0.1
 	random_color = FALSE
+	greyscale_config_inhand_left = null
+	greyscale_config_inhand_right = null
 
 /obj/item/screwdriver/abductor/get_belt_overlay()
 	return mutable_appearance('icons/obj/clothing/belt_overlays.dmi', "screwdriver_nuke")
@@ -102,6 +87,8 @@
 	usesound = 'sound/items/drill_use.ogg'
 	toolspeed = 0.7
 	random_color = FALSE
+	greyscale_config_inhand_left = null
+	greyscale_config_inhand_right = null
 
 /obj/item/screwdriver/power/examine()
 	. = ..()

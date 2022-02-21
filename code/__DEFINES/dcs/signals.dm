@@ -74,6 +74,7 @@
 #define COMSIG_ATOM_UPDATE_ICON "atom_update_icon"
 	#define COMSIG_ATOM_NO_UPDATE_ICON_STATE (1<<0)
 	#define COMSIG_ATOM_NO_UPDATE_OVERLAYS (1<<1)
+	#define COMSIG_ATOM_NO_UPDATE_GREYSCALE (1<<2)
 ///from base of [atom/update_icon_state]: ()
 #define COMSIG_ATOM_UPDATE_ICON_STATE "atom_update_icon_state"
 ///from base of atom/update_overlays(): (list/new_overlays)
@@ -296,6 +297,8 @@
 #define COMSIG_MOVABLE_LIGHT_OVERLAY_SET_COLOR "movable_light_overlay_set_range"
 ///Called when the movable tries to toggle its dynamic light LIGHTING_ON status, from base atom/movable/lighting_overlay_toggle_on(): (new_state)
 #define COMSIG_MOVABLE_LIGHT_OVERLAY_TOGGLE_ON "movable_light_overlay_toggle_on"
+
+#define COMSIG_GREYSCALE_CONFIG_REFRESHED "greyscale_config_refreshed"
 ///called when the movable's glide size is updated: (new_glide_size)
 #define COMSIG_MOVABLE_UPDATE_GLIDE_SIZE "movable_glide_size"
 

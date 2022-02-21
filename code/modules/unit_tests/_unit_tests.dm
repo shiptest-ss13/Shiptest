@@ -46,6 +46,7 @@
 #include "ship_placement.dm"
 #include "spawn_humans.dm"
 #include "species_whitelists.dm"
+#include "greyscale_config.dm"
 #include "subsystem_init.dm"
 #include "teleporters.dm"
 #include "timer_sanity.dm"

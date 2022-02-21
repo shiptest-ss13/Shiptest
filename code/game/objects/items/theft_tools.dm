@@ -86,11 +86,12 @@
 /obj/item/screwdriver/nuke
 	name = "screwdriver"
 	desc = "A screwdriver with an ultra thin tip that's carefully designed to boost screwing speed."
-//	icon = 'icons/obj/nuke_tools.dmi' WS edit - better tool sprites
 	icon_state = "screwdriver_nuke"
 	item_state = "screwdriver_nuke"
 	toolspeed = 0.5
 	random_color = FALSE
+	greyscale_config_inhand_left = null
+	greyscale_config_inhand_right = null
 
 /obj/item/paper/guides/antag/nuke_instructions
 	info = "How to break into a Nanotrasen self-destruct terminal and remove its plutonium core:<br>\

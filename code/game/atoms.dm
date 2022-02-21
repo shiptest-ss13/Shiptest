@@ -219,6 +219,9 @@
 	if(loc)
 		SEND_SIGNAL(loc, COMSIG_ATOM_CREATED, src) /// Sends a signal that the new atom `src`, has been created at `loc`
 
+	if(greyscale_config && greyscale_colors)
+		update_greyscale()
+
 	//atom color stuff
 	if(color)
 		add_atom_colour(color, FIXED_COLOUR_PRIORITY)
@@ -658,26 +661,6 @@
 		update_icon_state()
 		. = TRUE
 
-	if(!(signalOut & UPDATE_GREYSCALE))
-		var/list/colors = update_greyscale()
-		// Updating the greyscale config in update_greyscale() is fine or we would check this earlier
-		if(greyscale_config)
-			icon = SSgreyscale.GetColoredIconByType(greyscale_config, colors)
-		. |= UPDATE_GREYSCALE
-
-	if(!(signalOut & UPDATE_OVERLAYS))
-		if(LAZYLEN(managed_vis_overlays))
-			SSvis_overlays.remove_vis_overlay(src, managed_vis_overlays)
-
-		var/list/new_overlays = update_overlays()
-		if(managed_overlays)
-			cut_overlay(managed_overlays)
-			managed_overlays = null
-		if(length(new_overlays))
-			managed_overlays = new_overlays
-			add_overlay(new_overlays)
-		. |= UPDATE_OVERLAYS
-
 	if(!(signalOut & COMSIG_ATOM_NO_UPDATE_OVERLAYS))
 		var/list/new_overlays = update_overlays()
 		if(managed_overlays)
@@ -693,20 +676,35 @@
 /// Updates the icon state of the atom
 /atom/proc/update_icon_state()
 
-// Updates the greyscale of the atom
-/atom/proc/update_greyscale()
-	SHOULD_CALL_PARENT(TRUE)
-	. = list()
-	var/list/raw_rgb = splittext(greyscale_colors, "#")
-	for(var/i in 2 to length(raw_rgb))
-		. += "#[raw_rgb[i]]"
-	SEND_SIGNAL(src, COMSIG_ATOM_UPDATE_GREYSCALE, .)
-
 /// Updates the overlays of the atom
 /atom/proc/update_overlays()
 	SHOULD_CALL_PARENT(1)
 	. = list()
 	SEND_SIGNAL(src, COMSIG_ATOM_UPDATE_OVERLAYS, .)
+
+
+/// Handles updates to greyscale value updates.
+/// The colors argument can be either a list or the full color string.
+/// Child procs should call parent last so the update happens after all changes.
+/atom/proc/set_greyscale(list/colors, new_config)
+	SHOULD_CALL_PARENT(TRUE)
+	if(istype(colors))
+		colors = colors.Join("")
+	if(!isnull(colors) && greyscale_colors != colors) // If you want to disable greyscale stuff then give a blank string
+		greyscale_colors = colors
+
+	if(!isnull(new_config) && greyscale_config != new_config)
+		greyscale_config = new_config
+
+	update_greyscale()
+
+/// Checks if this atom uses the GAGS system and if so updates the icon
+/atom/proc/update_greyscale()
+	SHOULD_CALL_PARENT(TRUE)
+	if(greyscale_colors && greyscale_config)
+		icon = SSgreyscale.GetColoredIconByType(greyscale_config, greyscale_colors)
+	update_atom_colour()
+	smooth_icon(src)
 
 /**
   * An atom we are buckled or is contained within us has tried to move

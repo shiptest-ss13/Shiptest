@@ -4,6 +4,7 @@
 	id = "iron"
 	desc = "Common iron ore often found in sedimentary and igneous layers of the crust."
 	color = "#878687"
+	greyscale_colors = "#878687"
 	categories = list(MAT_CATEGORY_ORE = TRUE, MAT_CATEGORY_RIGID = TRUE, MAT_CATEGORY_BASE_RECIPES = TRUE)
 	sheet_type = /obj/item/stack/sheet/metal
 	ore_type = /obj/item/stack/ore/iron
@@ -15,6 +16,7 @@
 	id = "glass"
 	desc = "Glass forged by melting sand."
 	color = "#88cdf1"
+	greyscale_colors = "#88cdf1"
 	alpha = 150
 	categories = list(MAT_CATEGORY_RIGID = TRUE, MAT_CATEGORY_BASE_RECIPES = TRUE)
 	integrity_modifier = 0.1
@@ -35,6 +37,7 @@ Unless you know what you're doing, only use the first three numbers. They're in 
 	id = "silver"
 	desc = "Silver"
 	color = list(255/255, 284/255, 302/255,0, 0,0,0,0, 0,0,0,0, 0,0,0,1, 0,0,0,0)
+	color = list(255/255, 284/255, 302/255,0, 0,0,0,0, 0,0,0,0, 0,0,0,1, 0,0,0,0)
 	categories = list(MAT_CATEGORY_ORE = TRUE, MAT_CATEGORY_RIGID = TRUE, MAT_CATEGORY_BASE_RECIPES = TRUE)
 	sheet_type = /obj/item/stack/sheet/mineral/silver
 	ore_type = /obj/item/stack/ore/silver
@@ -47,6 +50,7 @@ Unless you know what you're doing, only use the first three numbers. They're in 
 	id = "gold"
 	desc = "Gold"
 	color = list(340/255, 240/255, 50/255,0, 0,0,0,0, 0,0,0,0, 0,0,0,1, 0,0,0,0) //gold is shiny, but not as bright as bananium
+	greyscale_colors = list(340/255, 240/255, 50/255,0, 0,0,0,0, 0,0,0,0, 0,0,0,1, 0,0,0,0)
 	strength_modifier = 1.2
 	categories = list(MAT_CATEGORY_ORE = TRUE, MAT_CATEGORY_RIGID = TRUE, MAT_CATEGORY_BASE_RECIPES = TRUE)
 	sheet_type = /obj/item/stack/sheet/mineral/gold
@@ -61,6 +65,7 @@ Unless you know what you're doing, only use the first three numbers. They're in 
 	id = "diamond"
 	desc = "Highly pressurized carbon"
 	color = list(48/255, 272/255, 301/255,0, 0,0,0,0, 0,0,0,0, 0,0,0,1, 0,0,0,0)
+	greyscale_colors = list(48/255, 272/255, 301/255,0, 0,0,0,0, 0,0,0,0, 0,0,0,1, 0,0,0,0)
 	categories = list(MAT_CATEGORY_ORE = TRUE, MAT_CATEGORY_RIGID = TRUE, MAT_CATEGORY_BASE_RECIPES = TRUE)
 	sheet_type = /obj/item/stack/sheet/mineral/diamond
 	ore_type = /obj/item/stack/ore/diamond
@@ -75,6 +80,7 @@ Unless you know what you're doing, only use the first three numbers. They're in 
 	id = "uranium"
 	desc = "Uranium"
 	color = rgb(48, 237, 26)
+	greyscale_colors = "#1fb83b"
 	categories = list(MAT_CATEGORY_ORE = TRUE, MAT_CATEGORY_RIGID = TRUE, MAT_CATEGORY_BASE_RECIPES = TRUE)
 	sheet_type = /obj/item/stack/sheet/mineral/uranium
 	ore_type = /obj/item/stack/ore/uranium
@@ -95,6 +101,7 @@ Unless you know what you're doing, only use the first three numbers. They're in 
 	name = "plasma"
 	id = "plasma"
 	desc = "Isn't plasma a state of matter? Oh whatever."
+	color = list(298/255, 46/255, 352/255,0, 0,0,0,0, 0,0,0,0, 0,0,0,1, 0,0,0,0)
 	color = list(298/255, 46/255, 352/255,0, 0,0,0,0, 0,0,0,0, 0,0,0,1, 0,0,0,0)
 	categories = list(MAT_CATEGORY_ORE = TRUE, MAT_CATEGORY_RIGID = TRUE, MAT_CATEGORY_BASE_RECIPES = TRUE)
 	sheet_type = /obj/item/stack/sheet/mineral/plasma
@@ -120,6 +127,7 @@ Unless you know what you're doing, only use the first three numbers. They're in 
 	id = "bluespace_crystal"
 	desc = "Crystals with bluespace properties"
 	color = list(119/255, 217/255, 396/255,0, 0,0,0,0, 0,0,0,0, 0,0,0,1, 0,0,0,0)
+	color = list(119/255, 217/255, 396/255,0, 0,0,0,0, 0,0,0,0, 0,0,0,1, 0,0,0,0)
 	alpha = 200
 	categories = list(MAT_CATEGORY_ORE = TRUE)
 	beauty_modifier = 0.5
@@ -133,6 +141,7 @@ Unless you know what you're doing, only use the first three numbers. They're in 
 	id = "bananium"
 	desc = "Material with hilarious properties"
 	color = list(460/255, 464/255, 0, 0, 0,0,0,0, 0,0,0,0, 0,0,0,1, 0,0,0,0) //obnoxiously bright yellow
+	color = list(460/255, 464/255, 0, 0, 0,0,0,0, 0,0,0,0, 0,0,0,1, 0,0,0,0)
 	categories = list(MAT_CATEGORY_ORE = TRUE, MAT_CATEGORY_RIGID = TRUE, MAT_CATEGORY_BASE_RECIPES = TRUE)
 	sheet_type = /obj/item/stack/sheet/mineral/bananium
 	ore_type = /obj/item/stack/ore/bananium
@@ -158,6 +167,7 @@ Unless you know what you're doing, only use the first three numbers. They're in 
 	id = "titanium"
 	desc = "Titanium"
 	color = "#b3c0c7"
+	greyscale_colors = "#b3c0c7"
 	strength_modifier = 1.3
 	categories = list(MAT_CATEGORY_ORE = TRUE, MAT_CATEGORY_RIGID = TRUE, MAT_CATEGORY_BASE_RECIPES = TRUE)
 	sheet_type = /obj/item/stack/sheet/mineral/titanium
@@ -184,6 +194,7 @@ Unless you know what you're doing, only use the first three numbers. They're in 
 	id = "plastic"
 	desc = "Plastic"
 	color = "#caccd9"
+	greyscale_colors = "#caccd9"
 	strength_modifier = 0.85
 	sheet_type = /obj/item/stack/sheet/plastic
 	categories = list(MAT_CATEGORY_RIGID = TRUE, MAT_CATEGORY_BASE_RECIPES = TRUE)
@@ -197,6 +208,7 @@ Unless you know what you're doing, only use the first three numbers. They're in 
 	id = "biomass"
 	desc = "Organic matter"
 	color = "#735b4d"
+	greyscale_colors = "#735b4d"
 	strength_modifier = 0.8
 	value_per_unit = 0.025
 
@@ -205,6 +217,7 @@ Unless you know what you're doing, only use the first three numbers. They're in 
 	id = "wood"
 	desc = "Flexible, durable, but flamable. Hard to come across in space."
 	color = "#bb8e53"
+	greyscale_colors = "#bb8e53"
 	strength_modifier = 0.5
 	sheet_type = /obj/item/stack/sheet/mineral/wood
 	categories = list(MAT_CATEGORY_RIGID = TRUE, MAT_CATEGORY_BASE_RECIPES = TRUE)
