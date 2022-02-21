@@ -49,7 +49,6 @@
 
 /obj/item/screwdriver/Initialize(mapload)
 	if(random_color)
-		icon_state = "screwdriver"
 		var/our_color = pick(screwdriver_colors)
 		set_greyscale(colors=list(screwdriver_colors[our_color]))
 	. = ..()
