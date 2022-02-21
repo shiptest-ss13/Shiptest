@@ -936,8 +936,6 @@
 /turf/open/floor/plasteel,
 /area/ship/crew/dorm)
 "ob" = (
-/obj/machinery/selling_pad,
-/obj/effect/turf_decal/industrial/outline/yellow,
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "om" = (
@@ -1832,6 +1830,10 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 1
 	},
+/obj/item/stack/spacecash/c1000,
+/obj/item/stack/spacecash/c1000,
+/obj/item/stack/spacecash/c1000,
+/obj/item/stack/spacecash/c1000,
 /turf/open/floor/wood/yew,
 /area/ship/crew/chapel/office)
 "Aj" = (
@@ -2615,7 +2617,6 @@
 /area/ship/crew/dorm)
 "Ko" = (
 /obj/effect/turf_decal/industrial/outline/yellow,
-/obj/machinery/mineral/ore_redemption,
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "Kp" = (
@@ -3312,10 +3313,10 @@
 /turf/open/floor/plating,
 /area/ship/engineering)
 "UO" = (
-/obj/machinery/computer/selling_pad_control{
+/obj/structure/window/plasma/reinforced/spawner,
+/obj/machinery/mineral/ore_redemption{
 	dir = 1
 	},
-/obj/structure/window/plasma/reinforced/spawner,
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "UP" = (
