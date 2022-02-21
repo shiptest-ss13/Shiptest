@@ -93,7 +93,7 @@ GLOBAL_LIST_INIT(admin_verbs_sounds, list(
 	))
 GLOBAL_PROTECT(admin_verbs_sounds)
 GLOBAL_LIST_INIT(admin_verbs_fun, list(
-	/client/proc/cmd_admin_dress,
+	/client/proc/cmd_select_equipment,
 	/client/proc/cmd_admin_gib_self,
 	/client/proc/cmd_change_command_name,
 	/client/proc/cmd_admin_create_centcom_report,
@@ -156,7 +156,7 @@ GLOBAL_PROTECT(admin_verbs_debug)
 	/client/proc/restart_controller,
 	/client/proc/Debug2,
 	/client/proc/cmd_admin_delete,
-	/client/proc/cmd_admin_dress, //Granted to allow spawning in a mob without having to access the player panel or VVDropdown.
+	/client/proc/cmd_select_equipment, //Granted to allow spawning in a mob without having to access the player panel or VVDropdown.
 	/client/proc/cmd_debug_make_powernets,
 	/client/proc/cmd_debug_mob_lists,
 	/client/proc/cmd_debug_del_all,
@@ -236,7 +236,7 @@ GLOBAL_LIST_INIT(admin_verbs_hideable, list(
 	/client/proc/play_local_sound,
 	/client/proc/play_sound,
 	/client/proc/set_round_end_sound,
-	/client/proc/cmd_admin_dress,
+	/client/proc/cmd_select_equipment,
 	/client/proc/cmd_admin_gib_self,
 	/client/proc/drop_bomb,
 	/client/proc/drop_dynex_bomb,

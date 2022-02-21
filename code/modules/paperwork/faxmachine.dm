@@ -45,6 +45,10 @@ GLOBAL_LIST_EMPTY(alldepartments)
 	if(!(("[department]" in GLOB.alldepartments) || ("[department]" in admin_departments)) && department != "Unknown")
 		LAZYADD(GLOB.alldepartments, department)
 
+/obj/machinery/photocopier/faxmachine/Destroy()
+	. = ..()
+	GLOB.allfaxes -= src
+
 /obj/machinery/photocopier/faxmachine/longrange
 	name = "long range fax machine"
 	fax_network = "Central Command Quantum Entanglement Network"
