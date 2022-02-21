@@ -111,7 +111,7 @@
 	name = "[limb_id] [parse_zone(body_zone)]"
 	update_icon_dropped()
 
-	if(bodytype != BODYPART_ORGANIC)
+	if(!IS_ORGANIC_LIMB(src))
 		grind_results = null
 
 /obj/item/bodypart/forceMove(atom/destination) //Please. Never forcemove a limb if its's actually in use. This is only for borgs.
@@ -203,7 +203,7 @@
 		qdel(current_gauze)
 	if(current_splint)
 		qdel(current_splint)
-	for(var/obj/item/organ/drop_organ in get_organs())
+	for(var/obj/item/organ/drop_organ as anything in get_organs())
 		drop_organ.transfer_to_limb(src, owner)
 	for(var/obj/item/I in src)
 		I.forceMove(T)
@@ -214,8 +214,7 @@
 		return FALSE
 
 	var/list/bodypart_organs
-	for(var/i in owner.internal_organs) //internal organs inside the dismembered limb are dropped.
-		var/obj/item/organ/organ_check = i
+	for(var/obj/item/organ/organ_check as anything in owner.internal_organs) //internal organs inside the dismembered limb are dropped.
 		if(check_zone(organ_check.zone) == body_zone)
 			LAZYADD(bodypart_organs, organ_check) // this way if we don't have any, it'll just return null
 
@@ -317,8 +316,7 @@
 			current_splint.take_damage()
 		check_wounding(wounding_type, wounding_dmg, wound_bonus, bare_wound_bonus)
 
-	for(var/i in wounds)
-		var/datum/wound/iter_wound = i
+	for(var/datum/wound/iter_wound as anything in wounds)
 		iter_wound.receive_damage(wounding_type, wounding_dmg, wound_bonus)
 
 	/*
@@ -434,8 +432,7 @@
 	if(ishuman(owner))
 		var/mob/living/carbon/human/human_wearer = owner
 		var/list/clothing = human_wearer.clothingonpart(src)
-		for(var/i in clothing)
-			var/obj/item/clothing/clothes_check = i
+		for(var/obj/item/clothing/clothes_check as anything in clothing)
 			// unlike normal armor checks, we tabluate these piece-by-piece manually so we can also pass on appropriate damage the clothing's limbs if necessary
 			if(clothes_check.armor.getRating("wound"))
 				bare_wound_bonus = 0
@@ -467,8 +464,7 @@
 // try forcing a specific wound, but only if there isn't already a wound of that severity or greater for that type on this bodypart
 /obj/item/bodypart/proc/force_wound_upwards(specific_woundtype, smited = FALSE)
 	var/datum/wound/potential_wound = specific_woundtype
-	for(var/i in wounds)
-		var/datum/wound/existing_wound = i
+	for(var/datum/wound/existing_wound as anything in wounds)
 		if(existing_wound.wound_type == initial(potential_wound.wound_type))
 			if(existing_wound.severity < initial(potential_wound.severity)) // we only try if the existing one is inferior to the one we're trying to force
 				existing_wound.replace_wound(potential_wound, smited)
@@ -494,8 +490,7 @@
 	if(owner && ishuman(owner))
 		var/mob/living/carbon/human/H = owner
 		var/list/clothing = H.clothingonpart(src)
-		for(var/c in clothing)
-			var/obj/item/clothing/C = c
+		for(var/obj/item/clothing/C as anything in clothing)
 			// unlike normal armor checks, we tabluate these piece-by-piece manually so we can also pass on appropriate damage the clothing's limbs if necessary
 			armor_ablation += C.armor.getRating("wound")
 			if(wounding_type == WOUND_SLASH)
@@ -509,8 +504,7 @@
 	injury_mod -= armor_ablation
 	injury_mod += wound_bonus
 
-	for(var/thing in wounds)
-		var/datum/wound/W = thing
+	for(var/datum/wound/W as anything in wounds)
 		if(W.wound_type == wounding_type)
 			injury_mod += W.threshold_penalty
 
@@ -934,8 +928,7 @@
 	var/dam_mul = 1 //initial(wound_damage_multiplier)
 
 // we can (normally) only have one wound per type, but remember there's multiple types (smites like :B:loodless can generate multiple cuts on a limb)
-	for(var/i in wounds)
-		var/datum/wound/iter_wound = i
+	for(var/datum/wound/iter_wound as anything in wounds)
 		dam_mul *= iter_wound.damage_mulitplier_penalty
 
 	wound_damage_multiplier = dam_mul
@@ -953,12 +946,11 @@
 
 	//We want an accurate reading of .len
 	listclearnulls(embedded_objects)
-	for(var/obj/item/embeddies in embedded_objects)
+	for(var/obj/item/embeddies as anything in embedded_objects)
 		if(!embeddies.isEmbedHarmless())
 			bleed_rate += 0.5
 
-	for(var/thing in wounds)
-		var/datum/wound/W = thing
+	for(var/datum/wound/W as anything in wounds)
 		bleed_rate += W.blood_flow
 
 	if(owner.body_position == LYING_DOWN)
