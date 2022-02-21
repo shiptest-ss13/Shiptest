@@ -6,7 +6,7 @@
 
 /datum/greyscale_config/screwdriver
 	name = "Screwdriver"
-	icon_file = 'icons/obj/tools.dmi'
+	icon_file = 'whitesands/icons/obj/tools.dmi'
 	json_config = 'code/datums/greyscale/json_configs/screwdriver.json'
 
 /datum/greyscale_config/screwdriver_inhand_left
