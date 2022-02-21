@@ -1,4 +1,4 @@
-#define GET_ICON_STATE(I) (I.mob_overlay_state || I.icon_state)
+#define RESOLVE_ICON_STATE(I) (I.mob_overlay_state || I.icon_state)
 #define CHECK_USE_AUTOGEN (handled_by_bodytype ? null : dna.species) //Is this gross overuse of macros? Yes. Fuck you.
 
 	///////////////////////
@@ -132,17 +132,17 @@ There are several things that need to be remembered:
 				uniform_overlay = U.build_worn_icon(default_layer = UNIFORM_LAYER, default_icon_file = 'icons/mob/clothing/under/default.dmi', isinhands = FALSE, femaleuniform = U.fitted, override_state = target_overlay)
 
 		var/icon_file
+		var/handled_by_bodytype = TRUE
 		if(!uniform_overlay)
 			//Kapu's autistic attempt at digitigrade handling
 			//Hi Kapu
-			var/handled_by_bodytype = TRUE //It's true by default to prevent copy pasting
 			if((dna.species.bodytype & BODYTYPE_DIGITIGRADE) && (U.supports_variations & DIGITIGRADE_VARIATION))
 				icon_file = DIGITIGRADE_PATH
 
 			else if((dna.species.bodytype & BODYTYPE_VOX) && (U.supports_variations & VOX_VARIATION))
 				icon_file = VOX_UNIFORM_PATH
 
-			if(!(icon_exists(icon_file, GET_ICON_STATE(U))))
+			if(!(icon_exists(icon_file, RESOLVE_ICON_STATE(U))))
 				handled_by_bodytype = FALSE
 				icon_file = U.mob_overlay_icon || DEFAULT_UNIFORM_PATH
 
@@ -150,14 +150,16 @@ There are several things that need to be remembered:
 
 		if(!uniform_overlay)
 			return
-		if(OFFSET_UNIFORM in dna.species.offset_features)
+		if((!handled_by_bodytype) && (OFFSET_UNIFORM in dna.species.offset_features))
 			uniform_overlay.pixel_x += dna.species.offset_features[OFFSET_UNIFORM][1]
 			uniform_overlay.pixel_y += dna.species.offset_features[OFFSET_UNIFORM][2]
 			U.accessory_overlay?.pixel_x = dna.species.offset_features[OFFSET_ACCESSORY][1]
 			U.accessory_overlay?.pixel_y = dna.species.offset_features[OFFSET_ACCESSORY][2]
 		overlays_standing[UNIFORM_LAYER] = uniform_overlay
 
-	apply_overlay(UNIFORM_LAYER)
+		if(uniform_overlay) //This is faster fuck you
+			apply_overlay(UNIFORM_LAYER)
+
 	update_mutant_bodyparts()
 
 
@@ -276,7 +278,7 @@ There are several things that need to be remembered:
 		if((dna.species.bodytype & BODYTYPE_VOX) && (I.supports_variations & VOX_VARIATION))
 			icon_file = VOX_EARS_PATH
 
-		if(!(icon_exists(icon_file, GET_ICON_STATE(I))))
+		if(!(icon_exists(icon_file, RESOLVE_ICON_STATE(I))))
 			handled_by_bodytype = FALSE
 			icon_file = DEFAULT_EARS_PATH
 
@@ -304,7 +306,7 @@ There are several things that need to be remembered:
 	if(shoes)
 		var/obj/item/I = shoes
 		var/mutable_appearance/shoes_overlay
-		var/icon_file = DEFAULT_SHOES_PATH
+		var/icon_file
 		update_hud_shoes(I)
 		var/handled_by_bodytype = TRUE
 
@@ -312,14 +314,16 @@ There are several things that need to be remembered:
 			var/obj/item/bodypart/leg = src.get_bodypart(BODY_ZONE_L_LEG)
 			if(leg.limb_id == "digitigrade")//Snowflakey and bad. But it makes it look consistent.
 				icon_file = DIGITIGRADE_SHOES_PATH
-		else
+
+		if(!(icon_exists(icon_file, RESOLVE_ICON_STATE(I))))
 			handled_by_bodytype = FALSE
+			icon_file = DEFAULT_SHOES_PATH
 
 		shoes_overlay = I.build_worn_icon(default_layer = UNIFORM_LAYER, default_icon_file = icon_file, isinhands = FALSE, species = CHECK_USE_AUTOGEN)
 
 		if(!shoes_overlay)
 			return
-		if(OFFSET_SHOES in dna.species.offset_features)
+		if(!(handled_by_bodytype) && (OFFSET_SHOES in dna.species.offset_features))
 			shoes_overlay.pixel_x += dna.species.offset_features[OFFSET_SHOES][1]
 			shoes_overlay.pixel_y += dna.species.offset_features[OFFSET_SHOES][2]
 		overlays_standing[SHOES_LAYER] = shoes_overlay
@@ -370,10 +374,11 @@ There are several things that need to be remembered:
 
 		if(!head_overlay)
 			return
-		if(OFFSET_HEAD in dna.species.offset_features)
+		if(!(handled_by_bodytype) && (OFFSET_HEAD in dna.species.offset_features))
 			head_overlay.pixel_x += dna.species.offset_features[OFFSET_HEAD][1]
 			head_overlay.pixel_y += dna.species.offset_features[OFFSET_HEAD][2]
 		overlays_standing[HEAD_LAYER] = head_overlay
+
 	update_mutant_bodyparts()
 	apply_overlay(HEAD_LAYER)
 
@@ -428,7 +433,7 @@ There are several things that need to be remembered:
 
 		if(!suit_overlay)
 			return
-		if(OFFSET_SUIT in dna.species.offset_features)
+		if((!handled_by_bodytype) && (OFFSET_SUIT in dna.species.offset_features))
 			suit_overlay.pixel_x += dna.species.offset_features[OFFSET_SUIT][1]
 			suit_overlay.pixel_y += dna.species.offset_features[OFFSET_SUIT][2]
 		overlays_standing[SUIT_LAYER] = suit_overlay
@@ -475,18 +480,21 @@ There are several things that need to be remembered:
 		update_hud_wear_mask(I)
 		var/mutable_appearance/mask_overlay
 		var/icon_file = DEFAULT_MASK_PATH
+		var/handled_by_bodytype = TRUE
+
 		if(!(ITEM_SLOT_MASK in check_obscured_slots()))
 			if((dna.species.bodytype & BODYTYPE_VOX) && (I.supports_variations & VOX_VARIATION))
 				icon_file = VOX_MASK_PATH
 
-			if(!(icon_exists(icon_file, GET_ICON_STATE(I))))
+			if(!(icon_exists(icon_file, RESOLVE_ICON_STATE(I))))
 				icon_file = DEFAULT_MASK_PATH
+				handled_by_bodytype = FALSE
 
-			mask_overlay = I.build_worn_icon(default_layer = FACEMASK_LAYER, default_icon_file = icon_file)
+			mask_overlay = I.build_worn_icon(default_layer = FACEMASK_LAYER, default_icon_file = icon_file, species = CHECK_USE_AUTOGEN)
 
 		if(!mask_overlay)
 			return
-		if(OFFSET_FACEMASK in dna.species.offset_features)
+		if((!handled_by_bodytype) && (OFFSET_FACEMASK in dna.species.offset_features))
 			mask_overlay.pixel_x += dna.species.offset_features[OFFSET_FACEMASK][1]
 			mask_overlay.pixel_y += dna.species.offset_features[OFFSET_FACEMASK][2]
 
@@ -494,6 +502,24 @@ There are several things that need to be remembered:
 
 	apply_overlay(FACEMASK_LAYER)
 	update_mutant_bodyparts() //e.g. upgate needed because mask now hides lizard snout
+
+
+/mob/living/carbon/human/update_inv_neck()
+	remove_overlay(NECK_LAYER)
+
+	if(client && hud_used && hud_used.inv_slots[TOBITSHIFT(ITEM_SLOT_NECK) + 1])
+		var/atom/movable/screen/inventory/inv = hud_used.inv_slots[TOBITSHIFT(ITEM_SLOT_NECK) + 1]
+		inv.update_icon()
+
+	if(wear_neck)
+		if(!(ITEM_SLOT_NECK in check_obscured_slots()))
+			var/icon_file = DEFAULT_NECK_PATH
+			var/handled_by_bodytype = FALSE
+			overlays_standing[NECK_LAYER] = wear_neck.build_worn_icon(default_layer = NECK_LAYER, default_icon_file = icon_file, species = CHECK_USE_AUTOGEN)
+
+		update_hud_neck(wear_neck)
+
+	apply_overlay(NECK_LAYER)
 
 /mob/living/carbon/human/update_inv_back()
 	remove_overlay(BACK_LAYER)
@@ -511,7 +537,7 @@ There are several things that need to be remembered:
 		if((dna.species.bodytype & BODYTYPE_VOX) && (I.supports_variations & VOX_VARIATION))
 			icon_file = VOX_BACK_PATH
 
-		if(!icon_exists(icon_file, GET_ICON_STATE(I)))
+		if(!icon_exists(icon_file, RESOLVE_ICON_STATE(I)))
 			icon_file = DEFAULT_BACK_PATH
 			handled_by_bodytype = FALSE
 
@@ -519,7 +545,7 @@ There are several things that need to be remembered:
 
 		if(!back_overlay)
 			return
-		if(OFFSET_BACK in dna.species.offset_features)
+		if((!handled_by_bodytype) && (OFFSET_BACK in dna.species.offset_features))
 			back_overlay.pixel_x += dna.species.offset_features[OFFSET_BACK][1]
 			back_overlay.pixel_y += dna.species.offset_features[OFFSET_BACK][2]
 		overlays_standing[BACK_LAYER] = back_overlay
@@ -544,14 +570,16 @@ There are several things that need to be remembered:
 	if(slot_flags & ITEM_SLOT_BACK)
 		var/icon/species_clothing_icon = GLOB.species_clothing_icons[species.id]["[file2use]-[state2use]"]
 		if(!species_clothing_icon)
-			generate_species_clothing(file2use, state2use, species)
+			if(!generate_species_clothing(file2use, state2use, species))
+				return FALSE
 		return mutable_appearance(GLOB.species_clothing_icons[species.id]["[file2use]-[state2use]"], layer = -layer)
-	return
+
 
 /obj/item/clothing/wear_species_version(file2use, state2use, layer, datum/species/species)
 	var/icon/species_clothing_icon = GLOB.species_clothing_icons[species.id]["[file2use]-[state2use]"]
 	if(!species_clothing_icon) 	//Create standing/laying icons if they don't exist
-		generate_species_clothing(file2use, state2use, species)
+		if(!generate_species_clothing(file2use, state2use, species))
+			return FALSE
 	return mutable_appearance(GLOB.species_clothing_icons[species.id]["[file2use]-[state2use]"], layer = -layer)
 
 /mob/living/carbon/human/proc/get_overlays_copy(list/unwantedLayers)

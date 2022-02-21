@@ -284,11 +284,10 @@
 	GLOB.female_clothing_icons[index] = female_clothing_icon
 
 /obj/item/proc/generate_species_clothing(file2use, state2use, datum/species/species)
-	var/icon/human_clothing_icon = icon(file2use, state2use)
-
-	if(!greyscale_colors || !greyscale_icon_state)
-		GLOB.species_clothing_icons[species.id]["[file2use]-[state2use]"] = human_clothing_icon
+	if(!icon_exists(species.species_clothing_path, greyscale_icon_state))
 		return
+
+	var/icon/human_clothing_icon = icon(file2use, state2use)
 
 	var/icon/species_icon = icon(species.species_clothing_path, greyscale_icon_state)
 	var/list/final_list = list()
@@ -305,6 +304,8 @@
 	species_icon.MapColors(final_list[1], final_list[2], final_list[3])
 	species_icon = fcopy_rsc(species_icon)
 	GLOB.species_clothing_icons[species.id]["[file2use]-[state2use]"] = species_icon
+
+	return TRUE
 
 /obj/item/clothing/under/verb/toggle()
 	set name = "Adjust Suit Sensors"

@@ -102,7 +102,7 @@
 
 /obj/item/bodypart/Destroy()
 	if(owner)
-		owner.remove_bodypart(src)
+		drop_limb(TRUE)
 		set_owner(null)
 	return ..()
 

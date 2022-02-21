@@ -10,6 +10,7 @@
 #define DEFAULT_EARS_PATH 'icons/mob/clothing/ears.dmi'
 #define DEFAULT_MASK_PATH 'icons/mob/clothing/mask.dmi'
 #define DEFAULT_HEAD_PATH 'icons/mob/clothing/head.dmi'
+#define DEFAULT_NECK_PATH 'icons/mob/clothing/neck.dmi'
 
 ///VOX PATHS
 #define VOX_UNIFORM_PATH 'icons/mob/species/vox/onmob_uniform_vox.dmi'
