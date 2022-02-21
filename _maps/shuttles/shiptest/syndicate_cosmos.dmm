@@ -3113,7 +3113,7 @@
 "rp" = (
 /obj/effect/turf_decal/industrial/outline,
 /obj/structure/closet/crate/secure/engineering{
-	desc = "A locked crate, containing a backup supermatter. Do not open unless necessary, can not be re-contained.";
+	desc = "A locked crate, containing a backup supermatter. Do not open unless necessary.";
 	name = "emergency supermatter replacement";
 	req_access_txt = "10"
 	},
@@ -4633,9 +4633,12 @@
 	base_icon_state = "toilet00";
 	color = "#30ed1a";
 	desc = "A strangely translucent and iridescent toilet that looks like it used to be part of a larger throne.";
+	emergency_alert = "TOILET CLOG IMMINENT.";
 	icon = 'icons/obj/watercloset.dmi';
 	icon_state = "toilet00";
-	name = "nuclear throne"
+	name = "nuclear throne";
+	safe_alert = "Toilet water level returning to safe operating parameters.";
+	warning_alert = "Danger! Toilet water levels rising!"
 	},
 /obj/effect/decal/hammerandsickle,
 /turf/open/floor/engine,
@@ -6866,6 +6869,14 @@
 	rad_insulation = 1
 	},
 /area/ship/engineering)
+"OG" = (
+/obj/effect/turf_decal/industrial/warning,
+/obj/machinery/ntnet_relay{
+	desc = "A very complex router and transmitter capable of connecting electronic devices together. Looks stolen.";
+	name = "Bootleg NTNet Quantum Relay"
+	},
+/turf/open/floor/plating,
+/area/ship/engineering/atmospherics)
 "OH" = (
 /obj/machinery/camera/xray{
 	dir = 4;
@@ -9212,7 +9223,7 @@ eK
 eK
 kx
 gP
-wT
+OG
 ca
 mK
 Ze
