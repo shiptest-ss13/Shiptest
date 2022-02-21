@@ -1,6 +1,6 @@
 /obj/machinery/plate_press
 	name = "license plate press"
-	desc = "You know, we're making a lot of license plates for a station with literally no cars in it."
+	desc = "You know, we're making a lot of license plates for a space-faring civilization."
 	icon = 'icons/obj/machines/prison.dmi'
 	icon_state = "offline"
 	use_power = IDLE_POWER_USE

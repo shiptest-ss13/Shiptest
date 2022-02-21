@@ -5,8 +5,8 @@ SUBSYSTEM_DEF(blackmarket)
 
 	/// Descriptions for each shipping methods.
 	var/shipping_method_descriptions = list(
-		SHIPPING_METHOD_LAUNCH="Launches the item at the station from space, cheap but you might not recieve your item at all.",
-		SHIPPING_METHOD_LTSRBT="Long-To-Short-Range-Bluespace-Transceiver, a machine that recieves items outside the station and then teleports them to the location of the uplink."
+		SHIPPING_METHOD_LAUNCH="Launches the item at your coordinates from across deep space, cheap but you might not recieve your item at all.",
+		SHIPPING_METHOD_LTSRBT="Long-To-Short-Range-Bluespace-Transceiver, a machine that prepares items at a remote storage location and then teleports them to the location of the uplink."
 	)
 
 	/// List of all existing markets.
@@ -78,7 +78,7 @@ SUBSYSTEM_DEF(blackmarket)
 				var/atom/movable/item = purchase.entry.spawn_item(pickedloc)
 				item.throw_at(purchase.uplink, 3, 3, spin = FALSE)
 
-				to_chat(recursive_loc_check(purchase.uplink.loc, /mob), "<span class='notice'>[purchase.uplink] flashes a message noting the order is being launched at the station from [dir2text(startSide)].</span>")
+				to_chat(recursive_loc_check(purchase.uplink.loc, /mob), "<span class='notice'>[purchase.uplink] flashes a message noting the order is being launched at your coordinates from [dir2text(startSide)].</span>")
 
 				queued_purchases -= purchase
 				qdel(purchase)

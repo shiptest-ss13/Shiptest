@@ -13,7 +13,7 @@
 	if(href_list["Vars"])
 		debug_variables(locate(href_list["Vars"]))
 		var/datum/href_target = locate(href_list["Vars"])
-		if(href_target)
+		if(istype(href_target))//We can VV lists. Stop screaming so much.
 			href_target.vv_alert_admins()
 
 //Stuff below aren't in dropdowns/etc.

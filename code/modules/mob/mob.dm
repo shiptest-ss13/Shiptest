@@ -16,7 +16,13 @@
   *
   * qdels any client colours in place on this mob
   *
+  * Unsets the currently active machine
+  *
+  * Clears roundstart quirks list
+  *
   * Ghostizes the client attached to this mob
+  *
+  * Removes references to the mob from its former mind, and vice versa
   *
   * Parent call
   */
@@ -34,9 +40,19 @@
 		for(var/M in observers)
 			var/mob/dead/observe = M
 			observe.reset_perspective(null)
+	for(var/datum/atom_hud/hud as anything in GLOB.all_huds)
+		hud.remove_from_hud(src)
+		hud.remove_hud_from(src, TRUE)
 	qdel(hud_used)
 	QDEL_LIST(client_colours)
+	active_storage = null
+	unset_machine()
 	ghostize()
+	if(mind)
+		mind.handle_mob_deletion(src)
+	if(istype(loc, /atom/movable))
+		var/atom/movable/movable_loc = loc
+		LAZYREMOVE(movable_loc.client_mobs_in_contents, src)
 	return ..()
 
 
@@ -386,31 +402,6 @@
 			return 1
 
 	return 0
-
-// Convinience proc.  Collects crap that fails to equip either onto the mob's back, or drops it.
-// Used in job equipping so shit doesn't pile up at the start loc.
-/mob/living/carbon/human/proc/equip_or_collect(var/obj/item/W, var/slot)
-	if(W.mob_can_equip(src, null, slot, TRUE, TRUE))
-		//Mob can equip.  Equip it.
-		equip_to_slot_or_del(W, slot)
-	else
-		//Mob can't equip it.  Put it in a bag B.
-		// Do I have a backpack?
-		var/obj/item/storage/B
-		if(istype(back,/obj/item/storage))
-			//Mob is wearing backpack
-			B = back
-		else
-			//not wearing backpack.  Check if player holding box
-			if(!is_holding_item_of_type(/obj/item/storage/box)) //If not holding box, give box
-				B = new /obj/item/storage/box(null) // Null in case of failed equip.
-				if(!put_in_hands(B))
-					return // box could not be placed in players hands.  I don't know what to do here...
-			//Now, B represents a container we can insert W into.
-			var/datum/component/storage/STR = B.GetComponent(/datum/component/storage)
-			if(STR.can_be_inserted(W, stop_messages=TRUE))
-				STR.handle_item_insertion(W,1)
-			return B
 
 /**
   * Reset the attached clients perspective (viewpoint)
@@ -1235,10 +1226,6 @@
 	return
 
 /mob/proc/get_id_in_hand()
-	return
-
-///Get the mob's probably linked bank account WS EDIT
-/mob/proc/get_bank_account(hand_first)
 	return
 
 /**

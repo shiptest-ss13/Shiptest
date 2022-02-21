@@ -140,8 +140,8 @@
 		.["otherInfo"] += list(other_data)
 
 	var/turf/T = get_turf(current_ship)
-	.["x"] = T.x
-	.["y"] = T.y
+	.["x"] = T.x - SSovermap.overmap_vlevel.low_x
+	.["y"] = T.y - SSovermap.overmap_vlevel.low_y
 	.["state"] = current_ship.state
 	.["docked"] = isturf(current_ship.loc) ? FALSE : TRUE
 	.["heading"] = dir2text(current_ship.get_heading()) || "None"

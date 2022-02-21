@@ -80,3 +80,19 @@
 	suit = /obj/item/clothing/suit/armor/vest/syndie
 	r_pocket = /obj/item/melee/transforming/energy/sword
 	backpack_contents = list(/obj/item/melee/baton/loaded=1)
+
+/datum/outfit/job/hos/inteq
+	name = "IRMG Vanguard"
+
+	uniform = /obj/item/clothing/under/syndicate/inteq
+	head = /obj/item/clothing/head/beret/sec/hos/inteq
+	glasses = /obj/item/clothing/glasses/hud/security/sunglasses/inteq
+	mask = /obj/item/clothing/mask/gas/sechailer/inteq
+	belt = /obj/item/storage/belt/security/webbing/inteq
+	suit = /obj/item/clothing/suit/armor/hos/inteq
+	dcoat = /obj/item/clothing/suit/hooded/wintercoat/security/inteq
+	shoes = /obj/item/clothing/shoes/combat
+	gloves = /obj/item/clothing/gloves/combat
+
+	courierbag = /obj/item/storage/backpack/messenger/inteq
+	backpack_contents = list(/obj/item/melee/baton/loaded=1, /obj/item/ammo_box/magazine/co9mm=1, /obj/item/pda/heads/hos)
