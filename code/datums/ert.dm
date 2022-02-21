@@ -7,7 +7,7 @@
 	var/roles = list(/datum/antagonist/ert/security, /datum/antagonist/ert/medic, /datum/antagonist/ert/engineer) //List of possible roles to be assigned to ERT members.
 	var/rename_team
 	var/code
-	var/mission = "Assist the station."
+	var/mission = "Assist your employers in achieving their goals. Protect corporate assets."
 	var/teamsize = 5
 	var/polldesc
 
@@ -45,13 +45,13 @@
 	polldesc = "a CentCom Official"
 
 /datum/ert/centcom_official/New()
-	mission = "Conduct a routine performance review of [station_name()] and its Captain."
+	mission = "Conduct a routine review of [station_name()]."
 
 /datum/ert/inquisition
 	roles = list(/datum/antagonist/ert/chaplain/inquisitor, /datum/antagonist/ert/security/inquisitor, /datum/antagonist/ert/medic/inquisitor)
 	leader_role = /datum/antagonist/ert/commander/inquisitor
 	rename_team = "Inquisition"
-	mission = "Destroy any traces of paranormal activity aboard the station."
+	mission = "Destroy any traces of paranormal activity within the deployment site."
 	polldesc = "a Nanotrasen paranormal response team"
 
 /datum/ert/janitor

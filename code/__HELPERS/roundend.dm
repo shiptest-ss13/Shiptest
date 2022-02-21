@@ -64,7 +64,7 @@
 			var/name_to_use = initial(M.name)
 			if(ishuman(M))
 				name_to_use = "Unknown Human" //Monkeymen and other mindless corpses
-			if(npc_nest.Find(name_to_use))
+			if(name_to_use in npc_nest)
 				file_data["[escape_status]"]["npcs"][name_to_use] += 1
 			else
 				file_data["[escape_status]"]["npcs"][name_to_use] = 1
@@ -253,7 +253,7 @@
 /datum/controller/subsystem/ticker/proc/standard_reboot()
 	if(ready_for_reboot)
 		if(mode.station_was_nuked)
-			Reboot("Station destroyed by Nuclear Device.", "nuke")
+			Reboot("Sector destroyed by Nuclear Device.", "nuke")
 		else
 			Reboot("Round ended.", "proper completion")
 	else

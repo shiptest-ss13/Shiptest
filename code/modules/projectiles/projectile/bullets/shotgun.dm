@@ -108,7 +108,7 @@
 
 /obj/projectile/bullet/pellet/shotgun_improvised
 	tile_dropoff = 0.45		//Come on it does 4.5 damage don't be like that.		//WS Edit - Shotgun nerf
-	damage = 4.5			//WS Edit - Shotgun nerf
+	damage = 6			//WS Edit - Shotgun nerf
 	armour_penetration = -20		//WS Edit - Shotgun nerf
 	wound_bonus = 0
 	bare_wound_bonus = 7.5

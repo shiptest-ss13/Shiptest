@@ -31,6 +31,7 @@ em						{font-style: normal;	font-weight: bold;}
 
 .adminsay				{color:	#FF4500;	font-weight: bold;}
 .admin					{color: #386aff;	font-weight: bold;}
+.admindebug 			{color: #f9a825;	font-weight: bold;}
 
 .name					{					font-weight: bold;}
 

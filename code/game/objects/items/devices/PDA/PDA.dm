@@ -981,10 +981,6 @@ GLOBAL_LIST_EMPTY(PDAs)
 				var/obj/machinery/power/rad_collector/RC = A
 				if(RC.loaded_tank)
 					atmosanalyzer_scan(RC.loaded_tank.air_contents, user, RC)
-			else if(istype(A, /obj/item/flamethrower))
-				var/obj/item/flamethrower/F = A
-				if(F.ptank)
-					atmosanalyzer_scan(F.ptank.air_contents, user, F)
 
 	if(!scanmode && istype(A, /obj/item/paper) && owner)
 		var/obj/item/paper/PP = A
@@ -1107,8 +1103,8 @@ GLOBAL_LIST_EMPTY(PDAs)
 /obj/item/pda/emp_act(severity)
 	. = ..()
 	if (!(. & EMP_PROTECT_CONTENTS))
-		for(var/atom/A in src)
-			A.emp_act(severity)
+		for(var/atom/movable/AM as anything in src)
+			AM.emp_act(severity)
 	if (!(. & EMP_PROTECT_SELF))
 		emped++
 		addtimer(CALLBACK(src, .proc/emp_end), 200 * severity)

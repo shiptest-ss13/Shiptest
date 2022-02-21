@@ -599,7 +599,7 @@
 	var/mob/living/carbon/human/H = quirk_holder
 	if(world.time > next_process)
 		next_process = world.time + process_interval
-		if(!H.reagents.addiction_list.Find(reagent_instance))
+		if(!(reagent_instance in H.reagents.addiction_list))
 			if(QDELETED(reagent_instance))
 				reagent_instance = new reagent_type()
 			else

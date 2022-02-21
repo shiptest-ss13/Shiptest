@@ -184,6 +184,9 @@
 	if(path_hud)
 		QDEL_NULL(path_hud)
 		path_hud = null
+	if(data_hud_type)
+		var/datum/atom_hud/datahud = GLOB.huds[data_hud_type]
+		datahud.remove_hud_from(src, TRUE)
 	GLOB.bots_list -= src
 	if(paicard)
 		ejectpai()

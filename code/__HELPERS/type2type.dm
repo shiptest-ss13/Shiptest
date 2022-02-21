@@ -477,7 +477,7 @@ GLOBAL_LIST_INIT(modulo_angle_to_dir, list(NORTH,NORTHEAST,EAST,SOUTHEAST,SOUTH,
 			if(findtext(value,"]"))
 				value = splittext(value,"]") //"name]!" --> list("name","!")
 				for(var/A in value)
-					if(var_source.vars.Find(A))
+					if(A in var_source.vars)
 						. += A
 
 //assumes format #RRGGBB #rrggbb

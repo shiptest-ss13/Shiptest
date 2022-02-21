@@ -161,8 +161,7 @@
 	. = list()
 	if(!HasTargetsList)
 		possible_targets = ListTargets()
-	for(var/pos_targ in possible_targets)
-		var/atom/A = pos_targ
+	for(var/atom/A as anything in possible_targets)
 		if(Found(A))//Just in case people want to override targetting
 			. = list(A)
 			break
@@ -177,8 +176,7 @@
 
 /mob/living/simple_animal/hostile/proc/PossibleThreats()
 	. = list()
-	for(var/pos_targ in ListTargets())
-		var/atom/A = pos_targ
+	for(var/atom/A as anything in ListTargets())
 		if(Found(A))
 			. = list(A)
 			break
@@ -578,8 +576,7 @@
 /mob/living/simple_animal/hostile/proc/ListTargetsLazy(var/_Z)//Step 1, find out what we can see
 	var/static/hostile_machines = typecacheof(list(/obj/machinery/porta_turret, /obj/mecha, /obj/spacepod)) //WS - add spacepod
 	. = list()
-	for (var/I in SSmobs.clients_by_zlevel[_Z])
-		var/mob/M = I
+	for (var/mob/M as anything in SSmobs.clients_by_zlevel[_Z])
 		if (get_dist(M, src) < vision_range)
 			if (isturf(M.loc))
 				. += M

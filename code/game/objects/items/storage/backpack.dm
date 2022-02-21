@@ -143,7 +143,7 @@
 
 /obj/item/storage/backpack/industrial
 	name = "industrial backpack"
-	desc = "It's a tough backpack for the daily grind of station life."
+	desc = "It's a tough backpack for the daily grind of life as an engineer."
 	icon_state = "engiepack"
 	item_state = "engiepack"
 	resistance_flags = FIRE_PROOF

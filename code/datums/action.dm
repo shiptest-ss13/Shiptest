@@ -160,13 +160,11 @@
 /datum/action/item_action/New(Target)
 	..()
 	var/obj/item/I = target
-	LAZYINITLIST(I.actions)
-	I.actions += src
+	LAZYADD(I.actions, src)
 
 /datum/action/item_action/Destroy()
 	var/obj/item/I = target
-	I.actions -= src
-	UNSETEMPTY(I.actions)
+	LAZYREMOVE(I.actions, src)
 	return ..()
 
 /datum/action/item_action/Trigger()
