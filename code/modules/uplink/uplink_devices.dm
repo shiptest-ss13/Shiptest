@@ -4,7 +4,7 @@
 // used for nuke ops, for whom opening the radio GUI and the uplink GUI
 // simultaneously is an annoying distraction.
 /obj/item/uplink
-	name = "station bounced radio"
+	name = "shortwave radio"
 	icon = 'icons/obj/radio.dmi'
 	icon_state = "radio"
 	item_state = "walkietalkie"

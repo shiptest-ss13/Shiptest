@@ -24,7 +24,10 @@ GLOBAL_PROTECT(admin_verbs_default)
 	/client/proc/debugstatpanel,
 	/client/proc/colorasay,
 	/client/proc/resetasaycolor,
-	/client/proc/fix_air				/*resets air in designated radius to its default atmos composition*/
+	/client/proc/fix_air,				/*resets air in designated radius to its default atmos composition*/
+	/client/proc/addbunkerbypass,
+	/client/proc/revokebunkerbypass,
+	/client/proc/report_sgt //TEMP
 	)
 GLOBAL_LIST_INIT(admin_verbs_admin, world.AVerbsAdmin())
 GLOBAL_PROTECT(admin_verbs_admin)
@@ -90,7 +93,7 @@ GLOBAL_LIST_INIT(admin_verbs_sounds, list(
 	))
 GLOBAL_PROTECT(admin_verbs_sounds)
 GLOBAL_LIST_INIT(admin_verbs_fun, list(
-	/client/proc/cmd_admin_dress,
+	/client/proc/cmd_select_equipment,
 	/client/proc/cmd_admin_gib_self,
 	/client/proc/cmd_change_command_name,
 	/client/proc/cmd_admin_create_centcom_report,
@@ -153,13 +156,15 @@ GLOBAL_PROTECT(admin_verbs_debug)
 	/client/proc/restart_controller,
 	/client/proc/Debug2,
 	/client/proc/cmd_admin_delete,
-	/client/proc/cmd_admin_dress, //Granted to allow spawning in a mob without having to access the player panel or VVDropdown.
+	/client/proc/cmd_select_equipment, //Granted to allow spawning in a mob without having to access the player panel or VVDropdown.
 	/client/proc/cmd_debug_make_powernets,
 	/client/proc/cmd_debug_mob_lists,
 	/client/proc/cmd_debug_del_all,
 	/client/proc/cmd_display_del_log,
 	/client/proc/cmd_display_init_log,
 	/client/proc/cmd_display_overlay_log,
+	/client/proc/getserverlogs,		/*for accessing server logs*/
+	/client/proc/getcurrentlogs,		/*for accessing server logs for the current round*/
 	/client/proc/restart_controller,
 	/client/proc/enable_debug_verbs,
 	/client/proc/callproc,
@@ -230,7 +235,7 @@ GLOBAL_LIST_INIT(admin_verbs_hideable, list(
 	/client/proc/play_local_sound,
 	/client/proc/play_sound,
 	/client/proc/set_round_end_sound,
-	/client/proc/cmd_admin_dress,
+	/client/proc/cmd_select_equipment,
 	/client/proc/cmd_admin_gib_self,
 	/client/proc/drop_bomb,
 	/client/proc/drop_dynex_bomb,
@@ -762,3 +767,13 @@ GLOBAL_PROTECT(admin_verbs_hideable)
 
 	src << link("?debug=profile&type=sendmaps&window=test")
 #endif
+
+//FIXME TODO REMOVE THIS
+/client/proc/report_sgt()
+	set name = "SGT Report"
+	set category = "000_PANIC BUTTON"
+	set desc = "Report a Slimegirl Trafficking Incident"
+	if(!holder)
+		return
+	log_shuttle("CRITICAL: !!INCIDENT REPORTED!!")
+	message_debug("[key_name_admin(usr)]: Shuttle Incident Reported.")

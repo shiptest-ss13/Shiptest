@@ -52,7 +52,7 @@ GLOBAL_LIST_INIT(save_file_chars, list(
 	for(var/z in 0 to depth)
 		for(var/x in 0 to width)
 			contents += "\n([x + 1],1,[z + 1]) = {\"\n"
-			for(var/y in height to 1 step -1)
+			for(var/y in height to 0 step -1)
 				CHECK_TICK
 				//====Get turfs Data====
 				var/turf/place = locate((minx + x), (miny + y), (minz + z))
@@ -108,6 +108,17 @@ GLOBAL_LIST_INIT(save_file_chars, list(
 					for(var/mob/living/thing in objects)
 						CHECK_TICK
 						if(istype(thing, /mob/living/carbon))		//Ignore people, but not animals
+							for(var/obj/object in thing.get_contents())
+								if(object.type in obj_blacklist)
+									continue
+								var/metadata = generate_tgm_metadata(object)
+								current_header += "[empty?"":",\n"][object.type][metadata]"
+								empty = FALSE
+								//====SAVING SPECIAL DATA====
+								//This is what causes lockers and machines to save stuff inside of them
+								if(save_flag & SAVE_OBJECT_PROPERTIES)
+									var/custom_data = object.on_object_saved()
+									current_header += "[custom_data ? ",\n[custom_data]" : ""]"
 							continue
 						var/metadata = generate_tgm_metadata(thing)
 						current_header += "[empty?"":",\n"][thing.type][metadata]"
@@ -136,7 +147,6 @@ GLOBAL_LIST_INIT(save_file_chars, list(
 	if(!vars_to_save)
 		return
 	for(var/V in O.vars)
-		CHECK_TICK
 		if(!(V in vars_to_save))
 			continue
 		var/value = O.vars[V]
@@ -170,7 +180,6 @@ GLOBAL_LIST_INIT(save_file_chars, list(
 /proc/calculate_tgm_header_index(index, layers)
 	var/output = ""
 	for(var/i in 1 to layers)
-		CHECK_TICK
 		var/l = GLOB.save_file_chars.len
 		var/c = FLOOR((index-1) / (l ** (i - 1)), 1)
 		c = (c % l) + 1

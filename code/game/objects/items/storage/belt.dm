@@ -714,3 +714,10 @@
 /obj/item/storage/belt/sabre/PopulateContents()
 	new /obj/item/melee/sabre(src)
 	update_icon()
+
+/obj/item/storage/belt/security/webbing/inteq
+	name = "inteq webbing"
+	desc = "A set of tactical webbing for operators of the IRMG, can hold security gear."
+	icon_state = "inteq_webbing"
+	item_state = "inteq_webbing"
+	content_overlays = FALSE

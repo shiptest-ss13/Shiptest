@@ -29,7 +29,7 @@
 	if(user)
 		to_chat(user, "<span class='danger'>The crate's anti-tamper system activates!</span>")
 		log_bomber(user, "has detonated a", src)
-	for(var/atom/movable/AM in src)
+	for(var/atom/movable/AM as anything in src)
 		qdel(AM)
 	explosion(get_turf(src), 0, 1, 5, 5)
 	qdel(src)
@@ -50,18 +50,18 @@
 	icon_state = "secgearcrate"
 
 /obj/structure/closet/crate/secure/hydroponics
-	desc = "A crate with a lock on it, painted in the scheme of the station's botanists."
+	desc = "A crate with a lock on it, painted in the scheme of the Nanotransen's hydroponics division."
 	name = "secure hydroponics crate"
 	icon_state = "hydrosecurecrate"
 
 /obj/structure/closet/crate/secure/engineering
-	desc = "A crate with a lock on it, painted in the scheme of the station's engineers."
+	desc = "A crate with a lock on it, painted in the scheme of the Nanotransen's engineering division."
 	name = "secure engineering crate"
 	icon_state = "engi_secure_crate"
 
 /obj/structure/closet/crate/secure/science
 	name = "secure science crate"
-	desc = "A crate with a lock on it, painted in the scheme of the station's scientists."
+	desc = "A crate with a lock on it, painted in the scheme of the Nanotransen's research & development division."
 	icon_state = "scisecurecrate"
 
 /obj/structure/closet/crate/secure/owned
