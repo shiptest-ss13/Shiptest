@@ -19,12 +19,12 @@
 
 /obj/item/clothing/neck/cloak/hos
 	name = "head of security's cloak"
-	desc = "Worn by Securistan, ruling the station with an iron fist."
+	desc = "Worn by Securistan, ruling their watch with an iron fist."
 	icon_state = "hoscloak"
 
 /obj/item/clothing/neck/cloak/qm
 	name = "quartermaster's cloak"
-	desc = "Worn by Cargonia, supplying the station with the necessary tools for survival."
+	desc = "Worn by Cargonia, supplying the frontier with the necessary tools for survival."
 
 /obj/item/clothing/neck/cloak/cmo
 	name = "chief medical officer's cloak"
@@ -44,7 +44,7 @@
 
 /obj/item/clothing/neck/cloak/cap
 	name = "captain's cloak"
-	desc = "Worn by the commander of Space Station 13."
+	desc = "Worn by the valiant vessel and station commanders of the Nanotransen Corporation."
 	icon_state = "capcloak"
 
 /obj/item/clothing/neck/cloak/head_of_personnel
@@ -116,13 +116,13 @@
 
 /obj/item/clothing/neck/cloak/skill_reward/gaming
 	name = "legendary gamer's cloak"
-	desc = "Worn by the most skilled professional gamers on the station, this legendary cloak is only attainable by achieving true gaming enlightenment. This status symbol represents the awesome might of a being of focus, commitment, and sheer fucking will. Something casual gamers will never begin to understand."
+	desc = "Worn only by the most skilled professional gamers in known space, this legendary cloak is only attainable by achieving true gaming enlightenment. This status symbol represents the awesome might of a being of focus, commitment, and sheer fucking will. Something casual gamers will never begin to understand."
 	icon_state = "gamercloak"
 	associated_skill_path = /datum/skill/gaming
 
 /obj/item/clothing/neck/cloak/skill_reward/cleaning
 	name = "legendary cleaner's cloak"
-	desc = "Worn by the most skilled of custodians, this legendary cloak is only attainable by achieving janitorial enlightenment. This status symbol represents a being not only extensively trained in grime combat, but one who is willing to use an entire aresenal of cleaning supplies to its full extent to wipe grime's miserable ass off the face of the station."
+	desc = "Worn by the most skilled of custodians, this legendary cloak is only attainable by achieving janitorial enlightenment. This status symbol represents a being not only extensively trained in grime combat, but one who is willing to use an entire aresenal of cleaning supplies to its full extent to wipe grime's miserable ass off the face of the universe."
 	icon_state = "cleanercloak"
 	associated_skill_path = /datum/skill/cleaning
 

@@ -427,7 +427,7 @@
 
 /obj/item/clothing/head/medievaljewhat
 	name = "medieval Jewish hat"
-	desc = "A silly looking hat, intended to be placed on the heads of the station's oppressed religious minorities."
+	desc = "A silly looking hat, intended to be placed on the heads of oppressed religious minorities."
 	icon_state = "medievaljewhat"
 
 /obj/item/clothing/head/taqiyahwhite

@@ -1,16 +1,17 @@
 /obj/item/clothing/under/rank/civilian/janitor
 	name = "janitor's jumpsuit"
-	desc = "It's the official uniform of the station's janitor. It has minor protection from biohazards."
+	desc = "It's the official uniform of a nanotransen janitor. It has minor protection from biohazards."
 	icon_state = "janitor"
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 10, "rad" = 0, "fire" = 0, "acid" = 0)
 	fitted = NO_FEMALE_UNIFORM
 
 /obj/item/clothing/under/rank/civilian/janitor/skirt
 	name = "janitor's jumpskirt"
-	desc = "It's the official skirt of the station's janitor. It has minor protection from biohazards."
+	desc = "The official skirt of a nanotransen corporate janitor. It has minor protection from biohazards."
 	icon_state = "janitor_skirt"
 	body_parts_covered = CHEST|GROIN|ARMS
 	can_adjust = FALSE
+	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON
 
 
 /obj/item/clothing/under/rank/civilian/janitor/custodian
@@ -24,11 +25,12 @@
 	icon_state = "custodian_skirt"
 	body_parts_covered = CHEST|GROIN|ARMS
 	can_adjust = FALSE
+	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON
 
 
 /obj/item/clothing/under/rank/civilian/janitor/sanitation_tech
 	name = "sanitation technician's jumpsuit"
-	desc = "Worn by Sanitation Technicians that clean the biohazard trap that is the station. It has minor protection from biohazards."
+	desc = "Worn by freelance Sanitation Technicians, forever fighting a noble war against the endless filth of the frontier. It has minor protection from biohazards."
 
 	icon_state = "sanitation_technician"
 
@@ -37,4 +39,5 @@
 	icon_state = "sanitation_technician_skirt"
 	body_parts_covered = CHEST|GROIN|ARMS
 	can_adjust = FALSE
+	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON
 

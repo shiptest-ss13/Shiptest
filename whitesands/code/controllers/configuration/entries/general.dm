@@ -1,6 +1,3 @@
-/datum/config_entry/string/metacurrency_name
-	config_entry_value = "MetaCoin"
-
 /datum/config_entry/number/whitesands_atmos_moles
 	config_entry_value = 103
 	integer = FALSE

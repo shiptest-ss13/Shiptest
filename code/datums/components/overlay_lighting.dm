@@ -443,6 +443,11 @@
 		return
 	if(current_direction == newdir)
 		return
+	if(!isnum(newdir))
+		if(istype(newdir, /datum))
+			var/datum/what = newdir
+			CRASH("set_direction called with a non-number arg, [what] of type [what.type]")
+		CRASH("set_direction called with a non-number arg, [newdir], a non-datum")
 	current_direction = newdir
 	cone.setDir(newdir)
 	if(overlay_lighting_flags & LIGHTING_ON)

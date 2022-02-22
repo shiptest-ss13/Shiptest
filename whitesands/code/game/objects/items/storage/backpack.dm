@@ -64,3 +64,9 @@
 	desc = "A tactical backpack worn over one shoulder. This one is in Security colors."
 	icon_state = "courierbagsec"
 	item_state = "courierbagsec"
+
+/obj/item/storage/backpack/messenger/inteq
+	name = "inteq messenger bag"
+	desc = "A comfortable leather strapped messenger bag worn over one shoulder. This one denotes the wearer as an IRMG operator"
+	icon_state = "courierbaginteq"
+	item_state = "courierbaginteq"

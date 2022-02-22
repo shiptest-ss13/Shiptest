@@ -748,6 +748,12 @@ But you can call procs that are of type /mob/living/carbon/human/proc/ for that 
 	names += "---- Sand Ruins ----"
 	for(var/name in SSmapping.sand_ruins_templates)
 		names[name] = list(SSmapping.sand_ruins_templates[name], ZTRAIT_SAND_RUINS, list(/area/whitesands/surface/outdoors/unexplored))
+	names += "---- Jungle Ruins ----"
+	for(var/name in SSmapping.jungle_ruins_templates)
+		names[name] = list(SSmapping.jungle_ruins_templates[name], ZTRAIT_JUNGLE_RUINS, list(/area/jungle/surface/outdoors/unexplored))
+	names += "---- Rock Ruins ----"
+	for(var/name in SSmapping.rock_ruins_templates)
+		names[name] = list(SSmapping.rock_ruins_templates[name], ZTRAIT_ROCK_RUINS, list(/area/rock/surface/outdoors/unexplored))
 
 	var/ruinname = input("Select ruin", "Spawn Ruin") as null|anything in sortList(names)
 	var/data = names[ruinname]
