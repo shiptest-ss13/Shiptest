@@ -154,7 +154,7 @@
 		if(C && C.dir == NORTH && C.anchored && !(C.machine_stat &(BROKEN)) && !C.panel_open)
 			circs += C
 
-	if(circs.len == 2)
+	if(length(circs) == 2)
 		for(C in circs)
 			if(C.mode == CIRCULATOR_COLD && !cold_circ)
 				cold_circ = C
