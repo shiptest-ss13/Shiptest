@@ -165,7 +165,7 @@
 		if(!hot_circ || !cold_circ)
 			kill_circs()
 			return 3
-	return circs.len
+	return length(circs)
 
 /obj/machinery/power/generator/wrench_act(mob/living/user, obj/item/I)
 	. = ..()
