@@ -53,7 +53,9 @@
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
-/obj/machinery/power/smes/shuttle/precharged,
+/obj/machinery/power/smes/shuttle{
+	charge = 1e+006
+	},
 /turf/open/floor/plating,
 /area/ship/storage)
 "h" = (
@@ -63,6 +65,8 @@
 /obj/item/trash/cheesie,
 /obj/item/trash/candy,
 /obj/structure/closet/crate,
+/obj/item/reagent_containers/food/drinks/beer,
+/obj/item/reagent_containers/food/drinks/beer,
 /turf/open/floor/plating,
 /area/ship/storage)
 "i" = (
@@ -164,6 +168,18 @@
 	icon_state = "1-2"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/item/reagent_containers/pill/floorpill{
+	pixel_x = -1;
+	pixel_y = -4
+	},
+/obj/item/reagent_containers/pill/floorpill{
+	pixel_x = 7;
+	pixel_y = 10
+	},
+/obj/item/reagent_containers/pill/floorpill{
+	pixel_x = -7;
+	pixel_y = 5
+	},
 /turf/open/floor/plating,
 /area/ship/storage)
 "v" = (
@@ -261,6 +277,10 @@
 /obj/machinery/door/airlock/external/glass,
 /turf/open/floor/plating,
 /area/ship/storage)
+"K" = (
+/obj/structure/sign/poster/official/moth/meth,
+/turf/closed/wall/rust,
+/area/ship/storage)
 
 (1,1,1) = {"
 a
@@ -289,7 +309,7 @@ b
 (4,1,1) = {"
 b
 b
-a
+K
 w
 b
 a
