@@ -127,7 +127,6 @@
 
 /obj/item/gun/ballistic/automatic/ak47/nt/CtrlClick(mob/user)
 	. = ..()
-	var/mob/living/carbon/human/current_user = user
 	if((!ishuman(user) || user.stat))
 		return
 	to_chat(user, "<span class='notice'>You start to [folded ? "unfold" : "fold"] the stock on the [src].</span>")
