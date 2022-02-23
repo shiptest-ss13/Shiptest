@@ -7,7 +7,6 @@ export const OreRedemptionMachine = (props, context) => {
   const { act, data } = useBackend(context);
   const {
     unclaimedPoints,
-    userCash,
     materials,
     alloys,
     diskDesigns,
@@ -25,12 +24,6 @@ export const OreRedemptionMachine = (props, context) => {
             This machine only accepts ore.<br />
             Gibtonite and Slag are not accepted.
           </BlockQuote>
-          <Box>
-            <Box inline color="label" mr={1}>
-              User Credit Balance:
-            </Box>
-            {userCash}
-          </Box>
           <Box>
             <Box inline color="label" mr={1}>
               Unclaimed points:

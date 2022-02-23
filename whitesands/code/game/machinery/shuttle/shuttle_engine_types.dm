@@ -34,16 +34,12 @@
 /obj/machinery/power/shuttle/engine/fueled/return_fuel()
 	. = ..()
 	var/obj/machinery/atmospherics/components/unary/shuttle/heater/resolved_heater = attached_heater?.resolve()
-	if(!resolved_heater)
-		return
-	return resolved_heater.return_gas(fuel_type)
+	return resolved_heater?.return_gas(fuel_type)
 
 /obj/machinery/power/shuttle/engine/fueled/return_fuel_cap()
 	. = ..()
 	var/obj/machinery/atmospherics/components/unary/shuttle/heater/resolved_heater = attached_heater?.resolve()
-	if(!resolved_heater)
-		return
-	return resolved_heater.return_gas_capacity()
+	return resolved_heater?.return_gas_capacity()
 
 /obj/machinery/power/shuttle/engine/fueled/screwdriver_act(mob/living/user, obj/item/I)
 	. = ..()
@@ -178,6 +174,9 @@
 	var/reagent_amount_holder = 0
 
 /obj/machinery/power/shuttle/engine/liquid/Initialize()
+	if(!length(fuel_reagents))
+		stack_trace("Attempted to create an abstract liquid thruster. Deleting...")
+		return INITIALIZE_HINT_QDEL
 	. = ..()
 	create_reagents(max_reagents, OPENCONTAINER)
 	AddComponent(/datum/component/plumbing/simple_demand)
@@ -185,6 +184,8 @@
 		reagent_amount_holder += fuel_reagents[reagent]
 
 /obj/machinery/power/shuttle/engine/liquid/burn_engine(percentage = 100)
+	if(!(INITIALIZED_1 & flags_1))
+		CRASH("Attempted to fire an uninitialized liquid engine")
 	. = ..()
 	var/true_percentage = 1
 	for(var/reagent in fuel_reagents)
@@ -192,12 +193,16 @@
 	return thrust * true_percentage
 
 /obj/machinery/power/shuttle/engine/liquid/return_fuel()
+	if(!(INITIALIZED_1 & flags_1))
+		CRASH("Attempted to read the fuel value an uninitialized liquid engine")
 	var/true_percentage = INFINITY
 	for(var/reagent in fuel_reagents)
 		true_percentage = min(reagents.get_reagent_amount(reagent) / fuel_reagents[reagent], true_percentage)
 	return reagent_amount_holder * true_percentage //Multiplies the total amount needed by the smallest percentage of any reagent in the recipe
 
 /obj/machinery/power/shuttle/engine/liquid/return_fuel_cap()
+	if(!(INITIALIZED_1 & flags_1))
+		CRASH("Attempted to read the fuel cap of an uninitialized liquid engine")
 	return reagents.maximum_volume
 
 /obj/machinery/power/shuttle/engine/liquid/oil
