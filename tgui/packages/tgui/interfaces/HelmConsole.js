@@ -270,7 +270,7 @@ const ShipControlContent = (_props, context) => {
             tooltip="Undock"
             tooltipPosition="left"
             icon="sign-out-alt"
-            disabled={!data.docked}
+            disabled={!data.docked || data.docking}
             onClick={() => act('undock')} />
           <Button
             tooltip="Dock in Empty Space"

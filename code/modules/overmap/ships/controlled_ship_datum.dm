@@ -108,6 +108,8 @@
 	log_shuttle("[src] [REF(src)] COMPLETE DOCK: FINISHED DOCKING TO [dock_target] AT [ticket.target_port]")
 
 /datum/overmap/ship/controlled/Undock()
+	if(docking)
+		return
 	log_shuttle("[src] [REF(src)] UNDOCK: STARTED UNDOCK FROM [docked_to]")
 	var/dock_time_temp = dock_time
 	if(shuttle_port.check_transit_zone() != TRANSIT_READY)
@@ -123,8 +125,10 @@
 	log_shuttle("[src] [REF(src)] COMPLETE UNDOCK: FINISHED UNDOCK FROM [docked_to]")
 	return ..()
 
-/datum/overmap/ship/controlled/pre_docked(datum/overmap/dock_requester)
-	return new /datum/docking_ticket(shuttle_port.docking_points[1], src, dock_requester) //TODO: Find a better way of doing this that allows for multiple docking points
+/datum/overmap/ship/controlled/pre_docked(datum/overmap/ship/controlled/dock_requester)
+	for(var/obj/docking_port/stationary/docking_port in shuttle_port.docking_points)
+		if(dock_requester.shuttle_port.check_dock(docking_port))
+			return new /datum/docking_ticket(docking_port, src, dock_requester)
 
 /datum/overmap/ship/controlled/post_undocked(datum/overmap/dock_requester)
 	if(istype(dock_requester, /datum/overmap/ship/controlled))

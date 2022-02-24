@@ -79,8 +79,8 @@
 			continue
 		var/turf/T = turfs[i]
 		if(T.z == target_shuttle.z)
-			if(T.x >= (shuttle_coords[1] - 1) && T.x <= (shuttle_coords[3] + 1))
-				if(T.y >= (shuttle_coords[2] - 1) && T.y <= (shuttle_coords[4] + 1))
+			if(T.x >= (min(shuttle_coords[1], shuttle_coords[3]) - 1) && T.x <= (max(shuttle_coords[1], shuttle_coords[3]) + 1))
+				if(T.y >= (min(shuttle_coords[2], shuttle_coords[4]) - 1) && T.y <= (max(shuttle_coords[2], shuttle_coords[4]) + 1))
 					near_shuttle = TRUE
 	if(!near_shuttle)
 		to_chat(creator, "<span class='warning'>The new area must be next to the shuttle.</span>")
