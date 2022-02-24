@@ -45,6 +45,10 @@ GLOBAL_LIST_EMPTY(alldepartments)
 	if(!(("[department]" in GLOB.alldepartments) || ("[department]" in admin_departments)) && department != "Unknown")
 		LAZYADD(GLOB.alldepartments, department)
 
+/obj/machinery/photocopier/faxmachine/Destroy()
+	. = ..()
+	GLOB.allfaxes -= src
+
 /obj/machinery/photocopier/faxmachine/longrange
 	name = "long range fax machine"
 	fax_network = "Central Command Quantum Entanglement Network"
@@ -126,7 +130,7 @@ GLOBAL_LIST_EMPTY(alldepartments)
 				remove_photocopy(document_copy, usr)
 				document_copy = null
 			else
-				attackby(usr.get_active_held_item(), usr)
+				to_chat(usr, "<span class='notice'>There's nothing in the tray.</span>")
 		if("dept")
 			if(is_authenticated)
 				var/lastdestination = destination
