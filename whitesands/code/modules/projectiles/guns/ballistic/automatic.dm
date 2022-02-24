@@ -132,7 +132,9 @@
 	to_chat(user, "<span class='notice'>You start to [folded ? "unfold" : "fold"] the stock on the [src].</span>")
 	if(do_after(user, 10, target = src))
 		fold(user)
-		user.regenerate_icons()
+		user.update_inv_back()
+		user.update_inv_hands()
+		user.update_inv_s_store()
 
 /obj/item/gun/ballistic/automatic/ak47/nt/proc/fold(mob/user)
 	if(folded)
