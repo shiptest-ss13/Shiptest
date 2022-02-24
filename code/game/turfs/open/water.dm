@@ -18,3 +18,6 @@
 
 /turf/open/water/jungle
 	initial_gas_mix = OPENTURF_DEFAULT_ATMOS
+	light_range = 2
+	light_power = 0.6
+	light_color = COLOR_VERY_LIGHT_GRAY
