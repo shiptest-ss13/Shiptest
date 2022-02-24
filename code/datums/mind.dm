@@ -101,6 +101,12 @@
 	if(islist(antag_datums))
 		QDEL_LIST(antag_datums)
 	QDEL_NULL(language_holder)
+	enslaved_to = null
+	soulOwner = null
+	martial_art = null
+	current = null
+	original_character = null
+	leave_all_antag_huds()
 	return ..()
 
 /datum/mind/proc/handle_mob_deletion(mob/deleted_mob)

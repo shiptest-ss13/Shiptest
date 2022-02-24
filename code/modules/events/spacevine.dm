@@ -543,3 +543,8 @@
 		if(("vines" in M.faction) || ("plants" in M.faction))
 			return TRUE
 	return FALSE
+
+/obj/structure/spacevine/dense
+	name = "dense space vines"
+	opacity = TRUE
+	icon_state = "Hvy1"
