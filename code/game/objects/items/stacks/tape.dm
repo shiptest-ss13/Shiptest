@@ -63,7 +63,7 @@
 /obj/item/stack/sticky_tape/pointy/super
 	name = "super pointy tape"
 	singular_name = "super pointy tape"
-	desc = "You didn't know tape could look so sinister. Welcome to Space Station 13."
+	desc = "You didn't know tape could look so sinister. Welcome to the frontier."
 	icon_state = "tape_spikes"
 	prefix = "super pointy"
 	conferred_embed = EMBED_POINTY_SUPERIOR
