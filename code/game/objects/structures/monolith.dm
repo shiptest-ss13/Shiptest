@@ -1,6 +1,6 @@
 /obj/structure/spawner/monolith
 	name = "monolith"
-	desc = "A strange, perfect rectanular structure. It's somehow bringing monsters out of itself."
+	desc = "A strange, perfect rectangular structure. Monsters somehow seem to phase out of it occasionally."
 
 	icon = 'icons/mob/nest.dmi'
 	icon_state = "monolith"
