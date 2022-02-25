@@ -1,7 +1,6 @@
 /mob/living/simple_animal/hostile/megafauna/claw
 	name = "Trooper \"Claw\""
-	desc = "This is Trooper \"Claw\".\
-	They are holding a armblade in their right hand."
+	desc = "This is Trooper \"Claw\".\nThey are holding a armblade in their right hand."
 	health = 750
 	maxHealth = 750
 	attack_verb_continuous = "slices"
