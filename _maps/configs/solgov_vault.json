@@ -1,0 +1,42 @@
+{
+	"map_name": "SolGov Midas-Class Vault",
+	"prefix": "SGSV",
+	"namelists": ["GENERAL", "SPACE", "HISTORICAL", "MYTHOLOGICAL"],
+	"map_short_name": "Midas-Class",
+	"map_path": "_maps/shuttles/shiptest/solgov_vault.dmm",
+	"map_id": "solgov_vault",
+	"limit": 2,
+	"job_slots": {
+		"Captain": {
+			"outfit": "/datum/outfit/job/captain/solgov",
+			"officer": true,
+			"slots": 1
+		},
+		"SolGov Representative": {
+			"outfit": "/datum/outfit/job/solgov",
+			"officer": true,
+			"slots": 1
+		},
+		"Onboard Bartender": {
+			"outfit": "/datum/outfit/job/bartender",
+			"slots": 1
+		},
+		"Pioneer": {
+			"outfit": "/datum/outfit/job/miner/solgov",
+			"slots": 1
+		},
+		"Naval Doctor": {
+			"outfit": "/datum/outfit/job/doctor/solgov",
+			"slots": 1
+		},
+		"Planetary Expert": {
+			"outfit": "/datum/outfit/job/scientist/seniorscientist",
+			"slots": 2
+		},
+		"Sailor": {
+			"outfit": "/datum/outfit/job/assistant/solgov",
+			"slots": 3
+		}
+	},
+	"cost": 700
+}
