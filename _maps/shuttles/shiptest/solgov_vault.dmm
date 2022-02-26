@@ -2180,6 +2180,7 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
 /turf/open/floor/plasteel/dark,
 /area/ship/medical)
 "ev" = (
@@ -2828,6 +2829,8 @@
 /area/ship/medical)
 "fy" = (
 /obj/machinery/atmospherics/components/unary/tank/air,
+	dir = 4
+	},
 /obj/structure/spider/stickyweb,
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
