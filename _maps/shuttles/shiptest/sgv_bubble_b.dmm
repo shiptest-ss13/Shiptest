@@ -80,11 +80,11 @@
 /turf/open/floor/carpet/nanoweave/beige,
 /area/ship/hallway/central)
 "gg" = (
-/obj/machinery/computer/autopilot{
-	dir = 8
-	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4,
 /obj/machinery/airalarm/directional/north,
+/obj/structure/frame/computer{
+	dir = 8
+	},
 /turf/open/floor/carpet/nanoweave/blue,
 /area/ship/bridge)
 "gl" = (
@@ -109,7 +109,8 @@
 /turf/open/floor/carpet/nanoweave/red,
 /area/ship/cargo)
 "hh" = (
-/obj/effect/spawner/structure/window/reinforced/shutters,
+/obj/effect/spawner/structure/window/shuttle,
+/obj/machinery/door/firedoor/window,
 /turf/open/floor/plating,
 /area/ship/bridge)
 "hs" = (
@@ -351,6 +352,9 @@
 /obj/machinery/holopad/emergency/command,
 /turf/open/floor/carpet/nanoweave/blue,
 /area/ship/bridge)
+"vx" = (
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ship/cargo)
 "vz" = (
 /obj/machinery/power/smes/engineering,
 /obj/structure/cable{
@@ -460,6 +464,9 @@
 	},
 /turf/open/floor/plating,
 /area/ship/external)
+"yb" = (
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ship/maintenance/aft)
 "zy" = (
 /turf/closed/wall/mineral/titanium,
 /area/ship/maintenance/starboard)
@@ -871,6 +878,9 @@
 /obj/machinery/power/apc/auto_name/north,
 /turf/open/floor/carpet/nanoweave/beige,
 /area/ship/hallway/central)
+"Tt" = (
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ship/crew/dorm)
 "TP" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -902,7 +912,7 @@
 /area/ship/engineering)
 "Vt" = (
 /obj/machinery/atmospherics/pipe/layer_manifold,
-/turf/closed/wall/mineral/titanium,
+/turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/engineering)
 "Vy" = (
 /obj/item/kirbyplants/random,
@@ -1149,7 +1159,7 @@ VB
 VB
 VB
 Ob
-Ob
+yb
 mJ
 xu
 ef
@@ -1157,7 +1167,7 @@ mZ
 jI
 MW
 VA
-Ob
+yb
 Ob
 VB
 VB
@@ -1261,11 +1271,11 @@ VB
 (10,1,1) = {"
 VB
 gl
+Tt
 VQ
 VQ
 VQ
-VQ
-VQ
+Tt
 ZD
 HK
 ST
@@ -1337,11 +1347,11 @@ MJ
 (14,1,1) = {"
 VB
 VB
-mV
+vx
 mV
 mV
 oI
-mV
+vx
 CP
 rS
 CP
