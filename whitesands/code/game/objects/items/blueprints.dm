@@ -118,7 +118,7 @@
 		if(length(thing.baseturfs) < 2)
 			continue
 		//Add the shuttle base shit to the shuttle
-		if(!thing.baseturfs.Find(/turf/baseturf_skipover/shuttle))
+		if(!(/turf/baseturf_skipover/shuttle in thing.baseturfs))
 			thing.baseturfs.Insert(3, /turf/baseturf_skipover/shuttle)
 
 	var/list/firedoors = oldA.firedoors

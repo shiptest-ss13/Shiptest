@@ -174,7 +174,9 @@ GLOBAL_LIST_EMPTY(custom_shuttle_machines)		//Machines that require updating (He
 			if(length(curT.baseturfs) < 2)
 				continue
 			//Add the shuttle base shit to the shuttle
-			curT.baseturfs.Insert(3, /turf/baseturf_skipover/shuttle)
+			var/list/sanity = curT.baseturfs.Copy()
+			sanity.Insert(3, /turf/baseturf_skipover/shuttle)
+			curT.baseturfs = baseturfs_string_list(sanity, curT)
 			port.shuttle_areas[cur_area] = TRUE
 
 	var/datum/overmap/ship/controlled/new_custom_ship = new(SSovermap.get_overmap_object_by_location(port), SSmapping.shuttle_templates["custom_shuttle"], FALSE)
