@@ -54,6 +54,8 @@
  * return datum/tgui The requested UI.
  */
 /datum/tgui/New(mob/user, datum/src_object, interface, title, ui_x, ui_y)
+	if(!user.client)
+		return
 	log_tgui(user,
 		"new [interface] fancy [user.client.prefs.tgui_fancy]",
 		src_object = src_object)
