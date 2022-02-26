@@ -215,8 +215,8 @@
 	..()
 
 /obj/item/card/mining_point_card/examine(mob/user)
-	..()
-	to_chat(user, "<span class='alert'>There's [points] point\s on the card.</span>")
+	. = ..()
+	. += "<span class='alert'>There's [points] point\s on the card.</span>"
 
 ///Conscript kit
 /obj/item/card/mining_access_card
