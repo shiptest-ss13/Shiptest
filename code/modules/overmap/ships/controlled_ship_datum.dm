@@ -80,7 +80,7 @@
 	SSovermap.controlled_ships -= src
 	//shuttle_port.intoTheSunset()
 	QDEL_NULL(ship_account)
-	. = ..()
+	return ..()
 
 /datum/overmap/ship/controlled/get_jump_to_turf()
 	return get_turf(shuttle_port)
@@ -205,7 +205,7 @@
 /datum/overmap/ship/controlled/tick_move()
 	if(avg_fuel_amnt < 1)
 		decelerate(max_speed / 100)
-	..()
+	return ..()
 
 /**
   * Bastardized version of GLOB.manifest.manifest_inject, but used per ship
@@ -215,7 +215,6 @@
   * * human_job - Job of the human mob to add to the manifest
   */
 /datum/overmap/ship/controlled/proc/manifest_inject(mob/living/carbon/human/H, client/C, datum/job/human_job)
-	set waitfor = FALSE
 	if(H.mind && (H.mind.assigned_role != H.mind.special_role))
 		manifest[H.real_name] = human_job
 

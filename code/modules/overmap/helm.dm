@@ -41,9 +41,9 @@
 	if(jump_allowed < 0)
 		say("Bluespace Jump Calibration offline. Please contact your system administrator.")
 		return
-	//if(current_ship.state != OVERMAP_SHIP_FLYING)
-	//	say("Bluespace Jump Calibration detected interference in the local area.")
-	//	return
+	if(current_ship.docked_to || current_ship.docking)
+		say("Bluespace Jump Calibration detected interference in the local area.")
+		return
 	if(world.time < jump_allowed)
 		var/jump_wait = DisplayTimeText(jump_allowed - world.time)
 		say("Bluespace Jump Calibration is currently recharging. ETA: [jump_wait].")
