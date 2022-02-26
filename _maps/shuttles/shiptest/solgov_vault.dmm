@@ -236,8 +236,6 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 8;
-	step_x = 0;
-	step_y = 0
 	},
 /obj/structure/railing/corner{
 	icon_state = "railing_corner";
@@ -300,7 +298,6 @@
 	dir = 9
 	},
 /obj/machinery/suit_storage_unit/solgov{
-	step_y = 1
 	},
 /turf/open/floor/carpet/blue,
 /area/ship/bridge)
@@ -420,13 +417,11 @@
 /area/ship/bridge)
 "aY" = (
 /obj/machinery/newscaster{
-	step_x = 0
 	},
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/bridge)
 "aZ" = (
 /obj/structure/sign/poster/official/random{
-	step_x = 0
 	},
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/crew/canteen)
@@ -472,7 +467,6 @@
 /area/ship/crew/canteen)
 "bf" = (
 /obj/structure/sign/poster/official/solgov_enlist{
-	step_y = 0
 	},
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/bridge)
@@ -822,8 +816,6 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 8;
-	step_x = 0;
-	step_y = 0
 	},
 /obj/machinery/door/airlock/public/glass{
 	name = "Bar"
@@ -1436,8 +1428,6 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 8;
-	step_x = 0;
-	step_y = 0
 	},
 /obj/effect/turf_decal/corner/blue{
 	dir = 4
@@ -2461,7 +2451,6 @@
 /area/ship/medical)
 "eP" = (
 /obj/structure/sign/warning/chemdiamond{
-	step_y = 0
 	},
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/science)
@@ -2584,7 +2573,6 @@
 	},
 /obj/structure/sign/warning/deathsposal{
 	pixel_x = -32;
-	step_y = 0
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/science)
@@ -3036,7 +3024,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/table,
 /obj/machinery/defibrillator_mount/loaded{
-	step_x = 0
 	},
 /obj/item/toy/figure/md,
 /turf/open/floor/plasteel/white,
@@ -3284,7 +3271,6 @@
 /area/ship/medical)
 "go" = (
 /obj/structure/sign/departments/medbay/alt{
-	step_x = 0
 	},
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/medical)
@@ -3459,7 +3445,6 @@
 /area/ship/storage)
 "gA" = (
 /obj/structure/sign/warning/deathsposal{
-	step_y = 0
 	},
 /obj/structure/cable{
 	icon_state = "1-2"
