@@ -506,7 +506,7 @@
 	key_third_person = "exhales"
 	message = "breathes out."
 
-/datum/emote/living
+/datum/emote/living/clack
 	key = "clack"
 	key_third_person = "clacks"
 	message = "clacks their beak."
