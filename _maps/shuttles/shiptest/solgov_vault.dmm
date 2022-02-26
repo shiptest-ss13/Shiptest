@@ -2828,7 +2828,8 @@
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "fy" = (
-/obj/machinery/atmospherics/components/unary/tank/air,
+/obj/machinery/atmospherics/components/unary/tank/air{
+	dir = 4;
 	piping_layer = 4
 	},
 /obj/structure/spider/stickyweb,
