@@ -2432,9 +2432,7 @@
 	icon_state = "1-8"
 	},
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer4,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
-	dir = 8
-	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer2{
 /obj/effect/turf_decal/corner/blue{
 	dir = 4
 	},
@@ -2829,7 +2827,7 @@
 /area/ship/medical)
 "fy" = (
 /obj/machinery/atmospherics/components/unary/tank/air{
-	dir = 4;
+	dir = 8;
 	piping_layer = 4
 	},
 /obj/structure/spider/stickyweb,
