@@ -419,15 +419,19 @@ There are several things that need to be remembered:
 		var/obj/item/I = wear_suit
 		var/mutable_appearance/suit_overlay
 		update_hud_wear_suit(I)
-		var/icon_file = DEFAULT_SUIT_PATH
-		var/obj/item/clothing/suit/S = wear_suit
+		var/icon_file
 
 		var/handled_by_bodytype = TRUE
 		if(dna.species.bodytype & BODYTYPE_DIGITIGRADE)
-			if(S.supports_variations & DIGITIGRADE_VARIATION)
+			if(I.supports_variations & DIGITIGRADE_VARIATION)
 				icon_file = DIGITIGRADE_SUIT_PATH
-		else
+
+		else if((dna.species.bodytype & BODYTYPE_VOX) && (I.supports_variations & VOX_VARIATION))
+			icon_file = VOX_SUIT_PATH
+
+		if(!(icon_exists(icon_file, RESOLVE_ICON_STATE(I))))
 			handled_by_bodytype = FALSE
+			icon_file = DEFAULT_SUIT_PATH
 
 		suit_overlay = wear_suit.build_worn_icon(default_layer = SUIT_LAYER, default_icon_file = icon_file, species = CHECK_USE_AUTOGEN)
 

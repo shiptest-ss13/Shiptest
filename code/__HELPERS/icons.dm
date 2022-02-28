@@ -1234,7 +1234,6 @@ GLOBAL_DATUM_INIT(dummySave, /savefile, new("tmp/dummySave.sav")) //Cache of ico
 
 /proc/icon_exists(file, state)
 	var/static/list/icon_states_cache = list()
-
 	if(icon_states_cache[file]?[state])
 		return TRUE
 
