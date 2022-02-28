@@ -1,0 +1,36 @@
+{
+	"map_name": "Congress-Class Frigate",
+	"map_short_name": "Congress-Class",
+	"map_path": "_maps/shuttles/shiptest/galleon.dmm",
+	"map_id": "galleon",
+	"limit": 1,
+	"job_slots": {
+		"Captain": {
+			"outfit": "/datum/outfit/job/captain/pirate",
+			"officer": true,
+			"slots": 1
+		},
+		"Navigator": {
+			"outfit": "/datum/outfit/job/head_of_personnel/pirate",
+			"officer": true,
+			"slots": 1
+		},
+		"Leftenant": {
+			"outfit": "/datum/outfit/job/security/pirate",
+			"slots": 2
+		},
+		"Rocketman": {
+			"outfit": "/datum/outfit/job/engineer/pirate",
+			"slots": 1
+		},
+		"Naval Surgeon": {
+			"outfit": "/datum/outfit/job/doctor/pirate",
+			"slots": 1
+		},
+		"Sailor": {
+			"outfit": "/datum/outfit/job/assistant/pirate",
+			"slots": 2
+		}
+	},
+	"cost": 1250
+}
