@@ -24,3 +24,24 @@
 	speed = 8
 	glide_size = 2
 	footstep_type = FOOTSTEP_MOB_CLAW
+
+/mob/living/simple_animal/hostile/retaliate/gator/steppy/iguana
+	name = "Izzy"
+	desc = "A master of looking at pipes, she's a favorite among the GEC for her GECK-like nature."
+	gender = FEMALE
+	icon_state = "iguana"
+	icon_living = "iguana"
+	icon_dead ="iguana_dead"
+	speak_chance = 1
+	turns_per_move = 5
+	response_help_continuous = "pets"
+	response_help_simple = "pet"
+	response_disarm_continuous = "rolls over"
+	response_disarm_simple = "roll over"
+	response_harm_continuous = "kicks"
+	response_harm_simple = "kick"
+	speak_emote = list("sneezes")
+	emote_hear = list("snaps.","hisses.", "sneezes.")
+	emote_see = list("waits apprehensively.", "shuffles.")
+	attack_verb_continuous = "whips"
+	attack_verb_simple = "whipped"
