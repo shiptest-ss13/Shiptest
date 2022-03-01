@@ -78,7 +78,8 @@
 
 /datum/overmap/ship/controlled/Destroy()
 	SSovermap.controlled_ships -= src
-	//shuttle_port.intoTheSunset()
+	if(!QDELETED(shuttle_port))
+		shuttle_port.intoTheSunset()
 	QDEL_NULL(ship_account)
 	return ..()
 
