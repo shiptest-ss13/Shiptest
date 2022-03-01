@@ -24,7 +24,7 @@
 	if(movement_callback_id)
 		deltimer(movement_callback_id)
 
-/datum/overmap/ship/Undock()
+/datum/overmap/ship/Undock(force = FALSE)
 	. = ..()
 	if(istype(/datum/overmap/ship, docked_to))
 		var/datum/overmap/ship/old_dock = docked_to

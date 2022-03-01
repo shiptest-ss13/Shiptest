@@ -108,7 +108,7 @@
 		S.shuttle_port.shuttle_areas |= shuttle_port.shuttle_areas
 	log_shuttle("[src] [REF(src)] COMPLETE DOCK: FINISHED DOCKING TO [dock_target] AT [ticket.target_port]")
 
-/datum/overmap/ship/controlled/Undock()
+/datum/overmap/ship/controlled/Undock(force = FALSE)
 	if(docking)
 		return
 	log_shuttle("[src] [REF(src)] UNDOCK: STARTED UNDOCK FROM [docked_to]")
