@@ -126,4 +126,5 @@
 							"<span class='notice'>You splash the contents of [src] onto [target].</span>")
 		reagents.expose(target, TOUCH)
 		reagents.clear_reagents()
+		playsound(src, 'sound/items/glass_splash.ogg', 50, 1)
 		return

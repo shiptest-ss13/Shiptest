@@ -304,7 +304,7 @@ SUBSYSTEM_DEF(shuttle)
 
 	new_shuttle.timer = to_replace.timer //Copy some vars from the old shuttle
 	new_shuttle.mode = to_replace.mode
-	new_shuttle.current_ship.set_ship_name(to_replace.name)
+	new_shuttle.current_ship.set_ship_name(to_replace.name, mute = TRUE)
 	new_shuttle.current_ship.forceMove(to_replace.current_ship.loc) //Overmap location
 
 	if(istype(old_shuttle_location, /obj/docking_port/stationary/transit))
@@ -387,7 +387,7 @@ SUBSYSTEM_DEF(shuttle)
 	return new_shuttle
 
 /datum/controller/subsystem/shuttle/ui_state(mob/user)
-	return GLOB.admin_state
+	return GLOB.admin_debug_state
 
 /datum/controller/subsystem/shuttle/ui_interact(mob/user, datum/tgui/ui)
 	ui = SStgui.try_update_ui(user, src, ui)

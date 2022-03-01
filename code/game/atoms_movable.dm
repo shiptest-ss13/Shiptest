@@ -606,8 +606,7 @@
 
 /atom/movable/proc/onTransitZ(old_z,new_z)
 	SEND_SIGNAL(src, COMSIG_MOVABLE_Z_CHANGED, old_z, new_z)
-	for (var/item in src) // Notify contents of Z-transition. This can be overridden IF we know the items contents do not care.
-		var/atom/movable/AM = item
+	for (var/atom/movable/AM as anything in src) // Notify contents of Z-transition. This can be overridden IF we know the items contents do not care.
 		AM.onTransitZ(old_z,new_z)
 
 
@@ -905,10 +904,9 @@
 /atom/movable/proc/ex_check(ex_id)
 	if(!ex_id)
 		return TRUE
-	LAZYINITLIST(acted_explosions)
-	if(ex_id in acted_explosions)
+	if(LAZYISIN(ex_id, acted_explosions))
 		return FALSE
-	acted_explosions += ex_id
+	LAZYADD(acted_explosions, ex_id)
 	return TRUE
 
 //TODO: Better floating

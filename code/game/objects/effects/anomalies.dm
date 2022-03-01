@@ -2,7 +2,7 @@
 
 /obj/effect/anomaly
 	name = "anomaly"
-	desc = "A mysterious anomaly, seen commonly only in the region of space that the station orbits..."
+	desc = "A mysterious anomaly, seen commonly only in the far frontier of space..."
 	icon_state = "bhole3"
 	density = FALSE
 	anchored = TRUE
@@ -303,7 +303,7 @@
 /obj/effect/anomaly/bhole
 	name = "vortex anomaly"
 	icon_state = "bhole3"
-	desc = "That's a nice station you have there. It'd be a shame if something happened to it."
+	desc = "That's a nice region of spacetime you have there. It'd be a shame if something happened to it."
 	aSignal = /obj/item/assembly/signaler/anomaly/vortex
 
 /obj/effect/anomaly/bhole/anomalyEffect()
