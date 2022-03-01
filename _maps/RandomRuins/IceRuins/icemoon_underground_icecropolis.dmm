@@ -242,12 +242,9 @@
 /mob/living/simple_animal/hostile/big_legion{
 	desc = "Hidden away with his sect of heretical brethren, he festers and awaits judgement from The Priest.";
 	health = 300;
+	loot = list(/obj/item/organ/regenerative_core/legion = 3, /obj/effect/mob_spawn/human/corpse/damaged/legioninfested = 5, /obj/effect/mob_spawn/human/corpse/damaged/legioninfested = 5, /obj/effect/mob_spawn/human/corpse/damaged/legioninfested = 5, /obj/item/keycard/gatedrop/heathen);
 	maxHealth = 300;
 	name = "The Heathen"
-	},
-/obj/effect/mapping_helpers/component_injector/doordeath{
-	door_id = "heathen_death_id";
-	target_type = /mob/living/simple_animal/hostile/big_legion
 	},
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis/inside,
 /area/ruin/unpowered/icecropolis)
@@ -339,13 +336,9 @@
 	desc = "High Priest of the Bloody Hallow. Fires burn in his name, crusades and holy word spread across the necropolis until it split and vanished. It was not meant to stay under the gaze of Legion, prospering in its own citadel of flesh and death.";
 	gps_name = "Holy Fire Signal";
 	health = 2000;
-	loot = null;
+	loot = list(/obj/item/keycard/gatedrop/priest);
 	maxHealth = 2000;
 	name = "The Priest"
-	},
-/obj/effect/mapping_helpers/component_injector/doordeath{
-	door_id = "priest_death_id";
-	target_type = /mob/living/simple_animal/hostile/megafauna/dragon
 	},
 /turf/open/lava,
 /area/ruin/unpowered/icecropolis)
@@ -536,9 +529,7 @@
 /turf/open/floor/wood/icecropolis,
 /area/ruin/unpowered/icecropolis)
 "jR" = (
-/obj/machinery/door/poddoor/gates{
-	id = "heathen_death_id"
-	},
+/obj/machinery/door/keycard/gates/heathen,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis/inside,
 /area/ruin/unpowered/icecropolis)
 "jV" = (
@@ -674,9 +665,7 @@
 /turf/open/indestructible/boss/air,
 /area/ruin/unpowered/icecropolis)
 "na" = (
-/obj/machinery/door/poddoor/gates{
-	id = "heathen_death_id"
-	},
+/obj/machinery/door/keycard/gates/heathen,
 /turf/open/indestructible/necropolis/air,
 /area/ruin/unpowered/icecropolis)
 "ng" = (
@@ -720,9 +709,7 @@
 /turf/open/floor/plating,
 /area/ruin/unpowered/icecropolis/rusty)
 "ob" = (
-/obj/machinery/door/poddoor/gates/indestructible{
-	id = "gatekeeper_death_id"
-	},
+/obj/machinery/door/keycard/gates/gatekeeper,
 /turf/open/indestructible/necropolis/air,
 /area/ruin/unpowered/icecropolis)
 "og" = (
@@ -833,9 +820,7 @@
 /turf/open/indestructible/boss/air,
 /area/ruin/unpowered/icecropolis)
 "pU" = (
-/obj/machinery/door/poddoor/gates/indestructible{
-	id = "gatekeeper_death_id"
-	},
+/obj/machinery/door/keycard/gates/gatekeeper,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis/inside,
 /area/ruin/unpowered/icecropolis)
 "pV" = (
@@ -850,9 +835,7 @@
 /area/ruin/unpowered/icecropolis/reach)
 "qe" = (
 /obj/structure/stone_tile/slab/cracked,
-/obj/machinery/door/poddoor/gates{
-	id = "bishop_death_id"
-	},
+/obj/machinery/door/keycard/gates/bishop,
 /turf/open/indestructible/boss/air,
 /area/ruin/unpowered/icecropolis/gold)
 "qh" = (
@@ -1035,12 +1018,10 @@
 	desc = "The gatekeeper, a beast dedicated to guarding the wellbeing of its master.";
 	faction = list("mining");
 	health = 300;
+	loot = list(/obj/item/crusher_trophy/broodmother_tongue, /obj/item/keycard/gatedrop/gatekeeper);
+	loot_drop = list();
 	maxHealth = 200;
 	name = "The Gatekeeper"
-	},
-/obj/effect/mapping_helpers/component_injector/doordeath{
-	door_id = "gatekeeper_death_id";
-	target_type = /mob/living/simple_animal/hostile/asteroid/elite/broodmother
 	},
 /turf/open/indestructible/necropolis/air,
 /area/ruin/unpowered/icecropolis)
@@ -1686,10 +1667,8 @@
 /turf/open/indestructible/necropolis/air,
 /area/ruin/unpowered/icecropolis)
 "Fx" = (
-/obj/machinery/door/poddoor/gates/indestructible{
-	id = "priest_death_id"
-	},
 /obj/structure/stone_tile/slab,
+/obj/machinery/door/keycard/gates/priest,
 /turf/open/indestructible/boss/air,
 /area/ruin/unpowered/icecropolis)
 "FD" = (
@@ -1727,13 +1706,11 @@
 	desc = "This Bishop, twisted in its worship,  brought holy word to some golden city of lore.";
 	faction = list("mining");
 	health = 400;
+	loot = list(/obj/item/clothing/neck/cloak/herald_cloak, /obj/item/keycard/gatedrop/bishop);
+	loot_drop = list();
 	maxHealth = 400;
 	name = "The Bishop";
 	ranged_ignores_vision = 0
-	},
-/obj/effect/mapping_helpers/component_injector/doordeath{
-	door_id = "bishop_death_id";
-	target_type = /mob/living/simple_animal/hostile/asteroid/elite/herald
 	},
 /turf/open/floor/mineral/gold,
 /area/ruin/unpowered/icecropolis/gold)
@@ -2276,12 +2253,10 @@
 	desc = "Captain of the Holy Guard, a title few can hold without faulter.";
 	faction = list("mining");
 	health = 300;
+	loot = list(/obj/item/crusher_trophy/legionnaire_spine, /obj/item/keycard/gatedrop/guard);
+	loot_drop = list();
 	maxHealth = 300;
 	name = "Captain of the Holy Guard"
-	},
-/obj/effect/mapping_helpers/component_injector/doordeath{
-	door_id = "guard_death_id";
-	target_type = /mob/living/simple_animal/hostile/asteroid/elite/legionnaire
 	},
 /turf/open/lava/smooth,
 /area/ruin/unpowered/icecropolis)
@@ -2888,9 +2863,7 @@
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis/inside,
 /area/ruin/unpowered/icecropolis/reach)
 "YF" = (
-/obj/machinery/door/poddoor/gates{
-	id = "guard_death_id"
-	},
+/obj/machinery/door/keycard/gates/guard,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface/icecropolis/inside,
 /area/ruin/unpowered/icecropolis)
 "YJ" = (
@@ -2953,15 +2926,12 @@
 	color = "#880808";
 	desc = "Disfigured and distorted, this disciple of The Priest fell to temptation before shutting themselves away with their idol.";
 	health = 200;
+	loot = list(/obj/item/organ/regenerative_core/legion, /obj/item/keycard/gatedrop/disciple);
 	maxHealth = 200;
 	melee_damage_lower = 20;
 	melee_damage_type = "burn";
 	melee_damage_upper = 20;
 	name = "The Disciple"
-	},
-/obj/effect/mapping_helpers/component_injector/doordeath{
-	door_id = "disciple_death_id";
-	target_type = /mob/living/simple_animal/hostile/asteroid/hivelord/legion
 	},
 /turf/open/lava/smooth,
 /area/ruin/unpowered/icecropolis)
@@ -2973,9 +2943,7 @@
 /area/ruin/unpowered/icecropolis/gold)
 "Zz" = (
 /obj/structure/stone_tile/slab,
-/obj/machinery/door/poddoor/gates{
-	id = "disciple_death_id"
-	},
+/obj/machinery/door/keycard/gates/disciple,
 /turf/open/indestructible/boss/air,
 /area/ruin/unpowered/icecropolis)
 "ZA" = (
