@@ -71,3 +71,9 @@
 	shoes = /obj/item/clothing/shoes/jackboots
 	gloves = /obj/item/clothing/gloves/fingerless
 	glasses = /obj/item/clothing/glasses/sunglasses/big
+
+/datum/outfit/job/cargo_tech/donk
+	name = "Customer Associate (Donk! Co.)"
+	uniform = /obj/item/clothing/under/syndicate/donk
+	suit = /obj/item/clothing/suit/hazardvest/donk
+	ears = /obj/item/radio/headset/syndicate/alt
