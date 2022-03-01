@@ -92,9 +92,9 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 /area/ship/proc/link_to_shuttle(obj/docking_port/mobile/M)
 	mobile_port = M
 
-/area/ship/get_virtual_z_level()
+/area/ship/virtual_z()
 	if(mobile_port)
-		return mobile_port.get_virtual_z_level()
+		return mobile_port.virtual_z()
 	return ..()
 
 /// Command ///
@@ -204,6 +204,18 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	lighting_colour_tube = "#f0fbff"
 	lighting_colour_bulb = "#e4f7ff"
 
+/area/ship/science/xenobiology
+	name = "Xenobiology Lab"
+	icon_state = "xenolab"
+
+/area/ship/science/storage
+	name = "Toxins Storage"
+	icon_state = "toxstorage"
+
+/area/science/misc_lab
+	name = "Testing Lab"
+	icon_state = "toxmisc"
+
 /area/ship/science/robotics
 	name = "Robotics"
 	icon_state = "medresearch"
@@ -257,8 +269,12 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	icon_state = "firingrange"
 
 /area/ship/security
-	name = "Security Podbay"
+	name = "Security Office"
 	icon_state = "security"
+
+/area/ship/security/armory
+	name = "Armory"
+	icon_state = "armory"
 
 /// Cargo Bay ///
 /area/ship/cargo
@@ -267,6 +283,11 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	lighting_colour_tube = "#ffe3cc"
 	lighting_colour_bulb = "#ffdbb8"
 	sound_environment = SOUND_AREA_LARGE_ENCLOSED
+
+/area/ship/cargo/office
+	name = "Cargo Office"
+	icon_state = "quartoffice"
+	sound_environment = SOUND_AREA_STANDARD_STATION
 
 /// Hallways ///
 /area/ship/hallway

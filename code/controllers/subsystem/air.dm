@@ -28,7 +28,9 @@ SUBSYSTEM_DEF(air)
 
 	var/list/hotspots = list()
 	var/list/networks = list()
-	var/list/pipenets_needing_rebuilt = list()
+	var/list/rebuild_queue = list()
+	//Subservient to rebuild queue
+	var/list/expansion_queue = list()
 	var/list/deferred_airs = list()
 	var/max_deferred_airs = 0
 	var/list/obj/machinery/atmos_machinery = list()
@@ -44,12 +46,13 @@ SUBSYSTEM_DEF(air)
 
 
 	var/list/currentrun = list()
-	var/currentpart = SSAIR_REBUILD_PIPENETS
+	var/currentpart = SSAIR_PIPENETS
 
 	var/map_loading = TRUE
 
 	var/log_explosive_decompression = TRUE // If things get spammy, admemes can turn this off.
 
+	var/planet_equalize_enabled = FALSE
 	// Max number of turfs equalization will grab.
 	var/equalize_turf_limit = 10
 	// Max number of turfs to look for a space turf, and max number of turfs that will be decompressed.
@@ -62,6 +65,8 @@ SUBSYSTEM_DEF(air)
 	var/share_max_steps = 3
 	// Excited group processing will try to equalize groups with total pressure difference less than this amount.
 	var/excited_group_pressure_goal = 1
+
+	var/is_test_loading = FALSE
 
 /datum/controller/subsystem/air/stat_entry(msg)
 	msg += "C:{"
@@ -125,26 +130,19 @@ SUBSYSTEM_DEF(air)
 	fix_corrupted_atmos()
 
 /datum/controller/subsystem/air/fire(resumed = 0)
-#ifdef CITESTING
-	return
-#endif
 
 	var/timer = TICK_USAGE_REAL
 
-	if(currentpart == SSAIR_REBUILD_PIPENETS)
+	//Rebuilds can happen at any time, so this needs to be done outside of the normal system
+	cost_rebuilds = 0
+
+	if(length(rebuild_queue) || length(expansion_queue))
 		timer = TICK_USAGE_REAL
-		var/list/pipenet_rebuilds = pipenets_needing_rebuilt
-		for(var/thing in pipenet_rebuilds)
-			var/obj/machinery/atmospherics/AT = thing
-			if(!istype(AT))
-				continue
-			AT.build_network()
-		cost_rebuilds = MC_AVERAGE(cost_rebuilds, TICK_DELTA_TO_MS(TICK_USAGE_REAL - timer))
-		pipenets_needing_rebuilt.Cut()
+		process_rebuilds()
+		//This does mean that the apperent rebuild costs fluctuate very quickly, this is just the cost of having them always process, no matter what
+		cost_rebuilds = TICK_USAGE_REAL - timer
 		if(state != SS_RUNNING)
 			return
-		resumed = FALSE
-		currentpart = SSAIR_PIPENETS
 
 	if(currentpart == SSAIR_PIPENETS || !resumed)
 		timer = TICK_USAGE_REAL
@@ -157,7 +155,8 @@ SUBSYSTEM_DEF(air)
 	// This is only machinery like filters, mixers that don't interact with air
 	if(currentpart == SSAIR_ATMOSMACHINERY)
 		timer = TICK_USAGE_REAL
-		process_atmos_machinery(resumed)
+		if(!is_test_loading)
+			process_atmos_machinery(resumed)
 		cost_atmos_machinery = MC_AVERAGE(cost_atmos_machinery, TICK_DELTA_TO_MS(TICK_USAGE_REAL - timer))
 		if(state != SS_RUNNING)
 			return
@@ -194,7 +193,8 @@ SUBSYSTEM_DEF(air)
 		currentpart = SSAIR_ATMOSMACHINERY_AIR
 	if(currentpart == SSAIR_ATMOSMACHINERY_AIR)
 		timer = TICK_USAGE_REAL
-		process_atmos_air_machinery(resumed)
+		if(!is_test_loading)
+			process_atmos_air_machinery(resumed)
 		cost_atmos_machinery = MC_AVERAGE(cost_atmos_machinery, TICK_DELTA_TO_MS(TICK_USAGE_REAL - timer))
 		if(state != SS_RUNNING)
 			return
@@ -258,8 +258,46 @@ SUBSYSTEM_DEF(air)
 		resumed = 0
 		currentpart = SSAIR_HOTSPOTS
 	*/
-	currentpart = SSAIR_REBUILD_PIPENETS
+	currentpart = SSAIR_PIPENETS
 
+
+/**
+ * Adds a given machine to the processing system for SSAIR_ATMOSMACHINERY processing.
+ *
+ * Arguments:
+ * * machine - The machine to start processing. Can be any /obj/machinery.
+ */
+/datum/controller/subsystem/air/proc/start_processing_machine(obj/machinery/machine)
+	if(machine.atmos_processing)
+		return
+	machine.atmos_processing = TRUE
+	if(machine.interacts_with_air)
+		atmos_air_machinery += machine
+	else
+		atmos_machinery += machine
+
+/**
+ * Removes a given machine to the processing system for SSAIR_ATMOSMACHINERY processing.
+ *
+ * Arguments:
+ * * machine - The machine to stop processing.
+ */
+/datum/controller/subsystem/air/proc/stop_processing_machine(obj/machinery/machine)
+	if(!machine.atmos_processing)
+		return
+	machine.atmos_processing = FALSE
+	if(machine.interacts_with_air)
+		atmos_air_machinery -= machine
+	else
+		atmos_machinery -= machine
+
+	// If we're currently processing atmos machines, there's a chance this machine is in
+	// the currentrun list, which is a cache of atmos_machinery. Remove it from that list
+	// as well to prevent processing qdeleted objects in the cache.
+	if(currentpart == SSAIR_ATMOSMACHINERY)
+		currentrun -= machine
+	if(machine.interacts_with_air && currentpart == SSAIR_ATMOSMACHINERY_AIR)
+		currentrun -= machine
 
 
 /datum/controller/subsystem/air/proc/process_pipenets(resumed = 0)
@@ -277,9 +315,89 @@ SUBSYSTEM_DEF(air)
 		if(MC_TICK_CHECK)
 			return
 
-/datum/controller/subsystem/air/proc/add_to_rebuild_queue(atmos_machine)
-	if(istype(atmos_machine, /obj/machinery/atmospherics))
-		pipenets_needing_rebuilt += atmos_machine
+/datum/controller/subsystem/air/proc/add_to_rebuild_queue(obj/machinery/atmospherics/atmos_machine)
+	if(istype(atmos_machine, /obj/machinery/atmospherics) && !atmos_machine.rebuilding)
+		rebuild_queue += atmos_machine
+		atmos_machine.rebuilding = TRUE
+
+/datum/controller/subsystem/air/proc/add_to_expansion(datum/pipeline/line, starting_point)
+	var/list/new_packet = new(SSAIR_REBUILD_QUEUE)
+	new_packet[SSAIR_REBUILD_PIPELINE] = line
+	new_packet[SSAIR_REBUILD_QUEUE] = list(starting_point)
+	expansion_queue += list(new_packet)
+
+/datum/controller/subsystem/air/proc/remove_from_expansion(datum/pipeline/line)
+	for(var/list/packet in expansion_queue)
+		if(packet[SSAIR_REBUILD_PIPELINE] == line)
+			expansion_queue -= packet
+			return
+
+
+/datum/controller/subsystem/air/proc/process_rebuilds()
+	//Yes this does mean rebuilding pipenets can freeze up the subsystem forever, but if we're in that situation something else is very wrong
+	var/list/currentrun = rebuild_queue
+	while(currentrun.len || length(expansion_queue))
+		while(currentrun.len && !length(expansion_queue)) //If we found anything, process that first
+			var/obj/machinery/atmospherics/remake = currentrun[currentrun.len]
+			currentrun.len--
+			if (!remake)
+				continue
+			remake.rebuild_pipes()
+			if (MC_TICK_CHECK)
+				return
+
+		var/list/queue = expansion_queue
+		while(queue.len)
+			var/list/pack = queue[queue.len]
+			//We operate directly with the pipeline like this because we can trust any rebuilds to remake it properly
+			var/datum/pipeline/linepipe = pack[SSAIR_REBUILD_PIPELINE]
+			var/list/border = pack[SSAIR_REBUILD_QUEUE]
+			expand_pipeline(linepipe, border)
+			if(state != SS_RUNNING) //expand_pipeline can fail a tick check, we shouldn't let things get too fucky here
+				return
+
+			linepipe.building = FALSE
+			queue.len--
+			if (MC_TICK_CHECK)
+				return
+
+///Rebuilds a pipeline by expanding outwards, while yielding when sane
+/datum/controller/subsystem/air/proc/expand_pipeline(datum/pipeline/net, list/border)
+	while(border.len)
+		var/obj/machinery/atmospherics/borderline = border[border.len]
+		border.len--
+
+		var/list/result = borderline.pipeline_expansion(net)
+		if(!length(result))
+			continue
+		for(var/obj/machinery/atmospherics/considered_device in result)
+			if(!istype(considered_device, /obj/machinery/atmospherics/pipe))
+				considered_device.setPipenet(net, borderline)
+				net.addMachineryMember(considered_device)
+				continue
+			var/obj/machinery/atmospherics/pipe/item = considered_device
+			if(item in net.members)
+				continue
+			if(item.parent)
+				var/static/pipenetwarnings = 10
+				if(pipenetwarnings > 0)
+					log_mapping("build_pipeline(): [item.type] added to a pipenet while still having one. (pipes leading to the same spot stacking in one turf) around [AREACOORD(item)].")
+					pipenetwarnings--
+				if(pipenetwarnings == 0)
+					log_mapping("build_pipeline(): further messages about pipenets will be suppressed")
+
+			net.members += item
+			border += item
+
+			net.air.set_volume(net.air.return_volume() + item.volume)
+			item.parent = net
+
+			if(item.air_temporary)
+				net.air.merge(item.air_temporary)
+				item.air_temporary = null
+
+		if (MC_TICK_CHECK)
+			return
 
 /datum/controller/subsystem/air/proc/process_deferred_airs(resumed = 0)
 	max_deferred_airs = max(deferred_airs.len,max_deferred_airs)
@@ -315,8 +433,10 @@ SUBSYSTEM_DEF(air)
 	while(currentrun.len)
 		var/obj/machinery/M = currentrun[currentrun.len]
 		currentrun.len--
-		if(!M || (M.process_atmos(seconds) == PROCESS_KILL))
-			atmos_machinery.Remove(M)
+		if(!M)
+			atmos_machinery -= M
+		if(M.process_atmos(seconds) == PROCESS_KILL)
+			stop_processing_machine(M)
 		if(MC_TICK_CHECK)
 			return
 
@@ -329,7 +449,9 @@ SUBSYSTEM_DEF(air)
 	while(currentrun.len)
 		var/obj/machinery/M = currentrun[currentrun.len]
 		currentrun.len--
-		if(!M || (M.process_atmos(seconds) == PROCESS_KILL))
+		if(!M)
+			atmos_air_machinery -= M
+		if(M.process_atmos(seconds) == PROCESS_KILL)
 			atmos_air_machinery.Remove(M)
 		if(MC_TICK_CHECK)
 			return
@@ -453,8 +575,10 @@ SUBSYSTEM_DEF(air)
 //	all atmos machinery has to initalize before the first
 //	pipenet can be built.
 /datum/controller/subsystem/air/proc/setup_pipenets()
-	for (var/obj/machinery/atmospherics/AM in atmos_machinery + atmos_air_machinery)
-		AM.build_network()
+	for (var/obj/machinery/atmospherics/AM in atmos_machinery)
+		var/list/targets = AM.get_rebuild_targets()
+		for(var/datum/pipeline/build_off as anything in targets)
+			build_off.build_pipeline_blocking(AM)
 		CHECK_TICK
 
 /datum/controller/subsystem/air/proc/setup_template_machinery(list/atmos_machines)
@@ -467,7 +591,9 @@ SUBSYSTEM_DEF(air)
 
 	for(var/A in atmos_machines)
 		var/obj/machinery/atmospherics/AM = A
-		AM.build_network()
+		var/list/targets = AM.get_rebuild_targets()
+		for(var/datum/pipeline/build_off as anything in targets)
+			build_off.build_pipeline_blocking(AM)
 		CHECK_TICK
 
 /datum/controller/subsystem/air/proc/get_init_dirs(type, dir)
@@ -503,4 +629,3 @@ SUBSYSTEM_DEF(air)
 #undef SSAIR_ACTIVETURFS
 #undef SSAIR_TURF_POST_PROCESS
 #undef SSAIR_FINALIZE_TURFS
-#undef SSAIR_ATMOSMACHINERY_AIR

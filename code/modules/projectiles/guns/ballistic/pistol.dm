@@ -23,6 +23,7 @@
 	fire_rate = 3
 	automatic = 0
 	weapon_weight = WEAPON_LIGHT
+	pickup_sound =  'sound/items/handling/gun_pickup.ogg'
 
 /obj/item/gun/ballistic/automatic/pistol/no_mag
 	spawnwithmagazine = FALSE
@@ -35,7 +36,7 @@
 /obj/item/gun/ballistic/automatic/pistol/m1911
 	name = "\improper M1911"
 	desc = "A classic .45 handgun with a small magazine capacity."
-	icon = 'whitesands/icons/obj/guns/projectile.dmi'
+
 	icon_state = "m1911"
 	w_class = WEIGHT_CLASS_NORMAL
 	mag_type = /obj/item/ammo_box/magazine/m45
@@ -100,7 +101,6 @@
 /obj/item/gun/ballistic/automatic/pistol/disposable
 	name = "disposable gun"
 	desc = "An exceedingly flimsy gun that is extremely cheap and easy to produce. You get what you pay for."
-	icon = 'whitesands/icons/obj/guns/projectile.dmi'
 	icon_state = "disposable"
 	w_class = WEIGHT_CLASS_NORMAL
 	mag_type = /obj/item/ammo_box/magazine/disposable

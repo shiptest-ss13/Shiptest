@@ -18,7 +18,7 @@
 	floor_tile = /obj/item/stack/tile/circuit
 	var/on = TRUE
 
-/turf/open/floor/circuit/Initialize()
+/turf/open/floor/circuit/Initialize(mapload, inherited_virtual_z)
 	SSmapping.nuke_tiles += src
 	update_icon()
 	. = ..()
@@ -177,3 +177,17 @@
 	icon_state = "eighties"
 	floor_tile = /obj/item/stack/tile/eighties
 	broken_states = list("damaged")
+
+/turf/open/floor/plating/rust
+	name = "rusted plating"
+	desc = "Corrupted steel."
+	icon_state = "plating_rust"
+
+/turf/open/floor/plating/rust/plasma
+	initial_gas_mix = "plasma=104;TEMP=293.15"
+
+/turf/open/floor/plasteel/telecomms_floor
+	icon_state = "tcomms"
+	base_icon_state = "tcomms"
+	icon = 'icons/turf/floors/misc.dmi'
+	color = null

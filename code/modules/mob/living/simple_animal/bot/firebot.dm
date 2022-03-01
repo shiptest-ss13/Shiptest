@@ -38,6 +38,24 @@
 	var/extinguish_fires = TRUE
 	var/stationary_mode = FALSE
 
+/mob/living/simple_animal/bot/firebot/rockplanet
+	name = "\improper Abandoned Firebot"
+	desc = "A little fire extinguishing bot. He looks rather bloodthrirsty."
+	emagged = 2
+	remote_disabled = 1
+	locked = TRUE
+	faction = list("mining", "silicon" , "turret")
+	extinguish_fires = FALSE
+	extinguish_people = TRUE
+
+/mob/living/simple_animal/bot/firebot/rockplanet/create_extinguisher()
+	internal_ext = new /obj/item/extinguisher(src)
+	internal_ext.chem = /datum/reagent/clf3 //Refill the internal extinguisher with liquid fire
+	internal_ext.safety = FALSE
+	internal_ext.precision = TRUE
+	internal_ext.max_water = INFINITY
+	internal_ext.refill()
+
 /mob/living/simple_animal/bot/firebot/Initialize()
 	. = ..()
 	ADD_TRAIT(src, TRAIT_SPACEWALK, INNATE_TRAIT)
@@ -47,6 +65,10 @@
 	prev_access = access_card.access
 
 	create_extinguisher()
+
+/mob/living/simple_animal/bot/firebot/Destroy()
+	QDEL_NULL(internal_ext)
+	return ..()
 
 /mob/living/simple_animal/bot/firebot/bot_reset()
 	create_extinguisher()

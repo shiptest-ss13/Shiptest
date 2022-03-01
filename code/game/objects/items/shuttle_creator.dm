@@ -140,8 +140,6 @@ GLOBAL_LIST_EMPTY(custom_shuttle_machines)		//Machines that require updating (He
 		to_chat(user, "<span class='warning'>Invalid shuttle, restarting bluespace systems...</span>")
 		return FALSE
 
-	var/datum/map_template/shuttle/new_shuttle = new /datum/map_template/shuttle()
-
 	var/obj/docking_port/mobile/port = new /obj/docking_port/mobile(get_turf(target), "custom_[GLOB.custom_shuttle_count]")
 	var/obj/docking_port/stationary/stationary_port = new /obj/docking_port/stationary(get_turf(target))
 	port.callTime = 50
@@ -156,8 +154,8 @@ GLOBAL_LIST_EMPTY(custom_shuttle_machines)		//Machines that require updating (He
 	var/invertedDir = REVERSE_DIR(portDirection)
 	if(!portDirection || !invertedDir)
 		to_chat(usr, "<span class='warning'>Shuttle creation aborted, docking airlock must be on an external wall. Please select a new airlock.</span>")
-		port.Destroy()
-		stationary_port.Destroy()
+		qdel(port, TRUE)
+		qdel(stationary_port, TRUE)
 		target_ship = null
 		return FALSE
 	port.dir = invertedDir
@@ -165,8 +163,8 @@ GLOBAL_LIST_EMPTY(custom_shuttle_machines)		//Machines that require updating (He
 
 	if(!calculate_bounds(port))
 		to_chat(usr, "<span class='warning'>Bluespace calculations failed, please select a new airlock.</span>")
-		port.Destroy()
-		stationary_port.Destroy()
+		qdel(port, TRUE)
+		qdel(stationary_port, TRUE)
 		target_ship = null
 		return FALSE
 
@@ -186,7 +184,7 @@ GLOBAL_LIST_EMPTY(custom_shuttle_machines)		//Machines that require updating (He
 			curT.baseturfs.Insert(3, /turf/baseturf_skipover/shuttle)
 			port.shuttle_areas[cur_area] = TRUE
 
-	port.linkup(new_shuttle, stationary_port)
+	port.linkup(stationary_port)
 
 	port.movement_force = list("KNOCKDOWN" = 0, "THROW" = 0)
 	port.initiate_docking(stationary_port)

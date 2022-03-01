@@ -33,15 +33,17 @@
 	pass_flags = PASSTABLE
 	loot = list(/obj/item/organ/regenerative_core)
 	var/brood_type = /mob/living/simple_animal/hostile/asteroid/hivelordbrood
+	var/difficulty = 1
 
 /mob/living/simple_animal/hostile/asteroid/hivelord/OpenFire(the_target)
 	if(world.time >= ranged_cooldown)
-		var/mob/living/simple_animal/hostile/asteroid/hivelordbrood/A = new brood_type(src.loc)
+		for(var/i in 1 to difficulty)
+			var/mob/living/simple_animal/hostile/asteroid/hivelordbrood/A = new brood_type(get_turf(src),src)
 
-		A.flags_1 |= (flags_1 & ADMIN_SPAWNED_1)
-		A.GiveTarget(target)
-		A.friends = friends
-		A.faction = faction.Copy()
+			A.flags_1 |= (flags_1 & ADMIN_SPAWNED_1)
+			A.GiveTarget(target)
+			A.friends = friends
+			A.faction = faction.Copy()
 		ranged_cooldown = world.time + ranged_cooldown_time
 
 /mob/living/simple_animal/hostile/asteroid/hivelord/AttackingTarget()
@@ -87,9 +89,11 @@
 	pass_flags = PASSTABLE | PASSMOB
 	density = FALSE
 	del_on_death = 1
+	var/mob/source
 
-/mob/living/simple_animal/hostile/asteroid/hivelordbrood/Initialize()
+/mob/living/simple_animal/hostile/asteroid/hivelordbrood/Initialize(_source)
 	. = ..()
+	source = source
 	addtimer(CALLBACK(src, .proc/death), 100)
 	AddComponent(/datum/component/swarming)
 
@@ -509,6 +513,8 @@
 					backpack_contents += pick(list(/obj/item/slime_extract/grey = 1, /obj/item/slime_scanner = 1, /obj/item/resonator/upgraded = 1, /obj/item/gps = 1, /obj/item/fulton_core = 2, /obj/item/extraction_pack = 3, /obj/item/stack/sheet/mineral/plasma/twenty = 3, /obj/item/stack/marker_beacon/ten = 3, /obj/item/mining_scanner = 2, /obj/item/extinguisher/mini = 3, /obj/item/flashlight/seclite=3, /obj/item/research_notes/loot/medium = 3, /obj/item/stack/sheet/metal/fifty = 3, /obj/item/research_notes/loot/big = 1))
 				if(prob(5))
 					backpack_contents += list(/obj/item/storage/box/rndboards)
+				if(prob(20))
+					backpack_contents += pick(list(/obj/item/storage/box/stockparts/basic = 4, /obj/item/storage/box/stockparts/t2 = 3, /obj/item/storage/box/stockparts/t3 = 2, /obj/item/storage/box/stockparts/deluxe = 1))
 			if(prob(30))
 				glasses = pickweight(list(/obj/item/clothing/glasses/meson = 2, /obj/item/clothing/glasses/hud/health = 2, /obj/item/clothing/glasses/hud/diagnostic =2, /obj/item/clothing/glasses/science = 2, /obj/item/clothing/glasses/welding = 2, /obj/item/clothing/glasses/night = 1))
 			if(prob(10))
@@ -602,3 +608,31 @@
 
 /mob/living/simple_animal/hostile/asteroid/hivelordbrood/legion/snow/tendril
 	fromtendril = TRUE
+
+/mob/living/simple_animal/hostile/asteroid/hivelord/legion/crystal
+	name = "disfigured legion"
+	desc = "Disfigured, contorted, and corrupted. This thing was once part of the legion, now it has a different vile and twisted allegiance."
+	icon_state = "disfigured_legion"
+	icon_living = "disfigured_legion"
+	icon_aggro = "disfigured_legion"
+	icon_dead = "disfigured_legion"
+	difficulty = 2
+	brood_type = /mob/living/simple_animal/hostile/asteroid/hivelordbrood/legion/crystal
+	loot = list(/obj/item/organ/regenerative_core/legion/crystal)
+
+/mob/living/simple_animal/hostile/asteroid/hivelordbrood/legion/crystal
+	name = "disfigured legion"
+	desc = "One of none."
+	icon_state = "disfigured_legion_head"
+	icon_living = "disfigured_legion_head"
+	icon_aggro = "disfigured_legion_head"
+	icon_dead = "disfigured_legion_head"
+	speed = 2
+
+/mob/living/simple_animal/hostile/asteroid/hivelordbrood/legion/crystal/death(gibbed)
+	for(var/i in 0 to 5)
+		var/obj/projectile/P = new /obj/projectile/goliath(get_turf(src))
+		P.preparePixelProjectile(get_step(src, pick(GLOB.alldirs)), get_turf(src))
+		P.firer = source
+		P.fire(i*(360/5))
+	return ..()

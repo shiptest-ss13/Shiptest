@@ -61,6 +61,11 @@
 	///Lazylist of movable atoms providing opacity sources.
 	var/list/atom/movable/opacity_sources
 
+	/// ID of the virtual level we're in
+	var/virtual_z = 0
+	/// Translation of the virtual z to a virtual level
+	var/static/list/virtual_z_translation
+
 
 /turf/vv_edit_var(var_name, new_value)
 	var/static/list/banned_edits = list("x", "y", "z")
@@ -73,18 +78,21 @@
   *
   * Doesn't call parent, see [/atom/proc/Initialize]
   */
-/turf/Initialize(mapload)
+/turf/Initialize(mapload, inherited_virtual_z)
 	SHOULD_CALL_PARENT(FALSE)
 	if(flags_1 & INITIALIZED_1)
 		stack_trace("Warning: [src]([type]) initialized multiple times!")
 	flags_1 |= INITIALIZED_1
 
-	// by default, vis_contents is inherited from the turf that was here before
-	vis_contents.Cut()
+	if(inherited_virtual_z)
+		virtual_z = inherited_virtual_z
 
 	assemble_baseturfs()
 
 	levelupdate()
+
+	if(!virtual_z_translation)
+		virtual_z_translation = SSmapping.virtual_z_translation
 
 	if (length(smoothing_groups))
 		sortTim(smoothing_groups) //In case it's not properly ordered, let's avoid duplicate entries with the same values.
@@ -99,7 +107,7 @@
 
 	visibilityChanged()
 
-	for(var/atom/movable/AM in src)
+	for(var/atom/movable/AM as anything in src)
 		Entered(AM)
 
 	var/area/A = loc
@@ -112,10 +120,10 @@
 	if (light_power && light_range)
 		update_light()
 
-	var/turf/T = SSmapping.get_turf_above(src)
+	var/turf/T = above()
 	if(T)
 		T.multiz_turf_new(src, DOWN)
-	T = SSmapping.get_turf_below(src)
+	T = below()
 	if(T)
 		T.multiz_turf_new(src, UP)
 
@@ -156,10 +164,10 @@
 	if(!changing_turf)
 		stack_trace("Incorrect turf deletion")
 	changing_turf = FALSE
-	var/turf/T = SSmapping.get_turf_above(src)
+	var/turf/T = above()
 	if(T)
 		T.multiz_turf_del(src, DOWN)
-	T = SSmapping.get_turf_below(src)
+	T = below()
 	if(T)
 		T.multiz_turf_del(src, UP)
 	if(force)
@@ -206,15 +214,15 @@
 	if(density)
 		return TRUE
 
-	for(var/content in contents)
+	for(var/atom/movable/content as anything in contents)
 		// We don't want to block ourselves or consider any ignored atoms.
 		if((content == source_atom) || (content in ignore_atoms))
 			continue
-		var/atom/atom_content = content
+
 		// If the thing is dense AND we're including mobs or the thing isn't a mob AND if there's a source atom and
 		// it cannot pass through the thing on the turf,  we consider the turf blocked.
-		if(atom_content.density && (!exclude_mobs || !ismob(atom_content)))
-			if(source_atom && atom_content.CanPass(source_atom, src))
+		if(content.density && (!exclude_mobs || !ismob(content)))
+			if(source_atom && content.CanPass(source_atom, src))
 				continue
 			return TRUE
 	return FALSE
@@ -239,8 +247,7 @@
 /turf/proc/zImpact(atom/movable/A, levels = 1, turf/prev_turf)
 	var/flags = NONE
 	var/mov_name = A.name
-	for(var/i in contents)
-		var/atom/thing = i
+	for(var/atom/movable/thing as anything in contents)
 		flags |= thing.intercept_zImpact(A, levels)
 		if(flags & FALL_STOP_INTERCEPTING)
 			break
@@ -326,13 +333,12 @@
 	// Here's hoping it doesn't stay like this for years before we finish conversion to step_
 	var/atom/firstbump
 	var/canPassSelf = CanPass(mover, src)
-	if(canPassSelf || (mover.movement_type & PHASING))
-		for(var/i in contents)
+	if(canPassSelf || (mover.movement_type & PHASING) || (mover.pass_flags & pass_flags_self))
+		for(var/atom/movable/thing as anything in contents)
 			if(QDELETED(mover))
 				return FALSE		//We were deleted, do not attempt to proceed with movement.
-			if(i == mover || i == mover.loc) // Multi tile objects and moving out of other objects
+			if(thing == mover || thing == mover.loc) // Multi tile objects and moving out of other objects
 				continue
-			var/atom/movable/thing = i
 			if(!thing.Cross(mover))
 				if(QDELETED(mover))		//Mover deleted from Cross/CanPass, do not proceed.
 					return FALSE
@@ -348,17 +354,16 @@
 		firstbump = src
 	if(firstbump)
 		mover.Bump(firstbump)
-		return (mover.movement_type & PHASING)
+		return (mover.movement_type & PHASING) || (mover.pass_flags & pass_flags_self) // If they can phase through us, let them in. If not, don't.
 	return TRUE
 
 /turf/Exit(atom/movable/mover, atom/newloc)
 	. = ..()
 	if(!. || QDELETED(mover))
 		return FALSE
-	for(var/i in contents)
-		if(i == mover)
+	for(var/atom/movable/thing as anything in contents)
+		if(thing == mover)
 			continue
-		var/atom/movable/thing = i
 		if(!thing.Uncross(mover, newloc))
 			if(thing.flags_1 & ON_BORDER_1)
 				mover.Bump(thing)
@@ -511,8 +516,7 @@
 
 /turf/contents_explosion(severity, target)
 
-	for(var/V in contents)
-		var/atom/A = V
+	for(var/atom/A as anything in contents)
 		if(!QDELETED(A))
 			if(ismovable(A))
 				var/atom/movable/AM = A
@@ -527,13 +531,12 @@
 					SSexplosions.lowobj += A
 
 /turf/narsie_act(force, ignore_mobs, probability = 20)
-	. = (prob(probability) || force)
-	for(var/I in src)
-		var/atom/A = I
-		if(ignore_mobs && ismob(A))
-			continue
-		if(ismob(A) || .)
-			A.narsie_act()
+	. = (force || prob(probability))
+	var/individual_chance
+	for(var/atom/movable/movable_contents as anything in src)
+		individual_chance = ismob(movable_contents) ? !ignore_mobs : .
+		if(individual_chance)
+			movable_contents.narsie_act()
 
 /turf/proc/get_smooth_underlay_icon(mutable_appearance/underlay_appearance, turf/asking_turf, adjacency_dir)
 	underlay_appearance.icon = icon
@@ -549,13 +552,6 @@
 	I.setDir(AM.dir)
 	I.alpha = 128
 	LAZYADD(blueprint_data, I)
-
-/turf/proc/add_blueprints_preround(atom/movable/AM)
-	if(!SSticker.HasRoundStarted())
-		if(AM.layer == WIRE_LAYER)	//wires connect to adjacent positions after its parent init, meaning we need to wait (in this case, until smoothing) to take its image
-			SSicon_smooth.blueprint_queue += AM
-		else
-			add_blueprints(AM)
 
 /turf/proc/is_transition_turf()
 	return
@@ -589,8 +585,7 @@
 /turf/proc/photograph(limit=20)
 	var/image/I = new()
 	I.add_overlay(src)
-	for(var/V in contents)
-		var/atom/A = V
+	for(var/atom/movable/A as anything in contents)
 		if(A.invisibility)
 			continue
 		I.add_overlay(A)
@@ -627,7 +622,7 @@
 	if(purge)
 		chemicals_lost = (2 * M.reagents.total_volume)/3				//For detoxification surgery, we're manually pumping the stomach out of chemcials, so it's far more efficient.
 	M.reagents.trans_to(V, chemicals_lost, transfered_by = M)
-	for(var/datum/reagent/R in M.reagents.reagent_list)                //clears the stomach of anything that might be digested as food
+	for(var/datum/reagent/R as anything in M.reagents.reagent_list)                //clears the stomach of anything that might be digested as food
 		if(istype(R, /datum/reagent/consumable) || purge)
 			var/datum/reagent/consumable/nutri_check = R
 			if(nutri_check.nutriment_factor >0)
@@ -653,10 +648,9 @@
 /turf/wash(clean_types)
 	. = ..()
 
-	for(var/am in src)
-		if(am == src)
+	for(var/atom/movable/content as anything in src)
+		if(content == src)
 			continue
-		var/atom/movable/movable_content = am
-		if(!ismopable(movable_content))
+		if(!ismopable(content))
 			continue
-		movable_content.wash(clean_types)
+		content.wash(clean_types)

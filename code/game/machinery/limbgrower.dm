@@ -121,7 +121,7 @@
 		reagents.remove_reagent(/datum/reagent/medicine/synthflesh,being_built.reagents_list[/datum/reagent/medicine/synthflesh]*prod_coeff)
 		var/buildpath = being_built.build_path
 		if(ispath(buildpath, /obj/item/bodypart))	//This feels like spatgheti code, but i need to initilise a limb somehow
-			build_limb(buildpath)
+			build_limb(create_buildpath())
 		else
 			//Just build whatever it is
 			new buildpath(loc)
@@ -132,27 +132,25 @@
 	icon_state = "limbgrower_idleoff"
 	updateUsrDialog()
 
+/obj/machinery/limbgrower/proc/create_buildpath()
+	var/part_type = being_built.id //their ids match bodypart typepaths
+	var/species = selected_category
+	var/path
+	if(species == SPECIES_HUMAN) //Humans use the parent type.
+		path = "/obj/item/bodypart/[part_type]"
+	else
+		path = "/obj/item/bodypart/[part_type]/[species]"
+	return text2path(path)
+
 /obj/machinery/limbgrower/proc/build_limb(buildpath)
 	//i need to create a body part manually using a set icon (otherwise it doesnt appear)
 	var/obj/item/bodypart/limb
 	limb = new buildpath(loc)
-	if(selected_category=="human" || selected_category=="lizard" || selected_category=="ethereal") //Species with greyscale parts should be included here
-		if(selected_category=="human")			//humans don't use the full colour spectrum, they use random_skin_tone
-			limb.skin_tone = random_skin_tone()
-		else
-			limb.species_color = random_short_color()
-
-		limb.icon = 'icons/mob/human_parts_greyscale.dmi'
-		limb.should_draw_greyscale = TRUE
-	else
-		limb.icon = 'icons/mob/human_parts.dmi'
-	// Set this limb up using the species name and body zone
 	limb.icon_state = "[selected_category]_[limb.body_zone]"
-	limb.name = "\improper biosynthetic [selected_category] [parse_zone(limb.body_zone)]"
-	limb.desc = "A synthetically produced [selected_category] limb, grown in a tube. This one is for the [parse_zone(limb.body_zone)]."
-	limb.species_id = selected_category
+	limb.name = "\improper synthetic [selected_category] [parse_zone(limb.body_zone)]"
+	limb.limb_id = selected_category
+	limb.mutation_color = "62A262" //Gets turned into a full color in limb code
 	limb.update_icon_dropped()
-	limb.original_owner = "limb grower"	 //prevents updating the icon, so a lizard arm on a human stays a lizard arm etc.
 
 /obj/machinery/limbgrower/RefreshParts()
 	reagents.maximum_volume = 0

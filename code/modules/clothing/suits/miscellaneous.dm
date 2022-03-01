@@ -51,7 +51,7 @@
 	desc = "Yarr."
 	icon_state = "pirate"
 	item_state = "pirate"
-	allowed = list(/obj/item/melee/transforming/energy/sword/pirate, /obj/item/clothing/glasses/eyepatch, /obj/item/reagent_containers/food/drinks/bottle/rum)
+	allowed = list(/obj/item/melee/transforming/energy/sword/saber/pirate, /obj/item/clothing/glasses/eyepatch, /obj/item/reagent_containers/food/drinks/bottle/rum)
 
 /obj/item/clothing/suit/pirate/captain
 	name = "pirate captain coat"
@@ -663,6 +663,15 @@
 /obj/item/clothing/head/hooded/winterhood/miner
 	icon_state = "winterhood_miner"
 	armor = list("melee" = 10, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+
+/obj/item/clothing/suit/hooded/wintercoat/security/inteq
+	name = "inteq winter coat"
+	icon_state = "coatinteq"
+	item_state = "coatinteq"
+	hoodtype = /obj/item/clothing/head/hooded/winterhood/security/inteq
+
+/obj/item/clothing/head/hooded/winterhood/security/inteq
+	icon_state = "winterhood_inteq"
 
 /obj/item/clothing/head/hooded/ablative
 	name = "ablative hood"

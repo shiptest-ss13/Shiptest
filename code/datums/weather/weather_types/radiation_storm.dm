@@ -18,7 +18,6 @@
 
 	area_type = /area
 	protected_areas = list(/area/ship/maintenance, /area/ship/science/ai_chamber, /area/ship/storage, /area/ship/security/prison)
-	target_trait = ZTRAIT_STATION
 
 	immunity_type = "rad"
 

@@ -74,6 +74,7 @@
 		current_cooldown = world.time + cooldown
 		var/turf/t = get_turf(src)
 		mineral_scan_pulse(t, range)
+		playsound(src, 'sound/effects/ping.ogg', 20)
 
 /obj/item/pinpointer/deepcore/update_overlays()
 	. = ..()

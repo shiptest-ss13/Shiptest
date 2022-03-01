@@ -101,7 +101,7 @@
 	var/turfverb = "uproot"
 	tiled_dirt = FALSE
 
-/turf/open/floor/grass/Initialize()
+/turf/open/floor/grass/Initialize(mapload, inherited_virtual_z)
 	. = ..()
 	spawniconchange()
 
@@ -217,7 +217,7 @@
 	. = ..()
 	. += "<span class='notice'>There's a <b>small crack</b> on the edge of it.</span>"
 
-/turf/open/floor/carpet/Initialize()
+/turf/open/floor/carpet/Initialize(mapload, inherited_virtual_z)
 	. = ..()
 	update_icon()
 
@@ -235,6 +235,14 @@
 ///Carpet variant for mapping aid, functionally the same as parent after smoothing.
 /turf/open/floor/carpet/lone
 	icon_state = "carpet-0"
+
+/turf/open/floor/carpet/red_gold
+	icon = 'icons/turf/floors/carpet_red_gold.dmi'
+	icon_state = "carpet_red_gold-255"
+	base_icon_state = "carpet_red_gold"
+	floor_tile = /obj/item/stack/tile/carpet/red_gold
+	smoothing_groups = list(SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_CARPET_RED_GOLD)
+	canSmoothWith = list(SMOOTH_GROUP_CARPET_RED_GOLD)
 
 /turf/open/floor/carpet/black
 	icon = 'icons/turf/floors/carpet_black.dmi'
@@ -367,13 +375,12 @@
 	initial_gas_mix = AIRLESS_ATMOS
 
 /turf/open/floor/carpet/narsie_act(force, ignore_mobs, probability = 20)
-	. = (prob(probability) || force)
-	for(var/I in src)
-		var/atom/A = I
-		if(ignore_mobs && ismob(A))
-			continue
-		if(ismob(A) || .)
-			A.narsie_act()
+	. = (force || prob(probability))
+	var/individual_chance
+	for(var/atom/movable/movable_contents as anything in src)
+		individual_chance = ismob(movable_contents) ? !ignore_mobs : .
+		if(individual_chance)
+			movable_contents.narsie_act()
 
 /turf/open/floor/carpet/break_tile()
 	broken = TRUE
@@ -410,7 +417,7 @@
 	plane = PLANE_SPACE
 	tiled_dirt = FALSE
 
-/turf/open/floor/fakespace/Initialize()
+/turf/open/floor/fakespace/Initialize(mapload, inherited_virtual_z)
 	. = ..()
 	icon_state = SPACE_ICON_STATE
 

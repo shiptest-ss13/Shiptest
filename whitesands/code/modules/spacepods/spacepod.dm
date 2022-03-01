@@ -27,6 +27,7 @@ GLOBAL_LIST_INIT(spacepod_verb_list,  list(
 	bound_width = 64
 	bound_height = 64
 	animate_movement = NO_STEPS // we do our own gliding here
+	pass_flags = PASSPLATFORM
 
 	anchored = TRUE
 	resistance_flags = LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF // it floats above lava or something, I dunno

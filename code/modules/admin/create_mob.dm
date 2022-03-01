@@ -39,9 +39,8 @@
 	H.dna.features["spider_spinneret"] = pick(GLOB.spider_spinneret_list)
 	H.dna.features["spider_mandibles"] = pick(GLOB.spider_mandibles_list)
 	H.dna.features["squid_face"] = pick(GLOB.squid_face_list)
-	H.dna.features["teshari_feathers"] = pick(GLOB.teshari_feathers_list)
-	H.dna.features["teshari_body_feathers"] = pick(GLOB.teshari_body_feathers_list)
+	H.dna.features["kepori_feathers"] = pick(GLOB.kepori_feathers_list)
+	H.dna.features["kepori_body_feathers"] = pick(GLOB.kepori_body_feathers_list)
 
 	H.update_body()
 	H.update_hair()
-	H.update_body_parts()

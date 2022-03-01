@@ -22,7 +22,6 @@
 	var/alt_covers_chest = FALSE // for adjusted/rolled-down jumpsuits, FALSE = exposes chest and arms, TRUE = exposes arms only
 	var/obj/item/clothing/accessory/attached_accessory
 	var/mutable_appearance/accessory_overlay
-	var/mutantrace_variation = NO_MUTANTRACE_VARIATION //Are there special sprites for specific situations? Don't use this unless you need to.
 	var/freshly_laundered = FALSE
 
 /obj/item/clothing/under/worn_overlays(isinhands = FALSE)
@@ -69,7 +68,7 @@
 			var/mob/M = loc
 			to_chat(M,"<span class='warning'>The sensors on the [src] change rapidly!</span>")
 
-/obj/item/clothing/under/equipped(mob/user, slot)
+/obj/item/clothing/under/visual_equipped(mob/user, slot)
 	..()
 	if(adjusted)
 		adjusted = NORMAL_STYLE
@@ -77,15 +76,9 @@
 		if(!alt_covers_chest)
 			body_parts_covered |= CHEST
 
-	if(mutantrace_variation && ishuman(user))
+	if(ishuman(user))
 		var/mob/living/carbon/human/H = user
-		if(DIGITIGRADE in H.dna.species.species_traits)
-			adjusted = DIGITIGRADE_STYLE
 		H.update_inv_w_uniform()
-
-	if(slot == ITEM_SLOT_ICLOTHING && freshly_laundered)
-		freshly_laundered = FALSE
-		SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT, "fresh_laundry", /datum/mood_event/fresh_laundry)
 
 	if(attached_accessory && slot != ITEM_SLOT_HANDS && ishuman(user))
 		var/mob/living/carbon/human/H = user
@@ -93,6 +86,12 @@
 		H.fan_hud_set_fandom()
 		if(attached_accessory.above_suit)
 			H.update_inv_wear_suit()
+
+/obj/item/clothing/under/equipped(mob/user, slot)
+	..()
+	if(slot == ITEM_SLOT_ICLOTHING && freshly_laundered)
+		freshly_laundered = FALSE
+		SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT, "fresh_laundry", /datum/mood_event/fresh_laundry)
 
 /obj/item/clothing/under/dropped(mob/user)
 	if(attached_accessory)

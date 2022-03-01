@@ -5,7 +5,7 @@
 //	You do not need to raise this if you are adding new values that have sane defaults.
 //	Only raise this value when changing the meaning/format/name/layout of an existing value
 //	where you would want the updater procs below to run
-#define SAVEFILE_VERSION_MAX 38
+#define SAVEFILE_VERSION_MAX 39
 
 /*
 SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Carn
@@ -69,9 +69,6 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 		if(key_bindings["ShiftQ"] == "quick_equip_suit_storage")
 			key_bindings["ShiftQ"] = list("quick_equip_suit_storage")
 
-	if(current_version < 36.5)
-		READ_FILE(S["equipped_gear"], equipped_gear)
-
 	if(current_version < 37)
 		if(clientfps == 0)
 			clientfps = -1
@@ -81,7 +78,13 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 		outline_color = COLOR_BLUE_GRAY
 
 /datum/preferences/proc/update_character(current_version, savefile/S)
-	return
+	if(current_version < 39)
+		var/species_id
+		READ_FILE(S["species"], species_id)
+		if(species_id == SPECIES_KEPORI)
+			pref_species = new /datum/species/kepori
+			READ_FILE(S["feature_teshari_feathers"], features["kepori_feathers"])
+			READ_FILE(S["feature_teshari_body_feathers"], features["kepori_body_feathers"])
 
 /// checks through keybindings for outdated unbound keys and updates them
 /datum/preferences/proc/check_keybindings()
@@ -196,11 +199,17 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	READ_FILE(S["key_bindings"], key_bindings)
 	check_keybindings()
 
-	//WS Begin - Custom Prefs
-	READ_FILE(S["purchased_gear"], purchased_gear)
-	READ_FILE(S["crew_objectives"], crew_objectives)
 	READ_FILE(S["show_credits"], show_credits)
-	//WS End
+
+	//favorite outfits
+	READ_FILE(S["favorite_outfits"], favorite_outfits)
+
+	var/list/parsed_favs = list()
+	for(var/typetext in favorite_outfits)
+		var/datum/outfit/path = text2path(typetext)
+		if(ispath(path)) //whatever typepath fails this check probably doesn't exist anymore
+			parsed_favs += path
+	favorite_outfits = uniqueList(parsed_favs)
 
 	//try to fix any outdated data if necessary
 	if(needs_update >= 0)
@@ -242,11 +251,12 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	ghost_others	= sanitize_inlist(ghost_others, GLOB.ghost_others_options, GHOST_OTHERS_DEFAULT_OPTION)
 	menuoptions		= SANITIZE_LIST(menuoptions)
 	be_special		= SANITIZE_LIST(be_special)
-	crew_objectives		= sanitize_integer(crew_objectives, 0, 1, initial(crew_objectives))
 	show_credits		= sanitize_integer(show_credits, 0, 1, initial(show_credits))
 	pda_style		= sanitize_inlist(pda_style, GLOB.pda_styles, initial(pda_style))
 	pda_color		= sanitize_hexcolor(pda_color, 6, 1, initial(pda_color))
 	key_bindings 	= sanitize_keybindings(key_bindings)
+	favorite_outfits = SANITIZE_LIST(favorite_outfits)
+	equipped_gear	= SANITIZE_LIST(equipped_gear)
 
 	if(needs_update >= 0) //save the updated version
 		var/old_default_slot = default_slot
@@ -265,9 +275,6 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 		default_slot = old_default_slot
 		max_save_slots = old_max_save_slots
 		save_preferences()
-
-	if(!purchased_gear)
-		purchased_gear = list()
 
 	return TRUE
 
@@ -299,7 +306,6 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["buttons_locked"], buttons_locked)
 	WRITE_FILE(S["windowflash"], windowflashing)
 	WRITE_FILE(S["be_special"], be_special)
-	WRITE_FILE(S["crew_objectives"], crew_objectives)
 	WRITE_FILE(S["default_slot"], default_slot)
 	WRITE_FILE(S["toggles"], toggles)
 	WRITE_FILE(S["chat_toggles"], chat_toggles)
@@ -323,9 +329,9 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["tip_delay"], tip_delay)
 	WRITE_FILE(S["pda_style"], pda_style)
 	WRITE_FILE(S["pda_color"], pda_color)
-	WRITE_FILE(S["purchased_gear"], purchased_gear)
 	WRITE_FILE(S["show_credits"], show_credits)
 	WRITE_FILE(S["key_bindings"], key_bindings)
+	WRITE_FILE(S["favorite_outfits"], favorite_outfits)
 	return TRUE
 
 /datum/preferences/proc/load_character(slot)
@@ -388,8 +394,6 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	READ_FILE(S["feature_moth_wings"], features["moth_wings"])
 	READ_FILE(S["feature_moth_markings"], features["moth_markings"])
 
-	//WS Begin
-
 	READ_FILE(S["equipped_gear"], equipped_gear)
 	READ_FILE(S["jumpsuit_style"], jumpsuit_style)
 	READ_FILE(S["exowear"], exowear)
@@ -401,8 +405,8 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	READ_FILE(S["feature_ipc_screen"], features["ipc_screen"])
 	READ_FILE(S["feature_ipc_antenna"], features["ipc_antenna"])
 	READ_FILE(S["feature_ipc_chassis"], features["ipc_chassis"])
-	READ_FILE(S["feature_teshari_feathers"], features["teshari_feathers"])
-	READ_FILE(S["feature_teshari_body_feathers"], features["teshari_body_feathers"])
+	READ_FILE(S["feature_kepori_feathers"], features["kepori_feathers"])
+	READ_FILE(S["feature_kepori_body_feathers"], features["kepori_body_feathers"])
 	READ_FILE(S["alt_titles_preferences"], alt_titles_preferences)
 
 	alt_titles_preferences = SANITIZE_LIST(alt_titles_preferences)
@@ -411,9 +415,6 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 			if(alt_titles_preferences[job.title])
 				if(!((alt_titles_preferences[job.title] in job.alt_titles) || (alt_titles_preferences[job.title] == job.senior_title)))
 					alt_titles_preferences.Remove(job.title)
-
-	if(!equipped_gear)
-		equipped_gear = list()
 
 	//WS End
 
@@ -516,8 +517,8 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	features["ipc_screen"]	= sanitize_inlist(features["ipc_screen"], GLOB.ipc_screens_list)
 	features["ipc_antenna"]	 = sanitize_inlist(features["ipc_antenna"], GLOB.ipc_antennas_list)
 	features["ipc_chassis"]	 = sanitize_inlist(features["ipc_chassis"], GLOB.ipc_chassis_list)
-	features["teshari_feathers"] = sanitize_inlist(features["teshari_feathers"], GLOB.teshari_feathers_list, "Plain")
-	features["teshari_body_feathers"] = sanitize_inlist(features["teshari_body_feathers"], GLOB.teshari_body_feathers_list, "Plain")
+	features["kepori_feathers"] = sanitize_inlist(features["kepori_feathers"], GLOB.kepori_feathers_list, "Plain")
+	features["kepori_body_feathers"] = sanitize_inlist(features["kepori_body_feathers"], GLOB.kepori_body_feathers_list, "Plain")
 	features["flavor_text"]		= sanitize_text(features["flavor_text"], initial(features["flavor_text"]))
 
 	joblessrole	= sanitize_integer(joblessrole, 1, 3, initial(joblessrole))
@@ -586,8 +587,8 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["feature_ipc_screen"]			, features["ipc_screen"])
 	WRITE_FILE(S["feature_ipc_antenna"]			, features["ipc_antenna"])
 	WRITE_FILE(S["feature_ipc_chassis"]			, features["ipc_chassis"])
-	WRITE_FILE(S["feature_teshari_feathers"]	, features["teshari_feathers"])
-	WRITE_FILE(S["feature_teshari_body_feathers"], features["teshari_body_feathers"])
+	WRITE_FILE(S["feature_kepori_feathers"]	, features["kepori_feathers"])
+	WRITE_FILE(S["feature_kepori_body_feathers"], features["kepori_body_feathers"])
 
 	//Alternate job titles
 	WRITE_FILE(S["alt_titles_preferences"]		,alt_titles_preferences)

@@ -12,6 +12,7 @@
 
 	body_parts_covered = CHEST|GROIN|ARMS
 	can_adjust = FALSE
+	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON
 
 /obj/item/clothing/under/rank/rnd/scientist/xenobiologist
 	name = "xenobiologist jumpsuit"
@@ -27,6 +28,7 @@
 
 	body_parts_covered = CHEST|GROIN|ARMS
 	can_adjust = FALSE
+	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON
 
 /obj/item/clothing/under/rank/rnd/scientist/nanite
 	name = "nanite researcher jumpsuit"
@@ -42,6 +44,7 @@
 
 	body_parts_covered = CHEST|GROIN|ARMS
 	can_adjust = FALSE
+	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON
 
 /obj/item/clothing/under/rank/rnd/roboticist/biomech_engineer
 	name = "biomechanical engineer jumpsuit"
@@ -54,6 +57,7 @@
 
 	body_parts_covered = CHEST|GROIN|ARMS
 	can_adjust = FALSE
+	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON
 
 /obj/item/clothing/under/rank/rnd/roboticist/mech_engineer
 	name = "mechatronic engineer jumpsuit"
@@ -66,15 +70,17 @@
 
 	body_parts_covered = CHEST|GROIN|ARMS
 	can_adjust = FALSE
+	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON
 
 /obj/item/clothing/under/suit/senior_scientist
 	name = "senior scientist suit"
 	desc = "A suit with science colors, meant to be worn by senior staff."
 	icon_state = "senior_science"
-
 	permeability_coefficient = 0.5
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 10, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	fitted = NO_FEMALE_UNIFORM
+	icon = 'icons/obj/clothing/under/rnd.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/under/rnd.dmi'
 
 /obj/item/clothing/under/suit/senior_scientist/skirt
 	name = "senior scientist skirtsuit"
@@ -83,14 +89,16 @@
 
 	body_parts_covered = CHEST|GROIN|ARMS
 	can_adjust = FALSE
+	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON
 
 /obj/item/clothing/under/suit/senior_roboticist
 	name = "senior roboticist suit"
 	desc = "A suit with robotics colors, meant to be worn by senior staff."
 	icon_state = "senior_roboticist"
-
 	resistance_flags = NONE
 	fitted = NO_FEMALE_UNIFORM
+	icon = 'icons/obj/clothing/under/rnd.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/under/rnd.dmi'
 
 /obj/item/clothing/under/suit/senior_roboticist/skirt
 	name = "senior roboticist skirtsuit"
@@ -99,3 +107,4 @@
 
 	body_parts_covered = CHEST|GROIN|ARMS
 	can_adjust = FALSE
+	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON

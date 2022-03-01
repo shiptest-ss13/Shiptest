@@ -34,6 +34,8 @@
 	RegisterSignal(parent, COMSIG_MOVABLE_MOVED, .proc/vehicle_moved)
 
 /datum/component/riding/proc/vehicle_mob_unbuckle(datum/source, mob/living/M, force = FALSE)
+	SIGNAL_HANDLER
+
 	var/atom/movable/AM = parent
 	restore_position(M)
 	unequip_buckle_inhands(M)
@@ -42,12 +44,16 @@
 		qdel(src)
 
 /datum/component/riding/proc/vehicle_mob_buckle(datum/source, mob/living/M, force = FALSE)
+	SIGNAL_HANDLER
+
 	var/atom/movable/movable_parent = parent
 	M.set_glide_size(movable_parent.glide_size)
 	M.updating_glide_size = FALSE
 	handle_vehicle_offsets(movable_parent.dir)
 
 /datum/component/riding/proc/handle_vehicle_layer(dir)
+	SIGNAL_HANDLER
+
 	var/atom/movable/AM = parent
 	var/static/list/defaults = list(TEXT_NORTH = OBJ_LAYER, TEXT_SOUTH = ABOVE_MOB_LAYER, TEXT_EAST = ABOVE_MOB_LAYER, TEXT_WEST = ABOVE_MOB_LAYER)
 	. = defaults["[dir]"]
@@ -60,20 +66,21 @@
 /datum/component/riding/proc/set_vehicle_dir_layer(dir, layer)
 	directional_vehicle_layers["[dir]"] = layer
 
-/datum/component/riding/proc/vehicle_moved(datum/source, dir)
+/datum/component/riding/proc/vehicle_moved(datum/source, oldloc, dir, forced)
+	SIGNAL_HANDLER
 	var/atom/movable/movable_parent = parent
-	if (isnull(dir))
+	if(isnull(dir))
 		dir = movable_parent.dir
 	movable_parent.set_glide_size(DELAY_TO_GLIDE_SIZE(vehicle_move_delay))
-	for (var/m in movable_parent.buckled_mobs)
+	for(var/mob/living/m as anything in movable_parent.buckled_mobs)
 		ride_check(m)
-		var/mob/buckled_mob = m
-		buckled_mob.set_glide_size(movable_parent.glide_size)
+		m.set_glide_size(movable_parent.glide_size)
 	handle_vehicle_offsets(dir)
 	handle_vehicle_layer(dir)
 
 /datum/component/riding/proc/vehicle_turned(datum/source, _old_dir, new_dir)
-	vehicle_moved(source, new_dir)
+	SIGNAL_HANDLER
+	vehicle_moved(source, dir=new_dir)
 
 /datum/component/riding/proc/ride_check(mob/living/M)
 	var/atom/movable/AM = parent
@@ -160,8 +167,8 @@
 //BUCKLE HOOKS
 /datum/component/riding/proc/restore_position(mob/living/buckled_mob)
 	if(buckled_mob)
-		buckled_mob.pixel_x = 0
-		buckled_mob.pixel_y = 0
+		buckled_mob.pixel_x = buckled_mob.base_pixel_x
+		buckled_mob.pixel_y = buckled_mob.base_pixel_y
 		if(buckled_mob.client)
 			buckled_mob.client.view_size.resetToDefault()
 

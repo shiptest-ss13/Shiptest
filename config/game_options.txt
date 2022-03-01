@@ -22,10 +22,6 @@ OOC_DURING_ROUND
 ## Comment this out if you want to disable emojis
 EMOJIS
 
-## CHAT MARKUP (WS edit) ###
-## Comment this out if you do not wish to enable chat markup.
-CHAT_MARKUP
-
 ## MOB MOVEMENT ###
 
 ## We suggest editing these variables ingame to find a good speed for your server.
@@ -74,12 +70,12 @@ MULTIPLICATIVE_MOVESPEED /mob/living/simple_animal 1
 
 
 ## ALERT LEVELS ###
-ALERT_GREEN All threats to the station have passed. Security may not have weapons visible, privacy laws are once again fully enforced.
-ALERT_BLUE_UPTO The station has received reliable information about possible hostile activity on the station. Security staff may have weapons visible, random searches are permitted.
-ALERT_BLUE_DOWNTO The immediate threat has passed. Security may no longer have weapons drawn at all times, but may continue to have them visible. Random searches are still allowed.
-ALERT_RED_UPTO There is an immediate serious threat to the station. Security may have weapons unholstered at all times. Random searches are allowed and advised. Additionally, access requirements on some doors have been lifted.
-ALERT_RED_DOWNTO The station's destruction has been averted. There is still however an immediate serious threat to the station. Security may have weapons unholstered at all times, random searches are allowed and advised.
-ALERT_DELTA Destruction of the station is imminent. All crew are instructed to obey all instructions given by heads of staff. Any violations of these orders can be punished by death. This is not a drill.
+ALERT_GREEN All threats to the sector have passed. Local security personnel may not have weapons visible, privacy laws are once again fully enforced. Employees are instructed to return to buisness as usual.
+ALERT_BLUE_UPTO Potentially dangerous conditions have been reported in this sector. Corporate security staff have been granted increased powers, and security sweeps will now be organized.
+ALERT_BLUE_DOWNTO The immediate threat to personal safety has passed. Corporate security may no longer have weapons drawn at all times, but may continue to have them visible. Privacy laws will continue to be suspended until an all-clear has been posted.
+ALERT_RED_UPTO There is an immediate and serious threat to the sector. Local Security forces may have weapons unholstered at all times. Random searches will be allowed and advised. Colonial emergency supply restrictions have been lifted.
+ALERT_RED_DOWNTO The sector's immediate destruction has been averted. There may, however, remain deadly threats to personal safety. Random searches will be allowed and advised to nanotransen peacekeepers.
+ALERT_DELTA The destruction of the sector is imminent. All local persons are instructed to obey commands by Nanotransen personnel. Any violations of these orders may be punishable by death. This is not a drill.
 
 
 
@@ -452,8 +448,9 @@ ROUNDSTART_RACES plasmaman
 #ROUNDSTART_RACES shadow
 ROUNDSTART_RACES ipc
 ROUNDSTART_RACES felinid
-ROUNDSTART_RACES squid
-ROUNDSTART_RACES teshari
+#ROUNDSTART_RACES squid
+ROUNDSTART_RACES kepori
+ROUNDSTART_RACES rachnid
 
 ## Races that are better than humans in some ways, but worse in others
 ROUNDSTART_RACES ethereal
@@ -484,6 +481,9 @@ ROUNDSTART_RACES jelly
 
 ## Uncomment to give players the choice of joining as a human with mutant bodyparts before they join the game
 #JOIN_WITH_MUTANT_HUMANS
+
+## The amount of loadout items players are allowed to spawn with. Default 10
+MAX_LOADOUT_ITEMS 10
 
 ##Overflow job. Default is assistant
 OVERFLOW_JOB Assistant
@@ -583,9 +583,6 @@ MAXFINE 2000
 ## Enable the capitalist agenda on your server.
 ECONOMY
 
-## Put the name of your custom currency here
-METACURRENCY_NAME Metacoin
-
 ## Overmap Settings ##
 
 ## Put max amount of different event clusters you want to spawn here
@@ -596,6 +593,9 @@ MAX_OVERMAP_EVENTS 150
 
 ## Put the maximum amount of dynamic (runtime loaded) overmap locations here
 MAX_OVERMAP_DYNAMIC_EVENTS 10
+
+## Size of the overmap squared
+OVERMAP_SIZE 30
 
 ## Which overmap generator to use
 ## Valid values are: "random", "solar_system"

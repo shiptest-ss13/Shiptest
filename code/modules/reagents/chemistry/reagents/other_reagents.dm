@@ -382,7 +382,7 @@
 	if(ishuman(M))
 		if(method == PATCH || method == VAPOR)
 			var/mob/living/carbon/human/N = M
-			if(N.dna.species.id == "human")
+			if(N.dna.species.id == SPECIES_HUMAN)
 				switch(N.skin_tone)
 					if("african1")
 						N.skin_tone = "african2"
@@ -556,7 +556,7 @@
 	taste_description = "something nyat good"
 
 /datum/reagent/mutationtoxin/lizard
-	name = "lizard Mutation Toxin"
+	name = "Sarathi Mutation Toxin"
 	description = "A lizarding toxin."
 	color = "#5EFF3B" //RGB: 94, 255, 59
 	race = /datum/species/lizard
@@ -648,11 +648,12 @@
 	race = /datum/species/squid
 	process_flags = ORGANIC | SYNTHETIC
 
-/datum/reagent/mutationtoxin/tesh //crying
-	name = "Teshari Mutation Toxin"
+/datum/reagent/mutationtoxin/kepi //crying
+	name = "Kepori Mutation Toxin"
 	description = "A feathery toxin."
-	race = /datum/species/teshari
+	race = /datum/species/kepori
 	process_flags = ORGANIC | SYNTHETIC
+	taste_description = "a familiar white meat"
 
 //BLACKLISTED RACES
 /datum/reagent/mutationtoxin/skeleton
@@ -675,7 +676,7 @@
 	name = "Zombie Mutation Toxin"
 	description = "An undead toxin... kinda..."
 	color = "#5EFF3B" //RGB: 94, 255, 59
-	race = /datum/species/krokodil_addict //Not the infectious kind. The days of xenobio zombie outbreaks are long past.
+	race = /datum/species/human/krokodil_addict //Not the infectious kind. The days of xenobio zombie outbreaks are long past.
 	process_flags = ORGANIC | SYNTHETIC
 
 /datum/reagent/mutationtoxin/ash
@@ -1150,8 +1151,7 @@
 /datum/reagent/space_cleaner/expose_turf(turf/T, reac_volume)
 	if(reac_volume >= 1)
 		T.wash(clean_types)
-		for(var/am in T)
-			var/atom/movable/movable_content
+		for(var/atom/movable/movable_content in T)
 			if(ismopable(movable_content)) // Mopables will be cleaned anyways by the turf wash
 				continue
 			movable_content.wash(clean_types)
@@ -2273,3 +2273,183 @@
 	color = "#10cca6" //RGB: 16, 204, 166
 	taste_description = "lifegiving metal"
 	can_synth = FALSE
+
+/datum/reagent/determination //from /tg/ , but since we dont have wounds its just weaker penthrite
+	name = "Determination"
+	description = "For when you need to push on a little more. Do NOT allow near plants."
+	reagent_state = LIQUID
+	color = "#D2FFFA"
+	metabolization_rate = 0.75 * REAGENTS_METABOLISM
+	self_consuming = TRUE
+	taste_description = "pure determination"
+	overdose_threshold = 30
+
+/datum/reagent/determination/on_mob_add(mob/living/M)
+	. = ..()
+	to_chat(M,"<span class='notice'>You feel like your heart can take on the world!")
+	ADD_TRAIT(M, TRAIT_NOSOFTCRIT,type)
+
+/datum/reagent/determination/on_mob_life(mob/living/carbon/human/H)
+	if(H.health <= HEALTH_THRESHOLD_CRIT && H.health > H.crit_threshold)
+
+		H.adjustBruteLoss(-2 * REM, 0)
+		H.adjustOxyLoss(-6 * REM, 0)
+
+		H.losebreath = 0
+
+		H.adjustOrganLoss(ORGAN_SLOT_HEART,max(1,volume/10)) // your heart is barely keeping up!
+
+		H.Jitter(rand(0,2))
+		H.Dizzy(rand(0,2))
+
+
+		if(prob(33))
+			to_chat(H,"<span class='danger'>Your body is trying to give up, but your heart is still beating!</span>")
+	. = ..()
+
+/datum/reagent/determination/on_mob_end_metabolize(mob/living/M)
+	REMOVE_TRAIT(M, TRAIT_NOSOFTCRIT,type)
+	. = ..()
+
+/datum/reagent/determination/overdose_process(mob/living/carbon/human/H)
+	to_chat(H,"<span class='danger'>You feel your heart rupturing in two!</span>")
+	H.adjustStaminaLoss(10)
+	H.adjustOrganLoss(ORGAN_SLOT_HEART,100)
+	H.set_heartattack(TRUE)
+
+/datum/reagent/crystal_reagent
+	name = "Crystal Reagent"
+	description = "A strange crystal substance. Heals faster than omnizine."
+	reagent_state = LIQUID
+	color = "#1B9681"
+	metabolization_rate = 0.5 * REAGENTS_METABOLISM
+	overdose_threshold = 20
+	taste_description = "rocks"
+	var/healing = 0.65
+
+/datum/reagent/crystal_reagent/on_mob_life(mob/living/carbon/M)
+	M.adjustToxLoss(-healing*REM, 0)
+	M.adjustOxyLoss(-healing*REM, 0)
+	M.adjustBruteLoss(-healing*REM, 0)
+	M.adjustFireLoss(-healing*REM, 0)
+	..()
+	. = 1
+
+/datum/reagent/crystal_reagent/overdose_process(mob/living/carbon/human/H) //TODO port bee's regen cores legioning miners, and make it only do that if overdosed on crystal
+	to_chat(H,"<span class='danger'>You feel your heart rupturing in two!</span>")
+	H.adjustStaminaLoss(10)
+	H.adjustOrganLoss(ORGAN_SLOT_HEART,100)
+	H.set_heartattack(TRUE)
+
+/datum/reagent/three_eye
+	name = "Three Eye"
+	taste_description = "liquid starlight"
+	taste_mult = 100
+	description = "Out on the edge of human space, at the limits of scientific understanding and \
+	cultural taboo, people develop and dose themselves with substances that would curl the hair on \
+	a brinker's vatgrown second head. Three Eye is one of the most notorious narcotics to ever come \
+	out of the independant habitats, and has about as much in common with recreational drugs as a \
+	Stok does with an Unathi strike trooper. It is equally effective on humans, Skrell, dionaea and \
+	probably the Captain's cat, and distributing it will get you guaranteed jail time in every \
+	human territory."
+	reagent_state = LIQUID
+	color = "#ccccff"
+	metabolization_rate = 0.5 * REAGENTS_METABOLISM
+	overdose_threshold = 25
+	var/worthy = FALSE
+
+	var/static/list/dose_messages = list(
+		"Your name is called. It is your time.",
+		"You are dissolving. Your hands are wax...",
+		"It all runs together. It all mixes.",
+		"It is done. It is over. You are done. You are over.",
+		"You won't forget. Don't forget. Don't forget.",
+		"Light seeps across the edges of your vision...",
+		"Something slides and twitches within your sinus cavity...",
+		"Your bowels roil. It waits within.",
+		"Your gut churns. You are heavy with potential.",
+		"Your heart flutters. It is winged and caged in your chest.",
+		"There is a precious thing, behind your eyes.",
+		"Everything is ending. Everything is beginning.",
+		"Nothing ends. Nothing begins.",
+		"Wake up. Please wake up.",
+		"Stop it! You're hurting them!",
+		"It's too soon for this. Please go back.",
+		"We miss you. Where are you?",
+		"Come back from there. Please.",
+		"Is it really you?",
+		"He isn't like us. He doesn't belong.",
+		"Don't leave... please...",
+		"You hear a clock ticking. It's getting faster."
+	)
+	var/static/list/overdose_messages = list(
+		"THE SIGNAL THE SIGNAL THE SIGNAL THE SIGNAL",
+		"IT CRIES IT CRIES IT WAITS IT CRIES",
+		"NOT YOURS NOT YOURS NOT YOURS NOT YOURS",
+		"THAT IS NOT FOR YOU",
+		"IT RUNS IT RUNS IT RUNS IT RUNS",
+		"THE BLOOD THE BLOOD THE BLOOD THE BLOOD",
+		"THE LIGHT THE DARK A STAR IN CHAINS",
+		"GET OUT GET OUT GET OUT GET OUT",
+		"NO MORE NO MORE NO MORE"
+	)
+/datum/reagent/three_eye/on_mob_metabolize(mob/living/L)
+	. = ..()
+	//addtimer(CALLBACK(L, /mob.proc/add_client_colour, /datum/client_colour/thirdeye), 1.5 SECONDS)
+	L.add_client_colour(/datum/client_colour/thirdeye)
+	if(L.client?.holder) //You are worthy.
+		worthy = TRUE
+		L.visible_message("<span class='danger'><font size = 6>Grips their head and dances around, collapsing to the floor!</font></span>", \
+		"<span class='danger'><font size = 6>Visions of a realm BYOND your own flash across your eyes, before it all goes black...</font></span>")
+		addtimer(CALLBACK(L, /mob/living.proc/SetSleeping, 40 SECONDS), 10 SECONDS)
+		addtimer(CALLBACK(L.reagents, /datum/reagents.proc/remove_reagent, src.type, src.volume,), 10 SECONDS)
+		return
+
+/datum/reagent/three_eye/on_mob_life(mob/living/carbon/M)
+	. = ..()
+	if(worthy)
+		return
+
+	for(var/datum/reagent/medicine/mannitol/chem in M.reagents.reagent_list)
+		M.reagents.remove_reagent(chem.type, chem.volume)
+
+	M.Jitter(3)
+	M.Dizzy(3)
+	if(prob(0.1) && ishuman(M))
+		var/mob/living/carbon/human/H = M
+		H.seizure()
+		H.adjustOrganLoss(ORGAN_SLOT_BRAIN, rand(2, 4))
+	if(prob(7))
+		to_chat(M, "<span class='warning'><font size = [rand(1,3)]>[pick(dose_messages)]</font></span>")
+
+/datum/reagent/three_eye/overdose_start(mob/living/M)
+	on_mob_metabolize(M) //set worthy
+	if(worthy)
+		overdosed = FALSE
+		return
+
+	if(ishuman(M))
+		var/mob/living/carbon/human/H = M
+		addtimer(CALLBACK(H, /mob/living.proc/seizure), rand(1 SECONDS, 5 SECONDS))
+
+/datum/reagent/three_eye/overdose_process(mob/living/M)
+	. = ..()
+	if(worthy)
+		return
+
+	if(iscarbon(M))
+		var/mob/living/carbon/C = M
+		C.adjustOrganLoss(ORGAN_SLOT_BRAIN, rand(1, 2))
+	if(prob(7))
+		to_chat(M, "<span class='danger'><font size = [rand(2,4)]>[pick(overdose_messages)]</font></span>")
+
+/datum/reagent/three_eye/on_mob_end_metabolize(mob/living/L)
+	. = ..()
+	L.remove_client_colour(/datum/client_colour/thirdeye)
+	if(overdosed && !worthy)
+		to_chat(L, "<span class='danger'><font size = 6>Your mind reels and the world begins to fade away...</font></span>")
+		if(iscarbon(L))
+			var/mob/living/carbon/C = L
+			addtimer(CALLBACK(C, /mob/living/carbon.proc/adjustOrganLoss, ORGAN_SLOT_BRAIN, 200), 5 SECONDS) //Deathblow to the brain
+		else
+			addtimer(CALLBACK(L, /mob/living.proc/gib), 5 SECONDS)

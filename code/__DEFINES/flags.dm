@@ -51,15 +51,14 @@ GLOBAL_LIST_INIT(bitflags, list(1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 204
 
 //turf-only flags
 #define NOJAUNT_1 (1<<0)
-#define UNUSED_RESERVATION_TURF_1 (1<<1)
 /// If a turf can be made dirty at roundstart. This is also used in areas.
-#define CAN_BE_DIRTY_1 (1<<2)
+#define CAN_BE_DIRTY_1 (1<<1)
 /// If blood cultists can draw runes or build structures on this turf
-#define CULT_PERMITTED_1 (1<<3)
+#define CULT_PERMITTED_1 (1<<2)
 /// Blocks lava rivers being generated on the turf
-#define NO_LAVA_GEN_1 (1<<6)
+#define NO_LAVA_GEN_1 (1<<3)
 /// Blocks ruins spawning on the turf
-#define NO_RUINS_1 (1<<10)
+#define NO_RUINS_1 (1<<4)
 
 ////////////////Area flags\\\\\\\\\\\\\\
 /// If it's a valid territory for cult summoning or the CRAB-17 phone to spawn
@@ -99,6 +98,7 @@ GLOBAL_LIST_INIT(bitflags, list(1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 204
 /// Let thrown things past us. **ONLY MEANINGFUL ON pass_flags_self!**
 #define LETPASSTHROW (1<<6)
 #define PASSDOORHATCH (1<<7)
+#define PASSPLATFORM (1<<8)
 
 //Movement Types
 #define GROUND (1<<0)

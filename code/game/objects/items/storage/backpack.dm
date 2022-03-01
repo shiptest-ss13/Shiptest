@@ -143,7 +143,7 @@
 
 /obj/item/storage/backpack/industrial
 	name = "industrial backpack"
-	desc = "It's a tough backpack for the daily grind of station life."
+	desc = "It's a tough backpack for the daily grind of life as an engineer."
 	icon_state = "engiepack"
 	item_state = "engiepack"
 	resistance_flags = FIRE_PROOF
@@ -218,7 +218,7 @@
 	desc = "A trendy looking satchel."
 	icon_state = "satchel-norm"
 	item_state = "satchel-norm"
-	species_exception = list(/datum/species/teshari)	//WS edit - Tesh can use satchels
+	species_exception = list(/datum/species/kepori)
 
 /obj/item/storage/backpack/satchel/leather
 	name = "leather satchel"

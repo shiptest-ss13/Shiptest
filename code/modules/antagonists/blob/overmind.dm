@@ -109,7 +109,7 @@ GLOBAL_LIST_EMPTY(blob_nodes)
 			qdel(src)
 	else if(!victory_in_progress && (blobs_legit.len >= blobwincount))
 		victory_in_progress = TRUE
-		priority_announce("Biohazard has reached critical mass. Station loss is imminent.", "Biohazard Alert")
+		priority_announce("Biohazard has reached critical mass. Sector loss is imminent.", "Biohazard Alert")
 		set_security_level("delta")
 		SSredbot.send_discord_message("admin","A blob has reached critical mass.","round ending event")
 		max_blob_points = INFINITY
@@ -123,11 +123,11 @@ GLOBAL_LIST_EMPTY(blob_nodes)
 		max_count = blobs_legit.len
 
 	if((world.time >= announcement_time || blobs_legit.len >= announcement_size) && !has_announced)
-		priority_announce("Confirmed outbreak of level 5 biohazard aboard [station_name()]. All personnel must contain the outbreak.", "Biohazard Alert", 'sound/ai/outbreak5.ogg')
+		priority_announce("Confirmed outbreak of level 5 biohazard in [station_name()]. All able individuals must assist in containing the outbreak.", "Biohazard Alert", 'sound/ai/outbreak5.ogg')
 		has_announced = TRUE
 
 	if((world.time >= announcement_time || blobs_legit.len >= announcement_size) && !has_announced)
-		priority_announce("Confirmed outbreak of level 5 biohazard aboard [station_name()]. All personnel must contain the outbreak.", "Biohazard Alert", 'sound/ai/outbreak5.ogg')
+		priority_announce("Confirmed outbreak of level 5 biohazard in [station_name()]. All able individuals must assist in containing the outbreak.", "Biohazard Alert", 'sound/ai/outbreak5.ogg')
 		has_announced = TRUE
 
 /mob/camera/blob/proc/victory()
@@ -136,7 +136,7 @@ GLOBAL_LIST_EMPTY(blob_nodes)
 	for(var/i in GLOB.mob_living_list)
 		var/mob/living/L = i
 		var/turf/T = get_turf(L)
-		if(L.get_virtual_z_level() != get_virtual_z_level())
+		if(L.virtual_z() != virtual_z())
 			continue
 
 		if(L in GLOB.overminds || (L.pass_flags & PASSBLOB))
@@ -169,7 +169,7 @@ GLOBAL_LIST_EMPTY(blob_nodes)
 		var/datum/objective/blob_takeover/main_objective = locate() in B.objectives
 		if(main_objective)
 			main_objective.completed = TRUE
-	to_chat(world, "<B>[real_name] consumed the station in an unstoppable tide!</B>")
+	to_chat(world, "<B>[real_name] consumed the sector in an unstoppable tide!</B>")
 	SSticker.news_report = BLOB_WIN
 	SSticker.force_ending = 1
 

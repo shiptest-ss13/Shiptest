@@ -208,7 +208,7 @@
 /obj/docking_port/stationary/transit
 	name = "transit dock"
 
-	var/datum/turf_reservation/reserved_area
+	var/datum/map_zone/reserved_mapzone
 	var/area/shuttle/transit/assigned_area
 	var/obj/docking_port/mobile/owner
 
@@ -228,9 +228,9 @@
 			if(owner.assigned_transit == src)
 				owner.assigned_transit = null
 			owner = null
-		if(!QDELETED(reserved_area))
-			qdel(reserved_area)
-		reserved_area = null
+		if(!QDELETED(reserved_mapzone))
+			qdel(reserved_mapzone)
+		reserved_mapzone = null
 	return ..()
 
 /obj/docking_port/mobile
@@ -274,19 +274,13 @@
 
 	var/list/ripples = list()
 	var/engine_coeff = 1
-	var/current_engines = 0
-	var/initial_engines = 0
 	var/list/engine_list = list()
 	///if this shuttle can move docking ports other than the one it is docked at
 	var/can_move_docking_ports = FALSE
 	var/list/hidden_turfs = list()
-	///If this shuttle should undock roundstart. Wasp edit.
-	var/undock_roundstart
 
 	///The linked overmap object, if there is one
 	var/obj/structure/overmap/ship/simulated/current_ship
-	///The map template the shuttle was spawned from, if it was indeed created from a template
-	var/datum/map_template/shuttle/source_template
 	///List of spawn points on the ship
 	var/list/atom/spawn_points = list()
 
@@ -315,7 +309,7 @@
 		load()
 
 
-/obj/docking_port/mobile/proc/load()
+/obj/docking_port/mobile/proc/load(datum/map_template/shuttle/source_template)
 	shuttle_areas = list()
 	var/list/all_turfs = return_ordered_turfs(x, y, z, dir)
 	for(var/i in 1 to all_turfs.len)
@@ -326,18 +320,14 @@
 			if(!cur_area.mobile_port)
 				cur_area.link_to_shuttle(src)
 
-	initial_engines = count_engines()
-	current_engines = initial_engines
-
-	if(SSovermap.initialized)
-		SSovermap.setup_shuttle_ship(src)
+	SSovermap.setup_shuttle_ship(src, source_template)
 
 	#ifdef DOCKING_PORT_HIGHLIGHT
 	highlight("#0f0")
 	#endif
 
 // Called after the shuttle is loaded from template
-/obj/docking_port/mobile/proc/linkup(datum/map_template/shuttle/template, obj/docking_port/stationary/dock)
+/obj/docking_port/mobile/proc/linkup(obj/docking_port/stationary/dock)
 	for(var/place in shuttle_areas)
 		var/area/area = place
 		area.connect_to_shuttle(src, dock)
@@ -410,17 +400,17 @@
 	switch(mode)
 		if(SHUTTLE_CALL)
 			if(S == destination)
-				if(timeLeft(1) < callTime * engine_coeff)
-					setTimer(callTime * engine_coeff)
+				if(timeLeft(1) < callTime)
+					setTimer(callTime)
 			else
 				destination = S
-				setTimer(callTime * engine_coeff)
+				setTimer(callTime)
 		if(SHUTTLE_RECALL)
 			if(S == destination)
-				setTimer(callTime * engine_coeff - timeLeft(1))
+				setTimer(callTime - timeLeft(1))
 			else
 				destination = S
-				setTimer(callTime * engine_coeff)
+				setTimer(callTime)
 			mode = SHUTTLE_CALL
 		if(SHUTTLE_IDLE, SHUTTLE_IGNITING)
 			destination = S
@@ -582,7 +572,7 @@
 				return
 			else
 				mode = SHUTTLE_CALL
-				setTimer(callTime * engine_coeff)
+				setTimer(callTime)
 				enterTransit()
 				return
 
@@ -653,7 +643,7 @@
 
 	var/ds_remaining
 	if(!timer)
-		ds_remaining = callTime * engine_coeff
+		ds_remaining = callTime
 	else
 		ds_remaining = max(0, timer - world.time)
 
@@ -764,7 +754,7 @@
 	// This previously was played from each door at max volume, and was one of the worst things I had ever seen.
 	// Now it's instead played from the nearest engine if close, or the first engine in the list if far since it doesn't really matter.
 	// Or a door if for some reason the shuttle has no engine, fuck oh hi daniel fuck it
-	var/range = (engine_coeff * max(width, height))
+	var/range = max(width, height)
 	var/long_range = range * 2.5
 	var/atom/distant_source
 	if(engine_list[1])
@@ -793,57 +783,6 @@
 							closest_dist = dist_near
 				M.playsound_local(source, "sound/runtime/hyperspace/[selected_sound].ogg", 100)
 
-// Losing all initial engines should get you 2
-// Adding another set of engines at 0.5 time
-/obj/docking_port/mobile/proc/alter_engines(mod, engine)
-	if(mod == 0)
-		return
-	if(mod < 0)
-		LAZYREMOVE(engine_list, engine)
-	else
-		LAZYOR(engine_list, engine)
-	var/old_coeff = engine_coeff
-	engine_coeff = get_engine_coeff(current_engines,mod)
-	current_engines = max(0,current_engines + mod)
-	if(in_flight())
-		var/delta_coeff = engine_coeff / old_coeff
-		modTimer(delta_coeff)
-
-/obj/docking_port/mobile/proc/count_engines()
-	. = 0
-	engine_list = list()
-	for(var/thing in shuttle_areas)
-		var/area/shuttle/areaInstance = thing
-		for(var/obj/structure/shuttle/engine/E in areaInstance.contents)
-			if(!QDELETED(E))
-				engine_list += E
-				. += E.engine_power
-		for(var/obj/machinery/power/shuttle/engine/E in areaInstance.contents)
-			if(!QDELETED(E))
-				engine_list += E
-				. += E.thruster_active ? 1 : 0
-
-// Double initial engines to get to 0.5 minimum
-// Lose all initial engines to get to 2
-//For 0 engine shuttles like BYOS 5 engines to get to doublespeed
-/obj/docking_port/mobile/proc/get_engine_coeff(current,engine_mod)
-	var/new_value = max(0,current + engine_mod)
-	if(new_value == initial_engines)
-		return 1
-	if(new_value > initial_engines)
-		var/delta = new_value - initial_engines
-		var/change_per_engine = (1 - ENGINE_COEFF_MIN) / ENGINE_DEFAULT_MAXSPEED_ENGINES // 5 by default
-		if(initial_engines > 0)
-			change_per_engine = (1 - ENGINE_COEFF_MIN) / initial_engines // or however many it had
-		return clamp(1 - delta * change_per_engine,ENGINE_COEFF_MIN,ENGINE_COEFF_MAX)
-	if(new_value < initial_engines)
-		var/delta = initial_engines - new_value
-		var/change_per_engine = 1 //doesn't really matter should not be happening for 0 engine shuttles
-		if(initial_engines > 0)
-			change_per_engine = (ENGINE_COEFF_MAX -  1) / initial_engines //just linear drop to max delay
-		return clamp(1 + delta * change_per_engine,ENGINE_COEFF_MIN,ENGINE_COEFF_MAX)
-
-
 /obj/docking_port/mobile/proc/in_flight()
 	switch(mode)
 		if(SHUTTLE_CALL,SHUTTLE_RECALL,SHUTTLE_PREARRIVAL)
@@ -870,7 +809,3 @@
 
 /obj/docking_port/mobile/emergency/on_emergency_dock()
 	return
-
-/obj/docking_port/mobile/get_virtual_z_level()
-	var/datum/turf_reservation/TR = SSmapping.get_turf_reservation_at_coords(x, y, z)
-	return TR?.virtual_z_level || z

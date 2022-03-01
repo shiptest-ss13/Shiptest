@@ -103,8 +103,7 @@ GLOBAL_LIST_INIT(AISwarmerCapsByType, list(/mob/living/simple_animal/hostile/swa
 /mob/living/simple_animal/hostile/swarmer/ai/Initialize()
 	. = ..()
 	ToggleLight() //so you can see them eating you out of house and home/shooting you/stunlocking you for eternity
-	LAZYINITLIST(GLOB.AISwarmersByType[type])
-	GLOB.AISwarmers += src
+	LAZYADD(GLOB.AISwarmers, src)
 	GLOB.AISwarmersByType[type] += src
 
 
@@ -130,7 +129,7 @@ GLOBAL_LIST_INIT(AISwarmerCapsByType, list(/mob/living/simple_animal/hostile/swa
 
 /mob/living/simple_animal/hostile/swarmer/ai/Move(atom/newloc)
 	if(newloc)
-		if(newloc.get_virtual_z_level() == get_virtual_z_level()) //so these actions are Z-specific
+		if(newloc.virtual_z() == virtual_z()) //so these actions are Z-specific
 			if(islava(newloc))
 				var/turf/open/lava/L = newloc
 				if(!L.is_safe())

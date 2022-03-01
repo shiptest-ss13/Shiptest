@@ -6,6 +6,9 @@ GLOBAL_LIST_EMPTY(GPS_list)
 	var/tracking = TRUE
 	var/emped = FALSE
 
+	//DO NOT MERGE ME TO MASTER
+	var/__has_screamed = FALSE
+
 /datum/component/gps/Initialize(_gpstag = "COM0")
 	if(!isatom(parent))
 		return COMPONENT_INCOMPATIBLE
@@ -98,6 +101,9 @@ GLOBAL_LIST_EMPTY(GPS_list)
 		ui.open()
 	ui.set_autoupdate(updating)
 
+#define SCREAM_OUTSIDE_VIRTZ (1<<0)
+#define SCREAM_NO_PARENT_MAPZONE (1<<1)
+
 /datum/component/gps/item/ui_data(mob/user)
 	var/list/data = list()
 	data["power"] = tracking
@@ -108,8 +114,11 @@ GLOBAL_LIST_EMPTY(GPS_list)
 		return data
 
 	var/turf/curr = get_turf(parent)
+	var/datum/virtual_level/vlevel = curr.get_virtual_level()
+	var/datum/map_zone/mapzone = vlevel.parent_map_zone
+	var/list/coords = vlevel.get_relative_coords(curr)
 	data["currentArea"] = "[get_area_name(curr, TRUE)]"
-	data["currentCoords"] = "[curr.x], [curr.y], [curr.get_virtual_z_level()]"
+	data["currentCoords"] = "[coords[1]], [coords[2]], [mapzone.id], [vlevel.relative_id]"
 
 	var/list/signals = list()
 	data["signals"] = list()
@@ -119,12 +128,27 @@ GLOBAL_LIST_EMPTY(GPS_list)
 		if(G.emped || !G.tracking || G == src)
 			continue
 		var/turf/pos = get_turf(G.parent)
-		if(!pos || !global_mode && pos.get_virtual_z_level() != curr.get_virtual_z_level())
+		if(pos.virtual_z() == null)
+			if(!(G.__has_screamed & SCREAM_OUTSIDE_VIRTZ))
+				var/atom/crashparent = G.parent
+				stack_trace("GPS Component [G] with parent atom [crashparent] at [crashparent.x], [crashparent.y], [crashparent.z], Area: [get_area(crashparent)] exists outside of a vlev.")
+				G.__has_screamed |= SCREAM_OUTSIDE_VIRTZ
+			continue
+		if(!pos || !global_mode && pos.virtual_z() != curr.virtual_z())
 			continue
 		var/list/signal = list()
+		var/datum/virtual_level/other_vlevel = pos.get_virtual_level()
+		var/datum/map_zone/other_mapzone = other_vlevel?.parent_map_zone
+		if(isnull(other_mapzone))
+			if(!(G.__has_screamed & SCREAM_NO_PARENT_MAPZONE))
+				var/atom/crashparent = G.parent
+				stack_trace("GPS Component [G] with parent atom [crashparent] at [crashparent.x], [crashparent.y], [crashparent.z], Area: [get_area(crashparent)], with virtual level [other_vlevel ? other_vlevel : "!!NULL!!"], has no parent mapzone.")
+				G.__has_screamed |= SCREAM_NO_PARENT_MAPZONE
+			continue
+		var/list/other_coords = other_vlevel.get_relative_coords(pos)
 		signal["entrytag"] = G.gpstag //Name or 'tag' of the GPS
-		signal["coords"] = "[pos.x], [pos.y], [pos.get_virtual_z_level()]"
-		if(pos.get_virtual_z_level() == curr.get_virtual_z_level()) //Distance/Direction calculations for same z-level only
+		signal["coords"] = "[other_coords[1]], [other_coords[2]], [other_mapzone.id], [other_vlevel.relative_id]"
+		if(other_vlevel == vlevel) //Distance/Direction calculations for same sub-zone only
 			signal["dist"] = max(get_dist(curr, pos), 0) //Distance between the src and remote GPS turfs
 			signal["degrees"] = round(Get_Angle(curr, pos)) //0-360 degree directional bearing, for more precision.
 		signals += list(signal) //Add this signal to the list of signals

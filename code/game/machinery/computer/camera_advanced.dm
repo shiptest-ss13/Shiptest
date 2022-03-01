@@ -1,11 +1,11 @@
 /obj/machinery/computer/camera_advanced
 	name = "advanced camera console"
-	desc = "Used to access the various cameras on the station."
+	desc = "An advanced data-tapping console used to jack into various camera networks in one's local stellar region."
 	icon_screen = "cameras"
 	icon_keyboard = "security_key"
 	light_color = COLOR_SOFT_RED
-	var/list/z_lock = list() // Lock use to these z levels
-	var/lock_override = NONE
+	/// If defined, the console will only be able to access the virtual levels with the defined trait
+	var/trait_lock
 	var/mob/camera/aiEye/remote/eyeobj
 	var/mob/living/current_user = null
 	var/list/networks = list("ss13")
@@ -20,13 +20,6 @@
 	for(var/i in networks)
 		networks -= i
 		networks += lowertext(i)
-	if(lock_override)
-		if(lock_override & CAMERA_LOCK_STATION)
-			z_lock |= SSmapping.levels_by_trait(ZTRAIT_STATION)
-		if(lock_override & CAMERA_LOCK_MINING)
-			z_lock |= SSmapping.levels_by_trait(ZTRAIT_MINING)
-		if(lock_override & CAMERA_LOCK_CENTCOM)
-			z_lock |= SSmapping.levels_by_trait(ZTRAIT_CENTCOM)
 
 /obj/machinery/computer/camera_advanced/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock)
 	for(var/i in networks)
@@ -103,7 +96,7 @@
 		return FALSE
 	return ..()
 
-/obj/machinery/computer/camera_advanced/attack_hand(mob/user)
+/obj/machinery/computer/camera_advanced/attack_hand(mob/user, list/modifiers)
 	. = ..()
 	if(.)
 		return
@@ -122,31 +115,37 @@
 	if(!eyeobj.eye_initialized)
 		var/camera_location
 		var/turf/myturf = get_turf(src)
-		if(eyeobj.use_static != USE_STATIC_NONE)
-			if((!z_lock.len || (myturf.z in z_lock)) && GLOB.cameranet.checkTurfVis(myturf))
+		var/datum/virtual_level/my_vlevel = myturf.get_virtual_level()
+		if(eyeobj.use_static != FALSE)
+			if((!trait_lock || (trait_lock in my_vlevel.traits)) && GLOB.cameranet.checkTurfVis(myturf))
 				camera_location = myturf
 			else
 				for(var/obj/machinery/camera/C in GLOB.cameranet.cameras)
-					if(!C.can_use() || z_lock.len && !(C.z in z_lock))
+					if(!C.can_use())
 						continue
+					if(trait_lock)
+						var/datum/virtual_level/cam_vlevel = C.get_virtual_level()
+						if(!(trait_lock in cam_vlevel.traits))
+							continue
 					var/list/network_overlap = networks & C.network
 					if(network_overlap.len)
 						camera_location = get_turf(C)
 						break
 		else
 			camera_location = myturf
-			if(z_lock.len && !(myturf.z in z_lock))
-				camera_location = locate(round(world.maxx/2), round(world.maxy/2), z_lock[1])
+			if(trait_lock && !(trait_lock in my_vlevel.traits))
+				var/datum/virtual_level/defaulted_vlevel = SSmapping.virtual_levels_by_trait(trait_lock)[1]
+				camera_location = defaulted_vlevel.get_center()
 
 		if(camera_location)
 			eyeobj.eye_initialized = TRUE
 			give_eye_control(L)
-			eyeobj.setLoc(camera_location)
+			eyeobj.setLoc(camera_location, TRUE)
 		else
 			user.unset_machine()
 	else
 		give_eye_control(L)
-		eyeobj.setLoc(eyeobj.loc)
+		eyeobj.setLoc(eyeobj.loc, TRUE)
 
 /obj/machinery/computer/camera_advanced/attack_robot(mob/user)
 	return attack_hand(user)
@@ -195,9 +194,13 @@
 		return eye_user.client
 	return null
 
-/mob/camera/aiEye/remote/setLoc(T)
+/mob/camera/aiEye/remote/setLoc(turf/T, force_update)
 	if(eye_user)
 		T = get_turf(T)
+		if(!force_update)
+			var/datum/map_zone/mapzone = T.get_map_zone()
+			if(!mapzone.is_in_bounds(T))
+				return
 		if (T)
 			forceMove(T)
 		else
@@ -257,8 +260,10 @@
 	var/list/L = list()
 
 	for (var/obj/machinery/camera/cam in GLOB.cameranet.cameras)
-		if(origin.z_lock.len && !(cam.z in origin.z_lock))
-			continue
+		if(origin.trait_lock)
+			var/datum/virtual_level/cam_vlevel = cam.get_virtual_level()
+			if(!(origin.trait_lock in cam_vlevel.traits))
+				continue
 		L.Add(cam)
 
 	camera_sort(L)
@@ -276,7 +281,7 @@
 	playsound(src, "terminal_type", 25, FALSE)
 	if(final)
 		playsound(origin, 'sound/machines/terminal_prompt_confirm.ogg', 25, FALSE)
-		remote_eye.setLoc(get_turf(final))
+		remote_eye.setLoc(get_turf(final), TRUE)
 		C.overlay_fullscreen("flash", /atom/movable/screen/fullscreen/flash/static)
 		C.clear_fullscreen("flash", 3) //Shorter flash than normal since it's an ~~advanced~~ console!
 	else

@@ -45,7 +45,7 @@
 //Station blueprints!!!
 /obj/item/areaeditor/blueprints
 	name = "station blueprints"
-	desc = "Blueprints of the station. There is a \"Classified\" stamp and several coffee stains on it."
+	desc = "Blueprints of what appear to be an experimental station design, with a large spinal weapon mounted to the front. There is a \"Classified\" stamp and several coffee stains on it."
 	icon = 'icons/obj/items_and_weapons.dmi'
 	icon_state = "blueprints"
 	fluffnotice = "Property of Nanotrasen. For heads of staff only. Store in high-secure storage."
@@ -154,9 +154,7 @@
 		/area/centcom,
 		/area/asteroid,
 		/area/tdome,
-		/area/wizard_station,
-		/area/hilbertshotel,
-		/area/hilbertshotelstorage
+		/area/wizard_station
 	)
 	for (var/type in SPECIALS)
 		if ( istype(A,type) )
@@ -204,11 +202,11 @@
 //Blueprint Subtypes
 
 /obj/item/areaeditor/blueprints/cyborg
-	name = "station schematics"
-	desc = "A digital copy of the station blueprints stored in your memory."
+	name = "construction schematics"
+	desc = "A digital copy of the local blueprints and zoning permits stored in your memory."
 	icon = 'icons/obj/items_and_weapons.dmi'
 	icon_state = "blueprints"
-	fluffnotice = "Intellectual Property of Nanotrasen. For use in engineering cyborgs only. Wipe from memory upon departure from the station."
+	fluffnotice = "Intellectual Property of Nanotrasen. For use in engineering cyborgs only. Wipe from memory upon departure from company ownership."
 
 /area/proc/rename_area(new_name)
 	var/prevname = "[name]"

@@ -19,7 +19,6 @@
 
 	area_type = /area
 	protect_indoors = TRUE
-	target_trait = ZTRAIT_ACIDRAIN
 
 	immunity_type = "acid" // temp
 

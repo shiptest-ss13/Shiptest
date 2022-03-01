@@ -43,6 +43,9 @@
 	var/mode = MINEDRONE_COLLECT
 	var/obj/item/gun/energy/kinetic_accelerator/minebot/stored_gun
 
+/mob/living/simple_animal/hostile/mining_drone/rockplanet
+
+
 /mob/living/simple_animal/hostile/mining_drone/Initialize()
 	. = ..()
 	stored_gun = new(src)

@@ -140,6 +140,10 @@
 	if (CONFIG_GET(flag/log_emote))
 		WRITE_LOG(GLOB.world_game_log, "EMOTE: [text]")
 
+/proc/log_radio_emote(text)
+	if (CONFIG_GET(flag/log_emote))
+		WRITE_LOG(GLOB.world_game_log, "RADIO EMOTE: [text]")
+
 /proc/log_subtler(text)
 	if (CONFIG_GET(flag/log_emote))
 		WRITE_LOG(GLOB.world_game_log, "EMOTE (SUBTLER): [text]")
@@ -172,7 +176,7 @@
 
 /proc/log_shuttle(text)
 	if (CONFIG_GET(flag/log_shuttle))
-		WRITE_LOG(GLOB.world_shuttle_log, "SHUTTLE: [text]")
+		WRITE_LOG(GLOB.world_shuttle_log, "OVERMAP: [text]")
 
 /proc/log_topic(text)
 	WRITE_LOG(GLOB.world_game_log, "TOPIC: [text]")
