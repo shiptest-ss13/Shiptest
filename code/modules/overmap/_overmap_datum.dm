@@ -65,12 +65,10 @@
 
 /datum/overmap/Destroy(force, ...)
 	SSovermap.overmap_objects -= src
-	if(docked_to)
-		docked_to.contents -= src
-	else
-		SSovermap.overmap_container[x][y] -= src
-		token.parent = null
-		QDEL_NULL(token)
+	Undock(force = TRUE)
+	SSovermap.overmap_container[x][y] -= src
+	token.parent = null
+	QDEL_NULL(token)
 	return ..()
 
 /**
@@ -169,7 +167,7 @@
   *
   * * dock_target - The overmap datum to dock to. Cannot be null.
   */
-/datum/overmap/proc/Dock(datum/overmap/dock_target)
+/datum/overmap/proc/Dock(datum/overmap/dock_target, force = FALSE)
 	SHOULD_CALL_PARENT(TRUE)
 	if(!istype(dock_target))
 		CRASH("Overmap datum [src] tried to dock to an invalid overmap datum.")
@@ -190,7 +188,7 @@
 
 	start_dock(dock_target, ticket)
 
-	if(dock_time)
+	if(dock_time && !force)
 		dock_timer_id = addtimer(CALLBACK(src, .proc/complete_dock, dock_target, ticket), dock_time)
 	else
 		complete_dock(dock_target, ticket)
@@ -258,7 +256,7 @@
 /**
   * Undocks from the object this datum is docked to currently, and places it back on the overmap at the position of the object that was previously docked to.
   */
-/datum/overmap/proc/Undock()
+/datum/overmap/proc/Undock(force = FALSE)
 	SHOULD_CALL_PARENT(TRUE)
 	if(!docked_to)
 		CRASH("Overmap datum [src] tried to undock() but is not docked to anything.")
@@ -267,7 +265,7 @@
 		return
 	docking = TRUE
 
-	if(dock_time)
+	if(dock_time && !force)
 		dock_timer_id = addtimer(CALLBACK(src, .proc/complete_undock), dock_time)
 	else
 		complete_undock()
