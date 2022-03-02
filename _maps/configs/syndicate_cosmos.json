@@ -5,20 +5,66 @@
 	"map_path": "_maps/shuttles/shiptest/syndicate_cosmos.dmm",
 	"map_id": "cosmos",
 	"job_slots": {
-		"Project Overseer": {
-			"outfit": "/datum/outfit/job/ce/gec",
+		"Admiral": {
+			"outfit": "/datum/outfit/job/captain/aclf",
+			"officer": true,
 			"slots": 1
 		},
-		"Ship Engineer": {
-			"outfit": "/datum/outfit/job/engineer/gec",
-			"slots": 3
-		},
-		"Atmospheric Technician": {
-			"outfit": "/datum/outfit/job/atmos/gec",
+		"Operative": {
+			"outfit": "/datum/outfit/job/security/aclf",
+			"officer": true,
 			"slots": 2
 		},
-		"Chemical Engineer": {
-			"outfit": "/datum/outfit/job/chemist/gec",
+		"Overseer": {
+			"outfit": "/datum/outfit/job/ce/gec",
+			"officer": true,
+			"slots": 1
+		},
+		"Union Engineer": {
+			"outfit": "/datum/outfit/job/engineer/gec",
+			"slots": 2
+		},
+		"Union Firefighter": {
+			"outfit": "/datum/outfit/job/atmos/gec",
+			"slots": 1
+		},
+		"Professor": {
+			"outfit": "/datum/outfit/job/cmo/syndicate/nsv",
+			"officer": true,
+			"slots": 1
+		},
+		"Graduate Student": {
+			"outfit": "/datum/outfit/job/doctor/syndicate/nsv",
+			"slots": 1
+		},
+		"Natural Medicine Specialist": {
+			"outfit": "/datum/outfit/job/botanist/syndicate/nsv",
+			"slots": 1
+		},
+		"Foreman":{
+			"outfit": "/datum/outfit/job/miner/foreman",
+			"officer": true,
+			"slots": 1
+		},
+		"Salvage Agent": {
+			"outfit": "/datum/outfit/job/miner/syndicate",
+			"slots": 2
+		},
+		"Manager": {
+			"outfit": "/datum/outfit/job/quartermaster/donk",
+			"officer": true,
+			"slots": 1
+		},
+		"Customer Service Representative": {
+			"outfit": "/datum/outfit/job/cargo_tech/donk",
+			"slots": 2
+		},
+		"Contracted Bartender": {
+			"outfit": "/datum/outfit/job/bartender/donk",
+			"slots": 1
+		},
+		"Celebrity Chef": {
+			"outfit": "/datum/outfit/job/cook/donk",
 			"slots": 1
 		}
 	},

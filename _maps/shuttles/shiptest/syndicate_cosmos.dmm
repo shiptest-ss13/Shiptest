@@ -73,6 +73,8 @@
 /obj/item/hand_labeler,
 /obj/item/stack/packageWrap,
 /obj/item/storage/backpack/duffelbag/syndie,
+/obj/item/clothing/suit/hazardvest/donk/qm,
+/obj/item/clothing/under/syndicate/donk/qm,
 /turf/open/floor/carpet/donk,
 /area/ship/cargo)
 "aB" = (
@@ -297,7 +299,6 @@
 	req_access_txt = "56"
 	},
 /obj/item/clothing/glasses/meson/engine,
-/obj/item/storage/part_replacer/bluespace,
 /obj/item/pipe_dispenser,
 /obj/item/clothing/gloves/combat,
 /obj/item/construction/rcd/combat,
@@ -306,6 +307,7 @@
 /obj/item/clothing/neck/cloak/ce,
 /obj/item/holosign_creator/atmos,
 /obj/item/clothing/head/HoS/beret/syndicate,
+/obj/item/storage/part_replacer/bluespace/tier2,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/maintenance/port)
 "bJ" = (
@@ -1128,6 +1130,8 @@
 /obj/item/hand_labeler,
 /obj/item/stack/packageWrap,
 /obj/item/storage/backpack/duffelbag/syndie,
+/obj/item/clothing/suit/hazardvest/donk,
+/obj/item/clothing/under/syndicate/donk,
 /turf/open/floor/mineral/plastitanium/red,
 /area/ship/storage)
 "fY" = (
@@ -2469,25 +2473,10 @@
 /obj/machinery/computer/cryopod{
 	pixel_y = 28
 	},
-/obj/structure/closet/wall/red{
-	dir = 4;
-	name = "uniform closet";
-	pixel_x = -28
-	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4,
 /obj/machinery/camera/xray{
 	network = list("starfurybc_cam")
 	},
-/obj/item/clothing/under/syndicate/skirt,
-/obj/item/clothing/under/syndicate/skirt,
-/obj/item/clothing/under/syndicate/skirt,
-/obj/item/clothing/under/syndicate/skirt,
-/obj/item/clothing/under/syndicate/skirt,
-/obj/item/clothing/under/syndicate,
-/obj/item/clothing/under/syndicate,
-/obj/item/clothing/under/syndicate,
-/obj/item/clothing/under/syndicate,
-/obj/item/clothing/under/syndicate,
 /turf/open/floor/wood,
 /area/ship/crew/dorm)
 "nU" = (
@@ -4180,6 +4169,8 @@
 /obj/item/hand_labeler,
 /obj/item/stack/packageWrap,
 /obj/item/storage/backpack/duffelbag/syndie,
+/obj/item/clothing/suit/hazardvest/donk,
+/obj/item/clothing/under/syndicate/donk,
 /turf/open/floor/mineral/plastitanium/red,
 /area/ship/storage)
 "xH" = (
@@ -6035,14 +6026,13 @@
 /obj/structure/bed/dogbed/runtime{
 	name = "Laufzeitfehler's bed"
 	},
-/mob/living/simple_animal/pet/dog/corgi/capybara/caspar{
-	desc = "Laufzeitfehler der Wasserschwein, he graduated top of his grade!";
-	name = "Laufzeitfehler";
-	real_name = "Laufzeitfehler";
-	wear_hat = /obj/item/clothing/HoS/beret/syndicate
-	},
 /obj/structure/cable{
 	icon_state = "2-4"
+	},
+/mob/living/simple_animal/pet/dog/corgi/capybara{
+	desc = "Laufzeitfehler der Wasserschwein, he graduated top of his grade!";
+	name = "Laufzeitfehler";
+	real_name = "Laufzeitfehler"
 	},
 /turf/open/floor/wood/yew,
 /area/ship/bridge)
@@ -6477,6 +6467,7 @@
 	dir = 1
 	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/white,
 /area/ship/crew/hydroponics)
 "LB" = (
@@ -7794,6 +7785,15 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 6
 	},
+/obj/item/clothing/under/syndicate,
+/obj/item/clothing/under/syndicate/skirt,
+/obj/item/clothing/under/syndicate/skirt,
+/obj/item/clothing/under/syndicate/skirt,
+/obj/item/clothing/under/syndicate/skirt,
+/obj/item/clothing/under/syndicate/skirt,
+/obj/item/clothing/under/syndicate,
+/obj/item/clothing/under/syndicate,
+/obj/item/clothing/under/syndicate,
 /turf/open/floor/wood,
 /area/ship/crew/dorm)
 "Tg" = (
@@ -9641,7 +9641,7 @@ BG
 tu
 xM
 sF
-OS
+fv
 nK
 NK
 Zr
@@ -9861,7 +9861,7 @@ nx
 TV
 xM
 iC
-OS
+fv
 nK
 NK
 GL
