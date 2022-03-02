@@ -115,6 +115,9 @@
 	var/dock_time_temp = dock_time
 	if(shuttle_port.check_transit_zone() != TRANSIT_READY)
 		dock_time *= 2 // Give it double the time in order to reserve transit space
+		if(force)
+			SSshuttle.transit_requesters -= shuttle_port
+			SSshuttle.generate_transit_dock(shuttle_port) // We need a port, NOW.
 
 	priority_announce("Beginning undocking procedures. Completion in [dock_time/10] seconds.", "Docking Announcement", sender_override = name, zlevel = shuttle_port.virtual_z())
 

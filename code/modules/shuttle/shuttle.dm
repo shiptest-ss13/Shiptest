@@ -300,7 +300,8 @@
 		SSshuttle.mobile -= src
 		destination = null
 		previous = null
-		QDEL_NULL(current_ship)
+		if(!QDELETED(current_ship))
+			QDEL_NULL(current_ship)
 		qdel(assigned_transit, TRUE)		//don't need it where we're goin'!
 		assigned_transit = null
 		for(var/obj/docking_port/stationary/docking_point as anything in docking_points)

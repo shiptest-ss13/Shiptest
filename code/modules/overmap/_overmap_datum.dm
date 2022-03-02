@@ -65,7 +65,8 @@
 
 /datum/overmap/Destroy(force, ...)
 	SSovermap.overmap_objects -= src
-	Undock(force = TRUE)
+	if(docked_to)
+		Undock(TRUE)
 	SSovermap.overmap_container[x][y] -= src
 	token.parent = null
 	QDEL_NULL(token)
