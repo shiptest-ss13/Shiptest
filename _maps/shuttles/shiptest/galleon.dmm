@@ -25,7 +25,6 @@
 	},
 /obj/structure/window/reinforced{
 	dir = 8;
-	step_y = 0;
 	pixel_y = 2
 	},
 /obj/structure/window/reinforced,
@@ -175,6 +174,7 @@
 	preferred_direction = 4;
 	width = 28
 	},
+/obj/structure/fans/tiny,
 /turf/open/floor/plating,
 /area/ship/maintenance)
 "aA" = (
@@ -398,8 +398,9 @@
 "ba" = (
 /obj/mecha/combat/gygax/dark/loaded{
 	name = "\improper Old' Ironsides";
-	operation_req_access = 0
+	operation_req_access = list()
 	},
+/obj/item/card/id/syndicate/nuke_leader,
 /turf/open/floor/mech_bay_recharge_floor,
 /area/ship/science/robotics)
 "bb" = (
@@ -454,6 +455,9 @@
 /obj/effect/turf_decal/borderfloorblack{
 	icon_state = "borderfloor_white";
 	dir = 5
+	},
+/obj/structure/cable{
+	icon_state = "0-2"
 	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/science/robotics)
@@ -517,7 +521,6 @@
 	},
 /obj/item/radio/intercom{
 	dir = 1;
-	step_y = -2;
 	pixel_y = -22
 	},
 /obj/effect/decal/cleanable/dirt/dust,
@@ -554,7 +557,6 @@
 	},
 /obj/item/radio/intercom{
 	dir = 1;
-	step_y = -2;
 	pixel_y = -22
 	},
 /obj/effect/decal/cleanable/dirt/dust,
@@ -614,6 +616,9 @@
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/science/robotics)
 "bB" = (
@@ -634,6 +639,9 @@
 /obj/effect/turf_decal/borderfloorblack{
 	icon_state = "borderfloor_white";
 	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "1-8"
 	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/science/robotics)
@@ -699,7 +707,6 @@
 	},
 /obj/item/radio/intercom{
 	dir = 1;
-	step_y = -2;
 	pixel_y = -22
 	},
 /turf/open/floor/wood,
@@ -804,10 +811,7 @@
 /obj/item/storage/firstaid/tactical,
 /obj/item/card/id/syndicate,
 /obj/item/clothing/gloves/tackler,
-/obj/item/areaeditor/shuttle{
-	step_x = 0;
-	step_y = 0
-	},
+/obj/item/areaeditor/shuttle,
 /obj/item/storage/lockbox/medal,
 /obj/item/clothing/head/helmet/space/pirate,
 /obj/item/clothing/neck/cloak/qm{
@@ -852,8 +856,7 @@
 	icon_state = "plasmarwindow";
 	dir = 4
 	},
-/obj/machinery/atmospherics/components/unary/vent_pump/siphon/atmos/toxin_output{
-	icon_state = "vent_map_siphon_on-3";
+/obj/machinery/atmospherics/components/unary/vent_pump/siphon/on{
 	dir = 4
 	},
 /turf/open/floor/engine/plasma{
@@ -924,15 +927,13 @@
 /obj/machinery/button/door{
 	id = "window1";
 	name = "Window Control Button";
-	step_x = -6;
-	step_y = 3
+	pixel_x = 5;
+	pixel_y = 8
 	},
 /obj/machinery/button/door{
 	id = "panic";
 	name = "Panic Door Control";
 	pixel_x = -5;
-	step_x = 10;
-	step_y = -5;
 	pixel_y = 8
 	},
 /turf/open/floor/wood,
@@ -941,9 +942,7 @@
 /obj/structure/table/reinforced,
 /obj/item/radio/intercom{
 	dir = 4;
-	step_y = 6;
-	pixel_x = -22;
-	pixel_y = -6
+	pixel_x = -22
 	},
 /obj/item/toy/nuke,
 /turf/open/floor/carpet/black,
@@ -1063,13 +1062,9 @@
 /area/ship/science/robotics)
 "cF" = (
 /obj/structure/table/reinforced,
-/obj/item/flashlight/lamp{
-	step_x = -6;
-	step_y = -1
-	},
+/obj/item/flashlight/lamp,
 /obj/item/radio/intercom{
 	dir = 1;
-	step_y = -2;
 	pixel_y = -22
 	},
 /obj/effect/turf_decal/borderfloorblack,
@@ -1139,7 +1134,6 @@
 	},
 /obj/structure/window/reinforced{
 	dir = 8;
-	step_y = 0;
 	pixel_y = 2
 	},
 /obj/structure/window/reinforced,
@@ -1149,7 +1143,6 @@
 "cN" = (
 /obj/item/radio/intercom{
 	dir = 1;
-	step_y = -2;
 	pixel_y = -22
 	},
 /obj/effect/turf_decal/borderfloorblack,
@@ -1166,6 +1159,7 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/closet/crate/secure/plasma,
+/obj/item/stack/sheet/mineral/plasma/five,
 /obj/item/stack/sheet/mineral/plasma/five,
 /obj/item/stack/sheet/mineral/plasma/five,
 /turf/open/floor/plating,
@@ -1240,12 +1234,12 @@
 /obj/item/clothing/mask/cigarette/rollie/cannabis{
 	desc = "A fat dart, recovered from a strange cyberworld.";
 	name = "fat dart";
-	step_x = -5;
-	step_y = 6
+	pixel_x = -4;
+	pixel_y = 6
 	},
 /obj/item/lighter{
-	step_x = 11;
-	step_y = -6
+	pixel_x = 11;
+	pixel_y = -4
 	},
 /obj/machinery/light/small{
 	dir = 1
@@ -1368,7 +1362,6 @@
 	},
 /obj/structure/window/reinforced{
 	dir = 8;
-	step_y = 0;
 	pixel_y = 2
 	},
 /obj/structure/window/reinforced,
@@ -1433,10 +1426,7 @@
 	dir = 1
 	},
 /obj/structure/filingcabinet/chestdrawer,
-/obj/item/toy/plush/slimeplushie{
-	step_x = -1;
-	step_y = 7
-	},
+/obj/item/toy/plush/slimeplushie,
 /turf/open/floor/wood,
 /area/ship/bridge)
 "ds" = (
@@ -1458,10 +1448,7 @@
 	icon_state = "left";
 	dir = 4
 	},
-/obj/item/paper_bin{
-	step_x = 0;
-	step_y = 0
-	},
+/obj/item/paper_bin,
 /obj/item/pen/fountain,
 /turf/open/floor/wood,
 /area/ship/bridge)
@@ -1815,8 +1802,7 @@
 /obj/structure/falsewall/wood,
 /obj/effect/decal/cleanable/blood/tracks{
 	icon_state = "tracks";
-	dir = 8;
-	step_y = 8
+	dir = 8
 	},
 /turf/open/floor/wood,
 /area/ship/maintenance/fore)
@@ -1824,19 +1810,19 @@
 /obj/effect/decal/cleanable/blood/tracks{
 	icon_state = "tracks";
 	dir = 8;
-	step_y = 8
+	pixel_y = 9
 	},
 /turf/open/floor/wood,
 /area/ship/maintenance/fore)
 "dY" = (
-/obj/effect/decal/cleanable/blood/tracks{
-	icon_state = "tracks";
-	dir = 8;
-	step_y = 8
-	},
 /obj/item/gun/ballistic/automatic/pistol/suppressed,
 /obj/item/ammo_box/magazine/m10mm,
 /obj/item/ammo_box/magazine/m10mm,
+/obj/effect/decal/cleanable/blood/tracks{
+	icon_state = "tracks";
+	dir = 8;
+	pixel_y = 9
+	},
 /turf/open/floor/wood,
 /area/ship/maintenance/fore)
 "dZ" = (
@@ -2174,7 +2160,6 @@
 "eA" = (
 /obj/item/radio/intercom{
 	dir = 1;
-	step_y = -2;
 	pixel_y = -22
 	},
 /obj/structure/chair/sofa/right{
@@ -2198,7 +2183,6 @@
 "eD" = (
 /obj/item/radio/intercom{
 	dir = 1;
-	step_y = -2;
 	pixel_y = -22
 	},
 /obj/effect/turf_decal/borderfloorblack{
@@ -2240,12 +2224,8 @@
 /obj/structure/table/reinforced,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/light/small,
-/obj/item/storage/toolbox/syndicate{
-	step_y = 7
-	},
-/obj/item/storage/toolbox/syndicate{
-	step_y = -2
-	},
+/obj/item/storage/toolbox/syndicate,
+/obj/item/storage/toolbox/syndicate,
 /turf/open/floor/plating,
 /area/ship/engineering/electrical)
 "eI" = (
@@ -2338,7 +2318,6 @@
 	},
 /obj/structure/window/reinforced{
 	dir = 8;
-	step_y = 0;
 	pixel_y = 2
 	},
 /obj/structure/window/reinforced{
@@ -2569,7 +2548,6 @@
 /obj/item/storage/pill_bottle/dice,
 /obj/item/radio/intercom{
 	dir = 1;
-	step_y = -2;
 	pixel_y = -22
 	},
 /obj/effect/decal/cleanable/dirt/dust,
@@ -2628,14 +2606,14 @@
 /obj/structure/sign/poster/official/no_erp{
 	pixel_x = -32
 	},
-/turf/open/floor/carpet/cyan,
+/turf/open/floor/carpet/black,
 /area/ship/crew)
 "fx" = (
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/carpet/cyan,
+/turf/open/floor/carpet/black,
 /area/ship/crew)
 "fy" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
@@ -2647,7 +2625,7 @@
 	icon_state = "cryopod-open";
 	dir = 8
 	},
-/turf/open/floor/carpet/cyan,
+/turf/open/floor/carpet/black,
 /area/ship/crew)
 "fz" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
@@ -2720,9 +2698,7 @@
 	},
 /obj/item/radio/intercom{
 	dir = 4;
-	step_y = 6;
-	pixel_x = -22;
-	pixel_y = -6
+	pixel_x = -22
 	},
 /obj/effect/turf_decal/borderfloorblack{
 	icon_state = "borderfloor_white";
@@ -2746,7 +2722,6 @@
 /obj/structure/table/reinforced,
 /obj/structure/window/reinforced{
 	dir = 8;
-	step_y = -2;
 	pixel_y = 2
 	},
 /obj/machinery/door/window{
@@ -2927,13 +2902,13 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/carpet/cyan,
+/turf/open/floor/carpet/black,
 /area/ship/crew)
 "fX" = (
 /obj/structure/cable,
 /obj/machinery/power/apc/auto_name/south,
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/carpet/cyan,
+/turf/open/floor/carpet/black,
 /area/ship/crew)
 "fY" = (
 /obj/machinery/atmospherics/pipe/simple/orange{
@@ -2958,6 +2933,10 @@
 /obj/structure/sink{
 	dir = 8;
 	pixel_x = 12
+	},
+/obj/item/radio/intercom{
+	dir = 1;
+	pixel_y = -22
 	},
 /turf/open/floor/plasteel,
 /area/ship/crew)
@@ -3029,12 +3008,8 @@
 /obj/machinery/atmospherics/pipe/layer_manifold,
 /obj/structure/table/reinforced,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/item/storage/belt/utility{
-	step_y = 6
-	},
-/obj/item/storage/belt/utility{
-	step_y = -3
-	},
+/obj/item/storage/belt/utility,
+/obj/item/storage/belt/utility,
 /turf/open/floor/plating,
 /area/ship/engineering/electrical)
 "gj" = (
@@ -3154,9 +3129,7 @@
 /obj/machinery/power/apc/auto_name/north,
 /obj/structure/table/reinforced,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/item/flashlight/lamp{
-	step_x = 0
-	},
+/obj/item/flashlight/lamp,
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "gx" = (
@@ -3167,15 +3140,9 @@
 	},
 /obj/structure/table/reinforced,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/item/paper_bin{
-	step_x = 0;
-	step_y = 0
-	},
+/obj/item/paper_bin,
 /obj/item/pen,
-/obj/item/areaeditor/shuttle{
-	step_x = -17;
-	step_y = 3
-	},
+/obj/item/areaeditor/shuttle,
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "gy" = (
@@ -3274,8 +3241,6 @@
 "gL" = (
 /obj/machinery/button/door{
 	name = "Blast Door Control";
-	step_x = 10;
-	step_y = -5;
 	pixel_x = -5;
 	pixel_y = -24;
 	id = "192"
@@ -3340,17 +3305,14 @@
 	dir = 1
 	},
 /obj/structure/table/reinforced,
-/obj/item/flashlight/lamp{
-	step_x = -6;
-	step_y = -1
-	},
 /obj/machinery/light,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/item/toy/plush/hornet{
-	step_x = 6;
-	step_y = 2
+/obj/item/toy/plush/hornet,
+/obj/item/radio/intercom{
+	dir = 1;
+	pixel_y = -22
 	},
-/turf/open/floor/carpet/cyan,
+/turf/open/floor/carpet/black,
 /area/ship/crew)
 "gT" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -3364,7 +3326,6 @@
 	},
 /obj/structure/window/reinforced{
 	dir = 8;
-	step_y = 0;
 	pixel_y = 2
 	},
 /obj/structure/window/reinforced,
@@ -3377,12 +3338,12 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/table/wood,
 /obj/item/reagent_containers/food/drinks/bottle/rum{
-	step_x = -5;
-	step_y = 3
+	pixel_x = 7;
+	pixel_y = 4
 	},
 /obj/item/reagent_containers/food/drinks/drinkingglass/shotglass{
-	step_x = 7;
-	step_y = 4
+	pixel_x = -7;
+	pixel_y = 4
 	},
 /turf/open/floor/wood,
 /area/ship/hallway/central)
@@ -3401,6 +3362,10 @@
 	icon_state = "comfychair";
 	dir = 8
 	},
+/obj/item/radio/intercom{
+	dir = 1;
+	pixel_y = -22
+	},
 /turf/open/floor/wood,
 /area/ship/hallway/central)
 "gY" = (
@@ -3415,6 +3380,12 @@
 	},
 /turf/open/floor/wood,
 /area/ship/hallway/central)
+"Yo" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/siphon/on{
+	dir = 4
+	},
+/turf/template_noop,
+/area/template_noop)
 
 (1,1,1) = {"
 aa
@@ -3453,7 +3424,7 @@ aa
 aa
 aa
 aa
-aa
+Yo
 aa
 aa
 aa
@@ -4262,7 +4233,7 @@ aa
 aa
 aN
 bd
-bC
+bz
 bZ
 cE
 aB
@@ -4289,7 +4260,7 @@ aa
 aa
 aB
 ba
-bC
+bz
 ca
 cF
 aB
