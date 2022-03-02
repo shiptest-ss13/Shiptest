@@ -222,8 +222,8 @@
 
 /obj/item/areaeditor/shuttle/afterattack(atom/target, mob/user, proximity_flag, click_parameters)
 	. = ..()
-	if(istype(target, /obj/machinery/computer/helm) && istype(H.current_ship, /obj/structure/overmap/ship/simulated))
-		var/obj/machinery/computer/helm/H = target
+	var/obj/machinery/computer/helm/H = target
+	if(istype(H) && istype(H.current_ship, /obj/structure/overmap/ship/simulated))
 		var/obj/structure/overmap/ship/simulated/S = H.current_ship
 		target_shuttle = S.shuttle
 
