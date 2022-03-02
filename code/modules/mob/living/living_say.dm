@@ -127,7 +127,7 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 				return
 		if(HARD_CRIT)
 			if(!(message_mods[WHISPER_MODE] || message_mods[MODE_CHANGELING] || message_mods[MODE_ALIEN]))
-				return
+				message_mods[WHISPER_MODE] = MODE_WHISPER_CRIT
 		if(DEAD)
 			say_dead(original_message)
 			return
@@ -152,14 +152,13 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 		log_message(message_mods[MODE_CUSTOM_SAY_EMOTE], LOG_RADIO_EMOTE)
 
 	if(!message_mods[MODE_CUSTOM_SAY_ERASE_INPUT])
-		if(message_mods[WHISPER_MODE] == MODE_WHISPER)
+		if(message_mods[WHISPER_MODE])
 			if(saymode || message_mods[RADIO_EXTENSION]) //no radio while in crit
 				saymode = null
 				message_mods -= RADIO_EXTENSION
 			message_range = 1
-			message_mods[WHISPER_MODE] = MODE_WHISPER
 			src.log_talk(message, LOG_WHISPER, custom_say_emote = message_mods[MODE_CUSTOM_SAY_EMOTE])
-			if(stat == HARD_CRIT)
+			if(stat == HARD_CRIT) //This is cheaper than checking for MODE_WHISPER_CRIT message mod
 				var/health_diff = round(-HEALTH_THRESHOLD_DEAD + health)
 				// If we cut our message short, abruptly end it with a-..
 				var/message_len = length_char(message)
@@ -222,6 +221,7 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 	if(succumbed)
 		succumb(1)
 		to_chat(src, compose_message(src, language, message, , spans, message_mods))
+		dying_breath(message)
 
 	return 1
 
@@ -412,3 +412,7 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 	if(get_minds && mind)
 		return mind.get_language_holder()
 	. = ..()
+
+/mob/living/proc/dying_breath(message)
+	for(var/mob/M in viewers())
+		M.play_screen_text("<i>[message]")
