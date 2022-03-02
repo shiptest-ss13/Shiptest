@@ -68,7 +68,7 @@ fi
 # update auxmos
 if [ ! -d "auxmos" ]; then
 	echo "Cloning auxmos..."
-	git clone https://github.com/jupyterkat/auxmos
+	git clone https://github.com/Putnam3145/auxmos
 	cd auxmos
 	~/.cargo/bin/rustup target add i686-unknown-linux-gnu
 	cd ..
