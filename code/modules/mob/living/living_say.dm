@@ -414,5 +414,6 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 	. = ..()
 
 /mob/living/proc/dying_breath(message)
-	for(var/mob/M in viewers())
-		M.play_screen_text("<i>[message]")
+	for(var/mob/M in viewers(world.view +1))
+		if(M.can_hear())
+			M.play_screen_text("<i>[message]")
