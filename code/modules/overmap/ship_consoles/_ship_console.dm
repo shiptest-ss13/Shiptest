@@ -58,13 +58,11 @@
 
 /// Recurse all simulated ships to identify the ship we reside in, possibly laggy so use sparingly
 /obj/machinery/computer/ship/proc/recursive_connect()
-	var/area/our_area = get_area(src)
-	for(var/obj/structure/overmap/ship/simulated/ship as anything in SSovermap.simulated_ships)
-		CHECK_TICK
-		for(var/area/area as anything in ship.shuttle.shuttle_areas)
-			if(our_area == area)
-				current_ship = ship
-				return TRUE
+	var/area/ship/our_area = get_area(src)
+	if(!istype(our_area))
+		return FALSE
+	current_ship = our_area.mobile_port.current_ship
+	return TRUE
 	return FALSE
 
 /// Asks SSshuttle to find out what shuttle we are contained in and then link to that ship if it exists
