@@ -37,6 +37,8 @@
 	species_l_leg = /obj/item/bodypart/l_leg/vox
 	species_r_leg = /obj/item/bodypart/r_leg/vox
 
+	var/datum/action/innate/tail_hold/tail_action
+
 	var/static/list/allergy_reactions = list(
 		"Your beak itches.",
 		"Your stomach churns.",
@@ -81,11 +83,17 @@
 	C.pixel_x = C.base_pixel_x
 	C.update_hands_on_rotate()
 
+	tail_action = new
+	tail_action.Grant(C)
+
 /datum/species/vox/on_species_loss(mob/living/carbon/human/C, datum/species/new_species, pref_load)
 	. = ..()
 	C.base_pixel_x += 9
 	C.pixel_x = C.base_pixel_x
 	C.stop_updating_hands()
+
+	if(tail_action)
+		QDEL_NULL(tail_action)
 
 /datum/species/vox/handle_chemicals(datum/reagent/chem, mob/living/carbon/human/H)
 	if(allergic_to[chem.type]) //Is_type_in_typecache is BAD.
@@ -115,3 +123,38 @@
 	if(!H.equip_to_slot_if_possible(regulator, ITEM_SLOT_BACK, swap = TRUE))
 		if(!H.put_in_hands(regulator, forced = TRUE))
 			regulator.forceMove(get_turf(H))
+
+/datum/action/innate/tail_hold
+	name = "Tail Hold"
+	desc = "Store an item in your tail's grip."
+	var/obj/item/held_item
+
+/datum/action/innate/tail_hold/Destroy()
+	if(held_item)
+		held_item.forceMove(get_turf(owner))
+		held_item = null
+	UnregisterSignal(owner, COMSIG_PARENT_EXAMINE)
+	return ..()
+
+/datum/action/innate/tail_hold/Trigger()
+	var/mob/living/carbon/human/H = owner
+	if(held_item)
+		if(!H.put_in_hands(held_item))
+			held_item.forceMove(get_turf(owner))
+		held_item = null
+		UnregisterSignal(owner, COMSIG_PARENT_EXAMINE)
+
+	else
+		var/obj/item/I = H.get_active_held_item()
+		if(I && I.w_class <= WEIGHT_CLASS_SMALL)
+			if(H.temporarilyRemoveItemFromInventory(I, FALSE, FALSE))
+				held_item = I
+				to_chat(H,"<span class='notice'>You move \the [I] into your tail's grip.</span>")
+				RegisterSignal(owner, COMSIG_PARENT_EXAMINE, .proc/on_examine)
+			else
+				to_chat(H, "<span class='warning'>You are unable to hold that item in your tail!</span>")
+
+/datum/action/innate/tail_hold/proc/on_examine(datum/source, mob/user, list/examine_list)
+	var/mob/living/carbon/human/H = owner
+	if(held_item)
+		examine_list += "<span class='notice'>capitalize([H.p_they()]) [H.p_are()] holding \a [held_item] in [H.p_their()] tail.</span>"
