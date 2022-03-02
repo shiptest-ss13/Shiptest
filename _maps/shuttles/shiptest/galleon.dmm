@@ -693,18 +693,6 @@
 /obj/item/kirbyplants/random,
 /turf/open/floor/wood,
 /area/ship/bridge)
-"bN" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/button/door{
-	id = "panic";
-	name = "Panic Door Control";
-	pixel_x = -5;
-	pixel_y = -24;
-	step_x = 10;
-	step_y = -5
-	},
-/turf/open/floor/wood,
-/area/ship/bridge)
 "bO" = (
 /obj/machinery/modular_computer/console/preset/command{
 	dir = 8
@@ -938,6 +926,14 @@
 	name = "Window Control Button";
 	step_x = -6;
 	step_y = 3
+	},
+/obj/machinery/button/door{
+	id = "panic";
+	name = "Panic Door Control";
+	pixel_x = -5;
+	step_x = 10;
+	step_y = -5;
+	pixel_y = 8
 	},
 /turf/open/floor/wood,
 /area/ship/bridge)
@@ -2757,10 +2753,10 @@
 	icon_state = "left";
 	dir = 1
 	},
-/obj/item/storage/firstaid,
-/obj/item/storage/firstaid,
-/obj/item/storage/firstaid,
 /obj/item/storage/backpack/duffelbag/med/surgery,
+/obj/item/storage/firstaid/regular,
+/obj/item/storage/firstaid/regular,
+/obj/item/storage/firstaid/regular,
 /turf/open/floor/plasteel/mono/white,
 /area/ship/medical)
 "fK" = (
@@ -3808,7 +3804,7 @@ aa
 ax
 aW
 bo
-bN
+bn
 cq
 da
 du
