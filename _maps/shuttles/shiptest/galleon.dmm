@@ -285,10 +285,6 @@
 	icon_state = "pipe11-2";
 	dir = 8
 	},
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
-	icon_state = "vent_map_on-4";
-	dir = 8
-	},
 /obj/machinery/airalarm/directional/south,
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -296,13 +292,15 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/catwalk/over,
+/obj/machinery/advanced_airlock_controller{
+	pixel_y = 24
+	},
+/obj/machinery/atmospherics/components/unary/vent_pump/siphon/layer4{
+	dir = 8
+	},
 /turf/open/floor/plating,
 /area/ship/maintenance)
 "aQ" = (
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
-	icon_state = "scrub_map_on-2";
-	dir = 8
-	},
 /obj/machinery/power/apc/auto_name/south,
 /obj/structure/cable{
 	icon_state = "0-8"
@@ -313,6 +311,9 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/catwalk/over,
+/obj/machinery/atmospherics/components/unary/vent_pump/siphon/layer2{
+	dir = 8
+	},
 /turf/open/floor/plating,
 /area/ship/maintenance)
 "aR" = (
@@ -351,10 +352,10 @@
 /turf/open/floor/plasteel/freezer,
 /area/ship/crew)
 "aV" = (
-/obj/machinery/computer/autopilot,
 /obj/machinery/light/small{
 	dir = 8
 	},
+/obj/machinery/modular_computer/console/preset/command,
 /turf/open/floor/wood,
 /area/ship/bridge)
 "aW" = (
@@ -398,9 +399,8 @@
 "ba" = (
 /obj/mecha/combat/gygax/dark/loaded{
 	name = "\improper Old' Ironsides";
-	operation_req_access = list()
+	operation_req_access = 0
 	},
-/obj/item/card/id/syndicate/nuke_leader,
 /turf/open/floor/mech_bay_recharge_floor,
 /area/ship/science/robotics)
 "bb" = (
@@ -420,7 +420,7 @@
 	},
 /obj/structure/closet/crate/science{
 	desc = "A science crate containing a strange set of uniforms.";
-	name = "uniform crate"
+	name = "strange uniform crate"
 	},
 /obj/item/clothing/under/costume/mech_suit,
 /obj/item/clothing/under/costume/mech_suit/blue,
@@ -539,15 +539,11 @@
 	icon_state = "0-2"
 	},
 /obj/machinery/power/apc/auto_name/north,
-/obj/structure/guncase/shotgun,
-/obj/item/gun/ballistic/shotgun/lethal,
-/obj/item/gun/ballistic/shotgun/lethal,
 /obj/effect/turf_decal/borderfloorblack{
 	icon_state = "borderfloor_white";
 	dir = 9
 	},
-/obj/item/gun/ballistic/shotgun/lethal,
-/obj/item/gun/ballistic/shotgun/lethal,
+/obj/structure/tank_dispenser/oxygen,
 /turf/open/floor/plasteel/mono/white,
 /area/ship/security/armory)
 "bu" = (
@@ -565,21 +561,18 @@
 /area/ship/engineering)
 "bv" = (
 /obj/machinery/airalarm/directional/north,
-/obj/structure/closet/crate/secure/plasma{
-	name = "ammo crate"
-	},
-/obj/item/storage/box/lethalshot,
-/obj/item/storage/box/lethalshot,
-/obj/item/storage/belt/bandolier,
-/obj/item/storage/belt/bandolier,
 /obj/effect/turf_decal/borderfloorblack{
 	icon_state = "borderfloor_white";
 	dir = 5
 	},
-/obj/item/storage/box/lethalshot,
-/obj/item/storage/box/lethalshot,
-/obj/item/storage/belt/bandolier,
-/obj/item/storage/belt/bandolier,
+/obj/structure/closet/crate/secure/plasma{
+	name = "weapons crate";
+	desc = "A secure weapons crate."
+	},
+/obj/item/gun/energy/laser,
+/obj/item/gun/energy/laser,
+/obj/item/gun/energy/laser,
+/obj/item/gun/energy/laser,
 /turf/open/floor/plasteel/mono/white,
 /area/ship/security/armory)
 "bw" = (
@@ -702,12 +695,9 @@
 /turf/open/floor/wood,
 /area/ship/bridge)
 "bO" = (
-/obj/machinery/modular_computer/console/preset/command{
-	dir = 8
-	},
 /obj/item/radio/intercom{
-	dir = 1;
-	pixel_y = -22
+	dir = 8;
+	pixel_x = 28
 	},
 /turf/open/floor/wood,
 /area/ship/bridge)
@@ -769,8 +759,7 @@
 	icon_state = "borderfloor_white";
 	dir = 5
 	},
-/obj/structure/table/reinforced,
-/obj/item/storage/fancy/donut_box,
+/obj/structure/closet/secure_closet,
 /turf/open/floor/plasteel/mono/white,
 /area/ship/security/armory)
 "bX" = (
@@ -784,10 +773,6 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/turf/open/floor/plasteel/mono/white,
-/area/ship/science/robotics)
-"bZ" = (
-/obj/item/banner/science,
 /turf/open/floor/plasteel/mono/white,
 /area/ship/science/robotics)
 "ca" = (
@@ -808,15 +793,11 @@
 	name = "\proper captain's locker";
 	req_access_txt = "20"
 	},
-/obj/item/storage/firstaid/tactical,
 /obj/item/card/id/syndicate,
 /obj/item/clothing/gloves/tackler,
 /obj/item/areaeditor/shuttle,
 /obj/item/storage/lockbox/medal,
 /obj/item/clothing/head/helmet/space/pirate,
-/obj/item/clothing/neck/cloak/qm{
-	name = "admiral's cloak"
-	},
 /obj/item/clothing/suit/pirate,
 /obj/item/clothing/under/costume/russian_officer,
 /obj/item/clothing/shoes/jackboots,
@@ -828,7 +809,10 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/suit_storage_unit/independent/security,
+/obj/machinery/suit_storage_unit/inherit,
+/obj/item/clothing/head/helmet/space/syndicate/black/red,
+/obj/item/clothing/suit/space/syndicate/black/red,
+/obj/item/clothing/mask/breath,
 /turf/open/floor/plasteel/mono/white,
 /area/ship/security/armory)
 "ce" = (
@@ -928,13 +912,13 @@
 	id = "window1";
 	name = "Window Control Button";
 	pixel_x = 5;
-	pixel_y = 8
+	pixel_y = 3
 	},
 /obj/machinery/button/door{
 	id = "panic";
 	name = "Panic Door Control";
 	pixel_x = -5;
-	pixel_y = 8
+	pixel_y = 3
 	},
 /turf/open/floor/wood,
 /area/ship/bridge)
@@ -944,7 +928,7 @@
 	dir = 4;
 	pixel_x = -22
 	},
-/obj/item/toy/nuke,
+/obj/item/reagent_containers/food/drinks/bottle/moonshine,
 /turf/open/floor/carpet/black,
 /area/ship/crew/office)
 "cs" = (
@@ -955,6 +939,7 @@
 /obj/machinery/light{
 	dir = 4
 	},
+/obj/item/flashlight/lamp,
 /turf/open/floor/wood,
 /area/ship/bridge)
 "ct" = (
@@ -988,16 +973,20 @@
 /turf/open/floor/plasteel/mono/white,
 /area/ship/security/armory)
 "cx" = (
-/obj/item/kirbyplants/random,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/turf_decal/borderfloorblack{
 	icon_state = "borderfloor_white";
 	dir = 1
 	},
+/obj/machinery/door/window{
+	icon_state = "left";
+	dir = 8;
+	req_access_txt = "1";
+	req_one_access_txt = "1"
+	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/security/armory)
 "cy" = (
-/obj/structure/chair/comfy/black,
 /obj/structure/sign/poster/random{
 	pixel_y = 32
 	},
@@ -1033,13 +1022,14 @@
 /obj/item/mecha_ammo/scattershot,
 /obj/effect/turf_decal/borderfloorblack,
 /obj/effect/decal/cleanable/dirt,
+/obj/item/card/id/syndicate/nuke_leader,
 /turf/open/floor/plasteel/mono/white,
 /area/ship/science/robotics)
 "cC" = (
 /obj/machinery/light/small,
 /obj/effect/turf_decal/borderfloorblack,
-/obj/machinery/vending/robotics,
 /obj/effect/decal/cleanable/dirt,
+/obj/item/banner/science,
 /turf/open/floor/plasteel/mono/white,
 /area/ship/science/robotics)
 "cD" = (
@@ -1088,7 +1078,10 @@
 	dir = 10
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/suit_storage_unit/independent/security,
+/obj/machinery/suit_storage_unit/inherit,
+/obj/item/clothing/head/helmet/space/syndicate/black/red,
+/obj/item/clothing/suit/space/syndicate/black/red,
+/obj/item/clothing/mask/breath,
 /turf/open/floor/plasteel/mono/white,
 /area/ship/security/armory)
 "cI" = (
@@ -1162,6 +1155,8 @@
 /obj/item/stack/sheet/mineral/plasma/five,
 /obj/item/stack/sheet/mineral/plasma/five,
 /obj/item/stack/sheet/mineral/plasma/five,
+/obj/item/stack/sheet/mineral/wood/fifty,
+/obj/item/stack/sheet/metal/fifty,
 /turf/open/floor/plating,
 /area/ship/engineering/electrical)
 "cP" = (
@@ -1373,6 +1368,7 @@
 /obj/machinery/power/apc/auto_name/south,
 /obj/structure/table/reinforced,
 /obj/item/storage/box/syndie_kit/chameleon,
+/obj/item/melee/classic_baton/telescopic/contractor_baton,
 /turf/open/floor/carpet/black,
 /area/ship/crew/office)
 "dl" = (
@@ -1432,6 +1428,10 @@
 "ds" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/turf_decal/borderfloorblack,
+/obj/structure/window/reinforced{
+	dir = 8;
+	pixel_y = 2
+	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/security/armory)
 "dt" = (
@@ -1615,7 +1615,14 @@
 /area/ship/hallway/fore)
 "dI" = (
 /obj/machinery/airalarm/directional/south,
-/obj/machinery/suit_storage_unit/independent/security,
+/obj/machinery/suit_storage_unit/inherit,
+/obj/item/clothing/head/helmet/space/syndicate/contract{
+	name = "captain's helmet"
+	},
+/obj/item/clothing/suit/space/syndicate/contract{
+	name = "captain's space suit"
+	},
+/obj/item/clothing/mask/breath,
 /turf/open/floor/carpet/black,
 /area/ship/crew/office)
 "dJ" = (
@@ -1760,7 +1767,10 @@
 /obj/machinery/power/apc/auto_name/west,
 /obj/machinery/airalarm/directional/south,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/suit_storage_unit/engine,
+/obj/machinery/suit_storage_unit/inherit,
+/obj/item/clothing/head/helmet/space/syndicate/black/engie,
+/obj/item/clothing/suit/space/syndicate/black/engie,
+/obj/item/clothing/mask/breath,
 /turf/open/floor/plating,
 /area/ship/engineering/electrical)
 "dT" = (
@@ -1800,45 +1810,23 @@
 /area/ship/maintenance/fore)
 "dW" = (
 /obj/structure/falsewall/wood,
-/obj/effect/decal/cleanable/blood/tracks{
-	icon_state = "tracks";
-	dir = 8
-	},
 /turf/open/floor/wood,
 /area/ship/maintenance/fore)
 "dX" = (
-/obj/effect/decal/cleanable/blood/tracks{
-	icon_state = "tracks";
-	dir = 8;
-	pixel_y = 9
-	},
 /turf/open/floor/wood,
 /area/ship/maintenance/fore)
 "dY" = (
 /obj/item/gun/ballistic/automatic/pistol/suppressed,
 /obj/item/ammo_box/magazine/m10mm,
 /obj/item/ammo_box/magazine/m10mm,
-/obj/effect/decal/cleanable/blood/tracks{
-	icon_state = "tracks";
-	dir = 8;
-	pixel_y = 9
-	},
 /turf/open/floor/wood,
 /area/ship/maintenance/fore)
 "dZ" = (
 /obj/effect/decal/cleanable/blood/splatter{
-	icon_state = "floor1"
-	},
-/obj/effect/decal/cleanable/blood/splatter{
-	icon_state = "floor7"
-	},
-/obj/effect/decal/cleanable/blood/splatter{
-	icon_state = "splatter6"
-	},
-/obj/effect/decal/cleanable/blood/splatter{
 	icon_state = "remains";
 	dir = 5;
-	desc = "A sense of dread washes over you as you read the text written on the skull's forehead: Ibi redibis non, morieris in bello."
+	desc = "A sense of dread washes over you as you read the text written on the skull's forehead: Ibi redibis non, morieris in bello.";
+	name = "human skull"
 	},
 /turf/open/floor/wood,
 /area/ship/maintenance/fore)
@@ -2142,11 +2130,12 @@
 /obj/machinery/light{
 	dir = 4
 	},
-/obj/structure/tank_dispenser/oxygen,
 /obj/effect/turf_decal/borderfloorblack/cee{
 	icon_state = "borderfloorcee_white";
 	dir = 4
 	},
+/obj/structure/bed,
+/obj/item/bedsheet/random,
 /turf/open/floor/plasteel/mono/white,
 /area/ship/security/armory)
 "ez" = (
@@ -2802,7 +2791,10 @@
 	icon_state = "borderfloor_white";
 	dir = 1
 	},
-/obj/machinery/suit_storage_unit/independent/mining/eva,
+/obj/machinery/suit_storage_unit/inherit,
+/obj/item/clothing/suit/space/syndicate/black/green,
+/obj/item/clothing/head/helmet/space/syndicate/black/green,
+/obj/item/clothing/mask/breath,
 /turf/open/floor/plasteel/mono/white,
 /area/ship/cargo)
 "fP" = (
@@ -2970,7 +2962,10 @@
 	dir = 5
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/suit_storage_unit/independent/mining/eva,
+/obj/machinery/suit_storage_unit/inherit,
+/obj/item/clothing/suit/space/syndicate/black/green,
+/obj/item/clothing/head/helmet/space/syndicate/black/green,
+/obj/item/clothing/mask/breath,
 /turf/open/floor/plasteel/mono/white,
 /area/ship/cargo)
 "gg" = (
@@ -3381,11 +3376,11 @@
 /turf/open/floor/wood,
 /area/ship/hallway/central)
 "Yo" = (
-/obj/machinery/atmospherics/components/unary/vent_pump/siphon/on{
-	dir = 4
+/obj/machinery/atmospherics/components/unary/vent_pump/siphon/layer2{
+	dir = 8
 	},
-/turf/template_noop,
-/area/template_noop)
+/turf/closed/wall/mineral/wood,
+/area/ship/crew)
 
 (1,1,1) = {"
 aa
@@ -3424,7 +3419,7 @@ aa
 aa
 aa
 aa
-Yo
+aa
 aa
 aa
 aa
@@ -4069,7 +4064,7 @@ aa
 aa
 aa
 aa
-aA
+Yo
 aU
 bs
 bT
@@ -4234,7 +4229,7 @@ aa
 aN
 bd
 bz
-bZ
+bC
 cE
 aB
 dF
