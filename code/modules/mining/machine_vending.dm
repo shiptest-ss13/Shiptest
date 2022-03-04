@@ -123,6 +123,10 @@
 		/obj/item/stack/sheet/rglass = 1,
 		/obj/item/vending_refill/mining_equipment = 1)
 
+/obj/item/circuitboard/machine/vending/mining_equipment/golem
+	name = "golem equipment vendor (Machine Board)"
+	build_path = /obj/machinery/vending/mining_equipment/golem
+
 /obj/item/vending_refill/mining_equipment
 	machine_name = "mining equipment vendor"
 	icon_state = "mining-refill"
@@ -135,6 +139,8 @@
 /obj/machinery/vending/mining_equipment/golem
 	name = "golem equipment vendor"
 	desc = "An modified equipment vendor which appears to be a prototype of the current mining equipment vendor. Ore Redemption Points can be spent here to purchase rough-and-tumble goods."
+	circuit = /obj/item/circuitboard/machine/vending/mining_equipment
+	refill_canister = /obj/item/vending_refill/mining_equipment_golement
 	products = list( //if you add something to this, please, for the love of god, sort it by price/type. use tabs and not spaces.
 		/obj/item/stack/marker_beacon/thirty = 6,
 		/obj/item/reagent_containers/food/drinks/bottle/whiskey = 3,
