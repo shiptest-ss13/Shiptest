@@ -49,4 +49,4 @@
 
 		else
 			if(options[selection])
-				request(options[selection])
+				initiate_docking(options[selection])

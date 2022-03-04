@@ -162,7 +162,6 @@ SUBSYSTEM_DEF(mapping)
 		var/datum/map_template/shuttle/S = new shuttle_type()
 
 		shuttle_templates[S.file_name] = S
-		map_templates[S.file_name] = S
 
 #define CHECK_STRING_EXISTS(X) if(!istext(data[X])) { log_world("[##X] missing from json!"); continue; }
 #define CHECK_LIST_EXISTS(X) if(!islist(data[X])) { log_world("[##X] missing from json!"); continue; }
@@ -232,7 +231,6 @@ SUBSYSTEM_DEF(mapping)
 		if(isnum(data["limit"]))
 			S.limit = data["limit"]
 		shuttle_templates[S.file_name] = S
-		map_templates[S.file_name] = S
 		if(isnum(data["roundstart"]) && data["roundstart"])
 			maplist[S.name] = S
 #undef CHECK_STRING_EXISTS

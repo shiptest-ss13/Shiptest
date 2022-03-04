@@ -54,28 +54,6 @@ SUBSYSTEM_DEF(shuttle)
 	return ..()
 
 /datum/controller/subsystem/shuttle/fire()
-	for(var/obj/docking_port/mobile/mobile_port as anything in mobile)
-		if(!mobile_port)
-			mobile.Remove(mobile_port)
-			continue
-		mobile_port.check()
-
-	for(var/obj/docking_port/stationary/transit/transit_dock as anything in transit)
-		if(!transit_dock.owner)
-			qdel(transit_dock, force=TRUE)
-			continue
-		// This next one removes transit docks/zones that aren't
-		// immediately being used. This will mean that the zone creation
-		// code will be running a lot.
-		var/obj/docking_port/mobile/owner = transit_dock.owner
-		if(owner)
-			var/idle = owner.mode == SHUTTLE_IDLE
-			var/not_centcom_evac = owner.launch_status == NOLAUNCH
-			var/not_in_use = (!transit_dock.get_docked())
-			if(idle && not_centcom_evac && not_in_use)
-				qdel(transit_dock, force=TRUE)
-				continue
-
 	while(transit_requesters.len)
 		var/requester = popleft(transit_requesters)
 		var/success = generate_transit_dock(requester)
@@ -85,7 +63,7 @@ SUBSYSTEM_DEF(shuttle)
 				transit_requesters += requester
 			else
 				var/obj/docking_port/mobile/M = requester
-				M.transit_failure()
+				message_admins("Shuttle [M] repeatedly failed to create transit zone.")
 		if(MC_TICK_CHECK)
 			break
 
@@ -269,16 +247,17 @@ SUBSYSTEM_DEF(shuttle)
   * * loading_template - The shuttle map template to load. Can NOT be null.
   * * destination_port - The port the newly loaded shuttle will be sent to after being fully spawned in. If you want to have a transit dock be created, use [proc/load_template] instead. Should NOT be null.
   **/
-/datum/controller/subsystem/shuttle/proc/action_load(datum/map_template/shuttle/loading_template, obj/docking_port/stationary/destination_port)
+/datum/controller/subsystem/shuttle/proc/action_load(datum/map_template/shuttle/loading_template, datum/overmap/ship/controlled/parent, obj/docking_port/stationary/destination_port)
 	if(!destination_port)
 		CRASH("No destination port specified for shuttle load, aborting.")
-	var/obj/docking_port/mobile/new_shuttle = load_template(loading_template, FALSE)
+	var/obj/docking_port/mobile/new_shuttle = load_template(loading_template, parent, FALSE)
 	var/result = new_shuttle.canDock(destination_port)
 	if((result != SHUTTLE_CAN_DOCK))
 		WARNING("Template shuttle [new_shuttle] cannot dock at [destination_port] ([result]).")
 		new_shuttle.jumpToNullSpace()
 		return
 	new_shuttle.initiate_docking(destination_port)
+	return new_shuttle
 
 /**
   * This proc replaces the given shuttle with a fresh new one spawned from a template.
@@ -290,10 +269,10 @@ SUBSYSTEM_DEF(shuttle)
   * * to_replace - The shuttle to replace. Should NOT be null.
   * * replacement - The shuttle map template to load in place of the old shuttle. Can NOT be null.
   **/
-/datum/controller/subsystem/shuttle/proc/replace_shuttle(obj/docking_port/mobile/to_replace, datum/map_template/shuttle/replacement)
+/datum/controller/subsystem/shuttle/proc/replace_shuttle(obj/docking_port/mobile/to_replace, datum/overmap/ship/controlled/parent, datum/map_template/shuttle/replacement)
 	if(!to_replace || !replacement)
 		return
-	var/obj/docking_port/mobile/new_shuttle = load_template(replacement, FALSE)
+	var/obj/docking_port/mobile/new_shuttle = load_template(replacement, parent, FALSE)
 	var/obj/docking_port/stationary/old_shuttle_location = to_replace.get_docked()
 	var/result = new_shuttle.canDock(old_shuttle_location)
 
@@ -304,8 +283,8 @@ SUBSYSTEM_DEF(shuttle)
 
 	new_shuttle.timer = to_replace.timer //Copy some vars from the old shuttle
 	new_shuttle.mode = to_replace.mode
-	new_shuttle.current_ship.set_ship_name(to_replace.name, mute = TRUE)
-	new_shuttle.current_ship.forceMove(to_replace.current_ship.loc) //Overmap location
+	new_shuttle.current_ship.Rename(to_replace.name, TRUE)
+	new_shuttle.current_ship.Move(to_replace.current_ship.x, to_replace.current_ship.y) //Overmap location
 
 	if(istype(old_shuttle_location, /obj/docking_port/stationary/transit))
 		to_replace.assigned_transit = null
@@ -322,7 +301,7 @@ SUBSYSTEM_DEF(shuttle)
   * * template - The shuttle map template to load. Can NOT be null.
   * * spawn_transit - Whether or not to send the new shuttle to a newly-generated transit dock after loading.
   **/
-/datum/controller/subsystem/shuttle/proc/load_template(datum/map_template/shuttle/template, spawn_transit = TRUE)
+/datum/controller/subsystem/shuttle/proc/load_template(datum/map_template/shuttle/template, datum/overmap/ship/controlled/parent, spawn_transit = TRUE)
 	. = FALSE
 	var/loading_mapzone = SSmapping.create_map_zone("Shuttle Loading Zone")
 	var/datum/virtual_level/loading_zone = SSmapping.create_virtual_level("[template.name] Loading Level", list(ZTRAIT_RESERVED = TRUE), loading_mapzone, template.width, template.height, ALLOCATION_FREE)
@@ -336,8 +315,8 @@ SUBSYSTEM_DEF(shuttle)
 
 	var/affected = template.get_affected_turfs(BL, centered=FALSE)
 
-	var/found = 0
 	var/obj/docking_port/mobile/new_shuttle
+	var/list/stationary_ports = list()
 	// Search the turfs for docking ports
 	// - We need to find the mobile docking port because that is the heart of
 	//   the shuttle.
@@ -346,15 +325,14 @@ SUBSYSTEM_DEF(shuttle)
 	for(var/T in affected)
 		for(var/obj/docking_port/P in T)
 			if(istype(P, /obj/docking_port/mobile))
-				found++
-				if(found > 1)
-					qdel(P, force=TRUE)
+				if(new_shuttle)
+					qdel(P, TRUE)
 					log_world("Map warning: Shuttle Template [template.mappath] has multiple mobile docking ports.")
 				else
 					new_shuttle = P
 			if(istype(P, /obj/docking_port/stationary))
-				log_world("Map warning: Shuttle Template [template.mappath] has a stationary docking port.")
-	if(!found)
+				stationary_ports += P
+	if(!new_shuttle)
 		var/msg = "load_template(): Shuttle Template [template.mappath] has no mobile docking port. Aborting import."
 		for(var/T in affected)
 			var/turf/T0 = T
@@ -363,6 +341,10 @@ SUBSYSTEM_DEF(shuttle)
 		message_admins(msg)
 		WARNING(msg)
 		return
+
+	if(!new_shuttle.can_move_docking_ports && length(stationary_ports))
+		log_world("Map warning: Shuttle Template [template.mappath] has [length(stationary_ports)] stationary docking port(s) and does not have var/can_move_docking_ports set to TRUE. Will not move these ports.")
+	new_shuttle.docking_points = stationary_ports
 
 	var/obj/docking_port/mobile/transit_dock = generate_transit_dock(new_shuttle)
 
@@ -376,7 +358,7 @@ SUBSYSTEM_DEF(shuttle)
 		return
 
 	new_shuttle.initiate_docking(transit_dock)
-	new_shuttle.linkup(transit_dock)
+	new_shuttle.linkup(transit_dock, parent)
 	QDEL_NULL(loading_zone)
 
 	//Everything fine
@@ -427,18 +409,11 @@ SUBSYSTEM_DEF(shuttle)
 	// Status panel
 	data["shuttles"] = list()
 	for(var/obj/docking_port/mobile/M as anything in mobile)
-		var/timeleft = M.timeLeft(1)
 		var/list/L = list()
 		L["name"] = M.name
 		L["id"] = REF(M)
 		L["timer"] = M.timer
-		L["timeleft"] = M.getTimerStr()
-		if (timeleft > 1 HOURS)
-			L["timeleft"] = "Infinity"
-		L["can_fast_travel"] = M.timer && timeleft >= 50
 		L["can_fly"] = TRUE
-		if(!M.destination)
-			L["can_fast_travel"] = FALSE
 		if (M.mode != SHUTTLE_IDLE)
 			L["mode"] = capitalize(M.mode)
 		L["status"] = M.getDbgStatusText()
@@ -463,12 +438,12 @@ SUBSYSTEM_DEF(shuttle)
 			if(S)
 				. = TRUE
 				// If successful, returns the mobile docking port
-				var/obj/docking_port/mobile/mdp = load_template(S)
-				if(mdp)
-					user.forceMove(get_turf(mdp))
-					message_admins("[key_name_admin(usr)] loaded [mdp] with the shuttle manipulator.")
-					log_admin("[key_name(usr)] loaded [mdp] with the shuttle manipulator.</span>")
-					SSblackbox.record_feedback("text", "shuttle_manipulator", 1, "[mdp.name]")
+				var/datum/overmap/ship/controlled/new_ship = new(null, S)
+				if(new_ship?.shuttle_port)
+					user.forceMove(new_ship.get_jump_to_turf())
+					message_admins("[key_name_admin(usr)] loaded [new_ship] ([S]) with the shuttle manipulator.")
+					log_admin("[key_name(usr)] loaded [new_ship] ([S]) with the shuttle manipulator.</span>")
+					SSblackbox.record_feedback("text", "shuttle_manipulator", 1, "[S]")
 
 		if("jump_to")
 			if(params["type"] == "mobile")
@@ -484,14 +459,4 @@ SUBSYSTEM_DEF(shuttle)
 				if(REF(M) == params["id"])
 					. = TRUE
 					M.admin_fly_shuttle(user)
-					break
-
-		if("fast_travel")
-			for(var/obj/docking_port/mobile/M as anything in mobile)
-				if(REF(M) == params["id"] && M.timer && M.timeLeft(1) >= 50)
-					M.setTimer(50)
-					. = TRUE
-					message_admins("[key_name_admin(usr)] fast travelled [M]")
-					log_admin("[key_name(usr)] fast travelled [M]")
-					SSblackbox.record_feedback("text", "shuttle_manipulator", 1, "[M.name]")
 					break
