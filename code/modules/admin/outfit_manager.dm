@@ -15,7 +15,7 @@
 	owner = CLIENT_FROM_VAR(user)
 
 /datum/outfit_manager/ui_state(mob/user)
-	return GLOB.admin_state
+	return GLOB.admin_debug_state
 
 /datum/outfit_manager/ui_close(mob/user)
 	qdel(src)
