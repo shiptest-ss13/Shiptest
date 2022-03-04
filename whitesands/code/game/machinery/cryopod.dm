@@ -29,7 +29,7 @@ GLOBAL_LIST_EMPTY(cryopod_computers)
 	/// Whether or not to store items from people going into cryosleep.
 	var/allow_items = TRUE
 	/// The ship object representing the ship that this console is on.
-	var/obj/structure/overmap/ship/simulated/linked_ship
+	var/datum/overmap/ship/controlled/linked_ship
 
 /obj/machinery/computer/cryopod/Initialize()
 	. = ..()
@@ -121,7 +121,7 @@ GLOBAL_LIST_EMPTY(cryopod_computers)
 			if(linked_ship.job_slots[target_job] + params["delta"] < 0 || linked_ship.job_slots[target_job] + params["delta"] > 4)
 				return
 			linked_ship.job_slots[target_job] += params["delta"]
-			linked_ship.job_slot_adjustment_cooldown = world.time + DEFAULT_JOB_SLOT_ADJUSTMENT_COOLDOWN
+			COOLDOWN_START(linked_ship, job_slot_adjustment_cooldown, DEFAULT_JOB_SLOT_ADJUSTMENT_COOLDOWN)
 			update_static_data(user)
 			return
 
@@ -129,7 +129,7 @@ GLOBAL_LIST_EMPTY(cryopod_computers)
 	. = list()
 	.["allowItems"] = allow_items
 	.["awakening"] = linked_ship.join_allowed
-	.["cooldown"] = linked_ship.job_slot_adjustment_cooldown - world.time
+	.["cooldown"] = COOLDOWN_TIMELEFT(linked_ship, job_slot_adjustment_cooldown)
 	.["memo"] = linked_ship.memo
 
 /obj/machinery/computer/cryopod/ui_static_data(mob/user)
@@ -359,7 +359,7 @@ GLOBAL_LIST_EMPTY(cryopod_computers)
 
 	// Regardless of what ship you spawned in you need to be removed from it.
 	// This covers scenarios where you spawn in one ship but cryo in another.
-	for(var/obj/structure/overmap/ship/simulated/sim_ship as anything in SSovermap.simulated_ships)
+	for(var/datum/overmap/ship/controlled/sim_ship as anything in SSovermap.controlled_ships)
 		sim_ship.manifest -= mob_occupant.real_name
 
 	var/obj/machinery/computer/cryopod/control_computer_obj = control_computer?.resolve()
