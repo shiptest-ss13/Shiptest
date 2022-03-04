@@ -1864,7 +1864,9 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/science)
 "dW" = (
-/obj/structure/cable,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /obj/effect/turf_decal/corner/blue{
 	dir = 1
 	},
@@ -2902,6 +2904,9 @@
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "fF" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer2{
 	dir = 8
