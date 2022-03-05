@@ -9,6 +9,14 @@
 	ammo_type = /obj/item/ammo_casing/n762
 	caliber = "n762"
 	max_ammo = 7
+	multiload = FALSE
+
+/obj/item/ammo_box/magazine/internal/cylinder/rev4570
+	name = "hunting revolver cylinder"
+	ammo_type = /obj/item/ammo_casing/a4570
+	caliber = "4570"
+	max_ammo = 6
+	multiload = FALSE
 
 /obj/item/ammo_box/magazine/internal/cylinder/rus357
 	name = "\improper Russian revolver cylinder"
