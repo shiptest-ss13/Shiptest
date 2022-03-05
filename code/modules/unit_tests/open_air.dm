@@ -1,8 +1,9 @@
 /datum/unit_test/open_air/Run()
-	for(var/turf/open/T as anything in reservation.reserved_turfs)
+	var/datum/virtual_level/vlevel = mapzone.virtual_levels[1]
+	for(var/turf/open/T as anything in vlevel.get_block())
 		T.Initalize_Atmos(0)
 		T.air.clear()
-	var/turf/open/center_turf = locate(run_loc_floor_bottom_left.x+2,run_loc_floor_bottom_left.y+2,run_loc_floor_bottom_left.z)
+	var/turf/open/center_turf = vlevel.get_center()
 	center_turf.air.set_moles(GAS_PLASMA, 32)
 	for(var/i in 1 to 10)
 		SSair.fire()
@@ -21,6 +22,7 @@
 		Fail("Hotspots aren't showing up on reaction")
 
 /datum/unit_test/open_air/Destroy()
-	for(var/turf/T as anything in reservation.reserved_turfs)
+	var/datum/virtual_level/vlevel = mapzone.virtual_levels[1]
+	for(var/turf/T as anything in vlevel.get_block())
 		T.Initalize_Atmos(0)
 	..()
