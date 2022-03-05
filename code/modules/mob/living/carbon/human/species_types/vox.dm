@@ -128,13 +128,27 @@
 	name = "Tail Hold"
 	desc = "Store an item in your tail's grip."
 	var/obj/item/held_item
+	var/mutable_appearance/held_item_overlay
+
+	var/static/list/offsets = list(\
+		"north" = list("x" = -11, "y" = 3),
+		"east" = list("x" = -15, "y" = 0),
+		"south" = list("x" = -10, "y" = 0),
+		"west" = list("x" = 30, "y" = 0)
+	)
 
 /datum/action/innate/tail_hold/Destroy()
 	if(held_item)
 		held_item.forceMove(get_turf(owner))
 		held_item = null
+
+	handle_sprite_magic()
 	UnregisterSignal(owner, COMSIG_PARENT_EXAMINE)
 	return ..()
+
+/datum/action/innate/tail_hold/Grant(mob/M)
+	. = ..()
+	RegisterSignal(owner, COMSIG_ATOM_DIR_CHANGE, .proc/handle_sprite_magic, override = TRUE)
 
 /datum/action/innate/tail_hold/Trigger()
 	var/mob/living/carbon/human/H = owner
@@ -142,6 +156,7 @@
 		if(!H.put_in_hands(held_item))
 			held_item.forceMove(get_turf(owner))
 		held_item = null
+		handle_sprite_magic()
 		UnregisterSignal(owner, COMSIG_PARENT_EXAMINE)
 
 	else
@@ -151,10 +166,42 @@
 				held_item = I
 				to_chat(H,"<span class='notice'>You move \the [I] into your tail's grip.</span>")
 				RegisterSignal(owner, COMSIG_PARENT_EXAMINE, .proc/on_examine)
+				handle_sprite_magic(force = TRUE)
 			else
 				to_chat(H, "<span class='warning'>You are unable to hold that item in your tail!</span>")
 
 /datum/action/innate/tail_hold/proc/on_examine(datum/source, mob/user, list/examine_list)
 	var/mob/living/carbon/human/H = owner
 	if(held_item)
-		examine_list += "<span class='notice'>capitalize([H.p_they()]) [H.p_are()] holding \a [held_item] in [H.p_their()] tail.</span>"
+		examine_list += "<span class='notice'>[capitalize(H.p_they())] [H.p_are()] holding \a [held_item] in [H.p_their()] tail.</span>"
+
+/datum/action/innate/tail_hold/proc/handle_sprite_magic(var/mob/M, var/olddir, var/newdir, var/force = FALSE)
+	if(!held_item)
+		if(held_item_overlay)
+			owner.cut_overlay(held_item_overlay)
+			held_item_overlay = null
+		return
+	if(olddir == newdir && !force)
+		return
+
+	newdir ||= owner.dir
+
+	owner.cut_overlay(held_item_overlay)
+	var/dirtext = dir2text(newdir)
+	var/icon_file = held_item.lefthand_file
+
+	switch(newdir)
+		if(EAST, SOUTH)
+			icon_file = held_item.lefthand_file
+		if(WEST, NORTH)
+			icon_file = held_item.righthand_file
+
+	var/mutable_appearance/new_overlay = mutable_appearance(icon_file, held_item.item_state, HANDS_LAYER)
+
+	new_overlay = center_image(new_overlay, held_item.inhand_x_dimension, held_item.inhand_y_dimension)
+
+	new_overlay.pixel_x = offsets[dirtext]["x"]
+	new_overlay.pixel_y = offsets[dirtext]["y"]
+
+	held_item_overlay = new_overlay
+	owner.add_overlay(new_overlay)
