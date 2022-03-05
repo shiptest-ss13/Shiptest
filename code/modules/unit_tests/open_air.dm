@@ -1,6 +1,6 @@
 /datum/unit_test/open_air/Run()
 	var/datum/virtual_level/vlevel = mapzone.virtual_levels[1]
-	for(var/turf/open/T as anything in vlevel.get_block())
+	for(var/turf/open/T in vlevel.get_block())
 		T.Initalize_Atmos(0)
 		T.air.clear()
 	var/turf/open/center_turf = vlevel.get_center()
@@ -23,6 +23,6 @@
 
 /datum/unit_test/open_air/Destroy()
 	var/datum/virtual_level/vlevel = mapzone.virtual_levels[1]
-	for(var/turf/T as anything in vlevel.get_block())
+	for(var/turf/T in vlevel.get_block())
 		T.Initalize_Atmos(0)
 	..()
