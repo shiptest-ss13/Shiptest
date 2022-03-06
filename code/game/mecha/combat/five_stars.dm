@@ -33,7 +33,7 @@
 
 /obj/mecha/combat/combat_tank/minutemen
 	name = "\improper Type 325 Armored Combat Vehicle \"Blueberry\""
-	desc = "A heavily modified Type 207 brought up to modren standards. Usually, third-parties can't afford to purchase exosuits, so they have to rely on refitting old 207s."
+	desc = "A heavily modified Type 207 brought up to modern standards. Usually, third-parties can't afford to purchase exosuits, so they have to rely on refitting old 207s."
 	icon_state = "blue"
 
 /obj/mecha/combat/combat_tank/minutemen/loaded/Initialize()
