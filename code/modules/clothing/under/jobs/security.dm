@@ -224,7 +224,7 @@
 
 /obj/item/clothing/under/rank/security/officer/spacepol
 	name = "police uniform"
-	desc = "Space not controlled by megacorporations, planets, or pirates is under the jurisdiction of Spacepol."
+	desc = "A spiffy uniform poking fun at the lack of law enforcement on the frontier sector."
 	icon_state = "spacepol"
 	item_state = "spacepol"
 	can_adjust = FALSE
