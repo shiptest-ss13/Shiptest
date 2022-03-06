@@ -1,6 +1,6 @@
 /obj/mecha/combat/combat_tank
 	name = "\improper Armored Combat Vehicle \"Tank\""
-	desc = "While exosuits have taken over armored vehicles in peformance in ground combat, factions that can not afford expensive exosuits have to rely on these old relics. The 207 was exclusively mass produced for a Kalixcis war, however a abrupt surrender left many of these to gain dust in warehouses."
+	desc = "While exosuits have taken over armored vehicles in performance in ground combat, factions that can not afford expensive exosuits have to rely on these old relics. The 207 was exclusively mass produced for a Kalixcian war, however an abrupt surrender left many of these to gain dust in warehouses."
 
 	icon = 'icons/mecha/mecha_96x96.dmi'
 	icon_state = "five_stars"
