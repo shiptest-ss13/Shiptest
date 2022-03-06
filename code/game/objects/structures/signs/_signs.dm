@@ -253,7 +253,7 @@
 // colonial minutemen seal
 /obj/structure/sign/minutemen
 	name = "Banner of the Colonial Minutemen"
-	desc = "A seal representing the many colonies of that comprise of the Colonial Minutemen."
+	desc = "A seal representing the many colonies comprising the Colonial Minutemen."
 	icon_state = "minutemen"
 
 //Numeral signs
