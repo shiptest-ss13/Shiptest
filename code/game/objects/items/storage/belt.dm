@@ -395,7 +395,7 @@
 
 /obj/item/storage/belt/military
 	name = "chest rig"
-	desc = "A set of tactical webbing worn by military cosplayers and actual militaries."
+	desc = "A set of tactical webbing worn by military cosplayers and actual militaries alike."
 	icon_state = "militarywebbing"
 	item_state = "militarywebbing"
 	resistance_flags = FIRE_PROOF
