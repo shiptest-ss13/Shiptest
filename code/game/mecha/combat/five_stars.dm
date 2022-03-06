@@ -1,5 +1,5 @@
 /obj/mecha/combat/combat_tank
-	name = "\improper  Armored Combat Vehicle \"Tank\""
+	name = "\improper Armored Combat Vehicle \"Tank\""
 	desc = "While exosuits have taken over armored vehicles in peformance in ground combat, poorer factions have to rely on these old relics. The 207 was exclusively mass produced for a Sarthini war, before a abrupt surrender, leaving many of these to gain dust in warehouses."
 
 	icon = 'icons/mecha/mecha_96x96.dmi'
