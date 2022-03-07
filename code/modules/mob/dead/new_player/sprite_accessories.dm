@@ -1721,6 +1721,16 @@
 	icon_state = "cat"
 	color_src = HAIR
 
+/datum/sprite_accessory/tails/human/fox
+	name = "Fox"
+	icon_state = "fox"
+	color_src = HAIR
+
+/datum/sprite_accessory/tails_animated/human/fox
+	name = "Fox"
+	icon_state = "fox"
+	color_src = HAIR
+
 /datum/sprite_accessory/tails/human/cat/slime
 	name = "Slimecat"
 	icon_state = "cat"
@@ -2046,6 +2056,22 @@
 	name = "Witch Wing"
 	icon_state = "witchwing"
 
+/datum/sprite_accessory/moth_wings/brown
+	name = "Brown"
+	icon_state = "brown"
+
+/datum/sprite_accessory/moth_wings/feathery
+	name = "Feathery"
+	icon_state = "feathery"
+
+/datum/sprite_accessory/moth_wings/rosy
+	name = "Rosy"
+	icon_state = "rosy"
+
+/datum/sprite_accessory/moth_wings/plasmafire
+	name = "Plasmafire"
+	icon_state = "plasmafire"
+
 /datum/sprite_accessory/moth_markings // the markings that moths can have. finally something other than the boring tan
 	icon = 'icons/mob/moth_markings.dmi'
 	color_src = null
@@ -2184,6 +2210,22 @@
 /datum/sprite_accessory/moth_fluff/shaved
 	name = "Shaved"
 	icon_state = "shaved"
+
+/datum/sprite_accessory/moth_fluff/brown
+	name = "Brown"
+	icon_state = "brown"
+
+/datum/sprite_accessory/moth_fluff/feathery
+	name = "Feathery"
+	icon_state = "feathery"
+
+/datum/sprite_accessory/moth_fluff/rosy
+	name = "Rosy"
+	icon_state = "rosy"
+
+/datum/sprite_accessory/moth_fluff/plasmafire
+	name = "Plasmafire"
+	icon_state = "plasmafire"
 
 //Squids
 /datum/sprite_accessory/squid_face

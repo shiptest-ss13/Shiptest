@@ -61,6 +61,10 @@
 		if(H.dna.features["tail_human"] == "Cat")
 			var/obj/item/organ/tail/cat/tail = new
 			tail.Insert(H, drop_if_replaced = FALSE)
+		else if(H.dna.features["tail_human"] == "Fox")
+			var/obj/item/organ/tail/cat/fox/tail = new
+			tail.Insert(H, special = TRUE, drop_if_replaced = FALSE)
+			mutant_organs += /obj/item/organ/tail/cat/fox
 		else
 			mutant_organs = list()
 	return ..()
