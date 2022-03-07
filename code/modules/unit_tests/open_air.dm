@@ -7,6 +7,7 @@
 	center_turf.air.set_moles(GAS_PLASMA, 32)
 	for(var/i in 1 to 10)
 		SSair.fire()
+		sleep()
 	if(center_turf.air.get_moles(GAS_PLASMA) > 28)
 		Fail("Gas isn't moving at all, or isn't moving enough (somehow) (plasma started at 32, is now [center_turf.air.get_moles(GAS_PLASMA)]")
 	center_turf.air.set_moles(GAS_PLASMA, 100)
