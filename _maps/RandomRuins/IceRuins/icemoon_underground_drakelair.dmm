@@ -131,7 +131,9 @@
 /area/icemoon/surface/outdoors)
 "iT" = (
 /obj/structure/stone_tile/slab,
-/mob/living/simple_animal/hostile/megafauna/dragon/icemoon,
+/mob/living/simple_animal/hostile/megafauna/dragon/icemoon{
+	loot = list(/obj/structure/closet/crate/necropolis/dragon, /obj/item/keycard/gatedrop/drakelair)
+	},
 /turf/open/indestructible/boss,
 /area/ruin)
 "jf" = (
@@ -224,10 +226,8 @@
 /area/icemoon/surface/outdoors)
 "sm" = (
 /obj/structure/stone_tile/slab/cracked,
-/obj/machinery/door/poddoor/gates/indestructible{
-	id = "ash_drake_dead"
-	},
 /obj/structure/fans/tiny/invisible,
+/obj/machinery/door/keycard/gates/drakelair,
 /turf/open/indestructible/boss{
 	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
 	},
@@ -302,10 +302,8 @@
 /area/icemoon/surface/outdoors)
 "xo" = (
 /obj/structure/stone_tile/slab,
-/obj/machinery/door/poddoor/gates/indestructible{
-	id = "ash_drake_dead"
-	},
 /obj/structure/fans/tiny/invisible,
+/obj/machinery/door/keycard/gates/drakelair,
 /turf/open/indestructible/boss{
 	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
 	},
@@ -326,18 +324,14 @@
 /area/ruin/powered)
 "yx" = (
 /obj/structure/stone_tile/slab/cracked,
-/obj/machinery/door/poddoor/gates/indestructible{
-	id = "ash_drake_dead"
-	},
+/obj/machinery/door/keycard/gates/drakelair,
 /turf/open/indestructible/boss{
 	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
 	},
 /area/ruin/powered)
 "yA" = (
 /obj/structure/stone_tile/slab,
-/obj/machinery/door/poddoor/gates/indestructible{
-	id = "ash_drake_dead"
-	},
+/obj/machinery/door/keycard/gates/drakelair,
 /turf/open/indestructible/boss{
 	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
 	},
@@ -441,9 +435,8 @@
 /turf/open/floor/grass/snow/basalt,
 /area/icemoon/surface/outdoors)
 "Gv" = (
-/obj/machinery/door/poddoor/gates/indestructible{
-	color = "#EFC51D";
-	id = "ash_drake_dead"
+/obj/machinery/door/keycard/gates/drakelair{
+	color = "#EFC51D"
 	},
 /turf/open/floor/mineral/gold,
 /area/ruin/powered)
