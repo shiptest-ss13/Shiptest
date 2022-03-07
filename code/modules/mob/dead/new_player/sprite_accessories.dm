@@ -1721,14 +1721,14 @@
 	icon_state = "cat"
 	color_src = HAIR
 
-/datum/sprite_accessory/tails/human/fox
-	name = "Fox"
-	icon_state = "fox"
+/datum/sprite_accessory/tails/human/wolf
+	name = "Wolf"
+	icon_state = "wolf"
 	color_src = HAIR
 
-/datum/sprite_accessory/tails_animated/human/fox
-	name = "Fox"
-	icon_state = "fox"
+/datum/sprite_accessory/tails_animated/human/wolf
+	name = "Wolf"
+	icon_state = "wolf"
 	color_src = HAIR
 
 /datum/sprite_accessory/tails/human/cat/slime

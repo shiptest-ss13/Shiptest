@@ -40,12 +40,12 @@
 		color = H.hair_color
 		H.update_body()
 
-/obj/item/organ/tail/cat/fox
-	name = "fox tail"
-	desc = "A severed fox tail. Geckers."
-	tail_type = "Fox"
+/obj/item/organ/tail/cat/wolf
+	name = "wolf tail"
+	desc = "A severed wolf tail. Fiyaa!"
+	tail_type = "wolf"
 
-/obj/item/organ/tail/cat/fox/Insert(mob/living/carbon/human/H, special = 0, drop_if_replaced = TRUE)
+/obj/item/organ/tail/cat/wolf/Insert(mob/living/carbon/human/H, special = 0, drop_if_replaced = TRUE)
 	..()
 	if(istype(H))
 		var/default_part = H.dna.species.mutant_bodyparts["tail_human"]
@@ -53,7 +53,7 @@
 			H.dna.features["tail_human"] = H.dna.species.mutant_bodyparts["tail_human"] = tail_type
 			H.update_body()
 
-/obj/item/organ/tail/cat/fox/Remove(mob/living/carbon/human/H,  special = 0)
+/obj/item/organ/tail/cat/wolf/Remove(mob/living/carbon/human/H,  special = 0)
 	..()
 	if(istype(H))
 		H.dna.features["tail_human"] = "None"
