@@ -276,6 +276,9 @@
 /obj/item/toy/redbutton{
 	pixel_y = 6
 	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/space/has_grav/syndicircle/winter)
 "iy" = (
@@ -320,20 +323,16 @@
 /turf/open/floor/plating/asteroid/snow/atmosphere,
 /area/ruin/space/has_grav/syndicircle/winter)
 "jo" = (
-/obj/machinery/button{
-	id = 6;
-	name = "Zone Delta shutters";
-	pixel_x = 8
+/obj/structure/cable{
+	icon_state = "2-4"
 	},
-/turf/closed/wall/mineral/plastitanium,
+/turf/open/floor/mineral/plastitanium/red,
 /area/ruin/space/has_grav/syndicircle/halls)
 "jx" = (
-/obj/machinery/button{
-	id = 4;
-	name = "Zone Charlie shutters";
-	pixel_x = -8
+/obj/structure/cable{
+	icon_state = "4-8"
 	},
-/turf/closed/wall/mineral/plastitanium,
+/turf/open/floor/mineral/plastitanium/red,
 /area/ruin/space/has_grav/syndicircle/halls)
 "jA" = (
 /obj/effect/decal/cleanable/robot_debris,
@@ -341,6 +340,14 @@
 /obj/effect/decal/cleanable/shreds,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/space/has_grav/syndicircle/research)
+"jG" = (
+/obj/structure/window/plasma/reinforced/plastitanium,
+/obj/structure/grille,
+/obj/machinery/door/poddoor{
+	id = 4
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/space/has_grav/syndicircle/escape)
 "kc" = (
 /obj/effect/decal/cleanable/blood/splatter,
 /turf/open/floor/plasteel/tech/techmaint,
@@ -441,6 +448,9 @@
 /mob/living/simple_animal/hostile/nanotrasen/ranged/smg{
 	name = "BLUFOR operative"
 	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/space/has_grav/syndicircle/winter)
 "nR" = (
@@ -460,12 +470,13 @@
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/syndicircle/winter)
 "ov" = (
-/obj/machinery/button{
-	id = 99;
-	name = "Zone Alpha shutters";
-	pixel_x = 8
+/mob/living/simple_animal/hostile/syndicate/civilian{
+	name = "Syndicate Researcher"
 	},
-/turf/closed/wall/mineral/plastitanium,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/mineral/plastitanium/red,
 /area/ruin/space/has_grav/syndicircle/halls)
 "ow" = (
 /obj/effect/turf_decal/snow,
@@ -619,6 +630,15 @@
 /obj/item/pickaxe,
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/syndicircle/halls)
+"tp" = (
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/turf/open/floor/mineral/plastitanium/red,
+/area/ruin/space/has_grav/syndicircle/halls)
 "tq" = (
 /obj/structure/rack,
 /turf/open/floor/mineral/plastitanium,
@@ -663,24 +683,33 @@
 /turf/open/floor/mineral/titanium/white,
 /area/ruin/space/has_grav/syndicircle/research)
 "uc" = (
-/obj/structure/cable{
-	icon_state = "2-4"
+/obj/structure/window/plasma/reinforced/plastitanium,
+/obj/structure/grille,
+/obj/machinery/door/poddoor{
+	id = 256
 	},
-/turf/closed/wall/mineral/plastitanium,
-/area/ruin/space/has_grav/syndicircle/halls)
-"up" = (
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/turf/closed/wall/mineral/plastitanium,
-/area/ruin/space/has_grav/syndicircle/winter)
-"ur" = (
-/obj/machinery/power/apc/auto_name/west,
-/obj/structure/cable{
-	icon_state = "0-8"
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/space/has_grav/syndicircle/halls)
+"up" = (
+/obj/structure/window/plasma/reinforced/plastitanium,
+/obj/structure/grille,
+/obj/machinery/door/poddoor{
+	id = 256
 	},
-/turf/open/floor/plating/asteroid/snow/atmosphere,
-/area/ruin/space/has_grav/syndicircle/winter)
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/space/has_grav/syndicircle/halls)
+"ur" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/space/has_grav/syndicircle/halls)
 "ut" = (
 /obj/machinery/camera/preset{
 	network = list("zoned")
@@ -690,6 +719,14 @@
 "uE" = (
 /obj/effect/turf_decal/number/two,
 /turf/closed/wall/mineral/plastitanium,
+/area/ruin/space/has_grav/syndicircle/halls)
+"uU" = (
+/obj/machinery/button{
+	id = 99;
+	name = "Zone Alpha shutters";
+	pixel_x = -25
+	},
+/turf/open/floor/mineral/plastitanium/red,
 /area/ruin/space/has_grav/syndicircle/halls)
 "vc" = (
 /obj/machinery/light/dim{
@@ -772,10 +809,12 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/space/has_grav/syndicircle/research)
 "wG" = (
-/obj/structure/cable{
-	icon_state = "1-2"
+/obj/machinery/button{
+	id = 6;
+	name = "Zone Delta shutters";
+	pixel_x = -25
 	},
-/turf/closed/wall/mineral/plastitanium,
+/turf/open/floor/mineral/plastitanium/red,
 /area/ruin/space/has_grav/syndicircle/halls)
 "wN" = (
 /obj/structure/flora/rock/icy,
@@ -865,7 +904,7 @@
 /obj/machinery/door/poddoor,
 /obj/structure/fans/tiny,
 /obj/structure/cable{
-	icon_state = "1-8"
+	icon_state = "4-8"
 	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/space/has_grav/syndicircle/halls)
@@ -949,14 +988,15 @@
 "Bw" = (
 /obj/machinery/power/apc/auto_name/south,
 /obj/structure/cable{
-	icon_state = "0-4"
+	icon_state = "0-8"
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/space/has_grav/syndicircle/research)
 "Bx" = (
-/obj/structure/filingcabinet/chestdrawer,
-/obj/structure/cable{
-	icon_state = "2-8"
+/obj/machinery/button{
+	id = 4;
+	name = "Zone Charlie shutters";
+	pixel_x = -25
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/space/has_grav/syndicircle/research)
@@ -970,58 +1010,52 @@
 /area/ruin/space/has_grav/syndicircle/halls)
 "BY" = (
 /obj/structure/cable{
-	icon_state = "1-4"
+	icon_state = "1-2"
 	},
-/turf/closed/wall/mineral/plastitanium,
+/turf/open/floor/mineral/plastitanium/red,
 /area/ruin/space/has_grav/syndicircle/halls)
 "BZ" = (
+/obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/cable{
-	icon_state = "4-8"
+	icon_state = "1-2"
 	},
-/turf/closed/wall/mineral/plastitanium,
-/area/ruin/space/has_grav/syndicircle/halls)
+/turf/open/floor/plasteel/tech,
+/area/ruin/space/has_grav/syndicircle/winter)
 "Cd" = (
 /obj/structure/window/plasma/reinforced/plastitanium,
 /obj/structure/grille,
 /obj/machinery/door/poddoor{
 	id = 9
 	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/syndicircle/halls)
 "Ch" = (
-/obj/machinery/button{
-	id = 9;
-	name = "Zone Delta shutters";
-	pixel_y = -8
-	},
 /obj/structure/cable{
-	icon_state = "4-8"
+	icon_state = "1-8"
 	},
-/turf/closed/wall/mineral/plastitanium,
+/turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/syndicircle/halls)
 "Ci" = (
-/obj/machinery/door/poddoor,
-/obj/structure/fans/tiny,
-/obj/structure/cable{
-	icon_state = "4-8"
+/obj/effect/turf_decal/snow,
+/obj/machinery/power/apc/auto_name/west,
+/obj/structure/cable,
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/syndicircle/winter)
+"Cj" = (
+/obj/machinery/button{
+	id = 6;
+	name = "Zone Delta shutters";
+	pixel_x = 25
+	},
+/turf/open/floor/plating/asteroid/snow/atmosphere,
+/area/ruin/space/has_grav/syndicircle/winter)
+"CA" = (
+/obj/machinery/button{
+	id = 4;
+	name = "Zone Charlie shutters";
+	pixel_x = 25
 	},
 /turf/open/floor/mineral/plastitanium/red,
-/area/ruin/space/has_grav/syndicircle/halls)
-"Cj" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/structure/sign/warning/firingrange,
-/turf/closed/wall/mineral/plastitanium,
-/area/ruin/space/has_grav/syndicircle/halls)
-"CA" = (
-/obj/structure/cable{
-	icon_state = "2-8"
-	},
-/turf/closed/wall/mineral/plastitanium,
 /area/ruin/space/has_grav/syndicircle/halls)
 "CC" = (
 /obj/machinery/computer/camera_advanced{
@@ -1043,17 +1077,14 @@
 /area/ruin/space/has_grav/syndicircle/halls)
 "Dn" = (
 /obj/structure/cable{
-	icon_state = "4-8"
+	icon_state = "1-8"
 	},
 /obj/structure/cable{
-	icon_state = "1-8"
+	icon_state = "2-8"
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/syndicircle/halls)
 "DG" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
 /obj/machinery/computer/camera_advanced{
 	networks = list("zonec")
 	},
@@ -1071,27 +1102,26 @@
 	id = 4
 	},
 /obj/structure/cable{
-	icon_state = "4-8"
+	icon_state = "1-2"
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/syndicircle/halls)
 "Ed" = (
 /obj/machinery/button{
+	id = 9;
+	name = "Zone Delta shutters";
+	pixel_y = -25
+	},
+/turf/open/floor/plating/ice,
+/area/ruin/space/has_grav/syndicircle/winter)
+"Ej" = (
+/obj/machinery/button{
 	id = 102;
 	name = "Zone Charlie shutters";
-	pixel_y = -8
+	pixel_y = -25
 	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/turf/closed/wall/mineral/plastitanium,
-/area/ruin/space/has_grav/syndicircle/halls)
-"Ej" = (
-/obj/structure/cable{
-	icon_state = "1-8"
-	},
-/turf/closed/wall/mineral/plastitanium,
-/area/ruin/space/has_grav/syndicircle/halls)
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ruin/space/has_grav/syndicircle/research)
 "Ek" = (
 /obj/effect/turf_decal/number/three,
 /turf/closed/wall/mineral/plastitanium,
@@ -1106,31 +1136,41 @@
 	dir = 1
 	},
 /obj/machinery/vending/sovietsoda,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/syndicircle/halls)
 "ES" = (
 /obj/structure/table/reinforced,
 /obj/item/clothing/suit/hooded/wintercoat/security,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/space/has_grav/syndicircle/halls)
 "ET" = (
 /obj/structure/rack,
 /obj/item/clothing/gloves/color/brown,
 /obj/item/clothing/shoes/winterboots/ice_boots,
-/turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/syndicircle/halls)
-"Fq" = (
-/obj/structure/cable{
-	icon_state = "1-4"
-	},
-/turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/syndicircle/halls)
-"Fr" = (
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/space/has_grav/syndicircle/halls)
+"Fq" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/chair/office{
+	dir = 4
+	},
 /obj/structure/cable{
 	icon_state = "2-4"
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ruin/space/has_grav/syndicircle/research)
+"Fr" = (
+/obj/structure/cable{
+	icon_state = "4-8"
 	},
 /mob/living/simple_animal/hostile/syndicate/civilian{
 	name = "Syndicate Researcher"
@@ -1143,6 +1183,9 @@
 	},
 /obj/structure/cable{
 	icon_state = "1-4"
+	},
+/obj/structure/cable{
+	icon_state = "2-4"
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/syndicircle/halls)
@@ -1164,6 +1207,9 @@
 /obj/item/modular_computer/laptop{
 	pixel_y = 4
 	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/space/has_grav/syndicircle/halls)
 "GP" = (
@@ -1182,11 +1228,17 @@
 /obj/item/multitool/syndie,
 /obj/item/screwdriver/nuke,
 /obj/item/screwdriver/nuke,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/syndicircle/halls)
 "GZ" = (
 /obj/structure/rack,
 /obj/item/wirecutters/syndie,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/syndicircle/halls)
 "Hi" = (
@@ -1196,11 +1248,26 @@
 /obj/machinery/vending/cola/shamblers,
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/syndicircle/halls)
+"HC" = (
+/mob/living/simple_animal/hostile/syndicate/civilian{
+	name = "Syndicate Researcher"
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/space/has_grav/syndicircle/halls)
 "HF" = (
 /obj/structure/lattice,
 /obj/structure/lattice,
 /turf/open/space/basic,
 /area/template_noop)
+"HV" = (
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/open/floor/plating/asteroid/airless,
+/area/ruin/space/has_grav/syndicircle/spacewalk)
 "Ik" = (
 /obj/machinery/light{
 	dir = 4
@@ -1225,9 +1292,9 @@
 /area/ruin/space/has_grav/syndicircle/training)
 "IT" = (
 /obj/structure/cable{
-	icon_state = "1-2"
+	icon_state = "1-4"
 	},
-/turf/open/floor/mineral/plastitanium,
+/turf/open/floor/mineral/plastitanium/red,
 /area/ruin/space/has_grav/syndicircle/halls)
 "IY" = (
 /obj/machinery/power/smes/magical{
@@ -1261,11 +1328,9 @@
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/space/has_grav/syndicircle/halls)
 "Jx" = (
+/obj/machinery/door/airlock/centcom,
 /obj/structure/cable{
-	icon_state = "1-2"
-	},
-/mob/living/simple_animal/hostile/syndicate/civilian{
-	name = "Syndicate Researcher"
+	icon_state = "4-8"
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/syndicircle/halls)
@@ -1303,8 +1368,10 @@
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/space/has_grav/syndicircle/escape)
 "KH" = (
-/obj/machinery/light{
-	dir = 8
+/obj/machinery/button{
+	id = 84;
+	name = "Zone Bravo shutters";
+	pixel_x = -25
 	},
 /turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/syndicircle/spacewalk)
@@ -1349,9 +1416,6 @@
 /turf/closed/wall/mineral/plastitanium,
 /area/ruin/space/has_grav/syndicircle/halls)
 "Mf" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
 /obj/machinery/computer/camera_advanced{
 	dir = 1;
 	networks = list("zonea")
@@ -1374,6 +1438,11 @@
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/space/has_grav/syndicircle/escape)
 "Mv" = (
+/obj/machinery/button{
+	id = 99;
+	name = "Zone Alpha shutters";
+	pixel_x = -25
+	},
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/syndicircle/training)
 "MP" = (
@@ -1419,6 +1488,14 @@
 "Ox" = (
 /turf/closed/wall,
 /area/ruin/space/has_grav/syndicircle/training)
+"OB" = (
+/obj/structure/table/reinforced,
+/obj/item/clothing/glasses/night,
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/turf/open/floor/mineral/plastitanium/red,
+/area/ruin/space/has_grav/syndicircle/halls)
 "OE" = (
 /obj/structure/filingcabinet/chestdrawer,
 /turf/open/floor/mineral/plastitanium,
@@ -1576,6 +1653,12 @@
 	},
 /turf/open/floor/mineral/titanium,
 /area/ruin/space/has_grav/syndicircle/escape)
+"TF" = (
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/syndicircle/spacewalk)
 "TG" = (
 /obj/structure/fence/door,
 /obj/effect/decal/cleanable/dirt,
@@ -1679,16 +1762,27 @@
 	},
 /turf/open/space/basic,
 /area/ruin/space/has_grav/syndicircle/spacewalk)
-"WU" = (
-/obj/structure/window/plasma/reinforced/plastitanium,
-/obj/structure/grille,
-/obj/machinery/door/poddoor{
-	id = 99
+"WH" = (
+/obj/machinery/button{
+	id = 102;
+	name = "Zone Charlie shutters";
+	pixel_y = 25
 	},
 /obj/structure/cable{
-	icon_state = "1-2"
+	icon_state = "4-8"
 	},
-/turf/open/floor/mineral/plastitanium,
+/turf/open/floor/mineral/plastitanium/red,
+/area/ruin/space/has_grav/syndicircle/halls)
+"WU" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/button{
+	id = 9;
+	name = "Zone Delta shutters";
+	pixel_y = 25
+	},
+/turf/open/floor/mineral/plastitanium/red,
 /area/ruin/space/has_grav/syndicircle/halls)
 "WV" = (
 /obj/structure/table/reinforced,
@@ -1698,6 +1792,9 @@
 /obj/item/clothing/suit/armor/bulletproof{
 	pixel_x = -4;
 	pixel_y = -2
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
 	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/space/has_grav/syndicircle/halls)
@@ -1718,6 +1815,14 @@
 /obj/item/gun/ballistic/automatic/pistol/commander,
 /turf/open/floor/mineral/titanium/blue,
 /area/ruin/space/has_grav/syndicircle/escape)
+"Xf" = (
+/obj/machinery/button{
+	id = 84;
+	name = "Zone Bravo shutters";
+	pixel_x = 25
+	},
+/turf/open/floor/mineral/plastitanium/red,
+/area/ruin/space/has_grav/syndicircle/halls)
 "Xo" = (
 /obj/structure/table/reinforced,
 /obj/item/clothing/head/helmet{
@@ -1740,6 +1845,9 @@
 /obj/structure/rack,
 /obj/item/ammo_box/foambox/riot,
 /obj/item/gun/ballistic/automatic/toy/pistol/riot/unrestricted,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/syndicircle/halls)
 "XW" = (
@@ -1753,7 +1861,7 @@
 /obj/structure/railing{
 	dir = 10
 	},
-/turf/open/floor/plating,
+/turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/syndicircle/escape)
 "Yh" = (
 /obj/structure/window/shuttle/tinted,
@@ -1772,7 +1880,7 @@
 /obj/structure/railing{
 	dir = 6
 	},
-/turf/open/floor/plating,
+/turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/syndicircle/escape)
 "YB" = (
 /obj/effect/decal/cleanable/oil,
@@ -1804,28 +1912,39 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/syndicircle/training)
+"Zf" = (
+/obj/machinery/light{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/space/has_grav/syndicircle/halls)
 "Zk" = (
 /obj/machinery/vending/toyliberationstation,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/syndicircle/training)
+"Zq" = (
+/obj/machinery/door/airlock/centcom,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/space/has_grav/syndicircle/halls)
 "Zt" = (
 /obj/machinery/button{
 	id = 99;
 	name = "Zone Alpha shutters";
 	pixel_x = 8
 	},
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
 /turf/closed/wall/mineral/plastitanium,
 /area/ruin/space/has_grav/syndicircle/halls)
 "ZH" = (
-/obj/machinery/button{
-	id = 84;
-	name = "Zone Bravo shutters";
-	pixel_x = -8
+/obj/structure/cable{
+	icon_state = "1-4"
 	},
-/turf/closed/wall/mineral/plastitanium,
+/turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/syndicircle/halls)
 "ZU" = (
 /obj/effect/decal/cleanable/dirt,
@@ -1841,6 +1960,10 @@
 /obj/machinery/camera{
 	dir = 5;
 	network = list("zoneb")
+	},
+/obj/machinery/power/apc/auto_name/west,
+/obj/structure/cable{
+	icon_state = "0-2"
 	},
 /turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/syndicircle/spacewalk)
@@ -2213,10 +2336,10 @@ am
 ap
 ap
 ap
-ap
-ap
-ap
-ay
+Df
+ur
+ur
+IT
 wU
 ay
 ap
@@ -2257,16 +2380,16 @@ ZW
 am
 am
 am
-ap
-ap
-ap
-ap
-ap
-ap
-ap
+Df
+ur
+ur
+ur
+ur
+ur
+Ch
 am
 am
-au
+Jx
 am
 au
 am
@@ -2307,16 +2430,16 @@ am
 am
 ay
 ap
-ay
+jx
 ap
 ap
-uc
-wG
-wG
-wG
-wG
-BY
-ap
+am
+am
+am
+am
+am
+am
+Dm
 ap
 ap
 am
@@ -2354,19 +2477,19 @@ ZW
 ZW
 am
 am
-ay
-ap
-ay
-ap
+jo
+ur
+BY
+Ch
 qo
 qo
-up
+qo
 aW
 aW
 aW
 aW
-BZ
-ap
+am
+Dm
 ap
 ap
 am
@@ -2404,18 +2527,18 @@ ZW
 am
 bo
 dN
-ay
+jx
 ay
 am
 am
 qo
 aW
-ur
+bL
 eh
 en
 aW
 aW
-BZ
+am
 EQ
 ap
 ap
@@ -2454,7 +2577,7 @@ am
 am
 ay
 ay
-du
+ov
 dP
 am
 dZ
@@ -2504,7 +2627,7 @@ am
 ay
 ay
 du
-dP
+uc
 dP
 kK
 mN
@@ -2554,19 +2677,19 @@ ay
 ap
 ay
 dP
-dP
+up
 ir
-iH
+BZ
 na
-ow
+Ci
 dZ
 vc
 tf
 gz
 bL
 AQ
-Ch
-ay
+am
+WU
 ap
 ay
 LF
@@ -2615,8 +2738,8 @@ bL
 xY
 bL
 oS
-Ci
-ay
+lv
+jx
 ay
 ay
 lv
@@ -2665,8 +2788,8 @@ bL
 bL
 bL
 oS
-Ci
-ay
+lv
+jx
 ay
 ay
 lv
@@ -2714,9 +2837,9 @@ aW
 bD
 en
 bL
-eh
-Ch
-ay
+Ed
+am
+jx
 ap
 ay
 LF
@@ -2865,8 +2988,8 @@ aW
 tf
 bL
 aW
-Cj
-ap
+bS
+Dm
 ap
 at
 am
@@ -2915,8 +3038,8 @@ bL
 bL
 zY
 aW
-BZ
-ap
+am
+Dm
 ap
 ap
 am
@@ -2965,8 +3088,8 @@ bL
 yO
 aW
 aW
-BZ
-au
+am
+Jx
 am
 au
 am
@@ -3008,15 +3131,15 @@ eu
 iZ
 lg
 oS
-bL
+Cj
 tf
 bL
 wN
 aW
 aW
 am
-CA
-Fq
+am
+Dm
 Im
 ap
 am
@@ -3055,10 +3178,10 @@ am
 am
 ew
 ew
-jo
+am
 lv
 lv
-jo
+am
 ew
 ew
 bS
@@ -3067,19 +3190,19 @@ am
 am
 CC
 Fr
-IT
-Jx
+ap
+FM
 Mf
-wG
-wG
-wG
-wG
-WU
-WU
+am
+am
+am
+am
+ci
+ci
 Zt
 zr
 lv
-ov
+am
 ci
 ci
 bS
@@ -3105,7 +3228,7 @@ ap
 bM
 eH
 gF
-ay
+wG
 ay
 ay
 ay
@@ -3117,19 +3240,19 @@ au
 ap
 Df
 Fv
-ap
-ap
-ap
-ap
-au
-ap
-bM
+ur
+ur
+ur
+ur
+Zq
+ur
+Zf
 WV
 XA
+BY
+tp
 ay
-ay
-ay
-ay
+uU
 tq
 eH
 lP
@@ -3177,7 +3300,7 @@ ap
 ap
 ay
 ap
-ay
+jx
 ay
 ap
 ay
@@ -3208,7 +3331,7 @@ hh
 ay
 ay
 ay
-ay
+CA
 tq
 eH
 wU
@@ -3216,7 +3339,7 @@ ap
 au
 Bj
 Dn
-ap
+ZH
 ap
 ap
 ap
@@ -3226,8 +3349,8 @@ ap
 ap
 eH
 KY
-ay
-ay
+Xf
+jx
 ay
 ay
 Kr
@@ -3255,10 +3378,10 @@ am
 bS
 fe
 fe
-jx
+am
 lv
 lv
-jx
+am
 fe
 fe
 am
@@ -3266,7 +3389,7 @@ am
 am
 am
 DG
-FM
+HC
 ap
 FM
 Mr
@@ -3276,10 +3399,10 @@ am
 bS
 WY
 WY
-ZH
+am
+zr
 lv
-lv
-ZH
+am
 WY
 WY
 am
@@ -3305,7 +3428,7 @@ ba
 bV
 bV
 bV
-bV
+Bx
 kc
 bV
 qV
@@ -3315,8 +3438,8 @@ ho
 vg
 ho
 am
-BZ
-ap
+am
+Dm
 Je
 ap
 am
@@ -3327,10 +3450,10 @@ Tj
 DU
 XW
 ZZ
-xF
+TF
 xF
 KH
-Tj
+HV
 OH
 OH
 OH
@@ -3365,8 +3488,8 @@ xd
 zm
 ho
 ho
-BZ
-au
+am
+Jx
 am
 au
 am
@@ -3415,8 +3538,8 @@ tz
 zn
 zm
 ws
-BZ
-ap
+am
+Dm
 ap
 ap
 am
@@ -3465,11 +3588,11 @@ xs
 rf
 ho
 ho
-Cj
-ap
+bS
+Dm
 ap
 at
-am
+Mt
 OW
 Sh
 Sh
@@ -3515,11 +3638,11 @@ vB
 zF
 Af
 ws
-DW
+fe
 GJ
 ap
 eH
-fe
+jG
 OY
 Qd
 Qd
@@ -3565,11 +3688,11 @@ xE
 rf
 ho
 ho
-DW
+fe
 GW
 ay
 Kr
-fe
+jG
 Pv
 Sl
 To
@@ -3615,8 +3738,8 @@ xI
 ru
 tz
 Br
-Ed
-ay
+am
+WH
 ap
 Kt
 Mt
@@ -3665,8 +3788,8 @@ wp
 fO
 sX
 bV
-Ci
-ay
+lv
+jx
 ay
 Kt
 Mu
@@ -3715,8 +3838,8 @@ bV
 bV
 bV
 kc
-Ci
-ay
+lv
+jx
 ay
 Kt
 Mu
@@ -3764,9 +3887,9 @@ ws
 ho
 ho
 Aj
-bV
-Ed
-ay
+Ej
+am
+jx
 ap
 KR
 Mt
@@ -3815,7 +3938,7 @@ ho
 ho
 ho
 bV
-DW
+fe
 GZ
 ay
 KY
@@ -3864,9 +3987,9 @@ bV
 bV
 zP
 Al
-mC
+Fq
 DW
-eJ
+OB
 ap
 eH
 fe
@@ -3915,7 +4038,7 @@ dd
 cC
 AG
 Bw
-BZ
+am
 Hi
 ap
 ap
@@ -3964,8 +4087,8 @@ am
 ba
 kv
 kv
-Bx
-Ej
+ba
+am
 ap
 ap
 ap
