@@ -11,9 +11,7 @@
 	. = ..()
 	if(istype(target, /obj/machinery/computer/helm))
 		var/obj/machinery/computer/helm/H = target
-		if(istype(H.current_ship, /obj/structure/overmap/ship/simulated))
-			var/obj/structure/overmap/ship/simulated/S = H.current_ship
-			target_shuttle = S.shuttle
+		target_shuttle = H.current_ship.shuttle_port
 
 /obj/item/areaeditor/shuttle/attack_self(mob/user)
 	. = ..()
@@ -81,11 +79,12 @@
 			continue
 		var/turf/T = turfs[i]
 		if(T.z == target_shuttle.z)
-			if(T.x >= (shuttle_coords[1] - 1) && T.x <= (shuttle_coords[3] + 1))
-				if(T.y >= (shuttle_coords[2] - 1) && T.y <= (shuttle_coords[4] + 1))
+			if(T.x >= (min(shuttle_coords[1], shuttle_coords[3]) - 1) && T.x <= (max(shuttle_coords[1], shuttle_coords[3]) + 1))
+				if(T.y >= (min(shuttle_coords[2], shuttle_coords[4]) - 1) && T.y <= (max(shuttle_coords[2], shuttle_coords[4]) + 1))
 					near_shuttle = TRUE
 	if(!near_shuttle)
 		to_chat(creator, "<span class='warning'>The new area must be next to the shuttle.</span>")
+		return
 	var/area_choice = input(creator, "Choose an area to expand or make a new area.", "Area Expansion") as null|anything in areas
 	area_choice = areas[area_choice]
 
@@ -119,7 +118,7 @@
 		if(length(thing.baseturfs) < 2)
 			continue
 		//Add the shuttle base shit to the shuttle
-		if(!thing.baseturfs.Find(/turf/baseturf_skipover/shuttle))
+		if(!(/turf/baseturf_skipover/shuttle in thing.baseturfs))
 			thing.baseturfs.Insert(3, /turf/baseturf_skipover/shuttle)
 
 	var/list/firedoors = oldA.firedoors
@@ -184,3 +183,5 @@
 			height = new_width
 			dwidth = offset_y - 1
 			dheight = new_width - offset_x
+	qdel(assigned_transit, TRUE)
+	assigned_transit = null

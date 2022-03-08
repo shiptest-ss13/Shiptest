@@ -97,12 +97,12 @@
 // Safe location finder
 /proc/find_safe_turf(list/zlevels, extended_safety_checks = FALSE)
 	var/list/potential_targets = list()
-	for(var/obj/structure/overmap/ship/simulated/possible_ship as anything in SSovermap.simulated_ships)
+	for(var/datum/overmap/ship/controlled/possible_ship as anything in SSovermap.controlled_ships)
 		if(!zlevels)
-			potential_targets += possible_ship.shuttle
+			potential_targets += possible_ship.shuttle_port
 			continue
-		if((possible_ship.z in zlevels) || (possible_ship.virtual_z() in zlevels))
-			potential_targets += possible_ship.shuttle.shuttle_areas
+		if((possible_ship.shuttle_port.z in zlevels) || (possible_ship.shuttle_port.virtual_z() in zlevels))
+			potential_targets += possible_ship.shuttle_port.shuttle_areas
 
 	if(!length(potential_targets))
 		CRASH("No safe ship turfs found!")
