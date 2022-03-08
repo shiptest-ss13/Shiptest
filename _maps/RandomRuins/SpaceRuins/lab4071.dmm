@@ -209,13 +209,13 @@
 /obj/effect/mob_spawn/human/syndicate/battlecruiser/assault{
 	assignedrole = "Unlicensed Chemist";
 	dir = 4;
-	flavour_text = "Despite all the setbacks, you've finally found a place to practice your craft in relative peace, thanks to a shady deal with a criminal organization. You now work for them as a contract chemist, but your goal of profit leaves you plenty of options.";
+	flavour_text = "Despite all the setbacks, you have finally found a place to practice your craft in relative peace, thanks to a shady deal with a criminal organization. You now work for them as a contract chemist, but your goal of profit leaves you plenty of options.";
 	id_job = "Unlicensed Chemist";
 	important_info = "Work together, use chemistry to turn a profit and help out the population of the Outer Rim.";
 	mob_name = "unlicensed chemist";
 	name = "Unlicensed Chemist";
 	outfit = /datum/outfit/job/chemist/juniorchemist;
-	short_desc = "You're a chemist in an illegal laboratory."
+	short_desc = "You are a chemist in an illegal laboratory."
 	},
 /turf/open/floor/plasteel/grimy,
 /area/ruin/space/has_grav/crazylab/crew)
@@ -223,13 +223,13 @@
 /obj/effect/mob_spawn/human/syndicate/battlecruiser/assault{
 	assignedrole = "Unlicensed Chemist";
 	dir = 8;
-	flavour_text = "Despite all the setbacks, you've finally found a place to practice your craft in relative peace, thanks to a shady deal with a criminal organization. You now work for them as a contract chemist, but your goal of profit leaves you plenty of options.";
+	flavour_text = "Despite all the setbacks, you have finally found a place to practice your craft in relative peace, thanks to a shady deal with a criminal organization. You now work for them as a contract chemist, but your goal of profit leaves you plenty of options.";
 	id_job = "Unlicensed Chemist";
 	important_info = "Work together, use chemistry to turn a profit and help out the population of the Outer Rim.";
 	mob_name = "unlicensed chemist";
 	name = "Unlicensed Chemist";
 	outfit = /datum/outfit/job/chemist/juniorchemist;
-	short_desc = "You're a chemist in an illegal laboratory."
+	short_desc = "You are a chemist in an illegal laboratory."
 	},
 /turf/open/floor/plasteel/grimy,
 /area/ruin/space/has_grav/crazylab/crew)
@@ -514,18 +514,18 @@
 /turf/open/floor/material,
 /area/ruin/space/has_grav/crazylab/crew)
 "jq" = (
+/obj/machinery/light,
 /obj/effect/mob_spawn/human/syndicate/battlecruiser/assault{
 	assignedrole = "Unlicensed Chemist";
 	dir = 4;
-	flavour_text = "Despite all the setbacks, you've finally found a place to practice your craft in relative peace, thanks to a shady deal with a criminal organization. You now work for them as a contract chemist, but your goal of profit leaves you plenty of options.";
+	flavour_text = "Despite all the setbacks, you have finally found a place to practice your craft in relative peace, thanks to a shady deal with a criminal organization. You now work for them as a contract chemist, but your goal of profit leaves you plenty of options.";
 	id_job = "Unlicensed Chemist";
 	important_info = "Work together, use chemistry to turn a profit and help out the population of the Outer Rim.";
 	mob_name = "unlicensed chemist";
 	name = "Unlicensed Chemist";
 	outfit = /datum/outfit/job/chemist/juniorchemist;
-	short_desc = "You're a chemist in an illegal laboratory."
+	short_desc = "You are a chemist in an illegal laboratory."
 	},
-/obj/machinery/light,
 /turf/open/floor/plasteel/grimy,
 /area/ruin/space/has_grav/crazylab/crew)
 "jB" = (
@@ -1356,12 +1356,12 @@
 /area/ruin/space/has_grav/crazylab/crew)
 "vi" = (
 /turf/closed/wall/mineral/plastitanium,
-/area/ship/engineering/electrical)
+/area/ruin/space/has_grav/crazylab/engi)
 "vk" = (
 /obj/machinery/door/airlock/hatch,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/mineral/plastitanium,
-/area/ship/engineering/electrical)
+/area/ruin/space/has_grav/crazylab/engi)
 "vC" = (
 /obj/machinery/door/airlock/hatch,
 /obj/structure/cable{
@@ -1369,7 +1369,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /turf/open/floor/mineral/plastitanium,
-/area/ship/engineering/electrical)
+/area/ruin/space/has_grav/crazylab/engi)
 "vD" = (
 /obj/structure/sign/warning/chemdiamond,
 /turf/closed/wall/mineral/plastitanium,
@@ -1529,7 +1529,7 @@
 "xH" = (
 /obj/structure/sign/warning/enginesafety,
 /turf/closed/wall/mineral/plastitanium,
-/area/ship/engineering/electrical)
+/area/ruin/space/has_grav/crazylab/engi)
 "xO" = (
 /obj/effect/turf_decal/trimline/orange/filled/warning{
 	dir = 9
@@ -1544,7 +1544,7 @@
 /obj/item/mop,
 /obj/item/reagent_containers/glass/bucket,
 /turf/open/floor/mineral/plastitanium,
-/area/ship/engineering/electrical)
+/area/ruin/space/has_grav/crazylab/engi)
 "yf" = (
 /obj/structure/cable{
 	icon_state = "1-8"
@@ -1552,7 +1552,7 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/mineral/plastitanium,
-/area/ship/engineering/electrical)
+/area/ruin/space/has_grav/crazylab/engi)
 "yi" = (
 /obj/structure/cable{
 	icon_state = "1-4"
@@ -1560,7 +1560,7 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /turf/open/floor/mineral/plastitanium,
-/area/ship/engineering/electrical)
+/area/ruin/space/has_grav/crazylab/engi)
 "yj" = (
 /obj/effect/turf_decal/trimline/orange/filled/warning{
 	dir = 5
@@ -1570,11 +1570,11 @@
 	icon_state = "2-8"
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ship/engineering/electrical)
+/area/ruin/space/has_grav/crazylab/engi)
 "yk" = (
 /obj/structure/sign/poster/contraband/communist_state,
 /turf/closed/wall/mineral/plastitanium,
-/area/ship/engineering/electrical)
+/area/ruin/space/has_grav/crazylab/engi)
 "yl" = (
 /obj/machinery/button{
 	dir = 4;
@@ -1615,7 +1615,7 @@
 /area/ruin/space/has_grav/crazylab/chem)
 "yF" = (
 /mob/living/simple_animal/hostile/asteroid/hivelord{
-	desc = "A mass of unknown organic (leadership) material. For whatever reason, the organization has decided to make it your overseer.;
+	desc = "A mass of unknown organic (leadership) material. For whatever reason, the organization has decided to make it your overseer.";
 	name = "Laoban"
 	},
 /turf/open/floor/plating/asteroid/airless,
@@ -1706,7 +1706,7 @@
 	dir = 8
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ship/engineering/electrical)
+/area/ruin/space/has_grav/crazylab/engi)
 "zJ" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -1716,14 +1716,14 @@
 	dir = 4
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ship/engineering/electrical)
+/area/ruin/space/has_grav/crazylab/engi)
 "zK" = (
 /obj/machinery/autolathe,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 9
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ship/engineering/electrical)
+/area/ruin/space/has_grav/crazylab/engi)
 "zO" = (
 /obj/structure/closet/crate{
 	opened = 1
@@ -1732,7 +1732,7 @@
 /obj/item/stack/sheet/glass/fifty,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /turf/open/floor/mineral/plastitanium,
-/area/ship/engineering/electrical)
+/area/ruin/space/has_grav/crazylab/engi)
 "zW" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -1741,7 +1741,7 @@
 	dir = 8
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ship/engineering/electrical)
+/area/ruin/space/has_grav/crazylab/engi)
 "zX" = (
 /obj/structure/closet/crate/radiation,
 /obj/effect/turf_decal/trimline/orange/filled/warning{
@@ -1749,7 +1749,7 @@
 	},
 /obj/machinery/camera/all,
 /turf/open/floor/mineral/plastitanium,
-/area/ship/engineering/electrical)
+/area/ruin/space/has_grav/crazylab/engi)
 "Ad" = (
 /obj/structure/sign/poster/contraband/hacking_guide,
 /turf/closed/wall/mineral/plastitanium,
@@ -1894,7 +1894,7 @@
 	dir = 8
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ship/engineering/electrical)
+/area/ruin/space/has_grav/crazylab/engi)
 "Bz" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -1902,12 +1902,12 @@
 /obj/effect/decal/cleanable/oil,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/mineral/plastitanium,
-/area/ship/engineering/electrical)
+/area/ruin/space/has_grav/crazylab/engi)
 "BC" = (
 /obj/structure/table/reinforced,
 /obj/machinery/cell_charger,
 /turf/open/floor/mineral/plastitanium,
-/area/ship/engineering/electrical)
+/area/ruin/space/has_grav/crazylab/engi)
 "BL" = (
 /obj/structure/table/reinforced,
 /obj/item/wrench,
@@ -1918,14 +1918,14 @@
 /obj/item/radio/off,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /turf/open/floor/mineral/plastitanium,
-/area/ship/engineering/electrical)
+/area/ruin/space/has_grav/crazylab/engi)
 "BQ" = (
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/mineral/plastitanium,
-/area/ship/engineering/electrical)
+/area/ruin/space/has_grav/crazylab/engi)
 "BR" = (
 /obj/structure/closet/crate/radiation,
 /obj/effect/turf_decal/trimline/orange/filled/warning{
@@ -1935,7 +1935,7 @@
 	dir = 4
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ship/engineering/electrical)
+/area/ruin/space/has_grav/crazylab/engi)
 "BS" = (
 /obj/machinery/disposal/bin,
 /obj/machinery/power/apc/auto_name/west,
@@ -2072,7 +2072,7 @@
 	dir = 10
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ship/engineering/electrical)
+/area/ruin/space/has_grav/crazylab/engi)
 "DI" = (
 /obj/structure/cable{
 	icon_state = "1-4"
@@ -2081,7 +2081,7 @@
 	dir = 4
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ship/engineering/electrical)
+/area/ruin/space/has_grav/crazylab/engi)
 "DK" = (
 /obj/machinery/power/terminal,
 /obj/structure/cable{
@@ -2091,7 +2091,7 @@
 	dir = 8
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ship/engineering/electrical)
+/area/ruin/space/has_grav/crazylab/engi)
 "DN" = (
 /obj/machinery/power/terminal,
 /obj/structure/cable{
@@ -2102,14 +2102,14 @@
 	dir = 9
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ship/engineering/electrical)
+/area/ruin/space/has_grav/crazylab/engi)
 "Ea" = (
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
 /obj/effect/decal/cleanable/oil,
 /turf/open/floor/mineral/plastitanium,
-/area/ship/engineering/electrical)
+/area/ruin/space/has_grav/crazylab/engi)
 "Ef" = (
 /obj/structure/closet/secure_closet/engineering_electrical,
 /obj/effect/turf_decal/trimline/orange/filled/warning{
@@ -2126,7 +2126,7 @@
 /obj/item/stock_parts/cell/high,
 /obj/machinery/airalarm/directional/south,
 /turf/open/floor/mineral/plastitanium,
-/area/ship/engineering/electrical)
+/area/ruin/space/has_grav/crazylab/engi)
 "Ew" = (
 /obj/machinery/autolathe,
 /turf/open/floor/plasteel/tech/grid,
@@ -2236,7 +2236,7 @@
 	icon_state = "0-4"
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ship/engineering/electrical)
+/area/ruin/space/has_grav/crazylab/engi)
 "Gc" = (
 /obj/machinery/power/smes,
 /obj/effect/turf_decal/trimline/orange/filled/warning,
@@ -2244,7 +2244,7 @@
 	icon_state = "0-8"
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ship/engineering/electrical)
+/area/ruin/space/has_grav/crazylab/engi)
 "Go" = (
 /obj/machinery/power/smes,
 /obj/effect/turf_decal/trimline/orange/filled/warning,
@@ -2252,7 +2252,7 @@
 	icon_state = "0-4"
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ship/engineering/electrical)
+/area/ruin/space/has_grav/crazylab/engi)
 "Gu" = (
 /obj/machinery/power/port_gen/pacman/super,
 /obj/effect/turf_decal/trimline/orange/filled/warning{
@@ -2262,7 +2262,7 @@
 	icon_state = "0-8"
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ship/engineering/electrical)
+/area/ruin/space/has_grav/crazylab/engi)
 "Gv" = (
 /obj/effect/turf_decal/techfloor/orange{
 	dir = 10
