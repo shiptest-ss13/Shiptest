@@ -193,13 +193,25 @@
 /turf/open/floor/material,
 /area/ruin/space/has_grav/crazylab/crew)
 "dO" = (
+/obj/effect/mob_spawn/human/syndicate/battlecruiser/assault{
+	assignedrole = "Unlicensed Chemist";
+	dir = 4;
+	flavour_text = "Despite all the setbacks, you have finally found a place to practice your craft in relative peace, thanks to a shady deal with a criminal organization. You now work for them as a contract chemist, but your goal of profit leaves you plenty of options.";
+	id_job = "Unlicensed Chemist";
+	important_info = "Work together, use chemistry to turn a profit and help out the population of the Outer Rim.";
+	mob_name = "unlicensed chemist";
+	name = "Unlicensed Chemist";
+	outfit = /datum/outfit/job/chemist/juniorchemist;
+	short_desc = "You are a chemist in an illegal laboratory."
+	},
 /obj/machinery/button{
 	dir = 4;
 	id = 64;
 	name = "Dorm Shutters";
-	pixel_x = 7
+	pixel_x = 7;
+	pixel_y = 25
 	},
-/turf/closed/wall/mineral/plastitanium,
+/turf/open/floor/plasteel/grimy,
 /area/ruin/space/has_grav/crazylab/crew)
 "ee" = (
 /obj/structure/bookcase/random/reference,
@@ -561,10 +573,6 @@
 /obj/machinery/light/broken,
 /turf/open/floor/plasteel/grimy,
 /area/ruin/space/has_grav/crazylab/crew)
-"ke" = (
-/obj/machinery/firealarm,
-/turf/closed/wall/mineral/plastitanium,
-/area/ruin/space/has_grav/crazylab/chem)
 "kg" = (
 /obj/structure/table/glass,
 /obj/item/stock_parts/micro_laser{
@@ -661,6 +669,9 @@
 /area/ruin/space/has_grav/crazylab/chem)
 "mc" = (
 /obj/structure/closet/secure_closet/chemical/heisenberg,
+/obj/machinery/firealarm{
+	pixel_y = 25
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/space/has_grav/crazylab/chem)
 "me" = (
@@ -1485,16 +1496,13 @@
 /obj/machinery/light{
 	dir = 4
 	},
-/turf/open/floor/plasteel/grimy,
-/area/ruin/space/has_grav/crazylab/gamble)
-"xc" = (
 /obj/machinery/button{
 	dir = 8;
 	id = 32;
 	name = "Rec Room Shutters";
-	pixel_x = -9
+	pixel_x = 25
 	},
-/turf/closed/wall/mineral/plastitanium,
+/turf/open/floor/plasteel/grimy,
 /area/ruin/space/has_grav/crazylab/gamble)
 "xe" = (
 /obj/machinery/processor,
@@ -2167,6 +2175,9 @@
 	pixel_y = 3
 	},
 /obj/machinery/light,
+/obj/machinery/firealarm{
+	pixel_x = 25
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/space/has_grav/crazylab/chem)
 "Fo" = (
@@ -2863,6 +2874,7 @@
 	icon_state = "4-8"
 	},
 /obj/structure/window/plasma/reinforced/plastitanium,
+/obj/structure/grille,
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/crazylab/airlock)
 "LV" = (
@@ -4505,7 +4517,7 @@ kM
 nh
 pJ
 ug
-xc
+fY
 uo
 AR
 CW
@@ -4840,8 +4852,8 @@ GV
 GV
 ao
 ck
+ck
 dO
-eh
 jq
 lA
 od
@@ -5108,7 +5120,7 @@ GV
 at
 at
 hy
-ke
+hy
 mc
 oJ
 sx
@@ -5344,7 +5356,7 @@ hV
 hV
 hV
 vD
-ke
+hy
 hy
 at
 at
