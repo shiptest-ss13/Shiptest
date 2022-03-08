@@ -308,3 +308,15 @@
 	suffix = "dangerous_research.dmm"
 	name = "Occult Research Station"
 	description = "This station was deemed unsuitable for continued experiments, and quickly abandoned."
+
+/datum/map_template/ruin/space/syndicircle
+	id = "provinggrounds"
+	suffix = "provinggrounds.dmm"
+	name = "Syndicate Battle Sphere"
+	description = "The Syndicate Battle Sphere, complete with guns!"
+
+/datum/map_template/ruin/space/lab4071
+	id = "lab4071"
+	suffix = "lab4071.dmm"
+	name = "Syndicate Laboratory 4071"
+	description = "A Syndicate laboratory run by syndicate scientists."
