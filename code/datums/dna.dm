@@ -15,7 +15,7 @@
 	var/default_mutation_genes[DNA_MUTATION_BLOCKS] //List of the default genes from this mutation to allow DNA Scanner highlighting
 	var/stability = 100
 	var/scrambled = FALSE //Did we take something like mutagen? In that case we cant get our genes scanned to instantly cheese all the powers.
-	var/current_body_size = BODY_SIZE_NORMAL
+	var/current_body_size = BODY_SIZE_NORMAL //This is a size multiplier, it starts at "1".
 
 
 	var/delete_species = TRUE //Set to FALSE when a body is scanned by a cloner to fix #38875. WS Edit - Cloning
@@ -295,8 +295,7 @@
 /datum/dna/proc/update_body_size()
 	if(!holder)
 		return
-	var/static/list/feat2num = list("Normal" = BODY_SIZE_NORMAL, "Tall" = BODY_SIZE_TALL, "Short" = BODY_SIZE_SHORT)
-	var/desired_size = feat2num[features["body_size"]]
+	var/desired_size = GLOB.body_sizes[features["body_size"]]
 
 	if(desired_size == current_body_size)
 		return
@@ -305,7 +304,7 @@
 		return
 
 	var/change_multiplier = desired_size / current_body_size
-	var/translate = ((change_multiplier-1) * 32)/2
+	var/translate = ((change_multiplier-1) * 32) * 0.5
 	holder.transform = holder.transform.Scale(change_multiplier)
 	holder.transform = holder.transform.Translate(0, translate)
 	current_body_size = desired_size
