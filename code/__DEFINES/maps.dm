@@ -38,6 +38,8 @@ require only minor tweaks.
 #define ZTRAIT_ICE_RUINS "Ice Ruins"
 #define ZTRAIT_ICE_RUINS_UNDERGROUND "Ice Ruins Underground"
 #define ZTRAIT_SAND_RUINS "Sand Ruins" //WS edit - Whitesands
+#define ZTRAIT_JUNGLE_RUINS "Jungle Ruins"
+#define ZTRAIT_ROCK_RUINS "Rock Ruins"
 
 // boolean - weather types that occur on the level
 #define ZTRAIT_SANDSTORM "Weather_Sandstorm"

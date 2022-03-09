@@ -656,3 +656,11 @@
 #define COMSIG_XENO_TURF_CLICK_SHIFT "xeno_turf_click_shift" //from turf ShiftClickOn(): (/mob)
 #define COMSIG_XENO_TURF_CLICK_CTRL "xeno_turf_click_alt" //from turf AltClickOn(): (/mob)
 #define COMSIG_XENO_MONKEY_CLICK_CTRL "xeno_monkey_click_ctrl" //from monkey CtrlClickOn(): (/mob)
+
+// /datum/overmap signals
+/// From overmap Move(): (x, y)
+#define COMSIG_OVERMAP_MOVED "overmap_moved"
+/// From overmap Dock(): (datum/overmap)
+#define COMSIG_OVERMAP_DOCK "overmap_dock"
+/// From overmap Undock(): (datum/overmap)
+#define COMSIG_OVERMAP_UNDOCK "overmap_undock"

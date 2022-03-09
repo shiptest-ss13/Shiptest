@@ -3,7 +3,7 @@
 	filedesc = "Bank Account Manager"
 	program_icon_state = "id"
 	program_icon = "university"
-	extended_desc = "This program allows the review and control of all the station's active bank accounts."
+	extended_desc = "This program allows the review and control of all the sector's active bank accounts. Is this legal?"
 	transfer_access = ACCESS_VAULT
 	required_access = ACCESS_VAULT
 	requires_ntnet = TRUE

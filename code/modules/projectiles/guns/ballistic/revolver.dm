@@ -160,6 +160,12 @@
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev762
 
 
+/obj/item/gun/ballistic/revolver/hunting
+	name = "hunting revolver"
+	desc = "A massive, long-barreled revolver designed for hunting the most dangerous game. Can only be reloaded one cartridge at a time due to its reinforced frame. Uses .45-70 ammo."
+	icon_state = "hunting"
+	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev4570
+
 // A gun to play Russian Roulette!
 // You can spin the chamber to randomize the position of the bullet.
 
