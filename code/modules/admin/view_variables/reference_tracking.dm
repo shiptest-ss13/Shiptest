@@ -33,15 +33,24 @@
 	testing("Beginning search for references to a [type].")
 	last_find_references = world.time
 
-	DoSearchVar(GLOB) //globals
-	for(var/datum/thing in world) //atoms (don't beleive its lies)
-		DoSearchVar(thing, "World -> [thing]")
+	DoSearchVar(GLOB, "(global) -> ") //globals
+	testing("Finished searching globals")
 
-	for(var/datum/thing) //datums
-		DoSearchVar(thing, "World -> [thing]")
+	for(var/atom/atom_thing) //atoms
+		DoSearchVar(atom_thing, "World -> [atom_thing]")
+	testing("Finished searching atoms")
 
-	for(var/client/thing) //clients
-		DoSearchVar(thing, "World -> [thing]")
+	for (var/datum/datum_thing) //datums
+		DoSearchVar(datum_thing, "World -> [datum_thing]")
+	testing("Finished searching datums")
+
+#ifndef FIND_REF_SKIP_CLIENTS
+	// DO NOT RUN THIS ON A LIVE SERVER
+	// IT WILL CRASH!!!
+	for (var/client/client_thing) //clients
+		DoSearchVar(client_thing, "World -> [client_thing]")
+	testing("Finished searching clients")
+#endif
 
 	testing("Completed search for references to a [type].")
 	if(usr?.client)

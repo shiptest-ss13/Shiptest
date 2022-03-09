@@ -159,7 +159,7 @@
 	var/points = 1
 	if(!host_mob.client) //less brainpower
 		points *= 0.25
-	nanites.linked_techweb.add_point_list(list(TECHWEB_POINT_TYPE_GENERIC = points))
+	nanites.linked_techweb?.add_point_list(list(TECHWEB_POINT_TYPE_GENERIC = points))
 
 /datum/nanite_program/researchplus
 	name = "Neural Network"
@@ -192,7 +192,7 @@
 	var/points = round(SSnanites.neural_network_count / 12, 0.1)
 	if(!C.client) //less brainpower
 		points *= 0.25
-	nanites.linked_techweb.add_point_list(list(TECHWEB_POINT_TYPE_GENERIC = points))
+	nanites.linked_techweb?.add_point_list(list(TECHWEB_POINT_TYPE_GENERIC = points))
 
 /datum/nanite_program/access
 	name = "Subdermal ID"
