@@ -1,3 +1,8 @@
+#define OPEN_TURF_ONLY 1
+#define CLOSED_TURF_ONLY 2
+#define NO_TURFS 3
+#define ALL_TURFS 4
+
 /obj/item/chisel
 	name = "chisel"
 	desc = "A handly little tool that can be used to harness the power of bluespace to smooth and unsmooth the corners of wall! Don't question it."
@@ -6,10 +11,24 @@
 	force = 5
 	/// Are we toggling the ability for atoms to smooth at all?
 	var/toggling_smooth = FALSE
+	/// Are we allowing them to smooth turfs
+	var/turf_options = CLOSED_TURF_ONLY // THIS IS SET FOR NOW BECAUSE I DO NOT KNOW WHY OPEN TURFS REFUSE TO WORK
+	/// Static list to store the original icon_state of atoms we smoothed
+	var/static/list/pre_smooth_state_cache = list()
 
 /obj/item/chisel/pre_attack(atom/target, mob/living/user, params)
 	if(ismob(target))
 		return ..()
+	if(isturf(target))
+		if(turf_options == NO_TURFS)
+			return ..()
+		switch(turf_options)
+			if(OPEN_TURF_ONLY)
+				if(isclosedturf(target))
+					return ..()
+			if(CLOSED_TURF_ONLY)
+				if(isopenturf(target))
+					return ..()
 	. = TRUE
 	if(toggling_smooth)
 		if(!atom_supports_smoothing(target))
@@ -28,22 +47,17 @@
 	to_chat(user, "<span class='notice'>\the [src] is now set to reform the [(toggling_smooth ? "smoothness" : "corners")] of walls</span>")
 
 /obj/item/chisel/proc/smooth_atom(atom/target, mob/living/user)
-
-	if(target.smoothing_flags & SMOOTH_BITMASK) // We're unsmoothing this atom
-		target.smoothing_flags &= ~(SMOOTH_BITMASK|SMOOTH_OBJ)
-		to_chat(user, "<span class='notice'>\the [src] vibrates gently as it reforms \the [target] to be rough.</span>")
-	else // We're smoothing it
-		target.smoothing_flags |= SMOOTH_BITMASK
-		if(initial(target.smoothing_flags) & SMOOTH_OBJ)
-			target.smoothing_flags |= SMOOTH_OBJ // Only append SMOOTH_OBJ if the target had originally supported it
-		to_chat(user, "<span class='notice'>\the [src] vibrates gently as it reforms \the [target] to be smooth.</span>")
-
+	target.smoothing_flags ^= SMOOTH_BITMASK
+	to_chat(user, "<span class='notice'>\the [src] vibrates gently as it reforms \the [target] to be [((target.smoothing_flags & SMOOTH_BITMASK) ? "smooth" : "rough")].</span>")
+	if(target.smoothing_flags & SMOOTH_BITMASK)
+		pre_smooth_state_cache[target] = target.icon_state
+	else
+		target.icon_state = pre_smooth_state_cache[target] || initial(target.icon_state)
 	QUEUE_SMOOTH(target)
 	QUEUE_SMOOTH_NEIGHBORS(target)
-	if(!(target.smoothing_flags & SMOOTH_BITMASK))
-		target.icon_state = initial(target.icon_state)
-		target.update_icon()
 
+
+/// A bit more complex and in-depth, mainly checks for turfs to append an underlay
 /obj/item/chisel/proc/smooth_atom_diagonal(atom/target, mob/living/user)
 	if(target.smoothing_flags & SMOOTH_DIAGONAL_CORNERS)
 		target.smoothing_flags &= ~SMOOTH_DIAGONAL_CORNERS
@@ -100,12 +114,14 @@
 #undef UNDERLAY_MISSING
 
 /obj/item/chisel/proc/atom_supports_smoothing(atom/target)
-	if(initial(target.smoothing_flags) & SMOOTH_BORDER|SMOOTH_BITMASK)
+	if(initial(target.smoothing_flags) & SMOOTH_BITMASK)
 		return TRUE // If they start off with valid smoothing flags assume yes
 	var/find_this = "[target.base_icon_state]-5"
 	return find_this in icon_states(target.icon)
 
 /obj/item/chisel/proc/atom_supports_diagonal(atom/target)
+	if(initial(target.smoothing_flags) & SMOOTH_DIAGONAL_CORNERS)
+		return TRUE // If they start off with valid corner flags assume yes
 	var/verify_iconstate = "[target.base_icon_state]-5-d" // Look for a diagonal icon_state, if it exists the atom supports diagonal corners
 	return verify_iconstate in icon_states(target.icon)
 
@@ -117,3 +133,8 @@
 	build_path = /obj/item/chisel
 	category = list("initial","Tools","Tool Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SERVICE
+
+#undef OPEN_TURF_ONLY
+#undef CLOSED_TURF_ONLY
+#undef NO_TURFS
+#undef ALL_TURFS
