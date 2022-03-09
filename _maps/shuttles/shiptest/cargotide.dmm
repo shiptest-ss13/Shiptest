@@ -51,6 +51,10 @@
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/fore)
+"ca" = (
+/obj/structure/frame/computer,
+/turf/open/floor/plating,
+/area/ship/bridge)
 "cg" = (
 /obj/machinery/light,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -295,6 +299,14 @@
 /obj/machinery/suit_storage_unit/independent/mining/eva,
 /turf/open/floor/pod/light,
 /area/ship/maintenance/central)
+"jy" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
+/turf/open/floor/plating,
+/area/ship/maintenance/fore)
 "jN" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 4
@@ -376,6 +388,16 @@
 /obj/structure/chair/office{
 	dir = 1
 	},
+/turf/open/floor/plating,
+/area/ship/bridge)
+"lK" = (
+/obj/machinery/door/airlock,
+/obj/structure/cable{
+	icon_state = "1-10"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/door/firedoor,
 /turf/open/floor/plating,
 /area/ship/bridge)
 "lL" = (
@@ -605,10 +627,6 @@
 /obj/effect/decal/cleanable/garbage,
 /turf/open/floor/plating/rust,
 /area/ship/maintenance/fore)
-"tm" = (
-/obj/structure/frame/computer,
-/turf/open/floor/plating,
-/area/ship/bridge)
 "ts" = (
 /turf/closed/wall/r_wall/rust,
 /area/ship/maintenance/central)
@@ -688,6 +706,24 @@
 	},
 /turf/open/floor/pod/dark,
 /area/ship/maintenance/central)
+"uV" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 8
+	},
+/obj/machinery/light{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/airalarm/directional/east,
+/obj/machinery/button/door{
+	id = "baydoors";
+	pixel_y = 23
+	},
+/turf/open/floor/plating{
+	icon_state = "platingdmg3"
+	},
+/area/ship/cargo)
 "uW" = (
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
 	dir = 1
@@ -752,6 +788,10 @@
 	icon_state = "platingdmg3"
 	},
 /area/ship/maintenance/fore)
+"wP" = (
+/obj/structure/sign/mining/survival,
+/turf/closed/wall/mineral/titanium/survival/nodiagonal,
+/area/ship/maintenance/central)
 "wQ" = (
 /turf/closed/wall/mineral/titanium/survival,
 /area/ship/cargo)
@@ -904,20 +944,6 @@
 /obj/structure/window/reinforced/fulltile,
 /turf/open/floor/plating,
 /area/ship/bridge)
-"AU" = (
-/obj/structure/cable{
-	icon_state = "5-8"
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 8
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 8
-	},
-/obj/machinery/door/airlock/glass,
-/obj/machinery/door/firedoor,
-/turf/open/floor/plating,
-/area/ship/crew)
 "AZ" = (
 /obj/effect/turf_decal/techfloor{
 	dir = 6
@@ -1060,10 +1086,6 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /turf/open/floor/plating,
 /area/ship/maintenance/fore)
-"Hf" = (
-/obj/structure/sign/mining/survival,
-/turf/closed/wall/mineral/titanium/survival/nodiagonal,
-/area/ship/maintenance/central)
 "Ht" = (
 /obj/machinery/atmospherics/components/unary/outlet_injector/on/layer4{
 	dir = 4
@@ -1500,6 +1522,19 @@
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/fore)
+"PV" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/effect/spawner/lootdrop/grille_or_trash,
+/obj/machinery/door/firedoor,
+/turf/open/floor/plating,
+/area/ship/maintenance/fore)
 "Qd" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
 /obj/structure/cable{
@@ -1616,6 +1651,20 @@
 	},
 /turf/open/floor/pod/dark,
 /area/ship/maintenance/central)
+"Tt" = (
+/obj/structure/cable{
+	icon_state = "5-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 8
+	},
+/obj/machinery/door/airlock/glass,
+/obj/machinery/door/firedoor,
+/turf/open/floor/plating,
+/area/ship/crew)
 "TJ" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/turf_decal/industrial/warning/dust,
@@ -1623,19 +1672,6 @@
 	icon_state = "platingdmg1"
 	},
 /area/ship/cargo)
-"TU" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/structure/cable{
-	icon_state = "0-2"
-	},
-/obj/effect/spawner/lootdrop/grille_or_trash,
-/obj/machinery/door/firedoor,
-/turf/open/floor/plating,
-/area/ship/maintenance/fore)
 "TW" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/manifold/purple/hidden{
@@ -1650,32 +1686,6 @@
 	},
 /turf/open/floor/pod/dark,
 /area/ship/maintenance/central)
-"Uh" = (
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
-	dir = 8
-	},
-/obj/machinery/light{
-	dir = 1
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/airalarm/directional/east,
-/obj/machinery/button/door{
-	id = "baydoors";
-	pixel_y = 23
-	},
-/turf/open/floor/plating{
-	icon_state = "platingdmg3"
-	},
-/area/ship/cargo)
-"UA" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
-	dir = 1
-	},
-/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
-/turf/open/floor/plating,
-/area/ship/maintenance/fore)
 "UO" = (
 /obj/item/reagent_containers/food/snacks/canned/peaches/maint,
 /obj/item/reagent_containers/food/snacks/rationpack,
@@ -1701,16 +1711,6 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 10
 	},
-/turf/open/floor/plating,
-/area/ship/bridge)
-"Vs" = (
-/obj/machinery/door/airlock,
-/obj/structure/cable{
-	icon_state = "1-10"
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/machinery/door/firedoor,
 /turf/open/floor/plating,
 /area/ship/bridge)
 "VA" = (
@@ -1949,7 +1949,7 @@ dN
 dN
 BH
 Qd
-UA
+jy
 tk
 BH
 KG
@@ -1979,10 +1979,10 @@ aA
 aA
 ov
 gr
-Hf
+wP
 ov
 ov
-Hf
+wP
 wd
 BJ
 vK
@@ -1997,7 +1997,7 @@ Fi
 Mp
 xC
 Ha
-TU
+PV
 tR
 Lw
 kz
@@ -2014,7 +2014,7 @@ BJ
 "}
 (9,1,1) = {"
 AO
-tm
+ca
 ln
 QM
 PB
@@ -2022,7 +2022,7 @@ rV
 rV
 pC
 rV
-AU
+Tt
 ov
 Ti
 ov
@@ -2039,7 +2039,7 @@ ue
 AO
 cw
 UY
-Vs
+lK
 Zj
 rV
 Sb
@@ -2077,7 +2077,7 @@ aG
 ov
 mL
 gh
-Uh
+uV
 TJ
 ue
 "}
@@ -2117,10 +2117,10 @@ Rj
 fg
 ts
 aF
-Hf
+wP
 ov
 ov
-Hf
+wP
 kF
 BJ
 jN

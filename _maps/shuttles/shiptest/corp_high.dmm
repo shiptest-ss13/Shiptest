@@ -45,12 +45,6 @@
 "bc" = (
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/dorm)
-"bd" = (
-/obj/structure/frame/computer{
-	dir = 8
-	},
-/turf/open/floor/carpet,
-/area/ship/bridge)
 "be" = (
 /obj/structure/railing/corner,
 /obj/item/radio/intercom{
@@ -1842,6 +1836,12 @@
 /obj/machinery/suit_storage_unit/independent/mining/eva,
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
+"Ak" = (
+/obj/structure/frame/computer{
+	dir = 8
+	},
+/turf/open/floor/carpet,
+/area/ship/bridge)
 "Aq" = (
 /turf/template_noop,
 /area/template_noop)
@@ -4051,7 +4051,7 @@ Rw
 (11,1,1) = {"
 DH
 DH
-bd
+Ak
 LM
 fc
 BP

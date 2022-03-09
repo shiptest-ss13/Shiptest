@@ -344,10 +344,6 @@
 /obj/effect/spawner/lootdrop/pizzaparty,
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
-"mw" = (
-/obj/structure/frame/computer,
-/turf/open/floor/plating,
-/area/ship/maintenance/fore)
 "mX" = (
 /obj/structure/cable{
 	icon_state = "2-4"
@@ -862,6 +858,10 @@
 /obj/item/screwdriver/power,
 /turf/open/floor/plating,
 /area/ship/maintenance/central)
+"Hq" = (
+/obj/structure/frame/computer,
+/turf/open/floor/plating,
+/area/ship/maintenance/fore)
 "Hs" = (
 /obj/structure/window/reinforced/tinted{
 	dir = 4
@@ -1467,7 +1467,7 @@ nT
 "}
 (5,1,1) = {"
 Rd
-mw
+Hq
 ob
 cQ
 lQ

@@ -1340,6 +1340,10 @@
 	},
 /turf/open/floor/carpet/stellar,
 /area/ship/bridge)
+"wz" = (
+/obj/structure/frame/computer,
+/turf/open/floor/carpet/stellar,
+/area/ship/bridge)
 "wE" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/trash/candle,
@@ -1784,10 +1788,6 @@
 	name = "emerald wall"
 	},
 /area/ship/crew/dorm)
-"Ma" = (
-/obj/structure/frame/computer,
-/turf/open/floor/carpet/stellar,
-/area/ship/bridge)
 "Mb" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
 	dir = 4
@@ -2588,7 +2588,7 @@ No
 "}
 (9,1,1) = {"
 ab
-Ma
+wz
 io
 Mb
 ab
