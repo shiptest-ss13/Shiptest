@@ -915,6 +915,7 @@
 	dir = 8
 	},
 /obj/machinery/door/airlock/glass,
+/obj/machinery/door/firedoor,
 /turf/open/floor/plating,
 /area/ship/crew)
 "AZ" = (
@@ -1061,7 +1062,7 @@
 /area/ship/maintenance/fore)
 "Hf" = (
 /obj/structure/sign/mining/survival,
-/turf/closed/wall/mineral/titanium/survival,
+/turf/closed/wall/mineral/titanium/survival/nodiagonal,
 /area/ship/maintenance/central)
 "Ht" = (
 /obj/machinery/atmospherics/components/unary/outlet_injector/on/layer4{
@@ -1632,6 +1633,7 @@
 	icon_state = "0-2"
 	},
 /obj/effect/spawner/lootdrop/grille_or_trash,
+/obj/machinery/door/firedoor,
 /turf/open/floor/plating,
 /area/ship/maintenance/fore)
 "TW" = (
@@ -1658,12 +1660,15 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/airalarm/directional/east,
+/obj/machinery/button/door{
+	id = "baydoors";
+	pixel_y = 23
+	},
 /turf/open/floor/plating{
 	icon_state = "platingdmg3"
 	},
 /area/ship/cargo)
 "UA" = (
-/obj/machinery/door/firedoor,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
 	dir = 1
@@ -1705,6 +1710,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/door/firedoor,
 /turf/open/floor/plating,
 /area/ship/bridge)
 "VA" = (
@@ -2001,7 +2007,7 @@ LF
 jo
 ov
 mL
-BJ
+lL
 BJ
 BJ
 BJ
