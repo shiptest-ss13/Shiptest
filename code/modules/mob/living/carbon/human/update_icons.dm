@@ -222,7 +222,7 @@ There are several things that need to be remembered:
 
 		if(!gloves_overlay)
 			return
-		if(OFFSET_GLOVES in dna.species.offset_features)
+		if(OFFSET_GLOVES in dna.species.offset_features && !handled_by_bodytype)
 			gloves_overlay.pixel_x += dna.species.offset_features[OFFSET_GLOVES][1]
 			gloves_overlay.pixel_y += dna.species.offset_features[OFFSET_GLOVES][2]
 		overlays_standing[GLOVES_LAYER] = gloves_overlay
@@ -367,8 +367,15 @@ There are several things that need to be remembered:
 		var/obj/item/I = head
 		var/mutable_appearance/head_overlay
 		update_hud_head(I)
-		var/handled_by_bodytype = FALSE
-		var/icon_file = DEFAULT_HEAD_PATH
+		var/handled_by_bodytype = TRUE
+		var/icon_file
+
+		if((I.supports_variations & VOX_VARIATION) && (dna.species.bodytype & BODYTYPE_VOX))
+			icon_file = VOX_HEAD_PATH
+
+		if(!(icon_exists(icon_file, RESOLVE_ICON_STATE(I))))
+			handled_by_bodytype = FALSE
+			icon_file = DEFAULT_HEAD_PATH
 
 		head_overlay = I.build_worn_icon(default_layer = HEAD_LAYER, default_icon_file = icon_file, isinhands = FALSE, species = CHECK_USE_AUTOGEN)
 

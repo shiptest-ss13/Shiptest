@@ -18,3 +18,4 @@
 #define VOX_EARS_PATH 'icons/mob/species/vox/onmob_ears_vox.dmi'
 #define VOX_MASK_PATH 'icons/mob/species/vox/onmob_mask_vox.dmi'
 #define VOX_SUIT_PATH 'icons/mob/species/vox/onmob_suit_vox.dmi'
+#define VOX_HEAD_PATH 'icons/mob/species/vox/onmob_head_vox.dmi'

@@ -167,8 +167,9 @@
 				to_chat(H,"<span class='notice'>You move \the [I] into your tail's grip.</span>")
 				RegisterSignal(owner, COMSIG_PARENT_EXAMINE, .proc/on_examine)
 				handle_sprite_magic(force = TRUE)
-			else
-				to_chat(H, "<span class='warning'>You are unable to hold that item in your tail!</span>")
+				return
+
+		to_chat(H, "<span class='warning'>You are unable to hold that item in your tail!</span>")
 
 /datum/action/innate/tail_hold/proc/on_examine(datum/source, mob/user, list/examine_list)
 	var/mob/living/carbon/human/H = owner
