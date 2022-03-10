@@ -71,21 +71,6 @@ export const ShuttleManipulatorStatus = (props, context) => {
             <Table.Cell>
               {shuttle.status}
             </Table.Cell>
-            <Table.Cell>
-              {shuttle.mode}
-              {!!shuttle.timer && (
-                <>
-                  ({shuttle.timeleft})
-                  <Button
-                    content="Fast Travel"
-                    key={shuttle.id}
-                    disabled={!shuttle.can_fast_travel}
-                    onClick={() => act('fast_travel', {
-                      id: shuttle.id,
-                    })} />
-                </>
-              )}
-            </Table.Cell>
           </Table.Row>
         ))}
       </Table>

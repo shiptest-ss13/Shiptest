@@ -157,7 +157,7 @@
 	power_channel = AREA_USAGE_ENVIRON
 
 /obj/machinery/readybutton/attack_ai(mob/user as mob)
-	to_chat(user, "<span class='warning'>The station AI is not to interact with these devices!</span>")
+	to_chat(user, "<span class='warning'>The AI is not to interact with these devices!</span>")
 	return
 
 /obj/machinery/readybutton/attack_paw(mob/user as mob)

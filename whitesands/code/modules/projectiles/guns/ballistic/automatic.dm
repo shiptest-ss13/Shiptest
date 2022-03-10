@@ -14,7 +14,7 @@
 
 /obj/item/gun/ballistic/automatic/pistol/commander
 	name = "\improper Commander"
-	desc = "A modification on the classic 1911 handgun, this one is chambered in 9mm. Much like its predecessor, it suffers from low capacity."
+	desc = "A modification on the classic 1911 handgun, chambered in 9mm. The smaller cartridge allows for improved magazine capacity."
 	icon_state = "commander"
 	w_class = WEIGHT_CLASS_NORMAL
 	mag_type = /obj/item/ammo_box/magazine/co9mm
@@ -100,8 +100,6 @@
 	fire_sound = 'sound/weapons/gun/rifle/shot.ogg'
 	icon_state = "ak47"
 	item_state = "ak47"
-	lefthand_file = 'icons/mob/inhands/weapons/64x_guns_left.dmi'
-	righthand_file = 'icons/mob/inhands/weapons/64x_guns_right.dmi'
 	fire_rate = 5
 	mag_display = TRUE
 	weapon_weight = WEAPON_MEDIUM
@@ -115,7 +113,7 @@
 	icon = 'icons/obj/guns/48x32guns.dmi'
 	fire_sound = 'sound/weapons/gun/rifle/shot.ogg'
 	icon_state = "ak47_nt"
-	item_state = "ntak"
+	item_state = "ak47_nt"
 	fire_rate = 5
 	mag_display = TRUE
 	weapon_weight = WEAPON_MEDIUM
@@ -123,26 +121,31 @@
 	mag_type = /obj/item/ammo_box/magazine/aknt
 	var/folded = FALSE
 	var/unfolded_spread = 2
-	var/unfolded_recoil = 0
-	var/folded_spread = 7
-	var/folded_recoil = 0.50
+	var/unfolded_item_state = "ak47_nt"
+	var/folded_spread = 20
+	var/folded_item_state = "ak47_nt_stockless"
 
 /obj/item/gun/ballistic/automatic/ak47/nt/CtrlClick(mob/user)
 	. = ..()
 	if((!ishuman(user) || user.stat))
 		return
-	fold(user)
+	to_chat(user, "<span class='notice'>You start to [folded ? "unfold" : "fold"] the stock on the [src].</span>")
+	if(do_after(user, 10, target = src))
+		fold(user)
+		user.update_inv_back()
+		user.update_inv_hands()
+		user.update_inv_s_store()
 
 /obj/item/gun/ballistic/automatic/ak47/nt/proc/fold(mob/user)
 	if(folded)
 		to_chat(user, "<span class='notice'>You unfold the stock on the [src].</span>")
 		spread = unfolded_spread
-		recoil = unfolded_recoil
+		item_state = unfolded_item_state
 		w_class = WEIGHT_CLASS_BULKY
 	else
 		to_chat(user, "<span class='notice'>You fold the stock on the [src].</span>")
 		spread = folded_spread
-		recoil = folded_recoil
+		item_state = folded_item_state
 		w_class = WEIGHT_CLASS_NORMAL
 
 	folded = !folded
@@ -208,3 +211,15 @@
 	mag_display = TRUE
 	weapon_weight = WEAPON_LIGHT
 	fire_rate = 3
+
+/obj/item/gun/ballistic/automatic/ak47/inteq
+	name = "\improper AKM"
+	desc = "An AKM that has been tinkered with, and branded with markings denoting it as a weapon from the IRMG."
+	icon = 'icons/obj/guns/48x32guns.dmi'
+	fire_sound = 'sound/weapons/gun/rifle/akm.ogg'
+	icon_state = "akm"
+	item_state = "akm"
+	lefthand_file = 'icons/mob/inhands/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/weapons/guns_righthand.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/back.dmi'
+	mag_display = TRUE

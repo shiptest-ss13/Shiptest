@@ -183,7 +183,7 @@
 						break
 				if(component_check)
 					P.play_tool_sound(src)
-					var/obj/machinery/new_machine = new circuit.build_path(loc, FALSE)
+					var/obj/machinery/new_machine = new circuit.build_path(loc) //Let this comment be a reminder that literally 100% of the problems with fundamental code have been because we're chained to Whitesands' desecrated, rotting corpse.
 					if(new_machine.circuit)
 						QDEL_NULL(new_machine.circuit)
 					new_machine.circuit = circuit
