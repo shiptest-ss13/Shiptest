@@ -288,6 +288,7 @@
 	. = ..()
 	AddComponent(/datum/component/armor_plate)
 
+	//Heavy Mining Hardsuit, bought from Cargo.
 /obj/item/clothing/suit/space/hardsuit/mining/heavy
 	name = "heavy mining hardsuit"
 	desc = "A heavy frontier operations hardsuit, generally carried by purpose-built mining vessels travelling to highly dangerous locales. Possesses enhanced chemical and enviromental resistance, thick armor plating, and attach points for field reinforcement."
