@@ -583,7 +583,7 @@
 /datum/game_mode/proc/generate_credit_text()
 	. = list()
 
-	for(var/obj/structure/overmap/ship/simulated/final_ship as anything in SSovermap.simulated_ships)
+	for(var/datum/overmap/ship/controlled/final_ship as anything in SSovermap.controlled_ships)
 		if(length(final_ship.job_slots) == 0) //Way to find if it's a ruin-spawned ship or similar
 			continue
 		. += "<center><h1>The [capitalize(pick(GLOB.adjectives))] [final_ship.name]:</h1></center>"
