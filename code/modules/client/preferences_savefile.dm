@@ -394,7 +394,6 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	READ_FILE(S["feature_moth_wings"], features["moth_wings"])
 	READ_FILE(S["feature_moth_markings"], features["moth_markings"])
 
-	READ_FILE(S["equipped_gear"], equipped_gear)
 	READ_FILE(S["jumpsuit_style"], jumpsuit_style)
 	READ_FILE(S["exowear"], exowear)
 	READ_FILE(S["feature_moth_fluff"], features["moth_fluff"])
@@ -408,6 +407,13 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	READ_FILE(S["feature_kepori_feathers"], features["kepori_feathers"])
 	READ_FILE(S["feature_kepori_body_feathers"], features["kepori_body_feathers"])
 	READ_FILE(S["alt_titles_preferences"], alt_titles_preferences)
+
+	READ_FILE(S["equipped_gear"], equipped_gear)
+	if(config) //This should *probably* always be there, but just in case.
+		if(length(equipped_gear) > CONFIG_GET(number/max_loadout_items))
+			to_chat(parent, "<span class='userdanger'>Loadout maximum items exceeded in loaded slot, Your loadout has been cleared! You had [length(equipped_gear)]/[CONFIG_GET(number/max_loadout_items)] equipped items!</span>")
+			equipped_gear = list()
+			WRITE_FILE(S["equipped_gear"]				, equipped_gear)
 
 	alt_titles_preferences = SANITIZE_LIST(alt_titles_preferences)
 	if(SSjob)
