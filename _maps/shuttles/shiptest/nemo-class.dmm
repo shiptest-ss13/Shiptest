@@ -139,10 +139,7 @@
 	dir = 4;
 	pixel_x = -28
 	},
-/obj/structure/table/reinforced,
-/obj/item/stack/cable_coil,
-/obj/item/clothing/head/welding,
-/obj/item/storage/belt/utility/full,
+/obj/machinery/mecha_part_fabricator,
 /turf/open/floor/circuit,
 /area/ship/science)
 "cj" = (
@@ -319,9 +316,6 @@
 "eK" = (
 /obj/machinery/light{
 	dir = 8
-	},
-/obj/structure/chair/office{
-	dir = 1
 	},
 /turf/open/floor/circuit,
 /area/ship/science)
@@ -1941,7 +1935,10 @@
 /turf/open/floor/engine/air,
 /area/ship/engineering/atmospherics)
 "My" = (
-/obj/machinery/mecha_part_fabricator,
+/obj/structure/table/reinforced,
+/obj/item/clothing/head/welding,
+/obj/item/stack/cable_coil,
+/obj/item/storage/belt/utility/full,
 /turf/open/floor/circuit,
 /area/ship/science)
 "MM" = (
