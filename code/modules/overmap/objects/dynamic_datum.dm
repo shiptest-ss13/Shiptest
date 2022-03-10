@@ -1,16 +1,19 @@
-/obj/structure/overmap/dynamic
+/**
+  * # Dynamic Overmap Encounters
+  *
+  * These overmap objects can be docked with and will create a dynamically generated area of many different types depending on the planet variable.
+  * When undocked with, it checks if there's anyone left on the planet, and if not, will move to another random location and wait to create a new encounter.
+  */
+/datum/overmap/dynamic
 	name = "weak energy signature"
-	desc = "A very weak energy signal. It may not still be here if you leave it."
-	icon_state = "strange_event"
+	char_rep = "?"
 	///The active turf reservation, if there is one
 	var/datum/map_zone/mapzone
 	///The preset ruin template to load, if/when it is loaded.
 	var/datum/map_template/template
 	///The docking port in the reserve
-	var/obj/docking_port/stationary/reserve_dock
-	///The docking port in the reserve
-	var/obj/docking_port/stationary/reserve_dock_secondary
-	///If the level should be preserved. Useful for if you want to build an autismfort or something.
+	var/list/obj/docking_port/stationary/reserve_docks
+	///If the level should be preserved. Useful for if you want to build a colony or something.
 	var/preserve_level = FALSE
 	///What kind of planet the level is, if it's a planet at all.
 	var/planet
@@ -21,51 +24,68 @@
 	///The planet that will be forced to load
 	var/force_encounter
 
-/obj/structure/overmap/dynamic/Initialize(mapload)
+/datum/overmap/dynamic/Initialize(position, ...)
 	. = ..()
 	choose_level_type()
 
-/obj/structure/overmap/dynamic/attack_ghost(mob/user)
-	if(reserve_dock)
-		user.forceMove(get_turf(reserve_dock))
-		return TRUE
+/datum/overmap/dynamic/Destroy()
+	for(var/obj/docking_port/stationary/dock as anything in reserve_docks)
+		reserve_docks -= dock
+		qdel(dock, TRUE)
+	if(mapzone)
+		mapzone.clear_reservation()
+		QDEL_NULL(mapzone)
+	return ..()
+
+/datum/overmap/dynamic/get_jump_to_turf()
+	if(reserve_docks)
+		return get_turf(pick(reserve_docks))
+
+/datum/overmap/dynamic/pre_docked(datum/overmap/ship/controlled/dock_requester)
+	if(!load_level())
+		return FALSE
 	else
+		var/dock_to_use = null
+		for(var/obj/docking_port/stationary/dock as anything in reserve_docks)
+			if(!dock.get_docked())
+				dock_to_use = dock
+				break
+
+		if(!dock_to_use)
+			return FALSE
+		adjust_dock_to_shuttle(dock_to_use, dock_requester.shuttle_port)
+		return new /datum/docking_ticket(dock_to_use, src, dock_requester)
+
+/datum/overmap/dynamic/post_docked(datum/overmap/ship/controlled/dock_requester)
+	if(planet_name)
+		for(var/mob/M as anything in GLOB.player_list)
+			if(dock_requester.shuttle_port.is_in_shuttle_bounds(M))
+				M.play_screen_text("<span class='maptext' style=font-size:24pt;text-align:center valign='top'><u>[planet_name]</u></span><br>[station_time_timestamp_fancy("hh:mm")]")
+
+/datum/overmap/dynamic/post_undocked(datum/overmap/dock_requester)
+	if(preserve_level)
 		return
 
-/obj/structure/overmap/dynamic/Destroy()
-	. = ..()
-	remove_mapzone()
+	if(length(mapzone?.get_mind_mobs()))
+		return //Dont fuck over stranded people? tbh this shouldn't be called on this condition, instead of bandaiding it inside
 
-/obj/structure/overmap/dynamic/proc/remove_mapzone()
+	log_shuttle("[src] [REF(src)] UNLOAD")
+	var/list/results = SSovermap.get_unused_overmap_square()
+	Move(results["x"], results["y"])
+	choose_level_type()
+
+	for(var/obj/docking_port/stationary/dock as anything in reserve_docks)
+		reserve_docks -= dock
+		qdel(dock, TRUE)
+	reserve_docks = null
 	if(mapzone)
 		mapzone.clear_reservation()
 		QDEL_NULL(mapzone)
 
-/obj/structure/overmap/dynamic/ship_act(mob/user, obj/structure/overmap/ship/simulated/acting)
-	var/prev_state = acting.state
-	acting.state = OVERMAP_SHIP_ACTING //This is so the controls are locked while loading the level to give both a sense of confirmation and to prevent people from moving the ship
-	log_shuttle("[src] [REF(src)]: SHIP_ACT FROM [acting] [REF(acting)]")
-	. = load_level(acting.shuttle)
-	if(.)
-		acting.state = prev_state
-	else
-		var/dock_to_use = null
-		if(!reserve_dock.get_docked())
-			dock_to_use = reserve_dock
-		else if(!reserve_dock_secondary.get_docked())
-			dock_to_use = reserve_dock_secondary
-
-		if(!dock_to_use)
-			acting.state = prev_state
-			to_chat(user, "<span class='notice'>All potential docking locations occupied.</span>")
-			return
-		adjust_dock_to_shuttle(dock_to_use, acting.shuttle)
-		to_chat(user, "<span class='notice'>[acting.dock(src, dock_to_use)]</span>") //If a value is returned from load_level(), say that, otherwise, commence docking
-
 /**
   * Chooses a type of level for the dynamic level to use.
   */
-/obj/structure/overmap/dynamic/proc/choose_level_type()
+/datum/overmap/dynamic/proc/choose_level_type()
 	var/chosen
 	if(!probabilities)
 		probabilities = list(DYNAMIC_WORLD_LAVA = min(length(SSmapping.lava_ruins_templates), 20),
@@ -81,66 +101,63 @@
 		chosen = force_encounter
 	else
 		chosen = pickweight(probabilities)
-	mass = rand(50, 100) * 1000000 //50 to 100 million tonnes //this was a stupid feature
 	switch(chosen)
 		if(DYNAMIC_WORLD_LAVA)
-			name = "strange lava planet"
-			desc = "A very weak energy signal originating from a planet with lots of seismic and volcanic activity."
+			Rename("strange lava planet")
+			token.desc = "A very weak energy signal originating from a planet with lots of seismic and volcanic activity."
 			planet = DYNAMIC_WORLD_LAVA
-			icon_state = "globe"
-			color = COLOR_ORANGE
+			token.icon_state = "globe"
+			token.color = COLOR_ORANGE
 			planet_name = gen_planet_name()
 		if(DYNAMIC_WORLD_ICE)
-			name = "strange ice planet"
-			desc = "A very weak energy signal originating from a planet with traces of water and extremely low temperatures."
+			Rename("strange ice planet")
+			token.desc = "A very weak energy signal originating from a planet with traces of water and extremely low temperatures."
 			planet = DYNAMIC_WORLD_ICE
-			icon_state = "globe"
-			color = COLOR_BLUE_LIGHT
+			token.icon_state = "globe"
+			token.color = COLOR_BLUE_LIGHT
 			planet_name = gen_planet_name()
 		if(DYNAMIC_WORLD_JUNGLE)
-			name = "strange jungle planet"
-			desc = "A very weak energy signal originating from a planet teeming with life."
+			Rename("strange jungle planet")
+			token.desc = "A very weak energy signal originating from a planet teeming with life."
 			planet = DYNAMIC_WORLD_JUNGLE
-			icon_state = "globe"
-			color = COLOR_LIME
+			token.icon_state = "globe"
+			token.color = COLOR_LIME
 			planet_name = gen_planet_name()
 		if(DYNAMIC_WORLD_SAND)
-			name = "strange sand planet"
-			desc = "A very weak energy signal originating from a planet with many traces of silica."
+			Rename("strange sand planet")
+			token.desc = "A very weak energy signal originating from a planet with many traces of silica."
 			planet = DYNAMIC_WORLD_SAND
-			icon_state = "globe"
-			color = COLOR_GRAY
+			token.icon_state = "globe"
+			token.color = COLOR_GRAY
 			planet_name = gen_planet_name()
 		if(DYNAMIC_WORLD_ROCKPLANET)
-			name = "strange rock planet"
-			desc = "A very weak energy signal originating from a abandoned industrial planet."
+			Rename("strange rock planet")
+			token.desc = "A very weak energy signal originating from a abandoned industrial planet."
 			planet = DYNAMIC_WORLD_ROCKPLANET
-			icon_state = "globe"
-			color = COLOR_BROWN
+			token.icon_state = "globe"
+			token.color = COLOR_BROWN
 			planet_name = gen_planet_name()
 		if(DYNAMIC_WORLD_REEBE)
-			name = "???"
-			desc = "Some sort of strange portal. Theres no identification of what this is."
+			Rename("???")
+			token.desc = "Some sort of strange portal. Theres no identification of what this is."
 			planet = DYNAMIC_WORLD_REEBE
-			icon_state = "wormhole"
-			color = COLOR_YELLOW
+			token.icon_state = "wormhole"
+			token.color = COLOR_YELLOW
 		if(DYNAMIC_WORLD_ASTEROID)
-			name = "large asteroid"
-			desc = "A large asteroid with significant traces of minerals."
+			Rename("large asteroid")
+			token.desc = "A large asteroid with significant traces of minerals."
 			planet = DYNAMIC_WORLD_ASTEROID
-			icon_state = "asteroid"
-			mass = rand(1, 1000) * 100
-			color = COLOR_GRAY
+			token.icon_state = "asteroid"
+			token.color = COLOR_GRAY
 		if(DYNAMIC_WORLD_SPACERUIN)
-			name = "weak energy signal"
-			desc = "A very weak energy signal emenating from space."
+			Rename("weak energy signal")
+			token.desc = "A very weak energy signal emenating from space."
 			planet = DYNAMIC_WORLD_SPACERUIN
-			icon_state = "strange_event"
-			color = null
-			mass = 0 //Space doesn't weigh anything
-	desc += !preserve_level && "It may not still be here if you leave it."
+			token.icon_state = "strange_event"
+			token.color = null
+	token.desc += !preserve_level && "It may not still be here if you leave it."
 
-/obj/structure/overmap/dynamic/proc/gen_planet_name()
+/datum/overmap/dynamic/proc/gen_planet_name()
 	. = ""
 	switch(rand(1,10))
 		if(1 to 4)
@@ -157,21 +174,23 @@
   * Load a level for a ship that's visiting the level.
   * * visiting shuttle - The docking port of the shuttle visiting the level.
   */
-/obj/structure/overmap/dynamic/proc/load_level(obj/docking_port/mobile/visiting_shuttle)
+/datum/overmap/dynamic/proc/load_level()
 	if(mapzone)
-		return
+		return TRUE
 	if(!COOLDOWN_FINISHED(SSovermap, encounter_cooldown))
-		return "WARNING! Stellar interference is restricting flight in this area. Interference should pass in [COOLDOWN_TIMELEFT(SSovermap, encounter_cooldown) / 10] seconds."
-	log_shuttle("[src] [REF(src)] LEVEL_INIT: FOR [visiting_shuttle]")
+		return FALSE
+	log_shuttle("[src] [REF(src)] LEVEL_INIT")
 	var/list/dynamic_encounter_values = SSovermap.spawn_dynamic_encounter(planet, TRUE, ruin_type = template)
+	if(!length(dynamic_encounter_values))
+		return FALSE
 	mapzone = dynamic_encounter_values[1]
-	reserve_dock = dynamic_encounter_values[2]
-	reserve_dock_secondary = dynamic_encounter_values[3]
+	reserve_docks = dynamic_encounter_values[2]
+	return TRUE
 
 /**
  * Alters the position and orientation of a stationary docking port to ensure that any mobile port small enough can dock within its bounds
  */
-/obj/structure/overmap/dynamic/proc/adjust_dock_to_shuttle(obj/docking_port/stationary/dock_to_adjust, obj/docking_port/mobile/shuttle)
+/datum/overmap/dynamic/proc/adjust_dock_to_shuttle(obj/docking_port/stationary/dock_to_adjust, obj/docking_port/mobile/shuttle)
 	log_shuttle("[src] [REF(src)] DOCKING: ADJUST [dock_to_adjust] [REF(dock_to_adjust)] TO [shuttle][REF(shuttle)]")
 	// the shuttle's dimensions where "true height" measures distance from the shuttle's fore to its aft
 	var/shuttle_true_height = shuttle.height
@@ -228,81 +247,6 @@
 	dock_to_adjust.dheight = new_dheight
 	dock_to_adjust.dwidth = new_dwidth
 
-/**
-  * Unloads the reserve, deletes the linked docking port, and moves to a random location if there's no client-having, alive mobs.
-  */
-/obj/structure/overmap/dynamic/proc/unload_level()
-	log_shuttle("[src] [REF(src)] UNLOAD")
-	if(preserve_level)
-		return
-
-	if(mapzone)
-		if(length(mapzone.get_mind_mobs()))
-			return //Dont fuck over stranded people? tbh this shouldn't be called on this condition, instead of bandaiding it inside
-		if(SSovermap.generator_type == OVERMAP_GENERATOR_SOLAR)
-			forceMove(SSovermap.get_unused_overmap_square_in_radius())
-		else
-			forceMove(SSovermap.get_unused_overmap_square())
-		choose_level_type()
-		remove_mapzone()
-
-	if(reserve_dock)
-		qdel(reserve_dock, TRUE)
-		reserve_dock = null
-	if(reserve_dock_secondary)
-		qdel(reserve_dock_secondary, TRUE)
-		reserve_dock_secondary = null
-
-/obj/structure/overmap/dynamic/empty
-	name = "Empty Space"
-	desc = "A ship appears to be docked here."
-	icon_state = "object"
-
-/obj/structure/overmap/dynamic/empty/choose_level_type()
-	return
-
-/obj/structure/overmap/dynamic/empty/unload_level()
-	if(preserve_level)
-		return
-
-	if(mapzone)
-		if(length(mapzone.get_mind_mobs()))
-			return //Dont fuck over stranded people? tbh this shouldn't be called on this condition, instead of bandaiding it inside
-		remove_mapzone()
-
-	if(reserve_dock)
-		qdel(reserve_dock, TRUE)
-		reserve_dock = null
-	if(reserve_dock_secondary)
-		qdel(reserve_dock_secondary, TRUE)
-		reserve_dock_secondary = null
-
-	qdel(src)
-
-/obj/structure/overmap/dynamic/lava
-	force_encounter = DYNAMIC_WORLD_LAVA
-
-/obj/structure/overmap/dynamic/ice
-	force_encounter = DYNAMIC_WORLD_ICE
-
-/obj/structure/overmap/dynamic/sand
-	force_encounter = DYNAMIC_WORLD_SAND
-
-/obj/structure/overmap/dynamic/jungle
-	force_encounter = DYNAMIC_WORLD_JUNGLE
-
-/obj/structure/overmap/dynamic/rock
-	force_encounter = DYNAMIC_WORLD_ROCKPLANET
-
-/obj/structure/overmap/dynamic/reebe
-	force_encounter = DYNAMIC_WORLD_REEBE
-
-/obj/structure/overmap/dynamic/asteroid
-	force_encounter = DYNAMIC_WORLD_ASTEROID
-
-/obj/structure/overmap/dynamic/energy_signal
-	force_encounter = DYNAMIC_WORLD_SPACERUIN
-
 /area/overmap_encounter
 	name = "\improper Overmap Encounter"
 	icon_state = "away"
@@ -358,3 +302,15 @@
 		var/mob/M = AM
 		if(M.client)
 			addtimer(CALLBACK(M.client, /client/proc/play_reebe_ambience), 900)
+
+/datum/overmap/dynamic/empty
+	name = "Empty Space"
+
+/datum/overmap/dynamic/empty/choose_level_type()
+	return
+
+/datum/overmap/dynamic/empty/post_undocked(datum/overmap/ship/controlled/dock_requester)
+	if(length(mapzone?.get_mind_mobs()))
+		return //Dont fuck over stranded people? tbh this shouldn't be called on this condition, instead of bandaiding it inside
+	log_shuttle("[src] [REF(src)] UNLOAD")
+	qdel(src)

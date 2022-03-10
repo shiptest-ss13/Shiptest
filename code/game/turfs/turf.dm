@@ -117,7 +117,7 @@
 		add_overlay(/obj/effect/fullbright)
 
 	if(requires_activation)
-		CALCULATE_ADJACENT_TURFS(src)
+		ImmediateCalculateAdjacentTurfs()
 
 	if (light_power && light_range)
 		update_light()
@@ -159,7 +159,7 @@
 /turf/proc/set_temperature()
 
 /turf/proc/Initalize_Atmos(times_fired)
-	CALCULATE_ADJACENT_TURFS(src)
+	ImmediateCalculateAdjacentTurfs()
 
 /turf/Destroy(force)
 	. = QDEL_HINT_IWILLGC
@@ -656,6 +656,3 @@
 		if(!ismopable(content))
 			continue
 		content.wash(clean_types)
-
-/turf/proc/IgniteTurf(power, fire_color = "red")
-	return
