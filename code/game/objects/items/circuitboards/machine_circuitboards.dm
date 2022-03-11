@@ -377,6 +377,30 @@
 #undef PATH_FREEZER
 #undef PATH_HEATER
 
+/obj/item/circuitboard/machine/shieldwallgen
+	name = "Shieldwall Generator (Machine Board)"
+	icon_state = "engineering"
+	build_path = /obj/machinery/power/shieldwallgen
+	req_components = list(
+		/obj/item/stock_parts/manipulator = 2,
+		/obj/item/stock_parts/micro_laser = 2,
+		/obj/item/stack/sheet/plasmaglass = 1,
+		/obj/item/stack/cable_coil = 5
+		)
+	needs_anchored = FALSE
+
+/obj/item/circuitboard/machine/shieldwallgen/atmos
+	name = "Atmospheric Holowall Generator (Machine Board)"
+	build_path = /obj/machinery/power/shieldwallgen/atmos
+
+/obj/item/circuitboard/machine/pipedispenser
+	name = "Pipe dispenser (Machine Board)"
+	icon_state = "engineering"
+	build_path = /obj/machinery/pipedispenser
+	req_components = list(
+		/obj/item/stock_parts/manipulator = 1,
+		/obj/item/stock_parts/matter_bin = 1)
+
 //Generic
 
 /obj/item/circuitboard/machine/circuit_imprinter

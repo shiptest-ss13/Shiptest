@@ -16,6 +16,7 @@
 /obj/machinery/computer/selling_pad_control
 	name = "cargo hold control terminal"
 	circuit = /obj/item/circuitboard/computer/selling_pad_control
+	icon_screen = "bounty"
 	var/status_report = "Ready for delivery."
 	var/datum/weakref/pad
 	var/warmup_time = 100

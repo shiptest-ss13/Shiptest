@@ -916,7 +916,7 @@
 	dir = 4;
 	pixel_x = -24
 	},
-/obj/machinery/computer/autopilot{
+/obj/structure/frame/computer{
 	dir = 4
 	},
 /turf/open/floor/mineral/plastitanium,
@@ -1702,6 +1702,9 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/bridge)
 "FB" = (
@@ -2341,7 +2344,6 @@
 	dwidth = 13;
 	height = 13;
 	launch_status = 0;
-	movement_force = list("KNOCKDOWN" = 0, "THROW" = 0);
 	name = "Salvage Ship";
 	port_direction = 8;
 	preferred_direction = 4;

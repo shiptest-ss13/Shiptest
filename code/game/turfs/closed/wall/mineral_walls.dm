@@ -170,6 +170,9 @@
 	smoothing_groups = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_WALLS, SMOOTH_GROUP_WOOD_WALLS)
 	canSmoothWith = list(SMOOTH_GROUP_WOOD_WALLS)
 
+/turf/closed/wall/mineral/wood/nonmetal/icecropolis
+	baseturfs = /turf/open/indestructible/necropolis/air
+
 /turf/closed/wall/mineral/wood/attackby(obj/item/W, mob/user)
 	if(W.get_sharpness() && W.force)
 		var/duration = (48/W.force) * 2 //In seconds, for now.
@@ -195,6 +198,9 @@
 	smoothing_flags = SMOOTH_BITMASK
 	smoothing_groups = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_WALLS, SMOOTH_GROUP_IRON_WALLS)
 	canSmoothWith = list(SMOOTH_GROUP_IRON_WALLS)
+
+/turf/closed/wall/mineral/iron/icecropolis
+	baseturfs = /turf/open/indestructible/necropolis/air
 
 /turf/closed/wall/mineral/snow
 	name = "packed snow wall"

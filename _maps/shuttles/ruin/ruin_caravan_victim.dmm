@@ -379,7 +379,7 @@
 /obj/effect/turf_decal/corner/blue{
 	dir = 8
 	},
-/obj/machinery/computer/autopilot{
+/obj/structure/frame/computer{
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark{
@@ -1353,7 +1353,6 @@
 	dwidth = 5;
 	height = 11;
 	launch_status = 0;
-	movement_force = list("KNOCKDOWN" = 0, "THROW" = 0);
 	name = "Small Freighter";
 	port_direction = 8;
 	preferred_direction = 4;

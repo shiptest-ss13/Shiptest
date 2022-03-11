@@ -606,8 +606,7 @@
 
 /atom/movable/proc/onTransitZ(old_z,new_z)
 	SEND_SIGNAL(src, COMSIG_MOVABLE_Z_CHANGED, old_z, new_z)
-	for (var/item in src) // Notify contents of Z-transition. This can be overridden IF we know the items contents do not care.
-		var/atom/movable/AM = item
+	for (var/atom/movable/AM as anything in src) // Notify contents of Z-transition. This can be overridden IF we know the items contents do not care.
 		AM.onTransitZ(old_z,new_z)
 
 
@@ -905,10 +904,9 @@
 /atom/movable/proc/ex_check(ex_id)
 	if(!ex_id)
 		return TRUE
-	LAZYINITLIST(acted_explosions)
-	if(ex_id in acted_explosions)
+	if(LAZYISIN(ex_id, acted_explosions))
 		return FALSE
-	acted_explosions += ex_id
+	LAZYADD(acted_explosions, ex_id)
 	return TRUE
 
 //TODO: Better floating
@@ -1064,21 +1062,21 @@
 	I.appearance_flags = APPEARANCE_UI_IGNORE_ALPHA
 	var/turf/T = get_turf(src)
 	var/direction
-	var/to_x = 0
-	var/to_y = 0
+	var/to_x = target.base_pixel_x
+	var/to_y = target.base_pixel_y
 
 	if(!QDELETED(T) && !QDELETED(target))
 		direction = get_dir(T, target)
 	if(direction & NORTH)
-		to_y = 32
+		to_y += 32
 	else if(direction & SOUTH)
-		to_y = -32
+		to_y -= 32
 	if(direction & EAST)
-		to_x = 32
+		to_x += 32
 	else if(direction & WEST)
-		to_x = -32
+		to_x -= 32
 	if(!direction)
-		to_y = 16
+		to_y += 16
 	flick_overlay(I, GLOB.clients, 6)
 	var/matrix/M = new
 	M.Turn(pick(-30, 30))

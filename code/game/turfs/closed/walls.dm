@@ -28,6 +28,8 @@
 	var/break_sound = 'sound/items/welder.ogg'
 
 	var/list/dent_decals
+	/// The underlay generated and applied when a chisel makes a wall diagonal. Stored here for removal on un-diagonalizing
+	var/mutable_appearance/smooth_underlay
 
 
 /turf/closed/wall/Initialize(mapload, inherited_virtual_z)
@@ -71,10 +73,8 @@
 			transfer_fingerprints_to(newgirder)
 		playsound(src, break_sound, 100, TRUE)
 
-	for(var/obj/O in src.contents) //Eject contents!
-		if(istype(O, /obj/structure/sign/poster))
-			var/obj/structure/sign/poster/P = O
-			P.roll_and_drop(src)
+	for(var/obj/structure/sign/poster/P in src.contents) //Eject contents!
+		P.roll_and_drop(src)
 
 	ScrapeAway()
 

@@ -433,7 +433,7 @@
 /obj/effect/turf_decal/corner/red{
 	dir = 4
 	},
-/obj/machinery/computer/autopilot,
+/obj/structure/frame/computer,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "oT" = (
@@ -1054,7 +1054,6 @@
 	dir = 2;
 	dwidth = 14;
 	height = 13;
-	movement_force = list("KNOCKDOWN" = 0, "THROW" = 0);
 	name = "Pirate Cutter";
 	port_direction = 8;
 	preferred_direction = 4;

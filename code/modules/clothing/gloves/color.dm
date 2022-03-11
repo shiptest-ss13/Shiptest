@@ -14,7 +14,7 @@
 
 /obj/item/toy/sprayoncan
 	name = "spray-on insulation applicator"
-	desc = "What is the number one problem facing our station today?"
+	desc = "What is the number one problem facing our society today?"
 	icon = 'icons/obj/clothing/gloves.dmi'
 	icon_state = "sprayoncan"
 
@@ -204,6 +204,12 @@
 	item_state = "nitrilegloves"
 	transfer_prints = FALSE
 	carrytrait = TRAIT_QUICKER_CARRY
+
+/obj/item/clothing/gloves/color/latex/nitrile/evil
+	name = "red nitrile gloves"
+	desc = "Thick sterile gloves that reach up to the elbows, in exactly the same color as fresh blood. Transfers combat medic knowledge into the user via nanochips."
+	icon_state = "nitrile_evil"
+	item_state = "nitrile_evil"
 
 /obj/item/clothing/gloves/color/latex/nitrile/infiltrator
 	name = "infiltrator gloves"

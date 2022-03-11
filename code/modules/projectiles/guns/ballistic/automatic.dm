@@ -11,6 +11,7 @@
 	suppressed_sound = 'sound/weapons/gun/smg/shot_suppressed.ogg'
 	automatic = 1
 	weapon_weight = WEAPON_MEDIUM
+	pickup_sound =  'sound/items/handling/rifle_pickup.ogg'
 
 /obj/item/gun/ballistic/automatic/proto
 	name = "\improper Nanotrasen Saber SMG"
@@ -99,7 +100,7 @@
 /obj/item/gun/ballistic/automatic/mini_uzi
 	name = "\improper Type U3 Uzi"
 	desc = "A lightweight submachine gun, for when you really want someone dead. Uses 9mm rounds."
-	icon_state = "miniuzi"
+	icon_state = "uzi"
 	mag_type = /obj/item/ammo_box/magazine/uzim9mm
 	bolt_type = BOLT_TYPE_OPEN
 	mag_display = TRUE

@@ -83,7 +83,7 @@
 
 	var/ejected = 0
 	if(stored_card && (!slot || slot == 1))
-		if(user)
+		if(user && Adjacent(user) && !issiliconoradminghost(user))
 			user.put_in_hands(stored_card)
 		else
 			stored_card.forceMove(drop_location())
@@ -91,7 +91,7 @@
 		ejected++
 
 	if(stored_card2 && (!slot || slot == 2))
-		if(user)
+		if(user && Adjacent(user) && !issiliconoradminghost(user))
 			user.put_in_hands(stored_card2)
 		else
 			stored_card2.forceMove(drop_location())

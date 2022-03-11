@@ -415,7 +415,7 @@
 
 /obj/item/melee/supermatter_sword
 	name = "supermatter sword"
-	desc = "In a station full of bad ideas, this might just be the worst."
+	desc = "In a universe full of bad ideas, this might just be the worst."
 	icon = 'icons/obj/items_and_weapons.dmi'
 	icon_state = "supermatter_sword"
 	item_state = "supermatter_sword"

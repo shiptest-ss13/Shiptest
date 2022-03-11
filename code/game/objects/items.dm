@@ -18,6 +18,8 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	///Icon file for right inhand overlays
 	var/righthand_file = 'icons/mob/inhands/items_righthand.dmi'
 
+	var/supports_variations = null //This is a bitfield that defines what variations exist for bodyparts like Digi legs.
+
 	///Icon file for mob worn overlays.
 	var/icon/mob_overlay_icon
 	///icon state for mob worn overlays, if null the normal icon_state will be used.
@@ -87,6 +89,9 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	///flags for what should be done when you click on the item, default is picking it up
 	var/interaction_flags_item = INTERACT_ITEM_ATTACK_HAND_PICKUP
 
+	/// Used in picking icon_states based on the string color here. Also used for cables or something. This could probably do with being deprecated.
+	var/item_color = null
+
 	///What body parts are covered by the clothing when you wear it
 	var/body_parts_covered = 0
 	///Literally does nothing right now
@@ -110,10 +115,14 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	///How long it takes to resist out of the item (cuffs and such)
 	var/breakouttime = 0
 
-	///Used in [atom/proc/attackby] to say how something was attacked "[x] has been [z.attack_verb] by [y] with [z]"
+	/// Used in attackby() to say how something was attacked "[x] has been [z.attack_verb] by [y] with [z]"
 	var/list/attack_verb
-	///list() of species types, if a species cannot put items in a certain slot, but species type is in list, it will be able to wear that item
+	/// list() of species types, if a species cannot put items in a certain slot, but species type is in list, it will be able to wear that item
 	var/list/species_exception = null
+	///A bitfield of a species to use as an alternative sprite for any given item. DMIs are stored in the species datum and called via proc in update_icons.
+	var/sprite_sheets = null
+	///A bitfield of bodytypes that the item cannot be worn by.
+	var/restricted_bodytypes = null
 
 	///Who threw the item
 	var/mob/thrownby = null
@@ -473,6 +482,17 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 /obj/item/proc/on_found(mob/finder)
 	return
 
+
+/**
+ * To be overwritten to only perform visual tasks;
+ * this is directly called instead of `equipped` on visual-only features like human dummies equipping outfits.
+ *
+ * This separation exists to prevent things like the monkey sentience helmet from
+ * polling ghosts while it's just being equipped as a visual preview for a dummy.
+ */
+/obj/item/proc/visual_equipped(mob/user, slot, initial = FALSE)
+	return
+
 /**
   *called after an item is placed in an equipment slot
 
@@ -483,6 +503,7 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
   */
 /obj/item/proc/equipped(mob/user, slot, initial = FALSE)
 	SHOULD_CALL_PARENT(1)
+	visual_equipped(user, slot, initial)
 	SEND_SIGNAL(src, COMSIG_ITEM_EQUIPPED, user, slot)
 	for(var/X in actions)
 		var/datum/action/A = X

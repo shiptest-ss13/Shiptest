@@ -149,6 +149,7 @@
 		else
 			set_cap_status(TRUE)
 			to_chat(user, "<span class='notice'>You put the cap on [src].</span>")
+		playsound(src, 'sound/items/glass_cap.ogg', 50, 1)
 
 /obj/item/reagent_containers/proc/canconsume(mob/eater, mob/user)
 	if(!iscarbon(eater))
@@ -200,6 +201,7 @@
 			reagents.total_volume *= rand(5,10) * 0.1 //Not all of it makes contact with the target
 		var/mob/M = target
 		var/R
+		playsound(src, 'sound/items/glass_splash.ogg', 50, 1)
 		target.visible_message("<span class='danger'>[M] is splashed with something!</span>", \
 						"<span class='userdanger'>[M] is splashed with something!</span>")
 		for(var/datum/reagent/A in reagents.reagent_list)
@@ -218,6 +220,7 @@
 			log_combat(thrownby, target, "splashed (thrown) [english_list(reagents.reagent_list)]", "in [AREACOORD(target)]")
 			log_game("[key_name(thrownby)] splashed (thrown) [english_list(reagents.reagent_list)] on [target] in [AREACOORD(target)].")
 			message_admins("[ADMIN_LOOKUPFLW(thrownby)] splashed (thrown) [english_list(reagents.reagent_list)] on [target] in [ADMIN_VERBOSEJMP(target)].")
+		playsound(src, 'sound/items/glass_splash.ogg', 50, 1)
 		visible_message("<span class='notice'>[src] spills its contents all over [target].</span>")
 		reagents.expose(target, TOUCH)
 		if(QDELETED(src))

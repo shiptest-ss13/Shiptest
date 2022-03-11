@@ -71,8 +71,6 @@ SUBSYSTEM_DEF(vote)
 					choices[GLOB.master_mode] += non_voters.len
 					if(choices[GLOB.master_mode] >= greatest_votes)
 						greatest_votes = choices[GLOB.master_mode]
-
-			//WS Begin - Autotransfer
 			else if(mode == "transfer")
 				var/factor = 1
 				switch(world.time / (1 MINUTES ))
@@ -87,7 +85,6 @@ SUBSYSTEM_DEF(vote)
 					else
 						factor = 1.4
 				choices["Initiate Crew Transfer"] += round(non_voters.len * factor)
-			//WS End
 
 	//get all options with that many votes and return them in a list
 	. = list()
@@ -141,15 +138,9 @@ SUBSYSTEM_DEF(vote)
 						restart = TRUE
 					else
 						GLOB.master_mode = .
-
-			//WS Begin - Autotransfer
 			if("transfer")
 				if(. == "Initiate Crew Transfer")
 					SSshuttle.request_jump()
-			//WS End
-
-			if("map")
-				SSshuttle.action_load(SSmapping.maplist[.])
 
 	if(restart)
 		var/active_admins = FALSE
@@ -203,16 +194,10 @@ SUBSYSTEM_DEF(vote)
 				choices.Add("Restart Round","Continue Playing")
 			if("gamemode")
 				choices.Add(config.votable_modes)
-
-			//WS Begin - Autotransfer
 			if("transfer")
 				if(SSshuttle.jump_mode != BS_JUMP_IDLE)
 					return FALSE
 				choices.Add("Initiate Crew Transfer","Continue Playing")
-			//WS End
-
-			if("map")
-				choices.Add(SSmapping.maplist)
 			if("custom")
 				question = stripped_input(usr,"What is the vote for?")
 				if(!question)
@@ -225,19 +210,18 @@ SUBSYSTEM_DEF(vote)
 			else
 				return FALSE
 		mode = vote_type
-		initiator = initiator_key ? initiator_key : "the Server" //WS Edit - Autotransfer
+		initiator = initiator_key || "the Server"
 		started_time = world.time
 		var/text = "[capitalize(mode)] vote started by [initiator]."
 		if(mode == "custom")
 			text += "\n[question]"
 		log_vote(text)
 
-		//WS Begin - Ghost Vote Rework
 		var/vp = CONFIG_GET(number/vote_period)
 		var/vote_message =  "\n<font color='purple'><b>[text]</b>\nType <b>vote</b> or click <a href='?src=[REF(src)]'>here</a> to place your votes.\nYou have [DisplayTimeText(vp)] to vote.</font>"
 		if(observer_vote_allowed)
 			to_chat(world, vote_message)
-			SEND_SOUND(world, sound('sound/misc/notice2.ogg'))
+			SEND_SOUND(world, sound('sound/misc/vinethud.ogg'))
 			time_remaining = round(vp/10)
 			for(var/c in GLOB.clients)
 				var/client/C = c
@@ -256,7 +240,7 @@ SUBSYSTEM_DEF(vote)
 					valid_clients -= C
 			for(var/c in valid_clients)
 				var/client/C = c
-				SEND_SOUND(C, sound('sound/misc/notice2.ogg'))
+				SEND_SOUND(C, sound('sound/misc/vinethud.ogg'))
 				to_chat(C.mob, vote_message)
 				var/datum/action/vote/V = new
 				if(question)
@@ -266,7 +250,6 @@ SUBSYSTEM_DEF(vote)
 				generated_actions += V
 			time_remaining = round(vp/10)
 			return TRUE
-		//WS End - Ghost Vote Rework
 	return FALSE
 
 /datum/controller/subsystem/vote/proc/interface(client/C)
@@ -315,16 +298,6 @@ SUBSYSTEM_DEF(vote)
 			. += "\t(<a href='?src=[REF(src)];vote=toggle_gamemode'>[avm ? "Allowed" : "Disallowed"]</a>)"
 
 		. += "</li>"
-		//map
-		var/avmap = CONFIG_GET(flag/allow_vote_map)
-		if(trialmin || avmap)
-			. += "<a href='?src=[REF(src)];vote=map'>Map</a>"
-		else
-			. += "<font color='grey'>Map (Disallowed)</font>"
-		if(trialmin)
-			. += "\t(<a href='?src=[REF(src)];vote=toggle_map'>[avmap ? "Allowed" : "Disallowed"]</a>)"
-
-		. += "</li>"
 		//custom
 		if(trialmin)
 			. += "<li><a href='?src=[REF(src)];vote=custom'>Custom</a></li>"
@@ -356,21 +329,15 @@ SUBSYSTEM_DEF(vote)
 		if("toggle_gamemode")
 			if(usr.client.holder && trialmin)
 				CONFIG_SET(flag/allow_vote_mode, !CONFIG_GET(flag/allow_vote_mode))
-		if("toggle_map")
-			if(usr.client.holder && trialmin)
-				CONFIG_SET(flag/allow_vote_map, !CONFIG_GET(flag/allow_vote_map))
 		if("restart")
 			if(CONFIG_GET(flag/allow_vote_restart) || usr.client.holder)
-				initiate_vote("restart",usr.key, TRUE) //WS Edit - Ghost Vote Rework
+				initiate_vote("restart",usr.key, TRUE)
 		if("gamemode")
 			if(CONFIG_GET(flag/allow_vote_mode) || usr.client.holder)
-				initiate_vote("gamemode",usr.key, TRUE) //WS Edit - Ghost Vote Rework
-		if("map")
-			if(CONFIG_GET(flag/allow_vote_map) || usr.client.holder)
-				initiate_vote("map",usr.key, TRUE) //WS Edit - Ghost Vote Rework
+				initiate_vote("gamemode",usr.key, TRUE)
 		if("custom")
 			if(usr.client.holder)
-				initiate_vote("custom",usr.key, TRUE) //WS Edit - Ghost Vote Rework
+				initiate_vote("custom",usr.key, TRUE)
 		else
 			submit_vote(round(text2num(href_list["vote"])))
 	usr.vote()

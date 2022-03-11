@@ -11,9 +11,10 @@
 	var/port_x_offset
 	var/port_y_offset
 
+	var/limit
 	var/cost
 	var/short_name
-	var/list/job_slots
+	var/list/job_slots = list()
 	var/list/name_categories = list("GENERAL")
 	var/prefix = "SV"
 
@@ -68,7 +69,7 @@
 		if(length(place.baseturfs) < 2) // Some snowflake shuttle shit
 			continue
 		var/list/sanity = place.baseturfs.Copy()
-		sanity.Insert(3, /turf/baseturf_skipover/shuttle)
+		sanity.Insert(3, /turf/baseturf_skipover/shuttle) //The first two are the "real" baseturfs, place above these but below plating.
 		place.baseturfs = baseturfs_string_list(sanity, place)
 
 		for(var/obj/docking_port/mobile/port in place)
@@ -108,6 +109,10 @@
 /// Shiptest-specific main maps. Do not make subtypes! Make a json in /_maps/configs/ instead.
 /datum/map_template/shuttle/shiptest
 	category = "shiptest"
+
+/datum/map_template/shuttle/custom
+	job_slots = list(new /datum/job/assistant = 5) // There will already be a captain, probably!
+	file_name = "custom_shuttle" // Dummy
 
 /// Mining shuttles
 /datum/map_template/shuttle/mining

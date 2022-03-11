@@ -175,6 +175,9 @@ GLOBAL_VAR_INIT(observer_default_invisibility, INVISIBILITY_OBSERVER)
 
 	QDEL_NULL(orbit_menu)
 	QDEL_NULL(spawners_menu)
+
+	remove_data_huds()
+
 	return ..()
 
 /*
@@ -274,6 +277,15 @@ Works together with spawning an observer, noted above.
 */
 
 /mob/proc/ghostize(can_reenter_corpse = TRUE)
+	for(var/mob/dead/observer/ghost in GLOB.dead_mob_list)
+		if(!ghost.mind || !ghost.can_reenter_corpse)
+			continue
+		if(ghost.mind == mind)
+			SStgui.on_transfer(src, ghost)
+			if(!can_reenter_corpse)
+				ghost.mind = null
+				key = null
+			return ghost
 	if(key)
 		if(key[1] != "@") // Skip aghosts.
 			stop_sound_channel(CHANNEL_HEARTBEAT) //Stop heartbeat sounds because You Are A Ghost Now
@@ -284,6 +296,7 @@ Works together with spawning an observer, noted above.
 			ghost.client.init_verbs()
 			if(!can_reenter_corpse)	// Disassociates observer mind from the body mind
 				ghost.mind = null
+				key = null
 			return ghost
 
 /*
@@ -343,7 +356,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 	set name = "Re-enter Corpse"
 	if(!client)
 		return
-	if(!mind || QDELETED(mind.current))
+	if(!mind || QDELETED(mind.current) || mind.current.loc == null)
 		to_chat(src, "<span class='warning'>You have no body.</span>")
 		return
 	if(!can_reenter_corpse)
@@ -466,8 +479,8 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 /mob/dead/observer/stop_orbit(datum/component/orbiter/orbits)
 	. = ..()
 	//restart our floating animation after orbit is done.
-	pixel_y = 0
-	animate(src, pixel_y = 2, time = 10, loop = -1)
+	pixel_y = base_pixel_y
+	animate(src, pixel_y = base_pixel_y + 2, time = 1 SECONDS, loop = -1)
 
 /mob/dead/observer/verb/jumptomob() //Moves the ghost instead of just changing the ghosts's eye -Nodrak
 	set category = "Ghost"
@@ -817,8 +830,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 			var/mob/target = client.eye
 			observetarget = null
 			if(target.observers)
-				target.observers -= src
-				UNSETEMPTY(target.observers)
+				LAZYREMOVE(target.observers, src)
 	if(..())
 		if(hud_used)
 			client.screen = list()
@@ -847,8 +859,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 		client.eye = mob_eye
 		if(mob_eye.hud_used)
 			client.screen = list()
-			LAZYINITLIST(mob_eye.observers)
-			mob_eye.observers |= src
+			LAZYOR(mob_eye.observers, src)
 			mob_eye.hud_used.show_hud(mob_eye.hud_used.hud_version, src)
 			observetarget = mob_eye
 

@@ -120,7 +120,7 @@
 	data["beaconzone"] = beacon ? get_area(beacon) : ""//where is the beacon located? outputs in the tgui
 	data["usingBeacon"] = usingBeacon //is the mode set to deliver to the beacon or the cargobay?
 	data["canBeacon"] = !usingBeacon || canBeacon //is the mode set to beacon delivery, and is the beacon in a valid location?
-	data["canBuyBeacon"] = cooldown <= 0 && charge_account.account_balance >= BEACON_COST
+	data["canBuyBeacon"] = charge_account ? (cooldown <= 0 && charge_account.account_balance >= BEACON_COST) : FALSE
 	data["beaconError"] = usingBeacon && !canBeacon ? "(BEACON ERROR)" : ""//changes button text to include an error alert if necessary
 	data["hasBeacon"] = beacon != null//is there a linked beacon?
 	data["beaconName"] = beacon ? beacon.name : "No Beacon Found"

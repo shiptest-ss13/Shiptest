@@ -120,7 +120,7 @@ GLOBAL_DATUM_INIT(ahelp_tickets, /datum/admin_help_tickets, new)
 	if(C.current_ticket)
 		var/datum/admin_help/T = C.current_ticket
 		T.AddInteraction("Client disconnected.")
-		SSblackbox.LogAhelp(T, "Disconnected", "Client disconnected", C.ckey)
+		SSblackbox.LogAhelp(T.id, "Disconnected", "Client disconnected", C.ckey)
 		T.initiator = null
 
 //Get a ticket given a ckey
@@ -620,7 +620,7 @@ GLOBAL_DATUM_INIT(ahelp_tickets, /datum/admin_help_tickets, new)
   */
 /proc/send2otherserver(source, msg, type = "Ahelp", target_servers, list/additional_data = list())
 	if(!CONFIG_GET(string/comms_key))
-		debug_world_log("Server cross-comms message not sent for lack of configured key")
+		debug2_world_log("Server cross-comms message not sent for lack of configured key")
 		return
 
 	var/our_id = CONFIG_GET(string/cross_comms_name)
@@ -643,7 +643,7 @@ GLOBAL_DATUM_INIT(ahelp_tickets, /datum/admin_help_tickets, new)
 	if (auth)
 		var/comms_key = CONFIG_GET(string/comms_key)
 		if(!comms_key)
-			debug_world_log("Server cross-comms message not sent for lack of configured key")
+			debug2_world_log("Server cross-comms message not sent for lack of configured key")
 			return
 		message["key"] = comms_key
 	var/list/servers = CONFIG_GET(keyed_list/cross_server)

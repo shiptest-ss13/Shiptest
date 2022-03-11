@@ -139,6 +139,10 @@
 	var/list/canSmoothWith = null
 	///Reference to atom being orbited
 	var/atom/orbit_target
+	///Default X pixel offset
+	var/base_pixel_x
+	///Default Y pixel offset
+	var/base_pixel_y
 
 /**
   * Called when an atom is created in byond (built in engine proc)
@@ -913,8 +917,8 @@
   * Default behaviour is to loop through atom contents and call their HandleTurfChange() proc
   */
 /atom/proc/HandleTurfChange(turf/T)
-	for(var/a in src)
-		var/atom/A = a
+	for(var/atom in src)
+		var/atom/A = atom
 		A.HandleTurfChange(T)
 
 /**
@@ -1129,7 +1133,7 @@
 		if(newname)
 			vv_auto_rename(newname)
 
-	if(href_list[VV_HK_EDIT_FILTERS] && check_rights(R_VAREDIT))
+	if(href_list[VV_HK_EDIT_FILTERS] && check_rights(R_ADMIN|R_DEBUG) && check_rights(R_VAREDIT)) //This needs to be like this due to the fact that I'm not coding a fucking UI state for R_VV for ONE BUTTON.
 		var/client/C = usr.client
 		C?.open_filter_editor(src)
 
@@ -1531,3 +1535,20 @@
 ///Called when something resists while this atom is its loc
 /atom/proc/container_resist_act(mob/living/user)
 
+///Setter for the "base_pixel_x" var to append behavior related to it's changing
+/atom/proc/set_base_pixel_x(var/new_value)
+	if(base_pixel_x == new_value)
+		return
+	. = base_pixel_x
+	base_pixel_x = new_value
+
+	pixel_x = pixel_x + base_pixel_x - .
+
+///Setter for the "base_pixel_y" var to append behavior related to it's changing
+/atom/proc/set_base_pixel_y(new_value)
+	if(base_pixel_y == new_value)
+		return
+	. = base_pixel_y
+	base_pixel_y = new_value
+
+	pixel_y = pixel_y + base_pixel_y - .
