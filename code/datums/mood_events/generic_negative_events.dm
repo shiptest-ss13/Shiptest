@@ -297,3 +297,8 @@
 	description = "<span class='warning'>OW!! That was even worse than a regular noogie!</span>\n"
 	mood_change = -4
 	timeout = 1 MINUTES
+
+/datum/mood_event/cement
+	description = "<span class='warning'>I was forced to eat cement...</span>\n"
+	mood_change = -6
+	timeout = 4 MINUTES

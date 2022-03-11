@@ -73,6 +73,16 @@
 	else
 		. += "<span class='notice'>The cap has been taken off. Alt-click to put a cap on.</span>"
 
+/obj/item/reagent_containers/is_injectable(mob/user, allowmobs = TRUE)
+	if(can_have_cap && cap_on)
+		return FALSE
+	. = ..()
+
+/obj/item/reagent_containers/is_drawable(mob/user, allowmobs = TRUE)
+	if(can_have_cap && cap_on)
+		return FALSE
+	. = ..()
+
 /obj/item/reagent_containers/is_refillable()
 	if(can_have_cap && cap_on)
 		return FALSE
@@ -99,6 +109,27 @@
 /obj/item/reagent_containers/attack(mob/M, mob/user, def_zone)
 	if(user.a_intent == INTENT_HARM)
 		return ..()
+
+// FIGURE OUT: resolve conflict with /obj/item/reagent_containers/glass/afterattack() (liquid transfer)
+/obj/item/reagent_containers/attack_obj(obj/O, mob/living/user)
+	// if user is on an intent other than help, or we're not drainable, or we are empty
+	if(user.a_intent != INTENT_HELP || !is_drainable() || !reagents.total_volume)
+		return ..()
+	O.visible_message("<span class='notice'>[user] attempts to pour [src] onto [O].</span>")
+	if(!do_after(user, 3 SECONDS, target=O))
+		return
+	// reagents may have been emptied
+	if(!reagents || !reagents.total_volume)
+		return
+	O.visible_message("<span class='notice'>[user] poured [src] onto [O].</span>")
+	log_combat(user, O, "poured [english_list(reagents.reagent_list)]", "in [AREACOORD(O)]")
+	log_game("[key_name(user)] poured [english_list(reagents.reagent_list)] on [O] in [AREACOORD(O)].")
+	var/frac = min(amount_per_transfer_from_this/reagents.total_volume, 1)
+	// don't use trans_to, because we're not ADDING it to the object, we're just... pouring it.
+	reagents.expose(O, TOUCH, frac)
+	for(var/reagent in reagents.reagent_list)
+		var/datum/reagent/R = reagent
+		reagents.remove_reagent(R.type, R.volume * frac)
 
 /obj/item/reagent_containers/AltClick(mob/user)
 	. = ..()
@@ -203,7 +234,7 @@
 
 /obj/item/reagent_containers/attackby(obj/item/I, mob/user, params) //procs dip_object any time an object is used on a container, makes the noises if any reagent returned true
 	var/success = FALSE
-	if(!src.cap_on)
+	if(is_refillable())
 		for(var/datum/reagent/R in reagents.reagent_list)
 			if(R.dip_object(I, user, src))
 				success = TRUE
