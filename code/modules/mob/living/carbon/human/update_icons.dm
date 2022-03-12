@@ -72,7 +72,6 @@ There are several things that need to be remembered:
 //For legacy support.
 /mob/living/carbon/human/regenerate_icons()
 	if(!..())
-		icon_render_keys = list()
 		update_body()
 		update_hair()
 		update_inv_w_uniform()
