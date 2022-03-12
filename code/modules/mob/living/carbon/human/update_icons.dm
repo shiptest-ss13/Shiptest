@@ -71,7 +71,6 @@ There are several things that need to be remembered:
 /* --------------------------------------- */
 //For legacy support.
 /mob/living/carbon/human/regenerate_icons()
-
 	if(!..())
 		icon_render_keys = list()
 		update_body()
@@ -217,8 +216,14 @@ There are several things that need to be remembered:
 		var/obj/item/I = gloves
 		update_hud_gloves(I)
 
-		var/handled_by_bodytype
-		gloves_overlay = I.build_worn_icon(default_layer = GLOVES_LAYER, default_icon_file = 'icons/mob/clothing/hands.dmi', species = CHECK_USE_AUTOGEN)
+		var/handled_by_bodytype = TRUE
+		var/icon_file
+
+		if(!(icon_exists(icon_file, RESOLVE_ICON_STATE(I))))
+			handled_by_bodytype = FALSE
+			icon_file = DEFAULT_GLOVES_PATH
+
+		gloves_overlay = I.build_worn_icon(default_layer = GLOVES_LAYER, default_icon_file = icon_file, species = CHECK_USE_AUTOGEN)
 
 		if(!gloves_overlay)
 			return
@@ -241,20 +246,24 @@ There are several things that need to be remembered:
 
 	if(glasses)
 		var/obj/item/I = glasses
-		var/mutable_appearance/glasses_overlay
 		update_hud_glasses(I)
-
-		var/handled_by_bodytype
-
 		if(!(head?.flags_inv & HIDEEYES) && !(wear_mask?.flags_inv & HIDEEYES))
-			glasses_overlay = I.build_worn_icon(default_layer = GLASSES_LAYER, default_icon_file = 'icons/mob/clothing/eyes.dmi', species = CHECK_USE_AUTOGEN)
+			var/mutable_appearance/glasses_overlay
+			var/handled_by_bodytype
+			var/icon_file
 
-		if(!glasses_overlay)
-			return
-		if(OFFSET_GLASSES in dna.species.offset_features)
-			glasses_overlay.pixel_x += dna.species.offset_features[OFFSET_GLASSES][1]
-			glasses_overlay.pixel_y += dna.species.offset_features[OFFSET_GLASSES][2]
-		overlays_standing[GLASSES_LAYER] = glasses_overlay
+			if(!(icon_exists(icon_file, RESOLVE_ICON_STATE(I))))
+				handled_by_bodytype = FALSE
+				icon_file = DEFAULT_GLASSES_PATH
+
+			glasses_overlay = I.build_worn_icon(default_layer = GLASSES_LAYER, default_icon_file = icon_file, species = CHECK_USE_AUTOGEN)
+
+			if(!glasses_overlay)
+				return
+			if(OFFSET_GLASSES in dna.species.offset_features)
+				glasses_overlay.pixel_x += dna.species.offset_features[OFFSET_GLASSES][1]
+				glasses_overlay.pixel_y += dna.species.offset_features[OFFSET_GLASSES][2]
+			overlays_standing[GLASSES_LAYER] = glasses_overlay
 	apply_overlay(GLASSES_LAYER)
 
 
@@ -401,8 +410,13 @@ There are several things that need to be remembered:
 		var/mutable_appearance/belt_overlay
 		update_hud_belt(I)
 		var/handled_by_bodytype
+		var/icon_file
 
-		belt_overlay = I.build_worn_icon(default_layer = BELT_LAYER, default_icon_file = 'icons/mob/clothing/belt.dmi', species = CHECK_USE_AUTOGEN)
+		if(!(icon_exists(icon_file, RESOLVE_ICON_STATE(I))))
+			handled_by_bodytype = FALSE
+			icon_file = DEFAULT_BELT_PATH
+
+		belt_overlay = I.build_worn_icon(default_layer = BELT_LAYER, default_icon_file = icon_file, species = CHECK_USE_AUTOGEN)
 
 		if(!belt_overlay)
 			return
@@ -523,12 +537,18 @@ There are several things that need to be remembered:
 		inv.update_icon()
 
 	if(wear_neck)
+		var/obj/item/I = wear_neck
+		update_hud_neck(I)
 		if(!(ITEM_SLOT_NECK in check_obscured_slots()))
-			var/icon_file = DEFAULT_NECK_PATH
-			var/handled_by_bodytype = FALSE
+			var/icon_file
+			var/handled_by_bodytype = TRUE
+
+			if(!(icon_exists(icon_file, RESOLVE_ICON_STATE(I))))
+				handled_by_bodytype = FALSE
+				icon_file = DEFAULT_NECK_PATH
+
 			overlays_standing[NECK_LAYER] = wear_neck.build_worn_icon(default_layer = NECK_LAYER, default_icon_file = icon_file, species = CHECK_USE_AUTOGEN)
 
-		update_hud_neck(wear_neck)
 
 	apply_overlay(NECK_LAYER)
 

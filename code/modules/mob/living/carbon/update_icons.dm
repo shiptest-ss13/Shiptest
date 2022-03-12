@@ -44,6 +44,7 @@
 	update_inv_handcuffed()
 	update_inv_legcuffed()
 	update_fire()
+	update_body_parts()
 
 
 /mob/living/carbon/update_inv_hands()
