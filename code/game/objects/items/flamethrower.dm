@@ -268,6 +268,7 @@
 /obj/projectile/flamethrower
 	name = "\the flames"
 	damage = 0
+	speed = 1
 	hitsound = ""
 
 	///the turf the target was on when we clicked the flamethrower
