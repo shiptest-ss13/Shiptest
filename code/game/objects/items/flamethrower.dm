@@ -270,6 +270,8 @@
 	damage = 0
 	speed = 1
 	hitsound = ""
+	icon_state = null
+	icon = null
 
 	///the turf the target was on when we clicked the flamethrower
 	var/turf_target
