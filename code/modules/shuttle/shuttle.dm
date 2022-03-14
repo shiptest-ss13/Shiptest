@@ -193,13 +193,12 @@
 
 /obj/docking_port/stationary/proc/load_roundstart()
 	if(roundstart_template) // passed a PATH
-		var/sid = "[initial(roundstart_template.file_name)]"
-
-		roundstart_template = SSmapping.shuttle_templates[sid]
+		var/template = SSmapping.shuttle_templates[initial(roundstart_template.file_name)]
 		if(!roundstart_template)
-			CRASH("Invalid path ([sid]/[roundstart_template]) passed to docking port.")
+			CRASH("Invalid path ([template]) passed to docking port.")
 
-		SSshuttle.action_load(roundstart_template, src)
+		var/datum/overmap/ship/controlled/new_ship = new(SSovermap.get_overmap_object_by_location(src), template, FALSE) //Don't instantiate, we handle that ourselves
+		new_ship.connect_new_shuttle_port(SSshuttle.action_load(template, new_ship, src))
 
 //returns first-found touching shuttleport
 /obj/docking_port/stationary/get_docked()
@@ -239,6 +238,7 @@
 
 	area_type = SHUTTLE_DEFAULT_SHUTTLE_AREA_TYPE
 
+	///All currently linked areas that will be moved when the shuttle (un)docks
 	var/list/shuttle_areas
 
 	///used as a timer (if you want time left to complete move, use timeLeft proc)
@@ -265,6 +265,7 @@
 	var/obj/docking_port/stationary/destination
 	var/obj/docking_port/stationary/previous
 
+	/// The transit dock assigned exclusively to this shuttle.
 	var/obj/docking_port/stationary/transit/assigned_transit
 
 	var/launch_status = NOLAUNCH
@@ -272,17 +273,24 @@
 	///Whether or not you want your ship to knock people down, and also whether it will throw them several tiles upon launching.
 	var/list/movement_force = list("KNOCKDOWN" = 3, "THROW" = 0)
 
+	///List of all the ripple effects made at this shuttle's future docking location.
 	var/list/ripples = list()
 	var/engine_coeff = 1
+
+	///A list of all engines currently linked to the shuttle.
 	var/list/engine_list = list()
+
 	///if this shuttle can move docking ports other than the one it is docked at
 	var/can_move_docking_ports = FALSE
-	var/list/hidden_turfs = list()
 
 	///The linked overmap object, if there is one
-	var/obj/structure/overmap/ship/simulated/current_ship
+	var/datum/overmap/ship/controlled/current_ship
+
 	///List of spawn points on the ship
 	var/list/atom/spawn_points = list()
+
+	///List of all stationary docking ports that spawned on the ship roundstart, used for docking to other ships.
+	var/list/obj/docking_port/stationary/docking_points
 
 /obj/docking_port/mobile/proc/register()
 	SSshuttle.mobile += src
@@ -290,21 +298,21 @@
 /obj/docking_port/mobile/Destroy(force)
 	if(force)
 		SSshuttle.mobile -= src
-		if(current_ship)
-			qdel(current_ship)
 		destination = null
 		previous = null
-		QDEL_NULL(assigned_transit)		//don't need it where we're goin'!
-		shuttle_areas = null
+		if(!QDELETED(current_ship))
+			QDEL_NULL(current_ship)
+		qdel(assigned_transit, TRUE)		//don't need it where we're goin'!
+		assigned_transit = null
+		for(var/obj/docking_port/stationary/docking_point as anything in docking_points)
+			qdel(docking_point, TRUE)
+		docking_points = null
+		shuttle_areas = null //TODO: This is nowhere near enough to clear references, lol. We need an /atom/proc/disconnect_from_shuttle() proc to clear references.
 		remove_ripples()
 	. = ..()
 
 /obj/docking_port/mobile/Initialize(mapload)
 	. = ..()
-
-	if(name == "shuttle")
-		name = "shuttle[SSshuttle.mobile.len]"
-
 	if(!mapload) // If maploaded, will be called in code\datums\shuttles.dm
 		load()
 
@@ -320,14 +328,13 @@
 			if(!cur_area.mobile_port)
 				cur_area.link_to_shuttle(src)
 
-	SSovermap.setup_shuttle_ship(src, source_template)
-
 	#ifdef DOCKING_PORT_HIGHLIGHT
 	highlight("#0f0")
 	#endif
 
 // Called after the shuttle is loaded from template
-/obj/docking_port/mobile/proc/linkup(obj/docking_port/stationary/dock)
+/obj/docking_port/mobile/proc/linkup(obj/docking_port/stationary/dock, datum/overmap/ship/controlled/new_ship)
+	current_ship = new_ship
 	for(var/place in shuttle_areas)
 		var/area/area = place
 		area.connect_to_shuttle(src, dock)
@@ -335,9 +342,8 @@
 			var/atom/atom = each
 			atom.connect_to_shuttle(src, dock)
 
-
 //this is a hook for custom behaviour. Maybe at some point we could add checks to see if engines are intact
-/obj/docking_port/mobile/proc/canMove()
+/obj/docking_port/mobile/proc/can_move()
 	return TRUE
 
 //this is to check if this shuttle can physically dock at dock S
@@ -385,9 +391,6 @@
 		// Triggering shuttle movement code in place is weird
 		return FALSE
 
-/obj/docking_port/mobile/proc/transit_failure()
-	message_admins("Shuttle [src] repeatedly failed to create transit zone.")
-
 //call the shuttle to destination S
 /obj/docking_port/mobile/proc/request(obj/docking_port/stationary/S)
 	if(!check_dock(S))
@@ -428,7 +431,7 @@
 	mode = SHUTTLE_RECALL
 
 /obj/docking_port/mobile/proc/enterTransit()
-	if((SSshuttle.lockdown) || !canMove())	//emp went off, no escape
+	if(SSshuttle.lockdown || !can_move())	//emp went off, no escape
 		mode = SHUTTLE_IDLE
 		return
 	previous = null
