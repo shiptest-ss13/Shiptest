@@ -6,6 +6,7 @@
 	item_state = "flamethrower_0"
 	lefthand_file = 'icons/mob/inhands/weapons/flamethrower_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/flamethrower_righthand.dmi'
+	pickup_sound =  'sound/items/handling/gun_pickup.ogg'
 	flags_1 = CONDUCT_1
 	force = 3
 	throwforce = 10
@@ -63,11 +64,11 @@
 /obj/item/flamethrower/update_overlays()
 	. = ..()
 	if(igniter)
-		. += "+igniter[status]"
+		. += "igniter[status]"
 	if(beaker)
-		. += "+ptank"
+		. += "ptank"
 	if(lit)
-		. += "+lit"
+		. += "lit"
 
 /obj/item/flamethrower/afterattack(atom/target, mob/user, flag)
 	. = ..()
@@ -242,7 +243,12 @@
 		update_icon()
 
 /obj/item/flamethrower/full
+	icon = 'icons/obj/guns/48x32guns.dmi'
+	item_state = "prebuilt_flamethrower_0"
 	create_full = TRUE
+
+/obj/item/flamethrower/full/update_icon_state()
+	item_state = "prebuilt_flamethrower_[lit]"
 
 /obj/item/flamethrower/full/tank
 	create_with_tank = TRUE
