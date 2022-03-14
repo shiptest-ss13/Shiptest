@@ -214,5 +214,6 @@
 
 /obj/structure/mecha_wreckage/tank/Initialize()
 	. = ..()
+	message_admins("A tank was destroyed and has exploded at [ADMIN_VERBOSEJMP(src)].") //logging
 	explosion(src, 0, 2, 4, 4, TRUE, flame_range = 5)
 	return INITIALIZE_HINT_QDEL
