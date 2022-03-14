@@ -65,7 +65,7 @@
 	max_ammo = 10
 
 /obj/item/ammo_box/magazine/p16
-	name = "P-16 Magazine (7.62x39mm FMJ)"
+	name = "P-16 Magazine (5.56mm)"
 	icon_state = "p16_mag"
 	ammo_type = /obj/item/ammo_casing/a556
 	caliber = "a556"

@@ -226,7 +226,7 @@
 
 /obj/item/gun/ballistic/automatic/p16
 	name = "P-16"
-	desc = "A old rifle used by professional mercanaries. It is said that the P-16 and AK-47 destined to be in combat against each other. Chambered in 5.56mm."
+	desc = "An ancient rifle used by professional mercenaries. It is said that the P-16 and AK-47 were destined to be in combat against each other. Chambered in 5.56mm."
 	icon = 'icons/obj/guns/48x32guns.dmi'
 	fire_sound = 'sound/weapons/gun/rifle/m16.ogg'
 	icon_state = "p16"
@@ -240,6 +240,6 @@
 
 /obj/item/gun/ballistic/automatic/p16/minutemen
 	name = "CM-16"
-	desc = "A heavily modified version of the P-16. Standard rifle of the Colonial Minutemen"
+	desc = "A heavily modified version of the P-16. Standard rifle of the Colonial Minutemen."
 	icon_state = "cm16"
 	item_state = "cm16"
