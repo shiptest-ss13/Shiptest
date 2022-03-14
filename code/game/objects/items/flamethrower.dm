@@ -81,9 +81,8 @@
 	if(user && user.get_active_held_item() == src) // Make sure our user is still holding us
 		var/turf/target_turf = get_turf(target)
 		if(target_turf)
-			var/turflist = getline(user, target_turf)
 			log_combat(user, target, "flamethrowered", src)
-			flame_turf(turflist)
+			flame_turf(target)
 
 /obj/item/flamethrower/attackby(obj/item/W, mob/user, params)
 	if(W.tool_behaviour == TOOL_WRENCH && !status)//Taking this apart
@@ -144,7 +143,7 @@
 		user.put_in_hands(beaker)
 		beaker = null
 		to_chat(user, "<span class='notice'>You remove the fuel container from [src]!</span>")
-		update_overlays()
+		update_icon()
 
 /obj/item/flamethrower/examine(mob/user)
 	. = ..()
@@ -185,7 +184,7 @@
 #define FLAMETHROWER_POWER_MULTIPLIER 0.5
 #define FLAMETHROWER_RANGE 4
 
-/obj/item/flamethrower/proc/flame_turf(turflist, release_amount = 8, safety = TRUE)
+/obj/item/flamethrower/proc/flame_turf(target, release_amount = 8, safety = TRUE)
 	if(!beaker)
 		return
 	var/power = 0
@@ -193,30 +192,29 @@
 	var/datum/reagents/my_fraction = new()
 	beaker_reagents.trans_to(my_fraction, release_amount, no_react = TRUE)
 	power = my_fraction.get_total_accelerant_quality() * FLAMETHROWER_POWER_MULTIPLIER
+
 	if(power < REQUIRED_POWER_TO_FIRE_FLAMETHROWER)
 		audible_message("<span class='danger'>The [src] sputters.</span>")
 		playsound(src, 'sound/weapons/gun/flamethrower/flamethrower_empty.ogg', 50, TRUE, -3)
 		return
 	playsound(src, pick('sound/weapons/gun/flamethrower/flamethrower1.ogg','sound/weapons/gun/flamethrower/flamethrower2.ogg','sound/weapons/gun/flamethrower/flamethrower3.ogg' ), 50, TRUE, -3)
-	operating = TRUE
-	var/turfs_being_flamed = 0
-	var/turf/previousturf = get_turf(src)
-	for(var/turf/T in turflist)
-		if(safety && T == previousturf)
-			continue	//so we don't burn the tile we be standin on
-		var/list/turfs_sharing_with_prev = previousturf.GetAtmosAdjacentTurfs(alldir=1)
-		if(!(T in turfs_sharing_with_prev))
-			break
-		default_ignite(T, power)
-		turfs_being_flamed++
-		if(turfs_being_flamed >= FLAMETHROWER_RANGE)
-			break
-		sleep(1)
-		previousturf = T
-	if(!turfs_being_flamed && beaker)
-		my_fraction.trans_to(beaker_reagents, release_amount, no_react = TRUE)
-	qdel(my_fraction)
-	operating = FALSE
+
+	operating = TRUE //anti-spam tool, is unset when the flame projectile goes away
+
+	//let us prepare the projectile
+	var/obj/projectile/flamethrower/flamer_proj = new /obj/projectile/flamethrower(get_turf(src))
+	var/turf/turf_target = get_turf(target)
+	flamer_proj.preparePixelProjectile(get_step(src, pick(GLOB.alldirs)), get_turf(src))
+	flamer_proj.firer = usr
+	flamer_proj.turf_target = turf_target //assign the turf we are firing at to this
+	flamer_proj.linked_flamethrower = src //link ourselves to the projectille
+	flamer_proj.power = power // give the projectille the beaker power
+	flamer_proj.range = FLAMETHROWER_RANGE
+	flamer_proj.release_amount = release_amount // give our release_amount to the projecitlle
+
+
+	flamer_proj.fire(Get_Angle(get_turf(src), turf_target)) //off it goes
+
 
 #undef REQUIRED_POWER_TO_FIRE_FLAMETHROWER
 #undef FLAMETHROWER_POWER_MULTIPLIER
@@ -255,6 +253,70 @@
 		owner.visible_message("<span class='danger'>\The [attack_text] hits the fueltank on [owner]'s [name], rupturing it! What a shot!</span>")
 		var/turf/target_turf = get_turf(owner)
 		log_game("A projectile ([hitby]) detonated a flamethrower tank held by [key_name(owner)] at [COORD(target_turf)]")
-		flame_turf(list(get_turf(src)), 100, FALSE)
+		var/turf/flamer_turf = get_turf(owner)
+		flamer_turf.IgniteTurf(30)
 		QDEL_NULL(beaker)
 		return 1 //It hit the flamethrower, not them
+
+///FLAMETHROWER PROJECTILE
+/obj/projectile/flamethrower
+	name = "\the flames"
+	damage = 0
+	hitsound = ""
+
+	///the turf the target was on when we clicked the flamethrower
+	var/turf_target
+	///the color the turf fire will be when igniting a turf
+	var/flame_color = "red"
+	///the flamethrower this was shot from
+	var/obj/item/flamethrower/linked_flamethrower
+	///how much power do we give the turf fire once it ignites?
+	var/power = 4
+	/// how much do we subtract from the beaker?
+	var/release_amount = 8
+
+
+/obj/projectile/flamethrower/Move()
+	. = ..()
+	if(!linked_flamethrower)
+		return
+	if(!linked_flamethrower.beaker)
+		return
+	var/turf/location = get_turf(src)
+
+	var/datum/reagents/beaker_reagents = linked_flamethrower.beaker.reagents
+	var/datum/reagents/my_fraction = new()
+
+	beaker_reagents.trans_to(my_fraction, release_amount, no_react = TRUE)
+
+	if(location)
+		location.IgniteTurf(power, flame_color)
+		new /obj/effect/hotspot(location)
+		location.hotspot_expose((power*3) + 380,500)
+		if(turf_target)
+			if(location == turf_target)
+				qdel(src)
+
+	if(linked_flamethrower.beaker)
+		my_fraction.trans_to(beaker_reagents, release_amount, no_react = TRUE)
+	qdel(my_fraction)
+
+/obj/projectile/flamethrower/can_hit_target(atom/target, list/passthrough, direct_target, ignore_loc)
+	if(ismob(target))
+		return FALSE
+	return ..()
+
+/obj/projectile/flamethrower/on_hit(atom/target, blocked = FALSE)
+	. = ..()
+	var/turf/hit_turf = get_turf(target)
+	if(!isopenturf(hit_turf))
+		return
+	hit_turf.IgniteTurf(power, flame_color)
+	new /obj/effect/hotspot(hit_turf)
+	hit_turf.hotspot_expose((power*3) + 380,500)
+
+
+/obj/projectile/flamethrower/Destroy()
+	. = ..()
+	if(linked_flamethrower)
+		linked_flamethrower.operating = FALSE
