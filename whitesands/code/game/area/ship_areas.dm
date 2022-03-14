@@ -86,7 +86,7 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	. = ..()
 	if(length(new_baseturfs) > 1 || fake_turf_type)
 		return // More complicated larger changes indicate this isn't a player
-	if(ispath(new_baseturfs[1], /turf/open/floor/plating) && !new_baseturfs.Find(/turf/baseturf_skipover/shuttle))
+	if(ispath(new_baseturfs[1], /turf/open/floor/plating) && !(/turf/baseturf_skipover/shuttle in new_baseturfs))
 		new_baseturfs.Insert(1, /turf/baseturf_skipover/shuttle)
 
 /area/ship/proc/link_to_shuttle(obj/docking_port/mobile/M)
