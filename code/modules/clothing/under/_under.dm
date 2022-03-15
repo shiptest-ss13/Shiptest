@@ -10,7 +10,7 @@
 	drop_sound = 'sound/items/handling/cloth_drop.ogg'
 	pickup_sound =  'sound/items/handling/cloth_pickup.ogg'
 	cuttable = TRUE
-	clothamnt = 5
+	clothamnt = 3
 	greyscale_colors = list(list(15, 17), list(10, 19), list(15, 10))
 	greyscale_icon_state = "under"
 	var/fitted = FEMALE_UNIFORM_FULL // For use in alternate clothing styles for women
