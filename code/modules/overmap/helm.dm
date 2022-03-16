@@ -16,7 +16,7 @@
 	clicksound = null
 
 	/// The ship we reside on for ease of access
-	var/obj/structure/overmap/ship/simulated/current_ship
+	var/datum/overmap/ship/controlled/current_ship
 	/// All users currently using this
 	var/list/concurrent_users = list()
 	/// Is this console view only? I.E. cant dock/etc
@@ -36,13 +36,12 @@
 /obj/machinery/computer/helm/Initialize(mapload, obj/item/circuitboard/C)
 	. = ..()
 	jump_allowed = world.time + CONFIG_GET(number/bluespace_jump_wait)
-	addtimer(CALLBACK(src, .proc/reload_ship), 5)
 
 /obj/machinery/computer/helm/proc/calibrate_jump(inline = FALSE)
 	if(jump_allowed < 0)
 		say("Bluespace Jump Calibration offline. Please contact your system administrator.")
 		return
-	if(current_ship.state != OVERMAP_SHIP_FLYING)
+	if(current_ship.docked_to || current_ship.docking)
 		say("Bluespace Jump Calibration detected interference in the local area.")
 		return
 	if(world.time < jump_allowed)
@@ -82,7 +81,7 @@
 
 /obj/machinery/computer/helm/proc/do_jump()
 	priority_announce("Bluespace Jump Initiated.", sender_override="[current_ship.name] Bluespace Pylon", sound='sound/magic/lightningbolt.ogg', zlevel=virtual_z())
-	current_ship.shuttle.intoTheSunset()
+	current_ship.shuttle_port.intoTheSunset()
 
 /obj/machinery/computer/helm/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock)
 	current_ship = port.current_ship
@@ -94,7 +93,6 @@
 	var/obj/docking_port/mobile/port = SSshuttle.get_containing_shuttle(src)
 	if(port?.current_ship)
 		current_ship = port.current_ship
-		return TRUE
 
 /obj/machinery/computer/helm/ui_interact(mob/user, datum/tgui/ui)
 	if(jump_state != JUMP_STATE_OFF)
@@ -117,10 +115,10 @@
 			use_power(active_power_usage)
 		// Register map objects
 		if(current_ship)
-			user.client.register_map_obj(current_ship.cam_screen)
-			user.client.register_map_obj(current_ship.cam_plane_master)
-			user.client.register_map_obj(current_ship.cam_background)
-			current_ship.update_screen()
+			user.client.register_map_obj(current_ship.token.cam_screen)
+			user.client.register_map_obj(current_ship.token.cam_plane_master)
+			user.client.register_map_obj(current_ship.token.cam_background)
+			current_ship.token.update_screen()
 
 		// Open UI
 		ui = new(user, src, "HelmConsole", name)
@@ -128,28 +126,28 @@
 
 /obj/machinery/computer/helm/ui_data(mob/user)
 	. = list()
-	.["integrity"] = current_ship.integrity
+	if(!current_ship)
+		return
+
 	.["calibrating"] = calibrating
 	.["otherInfo"] = list()
-	for (var/obj/structure/overmap/object as anything in current_ship.close_overmap_objects)
+	for (var/datum/overmap/object as anything in current_ship.get_nearby_overmap_objects())
 		var/list/other_data = list(
 			name = object.name,
-			integrity = object.integrity,
 			ref = REF(object)
 		)
 		.["otherInfo"] += list(other_data)
 
-	var/turf/T = get_turf(current_ship)
-	.["x"] = T.x - SSovermap.overmap_vlevel.low_x
-	.["y"] = T.y - SSovermap.overmap_vlevel.low_y
-	.["state"] = current_ship.state
-	.["docked"] = isturf(current_ship.loc) ? FALSE : TRUE
+	.["x"] = current_ship.x || current_ship.docked_to.x
+	.["y"] = current_ship.y || current_ship.docked_to.y
+	.["docking"] = current_ship.docking
+	.["docked"] = current_ship.docked_to
 	.["heading"] = dir2text(current_ship.get_heading()) || "None"
 	.["speed"] = current_ship.get_speed()
 	.["eta"] = current_ship.get_eta()
 	.["est_thrust"] = current_ship.est_thrust
 	.["engineInfo"] = list()
-	for(var/obj/machinery/power/shuttle/engine/E in current_ship.shuttle.engine_list)
+	for(var/obj/machinery/power/shuttle/engine/E as anything in current_ship.shuttle_port.engine_list)
 		var/list/engine_data
 		if(!E.thruster_active)
 			engine_data = list(
@@ -172,12 +170,12 @@
 /obj/machinery/computer/helm/ui_static_data(mob/user)
 	. = list()
 	.["isViewer"] = viewer
-	.["mapRef"] = current_ship.map_name
+	.["mapRef"] = current_ship.token.map_name
 	.["shipInfo"] = list(
 		name = current_ship.name,
 		class = current_ship.source_template?.name,
 		mass = current_ship.mass,
-		sensor_range = current_ship.sensor_range
+		sensor_range = 4
 	)
 	.["canFly"] = TRUE
 
@@ -186,6 +184,8 @@
 	if(.)
 		return
 	if(viewer)
+		return
+	if(!current_ship)
 		return
 
 	switch(action) // Universal topics
@@ -199,8 +199,8 @@
 			if(!reject_bad_text(new_name, MAX_CHARTER_LEN))
 				say("Error: Replacement designation rejected by system.")
 				return
-			if(!current_ship.set_ship_name(new_name))
-				say("Error: [COOLDOWN_TIMELEFT(current_ship, rename_cooldown)/10] seconds until ship designation can be changed..")
+			if(!current_ship.Rename(new_name))
+				say("Error: [COOLDOWN_TIMELEFT(current_ship, rename_cooldown)/10] seconds until ship designation can be changed.")
 			update_static_data(usr, ui)
 			return
 		if("reload_ship")
@@ -211,48 +211,44 @@
 			current_ship.refresh_engines()
 			return
 
-	switch(current_ship.state) // Ship state-limited topics
-		if(OVERMAP_SHIP_FLYING)
-			switch(action)
-				if("act_overmap")
-					if(SSshuttle.jump_mode == BS_JUMP_INITIATED)
-						to_chat(usr, "<span class='warning'>You've already escaped. Never going back to that place again!</span>")
-						return
-					var/obj/structure/overmap/to_act = locate(params["ship_to_act"])
-					say(current_ship.overmap_object_act(usr, to_act))
+	if(!current_ship.docked_to && !current_ship.docking)
+		switch(action)
+			if("act_overmap")
+				if(SSshuttle.jump_mode > BS_JUMP_CALLED)
+					to_chat(usr, "<span class='warning'>Cannot dock due to bluespace jump preperations!</span>")
 					return
-				if("toggle_engine")
-					var/obj/machinery/power/shuttle/engine/E = locate(params["engine"])
-					E.enabled = !E.enabled
-					current_ship.refresh_engines()
-					return
-				if("change_heading")
-					current_ship.current_autopilot_target = null
-					current_ship.burn_engines(text2num(params["dir"]))
-					return
-				if("stop")
-					current_ship.current_autopilot_target = null
-					current_ship.burn_engines()
-					return
-				if("bluespace_jump")
-					if(calibrating)
-						cancel_jump()
-						return
-					else
-						if(tgui_alert(usr, "Do you want to bluespace jump? Your ship and everything on it will be removed from the round.", "Jump Confirmation", list("Yes", "No")) != "Yes")
-							return
-						calibrate_jump()
-						return
-				if("dock_empty")
-					say(current_ship.dock_in_empty_space(usr))
-					return
-		if(OVERMAP_SHIP_IDLE)
-			if(action == "undock")
-				current_ship.calculate_avg_fuel()
-				if(current_ship.avg_fuel_amnt < 25 && tgui_alert(usr, "Ship only has ~[round(current_ship.avg_fuel_amnt)]% fuel remaining! Are you sure you want to undock?", name, list("Yes", "No")) != "Yes")
-					return
-				say(current_ship.undock())
+				var/datum/overmap/to_act = locate(params["ship_to_act"]) in current_ship.get_nearby_overmap_objects()
+				current_ship.Dock(to_act)
 				return
+			if("toggle_engine")
+				var/obj/machinery/power/shuttle/engine/E = locate(params["engine"]) in current_ship.shuttle_port.engine_list
+				E.enabled = !E.enabled
+				current_ship.refresh_engines()
+				return
+			if("change_heading")
+				current_ship.burn_engines(text2num(params["dir"]))
+				return
+			if("stop")
+				current_ship.burn_engines()
+				return
+			if("bluespace_jump")
+				if(calibrating)
+					cancel_jump()
+					return
+				else
+					if(tgui_alert(usr, "Do you want to bluespace jump? Your ship and everything on it will be removed from the round.", "Jump Confirmation", list("Yes", "No")) != "Yes")
+						return
+					calibrate_jump()
+					return
+			if("dock_empty")
+				current_ship.dock_in_empty_space(usr)
+				return
+	else if(current_ship.docked_to)
+		if(action == "undock")
+			current_ship.calculate_avg_fuel()
+			if(current_ship.avg_fuel_amnt < 25 && tgui_alert(usr, "Ship only has ~[round(current_ship.avg_fuel_amnt)]% fuel remaining! Are you sure you want to undock?", name, list("Yes", "No")) != "Yes")
+				return
+			current_ship.Undock()
 
 /obj/machinery/computer/helm/ui_close(mob/user)
 	var/user_ref = REF(user)
@@ -261,7 +257,7 @@
 	concurrent_users -= user_ref
 	// Unregister map objects
 	if(current_ship)
-		user.client?.clear_map(current_ship.map_name)
+		user.client?.clear_map(current_ship.token.map_name)
 	// Turn off the console
 	if(length(concurrent_users) == 0 && is_living)
 		playsound(src, 'sound/machines/terminal_off.ogg', 25, FALSE)

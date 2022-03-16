@@ -39,6 +39,7 @@
 /obj/machinery/door/poddoor/gates/indestructible
 	name = "hardened gates"
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
+	move_resist = MOVE_FORCE_OVERPOWERING
 
 /obj/machinery/door/poddoor/gates/indestructible/preopen
 	icon_state = "open"

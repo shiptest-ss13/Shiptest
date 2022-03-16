@@ -49,7 +49,7 @@
 		ui.set_autoupdate(FALSE)
 
 /datum/select_equipment/ui_state(mob/user)
-	return GLOB.admin_state
+	return GLOB.admin_debug_state
 
 /datum/select_equipment/ui_status(mob/user, datum/ui_state/state)
 	if(QDELETED(target_mob))
