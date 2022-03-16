@@ -41,8 +41,8 @@
 
 /obj/item/seeds/Initialize(mapload, nogenes = 0)
 	. = ..()
-	pixel_x = rand(-8, 8)
-	pixel_y = rand(-8, 8)
+	pixel_x = base_pixel_y + rand(-8, 8)
+	pixel_y = base_pixel_x + rand(-8, 8)
 
 	if(!icon_grow)
 		icon_grow = "[species]-grow"
@@ -393,6 +393,8 @@
 		text += "- Plant type: Weed. Can grow in nutrient-poor soil.\n"
 	if(get_gene(/datum/plant_gene/trait/plant_type/fungal_metabolism))
 		text += "- Plant type: Mushroom. Can grow in dry soil.\n"
+	if(get_gene(/datum/plant_gene/trait/plant_type/crystal))
+		text += "- Plant type: Crystal. Revitalizes soil.\n"
 	if(get_gene(/datum/plant_gene/trait/plant_type/alien_properties))
 		text += "- Plant type: <span class='warning'>UNKNOWN</span> \n"
 	if(potency != -1)
