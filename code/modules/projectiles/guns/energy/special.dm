@@ -56,6 +56,7 @@
 	modifystate = 1
 	ammo_x_offset = 1
 	selfcharge = 1
+	shaded_charge = 1
 
 /obj/item/gun/energy/meteorgun
 	name = "meteor gun"
