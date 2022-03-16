@@ -97,7 +97,9 @@
 		if(prob(100 - (magazine.ammo_count() * 5)))	//minimum probability of 70, maximum of 95
 			playsound(user, fire_sound, fire_sound_volume, vary_fire_sound)
 			to_chat(user, "<span class='userdanger'>[src] blows up in your face!</span>")
-			user.gib()
+			user.take_bodypart_damage(0,20)
+			explosion(src, 0, 0, 1, 1)
+			user.dropItemToGround(src)
 			return 0
 	..()
 
