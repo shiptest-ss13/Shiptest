@@ -644,6 +644,11 @@
 	nutriment_factor = 15 * REAGENTS_METABOLISM
 	color = "#664330" // rgb: 102, 67, 48
 
+/datum/reagent/consumable/nutriment/on_hydroponics_apply(obj/item/seeds/myseed, datum/reagents/chems, obj/machinery/hydroponics/mytray, mob/user)
+	. = ..()
+	if(chems.has_reagent(type, 1))
+		mytray.adjustHealth(round(chems.get_reagent_amount(type) * 0.2))
+
 /datum/reagent/consumable/nutriment/stabilized/on_mob_life(mob/living/carbon/M)
 	if(M.nutrition > NUTRITION_LEVEL_FULL - 25)
 		M.adjust_nutrition(-3*nutriment_factor)
