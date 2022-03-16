@@ -1,7 +1,7 @@
 // Plant analyzer
 /obj/item/plant_analyzer
 	name = "plant analyzer"
-	desc = "A scanner used to evaluate a plant's various areas of growth."
+	desc = "A scanner used to evaluate a plant's various areas of growth, and genetic traits."
 	icon = 'whitesands/icons/obj/device.dmi' //WS edit - analyzer update
 	icon_state = "hydro"
 	item_state = "analyzer"
@@ -10,7 +10,25 @@
 	w_class = WEIGHT_CLASS_TINY
 	slot_flags = ITEM_SLOT_BELT
 	custom_materials = list(/datum/material/iron=30, /datum/material/glass=20)
+	var/scan_mode = PLANT_SCANMODE_STATS
 
+/obj/item/plant_analyzer/attack_self(mob/user)
+	. = ..()
+	scan_mode = !scan_mode
+	to_chat(user, "<span class='notice'>You switch [src] to [scan_mode == PLANT_SCANMODE_CHEMICALS ? "scan for chemical reagents and traits" : "scan for plant growth statistics"].</span>")
+
+/obj/item/plant_analyzer/attack(mob/living/M, mob/living/carbon/human/user)
+	//Checks if target is a podman
+	if(ispodperson(M))
+		user.visible_message("<span class='notice'>[user] analyzes [M]'s vitals.</span>", \
+							"<span class='notice'>You analyze [M]'s vitals.</span>")
+		if(scan_mode== PLANT_SCANMODE_STATS)
+			healthscan(user, M, advanced = TRUE)
+		else
+			chemscan(user, M)
+		add_fingerprint(user)
+		return
+	return ..()
 // *************************************
 // Hydroponics Tools
 // *************************************

@@ -10,6 +10,12 @@
 	var/toxpwr = 1.5
 	var/silent_toxin = FALSE //won't produce a pain message when processed by liver/life() if there isn't another non-silent toxin present.
 
+// Are you a bad enough dude to poison your own plants?
+/datum/reagent/toxin/on_hydroponics_apply(obj/item/seeds/myseed, datum/reagents/chems, obj/machinery/hydroponics/mytray, mob/user)
+	. = ..()
+	if(chems.has_reagent(type, 1))
+		mytray.adjustToxic(round(chems.get_reagent_amount(type) * 2))
+
 /datum/reagent/toxin/on_mob_life(mob/living/carbon/M)
 	if(toxpwr)
 		M.adjustToxLoss(toxpwr*REM, 0)
@@ -30,6 +36,11 @@
 	toxpwr = 0
 	taste_description = "slime"
 	taste_mult = 0.9
+
+/datum/reagent/toxin/mutagen/on_hydroponics_apply(obj/item/seeds/myseed, datum/reagents/chems, obj/machinery/hydroponics/mytray, mob/user)
+	mytray.mutation_roll(user)
+	if(chems.has_reagent(type, 1))
+		mytray.adjustToxic(1.5) //It is still toxic, mind you, but not to the same degree.
 
 /datum/reagent/toxin/mutagen/expose_mob(mob/living/carbon/M, method=TOUCH, reac_volume)
 	if(!..())
@@ -269,6 +280,14 @@
 	toxpwr = 1
 	taste_mult = 1
 
+/datum/reagent/toxin/plantbgone/on_hydroponics_apply(obj/item/seeds/myseed, datum/reagents/chems, obj/machinery/hydroponics/mytray, mob/user)
+	. = ..()
+	if(chems.has_reagent(type, 1))
+		mytray.adjustHealth(-round(chems.get_reagent_amount(type) * 10))
+		mytray.adjustToxic(round(chems.get_reagent_amount(type) * 6))
+		mytray.adjustWeeds(-rand(4,8))
+
+
 /datum/reagent/toxin/plantbgone/expose_obj(obj/O, reac_volume)
 	if(istype(O, /obj/structure/alien/weeds))
 		var/obj/structure/alien/weeds/alien_weeds = O
@@ -292,11 +311,27 @@
 	description = "A harmful toxic mixture to kill weeds. Do not ingest!"
 	color = "#4B004B" // rgb: 75, 0, 75
 
+//Weed Spray
+/datum/reagent/toxin/plantbgone/weedkiller/on_hydroponics_apply(obj/item/seeds/myseed, datum/reagents/chems, obj/machinery/hydroponics/mytray, mob/user)
+	if(!mytray)
+		return
+	if(chems.has_reagent(type, 1))
+		mytray.adjustToxic(round(chems.get_reagent_amount(type) * 0.5))
+		mytray.adjustWeeds(-rand(1,2))
+
 /datum/reagent/toxin/pestkiller
 	name = "Pest Killer"
 	description = "A harmful toxic mixture to kill pests. Do not ingest!"
 	color = "#4B004B" // rgb: 75, 0, 75
 	toxpwr = 1
+
+//Pest Spray
+/datum/reagent/toxin/pestkiller/on_hydroponics_apply(obj/item/seeds/myseed, datum/reagents/chems, obj/machinery/hydroponics/mytray, mob/user)
+	if(!mytray)
+		return
+	if(chems.has_reagent(type, 1))
+		mytray.adjustToxic(round(chems.get_reagent_amount(type) * 1))
+		mytray.adjustPests(-rand(1,2))
 
 /datum/reagent/toxin/pestkiller/expose_mob(mob/living/M, method=TOUCH, reac_volume)
 	..()
@@ -844,6 +879,14 @@
 	self_consuming = TRUE
 	process_flags = ORGANIC | SYNTHETIC //WS Edit - IPCs
 
+// Sure, go ahead and pour acid on your precious plants. What's the worst that could happen?
+/datum/reagent/toxin/acid/on_hydroponics_apply(obj/item/seeds/myseed, datum/reagents/chems, obj/machinery/hydroponics/mytray, mob/user)
+	. = ..()
+	if(chems.has_reagent(type, 1))
+		mytray.adjustHealth(-round(chems.get_reagent_amount(type) * 1))
+		mytray.adjustToxic(round(chems.get_reagent_amount(type) * 1.5))
+		mytray.adjustWeeds(-rand(1,2))
+
 /datum/reagent/toxin/acid/expose_mob(mob/living/carbon/C, method=TOUCH, reac_volume)
 	if(!istype(C))
 		return
@@ -874,6 +917,14 @@
 	color = "#5050FF"
 	toxpwr = 2
 	acidpwr = 42.0
+
+// ACID II: UNHEEDED WARNINGS
+/datum/reagent/toxin/acid/fluacid/on_hydroponics_apply(obj/item/seeds/myseed, datum/reagents/chems, obj/machinery/hydroponics/mytray, mob/user)
+	. = ..()
+	if(chems.has_reagent(type, 1))
+		mytray.adjustHealth(-round(chems.get_reagent_amount(type) * 2))
+		mytray.adjustToxic(round(chems.get_reagent_amount(type) * 3))
+		mytray.adjustWeeds(-rand(1,4))
 
 /datum/reagent/toxin/acid/fluacid/on_mob_life(mob/living/carbon/M)
 	M.adjustFireLoss(current_cycle/10, 0)
