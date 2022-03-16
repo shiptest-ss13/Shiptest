@@ -2,12 +2,12 @@
 #define YIELD_WEED_MINIMUM 3
 #define YIELD_WEED_MAXIMUM 10
 #define STATIC_NUTRIENT_CAPACITY 10
-#define CYCLE_DELAY_DEFAULT 200            //About 10 seconds / cycle
-#define CYCLE_DELAY_SLOW    500            //About 25 seconds / cycle
+#define CYCLE_DELAY_DEFAULT 200 //About 10 seconds / cycle
+#define CYCLE_DELAY_SLOW 500 //About 25 seconds / cycle
 
 //Both available scanning modes for the plant analyzer.
-#define PLANT_SCANMODE_STATS		0
-#define PLANT_SCANMODE_CHEMICALS 	1
+#define PLANT_SCANMODE_STATS 0
+#define PLANT_SCANMODE_CHEMICALS 1
 
 //Seed flags.
-#define MUTATE_EARLY	(1<<0)
+#define MUTATE_EARLY (1<<0)
