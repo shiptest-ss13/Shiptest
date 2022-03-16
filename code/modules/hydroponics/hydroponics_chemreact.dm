@@ -24,9 +24,9 @@
 		if(21 to 40)
 			visible_message("<span class='notice'>\The [myseed.plantname] appears unusually reactive...</span>")
 			return
-		if(11 to 20)
+		if(10 to 20)
 			mutateweed()
 			return
-		if(1 to 10)
+		if(0 to 9)
 			mutatepest(user)
 			return
