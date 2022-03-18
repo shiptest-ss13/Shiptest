@@ -2,10 +2,11 @@
 	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
 	"map_name": "Osprey-class Exploration Ship",
 	"prefix": "NTSV",
-	"namelists": ["GENERAL", "SPACE", "BRITISH_NAVY", "BIBLICAL", "WEAPONS"],
+	"namelists": ["GENERAL", "SPACE", "BRITISH_NAVY", "MYTHOLOGICAL", "WEAPONS"],
 	"map_short_name": "Osprey-class",
 	"map_path": "_maps/shuttles/shiptest/ntsv_osprey.dmm",
 	"map_id": "ntsv_osprey",
+	"limit": 1,
 	"job_slots": {
 		"Captain": {
 			"outfit": "/datum/outfit/job/captain/nt",

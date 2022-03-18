@@ -80,6 +80,10 @@ If ever any of these procs are useful for non-shuttles, rename it to proc/rotate
 	params &= ~ROTATE_OFFSET
 	return ..()
 
+/obj/structure/reflector/shuttleRotate(rotation, params)
+	. = ..()
+	setAngle(SIMPLIFY_DEGREES(rotation_angle + rotation))
+
 /************************************Machine rotate procs************************************/
 
 /obj/machinery/atmospherics/shuttleRotate(rotation, params)

@@ -1,0 +1,36 @@
+{
+	"map_name": "Geneva-class Search and Rescue Vessel",
+	"prefix": "SRV",
+	"map_short_name": "Geneva-class",
+	"map_path": "_maps/shuttles/shiptest/syndicate_geneva.dmm",
+	"map_id": "syndicate_geneva",
+	"job_slots": {
+		"Medical Professor": {
+			"outfit": "/datum/outfit/job/cmo/syndicate/nsv",
+			"officer": true,
+			"slots": 1
+		},
+		"Medical Student": {
+			"outfit": "/datum/outfit/job/doctor/syndicate/nsv",
+			"slots": 2
+		},
+		"Natural Medicine Specialist": {
+			"outfit": "/datum/outfit/job/botanist/syndicate/nsv",
+			"slots": 1
+		},
+		"Union Engineer": {
+			"outfit": "/datum/outfit/job/engineer/gec",
+			"slots": 1
+		},
+		"Rescue Specialist": {
+			"outfit": "/datum/outfit/job/miner/syndicate",
+			"slots": 1
+		},
+		"Paramedic": {
+			"outfit"	: "/datum/outfit/job/paramedic/syndicate/gorlex",
+			"slots": 1
+		}
+	},
+	"cost": 500
+}
+

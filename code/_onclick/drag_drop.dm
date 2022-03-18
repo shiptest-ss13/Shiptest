@@ -93,7 +93,13 @@
 /client/MouseMove(object,location,control,params)
 	mouseParams = params
 	mouseLocation = location
-	mouseObject = object
+	if(mouseObject != object)
+		if(mouseObject)
+			// unregister signal to current mouseObject
+			UnregisterSignal(mouseObject, COMSIG_PARENT_QDELETING)
+		mouseObject = object
+		// register signal to new mouseObject
+		RegisterSignal(mouseObject, COMSIG_PARENT_QDELETING, .proc/clear_mouseObject)
 	mouseControlObject = control
 	if(mob && LAZYLEN(mob.mousemove_intercept_objects))
 		for(var/datum/D in mob.mousemove_intercept_objects)
@@ -114,7 +120,13 @@
 			middragatom = null
 	mouseParams = params
 	mouseLocation = over_location
-	mouseObject = over_object
+	if(mouseObject != over_object)
+		if(mouseObject)
+			// unregister signal to current mouseObject
+			UnregisterSignal(mouseObject, COMSIG_PARENT_QDELETING)
+		mouseObject = over_object
+		// register signal to new mouseObject
+		RegisterSignal(mouseObject, COMSIG_PARENT_QDELETING, .proc/clear_mouseObject)
 	mouseControlObject = over_control
 	if(selected_target[1] && over_object && over_object.IsAutoclickable())
 		selected_target[1] = over_object
@@ -122,6 +134,13 @@
 	if(active_mousedown_item)
 		active_mousedown_item.onMouseDrag(src_object, over_object, src_location, over_location, params, mob)
 
+/client/proc/clear_mouseObject()
+	UnregisterSignal(mouseObject, COMSIG_PARENT_QDELETING)
+	mouseObject = null
+	mouseControlObject = null
+	mouseLocation = null
+	mouseParams = ""
+	return
 
 /obj/item/proc/onMouseDrag(src_object, over_object, src_location, over_location, params, mob)
 	return

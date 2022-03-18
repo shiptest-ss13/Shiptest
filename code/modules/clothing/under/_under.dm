@@ -10,7 +10,7 @@
 	drop_sound = 'sound/items/handling/cloth_drop.ogg'
 	pickup_sound =  'sound/items/handling/cloth_pickup.ogg'
 	cuttable = TRUE
-	clothamnt = 5
+	clothamnt = 3
 	greyscale_colors = list(list(15, 17), list(10, 19), list(15, 10))
 	greyscale_icon_state = "under"
 	var/fitted = FEMALE_UNIFORM_FULL // For use in alternate clothing styles for women
@@ -68,7 +68,7 @@
 			var/mob/M = loc
 			to_chat(M,"<span class='warning'>The sensors on the [src] change rapidly!</span>")
 
-/obj/item/clothing/under/equipped(mob/user, slot)
+/obj/item/clothing/under/visual_equipped(mob/user, slot)
 	..()
 	if(adjusted)
 		adjusted = NORMAL_STYLE
@@ -80,16 +80,18 @@
 		var/mob/living/carbon/human/H = user
 		H.update_inv_w_uniform()
 
-	if(slot == ITEM_SLOT_ICLOTHING && freshly_laundered)
-		freshly_laundered = FALSE
-		SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT, "fresh_laundry", /datum/mood_event/fresh_laundry)
-
 	if(attached_accessory && slot != ITEM_SLOT_HANDS && ishuman(user))
 		var/mob/living/carbon/human/H = user
 		attached_accessory.on_uniform_equip(src, user)
 		H.fan_hud_set_fandom()
 		if(attached_accessory.above_suit)
 			H.update_inv_wear_suit()
+
+/obj/item/clothing/under/equipped(mob/user, slot)
+	..()
+	if(slot == ITEM_SLOT_ICLOTHING && freshly_laundered)
+		freshly_laundered = FALSE
+		SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT, "fresh_laundry", /datum/mood_event/fresh_laundry)
 
 /obj/item/clothing/under/dropped(mob/user)
 	if(attached_accessory)

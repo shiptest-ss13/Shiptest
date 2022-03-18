@@ -161,12 +161,11 @@
 /datum/outfit/job/engineer/gec
 	name = "Station Engineer (GEC)"
 
-	uniform = /obj/item/clothing/under/syndicate/intern
+	uniform = /obj/item/clothing/under/syndicate/gec
 	suit = /obj/item/clothing/suit/toggle/hazard
 	head = /obj/item/clothing/head/hardhat
 	ears = /obj/item/radio/headset/syndicate/alt
 	id = /obj/item/card/id/syndicate_command/crew_id
-
 
 /datum/outfit/job/engineer/syndicate/gorlex
 	name = "Mechanic (Gorlex Marauders)"

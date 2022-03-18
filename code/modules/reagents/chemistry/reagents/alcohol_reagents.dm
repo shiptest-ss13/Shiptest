@@ -829,14 +829,14 @@ All effects don't start immediately, but rather get worse over time; the rate is
 
 /datum/reagent/consumable/ethanol/manhattan_proj
 	name = "Manhattan Project"
-	description = "A scientist's drink of choice, for pondering ways to blow up the station."
+	description = "A scientist's drink of choice, for pondering ways to blow up the sector."
 	color = "#664300" // rgb: 102, 67, 0
 	boozepwr = 45
 	quality = DRINK_VERYGOOD
 	taste_description = "death, the destroyer of worlds"
 	glass_icon_state = "proj_manhattanglass"
 	glass_name = "Manhattan Project"
-	glass_desc = "A scientist's drink of choice, for thinking how to blow up the station."
+	glass_desc = "A scientist's drink of choice, for thinking how to blow up the sector."
 
 
 /datum/reagent/consumable/ethanol/manhattan_proj/on_mob_life(mob/living/carbon/M)
@@ -1513,7 +1513,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	color = "#cc0000"
 	boozepwr = 35
 	quality = DRINK_GOOD
-	taste_description = "an invigorating bitter freshness which suffuses your being; no enemy of the station will go unrobusted this day"
+	taste_description = "an invigorating bitter freshness which suffuses your being; no enemy of the corporation will go unrobusted this day"
 	glass_icon_state = "quadruple_sec"
 	glass_name = "Quadruple Sec"
 	glass_desc = "An intimidating and lawful beverage dares you to violate the law and make its day. Still can't drink it on duty, though."

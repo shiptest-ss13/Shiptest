@@ -14,7 +14,7 @@
 
 /obj/item/toy/sprayoncan
 	name = "spray-on insulation applicator"
-	desc = "What is the number one problem facing our station today?"
+	desc = "What is the number one problem facing our society today?"
 	icon = 'icons/obj/clothing/gloves.dmi'
 	icon_state = "sprayoncan"
 

@@ -171,7 +171,7 @@
 // eject the contents of the disposal unit
 /obj/machinery/disposal/proc/eject()
 	var/turf/T = get_turf(src)
-	for(var/atom/movable/AM in src)
+	for(var/atom/movable/AM as anything in src)
 		AM.forceMove(T)
 		AM.pipe_eject(0)
 	update_icon()
@@ -231,7 +231,7 @@
 			stored.set_anchored(FALSE)
 			stored.density = TRUE
 			stored.update_icon()
-	for(var/atom/movable/AM in src) //out, out, darned crowbar!
+	for(var/atom/movable/AM as anything in src) //out, out, darned crowbar!
 		AM.forceMove(T)
 	..()
 

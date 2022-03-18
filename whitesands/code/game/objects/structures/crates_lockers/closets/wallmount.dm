@@ -13,7 +13,7 @@
 	icon_state = "cargo_wall"
 
 /obj/structure/closet/wall/blue
-	icon_state = "cargo_wall"
+	icon_state = "solgov_wall"
 
 /obj/structure/closet/wall/white
 	icon_state = "freezer_wall"
