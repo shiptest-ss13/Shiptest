@@ -2349,21 +2349,20 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				continue
 			if("amputated")
 				if(old_part)
-					old_part.drop_limb()
+					old_part.drop_limb(special = TRUE)
 					qdel(old_part)
 			if("prosthetic")
 				var/obj/item/bodypart/prosthetic
-				var/datum/species/client_species = character.dna.species
 				var/typepath
-				if(client_species.unique_prosthesis) // Checks for if the species has a unique limb type, otherwise defaults to human
-					typepath = text2path("/obj/item/bodypart/[L]/robot/[client_species.id]")
+				if(character.dna.species.unique_prosthesis) // Checks for if the species has a unique limb type, otherwise defaults to human
+					typepath = text2path("/obj/item/bodypart/[L]/robot/[character.dna.species.id]")
 				else
 					typepath = text2path("/obj/item/bodypart/[L]/robot/surplus")
 				if(!ispath(typepath))
-					to_chat(character, "<span class='warning'>Problem initializing [L] prosthetic for species [client_species], it will be a normal limb. Make a bug report on github!</span>")
+					to_chat(character, "<span class='warning'>Problem initializing [L] prosthetic for species [character.dna.species], it will be a normal limb. Make a bug report on github!</span>")
 					continue
 				prosthetic = new typepath(character)
-				prosthetic.replace_limb(character)
+				prosthetic.replace_limb(character, special = TRUE)
 				if(old_part)
 					qdel(old_part)
 
