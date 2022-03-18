@@ -170,13 +170,14 @@
 				swift_dash(target, dash_num_long, 7)
 				return
 
-		else if(prob(10))
+		else if(prob(30))
+			sting_attack(target)
+			return
+		else if(prob(20))
 			emp_pulse()
 			return
-		else if(get_dist(src, target) >= 3 && dash_cooldown <= world.time && !shoudnt_move)
-			swift_dash(target, dash_num_short, 5)
 		else
-			summon_creatures()
+			swift_dash(target, dash_num_short, 5)
 
 /////PROJECTILE SHOOTING
 /mob/living/simple_animal/hostile/megafauna/claw/proc/shoot_projectile(angle)

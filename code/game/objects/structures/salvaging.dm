@@ -59,7 +59,7 @@
 
 /obj/structure/salvageable/computer
 	name = "broken computer"
-	icon_state = "computer"
+	icon_state = "computer_broken"
 	salvageable_parts = list(
 		/obj/item/stack/sheet/glass/two = 80,
 		/obj/item/stack/cable_coil/cut = 90,
@@ -101,13 +101,13 @@
 
 		/obj/item/circuitboard/machine/autolathe = 35,
 
-		/obj/item/stack/sheet/metal/twenty = 10,
-		/obj/item/stack/sheet/glass/twenty = 10,
-		/obj/item/stack/sheet/plastic/twenty = 10,
-		/obj/item/stack/sheet/plasteel/twenty = 10,
-		/obj/item/stack/sheet/mineral/silver/twenty = 10,
-		/obj/item/stack/sheet/mineral/gold/twenty = 10,
-		/obj/item/stack/sheet/mineral/plasma/twenty = 10,
+		/obj/item/stack/sheet/metal/five = 10,
+		/obj/item/stack/sheet/glass/five = 10,
+		/obj/item/stack/sheet/plastic/five = 10,
+		/obj/item/stack/sheet/plasteel/five = 10,
+		/obj/item/stack/sheet/mineral/silver/five = 10,
+		/obj/item/stack/sheet/mineral/gold/five = 10,
+		/obj/item/stack/sheet/mineral/plasma/five = 10,
 		/obj/item/stack/sheet/mineral/uranium/five = 5,
 		/obj/item/stack/sheet/mineral/diamond/five = 1
 	)
@@ -277,32 +277,19 @@
 		if(40 to 45)
 			playsound(src, 'sound/machines/buzz-two.ogg', 100, FALSE, FALSE)
 			src.audible_message("<span class='danger'>You hear a buzz from the [src] and a voice,</span>")
-			src.visible_message("<span class=danger>A strange target appears on the ground.</span>")
-
-			var/obj/structure/closet/supplypod/bluespacepod/pod = new(get_turf(src))
-			new /mob/living/simple_animal/bot/medbot/rockplanet(pod)
-			pod.style = STYLE_STANDARD
-			pod.explosionSize = list(0,0,0,0)
+			new /mob/living/simple_animal/bot/medbot/rockplanet(get_turf(src))
 
 		if(26 to 40)
 			playsound(src, 'sound/machines/buzz-two.ogg', 100, FALSE, FALSE)
 			src.audible_message("<span class='danger'>You hear a buzz from the [src] and a voice,</span>")
-			src.visible_message("<span class=danger>A strange target appears on the ground.</span>")
 
-			var/obj/structure/closet/supplypod/bluespacepod/pod = new(get_turf(src))
-			new /mob/living/simple_animal/bot/firebot/rockplanet(pod)
-			pod.style = STYLE_STANDARD
-			pod.explosionSize = list(0,0,0,0)
+			new /mob/living/simple_animal/bot/firebot/rockplanet(get_turf(src))
 
 		if(1 to 25)
 			playsound(src, 'sound/machines/buzz-two.ogg', 100, FALSE, FALSE)
-			src.audible_message("<span class='danger'>You hear as buzz from the [src] and a voice,</span>")
-			src.visible_message("<span class=danger>A strange target appears on the ground.</span>")
+			src.audible_message("<span class='danger'>You hear as buzz from the [src] and you see a abandoned security bot come out!!</span>")
 
-			var/obj/structure/closet/supplypod/bluespacepod/pod = new(get_turf(src))
-			new /mob/living/simple_animal/bot/secbot/ed209/rockplanet(pod)
-			pod.style = STYLE_STANDARD
-			pod.explosionSize = list(0,0,0,0)
+			new /mob/living/simple_animal/bot/secbot/ed209/rockplanet(get_turf(src))
 /*
 		if(1 to 3)
 			playsound(src, 'sound/machines/warning-buzzer.ogg', 100, FALSE, FALSE)
