@@ -547,7 +547,6 @@
 //CIRCUIT IMPRINTER
 /obj/effect/spawner/lootdrop/random_machine_cicuit_common
 	loot = list(
-			/obj/item/circuitboard/machine/autodoc = 5,
 			/obj/item/circuitboard/machine/autolathe = 5,
 			/obj/item/circuitboard/machine/bepis = 5,
 			/obj/item/circuitboard/machine/biogenerator = 5,
