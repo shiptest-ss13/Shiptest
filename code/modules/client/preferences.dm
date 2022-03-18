@@ -108,8 +108,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 							"ipc_chassis" = "Morpheus Cyberkinetics(Greyscale)",
 							"kepori_feathers" = "Plain",
 							"kepori_body_feathers" = "Plain",
-              "vox_head_quills" = "Plain",
-              "vox_neck_quills" = "Plain",
+							"vox_head_quills" = "Plain",
+							"vox_neck_quills" = "Plain",
 							"flavor_text" = "",
 							"body_size" = "Normal"
 						)
