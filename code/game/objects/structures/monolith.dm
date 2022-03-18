@@ -123,7 +123,7 @@
 
 /obj/structure/closet/crate/ancientpot/close(mob/living/user)
 	if(user)
-		to_chat(user, "<span class='danger'>The [src] is all broken!</span>")
+		to_chat(user, "<span class='danger'>[src] is all broken!</span>")
 
 /obj/structure/closet/crate/ancientpot/loot/PopulateContents()
 	. = ..()
