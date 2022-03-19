@@ -105,7 +105,7 @@ GENE SCANNER
 	user.visible_message("<span class='suicide'>[user] begins to analyze [user.p_them()]self with [src]! The display shows that [user.p_theyre()] dead!</span>")
 	return BRUTELOSS
 
-obj/item/healthanalyzer/attack_self(mob/user)
+/obj/item/healthanalyzer/attack_self(mob/user)
 	playsound(get_turf(user), 'sound/machines/click.ogg', 50, TRUE)
 	scanmode = !scanmode
 	if(scanmode == 1)
