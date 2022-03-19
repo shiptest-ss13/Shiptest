@@ -292,25 +292,25 @@
 	. += " It resembles a [tool_behaviour == TOOL_RETRACTOR ? "retractor" : "hemostat"]."
 
 /obj/item/surgicaldrill/advanced
-    name = "searing tool"
-    desc = "It projects a high power laser used for medical application."
-    icon_state = "advdrill"
-    lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
-    righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
-    item_state = "advcautery"
-    hitsound = 'sound/items/welder.ogg'
-    toolspeed = 0.7
+	name = "searing tool"
+	desc = "It projects a high power laser used for medical application."
+	icon_state = "advdrill"
+	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
+	item_state = "advcautery"
+	hitsound = 'sound/items/welder.ogg'
+	toolspeed = 0.7
 
 /obj/item/surgicaldrill/advanced/attack_self(mob/user)
-    playsound(get_turf(user), 'sound/weapons/tap.ogg', 50, TRUE)
-    if(tool_behaviour == TOOL_DRILL)
-        tool_behaviour = TOOL_CAUTERY
-        to_chat(user, "<span class='notice'>You focus the lenses of [src], it is now in mending mode.</span>")
-        icon_state = "advcautery"
-    else
-        tool_behaviour = TOOL_DRILL
-        to_chat(user, "<span class='notice'>You dilate the lenses of [src], it is now in drilling mode.</span>")
-        icon_state = "advdrill"
+	playsound(get_turf(user), 'sound/weapons/tap.ogg', 50, TRUE)
+	if(tool_behaviour == TOOL_DRILL)
+		tool_behaviour = TOOL_CAUTERY
+		to_chat(user, "<span class='notice'>You focus the lenses of [src], it is now in mending mode.</span>")
+		icon_state = "advcautery"
+	else
+		tool_behaviour = TOOL_DRILL
+		to_chat(user, "<span class='notice'>You dilate the lenses of [src], it is now in drilling mode.</span>")
+		icon_state = "advdrill"
 
 /obj/item/surgicaldrill/advanced/examine()
 	. = ..()
