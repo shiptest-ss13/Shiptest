@@ -371,7 +371,9 @@
 		myseed = null
 	else
 		oldPlantName = "empty tray"
-	switch(rand(1,18))		// randomly pick predominative weed
+	switch(rand(0,20))		// randomly pick predominative weed
+		if(19 to 20)
+			myseed = new /obj/item/seeds/glowshroom(src)
 		if(16 to 18)
 			myseed = new /obj/item/seeds/reishi(src)
 		if(14 to 15)
@@ -386,8 +388,6 @@
 			myseed = new /obj/item/seeds/tower(src)
 		if(4 to 5)
 			myseed = new /obj/item/seeds/plump(src)
-		if(3 to 2)
-			myseed = new /obj/item/seeds/glowshroom(src)
 		else
 			myseed = new /obj/item/seeds/starthistle(src)
 	age = 0
