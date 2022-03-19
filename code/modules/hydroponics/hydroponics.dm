@@ -371,7 +371,7 @@
 		myseed = null
 	else
 		oldPlantName = "empty tray"
-	switch(rand(0,20))		// randomly pick predominative weeds
+	switch(rand(0,20))		// randomly pick predominative weed
 		if(19 to 20)
 			myseed = new /obj/item/seeds/glowshroom(src)
 		if(16 to 18)
