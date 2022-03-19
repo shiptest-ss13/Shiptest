@@ -67,3 +67,8 @@
 	display_name = "evening gloves"
 	description = "Excessively fancy elbow-length gloves."
 	path = /obj/item/clothing/gloves/color/evening
+
+/datum/gear/accessory/tiki
+	display_name = "tiki mask"
+	description = "A wooden mask, simple, really."
+	path = /obj/item/clothing/mask/gas/tiki_mask
