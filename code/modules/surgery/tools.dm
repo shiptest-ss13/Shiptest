@@ -238,16 +238,16 @@
 	return
 
 /obj/item/scalpel/advanced
-    name = "laser scalpel"
-    desc = "An advanced scalpel which uses laser technology to cut."
-    icon_state = "advscalpel"
-    item_state = "advscalpel"
-    lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
-    righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
-    hitsound = 'sound/weapons/blade1.ogg'
-    force = 16
-    toolspeed = 0.7
-    sharpness = IS_SHARP_ACCURATE
+	name = "laser scalpel"
+	desc = "An advanced scalpel which uses laser technology to cut."
+	icon_state = "advscalpel"
+	item_state = "advscalpel"
+	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
+	hitsound = 'sound/weapons/blade1.ogg'
+	force = 16
+	toolspeed = 0.7
+	sharpness = IS_SHARP_ACCURATE
 
 /obj/item/scalpel/advanced/attack_self(mob/user)
 	playsound(get_turf(user), 'sound/machines/click.ogg', 50, TRUE)
