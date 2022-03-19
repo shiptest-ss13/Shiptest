@@ -72,3 +72,4 @@
 	display_name = "tiki mask"
 	description = "A wooden mask, simple, really."
 	path = /obj/item/clothing/mask/gas/tiki_mask
+	slot = ITEM_SLOT_MASK
