@@ -79,7 +79,7 @@ GENE SCANNER
 /obj/item/healthanalyzer
 	name = "health analyzer"
 	icon = 'icons/obj/device.dmi'
-    icon_state = "analyzer-1"
+	icon_state = "analyzer-1"
     item_state = "analyzer"
 	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
