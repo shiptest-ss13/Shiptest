@@ -386,6 +386,8 @@
 			myseed = new /obj/item/seeds/tower(src)
 		if(4 to 5)
 			myseed = new /obj/item/seeds/plump(src)
+		if(3 to 2)
+			myseed = new /obj/item/seeds/glowshroom(src)
 		else
 			myseed = new /obj/item/seeds/starthistle(src)
 	age = 0
