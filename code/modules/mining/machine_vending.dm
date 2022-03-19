@@ -140,7 +140,7 @@
 	name = "golem equipment vendor"
 	desc = "An modified equipment vendor which appears to be a prototype of the current mining equipment vendor. Ore Redemption Points can be spent here to purchase rough-and-tumble goods."
 	circuit = /obj/item/circuitboard/machine/vending/mining_equipment
-	refill_canister = /obj/item/vending_refill/mining_equipment_golement
+	refill_canister = /obj/item/vending_refill/mining_equipment_golem
 	products = list( //if you add something to this, please, for the love of god, sort it by price/type. use tabs and not spaces.
 		/obj/item/stack/marker_beacon/thirty = 6,
 		/obj/item/reagent_containers/food/drinks/bottle/whiskey = 3,
