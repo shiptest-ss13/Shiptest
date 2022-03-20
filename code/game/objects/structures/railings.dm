@@ -4,7 +4,7 @@
 	icon = 'icons/obj/fluff.dmi'
 	icon_state = "railing"
 	flags_1 = ON_BORDER_1
-	pass_flags_self = LETPASSTHROW|PASSSTRUCTURE
+	pass_flags_self = LETPASSTHROW
 	density = TRUE
 	anchored = TRUE
 	climbable = TRUE
