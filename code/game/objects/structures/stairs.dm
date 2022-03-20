@@ -58,13 +58,16 @@
 		if(S)
 			S.update_icon()
 
-/obj/structure/stairs/proc/on_exit(datum/source, atom/movable/AM, atom/newloc)
+/obj/structure/stairs/proc/on_exit(datum/source, atom/movable/leaving, direction)
 	SIGNAL_HANDLER
-	if(!newloc || !AM)
-		return
-	if(!isobserver(AM) && isTerminator() && (get_dir(src, newloc) == dir))
-		INVOKE_ASYNC(src, .proc/stair_ascend, AM)
-		return FALSE
+
+	if(leaving == src)
+		return //Let's not block ourselves.
+
+	if(!isobserver(leaving) && isTerminator() && direction == dir)
+		INVOKE_ASYNC(src, .proc/stair_ascend, leaving)
+		leaving.Bump(src)
+		return COMPONENT_ATOM_BLOCK_EXIT
 
 /obj/structure/stairs/Cross(atom/movable/AM)
 	if(isTerminator() && (get_dir(src, AM) == dir))

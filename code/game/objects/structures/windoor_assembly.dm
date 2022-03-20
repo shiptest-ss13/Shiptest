@@ -74,16 +74,21 @@
 	else
 		return 1
 
-/obj/structure/windoor_assembly/proc/on_exit(datum/source, atom/movable/mover, turf/target)
+/obj/structure/windoor_assembly/proc/on_exit(datum/source, atom/movable/leaving, direction)
 	SIGNAL_HANDLER
-	if(mover == src)
+
+	if(leaving.movement_type & PHASING)
+		return
+
+	if(leaving == src)
 		return // Let's not block ourselves.
-	if(mover.pass_flags & pass_flags_self)
-		return TRUE
-	if(get_dir(loc, target) == dir)
-		return !density
-	else
-		return TRUE
+
+	if (leaving.pass_flags & pass_flags_self)
+		return
+
+	if (direction == dir && density)
+		leaving.Bump(src)
+		return COMPONENT_ATOM_BLOCK_EXIT
 
 /obj/structure/windoor_assembly/attackby(obj/item/W, mob/user, params)
 	//I really should have spread this out across more states but thin little windoors are hard to sprite.

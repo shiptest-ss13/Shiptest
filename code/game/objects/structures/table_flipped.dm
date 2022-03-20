@@ -31,17 +31,20 @@
 		return FALSE
 	return attempted_dir != dir
 
-/obj/structure/flippedtable/proc/on_exit(datum/source, atom/movable/exiter, turf/target)
+/obj/structure/flippedtable/proc/on_exit(datum/source, atom/movable/exiter, direction)
 	SIGNAL_HANDLER
+
 	if(exiter == src)
 		return // Let's not block ourselves.
+
 	if(table_type == /obj/structure/table/glass) //Glass table, jolly ranchers pass
 		if(istype(exiter) && (exiter.pass_flags & PASSGLASS))
 			return TRUE
 	if(istype(exiter, /obj/projectile))
 		return TRUE
-	if(get_dir(exiter.loc, target) == dir)
-		return FALSE
+	if(direction == dir)
+		exiter.Bump(src)
+		return COMPONENT_ATOM_BLOCK_EXIT
 	return TRUE
 
 /obj/structure/flippedtable/CtrlShiftClick(mob/user)
