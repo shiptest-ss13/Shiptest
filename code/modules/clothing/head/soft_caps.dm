@@ -4,7 +4,7 @@
 	icon_state = "cargosoft"
 	item_state = "helmet"
 	cuttable = TRUE
-	clothamnt = 3
+	clothamnt = 2
 	var/soft_type = "cargo"
 
 	dog_fashion = /datum/dog_fashion/head/cargo_tech
