@@ -46,29 +46,9 @@
 	return is_type_in_typecache(language, languages_possible)
 
 //Say_mod-Only Tongues
-/obj/item/organ/tongue/corporate
-	name = " corporate tongue"
-	say_mod = "declares"
-
-/obj/item/organ/tongue/cat
-	name = "feline tongue"
-	say_mod = "meows"
-
-/obj/item/organ/tongue/jelly
-	name = "gelatinous tongue"
-	say_mod = "blorbles"
-
-/obj/item/organ/tongue/moth
-	name = "mothic tongue"
-	say_mod = "flutters"
-
 /obj/item/organ/tongue/golem_base
 	name = "golem tongue"
 	say_mod = "rumbles"
-
-/obj/item/organ/tongue/golem_clock
-	name = "clockwork tongue"
-	say_mod = "clicks"
 
 /obj/item/organ/tongue/golem_honk
 	name = "bananium tongue"
@@ -77,10 +57,6 @@
 /obj/item/organ/tongue/toma
 	name = "mutated tongue"
 	say_mod = "mumbles"
-
-/obj/item/organ/tongue/mush
-	name = "fungal tongue"
-	say_mod = "poofs" //what does a mushroom sound like
 
 //Other Tongues
 /obj/item/organ/tongue/lizard
@@ -102,13 +78,7 @@
 		message = lizard_hiSS.Replace(message, "SSS")
 	speech_args[SPEECH_MESSAGE] = message
 
-/obj/item/organ/tongue/insectoid
-	name = "proboscis"
-	desc = "A freakish looking meat tube that apparently can take in liquids."
-	icon_state = "tonguefly"
-	say_mod = "buzzes"
-
-/obj/item/organ/tongue/insectoid/fly
+/obj/item/organ/tongue/fly
 	taste_sensitivity = 25 // you eat vomit, this is a mercy
 	modifies_speech = TRUE
 	var/static/list/languages_possible_fly = typecacheof(list(
@@ -128,7 +98,7 @@
 		/datum/language/ratvar
 	))
 
-/obj/item/organ/tongue/insectoid/fly/handle_speech(datum/source, list/speech_args)
+/obj/item/organ/tongue/fly/handle_speech(datum/source, list/speech_args)
 	var/static/regex/fly_buzz = new("z+", "g")
 	var/static/regex/fly_buZZ = new("Z+", "g")
 	var/message = speech_args[SPEECH_MESSAGE]

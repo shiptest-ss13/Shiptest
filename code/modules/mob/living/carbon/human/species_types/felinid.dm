@@ -8,7 +8,7 @@
 
 	mutantears = /obj/item/organ/ears/cat
 	mutant_organs = list(/obj/item/organ/tail/cat)
-	mutanttongue = /obj/item/organ/tongue/cat
+	mutanttongue = /obj/item/organ/tongue/felinid
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_PRIDE | MIRROR_MAGIC | RACE_SWAP | ERT_SPAWN | SLIME_EXTRACT
 	var/original_felinid = TRUE //set to false for felinids created by mass-purrbation
 	ass_image = 'icons/ass/asscat.png'
