@@ -6,7 +6,7 @@
 	slot = ORGAN_SLOT_TONGUE
 	attack_verb = list("licked", "slobbered", "slapped", "frenched", "tongued")
 	var/list/languages_possible
-	var/say_mod = null
+	var/say_mod = "says"
 	var/taste_sensitivity = 15 // lower is more sensitive.
 	var/modifies_speech = FALSE
 	var/static/list/languages_possible_base = typecacheof(list(
@@ -33,22 +33,56 @@
 
 /obj/item/organ/tongue/Insert(mob/living/carbon/M, special = 0)
 	..()
-	if(say_mod && M.dna && M.dna.species)
-		M.dna.species.say_mod = say_mod
 	if (modifies_speech)
 		RegisterSignal(M, COMSIG_MOB_SAY, .proc/handle_speech)
 	M.UnregisterSignal(M, COMSIG_MOB_SAY)
 
 /obj/item/organ/tongue/Remove(mob/living/carbon/M, special = 0)
 	..()
-	if(say_mod && M.dna && M.dna.species)
-		M.dna.species.say_mod = initial(M.dna.species.say_mod)
 	UnregisterSignal(M, COMSIG_MOB_SAY, .proc/handle_speech)
 	M.RegisterSignal(M, COMSIG_MOB_SAY, /mob/living/carbon/.proc/handle_tongueless_speech)
 
 /obj/item/organ/tongue/could_speak_language(language)
 	return is_type_in_typecache(language, languages_possible)
 
+//Say_mod-Only Tongues
+/obj/item/organ/tongue/corporate
+	name = " corporate tongue"
+	say_mod = "declares"
+
+/obj/item/organ/tongue/cat
+	name = "feline tongue"
+	say_mod = "meows"
+
+/obj/item/organ/tongue/jelly
+	name = "gelatinous tongue"
+	say_mod = "blorbles"
+
+/obj/item/organ/tongue/moth
+	name = "mothic tongue"
+	say_mod = "flutters"
+
+/obj/item/organ/tongue/golem_base
+	name = "golem tongue"
+	say_mod = "rumbles"
+
+/obj/item/organ/tongue/golem_clock
+	name = "clockwork tongue"
+	say_mod = "clicks"
+
+/obj/item/organ/tongue/golem_honk
+	name = "bananium tongue"
+	say_mod = "honks"
+
+/obj/item/organ/tongue/toma
+	name = "mutated tongue"
+	say_mod = "mumbles"
+
+/obj/item/organ/tongue/mush
+	name = "fungal tongue"
+	say_mod = "poofs" //what does a mushroom sound like
+
+//Other Tongues
 /obj/item/organ/tongue/lizard
 	name = "forked tongue"
 	desc = "A thin and long muscle typically found in reptilian races, apparently moonlights as a nose."
@@ -68,11 +102,13 @@
 		message = lizard_hiSS.Replace(message, "SSS")
 	speech_args[SPEECH_MESSAGE] = message
 
-/obj/item/organ/tongue/fly
+/obj/item/organ/tongue/insectoid
 	name = "proboscis"
 	desc = "A freakish looking meat tube that apparently can take in liquids."
 	icon_state = "tonguefly"
 	say_mod = "buzzes"
+
+/obj/item/organ/tongue/insectoid/fly
 	taste_sensitivity = 25 // you eat vomit, this is a mercy
 	modifies_speech = TRUE
 	var/static/list/languages_possible_fly = typecacheof(list(
@@ -92,7 +128,7 @@
 		/datum/language/ratvar
 	))
 
-/obj/item/organ/tongue/fly/handle_speech(datum/source, list/speech_args)
+/obj/item/organ/tongue/insectoid/fly/handle_speech(datum/source, list/speech_args)
 	var/static/regex/fly_buzz = new("z+", "g")
 	var/static/regex/fly_buZZ = new("Z+", "g")
 	var/message = speech_args[SPEECH_MESSAGE]
@@ -275,6 +311,7 @@
 
 /obj/item/organ/tongue/snail
 	name = "snailtongue"
+	say_mod = "slurs"
 	modifies_speech = TRUE
 
 /obj/item/organ/tongue/snail/handle_speech(datum/source, list/speech_args)

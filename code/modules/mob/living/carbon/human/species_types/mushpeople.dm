@@ -8,8 +8,7 @@
 	fixed_mut_color = "DBBF92"
 	hair_color = "FF4B19" //cap color, spot color uses eye color
 	nojumpsuit = TRUE
-
-	say_mod = "poofs" //what does a mushroom sound like
+	mutanttongue = /obj/item/organ/tongue/mush
 	species_traits = list(MUTCOLORS, NOEYESPRITES, NO_UNDERWEAR)
 	inherent_traits = list(TRAIT_NOBREATH, TRAIT_NOFLASH)
 	inherent_factions = list("mushroom")

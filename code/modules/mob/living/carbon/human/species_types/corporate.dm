@@ -2,7 +2,6 @@
 	name = "Corporate Agent"
 	id = SPECIES_CORPORATE
 	hair_alpha = 0
-	say_mod = "declares"
 	speedmod = -2//Fast
 	brutemod = 0.7//Tough against firearms
 	burnmod = 0.65//Tough against lasers
@@ -14,6 +13,7 @@
 	attack_verb = "smash"
 	attack_sound = 'sound/weapons/resonator_blast.ogg'
 	use_skintones = FALSE
+	mutanttongue = /obj/item/organ/tongue/corporate
 	species_traits = list(NOBLOOD,EYECOLOR)
 	inherent_traits = list(TRAIT_RADIMMUNE,TRAIT_GENELESS,TRAIT_VIRUSIMMUNE,TRAIT_PIERCEIMMUNE,TRAIT_NODISMEMBER,TRAIT_NOLIMBDISABLE,TRAIT_NOHUNGER)
 	sexes = 0
