@@ -79,6 +79,10 @@
 	speech_args[SPEECH_MESSAGE] = message
 
 /obj/item/organ/tongue/fly
+	name = "proboscis"
+	desc = "A freakish looking meat tube that apparently can take in liquids."
+	icon_state = "tonguefly"
+	say_mod = "buzzes"
 	taste_sensitivity = 25 // you eat vomit, this is a mercy
 	modifies_speech = TRUE
 	var/static/list/languages_possible_fly = typecacheof(list(
