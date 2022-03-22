@@ -1,6 +1,6 @@
 /obj/structure/salvageable
 	name = "broken machinery"
-	desc = "It is broken beyond repair. You may be able to salvage something from this."
+	desc = "It's broken beyond repair. You may be able to salvage something from this."
 	icon = 'icons/obj/salvage_structure.dmi'
 	density = TRUE
 	anchored = TRUE
@@ -22,12 +22,12 @@
 
 /obj/structure/salvageable/crowbar_act(mob/living/user, obj/item/I)
 	. = ..()
-	user.visible_message(user,"<span class='notice'>[user] starts to salvage \the [src].</span>", \
-					"<span class='notice'>You start salvage anything useful from \the [src].</span>")
+	user.visible_message(user,"<span class='notice'>[user] starts dismantling \the [src].</span>", \
+					"<span class='notice'>You start salvaging anything useful from \the [src]...</span>")
 	I.play_tool_sound(src, 100)
 	if(do_after(user, 80, target = src))
 		user.visible_message(user, "<span class='notice'>[user] dismantles \the [src].</span>", \
-						"<span class='notice'>You dismantle \the [src].</span>")
+						"<span class='notice'>You salvage \the [src].</span>")
 		dismantle(user)
 		I.play_tool_sound(src, 100)
 		qdel(src)
@@ -208,7 +208,7 @@
 		if(60 to 100)
 			src.audible_message("<span class='notice'>You can hear the sound of broken glass in the [src].</span>")
 		if(50 to 59)
-			src.visible_message("<span class='danger'>You flinch as you think the [src] is going to turn on in your face, but your tool destroys the laser before it activates..</span>")
+			src.visible_message("<span class='danger'>You flinch as the [src]'s laser apparatus lights up, but your tool destroys it before it activates...</span>")
 		if(20 to 49)
 			src.visible_message("<span class='danger'>You see a bright light from the [src] before the laser reactivates in your face!</span>")
 			shoot_projectile(user, /obj/projectile/beam/scatter)
@@ -271,7 +271,7 @@
 /obj/structure/salvageable/server/dismantle(mob/living/user)
 	. = ..()
 	var/danger_level = rand(1,100)
-	switch(danger_level) //ever wanted the extreme dannger of turn based rng but in space station 13?
+	switch(danger_level) //ever wanted the extreme danger of turn based rng but in space station 13?
 		if(46 to 100)
 			src.audible_message("<span class='notice'>The [src] makes a crashing sound as its salvaged.</span>")
 		if(40 to 45)
@@ -287,7 +287,7 @@
 
 		if(1 to 25)
 			playsound(src, 'sound/machines/buzz-two.ogg', 100, FALSE, FALSE)
-			src.audible_message("<span class='danger'>You hear as buzz from the [src] and you see a abandoned security bot come out!!</span>")
+			src.audible_message("<span class='danger'>You hear as buzz from the [src] as an abandoned security bot rolls out from the [src]!!</span>")
 
 			new /mob/living/simple_animal/bot/secbot/ed209/rockplanet(get_turf(src))
 /*
@@ -309,11 +309,11 @@
 
 /obj/item/stack/ore/salvage/examine(mob/user)
 	. = ..()
-	. += "You can most likely reclaim this in a autolathe or Ore Redemption Machine."
+	. += "You could probably reclaim this in an autolathe, Ore Redemption Machine, or smelter."
 
 /obj/item/stack/ore/salvage/scrapmetal
 	name = "scrap metal"
-	desc = "A collection of metal peices and parts."
+	desc = "A collection of metal parts and pieces."
 	icon_state = "smetal"
 	item_state = "smetal"
 	points = 1
@@ -332,7 +332,7 @@
 
 /obj/item/stack/ore/salvage/scraptitanium
 	name = "scrap titanium"
-	desc = "A bunch of strong metal peices and parts from high-preformance equppment."
+	desc = "Lightweight, rust-resistant parts and pieces from high-performance equipment."
 	icon_state = "stitanium"
 	item_state = "stitanium"
 	points = 50
@@ -345,7 +345,7 @@
 
 /obj/item/stack/ore/salvage/scrapsilver
 	name = "worn crt"
-	desc = "An old CRT display. the letters 'STANDBY' in green are burned into the screen."
+	desc = "An old CRT display with the letters 'STANDBY' burnt into the screen."
 	icon_state = "ssilver"
 	item_state = "ssilver"
 	points = 16
@@ -370,7 +370,7 @@
 
 /obj/item/stack/ore/salvage/scrapplasma
 	name = "junk plasma cell"
-	desc = "This plasma cell looks nonfunctional."
+	desc = "A nonfunctional plasma cell, once used as portable power generation."
 	icon_state = "splasma"
 	item_state = "splasma"
 	points = 15
@@ -383,7 +383,7 @@
 
 /obj/item/stack/ore/salvage/scrapuranium
 	name = "broken detector"
-	desc = "There is a label on the side of the old detector warning of radioactive elements."
+	desc = "The label on the side warns the reader of radioactive elements."
 	icon_state = "suranium"
 	item_state = "suranium"
 	points = 30
@@ -396,7 +396,7 @@
 
 /obj/item/stack/ore/salvage/scrapbluespace
 	name = "damaged bluespace circuit"
-	desc = "The circuit looks too damaged to be operational, but the crystal inside its housing looks fine."
+	desc = "It's damaged beyond repair, but the crystal inside its housing looks fine."
 	icon_state = "sbluespace"
 	item_state = "sbluespace"
 	points = 50
