@@ -79,8 +79,8 @@
 		/obj/item/computer_hardware/card_slot = 40,
 		/obj/item/computer_hardware/network_card/advanced = 20,
 
-		/obj/effect/spawner/lootdrop/random_computer_cicuit_common = 20,
-		/obj/effect/spawner/lootdrop/random_computer_cicuit_rare = 5,
+		/obj/effect/spawner/lootdrop/random_computer_circuit_common = 25,
+		/obj/effect/spawner/lootdrop/random_computer_circuit_rare = 5,
 
 		/obj/item/research_notes/loot/tiny = 10
 	)
@@ -126,10 +126,10 @@
 		/obj/effect/spawner/lootdrop/salvage_manipulator = 30,
 		/obj/effect/spawner/lootdrop/salvage_manipulator = 30,
 
-		/obj/effect/spawner/lootdrop/tool_engie_proto = 40,
-		/obj/effect/spawner/lootdrop/tool_surgery_proto = 50,
-		/obj/effect/spawner/lootdrop/beaker_loot_spawner = 40,
-		/obj/effect/spawner/lootdrop/random_prosthetic = 20,
+		/obj/effect/spawner/lootdrop/tool_engie_proto = 45,
+		/obj/effect/spawner/lootdrop/tool_surgery_proto = 55,
+		/obj/effect/spawner/lootdrop/beaker_loot_spawner = 45,
+		/obj/effect/spawner/lootdrop/random_prosthetic = 25,
 		/obj/effect/spawner/lootdrop/random_gun_protolathe_lootdrop = 5, //:flushed:
 		/obj/effect/spawner/lootdrop/random_ammo_protolathe_lootdrop = 5,
 
@@ -163,9 +163,9 @@
 		/obj/effect/spawner/lootdrop/salvage_manipulator = 30,
 
 		/obj/item/stack/circuit_stack = 50, //this might be the only way in the game to get a poly circuit, and the only way for many ships to get essensial electronics. huh.
-		/obj/effect/spawner/lootdrop/random_machine_cicuit_mech = 40, //with all the wonderful broken mechs lying around, this might be a chance to get something stupidly overpowered.
-		/obj/effect/spawner/lootdrop/random_machine_cicuit_common = 25, //well.... "common"
-		/obj/effect/spawner/lootdrop/random_machine_cicuit_rare = 5,
+		/obj/effect/spawner/lootdrop/random_machine_circuit_mech = 45, //with all the wonderful broken mechs lying around, this might be a chance to get something stupidly overpowered.
+		/obj/effect/spawner/lootdrop/random_machine_circuit_common = 30, //well.... "common"
+		/obj/effect/spawner/lootdrop/random_machine_circuit_rare = 5,
 
 		/obj/item/stack/sheet/metal/five = 15, //same as above but more geared towards stuff used by circuit imprinter
 		/obj/item/stack/sheet/glass/five = 15,
@@ -191,7 +191,7 @@
 		/obj/effect/spawner/lootdrop/salvage_manipulator = 30,
 
 		/obj/item/storage/toolbox/syndicate/empty = 80,
-		/obj/effect/spawner/lootdrop/destructive_anal_loot = 60,
+		/obj/effect/spawner/lootdrop/destructive_anal_loot = 65,
 
 		/obj/item/stack/sheet/metal/five = 15, //same as above but more geared towards stuff used by circuit imprinter
 		/obj/item/stack/sheet/glass/five = 15,
@@ -220,7 +220,7 @@
 			shoot_projectile(user, /obj/projectile/beam/laser/heavylaser)
 		if(1)
 			src.audible_message("<span class='boldwarning'>You hear something crawling out of the [src]!!</span>")
-			if(prob(70))
+			if(prob(99))
 				new /obj/item/clothing/mask/facehugger/toy/(get_turf(src)) //gotcha!
 			else
 				new /obj/item/clothing/mask/facehugger/(get_turf(src)) //yeah
@@ -521,9 +521,9 @@
 		)
 /obj/effect/spawner/lootdrop/random_gun_protolathe_lootdrop
 	loot = list(
-			/obj/item/gun/energy/lasercannon = 1,
-			/obj/item/gun/ballistic/automatic/proto = 1,
-			/obj/item/gun/energy/temperature = 1
+			/obj/item/gun/energy/lasercannon/unrestricted = 1,
+			/obj/item/gun/ballistic/automatic/proto/unrestricted = 1,
+			/obj/item/gun/energy/temperature/security = 1
 		)
 /obj/effect/spawner/lootdrop/random_ammo_protolathe_lootdrop
 	loot = list(
@@ -532,7 +532,7 @@
 		)
 
 //CIRCUIT IMPRINTER
-/obj/effect/spawner/lootdrop/random_machine_cicuit_common
+/obj/effect/spawner/lootdrop/random_machine_circuit_common
 	loot = list(
 			/obj/item/circuitboard/machine/autolathe = 5,
 			/obj/item/circuitboard/machine/bepis = 5,
@@ -564,7 +564,7 @@
 			/obj/item/circuitboard/machine/emitter = 5
 		)
 
-/obj/effect/spawner/lootdrop/random_machine_cicuit_rare
+/obj/effect/spawner/lootdrop/random_machine_circuit_rare
 	loot = list(
 			/obj/item/circuitboard/aicore = 5,
 			/obj/item/circuitboard/machine/chem_dispenser = 5,
@@ -575,7 +575,7 @@
 			/obj/item/circuitboard/machine/launchpad = 5
 		)
 
-/obj/effect/spawner/lootdrop/random_machine_cicuit_mech
+/obj/effect/spawner/lootdrop/random_machine_circuit_mech
 	loot = list(
 			/obj/item/circuitboard/mecha/ripley/main = 100,
 			/obj/item/circuitboard/mecha/ripley/peripherals = 100,
@@ -592,7 +592,7 @@
 		)
 
 //COMPUTER
-/obj/effect/spawner/lootdrop/random_computer_cicuit_common
+/obj/effect/spawner/lootdrop/random_computer_circuit_common
 	loot = list(
 			/obj/item/circuitboard/computer/aifixer = 5,
 			/obj/item/circuitboard/computer/arcade/amputation = 5,
@@ -609,29 +609,29 @@
 			/obj/item/circuitboard/computer/prototype_cloning = 5,
 			/obj/item/circuitboard/computer/stationalert = 5,
 			/obj/item/circuitboard/computer/xenobiology = 5,
-			/obj/item/circuitboard/computer/teleporter = 5
+			/obj/item/circuitboard/computer/teleporter = 5,
+			/obj/item/circuitboard/computer/operating = 5,
+			/obj/item/circuitboard/computer/crew = 5,
+			/obj/item/circuitboard/computer/scan_consolenew = 5
 		)
 
-/obj/effect/spawner/lootdrop/random_computer_cicuit_rare
+/obj/effect/spawner/lootdrop/random_computer_circuit_rare
 	loot = list(
-			/obj/item/circuitboard/computer/crew = 5,
 			/obj/item/circuitboard/computer/cargo/express = 5,
 			/obj/item/circuitboard/computer/communications = 5,
 			/obj/item/circuitboard/computer/shuttle/helm = 5,
-			/obj/item/circuitboard/computer/operating = 5,
 			/obj/item/circuitboard/computer/med_data = 5
 		)
 
 //DESTRUCTIVE ANAL
 /obj/effect/spawner/lootdrop/destructive_anal_loot //what do people usually put in these things anayways
 	loot = list(
-			/obj/item/storage/toolbox/syndicate/empty = 900,
-			/obj/item/gun/ballistic/automatic/pistol/no_mag = 600,
-			/obj/item/camera_bug = 600,
-			/obj/item/pen = 400,
-			/obj/item/clothing/gloves/combat = 300,
-			/obj/item/clothing/head/chameleon = 300,
-			/obj/item/pen/sleepy = 300,
+			/obj/item/storage/toolbox/syndicate/empty = 650,
+			/obj/item/gun/ballistic/automatic/pistol = 500,
+			/obj/item/camera_bug = 500,
+			/obj/item/clothing/gloves/combat = 200,
+			/obj/item/clothing/head/chameleon = 200,
+			/obj/item/pen/sleepy = 200,
 			/obj/item/reagent_containers/hypospray/medipen/stimpack/traitor = 100,
 
 			/obj/item/grenade/c4 = 100,
