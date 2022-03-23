@@ -107,7 +107,6 @@
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
 	},
-/obj/machinery/navbeacon/wayfinding/bridge,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
@@ -174,7 +173,6 @@
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
 	},
-/obj/machinery/navbeacon/wayfinding/atmos,
 /turf/open/floor/plasteel,
 /area/ship/engineering/atmospherics)
 "de" = (
@@ -428,7 +426,6 @@
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "hf" = (
-/obj/machinery/navbeacon/wayfinding/research,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 1
 	},
@@ -492,7 +489,6 @@
 	dir = 1
 	},
 /obj/machinery/door/firedoor/border_only,
-/obj/machinery/navbeacon/wayfinding/engineering,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering/electrical)
 "ih" = (
@@ -865,11 +861,11 @@
 /area/ship/medical)
 "nJ" = (
 /obj/structure/table/reinforced,
-/obj/item/areaeditor/shuttle{
-	pixel_x = 5;
-	pixel_y = 1
+/obj/machinery/firealarm{
+	dir = 4;
+	pixel_x = -28
 	},
-/obj/item/megaphone/command,
+/obj/item/gps/science,
 /turf/open/floor/carpet/black,
 /area/ship/bridge)
 "nZ" = (
@@ -1192,7 +1188,6 @@
 /obj/structure/disposalpipe/segment{
 	dir = 8
 	},
-/obj/machinery/navbeacon/wayfinding/incinerator,
 /obj/machinery/door/airlock/atmos/glass,
 /turf/open/floor/engine,
 /area/ship/engineering/atmospherics)
@@ -1367,7 +1362,6 @@
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
 	},
-/obj/machinery/navbeacon/wayfinding/library,
 /turf/open/floor/wood,
 /area/ship/crew/library)
 "zk" = (
@@ -1513,7 +1507,6 @@
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
 	},
-/obj/machinery/navbeacon/wayfinding/med,
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "Cs" = (
@@ -1537,10 +1530,6 @@
 /area/ship/engineering/atmospherics)
 "CN" = (
 /obj/structure/table/wood,
-/obj/item/radio/off,
-/obj/item/radio/off,
-/obj/item/radio/off,
-/obj/item/radio/off,
 /obj/item/clothing/under/drip,
 /turf/open/floor/wood,
 /area/ship/crew/dorm)
@@ -1651,13 +1640,20 @@
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
 	},
-/obj/machinery/navbeacon/wayfinding/cargo,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
 "Gx" = (
 /obj/machinery/light{
 	dir = 4
 	},
+/obj/structure/closet/wall{
+	dir = 8;
+	pixel_x = 32
+	},
+/obj/item/radio/off,
+/obj/item/radio/off,
+/obj/item/radio/off,
+/obj/item/radio/off,
 /turf/open/floor/wood,
 /area/ship/crew/dorm)
 "GJ" = (
@@ -1699,14 +1695,12 @@
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
 	},
-/obj/machinery/navbeacon/wayfinding/med,
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
 /turf/open/floor/wood,
 /area/ship/crew/dorm)
 "HQ" = (
-/obj/machinery/navbeacon/wayfinding/kitchen,
 /turf/open/floor/wood,
 /area/ship/crew/canteen)
 "HZ" = (
@@ -1840,14 +1834,21 @@
 /turf/open/floor/wood,
 /area/ship/crew/library)
 "Ko" = (
-/obj/machinery/firealarm{
-	dir = 4;
-	pixel_x = -28
-	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 5
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/structure/closet/wall{
+	dir = 4;
+	pixel_x = -32
+	},
+/obj/item/card/id/captains_spare,
+/obj/item/megaphone/command,
+/obj/item/areaeditor/shuttle{
+	pixel_x = 5;
+	pixel_y = 1
+	},
+/obj/item/clothing/glasses/science,
 /turf/open/floor/carpet/black,
 /area/ship/bridge)
 "KH" = (
@@ -2237,10 +2238,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
-"QZ" = (
-/obj/machinery/navbeacon/wayfinding/eva,
-/turf/open/floor/pod,
-/area/ship/hallway/central)
 "Ra" = (
 /obj/structure/reagent_dispensers/watertank,
 /turf/open/floor/plating,
@@ -3169,7 +3166,7 @@ ak
 hj
 hj
 hj
-QZ
+hj
 TM
 Qj
 el
