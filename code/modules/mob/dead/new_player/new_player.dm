@@ -247,10 +247,10 @@
 			return "[jobtitle] is already filled to capacity."
 	return "Error: Unknown job availability."
 
-/mob/dead/new_player/proc/IsJobUnavailable(datum/job/job, obj/structure/overmap/ship/simulated/ship, latejoin = FALSE)
+/mob/dead/new_player/proc/IsJobUnavailable(datum/job/job, datum/overmap/ship/controlled/ship, latejoin = FALSE)
 	if(!job)
 		return JOB_UNAVAILABLE_GENERIC
-	if(!(ship?.job_slots[job] > 0))
+	if(!(ship.job_slots[job] > 0))
 		return JOB_UNAVAILABLE_SLOTFULL
 	if(is_banned_from(ckey, job.title))
 		return JOB_UNAVAILABLE_BANNED
@@ -264,7 +264,7 @@
 		return JOB_UNAVAILABLE_GENERIC
 	return JOB_AVAILABLE
 
-/mob/dead/new_player/proc/AttemptLateSpawn(datum/job/job, obj/structure/overmap/ship/simulated/ship)
+/mob/dead/new_player/proc/AttemptLateSpawn(datum/job/job, datum/overmap/ship/controlled/ship)
 	var/error = IsJobUnavailable(job, ship)
 	if(error != JOB_AVAILABLE)
 		alert(src, get_job_unavailable_error_message(error, job))
@@ -289,7 +289,7 @@
 		character = equip
 
 	if(job && !job.override_latejoin_spawn(character))
-		SSjob.SendToLateJoin(character, destination = pick(ship.shuttle.spawn_points))
+		SSjob.SendToLateJoin(character, destination = pick(ship.shuttle_port.spawn_points))
 		var/atom/movable/screen/splash/Spl = new(character.client, TRUE)
 		Spl.Fade(TRUE)
 		character.playsound_local(get_turf(character), 'sound/voice/ApproachingTG.ogg', 25)
@@ -326,7 +326,7 @@
 	log_manifest(character.mind.key, character.mind, character, TRUE)
 
 	if(length(ship.job_slots) > 1 && ship.job_slots[1] == job) // if it's the "captain" equivalent job of the ship. checks to make sure it's not a one-job ship
-		minor_announce("[job.title] [character.real_name] on deck!", zlevel = ship.shuttle.virtual_z())
+		minor_announce("[job.title] [character.real_name] on deck!", zlevel = ship.shuttle_port.virtual_z())
 
 /mob/dead/new_player/proc/AddEmploymentContract(mob/living/carbon/human/employee)
 	//TODO:  figure out a way to exclude wizards/nukeops/demons from this.
@@ -338,12 +338,12 @@
 /mob/dead/new_player/proc/LateChoices()
 	var/list/shuttle_choices = list("Purchase ship..." = "Purchase") //Dummy for purchase option
 
-	for(var/obj/structure/overmap/ship/simulated/S as anything in SSovermap.simulated_ships)
-		if((length(S.shuttle.spawn_points) < 1) || !S.join_allowed)
+	for(var/datum/overmap/ship/controlled/S as anything in SSovermap.controlled_ships)
+		if((length(S.shuttle_port.spawn_points) < 1) || (length(S.job_slots) < 1) || !S.join_allowed)
 			continue
 		shuttle_choices[S.name + " ([S.source_template.short_name ? S.source_template.short_name : "Unknown-class"])"] = S //Try to get the class name
 
-	var/obj/structure/overmap/ship/simulated/selected_ship = shuttle_choices[tgui_input_list(src, "Select ship to spawn on.", "Welcome, [client?.prefs.real_name || "User"].", shuttle_choices)]
+	var/datum/overmap/ship/controlled/selected_ship = shuttle_choices[tgui_input_list(src, "Select ship to spawn on.", "Welcome, [client?.prefs.real_name || "User"].", shuttle_choices)]
 	if(!selected_ship)
 		return
 
@@ -353,7 +353,7 @@
 			return LateChoices()
 		if(template.limit)
 			var/count = 0
-			for(var/obj/structure/overmap/ship/simulated/X in SSovermap.simulated_ships)
+			for(var/datum/overmap/ship/controlled/X as anything in SSovermap.controlled_ships)
 				if(X.source_template == template)
 					count++
 					if(template.limit <= count)
@@ -361,13 +361,13 @@
 						return
 		close_spawn_windows()
 		to_chat(usr, "<span class='danger'>Your [template.name] is being prepared. Please be patient!</span>")
-		var/obj/docking_port/mobile/target = SSshuttle.load_template(template)
+		var/datum/overmap/ship/controlled/target = new(SSovermap.get_unused_overmap_square(), template)
 		if(!istype(target))
 			to_chat(usr, "<span class='danger'>There was an error loading the ship. Please contact admins!</span>")
 			new_player_panel()
 			return
 		SSblackbox.record_feedback("tally", "ship_purchased", 1, template.name) //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
-		if(!AttemptLateSpawn(target.current_ship.job_slots[1], target.current_ship)) //Try to spawn as the first listed job in the job slots (usually captain)
+		if(!AttemptLateSpawn(target.job_slots[1], target)) //Try to spawn as the first listed job in the job slots (usually captain)
 			to_chat(usr, "<span class='danger'>Ship spawned, but you were unable to be spawned. You can likely try to spawn in the ship through joining normally, but if not, please contact an admin.</span>")
 			new_player_panel()
 		return
