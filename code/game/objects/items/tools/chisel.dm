@@ -33,12 +33,12 @@
 	if(toggling_smooth)
 		if(!atom_supports_smoothing(target))
 			to_chat(user, "<span class='warning'>\the [src] makes a tart buzz. \the [target] doesn't appear to support smoothing.</span>")
-			return
+			return ..()
 		smooth_atom(target, user)
 	else
 		if(!atom_supports_diagonal(target))
 			to_chat(user, "<span class='warning'>\the [src] makes a tart buzz. \the [target] doesn't appear to support smoothed corners.</span>")
-			return
+			return ..()
 		smooth_atom_diagonal(target, user)
 	return
 
