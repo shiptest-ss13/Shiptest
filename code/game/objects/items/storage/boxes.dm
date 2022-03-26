@@ -1148,6 +1148,7 @@
 	name = "\proper the liberator's legacy"
 	desc = "A box containing a gift for worthy golems."
 	illustration = "scicircuit"
+	custom_price = 2000
 
 /obj/item/storage/box/rndboards/PopulateContents()
 	new /obj/item/circuitboard/machine/protolathe(src)
