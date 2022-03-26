@@ -884,6 +884,14 @@ WS End */
 		/obj/item/stock_parts/micro_laser = 1,
 		/obj/item/stack/sheet/glass = 1)
 
+/obj/item/circuitboard/machine/aug_manipulator
+	name = "Augment Manipulator (Machine Board)"
+	icon_state = "science"
+	build_path = /obj/machinery/aug_manipulator
+	req_components = list(
+		/obj/item/airlock_painter = 1,
+		/obj/item/stack/sheet/glass = 1)
+
 /obj/item/circuitboard/machine/monkey_recycler
 	name = "Monkey Recycler (Machine Board)"
 	icon_state = "science"
