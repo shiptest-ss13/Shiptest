@@ -46,7 +46,7 @@ const SharedContent = (_props, context) => {
     shipInfo = [],
     otherInfo = [],
     allow_interact,
-    allow_dock
+    allow_dock,
   } = data;
   let allowInteraction = !(
     data.docking
@@ -105,33 +105,34 @@ const SharedContent = (_props, context) => {
             )}
           </Table.Row>
           {// TODO: RENAME ALL THIS SHIT TO overmap_datum << - <<
-          otherInfo.map(ship => (
-            <Table.Row key={ship.name}>
-              <Table.Cell>
-                {ship.name}
-              </Table.Cell>
-              {!isViewer && (
+            otherInfo.map(ship => (
+              <Table.Row key={ship.name}>
                 <Table.Cell>
-                  <Button
-                    tooltip="Dock"
-                    tooltipPosition="left"
-                    icon="circle"
-                    disabled={!(allowInteraction && allow_dock)}
-                    onClick={() => act('dock_overmap', {
-                      ship_to_dock: ship.ref,
-                    })} />
-                  <Button
-                    tooltip="Interact"
-                    tooltipPosition="left"
-                    icon="exclamation"
-                    disabled={!(allowInteraction && allow_interact)}
-                    onClick={() => act('interact_overmap', {
-                      datum_to_interact: ship.ref,
-                    })} />
+                  {ship.name}
                 </Table.Cell>
-              )}
-            </Table.Row>
-          ))}
+                {!isViewer && (
+                  <Table.Cell>
+                    <Button
+                      tooltip="Dock"
+                      tooltipPosition="left"
+                      icon="circle"
+                      disabled={!(allowInteraction && allow_dock)}
+                      onClick={() => act('dock_overmap', {
+                        ship_to_dock: ship.ref,
+                      })} />
+                    <Button
+                      tooltip="Interact"
+                      tooltipPosition="left"
+                      icon="exclamation"
+                      disabled={!(allowInteraction && allow_interact)}
+                      onClick={() => act('interact_overmap', {
+                        datum_to_interact: ship.ref,
+                      })} />
+                  </Table.Cell>
+                )}
+              </Table.Row>
+            ))
+          }
         </Table>
       </Section>
     </>
