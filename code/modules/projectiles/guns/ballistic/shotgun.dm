@@ -304,7 +304,8 @@
 		playsound(user, fire_sound, fire_sound_volume, vary_fire_sound)
 		to_chat(user, "<span class='userdanger'>[src] blows up in your face!</span>")
 		if(prob(25))
-			user.gib()
+			user.take_bodypart_damage(0,75)
+			explosion(src, 0, 0, 1, 1)
 			user.dropItemToGround(src)
 		else
 			user.take_bodypart_damage(0,50)
@@ -326,7 +327,8 @@
 		playsound(user, fire_sound, fire_sound_volume, vary_fire_sound)
 		if(prob(50))
 			to_chat(user, "<span class='userdanger'>Fu-</span>")
-			user.gib()
+			user.take_bodypart_damage(100)
+			explosion(src, 0, 0, 1, 1)
 			user.dropItemToGround(src)
 		else
 			to_chat(user, "<span class='userdanger'>[src] blows up in your face! What a surprise.</span>")
@@ -338,7 +340,7 @@
 //god fucking bless brazil
 /obj/item/gun/ballistic/shotgun/doublebarrel/brazil
 	name = "six-barreled \"TRABUCO\" shotgun"
-	desc = "Dear fucking god, what the fuck even is this!? Theres a green flag with a blue circle and a yellow diamond around it. Some text in the circle says: \"ORDEM E PROGRESSO.\""
+	desc = "Dear fucking god, what the fuck even is this!? The recoil caused by the sheer act of firing this thing would probably kill you, if the gun itself doesn't explode in your face first! Theres a green flag with a blue circle and a yellow diamond around it. Some text in the circle says: \"ORDEM E PROGRESSO.\""
 	icon_state = "shotgun_brazil"
 	icon = 'icons/obj/guns/48x32guns.dmi'
 	lefthand_file = 'icons/mob/inhands/weapons/64x_guns_left.dmi'
@@ -369,9 +371,8 @@
 			Salve! Salve!</span>")
 
 			message_admins("A [src] misfired and exploded at [ADMIN_VERBOSEJMP(src)], which was fired by [user].") //logging
+			user.take_bodypart_damage(0,50)
 			explosion(src, 0, 2, 4, 6, TRUE, TRUE)
-
-			user.gib()
 	..()
 /obj/item/gun/ballistic/shotgun/doublebarrel/brazil/death
 	name = "Force of Nature"
