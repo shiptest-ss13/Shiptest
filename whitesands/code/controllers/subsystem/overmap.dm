@@ -43,6 +43,7 @@ SUBSYSTEM_DEF(overmap)
 	size = CONFIG_GET(number/overmap_size)
 
 	overmap_container = new/list(size, size, 0)
+	init_outpost_templates()
 
 	var/encounter_name = "Overmap"
 	var/datum/map_zone/mapzone = SSmapping.create_map_zone(encounter_name)
