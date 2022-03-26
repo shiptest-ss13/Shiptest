@@ -3,7 +3,7 @@
 	desc = "A machine for custom fitting augmentations, with in-built spraypainter."
 	icon = 'icons/obj/pda.dmi'
 	icon_state = "pdapainter"
-	circuit = /obj/item/circuitboard/machine/mechfab
+	circuit = /obj/item/circuitboard/machine/aug_manipulator
 	density = TRUE
 	obj_integrity = 200
 	max_integrity = 200
@@ -55,7 +55,7 @@
 		update_icon()
 
 /obj/machinery/aug_manipulator/attackby(obj/item/O, mob/user, params)
-	if(default_deconstruction_screwdriver(user, "pdapainter", "pdapainter-broken", O)) //placeholder, get a sprite monkey to make an actual sprite, I can't be asked.
+	if(default_deconstruction_screwdriver(user, "pdapainter-broken", "pdapainter", O)) //placeholder, get a sprite monkey to make an actual sprite, I can't be asked.
 		return TRUE
 
 	if(default_deconstruction_crowbar(O))
