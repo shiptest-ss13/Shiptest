@@ -31,6 +31,31 @@
 	icon_state = "armoralt"
 	item_state = "armoralt"
 
+/obj/item/clothing/suit/armor/vest/marine
+	name = "tactical armor vest"
+	desc = "A set of the finest mass produced, stamped plasteel armor plates, containing an environmental protection unit for all-condition door kicking."
+	icon_state = "marine_command"
+	item_state = "armor"
+	clothing_flags = STOPSPRESSUREDAMAGE | THICKMATERIAL
+	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
+	armor = list("melee" = 50, "bullet" = 50, "laser" = 30, "energy" = 25, "bomb" = 50, "bio" = 100, "fire" = 40, "acid" = 50)
+	cold_protection = CHEST | GROIN | LEGS | FEET | ARMS | HANDS
+	min_cold_protection_temperature = ARMOR_MIN_TEMP_PROTECT
+	heat_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
+	resistance_flags = FIRE_PROOF | ACID_PROOF
+
+/obj/item/clothing/suit/armor/vest/marine/security
+	name = "large tactical armor vest"
+	icon_state = "marine_security"
+
+/obj/item/clothing/suit/armor/vest/marine/engineer
+	name = "tactical utility armor vest"
+	icon_state = "marine_engineer"
+
+/obj/item/clothing/suit/armor/vest/marine/medic
+	name = "tactical medic's armor vest"
+	icon_state = "marine_medic"
+
 /obj/item/clothing/suit/armor/vest/old
 	name = "degrading armor vest"
 	desc = "Older generation Type 1 armored vest. Due to degradation over time the vest is far less maneuverable to move in."

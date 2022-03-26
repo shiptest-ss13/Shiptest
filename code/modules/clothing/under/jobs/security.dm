@@ -249,6 +249,25 @@
 	icon_state = "mallcop"
 	can_adjust = FALSE
 
+/obj/item/clothing/under/rank/security/officer/marine
+	name = "blue shirt and tie"
+	desc = "I'm a little busy right now, Calhoun."
+	icon_state = "blueshift"
+	item_state = "blueshift"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/rank/security/officer/military
+	name = "tactical combat uniform"
+	desc = "A dark colored uniform worn by private military forces."
+	icon_state = "military"
+	item_state = "bl_suit"
+	armor = list("melee" = 10, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "fire" = 50, "acid" = 40)
+
+/obj/item/clothing/under/rank/security/officer/military/eng
+	name = "tactical engineering uniform"
+	desc = "A dark colored uniform worn by private military engineers."
+	icon_state = "military_eng"
+
 /obj/item/clothing/under/rank/security/officer/minutemen
 	name = "colonial minutemen jumpsuit"
 	desc = "A jumpsuit worn by low ranking members of the Colonial Minutemen."
