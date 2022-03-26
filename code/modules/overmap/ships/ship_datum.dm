@@ -8,6 +8,7 @@
 	name = "overmap vessel"
 	char_rep = ">"
 	token_icon_state = "ship"
+	allow_dock = TRUE // :pensive: one day...
 	///Timer ID of the looping movement timer
 	var/movement_callback_id
 	///Max possible speed (1 tile per second)

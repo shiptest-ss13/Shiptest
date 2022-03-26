@@ -38,6 +38,11 @@
 	/// The icon state the token will be set to on init.
 	var/token_icon_state = "object"
 
+	/// Whether docking on this datum is supported
+	var/allow_dock = FALSE
+	/// Whether interacting on this datum is supported
+	var/allow_interact = FALSE
+
 /datum/overmap/New(position, ...)
 	SHOULD_NOT_OVERRIDE(TRUE) // Use [/datum/overmap/proc/Initialize] instead.
 	if(!position)
@@ -160,6 +165,21 @@
 	RETURN_TYPE(/turf)
 	return
 
+/**
+ * Called when a user interacts with an overmap token. If the interaction is handled or aborted we return TRUE
+ *
+ * * user - The user that initiaited the interaction, in most cases this resolves to the current usr
+ * * acting_ship - The ship datum that the Interact call chain was started from
+ */
+/datum/overmap/proc/Interact(mob/user, datum/overmap/ship/acting_ship)
+	SHOULD_CALL_PARENT(TRUE)
+	if(!allow_interact)
+		return TRUE // Return true here to tell anything that overrides this to not do anything
+	var/response = SEND_SIGNAL(src, COMSIG_OVERMAP_INTERACT, user, acting_ship)
+	if(response & COMSIG_INTERACT_HANDLED)
+		return TRUE
+	return FALSE
+
 ///////////////////////////////////////////////////////////// HERE BE DRAGONS - DOCKING CODE /////////////////////////////////////////////////////////////
 
 /**
@@ -175,6 +195,8 @@
 	if(docked_to)
 		CRASH("Overmap datum [src] tried to dock to [docked_to] when it is already docked to another overmap datum.")
 
+	if(!allow_dock)
+		return
 	if(docking)
 		return
 	docking = TRUE

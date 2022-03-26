@@ -40,5 +40,10 @@
 #define OVERMAP_SHIP_DOCKING "docking"
 #define OVERMAP_SHIP_UNDOCKING "undocking"
 
+/// The signal sent when a user attempts to interact with an overmap datum
+#define COMSIG_OVERMAP_INTERACT "overmap-interact"
+	/// The response to the above signal denoting that the interaction was handled
+	#define COMSIG_INTERACT_HANDLED (1<<0)
+
 ///Used to get the turf on the "physical" overmap representation.
 #define OVERMAP_TOKEN_TURF(x_pos, y_pos) locate(SSovermap.overmap_vlevel.low_x + SSovermap.overmap_vlevel.reserved_margin + x_pos - 1, SSovermap.overmap_vlevel.low_y + SSovermap.overmap_vlevel.reserved_margin + y_pos - 1, SSovermap.overmap_vlevel.z_value)

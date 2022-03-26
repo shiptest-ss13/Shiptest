@@ -41,7 +41,8 @@ export const HelmConsole = (_props, context) => {
 
 const SharedContent = (_props, context) => {
   const { act, data } = useBackend(context);
-  const { isViewer, shipInfo = [], otherInfo = [] } = data;
+  const { isViewer, shipInfo = [], otherInfo = [], allow_interact, allow_dock } = data;
+  let allowInteraction = !(data.docking || data.docked || (data.speed > 0) || isViewer)
   return (
     <>
       <Section
@@ -93,7 +94,7 @@ const SharedContent = (_props, context) => {
               </Table.Cell>
             )}
           </Table.Row>
-          {otherInfo.map(ship => (
+          {otherInfo.map(ship => ( // TODO: RENAME ALL THIS SHIT TO overmap_datum << - <<
             <Table.Row key={ship.name}>
               <Table.Cell>
                 {ship.name}
@@ -101,17 +102,20 @@ const SharedContent = (_props, context) => {
               {!isViewer && (
                 <Table.Cell>
                   <Button
-                    tooltip="Interact"
+                    tooltip="Dock"
                     tooltipPosition="left"
                     icon="circle"
-                    disabled={// I hate this so much
-                      isViewer
-                      || (data.speed > 0)
-                      || data.docked
-                      || data.docking
-                    }
-                    onClick={() => act('act_overmap', {
-                      ship_to_act: ship.ref,
+                    disabled={!(allowInteraction && allow_dock)}
+                    onClick={() => act('dock_overmap', {
+                      ship_to_dock: ship.ref,
+                    })} />
+                  <Button
+                    tooltip="Interact"
+                    tooltipPosition="left"
+                    icon="exclamation"
+                    disabled={!(allowInteraction && allow_interact)}
+                    onClick={() => act('interact_overmap', {
+                      datum_to_interact: ship.ref
                     })} />
                 </Table.Cell>
               )}

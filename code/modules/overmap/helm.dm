@@ -134,7 +134,9 @@
 	for (var/datum/overmap/object as anything in current_ship.get_nearby_overmap_objects())
 		var/list/other_data = list(
 			name = object.name,
-			ref = REF(object)
+			ref = REF(object),
+			allow_interact = !!(object.allow_interact && !object.docking),
+			allow_dock = !!(object.allow_dock && !object.docking),
 		)
 		.["otherInfo"] += list(other_data)
 
@@ -213,12 +215,22 @@
 
 	if(!current_ship.docked_to && !current_ship.docking)
 		switch(action)
-			if("act_overmap")
+			if("dock_overmap")
 				if(SSshuttle.jump_mode > BS_JUMP_CALLED)
 					to_chat(usr, "<span class='warning'>Cannot dock due to bluespace jump preperations!</span>")
 					return
-				var/datum/overmap/to_act = locate(params["ship_to_act"]) in current_ship.get_nearby_overmap_objects()
+				var/datum/overmap/to_act = locate(params["ship_to_dock"]) in current_ship.get_nearby_overmap_objects()
 				current_ship.Dock(to_act)
+				return
+			if("interact_overmap")
+				if(SSshuttle.jump_mode > BS_JUMP_CALLED)
+					to_chat(usr, "<span class='warning'>Cannot interact due to bluespace jump interference!</span>")
+					return
+				var/datum/overmap/dock_target = locate(params["datum_to_interact"]) in current_ship.get_nearby_overmap_objects()
+				if(!dock_target)
+					to_chat(usr, "<span class='warning'>Failed to hail target. Did you get too far away?</span>")
+					return
+				dock_target.Interact(usr, current_ship)
 				return
 			if("toggle_engine")
 				var/obj/machinery/power/shuttle/engine/E = locate(params["engine"]) in current_ship.shuttle_port.engine_list

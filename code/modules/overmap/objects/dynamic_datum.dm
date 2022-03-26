@@ -7,6 +7,7 @@
 /datum/overmap/dynamic
 	name = "weak energy signature"
 	char_rep = "?"
+	allow_dock = TRUE
 	///The active turf reservation, if there is one
 	var/datum/map_zone/mapzone
 	///The preset ruin template to load, if/when it is loaded.
