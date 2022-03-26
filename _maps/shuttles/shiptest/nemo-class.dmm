@@ -63,7 +63,6 @@
 /obj/structure/window/plasma/reinforced/spawner/west,
 /obj/machinery/atmospherics/pipe/simple/cyan/visible,
 /obj/structure/closet/radiation,
-/obj/item/holosign_creator/atmos,
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "bj" = (
@@ -300,6 +299,9 @@
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/atmospherics/pipe/layer_manifold{
 	dir = 4
+	},
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "nemowindows"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
@@ -630,7 +632,8 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/atmospherics/components/binary/pump{
-	dir = 8
+	dir = 8;
+	name = "Oxygen to Chamber"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
@@ -712,6 +715,9 @@
 /obj/structure/sink{
 	dir = 8;
 	pixel_x = 12
+	},
+/obj/machinery/vending/wallmed{
+	pixel_x = 24
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
@@ -1114,6 +1120,10 @@
 /obj/machinery/atmospherics/pipe/simple{
 	dir = 8
 	},
+/obj/machinery/airalarm/all_access{
+	dir = 1;
+	pixel_y = -24
+	},
 /turf/open/floor/engine,
 /area/ship/engineering/atmospherics)
 "uz" = (
@@ -1225,7 +1235,8 @@
 /area/ship/crew/canteen)
 "wq" = (
 /obj/machinery/atmospherics/components/binary/pump{
-	dir = 8
+	dir = 8;
+	name = "Plasma to Chamber"
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -1259,7 +1270,8 @@
 /area/ship/crew/canteen)
 "xo" = (
 /obj/machinery/atmospherics/components/trinary/mixer/flipped{
-	dir = 4
+	dir = 4;
+	name = "Chamber Mixer"
 	},
 /obj/machinery/light{
 	dir = 4
@@ -1555,6 +1567,13 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
+"CV" = (
+/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "nemowindows"
+	},
+/turf/open/floor/plating,
+/area/ship/engineering/atmospherics)
 "Dj" = (
 /obj/structure/window/plasma/reinforced/spawner/north,
 /obj/structure/window/plasma/reinforced/spawner/east,
@@ -1736,7 +1755,6 @@
 /obj/machinery/light{
 	dir = 4
 	},
-/obj/item/holosign_creator/atmos,
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "Jn" = (
@@ -1888,7 +1906,9 @@
 	},
 /obj/machinery/atmospherics/components/trinary/mixer/airmix/flipped{
 	dir = 8;
-	target_pressure = 500
+	node1_concentration = 0.21;
+	node2_concentration = 0.79;
+	target_pressure = 101
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
@@ -1940,6 +1960,7 @@
 /obj/item/radio/intercom{
 	pixel_x = 30
 	},
+/obj/item/holosign_creator/atmos,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/electrical)
 "Ma" = (
@@ -2021,6 +2042,7 @@
 /obj/machinery/atmospherics/pipe/simple/green/visible/layer5,
 /obj/item/radio/off,
 /obj/item/storage/belt/utility/atmostech,
+/obj/item/holosign_creator/atmos,
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "NB" = (
@@ -2123,10 +2145,8 @@
 /area/ship/hallway/central)
 "OV" = (
 /obj/machinery/atmospherics/components/binary/pump{
-	dir = 4
-	},
-/obj/machinery/airlock_sensor/incinerator_atmos{
-	pixel_x = 24
+	dir = 4;
+	name = "Waste to Environment"
 	},
 /obj/machinery/light{
 	dir = 4
@@ -2768,7 +2788,7 @@ aC
 Nn
 qt
 lu
-JW
+CV
 UB
 ZH
 SH
