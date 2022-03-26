@@ -41,8 +41,18 @@ export const HelmConsole = (_props, context) => {
 
 const SharedContent = (_props, context) => {
   const { act, data } = useBackend(context);
-  const { isViewer, shipInfo = [], otherInfo = [], allow_interact, allow_dock } = data;
-  let allowInteraction = !(data.docking || data.docked || (data.speed > 0) || isViewer)
+  const {
+    isViewer,
+    shipInfo = [],
+    otherInfo = [],
+    allow_interact,
+    allow_dock
+  } = data;
+  let allowInteraction = !(
+    data.docking
+    || data.docked
+    || (data.speed > 0)
+    || isViewer);
   return (
     <>
       <Section
@@ -94,7 +104,8 @@ const SharedContent = (_props, context) => {
               </Table.Cell>
             )}
           </Table.Row>
-          {otherInfo.map(ship => ( // TODO: RENAME ALL THIS SHIT TO overmap_datum << - <<
+          {// TODO: RENAME ALL THIS SHIT TO overmap_datum << - <<
+          otherInfo.map(ship => (
             <Table.Row key={ship.name}>
               <Table.Cell>
                 {ship.name}
@@ -115,7 +126,7 @@ const SharedContent = (_props, context) => {
                     icon="exclamation"
                     disabled={!(allowInteraction && allow_interact)}
                     onClick={() => act('interact_overmap', {
-                      datum_to_interact: ship.ref
+                      datum_to_interact: ship.ref,
                     })} />
                 </Table.Cell>
               )}
