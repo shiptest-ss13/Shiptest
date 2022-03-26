@@ -44,7 +44,7 @@
 
 /obj/item/chisel/attack_self(mob/user)
 	toggling_smooth = !toggling_smooth
-	to_chat(user, "<span class='notice'>\the [src] is now set to reform the [(toggling_smooth ? "smoothness" : "corners")] of walls</span>")
+	to_chat(user, "<span class='notice'>\the [src] is now set to reform the [(toggling_smooth ? "smoothness" : "corners")] of objects.</span>")
 
 /obj/item/chisel/proc/smooth_atom(atom/target, mob/living/user)
 	target.smoothing_flags ^= SMOOTH_BITMASK
