@@ -2,7 +2,7 @@
 /proc/create_portal_pair(turf/source, turf/destination, _lifespan = 300, accuracy = 0, newtype = /obj/effect/portal, atmos_link_override)
 	if(!istype(source) || !istype(destination))
 		return
-	var/turf/actual_destination = get_teleport_turf(destination, accuracy)
+	var/turf/actual_destination = get_teleport_turf(source, destination, accuracy, FALSE)
 	var/obj/effect/portal/P1 = new newtype(source, _lifespan, null, FALSE, null, atmos_link_override)
 	var/obj/effect/portal/P2 = new newtype(actual_destination, _lifespan, P1, TRUE, null, atmos_link_override)
 	if(!istype(P1)||!istype(P2))
