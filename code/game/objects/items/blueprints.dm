@@ -222,10 +222,9 @@
 
 /obj/item/areaeditor/shuttle/afterattack(atom/target, mob/user, proximity_flag, click_parameters)
 	. = ..()
-	var/obj/machinery/computer/helm/H = target
-	if(istype(H) && istype(H.current_ship, /obj/structure/overmap/ship/simulated))
-		var/obj/structure/overmap/ship/simulated/S = H.current_ship
-		target_shuttle = S.shuttle
+	if(istype(target, /obj/machinery/computer/helm))
+		var/obj/machinery/computer/helm/H = target
+		target_shuttle = H.current_ship.shuttle_port
 
 /obj/item/areaeditor/shuttle/attack_self(mob/user)
 	. = ..()
@@ -264,13 +263,11 @@
 		/area/space,
 		))
 
-	if(!creator)
-		return
-
-	if(creator.create_area_cooldown >= world.time)
-		to_chat(creator, "<span class='warning'>You're trying to create a new area a little too fast.</span>")
-		return
-	creator.create_area_cooldown = world.time + 10
+	if(creator)
+		if(creator.create_area_cooldown >= world.time)
+			to_chat(creator, "<span class='warning'>You're trying to create a new area a little too fast.</span>")
+			return
+		creator.create_area_cooldown = world.time + 10
 
 	var/list/turfs = detect_room(get_turf(creator), area_or_turf_fail_types, BP_MAX_ROOM_SIZE*2)
 	if(!turfs)
@@ -295,11 +292,12 @@
 			continue
 		var/turf/T = turfs[i]
 		if(T.z == target_shuttle.z)
-			if(T.x >= (shuttle_coords[1] - 1) && T.x <= (shuttle_coords[3] + 1))
-				if(T.y >= (shuttle_coords[2] - 1) && T.y <= (shuttle_coords[4] + 1))
+			if(T.x >= (min(shuttle_coords[1], shuttle_coords[3]) - 1) && T.x <= (max(shuttle_coords[1], shuttle_coords[3]) + 1))
+				if(T.y >= (min(shuttle_coords[2], shuttle_coords[4]) - 1) && T.y <= (max(shuttle_coords[2], shuttle_coords[4]) + 1))
 					near_shuttle = TRUE
 	if(!near_shuttle)
 		to_chat(creator, "<span class='warning'>The new area must be next to the shuttle.</span>")
+		return
 	var/area_choice = input(creator, "Choose an area to expand or make a new area.", "Area Expansion") as null|anything in areas
 	area_choice = areas[area_choice]
 
@@ -333,17 +331,18 @@
 		if(length(thing.baseturfs) < 2)
 			continue
 		//Add the shuttle base shit to the shuttle
-		if(!thing.baseturfs.Find(/turf/baseturf_skipover/shuttle))
+		if(!(/turf/baseturf_skipover/shuttle in thing.baseturfs))
 			thing.baseturfs.Insert(3, /turf/baseturf_skipover/shuttle)
 
 	var/list/firedoors = oldA.firedoors
-	for(var/obj/machinery/door/firedoor/FD as anything in firedoors)
+	for(var/door in firedoors)
+		var/obj/machinery/door/firedoor/FD = door
 		FD.CalculateAffectingAreas()
 
 	target_shuttle.shuttle_areas[newA] = TRUE
 
 	newA.connect_to_shuttle(target_shuttle, target_shuttle.get_docked())
-	for(var/atom/thing as anything in newA)
+	for(var/atom/thing in newA)
 		thing.connect_to_shuttle(target_shuttle, target_shuttle.get_docked())
 
 	target_shuttle.recalculate_bounds()
@@ -397,6 +396,8 @@
 			height = new_width
 			dwidth = offset_y - 1
 			dheight = new_width - offset_x
+	qdel(assigned_transit, TRUE)
+	assigned_transit = null
 
 /obj/item/areaeditor/shuttle/cyborg
 	name = "digital shuttle expansion permit"
