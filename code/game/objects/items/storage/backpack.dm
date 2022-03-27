@@ -27,6 +27,7 @@
 	STR.max_combined_w_class = 21
 	STR.max_w_class = WEIGHT_CLASS_NORMAL
 	STR.max_items = 21
+	STR.use_sound = 'sound/items/storage/unzip.ogg'
 
 /*
  * Backpack Types
