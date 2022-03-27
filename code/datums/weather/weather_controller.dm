@@ -17,15 +17,15 @@
 	var/skyblock = 0
 	/// A simple cache to make sure we dont call updates with no changes
 	var/last_checked_skyblock = 0
-	/// Common cache for current weathers list
-	var/static/list/current_weathers_cache = list()
+	/// Common cache for possible weathers list
+	var/static/list/possible_weathers_cache = list()
 
 /datum/weather_controller/New(datum/map_zone/passed_mapzone)
 	. = ..()
-	if(current_weathers)
-		if(!current_weathers_cache[type])
-			current_weathers_cache[type] = current_weathers
-		current_weathers = current_weathers_cache[type]
+	if(possible_weathers)
+		if(!possible_weathers_cache[type])
+			possible_weathers_cache[type] = possible_weathers
+		possible_weathers = possible_weathers_cache[type]
 	mapzone = passed_mapzone
 	mapzone.weather_controller = src
 	SSweather.weather_controllers += src
@@ -38,12 +38,12 @@
 
 /// In theory this should never be destroyed, unless you plan to dynamically change existing z levels
 /datum/weather_controller/Destroy()
-	mapzone.weather_controller = null
-	mapzone = null
 	if(current_weathers)
 		for(var/i in current_weathers)
 			var/datum/weather/W = i
 			W.end()
+	mapzone.weather_controller = null
+	mapzone = null
 	SSweather.weather_controllers -= src
 	return ..()
 
