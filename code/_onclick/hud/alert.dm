@@ -165,7 +165,7 @@
 
 /atom/movable/screen/alert/fat
 	name = "Fat"
-	desc = "You ate too much food, lardass. Run around the station and lose some weight."
+	desc = "You ate too much food, lardass. Run around and lose some weight."
 	icon_state = "fat"
 
 /atom/movable/screen/alert/hungry
@@ -359,8 +359,8 @@ or shoot a gun to move around via Newton's 3rd Law of Motion."
 		return
 
 	if (length(last_whisper))
+		living_owner.dying_breath("[last_whisper]")
 		living_owner.say("#[last_whisper]")
-
 	living_owner.succumb(whispered = length(last_whisper) > 0)
 
 //ALIENS

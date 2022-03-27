@@ -61,15 +61,6 @@
 	},
 /turf/open/floor/mineral/titanium/purple,
 /area/ship/science)
-"cD" = (
-/obj/structure/grille,
-/obj/structure/window/reinforced/fulltile,
-/turf/open/floor/plating,
-/area/ship/cargo)
-"cL" = (
-/obj/machinery/computer/communications,
-/turf/open/floor/mineral/plastitanium,
-/area/ship/bridge)
 "cT" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/mineral/titanium/blue,
@@ -116,26 +107,6 @@
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/maintenance/central)
-"eB" = (
-/obj/structure/closet/wall{
-	name = "engineering closet";
-	pixel_x = 30
-	},
-/obj/item/storage/toolbox/mechanical{
-	pixel_x = -1
-	},
-/obj/item/clothing/head/welding,
-/obj/item/clothing/under/rank/engineering/engineer,
-/obj/item/clothing/gloves/color/yellow,
-/obj/effect/decal/cleanable/dirt,
-/obj/item/stack/cable_coil/red,
-/obj/item/stack/cable_coil/red,
-/obj/machinery/power/terminal,
-/obj/structure/cable{
-	icon_state = "0-8"
-	},
-/turf/open/floor/plating,
-/area/ship/maintenance/aft)
 "fa" = (
 /obj/structure/frame/computer,
 /obj/effect/decal/cleanable/blood/gibs/down,
@@ -202,6 +173,16 @@
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/aft)
+"hM" = (
+/obj/machinery/computer/monitor,
+/turf/open/floor/mineral/plastitanium,
+/area/ship/bridge)
+"hS" = (
+/obj/machinery/cryopod{
+	dir = 8
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/ship/crew/dorm)
 "ix" = (
 /obj/machinery/airalarm/directional/north,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
@@ -286,6 +267,10 @@
 	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/ship/maintenance/central)
+"lU" = (
+/obj/structure/frame/computer,
+/turf/open/floor/mineral/plastitanium,
+/area/ship/bridge)
 "mM" = (
 /turf/open/floor/mineral/plastitanium/red,
 /area/ship/maintenance/central)
@@ -374,14 +359,6 @@
 /obj/structure/bed,
 /turf/open/floor/mineral/titanium/blue,
 /area/ship/medical)
-"pG" = (
-/obj/structure/window/reinforced/fulltile,
-/obj/structure/grille,
-/obj/machinery/door/poddoor{
-	id = "bogatyr_windows"
-	},
-/turf/open/floor/plating,
-/area/ship/maintenance/central)
 "pO" = (
 /obj/structure/sign/poster/official/twelve_gauge,
 /turf/closed/wall/r_wall,
@@ -411,14 +388,6 @@
 	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/ship/maintenance/central)
-"qC" = (
-/obj/structure/grille,
-/obj/structure/window/reinforced/fulltile,
-/obj/machinery/door/poddoor{
-	id = "bogatyr_windows"
-	},
-/turf/open/floor/plating,
-/area/ship/medical)
 "qQ" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable{
@@ -449,6 +418,11 @@
 	},
 /turf/open/floor/mineral/titanium/purple,
 /area/ship/science)
+"rn" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/suit_storage_unit/independent/pilot,
+/turf/open/floor/mineral/titanium/yellow,
+/area/ship/cargo)
 "rv" = (
 /obj/structure/sign/poster/random,
 /turf/closed/wall/r_wall,
@@ -642,10 +616,6 @@
 	},
 /turf/open/floor/mineral/titanium/yellow,
 /area/ship/cargo)
-"xL" = (
-/obj/machinery/cryopod,
-/turf/open/floor/mineral/plastitanium,
-/area/ship/crew/dorm)
 "xR" = (
 /obj/structure/tank_dispenser,
 /turf/open/floor/mineral/titanium/yellow,
@@ -728,6 +698,13 @@
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/maintenance/central)
+"Af" = (
+/obj/machinery/door/poddoor{
+	id = "bogatyr_windows"
+	},
+/obj/effect/spawner/structure/window/reinforced,
+/turf/open/floor/plating,
+/area/ship/medical)
 "Ak" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood/old,
@@ -764,26 +741,6 @@
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/crew/dorm)
-"AR" = (
-/obj/structure/closet/wall{
-	name = "captain's closet";
-	pixel_y = -31
-	},
-/obj/item/areaeditor/shuttle,
-/obj/item/reagent_containers/food/drinks/flask/gold{
-	list_reagents = list(/datum/reagent/consumable/ethanol/sbiten = 30)
-	},
-/obj/item/clothing/suit/security/officer/russian,
-/obj/item/clothing/under/costume/russian_officer,
-/obj/item/clothing/shoes/russian,
-/obj/item/clothing/head/helmet/rus_ushanka,
-/obj/item/storage/belt/sabre,
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
-	dir = 4
-	},
-/turf/open/floor/mineral/plastitanium,
-/area/ship/bridge)
 "AV" = (
 /mob/living/simple_animal/hostile/asteroid/wolf{
 	faction = list("neutral");
@@ -1071,6 +1028,30 @@
 	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/ship/maintenance/central)
+"Iq" = (
+/obj/structure/closet/wall{
+	name = "captain's closet";
+	pixel_y = -31
+	},
+/obj/item/areaeditor/shuttle,
+/obj/item/reagent_containers/food/drinks/flask/gold{
+	list_reagents = list(/datum/reagent/consumable/ethanol/sbiten = 30)
+	},
+/obj/item/clothing/suit/security/officer/russian,
+/obj/item/clothing/under/costume/russian_officer,
+/obj/item/clothing/shoes/russian,
+/obj/item/clothing/head/helmet/rus_ushanka,
+/obj/item/storage/belt/sabre,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
+	dir = 4
+	},
+/obj/item/gun/ballistic/revolver/nagant,
+/obj/item/ammo_box/n762,
+/obj/item/stack/spacecash/c1000,
+/obj/item/stack/spacecash/c1000,
+/turf/open/floor/mineral/plastitanium,
+/area/ship/bridge)
 "Je" = (
 /obj/machinery/door/airlock/engineering{
 	name = "Engines"
@@ -1100,6 +1081,10 @@
 	},
 /turf/open/floor/mineral/titanium/blue,
 /area/ship/medical)
+"JF" = (
+/obj/effect/spawner/structure/window/reinforced,
+/turf/open/floor/plating,
+/area/ship/cargo)
 "JP" = (
 /turf/open/floor/mineral/titanium/yellow,
 /area/ship/cargo)
@@ -1143,6 +1128,27 @@
 	dir = 1
 	},
 /obj/structure/window/reinforced/spawner,
+/turf/open/floor/plating,
+/area/ship/maintenance/aft)
+"Le" = (
+/obj/structure/closet/wall{
+	name = "engineering closet";
+	pixel_x = 30
+	},
+/obj/item/storage/toolbox/mechanical{
+	pixel_x = -1
+	},
+/obj/item/clothing/head/welding,
+/obj/item/clothing/under/rank/engineering/engineer,
+/obj/item/clothing/gloves/color/yellow,
+/obj/effect/decal/cleanable/dirt,
+/obj/item/stack/cable_coil/red,
+/obj/item/stack/cable_coil/red,
+/obj/machinery/power/terminal,
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/item/stack/tape/industrial,
 /turf/open/floor/plating,
 /area/ship/maintenance/aft)
 "LM" = (
@@ -1313,10 +1319,6 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
 /turf/open/floor/mineral/plastitanium/red,
 /area/ship/maintenance/central)
-"RD" = (
-/obj/machinery/suit_storage_unit/standard_unit,
-/turf/open/floor/mineral/titanium/yellow,
-/area/ship/cargo)
 "RN" = (
 /obj/machinery/door/airlock/vault{
 	name = "Armory"
@@ -1387,6 +1389,10 @@
 /obj/machinery/vending/sustenance,
 /turf/open/floor/mineral/plastitanium/red,
 /area/ship/maintenance/central)
+"TK" = (
+/obj/machinery/suit_storage_unit/independent/engineering,
+/turf/open/floor/mineral/titanium/yellow,
+/area/ship/cargo)
 "Uk" = (
 /obj/machinery/door/airlock/mining/glass{
 	name = "Cargo"
@@ -1489,6 +1495,13 @@
 	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/ship/security)
+"Wg" = (
+/obj/machinery/door/poddoor{
+	id = "bogatyr_bridge"
+	},
+/obj/effect/spawner/structure/window/reinforced,
+/turf/open/floor/plating,
+/area/ship/bridge)
 "Wk" = (
 /obj/item/cigbutt,
 /obj/structure/cable{
@@ -1515,14 +1528,6 @@
 	},
 /turf/open/floor/mineral/titanium/blue,
 /area/ship/medical)
-"WR" = (
-/obj/structure/grille,
-/obj/structure/window/reinforced/fulltile,
-/obj/machinery/door/poddoor{
-	id = "bogatyr_bridge"
-	},
-/turf/open/floor/plating,
-/area/ship/bridge)
 "WX" = (
 /turf/closed/wall/r_wall,
 /area/ship/science)
@@ -1555,10 +1560,13 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/crew/dorm)
-"XL" = (
-/obj/machinery/computer/autopilot,
-/turf/open/floor/mineral/plastitanium,
-/area/ship/bridge)
+"XP" = (
+/obj/machinery/door/poddoor{
+	id = "bogatyr_windows"
+	},
+/obj/effect/spawner/structure/window/reinforced,
+/turf/open/floor/plating,
+/area/ship/maintenance/central)
 "Yr" = (
 /obj/machinery/light/broken{
 	dir = 1
@@ -1649,9 +1657,9 @@ Zr
 iN
 iN
 iN
-pG
-pG
-pG
+XP
+XP
+XP
 kh
 iN
 Xh
@@ -1676,7 +1684,7 @@ ZP
 qQ
 mM
 EK
-cD
+JF
 Ux
 on
 on
@@ -1731,7 +1739,7 @@ aB
 Zr
 "}
 (5,1,1) = {"
-WR
+Wg
 OY
 lJ
 qo
@@ -1753,9 +1761,9 @@ aB
 Zr
 "}
 (6,1,1) = {"
-WR
-XL
-AR
+Wg
+lU
+Iq
 qo
 Sl
 EQ
@@ -1775,8 +1783,8 @@ aB
 Zr
 "}
 (7,1,1) = {"
-WR
-cL
+Wg
+hM
 NW
 To
 xb
@@ -1797,7 +1805,7 @@ NC
 Zr
 "}
 (8,1,1) = {"
-WR
+Wg
 ol
 Kj
 qo
@@ -1810,8 +1818,8 @@ LQ
 Dj
 Xh
 xR
-RD
-qs
+TK
+rn
 qs
 Xh
 pV
@@ -1902,7 +1910,7 @@ QB
 UX
 VM
 UZ
-eB
+Le
 KT
 jT
 "}
@@ -1913,7 +1921,7 @@ Gw
 cx
 MQ
 LY
-xL
+hS
 SB
 LY
 LY
@@ -2005,7 +2013,7 @@ Zr
 Zr
 PC
 PC
-qC
+Af
 PC
 PC
 Zr

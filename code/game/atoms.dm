@@ -917,8 +917,8 @@
   * Default behaviour is to loop through atom contents and call their HandleTurfChange() proc
   */
 /atom/proc/HandleTurfChange(turf/T)
-	for(var/a in src)
-		var/atom/A = a
+	for(var/atom in src)
+		var/atom/A = atom
 		A.HandleTurfChange(T)
 
 /**
@@ -1133,7 +1133,7 @@
 		if(newname)
 			vv_auto_rename(newname)
 
-	if(href_list[VV_HK_EDIT_FILTERS] && check_rights(R_VAREDIT))
+	if(href_list[VV_HK_EDIT_FILTERS] && check_rights(R_ADMIN|R_DEBUG) && check_rights(R_VAREDIT)) //This needs to be like this due to the fact that I'm not coding a fucking UI state for R_VV for ONE BUTTON.
 		var/client/C = usr.client
 		C?.open_filter_editor(src)
 

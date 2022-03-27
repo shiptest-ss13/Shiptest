@@ -441,8 +441,7 @@ SUBSYSTEM_DEF(timer)
 		SStimer.hashes -= hash
 
 	if (callBack && callBack.object && callBack.object != GLOBAL_PROC && callBack.object.active_timers)
-		callBack.object.active_timers -= src
-		UNSETEMPTY(callBack.object.active_timers)
+		LAZYREMOVE(callBack.object.active_timers, src)
 
 	callBack = null
 

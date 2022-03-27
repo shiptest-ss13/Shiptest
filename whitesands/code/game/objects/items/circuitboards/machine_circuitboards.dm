@@ -47,16 +47,6 @@
 		/obj/item/stack/cable_coil = 1,
 		/obj/item/stack/sheet/glass = 2)
 
-/obj/item/circuitboard/machine/autodoc
-	name = "Autodoc (Machine Board)"
-	build_path = /obj/machinery/autodoc
-	req_components = list(/obj/item/scalpel/advanced = 1,
-		/obj/item/retractor/advanced = 1,
-		/obj/item/surgicaldrill/advanced = 1,
-		/obj/item/stock_parts/manipulator = 1,
-		/obj/item/stock_parts/micro_laser = 3,
-		/obj/item/stock_parts/matter_bin = 1)
-
 /obj/item/circuitboard/machine/shuttle/engine/plasma
 	name = "Plasma Thruster (Machine Board)"
 	build_path = /obj/machinery/power/shuttle/engine/fueled/plasma

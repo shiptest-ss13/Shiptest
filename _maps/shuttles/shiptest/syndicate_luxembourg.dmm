@@ -31,9 +31,8 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/storage)
 "bj" = (
-/obj/machinery/computer/autopilot{
-	dir = 4;
-	ship_id = "syndietest"
+/obj/structure/frame/computer{
+	dir = 4
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/bridge)
@@ -101,6 +100,7 @@
 /obj/item/tank/internals/emergency_oxygen/double,
 /obj/item/clothing/under/syndicate/intern,
 /obj/item/storage/backpack/duffelbag/syndie,
+/obj/item/stack/spacecash/c1000,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "dc" = (
