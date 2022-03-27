@@ -40,7 +40,7 @@
 /datum/weather_controller/Destroy()
 	if(current_weathers)
 		for(var/i in current_weathers)
-			var/datum/weather/W = i
+			var/datum/weather/W = current_weathers[i]
 			W.end()
 	mapzone.weather_controller = null
 	mapzone = null
