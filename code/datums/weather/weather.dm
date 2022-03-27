@@ -111,8 +111,7 @@
 		sound_weak_inside = new sound_weak_inside(list(), FALSE, TRUE)
 
 /datum/weather/Destroy()
-	my_controller.current_weathers -= type
-	UNSETEMPTY(my_controller.current_weathers)
+	LAZYREMOVE(my_controller.current_weathers, type)
 	my_controller = null
 	return ..()
 

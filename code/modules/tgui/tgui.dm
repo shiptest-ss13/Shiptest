@@ -55,7 +55,7 @@
  */
 /datum/tgui/New(mob/user, datum/src_object, interface, title, ui_x, ui_y)
 	log_tgui(user,
-		"new [interface] fancy [user.client.prefs.tgui_fancy]",
+		"new [interface] fancy [user.client?.prefs.tgui_fancy]",
 		src_object = src_object)
 	src.user = user
 	src.src_object = src_object
@@ -314,6 +314,5 @@
 		if("setSharedState")
 			if(status != UI_INTERACTIVE)
 				return
-			LAZYINITLIST(src_object.tgui_shared_states)
-			src_object.tgui_shared_states[href_list["key"]] = href_list["value"]
+			LAZYSET(src_object.tgui_shared_states, href_list["key"], href_list["value"])
 			SStgui.update_uis(src_object)

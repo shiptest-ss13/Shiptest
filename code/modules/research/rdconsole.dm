@@ -122,6 +122,10 @@ Nothing else in the console has ID requirements.
 
 /obj/machinery/computer/rdconsole/attackby(obj/item/D, mob/user, params)
 	if(istype(D, /obj/item/research_notes))
+		if(!stored_research)
+			visible_message("Warning: No Linked Server!")
+			return
+
 		var/obj/item/research_notes/R = D
 		stored_research.add_point_list(list(TECHWEB_POINT_TYPE_GENERIC = R.value))
 		playsound(src,'sound/machines/copier.ogg', 50, TRUE)

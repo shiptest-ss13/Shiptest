@@ -57,6 +57,14 @@
 	name = "Ammo Box (.38 hunting)"
 	id = "c38_hunting"
 	build_type = AUTOLATHE
-	materials = list(/datum/material/iron = 30000)
+	materials = list(/datum/material/iron = 20000)
 	build_path = /obj/item/ammo_box/c38_box/hunting
 	category = list("Imported")
+
+/obj/item/disk/design_disk/ammo_c10mm
+	name = "Design Disk - 10mm Ammo"
+	desc = "A design disk containing the pattern for a refill box of standard 10mm ammo, used in Stechkin pistols."
+
+/obj/item/disk/design_disk/ammo_c10mm/Initialize()
+	. = ..()
+	blueprints[1] = new /datum/design/c10mm()

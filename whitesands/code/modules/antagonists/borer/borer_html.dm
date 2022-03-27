@@ -85,7 +85,7 @@
 				display: none;
 			}
 			</style>
-			<script src="jquery.min.js"></script>
+			<script src="[SSassets.transport.get_asset_url("jquery.min.js")]"></script>
 			<script type='text/javascript'>
 				function update_chemicals(chemicals) {
 					$('#chemicals').text(chemicals);

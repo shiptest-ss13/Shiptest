@@ -745,9 +745,9 @@
 	death = FALSE
 	icon = 'icons/obj/machines/sleeper.dmi'
 	icon_state = "sleeper_s"
-	short_desc = "You are a syndicate operative on old ship, stuck in hostile space."
-	flavour_text = "Your ship docks after a long time somewhere in hostile space, reporting a malfunction. You are stuck here, with Nanotrasen station nearby. Fix the ship, find a way to power it and follow your captain's orders."
-	important_info = "Obey orders given by your captain. DO NOT let the ship fall into enemy hands."
+	short_desc = "You are a syndicate operative, awoken deep in hostile space."
+	flavour_text = "Your ship is part of the infamous \"sleeper\" doctrine of syndicate strike forces, who flung unpowered vessels with cryo-frozen crew deep into Nanotransen territory, tasked to cause havoc and carry out covert reconnisance. The chill in your bones informs you that you've been asleep far longer than intended. Your vessel appears to be in a sorry state, and a tinny alarm pierces through your fugue to report unknown contacts aboard the vessel. It's going to be one of those days."
+	important_info = "Obey orders given by your captain. Prevent yourself and any syndicate assets from falling into enemy hands."
 	outfit = /datum/outfit/syndicatespace/syndicrew
 	assignedrole = "Cybersun Crewmember"
 
@@ -769,9 +769,9 @@
 	death = FALSE
 	icon = 'icons/obj/machines/sleeper.dmi'
 	icon_state = "sleeper_s"
-	short_desc = "You are the captain of an old ship, stuck in hostile space."
-	flavour_text = "Your ship docks after a long time somewhere in hostile space, reporting a malfunction. You are stuck here, with Nanotrasen station nearby. Command your crew and turn your ship into the most protected fortress."
-	important_info = "Protect the ship and secret documents in your backpack with your own life. DO NOT let the ship fall into enemy hands."
+	short_desc = "You are the captain of a long-slumbering syndicate vessel, stuck deep in enemy territory."
+	flavour_text = "Your ship is part of the infamous \"sleeper\" doctrine of syndicate strike forces, who flung unpowered vessels with cryo-frozen crew deep into Nanotransen territory, tasked to cause havoc and carry out covert reconnisance. The chill in your bones informs you that you've been asleep far longer than intended. Your vessel appears to be in a sorry state, and a tinny alarm pierces through your fugue to report unknown contacts aboard the vessel. It's going to be one of those days."
+	important_info = "Protect the ship and secret documents in your backpack with your own life. Secure the syndicate assets present at your covert landing site. Prevent them, your crew, and yourself from falling into corporate hands."
 	outfit = /datum/outfit/syndicatespace/syndicaptain
 	assignedrole = "Cybersun Captain"
 

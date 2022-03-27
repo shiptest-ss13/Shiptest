@@ -44,9 +44,6 @@
 /obj/item/storage/toolbox/electrical,
 /obj/structure/cable,
 /obj/machinery/power/apc/auto_name/east,
-/obj/machinery/power/terminal{
-	dir = 4
-	},
 /turf/open/floor/mineral/titanium/yellow,
 /area/ship/engineering)
 "cn" = (
@@ -173,7 +170,6 @@
 	},
 /obj/structure/cable,
 /obj/machinery/power/apc/auto_name/south,
-/obj/machinery/power/terminal,
 /turf/open/floor/mineral/titanium/blue,
 /area/ship/medical)
 "jV" = (
@@ -185,6 +181,9 @@
 	},
 /obj/structure/table/reinforced,
 /obj/item/radio,
+/obj/item/stack/spacecash/c1000,
+/obj/item/stack/spacecash/c1000,
+/obj/item/stack/spacecash/c1000,
 /turf/open/floor/mineral/titanium/yellow,
 /area/ship/bridge)
 "ka" = (
@@ -443,9 +442,6 @@
 	icon_state = "0-2"
 	},
 /obj/machinery/power/apc/auto_name/west,
-/obj/machinery/power/terminal{
-	dir = 8
-	},
 /turf/open/floor/mineral/titanium,
 /area/ship/crew)
 "wE" = (
@@ -672,9 +668,6 @@
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
-/obj/machinery/power/terminal{
-	dir = 8
-	},
 /obj/machinery/power/apc/auto_name/west,
 /turf/open/floor/mineral/titanium/yellow,
 /area/ship/bridge)
@@ -697,11 +690,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/bridge)
-"Jf" = (
-/obj/effect/spawner/structure/window/shuttle,
-/obj/machinery/atmospherics/pipe/simple/purple/hidden,
-/turf/open/floor/plating,
-/area/ship/engineering)
 "Jy" = (
 /obj/machinery/cryopod,
 /turf/open/floor/mineral/titanium/purple,
@@ -1052,7 +1040,7 @@ Du
 bd
 bd
 bd
-Jf
+fU
 YI
 pi
 cF

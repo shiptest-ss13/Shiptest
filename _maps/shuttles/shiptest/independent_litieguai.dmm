@@ -10,7 +10,6 @@
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "aT" = (
-/obj/machinery/suit_storage_unit/open,
 /obj/item/clothing/suit/space/hardsuit/combatmedic,
 /obj/item/tank/internals/emergency_oxygen/engi,
 /obj/item/clothing/mask/gas/sechailer,
@@ -19,6 +18,7 @@
 	dir = 1;
 	pixel_y = -24
 	},
+/obj/machinery/suit_storage_unit/inherit,
 /turf/open/floor/plasteel,
 /area/ship/storage)
 "bl" = (
@@ -48,11 +48,11 @@
 /turf/open/floor/plasteel,
 /area/ship/storage)
 "bC" = (
-/obj/machinery/suit_storage_unit/open,
 /obj/item/clothing/suit/space/hardsuit/combatmedic,
 /obj/item/tank/internals/emergency_oxygen/engi,
 /obj/item/clothing/mask/gas/sechailer,
 /obj/effect/turf_decal/industrial/outline/red,
+/obj/machinery/suit_storage_unit/inherit,
 /turf/open/floor/plasteel,
 /area/ship/storage)
 "bX" = (
@@ -129,7 +129,7 @@
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "dI" = (
-/obj/machinery/computer/autopilot,
+/obj/structure/frame/computer,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "dR" = (
@@ -1832,7 +1832,6 @@
 /turf/open/floor/plasteel/showroomfloor,
 /area/ship/medical)
 "SH" = (
-/obj/machinery/suit_storage_unit/open,
 /obj/item/clothing/suit/space/hardsuit/combatmedic,
 /obj/item/tank/internals/emergency_oxygen/engi,
 /obj/item/clothing/mask/gas/sechailer,
@@ -1840,6 +1839,7 @@
 	pixel_x = 32
 	},
 /obj/effect/turf_decal/industrial/outline/red,
+/obj/machinery/suit_storage_unit/inherit,
 /turf/open/floor/plasteel,
 /area/ship/storage)
 "SI" = (
@@ -1974,6 +1974,11 @@
 /obj/item/gun/ballistic/revolver/detective{
 	name = "\improper Colt Navy Special"
 	},
+/obj/item/stack/spacecash/c1000,
+/obj/item/stack/spacecash/c1000,
+/obj/item/stack/spacecash/c1000,
+/obj/item/stack/spacecash/c1000,
+/obj/item/stack/spacecash/c1000,
 /turf/open/floor/carpet/nanoweave,
 /area/ship/bridge)
 "UO" = (

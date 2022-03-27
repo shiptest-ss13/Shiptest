@@ -1467,7 +1467,7 @@
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "ru" = (
-/obj/machinery/computer/autopilot,
+/obj/structure/frame/computer,
 /turf/open/floor/carpet/nanoweave/blue,
 /area/ship/bridge)
 "rJ" = (
@@ -1727,6 +1727,7 @@
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
 	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
 "uC" = (
@@ -2824,6 +2825,7 @@
 /obj/machinery/light{
 	dir = 4
 	},
+/obj/item/stack/spacecash/c1000,
 /turf/open/floor/carpet/nanoweave/blue,
 /area/ship/bridge)
 "Fo" = (
@@ -3395,6 +3397,9 @@
 	},
 /obj/machinery/door/airlock/security/glass{
 	name = "Brig"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security/prison)

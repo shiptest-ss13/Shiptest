@@ -3,7 +3,7 @@
 	set name = "Show Borg Panel"
 	set desc = "Show borg panel"
 
-	if(!check_rights(R_ADMIN))
+	if(!check_rights(R_ADMIN|R_DEBUG))
 		return
 
 	if (!istype(borgo, /mob/living/silicon/robot))
@@ -31,7 +31,7 @@
 	borg = to_borg
 
 /datum/borgpanel/ui_state(mob/user)
-	return GLOB.admin_state
+	return GLOB.admin_debug_state
 
 /datum/borgpanel/ui_interact(mob/user, datum/tgui/ui)
 	ui = SStgui.try_update_ui(user, src, ui)

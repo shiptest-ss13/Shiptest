@@ -41,7 +41,7 @@
 /datum/surgery/organ_manipulation/mechanic
 	name = "Prosthesis organ manipulation"
 	possible_locs = list(BODY_ZONE_CHEST, BODY_ZONE_HEAD)
-	requires_bodypart_type = BODYPART_ROBOTIC
+	requires_bodypart_type = BODYTYPE_ROBOTIC
 	lying_required = FALSE
 	self_operable = TRUE
 	steps = list(
@@ -110,7 +110,8 @@
 		var/obj/item/mmi/target_mmi = tool
 		if(!affected)
 			return -1
-		if(affected.status != ORGAN_ROBOTIC)
+
+		if(IS_ORGANIC_LIMB(affected))
 			to_chat(user, "<span class='notice'>You can't put [tool] into a meat enclosure!</span>")
 			return -1
 		if(!isipc(target))

@@ -3,7 +3,7 @@
 	set name = "Shuttle Manipulator"
 	set desc = "Opens the shuttle manipulator UI."
 
-	if(!check_rights(R_ADMIN))
+	if(!check_rights(R_DEBUG))
 		return
 
 	SSshuttle.ui_interact(usr)
@@ -33,17 +33,20 @@
 			destination = null
 			mode = SHUTTLE_IGNITING
 			setTimer(ignitionTime)
+			message_admins("\[SHUTTLE]: [key_name_admin(user)] has placed [name] into Infinite Transit.")
 
 		if("Delete Shuttle")
 			if(alert(user, "Really delete [name]?", "Delete Shuttle", "Cancel", "Really!") != "Really!")
 				return
 			jumpToNullSpace()
+			message_admins("\[SHUTTLE]: [key_name_admin(user)] has deleted [name].")
 
 		if("Into The Sunset (delete & greentext 'escape')")
 			if(alert(user, "Really delete [name] and greentext escape objectives?", "Delete Shuttle", "Cancel", "Really!") != "Really!")
 				return
 			intoTheSunset()
+			message_admins("\[SHUTTLE]: [key_name_admin(user)] has deleted [name], and granted the crew greentext.")
 
 		else
 			if(options[selection])
-				request(options[selection])
+				initiate_docking(options[selection])

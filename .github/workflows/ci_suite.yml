@@ -14,6 +14,10 @@ jobs:
       - uses: actions/checkout@v2
         with:
           ref: master
+      - name: Python setup
+        uses: actions/setup-python@v1
+        with:
+          python-version: "3.9"
       - uses: actions/checkout@v2
       - name: Setup cache
         id: cache-spacemandmm
@@ -26,17 +30,19 @@ jobs:
         run: bash tools/ci/install_spaceman_dmm.sh dreamchecker
       - name: Install Tools
         run: |
-          pip3 install setuptools
+          pip install setuptools
           bash tools/ci/install_node.sh
           bash tools/ci/install_spaceman_dmm.sh dreamchecker
           bash tools/ci/install_auxmos.sh
           tools/bootstrap/python -c ''
+      - name: Check line endings
+        uses: AODocs/check-eol@v1.1
       - name: Run Linters
         run: |
           bash tools/ci/check_filedirs.sh shiptest.dme
           bash tools/ci/check_changelogs.sh
           find . -name "*.php" -print0 | xargs -0 -n1 php -l
-          find . -name "*.json" -not -path "*/node_modules/*" -print0 | xargs -0 python3 ./tools/json_verifier.py
+          find . -name "*.json" -not -path "*/node_modules/*" -print0 | xargs -0 tools/bootstrap/python ./tools/json_verifier.py
           tgui/bin/tgui --lint
           bash tools/ci/check_grep.sh
           tools/bootstrap/python -m ci.check_regex --log-changes-only
@@ -58,6 +64,10 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v2
+      - name: Python setup
+        uses: actions/setup-python@v1
+        with:
+          python-version: "3.9"
       - name: Setup cache
         id: cache-byond
         uses: actions/cache@v2
@@ -70,7 +80,7 @@ jobs:
       - name: Compile All Maps
         run: |
           source $HOME/BYOND/byond/bin/byondsetup
-          python3 tools/ci/template_dm_generator.py
+          tools/bootstrap/python tools/ci/template_dm_generator.py
           tgui/bin/tgui --build
           bash tools/ci/dm.sh -DCIBUILDING -DCITESTING -DALL_MAPS shiptest.dme
 

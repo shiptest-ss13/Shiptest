@@ -65,5 +65,5 @@
 
 /obj/item/clothing/under/pants/camo
 	name = "camo pants"
-	desc = "A pair of woodland camouflage pants. Probably not the best choice for a space station."
+	desc = "A pair of woodland camouflage pants. Probably not the best choice for deep space."
 	icon_state = "camopants"
