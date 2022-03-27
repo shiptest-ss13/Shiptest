@@ -42,7 +42,6 @@
 	var/open_sound = 'sound/machines/podopen.ogg'
 	var/close_sound = 'sound/machines/podclose.ogg'
 	payment_department = ACCOUNT_MED
-	fair_market_price = 5
 
 /obj/machinery/sleeper/Initialize(mapload)
 	. = ..()
@@ -110,7 +109,7 @@
 		playsound(src, 'sound/machines/synth_no.ogg', 50, TRUE, frequency = rand(5120, 8800))
 
 /obj/machinery/sleeper/process()
-	if( !( occupant && isliving(occupant) && check_nap_violations() ) )
+	if(!occupant || !isliving(occupant))
 		use_power = IDLE_POWER_USE
 		return
 	var/mob/living/L_occupant = occupant
@@ -245,13 +244,6 @@
 	. += "<span class='notice'>Alt-click [src] to [state_open ? "close" : "open"] it.</span>"
 	. += "<span class='notice'>[chembag ? "There is a chembag in the chemical storage slot. It can be removed by Ctrl-clicking." : "It looks like a chembag can be attached to the chemical storage slot."]</span>"
 
-/obj/machinery/sleeper/process()
-	..()
-	check_nap_violations()
-
-/obj/machinery/sleeper/nap_violation(mob/violator)
-	open_machine()
-
 /obj/machinery/sleeper/ui_data(mob/user)
 	if(src.contains(user) && !controls_inside)
 		return
@@ -315,7 +307,6 @@
 	if(.)
 		return
 	var/mob/living/mob_occupant = occupant
-	check_nap_violations()
 	switch(action)
 		if("amount")
 			var/target = text2num(params["target"])

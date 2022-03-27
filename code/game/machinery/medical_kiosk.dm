@@ -42,12 +42,6 @@
 	else
 		say("No account detected.")  //No homeless crew.
 		return
-	if(account?.account_job?.paycheck_department == payment_department)
-		use_power(20)
-		paying_customer = TRUE
-		say("Hello, esteemed medical staff!")
-		RefreshParts()
-		return
 	if(!account.has_money(active_price))
 		say("You do not possess the funds to purchase this.")  //No jobless crew, either.
 		return
