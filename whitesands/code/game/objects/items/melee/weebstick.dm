@@ -6,6 +6,8 @@
 	item_state = "weeb_blade"
 	lefthand_file = 'whitesands/icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'whitesands/icons/mob/inhands/weapons/swords_righthand.dmi'
+	pickup_sound =  'sound/items/handling/knife2_pickup.ogg'
+	drop_sound = 'sound/items/handling/metal_drop.ogg'
 	flags_1 = CONDUCT_1
 	obj_flags = UNIQUE_RENAME
 	w_class = WEIGHT_CLASS_BULKY

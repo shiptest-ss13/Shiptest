@@ -15,6 +15,8 @@
 	icon_state = "firstaid"
 	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
+	drop_sound = 'sound/items/handling/cardboardbox_drop.ogg'
+	pickup_sound =  'sound/items/handling/cardboardbox_pickup.ogg'
 	throw_speed = 3
 	throw_range = 7
 	var/empty = FALSE
@@ -23,7 +25,7 @@
 /obj/item/storage/firstaid/ComponentInitialize()
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.use_sound = 'sound/items/storage/box.ogg'
+	STR.use_sound = 'sound/items/storage/briefcase.ogg'
 
 /obj/item/storage/firstaid/regular
 	icon_state = "firstaid"
