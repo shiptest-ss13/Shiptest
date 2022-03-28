@@ -1,4 +1,8 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"aj" = (
+/obj/item/stack/spacecash/c1,
+/turf/open/floor/plating,
+/area/ship/maintenance/port)
 "aK" = (
 /obj/item/wrench/old,
 /obj/structure/rack,
@@ -442,6 +446,10 @@
 /obj/effect/spawner/lootdrop/maintenance/four,
 /turf/open/floor/plating,
 /area/ship/maintenance/aft)
+"pX" = (
+/obj/structure/frame/computer,
+/turf/open/floor/plating,
+/area/ship/maintenance/fore)
 "pY" = (
 /obj/structure/table/glass,
 /obj/item/storage/box/drinkingglasses,
@@ -524,6 +532,13 @@
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/aft)
+"sm" = (
+/obj/structure/window/reinforced/tinted{
+	dir = 4
+	},
+/obj/structure/toilet/secret,
+/turf/open/floor/plating,
+/area/ship/maintenance/starboard)
 "sO" = (
 /obj/structure/table/wood,
 /obj/item/pen/fourcolor,
@@ -658,17 +673,6 @@
 "xq" = (
 /turf/closed/wall/r_wall/rust,
 /area/ship/cargo)
-"xs" = (
-/obj/structure/closet/secure_closet{
-	req_access = list(11)
-	},
-/obj/item/circuitboard/machine/rdserver,
-/obj/effect/spawner/lootdrop/maintenance/five,
-/obj/item/circuitboard/machine/circuit_imprinter,
-/obj/item/circuitboard/machine/destructive_analyzer,
-/obj/item/circuitboard/computer/rdconsole,
-/turf/open/floor/plating,
-/area/ship/maintenance/port)
 "xt" = (
 /obj/machinery/airalarm/directional/east,
 /obj/structure/closet/secure_closet/medical2,
@@ -858,17 +862,6 @@
 /obj/item/screwdriver/power,
 /turf/open/floor/plating,
 /area/ship/maintenance/central)
-"Hq" = (
-/obj/structure/frame/computer,
-/turf/open/floor/plating,
-/area/ship/maintenance/fore)
-"Hs" = (
-/obj/structure/window/reinforced/tinted{
-	dir = 4
-	},
-/obj/structure/toilet,
-/turf/open/floor/plating,
-/area/ship/maintenance/starboard)
 "HE" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/cable{
@@ -1340,6 +1333,17 @@
 /obj/machinery/portable_atmospherics/canister/oxygen,
 /turf/open/floor/plating,
 /area/ship/maintenance/central)
+"ZJ" = (
+/obj/structure/closet/secure_closet{
+	req_access = list(11)
+	},
+/obj/item/circuitboard/machine/rdserver,
+/obj/effect/spawner/lootdrop/maintenance/five,
+/obj/item/circuitboard/machine/circuit_imprinter,
+/obj/item/circuitboard/machine/destructive_analyzer,
+/obj/item/circuitboard/computer/rdconsole,
+/turf/open/floor/plating,
+/area/ship/maintenance/port)
 
 (1,1,1) = {"
 cg
@@ -1384,7 +1388,7 @@ fh
 mv
 LR
 FZ
-xs
+ZJ
 hH
 xk
 hy
@@ -1413,7 +1417,7 @@ cQ
 aN
 Wt
 Vx
-Vx
+aj
 Vx
 tq
 NI
@@ -1467,7 +1471,7 @@ nT
 "}
 (5,1,1) = {"
 Rd
-Hq
+pX
 ob
 cQ
 lQ
@@ -1666,7 +1670,7 @@ xq
 rF
 Kl
 ni
-Hs
+sm
 TC
 JT
 Nw

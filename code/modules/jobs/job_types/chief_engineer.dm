@@ -84,7 +84,7 @@
 /datum/outfit/job/ce/gec
 	name = "Chief Engineer (GEC)"
 
-	uniform = /obj/item/clothing/under/suit/black
+	uniform = /obj/item/clothing/under/syndicate/gec/chief_engineer
 	suit = /obj/item/clothing/suit/toggle/hazard
 	head = /obj/item/clothing/head/hardhat/white
 	shoes =/obj/item/clothing/shoes/laceup
