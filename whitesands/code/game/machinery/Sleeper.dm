@@ -41,7 +41,6 @@
 	var/amount = 10
 	var/open_sound = 'sound/machines/podopen.ogg'
 	var/close_sound = 'sound/machines/podclose.ogg'
-	payment_department = ACCOUNT_MED
 
 /obj/machinery/sleeper/Initialize(mapload)
 	. = ..()

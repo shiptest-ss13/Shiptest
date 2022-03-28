@@ -43,7 +43,6 @@
 	var/list/unattached_flesh
 	var/flesh_number = 0
 	var/datum/bank_account/current_insurance
-	payment_department = ACCOUNT_MED
 
 
 /obj/machinery/clonepod/Initialize()
