@@ -11,6 +11,9 @@
 	if(iswallturf(A))
 		attack_wall(A, user)
 		return TRUE
+	if(istype(A, /turf/open/floor/concrete))
+		var/turf/open/floor/concrete/C = A
+		return C.handle_shape(user)
 	return ..()
 
 /obj/item/chisel/attack_self(mob/user)

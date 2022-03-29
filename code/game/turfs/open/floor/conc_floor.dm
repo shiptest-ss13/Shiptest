@@ -50,9 +50,6 @@
 	. = ..()
 	if(.)
 		return
-	if(harden_lvl < 0.8 && istype(C, /obj/item/stack/rods))
-		handle_shape(C, user)
-		return TRUE
 	if(C.tool_behaviour == TOOL_MINING)
 		to_chat(user, "<span class='notice'>You start smashing [src]...</span>")
 		var/adj_time = (broken || burnt) ? smash_time/2 : smash_time
@@ -63,8 +60,9 @@
 			return TRUE
 	return FALSE
 
-
-/turf/open/floor/concrete/proc/handle_shape(obj/item/C, mob/user)
+/turf/open/floor/concrete/proc/handle_shape(mob/user)
+	if(harden_lvl >= 0.8)
+		return FALSE
 	var/list/opts = list()
 
 	for(var/T in shape_types)
@@ -78,23 +76,25 @@
 		// test this
 		uniqueid = "concmenu_[REF(user)]",
 		radius = 48,
-		custom_check = CALLBACK(src, .proc/check_shape, C, user),
+		custom_check = CALLBACK(src, .proc/check_menu, user),
 		require_near = TRUE
 	)
 	if(!choice)
 		return FALSE
 	to_chat(user, "You reshape [src].")
 	var/old_harden = harden_lvl
-	// copy over other vars here too??? ugh
+	// todo: copy over other vars here too??? maybe?? ugh
 	var/turf/open/floor/concrete/newconc = ChangeTurf(choice, flags = CHANGETURF_INHERIT_AIR)
 	newconc.harden_lvl = old_harden
 	newconc.check_harden()
 	newconc.update_icon()
 	return TRUE
 
-// finish this to check for edge cases -- qdeletions, moving out of range, type changes, incapacitation, etc.
-// also, consider telekinesis?
-/turf/open/floor/concrete/proc/check_shape(obj/item/C, user)
+/turf/open/floor/concrete/proc/check_menu(mob/living/user)
+	if(!istype(user))
+		return FALSE
+	if(user.incapacitated() || !user.Adjacent(src))
+		return FALSE
 	return TRUE
 
 /turf/open/floor/concrete/Entered(atom/movable/AM)
@@ -121,7 +121,7 @@
 	if(harden_lvl == 1)
 		return
 
-	var/offset = (1 - harden_lvl) * 0.4
+	var/offset = (1 - harden_lvl) * 0.3
 	var/base = 1 - offset
 	var/col_filter = list(base,0,0, 0,base,0, 0,0,base, offset, offset, offset)
 	add_filter("harden", 1, color_matrix_filter(col_filter, FILTER_COLOR_RGB))
@@ -213,7 +213,7 @@
 /turf/open/floor/concrete/tiles
 	icon_state = "conc_tiles"
 
-/turf/open/floor/concrete/hexacrete
+/turf/open/floor/concrete/reinforced
 	name = "hexacrete floor"
 	desc = "Reinforced hexacrete tiling."
 	icon = 'icons/turf/floors/hexacrete.dmi'
@@ -223,12 +223,12 @@
 	smoothing_groups = list(SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_OPEN_FLOOR, SMOOTH_GROUP_FLOOR_HEXACRETE)
 	canSmoothWith = list(SMOOTH_GROUP_FLOOR_HEXACRETE)
 
-	smash_time = 5 SECONDS
+	smash_time = 8 SECONDS
 	time_to_harden = 80 SECONDS
 	// so that you can remove the overlays
-	shape_types = list(/turf/open/floor/concrete/hexacrete)
+	shape_types = list(/turf/open/floor/concrete/reinforced)
 
-/turf/open/floor/concrete/hexacrete/break_tile()
+/turf/open/floor/concrete/reinforced/break_tile()
 	// can only break if soft; if so, it breaks completely
 	if(harden_lvl < 0.4)
 		make_plating()
@@ -236,7 +236,7 @@
 	return
 
 // modified from /turf/open/floor/engine/ex_act()
-/turf/open/floor/concrete/hexacrete/ex_act(severity,target)
+/turf/open/floor/concrete/reinforced/ex_act(severity,target)
 	var/shielded = is_shielded()
 	contents_explosion(severity, target)
 	SEND_SIGNAL(src, COMSIG_ATOM_EX_ACT, severity, target)
@@ -267,6 +267,6 @@
 				break_tile()
 
 // lightly modified from /turf/open/floor/engine/acid_act()
-/turf/open/floor/concrete/hexacrete/acid_act(acidpwr, acid_volume)
+/turf/open/floor/concrete/reinforced/acid_act(acidpwr, acid_volume)
 	acidpwr = min(acidpwr, 50)
 	return ..()

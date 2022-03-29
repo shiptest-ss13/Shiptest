@@ -7,6 +7,7 @@
 	smoothing_flags = SMOOTH_BITMASK
 	smoothing_groups = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_WALLS, SMOOTH_GROUP_CONCRETE_WALLS)
 	canSmoothWith = list(SMOOTH_GROUP_CONCRETE_WALLS)
+	rad_insulation = RAD_HEAVY_INSULATION
 	hardness = 30 // doesn't matter much; everything that uses it gets overridden
 	explosion_block = 3
 	break_sound = 'sound/effects/break_stone.ogg'
@@ -17,9 +18,15 @@
 	// force, damage type, tool behavior, and sharpness. This is the minimum
 	// amount of force that a blunt, brute item must have to damage the wall.
 	var/min_dam = 8
-	// This should all be handled by integrity should it ever be expanded to walls.
+	// This should all be handled by integrity should that ever be expanded to walls.
 	var/max_health = 650
 	var/health
+	// used to give mining projectiles a bit of an edge against conc walls
+	var/static/list/extra_dam_proj = typecacheof(list(
+		/obj/projectile/kinetic,
+		/obj/projectile/destabilizer,
+		/obj/projectile/plasma
+	))
 
 	var/time_to_harden = 30 SECONDS
 	// fraction ranging from 0 to 1 -- 0 is fully soft, 1 is fully hardened
@@ -60,27 +67,10 @@
 	crack_overlay.alpha = adj_dam_pct*255
 	. += crack_overlay
 
-/turf/closed/wall/concrete/proc/check_harden()
-	harden_lvl = clamp(harden_lvl, 0, 1)
-	if(harden_lvl < 1)
-		START_PROCESSING(SSobj, src)
-
-/turf/closed/wall/concrete/process(wait)
-	harden_lvl = min(harden_lvl + (wait/time_to_harden), 1)
-	if(harden_lvl == 1)
-		STOP_PROCESSING(SSobj, src)
-	update_stats()
-
-/turf/closed/wall/concrete/proc/update_stats()
-	// explosion block is diminished on a damaged / soft wall
-	explosion_block = (health / max_health) * harden_lvl * initial(explosion_block)
-	update_icon()
-
-// we use this to show health + drying percentage as well
+// we use this to show health + drying percentage
 /turf/closed/wall/concrete/deconstruction_hints(mob/user)
 	. = list()
 	. += "<span class='notice'>[p_they(TRUE)] look[p_s()] like you could <b>smash</b> [p_them()].</span>"
-	// see if fracs work here?
 	switch(harden_lvl)
 		if(0.8 to 0.99)
 			. += "[p_they(TRUE)] look[p_s()] nearly dry."
@@ -103,9 +93,26 @@
 		girder.take_damage(min(abs(health), 50))
 	return girder
 
+/turf/closed/wall/concrete/proc/check_harden()
+	harden_lvl = clamp(harden_lvl, 0, 1)
+	if(harden_lvl < 1)
+		START_PROCESSING(SSobj, src)
+
+/turf/closed/wall/concrete/process(wait)
+	harden_lvl = min(harden_lvl + (wait/time_to_harden), 1)
+	if(harden_lvl == 1)
+		STOP_PROCESSING(SSobj, src)
+	update_stats()
+
+/turf/closed/wall/concrete/proc/update_stats()
+	// explosion block is diminished on a damaged / soft wall
+	explosion_block = (health / max_health) * harden_lvl * initial(explosion_block)
+	update_icon()
+
 /turf/closed/wall/concrete/proc/alter_health(delta)
 	// 8x as vulnerable when unhardened
-	delta *= 1 + 7*(1-harden_lvl)
+	if(delta < 0)
+		delta *= 1 + 7*(1-harden_lvl)
 	health += delta
 	if(health <= 0)
 		// if damage put us 50 points or more below 0, we got proper demolished
@@ -126,7 +133,38 @@
 		if(EXPLODE_LIGHT)
 			alter_health(rand(-200, -700))
 
-// needs testing
+/turf/closed/wall/concrete/bullet_act(obj/projectile/P)
+	. = ..()
+	var/dam = get_proj_damage(P)
+	if(!dam)
+		return
+	if(P.suppressed != SUPPRESSED_VERY)
+		visible_message("<span class='danger'>[src] is hit by \a [P]!</span>", null, null, COMBAT_MESSAGE_RANGE)
+	if(!QDELETED(src))
+		alter_health(-dam)
+
+/turf/closed/wall/concrete/attack_animal(mob/living/simple_animal/M)
+	M.changeNext_move(CLICK_CD_MELEE)
+	M.do_attack_animation(src)
+	if((M.environment_smash & ENVIRONMENT_SMASH_WALLS) || (M.environment_smash & ENVIRONMENT_SMASH_RWALLS))
+		playsound(src, 'sound/effects/meteorimpact.ogg', 100, TRUE)
+		alter_health(-400)
+		return
+
+/turf/closed/wall/concrete/attack_hulk(mob/living/carbon/user)
+	SEND_SIGNAL(src, COMSIG_ATOM_HULK_ATTACK, user)
+	log_combat(user, src, "attacked")
+	var/obj/item/bodypart/arm = user.hand_bodyparts[user.active_hand_index]
+	if(!arm || arm.bodypart_disabled)
+		return FALSE
+	playsound(src, 'sound/effects/meteorimpact.ogg', 100, TRUE)
+	user.visible_message("<span class='danger'>[user] smashes \the [src]!</span>", \
+				"<span class='danger'>You smash \the [src]!</span>", \
+				"<span class='hear'>You hear a booming smash!</span>")
+	user.say(pick(";RAAAAAAAARGH!", ";HNNNNNNNNNGGGGGGH!", ";GWAAAAAAAARRRHHH!", "NNNNNNNNGGGGGGGGHH!", ";AAAAAAARRRGH!" ), forced = "hulk")
+	alter_health(-250)
+	return TRUE
+
 /turf/closed/wall/concrete/mech_melee_attack(obj/mecha/M)
 	M.do_attack_animation(src)
 	switch(M.damtype)
@@ -141,28 +179,7 @@
 		if(TOX)
 			playsound(src, 'sound/effects/spray2.ogg', 100, TRUE)
 
-// needs testing
-/turf/closed/wall/concrete/attack_hulk(mob/living/carbon/user)
-	// damage animation??? thonk
-	SEND_SIGNAL(src, COMSIG_ATOM_HULK_ATTACK, user)
-	log_combat(user, src, "attacked")
-	var/obj/item/bodypart/arm = user.hand_bodyparts[user.active_hand_index]
-	if(!arm || arm.bodypart_disabled)
-		return FALSE
-	playsound(src, 'sound/effects/meteorimpact.ogg', 100, TRUE)
-	user.visible_message("<span class='danger'>[user] smashes \the [src]!</span>", \
-				"<span class='danger'>You smash \the [src]!</span>", \
-				"<span class='hear'>You hear a booming smash!</span>")
-	user.say(pick(";RAAAAAAAARGH!", ";HNNNNNNNNNGGGGGGH!", ";GWAAAAAAAARRRHHH!", "NNNNNNNNGGGGGGGGHH!", ";AAAAAAARRRGH!" ), forced = "hulk")
-	alter_health(-250)
-	return TRUE
-
-// concussive gauntlet stuff should probably come here
-/turf/closed/wall/concrete/attack_hand(mob/user)
-// ???
-
-
-// it's concrete, you can't weld out the dents
+// can't weld out the dents
 /turf/closed/wall/concrete/try_clean(obj/item/W, mob/user, turf/T)
 	return null
 
@@ -170,7 +187,7 @@
 /turf/closed/wall/concrete/try_decon(obj/item/W, mob/user, turf/T)
 	return null
 
-// now we're talking
+// catch-all for using most items on the wall -- attempt to smash
 /turf/closed/wall/concrete/try_destroy(obj/item/W, mob/user, turf/T)
 	var/dam = get_item_damage(W)
 	user.do_attack_animation(src)
@@ -191,13 +208,36 @@
 
 /turf/closed/wall/concrete/proc/get_item_damage(obj/item/I)
 	var/dam = I.force
-	if(I.tool_behaviour == TOOL_MINING)
+	if(istype(I, /obj/item/clothing/gloves/gauntlets))
+		dam = 20
+	else if(I.tool_behaviour == TOOL_MINING)
 		dam *= (4/3)
-	else if(I.damtype == BURN || (I.damtype == BRUTE && I.get_sharpness()))
-		dam *= (2/3)
-	// walls cannot get brain damage
-	else if(I.damtype != BRUTE)
-		dam = 0
+	else
+		switch(I.damtype)
+			if(BRUTE)
+				if(I.get_sharpness())
+					dam *= 2/3
+			if(BURN)
+				dam *= 2/3
+			else
+				return 0
+	var/t_min = min_dam / (1 + 7*(1-harden_lvl)) // drying walls are more vulnerable
+	// if dam is below t_min, then the hit has no effect
+	return (dam < t_min ? 0 : dam)
+
+/turf/closed/wall/concrete/proc/get_proj_damage(obj/projectile/P)
+	var/dam = P.damage
+	// mining projectiles have an edge
+	if(is_type_in_typecache(P, extra_dam_proj))
+		dam = max(dam, 30)
+	else
+		switch(P.damage_type)
+			if(BRUTE)
+				dam *= 1
+			if(BURN)
+				dam *= 2/3
+			else
+				return 0
 	var/t_min = min_dam / (1 + 7*(1-harden_lvl)) // drying walls are more vulnerable
 	// if dam is below t_min, then the hit has no effect
 	return (dam < t_min ? 0 : dam)
@@ -209,7 +249,7 @@
 	icon_state = "hexacrete-0"
 	base_icon_state = "hexacrete"
 
-	rad_insulation = RAD_HEAVY_INSULATION
+	rad_insulation = RAD_EXTREME_INSULATION
 	hardness = 15
 	explosion_block = 4 // good for bunkers
 	girder_type = /obj/structure/girder
@@ -217,3 +257,16 @@
 	min_dam = 13
 	max_health = 1300
 	time_to_harden = 60 SECONDS
+
+// requires ENVIRONMENT_SMASH_RWALLS for simplemobs to break
+/turf/closed/wall/concrete/reinforced/attack_animal(mob/living/simple_animal/M)
+	M.changeNext_move(CLICK_CD_MELEE)
+	M.do_attack_animation(src)
+	if(!M.environment_smash)
+		return
+	if(M.environment_smash & ENVIRONMENT_SMASH_RWALLS)
+		alter_health(-600) // 3 hits to kill
+		playsound(src, 'sound/effects/meteorimpact.ogg', 100, TRUE)
+	else
+		playsound(src, 'sound/effects/bang.ogg', 50, TRUE)
+		to_chat(M, "<span class='warning'>This wall is far too strong for you to destroy.</span>")

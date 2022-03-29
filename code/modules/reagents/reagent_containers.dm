@@ -110,23 +110,23 @@
 	if(user.a_intent == INTENT_HARM)
 		return ..()
 
-// FIGURE OUT: resolve conflict with /obj/item/reagent_containers/glass/afterattack() (liquid transfer)
-/obj/item/reagent_containers/attack_obj(obj/O, mob/living/user)
-	// if user is on an intent other than help, or we're not drainable, or we are empty
-	if(user.a_intent != INTENT_HELP || !is_drainable() || !reagents.total_volume)
-		return ..()
-	O.visible_message("<span class='notice'>[user] attempts to pour [src] onto [O].</span>")
-	if(!do_after(user, 3 SECONDS, target=O))
+/obj/item/reagent_containers/proc/attempt_pour(atom/target, mob/user)
+	if(ismob(target) || !reagents.total_volume || !check_allowed_items(target, target_self = FALSE))
+		return
+
+	target.visible_message("<span class='notice'>[user] attempts to pour [src] onto [target].</span>")
+	if(!do_after(user, 3 SECONDS, target=target))
 		return
 	// reagents may have been emptied
-	if(!reagents || !reagents.total_volume)
+	if(!is_drainable() || !reagents.total_volume)
 		return
-	O.visible_message("<span class='notice'>[user] poured [src] onto [O].</span>")
-	log_combat(user, O, "poured [english_list(reagents.reagent_list)]", "in [AREACOORD(O)]")
-	log_game("[key_name(user)] poured [english_list(reagents.reagent_list)] on [O] in [AREACOORD(O)].")
+	playsound(src, 'sound/items/glass_splash.ogg', 50, 1)
+	target.visible_message("<span class='notice'>[user] pours [src] onto [target].</span>")
+	log_combat(user, target, "poured [english_list(reagents.reagent_list)]", "in [AREACOORD(target)]")
+	log_game("[key_name(user)] poured [english_list(reagents.reagent_list)] on [target] in [AREACOORD(target)].")
 	var/frac = min(amount_per_transfer_from_this/reagents.total_volume, 1)
 	// don't use trans_to, because we're not ADDING it to the object, we're just... pouring it.
-	reagents.expose(O, TOUCH, frac)
+	reagents.expose(target, TOUCH, frac)
 	for(var/reagent in reagents.reagent_list)
 		var/datum/reagent/R = reagent
 		reagents.remove_reagent(R.type, R.volume * frac)
@@ -244,6 +244,8 @@
 		if(success)
 			to_chat(user, "<span class='notice'>You dip [I] into [src], and the solution begins to bubble.</span>")
 			playsound(src, 'sound/effects/bubbles.ogg', 80, TRUE)
+			return TRUE
+	return ..()
 
 /obj/item/reagent_containers/on_reagent_change(changetype)
 	update_icon()

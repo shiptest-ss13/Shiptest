@@ -2511,13 +2511,19 @@
 	color = "#a8988a"
 	taste_description = "rocks"
 	var/units_per_wall = 10
+	var/units_per_floor = 2
 	var/turf/closed/wall/concrete/wall_type = /turf/closed/wall/concrete
+	var/turf/open/floor/concrete/floor_type = /turf/open/floor/concrete
 
 /datum/reagent/concrete/expose_obj(obj/O, volume)
-	if(volume < units_per_wall)
-		return
 	var/girder_type = initial(wall_type.girder_type)
-	if(!istype(O, girder_type))
+	if(istype(O, girder_type))
+		return concify_girder(O, volume)
+	if(istype(O, /obj/structure/catwalk))
+		return concify_catwalk(O, volume)
+
+/datum/reagent/concrete/proc/concify_girder(obj/O, volume)
+	if(volume < units_per_wall)
 		return
 	var/turf/T = get_turf(O)
 	var/turf/closed/wall/concrete/W = T.PlaceOnTop(wall_type)
@@ -2528,8 +2534,23 @@
 	qdel(O)
 	return
 
+/datum/reagent/concrete/proc/concify_catwalk(obj/O, volume)
+	if(volume < units_per_floor)
+		return
+	var/turf/T = get_turf(O)
+	if(!istype(T, /turf/open/floor/plating))
+		return
+	var/turf/open/floor/concrete/F = T.PlaceOnTop(floor_type)
+	O.transfer_fingerprints_to(F)
+	F.harden_lvl = 0
+	F.check_harden()
+	F.update_icon()
+	qdel(O)
+	return
+
 /datum/reagent/concrete/hexacrete
 	name = "Hexacrete"
 	description = "Made with fortified cement, this mix of binder and aggregate is a useful, sturdy building material."
 	color = "#7b6e60"
 	wall_type = /turf/closed/wall/concrete/reinforced
+	floor_type = /turf/open/floor/concrete/reinforced
