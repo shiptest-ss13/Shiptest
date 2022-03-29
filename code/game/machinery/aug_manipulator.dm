@@ -63,7 +63,7 @@
 
 	if(default_unfasten_wrench(user, O))
 		power_change()
-
+		return TRUE
 	else if(istype(O, /obj/item/bodypart))
 		var/obj/item/bodypart/B = O
 		if(IS_ORGANIC_LIMB(B))
