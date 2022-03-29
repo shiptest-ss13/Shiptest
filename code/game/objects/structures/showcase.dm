@@ -88,7 +88,7 @@
 
 /obj/structure/showcase/machinery/microwave
 	name = "\improper Nanotrasen-brand microwave"
-	desc = "The famous Nanotrasen-brand microwave, the multi-purpose cooking appliance every station needs! This one appears to be drawn onto a cardboard box."
+	desc = "The famous Nanotrasen-brand microwave, the multi-purpose cooking appliance every household needs! This one appears to be drawn onto a cardboard box."
 	icon = 'icons/obj/kitchen.dmi'
 	icon_state = "mw"
 

@@ -8355,6 +8355,7 @@
 	dir = 4;
 	pixel_x = -24
 	},
+/obj/item/stack/spacecash/c10000,
 /turf/open/floor/plasteel/dark,
 /area/ship/science/ai_chamber)
 "Fs" = (
@@ -10497,7 +10498,7 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/corner/brown,
-/obj/machinery/mineral/equipment_vendor,
+/obj/machinery/vending/mining_equipment,
 /turf/open/floor/plasteel,
 /area/ship/storage)
 "Nw" = (
@@ -12510,7 +12511,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/medical/morgue)
 "UJ" = (
-/obj/machinery/computer/autopilot{
+/obj/structure/frame/computer{
 	dir = 1
 	},
 /obj/structure/disposalpipe/segment{

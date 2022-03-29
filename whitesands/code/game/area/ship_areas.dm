@@ -86,7 +86,7 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	. = ..()
 	if(length(new_baseturfs) > 1 || fake_turf_type)
 		return // More complicated larger changes indicate this isn't a player
-	if(ispath(new_baseturfs[1], /turf/open/floor/plating) && !new_baseturfs.Find(/turf/baseturf_skipover/shuttle))
+	if(ispath(new_baseturfs[1], /turf/open/floor/plating) && !(/turf/baseturf_skipover/shuttle in new_baseturfs))
 		new_baseturfs.Insert(1, /turf/baseturf_skipover/shuttle)
 
 /area/ship/proc/link_to_shuttle(obj/docking_port/mobile/M)
@@ -203,6 +203,18 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	icon_state = "toxlab"
 	lighting_colour_tube = "#f0fbff"
 	lighting_colour_bulb = "#e4f7ff"
+
+/area/ship/science/xenobiology
+	name = "Xenobiology Lab"
+	icon_state = "xenolab"
+
+/area/ship/science/storage
+	name = "Toxins Storage"
+	icon_state = "toxstorage"
+
+/area/science/misc_lab
+	name = "Testing Lab"
+	icon_state = "toxmisc"
 
 /area/ship/science/robotics
 	name = "Robotics"

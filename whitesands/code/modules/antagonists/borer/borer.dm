@@ -571,10 +571,10 @@ GLOBAL_VAR_INIT(total_borer_hosts_needed, 3)
 	forceMove(get_turf(victim))
 
 	reset_perspective(null)
-	machine = null
+	unset_machine()
 
 	victim.reset_perspective(null)
-	victim.machine = null
+	victim.unset_machine()
 
 	var/mob/living/V = victim
 	V.verbs -= /mob/living/proc/borer_comm
@@ -986,7 +986,8 @@ GLOBAL_VAR_INIT(total_borer_hosts_needed, 3)
 /mob/living/simple_animal/borer/proc/GrantControlActions()
 	talk_to_brain_action.Grant(victim)
 	give_back_control_action.Grant(victim)
-	make_larvae_action.Grant(victim)
+	if(is_team_borer) //The entire structure of this mob is fucking garbage.
+		make_larvae_action.Grant(victim)
 
 /mob/living/simple_animal/borer/proc/RemoveControlActions()
 	talk_to_brain_action.Remove(victim)

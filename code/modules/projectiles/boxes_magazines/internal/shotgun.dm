@@ -48,3 +48,4 @@
 	ammo_type = /obj/item/ammo_casing/c38/hunting
 	caliber = "38"
 	max_ammo = 7
+	multiload = FALSE

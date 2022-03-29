@@ -377,6 +377,22 @@
 #undef PATH_FREEZER
 #undef PATH_HEATER
 
+/obj/item/circuitboard/machine/shieldwallgen
+	name = "Shieldwall Generator (Machine Board)"
+	icon_state = "engineering"
+	build_path = /obj/machinery/power/shieldwallgen
+	req_components = list(
+		/obj/item/stock_parts/manipulator = 2,
+		/obj/item/stock_parts/micro_laser = 2,
+		/obj/item/stack/sheet/plasmaglass = 1,
+		/obj/item/stack/cable_coil = 5
+		)
+	needs_anchored = FALSE
+
+/obj/item/circuitboard/machine/shieldwallgen/atmos
+	name = "Atmospheric Holowall Generator (Machine Board)"
+	build_path = /obj/machinery/power/shieldwallgen/atmos
+
 /obj/item/circuitboard/machine/pipedispenser
 	name = "Pipe dispenser (Machine Board)"
 	icon_state = "engineering"
@@ -1207,19 +1223,6 @@ WS End */
 		/obj/item/stock_parts/card_reader = 1)
 
 //Supply
-
-/obj/item/circuitboard/machine/mining_equipment_vendor
-	name = "Mining Equipment Vendor (Machine Board)"
-	icon_state = "supply"
-	build_path = /obj/machinery/mineral/equipment_vendor
-	req_components = list(
-		/obj/item/stack/sheet/glass = 1,
-		/obj/item/stock_parts/matter_bin = 3)
-
-/obj/item/circuitboard/machine/mining_equipment_vendor/golem
-	name = "Golem Ship Equipment Vendor (Machine Board)"
-	build_path = /obj/machinery/mineral/equipment_vendor/golem
-
 /obj/item/circuitboard/machine/ore_redemption
 	name = "Ore Redemption (Machine Board)"
 	icon_state = "supply"

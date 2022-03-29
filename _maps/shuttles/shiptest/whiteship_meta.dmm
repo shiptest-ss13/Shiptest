@@ -1464,6 +1464,15 @@
 	pixel_x = 14
 	},
 /obj/machinery/power/apc/auto_name/north,
+/obj/item/stack/spacecash/c1000{
+	pixel_x = 7
+	},
+/obj/item/stack/spacecash/c1000{
+	pixel_x = 7
+	},
+/obj/item/stack/spacecash/c1000{
+	pixel_x = 7
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "ce" = (
@@ -1509,7 +1518,7 @@
 /obj/effect/turf_decal/corner/blue{
 	dir = 8
 	},
-/obj/machinery/computer/autopilot{
+/obj/structure/frame/computer{
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
@@ -3194,23 +3203,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
-"pI" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/turf_decal/corner/neutral{
-	dir = 1
-	},
-/obj/effect/turf_decal/corner/neutral,
-/obj/effect/turf_decal/corner/neutral{
-	dir = 4
-	},
-/obj/effect/turf_decal/corner/neutral{
-	dir = 8
-	},
-/obj/machinery/computer/selling_pad_control{
-	dir = 4
-	},
-/turf/open/floor/plasteel/dark,
-/area/ship/cargo)
 "pQ" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/closet/secure_closet/freezer/fridge/open,
@@ -3451,21 +3443,6 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /turf/open/floor/plating,
 /area/ship/crew/canteen)
-"RG" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/turf_decal/corner/neutral{
-	dir = 1
-	},
-/obj/effect/turf_decal/corner/neutral,
-/obj/effect/turf_decal/corner/neutral{
-	dir = 4
-	},
-/obj/effect/turf_decal/corner/neutral{
-	dir = 8
-	},
-/obj/machinery/selling_pad,
-/turf/open/floor/plasteel/dark,
-/area/ship/cargo)
 "Un" = (
 /obj/machinery/power/shuttle/engine/electric{
 	dir = 4
@@ -3643,7 +3620,7 @@ fa
 bz
 dM
 Fb
-pI
+bW
 cy
 cJ
 cP
@@ -3681,7 +3658,7 @@ bn
 bB
 bL
 bW
-RG
+bW
 nT
 wM
 cR

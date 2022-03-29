@@ -279,3 +279,79 @@
 /area/whitesands/surface/outdoors/unexplored/danger //megafauna will also spawn here
 	icon_state = "danger"
 	area_flags = VALID_TERRITORY | UNIQUE_AREA | CAVES_ALLOWED | FLORA_ALLOWED | MOB_SPAWN_ALLOWED | MEGAFAUNA_SPAWN_ALLOWED
+
+/************************************************************************JUNGLE AREAS */
+
+/area/jungle
+	icon_state = "mining"
+	has_gravity = STANDARD_GRAVITY
+	flags_1 = NONE
+	area_flags = VALID_TERRITORY | UNIQUE_AREA | FLORA_ALLOWED
+
+/area/jungle/surface
+	name = "Jungle"
+	icon_state = "explored"
+	always_unpowered = TRUE
+	poweralm = FALSE
+	power_environ = FALSE
+	power_equip = FALSE
+	power_light = FALSE
+	requires_power = TRUE
+	ambientsounds = MINING
+	dynamic_lighting = DYNAMIC_LIGHTING_ENABLED
+	area_flags = VALID_TERRITORY | UNIQUE_AREA | FLORA_ALLOWED
+	map_generator = /datum/map_generator/jungle_generator
+
+/area/jungle/surface/outdoors // weather happens here
+	name = "Jungle Wastes"
+	outdoors = TRUE
+
+/area/jungle/surface/outdoors/explored //use for ruins
+	icon_state = "explored"
+	area_flags = VALID_TERRITORY | UNIQUE_AREA | FLORA_ALLOWED | MOB_SPAWN_ALLOWED
+
+/area/jungle/surface/outdoors/unexplored //monsters and ruins spawn here
+	icon_state = "unexplored"
+	area_flags = VALID_TERRITORY | UNIQUE_AREA | CAVES_ALLOWED | FLORA_ALLOWED | MOB_SPAWN_ALLOWED
+
+/area/jungle/surface/outdoors/unexplored/danger //megafauna will also spawn here
+	icon_state = "danger"
+	area_flags = VALID_TERRITORY | UNIQUE_AREA | CAVES_ALLOWED | FLORA_ALLOWED | MOB_SPAWN_ALLOWED | MEGAFAUNA_SPAWN_ALLOWED
+
+/*****rockplanet areas */
+
+/area/rock
+	icon_state = "mining"
+	has_gravity = STANDARD_GRAVITY
+	flags_1 = NONE
+	area_flags = VALID_TERRITORY | UNIQUE_AREA | FLORA_ALLOWED
+
+/area/rock/surface
+	name = "Rock"
+	icon_state = "explored"
+	always_unpowered = TRUE
+	poweralm = FALSE
+	power_environ = FALSE
+	power_equip = FALSE
+	power_light = FALSE
+	requires_power = TRUE
+	ambientsounds = MINING
+	dynamic_lighting = DYNAMIC_LIGHTING_ENABLED
+	area_flags = VALID_TERRITORY | UNIQUE_AREA | FLORA_ALLOWED
+	map_generator = /datum/map_generator/cave_generator/rockplanet
+
+/area/rock/surface/outdoors // weather happens here
+	name = "Industrial Wastes"
+	outdoors = TRUE
+
+/area/rock/surface/outdoors/explored //use for ruins
+	icon_state = "explored"
+	area_flags = VALID_TERRITORY | UNIQUE_AREA | FLORA_ALLOWED | MOB_SPAWN_ALLOWED
+
+/area/rock/surface/outdoors/unexplored //monsters and ruins spawn here
+	icon_state = "unexplored"
+	area_flags = VALID_TERRITORY | UNIQUE_AREA | CAVES_ALLOWED | FLORA_ALLOWED | MOB_SPAWN_ALLOWED
+
+/area/rock/surface/outdoors/unexplored/danger //megafauna will also spawn here
+	icon_state = "danger"
+	area_flags = VALID_TERRITORY | UNIQUE_AREA | CAVES_ALLOWED | FLORA_ALLOWED | MOB_SPAWN_ALLOWED | MEGAFAUNA_SPAWN_ALLOWED

@@ -40,6 +40,9 @@
 	///Icon-smoothing variable to map a diagonal wall corner with a fixed underlay.
 	var/list/fixed_underlay = null
 
+	/// The underlay generated and applied when a chisel makes a turf diagonal. Stored here for removal on un-diagonalizing
+	var/mutable_appearance/smooth_underlay
+
 	///Lumcount added by sources other than lighting datum objects, such as the overlay lighting component.
 	var/dynamic_lumcount = 0
 
@@ -552,13 +555,6 @@
 	I.setDir(AM.dir)
 	I.alpha = 128
 	LAZYADD(blueprint_data, I)
-
-/turf/proc/add_blueprints_preround(atom/movable/AM)
-	if(!SSticker.HasRoundStarted())
-		if(AM.layer == WIRE_LAYER)	//wires connect to adjacent positions after its parent init, meaning we need to wait (in this case, until smoothing) to take its image
-			SSicon_smooth.blueprint_queue += AM
-		else
-			add_blueprints(AM)
 
 /turf/proc/is_transition_turf()
 	return

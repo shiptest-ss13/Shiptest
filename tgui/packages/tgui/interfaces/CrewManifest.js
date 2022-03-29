@@ -27,7 +27,7 @@ export const CrewManifest = (props, context) => {
                     }
                     collapsing
                   >
-                    {crewMember.officer && (
+                    {!!crewMember.officer && (
                       <Icon
                         name={
                           crewMember.rank === "Captain" ? "star" : "chevron-up"
