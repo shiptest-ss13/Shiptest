@@ -298,15 +298,14 @@
 
 	SSticker.minds += character.mind
 	character.client.init_verbs() // init verbs for the late join
-	var/mob/living/carbon/human/humanc
-	if(ishuman(character))
-		humanc = character	//Let's retypecast the var to be human,
 
-	if(humanc)	//These procs all expect humans
+	if(ishuman(character))	//These procs all expect humans
+		var/mob/living/carbon/human/humanc = character
 		ship.manifest_inject(humanc, client, job)
 		GLOB.data_core.manifest_inject(humanc, client)
 		AnnounceArrival(humanc, job.title, ship)
 		AddEmploymentContract(humanc)
+		SSblackbox.record_feedback("tally", "species_spawned", 1, humanc.dna.species.name)
 
 		if(GLOB.highlander)
 			to_chat(humanc, "<span class='userdanger'><i>THERE CAN BE ONLY ONE!!!</i></span>")
@@ -317,11 +316,10 @@
 			give_magic(humanc)
 		if(GLOB.curse_of_madness_triggered)
 			give_madness(humanc, GLOB.curse_of_madness_triggered)
+		if(CONFIG_GET(flag/roundstart_traits))
+			SSquirks.AssignQuirks(humanc, humanc.client, TRUE)
 
 	GLOB.joined_player_list += character.ckey
-
-	if(humanc && CONFIG_GET(flag/roundstart_traits))
-		SSquirks.AssignQuirks(humanc, humanc.client, TRUE)
 
 	log_manifest(character.mind.key, character.mind, character, TRUE)
 
@@ -358,7 +356,7 @@
 					count++
 					if(template.limit <= count)
 						alert(src, "The ship limit of [template.limit] has been reached this round.")
-						return
+						return LateChoices() //Send them back to shuttle selection
 		close_spawn_windows()
 		to_chat(usr, "<span class='danger'>Your [template.name] is being prepared. Please be patient!</span>")
 		var/datum/overmap/ship/controlled/target = new(SSovermap.get_unused_overmap_square(), template)

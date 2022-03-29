@@ -28,8 +28,6 @@
 	var/break_sound = 'sound/items/welder.ogg'
 
 	var/list/dent_decals
-	/// The underlay generated and applied when a chisel makes a wall diagonal. Stored here for removal on un-diagonalizing
-	var/mutable_appearance/smooth_underlay
 
 
 /turf/closed/wall/Initialize(mapload, inherited_virtual_z)
