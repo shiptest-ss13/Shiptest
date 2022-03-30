@@ -187,6 +187,8 @@
 /turf/open/proc/consider_firelocks(turf/T2)
 	if(blocks_air)
 		return
+	for(var/obj/machinery/firealarm/alarm in src)
+		playsound(alarm.loc, 'goon/sound/machinery/FireAlarm.ogg', 75)
 	for(var/obj/machinery/door/firedoor/FD in src)
 		FD.emergency_pressure_stop()
 	for(var/obj/machinery/door/firedoor/FD in T2)
