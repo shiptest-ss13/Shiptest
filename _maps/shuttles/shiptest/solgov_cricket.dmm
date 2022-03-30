@@ -2757,10 +2757,6 @@
 /obj/machinery/light,
 /turf/open/floor/circuit/green/telecomms/mainframe,
 /area/ship/engineering/communications)
-"EQ" = (
-/obj/structure/noticeboard,
-/turf/closed/wall/mineral/titanium/nodiagonal,
-/area/ship/engineering/communications)
 "ER" = (
 /obj/structure/cable{
 	icon_state = "2-4"
@@ -3071,6 +3067,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
+	},
+/obj/structure/noticeboard{
+	pixel_y = 33
 	},
 /turf/open/floor/carpet/nanoweave/beige,
 /area/ship/hallway/starboard)
@@ -5038,7 +5037,7 @@ EF
 yw
 AQ
 Df
-EQ
+mU
 Ib
 LV
 OI
