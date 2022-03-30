@@ -408,21 +408,9 @@
 		return
 	if(operating || welded)
 		return
-
 	density = TRUE
 	air_update_turf(1)
-
-	operating = TRUE
-
-	do_animate("closing")
-	layer = closingLayer
-
-	sleep(8)
-
 	update_icon()
-
-	operating = FALSE
-
 	update_freelook_sight()
 	if(safe)
 		CheckForMobs()

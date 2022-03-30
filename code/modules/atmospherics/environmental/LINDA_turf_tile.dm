@@ -185,6 +185,8 @@
 /turf/proc/process_cell(fire_count)
 /turf/open/proc/equalize_pressure_in_zone(cyclenum)
 /turf/open/proc/consider_firelocks(turf/T2)
+	if(blocks_air)
+		return
 	for(var/obj/machinery/door/firedoor/FD in src)
 		FD.emergency_pressure_stop()
 	for(var/obj/machinery/door/firedoor/FD in T2)
@@ -209,6 +211,8 @@
 		pressure_difference = difference
 
 /turf/open/proc/high_pressure_movements()
+	if(blocks_air)
+		return
 	var/multiplier = 1
 	if(locate(/obj/structure/rack) in src)
 		multiplier *= 0.1
