@@ -667,7 +667,7 @@
 	results = list(/datum/reagent/mutationtoxin/ash = 1)
 	required_reagents  = list(/datum/reagent/aslimetoxin = 1, /datum/reagent/mutationtoxin/lizard = 1, /datum/reagent/ash = 10, /datum/reagent/consumable/entpoly = 5)
 
-/datum/chemical_reaction/mutationtoxin/shadowA
+/datum/chemical_reaction/mutationtoxin/shadow
 	results = list(/datum/reagent/mutationtoxin/shadow = 1)
 	required_reagents  = list(/datum/reagent/aslimetoxin = 1, /datum/reagent/liquid_dark_matter = 30, /datum/reagent/water/holywater = 10) //You need a tiny bit of thinking how to mix it
 
