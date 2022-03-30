@@ -81,6 +81,8 @@
 		dir_amount = 4\
 	)
 
+	COOLDOWN_DECLARE(decomp_alarm)
+
 	var/danger_level = 0
 	var/mode = AALARM_MODE_SCRUBBING
 
@@ -866,6 +868,12 @@
 			I.obj_integrity = I.max_integrity * 0.5
 		new /obj/item/stack/cable_coil(loc, 3)
 	qdel(src)
+
+/obj/machinery/airalarm/proc/handle_decomp_alarm()
+	if(!COOLDOWN_FINISHED(src, decomp_alarm))
+		return
+	playsound(loc, 'goon/sound/machinery/FireAlarm.ogg', 75)
+	COOLDOWN_START(src, decomp_alarm, 1 SECONDS)
 
 #undef AALARM_MODE_SCRUBBING
 #undef AALARM_MODE_VENTING
