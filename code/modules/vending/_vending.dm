@@ -144,7 +144,7 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 	var/age_restrictions = TRUE
 
 	///A variable to change on a per instance basis on the map that allows the instance to remove cost and ID requirements
-	var/all_items_free = FALSE //change this on the object on the map. DO NOT APPLY THIS GLOBALLY.
+	var/all_items_free = TRUE
 
 	///ID's that can load this vending machine wtih refills
 	var/list/canload_access_list
@@ -165,7 +165,6 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 
 	/// used for narcing on underages
 	var/obj/item/radio/Radio
-
 
 /**
 	* Initialize the vending machine
@@ -941,6 +940,7 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 	max_integrity = 400
 	payment_department = NO_FREEBIES
 	refill_canister = /obj/item/vending_refill/custom
+	all_items_free = FALSE
 	/// where the money is sent
 	var/datum/bank_account/private_a
 	/// max number of items that the custom vendor can hold
