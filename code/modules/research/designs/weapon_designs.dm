@@ -238,7 +238,7 @@
 
 /datum/design/wormhole_projector
 	name = "Bluespace Wormhole Projector"
-	desc = "A projector that emits high density quantum-coupled bluespace beams. Requires a bluespace anomaly core to function."
+	desc = "A projector that emits high density quantum-coupled bluespace beams."
 	id = "wormholeprojector"
 	build_type = PROTOLATHE
 	materials = list(/datum/material/silver = 2000, /datum/material/iron = 5000, /datum/material/diamond = 2000, /datum/material/bluespace = 3000)
