@@ -87,12 +87,12 @@
 #define NORTHWEST_JUNCTION (1<<7)
 
 #define AIRLOCK_DETERMINE_ORIENTATION(TYPEPATH) do { \
-    for(var/TYPEPATH/object in orange(1, src)) { \
-        if(src.x == object.x && src.y != object.y) { \
-            airlock_orientation = EAST; \
-            break; \
-        }; \
-    }; \
+	for(var/TYPEPATH/object in orange(1, src)) { \
+		if(src.x == object.x && src.y != object.y) { \
+			airlock_orientation = EAST; \
+			break; \
+		}; \
+	}; \
 } while(FALSE);
 
 /atom/proc/blockify()
