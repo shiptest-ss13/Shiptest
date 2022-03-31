@@ -131,6 +131,9 @@ SUBSYSTEM_DEF(air)
 	fix_corrupted_atmos()
 
 /datum/controller/subsystem/air/fire(resumed = 0)
+	if(thread_running())
+		pause()
+		return
 
 	var/timer = TICK_USAGE_REAL
 

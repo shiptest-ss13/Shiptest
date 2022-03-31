@@ -84,11 +84,10 @@
 	return DOCKING_SUCCESS
 
 /obj/docking_port/mobile/proc/kill_atmos_infos(list/old_turfs, list/new_turfs)
-	for(var/i in 1 to old_turfs.len)
-		var/turf/oldT = old_turfs[i]
-		var/turf/newT = new_turfs[i]
+	for(var/turf/oldT as anything in old_turfs)
 		oldT.blocks_air = TRUE
 		oldT.set_sleeping(TRUE)
+	for(var/turf/newT as anything in new_turfs)
 		newT.blocks_air = TRUE
 		newT.set_sleeping(TRUE)
 
