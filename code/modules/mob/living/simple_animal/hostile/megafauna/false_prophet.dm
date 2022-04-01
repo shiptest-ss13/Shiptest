@@ -1,19 +1,19 @@
 /mob/living/simple_animal/hostile/megafauna/prophet
 	name = "\improper False Prophet"
-	desc = "Guardians of the necropolis."
+	desc = "Uncanny doesn't even begin to describe this... abomination."
 	health = 2000
 	maxHealth = 2000
 	attack_verb_continuous = "chomps"
 	attack_verb_simple = "chomp"
 	attack_sound = 'sound/magic/demon_attack1.ogg'
 	icon = 'icons/mob/lavaland/64x64megafauna.dmi'
-	icon_state = "dragon"
-	icon_living = "dragon"
+	icon_state = "prophet"
+	icon_living = "prophet"
 	icon_dead = "dragon_dead"
-	health_doll_icon = "dragon"
+	health_doll_icon = "prophet"
 	friendly_verb_continuous = "stares down"
 	friendly_verb_simple = "stare down"
-	speak_emote = list("roars")
+	speak_emote = list("cries", "whimpers", "screams", "wails", "shrieks")
 	armour_penetration = 30
 	melee_damage_lower = 30
 	melee_damage_upper = 30
@@ -38,13 +38,17 @@
 		/datum/action/innate/megafauna_attack/disorienting_scream,
 		/datum/action/innate/megafauna_attack/ponder)
 	small_sprite_type = /datum/action/small_sprite/megafauna/drake
-	color = "#cc8899"
 	speak = list("Don't Run.", "Behold.", "Drop it.", "Beg.", "This is no place for you.", "Fly away.", "You are mine.", "Break.", "The Irons Melt, the Fire Molds.", "The Mind, weak and vulnerable, bides its time.", "The red birthday harbors a gilded harbinger.", "Feel the Tar that lives under all of us.", "The triple headed one's blind gaze sees nothing, but me.", "They Lie.", "The Puppet pulls the strings.", "The Mirrors tell false ideas.", "The Walls, Take down the walls and it becomes all clear.", "There is no sky.")
 	speak_chance = 5
 
 	var/leaping = FALSE
 	var/pondering = FALSE
 	var/can_move = TRUE
+	var/mutable_appearance/aggro
+
+/mob/living/simple_animal/hostile/megafauna/prophet/Initialize(mapload)
+	. = ..()
+
 
 /mob/living/simple_animal/hostile/megafauna/prophet/Move(atom/newloc, dir, step_x, step_y)
 	if(!can_move)
@@ -95,14 +99,16 @@
 
 /mob/living/simple_animal/hostile/megafauna/prophet/proc/begin_stare(mob/victim = target)
 	visible_message("<span class='danger'>[src] begins looking towards [victim]!<span>", "<span class='notice'>You move to stare at [victim].</span>")
-	var/obj/effect/temp_visual/blip/B = new /obj/effect/temp_visual/blip(loc)
-	animate(B, transform = matrix()*6, time = 20)
-	addtimer(CALLBACK(src, .proc/truly_see, victim), 2 SECONDS)
+	aggro = mutable_appearance('icons/mob/lavaland/64x64megafauna.dmi', "prophetaggro")
+	add_overlay(aggro)
+	addtimer(CALLBACK(src, .proc/truly_see, victim), 8 SECONDS)
 
 /mob/living/simple_animal/hostile/megafauna/prophet/proc/truly_see(mob/victim = target)
-	if(get_dir(src, victim) & victim.dir) //if they aren't looking upon our beautiful face
-		return
+	cut_overlay(aggro)
 	if(stat == DEAD) //we close our eyes if we're dead, they clearly do not want to see
+		return
+	new /obj/effect/temp_visual/mark(get_turf(victim))
+	if(get_dir(src, victim) & victim.dir) //if they aren't looking upon our beautiful face
 		return
 	if(!istype(victim, /mob/living/carbon)) //we only wish for somewhat intelligent beings
 		return
@@ -136,10 +142,7 @@
 
 	else
 		leaping = TRUE
-		throw_at(at, 10, 1, src, FALSE, TRUE, callback = CALLBACK(src, .proc/leap_end))
-
-/mob/living/simple_animal/hostile/megafauna/prophet/proc/leap_end()
-	leaping = FALSE
+		throw_at(at, 10, 1, src, FALSE, TRUE, callback = VARSET_CALLBACK(src, leaping, FALSE))
 
 /mob/living/simple_animal/hostile/megafauna/prophet/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)
 	. = ..()
@@ -157,7 +160,7 @@
 	animate(pixel_z = 0, time = 1)
 	for(var/mob/living/L in get_hearers_in_view(7, src) - src)
 		L.hallucination += rand(6, 12)
-		to_chat(L, "<span class='danger'>[src] screams a sound not from this world!</span>")
+		to_chat(L, "<span class='danger'>[src] shrieks a sound not from this world!</span>")
 	SetRecoveryTime(30, 0)
 	addtimer(VARSET_CALLBACK(src, can_move, TRUE), 12)
 
@@ -166,12 +169,13 @@
 	can_move = FALSE
 	visible_message("<span class='danger'>[src] begins looking around wildly...</span>", "<span class='notice'>We start looking around wildly.</span>")
 	SetRecoveryTime(30, 0)
-	var/obj/effect/temp_visual/blip/B = new /obj/effect/temp_visual/blip(loc)
-	animate(B, transform = matrix()*6, time = 5 SECONDS, loop = 2)
+	aggro = mutable_appearance('icons/mob/lavaland/64x64megafauna.dmi', "prophetaggro")
+	add_overlay(aggro)
 	addtimer(CALLBACK(src, .proc/ponder_end), 5 SECONDS)
 
 /mob/living/simple_animal/hostile/megafauna/prophet/proc/ponder_end()
 	visible_message("<span class='notice'>[src] stops looking around wildly.</span>", "<span class='notice'>We stop looking around wildly.</span>")
+	cut_overlay(aggro)
 	pondering = FALSE
 	can_move = TRUE
 	handle_automated_speech(TRUE) //we share an insight we thought of
@@ -246,6 +250,7 @@
 		return
 	if(owner.stat == DEAD) //oh fuck I died nevermind
 		return
+	new /obj/effect/temp_visual/mark(get_turf(victim))
 	if(!istype(victim, /mob/living/carbon)) //josh I don't think you're that intelligent honestly but still come look
 		return
 	var/mob/living/carbon/C = victim
