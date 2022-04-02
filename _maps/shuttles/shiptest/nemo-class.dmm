@@ -1204,6 +1204,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/item/vending_refill/mining_equipment,
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "qz" = (
@@ -2297,10 +2298,6 @@
 	},
 /obj/item/card/id/captains_spare,
 /obj/item/megaphone/command,
-/obj/item/areaeditor/shuttle{
-	pixel_x = 5;
-	pixel_y = 1
-	},
 /obj/item/radio/off,
 /obj/item/firing_pin,
 /obj/item/clothing/neck/cloak/rd,
@@ -2503,6 +2500,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/item/circuitboard/machine/vending/mining_equipment,
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "Np" = (
@@ -3081,6 +3079,7 @@
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 5
 	},
+/obj/item/areaeditor/shuttle,
 /turf/open/floor/carpet/black,
 /area/ship/bridge)
 "WN" = (
@@ -3299,6 +3298,9 @@
 "Zx" = (
 /obj/machinery/atmospherics/components/unary/outlet_injector/atmos/atmos_waste{
 	dir = 4
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 8
 	},
 /turf/open/floor/engine,
 /area/ship/external)
