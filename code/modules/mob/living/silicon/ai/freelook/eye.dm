@@ -125,8 +125,15 @@
 		return ai.client
 	return null
 
-/mob/camera/aiEye/Destroy()
+/mob/camera/aiEye/Destroy(force)
 	if(ai)
+		if(ai.eyeobj == src)
+			if(!force)
+				setLoc(get_turf(ai), TRUE)
+				return QDEL_HINT_LETMELIVE
+			// We're being force deleted; clear the ai's reference to us and call view_core to have a new eye instantiated
+			ai.eyeobj = null
+			ai.view_core()
 		ai.all_eyes -= src
 		ai = null
 	for(var/V in visibleCameraChunks)
