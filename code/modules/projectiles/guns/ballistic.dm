@@ -112,8 +112,6 @@
 		. += "[icon_state]_bolt"
 	if (suppressed)
 		. += "[icon_state]_suppressor"
-	if(!chambered && empty_indicator)
-		. += "[icon_state]_empty"
 	if (magazine)
 		if (special_mags)
 			. += "[icon_state]_mag_[initial(magazine.icon_state)]"
@@ -135,7 +133,8 @@
 					capacity_number = 100
 			if (capacity_number)
 				. += "[icon_state]_mag_[capacity_number]"
-
+	if(!chambered && empty_indicator)
+		. += "[icon_state]_empty"
 
 /obj/item/gun/ballistic/process_chamber(empty_chamber = TRUE, from_firing = TRUE, chamber_next_round = TRUE)
 	if(!semi_auto && from_firing)
