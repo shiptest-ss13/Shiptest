@@ -318,7 +318,7 @@ Possible to do for anyone motivated enough:
 				new_turf = get_turf(src)
 			else
 				new_turf = get_step(src, GLOB.cardinals[offset])
-			replay_holo.forceMove(new_turf)
+			replay_holo.abstract_move(new_turf)
 			return TRUE
 		if("hang_up")
 			if(outgoing_call)

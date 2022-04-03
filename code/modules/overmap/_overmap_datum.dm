@@ -86,7 +86,7 @@
   *
   * * new_x/y - the X and Y position to move the overmap datum to. Must be numbers, will CRASH() otherwise.
   */
-/datum/overmap/proc/Move(new_x, new_y)
+/datum/overmap/proc/overmap_move(new_x, new_y)
 	SHOULD_CALL_PARENT(TRUE)
 	if(docking)
 		return
@@ -109,7 +109,7 @@
 	y = new_y
 
 	// Updates the token with the new position.
-	token.Move(OVERMAP_TOKEN_TURF(x, y))
+	token.abstract_move(OVERMAP_TOKEN_TURF(x, y))
 	return TRUE
 
 /**
@@ -118,7 +118,7 @@
   * * dir - The direction to move the overmap datum in. Takes cardinal and diagonal directions.
   * * magnitude - The number of spaces to move the overmap datum in the direction.
   */
-/datum/overmap/proc/Step(dir, magnitude = 1)
+/datum/overmap/proc/overmap_step(dir, magnitude = 1)
 	SHOULD_NOT_OVERRIDE(TRUE)
 	var/move_x = x
 	var/move_y = y
@@ -130,7 +130,7 @@
 		move_x += magnitude
 	else if(dir & WEST)
 		move_x -= magnitude
-	return Move(move_x, move_y)
+	return overmap_move(move_x, move_y)
 
 /**
   * Proc used to rename an overmap datum and everything related to it.
@@ -239,7 +239,7 @@
 	y = null
 	dock_target.contents += src
 	docked_to = dock_target
-	token.Move(dock_target.token)
+	token.abstract_move(dock_target.token)
 
 	dock_target.post_docked(src)
 	docking = FALSE

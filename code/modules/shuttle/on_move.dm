@@ -94,7 +94,7 @@ All ShuttleMove procs go here
 	if(loc != oldT) // This is for multi tile objects
 		return
 
-	loc = newT
+	abstract_move(newT)
 
 
 	return TRUE
@@ -265,14 +265,6 @@ All ShuttleMove procs go here
 	if(codes["delivery"])
 		GLOB.deliverybeacons += src
 		GLOB.deliverybeacontags += location
-
-/obj/machinery/mineral/beforeShuttleMove(turf/newT, rotation, move_mode, obj/docking_port/mobile/moving_dock)
-	unregister_input_turf()
-	return ..()
-
-/obj/machinery/mineral/afterShuttleMove(turf/oldT, list/movement_force, shuttle_dir, shuttle_preferred_direction, move_dir, rotation)
-	. = ..()
-	register_input_turf()
 
 /************************************Item move procs************************************/
 

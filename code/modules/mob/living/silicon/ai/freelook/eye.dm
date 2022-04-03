@@ -80,7 +80,7 @@
 				var/datum/map_zone/mapzone = T.get_map_zone()
 				if(!mapzone?.is_in_bounds(T))//@azarak Give me a poke on discord if you see this, I'm *assuming* this is what you intended? (Added nullcheck)
 					return
-			forceMove(T)
+			abstract_move(T)
 		else
 			moveToNullspace()
 		if(use_static != USE_STATIC_NONE)
