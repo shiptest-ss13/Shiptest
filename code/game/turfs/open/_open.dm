@@ -76,7 +76,7 @@
 	var/sound
 
 /turf/open/indestructible/sound/Entered(atom/movable/AM)
-	..()
+	. = ..()
 	if(ismob(AM))
 		playsound(src,sound,50,TRUE)
 

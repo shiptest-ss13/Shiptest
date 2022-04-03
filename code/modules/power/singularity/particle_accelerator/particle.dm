@@ -21,11 +21,14 @@
 	movement_range = 20
 	energy = 50
 
-
-/obj/effect/accelerated_particle/New(loc)
-	..()
-
+/obj/effect/accelerated_particle/Initialize()
+	. = ..()
 	addtimer(CALLBACK(src, .proc/move), 1)
+
+	var/static/list/loc_connections = list(
+		COMSIG_ATOM_ENTERED = .proc/on_entered
+	)
+	AddElement(/datum/element/connect_loc, loc_connections)
 
 
 /obj/effect/accelerated_particle/Bump(atom/A)
@@ -43,8 +46,8 @@
 			B.take_damage(energy*0.6)
 			movement_range = 0
 
-/obj/effect/accelerated_particle/Crossed(atom/A)
-	. = ..()
+/obj/effect/accelerated_particle/proc/on_entered(datum/source, atom/A)
+	SIGNAL_HANDLER
 	if(isliving(A))
 		toxmob(A)
 
