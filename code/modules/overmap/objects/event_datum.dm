@@ -179,7 +179,7 @@
 		qdel(src)
 	if(--stability <= 0)
 		var/list/results = SSovermap.get_unused_overmap_square()
-		S.Move(results["x"], results["y"])
+		S.overmap_move(results["x"], results["y"])
 		QDEL_NULL(other_wormhole)
 		for(var/MN in GLOB.player_list)
 			var/mob/M = MN
@@ -190,8 +190,8 @@
 		return qdel(src)
 	other_wormhole.stability = stability
 
-	S.Move(other_wormhole.x, other_wormhole.y)
-	S.Step(S.get_heading())
+	S.overmap_move(other_wormhole.x, other_wormhole.y)
+	S.overmap_step(S.get_heading())
 
 GLOBAL_LIST_INIT(overmap_event_pick_list, list(
 	/datum/overmap/event/wormhole = 10,
