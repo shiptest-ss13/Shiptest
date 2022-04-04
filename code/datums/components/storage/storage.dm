@@ -190,16 +190,16 @@
 			hide_from(L)
 
 /datum/component/storage/proc/attack_self(datum/source, mob/M)
-	SIGNAL_HANDLER_DOES_SLEEP
+	SIGNAL_HANDLER
 
 	if(locked)
 		to_chat(M, "<span class='warning'>[parent] seems to be locked!</span>")
 		return FALSE
 	if((M.get_active_held_item() == parent) && allow_quick_empty)
-		quick_empty(M)
+		INVOKE_ASYNC(src, .proc/quick_empty, M)
 
 /datum/component/storage/proc/preattack_intercept(datum/source, obj/O, mob/M, params)
-	SIGNAL_HANDLER_DOES_SLEEP
+	SIGNAL_HANDLER
 
 	if(!isitem(O) || !click_gather || SEND_SIGNAL(O, COMSIG_CONTAINS_STORAGE))
 		return FALSE
@@ -214,6 +214,10 @@
 		return
 	if(!isturf(I.loc))
 		return
+	INVOKE_ASYNC(src, .proc/async_preattack_intercept, I, M)
+
+///async functionality from preattack_intercept
+/datum/component/storage/proc/async_preattack_intercept(obj/item/I, mob/M)
 	var/list/things = I.loc.contents.Copy()
 	if(collection_mode == COLLECT_SAME)
 		things = typecache_filter_list(things, typecacheof(I.type))
@@ -558,7 +562,7 @@
 	to_chat(user, "<span class='notice'>[source] can hold: [can_hold_description]</span>")
 
 /datum/component/storage/proc/mousedrop_onto(datum/source, atom/over_object, mob/M)
-	SIGNAL_HANDLER_DOES_SLEEP
+	SIGNAL_HANDLER
 
 	set waitfor = FALSE
 	. = COMPONENT_NO_MOUSEDROP
@@ -579,7 +583,7 @@
 	if(over_object == M)
 		user_show_to_mob(M)
 	if(!istype(over_object, /atom/movable/screen))
-		dump_content_at(over_object, M)
+		INVOKE_ASYNC(src, .proc/dump_content_at, over_object, M)
 		return
 	if(A.loc != M)
 		return
@@ -764,7 +768,7 @@
 	return max(0, max_items - real_location.contents.len)
 
 /datum/component/storage/proc/signal_fill_type(datum/source, type, amount = 20, force = FALSE)
-	SIGNAL_HANDLER_DOES_SLEEP
+	SIGNAL_HANDLER
 
 	var/atom/real_location = real_location()
 	if(!force)
@@ -772,13 +776,12 @@
 	for(var/i in 1 to amount)
 		if(!handle_item_insertion(new type(real_location), TRUE))
 			return i > 1 //return TRUE only if at least one insertion has been successful.
-		if(CHECK_TICK)
-			if(QDELETED(src))
-				return TRUE
+		if(QDELETED(src))
+			return TRUE
 	return TRUE
 
 /datum/component/storage/proc/on_attack_hand(datum/source, mob/user)
-	SIGNAL_HANDLER_DOES_SLEEP
+	SIGNAL_HANDLER
 
 	var/atom/A = parent
 	if(!attack_hand_interact)
@@ -796,12 +799,12 @@
 		var/mob/living/carbon/human/H = user
 		if(H.l_store == A && !H.get_active_held_item())	//Prevents opening if it's in a pocket.
 			. = COMPONENT_NO_ATTACK_HAND
-			H.put_in_hands(A)
+			INVOKE_ASYNC(H, /mob.proc/put_in_hands, A)
 			H.l_store = null
 			return
 		if(H.r_store == A && !H.get_active_held_item())
 			. = COMPONENT_NO_ATTACK_HAND
-			H.put_in_hands(A)
+			INVOKE_ASYNC(H, /mob.proc/put_in_hands, A)
 			H.r_store = null
 			return
 
@@ -837,8 +840,11 @@
 	return hide_from(target)
 
 /datum/component/storage/proc/on_alt_click(datum/source, mob/user)
-	SIGNAL_HANDLER_DOES_SLEEP
+	SIGNAL_HANDLER
 
+	INVOKE_ASYNC(src, .proc/on_alt_click_async, source, user)
+
+/datum/component/storage/proc/on_alt_click_async(datum/source, mob/user)
 	if(!isliving(user) || !user.CanReach(parent) || user.incapacitated())
 		return
 	if(locked)

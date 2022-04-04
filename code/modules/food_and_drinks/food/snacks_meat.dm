@@ -166,6 +166,7 @@
 	foodtype = MEAT | SUGAR
 	var/faction
 	var/spawned_mob = /mob/living/carbon/monkey
+	custom_price = 300
 
 /obj/item/reagent_containers/food/snacks/monkeycube/proc/Expand()
 	var/mob/spammer = get_mob_by_key(fingerprintslast)
