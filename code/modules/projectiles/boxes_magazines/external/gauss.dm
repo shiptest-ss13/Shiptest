@@ -1,4 +1,5 @@
 /obj/item/ammo_box/magazine/gauss
+	name = "gauss magazine (ferromagnetic pellets)"
 	icon_state = "mediummagmag"
 	ammo_type = /obj/item/ammo_casing/caseless/gauss
 	caliber = "pellet"

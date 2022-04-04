@@ -1,7 +1,6 @@
 /obj/item/gun/ballistic/automatic/powered
 	mag_type = /obj/item/ammo_box/magazine/gauss
 	can_suppress = FALSE
-	casing_ejector = FALSE
 
 	var/obj/item/stock_parts/cell/cell
 	var/cell_type = /obj/item/stock_parts/cell/gun
@@ -17,7 +16,7 @@
 	var/sound_volume = 40 //Volume of loading/unloading cell sounds
 
 
-/obj/item/gun/ballistic/automatic/gauss/Initialize()
+/obj/item/gun/ballistic/automatic/powered/Initialize()
 	. = ..()
 	if(cell_type)
 		cell = new cell_type(src)
@@ -25,14 +24,14 @@
 		cell = new(src)
 	update_icon()
 
-/obj/item/gun/ballistic/automatic/gauss/examine(mob/user)
+/obj/item/gun/ballistic/automatic/powered/examine(mob/user)
 	. = ..()
 	if(cell)
 		. += "<span class='notice'>[src]'s cell is [round(cell.charge / cell.maxcharge, 0.1) * 100]% full.</span>"
 	else
 		. += "<span class='notice'>[src] doesn't seem to have a cell!</span>"
 
-/obj/item/gun/ballistic/automatic/gauss/can_shoot()
+/obj/item/gun/ballistic/automatic/powered/can_shoot()
 	if(QDELETED(cell))
 		return 0
 
@@ -43,27 +42,27 @@
 		return 0
 	. = ..()
 
-/obj/item/gun/ballistic/automatic/gauss/shoot_live_shot(mob/living/user, pointblank = FALSE, mob/pbtarget, message = 1, stam_cost = 0)
+/obj/item/gun/ballistic/automatic/powered/shoot_live_shot(mob/living/user, pointblank = FALSE, mob/pbtarget, message = 1, stam_cost = 0)
 	var/obj/item/ammo_casing/caseless/gauss/shot = chambered
 	cell.use(shot.energy_cost)
 	. = ..()
 
-/obj/item/gun/ballistic/automatic/gauss/get_cell()
+/obj/item/gun/ballistic/automatic/powered/get_cell()
 	return cell
 
-/obj/item/gun/ballistic/automatic/gauss/nopin
+/obj/item/gun/ballistic/automatic/powered/nopin
 	pin = null
 	spawnwithmagazine = FALSE
 
 //the things below were taken from energy gun code. blame whoever coded this, not me
-/obj/item/gun/ballistic/automatic/gauss/attackby(obj/item/A, mob/user, params)
+/obj/item/gun/ballistic/automatic/powered/attackby(obj/item/A, mob/user, params)
 	if (!internal_cell && istype(A, /obj/item/stock_parts/cell/gun))
 		var/obj/item/stock_parts/cell/gun/C = A
 		if (!cell)
 			insert_cell(user, C)
 	return ..()
 
-/obj/item/gun/ballistic/automatic/gauss/proc/insert_cell(mob/user, obj/item/stock_parts/cell/gun/C)
+/obj/item/gun/ballistic/automatic/powered/proc/insert_cell(mob/user, obj/item/stock_parts/cell/gun/C)
 	if(small_gun && !istype(C, /obj/item/stock_parts/cell/gun/mini))
 		to_chat(user, "<span class='warning'>\The [C] doesn't seem to fit into \the [src]...</span>")
 		return FALSE
@@ -80,7 +79,7 @@
 		to_chat(user, "<span class='warning'>You cannot seem to get \the [src] out of your hands!</span>")
 		return FALSE
 
-/obj/item/gun/ballistic/automatic/gauss/proc/eject_cell(mob/user, obj/item/stock_parts/cell/gun/tac_load = null)
+/obj/item/gun/ballistic/automatic/powered/proc/eject_cell(mob/user, obj/item/stock_parts/cell/gun/tac_load = null)
 	playsound(src, load_sound, sound_volume, load_sound_vary)
 	cell.forceMove(drop_location())
 	var/obj/item/stock_parts/cell/gun/old_cell = cell
@@ -90,7 +89,7 @@
 	to_chat(user, "<span class='notice'>You pull the cell out of \the [src].</span>")
 	update_icon()
 
-/obj/item/gun/ballistic/automatic/gauss/screwdriver_act(mob/living/user, obj/item/I)
+/obj/item/gun/ballistic/automatic/powered/screwdriver_act(mob/living/user, obj/item/I)
 	if(cell && !internal_cell && !bayonet && (!gun_light || !can_flashlight))
 		to_chat(user, "<span class='notice'>You begin unscrewing and pulling out the cell...</span>")
 		if(I.use_tool(src, user, unscrewing_time, volume=100))
@@ -98,7 +97,7 @@
 			eject_cell(user)
 	return ..()
 
-/obj/item/gun/ballistic/automatic/gauss/update_overlays()
+/obj/item/gun/ballistic/automatic/powered/update_overlays()
 	. = ..()
 	if(!automatic_charge_overlays)
 		return
@@ -118,7 +117,7 @@
 		else
 			. += "[icon_state]_charge[ratio]"
 
-/obj/item/gun/ballistic/automatic/gauss/proc/get_charge_ratio()
+/obj/item/gun/ballistic/automatic/powered/proc/get_charge_ratio()
 	if(!cell)
 		return 0
 	return CEILING(clamp(cell.charge / cell.maxcharge, 0, 1) * charge_sections, 1)// Sets the ratio to 0 if the gun doesn't have enough charge to fire, or if its power cell is removed.
