@@ -66,12 +66,12 @@
 	var/turf/open/open_turf = loc
 	if(open_turf.turf_fire)
 		return INITIALIZE_HINT_QDEL
-	/* for crossed removal
+
 	var/static/list/loc_connections = list(
 		COMSIG_ATOM_ENTERED = .proc/on_entered,
 	)
 	AddElement(/datum/element/connect_loc, src, loc_connections)
-	*/
+
 	if(!fire_color)
 		base_icon_state = "red"
 	else if(fire_color in allowed_colors)
@@ -149,8 +149,7 @@
 			playsound(open_turf, 'sound/effects/comfyfire.ogg', 40, TRUE)
 		UpdateFireState()
 
-// /obj/effect/abstract/turf_fire/proc/on_entered(datum/source, atom/movable/AM) for crossed removal
-/obj/effect/abstract/turf_fire/Crossed(atom/movable/atom_crossing)
+/obj/effect/abstract/turf_fire/proc/on_entered(datum/source, atom/movable/AM) for crossed removal
 	. = ..()
 	var/turf/open/open_turf = loc
 	if(open_turf.active_hotspot) //If we have an active hotspot, let it do the damage instead
