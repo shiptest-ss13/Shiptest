@@ -276,7 +276,9 @@
 /turf/open/floor/carpet/black,
 /area/ship/bridge)
 "dD" = (
-/obj/machinery/air_sensor/atmos/incinerator_tank,
+/obj/machinery/air_sensor/atmos/incinerator_tank{
+	id_tag = "nemo_incinerator_sensor"
+	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer3{
 	dir = 4
 	},
@@ -796,6 +798,26 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
+"jM" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/thinplating/dark,
+/obj/machinery/computer/helm/viewscreen{
+	dir = 1;
+	pixel_y = -30
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/crew/canteen)
 "jT" = (
 /obj/structure/cable/yellow{
 	icon_state = "0-8"
@@ -1459,6 +1481,8 @@
 /obj/item/stack/cable_coil,
 /obj/item/storage/belt/utility/full,
 /obj/item/clothing/glasses/hud/diagnostic,
+/obj/item/stock_parts/cell/high/plus,
+/obj/item/stock_parts/cell/high/plus,
 /turf/open/floor/circuit,
 /area/ship/science)
 "vf" = (
@@ -2485,6 +2509,7 @@
 /obj/effect/turf_decal/siding/yellow{
 	dir = 6
 	},
+/obj/item/stock_parts/cell/high/plus,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/electrical)
 "Ma" = (
@@ -2988,7 +3013,8 @@
 	dir = 5
 	},
 /obj/machinery/computer/atmos_control/incinerator{
-	dir = 4
+	dir = 4;
+	sensors = list("nemo_incinerator_sensor" = "Incinerator Chamber")
 	},
 /obj/effect/turf_decal/trimline/blue/line{
 	dir = 6
@@ -3977,7 +4003,7 @@ tb
 zE
 AE
 TH
-tX
+jM
 Bz
 Bz
 Bz
