@@ -1,24 +1,18 @@
 /obj/projectile/bullet/gauss
-	icon_state = "redtrac"
+	name = "ferromagnetic pellet"
+	icon_state = "gauss-pellet"
 	damage = 20
-	armour_penetration = 20
-	speed = 0.5
 	range = 35
 	light_color = COLOR_SOFT_RED
 	light_range = 3
 
-/obj/projectile/bullet/gauss/hyper
+/obj/projectile/bullet/gauss/lance
+	name = "ferromagnetic lance"
+	icon_state = "redtrac"
 	damage = 30
-	armour_penetration = 25
-	stamina = 10
-	range = 6
+	speed = 0.4
 
-/obj/projectile/bullet/incendiary/gauss
-	icon_state = "magjectile-large"
-	damage = 10
-	armour_penetration = 20
-	movement_type = FLYING
-	range = 20
-	light_color = COLOR_SOFT_RED
-	light_range = 3
-	speed = 0.5
+/obj/projectile/bullet/gauss/slug
+	name = "ferromagnetic slug"
+	icon_state = "gauss-slug"
+	damage = 50

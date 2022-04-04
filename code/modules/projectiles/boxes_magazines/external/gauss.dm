@@ -1,4 +1,4 @@
-/obj/item/ammo_box/magazine/mmag
+/obj/item/ammo_box/magazine/gauss
 	icon_state = "mediummagmag"
 	ammo_type = /obj/item/ammo_casing/caseless/gauss
 	caliber = "pellet"

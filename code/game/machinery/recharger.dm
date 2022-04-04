@@ -17,7 +17,7 @@
 		/obj/item/melee/baton,
 		/obj/item/ammo_box/magazine/recharge,
 		/obj/item/modular_computer,
-		/obj/item/gun/ballistic/automatic/gauss
+		/obj/item/gun/ballistic/automatic/powered
 		))
 
 /obj/machinery/recharger/RefreshParts()

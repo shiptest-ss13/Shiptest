@@ -1,29 +1,11 @@
-/obj/item/gun/ballistic/automatic/gauss
-	name = "prototype gauss rifle"
-	desc = "A NT experimental rifle with high capacity. Useful for putting down crowds. Chambered in ferromagnetic pellets."
-	icon_state = "gauss"
-	item_state = "arg"
-	force = 10
-	slot_flags = ITEM_SLOT_BACK
-	mag_type = /obj/item/ammo_box/magazine/mmag
-	fire_sound = 'sound/weapons/gun/gauss/magrifle.ogg'
-	load_empty_sound = 'sound/weapons/gun/gauss/mg_reload.ogg'
+/obj/item/gun/ballistic/automatic/powered
+	mag_type = /obj/item/ammo_box/magazine/gauss
 	can_suppress = FALSE
-	burst_size = 1
-	actions_types = null
-	fire_delay = 3
-	spread = 0
-	recoil = 0.1
 	casing_ejector = FALSE
-	mag_display = TRUE
-	empty_indicator = TRUE
-	empty_alarm = TRUE
-	weapon_weight = WEAPON_MEDIUM
-	w_class = WEIGHT_CLASS_BULKY
+
 	var/obj/item/stock_parts/cell/cell
 	var/cell_type = /obj/item/stock_parts/cell/gun
-	var/charge_sections = 4
-	ammo_x_offset = 2
+	var/charge_sections = 3
 
 	var/shaded_charge = FALSE //if this gun uses a stateful charge bar for more detail
 	var/automatic_charge_overlays = TRUE	//Do we handle overlays with base update_icon()?
@@ -75,7 +57,7 @@
 
 //the things below were taken from energy gun code. blame whoever coded this, not me
 /obj/item/gun/ballistic/automatic/gauss/attackby(obj/item/A, mob/user, params)
-	if (!cell && istype(A, /obj/item/stock_parts/cell/gun))
+	if (!internal_cell && istype(A, /obj/item/stock_parts/cell/gun))
 		var/obj/item/stock_parts/cell/gun/C = A
 		if (!cell)
 			insert_cell(user, C)
@@ -109,7 +91,7 @@
 	update_icon()
 
 /obj/item/gun/ballistic/automatic/gauss/screwdriver_act(mob/living/user, obj/item/I)
-	if(cell && !bayonet && (!gun_light || !can_flashlight))
+	if(cell && !internal_cell && !bayonet && (!gun_light || !can_flashlight))
 		to_chat(user, "<span class='notice'>You begin unscrewing and pulling out the cell...</span>")
 		if(I.use_tool(src, user, unscrewing_time, volume=100))
 			to_chat(user, "<span class='notice'>You remove the power cell.</span>")
@@ -122,6 +104,8 @@
 		return
 	var/overlay_icon_state = "[icon_state]_charge"
 	var/ratio = get_charge_ratio()
+	if(cell)
+		. += "[icon_state]_cell"
 	if(ratio == 0)
 		. += "[icon_state]_cellempty"
 	else
