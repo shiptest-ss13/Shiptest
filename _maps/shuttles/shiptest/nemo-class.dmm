@@ -80,7 +80,9 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
 "aH" = (
-/obj/machinery/air_sensor/atmos/oxygen_tank,
+/obj/machinery/air_sensor/atmos/oxygen_tank{
+	id_tag = "nemo_o2_sensor"
+	},
 /obj/structure/window/plasma/reinforced/spawner/north,
 /turf/open/floor/engine/o2,
 /area/ship/engineering/atmospherics)
@@ -1045,7 +1047,9 @@
 /area/ship/maintenance/starboard)
 "mS" = (
 /obj/structure/window/plasma/reinforced/spawner/east,
-/obj/machinery/air_sensor/atmos/toxin_tank,
+/obj/machinery/air_sensor/atmos/toxin_tank{
+	id_tag = "nemo_tox_sensor"
+	},
 /obj/structure/window/plasma/reinforced/spawner,
 /turf/open/floor/engine/plasma,
 /area/ship/engineering/atmospherics)
@@ -1415,7 +1419,8 @@
 	dir = 4
 	},
 /obj/machinery/computer/atmos_control/tank/air_tank{
-	dir = 8
+	dir = 8;
+	sensors = list("nemo_air_sensor" = "Air Mix Tank")
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering/atmospherics)
@@ -1884,7 +1889,8 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/computer/atmos_control/tank/toxin_tank{
-	dir = 8
+	dir = 8;
+	sensors = list("nemo_tox_sensor" = "Plasma Tank")
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
@@ -2548,7 +2554,8 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/green/visible,
 /obj/machinery/computer/atmos_control/tank/oxygen_tank{
-	dir = 8
+	dir = 8;
+	sensors = list("nemo_o2_sensor" = "Oxygen Tank")
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering/atmospherics)
@@ -2649,7 +2656,8 @@
 	dir = 9
 	},
 /obj/machinery/computer/atmos_control/tank/nitrogen_tank{
-	dir = 8
+	dir = 8;
+	sensors = list("nemo_n2_sensor" = "Nitrogen Tank")
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering/atmospherics)
@@ -2916,7 +2924,9 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/electrical)
 "Sq" = (
-/obj/machinery/air_sensor/atmos/air_tank,
+/obj/machinery/air_sensor/atmos/air_tank{
+	id_tag = "nemo_air_sensor"
+	},
 /obj/structure/window/plasma/reinforced/spawner/east,
 /obj/structure/window/plasma/reinforced/spawner/north,
 /turf/open/floor/engine/air,
@@ -3347,7 +3357,9 @@
 /turf/open/floor/wood,
 /area/ship/crew/dorm)
 "Zi" = (
-/obj/machinery/air_sensor/atmos/nitrogen_tank,
+/obj/machinery/air_sensor/atmos/nitrogen_tank{
+	id_tag = "nemo_n2_sensor"
+	},
 /obj/structure/window/plasma/reinforced/spawner/north,
 /turf/open/floor/engine/n2,
 /area/ship/engineering/atmospherics)
