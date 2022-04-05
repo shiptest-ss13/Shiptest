@@ -60,6 +60,10 @@
 /obj/item/radio/intercom/attack_ai(mob/user)
 	interact(user)
 
+/obj/item/radio/intercom/attack_paw(mob/user)
+	return attack_hand(user)
+
+
 /obj/item/radio/intercom/attack_hand(mob/user)
 	. = ..()
 	if(.)
@@ -67,7 +71,12 @@
 	interact(user)
 
 /obj/item/radio/intercom/ui_state(mob/user)
-	return GLOB.default_state
+	if(issilicon(user)) // for silicons give default_state
+		return GLOB.default_state
+
+	return GLOB.physical_state // for other non-dexterous mobs give physical_state
+
+
 
 /obj/item/radio/intercom/can_receive(freq, map_zones)
 	if(!on)
