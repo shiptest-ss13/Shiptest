@@ -6,7 +6,7 @@
 	strip_delay = 40
 	equip_delay_other = 40
 	cuttable = TRUE
-	clothamnt = 2
+	clothamnt = 1
 	greyscale_colors = list(list(15, 19))
 	greyscale_icon_state = "scarf"
 

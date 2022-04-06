@@ -143,14 +143,14 @@
  * Finally, we return a bitflag to [COMSIG_MOVABLE_IMPACT] that forces the hitpush to false so that we don't knock them away.
 */
 /datum/component/tackler/proc/sack(mob/living/carbon/user, atom/hit)
-	SIGNAL_HANDLER_DOES_SLEEP
+	SIGNAL_HANDLER
 
 	if(!tackling || !tackle)
 		return
 
 	if(!iscarbon(hit))
 		if(hit.density)
-			return splat(user, hit)
+			INVOKE_ASYNC(src, .proc/splat, user, hit)
 		return
 
 	var/mob/living/carbon/target = hit
@@ -211,7 +211,7 @@
 			target.Paralyze(5)
 			target.Knockdown(30)
 			if(ishuman(target) && ishuman(user))
-				S.dna.species.grab(S, T)
+				INVOKE_ASYNC(S.dna.species, /datum/species.proc/grab, S, T)
 				S.setGrabState(GRAB_PASSIVE)
 
 		if(5 to INFINITY) // absolutely BODIED
@@ -224,7 +224,7 @@
 			target.Paralyze(5)
 			target.Knockdown(30)
 			if(ishuman(target) && ishuman(user))
-				S.dna.species.grab(S, T)
+				INVOKE_ASYNC(S.dna.species, /datum/species.proc/grab, S, T)
 				S.setGrabState(GRAB_AGGRESSIVE)
 
 

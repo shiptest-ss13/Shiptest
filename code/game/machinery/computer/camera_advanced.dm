@@ -202,7 +202,7 @@
 			if(!mapzone.is_in_bounds(T))
 				return
 		if (T)
-			forceMove(T)
+			abstract_move(T)
 		else
 			moveToNullspace()
 		update_ai_detect_hud()
