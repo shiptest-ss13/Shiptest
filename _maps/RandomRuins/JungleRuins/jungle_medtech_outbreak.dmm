@@ -72,10 +72,6 @@
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
 /area/ship/science/storage)
-"bZ" = (
-/obj/structure/flora/ausbushes/grassybush,
-/turf/open/floor/plating/grass/jungle,
-/area/ruin/jungle)
 "cn" = (
 /obj/effect/turf_decal/corner/mauve,
 /obj/effect/decal/cleanable/blood/bubblegum,
@@ -357,6 +353,7 @@
 	},
 /obj/structure/table/reinforced,
 /obj/item/hypospray/mkii/brute,
+/obj/machinery/door/window/southright,
 /turf/open/floor/plasteel/tech,
 /area/ship/medical)
 "gG" = (
@@ -378,6 +375,12 @@
 /obj/structure/flora/ausbushes/grassybush,
 /turf/open/floor/plating/grass/jungle,
 /area/ruin/jungle)
+"hf" = (
+/obj/effect/turf_decal/siding/wideplating/dark{
+	dir = 8
+	},
+/turf/open/floor/plating,
+/area/ship/crew/office)
 "hF" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/paper{
@@ -721,6 +724,10 @@
 	},
 /turf/open/floor/plating/catwalk_floor,
 /area/ship/science/storage)
+"lC" = (
+/obj/structure/flora/ausbushes/grassybush,
+/turf/open/floor/plating/grass/jungle,
+/area/ruin/jungle)
 "lE" = (
 /obj/effect/turf_decal/corner/green{
 	dir = 9
@@ -794,6 +801,7 @@
 /area/ship/science/storage)
 "mr" = (
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/industrial/warning/corner,
 /turf/open/floor/plasteel/dark,
 /area/ship/science/storage)
 "mx" = (
@@ -874,6 +882,7 @@
 	pixel_x = -5;
 	pixel_y = 4
 	},
+/obj/item/ammo_box/magazine/m45/ap,
 /turf/open/floor/plating/dirt/jungle/wasteland,
 /area/ruin/jungle)
 "om" = (
@@ -1279,7 +1288,14 @@
 /obj/effect/turf_decal/corner/mauve{
 	dir = 10
 	},
-/obj/item/reagent_containers/food/drinks/sillycup,
+/obj/item/reagent_containers/food/snacks/energybar{
+	pixel_x = 1;
+	pixel_y = 10
+	},
+/obj/item/reagent_containers/food/snacks/donut/choco{
+	pixel_x = -2;
+	pixel_y = 2
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/hallway)
 "uS" = (
@@ -1307,6 +1323,11 @@
 /obj/effect/decal/cleanable/blood/splatter,
 /turf/open/floor/wood,
 /area/ship/bridge)
+"vh" = (
+/obj/structure/flora/ausbushes/sparsegrass,
+/obj/structure/flora/grass/jungle,
+/turf/open/floor/plating/grass/jungle,
+/area/ruin/jungle)
 "vu" = (
 /obj/effect/turf_decal/industrial/warning/dust{
 	dir = 6
@@ -1319,10 +1340,6 @@
 /obj/effect/turf_decal/box/corners,
 /obj/machinery/light/floor,
 /turf/open/floor/plating/dirt/jungle/wasteland,
-/area/ruin/jungle)
-"vK" = (
-/obj/structure/flora/tree/jungle/small,
-/turf/open/floor/plating/grass/jungle,
 /area/ruin/jungle)
 "vU" = (
 /obj/item/circuitboard/machine/rdserver,
@@ -1470,10 +1487,6 @@
 /obj/effect/decal/cleanable/blood/splatter,
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
-"ys" = (
-/obj/structure/flora/ausbushes/sparsegrass,
-/turf/open/floor/plating/grass/jungle,
-/area/ruin/jungle)
 "yt" = (
 /obj/effect/decal/cleanable/blood/splatter,
 /obj/structure/table_frame/wood,
@@ -1521,11 +1534,6 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/hallway)
-"yX" = (
-/obj/structure/flora/grass/jungle,
-/obj/structure/flora/grass/jungle,
-/turf/open/floor/plating/grass/jungle,
-/area/ruin/jungle)
 "yZ" = (
 /obj/effect/decal/cleanable/blood/bubblegum,
 /turf/open/floor/plating/catwalk_floor,
@@ -1859,6 +1867,9 @@
 /obj/item/shard,
 /obj/item/shard{
 	icon_state = "tiny"
+	},
+/obj/structure/window/reinforced/spawner{
+	dir = 1
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/medical)
@@ -2335,6 +2346,11 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/white,
 /area/ship/science/storage)
+"Ll" = (
+/obj/structure/flora/ausbushes/sparsegrass,
+/obj/structure/flora/ausbushes/grassybush,
+/turf/open/floor/plating/grass/jungle,
+/area/ruin/jungle)
 "Lo" = (
 /obj/effect/turf_decal/corner/green{
 	dir = 9
@@ -2575,6 +2591,7 @@
 /turf/open/floor/plasteel/white,
 /area/ship/science/storage)
 "Pp" = (
+/obj/effect/turf_decal/siding/wideplating/dark,
 /turf/open/floor/plating,
 /area/ship/crew/office)
 "Pu" = (
@@ -2622,6 +2639,10 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/science/storage)
+"PI" = (
+/obj/structure/flora/tree/jungle/small,
+/turf/open/floor/plating/grass/jungle,
+/area/ruin/jungle)
 "PO" = (
 /obj/effect/turf_decal/industrial/warning/dust{
 	dir = 1
@@ -2780,11 +2801,6 @@
 /obj/item/reagent_containers/dropper,
 /turf/open/floor/plasteel/tech,
 /area/ship/science)
-"Rn" = (
-/obj/structure/flora/ausbushes/sparsegrass,
-/obj/structure/flora/grass/jungle,
-/turf/open/floor/plating/grass/jungle,
-/area/ruin/jungle)
 "Rr" = (
 /obj/effect/turf_decal/corner/mauve{
 	dir = 5
@@ -3241,6 +3257,10 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating/dirt/jungle/wasteland,
 /area/ruin/jungle)
+"Xo" = (
+/obj/effect/turf_decal/industrial/warning,
+/turf/open/floor/plating,
+/area/ship/science/storage)
 "Xq" = (
 /obj/effect/turf_decal/corner/mauve{
 	dir = 10
@@ -3289,6 +3309,10 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway)
+"Ya" = (
+/obj/structure/flora/ausbushes/sparsegrass,
+/turf/open/floor/plating/grass/jungle,
+/area/ruin/jungle)
 "Yb" = (
 /obj/structure/railing{
 	dir = 1
@@ -3434,11 +3458,6 @@
 /obj/structure/sign/warning/biohazard,
 /turf/closed/wall,
 /area/ship/medical)
-"ZM" = (
-/obj/structure/flora/ausbushes/sparsegrass,
-/obj/structure/flora/ausbushes/grassybush,
-/turf/open/floor/plating/grass/jungle,
-/area/ruin/jungle)
 "ZO" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/flora/ausbushes/grassybush,
@@ -3447,10 +3466,15 @@
 "ZU" = (
 /turf/closed/wall/r_wall,
 /area/ship/bridge)
+"ZV" = (
+/obj/structure/flora/grass/jungle,
+/obj/structure/flora/grass/jungle,
+/turf/open/floor/plating/grass/jungle,
+/area/ruin/jungle)
 
 (1,1,1) = {"
 IY
-bZ
+lC
 iY
 FJ
 DZ
@@ -3461,7 +3485,7 @@ zq
 te
 IY
 ue
-ys
+Ya
 te
 JC
 JC
@@ -3472,12 +3496,12 @@ JC
 JC
 JC
 te
-bZ
+lC
 ue
 "}
 (2,1,1) = {"
 te
-ys
+Ya
 Xl
 aj
 RC
@@ -3500,11 +3524,11 @@ Vn
 JC
 JC
 ue
-Rn
+vh
 "}
 (3,1,1) = {"
 ue
-vK
+PI
 IY
 aj
 uH
@@ -3513,9 +3537,9 @@ qO
 uH
 aj
 te
-ys
-ys
-bZ
+Ya
+Ya
+lC
 jM
 BO
 nS
@@ -3526,8 +3550,8 @@ Pz
 Bh
 xc
 jM
-bZ
-vK
+lC
+PI
 "}
 (4,1,1) = {"
 te
@@ -3542,7 +3566,7 @@ vy
 DZ
 te
 ue
-ys
+Ya
 jM
 yS
 JU
@@ -3554,10 +3578,10 @@ NY
 Xq
 jM
 ue
-Rn
+vh
 "}
 (5,1,1) = {"
-ZM
+Ll
 te
 te
 te
@@ -3569,7 +3593,7 @@ IY
 te
 IY
 te
-ZM
+Ll
 JC
 JC
 Cj
@@ -3580,7 +3604,7 @@ pt
 uM
 JC
 JC
-ys
+Ya
 ue
 "}
 (6,1,1) = {"
@@ -3595,7 +3619,7 @@ uS
 tY
 tY
 tY
-ZM
+Ll
 ue
 te
 JC
@@ -3606,9 +3630,9 @@ KE
 JC
 JC
 JC
-ys
+Ya
 ue
-bZ
+lC
 "}
 (7,1,1) = {"
 tY
@@ -3626,7 +3650,7 @@ tY
 ue
 Qu
 te
-ys
+Ya
 Zq
 NT
 RV
@@ -3634,14 +3658,14 @@ Ib
 Zq
 te
 Qu
-bZ
-ys
+lC
+Ya
 "}
 (8,1,1) = {"
 tY
 WU
 jw
-Ts
+Xo
 hF
 ya
 ya
@@ -3694,7 +3718,7 @@ YN
 (10,1,1) = {"
 tY
 Un
-Ts
+Xo
 ya
 jI
 ft
@@ -3817,7 +3841,7 @@ jo
 dR
 QJ
 LW
-Pp
+hf
 Kj
 AD
 Tb
@@ -3878,7 +3902,7 @@ ZU
 eQ
 eQ
 ZU
-ys
+Ya
 "}
 (17,1,1) = {"
 tY
@@ -3903,9 +3927,9 @@ gp
 Zq
 te
 te
-ZM
-ZM
-ys
+Ll
+Ll
+Ya
 "}
 (18,1,1) = {"
 ue
@@ -3929,15 +3953,15 @@ Wo
 Av
 jl
 jl
-Rn
+vh
 te
 zr
 te
 "}
 (19,1,1) = {"
-ys
+Ya
 te
-yX
+ZV
 FB
 XE
 Lo
@@ -3959,7 +3983,7 @@ jl
 te
 te
 ue
-yX
+ZV
 "}
 (20,1,1) = {"
 zr
@@ -3984,7 +4008,7 @@ Nd
 Tt
 jl
 ue
-Rn
+vh
 sQ
 am
 "}
@@ -4011,14 +4035,14 @@ ul
 vu
 jl
 ue
-ys
+Ya
 te
 zr
 "}
 (22,1,1) = {"
-ys
+Ya
 zr
-ys
+Ya
 Cz
 Cz
 kM
@@ -4043,7 +4067,7 @@ te
 zr
 "}
 (23,1,1) = {"
-Rn
+vh
 ue
 iM
 Cz
@@ -4065,8 +4089,8 @@ DC
 we
 Er
 Er
-ZM
-ys
+Ll
+Ya
 te
 "}
 (24,1,1) = {"
@@ -4121,7 +4145,7 @@ SI
 hL
 eF
 te
-ys
+Ya
 "}
 (26,1,1) = {"
 te
@@ -4174,8 +4198,8 @@ Qn
 HJ
 Pv
 eF
-ys
-yX
+Ya
+ZV
 "}
 (28,1,1) = {"
 te
@@ -4202,7 +4226,7 @@ iC
 Pa
 eF
 ue
-bZ
+lC
 "}
 (29,1,1) = {"
 te
@@ -4233,7 +4257,7 @@ Vj
 "}
 (30,1,1) = {"
 zr
-vK
+PI
 Cz
 Cz
 Qc
@@ -4242,10 +4266,10 @@ SX
 Ip
 Cz
 Cz
-ys
-Rn
+Ya
+vh
 re
-bZ
+lC
 Er
 Er
 bT
@@ -4259,8 +4283,8 @@ IH
 te
 "}
 (31,1,1) = {"
-ys
-Rn
+Ya
+vh
 te
 Cz
 fr
@@ -4268,10 +4292,10 @@ fr
 fr
 fr
 Cz
-ys
+Ya
 hd
-bZ
-Rn
+lC
+vh
 An
 te
 Er
@@ -4283,5 +4307,5 @@ Er
 ue
 Qu
 te
-Rn
+vh
 "}
