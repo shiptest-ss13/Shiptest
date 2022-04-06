@@ -31,9 +31,7 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 6
 	},
-/mob/living/simple_animal/hostile/zombie{
-	zombiejob = "Chemist"
-	},
+/mob/living/simple_animal/hostile/zombie,
 /turf/open/floor/plasteel/white,
 /area/ship/science)
 "aM" = (
@@ -504,7 +502,7 @@
 	dir = 8
 	},
 /obj/structure/table/glass,
-/obj/item/storage/box/monkeycubes,
+/obj/item/storage/firstaid/brute,
 /obj/item/shard{
 	icon_state = "tiny"
 	},
@@ -1103,9 +1101,7 @@
 /area/ruin/jungle)
 "rf" = (
 /obj/effect/turf_decal/corner/orange/full,
-/mob/living/simple_animal/hostile/zombie{
-	zombiejob = "Chemist"
-	},
+/mob/living/simple_animal/hostile/zombie,
 /turf/open/floor/plasteel/white,
 /area/ship/science/storage)
 "ro" = (
@@ -1189,12 +1185,6 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/science/storage)
-"te" = (
-/mob/living/simple_animal/hostile/zombie{
-	zombiejob = "Assistant"
-	},
-/turf/open/floor/plasteel/white,
-/area/ship/science/storage)
 "tp" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/flora/tree/jungle/small,
@@ -1233,12 +1223,6 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/science/storage)
-"ue" = (
-/mob/living/simple_animal/hostile/zombie{
-	zombiejob = "Assistant"
-	},
-/turf/open/floor/plating,
-/area/ship/medical)
 "ul" = (
 /obj/effect/turf_decal/corner/green{
 	dir = 6
@@ -1302,9 +1286,7 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 10
 	},
-/mob/living/simple_animal/hostile/zombie{
-	zombiejob = "Chemist"
-	},
+/mob/living/simple_animal/hostile/zombie,
 /turf/open/floor/plasteel/white,
 /area/ship/science)
 "vf" = (
@@ -1319,7 +1301,6 @@
 	dir = 6
 	},
 /obj/structure/closet/l3closet/scientist,
-/obj/item/storage/firstaid/brute,
 /turf/open/floor/plasteel/white,
 /area/ship/science)
 "vy" = (
@@ -2499,9 +2480,11 @@
 	dir = 6
 	},
 /obj/effect/decal/cleanable/blood/tracks,
-/obj/structure/door_assembly/door_assembly_viro,
 /obj/machinery/door/poddoor{
 	id = "lablock1"
+	},
+/obj/machinery/door/airlock/virology/glass{
+	name = "High Security Chem-lab #1"
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/science)
@@ -3815,7 +3798,7 @@ WI
 yZ
 kx
 KD
-te
+Jx
 wB
 sI
 ya
@@ -4138,7 +4121,7 @@ Qu
 fr
 Sw
 gD
-ue
+uT
 wP
 Lx
 xO
