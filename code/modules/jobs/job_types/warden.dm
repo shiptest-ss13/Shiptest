@@ -65,3 +65,12 @@
 	accessory = /obj/item/clothing/accessory/armband
 	head = /obj/item/clothing/head/beret/solgov
 	suit = /obj/item/clothing/suit/armor/vest/solgov/rep
+
+/datum/outfit/job/warden/nanotrasen
+	name = "Warden (Nanotrasen)"
+
+	head = /obj/item/clothing/head/warden/red
+	uniform = /obj/item/clothing/under/rank/security/warden/nt
+	suit = /obj/item/clothing/suit/armor/vest/security/warden/alt/nt
+	alt_uniform = null
+	alt_suit = null
