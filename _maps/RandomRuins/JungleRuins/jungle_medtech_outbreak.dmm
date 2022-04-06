@@ -1228,7 +1228,10 @@
 /area/ruin/jungle)
 "uc" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plating,
+/obj/effect/turf_decal/corner/blue{
+	dir = 6
+	},
+/turf/open/floor/plasteel/white,
 /area/ship/science/storage)
 "ue" = (
 /mob/living/simple_animal/hostile/zombie{
@@ -1677,9 +1680,7 @@
 	pixel_x = -13;
 	pixel_y = -6
 	},
-/mob/living/simple_animal/hostile/zombie{
-	zombiejob = "Lawyer"
-	},
+/mob/living/simple_animal/hostile/zombie,
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/office)
 "Bh" = (
@@ -2974,11 +2975,14 @@
 /turf/open/floor/plasteel/white,
 /area/ship/science)
 "TN" = (
-/obj/effect/turf_decal/siding/wideplating/dark,
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
 /obj/effect/decal/cleanable/blood/tracks,
+/obj/effect/turf_decal/siding/wideplating/dark/corner{
+	dir = 8
+	},
+/obj/effect/turf_decal/siding/wideplating/dark/corner,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/office)
 "TR" = (
@@ -3197,6 +3201,7 @@
 /obj/structure/sign/warning/chemdiamond{
 	pixel_y = 32
 	},
+/obj/item/storage/box/lights/mixed,
 /obj/item/wrench,
 /turf/open/floor/plating/catwalk_floor,
 /area/ship/science/storage)
@@ -3650,7 +3655,7 @@ wy
 ya
 ya
 Jx
-ya
+Ts
 Mm
 Sr
 lX
