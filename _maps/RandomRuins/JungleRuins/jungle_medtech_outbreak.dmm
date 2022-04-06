@@ -354,6 +354,7 @@
 	dir = 1
 	},
 /obj/structure/table/reinforced,
+/obj/item/hypospray/mkii/brute,
 /turf/open/floor/plasteel/tech,
 /area/ship/medical)
 "gG" = (
@@ -389,7 +390,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/machinery/door/airlock/public/glass{
+/obj/machinery/door/airlock/public{
 	name = "Administrative office"
 	},
 /turf/open/floor/plasteel/tech,
@@ -936,6 +937,7 @@
 	pixel_y = 11
 	},
 /obj/effect/gibspawner/human,
+/obj/item/ammo_box/magazine/aks74u,
 /turf/open/floor/plasteel/tech,
 /area/ship/science)
 "oJ" = (
@@ -1314,6 +1316,7 @@
 	dir = 6
 	},
 /obj/structure/closet/l3closet/scientist,
+/obj/item/storage/firstaid/brute,
 /turf/open/floor/plasteel/white,
 /area/ship/science)
 "vy" = (
@@ -1325,6 +1328,10 @@
 "vU" = (
 /obj/item/circuitboard/machine/rdserver,
 /obj/structure/closet/crate/science,
+/obj/item/circuitboard/machine/rdserver{
+	pixel_x = -4;
+	pixel_y = -4
+	},
 /turf/open/floor/plating/catwalk_floor,
 /area/ship/science/storage)
 "we" = (
@@ -1823,11 +1830,6 @@
 	dir = 8
 	},
 /obj/item/light/tube/broken,
-/obj/item/wallframe/light_fixture{
-	dir = 8;
-	pixel_x = -10;
-	pixel_y = -5
-	},
 /turf/open/floor/plasteel/white,
 /area/ship/science/storage)
 "Dr" = (
@@ -1851,9 +1853,6 @@
 /obj/item/shard,
 /obj/item/shard{
 	icon_state = "tiny"
-	},
-/obj/item/reagent_scanner{
-	pixel_y = 12
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/medical)
@@ -2277,7 +2276,7 @@
 /turf/open/floor/plasteel/white,
 /area/ship/science/storage)
 "KE" = (
-/obj/machinery/door/airlock/public/glass{
+/obj/machinery/door/airlock/public{
 	name = "Administrative office"
 	},
 /turf/open/floor/plasteel/tech,
@@ -2857,9 +2856,6 @@
 	pixel_x = 5;
 	pixel_y = 7
 	},
-/obj/item/gun/ballistic/automatic/pistol/m1911/no_mag{
-	pixel_y = 15
-	},
 /obj/effect/decal/cleanable/blood/tracks{
 	dir = 6
 	},
@@ -3141,6 +3137,7 @@
 "VL" = (
 /obj/structure/closet/cabinet,
 /obj/item/hatchet/wooden,
+/obj/item/ammo_box/a357,
 /obj/item/gun/ballistic/revolver,
 /turf/open/floor/wood,
 /area/ship/bridge)
@@ -3270,7 +3267,7 @@
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "XO" = (
-/obj/machinery/door/airlock/research{
+/obj/machinery/door/airlock/public{
 	name = "MedTech chemical manufacturing facility"
 	},
 /turf/open/floor/plasteel/tech,
@@ -3333,6 +3330,9 @@
 /obj/effect/decal/cleanable/blood/bubblegum,
 /obj/effect/mob_spawn/human/corpse/assistant{
 	outfit = /datum/outfit/job/chemist
+	},
+/obj/item/gun/ballistic/automatic/pistol/m1911/no_mag{
+	pixel_y = -13
 	},
 /turf/open/floor/plating/dirt/jungle/wasteland,
 /area/ruin/jungle)
