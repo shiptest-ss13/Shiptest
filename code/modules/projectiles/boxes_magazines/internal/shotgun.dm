@@ -49,3 +49,6 @@
 	caliber = "38"
 	max_ammo = 7
 	multiload = FALSE
+
+/obj/item/ammo_box/magazine/internal/shot/winchester/lethal
+	ammo_type = /obj/item/ammo_casing/c38/hunting

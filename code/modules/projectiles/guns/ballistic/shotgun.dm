@@ -385,8 +385,8 @@
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/hundred
 
 /obj/item/gun/ballistic/shotgun/winchester
-	name = "Winchester 2073"
-	desc = "A sturdy lever action rifle. Although this model is a antique model, the design goes even further back, and has been proven reliable over 600 years."
+	name = "Winchester MK.1"
+	desc = "A sturdy lever action rifle. This one is an antique and old model."
 	icon = 'icons/obj/guns/48x32guns.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/back.dmi'
 	lefthand_file = 'icons/mob/inhands/weapons/64x_guns_left.dmi'
@@ -397,3 +397,15 @@
 	inhand_y_dimension = 32
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/winchester
 	fire_sound = 'sound/weapons/gun/rifle/shot.ogg'
+
+/obj/item/gun/ballistic/shotgun/winchester/lethal
+	mag_type = /obj/item/ammo_box/magazine/internal/shot/winchester/lethal
+
+/obj/item/gun/ballistic/shotgun/winchester/mk2
+	name = "Winchester MK.2"
+	desc = "A sturdy lever action rifle. This one is a newer reproduction."
+	icon_state = "winchestermk2"
+	item_state = "winchestermk2"
+
+/obj/item/gun/ballistic/shotgun/winchester/mk2/lethal
+	mag_type = /obj/item/ammo_box/magazine/internal/shot/winchester/lethal
