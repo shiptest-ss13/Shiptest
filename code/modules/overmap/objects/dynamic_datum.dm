@@ -71,7 +71,7 @@
 
 	log_shuttle("[src] [REF(src)] UNLOAD")
 	var/list/results = SSovermap.get_unused_overmap_square()
-	Move(results["x"], results["y"])
+	overmap_move(results["x"], results["y"])
 	choose_level_type()
 
 	for(var/obj/docking_port/stationary/dock as anything in reserve_docks)

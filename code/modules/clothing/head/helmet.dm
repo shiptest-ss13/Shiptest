@@ -483,3 +483,8 @@
 	desc = "A standard issue helmet in the colors of the IRMG. It doesn't feel special in any way."
 	icon_state = "inteq_helmet"
 	icon_state = "inteq_helmet"
+
+/obj/item/clothing/head/helmet/alt/minutemen
+	name = "minutemen ballistic helmet"
+	desc = "A bulletproof helmet that is worn by members of the colonial minutemen."
+	icon_state = "antichristhelm"
