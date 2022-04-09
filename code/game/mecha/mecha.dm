@@ -1168,7 +1168,7 @@ GLOBAL_VAR_INIT(year_integer, text2num(year)) // = 2013???
 		if(istype(gun, /obj/item/mecha_parts/mecha_equipment/weapon/ballistic) && gun.ammo_type == A.ammo_type)
 			found_gun = TRUE
 			if(A.direct_load)
-				ammo_needed = initial(gun.projectiles) - gun.projectiles
+				ammo_needed = gun.projectiles_max - gun.projectiles
 			else
 				ammo_needed = gun.projectiles_cache_max - gun.projectiles_cache
 

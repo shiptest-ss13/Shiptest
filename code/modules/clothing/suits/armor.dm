@@ -143,6 +143,11 @@
 	icon_state = "capformal"
 	item_state = "capspacesuit"
 
+/obj/item/clothing/suit/armor/vest/capcarapace/minutemen
+	name = "colonial minutemen general coat"
+	desc = "A very fancy coat used by generals of the Colonial Minutemen."
+	icon_state = "minuteman_general"
+
 /obj/item/clothing/suit/armor/riot
 	name = "riot suit"
 	desc = "A suit of semi-flexible polycarbonate body armor with heavy padding to protect against melee attacks. Helps the wearer resist shoving in close quarters."
