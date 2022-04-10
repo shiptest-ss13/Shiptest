@@ -483,19 +483,3 @@
 	backpack_contents = list(
 		/obj/item/gun/energy/e_gun/adv_stopping = 1
 		)
-
-/datum/outfit/job/lieutenant/minutemen
-	name = "Lieutenant (Colonial Minutemen)"
-
-	ears = /obj/item/radio/headset/heads/hos/alt
-	uniform = /obj/item/clothing/under/rank/command/minutemen
-	alt_uniform = null
-	suit = null
-	alt_suit = null
-
-	shoes = /obj/item/clothing/shoes/combat
-	head = /obj/item/clothing/head/cowboy/sec/minutemen
-	box = /obj/item/storage/box/survival/engineer/radio
-	backpack = /obj/item/storage/backpack
-	backpack_contents = list(/obj/item/modular_computer/tablet/preset/advanced = 1, \
-		/obj/item/modular_computer/tablet/preset/advanced = 1)
