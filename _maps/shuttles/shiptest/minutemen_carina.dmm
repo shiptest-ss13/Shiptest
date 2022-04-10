@@ -38,6 +38,9 @@
 /obj/structure/sign/number/four,
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/cargo)
+"az" = (
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/medical)
 "aO" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/effect/decal/cleanable/dirt,
@@ -62,16 +65,12 @@
 	},
 /turf/open/floor/plasteel,
 /area/ship/hallway/starboard)
-"bt" = (
-/obj/structure{
-	desc = "Looks menacing, but it's rusted in place.";
-	dir = 5;
-	icon = 'icons/obj/turrets.dmi';
-	icon_state = "syndie_off";
-	name = "defunct ship turret"
+"bC" = (
+/obj/structure/sign/number/five{
+	dir = 1
 	},
-/turf/closed/wall/mineral/plastitanium,
-/area/ship/maintenance/fore)
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/security)
 "bD" = (
 /obj/machinery/mass_driver{
 	dir = 4;
@@ -114,6 +113,9 @@
 /obj/structure/lattice,
 /turf/template_noop,
 /area/ship/external)
+"ck" = (
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/security)
 "ct" = (
 /obj/machinery/atmospherics/components/unary/outlet_injector/on/layer4,
 /turf/open/floor/engine/hull,
@@ -284,21 +286,32 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/corner/red,
+/obj/item/clothing/accessory/holster,
 /obj/item/ammo_box/c38/match,
 /obj/item/ammo_box/c38/match,
 /obj/item/gun/ballistic/revolver/detective,
 /obj/item/melee/classic_baton,
 /turf/open/floor/plasteel/dark,
 /area/ship/security/prison)
-"eT" = (
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ship/security)
+"eR" = (
+/turf/closed/wall/mineral/plastitanium,
+/area/ship/storage)
 "eU" = (
 /obj/structure/sign/number/four{
 	dir = 1
 	},
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/security)
+"fj" = (
+/obj/structure{
+	desc = "Looks menacing, but it's rusted in place.";
+	dir = 8;
+	icon = 'icons/obj/turrets.dmi';
+	icon_state = "syndie_off";
+	name = "defunct ship turret"
+	},
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/engineering)
 "fM" = (
 /mob/living/simple_animal/bot/medbot{
 	name = "\improper Lt. Kelley"
@@ -570,9 +583,9 @@
 /obj/item/clothing/gloves/combat,
 /obj/item/clothing/gloves/combat,
 /obj/item/clothing/gloves/combat,
-/obj/item/clothing/mask/russian_balaclava,
-/obj/item/clothing/mask/russian_balaclava,
-/obj/item/clothing/mask/russian_balaclava,
+/obj/item/clothing/mask/gas/sechailer/minutemen,
+/obj/item/clothing/mask/gas/sechailer/minutemen,
+/obj/item/clothing/mask/gas/sechailer/minutemen,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/security/prison)
 "ko" = (
@@ -623,16 +636,6 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
-"kH" = (
-/obj/structure{
-	desc = "Looks menacing, but it's rusted in place.";
-	dir = 4;
-	icon = 'icons/obj/turrets.dmi';
-	icon_state = "syndie_off";
-	name = "defunct ship turret"
-	},
-/turf/closed/wall/mineral/plastitanium,
-/area/ship/storage)
 "kJ" = (
 /obj/structure/railing{
 	dir = 1
@@ -646,20 +649,22 @@
 	dir = 4;
 	icon_door = "solgov_wall";
 	icon_state = "solgov_wall";
-	name = "bridge officer's locker";
+	name = "lieutenant's locker";
 	pixel_x = -28
 	},
 /obj/item/storage/backpack,
 /obj/item/clothing/shoes/combat,
 /obj/item/clothing/under/rank/command/minutemen,
-/obj/item/clothing/suit/toggle/lawyer/minutemen,
+/obj/item/clothing/accessory/holster/lieutenant,
 /obj/item/clothing/head/cowboy/sec/minutemen,
 /obj/item/clothing/glasses/sunglasses,
 /obj/item/radio/headset/heads/hos/alt,
 /obj/item/storage/box/ids{
 	pixel_x = -7
 	},
-/obj/item/stamp/head_of_personnel,
+/obj/item/stamp/head_of_personnel{
+	name = "lieutenant's rubber stamp"
+	},
 /obj/item/ammo_box/c38/match,
 /obj/item/ammo_box/c38/match,
 /obj/item/gun/ballistic/revolver/detective,
@@ -687,6 +692,16 @@
 /obj/structure/curtain,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/crew)
+"lK" = (
+/obj/structure{
+	desc = "Looks menacing, but it's rusted in place.";
+	dir = 6;
+	icon = 'icons/obj/turrets.dmi';
+	icon_state = "syndie_off";
+	name = "defunct ship turret"
+	},
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/crew)
 "lM" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -699,6 +714,10 @@
 	},
 /turf/open/floor/plasteel,
 /area/ship/hallway/starboard)
+"mt" = (
+/obj/structure/sign/number/five,
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/cargo)
 "mE" = (
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
@@ -849,10 +868,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security/prison)
-"nM" = (
-/obj/structure/sign/number/nine,
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ship/cargo)
 "nO" = (
 /obj/structure/sink{
 	dir = 8;
@@ -998,16 +1013,6 @@
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /turf/open/floor/plating,
 /area/ship/hallway/port)
-"pj" = (
-/obj/structure{
-	desc = "Looks menacing, but it's rusted in place.";
-	dir = 6;
-	icon = 'icons/obj/turrets.dmi';
-	icon_state = "syndie_off";
-	name = "defunct ship turret"
-	},
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ship/crew)
 "pv" = (
 /obj/machinery/light{
 	dir = 1
@@ -1059,6 +1064,16 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating,
 /area/ship/engineering)
+"qc" = (
+/obj/structure{
+	desc = "Looks menacing, but it's rusted in place.";
+	dir = 5;
+	icon = 'icons/obj/turrets.dmi';
+	icon_state = "syndie_off";
+	name = "defunct ship turret"
+	},
+/turf/closed/wall/mineral/plastitanium,
+/area/ship/maintenance/fore)
 "qj" = (
 /obj/item/circuitboard/mecha/pod{
 	pixel_x = -8;
@@ -1080,22 +1095,6 @@
 /obj/machinery/portable_atmospherics/canister/air,
 /turf/open/floor/plasteel/patterned,
 /area/ship/security)
-"qz" = (
-/obj/machinery/power/smes/shuttle/precharged{
-	dir = 4
-	},
-/obj/structure/window/plasma/reinforced/spawner/west,
-/obj/machinery/door/poddoor{
-	id = "space_cops_windows"
-	},
-/obj/structure/cable{
-	icon_state = "0-8"
-	},
-/obj/machinery/door/window/eastright{
-	name = "Engine Access"
-	},
-/turf/open/floor/plating,
-/area/ship/engineering)
 "qB" = (
 /obj/effect/turf_decal/industrial/hatch/yellow,
 /obj/machinery/pipedispenser,
@@ -1213,12 +1212,6 @@
 "so" = (
 /turf/open/floor/carpet/royalblue,
 /area/ship/bridge)
-"sr" = (
-/obj/structure/sign/number/five{
-	dir = 1
-	},
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ship/security)
 "su" = (
 /obj/structure/extinguisher_cabinet,
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
@@ -2093,26 +2086,30 @@
 	pixel_x = -25;
 	pixel_y = 15
 	},
-/obj/structure/closet/secure_closet/wall{
-	dir = 4;
-	icon_door = "solgov_wall";
-	icon_state = "solgov_wall";
-	name = "captain's locker";
-	pixel_x = -28
-	},
 /obj/item/storage/backpack,
 /obj/item/clothing/shoes/combat,
 /obj/item/clothing/under/rank/command/minutemen,
-/obj/item/clothing/suit/armor/vest/capcarapace/minutemen,
-/obj/item/clothing/head/caphat/minutemen,
+/obj/item/clothing/accessory/holster/lieutenant{
+	name = "bridge officer's shoulder holster"
+	},
+/obj/item/clothing/suit/toggle/lawyer/minutemen,
+/obj/item/clothing/head/cowboy/sec/minutemen,
 /obj/item/clothing/glasses/sunglasses,
 /obj/item/radio/headset/heads/captain/alt,
-/obj/item/stamp/captain,
-/obj/item/melee/classic_baton/telescopic,
+/obj/item/stamp/captain{
+	name = "bridge officer's rubber stamp"
+	},
 /obj/item/disk/design_disk/ammo_n762,
 /obj/item/ammo_box/n762_clip,
 /obj/item/ammo_box/n762_clip,
 /obj/item/gun/ballistic/revolver/nagant,
+/obj/structure/closet/secure_closet/wall{
+	dir = 4;
+	icon_door = "solgov_wall";
+	icon_state = "solgov_wall";
+	name = "bridge officer's locker";
+	pixel_x = -28
+	},
 /turf/open/floor/carpet/royalblue,
 /area/ship/bridge)
 "Ee" = (
@@ -2402,14 +2399,20 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
-"Iz" = (
-/obj/structure/sign/number/five,
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ship/cargo)
 "IO" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /turf/open/floor/plasteel/dark,
 /area/ship/security/prison)
+"Je" = (
+/obj/structure{
+	desc = "Looks menacing, but it's rusted in place.";
+	dir = 10;
+	icon = 'icons/obj/turrets.dmi';
+	icon_state = "syndie_off";
+	name = "defunct ship turret"
+	},
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/cargo)
 "Jo" = (
 /obj/effect/turf_decal/box,
 /obj/item/tank/jetpack/carbondioxide,
@@ -2419,16 +2422,6 @@
 "Jv" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/bridge)
-"JL" = (
-/obj/structure{
-	desc = "Looks menacing, but it's rusted in place.";
-	dir = 10;
-	icon = 'icons/obj/turrets.dmi';
-	icon_state = "syndie_off";
-	name = "defunct ship turret"
-	},
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ship/engineering)
 "JZ" = (
 /obj/machinery/light{
 	dir = 1
@@ -2531,6 +2524,10 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/storage)
+"Lp" = (
+/obj/structure/sign/number/nine,
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/cargo)
 "Ls" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -2678,9 +2675,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel,
 /area/ship/hallway/starboard)
-"Ns" = (
-/turf/closed/wall/mineral/plastitanium,
-/area/ship/storage)
 "Nu" = (
 /obj/structure/table/reinforced,
 /obj/item/radio/intercom/wideband,
@@ -2757,16 +2751,6 @@
 	icon_state = "4-8"
 	},
 /turf/open/floor/plating,
-/area/ship/engineering)
-"OV" = (
-/obj/structure{
-	desc = "Looks menacing, but it's rusted in place.";
-	dir = 8;
-	icon = 'icons/obj/turrets.dmi';
-	icon_state = "syndie_off";
-	name = "defunct ship turret"
-	},
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/engineering)
 "Py" = (
 /obj/structure/cable{
@@ -2898,9 +2882,6 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
-"Rp" = (
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ship/medical)
 "RI" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -2970,6 +2951,16 @@
 /obj/structure/sign/poster/official/report_crimes,
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/security/prison)
+"Sl" = (
+/obj/structure{
+	desc = "Looks menacing, but it's rusted in place.";
+	dir = 4;
+	icon = 'icons/obj/turrets.dmi';
+	icon_state = "syndie_off";
+	name = "defunct ship turret"
+	},
+/turf/closed/wall/mineral/plastitanium,
+/area/ship/storage)
 "Sv" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -3114,6 +3105,22 @@
 /obj/effect/landmark/start/assistant,
 /turf/open/floor/plasteel/mono,
 /area/ship/crew)
+"Tt" = (
+/obj/machinery/power/smes/shuttle/precharged{
+	dir = 4
+	},
+/obj/structure/window/plasma/reinforced/spawner/west,
+/obj/machinery/door/poddoor{
+	id = "space_cops_windows"
+	},
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/machinery/door/window/eastright{
+	name = "Engine Access"
+	},
+/turf/open/floor/plating,
+/area/ship/engineering)
 "Tx" = (
 /obj/machinery/power/smes/engineering,
 /obj/structure/cable{
@@ -3258,6 +3265,16 @@
 	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/security)
+"VD" = (
+/obj/structure{
+	desc = "Looks menacing, but it's rusted in place.";
+	dir = 10;
+	icon = 'icons/obj/turrets.dmi';
+	icon_state = "syndie_off";
+	name = "defunct ship turret"
+	},
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/engineering)
 "VF" = (
 /obj/structure/cable{
 	icon_state = "0-2"
@@ -3354,16 +3371,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
-"WU" = (
-/obj/structure{
-	desc = "Looks menacing, but it's rusted in place.";
-	dir = 10;
-	icon = 'icons/obj/turrets.dmi';
-	icon_state = "syndie_off";
-	name = "defunct ship turret"
-	},
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ship/cargo)
 "WY" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -3690,17 +3697,17 @@ PX
 PX
 PX
 PX
-OV
+fj
 Lz
-qz
+Tt
 KX
 wM
 ZS
 RM
 jy
 Lz
-qz
-JL
+Tt
+VD
 PX
 PX
 PX
@@ -3765,7 +3772,7 @@ PX
 (7,1,1) = {"
 PX
 bQ
-Rp
+az
 sK
 Nb
 jy
@@ -3803,7 +3810,7 @@ PX
 (9,1,1) = {"
 PX
 cQ
-Rp
+az
 tO
 Ee
 bP
@@ -3835,7 +3842,7 @@ sM
 yg
 wF
 XO
-pj
+lK
 PX
 "}
 (11,1,1) = {"
@@ -3859,7 +3866,7 @@ PX
 "}
 (12,1,1) = {"
 PX
-Rp
+az
 TT
 kF
 FQ
@@ -3897,7 +3904,7 @@ PX
 "}
 (14,1,1) = {"
 PX
-Rp
+az
 DT
 fM
 RS
@@ -3916,8 +3923,8 @@ PX
 "}
 (15,1,1) = {"
 an
-Rp
-Rp
+az
+az
 xs
 Sd
 bP
@@ -4069,7 +4076,7 @@ PX
 (23,1,1) = {"
 PX
 em
-eT
+ck
 CE
 Vj
 Jv
@@ -4082,12 +4089,12 @@ Jv
 tT
 Zn
 UO
-WU
+Je
 PX
 "}
 (24,1,1) = {"
 PX
-sr
+bC
 pv
 CN
 Wh
@@ -4101,7 +4108,7 @@ Ma
 cD
 PK
 hD
-nM
+Lp
 PX
 "}
 (25,1,1) = {"
@@ -4158,7 +4165,7 @@ uL
 SR
 aO
 Ur
-Iz
+mt
 PX
 "}
 (28,1,1) = {"
@@ -4177,7 +4184,7 @@ yJ
 BN
 Ip
 Wm
-Ns
+eR
 PX
 "}
 (29,1,1) = {"
@@ -4233,7 +4240,7 @@ Wm
 gv
 Cp
 Wm
-Ns
+eR
 PX
 PX
 "}
@@ -4260,7 +4267,7 @@ PX
 PX
 PX
 PX
-bt
+qc
 GC
 Fu
 GC
@@ -4270,7 +4277,7 @@ cg
 Wm
 pA
 Wm
-kH
+Sl
 PX
 PX
 PX
